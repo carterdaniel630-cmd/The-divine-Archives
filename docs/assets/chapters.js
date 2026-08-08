@@ -48,6 +48,13 @@ window.CHAPTERS = {
     <p>The temptation, ever since George Smith, has been to go find the flood in the dirt. In 1929 the archaeologist Sir Leonard Woolley, digging at Ur, hit a band of clean, water-laid silt up to three meters thick, and announced, in effect, that he had found Noah&rsquo;s Flood. But the sensation did not survive comparison. Woolley&rsquo;s Ur silt dates to roughly 3500 BCE; the flood layers at Kish fall centuries later, and the layer at Shuruppak &mdash; the very city named as the flood hero&rsquo;s home &mdash; sits at yet another point. If these were the same deluge, they would sit at the same depth and date. They do not. What the archaeology records is a landscape of <em>recurrent local floods</em>, none of them a single basin-wide event.</p>
     <p>A more modern candidate is the Black Sea deluge hypothesis, proposed in 1997 by William Ryan and Walter Pitman: that around 5600 BCE the rising Mediterranean breached the Bosporus and catastrophically flooded a freshwater lake. It is a beautiful hypothesis and it has not held up well. Later studies suggest the Black Sea rose far more modestly than the catastrophic version requires, and a 2022 review found the case for a sudden flood wanting. Among specialists it is disputed and increasingly doubted.</p>
 
+    <h2>Symbology and sacred encoding</h2>
+    <p>A theme that recurs across so many traditions carries its own symbolic grammar &mdash; a set of images and numbers the flood stories reach for again and again. These are worth reading closely, because the flood is where genuine ancient symbolism and modern over-reading collide most often.</p>
+    <p><strong>Water as un-creation.</strong> The deepest symbol is the water itself. In tradition after tradition the state before the world is a formless sea &mdash; the Mesopotamian Apsu and Tiamat, the <em>tehom</em> (&ldquo;the deep&rdquo;) of Genesis 1, Nun in Egypt &mdash; and the flood is that sea allowed to return. To drown the world is to <em>un-make</em> it, to rewind creation to its watery beginning so it can be started again. The flood and the creation are the same story told backwards, which is why they so often sit side by side in the same scriptures.</p>
+    <p><strong>The covenant sign.</strong> The Genesis flood closes with the first divine &ldquo;sign&rdquo; in the Hebrew Bible: the bow set in the cloud (Genesis 9:12&ndash;17). The Hebrew word is the ordinary word for a war-bow, and the image is of God hanging up his weapon &mdash; a symbol of the promise never to flood the world again. It is a rare case where a text tells us, explicitly, that a natural phenomenon is to be read as an encoded message.</p>
+    <p><strong>Sacred numbers &mdash; real and over-read.</strong> The narratives are full of patterned numbers: forty days and forty nights of rain, waters that swell for a hundred and fifty days, birds sent at seven-day intervals, Utnapishtim&rsquo;s six days and seven nights of storm. Forty and seven are genuine structuring numbers in the ancient texts, used for completeness and ordeal. But this is exactly where caution is required: the modern habit of extracting &ldquo;hidden&rdquo; numerical codes from the ark&rsquo;s dimensions is a later imposition. The ancient authors used round, symbolic numbers deliberately; they did not bury secret ciphers for a spreadsheet to recover millennia later.</p>
+    <p><strong>The ark as ordered space.</strong> The vessel itself is symbolic. A sealed, measured box carrying the seed of all life through the chaos-waters is a small, ordered cosmos &mdash; a floating image of the created world riding out its own undoing. Even here the traditions differ tellingly: the Mesopotamian ark is often a cube, the biblical one an oblong barge, each a different culture&rsquo;s idea of the right shape for a world in miniature.</p>
+
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
@@ -128,6 +135,14 @@ window.CHAPTERS = {
 
     <h2>Connections &mdash; and a deliberate absence</h2>
     <p>Egypt sat inside the Late Bronze Age world, trading gold, marriages, and threats with the Hittites, Babylonians, and the rulers of Canaan. Egyptian religious ideas moved along those routes &mdash; the resemblance between the Great Hymn to the Aten and Psalm 104 is frequently noted, and genuinely debated. But one connection is most revealing by its <em>absence</em>: Egypt, the civilization most dependent on an annual flood, has <strong>no world-ending deluge myth</strong> of the Mesopotamian or biblical kind. For Egypt the flood was the Nile&rsquo;s yearly inundation &mdash; the source of life and the very model of Ma&rsquo;at renewing itself.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>No ancient culture invested its symbols with more power than Egypt, and none offers a richer field for this project&rsquo;s abiding distinction &mdash; between what a tradition <em>believed</em> its signs could do and what we can actually show.</p>
+    <p><strong>Hieroglyphs as living things.</strong> For the Egyptians, writing was not a neutral record of speech; it was <em>medu-netjer</em>, &ldquo;the words of the god,&rdquo; and the signs themselves were believed to carry power. This belief left startling physical evidence: in some burial chambers, hieroglyphs depicting dangerous creatures were deliberately <em>mutilated</em> &mdash; snakes drawn without heads, or cut in half &mdash; so they could not come to life and harm the deceased. The written word was live enough to need disarming.</p>
+    <p><strong>Heka and words of power.</strong> Behind this stood <em>heka</em>, the Egyptian conception of magic &mdash; not a fringe practice but a force woven into creation and personified as a god. To know a being&rsquo;s true name was to have power over it. The name mattered so much that a royal name was enclosed in a protective oval, the <em>cartouche</em>, and erasing an enemy&rsquo;s name from their monuments &mdash; as was done to Akhenaten &mdash; was an attempt to erase them from existence itself.</p>
+    <p><strong>The great symbols.</strong> Egypt encoded theology in a compact visual vocabulary: the <em>ankh</em>, sign of life; the <em>djed</em> pillar, stability and the backbone of Osiris; the <em>was</em> scepter, dominion; the <em>scarab</em>, the rising sun and rebirth; and the <em>wedjat</em>, the restored Eye of Horus, the supreme emblem of healing and protection, painted on coffins and worn as an amulet so the dead could see and be made whole.</p>
+    <p><strong>A number-symbol, honestly handled.</strong> It is often said the six parts of the Eye of Horus were used as fractions &mdash; 1/2, 1/4, 1/8, 1/16, 1/32, 1/64 &mdash; for measuring grain. Egyptians did use these &ldquo;Horus-eye&rdquo; fractions in accounting, and the visual link is charming. But the neat mapping of each fraction onto a specific piece of the eye is now regarded by a number of scholars as a modern reconstruction rather than a demonstrably ancient doctrine &mdash; a symbolic &ldquo;code&rdquo; that is partly real (the fractions) and partly later tidying-up (the exact eye-part scheme).</p>
+    <p><strong>Architecture as theology.</strong> The Egyptian temple was a symbol built at scale: its plan a model of the cosmos, its floor rising and its ceiling lowering and darkening toward the hidden sanctuary, its columns carved as marsh plants so the whole building re-enacted the first mound of creation emerging from the waters. To walk into a temple was to walk into the Egyptian cosmos in miniature.</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -261,6 +276,94 @@ window.CHAPTERS = {
         <li>Divine numbers and Sargon II&rsquo;s Khorsabad wall as early name-numerology (Jewish Virtual Library, &ldquo;Gematria&rdquo;); the celestial omen series <em>Enuma Anu Enlil</em>.</li>
       </ul>
       <p class="source-note">Researched from primary-text translations and current scholarship rather than memory alone. The most contested points &mdash; the Ur death-pit deaths, the function of Hammurabi&rsquo;s stele, the dating and biblical relationship of the <em>Enuma Elish</em>, and the meaning of the divine numbers &mdash; are flagged as live disputes rather than resolved. Dates follow conventional (middle) chronology.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch04 */
+  ch04: { html: `
+    <p class="lead">A one-inch seal shows a horned figure seated among wild animals. A great archaeologist called it a proto-Shiva. A century later we still cannot say what it is &mdash; because the people who made it left writing we have never been able to read.</p>
+
+    <h2>A god that may not be a god</h2>
+    <p>Sometime around 1928, in the ruins of Mohenjo-daro on the plain of the Indus, excavators turned up a small steatite seal, barely an inch and a half square. It shows a figure seated with legs folded beneath it, in what looks unmistakably like a yogic posture, wearing a tall horned headdress and surrounded by animals &mdash; a tiger, an elephant, a rhinoceros, a water buffalo, and two deer. Sir John Marshall, directing the excavation of the newly discovered Indus civilization, looked at this seal and saw something breathtaking: a <strong>proto-Shiva</strong>. Here, he argued, three thousand years early, was the Hindu god in embryo &mdash; Pashupati, &ldquo;Lord of Animals,&rdquo; the horned yogi, master of the beasts.</p>
+    <p>It is one of the most famous objects in the archaeology of religion, and nearly a century later scholars still argue about almost every word of that description. Is the figure male? A god at all, or a chieftain or shaman? Are those three faces, or a wide horned mask? Is it Shiva&rsquo;s ancestor, or a version of the &ldquo;Master of Animals&rdquo; motif found from Mesopotamia to the Aegean in the same era? We cannot settle it &mdash; and the reason is the single most important fact about Indus religion, the fact that governs this whole chapter: <strong>their writing has never been read.</strong></p>
+    <p>This is a civilization we can see in extraordinary material detail and cannot hear in its own voice at all. What follows therefore carries more honest uncertainty than any chapter so far &mdash; and that is exactly as it should be.</p>
+
+    <h2>The silent civilization</h2>
+    <p>The scale is easy to underestimate. The Indus (or Harappan) civilization of its mature phase, roughly <strong>2600 to 1900 BCE</strong>, was the largest of the Bronze Age &mdash; larger in area than Egypt and Mesopotamia combined, spread across more than a thousand sites. Its great cities &mdash; Harappa, Mohenjo-daro, Dholavira, Rakhigarhi, Lothal &mdash; were laid out on grids, built of standardized fired brick, and served by the most advanced water and drainage engineering anywhere in the ancient world. Its system of weights barely varied across the entire territory for centuries.</p>
+    <p>And then the strangeness. For a civilization this sophisticated, the Indus cities are eerily quiet about the things other Bronze Age powers shouted. There are <strong>no securely identified temples</strong>. No great palaces. No royal tombs stuffed with gold like Ur&rsquo;s, no pyramids, no monumental inscriptions boasting of kings, no reliefs of rulers smiting enemies. Where Egypt and Mesopotamia broadcast a hierarchy of god-kings in stone, the Indus is, by comparison, faceless &mdash; and that absence is itself one of the most intriguing pieces of evidence we have.</p>
+
+    <h2>The wall we cannot read</h2>
+    <p>Everything would be different if we could read the <strong>Indus script</strong>. We have it in abundance &mdash; some four thousand inscribed objects, mostly the little seals &mdash; carrying about four hundred distinct signs. And it is, after a century of effort and dozens of confident &ldquo;decipherments,&rdquo; still completely undeciphered. No bilingual key like the Rosetta Stone has ever been found.</p>
+    <p>There is not even agreement that the signs <em>encode language at all</em>. The dominant view, argued by <strong>Asko Parpola</strong> and <strong>Iravatham Mahadevan</strong>, holds that the script is true writing, most likely an early Dravidian language. But in a provocative 2004 paper, <strong>Farmer, Sproat, and Witzel</strong> argued the opposite: that the inscriptions are too short (averaging about five signs), contain too many once-used signs, and lack the repetition real languages produce &mdash; and so may be non-linguistic emblems rather than writing. The debate is unresolved. Until it is, the Indus people keep their theology to themselves, and every claim about their gods is an inference from things, not texts.</p>
+
+    <h2>What the objects suggest &mdash; held loosely</h2>
+    <p>With that warning fixed in place, here is what the remains have been taken to suggest. Every item is an interpretation, and the honest ones are offered as such.</p>
+    <p><strong>The seated horned figure.</strong> Marshall&rsquo;s &ldquo;proto-Shiva&rdquo; (seal M-420) rests on later features read backward: Shiva as lord of animals, as archetypal yogi, as bull-associated. Critics such as Doris Srinivasan have argued the figure may be a bull or buffalo deity and that the &ldquo;three faces&rdquo; are questionable; Shubhangana Atre has proposed the central Indus deity was in fact a goddess, a &ldquo;Lady of Beasts.&rdquo; No reading commands consensus.</p>
+    <p><strong>A goddess, or goddesses.</strong> Excavators recovered many terracotta female figurines, some with soot marks suggesting offerings burned before them &mdash; widely read as a fertility or mother-goddess cult. But without texts we cannot be sure which were cult objects, which votive, and which toys.</p>
+    <p><strong>Water and purity.</strong> The most striking structure is the <strong>Great Bath</strong> of Mohenjo-daro, a watertight sunken tank of fitted brick sealed with bitumen. It looks built for communal immersion and is often read as ritual bathing &mdash; a possible ancestor of later Indian purity concerns &mdash; but the reading is attractive and unprovable.</p>
+    <p><strong>Trees, animals, and stones.</strong> Seals show a figure standing in a <strong>pipal</strong> (sacred fig) tree, still sacred in later India; cattle imagery is everywhere, above all the enigmatic single-horned &ldquo;unicorn&rdquo; bull. Cones and ring-stones have been read (first by Marshall) as <em>lingam</em> and <em>yoni</em> prefiguring Shaiva worship, though many archaeologists see ordinary objects. At Kalibangan, pits with ash have been claimed as fire altars, but whether ritual or hearth is disputed.</p>
+    <p><strong>The quiet dead.</strong> Harappan burials are generally modest &mdash; extended inhumations with some pottery and ornaments, and no lavish royal tombs. Compared with the death-pits of Ur or the tombs of Egypt, the Indus dead were sent off with striking restraint.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>For a civilization defined by an unread script, sacred encoding is not a side-topic &mdash; it is the whole predicament in miniature.</p>
+    <p><strong>The great cipher.</strong> The Indus script is the largest undeciphered corpus of the ancient world, and it sits mostly on <strong>seals</strong> whose practical job was almost certainly administrative &mdash; yet the same seals carry the richest religious imagery: the horned figure, the tree spirit, composite animals. The encoded and the sacred are literally combined on one object, and both halves resist us. It is the purest case in this archive of a symbol system that is demonstrably there, plainly systematic, and still locked.</p>
+    <p><strong>The unicorn and the altar-object.</strong> The most common seal image is the &ldquo;unicorn&rdquo; &mdash; a bull-like animal shown with a single horn &mdash; standing before a mysterious object usually called the &ldquo;standard&rdquo; or &ldquo;manger,&rdquo; possibly a ritual filter or burner. What it meant is unknown; that it meant <em>something</em>, repeated on thousands of seals, is hard to doubt.</p>
+    <p><strong>The swastika.</strong> Among Indus motifs is the <strong>swastika</strong>, a hooked cross that was for thousands of years across Eurasia a benign symbol of good fortune, and remained sacred in Hindu, Jain, and Buddhist use long before its twentieth-century appropriation by Nazism inverted its associations in the West.</p>
+    <p><strong>The order in the weights.</strong> There is one Indus &ldquo;code&rdquo; we <em>can</em> read, and it is not religious: the standardized cubical stone weights, uniform across the whole territory. It is a reminder that not every encoded system is sacred &mdash; and a caution that, precisely because we cannot read the script, the temptation to pour mystical meaning into Indus symbols must be resisted.</p>
+
+    <h2>Connections</h2>
+    <p>The Indus was not isolated. Sumerian texts speak of trade with a distant land called <strong>Meluhha</strong>, widely identified with the Indus, and the archaeology confirms it: Indus-style seals and etched carnelian beads have been found at Ur. The Indus and the Mesopotamia of the previous chapter were contemporaries and trading partners &mdash; two utterly different religious worlds, one loud with gods and kings, the other silent.</p>
+    <p>The forward connection is more fraught. Around 1900 BCE the Indus cities declined &mdash; through a drawn-out combination of climate change, shifting rivers, and the fading of their trade and urban systems. In the centuries after, the record of northwest India is increasingly that of the <strong>Vedic</strong> culture and its Indo-Aryan language. Recent ancient-DNA work, including a genome from a Harappan individual at <strong>Rakhigarhi</strong>, indicates that steppe-pastoralist ancestry associated with Indo-European speakers was <em>absent</em> among the Harappans and arrived largely <em>after</em> the Indus decline (c. 2000&ndash;1500 BCE), as admixture layered onto the existing population, not a replacement. Whether, and how much, Indus religion survived that transition to shape later Hinduism is the great open question the next chapter, on the early Vedic world, must take up.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The scale, urban planning, standardized weights, and water engineering of the mature Harappan civilization (c. 2600&ndash;1900 BCE).</li>
+          <li>The Indus script exists as a systematic sign-system and remains genuinely undeciphered; no proposed decipherment is accepted.</li>
+          <li>The material religious remains are real: seal M-420, the female figurines, the Great Bath, pipal-tree and bull/&ldquo;unicorn&rdquo; imagery, modest burials.</li>
+          <li>The near-total absence of identified temples, palaces, royal tombs, and ruler/war art, unlike Egypt and Mesopotamia.</li>
+          <li>Long-distance trade with Mesopotamia (&ldquo;Meluhha&rdquo;; Indus seals and beads at Ur).</li>
+          <li>Ancient DNA indicating steppe ancestry was absent among the Harappans and entered South Asia mainly after the decline, as admixture not replacement.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported</h4>
+        <ul>
+          <li>The confident identification of seal M-420 as Shiva; &ldquo;proto-Shiva&rdquo; is one reading among several, none proven.</li>
+          <li>Any claim that the Indus script has been read, or a specific myth recovered from it.</li>
+          <li>The assertion that Harappan religion simply <em>is</em> early Hinduism; the parallels are suggestive, not established.</li>
+          <li>Certainty about the figurines or the Great Bath as specifically cultic.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>Essentially the entire religious <em>content</em>: deities, myths, priesthood (if any), and cosmology.</li>
+          <li>The identity and sex of the horned figure, and whether the central deity was god, goddess, both, or neither.</li>
+          <li>Whether the script encodes a language at all, and if so which (Dravidian hypothesis vs. non-linguistic thesis).</li>
+          <li>The function of the Great Bath and the meaning of the &ldquo;unicorn&rdquo; and its altar-object.</li>
+          <li>The degree of continuity with later Hinduism, and the Harappan relationship to the incoming Indo-Aryan/Vedic culture &mdash; a debate entangled with modern politics, to be reported, not adjudicated.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Seals, the Great Bath, and the proto-Shiva debate</h4>
+      <ul>
+        <li>John Marshall, <em>Mohenjo-Daro and the Indus Civilization</em> (1931); <a href="https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia: Pashupati seal</a> (Marshall, Srinivasan, Atre).</li>
+      </ul>
+      <h4>The undeciphered script</h4>
+      <ul>
+        <li><a href="https://www.harappa.com/content/introduction-study-indus-script">Harappa.com: Introduction to the Indus Script</a> (Mahadevan); Parpola, <em>Deciphering the Indus Script</em> (1994); Farmer, Sproat &amp; Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004).</li>
+      </ul>
+      <h4>Decline and the Indo-Aryan question</h4>
+      <ul>
+        <li>Shinde et al., <em>Cell</em> (2019); Narasimhan et al., <em>Science</em> (2019); <a href="https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in overview</a>.</li>
+      </ul>
+      <p class="source-note">Because the Indus script is undeciphered, this chapter deliberately carries more &ldquo;genuinely open&rdquo; than any other. Interpretations (proto-Shiva, mother-goddess, ritual bathing) are presented as interpretations, and the politically charged Indo-Aryan question is reported without being adjudicated.</p>
     </div>
   ` }
 };

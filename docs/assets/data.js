@@ -80,6 +80,12 @@ window.ARCHIVE = {
       era: "02-bronze-age", eraLabel: "Bronze Age · Mesopotamia",
       status: "published", pending: true,
       source: "eras/02-bronze-age/ch03-mesopotamia-bronze-age.md",
-      summary: "The land where writing and the city began: the Enuma Elish and Marduk's ordering of chaos, the great gods and their temple-and-ziggurat cult, divination, Hammurabi's law-stele, the grim underworld, and the divine numbers and sacred encoding of a civilization that read reality as a script." }
+      summary: "The land where writing and the city began: the Enuma Elish and Marduk's ordering of chaos, the great gods and their temple-and-ziggurat cult, divination, Hammurabi's law-stele, the grim underworld, and the divine numbers and sacred encoding of a civilization that read reality as a script." },
+
+    { id: "ch04", title: "Indus Valley", kind: "tradition",
+      era: "02-bronze-age", eraLabel: "Bronze Age · Indus Valley",
+      status: "published", pending: true,
+      source: "eras/02-bronze-age/ch04-indus-valley-bronze-age.md",
+      summary: "The largest and most silent Bronze Age civilization: a faceless, temple-less urban world whose script has never been read, so that nearly everything about its religion — the 'proto-Shiva' seal, the mother-goddess figurines, the Great Bath — remains a genuinely open question, and an honest lesson in how much we cannot know." }
   ]
 };

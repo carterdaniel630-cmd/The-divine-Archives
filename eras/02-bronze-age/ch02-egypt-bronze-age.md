@@ -235,6 +235,55 @@ ask why flood myths are so widespread, Egypt is the sharp counter-example: the
 myth is not universal, and the local relationship to water shapes whether a people
 imagines water as apocalypse or as blessing.
 
+## Symbology and sacred encoding
+
+No ancient culture invested its symbols with more power than Egypt, and none
+offers a richer field for this project's abiding distinction — between what a
+tradition *believed* its signs could do and what we can actually show.
+
+**Hieroglyphs as living things.** For the Egyptians, writing was not a neutral
+record of speech; it was *medu-netjer*, "the words of the god," and the signs
+themselves were believed to carry power. A hieroglyph of a bird, a snake, or a
+man was a small image that could, in the charged space of a tomb, become real.
+This belief has left startling physical evidence: in some burial chambers,
+hieroglyphs depicting potentially dangerous creatures were deliberately
+*mutilated* — snakes drawn without heads, or cut in half — so that they could not
+come to life and harm the deceased. The written word was live enough to need
+disarming.
+
+**Heka and words of power.** Behind this stood *heka*, the Egyptian conception of
+magic — not a disreputable fringe practice but a force woven into creation and
+personified as a god. To know a being's true name was to have power over it, and
+much Egyptian ritual consists of authoritative *words of power* spoken or written
+to compel, protect, or transform. The name mattered so much that a royal name was
+enclosed in a protective oval, the *cartouche*, and erasing an enemy's name from
+their monuments — as was done to Akhenaten — was an attempt to erase them from
+existence itself.
+
+**The great symbols.** Egypt encoded theology in a compact visual vocabulary that
+everyone could read: the *ankh*, sign of life; the *djed* pillar, stability and
+the backbone of Osiris; the *was* scepter, dominion; the *scarab*, the rising sun
+and rebirth (from the beetle that seemed to be self-created); and the *wedjat*, the
+restored Eye of Horus, the supreme emblem of healing and protection, painted on
+coffins and worn as an amulet so the dead could see and be made whole.
+
+**A number-symbol, honestly handled.** The wedjat is also the site of a popular
+claim worth handling carefully. It is often said that the six parts of the Eye of
+Horus were used as a system of fractions — 1/2, 1/4, 1/8, 1/16, 1/32, 1/64 — for
+measuring grain. Egyptians did use these "Horus-eye" fractions in the hieratic
+accounting of capacity, and the visual link is charming. But the neat one-to-one
+mapping of each fraction onto a specific piece of the eye is now regarded by a
+number of scholars as a modern reconstruction rather than a demonstrably ancient
+doctrine — a good example of a symbolic "code" that is partly real (the fractions)
+and partly later tidying-up (the exact eye-part scheme).
+
+**Architecture as theology.** Finally, the Egyptian temple was a symbol built at
+scale: its plan a model of the cosmos, its floor rising and its ceiling lowering
+and darkening as one moved inward toward the hidden sanctuary of the god, its
+columns carved as marsh plants so the whole building re-enacted the first mound
+of creation emerging from the waters. To walk into a temple was to walk into the
+Egyptian cosmos in miniature.
+
 ---
 
 ## The evidence, honestly

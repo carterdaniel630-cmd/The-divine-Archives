@@ -46,6 +46,7 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
 | ch02 — Egypt | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
 | ch03 — Mesopotamia | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
+| ch04 — Indus Valley | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
