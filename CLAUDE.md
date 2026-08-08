@@ -43,6 +43,36 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - Review each chapter before starting the next — this is a quality-over-speed project, not a word-count race
 - Do not let it fabricate sources or invent citations to fill gaps in the historical record; flag gaps instead of papering over them
 
+## Depth Standard (expanded)
+"Comprehensive" means: for every tradition covered, pull in every distinct textual source, sect,
+regional variant, and ritual practice with a documented record — not just the well-known
+headline version. This includes:
+- Canonical scripture AND non-canonical/apocryphal/rejected texts (e.g. all forms of biblical
+  material — canonical, deuterocanonical, pseudepigraphal, Nag Hammadi/Gnostic texts — not just
+  the standard canon)
+- Folk and vernacular religion alongside official/institutional religion (what ordinary people
+  actually practiced, not just what priesthoods codified)
+- Esoteric and initiatory traditions: Hermeticism, Kabbalah (Jewish mystical and Christian/Hermetic
+  adaptations), Sufism, Tantra, Gnosticism, Western ceremonial magic (Golden Dawn, Thelema)
+- Witchcraft and folk magic: pre-Christian European folk practice, the witch trial era (as
+  documented history/persecution, not as validation of trial-era accusations), modern
+  Wicca/Neopaganism as a 20th-century new religious movement in its own right
+- Satanism: covered as a real, documented set of traditions — historical accusatory/inquisitorial
+  "Satanism" (largely fabricated by persecutors, per modern scholarship), and actual modern
+  self-identified Satanism (LaVeyan/Church of Satan as an atheistic philosophical system, The
+  Satanic Temple as a political/religious-liberty movement) — treated with the same descriptive,
+  non-sensationalized rigor as any other tradition, not as shock content
+
+Depth over speed still applies — going deeper on each chapter (more source texts, more sects,
+more regional variants) rather than padding language. If a topic has real documented complexity,
+represent that complexity rather than summarizing it away.
+
+## IMPORTANT: This is additive, not a restart
+Everything already built (master-outline.md, ch01-the-flood.md, this file) stays as the
+foundation. Do not regenerate or restructure what already exists — extend it. New chapters
+should go deeper than ch01 where the source material supports it, but should follow the same
+evidence-honesty format, not a different one.
+
 ## MANDATORY REVIEW GATE — do not skip
 - A chapter is a DRAFT until Carter explicitly approves it. Never treat a written chapter as final on your own authority.
 - After finishing a chapter draft: stop, do not start the next chapter automatically, and clearly flag "READY FOR REVIEW: [chapter name]"
