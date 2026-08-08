@@ -171,5 +171,96 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from current reference scholarship and summaries of primary texts rather than memory alone. Genuinely contested points &mdash; the character of Atenism, any Egyptian influence on Israelite monotheism, the reliability of the Plutarch-derived Osiris narrative &mdash; are flagged as disputes rather than resolved. Dates follow the conventional (middle) Egyptian chronology and carry the usual scholarly margins.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch03 */
+  ch03: { html: `
+    <p class="lead">At the bottom of a pit at Ur lay seventy-four people, dressed in gold, who went down alive to attend a single corpse. It opens onto a civilization that invented writing and the city &mdash; and believed people were made to serve the gods.</p>
+
+    <h2>The pit of the golden dead</h2>
+    <p>In the winter of 1928, at the ruins of Ur in southern Iraq, Leonard Woolley&rsquo;s workmen cleared the earth from a burial unlike anything the modern world had seen. At the bottom of a great sloping pit lay the bodies of dozens of people &mdash; in one grave, seventy-four of them, most of them women &mdash; laid out in neat rows, dressed in their finest, gold ribbons in their hair. There were oxen still yoked to wagons, soldiers with their spears, musicians with their lyres. They had gone down into the pit alive, arranged themselves, and died there, all at once, in attendance on a single important corpse. The richest tomb chamber belonged to a woman whose cylinder seal named her Puabi.</p>
+    <p>Woolley, a man of his time, imagined the scene as serene: the retainers filing down in their jewelry, drinking a cup of poison, lying down to sleep. But when the surviving skulls were re-examined a lifetime later with CT scanners, the beautiful version came apart. Several showed the marks of blunt-force trauma, and traces suggesting the bodies had been heated and treated to preserve them for the days of the funeral. The attendants of Ur, it now seems, were more likely killed than lulled &mdash; and then kept, like grave goods, until the ceremony was ready.</p>
+    <p>That single find opens onto everything this chapter is about: a civilization that invented writing and the city, that gave the world its first literature and its first law monuments, and that lived under gods it believed had made human beings for one purpose &mdash; to work, and to serve.</p>
+
+    <h2>The world&rsquo;s first literature</h2>
+    <p>Around 3300 BCE, in the temple-city of Uruk, someone pressed the first true writing into wet clay &mdash; not to sing of gods, but to count. The earliest cuneiform tablets are accounts: barley, livestock, rations of beer. Only over centuries did the wedge-shaped script grow supple enough to hold poetry, prayer, and law. When it did, Mesopotamia produced the oldest literature we possess.</p>
+    <p>That literature survived because of how it was taught. Scribes trained for years in the <em>edubba</em>, the &ldquo;tablet house,&rdquo; copying and recopying sign-lists, proverbs, hymns, and the great poems. Because a clay tablet can last five thousand years, we can still read what they read &mdash; the <em>Epic of Gilgamesh</em>, the <em>Descent of Inanna</em>, the flood poem <em>Atrahasis</em>, and the creation epic <em>Enuma Elish</em> &mdash; alongside endless scholarly compilations of omens, medicine, and star-lore. The Mesopotamian scribe was priest, scientist, and archivist at once, and he believed the universe was a text to be read as surely as a tablet.</p>
+
+    <h2>Cosmology and the gods</h2>
+    <p>The Mesopotamian universe was crowded &mdash; later god-lists name over three thousand deities &mdash; but a handful ran the cosmos. <strong>An</strong> (Anu) was the remote sky-father. <strong>Enlil</strong>, lord of wind and storm, held the Tablet of Destinies and ruled as king of the gods from Nippur. <strong>Enki</strong> (Ea), god of the sweet waters and of wisdom, was the clever friend of humanity who again and again warns a favored man of the gods&rsquo; darker plans. <strong>Inanna</strong> (Ishtar), goddess of sexual love and of war, was the most electric figure in the pantheon. The moon-god <strong>Nanna</strong> (Sin) presided over Ur; the sun-god <strong>Utu</strong> (Shamash) saw everything and so became the god of justice.</p>
+    <p>The fullest creation story is Babylon&rsquo;s <em>Enuma Elish</em>. The world begins as a mingling of waters: Apsu the fresh and <strong>Tiamat</strong> the salt-sea mother of chaos. When the young gods grow noisy and Tiamat raises an army of monsters, the champion <strong>Marduk</strong> agrees to fight on the condition that he be made king of the gods. He slays Tiamat, splits her body like a shellfish to make sky and earth, sets the stars in their courses, and then fashions humankind from the blood of a slain rebel god &mdash; expressly so that human beings can do the gods&rsquo; labor and let the gods rest. This is the Mesopotamian anthropology in a sentence: people were made to work so that heaven would not have to. The <em>Enuma Elish</em> was recited each spring at the <strong>Akitu</strong> New Year festival, re-enthroning Marduk and reaffirming that Babylon stood at the center of the world.</p>
+
+    <h2>Law and the moral order</h2>
+    <p>In 1901, French archaeologists at Susa unearthed a black stone pillar more than two meters tall. At its head, the sun-god Shamash &mdash; god of justice &mdash; hands the king <strong>Hammurabi</strong> of Babylon the rod and ring of authority; below run some 282 rulings. It is the famous &ldquo;Code of Hammurabi,&rdquo; from about 1754 BCE, ancestor of a phrase everyone knows &mdash; an eye for an eye, the principle of exact retaliation, scaled by rank.</p>
+    <p>But here honesty requires a correction. Recent scholarship increasingly doubts that this was a &ldquo;law code&rdquo; in any working sense: actual court records almost never cite it, and judges did not seem to rule by it. The stele reads better as a <strong>royal monument</strong> &mdash; a king&rsquo;s advertisement of his own justice, addressed as much to the gods and to posterity as to any courtroom. Whether living statute or ideological display is genuinely debated; the theology behind it is not. Justice descended from the gods, through the king, to the land &mdash; the same conviction, in a different key, that ran through Egypt&rsquo;s Ma&rsquo;at next door.</p>
+
+    <h2>Ritual, the temple, and the reading of signs</h2>
+    <p>At the heart of every city stood the house of its god, often crowned by a <strong>ziggurat</strong>, the great stepped platform-tower. The temple was not a meeting-hall; it was, literally, the god&rsquo;s household. The cult statue <em>was</em> the god&rsquo;s presence, and the priests&rsquo; daily task was domestic: to wash it, clothe it, set meals before it twice a day, and put it to bed. A god properly fed kept the city safe; a god whose statue was carried off in war was a catastrophe.</p>
+    <p>Because the gods&rsquo; will governed everything and was never quite knowable, Mesopotamians became the ancient world&rsquo;s great masters of <strong>divination</strong>. They read the future in the liver of sacrificed sheep (extispicy), in the planets, in dreams, in the shapes of oil on water, in monstrous births. This was a scholarly discipline, with vast reference works cataloguing omens; a king would not go to war or crown an heir without asking the gods through the diviners first. Behind it lay a distinctive mood &mdash; an anxious sense that the gods&rsquo; intentions were real, consequential, and maddeningly hard to read.</p>
+
+    <h2>The grimmest afterlife</h2>
+    <p>For all its religious energy, Mesopotamia offered almost nothing to hope for after death &mdash; a striking contrast with Egypt. There was no weighing of the heart, no paradise. The dead, good and bad alike, went down to the <em>Kur</em>, the &ldquo;land of no return,&rdquo; a dark house where the shades ate dust and the queen <strong>Ereshkigal</strong> reigned. The <em>Descent of Inanna</em> shows even a goddess stripped and hung as a corpse when she trespasses there, freed only by Enki&rsquo;s cunning and only at the price of sending her lover Dumuzi down in her place. The best a dead Mesopotamian could hope for was to be remembered and given water-offerings by the living. It was a religion intensely concerned with <em>this</em> life, precisely because the next held so little.</p>
+
+    <h2>What the ground shows</h2>
+    <p>Mesopotamia&rsquo;s archaeology is deep and, unusually, often matches its texts. The temple-cities named in the literature &mdash; Uruk, Ur, Nippur, Eridu &mdash; have been dug, their ziggurats and temple accounts recovered. The Royal Cemetery of Ur, with its death pits and the inlaid Standard of Ur, gives a vivid picture of Early Dynastic kingship around 2600&ndash;2450 BCE. Hammurabi&rsquo;s stele survives intact in the Louvre. Tens of thousands of administrative and scholarly tablets let us reconstruct temple economies, school curricula, and the omen sciences in extraordinary detail &mdash; few ancient religions can be checked against their own paperwork this way.</p>
+
+    <h2>Connections</h2>
+    <p>Mesopotamia is the hinge of the Bronze-Age world. It is the homeland of the flood story traced in the Flood chapter &mdash; Ziusudra, Atrahasis, and Utnapishtim were Mesopotamian heroes before Noah was a Hebrew one. Its creation epic stands behind later cosmologies: the <em>Enuma Elish</em>&rsquo;s watery chaos, Tiamat, is widely compared to the <em>tehom</em>, &ldquo;the deep,&rdquo; of Genesis 1, and both describe the <em>ordering</em> of pre-existing chaos rather than creation from nothing &mdash; though whether Genesis borrowed directly or shared a common inheritance is debated. And the contrast with Egypt is illuminating precisely because the two were contemporaries: two great river civilizations, one facing death with confident hope, the other with dust and resignation.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Mesopotamia did not merely write about its gods; it encoded them &mdash; in numbers, in signs, in the measurements of its buildings and the movements of its sky. For a civilization that invented writing, the idea that reality was itself a kind of script came naturally.</p>
+    <p><strong>Writing as sacred power.</strong> Cuneiform was never only a tool for accounts. Its invention was credited to the goddess <strong>Nisaba</strong> (later the god <strong>Nabu</strong>), and to write was to share in something the gods did. The clearest expression is the mythical <strong>Tablet of Destinies</strong> &mdash; a single clay tablet whose possession conferred supreme authority over the cosmos, so that the plot of more than one myth turns on who holds it. The scribes&rsquo; endless lists &mdash; of gods, words, stones, stars &mdash; were themselves a way of ordering the world by naming it in the right sequence.</p>
+    <p><strong>The numbers of the gods.</strong> The great deities were each assigned a number within the base-60 system Mesopotamia gave the world (the source of our 60-minute hour and 360-degree circle). Anu held <strong>60</strong>; Enlil <strong>50</strong>; Ea/Enki <strong>40</strong>; the moon-god Sin <strong>30</strong>; the sun-god Shamash <strong>20</strong>; and Inanna/Ishtar <strong>15</strong>, exactly half her father Sin&rsquo;s. These are genuinely attested divine numbers, sometimes used to <em>write</em> a god&rsquo;s name as a numeral. What they meant to their users is less certain &mdash; and the modern systems that turn them into musical frequencies or &ldquo;Anunnaki&rdquo; codes are recent inventions, not ancient doctrine, and should not be read back into the sources.</p>
+    <p><strong>Numbered into stone.</strong> One case shows number-symbolism put to work directly. An inscription of the Assyrian king <strong>Sargon II</strong> (late 8th century BCE) records that he built the wall of his new capital at Khorsabad to a length of <strong>16,283 cubits</strong> &mdash; the numerical value of his own name. It is frequently cited as the earliest documented example of what later traditions would call gematria: embedding a name&rsquo;s number-value in the physical world. (It sits just past this era&rsquo;s edge, but it is the mature form of a Bronze-Age habit of mind.)</p>
+    <p><strong>Seals and architecture.</strong> Almost every person of standing carried a <strong>cylinder seal</strong>, rolled across wet clay to sign documents &mdash; but the tiny carved scenes were a symbolic language of presentation before a god, protective spirits, and divine emblems, believed to carry apotropaic power. The ziggurat, in turn, was a theological statement in mud-brick: Babylon&rsquo;s bore the name <strong>Etemenanki</strong>, &ldquo;the House of the Foundation of Heaven and Earth&rdquo; &mdash; a built claim that the temple was the hinge joining the divine and human worlds.</p>
+    <p><strong>The sky as divine writing.</strong> Mesopotamians read the heavens as a text the gods had written. The major gods were identified with the visible planets &mdash; Ishtar with Venus, Shamash with the Sun, Sin with the Moon, Marduk with Jupiter, Nabu with Mercury &mdash; and the vast omen series <em>Enuma Anu Enlil</em> catalogued celestial signs and their meanings. This conviction, that the sky was a script to be decoded, is the direct ancestor of later astrology.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>Writing was invented in southern Mesopotamia (Uruk) around 3300 BCE, first for administration; Mesopotamia produced the oldest surviving literature, law monuments, and omen-texts.</li>
+          <li>The major deities, the temple-and-ziggurat cult of feeding and housing the god&rsquo;s statue, and the central role of divination are richly attested.</li>
+          <li>The <em>Enuma Elish</em>&rsquo;s account of Marduk, Tiamat, and humans created to labor for the gods, and its recitation at the Akitu festival.</li>
+          <li>The Royal Cemetery of Ur and its retainer burials are real; recent forensic work indicates at least some attendants died of blunt-force trauma.</li>
+          <li>The divine numbers, planet&ndash;god identifications, and Sargon II&rsquo;s Khorsabad wall &ldquo;built to the number of his name&rdquo; as an early documented name-numerology.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported</h4>
+        <ul>
+          <li>Woolley&rsquo;s romantic reconstruction of the Ur retainers peacefully drinking poison. The forensic evidence points to killing.</li>
+          <li>The &ldquo;Code of Hammurabi&rdquo; as a functioning statutory law code governing Babylonian courts; many scholars now read it as a royal monument.</li>
+          <li>Any claim that Genesis simply &ldquo;copied&rdquo; the <em>Enuma Elish</em>; the parallels are real, but direct literary dependence is not established.</li>
+          <li>The modern esoteric systems built on the divine numbers (&ldquo;Anunnaki&rdquo; frequency codes and the like) &mdash; recent inventions, not what the numbers meant to Mesopotamians.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The exact date and compositional history of the <em>Enuma Elish</em> (a 12th-century BCE origin is widely favored) and the precise nature of its relationship to Genesis 1.</li>
+          <li>The full meaning of the Ur death pits &mdash; who the victims were, whether willing, and how representative the practice was.</li>
+          <li>Whether the Code of Hammurabi is best read as legislation, case-law record, or royal ideological display.</li>
+          <li>How much continuity to assume across the long Sumerian-to-Babylonian transition (e.g., equating Inanna with Ishtar).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Primary texts</h4>
+      <ul>
+        <li><em>Enuma Elish</em>; the <em>Descent of Inanna</em>; the Law Stele of Hammurabi (Louvre).</li>
+      </ul>
+      <h4>Scholarship &amp; archaeology</h4>
+      <ul>
+        <li>Reference treatments of Mesopotamian religion, the gods, and divination (Britannica; World History Encyclopedia; Ancient Origins).</li>
+        <li>A. Baadsgaard et al., &ldquo;Human sacrifice and intentional corpse preservation in the Royal Cemetery of Ur,&rdquo; <em>Antiquity</em>; Penn Museum, <em>Expedition</em>.</li>
+        <li>The Code of Hammurabi as monument vs. statute (summarizing Van De Mieroop, Yoffee).</li>
+        <li>Divine numbers and Sargon II&rsquo;s Khorsabad wall as early name-numerology (Jewish Virtual Library, &ldquo;Gematria&rdquo;); the celestial omen series <em>Enuma Anu Enlil</em>.</li>
+      </ul>
+      <p class="source-note">Researched from primary-text translations and current scholarship rather than memory alone. The most contested points &mdash; the Ur death-pit deaths, the function of Hammurabi&rsquo;s stele, the dating and biblical relationship of the <em>Enuma Elish</em>, and the meaning of the divine numbers &mdash; are flagged as live disputes rather than resolved. Dates follow conventional (middle) chronology.</p>
+    </div>
   ` }
 };

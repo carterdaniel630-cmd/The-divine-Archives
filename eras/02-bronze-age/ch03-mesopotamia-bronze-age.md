@@ -178,6 +178,67 @@ contemporaries: two great river civilizations, one facing death with confident h
 and elaborate tombs, the other with dust and resignation, each shaped by the river
 it depended on and the gods it imagined behind it.
 
+## Symbology and sacred encoding
+
+Mesopotamia did not merely write about its gods; it encoded them &mdash; in
+numbers, in signs, in the very measurements of its buildings and the movements of
+its sky. For a civilization that invented writing, the idea that reality was itself
+a kind of script came naturally, and it built several distinct symbolic systems on
+that idea.
+
+**Writing as sacred power.** Cuneiform was never only a tool for accounts. Its
+invention was credited to the goddess **Nisaba** (later to the god **Nabu**), and
+to write was to participate in something the gods did. The clearest expression of
+this is the mythical **Tablet of Destinies** &mdash; a single clay tablet whose
+possession conferred supreme authority over the cosmos, so that the plot of more
+than one myth turns on who holds it. Power, in Mesopotamia, could be literally
+inscribed. The endless scholarly lists the scribes compiled &mdash; of gods, words,
+stones, stars &mdash; were themselves a way of ordering and controlling the world by
+naming it in the right sequence.
+
+**The numbers of the gods.** The great deities were each assigned a number within
+the base-60 (sexagesimal) system Mesopotamia gave the world &mdash; the same system
+behind our 60-minute hour and 360-degree circle. Anu, the sky-father, held **60**;
+Enlil **50**; Ea/Enki **40**; the moon-god Sin **30**; the sun-god Shamash **20**;
+and Inanna/Ishtar **15** (exactly half her father Sin&rsquo;s). These are genuinely
+attested divine numbers, occasionally used to <em>write</em> a god&rsquo;s name as a
+numeral. What they meant to their users is less certain, and this is a place to be
+careful: the elaborate modern systems that turn these numbers into musical
+frequencies or &ldquo;Anunnaki&rdquo; codes are twentieth- and twenty-first-century
+inventions, not ancient Mesopotamian doctrine, and should not be read back into the
+sources.
+
+**Numbered into stone.** One case shows number-symbolism put to work with unusual
+directness. An inscription of the Assyrian king **Sargon II** (late 8th century
+BCE) records that he built the wall of his new capital, Dur-Sharrukin (Khorsabad),
+to a length of **16,283 cubits** &mdash; the numerical value of his own name. It is
+frequently cited as the earliest documented example of what later traditions would
+call gematria or isopsephy: assigning number-values to a name and embedding them in
+the physical world. (It sits just past this era&rsquo;s edge, in the Iron Age, but
+it is the mature form of a Bronze-Age habit of mind.)
+
+**Seals: identity and protection in miniature.** Almost every person of standing
+carried a **cylinder seal** &mdash; a small carved stone rolled across wet clay to
+sign documents. But the tiny scenes on them were a symbolic language in their own
+right: presentation scenes before a god, protective spirits, mythological combats,
+divine emblems. A seal marked its owner&rsquo;s identity and, many believed, carried
+apotropaic power &mdash; a portable icon as much as a signature.
+
+**Architecture as cosmology.** The ziggurat was a theological statement in mud-brick.
+The great ziggurat of Babylon bore the name **Etemenanki**, &ldquo;the House of the
+Foundation of Heaven and Earth&rdquo; &mdash; a built claim that the temple was the
+hinge joining the divine and human worlds, the cosmic mountain and the point where
+the god descended. Temple and city names routinely encoded such claims; to read the
+name was to read the theology.
+
+**The sky as divine writing.** Finally, Mesopotamians read the heavens as a text the
+gods had written. The major gods were identified with the visible planets &mdash;
+Ishtar with Venus, Shamash with the Sun, Sin with the Moon, Marduk with Jupiter,
+Ninurta/Nergal with Saturn and Mars, Nabu with Mercury &mdash; and the vast omen
+series <em>Enuma Anu Enlil</em> catalogued celestial signs and their meanings. This
+conviction, that the sky was a script to be decoded, is the direct ancestor of later
+astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
+
 ---
 
 ## The evidence, honestly
@@ -199,6 +260,11 @@ it depended on and the gods it imagined behind it.
   were treated to preserve them.
 - The grim, undifferentiated Mesopotamian underworld (the <em>Kur</em> under
   Ereshkigal), in sharp contrast to Egypt&rsquo;s judged afterlife, is well attested.
+- The divine numbers (Anu 60, Enlil 50, Ea 40, Sin 30, Shamash 20, Ishtar 15), the
+  planet&ndash;god identifications, cylinder-seal iconography, and the celestial omen
+  series <em>Enuma Anu Enlil</em> are documented; Sargon II&rsquo;s Khorsabad wall
+  &ldquo;built to the number of his name&rdquo; is a real inscription and an early
+  documented instance of name-numerology.
 
 **What&rsquo;s not supported by the evidence**
 
@@ -211,6 +277,10 @@ it depended on and the gods it imagined behind it.
 - Any claim that Genesis simply &ldquo;copied&rdquo; the <em>Enuma Elish</em>. The
   parallels (watery chaos, ordering rather than creation ex nihilo) are real and
   important, but direct literary dependence is not established.
+- The modern esoteric systems built on the divine numbers &mdash; &ldquo;Anunnaki&rdquo;
+  frequency codes, sound-healing chords, and the like. The number assignments are
+  ancient; these interpretations of them are twentieth-/twenty-first-century
+  inventions and are not what the numbers meant to Mesopotamians.
 
 **What&rsquo;s genuinely open**
 
@@ -257,6 +327,14 @@ it depended on and the gods it imagined behind it.
 *On Enuma Elish and Genesis*
 - [Bible Odyssey: The Enuma Elish and the Bible](https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/);
   [TheTorah.com: Enuma Elish](https://www.thetorah.com/article/enuma-elish-babylonias-creation-myth-and-the-enthronement-of-marduk).
+
+*Symbology and sacred encoding*
+- Divine numbers of the gods &mdash; [Wikipedia: Sin (mythology)](https://en.wikipedia.org/wiki/Sin_(mythology)); god-list traditions.
+- Nisaba and Nabu as patrons of writing &mdash; [Wikipedia: Nisaba](https://en.wikipedia.org/wiki/Nisaba).
+- Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest
+  documented name-numerology) &mdash; [Jewish Virtual Library: Gematria](https://www.jewishvirtuallibrary.org/gematria-2).
+- Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god
+  identifications &mdash; standard Assyriological reference works.
 
 *Note on sourcing:* Researched from primary-text translations and current scholarship
 rather than memory alone, per the project standard. The most contested points &mdash;

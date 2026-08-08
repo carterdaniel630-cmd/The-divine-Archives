@@ -74,6 +74,12 @@ window.ARCHIVE = {
     { id: "ch02", title: "Egypt", kind: "tradition",
       era: "02-bronze-age", eraLabel: "Bronze Age · Egypt",
       status: "published", source: "eras/02-bronze-age/ch02-egypt-bronze-age.md",
-      summary: "A civilization built on an annual flood and organized around the afterlife: Ma'at and the weighing of the heart, the Osiris myth, mummification and the scribes, and the Amarna experiment in one god." }
+      summary: "A civilization built on an annual flood and organized around the afterlife: Ma'at and the weighing of the heart, the Osiris myth, mummification and the scribes, and the Amarna experiment in one god." },
+
+    { id: "ch03", title: "Mesopotamia", kind: "tradition",
+      era: "02-bronze-age", eraLabel: "Bronze Age · Mesopotamia",
+      status: "published", pending: true,
+      source: "eras/02-bronze-age/ch03-mesopotamia-bronze-age.md",
+      summary: "The land where writing and the city began: the Enuma Elish and Marduk's ordering of chaos, the great gods and their temple-and-ziggurat cult, divination, Hammurabi's law-stele, the grim underworld, and the divine numbers and sacred encoding of a civilization that read reality as a script." }
   ]
 };

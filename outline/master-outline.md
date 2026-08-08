@@ -36,16 +36,18 @@ opening scene/artifact, narrative body, explicit evidence-honesty close.
 ## Chapter status board
 
 The single source of truth for where each chapter stands. Update on every
-change. A chapter is `APPROVED` **only** after Carter says so in-session; only
-then does its file move from `/drafts/` into `eras/[era]/`.
+change. Under the current publishing policy, chapters **auto-publish** when
+drafted and go live carrying a "Recently added — pending review" tag; Carter
+clears them in batch, at which point the tag is removed and the status becomes
+`CLEARED`.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch01 — The Flood | Comparative theme | cross-era (seed/template) | **APPROVED** | `themes/ch01-the-flood.md` |
-| ch02 — Egypt | Tradition | 02-bronze-age | **APPROVED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
-| ch03 — Mesopotamia | Tradition | 02-bronze-age | **READY FOR REVIEW** | `drafts/ch03-mesopotamia-bronze-age.md` |
+| ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
+| ch02 — Egypt | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
+| ch03 — Mesopotamia | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
 
-Status values: `not started` · `researching` · `drafting` · `READY FOR REVIEW` · `revising` · `APPROVED`.
+Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
 ## Per-chapter content checklist (from CLAUDE.md)
 

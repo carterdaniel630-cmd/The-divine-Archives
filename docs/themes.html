@@ -71,7 +71,9 @@
       var ch = t.chapter ? chapterById(t.chapter) : null;
       var status = ch ? ch.status : "planned";
       var s = STATUS[status] || STATUS.planned;
-      var badge = '<span class="badge ' + s[1] + '">' + s[0] + "</span>";
+      var badge = (ch && ch.pending)
+        ? '<span class="badge is-pending">Recently added &middot; pending review</span>'
+        : '<span class="badge ' + s[1] + '">' + s[0] + "</span>";
       var head =
         '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
           '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.2rem">' + t.name + "</span>" +

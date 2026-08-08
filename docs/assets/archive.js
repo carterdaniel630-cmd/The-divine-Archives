@@ -28,7 +28,8 @@
     draft:     { label: "In draft", cls: "is-review" },
     planned:   { label: "In preparation", cls: "is-planned" }
   };
-  function badge(status) {
+  function badge(status, pending) {
+    if (pending) return '<span class="badge is-pending">Recently added &middot; pending review</span>';
     var s = STATUS[status] || STATUS.planned;
     return '<span class="badge ' + s.cls + '">' + s.label + "</span>";
   }
@@ -82,7 +83,7 @@
       var inner =
         '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
           '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(name) + "</span>" +
-          badge(status) +
+          badge(status, ch && ch.pending) +
         "</div>";
       if (ch) {
         var a = el('<a class="card" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
@@ -106,7 +107,7 @@
         a.innerHTML =
           '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
             '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(ch.title) + "</span>" +
-            badge(ch.status) +
+            badge(ch.status, ch.pending) +
           "</div>" +
           '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p>";
         tlist.appendChild(a);
@@ -153,7 +154,7 @@
             "<span>" +
               '<span style="font-family:var(--font-display);letter-spacing:0.04em;color:var(--parchment);font-size:1.08rem">' + esc(r.name) + "</span>" +
               '<span class="muted" style="font-size:0.82rem;display:block;margin-top:0.15rem">Era ' + esc(r.era.num) + " &middot; " + esc(r.era.name) + "</span>" +
-            "</span>" + badge(r.status) +
+            "</span>" + badge(r.status, r.chapter && r.chapter.pending) +
           "</div>";
         listWrap.appendChild(a);
       });
@@ -188,14 +189,24 @@
         "</p>" +
         '<p class="eyebrow">' + esc(ch.eraLabel) + "</p>" +
         "<h1>" + esc(ch.title) + "</h1>" +
-        '<p style="margin-top:0.6rem">' + badge(ch.status) + "</p>" +
+        '<p style="margin-top:0.6rem">' + badge(ch.status, ch.pending) + "</p>" +
       "</div>"
     ));
 
     var rendered = (window.CHAPTERS && window.CHAPTERS[ch.id]) ? window.CHAPTERS[ch.id].html : null;
     var body = el('<section class="wrap article"></section>');
     if (ch.status === "published" && rendered) {
-      body.innerHTML = rendered; // finished, approved chapters render here
+      if (ch.pending) {
+        body.appendChild(el(
+          '<div class="pending-banner">' +
+            '<strong>Recently added &middot; pending full review.</strong> ' +
+            'This chapter is live but has not yet completed the keeper&rsquo;s review pass. ' +
+            'It is sourced to the project&rsquo;s standard, but wording and detail may still change. ' +
+            'The tag is removed once the chapter is cleared.' +
+          "</div>"
+        ));
+      }
+      body.insertAdjacentHTML("beforeend", rendered); // published chapters render here
       var nav = el('<div class="chapter-nav"></div>');
       nav.innerHTML = (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">&larr; ' + esc((eraBySlug(ch.era) || {}).name || "Back") + "</a>" : '<a href="themes.html">&larr; All themes</a>') +
         '<a href="eras.html">Browse the ages &rarr;</a>';

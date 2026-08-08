@@ -194,6 +194,19 @@ img { max-width: 100%; }
 .badge.is-published { color: var(--good); border-color: rgba(126,158,92,0.4); }
 .badge.is-review    { color: var(--warn); border-color: rgba(194,149,78,0.4); }
 .badge.is-planned   { color: var(--ink-faint); }
+.badge.is-pending {
+  color: var(--gold-bright); border-color: rgba(217,176,106,0.5);
+  background: rgba(185,143,78,0.08);
+}
+
+/* mandatory "pending full review" banner on live-but-uncleared chapters */
+.pending-banner {
+  max-width: var(--measure); margin: 0 auto 1.8rem;
+  border: 1px solid rgba(217,176,106,0.45); border-left: 3px solid var(--gold);
+  background: rgba(185,143,78,0.10); border-radius: 3px;
+  padding: 1rem 1.3rem; color: var(--ink-dim); font-size: 0.92rem; line-height: 1.6;
+}
+.pending-banner strong { color: var(--gold-bright); }
 
 /* ---------- cards ---------- */
 .card {
