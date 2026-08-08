@@ -73,16 +73,55 @@ foundation. Do not regenerate or restructure what already exists — extend it. 
 should go deeper than ch01 where the source material supports it, but should follow the same
 evidence-honesty format, not a different one.
 
-## MANDATORY REVIEW GATE — do not skip
-- A chapter is a DRAFT until Carter explicitly approves it. Never treat a written chapter as final on your own authority.
-- After finishing a chapter draft: stop, do not start the next chapter automatically, and clearly flag "READY FOR REVIEW: [chapter name]"
-- Do not commit a chapter to the `main` branch until it's marked approved. Draft chapters live on a `drafts` branch or in a `/drafts/` folder.
-- Do not add anything to the public website build until it has cleared review.
-- If Carter requests changes, revise in place — don't start a parallel new draft.
+## Publishing Policy (updated — replaces the old pre-publish review gate)
+- Auto-publish is ON: chapters go live on the website as soon as drafted. No per-chapter approval
+  is required before publishing.
+- Every newly published chapter MUST carry a visible "Recently added — pending full review" tag
+  on its live page until Carter clears it in a batch review pass. This tag is mandatory, not
+  optional — it's what replaces the old approval gate.
+- Carter reviews in batches, not chapter-by-chapter, and sends back correction notes. Revise in
+  place when notes come back; remove the pending-review tag only when Carter explicitly clears
+  that chapter.
+- Still applies, not relaxed: real sourcing only, no fabricated citations, contested claims
+  flagged not resolved. Auto-publish removes the pre-publish approval step, not the accuracy bar.
+- If Carter requests changes to a chapter, revise in place — don't start a parallel new draft.
 
-## Website (Phase 2 — do not start until Phase 1 has real approved content)
-- Purpose: public-facing presentation of approved chapters only
-- Recommended stack: static site (e.g. Next.js or plain static HTML/Markdown-rendered) deployable via GitHub Pages/Vercel — cheap, no backend needed for read-only reference content
-- Structure: home/intro → browse by era → browse by tradition → individual chapter pages → about/methodology page (sourcing standard, disclaimers on contested claims)
-- Do not build this until there are enough approved chapters to make a real site (suggest: wait until at least one full era is done)
-- Every published chapter should visibly carry its sourcing/evidence-honesty section — don't strip it out for the public version
+## Symbology & Sacred Encoding (new — deep dive required per tradition)
+Every chapter must include a dedicated section on that tradition's symbolic/encoded systems —
+this is not optional decoration, it's core content. Cover, where the tradition has them:
+- Sacred/ritual scripts and their symbolic (not just linguistic) function — e.g. hieroglyphs as
+  both writing system and magical/ritual object in Egyptian belief, runes as divinatory tools
+  alongside their alphabetic use
+- Numerology/letter-value systems — e.g. Hebrew gematria, Greek isopsephy, Arabic abjad
+  numerals — including well-documented examples of how they were actually used historically,
+  not invented examples
+- Physical relics and artifacts claimed to carry sacred power or hidden meaning — e.g. the
+  Shroud of Turin — covered with the same evidence-honesty standard as everything else
+  (documented scientific testing/dating history, the actual state of scholarly consensus,
+  competing claims, not asserted as proven either way)
+- Claimed hidden/encoded text within scripture (e.g. Bible codes, gematria-based hidden-message
+  claims, palindromes and acrostics that are genuinely present in original-language texts) —
+  distinguish clearly between (a) real, well-documented literary devices intentionally used by
+  ancient authors and (b) later pattern-finding claims (e.g. equidistant letter sequence "Bible
+  code" claims from the 1990s) that have been statistically debunked — cover both, but be
+  explicit about which is which
+- Iconography and visual symbol systems — sacred geometry, divine attributes encoded in art,
+  color/material symbolism, architectural symbolism (temple/church/mosque layouts as
+  theological statements)
+
+Same rule as everywhere else: document what a tradition believes and what the evidence actually
+shows about a claim, and keep those two things clearly distinguishable. A claim being sacred to
+believers and a claim being historically/scientifically verified are different statements —
+never blur them into one.
+
+## Website & Domain
+- Domain: getconexto.com (repurposed for this project; the wellness/dropshipping use of this
+  domain is on hold — do not revert or repurpose it again without being told explicitly)
+- Purpose: public-facing presentation of all published chapters, including those pending review
+  (clearly tagged as such)
+- Structure: home/intro → browse by era → browse by tradition → individual chapter pages → about/
+  methodology page (sourcing standard, disclaimers on contested claims, note on pending-review tags)
+- Every chapter page must visibly carry its sourcing/evidence-honesty section — don't strip it out
+  for the public version
+- Do not make further domain/DNS/infrastructure changes beyond the current live setup without
+  explicit instruction
