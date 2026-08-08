@@ -41,7 +41,7 @@ then does its file move from `/drafts/` into `eras/[era]/`.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch01 — The Flood | Comparative theme | cross-era (seed/template) | not started | — |
+| ch01 — The Flood | Comparative theme | cross-era (seed/template) | **READY FOR REVIEW** | `drafts/ch01-the-flood.md` |
 
 Status values: `not started` · `researching` · `drafting` · `READY FOR REVIEW` · `revising` · `APPROVED`.
 
