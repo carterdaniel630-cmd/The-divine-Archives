@@ -1,0 +1,232 @@
+/* ==========================================================================
+   THE DIVINE ARCHIVES — shared rendering & navigation
+   Vanilla JS. Core navigation is hard-coded in each page's HTML so it works
+   without scripts; this file renders the data-driven lists and the reader.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var A = window.ARCHIVE || { eras: [], chapters: [], themes: [] };
+
+  function el(html) {
+    var t = document.createElement("template");
+    t.innerHTML = html.trim();
+    return t.content.firstChild;
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function qs(name) {
+    return new URLSearchParams(window.location.search).get(name) || "";
+  }
+
+  var STATUS = {
+    published: { label: "In the archive", cls: "is-published" },
+    review:    { label: "Awaiting review", cls: "is-review" },
+    draft:     { label: "In draft", cls: "is-review" },
+    planned:   { label: "In preparation", cls: "is-planned" }
+  };
+  function badge(status) {
+    var s = STATUS[status] || STATUS.planned;
+    return '<span class="badge ' + s.cls + '">' + s.label + "</span>";
+  }
+
+  function chapterFor(traditionName) {
+    for (var i = 0; i < A.chapters.length; i++) {
+      if (A.chapters[i].title.toLowerCase() === traditionName.toLowerCase()) return A.chapters[i];
+    }
+    return null;
+  }
+  function eraBySlug(slug) {
+    for (var i = 0; i < A.eras.length; i++) if (A.eras[i].slug === slug) return A.eras[i];
+    return null;
+  }
+  function chapterById(id) {
+    for (var i = 0; i < A.chapters.length; i++) if (A.chapters[i].id === id) return A.chapters[i];
+    return null;
+  }
+
+  /* ---------------- ERA DETAIL PAGE ---------------- */
+  function renderEra(mount) {
+    var era = eraBySlug(qs("era"));
+    if (!era) {
+      mount.appendChild(el('<p class="notice">That age could not be found in the archive. <a href="eras.html">Return to the ages</a>.</p>'));
+      return;
+    }
+    document.title = era.name + " — The Divine Archives";
+
+    var head = el(
+      '<div class="page-head">' +
+        '<p class="crumb" style="justify-content:center">' +
+          '<a href="index.html">Archive</a><span class="sep">/</span>' +
+          '<a href="eras.html">The Nine Ages</a><span class="sep">/</span>' +
+          '<span>' + esc(era.name) + '</span>' +
+        '</p>' +
+        '<p class="eyebrow">Era ' + esc(era.num) + " &middot; " + esc(era.dates) + '</p>' +
+        "<h1>" + esc(era.name) + "</h1>" +
+        '<p class="lede">' + esc(era.blurb) + "</p>" +
+      "</div>"
+    );
+    mount.appendChild(head);
+
+    var section = el('<section class="wrap" style="max-width:52rem;padding-block:2rem 1rem"></section>');
+    section.appendChild(el('<div class="ornament" style="margin-bottom:2rem"><span>&#10022;</span></div>'));
+    section.appendChild(el('<p class="eyebrow center" style="margin-bottom:1.4rem">Traditions of this age</p>'));
+
+    var list = el('<div style="display:flex;flex-direction:column;gap:0.9rem"></div>');
+    era.traditions.forEach(function (name) {
+      var ch = chapterFor(name);
+      var status = ch ? ch.status : "planned";
+      var inner =
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
+          '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(name) + "</span>" +
+          badge(status) +
+        "</div>";
+      if (ch) {
+        var a = el('<a class="card" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
+        a.innerHTML = inner + '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p>";
+        list.appendChild(a);
+      } else {
+        var d = el('<div class="card" style="opacity:0.75;cursor:default"></div>');
+        d.innerHTML = inner + '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem;font-style:italic">A chapter for this tradition is planned but not yet written.</p>';
+        list.appendChild(d);
+      }
+    });
+    section.appendChild(list);
+
+    // comparative themes touching this era
+    var themeChapters = A.chapters.filter(function (c) { return c.kind === "theme"; });
+    if (themeChapters.length) {
+      section.appendChild(el('<p class="eyebrow center" style="margin:2.6rem 0 1.4rem">Comparative themes across this age</p>'));
+      var tlist = el('<div style="display:flex;flex-direction:column;gap:0.9rem"></div>');
+      themeChapters.forEach(function (ch) {
+        var a = el('<a class="card" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
+        a.innerHTML =
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
+            '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(ch.title) + "</span>" +
+            badge(ch.status) +
+          "</div>" +
+          '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p>";
+        tlist.appendChild(a);
+      });
+      section.appendChild(tlist);
+    }
+
+    mount.appendChild(section);
+  }
+
+  /* ---------------- TRADITIONS INDEX ---------------- */
+  function renderTraditions(mount) {
+    // compile a unique, sorted list of traditions with the era each belongs to
+    var rows = [];
+    A.eras.forEach(function (era) {
+      era.traditions.forEach(function (name) {
+        var ch = chapterFor(name);
+        rows.push({ name: name, era: era, status: ch ? ch.status : "planned", chapter: ch });
+      });
+    });
+    rows.sort(function (a, b) { return a.name.localeCompare(b.name); });
+
+    var box = el('<section class="wrap" style="max-width:52rem"></section>');
+    var input = el('<div class="search center" style="margin:0 auto 2.4rem"><form onsubmit="return false" role="search">' +
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
+      '<input id="trad-filter" type="search" placeholder="Filter traditions&hellip;" aria-label="Filter traditions" /></form></div>');
+    box.appendChild(input);
+
+    var listWrap = el('<div id="trad-list" style="display:flex;flex-direction:column;gap:0.7rem"></div>');
+    box.appendChild(listWrap);
+    mount.appendChild(box);
+
+    function draw(filter) {
+      listWrap.innerHTML = "";
+      var f = (filter || "").toLowerCase();
+      var shown = 0;
+      rows.forEach(function (r) {
+        if (f && r.name.toLowerCase().indexOf(f) === -1 && r.era.name.toLowerCase().indexOf(f) === -1) return;
+        shown++;
+        var href = r.chapter ? "chapter.html?id=" + encodeURIComponent(r.chapter.id) : "era.html?era=" + encodeURIComponent(r.era.slug);
+        var a = el('<a class="card" href="' + href + '" style="padding:1rem 1.3rem"></a>');
+        a.innerHTML =
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
+            "<span>" +
+              '<span style="font-family:var(--font-display);letter-spacing:0.04em;color:var(--parchment);font-size:1.08rem">' + esc(r.name) + "</span>" +
+              '<span class="muted" style="font-size:0.82rem;display:block;margin-top:0.15rem">Era ' + esc(r.era.num) + " &middot; " + esc(r.era.name) + "</span>" +
+            "</span>" + badge(r.status) +
+          "</div>";
+        listWrap.appendChild(a);
+      });
+      if (!shown) listWrap.appendChild(el('<p class="notice">No tradition matches &ldquo;' + esc(filter) + '&rdquo;.</p>'));
+    }
+
+    var pre = qs("q");
+    draw(pre);
+    var field = document.getElementById("trad-filter");
+    if (field) {
+      if (pre) field.value = pre;
+      field.addEventListener("input", function () { draw(field.value); });
+      field.focus();
+    }
+  }
+
+  /* ---------------- CHAPTER READER ---------------- */
+  function renderChapter(mount) {
+    var ch = chapterById(qs("id"));
+    if (!ch) {
+      mount.appendChild(el('<p class="notice">That chapter could not be found. <a href="eras.html">Browse the ages</a>.</p>'));
+      return;
+    }
+    document.title = ch.title + " — The Divine Archives";
+
+    mount.appendChild(el(
+      '<div class="page-head">' +
+        '<p class="crumb" style="justify-content:center">' +
+          '<a href="index.html">Archive</a><span class="sep">/</span>' +
+          (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">' + esc((eraBySlug(ch.era) || {}).name || "Era") + "</a>" : '<a href="eras.html">Themes</a>') +
+          '<span class="sep">/</span><span>' + esc(ch.title) + "</span>" +
+        "</p>" +
+        '<p class="eyebrow">' + esc(ch.eraLabel) + "</p>" +
+        "<h1>" + esc(ch.title) + "</h1>" +
+        '<p style="margin-top:0.6rem">' + badge(ch.status) + "</p>" +
+      "</div>"
+    ));
+
+    var body = el('<section class="wrap article"></section>');
+    if (ch.status === "published" && ch.html) {
+      body.innerHTML = ch.html; // finished, approved chapters render here
+    } else {
+      body.appendChild(el('<p class="lede center" style="margin-bottom:2rem">' + esc(ch.summary) + "</p>"));
+      body.appendChild(el(
+        '<div class="notice center" style="text-align:center">' +
+          "This chapter has been drafted and is <strong>awaiting the keeper&rsquo;s review</strong>. " +
+          "In keeping with the archive&rsquo;s standard, no chapter is published until it has been checked " +
+          "for accuracy, sourcing, and honesty about what the record does and does not support. " +
+          "It will appear here once approved." +
+        "</div>"
+      ));
+    }
+    mount.appendChild(body);
+  }
+
+  /* ---------------- SEARCH WIRING ---------------- */
+  function wireSearch() {
+    document.querySelectorAll('form[data-search]').forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var input = form.querySelector("input");
+        var q = input ? input.value.trim() : "";
+        window.location.href = "traditions.html" + (q ? "?q=" + encodeURIComponent(q) : "");
+      });
+    });
+  }
+
+  /* ---------------- BOOT ---------------- */
+  document.addEventListener("DOMContentLoaded", function () {
+    wireSearch();
+    var mount;
+    if ((mount = document.getElementById("era-mount"))) renderEra(mount);
+    if ((mount = document.getElementById("traditions-mount"))) renderTraditions(mount);
+    if ((mount = document.getElementById("chapter-mount"))) renderChapter(mount);
+  });
+})();
