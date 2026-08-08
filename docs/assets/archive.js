@@ -192,9 +192,14 @@
       "</div>"
     ));
 
+    var rendered = (window.CHAPTERS && window.CHAPTERS[ch.id]) ? window.CHAPTERS[ch.id].html : null;
     var body = el('<section class="wrap article"></section>');
-    if (ch.status === "published" && ch.html) {
-      body.innerHTML = ch.html; // finished, approved chapters render here
+    if (ch.status === "published" && rendered) {
+      body.innerHTML = rendered; // finished, approved chapters render here
+      var nav = el('<div class="chapter-nav"></div>');
+      nav.innerHTML = (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">&larr; ' + esc((eraBySlug(ch.era) || {}).name || "Back") + "</a>" : '<a href="themes.html">&larr; All themes</a>') +
+        '<a href="eras.html">Browse the ages &rarr;</a>';
+      body.appendChild(nav);
     } else {
       body.appendChild(el('<p class="lede center" style="margin-bottom:2rem">' + esc(ch.summary) + "</p>"));
       body.appendChild(el(

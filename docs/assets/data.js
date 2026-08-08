@@ -68,12 +68,12 @@ window.ARCHIVE = {
   chapters: [
     { id: "ch01", title: "The Flood", kind: "theme",
       era: null, eraLabel: "Comparative theme · cross-era",
-      status: "review", source: "drafts/ch01-the-flood.md",
+      status: "published", source: "themes/ch01-the-flood.md",
       summary: "Why nearly every people who kept records remembers the world ending in water — the Mesopotamian lineage from Ziusudra to Utnapishtim, its relationship to Genesis, and what the archaeology will and won't support." },
 
     { id: "ch02", title: "Egypt", kind: "tradition",
       era: "02-bronze-age", eraLabel: "Bronze Age · Egypt",
-      status: "review", source: "drafts/ch02-egypt-bronze-age.md",
+      status: "published", source: "eras/02-bronze-age/ch02-egypt-bronze-age.md",
       summary: "A civilization built on an annual flood and organized around the afterlife: Ma'at and the weighing of the heart, the Osiris myth, mummification and the scribes, and the Amarna experiment in one god." }
   ]
 };
