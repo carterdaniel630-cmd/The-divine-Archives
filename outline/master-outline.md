@@ -43,6 +43,7 @@ then does its file move from `/drafts/` into `eras/[era]/`.
 |---|---|---|---|---|
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **APPROVED** | `themes/ch01-the-flood.md` |
 | ch02 — Egypt | Tradition | 02-bronze-age | **APPROVED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
+| ch03 — Mesopotamia | Tradition | 02-bronze-age | **READY FOR REVIEW** | `drafts/ch03-mesopotamia-bronze-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `READY FOR REVIEW` · `revising` · `APPROVED`.
 
