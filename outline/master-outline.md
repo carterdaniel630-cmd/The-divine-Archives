@@ -48,6 +48,7 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch03 — Mesopotamia | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
 | ch04 — Indus Valley | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
 | ch05 — Early Vedic | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch05-early-vedic-bronze-age.md` |
+| ch06 — Zoroaster | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 

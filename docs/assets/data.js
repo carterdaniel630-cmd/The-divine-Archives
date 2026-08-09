@@ -92,6 +92,12 @@ window.ARCHIVE = {
       era: "02-bronze-age", eraLabel: "Bronze Age · Early Vedic",
       status: "published", pending: true,
       source: "eras/02-bronze-age/ch05-early-vedic-bronze-age.md",
-      summary: "A religion of fire, sound, and memory: the Rigveda and its sibling Vedas preserved orally for three millennia, the pantheon of Indra, Agni, Soma and Varuna, the cosmic order of Rta, the fire sacrifice and the unwritten sacred word — an aniconic, temple-less faith that is also the great key to Indo-European religion." }
+      summary: "A religion of fire, sound, and memory: the Rigveda and its sibling Vedas preserved orally for three millennia, the pantheon of Indra, Agni, Soma and Varuna, the cosmic order of Rta, the fire sacrifice and the unwritten sacred word — an aniconic, temple-less faith that is also the great key to Indo-European religion." },
+
+    { id: "ch06", title: "Zoroaster", kind: "tradition",
+      era: "03-early-iron-age", eraLabel: "Early Iron Age · Zoroaster",
+      status: "published", pending: true,
+      source: "eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md",
+      summary: "The Iranian prophet who reduced the old pantheon to one Wise Lord, Ahura Mazda, and recast existence as a moral war of truth against the Lie: the Gathas and the Avesta, the cosmic dualism, fire and the Towers of Silence, and the fiercely debated inheritance the West may owe it — the devil, angels, heaven and hell, judgment, resurrection, and the apocalypse." }
   ]
 };
