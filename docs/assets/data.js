@@ -110,6 +110,12 @@ window.ARCHIVE = {
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Early Greece",
       status: "published", pending: true,
       source: "eras/03-early-iron-age/ch08-early-greece-early-iron-age.md",
-      summary: "The gods before the philosophers: Zeus and the Olympians already named on Bronze Age Linear B tablets, a religion with no scripture but with Homer and Hesiod as its canon, the succession myth borrowed from the Near East, sacrifice and oracles and the grim house of Hades — and the mystery cults of Eleusis and Orpheus that first promised the soul something better." }
+      summary: "The gods before the philosophers: Zeus and the Olympians already named on Bronze Age Linear B tablets, a religion with no scripture but with Homer and Hesiod as its canon, the succession myth borrowed from the Near East, sacrifice and oracles and the grim house of Hades — and the mystery cults of Eleusis and Orpheus that first promised the soul something better." },
+
+    { id: "ch09", title: "Early China", kind: "tradition",
+      era: "03-early-iron-age", eraLabel: "Early Iron Age · Early China",
+      status: "published", pending: true,
+      source: "eras/03-early-iron-age/ch09-early-china-early-iron-age.md",
+      summary: "Ancestors, oracle bones, and the Mandate of Heaven: the Shang kings divining by fire-cracked bone to the high god Di and the royal dead, the ritual bronzes cast to feed the ancestors, and the Zhou revolution that made Heaven a moral judge who grants and revokes the right to rule — the religion in which Chinese writing itself was born." }
   ]
 };

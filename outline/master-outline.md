@@ -51,6 +51,7 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch06 — Zoroaster | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md` |
 | ch07 — Pre-exilic Israel | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md` |
 | ch08 — Early Greece | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch08-early-greece-early-iron-age.md` |
+| ch09 — Early China | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch09-early-china-early-iron-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
