@@ -86,6 +86,12 @@ window.ARCHIVE = {
       era: "02-bronze-age", eraLabel: "Bronze Age · Indus Valley",
       status: "published", pending: true,
       source: "eras/02-bronze-age/ch04-indus-valley-bronze-age.md",
-      summary: "The largest and most silent Bronze Age civilization: a faceless, temple-less urban world whose script has never been read, so that nearly everything about its religion — the 'proto-Shiva' seal, the mother-goddess figurines, the Great Bath — remains a genuinely open question, and an honest lesson in how much we cannot know." }
+      summary: "The largest and most silent Bronze Age civilization: a faceless, temple-less urban world whose script has never been read, so that nearly everything about its religion — the 'proto-Shiva' seal, the mother-goddess figurines, the Great Bath — remains a genuinely open question, and an honest lesson in how much we cannot know." },
+
+    { id: "ch05", title: "Early Vedic", kind: "tradition",
+      era: "02-bronze-age", eraLabel: "Bronze Age · Early Vedic",
+      status: "published", pending: true,
+      source: "eras/02-bronze-age/ch05-early-vedic-bronze-age.md",
+      summary: "A religion of fire, sound, and memory: the Rigveda and its sibling Vedas preserved orally for three millennia, the pantheon of Indra, Agni, Soma and Varuna, the cosmic order of Rta, the fire sacrifice and the unwritten sacred word — an aniconic, temple-less faith that is also the great key to Indo-European religion." }
   ]
 };
