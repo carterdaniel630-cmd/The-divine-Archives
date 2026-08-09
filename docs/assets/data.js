@@ -104,6 +104,12 @@ window.ARCHIVE = {
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Pre-exilic Israel",
       status: "published", pending: true,
       source: "eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md",
-      summary: "How a people became monotheist: the historical religion of Iron Age Israel and Judah before the exile, reconstructed from archaeology and inscriptions — Israel's emergence within Canaan, Yahweh merged with El and paired with Asherah, the folk religion of high places and figurines, the reforms of Hezekiah and Josiah, and the long road from many gods to one." }
+      summary: "How a people became monotheist: the historical religion of Iron Age Israel and Judah before the exile, reconstructed from archaeology and inscriptions — Israel's emergence within Canaan, Yahweh merged with El and paired with Asherah, the folk religion of high places and figurines, the reforms of Hezekiah and Josiah, and the long road from many gods to one." },
+
+    { id: "ch08", title: "Early Greece", kind: "tradition",
+      era: "03-early-iron-age", eraLabel: "Early Iron Age · Early Greece",
+      status: "published", pending: true,
+      source: "eras/03-early-iron-age/ch08-early-greece-early-iron-age.md",
+      summary: "The gods before the philosophers: Zeus and the Olympians already named on Bronze Age Linear B tablets, a religion with no scripture but with Homer and Hesiod as its canon, the succession myth borrowed from the Near East, sacrifice and oracles and the grim house of Hades — and the mystery cults of Eleusis and Orpheus that first promised the soul something better." }
   ]
 };

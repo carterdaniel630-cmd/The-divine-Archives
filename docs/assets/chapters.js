@@ -650,5 +650,93 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from current biblical scholarship, archaeology, and epigraphy rather than memory alone. This chapter carefully distinguishes the <em>historical</em> reconstruction from the <em>biblical</em> narrative, and flags the live debates &mdash; the meaning of &ldquo;his Asherah,&rdquo; the scale of the United Monarchy, the origin of Yahweh, and the composition of the Torah &mdash; as disputes to be reported, not resolved. Written with an emphasis on <em>how we know</em>, to keep it educational.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch08 */
+  ch08: { html: `
+    <p class="lead">When Linear B was deciphered in 1952, the Bronze Age accounts turned out to name Zeus, Poseidon, Athena &mdash; even Dionysus. The Greek gods, it emerged, were already old when Homer was young.</p>
+
+    <h2>Zeus, written in the Bronze Age</h2>
+    <p>In 1952 the architect Michael Ventris deciphered <strong>Linear B</strong>, the script on clay tablets baked hard in the fires that destroyed the Mycenaean palaces around 1200 BCE. The tablets were not poetry but <em>accounts</em> &mdash; inventories of grain, oil, and sheep. Yet scattered through the Bronze Age bookkeeping were names that made the hair stand up: <em>di-we</em> (Zeus), <em>po-se-da-o</em> (Poseidon), <em>a-ta-na</em> (Athena), <em>e-ra</em> (Hera), <em>e-ma-a</em> (Hermes) &mdash; and, astonishingly, <em>di-wo-nu-so</em> (Dionysus), a god later Greeks thought had arrived <em>late</em> from the East. They record offerings to them: grain, honey, oil, wine.</p>
+    <p>The lesson reframes everything that follows: <strong>the Greek gods are far older than the Greeks who wrote the Iliad.</strong> Zeus and his family were receiving offerings five centuries before Homer, and &mdash; as we saw in the Vedic chapter &mdash; Zeus&rsquo;s very name (<em>Dyeus</em>) reaches back to the Indo-European sky-father he shares with the Vedic Dyaus and the Roman Jupiter. This chapter covers <em>early</em> Greece &mdash; the Mycenaean roots, the Dark Age, and the Archaic crystallization in Homer and Hesiod &mdash; the world <em>before</em> the philosophers and tragedians of classical Athens, who belong to the next era.</p>
+
+    <h2>A religion with no bible</h2>
+    <p>The first thing to unlearn: Greek religion had <strong>no scripture, no creed, no commandments, no church, and no professional clergy</strong> in our sense. What mattered was not right <em>belief</em> (orthodoxy) but right <em>practice</em> (<strong>orthopraxy</strong>) &mdash; performing the sacrifices, festivals, and rites correctly, for the community&rsquo;s safety and the gods&rsquo; goodwill. Religion was woven into the <strong>polis</strong>, the city-state, and into the household.</p>
+    <p>Yet two poets came as close to &ldquo;scripture&rdquo; as the Greeks got. Herodotus said <strong>Homer and Hesiod</strong> &ldquo;gave the gods their genealogies, names, honors, and forms.&rdquo; <strong>Homer</strong> gave the <em>Iliad</em> and <em>Odyssey</em>; <strong>Hesiod</strong> the <em>Theogony</em> (a genealogy of the gods and Zeus&rsquo;s rise) and the <em>Works and Days</em>. An educational caution &mdash; the <strong>Homeric Question</strong>: &ldquo;Homer&rdquo; may not have been a single author. The epics grew from a centuries-long <strong>oral tradition</strong>; Milman Parry and Albert Lord showed they are built from formulaic phrases (&ldquo;swift-footed Achilles,&rdquo; &ldquo;the wine-dark sea&rdquo;) that let a bard <em>compose in performance</em>. The Iliad we read is that tradition crystallized into writing, not obviously one man&rsquo;s work.</p>
+
+    <h2>Cosmology: how Zeus came to power</h2>
+    <p>Hesiod&rsquo;s <em>Theogony</em> begins with <strong>Chaos</strong> (a &ldquo;gap&rdquo;), then <strong>Gaia</strong> (Earth), <strong>Tartarus</strong>, and <strong>Eros</strong>. Earth bore <strong>Ouranos</strong> (Sky) and bore him the <strong>Titans</strong> &mdash; until the Titan <strong>Kronos</strong> castrated his father Sky with a sickle (from the bloody foam was born <strong>Aphrodite</strong>). Kronos then swallowed his own children to forestall a prophecy &mdash; until Rhea hid the infant <strong>Zeus</strong>, who freed his siblings and, in the ten-year <strong>Titanomachy</strong>, overthrew the Titans and became king of the <strong>Olympians</strong>.</p>
+    <p>This &ldquo;succession myth&rdquo; &mdash; Sky, then Kronos, then Zeus, with the castration of the sky-god at its center &mdash; is one of the clearest cases of <strong>Near Eastern influence</strong> on Greek religion, closely paralleling the Hurrian-Hittite <strong>Kumarbi cycle</strong> (Anu castrated by Kumarbi, then overthrown by the storm-god Teshub) and the Babylonian <em>Enuma Elish</em> of Chapter 3. Greek religion is thus a weave of at least three threads: an <strong>Indo-European</strong> core (Zeus/Dyeus), a <strong>Near Eastern</strong> overlay (the succession myth; Aphrodite, who owes much to Ishtar/Astarte), and an older <strong>Aegean/Minoan</strong> substrate.</p>
+    <p>The result was the family of <strong>Olympians</strong> &mdash; traditionally twelve: Zeus, Hera, Poseidon, Demeter, Athena, Apollo, Artemis, Ares, Aphrodite, Hephaestus, Hermes, and Dionysus (or Hestia). They are <strong>anthropomorphic</strong> to an extreme &mdash; immortal and mighty, but jealous, lustful, and vengeful, morally not much better than the humans they rule. Above even the gods stood <strong>Moira</strong>, Fate.</p>
+
+    <h2>Law and the moral order</h2>
+    <p>Greece had no divine law-code. Its morality worked by other logics. There was no &ldquo;sin&rdquo; against a holy God in the Hebrew sense; instead: <strong>reciprocity</strong> (<em>do ut des</em>, &ldquo;I give so that you may give&rdquo;); <strong>honor and pollution</strong> (offense as an affront to a god&rsquo;s honor, or as <strong>miasma</strong>, ritual pollution needing purification); the <strong>unwritten laws</strong> &mdash; above all <strong>xenia</strong>, guest-friendship protected by <strong>Zeus Xenios</strong>, and the sanctity of the <strong>oath</strong>; and <strong>hubris and nemesis</strong> &mdash; violent excess provoking divine retribution. Hesiod&rsquo;s <em>Works and Days</em> preaches that Zeus watches over <strong>Dike</strong> (Justice).</p>
+
+    <h2>Ritual: the smoke of sacrifice</h2>
+    <p>The central act was <strong>animal sacrifice</strong> (<em>thysia</em>), and Hesiod gives its charter myth: at Mekone the trickster <strong>Prometheus</strong> fooled Zeus into choosing the ox&rsquo;s bones wrapped in fat &mdash; leaving the <em>meat</em> for humans. Ever since, Greeks burned the bones and fat for the gods (who feed on the fragrant smoke) and ate the meat themselves &mdash; a shared feast, meat being rare in the Greek diet. (Prometheus paid: he stole fire for humanity and was chained to a rock, and Zeus sent the first woman, <strong>Pandora</strong>.) Scholars distinguish <strong>Olympian</strong> sacrifice (burnt offerings to the sky-gods, followed by a shared meal) from <strong>chthonic</strong> rites for the underworld, the dead, and heroes (poured into the ground, not shared).</p>
+    <p>The <strong>temple</strong> was not a place of congregation but the <em>house of the god</em>, sheltering the cult statue; people gathered outside, at the altar. Two Panhellenic institutions knit the city-states together: the <strong>oracles</strong> &mdash; above all <strong>Delphi</strong>, where Apollo&rsquo;s priestess the <strong>Pythia</strong> gave famously ambiguous answers beside the <strong>omphalos</strong> (&ldquo;navel of the world&rdquo;) inscribed <em>know thyself</em> and <em>nothing in excess</em>, and Zeus&rsquo;s oracle at <strong>Dodona</strong>, read in a rustling oak &mdash; and the great sanctuaries at <strong>Olympia</strong> (the Games from 776 BCE) and Delphi.</p>
+
+    <h2>The dead, the heroes, and the promise of the mysteries</h2>
+    <p>On the ordinary fate of the dead, early Greece was as bleak as Mesopotamia: the shades went to the realm of <strong>Hades</strong>, a dim, strengthless existence &mdash; the <em>Odyssey</em>&rsquo;s Achilles says he would rather be a living day-laborer than king of all the dead. There was no general reward or punishment: a few sinners suffered in <strong>Tartarus</strong>, a few heroes reached <strong>Elysium</strong>, but for most, death was a gray diminishment. Two responses in this period promised better, and matter enormously later:</p>
+    <p>The <strong>Eleusinian Mysteries</strong>, centered on <strong>Demeter</strong> and her daughter <strong>Persephone</strong> (carried to the underworld, sought by her grieving mother, returned for part of each year), gave initiates &mdash; sworn to secrecy on pain of death &mdash; the promise of a <strong>better lot in the afterlife</strong>. What was revealed we still do not know. And <strong>Orphism</strong>, attributed to the singer <strong>Orpheus</strong>, taught that humans are born from the ashes of the Titans who devoured the child-god Dionysus &mdash; and so carry both a Titanic and a divine nature. Orphics held to the <strong>transmigration of souls</strong>, practiced purity and vegetarianism to escape the cycle, and were buried with inscribed <strong>gold tablets</strong> giving the soul passwords for the underworld. Here, for the first time in Greek thought, the <em>soul</em> matters more than the body &mdash; ideas that feed directly into Pythagoras and Plato in the next era.</p>
+
+    <h2>What the ground shows</h2>
+    <p>The <strong>Mycenaean</strong> palace civilization (with its Linear B gods) collapsed around 1200 BCE; a <strong>Dark Age</strong> of reduced population and lost literacy followed; then, in the eighth century BCE, came a renaissance &mdash; the <strong>alphabet</strong>, monumental temple-building, the Olympic Games (776 BCE), colonization, and the writing-down of Homer and Hesiod, amid an <strong>Orientalizing</strong> flow of Near Eastern art and myth. How much religious continuity bridged the Dark Age gap is genuinely uncertain: the gods&rsquo; names carried across, but much else may have been remade.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p><strong>The alphabet that could write breath.</strong> The Greeks took the <strong>Phoenician alphabet</strong> (Chapter 7) around 800 BCE and made one world-changing change: they repurposed unused consonant-signs to write <strong>vowels</strong>, producing the first fully phonetic alphabet, able to capture the exact sound of speech, song, and meter &mdash; making Homer, lyric, drama, and philosophy recordable. <em>Honesty note:</em> Greek <strong>isopsephy</strong> (letter-number values, the Greek analog of gematria) is a later, mostly Hellenistic development, not early Greek.</p>
+    <p><strong>Divine attributes as a visual code.</strong> Gods are identified in art by a consistent language: Zeus&rsquo;s <strong>thunderbolt and eagle</strong>, Athena&rsquo;s <strong>owl and aegis</strong>, Poseidon&rsquo;s <strong>trident</strong>, Apollo&rsquo;s <strong>lyre and bow</strong>, Hermes&rsquo;s <strong>caduceus and winged sandals</strong>, Dionysus&rsquo;s <strong>ivy and thyrsus</strong>. To read a Greek vase is to read this code.</p>
+    <p><strong>Reading the will of the gods.</strong> Beyond the oracles, the Greeks practiced a full repertoire of <strong>divination</strong>: inspecting entrails (as in Mesopotamia), reading the flight of birds (augury), and interpreting dreams, thunder, and chance words. The gods signaled constantly; the art was in the reading.</p>
+    <p><strong>Pillars and passwords.</strong> The <strong>herms</strong> &mdash; plain pillars topped with Hermes&rsquo;s head &mdash; stood at doorways and crossroads as apotropaic guardians, a stark aniconic god-sign. And the Orphic <strong>gold tablets</strong> are the ancient world&rsquo;s purest encoded sacred text: tiny inscribed leaves buried with the dead, telling the soul what to say below &mdash; <em>&ldquo;I am a child of Earth and starry Heaven, but my race is of Heaven alone&rdquo;</em> &mdash; a literal password for eternity.</p>
+
+    <h2>Connections</h2>
+    <p>Early Greek religion is a crossroads: its succession myth ties it to the <strong>Near East</strong> (Kumarbi; the <em>Enuma Elish</em> of Chapter 3), its sky-father to the <strong>Indo-European</strong> world (Chapters 5&ndash;6), its alphabet and love-goddess to the <strong>Levant/Phoenicia</strong> of Chapter 7, and its flood (Deucalion) to the comparative theme of Chapter 1. Herodotus even claimed the Greeks got their gods from <strong>Egypt</strong> &mdash; an overstatement, but a witness to eastern debts. Forward, all of this seeds the next era&rsquo;s <strong>classical Greece</strong>: the myths the tragedians will interrogate, the Orphic ideas of the soul that Pythagoras and Plato will philosophize, and a pantheon that <strong>Rome</strong> will adopt wholesale.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The major Greek gods were already worshipped in Mycenaean Bronze Age Greece, attested by name in Linear B (c. 1400&ndash;1200 BCE).</li>
+          <li>Greek religion was non-dogmatic and non-scriptural &mdash; a matter of practice (orthopraxy), civic and household ritual, sacrifice, festivals, and oracles &mdash; with Homer and Hesiod as the shared reference for myth.</li>
+          <li>Strong Near Eastern influence on Greek myth, clearest in the succession myth&rsquo;s parallels with the Kumarbi cycle and Mesopotamian cosmogony.</li>
+          <li>The Greek alphabet was adapted from Phoenician with the innovation of vowels; the grim Hades afterlife coexisted with mystery cults (Eleusis, Orphism) offering initiates a better fate.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported</h4>
+        <ul>
+          <li>&ldquo;Homer&rdquo; as a single historical author who composed and wrote the epics alone; the oral-formulaic tradition makes this at best uncertain.</li>
+          <li>A single, unified, systematic &ldquo;Greek religion&rdquo; or theology; practice was local and various, and Hesiod&rsquo;s genealogy is one poet&rsquo;s synthesis.</li>
+          <li>Reading later classical philosophy, developed Orphic doctrine, or Herodotus&rsquo;s claim of wholesale Egyptian origin back onto the earliest layers.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The Homeric Question &mdash; the authorship, unity, and composition of the Iliad and Odyssey.</li>
+          <li>How much religious continuity bridged the Dark Age between Mycenaean and Archaic Greece.</li>
+          <li>The origins of specific deities (how much of Dionysus or Aphrodite is native, Near Eastern, or Aegean).</li>
+          <li>The actual content of the Eleusinian secret and the earliest form of Orphism; and the historical kernel, if any, behind the myths (the Trojan War; the Deucalion flood).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Mycenaean origins and the poets</h4>
+      <ul>
+        <li><a href="https://www.worldhistory.org/Linear_B_Script/">Linear B Script</a>; <a href="https://www.thecollector.com/mycenaean-gods/">The Gods of the Myceneans</a>; Homer and Hesiod; the Homeric Question (Parry &amp; Lord); Herodotus, <em>Histories</em> 2.53.</li>
+      </ul>
+      <h4>Myth, Near Eastern influence, practice</h4>
+      <ul>
+        <li>Hesiod, <em>Theogony</em> and <em>Works and Days</em>; <a href="https://www.thecollector.com/kumarbi-cycle-hurrian-myth/">The Kumarbi Cycle</a>; M. L. West, <em>The East Face of Helicon</em>; Walter Burkert, <em>Greek Religion</em>; <a href="https://www.worldhistory.org/Greek_Religion/">Ancient Greek Religion</a>.</li>
+      </ul>
+      <h4>Mysteries and the alphabet</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Eleusinian Mysteries</a>; Graf &amp; Johnston, <em>Ritual Texts for the Afterlife</em> (Orphic gold tablets); <a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">History of the Greek alphabet</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference works and current scholarship (Burkert, West) rather than memory alone. The live debates &mdash; the Homeric Question, Dark Age continuity, the origins of individual gods, and the secret of the Mysteries &mdash; are flagged, not resolved. Written with an educational emphasis on how Greek religion actually worked (orthopraxy, not creed). Classical philosophy, tragedy, and the full mysteries are reserved for the Axial Age chapter.</p>
+    </div>
   ` }
 };
