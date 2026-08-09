@@ -78,43 +78,43 @@ window.ARCHIVE = {
 
     { id: "ch03", title: "Mesopotamia", kind: "tradition",
       era: "02-bronze-age", eraLabel: "Bronze Age · Mesopotamia",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/02-bronze-age/ch03-mesopotamia-bronze-age.md",
       summary: "The land where writing and the city began: the Enuma Elish and Marduk's ordering of chaos, the great gods and their temple-and-ziggurat cult, divination, Hammurabi's law-stele, the grim underworld, and the divine numbers and sacred encoding of a civilization that read reality as a script." },
 
     { id: "ch04", title: "Indus Valley", kind: "tradition",
       era: "02-bronze-age", eraLabel: "Bronze Age · Indus Valley",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/02-bronze-age/ch04-indus-valley-bronze-age.md",
       summary: "The largest and most silent Bronze Age civilization: a faceless, temple-less urban world whose script has never been read, so that nearly everything about its religion — the 'proto-Shiva' seal, the mother-goddess figurines, the Great Bath — remains a genuinely open question, and an honest lesson in how much we cannot know." },
 
     { id: "ch05", title: "Early Vedic", kind: "tradition",
       era: "02-bronze-age", eraLabel: "Bronze Age · Early Vedic",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/02-bronze-age/ch05-early-vedic-bronze-age.md",
       summary: "A religion of fire, sound, and memory: the Rigveda and its sibling Vedas preserved orally for three millennia, the pantheon of Indra, Agni, Soma and Varuna, the cosmic order of Rta, the fire sacrifice and the unwritten sacred word — an aniconic, temple-less faith that is also the great key to Indo-European religion." },
 
     { id: "ch06", title: "Zoroaster", kind: "tradition",
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Zoroaster",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md",
       summary: "The Iranian prophet who reduced the old pantheon to one Wise Lord, Ahura Mazda, and recast existence as a moral war of truth against the Lie: the Gathas and the Avesta, the cosmic dualism, fire and the Towers of Silence, and the fiercely debated inheritance the West may owe it — the devil, angels, heaven and hell, judgment, resurrection, and the apocalypse." },
 
     { id: "ch07", title: "Pre-exilic Israel", kind: "tradition",
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Pre-exilic Israel",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md",
       summary: "How a people became monotheist: the historical religion of Iron Age Israel and Judah before the exile, reconstructed from archaeology and inscriptions — Israel's emergence within Canaan, Yahweh merged with El and paired with Asherah, the folk religion of high places and figurines, the reforms of Hezekiah and Josiah, and the long road from many gods to one." },
 
     { id: "ch08", title: "Early Greece", kind: "tradition",
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Early Greece",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/03-early-iron-age/ch08-early-greece-early-iron-age.md",
       summary: "The gods before the philosophers: Zeus and the Olympians already named on Bronze Age Linear B tablets, a religion with no scripture but with Homer and Hesiod as its canon, the succession myth borrowed from the Near East, sacrifice and oracles and the grim house of Hades — and the mystery cults of Eleusis and Orpheus that first promised the soul something better." },
 
     { id: "ch09", title: "Early China", kind: "tradition",
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Early China",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/03-early-iron-age/ch09-early-china-early-iron-age.md",
       summary: "Ancestors, oracle bones, and the Mandate of Heaven: the Shang kings divining by fire-cracked bone to the high god Di and the royal dead, the ritual bronzes cast to feed the ancestors, and the Zhou revolution that made Heaven a moral judge who grants and revokes the right to rule — the religion in which Chinese writing itself was born." }
   ]

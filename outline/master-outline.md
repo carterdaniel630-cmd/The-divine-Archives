@@ -45,13 +45,13 @@ clears them in batch, at which point the tag is removed and the status becomes
 |---|---|---|---|---|
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
 | ch02 — Egypt | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
-| ch03 — Mesopotamia | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
-| ch04 — Indus Valley | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
-| ch05 — Early Vedic | Tradition | 02-bronze-age | **PUBLISHED — pending review** | `eras/02-bronze-age/ch05-early-vedic-bronze-age.md` |
-| ch06 — Zoroaster | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md` |
-| ch07 — Pre-exilic Israel | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md` |
-| ch08 — Early Greece | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch08-early-greece-early-iron-age.md` |
-| ch09 — Early China | Tradition | 03-early-iron-age | **PUBLISHED — pending review** | `eras/03-early-iron-age/ch09-early-china-early-iron-age.md` |
+| ch03 — Mesopotamia | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
+| ch04 — Indus Valley | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
+| ch05 — Early Vedic | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch05-early-vedic-bronze-age.md` |
+| ch06 — Zoroaster | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md` |
+| ch07 — Pre-exilic Israel | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md` |
+| ch08 — Early Greece | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch08-early-greece-early-iron-age.md` |
+| ch09 — Early China | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch09-early-china-early-iron-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
