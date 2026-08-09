@@ -116,6 +116,12 @@ window.ARCHIVE = {
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Early China",
       status: "published",
       source: "eras/03-early-iron-age/ch09-early-china-early-iron-age.md",
-      summary: "Ancestors, oracle bones, and the Mandate of Heaven: the Shang kings divining by fire-cracked bone to the high god Di and the royal dead, the ritual bronzes cast to feed the ancestors, and the Zhou revolution that made Heaven a moral judge who grants and revokes the right to rule — the religion in which Chinese writing itself was born." }
+      summary: "Ancestors, oracle bones, and the Mandate of Heaven: the Shang kings divining by fire-cracked bone to the high god Di and the royal dead, the ritual bronzes cast to feed the ancestors, and the Zhou revolution that made Heaven a moral judge who grants and revokes the right to rule — the religion in which Chinese writing itself was born." },
+
+    { id: "ch10", title: "Second Temple Judaism", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · Second Temple Judaism",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch10-second-temple-judaism-axial-age.md",
+      summary: "The many Judaisms: how the Babylonian exile forged monotheism and a portable, text-centered faith, the ferment of sects (Pharisees, Sadducees, Essenes) revealed by the Dead Sea Scrolls, the explosion of scripture and apocalyptic literature, the developing Satan, angels, and resurrection — and the fiercely debated question of what all this owes to Zoroastrian Persia." }
   ]
 };
