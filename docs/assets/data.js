@@ -98,6 +98,12 @@ window.ARCHIVE = {
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Zoroaster",
       status: "published", pending: true,
       source: "eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md",
-      summary: "The Iranian prophet who reduced the old pantheon to one Wise Lord, Ahura Mazda, and recast existence as a moral war of truth against the Lie: the Gathas and the Avesta, the cosmic dualism, fire and the Towers of Silence, and the fiercely debated inheritance the West may owe it — the devil, angels, heaven and hell, judgment, resurrection, and the apocalypse." }
+      summary: "The Iranian prophet who reduced the old pantheon to one Wise Lord, Ahura Mazda, and recast existence as a moral war of truth against the Lie: the Gathas and the Avesta, the cosmic dualism, fire and the Towers of Silence, and the fiercely debated inheritance the West may owe it — the devil, angels, heaven and hell, judgment, resurrection, and the apocalypse." },
+
+    { id: "ch07", title: "Pre-exilic Israel", kind: "tradition",
+      era: "03-early-iron-age", eraLabel: "Early Iron Age · Pre-exilic Israel",
+      status: "published", pending: true,
+      source: "eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md",
+      summary: "How a people became monotheist: the historical religion of Iron Age Israel and Judah before the exile, reconstructed from archaeology and inscriptions — Israel's emergence within Canaan, Yahweh merged with El and paired with Asherah, the folk religion of high places and figurines, the reforms of Hezekiah and Josiah, and the long road from many gods to one." }
   ]
 };
