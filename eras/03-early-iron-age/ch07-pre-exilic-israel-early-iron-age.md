@@ -50,6 +50,16 @@ Reading these three together, most scholars now reconstruct a history that runs,
 in effect, *backwards* to the Bible's own narrative — and that reversal is the
 single most important thing to understand here.
 
+> **A note on faith and history.** What follows is the *historical* reconstruction
+> — what the material evidence indicates about how the religion of Israel actually
+> developed over time. That is a different kind of statement from a claim of faith.
+> Many Jews and Christians hold the biblical narrative as sacred and theologically
+> true, and describing how the historical religion changed is not a verdict on
+> those convictions. In keeping with this archive's standard, two things are kept
+> distinct and both are respected: **what a tradition holds sacred**, and **what
+> the material evidence shows**. Neither is used here to debunk the other — this is
+> description, not polemic, in either direction.
+
 ## Where Israel came from
 
 The Bible tells of Israel arriving from outside — slaves fleeing Egypt, wandering

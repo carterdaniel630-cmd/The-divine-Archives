@@ -120,8 +120,14 @@ window.ARCHIVE = {
 
     { id: "ch10", title: "Second Temple Judaism", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Second Temple Judaism",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/04-axial-age/ch10-second-temple-judaism-axial-age.md",
-      summary: "The many Judaisms: how the Babylonian exile forged monotheism and a portable, text-centered faith, the ferment of sects (Pharisees, Sadducees, Essenes) revealed by the Dead Sea Scrolls, the explosion of scripture and apocalyptic literature, the developing Satan, angels, and resurrection — and the fiercely debated question of what all this owes to Zoroastrian Persia." }
+      summary: "The many Judaisms: how the Babylonian exile forged monotheism and a portable, text-centered faith, the ferment of sects (Pharisees, Sadducees, Essenes) revealed by the Dead Sea Scrolls, the explosion of scripture and apocalyptic literature, the developing Satan, angels, and resurrection — and the fiercely debated question of what all this owes to Zoroastrian Persia." },
+
+    { id: "ch11", title: "Buddhism", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · Buddhism",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch11-buddhism-axial-age.md",
+      summary: "The religion of no-self: the historical Buddha and the renunciant ferment that rejected Vedic sacrifice, the Four Noble Truths and the Eightfold Path, the radical doctrine of anatta that denies the very Self the Upanishads sought, karma and rebirth without a soul, a path to liberation with no creator god — and the emperor Ashoka, who made it a world religion." }
   ]
 };
