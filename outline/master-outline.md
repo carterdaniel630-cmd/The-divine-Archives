@@ -59,7 +59,11 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch14 — Celtic & Germanic | Tradition | 04-axial-age | **PUBLISHED — pending review** | `eras/04-axial-age/ch14-celtic-germanic-axial-age.md` |
 | ch15 — Classical Greece | Tradition | 04-axial-age | **PUBLISHED — pending review** | `eras/04-axial-age/ch15-classical-greece-axial-age.md` |
 
-**Axial Age (era 04) traditions complete** (ch10–ch15). Next era: 05 — Late Antiquity.
+**Axial Age (era 04) traditions complete** (ch10–ch15).
+
+| ch16 — Early Christianity | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md` |
+
+Era 05 — Late Antiquity in progress. Remaining: Gnosticism, Roman mystery cults, Rabbinic Judaism, Mahayana Buddhism.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 

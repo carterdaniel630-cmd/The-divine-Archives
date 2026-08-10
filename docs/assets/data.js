@@ -152,6 +152,12 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · Classical Greece",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch15-classical-greece-axial-age.md",
-      summary: "From myth to reason: the philosophical revolution that transformed the very idea of God even as the temples kept smoking with sacrifice. Socrates tried for impiety, Xenophanes' one non-anthropomorphic god and Heraclitus' Logos, Pythagoras' immortal soul and sacred number, Plato's Forms and Demiurge and Aristotle's Unmoved Mover, the Stoic divine reason and Epicurus' uninvolved gods — with the Pythagorean tetractys, Greek isopsephy, and the Orphic gold tablets' encoded passwords for the dead." }
+      summary: "From myth to reason: the philosophical revolution that transformed the very idea of God even as the temples kept smoking with sacrifice. Socrates tried for impiety, Xenophanes' one non-anthropomorphic god and Heraclitus' Logos, Pythagoras' immortal soul and sacred number, Plato's Forms and Demiurge and Aristotle's Unmoved Mover, the Stoic divine reason and Epicurus' uninvolved gods — with the Pythagorean tetractys, Greek isopsephy, and the Orphic gold tablets' encoded passwords for the dead." },
+
+    { id: "ch16", title: "Early Christianity", kind: "tradition",
+      era: "05-late-antiquity", eraLabel: "Late Antiquity · Early Christianity",
+      status: "published", pending: true,
+      source: "eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md",
+      summary: "The faith that conquered an empire: a small, persecuted, astonishingly diverse Jewish movement that within three centuries became the official religion of Rome. The historical Jesus that scholarship can establish and the resurrection that only faith can affirm — kept carefully distinct — Paul and the parting from Judaism, the many early Christianities and the slow making of the canon, martyrdom and Constantine, and the encoded symbols of a hidden church: the ICHTHYS fish, the Chi-Rho, the staurogram, and 666 as the gematria of Nero." }
   ]
 };
