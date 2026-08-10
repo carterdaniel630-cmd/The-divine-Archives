@@ -146,6 +146,12 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · Celtic & Germanic",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch14-celtic-germanic-axial-age.md",
-      summary: "The religions without a book: the Iron Age Celts and Germani, reconstructed from three treacherous witnesses — hostile classical writers, much-later Christian-era vernacular texts, and mute archaeology. Druids and sacred groves, the gods Lugh, Cernunnos, Wodan and Nerthus, votive swords in the water and bodies in the bog, the Coligny calendar, runes and ogham — and an unusually honest reckoning with how much about religions that kept no book we simply cannot know." }
+      summary: "The religions without a book: the Iron Age Celts and Germani, reconstructed from three treacherous witnesses — hostile classical writers, much-later Christian-era vernacular texts, and mute archaeology. Druids and sacred groves, the gods Lugh, Cernunnos, Wodan and Nerthus, votive swords in the water and bodies in the bog, the Coligny calendar, runes and ogham — and an unusually honest reckoning with how much about religions that kept no book we simply cannot know." },
+
+    { id: "ch15", title: "Classical Greece", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · Classical Greece",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch15-classical-greece-axial-age.md",
+      summary: "From myth to reason: the philosophical revolution that transformed the very idea of God even as the temples kept smoking with sacrifice. Socrates tried for impiety, Xenophanes' one non-anthropomorphic god and Heraclitus' Logos, Pythagoras' immortal soul and sacred number, Plato's Forms and Demiurge and Aristotle's Unmoved Mover, the Stoic divine reason and Epicurus' uninvolved gods — with the Pythagorean tetractys, Greek isopsephy, and the Orphic gold tablets' encoded passwords for the dead." }
   ]
 };
