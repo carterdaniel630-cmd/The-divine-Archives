@@ -126,43 +126,43 @@ window.ARCHIVE = {
 
     { id: "ch11", title: "Buddhism", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Buddhism",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/04-axial-age/ch11-buddhism-axial-age.md",
       summary: "The religion of no-self: the historical Buddha and the renunciant ferment that rejected Vedic sacrifice, the Four Noble Truths and the Eightfold Path, the radical doctrine of anatta that denies the very Self the Upanishads sought, karma and rebirth without a soul, a path to liberation with no creator god — and the emperor Ashoka, who made it a world religion." },
 
     { id: "ch12", title: "Confucianism & Daoism", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Confucianism & Daoism",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/04-axial-age/ch12-confucianism-daoism-axial-age.md",
       summary: "Two answers to the same broken world of the Warring States: Confucius and the cultivation of virtue through ren, li, and ritual, completed by Mencius and Xunzi; and the Daoism of the Daodejing and Zhuangzi — wu-wei, ziran, and the uncarved block — with the archaeology (Guodian, Mawangdui) that rewrote their dating, the crucial split between philosophical and religious Daoism, and the Yijing's cosmos of yin and yang." },
 
     { id: "ch13", title: "Rome", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Rome",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/04-axial-age/ch13-rome-axial-age.md",
       summary: "The republic of ritual: a religion not of belief but of the flawless public performance of the gods' due — the pax deorum and pietas, the Capitoline Triad and the open pantheon of interpretatio romana, the priestly colleges and Vestals, augury and Etruscan liver-reading and the Sibylline Books, the household gods of every home, the state's control of foreign cults from the Bacchanalia to Magna Mater, and the imperial cult that made men into gods." },
 
     { id: "ch14", title: "Celtic & Germanic", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Celtic & Germanic",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/04-axial-age/ch14-celtic-germanic-axial-age.md",
       summary: "The religions without a book: the Iron Age Celts and Germani, reconstructed from three treacherous witnesses — hostile classical writers, much-later Christian-era vernacular texts, and mute archaeology. Druids and sacred groves, the gods Lugh, Cernunnos, Wodan and Nerthus, votive swords in the water and bodies in the bog, the Coligny calendar, runes and ogham — and an unusually honest reckoning with how much about religions that kept no book we simply cannot know." },
 
     { id: "ch15", title: "Classical Greece", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Classical Greece",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/04-axial-age/ch15-classical-greece-axial-age.md",
       summary: "From myth to reason: the philosophical revolution that transformed the very idea of God even as the temples kept smoking with sacrifice. Socrates tried for impiety, Xenophanes' one non-anthropomorphic god and Heraclitus' Logos, Pythagoras' immortal soul and sacred number, Plato's Forms and Demiurge and Aristotle's Unmoved Mover, the Stoic divine reason and Epicurus' uninvolved gods — with the Pythagorean tetractys, Greek isopsephy, and the Orphic gold tablets' encoded passwords for the dead." },
 
     { id: "ch16", title: "Early Christianity", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Early Christianity",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md",
       summary: "The faith that conquered an empire: a small, persecuted, astonishingly diverse Jewish movement that within three centuries became the official religion of Rome. The historical Jesus that scholarship can establish and the resurrection that only faith can affirm — kept carefully distinct — Paul and the parting from Judaism, the many early Christianities and the slow making of the canon, martyrdom and Constantine, and the encoded symbols of a hidden church: the ICHTHYS fish, the Chi-Rho, the staurogram, and 666 as the gematria of Nero." },
 
     { id: "ch17", title: "Gnosticism", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Gnosticism",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md",
       summary: "The secret knowledge and the false god: the losing side of early Christianity, silenced by the victors and recovered in 1945 when a jar of Coptic codices surfaced at Nag Hammadi. The dazzling myth of Sophia's fall and the blind creator Yaldabaoth, the divine spark trapped in matter and freed by gnosis, the inverted reading of Genesis, the schools of Valentinus and Basilides, the Gospels of Thomas and Judas — with the number-name Abraxas (365), the liberating serpent, and an honest reckoning with whether 'Gnosticism' is even one thing." }
   ]
