@@ -134,6 +134,12 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · Confucianism & Daoism",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch12-confucianism-daoism-axial-age.md",
-      summary: "Two answers to the same broken world of the Warring States: Confucius and the cultivation of virtue through ren, li, and ritual, completed by Mencius and Xunzi; and the Daoism of the Daodejing and Zhuangzi — wu-wei, ziran, and the uncarved block — with the archaeology (Guodian, Mawangdui) that rewrote their dating, the crucial split between philosophical and religious Daoism, and the Yijing's cosmos of yin and yang." }
+      summary: "Two answers to the same broken world of the Warring States: Confucius and the cultivation of virtue through ren, li, and ritual, completed by Mencius and Xunzi; and the Daoism of the Daodejing and Zhuangzi — wu-wei, ziran, and the uncarved block — with the archaeology (Guodian, Mawangdui) that rewrote their dating, the crucial split between philosophical and religious Daoism, and the Yijing's cosmos of yin and yang." },
+
+    { id: "ch13", title: "Rome", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · Rome",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch13-rome-axial-age.md",
+      summary: "The republic of ritual: a religion not of belief but of the flawless public performance of the gods' due — the pax deorum and pietas, the Capitoline Triad and the open pantheon of interpretatio romana, the priestly colleges and Vestals, augury and Etruscan liver-reading and the Sibylline Books, the household gods of every home, the state's control of foreign cults from the Bacchanalia to Magna Mater, and the imperial cult that made men into gods." }
   ]
 };
