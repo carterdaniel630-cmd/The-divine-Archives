@@ -158,6 +158,12 @@ window.ARCHIVE = {
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Early Christianity",
       status: "published", pending: true,
       source: "eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md",
-      summary: "The faith that conquered an empire: a small, persecuted, astonishingly diverse Jewish movement that within three centuries became the official religion of Rome. The historical Jesus that scholarship can establish and the resurrection that only faith can affirm — kept carefully distinct — Paul and the parting from Judaism, the many early Christianities and the slow making of the canon, martyrdom and Constantine, and the encoded symbols of a hidden church: the ICHTHYS fish, the Chi-Rho, the staurogram, and 666 as the gematria of Nero." }
+      summary: "The faith that conquered an empire: a small, persecuted, astonishingly diverse Jewish movement that within three centuries became the official religion of Rome. The historical Jesus that scholarship can establish and the resurrection that only faith can affirm — kept carefully distinct — Paul and the parting from Judaism, the many early Christianities and the slow making of the canon, martyrdom and Constantine, and the encoded symbols of a hidden church: the ICHTHYS fish, the Chi-Rho, the staurogram, and 666 as the gematria of Nero." },
+
+    { id: "ch17", title: "Gnosticism", kind: "tradition",
+      era: "05-late-antiquity", eraLabel: "Late Antiquity · Gnosticism",
+      status: "published", pending: true,
+      source: "eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md",
+      summary: "The secret knowledge and the false god: the losing side of early Christianity, silenced by the victors and recovered in 1945 when a jar of Coptic codices surfaced at Nag Hammadi. The dazzling myth of Sophia's fall and the blind creator Yaldabaoth, the divine spark trapped in matter and freed by gnosis, the inverted reading of Genesis, the schools of Valentinus and Basilides, the Gospels of Thomas and Judas — with the number-name Abraxas (365), the liberating serpent, and an honest reckoning with whether 'Gnosticism' is even one thing." }
   ]
 };

@@ -62,8 +62,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 **Axial Age (era 04) traditions complete** (ch10–ch15).
 
 | ch16 — Early Christianity | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md` |
+| ch17 — Gnosticism | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md` |
 
-Era 05 — Late Antiquity in progress. Remaining: Gnosticism, Roman mystery cults, Rabbinic Judaism, Mahayana Buddhism.
+Era 05 — Late Antiquity in progress. Remaining: Roman mystery cults, Rabbinic Judaism, Mahayana Buddhism.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
