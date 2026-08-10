@@ -64,8 +64,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch16 — Early Christianity | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md` |
 | ch17 — Gnosticism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md` |
 | ch18 — Roman Mystery Cults | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch18-roman-mystery-cults-late-antiquity.md` |
+| ch19 — Rabbinic Judaism | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md` |
 
-Era 05 — Late Antiquity in progress. Remaining: Rabbinic Judaism, Mahayana Buddhism.
+Era 05 — Late Antiquity in progress. Remaining: Mahayana Buddhism (closes the era).
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
