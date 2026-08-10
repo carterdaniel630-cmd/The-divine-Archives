@@ -140,6 +140,12 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · Rome",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch13-rome-axial-age.md",
-      summary: "The republic of ritual: a religion not of belief but of the flawless public performance of the gods' due — the pax deorum and pietas, the Capitoline Triad and the open pantheon of interpretatio romana, the priestly colleges and Vestals, augury and Etruscan liver-reading and the Sibylline Books, the household gods of every home, the state's control of foreign cults from the Bacchanalia to Magna Mater, and the imperial cult that made men into gods." }
+      summary: "The republic of ritual: a religion not of belief but of the flawless public performance of the gods' due — the pax deorum and pietas, the Capitoline Triad and the open pantheon of interpretatio romana, the priestly colleges and Vestals, augury and Etruscan liver-reading and the Sibylline Books, the household gods of every home, the state's control of foreign cults from the Bacchanalia to Magna Mater, and the imperial cult that made men into gods." },
+
+    { id: "ch14", title: "Celtic & Germanic", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · Celtic & Germanic",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch14-celtic-germanic-axial-age.md",
+      summary: "The religions without a book: the Iron Age Celts and Germani, reconstructed from three treacherous witnesses — hostile classical writers, much-later Christian-era vernacular texts, and mute archaeology. Druids and sacred groves, the gods Lugh, Cernunnos, Wodan and Nerthus, votive swords in the water and bodies in the bog, the Coligny calendar, runes and ogham — and an unusually honest reckoning with how much about religions that kept no book we simply cannot know." }
   ]
 };
