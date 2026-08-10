@@ -54,6 +54,7 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch09 — Early China | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch09-early-china-early-iron-age.md` |
 | ch10 — Second Temple Judaism | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch10-second-temple-judaism-axial-age.md` |
 | ch11 — Buddhism | Tradition | 04-axial-age | **PUBLISHED — pending review** | `eras/04-axial-age/ch11-buddhism-axial-age.md` |
+| ch12 — Confucianism & Daoism | Tradition | 04-axial-age | **PUBLISHED — pending review** | `eras/04-axial-age/ch12-confucianism-daoism-axial-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 

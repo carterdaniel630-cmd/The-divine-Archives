@@ -128,6 +128,12 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · Buddhism",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch11-buddhism-axial-age.md",
-      summary: "The religion of no-self: the historical Buddha and the renunciant ferment that rejected Vedic sacrifice, the Four Noble Truths and the Eightfold Path, the radical doctrine of anatta that denies the very Self the Upanishads sought, karma and rebirth without a soul, a path to liberation with no creator god — and the emperor Ashoka, who made it a world religion." }
+      summary: "The religion of no-self: the historical Buddha and the renunciant ferment that rejected Vedic sacrifice, the Four Noble Truths and the Eightfold Path, the radical doctrine of anatta that denies the very Self the Upanishads sought, karma and rebirth without a soul, a path to liberation with no creator god — and the emperor Ashoka, who made it a world religion." },
+
+    { id: "ch12", title: "Confucianism & Daoism", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · Confucianism & Daoism",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch12-confucianism-daoism-axial-age.md",
+      summary: "Two answers to the same broken world of the Warring States: Confucius and the cultivation of virtue through ren, li, and ritual, completed by Mencius and Xunzi; and the Daoism of the Daodejing and Zhuangzi — wu-wei, ziran, and the uncarved block — with the archaeology (Guodian, Mawangdui) that rewrote their dating, the crucial split between philosophical and religious Daoism, and the Yijing's cosmos of yin and yang." }
   ]
 };
