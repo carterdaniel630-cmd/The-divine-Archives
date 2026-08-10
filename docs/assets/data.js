@@ -164,6 +164,12 @@ window.ARCHIVE = {
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Gnosticism",
       status: "published",
       source: "eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md",
-      summary: "The secret knowledge and the false god: the losing side of early Christianity, silenced by the victors and recovered in 1945 when a jar of Coptic codices surfaced at Nag Hammadi. The dazzling myth of Sophia's fall and the blind creator Yaldabaoth, the divine spark trapped in matter and freed by gnosis, the inverted reading of Genesis, the schools of Valentinus and Basilides, the Gospels of Thomas and Judas — with the number-name Abraxas (365), the liberating serpent, and an honest reckoning with whether 'Gnosticism' is even one thing." }
+      summary: "The secret knowledge and the false god: the losing side of early Christianity, silenced by the victors and recovered in 1945 when a jar of Coptic codices surfaced at Nag Hammadi. The dazzling myth of Sophia's fall and the blind creator Yaldabaoth, the divine spark trapped in matter and freed by gnosis, the inverted reading of Genesis, the schools of Valentinus and Basilides, the Gospels of Thomas and Judas — with the number-name Abraxas (365), the liberating serpent, and an honest reckoning with whether 'Gnosticism' is even one thing." },
+
+    { id: "ch18", title: "Roman Mystery Cults", kind: "tradition",
+      era: "05-late-antiquity", eraLabel: "Late Antiquity · Roman Mystery Cults",
+      status: "published", pending: true,
+      source: "eras/05-late-antiquity/ch18-roman-mystery-cults-late-antiquity.md",
+      summary: "Secret paths to salvation: the initiatory cults that swept the Roman Empire offering what civic religion did not — a personal savior and a hope beyond death. Mithras and the tauroctony known only from mute images, Isis the compassionate queen of heaven seen through Apuleius, Cybele and Attis and the blood-pit of the taurobolium, the Bacchic mysteries — and an even-handed reckoning with the overstated claim that Christianity simply copied them, the contested 'dying and rising god,' and the meaning the initiates hid so well it was lost." }
   ]
 };

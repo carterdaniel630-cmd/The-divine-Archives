@@ -1472,5 +1472,79 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from standard reference scholarship (IEP, Britannica, sourced overviews, and the mainstream scholarship of Ehrman, Williams, King, and Pagels) rather than memory alone. The chapter foregrounds the shift from knowing the Gnostics only through hostile heresiologists to reading their own words at Nag Hammadi, flags the live debate over whether &ldquo;Gnosticism&rdquo; is even a coherent category, corrects the likely-slanderous libertine accusations against the Gnostics&rsquo; own mostly-ascetic texts, keeps well-attested teachings separate from contested origins and the debated dating of Thomas, and reserves the mystery cults and Manichaeism&rsquo;s fuller treatment for their own places. Written to be educational, and to let a much-maligned family be understood on its own terms as well as its critics&rsquo;.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch18 */
+  ch18: { html: `
+    <p class="lead">Secret, initiatory cults that swept the Roman Empire, offering what the old civic religion did not: a personal, chosen faith, an intimate bond with a savior deity, and a hope of salvation beyond death. Early Christianity&rsquo;s great rivals &mdash; and, on the most famous of them, a religion whose inner meaning the initiates hid so well it is largely lost.</p>
+
+    <h2>Down into the cave</h2>
+    <p>Descend beneath a Roman house into a long, low chamber built to feel like a cave. Stone benches line both sides where perhaps twenty men recline, and at the far end, lamp-lit, is the image toward which everything points: a young man in a Phrygian cap kneeling on a great bull, plunging a dagger into its neck as a dog and snake leap to the blood, a scorpion grips the bull, a raven watches, and the sun, moon, and zodiac ring the scene. This is the <strong>tauroctony</strong>, and this is a <strong>mithraeum</strong>, a temple of <strong>Mithras</strong>. What did it mean? The first and most important fact of this chapter: <strong>we do not fully know.</strong> The men who knew were sworn to secrecy, and kept their vow so well that the inner meaning of the most widespread mystery cult is largely lost.</p>
+
+    <h2>What a &ldquo;mystery&rdquo; was</h2>
+    <p>The Greek <em>mysterion</em> (from <em>myein</em>, &ldquo;to close&rdquo; the eyes or lips) named a rite whose content was <strong>secret</strong>, revealed only to the <strong>initiated</strong>. These were not rival religions demanding you renounce your city&rsquo;s gods &mdash; a Roman could be a civic worshipper <em>and</em> an initiate. What set them apart was a cluster of features: <strong>initiation</strong> (a personal, often frightening passage, sometimes a staged death and rebirth); <strong>secrecy</strong> (the <em>arcana</em>, forbidden to outsiders); a <strong>personal savior deity</strong> with whom the initiate formed an intimate bond; and the <strong>promise of a blessed afterlife</strong> &mdash; the central appeal. The <strong>Eleusinian</strong> and <strong>Orphic</strong> mysteries of Chapter 8 had offered this; Late Antiquity added a proliferation of new &ldquo;oriental&rdquo; cults spread along the empire&rsquo;s roads.</p>
+
+    <h2>A note on evidence</h2>
+    <p>Because they were secret, the mysteries pose a special problem &mdash; and it differs by cult. For the <strong>mysteries of Isis</strong> we have a priceless inside account, the closing book of <strong>Apuleius&rsquo;s</strong> <em>Golden Ass</em>. For <strong>Mithraism</strong> we have almost the opposite: <strong>no scripture, doctrine, or narrative survives at all</strong> &mdash; only the archaeology and the silent, repeated <strong>images</strong>, interpreted without a single sentence of the cult&rsquo;s own explanation. Much said about Mithraism is therefore <strong>inference from art</strong>, to be held with humility.</p>
+
+    <h2>Mithras and the bull</h2>
+    <p><strong>Mithraism</strong> flourished from the late 1st to the 4th century CE, especially among <strong>soldiers</strong> &mdash; a strictly <strong>male</strong> cult organized like the army, with <strong>seven grades</strong> each under a planet: <strong>Corax</strong> (Raven), <strong>Nymphus</strong> (Bridegroom), <strong>Miles</strong> (Soldier), <strong>Leo</strong> (Lion), <strong>Perses</strong> (Persian), <strong>Heliodromus</strong> (Sun-Runner), and <strong>Pater</strong> (Father). They gathered in the cave-like mithraeum for ritual <strong>meals</strong>. The <strong>tauroctony</strong>&rsquo;s meaning is the great puzzle: an older view read it as cosmic sacrifice and renewal, while an influential modern theory (Ulansey) argues it is an <strong>astronomical map</strong> &mdash; the bull as Taurus, the animals as constellations, encoding the <strong>precession of the equinoxes</strong>. Ingenious, much debated, and &mdash; lacking any text &mdash; unprovable. On origins: the name descends from the Persian <strong>Mithra</strong> (Chapter 6), but most scholars think the Roman cult was <strong>largely a new creation</strong>, the continuity of the name masking a discontinuity of content.</p>
+
+    <h2>Isis, queen of heaven</h2>
+    <p>If Mithras was the soldier&rsquo;s god, <strong>Isis</strong> was the most beloved savior of the mystery world, worshipped from Egypt to Britain. Her cult carried the Egyptian myth of <strong>Isis and Osiris</strong> (Chapter 2) into a new key: the faithful wife who restored her murdered husband as lord of the dead became a <strong>universal, compassionate goddess</strong> &mdash; &ldquo;queen of heaven,&rdquo; mistress of fate, mother and savior &mdash; offering protection in this life and a share in Osiris&rsquo;s victory over death in the next (alongside her stood <strong>Serapis</strong>, a composite god created by the Ptolemies). Through <strong>Apuleius</strong> we glimpse an initiation from inside: his hero, purified, descends at night into the temple, &ldquo;approached the boundary of death,&rdquo; &ldquo;saw the sun blazing at midnight&rdquo; and &ldquo;the gods above and below,&rdquo; and emerged reborn &mdash; our clearest window into what the mysteries offered.</p>
+
+    <h2>Cybele, Attis, and the pit of blood</h2>
+    <p>The cult of <strong>Cybele</strong>, the <strong>Magna Mater</strong> (whose import to Rome in 204 BCE was told in Chapter 13), developed into a mystery religion centered on her consort <strong>Attis</strong>, who in madness <strong>castrated himself</strong> and died, and in some versions was <strong>restored</strong> to a kind of life; his priests, the <strong>Galli</strong>, castrated themselves in imitation, and his death was re-enacted each spring, culminating in the joyous <strong>Hilaria</strong>. The supreme rite was the <strong>taurobolium</strong>: the initiate descended into a <strong>pit</strong> over which a bull was slaughtered, its <strong>blood drenching him</strong> &mdash; emerging &ldquo;reborn.&rdquo; A tempting parallel to Christian &ldquo;washed in the blood&rdquo; language &mdash; but an honesty note: many inscriptions record the rite as valid for <strong>twenty years</strong>, casting doubt on whether it was originally understood to confer eternal life at all.</p>
+
+    <h2>Why the mysteries rose, and the great rivalry</h2>
+    <p>Civic religion (Chapters 8, 13) concerned the <strong>community&rsquo;s</strong> bond with the gods and asked nothing of the individual soul&rsquo;s eternal fate. But in the vast, anonymous empire, more people wanted a religion <strong>personal and chosen</strong>: an intimate savior, an emotional experience, a community, and a <strong>hope beyond death</strong>. The mysteries offered exactly this &mdash; and so, to the same hunger, did <strong>Christianity</strong>. Renan wrote that had Christianity been checked, the world might have become <strong>Mithraic</strong>. Observers note apparent <strong>parallels</strong> &mdash; initiation, ritual meals, rebirth language, savior-gods &mdash; but the popular claim that &ldquo;Christianity simply copied the mysteries&rdquo; is badly overstated, and honesty requires the correction: <strong>Mithras was not a dying-and-rising god</strong> (no death or resurrection appears in the Mithraic material); the <strong>chronology often runs the wrong way</strong> (Mithraism peaked <em>after</em> Christianity was established); the &ldquo;<strong>dying and rising god</strong>&rdquo; category itself (Frazer) is contested; and the debate is unusually <strong>bias-prone</strong> &mdash; a textbook zone of <strong>parallelomania</strong>. The sober truth: Christianity and the mysteries were <strong>siblings of the same age</strong>, drawing on a shared vocabulary and answering the same hungers, not copies of one another.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p><strong>The tauroctony as a map of the heavens.</strong> The great encoded object of the mysteries is the Mithraic <strong>tauroctony</strong>, in which every element carries weight &mdash; the <strong>bull</strong>, the <strong>dog, snake, scorpion, raven</strong>, the <strong>sun and moon</strong>, the twin torchbearers (one up, one down), the <strong>cave</strong> as cosmos, and the ring of the <strong>zodiac</strong>. On the astronomical reading it is a <strong>star chart in mythic disguise</strong>; on any reading, a picture built to be <em>decoded</em> by those with the knowledge.</p>
+    <p><strong>The ladder of the seven grades.</strong> The seven grades, each linked to a <strong>planet</strong>, appear to encode the <strong>ascent of the soul</strong> through the planetary spheres &mdash; a ritual ladder from Raven to Father, of a kind the Gnostics (Chapter 17) also mapped. <strong>The signs of Isis</strong> &mdash; the <strong>sistrum</strong> (sacred rattle), the <strong>tyet</strong> or &ldquo;knot of Isis,&rdquo; and the enthroned mother nursing <strong>Horus</strong> (whose resemblance to the later Madonna and Child is often noted, best treated as shared visual vocabulary). And the <strong>taurobolium</strong> encodes rebirth through blood &mdash; descent, drenching, emergence renewed.</p>
+
+    <h2>Connections</h2>
+    <p>The Roman mysteries are heirs of the <strong>Greek mystery cults</strong> of Chapter 8 and the <strong>Orphic-Pythagorean</strong> hope of Chapter 15, grown within the civic religion of <strong>Rome</strong> (Chapter 13, which imported Magna Mater and suppressed the Bacchanalia), carrying forward the Egyptian <strong>Isis and Osiris</strong> (Chapter 2) and the Persian name of <strong>Mithra</strong> (Chapter 6). Above all they are the <strong>rivals and siblings</strong> of <strong>early Christianity</strong> and <strong>Gnosticism</strong> (Chapters 16, 17) &mdash; fellow seekers, in an anxious age, of a personal salvation the old gods did not promise. Forward, the mysteries <strong>faded</strong> as Christianity triumphed and the temples closed in the 4th&ndash;5th centuries; but their initiatory, secret, salvation-seeking impulse resurfaced in the <strong>Hermetic</strong> and esoteric currents and the initiatory societies of the modern Western esoteric tradition treated in later chapters.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The reality and wide spread of the <strong>mystery cults</strong> (Mithras, Isis/Serapis, Cybele/Attis, Bacchus) as initiatory, secret, salvation-oriented religions existing alongside civic religion, and their core features (initiation, secrecy, personal savior, hope of a blessed afterlife).</li>
+          <li>The archaeology of <strong>Mithraism</strong> (mithraea, seven grades, tauroctony), the literary account of an <strong>Isiac initiation</strong> in Apuleius, and the <strong>taurobolium</strong> (with inscriptions, some recording a 20-year validity).</li>
+          <li>That the mysteries and <strong>Christianity</strong> were contemporaneous rivals answering a shared hunger for personal salvation.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported</h4>
+        <ul>
+          <li>Confident, detailed reconstruction of <strong>Mithraic doctrine</strong> &mdash; with no surviving scripture, much is inference from images, and the astronomical/precession theory is <strong>unproven</strong>.</li>
+          <li>That Roman Mithraism is simply <strong>imported Persian religion</strong> (the name is Persian; the cult appears largely a new Roman creation).</li>
+          <li>The popular claim that <strong>Christianity copied the mysteries</strong> &mdash; Mithras was no dying-and-rising god, the chronology often runs the other way, and the &ldquo;dying and rising god&rdquo; category is contested: a zone of <strong>parallelomania</strong> and partisan bias.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The <strong>true meaning</strong> of the tauroctony and Mithraic ritual, perhaps permanently lost with the initiates&rsquo; secret.</li>
+          <li>The precise <strong>origins</strong> of each cult and how much genuine eastern content it preserved.</li>
+          <li>The extent of <strong>mutual influence</strong> among the mysteries, Gnosticism, and early Christianity; and whether rites like the <strong>taurobolium</strong> originally promised immortality at all.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>The mysteries, Mithraism, Isis, and Cybele</h4>
+      <ul>
+        <li><a href="https://the-past.com/feature/the-mystery-of-mithras/">The Past: The mystery of Mithras</a>; <a href="https://en.wikipedia.org/wiki/Mysteries_of_Isis">Mysteries of Isis</a> (and Apuleius, <em>Golden Ass</em> XI); <a href="https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/cybele">Encyclopedia.com: Cybele</a>.</li>
+      </ul>
+      <h4>The parallels debate</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Parallelomania">Parallelomania</a>; <a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Dying-and-rising god</a> (the contested Frazerian category).</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly sources rather than memory alone. The chapter is careful about the evidence problem peculiar to secret cults &mdash; flagging that Mithraic doctrine is reconstructed from images alone and that the astronomical theory is unproven &mdash; corrects the overstated claim that Christianity copied the mysteries (noting Mithras was no dying-rising god, the adverse chronology, the contested category, and the danger of parallelomania and bias), distinguishes the Persian name of Mithra from the largely new Roman cult, and cross-references the Greek mysteries (Chapter 8), Rome (Chapter 13), and the era&rsquo;s rival salvation religions (Chapters 16&ndash;17). Written to be educational, and to present the mysteries on their own terms as one of antiquity&rsquo;s great answers to the fear of death.</p>
+    </div>
   ` }
 };
