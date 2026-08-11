@@ -186,7 +186,7 @@ window.ARCHIVE = {
 
     { id: "ch21", title: "Islam", kind: "tradition",
       era: "06-early-medieval", eraLabel: "Early Medieval · Islam",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/06-early-medieval/ch21-islam-early-medieval.md",
       summary: "The recitation and the oneness of God: from the cave of Hira and the command to 'Recite!' to a faith that spanned Spain to the Indus in a century. The historical Muhammad that scholarship can establish and the revelation only faith can affirm — kept distinct — the Qur'an and the manuscript evidence for its early codification, tawhid and the Five Pillars, the Abrahamic inheritance and the Muslim Jesus, Sharia and the schools of law, the Sunni–Shia split sealed at Karbala, and the sacred encoding of a faith that made the written word its supreme art: calligraphy, geometric infinity, the abjad, and the unexplained letters that open the suras." }
   ]
