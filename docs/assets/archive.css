@@ -267,6 +267,34 @@ img { max-width: 100%; }
   background: rgba(185, 143, 78, 0.08);
 }
 
+/* ---------- ambient room-tone toggle (site-wide) ---------- */
+.ambient-toggle {
+  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 60;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(21, 15, 10, 0.72); color: var(--ink-faint);
+  border: 1px solid var(--line-soft); cursor: pointer;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  box-shadow: 0 6px 20px -10px #000;
+  transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease, transform 0.2s ease;
+}
+.ambient-toggle:hover { color: var(--gold-bright); border-color: var(--gold); }
+.ambient-toggle:active { transform: translateY(1px); }
+.ambient-toggle:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+.ambient-toggle svg { width: 21px; height: 21px; display: block; }
+.ambient-toggle .wave { opacity: 0; transition: opacity 0.4s ease; }
+.ambient-toggle .slash { opacity: 0.9; transition: opacity 0.3s ease; }
+.ambient-toggle.is-on { color: var(--gold-bright); border-color: var(--gold); }
+.ambient-toggle.is-on .wave { opacity: 1; }
+.ambient-toggle.is-on .w2 { opacity: 0.7; }
+.ambient-toggle.is-on .slash { opacity: 0; }
+.ambient-toggle.is-on .dot { animation: ambient-pulse 3.4s ease-in-out infinite; }
+@keyframes ambient-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@media (prefers-reduced-motion: reduce) {
+  .ambient-toggle.is-on .dot { animation: none; }
+}
+@media print { .ambient-toggle { display: none; } }
+
 /* ---------- utilities ---------- */
 .center { text-align: center; }
 .muted { color: var(--ink-dim); }
