@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Divine Archives — The Reading Room</title>
-  <meta name="description" content="A generative ambient soundscape for The Divine Archives — bowed strings, a distant wordless choir, sparse piano, and a bell in the stone dark. It never repeats, and it never ends." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%94%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="A generative sacred soundscape for The Divine Archives — a rolling shamanic frame-drum, singing bowls, bells, and a distant ancient choir. It never repeats, and it never ends." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%94%94%3C/text%3E%3C/svg%3E" />
 <style>
   :root{
     --ground:#100c09; --ground-2:#150f0a; --panel:#1b140d;
@@ -22,16 +22,10 @@
     display:flex; align-items:center; justify-content:center;
     -webkit-font-smoothing:antialiased;
   }
-  body::after{ /* vignette */
-    content:""; position:fixed; inset:0; pointer-events:none; z-index:3;
+  body::after{ content:""; position:fixed; inset:0; pointer-events:none; z-index:3;
     background:
-      radial-gradient(120% 90% at 50% 40%, transparent 45%, rgba(0,0,0,0.62) 100%),
-      radial-gradient(90% 60% at 50% 12%, rgba(146,108,54,0.10), transparent 60%);
-  }
-  body::before{ /* grain */
-    content:""; position:fixed; inset:0; pointer-events:none; z-index:4; opacity:0.05; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+      radial-gradient(120% 90% at 50% 40%, transparent 42%, rgba(0,0,0,0.68) 100%),
+      radial-gradient(90% 60% at 50% 12%, rgba(146,108,54,0.08), transparent 60%); }
   #halo{ position:fixed; inset:0; z-index:0; width:100%; height:100%; }
   .backlink{
     position:fixed; top:1.4rem; left:1.6rem; z-index:5;
@@ -39,39 +33,26 @@
     font-size:0.62rem; color:var(--ink-faint); text-decoration:none; transition:color .3s;
   }
   .backlink:hover{ color:var(--gold-bright); }
-  .stage{
-    position:relative; z-index:2; width:min(92vw,44rem);
-    display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.5rem;
-    padding:2rem 1.5rem;
-  }
+  .stage{ position:relative; z-index:2; width:min(92vw,44rem);
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.5rem; padding:2rem 1.5rem; }
   .emblem{ width:132px; height:132px; color:var(--gold); filter:drop-shadow(0 0 22px rgba(185,143,78,0.28)); }
-  .emblem .spin-slow{ transform-origin:60px 60px; animation:turn 180s linear infinite; }
-  .emblem .spin-rev{ transform-origin:60px 60px; animation:turn 260s linear infinite reverse; }
-  .eyebrow{
-    font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.42em;
-    font-size:0.68rem; color:var(--gold); margin:0;
-  }
-  h1{
-    font-family:var(--font-display); font-weight:400; text-transform:uppercase;
-    letter-spacing:0.18em; color:var(--parchment); margin:0;
-    font-size:clamp(1.7rem,5vw,2.7rem); line-height:1.08; text-wrap:balance;
-    text-shadow:0 1px 0 #000, 0 0 34px rgba(185,143,78,0.12);
-  }
+  .emblem .spin-slow{ transform-origin:60px 60px; animation:turn 220s linear infinite; }
+  .emblem .spin-rev{ transform-origin:60px 60px; animation:turn 300s linear infinite reverse; }
+  .eyebrow{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.42em;
+    font-size:0.68rem; color:var(--gold); margin:0; }
+  h1{ font-family:var(--font-display); font-weight:400; text-transform:uppercase; letter-spacing:0.18em;
+    color:var(--parchment); margin:0; font-size:clamp(1.7rem,5vw,2.7rem); line-height:1.08; text-wrap:balance;
+    text-shadow:0 1px 0 #000, 0 0 34px rgba(185,143,78,0.12); }
   .sub{ max-width:34rem; margin:0; color:var(--ink-dim); font-style:italic; font-size:1.02rem; text-wrap:balance; }
   .controls{ display:flex; flex-direction:column; align-items:center; gap:1.2rem; margin-top:0.4rem; }
-  .begin{
-    font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.28em; font-size:0.8rem;
+  .begin{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.28em; font-size:0.8rem;
     color:var(--ground); background:linear-gradient(180deg,var(--gold-bright),var(--gold));
     border:0; border-radius:2px; padding:0.95rem 2.6rem; cursor:pointer;
-    box-shadow:0 14px 40px -18px #000, inset 0 1px 0 rgba(255,240,210,0.4);
-    transition:filter .2s, transform .2s;
-  }
+    box-shadow:0 14px 40px -18px #000, inset 0 1px 0 rgba(255,240,210,0.4); transition:filter .2s, transform .2s; }
   .begin:hover{ filter:brightness(1.08); }
   .begin:active{ transform:translateY(1px); }
-  .begin[data-state="playing"]{
-    background:transparent; color:var(--gold-bright); border:1px solid var(--line);
-    box-shadow:none; letter-spacing:0.24em;
-  }
+  .begin[data-state="playing"]{ background:transparent; color:var(--gold-bright); border:1px solid var(--line);
+    box-shadow:none; letter-spacing:0.24em; }
   .vol{ display:flex; align-items:center; gap:0.8rem; width:min(22rem,80vw); opacity:0; transition:opacity .6s; }
   .vol.show{ opacity:1; }
   .vol label{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.2em; font-size:0.58rem; color:var(--ink-faint); white-space:nowrap; }
@@ -80,19 +61,11 @@
   input[type="range"]::-moz-range-thumb{ width:14px; height:14px; border-radius:50%; background:var(--gold); border:0; cursor:pointer; }
   :focus-visible{ outline:2px solid var(--gold-bright); outline-offset:4px; }
   .foot{ font-size:0.76rem; color:var(--ink-faint); font-style:italic; margin:0; }
-  .voices{ display:flex; gap:0.5rem 1.1rem; flex-wrap:wrap; justify-content:center; margin:0; padding:0; list-style:none;
-    font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.16em; font-size:0.56rem; color:var(--ink-faint); }
-  .voices li{ display:flex; align-items:center; gap:0.4rem; transition:color .4s; }
-  .voices li::before{ content:""; width:5px; height:5px; border-radius:50%; background:currentColor; opacity:0.5; }
-  .voices li.lit{ color:var(--gold-bright); }
   @keyframes turn{ to{ transform:rotate(360deg);} }
-  @media (prefers-reduced-motion: reduce){
-    .emblem .spin-slow,.emblem .spin-rev{ animation:none; }
-  }
+  @media (prefers-reduced-motion: reduce){ .emblem .spin-slow,.emblem .spin-rev{ animation:none; } }
 </style>
 </head>
 <body>
-
 <a class="backlink" href="index.html">&larr; The Archive</a>
 <canvas id="halo" aria-hidden="true"></canvas>
 
@@ -113,236 +86,203 @@
 
   <p class="eyebrow">The Divine Archives</p>
   <h1>The Reading Room</h1>
-  <p class="sub">A generative soundscape for study and reverie — bowed strings and a distant, wordless choir, sparse piano like footsteps, and a bell in the stone dark. It never repeats, and it never ends.</p>
+  <p class="sub">The slow, steady beat of a shamanic frame drum, the long shimmer of singing bowls and bells, and a distant ancient choir rising and receding &mdash; all in one mode, so they rest together. Meant to slow the breath and carry you inward. Keep it low.</p>
 
   <div class="controls">
     <button class="begin" id="begin" type="button" aria-live="polite">Enter the Archive</button>
     <div class="vol" id="volwrap">
       <label for="vol">Volume</label>
-      <input id="vol" type="range" min="0" max="100" value="62" aria-label="Volume" />
+      <input id="vol" type="range" min="0" max="100" value="55" aria-label="Volume" />
     </div>
-    <ul class="voices" id="voices" aria-hidden="true">
-      <li data-v="drone">Drone</li><li data-v="string">Strings</li><li data-v="choir">Choir</li><li data-v="piano">Piano</li><li data-v="bell">Bell</li>
-    </ul>
   </div>
 
-  <p class="foot">Procedurally synthesized in your browser · best with headphones, kept low</p>
+  <p class="foot">Procedurally synthesized in your browser &middot; best with headphones, kept low</p>
 </main>
 
 <script>
 (function(){
   "use strict";
-  var ctx=null, master=null, analyser=null, bus=null, drone=null, running=false, started=false;
-  var timers=[];
+  var ctx=null, master=null, analyser=null, bus=null, punch=null, running=false, started=false, noiseBuf=null;
+  var timers=[], clock=null, beat=0;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function mf(midi){ return 440*Math.pow(2,(midi-69)/12); }
   function rnd(a,b){ return a+Math.random()*(b-a); }
   function pick(a){ return a[(Math.random()*a.length)|0]; }
-  function lit(name){
-    var el=document.querySelector('#voices li[data-v="'+name+'"]'); if(!el) return;
-    el.classList.add('lit'); setTimeout(function(){ el.classList.remove('lit'); }, 900);
-  }
-
+  function white(sec){ var n=(ctx.sampleRate*sec)|0, b=ctx.createBuffer(1,n,ctx.sampleRate), d=b.getChannelData(0);
+    for(var i=0;i<n;i++) d[i]=Math.random()*2-1; return b; }
   function makeImpulse(seconds, decay){
     var rate=ctx.sampleRate, len=(rate*seconds)|0, buf=ctx.createBuffer(2,len,rate);
-    for(var ch=0; ch<2; ch++){
-      var d=buf.getChannelData(ch);
-      for(var i=0;i<len;i++){ var t=i/len; d[i]=(Math.random()*2-1)*Math.pow(1-t,decay); }
-    }
+    for(var ch=0; ch<2; ch++){ var d=buf.getChannelData(ch);
+      for(var i=0;i<len;i++){ var t=i/len; d[i]=(Math.random()*2-1)*Math.pow(1-t,decay); } }
     return buf;
   }
 
+  var ROOT = 48;   // C — the shared tonal centre so bowls, bells and choir mesh
+  // one modal set (C minor pentatonic) shared by everything
+  var choirNotes = [ROOT, ROOT+7, ROOT+12, ROOT+15, ROOT+10];   // C G C Eb Bb
+  var bowlNotes  = [ROOT-5, ROOT, ROOT+7];                       // G2 C3 G3 (warm, low)
+  var bellNotes  = [ROOT+12, ROOT+15, ROOT+19, ROOT+22];         // C4 Eb4 G4 Bb4 (bright)
+
   function init(){
     ctx = new (window.AudioContext||window.webkitAudioContext)();
+    noiseBuf = white(2);
     master = ctx.createGain(); master.gain.value = 0.0001;
-    var comp = ctx.createDynamicsCompressor();
-    comp.threshold.value=-18; comp.knee.value=24; comp.ratio.value=3; comp.attack.value=0.02; comp.release.value=0.5;
+    var lim = ctx.createDynamicsCompressor();
+    lim.threshold.value=-8; lim.knee.value=6; lim.ratio.value=10; lim.attack.value=0.004; lim.release.value=0.28;
+    var conv = ctx.createConvolver(); conv.buffer = makeImpulse(4.8, 3.0);   // long stone-hall reverb
+    var wet = ctx.createGain(); wet.gain.value=0.5;
+    var dry = ctx.createGain(); dry.gain.value=0.85;
+    bus = ctx.createGain(); bus.gain.value=0.85;
+    bus.connect(dry); dry.connect(lim);
+    bus.connect(conv); conv.connect(wet); wet.connect(lim);
+    punch = ctx.createGain(); punch.gain.value=1.0; punch.connect(lim);   // dry, present channel for the drum
+    analyser = ctx.createAnalyser(); analyser.fftSize=1024; analyser.smoothingTimeConstant=0.88;
+    lim.connect(master); master.connect(analyser); master.connect(ctx.destination);
 
-    var conv = ctx.createConvolver(); conv.buffer = makeImpulse(5.5, 3.2);
-    var wet = ctx.createGain(); wet.gain.value=0.95;
-    var dry = ctx.createGain(); dry.gain.value=0.55;
-    bus = ctx.createGain(); bus.gain.value=0.9;
-
-    bus.connect(dry); dry.connect(comp);
-    bus.connect(conv); conv.connect(wet); wet.connect(comp);
-
-    analyser = ctx.createAnalyser(); analyser.fftSize=1024; analyser.smoothingTimeConstant=0.85;
-    comp.connect(master); master.connect(analyser); master.connect(ctx.destination);
-
-    startDrone();
-    schedule();
+    startDrum();
+    timers.push(setTimeout(function(){ if(running) bowl(); }, 3500));
+    timers.push(setTimeout(function(){ if(running) bell(); }, 8500));
+    timers.push(setTimeout(function(){ if(running) choir(); }, 1800));
+    bowlLoop(); bellLoop(); choirLoop();
     draw();
   }
 
-  function startDrone(){
-    drone = ctx.createGain(); drone.gain.value=0.9; drone.connect(bus);
-    var breathe = ctx.createOscillator(); breathe.frequency.value=0.035;
-    var breatheGain = ctx.createGain(); breatheGain.gain.value=0.22;
-    breathe.connect(breatheGain); breatheGain.connect(drone.gain); breathe.start();
-    [38,45,50].forEach(function(midi,idx){
-      var f=mf(midi);
-      var filt=ctx.createBiquadFilter(); filt.type="lowpass"; filt.frequency.value=520; filt.Q.value=0.4;
-      var lfo=ctx.createOscillator(); lfo.frequency.value=0.05+idx*0.017;
-      var lfoG=ctx.createGain(); lfoG.gain.value=180; lfo.connect(lfoG); lfoG.connect(filt.frequency); lfo.start();
-      var g=ctx.createGain(); g.gain.value= idx===0?0.06:0.042;
-      [1,1.004].forEach(function(dt){
-        var o=ctx.createOscillator(); o.type="sawtooth"; o.frequency.value=f*dt;
-        o.connect(filt); o.start();
+  // --- shamanic frame drum: deep, prominent, on its own dry channel ---
+  // low "dum" — the deep centre-of-the-drum stroke (the downbeat)
+  function dum(t, vel){
+    var pk = 0.24*vel;
+    var o=ctx.createOscillator(); o.type="sine";
+    var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=340;
+    var g=ctx.createGain();
+    o.frequency.setValueAtTime(100,t); o.frequency.exponentialRampToValueAtTime(53,t+0.085);
+    g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(pk,t+0.005); g.gain.exponentialRampToValueAtTime(0.0001,t+0.26);
+    o.connect(lp); lp.connect(g); g.connect(punch); o.start(t); o.stop(t+0.3);
+    var s=ctx.createBufferSource(); s.buffer=noiseBuf; s.loop=true;
+    var nlp=ctx.createBiquadFilter(); nlp.type="lowpass"; nlp.frequency.value=360;
+    var ng=ctx.createGain(); s.connect(nlp); nlp.connect(ng); ng.connect(punch);
+    ng.gain.setValueAtTime(0.0001,t); ng.gain.exponentialRampToValueAtTime(0.06*vel,t+0.004); ng.gain.exponentialRampToValueAtTime(0.0001,t+0.06);
+    s.start(t); s.stop(t+0.1);
+  }
+  // lighter "tek" — the higher edge stroke that fills the cadence (clean, no harsh noise)
+  function tek(t, vel){
+    var pk = 0.1*vel;
+    var o=ctx.createOscillator(); o.type="sine";
+    var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=900;
+    var g=ctx.createGain();
+    o.frequency.setValueAtTime(196,t); o.frequency.exponentialRampToValueAtTime(150,t+0.035);
+    g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(pk,t+0.004); g.gain.exponentialRampToValueAtTime(0.0001,t+0.1);
+    o.connect(lp); lp.connect(g); g.connect(punch); o.start(t); o.stop(t+0.12);
+  }
+  // a repeating frame-drum cadence: DUM ta-TA-ta  DUM ta-TA-ta  (rolls, doesn't plod)
+  var pattern=[
+    {k:1, v:1.00}, {k:0, v:0.30}, {k:0, v:0.52}, {k:0, v:0.30},
+    {k:1, v:0.80}, {k:0, v:0.30}, {k:0, v:0.52}, {k:0, v:0.34}
+  ];
+  var STEP = 0.2;   // ~71 BPM feel, driven by a rolling 16th cadence — hypnotic, not a heartbeat
+  function startDrum(){
+    beat=0;
+    function tickStep(){
+      if(!running){ clock=setTimeout(tickStep, 200); return; }
+      var s=pattern[beat%pattern.length], t=ctx.currentTime+0.02+rnd(-0.004,0.004);
+      if(s.k) dum(t, s.v*rnd(0.97,1.03)); else tek(t, s.v*rnd(0.9,1.1));
+      beat++;
+      clock=setTimeout(tickStep, STEP*1000);
+    }
+    tickStep();
+  }
+
+  // --- singing bowl: warm inharmonic partials, long shimmering decay ---
+  function bowl(){
+    var t=ctx.currentTime, f=mf(pick(bowlNotes));
+    var out=ctx.createGain(); out.gain.value=1;
+    var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=3400; out.connect(lp); lp.connect(bus);
+    var parts=[[1,0.5,9],[2.76,0.24,8],[5.40,0.13,6.5],[8.90,0.06,5]];
+    parts.forEach(function(p){
+      [1,1.006].forEach(function(dt){
+        var o=ctx.createOscillator(); o.type="sine"; o.frequency.value=f*p[0]*dt;
+        var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
+        g.gain.exponentialRampToValueAtTime(0.05*p[1], t+0.05);
+        g.gain.exponentialRampToValueAtTime(0.0001, t+p[2]);
+        o.connect(g); g.connect(out); o.start(t); o.stop(t+p[2]+0.4);
       });
-      filt.connect(g); g.connect(drone);
     });
   }
+  function bowlLoop(){ if(running && Math.random()<0.85) bowl(); timers.push(setTimeout(bowlLoop, rnd(11,18)*1000)); }
 
-  // Bowed string voice (cello / viola)
-  function playString(midi, dur, peak, bright){
-    var t=ctx.currentTime, f=mf(midi);
-    var filt=ctx.createBiquadFilter(); filt.type="lowpass";
-    filt.frequency.value=Math.max(500,Math.min(4200,f*(bright||4.2))); filt.Q.value=0.8;
-    var g=ctx.createGain(); g.gain.value=0.0001;
-    var vib=ctx.createOscillator(); vib.frequency.value=rnd(4.8,5.6);
-    var vibG=ctx.createGain(); vibG.gain.value=0.0001; vib.connect(vibG); vib.start();
-    [1,1.0032].forEach(function(dt){
-      var o=ctx.createOscillator(); o.type="sawtooth"; o.frequency.value=f*dt;
-      vibG.connect(o.frequency); o.connect(filt); o.start(t); o.stop(t+dur+2.2);
-    });
-    filt.connect(g); g.connect(bus);
-    var atk=rnd(0.5,0.9);
-    g.gain.setValueAtTime(0.0001,t);
-    g.gain.exponentialRampToValueAtTime(peak, t+atk);
-    g.gain.setValueAtTime(peak, t+dur);
-    g.gain.exponentialRampToValueAtTime(0.0001, t+dur+rnd(1.4,2.0));
-    vibG.gain.setValueAtTime(0.0001,t);
-    vibG.gain.linearRampToValueAtTime(f*0.006, t+atk+0.6);
-    vib.stop(t+dur+2.2);
-    lit('string');
-  }
-
-  function playPiano(midi, peak){
-    var t=ctx.currentTime, f=mf(midi);
-    var filt=ctx.createBiquadFilter(); filt.type="lowpass"; filt.frequency.value=2600;
-    var out=ctx.createGain(); out.gain.value=1; filt.connect(out); out.connect(bus);
-    [[1,1],[2.001,0.38],[3.004,0.16]].forEach(function(p){
-      var o=ctx.createOscillator(); o.type="sine"; o.frequency.value=f*p[0];
-      var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
-      g.gain.exponentialRampToValueAtTime(peak*p[1], t+0.006);
-      g.gain.setTargetAtTime(0.0001, t+0.02, 1.1);
-      o.connect(g); g.connect(filt); o.start(t); o.stop(t+4.2);
-    });
-    lit('piano');
-  }
-
-  function playBell(midi, peak){
-    var t=ctx.currentTime, f=mf(midi);
-    var out=ctx.createGain(); out.gain.value=1; out.connect(bus);
-    var ratios=[[1,1,9],[2.02,0.5,7],[2.76,0.42,6.5],[5.40,0.22,5],[8.10,0.12,3.5]];
-    ratios.forEach(function(p){
+  // --- bell: brighter, clearer metallic toll ---
+  function bell(){
+    var t=ctx.currentTime, f=mf(pick(bellNotes));
+    var out=ctx.createGain(); out.gain.value=1;
+    var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=6800; out.connect(lp); lp.connect(bus);
+    var parts=[[1,0.5,5],[2.01,0.4,4],[3.03,0.26,3],[4.2,0.16,2.3],[5.43,0.09,1.7]];
+    parts.forEach(function(p){
       var o=ctx.createOscillator(); o.type="sine"; o.frequency.value=f*p[0]*rnd(0.999,1.001);
       var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
-      g.gain.exponentialRampToValueAtTime(peak*p[1], t+0.012);
-      g.gain.setTargetAtTime(0.0001, t+0.02, p[2]);
-      o.connect(g); g.connect(out); o.start(t); o.stop(t+p[2]*2+2);
+      g.gain.exponentialRampToValueAtTime(0.038*p[1], t+0.008);
+      g.gain.exponentialRampToValueAtTime(0.0001, t+p[2]);
+      o.connect(g); g.connect(out); o.start(t); o.stop(t+p[2]+0.3);
     });
-    lit('bell');
   }
+  function bellLoop(){ if(running && Math.random()<0.7) bell(); timers.push(setTimeout(bellLoop, rnd(14,24)*1000)); }
 
-  function playChoir(){
-    var t=ctx.currentTime;
-    var chords=[[50,53,57,60],[50,57,60,65],[45,53,57,62],[50,53,60,64]];
-    var chord=pick(chords);
-    var atk=rnd(6,9), hold=rnd(3,6), rel=rnd(7,10), peak=rnd(0.020,0.032);
-    var band=ctx.createBiquadFilter(); band.type="bandpass"; band.frequency.value=520; band.Q.value=0.9;
-    var sweep=ctx.createOscillator(); sweep.frequency.value=0.05; var sweepG=ctx.createGain(); sweepG.gain.value=240;
-    sweep.connect(sweepG); sweepG.connect(band.frequency); sweep.start();
+  // --- ancient choir: distant wordless voices, low and warm, rising & receding ---
+  function choir(){
+    var t=ctx.currentTime, root=pick(choirNotes);
+    // two voices a fifth apart for an old, open, modal sound
+    var voices=[root, (Math.random()<0.6? root+7 : root+12)];
+    var band=ctx.createBiquadFilter(); band.type="bandpass"; band.frequency.value=640; band.Q.value=0.8;
     var g=ctx.createGain(); g.gain.value=0.0001; band.connect(g); g.connect(bus);
-    chord.forEach(function(midi){
-      var f=mf(midi);
-      [1,1.005,0.5].forEach(function(dt,i){
-        var o=ctx.createOscillator(); o.type= i===2?"sine":"triangle"; o.frequency.value=f*dt;
-        o.connect(band); o.start(t); o.stop(t+atk+hold+rel+1);
+    var atk=rnd(2.6,3.8), hold=rnd(2.5,4.5), rel=rnd(4,6), peak=rnd(0.03,0.045);
+    voices.forEach(function(v){
+      var f=mf(v);
+      [1,1.006,0.5].forEach(function(dt,i){   // unison + slight detune + sub-octave for depth
+        var o=ctx.createOscillator(); o.type= i===2?"sine":"triangle"; o.frequency.value=f*dt; o.connect(band);
+        var vib=ctx.createOscillator(); vib.frequency.value=rnd(4.2,5.2); var vg=ctx.createGain(); vg.gain.value=f*0.004;
+        vib.connect(vg); vg.connect(o.frequency); vib.start(t); vib.stop(t+atk+hold+rel+0.6);
+        o.start(t); o.stop(t+atk+hold+rel+0.6);
       });
     });
     g.gain.setValueAtTime(0.0001,t);
     g.gain.linearRampToValueAtTime(peak, t+atk);
     g.gain.setValueAtTime(peak, t+atk+hold);
     g.gain.exponentialRampToValueAtTime(0.0001, t+atk+hold+rel);
-    sweep.stop(t+atk+hold+rel+1);
-    lit('choir');
   }
+  function choirLoop(){ if(running && Math.random()<0.85) choir(); timers.push(setTimeout(choirLoop, rnd(9,15)*1000)); }
 
-  // Scheduling — sparse, cyclical, no build
-  var celloPool=[50,53,55,57,60,62,64];      // D3..E4 (D aeolian-ish)
-  var violaPool=[62,65,67,69,72,74];         // higher voices, occasional
-  var pianoPool=[38,41,43,45,50];            // low footsteps
-  var bellPool=[62,65,69,74];
-
-  function every(fn, next){
-    function run(){ if(!running){ timers.push(setTimeout(run, 500)); return; } fn(); timers.push(setTimeout(run, next()*1000)); }
-    timers.push(setTimeout(run, next()*1000));
-  }
-
-  function schedule(){
-    // melody: mostly cello, sometimes a viola answer, sometimes rest
-    every(function(){
-      if(Math.random()<0.22) return;                 // breathe / rest
-      var viola = Math.random()<0.22;
-      var midi = viola ? pick(violaPool) : pick(celloPool);
-      playString(midi, rnd(3.2,6.5), viola?rnd(0.08,0.12):rnd(0.11,0.16), viola?5.2:4.0);
-      if(!viola && Math.random()<0.30){                // a lower drone-note underneath
-        playString(pick([50,45,48]), rnd(4,7), 0.09, 3.2);
-      }
-    }, function(){ return rnd(5.5,10.5); });
-
-    every(function(){ playPiano(pick(pianoPool), rnd(0.07,0.11)); }, function(){ return rnd(15,26); });
-    every(function(){ playChoir(); }, function(){ return rnd(13,22); });
-    every(function(){ playBell(pick(bellPool), rnd(0.12,0.18)); }, function(){ return rnd(30,40); });
-  }
-
-  // ---- visualizer: a slow reactive halo ----
+  // calm reactive halo
   var canvas=document.getElementById('halo'), g2=canvas.getContext('2d'), W=0,H=0, dpr=Math.min(2,window.devicePixelRatio||1);
   function resize(){ W=canvas.clientWidth; H=canvas.clientHeight; canvas.width=W*dpr; canvas.height=H*dpr; g2.setTransform(dpr,0,0,dpr,0,0); }
   window.addEventListener('resize', resize); resize();
-  var motes=[]; for(var i=0;i<60;i++){ motes.push({a:Math.random()*Math.PI*2, r:rnd(0.15,0.62), sp:rnd(0.0006,0.0022)*(Math.random()<0.5?-1:1), z:rnd(0.4,1)}); }
+  var motes=[]; for(var i=0;i<40;i++){ motes.push({a:Math.random()*Math.PI*2, r:rnd(0.15,0.6), sp:rnd(0.0004,0.0014)*(Math.random()<0.5?-1:1), z:rnd(0.4,1)}); }
   var emblem=document.getElementById('emblem');
   function draw(){
     requestAnimationFrame(draw);
     g2.clearRect(0,0,W,H);
-    var cx=W/2, cy=H/2, base=Math.min(W,H);
-    var energy=0;
-    if(analyser){
-      var n=analyser.frequencyBinCount, arr=new Uint8Array(n); analyser.getByteFrequencyData(arr);
-      var lo=0,cnt=0; for(var i=0;i<n*0.25;i++){ lo+=arr[i]; cnt++; } energy=(lo/cnt)/255;
-    }
-    var pulse=0.5+energy*0.9;
-    if(emblem) emblem.style.opacity = (0.72+energy*0.5).toFixed(3);
-    // rings
-    for(var k=0;k<3;k++){
-      var rr=base*(0.16+k*0.11)+energy*base*0.05*(k+1);
+    var cx=W/2, cy=H/2, base=Math.min(W,H), energy=0;
+    if(analyser){ var n=analyser.frequencyBinCount, arr=new Uint8Array(n); analyser.getByteFrequencyData(arr);
+      var lo=0,cnt=0; for(var i=0;i<n*0.25;i++){ lo+=arr[i]; cnt++; } energy=(lo/cnt)/255; }
+    var pulse=0.5+energy*0.85;
+    if(emblem) emblem.style.opacity=(0.72+energy*0.44).toFixed(3);
+    for(var k=0;k<3;k++){ var rr=base*(0.16+k*0.11)+energy*base*0.055*(k+1);
       g2.beginPath(); g2.arc(cx,cy,rr,0,Math.PI*2);
-      g2.strokeStyle='rgba(185,143,78,'+(0.05+0.10*pulse/(k+1))+')'; g2.lineWidth=1; g2.stroke();
-    }
-    // soft central glow
+      g2.strokeStyle='rgba(185,143,78,'+(0.045+0.10*pulse/(k+1))+')'; g2.lineWidth=1; g2.stroke(); }
     var grd=g2.createRadialGradient(cx,cy,0,cx,cy,base*0.5);
-    grd.addColorStop(0,'rgba(185,143,78,'+(0.05+0.06*pulse)+')'); grd.addColorStop(1,'rgba(16,12,9,0)');
+    grd.addColorStop(0,'rgba(185,143,78,'+(0.04+0.06*pulse)+')'); grd.addColorStop(1,'rgba(16,12,9,0)');
     g2.fillStyle=grd; g2.fillRect(0,0,W,H);
-    // motes
-    for(var m=0;m<motes.length;m++){ var o=motes[m]; if(!reduce||running) o.a+=o.sp*(1+energy*2);
-      var R=base*o.r*(1+energy*0.06), x=cx+Math.cos(o.a)*R, y=cy+Math.sin(o.a)*R*0.9;
-      g2.beginPath(); g2.arc(x,y,o.z*1.3,0,Math.PI*2);
-      g2.fillStyle='rgba(217,176,106,'+(0.06+0.12*o.z*pulse)+')'; g2.fill();
-    }
+    for(var m=0;m<motes.length;m++){ var o=motes[m]; if(!reduce||running) o.a+=o.sp*(1+energy*1.5);
+      var R=base*o.r*(1+energy*0.05), x=cx+Math.cos(o.a)*R, y=cy+Math.sin(o.a)*R*0.9;
+      g2.beginPath(); g2.arc(x,y,o.z*1.2,0,Math.PI*2);
+      g2.fillStyle='rgba(217,176,106,'+(0.05+0.10*o.z*pulse)+')'; g2.fill(); }
   }
 
-  // ---- controls ----
   var begin=document.getElementById('begin'), vol=document.getElementById('vol'), volwrap=document.getElementById('volwrap');
-  function setVol(v){ if(!master) return; var g=Math.pow(v/100,1.4)*0.95; master.gain.setTargetAtTime(Math.max(0.0001,g), ctx.currentTime, 0.4); }
+  function setVol(v){ if(!master) return; var g=Math.pow(v/100,1.5)*0.9; master.gain.setTargetAtTime(Math.max(0.0001,g), ctx.currentTime, 0.4); }
   begin.addEventListener('click', function(){
     if(!started){ init(); started=true; running=true; setVol(vol.value); volwrap.classList.add('show');
       begin.textContent='Pause'; begin.setAttribute('data-state','playing'); return; }
-    if(running){ running=false; if(master) master.gain.setTargetAtTime(0.0001, ctx.currentTime, 0.35);
-      setTimeout(function(){ if(!running&&ctx) ctx.suspend(); }, 500);
-      begin.textContent='Resume';
-    } else { running=true; if(ctx) ctx.resume(); setVol(vol.value); begin.textContent='Pause'; }
+    if(running){ running=false; begin.textContent='Resume'; }
+    else { running=true; if(ctx) ctx.resume(); setVol(vol.value); begin.textContent='Pause'; }
   });
   vol.addEventListener('input', function(){ if(running) setVol(vol.value); });
 })();
