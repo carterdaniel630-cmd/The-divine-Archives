@@ -168,19 +168,19 @@ window.ARCHIVE = {
 
     { id: "ch18", title: "Roman Mystery Cults", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Roman Mystery Cults",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/05-late-antiquity/ch18-roman-mystery-cults-late-antiquity.md",
       summary: "Secret paths to salvation: the initiatory cults that swept the Roman Empire offering what civic religion did not — a personal savior and a hope beyond death. Mithras and the tauroctony known only from mute images, Isis the compassionate queen of heaven seen through Apuleius, Cybele and Attis and the blood-pit of the taurobolium, the Bacchic mysteries — and an even-handed reckoning with the overstated claim that Christianity simply copied them, the contested 'dying and rising god,' and the meaning the initiates hid so well it was lost." },
 
     { id: "ch19", title: "Rabbinic Judaism", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Rabbinic Judaism",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md",
       summary: "The portable homeland: how, after the Temple burned in 70 CE, the rabbis rebuilt Judaism around Torah study, prayer, and law so it could live anywhere. The Oral Torah and the chain from Sinai, the Mishnah and the two Talmuds, the culture of preserved argument (Hillel and Shammai), the Shekhinah in exile and prayer replacing sacrifice, the Babylonian academies — with the letters that made the world (Sefer Yetzirah), the scribe's crowned letters, and the chariot-and-palaces mysticism, told alongside the honest history of a legend and a slowly-rising elite." },
 
     { id: "ch20", title: "Mahayana Buddhism", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Mahayana Buddhism",
-      status: "published", pending: true,
+      status: "published",
       source: "eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md",
       summary: "The Great Vehicle and the vow to save all beings: the bodhisattva who refuses nirvana until every creature is free, the radical philosophy of emptiness (Nagarjuna's Madhyamaka, the Heart Sutra), the cosmic Buddha of the three bodies, the heaven of celestial saviors and Amitabha's Pure Land of grace, and skillful means — with Indra's Net of infinite mutual reflection, the mudras and the Heart Sutra's mantra, and an honest reckoning with sutras held as the Buddha's word but composed centuries later, and origins now known to be monastic, not lay. Closes the Late Antiquity era." }
   ]

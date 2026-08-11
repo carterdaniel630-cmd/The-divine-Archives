@@ -63,9 +63,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 
 | ch16 — Early Christianity | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md` |
 | ch17 — Gnosticism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md` |
-| ch18 — Roman Mystery Cults | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch18-roman-mystery-cults-late-antiquity.md` |
-| ch19 — Rabbinic Judaism | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md` |
-| ch20 — Mahayana Buddhism | Tradition | 05-late-antiquity | **PUBLISHED — pending review** | `eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md` |
+| ch18 — Roman Mystery Cults | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch18-roman-mystery-cults-late-antiquity.md` |
+| ch19 — Rabbinic Judaism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md` |
+| ch20 — Mahayana Buddhism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md` |
 
 **Late Antiquity (era 05) traditions complete** (ch16–ch20). Next era: 06 — Early Medieval (Islam, patristic Christianity, Norse paganism, Tantra, Shinto).
 
