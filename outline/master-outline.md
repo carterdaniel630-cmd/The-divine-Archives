@@ -67,7 +67,11 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch19 — Rabbinic Judaism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md` |
 | ch20 — Mahayana Buddhism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md` |
 
-**Late Antiquity (era 05) traditions complete** (ch16–ch20). Next era: 06 — Early Medieval (Islam, patristic Christianity, Norse paganism, Tantra, Shinto).
+**Late Antiquity (era 05) traditions complete** (ch16–ch20).
+
+| ch21 — Islam | Tradition | 06-early-medieval | **PUBLISHED — pending review** | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
+
+Era 06 — Early Medieval in progress. Remaining: patristic Christianity, Norse paganism, Tantra, Shinto.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 

@@ -182,6 +182,12 @@ window.ARCHIVE = {
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Mahayana Buddhism",
       status: "published",
       source: "eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md",
-      summary: "The Great Vehicle and the vow to save all beings: the bodhisattva who refuses nirvana until every creature is free, the radical philosophy of emptiness (Nagarjuna's Madhyamaka, the Heart Sutra), the cosmic Buddha of the three bodies, the heaven of celestial saviors and Amitabha's Pure Land of grace, and skillful means — with Indra's Net of infinite mutual reflection, the mudras and the Heart Sutra's mantra, and an honest reckoning with sutras held as the Buddha's word but composed centuries later, and origins now known to be monastic, not lay. Closes the Late Antiquity era." }
+      summary: "The Great Vehicle and the vow to save all beings: the bodhisattva who refuses nirvana until every creature is free, the radical philosophy of emptiness (Nagarjuna's Madhyamaka, the Heart Sutra), the cosmic Buddha of the three bodies, the heaven of celestial saviors and Amitabha's Pure Land of grace, and skillful means — with Indra's Net of infinite mutual reflection, the mudras and the Heart Sutra's mantra, and an honest reckoning with sutras held as the Buddha's word but composed centuries later, and origins now known to be monastic, not lay. Closes the Late Antiquity era." },
+
+    { id: "ch21", title: "Islam", kind: "tradition",
+      era: "06-early-medieval", eraLabel: "Early Medieval · Islam",
+      status: "published", pending: true,
+      source: "eras/06-early-medieval/ch21-islam-early-medieval.md",
+      summary: "The recitation and the oneness of God: from the cave of Hira and the command to 'Recite!' to a faith that spanned Spain to the Indus in a century. The historical Muhammad that scholarship can establish and the revelation only faith can affirm — kept distinct — the Qur'an and the manuscript evidence for its early codification, tawhid and the Five Pillars, the Abrahamic inheritance and the Muslim Jesus, Sharia and the schools of law, the Sunni–Shia split sealed at Karbala, and the sacred encoding of a faith that made the written word its supreme art: calligraphy, geometric infinity, the abjad, and the unexplained letters that open the suras." }
   ]
 };
