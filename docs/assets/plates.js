@@ -82,6 +82,92 @@
       "Interpretive diagram",
       "Schematic plan of a falcon-shaped Vedic fire altar (<em>&#347;yena-citi</em>, agnicayana), " +
       "after the layered-brick descriptions in the &#346;rauta texts. A diagram of the form &mdash; not a photograph of an excavated altar."
+    ),
+
+    /* Ch07 — Pre-exilic Israel: the seven-branched menorah */
+    "ch07": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">' +
+          '<path d="M40 48 Q40 96 100 120"/><path d="M60 48 Q60 104 100 120"/><path d="M80 48 Q80 112 100 120"/>' +
+          '<path d="M160 48 Q160 96 100 120"/><path d="M140 48 Q140 104 100 120"/><path d="M120 48 Q120 112 100 120"/>' +
+          '<line x1="100" y1="48" x2="100" y2="120"/><line x1="100" y1="120" x2="100" y2="150"/>' +
+          '<path d="M78 150 H122 M84 158 H116 M92 166 H108"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.85">' +
+          '<path d="M40 46 C36 40 37 35 40 30 C43 35 44 40 40 46 Z"/>' +
+          '<path d="M60 46 C56 40 57 35 60 30 C63 35 64 40 60 46 Z"/>' +
+          '<path d="M80 46 C76 40 77 35 80 30 C83 35 84 40 80 46 Z"/>' +
+          '<path d="M100 46 C96 40 97 35 100 30 C103 35 104 40 100 46 Z"/>' +
+          '<path d="M120 46 C116 40 117 35 120 30 C123 35 124 40 120 46 Z"/>' +
+          '<path d="M140 46 C136 40 137 35 140 30 C143 35 144 40 140 46 Z"/>' +
+          '<path d="M160 46 C156 40 157 35 160 30 C163 35 164 40 160 46 Z"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The seven-branched lampstand (menorah) described in Exodus. An original line drawing after the textual description &mdash; not a depiction of a specific object."
+    ),
+
+    /* Ch12 — Confucianism & Daoism: the eight trigrams and the taiji */
+    "ch12": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="84" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>' +
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          // 8 trigrams; solid = one bar, broken = two segments; rotated around center
+          '<g transform="rotate(0 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(45 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(90 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(135 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(180 100 100)"><line x1="84" y1="26" x2="95" y2="26"/><line x1="105" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(225 100 100)"><line x1="84" y1="26" x2="95" y2="26"/><line x1="105" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(270 100 100)"><line x1="84" y1="26" x2="95" y2="26"/><line x1="105" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(315 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g></g>' +
+        '<circle cx="100" cy="100" r="22" stroke="currentColor" stroke-width="1.2"/>' +
+        '<path d="M100 78 A11 11 0 0 1 100 100 A11 11 0 0 0 100 122" stroke="currentColor" stroke-width="1.2"/>' +
+        '<circle cx="100" cy="89" r="2.6" stroke="currentColor" stroke-width="1"/>' +
+        '<circle cx="100" cy="111" r="2.6" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "The eight trigrams (bagua) ringing the taiji, emblems of the <em>Yijing</em> and of Daoist cosmology. An original diagram of the symbols themselves."
+    ),
+
+    /* Ch16 — Early Christianity: the Chi-Rho monogram in a wreath */
+    "ch16": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="1" opacity="0.7"/>' +
+        '<circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="0.7" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">' +
+          '<line x1="62" y1="64" x2="138" y2="150"/><line x1="138" y1="64" x2="62" y2="150"/>' +
+          '<line x1="100" y1="48" x2="100" y2="156"/></g>' +
+        '<path d="M100 52 C130 52 130 90 100 90" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Chi-Rho (&#9767;), the monogram of Christ formed from the Greek letters <em>chi</em> and <em>rho</em>, within a victor&rsquo;s wreath. An original rendering of the symbol, not a specific inscription."
+    ),
+
+    /* Ch20 — Mahayana Buddhism: the mandala's circle-square-circle structure */
+    "ch20": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>' +
+        '<g stroke="currentColor" stroke-width="1">' +
+          '<g transform="rotate(0 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(45 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(90 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(135 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(180 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(225 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(270 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(315 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g></g>' +
+        '<rect x="54" y="54" width="92" height="92" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          '<path d="M92 54 V44 H108 V54"/><path d="M92 146 V156 H108 V146"/>' +
+          '<path d="M54 92 H44 V108 H54"/><path d="M146 92 H156 V108 H146"/></g>' +
+        '<circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="1.1"/>' +
+        '<circle cx="100" cy="100" r="14" stroke="currentColor" stroke-width="1"/>' +
+        '<circle cx="100" cy="100" r="4" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "A mandala&rsquo;s characteristic structure &mdash; outer ring, square palace with four gates, and central point. An original geometric diagram, not a particular painted mandala."
     )
 
   };
