@@ -30,12 +30,25 @@ jobs:
         with:
           node-version: "22"
 
+      # A push to main publishes to production (main). A manual run
+      # (workflow_dispatch) publishes to the "preview" branch alias instead,
+      # so branch work can be tested at preview.the-divine-archives.pages.dev
+      # without touching production.
+      - name: Choose the deploy target
+        id: target
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "branch=preview" >> "$GITHUB_OUTPUT"
+          else
+            echo "branch=main" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Ensure the Pages project exists (no-op if it already does)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          npx --yes wrangler@latest pages project create the-divine-archives \
+          npx --yes wrangler@4 pages project create the-divine-archives \
             --production-branch=main \
           || echo "Project already exists (or was created previously) — continuing."
 
@@ -45,6 +58,14 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          npx --yes wrangler@latest pages deploy docs \
+          npx --yes wrangler@4 pages deploy docs \
             --project-name=the-divine-archives \
-            --branch=main
+            --branch=${{ steps.target.outputs.branch }}
+
+      - name: Print the URL
+        run: |
+          if [ "${{ steps.target.outputs.branch }}" = "preview" ]; then
+            echo "Preview URL: https://preview.the-divine-archives.pages.dev"
+          else
+            echo "Production URL: https://the-divine-archives.pages.dev"
+          fi
