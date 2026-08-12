@@ -90,17 +90,19 @@
 </div>
 
 <script src="assets/data.js"></script>
+<script src="assets/emblems.js"></script>
 <script>
   (function () {
     var mount = document.getElementById("ages");
     if (!mount || !window.ARCHIVE) return;
+    var EM = window.EMBLEMS || {};
     window.ARCHIVE.eras.forEach(function (e) {
       var a = document.createElement("a");
       a.className = "age";
       a.href = "era.html?era=" + encodeURIComponent(e.slug);
       var tags = e.traditions.map(function (t) { return '<span class="tag">' + t + "</span>"; }).join("");
       a.innerHTML =
-        '<div class="num">' + e.num + "</div>" +
+        '<div class="num">' + (EM[e.slug] || '') + '<span class="numeral">' + e.num + "</span></div>" +
         "<div><h2>" + e.name + ' <span class="dates">' + e.dates + "</span></h2>" +
         '<p class="blurb">' + e.blurb + "</p>" +
         '<div class="tags">' + tags + "</div></div>";

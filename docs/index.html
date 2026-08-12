@@ -234,17 +234,19 @@
 </div>
 
 <script src="assets/data.js"></script>
+<script src="assets/emblems.js"></script>
 <script>
   /* build the homepage era spine from the shared data */
   (function () {
     var spine = document.getElementById("spine");
     if (!spine || !window.ARCHIVE) return;
+    var EM = window.EMBLEMS || {};
     window.ARCHIVE.eras.forEach(function (e) {
       var a = document.createElement("a");
       a.className = "era";
       a.href = "era.html?era=" + encodeURIComponent(e.slug);
       a.innerHTML =
-        '<div><span class="marker"></span><span class="roman">' + e.num + '</span></div>' +
+        '<div>' + (EM[e.slug] || '') + '<span class="marker"></span><span class="roman">' + e.num + '</span></div>' +
         '<div class="body">' +
           '<p class="kicker">Era ' + e.num + '</p>' +
           '<h3>' + e.name + ' <span class="dates">' + e.dates + '</span></h3>' +

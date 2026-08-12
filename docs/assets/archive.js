@@ -65,6 +65,7 @@
           '<a href="eras.html">The Nine Ages</a><span class="sep">/</span>' +
           '<span>' + esc(era.name) + '</span>' +
         '</p>' +
+        (((window.EMBLEMS || {})[era.slug]) || '') +
         '<p class="eyebrow">Era ' + esc(era.num) + " &middot; " + esc(era.dates) + '</p>' +
         "<h1>" + esc(era.name) + "</h1>" +
         '<p class="lede">' + esc(era.blurb) + "</p>" +
