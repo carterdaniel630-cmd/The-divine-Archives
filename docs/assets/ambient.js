@@ -9,7 +9,7 @@
      - shamanic FRAME DRUM groove + light shaker percussion (the pulse)
      - a soft PIANO chord bed and a low BASS root
      - a SINGING-BOWL shimmer struck at each section
-     - a FLUTE melody carrying the tune
+     - a soft PIANO / music-box LEAD carrying the melody
      - a faint wordless "chant" formant pad for the monastic air (no lyrics,
        no lead vocal — texture only)
 
@@ -58,7 +58,7 @@
     { root: 48, pad: [48, 55], tri: [60, 64, 67] }, // C
     { root: 45, pad: [45, 52], tri: [57, 61, 64] }  // A (dom)
   ];
-  // flute melody: [beat-within-loop (0..63), MIDI, duration in beats]
+  // melody: [beat-within-loop (0..63), MIDI, duration in beats]
   var MELODY = [
     [0,69,1.5],[2,72,1],[3,74,1],[4,72,1.5],[6,69,1.5],
     [8,65,1.5],[10,69,1],[11,70,1],[12,69,1.5],[14,65,1.5],
@@ -184,34 +184,21 @@
     }
   }
 
-  function flute(freq, tc, dur) {
-    var o1 = ctx.createOscillator(); o1.type = "triangle"; o1.frequency.value = freq;
-    var o2 = ctx.createOscillator(); o2.type = "sine"; o2.frequency.value = freq * 2;
-    // vibrato
-    var vib = ctx.createOscillator(); vib.type = "sine"; vib.frequency.value = 5;
-    var vg = ctx.createGain(); vg.gain.value = freq * 0.004;
-    vib.connect(vg); vg.connect(o1.frequency); vib.start(tc); vib.stop(tc + dur + 0.3);
-    var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 2600;
-    var g = ctx.createGain(), g2 = ctx.createGain();
-    g.gain.value = 0.0001; g2.gain.value = 0.0001;
-    o1.connect(lp); o2.connect(g2); g2.connect(lp); lp.connect(g); g.connect(voiceBus);
-    g.gain.setValueAtTime(0.0001, tc);
-    g.gain.exponentialRampToValueAtTime(0.07, tc + 0.06);
-    g.gain.setValueAtTime(0.07, tc + dur - 0.15);
-    g.gain.exponentialRampToValueAtTime(0.0001, tc + dur);
-    g2.gain.setValueAtTime(0.0001, tc);
-    g2.gain.exponentialRampToValueAtTime(0.02, tc + 0.06);   // soft octave breath
-    g2.gain.exponentialRampToValueAtTime(0.0001, tc + dur);
-    // breath noise
-    var s = ctx.createBufferSource(); s.buffer = noise;
-    var bp = ctx.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = freq * 2; bp.Q.value = 0.8;
-    var sg = ctx.createGain(); sg.gain.value = 0.0001;
-    s.connect(bp); bp.connect(sg); sg.connect(voiceBus);
-    sg.gain.setValueAtTime(0.0001, tc);
-    sg.gain.exponentialRampToValueAtTime(0.008, tc + 0.08);
-    sg.gain.exponentialRampToValueAtTime(0.0001, tc + dur);
-    o1.start(tc); o2.start(tc); s.start(tc);
-    o1.stop(tc + dur + 0.2); o2.stop(tc + dur + 0.2); s.stop(tc + dur + 0.2);
+  // soft piano / music-box lead that carries the melody (replaces the flute)
+  function lead(freq, tc, dur) {
+    var parts = [[1, 0.075], [2, 0.022], [3.01, 0.009]];
+    for (var i = 0; i < parts.length; i++) {
+      var o = ctx.createOscillator(); o.type = "sine";
+      o.frequency.value = freq * parts[i][0] * (1 + (Math.random() - 0.5) * 0.0008);
+      var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 3600;
+      var g = ctx.createGain(); g.gain.value = 0.0001;
+      o.connect(lp); lp.connect(g); g.connect(voiceBus);
+      var ring = dur + 0.4;                       // a little sustain past the beat
+      g.gain.setValueAtTime(0.0001, tc);
+      g.gain.exponentialRampToValueAtTime(parts[i][1], tc + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, tc + ring);
+      o.start(tc); o.stop(tc + ring + 0.05);
+    }
   }
 
   // wordless "chant" formant pad — no lyrics, texture only
@@ -266,12 +253,12 @@
       bowl(mtof(chord.root + 24), T(0));
     }
 
-    // flute melody notes that fall inside this bar
+    // melody notes that fall inside this bar (piano/music-box lead)
     for (var m = 0; m < MELODY.length; m++) {
       if (Math.floor(MELODY[m][0] / 4) !== section) continue;
       var local = MELODY[m][0] - section * 4;
       var tc = T(local);
-      if (tc >= guard) flute(mtof(MELODY[m][1]), tc, MELODY[m][2] * SPB);
+      if (tc >= guard) lead(mtof(MELODY[m][1]), tc, MELODY[m][2] * SPB);
     }
   }
 
