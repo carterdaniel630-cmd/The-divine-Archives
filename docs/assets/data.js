@@ -188,6 +188,11 @@ window.ARCHIVE = {
       era: "06-early-medieval", eraLabel: "Early Medieval · Islam",
       status: "published",
       source: "eras/06-early-medieval/ch21-islam-early-medieval.md",
-      summary: "The recitation and the oneness of God: from the cave of Hira and the command to 'Recite!' to a faith that spanned Spain to the Indus in a century. The historical Muhammad that scholarship can establish and the revelation only faith can affirm — kept distinct — the Qur'an and the manuscript evidence for its early codification, tawhid and the Five Pillars, the Abrahamic inheritance and the Muslim Jesus, Sharia and the schools of law, the Sunni–Shia split sealed at Karbala, and the sacred encoding of a faith that made the written word its supreme art: calligraphy, geometric infinity, the abjad, and the unexplained letters that open the suras." }
+      summary: "The recitation and the oneness of God: from the cave of Hira and the command to 'Recite!' to a faith that spanned Spain to the Indus in a century. The historical Muhammad that scholarship can establish and the revelation only faith can affirm — kept distinct — the Qur'an and the manuscript evidence for its early codification, tawhid and the Five Pillars, the Abrahamic inheritance and the Muslim Jesus, Sharia and the schools of law, the Sunni–Shia split sealed at Karbala, and the sacred encoding of a faith that made the written word its supreme art: calligraphy, geometric infinity, the abjad, and the unexplained letters that open the suras." },
+    { id: "ch22", title: "Patristic Christianity", kind: "tradition",
+      era: "06-early-medieval", eraLabel: "Early Medieval · Patristic Christianity",
+      status: "published", pending: true,
+      source: "eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md",
+      summary: "The age of the Fathers: how a persecuted movement of house-churches became, over five centuries, a church with a canon, a creed, and an emperor. From Ignatius carried to the beasts and the Apostolic Fathers, through Marcion and the making of the canon, Irenaeus and the rule of faith, Tertullian and Origen, the martyrs and Constantine's turn, to the four great councils — Nicaea, Constantinople, Ephesus, Chalcedon — that defined the Trinity and Christ's two natures and sealed Christianity's first lasting schisms; with Augustine, Jerome's Vulgate, the desert monastics, and the encoded signs of a hunted faith: the ichthys acrostic, the Chi-Rho, and the 666 of Nero." }
   ]
 };

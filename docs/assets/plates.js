@@ -420,6 +420,29 @@
       '</svg>',
       "Interpretive illustration",
       "An open Torah scroll on its two staves (<em>atzei chaim</em>); the text lines are indicative only. An original drawing, not a reproduction of a specific scroll."
+    ),
+
+    /* Ch22 — Patristic Christianity: the open codex beneath the cross, Alpha & Omega */
+    "ch22": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">' +
+          '<line x1="100" y1="42" x2="100" y2="80"/><line x1="88" y1="54" x2="112" y2="54"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">' +
+          '<path d="M69 72 L74 58 L79 72"/><path d="M71 67 H77"/>' +
+          '<path d="M121 72 Q120 56 126 56 Q132 56 131 72"/><path d="M117 72 H124"/><path d="M128 72 H135"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M100 88 C82 80 58 80 40 86 L40 150 C58 145 82 145 100 152 Z"/>' +
+          '<path d="M100 88 C118 80 142 80 160 86 L160 150 C142 145 118 145 100 152 Z"/>' +
+          '<line x1="100" y1="88" x2="100" y2="152"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="52" y1="100" x2="90" y2="98"/><line x1="52" y1="112" x2="90" y2="110"/>' +
+          '<line x1="52" y1="124" x2="90" y2="122"/><line x1="52" y1="136" x2="90" y2="134"/>' +
+          '<line x1="110" y1="98" x2="148" y2="100"/><line x1="110" y1="110" x2="148" y2="112"/>' +
+          '<line x1="110" y1="122" x2="148" y2="124"/><line x1="110" y1="134" x2="148" y2="136"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The open codex beneath the cross, flanked by Alpha and Omega &mdash; the canon, the creed, and Christ &ldquo;the beginning and the end.&rdquo; An original rendering of the symbols, not a specific manuscript."
     )
 
   };

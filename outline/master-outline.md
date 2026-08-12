@@ -70,8 +70,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 **Late Antiquity (era 05) traditions complete** (ch16–ch20).
 
 | ch21 — Islam | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
+| ch22 — Patristic Christianity | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
 
-Era 06 — Early Medieval in progress. Remaining: patristic Christianity, Norse paganism, Tantra, Shinto.
+Era 06 — Early Medieval in progress. Remaining: Norse paganism, Tantra, Shinto.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
