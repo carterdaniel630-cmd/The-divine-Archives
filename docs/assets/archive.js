@@ -207,6 +207,8 @@
           "</div>"
         ));
       }
+      var plate = (window.PLATES || {})[ch.id];
+      if (plate) body.insertAdjacentHTML("beforeend", plate); // interpretive plate, if any
       body.insertAdjacentHTML("beforeend", rendered); // published chapters render here
       var nav = el('<div class="chapter-nav"></div>');
       nav.innerHTML = (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">&larr; ' + esc((eraBySlug(ch.era) || {}).name || "Back") + "</a>" : '<a href="themes.html">&larr; All themes</a>') +
