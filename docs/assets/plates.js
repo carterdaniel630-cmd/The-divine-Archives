@@ -465,6 +465,36 @@
       '</svg>',
       "Interpretive illustration",
       "A Mj&ouml;lnir &mdash; Thor&rsquo;s-hammer pendant &mdash; of the kind worn in silver and iron across the Viking world, worn point-down with an engraved knot at its heart. An original geometric rendering, not a photograph of a specific find."
+    ),
+
+    /* Ch24 — Tantra: an interpretive Sri Yantra (bhupura, lotus, interlocking triangles, bindu) */
+    "ch24": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        // bhupura: three nested square frames with four gates
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.7">' +
+          '<rect x="24" y="24" width="152" height="152"/>' +
+          '<rect x="30" y="30" width="140" height="140" opacity="0.6"/>' +
+          '<rect x="36" y="36" width="128" height="128" opacity="0.4"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.7">' +
+          '<path d="M92 24 v-8 h16 v8"/><path d="M92 176 v8 h16 v-8"/>' +
+          '<path d="M24 92 h-8 v16 h8"/><path d="M176 92 h8 v16 h-8"/></g>' +
+        // two lotus rings
+        '<circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="52" stroke="currentColor" stroke-width="0.7" opacity="0.3"/>' +
+        // interlocking triangles (four apex-up, four apex-down)
+        '<g stroke="currentColor" stroke-width="0.9" opacity="0.75">' +
+          '<path d="M100 48 L54 138 L146 138 Z"/>' +
+          '<path d="M100 62 L66 142 L134 142 Z"/>' +
+          '<path d="M100 152 L54 62 L146 62 Z"/>' +
+          '<path d="M100 138 L66 58 L134 58 Z"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.7" opacity="0.55">' +
+          '<path d="M100 76 L74 128 L126 128 Z"/>' +
+          '<path d="M100 124 L74 72 L126 72 Z"/></g>' +
+        // bindu
+        '<circle cx="100" cy="100" r="3.4" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "An interpretive &#346;r&#299; Yantra &mdash; the square bh&#363;pura and its four gates, the lotus rings, the interlocking triangles of &#346;iva and &#346;akti, and the central bindu. An original geometric rendering in the tradition&rsquo;s idiom, not a ritually precise diagram."
     )
 
   };
