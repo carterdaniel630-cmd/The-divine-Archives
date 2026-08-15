@@ -383,3 +383,20 @@ img { max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- tradition / era tiles (plate-led) ---------- */
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.6rem; }
+.tile {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.3rem;
+  padding: 1.6rem 1.1rem 1.35rem; border: 1px solid var(--line); border-radius: 4px; color: inherit;
+  background: linear-gradient(180deg, var(--panel), var(--ground));
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+a.tile:hover { transform: translateY(-3px); border-color: var(--gold); }
+.tile.is-planned { opacity: 0.7; cursor: default; }
+.tile-art { display: block; }
+.tile-art svg { width: 78px; height: auto; max-width: 78px; display: block; margin: 0 auto; color: var(--gold); transition: color 0.3s ease; }
+a.tile:hover .tile-art svg { color: var(--gold-bright); }
+.tile-name { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--parchment); font-size: 1.06rem; margin-top: 0.55rem; }
+.tile-era { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.58rem; color: var(--ink-faint); }
+.tile-sum { margin: 0.35rem 0 0; color: var(--ink-dim); font-size: 0.9rem; line-height: 1.5; }

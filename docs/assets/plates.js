@@ -447,14 +447,25 @@
 
   };
 
+  // expose just the artwork (no caption) so tiles/thumbnails can reuse a plate
+  window.PLATE_ART = {};
+  Object.keys(window.PLATES).forEach(function (id) {
+    var m = window.PLATES[id].match(/<svg[\s\S]*?<\/svg>/);
+    window.PLATE_ART[id] = m ? m[0] : "";
+  });
+
   // plate styling — kept in-module so page markup/CSS stay untouched
   var css =
-    ".article .plate{margin:2.4rem auto 2.6rem;max-width:30rem;text-align:center}" +
-    ".article .plate .plate-art{width:100%;max-width:300px;height:auto;color:var(--gold,#b98f4e);display:inline-block}" +
-    ".article .plate figcaption{margin-top:0.85rem;font-size:0.8rem;line-height:1.55;color:var(--ink-faint,#6f624a);font-style:italic}" +
-    ".article .plate .tag{display:inline-block;font-style:normal;text-transform:uppercase;letter-spacing:0.14em;" +
-      "font-size:0.58rem;color:var(--ink-dim,#9a8a6b);border:1px solid var(--line,#37291a);" +
-      "padding:0.18rem 0.5rem;border-radius:2px;margin-bottom:0.55rem}";
+    // works whether the plate sits in the chapter head (frontispiece) or the article body
+    ".page-head .plate,.article .plate{margin:1.7rem auto 0.4rem;max-width:24rem;text-align:center}" +
+    ".plate .plate-art{width:100%;max-width:360px;height:auto;color:var(--gold-bright,#d9b06a);display:inline-block;" +
+      "padding:1.35rem;border:1px solid var(--line,#37291a);border-radius:5px;" +
+      "background:radial-gradient(120% 120% at 50% 32%,#1d150d 0%,rgba(16,12,9,0) 78%)}" +
+    ".plate figcaption{margin:0.75rem auto 0;font-size:0.78rem;line-height:1.5;max-width:26rem;" +
+      "color:var(--ink-faint,#6f624a);font-style:italic}" +
+    ".plate .tag{display:inline-block;font-style:normal;text-transform:uppercase;letter-spacing:0.14em;" +
+      "font-size:0.56rem;color:var(--ink-dim,#9a8a6b);border:1px solid var(--line,#37291a);" +
+      "padding:0.16rem 0.5rem;border-radius:2px;margin-bottom:0.5rem}";
   var s = document.createElement("style");
   s.textContent = css;
   (document.head || document.documentElement).appendChild(s);

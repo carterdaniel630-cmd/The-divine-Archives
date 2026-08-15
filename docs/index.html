@@ -70,35 +70,30 @@
     }
     .section-head p { margin: 0; color: var(--ink-dim); font-style: italic; max-width: 36rem; }
 
-    .spine { position: relative; max-width: 52rem; margin-inline: auto; }
-    .spine::before {
-      content: ""; position: absolute; left: 2.15rem; top: 0.6rem; bottom: 0.6rem; width: 1px;
-      background: linear-gradient(180deg, transparent, var(--line), var(--gold) 8%, var(--line) 92%, transparent);
+    /* The Nine Ages — a visual gallery of emblems */
+    .spine {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      max-width: 60rem; margin-inline: auto;
+      background: var(--line); border: 1px solid var(--line);
     }
     .era {
-      position: relative; display: grid; grid-template-columns: 4.3rem 1fr; gap: 1.6rem;
-      padding: 1.35rem 1.2rem 1.35rem 0; border-bottom: 1px solid var(--line-soft);
-      color: inherit; transition: background 0.35s ease, transform 0.35s ease;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 1.9rem 1rem 1.5rem; color: inherit;
+      background: linear-gradient(180deg, var(--panel), var(--ground));
+      transition: background 0.35s ease, transform 0.25s ease;
     }
-    .era:last-child { border-bottom: 0; }
-    .era:hover { background: linear-gradient(90deg, rgba(34,25,16,0.6), transparent 85%); transform: translateX(4px); }
-    .era .marker {
-      position: relative; justify-self: center; align-self: start; margin-top: 0.35rem;
-      width: 1.05rem; height: 1.05rem; border-radius: 50%; border: 1px solid var(--gold);
-      background: radial-gradient(circle at 50% 40%, var(--gold), #5f4620);
-      box-shadow: 0 0 0 4px var(--ground), 0 0 14px rgba(185,143,78,0.4); z-index: 1;
-    }
-    .era .roman { display: block; text-align: center; font-family: var(--font-display); color: var(--gold); letter-spacing: 0.12em; font-size: 0.72rem; margin-top: 0.7rem; }
-    .era .kicker { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.26em; font-size: 0.64rem; color: var(--ink-faint); margin: 0 0 0.28rem; }
+    .era:hover { background: linear-gradient(180deg, #20180f, var(--ground)); }
+    .era .era-emblem { width: 76px; height: 76px; }
+    .era:hover .era-emblem { color: var(--gold-bright); }
+    .era .marker, .era .kicker, .era .arrow { display: none; }
+    .era .roman { font-family: var(--font-display); color: var(--gold); letter-spacing: 0.14em; font-size: 0.7rem; margin-top: 0.85rem; }
     .era h3 {
       font-family: var(--font-display); font-weight: 400; color: var(--parchment);
-      font-size: clamp(1.25rem, 3vw, 1.62rem); letter-spacing: 0.03em; margin: 0 0 0.5rem;
-      display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.7rem;
+      font-size: 1.12rem; letter-spacing: 0.02em; margin: 0.12rem 0 0.45rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.12rem;
     }
-    .era h3 .dates { font-family: var(--font-body); font-style: italic; font-size: 0.82rem; letter-spacing: 0.02em; color: var(--gold); }
-    .era .traditions { margin: 0; color: var(--ink-dim); font-size: 0.96rem; line-height: 1.6; }
-    .era .arrow { color: var(--gold); opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; }
-    .era:hover .arrow { opacity: 1; transform: translateX(3px); }
+    .era h3 .dates { font-family: var(--font-body); font-style: italic; font-size: 0.76rem; letter-spacing: 0.02em; color: var(--gold); }
+    .era .traditions { margin: 0; color: var(--ink-dim); font-size: 0.82rem; line-height: 1.5; }
 
     .method {
       border-top: 1px solid var(--line);
@@ -116,8 +111,10 @@
 
     @media (max-width: 640px) {
       .explore .grid { grid-template-columns: 1fr; }
-      .spine::before { left: 1.75rem; }
-      .era { grid-template-columns: 3.4rem 1fr; gap: 1.1rem; }
+      .spine { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .spine { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -246,12 +243,10 @@
       a.className = "era";
       a.href = "era.html?era=" + encodeURIComponent(e.slug);
       a.innerHTML =
-        '<div>' + (EM[e.slug] || '') + '<span class="marker"></span><span class="roman">' + e.num + '</span></div>' +
-        '<div class="body">' +
-          '<p class="kicker">Era ' + e.num + '</p>' +
-          '<h3>' + e.name + ' <span class="dates">' + e.dates + '</span></h3>' +
-          '<p class="traditions">' + e.traditions.join(" &middot; ") + ' <span class="arrow">&rarr;</span></p>' +
-        '</div>';
+        (EM[e.slug] || '') +
+        '<span class="roman">Era ' + e.num + '</span>' +
+        '<h3>' + e.name + '<span class="dates">' + e.dates + '</span></h3>' +
+        '<p class="traditions">' + e.traditions.join(" &middot; ") + '</p>';
       spine.appendChild(a);
     });
   })();

@@ -77,22 +77,21 @@
     section.appendChild(el('<div class="ornament" style="margin-bottom:2rem"><span>&#10022;</span></div>'));
     section.appendChild(el('<p class="eyebrow center" style="margin-bottom:1.4rem">Traditions of this age</p>'));
 
-    var list = el('<div style="display:flex;flex-direction:column;gap:0.9rem"></div>');
+    var list = el('<div class="tiles"></div>');
     era.traditions.forEach(function (name) {
       var ch = chapterFor(name);
       var status = ch ? ch.status : "planned";
-      var inner =
-        '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
-          '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(name) + "</span>" +
-          badge(status, ch && ch.pending) +
-        "</div>";
+      var head =
+        '<span class="tile-art">' + artFor(ch, era) + "</span>" +
+        '<span class="tile-name">' + esc(name) + "</span>" +
+        badge(status, ch && ch.pending);
       if (ch) {
-        var a = el('<a class="card" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
-        a.innerHTML = inner + '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p>";
+        var a = el('<a class="tile" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
+        a.innerHTML = head + '<p class="tile-sum">' + esc(ch.summary) + "</p>";
         list.appendChild(a);
       } else {
-        var d = el('<div class="card" style="opacity:0.75;cursor:default"></div>');
-        d.innerHTML = inner + '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem;font-style:italic">A chapter for this tradition is planned but not yet written.</p>';
+        var d = el('<div class="tile is-planned"></div>');
+        d.innerHTML = head + '<p class="tile-sum" style="font-style:italic">A chapter for this tradition is planned but not yet written.</p>';
         list.appendChild(d);
       }
     });
@@ -102,21 +101,27 @@
     var themeChapters = A.chapters.filter(function (c) { return c.kind === "theme"; });
     if (themeChapters.length) {
       section.appendChild(el('<p class="eyebrow center" style="margin:2.6rem 0 1.4rem">Comparative themes across this age</p>'));
-      var tlist = el('<div style="display:flex;flex-direction:column;gap:0.9rem"></div>');
+      var tlist = el('<div class="tiles"></div>');
       themeChapters.forEach(function (ch) {
-        var a = el('<a class="card" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
+        var a = el('<a class="tile" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
         a.innerHTML =
-          '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
-            '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(ch.title) + "</span>" +
-            badge(ch.status, ch.pending) +
-          "</div>" +
-          '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p>";
+          '<span class="tile-art">' + artFor(ch, null) + "</span>" +
+          '<span class="tile-name">' + esc(ch.title) + "</span>" +
+          badge(ch.status, ch.pending) +
+          '<p class="tile-sum">' + esc(ch.summary) + "</p>";
         tlist.appendChild(a);
       });
       section.appendChild(tlist);
     }
 
     mount.appendChild(section);
+  }
+
+  // pick a thumbnail for a tradition tile: the chapter's plate art, else the era emblem
+  function artFor(ch, era) {
+    if (ch && window.PLATE_ART && window.PLATE_ART[ch.id]) return window.PLATE_ART[ch.id];
+    if (era && window.EMBLEMS && window.EMBLEMS[era.slug]) return window.EMBLEMS[era.slug];
+    return "";
   }
 
   /* ---------------- TRADITIONS INDEX ---------------- */
@@ -137,7 +142,7 @@
       '<input id="trad-filter" type="search" placeholder="Filter traditions&hellip;" aria-label="Filter traditions" /></form></div>');
     box.appendChild(input);
 
-    var listWrap = el('<div id="trad-list" style="display:flex;flex-direction:column;gap:0.7rem"></div>');
+    var listWrap = el('<div id="trad-list" class="tiles"></div>');
     box.appendChild(listWrap);
     mount.appendChild(box);
 
@@ -149,14 +154,12 @@
         if (f && r.name.toLowerCase().indexOf(f) === -1 && r.era.name.toLowerCase().indexOf(f) === -1) return;
         shown++;
         var href = r.chapter ? "chapter.html?id=" + encodeURIComponent(r.chapter.id) : "era.html?era=" + encodeURIComponent(r.era.slug);
-        var a = el('<a class="card" href="' + href + '" style="padding:1rem 1.3rem"></a>');
+        var a = el('<a class="tile" href="' + href + '"></a>');
         a.innerHTML =
-          '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
-            "<span>" +
-              '<span style="font-family:var(--font-display);letter-spacing:0.04em;color:var(--parchment);font-size:1.08rem">' + esc(r.name) + "</span>" +
-              '<span class="muted" style="font-size:0.82rem;display:block;margin-top:0.15rem">Era ' + esc(r.era.num) + " &middot; " + esc(r.era.name) + "</span>" +
-            "</span>" + badge(r.status, r.chapter && r.chapter.pending) +
-          "</div>";
+          '<span class="tile-art">' + artFor(r.chapter, r.era) + "</span>" +
+          '<span class="tile-name">' + esc(r.name) + "</span>" +
+          '<span class="tile-era">Era ' + esc(r.era.num) + " &middot; " + esc(r.era.name) + "</span>" +
+          badge(r.status, r.chapter && r.chapter.pending);
         listWrap.appendChild(a);
       });
       if (!shown) listWrap.appendChild(el('<p class="notice">No tradition matches &ldquo;' + esc(filter) + '&rdquo;.</p>'));
@@ -188,6 +191,7 @@
           (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">' + esc((eraBySlug(ch.era) || {}).name || "Era") + "</a>" : '<a href="eras.html">Themes</a>') +
           '<span class="sep">/</span><span>' + esc(ch.title) + "</span>" +
         "</p>" +
+        (((window.PLATES || {})[ch.id]) || '') +   // framed frontispiece plate, above the title
         '<p class="eyebrow">' + esc(ch.eraLabel) + "</p>" +
         "<h1>" + esc(ch.title) + "</h1>" +
         '<p style="margin-top:0.6rem">' + badge(ch.status, ch.pending) + "</p>" +
@@ -207,8 +211,6 @@
           "</div>"
         ));
       }
-      var plate = (window.PLATES || {})[ch.id];
-      if (plate) body.insertAdjacentHTML("beforeend", plate); // interpretive plate, if any
       body.insertAdjacentHTML("beforeend", rendered); // published chapters render here
       var nav = el('<div class="chapter-nav"></div>');
       nav.innerHTML = (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">&larr; ' + esc((eraBySlug(ch.era) || {}).name || "Back") + "</a>" : '<a href="themes.html">&larr; All themes</a>') +

@@ -114,7 +114,7 @@
   // sizing per context — kept here so markup/CSS files stay untouched
   var css =
     ".era-emblem{display:block;color:var(--gold,#b98f4e);transition:color .3s ease}" +
-    ".spine .era .era-emblem{width:40px;height:40px;margin:0 auto .35rem}" +
+    ".spine .era .era-emblem{width:76px;height:76px;margin:0 auto}" +
     ".age .num .era-emblem{width:46px;height:46px;margin:0 auto .3rem}" +
     ".page-head .era-emblem{width:78px;height:78px;margin:0 auto .55rem}" +
     ".era:hover .era-emblem,.age:hover .era-emblem{color:var(--gold-bright,#d9b06a)}";
