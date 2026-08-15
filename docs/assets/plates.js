@@ -443,6 +443,28 @@
       '</svg>',
       "Interpretive illustration",
       "The open codex beneath the cross, flanked by Alpha and Omega &mdash; the canon, the creed, and Christ &ldquo;the beginning and the end.&rdquo; An original rendering of the symbols, not a specific manuscript."
+    ),
+
+    /* Ch23 — Norse Paganism: a Mjölnir (Thor's-hammer) pendant, worn point-down */
+    "ch23": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        // suspension loop
+        '<circle cx="100" cy="26" r="9" stroke="currentColor" stroke-width="2"/>' +
+        // handle / neck
+        '<path d="M92 40 L92 74 L108 74 L108 40 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>' +
+        // hammer-head silhouette with a short central foot
+        '<path d="M48 74 L152 74 L152 128 L128 128 L128 142 L118 142 L110 156 L90 156 L82 142 L72 142 L72 128 L48 128 Z" ' +
+          'stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>' +
+        // engraved decoration on the head
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="56" y1="86" x2="144" y2="86"/><line x1="56" y1="120" x2="144" y2="120"/>' +
+          '<path d="M72 103 L100 92 L128 103 L100 114 Z"/>' +
+          '<line x1="100" y1="92" x2="100" y2="114"/><line x1="72" y1="103" x2="128" y2="103"/></g>' +
+        '<circle cx="100" cy="103" r="4" fill="currentColor" opacity="0.7"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A Mj&ouml;lnir &mdash; Thor&rsquo;s-hammer pendant &mdash; of the kind worn in silver and iron across the Viking world, worn point-down with an engraved knot at its heart. An original geometric rendering, not a photograph of a specific find."
     )
 
   };
