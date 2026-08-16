@@ -70,10 +70,10 @@ clears them in batch, at which point the tag is removed and the status becomes
 **Late Antiquity (era 05) traditions complete** (ch16–ch20).
 
 | ch21 — Islam | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
-| ch22 — Patristic Christianity | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
-| ch23 — Norse Paganism | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch23-norse-paganism-early-medieval.md` |
-| ch24 — Tantra | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch24-tantra-early-medieval.md` |
-| ch25 — Shinto | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch25-shinto-early-medieval.md` |
+| ch22 — Patristic Christianity | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
+| ch23 — Norse Paganism | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch23-norse-paganism-early-medieval.md` |
+| ch24 — Tantra | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch24-tantra-early-medieval.md` |
+| ch25 — Shinto | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch25-shinto-early-medieval.md` |
 
 **Early Medieval (era 06) traditions complete** (ch21–ch25): Islam, Patristic Christianity, Norse paganism, Tantra, Shinto.
 

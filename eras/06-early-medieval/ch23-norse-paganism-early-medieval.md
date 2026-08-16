@@ -1,6 +1,5 @@
 # Chapter 23 — Norse Paganism: The Gods Before the Cross
 
-*Recently added — pending full review.*
 
 The religion of the Viking Age, reconstructed from a ship full of a dead woman's belongings, a handful of poems written down by Christians two centuries too late, and the stones the Norse themselves carved — and the hard problem of telling what they believed from what their converters said they believed.
 

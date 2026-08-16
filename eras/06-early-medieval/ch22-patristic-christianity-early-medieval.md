@@ -1,6 +1,5 @@
 # Chapter 22 — Patristic Christianity: The Fathers and the Making of Orthodoxy
 
-*Recently added — pending full review.*
 
 How a persecuted movement of house-churches became, over five centuries, a church with a canon, a creed, and an emperor — the age of the Fathers, from the letters of a bishop being carried to his death to the councils that fixed what Christians would mean by the word "God."
 

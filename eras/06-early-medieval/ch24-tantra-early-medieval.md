@@ -1,6 +1,5 @@
 # Chapter 24 — Tantra: The Body as the Cosmos
 
-*Recently added — pending full review.*
 
 The esoteric revolution that swept across early-medieval India and Buddhism alike — a ritual technology of mantra, diagram, and the subtle body that made the human being a map of the universe — and the careful work of separating what the tradition teaches, what history can date, and what a century of Western reinvention has laid on top of it.
 

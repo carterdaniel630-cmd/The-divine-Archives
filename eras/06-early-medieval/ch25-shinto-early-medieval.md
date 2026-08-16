@@ -1,6 +1,5 @@
 # Chapter 25 — Shinto: The Way of the Kami
 
-*Recently added — pending full review.*
 
 Japan's religion of the kami — a faith with no founder and, for most of its history, no separate name, so entangled with Buddhism that scholars still argue whether "Shinto" as an independent religion existed at all before modern times — reconstructed from an eighth-century imperial chronicle, a shrine that is torn down and rebuilt every twenty years, and the hard task of separating ancient kami-worship from its later reinventions.
 
