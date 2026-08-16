@@ -27,7 +27,7 @@
 (function () {
   "use strict";
 
-  var KEY_ON = "da-music";              // "on" | "off"  (absent = on)
+  var KEY_ON = "da-music";              // "on" | "off"  (absent = off; opt-in)
   var KEY_VOL = "da-music-vol";         // "0".."100"    (absent = 60)
   var EPOCH = "da-music-epoch";         // session-wide conceptual start (ms)
 
@@ -302,7 +302,7 @@
       ["pointerdown", "touchstart", "keydown", "click"].forEach(function (ev) {
         window.removeEventListener(ev, go);
       });
-      if (localStorage.getItem(KEY_ON) !== "off") play();
+      if (localStorage.getItem(KEY_ON) === "on") play();
     };
     ["pointerdown", "touchstart", "keydown", "click"].forEach(function (ev) {
       window.addEventListener(ev, go, { once: true, passive: true });
@@ -389,8 +389,8 @@
     wrap.appendChild(slider); wrap.appendChild(btn);
     document.body.appendChild(wrap);
 
-    // autoplay by default (unless muted last time)
-    if (localStorage.getItem(KEY_ON) !== "off") {
+    // off by default — play only if the visitor turned it on before (opt-in)
+    if (localStorage.getItem(KEY_ON) === "on") {
       enabled = true;
       try {
         build();

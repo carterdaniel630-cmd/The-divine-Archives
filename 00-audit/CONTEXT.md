@@ -1,11 +1,39 @@
 # 00-audit / CONTEXT.md — Divine Archives Full-Build Audit
 
-**STATUS: 🟡 READY FOR REVIEW** — audit + prioritized backlog only. **Zero code or content changes made in this pass.**
+**STATUS: 🟡 READY FOR REVIEW** — audit pass 1 (backlog) complete; **remediation pass applied** the Do-now bucket + the missing-uploads gap on 2026-08-16.
 
-- **Date:** 2026-08-16
+- **Date:** 2026-08-16 (audit) · 2026-08-16 (remediation)
 - **Auditor:** Claude (automated pass, measured where possible)
-- **Scope:** Production (`main` @ `446c825`) and preview branch (`claude/divine-archives-status-images-w5l0fk` @ `5c7a7fe`)
-- **Deliverable:** this file. Nothing merged, deployed, or edited on the site.
+- **Scope:** Production (`main`) and preview branch (`claude/divine-archives-status-images-w5l0fk`)
+- **Deliverable:** this file + the fixes logged directly below.
+
+---
+
+## Resolution log — remediation pass (2026-08-16)
+
+Applied on approval ("move forward on everything; fill in gaps"). All changes validated: every JS file passes `node --check`, all 9 pages structurally intact, sitemap well-formed XML, internal-link crawl still clean, all skip-link targets resolve.
+
+**Gap filled (missed uploads):**
+- ✅ **21 missing `/sources/` citation logs created** (ch01–ch21). Only ch22–24 had them; the sourcing standard requires one per chapter. Each was **materialized from the chapter's own published Sources section** (no fabrication) — the repo now has complete 24/24 citation-log coverage.
+
+**Do-now backlog cleared:**
+- ✅ F2.2 Open Graph + Twitter Card tags — all 9 pages
+- ✅ F2.3 `sitemap.xml` — 39 URLs (6 pages + 9 eras + 24 chapters)
+- ✅ F2.5 `rel=canonical` — all 9 pages
+- ✅ F2.6 `robots.txt` (+ sitemap reference)
+- ✅ F2.7 `404.html` meta description
+- ✅ F4.1 skip-to-content links + focus-visible CSS — all 9 pages, targets verified
+- ✅ F8.3 `_headers` — `nosniff`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, asset cache-control *(CSP deliberately omitted for now — the pages use inline `<style>`, so a strict CSP needs testing; tracked under Do-next)*
+- ✅ F8.4 ambient audio flipped to **default-OFF (opt-in)**
+- ✅ F2.4 JSON-LD — **partial**: `WebSite` + `Organization` on the home page (per-chapter `Article` schema is bundled into the prerender item below)
+- ✅ F8.2 stale preview branch — pruned
+
+**Reclassified:**
+- ⏭️ F1.2 (defer scripts) — **won't-do**: the content scripts already load at end-of-body, so `defer` adds ~zero benefit here; not worth the change.
+
+**Deferred — needs a browser-tested pass, your input, or the dashboard (unchanged):**
+- F1.1 split the 404 KB `chapters.js` monolith, and F2.1 prerender static per-chapter pages (with per-chapter OG/canonical/Article) — both are **architectural changes to the render path that I can't verify blind** (sandbox egress blocks any live browser check); they belong in a dedicated pass where the result can be loaded and confirmed.
+- F5.1 import the real master outline (needs your authoritative version) · F5.2 clear the 3 pending chapters (your review gate) · F8.1 `www` resolution (Cloudflare dashboard) · F3.3 external link-rot (needs a live link-checker / CI) · F4.3 contrast + F6.1/6.2/6.3 visual items (needs-human-eyes) · F5.3 roadmap entries (parked).
 
 ---
 
