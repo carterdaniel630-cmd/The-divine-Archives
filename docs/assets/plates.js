@@ -495,6 +495,30 @@
       '</svg>',
       "Interpretive illustration",
       "An interpretive &#346;r&#299; Yantra &mdash; the square bh&#363;pura and its four gates, the lotus rings, the interlocking triangles of &#346;iva and &#346;akti, and the central bindu. An original geometric rendering in the tradition&rsquo;s idiom, not a ritually precise diagram."
+    ),
+
+    /* Ch25 — Shinto: a torii gate, the threshold to the dwelling of the kami */
+    "ch25": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">' +
+          // kasagi — the curved top lintel
+          '<path d="M36 60 Q100 44 164 60" stroke-width="5.5"/>' +
+          // shimaki — straight beam just below the kasagi
+          '<path d="M52 70 L148 70" stroke-width="3"/>' +
+          // pillars, leaning slightly outward at the base
+          '<path d="M72 60 L67 178" stroke-width="5"/>' +
+          '<path d="M128 60 L133 178" stroke-width="5"/>' +
+          // nuki — the lower tie beam, protruding past the pillars
+          '<path d="M56 100 L144 100" stroke-width="4"/>' +
+          // gakuzuka — central strut between nuki and shimaki
+          '<path d="M100 70 L100 100" stroke-width="3"/></g>' +
+        // base stones
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="60" y1="178" x2="74" y2="178"/><line x1="126" y1="178" x2="140" y2="178"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A torii &mdash; the gateway that marks the threshold between the ordinary world and the dwelling of the kami; to pass through it is already a small purification. An original geometric rendering, not a specific shrine."
     )
 
   };

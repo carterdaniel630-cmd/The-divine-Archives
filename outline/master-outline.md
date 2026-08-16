@@ -73,8 +73,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch22 — Patristic Christianity | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
 | ch23 — Norse Paganism | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch23-norse-paganism-early-medieval.md` |
 | ch24 — Tantra | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch24-tantra-early-medieval.md` |
+| ch25 — Shinto | Tradition | 06-early-medieval | **PENDING REVIEW** | `eras/06-early-medieval/ch25-shinto-early-medieval.md` |
 
-Era 06 — Early Medieval in progress. Remaining: Shinto.
+**Early Medieval (era 06) traditions complete** (ch21–ch25): Islam, Patristic Christianity, Norse paganism, Tantra, Shinto.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
