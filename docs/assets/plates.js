@@ -519,6 +519,37 @@
       '</svg>',
       "Interpretive illustration",
       "A torii &mdash; the gateway that marks the threshold between the ordinary world and the dwelling of the kami; to pass through it is already a small purification. An original geometric rendering, not a specific shrine."
+    ),
+
+    /* Ch26 — Kabbalah: the Tree of Life, ten sefirot joined by twenty-two paths */
+    "ch26": fig(
+      '<svg class="plate-art" viewBox="0 0 200 210" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="105" r="99" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // 22 paths
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.42">' +
+          '<line x1="100" y1="24" x2="140" y2="52"/><line x1="100" y1="24" x2="60" y2="52"/><line x1="100" y1="24" x2="100" y2="112"/>' +
+          '<line x1="140" y1="52" x2="60" y2="52"/><line x1="140" y1="52" x2="140" y2="94"/><line x1="140" y1="52" x2="100" y2="112"/>' +
+          '<line x1="60" y1="52" x2="60" y2="94"/><line x1="60" y1="52" x2="100" y2="112"/>' +
+          '<line x1="140" y1="94" x2="60" y2="94"/><line x1="140" y1="94" x2="100" y2="112"/><line x1="140" y1="94" x2="140" y2="136"/>' +
+          '<line x1="60" y1="94" x2="100" y2="112"/><line x1="60" y1="94" x2="60" y2="136"/>' +
+          '<line x1="100" y1="112" x2="140" y2="136"/><line x1="100" y1="112" x2="60" y2="136"/><line x1="100" y1="112" x2="100" y2="158"/>' +
+          '<line x1="140" y1="136" x2="60" y2="136"/><line x1="140" y1="136" x2="100" y2="158"/><line x1="140" y1="136" x2="100" y2="186"/>' +
+          '<line x1="60" y1="136" x2="100" y2="158"/><line x1="60" y1="136" x2="100" y2="186"/>' +
+          '<line x1="100" y1="158" x2="100" y2="186"/></g>' +
+        // 10 sefirot
+        '<g stroke="currentColor" stroke-width="1.2" fill="none">' +
+          '<circle cx="100" cy="24" r="9"/><circle cx="140" cy="52" r="9"/><circle cx="60" cy="52" r="9"/>' +
+          '<circle cx="140" cy="94" r="9"/><circle cx="60" cy="94" r="9"/><circle cx="100" cy="112" r="9"/>' +
+          '<circle cx="140" cy="136" r="9"/><circle cx="60" cy="136" r="9"/><circle cx="100" cy="158" r="9"/>' +
+          '<circle cx="100" cy="186" r="9"/></g>' +
+        '<g fill="currentColor" opacity="0.75">' +
+          '<circle cx="100" cy="24" r="1.6"/><circle cx="140" cy="52" r="1.6"/><circle cx="60" cy="52" r="1.6"/>' +
+          '<circle cx="140" cy="94" r="1.6"/><circle cx="60" cy="94" r="1.6"/><circle cx="100" cy="112" r="1.6"/>' +
+          '<circle cx="140" cy="136" r="1.6"/><circle cx="60" cy="136" r="1.6"/><circle cx="100" cy="158" r="1.6"/>' +
+          '<circle cx="100" cy="186" r="1.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Tree of Life (Etz Chaim) &mdash; the ten sefirot through which the hidden Ein Sof emanates into creation, joined by the twenty-two paths of the Hebrew letters. An original geometric rendering of the traditional figure."
     )
 
   };

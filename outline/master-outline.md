@@ -77,6 +77,10 @@ clears them in batch, at which point the tag is removed and the status becomes
 
 **Early Medieval (era 06) traditions complete** (ch21–ch25): Islam, Patristic Christianity, Norse paganism, Tantra, Shinto.
 
+| ch26 — Kabbalah | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch26-kabbalah-high-medieval.md` |
+
+Era 07 — High Medieval in progress. Remaining: Sufism, scholasticism, Aztec/Maya/Inca, Bhakti.
+
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
 ## Per-chapter content checklist (from CLAUDE.md)

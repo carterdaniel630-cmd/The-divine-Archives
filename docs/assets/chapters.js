@@ -2193,5 +2193,90 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from standard reference and museum/scholarly sources during drafting rather than from memory. Because Shinto is unusually prone to anachronism, the chapter keeps three things distinct: attested early kami-worship and shrine practice; the eighth-century imperial mythology (Kojiki/Nihon Shoki) and its political purpose; and the modern reinventions &mdash; the 1868 separation of kami and buddhas and State Shinto (1868&ndash;1945) &mdash; which are named only to be kept out of the early-medieval account. The imperial divine descent is recorded as faith, not history; the three regalia are handled on the relic-evidence standard (never shown, so unverifiable); and the Kuroda thesis that &ldquo;Shinto&rdquo; is largely a modern category is presented as influential but debated. The dominant reality of the era &mdash; shinbutsu-sh&#363;g&#333;, the fusion with the Buddhism and esoteric Shingon/Tendai of the neighboring chapters &mdash; is kept central.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch26 */
+  ch26: { html: `
+    <p class="lead">The great flowering of Jewish mysticism in medieval Provence and Spain &mdash; a map of the hidden God as ten emanations on a Tree of Life, a universe spoken into being out of the letters of the Hebrew alphabet, and a book that claimed to be a thousand years older than it was.</p>
+
+    <h2>The widow of &Aacute;vila</h2>
+    <p>Around 1305, in the Castilian town of &Aacute;vila, a wealthy man approached the widow of a recently dead scholar named <strong>Moses de Le&oacute;n</strong>. Her husband had been circulating, in installments, an astonishing book: the <strong>Zohar</strong>, the &ldquo;Book of Radiance,&rdquo; a vast mystical commentary on the Torah written in an archaic Aramaic and attributed to <strong>Rabbi Shimon bar Yochai</strong>, a sage of the second century. The rich man wanted to buy the ancient manuscript de Le&oacute;n claimed to have copied from. According to a contemporary kabbalist&rsquo;s report, the widow answered that there was no manuscript: her husband had <strong>written it himself</strong>, and put another man&rsquo;s name on it because, he told her, no one would pay attention to work signed by a living nobody.</p>
+    <p>The story may be gossip, or a rival&rsquo;s slander. But it names the problem at the heart of Kabbalah: a tradition that presents itself as <strong>received</strong> &mdash; the word <em>qabbalah</em> means &ldquo;that which is received,&rdquo; handed down from Sinai &mdash; and yet whose greatest texts are, to the eye of history, <strong>medieval compositions wearing ancient masks</strong>. To describe it honestly is to hold both truths at once: what it claims for itself, and what the record shows.</p>
+
+    <h2>What Kabbalah is</h2>
+    <p><strong>Kabbalah</strong> is the central tradition of Jewish mysticism &mdash; an esoteric theosophy that took its classic shape in the twelfth and thirteenth centuries in <strong>Provence</strong> and <strong>northern Spain</strong>, building on far older Jewish esoteric currents. Its ambition is staggering: to map the inner life of God. It teaches that the true God, <strong>Ein Sof</strong> (&ldquo;the Infinite&rdquo;), is utterly beyond thought, name, or attribute &mdash; but that this hidden God reveals and pours himself into creation through <strong>ten emanations</strong>, the <strong>sefirot</strong>, which the initiate can trace back toward their source and even act upon.</p>
+
+    <h2>The textual record</h2>
+    <p>Kabbalah rests on three foundational books, each older in claim than in fact.</p>
+    <ul>
+      <li>The <strong>Sefer Yetzirah</strong> (&ldquo;Book of Formation&rdquo;), a terse tract of a few pages, is the oldest, composed between the <strong>second and sixth centuries CE</strong>. It describes creation through the <strong>ten sefirot</strong> and the <strong>twenty-two letters</strong> of the Hebrew alphabet &mdash; the &ldquo;<strong>thirty-two paths of wisdom</strong>.&rdquo;</li>
+      <li>The <strong>Sefer ha-Bahir</strong> (&ldquo;Book of Brightness&rdquo;) appeared in <strong>Provence around 1180</strong>, attributed by tradition to a first-century sage; modern scholarship treats it as a medieval work, the first to give the sefirot their mythic, symbolic life.</li>
+      <li>The <strong>Zohar</strong> surfaced in <strong>Castile in the 1280s</strong>. Tradition held it the work of Shimon bar Yochai in the second century; the modern consensus, following <strong>Gershom Scholem</strong> (1897&ndash;1982), the founder of the academic study of Kabbalah, is that it was written by <strong>Moses de Le&oacute;n</strong> and likely a <strong>circle</strong> around him, in stages between about <strong>1270 and 1330</strong>.</li>
+    </ul>
+    <p>Behind all three lies the older <strong>Merkavah</strong> (&ldquo;Chariot&rdquo;) and <strong>Hekhalot</strong> (&ldquo;Palaces&rdquo;) mysticism of late antiquity &mdash; visionary texts of the soul&rsquo;s ascent through seven heavenly palaces to the throne-chariot God showed Ezekiel. Kabbalah inherited that longing and gave it a new architecture.</p>
+
+    <h2>The hidden God and the ten sefirot</h2>
+    <p><strong>Ein Sof</strong>, the Infinite, cannot be described at all &mdash; not as good, not as one, not even as existing in any sense we could mean. What can be spoken of is only God as he <strong>emanates</strong>: the <strong>ten sefirot</strong>, vessels through which the divine light flows into creation. Arranged as the <strong>Tree of Life</strong> (<em>Etz Chaim</em>), they run from <strong>Keter</strong> (Crown) through <strong>Chokhmah</strong> (Wisdom) and <strong>Binah</strong> (Understanding), down through <strong>Chesed</strong>, <strong>Gevurah</strong>, <strong>Tiferet</strong>, <strong>Netzach</strong>, <strong>Hod</strong>, <strong>Yesod</strong>, to <strong>Malkhut</strong> (Kingdom, the <strong>Shekhinah</strong>, the indwelling presence, often imagined as feminine). Creation unfolds through <strong>four worlds</strong> &mdash; <strong>Atzilut</strong> (Emanation), <strong>Beriah</strong> (Creation), <strong>Yetzirah</strong> (Formation), and <strong>Assiah</strong> (Action). Human action reverberates through this structure: rightly focused prayer (<em>kavvanah</em>) can restore harmony among the sefirot and mend a fractured creation &mdash; the seed of the idea of <strong>tikkun</strong>, repair.</p>
+
+    <h2>Two streams: the theosophical and the ecstatic</h2>
+    <p>The dominant <strong>theosophical</strong> stream &mdash; the Kabbalah of the sefirot and the Zohar &mdash; flowed from the circle of <strong>Isaac the Blind</strong> in Provence (c. 1200), through the school of <strong>Girona</strong> (Nachmanides and Azriel), into the Castilian world of the Zohar. Alongside it ran the <strong>ecstatic</strong> or <strong>prophetic</strong> Kabbalah of <strong>Abraham Abulafia</strong> (1240&ndash;after 1291), who cared little for the sefirot and everything for <strong>experience</strong>: a rigorous meditation of <strong>permuting the letters of the divine names</strong> &mdash; chanting, breathing, and combining Hebrew letters until the ordinary mind dissolved and the practitioner reached what he called <strong>prophecy</strong>, union with the divine intellect.</p>
+
+    <h2>Reading in four depths</h2>
+    <p>Kabbalah is, above all, a way of <strong>reading</strong>. Torah has four levels of meaning, summarized in the acronym <strong>PaRDeS</strong> (&ldquo;orchard,&rdquo; the root of &ldquo;paradise&rdquo;): <strong>Peshat</strong>, the plain sense; <strong>Remez</strong>, the allegorical hint; <strong>Derash</strong>, the homiletical; and <strong>Sod</strong>, the hidden, mystical sense that is Kabbalah&rsquo;s own domain. Scripture, in this vision, is not merely <em>about</em> God; its very letters <em>are</em> a garment of God.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>No tradition in this book is more thoroughly a religion of <strong>encoded language</strong>. For Kabbalah the Hebrew alphabet is not a human convention but the <strong>raw material of creation</strong>: God made the world, the Sefer Yetzirah says, by combining letters. Three classic techniques unlock the hidden layer:</p>
+    <ul>
+      <li><strong>Gematria</strong> &mdash; every Hebrew letter is also a number, so every word has a value, and words of equal value are held to be secretly related. A <strong>genuine, documented device</strong> of Jewish exegesis reaching back to antiquity, raised to an art by the kabbalists.</li>
+      <li><strong>Notarikon</strong> &mdash; reading a word&rsquo;s letters as the initials of a hidden phrase, or compressing a phrase into an acronym.</li>
+      <li><strong>Temurah</strong> &mdash; substituting or transposing letters by fixed ciphers (such as <em>atbash</em>, first-for-last) to reveal a concealed word.</li>
+    </ul>
+    <p>Above these stand the <strong>divine names</strong>: the four-letter <strong>Tetragrammaton</strong> (YHVH), unpronounced; the <strong>forty-two-</strong> and <strong>seventy-two-letter names</strong> derived by combination from verses of Exodus &mdash; held to be the most potent encodings of the divine, used in meditation and, popularly, on protective <strong>amulets</strong>. The <strong>Tree of Life</strong> itself is a symbol-system: ten sefirot joined by <strong>twenty-two paths</strong> (one per Hebrew letter), thirty-two in all, a single figure holding the whole architecture of God and cosmos.</p>
+    <p>A clear line must be drawn, as the tradition&rsquo;s own honesty demands. <strong>Gematria and its sister techniques are real and historically attested</strong> &mdash; but they are hermeneutics and meditation, <strong>not a cipher that decodes checkable hidden facts</strong> or predicts events. Distinct again, and belonging to later chapters, are the <strong>Christian Kabbalah</strong> of the Renaissance (Pico, Reuchlin), the <strong>Hermetic Qabalah</strong> of Western ceremonial magic (the Golden Dawn), and the modern celebrity &ldquo;Kabbalah Centre&rdquo; &mdash; later adaptations, not the medieval Jewish tradition itself.</p>
+
+    <h2>Connections</h2>
+    <p>Kabbalah grew out of the <strong>Rabbinic Judaism</strong> of the previous era and the <strong>Merkavah</strong> mysticism of late antiquity, and it rhymes with the other esoteric paths of its age: it is the Jewish counterpart to the <strong>Sufism</strong> of the neighboring chapter &mdash; an initiatory mysticism inside an Abrahamic faith &mdash; and it took shape in the same centuries as the great <strong>scholastic</strong> systems, a parallel effort to order all of reality by very different means. Downstream it would flower again in the <strong>Lurianic Kabbalah</strong> of sixteenth-century Safed (<em>tzimtzum</em>, cosmic <em>tikkun</em>), feed the <strong>Hasidic</strong> revival of the eighteenth century, and be borrowed and often misread by Christian and occult traditions ever after.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The medieval flowering of Kabbalah in Provence and Spain (12th&ndash;13th c.); the existence and approximate dating of the <strong>Sefer Yetzirah</strong> (c. 2nd&ndash;6th c.), <strong>Bahir</strong> (c. 1180), and <strong>Zohar</strong> (c. 1280&ndash;1330).</li>
+          <li>The historical figures of <strong>Isaac the Blind</strong>, <strong>Nachmanides</strong>, <strong>Abraham Abulafia</strong>, and <strong>Moses de Le&oacute;n</strong>; and the reality of the sefirot, the Tree of Life, PaRDeS, and the letter-techniques as documented practices.</li>
+          <li>The foundational modern scholarship of <strong>Gershom Scholem</strong>.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The traditional attributions &mdash; the <strong>Zohar</strong> as a 2nd-century work of Shimon bar Yochai, the <strong>Bahir</strong> as Nehunya ben ha-Kanah&rsquo;s, the <strong>Sefer Yetzirah</strong> as Abraham&rsquo;s or Akiva&rsquo;s &mdash; are pious pseudepigraphy.</li>
+          <li>That <strong>gematria decodes verifiable hidden messages</strong> or predicts events; it is a devotional and interpretive art, not a cryptographic key to fact.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The precise authorship of the <strong>Zohar</strong> (Moses de Le&oacute;n alone, or a circle over sixty years) and of the <strong>Bahir</strong>.</li>
+          <li>How much genuinely older oral or fragmentary esoteric material underlies the medieval books.</li>
+          <li>The exact channels &mdash; Merkavah mysticism, Neoplatonism, and possibly others &mdash; by which the sefirot emerged.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>History, texts, cosmology</h4>
+      <ul>
+        <li><a href="https://www.myjewishlearning.com/article/kabbalah-and-hasidism/">My Jewish Learning: Kabbalah&rsquo;s development, foundational texts, Ein Sof and the sefirot</a>; <a href="https://en.wikipedia.org/wiki/Sefer_Yetzirah">Sefer Yetzirah (32 paths)</a>; <a href="https://en.wikipedia.org/wiki/Zohar">the Zohar and its authorship debate (Scholem)</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Tree_of_life_(Kabbalah)">the Tree of Life and the ten sefirot</a>; <a href="https://en.wikipedia.org/wiki/Four_Worlds">the four worlds (Atzilut/Beriah/Yetzirah/Assiah)</a>; <a href="https://www.newworldencyclopedia.org/entry/Kabbala">New World Encyclopedia: Kabbala (Bahir, Girona, Isaac the Blind)</a>.</li>
+      </ul>
+      <h4>Streams, reading, and symbology</h4>
+      <ul>
+        <li><a href="https://www.myjewishlearning.com/article/abraham-abulafia-ecstatic-kabbalah/">Abraham Abulafia and ecstatic/prophetic Kabbalah</a>; <a href="https://en.wikipedia.org/wiki/Pardes_(exegesis)">PaRDeS: the four levels of interpretation</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Notarikon">Notarikon</a>, <a href="https://en.wikipedia.org/wiki/Temurah_(Kabbalah)">Temurah</a>, and <a href="https://www.encyclopedia.com/philosophy-and-religion/bible/bible-general/gematria">Gematria</a> as documented techniques.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly sources during drafting rather than from memory. Kabbalah presents itself as ancient and received while its major texts are, to history, medieval pseudepigrapha; the chapter keeps the tradition&rsquo;s own claims and the documentary record distinct, follows the project&rsquo;s symbology rule by presenting gematria/notarikon/temurah as attested devotional and interpretive arts (not a cipher that yields checkable facts), and reserves Christian Kabbalah, Hermetic Qabalah, and the modern &ldquo;Kabbalah Centre&rdquo; &mdash; along with 16th-century Lurianic Kabbalah and 18th-century Hasidism &mdash; for their own later chapters. Live debates (the authorship of the Zohar and Bahir; the older material underlying them) are left open rather than resolved.</p>
+    </div>
   ` }
 };
