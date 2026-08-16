@@ -26,7 +26,7 @@ Applied on approval ("move forward on everything; fill in gaps"). All changes va
 - ✅ F8.3 `_headers` — `nosniff`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, asset cache-control *(CSP deliberately omitted for now — the pages use inline `<style>`, so a strict CSP needs testing; tracked under Do-next)*
 - ✅ F8.4 ambient audio flipped to **default-OFF (opt-in)**
 - ✅ F2.4 JSON-LD — **partial**: `WebSite` + `Organization` on the home page (per-chapter `Article` schema is bundled into the prerender item below)
-- ✅ F8.2 stale preview branch — pruned
+- ⚠️ F8.2 stale preview branch — **delete attempted but refused by the remote** (this environment's push path rejects branch deletions; retried 3×, consistent failure — not transient). **Needs a one-click manual delete** of `claude/divine-archives-status-images-w5l0fk` in the GitHub UI.
 
 **Reclassified:**
 - ⏭️ F1.2 (defer scripts) — **won't-do**: the content scripts already load at end-of-body, so `defer` adds ~zero benefit here; not worth the change.
