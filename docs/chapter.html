@@ -3,66 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Chapter — The Divine Archives</title>
-  <meta name="description" content="A chapter of the archive." />
+  <meta name="robots" content="noindex" />
+  <title>The Divine Archives</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="assets/archive.css" />
-  <link rel="canonical" href="https://getconexto.com/chapter.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="The Divine Archives" />
-  <meta property="og:title" content="A Chapter — The Divine Archives" />
-  <meta property="og:description" content="A chapter of the archive." />
-  <meta property="og:url" content="https://getconexto.com/chapter.html" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Chapter — The Divine Archives" />
-  <meta name="twitter:description" content="A chapter of the archive." />
+  <script>
+    // Legacy route. Chapters are now static pages at /chapters/<id>.html.
+    // Redirect old ?id= links (and any bookmarks) to the prerendered page.
+    (function () {
+      var id = new URLSearchParams(location.search).get("id");
+      location.replace(id ? "chapters/" + encodeURIComponent(id) + ".html" : "eras.html");
+    })();
+  </script>
 </head>
 <body>
-<a class="skip-link" href="#chapter-mount">Skip to content</a>
-<div class="page">
-  <header class="site-header">
-    <div class="wrap bar">
-      <a class="brand" href="index.html">
-        <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-          <circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-          <circle cx="60" cy="60" r="40" stroke="currentColor" stroke-width="1.4" stroke-dasharray="1 5"/>
-          <path d="M60 24 L64 56 L60 60 L56 56 Z" fill="currentColor"/><path d="M60 96 L56 64 L60 60 L64 64 Z" fill="currentColor"/>
-          <path d="M24 60 L56 56 L60 60 L56 64 Z" fill="currentColor"/><path d="M96 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/>
-          <circle cx="60" cy="60" r="3" fill="currentColor"/>
-        </svg>
-        The Divine Archives
-      </a>
-      <nav>
-        <a href="eras.html">Eras</a>
-        <a href="traditions.html">Traditions</a>
-        <a href="themes.html">Themes</a>
-        <a href="methodology.html">Methodology</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="chapter-mount"></main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <p class="mark">The Divine Archives</p>
-      <nav>
-        <a href="eras.html">Browse by Era</a>
-        <a href="traditions.html">Browse by Tradition</a>
-        <a href="methodology.html">Methodology</a>
-        <a href="about.html">About</a>
-        <a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">Support the Archive</a>
-      </nav>
-      <p class="tiny">A comparative library of the sacred</p>
-    </div>
-  </footer>
-</div>
-
-<script src="assets/data.js"></script>
-<script src="assets/chapters.js"></script>
-<script src="assets/plates.js"></script>
-<script src="assets/archive.js"></script>
-<script src="assets/ambient.js" defer></script>
+  <noscript><p>Browse the archive at <a href="eras.html">the ages</a>.</p></noscript>
 </body>
 </html>

@@ -31,8 +31,10 @@ Applied on approval ("move forward on everything; fill in gaps"). All changes va
 **Reclassified:**
 - ⏭️ F1.2 (defer scripts) — **won't-do**: the content scripts already load at end-of-body, so `defer` adds ~zero benefit here; not worth the change.
 
-**Deferred — needs a browser-tested pass, your input, or the dashboard (unchanged):**
-- F1.1 split the 404 KB `chapters.js` monolith, and F2.1 prerender static per-chapter pages (with per-chapter OG/canonical/Article) — both are **architectural changes to the render path that I can't verify blind** (sandbox egress blocks any live browser check); they belong in a dedicated pass where the result can be loaded and confirmed.
+**Architecture pass — DONE (2026-08-16), browser-verified with local headless Chromium:**
+- ✅ **F1.1 + F2.1 together.** Added a prerenderer (`tools/build-chapters.js`) that bakes each published chapter into a static, crawlable page at `/chapters/<id>.html` — full content, plate, and per-chapter `<title>`/description/canonical/OG/`Article` JSON-LD. Chapter pages **no longer load the 404 KB `chapters.js` monolith** (now zero pages load it; it stays only as the authoring source the generator reads). `chapter.html?id=` is now a redirector so old/shared links still resolve; `archive.js` tile/search links and the sitemap point at the static pages. Verified in a real browser: content + styled plate render, old links redirect, era/traditions/search links updated, no JS console errors.
+
+**Deferred — needs your input or the dashboard (unchanged):**
 - F5.1 import the real master outline (needs your authoritative version) · F5.2 clear the 3 pending chapters (your review gate) · F8.1 `www` resolution (Cloudflare dashboard) · F3.3 external link-rot (needs a live link-checker / CI) · F4.3 contrast + F6.1/6.2/6.3 visual items (needs-human-eyes) · F5.3 roadmap entries (parked).
 
 ---

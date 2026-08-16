@@ -86,7 +86,7 @@
         '<span class="tile-name">' + esc(name) + "</span>" +
         badge(status, ch && ch.pending);
       if (ch) {
-        var a = el('<a class="tile" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
+        var a = el('<a class="tile" href="chapters/' + encodeURIComponent(ch.id) + '.html"></a>');
         a.innerHTML = head + '<p class="tile-sum">' + esc(ch.summary) + "</p>";
         list.appendChild(a);
       } else {
@@ -103,7 +103,7 @@
       section.appendChild(el('<p class="eyebrow center" style="margin:2.6rem 0 1.4rem">Comparative themes across this age</p>'));
       var tlist = el('<div class="tiles"></div>');
       themeChapters.forEach(function (ch) {
-        var a = el('<a class="tile" href="chapter.html?id=' + encodeURIComponent(ch.id) + '"></a>');
+        var a = el('<a class="tile" href="chapters/' + encodeURIComponent(ch.id) + '.html"></a>');
         a.innerHTML =
           '<span class="tile-art">' + artFor(ch, null) + "</span>" +
           '<span class="tile-name">' + esc(ch.title) + "</span>" +
@@ -153,7 +153,7 @@
       rows.forEach(function (r) {
         if (f && r.name.toLowerCase().indexOf(f) === -1 && r.era.name.toLowerCase().indexOf(f) === -1) return;
         shown++;
-        var href = r.chapter ? "chapter.html?id=" + encodeURIComponent(r.chapter.id) : "era.html?era=" + encodeURIComponent(r.era.slug);
+        var href = r.chapter ? "chapters/" + encodeURIComponent(r.chapter.id) + ".html" : "era.html?era=" + encodeURIComponent(r.era.slug);
         var a = el('<a class="tile" href="' + href + '"></a>');
         a.innerHTML =
           '<span class="tile-art">' + artFor(r.chapter, r.era) + "</span>" +

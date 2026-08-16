@@ -412,3 +412,10 @@ a.tile:hover .tile-art svg { color: var(--gold-bright); }
 }
 .skip-link:focus { top: 0; outline: 2px solid var(--parchment); }
 [tabindex="-1"]:focus { outline: none; }
+
+/* --- interpretive chapter plates (was injected by plates.js; kept here so
+       static prerendered chapter pages are styled without loading plates.js) --- */
+.page-head .plate,.article .plate{margin:1.7rem auto 0.4rem;max-width:24rem;text-align:center}
+.plate .plate-art{width:100%;max-width:360px;height:auto;color:var(--gold-bright,#d9b06a);display:inline-block;padding:1.35rem;border:1px solid var(--line,#37291a);border-radius:5px;background:radial-gradient(120% 120% at 50% 32%,#1d150d 0%,rgba(16,12,9,0) 78%)}
+.plate figcaption{margin:0.75rem auto 0;font-size:0.78rem;line-height:1.5;max-width:26rem;color:var(--ink-faint,#6f624a);font-style:italic}
+.plate .tag{display:inline-block;font-style:normal;text-transform:uppercase;letter-spacing:0.14em;font-size:0.56rem;color:var(--ink-dim,#9a8a6b);border:1px solid var(--line,#37291a);padding:0.16rem 0.5rem;border-radius:2px;margin-bottom:0.5rem}
