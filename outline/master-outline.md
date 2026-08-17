@@ -41,6 +41,13 @@ drafted and go live carrying a "Recently added — pending review" tag; Carter
 clears them in batch, at which point the tag is removed and the status becomes
 `CLEARED`.
 
+**Batch II — deepening pass (in progress).** Already-published chapters are being
+revisited and expanded with additional sourced material under the same standards
+(tracked in `icm/stage-4-expansions/CONTEXT.md`). Completed groups merge to
+production as they finish. **Deepened and live so far: ch01–ch15** (era 02 + seed,
+Early Iron Age, Axial Age). This is additive — it does not change a chapter's
+review status, only its depth.
+
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |

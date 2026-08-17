@@ -1,6 +1,15 @@
 # Stage 4 — Deepening Pass (Batch II) — CONTEXT
 
-**STATUS: 🟡 IN PROGRESS — NOT YET READY FOR REVIEW.** This is the second review batch: revisiting already-published chapters (ch01–ch30) and expanding them with additional publicly available information under the same standards. Held on the working branch; nothing merged to `main`.
+**STATUS: 🟡 IN PROGRESS — rolling merges.** This is the second review batch:
+revisiting already-published chapters (ch01–ch30) and expanding them with additional
+publicly available information under the same standards. Per Carter's instruction
+("merge, update, continue"), completed groups are being **merged to production as they
+finish** rather than held to a single end-of-batch gate.
+
+**Merged live (production):** groups 1–3 — **ch01–ch15** (era 02 + seed, Early Iron
+Age, Axial Age), merged to `main` at commit `300586f`.
+**Remaining:** groups 4–5 — ch16–ch20 (Late Antiquity) and ch21–ch30 (Early/High
+Medieval), continuing on the working branch and merged as each group closes.
 
 ## Scope
 Deepen — not merely re-touch — the earlier chapters: add sourced detail (more source texts, sects, regional variants, ritual practices, archaeology, and cross-disciplinary angles), strengthen the symbology and evidence-honesty sections where thinner, and keep contested points flagged. No structural or tonal change; same length target or longer.
@@ -87,4 +96,8 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   retains plate + evidence + sources.
 
 ## Gate
-Grouped as **Batch II**, a single review point separate from Batch I. Flagged READY FOR REVIEW only when the deepening pass is complete and checkpointed.
+Originally grouped as **Batch II**, a single review point separate from Batch I.
+Superseded by Carter's "merge, update, continue" instruction: completed groups now
+merge to production as they finish (groups 1–3 / ch01–ch15 already live), each with its
+own integrity checkpoint, and every deepened chapter keeps its evidence-honesty and
+sources. The remaining groups (ch16–ch30) follow the same rolling-merge pattern.
