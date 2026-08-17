@@ -85,6 +85,13 @@ clears them in batch, at which point the tag is removed and the status becomes
 
 **High Medieval (era 07) traditions complete** (ch26–ch30): Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti.
 
+| ch31 — The Reformation | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch31-reformation-early-modern.md` |
+| ch32 — The Witch Trials | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch32-witch-trials-early-modern.md` |
+| ch33 — African Traditional Religion | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch33-african-traditional-religion-early-modern.md` |
+| ch34 — Sikhism | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch34-sikhism-early-modern.md` |
+
+**Early Modern (era 08) traditions complete** (ch31–ch34): Reformation, Witch Trials, African Traditional Religion, Sikhism.
+
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
 ## Per-chapter content checklist (from CLAUDE.md)

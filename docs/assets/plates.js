@@ -669,6 +669,96 @@
       '</svg>',
       "Interpretive illustration",
       "A lotus in bloom &mdash; the flower of devotion, rising from the water unstained: an emblem for a religion of love open to all. An original geometric rendering, not a specific image."
+    ),
+
+    /* Ch31 — Reformation: a rose enclosing a heart and cross (after the Luther seal) */
+    "ch31": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="1.3"/>' +
+        '<circle cx="100" cy="100" r="82" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>' +
+        // five rose petals
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.85">' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(72 100 100)"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(144 100 100)"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(216 100 100)"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(288 100 100)"/></g>' +
+        // heart + cross at the center
+        '<path d="M100 128 C 82 112 78 98 90 92 C 96 89 100 94 100 98 C 100 94 104 89 110 92 C 122 98 118 112 100 128 Z" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="100" y1="96" x2="100" y2="118"/><line x1="92" y1="104" x2="108" y2="104"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A rose enclosing a heart and cross, after the seal Luther chose &mdash; the living faith of the believer at the center of a movement that put the Word above all. An original geometric rendering, not a facsimile of the seal."
+    ),
+
+    /* Ch32 — Witch Trials: the scales of justice, unbalanced */
+    "ch32": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        '<g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">' +
+          // stand
+          '<line x1="100" y1="44" x2="100" y2="150" stroke-width="1.6"/>' +
+          '<path d="M78 158 L122 158 L112 150 L88 150 Z" stroke-width="1.4"/>' +
+          '<circle cx="100" cy="44" r="3.4" fill="currentColor"/>' +
+          // tilted beam
+          '<line x1="42" y1="60" x2="158" y2="80" stroke-width="1.6"/>' +
+          // left pan (raised)
+          '<line x1="42" y1="60" x2="42" y2="70" stroke-width="0.9"/>' +
+          '<path d="M26 70 Q42 88 58 70" stroke-width="1.3"/>' +
+          '<line x1="26" y1="70" x2="42" y2="60" stroke-width="0.7" opacity="0.6"/><line x1="58" y1="70" x2="42" y2="60" stroke-width="0.7" opacity="0.6"/>' +
+          // right pan (lowered)
+          '<line x1="158" y1="80" x2="158" y2="100" stroke-width="0.9"/>' +
+          '<path d="M142 100 Q158 118 174 100" stroke-width="1.3"/>' +
+          '<line x1="142" y1="100" x2="158" y2="80" stroke-width="0.7" opacity="0.6"/><line x1="174" y1="100" x2="158" y2="80" stroke-width="0.7" opacity="0.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The scales of justice, thrown out of balance &mdash; a persecution that wore the robes of law to punish an imaginary crime. An original figure, chosen to mark the trials as a miscarriage of justice, not to depict their victims."
+    ),
+
+    /* Ch33 — African Traditional Religion: an Ifa divination motif with binary odu marks */
+    "ch33": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1.3"/>' +
+        '<circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>' +
+        // eight rim marks (the cast positions)
+        '<g stroke="currentColor" stroke-width="1.2">' +
+          '<line x1="100" y1="12" x2="100" y2="22"/><line x1="100" y1="178" x2="100" y2="188"/>' +
+          '<line x1="12" y1="100" x2="22" y2="100"/><line x1="178" y1="100" x2="188" y2="100"/>' +
+          '<line x1="38" y1="38" x2="45" y2="45"/><line x1="162" y1="38" x2="155" y2="45"/>' +
+          '<line x1="38" y1="162" x2="45" y2="155"/><line x1="162" y1="162" x2="155" y2="155"/></g>' +
+        // a central odu figure: two columns of four marks (single = one stroke, double = two)
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">' +
+          '<line x1="84" y1="70" x2="84" y2="82"/>' +                         // I
+          '<line x1="80" y1="94" x2="80" y2="106"/><line x1="88" y1="94" x2="88" y2="106"/>' + // II
+          '<line x1="84" y1="118" x2="84" y2="130"/>' +                       // I
+          '<line x1="80" y1="142" x2="80" y2="154"/><line x1="88" y1="142" x2="88" y2="154"/>' + // II
+          '<line x1="112" y1="70" x2="112" y2="82"/><line x1="120" y1="70" x2="120" y2="82"/>' + // II
+          '<line x1="116" y1="94" x2="116" y2="106"/>' +                      // I
+          '<line x1="112" y1="118" x2="112" y2="130"/><line x1="120" y1="118" x2="120" y2="130"/>' + // II
+          '<line x1="116" y1="142" x2="116" y2="154"/></g>' +                 // I
+      '</svg>',
+      "Interpretive illustration",
+      "An Ifa divination motif &mdash; the diviner&rsquo;s marks that record one of the 256 odu, a sacred binary read from palm nuts. An original geometric rendering in the tradition&rsquo;s idiom, not a specific tray."
+    ),
+
+    /* Ch34 — Sikhism: the Khanda (double-edged sword, chakkar, two kirpans) */
+    "ch34": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // chakkar (the ring)
+        '<circle cx="100" cy="104" r="40" stroke="currentColor" stroke-width="2.4"/>' +
+        // two kirpans, curving up and out, crossing below
+        '<g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">' +
+          '<path d="M92 168 C 58 150 46 108 60 66"/>' +
+          '<path d="M108 168 C 142 150 154 108 140 66"/></g>' +
+        // central double-edged khanda blade
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">' +
+          '<path d="M100 26 L107 46 L104 150 L96 150 L93 46 Z" fill="currentColor" opacity="0.15"/>' +
+          '<path d="M100 26 L107 46 L104 150 L96 150 L93 46 Z"/>' +
+          '<line x1="100" y1="30" x2="100" y2="150" stroke-width="0.7" opacity="0.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Khanda &mdash; the double-edged sword of divine truth within the chakkar of God&rsquo;s oneness, flanked by the two kirpans of spiritual and temporal power. An original geometric rendering of the Sikh emblem."
     )
 
   };

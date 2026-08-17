@@ -49,12 +49,12 @@ window.ARCHIVE = {
     { slug: "08-early-modern", num: "VIII", name: "The Early Modern",
       dates: "c. 1500 – 1800 CE",
       blurb: "Reformation and rupture, encounter and conquest. The splintering of Western Christianity, the terror of the witch trials, the religions of Africa on the eve of the colonial age, and the birth of Sikhism.",
-      traditions: ["The Reformation", "The witch trials", "Colonial-era African religion", "Sikhism"] },
+      traditions: ["The Reformation", "The Witch Trials", "African Traditional Religion", "Sikhism"] },
 
     { slug: "09-modern", num: "IX", name: "The Modern Age",
       dates: "c. 1800 – present",
       blurb: "Faith did not fade; it multiplied and remade itself. New religious movements, Spiritualism and the séance, the revival of Paganism and Wicca, Theosophy and the occult, and the living syntheses of the diaspora.",
-      traditions: ["New religious movements", "Spiritualism", "Wicca & modern Paganism", "Theosophy", "Diaspora syntheses"] }
+      traditions: ["New Religious Movements", "Spiritualism", "Theosophy & the Occult Revival", "Wicca & Modern Paganism", "Satanism", "African Diaspora Religions"] }
   ],
 
   // Cross-cutting comparative themes (span eras)
@@ -233,6 +233,26 @@ window.ARCHIVE = {
       era: "07-high-medieval", eraLabel: "High Medieval · Bhakti",
       source: "eras/07-high-medieval/ch30-bhakti-high-medieval.md",
       status: "published", pending: true,
-      summary: "The devotional revolution of medieval India — a religion of passionate, personal love for God, sung in the mother tongue by weavers and washerwomen and untouchables, needing no priest, temple, or Sanskrit, only the heart. From the flowers under Kabir's shroud, through the Tamil Alvars and Nayanars, Ramanuja's philosophy of devotion, the saguna/nirguna divide, and the great company of saints (Basava and the Lingayats, Jnaneshwar and Namdev, Kabir and Ravidas); with a symbology section on the vernacular song, the divine name (nama-japa), Kabir's upside-down language, and the Lingayat ishtalinga — keeping the movement and its poetry distinct from the saints' hagiography, and meeting the Sufism of the same age. Closes the High Medieval era." }
+      summary: "The devotional revolution of medieval India — a religion of passionate, personal love for God, sung in the mother tongue by weavers and washerwomen and untouchables, needing no priest, temple, or Sanskrit, only the heart. From the flowers under Kabir's shroud, through the Tamil Alvars and Nayanars, Ramanuja's philosophy of devotion, the saguna/nirguna divide, and the great company of saints (Basava and the Lingayats, Jnaneshwar and Namdev, Kabir and Ravidas); with a symbology section on the vernacular song, the divine name (nama-japa), Kabir's upside-down language, and the Lingayat ishtalinga — keeping the movement and its poetry distinct from the saints' hagiography, and meeting the Sufism of the same age. Closes the High Medieval era." },
+    { id: "ch31", title: "The Reformation", kind: "tradition",
+      era: "08-early-modern", eraLabel: "Early Modern \u00b7 The Reformation",
+      source: "eras/08-early-modern/ch31-reformation-early-modern.md",
+      status: "published", pending: true,
+      summary: "The sixteenth-century revolt that split Western Christianity \u2014 begun as a quarrel over the sale of forgiveness, carried across a continent by the printing press, and ending in a hundred years of war. From Luther's Ninety-Five Theses and the five solas, through Calvin and the radical Anabaptists, the Catholic Counter-Reformation and Trent, to the Peace of Westphalia; with a symbology section on the printed vernacular Bible, iconoclasm, and the turn from image to word \u2014 keeping the theological claims as faith and flagging the door legend and the Weber thesis as debated." },
+    { id: "ch32", title: "The Witch Trials", kind: "tradition",
+      era: "08-early-modern", eraLabel: "Early Modern \u00b7 The Witch Trials",
+      source: "eras/08-early-modern/ch32-witch-trials-early-modern.md",
+      status: "published", pending: true,
+      summary: "The two-and-a-half centuries in which early modern Europe hunted, tortured, and killed tens of thousands of its own people \u2014 overwhelmingly poor women \u2014 for a crime that, as imagined, did not exist. Told per the project's standard as documented persecution, not validation: the fabricated diabolical witch, the Malleus Maleficarum, torture and the chain-reaction panics, the gender and the regional exceptions, Salem, and the debunked Murray witch-cult myth \u2014 with a symbology section on the Devil's mark, the scripted confession, and the inverted sabbath." },
+    { id: "ch33", title: "African Traditional Religion", kind: "tradition",
+      era: "08-early-modern", eraLabel: "Early Modern \u00b7 African Traditional Religion",
+      source: "eras/08-early-modern/ch33-african-traditional-religion-early-modern.md",
+      status: "published", pending: true,
+      summary: "The vast family of indigenous religions of sub-Saharan Africa \u2014 a Supreme God above intermediary spirits and living ancestors, read through divination and danced in masks \u2014 and how, in the slave-trade centuries, these faiths were carried across the Atlantic and survived hidden inside the saints of their captors. Yoruba orisha and Ifa, Fon vodun, Akan and Kongo; the Middle Passage and syncretism; a symbology section on Ifa's 256 binary odu, Adinkra, and Nsibidi \u2014 rejecting the colonial 'fetishism' labels and keeping the oral, mediated record honest." },
+    { id: "ch34", title: "Sikhism", kind: "tradition",
+      era: "08-early-modern", eraLabel: "Early Modern \u00b7 Sikhism",
+      source: "eras/08-early-modern/ch34-sikhism-early-modern.md",
+      status: "published", pending: true,
+      summary: "The faith born in the Punjab five centuries ago from the meeting of Hindu devotion and Muslim mysticism \u2014 one formless God (Ik Onkar), honest work, and radical equality. From Guru Nanak's 'there is no Hindu, there is no Muslim' through the ten Gurus, the Guru Granth Sahib (which enshrines Hindu and Muslim saints), the Khalsa and the Five Ks; with a symbology section on Ik Onkar, the Khanda, and the Naam \u2014 keeping the Gurus' history distinct from the janamsakhi legend and handling the synthesis-vs-revelation question with care." }
   ]
 };

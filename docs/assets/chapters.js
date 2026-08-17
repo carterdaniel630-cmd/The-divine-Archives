@@ -2602,5 +2602,315 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from standard reference sources during drafting rather than from memory. The movement and its poetry are treated as well-documented, while the saints&rsquo; miracle-biographies are flagged as hagiography rather than history and firm dates as often uncertain; the layered, partly-later authorship of corpora like Kabir&rsquo;s is noted. The anti-caste message is affirmed as present in the verse, while how far it reformed society is left open. nama-japa is set beside the Sufi dhikr, tantric mantra, Kabbalistic divine names, and Shinto kotodama as one age&rsquo;s many sacred-sound traditions, and the later blooms (Mirabai, Tulsidas, Chaitanya) and the modern global export of Krishna-devotion are reserved for later eras.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch31 */
+  ch31: { html: `
+    <p class="lead">The sixteenth-century revolt that split Western Christianity in two — begun as a quarrel over the sale of forgiveness, carried across a continent by a new machine, and ending in a hundred years of war and a Christendom shattered into churches — told with care for what happened, what the reformers claimed, and what remains a matter of faith.</p>
+
+    <h2>The door at Wittenberg</h2>
+
+    <p>On the thirty-first of October, 1517 — so the tradition holds — an Augustinian friar and professor named <strong>Martin Luther</strong> walked to the door of the Castle Church in <strong>Wittenberg</strong> and nailed to it a sheet of ninety-five propositions, in Latin, for academic debate. Whether he actually hammered them to the door is genuinely uncertain; some historians think the dramatic scene a later legend, and that he simply mailed them to his bishop. What is not in doubt is what the <strong>Ninety-Five Theses</strong> attacked: the sale of <strong>indulgences</strong> — papal certificates that promised to shorten a soul's time in purgatory, hawked across Germany by the friar Johann Tetzel with the jingle, "<strong>as soon as the coin in the coffer rings, the soul from purgatory springs</strong>." Luther meant to start a scholarly argument. He started the fracture of the Latin Church.</p>
+
+    <h2>What the Reformation was</h2>
+
+    <p>The <strong>Protestant Reformation</strong> was the movement that, over the sixteenth century, broke the thousand-year unity of Western Christianity under the pope and founded the rival family of <strong>Protestant</strong> churches. It began as a protest against specific corruptions — indulgences, clerical wealth, the abuses of Rome — but it swiftly became something far larger: a wholesale challenge to the authority of the pope, the priesthood, and the traditions of the Church, in the name of a Christianity refounded on the Bible and on faith alone.</p>
+
+    <h2>The spark and the machine</h2>
+
+    <p>Luther's protest would likely have died as a local dispute, as earlier ones had, but for a new technology. The <strong>printing press</strong>, barely seventy years old, seized on the Theses: within weeks they were translated from Latin into <strong>German</strong> and printed and reprinted across the empire, and Luther's later pamphlets sold in the hundreds of thousands. For the first time a religious rebel could reach a whole society over the heads of the authorities. The Reformation was the first mass movement of the age of print — and it made the <strong>book</strong>, not the priest, the center of the faith.</p>
+
+    <h2>The five "solas"</h2>
+
+    <p>Protestant theology crystallized into a handful of Latin slogans that defined it against Rome:</p>
+
+    <ul>
+      <li><strong>Sola scriptura</strong> — "<strong>Scripture alone</strong>": the Bible, not the pope or church tradition, is the sole authority for Christian faith.</li>
+      <li><strong>Sola fide</strong> — "<strong>faith alone</strong>": a person is justified, made right with God, by faith and not by good works or the Church's sacraments.</li>
+      <li><strong>Sola gratia</strong> — "<strong>grace alone</strong>": salvation is God's unearned gift, not a reward.</li>
+      <li>and, behind them, <strong>solus Christus</strong> and <strong>soli Deo gloria</strong> — Christ alone as mediator, glory to God alone.</li>
+    </ul>
+
+    <p>From these flowed the rest: the <strong>priesthood of all believers</strong> (every Christian has direct access to God, needing no priest); the <strong>vernacular Bible</strong>, so that all could read it — Luther's own German translation reshaped the language itself; and the rejection of purgatory, of most of the seven sacraments, of monasticism, clerical celibacy, and the cult of the saints.</p>
+
+    <h2>The reformers and the radicals</h2>
+
+    <p>The movement fractured almost at once into rival streams. <strong>Luther</strong> led in Germany. In Switzerland, <strong>Huldrych Zwingli</strong> at Zürich and then <strong>John Calvin</strong> at <strong>Geneva</strong> built the <strong>Reformed</strong> tradition; Calvin's <em>Institutes of the Christian Religion</em> and his austere doctrine of <strong>predestination</strong> — that God has eternally chosen the saved and the damned — became the most rigorous system of Protestant thought and spread to the Dutch, the Scots (as Presbyterianism), and the English Puritans. In England the break was as much political as theological: <strong>Henry VIII</strong>, denied an annulment, made himself head of an English church, which settled into the Anglican <em>via media</em> between Rome and Geneva.</p>
+
+    <p>And on the movement's edge stood the <strong>Radical Reformation</strong> — the <strong>Anabaptists</strong>, who rejected infant baptism for adult believers' baptism, and often the whole alliance of church and state. Persecuted by Catholics and mainline Protestants alike, and stained by the violent millenarian takeover of <strong>Münster</strong> in 1534–35, they nonetheless carried ideas — <strong>believers' baptism</strong>, the <strong>separation of church and state</strong>, pacifism — that would outlast their persecutors, in the Mennonites, Amish, and later the Quakers and Baptists.</p>
+
+    <h2>Rome's answer</h2>
+
+    <p>The Catholic Church did not simply lose. The <strong>Counter-Reformation</strong> (or Catholic Reformation) answered with reform and reaction: the <strong>Council of Trent</strong> (1545–1563) reaffirmed the disputed doctrines — the authority of tradition alongside scripture, justification by faith <em>and</em> works, the seven sacraments, transubstantiation — while correcting the worst abuses; the new <strong>Society of Jesus</strong> (the Jesuits) became the spearhead of Catholic education and global mission; and the <strong>Roman Inquisition</strong> and the <strong>Index of Forbidden Books</strong> enforced the boundary. Christendom was now permanently divided into confessions.</p>
+
+    <h2>A hundred years of war</h2>
+
+    <p>The split was written in blood. The <strong>Peace of Augsburg</strong> (1555) tried to hold Germany together with the principle <em>cuius regio, eius religio</em> — the ruler's religion is the region's — but the <strong>French Wars of Religion</strong>, the Dutch Revolt, the English civil wars, and above all the catastrophic <strong>Thirty Years' War</strong> (1618–1648) turned Europe into a charnel house in the name of doctrine. The <strong>Peace of Westphalia</strong> that ended it in 1648 left a continent of confessional states and the first stirrings of an idea born of exhaustion: that the state might have to <strong>tolerate</strong> more than one faith.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The Reformation was, at its core, a revolution in <strong>what counted as sacred</strong> — and it moved the holy from the image to the word.</p>
+
+    <ul>
+      <li>The supreme sacred object became the <strong>printed vernacular Bible</strong>. Where medieval faith had been carried in ritual, relic, and image for the illiterate, <em>sola scriptura</em> made the <strong>read and preached word</strong> the vehicle of grace, and drove a wave of <strong>literacy</strong> across Protestant lands.</li>
+      <li>Against the image came <strong>iconoclasm</strong>: Reformed Christians, reading the commandment against graven images strictly, stripped and whitewashed their churches, smashed statues and stained glass (the <em>Beeldenstorm</em> of 1566), and built plain <strong>meeting-houses</strong> whose bareness was itself a theology — God is met in the Word, not in gilded splendor.</li>
+      <li>The medieval <strong>four senses of Scripture</strong> (from the scholastic chapter) were largely rejected for the <strong>plain, literal sense</strong>: the text meant what it said, and every plowman could read it for himself.</li>
+      <li>And a new sacred medium arose in <strong>congregational hymn-singing</strong> — Luther's own chorales, the metrical psalms of the Reformed — encoding doctrine in music the whole people sang, no longer a choir performing on their behalf.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Reformation grew directly out of the medieval <strong>Catholic</strong> church it broke from, and out of the <strong>scholasticism</strong> of the previous chapter — its nominalist turn (Ockham) had already loosened the ground, and Luther was trained in it. It drew on the <strong>Renaissance humanists'</strong> return to original texts (Erasmus's Greek New Testament put the tools in Luther's hands). It runs parallel to the birth of <strong>Sikhism</strong> in the same century — another vernacular, scripture-and-devotion movement rejecting priestly mediation — and it set loose forces, from mass literacy to individual conscience to religious pluralism, that shape the <strong>modern</strong> era to come. The old claim, from Max Weber, that its work-ethic birthed capitalism is much debated, but that it helped make the modern world is not.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>Luther's Ninety-Five Theses and the indulgence controversy of 1517; the role of the printing press; the doctrines and texts of Luther, Zwingli, and Calvin; the English and Radical Reformations; the Council of Trent and the Counter-Reformation; and the wars of religion through the Peace of Westphalia (1648). The documentary record is overwhelming.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>The <strong>theological claims themselves</strong> — justification by faith alone, the sole authority of Scripture, predestination, the real presence or its denial — are matters of <strong>faith and theology</strong>, recorded here as the convictions people fought over, neither proven nor refuted. Whether the reformers or Rome were <em>right</em> is not a question history can answer.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and legendary</h4>
+        <p>Whether Luther actually <strong>nailed</strong> the Theses to the church door is doubted by serious historians. The <strong>Weber thesis</strong> linking Protestantism to the rise of capitalism is contested. And the deeper question of how far the Reformation <em>caused</em> the modern world of literacy, individualism, and eventual secularism — as opposed to riding forces already in motion — remains a genuine historical debate.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Luther's Ninety-Five Theses (1517), indulgences, Tetzel, and the door — "Ninety-five Theses," Britannica. <a href="https://www.britannica.com/event/Ninety-five-Theses">https://www.britannica.com/event/Ninety-five-Theses</a></li>
+        <li>The printing press and the rapid spread of the Reformation — "Martin Luther's 95 Theses," World History Encyclopedia. <a href="https://www.worldhistory.org/article/1891/martin-luthers-95-theses/">https://www.worldhistory.org/article/1891/martin-luthers-95-theses/</a></li>
+        <li>The solas, sola scriptura and sola fide, the vernacular Bible, priesthood of all believers — "Protestantism," Britannica. <a href="https://www.britannica.com/topic/Protestantism">https://www.britannica.com/topic/Protestantism</a></li>
+        <li>Calvin, Geneva, predestination, the <em>Institutes</em>; Zwingli and the Reformed tradition — "Reformation," Britannica. <a href="https://www.britannica.com/event/Reformation">https://www.britannica.com/event/Reformation</a></li>
+        <li>The Radical Reformation and the Anabaptists (adult baptism, church–state separation, Münster) — "Anabaptism," Britannica. <a href="https://www.britannica.com/topic/Anabaptists">https://www.britannica.com/topic/Anabaptists</a></li>
+        <li>The Counter-Reformation and the Council of Trent (1545–1563); the Jesuits — "Counter-Reformation," Britannica. <a href="https://www.britannica.com/event/Counter-Reformation">https://www.britannica.com/event/Counter-Reformation</a></li>
+        <li>The Peace of Augsburg (1555), the Thirty Years' War, and the Peace of Westphalia (1648) — "Thirty Years' War," Britannica. <a href="https://www.britannica.com/event/Thirty-Years-War">https://www.britannica.com/event/Thirty-Years-War</a></li>
+        <li>Reformation iconoclasm (the Beeldenstorm) and the turn to the word — "Reformation iconoclasm" overviews (Britannica/Wikipedia). <a href="https://en.wikipedia.org/wiki/Reformation_iconoclasm">https://en.wikipedia.org/wiki/Reformation_iconoclasm</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch32 */
+  ch32: { html: `
+    <p class="lead">The two-and-a-half centuries in which early modern Europe hunted, tortured, and killed tens of thousands of its own people — overwhelmingly poor women — for a crime that, as its persecutors imagined it, did not exist; told as the documented history of a persecution, not as evidence that its victims were what they were accused of being.</p>
+
+    <h2>The confession</h2>
+
+    <p>Somewhere in the German lands around 1600, an old woman — a widow, perhaps, or the village healer people came to for a charm against fever — is denounced by a neighbor after a cow sickens or a child dies. She is arrested, stripped, and searched for the <strong>Devil's mark</strong>. She denies everything. She is tortured — the thumbscrews, the strappado that pulls the arms from their sockets — until she confesses what her interrogators already know she must confess: that she made a pact with Satan, flew by night to the <strong>witches' sabbath</strong>, feasted and copulated with demons, and blighted her neighbors' crops and cattle. Then she is made to name the others she saw there. Some of them will be arrested next. And then she is burned.</p>
+
+    <p>She was not a witch. There was no secret society of Devil-worshippers flying to sabbaths; the crime she confessed to was, in that form, a <strong>fantasy</strong> — assembled by learned men and extracted by pain. This is the hardest thing to hold steady about the witch trials, and the most important: the persecution was utterly real, and the conspiracy it punished was not.</p>
+
+    <h2>What the witch trials were</h2>
+
+    <p>Between roughly <strong>1450 and 1750</strong>, the courts of Christian Europe and its colonies tried perhaps <strong>100,000 people</strong> for witchcraft and executed somewhere between <strong>40,000 and 60,000</strong> — the great majority in the fragmented <strong>Holy Roman Empire</strong>. The "witch" they hunted was a specific and terrible invention: not merely someone who worked harmful magic, but a person who had <strong>renounced God, sworn allegiance to the Devil</strong>, and joined a vast secret conspiracy against Christendom. It is this second, diabolical element — the pact, the sabbath, the anti-church of Satan — that was, as modern scholarship overwhelmingly agrees, <strong>largely fabricated</strong> by the persecutors themselves.</p>
+
+    <h2>The making of the witch</h2>
+
+    <p>The idea was a <strong>welding-together</strong> of two very different things. The first was ordinary belief in <strong>maleficium</strong> — harmful magic — which almost everyone in pre-modern Europe accepted, and which shaded into the genuine world of village <strong>cunning-folk</strong>: healers, charmers, and finders of lost things who really existed and mostly did good. The second was an elite theory of <strong>demonology</strong>, worked out by theologians and lawyers, that reinterpreted this folk magic as <strong>Devil-worship</strong>. The two fused into the "cumulative concept" of the witch, and the fusion was given its most infamous handbook in the <strong>Malleus Maleficarum</strong> ("Hammer of Witches," 1486), the venomous, deeply misogynistic treatise of the Dominican <strong>Heinrich Kramer</strong>. It was a best-seller for two centuries — yet, tellingly, it was <strong>never authorized by the Catholic Church</strong>, and was in fact condemned by leading theologians of its own day for bad doctrine and illegal methods.</p>
+
+    <h2>The machinery</h2>
+
+    <p>What turned belief into slaughter was <strong>procedure</strong>. Where courts adopted <strong>inquisitorial</strong> methods and permitted <strong>torture</strong>, two things followed: confessions could be produced to order, and tortured suspects could be forced to <strong>name accomplices</strong> — so that a single accusation could chain-react into a panic that consumed dozens or hundreds. The trials were not the work of one church: <strong>Catholic and Protestant</strong> courts both hunted witches, and the worst outbreaks — Trier, Bamberg, Würzburg — came where central legal authority was weakest and local zeal unchecked. Across the Atlantic, the <strong>Salem</strong> trials of 1692, which hanged twenty, were a small, late colonial flare of the same fire.</p>
+
+    <h2>Who died, and why</h2>
+
+    <p>About <strong>three-quarters to four-fifths</strong> of those executed across Europe were <strong>women</strong> — most of them old, poor, widowed, or marginal, and often the very healers and midwives their communities had once relied on. That pattern makes misogyny a central thread of the hunts. But it was not the whole story: in <strong>Iceland</strong> some ninety percent of the accused were men, and men were the majority in <strong>Finland</strong> and <strong>Estonia</strong> too. Historians such as Brian Levack therefore reject any single cause and stress a <strong>convergence</strong>: the legal machinery of torture, the demonological theory of the learned, the social stress of a Europe wracked by plague, war, famine, and the religious terror of the Reformation age — and the ancient human reflex to find, in a frightened time, someone to blame.</p>
+
+    <h2>The end of the hunts</h2>
+
+    <p>The trials did not stop because Europe stopped believing in the Devil. They stopped because <strong>the machinery lost its legitimacy</strong>: judges grew skeptical of confessions won by torture, courts demanded evidence that spectral flights and pacts could not provide, and voices of protest — most bravely the Jesuit <strong>Friedrich Spee</strong>, whose <em>Cautio Criminalis</em> (1631) exposed how torture manufactured guilt — slowly turned educated opinion. The rising <strong>Enlightenment</strong> finished the work. By the eighteenth century the last legal executions had ceased, and the witch had passed from the courtroom into folklore.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The witch trials ran on a dark and revealing <strong>symbolic</strong> system — much of it projected onto the accused rather than found in them.</p>
+
+    <ul>
+      <li>The <strong>Devil's mark</strong> and the <strong>witch's mark</strong> were read on the body as encoded proof: any mole, scar, or insensitive patch could be "the Devil's seal," and searchers pricked the accused for a spot that would not bleed. The evidence was written on the flesh because it could be found nowhere else.</li>
+      <li>The <strong>confession</strong> itself was an encoded, formulaic text: the sabbath, the pact, the flight, the demonic sex recur in trial after trial in the same shape — not because witches did these things, but because interrogators, working from the same demonological manuals, asked the same leading questions and tortured until they got the same script.</li>
+      <li>The imagined sabbath was a systematic <strong>inversion</strong> of Christian symbol — a black anti-Mass, prayers said backward, the cross trampled, the world turned upside down — the projection of a society's fears about its own most sacred things.</li>
+      <li>And the familiar <strong>iconography</strong> of the witch — the pointed hat, the broomstick, the cauldron and black cat — is very largely <strong>later folklore and art</strong>, not the reality of the trials, a reminder that even our picture of the persecution is a construction.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The witch trials belong to the anxious, violent world of the <strong>Reformation</strong> that fills the neighboring chapters — an age when both churches were certain the Devil was loose. They inherited the machinery of the medieval <strong>Inquisition</strong> and the demonology of the schoolmen. Crucially, they are the historical root of a distinction this book draws carefully in the <strong>modern</strong> era: between <strong>fabricated, accusatory "Satanism"</strong> — the imaginary Devil-cult of the trials, and its descendants in later panics — and the real, self-identified Satanism of the twentieth century, which is an entirely different thing. And they are the (largely mythical) charter of modern <strong>Wicca</strong>, whose twentieth-century founders claimed descent from a surviving witch-religion — a claim examined, and doubted, in its own later chapter.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The witch trials themselves — their chronology (c. 1450–1750), their concentration in the Holy Roman Empire, and a death toll now soberly estimated at <strong>40,000–60,000</strong>; the <em>Malleus Maleficarum</em> and the demonological literature; the role of <strong>torture</strong> and inquisitorial procedure; the predominance of women among the victims; and the reality of village <strong>cunning-folk</strong> and folk magic.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>That the accused were actually members of a <strong>satanic witch-cult</strong> — the once-popular "witch-cult" thesis of Margaret Murray is thoroughly discredited. That the <strong>confessions</strong>, extracted under torture, describe real events. And that <strong>maleficium</strong> — harmful magic — actually worked. The crime, as charged, was imaginary; the persecution was not.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise <strong>death tolls</strong>, which are estimates from incomplete records and were once wildly exaggerated (the "nine million" sometimes claimed is pure myth). The relative weight of the many <strong>causes</strong>. And, in any given trial, how much a real tradition of folk healing or magic underlay the accusation, before torture buried it under fantasy.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Scope, chronology (c. 1450–1750), ~100,000 accused and 40,000–60,000 executed, concentration in the Holy Roman Empire — "The European Witch-Hunts, 1450–1750," Brewminate. <a href="https://brewminate.com/the-european-witch-hunts-1450-1750/">https://brewminate.com/the-european-witch-hunts-1450-1750/</a></li>
+        <li>The "cumulative concept" of the witch; maleficium plus demonology; multipolar causes (Brian Levack) — "Witch trials in the early modern period," overviews (EBSCO Research Starters). <a href="https://www.ebsco.com/research-starters/history/witch-hunts-and-witch-trials">https://www.ebsco.com/research-starters/history/witch-hunts-and-witch-trials</a></li>
+        <li>The <em>Malleus Maleficarum</em> (1486, Heinrich Kramer); best-seller yet condemned by the Church, not authorized — "Malleus Maleficarum," Wikipedia. <a href="https://en.wikipedia.org/wiki/Malleus_Maleficarum">https://en.wikipedia.org/wiki/Malleus_Maleficarum</a></li>
+        <li>Gender: ~75–80% women overall, with male-majority regions (Iceland, Finland, Estonia) — witch-hunt gender scholarship (Gendercide; Grokipedia, "Witch trials"). <a href="https://www.gendercide.org/case_witchhunts.html">https://www.gendercide.org/case_witchhunts.html</a></li>
+        <li>Salem (1692); the end of the trials; Friedrich Spee's <em>Cautio Criminalis</em> (1631) — "Witches: Real Origins, Hunts &amp; Trials," History.com. <a href="https://www.history.com/articles/history-of-witches">https://www.history.com/articles/history-of-witches</a></li>
+        <li>The debunked Murray "witch-cult" thesis and the mythical "nine million" toll — general historiography (Grokipedia, "Witch trials in the early modern period"). <a href="https://grokipedia.com/page/Witch_trials_in_the_early_modern_period">https://grokipedia.com/page/Witch_trials_in_the_early_modern_period</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch33 */
+  ch33: { html: `
+    <p class="lead">The vast family of indigenous religions of sub-Saharan Africa — a Supreme God above a world of intermediary spirits and living ancestors, read through divination and danced in masks — and the extraordinary story of how, in the colonial and slave-trade centuries, these faiths were carried across the Atlantic in the memories of the enslaved and survived, hidden inside the saints of their captors.</p>
+
+    <h2>The seed that would not die</h2>
+
+    <p>When a Yoruba man or woman was chained into the hold of a slave ship on the Bight of Benin in the seventeenth or eighteenth century, they were stripped of nearly everything — name, home, language, kin. But one thing could not be taken: what they carried in the mind. They remembered the <strong>orishas</strong>, the deities of thunder and river and iron; they remembered the wisdom of <strong>Ifá</strong> divination and the reverence owed the ancestors. On the far shore, forbidden their gods and driven toward the cross, they did something quietly astonishing: they matched their orishas to the Catholic <strong>saints</strong> — Shango, lord of thunder, to Saint Barbara; Ogun, god of iron, to Saint Peter with his keys — and worshipped the old powers behind the new faces. Out of that concealment were born <strong>Santería</strong>, <strong>Candomblé</strong>, and <strong>Vodou</strong>, and the African gods crossed an ocean that was meant to erase them.</p>
+
+    <p>This chapter is about the religions those people carried, and it must begin with a caution: "African traditional religion" is not one thing but <strong>hundreds</strong>, spread across a continent, mostly oral, and known to us largely through the records of the colonizers, missionaries, and anthropologists who often despised or romanticized what they described. What follows traces the deep family resemblances while remembering how varied, and how imperfectly recorded, the reality was.</p>
+
+    <h2>A shared shape</h2>
+
+    <p>Beneath the immense diversity, many sub-Saharan traditions share a recognizable structure. Above all stands a <strong>Supreme Creator God</strong> — Olodumare among the Yoruba, Nyame among the Akan, Nzambi in the Kongo — who is often remote, having withdrawn from the daily running of the world. Between that high God and humanity move a crowd of <strong>lesser divinities and spirits</strong> who are close and active: the Yoruba <strong>orishas</strong>, the Fon <strong>vodun</strong>, the powers of rivers, mountains, forests, and storms. Closest of all are the <strong>ancestors</strong> — the honored dead, who remain members of the family, watching, helping, and requiring remembrance. The living stay in right relation with all of them through <strong>offering</strong>, <strong>festival</strong>, and, above all, <strong>divination</strong> — the reading of the hidden will of the spirits through ritual specialists. There is, characteristically, <strong>no scripture</strong>: the tradition lives in memory, proverb, song, mask, and the trained diviner's art.</p>
+
+    <h2>The great traditions</h2>
+
+    <ul>
+      <li>The <strong>Yoruba</strong> of what is now Nigeria and Benin built the most elaborate of these systems: hundreds of <strong>orishas</strong>, each with its own colors, foods, drums, and character, and the sophisticated <strong>Ifá</strong> divination overseen by the wisdom-orisha Orunmila — a corpus of hundreds of verses read from a binary system of signs. It is the Yoruba cosmos, more than any other, that crossed the Atlantic.</li>
+      <li>The <strong>Fon</strong> of Dahomey worshipped the <strong>vodun</strong>, the spirits whose name became "Vodou."</li>
+      <li>The <strong>Akan</strong> of the Gold Coast honored <strong>Nyame</strong> the sky-god and Asase Yaa the earth, and encoded their proverbs in the <strong>Adinkra</strong> symbols.</li>
+      <li>The <strong>Kongo</strong> and wider <strong>Bantu</strong> peoples of Central Africa held a cosmology of the two worlds — the living and the dead — divided by water, and of powerful ritual objects (the <em>minkisi</em>) that concentrated spirit; their ideas would shape the diaspora as deeply as the Yoruba's.</li>
+    </ul>
+
+    <h2>Across the water</h2>
+
+    <p>The <strong>transatlantic slave trade</strong> — which tore an estimated <strong>12.5 million</strong> people from West and West-Central Africa between the sixteenth and nineteenth centuries — became, against every intention, one of the great engines of religious transmission. Forbidden their rites and pressed to convert, the enslaved practiced a <strong>strategic syncretism</strong>: they hid their orishas and vodun behind the masks of Catholic saints, folded African drumming and possession-trance into the calendar of the Church, and preserved the essentials of divination, initiation, and ancestor-honor. From this concealment emerged the enduring <strong>Afro-Atlantic religions</strong> — <strong>Santería</strong> (Regla de Ocha–Ifá) in Cuba, <strong>Candomblé</strong> in Brazil, <strong>Vodou</strong> in Haiti, and the traditions of New Orleans — living faiths in which the African gods are worshipped still. (Their modern forms are treated more fully among the diaspora syntheses of the next era.)</p>
+
+    <h2>Ritual and the body</h2>
+
+    <p>Where these religions are most themselves is in <strong>ritual</strong>, and ritual here is danced, drummed, and embodied. The defining act of worship across much of the family is <strong>spirit possession</strong>: through rhythmic drumming and dance a deity "mounts" a devotee, who becomes for a time the living presence of the god, speaking and moving as the orisha or vodun. <strong>Initiation</strong> binds a person to a particular deity for life; <strong>sacrifice</strong> and <strong>offering</strong> feed the spirits and the ancestors; and <strong>masks</strong> and masquerade make the invisible powers visible in festival. This is a religion not primarily of belief stated in creeds but of <strong>relationship</strong> enacted with the body and the community.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Africa's traditional religions are rich in <strong>encoded</strong> systems — and one of them is among the most remarkable in the world.</p>
+
+    <ul>
+      <li><strong>Ifá divination</strong> is a genuine information system. The diviner casts palm nuts or a divining chain and reads the result as one of <strong>256 figures</strong> (the <em>odu</em>), each a distinct pattern of marks that is, in effect, an eight-bit <strong>binary</strong> signature — and each of which unlocks a vast body of memorized verses. It is a sacred encoding of the cosmos in binary, a corpus so significant that UNESCO named it a masterpiece of human heritage.</li>
+      <li>The Akan <strong>Adinkra</strong> symbols are a visual language of <strong>proverbs</strong>: each stamped emblem — <em>Gye Nyame</em>, "except God"; <em>Sankofa</em>, the backward-looking bird — encodes a maxim of wisdom and belief.</li>
+      <li>The <strong>Nsibidi</strong> ideograms of the Cross River peoples formed an indigenous <strong>script</strong> of signs, some sacred and secret, known to initiates.</li>
+      <li>In the diaspora, these encodings became the <strong>vèvè</strong> of Vodou — intricate ground-drawings that summon a particular <em>lwa</em> — and the color-and-attribute codes by which each orisha is known.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>African traditional religion belongs, in its structures, to the oldest layer of human belief — the ancestor-cult and spirit-world that the <strong>Prehistory</strong> chapter reaches toward, still living. In the colonial centuries it collided with, resisted, and partly fused with the expanding <strong>Christianity</strong> and <strong>Islam</strong> of the age (much of the Sahel had already turned to Islam; the coasts and the Americas met the cross). Its transplantation across the Atlantic makes it the direct parent of the <strong>diaspora religions</strong> of the modern era — Santería, Candomblé, Vodou, and, further on, Rastafari — and one of the deepest and least acknowledged roots of the religious life of the whole Americas.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The broad shared structures of sub-Saharan traditional religion (a high creator God, intermediary spirits, powerful ancestors, divination, and possession); the specific great systems (Yoruba orisha and Ifá, Fon vodun, Akan, Kongo); the scale and route of the <strong>transatlantic slave trade</strong> (~12.5 million people); and the historical formation of the <strong>Afro-Atlantic religions</strong> through syncretism with Catholicism.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported — colonial distortions</h4>
+        <p>The old labels of "<strong>fetishism</strong>," "<strong>animism</strong>," and "<strong>ancestor worship</strong>" as European verdicts often carried contempt and misunderstanding; the ancestors, for instance, are honored and consulted, not worshipped as gods. And the picture of a single, static "African religion" is a colonial simplification of enormous diversity.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>Because these traditions were <strong>oral</strong> and are known largely through outside and often hostile observers, the pre-colonial detail of many is genuinely uncertain; reconstructing what was believed before the missionaries and anthropologists arrived — and how much the act of writing it down changed it — is a standing difficulty. The exact African origins of particular diaspora practices are still actively debated.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Yoruba religion (orishas, ancestor veneration, Ifá divination, Orunmila) — Fiveable, "Yoruba Religion"; "Orisha." <a href="https://fiveable.me/ap-african-american-studies/key-terms/orisha">https://fiveable.me/ap-african-american-studies/key-terms/orisha</a></li>
+        <li>Shared structures and regional diversity (Bight of Benin, Gold Coast, West Central Africa; ancestor veneration, spirit mediation, ritual specialists) — Internet Encyclopedia of Philosophy, "Philosophy of African Diaspora Religions." <a href="https://iep.utm.edu/african-diaspora/">https://iep.utm.edu/african-diaspora/</a></li>
+        <li>The transatlantic slave trade (~12.5 million; ~10.7 million surviving the Middle Passage) and syncretism (orishas/lwa masked as Catholic saints) — "African diaspora religions," Grokipedia. <a href="https://grokipedia.com/page/African_diaspora_religions">https://grokipedia.com/page/African_diaspora_religions</a></li>
+        <li>Santería, Candomblé, Louisiana Voodoo as syncretic Yoruba-derived religions — Fiveable / Grokipedia, "Orisha." <a href="https://grokipedia.com/page/Orisha">https://grokipedia.com/page/Orisha</a></li>
+        <li>Ifá divination as a 256-figure (odu) system; UNESCO recognition — "Ifá," reference overviews. <a href="https://en.wikipedia.org/wiki/If%C3%A1">https://en.wikipedia.org/wiki/If%C3%A1</a></li>
+        <li>Akan Adinkra symbols and Nsibidi script as indigenous sacred encodings — general reference overviews (Adinkra; Nsibidi). <a href="https://en.wikipedia.org/wiki/Adinkra_symbols">https://en.wikipedia.org/wiki/Adinkra_symbols</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch34 */
+  ch34: { html: `
+    <p class="lead">The faith born in the Punjab five centuries ago from the meeting of Hindu devotion and Muslim mysticism — a religion of one formless God, honest work, and radical human equality, shaped by ten Gurus and a scripture that became a living master — told with care for its documented history and for the founding story it tells about itself.</p>
+
+    <h2>"There is no Hindu, there is no Muslim"</h2>
+
+    <p>One morning around 1499, near the town of Sultanpur in the Punjab, a man named <strong>Nanak</strong> went down to the river Bein to bathe and did not come back. His clothes were found on the bank; his family gave him up for drowned. Three days later he reappeared — and his first recorded words were: "<strong>There is no Hindu, there is no Muslim.</strong>" He did not mean that the two faiths were false, but that before the one God the labels dissolved: what mattered was not the community one was born into but the truth one lived. From that river Guru <strong>Nanak</strong> (1469–1539) emerged as the founder of a new religion — <strong>Sikhism</strong>, the way of the <em>sikhs</em>, the "disciples" of the one God.</p>
+
+    <h2>What Sikhism is</h2>
+
+    <p>Sikhism is a <strong>monotheistic</strong> religion founded in the <strong>Punjab</strong> in the late fifteenth century, today the faith of some twenty-five to thirty million people and the fifth-largest in the world. Its center is devotion to a single, formless, creator God — named in the opening words of its scripture as <strong>Ik Onkar</strong>, "<strong>One God</strong>" — approached not through ritual, image, priest, or pilgrimage but through three plain disciplines: <strong>naam simran</strong> (loving remembrance of the divine Name), <strong>kirat karni</strong> (earning an honest living), and <strong>vand chakna</strong> (sharing with others). It rejects, root and branch, the <strong>caste system</strong>, idol worship, ritualism, superstition, and the domination of priests — and insists on the absolute <strong>equality</strong> of all human beings, women and men, of every birth.</p>
+
+    <h2>Guru Nanak and the first community</h2>
+
+    <p>Born in 1469 near Lahore, Nanak spent decades on long journeys — the <em>udasis</em> — carrying his message across South Asia and beyond, before settling at <strong>Kartarpur</strong> on the Ravi, where he founded the first Sikh community. There he built its enduring institutions: the <strong>sangat</strong>, the congregation in which all sat as equals, and the <strong>langar</strong>, the free communal kitchen where people of every caste and creed ate the same food from the same floor — a deliberate, daily assault on the barriers of caste. His teaching was carried in <strong>hymns</strong>, sung, that fused the fervor of the <strong>Bhakti</strong> saints and the <strong>Sufi</strong> mystics into something new.</p>
+
+    <h2>The ten Gurus</h2>
+
+    <p>Nanak was the first of <strong>ten Gurus</strong>, each adding to the work of the last across two centuries. <strong>Angad</strong> shaped the <strong>Gurmukhi</strong> script for the community's tongue; <strong>Amar Das</strong> entrenched the langar and the standing of women; <strong>Ram Das</strong> founded the city of <strong>Amritsar</strong>; <strong>Arjan</strong> compiled the first scripture and built the <strong>Harmandir Sahib</strong>, the Golden Temple — and in 1606 became the first <strong>martyr</strong>, executed under the Mughals. Persecution then forged the community: <strong>Hargobind</strong> took up the sword and the doctrine of <strong>miri-piri</strong>, the union of temporal and spiritual power; <strong>Tegh Bahadur</strong> was beheaded in 1675 for defending the religious freedom of Hindus not even of his own faith. The tenth, <strong>Gobind Singh</strong>, completed the line — and, in 1708, declared that there would be <strong>no more human Gurus</strong>: the scripture itself would be the eternal Guru.</p>
+
+    <h2>The Guru Granth Sahib</h2>
+
+    <p>That scripture, the <strong>Guru Granth Sahib</strong>, is unlike any other. Compiled by Guru Arjan (1604) and sealed by Guru Gobind Singh, written in <strong>Gurmukhi</strong>, it contains the hymns of the Sikh Gurus — and, remarkably, also the verses of <strong>Hindu and Muslim saints</strong>, including the Bhakti poet <strong>Kabir</strong>, the low-caste <strong>Ravidas</strong>, and the Sufi <strong>Baba Farid</strong>. It is perhaps the only major scripture that enshrines the words of other faiths within its own. And it is treated not as a book but as a <strong>living Guru</strong>: enthroned under a canopy, ceremonially put to rest at night, and consulted as the present voice of the divine teacher.</p>
+
+    <h2>The Khalsa and the Five Ks</h2>
+
+    <p>In 1699, at Anandpur, Guru <strong>Gobind Singh</strong> called the community together and founded the <strong>Khalsa</strong>, the order of the "pure": the initiated brotherhood-and-sisterhood of the faith, baptized with sweetened water stirred by a double-edged sword. Its members take the names <strong>Singh</strong> ("lion") and <strong>Kaur</strong> ("princess"), and wear the <strong>Five Ks</strong> — <em>kesh</em> (uncut hair), <em>kangha</em> (a comb), <em>kara</em> (a steel bracelet), <em>kachera</em> (a cotton undergarment), and <em>kirpan</em> (a sword) — the visible uniform of a people who would never again be invisible or defenceless. In the Khalsa the Sikh ideal took its lasting form: the <strong>sant-sipahi</strong>, the saint-soldier, devoted to God and sworn to defend the oppressed.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Sikhism carries its theology in a handful of potent signs.</p>
+
+    <ul>
+      <li><strong>Ik Onkar</strong> (ੴ) — the opening glyph of the scripture, joining the numeral <strong>one</strong> to <em>Onkar</em>, the primal sound of God — is itself the creed in a single symbol: reality is <strong>One</strong>.</li>
+      <li>The <strong>Khanda</strong>, the Sikh emblem, encodes the whole faith in steel: the central <strong>double-edged sword</strong> for the one truth and the power of God, the <strong>chakkar</strong> (a ring) for the eternity and unity of the divine, and the two flanking <strong>kirpans</strong> of <em>miri</em> and <em>piri</em> — worldly and spiritual authority held in balance.</li>
+      <li>The <strong>Five Ks</strong> are theology <strong>worn on the body</strong>: uncut hair as acceptance of God's will, the sword as the duty to justice — a faith one cannot take off.</li>
+      <li>And at the heart of it all is the <strong>Shabad</strong>, the divine <strong>Word</strong>, and the <strong>Naam</strong>, the Name: to sing the scripture (<em>kirtan</em>) and repeat the Name is to encode God in sound — the Sikh member of the same family as the Sufi <em>dhikr</em>, the Bhakti <em>nama-japa</em>, and the mantra.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Sikhism grew directly from the meeting this book has been tracing: the <strong>nirguna Bhakti</strong> of Kabir and the <strong>Sufism</strong> of medieval India, whose love of a formless God beyond Hindu and Muslim became, in Nanak, a wholly new faith — and whose poets Sikhism honored by placing their verses in its own scripture. It rose in the same century as the <strong>Reformation</strong> half a world away, and rhymes with it uncannily: a vernacular scripture, a priesthood rejected, a return to the one God over ritual and hierarchy. From a devotional movement it was hammered by Mughal persecution into a distinct and martial nation of faith, and it stands today as one of the world's great living religions — and the youngest of the traditions born before the modern age.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical Gurus and their dates, from Nanak (1469–1539) to Gobind Singh (d. 1708); the founding of Kartarpur, Amritsar, and the langar; the compilation of the <strong>Guru Granth Sahib</strong> (1604) and its inclusion of non-Sikh saints; the <strong>martyrdoms</strong> of Arjan (1606) and Tegh Bahadur (1675); and the founding of the <strong>Khalsa</strong> (1699). These rest on solid historical record.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>Nanak's <strong>revelation</strong> and the miracle-tales of his life — his three days in the river, the wonders of the <strong>janamsakhi</strong> birth-narratives — are matters of <strong>faith and devotional legend</strong>, not documented history. The theological claims of the tradition are recorded here as belief.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and handled with care</h4>
+        <p>The precise <strong>biography</strong> of Guru Nanak is uncertain, since the janamsakhis are later, devotional, and layered. And there is a real, sensitive scholarly discussion about how far Sikhism is a <strong>synthesis</strong> of the Sant/Bhakti and Sufi currents around it and how far a wholly <strong>original revelation</strong> — a question on which the tradition's own self-understanding and academic history do not always agree. This chapter records the debate; it does not presume to settle a living faith's account of itself.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Founding by Guru Nanak (1469–1539) in the Punjab; Kartarpur; core beliefs (Ik Onkar, honest living, sharing, remembrance); rejection of caste and idol worship — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
+        <li>The ten Gurus and the line to Guru Gobind Singh (1708); the Guru Granth Sahib as eternal Guru — "History, Teachings &amp; List of 10 Sikh Gurus," Golden Temple Amritsar. <a href="https://www.goldentempleamritsar.org/sikh-gurus/">https://www.goldentempleamritsar.org/sikh-gurus/</a></li>
+        <li>The Guru Granth Sahib: Gurmukhi, the Gurus' hymns plus the works of other-faith saints (Kabir, Ravidas, Farid) — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
+        <li>The Khalsa (1699) and the Five Ks; Singh and Kaur; the saint-soldier ideal — "Ten Sikh Gurus," SikhiWiki. <a href="https://www.sikhiwiki.org/index.php/Ten_Sikh_Gurus">https://www.sikhiwiki.org/index.php/Ten_Sikh_Gurus</a></li>
+        <li>The Golden Temple (Harmandir Sahib), its four doors, and langar — "What is Sikhism?", Golden Temple Amritsar. <a href="https://www.goldentempleamritsar.org/sikhism/">https://www.goldentempleamritsar.org/sikhism/</a></li>
+        <li>Martyrdoms of Guru Arjan (1606) and Guru Tegh Bahadur (1675); miri-piri — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
+      </ul>
+    </div>
   ` }
 };
