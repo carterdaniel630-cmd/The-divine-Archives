@@ -14,7 +14,7 @@ window.ARCHIVE = {
     { slug: "01-prehistory", num: "I", name: "Prehistory",
       dates: "before c. 3500 BCE",
       blurb: "Before writing, belief left its mark in ochre, in bone, and in stone. The earliest evidence of ritual — deliberate burial, painted caves, and the great megaliths — and what it can and cannot tell us about the first religious imagination.",
-      traditions: ["Paleolithic & Neolithic ritual", "Cave sanctuaries", "Burial & the first grave-goods", "The megalith builders"] },
+      traditions: ["The Paleolithic", "The Neolithic"] },
 
     { slug: "02-bronze-age", num: "II", name: "The Bronze Age",
       dates: "c. 3300 – 1200 BCE",
@@ -283,6 +283,16 @@ window.ARCHIVE = {
       era: "09-modern", eraLabel: "Modern \u00b7 African Diaspora Religions",
       source: "eras/09-modern/ch40-diaspora-religions-modern.md",
       status: "published", pending: true,
-      summary: "The living Afro-Atlantic faiths that grew from the African religions carried into slavery \u2014 Haitian Vodou, Cuban Santería, Brazilian Candomblé, and the newer fire of Rastafari. From the oath at Bois Caïman and the Haitian Revolution, through the lwa and orichas doubled behind Catholic saints, possession and drumming, to Haile Selassie, Babylon and Zion; a symbology of the vèvè, the bead-codes, the calling drums, and concealment itself \u2014 seeing them as the rich, healing, community faiths they are, behind the racist 'voodoo' caricature. Completes the story begun in African Traditional Religion and closes the Modern age." }
+      summary: "The living Afro-Atlantic faiths that grew from the African religions carried into slavery \u2014 Haitian Vodou, Cuban Santería, Brazilian Candomblé, and the newer fire of Rastafari. From the oath at Bois Caïman and the Haitian Revolution, through the lwa and orichas doubled behind Catholic saints, possession and drumming, to Haile Selassie, Babylon and Zion; a symbology of the vèvè, the bead-codes, the calling drums, and concealment itself \u2014 seeing them as the rich, healing, community faiths they are, behind the racist 'voodoo' caricature. Completes the story begun in African Traditional Religion and closes the Modern age." },
+    { id: "ch41", title: "The Paleolithic", kind: "tradition",
+      era: "01-prehistory", eraLabel: "Prehistory \u00b7 The Paleolithic",
+      source: "eras/01-prehistory/ch41-paleolithic-prehistory.md",
+      status: "published", pending: true,
+      summary: "The deepest reach of the human religious imagination \u2014 forty thousand years of painted caves, carved goddesses, deliberate graves, and a lion-headed man who never walked the earth. The Lion Man and the birth of the sacred imagination; cave art (Chauvet, Lascaux) and the shamanism debate; the Venus figurines and the contested 'goddess'; deliberate burial and red ochre; the Neanderthal question; and a symbology of the therianthrope, the hand-print, and the resonant cave \u2014 the era of maximum uncertainty, where we hold the artifacts but not the minds. Written last, it stands first." },
+    { id: "ch42", title: "The Neolithic", kind: "tradition",
+      era: "01-prehistory", eraLabel: "Prehistory \u00b7 The Neolithic",
+      source: "eras/01-prehistory/ch42-neolithic-prehistory.md",
+      status: "published", pending: true,
+      summary: "The age when humans settled, farmed, and raised the first monuments to the sacred. Göbekli Tepe \u2014 a temple built by hunter-gatherers before agriculture, overturning the old story; Çatalhöyük and the sacred in the home, with the dead beneath the floor; the megaliths (Stonehenge, Newgrange) aligned to the solstice sun; and the famous, contested Mother Goddess hypothesis, reported honestly as largely rejected by mainstream archaeology. A symbology of the T-pillar, the sky-aligned tomb, and the plastered skull \u2014 a religion we can read only in stone, never in words. Completes the Nine Ages." }
   ]
 };

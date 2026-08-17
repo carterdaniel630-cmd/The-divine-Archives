@@ -868,6 +868,49 @@
       '</svg>',
       "Interpretive illustration",
       "A vèvè-style crossroads &mdash; the sign of the gatekeeper who must open the way before any spirit can be reached, the ground-drawn sigils at the heart of Vodou and its kin. An original rendering in the tradition&rsquo;s idiom, not a specific vèvè."
+    ),
+
+    /* Ch41 — Paleolithic: a stenciled hand-print beside a therianthrope, on the cave wall */
+    "ch41": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // the negative hand-print (palm + five fingers)
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+          '<path d="M56 150 L56 108 Q56 100 62 100 Q68 100 68 108 L68 92 Q68 84 74 84 Q80 84 80 92 L80 96 Q80 86 86 86 Q92 86 92 96 L92 100 Q92 90 98 90 Q104 90 104 100 L104 118 Q104 108 110 108 Q116 108 114 120 L108 138 Q104 150 92 150 Z"/></g>' +
+        // a therianthrope: human body, antlered/animal head (the "sorcerer")
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+          '<circle cx="140" cy="70" r="8"/>' +
+          '<path d="M134 64 Q128 54 124 58 M146 64 Q152 54 156 58"/>' +          // antlers
+          '<line x1="140" y1="78" x2="140" y2="118"/>' +                          // torso
+          '<path d="M140 88 L126 102 M140 88 L154 102"/>' +                       // arms
+          '<path d="M140 118 L130 150 M140 118 L152 150"/>' +                     // legs
+          '<line x1="140" y1="150" x2="126" y2="150" opacity="0.6"/></g>' +       // ground line
+      '</svg>',
+      "Interpretive illustration",
+      "A stenciled hand-print beside an antlered therianthrope &mdash; the two oldest gestures of the sacred imagination, the pressed palm that says &ldquo;I was here&rdquo; and the human-animal being who crosses into the spirit world. An original rendering in the idiom of cave art, not a copy of any panel."
+    ),
+
+    /* Ch42 — Neolithic: a Göbekli Tepe T-pillar with carved arm, and a sun over the horizon */
+    "ch42": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // solstice sun over the horizon (sky-alignment)
+        '<circle cx="100" cy="46" r="13" stroke="currentColor" stroke-width="1.2"/>' +
+        '<g stroke="currentColor" stroke-width="0.9" stroke-linecap="round" opacity="0.6">' +
+          '<line x1="100" y1="24" x2="100" y2="16"/><line x1="78" y1="46" x2="70" y2="46"/><line x1="122" y1="46" x2="130" y2="46"/>' +
+          '<line x1="84" y1="30" x2="78" y2="24"/><line x1="116" y1="30" x2="122" y2="24"/></g>' +
+        '<line x1="34" y1="70" x2="166" y2="70" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+        // the T-pillar (a faceless standing being)
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">' +
+          '<path d="M74 78 L126 78 L126 96 L112 96 L112 168 L88 168 L88 96 L74 96 Z"/>' +
+          // carved arm bending to hands at the front (as at Göbekli Tepe)
+          '<path d="M112 108 Q120 130 108 150" stroke-width="1" opacity="0.7"/>' +
+          '<path d="M100 150 L108 150 M100 156 L108 156 M100 162 L108 162" stroke-width="0.8" opacity="0.7"/>' +
+          // a small carved animal (a fox/snake mark)
+          '<path d="M90 116 q 6 -6 12 0 q -3 5 -6 5 q -4 0 -6 -5 Z" stroke-width="0.9" opacity="0.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A T-pillar of the kind raised at Göbekli Tepe &mdash; a faceless standing being with a carved arm and hands, beneath the solstice sun the Neolithic learned to build into stone. An original geometric rendering, not a specific pillar."
     )
 
   };

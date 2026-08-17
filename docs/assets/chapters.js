@@ -3319,5 +3319,150 @@ window.CHAPTERS = {
         <li>The racist "voodoo" stereotype vs. the reality of healing and community — Smithsonian / "The Truth About Voodoo" overviews. <a href="https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/">https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/</a></li>
       </ul>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch41 */
+  ch41: { html: `
+    <p class="lead">The deepest reach of the human religious imagination — forty thousand years of painted caves, carved goddesses, deliberate graves, and a lion-headed man who never walked the earth — and the discipline of saying honestly, across so vast a silence, what the evidence can and cannot tell us about the first faith.</p>
+
+    <h2>The lion-headed man</h2>
+
+    <p>In a cave in the Swabian hills of southern Germany, some forty thousand years ago, someone took a mammoth tusk and spent an estimated four hundred hours carving it into a standing figure with the body of a man and the head of a <strong>cave lion</strong>. The <strong>Lion Man</strong> of Hohlenstein-Stadel is among the oldest known works of figurative art in the world — and its subject is a being that has never existed. To make it, its carver had to hold in mind a creature that was not in the world but in the imagination: a fusion of human and animal, a thing of another order. That single object tells us something momentous about its maker's mind — that it could imagine the unreal, the more-than-human, the sacred. It is as close as we can come to watching religion being born.</p>
+
+    <h2>What we can and cannot know</h2>
+
+    <p>This is the first chapter in time and the last this book was able to write, and for a reason: the Paleolithic is the era of <strong>maximum uncertainty</strong>. There are no texts, no myths recorded, no informants — only objects, bones, and painted walls, tens of thousands of years old, from which we try to read a mind. The temptation to <strong>over-read</strong> is enormous, and the history of the subject is littered with confident interpretations later abandoned. So the honesty that governs this whole book governs this chapter most of all: we possess the artifacts of Paleolithic religion; we do <strong>not</strong> possess its meaning, and much of what is written about it is inference wearing the costume of fact.</p>
+
+    <h2>What the evidence is</h2>
+
+    <p>Three kinds of trace suggest that the people of the Old Stone Age had something we would recognize as religion.</p>
+
+    <ul>
+      <li><strong>Deliberate burial.</strong> From at least 100,000 years ago, humans (and possibly Neanderthals) began burying their dead on purpose, sometimes with <strong>grave-goods</strong> — the extraordinary graves at <strong>Sungir</strong> in Russia (c. 34,000 years old) held bodies covered in thousands of painstakingly carved ivory beads and staffs. To provision the dead is to imagine that death is not simply the end.</li>
+      <li><strong>Cave art.</strong> Deep in the caves of France and Spain — <strong>Chauvet</strong> (c. 36,000 years old), <strong>Lascaux</strong>, <strong>Altamira</strong> — Ice Age people painted horses, lions, bison, and aurochs with astonishing skill, often far inside inaccessible chambers, in the dark, where no one lived. Human figures are rare; hand-prints are common; and a few haunting <strong>therianthropes</strong> — half-human, half-animal — stare out of the walls.</li>
+      <li><strong>Portable art.</strong> Across Europe, the Upper Paleolithic left small carvings, above all the <strong>"Venus" figurines</strong> — female forms like the <strong>Venus of Willendorf</strong> and the 40,000-year-old <strong>Venus of Hohle Fels</strong> — and therianthropes like the Lion Man.</li>
+    </ul>
+
+    <h2>The interpretations, and their limits</h2>
+
+    <p>What did it mean? Every answer is a hypothesis. The oldest, the Abbé Breuil's idea of <strong>sympathetic hunting magic</strong> — painting the prey to ensure the hunt — has largely fallen from favor. A more influential modern reading, associated with David Lewis-Williams, sees the caves as the setting for <strong>shamanism</strong>: the therianthropes as shamans in trance-metamorphosis, the geometric marks as the <strong>entoptic</strong> patterns the brain generates in altered states, the cave wall itself as a membrane between this world and the world of spirits. Others read <strong>totemism</strong>, or ritual bound up with the seasons and the herds. The therianthrope may be a sorcerer, a spirit, a god, or a myth we will never recover. Each interpretation is <strong>plausible; none is proven</strong>, and the caves keep their secret.</p>
+
+    <h2>The Venus figurines</h2>
+
+    <p>The female figurines are a case study in honest uncertainty. For a century they were read as <strong>"mother goddesses"</strong> and emblems of a fertility cult, and that reading still circulates widely. But it is a modern hypothesis, not an established fact. The figurines vary enormously; some may be self-portraits, some idealized forms, some dolls or amulets, some ritual objects — and there is <strong>no consensus</strong> that they represent a goddess, or a single thing at all. That a naked female figure means "fertility goddess" is an assumption we bring, not a message the Ice Age left.</p>
+
+    <h2>The Neanderthal question</h2>
+
+    <p>Did our cousins the <strong>Neanderthals</strong> have religion? The evidence is real but fiercely contested: apparent deliberate <strong>burials</strong> (La Chapelle-aux-Saints, and the famous "flower burial" at <strong>Shanidar</strong>, whose pollen may be natural rather than offered); the use of <strong>red ochre</strong> and pigment; and the astonishing <strong>Bruniquel cave</strong>, where, some 176,000 years ago, someone deep underground arranged broken stalagmites into deliberate rings — an act whose purpose is utterly unknown. Whether any of this is "symbolic" or "religious," or something we have no word for, remains genuinely open.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Even here, at the beginning, the human impulse to <strong>encode</strong> is visible.</p>
+
+    <ul>
+      <li>The <strong>therianthrope</strong> — the human-animal hybrid of the Lion Man and the painted "sorcerers" — is perhaps the first symbol ever made: the sign of a crossing between the human and the more-than-human, the animal and the spirit, which will reappear in the animal-headed gods of Egypt and the shape-shifting shamans of a hundred later traditions.</li>
+      <li>The <strong>hand-print</strong>, stenciled in blown ochre across cave walls the world over, is the oldest human signature — a pressed palm that says <em>I was here</em>, and perhaps that the rock face was a surface one could reach through.</li>
+      <li><strong>Red ochre</strong> is the deepest thread of all: used to paint bodies and to redden graves from over 100,000 years ago, and engraved with deliberate cross-hatched patterns at <strong>Blombos Cave</strong> in South Africa some 73,000 years ago — the earliest known abstract mark-making, the first flicker of encoded meaning, long before the cave paintings of Europe.</li>
+      <li>And the <strong>cave itself</strong> was encoded space: the art clusters, acoustic studies suggest, where the chambers most resonate — the deep, dark, singing places treated as thresholds to another world.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Paleolithic is the root system of everything that follows in this book. Its <strong>ancestor-honor and spirit-world</strong> survive, living, in the African traditions and the diaspora religions of the modern era; its <strong>shamanism</strong> is the same current that runs through Norse <em>seiðr</em>, Sámi drumming, and Vodou possession; its <strong>therianthropes</strong> become the gods of Egypt; its <strong>red ochre</strong> and provisioned graves are the first chapter of the human refusal to accept death as the end — a refusal every later religion inherits. Written last, it stands first: the silent foundation on which the whole archive is built.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The artifacts themselves — the dated <strong>cave art</strong> (Chauvet, Lascaux, Altamira), the <strong>Venus figurines</strong> and the <strong>Lion Man</strong>, the deliberate <strong>burials</strong> with grave-goods (Sungir), and the very ancient use of <strong>red ochre</strong> and abstract engraving (Blombos). That Upper Paleolithic humans made symbolic, imaginative art is not in doubt.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>That we <strong>know</strong> what any of it meant. The "<strong>Mother Goddess</strong>" of the Venus figurines, the specific <strong>shamanic</strong> readings of the cave art, "hunting magic" — these are interpretations, some more plausible than others, none confirmed. Claims that assert the meaning of Paleolithic religion with confidence are claiming more than the evidence allows.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>Almost everything about <strong>meaning</strong>: what the caves were for, what the figurines represented, what the dead were provisioned for. Whether the <strong>Neanderthals</strong> had religion at all. And the deepest question — how far back the religious imagination reaches, and whether the first spark was 40,000 years ago, or 100,000, or older still.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Cave art (Chauvet, Lascaux), therianthropes, and the shamanism interpretation (Lewis-Williams; Breuil's earlier "sorcerer" reading) — "Shamans in Paleolithic Art," ArtsLookup; MDPI, "Art and Shamanism." <a href="https://www.mdpi.com/2077-1444/10/1/54">https://www.mdpi.com/2077-1444/10/1/54</a></li>
+        <li>The Lion Man of Hohlenstein-Stadel (c. 40,000 years old) — reference overviews of the Löwenmensch figurine. <a href="https://en.wikipedia.org/wiki/Lion-man">https://en.wikipedia.org/wiki/Lion-man</a></li>
+        <li>Venus figurines and the contested fertility/goddess interpretation — "Venus figurines," reference overviews. <a href="https://en.wikipedia.org/wiki/Venus_figurines">https://en.wikipedia.org/wiki/Venus_figurines</a></li>
+        <li>Deliberate burial and grave-goods (Sungir); Neanderthal burial debate (Shanidar) — Brewminate, "Shamans and Ecstasy: Religious Beliefs and Practices in the Prehistoric World." <a href="https://brewminate.com/shamans-and-ecstasy-an-exploration-of-religious-beliefs-and-practices-in-the-prehistoric-world/">https://brewminate.com/shamans-and-ecstasy-an-exploration-of-religious-beliefs-and-practices-in-the-prehistoric-world/</a></li>
+        <li>Red ochre and the engraved Blombos ochre (c. 73,000 years) as the earliest abstract mark-making — reference overviews (Blombos Cave). <a href="https://en.wikipedia.org/wiki/Blombos_Cave">https://en.wikipedia.org/wiki/Blombos_Cave</a></li>
+        <li>The interpretive limits of all prehistoric-art readings — Albert.io, "Theories and Interpretations of Prehistoric Art." <a href="https://www.albert.io/blog/theories-and-interpretations-of-prehistoric-art-ap-art-history-review/">https://www.albert.io/blog/theories-and-interpretations-of-prehistoric-art-ap-art-history-review/</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch42 */
+  ch42: { html: `
+    <p class="lead">The age when humans settled, farmed, and raised the first monuments to the sacred — a hilltop sanctuary older than agriculture, a town that buried its dead beneath the floor, and the great stones aligned to the turning sun — and the honest reckoning with a religion we can read only in architecture, never in words.</p>
+
+    <h2>The temple that came first</h2>
+
+    <p>On a barren hill in southeastern Turkey called <strong>Göbekli Tepe</strong>, archaeologists uncovered something that rewrote the story of religion. Rings of massive <strong>T-shaped limestone pillars</strong>, some sixteen feet tall and weighing tons, carved with foxes, snakes, boars, scorpions, and vultures, raised in great enclosures — and dated to around <strong>9600 BCE</strong>, more than six thousand years before Stonehenge, before pottery, before writing, and, most astonishingly, <strong>before farming</strong>. Göbekli Tepe was built by <strong>hunter-gatherers</strong>. There are no houses there, no hearths, no sign anyone lived on the hill; it seems to have been a pure <strong>ceremonial center</strong>, a place people came to build and to worship. Its excavator, Klaus Schmidt, drew the revolutionary conclusion: that the old assumption — first agriculture, then surplus, then temples — might be exactly backward. Perhaps the need to gather in great numbers for <strong>ritual</strong> was itself one of the forces that drove people to settle and farm. First the temple, then the city.</p>
+
+    <h2>The Neolithic revolution</h2>
+
+    <p>The <strong>Neolithic</strong>, the New Stone Age (roughly 10,000 to 3500 BCE in the Near East, later elsewhere), was the deepest transformation in human history before the modern age: the shift from wandering and hunting to <strong>farming, herding, and settled village life</strong>. It remade everything — diet, property, population, the shape of society — and it remade religion too, giving it, for the first time, <strong>permanent architecture</strong>: shrines, tombs, and monuments that stood in one place and gathered a community around the dead and the divine. We still cannot read its beliefs, for it left no writing. But for the first time, we can walk through its sacred spaces.</p>
+
+    <h2>Çatalhöyük: the sacred in the home</h2>
+
+    <p>If Göbekli Tepe shows the monumental, <strong>Çatalhöyük</strong> in Anatolia (c. 7400–6000 BCE) shows the domestic. One of the world's first towns, it was a dense honeycomb of mud-brick houses packed wall to wall, entered through holes in the <strong>roof</strong>. Its religion was woven into the home: households installed the horns of wild bulls (<strong>bucrania</strong>) into their walls and benches, painted their rooms with vultures and leopards, and — most strikingly — <strong>buried their dead beneath the floors</strong> of their own houses, sometimes retrieving and plastering the skulls of ancestors to keep among the living. Here the sacred was not a separate temple but the <strong>house itself</strong>, and the ancestors never left.</p>
+
+    <h2>The megaliths</h2>
+
+    <p>Across Neolithic Europe and beyond rose the <strong>megaliths</strong> — the "great stones." At <strong>Stonehenge</strong> (built in stages c. 3000–2000 BCE) the sarsens were aligned to the <strong>solstices</strong>, so that the sun rose and set along the monument's axis. At <strong>Newgrange</strong> in Ireland (c. 3200 BCE), a passage tomb was built so precisely that on the <strong>winter solstice</strong> sunrise a beam of light creeps down the passage to flood the burial chamber. At <strong>Carnac</strong> thousands of standing stones march across the Breton landscape; on <strong>Malta</strong>, the temples of <strong>Ġgantija</strong> (c. 3600 BCE) are among the oldest free-standing structures on earth. Again and again the pattern repeats: monuments for the <strong>dead</strong>, aligned to the <strong>sky</strong> — an ancestor-cult married to the careful watching of the sun, the first stone calendars.</p>
+
+    <h2>The Mother Goddess debate</h2>
+
+    <p>No question about Neolithic religion is more famous, or more contested, than the <strong>Mother Goddess</strong>. Inspired by the many female figurines found at Çatalhöyük and across Anatolia and "Old Europe," some scholars — above all <strong>Marija Gimbutas</strong> — argued for a widespread, peaceful, matriarchal Neolithic society centered on the worship of a <strong>Great Goddess</strong> of fertility and the earth, later overthrown by patriarchal invaders. It is a powerful and influential vision, and it must be reported honestly: <strong>mainstream archaeology largely rejects it.</strong> The figurines have many possible meanings; excavation and bioarchaeology at Çatalhöyük have found <strong>no evidence</strong> of a female-dominated society; and the single universal Goddess is now generally seen as a modern reconstruction projected onto a far more varied and unknowable past. The debate matters here precisely because the Goddess hypothesis went on to shape the modern Pagan and Goddess movements of the archive's final era.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The Neolithic encoded the sacred in <strong>stone and orientation</strong>.</p>
+
+    <ul>
+      <li>The <strong>T-pillars</strong> of Göbekli Tepe are not blank slabs: several bear carved <strong>arms, hands, and belts</strong>, so that the pillar <em>is</em> a stylized, faceless being — perhaps an ancestor, perhaps a god — the first monumental image of the more-than-human, standing twelve feet tall in the round.</li>
+      <li>The <strong>astronomical alignments</strong> of Stonehenge and Newgrange are encoded time: the solstice sunrise built into the architecture, so that the monument itself is a machine for marking the sacred turning of the year — the same impulse that would raise the sky-aligned pyramids of the Americas.</li>
+      <li>The <strong>plastered skull</strong> and the installed <strong>bull's horns</strong> encode the presence of the ancestors and the potency of the wild in the fabric of the house.</li>
+      <li>And the <strong>megalithic tomb</strong> — the dark stone passage opening to a chamber, entered by the dead and by the solstice light alike — encodes the oldest of religious ideas: that death is a passage, and that the stone can be a womb as well as a grave. Its walls, at Newgrange, are carved with <strong>spirals</strong> whose meaning is lost but whose intention is unmistakable.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Neolithic grows directly out of the <strong>Paleolithic</strong> of the previous chapter — the same ancestor-honor and provisioned dead, now housed in permanent stone — and it leads directly into the <strong>Bronze Age</strong> that opens the archive's second era, when writing at last let religion speak for itself and the temple-mounds of Göbekli Tepe found their heirs in the <strong>ziggurats of Mesopotamia</strong> and the <strong>pyramids of Egypt</strong>. Its sky-aligned monuments prefigure the temple-astronomy of the <strong>Aztec, Maya, and Inca</strong>; its contested Goddess became a charter for the modern <strong>Goddess movement</strong> and <strong>Wicca</strong>. Chronologically first, written last, these two prehistoric chapters close the circle of the Nine Ages: everything in this book grows from the painted cave and the standing stone.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The sites and their dates — <strong>Göbekli Tepe</strong> (c. 9600 BCE) as monumental, pre-agricultural ritual architecture; <strong>Çatalhöyük</strong> and its under-floor burials, bucrania, and plastered skulls; and the great <strong>megaliths</strong> (Stonehenge, Newgrange, Carnac, Ġgantija) with their genuine and measurable <strong>solstice alignments</strong>. The architecture is real, dated, and unambiguous.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The universal Neolithic "<strong>Mother Goddess</strong>" and peaceful matriarchy — a contested hypothesis largely rejected by mainstream archaeology. Schmidt's "<strong>temple before the city</strong>" is an influential but debated interpretation, not a settled conclusion. And the specific <strong>meanings</strong> of the pillars, figurines, and spirals are inferred, not known.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>What Göbekli Tepe was actually <strong>for</strong>, and who its carved beings were. What the figurines <strong>meant</strong>. The beliefs behind the aligned monuments — we possess the architecture of Neolithic religion in abundance, but its <strong>theology</strong> is a silence we fill, honestly, with question marks. In prehistory more than anywhere, the archive can show what people <strong>did</strong>, and must confess how little it can prove of what they <strong>believed</strong>.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Göbekli Tepe (c. 9600 BCE), the T-pillars, the animal reliefs, the pre-agricultural ceremonial center, and Schmidt's "temple first" hypothesis — Biblical Archaeology Society, "The Göbekli Tepe Ruins and the Origins of Neolithic Religion." <a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-near-eastern-world/the-gobekli-tepe-ruins-and-the-origins-of-neolithic-religion/">https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-near-eastern-world/the-gobekli-tepe-ruins-and-the-origins-of-neolithic-religion/</a></li>
+        <li>Çatalhöyük (c. 7400–6000 BCE): under-floor burial, bucrania, plastered skulls, and the goddess debate — "Female lineages and changing kinship patterns in Neolithic Çatalhöyük" (bioRxiv); reference overviews. <a href="https://www.biorxiv.org/content/10.1101/2024.06.23.600259">https://www.biorxiv.org/content/10.1101/2024.06.23.600259</a></li>
+        <li>The Mother Goddess hypothesis (Gimbutas) and its scholarly critique — reference overviews of the Mother Goddess debate. <a href="https://en.wikipedia.org/wiki/Mother_goddess">https://en.wikipedia.org/wiki/Mother_goddess</a></li>
+        <li>Megaliths and their astronomical alignments — Stonehenge and Newgrange (solstice orientation); Malta's Ġgantija — reference overviews. <a href="https://en.wikipedia.org/wiki/Megalith">https://en.wikipedia.org/wiki/Megalith</a></li>
+        <li>The Neolithic revolution and the origins of monumental religion — "Religion at Göbekli Tepe," Tepe Telegrams (German Archaeological Institute). <a href="https://www.dainst.blog/the-tepe-telegrams/tag/religion/">https://www.dainst.blog/the-tepe-telegrams/tag/religion/</a></li>
+      </ul>
+    </div>
   ` }
 };
