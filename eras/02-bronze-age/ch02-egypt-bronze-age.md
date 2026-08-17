@@ -160,6 +160,54 @@ to a small, powerful class — perhaps only a percent or two of the population �
 Ani, whose heart we watched on the scales, was exactly such a man. The religion we
 can reconstruct is, unavoidably, the religion these scribes chose to write down.
 
+## The religion of ordinary people
+
+Everything so far comes from the top of society — royal tombs, temple
+priesthoods, the scribal elite. But one remarkable site lets us hear from further
+down. At **Deir el-Medina**, the walled village of the workmen who cut and
+painted the royal tombs of the New Kingdom, the dry ground preserved not only the
+houses but the litter of ordinary religious life: household shrines, votive
+offerings, oracle petitions, love charms, curses, and letters. It is the richest
+window we have onto what non-elite Egyptians actually *did* with the gods — and it
+looks strikingly different from the grand funerary theology of the papyri.
+
+Ordinary Egyptian religion was, first, domestic. In niches in their own homes
+people kept images of the household protector-gods — **Bes**, the grinning,
+bandy-legged dwarf who frightened off evil spirits, and **Taweret**, the pregnant
+hippopotamus goddess who guarded women in childbirth. Neither had great temples;
+both were everywhere — on amulets, headrests, cosmetic jars, and bedroom walls —
+because they addressed the real terrors of ordinary life: disease, difficult
+births, scorpions, the dark. Women in particular turned to Bes, Taweret, and
+Hathor through pregnancy and labor.
+
+Second, it was oracular. Rather than parse a distant theology, villagers put
+direct questions to the god. During festival processions, when a divine statue
+was carried on a litter on the priests' shoulders, a petitioner could ask a
+yes-or-no question — often about a legal dispute or a theft — and read the answer
+in the statue's movement: a dip forward for yes, a drawing back for no. Such
+oracle questions survive on scraps of pottery and papyrus, and they show the gods
+being used, in effect, as a village small-claims court.
+
+Third, and most human, it was penitential. The Ramesside period at Deir el-Medina
+has been called "the age of personal piety" for a new kind of monument: stelae on
+which an ordinary person confesses a fault and thanks the god for both punishment
+and forgiveness. On one famous stela (now British Museum EA 589) the workman
+**Neferabu** declares that he swore a false oath by Ptah, that the god struck him
+blind for it, and that he sets up the stone as a public warning of the god's power
+to see and to pardon. The theology here is intimate in a way the state cult is
+not: a single fallible person and a god who watches, chastises, and relents. These
+same workmen also worshipped a strictly local deity, **Meretseger** ("she who
+loves silence"), the cobra goddess of the pyramid-shaped peak that towers over the
+Valley of the Kings.
+
+And the dead were not simply gone. From the Old Kingdom onward Egyptians wrote
+**"letters to the dead"** — messages to a deceased parent or spouse, left at the
+tomb with the offerings, asking the dead to intervene from the far side in
+disputes over inheritance, in illness, or in the struggle to conceive. The
+distance between the gilded Book of the Dead and a widower's note begging his late
+wife to stop tormenting him is the distance between a religion's official
+literature and its lived practice — and Egypt, unusually, lets us read both.
+
 ## What the ground shows
 
 Egypt is one of the rare ancient religions where the archaeology is almost
@@ -329,8 +377,10 @@ Egyptian cosmos in miniature.
   contested; the once-popular Akhenaten-as-source-of-Moses idea (Freud and others)
   is not supported by evidence and should be treated as speculation.
 - How ordinary, non-literate Egyptians actually understood these doctrines. Our
-  sources are overwhelmingly the product of a tiny scribal elite, and the inner
-  religious life of the majority is largely inferred.
+  sources are overwhelmingly the product of a tiny scribal elite; the personal
+  piety, household cult, and oracle records from Deir el-Medina give a real but
+  partial window onto the majority, and much of their inner religious life is
+  still inferred.
 - Whether "resurrection" and "dying-and-rising god" language, borrowed from later
   traditions, accurately captures the Osirian afterlife, or imports assumptions
   Egypt did not share — a live question best deferred to the comparative
@@ -353,6 +403,18 @@ Egyptian cosmos in miniature.
 *Deities, cosmology, and the Osiris myth*
 - [Birmingham Egyptology: Osiris and the origins of mummification](https://more.bham.ac.uk/birminghamegyptology/eton-myers-project/virtual-museum/toward-the-horizon/osiris-the-mythological-origins-of-mummification/).
 - [Facts and Details: Book of the Dead and Egyptian religious texts](https://africame.factsanddetails.com/article/entry-1098.html).
+
+*Folk and personal religion*
+- Deir el-Medina, household gods, and oracles —
+  [Wikipedia: Deir el-Medina](https://en.wikipedia.org/wiki/Deir_el-Medina);
+  [Facts and Details: Personal Religion in Ancient Egypt](https://africame.factsanddetails.com/article/entry-143.html).
+- Personal piety and penitential stelae (Neferabu, BM EA 589) —
+  [Garstang Museum: Personal Piety — Religion and the People](https://garstangmuseum.wordpress.com/2018/01/10/personal-piety-religion-and-the-people/);
+  [British Museum: stela of Neferabu (EA 589)](https://www.britishmuseum.org/collection/object/Y_EA589);
+  Alexandra von Lieven / R. Luiselli, "Personal Piety in Ancient Egypt," *Religion Compass* (2014).
+- Meretseger and Letters to the Dead —
+  [TheCollector: Meretseger](https://www.thecollector.com/meretseger/);
+  [Wikipedia: Letters to the dead](https://en.wikipedia.org/wiki/Letters_to_the_dead).
 
 *The Amarna period and the monotheism debate*
 - [Wikipedia: Atenism](https://en.wikipedia.org/wiki/Atenism).
