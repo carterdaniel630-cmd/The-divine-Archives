@@ -56,6 +56,23 @@ diagnoses, star charts, and word-lists. The Mesopotamian scribe was priest,
 scientist, and archivist at once, and he believed the universe was a text to be
 read as surely as a tablet.
 
+## The first author has a name
+
+The scribal world was not wholly anonymous. Around 2300 BCE the Akkadian king
+Sargon appointed his daughter **Enheduanna** high priestess of the moon-god Nanna
+at Ur, and she became the first author in human history known by name &mdash; the
+first person anywhere to sign her work and to write in the first person about her
+own relationship to the divine. Her hymns, above all the <em>Exaltation of
+Inanna</em> (<em>Nin-me-šara</em>), are addressed to the goddess Inanna and are
+strikingly personal: Enheduanna names herself, describes being driven from her
+temple office by a usurper named Lugalanne, and pleads with Inanna to restore her.
+Tradition also credits her with a second great Inanna hymn and the cycle of
+<em>Sumerian Temple Hymns</em>. That the oldest named author in the world is a
+woman, a priestess, and a theologian writing about her own faith is among the more
+remarkable facts the tablets preserve &mdash; though it is worth flagging that some
+scholars question how much of the surviving corpus she personally composed, since
+every copy we possess was written down centuries after her lifetime.
+
 ## Cosmology and the gods
 
 The Mesopotamian universe was crowded &mdash; later god-lists name well over three
@@ -133,6 +150,42 @@ through the diviners first. Shamash and the storm-god Adad were the patrons of t
 liver-omen. Behind all of it lay a distinctive mood &mdash; an anxious sense that
 the gods&rsquo; intentions were real, consequential, and maddeningly hard to read,
 and that a prudent person spent his life watching for signs.
+
+## Demons, exorcists, and the suffering self
+
+Alongside the great gods swarmed a second population: demons, ghosts, and
+malevolent spirits blamed for disease, misfortune, and madness. The most feared
+was **Lamashtu**, a lion-headed she-demon who preyed on pregnant women and
+newborns. Against her, Mesopotamians turned &mdash; remarkably &mdash; to another
+demon: **Pazuzu**, the snarling king of the wind-demons, whose hideous face was
+worn as an amulet and set over doorways and birthing-beds precisely because his
+evil was reckoned stronger than hers. (It is Pazuzu&rsquo;s head that Hollywood
+later borrowed for <em>The Exorcist</em>.) Fighting evil with a greater evil was a
+recognized strategy, and it ran through a whole industry of protection: clay
+figurines of guardian spirits buried under thresholds, incantations, and amulets.
+
+Two kinds of professional attended the sufferer. The <em>asû</em> was closer to a
+physician, applying poultices and drugs; the <em>āšipu</em> was an exorcist and
+incantation-priest who diagnosed the supernatural cause and drove it out with
+ritual and spell. Great compilations preserve their craft, among them the
+anti-witchcraft series <em>Maqlû</em> (&ldquo;Burning&rdquo;), a long sequence of
+incantations and rites for undoing the sorcery of an enemy. Mesopotamian religion,
+seen from below, was less about cosmic epics than about keeping this particular
+fever, this particular run of bad luck, from killing you.
+
+Behind the demons lay a subtler idea: the **personal god**. Each individual was
+thought to have a personal god or goddess &mdash; &ldquo;my god&rdquo; &mdash; a
+divine patron whose favor meant health and success and whose withdrawal left one
+exposed to demons and disaster. This produced Mesopotamia&rsquo;s most searching
+literature. The poem <em>Ludlul bēl nēmeqi</em> (&ldquo;I Will Praise the Lord of
+Wisdom&rdquo;), often called the &ldquo;Babylonian Job,&rdquo; follows a righteous
+man, Šubši-mašrâ-Šakkan, who loses everything though he has done no wrong; his god
+and goddess fall silent, his prayers go unanswered, and he cries that what looks
+good to a man may be an offense to a god. He is finally, and mysteriously, restored
+by Marduk. A related dialogue, the <em>Babylonian Theodicy</em>, debates the
+justice of the gods head-on. Written centuries before the biblical book of Job,
+these texts show the same terrible question &mdash; why do the innocent suffer?
+&mdash; already being asked, and left genuinely open.
 
 ## The grimmest afterlife
 
@@ -255,6 +308,14 @@ astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
 - The <em>Enuma Elish</em>&rsquo;s account of Marduk, Tiamat, and the creation of
   humans to labor for the gods, and its recitation at the Akitu festival, are
   securely documented.
+- Enheduanna, high priestess of Nanna at Ur (c. 2300 BCE), is the earliest author
+  known by name, and the <em>Exaltation of Inanna</em> is attributed to her &mdash;
+  the oldest literary work credited to a named, self-identifying author.
+- The world of demons and protective magic (Lamashtu and the apotropaic use of
+  Pazuzu), the healing/exorcist professions (<em>asû</em> and <em>āšipu</em>) and
+  the <em>Maqlû</em> anti-witchcraft series, the &ldquo;personal god,&rdquo; and the
+  suffering-righteous literature (<em>Ludlul bēl nēmeqi</em>, the <em>Babylonian
+  Theodicy</em>) are all well attested.
 - The Royal Cemetery of Ur and its mass retainer burials are real; recent forensic
   work indicates at least some attendants died of blunt-force trauma and that bodies
   were treated to preserve them.
@@ -295,6 +356,9 @@ astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
 - How much continuity to assume across the long Sumerian-to-Babylonian transition
   (e.g., in equating Sumerian Inanna with Akkadian Ishtar), where names and functions
   shifted over centuries.
+- How much of the Enheduanna corpus was personally composed by her, given that all
+  surviving copies are Old Babylonian, several centuries after her lifetime &mdash; a
+  question of authorship that scholars genuinely dispute.
 
 ---
 
@@ -309,6 +373,19 @@ astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
 - The Law Stele of Hammurabi (Louvre) —
   [Smarthistory: Law Code Stele of King Hammurabi](https://smarthistory.org/hammurabi-2/);
   [Louvre: The Code of Hammurabi](https://www.louvre.fr/en/the-code-of-hammurabi).
+
+*Enheduanna, demons, and the suffering-righteous literature*
+- Enheduanna and the <em>Exaltation of Inanna</em> —
+  [Wikipedia: Enheduanna](https://en.wikipedia.org/wiki/Enheduanna);
+  [The Morgan Library: <em>She Who Wrote</em>](https://www.themorgan.org/blog/she-who-wrote-enheduanna-and-women-mesopotamia);
+  [World History Encyclopedia: Hymn to Inanna](https://www.worldhistory.org/article/2109/hymn-to-inanna/).
+- Demons and exorcism (Lamashtu, Pazuzu, the <em>āšipu</em>, <em>Maqlû</em>) —
+  [Britannica: Pazuzu](https://www.britannica.com/topic/Pazuzu);
+  [Getty: Meet the Mesopotamian Demons](https://www.getty.edu/news/meet-the-mesopotamian-demons/);
+  S. Konstantopoulos, "Demons and exorcism in ancient Mesopotamia," <em>Religion Compass</em> (2020).
+- <em>Ludlul bēl nēmeqi</em> (the "Babylonian Job") and the <em>Babylonian Theodicy</em> —
+  [Wikipedia: Ludlul bēl nēmeqi](https://en.wikipedia.org/wiki/Ludlul_b%C4%93l_n%C4%93meqi);
+  [World History Encyclopedia: Ludlul-Bel-Nemeqi](https://www.worldhistory.org/article/226/ludlul-bel-nemeqi/).
 
 *Deities, cult, and divination*
 - [Britannica: Mesopotamian religion — the gods and demons](https://www.britannica.com/topic/Mesopotamian-religion/The-gods-and-demons).
