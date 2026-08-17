@@ -13,7 +13,7 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 
 ## Priority order (thinnest / oldest first)
 1. ch01 The Flood · ch02 Egypt · ch03 Mesopotamia · ch04 Indus Valley · ch05 Early Vedic (era 02 + seed) — **✅ COMPLETE**
-2. ch06–ch09 (Early Iron Age)
+2. ch06–ch09 (Early Iron Age) — **✅ COMPLETE**
 3. ch10–ch15 (Axial Age)
 4. ch16–ch20 (Late Antiquity)
 5. ch21–ch30 (Early Medieval + High Medieval)
@@ -45,6 +45,23 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   AV 12.1) — the chapter's own flagged deepening.
 - **Group-1 checkpoint (era 02 + seed):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources; headless render clean (no JS errors).
+- **ch06 Zoroaster — expanded (2026-08-17).** The soul's journey (the Chinvat
+  Bridge, the three-day wait, the daēnā met as maiden or hag, House of Song / House
+  of the Lie), and the cosmic timeline (the Bundahishn's twelve thousand years in
+  four ages) with the three Saoshyants and Frashokereti — Pahlavi-systematization
+  caveat kept explicit.
+- **ch07 Pre-exilic Israel — expanded (2026-08-17).** The Ugaritic Baal Cycle
+  (Baal vs. Yam and Mot) and its biblical echoes — Yahweh vs. the Sea, Leviathan,
+  Rahab (Psalm 74, Isaiah 27, Job 26); and Sheol + the necromancy of Saul and the
+  medium of Endor.
+- **ch08 Early Greece — expanded (2026-08-17).** "Below Olympus": household gods
+  (Hestia, Zeus Ktesios in the kadiskos, Zeus Herkeios, Hekate), civic hero-cults
+  of the powerful dead, and the inscribed lead curse tablets (katadesmoi/defixiones).
+- **ch09 Early China — expanded (2026-08-17).** The wu (spirit-mediums) and the
+  contested question of shamanism (K. C. Chang's shaman-king thesis vs. Keightley's
+  bureaucratic mediators; possession vs. soul-flight), with the Nine Songs of Chu.
+- **Group-2 checkpoint (Early Iron Age):** integrity 42/42/42/42; every deepened
+  page retains plate + evidence + sources.
 
 ## Gate
 Grouped as **Batch II**, a single review point separate from Batch I. Flagged READY FOR REVIEW only when the deepening pass is complete and checkpointed.
