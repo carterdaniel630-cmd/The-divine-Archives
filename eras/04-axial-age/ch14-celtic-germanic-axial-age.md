@@ -74,6 +74,14 @@ why their religion is a religion without a book. They taught, he says, that **th
 does not perish but passes** from one to another at death, a doctrine ancient writers
 compared (rightly or not) to the transmigration taught by Pythagoras.
 
+The classical sources actually describe a *threefold* learned class, not a single one.
+Strabo, drawing on Posidonius, distinguishes the **druids** proper (the philosophers,
+judges, and overseers of sacrifice), the **bards** (poets and singers who kept
+genealogy, law, and praise alive in memorized verse), and the **vates** (Gaulish
+*velets*, the seers and diviners who read the sacrifices) — a division that modern
+revival Druidry, in the final era of this archive, would consciously restore as its
+three grades.
+
 Worship was largely **outdoors**, in sacred groves the Celts called a **nemeton** —
 Strabo records a Galatian assembly-place named **Drunemeton**, "the oak-sanctuary."
 There were also temples and shrines, especially later under Roman influence, but the
@@ -120,6 +128,15 @@ the washing were drowned. Whatever its exact truth, it captures the character of
 religion the Romans met at their frontier: earth-goddesses and war-gods, sacred groves,
 processions, and blood.
 
+Tacitus adds one more revealing detail: the Germani believed their **women** held
+something holy and prophetic, and heeded their counsel. He names the seeress
+**Veleda** of the Bructeri, who during the Batavian revolt against Rome lived secluded
+in a tower, delivered oracles no petitioner was allowed to approach directly, and was
+revered almost as a goddess — and an earlier prophetess, **Aurinia** (or Albruna). The
+venerated Germanic **seeress** is one of the very few religious roles the Roman sources
+let us see with any clarity, and it points forward to the *völva*, the staff-bearing
+prophetess of the later Norse world.
+
 **An important boundary.** The rich mythology most people associate with the Germanic
 world — Odin hanging on the world-tree, Ragnarök, the Nine Worlds, the **Eddas** — comes
 from **medieval Iceland**, written down after the conversion, and belongs to the later
@@ -137,11 +154,18 @@ Britain — and while these hostile reports are suspect and most modern scholars
 human sacrifice to have been **occasional rather than routine**, the archaeology does not
 let the question be dismissed: the **bog bodies** of northern Europe, of whom **Lindow
 Man** is the most studied, show individuals killed with ritual excess and deposited in
-water, exactly the kind of act the texts describe. On the Germanic side, the great
-**weapon deposits** — thousands of destroyed swords, spears, and shields thrown into
-lakes and bogs at sites like **Illerup Ådal** and **Nydam**, apparently the sacrificed
-gear of defeated armies — are among the most spectacular sacrificial finds in Europe.
-Water, in both worlds, was a doorway to the divine, and offerings were sent through it.
+water, exactly the kind of act the texts describe. On the Continent, excavation has put flesh on the classical accusations: at the great
+war-sanctuaries of northern Gaul — **Gournay-sur-Aronde** and **Ribemont-sur-Ancre**
+in Picardy, excavated by Jean-Louis Brunaux — archaeologists found ditched enclosures
+heaped with thousands of ritually destroyed weapons and, at Ribemont, the decapitated
+remains of hundreds of young men, apparently the war-dead of a defeated enemy
+displayed and offered to the gods. Whatever the precise rite, these northern Gallic
+sanctuaries are among the most direct evidence of Celtic sacrificial practice we have.
+On the Germanic side, the great **weapon deposits** — thousands of destroyed swords,
+spears, and shields thrown into lakes and bogs at sites like **Illerup Ådal** and
+**Nydam**, apparently the sacrificed gear of defeated armies — are among the most
+spectacular sacrificial finds in Europe. Water, in both worlds, was a doorway to the
+divine, and offerings were sent through it.
 
 ## The otherworld and the festival year
 
@@ -170,6 +194,15 @@ stem-line, associated in Irish tradition with trees and used in a body of name-l
 appears later still, around the **4th century CE**. Neither script, then, was the vehicle
 of Iron Age religion (which stayed oral by design); both show how, once writing did come,
 these cultures treated the letter itself as charged with power.
+
+**The gods hidden in the week.** One piece of this old encoding sits on every calendar.
+When the Germanic peoples adopted the Roman seven-day planetary week, they translated
+its gods into their own by *interpretatio*, and English still carries the result:
+**Tuesday** is Tiw's (Tyr's) day, **Wednesday** Woden's (Odin's) day, **Thursday**
+Thunor's (Thor's) day, and **Friday** the day of the goddess Frig — the war-god, the
+sky-and-wisdom god, the thunderer, and the love-goddess, each matched to the Roman
+deity they most resembled (Mars, Mercury, Jupiter, Venus). The names of the Axial-Age
+Germani's gods survive, unnoticed, in the ordinary words for the days.
 
 **The art of the sacred spiral.** Long before either script, **La Tène** art encoded a
 sensibility rather than a message: endless interlacing spirals, triskeles (the
@@ -218,8 +251,13 @@ modern era, as self-conscious new religious movements — revival **Druidry** an
   of weapons and treasure (abundantly confirmed by archaeology) and a learned priestly
   class among the Celts, the **druids**.
 - The reality of **sacrifice**, including at least **occasional human sacrifice**, evidenced
-  by the **bog bodies** (Lindow Man) and the mass **weapon deposits** (Illerup, Nydam), and
-  described (with bias) by classical writers.
+  by the **bog bodies** (Lindow Man), the excavated northern-Gallic war-sanctuaries
+  (**Gournay-sur-Aronde**, **Ribemont-sur-Ancre**), and the mass **weapon deposits**
+  (Illerup, Nydam), and described (with bias) by classical writers.
+- The classical sources' **threefold** Celtic learned class — **druids, bards, and vates**
+  (Strabo/Posidonius) — and the Germanic reverence for prophetic **seeresses** (Tacitus
+  names **Veleda** and Aurinia). The Germanic gods survive in the English **weekday
+  names** (Tiw, Woden, Thunor, Frig).
 - The existence of the named gods (**Lugh/Lugus, Cernunnos, Taranis, Epona**; the Germanic
   **Wodan, Tiwaz, Thunor, Nerthus**) from inscriptions and Tacitus, and the reverence for
   **threeness** and the **head** in Celtic art.
@@ -258,10 +296,18 @@ modern era, as self-conscious new religious movements — revival **Druidry** an
   on human sacrifice, [Celtic Studies Resources: Did the Celts or Druids Perform Human Sacrifice?](https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/);
   [Wikipedia: Cernunnos](https://en.wikipedia.org/wiki/Cernunnos); [Wikipedia: Taranis](https://en.wikipedia.org/wiki/Taranis).
 
+*The druidic orders and the Gallic sanctuaries*
+- The three classes (druids, bards, vates), from Strabo/Posidonius —
+  [Irish Myths: Bards vs. Vates vs. Druids](https://irishmyths.com/2022/05/27/bards-vs-vates-vs-druids/).
+- The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux) —
+  [Wikipedia: Gournay-sur-Aronde](https://en.wikipedia.org/wiki/Gournay-sur-Aronde).
+
 *Germanic religion and Tacitus*
 - [Wikipedia: Germanic paganism](https://en.wikipedia.org/wiki/Germanic_paganism);
   [Wikipedia: Sacred trees and groves in Germanic paganism](https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology);
   [Wikipedia: Nerthus](https://en.wikipedia.org/wiki/Nerthus).
+- The Germanic seeress (Veleda, Aurinia/Albruna) — [Wikipedia: Seeress (Germanic)](https://en.wikipedia.org/wiki/Seeress_(Germanic)).
+- The gods in the weekday names — [The Conversation: the gods behind the days of the week](https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170).
 
 *Sacred encoding — calendar, runes, ogham, and the bog*
 - [Wikipedia: Coligny calendar](https://en.wikipedia.org/wiki/Coligny_calendar);
