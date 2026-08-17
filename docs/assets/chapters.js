@@ -2442,5 +2442,82 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from standard reference and scholarly sources during drafting rather than from memory. The chapter keeps the well-documented history (the movement, its figures, texts, and institutions) distinct from the philosophical status of its arguments: the Five Ways and the ontological argument are recorded as arguments made and still contested, not as proofs history can validate. It corrects the false &ldquo;Dark Ages&rdquo; caricature of medieval thought while explicitly limiting the opposite overclaim that scholasticism &ldquo;invented&rdquo; science (the Duhem thesis is debated). Jewish (Maimonides) and Islamic (Avicenna, Averroes) philosophy are treated as parallel members of one shared Aristotelian project, and the cathedral-as-summa is presented as Panofsky&rsquo;s interpretive thesis.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch29 */
+  ch29: { html: `
+    <p class="lead">Three great civilizations of the pre-Columbian Americas &mdash; the Maya of the rainforest, the Aztec of the Mexican lake, and the Inca of the Andes &mdash; and the temple religions of blood, calendar, and divine kingship they built, reconstructed from ruins, deciphered glyphs, frozen mummies, and the records of the conquerors who destroyed them.</p>
+
+    <h2>The child on the summit</h2>
+    <p>In 1999, on the frozen summit of <strong>Llullaillaco</strong>, a volcano more than 22,000 feet high, archaeologists uncovered three children. They had been placed there some five hundred years before, drugged with maize beer and coca, and left to die in the cold &mdash; and the cold had kept them so perfectly that the eldest, a girl of about thirteen, looks less like a corpse than like someone asleep. She is a <strong>capacocha</strong>, an Inca offering of the most precious thing the empire had: a chosen, perfect child, sent to live among the gods on the roof of the world.</p>
+    <p>She is also a warning about how to tell this story. Human sacrifice was real in the religions of the ancient Americas &mdash; the ground proves it beyond dispute. But almost everything else we think we know came through the hands of the Spanish who conquered these peoples, burned their books, and had every reason to paint them as monsters. To describe the Aztec, the Maya, and the Inca honestly is to hold the reality and the propaganda apart, and to see three of the most sophisticated religious civilizations the world has produced.</p>
+
+    <h2>Three worlds</h2>
+    <p>These were not one people but three, in two very different lands. In <strong>Mesoamerica</strong> rose the <strong>Maya</strong>, whose great cities flourished from roughly 250 to 900 CE and whose descendants endured, and the <strong>Aztec</strong> (properly the <strong>Mexica</strong>), whose empire crested from 1428 until the Spanish came in 1519. In the <strong>Andes</strong> rose the <strong>Inca</strong>, whose empire, the largest in the pre-Columbian Americas, ran from about 1438 until its fall in 1533. They never knew one another. Yet they built strikingly parallel worlds: monumental <strong>temple-pyramids</strong>, elaborate <strong>calendars</strong> wedded to astronomy, <strong>divine or solar kingship</strong>, and the conviction that the cosmos ran on a debt of <strong>blood</strong> the living were bound to pay.</p>
+
+    <h2>The Maya: the people of the maize and the glyph</h2>
+    <p>The Maya achieved what no other people of the ancient Americas did: a <strong>complete writing system</strong>. Their <strong>hieroglyphs</strong> &mdash; a logo-syllabic script of several hundred signs &mdash; recorded history, myth, and astronomy on stone and in bark-paper books; their <strong>decipherment</strong>, largely a triumph of the twentieth century, reopened a literature the conquest had nearly erased. Only <strong>four</strong> of their books survive the Spanish burnings.</p>
+    <p>Their sacred epic, the <strong>Popol Vuh</strong> &mdash; transcribed around 1554 &mdash; tells how the gods made human beings at last from <strong>maize</strong>, and how the <strong>Hero Twins</strong> descended into <strong>Xibalba</strong>, the underworld, to outwit its lords of death. The cosmos was ruled by <strong>Itzamna</strong>, creator and patron of writing, <strong>Kʼinich Ajaw</strong> the sun, <strong>Chaac</strong> the rain, and <strong>Kukulkan</strong> the feathered serpent. Its kings, the <strong>kʼuhul ajaw</strong> or &ldquo;holy lords,&rdquo; bound their people to the gods through <strong>bloodletting</strong>: a king or queen drew a thorned rope through the tongue or genitals, and from the rising smoke of the burnt blood the <strong>Vision Serpent</strong> appeared, an ancestor or god speaking from its jaws. Humans, made of maize, owed a <strong>body debt</strong>, repaid in blood, that kept the gods &mdash; and so the world &mdash; alive.</p>
+    <p>And the famous <strong>calendar</strong>: the <strong>Long Count</strong>, a cycle of some 5,125 years begun in 3114 BCE, whose thirteenth <em>bakʼtun</em> closed on 21 December 2012. It did not, in any Maya text, mean the end of the world &mdash; only the turning of a great cycle, like an odometer rolling over. The &ldquo;<strong>2012 apocalypse</strong>&rdquo; was a modern Western invention the Maya themselves never held.</p>
+
+    <h2>The Aztec: the debt of the Fifth Sun</h2>
+    <p>The <strong>Mexica</strong> of <strong>Tenochtitlan</strong> built their island capital around the <strong>Templo Mayor</strong>, a great twin pyramid crowned by shrines to <strong>Huitzilopochtli</strong>, the war-and-sun god, and <strong>Tlaloc</strong>, the rain god. Their cosmology was one of <strong>cyclical catastrophe</strong>: four previous worlds, four &ldquo;<strong>Suns</strong>,&rdquo; had each been created and destroyed, and the present <strong>Fifth Sun</strong> was itself doomed. To make it move at all, the gods had <strong>sacrificed themselves</strong>; and so the sun had to be sustained by human blood in return. Sacrifice, for the Mexica, was not the appeasement of an angry god but the <strong>repayment of a cosmic debt</strong> &mdash; the maintenance of a universe that would otherwise run down.</p>
+    <p>It happened, and archaeology confirms it: excavations at the Templo Mayor have uncovered the <strong>Huei Tzompantli</strong>, the great skull rack, with hundreds of skulls of sacrificed men, women, and children. But the scale must be told honestly. Spanish chroniclers claimed <strong>80,400</strong> people were killed in four days at the temple&rsquo;s rededication in 1487 &mdash; a figure that is <strong>physically impossible</strong> and served the conquerors&rsquo; need to cast the Mexica as savages. The real toll, modern scholars estimate, ran to the <strong>low thousands a year</strong>: terrible, systematic, and real &mdash; but not the cartoon of the propaganda.</p>
+
+    <h2>The Inca: the empire of the Sun</h2>
+    <p>The <strong>Inca</strong> ruled their immense Andean empire from <strong>Cusco</strong>, whose golden <strong>Coricancha</strong>, the Temple of the Sun, was the holiest place of all. At the head of the pantheon stood <strong>Inti</strong>, the sun, from whom the emperor &mdash; the <strong>Sapa Inca</strong> &mdash; claimed direct descent, making him a living divinity; behind Inti stood <strong>Viracocha</strong>, the remote creator, and <strong>Pachamama</strong>, the earth mother. The land itself was alive with <strong>huacas</strong> &mdash; sacred places and objects: a spring, a stone, a mountain, or a mummy, each inhabited by a spirit. The Inca kept the <strong>mummies of their dead emperors</strong> as the holiest huacas of all, feeding and consulting them. They recorded their world not in writing but in the <strong>quipu</strong>, an intricate system of knotted, colored cords, much of it still undeciphered. And at the great turning points of the imperial life they performed the <strong>capacocha</strong>, sending chosen children to die on the high peaks, as the girl of Llullaillaco died.</p>
+
+    <h2>Common threads</h2>
+    <p>Across these separate worlds run deep rhymes. The <strong>feathered serpent</strong> &mdash; Kukulkan to the Maya, <strong>Quetzalcoatl</strong> to the Aztec &mdash; is worshipped across all Mesoamerica. <strong>Solar and divine kingship</strong> binds ruler to sun in every case. Time is <strong>cyclical</strong>, read from the sky. Temples are <strong>mountains of stone</strong> aligned to solstice and equinox. And everywhere the cosmos is something that must be actively <strong>fed and maintained</strong>, not a machine that runs on its own. Where they differ is as telling: the Maya wrote, and the Inca &mdash; alone among great empires &mdash; did not, entrusting their memory to the knotted cord.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>These were civilizations of dense, deliberate <strong>encoding</strong>.</p>
+    <ul>
+      <li><strong>Maya writing</strong> is the great achievement: a true logo-syllabic script carved on stelae and painted in the codices, whose modern <strong>decipherment</strong> let the ancient Maya speak again. The <strong>Dresden Codex</strong> records the motions of Venus with startling precision.</li>
+      <li>The <strong>calendars</strong> are encoded time itself: the Maya <strong>Long Count</strong> and the interlocking Aztec <strong>tonalpohualli</strong> (260 days) and <strong>xiuhpohualli</strong> (365 days), meshing into a 52-year &ldquo;Calendar Round.&rdquo; The great Aztec <strong>Sun Stone</strong> (<em>Piedra del Sol</em>) is a carved cosmogram of the Five Suns &mdash; popularly, and wrongly, called &ldquo;the Aztec calendar.&rdquo;</li>
+      <li>The Inca <strong>quipu</strong> encodes data in three dimensions &mdash; the type of knot, its position, the cord&rsquo;s color and ply &mdash; a recording system we can still only partly read.</li>
+      <li>The temples encode the heavens in stone: at <strong>Chich&eacute;n Itz&aacute;</strong>, the pyramid of Kukulkan is built so that, at the equinoxes, the afternoon light casts a serpent of shadow slithering down its stair.</li>
+    </ul>
+    <p>A necessary honesty: the <strong>2012 doomsday</strong> was never Maya; the <strong>80,000-in-four-days</strong> sacrifice was never real; and the tidy, total pictures we are often given of these religions are reconstructions, built from partial decipherment, fragmentary survivals, and the testimony of enemies.</p>
+
+    <h2>Connections</h2>
+    <p>The temple religions of the Americas developed in complete isolation from the traditions in the rest of this book &mdash; which is what makes their parallels so striking: <strong>divine kingship</strong>, <strong>cyclical cosmic time</strong>, <strong>blood offering to sustain the world</strong>, and <strong>temple-mountains</strong> aligned to the sky arose here independently, as they had in the Bronze Age <strong>Egypt</strong> and <strong>Mesopotamia</strong> of the first era. They are the New World&rsquo;s own answer to the oldest religious questions, reached without a single borrowed idea &mdash; and, within a generation of the Spanish arrival, they were shattered, their books burned and their temples pulled down.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The cities, temples, and monuments (Tenochtitlan&rsquo;s Templo Mayor, the Maya cities, Cusco&rsquo;s Coricancha); the Maya <strong>writing system</strong> and its decipherment, the <strong>Long Count</strong> and the Aztec calendars, and the <strong>quipu</strong>.</li>
+          <li>The <strong>Popol Vuh</strong> (via its 1554 transcription); and the <strong>reality of human sacrifice</strong>, confirmed by the Templo Mayor skull rack and the Inca mountain mummies.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported &mdash; propaganda and modern myth</h4>
+        <ul>
+          <li>The <strong>inflated sacrifice numbers</strong> of the Spanish chroniclers (the 80,400 of 1487 is logistically impossible and served the conquest).</li>
+          <li>The &ldquo;<strong>Maya 2012 apocalypse</strong>,&rdquo; a modern Western fabrication with no basis in any Maya source.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>Much Maya myth is still reconstructed from <strong>partial decipherment</strong> and iconography.</li>
+          <li>The <strong>Popol Vuh</strong> and most of what we know reach us only through post-conquest, often hostile, transcription (Bishop Landa burned the Maya books even as his account became the key to reading them).</li>
+          <li>The <strong>quipu</strong> remains largely unread, and the inner theology behind many practices is seen mostly through the eyes of those who destroyed these religions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Maya, Aztec, Inca</h4>
+      <ul>
+        <li><a href="https://www.britannica.com/topic/pre-Columbian-civilizations/The-Maya-calendar-and-writing-system">Britannica: the Maya calendar and writing system (Popol Vuh, glyphs, Long Count)</a>; <a href="https://maya.nmai.si.edu/2012-resetting-count/meaning-of-2012">Smithsonian NMAI: the meaning of 2012 (no doomsday)</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Aztec-religion">Britannica: Aztec religion (Templo Mayor, the Five Suns, sacrifice as cosmic debt)</a>; <a href="https://www.thearchaeologist.org/blog/aztec-human-sacrifice-separating-propaganda-from-archaeological-fact">the skull rack and the scale debate (propaganda vs. archaeology)</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Inca-religion">Britannica: Inca religion (Inti, Coricancha, huacas, quipu)</a>; <a href="https://en.wikipedia.org/wiki/Capacocha">the capacocha and the mountain mummies</a>; <a href="https://en.wikipedia.org/wiki/Diego_de_Landa">Diego de Landa and the burning of the Maya books</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and archaeological sources during drafting rather than from memory. Because most of what survives was recorded by the Spanish who destroyed these religions, the chapter keeps archaeological reality distinct from conquest propaganda (the impossible 80,400 figure) and from modern myth (the non-Maya &ldquo;2012 apocalypse&rdquo;), and treats human sacrifice as real and described in its own cosmological logic &mdash; neither sensationalized nor denied. The three cultures are presented as independent, their parallels (divine kingship, cyclical time, temple-mountains, blood offering) noted as independent answers to shared questions; and the deep source problem &mdash; partial decipherment, hostile transcription, the largely unread quipu &mdash; is kept in view throughout.</p>
+    </div>
   ` }
 };

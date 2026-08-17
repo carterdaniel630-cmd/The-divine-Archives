@@ -612,6 +612,38 @@
       '</svg>',
       "Interpretive illustration",
       "A Gothic rose window &mdash; order made visible, the &ldquo;summa in stone&rdquo;: a single figure in which every part is articulated and reconciled into a stable whole, as the schoolmen built their arguments. An original geometric rendering, not a specific window."
+    ),
+
+    /* Ch29 — Aztec/Maya/Inca: a stepped temple-pyramid beneath the sun */
+    "ch29": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // the sun (solar/divine kingship shared across all three)
+        '<g stroke="currentColor">' +
+          '<circle cx="100" cy="46" r="16" stroke-width="1.3"/>' +
+          '<circle cx="100" cy="46" r="8" stroke-width="0.8" opacity="0.7"/></g>' +
+        '<g stroke="currentColor" stroke-width="1" stroke-linecap="round">' +
+          '<line x1="100" y1="22" x2="100" y2="14"/><line x1="100" y1="78" x2="100" y2="70"/>' +
+          '<line x1="76" y1="46" x2="68" y2="46"/><line x1="132" y1="46" x2="124" y2="46"/>' +
+          '<line x1="83" y1="29" x2="77" y2="23"/><line x1="117" y1="29" x2="123" y2="23"/>' +
+          '<line x1="83" y1="63" x2="77" y2="69"/><line x1="117" y1="63" x2="123" y2="69"/></g>' +
+        '<circle cx="100" cy="46" r="2.4" fill="currentColor"/>' +
+        // the stepped temple-pyramid (temple-mountain)
+        '<g stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">' +
+          '<rect x="34" y="152" width="132" height="16"/>' +
+          '<rect x="48" y="138" width="104" height="14"/>' +
+          '<rect x="62" y="125" width="76" height="13"/>' +
+          '<rect x="76" y="113" width="48" height="12"/>' +
+          // shrine on the summit
+          '<rect x="88" y="98" width="24" height="15"/></g>' +
+        // central staircase up the front
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.65">' +
+          '<line x1="91" y1="113" x2="91" y2="168"/><line x1="109" y1="113" x2="109" y2="168"/>' +
+          '<line x1="91" y1="124" x2="109" y2="124"/><line x1="91" y1="136" x2="109" y2="136"/>' +
+          '<line x1="91" y1="147" x2="109" y2="147"/><line x1="91" y1="158" x2="109" y2="158"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A stepped temple-pyramid beneath the sun &mdash; the temple-mountain and solar kingship shared, independently, by the Maya, the Aztec, and the Inca. An original geometric rendering, not a specific monument."
     )
 
   };

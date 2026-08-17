@@ -80,8 +80,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch26 — Kabbalah | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch26-kabbalah-high-medieval.md` |
 | ch27 — Sufism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch27-sufism-high-medieval.md` |
 | ch28 — Scholasticism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
+| ch29 — Aztec, Maya & Inca | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch29-aztec-maya-inca-high-medieval.md` |
 
-Era 07 — High Medieval in progress. Remaining: Aztec/Maya/Inca, Bhakti.
+Era 07 — High Medieval in progress. Remaining: Bhakti.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
