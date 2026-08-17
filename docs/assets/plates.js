@@ -759,6 +759,115 @@
       '</svg>',
       "Interpretive illustration",
       "The Khanda &mdash; the double-edged sword of divine truth within the chakkar of God&rsquo;s oneness, flanked by the two kirpans of spiritual and temporal power. An original geometric rendering of the Sikh emblem."
+    ),
+
+    /* Ch35 — New Religious Movements: a new scripture beneath a rising star */
+    "ch35": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // radiant star (new revelation)
+        '<g stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.7">' +
+          '<line x1="100" y1="28" x2="100" y2="12"/><line x1="100" y1="76" x2="100" y2="86"/>' +
+          '<line x1="76" y1="52" x2="62" y2="52"/><line x1="124" y1="52" x2="138" y2="52"/>' +
+          '<line x1="83" y1="35" x2="73" y2="25"/><line x1="117" y1="35" x2="127" y2="25"/>' +
+          '<line x1="83" y1="69" x2="73" y2="79"/><line x1="117" y1="69" x2="127" y2="79"/></g>' +
+        '<path d="M100 36 L106 48 L119 50 L109 59 L112 72 L100 65 L88 72 L91 59 L81 50 L94 48 Z" stroke="currentColor" stroke-width="1.2"/>' +
+        // open book (new scripture)
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">' +
+          '<path d="M100 112 C 80 100 56 100 40 108 L40 158 C 56 150 80 150 100 162 Z"/>' +
+          '<path d="M100 112 C 120 100 144 100 160 108 L160 158 C 144 150 120 150 100 162 Z"/>' +
+          '<line x1="100" y1="112" x2="100" y2="162"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.7" opacity="0.5">' +
+          '<line x1="52" y1="118" x2="90" y2="116"/><line x1="52" y1="128" x2="90" y2="126"/>' +
+          '<line x1="110" y1="116" x2="148" y2="118"/><line x1="110" y1="126" x2="148" y2="128"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A new scripture beneath a rising star &mdash; the fresh revelations and founders&rsquo; books of the modern religions. An original emblem for the phenomenon, not any one movement."
+    ),
+
+    /* Ch36 — Spiritualism: a planchette (the talking-board pointer) */
+    "ch36": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // planchette body (rounded shield / heart-triangle pointing down)
+        '<path d="M60 74 Q100 58 140 74 Q150 112 100 150 Q50 112 60 74 Z" stroke="currentColor" stroke-width="1.6"/>' +
+        // viewing hole
+        '<circle cx="100" cy="98" r="13" stroke="currentColor" stroke-width="1.2"/>' +
+        '<circle cx="100" cy="98" r="2.2" fill="currentColor" opacity="0.7"/>' +
+        // three small casters/feet
+        '<g stroke="currentColor" stroke-width="1"><circle cx="64" cy="78" r="3.4"/><circle cx="136" cy="78" r="3.4"/><circle cx="100" cy="146" r="3.4"/></g>' +
+        // faint alphabet arc below (the board)
+        '<path d="M40 170 Q100 150 160 170" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A planchette &mdash; the pointer of the talking board, through which the séance spelled its messages letter by letter. An original geometric rendering, not a specific board."
+    ),
+
+    /* Ch37 — Theosophy / occult revival: interlaced triangles and ankh within an ouroboros */
+    "ch37": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        // ouroboros ring (serpent) with a small head
+        '<circle cx="100" cy="100" r="84" stroke="currentColor" stroke-width="2" stroke-dasharray="255 20"/>' +
+        '<path d="M100 12 l6 -8 l-12 0 z" fill="currentColor"/>' +
+        // hexagram (as above, so below)
+        '<g stroke="currentColor" stroke-width="1.2">' +
+          '<path d="M100 50 L142 122 L58 122 Z"/>' +
+          '<path d="M100 150 L142 78 L58 78 Z"/></g>' +
+        // ankh at the center
+        '<g stroke="currentColor" stroke-width="1.6"><circle cx="100" cy="92" r="9"/><line x1="100" y1="101" x2="100" y2="126"/><line x1="88" y1="112" x2="112" y2="112"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A synthesis emblem &mdash; the ouroboros of eternity, the interlaced triangles of &ldquo;as above, so below,&rdquo; and the ankh of life &mdash; in the manner of Theosophy&rsquo;s joining of all sacred signs. An original composite, not a facsimile of any seal."
+    ),
+
+    /* Ch38 — Wicca: the pentacle (upright, in a circle) with a triple moon */
+    "ch38": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // triple moon
+        '<g stroke="currentColor" stroke-width="1.4">' +
+          '<circle cx="100" cy="40" r="11"/>' +
+          '<path d="M84 30 A 14 14 0 0 0 84 50"/>' +
+          '<path d="M116 30 A 14 14 0 0 1 116 50"/></g>' +
+        // pentacle
+        '<circle cx="100" cy="118" r="52" stroke="currentColor" stroke-width="1.4"/>' +
+        '<path d="M100 68 L135 176 L44 109 L156 109 L65 176 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The pentacle &mdash; the five-pointed star of the four elements crowned by spirit, bound in the circle of unity &mdash; beneath the triple moon of the Goddess. An original geometric rendering of the Wiccan emblem."
+    ),
+
+    /* Ch39 — Satanism: the inverted pentagram (reclaimed), in a circle */
+    "ch39": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        '<circle cx="100" cy="100" r="66" stroke="currentColor" stroke-width="1.6"/>' +
+        // inverted pentagram (point down)
+        '<path d="M100 160 L135 51 L43 119 L157 119 L65 51 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The inverted pentagram &mdash; the symbol modern self-identified Satanists reclaim as an emblem of the carnal and the self, spirit turned toward matter. An original geometric rendering; a reclaimed sign, described, not endorsed."
+    ),
+
+    /* Ch40 — African Diaspora Religions: a vèvè-style crossroads (Legba opens the way) */
+    "ch40": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+          // the crossroads
+          '<line x1="100" y1="30" x2="100" y2="170"/><line x1="30" y1="100" x2="170" y2="100"/>' +
+          // central diamond
+          '<path d="M100 82 L118 100 L100 118 L82 100 Z"/>' +
+          // curls at the four ends
+          '<path d="M100 30 q -12 -6 -12 -16 M100 30 q 12 -6 12 -16"/>' +
+          '<path d="M100 170 q -12 6 -12 16 M100 170 q 12 6 12 16"/>' +
+          '<path d="M30 100 q -6 -12 -16 -12 M30 100 q -6 12 -16 12"/>' +
+          '<path d="M170 100 q 6 -12 16 -12 M170 100 q 6 12 16 12"/></g>' +
+        // small hearts/dots along the arms
+        '<g fill="currentColor" opacity="0.7"><circle cx="100" cy="56" r="2.4"/><circle cx="100" cy="144" r="2.4"/><circle cx="56" cy="100" r="2.4"/><circle cx="144" cy="100" r="2.4"/><circle cx="100" cy="100" r="2.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A vèvè-style crossroads &mdash; the sign of the gatekeeper who must open the way before any spirit can be reached, the ground-drawn sigils at the heart of Vodou and its kin. An original rendering in the tradition&rsquo;s idiom, not a specific vèvè."
     )
 
   };

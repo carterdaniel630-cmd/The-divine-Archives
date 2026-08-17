@@ -2912,5 +2912,412 @@ window.CHAPTERS = {
         <li>Martyrdoms of Guru Arjan (1606) and Guru Tegh Bahadur (1675); miri-piri — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
       </ul>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch35 */
+  ch35: { html: `
+    <p class="lead">The explosion of brand-new religions in the last two centuries — from the American frontier prophets to the global movements of today — and the honest work of describing them as religions, neither dismissed as "cults" nor exempted from the evidence-honesty this book applies to every faith.</p>
+
+    <h2>The golden plates</h2>
+
+    <p>On a hill in western New York in the 1820s, a young farmer named <strong>Joseph Smith</strong> said an angel named Moroni had shown him a book written on <strong>golden plates</strong>, buried in the earth, which he translated by divine power into the <strong>Book of Mormon</strong>. From that revelation grew the <strong>Church of Jesus Christ of Latter-day Saints</strong> — today a global faith of some seventeen million people, with its own scripture, temples, and priesthood. Whether the plates existed, whether the angel came, whether the translation was inspired or invented — these are exactly the questions this book asks of every tradition, and they are no more and no less answerable for a religion two centuries old than for one four thousand years old. That is the point of this chapter: the birth of new religions did not stop with the ancient world. It accelerated.</p>
+
+    <h2>What a new religious movement is</h2>
+
+    <p><strong>"New religious movement"</strong> (NRM) is the neutral scholarly term for a religion of relatively recent origin — the term that replaced the older, loaded word "<strong>cult</strong>," which scholars now avoid because it is used mostly as a weapon. An NRM is typically marked by an <strong>innovative</strong> response to modern conditions, a stance of <strong>counterculture</strong> against the mainstream, an <strong>eclectic</strong> blending of older sources, and a <strong>charismatic</strong> (sometimes authoritarian) founder. There is no sharp line between a "new religious movement" and a "religion": every faith in this book was once new, and Christianity, Islam, and Sikhism were all, in their day, exactly what we would now call NRMs. The category simply lets us look honestly at the ones still within living memory of their founding.</p>
+
+    <h2>The American century</h2>
+
+    <p>The modern wave began, above all, in the <strong>religious ferment of nineteenth-century America</strong> — a free market of faith with no established church. The <strong>millenarian</strong> expectation of Christ's imminent return produced the <strong>Seventh-day Adventists</strong> and, from the same current, the <strong>Jehovah's Witnesses</strong>, both still awaiting the end of the age. <strong>Mary Baker Eddy</strong> founded <strong>Christian Science</strong> on the healing power of right belief. The <strong>Latter-day Saints</strong> built a new scripture and an American Zion. And these were only the largest; the century swarmed with prophets, communes, and revelations.</p>
+
+    <h2>A global phenomenon</h2>
+
+    <p>The twentieth century made the movement worldwide and wildly various. The <strong>Bahá'í Faith</strong>, born in nineteenth-century Persia, taught the unity of all religions and grew into a global community. In East Asia, <strong>Falun Gong</strong> and Japan's "new religions" drew millions. The counterculture of the 1960s and after produced the <strong>Unification Church</strong> (the "Moonies"), the Hare Krishna movement (a modern export of the Bhakti tradition), and <strong>Scientology</strong>, founded by the writer L. Ron Hubbard on his system of "auditing" and the mind. Some were benign, some controversial, a few catastrophic — the mass deaths at <strong>Jonestown</strong> (1978) and Heaven's Gate (1997) are the shadow side of charismatic authority, and the reason "cult" carries the fear it does.</p>
+
+    <h2>The "cult" question, honestly</h2>
+
+    <p>The word <strong>cult</strong> does real harm and real work, and both must be acknowledged. It has been used to demonize harmless minority faiths, to justify persecution, and to flatten enormous variety into a single sinister image. Yet a small number of these movements have genuinely destroyed lives through coercion, fraud, and violence. The honest position, and the scholarly one, is to <strong>judge each movement by its conduct</strong>, not by the mere fact of being new or strange — to reserve alarm for actual harm (coercion, abuse, exploitation) rather than for unfamiliar belief. This book describes NRMs as it describes all traditions: taking their claims seriously as religion, while keeping a clear eye on what the evidence shows.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The new religions are, revealingly, religions of the <strong>modern</strong> world, and encode themselves accordingly.</p>
+
+    <ul>
+      <li>Many produce a <strong>new scripture</strong> on the model of the old — the <em>Book of Mormon</em>, the <em>Dianetics</em> corpus, the writings of a founder — claiming the authority of revealed text in an age of print and, now, of the internet.</li>
+      <li>They build <strong>new sacred symbols</strong> deliberately: the Bahá'í nine-pointed star for the unity of the nine great religions; the LDS angel Moroni atop the temple; Scientology's cross and its symbols of the "thetan."</li>
+      <li>And they often encode a <strong>secret, staged knowledge</strong> — the graded initiations of Scientology's "operating thetan" levels, the temple ordinances of the Latter-day Saints — the ancient pattern of esoteric revelation reborn in the modern corporation and the members-only manual.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The new religious movements are the direct heirs of everything before them, recombined: the <strong>millenarianism</strong> of apocalyptic Judaism and Christianity, the <strong>esoteric initiation</strong> of the mystery cults and Kabbalah, the <strong>devotion</strong> of Bhakti (Hare Krishna is literally a transplanted Bhakti order), and the do-it-yourself spirituality that <strong>Theosophy</strong> and <strong>Spiritualism</strong> — the subjects of the neighboring chapters — set loose in the modern West. They are what religion looks like in an age of print, science, freedom, and doubt: not the end of faith that secular prophets predicted, but its endless, restless remaking.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical origins, founders, and growth of the major NRMs (the Latter-day Saints, Adventists, Jehovah's Witnesses, Christian Science, Bahá'í, Scientology, and the rest); their scriptures and organizations; and the documented tragedies (Jonestown, Heaven's Gate) and controversies.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history) — but claimed as faith</h4>
+        <p>The <strong>revelatory claims</strong> at the root of each — the golden plates and the angel Moroni, the divine inspiration of any founder's scripture, the metaphysics of "thetans" — are matters of <strong>faith</strong> (or, for critics, of fabrication), recorded here as belief, not adjudicated. That a claim is recent makes it neither more nor less a matter of faith than an ancient one.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and contested</h4>
+        <p>The very <strong>boundary</strong> of the category (when is a movement a "sect," a "cult," a "religion"?); the reliability of much that is written about controversial groups, since both hostile "anti-cult" sources and the movements' own literature are interested parties; and the deep sociological question of <strong>why</strong> the modern, secular, scientific age has produced not fewer religions but more.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Definition of NRMs; the shift away from "cult"; innovation, counterculture, charisma; examples (LDS, JW, Adventists, Bahá'í, Falun Gong, Paganism) — "New religious movement," Britannica. <a href="https://www.britannica.com/topic/new-religious-movement">https://www.britannica.com/topic/new-religious-movement</a></li>
+        <li>Nineteenth-century American millenarianism producing the Adventists and Jehovah's Witnesses — "New religious movements in the United States," Wikipedia. <a href="https://en.wikipedia.org/wiki/New_religious_movements_in_the_United_States">https://en.wikipedia.org/wiki/New_religious_movements_in_the_United_States</a></li>
+        <li>The "cult" label, its pejorative use, and the case for judging by conduct — Religion Media Centre, "Factsheet: New Religious Movements." <a href="https://religionmediacentre.org.uk/factsheets/factsheet-new-religious-movements/">https://religionmediacentre.org.uk/factsheets/factsheet-new-religious-movements/</a></li>
+        <li>Overview of the category, charismatic leadership, and syncretism — Study.com, "New Religious Movements." <a href="https://study.com/academy/lesson/contemporary-religious-movements.html">https://study.com/academy/lesson/contemporary-religious-movements.html</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch36 */
+  ch36: { html: `
+    <p class="lead">The religion of the talking dead — born from two girls and a knocking sound in 1848, swept through a grieving Victorian world of darkened parlors and rapping tables, and honest about the difference between the consolation it gave, which was real, and the communication it claimed, which was not.</p>
+
+    <h2>The rappings at Hydesville</h2>
+
+    <p>In March 1848, in a small farmhouse at <strong>Hydesville</strong>, New York, two sisters — <strong>Kate Fox</strong>, aged eleven or twelve, and <strong>Margaret</strong>, a little older — announced that they were hearing mysterious <strong>rapping</strong> sounds, and that the raps answered their questions: one knock for no, two for yes, and, with a run through the alphabet, whole sentences. The spirit, they said, was a murdered peddler buried in the cellar. The news spread like fire. Within a few years the Fox sisters were famous, public mediums, and a new religion had been born — <strong>Spiritualism</strong>, built on a single electrifying claim: that the dead are not gone, and that the living can talk to them.</p>
+
+    <p>Forty years later, in 1888, Margaret Fox stood on a New York stage and confessed that it had all been a trick: the raps were made by cracking the joints of her toes and knuckles, a childish prank that had grown into a worldwide movement. She later recanted the confession. But the shadow it cast is the honest frame for this whole chapter.</p>
+
+    <h2>What Spiritualism is</h2>
+
+    <p><strong>Spiritualism</strong> is the belief — and, for many, the religion — that the human personality <strong>survives death</strong> and that the living can <strong>communicate</strong> with the surviving spirits, most often through a specially gifted intermediary called a <strong>medium</strong>. It is both a practice, centered on the <strong>séance</strong>, and an organized faith, with <strong>Spiritualist churches</strong> that continue today. Its promise was intimate and immense: not a distant heaven argued over by theologians, but your own mother, your own dead child, speaking to you across the dark of a parlor room.</p>
+
+    <h2>The séance and its wonders</h2>
+
+    <p>Spiritualism's rites unfolded in the <strong>séance circle</strong> — a group seated around a table in low light, hands joined, a medium in their midst. Through the medium the spirits were said to act: <strong>rapping</strong> out answers, <strong>tipping and levitating</strong> the table, guiding a hand in <strong>automatic writing</strong>, speaking in a trance, and, in the boldest séances, producing <strong>materializations</strong> — ghostly forms, floating instruments, ectoplasm. The age's new technologies were pressed into service: <strong>spirit photography</strong> claimed to catch the dead on the new film, and the <strong>planchette</strong> and <strong>talking board</strong> — the Ouija board — spelled out messages letter by letter.</p>
+
+    <h2>Why the Victorians believed</h2>
+
+    <p>Spiritualism swept the United States and Britain in the second half of the nineteenth century for reasons both deep and specific. It rode a tide of <strong>grief</strong>: the mass death of the American <strong>Civil War</strong> and, later, the <strong>First World War</strong> and the influenza pandemic left millions desperate to reach the dead, and Spiritualism offered them contact. It gave <strong>women</strong> — who dominated its ranks as mediums — a rare position of public spiritual authority in an age that allowed them little, and it ran alongside the era's reform movements, from abolition to women's suffrage. And it claimed to be not superstition but <strong>science</strong>: a demonstrable, experimental contact with the beyond, fit for a confident scientific century. It won famous converts, among them the chemist <strong>Sir William Crookes</strong> and Sir Arthur Conan <strong>Doyle</strong>, the creator of the supremely rational Sherlock Holmes.</p>
+
+    <h2>Science, fraud, and the reckoning</h2>
+
+    <p>Because Spiritualism claimed to be testable, it was tested — and the results were damning. Investigators and stage magicians, above all <strong>Harry Houdini</strong>, exposed medium after medium in outright fraud: hidden accomplices, trick tables, cheesecloth "ectoplasm," reused spirit photographs. The <strong>Society for Psychical Research</strong>, founded in 1882 to study the claims rigorously, documented deception again and again and never established a single verified case of communication with the dead. And at the movement's very origin stood Margaret Fox's confession of the cracking toes. None of this stopped Spiritualism — grief is stronger than debunking — but it settled the empirical question.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Spiritualism was, distinctively, a religion of <strong>codes and channels</strong> — and it took its model from the technology of its age.</p>
+
+    <ul>
+      <li>The <strong>rap</strong> was a literal binary code: yes and no, and the laborious spelling-out of messages letter by letter through the alphabet — the dead reduced to Morse.</li>
+      <li>The <strong>talking board</strong> (Ouija) and its <strong>planchette</strong> encode the séance's central act: a message assembled letter by letter as the sitters' hands drift across the board, its motion (as science shows) produced unconsciously by the sitters themselves — the <strong>ideomotor effect</strong> — though experienced as the touch of the dead.</li>
+      <li>The whole movement arose as the twin of the <strong>telegraph</strong>: Spiritualism was imagined as a "<strong>spiritual telegraph</strong>," communication-at-a-distance with the other world, in the very decade the electric telegraph made communication-at-a-distance ordinary. The medium was the operator; the séance, the receiving station.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Spiritualism is a modern, scientific-age form of one of the most ancient human practices — the <strong>consultation of the dead</strong>, the necromancy and ancestor-contact found from Mesopotamia to the African traditions of the neighboring chapters. It fed directly into the two movements beside it: <strong>Theosophy</strong>, which built a whole cosmology on communication with hidden Masters, and the broader <strong>occult revival</strong>, and onward into the twentieth-century <strong>New Age</strong> and the paranormal. It shaped early <strong>psychology</strong>, too: the study of mediums, trance, and automatic writing fed directly into the exploration of the <strong>unconscious mind</strong>. Its churches survive, and the séance never entirely ended.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The history of Spiritualism — its birth with the Fox sisters in 1848, its explosive spread, its practices, its churches, and its enormous social role in a grieving age; the prominence of women; the famous believers; and the extensive, documented record of <strong>fraud</strong>, including Margaret Fox's own confession.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history or science)</h4>
+        <p>That mediums actually <strong>communicated with the dead</strong>. Every claim that was rigorously tested was either exposed as fraud or explained by ordinary means (the ideomotor effect, cold reading, stagecraft); more than a century of psychical research produced <strong>no verified case</strong>. The phenomena, as tested, were not real.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and worth respecting</h4>
+        <p>The <strong>consolation</strong> Spiritualism gave the bereaved was entirely real as human experience, whatever its source; the <strong>sincerity</strong> of many mediums and believers is not in doubt; and Spiritualism's genuine, lasting influence on <strong>psychology, women's public life, and the study of the mind</strong> is a real historical legacy. That the mechanism was never verified does not make the grief, or the comfort, less real.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Fox sisters, the 1848 Hydesville rappings, and the birth of Spiritualism — "Margaret Fox and Catherine Fox," Britannica. <a href="https://www.britannica.com/biography/Margaret-Fox-and-Catherine-Fox">https://www.britannica.com/biography/Margaret-Fox-and-Catherine-Fox</a></li>
+        <li>Margaret Fox's 1888 confession (the toe- and knuckle-cracking) and later recantation — "How a Hoax by Two Sisters Helped Spark the Spiritualism Craze," History.com. <a href="https://www.history.com/articles/ghost-hoax-spiritualism-fox-sisters">https://www.history.com/articles/ghost-hoax-spiritualism-fox-sisters</a></li>
+        <li>The séance, mediumship, and Spiritualism's spread; the Society for Psychical Research and the investigations — Smithsonian, "The Fox Sisters and the Rap on Spiritualism." <a href="https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/">https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/</a></li>
+        <li>Grief after war, the appeal to women, and famous believers (Crookes, Doyle) — "The Birth of Spiritualism," History Today. <a href="https://www.historytoday.com/archive/months-past/birth-spiritualism">https://www.historytoday.com/archive/months-past/birth-spiritualism</a></li>
+        <li>The ideomotor effect and the Ouija board; the "spiritual telegraph" — general reference overviews (Ouija; Spiritualism). <a href="https://en.wikipedia.org/wiki/Spiritualism">https://en.wikipedia.org/wiki/Spiritualism</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch37 */
+  ch37: { html: `
+    <p class="lead">The late-nineteenth-century rebirth of Western esotericism — a claimed ancient wisdom behind all religions, hidden Masters in the Himalayas, a magical order that fused Kabbalah and tarot into a system of the soul — and the honest reckoning with its fabrications, its enormous influence, and the dark uses to which some of its ideas were later put.</p>
+
+    <h2>The letters from the Masters</h2>
+
+    <p>In the 1870s and 1880s, a stout, chain-smoking Russian émigré named <strong>Helena Petrovna Blavatsky</strong> became the center of a sensation. Letters, she said, arrived from her hidden teachers — the <strong>Mahatmas</strong> or <strong>Masters</strong>, adepts of a secret brotherhood dwelling in Tibet — and these letters did not come by post: they <strong>materialized</strong>, dropping from the air, appearing inside sealed rooms. Through them, Blavatsky claimed to transmit the <strong>Secret Doctrine</strong>, the single ancient wisdom that lay behind every religion the world had ever known. In 1875, in New York, she and Colonel Henry Olcott founded the <strong>Theosophical Society</strong> to spread it. In 1885 the Society for Psychical Research investigated the Mahatma letters and pronounced them <strong>an elaborate fraud</strong>. Both of those things are true, and both matter: Theosophy was built on claims that do not survive scrutiny, and it became, all the same, one of the most influential religious movements of the modern West.</p>
+
+    <h2>What Theosophy is</h2>
+
+    <p><strong>Theosophy</strong> — "divine wisdom" — is the system Blavatsky set out in her great books, <em>Isis Unveiled</em> (1877) and <em>The Secret Doctrine</em> (1888): a grand <strong>synthesis</strong> of Eastern religion and Western occultism, claiming that all faiths are corrupted fragments of one original, secret <strong>wisdom-tradition</strong> preserved by hidden adepts. From the East it took <strong>karma</strong> and <strong>reincarnation</strong>, cosmic cycles, and the idea of spiritual evolution; from the West, Hermeticism, Neoplatonism, and Kabbalah. More than any other single movement, Theosophy <strong>introduced Hindu and Buddhist ideas to the Western public</strong> and set the template for everything later called "spiritual but not religious."</p>
+
+    <h2>The doctrine of the Secret Doctrine</h2>
+
+    <p>Theosophy taught a vast cosmic evolution: the universe and humanity develop through immense cycles of "<strong>rounds</strong>" and seven "<strong>root races</strong>," each rising and falling, some on now-lost continents — <strong>Lemuria</strong> and <strong>Atlantis</strong>. Behind the visible world lay hierarchies of planes and beings, crowned by the <strong>Masters</strong> — the "<strong>Great White Brotherhood</strong>" of perfected adepts guiding human evolution. The soul reincarnates, bound by karma, climbing across lifetimes toward reunion with the divine. It was a sweeping, syncretic myth of everything — and it must be said plainly that its <strong>root-race</strong> scheme, however spiritually Blavatsky intended it, was later seized and twisted by others into <strong>racial hierarchy</strong>, feeding the "Ariosophy" that in turn fed the occult fringe of <strong>Nazism</strong> — even as the Theosophical Society itself preached the universal <strong>brotherhood of humanity</strong>. The idea and its abuse must both be named.</p>
+
+    <h2>The occult revival</h2>
+
+    <p>Theosophy was the most famous face of a wider <strong>Western esoteric revival</strong> that swept the late nineteenth century. Its magical wing crystallized in the <strong>Hermetic Order of the Golden Dawn</strong>, founded in London in <strong>1888</strong> by Westcott, Mathers, and Woodman — the most influential magical order in Western history. The Golden Dawn welded <strong>Hermeticism, Kabbalah, tarot, astrology, alchemy,</strong> and <strong>ceremonial magic</strong> into a single graded system of initiation, and through its members — the poet <strong>W. B. Yeats</strong> among them — reshaped modern art and occultism alike. One member, <strong>Aleister Crowley</strong>, broke away to found his own religion, <strong>Thelema</strong>, on the revelation he claimed to have received in Cairo in 1904 — the <em>Book of the Law</em> and its creed, "<strong>Do what thou wilt shall be the whole of the Law</strong>." Others followed: <strong>Rudolf Steiner</strong> broke from Theosophy to found <strong>Anthroposophy</strong> (the source of Waldorf schools and biodynamic farming), and the era revived <strong>Rosicrucianism</strong> and the tarot besides.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>This is, above all others, the modern age's great tradition of <strong>constructed sacred symbolism</strong> — and the honesty lies in seeing how much of it was newly assembled from older parts.</p>
+
+    <ul>
+      <li>The <strong>tarot</strong> became its master-key. The Golden Dawn mapped the seventy-eight cards onto the <strong>Kabbalistic Tree of Life</strong> of Chapter 26 — the twenty-two trumps to the twenty-two paths — turning a Renaissance card game into an encoded diagram of the soul's journey. But the "ancient Egyptian" pedigree the occultists claimed for the tarot is an <strong>eighteenth-century invention</strong>; the encoding is real and powerful, its antiquity is not.</li>
+      <li>The Golden Dawn's whole method was a system of <strong>correspondences</strong> — each Hebrew letter, planet, color, god, scent, and card lined up in vast tables, so that the whole cosmos became a cross-referenced code the magician could operate.</li>
+      <li>The <strong>Theosophical Society's own seal</strong> is a deliberate synthesis in miniature: the <strong>ouroboros</strong> serpent, the interlaced triangles of the Star of David, the <strong>ankh</strong>, the <strong>Om</strong>, and — in its original form — the <strong>swastika</strong> (then an ancient auspicious sign, before the Nazis defiled it), ringed together to say that all the world's sacred symbols are one.</li>
+    </ul>
+
+    <p>The thread through all of it is the Hermetic maxim "<strong>as above, so below</strong>" — the conviction that the cosmos is an encoded correspondence the initiate learns to read.</p>
+
+    <h2>Connections</h2>
+
+    <p>Theosophy and the occult revival are the children of <strong>Spiritualism</strong> (the previous chapter) and of the Enlightenment's new <strong>comparative study of religion</strong>, which laid the world's faiths side by side and invited exactly this kind of synthesis. They borrowed the <strong>Kabbalah</strong> and Hermeticism of the medieval and Renaissance West and the <strong>karma and reincarnation</strong> of India, and recombined them into something new. And they are the direct parents of much that follows: the modern <strong>New Age</strong>, the ceremonial magic that would feed <strong>Wicca</strong> (the next chapter), Crowley's Thelema, and a great swathe of twentieth-century art, film, and "spirituality." Few movements built on so much that cannot be verified have left so deep a mark.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The history of Theosophy and the occult revival — Blavatsky, Olcott, and the Theosophical Society (1875); the texts; the Golden Dawn (1888) and its members; Crowley and Thelema; Steiner and Anthroposophy — and their vast, documented influence on modern religion, art, and the New Age.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history or science)</h4>
+        <p>The hidden <strong>Masters</strong> and the materializing <strong>Mahatma letters</strong> (judged fraudulent by the Society for Psychical Research in 1885); the <strong>root races</strong> and the lost continents of <strong>Lemuria and Atlantis</strong> (no such history or continents existed); and Blavatsky's claimed <strong>ancient sources</strong>, much of which scholars have shown to be recombined from contemporary books, sometimes verbatim. The "ancient wisdom" was, in large part, a <strong>modern construction</strong>.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and a warning</h4>
+        <p>The <strong>sincerity and inner experience</strong> of practitioners are not in question, and the traditions are living ones. But two cautions stand: the <strong>antiquity</strong> these systems claim for themselves (the "Egyptian" tarot, the primordial Secret Doctrine) is mostly invented, and the <strong>root-race doctrine</strong> was genuinely bent toward racism and fed proto-Nazi occultism — a dark legacy that a movement preaching universal brotherhood nonetheless left in the world.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Helena Blavatsky, the Theosophical Society (1875), and the synthesis of Eastern religion and Western occultism; influence on the New Age — "Theosophy," Britannica. <a href="https://www.britannica.com/topic/theosophy">https://www.britannica.com/topic/theosophy</a></li>
+        <li><em>The Secret Doctrine</em> (1888), rounds and root races, Lemuria and Atlantis — "The Secret Doctrine," Wikipedia; "Root race," Wikipedia. <a href="https://en.wikipedia.org/wiki/Root_race">https://en.wikipedia.org/wiki/Root_race</a></li>
+        <li>The Hermetic Order of the Golden Dawn (1888); Hermeticism, Kabbalah, tarot, ceremonial magic; influence on Wicca and Thelema — "The Hermetic Order of the Golden Dawn and the Origins of Wicca," Yale University Press. <a href="https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/">https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/</a></li>
+        <li>Theosophy's role in founding the New Age movement — "New Age," Wikipedia; EBSCO, "Theosophy." <a href="https://en.wikipedia.org/wiki/New_Age">https://en.wikipedia.org/wiki/New_Age</a></li>
+        <li>The 1885 SPR (Hodgson) report on the Mahatma letters as fraudulent, and plagiarism charges — general reference (Blavatsky; Theosophical Society historiography). <a href="https://en.wikipedia.org/wiki/Helena_Blavatsky">https://en.wikipedia.org/wiki/Helena_Blavatsky</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch38 */
+  ch38: { html: `
+    <p class="lead">The twentieth-century rebirth of Pagan religion in the West — a nature faith of Goddess and God, coven and sabbat, magic and moon — told honestly as what it is: not the ancient survival its founders claimed, but a real, living, modern religion assembled in living memory, and none the less genuine for it.</p>
+
+    <h2>The man who said the witches were real</h2>
+
+    <p>In 1951, England repealed the last of its <strong>Witchcraft Acts</strong>, and within a few years a retired British civil servant named <strong>Gerald Gardner</strong> stepped forward with an astonishing claim. He said that witchcraft had never died — that a secret, ancient, pre-Christian <strong>religion of the Goddess</strong> had survived in hidden covens through all the centuries of persecution, and that he had been <strong>initiated</strong> into one, the New Forest coven, in 1939. Through his books and his eager courting of the press, Gardner launched <strong>Wicca</strong> upon the world.</p>
+
+    <p>Almost none of the historical claim was true. There was no unbroken ancient witch-religion; the covens Gardner described cannot be traced before him; and the theory he leaned on — Margaret Murray's idea of a surviving pan-European witch-cult — is, as the witch-trials chapter showed, thoroughly <strong>discredited</strong>. And yet Wicca is entirely real: a <strong>new religion</strong>, sincerely believed and now practiced by hundreds of thousands, assembled in the twentieth century from older parts. Both halves of that sentence are the honest story.</p>
+
+    <h2>What Wicca is</h2>
+
+    <p><strong>Wicca</strong> is a modern, initiatory, nature-centered <strong>Pagan</strong> religion. Most Wiccans worship a duality of the divine — a <strong>Goddess</strong>, often the <strong>Triple Goddess</strong> of maiden, mother, and crone, linked to the moon; and a <strong>Horned God</strong> of the wild, the hunt, and the turning cycle of life, death, and rebirth, linked to the sun. Divinity is felt as <strong>immanent</strong> in the natural world rather than ruling from outside it. Wiccans practice <strong>magic</strong> — understood as the focusing of will and intention — work in small groups called <strong>covens</strong> (traditionally led by a High Priestess) or as solitaries, and hold to a simple ethic, the <strong>Wiccan Rede</strong>: "<strong>An it harm none, do what ye will</strong>," often paired with the belief that what one sends out returns threefold.</p>
+
+    <h2>The Wheel and the circle</h2>
+
+    <p>Wiccan worship turns on two cycles. The <strong>Wheel of the Year</strong> marks eight <strong>sabbats</strong> — the solstices and equinoxes and the four cross-quarter days between them, bearing names drawn from Celtic and Germanic tradition: <strong>Samhain</strong>, <strong>Yule</strong>, <strong>Imbolc</strong>, <strong>Ostara</strong>, <strong>Beltane</strong>, <strong>Litha</strong>, <strong>Lughnasadh</strong>, and <strong>Mabon</strong>. Between them fall the <strong>esbats</strong>, the full-moon gatherings. Rites are held within a ritual <strong>circle</strong> cast to create sacred space, using tools that stand for the four elements — the <strong>athame</strong> (ritual knife), the chalice, the wand, and the pentacle — and, in the drama called <strong>drawing down the moon</strong>, the Goddess is invoked to speak through the High Priestess herself.</p>
+
+    <h2>The honest origins</h2>
+
+    <p>Where did Wicca actually come from? Modern scholarship (above all Ronald Hutton's) has shown it to be a <strong>twentieth-century creation</strong>, woven by Gardner and his circle from several real strands: the <strong>ceremonial magic</strong> of the Golden Dawn and Aleister Crowley from the previous chapter (much of Wicca's ritual language is theirs); nineteenth-century <strong>Romanticism</strong> and its love of a lost, natural, pagan past; genuine surviving <strong>folk magic</strong> and seasonal custom; <strong>Freemasonry's</strong> initiatory structure; and Murray's mistaken but inspiring theory of the witch-cult. The result was something new. To say so is not to debunk Wicca but to describe it truthfully — exactly as this book describes the medieval dating of the Zohar or the thirteenth-century authorship of a text that claims to be ancient. <strong>A religion need not be old to be real.</strong></p>
+
+    <h2>The wider Pagan revival</h2>
+
+    <p>Wicca is the largest current in a broad modern <strong>Pagan</strong> revival that has grown explosively since the 1970s. <strong>Druidry</strong>, revived from the eighteenth century (partly on the forged "ancient" texts of Iolo Morganwg), organizes modern orders around the old Celtic priesthood. <strong>Heathenry</strong> or <strong>Ásatrú</strong> reconstructs the <strong>Norse paganism</strong> of Chapter 23 from the Eddas and the sagas. The feminist <strong>Goddess movement</strong> and Dianic witchcraft (Starhawk, Z. Budapest) made the Craft a vehicle of women's spirituality. And <strong>reconstructionists</strong> work to rebuild the Hellenic, Egyptian, and other ancient religions from the sources, while countless <strong>eclectic</strong> and solitary practitioners assemble their own paths. Together they are among the fastest-growing religious currents in the modern West, and deeply entwined with <strong>environmental</strong> spirituality.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Modern Paganism is rich in deliberately chosen and reconstructed <strong>symbols</strong>.</p>
+
+    <ul>
+      <li>The <strong>pentagram</strong> — the five-pointed star, usually within a circle as the <strong>pentacle</strong> — is Wicca's central emblem: its five points encode the four elements (earth, air, fire, water) crowned by the fifth, spirit, all bound in the circle of unity.</li>
+      <li>The <strong>Book of Shadows</strong> is the coven's encoded sacred text — a hand-copied book of rituals, spells, and lore, traditionally passed only from initiator to initiate, each line a piece of a transmitted, semi-secret liturgy.</li>
+      <li>The <strong>Triple Moon</strong> (waxing crescent, full circle, waning crescent) encodes the Goddess in her three aspects; the ritual <strong>tools</strong> encode the elements; and the cast <strong>circle</strong> encodes the making of sacred space out of ordinary ground.</li>
+      <li>Honesty requires noting that the eight-fold <strong>Wheel of the Year</strong> is itself a <strong>modern synthesis</strong> — no single ancient people kept exactly these eight festivals under these names — a reconstructed calendar that has nonetheless become genuinely sacred to those who keep it.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Wicca and modern Paganism grow directly out of the <strong>occult revival</strong> of the previous chapter — the Golden Dawn's ceremonial magic is their immediate parent — and out of the <strong>Romantic</strong> longing for the pre-Christian past. They take their (mistaken) historical charter from the <strong>witch trials</strong> of Chapter 32, and their reconstructed gods from the <strong>Norse</strong> and <strong>Celtic and Germanic</strong> paganisms of earlier eras. As a self-consciously new, eclectic, individualist faith they are a classic <strong>new religious movement</strong>, kin to the others of this age — and, in their reverence for the living earth, one of the most distinctly modern of all.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>Wicca as a documented <strong>twentieth-century</strong> religion — Gerald Gardner, the 1950s launch, the beliefs, rituals, and rapid growth; the broader modern Pagan revival (Druidry, Heathenry, the Goddess movement, reconstructionism) and its real and expanding presence.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>That Wicca is an <strong>unbroken survival</strong> of an ancient pre-Christian witch-religion — it is not; Gardner's ancient lineage cannot be traced, and the <strong>Murray witch-cult thesis</strong> it rests on is discredited. The "<strong>burning times</strong>" claim that nine million witches of this surviving religion were martyred is, as the witch-trials chapter showed, a <strong>myth</strong>.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and a point of principle</h4>
+        <p>Gardner's exact <strong>sources</strong>, and whether any pre-Gardnerian coven existed, remain debated; and real fragments of old <strong>folk custom</strong> do survive within a new religious frame. But the central point is one of principle, not doubt: that Wicca is a <strong>modern construction</strong> takes nothing from its reality as a <strong>living, sincerely practiced religion</strong>. This book distinguishes a tradition's true history from its self-understanding for every faith it treats, ancient or new, and applies the same courtesy and the same honesty here.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Gerald Gardner, the 1950s launch of Wicca, the New Forest coven claim, and the Murray thesis (now discredited) — "Gerald Gardner," Wikipedia. <a href="https://en.wikipedia.org/wiki/Gerald_Gardner">https://en.wikipedia.org/wiki/Gerald_Gardner</a></li>
+        <li>Gardnerian Wicca: the Goddess and Horned God, the Wiccan Rede, sabbats and esbats — "Gerald Gardner and the Gardnerian Wiccan Tradition," Learn Religions. <a href="https://www.learnreligions.com/what-is-gardnerian-wicca-2562910">https://www.learnreligions.com/what-is-gardnerian-wicca-2562910</a></li>
+        <li>Wicca as a modern creation assembled from ceremonial magic, Romanticism, folk custom, and Murray's theory (Ronald Hutton) — "Wicca," Encyclopedia.com. <a href="https://www.encyclopedia.com/philosophy-and-religion/other-religious-beliefs-and-general-terms/miscellaneous-religion/wicca">https://www.encyclopedia.com/philosophy-and-religion/other-religious-beliefs-and-general-terms/miscellaneous-religion/wicca</a></li>
+        <li>The Golden Dawn's ceremonial magic as a direct source of Wiccan ritual — "The Hermetic Order of the Golden Dawn and the Origins of Wicca," Yale University Press. <a href="https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/">https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/</a></li>
+        <li>The Wheel of the Year, the pentacle, the Book of Shadows, and the broader modern Pagan revival — general reference overviews (Wheel of the Year; Modern Paganism). <a href="https://en.wikipedia.org/wiki/Modern_Paganism">https://en.wikipedia.org/wiki/Modern_Paganism</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch39 */
+  ch39: { html: `
+    <p class="lead">Two completely different things wear the same frightening name — the imaginary Devil-cult that persecutors have invented for a thousand years, and the real, mostly atheistic philosophy that modern people have deliberately chosen — and telling them apart, with the same descriptive rigor this book gives every tradition and none of the shock, is the whole task of the chapter.</p>
+
+    <h2>The panic that found nothing</h2>
+
+    <p>Through the 1980s and into the 1990s, a wave of terror swept the United States and beyond: the conviction that a vast, hidden network of <strong>Satanists</strong> was ritually abusing and murdering children in secret. Day-care workers were accused, tried, and imprisoned on the testimony of coached children; talk shows and self-styled experts described underground cults of unimaginable evil; families were destroyed. It was called the <strong>Satanic Panic</strong>. And when the FBI's own investigator, Kenneth Lanning, and others examined the claims exhaustively, they found — after a decade of allegations of thousands of murders — essentially <strong>no evidence</strong> that any of it was real. There was no network, no ritual murder, no secret Satanic conspiracy. There were only frightened people and an old, old fantasy.</p>
+
+    <p>That is the necessary starting point, because it is the pattern of one whole side of this subject: the <strong>imagined Satanist</strong> is a scapegoat, not a believer — and has been for a very long time.</p>
+
+    <h2>Two Satanisms</h2>
+
+    <p>Everything written under the word "Satanism" falls into one of two utterly different categories, and confusing them is the source of nearly all the nonsense told about it.</p>
+
+    <p>The first is <strong>accusatory, imaginary Satanism</strong> — the Devil-worshipping conspiracy that <em>other people</em> invent and project onto their enemies. It is the fabricated <strong>witches' sabbath</strong> of Chapter 32, the medieval <strong>blood-libel</strong>, the fin-de-siècle rumor of the <strong>Black Mass</strong>, and the 1980s <strong>Satanic Panic</strong>. It has no members, because no one actually belongs to it; it is a mask persecutors hang on the faces of the feared.</p>
+
+    <p>The second is <strong>self-identified Satanism</strong> — real, living people and organizations who deliberately take the name of Satan for themselves. And here is the fact that dissolves the horror: they are, almost without exception, <strong>atheists</strong>. They do not worship the Devil. They have adopted Satan as a <strong>symbol</strong>.</p>
+
+    <h2>LaVeyan Satanism: Satan as a symbol</h2>
+
+    <p>Modern self-identified Satanism begins with <strong>Anton LaVey</strong>, who founded the <strong>Church of Satan</strong> in San Francisco in <strong>1966</strong> and published the <strong>Satanic Bible</strong> in 1969. Its central doctrine is the surprising one: <strong>neither God nor Satan exists</strong> as a real being. Satan is a <strong>symbol</strong> — of the carnal and natural human being, of pride, individualism, indulgence, self-reliance, and defiance of herd-conformity and religious hypocrisy. LaVeyan Satanism is thus a form of atheistic, materialist <strong>philosophy</strong> — a kind of theatrical Nietzschean egoism — expressed through dramatic ritual understood not as literal magic but as <strong>psychodrama</strong>, a cathartic performance. The Satanist, in LaVey's phrase, is his own god. It is, in short, almost the exact opposite of what the word makes people picture.</p>
+
+    <h2>The Satanic Temple: Satan as protest</h2>
+
+    <p>A second, very different organization, <strong>The Satanic Temple</strong> (founded <strong>2013</strong>), is also <strong>non-theistic</strong> but points its symbolism outward, into <strong>politics</strong>. Its members do not believe in a literal Satan either; they invoke him as the <strong>Romantic rebel</strong> — the Miltonic Adversary who says no to tyranny — and organize around <strong>Seven Fundamental Tenets</strong> emphasizing compassion, justice, reason, and bodily autonomy. The Temple is best known for its campaigns for the <strong>separation of church and state</strong> and religious liberty: when a government displays the Ten Commandments, the Temple demands equal room for a statue of <strong>Baphomet</strong>, exposing the establishment of one religion by insisting on parity for another. In 2019 the United States recognized it as a religion. It is, in effect, First Amendment activism in devil's clothing — and a genuine belief system to its adherents.</p>
+
+    <p>Smaller and darker currents exist too: a fringe of <strong>theistic Satanists</strong> and <strong>Luciferians</strong> who do venerate Satan or Lucifer as a real power, and, at the extreme, genuinely dangerous groups like the neo-Nazi Order of Nine Angles. They are real and worth naming honestly, but they are a tiny minority, and nothing like the vast conspiracy of the panics.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Satanism is, fittingly, a religion of <strong>reclaimed and inverted signs</strong> — and their true histories are as revealing as the signs themselves.</p>
+
+    <ul>
+      <li>The <strong>inverted pentagram</strong> enclosing a goat's head — the <strong>Sigil of Baphomet</strong>, emblem of the Church of Satan — encodes the reversal of the spiritual by the carnal, spirit pointed downward into matter.</li>
+      <li><strong>Baphomet</strong> itself, the horned "Sabbatic Goat," is not an ancient demon but the <strong>1856 drawing of the French occultist Éliphas Lévi</strong> (of the occult revival two chapters back) — a deliberate composite of opposites (male and female, human and animal, "solve et coagula" on its arms) meant to symbolize the union of all forces. Its supposed antiquity, and its link to the medieval Templars, are <strong>later myths</strong>.</li>
+      <li><strong>666</strong>, the number of the Beast, is reclaimed from Revelation (where, as an earlier chapter showed, it most likely encoded the emperor Nero); and the <strong>Black Mass</strong> — the imagined inversion of the Catholic Mass — is very largely a <strong>literary invention</strong>, popularized by novels like Huysmans's <em>Là-Bas</em>, not a widespread real rite.</li>
+    </ul>
+
+    <p>The thread is deliberate <strong>inversion</strong>: taking the symbols a dominant religion made terrifying and wearing them on purpose, as protest, philosophy, or provocation.</p>
+
+    <h2>Connections</h2>
+
+    <p>The two Satanisms have two entirely separate genealogies. The <strong>imagined</strong> one descends directly from the fabricated Devil-cult of the <strong>witch trials</strong> (Chapter 32) and the medieval libels — the same fantasy, recurring. The <strong>real</strong> one is a modern child of the <strong>occult revival</strong> (Chapter 37, which gave it Baphomet), of Enlightenment individualism, of the <strong>Romantic</strong> re-reading of Milton's Satan as a heroic rebel, and of the modern rejection of religious authority — a <strong>new religious movement</strong> among the others of this age. To treat it, as this book does, with the same calm description as any other tradition is not to endorse it, but to refuse the very confusion that made the panics possible.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The real modern movements — the <strong>Church of Satan</strong> (1966) and its atheistic philosophy, the <strong>Satanic Bible</strong>, and <strong>The Satanic Temple</strong> (2013) with its non-theistic activism — their founders, texts, tenets, and legal recognition; and the <strong>Satanic Panic</strong> as a documented episode of moral panic and false accusation.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>That a vast, secret network of <strong>murderous Devil-worshippers</strong> has ever existed. The claims of Satanic ritual abuse behind the 1980s–90s panic were investigated at length — most authoritatively in the FBI's 1992 Lanning report — and found to have <strong>essentially no basis</strong>. The imagined conspiracy is, and always was, imaginary.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The <strong>membership</strong> of the real Satanist organizations (both dispute and inflate numbers); the philosophical <strong>boundary</strong> between a provocative philosophy and a religion, on which LaVeyans and the Satanic Temple themselves differ; and the size and seriousness of the small <strong>theistic-Satanist</strong> fringe. None of these uncertainties revives the conspiracy the panics imagined.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Church of Satan (1966), Anton LaVey, and atheistic LaVeyan Satanism (Satan as symbol, not deity) — "LaVeyan Satanism," Wikipedia; "The Satanic Bible," Britannica. <a href="https://www.britannica.com/topic/The-Satanic-Bible">https://www.britannica.com/topic/The-Satanic-Bible</a></li>
+        <li>The Satanic Bible (1969) and LaVey's philosophy of ethical egoism — "Anton LaVey," Britannica. <a href="https://www.britannica.com/biography/Anton-LaVey">https://www.britannica.com/biography/Anton-LaVey</a></li>
+        <li>The Church of Satan's own statement of fundamental (atheistic) beliefs — Church of Satan, "F.A.Q. Fundamental Beliefs." <a href="https://churchofsatan.com/faq-fundamental-beliefs/">https://churchofsatan.com/faq-fundamental-beliefs/</a></li>
+        <li>The Satanic Temple (2013), non-theism, the Seven Tenets, and church–state activism — "The Satanic Temple," reference overviews. <a href="https://en.wikipedia.org/wiki/The_Satanic_Temple">https://en.wikipedia.org/wiki/The_Satanic_Temple</a></li>
+        <li>The Satanic Panic and the FBI's Lanning report finding no evidence of Satanic ritual abuse networks — "Satanic panic" / "Satanic ritual abuse," reference overviews. <a href="https://en.wikipedia.org/wiki/Satanic_panic">https://en.wikipedia.org/wiki/Satanic_panic</a></li>
+        <li>Baphomet as Éliphas Lévi's 1856 creation (not an ancient demon); the Black Mass as largely literary — "Baphomet," Wikipedia. <a href="https://en.wikipedia.org/wiki/Baphomet">https://en.wikipedia.org/wiki/Baphomet</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch40 */
+  ch40: { html: `
+    <p class="lead">The living Afro-Atlantic faiths — Haitian Vodou, Cuban Santería, Brazilian Candomblé, and the newer fire of Rastafari — that grew from the African religions carried into slavery, and the honest work of seeing them as the rich, healing, community faiths they are, behind the racist caricature the word "voodoo" has draped over them.</p>
+
+    <h2>The oath at Bois Caïman</h2>
+
+    <p>On a night in August 1791, in a wooded clearing called <strong>Bois Caïman</strong> in the north of the French colony of Saint-Domingue, enslaved Africans gathered around a <strong>Vodou</strong> priest and priestess. A pig was sacrificed; an oath was sworn; the spirits were called. Within days the northern plantations were in flames, and there had begun the only <strong>slave revolution in history to succeed</strong> — the thirteen-year struggle that would destroy French rule and, in 1804, create <strong>Haiti</strong>, the first Black republic. Whatever the exact details of that night, its meaning is not in doubt: the religion the enslaved had carried across the ocean was not a private consolation but a force that helped break their chains. This chapter is about that religion and its sisters — the faiths that survived the Middle Passage and became, in the Americas, living traditions of millions.</p>
+
+    <h2>What the diaspora religions are</h2>
+
+    <p>These are the <strong>Afro-Atlantic</strong> religions — the descendants of the West and Central African traditions of Chapter 33, transplanted by the transatlantic slave trade and reforged in the Americas through a <strong>syncretism</strong> with Roman Catholicism (and, later, with Spiritism and Indigenous elements). Denied their gods, the enslaved hid them behind the Catholic <strong>saints</strong> and kept the essentials alive: the spirits, the ancestors, divination, initiation, drumming, and above all <strong>spirit possession</strong>. From that concealment came Haitian <strong>Vodou</strong>, Cuban <strong>Santería</strong>, Brazilian <strong>Candomblé</strong> and <strong>Umbanda</strong>, and the folk traditions of New Orleans — and, in the twentieth century, the new Jamaican faith of <strong>Rastafari</strong>.</p>
+
+    <h2>Haitian Vodou</h2>
+
+    <p><strong>Vodou</strong> centers on the <strong>lwa</strong> — the spirits, most bearing the names of old African divinities and doubled with Catholic saints. Above them is the remote creator, <strong>Bondye</strong>; below, the lwa are grouped into "nations," chiefly the cool, sweet-tempered <strong>Rada</strong> (African-derived) and the hot, fierce <strong>Petwo</strong> (born in the New World, out of the rage of slavery itself). <strong>Papa Legba</strong>, keeper of the crossroads, must open the way before any other can be reached; <strong>Damballa</strong> the serpent, the love-spirit <strong>Ezili</strong>, and the graveyard <strong>Gede</strong> under <strong>Baron Samedi</strong> each have their character, colors, and songs. Worship is led by a <strong>houngan</strong> or <strong>mambo</strong>, and its central act is <strong>possession</strong>: through drumming and dance a lwa "mounts" a devotee — the "horse" — and speaks and acts through them, so that the god is bodily present in the room.</p>
+
+    <h2>Santería and Candomblé</h2>
+
+    <p>In Cuba, <strong>Santería</strong> (Regla de Ocha–Ifá, or Lucumí) preserved the <strong>Yoruba</strong> cosmos most fully: beneath the high god <strong>Olodumare</strong> stand the <strong>orichas</strong> — <strong>Elegguá</strong> at the crossroads, <strong>Ogún</strong> of iron, <strong>Yemayá</strong> of the sea, <strong>Ochún</strong> of the rivers and love, <strong>Changó</strong> of thunder, <strong>Obatalá</strong> the cool creator — each masked, historically, behind a Catholic saint, each with its colors, foods, drum-rhythms, and beaded necklaces. Initiation "makes the saint" in the devotee, and the <strong>babalawo</strong> reads the future through <strong>Ifá</strong>. In Brazil, <strong>Candomblé</strong> kept the same <strong>orixás</strong> with comparable fidelity in its <strong>terreiros</strong> (temples), led by a <em>mãe</em>- or <em>pai-de-santo</em>, while the related <strong>Umbanda</strong> blended the African spirits more freely with Spiritism, Catholicism, and Indigenous Brazilian elements.</p>
+
+    <h2>Rastafari</h2>
+
+    <p>The newest member of the family was born not of slavery's first centuries but of its long aftermath. In <strong>Jamaica</strong> in the <strong>1930s</strong>, drawing on the Pan-Africanism of <strong>Marcus Garvey</strong> and the biblical vision of <strong>Ethiopianism</strong>, poor Black Jamaicans hailed the coronation of <strong>Haile Selassie</strong> — <strong>Ras Tafari</strong> — as Emperor of Ethiopia in 1930 as the fulfillment of prophecy: God, <strong>Jah</strong>, returned in the person of an African king. <strong>Rastafari</strong> reads the modern West as <strong>Babylon</strong>, the corrupt and oppressive order, and Africa — Ethiopia — as <strong>Zion</strong>, the promised land of return. Its people wear <strong>dreadlocks</strong> (on the Nazirite vow), eat natural <strong>ital</strong> food, treat <strong>ganja</strong> as a sacrament of meditation, and carried their faith to the world on the sound of <strong>reggae</strong> and the voice of <strong>Bob Marley</strong>. It is a diaspora religion of a different kind: a synthesis not of African gods and Catholic saints but of the African exile and the Bible itself.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>These religions encode the sacred in drawing, color, rhythm, and disguise.</p>
+
+    <ul>
+      <li>The Vodou <strong>vèvè</strong> is a precise ritual <strong>sigil</strong> — an intricate design traced on the ground in cornmeal or ash, each pattern summoning one specific lwa, a drawn name that calls a god.</li>
+      <li>The orichas are encoded in <strong>color, number, and object</strong>: the bead necklaces (<em>elekes</em>) a devotee wears announce which oricha owns their head, and each spirit's altar, food, and dress are a fixed code of identity.</li>
+      <li>The <strong>drum</strong> is a language: each oricha and lwa answers to its own <strong>rhythm</strong>, so that the drummers literally call particular spirits by name in sound — the diaspora cousin of the sacred sound running through this whole book.</li>
+      <li>And the deepest encoding of all was <strong>concealment itself</strong>: the Catholic <strong>saint</strong> worn as a mask over the African god — Changó behind Saint Barbara, Legba behind Saint Peter — an entire theology hidden in plain sight, so that the powerful never saw what was really being worshipped.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The diaspora religions are the direct, living continuation of the <strong>African Traditional Religion</strong> of Chapter 33 — the same Yoruba orishas, Fon vodun, and Kongo cosmology, carried across the water and grown into new faiths. They fused with the <strong>Catholic Christianity</strong> of the colonizers and, later, drew on the <strong>Spiritism</strong> that Chapter 36's Spiritualism had seeded in the Americas. Rastafari joins them from the Bible and the Black freedom struggle. Together they are among the fastest-spreading religions in the modern world — orisha worship has returned, now openly, to global cities far from Africa and the Caribbean — and one of the great, and long-slighted, roots of the religious and cultural life of the whole Americas.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The living Afro-Atlantic religions — Vodou, Santería, Candomblé, Umbanda — their African origins, their syncretic formation under slavery, their beliefs, spirits, and possession-centered practice; <strong>Vodou's</strong> documented role at <strong>Bois Caïman</strong> and in the <strong>Haitian Revolution</strong>; and the twentieth-century history of <strong>Rastafari</strong> from Garvey and Haile Selassie's 1930 coronation.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported — the racist caricature</h4>
+        <p>The Hollywood "<strong>voodoo</strong>" of pin-stuck dolls, zombies, curses, and evil is not these religions; it is a <strong>racist distortion</strong> built to demonize Black faith. In reality these are traditions of <strong>healing, community, ancestor-honor, and moral order</strong>; the "voodoo doll" is largely a Western invention conflated with unrelated folk magic. Naming that distortion as false is a matter of evidence, not only of respect.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The exact <strong>demographics</strong> of traditions long practiced in secret are uncertain; the precise <strong>African-versus-Creole</strong> origins of particular spirits and rites (the Petwo lwa, for instance, are New World creations) are still being worked out by scholars; and the internal <strong>diversity</strong> of each religion resists any single description. What is not open is their reality, their depth, or their dignity.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Haitian Vodou: the lwa, the Rada and Petwo nations, Bondye, possession, and syncretism with Catholic saints — "Haitian Vodou" and "Rada lwa," Wikipedia. <a href="https://en.wikipedia.org/wiki/Rada_lwa">https://en.wikipedia.org/wiki/Rada_lwa</a></li>
+        <li>Bois Caïman (1791) and Vodou's role in the Haitian Revolution — reference overviews of Vodou and Haitian independence. <a href="https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman">https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman</a></li>
+        <li>Santería (Regla de Ocha / Lucumí): Olodumare and the orichas, syncretism, initiation, Ifá — "Santería," Wikipedia. <a href="https://en.wikipedia.org/wiki/Santer%C3%ADa">https://en.wikipedia.org/wiki/Santer%C3%ADa</a></li>
+        <li>Candomblé and Umbanda: the orixás, the terreiro, possession — "Candomblé," Wikipedia. <a href="https://en.wikipedia.org/wiki/Candombl%C3%A9">https://en.wikipedia.org/wiki/Candombl%C3%A9</a></li>
+        <li>Rastafari: Haile Selassie as Jah, Babylon and Zion, Garvey, dreadlocks, ital, ganja, reggae — "Rastafari," Britannica. <a href="https://www.britannica.com/topic/Rastafari">https://www.britannica.com/topic/Rastafari</a></li>
+        <li>The racist "voodoo" stereotype vs. the reality of healing and community — Smithsonian / "The Truth About Voodoo" overviews. <a href="https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/">https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/</a></li>
+      </ul>
+    </div>
   ` }
 };

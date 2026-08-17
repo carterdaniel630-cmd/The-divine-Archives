@@ -92,6 +92,15 @@ clears them in batch, at which point the tag is removed and the status becomes
 
 **Early Modern (era 08) traditions complete** (ch31–ch34): Reformation, Witch Trials, African Traditional Religion, Sikhism.
 
+| ch35 — New Religious Movements | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch35-new-religious-movements-modern.md` |
+| ch36 — Spiritualism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch36-spiritualism-modern.md` |
+| ch37 — Theosophy & the Occult Revival | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch37-theosophy-occult-revival-modern.md` |
+| ch38 — Wicca & Modern Paganism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch38-wicca-modern-paganism-modern.md` |
+| ch39 — Satanism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch39-satanism-modern.md` |
+| ch40 — African Diaspora Religions | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch40-diaspora-religions-modern.md` |
+
+**Modern (era 09) traditions complete** (ch35–ch40): New Religious Movements, Spiritualism, Theosophy & the Occult Revival, Wicca & Modern Paganism, Satanism, African Diaspora Religions.
+
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
 ## Per-chapter content checklist (from CLAUDE.md)
