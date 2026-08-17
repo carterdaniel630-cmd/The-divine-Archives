@@ -550,6 +550,34 @@
       '</svg>',
       "Interpretive illustration",
       "The Tree of Life (Etz Chaim) &mdash; the ten sefirot through which the hidden Ein Sof emanates into creation, joined by the twenty-two paths of the Hebrew letters. An original geometric rendering of the traditional figure."
+    ),
+
+    /* Ch27 — Sufism: a whirling dervish of the sema, one hand to heaven, one to earth */
+    "ch27": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        // motion arcs suggesting the turn
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-linecap="round" stroke-dasharray="2 6">' +
+          '<path d="M40 150 A 60 26 0 0 0 160 150"/>' +
+          '<path d="M48 158 A 52 20 0 0 0 152 158"/></g>' +
+        '<g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">' +
+          // sikke (the tall hat)
+          '<path d="M94 60 L97 30 L103 30 L106 60 Z" stroke-width="1.4"/>' +
+          // head
+          '<circle cx="100" cy="66" r="6" stroke-width="1.4"/>' +
+          // arms: right up to heaven, left down to earth
+          '<path d="M100 80 L140 58" stroke-width="1.8"/>' +
+          '<path d="M100 80 L64 98" stroke-width="1.8"/>' +
+          '<circle cx="141" cy="57" r="1.7" fill="currentColor"/><circle cx="63" cy="99" r="1.7" fill="currentColor"/>' +
+          // the flaring white skirt (tennure)
+          '<path d="M100 78 C82 84 60 116 52 156 L148 156 C140 116 118 84 100 78 Z" stroke-width="1.6"/>' +
+          // pleats
+          '<g stroke-width="0.7" opacity="0.5">' +
+            '<line x1="100" y1="86" x2="100" y2="156"/><line x1="84" y1="110" x2="76" y2="156"/>' +
+            '<line x1="116" y1="110" x2="124" y2="156"/></g></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A dervish of the sema &mdash; the whirling ceremony of the Mevlevi &mdash; the right hand lifted to receive grace from heaven, the left turned down to pass it to the earth, the robe flaring as the soul turns toward union. An original geometric rendering, not a specific image."
     )
 
   };

@@ -2278,5 +2278,92 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from standard reference and scholarly sources during drafting rather than from memory. Kabbalah presents itself as ancient and received while its major texts are, to history, medieval pseudepigrapha; the chapter keeps the tradition&rsquo;s own claims and the documentary record distinct, follows the project&rsquo;s symbology rule by presenting gematria/notarikon/temurah as attested devotional and interpretive arts (not a cipher that yields checkable facts), and reserves Christian Kabbalah, Hermetic Qabalah, and the modern &ldquo;Kabbalah Centre&rdquo; &mdash; along with 16th-century Lurianic Kabbalah and 18th-century Hasidism &mdash; for their own later chapters. Live debates (the authorship of the Zohar and Bahir; the older material underlying them) are left open rather than resolved.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch27 */
+  ch27: { html: `
+    <p class="lead">The mystical heart of Islam &mdash; a path of love, remembrance, and the annihilation of the self in God, carried by wandering ascetics, world-shaping philosophers, and the greatest devotional poets who ever lived &mdash; told with care for what the tradition teaches, what history can trace, and the ways the modern West has remade it.</p>
+
+    <h2>The turning</h2>
+    <p>A man stands in a circle in a white robe, a tall camel-hair hat on his head, arms crossed over his chest. Music begins &mdash; reed flute, drum, the chanted name of God &mdash; and he begins to turn. His arms open: the right palm lifts toward heaven, the left tips down toward the earth, and grace, the tradition says, pours through him from the one to the other. He spins, and keeps spinning, the robe flaring into a white disc, until the self that watches and counts and fears seems to dissolve into the turning. The hat is his ego&rsquo;s <strong>tombstone</strong>; the robe, its <strong>shroud</strong>. This is the <strong>sema</strong>, the ceremony of the <strong>Mevlevi</strong> order &mdash; the &ldquo;whirling dervishes&rdquo; &mdash; a prayer danced rather than spoken, the soul&rsquo;s journey out of separation into union with God.</p>
+    <p>The dervishes turn in memory of one man: <strong>Jalal ad-Din Rumi</strong>, whose verses are, eight hundred years later, among the best-selling poetry in the world. That fame is part of this chapter&rsquo;s problem &mdash; because the Rumi the modern West adores has often been stripped of the thing he lived and breathed. Sufism is the inward, mystical dimension of <strong>Islam</strong>, and to describe it honestly is to keep it whole.</p>
+
+    <h2>What Sufism is</h2>
+    <p><strong>Sufism</strong> &mdash; in Arabic <em>tasawwuf</em> &mdash; is the mysticism of Islam: the pursuit of direct, experiential nearness to the one God, beyond mere law and doctrine, through <strong>love</strong> (<em>mahabba</em>) and the ceaseless <strong>remembrance</strong> of God (<em>dhikr</em>). The name most likely comes from <em>suf</em>, the coarse <strong>wool</strong> of the early ascetics. Its practitioners walk a <strong>path</strong> (<em>tariqa</em>) under a master, ascending through <strong>stations</strong> (<em>maqamat</em>) and passing through God-given <strong>states</strong> (<em>ahwal</em>) toward two linked goals: <strong>fana</strong>, the annihilation of the ego-self, and <strong>baqa</strong>, subsistence in God.</p>
+
+    <h2>Origins</h2>
+    <p>Sufism arose early, among ascetics who recoiled from the sudden wealth of the <strong>Umayyad</strong> empire and turned to poverty, prayer, and the love of God. The great early figure is <strong>Hasan al-Basri</strong> (d. 728), the preacher remembered as a founder of the science of <strong>purifying the heart</strong>. A generation later <strong>Rabia al-Adawiyya</strong> (d. 801) &mdash; a freed slave woman of Basra &mdash; gave Sufism its most radical doctrine: love of God for God&rsquo;s own sake alone. The tradition remembers her walking the streets with a torch and a bucket, meaning to <strong>burn down paradise and quench the fires of hell</strong>, so that people would love God neither for reward nor from terror, but purely.</p>
+    <p>How this piety became the vast mystical system of later centuries is genuinely debated. The old account of a smooth &ldquo;transition from <em>zuhd</em> (asceticism) to <em>tasawwuf</em>&rdquo; has been questioned, and scholars still argue how much Sufism drew on <strong>Neoplatonism</strong>, Christian <strong>monasticism</strong>, or Indian ideas versus growing from seeds in the <strong>Qur&rsquo;an</strong> itself. Sufis insist on the latter: that theirs is the inner meaning of Islam, traced through an unbroken <strong>chain</strong> (<em>silsila</em>) of masters back to Muhammad.</p>
+
+    <h2>Al-Ghazali: the great reconciliation</h2>
+    <p>The hinge of Sufi history is <strong>Abu Hamid al-Ghazali</strong> (d. 1111), the most celebrated theologian of his age. At the height of his fame, holding the foremost chair at the <strong>Nizamiyya</strong> academy in Baghdad, he suffered a shattering crisis &mdash; recounted in his autobiography, <em>Deliverance from Error</em> &mdash; abandoned his post, and wandered for years. Out of it came the <strong>Ihya Ulum al-Din</strong> (&ldquo;The Revival of the Religious Sciences&rdquo;), which wove Sufi inwardness together with orthodox Sunni law and theology and argued that the mystical path was the living core of the faith. More than any other act, al-Ghazali&rsquo;s synthesis made Sufism <strong>respectable</strong> &mdash; the beating heart of mainstream Islam for the next seven centuries.</p>
+
+    <h2>The great flowering</h2>
+    <ul>
+      <li><strong>Ibn Arabi</strong> (1165&ndash;1240), the Andalusian &ldquo;Greatest Master&rdquo; (<em>al-Shaykh al-Akbar</em>), poured out over three hundred works, above all the <em>Fusus al-Hikam</em> and the immense <em>Meccan Openings</em>. His doctrine of <strong>wahdat al-wujud</strong>, the &ldquo;unity of being,&rdquo; holds that only God truly exists and all creation is the self-disclosure of the divine &mdash; a vision debated and condemned ever since.</li>
+      <li><strong>Rumi</strong> (1207&ndash;1273), writing in Persian in Konya, composed the <strong>Mathnawi</strong>, some 25,000 couplets later Sufis called &ldquo;the Qur&rsquo;an in Persian.&rdquo; After the loss of his companion <strong>Shams of Tabriz</strong>, his grief became a fountain of verse on divine love.</li>
+      <li><strong>Attar</strong> of Nishapur, whose <em>Conference of the Birds</em> allegorizes the soul&rsquo;s journey to God, and <strong>Suhrawardi</strong>, the philosopher of illumination, stand beside them.</li>
+    </ul>
+
+    <h2>The orders</h2>
+    <p>This era&rsquo;s other great development is institutional: Sufism organized into <strong>tariqas</strong> &mdash; orders, each a lineage descending through a <em>silsila</em> from a founding saint to the Prophet. The <strong>Qadiriyya</strong> grew around <strong>Abd al-Qadir al-Jilani</strong> (d. 1166); the <strong>Chishtiyya</strong> carried Sufism deep into India; the <strong>Mevlevi</strong> formed around Rumi (c. 1250); the <strong>Shadhiliyya</strong>, <strong>Rifa&rsquo;iyya</strong>, and many more followed. Each gathered in a lodge &mdash; <em>khanqah</em>, <em>zawiya</em>, or <em>tekke</em> &mdash; around a living <strong>shaykh</strong> to whom the disciple (<em>murid</em>) submitted utterly, as (the saying went) a corpse in the hands of the washer. Through these orders Sufism became the everyday religion of millions and the chief engine of Islam&rsquo;s spread across Africa, Anatolia, Central Asia, and the Indian subcontinent.</p>
+
+    <h2>Practice</h2>
+    <p>The cornerstone of Sufi life is <strong>dhikr</strong>, the remembrance of God &mdash; rhythmic repetition of his names or short formulas, aloud or silent, alone or in swaying, chanting assemblies. Beyond it lie <strong>muraqaba</strong> (silent meditation), <strong>tafakkur</strong> (contemplation), breath-work, and <strong>sama</strong>, the &ldquo;spiritual audition&rdquo; of music and sacred dance. The seeker climbs the <strong>stations</strong> &mdash; repentance (<em>tawba</em>), patience (<em>sabr</em>), gratitude (<em>shukr</em>), trust (<em>tawakkul</em>) &mdash; toward <strong>love</strong> (<em>mahabba</em>) and finally <strong>ma&rsquo;rifa</strong>, the tasted <strong>knowledge</strong> of God no book can give. Through all of it the work is to wear down the <strong>nafs</strong>, the grasping ego-self, until only God remains.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Sufism hides its deepest teaching, like the traditions beside it, inside an <strong>encoded language</strong> &mdash; and its symbols are among the most beautiful in any faith.</p>
+    <ul>
+      <li>The <strong>Ninety-Nine Beautiful Names of God</strong> (<em>al-asma al-husna</em>) are the substance of <em>dhikr</em>: each name a facet of the divine, told on beads until the reciter is saturated in the quality he names.</li>
+      <li>The <strong>wine imagery</strong> of Sufi poetry is a complete symbolic system, not a celebration of drink. The <strong>wine</strong> is divine love; <strong>drunkenness</strong> is <em>fana</em>; the <strong>cup</strong> is the body and mind; the <strong>tavern of ruin</strong> is the state beyond the ego; the <strong>Cupbearer</strong> (<em>Saqi</em>) and the <strong>Beloved</strong> are God. What reads on the surface as forbidden and erotic is, to the initiate, the most sacred thing there is &mdash; a deliberate veil over the mystery.</li>
+      <li>The <strong>sema</strong> is enacted cosmology: the dervish becomes an axis between heaven and earth, the right hand receiving grace from above and the left passing it to the world, turning as the planets turn around the sun of God.</li>
+      <li>The <strong>heart</strong> (<em>qalb</em>) is the true organ of knowing &mdash; not the reasoning mind but the polished heart, in which, cleansed of rust by <em>dhikr</em>, the divine is reflected.</li>
+    </ul>
+    <p>A necessary honesty: the <strong>Rumi</strong> quoted on a million calendars is frequently a modern invention. His most popular English &ldquo;translators&rdquo; worked from other translations, not the Persian, and quietly <strong>stripped away the Qur&rsquo;an, the Prophet, and the Islam</strong> that saturate every page of the original, remaking a devout Muslim jurist and mystic into a creed-free guru. The real Rumi cannot be understood outside the faith he served.</p>
+
+    <h2>Connections</h2>
+    <p>Sufism is the mystical inner path of the <strong>Islam</strong> of the earlier era, and the exact counterpart of the <strong>Kabbalah</strong> of the neighboring chapter &mdash; two initiatory, love-drunk mysticisms rising inside two Abrahamic faiths in the same centuries, each with its coded poetry, its chain of masters, and its ladder to a hidden God. Its philosophical wing, especially Ibn Arabi, ran parallel to the great <strong>scholastic</strong> systems of the age and drew, like them, on <strong>Neoplatonism</strong>. It shaped the devotional life of half the Muslim world, and in the modern age became the most exported and most transformed of all Islamic traditions.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The rise of Sufism from early Islamic asceticism; the historical figures of <strong>Hasan al-Basri</strong>, <strong>Rabia</strong>, <strong>al-Ghazali</strong>, <strong>Ibn Arabi</strong>, and <strong>Rumi</strong>, and the dates and content of their major works.</li>
+          <li>The formation of the <strong>tariqa</strong> orders (Qadiriyya, Chishtiyya, Mevlevi, and the rest) in the high medieval period.</li>
+          <li>The core practices of <strong>dhikr</strong>, <strong>sama</strong>, and the master&ndash;disciple path.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The <strong>miracles</strong> (<em>karamat</em>) of the Sufi saints are matters of faith, not historical finding.</li>
+          <li>Ibn Arabi&rsquo;s <strong>wahdat al-wujud</strong> is a theological vision, described here, neither proven nor refuted.</li>
+          <li>The popular modern image of a <strong>universal, de-Islamized Rumi</strong> is a documented distortion of a poet who was a practicing Muslim through and through.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open &mdash; and contested</h4>
+        <ul>
+          <li>The <strong>origins debate</strong>: how much Sufism owes to Neoplatonic, Christian-monastic, or Indian influence versus purely Qur&rsquo;anic roots, and whether the &ldquo;<em>zuhd</em>-to-<em>tasawwuf</em>&rdquo; model holds.</li>
+          <li>The authenticity of some sayings and works attributed to the early masters.</li>
+          <li>A live <strong>intra-Islamic dispute</strong> this book does not settle: revivalist movements (Wahhabi, Salafi) condemn saint-tomb veneration and organized <em>dhikr</em> as <em>bid&rsquo;a</em>, while most premodern Muslims embraced them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Origins, al-Ghazali, the flowering</h4>
+      <ul>
+        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/tasawwuf">Encyclopedia.com: tasawwuf, origins, Hasan al-Basri, Rabia</a>; <a href="https://en.wikipedia.org/wiki/The_Revival_of_the_Religious_Sciences">al-Ghazali&rsquo;s Ihya Ulum al-Din</a>; <a href="https://ibnarabisociety.org/">Muhyiddin Ibn Arabi Society (wahdat al-wujud)</a>.</li>
+      </ul>
+      <h4>Orders, practice, symbology, and the honesty spine</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Mevlevi_Order">the Mevlevi order, Rumi, and the sema</a>; <a href="https://ghayb.com/the-sufi-orders-of-islam/">the founding of the tariqas</a>; <a href="https://pluralism.org/sufism-seeking-god">dhikr, sama, maqamat, fana/baqa</a>.</li>
+        <li><a href="https://www.nimatullahi.org/sufi-symbolism">Sufi symbolism (wine, tavern, the Beloved)</a>; <a href="https://en.wikipedia.org/wiki/Anti-Sufism">the Salafi/Wahhabi condemnation of tomb-veneration and dhikr as bid&rsquo;a</a>; <a href="https://www.dar-al-masnavi.org/western_views.html">the de-Islamized Western reception of Rumi</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly/Sufi sources during drafting rather than from memory. Sufism is presented as the mystical dimension of Islam, kept whole rather than universalized: saint-miracles and wahdat al-wujud are recorded as faith and theology; the origins/influence debate and the &ldquo;zuhd-to-tasawwuf&rdquo; model are left open; the live Salafi&ndash;Sufi dispute over tombs and dhikr is presented without adjudication; the wine-and-Beloved imagery is treated as a deliberate symbolic code (kin to Tantra&rsquo;s twilight language and Kabbalah&rsquo;s Sod); and the popular de-Islamized &ldquo;universal Rumi&rdquo; is flagged as a documented modern distortion of the historical, devout poet.</p>
+    </div>
   ` }
 };
