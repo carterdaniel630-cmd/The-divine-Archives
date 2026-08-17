@@ -19,7 +19,13 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 5. ch21–ch30 (Early Medieval + High Medieval)
 
 ## Progress
-- _(none yet — batch opened after Batch I reached READY FOR REVIEW)_
+- **ch01 The Flood — expanded (2026-08-17).** Added: Irving Finkel's *Ark Tablet*
+  (the round-coracle Atrahasis text, the "two by two" line); Berossus's Greek
+  *Babyloniaca* / Xisuthros as the documented Hellenistic transmission; the
+  Qur'anic flood of Nuh (Mount Judi, the drowned son) as the third Abrahamic
+  branch; the Maya *Popol Vuh* wooden-people flood as a New World
+  independent-invention case. Evidence-honesty + Sources updated; markdown and
+  rendered `chapters.js` body edited in step; static page rebuilt and verified.
 
 ## Gate
 Grouped as **Batch II**, a single review point separate from Batch I. Flagged READY FOR REVIEW only when the deepening pass is complete and checkpointed.
