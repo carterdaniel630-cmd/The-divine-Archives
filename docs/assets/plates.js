@@ -644,6 +644,31 @@
       '</svg>',
       "Interpretive illustration",
       "A stepped temple-pyramid beneath the sun &mdash; the temple-mountain and solar kingship shared, independently, by the Maya, the Aztec, and the Inca. An original geometric rendering, not a specific monument."
+    ),
+
+    /* Ch30 — Bhakti: a lotus in bloom, the flower of devotion */
+    "ch30": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // outer petals (broader, paler), fanning widest
+        '<g stroke="currentColor" stroke-width="1" opacity="0.5">' +
+          '<path d="M100 150 C 84 120 84 92 100 74 C 116 92 116 120 100 150 Z" transform="rotate(-72 100 150)"/>' +
+          '<path d="M100 150 C 84 120 84 92 100 74 C 116 92 116 120 100 150 Z" transform="rotate(72 100 150)"/></g>' +
+        // main petals
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(-48 100 150)"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(-24 100 150)"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(24 100 150)"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(48 100 150)"/></g>' +
+        // calyx / base and stem
+        '<g stroke="currentColor" stroke-width="1" opacity="0.7">' +
+          '<path d="M74 150 Q100 162 126 150"/>' +
+          '<line x1="100" y1="152" x2="100" y2="176"/></g>' +
+        '<circle cx="100" cy="150" r="2.6" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A lotus in bloom &mdash; the flower of devotion, rising from the water unstained: an emblem for a religion of love open to all. An original geometric rendering, not a specific image."
     )
 
   };

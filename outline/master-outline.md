@@ -81,8 +81,9 @@ clears them in batch, at which point the tag is removed and the status becomes
 | ch27 — Sufism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch27-sufism-high-medieval.md` |
 | ch28 — Scholasticism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
 | ch29 — Aztec, Maya & Inca | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch29-aztec-maya-inca-high-medieval.md` |
+| ch30 — Bhakti | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch30-bhakti-high-medieval.md` |
 
-Era 07 — High Medieval in progress. Remaining: Bhakti.
+**High Medieval (era 07) traditions complete** (ch26–ch30): Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 

@@ -2519,5 +2519,88 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched from standard reference and archaeological sources during drafting rather than from memory. Because most of what survives was recorded by the Spanish who destroyed these religions, the chapter keeps archaeological reality distinct from conquest propaganda (the impossible 80,400 figure) and from modern myth (the non-Maya &ldquo;2012 apocalypse&rdquo;), and treats human sacrifice as real and described in its own cosmological logic &mdash; neither sensationalized nor denied. The three cultures are presented as independent, their parallels (divine kingship, cyclical time, temple-mountains, blood offering) noted as independent answers to shared questions; and the deep source problem &mdash; partial decipherment, hostile transcription, the largely unread quipu &mdash; is kept in view throughout.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch30 */
+  ch30: { html: `
+    <p class="lead">The devotional revolution that swept across medieval India &mdash; a religion of passionate, personal love for God, sung in the mother tongue by weavers and washerwomen and untouchables, needing no priest, no temple, and no Sanskrit, only the heart &mdash; and the honest distinction between what the movement taught, what history can date, and where devotion has wrapped its saints in legend.</p>
+
+    <h2>The flowers under the shroud</h2>
+    <p>When <strong>Kabir</strong> died, around 1518, the story goes that his followers fell to quarrelling over his body. He had been raised a Muslim and revered by Hindus, and now the Muslims wished to bury him and the Hindus to burn him. As they argued over the corpse, someone lifted the shroud &mdash; and found beneath it not a body but a heap of <strong>flowers</strong>. The Hindus took half to cremate and the Muslims half to bury, and the poet-saint who had spent his life mocking the boundary between the two slipped free of it even in death.</p>
+    <p>The tale is almost certainly a legend, and it is the right place to begin &mdash; because Bhakti is a tradition whose truth lives in its poetry and whose saints live, very often, in devout legend rather than firm history. What is beyond doubt is the movement itself: one of the great religious upheavals of the medieval world, a tide of love that broke the monopoly of priest and Sanskrit and caste, and remade the spiritual life of a subcontinent.</p>
+
+    <h2>What Bhakti is</h2>
+    <p><strong>Bhakti</strong> &mdash; from a Sanskrit root meaning &ldquo;to share, to participate, to love&rdquo; &mdash; is <strong>devotion</strong>: the path of intense, personal, self-giving love for a personal God, held superior to ritual sacrifice, to philosophical knowledge, and to ascetic works. Its claim was radical in its simplicity: to reach God one needs no <strong>priest</strong>, no <strong>temple</strong>, no <strong>Sanskrit</strong>, no ritual purity, and no high birth &mdash; only <strong>love</strong> (<em>prema</em>), <strong>surrender</strong> (<em>prapatti</em>), and the constant repetition of the divine <strong>name</strong>. That threw the doors of Hindu religious life open to everyone the old order had shut out: the low-caste, the untouchable, the illiterate, and women &mdash; many of whom became the movement&rsquo;s greatest saints.</p>
+
+    <h2>From the Tamil south</h2>
+    <p>Bhakti&rsquo;s scriptural seed lay in the <strong>Bhagavad Gita</strong>, which had already named loving devotion as a path to God. But the movement itself was born in the <strong>Tamil south</strong>, between the sixth and ninth centuries, in the songs of two bands of poet-saints. The <strong>Alvars</strong> &mdash; twelve devotees of <strong>Vishnu</strong>, among them the woman saint <strong>Andal</strong> &mdash; poured out hymns gathered into the <em>Nalayira Divya Prabandham</em>. The <strong>Nayanars</strong> &mdash; some sixty-three devotees of <strong>Shiva</strong> &mdash; sang the hymns collected in the <em>Tevaram</em>. They sang not in Sanskrit but in <strong>Tamil</strong>, challenged caste and Brahmin privilege, and set the pattern the whole movement would follow. From the south it spread across India, cresting between the fourteenth and seventeenth centuries.</p>
+
+    <h2>The philosophers of devotion</h2>
+    <p>Bhakti found its intellectual defender in <strong>Ramanuja</strong> (1017&ndash;1137), who answered the austere non-dualism of Shankara &mdash; in which the self dissolves wholly into an impersonal Absolute &mdash; with <strong>Vishishtadvaita</strong>, &ldquo;qualified non-dualism,&rdquo; in which God and the soul remain distinct enough that love between them is real and eternal. Crucially, Ramanuja taught that even <strong>shudras and outcastes</strong> could reach salvation by complete surrender. <strong>Madhva</strong> pressed further into outright dualism. Between them they gave the religion of the heart a rigorous spine &mdash; and preserved the one thing devotion cannot do without: a real Other to love.</p>
+
+    <h2>Saguna and nirguna</h2>
+    <p>The movement divided over a deep question: does God have form? <strong>Saguna</strong> bhakti loves God <strong>with</strong> qualities and form &mdash; <strong>Krishna</strong> with his flute, <strong>Rama</strong>, <strong>Shiva</strong>, the <strong>Goddess</strong> &mdash; present in the image and the temple. <strong>Nirguna</strong> bhakti loves the <strong>formless</strong>, attributeless Absolute beyond all image, and in its boldest voices grew hostile to temple and mosque alike, to idol and to scripture, insisting that the God worth loving cannot be carved or caged. The line between them runs through the whole tradition.</p>
+
+    <h2>The saints</h2>
+    <p>The soul of Bhakti is its <strong>saints</strong> &mdash; a great, unruly company drawn from every corner of society.</p>
+    <ul>
+      <li>In <strong>Karnataka</strong>, <strong>Basava</strong> (twelfth century) founded the <strong>Lingayat</strong> (Virashaiva) movement, rejecting caste, temple, and Brahmin ritual and pouring his teaching into terse <strong>vachana</strong> prose-poems in Kannada; the woman saint <strong>Akka Mahadevi</strong> sang beside him.</li>
+      <li>In <strong>Maharashtra</strong>, <strong>Jnaneshwar</strong> (thirteenth century) wrote the <em>Jnaneshwari</em>, a luminous Marathi commentary on the Gita, and <strong>Namdev</strong> sang his <strong>abhangs</strong> to <strong>Vithoba</strong> of Pandharpur, building the enduring <strong>Varkari</strong> pilgrim tradition.</li>
+      <li>In the <strong>north</strong>, <strong>Ramananda</strong> carried the fire, and from his circle came its most famous voice: <strong>Kabir</strong> (fifteenth century), the weaver of Banaras, a <strong>nirguna</strong> poet who ridiculed the pretensions of Hindu and Muslim alike and sought the one God beyond both &mdash; whose verses were later gathered into the <strong>Sikh scripture</strong>. Beside him stood <strong>Ravidas</strong>, the leather-worker saint. The later blooms &mdash; <strong>Mirabai</strong>, <strong>Surdas</strong>, <strong>Tulsidas</strong>, and <strong>Chaitanya</strong> of Bengal &mdash; belong mostly to the following era.</li>
+    </ul>
+
+    <h2>The practice of love</h2>
+    <p>Bhakti&rsquo;s devotion took set forms &mdash; classically the <strong>nine</strong> (<em>navadha bhakti</em>): hearing God&rsquo;s stories, singing them, remembering, serving, worshipping, bowing, serving as a slave, befriending, and utterly surrendering the self. Its warmth came from the <strong>bhavas</strong>, the moods in which one loved God &mdash; as <strong>master</strong>, <strong>friend</strong>, <strong>child</strong>, or <strong>lover</strong>. Above all it sang: <strong>kirtan</strong> and <strong>bhajan</strong>, communal devotional singing set to ecstatic music, carried the movement into every village, and the endless repetition of the divine <strong>name</strong> &mdash; <em>Ram</em>, <em>Hari</em>, <em>Krishna</em> &mdash; was itself the shortest road to God, needing no learning at all. There was no priest between the devotee and the beloved, and that was the whole point.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Bhakti&rsquo;s genius was to hide nothing and give everything &mdash; yet it, too, encoded the sacred in distinctive ways.</p>
+    <ul>
+      <li>Its central sacred vehicle is the <strong>vernacular song</strong> &mdash; the <em>pada</em>, <em>abhang</em>, <em>vachana</em>, and <em>doha</em> &mdash; composed in the mother tongue so anyone could receive the divine. In doing so the movement became <strong>the single most powerful force in the shaping of the modern Indian languages</strong>: Tulsidas made a scripture of Awadhi, Surdas of Braj, Tukaram of Marathi, Mirabai of Rajasthani, Chaitanya of Bengali.</li>
+      <li>The <strong>divine name</strong> (<em>nama</em>) is itself sacred and sufficient: to repeat it (<em>nama-japa</em>) is to hold the deity present in sound &mdash; the Indian devotional cousin of the Sufi <strong>dhikr</strong>, the tantric <strong>mantra</strong>, the Kabbalistic divine names, and the Shinto <strong>kotodama</strong>, all met in one age.</li>
+      <li><strong>Kabir</strong>&rsquo;s riddling <strong>ulatbamsi</strong>, &ldquo;upside-down language&rdquo; &mdash; deliberately paradoxical verses that turn the world inside out to jolt the hearer awake &mdash; is his version of the coded speech that runs through the esoteric traditions of this book.</li>
+      <li>The Lingayats&rsquo; <strong>ishtalinga</strong> &mdash; a small symbol of Shiva worn on the body, worshipped anywhere &mdash; encodes the whole radical claim of Bhakti in an object: the divine is carried in the heart and on the person, not housed in a temple that only some may enter.</li>
+    </ul>
+
+    <h2>Connections</h2>
+    <p>Bhakti grew from the Vedic and epic Hinduism of the earliest eras and the devotional current in the <strong>Gita</strong>, and it rhymes with the <strong>Tantra</strong> of the previous chapter as another intensely experiential path. Above all it met, in medieval India, the <strong>Sufism</strong> of this very era: the two love-mysticisms cross-fertilized for centuries, and <strong>Kabir</strong> stands at their meeting point, claimed by Hindus, Muslims, and Sikhs alike. It fed directly into the birth of <strong>Sikhism</strong> in the next era &mdash; Guru Nanak&rsquo;s hymns and Kabir&rsquo;s verses share a scripture. With Bhakti the High Medieval age closes: five traditions, from the Kabbalah and Sufism of the Abrahamic west to the temple religions of the Americas and the love-religion of India, each seeking the hidden God through love, order, or blood.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The Bhakti movement and its spread from the Tamil south across India; the poetic corpora of the <strong>Alvars</strong> and <strong>Nayanars</strong>; the philosophers <strong>Ramanuja</strong> and <strong>Madhva</strong>.</li>
+          <li>The saints <strong>Basava</strong>, <strong>Jnaneshwar</strong>, <strong>Namdev</strong>, <strong>Kabir</strong>, and <strong>Ravidas</strong> and their surviving verse; the plain <strong>anti-caste, anti-clerical, vernacular</strong> message; and Bhakti&rsquo;s immense role in shaping the modern Indian languages.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history) &mdash; the lives of the saints</h4>
+        <ul>
+          <li>The <strong>biographies</strong> of most Bhakti saints are woven through with <strong>miracle and legend</strong> (Kabir&rsquo;s body turning to flowers; poison to nectar for Mirabai) &mdash; devotional hagiography, not documented history.</li>
+          <li>Firm <strong>dates</strong> for many saints are uncertain, and the poems attributed to them were largely transmitted orally and compiled later, so a corpus like &ldquo;<strong>Kabir&rsquo;s</strong>&rdquo; is layered and partly the work of others.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>How far the movement&rsquo;s radical <strong>anti-caste</strong> message actually reformed society, as against being spiritually revolutionary while socially absorbed &mdash; scholars disagree.</li>
+          <li>The authorship and dating of many individual poems.</li>
+          <li>Whether <strong>Kabir</strong> is best understood as Hindu, Muslim, or &mdash; as he insisted &mdash; belonging to no such box at all.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Movement, philosophy, saints</h4>
+      <ul>
+        <li><a href="https://www.pw.live/upsc/exams/bhakti-movement">Bhakti movement overview (saguna/nirguna, caste and gender)</a>; <a href="https://en.wikipedia.org/wiki/Alvars">the Alvars and Nayanars</a>; <a href="https://theiashub.com/upsc/bhakti-movement/">Ramanuja&rsquo;s Vishishtadvaita and Madhva</a>; <a href="https://www.iasgyan.in/blogs/a-complete-list-of-saints-and-teachers-of-bhakti-movement">Basava, Jnaneshwar, Namdev, Kabir, Ravidas</a>.</li>
+      </ul>
+      <h4>Practice, language, and the Sufi meeting</h4>
+      <ul>
+        <li><a href="https://socialstudieshelp.com/world-history/the-bhakti-movement-devotion-vernacular-culture-and-social-critique/">bhajan-kirtan, nama, and Bhakti&rsquo;s shaping of the modern Indian languages</a>; <a href="https://iasscore.in/target-pt/bhakti-sufi-movements">the Bhakti&ndash;Sufi meeting and the road to Sikhism</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference sources during drafting rather than from memory. The movement and its poetry are treated as well-documented, while the saints&rsquo; miracle-biographies are flagged as hagiography rather than history and firm dates as often uncertain; the layered, partly-later authorship of corpora like Kabir&rsquo;s is noted. The anti-caste message is affirmed as present in the verse, while how far it reformed society is left open. nama-japa is set beside the Sufi dhikr, tantric mantra, Kabbalistic divine names, and Shinto kotodama as one age&rsquo;s many sacred-sound traditions, and the later blooms (Mirabai, Tulsidas, Chaitanya) and the modern global export of Krishna-devotion are reserved for later eras.</p>
+    </div>
   ` }
 };
