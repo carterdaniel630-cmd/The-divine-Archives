@@ -204,6 +204,36 @@ craft of the **reciter**. The exactness that Egypt invested in carving hieroglyp
 and Mesopotamia in pressing cuneiform, the Vedic world invested in the trained
 human voice.
 
+## The other Veda: charms for the household
+
+The grand *srauta* sacrifices were the religion of kings and priesthoods. But the
+fourth Veda, the **Atharvaveda**, opens a door onto the religion of everyone else —
+the fears and wants of the household and the village, set down as spells. It is the
+least "priestly" of the Vedas and was the last admitted to the canon, and precisely
+for that reason it is the richest surviving record of *lived* Bronze Age religion in
+the whole corpus.
+
+Its hymns are overwhelmingly practical. A large group are **healing charms** against
+named diseases, recited while herbs were administered — so that the Atharvaveda
+doubles as the oldest stratum of Indian medicine. There are charms against
+**takman**, the burning fever (probably malarial), addressed as a demon and ordered
+away to distant peoples; a famous cure for **jaundice** works by sympathetic magic,
+banishing the yellow sickness "up to the sun" and into yellow things — the yellow
+birds, the turmeric, the red bull — while the patient is filled with healthy red.
+Others treat cough, dropsy, worms, wounds, snakebite, poison, and baldness.
+Alongside the cures run charms for every other human need: to win a lover, to secure
+the birth of a son, to subdue a rival co-wife, to prosper cattle and crops, to
+prevail in the assembly, and to curse an enemy — together with protective **amulets**
+(*mani*) of herb and wood worn against demons and misfortune.
+
+Not all of it is small. The Atharvaveda also contains the magnificent **Hymn to the
+Earth** (*Prithivi Sukta*, AV 12.1), sixty-three verses praising the Earth as the
+patient bearer of all life — "May she, the Queen of all that is and is to be, make
+ample room for us" — one of the oldest sustained expressions of reverence for the
+living planet. The Veda of snakebite charms is also the Veda of one of humanity's
+first ecological hymns, and both belong to the same everyday, ground-level piety on
+top of which the grand fire-sacrifice was built.
+
 ## What the ground shows — and doesn't
 
 Here the honesty of this project is tested in a way opposite to the Indus chapter.
@@ -325,6 +355,10 @@ turned inside out.
   richly documented in the hymns.
 - The centrality of the **fire sacrifice** (yajna), the specialist priesthoods, the
   soma cult, and the *aniconic*, temple-less character of early Vedic religion.
+- The **Atharvaveda**'s household and folk religion — healing charms against named
+  diseases (takman fever, jaundice), charms for love, progeny, cattle, and cursing,
+  protective amulets, and the Hymn to the Earth (Prithivi Sukta, AV 12.1) — is
+  directly attested and doubles as the oldest layer of Indian medicine.
 - The Indo-European and Indo-Iranian kinship of Vedic religion: cognate deities
   (Dyaus Pita / Zeus / Jupiter), shared poetic formulae, the soma/haoma inheritance,
   and the deva/asura ↔ daeva/ahura inversion between Vedic and Iranian tradition.
@@ -368,6 +402,13 @@ turned inside out.
   [Hiranyagarbha Sukta](https://en.wikipedia.org/wiki/Hiranyagarbha_S%C5%ABkta);
   Purusha Sukta (Rigveda 10.90).
 - The Gayatri Mantra (Rigveda 3.62.10) — [Wikipedia: Gayatri Mantra](https://en.wikipedia.org/wiki/Gayatri_Mantra).
+
+*The Atharvaveda (household charms and healing)*
+- Maurice Bloomfield, trans., *Hymns of the Atharva-Veda* (Sacred Books of the East,
+  1897) — the takman fever charm (AV V.22) and the jaundice cure —
+  [Internet Sacred Text Archive: Atharva-Veda](https://sacred-texts.com/hin/sbe42/index.htm).
+- The Hymn to the Earth (*Prithivi Sukta*, AV 12.1) —
+  [Internet Sacred Text Archive: AV 12.1](https://sacred-texts.com/hin/av/av12001.htm).
 
 *Deities, Rta, and the pantheon*
 - [Britannica: Vedic religion](https://www.britannica.com/topic/Vedic-religion);

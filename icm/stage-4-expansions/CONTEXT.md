@@ -12,7 +12,7 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 4. Internal checkpoint (consistency, cross-refs, terminology) before the next.
 
 ## Priority order (thinnest / oldest first)
-1. ch01 The Flood · ch02 Egypt · ch03 Mesopotamia · ch04 Indus Valley · ch05 Early Vedic (era 02 + seed)
+1. ch01 The Flood · ch02 Egypt · ch03 Mesopotamia · ch04 Indus Valley · ch05 Early Vedic (era 02 + seed) — **✅ COMPLETE**
 2. ch06–ch09 (Early Iron Age)
 3. ch10–ch15 (Axial Age)
 4. ch16–ch20 (Late Antiquity)
@@ -26,6 +26,25 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   branch; the Maya *Popol Vuh* wooden-people flood as a New World
   independent-invention case. Evidence-honesty + Sources updated; markdown and
   rendered `chapters.js` body edited in step; static page rebuilt and verified.
+- **ch02 Egypt — expanded (2026-08-17).** New "religion of ordinary people"
+  section: Deir el-Medina, the household gods Bes and Taweret, oracle-litter
+  petitions, the Ramesside "age of personal piety" and Neferabu's penitential
+  stela (BM EA 589), Meretseger, and letters to the dead — the CLAUDE.md
+  folk-religion mandate and the chapter's own flagged gap.
+- **ch03 Mesopotamia — expanded (2026-08-17).** Two new sections: Enheduanna
+  (history's first named author, high priestess of Nanna, the *Exaltation of
+  Inanna*); and demons/exorcism + the suffering self (Lamashtu, apotropaic Pazuzu,
+  the *asû*/*āšipu*, *Maqlû*, the "personal god," *Ludlul bēl nēmeqi* and the
+  *Babylonian Theodicy*).
+- **ch04 Indus Valley — expanded (2026-08-17).** Added the trefoil-robed
+  "Priest-King" bust (and its misleading name) and the ten-sign Dholavira
+  "signboard" — both reinforcing the chapter's reading-categories-backward theme.
+- **ch05 Early Vedic — expanded (2026-08-17).** New "the other Veda: charms for the
+  household" section on the Atharvaveda: takman fever and jaundice healing charms,
+  love/progeny/cursing charms, amulets, and the Hymn to the Earth (Prithivi Sukta,
+  AV 12.1) — the chapter's own flagged deepening.
+- **Group-1 checkpoint (era 02 + seed):** integrity 42/42/42/42; every deepened
+  page retains plate + evidence + sources; headless render clean (no JS errors).
 
 ## Gate
 Grouped as **Batch II**, a single review point separate from Batch I. Flagged READY FOR REVIEW only when the deepening pass is complete and checkpointed.
