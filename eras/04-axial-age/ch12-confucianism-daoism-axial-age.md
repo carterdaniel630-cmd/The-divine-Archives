@@ -49,6 +49,34 @@ power, and who would in fact unify China by force), the strategists, the logicia
 and more. The Axial Age in China is this argument — and Confucianism and Daoism are
 the two answers that outlived all the others.
 
+## The great lost school: Mohism
+
+One rival deserves rescue from the footnotes, because for two centuries it was
+Confucianism's most formidable opponent and because it points a road Chinese thought
+did not take. **Mohism**, founded by **Mozi** ("Master Mo," c. 470–391 BCE) and
+carried by a disciplined, almost military brotherhood, judged every practice by one
+plain test: does it benefit the people? This makes the Mohists the ancient world's
+first systematic **consequentialists**. From that test they drew a startling ethic.
+Against the Confucian insistence on graded love — more for one's own father than for a
+stranger — Mozi preached **jian'ai**, "impartial care": concern for everyone equally,
+since partiality is the root of conflict. They condemned offensive war (**feigong**)
+while becoming experts in **defensive** fortification, marching physically to the aid
+of besieged states; and they attacked the Confucians' lavish funerals and long
+mourning as ruinous waste, and fatalism as a creed that excuses the idle and the
+cruel.
+
+And where Confucius kept a careful agnostic silence about Heaven and the spirits,
+Mohism was frankly **theistic**: it taught the **Will of Heaven** (*Tianzhi*) as a
+personal, moral power that loves all people impartially and rewards or punishes their
+conduct, and it insisted on the reality of **ghosts and spirits** as agents of that
+justice — partly, quite explicitly, because a watching, rewarding Heaven gives
+ordinary people a reason to be good. It is the closest the classical Chinese schools
+came to the providential God of the western traditions. Mohism flourished, then
+vanished almost entirely after the Qin unification, its texts nearly lost — but its
+impartial benevolence, its consequentialism, and its theism make it the great road
+not taken of Chinese philosophy, and a reminder that the Hundred Schools held
+possibilities the victorious traditions did not.
+
 ## Confucius: the man and the Analects
 
 **Kongzi** (traditionally **551–479 BCE**) was, by the tradition's own account, a
@@ -327,6 +355,11 @@ the great medieval **Neo-Confucian** synthesis, all of which belong to later cha
 - The **Daodejing** existed in partial, clustered form by c. 300 BCE (**Guodian**
   slips) and near-complete form by c. 200 BCE (**Mawangdui**); the **Zhuangzi**'s Inner
   Chapters derive from a real fourth-century-BCE thinker.
+- **Mohism**, founded by **Mozi** (c. 470–391 BCE), was a major Warring States school:
+  consequentialist ethics of collective benefit, **jian'ai** (impartial care),
+  condemnation of aggression with expert defensive warfare, frugality against lavish
+  funerals, and a frankly **theistic** doctrine of Heaven's Will (*Tianzhi*) and
+  moral-enforcing spirits — before it vanished after the Qin unification.
 - The later emergence of **organized religious Daoism** with the **Celestial Masters**
   (traditionally 142 CE) as an institution distinct from the earlier philosophical
   texts.
@@ -366,6 +399,11 @@ the great medieval **Neo-Confucian** synthesis, all of which belong to later cha
   [Britannica: Confucianism](https://www.britannica.com/topic/Confucianism). On the
   layered formation of the text and the new manuscript finds, [*New Manuscript Evidence
   on the Formation of the Analects* (Early China, Cambridge Core)](https://www.cambridge.org/core/journals/early-china/article/new-manuscript-evidence-on-the-formation-of-the-analects-the-warring-states-anhui-university-zhongni-said-and-the-wangjiazui-kongzi-said/08F1860CBCFD361F58B2034439A71526).
+
+*Mohism*
+- Mozi, impartial care (*jian'ai*), consequentialism, Heaven's Will (*Tianzhi*), and
+  the condemnation of aggression — [Stanford Encyclopedia of Philosophy: Mohism](https://plato.stanford.edu/entries/mohism/);
+  [Internet Encyclopedia of Philosophy: Mozi](https://iep.utm.edu/mozi/).
 
 *Mencius, Xunzi, and the Mandate of Heaven*
 - [SEP: Mencius](https://plato.stanford.edu/entries/mencius/); [SEP: Xunzi](https://plato.stanford.edu/entries/xunzi/);
