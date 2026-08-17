@@ -578,6 +578,40 @@
       '</svg>',
       "Interpretive illustration",
       "A dervish of the sema &mdash; the whirling ceremony of the Mevlevi &mdash; the right hand lifted to receive grace from heaven, the left turned down to pass it to the earth, the robe flaring as the soul turns toward union. An original geometric rendering, not a specific image."
+    ),
+
+    /* Ch28 — Scholasticism: a Gothic rose window, order made visible ("summa in stone") */
+    "ch28": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor">' +
+          '<circle cx="100" cy="100" r="92" stroke-width="1.4"/>' +
+          '<circle cx="100" cy="100" r="82" stroke-width="0.9" opacity="0.6"/>' +
+          // eight radial spokes
+          '<g stroke-width="0.8" opacity="0.55">' +
+            '<line x1="100" y1="100" x2="182" y2="100"/><line x1="100" y1="100" x2="18" y2="100"/>' +
+            '<line x1="100" y1="100" x2="100" y2="182"/><line x1="100" y1="100" x2="100" y2="18"/>' +
+            '<line x1="100" y1="100" x2="158" y2="158"/><line x1="100" y1="100" x2="42" y2="42"/>' +
+            '<line x1="100" y1="100" x2="158" y2="42"/><line x1="100" y1="100" x2="42" y2="158"/></g>' +
+          // ring the foils sit on
+          '<circle cx="100" cy="100" r="50" stroke-width="0.7" opacity="0.4"/>' +
+          // eight foils (petal lights)
+          '<g stroke-width="1">' +
+            '<circle cx="150" cy="100" r="10"/><circle cx="50" cy="100" r="10"/>' +
+            '<circle cx="100" cy="150" r="10"/><circle cx="100" cy="50" r="10"/>' +
+            '<circle cx="135.4" cy="135.4" r="10"/><circle cx="64.6" cy="64.6" r="10"/>' +
+            '<circle cx="135.4" cy="64.6" r="10"/><circle cx="64.6" cy="135.4" r="10"/></g>' +
+          // central rosette
+          '<circle cx="100" cy="100" r="20" stroke-width="1.2"/>' +
+          '<circle cx="100" cy="100" r="11" stroke-width="0.8" opacity="0.7"/></g>' +
+        '<g fill="currentColor">' +
+          '<circle cx="100" cy="100" r="3.5"/>' +
+          '<g opacity="0.7"><circle cx="150" cy="100" r="1.5"/><circle cx="50" cy="100" r="1.5"/>' +
+            '<circle cx="100" cy="150" r="1.5"/><circle cx="100" cy="50" r="1.5"/>' +
+            '<circle cx="135.4" cy="135.4" r="1.5"/><circle cx="64.6" cy="64.6" r="1.5"/>' +
+            '<circle cx="135.4" cy="64.6" r="1.5"/><circle cx="64.6" cy="135.4" r="1.5"/></g></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A Gothic rose window &mdash; order made visible, the &ldquo;summa in stone&rdquo;: a single figure in which every part is articulated and reconciled into a stable whole, as the schoolmen built their arguments. An original geometric rendering, not a specific window."
     )
 
   };
