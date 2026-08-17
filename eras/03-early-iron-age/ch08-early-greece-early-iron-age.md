@@ -178,6 +178,40 @@ they matter enormously for what comes later:
   thought, the *soul* matters more than the body, and its fate depends on how one
   lived — ideas that will feed directly into Pythagoras and Plato in the next era.
 
+## Below Olympus: the household, the heroes, and the curse tablet
+
+The great civic festivals and Panhellenic oracles were only the visible top of Greek
+religion. Most of it happened at home and in the ground.
+
+Domestic worship was constant and small. At the center of every house burned the
+hearth of **Hestia**, who received the first libation of any offering; the storeroom
+held **Zeus Ktesios**, "Zeus of the property," embodied not in a statue but in a
+*kadiskos* — a small two-handled jar filled with water, olive oil, and fruit and
+wound with wool — that guarded the family's stores and wealth. **Zeus Herkeios**
+protected the courtyard, **Apollo Agyieus** the street door, and at the threshold
+and the crossroads stood **Hekate**, goddess of the boundary and the night, given
+her own offerings at the month's dark. Beside the door stood a herm. The ordinary
+Greek met the divine far more often at these household shrines than at any grand
+temple.
+
+Then there were the **heroes** — not gods but powerful dead, great figures of the
+mythic past (Heracles, Theseus, a city's legendary founder) whose bones lay in a
+known tomb and who could still bless or blight the community around them.
+**Hero-cult** grew from family tomb-visiting into a civic institution in this very
+period, the eighth century BCE: a wrathful hero might have to be appeased, a
+friendly one courted as a local protector and battle-ally. The hero was bound to a
+*place* — his grave — in a way the sky-gods never were.
+
+And in the darker corner of that same chthonic world lay the **curse tablet**
+(*katadesmos*, Latin *defixio*). To bind an enemy — a rival in love, a business
+competitor, an opponent in a lawsuit, a racing chariot-team — a Greek would scratch
+the victim's name and a binding formula onto a thin sheet of **lead**, fold or pierce
+it, and deposit it in a grave, a well, or a sanctuary, so that the spirits of the
+dead and the gods below would "pin down" the target. Some sixteen hundred survive,
+hundreds from Athens alone. They are folk religion at its most anxious and most
+literal: a written spell, addressed to the powers beneath the earth, buried where
+the dead could carry it out.
+
 ## What the ground shows
 
 Materially, the story runs: the **Mycenaean** palace civilization of the Bronze
@@ -259,6 +293,11 @@ will adopt wholesale.
 - The Greek alphabet was adapted from Phoenician with the crucial innovation of
   vowels; the grim default afterlife (Hades) coexisted with mystery cults (Eleusis,
   Orphism) offering initiates a better fate.
+- Below the civic cult ran a rich everyday religion: **household worship** (Hestia's
+  hearth, Zeus Ktesios in the kadiskos, Zeus Herkeios, Hekate at the crossroads),
+  the civic **hero-cults** of the powerful dead at their tombs, and the inscribed
+  lead **curse tablets** (katadesmoi/defixiones) buried to bind an enemy — some
+  1,600 known.
 
 **What's not supported by the evidence**
 
@@ -304,6 +343,12 @@ will adopt wholesale.
 - [Wikipedia: Eleusinian Mysteries](https://en.wikipedia.org/wiki/Eleusinian_Mysteries);
   on Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, *Ritual Texts for
   the Afterlife*.
+- Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) —
+  [Angels of Athens: Ancient Greek Religion — everyday cult](https://www.angelsathens.gr/en/blog/ancient-greece/ancient-greek-religion-everyday-cult/);
+  Oxford Reference, "Worship, household."
+- Hero-cult and the curse tablets (katadesmoi/defixiones) —
+  [Wikipedia: Curse tablet](https://en.wikipedia.org/wiki/Curse_tablet);
+  the tomb-cult / hero-cult debate in early Greek society (standard treatments).
 
 *The alphabet*
 - [Wikipedia: History of the Greek alphabet](https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet)
