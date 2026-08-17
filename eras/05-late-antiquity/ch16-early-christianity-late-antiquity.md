@@ -135,6 +135,31 @@ poor, the sick, and the outcast — were radical in the Roman world, and their p
 (caring for plague victims, burying the destitute, elevating the status of women and slaves within
 the community) is widely credited by historians as a real engine of the movement's growth.
 
+## The women of the movement
+
+The depth of the record requires attention to a group the later church often wrote out: the
+women who were central to early Christianity. The Gospels make **Mary Magdalene** the first
+witness of the resurrection — the "apostle to the apostles" of later tradition — and Paul's
+letters name women as coworkers and leaders without apology. In **Romans 16** he commends
+**Phoebe**, a *diakonos* (deacon) of the church at Cenchreae whom he trusts to carry the
+letter itself, and greets **Junia**, whom he calls "prominent among the apostles" — a woman
+apostle whose name medieval copyists later masculinized to "Junias," a form unknown in the
+ancient world, until modern scholarship restored her. **Prisca** (Priscilla) taught
+alongside her husband; an order of **widows** held a recognized place; and women hosted the
+house-churches in which the movement lived. Only later, in the "Pastoral" letters written in
+Paul's name (1 Timothy 2), do the sharp restrictions on women's speech and authority appear
+— evidence that the constraining of women's roles was a development, not the movement's
+starting point.
+
+Nowhere is a woman's own voice clearer than in the **Passion of Perpetua and Felicity**.
+**Vibia Perpetua**, a young, educated noblewoman of Carthage, was arrested with companions —
+among them the pregnant slave **Felicity** — and martyred in the arena in **203 CE**. In
+prison she kept a **diary**, and it survives: one of the earliest writings by a Christian
+woman anywhere, a first-person account of her visions, her defiance of her grieving father,
+her nursing infant, and her calm approach to death. That such a text was written, preserved,
+and read aloud in the churches is a window onto both the courage of the martyrs and the
+real, if contested, standing of women in the early faith.
+
 ## Persecution, martyrdom, and the turn of Constantine
 
 For its first three centuries the church was an illegal or semi-legal sect, and its refusal to
@@ -149,6 +174,21 @@ vision of the cross with his victory at the Milvian Bridge (312 CE), legalized C
 over the nature of Christ, and set the faith on the road to dominance. By **380 CE**, under
 **Theodosius**, Christianity was the official religion of the Roman Empire. The persecuted had become
 the establishment — a transformation whose consequences run through the rest of this archive.
+
+## The birth of the saints
+
+The martyrs did not simply die; they were *remembered*, and out of that remembrance grew one
+of Christianity's most enduring institutions. The earliest account of a martyrdom outside the
+New Testament, the **Martyrdom of Polycarp** (the aged bishop of Smyrna, c. 155 CE), already
+shows the pattern forming: after Polycarp was burned, his community gathered up his charred
+**bones**, which they called "more precious than gold and costly gems," and laid them in a
+fitting place — the seed of the **cult of relics**. They resolved to gather each year on the
+day of his death, for a martyr's death was reckoned his **birthday**, his *dies natalis*, the
+day he was born into heaven; and this annual graveside commemoration is the origin of the
+Christian **calendar of saints**. Long before there were formally canonized saints or grand
+basilicas, ordinary Christians were keeping the "birthdays" of their dead heroes at their
+tombs. The veneration of the martyrs, their relics, and their feast-days — which would grow
+into the vast medieval cult of the saints — begins here, in the age of persecution itself.
 
 ## Symbology and sacred encoding
 
@@ -213,6 +253,13 @@ mysticisms that flow from it down to the present.
   the slow **formation of the New Testament canon**, the domestic worship and rites of **baptism** and
   **Eucharist**, the reality of **persecution and martyrdom**, and the **legalization under
   Constantine** and establishment under Theodosius.
+- The prominence of **women** in the earliest movement — Mary Magdalene, the deacon **Phoebe** and
+  the apostle **Junia** (Romans 16), Prisca, the order of widows — with restrictions appearing later
+  (the Pastoral letters); and the martyr **Perpetua**, whose prison diary (203 CE) is among the
+  earliest writings by a Christian woman.
+- The early **cult of the martyrs**: the *Martyrdom of Polycarp* (c. 155 CE) already shows relic-
+  veneration and annual commemoration on the martyr's *dies natalis* — the seed of the cult of
+  saints and the calendar of saints.
 
 **What's not supported by the evidence (as history)**
 
@@ -248,6 +295,14 @@ mysticisms that flow from it down to the present.
 - On Marcion and the canon, [Yale Bible Study: Formation of the New Testament Canon](https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/)
   and [BYU RSC: The Canonization of the New Testament](https://rsc.byu.edu/new-testament-history-culture-society/canonization-new-testament);
   on early Christian diversity, the standard treatments (e.g. Bart Ehrman, *Lost Christianities*).
+
+*Women and the martyr cult*
+- Junia and Phoebe — [Wikipedia: Junia (New Testament person)](https://en.wikipedia.org/wiki/Junia_(New_Testament_person));
+  [Wikipedia: Phoebe (biblical figure)](https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)).
+- The Passion of Perpetua and Felicity (203 CE) — [Wikipedia: Passion of Saints Perpetua and Felicity](https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity);
+  [Britannica: Perpetua](https://www.britannica.com/biography/Perpetua-Christian-martyr).
+- The Martyrdom of Polycarp, relics, and the *dies natalis* — [Wikipedia: Dies natalis](https://en.wikipedia.org/wiki/Dies_natalis);
+  [Christian History Institute: Polycarp's Martyrdom](https://christianhistoryinstitute.org/study/module/polycarp).
 
 *Symbol and sacred encoding*
 - [Wikipedia: Ichthys](https://en.wikipedia.org/wiki/Ichthys); [Biblical Archaeology Society: The Staurogram](https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/);
