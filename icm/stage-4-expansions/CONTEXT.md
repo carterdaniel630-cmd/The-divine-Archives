@@ -14,7 +14,7 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 ## Priority order (thinnest / oldest first)
 1. ch01 The Flood · ch02 Egypt · ch03 Mesopotamia · ch04 Indus Valley · ch05 Early Vedic (era 02 + seed) — **✅ COMPLETE**
 2. ch06–ch09 (Early Iron Age) — **✅ COMPLETE**
-3. ch10–ch15 (Axial Age)
+3. ch10–ch15 (Axial Age) — **✅ COMPLETE**
 4. ch16–ch20 (Late Antiquity)
 5. ch21–ch30 (Early Medieval + High Medieval)
 
@@ -62,6 +62,29 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   bureaucratic mediators; possession vs. soul-flight), with the Nine Songs of Chu.
 - **Group-2 checkpoint (Early Iron Age):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
+- **ch10 Second Temple Judaism — expanded (2026-08-17).** "The shapes of the Messiah"
+  (Davidic, the two messiahs of Qumran, the prophet like Moses, the Danielic/Enochic
+  son of man) and "Lady Wisdom" (personified Hokhmah/Sophia in Proverbs 8, Ben Sira
+  24, Wisdom of Solomon; hypostasis debate) — feeding Philo's Logos and Gnosticism.
+- **ch11 Buddhism — expanded (2026-08-17).** A full Jainism section (Mahavira, the
+  Tirthankaras, the eternal jiva vs. Buddhist anatta, radical ahimsa, sallekhana,
+  anekantavada, Digambara/Svetambara) — fills an archive-wide gap — plus Mara and
+  the six realms of rebirth (Wheel of Life flagged as later).
+- **ch12 Confucianism & Daoism — expanded (2026-08-17).** Mohism, the great lost
+  school: Mozi, consequentialism, jian'ai (impartial care), condemnation of
+  aggression, and the frankly theistic Will of Heaven (Tianzhi) and moral spirits.
+- **ch13 Rome — expanded (2026-08-17).** The Roman dead: the Di Manes and Parentalia,
+  the ghost-expelling Lemuria (black beans), and the range of afterlife views (the
+  Epicurean N.F.F.N.S.N.C. epitaph).
+- **ch14 Celtic & Germanic — expanded (2026-08-17).** The threefold Celtic learned
+  class (druids/bards/vates), the Gournay & Ribemont war-sanctuaries, the Germanic
+  seeress (Veleda), and the gods hidden in the English weekday names.
+- **ch15 Classical Greece — expanded (2026-08-17).** The Sophists' religious
+  skepticism (Protagoras's agnosticism, Prodicus's naturalistic theory, the Sisyphus
+  fragment) and the healing cult of Asclepius (Epidaurus, dream-incubation, votive
+  body-parts) as the era's lived religion.
+- **Group-3 checkpoint (Axial Age):** integrity 42/42/42/42; every deepened page
+  retains plate + evidence + sources.
 
 ## Gate
 Grouped as **Batch II**, a single review point separate from Batch I. Flagged READY FOR REVIEW only when the deepening pass is complete and checkpointed.
