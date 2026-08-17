@@ -62,6 +62,39 @@ the fatalist Ajivikas, outright materialists, and more. What they shared was a
 question the Vedic sacrifice could not answer: not "how do we please the gods?" but
 "**how do we escape suffering and the endless round of rebirth?**"
 
+## The other great śramaṇa path: Jainism
+
+The most important of the Buddha's fellow-strivers deserves its own portrait, for
+**Jainism** is a complete tradition in its own right — and one that has survived
+continuously to the present. Its great teacher was **Mahavira** ("Great Hero," born
+Vardhamana), an older contemporary of the Buddha and, in Jain reckoning, not a founder
+at all but the **twenty-fourth and last Tirthankara** — a "ford-maker" who crosses the
+river of rebirth and shows the way, latest in a line of enlightened teachers reaching
+back through cosmic time. Like the Buddha, Mahavira renounced a princely life,
+practiced years of severe austerity, and attained omniscience (*kevala jnana*).
+
+But where Buddhism denied the self, Jainism **affirms** an eternal soul, the **jiva**,
+present in every living thing — and its whole path is the effort to free that soul
+from the literal weight of **karma**, conceived not as an abstract law but as a fine
+material substance that clings to the soul through harmful action and drags it down.
+The way to shed it is renunciation and, above all, an **ahimsa** (non-harming) more
+radical than any other tradition's: the devout Jain sweeps the path before stepping,
+strains drinking water, wears a mouth-cloth, and forgoes agriculture and many foods,
+because *all* life — down to the one-sensed beings in earth, water, and air — must not
+be injured. From this flow the **Five Great Vows** (non-violence, truth, non-stealing,
+celibacy, and non-possession) and the spiritual heroism of **sallekhana**, the
+voluntary fast to death undertaken serenely at life's end.
+
+Jainism's most distinctive intellectual contribution is **anekantavada**, the
+doctrine of the "many-sidedness" of reality: no single viewpoint captures the whole
+truth, famously illustrated by the blind men each describing one part of an elephant —
+a built-in philosophical humility rare in the ancient world. The tradition later split
+into two great communities, the **Digambara** ("sky-clad," whose most austere monks go
+naked) and the **Svetambara** ("white-clad"), over monastic practice and whether a
+woman can win liberation in her present birth. That Jainism affirms the very soul the
+Buddha denied, from within the same renunciant ferment, is the sharpest reminder of how
+genuinely plural the Axial-Age Ganges world was.
+
 ## The teaching: four truths and a missing self
 
 The Buddha framed his core insight as the **Four Noble Truths** — presented, in the
@@ -117,6 +150,20 @@ whole system: **there is no creator god.** Gods (*devas*) exist in Buddhist
 cosmology, but they too are trapped in the round of rebirth, not creators and not
 saviors. Buddhism is, at its root, **non-theistic** — a path of liberation that does
 not run through a deity.
+
+Buddhism has its mythic drama all the same. The round of rebirth (*samsara*) turns
+through **six realms** — from the hell-beings and hungry ghosts, through animals and
+humans, up to the jealous demigods and the long-lived gods — into any of which one
+may be reborn according to karma, none of them permanent, all still bound to
+suffering, and only a human birth well placed to win release. And presiding over the
+whole cycle is **Mara** — "Death," the tempter, the lord of desire — who in the
+tradition assailed the Buddha beneath the Bodhi tree with armies, storms, and his
+seductive daughters to break his resolve, and whom the Buddha overcame simply by
+touching the earth to witness his right to awaken. Mara is not a devil in the
+Zoroastrian or biblical sense but the personification of everything — craving,
+distraction, mortality — that keeps beings turning on the wheel. (*An honesty note:*
+the elaborate painted "Wheel of Life" that depicts all this, familiar from Tibetan
+art, is a later development and should not be read back into the earliest period.)
 
 ## Ethics and the community
 
@@ -234,6 +281,12 @@ of this archive.
 - A historical teacher (the Buddha, Siddhartha Gautama) founded a **śramaṇa**
   renunciant movement in the Ganges plain around the fifth century BCE, in reaction
   to Vedic ritualism.
+- **Jainism**, the parallel śramaṇa tradition of **Mahavira** (the 24th
+  Tirthankara), is well attested and survives today — with its eternal soul (*jiva*),
+  its material conception of karma, its radical **ahimsa**, the doctrine of
+  **anekantavada**, *sallekhana*, and the Digambara/Svetambara split — affirming the
+  very soul Buddhism denies. **Mara** the tempter and the six realms of rebirth are
+  early Buddhist material (the painted "Wheel of Life" is a later depiction).
 - The core teaching — the **Four Noble Truths**, the **Eightfold Path**, the three
   marks (**anicca, dukkha, anatta**), **dependent origination**, **karma and rebirth
   reinterpreted without a permanent self**, and **nirvana** — is well attested in the
@@ -275,6 +328,12 @@ of this archive.
 *Doctrine*
 - On **anatta** vs. the Upanishadic **atman**: [LearnReligions: Anatman/Anatta](https://www.learnreligions.com/anatman-anatta-449669)
   and standard treatments of the Three Marks and dependent origination.
+- On **Mara** and the six realms / Wheel of Life: [LearnReligions: The Wheel of Life](https://www.learnreligions.com/the-wheel-of-life-4123213).
+
+*Jainism*
+- Mahavira, the Tirthankaras, ahimsa, anekantavada, sallekhana, and the
+  Digambara/Svetambara split — [Britannica: Jainism](https://www.britannica.com/topic/Jainism);
+  standard reference overviews of Jain doctrine and the *Tattvartha Sutra*.
 
 *Texts, the Sangha, and Ashoka*
 - [Britannica: The Pali Canon (Tipitaka)](https://www.britannica.com/topic/Buddhism/The-Pali-canon-Tipitaka);
