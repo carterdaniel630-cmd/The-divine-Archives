@@ -125,6 +125,28 @@ exists at all. Israel travels from the first to the second.) And **Asherah** —
 those desert jars attest — was for many Israelites Yahweh's consort, exactly as
 she had been El's.
 
+## The Baal Cycle and the battle with the sea
+
+Ugarit did not just hand scholars a list of gods; it handed them a living
+mythology, and one story in particular reaches deep into the Bible. The **Baal
+Cycle**, six clay tablets of the fourteenth century BCE, tells how the storm-god
+**Baal** wins kingship among the gods by defeating two great enemies: **Yam**, the
+chaotic Sea, and **Mot**, Death itself, who swallows Baal into the underworld
+before Baal rises again. It is a myth of the storm-rider conquering chaos and death
+to secure his throne and the rains — and its language survived, transferred onto
+Yahweh. When a psalmist praises the God who "divided the Sea by his strength" and
+"broke the heads of the dragons on the waters," crushing the many-headed
+**Leviathan** (Psalm 74:13–14); when Isaiah promises that Yahweh will punish
+"Leviathan the fleeing serpent… and slay the dragon that is in the sea" (Isaiah
+27:1); when God rebukes the Sea or pierces the chaos-monster **Rahab** (Job 26;
+Isaiah 51:9) — the biblical poets are reusing the imagery of Baal's combat with Yam
+and the sea-dragon *Lotan* (Leviathan's exact Ugaritic cognate), and crediting the
+victory to Yahweh alone. Even Isaiah's hope that God "will swallow up **death**
+forever" (Isaiah 25:8) inverts the Baal Cycle, in which it was Death who did the
+swallowing. The theology is transformed; the mythic vocabulary is inherited — the
+same relationship this project traced between Genesis and the *Enuma Elish*, a
+shared Near Eastern imagination re-forged around one God.
+
 ## From many gods to one: the arrow of history reversed
 
 Here is the chapter's core educational point. The Bible's own storyline is:
@@ -204,6 +226,18 @@ protection (many think Asherah) invoked for the ordinary crises of childbirth,
 nursing, and survival. Households also kept **teraphim** (household gods/ancestor
 images), and there is evidence of a **cult of the dead** — offerings to ancestors.
 This was the religion most Israelites actually lived.
+
+Death itself, in this pre-exilic world, led not to heaven or hell but to **Sheol** —
+a dim, dusty underworld beneath the earth where all the dead, righteous and wicked
+alike, sank to a shadowy half-existence, much like the Mesopotamian *Kur* of Chapter
+3. There was as yet no resurrection and no judgment of the dead; the hope of a
+blessed afterlife would come later, partly under the Persian and Hellenistic
+currents flagged in Chapter 6. Yet the dead were not thought wholly gone: families
+fed and tended them at the tomb, and some sought them out. The Bible's own story of
+King **Saul and the medium of Endor** (1 Samuel 28), who calls up the ghost of the
+dead prophet Samuel from the ground to speak to the doomed king, is a vivid witness
+to a **necromancy** and cult of the dead that the reformers outlawed but could not
+pretend away.
 
 The turning point was a pair of royal **reforms**. Late in the eighth century,
 King **Hezekiah** is said to have begun dismantling the high places; and around
@@ -351,7 +385,13 @@ comes due.
   Khirbet el-Qom).
 - Worship was widespread and local (high places, standing stones, the Arad
   sanctuary, the northern calf shrines) and included a rich **household/folk
-  religion** (the Judean pillar figurines, teraphim, ancestor offerings).
+  religion** (the Judean pillar figurines, teraphim, ancestor offerings). The
+  pre-exilic dead went to **Sheol**, a neutral shadowy underworld, with no
+  developed resurrection or judgment yet.
+- The **Ugaritic Baal Cycle** (Baal vs. Yam and Mot) supplies the mythic vocabulary
+  the Hebrew poets reused and re-credited to Yahweh — the divine combat with the
+  Sea and with Leviathan/Rahab (Psalm 74, Isaiah 27, Job 26) and the "swallowing up
+  of death" (Isaiah 25).
 - The centralizing reforms of Hezekiah and (especially) **Josiah (c. 622 BCE)**,
   tied to an early form of Deuteronomy, are historically grounded.
 - The Hebrew Bible is a **composite** text compiled over centuries (multiple
@@ -399,6 +439,15 @@ comes due.
   [Biblical Archaeology Society: Kuntillet Ajrud](https://www.biblicalarchaeology.org/daily/biblical-artifacts/puzzling-finds-from-kuntillet-ajrud-a-drawing-of-god-labeled-yahweh-and-his-asherah-or-the-egyptian-god-bes/);
   [Wikipedia: Khirbet el-Qom](https://en.wikipedia.org/wiki/Khirbet_el-Qom).
 - The Ugaritic background: the texts from Ras Shamra.
+- The **Baal Cycle** (Baal vs. Yam and Mot) and its biblical echoes (Leviathan,
+  Rahab, the Chaoskampf) — [Grokipedia: Baal Cycle](https://grokipedia.com/page/Baal_Cycle);
+  and the standard comparative treatments of Psalm 74 / Isaiah 27 / Job 26.
+
+*Death, Sheol, and the cult of the dead*
+- Philip S. Johnston, "The Underworld and the Dead in the Old Testament," *Tyndale
+  Bulletin*; [Bible Odyssey: Sheol](https://www.bibleodyssey.org/articles/sheol/).
+- Saul and the medium of Endor (necromancy) —
+  [Associates for Biblical Research: King Saul and the Witch of Endor](https://biblearchaeology.org/research-articles/king-saul-and-the-witch-of-endor-necromancy-and-ghost-pits-in-the-ancient-world/).
 
 *Cult, reform, and folk religion*
 - [Biblical Archaeology Society: The Religious Reforms of Hezekiah and Josiah](https://library.biblicalarchaeology.org/book/aspects-monotheism/the-religious-reforms-of-hezekiah-and-josiah/);
