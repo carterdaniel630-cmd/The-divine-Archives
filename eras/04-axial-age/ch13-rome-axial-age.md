@@ -132,6 +132,31 @@ Compitales** at the festival of the **Compitalia**. This domestic cult, humbler 
 older than the temples, is where Roman religion was actually *lived* — and archaeology,
 above all the preserved houses of **Pompeii**, has recovered it in vivid detail.
 
+## The Roman dead: Manes, Lemures, and the black beans
+
+The Roman household honored not only its gods but its dead, and the two festivals for
+them reveal a religion carefully poised between reverence and fear. The properly buried
+and remembered dead became the **Di Manes**, the "divine dead," a collective of
+benevolent ancestral spirits honored each February at the **Parentalia**, when families
+visited the roadside tombs (Roman law forbade burial inside the city) with offerings of
+flowers, wine, salt, and grain, and shared a graveside meal with the departed. But the
+dead had a darker aspect. Those denied proper burial, forgotten, or killed violently
+could return as **Lemures** (or *larvae*) — restless, malevolent ghosts. Against them
+the household performed the **Lemuria** in May: at midnight the *paterfamilias* rose,
+made a sign against evil, and walked barefoot through the house **spitting black beans**
+from his mouth for the ghosts to gather, chanting nine times, "With these beans I redeem
+me and mine," and never looking back — a rite to buy off the hungry dead and drive them
+from the home.
+
+On what came *after* death, Rome had no single doctrine, and the tombstones show the
+whole range. Some promise the blessed groves of Elysium; many more are frankly uncertain
+or unbelieving. The most famous Roman epitaph, common enough to be abbreviated to seven
+letters (**N.F.F.N.S.N.C.**), states the Epicurean view with a shrug: *non fui, fui, non
+sum, non curo* — "I was not; I was; I am not; I care not." Between the deified ancestor
+and the cheerful nihilist epitaph lay the ordinary Roman's real relationship with death:
+tend the tomb, feed the Manes, ward off the Lemures, and expect no great certainty about
+the rest.
+
 ## Law, morals, and the sacred calendar
 
 Roman religion did not issue a moral code in the manner of a commandment-giving deity;
@@ -261,6 +286,10 @@ popes carry to this day.
 - The **priestly colleges** (pontiffs, augurs, Vestals, flamens, haruspices), the
   **Capitoline Triad**, the systems of **augury, haruspicy, and the Sibylline Books**,
   and the **household cult** of Lares, Penates, and Genius (richly confirmed by Pompeii).
+- The cult of the dead: the **Di Manes**, the **Parentalia** (honoring the dead) and
+  the **Lemuria** (expelling the malevolent Lemures with black beans), and the wide
+  range of Roman afterlife views, from Elysian hope to the Epicurean epitaph
+  (*non fui, fui, non sum, non curo*).
 - The historical **Bacchanalia suppression of 186 BCE** (the surviving *Senatus consultum*
   inscription), the **importation of Magna Mater in 204 BCE**, and the development of the
   **imperial cult** and formal **apotheosis** of emperors.
@@ -304,6 +333,13 @@ popes carry to this day.
 *Household and folk religion*
 - [Britannica: Lar](https://www.britannica.com/topic/Lar-Roman-deities);
   [UNRV: The Lararium, Lares and Penates](https://www.unrv.com/culture/lararium-lares-penates.php).
+
+*The dead and the afterlife*
+- The Di Manes, the Parentalia and the Lemuria (black beans against the Lemures) —
+  [Wikipedia: Lemuria (festival)](https://en.wikipedia.org/wiki/Lemuria_(festival));
+  [World History Encyclopedia: Roman Household Spirits](https://www.worldhistory.org/article/34/roman-household-spirits-manes-panes-and-lares/).
+- Roman afterlife views and tombstone inscriptions (the *non fui, fui, non sum, non curo*
+  epitaph) — [World History Encyclopedia: Views of the Afterlife in Roman Tombstone Inscriptions](https://www.worldhistory.org/article/2679/views-of-the-afterlife-in-roman-tombstone-inscript/).
 
 *Foreign cults and the imperial cult*
 - [Wikipedia: Bacchanalia](https://en.wikipedia.org/wiki/Bacchanalia) (and the *Senatus consultum de Bacchanalibus*);
