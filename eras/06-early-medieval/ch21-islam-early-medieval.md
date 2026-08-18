@@ -61,6 +61,20 @@ life-stories in vivid particulars — comes from sources written **generations l
 Ishaq's life, c. 750, survives in Ibn Hisham's edition of c. 830), and historians read the
 details with due caution, even as the outline stands firm.
 
+## The Night Journey
+
+One episode of Muhammad's life became foundational far beyond biography. In the **Isra and
+Miʿraj** — the Night Journey and Ascension — Muhammad is carried in a single night from Mecca to
+Jerusalem (the *Isra*) on a winged steed, **Buraq**, and there, from the rock of the Temple
+Mount, ascends through the **seven heavens** (the *Miʿraj*), meeting the earlier prophets — Adam,
+Jesus, Moses, Abraham — heaven by heaven, and coming at last into the divine presence, where the
+five daily prayers are ordained. Alluded to in the Qur'an (Sura 17 opens with the "journey by
+night") and elaborated in the hadith, the Night Journey did lasting work: it made **Jerusalem**
+the third holiest city of Islam and the original direction of prayer, and it became, for the
+later mystics, the very archetype of the soul's ascent to God. The **Dome of the Rock**, raised
+over that rock in **691**, is Islam's oldest surviving monument and stands as the architectural
+memory of the ascent.
+
 ## The Book
 
 At the center of Islam stands the **Qur'an** — for Muslims, the literal, uncreated **word of
@@ -159,6 +173,21 @@ caliph — a martyrdom that remains the emotional heart of Shia devotion, mourne
 diverge in authority, law, and sacred history; today Sunnis are the great majority, with Shia
 Islam predominant in Iran, Iraq, and beyond.
 
+## The third branch: the Kharijites and the Ibadis
+
+The Sunni–Shia divide was not the only fracture of the first century. During Ali's own caliphate,
+when he agreed to arbitrate his dispute with the rival **Muʿawiya**, a group of his followers
+turned against him in fury, holding that judgment belonged to God alone and that submitting the
+caliphate to human arbitration was itself a sin. These were the **Kharijites** (*Khawarij*, "those
+who go out," the seceders) — a third party rejecting *both* the Sunni and the Shia claims.
+Radically egalitarian, they held that **any** upright Muslim, of any birth or people, could lead
+the community, and they took a fierce line on sin, treating grave sinners as apostates who had left
+the faith; it was a Kharijite who assassinated Ali in 661. Most Kharijite movements were violent
+and short-lived, but one moderate offshoot endured: the **Ibadis**, who survive today as the
+majority in **Oman** and in scattered communities of North and East Africa — a living **third
+branch** of Islam beside the Sunni and the Shia, and a reminder that the early community held more
+than two answers to the question of who should lead.
+
 ## The conquests and the caliphate
 
 The speed of Islam's expansion is one of the astonishing facts of history. Within a **century** of
@@ -236,6 +265,10 @@ of the faith across Africa, Asia, and eventually the world.
 - The core structures of the faith — **tawhid**, the **Five Pillars**, the **six articles**, the
   development of **hadith**, **Sharia**, and the schools of law, and the **Sunni–Shia** split rooted in
   the succession dispute and sealed at **Karbala** (680).
+- The **third branch**, the **Kharijites** (the seceders who rejected Ali's arbitration) and their
+  surviving moderate offshoot the **Ibadis** (majority in Oman today); and the centrality of the
+  **Night Journey** (Isra and Miʿraj) to Islam's sanctification of Jerusalem — the **Dome of the
+  Rock** (691) being Islam's oldest surviving monument.
 
 **What's not supported by the evidence (as history)**
 
@@ -269,6 +302,11 @@ of the faith across Africa, Asia, and eventually the world.
 - Standard reference treatments of the **Five Pillars**, the **six articles**, and **tawhid** (e.g.
   [Khan Academy: The Five Pillars of Islam](https://www.khanacademy.org/humanities/ap-art-history/introduction-cultures-religions-apah/islam-apah/a/the-five-pillars-of-islam));
   and of the succession dispute, Ali, and Karbala.
+
+*The Night Journey and the third branch*
+- The Isra and Miʿraj — [Wikipedia: Isra' and Mi'raj](https://en.wikipedia.org/wiki/Isra'_and_Mi'raj)
+  (and Qur'an 17:1); the Dome of the Rock (691).
+- The Kharijites and the surviving Ibadis — [Wikipedia: Ibadism](https://en.wikipedia.org/wiki/Ibadism).
 
 *Sacred art and encoding*
 - [The Met: Geometric Patterns in Islamic Art](https://www.metmuseum.org/essays/geometric-patterns-in-islamic-art);
