@@ -25,7 +25,13 @@ circles + a light inner geometric figure), each rune evenly spaced around the ba
 modern, monoline "sacred geometry" look rather than a busy illustration. No invented runes,
 no fabricated meanings.
 
-## Attribution line (must appear in the product description)
+## On-product branding & symbol info (required)
+- **Title:** add "THE DIVINE ARCHIVES" beneath the runic ring (set in the display face). This
+  is new per Carter's directive — the title must appear on this piece.
+- **Symbol/imagery info:** a small line on the tee — *"Elder Futhark · the oldest runic
+  alphabet · ch. 23, Norse Paganism"* — which doubles as the attribution below.
+
+## Attribution line (must appear in the product description — also on the piece via the info line)
 > *Elder Futhark runic row, from* The Divine Archives*, ch. 23 — Norse Paganism. Shown as a
 > historical writing/divinatory alphabet, not as a magical claim.*
 

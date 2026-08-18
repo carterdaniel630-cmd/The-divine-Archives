@@ -17,10 +17,12 @@ as the centerpiece throughout. Locked reference (`../../pip-reference/REFERENCE.
 golden-brown/tan onion body, green sprout, glossy amber-gold eyes, rosy cheeks, chibi,
 painterly storybook. Reject any drift toward the retired seed/root concept.
 
-## Quote / content slot
-Some stickers pair Pip with a short **relatable quote** from the online content (the
-encouraging kindness/positivity affirmations). **Placeholder** wordmark for now: **"Pip's
-Orchard."** Final quotes to be selected from the social posts (see FLAGS.md).
+## Quote / content (from the bank)
+Each sticker uses the locked **quote-card format** — Pip in a golden-hour scene, a bold
+top line with one **accent-color keyword**, and a **❤** sub-line. Pull a themed set from
+`../../pip-reference/quote-bank.md`. Suggested pack: #1 "Be proud of how far you've come /
+You did that!", #3 "You are stronger than you think", #16 "Be a light for someone today",
+#33 "Smile today", #36 "Rest is okay", #48 "Stay hopeful". (Any bank quotes work.)
 
 ## POD supplier notes (Printify)
 - Printify kiss-cut sticker sheets / packs — confirm sheet template and cut lines with the provider.

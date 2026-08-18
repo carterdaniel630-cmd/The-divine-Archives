@@ -4,6 +4,10 @@
 belief, not proven fact. Sacred-symbol items (DA-03, DA-05) carry a **mandatory attribution/
 context line** — do not ship those without it. Not for listing until Carter clears.
 
+> **On every DA piece (Carter's directive):** the title **"The Divine Archives"** appears on the
+> product, plus a **short info line about the symbol/imagery** (what it is + tradition/chapter).
+> On the tiny button, the title is on the product and the full symbol info lives in this copy.
+
 ---
 
 ## DA-01 · "The Nine Ages" — Art Print / Poster

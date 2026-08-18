@@ -7,11 +7,23 @@ shown in the art Carter supplied on 2026-08-18 — two golden-hour Pip social po
 2. *"BE THE REASON SOMEONE SMILES. SPREAD KINDNESS!"* — Pip sitting in a grassy meadow with
    a butterfly, arms up.
 
-> ⚠️ **The actual image files are not yet committed to the repo.** They were supplied inline
-> in chat. **Action:** drop the two source images into this folder (e.g.
-> `pip-reference/pip-ref-01.png`, `pip-ref-02.png`) so the canonical art travels with the
-> repo. Until then, this written spec is the working reference. When cleaner turnaround/
-> model-sheet art exists, add it here too.
+> ⚠️ **The actual image files are not yet committed to the repo.** Carter has now supplied
+> **three quote-card contact sheets** (2026-08-18) confirming the look and the card format, plus
+> the two earlier posts. **Action:** drop these image sheets into this folder (e.g.
+> `pip-reference/pip-sheet-01.png … pip-sheet-03.png`) so the canonical art travels with the
+> repo. Until then, this written spec + `quote-bank.md` are the working reference.
+
+## Confirmed from the supplied sheets (2026-08-18)
+"The character should look **exactly like this**, with consistency across everything" (Carter).
+The sheets confirm the spec below and show Pip across many golden-hour scenes — hills, meadows,
+forest, riverside, cherry-blossom, snow, shore, desert — always the **same** onion character.
+
+## Card format (this IS the Pip's Orchard product format)
+Every Pip piece is a **quote card**: Pip in a golden-hour nature scene with
+- **top:** a bold all-caps main line, **one keyword in an accent color**;
+- **bottom:** a short sub-line, usually with a **❤**.
+Quotes come from **`quote-bank.md`** (48 approved, any usable). Keep wording verbatim and the
+accent-word + heart styling consistent. This replaces the old "Pip's Orchard" text placeholder.
 
 ## The character (canonical)
 - **Silhouette:** a rounded **onion / bulb** shape — slightly taller than wide, soft-tapering

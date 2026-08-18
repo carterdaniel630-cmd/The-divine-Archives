@@ -20,6 +20,11 @@ The site's compass-rose emblem, centered, with "THE DIVINE ARCHIVES" set beneath
 display face (letter-spaced small caps). Single-color or ink-on-natural for a clean,
 library-ish look. This is the flagship brand carrier, not a tradition-specific design.
 
+## On-product branding & symbol info (required)
+- **Title:** "THE DIVINE ARCHIVES" beneath the emblem (already in the design).
+- **Symbol/imagery info:** a small line — *"The compass rose — the mark of the archive, for a
+  library of the whole human search for the sacred."*
+
 ## POD supplier notes (Printify)
 - Printify tote bags — confirm blank, print area, and single vs double-sided with the provider.
 - Emblem is line art: keep stroke weight above the provider's minimum for a crisp print.

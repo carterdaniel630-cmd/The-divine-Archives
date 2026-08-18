@@ -14,9 +14,10 @@ Stainless steel water bottle (Printify), wrap print.
 Pip as the hero on a warm golden-hour wrap. Locked reference: golden-brown/tan onion body,
 green sprout, glossy amber-gold eyes, rosy cheeks, chibi, painterly storybook. No seed/root drift.
 
-## Quote / content slot
-Pip paired with a short **relatable quote** from the online content. **Placeholder** wordmark
-for now: **"Pip's Orchard."** Final quote selected from the social posts (see FLAGS.md).
+## Quote / content (from the bank)
+Pip on the wrap paired with one quote in the locked **quote-card format** (accent-color
+keyword + ❤ sub-line). Pull from `../../pip-reference/quote-bank.md` — e.g. #12 "Take time to
+rest / You deserve it!", #15 "Choose joy every day", #41 "You are strong". Any bank quote works.
 
 ## POD supplier notes (Printify)
 - Printify offers stainless steel water bottles (standard, insulated 20oz, straw-lid) — confirm

@@ -102,6 +102,18 @@ trace back to an existing published chapter** on the live site.
   what a tradition *held/used*, not that a sacred claim is *literally true*. No
   "authentic magic," "real power," or proof-claims for contested/unfalsifiable material.
 
+### Branding + symbol-info on every DA piece (Carter's directive — mandatory)
+> Every Divine Archives product must carry **(1) the title "The Divine Archives"** visibly on
+> the piece, **and (2) a short informational line about the symbol/imagery it uses** — what it
+> is and where it's from (tradition/chapter).
+
+- The **title** appears on every product, no exceptions.
+- The **symbol info** appears **on the product where space allows**, and **always in the listing
+  description**. On space-constrained items (e.g. the pin-back button), the title goes on the
+  product and the full symbol info lives in the listing.
+- For sacred symbols this info line doubles as the required **attribution line** (below) — one
+  line satisfies both, as long as it names the symbol, the tradition, and the chapter.
+
 ### Sacred-symbol gate (Carter's directive — mandatory)
 > **We will NOT use a sacred symbol on a product unless it can be done respectfully.**
 
@@ -192,11 +204,14 @@ a Pip storefront would be linked from. Do not contradict or restyle the existing
   first.**
 - **Friends are deferred.** Focus on Pip alone for now — no friend-group characters on products
   yet (their references stay parked; not a blocker).
-- **The real content is the relatable quotes** carried over from Pip's online posts (the
-  encouraging, kindness/positivity affirmations, e.g. "Be proud of how far you've come," "Be the
-  reason someone smiles"). Pairing Pip with one of these quotes is the point of the product.
-- **Placeholder:** until the specific quotes are chosen, use the wordmark **"Pip's Orchard"**
-  (the name mirrored from the books) as the stand-in for the quote/content slot on each design.
+- **The content is the relatable quotes** carried over from Pip's online posts. These are now
+  **provided** — see `pip-reference/quote-bank.md` (48 approved; any usable). The "Pip's Orchard"
+  wordmark placeholder is **retired** — pull real quotes from the bank.
+- **Card format is locked** (`pip-reference/REFERENCE.md`): Pip in a golden-hour nature scene,
+  a bold all-caps **top line with one accent-color keyword**, and a short **sub-line with a ❤**.
+  Keep it consistent across every piece.
+- **Character consistency is absolute:** Pip must look exactly like the supplied reference on
+  every product — same onion body, sprout, eyes, proportions. No stylistic reinterpretation.
 
 ## Domain / infrastructure
 - The `/shop` page draft targets the **Divine Archives static site** (Cloudflare Pages,

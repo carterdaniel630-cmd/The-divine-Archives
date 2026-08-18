@@ -22,12 +22,18 @@ Carter 2026-08-18: the tote no longer needs specific book titles. The wordmark m
 books is just **"Pip's Orchard,"** used as the **placeholder for the quote/content**. No KDP
 title list needed.
 
-## 🚩 OPEN (content, not blocking) — the relatable quotes
-The real on-product content is a **relatable quote** carried over from Pip's online posts (the
-kindness/positivity affirmations). Across the Pip products this is currently the **placeholder
-wordmark "Pip's Orchard."** **Need from Carter:** the specific quotes to use per product (and any
-rights/consistency notes for reusing the social captions verbatim). Designs are built so the
-wordmark swaps out for the chosen quote at production.
+## ✅ RESOLVED — the relatable quotes (bank provided)
+Carter supplied the quote-card sheets and confirmed **any of the quotes may be used**
+(2026-08-18). Captured as **`pip-reference/quote-bank.md`** (48 approved) with the locked
+**card format** (golden-hour scene, bold top line + accent-color keyword, ❤ sub-line). The
+"Pip's Orchard" placeholder is retired. Only remaining nicety: Carter can pick the exact quote
+per SKU (any bank quote works by default).
+
+## 🚩 OPEN — Pip reference image files still to be committed
+Carter supplied Pip art (two posts + three quote-card sheets) confirming the look. The **image
+files still aren't in the repo** (came inline via chat). **Action:** drop them into
+`pip-reference/` (e.g. `pip-sheet-01…03.png`). Until then the mockups use a labeled placeholder
+silhouette; real Pip art then clears the character review and replaces the placeholders.
 
 ## 🚩 OPEN — Pip reference image files not yet in the repo
 The locked spec lives in `pip-reference/REFERENCE.md`, but the **actual Pip art files** aren't

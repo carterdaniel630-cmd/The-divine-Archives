@@ -42,10 +42,11 @@ a `/shop` page draft for the Divine Archives static site.
       chapter. Verify the specific symbol/wording against each chapter at review
       (esp. ch26 Kabbalah, still pending-review; ch11 Eightfold Path factor names).
 - [ ] **Sacred-symbol respectful-use sign-off** — DA-03/04/05, per symbol (Carter).
-- [ ] Resolve remaining `FLAGS.md` items: **relatable quotes** for Pip products (placeholder
-      "Pip's Orchard" for now), pricing/SKUs, domain/storefront structure, commit Pip image files.
-      *(Resolved: product list, Pip color, sacred-symbol approvals, Printify swaps, friends
-      deferred, KDP-title tie-in.)*
+- [ ] Confirm every DA piece shows **"The Divine Archives"** title + a **symbol-info line**
+      (added to all 5 briefs/copy/mockups per Carter's directive).
+- [ ] Resolve remaining `FLAGS.md` items: **commit Pip image files**, pricing/SKUs,
+      domain/storefront structure. *(Resolved: product list, Pip color, sacred-symbol approvals,
+      Printify swaps, friends deferred, KDP tie-in, and the Pip **quote bank** + card format.)*
 
 ## What is deliberately NOT done (by policy)
 - No product created in Shopify; no live Buy Button snippet.

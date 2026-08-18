@@ -22,6 +22,11 @@ parchment ground, "THE DIVINE ARCHIVES" in display caps, and a subtle band of th
 numerals along the foot. Feels like a companion journal to the reference work. Optional spine
 title if the provider template supports it.
 
+## On-product branding & symbol info (required)
+- **Title:** "THE DIVINE ARCHIVES" on the cover (already in the design).
+- **Symbol/imagery info:** a small line — *"The archive's emblem and its nine ages — a companion
+  journal to the reference work."*
+
 ## POD supplier notes (Printify)
 - Printify offers spiral and hardcover journals — confirm cover template (front-only vs
   wrap), page ruling, and size with the provider.

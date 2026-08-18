@@ -16,5 +16,10 @@ enamel palette limit). **Locked reference:** golden-brown/tan onion body, green 
 glossy amber-gold eyes, rosy cheeks, chibi proportions, golden-hour warmth. No seed/root
 drift. Keep Pip inside the button safe/bleed area so the wrap doesn't clip the silhouette.
 
+## Quote / content (optional — space is tight)
+A button is small; the full quote-card format won't fit. Keep it **Pip-only** as the default,
+or add a single very short line from `../../pip-reference/quote-bank.md` (e.g. #29 "You matter!",
+#41 "You got this") if legible at the chosen diameter. No accent-word styling needed at this size.
+
 ## POD supplier notes (Printify)
 - Printify pin-back buttons print full color — confirm diameters and the safe-area/bleed template.

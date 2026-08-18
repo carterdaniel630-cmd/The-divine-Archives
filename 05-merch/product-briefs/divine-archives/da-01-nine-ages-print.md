@@ -21,6 +21,11 @@ its era name and date range in the archive's display serif on a parchment ground
 emblem at the crown. Reads as a companion piece to the site: the whole span of the human
 search for the sacred, ordered by time. Restrained ink-on-cream palette with a single gold accent.
 
+## On-product branding & symbol info (required)
+- **Title:** "THE DIVINE ARCHIVES" at the foot of the poster (already in the design).
+- **Symbol/imagery info:** a small line — *"The nine eras of recorded spiritual history, ordered
+  by time."* — so the timeline is self-explanatory.
+
 ## POD supplier notes (Printify)
 - Printify posters/matte prints — confirm sizes and provider; verify bleed + safe margins.
 - Fine serif type: verify legibility at the smallest offered size.

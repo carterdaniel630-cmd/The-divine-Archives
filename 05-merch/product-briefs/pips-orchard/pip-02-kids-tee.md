@@ -15,9 +15,11 @@ A single, friendly hero Pip, big and centered, kid-appealing — full-color pain
 the **locked reference:** golden-brown/tan onion body, green sprout, big glossy amber-gold
 eyes, rosy cheeks, chibi proportions, golden-hour warmth. No seed/root drift.
 
-## Quote / content slot
-Pip paired with a short **relatable quote** from the online content beneath the character.
-**Placeholder** wordmark for now: **"Pip's Orchard."** Final quote from the social posts (FLAGS.md).
+## Quote / content (from the bank)
+Pip paired with one quote in the locked **quote-card format** (accent-color keyword + ❤
+sub-line). Pull from `../../pip-reference/quote-bank.md` — kid-friendly picks: #3 "You are
+stronger than you think", #10 "Believe in yourself a little more today", #24 "Keep believing
+in yourself". Any bank quote works.
 
 ## POD supplier notes (Printify)
 - Printify offers youth/kids tees (e.g. Bella+Canvas / Gildan youth) — confirm blank,
