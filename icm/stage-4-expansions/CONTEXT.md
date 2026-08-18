@@ -160,6 +160,31 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   page retains plate + evidence + sources. **This closes the full ch01–ch30 Batch II
   deepening pass.**
 
+### Batch III — deepening the Batch I chapters (ch31–ch42)
+After Carter's "approve everything" sign-off (all pending tags cleared, ch26–ch42
+marked CLEARED), the deepening pass is being extended to the chapters that never got
+one — ch31–ch42 (Early Modern, Modern, Prehistory) — to bring the whole archive to
+uniform depth. Same method and rolling-merge pattern.
+- **ch31 Reformation — expanded (2026-08-18).** The pre-Reformation forerunners
+  (Wycliffe and the Lollards, Jan Hus burned at Constance 1415, the Waldensians);
+  and the German Peasants' War of 1524–25 (the Twelve Articles, Thomas Müntzer,
+  Luther's *Against the Murderous, Thieving Hordes*, the massacre at Frankenhausen).
+- **ch32 Witch Trials — expanded (2026-08-18).** "The brakes": the Spanish and Roman
+  Inquisitions as restraints on the hunts (Salazar Frías and the Basque panic at
+  Zugarramurdi, 1609–11), against the lethal local secular courts; plus the early
+  skeptics Johann Weyer (1563) and Reginald Scot (1584).
+- **ch33 African Traditional Religion — expanded (2026-08-18).** "The southern and
+  eastern reaches" (Zulu uNkulunkulu / amadlozi / isangoma; San trance dance and
+  num; Nilotic Nuer and Dinka High Gods) to balance the West-African focus; and
+  "Witchcraft and the reading of misfortune" (Evans-Pritchard's Azande, the poison
+  oracle benge), held to the witch-trials chapter's evidence care.
+- **ch34 Sikhism — expanded (2026-08-18).** "The Golden Temple" (Harmandir Sahib as
+  doctrine in stone — four doors, below-grade humility, the sarovar of amrit); and
+  "The daily discipline, and the many Sikhisms" (the nitnem prayers and Rehat
+  Maryada; the sects: Udasi, Nirmala, Nirankari, Namdhari, Sahajdhari).
+- **Group-6 checkpoint (Early Modern):** integrity 42/42/42/42; every deepened page
+  retains plate + evidence + sources. Ready for rolling merge to production.
+
 ## Gate
 Originally grouped as **Batch II**, a single review point separate from Batch I.
 Superseded by Carter's "merge, update, continue" instruction: completed groups now
