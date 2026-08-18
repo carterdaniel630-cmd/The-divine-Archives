@@ -86,6 +86,24 @@ act. In the **house of study** (*beit midrash*) and later the **yeshiva**, to ar
 was to worship; the sage who could bring a fresh interpretation was the hero of the culture. Few
 religious traditions have made **intellectual debate** so central a form of piety.
 
+## "It is not in heaven": the Oven of Akhnai
+
+One story crystallizes the whole rabbinic theology of authority, and it is worth telling in
+full. In a dispute over the ritual purity of a certain oven, **Rabbi Eliezer** stood alone
+against the majority, and to prove he was right he called on miracles: a carob tree tore itself
+from the ground, a stream flowed backward, the walls of the study-house leaned in. The sages
+were unmoved — "no proof may be brought from a carob tree." Finally a **heavenly voice** (*bat
+kol*) rang out: "Why do you dispute with Rabbi Eliezer? The law is as he says!" And **Rabbi
+Yehoshua** rose and answered, quoting Deuteronomy: "**It is not in heaven**" (Deut. 30:12). The
+Torah, he meant, was given at Sinai and is no longer in heaven's keeping; it is now decided on
+earth, by the **majority** of the sages, through argument — not by miracles or voices from the
+sky. The tale ends with one of the most astonishing lines in all religious literature: the
+prophet Elijah, asked what God did in that moment, reports that **God laughed and said, "My
+children have defeated me, my children have defeated me."** In a single story the rabbis
+declared that interpretive authority had passed decisively from heaven to the human community
+of study — and that God himself rejoiced in it. It is the charter of rabbinic Judaism: a faith
+in which the ongoing human conversation over the text is, by God's own will, sovereign.
+
 ## God, law, and the world to come
 
 Rabbinic theology intensified the monotheism of the Bible while making God at once utterly
@@ -113,6 +131,25 @@ kind of altar. **Halakha** — the law, "the way of walking" — extended to eve
 existence, from prayer to commerce to diet to marriage, sanctifying the ordinary and binding
 scattered communities into one people living by one law. It was a religion engineered, whether or
 not anyone planned it so, for **survival in dispersion**.
+
+## The synagogue floor: Helios among the Jews
+
+The rabbis wrote the law, but they did not yet rule every Jew — and nothing shows the gap
+between rabbinic ideal and popular practice more vividly than the floors of the late-antique
+synagogues. At **Beth Alpha** in the Galilee, and at Hammat Tiberias, Sepphoris, and other
+sites, congregations of the fourth to sixth centuries laid down splendid **mosaic floors** whose
+central panel is a **zodiac wheel** — with, at its very center, the Greco-Roman sun-god
+**Helios** driving his four-horse chariot, crowned with rays. Around him ran the twelve signs
+and the four seasons; elsewhere on the same floors sat the Ark, the menorah, and the binding of
+Isaac. That synagogues displayed a **pagan sun-god and the zodiac** underfoot, in apparent
+disregard of the second commandment's ban on images, startled the archaeologists who found them,
+and it tells us something the Talmud alone would hide: that the Judaism actually practiced in
+these towns was more visual, more astrological, and less strictly rabbinic than the sages' texts
+suggest. The **Dura-Europos** synagogue in Syria (244 CE) goes further still, its walls covered
+in the **earliest surviving cycle of biblical paintings** — Moses, the Exodus, Ezekiel's vision —
+figurative art in a house of prayer. These buildings are the material proof of this chapter's own
+caution: in Late Antiquity the rabbis were still a small elite, and the lived religion of the
+people ran broader and more richly imaged than their law prescribed.
 
 ## The move to Babylonia
 
@@ -193,6 +230,11 @@ homeland endured.
 - The rise of the **Babylonian** academies (**Sura**, **Pumbedita**) and the primacy of the
   **Babylonian Talmud**; and the Late-Antique origins of Jewish **mysticism** (**Merkabah/Hekhalot**)
   and of **Sefer Yetzirah**.
+- The rabbinic doctrine of interpretive authority captured in the **Oven of Akhnai** ("It is not in
+  heaven"; the law follows the majority, not miracles or a heavenly voice); and the archaeological
+  evidence of a broader popular Judaism than the texts — the **zodiac-and-Helios mosaic floors**
+  (Beth Alpha, Hammat Tiberias, Sepphoris) and the figurative biblical paintings at
+  **Dura-Europos** (244 CE).
 
 **What's not supported by the evidence**
 
@@ -231,6 +273,13 @@ homeland endured.
 *The texts*
 - [Wikipedia: Oral Torah](https://en.wikipedia.org/wiki/Oral_Torah); [Britannica: Mishna](https://www.britannica.com/topic/Mishna);
   [Wikipedia: Judah ha-Nasi](https://en.wikipedia.org/wiki/Judah_ha-Nasi).
+
+*The Oven of Akhnai and the synagogue mosaics*
+- The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — [Wikipedia: Not in Heaven](https://en.wikipedia.org/wiki/Not_in_Heaven);
+  [My Jewish Learning: Bava Metzia 59](https://www.myjewishlearning.com/article/bava-metzia-59/).
+- The zodiac-and-Helios synagogue mosaics — [My Jewish Learning: Astrology in the Ancient Synagogue](https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/);
+  [Wikipedia: Beth Alpha](https://en.wikipedia.org/wiki/Beth_Alpha); the figurative frescoes of the
+  [Dura-Europos synagogue](https://en.wikipedia.org/wiki/Dura-Europos_synagogue).
 
 *Sacred encoding — letters, Sefer Yetzirah, and mysticism*
 - [Wikipedia: Sefer Yetzirah](https://en.wikipedia.org/wiki/Sefer_Yetzirah); on Merkabah and Hekhalot
