@@ -41,13 +41,13 @@ drafted and go live carrying a "Recently added — pending review" tag; Carter
 clears them in batch, at which point the tag is removed and the status becomes
 `CLEARED`.
 
-**Batch II — deepening pass (content-complete).** Already-published chapters have
+**Deepening pass — complete for the whole archive.** Every published chapter has
 been revisited and expanded with additional sourced material under the same standards
-(tracked in `icm/stage-4-expansions/CONTEXT.md`). Completed groups merge to
-production as they finish. **All ch01–ch30 now deepened** (era 02 + seed, Early Iron
-Age, Axial Age, Late Antiquity, Early Medieval, High Medieval); ch01–ch25 already live,
-ch26–ch30 (High Medieval) merging as the closing group. This is additive — it does not
-change a chapter's review status, only its depth.
+(tracked in `icm/stage-4-expansions/CONTEXT.md`), in two waves: **Batch II** (ch01–ch30)
+and **Batch III** (ch31–ch42). **All ch01–ch42 are now deepened and live**, and — after
+Carter's "approve everything" sign-off — all carry **CLEARED** status with no
+pending-review tags. The deepening was additive: it did not change any chapter's
+structure or evidence-honesty format, only its depth.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|

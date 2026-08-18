@@ -183,9 +183,52 @@ uniform depth. Same method and rolling-merge pattern.
   "The daily discipline, and the many Sikhisms" (the nitnem prayers and Rehat
   Maryada; the sects: Udasi, Nirmala, Nirankari, Namdhari, Sahajdhari).
 - **Group-6 checkpoint (Early Modern):** integrity 42/42/42/42; every deepened page
-  retains plate + evidence + sources. Ready for rolling merge to production.
+  retains plate + evidence + sources. Merged to production.
+- **ch35 New Religious Movements — expanded (2026-08-18).** "The gods of the cargo"
+  (Melanesian cargo cults — the Vailala Madness of 1919, the John Frum movement) and
+  "Choice or brainwashing?" (Eileen Barker's *Making of a Moonie* dismantling the
+  brainwashing thesis; deprogramming and the anti-cult movement).
+- **ch36 Spiritualism — expanded (2026-08-18).** "The forerunners" (Swedenborg,
+  Mesmer, Andrew Jackson Davis) and "Kardec and the spirits of Brazil" (Allan
+  Kardec's reincarnationist Spiritism and its mass following in Brazil via Chico
+  Xavier).
+- **ch37 Theosophy — expanded (2026-08-18).** "The World Teacher who refused"
+  (Besant, Leadbeater, and Krishnamurti's 1929 dissolution of the Order of the Star)
+  and "The invisible made visible" (Theosophy and the birth of abstract art —
+  Thought-Forms, Kandinsky, Mondrian, Hilma af Klint).
+- **ch38 Wicca — expanded (2026-08-18).** "Valiente and the shaping of the Craft"
+  (Doreen Valiente, the Charge of the Goddess; Alexandrian Wicca; Buckland to
+  America) and "From coven to courtroom" (legal recognition — Circle Sanctuary v.
+  Nicholson, 2007, the pentacle on military headstones).
+- **ch39 Satanism — expanded (2026-08-18).** "The anatomy of the panic" (Michelle
+  Remembers, recovered-memory therapy, the McMartin trial) and "The Devil's party"
+  (the Romantic literary genealogy — Milton, Blake, Shelley, Byron, Baudelaire).
+- **ch40 Diaspora Religions — expanded (2026-08-18).** "The Kongo stream, and the
+  wider Caribbean" (Palo/nganga; Obeah, Spiritual Baptists, Winti) and "Marie Laveau
+  and the New Orleans crossroads" (Louisiana Voodoo and the Voodoo/hoodoo
+  distinction); fixed a mis-pasted Sources URL.
+- **Group-7 checkpoint (Modern):** integrity 42/42/42/42; every deepened page retains
+  plate + evidence + sources.
+- **ch41 Paleolithic — expanded (2026-08-18).** "The world beyond Europe" (the
+  Sulawesi/Borneo cave art now older than any in Europe — the warty pig and the
+  therianthrope hunting scene) and "The first music" (the Swabian bone flutes).
+- **ch42 Neolithic — expanded (2026-08-18).** "The Levantine ancestors" (Jericho and
+  'Ain Ghazal plastered skulls and statues) and "The daughters of Çatalhöyük" (the
+  2025 *Science* ancient-DNA study of matrilineal, female-centered descent — an
+  honest update to the Mother Goddess debate).
+- **Group-8 checkpoint (Prehistory):** integrity 42/42/42/42; every deepened page
+  retains plate + evidence + sources. **This closes the Batch III pass (ch31–ch42);
+  with Batch II (ch01–ch30), the entire ch01–ch42 archive has now been deepened.**
 
 ## Gate
+Originally grouped as **Batch II**, a single review point separate from Batch I.
+Superseded by Carter's "merge, update, continue" and "approve everything"
+instructions: completed groups merge to production as they finish, each with its own
+integrity checkpoint, and every deepened chapter keeps its evidence-honesty and
+sources. **All pending-review tags cleared (Carter's blanket approval); the entire
+ch01–ch42 archive is deepened and CLEARED.** Superseded pre-rolling text follows.
+
+### (superseded)
 Originally grouped as **Batch II**, a single review point separate from Batch I.
 Superseded by Carter's "merge, update, continue" instruction: completed groups now
 merge to production as they finish (groups 1–3 / ch01–ch15 already live), each with its
