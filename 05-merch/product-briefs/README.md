@@ -2,31 +2,30 @@
 
 One brief per product. Each brief has: **product type**, **design direction**, **source
 chapter/reference** (Divine Archives) or **locked-character note** (Pip's Orchard), and
-**POD supplier notes**. Every brief starts at `DRAFT` and cannot pass to `READY TO LIST`
-without Carter (see `../CLAUDE.md`).
+**Printify supplier notes**. Every brief is `DRAFT · PENDING REVIEW` and cannot pass to
+`READY TO LIST` without Carter (see `../CLAUDE.md`).
 
-> ⚠️ All ten below are **PROPOSED** — the request's "attached list" was not attached
-> (`../FLAGS.md`). The Divine Archives five are each grounded in a real published chapter;
-> the Pip five follow the locked character. **All are constrained to Printify's catalog**
-> (Carter's directive) and DA sacred symbols are gated on respectful use. Swap freely once
-> the real list arrives.
+**Final product list — Carter 2026-08-18.** All products constrained to **Printify's catalog**;
+DA sacred symbols carry a **mandatory attribution line**; all Pip art uses the locked
+brown/golden-onion reference (`../pip-reference/REFERENCE.md`) and clears the character-review
+flag before any mockup art.
 
-## divine-archives/ — traces to published chapters
-| File | Product (Printify) | Source chapter | Sacred-symbol gate |
+## divine-archives/ — traces to published chapters / site brand
+| File | Product (Printify) | Source / reference | Attribution line |
 |---|---|---|---|
-| `da-01-flood-print.md` | "The Waters Remembered" print | ch01 — The Flood | Low |
-| `da-02-egypt-maat-tee.md` | "The Weighing of the Heart" tee | ch02 — Egypt | Low–moderate |
-| `da-03-norse-runes-mug.md` | "Elder Futhark" mug | ch23 — Norse Paganism | Moderate |
-| `da-04-kabbalah-tree-poster.md` | "The Tree of Life" poster | ch26 — Kabbalah | **HIGH · held** |
-| `da-05-buddhism-wheel-tote.md` | "The Eightfold Path" tote/print | ch11 — Buddhism | **HIGH · held** |
+| `da-01-nine-ages-print.md` | Art print — Nine Ages timeline | site structure (`data.js`) | — |
+| `da-02-emblem-tote.md` | Tote — site emblem | site emblem | — |
+| `da-03-runes-tee.md` | Tee — Elder Futhark ring | ch23 — Norse Paganism | **required** |
+| `da-04-archive-journal.md` | Journal/notebook — cover art | site emblem + Nine Ages | — |
+| `da-05-tree-of-life-button.md` | Pin-back button — Tree of Life | ch26 — Kabbalah (alt: ch11) | **required** |
 
-## pips-orchard/ — locked character, review-flagged, Printify-only
+## pips-orchard/ — locked character, Printify-only, review-flagged
 | File | Product (Printify) | Note |
 |---|---|---|
-| `pip-01-sticker-sheet.md` | "Pip Through the Day" sticker sheet | Printify ✅ |
-| `pip-02-button-badge.md` | "Pip" pin-back button | was enamel pin → Printify button |
-| `pip-03-throw-pillow.md` | "Pip" throw pillow | was plush → Printify pillow (plush out of scope) |
-| `pip-04-tote.md` | "Golden-Hour Orchard" tote | hero painterly print |
-| `pip-05-greeting-card.md` | "A Note from the Orchard" card | Printify ✅ |
+| `pip-01-sticker-pack.md` | Sticker pack — Pip + friends | 🚩 friends undefined |
+| `pip-02-kids-tee.md` | Kids T-shirt — Pip | — |
+| `pip-03-water-bottle.md` | Water bottle — Pip + friends | 🚩 friends undefined |
+| `pip-04-storybook-tote.md` | Tote — "Pip and the…" cover series | 🚩 tie to real KDP book titles |
+| `pip-05-button.md` | Pin-back button — Pip | — |
 
-Draft copy for each is in `../copy/`. Locked character: `../pip-reference/REFERENCE.md`.
+Draft copy: `../copy/`. Locked character: `../pip-reference/REFERENCE.md`. Mockups: `../mockups/`.

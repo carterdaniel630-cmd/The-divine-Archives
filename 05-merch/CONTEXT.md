@@ -1,7 +1,10 @@
 # 05-MERCH — Stage Tracker
 
-**STATUS: 🟠 DRAFT — NOT YET READY FOR REVIEW** (blocked on the missing product list; see
-`FLAGS.md`). Held entirely off production. Nothing listed, published, or pushed live.
+**STATUS: 🟡 DRAFT — IN REVIEW-PREP.** Final product list, colors, sacred-symbol approvals,
+and Printify swaps all confirmed (Carter 2026-08-18). Briefs, copy, and mockups for all 10
+products are drafted. Still held entirely off production — nothing listed, published, or
+pushed live. Open items remain (friend-group art, KDP tie-in, Pip image files, pricing/SKUs;
+see `FLAGS.md`).
 
 Mirrors the ICM stage pattern (`icm/README.md`). This stage ends at the human **Review
 Gate** in `CLAUDE.md`. Claude Code may set `DRAFT`/`PENDING REVIEW`; only Carter may set
@@ -13,8 +16,8 @@ Orchard** — under The Orchard's ICM workflow. Deliverables: 10 product briefs,
 a `/shop` page draft for the Divine Archives static site.
 
 ## Supplier & directives locked (Carter, 2026-08-18)
-- **Printify only** — products constrained to Printify's catalog (plush & hard-enamel out;
-  swapped to throw pillow & pin-back button).
+- **Printify only** — products constrained to Printify's catalog (custom plush & hard-enamel
+  are out of scope; the final list uses Printify-native types, e.g. pin-back buttons not enamel).
 - **Sacred symbols only if respectful** — hard gate; DA-04 (Kabbalah) & DA-05 (Buddhism) HELD.
 - **Pip reference art supplied** — locked in `pip-reference/REFERENCE.md` (brown/golden onion,
   not moss-green — conflict flagged).
@@ -26,11 +29,11 @@ a `/shop` page draft for the Divine Archives static site.
 | Stage `CLAUDE.md` (2 non-negotiables + review gate + Printify + sacred gate) | ✅ DRAFT | done |
 | `FLAGS.md` (open items) | ✅ | done — read it |
 | `pip-reference/REFERENCE.md` | ✅ | locked character; ⛔ actual image files still to commit |
-| 5 × Divine Archives briefs | ✅ DRAFT (proposed) | each cites a published chapter; DA-04/05 HELD |
-| 5 × Pip's Orchard briefs | ✅ DRAFT (proposed) | locked character; Printify-only; art review pending |
-| Draft copy (10) | ✅ DRAFT | `copy/` |
-| Mockups | ⛔ none | folder scaffolded; Pip mockups need art through the review flag first |
-| `/shop` page draft | ✅ DRAFT | Buy Button left as TODO (needs live product ID) |
+| 5 × Divine Archives briefs | ✅ DRAFT (final list) | grounded; DA-03/05 carry attribution lines |
+| 5 × Pip's Orchard briefs | ✅ DRAFT (final list) | locked character; Printify-only; art review pending |
+| Draft copy (10) | ✅ DRAFT | `copy/`; attribution lines on DA-03/05 |
+| Mockups (10) | ✅ DRAFT | `mockups/mockups.html` — DA real art; Pip placeholder art (files + review pending) |
+| `/shop` page draft | ✅ DRAFT | updated to final DA lineup; Buy Button still a TODO |
 
 ## Review checklist (both required before Carter can set READY TO LIST)
 - [ ] **Pip character-consistency check** — every Pip asset vs. the locked reference

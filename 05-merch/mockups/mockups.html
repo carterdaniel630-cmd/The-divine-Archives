@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--
+  05-MERCH — MOCKUP GALLERY (DRAFT · PENDING REVIEW)
+  Self-contained review page. Not deployed, not linked from the site.
+  - Divine Archives cards show real design artwork grounded in the site/chapters.
+  - Pip's Orchard cards show product LAYOUTS with a clearly-labeled PLACEHOLDER for the
+    character art — real Pip art is not in the repo yet and must clear the character-
+    consistency review before it goes on any mockup (see ../CLAUDE.md, ../FLAGS.md).
+  Nothing here is print-ready.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>05-merch — Mockups (Draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+Runic&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f3ead6; --cream-2:#efe4cc; --ink:#2b2620; --ink-soft:#6b6152;
+    --gold:#a9823c; --gold-soft:#c7a86a; --line:#c9b89a; --card:#faf4e6;
+    --flag:#9a5b2e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:'EB Garamond',Garamond,serif;line-height:1.5;}
+  .wrap{max-width:1120px;margin:0 auto;padding:2.4rem 1.4rem 4rem;}
+  header.top{text-align:center;border-bottom:1px solid var(--line);padding-bottom:1.6rem;margin-bottom:2rem;}
+  .eyebrow{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.32em;
+    font-size:.72rem;color:var(--gold);margin:0 0 .5rem;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.1rem;margin:.1rem 0;}
+  .sub{color:var(--ink-soft);max-width:60ch;margin:.4rem auto 0;font-size:.98rem;}
+  .banner{background:var(--cream-2);border:1px solid var(--line);border-radius:8px;
+    padding:.7rem 1rem;margin:1.2rem auto 0;max-width:70ch;font-size:.88rem;color:var(--ink-soft);}
+  h2.section{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.4rem;
+    margin:2.4rem 0 .4rem;padding-bottom:.3rem;border-bottom:1px solid var(--line);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:1.2rem;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(0,0,0,.03);}
+  .stage{background:
+     radial-gradient(120% 90% at 50% 15%, #fbf6ea 0%, #efe3c8 100%);
+     padding:14px;display:flex;align-items:center;justify-content:center;min-height:250px;}
+  .stage svg{width:100%;height:auto;max-height:236px;}
+  .meta{padding:.85rem 1rem 1.1rem;border-top:1px solid var(--line);}
+  .sku{font-family:'Cormorant Garamond',serif;letter-spacing:.16em;font-size:.66rem;
+    text-transform:uppercase;color:var(--gold);}
+  .name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.16rem;margin:.15rem 0 .1rem;}
+  .kind{font-size:.85rem;color:var(--ink-soft);margin:0 0 .5rem;}
+  .row{font-size:.8rem;margin:.15rem 0;}
+  .row b{font-weight:600;}
+  .attrib{font-size:.76rem;font-style:italic;color:var(--ink-soft);
+    border-left:2px solid var(--gold);padding:.3rem 0 .3rem .6rem;margin:.5rem 0 .2rem;}
+  .badge{display:inline-block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:.2rem .5rem;border-radius:20px;border:1px solid var(--line);color:var(--ink-soft);margin-top:.5rem;}
+  .flag{font-size:.76rem;color:var(--flag);margin-top:.5rem;}
+  .flag::before{content:"⚑ ";}
+  footer{margin-top:2.6rem;text-align:center;color:var(--ink-soft);font-size:.82rem;
+    border-top:1px solid var(--line);padding-top:1.2rem;}
+  /* placeholder styling for Pip character art */
+  .ph-note{font-family:'Cormorant Garamond',serif;font-size:9px;letter-spacing:.12em;
+    text-transform:uppercase;fill:var(--flag);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">The Orchard · ICM merch stage 05</p>
+    <h1>Product Mockups — Draft</h1>
+    <p class="sub">Design & placement drafts for the ten-product batch across two sub-brands.
+      For human review only — nothing here is print-ready or listed.</p>
+    <div class="banner"><b>How to read these:</b> Divine Archives cards show real design
+      artwork grounded in the site and its chapters. Pip's Orchard cards show product
+      <i>layouts</i> with a <b>labeled placeholder</b> where the character art goes — the real
+      Pip art isn't in the repo yet and must pass the character-consistency review before it's
+      placed on any mockup.</div>
+  </header>
+
+  <!-- ============================ DIVINE ARCHIVES ============================ -->
+  <h2 class="section">The Divine Archives</h2>
+  <div class="grid">
+
+    <!-- DA-01 · Nine Ages print -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Nine Ages timeline poster">
+          <rect x="14" y="10" width="192" height="216" rx="3" fill="#fbf7ec" stroke="#b9a67e"/>
+          <g fill="none" stroke="#a9823c" stroke-width="1">
+            <circle cx="110" cy="30" r="11" opacity=".6"/>
+            <path d="M110 22 L112 29 L110 30 L108 29 Z M110 38 L108 31 L110 30 L112 31 Z" fill="#a9823c" stroke="none"/>
+          </g>
+          <text x="110" y="52" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="8" letter-spacing="2" fill="#2b2620">THE NINE AGES</text>
+          <line x1="110" y1="60" x2="110" y2="214" stroke="#c9b78f" stroke-width="1"/>
+          <g font-family="'EB Garamond',serif" fill="#2b2620">
+            <!-- rows: numeral, name, dates -->
+            <g font-size="7">
+              <circle cx="110" cy="68" r="2.2" fill="#a9823c"/><text x="120" y="66" font-size="8" font-family="'Cormorant Garamond'">I · Prehistory</text><text x="120" y="74" font-size="6" fill="#6b6152">before c. 3500 BCE</text>
+              <circle cx="110" cy="84" r="2.2" fill="#a9823c"/><text x="120" y="82" font-size="8" font-family="'Cormorant Garamond'">II · The Bronze Age</text><text x="120" y="90" font-size="6" fill="#6b6152">c. 3300–1200 BCE</text>
+              <circle cx="110" cy="100" r="2.2" fill="#a9823c"/><text x="120" y="98" font-size="8" font-family="'Cormorant Garamond'">III · Early Iron Age</text><text x="120" y="106" font-size="6" fill="#6b6152">c. 1200–550 BCE</text>
+              <circle cx="110" cy="116" r="2.2" fill="#a9823c"/><text x="120" y="114" font-size="8" font-family="'Cormorant Garamond'">IV · The Axial Age</text><text x="120" y="122" font-size="6" fill="#6b6152">c. 800 BCE–200 CE</text>
+              <circle cx="110" cy="132" r="2.2" fill="#a9823c"/><text x="120" y="130" font-size="8" font-family="'Cormorant Garamond'">V · Late Antiquity</text><text x="120" y="138" font-size="6" fill="#6b6152">c. 200–800 CE</text>
+              <circle cx="110" cy="148" r="2.2" fill="#a9823c"/><text x="120" y="146" font-size="8" font-family="'Cormorant Garamond'">VI · Early Medieval</text><text x="120" y="154" font-size="6" fill="#6b6152">c. 800–1100 CE</text>
+              <circle cx="110" cy="164" r="2.2" fill="#a9823c"/><text x="120" y="162" font-size="8" font-family="'Cormorant Garamond'">VII · High Medieval</text><text x="120" y="170" font-size="6" fill="#6b6152">c. 1100–1500 CE</text>
+              <circle cx="110" cy="180" r="2.2" fill="#a9823c"/><text x="120" y="178" font-size="8" font-family="'Cormorant Garamond'">VIII · Early Modern</text><text x="120" y="186" font-size="6" fill="#6b6152">c. 1500–1800 CE</text>
+              <circle cx="110" cy="196" r="2.2" fill="#a9823c"/><text x="120" y="194" font-size="8" font-family="'Cormorant Garamond'">IX · The Modern Age</text><text x="120" y="202" font-size="6" fill="#6b6152">c. 1800–present</text>
+            </g>
+          </g>
+          <text x="110" y="220" text-anchor="middle" font-size="5.5" letter-spacing="1.5" fill="#6b6152" font-family="'Cormorant Garamond'">THE DIVINE ARCHIVES</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">DA-01</div>
+        <div class="name">The Nine Ages</div>
+        <p class="kind">Art print / poster · Printify</p>
+        <p class="row"><b>Source:</b> site structure (era names & dates from data.js)</p>
+        <span class="badge">Draft · Pending review</span>
+      </div>
+    </div>
+
+    <!-- DA-02 · Emblem tote -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Tote bag with the Divine Archives emblem">
+          <path d="M60 40 q0 -22 20 -22 q10 0 10 12" fill="none" stroke="#8c7c5c" stroke-width="3"/>
+          <path d="M160 40 q0 -22 -20 -22 q-10 0 -10 12" fill="none" stroke="#8c7c5c" stroke-width="3"/>
+          <rect x="46" y="40" width="128" height="170" rx="4" fill="#e7dcc0" stroke="#b9a67e"/>
+          <g transform="translate(110,110)" fill="none" stroke="#2b2620">
+            <circle r="34" stroke-width="1.4" opacity=".55"/>
+            <circle r="26" stroke-width="1" stroke-dasharray="1 5"/>
+            <path d="M0 -24 L2.6 -3 L0 0 L-2.6 -3 Z M0 24 L-2.6 3 L0 0 L2.6 3 Z M-24 0 L-3 -2.6 L0 0 L-3 2.6 Z M24 0 L3 2.6 L0 0 L3 -2.6 Z" fill="#2b2620" stroke="none"/>
+            <circle r="2" fill="#a9823c" stroke="none"/>
+          </g>
+          <text x="110" y="168" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="9" letter-spacing="2.4" fill="#2b2620">THE DIVINE</text>
+          <text x="110" y="182" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="9" letter-spacing="2.4" fill="#2b2620">ARCHIVES</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">DA-02</div>
+        <div class="name">The Archive Emblem</div>
+        <p class="kind">Tote bag · Printify</p>
+        <p class="row"><b>Source:</b> the site's own compass-rose emblem</p>
+        <span class="badge">Draft · Pending review</span>
+      </div>
+    </div>
+
+    <!-- DA-03 · Runes tee -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="T-shirt with Elder Futhark runic ring">
+          <path d="M74 40 L60 30 L40 46 L52 66 L66 58 L66 210 L154 210 L154 58 L168 66 L180 46 L160 30 L146 40 q-36 20 -72 0 Z"
+                fill="#e9dfc6" stroke="#b9a67e" stroke-width="1.2"/>
+          <g transform="translate(110,116)">
+            <circle r="46" fill="none" stroke="#2b2620" stroke-width="1" opacity=".5"/>
+            <circle r="34" fill="none" stroke="#a9823c" stroke-width="1" stroke-dasharray="1 4"/>
+            <path d="M0 -22 L19 11 L-19 11 Z" fill="none" stroke="#2b2620" stroke-width=".8" opacity=".55"/>
+            <g font-family="'Noto Sans Runic',serif" font-size="12" fill="#2b2620" text-anchor="middle">
+              <text transform="rotate(0)"   ><tspan x="0" y="-40">ᚠ</tspan></text>
+              <text transform="rotate(15)"  ><tspan x="0" y="-40">ᚢ</tspan></text>
+              <text transform="rotate(30)"  ><tspan x="0" y="-40">ᚦ</tspan></text>
+              <text transform="rotate(45)"  ><tspan x="0" y="-40">ᚨ</tspan></text>
+              <text transform="rotate(60)"  ><tspan x="0" y="-40">ᚱ</tspan></text>
+              <text transform="rotate(75)"  ><tspan x="0" y="-40">ᚲ</tspan></text>
+              <text transform="rotate(90)"  ><tspan x="0" y="-40">ᚷ</tspan></text>
+              <text transform="rotate(105)" ><tspan x="0" y="-40">ᚹ</tspan></text>
+              <text transform="rotate(120)" ><tspan x="0" y="-40">ᚺ</tspan></text>
+              <text transform="rotate(135)" ><tspan x="0" y="-40">ᚾ</tspan></text>
+              <text transform="rotate(150)" ><tspan x="0" y="-40">ᛁ</tspan></text>
+              <text transform="rotate(165)" ><tspan x="0" y="-40">ᛃ</tspan></text>
+              <text transform="rotate(180)" ><tspan x="0" y="-40">ᛇ</tspan></text>
+              <text transform="rotate(195)" ><tspan x="0" y="-40">ᛈ</tspan></text>
+              <text transform="rotate(210)" ><tspan x="0" y="-40">ᛉ</tspan></text>
+              <text transform="rotate(225)" ><tspan x="0" y="-40">ᛊ</tspan></text>
+              <text transform="rotate(240)" ><tspan x="0" y="-40">ᛏ</tspan></text>
+              <text transform="rotate(255)" ><tspan x="0" y="-40">ᛒ</tspan></text>
+              <text transform="rotate(270)" ><tspan x="0" y="-40">ᛖ</tspan></text>
+              <text transform="rotate(285)" ><tspan x="0" y="-40">ᛗ</tspan></text>
+              <text transform="rotate(300)" ><tspan x="0" y="-40">ᛚ</tspan></text>
+              <text transform="rotate(315)" ><tspan x="0" y="-40">ᛜ</tspan></text>
+              <text transform="rotate(330)" ><tspan x="0" y="-40">ᛟ</tspan></text>
+              <text transform="rotate(345)" ><tspan x="0" y="-40">ᛞ</tspan></text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">DA-03</div>
+        <div class="name">Elder Futhark</div>
+        <p class="kind">T-shirt · minimalist sacred-geometry · Printify</p>
+        <p class="row"><b>Source:</b> ch23 — Norse Paganism</p>
+        <p class="attrib">Elder Futhark runic row — shown as a historical writing/divinatory
+          alphabet, ch. 23, not a magical claim.</p>
+        <span class="badge">Draft · Pending review</span>
+      </div>
+    </div>
+
+    <!-- DA-04 · Journal -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Journal with archive cover art">
+          <rect x="56" y="24" width="120" height="188" rx="4" fill="#25211b" stroke="#4a4436"/>
+          <!-- spiral binding -->
+          <g stroke="#b9a67e" stroke-width="2">
+            <line x1="56" y1="36" x2="46" y2="36"/><line x1="56" y1="56" x2="46" y2="56"/>
+            <line x1="56" y1="76" x2="46" y2="76"/><line x1="56" y1="96" x2="46" y2="96"/>
+            <line x1="56" y1="116" x2="46" y2="116"/><line x1="56" y1="136" x2="46" y2="136"/>
+            <line x1="56" y1="156" x2="46" y2="156"/><line x1="56" y1="176" x2="46" y2="176"/>
+            <line x1="56" y1="196" x2="46" y2="196"/>
+          </g>
+          <g transform="translate(118,96)" fill="none" stroke="#cdb37a">
+            <circle r="30" stroke-width="1.2" opacity=".7"/>
+            <circle r="22" stroke-width=".9" stroke-dasharray="1 5"/>
+            <path d="M0 -21 L2.4 -3 L0 0 L-2.4 -3 Z M0 21 L-2.4 3 L0 0 L2.4 3 Z M-21 0 L-3 -2.4 L0 0 L-3 2.4 Z M21 0 L3 2.4 L0 0 L3 -2.4 Z" fill="#cdb37a" stroke="none"/>
+        </g>
+          <text x="118" y="150" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="9" letter-spacing="2.2" fill="#efe3c8">THE DIVINE</text>
+          <text x="118" y="163" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="9" letter-spacing="2.2" fill="#efe3c8">ARCHIVES</text>
+          <text x="118" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="6.5" letter-spacing="1.5" fill="#a9823c">I · II · III · IV · V · VI · VII · VIII · IX</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">DA-04</div>
+        <div class="name">The Archive</div>
+        <p class="kind">Journal / notebook · Printify</p>
+        <p class="row"><b>Source:</b> site emblem + Nine Ages motif</p>
+        <span class="badge">Draft · Pending review</span>
+      </div>
+    </div>
+
+    <!-- DA-05 · Tree of Life button -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Pin-back button with the Tree of Life">
+          <circle cx="110" cy="118" r="92" fill="#24201a" stroke="#0f0d0a" stroke-width="2"/>
+          <circle cx="110" cy="118" r="92" fill="none" stroke="#3a352b" stroke-width="6" opacity=".5"/>
+          <g transform="translate(60,40) scale(0.5)" stroke="#cdb37a" fill="none" stroke-width="1.6">
+            <!-- paths -->
+            <g opacity=".85">
+              <line x1="100" y1="20" x2="150" y2="55"/><line x1="100" y1="20" x2="50" y2="55"/><line x1="100" y1="20" x2="100" y2="120"/>
+              <line x1="150" y1="55" x2="50" y2="55"/><line x1="150" y1="55" x2="100" y2="120"/><line x1="150" y1="55" x2="150" y2="100"/>
+              <line x1="50" y1="55" x2="100" y2="120"/><line x1="50" y1="55" x2="50" y2="100"/>
+              <line x1="150" y1="100" x2="50" y2="100"/><line x1="150" y1="100" x2="100" y2="120"/><line x1="150" y1="100" x2="150" y2="150"/>
+              <line x1="50" y1="100" x2="100" y2="120"/><line x1="50" y1="100" x2="50" y2="150"/>
+              <line x1="100" y1="120" x2="150" y2="150"/><line x1="100" y1="120" x2="50" y2="150"/><line x1="100" y1="120" x2="100" y2="165"/>
+              <line x1="150" y1="150" x2="50" y2="150"/><line x1="150" y1="150" x2="100" y2="165"/><line x1="150" y1="150" x2="100" y2="195"/>
+              <line x1="50" y1="150" x2="100" y2="165"/><line x1="50" y1="150" x2="100" y2="195"/>
+              <line x1="100" y1="165" x2="100" y2="195"/>
+            </g>
+            <!-- sefirot nodes -->
+            <g fill="#24201a" stroke="#e8d6a8" stroke-width="2">
+              <circle cx="100" cy="20" r="9"/><circle cx="150" cy="55" r="9"/><circle cx="50" cy="55" r="9"/>
+              <circle cx="150" cy="100" r="9"/><circle cx="50" cy="100" r="9"/><circle cx="100" cy="120" r="9"/>
+              <circle cx="150" cy="150" r="9"/><circle cx="50" cy="150" r="9"/><circle cx="100" cy="165" r="9"/>
+              <circle cx="100" cy="195" r="9"/>
+            </g>
+          </g>
+          <text x="110" y="40" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="8" letter-spacing="2" fill="#cdb37a">EIN SOF</text>
+          <text x="110" y="205" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="7.5" letter-spacing="1.5" fill="#a9823c">THE TEN SEFIROT</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">DA-05</div>
+        <div class="name">The Tree of Life</div>
+        <p class="kind">Pin-back button · Printify</p>
+        <p class="row"><b>Source:</b> ch26 — Kabbalah (approved alt: ch11 Dharmachakra)</p>
+        <p class="attrib">Tree of Life (ten sefirot), ch. 26 — Kabbalah. Shared as educational
+          reference with respect for the living tradition. (Sefirot names set from the chapter
+          text at production.)</p>
+        <span class="badge">Draft · Pending review</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================ PIP'S ORCHARD ============================ -->
+  <h2 class="section">Pip's Orchard <span style="font-size:.8rem;color:var(--flag);font-family:'EB Garamond'">· placeholder character art — pending files + review</span></h2>
+  <div class="grid">
+
+    <!-- PIP-01 · Sticker pack -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Sticker pack layout, Pip and friends placeholders">
+          <rect x="18" y="16" width="184" height="204" rx="6" fill="#fbf7ec" stroke="#b9a67e" stroke-dasharray="4 3"/>
+          <!-- pip placeholder (main) -->
+          <g transform="translate(66,74)">
+            <path d="M0 34 C-26 34 -30 2 -18 -14 C-10 -26 10 -26 18 -14 C30 2 26 34 0 34 Z" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.4" stroke-dasharray="4 3"/>
+            <path d="M0 -22 q6 -10 2 -18 M0 -22 q-6 -9 -2 -17" fill="none" stroke="#6e7f3e" stroke-width="1.6"/>
+            <text x="0" y="6" text-anchor="middle" class="ph-note">PIP</text>
+          </g>
+          <!-- friend placeholders -->
+          <g fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.2" stroke-dasharray="4 3">
+            <circle cx="150" cy="62" r="26"/><circle cx="70" cy="160" r="26"/><circle cx="152" cy="158" r="26"/>
+          </g>
+          <text x="150" y="66" text-anchor="middle" class="ph-note">FRIEND</text>
+          <text x="70" y="164" text-anchor="middle" class="ph-note">FRIEND</text>
+          <text x="152" y="162" text-anchor="middle" class="ph-note">FRIEND</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">PIP-01</div>
+        <div class="name">Pip &amp; Friends</div>
+        <p class="kind">Sticker pack · Printify</p>
+        <span class="badge">Draft · Pending review</span>
+        <p class="flag">Friend group not yet defined — placeholders only; needs Carter's references.</p>
+      </div>
+    </div>
+
+    <!-- PIP-02 · Kids tee -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Kids t-shirt with Pip placeholder">
+          <path d="M74 44 L60 34 L40 50 L52 70 L66 62 L66 208 L154 208 L154 62 L168 70 L180 50 L160 34 L146 44 q-36 20 -72 0 Z"
+                fill="#e9dfc6" stroke="#b9a67e" stroke-width="1.2"/>
+          <g transform="translate(110,128)">
+            <path d="M0 44 C-34 44 -40 4 -24 -18 C-13 -34 13 -34 24 -18 C40 4 34 44 0 44 Z" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.6" stroke-dasharray="5 3"/>
+            <path d="M0 -30 q8 -13 3 -24 M0 -30 q-8 -12 -3 -22" fill="none" stroke="#6e7f3e" stroke-width="2"/>
+            <circle cx="-8" cy="0" r="3.4" fill="#9a5b2e"/><circle cx="8" cy="0" r="3.4" fill="#9a5b2e"/>
+            <text x="0" y="30" text-anchor="middle" class="ph-note">PIP ART PENDING</text>
+          </g>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">PIP-02</div>
+        <div class="name">Pip</div>
+        <p class="kind">Kids T-shirt · Printify</p>
+        <span class="badge">Draft · Pending review</span>
+        <p class="flag">Placeholder — real Pip art clears character review before use.</p>
+      </div>
+    </div>
+
+    <!-- PIP-03 · Water bottle -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Water bottle with Pip and friends placeholders">
+          <rect x="86" y="14" width="48" height="14" rx="3" fill="#8c7c5c"/>
+          <rect x="80" y="28" width="60" height="192" rx="18" fill="#e7dcc0" stroke="#b9a67e"/>
+          <rect x="80" y="60" width="60" height="120" fill="#fbf7ec" opacity=".7"/>
+          <!-- wrap contents: pip + friend placeholders -->
+          <g transform="translate(110,104)">
+            <path d="M0 26 C-20 26 -23 2 -14 -11 C-8 -20 8 -20 14 -11 C23 2 20 26 0 26 Z" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.3" stroke-dasharray="4 3"/>
+            <path d="M0 -17 q5 -8 2 -14" fill="none" stroke="#6e7f3e" stroke-width="1.5"/>
+            <text x="0" y="4" text-anchor="middle" class="ph-note">PIP</text>
+          </g>
+          <circle cx="98" cy="156" r="16" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.1" stroke-dasharray="4 3"/>
+          <circle cx="126" cy="156" r="16" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.1" stroke-dasharray="4 3"/>
+          <text x="112" y="200" text-anchor="middle" class="ph-note">FRIENDS PENDING</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">PIP-03</div>
+        <div class="name">Pip &amp; Friends</div>
+        <p class="kind">Water bottle · Printify</p>
+        <span class="badge">Draft · Pending review</span>
+        <p class="flag">Friend group not yet defined — placeholders only.</p>
+      </div>
+    </div>
+
+    <!-- PIP-04 · Storybook tote -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Storybook-cover tote with Pip placeholder">
+          <path d="M64 42 q0 -22 20 -22 q10 0 10 12" fill="none" stroke="#8c7c5c" stroke-width="3"/>
+          <path d="M156 42 q0 -22 -20 -22 q-10 0 -10 12" fill="none" stroke="#8c7c5c" stroke-width="3"/>
+          <rect x="50" y="42" width="120" height="168" rx="4" fill="#e7dcc0" stroke="#b9a67e"/>
+          <rect x="62" y="54" width="96" height="144" rx="2" fill="#fbf7ec" stroke="#a9823c" stroke-width="1"/>
+          <text x="110" y="72" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" letter-spacing="1" fill="#2b2620">Pip and the…</text>
+          <g transform="translate(110,132)">
+            <path d="M0 34 C-26 34 -30 2 -18 -14 C-10 -26 10 -26 18 -14 C30 2 26 34 0 34 Z" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.4" stroke-dasharray="4 3"/>
+            <path d="M0 -22 q6 -10 2 -18" fill="none" stroke="#6e7f3e" stroke-width="1.6"/>
+            <text x="0" y="6" text-anchor="middle" class="ph-note">PIP</text>
+          </g>
+          <text x="110" y="190" text-anchor="middle" font-family="'EB Garamond'" font-size="6.5" fill="#6b6152">a Pip's Orchard story</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">PIP-04</div>
+        <div class="name">Pip and the…</div>
+        <p class="kind">Tote — storybook cover series · Printify</p>
+        <span class="badge">Draft · Pending review</span>
+        <p class="flag">Cover titles/scenes to match the real Amazon KDP books — pending.</p>
+      </div>
+    </div>
+
+    <!-- PIP-05 · Button -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 220 236" role="img" aria-label="Pin-back button with Pip placeholder">
+          <circle cx="110" cy="118" r="92" fill="#fbf7ec" stroke="#8c7c5c" stroke-width="2"/>
+          <circle cx="110" cy="118" r="92" fill="none" stroke="#d9c9a3" stroke-width="6" opacity=".4"/>
+          <g transform="translate(110,120)">
+            <path d="M0 56 C-44 56 -52 6 -30 -22 C-16 -42 16 -42 30 -22 C52 6 44 56 0 56 Z" fill="#efe4cc" stroke="#9a5b2e" stroke-width="1.8" stroke-dasharray="6 4"/>
+            <path d="M0 -38 q10 -16 4 -30 M0 -38 q-10 -15 -4 -28" fill="none" stroke="#6e7f3e" stroke-width="2.4"/>
+            <circle cx="-11" cy="-2" r="4.4" fill="#9a5b2e"/><circle cx="11" cy="-2" r="4.4" fill="#9a5b2e"/>
+            <text x="0" y="38" text-anchor="middle" class="ph-note">PIP ART PENDING</text>
+          </g>
+        </svg>
+      </div>
+      <div class="meta">
+        <div class="sku">PIP-05</div>
+        <div class="name">Pip</div>
+        <p class="kind">Pin-back button · Printify</p>
+        <span class="badge">Draft · Pending review</span>
+        <p class="flag">Placeholder — real Pip art clears character review before use.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    05-merch · mockup drafts · held at human review — nothing published, listed, or print-ready.<br>
+    Divine Archives art is grounded in the site &amp; chapters; Pip art is placeholder pending files + character review.
+  </footer>
+</div>
+</body>
+</html>

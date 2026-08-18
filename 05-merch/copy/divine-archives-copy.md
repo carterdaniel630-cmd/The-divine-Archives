@@ -1,60 +1,59 @@
 # Draft Copy — Divine Archives products
 
-**Status:** `DRAFT · PENDING REVIEW` · Copy only — belief stated as belief, not as proven fact.
-All descriptions trace to the cited published chapter. Not for listing until Carter clears.
+**Status:** `DRAFT · PENDING REVIEW` · Final product list (Carter 2026-08-18). Belief stated as
+belief, not proven fact. Sacred-symbol items (DA-03, DA-05) carry a **mandatory attribution/
+context line** — do not ship those without it. Not for listing until Carter clears.
 
 ---
 
-## DA-01 · "The Waters Remembered" — Art Print
-**Title:** The Waters Remembered — Flood-Myth Lineage Print
+## DA-01 · "The Nine Ages" — Art Print / Poster
+**Title:** The Nine Ages — Timeline Print
 **Description:**
-Nearly every people who kept records remembered the world ending in water. This print
-traces the oldest recorded line of flood survivors — from Sumer's Ziusudra to the
-Babylonian Utnapishtim to the Noah of Genesis — as a single descending waterline. Drawn
-from *The Flood*, the comparative-theme chapter of The Divine Archives. It maps the
-*textual lineage* the sources actually share; it does not claim a worldwide flood
-occurred. Printed on matte stock. *(Source: ch01 — The Flood.)*
+The whole of the human search for the sacred, ordered by time. This print lays out the Nine
+Ages of The Divine Archives — from Prehistory to the Modern Age — as a single timeline, each
+age named and dated as the archive gives it. A companion piece for the reference work, printed
+on matte stock.
 
 ---
 
-## DA-02 · "The Weighing of the Heart" — T-Shirt
-**Title:** The Weighing of the Heart — Ma'at Tee
+## DA-02 · "The Archive Emblem" — Tote Bag
+**Title:** The Divine Archives — Emblem Tote
 **Description:**
-In ancient Egyptian belief, the dead heart was weighed against the feather of **Ma'at** —
-truth and cosmic order — to judge a life. This tee renders that scene as clean line art: a
-single feather against a single heart. Drawn from the Egypt chapter of The Divine
-Archives. A description of what Egyptians *held*, offered without embellishment. *(Source:
-ch02 — Egypt.)*
+The mark of the archive on a sturdy everyday tote: the compass-rose emblem and the name, clean
+and quiet. For carrying books, and for anyone who keeps a shelf for the whole of the sacred.
 
 ---
 
-## DA-03 · "Elder Futhark" — Enamel Mug
-**Title:** Elder Futhark — Runic Reference Mug
+## DA-03 · "Elder Futhark" — T-Shirt
+**Title:** Elder Futhark — Runic Ring Tee
 **Description:**
-The twenty-four runes of the **Elder Futhark**, the oldest runic alphabet of the Germanic
-world, wrapped around the mug with each rune's transliteration beneath — a reference object
-you can drink from. Drawn from the Norse Paganism chapter of The Divine Archives, which
-treats the runes in their documented role as a writing and divinatory system. No invented
-runes, no invented meanings. *(Source: ch23 — Norse Paganism.)*
+The twenty-four runes of the Elder Futhark — the oldest runic alphabet of the Germanic world —
+set as a clean geometric ring. A minimalist reference design from the Norse Paganism chapter of
+The Divine Archives, showing the runes in their documented role as a writing and divinatory
+system. No invented runes, no invented meanings.
+**Attribution line (required on listing):** *Elder Futhark runic row, from* The Divine Archives*,
+ch. 23 — Norse Paganism. Shown as a historical writing/divinatory alphabet, not a magical claim.*
 
 ---
 
-## DA-04 · "The Tree of Life" — Poster
-**Title:** The Tree of Life — Ten Sefirot Poster
+## DA-04 · "The Archive" — Journal / Notebook
+**Title:** The Divine Archives — Journal
 **Description:**
-The **Tree of Life** of Kabbalah: ten *sefirot* — the emanations through which, in
-Kabbalistic thought, the infinite **Ein Sof** unfolds into the world — set as a labeled
-diagram with the connecting paths. Drawn from the Kabbalah chapter of The Divine Archives.
-Presented as the tradition's cosmological model, named as the sources name it. *(Source:
-ch26 — Kabbalah.)*
+A field-notebook for your own search. The archive's emblem on the cover, the nine ages along
+the foot — a quiet companion journal to the reference work, ready for notes, questions, and
+marginalia of your own.
 
 ---
 
-## DA-05 · "The Eightfold Path" — Tote Bag
-**Title:** The Eightfold Path — Dharmachakra Tote
+## DA-05 · "The Tree of Life" — Pin-Back Button
+**Title:** The Tree of Life — Sefirot Button
 **Description:**
-The **Dharmachakra**, the Wheel of the Dharma, its eight spokes named for the eight
-factors of the Buddha's **Eightfold Path** — the practical scheme at the heart of early
-Buddhist teaching. Drawn from the Buddhism chapter of The Divine Archives, with the eight
-factors given as the chapter gives them. Carry the map, not the merch-idea of it.
-*(Source: ch11 — Buddhism.)*
+The Tree of Life of Kabbalah in miniature: the ten sefirot and the paths between them, the
+emanations through which — in Kabbalistic thought — the infinite Ein Sof unfolds into the world.
+From the Kabbalah chapter of The Divine Archives, named as the sources name it.
+**Attribution line (required on listing):** *Tree of Life (ten sefirot), from* The Divine
+Archives*, ch. 26 — Kabbalah. A diagram of Kabbalistic cosmology, shared as educational
+reference with respect for the living tradition.*
+
+*(Approved alternate for this SKU — Dharmachakra, ch. 11 Buddhism — uses its own attribution
+line; see the brief.)*

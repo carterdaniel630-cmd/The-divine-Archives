@@ -49,8 +49,8 @@ ever disagree, **the images win.**
   toward the crown, wider rounded base), **chibi proportions** (oversized head-to-body
   ratio, small stubby limbs)
 - **Skin/body:** warm **golden-brown / tan onion** color with subtle **papery onion-skin
-  layering** (faint vertical striations, soft translucent highlights). **NOT moss-green** —
-  see the flag below.
+  layering** (faint vertical striations, soft translucent highlights). This is **final**
+  (Carter, 2026-08-18); the earlier "moss-green" brief is superseded — not moss-green.
 - **Sprout:** a small **green leafy sprout/tuft** at the crown (2–3 tiny leaves) — the only
   green on the character
 - **Eyes:** very **large, round, glossy**, dark with **warm amber-gold reflections** and
@@ -63,12 +63,8 @@ ever disagree, **the images win.**
 - **Brand voice** (from the supplied posts): wholesome, gentle, **encouraging / kindness-
   and-positivity** themed
 
-> 🚩 **Color conflict, flagged not silently resolved:** the *original written* brief said
-> Pip's skin is **"moss-green."** Carter's *supplied reference art* shows a **brown/golden
-> onion** with only a green sprout. This spec follows the supplied art (Carter said "use as
-> reference"). **Carter: confirm** — brown/golden onion is canonical, or is there a separate
-> moss-green colorway? Until confirmed, treat brown/golden onion as locked. (Tracked in
-> `FLAGS.md`.)
+> ✅ **Color: FINAL — brown/golden onion** (Carter confirmed 2026-08-18). The earlier
+> "moss-green" description is retired. No longer an open question.
 
 **RETIRED / FORBIDDEN concept — reject on sight:**
 - The old **seed-being / root-system** Pip (a sprouting seed, trailing roots, a

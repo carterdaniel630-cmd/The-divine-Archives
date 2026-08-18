@@ -1,28 +1,35 @@
 # mockups/
 
-Product mockups (design-on-product previews) land here, one subfolder or file per product
-using its SKU stem (e.g. `da-02-egypt-maat-tee/`, `pip-01-sticker-sheet/`).
+**`mockups.html`** — a self-contained mockup gallery for all 10 products (open in a browser).
+Design & placement **drafts for review** — not deployed, not linked from the site, nothing
+print-ready.
 
-**This folder is intentionally empty right now.** No mockup exists yet because:
-- Divine Archives designs need their grounded art produced first (each already cites its
-  source chapter in `../product-briefs/divine-archives/`).
-- Pip designs need the **canonical Pip reference art**, which is not yet in the repo
-  (see `../FLAGS.md`).
+## What's in it
+- **Divine Archives (DA-01…05):** real design artwork, grounded in the site and its chapters —
+  the Nine Ages timeline (era names/dates from `data.js`), the site emblem, the Elder Futhark
+  runic ring (ch23), an archive journal cover, and the Tree of Life / ten sefirot button (ch26).
+  DA-03 and DA-05 show their **mandatory attribution lines**.
+- **Pip's Orchard (PIP-01…05):** product **layouts** with a **clearly-labeled placeholder**
+  where the character art goes — a neutral dashed onion silhouette marked "PIP" / "PIP ART
+  PENDING", plus "FRIEND" placeholders where the (undefined) friend group would appear.
 
-## Hard rule for Pip mockups (Non-Negotiable #1)
-Order of operations, no exceptions:
+## Why Pip art is a placeholder (hard rule, Non-Negotiable #1)
+Real Pip art is **not in the repo yet** (files coming separately), and every Pip asset must
+clear the **character-consistency review** before it goes on any mockup:
 
 ```
 draft Pip art  →  flag for human review  →  (approved)  →  place on mockup  →  Review Gate
 ```
 
-A Pip design may **never** go straight onto a mockup. Every Pip asset must first pass the
-character-consistency check against the locked reference (`../pip-reference/REFERENCE.md`:
-rounded onion/bulb body in golden-brown/tan with papery layering, small green sprout, large
-glossy amber-gold eyes, rosy cheeks, chibi proportions, painterly storybook style,
-golden-hour lighting) and must **not** drift toward the retired seed-being/root-system
-concept. If in doubt, hold and flag — do not mock it up.
+So these mockups deliberately do **not** attempt to draw the character — they show the product,
+the composition, and where Pip (and friends) will sit. When the real files arrive and clear
+review, they replace the placeholders.
+
+## Open items surfaced by the mockups (see ../FLAGS.md)
+- **Friend group undefined** (PIP-01, PIP-03) — placeholders only until Carter supplies references.
+- **"Pip and the…" tote** (PIP-04) — cover titles/scenes should match the real Amazon KDP books.
+- **Pip reference image files** — still to be committed to `../pip-reference/`.
 
 ## Status
-Every mockup added here starts at `DRAFT`/`PENDING REVIEW` and may only reach
-`READY TO LIST` by Carter, per `../CLAUDE.md`.
+Every mockup is `DRAFT · PENDING REVIEW`. Only Carter advances anything to `READY TO LIST`
+(see `../CLAUDE.md`).
