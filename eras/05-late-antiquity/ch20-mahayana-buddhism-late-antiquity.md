@@ -102,6 +102,23 @@ to the turn toward saving grace we have seen in Christianity and the mystery cul
 18). Something in the religious mood of Late Antiquity, from Rome to the Ganges to China, was
 reaching for a compassionate savior.
 
+## The goddess of mercy: how Avalokiteshvara became Guanyin
+
+One transformation deserves its own telling, for it is among the most remarkable in the history
+of religion. The bodhisattva of compassion entered China as **Avalokiteshvara**, an
+unambiguously **male** figure ("the lord who looks down"). Over the following centuries he
+**changed sex**. From roughly the tenth century, images of the bodhisattva in China grew
+steadily more feminine, until by the Song dynasty **Guanyin** was firmly established as a
+**goddess** — the white-robed "Goddess of Mercy," the compassionate mother who hears every cry,
+grants children to the childless, and rescues the desperate. The Lotus Sutra had opened the door:
+its twenty-fifth chapter, the "Universal Gate," teaches that Avalokiteshvara manifests in
+*whatever form* — man or woman, monk or child, human or god — will best save a given being.
+Chinese folk devotion filled that opening with the beloved legend of **Princess Miaoshan**, a
+king's daughter who chose the religious life against her father's will, endured martyrdom, and was
+revealed as Guanyin. Today Guanyin is arguably the **most widely worshipped deity in all of East
+Asia** — a striking case of a tradition's central compassionate figure crossing not only a
+cultural border but the boundary of gender itself.
+
 ## Skillful means: the key that unlocks the door
 
 How could the Mahayana reconcile its new teachings with the old? Through one of its most
@@ -128,6 +145,19 @@ century BCE, by later Buddhists. The tradition itself accounts for the gap with 
 to the **nagas** (serpent-beings) in the deep until humanity was ready, and retrieved by Nagarjuna.
 What a tradition holds to be the Buddha's word and what the historical record dates to a given
 century are, as always in this work, two different statements, and both are set down here.
+
+## The cult of the book
+
+The Mahayana did something new with its scriptures: it made the **sutra itself an object of
+worship**. Again and again the Mahayana texts promise vast **merit** to anyone who copies,
+recites, memorizes, or even honors them — and several declare that the very place where the sutra
+is kept or preached **becomes a shrine of the Buddha**, worthy of the reverence once reserved for
+his bodily relics. Scholars (notably Gregory Schopen) have argued that this "**cult of the book**"
+was a deliberate move to raise text-devotion above the older relic-and-stupa piety, and it had
+enormous consequences: the copying of sutras became a central act of devotion across Asia — and,
+in China, a major spur to the invention of **printing**, so that the world's oldest dated printed
+book is a copy of the **Diamond Sutra** (868 CE). In the Mahayana the word of the Buddha was not
+merely to be read but to be **venerated** — the teaching become a living relic.
 
 ## How the Mahayana actually began
 
@@ -209,6 +239,10 @@ Himalayas, **Chan/Zen**, **Pure Land**, and the whole vast flowering of **East A
   Korea, Japan, and beyond, where it became the dominant form of Buddhism.
 - The revised scholarly understanding that the Mahayana was originally a **minority, largely monastic**
   movement, not a mass lay revolt.
+- The East Asian **feminization of Avalokiteshvara into the goddess Guanyin** (male in India,
+  established as female by the Song dynasty; the Lotus Sutra's "Universal Gate" and the Miaoshan
+  legend), and the Mahayana **"cult of the book"** — the sutra venerated as a shrine, with copying
+  as a meritorious act (a spur to printing; the Diamond Sutra of 868 CE the oldest dated printed book).
 
 **What's not supported by the evidence**
 
@@ -248,6 +282,11 @@ Himalayas, **Chan/Zen**, **Pure Land**, and the whole vast flowering of **East A
 - On the revised (monastic, minority) origins, the work of Gregory Schopen and Jan Nattier (e.g. *A Few
   Good Men*); on Indra's Net, [Wikipedia: Indra's net](https://en.wikipedia.org/wiki/Indra's_net) and the
   Avatamsaka Sutra.
+
+*Guanyin and the cult of the book*
+- The feminization of Avalokiteshvara into Guanyin and the Miaoshan legend — [Embodied Philosophy: From
+  Bodhisattva to Goddess](https://www.embodiedphilosophy.com/from-bodhisattva-to-goddess-guanyin-and-chinese-buddhism-2/).
+- The Mahayana "cult of the book" (Schopen) and sutra-copying merit — [Wikipedia: Sutra copying](https://en.wikipedia.org/wiki/Sutra_copying).
 
 *Note on sourcing:* Researched from standard reference scholarship (Britannica, sourced overviews) and the
 mainstream Buddhist-studies scholarship of Williams, Schopen, and Nattier rather than memory alone, per the
