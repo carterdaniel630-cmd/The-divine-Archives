@@ -20,6 +20,27 @@ Sufism arose early, among ascetics who recoiled from the sudden wealth and world
 
 How this ascetic piety became the vast mystical system of later centuries is genuinely debated. The old textbook account of a smooth "transition from *zuhd* (asceticism) to *tasawwuf* (mysticism)" has been questioned; and scholars still argue how much Sufism drew on currents outside Islam — **Neoplatonism**, Christian **monasticism**, perhaps Indian ideas — versus growing from seeds already in the **Qur'an** and the example of the Prophet. Sufis themselves insist on the second: that theirs is the inner meaning of Islam, traced through an unbroken **chain** (*silsila*) of masters back to Muhammad.
 
+## "I am the Truth": the martyr al-Hallaj
+
+As Sufism deepened, it split over a dangerous question: what happens to a mystic who reaches
+**fana**, the annihilation of the self? Two schools formed. The **"sober"** path of **al-Junayd** of
+Baghdad (d. 910) taught that the mystic, after annihilation, is returned to the world clothed again
+in his sober self, able to live and teach within the Law. The **"intoxicated"** path, associated
+with the Persian **Bayazid Bistami** (d. 874), embraced the ecstasy itself — and out of it came the
+**shathiyat**, the "ecstatic utterances," speech that bursts from a saint so effaced in God that he
+no longer hears his own voice. Bistami was said to have cried, "**Glory be to me! How great is my
+majesty!**" — words that, on their face, claim the glory owed only to God.
+
+The most famous, and most fatal, of these utterances was spoken by **Mansur al-Hallaj** (c.
+858–922). In a state of union he cried **"Ana al-Haqq"** — "**I am the Truth**" — and since
+*al-Haqq*, "the Truth," is one of the ninety-nine names of God, it sounded like a man calling
+himself God. To the Sufis who understood it, it was the purest confession of *fana*: there was no
+Hallaj left to speak, only God speaking through an emptied vessel. To the authorities of Baghdad it
+was blasphemy, and in **922** al-Hallaj was scourged, mutilated, hanged on a gibbet, beheaded, and
+burned, his ashes cast into the Tigris — laughing, the tradition says, as he died. He became
+Sufism's paradigmatic **martyr of love**, and his cry the eternal test-case of the razor's edge
+between blasphemy and the deepest union.
+
 ## Al-Ghazali: the great reconciliation
 
 The hinge of Sufi history is **Abu Hamid al-Ghazali** (d. 1111), the most celebrated theologian of his age. At the height of his fame, holding the foremost chair at the **Nizamiyya** academy in Baghdad, he suffered a shattering spiritual crisis — recounted in his autobiography, *Deliverance from Error* — abandoned his post, and wandered for years. Out of it came the **Ihya Ulum al-Din** ("The Revival of the Religious Sciences"), a vast work that wove Sufi inwardness together with orthodox Sunni law and theology and argued that the mystical path was the living core of the faith, not a deviation from it. More than any other single act, al-Ghazali's synthesis made Sufism **respectable** — the beating heart of mainstream Islam for the next seven centuries.
@@ -35,6 +56,23 @@ The high medieval centuries are Sufism's golden age.
 ## The orders
 
 This era's other great development is institutional: Sufism organized itself into **tariqas** — orders, each a lineage of practice descending through a *silsila* from a founding saint back to the Prophet. The **Qadiriyya** grew around **Abd al-Qadir al-Jilani** (d. 1166); the **Chishtiyya** carried Sufism deep into India; the **Mevlevi** formed around Rumi (c. 1250); the **Shadhiliyya**, **Rifa'iyya**, and many more followed. Each gathered in a lodge — *khanqah*, *zawiya*, or *tekke* — around a living master, the **shaykh** or **murshid**, to whom the disciple (*murid*) submitted utterly, as (the saying went) a corpse in the hands of the washer. Through these orders Sufism became the everyday religion of millions and the chief engine of Islam's spread across Africa, Anatolia, Central Asia, and the Indian subcontinent.
+
+## The friends of God: saints, shrines, and barakah
+
+For most Muslims across the centuries, Sufism was met not in books of metaphysics but at a **tomb**.
+The great masters were revered as **awliya Allah**, the "**friends of God**" — the Qur'anic phrase
+for the saints — men and women through whom flowed **barakah**, a spiritual blessing-power that
+begins in God and passes through those closest to him. Barakah could be transmitted by touch, by
+lineage, by proximity — and above all it lingered at a saint's **grave**. So Sufi Islam became a
+landscape of **shrines**: the *dargah* of the Indian subcontinent, the *zawiya* and *marabout* tombs
+of North Africa, to which the faithful came in their millions, seeking healing, children,
+forgiveness, and the saint's **intercession** with God. They tied threads, left flowers and sweets
+(shared out afterward as *tabarruk*, "blessed" food), and gathered each year for the **urs**, the
+"wedding" — the saint's death-anniversary, celebrating his final union with the Beloved — with
+music, feasting, and all-night *dhikr*. This was the lived, popular religion of much of the Muslim
+world for a thousand years, and it is exactly what the puritanical reform movements would later
+condemn as idolatry — the living fault-line the honesty section below marks, not for this book to
+settle.
 
 ## Practice
 
@@ -57,7 +95,7 @@ Sufism is the mystical inner path of the **Islam** of the earlier era, and the e
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The rise of Sufism from early Islamic asceticism; the historical figures of **Hasan al-Basri**, **Rabia**, **al-Ghazali**, **Ibn Arabi**, and **Rumi**, and the dates and content of their major works; the formation of the **tariqa** orders (Qadiriyya, Chishtiyya, Mevlevi, and the rest) in the high medieval period; and the core practices of **dhikr**, **sama**, and the master–disciple path.
+**Well-supported by evidence.** The rise of Sufism from early Islamic asceticism; the historical figures of **Hasan al-Basri**, **Rabia**, **al-Ghazali**, **Ibn Arabi**, and **Rumi**, and the dates and content of their major works; the formation of the **tariqa** orders (Qadiriyya, Chishtiyya, Mevlevi, and the rest) in the high medieval period; the core practices of **dhikr**, **sama**, and the master–disciple path; the "sober" vs. "intoxicated" schools (**al-Junayd** and **Bayazid Bistami**), the **shathiyat**, and the execution of **al-Hallaj** (922) for "Ana al-Haqq"; and the vast lived cult of the **saints** (*awliya*), their **barakah**, and their **shrines** (*dargah*, *zawiya*) with the **urs** festivals.
 
 **Not supported (as history).** The **miracles** (*karamat*) attributed to the Sufi saints are matters of faith, not historical finding. Ibn Arabi's **wahdat al-wujud** is a theological vision, described here, neither proven nor refuted. And the popular modern image of a **universal, de-Islamized Rumi** is a documented distortion of the historical poet, who was a practicing Muslim through and through.
 
@@ -73,4 +111,6 @@ Sufism is the mystical inner path of the **Islam** of the earlier era, and the e
 - Practice: dhikr, sama, muraqaba; maqamat (tawba, sabr, shukr, tawakkul, mahabba) and ahwal; fana and baqa — daily Sufi practice overviews (Ghayb.com; The Pluralism Project). https://pluralism.org/sufism-seeking-god
 - Wine/tavern/Beloved/Cupbearer symbolism as a system — "Wine in Sufism," What-When-How; Nimatullahi Sufi Order, "Sufi Symbolism." https://www.nimatullahi.org/sufi-symbolism
 - Anti-Sufism: Wahhabi/Salafi condemnation of tomb-veneration and organized dhikr as bid'a — "Persecution of Sufis" (Anti-Sufism), Wikipedia. https://en.wikipedia.org/wiki/Anti-Sufism
+- Al-Hallaj, "Ana al-Haqq," the shathiyat, and the sober/intoxicated schools (Junayd, Bistami) — "Ana'l-Haqq," Encyclopaedia Iranica. https://www.iranicaonline.org/articles/anal-haqq-i-am-the-truth-the-most-famous-of-the-sufi-sathiyat-ecstatic-utterances-or-paradoxes/
+- Sufi saints (awliya), barakah, the dargah shrine, and the urs — "Barakah," Wikipedia (https://en.wikipedia.org/wiki/Barakah); "Dargah," Wikipedia (https://en.wikipedia.org/wiki/Dargah); "Urs," Wikipedia (https://en.wikipedia.org/wiki/Urs_(Sufism))
 - The de-Islamized Western reception of Rumi; translators softening the Islamic content — Dar al-Masnavi, "Western Views of Mawlana Rumi's Muslim Identity." https://www.dar-al-masnavi.org/western_views.html
