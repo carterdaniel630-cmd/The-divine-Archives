@@ -1,8 +1,14 @@
 # DA-04 · "The Tree of Life" — Poster
 
-**Status:** `DRAFT · PROPOSED (list not received)`
-**Sub-brand:** The Divine Archives
+**Status:** `DRAFT · PROPOSED (list not received) · HELD pending sacred-symbol sign-off`
+**Sub-brand:** The Divine Archives · **Supplier:** Printify (poster/print) ✅
 **SKU:** TBD · **Price:** TBD (see FLAGS.md)
+**Sacred-symbol sensitivity:** **HIGH** — the Tree of Life / sefirot is a **living Jewish
+mystical** sacred diagram. ⚠️ Sacred-symbol gate (CLAUDE.md): may only proceed if it clears
+the respectful-use bar as attributed *educational* documentation of Kabbalistic cosmology —
+**not** a decontextual "mystical" novelty. **This is a strong candidate to pull** if Carter
+isn't comfortable selling it; if pulled, replace with a lower-sensitivity grounded design.
+Carter decides per this symbol.
 
 ## Product type
 Poster / art print (POD), portrait, sizes TBD.
@@ -23,8 +29,8 @@ not add sefirot names, paths, or "correspondences" not in the chapter.
 ## Review note
 - **ch26 is a pending-review chapter** and a **living-tradition** sacred diagram — double
   flag: confirm the sefirot names/spellings against the final chapter text at review, and
-  confirm Carter is comfortable selling this symbol as merch (see FLAGS.md).
+  confirm Carter is comfortable selling this symbol as merch (see FLAGS.md). Held until then.
 
-## POD supplier notes
-- Standard flat poster print. Supplier TBD. Fine line-work — verify minimum line weight
-  holds at the chosen print size.
+## POD supplier notes (Printify)
+- Printify offers posters/matte prints. Fine line-work — verify minimum line weight holds at
+  the chosen print size and provider.

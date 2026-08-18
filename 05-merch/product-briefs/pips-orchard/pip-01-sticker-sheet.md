@@ -1,21 +1,22 @@
 # PIP-01 · "Pip Through the Day" — Sticker Sheet
 
 **Status:** `DRAFT · PROPOSED (list not received)`
-**Sub-brand:** Pip's Orchard
+**Sub-brand:** Pip's Orchard · **Supplier:** Printify (die-cut/kiss-cut sheet) ✅
 **SKU:** TBD · **Price:** TBD (see FLAGS.md)
 **Character review:** ⛔ PENDING — art must clear the Pip consistency flag before mockup.
 
 ## Product type
-Die-cut kiss-cut sticker sheet (POD), multiple small Pip poses on one sheet.
+Kiss-cut sticker sheet (Printify), multiple small Pip poses on one sheet.
 
 ## Design direction (locked character — no drift)
-6–8 small Pip poses (waving, napping, holding an apple, peeking from leaves, etc.), all
-rendered on the **locked reference**: round **pumpkin/onion-shaped** body, **moss-green**
-skin, **glossy golden** eyes, **leafy tuft**, **chibi** proportions, **painterly
-storybook** style, **golden-hour** lighting. Reject any pose that reads as the retired
-**seed-being / root-system** Pip (roots, seed-pod body, tendrils) — see CLAUDE.md.
+6–8 small Pip poses (waving, napping, holding an apple, peeking from leaves, arms up), all
+on the **locked reference** (see `../../pip-reference/REFERENCE.md`): rounded **onion/bulb**
+body in warm **golden-brown/tan** with papery onion-skin layering, small **green sprout** on
+top, **large glossy amber-gold eyes**, rosy cheeks, **chibi** proportions, **painterly
+storybook** style, **golden-hour** warmth. Reject any pose drifting toward the retired
+**seed-being/root-system** Pip.
 
-## POD supplier notes
-- Kiss-cut sticker sheets are supported by several POD vendors but sheet templates/cut
-  lines vary — confirm template with the chosen supplier. Supplier TBD.
+## POD supplier notes (Printify)
+- Printify offers kiss-cut and die-cut sticker sheets — confirm the exact sheet template and
+  cut lines with the chosen Printify print provider.
 - Painterly art needs adequate DPI at print size; confirm color profile.

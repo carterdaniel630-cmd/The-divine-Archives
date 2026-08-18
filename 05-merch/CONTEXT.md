@@ -12,25 +12,35 @@ Merch for two sub-brands on one Shopify store — **The Divine Archives** and **
 Orchard** — under The Orchard's ICM workflow. Deliverables: 10 product briefs, draft copy,
 a `/shop` page draft for the Divine Archives static site.
 
+## Supplier & directives locked (Carter, 2026-08-18)
+- **Printify only** — products constrained to Printify's catalog (plush & hard-enamel out;
+  swapped to throw pillow & pin-back button).
+- **Sacred symbols only if respectful** — hard gate; DA-04 (Kabbalah) & DA-05 (Buddhism) HELD.
+- **Pip reference art supplied** — locked in `pip-reference/REFERENCE.md` (brown/golden onion,
+  not moss-green — conflict flagged).
+- **Pip's Orchard is an existing brand** — TikTok / Facebook / YouTube + Amazon KDP books.
+
 ## Build state
 | Deliverable | State | Notes |
 |---|---|---|
-| Stage `CLAUDE.md` (2 non-negotiables + review gate) | ✅ DRAFT | done |
-| `FLAGS.md` (missing info) | ✅ | done — read it |
-| 5 × Divine Archives briefs | ✅ DRAFT (proposed) | each cites a published chapter |
-| 5 × Pip's Orchard briefs | ✅ DRAFT (proposed) | locked character; art review pending |
+| Stage `CLAUDE.md` (2 non-negotiables + review gate + Printify + sacred gate) | ✅ DRAFT | done |
+| `FLAGS.md` (open items) | ✅ | done — read it |
+| `pip-reference/REFERENCE.md` | ✅ | locked character; ⛔ actual image files still to commit |
+| 5 × Divine Archives briefs | ✅ DRAFT (proposed) | each cites a published chapter; DA-04/05 HELD |
+| 5 × Pip's Orchard briefs | ✅ DRAFT (proposed) | locked character; Printify-only; art review pending |
 | Draft copy (10) | ✅ DRAFT | `copy/` |
-| Mockups | ⛔ none | folder scaffolded; Pip art blocked (FLAGS.md) |
+| Mockups | ⛔ none | folder scaffolded; Pip mockups need art through the review flag first |
 | `/shop` page draft | ✅ DRAFT | Buy Button left as TODO (needs live product ID) |
 
 ## Review checklist (both required before Carter can set READY TO LIST)
-- [ ] **Pip character-consistency check** — every Pip asset vs. the locked reference; no
-      seed/root drift. *(No Pip art produced yet — nothing to check until art exists.)*
+- [ ] **Pip character-consistency check** — every Pip asset vs. the locked reference
+      (`pip-reference/REFERENCE.md`); no seed/root drift. *(No Pip mockup art produced yet.)*
 - [ ] **Divine Archives factual-grounding check** — every DA asset traces to a published
       chapter. Verify the specific symbol/wording against each chapter at review
       (esp. ch26 Kabbalah, still pending-review; ch11 Eightfold Path factor names).
-- [ ] Resolve `FLAGS.md` blockers: **real product list**, POD supplier, pricing/SKUs,
-      domain/storefront structure, Pip reference art, living-tradition sensitivity.
+- [ ] **Sacred-symbol respectful-use sign-off** — DA-03/04/05, per symbol (Carter).
+- [ ] Resolve `FLAGS.md` items: **real product list**, **Pip color conflict**, pricing/SKUs,
+      domain/storefront structure, commit Pip image files, hard-enamel/plush out-of-scope calls.
 
 ## What is deliberately NOT done (by policy)
 - No product created in Shopify; no live Buy Button snippet.

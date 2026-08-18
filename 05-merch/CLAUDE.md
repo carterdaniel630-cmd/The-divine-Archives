@@ -39,22 +39,42 @@ grounding), never outputs of it.
 ## NON-NEGOTIABLE #1 — CHARACTER CONSISTENCY (Pip's Orchard)
 
 Every Pip asset **must** match the **locked character reference**. No drift, no
-reinterpretation, no "artistic take."
+reinterpretation, no "artistic take." **The canonical reference is the art Carter supplied**
+(the two golden-hour Pip social posts — "BE PROUD OF HOW FAR YOU'VE COME" and "BE THE
+REASON SOMEONE SMILES"); see `pip-reference/REFERENCE.md`. Where this spec and those images
+ever disagree, **the images win.**
 
-**Locked Pip reference (canonical):**
-- **Body:** round, **pumpkin/onion-shaped** silhouette (squat and rounded, wider than
-  tall), **chibi proportions** (oversized head-to-body ratio, small stubby limbs)
-- **Skin:** **moss-green**
-- **Eyes:** **glossy golden**, large and reflective
-- **Head:** a **leafy tuft** sprouting from the crown (the "stem")
-- **Style:** **painterly storybook** illustration, soft edges, hand-illustrated feel
-- **Lighting:** **golden-hour** warmth (low, warm, directional light)
+**Locked Pip reference (canonical — from Carter's supplied art):**
+- **Body:** a rounded **onion/bulb** silhouette (slightly taller than wide, soft-tapering
+  toward the crown, wider rounded base), **chibi proportions** (oversized head-to-body
+  ratio, small stubby limbs)
+- **Skin/body:** warm **golden-brown / tan onion** color with subtle **papery onion-skin
+  layering** (faint vertical striations, soft translucent highlights). **NOT moss-green** —
+  see the flag below.
+- **Sprout:** a small **green leafy sprout/tuft** at the crown (2–3 tiny leaves) — the only
+  green on the character
+- **Eyes:** very **large, round, glossy**, dark with **warm amber-gold reflections** and
+  bright catchlights; highly expressive
+- **Face:** rosy **blushed cheeks**, tiny gentle mouth, no prominent nose
+- **Limbs:** short stubby arms and legs, small rounded hands and **bare feet**
+- **Style:** **painterly storybook** illustration, soft edges, warm palette, gentle rim light
+- **Lighting/setting:** **golden-hour** warmth in natural outdoor scenes (rolling hills, a
+  path, grassy meadows, butterflies)
+- **Brand voice** (from the supplied posts): wholesome, gentle, **encouraging / kindness-
+  and-positivity** themed
+
+> 🚩 **Color conflict, flagged not silently resolved:** the *original written* brief said
+> Pip's skin is **"moss-green."** Carter's *supplied reference art* shows a **brown/golden
+> onion** with only a green sprout. This spec follows the supplied art (Carter said "use as
+> reference"). **Carter: confirm** — brown/golden onion is canonical, or is there a separate
+> moss-green colorway? Until confirmed, treat brown/golden onion as locked. (Tracked in
+> `FLAGS.md`.)
 
 **RETIRED / FORBIDDEN concept — reject on sight:**
 - The old **seed-being / root-system** Pip (a sprouting seed, trailing roots, a
   root-network body, seedling/sapling forms). This concept is **retired**. Any design
-  that drifts toward it — roots, seed-pod body, tendrils instead of a leafy tuft, a
-  germinating-seed silhouette — is **rejected**, not revised into shape.
+  that drifts toward it — roots, seed-pod body, tendrils instead of the small green
+  sprout, a germinating-seed silhouette — is **rejected**, not revised into shape.
 
 **Hard rule:** **Every Pip asset is flagged for human review BEFORE it is used on any
 product mockup.** Order of operations is: draft Pip art → flag for human review →
@@ -85,9 +105,23 @@ trace back to an existing published chapter** on the live site.
 - **Keep belief and evidence distinct** (the archive's core rule). Product copy states
   what a tradition *held/used*, not that a sacred claim is *literally true*. No
   "authentic magic," "real power," or proof-claims for contested/unfalsifiable material.
-- **Respectful use:** living-tradition sacred material is described, not appropriated as
-  a novelty. When a symbol is sacred to a living community, that's a review flag, not an
-  automatic block — Carter decides.
+
+### Sacred-symbol gate (Carter's directive — mandatory)
+> **We will NOT use a sacred symbol on a product unless it can be done respectfully.**
+
+This is a hard gate on top of factual grounding. A symbol being *grounded in a chapter* is
+necessary but **not sufficient** — it must also clear the respectful-use bar.
+- **Living-tradition sacred symbols** (e.g. the Kabbalistic Tree of Life / sefirot, the
+  Buddhist Dharmachakra, runic material with modern religious use) are **high-sensitivity**.
+  Each must be justified as respectful *educational/reference* use — attributed to its
+  chapter, presented as documentation of what the tradition holds, never as a decontextual
+  novelty or "mystical power" claim — **or it is pulled** and replaced with a lower-
+  sensitivity grounded design. Carter makes the final call per symbol.
+- **Historical / museum-context motifs** from traditions with no living practitioner
+  community (e.g. Egyptian Ma'at iconography) and **comparative/textual** pieces (e.g. a
+  flood-lineage diagram) are lower-sensitivity, but still get the same descriptive framing.
+- If a symbol can't be done respectfully, **don't do it.** Swap in a grounded, lower-
+  sensitivity design rather than forcing the sacred one.
 
 ---
 
@@ -122,16 +156,22 @@ brief, mockup, and copy block carries a status of `DRAFT` or `PENDING REVIEW` �
 
 ---
 
-## POD / production notes (defaults, not decisions)
-- These are **print-on-demand (POD)** products fulfilled through a supplier feeding the
-  single Shopify store. **The supplier is not yet chosen** (Printful / Printify / other)
-  — see `FLAGS.md`. Briefs record POD *feasibility notes* per product type, not a locked
-  supplier.
-- Anything that isn't standard flat-print POD (e.g. **plush**, custom enamel **pins**,
-  die-cut stickers) has different suppliers, MOQs, and lead times — call that out in the
-  brief and flag it, don't assume a single POD vendor covers it.
-- **No pricing is set in this stage.** SRP/margins depend on supplier base cost — leave
-  as `TBD` and flag.
+## POD / production notes — Printify only (Carter's directive)
+> **We will only create products that Printify can make available to us.**
+
+- **Locked supplier: Printify.** If Printify's catalog does not offer a product type, that
+  product is **out of scope** — do not source it elsewhere for this stage; replace it with
+  a Printify-available product (or park it and flag).
+- **Confirmed in Printify's catalog** (verified Aug 2026): stickers (die-cut / kiss-cut /
+  sheets), greeting cards (folded, matte/glossy, with envelopes), mugs (ceramic + enamel
+  camp), tote bags, apparel/tees, posters/prints, throw pillows, and pin-back **buttons**
+  (Tecre round pins).
+- **NOT a standard Printify product — do not assume it:**
+  - **Custom-shaped plush** — Printify only offers a stock teddy bear with a customizable
+    mini-tee, *not* a custom onion-shaped Pip plush. A true Pip plush is out of scope here.
+  - **Hard-enamel pins** — Printify offers pin-back *buttons*, not custom hard enamel.
+- **No pricing is set in this stage.** SRP/margins depend on Printify base cost — leave as
+  `TBD` and flag.
 
 ## Per-product workflow
 1. Write the brief: product type, design direction, source chapter/reference (DA) or
@@ -141,9 +181,20 @@ brief, mockup, and copy block carries a status of `DRAFT` or `PENDING REVIEW` �
 4. Move to `PENDING REVIEW` and record in `CONTEXT.md`.
 5. **Stop.** Carter reviews. Do not advance to `READY TO LIST`.
 
+## Pip's Orchard — existing brand presence
+Pip's Orchard is an **established brand**, not a new one. It already has:
+- **TikTok, Facebook, and YouTube** channels (the supplied art is in that wholesome,
+  encouraging social-post style).
+- **Books on Amazon KDP** built around the Pip character.
+
+Implications for this stage: merch **complements** the existing books and social presence —
+match the established Pip look and voice, and treat the social channels as the natural place
+a Pip storefront would be linked from. Do not contradict or restyle the existing brand.
+
 ## Domain / infrastructure
 - The `/shop` page draft targets the **Divine Archives static site** (Cloudflare Pages,
   same repo/deploy pattern as `docs/*.html`, domain `getconexto.com`).
-- **Where Pip's Orchard lives publicly is unresolved** (a section of getconexto.com? a
-  separate domain? one store, two storefronts?) — see `FLAGS.md`. Do not make any
-  domain/DNS change; the root `CLAUDE.md` domain policy still applies.
+- **Where Pip's Orchard sells publicly is still unresolved** (a section of getconexto.com?
+  a separate Pip domain? Shopify's own storefront linked from the TikTok/YouTube/Facebook
+  channels?) — see `FLAGS.md`. Do not make any domain/DNS change; the root `CLAUDE.md`
+  domain policy still applies.

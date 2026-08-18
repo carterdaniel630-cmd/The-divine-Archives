@@ -8,28 +8,28 @@ character-consistency review before any mockup. Not for listing until Carter cle
 ## PIP-01 · "Pip Through the Day" — Sticker Sheet
 **Title:** Pip Through the Day — Sticker Sheet
 **Description:**
-A little sheet of Pip, the moss-green orchard sprite, going about a golden-hour day —
+A little sheet of Pip, the round little orchard sprite, going about a golden-hour day —
 waving, napping, peeking out from the leaves, hugging a stray apple. Kiss-cut and ready
 for your laptop, water bottle, or journal. Painterly storybook art, warm as late-afternoon
 light.
 
 ---
 
-## PIP-02 · "Pip" — Enamel Pin
-**Title:** Pip — Enamel Pin
+## PIP-02 · "Pip" — Button Badge
+**Title:** Pip — Button Badge
 **Description:**
-Pip, pocket-sized and shining. The round little orchard-keeper with the leafy tuft and the
-glossy golden eyes, cast as a hard-enamel pin for your bag, jacket, or lanyard. Small,
-sturdy, and quietly cheerful.
+Pip, pocket-sized and cheerful. The round little orchard-keeper with the leafy sprout and
+the big glossy eyes, on a pin-back button for your bag, jacket, or lanyard. Small, bright,
+and quietly kind.
 
 ---
 
-## PIP-03 · "Pip" — Plush
-**Title:** Pip — Plush
+## PIP-03 · "Pip" — Throw Pillow
+**Title:** Pip — Throw Pillow
 **Description:**
-Pip, now soft enough to keep. A huggable moss-green plush with a leafy tuft on top and
-embroidered golden eyes — the whole round little orchard-spirit, sized to tuck under an
-arm. *(Availability depends on production — see the stage notes; not a standard print item.)*
+Pip, sized to keep close. The whole round little orchard-spirit — leafy sprout, glossy eyes,
+golden-hour glow — printed soft on a throw pillow for the couch, the reading chair, or the
+windowsill where the good light lands.
 
 ---
 

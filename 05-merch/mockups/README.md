@@ -17,10 +17,11 @@ draft Pip art  →  flag for human review  →  (approved)  →  place on mockup
 ```
 
 A Pip design may **never** go straight onto a mockup. Every Pip asset must first pass the
-character-consistency check against the locked reference (round pumpkin/onion body,
-moss-green skin, glossy golden eyes, leafy tuft, chibi proportions, painterly storybook
-style, golden-hour lighting) and must **not** drift toward the retired seed-being/
-root-system concept. If in doubt, hold and flag — do not mock it up.
+character-consistency check against the locked reference (`../pip-reference/REFERENCE.md`:
+rounded onion/bulb body in golden-brown/tan with papery layering, small green sprout, large
+glossy amber-gold eyes, rosy cheeks, chibi proportions, painterly storybook style,
+golden-hour lighting) and must **not** drift toward the retired seed-being/root-system
+concept. If in doubt, hold and flag — do not mock it up.
 
 ## Status
 Every mockup added here starts at `DRAFT`/`PENDING REVIEW` and may only reach

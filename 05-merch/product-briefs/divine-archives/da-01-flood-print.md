@@ -1,11 +1,13 @@
 # DA-01 · "The Waters Remembered" — Art Print
 
 **Status:** `DRAFT · PROPOSED (list not received)`
-**Sub-brand:** The Divine Archives
+**Sub-brand:** The Divine Archives · **Supplier:** Printify (poster/print) ✅
 **SKU:** TBD · **Price:** TBD (see FLAGS.md)
+**Sacred-symbol sensitivity:** **Low** — comparative/textual diagram, no single tradition's
+sacred symbol; no living-community practice depicted.
 
 ## Product type
-Wall art print (POD), matte, sizes TBD (e.g. A3 / 12×18 / 18×24).
+Wall art print (Printify), matte, sizes TBD (e.g. A3 / 12×18 / 18×24).
 
 ## Source chapter / reference
 - **ch01 — The Flood** (comparative theme, `themes/ch01-the-flood.md`, `published`).
@@ -19,7 +21,6 @@ source-text label beside each, in the archive's display type on a parchment grou
 Evidence-honesty tone: it presents the *textual lineage*, not a claim that a global flood
 occurred. No invented names or texts beyond those in the chapter.
 
-## POD supplier notes
-- Standard flat giclée/poster print — covered by most POD vendors (Printful/Printify/
-  Gelato). Supplier TBD.
+## POD supplier notes (Printify)
+- Printify offers posters/matte prints — confirm sizes and provider.
 - Verify print bleed + safe margins once dimensions are set.
