@@ -99,6 +99,28 @@ taotie *meant* is genuinely unknown — scholars have proposed a spirit-guardian
 apotropaic ward, a shamanic vision, or a purely decorative convention — and honesty
 requires leaving it open.
 
+## The wu, and the question of shamanism
+
+Beside the king and his diviners stood another kind of religious specialist: the
+**wu** (巫), spirit-mediums attested from the oracle bones onward and associated with
+communicating with spirits, healing, exorcism, dream-reading, and above all rain — in
+a drought a wu might be exposed to the sun or even burned in a rite meant to force the
+spirits to send water. How to classify them is one of the liveliest debates in the
+field. K. C. Chang argued influentially that early Chinese kingship was itself
+**shamanic** — that the king was the paramount shaman, and that the whole apparatus of
+bronzes, divination, and animal imagery served ecstatic communion with the spirit
+world. David Keightley and others pushed back hard, arguing that the Shang theocrats
+look less like ecstatic soul-flight shamans on the Siberian model than like
+**bureaucratic mediators** managing an ancestral hierarchy through orderly ritual. A
+middle position notes that the Chinese evidence more often describes
+**spirit-possession** — a deity or ancestor entering the medium's body — than the
+autonomous soul-journey of the classic shaman. The clearest literary window is later
+and southern: the **Nine Songs** (*Jiu Ge*) of the state of **Chu**, ecstatic hymns
+in which a medium woos and is entered by a god, preserving a mediumistic tradition the
+northern oracle-bone record only hints at. That this dimension of early Chinese
+religion is real is not in doubt; whether "shaman" is the right word for it is exactly
+what scholars dispute.
+
 ## The Zhou revolution: the Mandate of Heaven
 
 Around **1046 BCE** the Shang were conquered by the **Zhou**, a people from the
@@ -268,6 +290,10 @@ it.
 
 - The precise nature of **Di** — a distinct high god, or the supreme collective
   ancestor of the Shang line? Scholars differ.
+- Whether early Chinese religion (and Shang kingship) is rightly called
+  **shamanic**. K. C. Chang's shaman-king thesis is influential but contested;
+  Keightley and others read the Shang elite as bureaucratic mediators, and the
+  Chinese evidence often fits spirit-possession better than ecstatic soul-flight.
 - The meaning of the **taotie** motif on the bronzes.
 - The original meaning of the Neolithic ritual **jades** (the Heaven/Earth reading
   of *bi* and *cong* derives largely from later texts).
@@ -287,6 +313,13 @@ it.
 *The Zhou and the Mandate of Heaven*
 - [World History Encyclopedia: Mandate of Heaven](https://www.worldhistory.org/Mandate_of_Heaven/);
   the Book of Documents (*Shughing*) for the classic articulations.
+
+*The wu and the shamanism debate*
+- G. Boileau, "Wu and Shaman" / "Shamanism Theory and the Early Chinese Wu"
+  (surveying the K. C. Chang vs. Keightley debate);
+  [Grokipedia: Chinese shamanism](https://grokipedia.com/page/Chinese_shamanism).
+- The **Nine Songs** (*Jiu Ge*) of Chu — Arthur Waley, *The Nine Songs: A Study of
+  Shamanism in Ancient China*; [Wikipedia: Jiu Ge](https://en.wikipedia.org/wiki/Jiu_Ge).
 
 *Bronzes, sacrifice, and Sanxingdui*
 - [Wikipedia: Taotie](https://en.wikipedia.org/wiki/Taotie);

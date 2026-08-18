@@ -156,6 +156,46 @@ the **Magi**, tended the fires and the rites; it is Magi, in cultural memory,
 who appear in the Gospel of Matthew as the "wise men" following a star to
 Bethlehem.
 
+## The soul's journey: the Bridge of the Separator
+
+The tower of silence disposes of the body; the soul goes elsewhere. Zoroastrianism
+worked out one of the earliest detailed maps of what happens to a person after
+death, and it is relentlessly individual. For three days the soul lingers near the
+body; at dawn on the fourth it comes to the **Chinvat Bridge**, the "Bridge of the
+Separator," where the divine judges Mithra, Sraosha, and Rashnu weigh its thoughts,
+words, and deeds on golden scales. There the soul meets the **daēnā** — the
+personification of its own conscience, the self it has made in life. To the
+righteous she comes as a radiant fifteen-year-old maiden, more beautiful than any in
+the world, naming herself as the soul's own good thoughts and deeds; to the wicked
+she comes as a hideous hag. For the good soul the bridge broadens into an easy road
+to the **House of Song** (paradise); for the wicked it narrows to the edge of a
+razor, and the soul falls into the **House of the Lie** (hell). This heaven and hell
+are provisional, held until the general resurrection — and the motif of a
+soul-testing bridge, and of meeting one's own deeds embodied, would reappear in
+later traditions, not least the Islamic bridge of *aṣ-Ṣirāṭ*.
+
+## The shape of time and the three saviors
+
+Zoroastrian eschatology sits within a grand, countable timeline, laid out fully in
+the Pahlavi **Bundahishn**: the whole cosmic drama runs **twelve thousand years**,
+divided into four ages of three thousand. In the first, creation exists only in an
+ideal, spiritual state; in the second, Ahura Mazda makes the material world, which
+Angra Mainyu then assaults, mixing good and evil and setting the war in motion; the
+third age is the long "mixture" of history in which we live; and the fourth, the
+final three thousand years, runs down to the end. That last age is marked by the
+coming of saviors. In the systematized tradition there are **three Saoshyants**,
+born a thousand years apart from the miraculously preserved seed of Zarathustra
+himself — **Ushedar**, **Ushedarmah**, and finally **Astvat-ereta** ("he who
+embodies righteousness"), the Saoshyant proper — each born to a virgin who bathes in
+the lake where the seed is kept. The last raises the dead, and all creation passes
+through a final ordeal of molten metal, painless to the righteous and purifying to
+all, after which comes **Frashokereti**, the "making wonderful": evil annihilated for
+good, the dead restored in perfect immortal bodies, and the whole of creation healed.
+It has a strong claim to be the first fully articulated vision of a redeemed end of
+history — though, as the honesty section notes, the fully worked-out three-savior
+scheme is preserved only in the late Pahlavi books, and how much of it goes back to
+Zarathustra is exactly the open question.
+
 ## What the ground shows, and the reach of the tradition
 
 Unlike the textless Indus or the monument-less Vedic world, Zoroastrianism enters
@@ -262,6 +302,11 @@ touched.
 - Fire as central sacred symbol (not idol), the Yasna liturgy and haoma, exposure
   of the dead (dakhmas), and the sudreh/kusti initiation (Navjote) are all
   well attested.
+- The individual afterlife — the three-day wait, the **Chinvat Bridge**, the
+  weighing of deeds, the **daēnā** met as radiant maiden or hag, and the provisional
+  House of Song / House of the Lie — is attested from the Avesta onward. The
+  twelve-thousand-year cosmic timeline and the three Saoshyants born of Zarathustra's
+  preserved seed are laid out in the (later) Pahlavi Bundahishn.
 - Its Indo-Iranian kinship with Vedic religion (asha/rta, haoma/soma,
   daeva/deva inversion) and its status as the imperial religion of Achaemenid and
   especially Sasanian Persia.
@@ -311,6 +356,12 @@ touched.
 - [Encyclopaedia Iranica: "Eschatology i. In Zoroastrianism and Zoroastrian
   Influence"](https://www.iranicaonline.org/articles/eschatology-i/);
   [World History Encyclopedia: Chinvat Bridge](https://www.worldhistory.org/Chinvat_Bridge/).
+- The Chinvat Bridge, the daēnā, and the individual judgment —
+  [Britannica: daena](https://www.britannica.com/topic/daena);
+  [World History Encyclopedia: Chinvat Bridge](https://www.worldhistory.org/Chinvat_Bridge/).
+- The twelve-thousand-year timeline and the three Saoshyants —
+  [Wikipedia: Bundahishn](https://en.wikipedia.org/wiki/Bundahishn);
+  [Encyclopaedia Iranica: eschatology (Frashokereti and the Saoshyants)](https://www.iranicaonline.org/articles/eschatology-i/).
   On the debated influence on Judaism/Christianity/Islam, see the balanced
   discussions in the Iranica eschatology article and A. Akbar, "The Zoroastrian
   Provenance of Some Islamic Eschatological Doctrines" (2020).

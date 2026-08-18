@@ -75,6 +75,34 @@ purified across many lives. His followers formed a secretive religious brotherho
 strict rules of life. In Pythagoras, the new rational spirit and an intense mystical
 religion are fused, not opposed.
 
+## The doubters: the Sophists and the invention of the gods
+
+If the Presocratics reimagined God, a group of fifth-century teachers called the
+**Sophists** did something more unsettling: they doubted whether anything could be
+known about the gods at all, and began to ask where religion itself came from. It is
+here, in classical Greece, that the western history of religious **skepticism** and the
+naturalistic study of religion begins.
+
+**Protagoras** of Abdera opened a book, it is said, with a sentence that scandalized
+Athens: *"Concerning the gods, I am unable to know either that they exist or that they
+do not, or what they are like in form; for many things prevent knowledge — the obscurity
+of the matter, and the shortness of human life."* This is not atheism but
+**agnosticism**, and one of its earliest clear statements anywhere. **Prodicus** of Ceos
+went further into explanation, proposing that religion *arose* naturally: early humans,
+he argued, first worshipped the things that nourished and helped them — the sun, the
+moon, rivers, the bread they called Demeter and the wine they called Dionysus — and
+later deified their benefactors and inventors. It is one of the first **theories of the
+origin of religion**, grounded in human need rather than revelation. And a still more
+radical fragment from a lost play — the **"Sisyphus fragment,"** attributed to
+**Critias** (or to Euripides) — has a character claim outright that a clever man
+**invented the gods**, an all-seeing deity who rewards and punishes, as a device to
+frighten people into behaving when no law was watching. Religion, on this view, is a
+useful fiction of social control: the earliest surviving version of an argument that
+would echo for millennia. That such things could be said aloud on the Athenian stage,
+even as the city sacrificed to its gods, measures how far the turn from *mythos* to
+*logos* had come — and Socrates's execution for impiety measures how dangerous it had
+become.
+
 ## Socrates, Plato, and the immortal soul
 
 **Socrates** (c. 470–399 BCE) wrote nothing; we know him through his pupils, above all
@@ -137,6 +165,25 @@ each had a theology.
   therefore we should not fear them. And since the soul is atomic, it dissolves at death —
   so death "is nothing to us." Epicureanism was, in effect, a philosophy for freeing human
   beings from religious fear.
+
+## Asclepius: the god who came in dreams
+
+While the philosophers argued, most Greeks went on seeking the gods' help in the old
+concrete ways — and one cult of exactly this era shows how the lived religion actually
+worked. **Asclepius**, the god of healing (a hero-physician raised to divinity), became
+in the classical and Hellenistic period the most beloved of the newer gods, and his
+sanctuaries — the **asklepieia**, above all at **Epidaurus**, and later at Kos, Pergamon,
+and Athens — were the hospitals of the ancient world. The sick came as pilgrims,
+purified themselves, offered sacrifice, and then performed the central rite:
+**incubation** (*enkoimesis*), sleeping overnight in a sacred dormitory, the *abaton*, in
+the hope that the god would appear in a **dream** and either heal them outright or
+prescribe a cure. Cured patients left **votive offerings** — and, strikingly, terracotta
+or marble models of the healed body part (an ear, an eye, a leg, a womb) so the god would
+know what he had mended — along with inscribed testimonial tablets, the *iamata*,
+recording their miracles. This is the classical age's religion as ordinary people lived
+it: not the Unmoved Mover or the Form of the Good, but a kindly god met in sleep, a night
+in his house, and a clay leg left in thanks. The two Greeces — the philosophers' and the
+pilgrims' — ran on side by side.
 
 ## Symbology and sacred encoding
 
@@ -211,6 +258,11 @@ or the Good itself, he is speaking Greek.
 - The continuation of **traditional civic religion and the mysteries** alongside philosophy,
   and the historical existence of the **Orphic gold tablets** and **Pythagorean** number-
   mysticism (the tetractys).
+- The **Sophists'** religious skepticism — **Protagoras's** agnosticism, **Prodicus's**
+  naturalistic theory of religion's origin, and the **Sisyphus fragment** (Critias/Euripides)
+  on the gods as a human invention for social control — and the great **healing cult of
+  Asclepius** (Epidaurus and other asklepieia), with its dream-**incubation**, votive
+  body-parts, and *iamata* testimonials, as the era's lived popular religion.
 
 **What's not supported by the evidence**
 
@@ -242,6 +294,13 @@ or the Good itself, he is speaking Greek.
 - [Stanford Encyclopedia of Philosophy: Xenophanes](https://plato.stanford.edu/entries/xenophanes/);
   [Internet Encyclopedia of Philosophy: Xenophanes](https://iep.utm.edu/xenoph/);
   on Heraclitus and the Logos, [Socrates' Journey: Logos from Heraclitus to the Stoics](https://socratesjourney.org/logos-from-heraclitus-to-the-stoics-stoicism/).
+
+*The Sophists' skepticism and the healing cult*
+- Protagoras's agnosticism, Prodicus's naturalistic theory, and the Sisyphus fragment —
+  [IEP: The Sophists](https://iep.utm.edu/sophists/);
+  [Wikipedia: Sisyphus fragment](https://en.wikipedia.org/wiki/Sisyphus_fragment).
+- Asclepius, Epidaurus, and dream-incubation (*enkoimesis*) with votive offerings and
+  the *iamata* — [Olympia Museum: Enkoimesis at Epidaurus](https://olympia-museum.gr/enkoimesis-at-epidaurus/).
 
 *Socrates, Plato, and Aristotle*
 - Standard reference treatments of Socrates' trial, Plato's Forms/Demiurge/soul, and

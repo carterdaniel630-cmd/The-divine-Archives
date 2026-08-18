@@ -98,6 +98,40 @@ Utnapishtim, Enki becomes Ea, the pious survivor is warned, builds, floats,
 lands, sacrifices. This is not speculation about deep prehistory; it is a
 documented literary lineage, tablet to tablet.
 
+## The ark builder's manual
+
+In 2009 a member of the public brought Irving Finkel, a curator at the British
+Museum, a cell-phone-sized cuneiform tablet his father had carried home from the
+Middle East after the Second World War. It turned out to be one of the most
+remarkable flood documents ever found. The **"Ark Tablet,"** sixty lines of Old
+Babylonian script written around 1900–1700 BCE, is essentially a construction
+brief: the god Enki, speaking to Atrahasis, dictates how to build the boat. And
+the boat is not the oblong barge of Genesis or the cube of *Gilgamesh* — it is a
+**coracle**, the round reed-and-bitumen *gufa* that Mesopotamian rivermen
+actually used, scaled up to gigantic size, its base a perfect circle roped and
+waterproofed with precisely specified quantities of bitumen. Most startling of
+all, the tablet carries the line — damaged but legible — that the animals went
+aboard "two by two," the earliest known appearance of a detail everyone
+associates with Noah. Finkel published the text in *The Ark Before Noah* (2014);
+a full-scale attempt to build the round ark to its specification was later
+mounted for television and, waterlogged but afloat, broadly vindicated the
+design. The Ark Tablet is a reminder that the Mesopotamian flood tradition was
+not one fixed text but a living body of retellings, each generation supplying the
+practical detail its audience wanted.
+
+By the Hellenistic period the story had jumped languages yet again. Around 281
+BCE a Babylonian priest named **Berossus**, writing in Greek for the new Seleucid
+world, compiled a *Babyloniaca* from cuneiform temple archives. His flood hero,
+**Xisuthros** (a Greek rendering of Ziusudra), is warned by the god Cronus in a
+dream, builds a boat, sends out birds, grounds in the mountains of Armenia, and —
+a distinctive Berossan touch — first buries the sacred writings of civilization
+at Sippar, the City of the Sun, so that knowledge itself can survive the deluge
+and be dug up afterward. Berossus's own work is lost, but it was quoted by later
+Greek and Christian writers (Alexander Polyhistor, Josephus, Eusebius), and it is
+how the Babylonian flood reached the classical and early-Christian world in
+continuous written transmission — nearly two millennia before George Smith dug
+the cuneiform original back out of the ground.
+
 ## The family resemblance with Genesis
 
 Where does Noah fit? The mainstream scholarly view is that the Genesis flood
@@ -120,6 +154,20 @@ other has a lone raven (Genesis 8:7), echoing his raven. The Babylonian hero
 sent *both* birds; the Hebrew text seems to preserve two traditions that each
 kept one.
 
+The lineage did not stop at Genesis. The **Qur'an** tells the flood again, and
+its departures are as pointed as Genesis's were from Babylon. Nuh (Noah) is above
+all a *preacher*, warning an unheeding people across a long, thankless mission
+before the waters come (Surah Nuh 71; Surah Hud 11:25–49). The ark grounds not on
+Ararat but on **Mount Judi** (al-Jūdī, in what is now southeastern Turkey). And
+in the story's most wrenching turn, one of Noah's own sons refuses to board —
+trusting a mountain to shelter him — and drowns with the unbelievers despite his
+father's plea (Hud 11:42–43). Where Genesis saves the whole household, the Qur'an
+makes the flood a judgment that cuts through the family itself: kinship is no
+substitute for faith. There is no rainbow covenant and no tally of cubits; the
+weight falls on warning, response, and the justice of the outcome. Three
+Abrahamic scriptures, then, tell one inherited story three different ways —
+each bending the same plot to its own theology.
+
 ## Beyond Mesopotamia — and the limits of the pattern
 
 Pull back from the Near East and the flood is everywhere. In Greece, Zeus,
@@ -138,6 +186,19 @@ his protection; the fish grows monstrous, warns him of a coming flood, and tells
 him to build a boat. When the waters rise, Manu ties his boat to the fish's horn
 and is towed to a northern mountain. In later texts the fish becomes Matsya, the
 first avatar of Vishnu, and Manu the ancestor of a renewed humanity.
+
+Across the Atlantic, in traditions that cannot have borrowed from the Old World,
+the flood recurs on its own. The Maya *Popol Vuh* tells how the gods, after
+botching an early attempt to make people out of wood, wiped the wooden mannequins
+away in a great flood — a "flood of resin" from the sky — while the mannequins'
+own household objects rose against them, grinding stones and cooking pots and
+dogs avenging years of abuse; the survivors became monkeys rather than a renewed
+humanity. It is not a punishment for sin but the correction of a failed
+prototype, one destruction in a cycle of made and unmade worlds. The Aztec
+Fifth-Sun cosmology tells a structurally similar tale of a water-ended age. These
+New World floods are the strongest single evidence that the motif can be invented
+independently: the idea of washing the world away and starting over was reached
+more than once, by peoples with no possible contact.
 
 But here honesty requires a hard turn, because the "universal flood myth" is a
 claim that gets oversold. Two cautions:
@@ -269,14 +330,17 @@ each a different culture's idea of the right shape for a world in miniature.
 **What's well supported by the evidence**
 
 - There is a documented literary lineage of Mesopotamian flood stories —
-  Ziusudra (Sumerian), Atrahasis (Old Babylonian), and Utnapishtim in
-  *Gilgamesh* Tablet XI — spanning roughly a millennium, with the *Gilgamesh*
-  version adapted from *Atrahasis*.
+  Ziusudra (Sumerian), Atrahasis (Old Babylonian, including the recently
+  translated "Ark Tablet"), and Utnapishtim in *Gilgamesh* Tablet XI — spanning
+  roughly a millennium, with the *Gilgamesh* version adapted from *Atrahasis*.
+  The tradition continued in continuous written transmission into the Hellenistic
+  world through Berossus's Greek *Babyloniaca* (c. 281 BCE).
 - The *Gilgamesh* flood tablet is genuinely older than the biblical text, and
   the Genesis flood narrative stands in a close, mainstream-recognized relationship
   to this Mesopotamian tradition (with the theology reworked from many capricious
   gods to one moral God, and the plot largely preserved — including the
-  telltale released birds).
+  telltale released birds). The Qur'anic account of Nuh is a third Abrahamic
+  retelling of the same inherited story, again reshaped to its own theology.
 - Mesopotamian city mounds contain real, water-laid flood deposits (Ur, Kish,
   Shuruppak), confirming that severe local flooding was a recurring reality.
 - Flood stories are found across many, though not all, world cultures.
@@ -330,6 +394,19 @@ origin remains in the dark.
   [Wikipedia: Ancient Greek flood myths](https://en.wikipedia.org/wiki/Ancient_Greek_flood_myths).
 - *Shatapatha Brahmana* (Manu and the fish);
   [Britannica: Manu](https://www.britannica.com/topic/Manu).
+- Qur'an, Surah Hud 11:25–49 and Surah Nuh 71 (Nuh, the drowned son, Mount Judi) —
+  [Quran.com: Surah Hud](https://quran.com/en/hud/42).
+- *Popol Vuh* (the wooden people destroyed by flood) —
+  [Mayan.org: The Maya Flood Myth](https://mayan.org/myths/flood-myth/).
+
+*The Ark Tablet and Hellenistic transmission*
+- Irving Finkel, *The Ark Before Noah: Decoding the Story of the Flood* (2014);
+  the round-coracle ark and the "two by two" line —
+  [Biblical Archaeology Society: The Animals Went in Two by Two](https://www.biblicalarchaeology.org/daily/news/the-animals-went-in-two-by-two-according-to-babylonian-ark-tablet/);
+  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark).
+- Berossus, *Babyloniaca* (c. 281 BCE), and the Xisuthros flood —
+  [Livius: The Great Flood — Berossus](https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/);
+  [Wikipedia: Babyloniaca (Berossus)](https://en.wikipedia.org/wiki/Babyloniaca_(Berossus)).
 
 *Discovery and history of scholarship*
 - George Smith, *The Chaldean Account of the Deluge* (1872) and *The Chaldean

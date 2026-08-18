@@ -383,3 +383,39 @@ img { max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- tradition / era tiles (plate-led) ---------- */
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.6rem; }
+.tile {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.3rem;
+  padding: 1.6rem 1.1rem 1.35rem; border: 1px solid var(--line); border-radius: 4px; color: inherit;
+  background: linear-gradient(180deg, var(--panel), var(--ground));
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+a.tile:hover { transform: translateY(-3px); border-color: var(--gold); }
+.tile.is-planned { opacity: 0.7; cursor: default; }
+.tile-art { display: block; }
+.tile-art svg { width: 78px; height: auto; max-width: 78px; display: block; margin: 0 auto; color: var(--gold); transition: color 0.3s ease; }
+a.tile:hover .tile-art svg { color: var(--gold-bright); }
+.tile-name { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--parchment); font-size: 1.06rem; margin-top: 0.55rem; }
+.tile-era { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.58rem; color: var(--ink-faint); }
+.tile-sum { margin: 0.35rem 0 0; color: var(--ink-dim); font-size: 0.9rem; line-height: 1.5; }
+
+/* --- accessibility: skip-to-content link (visible only on keyboard focus) --- */
+.skip-link {
+  position: absolute; left: 0; top: -3rem;
+  background: var(--gold); color: #1a1305;
+  padding: 0.55rem 1rem; z-index: 1000; border-radius: 0 0 3px 0;
+  font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: 0.12em; font-size: 0.72rem; text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 0; outline: 2px solid var(--parchment); }
+[tabindex="-1"]:focus { outline: none; }
+
+/* --- interpretive chapter plates (was injected by plates.js; kept here so
+       static prerendered chapter pages are styled without loading plates.js) --- */
+.page-head .plate,.article .plate{margin:1.7rem auto 0.4rem;max-width:24rem;text-align:center}
+.plate .plate-art{width:100%;max-width:360px;height:auto;color:var(--gold-bright,#d9b06a);display:inline-block;padding:1.35rem;border:1px solid var(--line,#37291a);border-radius:5px;background:radial-gradient(120% 120% at 50% 32%,#1d150d 0%,rgba(16,12,9,0) 78%)}
+.plate figcaption{margin:0.75rem auto 0;font-size:0.78rem;line-height:1.5;max-width:26rem;color:var(--ink-faint,#6f624a);font-style:italic}
+.plate .tag{display:inline-block;font-style:normal;text-transform:uppercase;letter-spacing:0.14em;font-size:0.56rem;color:var(--ink-dim,#9a8a6b);border:1px solid var(--line,#37291a);padding:0.16rem 0.5rem;border-radius:2px;margin-bottom:0.5rem}

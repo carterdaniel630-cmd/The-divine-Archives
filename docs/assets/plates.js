@@ -1,0 +1,940 @@
+/* ==========================================================================
+   THE DIVINE ARCHIVES — chapter plates (interpretive art)
+
+   Original, hand-drawn inline-SVG "plates," one (or more) per chapter, keyed by
+   chapter id. These are INTERPRETIVE illustrations and diagrams — geometry,
+   schematic plans, script/pattern studies — NOT reproductions of specific
+   historical artifacts. Every plate carries a caption that says so, to keep the
+   archive's line between "sacred/interpretive" and "the documented object"
+   clear (real artifact photography is sourced separately, with attribution).
+
+   Kept in one module so art can be added or restyled without touching the
+   generated chapter HTML. Consumed by archive.js renderChapter(), which injects
+   PLATES[ch.id] at the head of the chapter body when present.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  function fig(art, tag, caption) {
+    return '<figure class="plate">' + art +
+      '<figcaption><span class="tag">' + tag + '</span>' + caption + '</figcaption></figure>';
+  }
+
+  window.PLATES = {
+
+    /* Ch21 — Islam: an eight-fold geometric rosette (geometry only, no figural) */
+    "ch21": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>' +
+        '<g fill="currentColor" opacity="0.55">' +
+          '<circle cx="100" cy="10" r="1.6"/><circle cx="100" cy="190" r="1.6"/>' +
+          '<circle cx="10" cy="100" r="1.6"/><circle cx="190" cy="100" r="1.6"/>' +
+          '<circle cx="163.6" cy="36.4" r="1.6"/><circle cx="36.4" cy="36.4" r="1.6"/>' +
+          '<circle cx="163.6" cy="163.6" r="1.6"/><circle cx="36.4" cy="163.6" r="1.6"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.7" opacity="0.45">' +
+          '<line x1="100" y1="100" x2="46" y2="46"/><line x1="100" y1="100" x2="154" y2="46"/>' +
+          '<line x1="100" y1="100" x2="154" y2="154"/><line x1="100" y1="100" x2="46" y2="154"/>' +
+          '<line x1="100" y1="100" x2="100" y2="23.6"/><line x1="100" y1="100" x2="176.4" y2="100"/>' +
+          '<line x1="100" y1="100" x2="100" y2="176.4"/><line x1="100" y1="100" x2="23.6" y2="100"/></g>' +
+        '<rect x="46" y="46" width="108" height="108" stroke="currentColor" stroke-width="1.3"/>' +
+        '<rect x="46" y="46" width="108" height="108" stroke="currentColor" stroke-width="1.3" transform="rotate(45 100 100)"/>' +
+        '<circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="0.9" opacity="0.7"/>' +
+        '<rect x="82" y="82" width="36" height="36" stroke="currentColor" stroke-width="1"/>' +
+        '<rect x="82" y="82" width="36" height="36" stroke="currentColor" stroke-width="1" transform="rotate(45 100 100)"/>' +
+        '<circle cx="100" cy="100" r="4.5" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "An eight-fold geometric rosette (khatim) in the Islamic geometric tradition. " +
+      "Original artwork built from compass-and-straightedge construction &mdash; not a photograph of a specific monument or manuscript."
+    ),
+
+    /* Ch05 — Early Vedic: schematic of the falcon-shaped fire altar (agnicayana) */
+    "ch05": fig(
+      '<svg class="plate-art" viewBox="0 0 240 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="0.6" opacity="0.32">' +
+          // body brick grid
+          '<line x1="104" y1="59" x2="136" y2="59"/><line x1="104" y1="72" x2="136" y2="72"/>' +
+          '<line x1="104" y1="85" x2="136" y2="85"/><line x1="104" y1="98" x2="136" y2="98"/>' +
+          '<line x1="104" y1="111" x2="136" y2="111"/><line x1="104" y1="124" x2="136" y2="124"/>' +
+          '<line x1="104" y1="137" x2="136" y2="137"/><line x1="120" y1="46" x2="120" y2="150"/>' +
+          // left wing grid
+          '<line x1="49" y1="66" x2="49" y2="106"/><line x1="62" y1="66" x2="62" y2="106"/>' +
+          '<line x1="75" y1="66" x2="75" y2="106"/><line x1="88" y1="66" x2="88" y2="106"/>' +
+          '<line x1="36" y1="86" x2="104" y2="86"/>' +
+          // right wing grid
+          '<line x1="152" y1="66" x2="152" y2="106"/><line x1="165" y1="66" x2="165" y2="106"/>' +
+          '<line x1="178" y1="66" x2="178" y2="106"/><line x1="191" y1="66" x2="191" y2="106"/>' +
+          '<line x1="136" y1="86" x2="204" y2="86"/>' +
+          // tail
+          '<line x1="90" y1="166" x2="150" y2="166"/></g>' +
+        // outlines
+        '<g stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">' +
+          '<rect x="112" y="30" width="16" height="16"/>' +                 // head
+          '<rect x="104" y="46" width="32" height="104"/>' +                // body
+          '<rect x="36" y="66" width="68" height="40"/>' +                  // left wing
+          '<rect x="136" y="66" width="68" height="40"/>' +                 // right wing
+          '<path d="M96 150 H144 L156 182 H84 Z"/>' +                       // tail
+        '</g>' +
+        // altar fire at the "navel"
+        '<path d="M120 104 C114 98 116 92 120 85 C124 92 126 98 120 104 Z" stroke="currentColor" stroke-width="1.2"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "Schematic plan of a falcon-shaped Vedic fire altar (<em>&#347;yena-citi</em>, agnicayana), " +
+      "after the layered-brick descriptions in the &#346;rauta texts. A diagram of the form &mdash; not a photograph of an excavated altar."
+    ),
+
+    /* Ch07 — Pre-exilic Israel: the seven-branched menorah */
+    "ch07": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">' +
+          '<path d="M40 48 Q40 96 100 120"/><path d="M60 48 Q60 104 100 120"/><path d="M80 48 Q80 112 100 120"/>' +
+          '<path d="M160 48 Q160 96 100 120"/><path d="M140 48 Q140 104 100 120"/><path d="M120 48 Q120 112 100 120"/>' +
+          '<line x1="100" y1="48" x2="100" y2="120"/><line x1="100" y1="120" x2="100" y2="150"/>' +
+          '<path d="M78 150 H122 M84 158 H116 M92 166 H108"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.85">' +
+          '<path d="M40 46 C36 40 37 35 40 30 C43 35 44 40 40 46 Z"/>' +
+          '<path d="M60 46 C56 40 57 35 60 30 C63 35 64 40 60 46 Z"/>' +
+          '<path d="M80 46 C76 40 77 35 80 30 C83 35 84 40 80 46 Z"/>' +
+          '<path d="M100 46 C96 40 97 35 100 30 C103 35 104 40 100 46 Z"/>' +
+          '<path d="M120 46 C116 40 117 35 120 30 C123 35 124 40 120 46 Z"/>' +
+          '<path d="M140 46 C136 40 137 35 140 30 C143 35 144 40 140 46 Z"/>' +
+          '<path d="M160 46 C156 40 157 35 160 30 C163 35 164 40 160 46 Z"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The seven-branched lampstand (menorah) described in Exodus. An original line drawing after the textual description &mdash; not a depiction of a specific object."
+    ),
+
+    /* Ch12 — Confucianism & Daoism: the eight trigrams and the taiji */
+    "ch12": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="84" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>' +
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          // 8 trigrams; solid = one bar, broken = two segments; rotated around center
+          '<g transform="rotate(0 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(45 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(90 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(135 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(180 100 100)"><line x1="84" y1="26" x2="95" y2="26"/><line x1="105" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(225 100 100)"><line x1="84" y1="26" x2="95" y2="26"/><line x1="105" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="95" y2="34"/><line x1="105" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(270 100 100)"><line x1="84" y1="26" x2="95" y2="26"/><line x1="105" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="95" y2="42"/><line x1="105" y1="42" x2="116" y2="42"/></g>' +
+          '<g transform="rotate(315 100 100)"><line x1="84" y1="26" x2="116" y2="26"/><line x1="84" y1="34" x2="116" y2="34"/><line x1="84" y1="42" x2="116" y2="42"/></g></g>' +
+        '<circle cx="100" cy="100" r="22" stroke="currentColor" stroke-width="1.2"/>' +
+        '<path d="M100 78 A11 11 0 0 1 100 100 A11 11 0 0 0 100 122" stroke="currentColor" stroke-width="1.2"/>' +
+        '<circle cx="100" cy="89" r="2.6" stroke="currentColor" stroke-width="1"/>' +
+        '<circle cx="100" cy="111" r="2.6" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "The eight trigrams (bagua) ringing the taiji, emblems of the <em>Yijing</em> and of Daoist cosmology. An original diagram of the symbols themselves."
+    ),
+
+    /* Ch16 — Early Christianity: the Chi-Rho monogram in a wreath */
+    "ch16": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="1" opacity="0.7"/>' +
+        '<circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="0.7" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">' +
+          '<line x1="62" y1="64" x2="138" y2="150"/><line x1="138" y1="64" x2="62" y2="150"/>' +
+          '<line x1="100" y1="48" x2="100" y2="156"/></g>' +
+        '<path d="M100 52 C130 52 130 90 100 90" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Chi-Rho (&#9767;), the monogram of Christ formed from the Greek letters <em>chi</em> and <em>rho</em>, within a victor&rsquo;s wreath. An original rendering of the symbol, not a specific inscription."
+    ),
+
+    /* Ch20 — Mahayana Buddhism: the mandala's circle-square-circle structure */
+    "ch20": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>' +
+        '<g stroke="currentColor" stroke-width="1">' +
+          '<g transform="rotate(0 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(45 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(90 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(135 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(180 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(225 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(270 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g>' +
+          '<g transform="rotate(315 100 100)"><path d="M100 30 C108 44 108 56 100 66 C92 56 92 44 100 30 Z"/></g></g>' +
+        '<rect x="54" y="54" width="92" height="92" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          '<path d="M92 54 V44 H108 V54"/><path d="M92 146 V156 H108 V146"/>' +
+          '<path d="M54 92 H44 V108 H54"/><path d="M146 92 H156 V108 H146"/></g>' +
+        '<circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="1.1"/>' +
+        '<circle cx="100" cy="100" r="14" stroke="currentColor" stroke-width="1"/>' +
+        '<circle cx="100" cy="100" r="4" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "A mandala&rsquo;s characteristic structure &mdash; outer ring, square palace with four gates, and central point. An original geometric diagram, not a particular painted mandala."
+    ),
+
+    /* Ch01 — The Flood (theme): a vessel on the waters, under rain */
+    "ch01": fig(
+      '<svg class="plate-art" viewBox="0 0 200 172" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round">' +
+          '<line x1="40" y1="18" x2="35" y2="30"/><line x1="60" y1="14" x2="55" y2="26"/>' +
+          '<line x1="80" y1="18" x2="75" y2="30"/><line x1="120" y1="18" x2="115" y2="30"/>' +
+          '<line x1="140" y1="14" x2="135" y2="26"/><line x1="160" y1="18" x2="155" y2="30"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">' +
+          '<rect x="86" y="66" width="28" height="20"/><path d="M82 66 h36 l-6 -8 h-24 z"/>' +
+          '<path d="M68 90 h64 l-9 22 q-23 12 -46 0 z"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.2">' +
+          '<path d="M8 122 q12 -10 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0"/>' +
+          '<path d="M8 136 q12 -10 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0" opacity="0.7"/>' +
+          '<path d="M8 150 q12 -10 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0" opacity="0.45"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The vessel upon the rising waters &mdash; the shared image of the flood myths compared in this chapter. An original illustration of the motif, not any one tradition&rsquo;s telling."
+    ),
+
+    /* Ch02 — Egypt: the ankh beneath the solar disk */
+    "ch02": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="40" r="13" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-width="1" opacity="0.85">' +
+          '<line x1="100" y1="20" x2="100" y2="24"/><line x1="100" y1="56" x2="100" y2="60"/>' +
+          '<line x1="80" y1="40" x2="84" y2="40"/><line x1="116" y1="40" x2="120" y2="40"/>' +
+          '<line x1="86" y1="26" x2="89" y2="29"/><line x1="111" y1="51" x2="114" y2="54"/>' +
+          '<line x1="114" y1="26" x2="111" y2="29"/><line x1="89" y1="51" x2="86" y2="54"/></g>' +
+        '<ellipse cx="100" cy="86" rx="16" ry="21" stroke="currentColor" stroke-width="1.6"/>' +
+        '<line x1="100" y1="107" x2="100" y2="160" stroke="currentColor" stroke-width="1.6"/>' +
+        '<line x1="72" y1="118" x2="128" y2="118" stroke="currentColor" stroke-width="1.6"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The ankh, sign of life, beneath the solar disk. An original rendering of the symbols, not a copy of a particular relief."
+    ),
+
+    /* Ch03 — Mesopotamia: the eight-pointed star of Ishtar above a ziggurat */
+    "ch03": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="82" r="62" stroke="currentColor" stroke-width="0.7" opacity="0.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linecap="round">' +
+          '<line x1="100" y1="22" x2="100" y2="142"/><line x1="40" y1="82" x2="160" y2="82"/>' +
+          '<line x1="64" y1="46" x2="136" y2="118"/><line x1="136" y1="46" x2="64" y2="118"/></g>' +
+        '<circle cx="100" cy="82" r="7" stroke="currentColor" stroke-width="1.3"/>' +
+        '<path d="M58 176 H142 M66 176 V166 H134 V176 M74 166 V157 H126 V166 M84 157 V149 H116 V157" ' +
+          'stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The eight-pointed star of Ishtar above a stepped ziggurat. An original rendering of the symbols, not a specific artifact."
+    ),
+
+    /* Ch04 — Indus Valley: schematic plan after the Great Bath at Mohenjo-daro */
+    "ch04": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<rect x="40" y="40" width="120" height="120" stroke="currentColor" stroke-width="1.3"/>' +
+        '<rect x="70" y="70" width="60" height="60" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-width="1" opacity="0.8">' +
+          '<line x1="70" y1="78" x2="130" y2="78"/><line x1="70" y1="86" x2="130" y2="86"/>' +
+          '<line x1="70" y1="114" x2="130" y2="114"/><line x1="70" y1="122" x2="130" y2="122"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="40" y1="70" x2="70" y2="70"/><line x1="40" y1="130" x2="70" y2="130"/>' +
+          '<line x1="130" y1="70" x2="160" y2="70"/><line x1="130" y1="130" x2="160" y2="130"/>' +
+          '<line x1="70" y1="40" x2="70" y2="70"/><line x1="130" y1="40" x2="130" y2="70"/>' +
+          '<line x1="70" y1="130" x2="70" y2="160"/><line x1="130" y1="130" x2="130" y2="160"/></g>' +
+        '<circle cx="150" cy="52" r="4" stroke="currentColor" stroke-width="1"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "A schematic plan after the Great Bath at Mohenjo-daro &mdash; sunken tank, steps, and surrounding rooms. A diagram of the form, not an archaeological survey."
+    ),
+
+    /* Ch06 — Zoroaster: the sacred fire in its vessel */
+    "ch06": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-width="1.4">' +
+          '<path d="M100 96 C86 78 92 62 100 44 C108 62 114 78 100 96 Z"/>' +
+          '<path d="M83 96 C75 84 79 74 87 63 C91 75 92 86 83 96 Z" opacity="0.8"/>' +
+          '<path d="M117 96 C125 84 121 74 113 63 C109 75 108 86 117 96 Z" opacity="0.8"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M74 100 H126 L118 118 H82 Z"/><line x1="100" y1="118" x2="100" y2="138"/>' +
+          '<path d="M88 138 H112 L120 152 H80 Z"/><line x1="74" y1="152" x2="126" y2="152"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The sacred fire held in its vessel (<em>&#257;tash</em>), the living centre of Zoroastrian worship. An original rendering, not a specific fire-holder."
+    ),
+
+    /* Ch08 — Early Greece: the lyre within a Greek-key band */
+    "ch08": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M78 128 q-16 -40 4 -70"/><path d="M122 128 q16 -40 -4 -70"/>' +
+          '<line x1="82" y1="58" x2="118" y2="58"/><path d="M78 128 q22 14 44 0"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.65">' +
+          '<line x1="90" y1="62" x2="90" y2="124"/><line x1="96" y1="60" x2="96" y2="126"/>' +
+          '<line x1="102" y1="60" x2="102" y2="126"/><line x1="108" y1="62" x2="108" y2="124"/></g>' +
+        '<path d="M36 150 v-12 h12 v12 h12 v-12 h12 v12 h12 v-12 h12 v12 h12 v-12 h12 v12 h12 v-12 h12 v12" ' +
+          'stroke="currentColor" stroke-width="1" opacity="0.8"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The lyre, instrument of the poets, over a Greek-key frieze. An original rendering of the forms, not a copy of a painted vase."
+    ),
+
+    /* Ch09 — Early China: a ritual bronze ding (tripod cauldron) */
+    "ch09": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M64 66 H136"/><path d="M74 66 q-4 -15 8 -15 q12 0 8 15"/>' +
+          '<path d="M118 66 q-4 -15 8 -15 q12 0 8 15"/>' +
+          '<path d="M64 66 q-3 44 36 47 q39 -3 36 -47"/>' +
+          '<path d="M78 110 q-6 24 -11 40"/><path d="M122 110 q6 24 11 40"/>' +
+          '<line x1="100" y1="113" x2="100" y2="152"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.6">' +
+          '<line x1="66" y1="82" x2="134" y2="82"/><line x1="66" y1="92" x2="134" y2="92"/>' +
+          '<circle cx="86" cy="87" r="3"/><circle cx="114" cy="87" r="3"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A Shang&ndash;Zhou ritual bronze (<em>ding</em>), with a suggestion of the taotie band. An original rendering, not a specific excavated vessel."
+    ),
+
+    /* Ch10 — Second Temple Judaism: the sanctuary and its veil */
+    "ch10": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<line x1="56" y1="42" x2="56" y2="160"/><line x1="144" y1="42" x2="144" y2="160"/>' +
+          '<line x1="48" y1="42" x2="152" y2="42"/><line x1="46" y1="160" x2="154" y2="160"/></g>' +
+        '<g stroke="currentColor" stroke-width="1" opacity="0.7">' +
+          '<path d="M64 48 q-3 54 0 108"/><path d="M74 48 q-3 54 0 108"/><path d="M84 48 q-2 54 0 108"/>' +
+          '<path d="M136 48 q3 54 0 108"/><path d="M126 48 q3 54 0 108"/><path d="M116 48 q2 54 0 108"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.1">' +
+          '<line x1="100" y1="70" x2="100" y2="118"/><circle cx="100" cy="66" r="4"/>' +
+          '<path d="M92 118 h16"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Temple sanctuary and its veil (<em>parochet</em>), with a hanging lamp. An original rendering after the textual descriptions, not a reconstruction drawing."
+    ),
+
+    /* Ch11 — Buddhism: elevation of a stupa */
+    "ch11": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M50 168 H150 M58 168 V156 H142 V168 M66 156 V146 H134 V156"/>' +
+          '<path d="M70 146 a30 30 0 0 1 60 0"/><line x1="70" y1="146" x2="130" y2="146"/>' +
+          '<rect x="92" y="104" width="16" height="12"/>' +
+          '<line x1="100" y1="104" x2="100" y2="60"/>' +
+          '<line x1="88" y1="96" x2="112" y2="96"/><line x1="90" y1="86" x2="110" y2="86"/>' +
+          '<line x1="92" y1="76" x2="108" y2="76"/><circle cx="100" cy="58" r="4"/></g>' +
+      '</svg>',
+      "Interpretive diagram",
+      "Elevation of a stupa &mdash; dome, harmika, and tiered parasols over a stepped base. A diagram of the form, not a specific monument."
+    ),
+
+    /* Ch13 — Rome: a temple facade */
+    "ch13": fig(
+      '<svg class="plate-art" viewBox="0 0 200 190" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M40 80 L100 46 L160 80 Z"/><line x1="44" y1="90" x2="156" y2="90"/>' +
+          '<line x1="52" y1="90" x2="52" y2="150"/><line x1="72" y1="90" x2="72" y2="150"/>' +
+          '<line x1="92" y1="90" x2="92" y2="150"/><line x1="108" y1="90" x2="108" y2="150"/>' +
+          '<line x1="128" y1="90" x2="128" y2="150"/><line x1="148" y1="90" x2="148" y2="150"/>' +
+          '<line x1="40" y1="150" x2="160" y2="150"/><line x1="34" y1="162" x2="166" y2="162"/>' +
+          '<line x1="28" y1="174" x2="172" y2="174"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A Roman temple facade &mdash; pediment, colonnade, and podium. An original rendering of the type, not a specific temple."
+    ),
+
+    /* Ch14 — Celtic & Germanic: a triquetra above a row of Elder Futhark runes */
+    "ch14": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="78" r="48" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+        '<g stroke="currentColor" stroke-width="1.4">' +
+          '<circle cx="100" cy="60" r="26"/><circle cx="79" cy="96" r="26"/><circle cx="121" cy="96" r="26"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">' +
+          '<line x1="40" y1="142" x2="40" y2="166"/><line x1="40" y1="146" x2="48" y2="142"/><line x1="40" y1="154" x2="48" y2="150"/>' +
+          '<line x1="58" y1="166" x2="58" y2="144"/><line x1="58" y1="144" x2="66" y2="144"/><line x1="66" y1="144" x2="66" y2="166"/>' +
+          '<line x1="80" y1="142" x2="80" y2="166"/><path d="M80 150 l9 4 l-9 4"/>' +
+          '<line x1="100" y1="142" x2="100" y2="166"/><line x1="100" y1="146" x2="108" y2="152"/><line x1="100" y1="154" x2="108" y2="160"/>' +
+          '<line x1="120" y1="142" x2="120" y2="166"/><path d="M120 142 h7 v8 h-7"/><line x1="120" y1="150" x2="128" y2="166"/>' +
+          '<path d="M148 142 l-8 12 l8 12"/>' +
+          '<line x1="162" y1="142" x2="174" y2="166"/><line x1="174" y1="142" x2="162" y2="166"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A triquetra above a row of Elder Futhark runes, shown as a script sample. An original rendering, not a copy of a specific inscription or stone."
+    ),
+
+    /* Ch15 — Classical Greece: the pentagram within the pentagon */
+    "ch15": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+        '<polygon points="100,30 166.6,78.4 141.2,156.6 58.8,156.6 33.4,78.4" ' +
+          'stroke="currentColor" stroke-width="1" opacity="0.55" fill="none"/>' +
+        '<polygon points="100,30 141.2,156.6 33.4,78.4 166.6,78.4 58.8,156.6" ' +
+          'stroke="currentColor" stroke-width="1.4" fill="none"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "The pentagram inscribed in the pentagon &mdash; the figure prized by the Pythagoreans. An original geometric diagram."
+    ),
+
+    /* Ch17 — Gnosticism: the emanation of the aeons from the Monad */
+    "ch17": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="14" stroke="currentColor" stroke-width="1.3"/>' +
+        '<circle cx="100" cy="100" r="32" stroke="currentColor" stroke-width="1" opacity="0.8"/>' +
+        '<circle cx="100" cy="100" r="52" stroke="currentColor" stroke-width="0.9" opacity="0.6"/>' +
+        '<circle cx="100" cy="100" r="72" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+        '<g stroke="currentColor" stroke-width="0.7" opacity="0.45">' +
+          '<line x1="100" y1="100" x2="100" y2="28"/><line x1="100" y1="100" x2="100" y2="172"/>' +
+          '<line x1="100" y1="100" x2="28" y2="100"/><line x1="100" y1="100" x2="172" y2="100"/>' +
+          '<line x1="100" y1="100" x2="49" y2="49"/><line x1="100" y1="100" x2="151" y2="49"/>' +
+          '<line x1="100" y1="100" x2="49" y2="151"/><line x1="100" y1="100" x2="151" y2="151"/></g>' +
+        '<g fill="currentColor" opacity="0.7">' +
+          '<circle cx="100" cy="48" r="2.6"/><circle cx="100" cy="152" r="2.6"/>' +
+          '<circle cx="48" cy="100" r="2.6"/><circle cx="152" cy="100" r="2.6"/>' +
+          '<circle cx="63.2" cy="63.2" r="2.6"/><circle cx="136.8" cy="63.2" r="2.6"/>' +
+          '<circle cx="63.2" cy="136.8" r="2.6"/><circle cx="136.8" cy="136.8" r="2.6"/></g>' +
+        '<circle cx="100" cy="100" r="4" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "The emanation of the aeons from the Monad &mdash; the fullness (Pleroma) of Gnostic cosmology. An original schematic of the idea, not a historical illustration."
+    ),
+
+    /* Ch18 — Roman mystery cults: the crossed torches of the rites */
+    "ch18": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="102" r="86" stroke="currentColor" stroke-width="0.7" opacity="0.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">' +
+          '<line x1="66" y1="156" x2="120" y2="58"/><line x1="134" y1="156" x2="80" y2="58"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          '<path d="M120 58 C112 46 116 38 122 30 C128 38 130 48 120 58 Z"/>' +
+          '<path d="M80 58 C72 46 76 38 82 30 C88 38 90 48 80 58 Z"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The crossed torches of the mystery rites &mdash; initiation, and the descent and return. An original rendering of the emblem, not a specific relief."
+    ),
+
+    /* Ch19 — Rabbinic Judaism: an open Torah scroll */
+    "ch19": fig(
+      '<svg class="plate-art" viewBox="0 0 200 176" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<line x1="54" y1="30" x2="54" y2="142"/><circle cx="54" cy="26" r="6"/><circle cx="54" cy="146" r="6"/>' +
+          '<line x1="146" y1="30" x2="146" y2="142"/><circle cx="146" cy="26" r="6"/><circle cx="146" cy="146" r="6"/>' +
+          '<path d="M54 42 q12 -6 26 0 v90 q-14 6 -26 0 z"/>' +
+          '<path d="M146 42 q-12 -6 -26 0 v90 q14 6 26 0 z"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="84" y1="58" x2="116" y2="58"/><line x1="84" y1="70" x2="116" y2="70"/>' +
+          '<line x1="84" y1="82" x2="116" y2="82"/><line x1="84" y1="94" x2="116" y2="94"/>' +
+          '<line x1="84" y1="106" x2="116" y2="106"/><line x1="84" y1="118" x2="116" y2="118"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "An open Torah scroll on its two staves (<em>atzei chaim</em>); the text lines are indicative only. An original drawing, not a reproduction of a specific scroll."
+    ),
+
+    /* Ch22 — Patristic Christianity: the open codex beneath the cross, Alpha & Omega */
+    "ch22": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">' +
+          '<line x1="100" y1="42" x2="100" y2="80"/><line x1="88" y1="54" x2="112" y2="54"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">' +
+          '<path d="M69 72 L74 58 L79 72"/><path d="M71 67 H77"/>' +
+          '<path d="M121 72 Q120 56 126 56 Q132 56 131 72"/><path d="M117 72 H124"/><path d="M128 72 H135"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">' +
+          '<path d="M100 88 C82 80 58 80 40 86 L40 150 C58 145 82 145 100 152 Z"/>' +
+          '<path d="M100 88 C118 80 142 80 160 86 L160 150 C142 145 118 145 100 152 Z"/>' +
+          '<line x1="100" y1="88" x2="100" y2="152"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="52" y1="100" x2="90" y2="98"/><line x1="52" y1="112" x2="90" y2="110"/>' +
+          '<line x1="52" y1="124" x2="90" y2="122"/><line x1="52" y1="136" x2="90" y2="134"/>' +
+          '<line x1="110" y1="98" x2="148" y2="100"/><line x1="110" y1="110" x2="148" y2="112"/>' +
+          '<line x1="110" y1="122" x2="148" y2="124"/><line x1="110" y1="134" x2="148" y2="136"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The open codex beneath the cross, flanked by Alpha and Omega &mdash; the canon, the creed, and Christ &ldquo;the beginning and the end.&rdquo; An original rendering of the symbols, not a specific manuscript."
+    ),
+
+    /* Ch23 — Norse Paganism: a Mjölnir (Thor's-hammer) pendant, worn point-down */
+    "ch23": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        // suspension loop
+        '<circle cx="100" cy="26" r="9" stroke="currentColor" stroke-width="2"/>' +
+        // handle / neck
+        '<path d="M92 40 L92 74 L108 74 L108 40 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>' +
+        // hammer-head silhouette with a short central foot
+        '<path d="M48 74 L152 74 L152 128 L128 128 L128 142 L118 142 L110 156 L90 156 L82 142 L72 142 L72 128 L48 128 Z" ' +
+          'stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>' +
+        // engraved decoration on the head
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="56" y1="86" x2="144" y2="86"/><line x1="56" y1="120" x2="144" y2="120"/>' +
+          '<path d="M72 103 L100 92 L128 103 L100 114 Z"/>' +
+          '<line x1="100" y1="92" x2="100" y2="114"/><line x1="72" y1="103" x2="128" y2="103"/></g>' +
+        '<circle cx="100" cy="103" r="4" fill="currentColor" opacity="0.7"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A Mj&ouml;lnir &mdash; Thor&rsquo;s-hammer pendant &mdash; of the kind worn in silver and iron across the Viking world, worn point-down with an engraved knot at its heart. An original geometric rendering, not a photograph of a specific find."
+    ),
+
+    /* Ch24 — Tantra: an interpretive Sri Yantra (bhupura, lotus, interlocking triangles, bindu) */
+    "ch24": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        // bhupura: three nested square frames with four gates
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.7">' +
+          '<rect x="24" y="24" width="152" height="152"/>' +
+          '<rect x="30" y="30" width="140" height="140" opacity="0.6"/>' +
+          '<rect x="36" y="36" width="128" height="128" opacity="0.4"/></g>' +
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.7">' +
+          '<path d="M92 24 v-8 h16 v8"/><path d="M92 176 v8 h16 v-8"/>' +
+          '<path d="M24 92 h-8 v16 h8"/><path d="M176 92 h8 v16 h-8"/></g>' +
+        // two lotus rings
+        '<circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="52" stroke="currentColor" stroke-width="0.7" opacity="0.3"/>' +
+        // interlocking triangles (four apex-up, four apex-down)
+        '<g stroke="currentColor" stroke-width="0.9" opacity="0.75">' +
+          '<path d="M100 48 L54 138 L146 138 Z"/>' +
+          '<path d="M100 62 L66 142 L134 142 Z"/>' +
+          '<path d="M100 152 L54 62 L146 62 Z"/>' +
+          '<path d="M100 138 L66 58 L134 58 Z"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.7" opacity="0.55">' +
+          '<path d="M100 76 L74 128 L126 128 Z"/>' +
+          '<path d="M100 124 L74 72 L126 72 Z"/></g>' +
+        // bindu
+        '<circle cx="100" cy="100" r="3.4" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "An interpretive &#346;r&#299; Yantra &mdash; the square bh&#363;pura and its four gates, the lotus rings, the interlocking triangles of &#346;iva and &#346;akti, and the central bindu. An original geometric rendering in the tradition&rsquo;s idiom, not a ritually precise diagram."
+    ),
+
+    /* Ch25 — Shinto: a torii gate, the threshold to the dwelling of the kami */
+    "ch25": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        '<g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">' +
+          // kasagi — the curved top lintel
+          '<path d="M36 60 Q100 44 164 60" stroke-width="5.5"/>' +
+          // shimaki — straight beam just below the kasagi
+          '<path d="M52 70 L148 70" stroke-width="3"/>' +
+          // pillars, leaning slightly outward at the base
+          '<path d="M72 60 L67 178" stroke-width="5"/>' +
+          '<path d="M128 60 L133 178" stroke-width="5"/>' +
+          // nuki — the lower tie beam, protruding past the pillars
+          '<path d="M56 100 L144 100" stroke-width="4"/>' +
+          // gakuzuka — central strut between nuki and shimaki
+          '<path d="M100 70 L100 100" stroke-width="3"/></g>' +
+        // base stones
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="60" y1="178" x2="74" y2="178"/><line x1="126" y1="178" x2="140" y2="178"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A torii &mdash; the gateway that marks the threshold between the ordinary world and the dwelling of the kami; to pass through it is already a small purification. An original geometric rendering, not a specific shrine."
+    ),
+
+    /* Ch26 — Kabbalah: the Tree of Life, ten sefirot joined by twenty-two paths */
+    "ch26": fig(
+      '<svg class="plate-art" viewBox="0 0 200 210" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="105" r="99" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // 22 paths
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.42">' +
+          '<line x1="100" y1="24" x2="140" y2="52"/><line x1="100" y1="24" x2="60" y2="52"/><line x1="100" y1="24" x2="100" y2="112"/>' +
+          '<line x1="140" y1="52" x2="60" y2="52"/><line x1="140" y1="52" x2="140" y2="94"/><line x1="140" y1="52" x2="100" y2="112"/>' +
+          '<line x1="60" y1="52" x2="60" y2="94"/><line x1="60" y1="52" x2="100" y2="112"/>' +
+          '<line x1="140" y1="94" x2="60" y2="94"/><line x1="140" y1="94" x2="100" y2="112"/><line x1="140" y1="94" x2="140" y2="136"/>' +
+          '<line x1="60" y1="94" x2="100" y2="112"/><line x1="60" y1="94" x2="60" y2="136"/>' +
+          '<line x1="100" y1="112" x2="140" y2="136"/><line x1="100" y1="112" x2="60" y2="136"/><line x1="100" y1="112" x2="100" y2="158"/>' +
+          '<line x1="140" y1="136" x2="60" y2="136"/><line x1="140" y1="136" x2="100" y2="158"/><line x1="140" y1="136" x2="100" y2="186"/>' +
+          '<line x1="60" y1="136" x2="100" y2="158"/><line x1="60" y1="136" x2="100" y2="186"/>' +
+          '<line x1="100" y1="158" x2="100" y2="186"/></g>' +
+        // 10 sefirot
+        '<g stroke="currentColor" stroke-width="1.2" fill="none">' +
+          '<circle cx="100" cy="24" r="9"/><circle cx="140" cy="52" r="9"/><circle cx="60" cy="52" r="9"/>' +
+          '<circle cx="140" cy="94" r="9"/><circle cx="60" cy="94" r="9"/><circle cx="100" cy="112" r="9"/>' +
+          '<circle cx="140" cy="136" r="9"/><circle cx="60" cy="136" r="9"/><circle cx="100" cy="158" r="9"/>' +
+          '<circle cx="100" cy="186" r="9"/></g>' +
+        '<g fill="currentColor" opacity="0.75">' +
+          '<circle cx="100" cy="24" r="1.6"/><circle cx="140" cy="52" r="1.6"/><circle cx="60" cy="52" r="1.6"/>' +
+          '<circle cx="140" cy="94" r="1.6"/><circle cx="60" cy="94" r="1.6"/><circle cx="100" cy="112" r="1.6"/>' +
+          '<circle cx="140" cy="136" r="1.6"/><circle cx="60" cy="136" r="1.6"/><circle cx="100" cy="158" r="1.6"/>' +
+          '<circle cx="100" cy="186" r="1.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Tree of Life (Etz Chaim) &mdash; the ten sefirot through which the hidden Ein Sof emanates into creation, joined by the twenty-two paths of the Hebrew letters. An original geometric rendering of the traditional figure."
+    ),
+
+    /* Ch27 — Sufism: a whirling dervish of the sema, one hand to heaven, one to earth */
+    "ch27": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>' +
+        // motion arcs suggesting the turn
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-linecap="round" stroke-dasharray="2 6">' +
+          '<path d="M40 150 A 60 26 0 0 0 160 150"/>' +
+          '<path d="M48 158 A 52 20 0 0 0 152 158"/></g>' +
+        '<g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">' +
+          // sikke (the tall hat)
+          '<path d="M94 60 L97 30 L103 30 L106 60 Z" stroke-width="1.4"/>' +
+          // head
+          '<circle cx="100" cy="66" r="6" stroke-width="1.4"/>' +
+          // arms: right up to heaven, left down to earth
+          '<path d="M100 80 L140 58" stroke-width="1.8"/>' +
+          '<path d="M100 80 L64 98" stroke-width="1.8"/>' +
+          '<circle cx="141" cy="57" r="1.7" fill="currentColor"/><circle cx="63" cy="99" r="1.7" fill="currentColor"/>' +
+          // the flaring white skirt (tennure)
+          '<path d="M100 78 C82 84 60 116 52 156 L148 156 C140 116 118 84 100 78 Z" stroke-width="1.6"/>' +
+          // pleats
+          '<g stroke-width="0.7" opacity="0.5">' +
+            '<line x1="100" y1="86" x2="100" y2="156"/><line x1="84" y1="110" x2="76" y2="156"/>' +
+            '<line x1="116" y1="110" x2="124" y2="156"/></g></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A dervish of the sema &mdash; the whirling ceremony of the Mevlevi &mdash; the right hand lifted to receive grace from heaven, the left turned down to pass it to the earth, the robe flaring as the soul turns toward union. An original geometric rendering, not a specific image."
+    ),
+
+    /* Ch28 — Scholasticism: a Gothic rose window, order made visible ("summa in stone") */
+    "ch28": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor">' +
+          '<circle cx="100" cy="100" r="92" stroke-width="1.4"/>' +
+          '<circle cx="100" cy="100" r="82" stroke-width="0.9" opacity="0.6"/>' +
+          // eight radial spokes
+          '<g stroke-width="0.8" opacity="0.55">' +
+            '<line x1="100" y1="100" x2="182" y2="100"/><line x1="100" y1="100" x2="18" y2="100"/>' +
+            '<line x1="100" y1="100" x2="100" y2="182"/><line x1="100" y1="100" x2="100" y2="18"/>' +
+            '<line x1="100" y1="100" x2="158" y2="158"/><line x1="100" y1="100" x2="42" y2="42"/>' +
+            '<line x1="100" y1="100" x2="158" y2="42"/><line x1="100" y1="100" x2="42" y2="158"/></g>' +
+          // ring the foils sit on
+          '<circle cx="100" cy="100" r="50" stroke-width="0.7" opacity="0.4"/>' +
+          // eight foils (petal lights)
+          '<g stroke-width="1">' +
+            '<circle cx="150" cy="100" r="10"/><circle cx="50" cy="100" r="10"/>' +
+            '<circle cx="100" cy="150" r="10"/><circle cx="100" cy="50" r="10"/>' +
+            '<circle cx="135.4" cy="135.4" r="10"/><circle cx="64.6" cy="64.6" r="10"/>' +
+            '<circle cx="135.4" cy="64.6" r="10"/><circle cx="64.6" cy="135.4" r="10"/></g>' +
+          // central rosette
+          '<circle cx="100" cy="100" r="20" stroke-width="1.2"/>' +
+          '<circle cx="100" cy="100" r="11" stroke-width="0.8" opacity="0.7"/></g>' +
+        '<g fill="currentColor">' +
+          '<circle cx="100" cy="100" r="3.5"/>' +
+          '<g opacity="0.7"><circle cx="150" cy="100" r="1.5"/><circle cx="50" cy="100" r="1.5"/>' +
+            '<circle cx="100" cy="150" r="1.5"/><circle cx="100" cy="50" r="1.5"/>' +
+            '<circle cx="135.4" cy="135.4" r="1.5"/><circle cx="64.6" cy="64.6" r="1.5"/>' +
+            '<circle cx="135.4" cy="64.6" r="1.5"/><circle cx="64.6" cy="135.4" r="1.5"/></g></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A Gothic rose window &mdash; order made visible, the &ldquo;summa in stone&rdquo;: a single figure in which every part is articulated and reconciled into a stable whole, as the schoolmen built their arguments. An original geometric rendering, not a specific window."
+    ),
+
+    /* Ch29 — Aztec/Maya/Inca: a stepped temple-pyramid beneath the sun */
+    "ch29": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // the sun (solar/divine kingship shared across all three)
+        '<g stroke="currentColor">' +
+          '<circle cx="100" cy="46" r="16" stroke-width="1.3"/>' +
+          '<circle cx="100" cy="46" r="8" stroke-width="0.8" opacity="0.7"/></g>' +
+        '<g stroke="currentColor" stroke-width="1" stroke-linecap="round">' +
+          '<line x1="100" y1="22" x2="100" y2="14"/><line x1="100" y1="78" x2="100" y2="70"/>' +
+          '<line x1="76" y1="46" x2="68" y2="46"/><line x1="132" y1="46" x2="124" y2="46"/>' +
+          '<line x1="83" y1="29" x2="77" y2="23"/><line x1="117" y1="29" x2="123" y2="23"/>' +
+          '<line x1="83" y1="63" x2="77" y2="69"/><line x1="117" y1="63" x2="123" y2="69"/></g>' +
+        '<circle cx="100" cy="46" r="2.4" fill="currentColor"/>' +
+        // the stepped temple-pyramid (temple-mountain)
+        '<g stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">' +
+          '<rect x="34" y="152" width="132" height="16"/>' +
+          '<rect x="48" y="138" width="104" height="14"/>' +
+          '<rect x="62" y="125" width="76" height="13"/>' +
+          '<rect x="76" y="113" width="48" height="12"/>' +
+          // shrine on the summit
+          '<rect x="88" y="98" width="24" height="15"/></g>' +
+        // central staircase up the front
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.65">' +
+          '<line x1="91" y1="113" x2="91" y2="168"/><line x1="109" y1="113" x2="109" y2="168"/>' +
+          '<line x1="91" y1="124" x2="109" y2="124"/><line x1="91" y1="136" x2="109" y2="136"/>' +
+          '<line x1="91" y1="147" x2="109" y2="147"/><line x1="91" y1="158" x2="109" y2="158"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A stepped temple-pyramid beneath the sun &mdash; the temple-mountain and solar kingship shared, independently, by the Maya, the Aztec, and the Inca. An original geometric rendering, not a specific monument."
+    ),
+
+    /* Ch30 — Bhakti: a lotus in bloom, the flower of devotion */
+    "ch30": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // outer petals (broader, paler), fanning widest
+        '<g stroke="currentColor" stroke-width="1" opacity="0.5">' +
+          '<path d="M100 150 C 84 120 84 92 100 74 C 116 92 116 120 100 150 Z" transform="rotate(-72 100 150)"/>' +
+          '<path d="M100 150 C 84 120 84 92 100 74 C 116 92 116 120 100 150 Z" transform="rotate(72 100 150)"/></g>' +
+        // main petals
+        '<g stroke="currentColor" stroke-width="1.3">' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(-48 100 150)"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(-24 100 150)"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(24 100 150)"/>' +
+          '<path d="M100 150 C 90 118 94 82 100 58 C 106 82 110 118 100 150 Z" transform="rotate(48 100 150)"/></g>' +
+        // calyx / base and stem
+        '<g stroke="currentColor" stroke-width="1" opacity="0.7">' +
+          '<path d="M74 150 Q100 162 126 150"/>' +
+          '<line x1="100" y1="152" x2="100" y2="176"/></g>' +
+        '<circle cx="100" cy="150" r="2.6" fill="currentColor"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A lotus in bloom &mdash; the flower of devotion, rising from the water unstained: an emblem for a religion of love open to all. An original geometric rendering, not a specific image."
+    ),
+
+    /* Ch31 — Reformation: a rose enclosing a heart and cross (after the Luther seal) */
+    "ch31": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="1.3"/>' +
+        '<circle cx="100" cy="100" r="82" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>' +
+        // five rose petals
+        '<g stroke="currentColor" stroke-width="1.1" opacity="0.85">' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(72 100 100)"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(144 100 100)"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(216 100 100)"/>' +
+          '<path d="M100 100 C 78 74 82 44 100 30 C 118 44 122 74 100 100 Z" transform="rotate(288 100 100)"/></g>' +
+        // heart + cross at the center
+        '<path d="M100 128 C 82 112 78 98 90 92 C 96 89 100 94 100 98 C 100 94 104 89 110 92 C 122 98 118 112 100 128 Z" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="100" y1="96" x2="100" y2="118"/><line x1="92" y1="104" x2="108" y2="104"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A rose enclosing a heart and cross, after the seal Luther chose &mdash; the living faith of the believer at the center of a movement that put the Word above all. An original geometric rendering, not a facsimile of the seal."
+    ),
+
+    /* Ch32 — Witch Trials: the scales of justice, unbalanced */
+    "ch32": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        '<g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">' +
+          // stand
+          '<line x1="100" y1="44" x2="100" y2="150" stroke-width="1.6"/>' +
+          '<path d="M78 158 L122 158 L112 150 L88 150 Z" stroke-width="1.4"/>' +
+          '<circle cx="100" cy="44" r="3.4" fill="currentColor"/>' +
+          // tilted beam
+          '<line x1="42" y1="60" x2="158" y2="80" stroke-width="1.6"/>' +
+          // left pan (raised)
+          '<line x1="42" y1="60" x2="42" y2="70" stroke-width="0.9"/>' +
+          '<path d="M26 70 Q42 88 58 70" stroke-width="1.3"/>' +
+          '<line x1="26" y1="70" x2="42" y2="60" stroke-width="0.7" opacity="0.6"/><line x1="58" y1="70" x2="42" y2="60" stroke-width="0.7" opacity="0.6"/>' +
+          // right pan (lowered)
+          '<line x1="158" y1="80" x2="158" y2="100" stroke-width="0.9"/>' +
+          '<path d="M142 100 Q158 118 174 100" stroke-width="1.3"/>' +
+          '<line x1="142" y1="100" x2="158" y2="80" stroke-width="0.7" opacity="0.6"/><line x1="174" y1="100" x2="158" y2="80" stroke-width="0.7" opacity="0.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The scales of justice, thrown out of balance &mdash; a persecution that wore the robes of law to punish an imaginary crime. An original figure, chosen to mark the trials as a miscarriage of justice, not to depict their victims."
+    ),
+
+    /* Ch33 — African Traditional Religion: an Ifa divination motif with binary odu marks */
+    "ch33": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1.3"/>' +
+        '<circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>' +
+        // eight rim marks (the cast positions)
+        '<g stroke="currentColor" stroke-width="1.2">' +
+          '<line x1="100" y1="12" x2="100" y2="22"/><line x1="100" y1="178" x2="100" y2="188"/>' +
+          '<line x1="12" y1="100" x2="22" y2="100"/><line x1="178" y1="100" x2="188" y2="100"/>' +
+          '<line x1="38" y1="38" x2="45" y2="45"/><line x1="162" y1="38" x2="155" y2="45"/>' +
+          '<line x1="38" y1="162" x2="45" y2="155"/><line x1="162" y1="162" x2="155" y2="155"/></g>' +
+        // a central odu figure: two columns of four marks (single = one stroke, double = two)
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">' +
+          '<line x1="84" y1="70" x2="84" y2="82"/>' +                         // I
+          '<line x1="80" y1="94" x2="80" y2="106"/><line x1="88" y1="94" x2="88" y2="106"/>' + // II
+          '<line x1="84" y1="118" x2="84" y2="130"/>' +                       // I
+          '<line x1="80" y1="142" x2="80" y2="154"/><line x1="88" y1="142" x2="88" y2="154"/>' + // II
+          '<line x1="112" y1="70" x2="112" y2="82"/><line x1="120" y1="70" x2="120" y2="82"/>' + // II
+          '<line x1="116" y1="94" x2="116" y2="106"/>' +                      // I
+          '<line x1="112" y1="118" x2="112" y2="130"/><line x1="120" y1="118" x2="120" y2="130"/>' + // II
+          '<line x1="116" y1="142" x2="116" y2="154"/></g>' +                 // I
+      '</svg>',
+      "Interpretive illustration",
+      "An Ifa divination motif &mdash; the diviner&rsquo;s marks that record one of the 256 odu, a sacred binary read from palm nuts. An original geometric rendering in the tradition&rsquo;s idiom, not a specific tray."
+    ),
+
+    /* Ch34 — Sikhism: the Khanda (double-edged sword, chakkar, two kirpans) */
+    "ch34": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // chakkar (the ring)
+        '<circle cx="100" cy="104" r="40" stroke="currentColor" stroke-width="2.4"/>' +
+        // two kirpans, curving up and out, crossing below
+        '<g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">' +
+          '<path d="M92 168 C 58 150 46 108 60 66"/>' +
+          '<path d="M108 168 C 142 150 154 108 140 66"/></g>' +
+        // central double-edged khanda blade
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">' +
+          '<path d="M100 26 L107 46 L104 150 L96 150 L93 46 Z" fill="currentColor" opacity="0.15"/>' +
+          '<path d="M100 26 L107 46 L104 150 L96 150 L93 46 Z"/>' +
+          '<line x1="100" y1="30" x2="100" y2="150" stroke-width="0.7" opacity="0.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Khanda &mdash; the double-edged sword of divine truth within the chakkar of God&rsquo;s oneness, flanked by the two kirpans of spiritual and temporal power. An original geometric rendering of the Sikh emblem."
+    ),
+
+    /* Ch35 — New Religious Movements: a new scripture beneath a rising star */
+    "ch35": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // radiant star (new revelation)
+        '<g stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.7">' +
+          '<line x1="100" y1="28" x2="100" y2="12"/><line x1="100" y1="76" x2="100" y2="86"/>' +
+          '<line x1="76" y1="52" x2="62" y2="52"/><line x1="124" y1="52" x2="138" y2="52"/>' +
+          '<line x1="83" y1="35" x2="73" y2="25"/><line x1="117" y1="35" x2="127" y2="25"/>' +
+          '<line x1="83" y1="69" x2="73" y2="79"/><line x1="117" y1="69" x2="127" y2="79"/></g>' +
+        '<path d="M100 36 L106 48 L119 50 L109 59 L112 72 L100 65 L88 72 L91 59 L81 50 L94 48 Z" stroke="currentColor" stroke-width="1.2"/>' +
+        // open book (new scripture)
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">' +
+          '<path d="M100 112 C 80 100 56 100 40 108 L40 158 C 56 150 80 150 100 162 Z"/>' +
+          '<path d="M100 112 C 120 100 144 100 160 108 L160 158 C 144 150 120 150 100 162 Z"/>' +
+          '<line x1="100" y1="112" x2="100" y2="162"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.7" opacity="0.5">' +
+          '<line x1="52" y1="118" x2="90" y2="116"/><line x1="52" y1="128" x2="90" y2="126"/>' +
+          '<line x1="110" y1="116" x2="148" y2="118"/><line x1="110" y1="126" x2="148" y2="128"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A new scripture beneath a rising star &mdash; the fresh revelations and founders&rsquo; books of the modern religions. An original emblem for the phenomenon, not any one movement."
+    ),
+
+    /* Ch36 — Spiritualism: a planchette (the talking-board pointer) */
+    "ch36": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // planchette body (rounded shield / heart-triangle pointing down)
+        '<path d="M60 74 Q100 58 140 74 Q150 112 100 150 Q50 112 60 74 Z" stroke="currentColor" stroke-width="1.6"/>' +
+        // viewing hole
+        '<circle cx="100" cy="98" r="13" stroke="currentColor" stroke-width="1.2"/>' +
+        '<circle cx="100" cy="98" r="2.2" fill="currentColor" opacity="0.7"/>' +
+        // three small casters/feet
+        '<g stroke="currentColor" stroke-width="1"><circle cx="64" cy="78" r="3.4"/><circle cx="136" cy="78" r="3.4"/><circle cx="100" cy="146" r="3.4"/></g>' +
+        // faint alphabet arc below (the board)
+        '<path d="M40 170 Q100 150 160 170" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A planchette &mdash; the pointer of the talking board, through which the séance spelled its messages letter by letter. An original geometric rendering, not a specific board."
+    ),
+
+    /* Ch37 — Theosophy / occult revival: interlaced triangles and ankh within an ouroboros */
+    "ch37": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        // ouroboros ring (serpent) with a small head
+        '<circle cx="100" cy="100" r="84" stroke="currentColor" stroke-width="2" stroke-dasharray="255 20"/>' +
+        '<path d="M100 12 l6 -8 l-12 0 z" fill="currentColor"/>' +
+        // hexagram (as above, so below)
+        '<g stroke="currentColor" stroke-width="1.2">' +
+          '<path d="M100 50 L142 122 L58 122 Z"/>' +
+          '<path d="M100 150 L142 78 L58 78 Z"/></g>' +
+        // ankh at the center
+        '<g stroke="currentColor" stroke-width="1.6"><circle cx="100" cy="92" r="9"/><line x1="100" y1="101" x2="100" y2="126"/><line x1="88" y1="112" x2="112" y2="112"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A synthesis emblem &mdash; the ouroboros of eternity, the interlaced triangles of &ldquo;as above, so below,&rdquo; and the ankh of life &mdash; in the manner of Theosophy&rsquo;s joining of all sacred signs. An original composite, not a facsimile of any seal."
+    ),
+
+    /* Ch38 — Wicca: the pentacle (upright, in a circle) with a triple moon */
+    "ch38": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // triple moon
+        '<g stroke="currentColor" stroke-width="1.4">' +
+          '<circle cx="100" cy="40" r="11"/>' +
+          '<path d="M84 30 A 14 14 0 0 0 84 50"/>' +
+          '<path d="M116 30 A 14 14 0 0 1 116 50"/></g>' +
+        // pentacle
+        '<circle cx="100" cy="118" r="52" stroke="currentColor" stroke-width="1.4"/>' +
+        '<path d="M100 68 L135 176 L44 109 L156 109 L65 176 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The pentacle &mdash; the five-pointed star of the four elements crowned by spirit, bound in the circle of unity &mdash; beneath the triple moon of the Goddess. An original geometric rendering of the Wiccan emblem."
+    ),
+
+    /* Ch39 — Satanism: the inverted pentagram (reclaimed), in a circle */
+    "ch39": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        '<circle cx="100" cy="100" r="66" stroke="currentColor" stroke-width="1.6"/>' +
+        // inverted pentagram (point down)
+        '<path d="M100 160 L135 51 L43 119 L157 119 L65 51 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The inverted pentagram &mdash; the symbol modern self-identified Satanists reclaim as an emblem of the carnal and the self, spirit turned toward matter. An original geometric rendering; a reclaimed sign, described, not endorsed."
+    ),
+
+    /* Ch40 — African Diaspora Religions: a vèvè-style crossroads (Legba opens the way) */
+    "ch40": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+          // the crossroads
+          '<line x1="100" y1="30" x2="100" y2="170"/><line x1="30" y1="100" x2="170" y2="100"/>' +
+          // central diamond
+          '<path d="M100 82 L118 100 L100 118 L82 100 Z"/>' +
+          // curls at the four ends
+          '<path d="M100 30 q -12 -6 -12 -16 M100 30 q 12 -6 12 -16"/>' +
+          '<path d="M100 170 q -12 6 -12 16 M100 170 q 12 6 12 16"/>' +
+          '<path d="M30 100 q -6 -12 -16 -12 M30 100 q -6 12 -16 12"/>' +
+          '<path d="M170 100 q 6 -12 16 -12 M170 100 q 6 12 16 12"/></g>' +
+        // small hearts/dots along the arms
+        '<g fill="currentColor" opacity="0.7"><circle cx="100" cy="56" r="2.4"/><circle cx="100" cy="144" r="2.4"/><circle cx="56" cy="100" r="2.4"/><circle cx="144" cy="100" r="2.4"/><circle cx="100" cy="100" r="2.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A vèvè-style crossroads &mdash; the sign of the gatekeeper who must open the way before any spirit can be reached, the ground-drawn sigils at the heart of Vodou and its kin. An original rendering in the tradition&rsquo;s idiom, not a specific vèvè."
+    ),
+
+    /* Ch41 — Paleolithic: a stenciled hand-print beside a therianthrope, on the cave wall */
+    "ch41": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // the negative hand-print (palm + five fingers)
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+          '<path d="M56 150 L56 108 Q56 100 62 100 Q68 100 68 108 L68 92 Q68 84 74 84 Q80 84 80 92 L80 96 Q80 86 86 86 Q92 86 92 96 L92 100 Q92 90 98 90 Q104 90 104 100 L104 118 Q104 108 110 108 Q116 108 114 120 L108 138 Q104 150 92 150 Z"/></g>' +
+        // a therianthrope: human body, antlered/animal head (the "sorcerer")
+        '<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+          '<circle cx="140" cy="70" r="8"/>' +
+          '<path d="M134 64 Q128 54 124 58 M146 64 Q152 54 156 58"/>' +          // antlers
+          '<line x1="140" y1="78" x2="140" y2="118"/>' +                          // torso
+          '<path d="M140 88 L126 102 M140 88 L154 102"/>' +                       // arms
+          '<path d="M140 118 L130 150 M140 118 L152 150"/>' +                     // legs
+          '<line x1="140" y1="150" x2="126" y2="150" opacity="0.6"/></g>' +       // ground line
+      '</svg>',
+      "Interpretive illustration",
+      "A stenciled hand-print beside an antlered therianthrope &mdash; the two oldest gestures of the sacred imagination, the pressed palm that says &ldquo;I was here&rdquo; and the human-animal being who crosses into the spirit world. An original rendering in the idiom of cave art, not a copy of any panel."
+    ),
+
+    /* Ch42 — Neolithic: a Göbekli Tepe T-pillar with carved arm, and a sun over the horizon */
+    "ch42": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // solstice sun over the horizon (sky-alignment)
+        '<circle cx="100" cy="46" r="13" stroke="currentColor" stroke-width="1.2"/>' +
+        '<g stroke="currentColor" stroke-width="0.9" stroke-linecap="round" opacity="0.6">' +
+          '<line x1="100" y1="24" x2="100" y2="16"/><line x1="78" y1="46" x2="70" y2="46"/><line x1="122" y1="46" x2="130" y2="46"/>' +
+          '<line x1="84" y1="30" x2="78" y2="24"/><line x1="116" y1="30" x2="122" y2="24"/></g>' +
+        '<line x1="34" y1="70" x2="166" y2="70" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+        // the T-pillar (a faceless standing being)
+        '<g stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">' +
+          '<path d="M74 78 L126 78 L126 96 L112 96 L112 168 L88 168 L88 96 L74 96 Z"/>' +
+          // carved arm bending to hands at the front (as at Göbekli Tepe)
+          '<path d="M112 108 Q120 130 108 150" stroke-width="1" opacity="0.7"/>' +
+          '<path d="M100 150 L108 150 M100 156 L108 156 M100 162 L108 162" stroke-width="0.8" opacity="0.7"/>' +
+          // a small carved animal (a fox/snake mark)
+          '<path d="M90 116 q 6 -6 12 0 q -3 5 -6 5 q -4 0 -6 -5 Z" stroke-width="0.9" opacity="0.6"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "A T-pillar of the kind raised at Göbekli Tepe &mdash; a faceless standing being with a carved arm and hands, beneath the solstice sun the Neolithic learned to build into stone. An original geometric rendering, not a specific pillar."
+    )
+
+  };
+
+  // expose just the artwork (no caption) so tiles/thumbnails can reuse a plate
+  window.PLATE_ART = {};
+  Object.keys(window.PLATES).forEach(function (id) {
+    var m = window.PLATES[id].match(/<svg[\s\S]*?<\/svg>/);
+    window.PLATE_ART[id] = m ? m[0] : "";
+  });
+
+  // plate styling — kept in-module so page markup/CSS stay untouched
+  var css =
+    // works whether the plate sits in the chapter head (frontispiece) or the article body
+    ".page-head .plate,.article .plate{margin:1.7rem auto 0.4rem;max-width:24rem;text-align:center}" +
+    ".plate .plate-art{width:100%;max-width:360px;height:auto;color:var(--gold-bright,#d9b06a);display:inline-block;" +
+      "padding:1.35rem;border:1px solid var(--line,#37291a);border-radius:5px;" +
+      "background:radial-gradient(120% 120% at 50% 32%,#1d150d 0%,rgba(16,12,9,0) 78%)}" +
+    ".plate figcaption{margin:0.75rem auto 0;font-size:0.78rem;line-height:1.5;max-width:26rem;" +
+      "color:var(--ink-faint,#6f624a);font-style:italic}" +
+    ".plate .tag{display:inline-block;font-style:normal;text-transform:uppercase;letter-spacing:0.14em;" +
+      "font-size:0.56rem;color:var(--ink-dim,#9a8a6b);border:1px solid var(--line,#37291a);" +
+      "padding:0.16rem 0.5rem;border-radius:2px;margin-bottom:0.5rem}";
+  var s = document.createElement("style");
+  s.textContent = css;
+  (document.head || document.documentElement).appendChild(s);
+})();

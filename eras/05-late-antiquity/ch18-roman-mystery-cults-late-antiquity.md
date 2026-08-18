@@ -144,6 +144,24 @@ death**. The mysteries offered exactly this. So, in the same centuries and to th
 did **Christianity** — which is why the two were rivals, and why Christianity's eventual
 triumph is partly the story of its answering this need most powerfully of all.
 
+## The last pagan god: Sol Invictus and the drift to one sun
+
+Alongside the mysteries, the pagan world of Late Antiquity was drifting, on its own, toward
+something like monotheism — and its favored form was **solar**. As philosophers increasingly
+treated the many gods as faces of one supreme power, the **Sun** became that power's natural
+emblem, and Mithras, Apollo, Serapis, and the Syrian sun-gods blurred toward a single
+"unconquered" solar deity. In **274 CE** the emperor **Aurelian** made it official, founding a
+grand state cult of **Sol Invictus**, the "Unconquered Sun," with its own temple, priesthood,
+and games — and setting the Sun's chief festival, the *Natalis Solis Invicti*, on **25
+December**, near the winter solstice, when the shortened day is "reborn." Here the empire came
+closest to a pagan monotheism of its own, and it is no accident that **Constantine**, even after
+his turn to Christianity, went on minting coins to "the Unconquered Sun" and keeping "the day of
+the Sun" (our Sunday). The old scholarly claim that Christmas was simply *taken over* from this
+solar feast is now genuinely debated — the reasoning may have run either way, or in parallel —
+but that the dying-and-reborn Sun and the risen Christ competed, and borrowed light from each
+other, in the same December sky is beyond doubt. Solar henotheism was the pagan empire's last,
+and nearest, approach to the one God the new faith proclaimed.
+
 ## The great rivalry — and an honest word on "parallels"
 
 The nineteenth-century scholar Ernest Renan famously wrote that if Christianity had been
@@ -172,6 +190,25 @@ badly overstated, and the evidence-honesty of this archive requires the correcti
 The sober conclusion is that Christianity and the mysteries were **siblings of the same age**,
 drawing on a shared religious vocabulary and answering the same hungers, rather than one being
 a copy of the others. That is a more interesting truth than the myth of simple borrowing.
+
+## The twilight of the gods
+
+The mysteries did not simply fade; in the end they were closed down. The turning point came with
+**Constantine's** conversion, but the old cults lingered for generations, and one emperor tried
+to bring them roaring back. **Julian** — Constantine's own nephew, raised Christian but secretly
+devoted to the old gods and the Neoplatonic mysteries — became emperor in 361 and, in his brief
+reign (the church would call him **Julian the Apostate**), reopened the temples, restored the
+sacrifices, and poured funds into a reformed pagan priesthood modeled, ironically, on Christian
+charity. His death in battle in **363** ended the experiment, and paganism never recovered its
+footing. Under **Theodosius I** the state turned decisively against it: laws in the **390s**
+banned public sacrifice and shut the temples, and by **391–392** Christianity was the sole legal
+religion of the empire. The ancient sanctuaries fell one by one — the **Oracle of Delphi** went
+silent, and the **Eleusinian Mysteries**, celebrated for nearly two thousand years, ended when
+the sacred site was sacked around **396 CE**. A few aristocrats and philosophers held on (the
+last hieroglyphic inscription was carved at Philae in 394; the Platonic Academy at Athens was
+closed only in 529), but the great public age of the mysteries was over. The secret paths to
+salvation did not so much vanish as go **underground**, their initiatory impulse surviving in
+the Hermetic and esoteric currents the later chapters of this archive will follow.
 
 ## Symbology and sacred encoding
 
@@ -227,6 +264,10 @@ modern Western esoteric tradition treated in the final chapters of this archive.
   (with its inscriptions, some recording a 20-year validity).
 - That the mysteries and **Christianity** were contemporaneous rivals answering a shared hunger for
   personal salvation.
+- The Late-Antique drift toward **solar monotheism**: the state cult of **Sol Invictus** founded by
+  **Aurelian (274 CE)**, its 25 December festival, and Constantine's continued solar imagery; and the
+  **twilight** of the mysteries — Julian's failed revival (361–363), the anti-pagan laws of Theodosius
+  (390s), and the end of the Eleusinian Mysteries when the site was sacked c. 396 CE.
 
 **What's not supported by the evidence**
 
@@ -266,6 +307,12 @@ modern Western esoteric tradition treated in the final chapters of this archive.
 *The "dying and rising god" and the parallels debate*
 - [Wikipedia: Dying-and-rising god](https://en.wikipedia.org/wiki/Dying-and-rising_god) (on the contested
   Frazerian category).
+
+*Sol Invictus and the twilight of paganism*
+- Aurelian's Sol Invictus (274 CE) and the 25 December festival — [Britannica: Sol Invictus](https://www.britannica.com/topic/Sol-Invictus);
+  [Wikipedia: Sol Invictus](https://en.wikipedia.org/wiki/Sol_Invictus).
+- Julian's revival and the anti-pagan laws — [Wikipedia: Persecution of pagans under Theodosius I](https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I);
+  on the end of Eleusis (c. 396 CE), [World History Encyclopedia: Eleusis](https://www.worldhistory.org/Eleusis/).
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (reference encyclopedias,
 sourced overviews, and the mainstream scholarship of Cumont's critics, Ulansey, Smith, and others they

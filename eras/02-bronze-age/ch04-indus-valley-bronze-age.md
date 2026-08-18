@@ -66,6 +66,15 @@ distinct characters. And it is, after a century of effort and dozens of confiden
 the Rosetta Stone has ever been found; we do not know what language, if any, lies
 behind the signs.
 
+The longest single inscription only sharpens the frustration. At **Dholavira**, in
+Gujarat, excavators found the remains of a great **&ldquo;signboard&rdquo;** that
+had stood over the north gate of the citadel: ten large Indus signs, each about 37
+centimeters high, once inlaid in white gypsum on a wooden board perhaps three
+meters long, which fell and rotted but left its letters legible in the ground. It
+is the closest thing the Indus world has to a monumental public text &mdash; a sign
+meant to be read by everyone entering the city &mdash; and we cannot read a
+character of it.
+
 There is not even agreement that the signs *encode language at all.* The dominant
 view, argued by scholars such as **Asko Parpola** and **Iravatham Mahadevan**,
 holds that the script is true writing, most likely recording an early Dravidian
@@ -95,6 +104,16 @@ that the &ldquo;three faces&rdquo; are questionable, and that the whole
 rather than to a specifically Indian god. The scholar Shubhangana Atre has proposed
 the central deity of the Indus was in fact a goddess, a &ldquo;Lady of Beasts.&rdquo;
 No reading commands consensus.
+
+**The &ldquo;Priest-King.&rdquo;** A small steatite bust from Mohenjo-daro, bearded
+and serene, its robe carved with a **trefoil** pattern once filled with red
+pigment, is among the most reproduced of all Indus objects &mdash; and its very
+name is a lesson in reading later categories backward. Marshall and his
+contemporaries called it the &ldquo;Priest-King&rdquo; on the analogy of the
+priest-kings of Mesopotamia, but the Indus has produced no textual, architectural,
+or funerary evidence of either priests or kings. We do not know whether the bust
+portrays a ruler, a deity, an ancestor, or an abstraction; the confident title is a
+modern projection onto a civilization that left no rulers&rsquo; names at all.
 
 **A goddess, or goddesses.** Excavators have recovered large numbers of terracotta
 female figurines, some with elaborate headdresses, some bearing soot marks that may
@@ -207,8 +226,9 @@ question the next chapter, on the early Vedic world, must take up.
   mostly seals) and remains genuinely undeciphered; no proposed decipherment is
   accepted.
 - The material religious remains are real: the seated horned figure of seal M-420,
-  large numbers of female figurines, the Great Bath at Mohenjo-daro, pipal-tree and
-  bull/"unicorn" imagery, and modest burials.
+  the trefoil-robed &ldquo;Priest-King&rdquo; bust, large numbers of female
+  figurines, the Great Bath at Mohenjo-daro, pipal-tree and bull/"unicorn" imagery,
+  the ten-sign Dholavira &ldquo;signboard,&rdquo; and modest burials.
 - The near-total absence of identified temples, palaces, royal tombs, and war/ruler
   monumental art, in sharp contrast to Egypt and Mesopotamia.
 - Long-distance trade with Mesopotamia (the &ldquo;Meluhha&rdquo; of Sumerian texts;
@@ -223,7 +243,11 @@ question the next chapter, on the early Vedic world, must take up.
   is one interpretation among several (Master/Mistress of Animals, bull/buffalo deity,
   shaman), none proven.
 - Any claim that the Indus script has been read, or that a specific religious text or
-  myth has been recovered from it.
+  myth has been recovered from it &mdash; including the Dholavira signboard, which
+  remains undeciphered.
+- The identification of the Mohenjo-daro bust as a &ldquo;Priest-King.&rdquo; The
+  name is Marshall&rsquo;s analogy to Mesopotamia; there is no Indus evidence for
+  priests or kings, and the figure&rsquo;s identity is unknown.
 - The assertion that Harappan religion simply *is* early Hinduism, or that specific
   Hindu deities and doctrines are demonstrably present. The parallels are suggestive,
   not established.
@@ -255,9 +279,14 @@ question the next chapter, on the early Vedic world, must take up.
   Marshall, Doris Srinivasan&rsquo;s critique, and Shubhangana Atre&rsquo;s
   &ldquo;Lady of Beasts&rdquo; reading).
 - [The Print: how a post about the Pashupati seal triggered an identity debate](https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/).
+- The &ldquo;Priest-King&rdquo; bust and its contested name —
+  [Smarthistory: The Priest-King sculpture](https://smarthistory.org/the-priest-king-sculpture-from-the-indus-valley-civilization/);
+  [Harappa.com: &ldquo;Priest King,&rdquo; Mohenjo-daro](https://www.harappa.com/slide/priest-king-mohenjo-daro).
 
 *The undeciphered script*
 - [Harappa.com: Introduction to the Study of the Indus Script](https://www.harappa.com/content/introduction-study-indus-script) (Iravatham Mahadevan).
+- The Dholavira &ldquo;signboard&rdquo; (ten large signs over the north gate) —
+  [Harappa.com: Dholavira and Its Mysterious Sign Board](https://www.harappa.com/blog/dholavira-and-its-mysterious-sign-board).
 - Asko Parpola, *Deciphering the Indus Script* (1994) and *The Roots of Hinduism* (2015).
 - S. Farmer, R. Sproat &amp; M. Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004) &mdash; [PDF](https://safarmer.com/fsw2.pdf) (the non-linguistic argument).
 

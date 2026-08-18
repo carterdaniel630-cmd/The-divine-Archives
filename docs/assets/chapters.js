@@ -26,12 +26,18 @@ window.CHAPTERS = {
     <p>Behind even <em>Atrahasis</em> stands a Sumerian version, sometimes called the <em>Eridu Genesis</em>, surviving on a badly broken tablet from Nippur usually dated around 1600 BCE. Here the survivor is the pious king Ziusudra, warned by the god Enki. The Sumerian King List uses the deluge as a hinge: certain kings ruled &ldquo;before the flood,&rdquo; and then &ldquo;the flood swept over,&rdquo; and afterward kingship came down from heaven a second time.</p>
     <p>So within Mesopotamia alone we can watch the story travel across at least a thousand years and three languages: Ziusudra becomes Atrahasis becomes Utnapishtim, Enki becomes Ea. This is not speculation about deep prehistory; it is a documented literary lineage, tablet to tablet.</p>
 
+    <h2>The ark builder&rsquo;s manual</h2>
+    <p>In 2009 a member of the public brought Irving Finkel, a curator at the British Museum, a cell-phone-sized cuneiform tablet his father had carried home from the Middle East after the Second World War. It turned out to be one of the most remarkable flood documents ever found. The &ldquo;Ark Tablet,&rdquo; sixty lines of Old Babylonian script written around 1900&ndash;1700 BCE, is essentially a construction brief: the god Enki, speaking to Atrahasis, dictates how to build the boat. And the boat is not the oblong barge of Genesis or the cube of <em>Gilgamesh</em> &mdash; it is a <strong>coracle</strong>, the round reed-and-bitumen <em>gufa</em> that Mesopotamian rivermen actually used, scaled up to gigantic size, its base a perfect circle roped and waterproofed with precisely specified quantities of bitumen. Most startling of all, the tablet carries the line &mdash; damaged but legible &mdash; that the animals went aboard &ldquo;two by two,&rdquo; the earliest known appearance of a detail everyone associates with Noah. Finkel published the text in <em>The Ark Before Noah</em> (2014); a full-scale attempt to build the round ark to its specification was later mounted for television and, waterlogged but afloat, broadly vindicated the design. The Ark Tablet is a reminder that the Mesopotamian flood tradition was not one fixed text but a living body of retellings, each generation supplying the practical detail its audience wanted.</p>
+    <p>By the Hellenistic period the story had jumped languages yet again. Around 281 BCE a Babylonian priest named <strong>Berossus</strong>, writing in Greek for the new Seleucid world, compiled a <em>Babyloniaca</em> from cuneiform temple archives. His flood hero, <strong>Xisuthros</strong> (a Greek rendering of Ziusudra), is warned by the god Cronus in a dream, builds a boat, sends out birds, grounds in the mountains of Armenia, and &mdash; a distinctive Berossan touch &mdash; first buries the sacred writings of civilization at Sippar, the City of the Sun, so that knowledge itself can survive the deluge and be dug up afterward. Berossus&rsquo;s own work is lost, but it was quoted by later Greek and Christian writers (Alexander Polyhistor, Josephus, Eusebius), and it is how the Babylonian flood reached the classical and early-Christian world in continuous written transmission &mdash; nearly two millennia before George Smith dug the cuneiform original back out of the ground.</p>
+
     <h2>The family resemblance with Genesis</h2>
     <p>Where does Noah fit? The mainstream scholarly view is that the Genesis flood narrative draws on this Mesopotamian tradition &mdash; whether absorbed during the Babylonian exile of the sixth century BCE, or inherited earlier from a shared Near Eastern world. The Hebrew authors did not copy; they transformed. In the Mesopotamian telling the gods are hungry, quarrelsome, and frightened of their own storm. In Genesis there is one God, the flood is a moral judgment on human wickedness, and it ends with a covenant and a rainbow. The theology is inverted even as the plot is kept.</p>
     <p>Even the seams show. Genesis carries a well-known doublet &mdash; two counts of the animals, two chronologies of the waters &mdash; that most scholars read as two older sources woven together. The bird episode splits along the same seam: one strand has Noah send out a dove three times, echoing Utnapishtim&rsquo;s dove; the other has a lone raven, echoing his raven. The Babylonian hero sent <em>both</em> birds; the Hebrew text seems to preserve two traditions that each kept one.</p>
+    <p>The lineage did not stop at Genesis. The <strong>Qur&rsquo;an</strong> tells the flood again, and its departures are as pointed as Genesis&rsquo;s were from Babylon. Nuh (Noah) is above all a <em>preacher</em>, warning an unheeding people across a long, thankless mission before the waters come (Surah Nuh 71; Surah Hud 11:25&ndash;49). The ark grounds not on Ararat but on <strong>Mount Judi</strong> (al-J&#363;d&#299;, in what is now southeastern Turkey). And in the story&rsquo;s most wrenching turn, one of Noah&rsquo;s own sons refuses to board &mdash; trusting a mountain to shelter him &mdash; and drowns with the unbelievers despite his father&rsquo;s plea (Hud 11:42&ndash;43). Where Genesis saves the whole household, the Qur&rsquo;an makes the flood a judgment that cuts through the family itself: kinship is no substitute for faith. There is no rainbow covenant and no tally of cubits; the weight falls on warning, response, and the justice of the outcome. Three Abrahamic scriptures, then, tell one inherited story three different ways &mdash; each bending the same plot to its own theology.</p>
 
     <h2>Beyond Mesopotamia &mdash; and the limits of the pattern</h2>
     <p>Pull back from the Near East and the flood is everywhere. In Greece, Zeus drowns a degenerate human race; Deucalion, warned by Prometheus, floats with his wife Pyrrha and grounds on a mountaintop, then repopulates the earth by throwing stones over his shoulder. In India, the earliest extended version appears in the <em>Shatapatha Brahmana</em>: Manu spares a small fish that warns him of the coming flood and tows his boat to a northern mountain; in later texts the fish becomes Matsya, the first avatar of Vishnu.</p>
+    <p>Across the Atlantic, in traditions that cannot have borrowed from the Old World, the flood recurs on its own. The Maya <em>Popol Vuh</em> tells how the gods, after botching an early attempt to make people out of wood, wiped the wooden mannequins away in a great flood &mdash; a &ldquo;flood of resin&rdquo; from the sky &mdash; while the mannequins&rsquo; own household objects rose against them, grinding stones and cooking pots and dogs avenging years of abuse; the survivors became monkeys rather than a renewed humanity. It is not a punishment for sin but the correction of a failed prototype, one destruction in a cycle of made and unmade worlds. The Aztec Fifth-Sun cosmology tells a structurally similar tale of a water-ended age. These New World floods are the strongest single evidence that the motif can be invented independently: the idea of washing the world away and starting over was reached more than once, by peoples with no possible contact.</p>
     <p>But honesty requires a hard turn, because the &ldquo;universal flood myth&rdquo; is oversold. First, not every flood story is the <em>same</em> story: China&rsquo;s great flood tradition, centered on Yu the Great, is not about a survivor in a boat but a hero who <em>masters</em> the flood through decades of engineering. The motif is control, not survival. Second, and more important: flood myths are widespread but <strong>not universal</strong>. They are strikingly sparse across much of sub-Saharan Africa, and Egypt &mdash; a civilization built entirely on an annual flood &mdash; has no world-drowning deluge of the Noah type. For a people whose calendar turned on the Nile&rsquo;s rise, the flood was the giver of life, not the ender of the world.</p>
 
     <h2>Why so many floods?</h2>
@@ -60,8 +66,8 @@ window.CHAPTERS = {
       <div class="ev supported">
         <h4>What&rsquo;s well supported</h4>
         <ul>
-          <li>A documented literary lineage of Mesopotamian flood stories &mdash; Ziusudra, Atrahasis, and Utnapishtim &mdash; spanning roughly a millennium, with the <em>Gilgamesh</em> version adapted from <em>Atrahasis</em>.</li>
-          <li>The <em>Gilgamesh</em> flood tablet is genuinely older than the biblical text, and Genesis stands in a close, mainstream-recognized relationship to this Mesopotamian tradition &mdash; including the telltale released birds.</li>
+          <li>A documented literary lineage of Mesopotamian flood stories &mdash; Ziusudra, Atrahasis (including the recently translated &ldquo;Ark Tablet&rdquo;), and Utnapishtim &mdash; spanning roughly a millennium, with the <em>Gilgamesh</em> version adapted from <em>Atrahasis</em>, and continuing into the Hellenistic world through Berossus&rsquo;s Greek <em>Babyloniaca</em> (c. 281 BCE).</li>
+          <li>The <em>Gilgamesh</em> flood tablet is genuinely older than the biblical text, and Genesis stands in a close, mainstream-recognized relationship to this Mesopotamian tradition &mdash; including the telltale released birds. The Qur&rsquo;anic account of Nuh is a third Abrahamic retelling of the same inherited story.</li>
           <li>Mesopotamian city mounds contain real, water-laid flood deposits, confirming severe local flooding.</li>
         </ul>
       </div>
@@ -88,11 +94,12 @@ window.CHAPTERS = {
       <h4>Primary texts</h4>
       <ul>
         <li><em>The Epic of Gilgamesh</em>, Tablet XI &mdash; Andrew George, trans. (Penguin Classics).</li>
-        <li><em>Atrahasis</em> (Old Babylonian flood epic, 18th c. BCE); <em>Eridu Genesis</em> / Ziusudra (Sumerian); Genesis 6&ndash;9; Ovid, <em>Metamorphoses</em> Bk. I; the <em>Shatapatha Brahmana</em>.</li>
+        <li><em>Atrahasis</em> (Old Babylonian flood epic, 18th c. BCE); <em>Eridu Genesis</em> / Ziusudra (Sumerian); Genesis 6&ndash;9; Qur&rsquo;an, Surah Hud 11:25&ndash;49 and Surah Nuh 71; Ovid, <em>Metamorphoses</em> Bk. I; the <em>Shatapatha Brahmana</em>; the Maya <em>Popol Vuh</em>.</li>
       </ul>
       <h4>Scholarship &amp; archaeology</h4>
       <ul>
         <li>George Smith, <em>The Chaldean Account of the Deluge</em> (1872).</li>
+        <li>Irving Finkel, <em>The Ark Before Noah</em> (2014) &mdash; the round-coracle &ldquo;Ark Tablet&rdquo; and the &ldquo;two by two&rdquo; line; Berossus, <em>Babyloniaca</em> (c. 281 BCE) and the Xisuthros flood.</li>
         <li>Leonard Woolley&rsquo;s Ur flood layer and the cross-site correlation problem (National Center for Science Education; Penn Museum, <em>Expedition</em>).</li>
         <li>Black Sea deluge hypothesis (Ryan &amp; Pitman 1997) and its disputed status.</li>
       </ul>
@@ -125,6 +132,12 @@ window.CHAPTERS = {
     <h2>Ritual, the body, and the scribes</h2>
     <p>Egyptian religion was intensely material. Because the reborn person needed a body to return to, the Egyptians developed <strong>mummification</strong> into a high craft &mdash; drying the body in natron, wrapping it in resined linen, sealing it in a stocked tomb. The myth licensed the technology: Anubis was said to have embalmed the murdered Osiris and made the first mummy. Notably, the heart was left <em>in</em> the body; Egyptians located thought and character in the heart, not the brain. This is why it is the heart that goes on the scales.</p>
     <p>All of this ran on writing, and writing was sacred. The Egyptians called their script <em>medu-netjer</em>, &ldquo;the words of the god,&rdquo; and credited its invention to <strong>Thoth</strong> &mdash; the same Thoth who records the verdict at the weighing of the heart. Behind the temples stood the <strong>House of Life</strong>, a combination scriptorium, archive, and school. To be literate in Bronze Age Egypt was to belong to a small, powerful class. The religion we can reconstruct is, unavoidably, the religion these scribes chose to write down.</p>
+
+    <h2>The religion of ordinary people</h2>
+    <p>Everything so far comes from the top of society &mdash; royal tombs, temple priesthoods, the scribal elite. But one remarkable site lets us hear from further down. At <strong>Deir el-Medina</strong>, the walled village of the workmen who cut and painted the royal tombs of the New Kingdom, the dry ground preserved not only the houses but the litter of ordinary religious life: household shrines, votive offerings, oracle petitions, love charms, curses, and letters. It is the richest window we have onto what non-elite Egyptians actually <em>did</em> with the gods &mdash; and it looks strikingly different from the grand funerary theology of the papyri.</p>
+    <p>Ordinary Egyptian religion was, first, domestic. In niches in their own homes people kept images of the household protector-gods &mdash; <strong>Bes</strong>, the grinning, bandy-legged dwarf who frightened off evil spirits, and <strong>Taweret</strong>, the pregnant hippopotamus goddess who guarded women in childbirth. Neither had great temples; both were everywhere &mdash; on amulets, headrests, cosmetic jars, and bedroom walls &mdash; because they addressed the real terrors of ordinary life: disease, difficult births, scorpions, the dark.</p>
+    <p>Second, it was oracular. Rather than parse a distant theology, villagers put direct questions to the god. During festival processions, when a divine statue was carried on a litter on the priests&rsquo; shoulders, a petitioner could ask a yes-or-no question &mdash; often about a legal dispute or a theft &mdash; and read the answer in the statue&rsquo;s movement: a dip forward for yes, a drawing back for no. Such oracle questions survive on scraps of pottery and papyrus, showing the gods used, in effect, as a village small-claims court.</p>
+    <p>Third, and most human, it was penitential. The Ramesside period at Deir el-Medina has been called &ldquo;the age of personal piety&rdquo; for a new kind of monument: stelae on which an ordinary person confesses a fault and thanks the god for both punishment and forgiveness. On one famous stela (British Museum EA 589) the workman <strong>Neferabu</strong> declares that he swore a false oath by Ptah, that the god struck him blind for it, and that he sets up the stone as a public warning of the god&rsquo;s power to see and to pardon &mdash; a single fallible person and a god who watches, chastises, and relents. From the Old Kingdom onward Egyptians also wrote <strong>&ldquo;letters to the dead,&rdquo;</strong> messages left at the tomb asking a deceased relative to intervene from the far side in disputes over inheritance, in illness, or in the struggle to conceive. Egypt, unusually, lets us read both a religion&rsquo;s official literature and its lived practice.</p>
 
     <h2>What the ground shows</h2>
     <p>Egypt is one of the rare ancient religions where the archaeology is almost overwhelming. The <strong>pyramids</strong> of the Old Kingdom &mdash; above all the Great Pyramid at Giza, built for Khufu around 2560 BCE &mdash; are the material expression of the royal-afterlife theology, state-organized machines for launching a king into eternity. By the New Kingdom the kings moved to the rock-cut tombs of the <strong>Valley of the Kings</strong>, where in 1922 Howard Carter opened the nearly intact tomb of Tutankhamun and, asked whether he could see anything, reportedly answered, &ldquo;Yes, wonderful things.&rdquo; And at a desolate bend in the river sits <strong>Amarna</strong>, whose ruins also yielded the Amarna Letters &mdash; diplomatic tablets in Akkadian cuneiform that show Bronze Age Egypt knotted into an international system.</p>
@@ -167,7 +180,7 @@ window.CHAPTERS = {
         <ul>
           <li>Whether Atenism is best called monotheism, monolatry/henotheism, or a politically motivated &ldquo;monopoly&rdquo; cult.</li>
           <li>The extent of any Egyptian influence on the emergence of Israelite monotheism. The Aten Hymn / Psalm 104 resemblance is real and discussed, but direct dependence is speculative; the Akhenaten-as-source-of-Moses idea is not supported.</li>
-          <li>How ordinary, non-literate Egyptians actually understood these doctrines, given that our sources are the work of a tiny scribal elite.</li>
+          <li>How ordinary, non-literate Egyptians actually understood these doctrines. The personal piety, household cult, and oracle records from Deir el-Medina give a real but partial window; our other sources are the work of a tiny scribal elite.</li>
         </ul>
       </div>
     </div>
@@ -182,6 +195,7 @@ window.CHAPTERS = {
       <h4>Scholarship</h4>
       <ul>
         <li>Reference treatments of Egyptian mortuary texts and the Osiris myth (Smarthistory; Britannica; Birmingham Egyptology).</li>
+        <li>Folk and personal religion &mdash; Deir el-Medina, household gods, oracles, and the penitential stela of Neferabu (British Museum EA 589); &ldquo;letters to the dead&rdquo; (Garstang Museum; Facts and Details; R. Luiselli, <em>Religion Compass</em>, 2014).</li>
         <li>The Amarna period and the monotheism debate (Wikipedia: Atenism; ASOR, &ldquo;Monotheism or Monopoly?&rdquo;; Britannica).</li>
       </ul>
       <p class="source-note">Researched from current reference scholarship and summaries of primary texts rather than memory alone. Genuinely contested points &mdash; the character of Atenism, any Egyptian influence on Israelite monotheism, the reliability of the Plutarch-derived Osiris narrative &mdash; are flagged as disputes rather than resolved. Dates follow the conventional (middle) Egyptian chronology and carry the usual scholarly margins.</p>
@@ -201,6 +215,9 @@ window.CHAPTERS = {
     <p>Around 3300 BCE, in the temple-city of Uruk, someone pressed the first true writing into wet clay &mdash; not to sing of gods, but to count. The earliest cuneiform tablets are accounts: barley, livestock, rations of beer. Only over centuries did the wedge-shaped script grow supple enough to hold poetry, prayer, and law. When it did, Mesopotamia produced the oldest literature we possess.</p>
     <p>That literature survived because of how it was taught. Scribes trained for years in the <em>edubba</em>, the &ldquo;tablet house,&rdquo; copying and recopying sign-lists, proverbs, hymns, and the great poems. Because a clay tablet can last five thousand years, we can still read what they read &mdash; the <em>Epic of Gilgamesh</em>, the <em>Descent of Inanna</em>, the flood poem <em>Atrahasis</em>, and the creation epic <em>Enuma Elish</em> &mdash; alongside endless scholarly compilations of omens, medicine, and star-lore. The Mesopotamian scribe was priest, scientist, and archivist at once, and he believed the universe was a text to be read as surely as a tablet.</p>
 
+    <h2>The first author has a name</h2>
+    <p>The scribal world was not wholly anonymous. Around 2300 BCE the Akkadian king Sargon appointed his daughter <strong>Enheduanna</strong> high priestess of the moon-god Nanna at Ur, and she became the first author in human history known by name &mdash; the first person anywhere to sign her work and to write in the first person about her own relationship to the divine. Her hymns, above all the <em>Exaltation of Inanna</em>, are addressed to the goddess Inanna and are strikingly personal: Enheduanna names herself, describes being driven from her temple office by a usurper named Lugalanne, and pleads with Inanna to restore her. That the oldest named author in the world is a woman, a priestess, and a theologian writing about her own faith is among the more remarkable facts the tablets preserve &mdash; though some scholars question how much of the surviving corpus she personally composed, since every copy we possess was written down centuries after her lifetime.</p>
+
     <h2>Cosmology and the gods</h2>
     <p>The Mesopotamian universe was crowded &mdash; later god-lists name over three thousand deities &mdash; but a handful ran the cosmos. <strong>An</strong> (Anu) was the remote sky-father. <strong>Enlil</strong>, lord of wind and storm, held the Tablet of Destinies and ruled as king of the gods from Nippur. <strong>Enki</strong> (Ea), god of the sweet waters and of wisdom, was the clever friend of humanity who again and again warns a favored man of the gods&rsquo; darker plans. <strong>Inanna</strong> (Ishtar), goddess of sexual love and of war, was the most electric figure in the pantheon. The moon-god <strong>Nanna</strong> (Sin) presided over Ur; the sun-god <strong>Utu</strong> (Shamash) saw everything and so became the god of justice.</p>
     <p>The fullest creation story is Babylon&rsquo;s <em>Enuma Elish</em>. The world begins as a mingling of waters: Apsu the fresh and <strong>Tiamat</strong> the salt-sea mother of chaos. When the young gods grow noisy and Tiamat raises an army of monsters, the champion <strong>Marduk</strong> agrees to fight on the condition that he be made king of the gods. He slays Tiamat, splits her body like a shellfish to make sky and earth, sets the stars in their courses, and then fashions humankind from the blood of a slain rebel god &mdash; expressly so that human beings can do the gods&rsquo; labor and let the gods rest. This is the Mesopotamian anthropology in a sentence: people were made to work so that heaven would not have to. The <em>Enuma Elish</em> was recited each spring at the <strong>Akitu</strong> New Year festival, re-enthroning Marduk and reaffirming that Babylon stood at the center of the world.</p>
@@ -212,6 +229,11 @@ window.CHAPTERS = {
     <h2>Ritual, the temple, and the reading of signs</h2>
     <p>At the heart of every city stood the house of its god, often crowned by a <strong>ziggurat</strong>, the great stepped platform-tower. The temple was not a meeting-hall; it was, literally, the god&rsquo;s household. The cult statue <em>was</em> the god&rsquo;s presence, and the priests&rsquo; daily task was domestic: to wash it, clothe it, set meals before it twice a day, and put it to bed. A god properly fed kept the city safe; a god whose statue was carried off in war was a catastrophe.</p>
     <p>Because the gods&rsquo; will governed everything and was never quite knowable, Mesopotamians became the ancient world&rsquo;s great masters of <strong>divination</strong>. They read the future in the liver of sacrificed sheep (extispicy), in the planets, in dreams, in the shapes of oil on water, in monstrous births. This was a scholarly discipline, with vast reference works cataloguing omens; a king would not go to war or crown an heir without asking the gods through the diviners first. Behind it lay a distinctive mood &mdash; an anxious sense that the gods&rsquo; intentions were real, consequential, and maddeningly hard to read.</p>
+
+    <h2>Demons, exorcists, and the suffering self</h2>
+    <p>Alongside the great gods swarmed a second population: demons, ghosts, and malevolent spirits blamed for disease, misfortune, and madness. The most feared was <strong>Lamashtu</strong>, a lion-headed she-demon who preyed on pregnant women and newborns. Against her, Mesopotamians turned &mdash; remarkably &mdash; to another demon: <strong>Pazuzu</strong>, the snarling king of the wind-demons, whose hideous face was worn as an amulet and set over doorways and birthing-beds precisely because his evil was reckoned stronger than hers. (It is Pazuzu&rsquo;s head that Hollywood later borrowed for <em>The Exorcist</em>.) Fighting evil with a greater evil was a recognized strategy, and it ran through a whole industry of protection: guardian figurines buried under thresholds, incantations, and amulets.</p>
+    <p>Two kinds of professional attended the sufferer. The <em>as&ucirc;</em> was closer to a physician, applying poultices and drugs; the <em>&#257;&scaron;ipu</em> was an exorcist and incantation-priest who diagnosed the supernatural cause and drove it out with ritual and spell &mdash; a craft preserved in compilations such as the anti-witchcraft series <em>Maql&ucirc;</em> (&ldquo;Burning&rdquo;). Seen from below, Mesopotamian religion was less about cosmic epics than about keeping this particular fever, this particular run of bad luck, from killing you.</p>
+    <p>Behind the demons lay a subtler idea: the <strong>personal god</strong>. Each individual was thought to have a personal god or goddess &mdash; &ldquo;my god&rdquo; &mdash; whose favor meant health and success and whose withdrawal left one exposed. This produced Mesopotamia&rsquo;s most searching literature. The poem <em>Ludlul b&#275;l n&#275;meqi</em> (&ldquo;I Will Praise the Lord of Wisdom&rdquo;), often called the &ldquo;Babylonian Job,&rdquo; follows a righteous man who loses everything though he has done no wrong; his god and goddess fall silent, and he cries that what looks good to a man may be an offense to a god, before Marduk mysteriously restores him. The <em>Babylonian Theodicy</em> debates the justice of the gods head-on. Written centuries before the biblical Job, these texts show the same terrible question &mdash; why do the innocent suffer? &mdash; already being asked, and left genuinely open.</p>
 
     <h2>The grimmest afterlife</h2>
     <p>For all its religious energy, Mesopotamia offered almost nothing to hope for after death &mdash; a striking contrast with Egypt. There was no weighing of the heart, no paradise. The dead, good and bad alike, went down to the <em>Kur</em>, the &ldquo;land of no return,&rdquo; a dark house where the shades ate dust and the queen <strong>Ereshkigal</strong> reigned. The <em>Descent of Inanna</em> shows even a goddess stripped and hung as a corpse when she trespasses there, freed only by Enki&rsquo;s cunning and only at the price of sending her lover Dumuzi down in her place. The best a dead Mesopotamian could hope for was to be remembered and given water-offerings by the living. It was a religion intensely concerned with <em>this</em> life, precisely because the next held so little.</p>
@@ -238,6 +260,8 @@ window.CHAPTERS = {
           <li>Writing was invented in southern Mesopotamia (Uruk) around 3300 BCE, first for administration; Mesopotamia produced the oldest surviving literature, law monuments, and omen-texts.</li>
           <li>The major deities, the temple-and-ziggurat cult of feeding and housing the god&rsquo;s statue, and the central role of divination are richly attested.</li>
           <li>The <em>Enuma Elish</em>&rsquo;s account of Marduk, Tiamat, and humans created to labor for the gods, and its recitation at the Akitu festival.</li>
+          <li>Enheduanna, high priestess of Nanna at Ur (c. 2300 BCE), is the earliest author known by name; the <em>Exaltation of Inanna</em> is the oldest literary work credited to a named, self-identifying author.</li>
+          <li>The world of demons and protective magic (Lamashtu, the apotropaic Pazuzu), the healing/exorcist professions and the <em>Maql&ucirc;</em> series, the &ldquo;personal god,&rdquo; and the suffering-righteous literature (<em>Ludlul b&#275;l n&#275;meqi</em>, the <em>Babylonian Theodicy</em>) are all well attested.</li>
           <li>The Royal Cemetery of Ur and its retainer burials are real; recent forensic work indicates at least some attendants died of blunt-force trauma.</li>
           <li>The divine numbers, planet&ndash;god identifications, and Sargon II&rsquo;s Khorsabad wall &ldquo;built to the number of his name&rdquo; as an early documented name-numerology.</li>
         </ul>
@@ -258,6 +282,7 @@ window.CHAPTERS = {
           <li>The full meaning of the Ur death pits &mdash; who the victims were, whether willing, and how representative the practice was.</li>
           <li>Whether the Code of Hammurabi is best read as legislation, case-law record, or royal ideological display.</li>
           <li>How much continuity to assume across the long Sumerian-to-Babylonian transition (e.g., equating Inanna with Ishtar).</li>
+          <li>How much of the Enheduanna corpus she personally composed, given that all surviving copies are Old Babylonian, centuries after her lifetime.</li>
         </ul>
       </div>
     </div>
@@ -271,6 +296,8 @@ window.CHAPTERS = {
       <h4>Scholarship &amp; archaeology</h4>
       <ul>
         <li>Reference treatments of Mesopotamian religion, the gods, and divination (Britannica; World History Encyclopedia; Ancient Origins).</li>
+        <li>Enheduanna and the <em>Exaltation of Inanna</em> (Wikipedia; the Morgan Library, <em>She Who Wrote</em>; World History Encyclopedia).</li>
+        <li>Demons and exorcism &mdash; Lamashtu, Pazuzu, the <em>&#257;&scaron;ipu</em>, <em>Maql&ucirc;</em> (Britannica; Getty; Konstantopoulos, <em>Religion Compass</em>, 2020); the suffering-righteous poems <em>Ludlul b&#275;l n&#275;meqi</em> and the <em>Babylonian Theodicy</em>.</li>
         <li>A. Baadsgaard et al., &ldquo;Human sacrifice and intentional corpse preservation in the Royal Cemetery of Ur,&rdquo; <em>Antiquity</em>; Penn Museum, <em>Expedition</em>.</li>
         <li>The Code of Hammurabi as monument vs. statute (summarizing Van De Mieroop, Yoffee).</li>
         <li>Divine numbers and Sargon II&rsquo;s Khorsabad wall as early name-numerology (Jewish Virtual Library, &ldquo;Gematria&rdquo;); the celestial omen series <em>Enuma Anu Enlil</em>.</li>
@@ -294,11 +321,13 @@ window.CHAPTERS = {
 
     <h2>The wall we cannot read</h2>
     <p>Everything would be different if we could read the <strong>Indus script</strong>. We have it in abundance &mdash; some four thousand inscribed objects, mostly the little seals &mdash; carrying about four hundred distinct signs. And it is, after a century of effort and dozens of confident &ldquo;decipherments,&rdquo; still completely undeciphered. No bilingual key like the Rosetta Stone has ever been found.</p>
+    <p>The longest single inscription only sharpens the frustration. At <strong>Dholavira</strong>, in Gujarat, excavators found the remains of a great &ldquo;<strong>signboard</strong>&rdquo; that had stood over the north gate of the citadel: ten large Indus signs, each about 37 centimeters high, once inlaid in white gypsum on a wooden board perhaps three meters long, which fell and rotted but left its letters legible in the ground. It is the closest thing the Indus world has to a monumental public text &mdash; a sign meant to be read by everyone entering the city &mdash; and we cannot read a character of it.</p>
     <p>There is not even agreement that the signs <em>encode language at all</em>. The dominant view, argued by <strong>Asko Parpola</strong> and <strong>Iravatham Mahadevan</strong>, holds that the script is true writing, most likely an early Dravidian language. But in a provocative 2004 paper, <strong>Farmer, Sproat, and Witzel</strong> argued the opposite: that the inscriptions are too short (averaging about five signs), contain too many once-used signs, and lack the repetition real languages produce &mdash; and so may be non-linguistic emblems rather than writing. The debate is unresolved. Until it is, the Indus people keep their theology to themselves, and every claim about their gods is an inference from things, not texts.</p>
 
     <h2>What the objects suggest &mdash; held loosely</h2>
     <p>With that warning fixed in place, here is what the remains have been taken to suggest. Every item is an interpretation, and the honest ones are offered as such.</p>
     <p><strong>The seated horned figure.</strong> Marshall&rsquo;s &ldquo;proto-Shiva&rdquo; (seal M-420) rests on later features read backward: Shiva as lord of animals, as archetypal yogi, as bull-associated. Critics such as Doris Srinivasan have argued the figure may be a bull or buffalo deity and that the &ldquo;three faces&rdquo; are questionable; Shubhangana Atre has proposed the central Indus deity was in fact a goddess, a &ldquo;Lady of Beasts.&rdquo; No reading commands consensus.</p>
+    <p><strong>The &ldquo;Priest-King.&rdquo;</strong> A small steatite bust from Mohenjo-daro, bearded and serene, its robe carved with a <strong>trefoil</strong> pattern once filled with red pigment, is among the most reproduced of all Indus objects &mdash; and its very name is a lesson in reading later categories backward. Marshall and his contemporaries called it the &ldquo;Priest-King&rdquo; on the analogy of the priest-kings of Mesopotamia, but the Indus has produced no textual, architectural, or funerary evidence of either priests or kings. We do not know whether the bust portrays a ruler, a deity, an ancestor, or an abstraction; the confident title is a modern projection onto a civilization that left no rulers&rsquo; names at all.</p>
     <p><strong>A goddess, or goddesses.</strong> Excavators recovered many terracotta female figurines, some with soot marks suggesting offerings burned before them &mdash; widely read as a fertility or mother-goddess cult. But without texts we cannot be sure which were cult objects, which votive, and which toys.</p>
     <p><strong>Water and purity.</strong> The most striking structure is the <strong>Great Bath</strong> of Mohenjo-daro, a watertight sunken tank of fitted brick sealed with bitumen. It looks built for communal immersion and is often read as ritual bathing &mdash; a possible ancestor of later Indian purity concerns &mdash; but the reading is attractive and unprovable.</p>
     <p><strong>Trees, animals, and stones.</strong> Seals show a figure standing in a <strong>pipal</strong> (sacred fig) tree, still sacred in later India; cattle imagery is everywhere, above all the enigmatic single-horned &ldquo;unicorn&rdquo; bull. Cones and ring-stones have been read (first by Marshall) as <em>lingam</em> and <em>yoni</em> prefiguring Shaiva worship, though many archaeologists see ordinary objects. At Kalibangan, pits with ash have been claimed as fire altars, but whether ritual or hearth is disputed.</p>
@@ -322,7 +351,7 @@ window.CHAPTERS = {
         <ul>
           <li>The scale, urban planning, standardized weights, and water engineering of the mature Harappan civilization (c. 2600&ndash;1900 BCE).</li>
           <li>The Indus script exists as a systematic sign-system and remains genuinely undeciphered; no proposed decipherment is accepted.</li>
-          <li>The material religious remains are real: seal M-420, the female figurines, the Great Bath, pipal-tree and bull/&ldquo;unicorn&rdquo; imagery, modest burials.</li>
+          <li>The material religious remains are real: seal M-420, the trefoil-robed &ldquo;Priest-King&rdquo; bust, the female figurines, the Great Bath, pipal-tree and bull/&ldquo;unicorn&rdquo; imagery, the ten-sign Dholavira &ldquo;signboard,&rdquo; modest burials.</li>
           <li>The near-total absence of identified temples, palaces, royal tombs, and ruler/war art, unlike Egypt and Mesopotamia.</li>
           <li>Long-distance trade with Mesopotamia (&ldquo;Meluhha&rdquo;; Indus seals and beads at Ur).</li>
           <li>Ancient DNA indicating steppe ancestry was absent among the Harappans and entered South Asia mainly after the decline, as admixture not replacement.</li>
@@ -332,7 +361,8 @@ window.CHAPTERS = {
         <h4>What&rsquo;s not supported</h4>
         <ul>
           <li>The confident identification of seal M-420 as Shiva; &ldquo;proto-Shiva&rdquo; is one reading among several, none proven.</li>
-          <li>Any claim that the Indus script has been read, or a specific myth recovered from it.</li>
+          <li>Any claim that the Indus script has been read, or a specific myth recovered from it &mdash; the Dholavira signboard included.</li>
+          <li>The identification of the Mohenjo-daro bust as a &ldquo;Priest-King.&rdquo; The name is Marshall&rsquo;s analogy to Mesopotamia; there is no Indus evidence for priests or kings.</li>
           <li>The assertion that Harappan religion simply <em>is</em> early Hinduism; the parallels are suggestive, not established.</li>
           <li>Certainty about the figurines or the Great Bath as specifically cultic.</li>
         </ul>
@@ -354,10 +384,12 @@ window.CHAPTERS = {
       <h4>Seals, the Great Bath, and the proto-Shiva debate</h4>
       <ul>
         <li>John Marshall, <em>Mohenjo-Daro and the Indus Civilization</em> (1931); <a href="https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia: Pashupati seal</a> (Marshall, Srinivasan, Atre).</li>
+        <li>The &ldquo;Priest-King&rdquo; bust and its contested name &mdash; <a href="https://smarthistory.org/the-priest-king-sculpture-from-the-indus-valley-civilization/">Smarthistory</a>; <a href="https://www.harappa.com/slide/priest-king-mohenjo-daro">Harappa.com</a>.</li>
       </ul>
       <h4>The undeciphered script</h4>
       <ul>
         <li><a href="https://www.harappa.com/content/introduction-study-indus-script">Harappa.com: Introduction to the Indus Script</a> (Mahadevan); Parpola, <em>Deciphering the Indus Script</em> (1994); Farmer, Sproat &amp; Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004).</li>
+        <li>The Dholavira &ldquo;signboard&rdquo; &mdash; <a href="https://www.harappa.com/blog/dholavira-and-its-mysterious-sign-board">Harappa.com: Dholavira and Its Mysterious Sign Board</a>.</li>
       </ul>
       <h4>Decline and the Indo-Aryan question</h4>
       <ul>
@@ -400,6 +432,11 @@ window.CHAPTERS = {
     <p>At the center of Vedic religion stands not a temple or an idol but an <em>act</em>: the <strong>yajna</strong>, the sacrifice offered into fire. There were no temples and no divine images &mdash; the gods were invited to sit on the sacred grass around the fire, receive their offerings, and depart. This <strong>aniconism</strong> is a sharp contrast with Egypt and Mesopotamia and their housed, fed cult-statues.</p>
     <p>The great solemn (<em>srauta</em>) rites required a team of specialists: the <strong>hotr</strong> (Rigvedic reciter), the <strong>udgatr</strong> (Samavedic singer), the <strong>adhvaryu</strong> (who performs the actions with Yajurvedic formulas), and the <strong>brahman</strong> (who sits silent, oversees, and mends any error). The grandest were spectacles of cosmic and political power: the <strong>Soma</strong> sacrifices; the <strong>Agnicayana</strong>, building a bird-shaped fire-altar from more than ten thousand bricks; the <strong>Rajasuya</strong> royal consecration; the <strong>Ashvamedha</strong> horse sacrifice. And the Brahmanas make an extraordinary claim explicit: the sacrifice does not merely petition the gods &mdash; it <em>sustains the cosmos</em>. Correctly performed, the yajna keeps the sun rising. Ritual here is not a request; it is load-bearing. Because there was no writing, the &ldquo;scribal&rdquo; craft of this civilization was the craft of the <strong>reciter</strong> &mdash; the exactness others gave to hieroglyph and cuneiform, the Vedic world gave to the trained human voice.</p>
 
+    <h2>The other Veda: charms for the household</h2>
+    <p>The grand <em>srauta</em> sacrifices were the religion of kings and priesthoods. But the fourth Veda, the <strong>Atharvaveda</strong>, opens a door onto the religion of everyone else &mdash; the fears and wants of the household and the village, set down as spells. It is the least &ldquo;priestly&rdquo; of the Vedas and was the last admitted to the canon, and precisely for that reason it is the richest surviving record of <em>lived</em> Bronze Age religion in the whole corpus.</p>
+    <p>Its hymns are overwhelmingly practical. A large group are <strong>healing charms</strong> against named diseases, recited while herbs were administered &mdash; so that the Atharvaveda doubles as the oldest stratum of Indian medicine. There are charms against <strong>takman</strong>, the burning fever (probably malarial), addressed as a demon and ordered away to distant peoples; a famous cure for <strong>jaundice</strong> works by sympathetic magic, banishing the yellow sickness &ldquo;up to the sun&rdquo; and into yellow things &mdash; the yellow birds, the turmeric, the red bull &mdash; while the patient is filled with healthy red. Alongside the cures run charms to win a lover, to secure the birth of a son, to subdue a rival co-wife, to prosper cattle, to prevail in the assembly, and to curse an enemy, together with protective <strong>amulets</strong> (<em>mani</em>) of herb and wood.</p>
+    <p>Not all of it is small. The Atharvaveda also contains the magnificent <strong>Hymn to the Earth</strong> (<em>Prithivi Sukta</em>, AV 12.1), sixty-three verses praising the Earth as the patient bearer of all life &mdash; &ldquo;May she, the Queen of all that is and is to be, make ample room for us&rdquo; &mdash; one of the oldest sustained expressions of reverence for the living planet. The Veda of snakebite charms is also the Veda of one of humanity&rsquo;s first ecological hymns.</p>
+
     <h2>What the ground shows &mdash; and doesn&rsquo;t</h2>
     <p>Here the honesty of this project is tested opposite to the Indus chapter: that civilization left abundant remains and no readable words; the Vedic world left an incomparable verbal record and little in the ground. Its people were largely pastoral and mobile, built in perishable materials, and made no monuments or images. There is no &ldquo;Vedic city&rdquo; to excavate. What we can say materially is modest: a world of cattle-wealth, the horse, the light spoked-wheel <strong>chariot</strong>, and rivers &mdash; above all the <strong>Sarasvati</strong>.</p>
     <p>Where the evidence becomes extraordinarily rich is <em>comparative</em>. The sky-father <strong>Dyaus Pita</strong> is, letter for letter, the same divine name as Greek <strong>Zeus Pater</strong> and Roman <strong>Jupiter</strong> (from Proto-Indo-European <em>Dyēus Ph₂tḗr</em>). Vedic poetic formulas match Greek ones so closely &mdash; the Rigvedic <em>śravas ákṣitam</em>, &ldquo;imperishable fame,&rdquo; is the exact cognate of Homer&rsquo;s <em>kléos áphthiton</em> &mdash; that scholars reconstruct a shared Indo-European poetics. And the sacred drink is inherited: Vedic <strong>soma</strong> is Iranian <strong>haoma</strong>, both from Proto-Indo-Iranian <em>sauma-</em>. That Indo-Iranian kinship preserves one of the most fascinating facts in the history of religion &mdash; a <strong>schism embedded in vocabulary</strong>: in India the <em>devas</em> are gods and <em>asura</em> drifted toward &ldquo;demon&rdquo;; in Iran the pattern is inverted, the <em>ahuras</em> (as in <strong>Ahura Mazda</strong>) divine and the <em>daevas</em> demons. Two sibling peoples ended up calling each other&rsquo;s gods devils &mdash; a thread the next era picks up with Zoroaster.</p>
@@ -423,6 +460,7 @@ window.CHAPTERS = {
           <li>The Vedic corpus exists and was transmitted orally with extraordinary fidelity via formalized memorization; the Rigveda&rsquo;s internal stratification (older family books 2&ndash;7; later Mandalas 1, 8, 9, 10) is well established.</li>
           <li>The core pantheon (Indra, Agni, Soma, Varuna&ndash;Mitra, Ushas, the Ashvins, Rudra, Yama), the concept of <strong>Rta</strong>, and Vedic henotheism.</li>
           <li>The centrality of the fire sacrifice, the specialist priesthoods, the soma cult, and the aniconic, temple-less character of the religion.</li>
+          <li>The Atharvaveda&rsquo;s household and folk religion &mdash; healing charms (takman fever, jaundice), charms for love, progeny, cattle and cursing, protective amulets, and the Hymn to the Earth (Prithivi Sukta, AV 12.1) &mdash; is directly attested and doubles as the oldest layer of Indian medicine.</li>
           <li>Indo-European and Indo-Iranian kinship: cognate deities (Dyaus Pita / Zeus / Jupiter), shared poetic formulae, the soma/haoma inheritance, and the deva/asura ↔ daeva/ahura inversion.</li>
           <li>Ancient DNA indicating steppe-pastoralist ancestry entered South Asia largely after the Indus decline (c. 2000&ndash;1500 BCE) as admixture.</li>
         </ul>
@@ -451,6 +489,7 @@ window.CHAPTERS = {
       <h4>Primary texts (translations)</h4>
       <ul>
         <li>Jamison &amp; Brereton, <em>The Rigveda</em> (2014); Wendy Doniger, <em>The Rig Veda: An Anthology</em>. Creation hymns: <a href="https://en.wikipedia.org/wiki/Nasadiya_Sukta">Nasadiya Sukta</a>, Hiranyagarbha Sukta, Purusha Sukta (RV 10.90); the <a href="https://en.wikipedia.org/wiki/Gayatri_Mantra">Gayatri Mantra</a> (RV 3.62.10).</li>
+        <li>Atharvaveda household charms &mdash; Maurice Bloomfield, <em>Hymns of the Atharva-Veda</em> (Sacred Books of the East, 1897): the takman fever charm (AV V.22), the jaundice cure, and the <a href="https://sacred-texts.com/hin/av/av12001.htm">Hymn to the Earth (AV 12.1)</a> &mdash; via the <a href="https://sacred-texts.com/hin/sbe42/index.htm">Internet Sacred Text Archive</a>.</li>
       </ul>
       <h4>Religion, ritual, and comparative</h4>
       <ul>
@@ -491,6 +530,10 @@ window.CHAPTERS = {
     <p>Worship centers on <strong>fire</strong> (<em>Atar</em>) &mdash; not a god to be adored but the purest earthly symbol of Ahura Mazda&rsquo;s light, the point toward which prayer is directed. (The old slur &ldquo;fire-worshippers&rdquo; misses the theology: the fire is an icon, not an idol.) Sacred fires are graded, from the supreme <strong>Atash Behram</strong> down. The central liturgy is the <strong>Yasna</strong>, in which priests prepare and offer <strong>haoma</strong> &mdash; the same sacred plant-drink the Vedic peoples called <em>soma</em>.</p>
     <p>The most distinctive practice concerns death. A corpse is <em>nasu</em> &mdash; intensely polluting &mdash; and must not defile the good creations of earth, fire, or water. So the dead were traditionally neither buried nor burned but <strong>exposed</strong> on raised stone platforms, the <em>dakhmas</em> or &ldquo;Towers of Silence,&rdquo; for the sun and vultures to strip the bones. Membership is marked by the <strong>Navjote</strong> initiation, investing the child with the <strong>sudreh</strong> (a white sacred shirt with a &ldquo;pocket of good deeds&rdquo;) and the <strong>kusti</strong> cord. The hereditary priests, the <strong>Magi</strong>, tended the fires &mdash; and it is Magi, in cultural memory, who appear in Matthew&rsquo;s Gospel as the &ldquo;wise men&rdquo; following a star.</p>
 
+    <h2>The soul&rsquo;s journey: the Bridge of the Separator</h2>
+    <p>The tower of silence disposes of the body; the soul goes elsewhere. Zoroastrianism worked out one of the earliest detailed maps of what happens after death, and it is relentlessly individual. For three days the soul lingers near the body; at dawn on the fourth it comes to the <strong>Chinvat Bridge</strong>, the &ldquo;Bridge of the Separator,&rdquo; where the divine judges Mithra, Sraosha, and Rashnu weigh its thoughts, words, and deeds on golden scales. There the soul meets the <strong>da&#275;n&#257;</strong> &mdash; the personification of its own conscience, the self it has made. To the righteous she comes as a radiant fifteen-year-old maiden, naming herself as the soul&rsquo;s own good thoughts and deeds; to the wicked, as a hideous hag. For the good soul the bridge broadens into an easy road to the <strong>House of Song</strong> (paradise); for the wicked it narrows to the edge of a razor, and the soul falls into the <strong>House of the Lie</strong> (hell). This heaven and hell are provisional, held until the general resurrection &mdash; and the motif of a soul-testing bridge, and of meeting one&rsquo;s own deeds embodied, would reappear in later traditions, not least the Islamic bridge of <em>a&#7779;-&#7778;ir&#257;&#7789;</em>.</p>
+    <p>Zoroastrian eschatology sits within a grand, countable timeline, laid out fully in the Pahlavi <strong>Bundahishn</strong>: the whole cosmic drama runs <strong>twelve thousand years</strong>, divided into four ages of three thousand &mdash; the ideal creation, the making of the material world and its assault by Angra Mainyu, the long &ldquo;mixture&rdquo; of history in which we live, and the final downward age. That last age brings the saviors: in the systematized tradition, <strong>three Saoshyants</strong> born a thousand years apart from the miraculously preserved seed of Zarathustra &mdash; <strong>Ushedar</strong>, <strong>Ushedarmah</strong>, and finally <strong>Astvat-ereta</strong> (&ldquo;he who embodies righteousness&rdquo;), each born to a virgin who bathes in the lake where the seed is kept. The last raises the dead, creation passes through a final ordeal of molten metal (painless to the righteous), and then comes <strong>Frashokereti</strong>, the &ldquo;making wonderful&rdquo;: evil annihilated for good, the dead restored in perfect immortal bodies, the whole creation healed. The fully worked-out three-savior scheme survives only in the late Pahlavi books, and how much goes back to Zarathustra is an open question.</p>
+
     <h2>What the ground shows, and the reach of the tradition</h2>
     <p>Unlike the textless Indus or the monument-less Vedic world, Zoroastrianism enters history with imperial clarity. The <strong>Achaemenid</strong> kings &mdash; Darius above all &mdash; carved their devotion to Ahura Mazda into rock: at <strong>Behistun</strong> Darius credits the Wise Lord with his victories, and the winged emblem hovers over <strong>Persepolis</strong>. Whether the early Achaemenids were strictly Zoroastrian or related Mazda-worshippers is debated, but by the Sasanian era it was the state church of a Persian superpower, until the Islamic conquest reduced it to the small living communities of today &mdash; the <strong>Parsis</strong> of India chief among them. Backward, it is the Iranian sibling of Vedic religion (asha/rta, haoma/soma, the daeva/deva inversion); forward, its fingerprints are argued across the western religious tradition.</p>
 
@@ -512,6 +555,7 @@ window.CHAPTERS = {
           <li>Zoroastrianism is an ancient Iranian religion founded on Zarathustra&rsquo;s teaching; his own hymns (the Gathas) survive within the Avesta and are linguistically very archaic.</li>
           <li>Its core: Ahura Mazda as supreme good creator; the Amesha Spentas and yazatas; asha vs. druj; Angra Mainyu/Ahriman; the triad of good thoughts, words, deeds; and a linear history ending in good&rsquo;s triumph.</li>
           <li>Fire as central symbol (not idol), the Yasna and haoma, exposure of the dead, and the sudreh/kusti initiation.</li>
+          <li>The individual afterlife &mdash; the Chinvat Bridge, the weighing of deeds, and the da&#275;n&#257; met as radiant maiden or hag &mdash; is attested from the Avesta; the twelve-thousand-year timeline and three Saoshyants are laid out in the (later) Pahlavi Bundahishn.</li>
           <li>Its Indo-Iranian kinship with Vedic religion, and its status as the imperial religion of Achaemenid and especially Sasanian Persia.</li>
         </ul>
       </div>
@@ -543,7 +587,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Doctrine, dating, eschatology</h4>
       <ul>
-        <li><a href="https://www.britannica.com/biography/Zarathustra">Britannica: Zarathustra</a>; <a href="https://www.iranicaonline.org/articles/zoroaster-ii-general-survey/">Iranica: Zoroaster</a> and <a href="https://www.iranicaonline.org/articles/dualism/">&ldquo;Dualism&rdquo;</a>; <a href="https://www.iranicaonline.org/articles/eschatology-i/">Iranica: Eschatology and Zoroastrian influence</a>; <a href="https://www.worldhistory.org/Chinvat_Bridge/">Chinvat Bridge</a>.</li>
+        <li><a href="https://www.britannica.com/biography/Zarathustra">Britannica: Zarathustra</a>; <a href="https://www.iranicaonline.org/articles/zoroaster-ii-general-survey/">Iranica: Zoroaster</a> and <a href="https://www.iranicaonline.org/articles/dualism/">&ldquo;Dualism&rdquo;</a>; <a href="https://www.iranicaonline.org/articles/eschatology-i/">Iranica: Eschatology and Zoroastrian influence</a>; <a href="https://www.worldhistory.org/Chinvat_Bridge/">Chinvat Bridge</a>; the da&#275;n&#257; (<a href="https://www.britannica.com/topic/daena">Britannica</a>); the twelve-thousand-year timeline and three Saoshyants (<a href="https://en.wikipedia.org/wiki/Bundahishn">Bundahishn</a>).</li>
       </ul>
       <h4>Practice and symbol</h4>
       <ul>
@@ -574,6 +618,9 @@ window.CHAPTERS = {
     <p>Ugarit revealed the Canaanite pantheon Israel inherited: at its head <strong>El</strong>, the wise elderly high god, king of the divine council; below him <strong>Baal</strong>, the young storm-and-fertility god; <strong>Asherah</strong>, El&rsquo;s consort and mother of the gods; and many more. Notice that the very name <strong>Isra-el</strong> contains <em>El</em>, not Yahweh; that the Bible freely gives Yahweh El&rsquo;s titles (El Elyon, El Shaddai); and that it almost never attacks El the way it rages at Baal. The consensus: <strong>Yahweh and El were merged</strong> &mdash; the incoming southern god took over the role and mythology of the Canaanite high god &mdash; while Baal remained a <em>rival</em>, which is why the prophets fight him so bitterly.</p>
     <p>The older biblical layers still preserve this crowded world. <strong>Deuteronomy 32:8&ndash;9</strong>, in its oldest text, has the Most High divide humanity &ldquo;according to the number of the sons of God,&rdquo; with Yahweh allotted Israel; <strong>Psalm 82</strong> has God stand up <em>in the divine council, among the gods.</em> This is <strong>monolatry</strong> &mdash; worshipping one god without denying others exist &mdash; not yet <strong>monotheism</strong>, the claim that only one god exists. And Asherah, those jars attest, was for many Israelites Yahweh&rsquo;s consort, as she had been El&rsquo;s.</p>
 
+    <h2>The Baal Cycle and the battle with the sea</h2>
+    <p>Ugarit did not just hand scholars a list of gods; it handed them a living mythology, and one story reaches deep into the Bible. The <strong>Baal Cycle</strong>, six clay tablets of the fourteenth century BCE, tells how the storm-god <strong>Baal</strong> wins kingship by defeating two great enemies: <strong>Yam</strong>, the chaotic Sea, and <strong>Mot</strong>, Death itself, who swallows Baal into the underworld before Baal rises again. Its language survived, transferred onto Yahweh. When a psalmist praises the God who &ldquo;divided the Sea by his strength&rdquo; and broke the heads of the dragons, crushing the many-headed <strong>Leviathan</strong> (Psalm 74:13&ndash;14); when Isaiah promises that Yahweh will slay &ldquo;Leviathan the fleeing serpent&hellip; the dragon that is in the sea&rdquo; (Isaiah 27:1); when God pierces the chaos-monster <strong>Rahab</strong> (Job 26; Isaiah 51:9) &mdash; the biblical poets are reusing the imagery of Baal&rsquo;s combat with Yam and the sea-dragon <em>Lotan</em> (Leviathan&rsquo;s exact Ugaritic cognate) and crediting the victory to Yahweh alone. Even Isaiah&rsquo;s hope that God &ldquo;will swallow up <strong>death</strong> forever&rdquo; (Isaiah 25:8) inverts the Baal Cycle, in which it was Death who did the swallowing. The theology is transformed; the mythic vocabulary is inherited &mdash; the same relationship this project traced between Genesis and the <em>Enuma Elish</em>.</p>
+
     <h2>From many gods to one: the arrow reversed</h2>
     <p>Here is the core point. The Bible&rsquo;s storyline is: Israel began pure, then &ldquo;went whoring&rdquo; after other gods and was punished. The evidence points the other way. Israel <em>began</em> looking much like its Canaanite neighbors &mdash; Yahweh alongside El (soon merged), Baal, Asherah, and household spirits &mdash; and only gradually did a minority movement insist that Yahweh alone be worshipped, and finally that Yahweh alone <em>exists.</em> Scholars call it the <strong>&ldquo;Yahweh-alone movement,&rdquo;</strong> and its voice is the great eighth-century prophets &mdash; <strong>Amos, Hosea, Isaiah, Micah</strong>. Full-blown monotheism &mdash; the flat declaration that other gods are &ldquo;nothing&rdquo; &mdash; appears clearly only later, in the exile. The famous monotheism of the Bible is real, but it is the <em>hard-won conclusion</em> of Israel&rsquo;s history, not its premise.</p>
 
@@ -582,7 +629,7 @@ window.CHAPTERS = {
 
     <h2>Ritual and cult &mdash; official and folk</h2>
     <p>Official religion centered on the <strong>Temple in Jerusalem</strong>, whose described design is thoroughly Phoenician/Canaanite &mdash; a three-part plan matched at excavated temples like ‘Ain Dara, two great bronze pillars (<strong>Jachin and Boaz</strong>), a bronze &ldquo;Sea,&rdquo; and, in the Holy of Holies, two winged <strong>cherubim</strong> forming the throne of an invisible God above the <strong>Ark</strong>. But for most of the period, worship was <em>not</em> confined to Jerusalem: Israelites worshipped at countless local <strong>high places</strong> (<em>bamot</em>) with altars, <strong>standing stones</strong> (<em>masseboth</em>), and wooden sacred poles; archaeology even uncovered a Yahwistic <strong>temple at Arad</strong> with two standing stones, and the northern kingdom kept golden <strong>calf</strong> images at Dan and Bethel as Yahweh&rsquo;s pedestals.</p>
-    <p>Beneath the shrines lay <strong>family and folk religion</strong> &mdash; the piety most Israelites actually lived. Its great witness is the <strong>Judean pillar figurine</strong>, a small clay woman supporting her breasts, found by the <em>hundreds</em> in Iron Age Judahite homes, most likely a goddess of fertility and protection (many think Asherah). Households kept <strong>teraphim</strong> (household gods) and made offerings to the dead. The turning point was the royal <strong>reforms</strong>: Hezekiah began dismantling the high places, and around <strong>622 BCE</strong> King <strong>Josiah</strong> carried out a sweeping purge &mdash; centralizing worship in Jerusalem and destroying the high places, the Asherah objects, and even the <strong>Nehushtan</strong>, a bronze serpent people burned incense to &mdash; tied to a &ldquo;book of the law&rdquo; most identify with an early <strong>Deuteronomy</strong>. Josiah also defiled the <strong>Tophet</strong> in the Valley of Hinnom (Hebrew <em>ge-hinnom</em>, later the word <em>Gehenna</em> for hell), where children were said to be sacrificed &ldquo;to Molech&rdquo; &mdash; a practice whose reality is debated.</p>
+    <p>Beneath the shrines lay <strong>family and folk religion</strong> &mdash; the piety most Israelites actually lived. Its great witness is the <strong>Judean pillar figurine</strong>, a small clay woman supporting her breasts, found by the <em>hundreds</em> in Iron Age Judahite homes, most likely a goddess of fertility and protection (many think Asherah). Households kept <strong>teraphim</strong> (household gods) and made offerings to the dead. Death itself led not to heaven or hell but to <strong>Sheol</strong>, a dim underworld where all the dead sank to a shadowy half-existence, much like the Mesopotamian <em>Kur</em> &mdash; no resurrection, no judgment yet; the story of King Saul and the medium of Endor (1 Samuel 28), calling up the dead prophet Samuel, witnesses a necromancy the reformers outlawed but could not pretend away. The turning point was the royal <strong>reforms</strong>: Hezekiah began dismantling the high places, and around <strong>622 BCE</strong> King <strong>Josiah</strong> carried out a sweeping purge &mdash; centralizing worship in Jerusalem and destroying the high places, the Asherah objects, and even the <strong>Nehushtan</strong>, a bronze serpent people burned incense to &mdash; tied to a &ldquo;book of the law&rdquo; most identify with an early <strong>Deuteronomy</strong>. Josiah also defiled the <strong>Tophet</strong> in the Valley of Hinnom (Hebrew <em>ge-hinnom</em>, later the word <em>Gehenna</em> for hell), where children were said to be sacrificed &ldquo;to Molech&rdquo; &mdash; a practice whose reality is debated.</p>
 
     <h2>The textual record: how the Bible was built</h2>
     <p>The <strong>Torah</strong> was not, as tradition held, written by Moses. Critical scholarship argues it is a <strong>composite</strong> &mdash; the <strong>Documentary Hypothesis</strong> (Wellhausen) distinguished four strands: <strong>J</strong> (the Yahwist, vivid and anthropomorphic), <strong>E</strong> (the Elohist), <strong>D</strong> (the Deuteronomist, behind Josiah&rsquo;s reform), and <strong>P</strong> (the Priestly source, exilic/post-exilic). Two honest caveats: the classic four-source model is now heavily <em>revised and debated</em> (supplementary and fragmentary models, later datings), though the core insight &mdash; a composite Torah, not a Mosaic composition &mdash; holds; and embedded in the Bible are genuinely <strong>archaic</strong> poems (the Song of Deborah, Judges 5; the Song of the Sea, Exodus 15) that glimpse very early Yahwism. The narrative history of the monarchy &mdash; the <strong>Deuteronomistic History</strong> (Joshua&ndash;Kings) &mdash; was shaped later, to explain in Yahweh-alone terms why the kingdoms fell.</p>
@@ -612,7 +659,8 @@ window.CHAPTERS = {
         <ul>
           <li>Israel emerged largely <em>within</em> Canaan in Iron Age I (Merneptah Stele; the highland settlement explosion; cultural continuity), not through a large-scale external Exodus and conquest as literally described.</li>
           <li>Early Israelite religion was not originally monotheistic: Yahweh was worshipped alongside other deities, merged with the high god <strong>El</strong>, and paired with <strong>Asherah</strong> in Yahwistic contexts.</li>
-          <li>Worship was widespread and local (high places, standing stones, the Arad sanctuary, the northern calf shrines) and included a rich household/folk religion (the pillar figurines, teraphim, ancestor offerings).</li>
+          <li>Worship was widespread and local (high places, standing stones, the Arad sanctuary, the northern calf shrines) and included a rich household/folk religion (the pillar figurines, teraphim, ancestor offerings); the pre-exilic dead went to <strong>Sheol</strong>, a neutral shadowy underworld, with no developed resurrection or judgment yet.</li>
+          <li>The <strong>Ugaritic Baal Cycle</strong> (Baal vs. Yam and Mot) supplies the mythic vocabulary the Hebrew poets reused and re-credited to Yahweh &mdash; the combat with the Sea and with Leviathan/Rahab (Psalm 74, Isaiah 27, Job 26).</li>
           <li>The reforms of Hezekiah and especially <strong>Josiah (c. 622 BCE)</strong>, tied to an early Deuteronomy.</li>
           <li>The Bible is a composite text compiled over centuries; a Davidic dynasty existed (Tel Dan); the Ketef Hinnom amulets are the oldest surviving biblical text; the alphabet is a Levantine invention.</li>
         </ul>
@@ -640,7 +688,7 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>Origins, Yahweh, El, Asherah</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Merneptah_Stele">Merneptah Stele</a>; <a href="https://en.wikipedia.org/wiki/Kenite_hypothesis">Kenite hypothesis</a>; Mark S. Smith, <em>The Early History of God</em>; <a href="https://www.worldhistory.org/Asherah/">Asherah</a>; <a href="https://en.wikipedia.org/wiki/Khirbet_el-Qom">Khirbet el-Qom</a>; the Ugaritic texts.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Merneptah_Stele">Merneptah Stele</a>; <a href="https://en.wikipedia.org/wiki/Kenite_hypothesis">Kenite hypothesis</a>; Mark S. Smith, <em>The Early History of God</em>; <a href="https://www.worldhistory.org/Asherah/">Asherah</a>; <a href="https://en.wikipedia.org/wiki/Khirbet_el-Qom">Khirbet el-Qom</a>; the Ugaritic texts and the <a href="https://grokipedia.com/page/Baal_Cycle">Baal Cycle</a> (Leviathan/Rahab echoes in Psalm 74, Isaiah 27, Job 26); Sheol and the medium of Endor (<a href="https://www.bibleodyssey.org/articles/sheol/">Bible Odyssey: Sheol</a>; <a href="https://biblearchaeology.org/research-articles/king-saul-and-the-witch-of-endor-necromancy-and-ghost-pits-in-the-ancient-world/">Saul and the Witch of Endor</a>).</li>
       </ul>
       <h4>Cult, reform, folk religion</h4>
       <ul>
@@ -682,6 +730,11 @@ window.CHAPTERS = {
     <p>On the ordinary fate of the dead, early Greece was as bleak as Mesopotamia: the shades went to the realm of <strong>Hades</strong>, a dim, strengthless existence &mdash; the <em>Odyssey</em>&rsquo;s Achilles says he would rather be a living day-laborer than king of all the dead. There was no general reward or punishment: a few sinners suffered in <strong>Tartarus</strong>, a few heroes reached <strong>Elysium</strong>, but for most, death was a gray diminishment. Two responses in this period promised better, and matter enormously later:</p>
     <p>The <strong>Eleusinian Mysteries</strong>, centered on <strong>Demeter</strong> and her daughter <strong>Persephone</strong> (carried to the underworld, sought by her grieving mother, returned for part of each year), gave initiates &mdash; sworn to secrecy on pain of death &mdash; the promise of a <strong>better lot in the afterlife</strong>. What was revealed we still do not know. And <strong>Orphism</strong>, attributed to the singer <strong>Orpheus</strong>, taught that humans are born from the ashes of the Titans who devoured the child-god Dionysus &mdash; and so carry both a Titanic and a divine nature. Orphics held to the <strong>transmigration of souls</strong>, practiced purity and vegetarianism to escape the cycle, and were buried with inscribed <strong>gold tablets</strong> giving the soul passwords for the underworld. Here, for the first time in Greek thought, the <em>soul</em> matters more than the body &mdash; ideas that feed directly into Pythagoras and Plato in the next era.</p>
 
+    <h2>Below Olympus: the household, the heroes, and the curse tablet</h2>
+    <p>The great civic festivals and Panhellenic oracles were only the visible top of Greek religion; most of it happened at home and in the ground. Domestic worship was constant and small. At the center of every house burned the hearth of <strong>Hestia</strong>, who received the first libation of any offering; the storeroom held <strong>Zeus Ktesios</strong>, &ldquo;Zeus of the property,&rdquo; embodied not in a statue but in a <em>kadiskos</em> &mdash; a small two-handled jar of water, oil, and fruit wound with wool &mdash; that guarded the family&rsquo;s stores. <strong>Zeus Herkeios</strong> protected the courtyard, <strong>Apollo Agyieus</strong> the street door, and at the threshold and crossroads stood <strong>Hekate</strong>. The ordinary Greek met the divine far more often at these household shrines than at any grand temple.</p>
+    <p>Then there were the <strong>heroes</strong> &mdash; not gods but powerful dead, great figures of the mythic past (Heracles, Theseus, a city&rsquo;s founder) whose bones lay in a known tomb and who could bless or blight the community around them. <strong>Hero-cult</strong> grew from family tomb-visiting into a civic institution in this very period, the eighth century BCE: a wrathful hero might have to be appeased, a friendly one courted as a local protector. The hero was bound to a <em>place</em> &mdash; his grave &mdash; in a way the sky-gods never were.</p>
+    <p>And in the darker corner of that chthonic world lay the <strong>curse tablet</strong> (<em>katadesmos</em>, Latin <em>defixio</em>). To bind an enemy &mdash; a rival in love, a business competitor, an opponent in a lawsuit, a racing chariot-team &mdash; a Greek would scratch the victim&rsquo;s name and a binding formula onto a thin sheet of <strong>lead</strong>, fold or pierce it, and deposit it in a grave, a well, or a sanctuary, so that the dead and the gods below would &ldquo;pin down&rdquo; the target. Some sixteen hundred survive, hundreds from Athens alone &mdash; folk religion at its most anxious and most literal.</p>
+
     <h2>What the ground shows</h2>
     <p>The <strong>Mycenaean</strong> palace civilization (with its Linear B gods) collapsed around 1200 BCE; a <strong>Dark Age</strong> of reduced population and lost literacy followed; then, in the eighth century BCE, came a renaissance &mdash; the <strong>alphabet</strong>, monumental temple-building, the Olympic Games (776 BCE), colonization, and the writing-down of Homer and Hesiod, amid an <strong>Orientalizing</strong> flow of Near Eastern art and myth. How much religious continuity bridged the Dark Age gap is genuinely uncertain: the gods&rsquo; names carried across, but much else may have been remade.</p>
 
@@ -703,6 +756,7 @@ window.CHAPTERS = {
           <li>Greek religion was non-dogmatic and non-scriptural &mdash; a matter of practice (orthopraxy), civic and household ritual, sacrifice, festivals, and oracles &mdash; with Homer and Hesiod as the shared reference for myth.</li>
           <li>Strong Near Eastern influence on Greek myth, clearest in the succession myth&rsquo;s parallels with the Kumarbi cycle and Mesopotamian cosmogony.</li>
           <li>The Greek alphabet was adapted from Phoenician with the innovation of vowels; the grim Hades afterlife coexisted with mystery cults (Eleusis, Orphism) offering initiates a better fate.</li>
+          <li>Below the civic cult ran a rich everyday religion: household worship (Hestia&rsquo;s hearth, Zeus Ktesios in the kadiskos, Hekate at the crossroads), the civic hero-cults of the powerful dead at their tombs, and the inscribed lead curse tablets (katadesmoi/defixiones) &mdash; some 1,600 known.</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -736,7 +790,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Mysteries and the alphabet</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Eleusinian Mysteries</a>; Graf &amp; Johnston, <em>Ritual Texts for the Afterlife</em> (Orphic gold tablets); <a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">History of the Greek alphabet</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Eleusinian Mysteries</a>; Graf &amp; Johnston, <em>Ritual Texts for the Afterlife</em> (Orphic gold tablets); <a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">History of the Greek alphabet</a>. Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) &mdash; <a href="https://www.angelsathens.gr/en/blog/ancient-greece/ancient-greek-religion-everyday-cult/">everyday cult</a>; hero-cult and the <a href="https://en.wikipedia.org/wiki/Curse_tablet">curse tablets</a> (katadesmoi/defixiones).</li>
       </ul>
       <p class="source-note">Researched from standard reference works and current scholarship (Burkert, West) rather than memory alone. The live debates &mdash; the Homeric Question, Dark Age continuity, the origins of individual gods, and the secret of the Mysteries &mdash; are flagged, not resolved. Written with an educational emphasis on how Greek religion actually worked (orthopraxy, not creed). Classical philosophy, tragedy, and the full mysteries are reserved for the Axial Age chapter.</p>
     </div>
@@ -759,6 +813,9 @@ window.CHAPTERS = {
 
     <h2>Ritual, the bronzes, and the sacrificed dead</h2>
     <p>Shang worship was lavish and, by our standards, terrible. Offerings of grain, millet-wine, and animals went to the ancestors &mdash; and so, on a large scale, did <strong>human beings.</strong> The royal tombs at Anyang held sacrificial victims and <strong>companion burials</strong> (attendants who died with the king, as at Ur in Chapter 3); the intact tomb of the warrior-queen <strong>Fu Hao</strong> (found 1976) held hundreds of bronzes and sixteen sacrificed humans. The supreme sacred objects were the <strong>ritual bronze vessels</strong> &mdash; cast not to decorate but <strong>to feed the dead</strong> at ancestral banquets. Their famous decoration is the <strong>taotie</strong>, a frontal monster-mask of eyes and jaws belonging to no identifiable animal, whose meaning is <em>genuinely unknown</em> &mdash; guardian, ward, shamanic vision, or convention; honesty requires leaving it open.</p>
+
+    <h2>The wu, and the question of shamanism</h2>
+    <p>Beside the king and his diviners stood another kind of religious specialist: the <strong>wu</strong> (&#24043;), spirit-mediums attested from the oracle bones onward and associated with communicating with spirits, healing, exorcism, and above all rain &mdash; in a drought a wu might be exposed to the sun or even burned in a rite meant to force the spirits to send water. How to classify them is one of the liveliest debates in the field. K. C. Chang argued influentially that early Chinese kingship was itself <strong>shamanic</strong> &mdash; the king as paramount shaman, the whole apparatus of bronzes, divination, and animal imagery serving ecstatic communion with the spirit world. David Keightley and others pushed back, reading the Shang theocrats less as ecstatic soul-flight shamans on the Siberian model than as <strong>bureaucratic mediators</strong> managing an ancestral hierarchy through orderly ritual; a middle position notes that the Chinese evidence more often describes <strong>spirit-possession</strong> than the classic shaman&rsquo;s soul-journey. The clearest literary window is later and southern &mdash; the <strong>Nine Songs</strong> (<em>Jiu Ge</em>) of the state of <strong>Chu</strong>, ecstatic hymns in which a medium woos and is entered by a god. That this dimension is real is not in doubt; whether &ldquo;shaman&rdquo; is the right word for it is what scholars dispute.</p>
 
     <h2>The Zhou revolution: the Mandate of Heaven</h2>
     <p>Around <strong>1046 BCE</strong> the Shang were conquered by the <strong>Zhou</strong>, and with them came one of the most consequential religious ideas in history &mdash; invented partly to solve a political problem: if the Shang ruled because they alone communed with Di, how could the Zhou justify overthrowing them?</p>
@@ -806,6 +863,7 @@ window.CHAPTERS = {
         <h4>What&rsquo;s genuinely open</h4>
         <ul>
           <li>The precise nature of <strong>Di</strong> &mdash; a distinct high god, or the supreme collective ancestor of the Shang line?</li>
+          <li>Whether early Chinese religion and Shang kingship are rightly called <strong>shamanic</strong> (K. C. Chang&rsquo;s shaman-king thesis vs. Keightley&rsquo;s bureaucratic mediators; possession vs. soul-flight).</li>
           <li>The meaning of the <strong>taotie</strong> motif.</li>
           <li>The original meaning of the Neolithic ritual <strong>jades</strong> (the Heaven/Earth reading is largely from later texts).</li>
           <li>The dates and editorial history of the transmitted classics, and how far their idealized Zhou reflects reality.</li>
@@ -822,6 +880,7 @@ window.CHAPTERS = {
       <h4>The Zhou, bronzes, sacrifice</h4>
       <ul>
         <li><a href="https://www.worldhistory.org/Mandate_of_Heaven/">Mandate of Heaven</a>; <a href="https://en.wikipedia.org/wiki/Taotie">Taotie</a>; <a href="https://en.wikipedia.org/wiki/Human_sacrifice_in_ancient_Chinese_culture">Human sacrifice in ancient Chinese culture</a>; reports on Fu Hao&rsquo;s tomb and Sanxingdui.</li>
+        <li>The <em>wu</em> and the shamanism debate (K. C. Chang vs. Keightley) &mdash; <a href="https://grokipedia.com/page/Chinese_shamanism">Chinese shamanism</a>; the <strong>Nine Songs</strong> of Chu &mdash; Arthur Waley, <em>The Nine Songs</em>; <a href="https://en.wikipedia.org/wiki/Jiu_Ge">Jiu Ge</a>.</li>
       </ul>
       <h4>Divination and symbol</h4>
       <ul>
@@ -866,6 +925,12 @@ window.CHAPTERS = {
     </ul>
     <p>And near the period&rsquo;s end, a small Jewish messianic movement around a Galilean teacher named Jesus &mdash; at this stage simply <em>one more Judaism</em>, whose chapter belongs to the next era.</p>
 
+    <h2>The shapes of the Messiah</h2>
+    <p>If any single expectation ran through these Judaisms it was the hope of a <strong>messiah</strong> (<em>mashiach</em>, &ldquo;anointed one&rdquo;) &mdash; yet even that hope was plural. The oldest and most widespread form was the <strong>Davidic</strong> messiah, a royal deliverer of David&rsquo;s line who would break the foreign yoke and restore Israel&rsquo;s kingdom. But beside him stood others. The Qumran community expected <strong>two</strong> messiahs at once &mdash; a priestly <strong>Messiah of Aaron</strong>, presiding over the restored cult, and a royal <strong>Messiah of Israel</strong> subordinate to him. Some awaited a <strong>prophet like Moses</strong> (Deuteronomy 18), a figure the Samaritans especially expected. And in the apocalyptic imagination appears the heavenly <strong>&ldquo;one like a son of man&rdquo;</strong> who comes on the clouds in Daniel 7 and, in the <em>Similitudes of 1 Enoch</em>, becomes a pre-existent, enthroned redeemer who will judge the world. Royal, priestly, prophetic, heavenly &mdash; these were not one idea but a field of competing hopes, and the movement around Jesus of Nazareth would draw on several at once.</p>
+
+    <h2>Lady Wisdom</h2>
+    <p>Running alongside the apocalyptic imagination was a very different current: the <strong>wisdom</strong> tradition, and its most remarkable creation, the figure of personified <strong>Wisdom</strong> (Hebrew <em>Hokhmah</em>, Greek <em>Sophia</em>). Already in <strong>Proverbs 8</strong> Wisdom speaks in her own voice as a feminine figure who was with God &ldquo;at the beginning of his work,&rdquo; a delight and a craftsman beside him as he made the world. In <strong>Ben Sira 24</strong> Wisdom comes forth from the mouth of the Most High and is settled by God in Israel, where the author identifies her outright with the <strong>Torah</strong>; in the Alexandrian <strong>Wisdom of Solomon</strong> she becomes &ldquo;a breath of the power of God,&rdquo; a pure emanation of his glory who sits beside his throne. Is she a poetic personification, or a genuine <strong>hypostasis</strong> &mdash; a divine attribute taking on near-independent life beside God? Either way, this feminine divine Wisdom, present at creation and mediating between God and the world, stands directly behind Philo&rsquo;s <strong>Logos</strong>, behind the Word of John&rsquo;s Gospel, and behind the <strong>Sophia</strong> of the Gnostic myths of the next era.</p>
+
     <h2>The library: scripture and its rivals</h2>
     <p>There was, as yet, <strong>no single fixed &ldquo;Bible.&rdquo;</strong> What existed was a contested library: the emerging Hebrew <strong>Tanakh</strong> (the Torah settled first, the Writings still fluid &mdash; the old &ldquo;Council of Jamnia&rdquo; that supposedly fixed the canon is now largely discredited); the <strong>Septuagint</strong>, the Greek translation revered by diaspora Jews and the early Church; the <strong>Apocrypha/Deuterocanon</strong> (Tobit, Judith, Ben Sira, Wisdom, 1&ndash;2 Maccabees); the <strong>Pseudepigrapha</strong> (1 Enoch, Jubilees, 4 Ezra, 2 Baruch), carrying much of the age&rsquo;s apocalyptic imagination; and the <strong>Dead Sea Scrolls</strong>&rsquo; sectarian writings &mdash; the Community Rule, the War Scroll, the pesharim, the enigmatic Copper Scroll.</p>
 
@@ -889,7 +954,7 @@ window.CHAPTERS = {
           <li>The <strong>Babylonian exile</strong> (586 BCE) was decisive: it is in and after it that monolatry becomes explicit <strong>monotheism</strong> (Second Isaiah), Torah moves to the center, and text-centered worship (the seed of the synagogue) emerges.</li>
           <li>Second Temple Judaism was strikingly <strong>diverse</strong> (Pharisees, Sadducees, Essenes, Zealots, Samaritans, diaspora Jews), as the <strong>Dead Sea Scrolls</strong> confirmed.</li>
           <li>A large, layered <strong>literature</strong> existed with no single fixed canon: the emerging Tanakh, the Septuagint, the Apocrypha, and the Pseudepigrapha.</li>
-          <li>New developments &mdash; a personalized <strong>Satan</strong>, ranked <strong>angels/demons</strong>, <strong>resurrection</strong> and judgment, and the <strong>apocalyptic</strong> genre &mdash; appear developed here; the historical arc (Persian&rarr;Hellenistic&rarr;Roman; the Maccabees; 70 CE) is well established.</li>
+          <li>New developments &mdash; a personalized <strong>Satan</strong>, ranked <strong>angels/demons</strong>, <strong>resurrection</strong> and judgment, and the <strong>apocalyptic</strong> genre &mdash; and a plural <strong>messianism</strong> (Davidic, the two messiahs of Qumran, the prophet, the Danielic/Enochic son of man) and the personified <strong>Wisdom</strong> (Sophia) of the wisdom books &mdash; appear developed here; the historical arc (Persian&rarr;Hellenistic&rarr;Roman; the Maccabees; 70 CE) is well established.</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -919,7 +984,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Theology, the Zoroastrian question, and the literature</h4>
       <ul>
-        <li><a href="https://bibleinterp.arizona.edu/articles/afterlife-and-resurrection-beliefs-second-temple-period">Afterlife and Resurrection in the Second Temple Period</a> (with the caution that influence is resonance, not proven borrowing); <a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">Apocrypha and Pseudepigrapha</a>; Philo of Alexandria.</li>
+        <li><a href="https://bibleinterp.arizona.edu/articles/afterlife-and-resurrection-beliefs-second-temple-period">Afterlife and Resurrection in the Second Temple Period</a> (with the caution that influence is resonance, not proven borrowing); <a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">Apocrypha and Pseudepigrapha</a>; Philo of Alexandria. The plural messianic hope (<a href="https://www.livius.org/articles/religion/messiah/messiah-9-two-messiahs/">Qumran&rsquo;s dual Messianism</a>) and personified <a href="https://en.wikipedia.org/wiki/Personification_of_wisdom">Wisdom</a> (Proverbs 8, Ben Sira 24, Wisdom of Solomon).</li>
       </ul>
       <p class="source-note">Researched from standard scholarship (Cohen; the Dead Sea Scrolls literature; Josephus and Philo as primary witnesses) rather than memory alone. The most sensitive matter &mdash; Zoroastrian and Hellenistic influence &mdash; is reported as a real but unresolved debate (resonance, not proven dependence), and the diversity of &ldquo;Judaisms&rdquo; is kept front and center. The birth of Christianity and the rise of Rabbinic Judaism out of this matrix are reserved for the Late Antiquity chapters.</p>
     </div>
@@ -940,11 +1005,17 @@ window.CHAPTERS = {
     <h2>The world that made him: the śramaṇa ferment</h2>
     <p>The Ganges plain of his day was in religious upheaval. A movement of <strong>śramaṇas</strong> &mdash; &ldquo;strivers,&rdquo; wandering renunciants &mdash; had risen in revolt against the religion of Chapter 5: they rejected the authority of the <strong>Brahmin</strong> priests, the efficacy of the <strong>Vedic sacrifice</strong>, and the whole apparatus of ritual, seeking liberation instead through <strong>meditation, ethics, and ascetic discipline</strong>. Buddhism was one śramaṇa movement among several &mdash; its great contemporary was <strong>Jainism</strong> (Mahavira), and there were Ajivikas and materialists too. What they shared was a new question: not &ldquo;how do we please the gods?&rdquo; but &ldquo;<strong>how do we escape suffering and the endless round of rebirth?</strong>&rdquo;</p>
 
+    <h2>The other great śramaṇa path: Jainism</h2>
+    <p>The most important of the Buddha&rsquo;s fellow-strivers deserves its own portrait, for <strong>Jainism</strong> is a complete tradition in its own right &mdash; and one that has survived continuously to the present. Its great teacher was <strong>Mahavira</strong> (&ldquo;Great Hero,&rdquo; born Vardhamana), an older contemporary of the Buddha and, in Jain reckoning, not a founder but the <strong>twenty-fourth and last Tirthankara</strong> &mdash; a &ldquo;ford-maker&rdquo; who crosses the river of rebirth and shows the way. Like the Buddha, he renounced a princely life, practiced years of austerity, and attained omniscience (<em>kevala jnana</em>).</p>
+    <p>But where Buddhism denied the self, Jainism <strong>affirms</strong> an eternal soul, the <strong>jiva</strong>, present in every living thing &mdash; and its whole path is to free that soul from the literal weight of <strong>karma</strong>, conceived as a fine material substance that clings through harmful action. The way to shed it is renunciation and, above all, an <strong>ahimsa</strong> more radical than any other tradition&rsquo;s: the devout Jain sweeps the path before stepping, strains water, wears a mouth-cloth, and forgoes agriculture, because <em>all</em> life &mdash; down to the one-sensed beings in earth, water, and air &mdash; must not be injured. From this flow the <strong>Five Great Vows</strong> and the heroism of <strong>sallekhana</strong>, the voluntary fast to death at life&rsquo;s end.</p>
+    <p>Its most distinctive idea is <strong>anekantavada</strong>, the &ldquo;many-sidedness&rdquo; of reality: no single viewpoint holds the whole truth, famously the blind men each describing one part of an elephant. The tradition later split into <strong>Digambara</strong> (&ldquo;sky-clad&rdquo;) and <strong>Svetambara</strong> (&ldquo;white-clad&rdquo;). That Jainism affirms the very soul the Buddha denied, from within the same ferment, is the sharpest reminder of how plural the Axial-Age Ganges world was.</p>
+
     <h2>The teaching: four truths and a missing self</h2>
     <p>The Buddha framed his insight as the <strong>Four Noble Truths</strong>, in the manner of a physician&rsquo;s diagnosis and cure: (1) <strong>dukkha</strong> &mdash; life is pervaded by suffering and unsatisfactoriness; (2) its <strong>origin</strong> is <strong>craving</strong> (<em>tanha</em>); (3) its <strong>cessation</strong> is possible &mdash; extinguish craving, and suffering ends: this is <strong>nirvana</strong>; (4) the way is the <strong>Noble Eightfold Path</strong> (right view, intention, speech, action, livelihood, effort, mindfulness, concentration), grouped into <strong>wisdom, ethics, and meditation</strong>.</p>
     <p>Underlying this are the <strong>three marks of existence</strong>: <strong>anicca</strong> (everything is impermanent), <strong>dukkha</strong> (clinging to the impermanent is painful), and the revolutionary <strong>anatta</strong> (non-self): there is <strong>no permanent soul or essence</strong> in a person or anything. What we call a &ldquo;self&rdquo; is a bundle of ever-changing processes (the five <em>aggregates</em>) with no fixed &ldquo;I&rdquo; behind them.</p>
     <p>Here the payoff of the Vedic chapter arrives. The <strong>Upanishads</strong> (Chapter 5) taught that within you is the <strong>atman</strong>, the eternal Self, identical with <strong>Brahman</strong>, and that liberation is <em>finding</em> it. The Buddha&rsquo;s <em>anatta</em> is the flat contradiction: there is no such Self to find. Where the Upanishadic sage sought and discovered the true self, the Buddha looked and found only a stream of conditioned processes &mdash; and taught that clinging to the illusion of a permanent self is the very root of suffering. Two of the East&rsquo;s greatest religions diverge on exactly this point.</p>
     <p>How can there be <strong>rebirth</strong> without a soul? By <strong>dependent origination</strong> (<em>pratityasamutpada</em>): nothing exists as an independent substance; everything arises in dependence on conditions. Rebirth is not a soul migrating but a <em>causal continuity</em> &mdash; like one flame lighting another, neither the same nor wholly different. <strong>Karma</strong> drives this, an impersonal moral law, but no eternal self &ldquo;has&rdquo; it. And <strong>nirvana</strong> &mdash; literally &ldquo;blowing out&rdquo; &mdash; is the extinguishing of the fires of craving, which the Buddha refused to define as either annihilation or eternal existence. Asked the great metaphysical questions, he often kept a famous <strong>silence</strong> (the parable of the man shot with a poisoned arrow, who dies before learning who shot it): liberation, not speculation, was the point. And note what is absent: <strong>there is no creator god.</strong> Gods exist in Buddhist cosmology but are themselves caught in rebirth &mdash; not creators, not saviors. Buddhism is, at root, <strong>non-theistic.</strong></p>
+    <p>It has its mythic drama all the same. The round of rebirth (<em>samsara</em>) turns through <strong>six realms</strong> &mdash; from the hell-beings and hungry ghosts, through animals and humans, up to the jealous demigods and long-lived gods &mdash; into any of which one may be reborn by karma, none permanent, all still bound to suffering, and only a human birth well placed to win release. Presiding over the cycle is <strong>Mara</strong> &mdash; &ldquo;Death,&rdquo; the tempter, lord of desire &mdash; who assailed the Buddha beneath the Bodhi tree with armies, storms, and his seductive daughters, and whom the Buddha overcame simply by touching the earth to witness his right to awaken. Mara is not a devil in the Zoroastrian or biblical sense but the personification of craving, distraction, and mortality itself. (The painted &ldquo;Wheel of Life&rdquo; depicting all this, familiar from Tibetan art, is a later development.)</p>
 
     <h2>Ethics and the community</h2>
     <p>Because all beings suffer in the same web, the response is <strong>compassion</strong> (<em>karuna</em>), <strong>loving-kindness</strong> (<em>metta</em>), and above all <strong>ahimsa</strong> (non-harming). For laypeople the ethical core is the <strong>Five Precepts</strong>: to refrain from killing, stealing, sexual misconduct, false speech, and intoxicants &mdash; the natural conduct of one who understands karma, with no divine lawgiver behind them. The Buddha founded the <strong>Sangha</strong>, the order of monks (<em>bhikkhus</em>) and <strong>nuns</strong> (<em>bhikkhunis</em>, established at his foster-mother&rsquo;s request, though the texts record his hesitation), governed by the elaborate <strong>Vinaya</strong>. Monks and laity lived in reciprocity &mdash; the laity giving support (<em>dana</em>, earning merit), the monks giving the teaching &mdash; and at the center stood the <strong>Three Jewels</strong>: refuge in the Buddha, the Dharma, and the Sangha.</p>
@@ -970,6 +1041,7 @@ window.CHAPTERS = {
         <h4>What&rsquo;s well supported</h4>
         <ul>
           <li>A historical teacher (the Buddha) founded a <strong>śramaṇa</strong> renunciant movement in the Ganges plain c. 5th century BCE, reacting against Vedic ritualism.</li>
+          <li><strong>Jainism</strong>, the parallel śramaṇa tradition of <strong>Mahavira</strong> (the 24th Tirthankara), is well attested and survives today &mdash; eternal soul (<em>jiva</em>), material karma, radical ahimsa, anekantavada, sallekhana, the Digambara/Svetambara split &mdash; affirming the very soul Buddhism denies. <strong>Mara</strong> and the six realms are early (the painted Wheel of Life is later).</li>
           <li>The core teaching &mdash; the <strong>Four Noble Truths</strong>, the <strong>Eightfold Path</strong>, the three marks (anicca, dukkha, <strong>anatta</strong>), <strong>dependent origination</strong>, karma and rebirth <strong>without a permanent self</strong>, and <strong>nirvana</strong> &mdash; and Buddhism&rsquo;s <strong>non-theism</strong> (no creator god).</li>
           <li>The <strong>Sangha</strong> and <strong>Vinaya</strong>, the <strong>Pali Canon</strong> (written c. 1st century BCE), the patronage of <strong>Ashoka</strong> and his edicts, and early <strong>aniconism</strong> followed by the first Buddha images (c. 1st century CE, with Greek influence at Gandhara).</li>
         </ul>
@@ -996,7 +1068,7 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>The Buddha, context, and doctrine</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Buddhism">Britannica: Buddhism</a>; Richard Gombrich, <em>What the Buddha Thought</em>; on anatta vs. atman, <a href="https://www.learnreligions.com/anatman-anatta-449669">LearnReligions: Anatman/Anatta</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Buddhism">Britannica: Buddhism</a>; Richard Gombrich, <em>What the Buddha Thought</em>; on anatta vs. atman, <a href="https://www.learnreligions.com/anatman-anatta-449669">LearnReligions: Anatman/Anatta</a>; on Mara and the six realms, <a href="https://www.learnreligions.com/the-wheel-of-life-4123213">The Wheel of Life</a>. Jainism (Mahavira, Tirthankaras, ahimsa, anekantavada, sallekhana) &mdash; <a href="https://www.britannica.com/topic/Jainism">Britannica: Jainism</a>.</li>
       </ul>
       <h4>Texts, Ashoka, and symbol</h4>
       <ul>
@@ -1016,6 +1088,10 @@ window.CHAPTERS = {
 
     <h2>The world that made them: the Warring States</h2>
     <p>Neither can be understood apart from the catastrophe that produced them. The <strong>Zhou</strong> order had ruled by the <strong>Mandate of Heaven</strong>, its nobles bound in ancestor-worship and reciprocal duty. By the sixth century BCE that order was a memory; real power lay with states that swallowed one another through centuries of war &mdash; the <strong>Warring States</strong> (c. 475&ndash;221 BCE). Into the chaos poured the <strong>Hundred Schools of Thought</strong>: Confucians, Daoists, the <strong>Mohists</strong> (impartial universal love), the <strong>Legalists</strong> (harsh law and state power, who would unify China by force), and more. The Axial Age in China is this argument &mdash; and Confucianism and Daoism are the two answers that outlived the rest.</p>
+
+    <h2>The great lost school: Mohism</h2>
+    <p>One rival deserves rescue from the footnotes, because for two centuries it was Confucianism&rsquo;s most formidable opponent. <strong>Mohism</strong>, founded by <strong>Mozi</strong> (&ldquo;Master Mo,&rdquo; c. 470&ndash;391 BCE) and carried by a disciplined, almost military brotherhood, judged every practice by one plain test: does it benefit the people? &mdash; making the Mohists the ancient world&rsquo;s first systematic <strong>consequentialists</strong>. Against the Confucian insistence on graded love, Mozi preached <strong>jian&rsquo;ai</strong>, &ldquo;impartial care&rdquo;: concern for everyone equally, since partiality is the root of conflict. They condemned offensive war (<strong>feigong</strong>) while becoming experts in <strong>defensive</strong> fortification, and attacked the Confucians&rsquo; lavish funerals and fatalism as ruinous waste.</p>
+    <p>And where Confucius kept a careful agnostic silence about Heaven and the spirits, Mohism was frankly <strong>theistic</strong>: it taught the <strong>Will of Heaven</strong> (<em>Tianzhi</em>) as a personal, moral power that loves all people impartially and rewards or punishes conduct, and it insisted on real <strong>ghosts and spirits</strong> as agents of that justice &mdash; the closest the classical Chinese schools came to the providential God of the western traditions. Mohism flourished, then vanished almost entirely after the Qin unification, its texts nearly lost &mdash; the great road not taken of Chinese philosophy.</p>
 
     <h2>Confucius: the man and the Analects</h2>
     <p><strong>Kongzi</strong> (trad. <strong>551&ndash;479 BCE</strong>) was, by his tradition&rsquo;s own account, a failure in his own time &mdash; a scholar of modest birth in the state of <strong>Lu</strong> who sought office to enact his ideas, wandered from court to court, and never got the chance. His influence is entirely posthumous, and colossal: for two thousand years the teacher of a civilization. We know his teaching mainly from the <strong>Analects</strong> (<em>Lunyu</em>), terse sayings opening &ldquo;The Master said&hellip;&rdquo; But the <em>Analects</em> is <strong>not</strong> a book Confucius wrote; it is a compilation by disciples over generations, a <strong>layered text</strong> not stabilized until the Warring States or after. Recently excavated bamboo manuscripts (the Anhui University <em>Zhongni yue</em> and Wangjiazui <em>Kongzi yue</em>) confirm that by c. <strong>300 BCE</strong> collections of sayings attributed to Confucius circulated in variant forms &mdash; exactly what a layered text should look like. We can recover <em>Confucianism</em>; recovering the literal words of Confucius is harder.</p>
@@ -1056,7 +1132,7 @@ window.CHAPTERS = {
         <ul>
           <li>A historical teacher, <strong>Confucius</strong> (trad. 551&ndash;479 BCE), taught in Lu during the Zhou collapse; a tradition of collecting his sayings existed by c. 300 BCE (confirmed by excavated bamboo manuscripts).</li>
           <li>The core Confucian concepts (<strong>ren, li, xiao, junzi</strong>, government by example) and the elaborations of <strong>Mencius</strong> (innate goodness; the right of rebellion) and <strong>Xunzi</strong> (crooked nature; Heaven as impersonal nature).</li>
-          <li>The <strong>Daodejing</strong> in partial form by c. 300 BCE (<strong>Guodian</strong>) and near-complete by c. 200 BCE (<strong>Mawangdui</strong>); the <strong>Zhuangzi</strong>&rsquo;s Inner Chapters from a real 4th-century-BCE thinker; the later emergence of organized <strong>religious Daoism</strong> (Celestial Masters, trad. 142 CE); the <strong>Yijing</strong> as a genuine Zhou divination system.</li>
+          <li>The <strong>Daodejing</strong> in partial form by c. 300 BCE (<strong>Guodian</strong>) and near-complete by c. 200 BCE (<strong>Mawangdui</strong>); Mohism, founded by Mozi (c. 470&ndash;391 BCE), was a major Warring States school &mdash; consequentialist, teaching jian&rsquo;ai (impartial care), condemning aggression, and frankly theistic (Heaven&rsquo;s Will and moral-enforcing spirits) &mdash; before it vanished after the Qin; the <strong>Zhuangzi</strong>&rsquo;s Inner Chapters from a real 4th-century-BCE thinker; the later emergence of organized <strong>religious Daoism</strong> (Celestial Masters, trad. 142 CE); the <strong>Yijing</strong> as a genuine Zhou divination system.</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1079,9 +1155,9 @@ window.CHAPTERS = {
 
     <div class="sources">
       <h3>Sources</h3>
-      <h4>Confucius, the Analects, Mencius, and Xunzi</h4>
+      <h4>Confucius, the Analects, Mencius, Xunzi, and Mohism</h4>
       <ul>
-        <li><a href="https://plato.stanford.edu/entries/confucius/">SEP: Confucius</a>; <a href="https://www.britannica.com/topic/Confucianism">Britannica: Confucianism</a>; on the layered text and new finds, <a href="https://www.cambridge.org/core/journals/early-china/article/new-manuscript-evidence-on-the-formation-of-the-analects-the-warring-states-anhui-university-zhongni-said-and-the-wangjiazui-kongzi-said/08F1860CBCFD361F58B2034439A71526">New Manuscript Evidence on the Formation of the Analects (Early China)</a>; <a href="https://plato.stanford.edu/entries/mencius/">SEP: Mencius</a>; <a href="https://plato.stanford.edu/entries/xunzi/">SEP: Xunzi</a>.</li>
+        <li><a href="https://plato.stanford.edu/entries/confucius/">SEP: Confucius</a>; <a href="https://www.britannica.com/topic/Confucianism">Britannica: Confucianism</a>; on the layered text and new finds, <a href="https://www.cambridge.org/core/journals/early-china/article/new-manuscript-evidence-on-the-formation-of-the-analects-the-warring-states-anhui-university-zhongni-said-and-the-wangjiazui-kongzi-said/08F1860CBCFD361F58B2034439A71526">New Manuscript Evidence on the Formation of the Analects (Early China)</a>; <a href="https://plato.stanford.edu/entries/mencius/">SEP: Mencius</a>; <a href="https://plato.stanford.edu/entries/xunzi/">SEP: Xunzi</a>. Mohism (Mozi, <em>jian&rsquo;ai</em>, consequentialism, Heaven&rsquo;s Will) &mdash; <a href="https://plato.stanford.edu/entries/mohism/">SEP: Mohism</a>; <a href="https://iep.utm.edu/mozi/">IEP: Mozi</a>.</li>
       </ul>
       <h4>Laozi, Zhuangzi, and religious Daoism</h4>
       <ul>
@@ -1114,6 +1190,10 @@ window.CHAPTERS = {
     <h2>The gods of the house: household and folk religion</h2>
     <p>Beneath the grand public cult ran the intimate religion of the <strong>home</strong> &mdash; and for most Romans, this <em>was</em> religion. At the household shrine, the <strong>lararium</strong>, the family honored the <strong>Lares</strong> (guardian spirits of the household), the <strong>Penates</strong> (gods of the storeroom and the family&rsquo;s provision), and the <strong>Genius</strong> of the <em>paterfamilias</em> (his divine life-force; the mistress had her <strong>Juno</strong>). Daily offerings of food, wine, and incense were made there; on anniversaries it was heaped with flowers, honey, and cakes. At the crossroads, neighborhoods honored the <strong>Lares Compitales</strong> at the <strong>Compitalia</strong>. This domestic cult, humbler and older than the temples, is where Roman religion was actually <em>lived</em> &mdash; recovered in vivid detail in the houses of <strong>Pompeii</strong>.</p>
 
+    <h2>The Roman dead: Manes, Lemures, and the black beans</h2>
+    <p>The household honored not only its gods but its dead, and the two festivals for them reveal a religion poised between reverence and fear. The properly buried and remembered dead became the <strong>Di Manes</strong>, the &ldquo;divine dead,&rdquo; honored each February at the <strong>Parentalia</strong>, when families visited the roadside tombs (Roman law forbade burial inside the city) with flowers, wine, salt, and grain, and shared a graveside meal with the departed. But those denied proper burial, forgotten, or violently killed could return as <strong>Lemures</strong> (or <em>larvae</em>), restless malevolent ghosts. Against them the household performed the <strong>Lemuria</strong> in May: at midnight the <em>paterfamilias</em> rose, made a sign against evil, and walked barefoot through the house <strong>spitting black beans</strong> for the ghosts to gather, chanting nine times &ldquo;With these beans I redeem me and mine,&rdquo; never looking back.</p>
+    <p>On what came <em>after</em> death Rome had no single doctrine, and the tombstones show the whole range &mdash; from the blessed groves of Elysium to frank unbelief. The most famous Roman epitaph, abbreviated to seven letters (<strong>N.F.F.N.S.N.C.</strong>), states the Epicurean view with a shrug: <em>non fui, fui, non sum, non curo</em> &mdash; &ldquo;I was not; I was; I am not; I care not.&rdquo; Between the deified ancestor and the cheerful nihilist epitaph lay the ordinary Roman&rsquo;s real relationship with death: tend the tomb, feed the Manes, ward off the Lemures, and expect no great certainty about the rest.</p>
+
     <h2>Controlling the sacred: Bacchanalia and Magna Mater</h2>
     <p>Rome&rsquo;s openness to new gods had a hard limit: the state insisted on <strong>control</strong>. In <strong>186 BCE</strong>, alarmed by the secretive, ecstatic <strong>Bacchanalia</strong>, the Senate crushed them &mdash; executing thousands and issuing the <strong>Senatus consultum de Bacchanalibus</strong>, which placed the cult wholly under license (no shrines, no male priests, tiny gatherings by permission only). Most scholars read the &ldquo;moral panic&rdquo; as cover for the real objection: an unsanctioned, self-organizing religious body outside elite control. The contrast is <strong>Cybele</strong>, the <strong>Magna Mater</strong>, brought from Phrygia in <strong>204 BCE</strong> by direction of the Sibylline Books to help defeat Hannibal. Her cult, with its self-castrated priests the <strong>Galli</strong>, was far stranger to Roman taste than the Bacchanalia &mdash; yet because it was <em>invited in, orchestrated from within the state</em>, it was legitimate. The difference was never how exotic a cult was. It was <strong>who authorized it.</strong></p>
 
@@ -1135,6 +1215,7 @@ window.CHAPTERS = {
         <ul>
           <li>Roman religion as <strong>public, ritual, and contractual</strong> &mdash; the <em>pax deorum</em>, <em>pietas</em>, <em>do ut des</em>, orthopraxy over orthodoxy, and the fusion of religion with the state &mdash; well attested in inscriptions, calendars, laws, and literature.</li>
           <li>The <strong>priestly colleges</strong> (pontiffs, augurs, Vestals, flamens, haruspices), the <strong>Capitoline Triad</strong>, the systems of <strong>augury, haruspicy, and the Sibylline Books</strong>, and the <strong>household cult</strong> of Lares, Penates, and Genius (richly confirmed by Pompeii).</li>
+          <li>The cult of the dead: the <strong>Di Manes</strong>, the <strong>Parentalia</strong> and the ghost-expelling <strong>Lemuria</strong> (black beans against the Lemures), and Roman afterlife views ranging from Elysian hope to the Epicurean epitaph (<em>non fui, fui, non sum, non curo</em>).</li>
           <li>The <strong>Bacchanalia suppression of 186 BCE</strong> (the surviving <em>Senatus consultum</em>), the <strong>import of Magna Mater in 204 BCE</strong>, and the <strong>imperial cult</strong> and formal <strong>apotheosis</strong>; the Etruscan roots and Greek syncretism of the pantheon.</li>
         </ul>
       </div>
@@ -1162,9 +1243,9 @@ window.CHAPTERS = {
       <ul>
         <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com: Roman Religion</a>; <a href="https://en.wikipedia.org/wiki/College_of_Pontiffs">College of Pontiffs</a>; <a href="https://en.wikipedia.org/wiki/Vestal_Virgin">Vestal Virgin</a>; <a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford Classical Dictionary: Roman Divination</a>; <a href="https://en.wikipedia.org/wiki/Sibylline_Books">Sibylline Books</a>; <a href="https://www.britannica.com/topic/Capitoline-Triad">Britannica: Capitoline Triad</a>.</li>
       </ul>
-      <h4>Household religion, foreign cults, and the imperial cult</h4>
+      <h4>Household religion, the dead, foreign cults, and the imperial cult</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Lar-Roman-deities">Britannica: Lar</a>; <a href="https://www.unrv.com/culture/lararium-lares-penates.php">UNRV: Lararium, Lares and Penates</a>; <a href="https://en.wikipedia.org/wiki/Bacchanalia">Bacchanalia</a>; <a href="https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/">The Cult of Cybele in Ancient Rome</a>; <a href="https://en.wikipedia.org/wiki/Roman_imperial_cult">Roman imperial cult</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Lar-Roman-deities">Britannica: Lar</a>; <a href="https://www.unrv.com/culture/lararium-lares-penates.php">UNRV: Lararium, Lares and Penates</a>; the Di Manes, Parentalia, and the <a href="https://en.wikipedia.org/wiki/Lemuria_(festival)">Lemuria</a>, and <a href="https://www.worldhistory.org/article/2679/views-of-the-afterlife-in-roman-tombstone-inscript/">afterlife views in Roman tombstones</a>; <a href="https://en.wikipedia.org/wiki/Bacchanalia">Bacchanalia</a>; <a href="https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/">The Cult of Cybele in Ancient Rome</a>; <a href="https://en.wikipedia.org/wiki/Roman_imperial_cult">Roman imperial cult</a>.</li>
       </ul>
       <p class="source-note">Researched from standard reference scholarship (Oxford Classical Dictionary, Britannica, Encyclopedia.com) and specialist summaries rather than memory alone. The chapter distinguishes the well-documented historical religion (priesthoods, divination, household cult, the datable Bacchanalia and Magna Mater episodes, the imperial cult) from the legendary foundation stories (Romulus, Numa), flags the genuinely contested questions, and reserves the salvation-oriented mystery religions for the Late Antiquity era. Written to be educational, with attention to Rome as the institutional counterpoint to the Axial Age&rsquo;s inward turns.</p>
     </div>
@@ -1182,23 +1263,24 @@ window.CHAPTERS = {
     <p>The method governs everything. For Celtic and Germanic religion we have <strong>three kinds of evidence, all treacherous.</strong> <strong>First, the outsiders</strong> &mdash; nearly all contemporary testimony comes from <strong>Greek and Roman writers</strong> (Caesar, Tacitus, Posidonius, Strabo, Lucan, Pliny) describing enemies, often to justify conquest, usually without the language, fitting foreign gods into Roman categories; Caesar&rsquo;s account of druids burning victims in a giant <strong>wicker man</strong> may be propaganda or truth. <strong>Second, the much later native literature</strong> &mdash; the Irish <strong>Ulster Cycle</strong> and the Welsh <strong>Mabinogi</strong>, written by <strong>Christian monks a thousand years or more</strong> after the Iron Age; they preserve old material, but filtered through Christianity and literary reshaping. <strong>Third, archaeology</strong> &mdash; our most direct evidence, but <strong>mute</strong>: it shows swords thrown into rivers and bodies laid in bogs, but not the beliefs behind them. Where these witnesses fall silent &mdash; which is often &mdash; the honest answer is that we do not know.</p>
 
     <h2>The Celts: druids, groves, and a religion of memory</h2>
-    <p>The peoples the Greeks and Romans called <strong>Keltoi</strong> and <strong>Galli</strong>, carriers of the <strong>La Tène</strong> culture, administered their religion through a learned class the sources call the <strong>druids</strong>. They were not merely priests but the <strong>judges, teachers, philosophers, and loremasters</strong> of society, training up to twenty years &mdash; and, Caesar reports, they held it <strong>forbidden to commit their learning to writing</strong>, memorizing vast quantities of verse instead. That is precisely why this is a religion without a book. They taught, he says, that <strong>the soul does not perish but passes</strong> from one to another at death. Worship was largely <strong>outdoors</strong>, in sacred groves called a <strong>nemeton</strong> (Strabo records a Galatian <strong>Drunemeton</strong>, &ldquo;oak-sanctuary&rdquo;), and lavish with <strong>votive deposit</strong>: swords, cauldrons, and treasure cast into lakes and bogs &mdash; the sword in the water that echoes down to Excalibur.</p>
+    <p>The peoples the Greeks and Romans called <strong>Keltoi</strong> and <strong>Galli</strong>, carriers of the <strong>La Tène</strong> culture, administered their religion through a learned class the sources call the <strong>druids</strong>. They were not merely priests but the <strong>judges, teachers, philosophers, and loremasters</strong> of society, training up to twenty years &mdash; and, Caesar reports, they held it <strong>forbidden to commit their learning to writing</strong>, memorizing vast quantities of verse instead. That is precisely why this is a religion without a book. They taught, he says, that <strong>the soul does not perish but passes</strong> from one to another at death. The classical sources actually describe a <em>threefold</em> learned class: the <strong>druids</strong> proper (philosophers, judges, overseers of sacrifice), the <strong>bards</strong> (poets who kept genealogy and praise in memorized verse), and the <strong>vates</strong> (seers and diviners who read the sacrifices) &mdash; a division Strabo drew from Posidonius, and one modern revival Druidry would restore as its three grades. Worship was largely <strong>outdoors</strong>, in sacred groves called a <strong>nemeton</strong> (Strabo records a Galatian <strong>Drunemeton</strong>, &ldquo;oak-sanctuary&rdquo;), and lavish with <strong>votive deposit</strong>: swords, cauldrons, and treasure cast into lakes and bogs &mdash; the sword in the water that echoes down to Excalibur.</p>
 
     <h2>The Celtic gods</h2>
     <p>The Celtic divine world is a crowd of mostly local names: <strong>Lugh/Lugus</strong> (a shining god of many skills, marking places from Lyon to Leiden), the <strong>Dagda</strong> (the &ldquo;good god&rdquo;), <strong>Brigid</strong> (poetry, healing, smithcraft), <strong>Cernunnos</strong> (the antlered lord of beasts, likely the Gundestrup figure), <strong>Taranis</strong> (the thunderer with his wheel), <strong>Teutates</strong> and <strong>Esus</strong> (named by Lucan as demanding bloody sacrifice), and <strong>Epona</strong> (the horse-goddess, adopted even by Roman cavalry). Two patterns matter: a love of <strong>triplication</strong> &mdash; gods, especially goddesses, in threes, like the <strong>Matres</strong> &mdash; and the fusion of Celtic and Roman gods under Rome (<strong>Apollo Grannus</strong>, <strong>Mars Lenus</strong>). There is no tidy Celtic pantheon; there is a vast, regional, overlapping family of powers.</p>
 
     <h2>The Germanic peoples: Tacitus&rsquo;s witness</h2>
-    <p>For early Germanic religion our key source is <strong>Tacitus</strong>, whose <em>Germania</em> (98 CE) reports &mdash; from the outside &mdash; that the Germani <strong>did not confine their gods within walls or in human form</strong>, but consecrated <strong>groves and woods</strong>. He names their gods only through Roman equivalents: they worship <strong>Mercury</strong> above all, with <strong>human sacrifice</strong> on certain days, and <strong>Hercules</strong> and <strong>Mars</strong> with animal offerings. Behind these masks stand the gods we know better in later Norse form: Mercury is <strong>Wodan/Odin</strong>, Mars is <strong>Tiwaz/Tyr</strong> the war-god, Hercules is <strong>Thunor/Thor</strong> the thunderer. Tacitus also preserves the worship of <strong>Nerthus</strong>, &ldquo;Mother Earth,&rdquo; whose veiled image was drawn in a cart through the tribes in peace, then washed in a secret lake &mdash; after which the slaves who washed it were drowned.</p>
+    <p>For early Germanic religion our key source is <strong>Tacitus</strong>, whose <em>Germania</em> (98 CE) reports &mdash; from the outside &mdash; that the Germani <strong>did not confine their gods within walls or in human form</strong>, but consecrated <strong>groves and woods</strong>. He names their gods only through Roman equivalents: they worship <strong>Mercury</strong> above all, with <strong>human sacrifice</strong> on certain days, and <strong>Hercules</strong> and <strong>Mars</strong> with animal offerings. Behind these masks stand the gods we know better in later Norse form: Mercury is <strong>Wodan/Odin</strong>, Mars is <strong>Tiwaz/Tyr</strong> the war-god, Hercules is <strong>Thunor/Thor</strong> the thunderer. Tacitus also preserves the worship of <strong>Nerthus</strong>, &ldquo;Mother Earth,&rdquo; whose veiled image was drawn in a cart through the tribes in peace, then washed in a secret lake &mdash; after which the slaves who washed it were drowned. Tacitus adds that the Germani believed their <strong>women</strong> held something holy and prophetic: he names the seeress <strong>Veleda</strong> of the Bructeri, who during the Batavian revolt lived secluded in a tower, gave oracles no petitioner could approach directly, and was revered almost as a goddess (and an earlier prophetess, Aurinia/Albruna). The venerated Germanic <strong>seeress</strong> points forward to the Norse <em>völva</em>.</p>
     <p><strong>An important boundary.</strong> The rich mythology most people associate with this world &mdash; Odin on the world-tree, Ragnarök, the <strong>Eddas</strong> &mdash; comes from <strong>medieval Iceland</strong>, after the conversion, and belongs to the later <strong>Norse paganism</strong> chapter. Reading it back onto Tacitus&rsquo;s tribes is exactly the error the sources warn against.</p>
 
     <h2>Blood in the water: sacrifice and the bog</h2>
-    <p>Both traditions practiced <strong>sacrifice</strong>. Classical writers accuse the Celts of <strong>human sacrifice</strong> (Caesar&rsquo;s wicker man, Lucan&rsquo;s Teutates and Esus, Pliny on Britain); these hostile reports are suspect and most scholars judge such sacrifice <strong>occasional rather than routine</strong> &mdash; but the archaeology will not let the question be dismissed, for the <strong>bog bodies</strong> (Lindow Man above all) show individuals killed with ritual excess and deposited in water. On the Germanic side, the great <strong>weapon deposits</strong> &mdash; thousands of destroyed swords and shields thrown into bogs at <strong>Illerup Ådal</strong> and <strong>Nydam</strong>, the sacrificed gear of defeated armies &mdash; are among Europe&rsquo;s most spectacular sacrificial finds. Water, in both worlds, was a doorway to the divine.</p>
+    <p>Both traditions practiced <strong>sacrifice</strong>. Classical writers accuse the Celts of <strong>human sacrifice</strong> (Caesar&rsquo;s wicker man, Lucan&rsquo;s Teutates and Esus, Pliny on Britain); these hostile reports are suspect and most scholars judge such sacrifice <strong>occasional rather than routine</strong> &mdash; but the archaeology will not let the question be dismissed, for the <strong>bog bodies</strong> (Lindow Man above all) show individuals killed with ritual excess and deposited in water. On the Continent, excavation has put flesh on the classical accusations: at the war-sanctuaries of northern Gaul &mdash; <strong>Gournay-sur-Aronde</strong> and <strong>Ribemont-sur-Ancre</strong> in Picardy &mdash; archaeologists found ditched enclosures heaped with thousands of ritually destroyed weapons and, at Ribemont, the decapitated remains of hundreds of young men, apparently the war-dead of a defeated enemy displayed and offered to the gods. On the Germanic side, the great <strong>weapon deposits</strong> &mdash; thousands of destroyed swords and shields thrown into bogs at <strong>Illerup Ådal</strong> and <strong>Nydam</strong>, the sacrificed gear of defeated armies &mdash; are among Europe&rsquo;s most spectacular sacrificial finds. Water, in both worlds, was a doorway to the divine.</p>
 
     <h2>The otherworld and the festival year</h2>
     <p>The Celts believed in an <strong>Otherworld</strong>, reachable through mounds, caves, and lakes, and especially close at certain turnings of the year. The (late, carefully-used) Irish sources preserve four great festivals that have passed into modern life: <strong>Samhain</strong> (1 Nov, the dark threshold when the Otherworld drew near &mdash; ancestor of Halloween), <strong>Imbolc</strong> (1 Feb, of Brigid and early spring), <strong>Beltane</strong> (1 May, fire-festival of summer&rsquo;s start), and <strong>Lughnasadh</strong> (1 Aug, harvest festival of Lugh). How much is genuinely Iron Age and how much medieval elaboration is debated &mdash; but the sense of a year hinged on the turns of light and season is real.</p>
 
     <h2>Symbology and sacred encoding</h2>
     <p><strong>Two sacred scripts &mdash; with an honest caveat about their date.</strong> Each world produced a writing system freighted with sacred meaning, but both are <strong>later</strong> than the core Axial Age. The Germanic <strong>runes</strong> (the <strong>Elder Futhark</strong>) appear from about the <strong>2nd century CE</strong>; Norse tradition made them a divine gift <strong>won by Odin</strong> on the world-tree, and they served as objects of <strong>magic and divination</strong>, not just an alphabet &mdash; the word <em>rune</em> itself carries a sense of &ldquo;secret.&rdquo; The Celtic <strong>ogham</strong>, an alphabet of notches along a stem-line associated with trees, appears later still, around the <strong>4th century CE</strong>. Neither was the vehicle of Iron Age religion, which stayed oral by design; both show how, once writing came, the letter itself was treated as charged with power.</p>
+    <p><strong>The gods hidden in the week.</strong> One piece of this old encoding sits on every calendar. When the Germanic peoples adopted the Roman seven-day planetary week, they translated its gods into their own by <em>interpretatio</em>, and English still carries the result: <strong>Tuesday</strong> is Tiw&rsquo;s (Tyr&rsquo;s) day, <strong>Wednesday</strong> Woden&rsquo;s (Odin&rsquo;s) day, <strong>Thursday</strong> Thunor&rsquo;s (Thor&rsquo;s) day, and <strong>Friday</strong> the day of the goddess Frig &mdash; war-god, sky-and-wisdom god, thunderer, and love-goddess, each matched to the Roman deity they most resembled (Mars, Mercury, Jupiter, Venus). The Axial-Age Germani&rsquo;s gods survive, unnoticed, in the ordinary words for the days.</p>
     <p><strong>The art of the sacred spiral.</strong> Long before either script, <strong>La Tène</strong> art encoded a sensibility: endless interlacing spirals, <strong>triskeles</strong>, and shape-shifting forms in which faces emerge and dissolve. This refusal of fixed representation is itself a kind of theology, and the <strong>triple</strong> motif points to the deep Celtic reverence for <strong>threeness</strong>. <strong>The severed head</strong> was, to the Celts, the seat of the soul and a potent sacred object &mdash; carved stone heads and skull-niches appear at sanctuaries like <strong>Roquepertuse</strong>, and the head recurs through Celtic art and Irish story as a source of power and prophecy.</p>
     <p><strong>A calendar in bronze.</strong> The most remarkable Celtic sacred artifact is the <strong>Coligny calendar</strong>, a fragmentary bronze tablet from Roman Gaul (2nd century CE, encoding an older system) laying out a <strong>five-year lunisolar</strong> cycle in Gaulish, reconciling moon and sun and marking days as <strong>MAT</strong> (auspicious) or <strong>ANM</strong> (not) &mdash; a druidic ritual almanac frozen in metal, our best window into how the Celts encoded sacred time.</p>
 
@@ -1210,7 +1292,7 @@ window.CHAPTERS = {
       <div class="ev supported">
         <h4>What&rsquo;s well supported</h4>
         <ul>
-          <li>A <strong>non-literate, largely outdoor religion</strong> centered on <strong>sacred groves and waters</strong>, with <strong>votive deposition</strong> of weapons and treasure (abundantly confirmed by archaeology) and a learned Celtic priesthood, the <strong>druids</strong>.</li>
+          <li>A <strong>non-literate, largely outdoor religion</strong> centered on <strong>sacred groves and waters</strong>, with <strong>votive deposition</strong> of weapons and treasure (abundantly confirmed by archaeology) and a learned Celtic priesthood in three orders &mdash; the <strong>druids</strong>, the <strong>bards</strong>, and the <strong>vates</strong> (Strabo/Posidonius). Tacitus records the Germanic reverence for prophetic <strong>seeresses</strong> (Veleda, Aurinia), and the Germanic gods survive in the English weekday names (Tiw, Woden, Thunor, Frig).</li>
           <li>The reality of <strong>sacrifice</strong>, including at least <strong>occasional human sacrifice</strong> &mdash; the <strong>bog bodies</strong> (Lindow Man) and mass <strong>weapon deposits</strong> (Illerup, Nydam) &mdash; and the named gods (<strong>Lugh, Cernunnos, Taranis, Epona</strong>; <strong>Wodan, Tiwaz, Thunor, Nerthus</strong>).</li>
           <li>The <strong>Coligny calendar</strong> as a genuine Gaulish lunisolar ritual calendar; the later appearance of <strong>runes</strong> (c. 2nd c. CE) and <strong>ogham</strong> (c. 4th c. CE); the Celtic reverence for <strong>threeness</strong> and the <strong>head</strong>.</li>
         </ul>
@@ -1237,11 +1319,11 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>Celtic religion, druids, and the sources problem</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>; on human sacrifice, <a href="https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/">Celtic Studies Resources: Did the Celts Perform Human Sacrifice?</a>; <a href="https://en.wikipedia.org/wiki/Cernunnos">Cernunnos</a>; <a href="https://en.wikipedia.org/wiki/Taranis">Taranis</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>; on human sacrifice, <a href="https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/">Celtic Studies Resources: Did the Celts Perform Human Sacrifice?</a>; <a href="https://en.wikipedia.org/wiki/Cernunnos">Cernunnos</a>; <a href="https://en.wikipedia.org/wiki/Taranis">Taranis</a>; the three orders (<a href="https://irishmyths.com/2022/05/27/bards-vs-vates-vs-druids/">druids, bards, vates</a>) and the war-sanctuaries of <a href="https://en.wikipedia.org/wiki/Gournay-sur-Aronde">Gournay-sur-Aronde</a> and Ribemont-sur-Ancre.</li>
       </ul>
       <h4>Germanic religion, and sacred encoding</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology">Sacred trees and groves in Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Nerthus">Nerthus</a>; <a href="https://en.wikipedia.org/wiki/Coligny_calendar">Coligny calendar</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology">Sacred trees and groves in Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Nerthus">Nerthus</a>; the <a href="https://en.wikipedia.org/wiki/Seeress_(Germanic)">Germanic seeress</a> (Veleda, Aurinia); the gods in the <a href="https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">weekday names</a>; <a href="https://en.wikipedia.org/wiki/Coligny_calendar">Coligny calendar</a>.</li>
       </ul>
       <p class="source-note">Researched from standard reference scholarship (Britannica, specialist Celtic-studies resources, archaeological summaries) rather than memory alone. This is the archive&rsquo;s most source-critical chapter by necessity: it foregrounds the unreliability of the three witnesses (hostile classical writers, much-later Christian-era vernacular texts, mute archaeology), keeps the well-attested (groves, votive deposits, bog bodies, named gods, the Coligny calendar) separate from the reconstructed (systematic myth), reserves the Norse Eddic material for the early-medieval chapter, honestly dates the runes and ogham to later centuries, and flags the genuinely open questions &mdash; including whether a single &ldquo;Celtic religion,&rdquo; or even the label &ldquo;Celtic,&rdquo; is meaningful. Written to be educational, with attention to how much we cannot know about religions that, by design, kept no book.</p>
     </div>
@@ -1261,6 +1343,9 @@ window.CHAPTERS = {
     <p>The revolution began in the Greek cities of <strong>Ionia</strong> in the sixth century BCE. The move was simple and radical: explain the natural world by <strong>natural principles</strong> rather than divine personalities. <strong>Thales</strong> proposed everything came from <strong>water</strong>; <strong>Anaximander</strong> an abstract boundless source. For the first time, someone asked what the world is <em>made of</em> and answered without telling a story about gods &mdash; the birth of both philosophy and science.</p>
     <p>Two reshaped the divine directly. <strong>Xenophanes</strong> launched the first systematic <strong>critique of anthropomorphic religion</strong>: people make gods in their own image (&ldquo;Ethiopians say theirs are snub-nosed and black; Thracians, blue-eyed and red-haired&rdquo;), and if oxen could draw, they would draw ox-shaped gods. In place of Homer&rsquo;s quarrelsome Olympians he proposed <strong>one god</strong>, &ldquo;not at all like mortals in body or thought,&rdquo; who moves all things by the thought of his mind &mdash; the first Western argument for a single, non-anthropomorphic God, reached by reason, not revelation. <strong>Heraclitus</strong> taught that beneath the world&rsquo;s flux (&ldquo;you cannot step into the same river twice&rdquo;) lies a rational ordering principle, the <strong>Logos</strong> &mdash; a word with an extraordinary future: the Stoics made it the soul of the cosmos, and John&rsquo;s Gospel would identify it with God and Christ. And <strong>Pythagoras</strong>, part mystic and part mathematician, taught that reality is ultimately <strong>number</strong> (discovering the ratios of musical harmony) and that the <strong>soul is immortal</strong> and reincarnated &mdash; fusing rational spirit and mystical religion.</p>
 
+    <h2>The doubters: the Sophists and the invention of the gods</h2>
+    <p>If the Presocratics reimagined God, the fifth-century teachers called the <strong>Sophists</strong> did something more unsettling: they doubted whether anything could be known about the gods at all, and began to ask where religion itself came from &mdash; the beginning of the western history of religious <strong>skepticism</strong> and the naturalistic study of religion. <strong>Protagoras</strong> of Abdera opened a book, it is said, with a line that scandalized Athens: &ldquo;Concerning the gods, I am unable to know either that they exist or that they do not, or what they are like in form.&rdquo; This is not atheism but <strong>agnosticism</strong>, one of its earliest clear statements anywhere. <strong>Prodicus</strong> of Ceos proposed that religion <em>arose</em> naturally &mdash; early humans first worshipped what nourished them (the sun, rivers, the bread they called Demeter, the wine they called Dionysus), then deified their benefactors &mdash; one of the first <strong>theories of the origin of religion</strong>. And the <strong>&ldquo;Sisyphus fragment&rdquo;</strong> (attributed to <strong>Critias</strong> or Euripides) has a character claim outright that a clever man <strong>invented the gods</strong>, an all-seeing deity who rewards and punishes, to frighten people into behaving when no law was watching &mdash; religion as a useful fiction of social control, the earliest surviving version of an argument that would echo for millennia. That such things could be said aloud on the Athenian stage, even as the city sacrificed, measures how far the turn from <em>mythos</em> to <em>logos</em> had come &mdash; and Socrates&rsquo;s execution for impiety, how dangerous.</p>
+
     <h2>Socrates, Plato, and the immortal soul</h2>
     <p><strong>Socrates</strong> (c. 470&ndash;399 BCE) wrote nothing; we know him through <strong>Plato</strong>. He turned philosophy from the cosmos to the <strong>human soul</strong> and how to live, insisting that the unexamined life is not worth living and that virtue is knowledge; he spoke of a divine inner voice, his <em>daimonion</em> &mdash; one of the &ldquo;new divinities&rdquo; his accusers feared. <strong>Plato</strong> (c. 428&ndash;348 BCE) built the first great system and a new theology: the <strong>Theory of Forms</strong>, in which the visible world is a shadow of a higher realm of perfect, eternal <strong>Forms</strong> &mdash; of Justice, Beauty, and above all the <strong>Form of the Good</strong>, &ldquo;beyond being.&rdquo; The <strong>soul</strong> is immortal and divine; learning is <strong>recollection</strong>. In the <em>Timaeus</em>, a divine craftsman, the <strong>Demiurge</strong>, shapes matter by looking to the Forms &mdash; not creation from nothing, but reason imposed on chaos. And in the <em>Republic</em> Plato <strong>condemns the myths of Homer and Hesiod</strong> for making the gods immoral, demanding a purified theology of a wholly good, unchanging divine. His fusion of a transcendent Good, an immortal soul, and a rational cosmos would shape Judaism, Christianity, and Islam for two thousand years.</p>
 
@@ -1269,6 +1354,9 @@ window.CHAPTERS = {
 
     <h2>The Hellenistic turn: philosophy as salvation</h2>
     <p>After Alexander, the city gave way to vast kingdoms, and philosophy shifted toward <strong>how to find peace in a chaotic world</strong>. <strong>Stoicism</strong> (Zeno) taught that the cosmos is a single living, rational whole pervaded by the divine <strong>Logos</strong> &mdash; an immanent, fiery reason identical with God, Nature, and Fate: a <strong>pantheism</strong> in which every mind carries a spark of universal reason, and to live well is to live &ldquo;according to nature.&rdquo; Its ideas of divine reason, providence, and universal human brotherhood fed directly into Christianity. <strong>Epicureanism</strong> took the opposite road: reviving <strong>atomism</strong>, it taught that everything &mdash; even the soul &mdash; is atoms in a void, that the goal is tranquil freedom from fear, and that the <strong>gods exist but take no interest in us</strong>, neither rewarding nor punishing &mdash; so they need not be feared, and since the soul dissolves at death, &ldquo;death is nothing to us.&rdquo; It was, in effect, a philosophy for freeing people from religious fear.</p>
+
+    <h2>Asclepius: the god who came in dreams</h2>
+    <p>While the philosophers argued, most Greeks went on seeking the gods&rsquo; help in the old concrete ways, and one cult of exactly this era shows how the lived religion actually worked. <strong>Asclepius</strong>, the god of healing (a hero-physician raised to divinity), became the most beloved of the newer gods, and his sanctuaries &mdash; the <strong>asklepieia</strong>, above all at <strong>Epidaurus</strong>, and later at Kos, Pergamon, and Athens &mdash; were the hospitals of the ancient world. The sick came as pilgrims, purified themselves, sacrificed, and then performed the central rite: <strong>incubation</strong> (<em>enkoimesis</em>), sleeping overnight in a sacred dormitory, the <em>abaton</em>, hoping the god would appear in a <strong>dream</strong> and either heal them or prescribe a cure. Cured patients left <strong>votive offerings</strong> &mdash; strikingly, terracotta or marble models of the healed body part (an ear, an eye, a leg, a womb) so the god would know what he had mended &mdash; and inscribed testimonial tablets, the <em>iamata</em>. This is the classical age&rsquo;s religion as ordinary people lived it: not the Unmoved Mover or the Form of the Good, but a kindly god met in sleep, a night in his house, and a clay leg left in thanks. The two Greeces &mdash; the philosophers&rsquo; and the pilgrims&rsquo; &mdash; ran on side by side.</p>
 
     <h2>Symbology and sacred encoding</h2>
     <p><strong>&ldquo;All is number&rdquo;: Pythagorean sacred mathematics.</strong> The most distinctive Greek encoding is <strong>Pythagorean number-mysticism</strong> &mdash; that <strong>numbers are the hidden reality of the cosmos</strong> and carry sacred meaning. Its holiest symbol is the <strong>tetractys</strong>: ten points in a triangle of four rows (1+2+3+4=10), sworn upon as the blueprint of creation, for it contains the ratios of musical harmony (2:1 octave, 3:2 fifth, 4:3 fourth) &mdash; the same numbers making music and cosmos, the <strong>&ldquo;harmony of the spheres.&rdquo;</strong> Here mathematics <em>is</em> theology.</p>
@@ -1286,6 +1374,7 @@ window.CHAPTERS = {
           <li>The reality and core teachings of the major figures &mdash; the <strong>Presocratics</strong>, <strong>Socrates</strong> (and his 399 BCE trial for impiety), <strong>Plato</strong>, <strong>Aristotle</strong>, and the <strong>Hellenistic schools</strong> &mdash; are exceptionally well attested.</li>
           <li>The philosophical reconceptions of the divine: <strong>Xenophanes&rsquo;</strong> one non-anthropomorphic god, the <strong>Logos</strong>, Plato&rsquo;s <strong>Forms, Demiurge, and immortal soul</strong>, Aristotle&rsquo;s <strong>Unmoved Mover</strong>, and Epicurus&rsquo;s remote gods.</li>
           <li>The continuation of <strong>civic religion and the mysteries</strong> alongside philosophy, and the historical <strong>Orphic gold tablets</strong> and <strong>Pythagorean</strong> number-mysticism (the tetractys).</li>
+          <li>The <strong>Sophists&rsquo;</strong> religious skepticism (Protagoras&rsquo;s agnosticism, Prodicus&rsquo;s naturalistic theory, the Sisyphus fragment on the gods as human invention) and the great healing cult of <strong>Asclepius</strong> (Epidaurus), with dream-incubation, votive body-parts, and the <em>iamata</em>, as the era&rsquo;s lived popular religion.</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1310,7 +1399,7 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>Presocratics, Socrates, Plato, and Aristotle</h4>
       <ul>
-        <li><a href="https://plato.stanford.edu/entries/xenophanes/">SEP: Xenophanes</a>; <a href="https://iep.utm.edu/xenoph/">IEP: Xenophanes</a>; <a href="https://socratesjourney.org/logos-from-heraclitus-to-the-stoics-stoicism/">Logos from Heraclitus to the Stoics</a>; <a href="https://en.wikipedia.org/wiki/Unmoved_mover">Unmoved mover (Aristotelian theology)</a>.</li>
+        <li><a href="https://plato.stanford.edu/entries/xenophanes/">SEP: Xenophanes</a>; <a href="https://iep.utm.edu/xenoph/">IEP: Xenophanes</a>; <a href="https://socratesjourney.org/logos-from-heraclitus-to-the-stoics-stoicism/">Logos from Heraclitus to the Stoics</a>; <a href="https://en.wikipedia.org/wiki/Unmoved_mover">Unmoved mover (Aristotelian theology)</a>. The Sophists&rsquo; skepticism &mdash; <a href="https://iep.utm.edu/sophists/">IEP: The Sophists</a>; the <a href="https://en.wikipedia.org/wiki/Sisyphus_fragment">Sisyphus fragment</a>. Asclepius and dream-incubation at <a href="https://olympia-museum.gr/enkoimesis-at-epidaurus/">Epidaurus</a>.</li>
       </ul>
       <h4>Hellenistic schools, and sacred encoding</h4>
       <ul>
@@ -1348,8 +1437,15 @@ window.CHAPTERS = {
     <h2>Ritual, ethics, and the life of the community</h2>
     <p>Early worship was intimate and domestic &mdash; believers gathered in private <strong>houses</strong> (the earliest identified Christian building, at <strong>Dura-Europos</strong>, is a converted house of c. 240 CE) to pray, sing, read scripture, and share two central rites: <strong>baptism</strong>, the water-initiation joining the believer to Christ&rsquo;s death and resurrection, and the <strong>Eucharist</strong>, the shared bread and wine of the Last Supper. Their <strong>ethics</strong> &mdash; the <strong>Sermon on the Mount</strong>, the command to love God and neighbor and even enemies, and a special care for the poor, sick, and outcast &mdash; were radical in the Roman world, and their practical charity is widely credited by historians as a real engine of the movement&rsquo;s growth.</p>
 
+    <h2>The women of the movement</h2>
+    <p>The depth of the record requires attention to a group the later church often wrote out. The Gospels make <strong>Mary Magdalene</strong> the first witness of the resurrection &mdash; the &ldquo;apostle to the apostles&rdquo; of later tradition &mdash; and Paul&rsquo;s letters name women as coworkers and leaders without apology. In <strong>Romans 16</strong> he commends <strong>Phoebe</strong>, a <em>diakonos</em> (deacon) whom he trusts to carry the letter itself, and greets <strong>Junia</strong>, whom he calls &ldquo;prominent among the apostles&rdquo; &mdash; a woman apostle whose name medieval copyists later masculinized to &ldquo;Junias,&rdquo; a form unknown in the ancient world, until modern scholarship restored her. <strong>Prisca</strong> taught alongside her husband; an order of <strong>widows</strong> held a recognized place. Only later, in the &ldquo;Pastoral&rdquo; letters written in Paul&rsquo;s name (1 Timothy 2), do the sharp restrictions on women&rsquo;s speech appear &mdash; a development, not the movement&rsquo;s starting point.</p>
+    <p>Nowhere is a woman&rsquo;s own voice clearer than in the <strong>Passion of Perpetua and Felicity</strong>. <strong>Vibia Perpetua</strong>, a young, educated noblewoman of Carthage, was arrested with companions &mdash; among them the pregnant slave <strong>Felicity</strong> &mdash; and martyred in the arena in <strong>203 CE</strong>. In prison she kept a <strong>diary</strong>, and it survives: one of the earliest writings by a Christian woman anywhere, a first-person account of her visions, her defiance of her grieving father, her nursing infant, and her calm approach to death.</p>
+
     <h2>Persecution, martyrdom, and the turn of Constantine</h2>
     <p>For three centuries the church was an illegal or semi-legal sect, its refusal to worship the Roman gods or the <strong>imperial cult</strong> (Chapter 13) marking Christians as subversive &ldquo;atheists.&rdquo; Persecution was mostly local, punctuated by empire-wide waves under <strong>Nero</strong> (who scapegoated Christians for the fire of 64 CE), <strong>Decius</strong>, and <strong>Diocletian</strong> (the &ldquo;Great Persecution,&rdquo; 303 CE); the <strong>martyrs</strong> became the heroes of the faith. Then the tide turned: <strong>Constantine</strong>, crediting a vision of the cross with his victory at the Milvian Bridge (312 CE), legalized Christianity with the <strong>Edict of Milan</strong> (313), convened the <strong>Council of Nicaea</strong> (325) to settle disputes over the nature of Christ, and by <strong>380 CE</strong> under <strong>Theodosius</strong> it was the official religion of the empire. The persecuted had become the establishment.</p>
+
+    <h2>The birth of the saints</h2>
+    <p>The martyrs did not simply die; they were <em>remembered</em>, and out of that remembrance grew one of Christianity&rsquo;s most enduring institutions. The earliest account of a martyrdom outside the New Testament, the <strong>Martyrdom of Polycarp</strong> (the aged bishop of Smyrna, c. 155 CE), already shows the pattern: after Polycarp was burned, his community gathered up his charred <strong>bones</strong>, which they called &ldquo;more precious than gold and costly gems,&rdquo; and laid them in a fitting place &mdash; the seed of the <strong>cult of relics</strong>. They resolved to gather each year on the day of his death, for a martyr&rsquo;s death was reckoned his <strong>birthday</strong>, his <em>dies natalis</em>, the day he was born into heaven; and this annual graveside commemoration is the origin of the Christian <strong>calendar of saints</strong>. Long before formally canonized saints or grand basilicas, ordinary Christians were keeping the &ldquo;birthdays&rdquo; of their dead heroes at their tombs.</p>
 
     <h2>Symbology and sacred encoding</h2>
     <p><strong>The fish and the hidden creed.</strong> The <strong>ΙΧΘΥΣ</strong> fish was the great encoded emblem of the persecuted church &mdash; at once a picture, an acrostic creed (<em>Jesus Christ, Son of God, Savior</em>), and a secret sign, drawing on the Gospel image of &ldquo;fishers of men.&rdquo;</p>
@@ -1368,6 +1464,8 @@ window.CHAPTERS = {
           <li>The <strong>existence and crucifixion of Jesus</strong> &mdash; a Galilean Jewish teacher baptized by John and executed under Pilate c. 30&ndash;33 CE &mdash; on a very broad consensus, multiple early sources plus Josephus and Tacitus.</li>
           <li>That his followers <strong>proclaimed him risen</strong> within a very few years (the pre-Pauline creed of 1 Cor 15), launching a rapidly spreading movement led by <strong>Paul</strong>, whose Gentile mission opened it to the Roman world.</li>
           <li>The <strong>diversity</strong> of early Christianities, the slow <strong>canon</strong> formation, the rites of <strong>baptism</strong> and <strong>Eucharist</strong>, the reality of <strong>persecution and martyrdom</strong>, and the <strong>legalization under Constantine</strong> and establishment under Theodosius.</li>
+          <li>The prominence of <strong>women</strong> in the earliest movement (Mary Magdalene; the deacon Phoebe and the apostle Junia of Romans 16; Prisca; the widows), with restrictions appearing later (the Pastoral letters); and the martyr <strong>Perpetua</strong>, whose prison diary (203 CE) is among the earliest writings by a Christian woman.</li>
+          <li>The early <strong>cult of the martyrs</strong>: the <em>Martyrdom of Polycarp</em> (c. 155 CE) already shows relic-veneration and annual commemoration on the martyr&rsquo;s <em>dies natalis</em> &mdash; the seed of the cult of saints.</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1392,7 +1490,7 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>The historical Jesus, Paul, and the canon</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Sources for the historicity of Jesus</a>; <a href="https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus">Britannica: Christianity &mdash; Jesus and the early church</a>; <a href="https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale Bible Study: Formation of the NT Canon</a>; Bart Ehrman, <em>Lost Christianities</em>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Sources for the historicity of Jesus</a>; <a href="https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus">Britannica: Christianity &mdash; Jesus and the early church</a>; <a href="https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale Bible Study: Formation of the NT Canon</a>; Bart Ehrman, <em>Lost Christianities</em>. Women in the early church &mdash; <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person)">Junia</a>, <a href="https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)">Phoebe</a>, and the <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Passion of Perpetua and Felicity</a>; the martyr cult and the <a href="https://en.wikipedia.org/wiki/Dies_natalis">dies natalis</a> (Martyrdom of Polycarp).</li>
       </ul>
       <h4>Symbol and sacred encoding</h4>
       <ul>
@@ -1425,6 +1523,13 @@ window.CHAPTERS = {
     <h2>The texts, and the enemies who preserved them</h2>
     <p>Before 1945 our knowledge came mainly from the <strong>heresiologists</strong> &mdash; <strong>Irenaeus</strong> (<em>Against Heresies</em>, c. 180 CE), Tertullian, Hippolytus, Epiphanius &mdash; who quoted the Gnostics in order to refute them. The <strong>Nag Hammadi library</strong> gave us their works directly: the <strong>Apocryphon of John</strong>, the <strong>Gospel of Truth</strong>, the <strong>Gospel of Philip</strong>, the poetic <strong>Thunder, Perfect Mind</strong>. The separately-recovered <strong>Gospel of Judas</strong> (2006) casts <strong>Judas</strong> not as traitor but as the one disciple who understood. A special case is the <strong>Gospel of Thomas</strong>: <strong>114 secret sayings</strong> (&ldquo;the hidden words that the living Jesus spoke&rdquo;), not a narrative and not straightforwardly Gnostic &mdash; many class it a <strong>sayings gospel</strong> &mdash; whose date is fiercely debated, some arguing a few sayings preserve very <strong>early</strong> tradition.</p>
 
+    <h2>The religion of Light: Manichaeism</h2>
+    <p>The most successful of Late Antiquity&rsquo;s dualist faiths was not, strictly, Gnostic at all, but its great cousin: <strong>Manichaeism</strong>, founded by the Persian prophet <strong>Mani</strong> (c. 216&ndash;274 CE), who declared himself the last in a line of messengers that included <strong>Adam, Zoroaster, the Buddha, and Jesus</strong>. Where the Gnostics traced evil to a mistake within the Pleroma, Mani made the dualism absolute: two <strong>coeternal</strong> principles, <strong>Light</strong> and <strong>Darkness</strong>, locked in cosmic war. Particles of Light became trapped in matter, and the whole point of existence &mdash; and of the ascetic life &mdash; is to liberate that scattered Light and return it to its source.</p>
+    <p>The faith was organized into two ranks: the <strong>Elect</strong>, who lived in strict purity (vegetarian, celibate, non-violent even toward plants, lest they harm the Light within), and the far larger body of <strong>Hearers</strong>, lay supporters who fed and served the Elect. Carried by Mani&rsquo;s missionary drive and a beautiful illustrated scripture, it spread astonishingly far: west across the Roman Empire &mdash; where the young <strong>Augustine</strong> was a Hearer for nine years before his conversion &mdash; and east along the Silk Road, becoming the state religion of the <strong>Uighur</strong> empire and reaching <strong>China</strong>, where Manichaean communities survived into the fourteenth century. For a thousand years &ldquo;the religion of Light&rdquo; was a genuine world faith.</p>
+
+    <h2>The Hermetic path: as above, so below</h2>
+    <p>Running alongside Gnosticism in the same Greco-Roman Egypt was a gentler esoteric current, <strong>Hermeticism</strong> &mdash; the teachings ascribed to <strong>Hermes Trismegistus</strong> (&ldquo;thrice-greatest Hermes&rdquo;), a legendary sage fusing the Greek <strong>Hermes</strong> with the Egyptian <strong>Thoth</strong>. Its core texts, the <strong>Corpus Hermeticum</strong> (seventeen Greek treatises of the first to third centuries CE), blend Platonism, Egyptian religion, and Greek and Jewish mysticism. Where the Gnostics damned the cosmos, the Hermeticists revered it as a living whole shot through with the divine, and taught that the human being can, by purifying the mind and coming to <strong>know God</strong>, ascend through the planetary spheres, shedding a vice at each, until the soul is deified. The opening treatise, the <strong>Poimandres</strong>, records such a revelation; and the famous maxim <em>&ldquo;that which is below is like that which is above&rdquo;</em> became the classic statement of the <strong>correspondence</strong> between macrocosm and microcosm that underlies astrology, alchemy, and the later Western esoteric tradition. (Two honesty notes: the <strong>Emerald Tablet</strong>, where that formula is usually quoted, is a <em>later</em> medieval Arabic work, not Late-Antique; and the <strong>Kybalion</strong> of 1908 is a <em>modern</em> New Thought composition, not ancient Hermetic wisdom.)</p>
+
     <h2>Symbology and sacred encoding</h2>
     <p>Gnosticism is, in a sense, <strong>the tradition of sacred encoding itself</strong> &mdash; its whole premise is that the truth is <strong>hidden</strong>, available only to those with the spark. <strong>Abraxas: a name that is a number.</strong> The word <strong>ΑΒΡΑΣΑΞ</strong>, great Archon of Basilides&rsquo;s 365 heavens, is a masterpiece of Greek <strong>isopsephy</strong> (Chapter 15): its letters sum to exactly <strong>365</strong> &mdash; the number of the heavens and the days of the year &mdash; and it was carved on countless magical <strong>gems</strong>.</p>
     <p><strong>The serpent and the Ouroboros.</strong> The <strong>serpent</strong>, villain of orthodox Eden, is in Gnostic symbolism a figure of <strong>wisdom and liberation</strong>; the <strong>Ouroboros</strong>, the snake devouring its tail, encoded cosmic wholeness and appears in the <strong>Hermetic</strong> and alchemical currents that overlapped with Gnosticism (three Hermetic treatises were bound into the Nag Hammadi codices). <strong>The numbered cosmos</strong> &mdash; the <strong>thirty</strong> Aeons, the <strong>365</strong> heavens, the seven planetary Archons &mdash; turns cosmology into theology-by-enumeration, where to know each sphere&rsquo;s number and name helps the soul ascend past its guardians. And the <strong>Demiurge Yaldabaoth</strong>, the <strong>lion-headed serpent</strong>, is itself an encoded image of the arrogant power ruling matter.</p>
@@ -1440,6 +1545,7 @@ window.CHAPTERS = {
           <li>A <strong>family of movements</strong> in the 2nd&ndash;3rd centuries CE teaching a transcendent true God distinct from an inferior <strong>Demiurge</strong>, a trapped <strong>divine spark</strong>, and salvation by <strong>gnosis</strong> &mdash; attested by the hostile heresiologists and, since 1945, by the Gnostics&rsquo; own <strong>Nag Hammadi</strong> texts.</li>
           <li>The major schools and teachers &mdash; <strong>Sethian</strong>, <strong>Valentinus</strong>, <strong>Basilides</strong> &mdash; and their doctrines (the Sophia myth, thirty Aeons, three human natures, <strong>docetism</strong>, the 365 heavens and <strong>Abraxas</strong>).</li>
           <li>The <strong>Nag Hammadi</strong> discovery and its texts, the recovered <strong>Gospel of Judas</strong>, the <strong>Gospel of Thomas</strong> as 114 sayings; the survival of the <strong>Mandaeans</strong> and the spread of <strong>Manichaeism</strong>.</li>
+          <li><strong>Manichaeism</strong> as a major Late-Antique world religion (Mani; the absolute Light/Darkness dualism; the Elect and Hearers; the spread from Rome to China; Augustine&rsquo;s nine years as a Hearer), and <strong>Hermeticism</strong> (the Corpus Hermeticum; Hermes Trismegistus; the soul&rsquo;s ascent; &ldquo;as above, so below&rdquo;).</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1448,6 +1554,7 @@ window.CHAPTERS = {
           <li>The one-sided picture from the <strong>heresiologists</strong> alone &mdash; including their lurid accusations of Gnostic <strong>libertine orgies</strong>, which the Gnostics&rsquo; own (mostly <strong>ascetic</strong>) writings do not bear out and which were likely slander.</li>
           <li>That <strong>&ldquo;Gnosticism&rdquo; was a single, unified church</strong> with one doctrine &mdash; the sources show great diversity, and the category is contested.</li>
           <li>Treating the <strong>Gospel of Thomas</strong> or <strong>Judas</strong> as reliable historical accounts of Jesus&rsquo;s life rather than later theological/esoteric works.</li>
+          <li>Treating the <strong>Emerald Tablet</strong> as a Late-Antique Hermetic text (it is first attested in medieval Arabic sources) or the <strong>Kybalion</strong> (1908) as ancient Hermetic wisdom (it is modern New Thought).</li>
         </ul>
       </div>
       <div class="ev open">
@@ -1464,7 +1571,7 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>Gnostic systems and the Nag Hammadi discovery</h4>
       <ul>
-        <li><a href="https://iep.utm.edu/gnostic/">IEP: Gnosticism</a>; <a href="https://en.wikipedia.org/wiki/Nag_Hammadi_library">Nag Hammadi library</a>; on the category debate, Michael Williams, <em>Rethinking &ldquo;Gnosticism&rdquo;</em> and Karen King, <em>What Is Gnosticism?</em>.</li>
+        <li><a href="https://iep.utm.edu/gnostic/">IEP: Gnosticism</a>; <a href="https://en.wikipedia.org/wiki/Nag_Hammadi_library">Nag Hammadi library</a>; on the category debate, Michael Williams, <em>Rethinking &ldquo;Gnosticism&rdquo;</em> and Karen King, <em>What Is Gnosticism?</em>. Manichaeism &mdash; <a href="https://www.britannica.com/topic/Manichaeism">Britannica: Manichaeism</a>; Hermeticism &mdash; <a href="https://www.thecollector.com/hermes-trismegistus-hermeticism/">Hermes Trismegistus &amp; the Founding of Hermeticism</a> and (on the later Emerald Tablet) <a href="https://en.wikipedia.org/wiki/Emerald_Tablet">Emerald Tablet</a>.</li>
       </ul>
       <h4>Texts, and sacred encoding</h4>
       <ul>
@@ -1499,6 +1606,12 @@ window.CHAPTERS = {
     <h2>Why the mysteries rose, and the great rivalry</h2>
     <p>Civic religion (Chapters 8, 13) concerned the <strong>community&rsquo;s</strong> bond with the gods and asked nothing of the individual soul&rsquo;s eternal fate. But in the vast, anonymous empire, more people wanted a religion <strong>personal and chosen</strong>: an intimate savior, an emotional experience, a community, and a <strong>hope beyond death</strong>. The mysteries offered exactly this &mdash; and so, to the same hunger, did <strong>Christianity</strong>. Renan wrote that had Christianity been checked, the world might have become <strong>Mithraic</strong>. Observers note apparent <strong>parallels</strong> &mdash; initiation, ritual meals, rebirth language, savior-gods &mdash; but the popular claim that &ldquo;Christianity simply copied the mysteries&rdquo; is badly overstated, and honesty requires the correction: <strong>Mithras was not a dying-and-rising god</strong> (no death or resurrection appears in the Mithraic material); the <strong>chronology often runs the wrong way</strong> (Mithraism peaked <em>after</em> Christianity was established); the &ldquo;<strong>dying and rising god</strong>&rdquo; category itself (Frazer) is contested; and the debate is unusually <strong>bias-prone</strong> &mdash; a textbook zone of <strong>parallelomania</strong>. The sober truth: Christianity and the mysteries were <strong>siblings of the same age</strong>, drawing on a shared vocabulary and answering the same hungers, not copies of one another.</p>
 
+    <h2>The last pagan god: Sol Invictus</h2>
+    <p>Alongside the mysteries, the pagan world of Late Antiquity was drifting, on its own, toward something like monotheism &mdash; and its favored form was <strong>solar</strong>. As philosophers increasingly treated the many gods as faces of one supreme power, the <strong>Sun</strong> became that power&rsquo;s natural emblem, and Mithras, Apollo, Serapis, and the Syrian sun-gods blurred toward a single &ldquo;unconquered&rdquo; solar deity. In <strong>274 CE</strong> the emperor <strong>Aurelian</strong> made it official, founding a state cult of <strong>Sol Invictus</strong>, the &ldquo;Unconquered Sun,&rdquo; and setting its chief festival, the <em>Natalis Solis Invicti</em>, on <strong>25 December</strong>, near the winter solstice, when the shortened day is &ldquo;reborn.&rdquo; Here the empire came closest to a pagan monotheism of its own, and it is no accident that <strong>Constantine</strong>, even after his turn to Christianity, went on minting coins to the Unconquered Sun and keeping &ldquo;the day of the Sun&rdquo; (our Sunday). Whether Christmas was <em>taken over</em> from the solar feast is now genuinely debated &mdash; the reasoning may have run either way &mdash; but that the dying-and-reborn Sun and the risen Christ competed in the same December sky is beyond doubt. Solar henotheism was the pagan empire&rsquo;s last, and nearest, approach to the one God the new faith proclaimed.</p>
+
+    <h2>The twilight of the gods</h2>
+    <p>The mysteries did not simply fade; in the end they were closed down. The old cults lingered for generations after Constantine, and one emperor tried to bring them roaring back: <strong>Julian</strong> &mdash; Constantine&rsquo;s nephew, raised Christian but secretly devoted to the old gods and the Neoplatonic mysteries &mdash; became emperor in 361 and, in his brief reign (the church would call him <strong>Julian the Apostate</strong>), reopened the temples, restored the sacrifices, and funded a reformed pagan priesthood modeled, ironically, on Christian charity. His death in battle in <strong>363</strong> ended the experiment. Under <strong>Theodosius I</strong> the state turned decisively against paganism: laws in the <strong>390s</strong> banned public sacrifice and shut the temples, and by <strong>391&ndash;392</strong> Christianity was the sole legal religion. The <strong>Oracle of Delphi</strong> went silent, and the <strong>Eleusinian Mysteries</strong>, celebrated for nearly two thousand years, ended when the sacred site was sacked around <strong>396 CE</strong>. The secret paths to salvation did not so much vanish as go <strong>underground</strong>, surviving in the Hermetic and esoteric currents the later chapters follow.</p>
+
     <h2>Symbology and sacred encoding</h2>
     <p><strong>The tauroctony as a map of the heavens.</strong> The great encoded object of the mysteries is the Mithraic <strong>tauroctony</strong>, in which every element carries weight &mdash; the <strong>bull</strong>, the <strong>dog, snake, scorpion, raven</strong>, the <strong>sun and moon</strong>, the twin torchbearers (one up, one down), the <strong>cave</strong> as cosmos, and the ring of the <strong>zodiac</strong>. On the astronomical reading it is a <strong>star chart in mythic disguise</strong>; on any reading, a picture built to be <em>decoded</em> by those with the knowledge.</p>
     <p><strong>The ladder of the seven grades.</strong> The seven grades, each linked to a <strong>planet</strong>, appear to encode the <strong>ascent of the soul</strong> through the planetary spheres &mdash; a ritual ladder from Raven to Father, of a kind the Gnostics (Chapter 17) also mapped. <strong>The signs of Isis</strong> &mdash; the <strong>sistrum</strong> (sacred rattle), the <strong>tyet</strong> or &ldquo;knot of Isis,&rdquo; and the enthroned mother nursing <strong>Horus</strong> (whose resemblance to the later Madonna and Child is often noted, best treated as shared visual vocabulary). And the <strong>taurobolium</strong> encodes rebirth through blood &mdash; descent, drenching, emergence renewed.</p>
@@ -1514,6 +1627,7 @@ window.CHAPTERS = {
           <li>The reality and wide spread of the <strong>mystery cults</strong> (Mithras, Isis/Serapis, Cybele/Attis, Bacchus) as initiatory, secret, salvation-oriented religions existing alongside civic religion, and their core features (initiation, secrecy, personal savior, hope of a blessed afterlife).</li>
           <li>The archaeology of <strong>Mithraism</strong> (mithraea, seven grades, tauroctony), the literary account of an <strong>Isiac initiation</strong> in Apuleius, and the <strong>taurobolium</strong> (with inscriptions, some recording a 20-year validity).</li>
           <li>That the mysteries and <strong>Christianity</strong> were contemporaneous rivals answering a shared hunger for personal salvation.</li>
+          <li>The drift toward <strong>solar monotheism</strong> (Aurelian&rsquo;s Sol Invictus, 274 CE; the 25 December festival; Constantine&rsquo;s solar imagery) and the <strong>twilight</strong> of the mysteries &mdash; Julian&rsquo;s failed revival (361&ndash;363), Theodosius&rsquo;s anti-pagan laws (390s), and the end of Eleusis when the site was sacked c. 396 CE.</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1542,7 +1656,7 @@ window.CHAPTERS = {
       </ul>
       <h4>The parallels debate</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Parallelomania">Parallelomania</a>; <a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Dying-and-rising god</a> (the contested Frazerian category).</li>
+        <li><a href="https://en.wikipedia.org/wiki/Parallelomania">Parallelomania</a>; <a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Dying-and-rising god</a> (the contested Frazerian category). Sol Invictus (Aurelian, 274 CE) &mdash; <a href="https://www.britannica.com/topic/Sol-Invictus">Britannica: Sol Invictus</a>; the twilight of paganism &mdash; <a href="https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Persecution of pagans under Theodosius I</a> and the end of <a href="https://www.worldhistory.org/Eleusis/">Eleusis</a> (c. 396 CE).</li>
       </ul>
       <p class="source-note">Researched from standard reference and scholarly sources rather than memory alone. The chapter is careful about the evidence problem peculiar to secret cults &mdash; flagging that Mithraic doctrine is reconstructed from images alone and that the astronomical theory is unproven &mdash; corrects the overstated claim that Christianity copied the mysteries (noting Mithras was no dying-rising god, the adverse chronology, the contested category, and the danger of parallelomania and bias), distinguishes the Persian name of Mithra from the largely new Roman cult, and cross-references the Greek mysteries (Chapter 8), Rome (Chapter 13), and the era&rsquo;s rival salvation religions (Chapters 16&ndash;17). Written to be educational, and to present the mysteries on their own terms as one of antiquity&rsquo;s great answers to the fear of death.</p>
     </div>
@@ -1567,11 +1681,17 @@ window.CHAPTERS = {
     <h2>How the rabbis thought: the culture of argument</h2>
     <p>To open the Talmud is to enter a centuries-long argument, and its <strong>method</strong> matters as much as its content. Rabbinic thought proceeds by <strong>dialectic</strong> &mdash; question and objection, proof and refutation &mdash; and it <strong>preserves dissent</strong> rather than erasing it. The disputes of <strong>Hillel and Shammai</strong> stand side by side, and of them the Talmud declares: &ldquo;<strong>These and these are the words of the living God</strong>&rdquo; (though the law generally follows Hillel). This reverence for <strong>machloket</strong> &mdash; principled disagreement within a shared framework &mdash; made study itself the central religious act: in the <strong>beit midrash</strong> and the <strong>yeshiva</strong>, to argue over Torah was to worship. Few traditions have made <strong>intellectual debate</strong> so central a form of piety.</p>
 
+    <h2>&ldquo;It is not in heaven&rdquo;: the Oven of Akhnai</h2>
+    <p>One story crystallizes the whole rabbinic theology of authority. In a dispute over the purity of a certain oven, <strong>Rabbi Eliezer</strong> stood alone against the majority and called on miracles to prove he was right: a carob tree tore itself from the ground, a stream flowed backward, the walls of the study-house leaned in. The sages were unmoved. Finally a <strong>heavenly voice</strong> (<em>bat kol</em>) rang out that the law was as Rabbi Eliezer said &mdash; and <strong>Rabbi Yehoshua</strong> rose and answered, quoting Deuteronomy: &ldquo;<strong>It is not in heaven</strong>&rdquo; (Deut. 30:12). The Torah was given at Sinai and is no longer in heaven&rsquo;s keeping; it is now decided on earth, by the <strong>majority</strong> of the sages, through argument &mdash; not by miracles or voices from the sky. The tale ends with one of the most astonishing lines in religious literature: the prophet Elijah reports that in that moment <strong>God laughed and said, &ldquo;My children have defeated me, my children have defeated me.&rdquo;</strong> Interpretive authority had passed, by God&rsquo;s own will, from heaven to the human community of study &mdash; the charter of rabbinic Judaism.</p>
+
     <h2>God, law, and the world to come</h2>
     <p>Rabbinic theology intensified biblical monotheism while making God at once transcendent and intimate. The rabbis spoke of the <strong>Shekhinah</strong>, the divine <strong>Presence</strong>, which &mdash; in a teaching of great consolation &mdash; went <strong>into exile with Israel</strong>, dwelling among them wherever they were scattered. The <strong>covenant</strong> framed everything: Israel&rsquo;s calling was to keep the <strong>613 mitzvot</strong> that sanctify all of life. The tradition affirmed <strong>reward and punishment</strong>, the <strong>resurrection of the dead</strong>, and the <strong>world to come</strong> (<em>olam ha-ba</em>), and kept the hope of the <strong>Messiah</strong> &mdash; now <strong>chastened</strong> by Bar Kokhba into something more patient. And the <strong>Torah</strong> itself was exalted to cosmic status: pre-existent, the blueprint God consulted in creating the world.</p>
 
     <h2>A life without a Temple</h2>
     <p>The genius of rabbinic Judaism was practical: it built a complete way of life needing no Temple. <strong>Prayer</strong> replaced <strong>sacrifice</strong> &mdash; the daily <strong>Amidah</strong> explicitly standing in for the offerings, and the <strong>Shema</strong> (&ldquo;Hear, O Israel&hellip; the Lord is One&rdquo;) the twice-daily confession of God&rsquo;s oneness. The <strong>synagogue</strong> and <strong>house of study</strong> replaced the Temple; the <strong>Sabbath</strong>, <strong>kashrut</strong>, and festivals were reworked to be kept fully in the home, the family table becoming a kind of altar. <strong>Halakha</strong> &mdash; the law, &ldquo;the way of walking&rdquo; &mdash; extended to every corner of life, sanctifying the ordinary and binding scattered communities into one people under one law: a religion engineered for <strong>survival in dispersion</strong>.</p>
+
+    <h2>The synagogue floor: Helios among the Jews</h2>
+    <p>The rabbis wrote the law, but they did not yet rule every Jew &mdash; and nothing shows the gap between rabbinic ideal and popular practice more vividly than the floors of the late-antique synagogues. At <strong>Beth Alpha</strong> in the Galilee, and at Hammat Tiberias, Sepphoris, and other sites, congregations of the fourth to sixth centuries laid down splendid <strong>mosaic floors</strong> whose central panel is a <strong>zodiac wheel</strong> &mdash; with, at its very center, the Greco-Roman sun-god <strong>Helios</strong> driving his four-horse chariot, crowned with rays. Around him ran the twelve signs and the four seasons; elsewhere on the same floors sat the Ark, the menorah, and the binding of Isaac. That synagogues displayed a <strong>pagan sun-god and the zodiac</strong> underfoot, in apparent disregard of the second commandment, tells us something the Talmud alone would hide: the Judaism actually practiced in these towns was more visual, more astrological, and less strictly rabbinic than the sages&rsquo; texts suggest. The <strong>Dura-Europos</strong> synagogue in Syria (244 CE) goes further, its walls covered in the <strong>earliest surviving cycle of biblical paintings</strong>. These buildings are the material proof of this chapter&rsquo;s own caution: the rabbis were still a small elite, and the lived religion of the people ran broader than their law prescribed.</p>
 
     <h2>The move to Babylonia</h2>
     <p>Even as this took shape in the land of Israel, the center of gravity shifted <strong>east</strong>. The great community of <strong>Babylonia</strong> &mdash; outside Rome, under Persian (Zoroastrian, Chapter 6) rule &mdash; became the powerhouse of rabbinic Judaism, home to the academies of <strong>Sura</strong> and <strong>Pumbedita</strong> and to the <strong>exilarch</strong>. Here the <strong>Babylonian Talmud</strong> was produced, and here the intellectual heart of the Jewish world would beat for a thousand years, its later heads, the <strong>Geonim</strong>, guiding the diaspora into the medieval age.</p>
@@ -1592,6 +1712,7 @@ window.CHAPTERS = {
           <li>The <strong>destruction of the Temple in 70 CE</strong> and the failed <strong>Bar Kokhba revolt</strong>, and the transformation of Judaism into a religion of <strong>Torah study, prayer, and law</strong> carried by the heirs of the <strong>Pharisees</strong>.</li>
           <li>The <strong>Mishnah</strong> (c. 200 CE, Judah ha-Nasi), the two <strong>Talmuds</strong> (Jerusalem c. 400; Babylonian c. 500&ndash;600), and the <strong>Midrash</strong>; the doctrine of the <strong>Oral Torah</strong>; the culture of <strong>dialectical study</strong>; and the replacement of sacrifice by <strong>prayer</strong> and the <strong>synagogue</strong>.</li>
           <li>The rise of the <strong>Babylonian</strong> academies (Sura, Pumbedita) and the primacy of the <strong>Bavli</strong>; and the Late-Antique origins of Jewish <strong>mysticism</strong> (Merkabah/Hekhalot) and <strong>Sefer Yetzirah</strong>.</li>
+          <li>The rabbinic doctrine of interpretive authority in the <strong>Oven of Akhnai</strong> (&ldquo;It is not in heaven&rdquo;; the law follows the majority); and the evidence of a broader popular Judaism &mdash; the zodiac-and-<strong>Helios</strong> mosaic floors (Beth Alpha, Sepphoris) and the figurative biblical paintings at <strong>Dura-Europos</strong> (244 CE).</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1616,7 +1737,7 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <h4>The transformation, Yavneh, and the texts</h4>
       <ul>
-        <li><a href="https://www.britannica.com/biography/Johanan-ben-Zakkai">Britannica: Johanan ben Zakkai</a>; <a href="https://forward.com/community/392170/is-rabbinic-judaism-based-on-a-myth/">Forward: Is Rabbinic Judaism Based on a Myth?</a>; <a href="https://books.openbookpublishers.com/10.11647/obp.0219/introduction.xhtml">Diversity and Rabbinization</a>; <a href="https://en.wikipedia.org/wiki/Oral_Torah">Oral Torah</a>; <a href="https://www.britannica.com/topic/Mishna">Britannica: Mishna</a>.</li>
+        <li><a href="https://www.britannica.com/biography/Johanan-ben-Zakkai">Britannica: Johanan ben Zakkai</a>; <a href="https://forward.com/community/392170/is-rabbinic-judaism-based-on-a-myth/">Forward: Is Rabbinic Judaism Based on a Myth?</a>; <a href="https://books.openbookpublishers.com/10.11647/obp.0219/introduction.xhtml">Diversity and Rabbinization</a>; <a href="https://en.wikipedia.org/wiki/Oral_Torah">Oral Torah</a>; <a href="https://www.britannica.com/topic/Mishna">Britannica: Mishna</a>. The Oven of Akhnai (Bava Metzia 59b) &mdash; <a href="https://en.wikipedia.org/wiki/Not_in_Heaven">Wikipedia: Not in Heaven</a>; the synagogue mosaics &mdash; <a href="https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/">Astrology in the Ancient Synagogue</a>, <a href="https://en.wikipedia.org/wiki/Beth_Alpha">Beth Alpha</a>, and the <a href="https://en.wikipedia.org/wiki/Dura-Europos_synagogue">Dura-Europos synagogue</a>.</li>
       </ul>
       <h4>Sacred encoding &mdash; letters and mysticism</h4>
       <ul>
@@ -1645,8 +1766,14 @@ window.CHAPTERS = {
     <h2>Pure Land, and skillful means</h2>
     <p>The most far-reaching devotion was the cult of <strong>Amitabha</strong> and his <strong>Pure Land</strong>: he vowed that any being who called on him with sincere faith would be reborn in his paradise, <strong>Sukhavati</strong>, where awakening is assured &mdash; a path of <strong>salvation by faith and grace</strong> open to anyone who could utter his name, and one of the most popular forms of Buddhism in East Asia. It rhymes strikingly, in the same centuries, with the turn toward saving grace in Christianity and the mystery cults (Chapters 16, 18). And how did the Mahayana reconcile the new with the old? Through <strong>skillful means</strong> (<em>upaya</em>): the Buddha teaches each person exactly what they are ready to hear. The <strong>Lotus Sutra</strong>&rsquo;s parable of a father luring his children from a burning house with promised carts makes the earlier paths true but <strong>provisional</strong> &mdash; steps toward the one Great Vehicle that carries everyone.</p>
 
+    <h2>The goddess of mercy: how Avalokiteshvara became Guanyin</h2>
+    <p>One transformation deserves its own telling. The bodhisattva of compassion entered China as <strong>Avalokiteshvara</strong>, an unambiguously <strong>male</strong> figure (&ldquo;the lord who looks down&rdquo;). Over the following centuries he <strong>changed sex</strong>: from roughly the tenth century, images of the bodhisattva in China grew steadily more feminine, until by the Song dynasty <strong>Guanyin</strong> was firmly established as a <strong>goddess</strong> &mdash; the white-robed &ldquo;Goddess of Mercy,&rdquo; the compassionate mother who hears every cry, grants children to the childless, and rescues the desperate. The Lotus Sutra had opened the door: its twenty-fifth chapter, the &ldquo;Universal Gate,&rdquo; teaches that Avalokiteshvara manifests in <em>whatever form</em> &mdash; man or woman, monk or child, human or god &mdash; will best save a being. Chinese folk devotion filled that opening with the beloved legend of <strong>Princess Miaoshan</strong>, a king&rsquo;s daughter revealed after her martyrdom to be Guanyin. Today Guanyin is arguably the <strong>most widely worshipped deity in all of East Asia</strong> &mdash; a compassionate figure crossing not only a cultural border but the boundary of gender itself.</p>
+
     <h2>The texts &mdash; and an honest word on their origins</h2>
     <p>The Mahayana produced an enormous new body of <strong>sutras</strong>, presented as the Buddha&rsquo;s own words (<em>buddhavacana</em>): the <strong>Prajnaparamita</strong> corpus (Heart and Diamond Sutras), the <strong>Lotus Sutra</strong>, the <strong>Pure Land</strong> sutras, the <strong>Vimalakirti</strong> (in which a layman out-teaches the monks), the immense <strong>Avatamsaka</strong>, and more. Honesty requires a clear distinction: the tradition reveres these as the Buddha&rsquo;s teaching, but <strong>historically they were composed some four centuries after his death</strong>, from around the 1st century BCE. The tradition accounts for the gap by <em>upaya</em> and by legend &mdash; famously that the Prajnaparamita was entrusted to the <strong>nagas</strong> until humanity was ready and retrieved by Nagarjuna. What a tradition holds to be the Buddha&rsquo;s word and what the record dates to a given century are two different statements, both set down here.</p>
+
+    <h2>The cult of the book</h2>
+    <p>The Mahayana did something new with its scriptures: it made the <strong>sutra itself an object of worship</strong>. Again and again the texts promise vast <strong>merit</strong> to anyone who copies, recites, memorizes, or even honors them &mdash; and several declare that the very place where the sutra is kept or preached <strong>becomes a shrine of the Buddha</strong>, worthy of the reverence once reserved for his bodily relics. Scholars (notably Gregory Schopen) argue that this &ldquo;<strong>cult of the book</strong>&rdquo; was a deliberate move to raise text-devotion above the older relic-and-stupa piety, and it had enormous consequences: copying sutras became a central act of devotion across Asia and, in China, a major spur to the invention of <strong>printing</strong> &mdash; the world&rsquo;s oldest dated printed book is a copy of the <strong>Diamond Sutra</strong> (868 CE). In the Mahayana the word of the Buddha was not merely to be read but to be <strong>venerated</strong>.</p>
 
     <h2>How the Mahayana actually began, and how it spread</h2>
     <p>Recent scholarship has overturned the old picture. It was once taught that the Mahayana was a <strong>lay</strong> movement, a democratic revolt against a monastic elite; the evidence now points the other way &mdash; it was, for its first centuries, a <strong>minority movement of monks</strong>, text-devotees and forest ascetics living <em>within</em> the established communities, and a minority in India for a long time. Its destiny lay outward, along the <strong>Silk Road</strong>: carried through <strong>Central Asia</strong> to <strong>China</strong> by the early centuries CE, where &mdash; after a creative encounter with <strong>Daoism</strong> (Chapter 12) &mdash; it gave rise to <strong>Chan</strong> (later <strong>Zen</strong>), <strong>Pure Land</strong>, <strong>Tiantai</strong>, and <strong>Huayan</strong>, then passed to <strong>Korea, Japan, and Vietnam</strong>, and northward seeded the Buddhism of <strong>Tibet</strong>. The Great Vehicle became the Buddhism of half of Asia.</p>
@@ -1667,6 +1794,7 @@ window.CHAPTERS = {
           <li>The emergence of the <strong>Mahayana</strong> within Indian Buddhism around the 1st century BCE&ndash;1st century CE, centered on the <strong>bodhisattva</strong> ideal and universal compassion.</li>
           <li>The philosophy of <strong>emptiness</strong>, <strong>Nagarjuna</strong> and the <strong>Madhyamaka</strong>, the <strong>Prajnaparamita</strong> sutras, <strong>Yogachara</strong>, and the doctrines of <strong>buddha-nature</strong>, the <strong>trikaya</strong>, and <strong>skillful means</strong>.</li>
           <li>Devotion to celestial <strong>Buddhas and bodhisattvas</strong> and the <strong>Pure Land</strong>; the <strong>Silk Road</strong> spread to East Asia; and the revised understanding that the Mahayana was originally a <strong>minority, largely monastic</strong> movement.</li>
+          <li>The East Asian <strong>feminization of Avalokiteshvara into the goddess Guanyin</strong> (male in India, established as female by the Song; the Lotus Sutra&rsquo;s &ldquo;Universal Gate&rdquo; and the Miaoshan legend), and the Mahayana <strong>&ldquo;cult of the book&rdquo;</strong> &mdash; the sutra venerated as a shrine, copying meritorious (a spur to printing; the Diamond Sutra of 868 CE the oldest dated printed book).</li>
         </ul>
       </div>
       <div class="ev unsupported">
@@ -1695,7 +1823,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Origins scholarship and sacred encoding</h4>
       <ul>
-        <li>On the revised (monastic, minority) origins, Gregory Schopen and Jan Nattier (<em>A Few Good Men</em>); on Indra&rsquo;s Net, <a href="https://en.wikipedia.org/wiki/Indra's_net">Wikipedia: Indra&rsquo;s net</a> and the Avatamsaka Sutra.</li>
+        <li>On the revised (monastic, minority) origins, Gregory Schopen and Jan Nattier (<em>A Few Good Men</em>); the feminization of Avalokiteshvara into <a href="https://www.embodiedphilosophy.com/from-bodhisattva-to-goddess-guanyin-and-chinese-buddhism-2/">Guanyin</a> and the Miaoshan legend; the &ldquo;cult of the book&rdquo; and <a href="https://en.wikipedia.org/wiki/Sutra_copying">sutra copying</a>; on Indra&rsquo;s Net, <a href="https://en.wikipedia.org/wiki/Indra's_net">Wikipedia: Indra&rsquo;s net</a> and the Avatamsaka Sutra.</li>
       </ul>
       <p class="source-note">Researched from standard reference scholarship (Britannica, sourced overviews) and the mainstream Buddhist-studies scholarship of Williams, Schopen, and Nattier rather than memory alone. The chapter keeps the tradition&rsquo;s sacred claims (the sutras as <em>buddhavacana</em>; the cosmic Buddhas; Amitabha&rsquo;s vow) clearly distinct from the historical record (the sutras composed centuries after the Buddha; the minority monastic origins), notes that &ldquo;Hinayana&rdquo; is a pejorative not to be applied to Theravada, corrects the overturned &ldquo;lay movement&rdquo; theory, draws the careful cross-era resonance with the era&rsquo;s other savior religions without asserting influence, and reserves the Vajrayana/Tantra and the East Asian schools (Chan/Zen, Pure Land) for their own later chapters. Written to be educational, and closes the Late Antiquity era of this archive.</p>
     </div>
@@ -1782,6 +1910,1687 @@ window.CHAPTERS = {
         <li><a href="https://www.khanacademy.org/humanities/ap-art-history/introduction-cultures-religions-apah/islam-apah/a/the-five-pillars-of-islam">Khan Academy: The Five Pillars of Islam</a>; on the succession, Ali, and Karbala, standard reference overviews; <a href="https://www.metmuseum.org/essays/geometric-patterns-in-islamic-art">The Met: Geometric Patterns in Islamic Art</a>; <a href="https://en.wikipedia.org/wiki/Islamic_ornament">Islamic ornament</a>.</li>
       </ul>
       <p class="source-note">Researched from standard reference and scholarly sources (Britannica-level overviews, The Met, sourced encyclopedic entries, and the mainstream historical-critical scholarship they summarize) rather than memory alone. Following the faith-and-history note, the chapter keeps the historically attested (Muhammad&rsquo;s preaching and community; the Hijra; the conquests; the early codification supported by manuscript evidence; the Sunni&ndash;Shia split) rigorously separate from the claims of faith (the Qur&rsquo;an as God&rsquo;s uncreated word; the revelation; Muhammad&rsquo;s prophethood), presents the revisionist-vs-traditionalist debate fairly (the early manuscripts have tempered the most radical revisionism), flags the late and cautiously-read <em>sira</em> and hadith, corrects the late (Ottoman) origin of the crescent, and reserves Sufism and the later Islamic philosophical traditions for their own chapters. Written to respect both the tradition and the historical record without confusing the two.</p>
+    </div>
+  ` },
+  ch22: { html: `
+    <p class="lead">How a persecuted movement of house-churches became, over five centuries, a church with a canon, a creed, and an emperor &mdash; the age of the Fathers, from the letters of a bishop carried to his death to the councils that fixed what Christians would mean by the word &ldquo;God.&rdquo;</p>
+
+    <h2>&ldquo;I am the wheat of God&rdquo;</h2>
+    <p>Around the year 110, an old man was marched across Asia Minor under armed guard, bound for Rome and the beasts of the arena. He was <strong>Ignatius</strong>, bishop of <strong>Antioch</strong>, and as he travelled he wrote &mdash; seven letters to churches along the road, dictated in haste, urgent and strange. He begged the Roman Christians <em>not</em> to save him: <em>&ldquo;I am the wheat of God, and I am ground by the teeth of the wild beasts, that I may be found the pure bread of Christ.&rdquo;</em> He wrote of the bishop as the center of the church&rsquo;s unity, of the Eucharist as &ldquo;the medicine of immortality,&rdquo; of a Christ truly God and truly born and truly killed. Then the letters stop, and the tradition says the beasts did their work.</p>
+    <p>Those seven letters are among the oldest Christian writings outside the New Testament, and they open the period historians call the <strong>patristic age</strong> &mdash; the age of the <em>Fathers</em> (Latin <em>pater</em>), whose arguments, over roughly five centuries, turned a scattered movement into a church with fixed scriptures, defined doctrines, and a settled shape. This is the story of how that happened &mdash; and of how much of it can actually be known.</p>
+
+    <h2>A note on faith and history</h2>
+    <p>The method here is the one used for early Christianity and for Islam. History can study what these writers said, when they wrote, which texts are truly theirs, and how councils reached their decisions; the record for this age is unusually rich. History <strong>cannot</strong> rule on whether their doctrines are <em>true</em> &mdash; whether Christ is of one substance with the Father, whether the church&rsquo;s decisions were divinely guided. Those are claims of <strong>faith</strong>. What follows keeps the two apart: the human, traceable process of definition on one side; the theological claims it produced on the other, described but neither proven nor dismissed.</p>
+
+    <h2>The three ages of the Fathers</h2>
+    <p>Scholars sort the Fathers by their relation to the <strong>Council of Nicaea (325)</strong>: the <strong>Apostolic Fathers</strong> (c. 70&ndash;150, some believed to have known the apostles); the <strong>Ante-Nicene Fathers</strong> (mid-second century to 325); and the <strong>Nicene and Post-Nicene Fathers</strong>, who wrote during and after the great councils. The line is not arbitrary. Before Nicaea, Christianity had no empire-wide machinery for settling disputes, and orthodoxy was worked out letter by letter, city by city. After it, the emperor&rsquo;s councils could speak &mdash; in principle &mdash; for the whole church.</p>
+
+    <h2>The Apostolic Fathers</h2>
+    <p>The earliest of these writings date from roughly <strong>70&ndash;150</strong> and give the first glimpse of Christian life after the apostles.</p>
+    <ul>
+      <li><strong>1 Clement</strong>, a letter from Rome to Corinth (c. 96), already appeals to orderly succession in ministry.</li>
+      <li>The <strong>seven letters of Ignatius of Antioch</strong> (c. 110) press the authority of the single bishop and a high view of Christ and the Eucharist. Their authenticity is a genuine scholarly question: the modern consensus accepts the <strong>&ldquo;middle recension&rdquo;</strong> of seven letters, but that consensus rests heavily on <strong>J. B. Lightfoot&rsquo;s</strong> work of 1889, and a vocal tradition of dissent &mdash; especially in German scholarship &mdash; argues the shorter recension is closer to the original, or that the whole corpus is a later forgery meant to backdate episcopal authority.</li>
+      <li><strong>Polycarp of Smyrna</strong>, said to have known the apostle John, left a letter to Philippi; his death is told in the <em>Martyrdom of Polycarp</em>, one of the earliest martyr-acts.</li>
+      <li>The <strong>Didache</strong> (&ldquo;Teaching of the Twelve Apostles&rdquo;), a short church manual on baptism, the Eucharist, and morals, is often dated near <strong>100</strong> &mdash; though estimates range from 50 to the fourth century, since the text is composite and undated.</li>
+      <li>The <strong>Shepherd of Hermas</strong>, the <strong>Epistle of Barnabas</strong>, and the fragments of <strong>Papias</strong> round out the collection. Several were read as scripture in some churches before the canon closed.</li>
+    </ul>
+
+    <h2>The apologists</h2>
+    <p>As the second century wore on, educated converts defended the faith to outsiders in the language of Greek philosophy. <strong>Justin Martyr</strong> (c. 100&ndash;165) argued that the <em>Logos</em>, the divine Word, had been at work in the best of pagan thought &mdash; so that Socrates was, in a sense, a Christian before Christ; he was executed at Rome. <strong>Tatian</strong>, <strong>Athenagoras</strong>, and <strong>Theophilus of Antioch</strong> (who coined <em>Trias</em>, &ldquo;Triad&rdquo;) wrote in the same vein. Here Christianity began to think of itself as a philosophy that could argue in the forum, not only a sect that met in houses.</p>
+
+    <h2>Heresy and the making of orthodoxy</h2>
+    <p>Nothing shaped the early church so much as its internal fights. &ldquo;Orthodoxy&rdquo; &mdash; right belief &mdash; was largely defined <em>against</em> movements later judged wrong. <strong>Marcion</strong> (c. 140) taught that the God of the Hebrew scriptures was a lesser deity distinct from the Father of Jesus, and built the first known Christian <strong>canon</strong>: an edited Luke and ten letters of Paul, purged of Jewish content. The church&rsquo;s answer was to define <em>its</em> scriptures &mdash; and Marcion is a chief reason it had to. The many <strong>Gnostic</strong> systems offered secret knowledge; <strong>Montanism</strong> claimed fresh prophecy. Against all of them stood <strong>Irenaeus of Lyons</strong> (c. 180), whose <em>Against Heresies</em> set out the tools orthodoxy would use for centuries: the <strong>rule of faith</strong>, <strong>apostolic succession</strong>, and a fixed set of exactly <strong>four Gospels</strong>.</p>
+    <h3>The canon</h3>
+    <p>The list of accepted books came together slowly. The <strong>Muratorian Fragment</strong> (c. 170&ndash;200) names most of the New Testament but not all. Not until <strong>Athanasius&rsquo;s Thirty-Ninth Festal Letter of 367</strong> do we find the exact <strong>twenty-seven books</strong> of the present New Testament listed as canonical &mdash; though, as scholars caution, this was the first surviving <em>complete</em> list, not the moment the canon was invented; it ratified a consensus already largely formed. Councils at <strong>Hippo (393)</strong> and <strong>Carthage (397)</strong> confirmed it. The <strong>Old Testament</strong> canon stayed contested &mdash; Greek churches used the larger Septuagint; Jerome argued for the shorter Hebrew list &mdash; a disagreement that survives in the difference between Catholic and Protestant Bibles today.</p>
+
+    <h2>The Latin beginnings</h2>
+    <p>Christianity&rsquo;s Latin voice was born in North Africa. <strong>Tertullian</strong> of Carthage (c. 155&ndash;220), a convert of ferocious wit, gave Latin theology much of its vocabulary &mdash; he was first to use <em>Trinitas</em> (Trinity) and <em>persona</em> for the three &mdash; and asked, &ldquo;What has Athens to do with Jerusalem?&rdquo;, even as he used philosophy; he ended among the Montanists. <strong>Cyprian</strong> of Carthage (d. 258) faced a lasting crisis: after persecution, what to do with the <em>lapsi</em>, those who had renounced the faith under threat and now wanted back? His insistence on the bishop&rsquo;s authority and the church&rsquo;s unity &mdash; &ldquo;outside the church there is no salvation&rdquo; &mdash; shaped Western thinking on ministry and sacraments, and the rigorist backlash produced the <strong>Novatianist</strong> schism.</p>
+
+    <h2>Alexandria: Clement and Origen</h2>
+    <p>In <strong>Alexandria</strong>, the intellectual capital of the Greek world, Christianity produced its first great scholars. <strong>Clement of Alexandria</strong> (c. 150&ndash;215) wove Greek learning into a Christian vision of the soul&rsquo;s ascent. His successor <strong>Origen</strong> (c. 185&ndash;253) was the most brilliant and most controversial mind of the early church: he produced the <em>Hexapla</em>, a six-column comparison of Old Testament versions; wrote <em>On First Principles</em>, the first systematic theology; and read scripture on multiple levels. But some speculations &mdash; the <strong>pre-existence of souls</strong>, a subordination of the Son, and the <em>apokatastasis</em>, a final restoration of all &mdash; were judged heretical after his death. He is often said to have been <strong>anathematized at the Second Council of Constantinople (553)</strong>, though recent scholarship notes the surviving anti-Origen anathemas may belong to a local synod of <strong>543</strong> under Justinian rather than the ecumenical council. Either way, the church kept much of his method while condemning his conclusions.</p>
+
+    <h2>The blood of martyrs</h2>
+    <p>For its first three centuries the church lived under intermittent, mostly local, sometimes savage persecution. The <em>Passion of Perpetua and Felicity</em> records the death of a young mother at Carthage around <strong>203</strong> &mdash; part of it written, apparently, in <strong>Perpetua&rsquo;s own hand</strong>, which makes it one of the earliest surviving texts by a Christian woman and a rare first-person martyr&rsquo;s diary. The last and worst assault came under <strong>Diocletian</strong>: the <strong>Great Persecution</strong> began in <strong>February 303</strong> with the destruction of the church at Nicomedia and edicts ordering scriptures burned. Tertullian&rsquo;s line became the church&rsquo;s motto: &ldquo;the blood of the martyrs is the seed of the church.&rdquo; Within a decade, everything changed.</p>
+
+    <h2>Constantine and the imperial church</h2>
+    <p>In <strong>312</strong>, on the eve of the Battle of the <strong>Milvian Bridge</strong>, the emperor <strong>Constantine</strong> experienced what his biographers called a vision &mdash; the accounts of <strong>Lactantius</strong> and <strong>Eusebius</strong> differ on the details &mdash; and fought under a Christian sign. He won; in <strong>313</strong> the <strong>Edict of Milan</strong> granted toleration. Within a generation Christianity went from hunted to favored to, under <strong>Theodosius (380)</strong>, the official religion of the empire. This was liberation and entanglement at once: now the emperor called and enforced councils, and doctrinal disputes became affairs of state.</p>
+
+    <h2>The great councils</h2>
+    <p>With imperial backing, the church could at last try to settle its deepest question &mdash; <em>who, exactly, is Jesus Christ?</em> &mdash; for everyone at once.</p>
+    <ul>
+      <li><strong>Nicaea (325)</strong>, called by Constantine, faced <strong>Arius</strong>, who held the Son was the highest creature, so that &ldquo;there was when he was not.&rdquo; Against him the council declared the Son <strong>homoousios</strong> &mdash; &ldquo;of the same substance&rdquo; &mdash; as the Father: truly God, not a creature. The young deacon <strong>Athanasius</strong> became the doctrine&rsquo;s tireless champion through decades of exile.</li>
+      <li><strong>Constantinople (381)</strong>, under Theodosius, affirmed the full divinity of the <strong>Holy Spirit</strong>, guided by the <strong>Cappadocian Fathers</strong> &mdash; <strong>Basil of Caesarea</strong>, <strong>Gregory of Nazianzus</strong>, and <strong>Gregory of Nyssa</strong> &mdash; whose formula of <em>one substance (ousia) in three persons (hypostases)</em> gave the <strong>Trinity</strong> its classic shape. The &ldquo;Nicene Creed&rdquo; is really the creed of these two councils.</li>
+      <li><strong>Ephesus (431)</strong> condemned <strong>Nestorius</strong> for so dividing Christ&rsquo;s natures that Mary could not be called <em>Theotokos</em>, &ldquo;God-bearer.&rdquo;</li>
+      <li><strong>Chalcedon (451)</strong> defined that Christ exists &ldquo;in <strong>two natures</strong>,&rdquo; divine and human, &ldquo;without confusion, without change, without division, without separation,&rdquo; in one person.</li>
+    </ul>
+    <p>Chalcedon settled the matter for most &mdash; but not all. Churches that found its language too divisive rejected it, holding to the <strong>one incarnate nature</strong> of the Word (the position scholars now call <strong>miaphysite</strong>). The resulting <strong>Chalcedonian schism</strong> endures: the <strong>Oriental Orthodox</strong> churches &mdash; Coptic, Armenian, Syriac, Ethiopian &mdash; and, over the earlier dispute, the <strong>Church of the East</strong>, have never returned to communion with the Chalcedonian churches. Christianity&rsquo;s first great and permanent divisions were doctrinal, and they were sealed in this age.</p>
+
+    <h2>The doctors, East and West</h2>
+    <p>The fourth and fifth centuries were the golden age of Christian writing. In the <strong>East</strong>, beside Athanasius and the Cappadocians stood <strong>John Chrysostom</strong> (&ldquo;golden-mouthed&rdquo;), the great preacher. In the <strong>West</strong>, three figures set the course of Latin Christianity:</p>
+    <ul>
+      <li><strong>Ambrose</strong> of Milan, who faced down an emperor and baptized Augustine.</li>
+      <li><strong>Jerome</strong> (c. 347&ndash;420), who learned Hebrew from a Jewish teacher and, on Pope Damasus&rsquo;s commission, produced the <strong>Vulgate</strong> &mdash; a Latin Bible translated between roughly <strong>382 and 405</strong> from the Hebrew and Greek originals. His insistence on the <em>veritas Hebraica</em>, &ldquo;the truth of the Hebrew,&rdquo; made it the Bible of the Latin West for a thousand years.</li>
+      <li><strong>Augustine</strong> of Hippo (354&ndash;430), the most influential theologian in Western history. His <em>Confessions</em> invented Christian autobiography; his <em>City of God</em> answered those who blamed Christianity for Rome&rsquo;s fall. Against the British monk <strong>Pelagius</strong> &mdash; who held that people can choose righteousness by their own will &mdash; Augustine developed <strong>original sin</strong> (inherited from Adam) and the priority of <strong>grace</strong>, without which no one can even will the good. The <strong>Council of Carthage (418)</strong> condemned Pelagianism, and Augustine&rsquo;s vision of sin, grace, and predestination shaped Western Christianity, Catholic and Protestant alike, ever after.</li>
+    </ul>
+    <p>The age closes with bridges to the medieval world: <strong>Gregory the Great</strong> (pope 590&ndash;604) in the West, and in the East <strong>John of Damascus</strong> (d. 749), often counted the last of the Greek Fathers.</p>
+
+    <h2>The desert and the rule</h2>
+    <p>While bishops argued in cities, a different revolution unfolded in the sand. In the third and fourth centuries Christians withdrew into the deserts of Egypt, Palestine, and Syria to seek God through prayer and self-denial. <strong>Antony the Great</strong> (c. 251&ndash;356), whose <em>Life</em> Athanasius wrote, became the model <strong>hermit</strong>; <strong>Pachomius</strong> (d. 348) gathered monks into shared communities, founding <strong>cenobitic</strong> (common-life) monasticism. From these <strong>Desert Fathers and Mothers</strong> came the terse <em>Sayings</em>. In the West, <strong>Basil&rsquo;s</strong> rule shaped Greek monasticism, and around <strong>530</strong> <strong>Benedict of Nursia</strong> wrote the <strong>Rule</strong> that would govern Western monastic life for centuries &mdash; a balance of prayer, study, and labor that quietly preserved learning through the upheavals to come.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Persecution made the early Christians a people of <strong>hidden signs</strong>, and their symbols carry encoded meaning still.</p>
+    <ul>
+      <li>The <strong>fish</strong> (Greek <em>ichthys</em>) was the great secret emblem, read as an <strong>acrostic</strong>: <strong>I</strong>&#275;sous <strong>Ch</strong>ristos <strong>Th</strong>eou <strong>Y</strong>ios <strong>S</strong>&#333;t&#275;r &mdash; &ldquo;<strong>Jesus Christ, God&rsquo;s Son, Savior.</strong>&rdquo; The earliest clear witness is <strong>Clement of Alexandria</strong> (c. 200); <strong>Tertullian</strong> called the faithful &ldquo;little fishes&hellip; born in the water&rdquo; after their <em>Ichthys</em>. Scratched on walls, the fish let believers know one another without a word.</li>
+      <li>The <strong>Chi-Rho</strong> (&#9767;) overlaid the first two Greek letters of <em>Christos</em>. It is the sign <strong>Eusebius</strong> says Constantine set on the imperial standard, the <strong>labarum</strong> &mdash; though <strong>Lactantius</strong> describes a different mark (a <strong>staurogram</strong>, a Tau-Rho resembling a cross), and the Chi-Rho appears on Constantine&rsquo;s coins only from about <strong>319&ndash;320</strong>. What exactly he saw and used is genuinely mixed in the evidence.</li>
+      <li><strong>Alpha and Omega</strong> (&#913; &#937;), first and last letters of the Greek alphabet, encoded Christ&rsquo;s words, &ldquo;I am the beginning and the end.&rdquo;</li>
+      <li>Scribes wrote sacred names &mdash; God, Jesus, Christ, Lord &mdash; in contracted form under a bar, the <em>nomina sacra</em>, a distinctively Christian habit that set holy words visibly apart.</li>
+      <li>On the <strong>catacomb</strong> walls believers painted a symbolic language &mdash; the <strong>Good Shepherd</strong> with a lamb, the <strong>orant</strong> praying with raised hands, the anchor, the dove, the vine &mdash; rather than literal scenes.</li>
+      <li>And in <strong>Revelation</strong> lies the most famous encoded number in history: <strong>666</strong>, &ldquo;the number of the beast.&rdquo; The widely held reading is <strong>gematria</strong> &mdash; the letters of &ldquo;<strong>Nero Caesar</strong>&rdquo; in Hebrew (<em>nrwn qsr</em>) sum to 666. Tellingly, some ancient manuscripts read <strong>616</strong>, which matches the Latin form of the name (<em>nrw qsr</em>) &mdash; a variant that fits the Nero theory almost too well. A real, documented case of number-symbolism in scripture, distinct from later, unfounded pattern-hunting.</li>
+    </ul>
+
+    <h2>Connections</h2>
+    <p>Patristic Christianity is the hinge of this era. It grew out of the <strong>early Christianity</strong> and <strong>Second Temple Judaism</strong> of the previous age and defined itself partly against the <strong>Gnosticism</strong> of its own. Its councils fixed the doctrines that <strong>Islam</strong>, arising in the seventh century, would explicitly reject &mdash; the Trinity and Christ&rsquo;s divinity &mdash; even as Islam honored Jesus as prophet and shared the Abrahamic inheritance. Its monasticism paralleled ascetic currents in Buddhism and Manichaeism. And the divisions it sealed &mdash; Chalcedonian against non-Chalcedonian, and later Greek East against Latin West &mdash; still map the Christian world.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The existence, dating, and content of the major patristic writings, and the fact and decisions of the four great councils (<strong>325, 381, 431, 451</strong>).</li>
+          <li>The reality of the persecutions and of <strong>Constantine&rsquo;s</strong> turn; the gradual, traceable formation of the <strong>canon</strong>, with Athanasius&rsquo;s list of <strong>367</strong> the first surviving complete one.</li>
+          <li>The historical <strong>schism</strong> of the Oriental Orthodox and the Church of the East after Chalcedon. All rest on abundant contemporary documents.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The <strong>theological claims</strong> the councils defined &mdash; the Son <em>homoousios</em> with the Father, the Spirit&rsquo;s full divinity, Christ in two natures &mdash; are matters of <strong>faith</strong>, recorded here as belief, neither proven nor disproven.</li>
+          <li>That the councils&rsquo; decisions were <strong>divinely guided</strong>, or that Constantine&rsquo;s vision was from God &mdash; claims history can describe but not adjudicate.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The authenticity and original form of the <strong>Ignatian letters</strong> (the seven-letter middle recension is the majority view, not a settled fact), and the <strong>date of the Didache</strong> (a century-wide range).</li>
+          <li>Whether the ecumenical council of <strong>553</strong>, or only a local synod of <strong>543</strong>, condemned Origen.</li>
+          <li>Exactly what sign <strong>Constantine</strong> saw and used at the Milvian Bridge, given the conflicting accounts of Lactantius and Eusebius, and his precise motives.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>The Fathers, the councils, and the canon</h4>
+      <ul>
+        <li><a href="https://www.britannica.com/event/First-Council-of-Nicaea-325">Britannica: First Council of Nicaea (325)</a>; <a href="https://www.britannica.com/event/First-Council-of-Constantinople-381">First Council of Constantinople (381)</a>; <a href="https://en.wikipedia.org/wiki/Chalcedonian_schism">Chalcedonian schism (451 and after)</a>; <a href="https://en.wikipedia.org/wiki/Apostolic_Fathers">Apostolic Fathers</a>.</li>
+        <li><a href="https://evidenceunseen.com/theology/historical-theology/ignatius-of-antioch">Ignatius of Antioch: recension and authenticity debate</a>; <a href="https://www.earlychurch.org.uk/article_didache.html">Chris Thomas, The Didache: Its Origin and Significance</a>; <a href="https://en.wikipedia.org/wiki/Muratorian_fragment">Muratorian Fragment and canon formation</a>; <a href="https://michaeljkruger.com/10-misconceptions-about-the-nt-canon-10-athanasius-festal-letter-367-a-d-is-the-first-complete-list-of-new-testament-books/">Kruger on Athanasius&rsquo;s 367 canon list</a>.</li>
+      </ul>
+      <h4>Doctrine, monasticism, symbols, and dispute</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Synod_of_Constantinople_(543)">Origen and the 543/553 condemnation (disputed attribution)</a>; <a href="https://learn.ligonier.org/articles/pelagian-controversy">Sproul on the Pelagian controversy (Carthage 418)</a>; <a href="https://www.britannica.com/topic/Vulgate">Britannica: the Vulgate</a>; <a href="https://en.wikipedia.org/wiki/Desert_Fathers">Desert Fathers, Antony, Pachomius, Benedict</a>; <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Perpetua and Felicity; Diocletian&rsquo;s persecution</a>.</li>
+        <li><a href="https://www.newadvent.org/cathen/06083a.htm">Catholic Encyclopedia: Symbolism of the Fish (ichthys acrostic)</a>; <a href="https://en.wikipedia.org/wiki/Labarum">Chi-Rho, labarum, staurogram, Constantine&rsquo;s vision</a>; <a href="https://weekly.israelbiblecenter.com/666-or-616">666 / 616 as gematria for Nero Caesar</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly sources (Britannica-level overviews, the Catholic Encyclopedia, and sourced encyclopedic entries summarizing mainstream patristics and church-history scholarship) rather than memory alone. Following the faith-and-history note, the chapter keeps the historically traceable process (the writings, the councils, the canon&rsquo;s formation, the persecutions, the schisms) rigorously separate from the claims of faith the process defined (the Trinity, Christ&rsquo;s two natures, the Spirit&rsquo;s divinity, divine guidance of the councils), presents live scholarly debates fairly (the Ignatian recensions, the Didache&rsquo;s date, the 543-vs-553 condemnation of Origen, the conflicting accounts of Constantine&rsquo;s sign), and reserves Gnosticism, Eastern and Western monastic developments, and the later medieval church for their own chapters. Written to respect both the tradition and the historical record without confusing the two.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch23 */
+  ch23: { html: `
+    <p class="lead">The religion of the Viking Age, reconstructed from a ship full of a dead woman&rsquo;s belongings, a handful of poems written down by Christians two centuries too late, and the stones the Norse themselves carved &mdash; and the hard problem of telling what they believed from what their converters said they believed.</p>
+
+    <h2>The woman in the ship</h2>
+    <p>In the spring of 1904, archaeologists cutting into a low mound on the Oseberg farm in southeastern Norway found a ship &mdash; a sleek, oak, ninth-century vessel, its prow curling into a carved spiral &mdash; buried whole in blue clay that had sealed out the air and kept the wood, the textiles, even the ropes. Inside were two women, one old and one younger, laid amid the freight of a world: sledges, a carved wagon, beds, looms, kitchen gear, and the slaughtered bodies of some fifteen horses, four dogs, and two oxen. Tree-ring dating later fixed the burial to <strong>834 CE</strong>.</p>
+    <p>Among the grave goods were a tall wooden staff and a small leather pouch of cannabis seeds. To many archaeologists these are the marks of a <strong>v&ouml;lva</strong> &mdash; a seeress, a practitioner of the trance-magic the Norse called <em>sei&eth;r</em>. If they are right, the Oseberg mound is the grave of a religious specialist, buried with the tools of her art and provisioned, in the old way, for a journey. That &ldquo;if&rdquo; is the whole difficulty of this chapter. The staff might be a staff; the seeds might be seeds. Norse paganism is a religion we largely <strong>reconstruct</strong> &mdash; from objects whose meaning we infer, and from texts written down by the Christians who had already replaced it.</p>
+
+    <h2>The problem of the sources</h2>
+    <p>There is no Norse scripture. The people who worshipped Odin and Thor left almost nothing that explains, in their own words and their own time, what they believed the gods to be. What we have falls into two very different kinds.</p>
+    <p>The <strong>contemporary</strong> evidence is fragmentary and hard to read: <strong>runestones</strong> and picture stones, amulets and grave goods, place-names, and above all <strong>skaldic poetry</strong> &mdash; the dense, allusive court verse of Norwegian and Icelandic poets from the ninth century on, whose kennings (compressed metaphors like &ldquo;Odin&rsquo;s theft&rdquo; for poetry) only work if poet and audience already shared a body of myth. Skaldic verse is the strongest check we have, because its rigid meter makes later tampering detectable and its imagery reaches back to the ninth century.</p>
+    <p>The <strong>systematic</strong> evidence &mdash; the ordered mythology, the family tree of the gods, the shape of the cosmos &mdash; comes almost entirely from <strong>Christian Iceland, two centuries after conversion</strong>. The <strong>Prose Edda</strong> was written by the chieftain and scholar <strong>Snorri Sturluson</strong> around <strong>1220&ndash;1230</strong>, as a handbook to teach young poets the old pagan imagery their craft still required. The <strong>Poetic Edda</strong> survives mainly in the <strong>Codex Regius</strong>, an Icelandic manuscript of about <strong>1270</strong>; its poems are older than the manuscript, some genuinely reaching into the pagan age, but they were copied and arranged by Christian hands. The <strong>sagas</strong>, written in the 1200s and after, describe pagan practice as historical memory. Our fullest, most beloved picture of Norse religion is, in short, a <strong>Christian antiquarian&rsquo;s reconstruction</strong> of a faith his own ancestors had abandoned &mdash; sympathetic, but systematizing.</p>
+
+    <h2>The shape of the world</h2>
+    <p>At the center of the Norse cosmos stands <strong>Yggdrasil</strong>, the world-tree, an immense ash whose roots and branches hold the worlds together. Around it are ranged the <strong>Nine Worlds</strong> &mdash; a number the <em>V&ouml;lusp&aacute;</em> names, though the sources never give one clean, agreed list of what all nine are. The realms most clearly attested include <strong>Asgard</strong> of the gods; <strong>Midgard</strong>, the world of humans, ringed by an ocean in which the world-serpent lies; <strong>J&ouml;tunheim</strong> of the giants; <strong>Niflheim</strong> of primordial ice and <strong>Muspelheim</strong> of primordial fire; <strong>Hel</strong>, the realm of the dead; and the worlds of elves and dwarves. The neat modern chart of nine labelled realms is itself partly a scholarly and Snorric tidying of a mythology that was never so orderly.</p>
+    <p>Creation begins in <strong>Ginnungagap</strong>, the yawning void between fire and ice, where the first being, the giant <strong>Ymir</strong>, takes shape; the gods slay him and build the world from his body. It ends in <strong>Ragnar&ouml;k</strong> &mdash; &ldquo;the doom of the powers&rdquo; &mdash; when the wolf Fenrir breaks loose, the world-serpent rises, the fire-giant Surtr burns the world, and Odin, Thor, Freyr, and T&yacute;r fall in a final battle. Yet the vision is not simply extinction: the earth rises again from the sea, a few gods survive, and two humans, <strong>L&iacute;f and L&iacute;f&thorn;rasir</strong>, shelter within the world-tree to repeople it. How much of this cyclical, almost redemptive ending is genuinely pagan, and how much <em>V&ouml;lusp&aacute;</em> has absorbed from Christian ideas of apocalypse and renewal, is a real and unsettled question.</p>
+
+    <h2>The gods</h2>
+    <p>The Norse divided their gods into two families who had once gone to war and then made peace: the <strong>&AElig;sir</strong> &mdash; gods of sky, war, sovereignty, and law &mdash; and the <strong>Vanir</strong>, fewer and older, gods of fertility, wealth, and the sea. The <strong>&AElig;sir&ndash;Vanir War</strong>, ended by an exchange of hostages, is often read as the mythic memory of two cults merging.</p>
+    <ul>
+      <li><strong>Odin</strong> (&Oacute;&eth;inn), chief of the &AElig;sir &mdash; god of war and death, but also of poetry, prophecy, ecstasy, and the runes. A restless, ambiguous, dangerous god who hangs himself nine nights on the world-tree, wounded by his own spear, to win the runes, and trades an eye for a drink from the well of wisdom. He gathers the battle-slain to <strong>Valhalla</strong>.</li>
+      <li><strong>Thor</strong> (&THORN;&oacute;rr), Odin&rsquo;s son, the thunder-god, defender of gods and humans against the giants, wielder of the hammer <strong>Mj&ouml;lnir</strong>. On the evidence of place-names and amulets he was the most <em>popularly</em> worshipped of all &mdash; the god of the ordinary free farmer.</li>
+      <li>The <strong>Vanir</strong> &mdash; <strong>Nj&ouml;r&eth;r</strong> of the sea and wealth, and his children <strong>Freyr</strong> and <strong>Freyja</strong> &mdash; governed fertility and prosperity. Freyr was lord of harvest, sunshine, and peace; Freyja, goddess of love, gold, and the battle-slain (she takes half the dead), and the divine mistress of <em>sei&eth;r</em>.</li>
+      <li><strong>Loki</strong>, blood-brother to Odin, the trickster &mdash; a giant among the gods, by turns their rescuer and their betrayer, and father of the monsters who will destroy them. <strong>Baldr</strong>, the beloved god whose death Loki engineers, is the first casualty on the road to Ragnar&ouml;k. <strong>T&yacute;r</strong>, an old law- and sky-god, gives his hand to bind the wolf; <strong>Frigg</strong>, Odin&rsquo;s wife, knows all fates but tells none.</li>
+    </ul>
+
+    <h2>Worship: the bl&oacute;t and the temple</h2>
+    <p>Norse worship centered on the <strong>bl&oacute;t</strong> &mdash; a sacrifice, most often of animals, at which the blood (<em>bl&oacute;&eth;</em>) was sprinkled on altars, idols, and worshippers, and the meat boiled and eaten in a communal feast, with toasts drunk to the gods for a good year and peace. Bl&oacute;ts marked the turning of the seasons and were held at farms, in sacred groves, and in cult buildings the Norse called a <em>hof</em>.</p>
+    <p>The most famous &mdash; and most contested &mdash; account comes from <strong>Adam of Bremen</strong>, a German cleric writing in the <strong>1070s</strong>, who describes a gilded <strong>temple at Uppsala</strong> where, every nine years, nine males of every living kind, humans among them, were sacrificed and hung in a sacred grove. Adam is a problem witness: he never saw Uppsala, he wrote to glorify the archbishopric of Hamburg-Bremen and to paint heathenism as barbarous, and archaeology has not confirmed a temple building of the kind he describes. Others note that excavation <em>has</em> found post-holes of large halls, ritual deposits, and animal bones consistent with cult feasting, and that <strong>human sacrifice</strong>, while rare, is genuinely attested in the wider Germanic record. The honest position: bl&oacute;t and cult feasting are well founded; the lurid specifics of Adam&rsquo;s Uppsala are not.</p>
+
+    <h2>Sei&eth;r and the seeress</h2>
+    <p>Beside the public bl&oacute;t ran a current of magic. <strong>Sei&eth;r</strong> was a trance-craft &mdash; used to see the future, shift luck, curse, and heal &mdash; associated above all with <strong>Freyja</strong>, who was said to have taught it to Odin, and practised chiefly by women, the <strong>v&ouml;lur</strong> (seeresses). A v&ouml;lva travelled from farm to farm, was seated on a high platform, and with chanted songs and sometimes an altered state, prophesied. The craft carried a whiff of shame when men practised it, and scholars have long noted its resemblance to the shamanism of the neighboring <strong>S&aacute;mi</strong>. Its physical trace may be the iron and wooden <strong>staffs</strong> found in a number of rich female graves &mdash; including Oseberg &mdash; read by many as v&ouml;lur&rsquo;s wands, though the reading, like so much here, is inference from object to belief.</p>
+
+    <h2>Death, honor, and law</h2>
+    <p>The Norse imagined several fates for the dead: the battle-slain to Odin&rsquo;s <strong>Valhalla</strong> or Freyja&rsquo;s hall, the rest to <strong>Hel</strong>, a shadowed underworld that was not, in origin, a place of punishment. The dead were buried or cremated with the goods, and sometimes the ships, of their station &mdash; the <strong>ship burials</strong> of Oseberg and Gokstad are the grandest expression of a belief that death was a passage to be provisioned for.</p>
+    <p>Norse religion was not a code of commandments but an ethic of <strong>honor, reciprocity, and fate</strong>. The gnomic poem <strong>H&aacute;vam&aacute;l</strong> (&ldquo;Sayings of the High One&rdquo;) preserves its practical wisdom: guard your reputation, keep your word, repay gift with gift and treachery with treachery, for &ldquo;cattle die, kinsmen die&hellip; but the fair fame of one who has earned it never dies.&rdquo; Law and cult were bound together in the <strong>&thorn;ing</strong> (assembly): oaths were sworn on sacred rings reddened with sacrificial blood, and the free community, not a priesthood, governed itself. Iceland&rsquo;s <strong>Al&thorn;ingi</strong>, founded around 930, is the outstanding example &mdash; a pagan commonwealth run by chieftains (<strong>go&eth;ar</strong>) who were at once political leaders and cult officiants.</p>
+
+    <h2>Archaeology: what the ground shows</h2>
+    <p>The material record is the firmest ground. The <strong>Oseberg (834)</strong> and <strong>Gokstad (c. 890)</strong> ship burials, dated by tree-rings, preserve Viking-Age ritual in extraordinary detail. Across Scandinavia, thousands of graves, hoards, cult-halls, and deposits map a living religion. <strong>Thor&rsquo;s-hammer amulets</strong> of silver and iron, worn at the neck, are found in great numbers &mdash; and tellingly they multiply in the conversion period, as if worn in deliberate answer to the Christian cross. More than <strong>four hundred picture stones</strong> on <strong>Gotland</strong>, many showing scenes now read as mythological (an eight-legged horse taken for Odin&rsquo;s Sleipnir on the Tj&auml;ngvide and Ardre stones), carry the imagery without the systematizing text. This is the evidence that does not depend on a Christian pen.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Norse belief was written into signs as much as stories &mdash; and here the line between attested ancient practice and modern revival must be drawn carefully.</p>
+    <ul>
+      <li>The <strong>runes</strong> were both an alphabet and, the Norse believed, a source of power &mdash; Odin wins them through self-sacrifice, and the word <em>r&uacute;n</em> itself carries the sense of &ldquo;secret.&rdquo; The older <strong>Elder Futhark</strong> (24 characters, from c. 2nd century CE) gave way in the Viking Age to the streamlined <strong>Younger Futhark</strong> (16 characters, from c. 8th century). Genuinely magical inscriptions survive &mdash; protective or invocatory words like <em>alu</em>, curses, and dedications on weapons, amulets, and bracteates. But the modern practice of <strong>drawing lettered stones for divination</strong> is a <strong>20th-century invention</strong>, not an attested Viking rite; the sagas&rsquo; seeresses use <em>sei&eth;r</em>, not a bag of rune-tiles.</li>
+      <li><strong>Bind runes</strong> (<em>bandr&uacute;n</em>) &mdash; two or more runes overlaid into a single glyph &mdash; are genuinely attested on Viking-Age artifacts, though many elaborate meanings assigned to particular binds today are modern.</li>
+      <li><strong>Mj&ouml;lnir</strong>, Thor&rsquo;s hammer, is the best-documented sacred symbol &mdash; hundreds of pendant amulets survive, a few bearing runic inscriptions. The <strong>valknut</strong>, a knot of three interlocking triangles found on picture stones near Odinic and death imagery, is often read as a symbol of the slain &mdash; but its very name is modern and its exact meaning genuinely uncertain, a caution against over-reading.</li>
+      <li>The <strong>Gotland picture stones</strong> encode myth in image rather than word &mdash; a symbolic visual language whose scenes we interpret, sometimes confidently and often not, against the later written myths.</li>
+    </ul>
+
+    <h2>The end of the old gods</h2>
+    <p>Norse paganism did not so much collapse as get legislated away. Missionary kings &mdash; <strong>Olaf Tryggvason</strong> and later Olaf Haraldsson in Norway &mdash; pressed conversion by force and favor. The sharpest surviving snapshot is <strong>Iceland in the year 1000</strong>, where Christian and pagan factions at the <strong>Al&thorn;ingi</strong> stood on the edge of civil war. Both sides agreed to accept the ruling of the law-speaker, <strong>&THORN;orgeir &THORN;orkelsson</strong> &mdash; himself a pagan priest &mdash; who lay a day and a night under a cloak in silence and then declared that Iceland would have &ldquo;one law and one religion&rdquo;: all would be baptized, but old customs, including private sacrifice, would be tolerated for a time. It is one of history&rsquo;s rare records of a people voting, peacefully, to change gods.</p>
+
+    <h2>Connections</h2>
+    <p>Norse paganism is the northern survival of the older <strong>Germanic and Celtic</strong> religion of the previous era, sharing gods (Odin/Woden/Wotan, T&yacute;r/Tiw) and a common Indo-European inheritance. Its magic shadows the <strong>shamanism of the S&aacute;mi</strong>. It stood, in this era, as the great pagan counterweight to the advancing <strong>Christianity</strong> whose patristic settlement fills the neighboring chapters &mdash; and its symbols, the hammer against the cross, record that contest directly. Long after conversion, its runes and charms fed the <strong>Icelandic folk-magic</strong> grimoires of the early-modern period, and in the twentieth century it was consciously revived as <strong>&Aacute;satr&uacute;/Heathenry</strong>, a modern new religious movement that reconstructs the old faith from the same fragmentary sources examined here.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The practice of <strong>bl&oacute;t</strong> (animal sacrifice and cult feasting), and rich <strong>ship and chamber burials</strong> provisioned for the dead, dendro-dated to the ninth century (Oseberg 834, Gokstad c. 890).</li>
+          <li>The worship of <strong>Thor, Odin, and Freyr</strong>, attested by place-names, amulets, and ninth-century skaldic verse; the <strong>runic scripts</strong> and their genuine use in some magical and invocatory inscriptions.</li>
+          <li>The wide use of <strong>Mj&ouml;lnir amulets</strong>, rising in the conversion era; and the <strong>legal conversion of Iceland around 1000</strong>, recorded in the sagas.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>That the tidy, fully systematized mythology of Snorri&rsquo;s <em>Edda</em> &mdash; the exact roster of Nine Worlds, the precise genealogy of the gods &mdash; was believed in that ordered form by ordinary pagans; it is largely a <strong>13th-century Christian reconstruction</strong>.</li>
+          <li>That modern <strong>rune-tile divination</strong> was an ancient Viking practice; it is a modern revival.</li>
+          <li>That Adam of Bremen&rsquo;s <strong>Uppsala temple</strong>, with its nine-yearly mass human sacrifice, occurred as described; the account is late, second-hand, and shaped by anti-pagan polemic, and archaeology has not confirmed its specifics.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>How much of <em>V&ouml;lusp&aacute;</em>&rsquo;s cyclical, renewing <strong>Ragnar&ouml;k</strong> is pagan and how much is Christian influence.</li>
+          <li>Whether the Oseberg staff and pouch truly mark a <strong>v&ouml;lva</strong>, or are being read through later expectation; and the real extent of <strong>human sacrifice</strong>.</li>
+          <li>The precise meaning of symbols like the <strong>valknut</strong>, whose modern name outruns the ancient evidence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Texts, cosmology, and the gods</h4>
+      <ul>
+        <li><a href="https://www.newworldencyclopedia.org/entry/Poetic_Edda">Poetic Edda and the Codex Regius (c. 1270)</a>; <a href="https://en.wikipedia.org/wiki/Prose_Edda">Snorri&rsquo;s Prose Edda (c. 1220&ndash;1230)</a>; <a href="https://www.britannica.com/topic/Edda">Britannica: Edda, dating and skaldic verse</a>.</li>
+        <li><a href="https://www.worldhistory.org/article/1305/nine-realms-of-norse-cosmology/">World History Encyclopedia: the Nine Realms, &AElig;sir and Vanir</a>; <a href="https://en.wikipedia.org/wiki/Yggdrasil">Yggdrasil, Ragnar&ouml;k, L&iacute;f and L&iacute;f&thorn;rasir</a>.</li>
+      </ul>
+      <h4>Worship, magic, death, and archaeology</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Temple_at_Uppsala">Adam of Bremen and the Temple at Uppsala (reliability debate)</a>; <a href="https://www.worldhistory.org/Temple_at_Uppsala/">World History Encyclopedia: Uppsala</a>; <a href="https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/religion-magic-death-and-rituals/human-sacrifices/">National Museum of Denmark: human sacrifice as real but exceptional</a>.</li>
+        <li><a href="https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/religion-magic-death-and-rituals/the-magic-staffs-of-the-seeresses/">National Museum of Denmark: sei&eth;r, the v&ouml;lva, and the magic staffs</a>; <a href="https://www.britannica.com/topic/Oseberg-ship">Britannica: the Oseberg ship</a>.</li>
+      </ul>
+      <h4>Symbology and the end of the old religion</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Runic_magic">Runic magic: Elder and Younger Futhark, genuine inscriptions vs. modern divination</a>; <a href="https://en.wikipedia.org/wiki/Picture_stone">Gotland picture stones (Tj&auml;ngvide, Ardre)</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Christianization_of_Iceland">Christianization of Iceland (c. 1000): &THORN;orgeir, the Al&thorn;ingi, &ldquo;one law and one religion&rdquo;</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and museum/scholarly sources during drafting rather than from memory. Because Norse religion is recovered mostly from Christian-era texts (Snorri&rsquo;s Edda, the Codex Regius) and from mute objects, the chapter keeps the contemporary check &mdash; skaldic verse, runestones, and archaeology &mdash; distinct from the later systematized mythology, and draws an explicit line between attested ancient practice (bl&oacute;t, Mj&ouml;lnir amulets, magical runic inscriptions) and modern revival (rune-tile divination, most bind-rune meanings). Live debates &mdash; Christian influence on Ragnar&ouml;k, the v&ouml;lva reading of the Oseberg staff, the extent of human sacrifice, and the reliability of Adam of Bremen &mdash; are left open rather than resolved. S&aacute;mi religion and modern &Aacute;satr&uacute; are noted as connections and reserved for fuller treatment elsewhere.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch24 */
+  ch24: { html: `
+    <p class="lead">The esoteric revolution that swept across early-medieval India and Buddhism alike &mdash; a ritual technology of mantra, diagram, and the subtle body that made the human being a map of the universe &mdash; and the careful work of separating what the tradition teaches, what history can date, and what a century of Western reinvention has laid on top of it.</p>
+
+    <h2>The circle of the sixty-four</h2>
+    <p>On a low rise at Khajuraho, in central India, stands a temple unlike the famous carved spires nearby: an <strong>open-air ring of stone shrines</strong>, roofless, arranged in a great rectangle open to the sky. It is the <strong>Chausath Yogini</strong> temple &mdash; &ldquo;the sixty-four yoginis&rdquo; &mdash; and it is the oldest surviving building at the Chandela capital, dated to about <strong>885 CE</strong>. Once it held sixty-four cells for the images of the <em>yogin&#299;s</em>, fierce and powerful goddesses attendant on the Great Goddess, with a sixty-fifth shrine for the deity herself. Thirty-five cells survive. Here, the tradition holds, rites were performed under the yoginis&rsquo; gaze that were never meant for the ordinary temple crowd.</p>
+    <p>The open circle of yoginis is one of the few things Tantra left standing in plain sight, and it is a fitting emblem &mdash; because Tantra is a religion of the hidden. Its central texts are written in code, its practices are transmitted only from teacher to initiate, and much of what the modern world thinks it knows about it is a recent invention. This chapter is about a genuine and enormously influential current in early-medieval religion &mdash; and about the unusual care needed to describe it.</p>
+
+    <h2>What &ldquo;Tantra&rdquo; is &mdash; and is not</h2>
+    <p><strong>&ldquo;Tantra&rdquo;</strong> (from a Sanskrit root meaning &ldquo;to weave,&rdquo; hence &ldquo;loom,&rdquo; &ldquo;system,&rdquo; &ldquo;continuity&rdquo;) names, most narrowly, a class of ritual scriptures. But <strong>&ldquo;Tantrism&rdquo; as a single -ism is a scholarly construct</strong> &mdash; a category assembled by Western Indologists in the nineteenth century to group diverse Hindu and Buddhist esoteric practices that their own practitioners never gathered under one name. That guards against the commonest error: treating &ldquo;Tantra&rdquo; as one doctrine rather than a family resemblance among many.</p>
+    <p>What those traditions share is an approach. Tantra arose in India no later than the <strong>fifth century CE</strong>, flowered from roughly <strong>600 to 1100</strong>, and appears in both <strong>Hinduism and Buddhism</strong>. It seeks not only liberation (<em>mok&#7779;a</em> or <em>nirv&#257;&#7751;a</em>) but also <strong>power</strong> (<em>siddhi</em>), through the ritual channeling of divine energy &mdash; <strong>&#347;akti</strong> &mdash; and it works by aligning the human microcosm with the cosmic whole through <strong>mantras</strong> (sacred sound), <strong>yantras</strong> and <strong>mandalas</strong> (sacred diagrams), visualization, and above all <strong>initiation</strong> (<em>d&#299;k&#7779;&#257;</em>) under a <strong>guru</strong>. Its scriptures are written in a veiled &ldquo;<strong>twilight language</strong>&rdquo; (<em>sandh&#257;bh&#257;&#7779;&#257;</em>) that, the tradition insists, cannot be read without a teacher.</p>
+
+    <h2>The textual record</h2>
+    <p>The Hindu tantric scriptures are the <strong>&#256;gamas</strong> (where &#346;iva instructs the Goddess) or <strong>Nigamas</strong>, treating four domains &mdash; metaphysical knowledge (<em>j&#241;&#257;na</em>), yoga, ritual (<em>kriy&#257;</em>), and conduct (<em>cary&#257;</em>). The <strong>Shaiva</strong> Agamas, the <strong>Shakta</strong> Tantras of the Goddess, and the <strong>Vaishnava</strong> Pancharatra Samhitas each form vast bodies of text, most surviving in manuscripts of the seventh to tenth centuries.</p>
+    <p>The Buddhist tantras were later sorted into a rising series &mdash; <strong>Kriy&#257;, Cary&#257;, Yoga, and Anuttarayoga</strong> (highest) tantras. The most advanced, the <strong>Mah&#257;yoga</strong> and <strong>Yogin&#299;</strong> tantras, emerged between the eighth and tenth centuries: the <strong>Guhyasam&#257;ja</strong>, <strong>Cakrasa&#7747;vara</strong>, and <strong>Hevajra</strong> tantras, the last composed in eastern India in the late eighth to tenth century. They introduced the coded language of advanced practice &mdash; deity visualization, charnel-ground meditation, wrathful deities, and the ritual use of substances and sexual yoga &mdash; hedged in secrecy within. Dating any of this precisely is hard, and honestly so: the texts are esoteric, often undated, orally transmitted, and deliberately obscure.</p>
+
+    <h2>The body as a map of the cosmos</h2>
+    <p>Tantra&rsquo;s most influential idea is the <strong>subtle body</strong>. Beneath the gross physical body lies an energetic one threaded by channels (<em>n&#257;&#7693;&#299;</em>) &mdash; said to number 72,000, with three chief ones: the central <strong>su&#7779;umn&#257;</strong> up the spine and the <strong>i&#7693;&#257;</strong> and <strong>pi&#7749;gal&#257;</strong> spiralling around it. Where they meet sit the <strong>chakras</strong>, &ldquo;wheels,&rdquo; each imagined as a lotus with a <strong>seed-syllable</strong> (<em>b&#299;ja</em> mantra) at its heart. Coiled at the base sleeps <strong>ku&#7751;&#7693;alin&#299;</strong>, the serpent-power, a form of &#346;akti; the goal of much tantric yoga is to wake her and draw her up the central channel to union with <strong>&#346;iva</strong> at the crown &mdash; the microcosmic image of the reuniting of God and Goddess, consciousness and energy.</p>
+    <p>It must be said plainly: the subtle body is a <strong>contemplative and experiential map, not a claim about anatomy</strong>. No dissection finds a chakra or a n&#257;&#7693;&#299;, and the tradition, at its most careful, does not say one would. It is a religious model of inner experience &mdash; powerful, coherent, hugely influential &mdash; and it is a category error, common in modern popular writing, to treat it as physiology.</p>
+
+    <h2>The deities and the schools</h2>
+    <p>Tantric Hinduism is above all a religion of <strong>&#346;iva</strong> and the <strong>Goddess</strong> &mdash; &#346;iva in his fierce form as <strong>Bhairava</strong>; the Goddess as dark <strong>K&#257;l&#299;</strong>, as the serene <strong>Tripurasundar&#299;</strong> of the &#346;r&#299; Vidy&#257; tradition, or as the ring of <strong>yogin&#299;s</strong>. In nondual Shaiva theology &#346;iva is pure consciousness and &#346;akti his inseparable power, and the aim is to realize one&rsquo;s identity with that divine ground. In tantric <strong>Buddhism</strong>, the practitioner visualizes and identifies with a chosen deity (<em>yidam</em>) &mdash; often a wrathful cremation-ground figure like <strong>Hevajra</strong> or <strong>Cakrasa&#7747;vara</strong> &mdash; as a technique for realizing emptiness.</p>
+    <ul>
+      <li><strong>Kashmir Shaivism</strong> (Trika), arising after c. <strong>850 CE</strong>, found its great synthesizer in <strong>Abhinavagupta</strong> (c. <strong>950&ndash;1020</strong>), whose encyclopedic <strong>Tantr&#257;loka</strong> (some 5,800 verses in 37 chapters) wove every available Shaiva stream into a single nondual philosophy of consciousness &mdash; one of the towering intellects of Indian thought, squarely of this era.</li>
+      <li>The <strong>K&#257;p&#257;likas</strong> (&ldquo;skull-bearers&rdquo;) and <strong>Kaulas</strong>, radical ascetics who wrote the <strong>Bhairava Tantras</strong>, imitated their ferocious god: smeared with cremation ash, carrying a skull-bowl, propitiating their deities with the impure and deliberately breaking caste and purity taboos. Their descendants include the <strong>Aghoris</strong>.</li>
+      <li>The <strong>&#346;&#257;kta</strong> traditions of the Goddess, especially <strong>&#346;r&#299; Vidy&#257;</strong> around the &#346;r&#299; Yantra, carried tantric worship into more &ldquo;right-handed&rdquo; forms; the <strong>N&#257;th</strong> yogis systematized the subtle-body yoga that later fed ha&#7789;ha yoga.</li>
+      <li>In Buddhism, the <strong>Vajray&#257;na</strong> (&ldquo;thunderbolt vehicle&rdquo;) descended from the wandering <strong>mah&#257;siddhas</strong>, the &ldquo;great adepts.&rdquo;</li>
+    </ul>
+
+    <h2>Ritual and the two hands</h2>
+    <p>After <strong>d&#299;k&#7779;&#257;</strong> from a guru, the initiate works with <strong>mantra</strong>, <strong>yantra</strong>, <strong>ny&#257;sa</strong> (ritually installing mantras and deities onto the body by touch), <strong>mudr&#257;</strong> (gesture), and elaborate visualization. Tradition drew a famous distinction between the &ldquo;<strong>right-hand</strong>&rdquo; path (<em>dak&#7779;i&#7751;&#257;c&#257;ra</em>), which kept the transgressive elements symbolic, and the &ldquo;<strong>left-hand</strong>&rdquo; path (<em>v&#257;m&#257;c&#257;ra</em>), which enacted them.</p>
+    <p>The left-hand rites center on the <strong>pa&#241;camak&#257;ra</strong>, the &ldquo;<strong>five Ms</strong>&rdquo;: <em>madya</em> (wine), <em>m&#257;&#7747;sa</em> (meat), <em>matsya</em> (fish), <em>mudr&#257;</em> (parched grain), and <em>maithuna</em> (ritual sexual union) &mdash; the five things orthodox purity most forbade, consumed in a tightly bounded ritual frame to dissolve the ego&rsquo;s divisions of pure and impure. Whether particular lineages performed the fifth M literally or read the whole set symbolically is a <strong>genuine and unresolved scholarly question</strong>; the sources range from the plainly literal to the frankly allegorical, and the secrecy around the rite means the reality is often not recoverable. What must be resisted is both the old <strong>outsider&rsquo;s caricature</strong> of orgy and the modern <strong>sanitizing</strong> that pretends the literal rites never existed.</p>
+
+    <h2>Buddhist Vajray&#257;na and the road to Tibet</h2>
+    <p>Tantric Buddhism grew from the <strong>mah&#257;siddhas</strong> of eastern and northwestern India; its texts appeared from perhaps the sixth or seventh century, with the term <em>Vajray&#257;na</em> first attested in the eighth. Its method is <strong>deity yoga</strong>: a vivid identification with an enlightened being to actualize buddhahood swiftly. In <strong>747</strong>, tradition holds, the master <strong>Padmasambhava</strong> carried these teachings into Tibet, anchoring the Nyingma lineage; after a persecution, a <strong>second diffusion</strong> in the late tenth and eleventh centuries reintroduced the later cycles &mdash; the Hevajra and Cakrasa&#7747;vara tantras among them &mdash; and set Tibetan Buddhism on the tantric path it has followed since. These centuries are precisely the age of that transmission.</p>
+
+    <h2>Material record: temples of the yoginis</h2>
+    <p>Tantra&rsquo;s clearest physical trace is the <strong>yogin&#299; temple</strong> &mdash; around thirteen survive across India, eight in Madhya Pradesh, most built between the ninth and twelfth centuries. Their <strong>open, circular, roofless</strong> plan, unique in Indian temple architecture, set the sky itself as the ceiling over the ring of goddesses, marking them as spaces for rites outside the ordinary temple order; they are associated with the K&#257;p&#257;lika and Kaula streams. At Khajuraho more broadly, the <strong>Chandela temples</strong> (c. 950&ndash;1050) carry the famous erotic sculpture &mdash; a fraction of the total carving, and one whose exact relation to tantric ritual is debated, but which belongs to the same world in which the sacred and the sexual were not held apart.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Tantra is, more than almost any tradition in this book, a religion of <strong>encoded form</strong> &mdash; of sound and diagram treated as the very body of the divine.</p>
+    <ul>
+      <li><strong>Mantra</strong>: the tantric mantra is not merely a prayer but a <strong>sonic form of the deity</strong>. The <strong>b&#299;ja</strong> or &ldquo;seed&rdquo; syllables &mdash; <em>o&#7747;</em>, <em>hr&#299;&#7747;</em>, <em>&#347;r&#299;&#7747;</em>, <em>ai&#7747;</em> &mdash; carry no dictionary meaning; they are held to be the deity in the form of sound, one to each chakra. To speak the seed is to invoke the power.</li>
+      <li><strong>Yantra</strong>: a sacred diagram, the deity in geometric form. The supreme example is the <strong>&#346;r&#299; Yantra</strong> &mdash; <strong>nine interlocking triangles</strong> (four &ldquo;male,&rdquo; pointing up, and five &ldquo;female,&rdquo; pointing down) radiating from a central point, the <strong>bindu</strong>, enclosed in lotus petals and a square frame, the <strong>bh&#363;pura</strong>, with four gates. The practitioner meditates <strong>inward</strong> from the outer frame (earth and body) through the petals (the senses) and the triangles (the play of &#346;iva and &#346;akti) to the <strong>bindu</strong>, the dimensionless point of pure consciousness &mdash; a map of the cosmos and of the path drawn as one figure.</li>
+      <li><strong>Mandala</strong>: the Buddhist counterpart, a circular palace of the deity into which the initiate is symbolically led.</li>
+      <li><strong>Ny&#257;sa and mudr&#257;</strong>: the ritual writing of mantras onto the body by touch, and the coded language of hand-gestures, encode the divine directly into flesh and posture.</li>
+      <li><strong>Twilight language</strong> (<em>sandh&#257;bh&#257;&#7779;&#257;</em>): the double-coding of the tantras themselves, in which a word means one thing to the uninitiated and another to the initiate &mdash; a lock built into scripture against the unprepared.</li>
+    </ul>
+    <p>A firm line must be drawn here, as the tradition&rsquo;s own honesty demands. The <strong>classical</strong> system above is well attested in medieval texts. But the familiar modern <strong>seven-chakra rainbow</strong>, with its fixed colors and one-to-one map to glands and psychology, is substantially a <strong>twentieth-century synthesis</strong> &mdash; shaped by early translators and Western esoteric and New Age reworking &mdash; not a straight transcription of the medieval sources, which vary in the number and character of the centers. And the popular Western equation of <strong>&ldquo;Tantra&rdquo; with sacred sex</strong> is a <strong>modern distortion</strong>: classical Tantra is overwhelmingly mantra, visualization, and ritual, in which sexual yoga is one bounded, secret, contested element of some left-hand lineages, not the heart of the thing.</p>
+
+    <h2>Connections</h2>
+    <p>Tantra grew out of the <strong>Vedic and Puranic Hinduism</strong> and the <strong>Mahayana Buddhism</strong> of earlier eras and reshaped both from within. It fed directly into <strong>Tibetan Buddhism</strong> (the neighboring transmissions of this very period), into the <strong>N&#257;th</strong> yogis and thence <strong>ha&#7789;ha yoga</strong>, into the devotional <strong>Bhakti</strong> movements of the next era, and into the &#346;r&#299; Vidy&#257; worship still living today. Its coded diagrams rhyme with the sacred geometry of Islam and the Kabbalah of the same centuries. And in the twentieth century its vocabulary &mdash; chakras, kundalini, mantra, mandala &mdash; became, in reworked form, part of the global language of yoga and the New Age, which is exactly why separating the medieval reality from the modern overlay matters so much here.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>A vast tantric scriptural corpus in both Hinduism and Buddhism from roughly the fifth century on; the historical reality of <strong>Abhinavagupta</strong> (c. 950&ndash;1020) and the <strong>Tantr&#257;loka</strong>.</li>
+          <li>The <strong>K&#257;p&#257;lika/Kaula</strong> ascetic traditions and their transgressive reputation; the <strong>yogin&#299; temples</strong> and their distinctive open plan (Khajuraho c. 885).</li>
+          <li>The rise of <strong>Vajray&#257;na</strong> and its transmission to <strong>Tibet</strong> across these centuries; and the core technology of <strong>mantra, yantra, mandala, initiation, and the subtle-body model</strong>.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history or science)</h4>
+        <ul>
+          <li>That the <strong>chakras and n&#257;&#7693;&#299;s</strong> are anatomical structures &mdash; they are a contemplative model of inner experience, not physiology.</li>
+          <li>That the popular <strong>seven-chakra color system</strong> is the unaltered medieval teaching &mdash; it is largely a modern synthesis.</li>
+          <li>That <strong>&ldquo;Tantra&rdquo; means sacred sex</strong> &mdash; a modern Western distortion of a mostly ritual and meditative tradition.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The precise <strong>dating and authorship</strong> of most tantric texts, given their esoteric, oral, deliberately obscure transmission.</li>
+          <li><strong>How literally</strong> particular lineages performed the pa&#241;camak&#257;ra, especially the fifth M &mdash; the sources genuinely differ and the secrecy is real.</li>
+          <li>The exact <strong>relationship</strong> between Khajuraho&rsquo;s erotic sculpture and tantric ritual, and how much inner practice was ever written down at all.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Definition, texts, schools</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Tantra">Tantra: esoteric traditions in Hinduism and Buddhism; &ldquo;Tantrism&rdquo; as a 19th-c. construct</a>; <a href="https://www.encyclopedia.com/philosophy-and-religion/eastern-religions/hinduism/tantra">Encyclopedia.com: dating, Agamas, twilight language</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Abhinavagupta">Abhinavagupta (c. 950&ndash;1020) and the Tantr&#257;loka; Kashmir Shaivism</a>; <a href="https://en.wikipedia.org/wiki/Kapalika">K&#257;p&#257;lika and Kaula; Bhairava Tantras</a>; <a href="https://en.wikipedia.org/wiki/Vamachara">V&#257;m&#257;c&#257;ra and the pa&#241;camak&#257;ra (literal vs. symbolic)</a>.</li>
+      </ul>
+      <h4>Subtle body, symbology, Vajray&#257;na, temples</h4>
+      <ul>
+        <li><a href="https://yogajala.com/bija-mantra-101/">Subtle body, n&#257;&#7693;&#299;s, chakras, kundalini, b&#299;ja mantras</a>; <a href="https://www.yogabasics.com/connect/yoga-blog/sri-yantra/">the &#346;r&#299; Yantra: nine triangles, bindu, bh&#363;pura, inward meditation</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Vajrayana">Vajray&#257;na: mah&#257;siddhas, Guhyasam&#257;ja/Cakrasa&#7747;vara/Hevajra, Padmasambhava (747), second diffusion to Tibet</a>; <a href="https://en.wikipedia.org/wiki/Chausath_Yogini_Temple,_Khajuraho">Chausath Yogini Temple, Khajuraho (c. 885); the yogin&#299; temples</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly sources during drafting rather than from memory. Because Tantra is unusually overlaid by modern reinvention, the chapter separates what the medieval tradition teaches, what history can date, and what later Western reworking added: the classical mantra/yantra/subtle-body system is presented as attested medieval teaching, while the seven-chakra color scheme and the popular &ldquo;Tantra = sacred sex&rdquo; image are flagged as largely 20th-century constructions, and the subtle body is treated as a contemplative model, never as anatomy. Transgressive left-hand practice is described with the same descriptive rigor as any other tradition &mdash; neither sensationalized nor sanitized &mdash; and live debates (text dating, how literal the five Ms were, the meaning of Khajuraho&rsquo;s sculpture) are left open. Tibetan Buddhism, N&#257;th/ha&#7789;ha yoga, Bhakti, and modern global yoga are reserved for their own chapters.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch25 */
+  ch25: { html: `
+    <p class="lead">Japan&rsquo;s religion of the kami &mdash; a faith with no founder and, for most of its history, no separate name, so entangled with Buddhism that scholars still argue whether &ldquo;Shinto&rdquo; as an independent religion existed at all before modern times &mdash; reconstructed from an eighth-century imperial chronicle, a shrine torn down and rebuilt every twenty years, and the hard task of separating ancient kami-worship from its later reinventions.</p>
+
+    <h2>The shrine that is always new</h2>
+    <p>At <strong>Ise</strong>, in central Japan, stands the holiest shrine of the kami &mdash; a simple structure of unpainted <strong>cypress</strong>, raised on posts, roofed in thatch, in a style so plain it looks older than any temple. Beside it lies an empty plot of raked gravel the same size and shape. Every twenty years the shrine is <strong>torn down and built again, exact in every joint, on that neighboring ground</strong>, the deity moved to the new hall and the old one dismantled &mdash; a ritual called the <strong>shikinen seng&#363;</strong>, carried out for roughly <strong>1,300 years</strong>, most recently begun in 2025. The point is not decay but renewal: the building is mortal so that the form, the craft, and the presence within it can be endlessly, perfectly reborn.</p>
+    <p>That paradox &mdash; a tradition that keeps itself ancient by continually remaking itself &mdash; runs through the whole of Shinto, and through the problem of writing about it. For &ldquo;Shinto&rdquo; is a faith with <strong>no founder, no single scripture, and, for most of its history, no separate name</strong>. What we can study is real: shrines, festivals, an eighth-century mythology, a thousand years of ritual. What is genuinely disputed is whether any of it was a distinct &ldquo;religion&rdquo; called Shinto before quite recent times.</p>
+
+    <h2>What &ldquo;Shinto&rdquo; is &mdash; and the problem of the name</h2>
+    <p>The word <strong>Shinto</strong> (&ldquo;the way of the kami,&rdquo; from Chinese <em>shen-dao</em>) names the worship of the <strong>kami</strong> &mdash; the gods, spirits, and sacred powers of Japan: the sun, storms, mountains, rice, ancestors, and the <strong>eight million kami</strong> (<em>yaoyorozu no kami</em>), a number meaning simply &ldquo;countless.&rdquo; Kami are not omnipotent creators but presences to be honored, feared, and kept in good relation through offering and purity.</p>
+    <p>But the influential thesis of the historian <strong>Kuroda Toshio</strong> (1926&ndash;1993) reshaped the field: he argued that <strong>Shinto as an independent religion took shape only in modern times</strong>, and that for most of Japanese history kami-worship existed <em>within</em> a Buddhist framework &mdash; so fused with Buddhism as to be, in effect, one of its branches. Not everyone accepts the full claim; recent scholars (Breen, Teeuwen) have qualified it, arguing for real continuities in kami-worship. But the core caution is now standard: <strong>for the early-medieval period this chapter covers, &ldquo;Shinto&rdquo; and &ldquo;Buddhism&rdquo; were not two religions a Japanese person chose between; they were a single, blended religious world.</strong> That fusion is the heart of this chapter.</p>
+
+    <h2>The textual record</h2>
+    <p>Shinto&rsquo;s mythology survives because an eighth-century imperial court wrote it down &mdash; for its own reasons. The <strong>Kojiki</strong> (&ldquo;Record of Ancient Matters,&rdquo; <strong>712</strong>), compiled by <strong>&#332; no Yasumaro</strong> from oral traditions, and the <strong>Nihon Shoki</strong> (&ldquo;Chronicles of Japan,&rdquo; <strong>720</strong>), a committee work in the Chinese annalistic style, both open with the age of the gods and run down to the historical emperors. They are not neutral scripture: they were composed to <strong>legitimize the imperial line</strong> by tracing it to the gods, and the Nihon Shoki was partly written to correct the Kojiki. To these are added the <strong>Fudoki</strong> gazetteers, the <strong>Man&rsquo;y&#333;sh&#363;</strong> poems, the ritual <strong>norito</strong> prayers of the <strong>Engishiki</strong> (<strong>927</strong>), and the <strong>Kogo Sh&#363;i</strong>. The mythology is old &mdash; passed down orally before it was ever fixed &mdash; but the form we have is an <strong>eighth-century political document</strong>, and the two cannot be fully separated.</p>
+
+    <h2>Cosmology and the kami</h2>
+    <p>In the beginning, the Kojiki says, the primordial pair <strong>Izanagi and Izanami</strong> stood on the floating bridge of heaven, stirred the sea with a jeweled spear, and made the islands of Japan and a host of kami. Bearing the fire-kami, <strong>Izanami was burned to death</strong> and went down to the land of the dead; <strong>Izanagi</strong> pursued her, fled her corruption, and, washing himself clean in a river &mdash; the first <strong>misogi</strong>, or purification &mdash; brought forth from the very act of cleansing the three great kami: <strong>Amaterasu</strong>, the sun, from his left eye; <strong>Tsukuyomi</strong>, the moon, from his right; and <strong>Susanoo</strong>, the storm, from his nose.</p>
+    <p>When Susanoo&rsquo;s violence drove <strong>Amaterasu</strong> to hide in a cave and plunge the world into darkness, the other kami lured her out with a mirror and revelry &mdash; restoring the sun. Her grandson <strong>Ninigi</strong> was sent down to rule, carrying the sacred regalia; his descendant <strong>Jimmu</strong> became, in the tradition, the <strong>first emperor</strong>. The claim that the imperial house descends from the sun-goddess is the theological center of the whole mythology &mdash; and it is a claim of faith, not a finding of history.</p>
+
+    <h2>Purity, pollution, and worship</h2>
+    <p>If one idea organizes Shinto practice, it is <strong>purity</strong>. The tradition is far less concerned with sin than with <strong>kegare</strong> &mdash; pollution, the defilement of death, blood, disease, and disorder &mdash; and with restoring <strong>purity</strong> through ritual cleansing. Worship centers on the <strong>jinja</strong> (shrine), entered through a <strong>torii</strong> gate that marks the passage from ordinary to sacred ground; visitors rinse hands and mouth at the <strong>temizuya</strong> basin; priests (<strong>kannushi</strong>) and shrine maidens (<strong>miko</strong>) perform <strong>harae</strong> (purification), recite <strong>norito</strong> prayers, present offerings, and hold <strong>matsuri</strong> &mdash; the festivals that carry the kami through the community. The most rigorous purification, <strong>misogi</strong>, immerses the body in cold river or waterfall, re-enacting Izanagi&rsquo;s cleansing. The concern is not moral guilt but ritual cleanness.</p>
+
+    <h2>The fusion with Buddhism</h2>
+    <p>The defining fact of Shinto in this era is its <strong>union with Buddhism</strong> &mdash; <em>shinbutsu-sh&#363;g&#333;</em>, &ldquo;the amalgamation of kami and buddhas.&rdquo; When Buddhism arrived in the sixth century it did not displace the kami; the two grew together. From the <strong>early eighth century</strong>, <strong>jing&#363;-ji</strong> &mdash; Buddhist temples built at Shinto shrines &mdash; appeared, so that sutras were chanted to the kami and kami were understood as protectors of the Dharma.</p>
+    <p>In the <strong>Heian period (794&ndash;1185)</strong> this hardened into a theology: <strong>honji suijaku</strong>, &ldquo;original ground and manifest trace.&rdquo; The kami, it held, were <strong>local manifestations</strong> (<em>suijaku</em>, &ldquo;traces&rdquo;) of universal <strong>buddhas and bodhisattvas</strong> (<em>honji</em>, &ldquo;original ground&rdquo;) &mdash; Amaterasu identified with the cosmic Buddha Dainichi. The Shingon school&rsquo;s <strong>Ry&#333;bu Shint&#333;</strong> and the Tendai school&rsquo;s <strong>Sann&#333; Shint&#333;</strong> wove kami and buddhas into single systems. For roughly a thousand years, until the forced separation of 1868, this blended religion &mdash; not a &ldquo;pure&rdquo; Shinto &mdash; was simply the religion of Japan.</p>
+
+    <h2>Shrines, treasures, and the ground</h2>
+    <p>The material record is grand and specific. <strong>Ise Jing&#363;</strong>, sacred to Amaterasu, in its austere <strong>shinmei-zukuri</strong> style of raw cypress, is rebuilt every twenty years. <strong>Izumo Taisha</strong>, one of the oldest and largest shrines, sacred to <strong>&#332;kuninushi</strong>, is renewed on a longer cycle; its region held an alternative mythic tradition the imperial Kojiki had to absorb and subordinate &mdash; a hint that the &ldquo;national&rdquo; myth papered over older regional powers.</p>
+    <p>At the symbolic center stand the <strong>Three Sacred Treasures</strong>, the imperial regalia: the mirror <strong>Yata no Kagami</strong> (said to be kept at Ise), the sword <strong>Kusanagi no Tsurugi</strong> (at Atsuta Shrine), and the jewel <strong>Yasakani no Magatama</strong>. Crucially for an honest account: they are <strong>never shown</strong> &mdash; not to the public, not to scholars, arguably not even to the emperor. Their existence, age, and nature cannot be independently verified; what history can attest is the <em>tradition</em> of them and their role in enthronement, not the objects themselves.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Shinto encodes the sacred less in doctrine than in <strong>thresholds, objects, and words</strong>.</p>
+    <ul>
+      <li>The <strong>torii</strong> gate encodes the boundary itself &mdash; the line between profane and sacred; to pass through it is already a small purification.</li>
+      <li>The <strong>shimenawa</strong>, a thick twisted rope of rice straw hung with <strong>shide</strong> (white zigzag paper streamers), marks a space, tree, rock, or object as the dwelling or presence of a kami &mdash; a visible fence around the holy.</li>
+      <li>The <strong>mirror</strong> is the supreme sacred object: at Ise a mirror is the <strong>shintai</strong>, the &ldquo;god-body,&rdquo; the vessel the kami inhabits &mdash; not an image of Amaterasu but the very thing her presence resides in. The <strong>three regalia</strong> are read as encoded virtues: the mirror for <strong>wisdom</strong>, the sword for <strong>valor</strong>, the jewel for <strong>benevolence</strong>.</li>
+      <li><strong>Kotodama</strong>, &ldquo;word-spirit,&rdquo; is the belief that spoken sounds carry real spiritual power &mdash; that the syllables of a <strong>norito</strong>, correctly uttered, act upon the world. It makes ritual language a sacred technology, the Japanese cousin of the mantra.</li>
+      <li>The <strong>architecture</strong> encodes theology: Ise&rsquo;s plainness, its perishable cypress, and its perpetual renewal are a statement &mdash; that purity and presence, not permanence of stone, are what the sacred requires.</li>
+    </ul>
+    <p>A necessary caution, as the tradition&rsquo;s own honesty demands: much of what is now presented as timeless &ldquo;Shinto symbolism&rdquo; was <strong>codified far later</strong>, and the fiercely nationalist <strong>State Shinto</strong> of 1868&ndash;1945 &mdash; the emperor as a living god, the shrines as arms of the state &mdash; was a <strong>modern political construction</strong>, not an ancient faith, and must not be read back onto the kami-worship of this era.</p>
+
+    <h2>Connections</h2>
+    <p>Shinto is the Japanese member of this era&rsquo;s great pattern: an <strong>indigenous, nature-centered polytheism meeting a universal world religion</strong> &mdash; precisely the encounter the neighboring <strong>Norse</strong> chapter describes for northern Europe, though here the two fused rather than one replacing the other. Its near-inseparable other half is the <strong>Buddhism</strong> of the same centuries, especially the esoteric <strong>Shingon</strong> and <strong>Tendai</strong> schools that are the Japanese branches of the <strong>Tantra</strong> of the previous chapter. It absorbed Chinese <strong>Confucian</strong> and <strong>Daoist</strong> cosmology through the same channel that brought its writing system. Its later reinventions &mdash; the 1868 separation and State Shinto &mdash; belong to a much later era and are noted here only to be kept out of this one.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The dating of the <strong>Kojiki (712)</strong> and <strong>Nihon Shoki (720)</strong> and their role as imperial-legitimation texts; the antiquity and continuity of <strong>kami-worship</strong> and shrine ritual.</li>
+          <li>The reality of <strong>shinbutsu-sh&#363;g&#333;</strong> and the <strong>honji suijaku</strong> theology as the dominant religious form of the era.</li>
+          <li>The shrines themselves &mdash; <strong>Ise</strong> and its twenty-year renewal, <strong>Izumo</strong> &mdash; the tradition of the <strong>three regalia</strong>, and the centrality of <strong>purity/pollution</strong> and purification ritual.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The <strong>divine descent of the imperial line</strong> from Amaterasu &mdash; a claim of faith, not history.</li>
+          <li>A <strong>pure, original Shinto</strong> cleanly separable from Buddhism in the medieval period &mdash; the evidence points the other way.</li>
+          <li>The projection of modern <strong>State Shinto</strong> (1868&ndash;1945) back onto ancient kami-worship; and the <strong>authenticity of the three regalia</strong> as physical objects &mdash; never shown, never verified.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>How much of the <strong>Kojiki mythology</strong> is genuinely old oral tradition and how much is eighth-century political shaping.</li>
+          <li>Whether <strong>&ldquo;Shinto&rdquo; was a distinct religion</strong> before modern times at all &mdash; the Kuroda thesis is influential but debated.</li>
+          <li>The real independent power and religion of <strong>Izumo</strong> before the imperial myth absorbed it, and the dating of many shrine origins.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Texts, myth, and the fusion with Buddhism</h4>
+      <ul>
+        <li><a href="https://www.worldhistory.org/Kojiki/">World History Encyclopedia: the Kojiki (712) and Nihon Shoki (720)</a>; <a href="https://en.wikipedia.org/wiki/Japanese_creation_myth">Japanese creation myth (Izanagi/Izanami, Amaterasu, Ninigi, Jimmu)</a>; <a href="https://www.ebsco.com/research-starters/political-science/amaterasu-mythology">Amaterasu as imperial ancestor</a>.</li>
+        <li><a href="https://www.newworldencyclopedia.org/entry/Shinbutsu_shugo">Shinbutsu-sh&#363;g&#333; and jing&#363;-ji</a>; <a href="https://en.wikipedia.org/wiki/Honji_suijaku">honji suijaku; Ry&#333;bu and Sann&#333; Shint&#333;</a>.</li>
+      </ul>
+      <h4>Shrines, regalia, symbology, and the honesty spine</h4>
+      <ul>
+        <li><a href="https://en.ise-kanko.jp/shikinen-sengu-63/">Ise Jing&#363; and the shikinen seng&#363; (20-year rebuild)</a>; <a href="https://www.japan.travel/en/japans-local-treasures/sacred-land-izumo/">Izumo Taisha and &#332;kuninushi</a>; <a href="https://en.wikipedia.org/wiki/Imperial_Regalia_of_Japan">the Three Sacred Treasures (never shown)</a>.</li>
+        <li><a href="https://www.tsunagujapan.com/shinto-symbols-meaning-and-history/">Torii, shimenawa, shide, and purification</a>; <a href="https://shugyokai.org/shugyo/keiko/misogi/norito/musubi-shimenawa-and-shide-how-a-rope-and-a-paper-stripe-shape-the-sacred-in-japan/">shimenawa/shide and kotodama in the norito</a>; <a href="https://en.wikipedia.org/wiki/Toshio_Kuroda_(Shinto_professor)">Kuroda Toshio and the debate over &ldquo;Shinto&rdquo; as a modern category</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and museum/scholarly sources during drafting rather than from memory. Because Shinto is unusually prone to anachronism, the chapter keeps three things distinct: attested early kami-worship and shrine practice; the eighth-century imperial mythology (Kojiki/Nihon Shoki) and its political purpose; and the modern reinventions &mdash; the 1868 separation of kami and buddhas and State Shinto (1868&ndash;1945) &mdash; which are named only to be kept out of the early-medieval account. The imperial divine descent is recorded as faith, not history; the three regalia are handled on the relic-evidence standard (never shown, so unverifiable); and the Kuroda thesis that &ldquo;Shinto&rdquo; is largely a modern category is presented as influential but debated. The dominant reality of the era &mdash; shinbutsu-sh&#363;g&#333;, the fusion with the Buddhism and esoteric Shingon/Tendai of the neighboring chapters &mdash; is kept central.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch26 */
+  ch26: { html: `
+    <p class="lead">The great flowering of Jewish mysticism in medieval Provence and Spain &mdash; a map of the hidden God as ten emanations on a Tree of Life, a universe spoken into being out of the letters of the Hebrew alphabet, and a book that claimed to be a thousand years older than it was.</p>
+
+    <h2>The widow of &Aacute;vila</h2>
+    <p>Around 1305, in the Castilian town of &Aacute;vila, a wealthy man approached the widow of a recently dead scholar named <strong>Moses de Le&oacute;n</strong>. Her husband had been circulating, in installments, an astonishing book: the <strong>Zohar</strong>, the &ldquo;Book of Radiance,&rdquo; a vast mystical commentary on the Torah written in an archaic Aramaic and attributed to <strong>Rabbi Shimon bar Yochai</strong>, a sage of the second century. The rich man wanted to buy the ancient manuscript de Le&oacute;n claimed to have copied from. According to a contemporary kabbalist&rsquo;s report, the widow answered that there was no manuscript: her husband had <strong>written it himself</strong>, and put another man&rsquo;s name on it because, he told her, no one would pay attention to work signed by a living nobody.</p>
+    <p>The story may be gossip, or a rival&rsquo;s slander. But it names the problem at the heart of Kabbalah: a tradition that presents itself as <strong>received</strong> &mdash; the word <em>qabbalah</em> means &ldquo;that which is received,&rdquo; handed down from Sinai &mdash; and yet whose greatest texts are, to the eye of history, <strong>medieval compositions wearing ancient masks</strong>. To describe it honestly is to hold both truths at once: what it claims for itself, and what the record shows.</p>
+
+    <h2>What Kabbalah is</h2>
+    <p><strong>Kabbalah</strong> is the central tradition of Jewish mysticism &mdash; an esoteric theosophy that took its classic shape in the twelfth and thirteenth centuries in <strong>Provence</strong> and <strong>northern Spain</strong>, building on far older Jewish esoteric currents. Its ambition is staggering: to map the inner life of God. It teaches that the true God, <strong>Ein Sof</strong> (&ldquo;the Infinite&rdquo;), is utterly beyond thought, name, or attribute &mdash; but that this hidden God reveals and pours himself into creation through <strong>ten emanations</strong>, the <strong>sefirot</strong>, which the initiate can trace back toward their source and even act upon.</p>
+
+    <h2>The textual record</h2>
+    <p>Kabbalah rests on three foundational books, each older in claim than in fact.</p>
+    <ul>
+      <li>The <strong>Sefer Yetzirah</strong> (&ldquo;Book of Formation&rdquo;), a terse tract of a few pages, is the oldest, composed between the <strong>second and sixth centuries CE</strong>. It describes creation through the <strong>ten sefirot</strong> and the <strong>twenty-two letters</strong> of the Hebrew alphabet &mdash; the &ldquo;<strong>thirty-two paths of wisdom</strong>.&rdquo;</li>
+      <li>The <strong>Sefer ha-Bahir</strong> (&ldquo;Book of Brightness&rdquo;) appeared in <strong>Provence around 1180</strong>, attributed by tradition to a first-century sage; modern scholarship treats it as a medieval work, the first to give the sefirot their mythic, symbolic life.</li>
+      <li>The <strong>Zohar</strong> surfaced in <strong>Castile in the 1280s</strong>. Tradition held it the work of Shimon bar Yochai in the second century; the modern consensus, following <strong>Gershom Scholem</strong> (1897&ndash;1982), the founder of the academic study of Kabbalah, is that it was written by <strong>Moses de Le&oacute;n</strong> and likely a <strong>circle</strong> around him, in stages between about <strong>1270 and 1330</strong>.</li>
+    </ul>
+    <p>Behind all three lies the older <strong>Merkavah</strong> (&ldquo;Chariot&rdquo;) and <strong>Hekhalot</strong> (&ldquo;Palaces&rdquo;) mysticism of late antiquity &mdash; visionary texts of the soul&rsquo;s ascent through seven heavenly palaces to the throne-chariot God showed Ezekiel. Kabbalah inherited that longing and gave it a new architecture.</p>
+
+    <h2>The hidden God and the ten sefirot</h2>
+    <p><strong>Ein Sof</strong>, the Infinite, cannot be described at all &mdash; not as good, not as one, not even as existing in any sense we could mean. What can be spoken of is only God as he <strong>emanates</strong>: the <strong>ten sefirot</strong>, vessels through which the divine light flows into creation. Arranged as the <strong>Tree of Life</strong> (<em>Etz Chaim</em>), they run from <strong>Keter</strong> (Crown) through <strong>Chokhmah</strong> (Wisdom) and <strong>Binah</strong> (Understanding), down through <strong>Chesed</strong>, <strong>Gevurah</strong>, <strong>Tiferet</strong>, <strong>Netzach</strong>, <strong>Hod</strong>, <strong>Yesod</strong>, to <strong>Malkhut</strong> (Kingdom, the <strong>Shekhinah</strong>, the indwelling presence, often imagined as feminine). Creation unfolds through <strong>four worlds</strong> &mdash; <strong>Atzilut</strong> (Emanation), <strong>Beriah</strong> (Creation), <strong>Yetzirah</strong> (Formation), and <strong>Assiah</strong> (Action). Human action reverberates through this structure: rightly focused prayer (<em>kavvanah</em>) can restore harmony among the sefirot and mend a fractured creation &mdash; the seed of the idea of <strong>tikkun</strong>, repair.</p>
+
+    <h2>Two streams: the theosophical and the ecstatic</h2>
+    <p>The dominant <strong>theosophical</strong> stream &mdash; the Kabbalah of the sefirot and the Zohar &mdash; flowed from the circle of <strong>Isaac the Blind</strong> in Provence (c. 1200), through the school of <strong>Girona</strong> (Nachmanides and Azriel), into the Castilian world of the Zohar. Alongside it ran the <strong>ecstatic</strong> or <strong>prophetic</strong> Kabbalah of <strong>Abraham Abulafia</strong> (1240&ndash;after 1291), who cared little for the sefirot and everything for <strong>experience</strong>: a rigorous meditation of <strong>permuting the letters of the divine names</strong> &mdash; chanting, breathing, and combining Hebrew letters until the ordinary mind dissolved and the practitioner reached what he called <strong>prophecy</strong>, union with the divine intellect.</p>
+
+    <h2>Reading in four depths</h2>
+    <p>Kabbalah is, above all, a way of <strong>reading</strong>. Torah has four levels of meaning, summarized in the acronym <strong>PaRDeS</strong> (&ldquo;orchard,&rdquo; the root of &ldquo;paradise&rdquo;): <strong>Peshat</strong>, the plain sense; <strong>Remez</strong>, the allegorical hint; <strong>Derash</strong>, the homiletical; and <strong>Sod</strong>, the hidden, mystical sense that is Kabbalah&rsquo;s own domain. Scripture, in this vision, is not merely <em>about</em> God; its very letters <em>are</em> a garment of God.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>No tradition in this book is more thoroughly a religion of <strong>encoded language</strong>. For Kabbalah the Hebrew alphabet is not a human convention but the <strong>raw material of creation</strong>: God made the world, the Sefer Yetzirah says, by combining letters. Three classic techniques unlock the hidden layer:</p>
+    <ul>
+      <li><strong>Gematria</strong> &mdash; every Hebrew letter is also a number, so every word has a value, and words of equal value are held to be secretly related. A <strong>genuine, documented device</strong> of Jewish exegesis reaching back to antiquity, raised to an art by the kabbalists.</li>
+      <li><strong>Notarikon</strong> &mdash; reading a word&rsquo;s letters as the initials of a hidden phrase, or compressing a phrase into an acronym.</li>
+      <li><strong>Temurah</strong> &mdash; substituting or transposing letters by fixed ciphers (such as <em>atbash</em>, first-for-last) to reveal a concealed word.</li>
+    </ul>
+    <p>Above these stand the <strong>divine names</strong>: the four-letter <strong>Tetragrammaton</strong> (YHVH), unpronounced; the <strong>forty-two-</strong> and <strong>seventy-two-letter names</strong> derived by combination from verses of Exodus &mdash; held to be the most potent encodings of the divine, used in meditation and, popularly, on protective <strong>amulets</strong>. The <strong>Tree of Life</strong> itself is a symbol-system: ten sefirot joined by <strong>twenty-two paths</strong> (one per Hebrew letter), thirty-two in all, a single figure holding the whole architecture of God and cosmos.</p>
+    <p>A clear line must be drawn, as the tradition&rsquo;s own honesty demands. <strong>Gematria and its sister techniques are real and historically attested</strong> &mdash; but they are hermeneutics and meditation, <strong>not a cipher that decodes checkable hidden facts</strong> or predicts events. Distinct again, and belonging to later chapters, are the <strong>Christian Kabbalah</strong> of the Renaissance (Pico, Reuchlin), the <strong>Hermetic Qabalah</strong> of Western ceremonial magic (the Golden Dawn), and the modern celebrity &ldquo;Kabbalah Centre&rdquo; &mdash; later adaptations, not the medieval Jewish tradition itself.</p>
+
+    <h2>Connections</h2>
+    <p>Kabbalah grew out of the <strong>Rabbinic Judaism</strong> of the previous era and the <strong>Merkavah</strong> mysticism of late antiquity, and it rhymes with the other esoteric paths of its age: it is the Jewish counterpart to the <strong>Sufism</strong> of the neighboring chapter &mdash; an initiatory mysticism inside an Abrahamic faith &mdash; and it took shape in the same centuries as the great <strong>scholastic</strong> systems, a parallel effort to order all of reality by very different means. Downstream it would flower again in the <strong>Lurianic Kabbalah</strong> of sixteenth-century Safed (<em>tzimtzum</em>, cosmic <em>tikkun</em>), feed the <strong>Hasidic</strong> revival of the eighteenth century, and be borrowed and often misread by Christian and occult traditions ever after.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The medieval flowering of Kabbalah in Provence and Spain (12th&ndash;13th c.); the existence and approximate dating of the <strong>Sefer Yetzirah</strong> (c. 2nd&ndash;6th c.), <strong>Bahir</strong> (c. 1180), and <strong>Zohar</strong> (c. 1280&ndash;1330).</li>
+          <li>The historical figures of <strong>Isaac the Blind</strong>, <strong>Nachmanides</strong>, <strong>Abraham Abulafia</strong>, and <strong>Moses de Le&oacute;n</strong>; and the reality of the sefirot, the Tree of Life, PaRDeS, and the letter-techniques as documented practices.</li>
+          <li>The foundational modern scholarship of <strong>Gershom Scholem</strong>.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The traditional attributions &mdash; the <strong>Zohar</strong> as a 2nd-century work of Shimon bar Yochai, the <strong>Bahir</strong> as Nehunya ben ha-Kanah&rsquo;s, the <strong>Sefer Yetzirah</strong> as Abraham&rsquo;s or Akiva&rsquo;s &mdash; are pious pseudepigraphy.</li>
+          <li>That <strong>gematria decodes verifiable hidden messages</strong> or predicts events; it is a devotional and interpretive art, not a cryptographic key to fact.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>The precise authorship of the <strong>Zohar</strong> (Moses de Le&oacute;n alone, or a circle over sixty years) and of the <strong>Bahir</strong>.</li>
+          <li>How much genuinely older oral or fragmentary esoteric material underlies the medieval books.</li>
+          <li>The exact channels &mdash; Merkavah mysticism, Neoplatonism, and possibly others &mdash; by which the sefirot emerged.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>History, texts, cosmology</h4>
+      <ul>
+        <li><a href="https://www.myjewishlearning.com/article/kabbalah-and-hasidism/">My Jewish Learning: Kabbalah&rsquo;s development, foundational texts, Ein Sof and the sefirot</a>; <a href="https://en.wikipedia.org/wiki/Sefer_Yetzirah">Sefer Yetzirah (32 paths)</a>; <a href="https://en.wikipedia.org/wiki/Zohar">the Zohar and its authorship debate (Scholem)</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Tree_of_life_(Kabbalah)">the Tree of Life and the ten sefirot</a>; <a href="https://en.wikipedia.org/wiki/Four_Worlds">the four worlds (Atzilut/Beriah/Yetzirah/Assiah)</a>; <a href="https://www.newworldencyclopedia.org/entry/Kabbala">New World Encyclopedia: Kabbala (Bahir, Girona, Isaac the Blind)</a>.</li>
+      </ul>
+      <h4>Streams, reading, and symbology</h4>
+      <ul>
+        <li><a href="https://www.myjewishlearning.com/article/abraham-abulafia-ecstatic-kabbalah/">Abraham Abulafia and ecstatic/prophetic Kabbalah</a>; <a href="https://en.wikipedia.org/wiki/Pardes_(exegesis)">PaRDeS: the four levels of interpretation</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Notarikon">Notarikon</a>, <a href="https://en.wikipedia.org/wiki/Temurah_(Kabbalah)">Temurah</a>, and <a href="https://www.encyclopedia.com/philosophy-and-religion/bible/bible-general/gematria">Gematria</a> as documented techniques.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly sources during drafting rather than from memory. Kabbalah presents itself as ancient and received while its major texts are, to history, medieval pseudepigrapha; the chapter keeps the tradition&rsquo;s own claims and the documentary record distinct, follows the project&rsquo;s symbology rule by presenting gematria/notarikon/temurah as attested devotional and interpretive arts (not a cipher that yields checkable facts), and reserves Christian Kabbalah, Hermetic Qabalah, and the modern &ldquo;Kabbalah Centre&rdquo; &mdash; along with 16th-century Lurianic Kabbalah and 18th-century Hasidism &mdash; for their own later chapters. Live debates (the authorship of the Zohar and Bahir; the older material underlying them) are left open rather than resolved.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch27 */
+  ch27: { html: `
+    <p class="lead">The mystical heart of Islam &mdash; a path of love, remembrance, and the annihilation of the self in God, carried by wandering ascetics, world-shaping philosophers, and the greatest devotional poets who ever lived &mdash; told with care for what the tradition teaches, what history can trace, and the ways the modern West has remade it.</p>
+
+    <h2>The turning</h2>
+    <p>A man stands in a circle in a white robe, a tall camel-hair hat on his head, arms crossed over his chest. Music begins &mdash; reed flute, drum, the chanted name of God &mdash; and he begins to turn. His arms open: the right palm lifts toward heaven, the left tips down toward the earth, and grace, the tradition says, pours through him from the one to the other. He spins, and keeps spinning, the robe flaring into a white disc, until the self that watches and counts and fears seems to dissolve into the turning. The hat is his ego&rsquo;s <strong>tombstone</strong>; the robe, its <strong>shroud</strong>. This is the <strong>sema</strong>, the ceremony of the <strong>Mevlevi</strong> order &mdash; the &ldquo;whirling dervishes&rdquo; &mdash; a prayer danced rather than spoken, the soul&rsquo;s journey out of separation into union with God.</p>
+    <p>The dervishes turn in memory of one man: <strong>Jalal ad-Din Rumi</strong>, whose verses are, eight hundred years later, among the best-selling poetry in the world. That fame is part of this chapter&rsquo;s problem &mdash; because the Rumi the modern West adores has often been stripped of the thing he lived and breathed. Sufism is the inward, mystical dimension of <strong>Islam</strong>, and to describe it honestly is to keep it whole.</p>
+
+    <h2>What Sufism is</h2>
+    <p><strong>Sufism</strong> &mdash; in Arabic <em>tasawwuf</em> &mdash; is the mysticism of Islam: the pursuit of direct, experiential nearness to the one God, beyond mere law and doctrine, through <strong>love</strong> (<em>mahabba</em>) and the ceaseless <strong>remembrance</strong> of God (<em>dhikr</em>). The name most likely comes from <em>suf</em>, the coarse <strong>wool</strong> of the early ascetics. Its practitioners walk a <strong>path</strong> (<em>tariqa</em>) under a master, ascending through <strong>stations</strong> (<em>maqamat</em>) and passing through God-given <strong>states</strong> (<em>ahwal</em>) toward two linked goals: <strong>fana</strong>, the annihilation of the ego-self, and <strong>baqa</strong>, subsistence in God.</p>
+
+    <h2>Origins</h2>
+    <p>Sufism arose early, among ascetics who recoiled from the sudden wealth of the <strong>Umayyad</strong> empire and turned to poverty, prayer, and the love of God. The great early figure is <strong>Hasan al-Basri</strong> (d. 728), the preacher remembered as a founder of the science of <strong>purifying the heart</strong>. A generation later <strong>Rabia al-Adawiyya</strong> (d. 801) &mdash; a freed slave woman of Basra &mdash; gave Sufism its most radical doctrine: love of God for God&rsquo;s own sake alone. The tradition remembers her walking the streets with a torch and a bucket, meaning to <strong>burn down paradise and quench the fires of hell</strong>, so that people would love God neither for reward nor from terror, but purely.</p>
+    <p>How this piety became the vast mystical system of later centuries is genuinely debated. The old account of a smooth &ldquo;transition from <em>zuhd</em> (asceticism) to <em>tasawwuf</em>&rdquo; has been questioned, and scholars still argue how much Sufism drew on <strong>Neoplatonism</strong>, Christian <strong>monasticism</strong>, or Indian ideas versus growing from seeds in the <strong>Qur&rsquo;an</strong> itself. Sufis insist on the latter: that theirs is the inner meaning of Islam, traced through an unbroken <strong>chain</strong> (<em>silsila</em>) of masters back to Muhammad.</p>
+
+    <h2>Al-Ghazali: the great reconciliation</h2>
+    <p>The hinge of Sufi history is <strong>Abu Hamid al-Ghazali</strong> (d. 1111), the most celebrated theologian of his age. At the height of his fame, holding the foremost chair at the <strong>Nizamiyya</strong> academy in Baghdad, he suffered a shattering crisis &mdash; recounted in his autobiography, <em>Deliverance from Error</em> &mdash; abandoned his post, and wandered for years. Out of it came the <strong>Ihya Ulum al-Din</strong> (&ldquo;The Revival of the Religious Sciences&rdquo;), which wove Sufi inwardness together with orthodox Sunni law and theology and argued that the mystical path was the living core of the faith. More than any other act, al-Ghazali&rsquo;s synthesis made Sufism <strong>respectable</strong> &mdash; the beating heart of mainstream Islam for the next seven centuries.</p>
+
+    <h2>The great flowering</h2>
+    <ul>
+      <li><strong>Ibn Arabi</strong> (1165&ndash;1240), the Andalusian &ldquo;Greatest Master&rdquo; (<em>al-Shaykh al-Akbar</em>), poured out over three hundred works, above all the <em>Fusus al-Hikam</em> and the immense <em>Meccan Openings</em>. His doctrine of <strong>wahdat al-wujud</strong>, the &ldquo;unity of being,&rdquo; holds that only God truly exists and all creation is the self-disclosure of the divine &mdash; a vision debated and condemned ever since.</li>
+      <li><strong>Rumi</strong> (1207&ndash;1273), writing in Persian in Konya, composed the <strong>Mathnawi</strong>, some 25,000 couplets later Sufis called &ldquo;the Qur&rsquo;an in Persian.&rdquo; After the loss of his companion <strong>Shams of Tabriz</strong>, his grief became a fountain of verse on divine love.</li>
+      <li><strong>Attar</strong> of Nishapur, whose <em>Conference of the Birds</em> allegorizes the soul&rsquo;s journey to God, and <strong>Suhrawardi</strong>, the philosopher of illumination, stand beside them.</li>
+    </ul>
+
+    <h2>The orders</h2>
+    <p>This era&rsquo;s other great development is institutional: Sufism organized into <strong>tariqas</strong> &mdash; orders, each a lineage descending through a <em>silsila</em> from a founding saint to the Prophet. The <strong>Qadiriyya</strong> grew around <strong>Abd al-Qadir al-Jilani</strong> (d. 1166); the <strong>Chishtiyya</strong> carried Sufism deep into India; the <strong>Mevlevi</strong> formed around Rumi (c. 1250); the <strong>Shadhiliyya</strong>, <strong>Rifa&rsquo;iyya</strong>, and many more followed. Each gathered in a lodge &mdash; <em>khanqah</em>, <em>zawiya</em>, or <em>tekke</em> &mdash; around a living <strong>shaykh</strong> to whom the disciple (<em>murid</em>) submitted utterly, as (the saying went) a corpse in the hands of the washer. Through these orders Sufism became the everyday religion of millions and the chief engine of Islam&rsquo;s spread across Africa, Anatolia, Central Asia, and the Indian subcontinent.</p>
+
+    <h2>Practice</h2>
+    <p>The cornerstone of Sufi life is <strong>dhikr</strong>, the remembrance of God &mdash; rhythmic repetition of his names or short formulas, aloud or silent, alone or in swaying, chanting assemblies. Beyond it lie <strong>muraqaba</strong> (silent meditation), <strong>tafakkur</strong> (contemplation), breath-work, and <strong>sama</strong>, the &ldquo;spiritual audition&rdquo; of music and sacred dance. The seeker climbs the <strong>stations</strong> &mdash; repentance (<em>tawba</em>), patience (<em>sabr</em>), gratitude (<em>shukr</em>), trust (<em>tawakkul</em>) &mdash; toward <strong>love</strong> (<em>mahabba</em>) and finally <strong>ma&rsquo;rifa</strong>, the tasted <strong>knowledge</strong> of God no book can give. Through all of it the work is to wear down the <strong>nafs</strong>, the grasping ego-self, until only God remains.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Sufism hides its deepest teaching, like the traditions beside it, inside an <strong>encoded language</strong> &mdash; and its symbols are among the most beautiful in any faith.</p>
+    <ul>
+      <li>The <strong>Ninety-Nine Beautiful Names of God</strong> (<em>al-asma al-husna</em>) are the substance of <em>dhikr</em>: each name a facet of the divine, told on beads until the reciter is saturated in the quality he names.</li>
+      <li>The <strong>wine imagery</strong> of Sufi poetry is a complete symbolic system, not a celebration of drink. The <strong>wine</strong> is divine love; <strong>drunkenness</strong> is <em>fana</em>; the <strong>cup</strong> is the body and mind; the <strong>tavern of ruin</strong> is the state beyond the ego; the <strong>Cupbearer</strong> (<em>Saqi</em>) and the <strong>Beloved</strong> are God. What reads on the surface as forbidden and erotic is, to the initiate, the most sacred thing there is &mdash; a deliberate veil over the mystery.</li>
+      <li>The <strong>sema</strong> is enacted cosmology: the dervish becomes an axis between heaven and earth, the right hand receiving grace from above and the left passing it to the world, turning as the planets turn around the sun of God.</li>
+      <li>The <strong>heart</strong> (<em>qalb</em>) is the true organ of knowing &mdash; not the reasoning mind but the polished heart, in which, cleansed of rust by <em>dhikr</em>, the divine is reflected.</li>
+    </ul>
+    <p>A necessary honesty: the <strong>Rumi</strong> quoted on a million calendars is frequently a modern invention. His most popular English &ldquo;translators&rdquo; worked from other translations, not the Persian, and quietly <strong>stripped away the Qur&rsquo;an, the Prophet, and the Islam</strong> that saturate every page of the original, remaking a devout Muslim jurist and mystic into a creed-free guru. The real Rumi cannot be understood outside the faith he served.</p>
+
+    <h2>Connections</h2>
+    <p>Sufism is the mystical inner path of the <strong>Islam</strong> of the earlier era, and the exact counterpart of the <strong>Kabbalah</strong> of the neighboring chapter &mdash; two initiatory, love-drunk mysticisms rising inside two Abrahamic faiths in the same centuries, each with its coded poetry, its chain of masters, and its ladder to a hidden God. Its philosophical wing, especially Ibn Arabi, ran parallel to the great <strong>scholastic</strong> systems of the age and drew, like them, on <strong>Neoplatonism</strong>. It shaped the devotional life of half the Muslim world, and in the modern age became the most exported and most transformed of all Islamic traditions.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The rise of Sufism from early Islamic asceticism; the historical figures of <strong>Hasan al-Basri</strong>, <strong>Rabia</strong>, <strong>al-Ghazali</strong>, <strong>Ibn Arabi</strong>, and <strong>Rumi</strong>, and the dates and content of their major works.</li>
+          <li>The formation of the <strong>tariqa</strong> orders (Qadiriyya, Chishtiyya, Mevlevi, and the rest) in the high medieval period.</li>
+          <li>The core practices of <strong>dhikr</strong>, <strong>sama</strong>, and the master&ndash;disciple path.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The <strong>miracles</strong> (<em>karamat</em>) of the Sufi saints are matters of faith, not historical finding.</li>
+          <li>Ibn Arabi&rsquo;s <strong>wahdat al-wujud</strong> is a theological vision, described here, neither proven nor refuted.</li>
+          <li>The popular modern image of a <strong>universal, de-Islamized Rumi</strong> is a documented distortion of a poet who was a practicing Muslim through and through.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open &mdash; and contested</h4>
+        <ul>
+          <li>The <strong>origins debate</strong>: how much Sufism owes to Neoplatonic, Christian-monastic, or Indian influence versus purely Qur&rsquo;anic roots, and whether the &ldquo;<em>zuhd</em>-to-<em>tasawwuf</em>&rdquo; model holds.</li>
+          <li>The authenticity of some sayings and works attributed to the early masters.</li>
+          <li>A live <strong>intra-Islamic dispute</strong> this book does not settle: revivalist movements (Wahhabi, Salafi) condemn saint-tomb veneration and organized <em>dhikr</em> as <em>bid&rsquo;a</em>, while most premodern Muslims embraced them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Origins, al-Ghazali, the flowering</h4>
+      <ul>
+        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/tasawwuf">Encyclopedia.com: tasawwuf, origins, Hasan al-Basri, Rabia</a>; <a href="https://en.wikipedia.org/wiki/The_Revival_of_the_Religious_Sciences">al-Ghazali&rsquo;s Ihya Ulum al-Din</a>; <a href="https://ibnarabisociety.org/">Muhyiddin Ibn Arabi Society (wahdat al-wujud)</a>.</li>
+      </ul>
+      <h4>Orders, practice, symbology, and the honesty spine</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Mevlevi_Order">the Mevlevi order, Rumi, and the sema</a>; <a href="https://ghayb.com/the-sufi-orders-of-islam/">the founding of the tariqas</a>; <a href="https://pluralism.org/sufism-seeking-god">dhikr, sama, maqamat, fana/baqa</a>.</li>
+        <li><a href="https://www.nimatullahi.org/sufi-symbolism">Sufi symbolism (wine, tavern, the Beloved)</a>; <a href="https://en.wikipedia.org/wiki/Anti-Sufism">the Salafi/Wahhabi condemnation of tomb-veneration and dhikr as bid&rsquo;a</a>; <a href="https://www.dar-al-masnavi.org/western_views.html">the de-Islamized Western reception of Rumi</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly/Sufi sources during drafting rather than from memory. Sufism is presented as the mystical dimension of Islam, kept whole rather than universalized: saint-miracles and wahdat al-wujud are recorded as faith and theology; the origins/influence debate and the &ldquo;zuhd-to-tasawwuf&rdquo; model are left open; the live Salafi&ndash;Sufi dispute over tombs and dhikr is presented without adjudication; the wine-and-Beloved imagery is treated as a deliberate symbolic code (kin to Tantra&rsquo;s twilight language and Kabbalah&rsquo;s Sod); and the popular de-Islamized &ldquo;universal Rumi&rdquo; is flagged as a documented modern distortion of the historical, devout poet.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch28 */
+  ch28: { html: `
+    <p class="lead">The great medieval effort to think the faith through to the bottom &mdash; to take the newly recovered logic of Aristotle and the whole inheritance of Christian doctrine and reconcile them, question by disputed question, in the cathedral schools and the first universities of Europe &mdash; and the honest limits of what reason, then and now, can settle.</p>
+
+    <h2>The straw</h2>
+    <p>On the sixth of December, 1273, in Naples, the greatest theologian of the Middle Ages stopped writing. <strong>Thomas Aquinas</strong> was at Mass, in the middle of composing the third part of his vast <strong>Summa Theologica</strong>, when something happened to him &mdash; a vision, an experience he never described. Afterward he set down his pen and would not take it up again. When his secretary begged him to finish the enormous work, Aquinas answered: &ldquo;<strong>I cannot. Everything I have written seems to me like straw compared to what I have seen.</strong>&rdquo; He died three months later, the Summa unfinished. His life&rsquo;s project &mdash; to show that faith and reason, revelation and Aristotle, could be woven into one seamless understanding of God and the world &mdash; ended in a silence that reason could not fill.</p>
+    <p>That moment holds the whole of scholasticism in miniature: the boundless confidence that the human mind, rightly ordered, could climb toward God by argument &mdash; and the honest knowledge, at the summit, that argument is not the same as sight.</p>
+
+    <h2>What scholasticism is</h2>
+    <p><strong>Scholasticism</strong> (from Latin <em>scholasticus</em>, &ldquo;belonging to the school&rdquo;) was not a doctrine but a <strong>method</strong> &mdash; the way of learning practiced by the &ldquo;schoolmen&rdquo; of the medieval universities from roughly <strong>1100 to 1500</strong>. Its aim was to <strong>reconcile faith and reason</strong>: to bring the philosophy of the ancient pagans, above all <strong>Aristotle</strong>, into harmony with Christian theology through rigorous <strong>dialectic</strong> &mdash; the disciplined posing of a question, the marshalling of arguments for and against, and the reasoned resolution of the contradiction. At bottom it was the conviction that the truths of revelation and the truths of reason, both from God, could not finally conflict.</p>
+
+    <h2>The recovery of Aristotle</h2>
+    <p>Scholasticism was lit by a spark from outside Christendom. For centuries the Latin West had known only a fraction of <strong>Aristotle</strong>. Then, in the twelfth and thirteenth centuries, a wave of <strong>translations</strong> &mdash; many made in <strong>Toledo</strong> from Arabic versions preserved and expounded by Muslim philosophers &mdash; poured the whole Aristotelian corpus into Europe. It arrived wrapped in the great commentaries of <strong>Avicenna</strong> (Ibn Sina) and <strong>Averroes</strong> (Ibn Rushd), so that Christian thinkers met the Philosopher through Muslim eyes. At the same moment the <strong>universities</strong> were being born &mdash; <strong>Paris</strong>, <strong>Oxford</strong>, <strong>Bologna</strong> &mdash; giving the new learning a home and a method.</p>
+
+    <h2>The method and the early masters</h2>
+    <p>The scholastic classroom ran on the <strong>lectio</strong> (close reading), the <strong>quaestio</strong> (the question it raised), and above all the <strong>disputatio</strong> &mdash; the formal disputed question, arguing every side before determining the answer. <strong>Peter Abelard</strong> (1079&ndash;1142) set the tone with <em>Sic et Non</em> (&ldquo;Yes and No&rdquo;), juxtaposing questions on which the Fathers contradicted one another; <strong>Peter Lombard</strong>&rsquo;s <em>Four Books of Sentences</em> (c. 1150) became the textbook every theologian was required to expound. Before the flood of Aristotle, <strong>Anselm of Canterbury</strong> (1033&ndash;1109) had already given the movement its motto &mdash; <em>fides quaerens intellectum</em>, &ldquo;<strong>faith seeking understanding</strong>&rdquo; &mdash; and its most famous puzzle, the <strong>ontological argument</strong> for God&rsquo;s existence. Abelard pressed the <strong>problem of universals</strong> &mdash; whether categories like &ldquo;humanity&rdquo; are real things or only names &mdash; that would divide the schoolmen for three centuries.</p>
+
+    <h2>The synthesis: Thomas Aquinas</h2>
+    <p>The summit is <strong>Thomas Aquinas</strong> (1225&ndash;1274), pupil of <strong>Albert the Great</strong>, who undertook the full baptism of Aristotle into Christian thought. His <strong>Summa Theologica</strong>, built as thousands of disputed questions, sought to treat every point of doctrine in order. Near its beginning stand the <strong>Five Ways</strong> (<em>quinque viae</em>) &mdash; five arguments for God&rsquo;s existence, from motion, causation, contingency, the degrees of perfection, and the design of nature, each concluding to a first mover or cause &ldquo;which everyone calls God.&rdquo; Reason unaided, for Aquinas, could climb this far; grace <strong>perfected</strong> nature rather than contradicting it.</p>
+    <p>It must be said plainly, in the spirit of this book: the Five Ways and the ontological argument are <strong>philosophical arguments</strong>, contested continuously from their own day to ours &mdash; not settled proofs that history can pronounce valid. They are among the most influential arguments ever made, and they remain arguments.</p>
+
+    <h2>The later turn: Scotus, Ockham, and 1277</h2>
+    <p>Aquinas&rsquo;s synthesis did not go unopposed. In <strong>1277</strong> the Bishop of Paris, <strong>&Eacute;tienne Tempier</strong>, condemned <strong>219</strong> propositions drawn from the bolder Aristotelians, insisting on God&rsquo;s absolute freedom &mdash; a shock some historians (following Pierre Duhem) have credited with loosening Aristotle&rsquo;s grip and opening the road toward modern science. In its wake two Franciscans reshaped the field. <strong>John Duns Scotus</strong> (1266&ndash;1308), the &ldquo;Subtle Doctor,&rdquo; refined the universals problem with <em>haecceity</em> &mdash; the &ldquo;thisness&rdquo; that makes each individual unique. Then <strong>William of Ockham</strong> (1287&ndash;1347), a thoroughgoing <strong>nominalist</strong>, held that only individuals exist and universals are mere concepts, and wielded the parsimony principle ever after called <strong>Ockham&rsquo;s razor</strong>. With Ockham the confident marriage of faith and reason began, quietly, to come apart.</p>
+
+    <h2>Three faiths, one project</h2>
+    <p>Scholasticism was not only Christian. The same recovered Aristotle produced parallel masterworks in the other Abrahamic faiths &mdash; above all <strong>Maimonides</strong> (1138&ndash;1204), the Jewish philosopher of C&oacute;rdoba and Cairo, whose <em>Guide for the Perplexed</em> (c. 1190) reconciled Aristotelian philosophy with the Torah, in direct dialogue with the Muslim philosophers Avicenna and Averroes. The three traditions read the same Greek, argued the same problems, and cited one another across the boundaries of faith &mdash; one of the great shared intellectual projects in history.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Scholasticism&rsquo;s genius was for <strong>order made visible</strong>, and its symbolic systems are systems of structure.</p>
+    <ul>
+      <li>Medieval reading rested on the <strong>four senses of Scripture</strong>: the <strong>literal</strong>, the <strong>allegorical</strong> (what to believe), the <strong>moral</strong> (how to act), and the <strong>anagogical</strong> (our final destiny) &mdash; fixed by a couplet: <em>&ldquo;The letter teaches deeds; allegory, what you believe; the moral, what to do; anagogy, where you are bound.&rdquo;</em> It is the Christian cousin of the Jewish <strong>PaRDeS</strong> of the neighboring chapter.</li>
+      <li>The <strong>Gothic cathedral</strong>, rising in the same cities and decades as the great <em>summae</em>, has been read (famously by Erwin <strong>Panofsky</strong>) as a <strong>&ldquo;summa in stone&rdquo;</strong> &mdash; built by the same habits of <em>manifestatio</em> (the clear articulation of every part) and <em>concordantia</em> (the reconciliation of opposing forces into a stable whole). Abbot <strong>Suger</strong> of Saint-Denis made its soaring light a theology in itself.</li>
+      <li>Medieval thought loved the <strong>diagram of order</strong> &mdash; the <strong>Porphyrian tree</strong> branching genus into species, the ranked angelic <strong>hierarchies</strong> of pseudo-Dionysius, and the <strong>great chain of being</strong>. To picture the cosmos was to picture a perfectly ordered argument.</li>
+    </ul>
+
+    <h2>Connections</h2>
+    <p>Scholasticism grew from the <strong>patristic Christianity</strong> of the earlier era and from the recovered <strong>Aristotle</strong> carried into Europe by the philosophers of <strong>Islam</strong>. It ran in exact parallel with the <strong>Kabbalah</strong> and <strong>Sufism</strong> of its own age &mdash; each straining to order the whole of reality, though scholasticism reached for that order through logic where the mystics reached through love. Its later, nominalist turn helped clear the ground for the <strong>Reformation</strong> and the <strong>scientific revolution</strong> of the next era. Its central question &mdash; how far reason can reach God &mdash; has never gone away.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The scholastic movement, its method, and its institutions (Paris, Oxford, Bologna); the recovery of Aristotle through the Toledo translations and the Muslim commentators.</li>
+          <li>The historical figures and texts &mdash; <strong>Anselm</strong>, <strong>Abelard</strong>&rsquo;s <em>Sic et Non</em>, <strong>Lombard</strong>&rsquo;s <em>Sentences</em>, <strong>Aquinas</strong>&rsquo;s <em>Summa</em>, <strong>Scotus</strong>, <strong>Ockham</strong>, and <strong>Maimonides</strong>&rsquo;s <em>Guide</em>; and the <strong>Condemnations of 1277</strong>.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported (as history)</h4>
+        <ul>
+          <li>The <strong>truth of the theological conclusions</strong> &mdash; that the Five Ways or the ontological argument <em>succeed</em> in proving God &mdash; is a matter of philosophy and faith, not a historical finding; the arguments remain genuinely contested.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>A myth to correct, a claim to limit</h4>
+        <ul>
+          <li>The popular &ldquo;<strong>Dark Ages</strong>&rdquo; picture of an anti-rational, anti-scientific void is false: scholasticism was intensely rigorous and helped lay foundations the scientific revolution built on.</li>
+          <li>But the opposite overclaim &mdash; that scholasticism or the Condemnations of 1277 <em>invented</em> modern science &mdash; goes too far; the Duhem thesis is debated, and the truth is long, indirect groundwork, not a single birth.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Method, figures, texts</h4>
+      <ul>
+        <li><a href="https://www.newworldencyclopedia.org/entry/Scholasticism">New World Encyclopedia: scholasticism&rsquo;s method and dates</a>; <a href="https://www.britannica.com/topic/Scholasticism">Britannica: Aristotle&rsquo;s recovery and the universities</a>; <a href="https://en.wikipedia.org/wiki/Five_Ways_(Aquinas)">Aquinas&rsquo;s Five Ways</a>; <a href="https://iep.utm.edu/ockham/">Ockham, nominalism, and the razor</a>.</li>
+        <li><a href="https://plato.stanford.edu/entries/maimonides-islamic/">Maimonides in dialogue with Avicenna and Averroes</a>; <a href="https://plato.stanford.edu/archives/win2003/entries/condemnation/">the Condemnations of 1277 and the Duhem thesis</a>.</li>
+      </ul>
+      <h4>Symbology and the myth</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Medieval_Exegesis">the four senses of Scripture</a>; <a href="https://www.goodreads.com/book/show/724250.Gothic_Architecture_and_Scholasticism">Panofsky, the Gothic cathedral as a &ldquo;summa in stone&rdquo;</a>; <a href="https://factspark.blog/posts/beyond-the-myth-medieval-science-and-technology-1200-1500">the &ldquo;Dark Ages&rdquo;/anti-science myth corrected</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and scholarly sources during drafting rather than from memory. The chapter keeps the well-documented history (the movement, its figures, texts, and institutions) distinct from the philosophical status of its arguments: the Five Ways and the ontological argument are recorded as arguments made and still contested, not as proofs history can validate. It corrects the false &ldquo;Dark Ages&rdquo; caricature of medieval thought while explicitly limiting the opposite overclaim that scholasticism &ldquo;invented&rdquo; science (the Duhem thesis is debated). Jewish (Maimonides) and Islamic (Avicenna, Averroes) philosophy are treated as parallel members of one shared Aristotelian project, and the cathedral-as-summa is presented as Panofsky&rsquo;s interpretive thesis.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch29 */
+  ch29: { html: `
+    <p class="lead">Three great civilizations of the pre-Columbian Americas &mdash; the Maya of the rainforest, the Aztec of the Mexican lake, and the Inca of the Andes &mdash; and the temple religions of blood, calendar, and divine kingship they built, reconstructed from ruins, deciphered glyphs, frozen mummies, and the records of the conquerors who destroyed them.</p>
+
+    <h2>The child on the summit</h2>
+    <p>In 1999, on the frozen summit of <strong>Llullaillaco</strong>, a volcano more than 22,000 feet high, archaeologists uncovered three children. They had been placed there some five hundred years before, drugged with maize beer and coca, and left to die in the cold &mdash; and the cold had kept them so perfectly that the eldest, a girl of about thirteen, looks less like a corpse than like someone asleep. She is a <strong>capacocha</strong>, an Inca offering of the most precious thing the empire had: a chosen, perfect child, sent to live among the gods on the roof of the world.</p>
+    <p>She is also a warning about how to tell this story. Human sacrifice was real in the religions of the ancient Americas &mdash; the ground proves it beyond dispute. But almost everything else we think we know came through the hands of the Spanish who conquered these peoples, burned their books, and had every reason to paint them as monsters. To describe the Aztec, the Maya, and the Inca honestly is to hold the reality and the propaganda apart, and to see three of the most sophisticated religious civilizations the world has produced.</p>
+
+    <h2>Three worlds</h2>
+    <p>These were not one people but three, in two very different lands. In <strong>Mesoamerica</strong> rose the <strong>Maya</strong>, whose great cities flourished from roughly 250 to 900 CE and whose descendants endured, and the <strong>Aztec</strong> (properly the <strong>Mexica</strong>), whose empire crested from 1428 until the Spanish came in 1519. In the <strong>Andes</strong> rose the <strong>Inca</strong>, whose empire, the largest in the pre-Columbian Americas, ran from about 1438 until its fall in 1533. They never knew one another. Yet they built strikingly parallel worlds: monumental <strong>temple-pyramids</strong>, elaborate <strong>calendars</strong> wedded to astronomy, <strong>divine or solar kingship</strong>, and the conviction that the cosmos ran on a debt of <strong>blood</strong> the living were bound to pay.</p>
+
+    <h2>The Maya: the people of the maize and the glyph</h2>
+    <p>The Maya achieved what no other people of the ancient Americas did: a <strong>complete writing system</strong>. Their <strong>hieroglyphs</strong> &mdash; a logo-syllabic script of several hundred signs &mdash; recorded history, myth, and astronomy on stone and in bark-paper books; their <strong>decipherment</strong>, largely a triumph of the twentieth century, reopened a literature the conquest had nearly erased. Only <strong>four</strong> of their books survive the Spanish burnings.</p>
+    <p>Their sacred epic, the <strong>Popol Vuh</strong> &mdash; transcribed around 1554 &mdash; tells how the gods made human beings at last from <strong>maize</strong>, and how the <strong>Hero Twins</strong> descended into <strong>Xibalba</strong>, the underworld, to outwit its lords of death. The cosmos was ruled by <strong>Itzamna</strong>, creator and patron of writing, <strong>Kʼinich Ajaw</strong> the sun, <strong>Chaac</strong> the rain, and <strong>Kukulkan</strong> the feathered serpent. Its kings, the <strong>kʼuhul ajaw</strong> or &ldquo;holy lords,&rdquo; bound their people to the gods through <strong>bloodletting</strong>: a king or queen drew a thorned rope through the tongue or genitals, and from the rising smoke of the burnt blood the <strong>Vision Serpent</strong> appeared, an ancestor or god speaking from its jaws. Humans, made of maize, owed a <strong>body debt</strong>, repaid in blood, that kept the gods &mdash; and so the world &mdash; alive.</p>
+    <p>And the famous <strong>calendar</strong>: the <strong>Long Count</strong>, a cycle of some 5,125 years begun in 3114 BCE, whose thirteenth <em>bakʼtun</em> closed on 21 December 2012. It did not, in any Maya text, mean the end of the world &mdash; only the turning of a great cycle, like an odometer rolling over. The &ldquo;<strong>2012 apocalypse</strong>&rdquo; was a modern Western invention the Maya themselves never held.</p>
+
+    <h2>The Aztec: the debt of the Fifth Sun</h2>
+    <p>The <strong>Mexica</strong> of <strong>Tenochtitlan</strong> built their island capital around the <strong>Templo Mayor</strong>, a great twin pyramid crowned by shrines to <strong>Huitzilopochtli</strong>, the war-and-sun god, and <strong>Tlaloc</strong>, the rain god. Their cosmology was one of <strong>cyclical catastrophe</strong>: four previous worlds, four &ldquo;<strong>Suns</strong>,&rdquo; had each been created and destroyed, and the present <strong>Fifth Sun</strong> was itself doomed. To make it move at all, the gods had <strong>sacrificed themselves</strong>; and so the sun had to be sustained by human blood in return. Sacrifice, for the Mexica, was not the appeasement of an angry god but the <strong>repayment of a cosmic debt</strong> &mdash; the maintenance of a universe that would otherwise run down.</p>
+    <p>It happened, and archaeology confirms it: excavations at the Templo Mayor have uncovered the <strong>Huei Tzompantli</strong>, the great skull rack, with hundreds of skulls of sacrificed men, women, and children. But the scale must be told honestly. Spanish chroniclers claimed <strong>80,400</strong> people were killed in four days at the temple&rsquo;s rededication in 1487 &mdash; a figure that is <strong>physically impossible</strong> and served the conquerors&rsquo; need to cast the Mexica as savages. The real toll, modern scholars estimate, ran to the <strong>low thousands a year</strong>: terrible, systematic, and real &mdash; but not the cartoon of the propaganda.</p>
+
+    <h2>The Inca: the empire of the Sun</h2>
+    <p>The <strong>Inca</strong> ruled their immense Andean empire from <strong>Cusco</strong>, whose golden <strong>Coricancha</strong>, the Temple of the Sun, was the holiest place of all. At the head of the pantheon stood <strong>Inti</strong>, the sun, from whom the emperor &mdash; the <strong>Sapa Inca</strong> &mdash; claimed direct descent, making him a living divinity; behind Inti stood <strong>Viracocha</strong>, the remote creator, and <strong>Pachamama</strong>, the earth mother. The land itself was alive with <strong>huacas</strong> &mdash; sacred places and objects: a spring, a stone, a mountain, or a mummy, each inhabited by a spirit. The Inca kept the <strong>mummies of their dead emperors</strong> as the holiest huacas of all, feeding and consulting them. They recorded their world not in writing but in the <strong>quipu</strong>, an intricate system of knotted, colored cords, much of it still undeciphered. And at the great turning points of the imperial life they performed the <strong>capacocha</strong>, sending chosen children to die on the high peaks, as the girl of Llullaillaco died.</p>
+
+    <h2>Common threads</h2>
+    <p>Across these separate worlds run deep rhymes. The <strong>feathered serpent</strong> &mdash; Kukulkan to the Maya, <strong>Quetzalcoatl</strong> to the Aztec &mdash; is worshipped across all Mesoamerica. <strong>Solar and divine kingship</strong> binds ruler to sun in every case. Time is <strong>cyclical</strong>, read from the sky. Temples are <strong>mountains of stone</strong> aligned to solstice and equinox. And everywhere the cosmos is something that must be actively <strong>fed and maintained</strong>, not a machine that runs on its own. Where they differ is as telling: the Maya wrote, and the Inca &mdash; alone among great empires &mdash; did not, entrusting their memory to the knotted cord.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>These were civilizations of dense, deliberate <strong>encoding</strong>.</p>
+    <ul>
+      <li><strong>Maya writing</strong> is the great achievement: a true logo-syllabic script carved on stelae and painted in the codices, whose modern <strong>decipherment</strong> let the ancient Maya speak again. The <strong>Dresden Codex</strong> records the motions of Venus with startling precision.</li>
+      <li>The <strong>calendars</strong> are encoded time itself: the Maya <strong>Long Count</strong> and the interlocking Aztec <strong>tonalpohualli</strong> (260 days) and <strong>xiuhpohualli</strong> (365 days), meshing into a 52-year &ldquo;Calendar Round.&rdquo; The great Aztec <strong>Sun Stone</strong> (<em>Piedra del Sol</em>) is a carved cosmogram of the Five Suns &mdash; popularly, and wrongly, called &ldquo;the Aztec calendar.&rdquo;</li>
+      <li>The Inca <strong>quipu</strong> encodes data in three dimensions &mdash; the type of knot, its position, the cord&rsquo;s color and ply &mdash; a recording system we can still only partly read.</li>
+      <li>The temples encode the heavens in stone: at <strong>Chich&eacute;n Itz&aacute;</strong>, the pyramid of Kukulkan is built so that, at the equinoxes, the afternoon light casts a serpent of shadow slithering down its stair.</li>
+    </ul>
+    <p>A necessary honesty: the <strong>2012 doomsday</strong> was never Maya; the <strong>80,000-in-four-days</strong> sacrifice was never real; and the tidy, total pictures we are often given of these religions are reconstructions, built from partial decipherment, fragmentary survivals, and the testimony of enemies.</p>
+
+    <h2>Connections</h2>
+    <p>The temple religions of the Americas developed in complete isolation from the traditions in the rest of this book &mdash; which is what makes their parallels so striking: <strong>divine kingship</strong>, <strong>cyclical cosmic time</strong>, <strong>blood offering to sustain the world</strong>, and <strong>temple-mountains</strong> aligned to the sky arose here independently, as they had in the Bronze Age <strong>Egypt</strong> and <strong>Mesopotamia</strong> of the first era. They are the New World&rsquo;s own answer to the oldest religious questions, reached without a single borrowed idea &mdash; and, within a generation of the Spanish arrival, they were shattered, their books burned and their temples pulled down.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The cities, temples, and monuments (Tenochtitlan&rsquo;s Templo Mayor, the Maya cities, Cusco&rsquo;s Coricancha); the Maya <strong>writing system</strong> and its decipherment, the <strong>Long Count</strong> and the Aztec calendars, and the <strong>quipu</strong>.</li>
+          <li>The <strong>Popol Vuh</strong> (via its 1554 transcription); and the <strong>reality of human sacrifice</strong>, confirmed by the Templo Mayor skull rack and the Inca mountain mummies.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported &mdash; propaganda and modern myth</h4>
+        <ul>
+          <li>The <strong>inflated sacrifice numbers</strong> of the Spanish chroniclers (the 80,400 of 1487 is logistically impossible and served the conquest).</li>
+          <li>The &ldquo;<strong>Maya 2012 apocalypse</strong>,&rdquo; a modern Western fabrication with no basis in any Maya source.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>Much Maya myth is still reconstructed from <strong>partial decipherment</strong> and iconography.</li>
+          <li>The <strong>Popol Vuh</strong> and most of what we know reach us only through post-conquest, often hostile, transcription (Bishop Landa burned the Maya books even as his account became the key to reading them).</li>
+          <li>The <strong>quipu</strong> remains largely unread, and the inner theology behind many practices is seen mostly through the eyes of those who destroyed these religions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Maya, Aztec, Inca</h4>
+      <ul>
+        <li><a href="https://www.britannica.com/topic/pre-Columbian-civilizations/The-Maya-calendar-and-writing-system">Britannica: the Maya calendar and writing system (Popol Vuh, glyphs, Long Count)</a>; <a href="https://maya.nmai.si.edu/2012-resetting-count/meaning-of-2012">Smithsonian NMAI: the meaning of 2012 (no doomsday)</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Aztec-religion">Britannica: Aztec religion (Templo Mayor, the Five Suns, sacrifice as cosmic debt)</a>; <a href="https://www.thearchaeologist.org/blog/aztec-human-sacrifice-separating-propaganda-from-archaeological-fact">the skull rack and the scale debate (propaganda vs. archaeology)</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Inca-religion">Britannica: Inca religion (Inti, Coricancha, huacas, quipu)</a>; <a href="https://en.wikipedia.org/wiki/Capacocha">the capacocha and the mountain mummies</a>; <a href="https://en.wikipedia.org/wiki/Diego_de_Landa">Diego de Landa and the burning of the Maya books</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference and archaeological sources during drafting rather than from memory. Because most of what survives was recorded by the Spanish who destroyed these religions, the chapter keeps archaeological reality distinct from conquest propaganda (the impossible 80,400 figure) and from modern myth (the non-Maya &ldquo;2012 apocalypse&rdquo;), and treats human sacrifice as real and described in its own cosmological logic &mdash; neither sensationalized nor denied. The three cultures are presented as independent, their parallels (divine kingship, cyclical time, temple-mountains, blood offering) noted as independent answers to shared questions; and the deep source problem &mdash; partial decipherment, hostile transcription, the largely unread quipu &mdash; is kept in view throughout.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch30 */
+  ch30: { html: `
+    <p class="lead">The devotional revolution that swept across medieval India &mdash; a religion of passionate, personal love for God, sung in the mother tongue by weavers and washerwomen and untouchables, needing no priest, no temple, and no Sanskrit, only the heart &mdash; and the honest distinction between what the movement taught, what history can date, and where devotion has wrapped its saints in legend.</p>
+
+    <h2>The flowers under the shroud</h2>
+    <p>When <strong>Kabir</strong> died, around 1518, the story goes that his followers fell to quarrelling over his body. He had been raised a Muslim and revered by Hindus, and now the Muslims wished to bury him and the Hindus to burn him. As they argued over the corpse, someone lifted the shroud &mdash; and found beneath it not a body but a heap of <strong>flowers</strong>. The Hindus took half to cremate and the Muslims half to bury, and the poet-saint who had spent his life mocking the boundary between the two slipped free of it even in death.</p>
+    <p>The tale is almost certainly a legend, and it is the right place to begin &mdash; because Bhakti is a tradition whose truth lives in its poetry and whose saints live, very often, in devout legend rather than firm history. What is beyond doubt is the movement itself: one of the great religious upheavals of the medieval world, a tide of love that broke the monopoly of priest and Sanskrit and caste, and remade the spiritual life of a subcontinent.</p>
+
+    <h2>What Bhakti is</h2>
+    <p><strong>Bhakti</strong> &mdash; from a Sanskrit root meaning &ldquo;to share, to participate, to love&rdquo; &mdash; is <strong>devotion</strong>: the path of intense, personal, self-giving love for a personal God, held superior to ritual sacrifice, to philosophical knowledge, and to ascetic works. Its claim was radical in its simplicity: to reach God one needs no <strong>priest</strong>, no <strong>temple</strong>, no <strong>Sanskrit</strong>, no ritual purity, and no high birth &mdash; only <strong>love</strong> (<em>prema</em>), <strong>surrender</strong> (<em>prapatti</em>), and the constant repetition of the divine <strong>name</strong>. That threw the doors of Hindu religious life open to everyone the old order had shut out: the low-caste, the untouchable, the illiterate, and women &mdash; many of whom became the movement&rsquo;s greatest saints.</p>
+
+    <h2>From the Tamil south</h2>
+    <p>Bhakti&rsquo;s scriptural seed lay in the <strong>Bhagavad Gita</strong>, which had already named loving devotion as a path to God. But the movement itself was born in the <strong>Tamil south</strong>, between the sixth and ninth centuries, in the songs of two bands of poet-saints. The <strong>Alvars</strong> &mdash; twelve devotees of <strong>Vishnu</strong>, among them the woman saint <strong>Andal</strong> &mdash; poured out hymns gathered into the <em>Nalayira Divya Prabandham</em>. The <strong>Nayanars</strong> &mdash; some sixty-three devotees of <strong>Shiva</strong> &mdash; sang the hymns collected in the <em>Tevaram</em>. They sang not in Sanskrit but in <strong>Tamil</strong>, challenged caste and Brahmin privilege, and set the pattern the whole movement would follow. From the south it spread across India, cresting between the fourteenth and seventeenth centuries.</p>
+
+    <h2>The philosophers of devotion</h2>
+    <p>Bhakti found its intellectual defender in <strong>Ramanuja</strong> (1017&ndash;1137), who answered the austere non-dualism of Shankara &mdash; in which the self dissolves wholly into an impersonal Absolute &mdash; with <strong>Vishishtadvaita</strong>, &ldquo;qualified non-dualism,&rdquo; in which God and the soul remain distinct enough that love between them is real and eternal. Crucially, Ramanuja taught that even <strong>shudras and outcastes</strong> could reach salvation by complete surrender. <strong>Madhva</strong> pressed further into outright dualism. Between them they gave the religion of the heart a rigorous spine &mdash; and preserved the one thing devotion cannot do without: a real Other to love.</p>
+
+    <h2>Saguna and nirguna</h2>
+    <p>The movement divided over a deep question: does God have form? <strong>Saguna</strong> bhakti loves God <strong>with</strong> qualities and form &mdash; <strong>Krishna</strong> with his flute, <strong>Rama</strong>, <strong>Shiva</strong>, the <strong>Goddess</strong> &mdash; present in the image and the temple. <strong>Nirguna</strong> bhakti loves the <strong>formless</strong>, attributeless Absolute beyond all image, and in its boldest voices grew hostile to temple and mosque alike, to idol and to scripture, insisting that the God worth loving cannot be carved or caged. The line between them runs through the whole tradition.</p>
+
+    <h2>The saints</h2>
+    <p>The soul of Bhakti is its <strong>saints</strong> &mdash; a great, unruly company drawn from every corner of society.</p>
+    <ul>
+      <li>In <strong>Karnataka</strong>, <strong>Basava</strong> (twelfth century) founded the <strong>Lingayat</strong> (Virashaiva) movement, rejecting caste, temple, and Brahmin ritual and pouring his teaching into terse <strong>vachana</strong> prose-poems in Kannada; the woman saint <strong>Akka Mahadevi</strong> sang beside him.</li>
+      <li>In <strong>Maharashtra</strong>, <strong>Jnaneshwar</strong> (thirteenth century) wrote the <em>Jnaneshwari</em>, a luminous Marathi commentary on the Gita, and <strong>Namdev</strong> sang his <strong>abhangs</strong> to <strong>Vithoba</strong> of Pandharpur, building the enduring <strong>Varkari</strong> pilgrim tradition.</li>
+      <li>In the <strong>north</strong>, <strong>Ramananda</strong> carried the fire, and from his circle came its most famous voice: <strong>Kabir</strong> (fifteenth century), the weaver of Banaras, a <strong>nirguna</strong> poet who ridiculed the pretensions of Hindu and Muslim alike and sought the one God beyond both &mdash; whose verses were later gathered into the <strong>Sikh scripture</strong>. Beside him stood <strong>Ravidas</strong>, the leather-worker saint. The later blooms &mdash; <strong>Mirabai</strong>, <strong>Surdas</strong>, <strong>Tulsidas</strong>, and <strong>Chaitanya</strong> of Bengal &mdash; belong mostly to the following era.</li>
+    </ul>
+
+    <h2>The practice of love</h2>
+    <p>Bhakti&rsquo;s devotion took set forms &mdash; classically the <strong>nine</strong> (<em>navadha bhakti</em>): hearing God&rsquo;s stories, singing them, remembering, serving, worshipping, bowing, serving as a slave, befriending, and utterly surrendering the self. Its warmth came from the <strong>bhavas</strong>, the moods in which one loved God &mdash; as <strong>master</strong>, <strong>friend</strong>, <strong>child</strong>, or <strong>lover</strong>. Above all it sang: <strong>kirtan</strong> and <strong>bhajan</strong>, communal devotional singing set to ecstatic music, carried the movement into every village, and the endless repetition of the divine <strong>name</strong> &mdash; <em>Ram</em>, <em>Hari</em>, <em>Krishna</em> &mdash; was itself the shortest road to God, needing no learning at all. There was no priest between the devotee and the beloved, and that was the whole point.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p>Bhakti&rsquo;s genius was to hide nothing and give everything &mdash; yet it, too, encoded the sacred in distinctive ways.</p>
+    <ul>
+      <li>Its central sacred vehicle is the <strong>vernacular song</strong> &mdash; the <em>pada</em>, <em>abhang</em>, <em>vachana</em>, and <em>doha</em> &mdash; composed in the mother tongue so anyone could receive the divine. In doing so the movement became <strong>the single most powerful force in the shaping of the modern Indian languages</strong>: Tulsidas made a scripture of Awadhi, Surdas of Braj, Tukaram of Marathi, Mirabai of Rajasthani, Chaitanya of Bengali.</li>
+      <li>The <strong>divine name</strong> (<em>nama</em>) is itself sacred and sufficient: to repeat it (<em>nama-japa</em>) is to hold the deity present in sound &mdash; the Indian devotional cousin of the Sufi <strong>dhikr</strong>, the tantric <strong>mantra</strong>, the Kabbalistic divine names, and the Shinto <strong>kotodama</strong>, all met in one age.</li>
+      <li><strong>Kabir</strong>&rsquo;s riddling <strong>ulatbamsi</strong>, &ldquo;upside-down language&rdquo; &mdash; deliberately paradoxical verses that turn the world inside out to jolt the hearer awake &mdash; is his version of the coded speech that runs through the esoteric traditions of this book.</li>
+      <li>The Lingayats&rsquo; <strong>ishtalinga</strong> &mdash; a small symbol of Shiva worn on the body, worshipped anywhere &mdash; encodes the whole radical claim of Bhakti in an object: the divine is carried in the heart and on the person, not housed in a temple that only some may enter.</li>
+    </ul>
+
+    <h2>Connections</h2>
+    <p>Bhakti grew from the Vedic and epic Hinduism of the earliest eras and the devotional current in the <strong>Gita</strong>, and it rhymes with the <strong>Tantra</strong> of the previous chapter as another intensely experiential path. Above all it met, in medieval India, the <strong>Sufism</strong> of this very era: the two love-mysticisms cross-fertilized for centuries, and <strong>Kabir</strong> stands at their meeting point, claimed by Hindus, Muslims, and Sikhs alike. It fed directly into the birth of <strong>Sikhism</strong> in the next era &mdash; Guru Nanak&rsquo;s hymns and Kabir&rsquo;s verses share a scripture. With Bhakti the High Medieval age closes: five traditions, from the Kabbalah and Sufism of the Abrahamic west to the temple religions of the Americas and the love-religion of India, each seeking the hidden God through love, order, or blood.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The Bhakti movement and its spread from the Tamil south across India; the poetic corpora of the <strong>Alvars</strong> and <strong>Nayanars</strong>; the philosophers <strong>Ramanuja</strong> and <strong>Madhva</strong>.</li>
+          <li>The saints <strong>Basava</strong>, <strong>Jnaneshwar</strong>, <strong>Namdev</strong>, <strong>Kabir</strong>, and <strong>Ravidas</strong> and their surviving verse; the plain <strong>anti-caste, anti-clerical, vernacular</strong> message; and Bhakti&rsquo;s immense role in shaping the modern Indian languages.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history) &mdash; the lives of the saints</h4>
+        <ul>
+          <li>The <strong>biographies</strong> of most Bhakti saints are woven through with <strong>miracle and legend</strong> (Kabir&rsquo;s body turning to flowers; poison to nectar for Mirabai) &mdash; devotional hagiography, not documented history.</li>
+          <li>Firm <strong>dates</strong> for many saints are uncertain, and the poems attributed to them were largely transmitted orally and compiled later, so a corpus like &ldquo;<strong>Kabir&rsquo;s</strong>&rdquo; is layered and partly the work of others.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>How far the movement&rsquo;s radical <strong>anti-caste</strong> message actually reformed society, as against being spiritually revolutionary while socially absorbed &mdash; scholars disagree.</li>
+          <li>The authorship and dating of many individual poems.</li>
+          <li>Whether <strong>Kabir</strong> is best understood as Hindu, Muslim, or &mdash; as he insisted &mdash; belonging to no such box at all.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>Movement, philosophy, saints</h4>
+      <ul>
+        <li><a href="https://www.pw.live/upsc/exams/bhakti-movement">Bhakti movement overview (saguna/nirguna, caste and gender)</a>; <a href="https://en.wikipedia.org/wiki/Alvars">the Alvars and Nayanars</a>; <a href="https://theiashub.com/upsc/bhakti-movement/">Ramanuja&rsquo;s Vishishtadvaita and Madhva</a>; <a href="https://www.iasgyan.in/blogs/a-complete-list-of-saints-and-teachers-of-bhakti-movement">Basava, Jnaneshwar, Namdev, Kabir, Ravidas</a>.</li>
+      </ul>
+      <h4>Practice, language, and the Sufi meeting</h4>
+      <ul>
+        <li><a href="https://socialstudieshelp.com/world-history/the-bhakti-movement-devotion-vernacular-culture-and-social-critique/">bhajan-kirtan, nama, and Bhakti&rsquo;s shaping of the modern Indian languages</a>; <a href="https://iasscore.in/target-pt/bhakti-sufi-movements">the Bhakti&ndash;Sufi meeting and the road to Sikhism</a>.</li>
+      </ul>
+      <p class="source-note">Researched from standard reference sources during drafting rather than from memory. The movement and its poetry are treated as well-documented, while the saints&rsquo; miracle-biographies are flagged as hagiography rather than history and firm dates as often uncertain; the layered, partly-later authorship of corpora like Kabir&rsquo;s is noted. The anti-caste message is affirmed as present in the verse, while how far it reformed society is left open. nama-japa is set beside the Sufi dhikr, tantric mantra, Kabbalistic divine names, and Shinto kotodama as one age&rsquo;s many sacred-sound traditions, and the later blooms (Mirabai, Tulsidas, Chaitanya) and the modern global export of Krishna-devotion are reserved for later eras.</p>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch31 */
+  ch31: { html: `
+    <p class="lead">The sixteenth-century revolt that split Western Christianity in two — begun as a quarrel over the sale of forgiveness, carried across a continent by a new machine, and ending in a hundred years of war and a Christendom shattered into churches — told with care for what happened, what the reformers claimed, and what remains a matter of faith.</p>
+
+    <h2>The door at Wittenberg</h2>
+
+    <p>On the thirty-first of October, 1517 — so the tradition holds — an Augustinian friar and professor named <strong>Martin Luther</strong> walked to the door of the Castle Church in <strong>Wittenberg</strong> and nailed to it a sheet of ninety-five propositions, in Latin, for academic debate. Whether he actually hammered them to the door is genuinely uncertain; some historians think the dramatic scene a later legend, and that he simply mailed them to his bishop. What is not in doubt is what the <strong>Ninety-Five Theses</strong> attacked: the sale of <strong>indulgences</strong> — papal certificates that promised to shorten a soul's time in purgatory, hawked across Germany by the friar Johann Tetzel with the jingle, "<strong>as soon as the coin in the coffer rings, the soul from purgatory springs</strong>." Luther meant to start a scholarly argument. He started the fracture of the Latin Church.</p>
+
+    <h2>What the Reformation was</h2>
+
+    <p>The <strong>Protestant Reformation</strong> was the movement that, over the sixteenth century, broke the thousand-year unity of Western Christianity under the pope and founded the rival family of <strong>Protestant</strong> churches. It began as a protest against specific corruptions — indulgences, clerical wealth, the abuses of Rome — but it swiftly became something far larger: a wholesale challenge to the authority of the pope, the priesthood, and the traditions of the Church, in the name of a Christianity refounded on the Bible and on faith alone.</p>
+
+    <h2>The spark and the machine</h2>
+
+    <p>Luther's protest would likely have died as a local dispute, as earlier ones had, but for a new technology. The <strong>printing press</strong>, barely seventy years old, seized on the Theses: within weeks they were translated from Latin into <strong>German</strong> and printed and reprinted across the empire, and Luther's later pamphlets sold in the hundreds of thousands. For the first time a religious rebel could reach a whole society over the heads of the authorities. The Reformation was the first mass movement of the age of print — and it made the <strong>book</strong>, not the priest, the center of the faith.</p>
+
+    <h2>The five "solas"</h2>
+
+    <p>Protestant theology crystallized into a handful of Latin slogans that defined it against Rome:</p>
+
+    <ul>
+      <li><strong>Sola scriptura</strong> — "<strong>Scripture alone</strong>": the Bible, not the pope or church tradition, is the sole authority for Christian faith.</li>
+      <li><strong>Sola fide</strong> — "<strong>faith alone</strong>": a person is justified, made right with God, by faith and not by good works or the Church's sacraments.</li>
+      <li><strong>Sola gratia</strong> — "<strong>grace alone</strong>": salvation is God's unearned gift, not a reward.</li>
+      <li>and, behind them, <strong>solus Christus</strong> and <strong>soli Deo gloria</strong> — Christ alone as mediator, glory to God alone.</li>
+    </ul>
+
+    <p>From these flowed the rest: the <strong>priesthood of all believers</strong> (every Christian has direct access to God, needing no priest); the <strong>vernacular Bible</strong>, so that all could read it — Luther's own German translation reshaped the language itself; and the rejection of purgatory, of most of the seven sacraments, of monasticism, clerical celibacy, and the cult of the saints.</p>
+
+    <h2>The reformers and the radicals</h2>
+
+    <p>The movement fractured almost at once into rival streams. <strong>Luther</strong> led in Germany. In Switzerland, <strong>Huldrych Zwingli</strong> at Zürich and then <strong>John Calvin</strong> at <strong>Geneva</strong> built the <strong>Reformed</strong> tradition; Calvin's <em>Institutes of the Christian Religion</em> and his austere doctrine of <strong>predestination</strong> — that God has eternally chosen the saved and the damned — became the most rigorous system of Protestant thought and spread to the Dutch, the Scots (as Presbyterianism), and the English Puritans. In England the break was as much political as theological: <strong>Henry VIII</strong>, denied an annulment, made himself head of an English church, which settled into the Anglican <em>via media</em> between Rome and Geneva.</p>
+
+    <p>And on the movement's edge stood the <strong>Radical Reformation</strong> — the <strong>Anabaptists</strong>, who rejected infant baptism for adult believers' baptism, and often the whole alliance of church and state. Persecuted by Catholics and mainline Protestants alike, and stained by the violent millenarian takeover of <strong>Münster</strong> in 1534–35, they nonetheless carried ideas — <strong>believers' baptism</strong>, the <strong>separation of church and state</strong>, pacifism — that would outlast their persecutors, in the Mennonites, Amish, and later the Quakers and Baptists.</p>
+
+    <h2>Rome's answer</h2>
+
+    <p>The Catholic Church did not simply lose. The <strong>Counter-Reformation</strong> (or Catholic Reformation) answered with reform and reaction: the <strong>Council of Trent</strong> (1545–1563) reaffirmed the disputed doctrines — the authority of tradition alongside scripture, justification by faith <em>and</em> works, the seven sacraments, transubstantiation — while correcting the worst abuses; the new <strong>Society of Jesus</strong> (the Jesuits) became the spearhead of Catholic education and global mission; and the <strong>Roman Inquisition</strong> and the <strong>Index of Forbidden Books</strong> enforced the boundary. Christendom was now permanently divided into confessions.</p>
+
+    <h2>A hundred years of war</h2>
+
+    <p>The split was written in blood. The <strong>Peace of Augsburg</strong> (1555) tried to hold Germany together with the principle <em>cuius regio, eius religio</em> — the ruler's religion is the region's — but the <strong>French Wars of Religion</strong>, the Dutch Revolt, the English civil wars, and above all the catastrophic <strong>Thirty Years' War</strong> (1618–1648) turned Europe into a charnel house in the name of doctrine. The <strong>Peace of Westphalia</strong> that ended it in 1648 left a continent of confessional states and the first stirrings of an idea born of exhaustion: that the state might have to <strong>tolerate</strong> more than one faith.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The Reformation was, at its core, a revolution in <strong>what counted as sacred</strong> — and it moved the holy from the image to the word.</p>
+
+    <ul>
+      <li>The supreme sacred object became the <strong>printed vernacular Bible</strong>. Where medieval faith had been carried in ritual, relic, and image for the illiterate, <em>sola scriptura</em> made the <strong>read and preached word</strong> the vehicle of grace, and drove a wave of <strong>literacy</strong> across Protestant lands.</li>
+      <li>Against the image came <strong>iconoclasm</strong>: Reformed Christians, reading the commandment against graven images strictly, stripped and whitewashed their churches, smashed statues and stained glass (the <em>Beeldenstorm</em> of 1566), and built plain <strong>meeting-houses</strong> whose bareness was itself a theology — God is met in the Word, not in gilded splendor.</li>
+      <li>The medieval <strong>four senses of Scripture</strong> (from the scholastic chapter) were largely rejected for the <strong>plain, literal sense</strong>: the text meant what it said, and every plowman could read it for himself.</li>
+      <li>And a new sacred medium arose in <strong>congregational hymn-singing</strong> — Luther's own chorales, the metrical psalms of the Reformed — encoding doctrine in music the whole people sang, no longer a choir performing on their behalf.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Reformation grew directly out of the medieval <strong>Catholic</strong> church it broke from, and out of the <strong>scholasticism</strong> of the previous chapter — its nominalist turn (Ockham) had already loosened the ground, and Luther was trained in it. It drew on the <strong>Renaissance humanists'</strong> return to original texts (Erasmus's Greek New Testament put the tools in Luther's hands). It runs parallel to the birth of <strong>Sikhism</strong> in the same century — another vernacular, scripture-and-devotion movement rejecting priestly mediation — and it set loose forces, from mass literacy to individual conscience to religious pluralism, that shape the <strong>modern</strong> era to come. The old claim, from Max Weber, that its work-ethic birthed capitalism is much debated, but that it helped make the modern world is not.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>Luther's Ninety-Five Theses and the indulgence controversy of 1517; the role of the printing press; the doctrines and texts of Luther, Zwingli, and Calvin; the English and Radical Reformations; the Council of Trent and the Counter-Reformation; and the wars of religion through the Peace of Westphalia (1648). The documentary record is overwhelming.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>The <strong>theological claims themselves</strong> — justification by faith alone, the sole authority of Scripture, predestination, the real presence or its denial — are matters of <strong>faith and theology</strong>, recorded here as the convictions people fought over, neither proven nor refuted. Whether the reformers or Rome were <em>right</em> is not a question history can answer.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and legendary</h4>
+        <p>Whether Luther actually <strong>nailed</strong> the Theses to the church door is doubted by serious historians. The <strong>Weber thesis</strong> linking Protestantism to the rise of capitalism is contested. And the deeper question of how far the Reformation <em>caused</em> the modern world of literacy, individualism, and eventual secularism — as opposed to riding forces already in motion — remains a genuine historical debate.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Luther's Ninety-Five Theses (1517), indulgences, Tetzel, and the door — "Ninety-five Theses," Britannica. <a href="https://www.britannica.com/event/Ninety-five-Theses">https://www.britannica.com/event/Ninety-five-Theses</a></li>
+        <li>The printing press and the rapid spread of the Reformation — "Martin Luther's 95 Theses," World History Encyclopedia. <a href="https://www.worldhistory.org/article/1891/martin-luthers-95-theses/">https://www.worldhistory.org/article/1891/martin-luthers-95-theses/</a></li>
+        <li>The solas, sola scriptura and sola fide, the vernacular Bible, priesthood of all believers — "Protestantism," Britannica. <a href="https://www.britannica.com/topic/Protestantism">https://www.britannica.com/topic/Protestantism</a></li>
+        <li>Calvin, Geneva, predestination, the <em>Institutes</em>; Zwingli and the Reformed tradition — "Reformation," Britannica. <a href="https://www.britannica.com/event/Reformation">https://www.britannica.com/event/Reformation</a></li>
+        <li>The Radical Reformation and the Anabaptists (adult baptism, church–state separation, Münster) — "Anabaptism," Britannica. <a href="https://www.britannica.com/topic/Anabaptists">https://www.britannica.com/topic/Anabaptists</a></li>
+        <li>The Counter-Reformation and the Council of Trent (1545–1563); the Jesuits — "Counter-Reformation," Britannica. <a href="https://www.britannica.com/event/Counter-Reformation">https://www.britannica.com/event/Counter-Reformation</a></li>
+        <li>The Peace of Augsburg (1555), the Thirty Years' War, and the Peace of Westphalia (1648) — "Thirty Years' War," Britannica. <a href="https://www.britannica.com/event/Thirty-Years-War">https://www.britannica.com/event/Thirty-Years-War</a></li>
+        <li>Reformation iconoclasm (the Beeldenstorm) and the turn to the word — "Reformation iconoclasm" overviews (Britannica/Wikipedia). <a href="https://en.wikipedia.org/wiki/Reformation_iconoclasm">https://en.wikipedia.org/wiki/Reformation_iconoclasm</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch32 */
+  ch32: { html: `
+    <p class="lead">The two-and-a-half centuries in which early modern Europe hunted, tortured, and killed tens of thousands of its own people — overwhelmingly poor women — for a crime that, as its persecutors imagined it, did not exist; told as the documented history of a persecution, not as evidence that its victims were what they were accused of being.</p>
+
+    <h2>The confession</h2>
+
+    <p>Somewhere in the German lands around 1600, an old woman — a widow, perhaps, or the village healer people came to for a charm against fever — is denounced by a neighbor after a cow sickens or a child dies. She is arrested, stripped, and searched for the <strong>Devil's mark</strong>. She denies everything. She is tortured — the thumbscrews, the strappado that pulls the arms from their sockets — until she confesses what her interrogators already know she must confess: that she made a pact with Satan, flew by night to the <strong>witches' sabbath</strong>, feasted and copulated with demons, and blighted her neighbors' crops and cattle. Then she is made to name the others she saw there. Some of them will be arrested next. And then she is burned.</p>
+
+    <p>She was not a witch. There was no secret society of Devil-worshippers flying to sabbaths; the crime she confessed to was, in that form, a <strong>fantasy</strong> — assembled by learned men and extracted by pain. This is the hardest thing to hold steady about the witch trials, and the most important: the persecution was utterly real, and the conspiracy it punished was not.</p>
+
+    <h2>What the witch trials were</h2>
+
+    <p>Between roughly <strong>1450 and 1750</strong>, the courts of Christian Europe and its colonies tried perhaps <strong>100,000 people</strong> for witchcraft and executed somewhere between <strong>40,000 and 60,000</strong> — the great majority in the fragmented <strong>Holy Roman Empire</strong>. The "witch" they hunted was a specific and terrible invention: not merely someone who worked harmful magic, but a person who had <strong>renounced God, sworn allegiance to the Devil</strong>, and joined a vast secret conspiracy against Christendom. It is this second, diabolical element — the pact, the sabbath, the anti-church of Satan — that was, as modern scholarship overwhelmingly agrees, <strong>largely fabricated</strong> by the persecutors themselves.</p>
+
+    <h2>The making of the witch</h2>
+
+    <p>The idea was a <strong>welding-together</strong> of two very different things. The first was ordinary belief in <strong>maleficium</strong> — harmful magic — which almost everyone in pre-modern Europe accepted, and which shaded into the genuine world of village <strong>cunning-folk</strong>: healers, charmers, and finders of lost things who really existed and mostly did good. The second was an elite theory of <strong>demonology</strong>, worked out by theologians and lawyers, that reinterpreted this folk magic as <strong>Devil-worship</strong>. The two fused into the "cumulative concept" of the witch, and the fusion was given its most infamous handbook in the <strong>Malleus Maleficarum</strong> ("Hammer of Witches," 1486), the venomous, deeply misogynistic treatise of the Dominican <strong>Heinrich Kramer</strong>. It was a best-seller for two centuries — yet, tellingly, it was <strong>never authorized by the Catholic Church</strong>, and was in fact condemned by leading theologians of its own day for bad doctrine and illegal methods.</p>
+
+    <h2>The machinery</h2>
+
+    <p>What turned belief into slaughter was <strong>procedure</strong>. Where courts adopted <strong>inquisitorial</strong> methods and permitted <strong>torture</strong>, two things followed: confessions could be produced to order, and tortured suspects could be forced to <strong>name accomplices</strong> — so that a single accusation could chain-react into a panic that consumed dozens or hundreds. The trials were not the work of one church: <strong>Catholic and Protestant</strong> courts both hunted witches, and the worst outbreaks — Trier, Bamberg, Würzburg — came where central legal authority was weakest and local zeal unchecked. Across the Atlantic, the <strong>Salem</strong> trials of 1692, which hanged twenty, were a small, late colonial flare of the same fire.</p>
+
+    <h2>Who died, and why</h2>
+
+    <p>About <strong>three-quarters to four-fifths</strong> of those executed across Europe were <strong>women</strong> — most of them old, poor, widowed, or marginal, and often the very healers and midwives their communities had once relied on. That pattern makes misogyny a central thread of the hunts. But it was not the whole story: in <strong>Iceland</strong> some ninety percent of the accused were men, and men were the majority in <strong>Finland</strong> and <strong>Estonia</strong> too. Historians such as Brian Levack therefore reject any single cause and stress a <strong>convergence</strong>: the legal machinery of torture, the demonological theory of the learned, the social stress of a Europe wracked by plague, war, famine, and the religious terror of the Reformation age — and the ancient human reflex to find, in a frightened time, someone to blame.</p>
+
+    <h2>The end of the hunts</h2>
+
+    <p>The trials did not stop because Europe stopped believing in the Devil. They stopped because <strong>the machinery lost its legitimacy</strong>: judges grew skeptical of confessions won by torture, courts demanded evidence that spectral flights and pacts could not provide, and voices of protest — most bravely the Jesuit <strong>Friedrich Spee</strong>, whose <em>Cautio Criminalis</em> (1631) exposed how torture manufactured guilt — slowly turned educated opinion. The rising <strong>Enlightenment</strong> finished the work. By the eighteenth century the last legal executions had ceased, and the witch had passed from the courtroom into folklore.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The witch trials ran on a dark and revealing <strong>symbolic</strong> system — much of it projected onto the accused rather than found in them.</p>
+
+    <ul>
+      <li>The <strong>Devil's mark</strong> and the <strong>witch's mark</strong> were read on the body as encoded proof: any mole, scar, or insensitive patch could be "the Devil's seal," and searchers pricked the accused for a spot that would not bleed. The evidence was written on the flesh because it could be found nowhere else.</li>
+      <li>The <strong>confession</strong> itself was an encoded, formulaic text: the sabbath, the pact, the flight, the demonic sex recur in trial after trial in the same shape — not because witches did these things, but because interrogators, working from the same demonological manuals, asked the same leading questions and tortured until they got the same script.</li>
+      <li>The imagined sabbath was a systematic <strong>inversion</strong> of Christian symbol — a black anti-Mass, prayers said backward, the cross trampled, the world turned upside down — the projection of a society's fears about its own most sacred things.</li>
+      <li>And the familiar <strong>iconography</strong> of the witch — the pointed hat, the broomstick, the cauldron and black cat — is very largely <strong>later folklore and art</strong>, not the reality of the trials, a reminder that even our picture of the persecution is a construction.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The witch trials belong to the anxious, violent world of the <strong>Reformation</strong> that fills the neighboring chapters — an age when both churches were certain the Devil was loose. They inherited the machinery of the medieval <strong>Inquisition</strong> and the demonology of the schoolmen. Crucially, they are the historical root of a distinction this book draws carefully in the <strong>modern</strong> era: between <strong>fabricated, accusatory "Satanism"</strong> — the imaginary Devil-cult of the trials, and its descendants in later panics — and the real, self-identified Satanism of the twentieth century, which is an entirely different thing. And they are the (largely mythical) charter of modern <strong>Wicca</strong>, whose twentieth-century founders claimed descent from a surviving witch-religion — a claim examined, and doubted, in its own later chapter.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The witch trials themselves — their chronology (c. 1450–1750), their concentration in the Holy Roman Empire, and a death toll now soberly estimated at <strong>40,000–60,000</strong>; the <em>Malleus Maleficarum</em> and the demonological literature; the role of <strong>torture</strong> and inquisitorial procedure; the predominance of women among the victims; and the reality of village <strong>cunning-folk</strong> and folk magic.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>That the accused were actually members of a <strong>satanic witch-cult</strong> — the once-popular "witch-cult" thesis of Margaret Murray is thoroughly discredited. That the <strong>confessions</strong>, extracted under torture, describe real events. And that <strong>maleficium</strong> — harmful magic — actually worked. The crime, as charged, was imaginary; the persecution was not.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise <strong>death tolls</strong>, which are estimates from incomplete records and were once wildly exaggerated (the "nine million" sometimes claimed is pure myth). The relative weight of the many <strong>causes</strong>. And, in any given trial, how much a real tradition of folk healing or magic underlay the accusation, before torture buried it under fantasy.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Scope, chronology (c. 1450–1750), ~100,000 accused and 40,000–60,000 executed, concentration in the Holy Roman Empire — "The European Witch-Hunts, 1450–1750," Brewminate. <a href="https://brewminate.com/the-european-witch-hunts-1450-1750/">https://brewminate.com/the-european-witch-hunts-1450-1750/</a></li>
+        <li>The "cumulative concept" of the witch; maleficium plus demonology; multipolar causes (Brian Levack) — "Witch trials in the early modern period," overviews (EBSCO Research Starters). <a href="https://www.ebsco.com/research-starters/history/witch-hunts-and-witch-trials">https://www.ebsco.com/research-starters/history/witch-hunts-and-witch-trials</a></li>
+        <li>The <em>Malleus Maleficarum</em> (1486, Heinrich Kramer); best-seller yet condemned by the Church, not authorized — "Malleus Maleficarum," Wikipedia. <a href="https://en.wikipedia.org/wiki/Malleus_Maleficarum">https://en.wikipedia.org/wiki/Malleus_Maleficarum</a></li>
+        <li>Gender: ~75–80% women overall, with male-majority regions (Iceland, Finland, Estonia) — witch-hunt gender scholarship (Gendercide; Grokipedia, "Witch trials"). <a href="https://www.gendercide.org/case_witchhunts.html">https://www.gendercide.org/case_witchhunts.html</a></li>
+        <li>Salem (1692); the end of the trials; Friedrich Spee's <em>Cautio Criminalis</em> (1631) — "Witches: Real Origins, Hunts &amp; Trials," History.com. <a href="https://www.history.com/articles/history-of-witches">https://www.history.com/articles/history-of-witches</a></li>
+        <li>The debunked Murray "witch-cult" thesis and the mythical "nine million" toll — general historiography (Grokipedia, "Witch trials in the early modern period"). <a href="https://grokipedia.com/page/Witch_trials_in_the_early_modern_period">https://grokipedia.com/page/Witch_trials_in_the_early_modern_period</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch33 */
+  ch33: { html: `
+    <p class="lead">The vast family of indigenous religions of sub-Saharan Africa — a Supreme God above a world of intermediary spirits and living ancestors, read through divination and danced in masks — and the extraordinary story of how, in the colonial and slave-trade centuries, these faiths were carried across the Atlantic in the memories of the enslaved and survived, hidden inside the saints of their captors.</p>
+
+    <h2>The seed that would not die</h2>
+
+    <p>When a Yoruba man or woman was chained into the hold of a slave ship on the Bight of Benin in the seventeenth or eighteenth century, they were stripped of nearly everything — name, home, language, kin. But one thing could not be taken: what they carried in the mind. They remembered the <strong>orishas</strong>, the deities of thunder and river and iron; they remembered the wisdom of <strong>Ifá</strong> divination and the reverence owed the ancestors. On the far shore, forbidden their gods and driven toward the cross, they did something quietly astonishing: they matched their orishas to the Catholic <strong>saints</strong> — Shango, lord of thunder, to Saint Barbara; Ogun, god of iron, to Saint Peter with his keys — and worshipped the old powers behind the new faces. Out of that concealment were born <strong>Santería</strong>, <strong>Candomblé</strong>, and <strong>Vodou</strong>, and the African gods crossed an ocean that was meant to erase them.</p>
+
+    <p>This chapter is about the religions those people carried, and it must begin with a caution: "African traditional religion" is not one thing but <strong>hundreds</strong>, spread across a continent, mostly oral, and known to us largely through the records of the colonizers, missionaries, and anthropologists who often despised or romanticized what they described. What follows traces the deep family resemblances while remembering how varied, and how imperfectly recorded, the reality was.</p>
+
+    <h2>A shared shape</h2>
+
+    <p>Beneath the immense diversity, many sub-Saharan traditions share a recognizable structure. Above all stands a <strong>Supreme Creator God</strong> — Olodumare among the Yoruba, Nyame among the Akan, Nzambi in the Kongo — who is often remote, having withdrawn from the daily running of the world. Between that high God and humanity move a crowd of <strong>lesser divinities and spirits</strong> who are close and active: the Yoruba <strong>orishas</strong>, the Fon <strong>vodun</strong>, the powers of rivers, mountains, forests, and storms. Closest of all are the <strong>ancestors</strong> — the honored dead, who remain members of the family, watching, helping, and requiring remembrance. The living stay in right relation with all of them through <strong>offering</strong>, <strong>festival</strong>, and, above all, <strong>divination</strong> — the reading of the hidden will of the spirits through ritual specialists. There is, characteristically, <strong>no scripture</strong>: the tradition lives in memory, proverb, song, mask, and the trained diviner's art.</p>
+
+    <h2>The great traditions</h2>
+
+    <ul>
+      <li>The <strong>Yoruba</strong> of what is now Nigeria and Benin built the most elaborate of these systems: hundreds of <strong>orishas</strong>, each with its own colors, foods, drums, and character, and the sophisticated <strong>Ifá</strong> divination overseen by the wisdom-orisha Orunmila — a corpus of hundreds of verses read from a binary system of signs. It is the Yoruba cosmos, more than any other, that crossed the Atlantic.</li>
+      <li>The <strong>Fon</strong> of Dahomey worshipped the <strong>vodun</strong>, the spirits whose name became "Vodou."</li>
+      <li>The <strong>Akan</strong> of the Gold Coast honored <strong>Nyame</strong> the sky-god and Asase Yaa the earth, and encoded their proverbs in the <strong>Adinkra</strong> symbols.</li>
+      <li>The <strong>Kongo</strong> and wider <strong>Bantu</strong> peoples of Central Africa held a cosmology of the two worlds — the living and the dead — divided by water, and of powerful ritual objects (the <em>minkisi</em>) that concentrated spirit; their ideas would shape the diaspora as deeply as the Yoruba's.</li>
+    </ul>
+
+    <h2>Across the water</h2>
+
+    <p>The <strong>transatlantic slave trade</strong> — which tore an estimated <strong>12.5 million</strong> people from West and West-Central Africa between the sixteenth and nineteenth centuries — became, against every intention, one of the great engines of religious transmission. Forbidden their rites and pressed to convert, the enslaved practiced a <strong>strategic syncretism</strong>: they hid their orishas and vodun behind the masks of Catholic saints, folded African drumming and possession-trance into the calendar of the Church, and preserved the essentials of divination, initiation, and ancestor-honor. From this concealment emerged the enduring <strong>Afro-Atlantic religions</strong> — <strong>Santería</strong> (Regla de Ocha–Ifá) in Cuba, <strong>Candomblé</strong> in Brazil, <strong>Vodou</strong> in Haiti, and the traditions of New Orleans — living faiths in which the African gods are worshipped still. (Their modern forms are treated more fully among the diaspora syntheses of the next era.)</p>
+
+    <h2>Ritual and the body</h2>
+
+    <p>Where these religions are most themselves is in <strong>ritual</strong>, and ritual here is danced, drummed, and embodied. The defining act of worship across much of the family is <strong>spirit possession</strong>: through rhythmic drumming and dance a deity "mounts" a devotee, who becomes for a time the living presence of the god, speaking and moving as the orisha or vodun. <strong>Initiation</strong> binds a person to a particular deity for life; <strong>sacrifice</strong> and <strong>offering</strong> feed the spirits and the ancestors; and <strong>masks</strong> and masquerade make the invisible powers visible in festival. This is a religion not primarily of belief stated in creeds but of <strong>relationship</strong> enacted with the body and the community.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Africa's traditional religions are rich in <strong>encoded</strong> systems — and one of them is among the most remarkable in the world.</p>
+
+    <ul>
+      <li><strong>Ifá divination</strong> is a genuine information system. The diviner casts palm nuts or a divining chain and reads the result as one of <strong>256 figures</strong> (the <em>odu</em>), each a distinct pattern of marks that is, in effect, an eight-bit <strong>binary</strong> signature — and each of which unlocks a vast body of memorized verses. It is a sacred encoding of the cosmos in binary, a corpus so significant that UNESCO named it a masterpiece of human heritage.</li>
+      <li>The Akan <strong>Adinkra</strong> symbols are a visual language of <strong>proverbs</strong>: each stamped emblem — <em>Gye Nyame</em>, "except God"; <em>Sankofa</em>, the backward-looking bird — encodes a maxim of wisdom and belief.</li>
+      <li>The <strong>Nsibidi</strong> ideograms of the Cross River peoples formed an indigenous <strong>script</strong> of signs, some sacred and secret, known to initiates.</li>
+      <li>In the diaspora, these encodings became the <strong>vèvè</strong> of Vodou — intricate ground-drawings that summon a particular <em>lwa</em> — and the color-and-attribute codes by which each orisha is known.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>African traditional religion belongs, in its structures, to the oldest layer of human belief — the ancestor-cult and spirit-world that the <strong>Prehistory</strong> chapter reaches toward, still living. In the colonial centuries it collided with, resisted, and partly fused with the expanding <strong>Christianity</strong> and <strong>Islam</strong> of the age (much of the Sahel had already turned to Islam; the coasts and the Americas met the cross). Its transplantation across the Atlantic makes it the direct parent of the <strong>diaspora religions</strong> of the modern era — Santería, Candomblé, Vodou, and, further on, Rastafari — and one of the deepest and least acknowledged roots of the religious life of the whole Americas.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The broad shared structures of sub-Saharan traditional religion (a high creator God, intermediary spirits, powerful ancestors, divination, and possession); the specific great systems (Yoruba orisha and Ifá, Fon vodun, Akan, Kongo); the scale and route of the <strong>transatlantic slave trade</strong> (~12.5 million people); and the historical formation of the <strong>Afro-Atlantic religions</strong> through syncretism with Catholicism.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported — colonial distortions</h4>
+        <p>The old labels of "<strong>fetishism</strong>," "<strong>animism</strong>," and "<strong>ancestor worship</strong>" as European verdicts often carried contempt and misunderstanding; the ancestors, for instance, are honored and consulted, not worshipped as gods. And the picture of a single, static "African religion" is a colonial simplification of enormous diversity.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>Because these traditions were <strong>oral</strong> and are known largely through outside and often hostile observers, the pre-colonial detail of many is genuinely uncertain; reconstructing what was believed before the missionaries and anthropologists arrived — and how much the act of writing it down changed it — is a standing difficulty. The exact African origins of particular diaspora practices are still actively debated.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Yoruba religion (orishas, ancestor veneration, Ifá divination, Orunmila) — Fiveable, "Yoruba Religion"; "Orisha." <a href="https://fiveable.me/ap-african-american-studies/key-terms/orisha">https://fiveable.me/ap-african-american-studies/key-terms/orisha</a></li>
+        <li>Shared structures and regional diversity (Bight of Benin, Gold Coast, West Central Africa; ancestor veneration, spirit mediation, ritual specialists) — Internet Encyclopedia of Philosophy, "Philosophy of African Diaspora Religions." <a href="https://iep.utm.edu/african-diaspora/">https://iep.utm.edu/african-diaspora/</a></li>
+        <li>The transatlantic slave trade (~12.5 million; ~10.7 million surviving the Middle Passage) and syncretism (orishas/lwa masked as Catholic saints) — "African diaspora religions," Grokipedia. <a href="https://grokipedia.com/page/African_diaspora_religions">https://grokipedia.com/page/African_diaspora_religions</a></li>
+        <li>Santería, Candomblé, Louisiana Voodoo as syncretic Yoruba-derived religions — Fiveable / Grokipedia, "Orisha." <a href="https://grokipedia.com/page/Orisha">https://grokipedia.com/page/Orisha</a></li>
+        <li>Ifá divination as a 256-figure (odu) system; UNESCO recognition — "Ifá," reference overviews. <a href="https://en.wikipedia.org/wiki/If%C3%A1">https://en.wikipedia.org/wiki/If%C3%A1</a></li>
+        <li>Akan Adinkra symbols and Nsibidi script as indigenous sacred encodings — general reference overviews (Adinkra; Nsibidi). <a href="https://en.wikipedia.org/wiki/Adinkra_symbols">https://en.wikipedia.org/wiki/Adinkra_symbols</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch34 */
+  ch34: { html: `
+    <p class="lead">The faith born in the Punjab five centuries ago from the meeting of Hindu devotion and Muslim mysticism — a religion of one formless God, honest work, and radical human equality, shaped by ten Gurus and a scripture that became a living master — told with care for its documented history and for the founding story it tells about itself.</p>
+
+    <h2>"There is no Hindu, there is no Muslim"</h2>
+
+    <p>One morning around 1499, near the town of Sultanpur in the Punjab, a man named <strong>Nanak</strong> went down to the river Bein to bathe and did not come back. His clothes were found on the bank; his family gave him up for drowned. Three days later he reappeared — and his first recorded words were: "<strong>There is no Hindu, there is no Muslim.</strong>" He did not mean that the two faiths were false, but that before the one God the labels dissolved: what mattered was not the community one was born into but the truth one lived. From that river Guru <strong>Nanak</strong> (1469–1539) emerged as the founder of a new religion — <strong>Sikhism</strong>, the way of the <em>sikhs</em>, the "disciples" of the one God.</p>
+
+    <h2>What Sikhism is</h2>
+
+    <p>Sikhism is a <strong>monotheistic</strong> religion founded in the <strong>Punjab</strong> in the late fifteenth century, today the faith of some twenty-five to thirty million people and the fifth-largest in the world. Its center is devotion to a single, formless, creator God — named in the opening words of its scripture as <strong>Ik Onkar</strong>, "<strong>One God</strong>" — approached not through ritual, image, priest, or pilgrimage but through three plain disciplines: <strong>naam simran</strong> (loving remembrance of the divine Name), <strong>kirat karni</strong> (earning an honest living), and <strong>vand chakna</strong> (sharing with others). It rejects, root and branch, the <strong>caste system</strong>, idol worship, ritualism, superstition, and the domination of priests — and insists on the absolute <strong>equality</strong> of all human beings, women and men, of every birth.</p>
+
+    <h2>Guru Nanak and the first community</h2>
+
+    <p>Born in 1469 near Lahore, Nanak spent decades on long journeys — the <em>udasis</em> — carrying his message across South Asia and beyond, before settling at <strong>Kartarpur</strong> on the Ravi, where he founded the first Sikh community. There he built its enduring institutions: the <strong>sangat</strong>, the congregation in which all sat as equals, and the <strong>langar</strong>, the free communal kitchen where people of every caste and creed ate the same food from the same floor — a deliberate, daily assault on the barriers of caste. His teaching was carried in <strong>hymns</strong>, sung, that fused the fervor of the <strong>Bhakti</strong> saints and the <strong>Sufi</strong> mystics into something new.</p>
+
+    <h2>The ten Gurus</h2>
+
+    <p>Nanak was the first of <strong>ten Gurus</strong>, each adding to the work of the last across two centuries. <strong>Angad</strong> shaped the <strong>Gurmukhi</strong> script for the community's tongue; <strong>Amar Das</strong> entrenched the langar and the standing of women; <strong>Ram Das</strong> founded the city of <strong>Amritsar</strong>; <strong>Arjan</strong> compiled the first scripture and built the <strong>Harmandir Sahib</strong>, the Golden Temple — and in 1606 became the first <strong>martyr</strong>, executed under the Mughals. Persecution then forged the community: <strong>Hargobind</strong> took up the sword and the doctrine of <strong>miri-piri</strong>, the union of temporal and spiritual power; <strong>Tegh Bahadur</strong> was beheaded in 1675 for defending the religious freedom of Hindus not even of his own faith. The tenth, <strong>Gobind Singh</strong>, completed the line — and, in 1708, declared that there would be <strong>no more human Gurus</strong>: the scripture itself would be the eternal Guru.</p>
+
+    <h2>The Guru Granth Sahib</h2>
+
+    <p>That scripture, the <strong>Guru Granth Sahib</strong>, is unlike any other. Compiled by Guru Arjan (1604) and sealed by Guru Gobind Singh, written in <strong>Gurmukhi</strong>, it contains the hymns of the Sikh Gurus — and, remarkably, also the verses of <strong>Hindu and Muslim saints</strong>, including the Bhakti poet <strong>Kabir</strong>, the low-caste <strong>Ravidas</strong>, and the Sufi <strong>Baba Farid</strong>. It is perhaps the only major scripture that enshrines the words of other faiths within its own. And it is treated not as a book but as a <strong>living Guru</strong>: enthroned under a canopy, ceremonially put to rest at night, and consulted as the present voice of the divine teacher.</p>
+
+    <h2>The Khalsa and the Five Ks</h2>
+
+    <p>In 1699, at Anandpur, Guru <strong>Gobind Singh</strong> called the community together and founded the <strong>Khalsa</strong>, the order of the "pure": the initiated brotherhood-and-sisterhood of the faith, baptized with sweetened water stirred by a double-edged sword. Its members take the names <strong>Singh</strong> ("lion") and <strong>Kaur</strong> ("princess"), and wear the <strong>Five Ks</strong> — <em>kesh</em> (uncut hair), <em>kangha</em> (a comb), <em>kara</em> (a steel bracelet), <em>kachera</em> (a cotton undergarment), and <em>kirpan</em> (a sword) — the visible uniform of a people who would never again be invisible or defenceless. In the Khalsa the Sikh ideal took its lasting form: the <strong>sant-sipahi</strong>, the saint-soldier, devoted to God and sworn to defend the oppressed.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Sikhism carries its theology in a handful of potent signs.</p>
+
+    <ul>
+      <li><strong>Ik Onkar</strong> (ੴ) — the opening glyph of the scripture, joining the numeral <strong>one</strong> to <em>Onkar</em>, the primal sound of God — is itself the creed in a single symbol: reality is <strong>One</strong>.</li>
+      <li>The <strong>Khanda</strong>, the Sikh emblem, encodes the whole faith in steel: the central <strong>double-edged sword</strong> for the one truth and the power of God, the <strong>chakkar</strong> (a ring) for the eternity and unity of the divine, and the two flanking <strong>kirpans</strong> of <em>miri</em> and <em>piri</em> — worldly and spiritual authority held in balance.</li>
+      <li>The <strong>Five Ks</strong> are theology <strong>worn on the body</strong>: uncut hair as acceptance of God's will, the sword as the duty to justice — a faith one cannot take off.</li>
+      <li>And at the heart of it all is the <strong>Shabad</strong>, the divine <strong>Word</strong>, and the <strong>Naam</strong>, the Name: to sing the scripture (<em>kirtan</em>) and repeat the Name is to encode God in sound — the Sikh member of the same family as the Sufi <em>dhikr</em>, the Bhakti <em>nama-japa</em>, and the mantra.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Sikhism grew directly from the meeting this book has been tracing: the <strong>nirguna Bhakti</strong> of Kabir and the <strong>Sufism</strong> of medieval India, whose love of a formless God beyond Hindu and Muslim became, in Nanak, a wholly new faith — and whose poets Sikhism honored by placing their verses in its own scripture. It rose in the same century as the <strong>Reformation</strong> half a world away, and rhymes with it uncannily: a vernacular scripture, a priesthood rejected, a return to the one God over ritual and hierarchy. From a devotional movement it was hammered by Mughal persecution into a distinct and martial nation of faith, and it stands today as one of the world's great living religions — and the youngest of the traditions born before the modern age.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical Gurus and their dates, from Nanak (1469–1539) to Gobind Singh (d. 1708); the founding of Kartarpur, Amritsar, and the langar; the compilation of the <strong>Guru Granth Sahib</strong> (1604) and its inclusion of non-Sikh saints; the <strong>martyrdoms</strong> of Arjan (1606) and Tegh Bahadur (1675); and the founding of the <strong>Khalsa</strong> (1699). These rest on solid historical record.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>Nanak's <strong>revelation</strong> and the miracle-tales of his life — his three days in the river, the wonders of the <strong>janamsakhi</strong> birth-narratives — are matters of <strong>faith and devotional legend</strong>, not documented history. The theological claims of the tradition are recorded here as belief.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and handled with care</h4>
+        <p>The precise <strong>biography</strong> of Guru Nanak is uncertain, since the janamsakhis are later, devotional, and layered. And there is a real, sensitive scholarly discussion about how far Sikhism is a <strong>synthesis</strong> of the Sant/Bhakti and Sufi currents around it and how far a wholly <strong>original revelation</strong> — a question on which the tradition's own self-understanding and academic history do not always agree. This chapter records the debate; it does not presume to settle a living faith's account of itself.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Founding by Guru Nanak (1469–1539) in the Punjab; Kartarpur; core beliefs (Ik Onkar, honest living, sharing, remembrance); rejection of caste and idol worship — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
+        <li>The ten Gurus and the line to Guru Gobind Singh (1708); the Guru Granth Sahib as eternal Guru — "History, Teachings &amp; List of 10 Sikh Gurus," Golden Temple Amritsar. <a href="https://www.goldentempleamritsar.org/sikh-gurus/">https://www.goldentempleamritsar.org/sikh-gurus/</a></li>
+        <li>The Guru Granth Sahib: Gurmukhi, the Gurus' hymns plus the works of other-faith saints (Kabir, Ravidas, Farid) — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
+        <li>The Khalsa (1699) and the Five Ks; Singh and Kaur; the saint-soldier ideal — "Ten Sikh Gurus," SikhiWiki. <a href="https://www.sikhiwiki.org/index.php/Ten_Sikh_Gurus">https://www.sikhiwiki.org/index.php/Ten_Sikh_Gurus</a></li>
+        <li>The Golden Temple (Harmandir Sahib), its four doors, and langar — "What is Sikhism?", Golden Temple Amritsar. <a href="https://www.goldentempleamritsar.org/sikhism/">https://www.goldentempleamritsar.org/sikhism/</a></li>
+        <li>Martyrdoms of Guru Arjan (1606) and Guru Tegh Bahadur (1675); miri-piri — "Sikhism," Britannica. <a href="https://www.britannica.com/topic/Sikhism">https://www.britannica.com/topic/Sikhism</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch35 */
+  ch35: { html: `
+    <p class="lead">The explosion of brand-new religions in the last two centuries — from the American frontier prophets to the global movements of today — and the honest work of describing them as religions, neither dismissed as "cults" nor exempted from the evidence-honesty this book applies to every faith.</p>
+
+    <h2>The golden plates</h2>
+
+    <p>On a hill in western New York in the 1820s, a young farmer named <strong>Joseph Smith</strong> said an angel named Moroni had shown him a book written on <strong>golden plates</strong>, buried in the earth, which he translated by divine power into the <strong>Book of Mormon</strong>. From that revelation grew the <strong>Church of Jesus Christ of Latter-day Saints</strong> — today a global faith of some seventeen million people, with its own scripture, temples, and priesthood. Whether the plates existed, whether the angel came, whether the translation was inspired or invented — these are exactly the questions this book asks of every tradition, and they are no more and no less answerable for a religion two centuries old than for one four thousand years old. That is the point of this chapter: the birth of new religions did not stop with the ancient world. It accelerated.</p>
+
+    <h2>What a new religious movement is</h2>
+
+    <p><strong>"New religious movement"</strong> (NRM) is the neutral scholarly term for a religion of relatively recent origin — the term that replaced the older, loaded word "<strong>cult</strong>," which scholars now avoid because it is used mostly as a weapon. An NRM is typically marked by an <strong>innovative</strong> response to modern conditions, a stance of <strong>counterculture</strong> against the mainstream, an <strong>eclectic</strong> blending of older sources, and a <strong>charismatic</strong> (sometimes authoritarian) founder. There is no sharp line between a "new religious movement" and a "religion": every faith in this book was once new, and Christianity, Islam, and Sikhism were all, in their day, exactly what we would now call NRMs. The category simply lets us look honestly at the ones still within living memory of their founding.</p>
+
+    <h2>The American century</h2>
+
+    <p>The modern wave began, above all, in the <strong>religious ferment of nineteenth-century America</strong> — a free market of faith with no established church. The <strong>millenarian</strong> expectation of Christ's imminent return produced the <strong>Seventh-day Adventists</strong> and, from the same current, the <strong>Jehovah's Witnesses</strong>, both still awaiting the end of the age. <strong>Mary Baker Eddy</strong> founded <strong>Christian Science</strong> on the healing power of right belief. The <strong>Latter-day Saints</strong> built a new scripture and an American Zion. And these were only the largest; the century swarmed with prophets, communes, and revelations.</p>
+
+    <h2>A global phenomenon</h2>
+
+    <p>The twentieth century made the movement worldwide and wildly various. The <strong>Bahá'í Faith</strong>, born in nineteenth-century Persia, taught the unity of all religions and grew into a global community. In East Asia, <strong>Falun Gong</strong> and Japan's "new religions" drew millions. The counterculture of the 1960s and after produced the <strong>Unification Church</strong> (the "Moonies"), the Hare Krishna movement (a modern export of the Bhakti tradition), and <strong>Scientology</strong>, founded by the writer L. Ron Hubbard on his system of "auditing" and the mind. Some were benign, some controversial, a few catastrophic — the mass deaths at <strong>Jonestown</strong> (1978) and Heaven's Gate (1997) are the shadow side of charismatic authority, and the reason "cult" carries the fear it does.</p>
+
+    <h2>The "cult" question, honestly</h2>
+
+    <p>The word <strong>cult</strong> does real harm and real work, and both must be acknowledged. It has been used to demonize harmless minority faiths, to justify persecution, and to flatten enormous variety into a single sinister image. Yet a small number of these movements have genuinely destroyed lives through coercion, fraud, and violence. The honest position, and the scholarly one, is to <strong>judge each movement by its conduct</strong>, not by the mere fact of being new or strange — to reserve alarm for actual harm (coercion, abuse, exploitation) rather than for unfamiliar belief. This book describes NRMs as it describes all traditions: taking their claims seriously as religion, while keeping a clear eye on what the evidence shows.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The new religions are, revealingly, religions of the <strong>modern</strong> world, and encode themselves accordingly.</p>
+
+    <ul>
+      <li>Many produce a <strong>new scripture</strong> on the model of the old — the <em>Book of Mormon</em>, the <em>Dianetics</em> corpus, the writings of a founder — claiming the authority of revealed text in an age of print and, now, of the internet.</li>
+      <li>They build <strong>new sacred symbols</strong> deliberately: the Bahá'í nine-pointed star for the unity of the nine great religions; the LDS angel Moroni atop the temple; Scientology's cross and its symbols of the "thetan."</li>
+      <li>And they often encode a <strong>secret, staged knowledge</strong> — the graded initiations of Scientology's "operating thetan" levels, the temple ordinances of the Latter-day Saints — the ancient pattern of esoteric revelation reborn in the modern corporation and the members-only manual.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The new religious movements are the direct heirs of everything before them, recombined: the <strong>millenarianism</strong> of apocalyptic Judaism and Christianity, the <strong>esoteric initiation</strong> of the mystery cults and Kabbalah, the <strong>devotion</strong> of Bhakti (Hare Krishna is literally a transplanted Bhakti order), and the do-it-yourself spirituality that <strong>Theosophy</strong> and <strong>Spiritualism</strong> — the subjects of the neighboring chapters — set loose in the modern West. They are what religion looks like in an age of print, science, freedom, and doubt: not the end of faith that secular prophets predicted, but its endless, restless remaking.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical origins, founders, and growth of the major NRMs (the Latter-day Saints, Adventists, Jehovah's Witnesses, Christian Science, Bahá'í, Scientology, and the rest); their scriptures and organizations; and the documented tragedies (Jonestown, Heaven's Gate) and controversies.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history) — but claimed as faith</h4>
+        <p>The <strong>revelatory claims</strong> at the root of each — the golden plates and the angel Moroni, the divine inspiration of any founder's scripture, the metaphysics of "thetans" — are matters of <strong>faith</strong> (or, for critics, of fabrication), recorded here as belief, not adjudicated. That a claim is recent makes it neither more nor less a matter of faith than an ancient one.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and contested</h4>
+        <p>The very <strong>boundary</strong> of the category (when is a movement a "sect," a "cult," a "religion"?); the reliability of much that is written about controversial groups, since both hostile "anti-cult" sources and the movements' own literature are interested parties; and the deep sociological question of <strong>why</strong> the modern, secular, scientific age has produced not fewer religions but more.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Definition of NRMs; the shift away from "cult"; innovation, counterculture, charisma; examples (LDS, JW, Adventists, Bahá'í, Falun Gong, Paganism) — "New religious movement," Britannica. <a href="https://www.britannica.com/topic/new-religious-movement">https://www.britannica.com/topic/new-religious-movement</a></li>
+        <li>Nineteenth-century American millenarianism producing the Adventists and Jehovah's Witnesses — "New religious movements in the United States," Wikipedia. <a href="https://en.wikipedia.org/wiki/New_religious_movements_in_the_United_States">https://en.wikipedia.org/wiki/New_religious_movements_in_the_United_States</a></li>
+        <li>The "cult" label, its pejorative use, and the case for judging by conduct — Religion Media Centre, "Factsheet: New Religious Movements." <a href="https://religionmediacentre.org.uk/factsheets/factsheet-new-religious-movements/">https://religionmediacentre.org.uk/factsheets/factsheet-new-religious-movements/</a></li>
+        <li>Overview of the category, charismatic leadership, and syncretism — Study.com, "New Religious Movements." <a href="https://study.com/academy/lesson/contemporary-religious-movements.html">https://study.com/academy/lesson/contemporary-religious-movements.html</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch36 */
+  ch36: { html: `
+    <p class="lead">The religion of the talking dead — born from two girls and a knocking sound in 1848, swept through a grieving Victorian world of darkened parlors and rapping tables, and honest about the difference between the consolation it gave, which was real, and the communication it claimed, which was not.</p>
+
+    <h2>The rappings at Hydesville</h2>
+
+    <p>In March 1848, in a small farmhouse at <strong>Hydesville</strong>, New York, two sisters — <strong>Kate Fox</strong>, aged eleven or twelve, and <strong>Margaret</strong>, a little older — announced that they were hearing mysterious <strong>rapping</strong> sounds, and that the raps answered their questions: one knock for no, two for yes, and, with a run through the alphabet, whole sentences. The spirit, they said, was a murdered peddler buried in the cellar. The news spread like fire. Within a few years the Fox sisters were famous, public mediums, and a new religion had been born — <strong>Spiritualism</strong>, built on a single electrifying claim: that the dead are not gone, and that the living can talk to them.</p>
+
+    <p>Forty years later, in 1888, Margaret Fox stood on a New York stage and confessed that it had all been a trick: the raps were made by cracking the joints of her toes and knuckles, a childish prank that had grown into a worldwide movement. She later recanted the confession. But the shadow it cast is the honest frame for this whole chapter.</p>
+
+    <h2>What Spiritualism is</h2>
+
+    <p><strong>Spiritualism</strong> is the belief — and, for many, the religion — that the human personality <strong>survives death</strong> and that the living can <strong>communicate</strong> with the surviving spirits, most often through a specially gifted intermediary called a <strong>medium</strong>. It is both a practice, centered on the <strong>séance</strong>, and an organized faith, with <strong>Spiritualist churches</strong> that continue today. Its promise was intimate and immense: not a distant heaven argued over by theologians, but your own mother, your own dead child, speaking to you across the dark of a parlor room.</p>
+
+    <h2>The séance and its wonders</h2>
+
+    <p>Spiritualism's rites unfolded in the <strong>séance circle</strong> — a group seated around a table in low light, hands joined, a medium in their midst. Through the medium the spirits were said to act: <strong>rapping</strong> out answers, <strong>tipping and levitating</strong> the table, guiding a hand in <strong>automatic writing</strong>, speaking in a trance, and, in the boldest séances, producing <strong>materializations</strong> — ghostly forms, floating instruments, ectoplasm. The age's new technologies were pressed into service: <strong>spirit photography</strong> claimed to catch the dead on the new film, and the <strong>planchette</strong> and <strong>talking board</strong> — the Ouija board — spelled out messages letter by letter.</p>
+
+    <h2>Why the Victorians believed</h2>
+
+    <p>Spiritualism swept the United States and Britain in the second half of the nineteenth century for reasons both deep and specific. It rode a tide of <strong>grief</strong>: the mass death of the American <strong>Civil War</strong> and, later, the <strong>First World War</strong> and the influenza pandemic left millions desperate to reach the dead, and Spiritualism offered them contact. It gave <strong>women</strong> — who dominated its ranks as mediums — a rare position of public spiritual authority in an age that allowed them little, and it ran alongside the era's reform movements, from abolition to women's suffrage. And it claimed to be not superstition but <strong>science</strong>: a demonstrable, experimental contact with the beyond, fit for a confident scientific century. It won famous converts, among them the chemist <strong>Sir William Crookes</strong> and Sir Arthur Conan <strong>Doyle</strong>, the creator of the supremely rational Sherlock Holmes.</p>
+
+    <h2>Science, fraud, and the reckoning</h2>
+
+    <p>Because Spiritualism claimed to be testable, it was tested — and the results were damning. Investigators and stage magicians, above all <strong>Harry Houdini</strong>, exposed medium after medium in outright fraud: hidden accomplices, trick tables, cheesecloth "ectoplasm," reused spirit photographs. The <strong>Society for Psychical Research</strong>, founded in 1882 to study the claims rigorously, documented deception again and again and never established a single verified case of communication with the dead. And at the movement's very origin stood Margaret Fox's confession of the cracking toes. None of this stopped Spiritualism — grief is stronger than debunking — but it settled the empirical question.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Spiritualism was, distinctively, a religion of <strong>codes and channels</strong> — and it took its model from the technology of its age.</p>
+
+    <ul>
+      <li>The <strong>rap</strong> was a literal binary code: yes and no, and the laborious spelling-out of messages letter by letter through the alphabet — the dead reduced to Morse.</li>
+      <li>The <strong>talking board</strong> (Ouija) and its <strong>planchette</strong> encode the séance's central act: a message assembled letter by letter as the sitters' hands drift across the board, its motion (as science shows) produced unconsciously by the sitters themselves — the <strong>ideomotor effect</strong> — though experienced as the touch of the dead.</li>
+      <li>The whole movement arose as the twin of the <strong>telegraph</strong>: Spiritualism was imagined as a "<strong>spiritual telegraph</strong>," communication-at-a-distance with the other world, in the very decade the electric telegraph made communication-at-a-distance ordinary. The medium was the operator; the séance, the receiving station.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Spiritualism is a modern, scientific-age form of one of the most ancient human practices — the <strong>consultation of the dead</strong>, the necromancy and ancestor-contact found from Mesopotamia to the African traditions of the neighboring chapters. It fed directly into the two movements beside it: <strong>Theosophy</strong>, which built a whole cosmology on communication with hidden Masters, and the broader <strong>occult revival</strong>, and onward into the twentieth-century <strong>New Age</strong> and the paranormal. It shaped early <strong>psychology</strong>, too: the study of mediums, trance, and automatic writing fed directly into the exploration of the <strong>unconscious mind</strong>. Its churches survive, and the séance never entirely ended.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The history of Spiritualism — its birth with the Fox sisters in 1848, its explosive spread, its practices, its churches, and its enormous social role in a grieving age; the prominence of women; the famous believers; and the extensive, documented record of <strong>fraud</strong>, including Margaret Fox's own confession.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history or science)</h4>
+        <p>That mediums actually <strong>communicated with the dead</strong>. Every claim that was rigorously tested was either exposed as fraud or explained by ordinary means (the ideomotor effect, cold reading, stagecraft); more than a century of psychical research produced <strong>no verified case</strong>. The phenomena, as tested, were not real.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and worth respecting</h4>
+        <p>The <strong>consolation</strong> Spiritualism gave the bereaved was entirely real as human experience, whatever its source; the <strong>sincerity</strong> of many mediums and believers is not in doubt; and Spiritualism's genuine, lasting influence on <strong>psychology, women's public life, and the study of the mind</strong> is a real historical legacy. That the mechanism was never verified does not make the grief, or the comfort, less real.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Fox sisters, the 1848 Hydesville rappings, and the birth of Spiritualism — "Margaret Fox and Catherine Fox," Britannica. <a href="https://www.britannica.com/biography/Margaret-Fox-and-Catherine-Fox">https://www.britannica.com/biography/Margaret-Fox-and-Catherine-Fox</a></li>
+        <li>Margaret Fox's 1888 confession (the toe- and knuckle-cracking) and later recantation — "How a Hoax by Two Sisters Helped Spark the Spiritualism Craze," History.com. <a href="https://www.history.com/articles/ghost-hoax-spiritualism-fox-sisters">https://www.history.com/articles/ghost-hoax-spiritualism-fox-sisters</a></li>
+        <li>The séance, mediumship, and Spiritualism's spread; the Society for Psychical Research and the investigations — Smithsonian, "The Fox Sisters and the Rap on Spiritualism." <a href="https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/">https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/</a></li>
+        <li>Grief after war, the appeal to women, and famous believers (Crookes, Doyle) — "The Birth of Spiritualism," History Today. <a href="https://www.historytoday.com/archive/months-past/birth-spiritualism">https://www.historytoday.com/archive/months-past/birth-spiritualism</a></li>
+        <li>The ideomotor effect and the Ouija board; the "spiritual telegraph" — general reference overviews (Ouija; Spiritualism). <a href="https://en.wikipedia.org/wiki/Spiritualism">https://en.wikipedia.org/wiki/Spiritualism</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch37 */
+  ch37: { html: `
+    <p class="lead">The late-nineteenth-century rebirth of Western esotericism — a claimed ancient wisdom behind all religions, hidden Masters in the Himalayas, a magical order that fused Kabbalah and tarot into a system of the soul — and the honest reckoning with its fabrications, its enormous influence, and the dark uses to which some of its ideas were later put.</p>
+
+    <h2>The letters from the Masters</h2>
+
+    <p>In the 1870s and 1880s, a stout, chain-smoking Russian émigré named <strong>Helena Petrovna Blavatsky</strong> became the center of a sensation. Letters, she said, arrived from her hidden teachers — the <strong>Mahatmas</strong> or <strong>Masters</strong>, adepts of a secret brotherhood dwelling in Tibet — and these letters did not come by post: they <strong>materialized</strong>, dropping from the air, appearing inside sealed rooms. Through them, Blavatsky claimed to transmit the <strong>Secret Doctrine</strong>, the single ancient wisdom that lay behind every religion the world had ever known. In 1875, in New York, she and Colonel Henry Olcott founded the <strong>Theosophical Society</strong> to spread it. In 1885 the Society for Psychical Research investigated the Mahatma letters and pronounced them <strong>an elaborate fraud</strong>. Both of those things are true, and both matter: Theosophy was built on claims that do not survive scrutiny, and it became, all the same, one of the most influential religious movements of the modern West.</p>
+
+    <h2>What Theosophy is</h2>
+
+    <p><strong>Theosophy</strong> — "divine wisdom" — is the system Blavatsky set out in her great books, <em>Isis Unveiled</em> (1877) and <em>The Secret Doctrine</em> (1888): a grand <strong>synthesis</strong> of Eastern religion and Western occultism, claiming that all faiths are corrupted fragments of one original, secret <strong>wisdom-tradition</strong> preserved by hidden adepts. From the East it took <strong>karma</strong> and <strong>reincarnation</strong>, cosmic cycles, and the idea of spiritual evolution; from the West, Hermeticism, Neoplatonism, and Kabbalah. More than any other single movement, Theosophy <strong>introduced Hindu and Buddhist ideas to the Western public</strong> and set the template for everything later called "spiritual but not religious."</p>
+
+    <h2>The doctrine of the Secret Doctrine</h2>
+
+    <p>Theosophy taught a vast cosmic evolution: the universe and humanity develop through immense cycles of "<strong>rounds</strong>" and seven "<strong>root races</strong>," each rising and falling, some on now-lost continents — <strong>Lemuria</strong> and <strong>Atlantis</strong>. Behind the visible world lay hierarchies of planes and beings, crowned by the <strong>Masters</strong> — the "<strong>Great White Brotherhood</strong>" of perfected adepts guiding human evolution. The soul reincarnates, bound by karma, climbing across lifetimes toward reunion with the divine. It was a sweeping, syncretic myth of everything — and it must be said plainly that its <strong>root-race</strong> scheme, however spiritually Blavatsky intended it, was later seized and twisted by others into <strong>racial hierarchy</strong>, feeding the "Ariosophy" that in turn fed the occult fringe of <strong>Nazism</strong> — even as the Theosophical Society itself preached the universal <strong>brotherhood of humanity</strong>. The idea and its abuse must both be named.</p>
+
+    <h2>The occult revival</h2>
+
+    <p>Theosophy was the most famous face of a wider <strong>Western esoteric revival</strong> that swept the late nineteenth century. Its magical wing crystallized in the <strong>Hermetic Order of the Golden Dawn</strong>, founded in London in <strong>1888</strong> by Westcott, Mathers, and Woodman — the most influential magical order in Western history. The Golden Dawn welded <strong>Hermeticism, Kabbalah, tarot, astrology, alchemy,</strong> and <strong>ceremonial magic</strong> into a single graded system of initiation, and through its members — the poet <strong>W. B. Yeats</strong> among them — reshaped modern art and occultism alike. One member, <strong>Aleister Crowley</strong>, broke away to found his own religion, <strong>Thelema</strong>, on the revelation he claimed to have received in Cairo in 1904 — the <em>Book of the Law</em> and its creed, "<strong>Do what thou wilt shall be the whole of the Law</strong>." Others followed: <strong>Rudolf Steiner</strong> broke from Theosophy to found <strong>Anthroposophy</strong> (the source of Waldorf schools and biodynamic farming), and the era revived <strong>Rosicrucianism</strong> and the tarot besides.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>This is, above all others, the modern age's great tradition of <strong>constructed sacred symbolism</strong> — and the honesty lies in seeing how much of it was newly assembled from older parts.</p>
+
+    <ul>
+      <li>The <strong>tarot</strong> became its master-key. The Golden Dawn mapped the seventy-eight cards onto the <strong>Kabbalistic Tree of Life</strong> of Chapter 26 — the twenty-two trumps to the twenty-two paths — turning a Renaissance card game into an encoded diagram of the soul's journey. But the "ancient Egyptian" pedigree the occultists claimed for the tarot is an <strong>eighteenth-century invention</strong>; the encoding is real and powerful, its antiquity is not.</li>
+      <li>The Golden Dawn's whole method was a system of <strong>correspondences</strong> — each Hebrew letter, planet, color, god, scent, and card lined up in vast tables, so that the whole cosmos became a cross-referenced code the magician could operate.</li>
+      <li>The <strong>Theosophical Society's own seal</strong> is a deliberate synthesis in miniature: the <strong>ouroboros</strong> serpent, the interlaced triangles of the Star of David, the <strong>ankh</strong>, the <strong>Om</strong>, and — in its original form — the <strong>swastika</strong> (then an ancient auspicious sign, before the Nazis defiled it), ringed together to say that all the world's sacred symbols are one.</li>
+    </ul>
+
+    <p>The thread through all of it is the Hermetic maxim "<strong>as above, so below</strong>" — the conviction that the cosmos is an encoded correspondence the initiate learns to read.</p>
+
+    <h2>Connections</h2>
+
+    <p>Theosophy and the occult revival are the children of <strong>Spiritualism</strong> (the previous chapter) and of the Enlightenment's new <strong>comparative study of religion</strong>, which laid the world's faiths side by side and invited exactly this kind of synthesis. They borrowed the <strong>Kabbalah</strong> and Hermeticism of the medieval and Renaissance West and the <strong>karma and reincarnation</strong> of India, and recombined them into something new. And they are the direct parents of much that follows: the modern <strong>New Age</strong>, the ceremonial magic that would feed <strong>Wicca</strong> (the next chapter), Crowley's Thelema, and a great swathe of twentieth-century art, film, and "spirituality." Few movements built on so much that cannot be verified have left so deep a mark.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The history of Theosophy and the occult revival — Blavatsky, Olcott, and the Theosophical Society (1875); the texts; the Golden Dawn (1888) and its members; Crowley and Thelema; Steiner and Anthroposophy — and their vast, documented influence on modern religion, art, and the New Age.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history or science)</h4>
+        <p>The hidden <strong>Masters</strong> and the materializing <strong>Mahatma letters</strong> (judged fraudulent by the Society for Psychical Research in 1885); the <strong>root races</strong> and the lost continents of <strong>Lemuria and Atlantis</strong> (no such history or continents existed); and Blavatsky's claimed <strong>ancient sources</strong>, much of which scholars have shown to be recombined from contemporary books, sometimes verbatim. The "ancient wisdom" was, in large part, a <strong>modern construction</strong>.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and a warning</h4>
+        <p>The <strong>sincerity and inner experience</strong> of practitioners are not in question, and the traditions are living ones. But two cautions stand: the <strong>antiquity</strong> these systems claim for themselves (the "Egyptian" tarot, the primordial Secret Doctrine) is mostly invented, and the <strong>root-race doctrine</strong> was genuinely bent toward racism and fed proto-Nazi occultism — a dark legacy that a movement preaching universal brotherhood nonetheless left in the world.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Helena Blavatsky, the Theosophical Society (1875), and the synthesis of Eastern religion and Western occultism; influence on the New Age — "Theosophy," Britannica. <a href="https://www.britannica.com/topic/theosophy">https://www.britannica.com/topic/theosophy</a></li>
+        <li><em>The Secret Doctrine</em> (1888), rounds and root races, Lemuria and Atlantis — "The Secret Doctrine," Wikipedia; "Root race," Wikipedia. <a href="https://en.wikipedia.org/wiki/Root_race">https://en.wikipedia.org/wiki/Root_race</a></li>
+        <li>The Hermetic Order of the Golden Dawn (1888); Hermeticism, Kabbalah, tarot, ceremonial magic; influence on Wicca and Thelema — "The Hermetic Order of the Golden Dawn and the Origins of Wicca," Yale University Press. <a href="https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/">https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/</a></li>
+        <li>Theosophy's role in founding the New Age movement — "New Age," Wikipedia; EBSCO, "Theosophy." <a href="https://en.wikipedia.org/wiki/New_Age">https://en.wikipedia.org/wiki/New_Age</a></li>
+        <li>The 1885 SPR (Hodgson) report on the Mahatma letters as fraudulent, and plagiarism charges — general reference (Blavatsky; Theosophical Society historiography). <a href="https://en.wikipedia.org/wiki/Helena_Blavatsky">https://en.wikipedia.org/wiki/Helena_Blavatsky</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch38 */
+  ch38: { html: `
+    <p class="lead">The twentieth-century rebirth of Pagan religion in the West — a nature faith of Goddess and God, coven and sabbat, magic and moon — told honestly as what it is: not the ancient survival its founders claimed, but a real, living, modern religion assembled in living memory, and none the less genuine for it.</p>
+
+    <h2>The man who said the witches were real</h2>
+
+    <p>In 1951, England repealed the last of its <strong>Witchcraft Acts</strong>, and within a few years a retired British civil servant named <strong>Gerald Gardner</strong> stepped forward with an astonishing claim. He said that witchcraft had never died — that a secret, ancient, pre-Christian <strong>religion of the Goddess</strong> had survived in hidden covens through all the centuries of persecution, and that he had been <strong>initiated</strong> into one, the New Forest coven, in 1939. Through his books and his eager courting of the press, Gardner launched <strong>Wicca</strong> upon the world.</p>
+
+    <p>Almost none of the historical claim was true. There was no unbroken ancient witch-religion; the covens Gardner described cannot be traced before him; and the theory he leaned on — Margaret Murray's idea of a surviving pan-European witch-cult — is, as the witch-trials chapter showed, thoroughly <strong>discredited</strong>. And yet Wicca is entirely real: a <strong>new religion</strong>, sincerely believed and now practiced by hundreds of thousands, assembled in the twentieth century from older parts. Both halves of that sentence are the honest story.</p>
+
+    <h2>What Wicca is</h2>
+
+    <p><strong>Wicca</strong> is a modern, initiatory, nature-centered <strong>Pagan</strong> religion. Most Wiccans worship a duality of the divine — a <strong>Goddess</strong>, often the <strong>Triple Goddess</strong> of maiden, mother, and crone, linked to the moon; and a <strong>Horned God</strong> of the wild, the hunt, and the turning cycle of life, death, and rebirth, linked to the sun. Divinity is felt as <strong>immanent</strong> in the natural world rather than ruling from outside it. Wiccans practice <strong>magic</strong> — understood as the focusing of will and intention — work in small groups called <strong>covens</strong> (traditionally led by a High Priestess) or as solitaries, and hold to a simple ethic, the <strong>Wiccan Rede</strong>: "<strong>An it harm none, do what ye will</strong>," often paired with the belief that what one sends out returns threefold.</p>
+
+    <h2>The Wheel and the circle</h2>
+
+    <p>Wiccan worship turns on two cycles. The <strong>Wheel of the Year</strong> marks eight <strong>sabbats</strong> — the solstices and equinoxes and the four cross-quarter days between them, bearing names drawn from Celtic and Germanic tradition: <strong>Samhain</strong>, <strong>Yule</strong>, <strong>Imbolc</strong>, <strong>Ostara</strong>, <strong>Beltane</strong>, <strong>Litha</strong>, <strong>Lughnasadh</strong>, and <strong>Mabon</strong>. Between them fall the <strong>esbats</strong>, the full-moon gatherings. Rites are held within a ritual <strong>circle</strong> cast to create sacred space, using tools that stand for the four elements — the <strong>athame</strong> (ritual knife), the chalice, the wand, and the pentacle — and, in the drama called <strong>drawing down the moon</strong>, the Goddess is invoked to speak through the High Priestess herself.</p>
+
+    <h2>The honest origins</h2>
+
+    <p>Where did Wicca actually come from? Modern scholarship (above all Ronald Hutton's) has shown it to be a <strong>twentieth-century creation</strong>, woven by Gardner and his circle from several real strands: the <strong>ceremonial magic</strong> of the Golden Dawn and Aleister Crowley from the previous chapter (much of Wicca's ritual language is theirs); nineteenth-century <strong>Romanticism</strong> and its love of a lost, natural, pagan past; genuine surviving <strong>folk magic</strong> and seasonal custom; <strong>Freemasonry's</strong> initiatory structure; and Murray's mistaken but inspiring theory of the witch-cult. The result was something new. To say so is not to debunk Wicca but to describe it truthfully — exactly as this book describes the medieval dating of the Zohar or the thirteenth-century authorship of a text that claims to be ancient. <strong>A religion need not be old to be real.</strong></p>
+
+    <h2>The wider Pagan revival</h2>
+
+    <p>Wicca is the largest current in a broad modern <strong>Pagan</strong> revival that has grown explosively since the 1970s. <strong>Druidry</strong>, revived from the eighteenth century (partly on the forged "ancient" texts of Iolo Morganwg), organizes modern orders around the old Celtic priesthood. <strong>Heathenry</strong> or <strong>Ásatrú</strong> reconstructs the <strong>Norse paganism</strong> of Chapter 23 from the Eddas and the sagas. The feminist <strong>Goddess movement</strong> and Dianic witchcraft (Starhawk, Z. Budapest) made the Craft a vehicle of women's spirituality. And <strong>reconstructionists</strong> work to rebuild the Hellenic, Egyptian, and other ancient religions from the sources, while countless <strong>eclectic</strong> and solitary practitioners assemble their own paths. Together they are among the fastest-growing religious currents in the modern West, and deeply entwined with <strong>environmental</strong> spirituality.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Modern Paganism is rich in deliberately chosen and reconstructed <strong>symbols</strong>.</p>
+
+    <ul>
+      <li>The <strong>pentagram</strong> — the five-pointed star, usually within a circle as the <strong>pentacle</strong> — is Wicca's central emblem: its five points encode the four elements (earth, air, fire, water) crowned by the fifth, spirit, all bound in the circle of unity.</li>
+      <li>The <strong>Book of Shadows</strong> is the coven's encoded sacred text — a hand-copied book of rituals, spells, and lore, traditionally passed only from initiator to initiate, each line a piece of a transmitted, semi-secret liturgy.</li>
+      <li>The <strong>Triple Moon</strong> (waxing crescent, full circle, waning crescent) encodes the Goddess in her three aspects; the ritual <strong>tools</strong> encode the elements; and the cast <strong>circle</strong> encodes the making of sacred space out of ordinary ground.</li>
+      <li>Honesty requires noting that the eight-fold <strong>Wheel of the Year</strong> is itself a <strong>modern synthesis</strong> — no single ancient people kept exactly these eight festivals under these names — a reconstructed calendar that has nonetheless become genuinely sacred to those who keep it.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Wicca and modern Paganism grow directly out of the <strong>occult revival</strong> of the previous chapter — the Golden Dawn's ceremonial magic is their immediate parent — and out of the <strong>Romantic</strong> longing for the pre-Christian past. They take their (mistaken) historical charter from the <strong>witch trials</strong> of Chapter 32, and their reconstructed gods from the <strong>Norse</strong> and <strong>Celtic and Germanic</strong> paganisms of earlier eras. As a self-consciously new, eclectic, individualist faith they are a classic <strong>new religious movement</strong>, kin to the others of this age — and, in their reverence for the living earth, one of the most distinctly modern of all.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>Wicca as a documented <strong>twentieth-century</strong> religion — Gerald Gardner, the 1950s launch, the beliefs, rituals, and rapid growth; the broader modern Pagan revival (Druidry, Heathenry, the Goddess movement, reconstructionism) and its real and expanding presence.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>That Wicca is an <strong>unbroken survival</strong> of an ancient pre-Christian witch-religion — it is not; Gardner's ancient lineage cannot be traced, and the <strong>Murray witch-cult thesis</strong> it rests on is discredited. The "<strong>burning times</strong>" claim that nine million witches of this surviving religion were martyred is, as the witch-trials chapter showed, a <strong>myth</strong>.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and a point of principle</h4>
+        <p>Gardner's exact <strong>sources</strong>, and whether any pre-Gardnerian coven existed, remain debated; and real fragments of old <strong>folk custom</strong> do survive within a new religious frame. But the central point is one of principle, not doubt: that Wicca is a <strong>modern construction</strong> takes nothing from its reality as a <strong>living, sincerely practiced religion</strong>. This book distinguishes a tradition's true history from its self-understanding for every faith it treats, ancient or new, and applies the same courtesy and the same honesty here.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Gerald Gardner, the 1950s launch of Wicca, the New Forest coven claim, and the Murray thesis (now discredited) — "Gerald Gardner," Wikipedia. <a href="https://en.wikipedia.org/wiki/Gerald_Gardner">https://en.wikipedia.org/wiki/Gerald_Gardner</a></li>
+        <li>Gardnerian Wicca: the Goddess and Horned God, the Wiccan Rede, sabbats and esbats — "Gerald Gardner and the Gardnerian Wiccan Tradition," Learn Religions. <a href="https://www.learnreligions.com/what-is-gardnerian-wicca-2562910">https://www.learnreligions.com/what-is-gardnerian-wicca-2562910</a></li>
+        <li>Wicca as a modern creation assembled from ceremonial magic, Romanticism, folk custom, and Murray's theory (Ronald Hutton) — "Wicca," Encyclopedia.com. <a href="https://www.encyclopedia.com/philosophy-and-religion/other-religious-beliefs-and-general-terms/miscellaneous-religion/wicca">https://www.encyclopedia.com/philosophy-and-religion/other-religious-beliefs-and-general-terms/miscellaneous-religion/wicca</a></li>
+        <li>The Golden Dawn's ceremonial magic as a direct source of Wiccan ritual — "The Hermetic Order of the Golden Dawn and the Origins of Wicca," Yale University Press. <a href="https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/">https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/</a></li>
+        <li>The Wheel of the Year, the pentacle, the Book of Shadows, and the broader modern Pagan revival — general reference overviews (Wheel of the Year; Modern Paganism). <a href="https://en.wikipedia.org/wiki/Modern_Paganism">https://en.wikipedia.org/wiki/Modern_Paganism</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch39 */
+  ch39: { html: `
+    <p class="lead">Two completely different things wear the same frightening name — the imaginary Devil-cult that persecutors have invented for a thousand years, and the real, mostly atheistic philosophy that modern people have deliberately chosen — and telling them apart, with the same descriptive rigor this book gives every tradition and none of the shock, is the whole task of the chapter.</p>
+
+    <h2>The panic that found nothing</h2>
+
+    <p>Through the 1980s and into the 1990s, a wave of terror swept the United States and beyond: the conviction that a vast, hidden network of <strong>Satanists</strong> was ritually abusing and murdering children in secret. Day-care workers were accused, tried, and imprisoned on the testimony of coached children; talk shows and self-styled experts described underground cults of unimaginable evil; families were destroyed. It was called the <strong>Satanic Panic</strong>. And when the FBI's own investigator, Kenneth Lanning, and others examined the claims exhaustively, they found — after a decade of allegations of thousands of murders — essentially <strong>no evidence</strong> that any of it was real. There was no network, no ritual murder, no secret Satanic conspiracy. There were only frightened people and an old, old fantasy.</p>
+
+    <p>That is the necessary starting point, because it is the pattern of one whole side of this subject: the <strong>imagined Satanist</strong> is a scapegoat, not a believer — and has been for a very long time.</p>
+
+    <h2>Two Satanisms</h2>
+
+    <p>Everything written under the word "Satanism" falls into one of two utterly different categories, and confusing them is the source of nearly all the nonsense told about it.</p>
+
+    <p>The first is <strong>accusatory, imaginary Satanism</strong> — the Devil-worshipping conspiracy that <em>other people</em> invent and project onto their enemies. It is the fabricated <strong>witches' sabbath</strong> of Chapter 32, the medieval <strong>blood-libel</strong>, the fin-de-siècle rumor of the <strong>Black Mass</strong>, and the 1980s <strong>Satanic Panic</strong>. It has no members, because no one actually belongs to it; it is a mask persecutors hang on the faces of the feared.</p>
+
+    <p>The second is <strong>self-identified Satanism</strong> — real, living people and organizations who deliberately take the name of Satan for themselves. And here is the fact that dissolves the horror: they are, almost without exception, <strong>atheists</strong>. They do not worship the Devil. They have adopted Satan as a <strong>symbol</strong>.</p>
+
+    <h2>LaVeyan Satanism: Satan as a symbol</h2>
+
+    <p>Modern self-identified Satanism begins with <strong>Anton LaVey</strong>, who founded the <strong>Church of Satan</strong> in San Francisco in <strong>1966</strong> and published the <strong>Satanic Bible</strong> in 1969. Its central doctrine is the surprising one: <strong>neither God nor Satan exists</strong> as a real being. Satan is a <strong>symbol</strong> — of the carnal and natural human being, of pride, individualism, indulgence, self-reliance, and defiance of herd-conformity and religious hypocrisy. LaVeyan Satanism is thus a form of atheistic, materialist <strong>philosophy</strong> — a kind of theatrical Nietzschean egoism — expressed through dramatic ritual understood not as literal magic but as <strong>psychodrama</strong>, a cathartic performance. The Satanist, in LaVey's phrase, is his own god. It is, in short, almost the exact opposite of what the word makes people picture.</p>
+
+    <h2>The Satanic Temple: Satan as protest</h2>
+
+    <p>A second, very different organization, <strong>The Satanic Temple</strong> (founded <strong>2013</strong>), is also <strong>non-theistic</strong> but points its symbolism outward, into <strong>politics</strong>. Its members do not believe in a literal Satan either; they invoke him as the <strong>Romantic rebel</strong> — the Miltonic Adversary who says no to tyranny — and organize around <strong>Seven Fundamental Tenets</strong> emphasizing compassion, justice, reason, and bodily autonomy. The Temple is best known for its campaigns for the <strong>separation of church and state</strong> and religious liberty: when a government displays the Ten Commandments, the Temple demands equal room for a statue of <strong>Baphomet</strong>, exposing the establishment of one religion by insisting on parity for another. In 2019 the United States recognized it as a religion. It is, in effect, First Amendment activism in devil's clothing — and a genuine belief system to its adherents.</p>
+
+    <p>Smaller and darker currents exist too: a fringe of <strong>theistic Satanists</strong> and <strong>Luciferians</strong> who do venerate Satan or Lucifer as a real power, and, at the extreme, genuinely dangerous groups like the neo-Nazi Order of Nine Angles. They are real and worth naming honestly, but they are a tiny minority, and nothing like the vast conspiracy of the panics.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Satanism is, fittingly, a religion of <strong>reclaimed and inverted signs</strong> — and their true histories are as revealing as the signs themselves.</p>
+
+    <ul>
+      <li>The <strong>inverted pentagram</strong> enclosing a goat's head — the <strong>Sigil of Baphomet</strong>, emblem of the Church of Satan — encodes the reversal of the spiritual by the carnal, spirit pointed downward into matter.</li>
+      <li><strong>Baphomet</strong> itself, the horned "Sabbatic Goat," is not an ancient demon but the <strong>1856 drawing of the French occultist Éliphas Lévi</strong> (of the occult revival two chapters back) — a deliberate composite of opposites (male and female, human and animal, "solve et coagula" on its arms) meant to symbolize the union of all forces. Its supposed antiquity, and its link to the medieval Templars, are <strong>later myths</strong>.</li>
+      <li><strong>666</strong>, the number of the Beast, is reclaimed from Revelation (where, as an earlier chapter showed, it most likely encoded the emperor Nero); and the <strong>Black Mass</strong> — the imagined inversion of the Catholic Mass — is very largely a <strong>literary invention</strong>, popularized by novels like Huysmans's <em>Là-Bas</em>, not a widespread real rite.</li>
+    </ul>
+
+    <p>The thread is deliberate <strong>inversion</strong>: taking the symbols a dominant religion made terrifying and wearing them on purpose, as protest, philosophy, or provocation.</p>
+
+    <h2>Connections</h2>
+
+    <p>The two Satanisms have two entirely separate genealogies. The <strong>imagined</strong> one descends directly from the fabricated Devil-cult of the <strong>witch trials</strong> (Chapter 32) and the medieval libels — the same fantasy, recurring. The <strong>real</strong> one is a modern child of the <strong>occult revival</strong> (Chapter 37, which gave it Baphomet), of Enlightenment individualism, of the <strong>Romantic</strong> re-reading of Milton's Satan as a heroic rebel, and of the modern rejection of religious authority — a <strong>new religious movement</strong> among the others of this age. To treat it, as this book does, with the same calm description as any other tradition is not to endorse it, but to refuse the very confusion that made the panics possible.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The real modern movements — the <strong>Church of Satan</strong> (1966) and its atheistic philosophy, the <strong>Satanic Bible</strong>, and <strong>The Satanic Temple</strong> (2013) with its non-theistic activism — their founders, texts, tenets, and legal recognition; and the <strong>Satanic Panic</strong> as a documented episode of moral panic and false accusation.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as history)</h4>
+        <p>That a vast, secret network of <strong>murderous Devil-worshippers</strong> has ever existed. The claims of Satanic ritual abuse behind the 1980s–90s panic were investigated at length — most authoritatively in the FBI's 1992 Lanning report — and found to have <strong>essentially no basis</strong>. The imagined conspiracy is, and always was, imaginary.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The <strong>membership</strong> of the real Satanist organizations (both dispute and inflate numbers); the philosophical <strong>boundary</strong> between a provocative philosophy and a religion, on which LaVeyans and the Satanic Temple themselves differ; and the size and seriousness of the small <strong>theistic-Satanist</strong> fringe. None of these uncertainties revives the conspiracy the panics imagined.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Church of Satan (1966), Anton LaVey, and atheistic LaVeyan Satanism (Satan as symbol, not deity) — "LaVeyan Satanism," Wikipedia; "The Satanic Bible," Britannica. <a href="https://www.britannica.com/topic/The-Satanic-Bible">https://www.britannica.com/topic/The-Satanic-Bible</a></li>
+        <li>The Satanic Bible (1969) and LaVey's philosophy of ethical egoism — "Anton LaVey," Britannica. <a href="https://www.britannica.com/biography/Anton-LaVey">https://www.britannica.com/biography/Anton-LaVey</a></li>
+        <li>The Church of Satan's own statement of fundamental (atheistic) beliefs — Church of Satan, "F.A.Q. Fundamental Beliefs." <a href="https://churchofsatan.com/faq-fundamental-beliefs/">https://churchofsatan.com/faq-fundamental-beliefs/</a></li>
+        <li>The Satanic Temple (2013), non-theism, the Seven Tenets, and church–state activism — "The Satanic Temple," reference overviews. <a href="https://en.wikipedia.org/wiki/The_Satanic_Temple">https://en.wikipedia.org/wiki/The_Satanic_Temple</a></li>
+        <li>The Satanic Panic and the FBI's Lanning report finding no evidence of Satanic ritual abuse networks — "Satanic panic" / "Satanic ritual abuse," reference overviews. <a href="https://en.wikipedia.org/wiki/Satanic_panic">https://en.wikipedia.org/wiki/Satanic_panic</a></li>
+        <li>Baphomet as Éliphas Lévi's 1856 creation (not an ancient demon); the Black Mass as largely literary — "Baphomet," Wikipedia. <a href="https://en.wikipedia.org/wiki/Baphomet">https://en.wikipedia.org/wiki/Baphomet</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch40 */
+  ch40: { html: `
+    <p class="lead">The living Afro-Atlantic faiths — Haitian Vodou, Cuban Santería, Brazilian Candomblé, and the newer fire of Rastafari — that grew from the African religions carried into slavery, and the honest work of seeing them as the rich, healing, community faiths they are, behind the racist caricature the word "voodoo" has draped over them.</p>
+
+    <h2>The oath at Bois Caïman</h2>
+
+    <p>On a night in August 1791, in a wooded clearing called <strong>Bois Caïman</strong> in the north of the French colony of Saint-Domingue, enslaved Africans gathered around a <strong>Vodou</strong> priest and priestess. A pig was sacrificed; an oath was sworn; the spirits were called. Within days the northern plantations were in flames, and there had begun the only <strong>slave revolution in history to succeed</strong> — the thirteen-year struggle that would destroy French rule and, in 1804, create <strong>Haiti</strong>, the first Black republic. Whatever the exact details of that night, its meaning is not in doubt: the religion the enslaved had carried across the ocean was not a private consolation but a force that helped break their chains. This chapter is about that religion and its sisters — the faiths that survived the Middle Passage and became, in the Americas, living traditions of millions.</p>
+
+    <h2>What the diaspora religions are</h2>
+
+    <p>These are the <strong>Afro-Atlantic</strong> religions — the descendants of the West and Central African traditions of Chapter 33, transplanted by the transatlantic slave trade and reforged in the Americas through a <strong>syncretism</strong> with Roman Catholicism (and, later, with Spiritism and Indigenous elements). Denied their gods, the enslaved hid them behind the Catholic <strong>saints</strong> and kept the essentials alive: the spirits, the ancestors, divination, initiation, drumming, and above all <strong>spirit possession</strong>. From that concealment came Haitian <strong>Vodou</strong>, Cuban <strong>Santería</strong>, Brazilian <strong>Candomblé</strong> and <strong>Umbanda</strong>, and the folk traditions of New Orleans — and, in the twentieth century, the new Jamaican faith of <strong>Rastafari</strong>.</p>
+
+    <h2>Haitian Vodou</h2>
+
+    <p><strong>Vodou</strong> centers on the <strong>lwa</strong> — the spirits, most bearing the names of old African divinities and doubled with Catholic saints. Above them is the remote creator, <strong>Bondye</strong>; below, the lwa are grouped into "nations," chiefly the cool, sweet-tempered <strong>Rada</strong> (African-derived) and the hot, fierce <strong>Petwo</strong> (born in the New World, out of the rage of slavery itself). <strong>Papa Legba</strong>, keeper of the crossroads, must open the way before any other can be reached; <strong>Damballa</strong> the serpent, the love-spirit <strong>Ezili</strong>, and the graveyard <strong>Gede</strong> under <strong>Baron Samedi</strong> each have their character, colors, and songs. Worship is led by a <strong>houngan</strong> or <strong>mambo</strong>, and its central act is <strong>possession</strong>: through drumming and dance a lwa "mounts" a devotee — the "horse" — and speaks and acts through them, so that the god is bodily present in the room.</p>
+
+    <h2>Santería and Candomblé</h2>
+
+    <p>In Cuba, <strong>Santería</strong> (Regla de Ocha–Ifá, or Lucumí) preserved the <strong>Yoruba</strong> cosmos most fully: beneath the high god <strong>Olodumare</strong> stand the <strong>orichas</strong> — <strong>Elegguá</strong> at the crossroads, <strong>Ogún</strong> of iron, <strong>Yemayá</strong> of the sea, <strong>Ochún</strong> of the rivers and love, <strong>Changó</strong> of thunder, <strong>Obatalá</strong> the cool creator — each masked, historically, behind a Catholic saint, each with its colors, foods, drum-rhythms, and beaded necklaces. Initiation "makes the saint" in the devotee, and the <strong>babalawo</strong> reads the future through <strong>Ifá</strong>. In Brazil, <strong>Candomblé</strong> kept the same <strong>orixás</strong> with comparable fidelity in its <strong>terreiros</strong> (temples), led by a <em>mãe</em>- or <em>pai-de-santo</em>, while the related <strong>Umbanda</strong> blended the African spirits more freely with Spiritism, Catholicism, and Indigenous Brazilian elements.</p>
+
+    <h2>Rastafari</h2>
+
+    <p>The newest member of the family was born not of slavery's first centuries but of its long aftermath. In <strong>Jamaica</strong> in the <strong>1930s</strong>, drawing on the Pan-Africanism of <strong>Marcus Garvey</strong> and the biblical vision of <strong>Ethiopianism</strong>, poor Black Jamaicans hailed the coronation of <strong>Haile Selassie</strong> — <strong>Ras Tafari</strong> — as Emperor of Ethiopia in 1930 as the fulfillment of prophecy: God, <strong>Jah</strong>, returned in the person of an African king. <strong>Rastafari</strong> reads the modern West as <strong>Babylon</strong>, the corrupt and oppressive order, and Africa — Ethiopia — as <strong>Zion</strong>, the promised land of return. Its people wear <strong>dreadlocks</strong> (on the Nazirite vow), eat natural <strong>ital</strong> food, treat <strong>ganja</strong> as a sacrament of meditation, and carried their faith to the world on the sound of <strong>reggae</strong> and the voice of <strong>Bob Marley</strong>. It is a diaspora religion of a different kind: a synthesis not of African gods and Catholic saints but of the African exile and the Bible itself.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>These religions encode the sacred in drawing, color, rhythm, and disguise.</p>
+
+    <ul>
+      <li>The Vodou <strong>vèvè</strong> is a precise ritual <strong>sigil</strong> — an intricate design traced on the ground in cornmeal or ash, each pattern summoning one specific lwa, a drawn name that calls a god.</li>
+      <li>The orichas are encoded in <strong>color, number, and object</strong>: the bead necklaces (<em>elekes</em>) a devotee wears announce which oricha owns their head, and each spirit's altar, food, and dress are a fixed code of identity.</li>
+      <li>The <strong>drum</strong> is a language: each oricha and lwa answers to its own <strong>rhythm</strong>, so that the drummers literally call particular spirits by name in sound — the diaspora cousin of the sacred sound running through this whole book.</li>
+      <li>And the deepest encoding of all was <strong>concealment itself</strong>: the Catholic <strong>saint</strong> worn as a mask over the African god — Changó behind Saint Barbara, Legba behind Saint Peter — an entire theology hidden in plain sight, so that the powerful never saw what was really being worshipped.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The diaspora religions are the direct, living continuation of the <strong>African Traditional Religion</strong> of Chapter 33 — the same Yoruba orishas, Fon vodun, and Kongo cosmology, carried across the water and grown into new faiths. They fused with the <strong>Catholic Christianity</strong> of the colonizers and, later, drew on the <strong>Spiritism</strong> that Chapter 36's Spiritualism had seeded in the Americas. Rastafari joins them from the Bible and the Black freedom struggle. Together they are among the fastest-spreading religions in the modern world — orisha worship has returned, now openly, to global cities far from Africa and the Caribbean — and one of the great, and long-slighted, roots of the religious and cultural life of the whole Americas.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The living Afro-Atlantic religions — Vodou, Santería, Candomblé, Umbanda — their African origins, their syncretic formation under slavery, their beliefs, spirits, and possession-centered practice; <strong>Vodou's</strong> documented role at <strong>Bois Caïman</strong> and in the <strong>Haitian Revolution</strong>; and the twentieth-century history of <strong>Rastafari</strong> from Garvey and Haile Selassie's 1930 coronation.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported — the racist caricature</h4>
+        <p>The Hollywood "<strong>voodoo</strong>" of pin-stuck dolls, zombies, curses, and evil is not these religions; it is a <strong>racist distortion</strong> built to demonize Black faith. In reality these are traditions of <strong>healing, community, ancestor-honor, and moral order</strong>; the "voodoo doll" is largely a Western invention conflated with unrelated folk magic. Naming that distortion as false is a matter of evidence, not only of respect.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The exact <strong>demographics</strong> of traditions long practiced in secret are uncertain; the precise <strong>African-versus-Creole</strong> origins of particular spirits and rites (the Petwo lwa, for instance, are New World creations) are still being worked out by scholars; and the internal <strong>diversity</strong> of each religion resists any single description. What is not open is their reality, their depth, or their dignity.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Haitian Vodou: the lwa, the Rada and Petwo nations, Bondye, possession, and syncretism with Catholic saints — "Haitian Vodou" and "Rada lwa," Wikipedia. <a href="https://en.wikipedia.org/wiki/Rada_lwa">https://en.wikipedia.org/wiki/Rada_lwa</a></li>
+        <li>Bois Caïman (1791) and Vodou's role in the Haitian Revolution — reference overviews of Vodou and Haitian independence. <a href="https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman">https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman</a></li>
+        <li>Santería (Regla de Ocha / Lucumí): Olodumare and the orichas, syncretism, initiation, Ifá — "Santería," Wikipedia. <a href="https://en.wikipedia.org/wiki/Santer%C3%ADa">https://en.wikipedia.org/wiki/Santer%C3%ADa</a></li>
+        <li>Candomblé and Umbanda: the orixás, the terreiro, possession — "Candomblé," Wikipedia. <a href="https://en.wikipedia.org/wiki/Candombl%C3%A9">https://en.wikipedia.org/wiki/Candombl%C3%A9</a></li>
+        <li>Rastafari: Haile Selassie as Jah, Babylon and Zion, Garvey, dreadlocks, ital, ganja, reggae — "Rastafari," Britannica. <a href="https://www.britannica.com/topic/Rastafari">https://www.britannica.com/topic/Rastafari</a></li>
+        <li>The racist "voodoo" stereotype vs. the reality of healing and community — Smithsonian / "The Truth About Voodoo" overviews. <a href="https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/">https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch41 */
+  ch41: { html: `
+    <p class="lead">The deepest reach of the human religious imagination — forty thousand years of painted caves, carved goddesses, deliberate graves, and a lion-headed man who never walked the earth — and the discipline of saying honestly, across so vast a silence, what the evidence can and cannot tell us about the first faith.</p>
+
+    <h2>The lion-headed man</h2>
+
+    <p>In a cave in the Swabian hills of southern Germany, some forty thousand years ago, someone took a mammoth tusk and spent an estimated four hundred hours carving it into a standing figure with the body of a man and the head of a <strong>cave lion</strong>. The <strong>Lion Man</strong> of Hohlenstein-Stadel is among the oldest known works of figurative art in the world — and its subject is a being that has never existed. To make it, its carver had to hold in mind a creature that was not in the world but in the imagination: a fusion of human and animal, a thing of another order. That single object tells us something momentous about its maker's mind — that it could imagine the unreal, the more-than-human, the sacred. It is as close as we can come to watching religion being born.</p>
+
+    <h2>What we can and cannot know</h2>
+
+    <p>This is the first chapter in time and the last this book was able to write, and for a reason: the Paleolithic is the era of <strong>maximum uncertainty</strong>. There are no texts, no myths recorded, no informants — only objects, bones, and painted walls, tens of thousands of years old, from which we try to read a mind. The temptation to <strong>over-read</strong> is enormous, and the history of the subject is littered with confident interpretations later abandoned. So the honesty that governs this whole book governs this chapter most of all: we possess the artifacts of Paleolithic religion; we do <strong>not</strong> possess its meaning, and much of what is written about it is inference wearing the costume of fact.</p>
+
+    <h2>What the evidence is</h2>
+
+    <p>Three kinds of trace suggest that the people of the Old Stone Age had something we would recognize as religion.</p>
+
+    <ul>
+      <li><strong>Deliberate burial.</strong> From at least 100,000 years ago, humans (and possibly Neanderthals) began burying their dead on purpose, sometimes with <strong>grave-goods</strong> — the extraordinary graves at <strong>Sungir</strong> in Russia (c. 34,000 years old) held bodies covered in thousands of painstakingly carved ivory beads and staffs. To provision the dead is to imagine that death is not simply the end.</li>
+      <li><strong>Cave art.</strong> Deep in the caves of France and Spain — <strong>Chauvet</strong> (c. 36,000 years old), <strong>Lascaux</strong>, <strong>Altamira</strong> — Ice Age people painted horses, lions, bison, and aurochs with astonishing skill, often far inside inaccessible chambers, in the dark, where no one lived. Human figures are rare; hand-prints are common; and a few haunting <strong>therianthropes</strong> — half-human, half-animal — stare out of the walls.</li>
+      <li><strong>Portable art.</strong> Across Europe, the Upper Paleolithic left small carvings, above all the <strong>"Venus" figurines</strong> — female forms like the <strong>Venus of Willendorf</strong> and the 40,000-year-old <strong>Venus of Hohle Fels</strong> — and therianthropes like the Lion Man.</li>
+    </ul>
+
+    <h2>The interpretations, and their limits</h2>
+
+    <p>What did it mean? Every answer is a hypothesis. The oldest, the Abbé Breuil's idea of <strong>sympathetic hunting magic</strong> — painting the prey to ensure the hunt — has largely fallen from favor. A more influential modern reading, associated with David Lewis-Williams, sees the caves as the setting for <strong>shamanism</strong>: the therianthropes as shamans in trance-metamorphosis, the geometric marks as the <strong>entoptic</strong> patterns the brain generates in altered states, the cave wall itself as a membrane between this world and the world of spirits. Others read <strong>totemism</strong>, or ritual bound up with the seasons and the herds. The therianthrope may be a sorcerer, a spirit, a god, or a myth we will never recover. Each interpretation is <strong>plausible; none is proven</strong>, and the caves keep their secret.</p>
+
+    <h2>The Venus figurines</h2>
+
+    <p>The female figurines are a case study in honest uncertainty. For a century they were read as <strong>"mother goddesses"</strong> and emblems of a fertility cult, and that reading still circulates widely. But it is a modern hypothesis, not an established fact. The figurines vary enormously; some may be self-portraits, some idealized forms, some dolls or amulets, some ritual objects — and there is <strong>no consensus</strong> that they represent a goddess, or a single thing at all. That a naked female figure means "fertility goddess" is an assumption we bring, not a message the Ice Age left.</p>
+
+    <h2>The Neanderthal question</h2>
+
+    <p>Did our cousins the <strong>Neanderthals</strong> have religion? The evidence is real but fiercely contested: apparent deliberate <strong>burials</strong> (La Chapelle-aux-Saints, and the famous "flower burial" at <strong>Shanidar</strong>, whose pollen may be natural rather than offered); the use of <strong>red ochre</strong> and pigment; and the astonishing <strong>Bruniquel cave</strong>, where, some 176,000 years ago, someone deep underground arranged broken stalagmites into deliberate rings — an act whose purpose is utterly unknown. Whether any of this is "symbolic" or "religious," or something we have no word for, remains genuinely open.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Even here, at the beginning, the human impulse to <strong>encode</strong> is visible.</p>
+
+    <ul>
+      <li>The <strong>therianthrope</strong> — the human-animal hybrid of the Lion Man and the painted "sorcerers" — is perhaps the first symbol ever made: the sign of a crossing between the human and the more-than-human, the animal and the spirit, which will reappear in the animal-headed gods of Egypt and the shape-shifting shamans of a hundred later traditions.</li>
+      <li>The <strong>hand-print</strong>, stenciled in blown ochre across cave walls the world over, is the oldest human signature — a pressed palm that says <em>I was here</em>, and perhaps that the rock face was a surface one could reach through.</li>
+      <li><strong>Red ochre</strong> is the deepest thread of all: used to paint bodies and to redden graves from over 100,000 years ago, and engraved with deliberate cross-hatched patterns at <strong>Blombos Cave</strong> in South Africa some 73,000 years ago — the earliest known abstract mark-making, the first flicker of encoded meaning, long before the cave paintings of Europe.</li>
+      <li>And the <strong>cave itself</strong> was encoded space: the art clusters, acoustic studies suggest, where the chambers most resonate — the deep, dark, singing places treated as thresholds to another world.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Paleolithic is the root system of everything that follows in this book. Its <strong>ancestor-honor and spirit-world</strong> survive, living, in the African traditions and the diaspora religions of the modern era; its <strong>shamanism</strong> is the same current that runs through Norse <em>seiðr</em>, Sámi drumming, and Vodou possession; its <strong>therianthropes</strong> become the gods of Egypt; its <strong>red ochre</strong> and provisioned graves are the first chapter of the human refusal to accept death as the end — a refusal every later religion inherits. Written last, it stands first: the silent foundation on which the whole archive is built.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The artifacts themselves — the dated <strong>cave art</strong> (Chauvet, Lascaux, Altamira), the <strong>Venus figurines</strong> and the <strong>Lion Man</strong>, the deliberate <strong>burials</strong> with grave-goods (Sungir), and the very ancient use of <strong>red ochre</strong> and abstract engraving (Blombos). That Upper Paleolithic humans made symbolic, imaginative art is not in doubt.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>That we <strong>know</strong> what any of it meant. The "<strong>Mother Goddess</strong>" of the Venus figurines, the specific <strong>shamanic</strong> readings of the cave art, "hunting magic" — these are interpretations, some more plausible than others, none confirmed. Claims that assert the meaning of Paleolithic religion with confidence are claiming more than the evidence allows.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>Almost everything about <strong>meaning</strong>: what the caves were for, what the figurines represented, what the dead were provisioned for. Whether the <strong>Neanderthals</strong> had religion at all. And the deepest question — how far back the religious imagination reaches, and whether the first spark was 40,000 years ago, or 100,000, or older still.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Cave art (Chauvet, Lascaux), therianthropes, and the shamanism interpretation (Lewis-Williams; Breuil's earlier "sorcerer" reading) — "Shamans in Paleolithic Art," ArtsLookup; MDPI, "Art and Shamanism." <a href="https://www.mdpi.com/2077-1444/10/1/54">https://www.mdpi.com/2077-1444/10/1/54</a></li>
+        <li>The Lion Man of Hohlenstein-Stadel (c. 40,000 years old) — reference overviews of the Löwenmensch figurine. <a href="https://en.wikipedia.org/wiki/Lion-man">https://en.wikipedia.org/wiki/Lion-man</a></li>
+        <li>Venus figurines and the contested fertility/goddess interpretation — "Venus figurines," reference overviews. <a href="https://en.wikipedia.org/wiki/Venus_figurines">https://en.wikipedia.org/wiki/Venus_figurines</a></li>
+        <li>Deliberate burial and grave-goods (Sungir); Neanderthal burial debate (Shanidar) — Brewminate, "Shamans and Ecstasy: Religious Beliefs and Practices in the Prehistoric World." <a href="https://brewminate.com/shamans-and-ecstasy-an-exploration-of-religious-beliefs-and-practices-in-the-prehistoric-world/">https://brewminate.com/shamans-and-ecstasy-an-exploration-of-religious-beliefs-and-practices-in-the-prehistoric-world/</a></li>
+        <li>Red ochre and the engraved Blombos ochre (c. 73,000 years) as the earliest abstract mark-making — reference overviews (Blombos Cave). <a href="https://en.wikipedia.org/wiki/Blombos_Cave">https://en.wikipedia.org/wiki/Blombos_Cave</a></li>
+        <li>The interpretive limits of all prehistoric-art readings — Albert.io, "Theories and Interpretations of Prehistoric Art." <a href="https://www.albert.io/blog/theories-and-interpretations-of-prehistoric-art-ap-art-history-review/">https://www.albert.io/blog/theories-and-interpretations-of-prehistoric-art-ap-art-history-review/</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch42 */
+  ch42: { html: `
+    <p class="lead">The age when humans settled, farmed, and raised the first monuments to the sacred — a hilltop sanctuary older than agriculture, a town that buried its dead beneath the floor, and the great stones aligned to the turning sun — and the honest reckoning with a religion we can read only in architecture, never in words.</p>
+
+    <h2>The temple that came first</h2>
+
+    <p>On a barren hill in southeastern Turkey called <strong>Göbekli Tepe</strong>, archaeologists uncovered something that rewrote the story of religion. Rings of massive <strong>T-shaped limestone pillars</strong>, some sixteen feet tall and weighing tons, carved with foxes, snakes, boars, scorpions, and vultures, raised in great enclosures — and dated to around <strong>9600 BCE</strong>, more than six thousand years before Stonehenge, before pottery, before writing, and, most astonishingly, <strong>before farming</strong>. Göbekli Tepe was built by <strong>hunter-gatherers</strong>. There are no houses there, no hearths, no sign anyone lived on the hill; it seems to have been a pure <strong>ceremonial center</strong>, a place people came to build and to worship. Its excavator, Klaus Schmidt, drew the revolutionary conclusion: that the old assumption — first agriculture, then surplus, then temples — might be exactly backward. Perhaps the need to gather in great numbers for <strong>ritual</strong> was itself one of the forces that drove people to settle and farm. First the temple, then the city.</p>
+
+    <h2>The Neolithic revolution</h2>
+
+    <p>The <strong>Neolithic</strong>, the New Stone Age (roughly 10,000 to 3500 BCE in the Near East, later elsewhere), was the deepest transformation in human history before the modern age: the shift from wandering and hunting to <strong>farming, herding, and settled village life</strong>. It remade everything — diet, property, population, the shape of society — and it remade religion too, giving it, for the first time, <strong>permanent architecture</strong>: shrines, tombs, and monuments that stood in one place and gathered a community around the dead and the divine. We still cannot read its beliefs, for it left no writing. But for the first time, we can walk through its sacred spaces.</p>
+
+    <h2>Çatalhöyük: the sacred in the home</h2>
+
+    <p>If Göbekli Tepe shows the monumental, <strong>Çatalhöyük</strong> in Anatolia (c. 7400–6000 BCE) shows the domestic. One of the world's first towns, it was a dense honeycomb of mud-brick houses packed wall to wall, entered through holes in the <strong>roof</strong>. Its religion was woven into the home: households installed the horns of wild bulls (<strong>bucrania</strong>) into their walls and benches, painted their rooms with vultures and leopards, and — most strikingly — <strong>buried their dead beneath the floors</strong> of their own houses, sometimes retrieving and plastering the skulls of ancestors to keep among the living. Here the sacred was not a separate temple but the <strong>house itself</strong>, and the ancestors never left.</p>
+
+    <h2>The megaliths</h2>
+
+    <p>Across Neolithic Europe and beyond rose the <strong>megaliths</strong> — the "great stones." At <strong>Stonehenge</strong> (built in stages c. 3000–2000 BCE) the sarsens were aligned to the <strong>solstices</strong>, so that the sun rose and set along the monument's axis. At <strong>Newgrange</strong> in Ireland (c. 3200 BCE), a passage tomb was built so precisely that on the <strong>winter solstice</strong> sunrise a beam of light creeps down the passage to flood the burial chamber. At <strong>Carnac</strong> thousands of standing stones march across the Breton landscape; on <strong>Malta</strong>, the temples of <strong>Ġgantija</strong> (c. 3600 BCE) are among the oldest free-standing structures on earth. Again and again the pattern repeats: monuments for the <strong>dead</strong>, aligned to the <strong>sky</strong> — an ancestor-cult married to the careful watching of the sun, the first stone calendars.</p>
+
+    <h2>The Mother Goddess debate</h2>
+
+    <p>No question about Neolithic religion is more famous, or more contested, than the <strong>Mother Goddess</strong>. Inspired by the many female figurines found at Çatalhöyük and across Anatolia and "Old Europe," some scholars — above all <strong>Marija Gimbutas</strong> — argued for a widespread, peaceful, matriarchal Neolithic society centered on the worship of a <strong>Great Goddess</strong> of fertility and the earth, later overthrown by patriarchal invaders. It is a powerful and influential vision, and it must be reported honestly: <strong>mainstream archaeology largely rejects it.</strong> The figurines have many possible meanings; excavation and bioarchaeology at Çatalhöyük have found <strong>no evidence</strong> of a female-dominated society; and the single universal Goddess is now generally seen as a modern reconstruction projected onto a far more varied and unknowable past. The debate matters here precisely because the Goddess hypothesis went on to shape the modern Pagan and Goddess movements of the archive's final era.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The Neolithic encoded the sacred in <strong>stone and orientation</strong>.</p>
+
+    <ul>
+      <li>The <strong>T-pillars</strong> of Göbekli Tepe are not blank slabs: several bear carved <strong>arms, hands, and belts</strong>, so that the pillar <em>is</em> a stylized, faceless being — perhaps an ancestor, perhaps a god — the first monumental image of the more-than-human, standing twelve feet tall in the round.</li>
+      <li>The <strong>astronomical alignments</strong> of Stonehenge and Newgrange are encoded time: the solstice sunrise built into the architecture, so that the monument itself is a machine for marking the sacred turning of the year — the same impulse that would raise the sky-aligned pyramids of the Americas.</li>
+      <li>The <strong>plastered skull</strong> and the installed <strong>bull's horns</strong> encode the presence of the ancestors and the potency of the wild in the fabric of the house.</li>
+      <li>And the <strong>megalithic tomb</strong> — the dark stone passage opening to a chamber, entered by the dead and by the solstice light alike — encodes the oldest of religious ideas: that death is a passage, and that the stone can be a womb as well as a grave. Its walls, at Newgrange, are carved with <strong>spirals</strong> whose meaning is lost but whose intention is unmistakable.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Neolithic grows directly out of the <strong>Paleolithic</strong> of the previous chapter — the same ancestor-honor and provisioned dead, now housed in permanent stone — and it leads directly into the <strong>Bronze Age</strong> that opens the archive's second era, when writing at last let religion speak for itself and the temple-mounds of Göbekli Tepe found their heirs in the <strong>ziggurats of Mesopotamia</strong> and the <strong>pyramids of Egypt</strong>. Its sky-aligned monuments prefigure the temple-astronomy of the <strong>Aztec, Maya, and Inca</strong>; its contested Goddess became a charter for the modern <strong>Goddess movement</strong> and <strong>Wicca</strong>. Chronologically first, written last, these two prehistoric chapters close the circle of the Nine Ages: everything in this book grows from the painted cave and the standing stone.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The sites and their dates — <strong>Göbekli Tepe</strong> (c. 9600 BCE) as monumental, pre-agricultural ritual architecture; <strong>Çatalhöyük</strong> and its under-floor burials, bucrania, and plastered skulls; and the great <strong>megaliths</strong> (Stonehenge, Newgrange, Carnac, Ġgantija) with their genuine and measurable <strong>solstice alignments</strong>. The architecture is real, dated, and unambiguous.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The universal Neolithic "<strong>Mother Goddess</strong>" and peaceful matriarchy — a contested hypothesis largely rejected by mainstream archaeology. Schmidt's "<strong>temple before the city</strong>" is an influential but debated interpretation, not a settled conclusion. And the specific <strong>meanings</strong> of the pillars, figurines, and spirals are inferred, not known.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>What Göbekli Tepe was actually <strong>for</strong>, and who its carved beings were. What the figurines <strong>meant</strong>. The beliefs behind the aligned monuments — we possess the architecture of Neolithic religion in abundance, but its <strong>theology</strong> is a silence we fill, honestly, with question marks. In prehistory more than anywhere, the archive can show what people <strong>did</strong>, and must confess how little it can prove of what they <strong>believed</strong>.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Göbekli Tepe (c. 9600 BCE), the T-pillars, the animal reliefs, the pre-agricultural ceremonial center, and Schmidt's "temple first" hypothesis — Biblical Archaeology Society, "The Göbekli Tepe Ruins and the Origins of Neolithic Religion." <a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-near-eastern-world/the-gobekli-tepe-ruins-and-the-origins-of-neolithic-religion/">https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-near-eastern-world/the-gobekli-tepe-ruins-and-the-origins-of-neolithic-religion/</a></li>
+        <li>Çatalhöyük (c. 7400–6000 BCE): under-floor burial, bucrania, plastered skulls, and the goddess debate — "Female lineages and changing kinship patterns in Neolithic Çatalhöyük" (bioRxiv); reference overviews. <a href="https://www.biorxiv.org/content/10.1101/2024.06.23.600259">https://www.biorxiv.org/content/10.1101/2024.06.23.600259</a></li>
+        <li>The Mother Goddess hypothesis (Gimbutas) and its scholarly critique — reference overviews of the Mother Goddess debate. <a href="https://en.wikipedia.org/wiki/Mother_goddess">https://en.wikipedia.org/wiki/Mother_goddess</a></li>
+        <li>Megaliths and their astronomical alignments — Stonehenge and Newgrange (solstice orientation); Malta's Ġgantija — reference overviews. <a href="https://en.wikipedia.org/wiki/Megalith">https://en.wikipedia.org/wiki/Megalith</a></li>
+        <li>The Neolithic revolution and the origins of monumental religion — "Religion at Göbekli Tepe," Tepe Telegrams (German Archaeological Institute). <a href="https://www.dainst.blog/the-tepe-telegrams/tag/religion/">https://www.dainst.blog/the-tepe-telegrams/tag/religion/</a></li>
+      </ul>
     </div>
   ` }
 };

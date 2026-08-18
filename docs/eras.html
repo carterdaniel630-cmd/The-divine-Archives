@@ -39,8 +39,18 @@
       .age .num { border-right: 0; text-align: left; }
     }
   </style>
+  <link rel="canonical" href="https://getconexto.com/eras.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="The Nine Ages — The Divine Archives" />
+  <meta property="og:description" content="Browse the archive chronologically, across nine ages from prehistory to the present." />
+  <meta property="og:url" content="https://getconexto.com/eras.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The Nine Ages — The Divine Archives" />
+  <meta name="twitter:description" content="Browse the archive chronologically, across nine ages from prehistory to the present." />
 </head>
 <body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
 <div class="page">
   <header class="site-header">
     <div class="wrap bar">
@@ -70,7 +80,7 @@
     <p class="lede">The archive is ordered by time, not by region or creed. Walk the ages in sequence, or step into any one of them.</p>
   </div>
 
-  <main class="wrap">
+  <main class="wrap" id="maincontent" tabindex="-1">
     <div class="ages" id="ages"></div>
   </main>
 
@@ -82,7 +92,6 @@
         <a href="traditions.html">Browse by Tradition</a>
         <a href="methodology.html">Methodology</a>
         <a href="about.html">About</a>
-        <a href="reading-room.html">The Reading Room</a>
         <a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">Support the Archive</a>
       </nav>
       <p class="tiny">A comparative library of the sacred</p>
@@ -91,17 +100,19 @@
 </div>
 
 <script src="assets/data.js"></script>
+<script src="assets/emblems.js"></script>
 <script>
   (function () {
     var mount = document.getElementById("ages");
     if (!mount || !window.ARCHIVE) return;
+    var EM = window.EMBLEMS || {};
     window.ARCHIVE.eras.forEach(function (e) {
       var a = document.createElement("a");
       a.className = "age";
       a.href = "era.html?era=" + encodeURIComponent(e.slug);
       var tags = e.traditions.map(function (t) { return '<span class="tag">' + t + "</span>"; }).join("");
       a.innerHTML =
-        '<div class="num">' + e.num + "</div>" +
+        '<div class="num">' + (EM[e.slug] || '') + '<span class="numeral">' + e.num + "</span></div>" +
         "<div><h2>" + e.name + ' <span class="dates">' + e.dates + "</span></h2>" +
         '<p class="blurb">' + e.blurb + "</p>" +
         '<div class="tags">' + tags + "</div></div>";

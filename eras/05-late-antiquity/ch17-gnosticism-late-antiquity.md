@@ -120,6 +120,58 @@ the interpretation of these sayings will not taste death." Its date is fiercely 
 some arguing that a few of its sayings may preserve very **early** tradition, possibly
 independent of the canonical Gospels.
 
+## The religion of Light: Manichaeism
+
+The most successful of Late Antiquity's dualist faiths was not, strictly, Gnostic at all,
+but its great cousin: **Manichaeism**, founded by the Persian prophet **Mani** (c. 216–274
+CE), who declared himself the last in a line of messengers that included **Adam,
+Zoroaster, the Buddha, and Jesus**, come to complete and unify their revelations into one
+universal religion. Where the Gnostics traced evil to a mistake within the Pleroma, Mani
+made the dualism absolute: two **coeternal** principles, **Light** and **Darkness**, Spirit
+and Matter, locked in cosmic war. In the primal battle, particles of Light became trapped
+in the material world, and the whole point of existence — of the sun and moon (which Mani
+made vessels that ferry the freed Light home), of the religion, of the ascetic life — is to
+liberate that scattered Light and return it to its source.
+
+Manichaeism was rigorously organized into two ranks: the **Elect**, who lived in strict
+purity — vegetarian, celibate, non-violent even toward plants, lest they harm the Light
+within them — and the far larger body of **Hearers** (auditors), lay supporters who fed and
+served the Elect and thereby earned merit, hoping to be reborn as Elect themselves. Carried
+by Mani's own missionary drive and a beautiful illustrated scripture, the religion spread
+astonishingly far: west across the Roman Empire — where the young **Augustine** was a Hearer
+for nine years before his conversion, and whose lifelong wrestling with the problem of evil
+bears its mark — and east along the Silk Road, where it became the state religion of the
+**Uighur** empire and reached **China**, whose Manichaean communities survived into the
+fourteenth century. For a thousand years "the religion of Light" was a genuine world faith,
+and its absolute dualism would echo on in the medieval **Bogomils** and **Cathars**.
+
+## The Hermetic path: as above, so below
+
+Running alongside Gnosticism in the same Greco-Roman Egypt was a gentler esoteric current,
+**Hermeticism** — the teachings ascribed to **Hermes Trismegistus** ("thrice-greatest
+Hermes"), a legendary sage who fused the Greek **Hermes** with the Egyptian **Thoth**, god
+of writing and wisdom. Its core texts, the **Corpus Hermeticum**, are seventeen Greek
+philosophical-religious treatises written between roughly the first and third centuries CE,
+blending **Platonism**, Egyptian religion, and Jewish and Greek mysticism. Where the
+Gnostics damned the cosmos, the Hermeticists more often revered it as a beautiful, living
+whole shot through with the divine, and taught that the human being — a "great miracle," at
+once earthly and divine — can, by purifying the mind and coming to **know God**, ascend
+through the planetary spheres, shedding a vice at each, until the soul is deified and
+reunited with the source. The opening treatise, the **Poimandres**, records just such a
+revelation of creation and ascent granted to Hermes by the divine Mind. The most famous
+Hermetic maxim — *"that which is below is like that which is above"* — became the classic
+statement of the **correspondence** between the macrocosm and the microcosm, the conviction
+that the heavens and the human being mirror one another, which underlies astrology, alchemy,
+and much of the later Western esoteric tradition.
+
+*Two honesty notes, per the standard.* The famous **Emerald Tablet**, where the "as above,
+so below" formula is usually quoted, is a **later** work, first attested in Arabic sources of
+the early Middle Ages, not a Late-Antique text; and the popular **Kybalion** (1908), often
+sold as "ancient Hermetic wisdom," is a **modern** New Thought composition, not an ancient
+source at all. The genuine ancient Hermetica — the Corpus Hermeticum and the *Asclepius* —
+were fertile enough, feeding the Renaissance revival under Ficino, without the later
+embroidery.
+
 ## Symbology and sacred encoding
 
 Gnosticism is, in a sense, **the tradition of sacred encoding itself** — its entire premise is
@@ -183,6 +235,11 @@ saw in the Gnostic myths a map of the psyche.
 - The reality of the **Nag Hammadi** discovery (1945) and its major texts, the recovered **Gospel
   of Judas**, and the **Gospel of Thomas** as a collection of 114 sayings; the survival of the
   **Mandaeans** and the historical spread of **Manichaeism**.
+- **Manichaeism** as a major Late-Antique world religion: **Mani** (c. 216–274 CE), the absolute
+  **Light/Darkness** dualism, the two ranks of **Elect** and **Hearers**, the spread from Rome to
+  China, and **Augustine's** nine years as a Hearer. And **Hermeticism**: the **Corpus Hermeticum**
+  (1st–3rd c. CE), **Hermes Trismegistus** (Hermes/Thoth), the soul's ascent, and the
+  macrocosm–microcosm "as above, so below" correspondence.
 
 **What's not supported by the evidence**
 
@@ -194,6 +251,9 @@ saw in the Gnostic myths a map of the psyche.
 - Treating the **Gospel of Thomas** or the **Gospel of Judas** as reliable historical accounts of
   Jesus's life rather than as later theological/esoteric works (whatever early sayings Thomas may
   contain).
+- Treating the **Emerald Tablet** as a Late-Antique Hermetic text (it is first attested in medieval
+  Arabic sources), or the **Kybalion** (1908) as ancient Hermetic wisdom (it is a modern New Thought
+  work). The genuine ancient Hermetica are the Corpus Hermeticum and the *Asclepius*.
 
 **What's genuinely open**
 
@@ -220,6 +280,14 @@ saw in the Gnostic myths a map of the psyche.
 - On the Gospel of Thomas, [Bart Ehrman: The Gospel of Thomas — An Overview](https://ehrmanblog.org/the-gospel-of-thomas-an-overview/)
   and [Biblical Archaeology Society: The Gospel of Thomas's 114 Sayings](https://www.biblicalarchaeology.org/daily/biblical-topics/bible-versions-and-translations/the-gospel-of-thomas-114-sayings-of-jesus/);
   [Wikipedia: Gospel of Philip](https://en.wikipedia.org/wiki/Gospel_of_Philip).
+
+*Manichaeism and Hermeticism*
+- Mani, the Light/Darkness dualism, the Elect and Hearers, and the spread from Rome to China —
+  [Britannica: Manichaeism](https://www.britannica.com/topic/Manichaeism); on Augustine's years as a
+  Hearer, standard treatments.
+- The Corpus Hermeticum and Hermes Trismegistus — [TheCollector: Hermes Trismegistus & the Founding
+  of Hermeticism](https://www.thecollector.com/hermes-trismegistus-hermeticism/); on the later
+  Emerald Tablet, [Wikipedia: Emerald Tablet](https://en.wikipedia.org/wiki/Emerald_Tablet).
 
 *Sacred encoding — Abraxas and the numbered cosmos*
 - [Wikipedia: Abraxas](https://en.wikipedia.org/wiki/Abraxas) (on the isopsephy of 365 and Basilides).

@@ -152,6 +152,45 @@ we must add others:
   Galilean teacher named Jesus — at this stage simply **one more Judaism**, whose
   own chapter belongs to the next era.
 
+## The shapes of the Messiah
+
+If any single expectation ran through these Judaisms it was the hope of a **messiah**
+(*mashiach*, "anointed one") — yet even that hope was plural, and its very diversity
+is part of what made the period so combustible. The oldest and most widespread form
+was the **Davidic** messiah: a royal deliverer of David's line who would break the
+foreign yoke, restore Israel's kingdom, and rule in justice. But beside him stood
+others. The Qumran community expected **two** messiahs at once — a priestly **Messiah
+of Aaron**, who would preside over the restored cult, and a royal **Messiah of
+Israel** subordinate to him — a vision in which the priest outranked the king. Some
+awaited a **prophet like Moses** (Deuteronomy 18), a figure the Samaritans especially
+expected. And in the apocalyptic imagination a stranger figure appears: the heavenly
+**"one like a son of man"** who comes on the clouds in Daniel 7 and, in the
+*Similitudes of 1 Enoch*, becomes a pre-existent, enthroned redeemer who will judge
+the world. Royal, priestly, prophetic, heavenly — these were not one idea but a field
+of competing hopes, and the movement around Jesus of Nazareth would draw on several
+at once. That the age held many messianisms, not one, is essential to everything the
+next era builds.
+
+## Lady Wisdom
+
+Running alongside the apocalyptic imagination was a very different current: the
+**wisdom** tradition, and its most remarkable creation, the figure of personified
+**Wisdom** (Hebrew *Hokhmah*, Greek *Sophia*). Already in **Proverbs 8** Wisdom
+speaks in her own voice as a feminine figure who was with God "at the beginning of
+his work," a delight and a craftsman beside him as he made the world. The Second
+Temple wisdom books press the image further. In **Ben Sira 24** Wisdom comes forth
+from the mouth of the Most High, seeks a dwelling among the nations, and is settled
+by God in Israel — where the author identifies her outright with the **Torah**. In
+the Alexandrian **Wisdom of Solomon**, written in Greek, she becomes "a breath of the
+power of God," "a pure emanation of his glory," the spotless mirror of his working,
+who sits beside his throne. Scholars debate how far to press this: is Wisdom a poetic
+personification, or a genuine **hypostasis** — a divine attribute taking on
+near-independent life beside God? Either way, this figure of a feminine divine
+Wisdom, present at creation and mediating between God and the world, proved
+enormously fertile. It stands directly behind Philo's **Logos**, behind the Word of
+John's Gospel and early Christian reflection on Christ, and behind the **Sophia** of
+the Gnostic myths of the next era.
+
 ## The library: scripture and its rivals
 
 The depth of this period demands that we take its whole literature seriously — for
@@ -270,6 +309,11 @@ distantly, **Islam**, **Gnosticism**, and the esoteric traditions of **Kabbalah*
 - New theological developments — a personalized **Satan**, ranked **angels and
   demons**, **resurrection** and final judgment (Daniel), and the **apocalyptic**
   genre — appear developed in this period.
+- **Messianic expectation was itself plural** — Davidic royal, priestly (the two
+  messiahs of Qumran), the prophet like Moses, and the heavenly Danielic/Enochic
+  "son of man" — and the personified figure of **Wisdom** (Sophia) develops in the
+  wisdom books (Proverbs 8, Ben Sira 24, the Wisdom of Solomon), later feeding
+  Philo's Logos, Christology, and Gnosticism.
 - The historical framework (Persian → Hellenistic → Roman; the Maccabean revolt;
   Herod's Temple; the destruction of 70 CE) is well established.
 
@@ -311,6 +355,13 @@ distantly, **Islam**, **Gnosticism**, and the esoteric traditions of **Kabbalah*
   discussions at [Bible Interp: Afterlife and Resurrection in the Second Temple Period](https://bibleinterp.arizona.edu/articles/afterlife-and-resurrection-beliefs-second-temple-period)
   and works such as Vicente Dobroruka on Iranian influence — with the caution that
   the case is one of resonance, not proven borrowing.
+
+*Messianism and Wisdom*
+- The plural messianic hope (Davidic, the two messiahs of Qumran, the prophet, the
+  Danielic/Enochic son of man) — [Livius: Qumran's dual Messianism](https://www.livius.org/articles/religion/messiah/messiah-9-two-messiahs/);
+  and standard surveys of Second Temple messianism.
+- Personified Wisdom (Hokhmah/Sophia) in Proverbs 8, Ben Sira 24, and the Wisdom of
+  Solomon — [Wikipedia: Personification of wisdom](https://en.wikipedia.org/wiki/Personification_of_wisdom).
 
 *The literature*
 - [My Jewish Learning: Apocrypha and Pseudepigrapha](https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/);

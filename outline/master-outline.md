@@ -41,9 +41,18 @@ drafted and go live carrying a "Recently added — pending review" tag; Carter
 clears them in batch, at which point the tag is removed and the status becomes
 `CLEARED`.
 
+**Batch II — deepening pass (in progress).** Already-published chapters are being
+revisited and expanded with additional sourced material under the same standards
+(tracked in `icm/stage-4-expansions/CONTEXT.md`). Completed groups merge to
+production as they finish. **Deepened and live so far: ch01–ch20** (era 02 + seed,
+Early Iron Age, Axial Age, Late Antiquity). This is additive — it does not change a
+chapter's review status, only its depth.
+
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
+| ch41 — The Paleolithic | Tradition | 01-prehistory | **PENDING REVIEW** | `eras/01-prehistory/ch41-paleolithic-prehistory.md` |
+| ch42 — The Neolithic | Tradition | 01-prehistory | **PENDING REVIEW** | `eras/01-prehistory/ch42-neolithic-prehistory.md` |
 | ch02 — Egypt | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
 | ch03 — Mesopotamia | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
 | ch04 — Indus Valley | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
@@ -70,8 +79,36 @@ clears them in batch, at which point the tag is removed and the status becomes
 **Late Antiquity (era 05) traditions complete** (ch16–ch20).
 
 | ch21 — Islam | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
+| ch22 — Patristic Christianity | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
+| ch23 — Norse Paganism | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch23-norse-paganism-early-medieval.md` |
+| ch24 — Tantra | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch24-tantra-early-medieval.md` |
+| ch25 — Shinto | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch25-shinto-early-medieval.md` |
 
-Era 06 — Early Medieval in progress. Remaining: patristic Christianity, Norse paganism, Tantra, Shinto.
+**Early Medieval (era 06) traditions complete** (ch21–ch25): Islam, Patristic Christianity, Norse paganism, Tantra, Shinto.
+
+| ch26 — Kabbalah | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch26-kabbalah-high-medieval.md` |
+| ch27 — Sufism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch27-sufism-high-medieval.md` |
+| ch28 — Scholasticism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
+| ch29 — Aztec, Maya & Inca | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch29-aztec-maya-inca-high-medieval.md` |
+| ch30 — Bhakti | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch30-bhakti-high-medieval.md` |
+
+**High Medieval (era 07) traditions complete** (ch26–ch30): Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti.
+
+| ch31 — The Reformation | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch31-reformation-early-modern.md` |
+| ch32 — The Witch Trials | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch32-witch-trials-early-modern.md` |
+| ch33 — African Traditional Religion | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch33-african-traditional-religion-early-modern.md` |
+| ch34 — Sikhism | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch34-sikhism-early-modern.md` |
+
+**Early Modern (era 08) traditions complete** (ch31–ch34): Reformation, Witch Trials, African Traditional Religion, Sikhism.
+
+| ch35 — New Religious Movements | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch35-new-religious-movements-modern.md` |
+| ch36 — Spiritualism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch36-spiritualism-modern.md` |
+| ch37 — Theosophy & the Occult Revival | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch37-theosophy-occult-revival-modern.md` |
+| ch38 — Wicca & Modern Paganism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch38-wicca-modern-paganism-modern.md` |
+| ch39 — Satanism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch39-satanism-modern.md` |
+| ch40 — African Diaspora Religions | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch40-diaspora-religions-modern.md` |
+
+**Modern (era 09) traditions complete** (ch35–ch40): New Religious Movements, Spiritualism, Theosophy & the Occult Revival, Wicca & Modern Paganism, Satanism, African Diaspora Religions.
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
