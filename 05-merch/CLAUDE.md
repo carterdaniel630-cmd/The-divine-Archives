@@ -187,6 +187,17 @@ Implications for this stage: merch **complements** the existing books and social
 match the established Pip look and voice, and treat the social channels as the natural place
 a Pip storefront would be linked from. Do not contradict or restyle the existing brand.
 
+**Pip-product design direction (Carter, 2026-08-18):**
+- **Pip the character is the centerpiece** of every print. Build **brand awareness around Pip
+  first.**
+- **Friends are deferred.** Focus on Pip alone for now — no friend-group characters on products
+  yet (their references stay parked; not a blocker).
+- **The real content is the relatable quotes** carried over from Pip's online posts (the
+  encouraging, kindness/positivity affirmations, e.g. "Be proud of how far you've come," "Be the
+  reason someone smiles"). Pairing Pip with one of these quotes is the point of the product.
+- **Placeholder:** until the specific quotes are chosen, use the wordmark **"Pip's Orchard"**
+  (the name mirrored from the books) as the stand-in for the quote/content slot on each design.
+
 ## Domain / infrastructure
 - The `/shop` page draft targets the **Divine Archives static site** (Cloudflare Pages,
   same repo/deploy pattern as `docs/*.html`, domain `getconexto.com`).

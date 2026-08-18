@@ -20,12 +20,15 @@ flag before any mockup art.
 | `da-05-tree-of-life-button.md` | Pin-back button — Tree of Life | ch26 — Kabbalah (alt: ch11) | **required** |
 
 ## pips-orchard/ — locked character, Printify-only, review-flagged
+**Pip is the centerpiece; friends deferred.** On-product content is a relatable quote from the
+online posts — placeholder wordmark **"Pip's Orchard"** until quotes are chosen.
+
 | File | Product (Printify) | Note |
 |---|---|---|
-| `pip-01-sticker-pack.md` | Sticker pack — Pip + friends | 🚩 friends undefined |
-| `pip-02-kids-tee.md` | Kids T-shirt — Pip | — |
-| `pip-03-water-bottle.md` | Water bottle — Pip + friends | 🚩 friends undefined |
-| `pip-04-storybook-tote.md` | Tote — "Pip and the…" cover series | 🚩 tie to real KDP book titles |
+| `pip-01-sticker-pack.md` | Sticker pack — Pip | Pip-only; quote placeholder |
+| `pip-02-kids-tee.md` | Kids T-shirt — Pip | quote placeholder |
+| `pip-03-water-bottle.md` | Water bottle — Pip | Pip-only; quote placeholder |
+| `pip-04-storybook-tote.md` | Tote — Pip + "Pip's Orchard" wordmark | wordmark = quote placeholder |
 | `pip-05-button.md` | Pin-back button — Pip | — |
 
 Draft copy: `../copy/`. Locked character: `../pip-reference/REFERENCE.md`. Mockups: `../mockups/`.

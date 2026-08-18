@@ -1,24 +1,26 @@
-# PIP-01 · "Pip & Friends" — Sticker Pack
+# PIP-01 · "Pip" — Sticker Pack
 
 **Status:** `DRAFT · PENDING REVIEW` · **Final list item** (Carter 2026-08-18)
 **Sub-brand:** Pip's Orchard · **Supplier:** Printify (kiss-cut sticker sheet/pack) ✅
 **SKU:** TBD · **Price:** TBD (see FLAGS.md)
-**Character review:** ⛔ PENDING — all art must clear the Pip consistency flag before mockup.
+**Character review:** ⛔ PENDING — art must clear the Pip consistency flag before mockup.
+
+> **Friends deferred** (Carter 2026-08-18): building awareness around **Pip first** — this is a
+> **Pip-only** sticker pack now. Friend characters are parked, not a blocker.
 
 ## Product type
-Sticker pack / kiss-cut sheet (Printify), several die-cut stickers.
+Sticker pack / kiss-cut sheet (Printify), several die-cut Pip stickers.
 
 ## Design direction (locked character — no drift)
-Pip plus the **friend group**, storybook style: several small character stickers in warm
-golden-hour poses. Pip on the **locked reference** (`../../pip-reference/REFERENCE.md`):
+6–8 Pip stickers in warm golden-hour poses (waving, napping, holding an apple, arms up), Pip
+as the centerpiece throughout. Locked reference (`../../pip-reference/REFERENCE.md`):
 golden-brown/tan onion body, green sprout, glossy amber-gold eyes, rosy cheeks, chibi,
-painterly storybook. Reject any Pip drift toward the retired seed/root concept.
+painterly storybook. Reject any drift toward the retired seed/root concept.
 
-## 🚩 FLAG — the "friend group" is not yet defined
-The friend characters have **no locked reference** in the repo — Pip's is the only canonical
-character sheet we have. Their species/designs/names/colors are unknown. **Do not invent
-them.** Need from Carter: reference art or a description for each friend (see `../../FLAGS.md`).
-Until then this mockup shows **Pip only**, with clearly-marked placeholder slots for the friends.
+## Quote / content slot
+Some stickers pair Pip with a short **relatable quote** from the online content (the
+encouraging kindness/positivity affirmations). **Placeholder** wordmark for now: **"Pip's
+Orchard."** Final quotes to be selected from the social posts (see FLAGS.md).
 
 ## POD supplier notes (Printify)
 - Printify kiss-cut sticker sheets / packs — confirm sheet template and cut lines with the provider.

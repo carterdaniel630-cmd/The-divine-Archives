@@ -25,10 +25,14 @@ So these mockups deliberately do **not** attempt to draw the character — they 
 the composition, and where Pip (and friends) will sit. When the real files arrive and clear
 review, they replace the placeholders.
 
+Pip is the **centerpiece** of every print; **friends are deferred**. The on-product content is a
+**relatable quote** from the online posts — shown as the placeholder wordmark **"Pip's Orchard"**
+until the quotes are chosen.
+
 ## Open items surfaced by the mockups (see ../FLAGS.md)
-- **Friend group undefined** (PIP-01, PIP-03) — placeholders only until Carter supplies references.
-- **"Pip and the…" tote** (PIP-04) — cover titles/scenes should match the real Amazon KDP books.
+- **Relatable quotes** for the Pip products — "Pip's Orchard" is the placeholder until chosen.
 - **Pip reference image files** — still to be committed to `../pip-reference/`.
+- *(Resolved: friends deferred; the tote is "Pip's Orchard," no KDP title list needed.)*
 
 ## Status
 Every mockup is `DRAFT · PENDING REVIEW`. Only Carter advances anything to `READY TO LIST`

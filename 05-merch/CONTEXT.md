@@ -42,8 +42,10 @@ a `/shop` page draft for the Divine Archives static site.
       chapter. Verify the specific symbol/wording against each chapter at review
       (esp. ch26 Kabbalah, still pending-review; ch11 Eightfold Path factor names).
 - [ ] **Sacred-symbol respectful-use sign-off** — DA-03/04/05, per symbol (Carter).
-- [ ] Resolve `FLAGS.md` items: **real product list**, **Pip color conflict**, pricing/SKUs,
-      domain/storefront structure, commit Pip image files, hard-enamel/plush out-of-scope calls.
+- [ ] Resolve remaining `FLAGS.md` items: **relatable quotes** for Pip products (placeholder
+      "Pip's Orchard" for now), pricing/SKUs, domain/storefront structure, commit Pip image files.
+      *(Resolved: product list, Pip color, sacred-symbol approvals, Printify swaps, friends
+      deferred, KDP-title tie-in.)*
 
 ## What is deliberately NOT done (by policy)
 - No product created in Shopify; no live Buy Button snippet.

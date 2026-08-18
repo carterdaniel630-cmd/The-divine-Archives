@@ -1,26 +1,26 @@
-# PIP-04 · "Pip and the…" — Tote Bag (storybook cover series)
+# PIP-04 · "Pip's Orchard" — Tote Bag
 
 **Status:** `DRAFT · PENDING REVIEW` · **Final list item** (Carter 2026-08-18)
 **Sub-brand:** Pip's Orchard · **Supplier:** Printify (tote bag) ✅
 **SKU:** TBD · **Price:** TBD (see FLAGS.md)
 **Character review:** ⛔ PENDING — art must clear the Pip consistency flag before mockup.
 
+> **Updated** (Carter 2026-08-18): not a "Pip and the…" book-title series. The wordmark mirrored
+> from the books is simply **"Pip's Orchard,"** and it stands in as the **placeholder for the
+> quote/content** until the real relatable quotes are chosen. Pip is the centerpiece.
+
 ## Product type
-Cotton tote (Printify), single large front print — a **storybook "cover" series** (a set of
-totes, each styled like a Pip book cover: framed title + cover scene).
+Cotton tote (Printify), single large front print — storybook-styled Pip cover.
 
 ## Design direction (locked character — no drift)
-Each tote reads like the cover of a Pip picture book: a framed golden-hour cover scene with a
-"Pip and the…" title lockup. Pip on the **locked reference:** golden-brown/tan onion body,
-green sprout, glossy amber-gold eyes, rosy cheeks, chibi, painterly storybook. No seed/root drift.
+A warm golden-hour cover: **Pip as the centerpiece**, storybook style, with the **"Pip's
+Orchard"** wordmark. Locked reference: golden-brown/tan onion body, green sprout, glossy
+amber-gold eyes, rosy cheeks, chibi, painterly storybook. No seed/root drift.
 
-## 🚩 FLAGS
-- **Tie to the Amazon KDP books.** "Pip and the…" implies specific titles. To stay consistent
-  (and factually grounded to the real books), the cover titles/scenes should match the **actual
-  published Pip books**. Need from Carter: the KDP book titles/covers to base the series on —
-  don't invent book titles (`../../FLAGS.md`).
-- If any cover scene includes the **friend group**, the same "friends not yet defined" flag applies.
+## Quote / content slot
+"Pip's Orchard" is the **placeholder** for the real content — a **relatable quote** carried over
+from the online posts. Swap the wordmark for the chosen quote at production (see FLAGS.md).
 
 ## POD supplier notes (Printify)
 - Printify tote bags, full-color front — confirm print area and panel vs all-over.
-- One design per SKU; the "series" is multiple totes. High-res painterly source; confirm color profile.
+- High-res painterly source; confirm color profile.

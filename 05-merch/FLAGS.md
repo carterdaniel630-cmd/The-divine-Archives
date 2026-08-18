@@ -13,17 +13,21 @@ Per stage policy: **flag gaps, do not guess.** Updated 2026-08-18 after Carter's
 - **Printify swaps confirmed final** — pin-back button (not enamel), throw-pillow logic moot
   now that PIP-03 is a water bottle. All 10 products verified against Printify's catalog.
 
-## 🚩 OPEN — Pip's "friend group" is not defined
-`PIP-01` (sticker pack) and `PIP-03` (water bottle) call for "Pip + friend group." **Only Pip
-has a locked reference** — the friends have no design, species, names, or colors on file.
-**Do not invent them.** Mockups for these show **Pip only** with clearly-marked placeholder
-slots for the friends. **Need from Carter:** reference art or a description per friend.
+## ✅ RESOLVED — Pip's "friend group" deferred
+Carter 2026-08-18: build awareness around **Pip first** — friends are **deferred**, not needed
+now. PIP-01 and PIP-03 are **Pip-only**. Friend references stay parked; **not a blocker**.
 
-## 🚩 OPEN — "Pip and the…" tote must match real books
-`PIP-04` is a storybook-**cover series**. To stay grounded to the real brand (and the Amazon
-KDP books), the cover titles/scenes should mirror the **actual published Pip books** — not
-invented titles. **Need from Carter:** the KDP book titles/covers to base the series on. Mockup
-uses a generic "Pip and the …" placeholder title until then.
+## ✅ RESOLVED — "Pip and the…" tote → "Pip's Orchard"
+Carter 2026-08-18: the tote no longer needs specific book titles. The wordmark mirrored from the
+books is just **"Pip's Orchard,"** used as the **placeholder for the quote/content**. No KDP
+title list needed.
+
+## 🚩 OPEN (content, not blocking) — the relatable quotes
+The real on-product content is a **relatable quote** carried over from Pip's online posts (the
+kindness/positivity affirmations). Across the Pip products this is currently the **placeholder
+wordmark "Pip's Orchard."** **Need from Carter:** the specific quotes to use per product (and any
+rights/consistency notes for reusing the social captions verbatim). Designs are built so the
+wordmark swaps out for the chosen quote at production.
 
 ## 🚩 OPEN — Pip reference image files not yet in the repo
 The locked spec lives in `pip-reference/REFERENCE.md`, but the **actual Pip art files** aren't

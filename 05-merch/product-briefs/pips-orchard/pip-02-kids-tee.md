@@ -13,8 +13,11 @@ Youth / kids T-shirt (Printify), front-centered print, youth size range.
 ## Design direction (locked character — no drift)
 A single, friendly hero Pip, big and centered, kid-appealing — full-color painterly art on
 the **locked reference:** golden-brown/tan onion body, green sprout, big glossy amber-gold
-eyes, rosy cheeks, chibi proportions, golden-hour warmth. No seed/root drift. Optional short
-kindness affirmation in the brand voice under the character.
+eyes, rosy cheeks, chibi proportions, golden-hour warmth. No seed/root drift.
+
+## Quote / content slot
+Pip paired with a short **relatable quote** from the online content beneath the character.
+**Placeholder** wordmark for now: **"Pip's Orchard."** Final quote from the social posts (FLAGS.md).
 
 ## POD supplier notes (Printify)
 - Printify offers youth/kids tees (e.g. Bella+Canvas / Gildan youth) — confirm blank,
