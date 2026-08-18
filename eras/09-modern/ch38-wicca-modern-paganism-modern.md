@@ -1,7 +1,5 @@
 # Chapter 38 — Wicca and Modern Paganism: The Old Gods Return
 
-*Recently added — pending full review.*
-
 The twentieth-century rebirth of Pagan religion in the West — a nature faith of Goddess and God, coven and sabbat, magic and moon — told honestly as what it is: not the ancient survival its founders claimed, but a real, living, modern religion assembled in living memory, and none the less genuine for it.
 
 ## The man who said the witches were real

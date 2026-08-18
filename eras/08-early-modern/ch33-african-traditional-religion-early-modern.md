@@ -1,7 +1,5 @@
 # Chapter 33 — African Traditional Religion: The Faiths Carried Across the Water
 
-*Recently added — pending full review.*
-
 The vast family of indigenous religions of sub-Saharan Africa — a Supreme God above a world of intermediary spirits and living ancestors, read through divination and danced in masks — and the extraordinary story of how, in the colonial and slave-trade centuries, these faiths were carried across the Atlantic in the memories of the enslaved and survived, hidden inside the saints of their captors.
 
 ## The seed that would not die

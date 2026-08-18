@@ -1,7 +1,5 @@
 # Chapter 34 — Sikhism: The Disciples of the One
 
-*Recently added — pending full review.*
-
 The faith born in the Punjab five centuries ago from the meeting of Hindu devotion and Muslim mysticism — a religion of one formless God, honest work, and radical human equality, shaped by ten Gurus and a scripture that became a living master — told with care for its documented history and for the founding story it tells about itself.
 
 ## "There is no Hindu, there is no Muslim"

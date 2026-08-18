@@ -1,6 +1,12 @@
 # Stage 4 — Deepening Pass (Batch II) — CONTEXT
 
-**STATUS: 🟢 CONTENT COMPLETE — final group merging.** This is the second review batch:
+**STATUS: 🟢 COMPLETE — all chapters cleared.** On 2026-08-18 Carter gave a
+blanket sign-off ("approve everything"): the **"Recently added — pending full review"
+tag has been cleared from every chapter that carried it** (ch26–ch42 — the last 17
+pending chapters), in both `data.js` (the site badge/banner) and the markdown sources.
+No chapter now carries a pending-review tag; the review gate is fully closed.
+
+This was the second review batch:
 revisiting already-published chapters (ch01–ch30) and expanding them with additional
 publicly available information under the same standards. Per Carter's instruction
 ("merge, update, continue"), completed groups are **merged to production as they

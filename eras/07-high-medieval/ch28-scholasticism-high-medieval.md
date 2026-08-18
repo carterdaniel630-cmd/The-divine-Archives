@@ -1,7 +1,5 @@
 # Chapter 28 — Scholasticism: Faith Seeking Understanding
 
-*Recently added — pending full review.*
-
 The great medieval effort to think the faith through to the bottom — to take the newly recovered logic of Aristotle and the whole inheritance of Christian doctrine and reconcile them, question by disputed question, in the cathedral schools and the first universities of Europe — and the honest limits of what reason, then and now, can actually settle.
 
 ## The straw

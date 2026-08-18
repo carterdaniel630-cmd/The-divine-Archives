@@ -1,7 +1,5 @@
 # Chapter 39 — Satanism: The Adversary, Imagined and Chosen
 
-*Recently added — pending full review.*
-
 Two completely different things wear the same frightening name — the imaginary Devil-cult that persecutors have invented for a thousand years, and the real, mostly atheistic philosophy that modern people have deliberately chosen — and telling them apart, with the same descriptive rigor this book gives every tradition and none of the shock, is the whole task of the chapter.
 
 ## The panic that found nothing

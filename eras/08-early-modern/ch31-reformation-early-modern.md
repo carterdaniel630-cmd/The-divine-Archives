@@ -1,7 +1,5 @@
 # Chapter 31 — The Reformation: The Church Breaks
 
-*Recently added — pending full review.*
-
 The sixteenth-century revolt that split Western Christianity in two — begun as a quarrel over the sale of forgiveness, carried across a continent by a new machine, and ending in a hundred years of war and a Christendom shattered into churches — told with care for what happened, what the reformers claimed, and what remains a matter of faith.
 
 ## The door at Wittenberg

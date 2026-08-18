@@ -1,7 +1,5 @@
 # Chapter 26 — Kabbalah: The Tree of the Names of God
 
-*Recently added — pending full review.*
-
 The great flowering of Jewish mysticism in medieval Provence and Spain — a map of the hidden God as ten emanations on a Tree of Life, a universe spoken into being out of the letters of the Hebrew alphabet, and a book that claimed to be a thousand years older than it was — told with the same care that separates what the tradition receives, what history can date, and what later ages built on top of it.
 
 ## The widow of Ávila

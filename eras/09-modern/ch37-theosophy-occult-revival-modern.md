@@ -1,7 +1,5 @@
 # Chapter 37 — Theosophy and the Occult Revival: The Secret Doctrine
 
-*Recently added — pending full review.*
-
 The late-nineteenth-century rebirth of Western esotericism — a claimed ancient wisdom behind all religions, hidden Masters in the Himalayas, a magical order that fused Kabbalah and tarot into a system of the soul — and the honest reckoning with its fabrications, its enormous influence, and the dark uses to which some of its ideas were later put.
 
 ## The letters from the Masters

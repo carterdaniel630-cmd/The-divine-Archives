@@ -1,7 +1,5 @@
 # Chapter 36 — Spiritualism: The Age of the Séance
 
-*Recently added — pending full review.*
-
 The religion of the talking dead — born from two girls and a knocking sound in 1848, swept through a grieving Victorian world of darkened parlors and rapping tables, and honest about the difference between the consolation it gave, which was real, and the communication it claimed, which was not.
 
 ## The rappings at Hydesville

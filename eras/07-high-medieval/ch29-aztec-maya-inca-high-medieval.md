@@ -1,7 +1,5 @@
 # Chapter 29 — Aztec, Maya & Inca: The Temple Religions of the Americas
 
-*Recently added — pending full review.*
-
 Three great civilizations of the pre-Columbian Americas — the Maya of the rainforest, the Aztec of the Mexican lake, and the Inca of the Andes — and the temple religions of blood, calendar, and divine kingship they built, reconstructed from ruins, deciphered glyphs, frozen mummies, and the records of the conquerors who destroyed them.
 
 ## The child on the summit
