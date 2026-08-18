@@ -1,15 +1,17 @@
 # Stage 4 — Deepening Pass (Batch II) — CONTEXT
 
-**STATUS: 🟡 IN PROGRESS — rolling merges.** This is the second review batch:
+**STATUS: 🟢 CONTENT COMPLETE — final group merging.** This is the second review batch:
 revisiting already-published chapters (ch01–ch30) and expanding them with additional
 publicly available information under the same standards. Per Carter's instruction
-("merge, update, continue"), completed groups are being **merged to production as they
-finish** rather than held to a single end-of-batch gate.
+("merge, update, continue"), completed groups are **merged to production as they
+finish** rather than held to a single end-of-batch gate. **All 30 chapters now
+deepened on the working branch.**
 
 **Merged live (production):** **ch01–ch25** (era 02 + seed, Early Iron Age, Axial
 Age, Late Antiquity, Early Medieval).
-**Remaining:** ch26–ch30 (High Medieval), continuing on the working branch and
-merged as the group closes.
+**Deepened, closing group merging now:** **ch26–ch30** (High Medieval — Kabbalah,
+Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti). This is the last group; merging it
+completes the full ch01–ch30 Batch II pass.
 
 ## Scope
 Deepen — not merely re-touch — the earlier chapters: add sourced detail (more source texts, sects, regional variants, ritual practices, archaeology, and cross-disciplinary angles), strengthen the symbology and evidence-honesty sections where thinner, and keep contested points flagged. No structural or tonal change; same length target or longer.
@@ -25,7 +27,8 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 2. ch06–ch09 (Early Iron Age) — **✅ COMPLETE**
 3. ch10–ch15 (Axial Age) — **✅ COMPLETE**
 4. ch16–ch20 (Late Antiquity) — **✅ COMPLETE**
-5. ch21–ch25 (Early Medieval) — **✅ COMPLETE** · ch26–ch30 (High Medieval) — in progress
+5. ch21–ch25 (Early Medieval) — **✅ COMPLETE**
+6. ch26–ch30 (High Medieval) — **✅ COMPLETE** (Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti) — **entire ch01–ch30 pass now content-complete**
 
 ## Progress
 - **ch01 The Flood — expanded (2026-08-17).** Added: Irving Finkel's *Ark Tablet*
@@ -129,6 +132,27 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   dead (Sugawara no Michizane / Tenjin); Shugendō and the yamabushi mountain ascetics.
 - **Group-5a checkpoint (Early Medieval):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
+- **ch26 Kabbalah — expanded (2026-08-18).** [see branch history] the Zohar's
+  reception and the Lurianic turn (tzimtzum, shevirat ha-kelim, tikkun).
+- **ch27 Sufism — expanded (2026-08-18).** Al-Hallaj's "Ana al-Haqq" and the
+  martyr-mystic; the cult of the saints (awliya), tombs, and the living orders.
+- **ch28 Scholasticism — expanded (2026-08-18).** The philosophers of Islam as
+  thinkers in their own right — Avicenna's *Proof of the Truthful* (necessary
+  being) and Averroes' defense of philosophy's autonomy, the Latin Averroists
+  (Siger of Brabant, Boethius of Dacia) and the "double truth" charge feeding
+  1277; and the mystical counter-current — the Beguines (Hadewijch, Mechthild,
+  Marguerite Porete, burned 1310) and Meister Eckhart.
+- **ch29 Aztec/Maya/Inca — expanded (2026-08-18).** The Mesoamerican ballgame
+  (pitz/ōllamaliztli) as ritual re-enactment of the Popol Vuh Hero Twins in
+  Xibalba, tied to sacrifice; and post-conquest survival — the Taki Onqoy
+  revitalization movement (1560s) and syncretic entanglement (Virgin of
+  Guadalupe, Pachamama) carrying the old religions into folk Catholicism.
+- **ch30 Bhakti — expanded (2026-08-18).** Jayadeva's *Gita Govinda* (c. 1190),
+  the erotic Radha-Krishna love cycle and *madhurya bhava*; and the women saints
+  (Andal, Akka Mahadevi, Lal Ded, Mirabai) and their defiance of marriage and caste.
+- **Group-5b checkpoint (High Medieval):** integrity 42/42/42/42; every deepened
+  page retains plate + evidence + sources. **This closes the full ch01–ch30 Batch II
+  deepening pass.**
 
 ## Gate
 Originally grouped as **Batch II**, a single review point separate from Batch I.
