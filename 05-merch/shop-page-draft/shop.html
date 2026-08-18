@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+  DRAFT — /shop page for The Divine Archives static site.
+
+  DO NOT DEPLOY YET. This stage (05-merch) ends at human review; this file is held
+  in 05-merch/shop-page-draft/ on purpose so it is NOT picked up by the Cloudflare
+  Pages build (which serves docs/). When Carter approves, this becomes docs/shop.html
+  (drop-in: relative asset paths below already assume the docs/ root) and gets linked
+  from the site nav.
+
+  Shopify Buy Buttons are left as TODO placeholders — each needs a LIVE Shopify product
+  ID, which does not exist until products are created in Shopify post-review.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — The Divine Archives</title>
+  <meta name="description" content="Prints, apparel, and objects drawn from the traditions in The Divine Archives — each grounded in a published chapter." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/archive.css" />
+  <link rel="canonical" href="https://getconexto.com/shop.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="Shop — The Divine Archives" />
+  <meta property="og:description" content="Prints, apparel, and objects drawn from the traditions in The Divine Archives." />
+  <meta property="og:url" content="https://getconexto.com/shop.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Shop — The Divine Archives" />
+  <meta name="twitter:description" content="Prints, apparel, and objects drawn from the traditions in The Divine Archives." />
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+<div class="page">
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          <circle cx="60" cy="60" r="40" stroke="currentColor" stroke-width="1.4" stroke-dasharray="1 5"/>
+          <path d="M60 24 L64 56 L60 60 L56 56 Z" fill="currentColor"/><path d="M60 96 L56 64 L60 60 L64 64 Z" fill="currentColor"/>
+          <path d="M24 60 L56 56 L60 60 L56 64 Z" fill="currentColor"/><path d="M96 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/>
+          <circle cx="60" cy="60" r="3" fill="currentColor"/>
+        </svg>
+        The Divine Archives
+      </a>
+      <nav>
+        <a href="eras.html">Eras</a>
+        <a href="traditions.html">Traditions</a>
+        <a href="themes.html">Themes</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="about.html">About</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-head">
+    <p class="eyebrow">The archive, made to keep</p>
+    <h1>Shop</h1>
+    <p class="lede">A small shelf of prints, apparel, and objects &mdash; each one drawn from a
+      tradition documented in the archive, and grounded in a published chapter.</p>
+  </div>
+
+  <main class="wrap article" id="maincontent" tabindex="-1">
+
+    <!-- Stage badge: mirrors the site's pending-review discipline. Remove when Carter clears. -->
+    <div class="notice" style="margin-top:0.4rem">
+      <strong>Recently added &mdash; pending full review.</strong> This shop is new and still
+      under review. Nothing here is on sale yet; product listings go live only after review.
+    </div>
+
+    <p class="drop">
+      Every item on this page ties back to a chapter of The Divine Archives &mdash; the symbol,
+      the name, and the words on it come from the sources cited in that chapter, not from
+      invention. Where a design draws on a living tradition&rsquo;s sacred symbol, it is offered
+      as documentation of what that tradition holds, in the same spirit as the archive itself.
+    </p>
+
+    <!--
+      ======================================================================
+      SHOP GRID
+      One card per product. Each Buy Button is a TODO placeholder:
+      replace the placeholder block with the Shopify Buy Button embed once
+      the product exists in Shopify and you have its live product ID.
+
+      Shopify Buy Button embed goes in TWO parts when you have the ID:
+        1) once per page: the buy-button-storefront.min.js loader + ShopifyBuy init
+        2) per product:   a <div id="product-component-{LIVE_PRODUCT_ID}"></div> target
+      Do NOT paste any live snippet until post-review (FLAGS.md).
+      ======================================================================
+    -->
+    <div class="shop-grid">
+
+      <!-- DA-01 -->
+      <article class="shop-card">
+        <div class="shop-thumb" aria-hidden="true"><!-- TODO: mockup image (05-merch/mockups/da-01) --></div>
+        <h3>The Waters Remembered</h3>
+        <p class="shop-kind">Art print</p>
+        <p class="shop-blurb">The oldest recorded line of flood survivors &mdash; Ziusudra to
+          Utnapishtim to Noah &mdash; as a single descending waterline. From <a href="chapters/ch01.html">ch01 &middot; The Flood</a>.</p>
+        <p class="shop-price">Price: TBD</p>
+        <!-- TODO: Shopify Buy Button — needs live product ID (DA-01). -->
+        <div class="buy-button-placeholder" data-sku="DA-01">Buy Button &mdash; coming soon</div>
+      </article>
+
+      <!-- DA-02 -->
+      <article class="shop-card">
+        <div class="shop-thumb" aria-hidden="true"><!-- TODO: mockup image (05-merch/mockups/da-02) --></div>
+        <h3>The Weighing of the Heart</h3>
+        <p class="shop-kind">T-shirt</p>
+        <p class="shop-blurb">The heart weighed against the feather of Ma&rsquo;at, in clean line
+          art. From <a href="chapters/ch02.html">ch02 &middot; Egypt</a>.</p>
+        <p class="shop-price">Price: TBD</p>
+        <!-- TODO: Shopify Buy Button — needs live product ID (DA-02). -->
+        <div class="buy-button-placeholder" data-sku="DA-02">Buy Button &mdash; coming soon</div>
+      </article>
+
+      <!-- DA-03 -->
+      <article class="shop-card">
+        <div class="shop-thumb" aria-hidden="true"><!-- TODO: mockup image (05-merch/mockups/da-03) --></div>
+        <h3>Elder Futhark</h3>
+        <p class="shop-kind">Enamel mug</p>
+        <p class="shop-blurb">The twenty-four runes of the oldest runic alphabet, wrapped with
+          their transliterations. From <a href="chapters/ch23.html">ch23 &middot; Norse Paganism</a>.</p>
+        <p class="shop-price">Price: TBD</p>
+        <!-- TODO: Shopify Buy Button — needs live product ID (DA-03). -->
+        <div class="buy-button-placeholder" data-sku="DA-03">Buy Button &mdash; coming soon</div>
+      </article>
+
+      <!-- DA-04 -->
+      <article class="shop-card">
+        <div class="shop-thumb" aria-hidden="true"><!-- TODO: mockup image (05-merch/mockups/da-04) --></div>
+        <h3>The Tree of Life</h3>
+        <p class="shop-kind">Poster</p>
+        <p class="shop-blurb">The ten sefirot and the paths between them, as Kabbalah maps the
+          unfolding of Ein Sof. From <a href="chapters/ch26.html">ch26 &middot; Kabbalah</a>.</p>
+        <p class="shop-price">Price: TBD</p>
+        <!-- TODO: Shopify Buy Button — needs live product ID (DA-04). -->
+        <div class="buy-button-placeholder" data-sku="DA-04">Buy Button &mdash; coming soon</div>
+      </article>
+
+      <!-- DA-05 -->
+      <article class="shop-card">
+        <div class="shop-thumb" aria-hidden="true"><!-- TODO: mockup image (05-merch/mockups/da-05) --></div>
+        <h3>The Eightfold Path</h3>
+        <p class="shop-kind">Tote bag</p>
+        <p class="shop-blurb">The Dharmachakra, its eight spokes named for the eight factors of
+          the Buddha&rsquo;s path. From <a href="chapters/ch11.html">ch11 &middot; Buddhism</a>.</p>
+        <p class="shop-price">Price: TBD</p>
+        <!-- TODO: Shopify Buy Button — needs live product ID (DA-05). -->
+        <div class="buy-button-placeholder" data-sku="DA-05">Buy Button &mdash; coming soon</div>
+      </article>
+
+    </div>
+
+    <div class="notice" style="margin-top:2.4rem">
+      Looking for Pip&rsquo;s Orchard? That storefront is on its way &mdash; where it will live is
+      still being decided. <!-- TODO: link Pip's Orchard storefront once domain/structure is set (FLAGS.md). -->
+    </div>
+
+    <p class="center" style="margin-top:2.4rem">
+      <a href="about.html" style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.72rem">How the archive is built &rarr;</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="mark">The Divine Archives</p>
+      <nav>
+        <a href="eras.html">Browse by Era</a>
+        <a href="traditions.html">Browse by Tradition</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+      <p class="tiny">A comparative library of the sacred</p>
+    </div>
+  </footer>
+</div>
+
+<!--
+  Minimal shop-grid styling. archive.css has no shop styles yet; this scoped block keeps
+  the draft self-contained. When promoting to docs/shop.html, move these rules into
+  assets/archive.css to match the site's build pattern.
+-->
+<style>
+  .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.6rem;margin:2rem 0}
+  .shop-card{border:1px solid rgba(128,128,128,.28);border-radius:8px;padding:1.1rem;display:flex;flex-direction:column}
+  .shop-thumb{aspect-ratio:4/3;width:100%;border:1px dashed rgba(128,128,128,.4);border-radius:6px;margin-bottom:.8rem}
+  .shop-card h3{margin:.2rem 0 .1rem;font-family:var(--font-display)}
+  .shop-kind{text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;opacity:.7;margin:.1rem 0 .6rem}
+  .shop-blurb{font-size:.9rem;line-height:1.45;flex:1}
+  .shop-price{font-size:.8rem;opacity:.75;margin:.6rem 0 .4rem}
+  .buy-button-placeholder{margin-top:.4rem;text-align:center;padding:.55rem .8rem;border-radius:6px;border:1px dashed rgba(128,128,128,.5);font-size:.78rem;letter-spacing:.06em;opacity:.7}
+</style>
+<script src="assets/ambient.js" defer></script>
+</body>
+</html>
