@@ -29,11 +29,43 @@ When Susanoo's violence drove **Amaterasu** to hide in a cave and plunge the wor
 
 If one idea organizes Shinto practice, it is **purity**. The tradition is far less concerned with sin than with **kegare** — pollution, the defilement that comes from death, blood, disease, and disorder — and with restoring **purity** through ritual cleansing. Worship centers on the **jinja** (shrine), entered through a **torii** gate that marks the passage from ordinary to sacred ground; visitors rinse hands and mouth at the **temizuya** water basin; priests (**kannushi**), assisted by shrine maidens (**miko**), perform **harae** (purification), recite **norito** prayers, present offerings of rice, sake, and cloth, and hold **matsuri** — the seasonal festivals that carry the kami through the community. The most rigorous purification, **misogi**, immerses the body in cold river or waterfall, re-enacting Izanagi's cleansing. The concern is not moral guilt but ritual cleanness: to come before the kami rightly, and to keep the community and the land in order.
 
+## The angry dead: goryō and the god Tenjin
+
+Death was the deepest pollution, and the dead could be dangerous — none more so than those who died
+with a grievance. In the **Heian period** a widespread fear arose of the **goryō**, the vengeful
+spirits (*onryō*) of people who had suffered unjust deaths and now struck back at the living with
+**plagues, storms, and disaster**. The remedy was as striking as the fear: rather than exorcise such
+a spirit, one **placated and deified it**, turning a feared ghost into a protective god. The classic
+case is **Sugawara no Michizane** (845–903), a brilliant scholar and minister brought down by
+rivals' slander and exiled to die far from the capital. After his death, a run of calamities in
+Kyoto — the deaths of his enemies, epidemics, and above all **lightning striking the imperial
+palace** — was blamed on his furious spirit. The terrified court **exonerated him, restored his
+rank, and enshrined him as a god**: **Tenjin**, worshipped at the great **Kitano** and **Dazaifu
+Tenmangū** shrines, where over time the vengeful ghost mellowed into a benevolent **patron of
+scholarship**, prayed to by students to this day. It is one of the most revealing patterns in
+Japanese religion — the sacred generated not only from awe but from **fear appeased**, the angry
+dead transformed into a kami by worship.
+
 ## The fusion with Buddhism
 
 The defining fact of Shinto in this era is its **union with Buddhism** — *shinbutsu-shūgō*, "the amalgamation of kami and buddhas." When Buddhism arrived in the sixth century it did not displace the kami; the two grew together. From the **early eighth century**, **jingū-ji** — Buddhist temples built at Shinto shrines — appeared, so that sutras were chanted to the kami and kami were understood as protectors of the Dharma.
 
 In the **Heian period (794–1185)** this hardened into a theology: **honji suijaku**, "original ground and manifest trace." The kami, it held, were **local manifestations** (*suijaku*, "traces") of universal **buddhas and bodhisattvas** (*honji*, "original ground") — Amaterasu, for instance, identified with the cosmic Buddha Dainichi (Mahāvairocana). The great Buddhist schools built their own syntheses: the Shingon school's **Ryōbu Shintō** and the Tendai school's **Sannō Shintō** wove kami and buddhas into single systems of doctrine and ritual. For roughly a thousand years, until the forced separation of 1868, this blended religion — not a "pure" Shinto — was simply the religion of Japan.
+
+## The mountain way: Shugendō
+
+The fusion of kami and buddhas produced, in the mountains, a distinct tradition of its own.
+**Shugendō** — "the way of trial and power" — grew from Japan's ancient reverence for **mountains**
+as sacred realms where the dead and the gods dwell, and fused it with **esoteric Buddhism** (Shingon
+and Tendai), **Daoism**, and shamanism into a path of ascetic power. Its legendary founder is **En
+no Gyōja** ("En the Ascetic," 7th century), a mountain wizard of many miracles. Its practitioners,
+the **yamabushi** ("those who lie down in the mountains"), sought spiritual power (*genriki*) through
+severe austerities in the peaks — fasting, standing under freezing **waterfalls**, chanting sutras
+and mantras, and traversing sacred ranges like **Yoshino** and **Ōmine** as a ritual re-enactment of
+death and rebirth. Part priest, part shaman, part wonder-worker, the yamabushi served villages as
+healers, exorcists, and diviners, and became one of the most characteristic religious figures of
+medieval Japan — the living embodiment of the kami-and-buddha fusion, worked out not in a temple's
+texts but on the body, in the mountains.
 
 ## Shrines, treasures, and the ground
 
@@ -59,7 +91,7 @@ Shinto is the Japanese member of this era's great pattern: an **indigenous, natu
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The existence and dating of the **Kojiki (712)** and **Nihon Shoki (720)** and their role as imperial-legitimation texts; the antiquity and continuity of **kami-worship** and **shrine ritual**; the reality of **shinbutsu-shūgō** and the **honji suijaku** theology as the dominant religious form of the era; the shrines themselves — **Ise** and its twenty-year renewal, **Izumo** — and the tradition of the **three regalia**; the centrality of **purity/pollution** and purification ritual.
+**Well-supported by evidence.** The existence and dating of the **Kojiki (712)** and **Nihon Shoki (720)** and their role as imperial-legitimation texts; the antiquity and continuity of **kami-worship** and **shrine ritual**; the reality of **shinbutsu-shūgō** and the **honji suijaku** theology as the dominant religious form of the era; the shrines themselves — **Ise** and its twenty-year renewal, **Izumo** — and the tradition of the **three regalia**; the centrality of **purity/pollution** and purification ritual; the **goryō** cult of pacifying vengeful spirits by deification (Sugawara no Michizane enshrined as **Tenjin**); and **Shugendō**, the syncretic mountain asceticism of the **yamabushi**.
 
 **Not supported (as history).** The **divine descent of the imperial line** from Amaterasu — a claim of faith, not a historical finding. The idea of a **pure, original Shinto** cleanly separable from Buddhism in the medieval period — the evidence points the other way. The projection of modern **State Shinto** (1868–1945) back onto ancient kami-worship — a modern nationalist construction, not the early religion. The **existence and authenticity of the three regalia** as physical objects — they are never shown and cannot be verified; only the tradition can be attested.
 
@@ -78,3 +110,5 @@ Shinto is the Japanese member of this era's great pattern: an **indigenous, natu
 - Torii, shimenawa, shide, purification (harae/misogi/temizuya) — "Shinto Symbols," Tsunagu Japan. https://www.tsunagujapan.com/shinto-symbols-meaning-and-history/
 - Kotodama and the Great Purification norito — Shugyokai, "Musubi, Shimenawa, and Shide." https://shugyokai.org/shugyo/keiko/misogi/norito/musubi-shimenawa-and-shide-how-a-rope-and-a-paper-stripe-shape-the-sacred-in-japan/
 - Kuroda Toshio: "Shinto" as an independent religion as a largely modern shaping; the ongoing debate — "Toshio Kuroda," Wikipedia. https://en.wikipedia.org/wiki/Toshio_Kuroda_(Shinto_professor)
+- Goryō worship, onryō, and the deification of Sugawara no Michizane as Tenjin (Kitano, Dazaifu Tenmangū) — "Sugawara no Michizane," Wikipedia. https://en.wikipedia.org/wiki/Sugawara_no_Michizane
+- Shugendō, the yamabushi mountain ascetics, and En no Gyōja — "Shugendō," Wikipedia. https://en.wikipedia.org/wiki/Shugend%C5%8D; "Yamabushi," Wikipedia. https://en.wikipedia.org/wiki/Yamabushi

@@ -6,10 +6,10 @@ publicly available information under the same standards. Per Carter's instructio
 ("merge, update, continue"), completed groups are being **merged to production as they
 finish** rather than held to a single end-of-batch gate.
 
-**Merged live (production):** groups 1–4 — **ch01–ch20** (era 02 + seed, Early Iron
-Age, Axial Age, Late Antiquity).
-**Remaining:** group 5 — ch21–ch30 (Early Medieval + High Medieval), continuing on
-the working branch and merged as the group closes.
+**Merged live (production):** **ch01–ch25** (era 02 + seed, Early Iron Age, Axial
+Age, Late Antiquity, Early Medieval).
+**Remaining:** ch26–ch30 (High Medieval), continuing on the working branch and
+merged as the group closes.
 
 ## Scope
 Deepen — not merely re-touch — the earlier chapters: add sourced detail (more source texts, sects, regional variants, ritual practices, archaeology, and cross-disciplinary angles), strengthen the symbology and evidence-honesty sections where thinner, and keep contested points flagged. No structural or tonal change; same length target or longer.
@@ -25,7 +25,7 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 2. ch06–ch09 (Early Iron Age) — **✅ COMPLETE**
 3. ch10–ch15 (Axial Age) — **✅ COMPLETE**
 4. ch16–ch20 (Late Antiquity) — **✅ COMPLETE**
-5. ch21–ch30 (Early Medieval + High Medieval)
+5. ch21–ch25 (Early Medieval) — **✅ COMPLETE** · ch26–ch30 (High Medieval) — in progress
 
 ## Progress
 - **ch01 The Flood — expanded (2026-08-17).** Added: Irving Finkel's *Ark Tablet*
@@ -114,6 +114,20 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   Gate) and the "cult of the book" (the sutra venerated as a shrine; the Diamond
   Sutra of 868 CE, the oldest dated printed book).
 - **Group-4 checkpoint (Late Antiquity):** integrity 42/42/42/42; every deepened
+  page retains plate + evidence + sources.
+- **ch21 Islam — expanded (2026-08-17).** The Night Journey (Isra and Miʿraj) and
+  the Dome of the Rock; the third branch, the Kharijites and the surviving Ibadis.
+- **ch22 Patristic Christianity — expanded (2026-08-17).** Pseudo-Dionysius and
+  apophatic theology; the iconoclasm controversy, John of Damascus, Nicaea II (787),
+  and the Triumph of Orthodoxy (843).
+- **ch23 Norse Paganism — expanded (2026-08-17).** The Norns and the web of fate
+  (wyrd); the folk cult of the álfar, dísir, and landvættir (álfablót/disablót).
+- **ch24 Tantra — expanded (2026-08-17).** The ten Mahāvidyās (Chinnamastā,
+  Dhūmāvatī); the alchemical body — the Nāth siddhas, rasa/mercury alchemy, and
+  the roots of haṭha yoga (David Gordon White).
+- **ch25 Shinto — expanded (2026-08-17).** The goryō cult and the deified vengeful
+  dead (Sugawara no Michizane / Tenjin); Shugendō and the yamabushi mountain ascetics.
+- **Group-5a checkpoint (Early Medieval):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
 
 ## Gate
