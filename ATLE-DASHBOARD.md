@@ -22,18 +22,64 @@ I left the doc unchanged pending your word.
 
 ---
 
+## 🔎 Verified vs. Unverified (ground truth)
+
+Rebuilt on **what the repo actually proves**, not assumptions. Outbound network is blocked here,
+so even the live site can only be verified as *built + deploy-green*, not confirmed by loading it.
+
+**✅ VERIFIED from the repo (fact):**
+- **Cloudflare deploy** is the **only** wired automation — `.github/workflows/deploy.yml`, and prior
+  audit shows deploys green ⇒ its two secrets (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`) are set.
+- **Domain** `getconexto.com` (`docs/CNAME`) — Divine Archives only.
+- **Ko-fi** page `ko-fi.com/divinearchives` — linked site-wide (the one live monetization link).
+- **Divine Archives content**: 42 chapters built, 42 static pages, 17 flagged `pending: true`.
+- **Merch**: `05-merch/` is drafted through review; **no store, no product IDs, Buy Button = TODO**.
+- **No agents/automation** beyond the deploy Action. No API keys/handles for any other service
+  are committed anywhere.
+
+**❓ UNVERIFIED — Carter-reported or assumed, NOT provable from the repo:**
+- getconexto.com actually serving live (network blocked); Divine Archives books, and the Pip's
+  Orchard **books, TikTok, Facebook, YouTube** — none appear in the repo. Taken from your word.
+- **The whole account/payment/POD stack below.** ⚠️ **Discrepancy to reconcile:** the merch stage is
+  locked to **"Printify only,"** but the account list names **"Shopify (POD)" + Gumroad + PayPal +
+  Stripe.** Which is the real fulfilment path (Printify app inside Shopify? Gumroad for the PDFs?)
+  is **unconfirmed** — see the checklist.
+
+## 📋 Account status checklist (Carter answers inline — status + non-sensitive IDs only)
+
+No passwords/keys — just **is it set up, the public URL/handle, and any blocker.**
+
+**Shopify (POD)** — [ ] set up / registered only / not started · store URL: ____ · which POD app
+(Printify? other)? ____ · does this replace or sit alongside "Printify only"? ____
+**Gumroad** — [ ] set up / registered / not started · profile URL: ____ · selling what (PDFs? merch?): ____
+**Amazon KDP** — [ ] live / registered · author or book URL(s): ____ · how many titles live: ____
+**PayPal** — [ ] working / **blocked** · if blocked, what exact error/message shows? ____ · business or personal: ____
+**Stripe** — [ ] active / registered / not started · connected to (Shopify? Gumroad? nothing yet): ____
+**Ko-fi** — repo shows `ko-fi.com/divinearchives`. [ ] correct & live? · any second Ko-fi (Pip's Orchard)? URL: ____
+**TikTok (page 1)** — brand: ____ · @handle/URL: ____ · [ ] live · followers ballpark: ____
+**TikTok (page 2)** — brand: ____ · @handle/URL: ____ · [ ] live / **still pending repurposing**: ____
+**Facebook (page 1)** — brand: ____ · page URL: ____ · [ ] live
+**Facebook (page 2)** — brand: ____ · page URL: ____ · [ ] live / pending: ____
+**YouTube (channel 1)** — brand: ____ · channel URL: ____ · [ ] live
+**YouTube (channel 2)** — brand: ____ · channel URL: ____ · [ ] live / pending: ____
+**Email platform** — [ ] chosen (which?) ____ / none yet · list exists? [ ] yes / no · signup live anywhere? ____
+
+---
+
 ## 🟢🟡🔵 Brand & pillar status
+*(✅ = repo-verified · 📣 = Carter-reported, not repo-verified)*
+
 | Pillar | Status | One-liner |
 |---|---|---|
-| **Divine Archives** (site) | 🟢 Live | 42 chapters live at getconexto.com; 17 pending your sign-off |
-| **Pip's Orchard** (books + social) | 🟢 Live | KDP books + TikTok/FB/YouTube; ~125-quote bank ready |
-| **Merch** (Pip + DA, Printify→Shopify) | 🟡 Partial | 10 products designed; **no store yet** (Phase 1) |
-| **How-to / survivability PDFs** | 🔵 Planned | starts when you send the topic list |
+| **Divine Archives** (site) | 🟢 Live ✅ | 42 chapters built, deploy green; 17 pending your sign-off |
+| **Pip's Orchard** (books + social) | 🟢 Live 📣 | KDP + TikTok/FB/YouTube per your word; ~125-quote bank ✅. Handles unconfirmed → checklist |
+| **Merch** (Pip + DA) | 🟡 Partial ✅ | 10 products designed; **no store yet**; POD path unconfirmed (Printify vs Shopify-POD) |
+| **How-to / survivability PDFs** | 🔵 Planned ✅ | starts when you send the topic list (Gumroad likely home?) |
 | **Future gaming** | 🔵 Planned | parked |
-| **Shared infra** (entity, payments, email, analytics) | ⛔ Gaps | see founder list + automation Phase 1/4 |
+| **Shared infra** (entity, payments, email, analytics) | ⛔ Gaps | see founder list + checklist |
 
-**Most broken flywheel edge:** Pip has an audience but no store link → **no way to buy.** Phase 1
-fixes it.
+**Most broken flywheel edge:** Pip has an audience but no store link → **no way to buy** (Phase 1).
+*Repo-verified as broken; the audience side is Carter-reported.*
 
 ---
 
