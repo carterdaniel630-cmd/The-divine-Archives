@@ -27,6 +27,41 @@ respectful-use gate) so nothing off-brand ever reaches your queue.
 
 ---
 
+## "Studio Orchard" = the content engine (Carter's framing, 2026-08-19)
+
+**Studio Orchard is both a division AND the name of the automated production line.** The agent we
+build runs *under* the Studio Orchard identity and produces the content for **every line beneath
+it** — Pip's Orchard, other characters, how-to's, gaming, ambient (sleep/ocean) — and its
+**creation tools also generate content for The Divine Archives**, even though T.D.A. publishes to
+**its own channels** (confirmed: T.D.A. gets its own TikTok/FB/YouTube; Studio Orchard is the
+factory, not the storefront). One engine, multiple branded destinations:
+
+```
+                       ┌──────────────  STUDIO ORCHARD ENGINE (the agent)  ──────────────┐
+  idea/backlog  ──►    │  generate (Claude + media tools)  →  brand guardrails  →  queue  │  ──►  upload to the RIGHT channel
+                       └───────────────────────────────────────────────────────────────┘
+   destinations:  Pip's Orchard socials · other-character socials · T.D.A.'s own channels · gaming · ambient · Gumroad (PDFs) · Shopify (merch)
+```
+
+### ⚠️ The one decision inside "uploaded automatically" — your call (I did not assume it)
+You said content should be "generated **and uploaded automatically**." Auto-posting to **live,
+public** channels is irreversible and outward-facing, so how much sits between the agent and the
+public is a real choice, not a default. Pick the **autonomy level** — ideally *per content line*,
+since risk differs:
+
+| Level | What happens | Best for | Risk |
+|---|---|---|---|
+| **A · Review-gated** | agent generates → **you approve a batch** (one glance) → auto-uploads | character + T.D.A. content (brand/factual stakes) | lowest; you're the gate |
+| **B · Auto-with-hold** | agent generates → auto-**schedules**, but holds N hours in a "pull queue" you *can* veto | steady social cadence | low; silence = ship |
+| **C · Fully autonomous** | agent generates → **posts immediately**, no human in loop | low-stakes, templated (ambient: sleep/ocean loops) | highest; a bad post goes public |
+
+**Recommendation:** start **A** everywhere to prove quality → graduate low-risk lines (ambient,
+maybe gaming clips) to **B/C** once the agent's output is trusted. Keep **A** permanently for
+anything carrying the Pip character, a real person, or a Divine Archives factual claim. Tell me
+the level per line and I'll build to it — nothing auto-posts until you say which lines and which level.
+
+---
+
 ## Flow map
 
 ```mermaid
@@ -120,7 +155,9 @@ review gate.
 
 ## What I need back from you
 1. **Approve the map** (or redline it) — then I build **Phase 1** and stop for the next approval.
-2. Confirm the **social scheduler** preference (Buffer / Metricool / Later / other) for Phase 2.
-3. Confirm **analytics/email** preference (e.g. Plausible + a list tool) for Phase 4.
+2. **Autonomy level per content line** (A / B / C from the table above) — this is the "uploaded
+   automatically" decision; nothing auto-posts until you set it.
+3. Confirm the **social scheduler** preference (Buffer / Metricool / Later / other) for Phase 2.
+4. Confirm **analytics/email** preference (e.g. Plausible + a list tool) for Phase 4.
 
 *Nothing is wired. This is the review copy of the architecture.*

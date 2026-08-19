@@ -37,9 +37,16 @@ flowchart TD
 ```
 
 **Account mapping (from the confirmed handles):** `@studioorchard-q5r` (YouTube) +
-`studioorchard94@gmail.com` = the **Studio Orchard division** (hosts all the content lines);
-`@pips.orchard` (TikTok) = the **Pip's Orchard character**. Which tier the Facebook page and
-`clipyield26@gmail.com` belong to is still to confirm.
+`studioorchard94@gmail.com` = the **Studio Orchard division**; `@pips.orchard` (TikTok) = the
+**Pip's Orchard character**. Which tier the Facebook page and `clipyield26@gmail.com` belong to
+is still to confirm.
+
+**Studio Orchard is also the automation ENGINE (Carter 2026-08-19).** The agent we build runs
+under the Studio Orchard name and **generates + auto-uploads** content for every line beneath it —
+and its creation tools also generate content for **The Divine Archives**, which will publish to
+**its own channels** (T.D.A. gets its own TikTok/FB/YouTube; Studio Orchard is the factory, not the
+storefront). The "how automatic" decision (review-gated → fully autonomous, per line) is in the
+automation proposal, **awaiting your pick** — nothing auto-posts until then.
 
 ---
 
@@ -101,8 +108,8 @@ so even the live site can only be verified as *built + deploy-green*, not confir
 - **PayPal** — blocked for a **separate, unrelated** reason to Stripe. **Specific blocker not yet gathered.**
 
 **❓ STILL OPEN (unanswered):**
-- **The Divine Archives' own channels** — does T.D.A. have its own TikTok/FB/YouTube? (handles, live) +
-  all follower counts. Studio Orchard/Pip set is confirmed above.
+- **The Divine Archives' own channels** — ✅ confirmed T.D.A. *will* have its own TikTok/FB/YouTube
+  (Studio Orchard's tools generate the content); **handles/live status + follower counts still needed.**
 - **Facebook tier** — is the confirmed FB page the Studio Orchard division or the Pip's Orchard
   character? · `clipyield26@gmail.com` — which division?
 - **Email platform** — no ESP chosen; sending addresses `studioorchard94@gmail.com` +
@@ -170,15 +177,20 @@ No passwords/keys — status + non-sensitive IDs only.
 ---
 
 ## 🤖 Automation rollout (proposal — nothing wired yet)
+The **Studio Orchard engine** = the agent that generates + auto-uploads content across all lines.
 | Phase | Wires up | Gate |
 |---|---|---|
-| 0 — now | Rename ✅ · Dashboard ✅ · Proposal ✅ | **Approve the map** |
+| 0 — now | Rename ✅ · Dashboard ✅ · Proposal ✅ | **Approve the map + pick autonomy level** |
 | 1 — Commerce spine | Shopify+Printify, list products, `/shop` live, bio links | Founder #1–3 |
-| 2 — Distribution | Social scheduler → Pip card pipeline | pick scheduler |
+| 2 — Distribution | Social scheduler → Studio Orchard content pipeline | pick scheduler + autonomy level |
 | 3 — Content pipeline | Scheduled drafting + publish-approved + PDF pillar | Founder #4 |
 | 4 — Measurement | Analytics + sales metrics + email list | pick tools |
 
-Full detail + agent map: `00-audit/atle-automation-proposal.md`.
+**Decision waiting on you:** *autonomy level per content line* — **A** review-gated / **B**
+auto-with-hold / **C** fully autonomous. Recommended: A everywhere first, graduate low-risk lines
+(ambient, gaming) to B/C; keep A for anything with the Pip character, a real person, or a T.D.A.
+factual claim. Nothing auto-posts until you set this. Full detail + agent map:
+`00-audit/atle-automation-proposal.md`.
 
 ---
 
