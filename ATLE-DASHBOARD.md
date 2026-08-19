@@ -8,6 +8,27 @@ Your review is the only manual step; everything else is (being) automated. Updat
 
 ---
 
+## 🚦 CURRENT OPERATING SEQUENCE — Two-Track Plan (LOCKED 2026-08-19)
+
+**Decisions locked:** Scheduler = **Metricool** · Autonomy = **A** (Carter approves batches;
+graduate ambient/low-risk lines to auto after clean runs) · Lead line = **Pip's Orchard**
+(ambient runs auto-parallel as the autonomy-C test case).
+
+**Track 1 — CC builds & generates · 🟢 ACTIVE NOW**
+- Studio Orchard content **engine**: generate across lines, queue at autonomy A → `studio-orchard/`
+- Campaign-ready: `/shop` live · product designs ready to list · Pip + T.D.A. cadence · campaign assets
+- Email capture on the site (turn campaign traffic into an owned list)
+
+**Track 2 — Carter, background · does NOT block Track 1**
+- Entity/EIN → fresh Stripe → clear PayPal. Target: **checkout live & legal by the time campaigns
+  convert**, not before the build starts.
+
+**Rule:** CC builds *to the seams* on money/account-dependent pieces so they plug in the instant
+Track 2 clears. Anything in Track 1 that turns out blocked on Track 2 is flagged in
+**`studio-orchard/BLOCKERS.md`** so it never stalls the pipeline silently.
+
+---
+
 ## 🏛️ A.T.L.E. org structure (canonical — Carter 2026-08-19)
 
 Two divisions under the parent; **Studio Orchard** is the parent of the characters + content
@@ -171,8 +192,9 @@ No passwords/keys — status + non-sensitive IDs only.
 |---|---|---|
 | **Divine Archives chapters** | 17 `pending: true` (ch26–ch42) | `docs/assets/data.js` |
 | **Merch stage** | whole `05-merch` batch: sign-off + sacred-symbol OK (DA-03/05) | `05-merch/CONTEXT.md` |
-| **Automation architecture** | approve the map → I build Phase 1 | `00-audit/atle-automation-proposal.md` |
-| **Pip raster art** | upload real sheets → `05-merch/pip-reference/` | (schematic stands in) |
+| **Automation architecture** | ✅ approved + autonomy A set (Phase-1 build active) | `00-audit/atle-automation-proposal.md` |
+| **🆕 Pip's Orchard — Batch 01** | **21 posts generated, awaiting approval** to schedule (autonomy A) | `studio-orchard/pipeline/pips-orchard/batch-01-review.md` |
+| **Pip raster art** | upload real sheets → `05-merch/pip-reference/` (blocks card images) | (schematic stands in) |
 
 ---
 
@@ -180,17 +202,15 @@ No passwords/keys — status + non-sensitive IDs only.
 The **Studio Orchard engine** = the agent that generates + auto-uploads content across all lines.
 | Phase | Wires up | Gate |
 |---|---|---|
-| 0 — now | Rename ✅ · Dashboard ✅ · Proposal ✅ | **Approve the map + pick autonomy level** |
-| 1 — Commerce spine | Shopify+Printify, list products, `/shop` live, bio links | Founder #1–3 |
-| 2 — Distribution | Social scheduler → Studio Orchard content pipeline | pick scheduler + autonomy level |
+| 0 — now | Rename ✅ · Dashboard ✅ · Proposal ✅ · **map approved + autonomy A set** ✅ | done |
+| 1 — Commerce spine | Shopify+Printify, list products, `/shop` live, bio links | Founder #1–3 (Track 2) |
+| 2 — Distribution | **Metricool** ✅ → Studio Orchard content pipeline (autonomy A ✅) | Metricool API key |
 | 3 — Content pipeline | Scheduled drafting + publish-approved + PDF pillar | Founder #4 |
 | 4 — Measurement | Analytics + sales metrics + email list | pick tools |
 
-**Decision waiting on you:** *autonomy level per content line* — **A** review-gated / **B**
-auto-with-hold / **C** fully autonomous. Recommended: A everywhere first, graduate low-risk lines
-(ambient, gaming) to B/C; keep A for anything with the Pip character, a real person, or a T.D.A.
-factual claim. Nothing auto-posts until you set this. Full detail + agent map:
-`00-audit/atle-automation-proposal.md`.
+**Autonomy = A locked** (Carter approves batches; graduate ambient/gaming to auto after clean
+runs). The generate+queue side is being built now (`studio-orchard/`); the auto-post side needs
+the **Metricool API key** to wire. Full detail: `00-audit/atle-automation-proposal.md`.
 
 ---
 
