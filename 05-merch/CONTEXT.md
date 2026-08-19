@@ -12,7 +12,7 @@ Gate** in `CLAUDE.md`. Claude Code may set `DRAFT`/`PENDING REVIEW`; only Carter
 
 ## Scope
 Merch for two sub-brands on one Shopify store — **The Divine Archives** and **Pip's
-Orchard** — under The Orchard's ICM workflow. Deliverables: 10 product briefs, draft copy,
+Orchard** — under A.T.L.E.'s ICM workflow. Deliverables: 10 product briefs, draft copy,
 a `/shop` page draft for the Divine Archives static site.
 
 ## Supplier & directives locked (Carter, 2026-08-18)

@@ -1,8 +1,9 @@
 # 05-MERCH — Stage Instructions for Claude Code
 
 ## What this stage is
-A merch production stage running under **The Orchard's ICM (Idea → Content → Market)
-workflow**. It covers **two sub-brands sold from one Shopify store**:
+A merch production stage running under **A.T.L.E.'s ICM (Idea → Content → Market)
+workflow** (A True Legacy Entertainment, the parent company). It covers **two sub-brands
+sold from one Shopify store**:
 
 - **The Divine Archives** — merch derived from the published comparative-religion
   archive (getconexto.com).
