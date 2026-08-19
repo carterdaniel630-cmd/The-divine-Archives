@@ -8,6 +8,41 @@ Your review is the only manual step; everything else is (being) automated. Updat
 
 ---
 
+## 🏛️ A.T.L.E. org structure (canonical — Carter 2026-08-19)
+
+Two divisions under the parent; **Studio Orchard** is the parent of the characters + content
+lines (this resolves the earlier "Studio Orchard vs Pip's Orchard" flag — they're different tiers).
+**Merch + books are cross-cutting monetization** built off everything above them.
+
+```mermaid
+flowchart TD
+  ATLE["A.T.L.E. — A True Legacy Entertainment (parent company)"]
+  ATLE --> TDA["The Divine Archives · T.D.A. (division)"]
+  ATLE --> SO["Studio Orchard (division · parent of characters & content)"]
+
+  TDA --> TDAsub["future branches off T.D.A."]
+
+  SO --> PIP["Pip's Orchard (character brand)"]
+  SO --> CHARS["Other characters — pulled/created from the digital books"]
+  SO --> HOWTO["How-to / survivability"]
+  SO --> GAMING["Gaming clips — some already posted"]
+  SO --> AMBIENT["Ambient — sleep videos, ocean sounds, etc."]
+
+  MERCH["Merchandise — Shopify + Printify"]
+  BOOKS["Books — Amazon KDP + Gumroad"]
+  TDA -.built into.-> MERCH
+  SO -.built into.-> MERCH
+  TDA -.-> BOOKS
+  SO -.-> BOOKS
+```
+
+**Account mapping (from the confirmed handles):** `@studioorchard-q5r` (YouTube) +
+`studioorchard94@gmail.com` = the **Studio Orchard division** (hosts all the content lines);
+`@pips.orchard` (TikTok) = the **Pip's Orchard character**. Which tier the Facebook page and
+`clipyield26@gmail.com` belong to is still to confirm.
+
+---
+
 ## 🔴 Founder-only to-do (nothing else needs you)
 The confirmed list — these unblock everything downstream:
 - [ ] **1. Business entity + EIN** (+ business bank) — also unblocks KDP verification
@@ -48,12 +83,14 @@ so even the live site can only be verified as *built + deploy-green*, not confir
   **manual only** — no automation, **no live listings yet**. Has a public API ⇒ automation candidate.
 - **✅ Ko-fi** — `ko-fi.com/divinearchives` confirmed live & correct (the one live monetization
   touchpoint). A second Ko-fi for Pip's Orchard: **unknown**.
-- **✅ Pip-side socials live** — TikTok `@pips.orchard`, a Facebook page (share link), YouTube
-  `@studioorchard-q5r`; account email `studioorchard94@gmail.com`. (Divine Archives' own
-  channels — the "page 2" set — still unanswered.)
-- 🚩 **Naming flag:** the YouTube handle + email use **"Studio Orchard,"** the TikTok uses
-  **"Pip's Orchard."** Confirm whether "Studio Orchard" is a distinct brand/studio identity or
-  just the account handle for the Pip's Orchard channels — affects the brand map.
+- **✅ Studio Orchard / Pip socials live** — YouTube `@studioorchard-q5r` = the **Studio Orchard
+  division**; TikTok `@pips.orchard` = the **Pip's Orchard character**; a Facebook page (share
+  link, tier TBC); division email `studioorchard94@gmail.com`. (Divine Archives' own channels
+  still unanswered.)
+- **✅ Naming flag RESOLVED** — "Studio Orchard" is the **division above** Pip's Orchard (not the
+  same brand). See the org structure section.
+- **✅ Gaming clips already posted** — the "future gaming" pillar is **live content, not just
+  planned** (likely on the Studio Orchard YouTube).
 
 **⛔ BLOCKED — founder-gated (confirmed blocked, not just missing):**
 - **Amazon KDP** — account exists but blocked by (1) submission formatting issues + (2) bank/account
@@ -64,9 +101,10 @@ so even the live site can only be verified as *built + deploy-green*, not confir
 - **PayPal** — blocked for a **separate, unrelated** reason to Stripe. **Specific blocker not yet gathered.**
 
 **❓ STILL OPEN (unanswered):**
-- **Divine Archives' own channels** — the second TikTok / Facebook / YouTube (brand, handle, live).
-  Pip-side page-1 set is now confirmed (above); page-2 set + all follower counts still needed.
-- **"Studio Orchard" naming** — brand vs. account handle (see flag above).
+- **The Divine Archives' own channels** — does T.D.A. have its own TikTok/FB/YouTube? (handles, live) +
+  all follower counts. Studio Orchard/Pip set is confirmed above.
+- **Facebook tier** — is the confirmed FB page the Studio Orchard division or the Pip's Orchard
+  character? · `clipyield26@gmail.com` — which division?
 - **Email platform** — no ESP chosen; sending addresses `studioorchard94@gmail.com` +
   `clipyield26@gmail.com` (Gmails aren't an email platform — no Mailchimp/ConvertKit/etc. selected).
 - **PayPal** specific blocker · **Stripe** fresh-account confirmation · second **Ko-fi** (Pip's Orchard).
@@ -91,10 +129,9 @@ No passwords/keys — status + non-sensitive IDs only.
 - **Facebook (page 1)** — ✅ (Pip side — inferred) · https://www.facebook.com/share/18QFh4Lvsj/
   (share link; page name not shown) · live
 - **Facebook (page 2)** — ❓ (Divine Archives?) · page URL: ____ · live / pending? ____
-- **YouTube (channel 1)** — ✅ **"Studio Orchard"** · `@studioorchard-q5r`
-  (https://youtube.com/@studioorchard-q5r) · live · *(is "Studio Orchard" a brand, or just the
-  Pip account handle? — see flag)*
-- **YouTube (channel 2)** — ❓ (Divine Archives?) · channel URL: ____ · live / pending? ____
+- **YouTube (channel 1)** — ✅ **Studio Orchard division** · `@studioorchard-q5r`
+  (https://youtube.com/@studioorchard-q5r) · live · hosts the content lines (incl. posted gaming clips)
+- **YouTube (channel 2)** — ❓ **The Divine Archives** own channel? · channel URL: ____ · live / pending? ____
 - **Email (sending addresses, NOT a platform)** — ✅ `studioorchard94@gmail.com` (Pip/Studio
   Orchard) + `clipyield26@gmail.com` (earlier candidate) · **ESP still not chosen** (no
   Mailchimp/ConvertKit/etc.) · list/signup live anywhere? no
@@ -104,13 +141,17 @@ No passwords/keys — status + non-sensitive IDs only.
 ## 🟢🟡🔵 Brand & pillar status
 *(✅ = repo-verified · 📣 = Carter-reported, not repo-verified)*
 
-| Pillar | Status | One-liner |
+| Division / pillar | Status | One-liner |
 |---|---|---|
-| **Divine Archives** (site) | 🟢 Live ✅ | 42 chapters built, deploy green; 17 pending your sign-off |
-| **Pip's Orchard** (books + social) | 🟢 Live 📣 | Socials confirmed: TikTok `@pips.orchard`, FB page, YouTube `@studioorchard-q5r`; ~125-quote bank ✅. Books (KDP) blocked; DA channels + "Studio Orchard" naming open |
-| **Merch** (Pip + DA) | 🟡 Partial ✅ | 10 products designed; stack confirmed (Shopify store + Printify fulfilment, per-brand collections); **no products listed yet** |
-| **How-to / survivability PDFs** | 🔵 Planned | home confirmed = **Gumroad** (set up, manual, no listings yet); content starts on your topic list |
-| **Future gaming** | 🔵 Planned | parked |
+| **DIVISION · The Divine Archives (T.D.A.)** | 🟢 Live ✅ | 42 chapters built, deploy green; 17 pending your sign-off. Own channels TBC |
+| **DIVISION · Studio Orchard** | 🟢 Live 📣 | Parent of the characters + content lines; YouTube `@studioorchard-q5r` live |
+| — Pip's Orchard (character) | 🟢 Live 📣 | TikTok `@pips.orchard`, FB page; ~125-quote bank ✅; books (KDP) blocked |
+| — Other characters (from the books) | 🔵 Planned | pulled/created for platforms + merch — none defined yet |
+| — How-to / survivability | 🔵 Planned | content on your topic list; **Gumroad** = confirmed storefront |
+| — Gaming clips | 🟡 Partial 📣 | **some already posted**; not monetized/organized yet |
+| — Ambient (sleep, ocean sounds, …) | 🔵 Planned | named; nothing built yet |
+| **CROSS-CUTTING · Merchandise** | 🟡 Partial ✅ | 10 products designed; Shopify store + Printify fulfilment, per-brand collections; **none listed yet** |
+| **CROSS-CUTTING · Books** | 🟡 Partial 📣 | digital via **Gumroad** (set up) + print via **Amazon KDP** (⛔ blocked) |
 | **Shared infra** (entity, payments, email, analytics) | ⛔ Gaps | **KDP + Stripe founder-blocked** (entity/EIN + fresh-Stripe decision); PayPal blocked; no ESP chosen |
 
 **Most broken flywheel edge:** Pip has an audience but no store link → **no way to buy** (Phase 1).
