@@ -21,7 +21,7 @@ flag before any mockup art.
 
 ## pips-orchard/ — locked character, Printify-only, review-flagged
 **Pip is the centerpiece; friends deferred.** On-product content is a relatable quote in the
-locked **quote-card format**, pulled from `../pip-reference/quote-bank.md` (48 approved).
+locked **quote-card format**, pulled from `../pip-reference/quote-bank.md` (~125 approved).
 
 | File | Product (Printify) | Note |
 |---|---|---|

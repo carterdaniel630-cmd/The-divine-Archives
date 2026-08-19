@@ -2,7 +2,7 @@
 
 **Status:** `DRAFT · PENDING REVIEW` · Final product list (Carter 2026-08-18). Warm storybook
 voice. **Pip is the centerpiece; friends deferred.** On-product content is a **relatable quote**
-in the locked **quote-card format**, pulled from `../pip-reference/quote-bank.md` (48 approved).
+in the locked **quote-card format**, pulled from `../pip-reference/quote-bank.md` (~125 approved).
 The "Pip's Orchard" placeholder is retired. All art still owes the Pip character-consistency
 review before any mockup. Not for listing until Carter clears.
 

@@ -24,7 +24,7 @@ title list needed.
 
 ## ✅ RESOLVED — the relatable quotes (bank provided)
 Carter supplied the quote-card sheets and confirmed **any of the quotes may be used**
-(2026-08-18). Captured as **`pip-reference/quote-bank.md`** (48 approved) with the locked
+(2026-08-18). Captured as **`pip-reference/quote-bank.md`** (~125 approved) with the locked
 **card format** (golden-hour scene, bold top line + accent-color keyword, ❤ sub-line). The
 "Pip's Orchard" placeholder is retired. Only remaining nicety: Carter can pick the exact quote
 per SKU (any bank quote works by default).

@@ -22,7 +22,7 @@ forest, riverside, cherry-blossom, snow, shore, desert — always the **same** o
 Every Pip piece is a **quote card**: Pip in a golden-hour nature scene with
 - **top:** a bold all-caps main line, **one keyword in an accent color**;
 - **bottom:** a short sub-line, usually with a **❤**.
-Quotes come from **`quote-bank.md`** (48 approved, any usable). Keep wording verbatim and the
+Quotes come from **`quote-bank.md`** (~125 approved, any usable). Keep wording verbatim and the
 accent-word + heart styling consistent. This replaces the old "Pip's Orchard" text placeholder.
 
 ## The character (canonical)

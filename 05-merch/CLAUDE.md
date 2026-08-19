@@ -205,7 +205,7 @@ a Pip storefront would be linked from. Do not contradict or restyle the existing
 - **Friends are deferred.** Focus on Pip alone for now — no friend-group characters on products
   yet (their references stay parked; not a blocker).
 - **The content is the relatable quotes** carried over from Pip's online posts. These are now
-  **provided** — see `pip-reference/quote-bank.md` (48 approved; any usable). The "Pip's Orchard"
+  **provided** — see `pip-reference/quote-bank.md` (~125 approved; any usable). The "Pip's Orchard"
   wordmark placeholder is **retired** — pull real quotes from the bank.
 - **Card format is locked** (`pip-reference/REFERENCE.md`): Pip in a golden-hour nature scene,
   a bold all-caps **top line with one accent-color keyword**, and a short **sub-line with a ❤**.
