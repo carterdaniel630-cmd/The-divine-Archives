@@ -48,6 +48,12 @@ so even the live site can only be verified as *built + deploy-green*, not confir
   **manual only** — no automation, **no live listings yet**. Has a public API ⇒ automation candidate.
 - **✅ Ko-fi** — `ko-fi.com/divinearchives` confirmed live & correct (the one live monetization
   touchpoint). A second Ko-fi for Pip's Orchard: **unknown**.
+- **✅ Pip-side socials live** — TikTok `@pips.orchard`, a Facebook page (share link), YouTube
+  `@studioorchard-q5r`; account email `studioorchard94@gmail.com`. (Divine Archives' own
+  channels — the "page 2" set — still unanswered.)
+- 🚩 **Naming flag:** the YouTube handle + email use **"Studio Orchard,"** the TikTok uses
+  **"Pip's Orchard."** Confirm whether "Studio Orchard" is a distinct brand/studio identity or
+  just the account handle for the Pip's Orchard channels — affects the brand map.
 
 **⛔ BLOCKED — founder-gated (confirmed blocked, not just missing):**
 - **Amazon KDP** — account exists but blocked by (1) submission formatting issues + (2) bank/account
@@ -58,11 +64,13 @@ so even the live site can only be verified as *built + deploy-green*, not confir
 - **PayPal** — blocked for a **separate, unrelated** reason to Stripe. **Specific blocker not yet gathered.**
 
 **❓ STILL OPEN (unanswered):**
-- **TikTok** ×2, **Facebook** ×2, **YouTube** ×2 — brand, handle/URL, live status for each.
-- **Email platform** — no ESP chosen; candidate sending addresses are `clipyield26@gmail.com` or a
-  Pip's Orchard address (a Gmail is not an email platform — no Mailchimp/ConvertKit/etc. selected).
-- **PayPal** specific blocker · second **Ko-fi** (Pip's Orchard) status.
-- getconexto.com serving live (network blocked here); Pip's Orchard books/social presence (not in repo).
+- **Divine Archives' own channels** — the second TikTok / Facebook / YouTube (brand, handle, live).
+  Pip-side page-1 set is now confirmed (above); page-2 set + all follower counts still needed.
+- **"Studio Orchard" naming** — brand vs. account handle (see flag above).
+- **Email platform** — no ESP chosen; sending addresses `studioorchard94@gmail.com` +
+  `clipyield26@gmail.com` (Gmails aren't an email platform — no Mailchimp/ConvertKit/etc. selected).
+- **PayPal** specific blocker · **Stripe** fresh-account confirmation · second **Ko-fi** (Pip's Orchard).
+- getconexto.com serving live (network blocked here); Pip's Orchard books presence (not in repo).
 
 ## 📋 Account status checklist (updated 2026-08-19 — Carter answering incrementally)
 
@@ -77,14 +85,19 @@ No passwords/keys — status + non-sensitive IDs only.
 - **Stripe** — ⛔ **blocked:** old account tied to Polsia; fresh independent account likely needed ·
   ⚠️ _needs Carter's final confirmation_
 - **Ko-fi** — ✅ `ko-fi.com/divinearchives` live & correct · second (Pip's Orchard) Ko-fi? _unknown_
-- **TikTok (page 1)** — brand: ____ · @handle/URL: ____ · live? ____ · followers: ____
-- **TikTok (page 2)** — brand: ____ · @handle/URL: ____ · live / still pending repurposing? ____
-- **Facebook (page 1)** — brand: ____ · page URL: ____ · live? ____
-- **Facebook (page 2)** — brand: ____ · page URL: ____ · live / pending? ____
-- **YouTube (channel 1)** — brand: ____ · channel URL: ____ · live? ____
-- **YouTube (channel 2)** — brand: ____ · channel URL: ____ · live / pending? ____
-- **Email platform** — ❓ none chosen · candidate addresses: `clipyield26@gmail.com` / a Pip's
-  Orchard address · ESP (Mailchimp/ConvertKit/…): not selected · signup live anywhere? no
+- **TikTok (page 1)** — ✅ **Pip's Orchard** · `@pips.orchard`
+  (https://www.tiktok.com/@pips.orchard) · live · followers: _still needed_
+- **TikTok (page 2)** — ❓ (Divine Archives?) · handle/URL: ____ · live / pending repurposing? ____
+- **Facebook (page 1)** — ✅ (Pip side — inferred) · https://www.facebook.com/share/18QFh4Lvsj/
+  (share link; page name not shown) · live
+- **Facebook (page 2)** — ❓ (Divine Archives?) · page URL: ____ · live / pending? ____
+- **YouTube (channel 1)** — ✅ **"Studio Orchard"** · `@studioorchard-q5r`
+  (https://youtube.com/@studioorchard-q5r) · live · *(is "Studio Orchard" a brand, or just the
+  Pip account handle? — see flag)*
+- **YouTube (channel 2)** — ❓ (Divine Archives?) · channel URL: ____ · live / pending? ____
+- **Email (sending addresses, NOT a platform)** — ✅ `studioorchard94@gmail.com` (Pip/Studio
+  Orchard) + `clipyield26@gmail.com` (earlier candidate) · **ESP still not chosen** (no
+  Mailchimp/ConvertKit/etc.) · list/signup live anywhere? no
 
 ---
 
@@ -94,7 +107,7 @@ No passwords/keys — status + non-sensitive IDs only.
 | Pillar | Status | One-liner |
 |---|---|---|
 | **Divine Archives** (site) | 🟢 Live ✅ | 42 chapters built, deploy green; 17 pending your sign-off |
-| **Pip's Orchard** (books + social) | 🟢 Live 📣 | KDP + TikTok/FB/YouTube per your word; ~125-quote bank ✅. Handles unconfirmed → checklist |
+| **Pip's Orchard** (books + social) | 🟢 Live 📣 | Socials confirmed: TikTok `@pips.orchard`, FB page, YouTube `@studioorchard-q5r`; ~125-quote bank ✅. Books (KDP) blocked; DA channels + "Studio Orchard" naming open |
 | **Merch** (Pip + DA) | 🟡 Partial ✅ | 10 products designed; stack confirmed (Shopify store + Printify fulfilment, per-brand collections); **no products listed yet** |
 | **How-to / survivability PDFs** | 🔵 Planned | home confirmed = **Gumroad** (set up, manual, no listings yet); content starts on your topic list |
 | **Future gaming** | 🔵 Planned | parked |
