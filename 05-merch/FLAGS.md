@@ -29,11 +29,13 @@ Carter supplied the quote-card sheets and confirmed **any of the quotes may be u
 "Pip's Orchard" placeholder is retired. Only remaining nicety: Carter can pick the exact quote
 per SKU (any bank quote works by default).
 
-## 🚩 OPEN — Pip reference image files still to be committed
-Carter supplied Pip art (two posts + three quote-card sheets) confirming the look. The **image
-files still aren't in the repo** (came inline via chat). **Action:** drop them into
-`pip-reference/` (e.g. `pip-sheet-01…03.png`). Until then the mockups use a labeled placeholder
-silhouette; real Pip art then clears the character review and replaces the placeholders.
+## 🟡 PARTIAL — Pip reference: schematic committed, raster art still owed
+A committed **`pip-reference/pip-spec-card.svg`** now gives the repo a canonical *schematic*
+reference (silhouette, traits, colors, quote-card layout). The **official painterly raster art**
+is still not in the repo — Carter supplied it as inline chat images, which the assistant can't
+write to disk. **Action (Carter):** upload the image files into `pip-reference/` via GitHub
+(e.g. `pip-sheet-01…03.png`). Not a blocker for this review-gated stage: the mockups are
+placement drafts and final production art is attached at Printify/Shopify time from the sheets.
 
 ## 🚩 OPEN — Pip reference image files not yet in the repo
 The locked spec lives in `pip-reference/REFERENCE.md`, but the **actual Pip art files** aren't

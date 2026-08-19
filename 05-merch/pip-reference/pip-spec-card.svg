@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Trebuchet MS',Verdana,sans-serif">
+  <!-- ============================================================
+       PIP — CHARACTER SPEC CARD (schematic reference, NOT final art)
+       In-repo canonical reference for the locked traits, colors, and
+       quote-card layout. The official painterly raster art from Carter's
+       sheets is to be added to this folder as pip-sheet-*.png.
+       ============================================================ -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e3b8"/><stop offset="0.55" stop-color="#f0cf95"/><stop offset="1" stop-color="#d9a86a"/>
+    </linearGradient>
+    <radialGradient id="body" cx="0.42" cy="0.34" r="0.8">
+      <stop offset="0" stop-color="#d99a3f"/><stop offset="0.6" stop-color="#c1802e"/><stop offset="1" stop-color="#a56a23"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="960" height="620" fill="#faf4e6"/>
+  <text x="40" y="46" font-size="24" font-weight="bold" fill="#2b2620">PIP · Character Spec Card</text>
+  <text x="40" y="68" font-size="13" fill="#8a5a2b">Schematic reference — NOT the final art. Official painterly sheets → add as pip-sheet-01…03.png</text>
+  <line x1="40" y1="82" x2="920" y2="82" stroke="#d8c39a"/>
+
+  <!-- ============ schematic Pip ============ -->
+  <g transform="translate(70,120)">
+    <rect x="0" y="0" width="330" height="400" rx="14" fill="url(#sky)" stroke="#d8c39a"/>
+    <!-- ground -->
+    <path d="M0 320 Q165 300 330 322 L330 400 L0 400 Z" fill="#8a9a52" opacity="0.55"/>
+    <ellipse cx="165" cy="372" rx="95" ry="18" fill="#000" opacity="0.10"/>
+    <!-- body -->
+    <g transform="translate(165,225)">
+      <path d="M0 118 C-92 118 -104 8 -66 -52 C-40 -92 40 -92 66 -52 C104 8 92 118 0 118 Z" fill="url(#body)" stroke="#7d5119" stroke-width="2"/>
+      <!-- papery striations -->
+      <g stroke="#8a5a1f" stroke-width="1" opacity="0.35" fill="none">
+        <path d="M-30 -60 C-40 -10 -40 60 -22 108"/><path d="M0 -70 C0 -10 0 60 0 112"/><path d="M30 -60 C40 -10 40 60 22 108"/>
+      </g>
+      <!-- sprout -->
+      <path d="M0 -78 C10 -104 4 -120 -2 -128 C10 -120 20 -104 6 -80 Z" fill="#6e8b3d" stroke="#4f6a2b" stroke-width="1.5"/>
+      <path d="M0 -80 C-10 -104 -6 -120 -2 -128" fill="none" stroke="#4f6a2b" stroke-width="1.5"/>
+      <!-- eyes -->
+      <ellipse cx="-24" cy="-18" rx="15" ry="18" fill="#231a10"/>
+      <ellipse cx="24" cy="-18" rx="15" ry="18" fill="#231a10"/>
+      <circle cx="-19" cy="-24" r="4.5" fill="#fff"/><circle cx="29" cy="-24" r="4.5" fill="#fff"/>
+      <circle cx="-27" cy="-13" r="2.6" fill="#e6b45c"/><circle cx="21" cy="-13" r="2.6" fill="#e6b45c"/>
+      <!-- cheeks + mouth -->
+      <circle cx="-40" cy="6" r="9" fill="#d98a6a" opacity="0.55"/>
+      <circle cx="40" cy="6" r="9" fill="#d98a6a" opacity="0.55"/>
+      <path d="M-8 8 Q0 16 8 8" fill="none" stroke="#5a3a18" stroke-width="2" stroke-linecap="round"/>
+      <!-- stubby limbs -->
+      <path d="M-58 40 q-18 6 -22 22" fill="none" stroke="#a56a23" stroke-width="10" stroke-linecap="round"/>
+      <path d="M58 40 q18 6 22 22" fill="none" stroke="#a56a23" stroke-width="10" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="120" rx="14" ry="8" fill="#9c611f"/><ellipse cx="20" cy="120" rx="14" ry="8" fill="#9c611f"/>
+    </g>
+  </g>
+
+  <!-- callouts -->
+  <g font-size="12" fill="#2b2620">
+    <g stroke="#a9823c" stroke-width="1">
+      <line x1="235" y1="112" x2="300" y2="90"/><line x1="300" y1="235" x2="415" y2="205"/>
+      <line x1="235" y1="235" x2="415" y2="255"/><line x1="205" y1="290" x2="415" y2="305"/>
+    </g>
+    <text x="420" y="150" font-weight="bold" fill="#a9823c">LOCKED TRAITS</text>
+    <text x="420" y="172">① Green leafy sprout (2–3 leaves) — the only green</text>
+    <text x="420" y="192">② Rounded onion/bulb body · papery striations</text>
+    <text x="420" y="212">③ Large glossy eyes · amber-gold highlights + catchlights</text>
+    <text x="420" y="232">④ Rosy blushed cheeks · tiny gentle mouth</text>
+    <text x="420" y="252">⑤ Chibi proportions · short stubby limbs · bare feet</text>
+    <text x="420" y="272">⑥ Painterly storybook style · golden-hour light</text>
+    <text x="420" y="292" fill="#9a5b2e">✗ NEVER: seed-being / roots / sapling (retired concept)</text>
+  </g>
+
+  <!-- color swatches -->
+  <g transform="translate(420,320)">
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#a9823c">COLOR (approximate — match final art)</text>
+    <g font-size="10.5" fill="#2b2620">
+      <rect x="0" y="12" width="34" height="34" rx="4" fill="#c1802e" stroke="#7d5119"/><text x="42" y="27">Body — golden-brown onion</text><text x="42" y="40" fill="#8a5a2b">#C1802E</text>
+      <rect x="230" y="12" width="34" height="34" rx="4" fill="#6e8b3d" stroke="#4f6a2b"/><text x="272" y="27">Sprout — leaf green</text><text x="272" y="40" fill="#8a5a2b">#6E8B3D</text>
+      <rect x="0" y="58" width="34" height="34" rx="4" fill="#231a10"/><text x="42" y="73">Eyes — dark brown</text><text x="42" y="86" fill="#8a5a2b">#231A10 + #E6B45C</text>
+      <rect x="230" y="58" width="34" height="34" rx="4" fill="#d98a6a"/><text x="272" y="73">Cheeks — rosy blush</text><text x="272" y="86" fill="#8a5a2b">#D98A6A</text>
+    </g>
+  </g>
+
+  <!-- quote-card template -->
+  <g transform="translate(70,540)">
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#a9823c">QUOTE-CARD LAYOUT (every Pip piece)</text>
+  </g>
+  <g transform="translate(70,548)">
+    <rect x="0" y="8" width="180" height="60" rx="6" fill="url(#sky)" stroke="#d8c39a"/>
+    <text x="90" y="24" text-anchor="middle" font-size="9" font-weight="bold" fill="#2b2620">MAIN LINE · <tspan fill="#3f7cc0">ACCENT</tspan></text>
+    <circle cx="90" cy="42" r="9" fill="#c1802e" stroke="#7d5119"/>
+    <text x="90" y="60" text-anchor="middle" font-size="8" fill="#2b2620">sub-line ♥</text>
+  </g>
+  <text x="270" y="576" font-size="11" fill="#2b2620">Top: bold caps, one accent-color keyword.</text>
+  <text x="270" y="592" font-size="11" fill="#2b2620">Bottom: short sub-line + ❤.  Scene: golden-hour nature.</text>
+  <text x="270" y="608" font-size="11" fill="#8a5a2b">Quotes: pip-reference/quote-bank.md (~125). Character: locked, as above.</text>
+</svg>

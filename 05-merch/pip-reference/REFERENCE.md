@@ -7,11 +7,15 @@ shown in the art Carter supplied on 2026-08-18 — two golden-hour Pip social po
 2. *"BE THE REASON SOMEONE SMILES. SPREAD KINDNESS!"* — Pip sitting in a grassy meadow with
    a butterfly, arms up.
 
-> ⚠️ **The actual image files are not yet committed to the repo.** Carter has now supplied
-> **three quote-card contact sheets** (2026-08-18) confirming the look and the card format, plus
-> the two earlier posts. **Action:** drop these image sheets into this folder (e.g.
-> `pip-reference/pip-sheet-01.png … pip-sheet-03.png`) so the canonical art travels with the
-> repo. Until then, this written spec + `quote-bank.md` are the working reference.
+> **In-repo visual reference:** `pip-spec-card.svg` (committed) — a **schematic** spec sheet
+> locking the silhouette, trait callouts, color values, and the quote-card layout. Open it for
+> the visual; it is **NOT** the final painterly art.
+>
+> ⚠️ **The official raster art is not yet in the repo.** Carter supplied the posts + three
+> quote-card sheets inline (chat images, which can't be committed from the assistant side).
+> **Action (Carter):** upload the image files into this folder via GitHub (e.g.
+> `pip-sheet-01.png … pip-sheet-03.png`). The schematic + `quote-bank.md` are the working
+> reference until then; final production art comes from the sheets at Printify/Shopify time.
 
 ## Confirmed from the supplied sheets (2026-08-18)
 "The character should look **exactly like this**, with consistency across everything" (Carter).
