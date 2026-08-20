@@ -1,0 +1,16 @@
+{
+  "_status": "MISSING — the locked 10-product list is not yet documented. The agent will NOT invent blanks, blueprint IDs, print-provider IDs, or variants. Fill this in (or point the agent at the real source) before any product-creation run, live or dry.",
+  "_schema": {
+    "products": "array of exactly 10 entries, one per approved blank type",
+    "entry_fields": {
+      "key": "short stable slug for this blank, e.g. 'unisex-tee'",
+      "label": "human name, e.g. 'Unisex Heavyweight Tee'",
+      "blueprint_id": "Printify blueprint id (integer) — from Printify catalog",
+      "print_provider_id": "Printify print-provider id (integer) for that blueprint",
+      "art_version": "'transparent' | 'parchment' — which art file prints on this blank",
+      "variant_ids": "array of Printify variant ids to enable (sizes/colors)",
+      "placement": "print-area placement, e.g. 'front'"
+    }
+  },
+  "products": []
+}

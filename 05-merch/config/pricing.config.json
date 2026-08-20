@@ -1,0 +1,8 @@
+{
+  "_status": "PLACEHOLDER — this margin is NOT a real pricing decision. It exists only so the pipeline can compute a draft retail number. A human must set the real margin before any live run.",
+  "margin_model": "cost_plus_multiplier",
+  "placeholder_margin_multiplier": 2.0,
+  "round_to": 0.99,
+  "currency": "USD",
+  "note": "Draft retail = (Printify blank cost, in cents, fetched live) x placeholder_margin_multiplier, rounded to the nearest .99. In dry-run mode with no live cost available, the agent marks the retail as 'COST UNKNOWN (dry-run)'. The 2.0 multiplier is a stand-in only."
+}
