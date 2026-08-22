@@ -1,0 +1,372 @@
+{
+  "generated_at": "2026-08-22T20:37:35.826Z",
+  "mode": "DRY-RUN (draft only — no live creation, no publish)",
+  "symbol": {
+    "slug": "tree-of-life",
+    "name": "Tree of Life",
+    "tradition": "Kabbalah / cross-cultural"
+  },
+  "catalog_note": "PRINTIFY_API_TOKEN not set — catalog IDs cannot be verified or resolved live.",
+  "summary": {
+    "total": 5,
+    "pass": 0,
+    "fail": 5
+  },
+  "products": [
+    {
+      "sku": "DA-01",
+      "product": "Art print",
+      "status": "FAIL",
+      "blockers": [
+        "printify_blueprint_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "print_provider_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "variant_ids empty — select variants from the live catalog",
+        "artwork asset not found — expected merch/artwork/tree-of-life.{png|svg|jpg} (drop finished art here)",
+        "no uploaded Printify image id — art must be POSTed to /v1/uploads/images.json first (blocked in dry-run; needs PRINTIFY_API_TOKEN)"
+      ],
+      "warnings": [
+        "base price is a placeholder — confirm final retail price before creation",
+        "catalog IDs not yet verified_against_catalog"
+      ],
+      "listing": {
+        "sku": "DA-01",
+        "product": "Art print",
+        "title": "Tree of Life — Divine Archives Art print",
+        "description": "A museum-weight giclee print featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "art print"
+        ],
+        "price_cents": 2200,
+        "price_is_placeholder": true
+      },
+      "draft": {
+        "_draft": true,
+        "_would_POST_to": "/v1/shops/{shop_id}/products.json",
+        "sku": "DA-01",
+        "symbol": "Tree of Life",
+        "title": "Tree of Life — Divine Archives Art print",
+        "description": "A museum-weight giclee print featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "art print"
+        ],
+        "blueprint_id": null,
+        "print_provider_id": null,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": []
+              }
+            ]
+          }
+        ],
+        "artwork_source": null
+      }
+    },
+    {
+      "sku": "DA-02",
+      "product": "Tote bag",
+      "status": "FAIL",
+      "blockers": [
+        "printify_blueprint_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "print_provider_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "variant_ids empty — select variants from the live catalog",
+        "artwork asset not found — expected merch/artwork/tree-of-life.{png|svg|jpg} (drop finished art here)",
+        "no uploaded Printify image id — art must be POSTed to /v1/uploads/images.json first (blocked in dry-run; needs PRINTIFY_API_TOKEN)"
+      ],
+      "warnings": [
+        "base price is a placeholder — confirm final retail price before creation",
+        "catalog IDs not yet verified_against_catalog"
+      ],
+      "listing": {
+        "sku": "DA-02",
+        "product": "Tote bag",
+        "title": "Tree of Life — Divine Archives Tote bag",
+        "description": "A sturdy everyday tote featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "tote bag"
+        ],
+        "price_cents": 2400,
+        "price_is_placeholder": true
+      },
+      "draft": {
+        "_draft": true,
+        "_would_POST_to": "/v1/shops/{shop_id}/products.json",
+        "sku": "DA-02",
+        "symbol": "Tree of Life",
+        "title": "Tree of Life — Divine Archives Tote bag",
+        "description": "A sturdy everyday tote featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "tote bag"
+        ],
+        "blueprint_id": null,
+        "print_provider_id": null,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": []
+              }
+            ]
+          }
+        ],
+        "artwork_source": null
+      }
+    },
+    {
+      "sku": "DA-03",
+      "product": "T-shirt",
+      "status": "FAIL",
+      "blockers": [
+        "printify_blueprint_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "print_provider_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "variant_ids empty — select variants from the live catalog",
+        "artwork asset not found — expected merch/artwork/tree-of-life.{png|svg|jpg} (drop finished art here)",
+        "no uploaded Printify image id — art must be POSTed to /v1/uploads/images.json first (blocked in dry-run; needs PRINTIFY_API_TOKEN)"
+      ],
+      "warnings": [
+        "base price is a placeholder — confirm final retail price before creation",
+        "catalog IDs not yet verified_against_catalog"
+      ],
+      "listing": {
+        "sku": "DA-03",
+        "product": "T-shirt",
+        "title": "Tree of Life — Divine Archives T-shirt",
+        "description": "A soft unisex tee featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "t-shirt"
+        ],
+        "price_cents": 2600,
+        "price_is_placeholder": true
+      },
+      "draft": {
+        "_draft": true,
+        "_would_POST_to": "/v1/shops/{shop_id}/products.json",
+        "sku": "DA-03",
+        "symbol": "Tree of Life",
+        "title": "Tree of Life — Divine Archives T-shirt",
+        "description": "A soft unisex tee featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "t-shirt"
+        ],
+        "blueprint_id": null,
+        "print_provider_id": null,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": []
+              }
+            ]
+          }
+        ],
+        "artwork_source": null
+      }
+    },
+    {
+      "sku": "DA-04",
+      "product": "Journal",
+      "status": "FAIL",
+      "blockers": [
+        "printify_blueprint_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "print_provider_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "variant_ids empty — select variants from the live catalog",
+        "artwork asset not found — expected merch/artwork/tree-of-life.{png|svg|jpg} (drop finished art here)",
+        "no uploaded Printify image id — art must be POSTed to /v1/uploads/images.json first (blocked in dry-run; needs PRINTIFY_API_TOKEN)"
+      ],
+      "warnings": [
+        "base price is a placeholder — confirm final retail price before creation",
+        "catalog IDs not yet verified_against_catalog"
+      ],
+      "listing": {
+        "sku": "DA-04",
+        "product": "Journal",
+        "title": "Tree of Life — Divine Archives Journal",
+        "description": "A hardcover journal for notes, study, or ritual record featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "journal"
+        ],
+        "price_cents": 1900,
+        "price_is_placeholder": true
+      },
+      "draft": {
+        "_draft": true,
+        "_would_POST_to": "/v1/shops/{shop_id}/products.json",
+        "sku": "DA-04",
+        "symbol": "Tree of Life",
+        "title": "Tree of Life — Divine Archives Journal",
+        "description": "A hardcover journal for notes, study, or ritual record featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "journal"
+        ],
+        "blueprint_id": null,
+        "print_provider_id": null,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "cover",
+                "images": []
+              }
+            ]
+          }
+        ],
+        "artwork_source": null
+      }
+    },
+    {
+      "sku": "DA-05",
+      "product": "Pin-back button",
+      "status": "FAIL",
+      "blockers": [
+        "printify_blueprint_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "print_provider_id is null — resolve against live catalog (needs PRINTIFY_API_TOKEN)",
+        "variant_ids empty — select variants from the live catalog",
+        "artwork asset not found — expected merch/artwork/tree-of-life.{png|svg|jpg} (drop finished art here)",
+        "no uploaded Printify image id — art must be POSTed to /v1/uploads/images.json first (blocked in dry-run; needs PRINTIFY_API_TOKEN)"
+      ],
+      "warnings": [
+        "base price is a placeholder — confirm final retail price before creation",
+        "catalog IDs not yet verified_against_catalog"
+      ],
+      "listing": {
+        "sku": "DA-05",
+        "product": "Pin-back button",
+        "title": "Tree of Life — Divine Archives Pin-back button",
+        "description": "A small enamel-look pin-back button featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "pin-back button"
+        ],
+        "price_cents": 500,
+        "price_is_placeholder": true
+      },
+      "draft": {
+        "_draft": true,
+        "_would_POST_to": "/v1/shops/{shop_id}/products.json",
+        "sku": "DA-05",
+        "symbol": "Tree of Life",
+        "title": "Tree of Life — Divine Archives Pin-back button",
+        "description": "A small enamel-look pin-back button featuring the Tree of Life, rendered in bronze-and-copper linework on aged parchment, illuminated-manuscript style. Rooted in the Kabbalah / cross-cultural tradition. The symbol is covered in depth in The Divine Archives (ch26). Part of the Divine Archives symbol collection — a comparative reference work on the world's spiritual traditions. This is a draft listing pending human review; artwork, sizing, and pricing are not final.",
+        "tags": [
+          "divine archives",
+          "symbolism",
+          "sacred symbol",
+          "bronze-and-copper linework on aged parchment",
+          "tree of life",
+          "sefirot",
+          "cosmic tree",
+          "kabbalah",
+          "esoteric",
+          "pin-back button"
+        ],
+        "blueprint_id": null,
+        "print_provider_id": null,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": []
+              }
+            ]
+          }
+        ],
+        "artwork_source": null
+      }
+    }
+  ]
+}
