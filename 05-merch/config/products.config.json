@@ -1,16 +1,66 @@
 {
-  "_status": "MISSING — the locked 10-product list is not yet documented. The agent will NOT invent blanks, blueprint IDs, print-provider IDs, or variants. Fill this in (or point the agent at the real source) before any product-creation run, live or dry.",
-  "_schema": {
-    "products": "array of exactly 10 entries, one per approved blank type",
-    "entry_fields": {
-      "key": "short stable slug for this blank, e.g. 'unisex-tee'",
-      "label": "human name, e.g. 'Unisex Heavyweight Tee'",
-      "blueprint_id": "Printify blueprint id (integer) — from Printify catalog",
-      "print_provider_id": "Printify print-provider id (integer) for that blueprint",
-      "art_version": "'transparent' | 'parchment' — which art file prints on this blank",
-      "variant_ids": "array of Printify variant ids to enable (sizes/colors)",
-      "placement": "print-area placement, e.g. 'front'"
-    }
+  "_status": "POPULATED with the 5 approved blank types (DA-01..DA-05) per Carter's message. NOTE: this supersedes the earlier 'locked 10-product list' language — reconciled to 5 blank types. Each of the 14 locked symbols maps onto any of these 5.",
+  "_pending": "Printify catalog IDs are still TBD and MUST NOT be fabricated: every entry needs a real blueprint_id, print_provider_id, and variant_ids from the Printify catalog before a live draft-create run. art_version per blank is a default assumption (see _notes) — confirm or adjust.",
+  "_notes": {
+    "art_version_defaults": "print/tote/journal -> parchment (warm, ornamental); t-shirt/pin -> transparent (adapts to blank color). Adjustable.",
+    "attribution_required": "DA-03 (shirt) and DA-05 (pin) must carry a source/context line in the listing, per Carter. The agent enforces this: it refuses to build these two without a source line in the description.",
+    "symbol_fit": "DA-01 (print) and DA-04 (journal) suit ornamental symbols (Tree of Life, Dharmachakra); DA-03 (shirt) and DA-05 (pin) are the most reused across all 14."
   },
-  "products": []
+  "products": [
+    {
+      "key": "DA-01-art-print",
+      "label": "Art print / poster",
+      "concept": "Nine Ages timeline or era-specific / symbol art",
+      "art_version": "parchment",
+      "placement": "front",
+      "attribution_required": false,
+      "blueprint_id": null,
+      "print_provider_id": null,
+      "variant_ids": []
+    },
+    {
+      "key": "DA-02-tote",
+      "label": "Tote bag",
+      "concept": "Site emblem / symbol",
+      "art_version": "parchment",
+      "placement": "front",
+      "attribution_required": false,
+      "blueprint_id": null,
+      "print_provider_id": null,
+      "variant_ids": []
+    },
+    {
+      "key": "DA-03-tshirt",
+      "label": "T-shirt",
+      "concept": "Minimalist sacred-geometry design",
+      "art_version": "transparent",
+      "placement": "front",
+      "attribution_required": true,
+      "blueprint_id": null,
+      "print_provider_id": null,
+      "variant_ids": []
+    },
+    {
+      "key": "DA-04-journal",
+      "label": "Journal / notebook",
+      "concept": "Cover art",
+      "art_version": "parchment",
+      "placement": "front",
+      "attribution_required": false,
+      "blueprint_id": null,
+      "print_provider_id": null,
+      "variant_ids": []
+    },
+    {
+      "key": "DA-05-pin",
+      "label": "Pin-back button",
+      "concept": "Symbol from a popular chapter (attributed educational framing)",
+      "art_version": "transparent",
+      "placement": "front",
+      "attribution_required": true,
+      "blueprint_id": null,
+      "print_provider_id": null,
+      "variant_ids": []
+    }
+  ]
 }

@@ -32,8 +32,10 @@ anything — every path stops at DRAFT/unpublished. It is a pipeline, not a laun
    (PNG). *(Currently absent — dry run uses placeholder paths; see BLOCKERS.)*
 3. **Description source** — the symbol's entry in `drafts/symbols/<slug>.md` (the same
    cross-tradition, no-single-religion-claim framing validated on Tree of Life).
-4. **Product list** — the locked 10 blank types, in `config/products.config.json`.
-   *(Currently MISSING — see BLOCKERS; step 3 is gated on this.)*
+4. **Product list** — the locked blank types, in `config/products.config.json`.
+   **Reconciled to 5 blank types** (DA-01..DA-05) per Carter's message — this supersedes
+   the earlier "locked 10-product list" language. Blank *types* are now populated; their
+   Printify catalog IDs (blueprint/provider/variants) are still TBD (see BLOCKERS).
 5. **Pricing model** — `config/pricing.config.json` (placeholder margin).
 
 ## Process
@@ -42,7 +44,7 @@ anything — every path stops at DRAFT/unpublished. It is a pipeline, not a laun
    are absent, the agent refuses to proceed to product creation and reports the blocker.
 3. **Upload art** to Printify (`/v1/uploads/images.json`) — dry run builds and prints the
    payload without sending.
-4. For each of the 10 blanks, **build a draft product** (`/v1/shops/{shop}/products.json`):
+4. For each of the 5 blank types, **build a draft product** (`/v1/shops/{shop}/products.json`):
    - Title = `"[Symbol Name] — Divine Archives"`.
    - `blueprint_id` + `print_provider_id` + `variants` from the product list.
    - Retail price = Printify blank cost × placeholder margin (flagged).
@@ -66,14 +68,18 @@ anything — every path stops at DRAFT/unpublished. It is a pipeline, not a laun
 - `runs/<slug>/description.review.md` — the attributed description, READY FOR REVIEW.
 
 ## Dry-run result (Tree of Life)
-The pipeline ran end-to-end in dry-run mode on **Tree of Life**. It correctly:
+The pipeline ran end-to-end in dry-run mode on **Tree of Life** with the 5 blank types
+populated and a mock art path. It correctly:
 - built the title `"Tree of Life — Divine Archives"`;
-- built the attributed description from `drafts/symbols/tree-of-life.md` and flagged it
-  READY FOR REVIEW (not auto-applied);
-- **halted at product creation** because the locked 10-product list is not present —
-  surfacing the blocker instead of guessing blanks or IDs;
+- built the attributed description (with the curated source-chapter line ch26 + ch37)
+  from `drafts/symbols/tree-of-life.md`, flagged READY FOR REVIEW (not auto-applied);
+- built **5 draft product payloads** (one per blank type), each `visible:false`, tagged
+  `Divine Archives`, with Printify catalog IDs marked `<<from product list>>` (not invented);
+- passed the attribution gate on DA-03 (shirt) and DA-05 (pin) because the source line
+  is present;
 - emitted the review summary and stopped (no batch).
-This validates the transform/guard logic. Live runs need the three blockers cleared.
+This validates the transform/guard logic. Live runs still need: Printify catalog IDs,
+API credentials, and print-ready art (see BLOCKERS).
 
 ## Review batch
 This stage stands alone (Track: Divine Archives merch). It is `PIPELINE BUILT / DRY-RUN

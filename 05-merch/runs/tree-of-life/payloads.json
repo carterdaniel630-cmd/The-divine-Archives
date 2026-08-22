@@ -1,4 +1,205 @@
 {
-  "image_uploads": [],
-  "product_creates": []
+  "image_uploads": [
+    {
+      "endpoint": "POST https://api.printify.com/v1/uploads/images.json",
+      "body": {
+        "file_name": "tree-of-life-transparent.png",
+        "contents": "<base64 of 05-merch/symbols-reference/tree-of-life/tree-of-life-transparent.png>"
+      }
+    },
+    {
+      "endpoint": "POST https://api.printify.com/v1/uploads/images.json",
+      "body": {
+        "file_name": "tree-of-life-parchment.png",
+        "contents": "<base64 of 05-merch/symbols-reference/tree-of-life/tree-of-life-parchment.png>"
+      }
+    }
+  ],
+  "product_creates": [
+    {
+      "endpoint": "POST https://api.printify.com/v1/shops/{shop}/products.json",
+      "body": {
+        "title": "Tree of Life — Divine Archives",
+        "description": "<<HELD — attributed description is READY FOR REVIEW, applied by a human after approval>>",
+        "blueprint_id": "<<from product list>>",
+        "print_provider_id": "<<from product list>>",
+        "tags": [
+          "Divine Archives"
+        ],
+        "visible": false,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": [
+                  {
+                    "id": "<parchment image id>",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "scale": 1,
+                    "angle": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_pricingDisplay": "COST UNKNOWN (dry-run — no live Printify cost)",
+      "_artVersion": "parchment",
+      "_blank": "DA-01-art-print",
+      "_attributionRequired": false
+    },
+    {
+      "endpoint": "POST https://api.printify.com/v1/shops/{shop}/products.json",
+      "body": {
+        "title": "Tree of Life — Divine Archives",
+        "description": "<<HELD — attributed description is READY FOR REVIEW, applied by a human after approval>>",
+        "blueprint_id": "<<from product list>>",
+        "print_provider_id": "<<from product list>>",
+        "tags": [
+          "Divine Archives"
+        ],
+        "visible": false,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": [
+                  {
+                    "id": "<parchment image id>",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "scale": 1,
+                    "angle": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_pricingDisplay": "COST UNKNOWN (dry-run — no live Printify cost)",
+      "_artVersion": "parchment",
+      "_blank": "DA-02-tote",
+      "_attributionRequired": false
+    },
+    {
+      "endpoint": "POST https://api.printify.com/v1/shops/{shop}/products.json",
+      "body": {
+        "title": "Tree of Life — Divine Archives",
+        "description": "<<HELD — attributed description is READY FOR REVIEW, applied by a human after approval>>",
+        "blueprint_id": "<<from product list>>",
+        "print_provider_id": "<<from product list>>",
+        "tags": [
+          "Divine Archives"
+        ],
+        "visible": false,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": [
+                  {
+                    "id": "<transparent image id>",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "scale": 1,
+                    "angle": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_pricingDisplay": "COST UNKNOWN (dry-run — no live Printify cost)",
+      "_artVersion": "transparent",
+      "_blank": "DA-03-tshirt",
+      "_attributionRequired": true
+    },
+    {
+      "endpoint": "POST https://api.printify.com/v1/shops/{shop}/products.json",
+      "body": {
+        "title": "Tree of Life — Divine Archives",
+        "description": "<<HELD — attributed description is READY FOR REVIEW, applied by a human after approval>>",
+        "blueprint_id": "<<from product list>>",
+        "print_provider_id": "<<from product list>>",
+        "tags": [
+          "Divine Archives"
+        ],
+        "visible": false,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": [
+                  {
+                    "id": "<parchment image id>",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "scale": 1,
+                    "angle": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_pricingDisplay": "COST UNKNOWN (dry-run — no live Printify cost)",
+      "_artVersion": "parchment",
+      "_blank": "DA-04-journal",
+      "_attributionRequired": false
+    },
+    {
+      "endpoint": "POST https://api.printify.com/v1/shops/{shop}/products.json",
+      "body": {
+        "title": "Tree of Life — Divine Archives",
+        "description": "<<HELD — attributed description is READY FOR REVIEW, applied by a human after approval>>",
+        "blueprint_id": "<<from product list>>",
+        "print_provider_id": "<<from product list>>",
+        "tags": [
+          "Divine Archives"
+        ],
+        "visible": false,
+        "variants": [],
+        "print_areas": [
+          {
+            "variant_ids": [],
+            "placeholders": [
+              {
+                "position": "front",
+                "images": [
+                  {
+                    "id": "<transparent image id>",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "scale": 1,
+                    "angle": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "_pricingDisplay": "COST UNKNOWN (dry-run — no live Printify cost)",
+      "_artVersion": "transparent",
+      "_blank": "DA-05-pin",
+      "_attributionRequired": true
+    }
+  ]
 }

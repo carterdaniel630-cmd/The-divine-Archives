@@ -91,12 +91,21 @@ function buildDescription(slug, symbolName) {
   const lead = clean(firstPara(whatIs));
   const cross = clean(firstPara(connections));
 
+  // Curated source-chapter attribution (NOT regex-guessed from prose, to avoid
+  // mis-attributing cross-references). Read from a machine-readable marker the
+  // human placed in the symbol draft: `da_source_chapters: 26 (Kabbalah); ...`
+  const srcMatch = md.match(/da_source_chapters:\s*([^\n>]+)/i);
+  const srcClean = srcMatch ? srcMatch[1].replace(/[-\s]+$/, '').trim().replace(/\s+/g, ' ') : null;
+  const sourceLine = srcClean ? `Source in The Divine Archives — ${srcClean}.` : null;
+
   const text = [
     `${symbolName} — from The Divine Archives.`,
     '',
     lead,
     '',
     cross,
+    sourceLine ? '' : null,
+    sourceLine,
     '',
     'Part of a comparative reference project on the world\'s symbolic traditions. ' +
     'This design is presented in an educational, cross-tradition spirit — it is not a ' +
@@ -105,6 +114,7 @@ function buildDescription(slug, symbolName) {
 
   return {
     ok: true,
+    hasSource: Boolean(sourceLine),
     reason: 'Built from the symbol draft; cross-tradition framing, no single-religion claim.',
     text,
   };
@@ -219,9 +229,18 @@ async function main() {
     payloads.image_uploads.push(imgTransparent, imgParchment);
     const imageIdFor = (v) => (v === 'parchment' ? '<parchment image id>' : '<transparent image id>');
     for (const prod of products.products) {
-      payloads.product_creates.push(productCreatePayload(args.live ? requireLiveEnv().shop : null, args.symbol, prod, imageIdFor(prod.art_version), pricing));
+      // Attribution gate: DA-03 (shirt) and DA-05 (pin) MUST carry a source line.
+      if (prod.attribution_required && !(desc.ok && desc.hasSource)) {
+        flag(`${prod.key}: attribution_required but the description has no source line — ${args.live ? 'REFUSING to build this product' : 'flagged (dry run)'}.`);
+        blockers.push(`attribution: ${prod.key} needs a source line (add da_source_chapters to the symbol draft)`);
+        if (args.live) continue; // in live mode, skip building this product until attribution is present
+      }
+      const payload = productCreatePayload(args.live ? requireLiveEnv().shop : null, args.symbol, prod, imageIdFor(prod.art_version), pricing);
+      payload._blank = prod.key;
+      payload._attributionRequired = Boolean(prod.attribution_required);
+      payloads.product_creates.push(payload);
     }
-    log(`   built ${payloads.product_creates.length} draft product payload(s) across the locked blanks.`);
+    log(`   built ${payloads.product_creates.length} draft product payload(s) across the ${products.products.length} blank types.`);
     if (args.live) {
       const env = requireLiveEnv();
       if (env.missing.length) { flag(`LIVE requested but env missing: ${env.missing.join(', ')} — NOT sending.`); blockers.push(`env: ${env.missing.join('+')} missing`); }

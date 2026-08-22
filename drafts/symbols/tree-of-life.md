@@ -22,6 +22,9 @@
 
 *The ten-fold diagram of the hidden God, and the ancient sacred tree it was, and was not, descended from.*
 
+<!-- da_source_chapters: ch26 (Kabbalah); ch37 (Theosophy & the Occult Revival) -->
+
+
 ## The gate of light
 
 The most famous picture of the Tree of Life is younger than most people assume. In **1516**, in Augsburg, a Latin book called **Portae Lucis** ("Gates of Light") — the Christian Hebraist Paulus Ricius's translation of Joseph Gikatilla's Kabbalistic *Sha'arei Orah* (c. 1290) — carried on its title page a woodcut of a bearded scholar holding a diagram of **ten linked medallions**. It is the **first appearance in print** of the *Ilan ha-Sefirot*, the "Tree of the Sefirot" — the schematic Tree of Life familiar today from a thousand posters and pendants. The image is medieval and early-modern, not ancient; the idea beneath it is older; and the older sacred trees it is often merged with are older still, and not clearly the same thing at all. Keeping those three layers apart is the whole discipline of reading this symbol honestly.

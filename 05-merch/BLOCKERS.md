@@ -3,13 +3,15 @@
 Surfaced so the pipeline doesn't stall silently or guess. RAG-flagged. None of these are
 built around; each is a real input the agent refuses to fabricate.
 
-## 🔴 1. Locked 10-product list — REQUIRED for product creation
-`config/products.config.json` is empty (`products: []`, `_status: MISSING`). The agent
-needs, per blank: Printify `blueprint_id`, `print_provider_id`, `variant_ids`, the
-`art_version` (transparent/parchment), and placement. **Without this the agent stops before
-step 4 and reports the blocker** — it will not invent blanks or catalog IDs.
-→ *Unblock:* paste the locked 10-product list (or tell me where it's documented) and I'll
-populate the config.
+## 🟡 1. Printify catalog IDs — REQUIRED for real product creation
+The **5 blank types** (DA-01..DA-05) are now populated in `config/products.config.json`
+(reconciled from the earlier "10-product list" language — it is 5). **Still missing per
+blank:** the Printify `blueprint_id`, `print_provider_id`, and `variant_ids` from the
+Printify catalog. The agent builds draft payloads with these marked `<<from product list>>`
+and will **refuse a live create** until they are real — it does not invent catalog IDs.
+→ *Unblock:* provide the Printify blueprint/print-provider/variant IDs for each of the 5
+blanks (I can look them up from the Printify catalog API once the token is set, or you can
+paste them).
 
 ## 🔴 2. Printify API token + shop ID — REQUIRED for any live run
 Read from env at run time (`PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID`); never stored in the
