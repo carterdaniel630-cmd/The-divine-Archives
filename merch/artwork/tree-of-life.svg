@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="era-emblem" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+  <!-- Tree of Life — merch symbol library, style test.
+       Built to the Divine Archives era-emblem convention: 120x120 viewBox,
+       r54 outer ring, currentColor line-work, hand-drawn weights 0.8-1.5.
+       Point-symmetric: branches above mirror roots below, meeting at the ring. -->
+  <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+
+  <!-- trunk -->
+  <path d="M57 82 C57 72 56 64 60 56 C64 64 63 72 63 82 Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+
+  <!-- branches (upper canopy) -->
+  <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+    <path d="M60 56 C51 51 45 41 42 27"/>
+    <path d="M60 56 C69 51 75 41 78 27"/>
+    <path d="M60 57 C57 47 54 34 53 20"/>
+    <path d="M60 57 C63 47 66 34 67 20"/>
+    <path d="M60 58 C50 54 39 49 31 40"/>
+    <path d="M60 58 C70 54 81 49 89 40"/>
+  </g>
+  <!-- secondary twigs -->
+  <g stroke="currentColor" stroke-width="0.9" opacity="0.85" stroke-linecap="round">
+    <path d="M49 44 C46 41 42 40 38 40"/>
+    <path d="M71 44 C74 41 78 40 82 40"/>
+    <path d="M54 34 C51 32 48 31 45 31"/>
+    <path d="M66 34 C69 32 72 31 75 31"/>
+    <path d="M60 55 C59 44 59 33 60 24"/>
+  </g>
+  <!-- leaves / fruit -->
+  <g fill="currentColor" opacity="0.9">
+    <circle cx="42" cy="27" r="1.7"/><circle cx="78" cy="27" r="1.7"/>
+    <circle cx="53" cy="20" r="1.7"/><circle cx="67" cy="20" r="1.7"/>
+    <circle cx="31" cy="40" r="1.7"/><circle cx="89" cy="40" r="1.7"/>
+    <circle cx="60" cy="16" r="1.9"/>
+    <circle cx="38" cy="40" r="1.2" opacity="0.7"/><circle cx="82" cy="40" r="1.2" opacity="0.7"/>
+    <circle cx="45" cy="31" r="1.2" opacity="0.7"/><circle cx="75" cy="31" r="1.2" opacity="0.7"/>
+  </g>
+
+  <!-- roots (lower, mirroring the three main branch directions) -->
+  <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.9">
+    <path d="M58 82 C50 87 44 95 41 105"/>
+    <path d="M62 82 C70 87 76 95 79 105"/>
+    <path d="M59 82 C56 91 54 99 53 108"/>
+    <path d="M61 82 C64 91 66 99 67 108"/>
+    <path d="M58 83 C49 86 41 90 34 96"/>
+    <path d="M62 83 C71 86 79 90 86 96"/>
+  </g>
+  <!-- root tendrils -->
+  <g stroke="currentColor" stroke-width="0.8" opacity="0.7" stroke-linecap="round">
+    <path d="M41 105 C39 107 36 108 33 108"/>
+    <path d="M79 105 C81 107 84 108 87 108"/>
+    <path d="M34 96 C32 97 30 99 29 101"/>
+    <path d="M86 96 C88 97 90 99 91 101"/>
+  </g>
+</svg>
