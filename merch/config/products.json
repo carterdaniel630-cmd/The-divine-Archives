@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "note": "DA product config for the Printify merch agent. DRAFT / DRY-RUN ONLY.",
+    "catalog_id_status": "Blueprint, print-provider, and variant IDs below are UNVERIFIED PLACEHOLDERS. They must be resolved against the live Printify catalog (GET /v1/catalog/blueprints.json and its sub-endpoints) with a valid PRINTIFY_API_TOKEN before any real listing is created. The dry run flags every unverified id.",
+    "currency": "USD",
+    "price_unit": "cents (Printify API expresses prices in integer cents)"
+  },
+  "products": [
+    {
+      "sku": "DA-01",
+      "name": "Art print",
+      "printify_blueprint_id": null,
+      "printify_blueprint_hint": "Matte / giclee vertical poster or fine-art print",
+      "print_provider_id": null,
+      "variant_ids": [],
+      "verified_against_catalog": false,
+      "print_areas": ["front"],
+      "artwork_requirements": {
+        "min_dpi": 300,
+        "recommended_px": [3600, 5400],
+        "orientation": "portrait",
+        "background": "transparent-or-parchment"
+      },
+      "base_price_cents": 2200,
+      "base_price_placeholder": true
+    },
+    {
+      "sku": "DA-02",
+      "name": "Tote bag",
+      "printify_blueprint_id": null,
+      "printify_blueprint_hint": "All-over or front-print cotton/canvas tote",
+      "print_provider_id": null,
+      "variant_ids": [],
+      "verified_against_catalog": false,
+      "print_areas": ["front"],
+      "artwork_requirements": {
+        "min_dpi": 300,
+        "recommended_px": [4200, 4800],
+        "orientation": "square-ish",
+        "background": "transparent"
+      },
+      "base_price_cents": 2400,
+      "base_price_placeholder": true
+    },
+    {
+      "sku": "DA-03",
+      "name": "T-shirt",
+      "printify_blueprint_id": null,
+      "printify_blueprint_hint": "Unisex jersey short-sleeve tee",
+      "print_provider_id": null,
+      "variant_ids": [],
+      "verified_against_catalog": false,
+      "print_areas": ["front"],
+      "artwork_requirements": {
+        "min_dpi": 300,
+        "recommended_px": [4500, 5100],
+        "orientation": "portrait",
+        "background": "transparent"
+      },
+      "base_price_cents": 2600,
+      "base_price_placeholder": true
+    },
+    {
+      "sku": "DA-04",
+      "name": "Journal",
+      "printify_blueprint_id": null,
+      "printify_blueprint_hint": "Hardcover or spiral journal / notebook",
+      "print_provider_id": null,
+      "variant_ids": [],
+      "verified_against_catalog": false,
+      "print_areas": ["cover"],
+      "artwork_requirements": {
+        "min_dpi": 300,
+        "recommended_px": [3000, 3600],
+        "orientation": "portrait",
+        "background": "parchment"
+      },
+      "base_price_cents": 1900,
+      "base_price_placeholder": true
+    },
+    {
+      "sku": "DA-05",
+      "name": "Pin-back button",
+      "printify_blueprint_id": null,
+      "printify_blueprint_hint": "Round pin-back button (bleed area larger than visible face)",
+      "print_provider_id": null,
+      "variant_ids": [],
+      "verified_against_catalog": false,
+      "print_areas": ["front"],
+      "artwork_requirements": {
+        "min_dpi": 300,
+        "recommended_px": [1200, 1200],
+        "orientation": "circular",
+        "background": "transparent",
+        "safe_zone_note": "Button art needs a bleed ring; keep the symbol inside the inner ~80% safe zone."
+      },
+      "base_price_cents": 500,
+      "base_price_placeholder": true
+    }
+  ]
+}

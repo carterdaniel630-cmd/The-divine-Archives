@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "note": "Locked 14-symbol library for the Divine Archives merch line.",
+    "aesthetic": "bronze/copper linework, aged parchment, illuminated-manuscript style",
+    "artwork_status": "No symbol artwork files are committed yet. Drop finished art in merch/artwork/<slug>.png (or .svg) before a real run. The dry run reports missing artwork as a blocker."
+  },
+  "symbols": [
+    { "slug": "tree-of-life", "name": "Tree of Life", "tradition": "Kabbalah / cross-cultural", "chapter_ref": "ch26", "keywords": ["sefirot", "cosmic tree", "kabbalah", "esoteric"] },
+    { "slug": "dharmachakra", "name": "Dharmachakra", "tradition": "Buddhism", "chapter_ref": "ch11", "keywords": ["wheel of dharma", "eightfold path", "buddhist"] },
+    { "slug": "ouroboros", "name": "Ouroboros", "tradition": "Hermetic / Greco-Egyptian", "chapter_ref": null, "keywords": ["serpent", "eternity", "alchemy", "cycle"] },
+    { "slug": "yin-yang", "name": "Yin Yang", "tradition": "Daoism", "chapter_ref": "ch12", "keywords": ["taiji", "balance", "daoist", "duality"] },
+    { "slug": "triquetra", "name": "Triquetra", "tradition": "Celtic / Germanic", "chapter_ref": null, "keywords": ["trinity knot", "celtic", "interlace"] },
+    { "slug": "ankh", "name": "Ankh", "tradition": "Ancient Egypt", "chapter_ref": "ch02", "keywords": ["life", "egyptian", "key of life"] },
+    { "slug": "hamsa", "name": "Hamsa", "tradition": "Near Eastern / Abrahamic folk", "chapter_ref": null, "keywords": ["hand", "protection", "evil eye"] },
+    { "slug": "eye-of-providence", "name": "Eye of Providence", "tradition": "Western esoteric / Christian", "chapter_ref": null, "keywords": ["all-seeing eye", "triangle", "providence"] },
+    { "slug": "lotus", "name": "Lotus", "tradition": "Hindu / Buddhist", "chapter_ref": "ch11", "keywords": ["padma", "purity", "enlightenment"] },
+    { "slug": "om", "name": "Om", "tradition": "Hindu / Vedic", "chapter_ref": null, "keywords": ["aum", "pranava", "vedic", "mantra"] },
+    { "slug": "star-of-david", "name": "Star of David", "tradition": "Judaism", "chapter_ref": "ch19", "keywords": ["magen david", "hexagram", "jewish"] },
+    { "slug": "valknut", "name": "Valknut", "tradition": "Norse paganism", "chapter_ref": "ch23", "keywords": ["odin", "slain", "norse", "interlocking triangles"] },
+    { "slug": "sankofa", "name": "Sankofa", "tradition": "Akan / West African", "chapter_ref": null, "keywords": ["adinkra", "return and fetch it", "akan"] },
+    { "slug": "bagua", "name": "Bagua", "tradition": "Daoism / I Ching", "chapter_ref": "ch12", "keywords": ["eight trigrams", "i ching", "feng shui"] }
+  ]
+}
