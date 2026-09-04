@@ -319,7 +319,35 @@ Each batch: Stage 1 sourcing plan → gate → Stage 2 write + regenerate pipeli
 
 ---
 
-## 9. STOP — human review gate (questions for Carter)
+## 9. DECISIONS (Carter, 2026-09-04) — gate cleared, work authorized
+
+1. **Audit format:** master doc accepted (this file). No per-chapter CONTEXT.md required.
+2. **ch29 structural call:** **SPLIT into three chapters** — Maya, Aztec, Inca. Archive grows 42 → 44.
+   Numbering: ch29 → **The Maya**; new **ch43 The Aztec (Mexica)**; new **ch44 The Inca**. (Non-contiguous
+   numbering follows the existing precedent — prehistory is ch41/ch42 — to avoid renumbering ch30–ch42.)
+3. **Batch order:** Carter delegated judgment ("i trust your judgements here forward") and authorized
+   proceeding **past the per-batch review gates through to publishing**, provided every chapter is held to
+   the same quality/review/sourcing standard as the rest. Proceeding **thinnest-first** per §8.
+4. **14 sacred symbols list:** does not exist in repo; **proceed without it**, wire in later if provided.
+5. **Lens sub-headers:** **ADD explicit `Believer's lens` and `Skeptical lens` headers** to all chapters
+   (new + existing). This makes the five-section template literal. See the template note below.
+6. **Scope:** content-layer only (markdown + `chapters.js` + static pages + `/sources` logs); aesthetic/
+   deploy untouched. New split chapters render without a plate (build handles missing plates gracefully);
+   plate art for them is left to the design track.
+
+### Locked five-section template (per decision 5)
+Every chapter, following the ch01 style, now targets:
+1. **Narrative** — the concrete opening scene + the exposition (texts, history, cosmology, ritual). No fixed header; evocative section titles as in ch01.
+2. **`## The believer's lens`** — the tradition on its own terms: what adherents hold true and how it is lived/meant.
+3. **`## The skeptical lens`** — the historical-critical / scientific view: origins, naturalistic explanations, debunkings, scholarly disputes (contested points flagged, not resolved).
+4. **`## Symbology and sacred encoding`** — the symbol/encoded-system deep-dive.
+5. **`## The evidence, honestly`** — the supported / not-supported / genuinely-open triad (exactly 3 bold-led paragraphs, per the converter).
+Plus the supporting **`## Connections`** and **`## Sources`** sections. Believer's and skeptical lenses are
+kept genuinely distinct from the evidence triad (inside-view and outside-view prose vs. the crisp triage).
+
+---
+
+## 10. (superseded) original STOP gate questions
 
 No expansion begins until you approve. Decisions I need from you:
 
