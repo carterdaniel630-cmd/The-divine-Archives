@@ -1,16 +1,17 @@
 # Sources — Chapter 34: Sikhism
 
-Per the project sourcing standard, this citation log records the real, checkable sources behind the chapter's claims. The chapter keeps the documented history (the Gurus, the scripture, the Khalsa, the martyrdoms) distinct from devotional legend (Nanak's revelation and the janamsakhi miracle-tales), and treats the synthesis-vs-original-revelation question as a live, sensitive debate rather than settling it.
+Per the project sourcing standard. The chapter records the well-documented Guru history, keeps Nanak's revelation and the janamsakhi miracle-tales as faith/legend, and treats the sensitive synthesis-vs-original-revelation debate as contested rather than settling a living faith's account of itself. Expanded 2026-09 into the five-section template.
 
 ## Sources cited
-- **Founding by Guru Nanak (1469–1539) in the Punjab; Kartarpur; Ik Onkar; honest living/sharing/remembrance; rejection of caste and idol worship; martyrdoms of Arjan (1606) and Tegh Bahadur (1675); miri-piri** — "Sikhism," Britannica. https://www.britannica.com/topic/Sikhism
-- **The ten Gurus to Guru Gobind Singh (1708); the Guru Granth Sahib as the eternal Guru** — "History, Teachings & List of 10 Sikh Gurus," Golden Temple Amritsar. https://www.goldentempleamritsar.org/sikh-gurus/
-- **The Guru Granth Sahib: Gurmukhi; the Gurus' hymns plus other-faith saints (Kabir, Ravidas, Farid)** — "Sikhism," Britannica (as above).
-- **The Khalsa (1699), the Five Ks, Singh/Kaur, the saint-soldier ideal** — "Ten Sikh Gurus," SikhiWiki. https://www.sikhiwiki.org/index.php/Ten_Sikh_Gurus
-- **The Golden Temple (Harmandir Sahib), four doors, langar** — "What is Sikhism?", Golden Temple Amritsar. https://www.goldentempleamritsar.org/sikhism/
+- **Guru Nanak (1469–1539), Kartarpur, core beliefs (Ik Onkar/Waheguru, honest living, sharing, remembrance), rejection of caste/idolatry** — "Sikhism," Britannica. https://www.britannica.com/topic/Sikhism
+- **The ten Gurus to Gobind Singh (1708); Guru Granth as eternal Guru; martyrdoms of Arjan (1606) and Tegh Bahadur (1675); miri-piri** — Golden Temple Amritsar, "10 Sikh Gurus"; Britannica. https://www.goldentempleamritsar.org/sikh-gurus/
+- **Guru Granth Sahib: 1,430 angs, 31 ragas, Mul Mantar, Japji Sahib, bhagat bani (Kabir, Ravidas, Farid)** — "Guru Granth Sahib"/"Mul Mantar," Wikipedia. https://en.wikipedia.org/wiki/Guru_Granth_Sahib · https://en.wikipedia.org/wiki/Mul_Mantar
+- **The Khalsa (1699), Panj Pyare, amrit sanchar, Five Ks, Singh/Kaur** — "Khalsa," Britannica; "Panj Pyare," Wikipedia. https://www.britannica.com/topic/Khalsa
+- **Theology: Waheguru, hukam, haumai, the five thieves** — "Five thieves"/"Haumai," Wikipedia. https://en.wikipedia.org/wiki/Five_thieves · https://en.wikipedia.org/wiki/Haumai
+- **Maharaja Ranjit Singh and the Sikh Empire (1799–1839)** — "Ranjit Singh," Britannica. https://www.britannica.com/biography/Ranjit-Singh-Sikh-maharaja
+- **Operation Blue Star (1984) and aftermath** — "Operation Blue Star," Britannica. https://www.britannica.com/topic/Operation-Blue-Star
 
-## Notes on handling
-- Nanak's **revelation** and the **janamsakhi** miracle-tales are recorded as **faith/devotional legend**, not history.
-- The precise **biography** of Nanak is uncertain (the janamsakhis are later and layered).
-- The **synthesis (Bhakti/Sufi roots) vs. original revelation** question is presented as an open, sensitive debate; the chapter records it without adjudicating a living faith's self-understanding.
-- Sikhism is placed as the direct heir of the nirguna Bhakti (Kabir) and Sufism of era 07, and rhymed with the contemporaneous Reformation.
+## Notes
+- Added the inner-path theology (haumai/ego, five thieves, hukam, jivanmukti, chardi kala) and the historical arc (Banda, misls, Ranjit Singh, Singh Sabha, 1947, 1984) handled with care.
+- Believer's lens = the pure worship of the One with every barrier removed (langar, Five Ks, chardi kala); Skeptical lens = janamsakhi legend vs core, and the Sant-synthesis vs original-revelation debate (recorded, not settled).
+- Cross-links: nirguna Bhakti/Kabir (ch30), Sufism (ch27), parallel to the Reformation (ch31).
