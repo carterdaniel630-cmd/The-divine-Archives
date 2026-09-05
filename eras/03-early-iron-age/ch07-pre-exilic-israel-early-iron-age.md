@@ -308,6 +308,14 @@ what it does — and does not — prove:
   body as protective charms — a beautiful witness to lived, apotropaic religion
   just before the exile.
 
+## The believer's lens
+
+The tradition that grew from this world — and the Hebrew Bible as it was finally edited — tells a clear and powerful story: that there is **one God, YHWH**, who chose Israel, brought them out of Egypt, gave them the Law at Sinai, and bound them in **covenant**; that Israel's calling was to worship him alone and do justice; and that the prophets were sent to recall a faithless people to that one Lord. Read from inside the faith, the history of Israelite religion is the history of a **revelation** progressively understood and too often betrayed — the people forever tempted toward the Baals and Asherahs of their neighbors, the prophets forever calling them back to the God who is truly one. This is the account Judaism, Christianity, and Islam all inherit, and to the believer its truth is the covenant itself: a God who acts in history and holds a people answerable.
+
+## The skeptical lens
+
+The historian and archaeologist tell the story the other way around, and this chapter is largely built on their reconstruction. The evidence — the "**YHWH and his Asherah**" inscriptions, the Ugaritic texts, the biblical text read critically — indicates that early Israelite religion was **not** originally monotheist but part of the wider West Semitic world: YHWH was worshipped alongside other gods, may have had a divine consort in **Asherah**, and shared imagery with the Canaanite storm-god Baal. Strict monotheism, on this reading, was a **development** — the achievement of a "Yahweh-alone" party and the exilic and post-exilic editors, not the starting point — so the Bible's own narrative of an original pure monotheism repeatedly corrupted is the *reverse* of the likely historical arrow. The Bible is also a layered, much-edited document, not a contemporary chronicle. None of this touches the theological claim of a God who reveals himself; it marks the boundary, as always, between the faith's self-understanding and what the inscriptions and strata actually show — which is a religion that *became* monotheist over centuries.
+
 ## Symbology and sacred encoding
 
 Israel's symbolic world is unusually important, because two of its choices — about

@@ -231,6 +231,14 @@ contemporaries: two great river civilizations, one facing death with confident h
 and elaborate tombs, the other with dust and resignation, each shaped by the river
 it depended on and the gods it imagined behind it.
 
+## The believer's lens
+
+To the Mesopotamian, human beings were made to **serve the gods** — created, the myths say, from clay and a slain god's blood to bear the labor the gods no longer wished to do, freeing them for rest. Religion was therefore a vast economy of service and exchange: feed and house the gods in their temples, perform the rites, read the signs they wrote across liver and sky, and in return receive rain, harvest, victory, and the fragile stability of the city. The gods were the city — each great town the household of its deity, its ziggurat the god's mountain-house — and to neglect them was to invite the flood, the plague, the enemy. There was little hope beyond death (the underworld was a dust-eating gloom for all alike), so the goods religion promised were **here**: a long life, sons, a good name, the king's justice, the world held in order one more year. It was a sober, transactional, deeply anxious piety — and out of its wrestling with unearned suffering came some of the first literature to ask why the righteous suffer.
+
+## The skeptical lens
+
+Mesopotamia gives the historian the oldest written religion on earth, on hundreds of thousands of clay tablets — so its gods, myths, rites, and even its theological doubts can be read directly, a rare gift. That record shows religion evolving with politics: gods rose and fell with their cities (Marduk's supremacy in the *Enuma Elish* mirrors Babylon's), and the "canonical" myths are the versions the winners wrote down. The divination that structured the culture — extispicy, astrology, omen-reading — is documented in exhaustive manuals; that it *worked* is not a claim history can support, only that it was believed and systematically practiced. The flood story here is demonstrably older than Genesis (Chapter 1), a case of literary transmission, not shared memory of a global deluge. What the evidence attests is the practice, the texts, and the temples; the reality of the gods and the efficacy of the omens are recorded as the belief of the age, not confirmed by it.
+
 ## Symbology and sacred encoding
 
 Mesopotamia did not merely write about its gods; it encoded them &mdash; in

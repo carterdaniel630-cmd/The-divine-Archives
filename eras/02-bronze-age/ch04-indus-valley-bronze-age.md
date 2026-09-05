@@ -148,6 +148,14 @@ off with striking restraint &mdash; which may say something real about how littl
 this culture invested in an elaborate afterlife, or may simply reflect burial
 customs we have not fully recovered.
 
+## The believer's lens
+
+Here, uniquely in this book, the believer's lens must be left almost blank — and honestly so. The Indus Valley people left a great civilization of planned cities, standardized weights, ritual bathing-tanks, and a script we cannot read, but **not one word of what they believed**. We cannot say what the "Priest-King" bust meant to them, whether the horned figure on the seals was a god, what the Great Bath at Mohenjo-daro was for, or whether they had gods at all in a sense we would recognize. To write a confident "believer's lens" for the Indus would be to invent one — which is exactly what a century of enthusiasts have done, reading back Hindu gods, yoga, and Vedic religion onto a silent people. The most faithful thing this book can say from the believer's side is that the Indus clearly had a **rich ritual life** — the bathing tanks, the fire-altars some claim, the careful figurines — and that its content is, for now, sealed behind an undeciphered script.
+
+## The skeptical lens
+
+The skeptical lens here is really the whole discipline of the chapter: **read the categories forward, not backward.** Every claim that the Indus practiced proto-Hinduism, worshipped a "proto-Shiva," or invented yoga rests on interpreting mute images through the lens of religions that arose a thousand or more years later — a textbook case of reading the known onto the unknown. The famous seals, the "Priest-King," the Great Bath, and the "signboard" of Dholavira are genuine and fascinating, but their religious meaning is inferred, not established, and the Indus **script remains undeciphered** despite many confident "decipherments," none accepted. Even whether the script encodes a language at all has been questioned. The honest position is severe restraint: we have the material culture of Indus ritual in abundance and its meaning almost not at all, and the chapter's discipline is to resist the powerful temptation to fill that silence with a borrowed theology.
+
 ## Symbology and sacred encoding
 
 For a civilization defined by an unread script, the theme of sacred encoding is not

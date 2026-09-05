@@ -267,6 +267,14 @@ Iran, the pattern is *inverted* — the *ahuras* (as in Zoroaster's supreme god
 speaking two forms of one language, ended up calling each other's gods devils. We
 will pick that thread up directly in the next era, with Zoroaster.
 
+## The believer's lens
+
+To the Vedic people, the cosmos ran on **ṛta** — the cosmic order — and the way to keep it turning was the **sacrifice** (*yajña*), the fire-offering that fed the gods and, in the priests' bold vision, actually *sustained* the workings of the world. Recite the hymn with perfect accuracy, pour the oblation into Agni the fire (the mouth of the gods and the messenger between worlds), press and drink the mysterious **soma**, and the rains would come, the cattle multiply, the enemy fall, the sun rise. The gods — Indra the warrior, Agni the fire, Varuna the guardian of order, Uṣas the dawn — were powers to be invited, praised, and fed, not distant abstractions. Above all, the **sacred word** itself was potent: the Veda was not merely *about* the holy but *was* holy, eternal sound (*śabda*) heard by the ancient seers, and to chant it exactly was to touch the power that upholds reality. Religion was performance, reciprocity, and the awesome responsibility of getting the words exactly right.
+
+## The skeptical lens
+
+The Vedic case is unusual: the texts were preserved with astonishing fidelity for millennia — but **orally**, memorized syllable-perfect long before they were written, so the historian trusts the *words* while noting we have almost no contemporary material record to check them against. That raises the great open questions the chapter flags honestly: who the Vedic people were, whether the language and religion arrived with migrating Indo-Aryan speakers (the mainstream scholarly view, on linguistic and genetic evidence) or developed indigenously (as some, often nationalist, accounts argue), and how they relate to the earlier Indus civilization (Chapter 4) — all genuinely contested. The identity of **soma**, the plant-god of the sacrifice, is unknown. And the claims of faith — that the Veda is eternal, uncreated sound, that the sacrifice sustains the cosmos — are recorded as belief, not findings. What history can attest is the hymns themselves, the centrality of fire-sacrifice and the sacred word, and the tradition's later flowering into the whole of Hindu religion.
+
 ## Symbology and sacred encoding
 
 If any tradition in this archive makes the theme of sacred encoding central rather
