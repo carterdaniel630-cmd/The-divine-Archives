@@ -218,6 +218,14 @@ libens merito*, so common it is abbreviated **V.S.L.M.**); and, remarkably, the
 **bronze Liver of Piacenza**, an Etruscan model liver divided into named regions —
 a haruspex's reference map for reading the divine in an animal's organs.
 
+## The believer's lens
+
+Roman religion was, above all, a matter of **doing, not believing** — of maintaining the **pax deorum**, the "peace of the gods," on which the safety and success of Rome depended. The relationship was contractual, almost legal: *do ut des*, "I give that you may give." Perform the rites exactly, at the right time, in the right words (a single slip and the whole ceremony began again); honor the gods of the state, the household (the *Lares* and *Penates*, the hearth-fire of Vesta), and the ancestors; read the will of the gods in the flight of birds and the entrails of victims before any great act — and the gods would keep Rome victorious and its fields fertile. There was no creed to affirm and little concern with an afterlife; **piety** (*pietas*) meant duty faithfully discharged toward gods, state, and family. To the Roman, religion was inseparable from being a good citizen: the gods had made Rome great, and the scrupulous maintenance of their cult was nothing less than the maintenance of the world's greatest power.
+
+## The skeptical lens
+
+The historian reads Roman religion as the classic case of **orthopraxy over orthodoxy** — right practice mattered, right belief scarcely existed as a category — and as a religion thoroughly fused with **politics**: the priesthoods (pontiffs, augurs, the Vestals) were offices of state, held by senators and emperors, and divination could be, and was, used to legitimize or block political action. Its openness was strategic: Rome absorbed the gods of the conquered, identified foreign deities with its own, and imported new cults (Magna Mater, later the mystery religions of Chapter 18) when the state judged it useful — while suppressing those, like the Bacchanalia, it judged dangerous. The **imperial cult**, deifying emperors, was as much loyalty-oath as theology. The sources are largely elite and literary, so popular and household religion is glimpsed more dimly. History attests the rites, priesthoods, and calendar in rich detail; the gods themselves, and the efficacy of the omens, are recorded as the framework within which Rome understood its own success.
+
 ## Symbology and sacred encoding
 
 **The templum: cutting sacred space out of the sky.** The deepest piece of Roman sacred
