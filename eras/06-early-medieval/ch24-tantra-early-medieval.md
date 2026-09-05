@@ -1,5 +1,6 @@
 # Chapter 24 — Tantra: The Body as the Cosmos
 
+*Recently added — pending full review.*
 
 The esoteric revolution that swept across early-medieval India and Buddhism alike — a ritual technology of mantra, diagram, and the subtle body that made the human being a map of the universe — and the careful work of separating what the tradition teaches, what history can date, and what a century of Western reinvention has laid on top of it.
 
@@ -54,6 +55,14 @@ Tantric Buddhism grew from the **mahāsiddhas**, the wandering adepts of eastern
 ## Material record: temples of the yoginis
 
 Tantra's clearest physical trace is the **yoginī temple** — around thirteen survive across India, eight of them in Madhya Pradesh, most built between the ninth and twelfth centuries. Their **open, circular, roofless** plan, unique in Indian temple architecture, set the sky itself as the ceiling over the ring of goddesses, and marks them as spaces for rites outside the ordinary temple order; they are associated with the Kāpālika and Kaula streams. At Khajuraho more broadly, the **Chandela temples** (c. 950–1050) carry the famous erotic sculpture that so shocked later observers — a fraction of the total carving, and one whose exact relation to tantric ritual is debated, but which belongs to the same world in which the sacred and the sexual were not held apart.
+
+## The believer's lens
+
+To the initiate, Tantra is the swiftest and most daring of paths — the one that refuses to flee the world in order to transcend it, and instead makes the body, the senses, and even the forbidden into instruments of liberation. Where older asceticism renounced desire, Tantra harnesses it: the same energy (*śakti*) that binds the soul to the world, rightly channeled under a guru, becomes the power that carries it to freedom and to *siddhi*. The human being is not a fallen thing to be escaped but a **complete map of the cosmos** — every chakra a world, every breath a movement of the divine — so that to awaken the sleeping serpent-power and raise her to union with Śiva at the crown is to enact, in one's own body, the reunion of God and Goddess, consciousness and energy, that is the secret of all things. For the Buddhist tantrika, to visualize oneself as the enlightened deity is to actualize the buddhahood one already is. The transgressive rites of the left hand are, from inside, not licence but the hardest discipline — the deliberate shattering of the ego's clinging to pure and impure so that the nonduality behind all opposites can be directly known. Tantra experiences itself as the esoteric core of both Hinduism and Buddhism: the fast, dangerous, secret road for those ready to walk it.
+
+## The skeptical lens
+
+The historian's cautions here are unusually heavy, because few traditions have been so **overwritten** — first by hostile outsiders, then by admiring reinventors. "Tantrism" as a single system is itself a **nineteenth-century scholarly construct**, imposed on a family of practices its own practitioners never unified. The texts are esoteric, largely undated, orally transmitted, and written in deliberate "twilight language," so precise dating and authorship are mostly out of reach. Three modern distortions must be named: the **subtle body** (chakras, nāḍīs, kundalini) is a contemplative and experiential map, **not anatomy** — no dissection finds a chakra; the familiar **seven-chakra rainbow** with its fixed colors and gland-correspondences is largely a **twentieth-century synthesis**, not the medieval teaching; and the popular Western equation of **"Tantra" with sacred sex** is a modern distortion of a tradition that is overwhelmingly mantra, diagram, and visualization, in which sexual yoga is one bounded, secret, and contested element of some lineages. Even the historical question of **how literally** the left-hand rites were performed cannot be fully settled, precisely because the secrecy was real. The honest scholar affirms the vast attested corpus and its ritual technology, and refuses both the old caricature of orgy and the new sanitizing that pretends the transgression never existed.
 
 ## Symbology and sacred encoding
 
