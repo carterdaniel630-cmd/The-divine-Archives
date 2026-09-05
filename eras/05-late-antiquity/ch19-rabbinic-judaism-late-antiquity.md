@@ -161,6 +161,14 @@ the **Babylonian Talmud** was produced, and here that the intellectual heart of 
 would beat for the better part of a thousand years, its later heads, the **Geonim**, guiding
 Jewish communities across the diaspora into the medieval age.
 
+## The believer's lens
+
+When the Temple was destroyed in 70 CE and sacrifice became impossible, Judaism might have died with it — and the rabbis' astonishing achievement, from inside, was to show that it need not. The sages taught that alongside the **Written Torah** God had given Moses at Sinai an **Oral Torah**, a living tradition of interpretation carried by the rabbis themselves — so that the study and application of the Law *was* the true worship, the "service of the heart" that replaced the altar. To pore over a page of Talmud, to argue the meaning of a commandment, to sanctify daily life with blessings and observance, was now to meet God; the synagogue and the house of study replaced the Temple, and the scholar the priest. The famous story of the **Oven of Akhnai** — where the rabbis overrule even a heavenly voice, because the Torah "is not in heaven" but given to human interpreters — captures the tradition's daring self-understanding: God has entrusted the meaning of his word to the ongoing argument of his people. Judaism survived because it became **portable, textual, and endlessly interpretable** — a faith that could go anywhere its books and its arguments could go.
+
+## The skeptical lens
+
+The historian sees Rabbinic Judaism as a genuine **transformation**, not simply the continuation of an older "normative" Judaism — the rabbis were, at first, one party among the many Judaisms of the Second Temple period (Chapter 10), whose interpretation became dominant only over centuries. The claim of an unbroken **Oral Torah** from Sinai is, to the critical scholar, a doctrine of legitimation: the Mishnah (c. 200 CE) and the two Talmuds (c. 400 and 600) are **layered, edited compilations**, and the sayings attributed to early sages are transmitted and shaped by later hands, so recovering "what Rabbi Akiva actually said" is as fraught as recovering the historical Jesus. Archaeology complicates the tidy picture too: the **synagogue mosaics** of late antiquity, with their zodiacs and even the sun-god **Helios** at the center (as at Beth Alpha), show a Judaism more visually and culturally entangled with its Greco-Roman world than the texts alone suggest. History attests the texts, the sages, and the institutions; the Sinai origin of the Oral Torah is recorded as the tradition's foundational belief.
+
 ## Symbology and sacred encoding
 
 Judaism is one of the great traditions of sacred encoding, and Rabbinic Judaism deepened its arts

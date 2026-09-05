@@ -172,6 +172,14 @@ source at all. The genuine ancient Hermetica — the Corpus Hermeticum and the *
 were fertile enough, feeding the Renaissance revival under Ficino, without the later
 embroidery.
 
+## The believer's lens
+
+To the Gnostic, the deepest truth about the human condition is that we are **divine sparks trapped in matter** — fragments of the true, unknowable God imprisoned in bodies and a world made not by that God but by an ignorant or malevolent lesser power, the **Demiurge**, who mistakes himself for the Most High. Salvation is therefore not forgiveness of sin but **awakening**: the secret **gnosis**, the saving knowledge of who we really are, where we came from, and how to return — a wake-up call to the sleeping spirit to remember its home in the *pleroma*, the fullness of the divine. The world's evils are explained at a stroke (matter itself is the prison), the elite are those who *know*, and the savior (in Christian Gnosticism, Christ) is a revealer who brings the liberating knowledge rather than a sacrifice for sin. From inside, Gnosticism offers the exhilarating consolation that one's truest self is divine, a stranger in a strange land whose escape is assured by knowledge.
+
+## The skeptical lens
+
+The historian's first caution is that "**Gnosticism**" may not be one thing at all: the category was largely constructed by later scholars from the polemics of its enemies, and covers a diverse array of teachers and sects (Valentinians, Sethians, and others) who did not think of themselves as a single religion — some scholars would retire the umbrella term entirely. For most of history these groups were known only through the **hostile summaries of the Church Fathers** (Irenaeus, Hippolytus) who wrote to refute them, until the 1945 discovery of the **Nag Hammadi** library gave us Gnostic texts in their own voice — a genuine revolution, though those Coptic manuscripts are fourth-century copies of earlier Greek works whose dates and origins are debated. The relationship of Gnosticism to early Christianity (a Christian heresy? an independent movement? a parallel development?) is genuinely unsettled. History attests the texts, the teachers, and the ideas; the metaphysical claims — the Demiurge, the pleroma, the divine spark — are recorded as what these groups believed.
+
 ## Symbology and sacred encoding
 
 Gnosticism is, in a sense, **the tradition of sacred encoding itself** — its entire premise is
