@@ -41,12 +41,21 @@ drafted and go live carrying a "Recently added — pending review" tag; Carter
 clears them in batch, at which point the tag is removed and the status becomes
 `CLEARED`.
 
-**Batch II — deepening pass (in progress).** Already-published chapters are being
-revisited and expanded with additional sourced material under the same standards
-(tracked in `icm/stage-4-expansions/CONTEXT.md`). Completed groups merge to
-production as they finish. **Deepened and live so far: ch01–ch20** (era 02 + seed,
-Early Iron Age, Axial Age, Late Antiquity). This is additive — it does not change a
-chapter's review status, only its depth.
+**Completion pass — DONE (2026-09).** Every chapter has been brought to Tier-A depth
+(all now ~2,100–4,800 words) and conformed to the locked **five-section template**
+(narrative / believer's lens / skeptical lens / symbology / evidence-honesty, plus
+connections + sources), with explicit `## The believer's lens` and `## The skeptical
+lens` headers on all chapters. The former single **ch29 "Aztec, Maya & Inca"** was
+**split into three** standalone chapters — **ch29 The Maya**, **ch43 The Aztec**, **ch44
+The Inca** — bringing the archive to **44 chapters**. Symbology-mandate items were homed:
+gematria worked examples + the ELS "Bible code" debunking (ch10, ch26), Greek isopsephy
+(ch15), Arabic abjad (ch21), the Shroud of Turin (ch16), runes (ch23). Tracked in
+`icm/completion/`. All sources web-checked; contested claims flagged, not resolved.
+
+**Batch II — earlier deepening pass (superseded by the completion pass above).**
+Already-published chapters ch01–ch20 were revisited and expanded (tracked in
+`icm/stage-4-expansions/CONTEXT.md`); the completion pass then extended that depth to
+every remaining chapter and added the lens structure throughout.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
@@ -89,10 +98,12 @@ chapter's review status, only its depth.
 | ch26 — Kabbalah | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch26-kabbalah-high-medieval.md` |
 | ch27 — Sufism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch27-sufism-high-medieval.md` |
 | ch28 — Scholasticism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
-| ch29 — Aztec, Maya & Inca | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch29-aztec-maya-inca-high-medieval.md` |
+| ch29 — The Maya | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch29-maya-high-medieval.md` |
+| ch43 — The Aztec | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch43-aztec-high-medieval.md` |
+| ch44 — The Inca | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch44-inca-high-medieval.md` |
 | ch30 — Bhakti | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch30-bhakti-high-medieval.md` |
 
-**High Medieval (era 07) traditions complete** (ch26–ch30): Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti.
+**High Medieval (era 07) traditions complete** (ch26–ch30 + ch43–ch44): Kabbalah, Sufism, Scholasticism, The Maya, The Aztec, The Inca, Bhakti. *(The former combined ch29 "Aztec, Maya & Inca" was split into three chapters in the 2026-09 completion pass.)*
 
 | ch31 — The Reformation | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch31-reformation-early-modern.md` |
 | ch32 — The Witch Trials | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch32-witch-trials-early-modern.md` |
