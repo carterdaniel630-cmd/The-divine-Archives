@@ -911,6 +911,61 @@
       '</svg>',
       "Interpretive illustration",
       "A T-pillar of the kind raised at Göbekli Tepe &mdash; a faceless standing being with a carved arm and hands, beneath the solstice sun the Neolithic learned to build into stone. An original geometric rendering, not a specific pillar."
+    ),
+
+    /* Ch43 — The Aztec: the Sun Stone (Piedra del Sol) as a cosmogram of the Five Suns */
+    "ch43": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // concentric calendar rings
+        '<circle cx="100" cy="100" r="82" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>' +
+        '<circle cx="100" cy="100" r="64" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>' +
+        '<circle cx="100" cy="100" r="46" stroke="currentColor" stroke-width="1"/>' +
+        // ring of day-sign ticks
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<line x1="100" y1="18" x2="100" y2="30"/><line x1="100" y1="170" x2="100" y2="182"/>' +
+          '<line x1="18" y1="100" x2="30" y2="100"/><line x1="170" y1="100" x2="182" y2="100"/>' +
+          '<line x1="42" y1="42" x2="50" y2="50"/><line x1="158" y1="42" x2="150" y2="50"/>' +
+          '<line x1="42" y1="158" x2="50" y2="150"/><line x1="158" y1="158" x2="150" y2="150"/></g>' +
+        // nahui-ollin ("four-motion"): the sign of the Fifth Sun, a rotated square with four points
+        '<g stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">' +
+          '<path d="M100 58 L142 100 L100 142 L58 100 Z"/>' +
+          '<path d="M100 70 L130 100 L100 130 L70 100 Z" stroke-width="0.7" opacity="0.6"/></g>' +
+        // Tonatiuh, the sun-face at the center, with the sacrificial knife-tongue
+        '<g stroke="currentColor" stroke-linecap="round">' +
+          '<circle cx="100" cy="100" r="20" stroke-width="1.2"/>' +
+          '<circle cx="92" cy="96" r="2.4" stroke-width="1"/><circle cx="108" cy="96" r="2.4" stroke-width="1"/>' +
+          '<path d="M92 108 q8 7 16 0" stroke-width="1"/>' +
+          '<path d="M96 112 L100 122 L104 112 Z" stroke-width="0.9" opacity="0.8"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "The Aztec Sun Stone (Piedra del Sol) read as a cosmogram: concentric calendar rings, the day-sign ticks, the *nahui-ollin* &ldquo;four-motion&rdquo; glyph of the Fifth Sun, and the face of Tonatiuh with its knife-tongue at the center. An original geometric rendering, not a copy of the monument."
+    ),
+
+    /* Ch44 — The Inca: Inti, the sun, over the stepped terraces of the Andes */
+    "ch44": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>' +
+        // Inti, the sun-disk with a face
+        '<circle cx="100" cy="84" r="30" stroke="currentColor" stroke-width="1.3"/>' +
+        '<g stroke="currentColor" stroke-linecap="round">' +
+          '<circle cx="90" cy="80" r="2.6" stroke-width="1"/><circle cx="110" cy="80" r="2.6" stroke-width="1"/>' +
+          '<line x1="100" y1="82" x2="100" y2="90" stroke-width="0.9"/>' +
+          '<path d="M90 94 q10 8 20 0" stroke-width="1"/></g>' +
+        // rays: alternating straight and stepped/triangular
+        '<g stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.85">' +
+          '<line x1="100" y1="48" x2="100" y2="36"/><line x1="70" y1="84" x2="56" y2="84"/><line x1="130" y1="84" x2="144" y2="84"/>' +
+          '<line x1="79" y1="63" x2="69" y2="53"/><line x1="121" y1="63" x2="131" y2="53"/>' +
+          '<line x1="79" y1="105" x2="69" y2="115"/><line x1="121" y1="105" x2="131" y2="115"/></g>' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.5">' +
+          '<path d="M100 30 l4 6 -8 0 Z"/><path d="M52 84 l6 -4 0 8 Z"/><path d="M148 84 l-6 -4 0 8 Z"/></g>' +
+        // the stepped terraces (andenes) of the sacred mountain
+        '<g stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">' +
+          '<path d="M40 170 L40 156 L64 156 L64 142 L88 142 L88 130 L112 130 L112 142 L136 142 L136 156 L160 156 L160 170"/>' +
+          '<path d="M56 170 L56 162 L144 162 L144 170" stroke-width="0.7" opacity="0.5"/></g>' +
+      '</svg>',
+      "Interpretive illustration",
+      "Inti, the Inca sun, his face ringed by straight and stepped rays, rising over the terraced andenes of the sacred mountain &mdash; the sun-emperor&rsquo;s divine ancestor above the worked Andean earth. An original geometric rendering, not a copy of any object."
     )
 
   };
