@@ -1,5 +1,6 @@
 # Chapter 25 — Shinto: The Way of the Kami
 
+*Recently added — pending full review.*
 
 Japan's religion of the kami — a faith with no founder and, for most of its history, no separate name, so entangled with Buddhism that scholars still argue whether "Shinto" as an independent religion existed at all before modern times — reconstructed from an eighth-century imperial chronicle, a shrine that is torn down and rebuilt every twenty years, and the hard task of separating ancient kami-worship from its later reinventions.
 
@@ -29,49 +30,29 @@ When Susanoo's violence drove **Amaterasu** to hide in a cave and plunge the wor
 
 If one idea organizes Shinto practice, it is **purity**. The tradition is far less concerned with sin than with **kegare** — pollution, the defilement that comes from death, blood, disease, and disorder — and with restoring **purity** through ritual cleansing. Worship centers on the **jinja** (shrine), entered through a **torii** gate that marks the passage from ordinary to sacred ground; visitors rinse hands and mouth at the **temizuya** water basin; priests (**kannushi**), assisted by shrine maidens (**miko**), perform **harae** (purification), recite **norito** prayers, present offerings of rice, sake, and cloth, and hold **matsuri** — the seasonal festivals that carry the kami through the community. The most rigorous purification, **misogi**, immerses the body in cold river or waterfall, re-enacting Izanagi's cleansing. The concern is not moral guilt but ritual cleanness: to come before the kami rightly, and to keep the community and the land in order.
 
-## The angry dead: goryō and the god Tenjin
-
-Death was the deepest pollution, and the dead could be dangerous — none more so than those who died
-with a grievance. In the **Heian period** a widespread fear arose of the **goryō**, the vengeful
-spirits (*onryō*) of people who had suffered unjust deaths and now struck back at the living with
-**plagues, storms, and disaster**. The remedy was as striking as the fear: rather than exorcise such
-a spirit, one **placated and deified it**, turning a feared ghost into a protective god. The classic
-case is **Sugawara no Michizane** (845–903), a brilliant scholar and minister brought down by
-rivals' slander and exiled to die far from the capital. After his death, a run of calamities in
-Kyoto — the deaths of his enemies, epidemics, and above all **lightning striking the imperial
-palace** — was blamed on his furious spirit. The terrified court **exonerated him, restored his
-rank, and enshrined him as a god**: **Tenjin**, worshipped at the great **Kitano** and **Dazaifu
-Tenmangū** shrines, where over time the vengeful ghost mellowed into a benevolent **patron of
-scholarship**, prayed to by students to this day. It is one of the most revealing patterns in
-Japanese religion — the sacred generated not only from awe but from **fear appeased**, the angry
-dead transformed into a kami by worship.
+The kami themselves are numberless and various. Some are great cosmic powers (Amaterasu, Susanoo); many are the **ujigami**, the tutelary kami of a clan or locality; some are deified humans, like the vengeful scholar-statesman Sugawara no Michizane, worshipped as **Tenjin**, kami of learning; **Hachiman** became the kami of war and the imperial house; and **Inari**, kami of rice and prosperity, is served at tens of thousands of shrines marked by vermilion **torii** tunnels and guardian foxes. And the everyday practice of the shrine is intimate and practical: worshippers clap and bow before the kami, buy protective amulets (**omamori**), draw fortune-slips (**omikuji**) and tie the bad ones to a rack, and hang wooden **ema** plaques painted with their prayers — the kami approached less for salvation than for a safe birth, a passed exam, a good harvest, a blessing on the here and now.
 
 ## The fusion with Buddhism
 
 The defining fact of Shinto in this era is its **union with Buddhism** — *shinbutsu-shūgō*, "the amalgamation of kami and buddhas." When Buddhism arrived in the sixth century it did not displace the kami; the two grew together. From the **early eighth century**, **jingū-ji** — Buddhist temples built at Shinto shrines — appeared, so that sutras were chanted to the kami and kami were understood as protectors of the Dharma.
 
-In the **Heian period (794–1185)** this hardened into a theology: **honji suijaku**, "original ground and manifest trace." The kami, it held, were **local manifestations** (*suijaku*, "traces") of universal **buddhas and bodhisattvas** (*honji*, "original ground") — Amaterasu, for instance, identified with the cosmic Buddha Dainichi (Mahāvairocana). The great Buddhist schools built their own syntheses: the Shingon school's **Ryōbu Shintō** and the Tendai school's **Sannō Shintō** wove kami and buddhas into single systems of doctrine and ritual. For roughly a thousand years, until the forced separation of 1868, this blended religion — not a "pure" Shinto — was simply the religion of Japan.
+In the **Heian period (794–1185)** this hardened into a theology: **honji suijaku**, "original ground and manifest trace." The kami, it held, were **local manifestations** (*suijaku*, "traces") of universal **buddhas and bodhisattvas** (*honji*, "original ground") — Amaterasu, for instance, identified with the cosmic Buddha Dainichi (Mahāvairocana). The great Buddhist schools built their own syntheses: the Shingon school's **Ryōbu Shintō** and the Tendai school's **Sannō Shintō** wove kami and buddhas into single systems of doctrine and ritual. For roughly a thousand years, until the forced separation of 1868, this blended religion — not a "pure" Shinto — was simply the religion of Japan. Out of the fusion grew its most distinctive practitioners, the **yamabushi** of **Shugendō** — mountain ascetics who combined kami-worship, esoteric (Tantric) Buddhism, and Daoist elements in austerities on sacred peaks, seeking power through communion with the mountain kami and buddhas at once.
 
-## The mountain way: Shugendō
-
-The fusion of kami and buddhas produced, in the mountains, a distinct tradition of its own.
-**Shugendō** — "the way of trial and power" — grew from Japan's ancient reverence for **mountains**
-as sacred realms where the dead and the gods dwell, and fused it with **esoteric Buddhism** (Shingon
-and Tendai), **Daoism**, and shamanism into a path of ascetic power. Its legendary founder is **En
-no Gyōja** ("En the Ascetic," 7th century), a mountain wizard of many miracles. Its practitioners,
-the **yamabushi** ("those who lie down in the mountains"), sought spiritual power (*genriki*) through
-severe austerities in the peaks — fasting, standing under freezing **waterfalls**, chanting sutras
-and mantras, and traversing sacred ranges like **Yoshino** and **Ōmine** as a ritual re-enactment of
-death and rebirth. Part priest, part shaman, part wonder-worker, the yamabushi served villages as
-healers, exorcists, and diviners, and became one of the most characteristic religious figures of
-medieval Japan — the living embodiment of the kami-and-buddha fusion, worked out not in a temple's
-texts but on the body, in the mountains.
+The idea of a "pure," original Shinto, cleansed of Buddhism, is itself largely the work of a later movement: the **kokugaku** ("national learning") of the eighteenth century, above all the philologist **Motoori Norinaga** (1730–1801), whose vast commentary on the Kojiki sought to recover an authentic Japanese Way beneath the foreign Buddhist and Confucian overlay. It was a scholarly and nationalist project of *reconstruction* — and it laid the intellectual groundwork for the state's later, forcible separation of kami from buddhas and the invention of State Shinto.
 
 ## Shrines, treasures, and the ground
 
 The material record is grand and specific. **Ise Jingū**, sacred to Amaterasu, in its austere **shinmei-zukuri** style of raw cypress, is rebuilt every twenty years. **Izumo Taisha**, one of the oldest and largest shrines, sacred to **Ōkuninushi**, is renewed on a longer cycle; its region, Izumo, holds an alternative mythic tradition that the imperial Kojiki had to absorb and subordinate — a hint that the "national" myth papered over older regional powers.
 
 At the symbolic center stand the **Three Sacred Treasures**, the imperial regalia: the mirror **Yata no Kagami** (said to be kept at Ise), the sword **Kusanagi no Tsurugi** (at Atsuta Shrine), and the jewel **Yasakani no Magatama**. They are said to have descended with Ninigi and to authenticate the emperor. Crucially for an honest account: they are **never shown** — not to the public, not to scholars, arguably not even to the emperor. Their existence, age, and nature cannot be independently verified; what history can attest is the *tradition* of them and their role in enthronement, not the objects themselves.
+
+## The believer's lens
+
+To live within kami-worship is to inhabit a world that is **alive and near**, and to keep oneself and one's community in right, clean relation to it. The kami are not a distant, judging God but a numberless host of presences — in the great sun overhead, in the rice in the field, in a waterfall, an old tree, a strange rock, a revered ancestor — and religion is the tending of that relationship: greet the kami at the shrine, keep the pollutions of death and disorder away from the sacred, renew purity through washing and rite, and carry the kami through the year in the joy of the *matsuri*. There is little doctrine to believe and no founder to follow; there is a *way* to walk, a set of gestures and courtesies and cleansings by which life is kept in harmony with the sacred powers of the land. Presence matters more than permanence — which is why Ise is rebuilt new every twenty years, the form reborn rather than preserved — and gratitude and purity matter more than sin and salvation. To the worshipper who claps twice before the shrine and hangs a painted prayer for a child's health, Shinto is simply the native, immemorial way of being at home in a sacred Japan, whatever the scholars say about when it acquired its name.
+
+## The skeptical lens
+
+The historian's central caution here is unusual and important: the very object of study may be, in part, a **modern back-formation**. The Kuroda thesis — that "Shinto" as an independent religion is largely a modern shaping, and that for most of Japanese history kami-worship existed *within* a Buddhist frame — is influential (if debated), and it means that a "pure Shinto" cleanly separable from Buddhism in this era is very likely an anachronism. The foundational texts, the Kojiki and Nihon Shoki, are not neutral scripture but **eighth-century imperial-legitimation documents**, written to root the ruling house in the sun-goddess; the divine descent of the emperors is a claim of faith, not history, and the alternative traditions of places like Izumo show the "national" myth papering over older regional powers. Much now presented as timeless "Shinto symbolism" was codified far later (the kokugaku recovery), and the fiercely nationalist **State Shinto** of 1868–1945 — emperor as living god, shrines as organs of the state, marshaled toward war — was a **modern political construction** that must never be read back onto the ancient kami-worship; it was formally dismantled after 1945, and the Emperor publicly renounced his divinity in 1946. Even the sacred **regalia** cannot be examined — they are never shown — so history can attest the tradition of them, not the objects. The honest account affirms the deep antiquity and continuity of kami-worship and shrine ritual, and marks the "religion called Shinto," the pure origin, and the imperial divinity as later constructions.
 
 ## Symbology and sacred encoding
 
@@ -91,7 +72,7 @@ Shinto is the Japanese member of this era's great pattern: an **indigenous, natu
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The existence and dating of the **Kojiki (712)** and **Nihon Shoki (720)** and their role as imperial-legitimation texts; the antiquity and continuity of **kami-worship** and **shrine ritual**; the reality of **shinbutsu-shūgō** and the **honji suijaku** theology as the dominant religious form of the era; the shrines themselves — **Ise** and its twenty-year renewal, **Izumo** — and the tradition of the **three regalia**; the centrality of **purity/pollution** and purification ritual; the **goryō** cult of pacifying vengeful spirits by deification (Sugawara no Michizane enshrined as **Tenjin**); and **Shugendō**, the syncretic mountain asceticism of the **yamabushi**.
+**Well-supported by evidence.** The existence and dating of the **Kojiki (712)** and **Nihon Shoki (720)** and their role as imperial-legitimation texts; the antiquity and continuity of **kami-worship** and **shrine ritual**; the reality of **shinbutsu-shūgō** and the **honji suijaku** theology as the dominant religious form of the era; the shrines themselves — **Ise** and its twenty-year renewal, **Izumo** — and the tradition of the **three regalia**; the centrality of **purity/pollution** and purification ritual.
 
 **Not supported (as history).** The **divine descent of the imperial line** from Amaterasu — a claim of faith, not a historical finding. The idea of a **pure, original Shinto** cleanly separable from Buddhism in the medieval period — the evidence points the other way. The projection of modern **State Shinto** (1868–1945) back onto ancient kami-worship — a modern nationalist construction, not the early religion. The **existence and authenticity of the three regalia** as physical objects — they are never shown and cannot be verified; only the tradition can be attested.
 
@@ -110,5 +91,3 @@ Shinto is the Japanese member of this era's great pattern: an **indigenous, natu
 - Torii, shimenawa, shide, purification (harae/misogi/temizuya) — "Shinto Symbols," Tsunagu Japan. https://www.tsunagujapan.com/shinto-symbols-meaning-and-history/
 - Kotodama and the Great Purification norito — Shugyokai, "Musubi, Shimenawa, and Shide." https://shugyokai.org/shugyo/keiko/misogi/norito/musubi-shimenawa-and-shide-how-a-rope-and-a-paper-stripe-shape-the-sacred-in-japan/
 - Kuroda Toshio: "Shinto" as an independent religion as a largely modern shaping; the ongoing debate — "Toshio Kuroda," Wikipedia. https://en.wikipedia.org/wiki/Toshio_Kuroda_(Shinto_professor)
-- Goryō worship, onryō, and the deification of Sugawara no Michizane as Tenjin (Kitano, Dazaifu Tenmangū) — "Sugawara no Michizane," Wikipedia. https://en.wikipedia.org/wiki/Sugawara_no_Michizane
-- Shugendō, the yamabushi mountain ascetics, and En no Gyōja — "Shugendō," Wikipedia. https://en.wikipedia.org/wiki/Shugend%C5%8D; "Yamabushi," Wikipedia. https://en.wikipedia.org/wiki/Yamabushi

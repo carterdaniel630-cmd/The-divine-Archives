@@ -223,6 +223,14 @@ their wavy hair and toga-like robes, show the unmistakable influence of **Greek*
 art, carried east in the wake of Alexander (Chapter 8): one of history's most
 beautiful cross-cultural fusions, Greco-Buddhist sculpture.
 
+## The believer's lens
+
+To the Buddhist, the Buddha is not a god to be worshipped but a **physician and awakened teacher** who diagnosed the deepest human sickness and prescribed its cure. The diagnosis is the **Four Noble Truths**: life as we grasp at it is shot through with *dukkha* (unsatisfactoriness); its cause is craving; craving can cease; and the way to its cessation is the **Eightfold Path** of ethical, meditative, and wisdom practice. Behind it lies the radical insight of **anattā** — that there is no fixed, permanent self at all, only a flow of conditioned processes — and of **dependent origination**, the web of causes by which craving spins the wheel of **rebirth**. To follow the path is to loosen the grip of craving and ignorance until, at last, the fire goes out: **nirvāṇa**, the unconditioned peace beyond birth and death. From inside, this is not pessimism but the most practical hope imaginable — that suffering has a cause, and the cause can be removed, by anyone willing to walk the path.
+
+## The skeptical lens
+
+The historian notes at once that the **life of the Buddha** as usually told is a later, layered, and miracle-laden construction — the earliest connected biographies postdate him by centuries — so that while a wandering teacher named Siddhārtha Gautama in the śramaṇa ferment of the Ganges plain around the fifth century BCE is historically credible, the vivid particulars (the four sights, the palace, the demon Māra) are read as tradition, not documentary fact. His teachings, too, were transmitted **orally** for centuries before the Pali Canon was written down (traditionally in the first century BCE), so recovering the Buddha's own words beneath the tradition is genuinely difficult. The doctrines themselves — *anattā*, karma, rebirth, nirvāṇa — are profound philosophical and contemplative claims, described here as the tradition holds them, neither proven nor refuted; whether there is rebirth, or an unconditioned freedom to be reached, is not a question the historical record can settle. What it can attest is the movement, its texts, its spread, and the emperor Ashoka who carried it across Asia.
+
 ## Symbology and sacred encoding
 
 **The eloquence of absence.** Early Buddhist **aniconism** is itself the tradition's

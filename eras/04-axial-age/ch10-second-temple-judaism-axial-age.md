@@ -239,6 +239,14 @@ found wherever Jews lived. When Rome destroyed the Temple in 70 CE, it was the
 synagogue and the Torah-scholarship of the Pharisees that allowed Judaism to
 survive the loss — a resilience built, as we saw, in the exile.
 
+## The believer's lens
+
+To the Jews of the Second Temple period, they were the **covenant people** living in the long ache between promise and fulfillment — the Temple rebuilt but under foreign rule, the prophets fallen silent, the pagan empires pressing in — and their faith was the passionate conviction that the God of Israel would **act**: send his anointed, judge the nations, vindicate the righteous, and restore his people. Out of that hope came the era's great new ideas, each held as revelation: the coming **Messiah** (in several shapes), the **resurrection** of the dead and a **world to come**, the ranks of **angels**, and a cosmos secretly governed by God toward a certain end. Torah stood at the center — to study and keep it was itself communion with God — and the many parties (Pharisees, Sadducees, Essenes, and the rest) were rival ways of being faithful, not rival religions. To the believer, this age is where the faith deepened into the hope of redemption that Judaism and Christianity both carry.
+
+## The skeptical lens
+
+The historian sees not one Judaism but **many "Judaisms,"** a strikingly diverse and creative religious world — and reads its new doctrines as **developments** with traceable causes. The dualism, angelology, final judgment, and resurrection that bloom in this period look to many scholars like ideas shaped in part by contact with **Persian** (Zoroastrian, Chapter 6) and **Hellenistic** thought during and after the exile, though the extent of that influence is debated. The apocalyptic literature is datable political theology in cipher (Daniel's beasts are the Hellenistic empires); the **Dead Sea Scrolls** give direct, unedited evidence of one sect's life and expectations; and the biblical canon itself was still fluid, closing only later. None of this adjudicates whether God was in fact about to redeem his people — that is the era's faith, recorded not resolved. What the evidence shows is a tradition in rapid, fertile transformation, out of which both Rabbinic Judaism (Chapter 19) and Christianity (Chapter 16) would be born.
+
 ## Symbology and sacred encoding
 
 This is one of the richest periods in the whole archive for sacred encoding, and
@@ -249,11 +257,22 @@ several strands begin here that later chapters will follow.
 reading by *Adonai*. Meanwhile, contact with Greek **isopsephy** helped the Jewish
 practice of **gematria** — reading the number-values of Hebrew letters for hidden
 meaning — take clearer shape in this period, though its great flowering lies later,
-in rabbinic and kabbalistic hands. *An honesty note the project insists on:* the
-deliberate number-symbolism and cipher of the ancient apocalyptic writers (below)
-is a genuine literary device; the modern "**Bible code**" claims — hidden messages
-found by equidistant-letter-sequence searches — are a twentieth-century phenomenon,
-statistically discredited, and must not be confused with the real thing.
+in rabbinic and kabbalistic hands (Chapter 26). Real, documented gematria is a
+devotional and interpretive art: a classic worked case is *Eliezer* (אליעזר),
+Abraham's servant, whose letters total **318** — the very number of Abraham's
+fighting men in Genesis 14:14, which the Talmud reads as a hint that the one servant
+was worth them all. *An honesty note the project insists on:* this deliberate
+number-symbolism, like the cipher of the ancient apocalyptic writers (below), is a
+**genuine literary device** used by the authors themselves. It must be sharply
+distinguished from the modern "**Bible code**" — the claim, popularized by Michael
+Drosnin's *The Bible Code* (1997) on the back of a 1994 paper by Witztum, Rips, and
+Rosenberg, that prophecies lie hidden in the Torah as **equidistant-letter sequences**
+(ELS). That claim was **statistically discredited**: in 1999 McKay, Bar-Natan,
+Bar-Hillel, and Kalai showed in *Statistical Science* that the same method finds
+equally "significant" hidden messages in *War and Peace* and other non-sacred texts,
+exposing the result as an artifact of flexible searching, not a code. The ancient
+authors buried patterns of meaning; they did not hide a ciphered almanac for a
+computer to recover three thousand years later.
 
 **Apocalyptic as code.** The apocalypses are, quite literally, **encoded political
 theology.** Daniel's four beasts are a cipher for four empires; his "seventy weeks"

@@ -1,23 +1,15 @@
 # Stage 4 — Deepening Pass (Batch II) — CONTEXT
 
-**STATUS: 🟢 COMPLETE — all chapters cleared.** On 2026-08-18 Carter gave a
-blanket sign-off ("approve everything"): the **"Recently added — pending full review"
-tag has been cleared from every chapter that carried it** (ch26–ch42 — the last 17
-pending chapters), in both `data.js` (the site badge/banner) and the markdown sources.
-No chapter now carries a pending-review tag; the review gate is fully closed.
-
-This was the second review batch:
+**STATUS: 🟡 IN PROGRESS — rolling merges.** This is the second review batch:
 revisiting already-published chapters (ch01–ch30) and expanding them with additional
 publicly available information under the same standards. Per Carter's instruction
-("merge, update, continue"), completed groups are **merged to production as they
-finish** rather than held to a single end-of-batch gate. **All 30 chapters now
-deepened on the working branch.**
+("merge, update, continue"), completed groups are being **merged to production as they
+finish** rather than held to a single end-of-batch gate.
 
-**Merged live (production):** **ch01–ch25** (era 02 + seed, Early Iron Age, Axial
-Age, Late Antiquity, Early Medieval).
-**Deepened, closing group merging now:** **ch26–ch30** (High Medieval — Kabbalah,
-Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti). This is the last group; merging it
-completes the full ch01–ch30 Batch II pass.
+**Merged live (production):** groups 1–4 — **ch01–ch20** (era 02 + seed, Early Iron
+Age, Axial Age, Late Antiquity).
+**Remaining:** group 5 — ch21–ch30 (Early Medieval + High Medieval), continuing on
+the working branch and merged as the group closes.
 
 ## Scope
 Deepen — not merely re-touch — the earlier chapters: add sourced detail (more source texts, sects, regional variants, ritual practices, archaeology, and cross-disciplinary angles), strengthen the symbology and evidence-honesty sections where thinner, and keep contested points flagged. No structural or tonal change; same length target or longer.
@@ -33,8 +25,7 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
 2. ch06–ch09 (Early Iron Age) — **✅ COMPLETE**
 3. ch10–ch15 (Axial Age) — **✅ COMPLETE**
 4. ch16–ch20 (Late Antiquity) — **✅ COMPLETE**
-5. ch21–ch25 (Early Medieval) — **✅ COMPLETE**
-6. ch26–ch30 (High Medieval) — **✅ COMPLETE** (Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti) — **entire ch01–ch30 pass now content-complete**
+5. ch21–ch30 (Early Medieval + High Medieval)
 
 ## Progress
 - **ch01 The Flood — expanded (2026-08-17).** Added: Irving Finkel's *Ark Tablet*
@@ -124,111 +115,8 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   Sutra of 868 CE, the oldest dated printed book).
 - **Group-4 checkpoint (Late Antiquity):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
-- **ch21 Islam — expanded (2026-08-17).** The Night Journey (Isra and Miʿraj) and
-  the Dome of the Rock; the third branch, the Kharijites and the surviving Ibadis.
-- **ch22 Patristic Christianity — expanded (2026-08-17).** Pseudo-Dionysius and
-  apophatic theology; the iconoclasm controversy, John of Damascus, Nicaea II (787),
-  and the Triumph of Orthodoxy (843).
-- **ch23 Norse Paganism — expanded (2026-08-17).** The Norns and the web of fate
-  (wyrd); the folk cult of the álfar, dísir, and landvættir (álfablót/disablót).
-- **ch24 Tantra — expanded (2026-08-17).** The ten Mahāvidyās (Chinnamastā,
-  Dhūmāvatī); the alchemical body — the Nāth siddhas, rasa/mercury alchemy, and
-  the roots of haṭha yoga (David Gordon White).
-- **ch25 Shinto — expanded (2026-08-17).** The goryō cult and the deified vengeful
-  dead (Sugawara no Michizane / Tenjin); Shugendō and the yamabushi mountain ascetics.
-- **Group-5a checkpoint (Early Medieval):** integrity 42/42/42/42; every deepened
-  page retains plate + evidence + sources.
-- **ch26 Kabbalah — expanded (2026-08-18).** [see branch history] the Zohar's
-  reception and the Lurianic turn (tzimtzum, shevirat ha-kelim, tikkun).
-- **ch27 Sufism — expanded (2026-08-18).** Al-Hallaj's "Ana al-Haqq" and the
-  martyr-mystic; the cult of the saints (awliya), tombs, and the living orders.
-- **ch28 Scholasticism — expanded (2026-08-18).** The philosophers of Islam as
-  thinkers in their own right — Avicenna's *Proof of the Truthful* (necessary
-  being) and Averroes' defense of philosophy's autonomy, the Latin Averroists
-  (Siger of Brabant, Boethius of Dacia) and the "double truth" charge feeding
-  1277; and the mystical counter-current — the Beguines (Hadewijch, Mechthild,
-  Marguerite Porete, burned 1310) and Meister Eckhart.
-- **ch29 Aztec/Maya/Inca — expanded (2026-08-18).** The Mesoamerican ballgame
-  (pitz/ōllamaliztli) as ritual re-enactment of the Popol Vuh Hero Twins in
-  Xibalba, tied to sacrifice; and post-conquest survival — the Taki Onqoy
-  revitalization movement (1560s) and syncretic entanglement (Virgin of
-  Guadalupe, Pachamama) carrying the old religions into folk Catholicism.
-- **ch30 Bhakti — expanded (2026-08-18).** Jayadeva's *Gita Govinda* (c. 1190),
-  the erotic Radha-Krishna love cycle and *madhurya bhava*; and the women saints
-  (Andal, Akka Mahadevi, Lal Ded, Mirabai) and their defiance of marriage and caste.
-- **Group-5b checkpoint (High Medieval):** integrity 42/42/42/42; every deepened
-  page retains plate + evidence + sources. **This closes the full ch01–ch30 Batch II
-  deepening pass.**
-
-### Batch III — deepening the Batch I chapters (ch31–ch42)
-After Carter's "approve everything" sign-off (all pending tags cleared, ch26–ch42
-marked CLEARED), the deepening pass is being extended to the chapters that never got
-one — ch31–ch42 (Early Modern, Modern, Prehistory) — to bring the whole archive to
-uniform depth. Same method and rolling-merge pattern.
-- **ch31 Reformation — expanded (2026-08-18).** The pre-Reformation forerunners
-  (Wycliffe and the Lollards, Jan Hus burned at Constance 1415, the Waldensians);
-  and the German Peasants' War of 1524–25 (the Twelve Articles, Thomas Müntzer,
-  Luther's *Against the Murderous, Thieving Hordes*, the massacre at Frankenhausen).
-- **ch32 Witch Trials — expanded (2026-08-18).** "The brakes": the Spanish and Roman
-  Inquisitions as restraints on the hunts (Salazar Frías and the Basque panic at
-  Zugarramurdi, 1609–11), against the lethal local secular courts; plus the early
-  skeptics Johann Weyer (1563) and Reginald Scot (1584).
-- **ch33 African Traditional Religion — expanded (2026-08-18).** "The southern and
-  eastern reaches" (Zulu uNkulunkulu / amadlozi / isangoma; San trance dance and
-  num; Nilotic Nuer and Dinka High Gods) to balance the West-African focus; and
-  "Witchcraft and the reading of misfortune" (Evans-Pritchard's Azande, the poison
-  oracle benge), held to the witch-trials chapter's evidence care.
-- **ch34 Sikhism — expanded (2026-08-18).** "The Golden Temple" (Harmandir Sahib as
-  doctrine in stone — four doors, below-grade humility, the sarovar of amrit); and
-  "The daily discipline, and the many Sikhisms" (the nitnem prayers and Rehat
-  Maryada; the sects: Udasi, Nirmala, Nirankari, Namdhari, Sahajdhari).
-- **Group-6 checkpoint (Early Modern):** integrity 42/42/42/42; every deepened page
-  retains plate + evidence + sources. Merged to production.
-- **ch35 New Religious Movements — expanded (2026-08-18).** "The gods of the cargo"
-  (Melanesian cargo cults — the Vailala Madness of 1919, the John Frum movement) and
-  "Choice or brainwashing?" (Eileen Barker's *Making of a Moonie* dismantling the
-  brainwashing thesis; deprogramming and the anti-cult movement).
-- **ch36 Spiritualism — expanded (2026-08-18).** "The forerunners" (Swedenborg,
-  Mesmer, Andrew Jackson Davis) and "Kardec and the spirits of Brazil" (Allan
-  Kardec's reincarnationist Spiritism and its mass following in Brazil via Chico
-  Xavier).
-- **ch37 Theosophy — expanded (2026-08-18).** "The World Teacher who refused"
-  (Besant, Leadbeater, and Krishnamurti's 1929 dissolution of the Order of the Star)
-  and "The invisible made visible" (Theosophy and the birth of abstract art —
-  Thought-Forms, Kandinsky, Mondrian, Hilma af Klint).
-- **ch38 Wicca — expanded (2026-08-18).** "Valiente and the shaping of the Craft"
-  (Doreen Valiente, the Charge of the Goddess; Alexandrian Wicca; Buckland to
-  America) and "From coven to courtroom" (legal recognition — Circle Sanctuary v.
-  Nicholson, 2007, the pentacle on military headstones).
-- **ch39 Satanism — expanded (2026-08-18).** "The anatomy of the panic" (Michelle
-  Remembers, recovered-memory therapy, the McMartin trial) and "The Devil's party"
-  (the Romantic literary genealogy — Milton, Blake, Shelley, Byron, Baudelaire).
-- **ch40 Diaspora Religions — expanded (2026-08-18).** "The Kongo stream, and the
-  wider Caribbean" (Palo/nganga; Obeah, Spiritual Baptists, Winti) and "Marie Laveau
-  and the New Orleans crossroads" (Louisiana Voodoo and the Voodoo/hoodoo
-  distinction); fixed a mis-pasted Sources URL.
-- **Group-7 checkpoint (Modern):** integrity 42/42/42/42; every deepened page retains
-  plate + evidence + sources.
-- **ch41 Paleolithic — expanded (2026-08-18).** "The world beyond Europe" (the
-  Sulawesi/Borneo cave art now older than any in Europe — the warty pig and the
-  therianthrope hunting scene) and "The first music" (the Swabian bone flutes).
-- **ch42 Neolithic — expanded (2026-08-18).** "The Levantine ancestors" (Jericho and
-  'Ain Ghazal plastered skulls and statues) and "The daughters of Çatalhöyük" (the
-  2025 *Science* ancient-DNA study of matrilineal, female-centered descent — an
-  honest update to the Mother Goddess debate).
-- **Group-8 checkpoint (Prehistory):** integrity 42/42/42/42; every deepened page
-  retains plate + evidence + sources. **This closes the Batch III pass (ch31–ch42);
-  with Batch II (ch01–ch30), the entire ch01–ch42 archive has now been deepened.**
 
 ## Gate
-Originally grouped as **Batch II**, a single review point separate from Batch I.
-Superseded by Carter's "merge, update, continue" and "approve everything"
-instructions: completed groups merge to production as they finish, each with its own
-integrity checkpoint, and every deepened chapter keeps its evidence-honesty and
-sources. **All pending-review tags cleared (Carter's blanket approval); the entire
-ch01–ch42 archive is deepened and CLEARED.** Superseded pre-rolling text follows.
-
-### (superseded)
 Originally grouped as **Batch II**, a single review point separate from Batch I.
 Superseded by Carter's "merge, update, continue" instruction: completed groups now
 merge to production as they finish (groups 1–3 / ch01–ch15 already live), each with its

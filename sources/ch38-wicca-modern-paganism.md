@@ -1,15 +1,20 @@
-# Sources — Chapter 38: Wicca and Modern Paganism
+# Sources — Chapter 38: Wicca & Modern Paganism
 
-Per the project sourcing standard and CLAUDE.md (modern Wicca/Neopaganism as a 20th-c. NRM in its own right). The chapter distinguishes true history from self-understanding: Wicca is a modern construction AND a real living religion.
+Per the project sourcing standard. The chapter treats Wicca as a real, living twentieth-century religion while stating plainly that its "ancient survival" charter and the Murray witch-cult thesis are discredited (Hutton), and that the "burning times" nine-million figure is a myth. Expanded 2026-09 into the five-section template.
 
 ## Sources cited
-- **Gerald Gardner; the 1950s launch; the New Forest coven claim; the (discredited) Murray thesis** — "Gerald Gardner," Wikipedia. https://en.wikipedia.org/wiki/Gerald_Gardner
-- **Gardnerian Wicca: Goddess and Horned God, the Wiccan Rede, sabbats/esbats** — "Gerald Gardner and the Gardnerian Wiccan Tradition," Learn Religions. https://www.learnreligions.com/what-is-gardnerian-wicca-2562910
-- **Wicca as a modern creation from ceremonial magic, Romanticism, folk custom, and Murray's theory (Ronald Hutton)** — "Wicca," Encyclopedia.com. https://www.encyclopedia.com/philosophy-and-religion/other-religious-beliefs-and-general-terms/miscellaneous-religion/wicca
-- **The Golden Dawn's ceremonial magic as a source of Wiccan ritual** — Yale University Press, "The Golden Dawn and the Origins of Wicca." https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/
-- **The Wheel of the Year, the pentacle, the Book of Shadows, and the broader Pagan revival (Druidry, Heathenry, the Goddess movement)** — "Modern Paganism," Wikipedia. https://en.wikipedia.org/wiki/Modern_Paganism
+- **Gerald Gardner, Witchcraft Today (1954), New Forest coven claim, Murray thesis** — "Gerald Gardner," Wikipedia. https://en.wikipedia.org/wiki/Gerald_Gardner
+- **Gardnerian beliefs, the Wiccan Rede, sabbats/esbats, three degrees** — Learn Religions, "Gardnerian Wicca." https://www.learnreligions.com/what-is-gardnerian-wicca-2562910
+- **Doreen Valiente's rewriting of the Book of Shadows (from 1954) and the Charge of the Goddess** — "Doreen Valiente," Wikipedia; Learn Religions. https://en.wikipedia.org/wiki/Doreen_Valiente
+- **Alexandrian Wicca; Alex & Maxine Sanders** — Learn Religions, "Alexandrian Wicca." https://www.learnreligions.com/alexandrian-wicca-2562902
+- **Wicca's documented twentieth-century origins (Ronald Hutton, The Triumph of the Moon, 1999)** — "The Triumph of the Moon," Wikipedia. https://en.wikipedia.org/wiki/The_Triumph_of_the_Moon
+- **Golden Dawn ceremonial magic as a source of Wiccan ritual** — Yale University Press. https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/
+- **Dianic Wicca (Zsuzsanna Budapest, 1971); Starhawk, The Spiral Dance (1979), Reclaiming** — "Dianic Wicca" / "The Spiral Dance," Wikipedia. https://en.wikipedia.org/wiki/Dianic_Wicca · https://en.wikipedia.org/wiki/The_Spiral_Dance
+- **Heathenry/Ásatrú: Icelandic Ásatrúarfélagið (1972), Sveinbjörn Beinteinsson** — "Ásatrúarfélagið," Wikipedia. https://en.wikipedia.org/wiki/%C3%81satr%C3%BAarf%C3%A9lagi%C3%B0
+- **2007 addition of the Wiccan pentacle to VA headstone emblems** — "US Dept. of Veterans Affairs emblems for headstones and markers," Wikipedia. https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs_emblems_for_headstones_and_markers
+- **Wheel of the Year, pentacle, wider Pagan revival** — "Modern Paganism," Wikipedia. https://en.wikipedia.org/wiki/Modern_Paganism
 
 ## Notes
-- Not supported: Wicca as an unbroken ancient witch-religion (Murray thesis debunked); the "nine million burned" / "burning times" myth (see ch32).
-- The eight-fold Wheel of the Year is itself a 20th-c. synthesis.
-- Point of principle: being a modern construction does not lessen Wicca's reality as a sincerely practiced religion.
+- Literary/occult sources of the Craft named: Leland's Aradia (1899), Murray (1921), Graves's White Goddess (1948), Frazer, Freemasonry, Golden Dawn/Crowley.
+- "A religion need not be old to be real" — the modern-construction finding kept distinct from the reality of lived practice (same principle applied to the Zohar, the Egyptian-tarot claim).
+- Cross-links: occult revival (ch37), witch trials (ch32), Norse (ch23), Celtic/Germanic (ch14), NRMs (ch35), and the pentagram contrast with Satanism (ch39).

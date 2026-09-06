@@ -41,19 +41,27 @@ drafted and go live carrying a "Recently added — pending review" tag; Carter
 clears them in batch, at which point the tag is removed and the status becomes
 `CLEARED`.
 
-**Deepening pass — complete for the whole archive.** Every published chapter has
-been revisited and expanded with additional sourced material under the same standards
-(tracked in `icm/stage-4-expansions/CONTEXT.md`), in two waves: **Batch II** (ch01–ch30)
-and **Batch III** (ch31–ch42). **All ch01–ch42 are now deepened and live**, and — after
-Carter's "approve everything" sign-off — all carry **CLEARED** status with no
-pending-review tags. The deepening was additive: it did not change any chapter's
-structure or evidence-honesty format, only its depth.
+**Completion pass — DONE (2026-09).** Every chapter has been brought to Tier-A depth
+(all now ~2,100–4,800 words) and conformed to the locked **five-section template**
+(narrative / believer's lens / skeptical lens / symbology / evidence-honesty, plus
+connections + sources), with explicit `## The believer's lens` and `## The skeptical
+lens` headers on all chapters. The former single **ch29 "Aztec, Maya & Inca"** was
+**split into three** standalone chapters — **ch29 The Maya**, **ch43 The Aztec**, **ch44
+The Inca** — bringing the archive to **44 chapters**. Symbology-mandate items were homed:
+gematria worked examples + the ELS "Bible code" debunking (ch10, ch26), Greek isopsephy
+(ch15), Arabic abjad (ch21), the Shroud of Turin (ch16), runes (ch23). Tracked in
+`icm/completion/`. All sources web-checked; contested claims flagged, not resolved.
+
+**Batch II — earlier deepening pass (superseded by the completion pass above).**
+Already-published chapters ch01–ch20 were revisited and expanded (tracked in
+`icm/stage-4-expansions/CONTEXT.md`); the completion pass then extended that depth to
+every remaining chapter and added the lens structure throughout.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
-| ch41 — The Paleolithic | Tradition | 01-prehistory | **CLEARED** | `eras/01-prehistory/ch41-paleolithic-prehistory.md` |
-| ch42 — The Neolithic | Tradition | 01-prehistory | **CLEARED** | `eras/01-prehistory/ch42-neolithic-prehistory.md` |
+| ch41 — The Paleolithic | Tradition | 01-prehistory | **PENDING REVIEW** | `eras/01-prehistory/ch41-paleolithic-prehistory.md` |
+| ch42 — The Neolithic | Tradition | 01-prehistory | **PENDING REVIEW** | `eras/01-prehistory/ch42-neolithic-prehistory.md` |
 | ch02 — Egypt | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
 | ch03 — Mesopotamia | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
 | ch04 — Indus Valley | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
@@ -87,27 +95,29 @@ structure or evidence-honesty format, only its depth.
 
 **Early Medieval (era 06) traditions complete** (ch21–ch25): Islam, Patristic Christianity, Norse paganism, Tantra, Shinto.
 
-| ch26 — Kabbalah | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch26-kabbalah-high-medieval.md` |
-| ch27 — Sufism | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch27-sufism-high-medieval.md` |
-| ch28 — Scholasticism | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
-| ch29 — Aztec, Maya & Inca | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch29-aztec-maya-inca-high-medieval.md` |
-| ch30 — Bhakti | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch30-bhakti-high-medieval.md` |
+| ch26 — Kabbalah | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch26-kabbalah-high-medieval.md` |
+| ch27 — Sufism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch27-sufism-high-medieval.md` |
+| ch28 — Scholasticism | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
+| ch29 — The Maya | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch29-maya-high-medieval.md` |
+| ch43 — The Aztec | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch43-aztec-high-medieval.md` |
+| ch44 — The Inca | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch44-inca-high-medieval.md` |
+| ch30 — Bhakti | Tradition | 07-high-medieval | **PENDING REVIEW** | `eras/07-high-medieval/ch30-bhakti-high-medieval.md` |
 
-**High Medieval (era 07) traditions complete** (ch26–ch30): Kabbalah, Sufism, Scholasticism, Aztec/Maya/Inca, Bhakti.
+**High Medieval (era 07) traditions complete** (ch26–ch30 + ch43–ch44): Kabbalah, Sufism, Scholasticism, The Maya, The Aztec, The Inca, Bhakti. *(The former combined ch29 "Aztec, Maya & Inca" was split into three chapters in the 2026-09 completion pass.)*
 
-| ch31 — The Reformation | Tradition | 08-early-modern | **CLEARED** | `eras/08-early-modern/ch31-reformation-early-modern.md` |
-| ch32 — The Witch Trials | Tradition | 08-early-modern | **CLEARED** | `eras/08-early-modern/ch32-witch-trials-early-modern.md` |
-| ch33 — African Traditional Religion | Tradition | 08-early-modern | **CLEARED** | `eras/08-early-modern/ch33-african-traditional-religion-early-modern.md` |
-| ch34 — Sikhism | Tradition | 08-early-modern | **CLEARED** | `eras/08-early-modern/ch34-sikhism-early-modern.md` |
+| ch31 — The Reformation | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch31-reformation-early-modern.md` |
+| ch32 — The Witch Trials | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch32-witch-trials-early-modern.md` |
+| ch33 — African Traditional Religion | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch33-african-traditional-religion-early-modern.md` |
+| ch34 — Sikhism | Tradition | 08-early-modern | **PENDING REVIEW** | `eras/08-early-modern/ch34-sikhism-early-modern.md` |
 
 **Early Modern (era 08) traditions complete** (ch31–ch34): Reformation, Witch Trials, African Traditional Religion, Sikhism.
 
-| ch35 — New Religious Movements | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch35-new-religious-movements-modern.md` |
-| ch36 — Spiritualism | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch36-spiritualism-modern.md` |
-| ch37 — Theosophy & the Occult Revival | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch37-theosophy-occult-revival-modern.md` |
-| ch38 — Wicca & Modern Paganism | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch38-wicca-modern-paganism-modern.md` |
-| ch39 — Satanism | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch39-satanism-modern.md` |
-| ch40 — African Diaspora Religions | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch40-diaspora-religions-modern.md` |
+| ch35 — New Religious Movements | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch35-new-religious-movements-modern.md` |
+| ch36 — Spiritualism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch36-spiritualism-modern.md` |
+| ch37 — Theosophy & the Occult Revival | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch37-theosophy-occult-revival-modern.md` |
+| ch38 — Wicca & Modern Paganism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch38-wicca-modern-paganism-modern.md` |
+| ch39 — Satanism | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch39-satanism-modern.md` |
+| ch40 — African Diaspora Religions | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch40-diaspora-religions-modern.md` |
 
 **Modern (era 09) traditions complete** (ch35–ch40): New Religious Movements, Spiritualism, Theosophy & the Occult Revival, Wicca & Modern Paganism, Satanism, African Diaspora Religions.
 

@@ -217,6 +217,14 @@ ancestor split into two mirror-image faiths. Forward, its fingerprints are argue
 across the western religious tradition — a matter important and contested enough
 to hold to the end.
 
+## The believer's lens
+
+To the Zoroastrian, existence is a **cosmic battle** between **Ahura Mazda**, the Wise Lord and source of all good, truth, and light, and the hostile spirit **Angra Mainyu**, the source of the Lie and of evil — and every human being is a **combatant**, called to choose. This is the tradition's most bracing idea: the world is a real war, the outcome genuinely at stake, and a person's good thoughts, good words, and good deeds materially strengthen the side of **asha** (truth, order) against **druj** (the Lie). Fire, kept ever-burning, is the emblem of that truth and of Mazda's presence — not worshipped but faced, as one faces the light. And the story ends well: after the long ages, a final judgment, the resurrection of the dead, and the **frashokereti**, the "making wonderful," when evil is defeated forever and the world is restored to perfection. To live rightly is to labor, with the Wise Lord, toward that certain victory — a faith of moral seriousness, hope, and the dignity of the human choice.
+
+## The skeptical lens
+
+Zoroastrianism poses the historian a severe dating problem: its founder **Zarathustra** cannot be securely placed, with estimates ranging across more than a millennium (from c. 1500 to c. 600 BCE), and the tradition was transmitted **orally** for centuries — the Avesta written down, and much of the system (the twelve-thousand-year cosmic timeline, the saviors) fully articulated, only in the much later **Pahlavi** literature of Sasanian and post-Sasanian times. So the historian must constantly ask how much of "Zoroastrianism" is Zarathustra's and how much is later systematization. The most consequential open question is **influence**: the striking parallels between Zoroastrian ideas (a cosmic good-evil dualism, angels and demons, a final judgment, bodily resurrection, a coming savior) and later Jewish, Christian, and Islamic beliefs are real, and many scholars think Persian religion shaped Second Temple Judaism (Chapter 10) during and after the exile — but the direction, dating, and extent of that borrowing are genuinely contested, and the evidence is frustratingly thin. What is firm is the Gathas, the fire-cult, the moral dualism of asha and druj, and the tradition's endurance among the Parsis.
+
 ## Symbology and sacred encoding
 
 **Fire, first of all.** The supreme Zoroastrian symbol is the tended flame — the

@@ -1,5 +1,6 @@
 # Chapter 24 — Tantra: The Body as the Cosmos
 
+*Recently added — pending full review.*
 
 The esoteric revolution that swept across early-medieval India and Buddhism alike — a ritual technology of mantra, diagram, and the subtle body that made the human being a map of the universe — and the careful work of separating what the tradition teaches, what history can date, and what a century of Western reinvention has laid on top of it.
 
@@ -35,17 +36,7 @@ Tantric Hinduism is above all a religion of **Śiva** and the **Goddess**. Śiva
 
 ## The ten Mahavidyas
 
-Śākta Tantra gave the Goddess a distinctive systematic form: the **Daśa Mahāvidyā**, the "Ten Great
-Wisdoms" — ten goddesses, at once forms of the one Great Goddess and stages of tantric insight, many
-of them deliberately **macabre**. They begin with **Kālī** (time and death) and **Tārā** (the saving
-crossing) and include the beautiful **Tripurasundarī**, but they also hold figures unlike anything in
-gentler devotion. **Chinnamastā** stands **holding her own severed head**, three jets of blood from
-her neck feeding her two attendants and her own drinking mouth — an image of the ego's self-sacrifice
-and of consciousness continuing beyond the severed, silenced mind. **Dhūmāvatī** is the
-**widow-goddess**, old, smoke-clad, joyless, riding a crow: the divine as absence, void, and loss.
-The Mahāvidyās encode a characteristically tantric conviction — that the terrible, the impure, and
-the fearful are not outside the sacred but faces of it, and that the way to the Goddess runs through
-what ordinary piety flees.
+Śākta Tantra gave the Goddess a distinctive systematic form: the **Daśa Mahāvidyā**, the "Ten Great Wisdoms" — ten goddesses, at once forms of the one Great Goddess and stages of tantric insight, many of them deliberately **macabre**. They begin with **Kālī** (time and death) and **Tārā** (the saving crossing) and include the beautiful **Tripurasundarī**, but they also hold figures unlike anything in gentler devotion. **Chinnamastā** stands **holding her own severed head**, three jets of blood from her neck feeding her two attendants and her own drinking mouth — an image of the ego's self-sacrifice and of consciousness continuing beyond the severed, silenced mind. **Dhūmāvatī** is the **widow-goddess**, old, smoke-clad, joyless, riding a crow: the divine as absence, void, and loss. The Mahāvidyās encode a characteristically tantric conviction — that the terrible, the impure, and the fearful are not outside the sacred but faces of it, and that the way to the Goddess runs through what ordinary piety flees.
 
 ## The schools
 
@@ -54,24 +45,6 @@ what ordinary piety flees.
 - The **Śākta** traditions of the Goddess, especially **Śrī Vidyā** centered on the Śrī Yantra, carried tantric worship into more mainstream and "right-handed" forms.
 - The **Nāth** yogis systematized the subtle-body yoga that would later feed haṭha yoga.
 - In Buddhism, the **Vajrayāna** ("thunderbolt vehicle") descended from the wandering **mahāsiddhas**, the "great adepts," and became the tantric form of Mahayana.
-
-## The alchemical body: the Naths and the quest for immortality
-
-One tantric current pursued not only liberation but a **deathless body**. The **Nāth siddhas** — a
-Śaiva order traced to **Matsyendranāth** and his disciple **Gorakhnāth** (Gorakṣanāth, late ninth
-century) — and the **Rasa Siddhas**, the tantric **alchemists**, shared a single audacious goal: to
-perfect and immortalize the physical body itself. Their master substance was **rasa**, a word meaning
-at once **mercury**, the sacred essence, and the vital fluid of Śiva — and mercury, purified and
-"killed" and reborn in the alchemist's fire, was thought able to transmute base metals into gold and
-the mortal body into an adamantine, deathless one. Crucially, these adepts came to read the outer
-laboratory work **inward**: the transmutation of mercury and sulphur became the inner union of Śiva
-and Śakti, semen and breath, drawn up the subtle body and sealed within. Out of this fusion of
-alchemy, subtle-body yoga, and the drive for a perfected body (*kāya-sādhana*) the Nāths systematized
-**haṭha yoga** — the "yoga of force," with its postures, breath-control, locks, and seals aimed at
-halting time in the body — set down in Gorakhnāth's works and later codified in the *Haṭha Yoga
-Pradīpikā*. The global yoga of the modern studio descends, distantly and much transformed, from these
-medieval alchemists who sought to cheat death. (The classic scholarly study is David Gordon White's
-*The Alchemical Body*.)
 
 ## Ritual and the two hands
 
@@ -86,6 +59,14 @@ Tantric Buddhism grew from the **mahāsiddhas**, the wandering adepts of eastern
 ## Material record: temples of the yoginis
 
 Tantra's clearest physical trace is the **yoginī temple** — around thirteen survive across India, eight of them in Madhya Pradesh, most built between the ninth and twelfth centuries. Their **open, circular, roofless** plan, unique in Indian temple architecture, set the sky itself as the ceiling over the ring of goddesses, and marks them as spaces for rites outside the ordinary temple order; they are associated with the Kāpālika and Kaula streams. At Khajuraho more broadly, the **Chandela temples** (c. 950–1050) carry the famous erotic sculpture that so shocked later observers — a fraction of the total carving, and one whose exact relation to tantric ritual is debated, but which belongs to the same world in which the sacred and the sexual were not held apart.
+
+## The believer's lens
+
+To the initiate, Tantra is the swiftest and most daring of paths — the one that refuses to flee the world in order to transcend it, and instead makes the body, the senses, and even the forbidden into instruments of liberation. Where older asceticism renounced desire, Tantra harnesses it: the same energy (*śakti*) that binds the soul to the world, rightly channeled under a guru, becomes the power that carries it to freedom and to *siddhi*. The human being is not a fallen thing to be escaped but a **complete map of the cosmos** — every chakra a world, every breath a movement of the divine — so that to awaken the sleeping serpent-power and raise her to union with Śiva at the crown is to enact, in one's own body, the reunion of God and Goddess, consciousness and energy, that is the secret of all things. For the Buddhist tantrika, to visualize oneself as the enlightened deity is to actualize the buddhahood one already is. The transgressive rites of the left hand are, from inside, not licence but the hardest discipline — the deliberate shattering of the ego's clinging to pure and impure so that the nonduality behind all opposites can be directly known. Tantra experiences itself as the esoteric core of both Hinduism and Buddhism: the fast, dangerous, secret road for those ready to walk it.
+
+## The skeptical lens
+
+The historian's cautions here are unusually heavy, because few traditions have been so **overwritten** — first by hostile outsiders, then by admiring reinventors. "Tantrism" as a single system is itself a **nineteenth-century scholarly construct**, imposed on a family of practices its own practitioners never unified. The texts are esoteric, largely undated, orally transmitted, and written in deliberate "twilight language," so precise dating and authorship are mostly out of reach. Three modern distortions must be named: the **subtle body** (chakras, nāḍīs, kundalini) is a contemplative and experiential map, **not anatomy** — no dissection finds a chakra; the familiar **seven-chakra rainbow** with its fixed colors and gland-correspondences is largely a **twentieth-century synthesis**, not the medieval teaching; and the popular Western equation of **"Tantra" with sacred sex** is a modern distortion of a tradition that is overwhelmingly mantra, diagram, and visualization, in which sexual yoga is one bounded, secret, and contested element of some lineages. Even the historical question of **how literally** the left-hand rites were performed cannot be fully settled, precisely because the secrecy was real. The honest scholar affirms the vast attested corpus and its ritual technology, and refuses both the old caricature of orgy and the new sanitizing that pretends the transgression never existed.
 
 ## Symbology and sacred encoding
 
@@ -105,7 +86,7 @@ Tantra grew out of the **Vedic and Puranic Hinduism** and the **Mahayana Buddhis
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The existence of a vast tantric scriptural corpus in both Hinduism and Buddhism from roughly the fifth century on; the historical reality of **Abhinavagupta** (c. 950–1020) and the **Tantrāloka**; the **Kāpālika/Kaula** ascetic traditions and their transgressive reputation; the **yoginī temples** and their distinctive open plan (Khajuraho c. 885); the rise of **Vajrayāna** and its transmission to **Tibet** across these centuries; the **Nāth siddhas** and **Rasa Siddhas**, their fusion of mercurial **alchemy** and subtle-body yoga in the quest for a perfected body, and their role in the formation of **haṭha yoga**; the **Daśa Mahāvidyā** (the ten Śākta wisdom-goddesses, including Chinnamastā and Dhūmāvatī); and the core ritual technology of **mantra, yantra, mandala, initiation, and the subtle-body model**.
+**Well-supported by evidence.** The existence of a vast tantric scriptural corpus in both Hinduism and Buddhism from roughly the fifth century on; the historical reality of **Abhinavagupta** (c. 950–1020) and the **Tantrāloka**; the **Kāpālika/Kaula** ascetic traditions and their transgressive reputation; the **yoginī temples** and their distinctive open plan (Khajuraho c. 885); the rise of **Vajrayāna** and its transmission to **Tibet** across these centuries; and the core ritual technology of **mantra, yantra, mandala, initiation, and the subtle-body model**.
 
 **Not supported (as history or science).** That the **chakras and nāḍīs** are anatomical structures — they are a contemplative model of inner experience, not physiology. That the popular **seven-chakra color system** is the unaltered medieval teaching — it is largely a modern synthesis. That **"Tantra" means sacred sex** — a modern Western distortion of a mostly ritual and meditative tradition.
 
@@ -121,6 +102,5 @@ Tantra grew out of the **Vedic and Puranic Hinduism** and the **Mahayana Buddhis
 - Subtle body, nāḍīs, chakras, kundalini, bīja mantras — Yoga Basics / Yogajala overviews of the subtle body and seed sounds. https://yogajala.com/bija-mantra-101/
 - Śrī Yantra: nine interlocking triangles, bindu, bhūpura, inward meditation; OM — "Sri Yantra Meaning," Yoga Basics. https://www.yogabasics.com/connect/yoga-blog/sri-yantra/
 - Chausath Yogini Temple, Khajuraho (c. 885 CE), 64+1 shrines, Kāpālika/Kaula links, open-air plan; ~13 yoginī temples in India — "Chausath Yogini Temple, Khajuraho," Wikipedia. https://en.wikipedia.org/wiki/Chausath_Yogini_Temple,_Khajuraho
-- Vajrayāna origins, mahāsiddhas, term first attested 8th c.; Guhyasamāja, Cakrasaṃvara, Hevajra (8th–10th c.); Padmasambhava (747) and the second diffusion to Tibet (late 10th–11th c.) — "Vajrayana," Wikipedia. https://en.wikipedia.org/wiki/Vajrayana; "Hevajra Tantra," Wikipedia. https://en.wikipedia.org/wiki/Hevajra_Tantra
-- The Nāth siddhas, Rasa Siddhas, mercurial alchemy, and the roots of haṭha yoga — David Gordon White, *The Alchemical Body: Siddha Traditions in Medieval India*; "Nath," Wikipedia. https://en.wikipedia.org/wiki/Nath
 - The Daśa Mahāvidyā (ten wisdom-goddesses; Chinnamastā, Dhūmāvatī) — "Mahavidya," Wikipedia. https://en.wikipedia.org/wiki/Mahavidya
+- Vajrayāna origins, mahāsiddhas, term first attested 8th c.; Guhyasamāja, Cakrasaṃvara, Hevajra (8th–10th c.); Padmasambhava (747) and the second diffusion to Tibet (late 10th–11th c.) — "Vajrayana," Wikipedia. https://en.wikipedia.org/wiki/Vajrayana; "Hevajra Tantra," Wikipedia. https://en.wikipedia.org/wiki/Hevajra_Tantra

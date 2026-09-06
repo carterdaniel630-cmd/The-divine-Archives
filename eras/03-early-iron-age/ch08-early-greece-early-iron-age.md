@@ -226,6 +226,14 @@ religious *continuity* bridged the Dark Age gap between Mycenaean and Archaic
 religion is genuinely uncertain — the gods' names carried across, but much else may
 have been remade.
 
+## The believer's lens
+
+To the Greek, the gods were not loving or just in any comforting sense — they were **powerful, deathless, and present**, a vast quarrelsome family whose favor and anger shaped every harvest, voyage, battle, and birth. Religion was therefore not belief but **practice and reciprocity**: sacrifice rightly, honor the god of the place and the moment, keep the festivals, respect the oath and the guest — and the god might grant good fortune; neglect or offend, and disaster followed. There was no scripture, no creed, no church, and little hope of a happy afterlife for most (the dead went as gasping shades to Hades) — but the **mysteries**, above all Eleusis, offered the initiate a better lot beyond death. Over even the gods stood **fate** (*moira*). To be pious was to know one's place in this order — mortal, not divine — and to give the gods their due; hubris, forgetting that place, was the deepest sin, and the tragedians made it the engine of ruin.
+
+## The skeptical lens
+
+Greek religion reaches us mainly through its **poets and artists**, not its priests — Homer and Hesiod, who (as Herodotus already noticed) effectively *gave* the Greeks their systematized pantheon — so the historian reads the myths as literature shaped by authors, not as revealed doctrine, and notes that actual local cult was far more various than the tidy Olympian family suggests. The **Linear B** tablets confirm that some Olympians (Zeus, Hera, Poseidon, Dionysus) were already worshipped in the Bronze Age, giving a real anchor beneath the myth. There was no orthodoxy to enforce and no scripture to fix belief, so "what the Greeks believed" was plural and changing, and the same city that sacrificed to Athena could also, by the Classical age, host philosophers who doubted the gods entirely (Chapter 15). The historian attests the practice — the sacrifices, festivals, oracles, hero-cults, and mysteries — and treats the gods and their myths as the culture's imaginative and civic framework, neither confirmed nor dismissed as literal beings.
+
 ## Symbology and sacred encoding
 
 **The alphabet that could write breath.** The Greeks took the **Phoenician

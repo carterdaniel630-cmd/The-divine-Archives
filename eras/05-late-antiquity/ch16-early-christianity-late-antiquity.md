@@ -24,19 +24,6 @@ told, as this archive tells every story, with the tools of history, and with a c
 kept between **what the tradition holds sacred** and **what the historical evidence can
 show**. Both are set down; neither is dressed up as the other.
 
-## A note on faith and history
-
-This chapter reconstructs the early Christian movement the way historians reconstruct any
-ancient movement: from texts, dates, and material remains, asking what can be established
-and what cannot. That method has its limits, and they must be stated honestly at the
-outset. History can weigh whether a man named Jesus lived, was crucified, and was
-proclaimed risen by his followers; it **cannot**, by its nature, confirm or deny that God
-raised him, that he was the Son of God, or that the tomb was empty by divine act. Those
-are claims of **faith**, held by billions, and the evidence-honesty standard of this work
-neither asserts them as proven history nor dismisses them — it marks them clearly as what
-they are. What a tradition holds sacred and what the material record establishes are two
-different statements, and this chapter keeps them distinct while respecting both.
-
 ## The historical Jesus: what can be known
 
 On the bare historical facts there is a scholarly consensus of unusual breadth, shared
@@ -190,6 +177,14 @@ basilicas, ordinary Christians were keeping the "birthdays" of their dead heroes
 tombs. The veneration of the martyrs, their relics, and their feast-days — which would grow
 into the vast medieval cult of the saints — begins here, in the age of persecution itself.
 
+## The believer's lens
+
+To the Christian, everything turns on a single event: God became man in **Jesus of Nazareth**, was crucified for the sins of the world, and **rose bodily from the dead** — and in that resurrection death itself was defeated and a new creation begun. The scattered, terrified disciples were transformed into fearless witnesses precisely because, the faith holds, they met the risen Christ; the church is his living body, the Eucharist his real presence, baptism the believer's own death and rising with him. The kingdom of God has broken into history and will be consummated at his return. From inside, the astonishing spread of the movement — from a crucified Galilean teacher to the faith of an empire in three centuries, through persecution and martyrdom — is itself a kind of testimony: the gospel is true, and the Spirit carried it. The martyrs did not die for a metaphor, and the empty tomb is, to the believer, the hinge on which the world turns.
+
+## The skeptical lens
+
+The historian reconstructs the movement as any ancient movement — from texts, dates, and remains — and can establish a good deal: that a Jewish teacher named **Jesus** was baptized by John, gathered followers, and was crucified under Pontius Pilate around 30 CE, and that his followers soon proclaimed him risen and worshipped him. But the **Gospels** are theological documents written decades later (Mark c. 70, the others later still), shaped by the faith of the communities that produced them and not eyewitness court records, so the critical scholar weighs them carefully, notes their differences, and distinguishes the "Jesus of history" from the "Christ of faith." The **resurrection** itself is the boundary of history: that the disciples *believed* they had seen the risen Jesus is historically robust; whether God in fact raised him is a claim of faith beyond what evidence can establish. And "early Christianity" was strikingly **plural** — Jewish-Christian, Pauline, Gnostic (Chapter 17), and more — so the "orthodoxy" that won was one strand among several. History marks the boundary; it does not cross it.
+
 ## Symbology and sacred encoding
 
 **The fish and the hidden creed.** As we began, the **ΙΧΘΥΣ** fish was the great encoded emblem of
@@ -222,6 +217,22 @@ identification is strengthened by an ancient manuscript variant reading **616**,
 from the Latin form of the name. Most scholars now read the beast as the persecuting emperor **Nero**,
 his name encoded to shield the author from Roman eyes: sacred numerology deployed as coded political
 resistance.
+
+**The relic and its image: the Shroud of Turin.** No Christian object has been more intensely
+studied, or more fiercely contested, than the **Shroud of Turin** — a linen cloth bearing the faint,
+photographic-negative image of a crucified man, venerated by many as the burial cloth of Jesus. It
+belongs here as the archive's chief case of a **relic claimed to carry sacred meaning**, held to the
+same evidence-honesty standard as everything else. The documented facts: the Shroud appears in the
+historical record only in the **1350s**, in France; in **1988** three independent laboratories
+radiocarbon-dated samples of it, in a coordinated test, to **c. 1260–1390 CE** — squarely the medieval
+period of its first appearance — a result published in *Nature*. Defenders have contested that dating
+(arguing the sampled corner was a later repair, or citing a 2022 X-ray study claiming an ancient date),
+while skeptics note the image is consistent with medieval technique and no forgery method has been
+definitively shown either. The honest state of the matter: the **mainstream scientific verdict, resting
+on the 1988 radiocarbon test, is that the Shroud is a medieval artifact**, while its devotees dispute
+that verdict and its image remains genuinely unexplained in its method. What is sacred to believers and
+what the testing establishes are, as always in this book, two different statements — and here they
+openly conflict.
 
 ## Connections
 

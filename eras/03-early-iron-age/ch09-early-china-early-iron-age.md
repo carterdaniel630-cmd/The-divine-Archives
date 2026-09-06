@@ -195,6 +195,14 @@ Anyang world. Sanxingdui is a standing reminder that the "early China" of the
 textual tradition is only the part that wrote — and that other, now-silent
 religious worlds flourished alongside it.
 
+## The believer's lens
+
+In the Shang world, the living and the **ancestors** formed one continuous household, and the dead remained powerful members of the family who could bless or blight their descendants — so the central religious act was to **feed and consult them** through sacrifice and divination. Above the ancestors stood **Di** (or **Shangdi**), the high god who governed harvest, weather, and war, approached not directly but through the royal ancestors, who interceded. The king's unique power was precisely this access: he was the pivot between the human and spirit worlds, and his diviners cracked ox-bones and turtle-shells with heat to read the ancestors' will in the fractures. When the **Zhou** overthrew the Shang, they reframed the whole cosmos with the **Mandate of Heaven** (*Tianming*): Heaven grants the right to rule to the virtuous and withdraws it from the corrupt, so that dynasties fall justly and the moral order of the cosmos is bound to the conduct of kings — an idea that would anchor Chinese political religion for three thousand years.
+
+## The skeptical lens
+
+Early China is unusual in that its earliest religion is known from **primary documents of the rite itself** — the **oracle bones**, the actual records of Shang divination, unmediated by later editors — which makes the Shang ancestor-and-Di cult exceptionally well attested, even as the later transmitted texts that describe it are read more critically. The great scholarly debate the chapter flags is over the **wu** (spirit-mediums) and whether early Chinese religion was fundamentally **shamanic**: K. C. Chang's influential thesis of shaman-kings communing with the spirit world stands against Keightley's picture of a sober bureaucratic cult of divination, and the evidence genuinely underdetermines the answer. The **Mandate of Heaven**, likewise, is transparently a piece of **political theology** — a doctrine that conveniently legitimized the Zhou conquest — however sincerely later held. History attests the divination, the sacrifices, the ancestor cult, and the Mandate doctrine; the reality of Di and the ancestors' power is recorded as the belief that structured a civilization, not a finding.
+
 ## Symbology and sacred encoding
 
 Few traditions in this archive make sacred encoding as central as early China,

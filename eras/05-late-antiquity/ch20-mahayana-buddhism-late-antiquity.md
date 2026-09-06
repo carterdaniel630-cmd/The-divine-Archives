@@ -183,6 +183,14 @@ to **Korea**, **Japan**, and **Vietnam**; and northward it seeded the Buddhism o
 it fused with the tantric currents that this archive treats in a later chapter on **Vajrayana** and
 **Tantra**. The Great Vehicle became the Buddhism of half of Asia.
 
+## The believer's lens
+
+The Mahayana, the "Great Vehicle," recasts the Buddhist path around **universal compassion**. Its ideal is no longer the *arhat* who wins his own liberation but the **bodhisattva**, who vows to postpone final nirvana until *all* beings are freed — a breathtaking enlargement of the goal from personal release to the salvation of the whole cosmos. Its deepest philosophy is **śūnyatā**, emptiness: nothing has fixed, independent existence, so that *saṃsāra* and *nirvāṇa* are not two, and liberation is available here and now to the awakened eye. And it opens a vast, grace-filled cosmos of **celestial buddhas and bodhisattvas** — Amitābha, whose Pure Land the devotee may reach by faith and the calling of his name; Avalokiteśvara, the embodiment of compassion who hears every cry (and who becomes, in East Asia, the beloved goddess **Guanyin**) — so that even those who cannot master meditation may be saved by devotion. Through **skillful means** (*upāya*), the Buddha meets each being where they are. From inside, the Mahayana is Buddhism grown boundless in compassion and open, at last, to everyone.
+
+## The skeptical lens
+
+The historian's central observation is that the **Mahayana sutras present themselves as the word of the Buddha, yet were composed centuries after his death** — from around the first century BCE onward — which the tradition itself half-acknowledges in its beautiful legends of texts hidden away until the world was ready for them. So the critical scholar reads the Perfection of Wisdom, Lotus, and Pure Land sutras as genuinely *new* religious literature, not the historical Gautama's teaching, however profound — and treats the cosmic buddhas and Pure Lands as the tradition's developing faith, not recoverable history. Exactly **how the Mahayana began** — as a lay movement, a forest-monastic reform, a "cult of the book," or several currents at once — is genuinely debated, precisely because its own origin-stories are theological rather than documentary. History can trace the texts, their dates, the "cult of the book" (the sutra venerated as a shrine — the Diamond Sutra of 868 is the world's oldest dated printed book), and the spread that made Mahayana the Buddhism of East Asia and Tibet; the emptiness doctrine and the saving buddhas are recorded as the tradition holds them.
+
 ## Symbology and sacred encoding
 
 **Indra's Net: the universe as infinite mutual reflection.** The Mahayana's supreme image of

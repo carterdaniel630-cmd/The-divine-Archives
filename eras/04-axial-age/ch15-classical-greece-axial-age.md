@@ -185,6 +185,14 @@ it: not the Unmoved Mover or the Form of the Good, but a kindly god met in sleep
 in his house, and a clay leg left in thanks. The two Greeces — the philosophers' and the
 pilgrims' — ran on side by side.
 
+## The believer's lens
+
+Classical Greece is where philosophy and religion pull apart and re-entwine, and the "believer" here wears many faces. The ordinary Athenian went on sacrificing to the city's gods, consulting Delphi, and seeking healing at the shrines of **Asclepius** through dream-incubation — civic and personal religion continued, unshaken by the philosophers in the agora. But the philosophers offered their own spiritual visions, and to their followers these were profoundly religious: **Plato**'s immortal soul, fallen into the body and destined, through the love of wisdom, to ascend to the eternal Forms and the Good; **Aristotle**'s divine **Unmoved Mover**, thought thinking itself, drawing the cosmos by love; the **Stoics'** providential *logos* pervading and ordering all things, to which the wise align their will; and the **mysteries** and Orphic-Pythagorean hope of the soul's release from the wheel of rebirth. To these seekers, the highest life was the contemplative ascent of the soul toward the divine — a piety of the mind that would flow directly into Christian and Islamic theology.
+
+## The skeptical lens
+
+Yet Classical Greece is also, and more famously, the birthplace of **religious skepticism and naturalism** — the moment human beings first tried, on record, to explain the world *without* the gods. The **Presocratics** sought the underlying stuff of nature (water, air, atoms) rather than divine agency; **Xenophanes** mocked anthropomorphic gods, noting that if horses had gods they would draw them as horses; the **Sophists** pressed further — **Protagoras** professed agnosticism ("about the gods I cannot know"), **Prodicus** offered a naturalistic theory of how gods were invented from useful things, and the "**Sisyphus fragment**" argued that a clever man invented the gods to frighten people into behaving. Socrates was executed on a charge that included **impiety**. The historian sees here the enduring template of the critical stance this whole book employs — the demand for evidence and natural explanation — arising within a still-devout society, so that Greece holds, side by side, the richest philosophical theology *and* the first thoroughgoing doubt, neither of which the record adjudicates for us.
+
 ## Symbology and sacred encoding
 
 **"All is number": the Pythagorean sacred mathematics.** The most distinctive Greek
@@ -201,9 +209,11 @@ mathematics *is* theology.
 Greek practice (the sibling of Hebrew **gematria** and Arabic **abjad**, treated
 elsewhere in this archive) of assigning **numerical values to the letters** of the
 alphabet and summing them, so that words and names carry hidden numerical equivalences.
-Greek poets built number-puzzles and acrostics on it, and it would later fuel a great deal
-of ancient magical and religious symbolism — the encoding of meaning in the numerical
-value of sacred words.
+Greek poets built number-puzzles and acrostics on it — a lover scratched on a Pompeii wall
+"I love her whose number is 545" (φμε), naming his beloved only by her name's sum — and it
+would later fuel a great deal of ancient magical and religious symbolism, from the **888**
+of *Iēsous* (Jesus) in Christian isopsephy to the **666** of the Beast (Chapter 22): the
+encoding of meaning in the numerical value of sacred names.
 
 **The Orphic gold tablets: a password for the dead.** The most remarkable encoded
 religious objects of the Greek world are the **Orphic (or "Bacchic") gold tablets** —

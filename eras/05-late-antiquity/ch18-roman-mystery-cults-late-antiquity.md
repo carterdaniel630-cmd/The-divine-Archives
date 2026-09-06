@@ -210,6 +210,14 @@ closed only in 529), but the great public age of the mysteries was over. The sec
 salvation did not so much vanish as go **underground**, their initiatory impulse surviving in
 the Hermetic and esoteric currents the later chapters of this archive will follow.
 
+## The believer's lens
+
+The mystery cults offered what the old civic religion did not: a **personal, chosen, transformative** relationship with a saving deity, sealed by secret initiation. To be initiated into the mysteries of **Isis**, **Mithras**, **Cybele**, or **Eleusis** was to pass through a staged ordeal of ritual, darkness, and revelation and to emerge, the initiates believed, **reborn** — bound to a god who had power over death and who promised the initiate a better lot in the afterlife than the gray shades of ordinary Hades. Apuleius, initiated into the mysteries of Isis, wrote that he "approached the boundary of death… and returned"; the initiate of Mithras climbed a ladder of seven grades toward the divine. These were religions of **experience and belonging** — small, intense communities, often crossing lines of class and empire — offering the individual soul a hope and an intimacy the great public cults never promised.
+
+## The skeptical lens
+
+The mystery cults pose the historian a peculiar problem: they *kept their secret*. Initiates swore not to reveal what was said and done, and largely did not — so we reconstruct the mysteries mostly from **outsiders, hostile Christian polemicists, and mute archaeology** (the Mithraic temples and their bull-slaying icon, the Isis shrines), and much of the inner meaning is simply lost or inferred. This is also where the book must be most careful about the popular claim of **"pagan parallels" to Christianity** — that a dying-and-rising Mithras or Osiris was simply copied into the Jesus story. The honest verdict is that the resemblances are real but often exaggerated and anachronistic: some "parallels" are later than Christianity, some are modern inventions, and the mysteries and early Christianity more likely drew on a **shared religious atmosphere** than one plagiarizing the other. History attests the cults, their spread, and their art; their secret rites, and the sweeping parallel-claims, are held to strict evidence — much affirmed, much left open.
+
 ## Symbology and sacred encoding
 
 **The tauroctony as a map of the heavens.** The great encoded object of the mysteries is the

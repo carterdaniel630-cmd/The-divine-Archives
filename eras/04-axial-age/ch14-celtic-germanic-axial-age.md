@@ -180,6 +180,14 @@ spring), **Beltane** (1 May, fire-festival of the summer's start), and **Lughnas
 Iron Age and how much is medieval Irish elaboration is debated — but the underlying
 sense of a year hinged on the turning points of light and season is real.
 
+## The believer's lens
+
+Reconstructed carefully from fragments, the world of the Celtic and Germanic peoples was one saturated with the **sacred in the land** — in groves and springs, rivers and bogs, the thresholds between this world and the **Otherworld** that lay always close by. Religion was bound up with **reciprocity and the local**: gifts to the powers (offerings cast into water, the great deposits of weapons and treasure — and, at times, of lives) to secure victory, fertility, and protection; festivals turning the wheel of the year; and a learned class — the Celtic **druids, bards, and vates** — who held the memory, law, and lore that were never written down but carried in trained memory. Fate loomed large, and honor with it: to die well, to keep faith, to feast in the hall. It was not a religion of scripture or salvation but of **place, ancestor, and season**, of a world alive with presences to be honored and a boundary to the Otherworld that the right rites, in the right places, could cross.
+
+## The skeptical lens
+
+No tradition in this book must be handled more warily, because the Celts and Germans **wrote almost nothing down**, and nearly all our testimony comes from **hostile or interested outsiders** — Julius Caesar, who fought the Gauls and had reasons to paint their druids as savage; Tacitus, moralizing about noble Germans to shame his fellow Romans; and, for the myths, medieval Christian scribes (Irish monks, Icelandic antiquarians) writing centuries after conversion. So the lurid set-pieces (wicker-man burnings, mass human sacrifice) are exactly where skepticism must bite hardest, even as **archaeology** — the bog bodies, the war-booty sanctuaries of Gournay and Ribemont, the votive deposits — confirms that sacrifice, including occasional human sacrifice, was real. The "Celtic religion" of popular imagination is largely a modern Romantic and Neo-pagan construction. The honest scholar affirms what the ground and the (biased) sources jointly support — sacred groves and waters, votive offering, a learned priesthood, a cult of the head, seasonal festivals — and leaves the rest, including most of the "druid theology," frankly uncertain.
+
 ## Symbology and sacred encoding
 
 **Two sacred scripts — and an honest caveat about their date.** The Celtic and Germanic
