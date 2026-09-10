@@ -115,6 +115,22 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   Sutra of 868 CE, the oldest dated printed book).
 - **Group-4 checkpoint (Late Antiquity):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
+- **ch21 Islam — expanded (2026-09-10).** Three new sourced sections filling real
+  gaps in a headline tradition: **"The mothers of the believers"** (Khadija as the
+  first believer of all; the *Ummahat al-Mu'minin* of Qur'an 33:6; Aisha as major
+  hadith transmitter and her stand at the Battle of the Camel, 656; Fatima as the
+  ancestress of the Shia Imams and the Fatimids) — parallels the ch16 "women of the
+  movement" deepening; **"Was the Qur'an created? The Mihna and the schools of
+  theology"** (the Mu'tazila and the created-Qur'an doctrine, al-Ma'mun's Mihna
+  inquisition 833–848, Ahmad ibn Hanbal's resistance, and the Ash'ari/Maturidi kalam
+  synthesis) — historicizes the "uncreated word of God" the chapter had only
+  asserted; and **"The third party: the Kharijites and the Ibadis"** (the secession
+  after Siffin, *la hukma illa lillah*, Nahrawan 658 and Ali's assassination 661,
+  the Azariqa/takfir extreme, and the surviving moderate Ibadis of Oman) — corrects
+  the binary Sunni/Shia picture. Evidence-honesty (new well-supported bullet) and
+  Sources updated; markdown + rendered `chapters.js` body edited in step; 42 static
+  pages rebuilt clean; source log updated. Group 5 (ch21–ch30) underway. ~3,050 →
+  ~4,340 words.
 
 ## Gate
 Originally grouped as **Batch II**, a single review point separate from Batch I.

@@ -20,6 +20,24 @@ Per the project sourcing standard, this citation log records the real, checkable
   [Wikipedia: Islamic ornament](https://en.wikipedia.org/wiki/Islamic_ornament); on the Kaaba and (late)
   crescent symbolism, standard reference overviews.
 
+*The founding women (Batch II deepening, 2026-09-10)*
+- On the Mothers of the Believers and Khadija as the first believer, standard reference overviews;
+  [Wikipedia: Battle of the Camel](https://en.wikipedia.org/wiki/Battle_of_the_Camel) (Aisha's role, 656);
+  [Wikipedia: Zaynab bint Jahsh](https://en.wikipedia.org/wiki/Zaynab_bint_Jahsh);
+  [Britannica: Fatimid dynasty](https://www.britannica.com/topic/Fatimid-dynasty) (descent from Fatima).
+
+*The Kharijites/Ibadis and the createdness controversy (Batch II deepening, 2026-09-10)*
+- [Wikipedia: Kharijites](https://en.wikipedia.org/wiki/Kharijites);
+  [Wikipedia: Battle of Nahrawan](https://en.wikipedia.org/wiki/Battle_of_Nahrawan);
+  [Britannica: Ibadiyyah](https://www.britannica.com/topic/Ibadiyyah) — the secession after Siffin (657),
+  the *la hukma illa lillah* slogan, Ali's assassination (661), the Azariqa/takfir extreme, and the
+  surviving moderate Ibadis of Oman (imam by *shura*, rejection of the "Kharijite" label).
+- [Wikipedia: Mihna](https://en.wikipedia.org/wiki/Mihna) (the Abbasid inquisition, 833–848 under
+  al-Ma'mun, al-Mu'tasim, al-Wathiq; ended under al-Mutawakkil);
+  [New World Encyclopedia: Mu'tazili](https://www.newworldencyclopedia.org/entry/Mu'tazili) — the
+  created-Qur'an doctrine, Ahmad ibn Hanbal's imprisonment and flogging, and the later Ash'ari/Maturidi
+  synthesis of the uncreated Qur'an into Sunni orthodoxy.
+
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica-level overviews,
 The Met, sourced encyclopedic entries, and the mainstream historical-critical scholarship they summarize)
 rather than memory alone, per the project standard. Following the archive's evidence-honesty rule and the

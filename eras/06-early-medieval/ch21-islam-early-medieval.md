@@ -61,6 +61,37 @@ life-stories in vivid particulars — comes from sources written **generations l
 Ishaq's life, c. 750, survives in Ibn Hisham's edition of c. 830), and historians read the
 details with due caution, even as the outline stands firm.
 
+## The mothers of the believers
+
+If Muhammad is the human center of the story, he did not stand alone, and the earliest Muslims
+included women whom the tradition places at the very foundation. The **first believer of all** —
+the first person, man or woman, to accept Muhammad's message — was his wife **Khadija** (*Khadija
+bint Khuwaylid*), a wealthy and respected Meccan merchant who had first employed him and then
+proposed marriage to him. When he came down from Mount Hira shaking with terror at the first
+revelation, it was Khadija who wrapped him, reassured him, and believed him; while she lived,
+Muhammad took no other wife. She is remembered as *Umm al-Mu'minin*, a "Mother of the Believers,"
+and among the greatest women of the faith.
+
+After Khadija's death came the marriages of Muhammad's Medinan years, and his later wives are
+collectively titled the **Mothers of the Believers** (*Ummahat al-Mu'minin*), a dignity the Qur'an
+itself confers (33:6). The most prominent, **Aisha** (*Aisha bint Abi Bakr*), daughter of the first
+caliph Abu Bakr, became after the Prophet's death one of the most important **transmitters of
+hadith** in all of Islam — well over two thousand reports are traced to her — and a formidable
+authority in her own right; in **656** she took the field against Ali at the **Battle of the
+Camel**, one of the first Muslims to lead an army, on the losing side of the first civil war.
+**Zaynab bint Jahsh**, Muhammad's cousin, and others fill out the list, each surrounded by her own
+body of tradition.
+
+The single most consequential woman for the faith's future, though, was Muhammad's daughter
+**Fatima** (*Fatima al-Zahra*), his only child to outlive him. She married his cousin **Ali** and
+bore **Hasan and Husayn** — so that the entire line of Shia **Imams**, and the martyrs of Karbala,
+descend through her; the **Fatimid** dynasty that would rule much of the medieval Muslim world took
+its very name from its claim of descent from her. In Shia devotion Fatima is venerated as the
+supreme woman of creation, mourned in her own season of grief. *An honesty note, as always:* much
+of the detail of these lives reaches us through the same later *sira* and hadith literature read
+cautiously above, and Sunni and Shia tradition remember several of these figures — Aisha and Fatima
+above all — very differently, each through the lens of the schism to come.
+
 ## The Book
 
 At the center of Islam stands the **Qur'an** — for Muslims, the literal, uncreated **word of
@@ -99,6 +130,38 @@ judgment; and in **divine decree** (*qadar*). The prophets run in a single great
 Noah, Abraham, Moses, Jesus**, and many more — all bringing the same essential message of
 submission to the one God, with **Muhammad** as the last of them, the **"Seal of the Prophets,"**
 whose revelation completes and corrects what came before.
+
+## Was the Qur'an created? The Mihna and the schools of theology
+
+This chapter has already called the Qur'an, in the words of the tradition, the "uncreated word of
+God" — but that phrase was not always settled doctrine; it was fought over, in the open light of
+recorded history, in one of Islam's great theological crises. In the ninth-century Abbasid golden
+age, a school of rationalist theologians, the **Mu'tazila**, took up the tools of Greek logic
+(Chapter 15) and pressed *tawhid* to its limit: if God is absolutely one and unique, they argued,
+then nothing can be co-eternal beside him — so the Qur'an, however holy, must be **created** in
+time, not an eternal attribute sharing God's own uncreatedness. Their opponents, the
+**traditionists**, held the reverse: the Qur'an is God's own eternal speech, and to call it created
+is to demote the divine word.
+
+What makes this more than a seminar dispute is that a caliph tried to settle it by force. In
+**833**, the caliph **al-Ma'mun** adopted the Mu'tazila position as state creed and launched the
+**Mihna** — an "inquisition" (the Arabic means testing, ordeal) in which scholars and judges were
+interrogated and made to profess that the Qur'an was created, on pain of imprisonment. It ran under
+three caliphs, to about **848**. The hero of the resistance was the traditionist **Ahmad ibn
+Hanbal** (d. 855), for whom the fourth Sunni law-school is named: he refused the doctrine, was
+imprisoned and flogged, and his endurance made him a symbol of fidelity to the plain sense of
+scripture over the reasonings of the philosophers. The Mihna was abandoned under the caliph
+**al-Mutawakkil**, and the doctrine of the **uncreated Qur'an** triumphed — becoming, and
+remaining, mainstream Sunni orthodoxy.
+
+Out of the wreckage came a lasting settlement in **kalam** (Islamic dialectical theology).
+**Al-Ash'ari** (c. 874–935), himself a former Mu'tazilite, famously broke with the school and
+turned its own rational method *against* it, defending traditional doctrine — including the
+uncreated Qur'an — with rigorous argument rather than bare assertion; in the east, **al-Maturidi**
+(d. 944) worked a parallel synthesis. The **Ash'ari** and **Maturidi** schools became the
+theological mainstream of Sunni Islam, a middle path between naked rationalism and unreasoning
+literalism. It is a rare and valuable case for this archive: a doctrine the tradition now states as
+timeless — the uncreated word of God — can be watched, in the sources, being argued into orthodoxy.
 
 ## The Five Pillars
 
@@ -158,6 +221,33 @@ caliph — a martyrdom that remains the emotional heart of Shia devotion, mourne
 **Ashura**. Sunni and Shia Islam share the Qur'an, the Pillars, and the core of the faith, but
 diverge in authority, law, and sacred history; today Sunnis are the great majority, with Shia
 Islam predominant in Iran, Iraq, and beyond.
+
+## The third party: the Kharijites and the Ibadis
+
+The Sunni–Shia split is the famous one, but it was not the only fracture, and the first great schism
+actually produced **three** parties, not two. During the first civil war, when **Ali** agreed to
+settle his conflict with his rival Mu'awiya by human **arbitration** after the Battle of **Siffin**
+(657), a bloc of his own supporters were outraged: to submit God's cause to a human tribunal, they
+held, was itself a betrayal. They **seceded** — hence their name, the **Kharijites** (*Khawarij*,
+"those who went out") — under the slogan ***la hukma illa lillah***, "judgment belongs to God
+alone." Ali crushed them at the Battle of **Nahrawan** (658); in revenge, a Kharijite named **Ibn
+Muljam** assassinated Ali in the mosque of Kufa in **661**, ending the age of the Rightly Guided
+caliphs.
+
+The Kharijites became Islam's first sectarian dissidents, and their defining doctrine was severe:
+that a Muslim who commits a **grave sin** thereby ceases to be a Muslim at all. Its extreme wing,
+the **Azariqa**, pushed this to the point of declaring all who disagreed with them **unbelievers**
+whose blood could be shed — an early Islamic doctrine of **takfir** (excommunication) that has cast
+a long shadow into the present. But not all Kharijites were extremists, and one moderate strand
+alone survived: the **Ibadis** (*Ibadiyya*), who reject the killing, hold that a grave sinner is an
+"ingrate for grace" rather than an outright apostate, and — unlike the Shia with their divinely
+appointed bloodline — choose their **imam by the community's consensus** (*shura*), on merit and
+piety. Ibadi Islam became the established tradition of **Oman**, where it remains the faith of the
+majority today, and survives in pockets of North and East Africa. Modern Ibadis generally **reject
+the label "Kharijite"** as a slur from their enemies. *An honesty note:* the details of these
+seventh-century events reach us, like the rest of early Islamic history, through chronicles written
+well afterward and colored by the polemics of the victors — and the "third party" is far less known
+than the two that eclipsed it, which is exactly why it belongs here.
 
 ## The conquests and the caliphate
 
@@ -236,6 +326,11 @@ of the faith across Africa, Asia, and eventually the world.
 - The core structures of the faith — **tawhid**, the **Five Pillars**, the **six articles**, the
   development of **hadith**, **Sharia**, and the schools of law, and the **Sunni–Shia** split rooted in
   the succession dispute and sealed at **Karbala** (680).
+- The **third party** thrown up by the first civil war beyond Sunni and Shia — the **Kharijites**,
+  crushed at **Nahrawan** (658), whose one surviving moderate branch, the **Ibadis**, remains the
+  established tradition of **Oman**; and the documented **Mihna** (833–848), the Abbasid state's
+  attempt to impose the "created Qur'an" doctrine by force, resisted by **Ahmad ibn Hanbal** and
+  settled, against it, into the Ash'ari/Maturidi mainstream.
 
 **What's not supported by the evidence (as history)**
 
@@ -274,6 +369,22 @@ of the faith across Africa, Asia, and eventually the world.
 - [The Met: Geometric Patterns in Islamic Art](https://www.metmuseum.org/essays/geometric-patterns-in-islamic-art);
   [Wikipedia: Islamic ornament](https://en.wikipedia.org/wiki/Islamic_ornament); on the Kaaba and (late)
   crescent symbolism, standard reference overviews.
+
+*The founding women*
+- On the Mothers of the Believers and Khadija as the first believer, standard reference overviews;
+  [Wikipedia: Battle of the Camel](https://en.wikipedia.org/wiki/Battle_of_the_Camel) (Aisha, 656);
+  [Wikipedia: Zaynab bint Jahsh](https://en.wikipedia.org/wiki/Zaynab_bint_Jahsh);
+  [Britannica: Fatimid dynasty](https://www.britannica.com/topic/Fatimid-dynasty) (the dynasty's claim
+  of descent from Fatima).
+
+*The Kharijites, the Ibadis, and the createdness controversy*
+- [Wikipedia: Kharijites](https://en.wikipedia.org/wiki/Kharijites);
+  [Wikipedia: Battle of Nahrawan](https://en.wikipedia.org/wiki/Battle_of_Nahrawan);
+  [Britannica: Ibadiyyah](https://www.britannica.com/topic/Ibadiyyah) (moderate Kharijism, Oman, the
+  imam chosen by *shura*).
+- [Wikipedia: Mihna](https://en.wikipedia.org/wiki/Mihna) (the inquisition of 833–848);
+  [New World Encyclopedia: Mu'tazili](https://www.newworldencyclopedia.org/entry/Mu'tazili) (the
+  created-Qur'an doctrine, Ahmad ibn Hanbal's resistance, and al-Ash'ari).
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica-level overviews,
 The Met, sourced encyclopedic entries, and the mainstream historical-critical scholarship they summarize)
