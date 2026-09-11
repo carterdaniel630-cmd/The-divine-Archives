@@ -110,7 +110,9 @@ hostility colored everything. The **Nag Hammadi library** transformed the field 
 Gnostic and related works directly, among them the **Apocryphon of John**, the **Gospel of
 Truth**, the **Gospel of Philip**, and the poetic **Thunder, Perfect Mind**. Separately, the
 lost **Gospel of Judas** (recovered and published in 2006) portrays **Judas** not as a traitor
-but as the one disciple who truly understood Jesus and did his secret will.
+but as the one disciple who truly understood Jesus and did his secret will. A special place belongs to the
+**Pistis Sophia** — the fullest Gnostic scripture of all, known from the Askew Codex a century and a half
+*before* Nag Hammadi — which this archive treats in its own chapter (**Chapter 43**).
 
 A special case is the **Gospel of Thomas**, also found at Nag Hammadi: a collection of **114
 secret sayings** ("the hidden words that the living Jesus spoke"), attributed to Didymos Judas

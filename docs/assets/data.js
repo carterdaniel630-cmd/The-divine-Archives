@@ -34,7 +34,7 @@ window.ARCHIVE = {
     { slug: "05-late-antiquity", num: "V", name: "Late Antiquity",
       dates: "c. 200 – 800 CE",
       blurb: "The old gods gave way and new faiths spread along the roads of empire. Early Christianity and its rival Gnosticisms, the Roman mystery cults, the making of Rabbinic Judaism, and the flowering of Mahayana Buddhism.",
-      traditions: ["Early Christianity", "Gnosticism", "Roman mystery cults", "Rabbinic Judaism", "Mahayana Buddhism"] },
+      traditions: ["Early Christianity", "Gnosticism", "Pistis Sophia", "Roman mystery cults", "Rabbinic Judaism", "Mahayana Buddhism"] },
 
     { slug: "06-early-medieval", num: "VI", name: "The Early Medieval",
       dates: "c. 800 – 1100 CE",
@@ -293,6 +293,12 @@ window.ARCHIVE = {
       era: "01-prehistory", eraLabel: "Prehistory \u00b7 The Neolithic",
       source: "eras/01-prehistory/ch42-neolithic-prehistory.md",
       status: "published", pending: true,
-      summary: "The age when humans settled, farmed, and raised the first monuments to the sacred. Göbekli Tepe \u2014 a temple built by hunter-gatherers before agriculture, overturning the old story; Çatalhöyük and the sacred in the home, with the dead beneath the floor; the megaliths (Stonehenge, Newgrange) aligned to the solstice sun; and the famous, contested Mother Goddess hypothesis, reported honestly as largely rejected by mainstream archaeology. A symbology of the T-pillar, the sky-aligned tomb, and the plastered skull \u2014 a religion we can read only in stone, never in words. Completes the Nine Ages." }
+      summary: "The age when humans settled, farmed, and raised the first monuments to the sacred. Göbekli Tepe \u2014 a temple built by hunter-gatherers before agriculture, overturning the old story; Çatalhöyük and the sacred in the home, with the dead beneath the floor; the megaliths (Stonehenge, Newgrange) aligned to the solstice sun; and the famous, contested Mother Goddess hypothesis, reported honestly as largely rejected by mainstream archaeology. A symbology of the T-pillar, the sky-aligned tomb, and the plastered skull \u2014 a religion we can read only in stone, never in words. Completes the Nine Ages." },
+
+    { id: "ch43", title: "Pistis Sophia", kind: "tradition",
+      era: "05-late-antiquity", eraLabel: "Late Antiquity · Pistis Sophia",
+      status: "published", pending: true,
+      source: "eras/05-late-antiquity/ch43-pistis-sophia-late-antiquity.md",
+      summary: "The fullest Gnostic gospel the world possessed before Nag Hammadi — a Coptic scripture in the Askew Codex (British Library Add MS 5114), surfaced in Europe 160 years before the 1945 find. The risen Jesus, eleven years after the resurrection, reveals the map of the heavens on the Mount of Olives; the fallen aeon Pistis Sophia, deceived by the arrogant Authadēs and stripped of her light in Chaos, sings thirteen repentances woven from the Psalms and the Odes of Solomon; and salvation runs on saving mysteries, reincarnation, the cup of forgetfulness, and the dragon of the outer darkness. Mary Magdalene is the foremost questioner, over Peter's objection — with a deep symbology of the numbered aeons, the vowel-names (IAŌ), the garment of light, and the fire-offering of Book 4; the manuscript's datable facts kept firmly apart from later Theosophical 'unveilings.'" }
   ]
 };

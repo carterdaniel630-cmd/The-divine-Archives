@@ -153,10 +153,17 @@ ${HEADER}
       ${plate}
       <p class="eyebrow">${esc(ch.eraLabel)}</p>
       <h1>${esc(ch.title)}</h1>
-      <p style="margin-top:0.6rem"><span class="badge is-published">In the archive</span></p>
+      <p style="margin-top:0.6rem">${ch.pending
+        ? '<span class="badge is-pending">Recently added &middot; pending review</span>'
+        : '<span class="badge is-published">In the archive</span>'}</p>
     </div>
     <section class="wrap article">
-${rendered}
+${ch.pending ? `      <div class="pending-banner">
+        <strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet
+        completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording
+        and detail may still change. The tag is removed once the chapter is cleared.
+      </div>
+` : ""}${rendered}
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>
   </main>
