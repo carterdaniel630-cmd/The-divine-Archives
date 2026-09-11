@@ -1,6 +1,6 @@
 # Chapter 43 — Pistis Sophia: The Fallen Wisdom and the Books of the Saviour
 
-*Tradition chapter · Era 05 — Late Antiquity · **Recently added — pending full review.***
+*Tradition chapter · Era 05 — Late Antiquity · **Reviewed — cleared.***
 
 ---
 
