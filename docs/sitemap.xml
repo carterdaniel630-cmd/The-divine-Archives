@@ -6,15 +6,15 @@
   <url><loc>https://getconexto.com/traditions.html</loc></url>
   <url><loc>https://getconexto.com/about.html</loc></url>
   <url><loc>https://getconexto.com/methodology.html</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=01-prehistory</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=02-bronze-age</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=03-early-iron-age</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=04-axial-age</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=05-late-antiquity</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=06-early-medieval</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=07-high-medieval</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=08-early-modern</loc></url>
-  <url><loc>https://getconexto.com/era.html?era=09-modern</loc></url>
+  <url><loc>https://getconexto.com/eras/01-prehistory.html</loc></url>
+  <url><loc>https://getconexto.com/eras/02-bronze-age.html</loc></url>
+  <url><loc>https://getconexto.com/eras/03-early-iron-age.html</loc></url>
+  <url><loc>https://getconexto.com/eras/04-axial-age.html</loc></url>
+  <url><loc>https://getconexto.com/eras/05-late-antiquity.html</loc></url>
+  <url><loc>https://getconexto.com/eras/06-early-medieval.html</loc></url>
+  <url><loc>https://getconexto.com/eras/07-high-medieval.html</loc></url>
+  <url><loc>https://getconexto.com/eras/08-early-modern.html</loc></url>
+  <url><loc>https://getconexto.com/eras/09-modern.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch01.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch02.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch03.html</loc></url>
@@ -44,6 +44,8 @@
   <url><loc>https://getconexto.com/chapters/ch27.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch28.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch29.html</loc></url>
+  <url><loc>https://getconexto.com/chapters/ch43.html</loc></url>
+  <url><loc>https://getconexto.com/chapters/ch44.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch30.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch31.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch32.html</loc></url>
@@ -57,6 +59,4 @@
   <url><loc>https://getconexto.com/chapters/ch40.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch41.html</loc></url>
   <url><loc>https://getconexto.com/chapters/ch42.html</loc></url>
-  <url><loc>https://getconexto.com/chapters/ch43.html</loc></url>
-  <url><loc>https://getconexto.com/chapters/ch44.html</loc></url>
 </urlset>

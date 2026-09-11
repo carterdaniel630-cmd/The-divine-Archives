@@ -153,7 +153,7 @@
       rows.forEach(function (r) {
         if (f && r.name.toLowerCase().indexOf(f) === -1 && r.era.name.toLowerCase().indexOf(f) === -1) return;
         shown++;
-        var href = r.chapter ? "chapters/" + encodeURIComponent(r.chapter.id) + ".html" : "era.html?era=" + encodeURIComponent(r.era.slug);
+        var href = r.chapter ? "chapters/" + encodeURIComponent(r.chapter.id) + ".html" : "eras/" + encodeURIComponent(r.era.slug) + ".html";
         var a = el('<a class="tile" href="' + href + '"></a>');
         a.innerHTML =
           '<span class="tile-art">' + artFor(r.chapter, r.era) + "</span>" +
@@ -188,7 +188,7 @@
       '<div class="page-head">' +
         '<p class="crumb" style="justify-content:center">' +
           '<a href="index.html">Archive</a><span class="sep">/</span>' +
-          (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">' + esc((eraBySlug(ch.era) || {}).name || "Era") + "</a>" : '<a href="eras.html">Themes</a>') +
+          (ch.era ? '<a href="eras/' + encodeURIComponent(ch.era) + '.html">' + esc((eraBySlug(ch.era) || {}).name || "Era") + "</a>" : '<a href="eras.html">Themes</a>') +
           '<span class="sep">/</span><span>' + esc(ch.title) + "</span>" +
         "</p>" +
         (((window.PLATES || {})[ch.id]) || '') +   // framed frontispiece plate, above the title
@@ -213,7 +213,7 @@
       }
       body.insertAdjacentHTML("beforeend", rendered); // published chapters render here
       var nav = el('<div class="chapter-nav"></div>');
-      nav.innerHTML = (ch.era ? '<a href="era.html?era=' + encodeURIComponent(ch.era) + '">&larr; ' + esc((eraBySlug(ch.era) || {}).name || "Back") + "</a>" : '<a href="themes.html">&larr; All themes</a>') +
+      nav.innerHTML = (ch.era ? '<a href="eras/' + encodeURIComponent(ch.era) + '.html">&larr; ' + esc((eraBySlug(ch.era) || {}).name || "Back") + "</a>" : '<a href="themes.html">&larr; All themes</a>') +
         '<a href="eras.html">Browse the ages &rarr;</a>';
       body.appendChild(nav);
     } else {
