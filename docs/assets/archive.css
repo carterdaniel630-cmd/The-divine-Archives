@@ -480,3 +480,39 @@ body { font-size: 1.06rem; }
   body::after { animation: none; }
   #chapter-mount .article { animation: none; }
 }
+
+/* ==========================================================================
+   Stage 4 — engagement: print / "save as PDF", print-only lines
+   ========================================================================== */
+.print-only { display: none; }
+.print-btn {
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.18em;
+  font-size: 0.56rem; color: var(--gold-bright); background: transparent;
+  border: 1px solid var(--line); border-radius: 2px; padding: 0.32rem 0.7rem;
+  margin-left: 0.6rem; cursor: pointer; vertical-align: middle;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+.print-btn:hover { border-color: var(--gold); color: var(--parchment); background: rgba(199,154,84,0.08); }
+
+@media print {
+  @page { margin: 1.8cm; }
+  body::before, body::after { display: none !important; }
+  .site-header, .site-footer, .chapter-nav, .see-also, .ambient-toggle,
+  .skip-link, .crumb, .badge, .print-btn, .support, .theme-switch { display: none !important; }
+  html, body { background: #fdfbf6 !important; color: #221a0e !important; }
+  body { font-size: 12pt; line-height: 1.6; }
+  .page { z-index: auto; }
+  a { color: #221a0e !important; text-decoration: none; }
+  .page-head { padding-top: 0; text-align: left; }
+  .page-head h1, .article h2, .article h3 { color: #221a0e !important; }
+  .page-head .eyebrow { color: #8a6a24 !important; }
+  .article { max-width: 100%; margin: 1rem 0 0; }
+  .article h2::before { filter: grayscale(1) brightness(0.35); opacity: 0.6; }
+  .article .lead:first-of-type::first-letter { color: #7a5a1f !important; text-shadow: none !important; }
+  .evidence { border: 1px solid #c9bda2 !important; background: #f4efe4 !important; }
+  .evidence-head, .evidence h4 { color: #6b511b !important; }
+  .plate .plate-art { color: #4a4030 !important; background: none !important; border-color: #d8cdb5 !important; }
+  .plate figcaption, .plate .tag { color: #6b5f45 !important; border-color: #d8cdb5 !important; }
+  .print-only { display: block; margin-top: 2rem; padding-top: 0.8rem; border-top: 1px solid #c9bda2; font-size: 9pt; color: #6b5f45; }
+  #chapter-mount .article { animation: none !important; transform: none !important; }
+}
