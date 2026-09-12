@@ -3,34 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Flood, Compared — The Divine Archives</title>
-  <meta name="description" content="The deluge myth set side by side across traditions — Mesopotamian, Hebrew, Islamic, Greek, and Hindu — with the earliest text for each, and an honest note on where the pattern breaks." />
+  <title>Compared, Side by Side — The Divine Archives</title>
+  <meta name="description" content="The great recurring motifs of the sacred set side by side across traditions — the flood, creation, the underworld, and the dying-and-returning god — each grounded in the archive's chapters, with an honest note on where the pattern breaks." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/archive.css" />
   <link rel="canonical" href="https://getconexto.com/compare.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
-  <meta property="og:title" content="The Flood, Compared — The Divine Archives" />
-  <meta property="og:description" content="The deluge myth set side by side across traditions, with the earliest text for each and an honest note on where the pattern breaks." />
+  <meta property="og:title" content="Compared, Side by Side — The Divine Archives" />
+  <meta property="og:description" content="The flood, creation, the underworld, and the dying-and-returning god — set side by side across traditions, with an honest note on where each pattern breaks." />
   <meta property="og:url" content="https://getconexto.com/compare.html" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="The Flood, Compared — The Divine Archives" />
-  <meta name="twitter:description" content="The deluge myth set side by side across traditions." />
+  <meta name="twitter:title" content="Compared, Side by Side — The Divine Archives" />
+  <meta name="twitter:description" content="The world's recurring sacred motifs, set side by side across traditions." />
   <style>
-    .cmp-scroll { overflow-x: auto; margin: 1.4rem 0 0.6rem; border: 1px solid var(--line-soft); border-radius: 4px; }
-    table.cmp { border-collapse: collapse; width: 100%; min-width: 46rem; font-size: 0.92rem; }
-    table.cmp th, table.cmp td { text-align: left; vertical-align: top; padding: 0.85rem 1rem; border-bottom: 1px solid var(--line-soft); }
+    .cmp-scroll { overflow-x: auto; margin: 1.2rem 0 0.6rem; border: 1px solid var(--line-soft); border-radius: 4px; }
+    table.cmp { border-collapse: collapse; width: 100%; min-width: 46rem; font-size: 0.9rem; }
+    table.cmp th, table.cmp td { text-align: left; vertical-align: top; padding: 0.8rem 0.95rem; border-bottom: 1px solid var(--line-soft); }
     table.cmp thead th { position: sticky; top: 0; background: linear-gradient(180deg, var(--panel-2), var(--panel)); border-bottom: 1px solid var(--line); }
-    table.cmp thead th a { font-family: var(--font-head); font-weight: 600; color: var(--gold-bright); font-size: 1.12rem; }
-    table.cmp thead th .era { display: block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.5rem; color: var(--ink-faint); margin-top: 0.2rem; }
-    table.cmp tbody th { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.56rem; color: var(--gold); white-space: nowrap; background: var(--ground-2); }
+    table.cmp thead th span.h { font-family: var(--font-head); font-weight: 600; color: var(--gold-bright); font-size: 1.08rem; display: block; }
+    table.cmp thead th a { font-family: var(--font-head); font-weight: 600; color: var(--gold-bright); font-size: 1.08rem; }
+    table.cmp thead th .era { display: block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.48rem; color: var(--ink-faint); margin-top: 0.2rem; }
+    table.cmp tbody th { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.54rem; color: var(--gold); white-space: nowrap; background: var(--ground-2); }
     table.cmp tbody td { color: var(--ink); line-height: 1.5; }
     table.cmp tbody tr:hover td { background: rgba(199,154,84,0.04); }
     table.cmp em { color: var(--parchment); font-style: italic; }
-    .theme-switch { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 0.4rem 0 0.4rem; }
-    .theme-switch span, .theme-switch a { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.6rem; padding: 0.4rem 0.8rem; border: 1px solid var(--line); border-radius: 2px; color: var(--ink-dim); }
-    .theme-switch .on { color: var(--ground); background: linear-gradient(180deg, var(--gold-bright), var(--gold)); border-color: var(--gold); }
-    .theme-switch .soon { opacity: 0.5; }
+    .theme-switch { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 0.4rem 0 1.4rem; }
+    .theme-switch button {
+      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.6rem;
+      padding: 0.45rem 0.9rem; border: 1px solid var(--line); border-radius: 2px; color: var(--ink-dim);
+      background: transparent; cursor: pointer; transition: border-color .3s, color .3s, background .3s;
+    }
+    .theme-switch button:hover { border-color: var(--gold); color: var(--parchment); }
+    .theme-switch button[aria-selected="true"] { color: var(--ground); background: linear-gradient(180deg, var(--gold-bright), var(--gold)); border-color: var(--gold); }
+    .panel-lede { text-align: center; color: var(--ink-dim); font-family: var(--font-head); font-style: italic; font-size: 1.1rem; max-width: 36rem; margin: 0 auto 0.6rem; }
+    [data-panel] { display: none; }
+    [data-panel].on { display: block; }
+    .cmp-note { font-size: 0.82rem; color: var(--ink-faint); margin: 0.5rem 0 0; }
   </style>
 </head>
 <body>
@@ -59,87 +68,100 @@
   </header>
 
   <div class="page-head">
-    <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><a href="themes.html">Themes</a><span class="sep">/</span><span>The Flood, Compared</span></p>
+    <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><a href="themes.html">Themes</a><span class="sep">/</span><span>Compared</span></p>
     <p class="eyebrow">Compare Across Traditions</p>
-    <h1>The Flood, Side by Side</h1>
-    <p class="lede">The oldest story the world keeps telling. Here five traditions&rsquo; deluge myths in one view — the survivor, the warning, the vessel, the sign — each with its earliest surviving text.</p>
+    <h1>Side by Side</h1>
+    <p class="lede">Some stories the whole world seems to tell. Set four of them beside one another &mdash; what is shared, what is borrowed, and what each culture made its own.</p>
   </div>
 
   <main id="cmp" class="wrap" style="max-width:60rem;padding-top:0.5rem">
-    <div class="theme-switch">
-      <span class="on">The Flood</span>
-      <span class="soon">Creation &middot; soon</span>
-      <span class="soon">The Underworld &middot; soon</span>
-      <span class="soon">The Dying &amp; Returning God &middot; soon</span>
+    <div class="theme-switch" role="tablist" aria-label="Choose a theme to compare">
+      <button role="tab" data-theme="the-flood" aria-selected="true">The Flood</button>
+      <button role="tab" data-theme="creation" aria-selected="false">Creation</button>
+      <button role="tab" data-theme="the-underworld" aria-selected="false">The Underworld</button>
+      <button role="tab" data-theme="the-returning-god" aria-selected="false">The Dying &amp; Returning God</button>
     </div>
 
-    <div class="cmp-scroll">
-      <table class="cmp">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col"><a href="chapters/ch03.html">Mesopotamian</a><span class="era">Bronze Age</span></th>
-            <th scope="col"><a href="chapters/ch07.html">Hebrew</a><span class="era">Iron Age Israel</span></th>
-            <th scope="col"><a href="chapters/ch21.html">Islamic</a><span class="era">Early Medieval</span></th>
-            <th scope="col"><a href="chapters/ch08.html">Greek</a><span class="era">Early Greece</span></th>
-            <th scope="col"><a href="chapters/ch05.html">Hindu</a><span class="era">Early Vedic</span></th>
-          </tr>
-        </thead>
+    <!-- ============ THE FLOOD ============ -->
+    <section data-panel="the-flood" class="on">
+      <p class="panel-lede">The oldest story the world keeps telling &mdash; the survivor, the warning, the vessel, the sign.</p>
+      <div class="cmp-scroll"><table class="cmp">
+        <thead><tr><th></th>
+          <th><a href="chapters/ch03.html">Mesopotamian</a><span class="era">Bronze Age</span></th>
+          <th><a href="chapters/ch07.html">Hebrew</a><span class="era">Iron Age Israel</span></th>
+          <th><a href="chapters/ch21.html">Islamic</a><span class="era">Early Medieval</span></th>
+          <th><a href="chapters/ch08.html">Greek</a><span class="era">Early Greece</span></th>
+          <th><a href="chapters/ch05.html">Hindu</a><span class="era">Early Vedic</span></th></tr></thead>
         <tbody>
-          <tr>
-            <th scope="row">The survivor</th>
-            <td><em>Ziusudra</em>, later <em>Atrahasis</em>, then <em>Utnapishtim</em> — one pious man across three languages.</td>
-            <td><em>Noah</em>, tenth from Adam, &ldquo;a righteous man.&rdquo;</td>
-            <td><em>Nuh</em> (Noah), a prophet who preaches before the flood.</td>
-            <td><em>Deucalion</em> and his wife <em>Pyrrha</em>.</td>
-            <td><em>Manu</em>, the first man and ancestor of humankind.</td>
-          </tr>
-          <tr>
-            <th scope="row">Warned by</th>
-            <td>The god <em>Enki / Ea</em>, who leaks the gods&rsquo; secret through a reed wall.</td>
-            <td>God, who resolves to blot out a corrupt earth.</td>
-            <td>God, after Nuh&rsquo;s people reject him.</td>
-            <td><em>Prometheus</em>, his father, foreseeing Zeus&rsquo;s wrath.</td>
-            <td>A small <em>fish</em> he spares — later revealed as <em>Matsya</em>, first avatar of Vishnu.</td>
-          </tr>
-          <tr>
-            <th scope="row">The vessel</th>
-            <td>A vast sealed boat — a cube in Gilgamesh; a round <em>coracle</em> in the Ark Tablet.</td>
-            <td>The <em>ark</em> of gopher wood, its cubits specified.</td>
-            <td>An ark built under revelation, plank by plank.</td>
-            <td>A <em>chest</em> that floats nine days.</td>
-            <td>A boat, tied to the fish&rsquo;s horn and towed to safety.</td>
-          </tr>
-          <tr>
-            <th scope="row">Landfall &amp; sign</th>
-            <td>Rests on <em>Mt. Nimush</em>; birds sent out; sacrifice; the hero is granted immortality.</td>
-            <td>Rests on <em>Ararat</em>; raven then dove &times;3; the <em>rainbow</em> covenant.</td>
-            <td>Rests on <em>al-Judi</em>; one of Nuh&rsquo;s own sons refuses to board and drowns.</td>
-            <td>Lands on <em>Parnassus</em>; they cast stones that become a new people.</td>
-            <td>The fish tows the boat to a northern peak; Manu re-founds humanity.</td>
-          </tr>
-          <tr>
-            <th scope="row">Earliest text</th>
-            <td>Sumerian Flood (<em>Eridu Genesis</em>); <em>Atrahasis</em> (~18th c. BCE); <em>Gilgamesh</em> XI; the Ark Tablet.</td>
-            <td><em>Genesis</em> 6–9 (interwoven J and P strands).</td>
-            <td>The <em>Qur&rsquo;an</em> (esp. Sūrat Hūd, 11).</td>
-            <td>Greek myth (Apollodorus; Ovid&rsquo;s <em>Metamorphoses</em>).</td>
-            <td><em>Shatapatha Brahmana</em> (~800–600 BCE); later the Puranas.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="muted" style="font-size:0.82rem;color:var(--ink-faint);margin:0.5rem 0 0">Tap a tradition&rsquo;s name to open its full chapter. Details and sources are drawn from the Flood chapter.</p>
+          <tr><th>The survivor</th><td><em>Ziusudra</em>, later <em>Atrahasis</em>, then <em>Utnapishtim</em>.</td><td><em>Noah</em>, &ldquo;a righteous man.&rdquo;</td><td><em>Nuh</em>, a prophet who preaches first.</td><td><em>Deucalion</em> and <em>Pyrrha</em>.</td><td><em>Manu</em>, the first man.</td></tr>
+          <tr><th>Warned by</th><td>The god <em>Enki / Ea</em>, through a reed wall.</td><td>God, against a corrupt earth.</td><td>God, after his people reject him.</td><td><em>Prometheus</em>, his father.</td><td>A <em>fish</em> &mdash; later the god <em>Matsya</em>.</td></tr>
+          <tr><th>The vessel</th><td>A sealed boat; a round <em>coracle</em> in the Ark Tablet.</td><td>The <em>ark</em> of gopher wood.</td><td>An ark built under revelation.</td><td>A floating <em>chest</em>.</td><td>A boat tied to the fish&rsquo;s horn.</td></tr>
+          <tr><th>Landfall &amp; sign</th><td>Mt. Nimush; birds sent out; immortality.</td><td>Ararat; the dove; the <em>rainbow</em>.</td><td>Al-Judi; a son refuses to board and drowns.</td><td>Parnassus; stones become a new people.</td><td>A northern peak; humanity re-founded.</td></tr>
+          <tr><th>Earliest text</th><td><em>Atrahasis</em> (~18th c. BCE); <em>Gilgamesh</em> XI.</td><td><em>Genesis</em> 6&ndash;9.</td><td>The <em>Qur&rsquo;an</em> (Sūrat Hūd).</td><td>Apollodorus; Ovid.</td><td><em>Shatapatha Brahmana</em>.</td></tr>
+        </tbody></table></div>
+      <div class="evidence"><div class="evidence-head">&#10022; Where the pattern breaks</div><div class="ev open"><h4>Not every flood is the same story</h4><p>The Mesopotamian-to-Genesis line is a <em>documented literary chain</em> &mdash; Ziusudra becomes Atrahasis becomes Utnapishtim becomes Noah. Greek and Hindu deluges share the shape but are not obviously borrowed. And two famous &ldquo;floods&rdquo; differ in kind: China&rsquo;s <a href="chapters/ch09.html">Yu the Great</a> <em>tames</em> the waters by engineering, and Egypt&rsquo;s <a href="chapters/ch02.html">Book of the Heavenly Cow</a> floods the fields with beer to <em>stop</em> a slaughter.</p></div></div>
+      <div class="chapter-nav" style="margin-top:1.4rem"><a href="chapters/ch01.html">&larr; Read the full Flood chapter</a><a href="themes.html">All themes &rarr;</a></div>
+    </section>
 
-    <div class="evidence" style="margin-top:2rem">
-      <div class="evidence-head">&#10022; Where the pattern breaks — honestly</div>
-      <div class="ev open">
-        <h4>Not every &ldquo;flood myth&rdquo; is the same story</h4>
-        <p>The Mesopotamian&ndash;to&ndash;Genesis line is a <em>documented literary chain</em> — Ziusudra becomes Atrahasis becomes Utnapishtim becomes Noah, the same plot in three languages. Greek and Hindu deluges share the shape but are not obviously borrowed from it. And two famous &ldquo;floods&rdquo; are a different thing entirely: China&rsquo;s <a href="chapters/ch09.html">Yu the Great</a> <em>tames</em> the waters by dredging and engineering — a story about good government, not a survivor riding out divine wrath — and Egypt&rsquo;s <a href="chapters/ch02.html">Book of the Heavenly Cow</a> has Ra flood the fields with beer dyed red to <em>stop</em> a slaughter. To file them all under one label is to flatten real differences.</p>
-      </div>
-    </div>
+    <!-- ============ CREATION ============ -->
+    <section data-panel="creation">
+      <p class="panel-lede">How the world began &mdash; and who, if anyone, made it.</p>
+      <div class="cmp-scroll"><table class="cmp">
+        <thead><tr><th></th>
+          <th><a href="chapters/ch03.html">Mesopotamian</a><span class="era">Bronze Age</span></th>
+          <th><a href="chapters/ch02.html">Egyptian</a><span class="era">Bronze Age</span></th>
+          <th><a href="chapters/ch05.html">Vedic</a><span class="era">Bronze Age</span></th>
+          <th><a href="chapters/ch08.html">Greek</a><span class="era">Early Greece</span></th>
+          <th><a href="chapters/ch23.html">Norse</a><span class="era">Early Medieval</span></th></tr></thead>
+        <tbody>
+          <tr><th>In the beginning</th><td>A mingling of waters &mdash; <em>Apsu</em> (fresh) and <em>Tiamat</em> (salt).</td><td>The primordial waters of <em>Nun</em>.</td><td>&ldquo;Neither non-existence nor existence then&rdquo; &mdash; the hymn refuses to be sure.</td><td>First <em>Chaos</em>, a &ldquo;gap,&rdquo; then <em>Gaia</em>, the Earth.</td><td><em>Ginnungagap</em>, the void between fire and ice.</td></tr>
+          <tr><th>How it&rsquo;s made</th><td><em>Marduk</em> slays Tiamat and splits her body into sky and earth.</td><td><em>Atum</em> rises on the first mound; <em>Ptah</em> creates by thought and word.</td><td>The cosmic man <em>Purusha</em> is sacrificed and divided; or born of a golden embryo.</td><td>Generations of gods beget one another in violent succession.</td><td>The gods slay the giant <em>Ymir</em> and build the world from his body.</td></tr>
+          <tr><th>The maker</th><td>The storm-god Marduk, crowned king for the victory.</td><td>The sun-god Atum-Ra, or the craftsman Ptah.</td><td>An unnamed &ldquo;That One&rdquo; &mdash; the hymn asks who could truly know.</td><td>No single creator; the cosmos begets itself.</td><td>Odin and his brothers, from a slain primordial giant.</td></tr>
+          <tr><th>Earliest text</th><td><em>Enuma Elish</em>.</td><td>Pyramid &amp; Coffin Texts; the Memphite Theology.</td><td><em>Rigveda</em> X (Nasadiya, Purusha, Hiranyagarbha).</td><td>Hesiod&rsquo;s <em>Theogony</em> (~700 BCE).</td><td><em>Völuspá</em>; Snorri&rsquo;s Edda.</td></tr>
+        </tbody></table></div>
+      <div class="evidence"><div class="evidence-head">&#10022; Where the pattern breaks</div><div class="ev open"><h4>Two shapes, independently reached</h4><p>Two motifs recur &mdash; order carved from a <em>watery chaos</em>, and a world built from a <em>slain primordial body</em> (Tiamat, Ymir, Purusha). These are real cross-cultural shapes, but the traditions are largely independent, and their theologies differ sharply. The Vedic <em>Nasadiya Sukta</em> is remarkable precisely for refusing certainty &mdash; &ldquo;who really knows?&rdquo; And the Norse cosmogony survives only in Christian-era Icelandic texts, so how much is genuinely pagan is debated.</p></div></div>
+      <p class="cmp-note">A dedicated Creation chapter is planned; for now, each column links to that tradition&rsquo;s chapter.</p>
+    </section>
 
-    <div class="chapter-nav" style="margin-top:2rem"><a href="chapters/ch01.html">&larr; Read the full Flood chapter</a><a href="themes.html">All comparative themes &rarr;</a></div>
+    <!-- ============ THE UNDERWORLD ============ -->
+    <section data-panel="the-underworld">
+      <p class="panel-lede">Where the dead go &mdash; and whether it matters how they lived.</p>
+      <div class="cmp-scroll"><table class="cmp">
+        <thead><tr><th></th>
+          <th><a href="chapters/ch03.html">Mesopotamian</a><span class="era">Bronze Age</span></th>
+          <th><a href="chapters/ch02.html">Egyptian</a><span class="era">Bronze Age</span></th>
+          <th><a href="chapters/ch08.html">Greek</a><span class="era">Early Greece</span></th>
+          <th><a href="chapters/ch07.html">Hebrew</a><span class="era">Iron Age Israel</span></th>
+          <th><a href="chapters/ch23.html">Norse</a><span class="era">Early Medieval</span></th></tr></thead>
+        <tbody>
+          <tr><th>The place</th><td>The <em>Kur</em>, the &ldquo;land of no return.&rdquo;</td><td>The <em>Duat</em>, ruled by Osiris.</td><td><em>Hades</em>, across the river Styx.</td><td><em>Sheol</em>, a pit beneath the earth.</td><td><em>Hel</em>, one of the Nine Worlds.</td></tr>
+          <tr><th>What it&rsquo;s like</th><td>A dark house where shades eat dust and clay.</td><td>A journey of trials, then the <em>Field of Reeds</em> for the justified.</td><td>A dim, strengthless gloom.</td><td>A dusty silence, common to all.</td><td>The lot of those who die of sickness or age.</td></tr>
+          <tr><th>Judged?</th><td>No &mdash; good and bad share one gloom.</td><td><em>Yes</em> &mdash; the heart weighed against Ma&rsquo;at&rsquo;s feather.</td><td>Rarely &mdash; Tartarus for a few sinners, Elysium for a few heroes.</td><td>Not yet &mdash; reward and judgment come later.</td><td>Sorted more by manner of death than by merit.</td></tr>
+          <tr><th>Who rules</th><td>Queen <em>Ereshkigal</em>.</td><td><em>Osiris</em>, with Anubis and Thoth.</td><td><em>Hades</em> and Persephone.</td><td>&mdash; (no ruler; even God&rsquo;s reach is faint).</td><td>The being <em>Hel</em>.</td></tr>
+          <tr><th>Earliest text</th><td>The <em>Descent of Inanna</em>; Gilgamesh.</td><td>The <em>Book of the Dead</em>; Coffin Texts.</td><td>Homer&rsquo;s <em>Odyssey</em> XI.</td><td>The Hebrew Bible.</td><td>The Eddas.</td></tr>
+        </tbody></table></div>
+      <div class="evidence"><div class="evidence-head">&#10022; Where the pattern breaks</div><div class="ev open"><h4>One grim shadow &mdash; and one exception</h4><p>For most of the ancient world the dead shared a single, undifferentiated shadow, without reward or punishment &mdash; the Mesopotamian Kur, the Greek Hades, the Hebrew Sheol, the Norse Hel. <em>Egypt is the striking exception</em>, with a moral judgment and a blessed afterlife for the justified. Heaven, hell, judgment, and resurrection are largely <em>later</em> developments &mdash; in <a href="chapters/ch10.html">Second Temple Judaism</a> and after &mdash; and how much they owe to <a href="chapters/ch06.html">Zoroastrian Persia</a> is genuinely debated.</p></div></div>
+      <p class="cmp-note">A dedicated Underworld chapter is planned; for now, each column links to that tradition&rsquo;s chapter.</p>
+    </section>
+
+    <!-- ============ DYING & RETURNING GOD ============ -->
+    <section data-panel="the-returning-god">
+      <p class="panel-lede">Gods who die and come back &mdash; and a category scholars no longer trust.</p>
+      <div class="cmp-scroll"><table class="cmp">
+        <thead><tr><th></th>
+          <th><span class="h">Osiris</span><a href="chapters/ch02.html" class="era" style="letter-spacing:.12em">Egyptian</a></th>
+          <th><span class="h">Dumuzi / Tammuz</span><a href="chapters/ch03.html" class="era" style="letter-spacing:.12em">Mesopotamian</a></th>
+          <th><span class="h">Baal</span><a href="chapters/ch07.html" class="era" style="letter-spacing:.12em">Canaanite</a></th>
+          <th><span class="h">Persephone</span><a href="chapters/ch08.html" class="era" style="letter-spacing:.12em">Greek</a></th></tr></thead>
+        <tbody>
+          <tr><th>How they fall</th><td>Murdered and dismembered by his brother <em>Seth</em>.</td><td>Handed to the underworld in <em>Inanna&rsquo;s</em> place.</td><td>Swallowed by <em>Mot</em>, Death itself.</td><td>Carried off by <em>Hades</em>.</td></tr>
+          <tr><th>Do they return?</th><td>Reassembled by <em>Isis</em> &mdash; but becomes king of the <em>dead</em>, not the living.</td><td>In some versions, half the year below and half above.</td><td>Returns to life; the rains return with him.</td><td>Returns to the surface for part of each year.</td></tr>
+          <tr><th>What it meant</th><td>Hope that the dead, &ldquo;made Osiris,&rdquo; might live on.</td><td>The lament for the dying year and its crops.</td><td>The death and return of rain and harvest.</td><td>The turning of the growing year (Eleusis).</td></tr>
+          <tr><th>Earliest source</th><td>Pyramid Texts; later Plutarch.</td><td>The Sumerian <em>Descent of Inanna</em>.</td><td>The Ugaritic <em>Baal Cycle</em> (~13th c. BCE).</td><td>The <em>Homeric Hymn to Demeter</em>.</td></tr>
+        </tbody></table></div>
+      <div class="evidence"><div class="evidence-head">&#10022; Where the pattern breaks &mdash; read this one carefully</div><div class="ev open"><h4>The category itself is contested</h4><p>&ldquo;The dying-and-rising god&rdquo; is a <em>disputed scholarly category</em>. Since James Frazer&rsquo;s <em>Golden Bough</em> grouped these figures together, many scholars &mdash; notably Jonathan Z. Smith &mdash; have judged the pattern loose and misleading: Osiris rules the dead rather than returning to life, several &ldquo;resurrections&rdquo; are seasonal or ambiguous rather than personal, and lumping them together flattens real differences. And the popular claim that <em>Christianity simply copied a dying-and-rising pagan god</em> is <strong>rejected by mainstream scholarship</strong> &mdash; some parallels post-date Christianity, some (a &ldquo;resurrected&rdquo; Mithras) are modern inventions, and the resemblances more likely reflect a shared religious atmosphere than borrowing. The <a href="chapters/ch18.html">Roman Mystery Cults</a> chapter weighs this in full.</p></div></div>
+      <p class="cmp-note">A dedicated comparative chapter is planned; for now, each column links to the relevant tradition&rsquo;s chapter.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -158,6 +180,22 @@
     </div>
   </footer>
 </div>
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.theme-switch button'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+    function show(theme, push) {
+      var found = false;
+      panels.forEach(function (p) { var on = p.getAttribute('data-panel') === theme; p.classList.toggle('on', on); if (on) found = true; });
+      if (!found) { theme = 'the-flood'; panels.forEach(function (p) { p.classList.toggle('on', p.getAttribute('data-panel') === theme); }); }
+      tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.getAttribute('data-theme') === theme)); });
+      if (push && window.history && history.replaceState) history.replaceState(null, '', 'compare.html?theme=' + theme);
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.getAttribute('data-theme'), true); }); });
+    var q = new URLSearchParams(location.search).get('theme');
+    if (q) show(q, false);
+  })();
+</script>
 <script src="assets/ambient.js" defer></script>
 </body>
 </html>
