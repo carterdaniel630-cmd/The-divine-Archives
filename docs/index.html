@@ -105,6 +105,44 @@
     .method p { margin: 0; color: var(--ink); }
     .method .fine { color: var(--ink-dim); font-size: 0.92rem; font-style: italic; }
 
+    .trust-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin: 2.4rem 0 1.8rem; text-align: left; }
+    .pillar { border: 1px solid var(--line-soft); border-radius: 4px; padding: 1.4rem 1.3rem; background: linear-gradient(180deg, var(--panel), var(--ground)); }
+    .pillar svg { width: 30px; height: 30px; color: var(--gold); margin-bottom: 0.7rem; }
+    .pillar h3 { font-family: var(--font-head); font-weight: 600; color: var(--parchment); font-size: 1.16rem; margin: 0 0 0.4rem; letter-spacing: 0.01em; }
+    .pillar p { margin: 0; color: var(--ink-dim); font-size: 0.9rem; line-height: 1.55; }
+    @media (max-width: 680px) { .trust-pillars { grid-template-columns: 1fr; } }
+
+    .invite {
+      border-top: 1px solid var(--line);
+      background: radial-gradient(90% 130% at 50% 0%, rgba(199,154,84,0.10), transparent 65%);
+      padding: 4.4rem 0 5rem;
+    }
+    .invite .inner { max-width: 54rem; margin-inline: auto; display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.4rem; align-items: center; }
+    @media (max-width: 720px) { .invite .inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; } }
+    .invite h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; color: var(--parchment); font-size: clamp(1.4rem, 3.2vw, 1.95rem); margin: 0.4rem 0 0.6rem; text-wrap: balance; }
+    .invite-lede { color: var(--ink-dim); margin: 0 0 1.2rem; }
+    #sub-form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    @media (max-width: 720px) { #sub-form { justify-content: center; } }
+    #sub-form input[type="email"] {
+      flex: 1; min-width: 12rem; background: linear-gradient(180deg, rgba(34,25,16,0.85), rgba(16,12,9,0.85));
+      border: 1px solid var(--line); border-radius: 2px; color: var(--ink);
+      font-family: var(--font-body); font-size: 1rem; padding: 0.7rem 0.9rem;
+    }
+    #sub-form input[type="email"]::placeholder { color: var(--ink-faint); font-style: italic; }
+    #sub-form input[type="email"]:focus { outline: none; border-color: var(--gold); }
+    #sub-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    #sub-btn {
+      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.18em;
+      font-size: 0.7rem; color: var(--ground); background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+      border: 0; border-radius: 2px; padding: 0.7rem 1.3rem; cursor: pointer; white-space: nowrap;
+    }
+    #sub-btn:hover { filter: brightness(1.08); }
+    #sub-btn:disabled { opacity: 0.6; cursor: default; }
+    .invite-fine { margin: 0.9rem 0 0; font-size: 0.82rem; color: var(--ink-faint); font-style: italic; }
+    .invite-support { border-left: 1px solid var(--line-soft); padding-left: 2.2rem; }
+    @media (max-width: 720px) { .invite-support { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-soft); padding-top: 1.6rem; } }
+    .invite-support p { color: var(--ink-dim); font-size: 0.94rem; margin: 0 0 1.1rem; }
+
     @keyframes fade-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes turn { to { transform: rotate(360deg); } }
     @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
@@ -229,10 +267,48 @@
         dispute is named rather than settled. Where the evidence falls silent, we say so &mdash;
         no tradition is dressed in certainty it has not earned.
       </p>
+      <div class="trust-pillars">
+        <div class="pillar">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 8h20l6 6v26H14z" stroke="currentColor" stroke-width="1.6"/><path d="M34 8v6h6" stroke="currentColor" stroke-width="1.6"/><path d="M19 24h14M19 30h14M19 18h8" stroke="currentColor" stroke-width="1.2"/></svg>
+          <h3>Real sources, always</h3>
+          <p>Every specific claim is checked against primary texts and current scholarship &mdash; never memory, never invented citations.</p>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8v32" stroke="currentColor" stroke-width="1.6"/><path d="M24 12l-12 6 12 6 12-6z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 40h32" stroke="currentColor" stroke-width="1.2"/></svg>
+          <h3>Disputes named, not settled</h3>
+          <p>Where scholars contend, we lay the debate out and let it stand &mdash; we do not resolve open questions by quietly picking a side.</p>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.6"/><path d="M24 16v9M24 31h.02" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Gaps admitted</h3>
+          <p>Where the evidence runs out, the chapter says so. Each one closes with what is supported, what is not, and what is genuinely unknown.</p>
+        </div>
+      </div>
       <p class="fine">
-        Each entry closes with an open reckoning: what is supported, what is not, and what
-        remains genuinely unknown. <a href="methodology.html">Read the full method &rarr;</a>
+        A claim being sacred to believers and a claim being historically verified are different
+        statements &mdash; and we never blur them into one. <a href="methodology.html">Read the full method &rarr;</a>
       </p>
+    </div>
+  </section>
+
+  <!-- INVITE: subscribe + support -->
+  <section class="invite" id="follow">
+    <div class="wrap inner">
+      <div class="invite-card">
+        <p class="eyebrow">Follow the work</p>
+        <h2>New chapters, as the ink dries</h2>
+        <p class="invite-lede">The archive grows one tradition at a time. Leave your email and I&rsquo;ll send word when a new chapter goes up &mdash; no more than that.</p>
+        <form id="sub-form" novalidate>
+          <input type="email" id="sub-email" name="email" required autocomplete="email" placeholder="you@example.com" aria-label="Your email address" />
+          <input type="text" id="sub-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" id="sub-btn">Join the list</button>
+        </form>
+        <p id="sub-msg" class="invite-fine" role="status" aria-live="polite">No spam, ever. Unsubscribe in one click.</p>
+      </div>
+      <div class="invite-support">
+        <p>The Divine Archives is free to read and independent &mdash; no ads, no paywall, no agenda for sale. If the keeping of it is of value to you, you can help keep the candle lit.</p>
+        <div class="support"><a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">&#9829; Support the Archive</a></div>
+      </div>
     </div>
   </section>
 
@@ -276,6 +352,35 @@
   })();
 </script>
 <script src="assets/archive.js"></script>
+<script>
+  /* email capture -> Cloudflare Pages Function at /api/subscribe */
+  (function () {
+    var form = document.getElementById("sub-form");
+    if (!form) return;
+    var email = document.getElementById("sub-email");
+    var hp = document.getElementById("sub-hp");
+    var btn = document.getElementById("sub-btn");
+    var msg = document.getElementById("sub-msg");
+    function say(t) { msg.textContent = t; }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var val = (email.value || "").trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val)) { say("Please enter a valid email address."); email.focus(); return; }
+      btn.disabled = true; say("Adding you…");
+      fetch("/api/subscribe", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: val, website: hp ? hp.value : "" })
+      }).then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (d) {
+          if (d && d.ok) { form.reset(); say("You’re on the list — thank you."); }
+          else if (d && d.reason === "not_configured") { say("The list isn’t open just yet — please check back soon."); btn.disabled = false; }
+          else if (d && d.reason === "invalid") { say("That email didn’t look right — try again."); btn.disabled = false; }
+          else { say("Something went wrong — please try again."); btn.disabled = false; }
+        })
+        .catch(function () { say("Couldn’t reach the server — please try again."); btn.disabled = false; });
+    });
+  })();
+</script>
 <script src="assets/ambient.js" defer></script>
 </body>
 </html>
