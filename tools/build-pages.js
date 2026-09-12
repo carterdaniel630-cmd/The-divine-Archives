@@ -137,17 +137,14 @@ function themesFragment() {
       '<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
         '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.2rem">' + esc(t.name) + "</span>" +
         badge(status, ch && ch.pending) + "</div>";
+    // every theme has a side-by-side comparison view (compare.html?theme=<slug>)
+    const compareLink = '\n      <p style="margin:0.1rem 0 0.4rem;text-align:right"><a href="compare.html?theme=' + encodeURIComponent(t.slug) + '" style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.62rem">&#8646; Compare side by side &rarr;</a></p>';
     if (ch) {
-      const card = '      <a class="card" href="chapters/' + encodeURIComponent(ch.id) + '.html">' + head +
-        '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p></a>";
-      // the Flood has a dedicated side-by-side comparison view
-      if (t.slug === "the-flood") {
-        return card + '\n      <p style="margin:0.1rem 0 0.4rem;text-align:right"><a href="compare.html" style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.62rem">&#8646; Compare side by side &rarr;</a></p>';
-      }
-      return card;
+      return '      <a class="card" href="chapters/' + encodeURIComponent(ch.id) + '.html">' + head +
+        '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p></a>" + compareLink;
     }
-    return '      <div class="card" style="opacity:0.75;cursor:default">' + head +
-      '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem;font-style:italic">This comparative chapter is planned but not yet written.</p></div>';
+    return '      <div class="card" style="opacity:0.85;cursor:default">' + head +
+      '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem;font-style:italic">A dedicated chapter is planned &mdash; but you can already see it compared side by side.</p></div>' + compareLink;
   }).join("\n");
 }
 
