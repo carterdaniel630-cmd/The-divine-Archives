@@ -101,10 +101,10 @@ function pageFor(ch) {
   const plate = PLATES[ch.id] || "";
 
   const crumbMid = ch.era
-    ? `<a href="../era.html?era=${encodeURIComponent(ch.era)}">${esc(eraName)}</a>`
+    ? `<a href="../eras/${encodeURIComponent(ch.era)}.html">${esc(eraName)}</a>`
     : `<a href="../eras.html">Themes</a>`;
   const backNav = ch.era
-    ? `<a href="../era.html?era=${encodeURIComponent(ch.era)}">&larr; ${esc(eraName)}</a>`
+    ? `<a href="../eras/${encodeURIComponent(ch.era)}.html">&larr; ${esc(eraName)}</a>`
     : `<a href="../themes.html">&larr; All themes</a>`;
 
   const jsonld = JSON.stringify({
@@ -116,6 +116,19 @@ function pageFor(ch) {
     inLanguage: "en",
     isPartOf: { "@type": "WebSite", name: "The Divine Archives", url: SITE + "/" },
     publisher: { "@type": "Organization", name: "The Divine Archives", url: SITE + "/" }
+  });
+
+  const crumb2 = ch.era
+    ? { name: eraName, item: `${SITE}/eras/${ch.era}.html` }
+    : { name: "Themes", item: `${SITE}/themes.html` };
+  const breadcrumbld = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Archive", item: SITE + "/" },
+      { "@type": "ListItem", position: 2, name: crumb2.name, item: crumb2.item },
+      { "@type": "ListItem", position: 3, name: ch.title, item: url }
+    ]
   });
 
   return `<!DOCTYPE html>
@@ -137,6 +150,7 @@ function pageFor(ch) {
   <meta name="twitter:title" content="${esc(fullTitle)}" />
   <meta name="twitter:description" content="${esc(desc)}" />
   <script type="application/ld+json">${jsonld}</script>
+  <script type="application/ld+json">${breadcrumbld}</script>
 </head>
 <body>
 <a class="skip-link" href="#chapter-mount">Skip to content</a>
