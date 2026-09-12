@@ -3,24 +3,29 @@
    A committed dark aesthetic: warm stone, parchment, antique gold.
    ========================================================================== */
 
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap");
+
 :root {
-  --ground:      #100c09;
-  --ground-2:    #150f0a;
-  --panel:       #1b140d;
-  --panel-2:     #221910;
-  --ink:         #d8c7a2;  /* body text: warm bone */
-  --parchment:   #ece0c0;  /* display text */
-  --ink-dim:     #9a8a6b;  /* secondary */
-  --ink-faint:   #6f624a;  /* tertiary / captions */
-  --gold:        #b98f4e;  /* accent */
-  --gold-bright: #d9b06a;  /* accent hover */
-  --line:        #37291a;  /* hairlines */
-  --line-soft:   #2a1f14;
+  --ground:      #140d07;  /* warm candle-dark */
+  --ground-2:    #180f08;
+  --panel:       #1e150d;
+  --panel-2:     #251a10;
+  --ink:         #cdbb96;  /* body text: warm bone */
+  --parchment:   #e6dabf;  /* display text: aged ivory */
+  --ink-dim:     #9c8a68;  /* secondary */
+  --ink-faint:   #6f6046;  /* tertiary / captions */
+  --gold:        #c79a54;  /* accent */
+  --gold-bright: #e7c680;  /* accent hover / lit gold */
+  --ember:       #b26a34;  /* scorch / burnt edge */
+  --ember-deep:  #8a4f27;
+  --line:        #3a2c1a;  /* hairlines */
+  --line-soft:   #2a2013;
   --good:        #7e9e5c;  /* published */
   --warn:        #c2954e;  /* in review */
 
-  --font-display: "Trajan Pro", Optima, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-  --font-body: Georgia, "Palatino Linotype", "Times New Roman", serif;
+  --font-display: "Cinzel", "Trajan Pro", Optima, "Palatino Linotype", Palatino, Georgia, serif;
+  --font-head: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, "Palatino Linotype", "Times New Roman", serif;
 
   --measure: 40rem;
   --page: 68rem;
@@ -52,9 +57,17 @@ body::after {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(120% 80% at 50% -10%, rgba(146, 108, 54, 0.14), transparent 55%),
+    radial-gradient(120% 80% at 50% -10%, rgba(199, 154, 84, 0.16), transparent 55%),
     radial-gradient(90% 60% at 50% 108%, rgba(120, 86, 40, 0.09), transparent 60%),
-    radial-gradient(140% 120% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.5) 100%);
+    radial-gradient(140% 120% at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.55) 100%);
+  animation: candleflicker 8s ease-in-out infinite;
+}
+@keyframes candleflicker {
+  0%, 100% { opacity: 1; }
+  42% { opacity: 0.93; }
+  55% { opacity: 0.985; }
+  70% { opacity: 0.9; }
+  82% { opacity: 0.97; }
 }
 
 /* aged-paper grain (generated) */
@@ -422,3 +435,48 @@ a.tile:hover .tile-art svg { color: var(--gold-bright); }
 /* Stage 2 — chapter "see also" cross-link bands */
 .see-also{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line-soft,#2a2015)}
 .see-also .eyebrow.center{margin-bottom:1.2rem}
+
+/* ==========================================================================
+   Stage 3 — the candlelit scroll: manuscript type, drop caps, inked
+   flourishes, scorched dividers, and a scroll-unfurl on entering a chapter.
+   ========================================================================== */
+body { font-size: 1.06rem; }
+
+/* section headings in the softer garalde hand, an inked fleuron above each */
+.article h2 {
+  font-family: var(--font-head); font-weight: 600; color: var(--gold-bright);
+  font-size: 1.85rem; letter-spacing: 0.005em; line-height: 1.22;
+  border-top: 0; padding-top: 0.4rem; margin: 2.7rem 0 0.7rem;
+}
+.article h2::before {
+  content: ""; display: block; height: 16px; width: 100%; margin: 0 auto 1.15rem;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2018'%3E%3Cpath%20d='M4%209h18M38%209h18'%20stroke='%23c79a54'%20stroke-width='1'/%3E%3Cpath%20d='M30%203l3.4%206L30%2015l-3.4-6z'%20fill='%23c79a54'/%3E%3C/svg%3E") center / 60px 16px no-repeat;
+  opacity: 0.85;
+}
+.article h3 { font-family: var(--font-head); font-weight: 600; color: var(--gold); font-size: 1.3rem; letter-spacing: 0.01em; }
+
+/* illuminated drop capital on a chapter's opening paragraph */
+#chapter-mount .article .lead:first-of-type::first-letter {
+  font-family: var(--font-head); font-weight: 600; float: left;
+  font-size: 4.3rem; line-height: 0.66; padding: 0.06em 0.12em 0 0; margin: 0.02em 0.05em 0 0;
+  color: var(--gold-bright); text-shadow: 0 0 18px rgba(231, 198, 128, 0.35);
+}
+
+/* scorched dividers (background, so flex layouts keep their shape) */
+.see-also, .chapter-nav {
+  border-top: 0 !important; padding-top: 1.8rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%2012'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%206%20Q60%202%20120%206%20T240%206%20T360%205%20T480%207%20T600%205%20T720%207%20T840%205%20T960%206%20T1000%206'%20stroke='%23b26a34'%20stroke-width='2'%20fill='none'%20opacity='0.55'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: top center; background-size: 100% 12px;
+}
+
+/* the chapter unrolls once, like a scroll, resting fully open */
+#chapter-mount .article { transform-origin: top center; animation: unfurl 0.85s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes unfurl {
+  from { transform: scaleY(0.64); opacity: 0.5; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+  #chapter-mount .article { animation: none; }
+}
