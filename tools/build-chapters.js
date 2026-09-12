@@ -110,6 +110,8 @@ const FOOTER = `  <footer class="site-footer">
       <nav>
         <a href="../eras.html">Browse by Era</a>
         <a href="../traditions.html">Browse by Tradition</a>
+        <a href="../compare.html">Compare Themes</a>
+        <a href="../random.html" rel="nofollow">Random Chapter</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
         <a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">Support the Archive</a>
@@ -197,10 +199,12 @@ ${HEADER}
       ${plate}
       <p class="eyebrow">${esc(ch.eraLabel)}</p>
       <h1>${esc(ch.title)}</h1>
-      <p style="margin-top:0.6rem"><span class="badge is-published">In the archive</span></p>
+      <p style="margin-top:0.6rem"><span class="badge is-published">In the archive</span>
+        <button type="button" class="print-btn" onclick="window.print()" title="Save this chapter as a PDF">Save as PDF</button></p>
     </div>
     <section class="wrap article">
 ${rendered}${seeAlso(ch)}
+      <p class="print-only">From <strong>The Divine Archives</strong> &middot; ${url} &middot; a comparative library of the sacred.</p>
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>
   </main>

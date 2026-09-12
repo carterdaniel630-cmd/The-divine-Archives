@@ -138,8 +138,13 @@ function themesFragment() {
         '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.2rem">' + esc(t.name) + "</span>" +
         badge(status, ch && ch.pending) + "</div>";
     if (ch) {
-      return '      <a class="card" href="chapters/' + encodeURIComponent(ch.id) + '.html">' + head +
+      const card = '      <a class="card" href="chapters/' + encodeURIComponent(ch.id) + '.html">' + head +
         '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem">' + esc(ch.summary) + "</p></a>";
+      // the Flood has a dedicated side-by-side comparison view
+      if (t.slug === "the-flood") {
+        return card + '\n      <p style="margin:0.1rem 0 0.4rem;text-align:right"><a href="compare.html" style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.62rem">&#8646; Compare side by side &rarr;</a></p>';
+      }
+      return card;
     }
     return '      <div class="card" style="opacity:0.75;cursor:default">' + head +
       '<p class="muted" style="margin:0.7rem 0 0;font-size:0.95rem;font-style:italic">This comparative chapter is planned but not yet written.</p></div>';
@@ -201,6 +206,8 @@ const FOOTER = `  <footer class="site-footer">
       <nav>
         <a href="../eras.html">Browse by Era</a>
         <a href="../traditions.html">Browse by Tradition</a>
+        <a href="../compare.html">Compare Themes</a>
+        <a href="../random.html" rel="nofollow">Random Chapter</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
         <a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">Support the Archive</a>
@@ -424,7 +431,8 @@ function buildSitemap() {
     SITE + "/themes.html",
     SITE + "/traditions.html",
     SITE + "/about.html",
-    SITE + "/methodology.html"
+    SITE + "/methodology.html",
+    SITE + "/compare.html"
   ];
   A.eras.forEach((e) => urls.push(SITE + "/eras/" + e.slug + ".html"));
   A.chapters.filter((c) => c.status === "published").forEach((c) => urls.push(SITE + "/chapters/" + c.id + ".html"));
