@@ -22,6 +22,36 @@
 
   window.PLATES = {
 
+    /* Ch45 — Pistis Sophia: the thirteen aeons, the fall into Chaos, and the ascent */
+    "ch45": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="0.8" opacity="0.55">' +   /* radiant apex — the Light of the height */
+          '<line x1="100" y1="6" x2="100" y2="20"/><line x1="88" y1="10" x2="94" y2="20"/><line x1="112" y1="10" x2="106" y2="20"/>' +
+          '<line x1="80" y1="16" x2="90" y2="24"/><line x1="120" y1="16" x2="110" y2="24"/></g>' +
+        '<circle cx="100" cy="22" r="3.2" fill="currentColor"/>' +
+        '<g stroke="currentColor" stroke-linecap="round">' +   /* thirteen aeon-rungs, widening as they descend */
+          '<line x1="90" y1="34" x2="110" y2="34" stroke-width="1.2" opacity="0.9"/>' +
+          '<line x1="88" y1="43" x2="112" y2="43" stroke-width="1.1" opacity="0.85"/>' +
+          '<line x1="86" y1="52" x2="114" y2="52" stroke-width="1.1" opacity="0.8"/>' +
+          '<line x1="83" y1="61" x2="117" y2="61" stroke-width="1" opacity="0.76"/>' +
+          '<line x1="80" y1="70" x2="120" y2="70" stroke-width="1" opacity="0.72"/>' +
+          '<line x1="77" y1="79" x2="123" y2="79" stroke-width="1" opacity="0.68"/>' +
+          '<line x1="74" y1="88" x2="126" y2="88" stroke-width="0.9" opacity="0.64"/>' +
+          '<line x1="71" y1="97" x2="129" y2="97" stroke-width="0.9" opacity="0.6"/>' +
+          '<line x1="68" y1="106" x2="132" y2="106" stroke-width="0.9" opacity="0.56"/>' +
+          '<line x1="65" y1="115" x2="135" y2="115" stroke-width="0.8" opacity="0.52"/>' +
+          '<line x1="62" y1="124" x2="138" y2="124" stroke-width="0.8" opacity="0.48"/>' +
+          '<line x1="59" y1="133" x2="141" y2="133" stroke-width="0.8" opacity="0.44"/>' +
+          '<line x1="56" y1="142" x2="144" y2="142" stroke-width="0.8" opacity="0.4"/></g>' +
+        '<path d="M100 26 C64 60 60 120 92 150" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" opacity="0.75"/>' +   /* the fall */
+        '<path d="M108 150 C140 120 136 60 100 26" stroke="currentColor" stroke-width="1" opacity="0.5"/>' +   /* the ascent */
+        '<circle cx="100" cy="160" r="14" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>' +   /* Chaos */
+        '<circle cx="100" cy="160" r="4" fill="currentColor" opacity="0.85"/>' +
+      '</svg>',
+      "Interpretive diagram",
+      "The thirteen aeons above, the fall of Pistis Sophia into Chaos (dashed) and her ascent back toward the Light (solid). An original schematic of the myth, not a historical illustration."
+    ),
+
     /* Ch21 — Islam: an eight-fold geometric rosette (geometry only, no figural) */
     "ch21": fig(
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">' +
