@@ -33,12 +33,14 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js"]) {
+for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js", "assets/emblems.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [] };
 const CHAPTERS = sandbox.window.CHAPTERS || {};
 const PLATES = sandbox.window.PLATES || {};
+const PLATE_ART = sandbox.window.PLATE_ART || {};
+const EMBLEMS = sandbox.window.EMBLEMS || {};
 
 // --- helpers (mirroring archive.js) ---------------------------------------
 const esc = (s) =>
@@ -51,6 +53,34 @@ const clip = (s, n) => {
   if (s.length <= n) return s;
   return s.slice(0, s.lastIndexOf(" ", n)).replace(/[,;:]$/, "") + "…";
 };
+const artFor = (ch, era) =>
+  (ch && PLATE_ART[ch.id]) ? PLATE_ART[ch.id] : (era && EMBLEMS[era.slug]) ? EMBLEMS[era.slug] : "";
+// a tile linking to another chapter (relative to docs/chapters/)
+function chapterTile(ch) {
+  const era = ch.era ? eraBySlug(ch.era) : null;
+  return '        <a class="tile" href="' + ch.id + '.html">' +
+    '<span class="tile-art">' + artFor(ch, era) + "</span>" +
+    '<span class="tile-name">' + esc(ch.title) + "</span>" +
+    '<p class="tile-sum">' + esc(clip(ch.summary, 150)) + "</p></a>";
+}
+// auto "see also": sibling traditions of the same era + comparative-theme chapters
+function seeAlso(ch) {
+  const pub = A.chapters.filter((c) => c.status === "published" && c.id !== ch.id);
+  const siblings = ch.era ? pub.filter((c) => c.era === ch.era && c.kind !== "theme") : [];
+  const themes = pub.filter((c) => c.kind === "theme");
+  let out = "";
+  if (siblings.length) {
+    out += '\n      <div class="see-also">' +
+      '<p class="eyebrow center">Other traditions of this age</p>' +
+      '<div class="tiles">\n' + siblings.map(chapterTile).join("\n") + "\n      </div></div>";
+  }
+  if (themes.length) {
+    out += '\n      <div class="see-also">' +
+      '<p class="eyebrow center">Comparative themes</p>' +
+      '<div class="tiles">\n' + themes.map(chapterTile).join("\n") + "\n      </div></div>";
+  }
+  return out;
+}
 
 const HEADER = `  <header class="site-header">
     <div class="wrap bar">
@@ -170,7 +200,7 @@ ${HEADER}
       <p style="margin-top:0.6rem"><span class="badge is-published">In the archive</span></p>
     </div>
     <section class="wrap article">
-${rendered}
+${rendered}${seeAlso(ch)}
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>
   </main>

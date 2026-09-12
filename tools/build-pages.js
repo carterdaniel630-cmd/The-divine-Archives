@@ -47,12 +47,13 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js"]) {
+for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/chapters.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [], themes: [] };
 const EMBLEMS = sandbox.window.EMBLEMS || {};
 const PLATE_ART = sandbox.window.PLATE_ART || {};
+const CHAPTERS = sandbox.window.CHAPTERS || {};
 
 // --- helpers (mirroring archive.js exactly) -------------------------------
 const esc = (s) =>
@@ -101,16 +102,18 @@ function writeIfChanged(file, next) {
 
 // ---------- 1. fragments for the listing pages ----------------------------
 
-// homepage era spine (mirrors the index.html inline script output)
+// homepage "Nine Ages" — a chronological timeline (Stage 2; replaces the emblem grid)
 function spineFragment() {
-  return A.eras.map((e) =>
-    '        <a class="era" href="eras/' + encodeURIComponent(e.slug) + '.html">' +
-      (EMBLEMS[e.slug] || "") +
-      '<span class="roman">Era ' + esc(e.num) + "</span>" +
-      "<h3>" + esc(e.name) + '<span class="dates">' + esc(e.dates) + "</span></h3>" +
-      '<p class="traditions">' + e.traditions.map(esc).join(" &middot; ") + "</p>" +
-    "</a>"
+  const nodes = A.eras.map((e) =>
+    '          <li class="tl-node"><a href="eras/' + encodeURIComponent(e.slug) + '.html">' +
+      '<span class="tl-dot" aria-hidden="true"></span>' +
+      '<span class="tl-emblem">' + (EMBLEMS[e.slug] || "") + "</span>" +
+      '<span class="tl-roman">Era ' + esc(e.num) + "</span>" +
+      '<span class="tl-name">' + esc(e.name) + "</span>" +
+      '<span class="tl-dates">' + esc(e.dates) + "</span>" +
+    "</a></li>"
   ).join("\n");
+  return '        <ol class="timeline">\n' + nodes + "\n        </ol>";
 }
 
 // eras.html .age list (mirrors the eras.html inline script output)
@@ -300,6 +303,119 @@ ${FOOTER}
 `;
 }
 
+// ---------- 2b. content search: index + search page -----------------------
+function stripHtml(html) {
+  return String(html || "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&mdash;/g, "—").replace(/&ndash;/g, "–")
+    .replace(/&ldquo;|&rdquo;/g, '"').replace(/&lsquo;|&rsquo;/g, "'")
+    .replace(/&hellip;/g, "…").replace(/&middot;/g, "·")
+    .replace(/&amp;/g, "&").replace(/&[a-z]+;/g, " ")
+    .replace(/\s+/g, " ").trim();
+}
+function buildSearchIndex() {
+  const docs = A.chapters.filter((c) => c.status === "published").map((c) => ({
+    id: c.id,
+    title: c.title,
+    era: c.eraLabel || "",
+    summary: c.summary || "",
+    text: clip(stripHtml((CHAPTERS[c.id] && CHAPTERS[c.id].html) || ""), 3200)
+  }));
+  return JSON.stringify(docs);
+}
+// root-level header/footer (root-relative links) for search.html
+const HEADER_ROOT = HEADER.replace(/\.\.\//g, "").replace('aria-current="page"', "");
+const FOOTER_ROOT = FOOTER.replace(/\.\.\//g, "");
+function searchPage() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Search — The Divine Archives</title>
+  <meta name="description" content="Search the full text of every chapter in The Divine Archives." />
+  <link rel="icon" href="${FAVICON}" />
+  <link rel="stylesheet" href="assets/archive.css" />
+</head>
+<body>
+<a class="skip-link" href="#search-mount">Skip to content</a>
+<div class="page">
+${HEADER_ROOT}
+
+  <div class="page-head">
+    <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><span>Search</span></p>
+    <p class="eyebrow">Seek and find</p>
+    <h1>Search the Archive</h1>
+    <p class="lede">Every chapter, searched by title and full text.</p>
+  </div>
+
+  <main id="search-mount" class="wrap" style="max-width:52rem;padding-top:1rem">
+    <div class="search center" style="margin:0 auto 2rem"><form onsubmit="return false" role="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="q" type="search" placeholder="Search the archives&hellip;" aria-label="Search the archives" autofocus /></form></div>
+    <p id="search-status" class="eyebrow center" style="margin-bottom:1.4rem"></p>
+    <div id="results" style="display:flex;flex-direction:column;gap:0.9rem"></div>
+  </main>
+
+${FOOTER_ROOT}
+</div>
+<script>
+  (function () {
+    var input = document.getElementById("q");
+    var results = document.getElementById("results");
+    var statusEl = document.getElementById("search-status");
+    var INDEX = [];
+    function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+    function snippet(d, term) {
+      var body = d.text || d.summary || "";
+      var i = term ? body.toLowerCase().indexOf(term) : -1;
+      var s = i < 0 ? (d.summary || body).slice(0, 180) : body.slice(Math.max(0, i - 70), i + 110);
+      s = esc(s.trim());
+      if (term) s = s.replace(new RegExp("(" + term.replace(/[.*+?^\${}()|[\\]\\\\]/g, "\\\\$&") + ")", "ig"), "<mark>$1</mark>");
+      return (i > 70 ? "&hellip;" : "") + s + "&hellip;";
+    }
+    function draw(q) {
+      q = (q || "").trim();
+      results.innerHTML = "";
+      if (!q) { statusEl.textContent = ""; return; }
+      var terms = q.toLowerCase().split(/\\s+/);
+      var hits = INDEX.map(function (d) {
+        var t = d.title.toLowerCase(), sm = d.summary.toLowerCase(), tx = d.text.toLowerCase();
+        var score = 0;
+        terms.forEach(function (w) {
+          if (t.indexOf(w) !== -1) score += 10;
+          if (sm.indexOf(w) !== -1) score += 4;
+          if (tx.indexOf(w) !== -1) score += 1;
+        });
+        return { d: d, score: score };
+      }).filter(function (x) { return x.score > 0; }).sort(function (a, b) { return b.score - a.score; });
+      statusEl.textContent = hits.length + (hits.length === 1 ? " chapter" : " chapters") + " found";
+      hits.forEach(function (x) {
+        var d = x.d, a = document.createElement("a");
+        a.className = "card"; a.href = "chapters/" + encodeURIComponent(d.id) + ".html";
+        a.innerHTML = '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
+          '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(d.title) + "</span>" +
+          '<span class="eyebrow" style="margin:0">' + esc(d.era) + "</span></div>" +
+          '<p class="muted" style="margin:0.6rem 0 0;font-size:0.92rem;line-height:1.6">' + snippet(d, terms[0]) + "</p>";
+        results.appendChild(a);
+      });
+      if (!hits.length) results.innerHTML = '<p class="notice">No chapter matches &ldquo;' + esc(q) + '&rdquo;.</p>';
+    }
+    fetch("assets/search-index.json").then(function (r) { return r.json(); }).then(function (data) {
+      INDEX = data;
+      var pre = new URLSearchParams(location.search).get("q") || "";
+      if (pre) { input.value = pre; draw(pre); }
+    }).catch(function () { statusEl.textContent = "Search index could not be loaded."; });
+    input.addEventListener("input", function () { draw(input.value); });
+  })();
+</script>
+<script src="assets/ambient.js" defer></script>
+</body>
+</html>
+`;
+}
+
 // ---------- 3. sitemap ----------------------------------------------------
 function buildSitemap() {
   const urls = [
@@ -342,12 +458,17 @@ for (const era of A.eras) {
   if (writeIfChanged(path.join(eraDir, era.slug + ".html"), pageForEra(era))) eraN++;
 }
 
+// content search: index + page
+const siChanged = writeIfChanged(path.join(DOCS, "assets", "search-index.json"), buildSearchIndex());
+const spChanged = writeIfChanged(path.join(DOCS, "search.html"), searchPage());
+
 // sitemap
 const sm = writeIfChanged(path.join(DOCS, "sitemap.xml"), buildSitemap());
 
 console.log(
   "build-pages: listing pages updated [" + (changed.join(", ") || "none") + "]; " +
   "era pages written " + eraN + "/" + A.eras.length + "; " +
+  "search-index " + (siChanged ? "updated" : "unchanged") + ", search.html " + (spChanged ? "updated" : "unchanged") + "; " +
   "sitemap " + (sm ? "updated" : "unchanged") +
   " (" + A.eras.length + " eras + " + A.chapters.filter((c) => c.status === "published").length + " chapters)"
 );

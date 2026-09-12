@@ -237,7 +237,7 @@
         e.preventDefault();
         var input = form.querySelector("input");
         var q = input ? input.value.trim() : "";
-        window.location.href = "traditions.html" + (q ? "?q=" + encodeURIComponent(q) : "");
+        window.location.href = "search.html" + (q ? "?q=" + encodeURIComponent(q) : "");
       });
     });
   }
