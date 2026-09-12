@@ -5523,5 +5523,74 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched by web search against reference scholarship (the British Library manuscript record, the NASSCAL <em>e-Clavis</em> apocrypha database, the Lexham Bible Dictionary, and sourced Wikipedia overviews) alongside the primary text in Mead&rsquo;s translation, per the project standard, rather than from memory. Several AI-generated and popular summaries wrongly place the text in the Bruce Codex or at Nag Hammadi; the chapter corrects that conflation. It keeps the documented, datable manuscript separate from later esoteric readings, flags the community&rsquo;s sect, date, and compositional layers as genuinely open, and treats the work as a witness to later Gnostic belief rather than a record of the events it narrates.</p>
     </div>
+  ` },
+  /* ------------------------------------------------------------------ ch46 */
+  ch46: { html: `
+    <p class="lead">How the ordered world came to be &mdash; the same raw materials of water and darkness, made into very different worlds. Four shapes recur (order from a watery chaos, order won by combat, the world built from a slain body, the world spoken into being) and, against them all, one ancient hymn that looks at the beginning and admits it cannot be sure.</p>
+
+    <h2>A word that remembers a monster</h2>
+    <p>The second verse of the Hebrew Bible names a strange old thing: <strong>tehom</strong>, &ldquo;the deep,&rdquo; the dark formless water over which the wind of God hovers before anything is made. The word is a fossil. <strong>Tehom</strong> is linguistically kin to <strong>Tiamat</strong> &mdash; the salt-sea monster whom the Babylonian god Marduk hacks in two to build the world. Genesis keeps the ancient watery chaos but drains it of menace: <em>tehom</em> is no goddess and no dragon, and God does not fight it &mdash; he speaks, and it obeys. In that one demythologized word lies the drama of this comparative chapter: nearly every people who tried to say how the world began started from water, darkness, and a formless first state &mdash; and then made very different things of them.</p>
+
+    <h2>Order out of the waters</h2>
+    <p>The oldest cosmogonies begin wet. Babylon&rsquo;s <strong>Enuma Elish</strong> starts as a mingling of <strong>Apsu</strong> (fresh water) and <strong>Tiamat</strong> (the salt sea). Egypt&rsquo;s world rises from <strong>Nun</strong>, the limitless primordial ocean, on a first mound of dry earth. Genesis&rsquo;s spirit of God moves over the face of <strong>tehom</strong>. Even the Greeks remembered <strong>Okeanos</strong>, the world-encircling river Homer calls &ldquo;the origin of all.&rdquo; To people who watched land emerge each year from the receding flood of the Nile or the Euphrates, creation <em>looked</em> like dry order lifting out of dark water. For Egypt that ocean is not evil but a reservoir of potential; for the Mesopotamian and Canaanite it can be a <strong>hostile chaos</strong> to be defeated &mdash; the second great shape.</p>
+
+    <h2>The world won by combat: the chaoskampf</h2>
+    <p>Scholars call it the <strong>chaoskampf</strong>, the &ldquo;struggle against chaos&rdquo;: a warrior-god defeats a monstrous, often aquatic power and builds the ordered world from the victory. <strong>Marduk</strong> slays <strong>Tiamat</strong>, splits her carcass &ldquo;like a shellfish&rdquo; into sky and earth, and sets the stars and the calendar in order. In Canaan the storm-god <strong>Baal</strong> battles <strong>Yamm</strong> (&ldquo;Sea&rdquo;) and the dragon <strong>Lotan</strong>. The Hebrew Bible keeps the same imagery in its <em>poetry</em> &mdash; God crushes <strong>Rahab</strong>, cuts the dragon, shatters the heads of <strong>Leviathan</strong> (Psalm 74, Isaiah 51, Job 26) &mdash; even though Genesis 1 omits it. And in Greece <strong>Zeus</strong> blasts the hundred-headed <strong>Typhon</strong>. Genesis 1 is the pointed exception: sharing the combat myth&rsquo;s vocabulary (<em>tehom</em>/Tiamat, the great sea-monsters of the fifth day), it <strong>refuses the fight</strong> &mdash; a deliberate demythologizing to insist the one God met no rival.</p>
+
+    <h2>The world from a body: the cosmic giant</h2>
+    <p>A stranger shape builds the world from the <strong>dismembered body of a primordial being</strong>. The Norse gods <strong>Odin, Vili, and V&eacute;</strong> slay the frost-giant <strong>Ymir</strong> and make the earth from his flesh, the sea from his blood, the mountains from his bones, the sky-dome from his skull. The <strong>Rigveda</strong> (10.90, the <strong>Purusha Sukta</strong>) sacrifices the cosmic Man <strong>Purusha</strong>: the moon from his mind, the sun from his eye &mdash; and, in a socially momentous verse, the four classes of society from his mouth, arms, thighs, and feet. Babylon&rsquo;s world is built from <strong>Tiamat&rsquo;s</strong> split body; China&rsquo;s from the giant <strong>Pangu</strong>. The philologist <strong>Bruce Lincoln</strong> argued the Norse and Vedic versions are close enough &mdash; even in the paired correspondences (bone/rock, hair/plant, blood/water) &mdash; to descend from a shared <strong>Proto-Indo-European</strong> myth. A striking parallel &mdash; and, as the honesty note says, a reconstruction, since the image also appears where no Indo-European link exists.</p>
+
+    <h2>The world spoken, and the question of nothing</h2>
+    <p>A fourth shape needs neither water nor battle: the world is <strong>spoken</strong> into being. In Egypt&rsquo;s <strong>Memphite Theology</strong>, <strong>Ptah</strong> conceives the world in his <em>heart</em> and brings it forth with his <em>tongue</em>. Genesis shares the structure exactly: God <strong>says</strong> &ldquo;Let there be light.&rdquo; That divine <strong>word</strong> runs on into personified <strong>Wisdom</strong>, the <strong>Logos</strong>, and &ldquo;In the beginning was the Word.&rdquo; And here a familiar belief needs honesty: many assume Genesis teaches <strong>creation out of nothing</strong> (<em>creatio ex nihilo</em>). But its Hebrew more likely describes God <em>ordering</em> a pre-existing chaos. The first verse can be read &ldquo;In the beginning God created&rdquo; (Septuagint, KJV) or, following Rashi and the JPS/NRSV, &ldquo;<strong>When God began to create</strong>&hellip; the earth being formless and void&rdquo; &mdash; on which reading the formless waters are already <em>there</em>. The full doctrine of creation from nothing crystallized only later, in the early Christian centuries, sharpened against the <strong>Gnostic</strong> systems of Chapters 17 and 45.</p>
+
+    <h2>The hymn that would not answer</h2>
+    <p>Against all this confident world-building stands the <strong>Nasadiya Sukta</strong>, the &ldquo;Hymn of Creation,&rdquo; <strong>Rigveda 10.129</strong>. It opens by refusing every category: <em>&ldquo;Then there was neither non-existence nor existence&hellip; neither death nor immortality&hellip; no sign of night or day.&rdquo;</em> Something breathed, windless, by its own power. And then it does what no other ancient creation text dares &mdash; it <strong>admits it does not know</strong>: <em>&ldquo;Who really knows? Who here will proclaim it? Whence this creation? The gods came afterwards&hellip; Who then knows whence it has arisen?&rdquo;</em> It ends by wondering whether even &ldquo;the overseer of this world in the highest heaven&hellip; knows &mdash; or perhaps he does not know.&rdquo; Carl Sagan loved it for its &ldquo;humility before the great cosmic mysteries.&rdquo; Beside every people that told a confident story of the beginning stands at least one ancient voice that looked at the darkness and said, <em>we cannot be sure.</em></p>
+
+    <h2>Symbology and sacred encoding</h2>
+    <p><strong>The cosmic egg.</strong> A single seed hatches the cosmos: the Rigveda&rsquo;s <strong>Hiranyagarbha</strong> (10.121), the &ldquo;golden womb&rdquo;; the <strong>Orphic</strong> silver world-egg of Greece; Chinese and Polynesian parallels &mdash; all encoding the intuition that all diversity was once folded into one. <strong>Sacred number.</strong> Egypt&rsquo;s Hermopolis begins with the <strong>Ogdoad</strong>, eight primeval deities in pairs; Genesis orders creation into a <strong>seven-day</strong> week (as much a theological claim &mdash; the Sabbath built into reality &mdash; as a chronology). <strong>The dividing line.</strong> The most common creative act is <strong>separation</strong>: sky from earth, waters above from below, light from dark, male from female. Marduk splits Tiamat; Genesis divides the waters with a firmament; Shu lifts Nut off Geb. Creation, symbolically, <em>is</em> the drawing of distinctions. <strong>The creative word.</strong> Where the world is spoken, the <strong>word and name</strong> carry power (Ptah&rsquo;s tongue, God&rsquo;s &ldquo;let there be,&rdquo; the Vedic reverence for <strong>V&#257;c</strong>, divine Speech) &mdash; the taproot of all sacred encoding.</p>
+
+    <h2>Connections</h2>
+    <p>Creation is the companion of <strong>the Flood</strong> (Chapter 1): both are stories of water and world-order. Its traditions are treated in full in their own chapters &mdash; the <strong>Enuma Elish</strong> in <strong>Mesopotamia</strong> (Ch. 3), Nun and Ptah in <strong>Egypt</strong> (Ch. 2), Purusha and the Nasadiya hymn in the <strong>Early Vedic</strong> world (Ch. 5), Chaos and the Theogony in <strong>Early Greece</strong> (Ch. 8), <em>tehom</em> in <strong>pre-exilic Israel</strong> (Ch. 7), and Ymir in <strong>Norse paganism</strong> (Ch. 23). Forward, &ldquo;creation by word&rdquo; feeds the <strong>Wisdom</strong> and <strong>Logos</strong> of Chapter 10, and the argument over creation from nothing sharpens against the <strong>Gnostic</strong> cosmogonies of Chapters 17 and 45.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>What&rsquo;s well supported</h4>
+        <ul>
+          <li>The <strong>texts</strong> and what they say: the <strong>Enuma Elish</strong> and Marduk&rsquo;s splitting of <strong>Tiamat</strong>; the Egyptian cosmogonies of Heliopolis, Memphis, and Hermopolis; Genesis 1&ndash;2; the Rigveda&rsquo;s <strong>Purusha</strong>, <strong>Hiranyagarbha</strong>, and <strong>Nasadiya</strong> hymns; Hesiod&rsquo;s Theogony; the Norse <strong>Ymir</strong> cosmogony; the Ugaritic Baal cycle.</li>
+          <li>The <strong>chaoskampf</strong> as a real, widespread pattern (Marduk/Tiamat, Baal/Yamm, Zeus/Typhon), preserved in Hebrew <em>poetry</em> (Rahab, Leviathan) while <strong>Genesis 1 omits the battle</strong>; and the genuine cognate of <strong>tehom</strong> with <strong>Tiamat</strong> (unpersonified in Genesis).</li>
+          <li>The real, old <strong>translation question</strong> at Genesis 1:1, with <strong>creatio ex nihilo</strong> as a doctrine that <em>developed later</em>; and the Nasadiya Sukta&rsquo;s note of <strong>agnostic doubt</strong>.</li>
+        </ul>
+      </div>
+      <div class="ev unsupported">
+        <h4>What&rsquo;s not supported</h4>
+        <ul>
+          <li>That there was a <strong>single original creation myth</strong> from which the others descend &mdash; the shared images arise repeatedly, often independently.</li>
+          <li>Treating <strong>creatio ex nihilo</strong> as the plain original meaning of Genesis (it is a later reading) &mdash; the Hebrew is genuinely ambiguous.</li>
+          <li>Reading the <strong>Purusha</strong> hymn&rsquo;s four classes as a neutral cosmic fact: that verse is in the <em>latest</em> Rigvedic layer and encodes the varna social order.</li>
+        </ul>
+      </div>
+      <div class="ev open">
+        <h4>What&rsquo;s genuinely open</h4>
+        <ul>
+          <li>Whether the <strong>cosmic-giant</strong> cosmogony (Ymir, Purusha) is a true inherited <strong>Proto-Indo-European</strong> myth (Bruce Lincoln) or a striking parallel reinforced by non-Indo-European occurrences (Pangu). Influential, not proven.</li>
+          <li>How much of the <strong>Norse</strong> cosmogony, recorded only in Christian-era Iceland, is genuinely pre-Christian.</li>
+          <li>The direction and degree of <strong>borrowing</strong> among the Near Eastern cosmogonies &mdash; shared atmosphere, common inheritance, and direct influence are hard to disentangle.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <h4>The combat myth, and the ex nihilo debate</h4>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Chaoskampf">Chaoskampf</a> (Marduk/Tiamat, Baal/Yamm, Yahweh/Leviathan, Zeus/Typhon; the tehom&ndash;Tiamat cognate); on the Genesis 1:1 translation and the later development of creation from nothing, <a href="https://stevendimattei.com/genesis-11-2-creation-ex-nihilo/">&ldquo;Genesis 1:1&ndash;2 &mdash; not a creatio ex nihilo&rdquo;</a> (Rashi; JPS/NRSV).</li>
+      </ul>
+      <h4>The cosmic giant, and the skeptical hymn</h4>
+      <ul>
+        <li>On Ymir, Purusha, and the reconstructed Indo-European primal-being myth (Bruce Lincoln), <a href="https://www.academia.edu/472488/Is_the_Cosmic_Giant_an_Indo_European_myth">&ldquo;Is the Cosmic Giant an Indo-European myth?&rdquo;</a>; on the &ldquo;who really knows?&rdquo; close, <a href="https://en.wikipedia.org/wiki/Nasadiya_Sukta">Nasadiya Sukta</a> (Rigveda 10.129). Each tradition&rsquo;s account is sourced in its chapter (Ch. 2, 3, 5, 7, 8, 23).</li>
+      </ul>
+      <p class="source-note">Researched by web search against reference scholarship (the chaoskampf; the Genesis 1:1 translation debate and the later development of creatio ex nihilo; Bruce Lincoln&rsquo;s Indo-European cosmic-giant thesis; the Nasadiya Sukta) alongside the archive&rsquo;s own sourced chapters. The chapter keeps what a text says separate from what a later doctrine needed it to say, flags the Indo-European reconstruction and the direction of Near Eastern borrowing as genuinely open, notes the social loading of the Purusha caste verse, and lets the Nasadiya Sukta&rsquo;s ancient doubt stand beside the confident cosmogonies rather than resolving it away.</p>
+    </div>
   ` }
 };

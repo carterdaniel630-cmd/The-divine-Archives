@@ -60,7 +60,7 @@ window.ARCHIVE = {
   // Cross-cutting comparative themes (span eras)
   themes: [
     { slug: "the-flood", name: "The Flood", chapter: "ch01" },
-    { slug: "creation", name: "Creation & the First Order", chapter: null },
+    { slug: "creation", name: "Creation & the First Order", chapter: "ch46" },
     { slug: "the-underworld", name: "The Underworld", chapter: null },
     { slug: "the-returning-god", name: "The Dying & Returning God", chapter: null }
   ],
@@ -246,6 +246,10 @@ window.ARCHIVE = {
       status: "published",
       source: "eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md",
       summary: "The fullest Gnostic gospel the world possessed before Nag Hammadi — a Coptic scripture in the Askew Codex (British Library Add MS 5114), surfaced in Europe 160 years before the 1945 find. The risen Jesus, eleven years after the resurrection, reveals the map of the heavens on the Mount of Olives; the fallen aeon Pistis Sophia, deceived by the arrogant Authadēs and stripped of her light in Chaos, sings thirteen repentances woven from the Psalms and the Odes of Solomon; and salvation runs on saving mysteries, reincarnation, the cup of forgetfulness, and the dragon of the outer darkness. Mary Magdalene is the foremost questioner, over Peter's objection — with a deep symbology of the numbered aeons, the vowel-names (IAŌ), the garment of light, and the fire-offering of Book 4; the manuscript's datable facts kept firmly apart from later Theosophical 'unveilings.'" },
+    { id: "ch46", title: "Creation & the First Order", kind: "theme",
+      era: null, eraLabel: "Comparative theme · cross-era",
+      status: "published", source: "themes/ch46-creation.md",
+      summary: "How the world began, told side by side: the watery chaos of Tiamat, Nun, and tehom; the combat myth (chaoskampf) in which Marduk, Baal, and Zeus win order by battle — and Genesis's pointed refusal of the fight; the world built from a slain primordial body (Ymir, Purusha) and the contested Indo-European 'cosmic giant'; creation by word from Ptah to 'let there be'; the later doctrine of creation from nothing and the Genesis 1:1 translation debate; and the astonishing Nasadiya Sukta, the ancient hymn that looks at the beginning and admits it cannot be sure. With a symbology of the cosmic egg, sacred number, the dividing line, and the creative word." },
     { id: "ch30", title: "Bhakti", kind: "tradition",
       era: "07-high-medieval", eraLabel: "High Medieval · Bhakti",
       source: "eras/07-high-medieval/ch30-bhakti-high-medieval.md",
