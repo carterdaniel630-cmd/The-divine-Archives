@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "note": "Each fighter's epithet + weapon is grounded in the Early Greece chapter (ch08). 'basis' must appear in the source chapter (checked by tools/verify-fighters.js). Move-set/animation is game design; the god, weapon and epithet are drawn from real myth as the chapter records it.",
+  "chapter": "ch08",
+  "fighters": [
+    { "id": "zeus", "name": "Zeus", "epithet": "King of the Olympians", "weapon": "the thunderbolt", "basis": "thunderbolt" },
+    { "id": "poseidon", "name": "Poseidon", "epithet": "Lord of the Sea", "weapon": "the trident", "basis": "trident" },
+    { "id": "athena", "name": "Athena", "epithet": "Goddess of Wisdom and War", "weapon": "spear and aegis", "basis": "aegis" },
+    { "id": "hades", "name": "Hades", "epithet": "Lord of the Dead", "weapon": "the bident", "basis": "the realm of Hades" }
+  ]
+}

@@ -321,3 +321,17 @@
 .fg-pad .ouro-key { width:3rem; height:3rem; }
 .fg-atk .fg-atk-s { color:#bfe3ff; }
 @media (max-width:520px){ .fg-controls { gap:.4rem; } .fg-pad .ouro-key { width:2.7rem; height:2.7rem; } }
+
+/* character select + result */
+.fg-sel-row-label { text-align:center; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:.6rem; color:var(--gold); margin:.6rem 0 .4rem; }
+.fg-cards { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+.fg-card { width:100px; background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line); border-radius:10px; padding:.45rem .35rem; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:.12rem; transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+.fg-card:hover { border-color:var(--gold); transform:translateY(-1px); }
+.fg-card:focus-visible { outline:2px solid var(--gold-bright); outline-offset:2px; }
+.fg-card.is-sel { border-color:var(--gold); box-shadow:inset 0 0 0 1px var(--gold), 0 0 16px -4px var(--gold-bright); }
+.fg-portrait { width:74px; height:88px; background:radial-gradient(120% 100% at 50% 26%, #241a2e, #100c14); border:1px solid var(--line-soft); border-radius:8px; display:block; }
+.fg-card-name { font-family:var(--font-display); color:var(--parchment); font-size:.82rem; letter-spacing:.02em; }
+.fg-card-ep { font-family:var(--font-body); color:var(--ink-faint); font-size:.58rem; text-align:center; line-height:1.2; }
+.fg-sel-mode { text-align:center; margin:.6rem 0; }
+.fg-result { text-align:center; }
+.fg-portrait-lg { width:120px; height:140px; margin:.2rem auto .5rem; }

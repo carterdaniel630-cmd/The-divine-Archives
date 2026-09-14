@@ -36,6 +36,9 @@
 
     var canvas, cx, hudEl, raf = null, keyfn = null, keyup = null, last = 0, running = false;
     var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0;
+    var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
+    var KM1 = { left: "a", right: "d", block: "s", light: "j", heavy: "k", special: "l" };
+    var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", light: ",", heavy: ".", special: "/" };
     // global light direction (upper-right), for coherent cel shading
     var LX = 0.55, LY = -0.83;
 
@@ -238,6 +241,7 @@
     function drawHead(c, p, s, t, f) {
       var hx = p.head[0], hy = p.head[1], st = f.state;
       var angry = (st === "light" || st === "heavy" || st === "special"), pain = (st === "hit" || st === "ko");
+      var hasBeard = s.beard !== false;
       boneChain(c, [[p.neck[0], p.neck[1]], [hx - 3, hy + 12]], [6.5, 7.5], s, {});
       // big swept-back hair mass
       var HB = new Path2D();
@@ -287,27 +291,31 @@
       // nostril + nose base
       c.lineWidth = 1.2; c.beginPath(); c.moveTo(hx + 13, hy + 3.4); c.lineTo(hx + 18, hy + 3.8); c.stroke();
       // mustache
-      c.fillStyle = s.hair; c.beginPath(); c.moveTo(hx + 2, hy + 6); c.quadraticCurveTo(hx + 9, hy + 5, hx + 13, hy + 7); c.quadraticCurveTo(hx + 9, hy + 9, hx + 2, hy + 8.5); c.closePath(); c.fill();
-      c.strokeStyle = s.outline; c.lineWidth = .8; c.stroke();
+      if (hasBeard) {
+        c.fillStyle = s.hair; c.beginPath(); c.moveTo(hx + 2, hy + 6); c.quadraticCurveTo(hx + 9, hy + 5, hx + 13, hy + 7); c.quadraticCurveTo(hx + 9, hy + 9, hx + 2, hy + 8.5); c.closePath(); c.fill();
+        c.strokeStyle = s.outline; c.lineWidth = .8; c.stroke();
+      }
       // mouth
       if (angry || pain) {
         c.fillStyle = "#26120a"; c.beginPath(); c.moveTo(hx + 2, hy + 9); c.quadraticCurveTo(hx + 6, hy + 12.5, hx + 11, hy + 9.5); c.quadraticCurveTo(hx + 6, hy + 10.5, hx + 2, hy + 9); c.closePath(); c.fill();
         c.fillStyle = "#efe6cf"; c.beginPath(); c.moveTo(hx + 3, hy + 9); c.lineTo(hx + 10, hy + 9.3); c.lineTo(hx + 9.5, hy + 10.1); c.lineTo(hx + 3.5, hy + 9.9); c.closePath(); c.fill();
       } else { c.strokeStyle = s.outline; c.lineWidth = 1.5; c.beginPath(); c.moveTo(hx + 3, hy + 10); c.quadraticCurveTo(hx + 6, hy + 10.6, hx + 10, hy + 9.6); c.stroke(); }
       // full beard in locks
-      var B = new Path2D();
-      B.moveTo(hx - 8, hy + 9);
-      B.quadraticCurveTo(hx + 8, hy + 15, hx + 12, hy + 9);
-      B.quadraticCurveTo(hx + 17, hy + 27, hx + 5, hy + 39);
-      B.quadraticCurveTo(hx - 2, hy + 43, hx - 8, hy + 35);
-      B.quadraticCurveTo(hx - 17, hy + 25, hx - 8, hy + 9);
-      B.closePath();
-      cel(c, B, s.hair, s.hairSh, null, s.outline, 16, 2);
-      c.save(); c.clip(B); c.strokeStyle = s.hairSh; c.lineWidth = 1.1;
-      c.beginPath(); c.moveTo(hx - 2, hy + 14); c.quadraticCurveTo(hx, hy + 30, hx - 3, hy + 37); c.stroke();
-      c.beginPath(); c.moveTo(hx + 5, hy + 14); c.quadraticCurveTo(hx + 8, hy + 26, hx + 3, hy + 36); c.stroke();
-      c.beginPath(); c.moveTo(hx + 10, hy + 12); c.quadraticCurveTo(hx + 12, hy + 22, hx + 7, hy + 32); c.stroke(); c.restore();
-      s.crown(c, hx, hy, s);
+      if (hasBeard) {
+        var B = new Path2D();
+        B.moveTo(hx - 8, hy + 9);
+        B.quadraticCurveTo(hx + 8, hy + 15, hx + 12, hy + 9);
+        B.quadraticCurveTo(hx + 17, hy + 27, hx + 5, hy + 39);
+        B.quadraticCurveTo(hx - 2, hy + 43, hx - 8, hy + 35);
+        B.quadraticCurveTo(hx - 17, hy + 25, hx - 8, hy + 9);
+        B.closePath();
+        cel(c, B, s.hair, s.hairSh, null, s.outline, 16, 2);
+        c.save(); c.clip(B); c.strokeStyle = s.hairSh; c.lineWidth = 1.1;
+        c.beginPath(); c.moveTo(hx - 2, hy + 14); c.quadraticCurveTo(hx, hy + 30, hx - 3, hy + 37); c.stroke();
+        c.beginPath(); c.moveTo(hx + 5, hy + 14); c.quadraticCurveTo(hx + 8, hy + 26, hx + 3, hy + 36); c.stroke();
+        c.beginPath(); c.moveTo(hx + 10, hy + 12); c.quadraticCurveTo(hx + 12, hy + 22, hx + 7, hy + 32); c.stroke(); c.restore();
+      }
+      s.crown(c, hx, hy, s, f);
     }
 
     function drawCape(c, p, t, f, s, dmg) {
@@ -414,6 +422,84 @@
       eye: "#9c7ad0", blood: "#3a1a4a", weapon: shadeBlade, crown: noCrown
     };
 
+    /* ---- the other three Olympians ---- */
+    function haft(c, x0, y0, x1, y1, s) { c.strokeStyle = s.metal; c.lineWidth = 3; c.beginPath(); c.moveTo(x0, y0); c.lineTo(x1, y1); c.stroke(); c.strokeStyle = s.outline; c.lineWidth = 1; c.stroke(); }
+    function poseidonTrident(c, p, t, f, s) {
+      var hx = p.hnF[0], hy = p.hnF[1], ch = (f.state === "special");
+      c.save(); c.translate(hx, hy); c.shadowColor = s.eye; c.shadowBlur = ch ? 16 : 7;
+      haft(c, -2, 15, 5, -46, s);
+      c.save(); c.translate(5, -46); c.strokeStyle = s.metal; c.lineWidth = 3; c.lineCap = "round";
+      [[-9, -15], [0, -22], [9, -15]].forEach(function (pr) { c.beginPath(); c.moveTo(0, -2); c.lineTo(pr[0], pr[1]); c.stroke(); });
+      c.strokeStyle = s.rim; c.lineWidth = 1; [[-9, -15], [0, -22], [9, -15]].forEach(function (pr) { c.beginPath(); c.moveTo(0, -2); c.lineTo(pr[0], pr[1]); c.stroke(); });
+      c.beginPath(); c.moveTo(-9, -8); c.lineTo(9, -8); c.stroke(); c.restore(); c.restore();
+    }
+    function hadesBident(c, p, t, f, s) {
+      var hx = p.hnF[0], hy = p.hnF[1], ch = (f.state === "special");
+      c.save(); c.translate(hx, hy); c.shadowColor = s.eye; c.shadowBlur = ch ? 18 : 9;
+      haft(c, -2, 15, 5, -46, s);
+      c.save(); c.translate(5, -46); c.strokeStyle = s.metal; c.lineWidth = 3.4; c.lineCap = "round";
+      [[-8, -17], [8, -17]].forEach(function (pr) { c.beginPath(); c.moveTo(0, -2); c.lineTo(pr[0], pr[1]); c.stroke(); });
+      c.strokeStyle = s.rim; c.lineWidth = 1; [[-8, -17], [8, -17]].forEach(function (pr) { c.beginPath(); c.moveTo(0, -2); c.lineTo(pr[0], pr[1]); c.stroke(); }); c.restore(); c.restore();
+    }
+    function athenaSpear(c, p, t, f, s) {
+      var bx = p.hnB[0], by = p.hnB[1];
+      var Sh = new Path2D(); Sh.arc(bx - 5, by - 6, 13, 0, 7);
+      cel(c, Sh, s.metal, s.metalSh, s.rim, s.outline, 13, 1.8, 0.6);
+      c.strokeStyle = s.rim; c.lineWidth = 1; c.beginPath(); c.arc(bx - 5, by - 6, 9, 0, 7); c.stroke();
+      c.fillStyle = s.outline; c.beginPath(); c.arc(bx - 5, by - 6, 3.4, 0, 7); c.fill();
+      var hx = p.hnF[0], hy = p.hnF[1]; c.save(); c.translate(hx, hy);
+      haft(c, -4, 18, 6, -50, s);
+      c.beginPath(); c.moveTo(6, -50); c.lineTo(1, -60); c.lineTo(6, -74); c.lineTo(11, -60); c.closePath();
+      c.fillStyle = s.metal; c.fill(); c.strokeStyle = s.outline; c.lineWidth = 1; c.stroke();
+      c.strokeStyle = s.rim; c.beginPath(); c.moveTo(6, -52); c.lineTo(6, -72); c.stroke(); c.restore();
+    }
+    function coralCrown(c, hx, hy, s) {
+      c.save(); c.shadowColor = s.eye; c.shadowBlur = 4; c.strokeStyle = s.rim; c.lineWidth = 2.2; c.lineCap = "round";
+      var pts = [[-11, -17], [-5, -27], [1, -20], [7, -29], [13, -18]];
+      c.beginPath(); pts.forEach(function (pp, i) { var x = hx + pp[0], y = hy + pp[1]; i ? c.lineTo(x, y) : c.moveTo(x, y); }); c.stroke(); c.restore();
+    }
+    function darkHelm(c, hx, hy, s) {
+      var D = new Path2D(); D.moveTo(hx - 15, hy - 1); D.quadraticCurveTo(hx - 17, hy - 26, hx + 1, hy - 29); D.quadraticCurveTo(hx + 19, hy - 26, hx + 17, hy - 1); D.quadraticCurveTo(hx + 2, hy - 9, hx - 15, hy - 1); D.closePath();
+      cel(c, D, s.metal, s.metalSh, null, s.outline, 16, 1.8, 0.55);
+      c.fillStyle = s.metal; c.strokeStyle = s.outline; c.lineWidth = 1;
+      [[-11, -25], [11, -25]].forEach(function (h) { c.beginPath(); c.moveTo(hx + h[0], hy + h[1]); c.lineTo(hx + h[0] * 1.35, hy + h[1] - 13); c.lineTo(hx + h[0] + 4, hy + h[1]); c.closePath(); c.fill(); c.stroke(); });
+    }
+    function warHelm(c, hx, hy, s) {
+      c.save(); c.shadowColor = s.rim; c.shadowBlur = 4;
+      var g = c.createLinearGradient(hx - 20, hy - 34, hx + 4, hy - 14); g.addColorStop(0, s.plume || "#b23a2a"); g.addColorStop(1, s.rim);
+      c.fillStyle = g; c.beginPath(); c.moveTo(hx + 3, hy - 18); c.quadraticCurveTo(hx - 4, hy - 36, hx - 22, hy - 30); c.quadraticCurveTo(hx - 10, hy - 22, hx - 6, hy - 12); c.quadraticCurveTo(hx - 2, hy - 15, hx + 3, hy - 18); c.closePath(); c.fill(); c.restore();
+      var D = new Path2D(); D.arc(hx + 1, hy - 7, 15, Math.PI, 0, false); D.lineTo(hx + 16, hy - 3); D.quadraticCurveTo(hx + 1, hy - 9, hx - 14, hy - 3); D.closePath();
+      cel(c, D, s.metal, s.metalSh, s.rim, s.outline, 15, 1.8, 0.7);
+      c.fillStyle = s.metal; c.strokeStyle = s.outline; c.lineWidth = 1; c.beginPath(); c.moveTo(hx + 13, hy - 5); c.lineTo(hx + 18, hy + 4); c.lineTo(hx + 13, hy + 5); c.closePath(); c.fill(); c.stroke();
+    }
+
+    var POSEIDON = {
+      name: "Poseidon", epithet: "Lord of the Sea",
+      base: "#4f9a86", baseSh: "#356b5d", shadow: "#264f45", light: "#83c9b3", outline: "#0e211c", rim: "#bfeadd",
+      skin: "#6fb39c", skinSh: "#3f7566", skinLit: "#a6d8c8",
+      hair: "#22403f", hairSh: "#122423", cloth: "#cfe7de", clothSh: "#7fa89e",
+      cape: "#2a6f6a", capeSh: "#0f2f2c", metal: "#c9a24a", metalSh: "#8a6a2e",
+      eye: "#7fe3ff", blood: "#7a1a2a", weapon: poseidonTrident, crown: coralCrown, beard: true
+    };
+    var HADES = {
+      name: "Hades", epithet: "Lord of the Dead",
+      base: "#4a4460", baseSh: "#2e2942", shadow: "#221d34", light: "#6c6390", outline: "#0c0914", rim: "#9a86c8",
+      skin: "#8f8798", skinSh: "#585165", skinLit: "#b6aec2",
+      hair: "#191524", hairSh: "#0a0713", cloth: "#2b2740", clothSh: "#151228",
+      cape: "#211d38", capeSh: "#090613", metal: "#6a5a92", metalSh: "#3a3057",
+      eye: "#b98cff", blood: "#5a1030", weapon: hadesBident, crown: darkHelm, beard: true
+    };
+    var ATHENA = {
+      name: "Athena", epithet: "Goddess of Wisdom and War",
+      base: "#c9a24a", baseSh: "#8a6a2e", shadow: "#6e5324", light: "#ecd08a", outline: "#1c1408", rim: "#ffe9b0",
+      skin: "#e6c79a", skinSh: "#ad8c5e", skinLit: "#f6e2bf",
+      hair: "#5a3b22", hairSh: "#33210f", cloth: "#e6dabf", clothSh: "#ac9c77",
+      cape: "#8a3a2a", capeSh: "#3a140e", metal: "#d9b25a", metalSh: "#9a7433",
+      eye: "#e7c680", blood: "#8a1a1a", plume: "#b23a2a", weapon: athenaSpear, crown: warHelm, beard: false
+    };
+    var ROSTER = { zeus: ZEUS, poseidon: POSEIDON, athena: ATHENA, hades: HADES };
+    var ROSTER_IDS = ["zeus", "poseidon", "athena", "hades"];
+
     /* ===================== fighters ===================== */
     function makeWounds() {
       var out = [], types = ["bruise", "cut", "blood"];
@@ -423,8 +509,8 @@
       }
       return out;
     }
-    function Fighter(skin, x, facing, isAI) {
-      return { skin: skin, x: x, facing: facing, isAI: isAI, vx: 0, vy: 0, y: 0, onGround: true,
+    function Fighter(skin, x, facing, isAI, km) {
+      return { skin: skin, x: x, facing: facing, isAI: isAI, km: km || null, vx: 0, vy: 0, y: 0, onGround: true,
         hp: 100, energy: 0, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6,
         aura: 0, cooldown: 0, hitLock: 0, combo: 0, wounds: makeWounds() };
     }
@@ -461,16 +547,17 @@
     function tryAttack(f, other, kind) {
       if (f.cooldown > 0 || f.state === "hit" || f.state === "ko" || !f.onGround) return;
       if (kind === "special" && f.energy < 50) return;
+      var fin = kind === "special" && f.energy >= 100 && other.hp <= 30 && other.state !== "ko";
       setState(f, kind === "special" ? "special" : kind, kind === "heavy" ? 0.5 : kind === "special" ? 0.9 : 0.32);
       f.cooldown = kind === "heavy" ? 0.55 : kind === "special" ? 1.0 : 0.36;
-      if (kind === "special") { f.energy -= 50; f.aura = 1.2; flash = 0.5; }
-      f._hit = { kind: kind, at: kind === "special" ? 0.4 : 0.2, done: false };
+      if (kind === "special") { f.energy -= fin ? 100 : 50; f.aura = fin ? 1.9 : 1.2; flash = fin ? 0.9 : 0.5; }
+      f._hit = { kind: kind, at: kind === "special" ? 0.4 : 0.2, done: false, fin: fin };
     }
-    function resolveHit(f, other, kind) {
-      var reach = kind === "special" ? 160 : kind === "heavy" ? 78 : 60;
+    function resolveHit(f, other, kind, fin) {
+      var reach = kind === "special" ? 170 : kind === "heavy" ? 78 : 60;
       var dx = (other.x - f.x) * f.facing;
       if (dx <= 4 || dx >= reach || other.state === "ko") return;
-      var dmg = kind === "special" ? 22 : kind === "heavy" ? 13 : 6;
+      var dmg = fin ? 100 : kind === "special" ? 22 : kind === "heavy" ? 13 : 6;
       var blocked = other.state === "block" && other.facing !== f.facing;
       if (blocked) dmg = Math.round(dmg * 0.25);
       other.hp = clamp(other.hp - dmg, 0, 100);
@@ -488,7 +575,13 @@
         for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-16, 16), y: GROUND + rnd(0, 8), r: rnd(3, 8), col: other.skin.blood, life: 1 });
       } else { other.vx = f.facing * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04); }
       if (kind === "special") flash = 0.7;
-      if (other.hp <= 0 && other.state !== "ko") { setState(other, "ko", 1.2); banner = { txt: f.skin.name + " prevails", t: 2.6 }; shake = 10; for (var i = 0; i < 8; i++) blood.push({ x: other.x + rnd(-20, 20), y: GROUND + rnd(-2, 8), r: rnd(3, 8), col: other.skin.blood, life: .9 }); }
+      if (fin) { flash = 1; shake = 18; hitStop = Math.max(hitStop, 0.25); spray(hx, hy, other.skin.blood, "special"); spray(hx, hy, other.skin.blood, "special"); burst(hx, hy, "special"); }
+      if (other.hp <= 0 && other.state !== "ko") {
+        setState(other, "ko", 1.2); other.combo = 0;
+        banner = { txt: (fin ? "FINISH — " : "") + f.skin.name + (fin ? " triumphant" : " prevails"), t: 3, fin: !!fin };
+        shake = Math.max(shake, 12); winner = f;
+        for (var i = 0; i < (fin ? 16 : 8); i++) blood.push({ x: other.x + rnd(-24, 24), y: GROUND + rnd(-2, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
+      }
     }
     function burst(x, y, kind) {
       var col = kind === "special" ? "#bfe3ff" : kind === "block" ? "#cbb78a" : UI.goldB, n = kind === "light" ? 8 : 14;
@@ -550,12 +643,13 @@
       if (banner) { drawBanner(cx); banner.t -= dt; if (banner.t <= 0) banner = null; }
       cx.restore();
       renderHUD();
+      if (winner && !banner && !resultShown) { resultShown = true; showResult(); return; }
       raf = requestAnimationFrame(frame);
     }
     function update(f, other, dt) {
       f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
-      if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) { f._hit.done = true; resolveHit(f, other, f._hit.kind); }
+      if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) { f._hit.done = true; resolveHit(f, other, f._hit.kind, f._hit.fin); }
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
       f.x += f.vx; if (f.hitLock > 0 || f.state === "ko") f.vx *= 0.82;
       f.x = clamp(f.x, 40, VW - 40);
@@ -564,59 +658,130 @@
       if ((f.state === "idle" || f.state === "walk") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
     }
     function humanControl(f, other) {
+      var km = f.km || {};
       if (f.state === "hit" || f.state === "ko" || f.cooldown > 0) { f.vx = 0; return; }
       f.vx = 0;
-      if (keys["s"]) { setState(f, "block", 0.4); return; }
-      if (keys["a"]) { f.vx = -2.5; if (f.state !== "walk") setState(f, "walk", 1); }
-      else if (keys["d"]) { f.vx = 2.5; if (f.state !== "walk") setState(f, "walk", 1); }
+      if (keys[km.block]) { setState(f, "block", 0.4); return; }
+      if (keys[km.left]) { f.vx = -2.5; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
+      else if (keys[km.right]) { f.vx = 2.5; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
       else if (f.state === "walk" || f.state === "block") setState(f, "idle", 1);
     }
     function comboText(c, n) { c.save(); c.font = "700 22px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.textAlign = "center"; c.shadowColor = "#000"; c.shadowBlur = 6; c.fillText(n + " HIT", VW * 0.26, 54); c.restore(); }
     function drawBanner(c) { c.save(); c.textAlign = "center"; c.globalAlpha = clamp(banner.t, 0, 1); c.font = "700 32px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.shadowColor = "#000"; c.shadowBlur = 12; c.fillText(banner.txt, VW / 2, VH / 2); c.restore(); }
 
-    /* ===================== shell + input ===================== */
-    function shell() {
+    /* ===================== portraits ===================== */
+    function drawFace(cvEl, id) {
+      var s = ROSTER[id], pc = cvEl.getContext("2d"), d = Math.min(window.devicePixelRatio || 1, 2);
+      var W = cvEl.clientWidth || 74, H = cvEl.clientHeight || 88;
+      cvEl.width = W * d; cvEl.height = H * d; pc.setTransform(d, 0, 0, d, 0, 0);
+      pc.clearRect(0, 0, W, H);
+      var cxL = W / 2 - 2, hy = H * 0.46;
+      // shoulders
+      pc.fillStyle = s.base; pc.strokeStyle = s.outline; pc.lineWidth = 2;
+      pc.beginPath(); pc.moveTo(cxL - 20, H); pc.quadraticCurveTo(cxL - 22, H - 18, cxL - 6, H - 22); pc.lineTo(cxL + 10, H - 22); pc.quadraticCurveTo(cxL + 24, H - 18, cxL + 22, H); pc.closePath(); pc.fill(); pc.stroke();
+      var pose = { neck: [cxL, hy + 15], head: [cxL, hy - 3] };
+      drawHead(pc, pose, s, 0, { state: "idle", skin: s });
+    }
+
+    /* ===================== character select ===================== */
+    function godCard(role, id, sel) {
+      var s = ROSTER[id];
+      return '<button class="fg-card' + (sel ? " is-sel" : "") + '" data-role="' + role + '" data-god="' + id + '" aria-pressed="' + (sel ? "true" : "false") + '">' +
+        '<canvas class="fg-portrait" data-god="' + id + '" width="74" height="88"></canvas>' +
+        '<span class="fg-card-name">' + s.name + '</span><span class="fg-card-ep">' + s.epithet + '</span></button>';
+    }
+    function selectScreen() {
+      running = false; if (raf) cancelAnimationFrame(raf); winner = null; resultShown = false; banner = null;
+      var sel = { p1: curG1, p2: curG2, twoP: curTwoP };
+      function render() {
+        root.innerHTML =
+          '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">The Divine Archives · Games</p>' +
+            '<h2 id="' + ctx.titleId + '" style="font-size:1.3rem">Theomachy — War of the Gods</h2>' +
+            "<p>Choose your Olympian. Each god fights with the weapon myth gives them.</p></div>" +
+          '<div class="game-rule" role="presentation"></div>' +
+          '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 1" : "You") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p1", id, sel.p1 === id); }).join("") + "</div>" +
+          '<div class="fg-sel-mode"><button class="rq-btn" data-a="mode">Opponent: ' + (sel.twoP ? "Player 2 (human)" : "the AI") + "</button></div>" +
+          '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
+          '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
+          '<p class="rq-note">P1: A/D move · S guard · J/K light/heavy · L thunderbolt.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , . / strike." : " On touch, use the on-screen pads.") + " Fill the energy bar and land a special on a weakened foe for a FINISH.</p>";
+        root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
+        root.querySelectorAll(".fg-card").forEach(function (b) {
+          b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); render(); });
+        });
+        root.querySelector('[data-a="mode"]').addEventListener("click", function () { sel.twoP = !sel.twoP; render(); });
+        root.querySelector('[data-a="fight"]').addEventListener("click", function () { startFight(sel.p1, sel.p2, sel.twoP); });
+      }
+      render();
+    }
+
+    /* ===================== fight shell + result ===================== */
+    function shell(twoP) {
       root.innerHTML =
-        '<div class="game-head" style="margin-bottom:.35rem"><p class="eyebrow">The Divine Archives · Games</p>' +
-          '<h2 id="' + ctx.titleId + '" style="font-size:1.3rem">Theomachy — War of the Gods</h2>' +
-          "<p>An art preview: Zeus, King of the Olympians, battle-tested on the heights.</p></div>" +
-        '<div class="game-rule" role="presentation"></div>' +
+        '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">The Divine Archives · Games</p>' +
+          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">Theomachy</h2></div>' +
         '<div class="fg-hud"></div>' +
         '<div class="fg-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Theomachy fighting stage"></canvas></div>' +
         '<div class="fg-controls">' +
-          '<div class="fg-pad fg-move"><button class="ouro-key" data-k="a" aria-label="Move left">◀</button>' +
-            '<button class="ouro-key" data-k="s" aria-label="Guard">🛡</button><button class="ouro-key" data-k="d" aria-label="Move right">▶</button></div>' +
+          '<div class="fg-pad fg-move"><button class="ouro-key" data-k="' + KM1.left + '" aria-label="Move left">◀</button>' +
+            '<button class="ouro-key" data-k="' + KM1.block + '" aria-label="Guard">🛡</button><button class="ouro-key" data-k="' + KM1.right + '" aria-label="Move right">▶</button></div>' +
           '<div class="fg-pad fg-atk"><button class="ouro-key fg-atk-l" data-atk="light" aria-label="Light strike">✦</button>' +
             '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Heavy strike">✸</button>' +
-            '<button class="ouro-key fg-atk-s" data-atk="special" aria-label="Thunderbolt">⚡</button></div>' +
+            '<button class="ouro-key fg-atk-s" data-atk="special" aria-label="Special">⚡</button></div>' +
         "</div>" +
-        '<p class="rq-note">Move A/D · Guard S · Strike J (light) · K (heavy) · Thunderbolt L (needs energy). Touch pads below.</p>';
+        '<div class="rq-actions" style="margin-top:.4rem"><button class="rq-btn" data-a="back">‹ Choose fighters</button></div>';
       canvas = root.querySelector(".fg-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VW * DPR; canvas.height = VH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      hudEl = root.querySelector(".fg-hud"); wireInput();
-    }
-    function wireInput() {
-      keyfn = function (e) { var k = e.key.toLowerCase();
-        if (["a", "d", "s", "w"].indexOf(k) >= 0) { keys[k] = true; e.preventDefault(); }
-        if (k === "j") { tryAttack(p1, p2, "light"); e.preventDefault(); }
-        if (k === "k") { tryAttack(p1, p2, "heavy"); e.preventDefault(); }
-        if (k === "l") { tryAttack(p1, p2, "special"); e.preventDefault(); } };
-      keyup = function (e) { keys[e.key.toLowerCase()] = false; };
-      document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
+      hudEl = root.querySelector(".fg-hud");
       root.querySelectorAll(".fg-move .ouro-key").forEach(function (b) {
         var k = b.getAttribute("data-k"), dn = function (e) { e.preventDefault(); keys[k] = true; }, up = function () { keys[k] = false; };
         b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up); b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
       });
       root.querySelectorAll(".fg-atk .ouro-key").forEach(function (b) { b.addEventListener("click", function () { tryAttack(p1, p2, b.getAttribute("data-atk")); }); });
+      root.querySelector('[data-a="back"]').addEventListener("click", selectScreen);
     }
-    function boot() {
-      shell();
-      p1 = Fighter(ZEUS, VW * 0.32, 1, false); p2 = Fighter(SHADE, VW * 0.68, -1, true);
+    function showResult() {
+      running = false; if (raf) cancelAnimationFrame(raf);
+      var w = winner, l = (w === p1) ? p2 : p1;
+      root.innerHTML =
+        '<div class="game-head"><p class="eyebrow">Theomachy · the dust settles</p>' +
+          '<h2 id="' + ctx.titleId + '" style="font-size:1.35rem">' + w.skin.name + ' is victorious</h2></div>' +
+        '<div class="game-rule" role="presentation"></div>' +
+        '<div class="fg-result"><canvas class="fg-portrait fg-portrait-lg" data-god="' + (w === p1 ? curG1 : curG2) + '" width="120" height="140"></canvas>' +
+          '<p class="rq-note">' + w.skin.name + ' — ' + w.skin.epithet + ' — stands over ' + l.skin.name + '.</p></div>' +
+        '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="rematch" autofocus>Rematch</button>' +
+          '<button class="rq-btn" data-a="choose">Choose fighters</button>' +
+          '<a class="game-source" href="chapters/ch08.html">› Read “Early Greece”</a></div>';
+      root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
+      root.querySelector('[data-a="rematch"]').addEventListener("click", function () { startFight(curG1, curG2, curTwoP); });
+      root.querySelector('[data-a="choose"]').addEventListener("click", selectScreen);
+    }
+    function startFight(g1, g2, twoP) {
+      curG1 = g1; curG2 = g2; curTwoP = twoP;
+      shell(twoP);
+      p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1);
+      p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
-      fx = []; blood = []; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0;
+      fx = []; blood = []; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false;
       running = true; last = performance.now(); raf = requestAnimationFrame(frame);
     }
-    boot();
+    function attachKeys() {
+      keyfn = function (e) {
+        var k = e.key.toLowerCase();
+        var moveKeys = [KM1.left, KM1.right, KM1.block, KM2.left, KM2.right, KM2.block];
+        if (moveKeys.indexOf(k) >= 0) { keys[k] = true; if (k.indexOf("arrow") === 0) e.preventDefault(); }
+        if (!running) return;
+        [p1, p2].forEach(function (f) {
+          if (!f || !f.km) return; var o = (f === p1) ? p2 : p1;
+          if (k === f.km.light) { tryAttack(f, o, "light"); e.preventDefault(); }
+          else if (k === f.km.heavy) { tryAttack(f, o, "heavy"); e.preventDefault(); }
+          else if (k === f.km.special) { tryAttack(f, o, "special"); e.preventDefault(); }
+        });
+      };
+      keyup = function (e) { keys[e.key.toLowerCase()] = false; };
+      document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
+    }
+    attachKeys();
+    selectScreen();
 
     return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
   }
