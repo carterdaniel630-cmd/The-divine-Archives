@@ -192,6 +192,7 @@ const HEADER = `  <header class="site-header">
         <a href="../eras.html" aria-current="page">Eras</a>
         <a href="../traditions.html">Traditions</a>
         <a href="../themes.html">Themes</a>
+        <a href="../symbols.html">Symbols</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>

@@ -67,6 +67,22 @@ closing the game returns it to normal artwork.
 5. **Archive Chess** (chess).
 6. **The Seeker's Path** (last).
 
+## Decisions (Carter, 2026-09-14)
+1. **Archive Chess** — ship **all three** pantheons (Egyptian, Greek, Norse), with each
+   piece's design reflecting that figure's details.
+2. **Easter eggs** — make them **random** (which symbols are live varies visit to visit).
+3. **Trivia size** — **both** a quick/curated set and a larger full set.
+4. **File home** — my judgement → `docs/symbols.html` (gallery) + `docs/assets/games/*`
+   (`games.css`, `archive-games.js`, per-game `*.js`, JSON fact/clue banks); planning docs
+   stay in `mini-games/`.
+5. **Scoring & multiplayer** — add scoring/high-scores to every game. On multiplayer:
+   true **real-time online** play needs a signaling/backend server, which conflicts with the
+   hard "no backend, static-only" rule — so within that rule the layer will ship **AI
+   opponents** (chess; a solo-vs-bot trivia mode), **local pass-and-play** multiplayer, and
+   **async "challenge a friend"** via shareable URL (game seed / score encoded, no server).
+   Live online play remains available only as an *optional* future serverless add-on that
+   would relax the static constraint — flagged, not silently dropped.
+
 ## Governance
 - Real sourcing only; contested claims flagged, not resolved (mirrors the archive's own
   standard). Trivia answers and clues cite the chapter they come from.

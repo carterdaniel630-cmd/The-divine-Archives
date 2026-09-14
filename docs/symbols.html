@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Symbols — The Divine Archives</title>
+  <meta name="description" content="Every sacred symbol in the archive, gathered in one place. Some of them respond to a touch — a game is hidden inside." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/archive.css" />
+  <link rel="stylesheet" href="assets/games/games.css" />
+  <link rel="canonical" href="https://getconexto.com/symbols.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="The Symbols — The Divine Archives" />
+  <meta property="og:description" content="Every sacred symbol in the archive, gathered in one place. Some of them respond to a touch." />
+  <meta property="og:url" content="https://getconexto.com/symbols.html" />
+  <meta name="twitter:card" content="summary" />
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+<div class="page">
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          <circle cx="60" cy="60" r="40" stroke="currentColor" stroke-width="1.4" stroke-dasharray="1 5"/>
+          <path d="M60 24 L64 56 L60 60 L56 56 Z" fill="currentColor"/><path d="M60 96 L56 64 L60 60 L64 64 Z" fill="currentColor"/>
+          <path d="M24 60 L56 56 L60 60 L56 64 Z" fill="currentColor"/><path d="M96 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/>
+          <circle cx="60" cy="60" r="3" fill="currentColor"/>
+        </svg>
+        The Divine Archives
+      </a>
+      <nav>
+        <a href="eras.html">Eras</a>
+        <a href="traditions.html">Traditions</a>
+        <a href="themes.html">Themes</a>
+        <a href="symbols.html" aria-current="page">Symbols</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-head">
+    <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><span>The Symbols</span></p>
+    <p class="eyebrow">Sacred &amp; Encoded</p>
+    <h1>The Symbols</h1>
+    <p class="lede">Every sign the archive draws, gathered in one place &mdash; the ankh and the ziggurat, the Tree of Life and the ouroboros. Each links to the chapter that reads it. And a few of them answer to a touch: look for the glow.</p>
+  </div>
+
+  <main class="wrap" id="maincontent" tabindex="-1" style="max-width:56rem;padding-top:.5rem">
+    <div id="symbols-mount"></div>
+    <noscript><p class="notice" style="text-align:center">The symbol gallery needs JavaScript. You can still <a href="eras.html">browse the archive by era</a>.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="mark">The Divine Archives</p>
+      <nav>
+        <a href="eras.html">Browse by Era</a>
+        <a href="traditions.html">Browse by Tradition</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="about.html">About</a>
+        <a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">Support the Archive</a>
+      </nav>
+      <p class="tiny">A comparative library of the sacred</p>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/plates.js"></script>
+<script src="assets/emblems.js"></script>
+<script src="assets/games/archive-games.js"></script>
+<script>
+  (function () {
+    var mount = document.getElementById("symbols-mount");
+    var A = window.ARCHIVE, ART = window.PLATE_ART || {}, PLATES = window.PLATES || {}, EM = window.EMBLEMS || {};
+    if (!mount || !A) return;
+    var AG = window.ArchiveGames;
+
+    function chById(id){ for (var i=0;i<A.chapters.length;i++) if (A.chapters[i].id===id) return A.chapters[i]; return null; }
+    function captionOf(id){
+      var p = PLATES[id] || ""; var m = p.match(/<figcaption>([\s\S]*?)<\/figcaption>/);
+      if (!m) return "";
+      return m[1].replace(/<span class="tag">[\s\S]*?<\/span>/,"").replace(/<[^>]+>/g," ").replace(/&mdash;/g,"—").replace(/&[a-z]+;/g," ").replace(/\s+/g," ").trim();
+    }
+
+    /* --- the five games, mapped to real on-site symbols (Phase 1: placeholders) --- */
+    var GAMES = {
+      reliquary: { gameId:"reliquary", ch:"ch22", title:"The Reliquary", subtitle:"A trivia game drawn entirely from the archive's own chapters.",
+        phaseNote:"Trivia — questions pulled from real chapter content, filterable by era, tradition, and theme, each answer linking back to its source. Built in Phase 2." },
+      ouroboros: { gameId:"ouroboros", ch:"ch37", title:"Ouroboros", subtitle:"The serpent that devours its own tail — a game of Snake.",
+        phaseNote:"Snake, reskinned: the serpent grows into the ouroboros, and the symbols it swallows unlock facts. Built in Phase 3." },
+      ziggurat:  { gameId:"ziggurat", ch:"ch03", title:"Ziggurat Builder", subtitle:"Raise the temple-mountain, course by course.",
+        phaseNote:"Tetris, reskinned: falling stone and mudbrick courses build a ziggurat; cleared rows unlock the mythology of the temple-mountain. Built in Phase 4." },
+      chess:     { gameId:"chess", ch:"ch02", title:"Archive Chess", subtitle:"A board of gods — Egyptian, Greek, or Norse.",
+        phaseNote:"Chess, reskinned to a pantheon (all three, with pieces designed to reflect each figure), against an AI opponent or a friend; facts appear as pieces are captured. Built in Phase 5." },
+      seeker:    { gameId:"seeker", ch:"ch40", title:"The Seeker's Path", subtitle:"The gatekeeper opens the way — follow the clues into the chapters.",
+        phaseNote:"A chain of riddle-clues built from real facts; each answer is found by reading the chapter it points to, unlocking the next. Built last, in Phase 6." }
+    };
+    var TRIGGER_FOR = {}; // chId -> game meta
+    Object.keys(GAMES).forEach(function (k) {
+      var g = GAMES[k]; TRIGGER_FOR[g.ch] = g;
+      AG.register(g.gameId, { title:g.title, subtitle:g.subtitle, phaseNote:g.phaseNote,
+        symbolSVG: ART[g.ch] || "", sourceHref:"chapters/"+g.ch+".html", sourceLabel:"Read “"+(chById(g.ch)||{}).title+"”" });
+    });
+
+    function cell(id, name, eraLabel, art, isTheme) {
+      var wrap = document.createElement("div"); wrap.className = "symbol-cell"; wrap.setAttribute("data-id", id);
+      var g = TRIGGER_FOR[id];
+      var href = (/^ch/.test(id)) ? ("chapters/" + id + ".html") : ("eras/" + id + ".html");
+      // art is ALWAYS a standalone element (never nested in a link), so it can safely
+      // become an accessible game trigger — primary or a randomized easter egg.
+      var artSpan = document.createElement("span");
+      artSpan.className = "art"; artSpan.setAttribute("aria-hidden", "true");
+      artSpan.innerHTML = art || ""; artSpan.title = captionOf(id);
+      wrap.appendChild(artSpan);
+      if (g) {
+        artSpan.removeAttribute("aria-hidden");
+        AG.registerSymbol(artSpan, { gameId:g.gameId, symbolName:name, symbolSVG:art,
+          sourceHref:href, sourceLabel:"Read “"+name+"”" });
+      }
+      var nameEl = document.createElement("a");
+      nameEl.className = "name"; nameEl.href = href; nameEl.style.textDecoration = "none"; nameEl.textContent = name;
+      wrap.appendChild(nameEl);
+      wrap.insertAdjacentHTML("beforeend", '<span class="era">' + eraLabel + "</span>");
+      if (g) wrap.insertAdjacentHTML("beforeend", '<span class="playtag">✵ Playable</span>');
+      return wrap;
+    }
+
+    // group chapters by era, in era order; themes last
+    A.eras.forEach(function (era) {
+      var chs = A.chapters.filter(function (c) { return c.era === era.slug && PLATES[c.id]; });
+      if (!chs.length && !EM[era.slug]) return;
+      var h = document.createElement("h2"); h.className = "symbol-era-head";
+      h.textContent = "Era " + era.num + " · " + era.name;
+      mount.appendChild(h);
+      var grid = document.createElement("div"); grid.className = "symbol-grid";
+      if (EM[era.slug]) grid.appendChild(cell(era.slug, era.name, "Era emblem", EM[era.slug], false));
+      chs.forEach(function (c) { grid.appendChild(cell(c.id, c.title, era.name, ART[c.id] || "", false)); });
+      mount.appendChild(grid);
+    });
+    // comparative themes (era === null)
+    var themeChs = A.chapters.filter(function (c) { return !c.era && PLATES[c.id]; });
+    if (themeChs.length) {
+      var th = document.createElement("h2"); th.className = "symbol-era-head"; th.textContent = "Comparative Themes";
+      mount.appendChild(th);
+      var tgrid = document.createElement("div"); tgrid.className = "symbol-grid";
+      themeChs.forEach(function (c) { tgrid.appendChild(cell(c.id, c.title, "Cross-era theme", ART[c.id] || "", true)); });
+      mount.appendChild(tgrid);
+    }
+
+    /* randomized easter eggs: quietly make a random era emblem live this visit */
+    var eggs = A.eras.filter(function (e) { return EM[e.slug]; }).map(function (e) {
+      // find the emblem cell's .art element to (re)use as a trigger
+      return null; // emblems already rendered as links; seed among chapter symbols instead
+    });
+    // seed among a few non-primary chapter symbols so discovery varies visit-to-visit
+    var candidateIds = ["ch12","ch26","ch24","ch34","ch16","ch23","ch44"]; // bagua, tree of life, sri yantra, khanda, chi-rho, mjolnir, inti
+    var candEls = [];
+    candidateIds.forEach(function (id) {
+      if (TRIGGER_FOR[id]) return;
+      var cellEl = Array.prototype.find.call(mount.querySelectorAll(".symbol-cell"), function (el) {
+        var a = el.querySelector("a[href$='" + id + ".html']"); return !!a;
+      });
+      var artEl = cellEl && cellEl.querySelector(".art");
+      if (artEl) candEls.push({ el: artEl, gameId: "reliquary", symbolName: (chById(id)||{}).title || "symbol",
+        symbolSVG: ART[id], sourceHref: "chapters/"+id+".html", sourceLabel: "Read chapter" });
+    });
+    if (AG.seedEasterEggs) AG.seedEasterEggs(candEls);
+  })();
+</script>
+<script src="assets/ambient.js" defer></script>
+</body>
+</html>
