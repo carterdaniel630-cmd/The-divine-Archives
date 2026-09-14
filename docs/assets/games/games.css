@@ -284,19 +284,45 @@
 .zig-well-wrap::before, .zig-well-wrap::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .zig-well-wrap::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .zig-well-wrap::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.zig-well { width:min(200px, 52vw); height:auto; aspect-ratio:10/18; background:var(--panel); border:1px solid var(--line); border-radius:8px; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5); }
+.zig-well { width:min(190px, 44vw); height:auto; aspect-ratio:10/18; background:var(--panel); border:1px solid var(--line); border-radius:8px; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5); }
 .zig-side { display:flex; flex-direction:column; align-items:center; gap:.7rem; }
 .zig-next { text-align:center; }
 .zig-next-label { display:block; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:.54rem; color:var(--ink-faint); margin-bottom:.2rem; }
 .zig-next-cv { width:64px; height:64px; background:var(--panel); border:1px solid var(--line-soft); border-radius:6px; }
 .zig-mon-wrap { position:relative; }
-.zig-mon { width:min(130px, 34vw); height:auto; aspect-ratio:1/2; }
+.zig-mon { width:min(120px, 26vw); height:auto; aspect-ratio:1/2; }
 .zig-toast .zig-sym { color:var(--gold); }
 .zig-pad { display:grid; grid-template-columns:repeat(3,3rem); grid-template-rows:repeat(2,3rem); gap:.3rem; }
 .zig-pad .zig-rot { grid-column:1; grid-row:1; } .zig-pad .zig-left { grid-column:1; grid-row:2; }
 .zig-pad .zig-pause { grid-column:2; grid-row:1; color:var(--ink-dim); font-size:.8rem; } .zig-pad .zig-down { grid-column:2; grid-row:2; }
 .zig-pad .zig-right { grid-column:3; grid-row:2; } .zig-pad .zig-drop { grid-column:3; grid-row:1; }
-@media (max-width:420px){ .zig-stage { gap:.6rem; } .zig-side { flex-direction:row; } }
+/* keep board + monument side by side, tighten the chrome, so the whole game
+   fits on a phone without scrolling past the controls */
+@media (max-width:520px){
+  .zig-stage { gap:.4rem; margin:.15rem auto .3rem; flex-wrap:nowrap; align-items:center; justify-content:center; }
+  .zig-well { width:42vw; max-width:190px; }
+  .zig-mon { width:22vw; max-width:120px; }
+  .zig-side { flex-direction:column; gap:.35rem; }
+  .zig-next-cv { width:44px; height:44px; }
+  .zig-pad { grid-template-columns:repeat(3,2.5rem); grid-template-rows:repeat(2,2.5rem); }
+  .game-scorebar { gap:.3rem; flex-wrap:nowrap; }
+  .game-scorebar .stat { min-width:0; flex:1; padding:.28rem .3rem; }
+  .game-scorebar .stat b { font-size:1rem; }
+  .game-scorebar .stat span { font-size:.5rem; letter-spacing:.1em; }
+  .zig-toast { min-height:1.8rem; font-size:.82rem; margin:.2rem auto; }
+  /* trim the header so the board and controls both stay on-screen */
+  .game-head { margin:0 1.4rem .5rem; }
+  .game-head h2 { font-size:1.05rem !important; }
+  .game-head p { font-size:.78rem; margin-top:.2rem; }
+  .game-rule { margin:.4rem auto .5rem; }
+}
+/* very short viewports: shrink the board + pad a touch more, trim spacing */
+@media (max-width:520px) and (max-height:680px){
+  .zig-well { width:33vw; } .zig-mon { width:17vw; }
+  .zig-pad { grid-template-columns:repeat(3,2.2rem); grid-template-rows:repeat(2,2.2rem); }
+  .zig-controls .rq-note, .ouro-controls .rq-note { font-size:.7rem; margin:.2rem 0 0; }
+  .game-head p { display:none; }
+}
 
 /* ---------- Theomachy (1v1 fighter) ---------- */
 .fg-hud { display:flex; align-items:flex-start; gap:.6rem; margin:.2rem auto .5rem; max-width:640px; }
