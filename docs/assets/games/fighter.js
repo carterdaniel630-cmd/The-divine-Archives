@@ -14,6 +14,8 @@
   "use strict";
   var AG = window.ArchiveGames;
   if (!AG) return;
+  // resolve paths relative to THIS script (so optional hero art loads from anywhere)
+  var SCRIPT_BASE = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "assets/games/";
 
   function lerp(a, b, t) { return a + (b - a) * t; }
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
@@ -39,6 +41,28 @@
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
     var KM1 = { left: "a", right: "d", block: "s", light: "j", heavy: "k", special: "l" };
     var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", light: ",", heavy: ".", special: "/" };
+    // optional detailed hero art: a single 2x2 sheet (Zeus TL, Poseidon TR, Athena BL, Hades BR).
+    // When present it replaces the procedural portraits on the select / VS / victory screens;
+    // combat stays procedural. Set HERO_SHEET to the file (relative to this script) to enable.
+    var HERO_SHEET = null; // e.g. "art/heroes.png"
+    var HERO_ORDER = ["zeus", "poseidon", "athena", "hades"], HERO_INSET = 0.02;
+    var HERO = { img: null, ready: false };
+    function loadHeroes() {
+      if (!HERO_SHEET) return;
+      var img = new Image();
+      img.onload = function () { HERO.img = img; HERO.ready = true; try { root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); }); } catch (e) { } };
+      img.src = SCRIPT_BASE + HERO_SHEET;
+    }
+    function heroCrop(id) {
+      var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
+      var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2, mx = iw * HERO_INSET, my = ih * HERO_INSET;
+      return { sx: col * iw + mx, sy: row * ih + my, sw: iw - 2 * mx, sh: ih - 2 * my };
+    }
+    function drawCover(pc, img, sx, sy, sw, sh, dw, dh) {
+      var sr = sw / sh, dr = dw / dh, cw = sw, ch = sh;
+      if (sr > dr) { cw = sh * dr; sx += (sw - cw) / 2; } else { ch = sw / dr; sy += (sh - ch) / 2; }
+      pc.drawImage(img, sx, sy, cw, ch, 0, 0, dw, dh);
+    }
     // global light direction (upper-right), for coherent cel shading
     var LX = 0.55, LY = -0.83;
 
@@ -675,6 +699,7 @@
       var W = cvEl.clientWidth || 74, H = cvEl.clientHeight || 88;
       cvEl.width = W * d; cvEl.height = H * d; pc.setTransform(d, 0, 0, d, 0, 0);
       pc.clearRect(0, 0, W, H);
+      if (HERO.ready) { var cr = heroCrop(id); drawCover(pc, HERO.img, cr.sx, cr.sy, cr.sw, cr.sh, W, H); return; }
       var cxL = W / 2 - 2, hy = H * 0.46;
       // shoulders
       pc.fillStyle = s.base; pc.strokeStyle = s.outline; pc.lineWidth = 2;
@@ -781,6 +806,7 @@
       document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
     }
     attachKeys();
+    loadHeroes();
     selectScreen();
 
     return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
