@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "note": "Each cleared course of the ziggurat reveals one fact about Mesopotamian temple-building. Every fact is drawn from real chapter text — 'basis' must appear in the source chapter (checked by tools/verify-ziggurat.js). Facts are revealed in order as courses rise.",
+  "facts": [
+    { "label": "The house of the god", "chapter": "ch03", "basis": "the house of its god",
+      "fact": "At the heart of every Mesopotamian city stood the house of its god — a statue fed, clothed, and housed as though alive." },
+    { "label": "The stepped tower", "chapter": "ch03", "basis": "the great stepped platform-tower",
+      "fact": "That house was often crowned by a ziggurat — the great stepped platform-tower whose most famous survivor stands at Ur." },
+    { "label": "Raised to the moon", "chapter": "ch03", "basis": "raised to the moon-god Nanna",
+      "fact": "The ziggurat of Ur was raised to the moon-god Nanna, who presided over the city." },
+    { "label": "A statement in mud-brick", "chapter": "ch03", "basis": "a theological statement in mud-brick",
+      "fact": "The ziggurat was a theological statement in mud-brick — the built claim that here the divine and human worlds meet." },
+    { "label": "The mountain-house", "chapter": "ch03", "basis": "mountain-house",
+      "fact": "Each great town was the household of its deity, its ziggurat the god's mountain-house; to neglect it was to invite the flood, the plague, the enemy." },
+    { "label": "Etemenanki", "chapter": "ch03", "basis": "Etemenanki",
+      "fact": "The great ziggurat of Babylon bore the name Etemenanki — 'the House of the Foundation of Heaven and Earth.'" },
+    { "label": "The hinge of worlds", "chapter": "ch03", "basis": "the hinge joining the divine and human worlds",
+      "fact": "Etemenanki was a built claim that the temple was the hinge joining the divine and human worlds — the point where the god descended." },
+    { "label": "The first writing", "chapter": "ch03", "basis": "the first true writing into wet clay",
+      "fact": "Around 3300 BCE, in the temple-city of Uruk, someone pressed the first true writing into wet clay — not to sing of gods, but to count." },
+    { "label": "The first named author", "chapter": "ch03", "basis": "the first author in human history known by name",
+      "fact": "Enheduanna, high priestess of Nanna at Ur, became the first author in human history known by name." },
+    { "label": "Marduk's spring", "chapter": "ch03", "basis": "Akitu",
+      "fact": "Each spring at the Akitu, the Babylonian New Year, the Enuma Elish was recited to re-enthrone Marduk and renew the cosmos against chaos." },
+    { "label": "The number of the gods", "chapter": "ch03", "basis": "base-60 (sexagesimal) system",
+      "fact": "Each great deity held a number in the base-60 (sexagesimal) system Mesopotamia gave the world — Anu 60, Enlil 50, Sin the moon 30." },
+    { "label": "The cities recovered", "chapter": "ch03", "basis": "their ziggurats and temple accounts recovered",
+      "fact": "The temple-cities named in the literature — Uruk, Ur, Nippur, Eridu — have been dug, their ziggurats and temple accounts recovered." }
+  ]
+}
