@@ -76,6 +76,7 @@
 <script src="assets/games/reliquary.js"></script>
 <script src="assets/games/ouroboros.js"></script>
 <script src="assets/games/ziggurat.js"></script>
+<script src="assets/games/fighter.js"></script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -101,7 +102,9 @@
       chess:     { gameId:"chess", ch:"ch02", title:"Archive Chess", subtitle:"A board of gods — Egyptian, Greek, or Norse.",
         phaseNote:"Chess, reskinned to a pantheon (all three, with pieces designed to reflect each figure), against an AI opponent or a friend; facts appear as pieces are captured. Built in Phase 5." },
       seeker:    { gameId:"seeker", ch:"ch40", title:"The Seeker's Path", subtitle:"The gatekeeper opens the way — follow the clues into the chapters.",
-        phaseNote:"A chain of riddle-clues built from real facts; each answer is found by reading the chapter it points to, unlocking the next. Built last, in Phase 6." }
+        phaseNote:"A chain of riddle-clues built from real facts; each answer is found by reading the chapter it points to, unlocking the next. Built last, in Phase 6." },
+      fighter:   { gameId:"fighter", ch:"ch08", title:"Theomachy — War of the Gods", subtitle:"A 1v1 duel of the Olympians, drawn from real myth.",
+        phaseNote:"A fighting game: the gods of Greece face off with their own weapons and powers — every fighter's arms and epithet grounded in the Early Greece chapter. In development." }
     };
     var TRIGGER_FOR = {}; // chId -> game meta
     Object.keys(GAMES).forEach(function (k) {
