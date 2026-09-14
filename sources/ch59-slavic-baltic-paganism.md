@@ -1,0 +1,19 @@
+# Sources — Chapter 59: Slavic & Baltic Paganism
+
+Per the project sourcing standard. A tradition chapter on two late-surviving European paganisms known almost entirely through hostile, late, or folkloric sources: the emphasis is on the documented facts (conversions, attested deities, sacred practices) with a firm flag on how much of the "systematic mythology" is reconstruction or invention.
+
+## Sources cited
+- **Slavic religion and pantheon: Vladimir's 980 idols (Perun, Khors, Dazhbog, Stribog, Simargl, Mokosh), the Primary Chronicle's list, Perun vs. Veles/Volos, and the sources problem** — "Slavic religion," Encyclopædia Britannica. https://www.britannica.com/topic/Slavic-religion ; "Slavic Gods (Deities of Slavic Religion)," Lidenz. https://lidenz.com/7-slavic-gods-kievan-rus/
+- **The 988 conversion of Kievan Rus, the throwing-down of Perun into the Dnieper, and the four-headed Svetovid temple at Arkona (destroyed 1168)** — "Slavic Mythology: Gods, Legends, Characters, and Culture," History Cooperative. https://historycooperative.org/slavic-mythology/
+- **Baltic religion and mythology: Dievas (sky-god), Perkūnas (name from "oak"), Saulė (sun-goddess), Žemyna, Velnias; sacred groves, oaks, and the eternal fire; the Romuva sanctuary** — "Baltic religion: Mythology," Encyclopædia Britannica. https://www.britannica.com/topic/Baltic-religion/Mythology ; "Perkūnas," Grokipedia. https://grokipedia.com/page/Perk%C5%ABnas
+- **Lithuania as Europe's last pagan state (1387), the Teutonic crusade, and persistent folk practice** — "In Search of Europe's Last Pagans," Arc Humanities. https://www.arc-humanities.org/blog/2022/04/17/in-search-of-europes-last-pagans/ ; "The Last Pagans of Europe," Thomas Vitkus (Medium). https://medium.com/@adventuresomev/the-last-pagans-of-europe-65dc8068503c
+- **The dainos as the great reservoir of Baltic religion (Krišjānis Barons, 200,000+ variants) and Saulė's prominence** — "Saulė: The Sun Goddess and Celestial Mother," Mythologis. https://mythologis.com/mythologies/europe/baltic/gods/saule-sun-goddess-celestial-mother-baltic
+- **The modern revivals: Romuva (Lithuania) and Dievturība (Latvia); Rodnovery** — "Romuva (religion)," Wikipedia. https://en.wikipedia.org/wiki/Romuva_(religion) ; "The ancient Lithuanian religion bidding for state recognition," Euronews. https://www.euronews.com/culture/2021/12/12/what-is-romuva-here-s-the-lowdown-on-lithuania-s-latest-state-recognised-religion
+- **Supporting detail corroborated via the above and adjacent chapters:** dvoeverie ("double faith") and folk figures (domovoi, rusalki, Baba Yaga, laumės); the Indo-European thunder-god shared with Thor/Indra; the Book of Veles as a modern forgery; thunder-marks and thunder-stones.
+
+## Notes
+- Well-supported: the late Christianizations (Rus 988, Lithuania 1387); Vladimir's pantheon and Perun's fall; the destruction of Arkona (1168); the attested chief deities; sacred groves/oaks and the eternal fire; dvoeverie and the dainos; the modern revivals.
+- Not supported (as fact) / flagged: much "systematic" Slavic-Baltic mythology is reconstruction from fragmentary, hostile, and late sources, often inflated by Romantic-era and modern invention; the Book of Veles and similar "recovered scriptures" are modern forgeries; the Perun–Veles myth is a scholarly reconstruction, not a preserved text.
+- Genuinely open: the true pre-Christian theology behind the chronicles; how much folklore preserves genuine paganism vs. Christian-era development; how much modern revivals recover vs. create.
+- Placed in era 07 (High Medieval), keyed to the latest-surviving Baltic paganism (with the Slavic conversions of the 9th–12th c noted).
+- Connects to ch23 (Norse/Thor), ch05 (Indra), ch46 (storm vs serpent), ch60 (Orthodoxy), ch48 (reconstruction/Goddess debate), ch38 (modern Paganism).

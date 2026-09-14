@@ -5592,5 +5592,1406 @@ window.CHAPTERS = {
       </ul>
       <p class="source-note">Researched by web search against reference scholarship (the chaoskampf; the Genesis 1:1 translation debate and the later development of creatio ex nihilo; Bruce Lincoln&rsquo;s Indo-European cosmic-giant thesis; the Nasadiya Sukta) alongside the archive&rsquo;s own sourced chapters. The chapter keeps what a text says separate from what a later doctrine needed it to say, flags the Indo-European reconstruction and the direction of Near Eastern borrowing as genuinely open, notes the social loading of the Purusha caste verse, and lets the Nasadiya Sukta&rsquo;s ancient doubt stand beside the confident cosmogonies rather than resolving it away.</p>
     </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch47 */
+  ch47: { html: `
+    <p class="lead">Almost every people that imagined death also imagined a <em>place</em> the dead go down to — and, more strangely, imagined someone going there and coming back. The descent to the underworld is one of the oldest and most widespread of all sacred stories, and where the traveller is <em>weighed</em> at the bottom, we can watch a civilization deciding what it thinks a good life is.</p>
+
+    <h2>Seven gates, and a hook</h2>
+
+    <p>The oldest descent we can read was written in Sumerian cuneiform more than four thousand years ago. <strong>Inanna</strong>, the queen of heaven, "set her heart upon the Great Below" and went down to the realm of her sister <strong>Ereshkigal</strong>, queen of the dead. At each of the underworld's <strong>seven gates</strong> the gatekeeper made her surrender one thing — her crown, her measuring rod, her necklace, her breastplate, her gold ring, her lapis beads, her royal robe — so that she arrived before her sister <em>naked and bowed low</em>, stripped of every mark of power. Ereshkigal fixed on her the eye of death, and Inanna was turned into a corpse and hung on a hook on the wall. She was rescued only by a trick of the god Enki — but the underworld does not give something for nothing, and she was released only on the condition that she send a substitute in her place. Her eye fell, coldly, on her own husband <strong>Dumuzi</strong>, who had not mourned her; and so the pattern of the <em>dying and returning</em> fertility god (the subject of ch01's companion theme) was set. The Akkadian version, <em>The Descent of Ishtar</em>, tells the same story, and adds the bleak Mesopotamian picture of the "land of no return," the "house whose dwellers are deprived of light, where dust is their food and clay their bread."</p>
+
+    <h2>The Greek descent</h2>
+
+    <p>The Greeks gave the journey its enduring name: <em><strong>katabasis</strong></em>, the "going down." Their heroes went into <strong>Hades</strong> and — unlike almost everyone else's dead — came back. <strong>Odysseus</strong>, in the <em>Odyssey</em>, performs a <em>nekyia</em>, summoning the shades at the edge of the world with a trench of blood to consult the prophet Teiresias. <strong>Heracles</strong> dragged the hound Cerberus up into the light as his final labour. <strong>Orpheus</strong> went down to win back his dead wife Eurydice with the sheer beauty of his music, and lost her at the last step by looking back — the most heartbreaking of all descent stories, and one echoed with uncanny closeness half a world away. And <strong>Aeneas</strong>, in Virgil, made the fullest journey of all, guided by the Sibyl past the ferryman Charon and the rivers of the dead to meet his father and see the souls waiting to be born. Beneath these hero-journeys lay the myth of <strong>Persephone</strong>, carried down by Hades and permitted to return for part of each year — the myth that made the seasons, and that stood at the heart of the Eleusinian Mysteries and their promise of a better lot for the initiated dead.</p>
+
+    <h2>Egypt: the journey as the whole of religion</h2>
+
+    <p>For the Egyptians the descent was not an occasional heroic feat but the destiny of <em>everyone</em>, and preparing for it was the great work of the culture. The dead travelled through the <strong>Duat</strong>, the underworld through which the sun-god himself sailed each night, doing battle with the serpent Apophis before rising reborn at dawn — so that every sunrise was a resurrection and a promise. To make the passage, the dead were equipped with the spells we call the <strong>Book of the Dead</strong> (its own title means "The Book of Coming Forth by Day"), the heir of the older Pyramid Texts and Coffin Texts. Its climax is the most famous scene in the religion of the afterlife: the <strong>Weighing of the Heart</strong>, in which the heart of the dead is set on a balance against the <strong>feather of Maat</strong>, the goddess of truth and cosmic order. The dead recites the "<strong>negative confession</strong>" — a list of the sins <em>not</em> committed ("I have not stolen; I have not killed; I have not caused pain") — before a tribunal of forty-two gods. If the scales balance, the dead passes into the field of the blessed; if the heart is heavy with wrongdoing, it is thrown to the waiting monster <strong>Ammit</strong>, "the Devourer," part crocodile, part lion, part hippopotamus, and the soul is annihilated. Here, earlier and more vividly than anywhere else, is the idea that death is a <em>moral reckoning</em>.</p>
+
+    <h2>The judged and the un-judged</h2>
+
+    <p>Not every underworld weighed its dead, and the difference is one of the most revealing in comparative religion. Where a tradition <strong>judges</strong>, the afterlife enforces the moral order of this life; where it does not, death is simply a <em>place</em>, entered by all alike.</p>
+
+    <ul>
+      <li><strong>Zoroastrianism</strong> (ch06) sends every soul across the <strong>Chinvat bridge</strong>, the "bridge of the separator," which widens for the righteous and narrows to a knife-edge for the wicked, who fall into the house of the Lie — one of the earliest clear afterlife <em>judgments</em>, and a probable influence on later Jewish, Christian, and Muslim ideas.</li>
+      <li><strong>Tibetan Buddhism</strong> (ch53) maps the passage in the <em>Bardo Thödol</em>, the so-called "Tibetan Book of the Dead," a guide read aloud to the dying and the dead through the <strong>bardo</strong>, the intermediate state, where the deceased meets peaceful and wrathful visions — recognized as projections of one's own mind — before judgment by the lord of death Yama and rebirth or liberation.</li>
+      <li><strong>Chinese</strong> religion built a vast bureaucratic underworld, <strong>Diyu</strong>, with courts, magistrates, registers, and graded hells administering karmic punishment before rebirth — the afterlife imagined as an imperial government.</li>
+      <li>Against all these stand the <em>un-judged</em> underworlds. The Mesopotamian "land of no return" and the Hebrew <strong>Sheol</strong> (in its older layers) were gloomy, undifferentiated pits where <em>all</em> the dead went down together, good and bad, to a dim half-existence. And the Norse <strong>Hel</strong> was, for the most part, simply where you went if you did not die in battle — no divine tribunal decided it; "a soul went wherever it went."</li>
+    </ul>
+
+    <h2>The god who goes down</h2>
+
+    <p>A special and haunting form of the descent is the god or divine hero who enters death itself. The Japanese creator <strong>Izanagi</strong> followed his dead wife <strong>Izanami</strong> into <strong>Yomi</strong>, the land of the dead, and — like Orpheus — was forbidden to look at her; he looked, saw her corruption, and fled, sealing the entrance with a boulder as she vowed to kill a thousand of the living each day (and he to give life to fifteen hundred) — a myth that explains both death and birth. In Norse myth the beloved god <strong>Baldr</strong> dies and goes to Hel, and cannot be ransomed because one creature refuses to weep for him. And in Christianity the <strong>Harrowing of Hell</strong> holds that Christ, between his crucifixion and resurrection, descended to the realm of the dead to free the righteous souls held there since the beginning — the descent-and-return raised to the center of a world religion.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The underworld journey is encoded in a small, remarkably stable set of symbols, found again and again across unconnected cultures.</p>
+
+    <ul>
+      <li><strong>The gate and the threshold.</strong> The descent is a passage through <em>barriers</em> — Inanna's seven gates, the gates of Hades, the sealed boulder of Yomi. To die is to cross thresholds and be <em>stripped</em> at each; what remains at the bottom is the naked self.</li>
+      <li><strong>The river and the ferryman.</strong> A water-boundary divides the living from the dead — the Greek Styx and its ferryman <strong>Charon</strong> (still paid with a coin on the tongue of the corpse), the rivers of the Duat sailed by the solar barque. The dead must be <em>carried across</em>.</li>
+      <li><strong>The bridge and the scale.</strong> Where the afterlife judges, the instrument is a <strong>bridge</strong> that sorts by widening or narrowing (Zoroastrian, and later Islamic, <em>Sirat</em>) or a <strong>balance</strong> that weighs the heart (Egyptian). The moral life is imagined as <em>weight</em> and <em>balance</em> — the deep metaphor beneath "gravity" of sin and "lightness" of the pure heart.</li>
+      <li><strong>The map and the guidebook.</strong> Uniquely, several traditions wrote <em>instructions for the dead</em> — the Egyptian Book of the Dead, the Tibetan Bardo Thödol, the Orphic <strong>gold leaves</strong> buried with initiates in southern Italy and Crete, inscribed with directions ("you will find a spring on the left... do not drink; say to the guardians, <em>I am a child of Earth and starry Heaven</em>"). The afterlife as a country one could be <em>given a map to</em> is one of the most striking encodings in this archive.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>This chapter runs beneath the whole book. Its descent-and-return is the twin of the <strong>flood</strong> (ch01) and the <strong>dying-and-returning god</strong> as engines of renewal; its judgment scene feeds directly into the <strong>apocalypse and last judgment</strong> of ch50. The bleak Sheol of <strong>pre-exilic Israel</strong> (ch07) and its transformation, under likely <strong>Zoroastrian</strong> (ch06) influence, into a judged afterlife with heaven and hell is a central thread of <strong>Second Temple Judaism</strong> (ch10), <strong>early Christianity</strong> (ch16), and <strong>Islam</strong> (ch21). The Egyptian Duat is the heart of the <strong>Egypt</strong> chapter (ch02); the Greek katabasis and its mystery-cult promise belong to <strong>early and classical Greece</strong> (ch08); the bardo to <strong>Tibetan Buddhism</strong> (ch53). The underworld is where every tradition finally says what it believes a human being <em>is</em>.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The texts and their dates: <em>Inanna's Descent</em> and <em>The Descent of Ishtar</em> in cuneiform; the Egyptian Pyramid Texts, Coffin Texts, and Book of the Dead, with the Weighing of the Heart abundantly attested in tomb painting and papyrus; Homer's nekyia and Virgil's katabasis; the Orphic gold leaves as physical objects; the <em>Bardo Thödol</em>; the Chinese Diyu tradition; and the Norse and Japanese underworld myths as recorded in the Eddas and the <em>Kojiki</em>. That the descent-to-the-underworld is a genuine cross-cultural pattern, and that some traditions judge the dead while others do not, are well-documented findings.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>That all these descent-myths share a single origin, or that the close Orpheus/Izanagi parallel proves contact rather than independent invention, is not established — such parallels are real but their cause is debated. And no claim here treats any afterlife map as a verified account of what happens after death; the chapter documents what traditions <em>held</em>, not what is <em>the case</em>.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The direction and degree of influence — above all, how much the judged afterlife of Judaism, Christianity, and Islam owes to Zoroastrian Persia — is genuinely contested and probably unrecoverable in full. And <em>why</em> the descent-and-return story is so universal (a reflection of sleep and waking, of the sun's nightly disappearance, of initiation ritual, or of something in the mind itself) remains an open question this archive does not pretend to close.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Inanna's Descent (Sumerian, oldest recorded katabasis) and the Descent of Ishtar (Akkadian): the seven gates, the stripping, death on the hook, the substitute Dumuzi, and the "land of no return" — "Descent of Inanna into the Underworld," Wikipedia. <a href="https://en.wikipedia.org/wiki/Descent_of_Inanna_into_the_Underworld">https://en.wikipedia.org/wiki/Descent_of_Inanna_into_the_Underworld</a> ; "Ereshkigal," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ereshkigal">https://en.wikipedia.org/wiki/Ereshkigal</a></li>
+        <li>Katabasis and nekyia in Greek and Roman literature: Odysseus, Heracles, Orpheus, Aeneas, Persephone, Charon — "Descent into the Underworld," Encyclopedia.com. <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/descent-underworld">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/descent-underworld</a></li>
+        <li>The Egyptian Duat, the Book of the Dead ("Coming Forth by Day"), the Weighing of the Heart against the feather of Maat, the negative confession, and Ammit the Devourer — Egyptian Book of the Dead overview (Weighing of the Heart, negative confession). <a href="https://fiveable.me/world-literature-i/unit-12/death-afterlife/study-guide/ZAkeFU1InN4187SH">https://fiveable.me/world-literature-i/unit-12/death-afterlife/study-guide/ZAkeFU1InN4187SH</a></li>
+        <li>Comparative afterlife judgment: the Tibetan Bardo Thödol and the bardo state; Chinese Diyu as a bureaucratic underworld; Norse Hel as largely un-judged; the threshold-as-process pattern — "To Die a Norse Death" (Medium/Seer of Odin). <a href="https://medium.com/seer-of-odin/to-die-a-norse-death-ancient-afterlife-beliefs-for-modern-souls-4cdb30d7fda1">https://medium.com/seer-of-odin/to-die-a-norse-death-ancient-afterlife-beliefs-for-modern-souls-4cdb30d7fda1</a> ; "Norse Ghosts &amp; the Afterlife," World History Encyclopedia. <a href="https://www.worldhistory.org/article/1290/norse-ghosts--the-afterlife/">https://www.worldhistory.org/article/1290/norse-ghosts--the-afterlife/</a></li>
+        <li>The Zoroastrian Chinvat bridge as an early afterlife judgment; the general typology of judged vs. un-judged afterlives — "Judgement (afterlife)" overview. <a href="https://grokipedia.com/page/Judgement_(afterlife)">https://grokipedia.com/page/Judgement_(afterlife)</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch48 */
+  ch48: { html: `
+    <p class="lead">Goddesses are everywhere in the human record — queens of heaven, mothers of the gods, bringers of grain and death. But behind the many real goddesses stands a modern idea: that they were all, once, one Great Goddess, worshipped in a peaceful matriarchy before the sky-gods came. This chapter documents the goddesses we can actually attest — and treats that seductive, influential, and largely rejected hypothesis with the same honesty as everything else.</p>
+
+    <h2>A woman giving birth between two leopards</h2>
+
+    <p>In a mud-brick house at <strong>Çatalhöyük</strong> in Anatolia, around 6000 BCE, someone shaped a small baked-clay figure of a heavy-bodied woman seated on a throne, her hands resting on two flanking leopards, apparently in the act of giving birth. When James Mellaart excavated it in the 1960s he named it a <strong>Mother Goddess</strong> and declared Çatalhöyük the shrine-city of a great female deity. The figure is genuinely striking, and genuinely old. But almost everything Mellaart said about it — that it was a goddess, that it proved goddess-worship, that it revealed a woman-centered society — is exactly the kind of claim this chapter has to hold at arm's length. The object is real. The theology read into it is a modern act of interpretation, and a contested one.</p>
+
+    <h2>The goddesses we can document</h2>
+
+    <p>Set aside the grand hypothesis, and what remains is abundant and certain: across the ancient world, powerful goddesses were worshipped, named, and served, and we have their texts and temples.</p>
+
+    <ul>
+      <li><strong>Inanna / Ishtar</strong> (Mesopotamia): queen of heaven, goddess of love <em>and</em> war, whose descent to the underworld is the oldest we can read (ch47), served in the great temple of Uruk.</li>
+      <li><strong>Isis</strong> (Egypt): the throne, the great magician, mistress of the mysteries of life and death, whose cult spread across the entire Roman Empire and whose image — the goddess nursing her divine child Horus — is one of the most enduring in history.</li>
+      <li><strong>Asherah</strong> (the Levant): consort of El and, on the astonishing inscriptions from <strong>Kuntillet ʿAjrud</strong> and Khirbet el-Qôm (c. 800 BCE), apparently paired with <strong>Yahweh himself</strong> — "Yahweh and his Asherah" — a goddess later suppressed as Israel became monotheist (ch07).</li>
+      <li><strong>Cybele</strong> (Anatolia/Rome): the <strong>Magna Mater</strong>, the "Great Mother," brought to Rome in 204 BCE with her ecstatic, self-castrating priests, the <em>galli</em>.</li>
+      <li><strong>Demeter and Persephone</strong> (Greece): grain and the seasons, at the heart of the Eleusinian Mysteries and their promise to the dead (ch08).</li>
+      <li><strong>The Great Goddess of India — Mahādevī</strong>: in the Shākta tradition she is the supreme reality itself. The <em>Devī Māhātmya</em> (c. 6th century CE) proclaims one Goddess manifest as <strong>Durga</strong> the demon-slayer, <strong>Kālī</strong> the fierce, <strong>Pārvatī</strong>, <strong>Lakshmī</strong>, <strong>Sarasvatī</strong> — a living, unbroken worship of the Goddess as ultimate, found nowhere else on this scale (ch24, ch30).</li>
+      <li><strong>Guanyin</strong> (China) and <strong>Amaterasu</strong> (Japan): Avalokiteśvara transformed into the beloved female bodhisattva of compassion; and the sun-goddess from whom the Japanese imperial line claimed descent (ch25).</li>
+    </ul>
+
+    <p>These are not one goddess. They are many, in many places, with different powers, genealogies, and moral characters — a goddess of war is not a goddess of grain.</p>
+
+    <h2>The one behind the many?</h2>
+
+    <p>And yet the temptation to unify them is ancient. In Apuleius's second-century novel, the goddess Isis announces herself as the single deity whom all nations worship under different names — "the Phrygians call me Cybele, the Athenians Athena... the Egyptians call me by my true name, Queen Isis." Modern writers systematized the impulse: the psychologist <strong>Erich Neumann</strong>, in <em>The Great Mother</em> (1955), read goddesses worldwide as expressions of a single archetype with a benign and a terrible face; folklore gave us the <strong>triple goddess</strong> of maiden, mother, and crone, popularized by the poet Robert Graves. Whether these unifications reveal a real underlying pattern in the human mind or simply <em>impose</em> one is the recurring question of comparative religion — and it comes to a head in the most famous goddess-claim of all.</p>
+
+    <h2>The Great Goddess hypothesis, honestly</h2>
+
+    <p>In the 1970s and 80s the Lithuanian-American archaeologist <strong>Marija Gimbutas</strong> argued, in a series of influential books, that Neolithic "<strong>Old Europe</strong>" (c. 6500–3500 BCE) had been a peaceful, egalitarian, <strong>matristic</strong> civilization centered on the worship of a single <strong>Great Goddess</strong> of birth, death, and regeneration — later overthrown by patriarchal, sky-god-worshipping Indo-European ("Kurgan") invaders. It is a powerful vision, and it must be reported with complete honesty, because it did more than any other single idea to shape the modern Goddess movement.</p>
+
+    <p><strong>Mainstream archaeology has largely rejected it.</strong> The specific criticisms are substantive and worth stating plainly: the female figurines Gimbutas read as one Goddess are in fact diverse across time and space and cannot be shown to represent a single deity — or, in many cases, a deity at all; there is <strong>no archaeological evidence</strong> for the matriarchy or "matristic" society she described; and her peaceful Old Europe is contradicted by clear evidence of <strong>violence in Neolithic Europe</strong> well before any Indo-European arrival. Her method — reading a fixed symbolic vocabulary (the bird goddess, the snake goddess, the lozenge, the chevron) off the artifacts — is regarded by most archaeologists as speculation projected onto ambiguous objects. (Her separate <em>Kurgan hypothesis</em> about Indo-European origins, it should be noted, has fared far better and remains influential.) At the same time, her defenders — many in feminist scholarship and spirituality — argue her work is a needed corrective to a discipline long blind to women, and the debate is not merely archaeological but about who gets to narrate the deep past.</p>
+
+    <p>The honest statement is the one this archive keeps making: goddess <em>worship</em> is real and documented; a single, universal, prehistoric <strong>Great Goddess</strong> and the peaceful matriarchy around her are <strong>not</strong> — they are a modern reconstruction, believed by many, supported by the evidence by few.</p>
+
+    <h2>The goddess and the one God</h2>
+
+    <p>Monotheism did not so much abolish the goddess as sublimate her. As Israel's religion narrowed to Yahweh alone, <strong>Asherah</strong> was written out (ch07). But the feminine divine did not vanish: it re-emerged as <strong>Wisdom</strong> (Ḥokhmah / <strong>Sophia</strong>), personified as a woman who was with God at the creation (Proverbs 8), and, in Christianity, in the extraordinary elevation of <strong>Mary</strong> — declared <strong>Theotokos</strong>, "God-bearer," at Ephesus in 431 CE (in the very city of the great goddess Artemis), venerated with a devotion that in practice absorbed much of the older goddess-worship: the mother-and-child of Isis becoming the Madonna and child, the <strong>Black Madonnas</strong> of Europe, the syncretic <strong>Our Lady of Guadalupe</strong> overlaying the Aztec Tonantzin. Whether this is "the goddess in disguise" or a distinct Christian development is debated — but the continuity of image is undeniable.</p>
+
+    <h2>The Goddess returns: the modern movement</h2>
+
+    <p>In the 20th century the Goddess came back as a <em>chosen</em> faith. Drawing directly on Gimbutas and Graves, the <strong>women's spirituality movement</strong> of the 1960s and 70s, the Goddess of <strong>Wicca</strong> and modern Paganism (ch38), and the field its adherents call <strong>thealogy</strong> (from <em>thea</em>, goddess — "reflection on the meaning of the Goddess," in Carol P. Christ's phrase) built a living new religion around the divine feminine. Its founders knew, in many cases, that the prehistoric Great Goddess was contested history; they embraced her anyway as <strong>myth in the honest sense</strong> — a chosen symbol of female sacred power, not a claim about excavated fact. That distinction, between the Goddess as a historical hypothesis and the Goddess as a living modern symbol, is exactly the one this chapter exists to keep clear.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The figurine.</strong> From the Paleolithic "Venus" figures (ch41) to the Çatalhöyük seated woman, the small female figure is the single most cited symbol of the divine feminine — and the most ambiguous. It may encode a goddess, a fertility charm, an ancestor, a self-portrait, or a toy; the encoding is <em>real</em>, its meaning <em>unrecovered</em>.</li>
+      <li><strong>The triple form and the moon.</strong> The maiden–mother–crone triad, mapped onto the waxing, full, and waning <strong>moon</strong>, is a genuine and central symbol of the <em>modern</em> Goddess movement — but it is largely a 20th-century synthesis (Graves), not an attested ancient system, and the chapter marks it as such.</li>
+      <li><strong>Gimbutas's alphabet of the Goddess.</strong> The bird-and-snake goddess, the lozenge and the "seed," the spiral and the chevron — Gimbutas read these as a coherent sacred script of Old Europe. Whether they are a decipherable symbol-system or a pattern imposed on decoration is precisely the contested point; the motifs exist, the reading is disputed.</li>
+      <li><strong>The Black Madonna.</strong> The dark-skinned images of Mary at Częstochowa, Montserrat, and elsewhere are a real and unexplained iconographic tradition, variously read as aged pigment, as deliberate, or as the older earth-goddess showing through the Christian image — a case study in how a symbol can carry contested layers of meaning at once.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>This chapter gathers threads from across the archive: the <strong>Paleolithic and Neolithic</strong> figurines and the Mother Goddess debate (ch41–ch42); <strong>Inanna/Ishtar</strong> and Mesopotamia (ch03, ch47); <strong>Isis</strong> and Egypt (ch02); <strong>Asherah</strong> and the making of monotheism (ch07); <strong>Demeter</strong> and the mysteries (ch08); the living Goddess of <strong>Tantra and Bhakti</strong> India (ch24, ch30); the <strong>Marian</strong> devotion of Christianity (ch16, ch22); and the modern <strong>Wicca and Goddess movement</strong> (ch38). It is the clearest case in the book of the archive's core rule: what a tradition <em>reveres</em> and what the evidence <em>establishes</em> are two different statements, and the honest work is to hold them apart.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>That powerful goddesses were widely worshipped, with attested names, temples, texts, and cults — Inanna/Ishtar, Isis, Cybele, Demeter, Asherah (including the "Yahweh and his Asherah" inscriptions), the Mahādevī of India, Guanyin, Amaterasu. That the divine feminine persisted into monotheism as Wisdom/Sophia and, above all, in Marian devotion. And that a large, self-aware modern Goddess movement and its thealogy exist as a 20th-century new religious phenomenon.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>A single, universal <strong>Great Goddess</strong> worshipped across prehistory; a peaceful Neolithic <strong>matriarchy</strong> ("matristic" Old Europe) — Gimbutas's central claims, largely rejected by mainstream archaeology on the grounds that the figurines are diverse, the matriarchy is unevidenced, and Neolithic Europe was not free of violence. That the many goddesses were "really" one is an interpretive move, not a finding. (Gimbutas's separate Kurgan hypothesis about Indo-European origins is a different matter and remains influential.)</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>What the prehistoric figurines <em>meant</em> to those who made them; how much of Marian devotion is genuine continuity with older goddess-worship versus independent Christian development; and whether the recurring "one goddess of many names" intuition reflects something real about the human religious mind or is a unifying idea repeatedly imposed on genuinely plural material. The archive documents the reverence and the debate, and resolves neither by fiat.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Great Goddess hypothesis, Marija Gimbutas's "Old Europe," the matristic/matriarchy claim, and its scholarly rejection (diverse figurines, no matriarchy evidence, Neolithic violence; Kurgan hypothesis noted as separately robust) — "Great Goddess hypothesis," Wikipedia. <a href="https://en.wikipedia.org/wiki/Great_Goddess_hypothesis">https://en.wikipedia.org/wiki/Great_Goddess_hypothesis</a> ; "A contemporary review of the archaeology of Marija Gimbutas" (Academia.edu). <a href="https://www.academia.edu/50963531/A_contemporary_review_of_the_archaeology_of_Marija_Gimbutas">https://www.academia.edu/50963531/A_contemporary_review_of_the_archaeology_of_Marija_Gimbutas</a></li>
+        <li>The concept and critique of the "mother goddess," and the diversity of figurines against a singular deity — "Mother goddess" overview. <a href="https://grokipedia.com/page/Mother_goddess">https://grokipedia.com/page/Mother_goddess</a></li>
+        <li>Goddesses across cultures (Inanna, Isis, Kali/Durga, Guanyin, Amaterasu, Freya, Sophia, etc.) and the divine feminine in comparative history — "Goddesses and the divine feminine: a western religious history," Bryn Mawr Classical Review. <a href="https://bmcr.brynmawr.edu/2005/2005.12.16/">https://bmcr.brynmawr.edu/2005/2005.12.16/</a> ; "Goddesses in Myth, History and Culture," Mago Books. <a href="https://www.magobooks.com/?p=7789">https://www.magobooks.com/?p=7789</a></li>
+        <li>The modern Goddess movement, women's spirituality, and thealogy (Carol P. Christ, "reflection on the meaning of the Goddess") — "Thealogy," Wikipedia. <a href="https://en.wikipedia.org/wiki/Thealogy">https://en.wikipedia.org/wiki/Thealogy</a> ; "The Goddess movement," Solmaz Hafezi. <a href="https://solmazhafezi.wordpress.com/2012/03/05/the-goddess-movement/">https://solmazhafezi.wordpress.com/2012/03/05/the-goddess-movement/</a></li>
+        <li>Bibliography of scholarly criticism of the "Great Goddess" concept — "Criticism to the 'Great Goddess' concept: a short bibliography" (Academia.edu). <a href="https://www.academia.edu/43515254/Criticism_to_the_Great_Goddess_concept_a_short_bibliography">https://www.academia.edu/43515254/Criticism_to_the_Great_Goddess_concept_a_short_bibliography</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch49 */
+  ch49: { html: `
+    <p class="lead">For most of recorded history the person who ruled was also, in some measure, holy — a god, a god's son, a god's chosen, or a god's hostage. The idea that political power is sacred is one of the most widespread in human history, and one of the most consequential: it built the pyramids and the Mandate of Heaven, and it left behind a haunting, half-mythical figure — the king who must be killed.</p>
+
+    <h2>The priest who waited to be murdered</h2>
+
+    <p>There was, in antiquity, a sacred grove beside Lake Nemi in the hills near Rome, and in it a strange and terrible office. Its priest, the <em>Rex Nemorensis</em>, the "King of the Wood," held his post by a single rule: he had won it by murdering the priest before him, and he would hold it only until a stronger man — traditionally a runaway slave who had plucked a golden bough from a certain tree — came to murder him in turn. The priest was a king, and a sacrifice waiting to happen. It was with this grim image that Sir <strong>James Frazer</strong> opened <em>The Golden Bough</em> (1890–1915), the vast twelve-volume comparative study that made "sacred kingship" a subject — and asked the question that runs through this chapter: why should a king be holy, and why, so often, must he die?</p>
+
+    <h2>The king as god</h2>
+
+    <p>At its strongest, sacred kingship simply <em>identified</em> the ruler with the divine.</p>
+
+    <ul>
+      <li>In <strong>Egypt</strong> the pharaoh was a god on earth: the living <strong>Horus</strong>, the falcon-son of the gods; the <strong>son of Ra</strong> the sun; and, in death, <strong>Osiris</strong>, lord of the dead. His reign was not merely blessed by the gods — it <em>was</em> the presence of the divine order, <strong>Maat</strong>, in the world, and the whole colossal machinery of pyramid and temple served this identity (ch02).</li>
+      <li>The <strong>Inca</strong> ruler, the <strong>Sapa Inca</strong>, was the son of <strong>Inti</strong> the sun-god, the "son of the Sun." He was so charged with divinity that objects he touched were ritually burned each year, and his dead body, mummified, continued to hold court, own estates, and be consulted (ch29).</li>
+      <li>The <strong>Japanese emperor</strong> was held, until 1945, to descend in unbroken line from the sun-goddess <strong>Amaterasu</strong> herself — a living god at the head of the state (ch25).</li>
+      <li><strong>Rome</strong> made gods of its dead emperors by decree: the Senate would vote an emperor's <strong>apotheosis</strong>, his elevation to <em>divus</em> ("the deified"), his soul seen ascending as an eagle from the funeral pyre — and the living emperor's <em>genius</em> received cult across the empire (ch13, ch18).</li>
+    </ul>
+
+    <h2>The king answerable to Heaven</h2>
+
+    <p>Against this stands a subtler and, in the long run, more world-shaping model: the king not as a god but as Heaven's <strong>appointee</strong>, holy <em>because chosen</em>, and holy only so long as he is worthy. Its classic form is the Chinese <strong>Mandate of Heaven</strong> (<em>Tianming</em>): the emperor is the <strong>Son of Heaven</strong> (<em>Tianzi</em>), but his authority is a trust granted by an impersonal Heaven and <em>conditional</em> on just rule. Misgovernment, disaster, and revolt are read as signs that the Mandate has been <strong>withdrawn</strong> — and a successful rebel proves, precisely by succeeding, that Heaven has transferred it to him (ch09). It is divine kingship with a moral tripwire built in, and it made Chinese political theory answerable, at least in principle, to the welfare of the ruled. A related conditionality runs through <strong>Mesopotamia</strong>, where the king was the gods' chosen <strong>shepherd</strong>, installed to uphold justice (Hammurabi receives his law from the sun-god Shamash), and through <strong>Israel</strong>, where the anointed king served under the judgment of prophets who did not hesitate to condemn him (ch03, ch07).</p>
+
+    <h2>The king who must die</h2>
+
+    <p>The most haunting thread in Frazer's study is the <strong>dying king</strong>. He argued that in the oldest societies the ruler embodied the life-force of the land itself, so that his vigor <em>was</em> the fertility of the crops — and that when his powers failed he had to be killed, sometimes after a fixed term, and replaced, so that the divine life could pass undiminished into a strong new body. The evidence he assembled is uneven, but some cases are genuinely documented. Among the <strong>Shilluk</strong> of the Nile, the king (<em>reth</em>) embodied <strong>Nyikang</strong>, the divine founder of the nation — <em>every</em> reth <em>was</em> Nyikang — and traditions held that a reth who weakened could be ritually put to death (a claim later ethnographers, and David Graeber, have complicated but not dismissed). And in <strong>Mesopotamia</strong> we have hard evidence of a related rite: the <strong>substitute king</strong> (<em>šar pūhi</em>), in which, when omens threatened the king's life, a commoner was enthroned as king for a period to absorb the evil fate — and then, in at least some cases, put to death in the real king's place, the king resuming his throne. The dying king was not only a theory; sometimes it happened.</p>
+
+    <h2>Anointed: sacred kingship in Christendom</h2>
+
+    <p>The idea did not end with paganism. In Israel a king was made by <strong>anointing</strong> with sacred oil — and the Hebrew word for "anointed one," <em>māshîaḥ</em>, gives us both <strong>Messiah</strong> and, through Greek, <strong>Christ</strong> (ch07, ch16). Medieval and early-modern Europe inherited a Christianized sacred kingship: kings were anointed at their coronations like the kings of Israel, claimed to rule by the <strong>divine right of kings</strong> (answerable to God alone), and were believed to heal the disease scrofula by the <strong>royal touch</strong> — "the king's evil," cured by the laying-on of the sacred royal hand, a rite performed by English and French monarchs into the 18th century. The slow death of this idea — through the execution of Charles I, the Enlightenment, and the democratic revolutions — is one of the great secularizing turns of the modern age.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Sacred kingship is encoded in a remarkably consistent set of objects and gestures, because the whole point is to make an ordinary mortal <em>visibly</em> more than mortal.</p>
+
+    <ul>
+      <li><strong>The regalia.</strong> Crown, throne, scepter, and orb; the Shilluk king's sacred <strong>spear and stool</strong>; the Japanese imperial <strong>mirror, sword, and jewel</strong> (the gifts of Amaterasu). To be enthroned is to be <em>invested</em> with objects that carry the office's divinity independently of the man.</li>
+      <li><strong>Anointing.</strong> The pouring of sacred <strong>oil</strong> is the central encoding of the "chosen" model: it marks the king as set apart and infused with divine spirit — the same gesture, and word, that makes a <em>messiah</em>.</li>
+      <li><strong>The king's two bodies.</strong> Medieval jurists (studied by Ernst Kantorowicz) distinguished the king's mortal <strong>body natural</strong> from his undying <strong>body politic</strong> — "the king is dead, long live the king" — an idea that let sacred kingship survive the death of any particular king, and that quietly seeded the modern notion of the <em>undying state</em>.</li>
+      <li><strong>Coronation as re-creation.</strong> Enthronement rites often re-enact the <em>creation of the world</em> (Babylon's Akitu festival, ch46, renewed the king's rule together with the cosmos), encoding the claim that legitimate rule and cosmic order are the same thing renewed together.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>This theme underlies half the archive. Its god-king is the <strong>Egypt</strong> of the pharaohs (ch02), the <strong>Inca</strong> of the sun (ch29), and imperial <strong>Rome</strong> and <strong>Japan</strong> (ch13, ch25); its Heaven-answerable king is the <strong>Mandate of Heaven</strong> of China (ch09) and the prophet-checked king of <strong>Israel</strong> (ch07); its anointed <em>messiah</em> runs straight into <strong>Second Temple</strong> messianism and <strong>Christianity</strong> (ch10, ch16); its dying king is the twin of the <strong>dying-and-returning god</strong> and of <strong>sacrifice</strong> (ch51) and connects to the renewal cycles of <strong>creation</strong> and <strong>flood</strong> (ch46, ch01). Where a people located the sacred in its ruler, everything else — law, war, architecture, the afterlife of the king — followed from that one decision.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>That sacred/sacral kingship is a genuine and widespread phenomenon, in its two great forms (the king as divine, and the king as Heaven's conditional appointee), is thoroughly documented: the Egyptian pharaonic theology; the Sapa Inca as son of Inti; the Japanese imperial descent-claim (renounced in 1946); the Roman apotheosis of emperors; the Chinese Mandate of Heaven; the Shilluk reth as embodiment of Nyikang; and, as hard textual evidence for a <em>dying-king</em>-type rite, the Mesopotamian <strong>substitute king</strong> ritual. Anointing, divine right, and the royal touch in Christendom are equally well attested.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>Frazer's <em>grand unifying thesis</em> — that all religion began in a fertility cult centered on a periodically-killed sacred king, and that this single pattern underlies myth everywhere — is <strong>not</strong> accepted by modern scholarship; the "myth-and-ritual" school it launched is disputed, and Frazer's method of stringing far-flung customs into one universal scheme is regarded as overreaching. Specific dramatic claims (e.g., that every sacred king was regularly ritually killed) are not generally supported.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>How literally, and how often, "dying king" rituals were actually carried out in particular societies (the Shilluk case remains debated); and how much the various sacred-kingship systems influenced one another versus arising independently. The phenomenon is real and documented case by case; Frazer's claim to have found the <em>single key</em> to it is the part that does not hold.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Frazer's <em>The Golden Bough</em>: the priest-king of Nemi, the sacred/dying king embodying the land's fertility, the dying-and-rising gods (Osiris, Tammuz, Adonis, Attis), and the disputed myth-and-ritual thesis — "The Golden Bough," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/literature-and-writing/golden-bough-sir-james-george-frazer">https://www.ebsco.com/research-starters/literature-and-writing/golden-bough-sir-james-george-frazer</a> ; "Sacred king," Wikipedia. <a href="https://en.wikipedia.org/wiki/Sacred_king">https://en.wikipedia.org/wiki/Sacred_king</a></li>
+        <li>The divine or semidivine king across cultures (Egypt, Japan, Peru, the Shilluk, Alexander and the Roman emperors) — "Sacred kingship: The divine or semidivine king," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/sacred-kingship/The-divine-or-semidivine-king">https://www.britannica.com/topic/sacred-kingship/The-divine-or-semidivine-king</a></li>
+        <li>The Sapa Inca as son of Inti ("son of the Sun"), his divinity and mummified afterlife — "Sapa Inca," Wikipedia. <a href="https://en.wikipedia.org/wiki/Sapa_Inca">https://en.wikipedia.org/wiki/Sapa_Inca</a></li>
+        <li>The Shilluk divine kingship: the reth as embodiment of Nyikang, the enthronement and the killing-of-the-king question — David Graeber, "The divine kingship of the Shilluk," HAU: Journal of Ethnographic Theory 1(1). <a href="https://www.journals.uchicago.edu/doi/10.14318/hau1.1.002">https://www.journals.uchicago.edu/doi/10.14318/hau1.1.002</a></li>
+        <li>The African case of sacred kingship (comparative) — "Sacred Kingship: The African Case," Social Evolution &amp; History. <a href="https://www.sociostudies.org/journal/articles/273439/">https://www.sociostudies.org/journal/articles/273439/</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the Chinese Mandate of Heaven / Son of Heaven (ch09 sources); the Mesopotamian substitute-king (šar pūhi) ritual and Hammurabi/Shamash (ch03 sources); anointing, māshîaḥ/Messiah, divine right and the royal touch (ch07/ch16 sources); Kantorowicz, The King's Two Bodies (1957).</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch50 */
+  ch50: { html: `
+    <p class="lead">Somewhere in the last few centuries before the common era, a new idea entered the religious imagination and never left it: that history is going <em>somewhere</em> — that it has an end, a last battle between good and evil, a final judgment, and a world made new. Where that idea came from, how it spread to half of humanity, and why some traditions instead imagined the end as a wheel that turns forever, is one of the great stories this archive has to tell.</p>
+
+    <h2>A battle plan for the end of the world</h2>
+
+    <p>Among the scrolls hidden in the caves above the Dead Sea, and recovered two thousand years later, is a document scholars call the <strong>War Scroll</strong> (1QM). It is not a prayer or a chronicle but something stranger: a detailed <em>battle plan</em> for the final war at the end of time, between the <strong>Sons of Light</strong> and the <strong>Sons of Darkness</strong> — the trumpets inscribed with slogans, the formations of the army, the forty-year campaign, the angelic hosts of the archangel Michael fighting alongside the elect, and the foreordained victory of God over the forces of the demon Belial. The community that copied it, at Qumran, believed it was living in the last days and would fight in that war. The War Scroll is one of the purest surviving windows into the <strong>apocalyptic</strong> mind — a mind convinced that the cosmos is a battlefield, that the battle is nearly won, and that the reader is a soldier in it.</p>
+
+    <h2>The Persian blueprint</h2>
+
+    <p>The oldest fully worked-out vision of the end belongs to <strong>Zoroastrianism</strong> (ch06). Its cosmos is a war: <strong>Ahura Mazda</strong>, the Wise Lord, against <strong>Angra Mainyu</strong>, the destructive spirit — and the war has a <em>scheduled end</em>. At the close of a great span of time a savior, the <strong>Saoshyant</strong>, born of the prophet's preserved seed, will appear; the dead will be raised in their bodies; all humanity will pass through an ordeal of <strong>molten metal</strong>, which will feel like warm milk to the righteous and will burn away the wicked; evil and its author will be destroyed; and the world will be restored to its perfect, deathless state. This final renovation has a name — <em><strong>Frashokereti</strong></em>, "making wonderful" — and it is, so far as we can tell, the earliest appearance in religion of the whole package: cosmic dualism, a linear history, a savior, a bodily resurrection, a universal judgment, and a made-new world at the end. Almost every later apocalypse is a variation on it.</p>
+
+    <h2>The apocalyptic turn in Judaism</h2>
+
+    <p>Before the Babylonian exile, Israel's religion had little of this: the dead went down to the shadowy, undifferentiated <strong>Sheol</strong> (ch07), and hope was for the nation in <em>this</em> world. Then, during and after the <strong>Persian period</strong> — the very centuries when Judaeans lived under Zoroastrian Achaemenid rule — Jewish thought acquired, for the first time, an elaborate hierarchy of <strong>angels and demons</strong>, a coming <strong>resurrection</strong> and <strong>judgment</strong>, a <strong>messianic</strong> deliverer, and a linear history driving toward God's final triumph. We watch it happen in the literature: the <strong>Book of Daniel</strong> with its four beasts and its "one like a son of man" coming on the clouds; the <strong>Book of Enoch</strong> with its fallen angels and its tour of the cosmos; the Qumran scrolls. The overlap with Zoroastrian ideas is striking, and many scholars argue for real <strong>Persian influence</strong> — but it is genuinely contested: others (James Barr, Paul Hanson among them) caution that these ideas could have grown from within the Israelite tradition or from other Near Eastern sources, and that the dating of the Zoroastrian texts is itself uncertain. The archive reports the parallel as real and the <em>causation</em> as an open question.</p>
+
+    <h2>Revelation, the Antichrist, and the thousand years</h2>
+
+    <p>Christianity was, at its birth, an apocalyptic movement (ch16): Jesus proclaimed the coming Kingdom of God, and the earliest church expected the end within a generation. Its great vision is the <strong>Book of Revelation</strong> — the seven seals, the four horsemen, the beast whose number is <strong>666</strong>, the whore of Babylon, the last battle at <strong>Armageddon</strong>, the binding of Satan for a <strong>thousand years</strong> (the <em>millennium</em>), the Last Judgment before the great white throne, and finally a <strong>new heaven and a new earth</strong> where "death shall be no more." From it grew two thousand years of recurring expectation: the figure of the <strong>Antichrist</strong>, the deceiver of the last days; <strong>millennialism</strong> (or chiliasm), the belief in a coming thousand-year reign, which has surged again and again from the early church to the Reformation radicals (ch31) to modern movements; and the enduring hope of the <strong>Second Coming</strong>.</p>
+
+    <h2>The Hour, the Mahdi, and the Deceiver</h2>
+
+    <p>Islam inherited and developed the same linear eschatology (ch21). The <strong>Day of Resurrection</strong> (<em>Yawm al-Qiyāmah</em>) is one of the most emphasized themes of the Qur'an: the trumpet blast, the raising of the dead, the weighing of deeds, the bridge (<em>Sirāt</em>) over hell, and the eternal Garden or Fire. Around it grew a rich tradition of the <strong>signs of the Hour</strong>: the coming of the <strong>Mahdi</strong>, the rightly-guided one who will fill the earth with justice; the return of <strong>Isa</strong> (Jesus), who will descend to defeat the great deceiver, the <strong>Dajjal</strong> (the Islamic Antichrist), and the final battles and cosmic upheavals before the end. The parallels with the Saoshyant and the Second Coming are, again, unmistakable, and the traditions themselves sometimes noted them.</p>
+
+    <h2>The wheel that turns forever</h2>
+
+    <p>Not every tradition imagined a <em>last</em> day. Against the linear apocalypse of Persia and the Abrahamic faiths stands the great alternative: time as a <strong>cycle</strong>, in which the world is destroyed and reborn without end.</p>
+
+    <ul>
+      <li><strong>Norse</strong> myth has <strong>Ragnarök</strong>, the "doom of the gods": the wolf Fenrir devours Odin, the world-serpent and Thor kill each other, the sun goes black and the earth sinks into the sea in fire and flood — <em>but the world rises again</em>, green and new, with a surviving human pair and a new generation of gods. An end, and a beginning (ch23).</li>
+      <li><strong>Hinduism</strong> measures time in vast <strong>yugas</strong>; we live in the degenerate <strong>Kali Yuga</strong>, at whose close the tenth avatar of Vishnu, <strong>Kalki</strong>, will come on a white horse to destroy the wicked and restart the cycle — one turn of a wheel that has turned numberless times and will turn again (ch05, ch30).</li>
+      <li><strong>Buddhism</strong> foresees the long decline of the Dharma and the eventual coming of the future Buddha, <strong>Maitreya</strong>, to renew the teaching in a fresh age (ch11, ch20).</li>
+      <li>The <strong>Aztecs</strong> believed they lived in the age of the <strong>Fifth Sun</strong>, four previous worlds having already been destroyed, and that this one too would end — in earthquakes — sustained only by the offering of blood (ch29).</li>
+    </ul>
+
+    <p>The difference between the <em>linear</em> end (one final consummation, after which time stops) and the <em>cyclical</em> end (destruction as one phase of an eternal turning) is one of the deepest divides in the world's religions, and it shapes everything from ethics to the meaning of history itself.</p>
+
+    <h2>Millenarianism: the end, expected soon</h2>
+
+    <p>The apocalyptic hope has never stayed safely in the future. Again and again, communities have concluded that the end is <em>now</em> — and set a date. The <strong>Millerites</strong> of 1840s America awaited Christ's return on a calculated day and met the "<strong>Great Disappointment</strong>" when it passed; the pattern has repeated in countless movements down to the present, and it stands behind many of the modern new religious movements (ch35). Failed prophecy, strikingly, often does not destroy such groups but reshapes them, as they reinterpret the date rather than abandon the hope — one of the most studied phenomena in the psychology of religion.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>The apocalypse is the most densely <em>encoded</em> body of religious writing there is — deliberately so, since it was often written in coded images to be understood only by the faithful under persecution.</p>
+
+    <ul>
+      <li><strong>The number.</strong> Apocalyptic runs on numbers: the <strong>seven</strong> seals, trumpets, and bowls; the <strong>four</strong> horsemen; the <strong>thousand</strong> years; the <strong>1,260 days</strong>; and above all <strong>666</strong>, the "number of the Beast," a <strong>gematria</strong> (ch10, ch26) cipher most scholars read as encoding, in Hebrew letters, the name of the emperor <strong>Nero</strong> — a real historical tyrant disguised as a monster so the text could not be used against its readers.</li>
+      <li><strong>The final battle</strong> has a place-name in each tradition — <strong>Armageddon</strong> (Har Megiddo) in Revelation, the plain of <strong>Vígríðr</strong> in the Norse, the field of <strong>Kurukshetra</strong> already fought in the Hindu epic — the last war given a map.</li>
+      <li><strong>Fire and molten metal</strong> recur as the <em>purifier</em> of the end (the Zoroastrian ordeal, the lake of fire, Ragnarök's flames): the world is not merely ended but <em>refined</em>.</li>
+      <li><strong>The made-new world</strong> is the shared image of hope beneath all the terror — Frashokereti's deathless creation, Revelation's new Jerusalem where "death shall be no more," the green earth after Ragnarök — encoding the conviction that destruction is not the last word but the birth-pang of renewal.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>This chapter is the far end of several of the archive's longest threads. It completes the story of the afterlife and judgment begun in <strong>the underworld</strong> (ch47); it is the mature fruit of <strong>Zoroastrian</strong> dualism (ch06) and the transformation of <strong>Israelite</strong> religion in the <strong>Second Temple</strong> period (ch07, ch10); it is central to <strong>Christianity</strong> and <strong>Islam</strong> (ch16, ch21) and to the radical movements of the <strong>Reformation</strong> and the <strong>modern NRMs</strong> (ch31, ch35); and its cyclical counter-vision belongs to <strong>Norse</strong>, <strong>Vedic/Hindu</strong>, <strong>Buddhist</strong>, and <strong>Aztec</strong> thought (ch23, ch05, ch30, ch11, ch20, ch29). How a tradition imagines the <em>end</em> is, in the deepest sense, how it imagines the <em>meaning</em> of everything that came before.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The texts and their dates: the Zoroastrian eschatology of the Saoshyant and Frashokereti; the emergence of an apocalyptic worldview (resurrection, judgment, angels/demons, linear history) in Second Temple Judaism, documented in Daniel, Enoch, and the Dead Sea Scrolls (including the War Scroll); the Book of Revelation; the Qur'anic Day of Resurrection and the hadith traditions of the Mahdi, the returning Jesus, and the Dajjal; and the cyclical eschatologies of Norse, Hindu, Buddhist, and Aztec religion. The linear-vs-cyclical contrast, and the recurrence of millenarian movements, are well documented.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>That Jewish (and hence Christian and Islamic) apocalyptic <em>derives</em> from Zoroastrianism is <strong>contested</strong>, not established: the parallels are real, but the direction and degree of influence, and the dating of key Zoroastrian texts, are debated, and some scholars locate the origins within the Israelite tradition itself. And nothing in this chapter treats any end-times prophecy as a prediction that will or did come true; the archive documents what traditions <em>expect</em>, never endorsing a forecast.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The historical origin of the apocalyptic worldview — how much Persian, how much inner-Jewish, how much broader Near Eastern — remains genuinely unresolved. So does the deeper question of <em>why</em> the human religious imagination so readily divides between the line and the wheel, the one final end and the eternal return. The archive lays the two visions side by side and does not pretend to adjudicate the future.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Zoroastrian eschatology: cosmic dualism, the Saoshyant, resurrection, the ordeal of molten metal, and Frashokereti ("making wonderful") — "Frashokereti," Wikipedia. <a href="https://en.wikipedia.org/wiki/Frashokereti">https://en.wikipedia.org/wiki/Frashokereti</a></li>
+        <li>Comparative apocalyptic across religions (Zoroastrian, Jewish, Christian, Islamic) and the claim of a shared lineage — "The Zoroastrian Influences on the Book of Revelation" (Substack, with cited scholarship). <a href="https://chrisbennett420.substack.com/p/the-zoroastrian-influences-on-the">https://chrisbennett420.substack.com/p/the-zoroastrian-influences-on-the</a> ; "Apocalyptic literature," Wikipedia. <a href="https://en.wikipedia.org/wiki/Apocalyptic_literature">https://en.wikipedia.org/wiki/Apocalyptic_literature</a></li>
+        <li>The apocalyptic turn in Second Temple Judaism (angels/demons, resurrection, judgment, linear history) and the contested question of Zoroastrian influence (with the Barr/Hanson caution) — "Was Resurrection a Zoroastrian Idea?", The Bart Ehrman Blog. <a href="https://ehrmanblog.org/was-resurrection-a-zoroastrian-idea/">https://ehrmanblog.org/was-resurrection-a-zoroastrian-idea/</a> ; "Afterlife and Resurrection Beliefs in the Second Temple Period," Bible Interp. <a href="https://bibleinterp.arizona.edu/articles/afterlife-and-resurrection-beliefs-second-temple-period">https://bibleinterp.arizona.edu/articles/afterlife-and-resurrection-beliefs-second-temple-period</a></li>
+        <li>Islamic eschatology: the Mahdi, the return of Isa, and the Dajjal; parallels to the Saoshyant and the Second Coming — "Mahdi," Wikipedia. <a href="https://en.wikipedia.org/wiki/Imam_Mehdi">https://en.wikipedia.org/wiki/Imam_Mehdi</a></li>
+        <li>Apocalyptic narratives across world religions, including Ragnarök, Kali Yuga/Kalki, and cyclical vs. linear time — "Apocalyptic narratives in world religions," Fiveable. <a href="https://fiveable.me/myth-and-literature/unit-7/apocalyptic-narratives-world-religions/study-guide/EAeSQDmU51De637c">https://fiveable.me/myth-and-literature/unit-7/apocalyptic-narratives-world-religions/study-guide/EAeSQDmU51De637c</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the Qumran War Scroll (1QM) and Sons of Light/Darkness (ch10 sources); 666 as gematria for Nero (ch10/ch16 sources); the Millerites and the Great Disappointment (ch35 sources); the Aztec Five Suns (ch29 sources).</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch51 */
+  ch51: { html: `
+    <p class="lead">To make something <em>sacred</em> — the word literally means "to make holy" — the ancient world gave it up: burned it, poured it out, killed it, drove it into the desert. Sacrifice is one of the most universal of all religious acts and one of the most troubling, and running through it is a single dark and durable idea: that the many can be spared by loading their guilt onto one, and sending that one away to die.</p>
+
+    <h2>Two goats and a scarlet thread</h2>
+
+    <p>On the tenth day of the seventh month, the Day of Atonement, the high priest of Israel took two identical goats and cast lots over them. One lot was marked "for the LORD" — that goat was slaughtered on the altar, its blood carried into the Holy of Holies. The other lot was marked "for <strong>Azazel</strong>," and over its head the high priest confessed all the sins of the people, laying them onto the animal; then, according to the tradition preserved in the Mishnah, a band of <strong>scarlet wool</strong> was tied to it and it was led out into the wilderness and driven over a cliff, carrying the year's guilt away with it. This is the original <strong>scapegoat</strong> — the <em>goat that escapes</em> (in Tyndale's coinage), the ʿez ʾōzēl of Leviticus 16 — and it is the sharpest image of a logic found across the ancient world: that the impurity of the community can be gathered onto a single victim and expelled, and that in its going the people are made clean.</p>
+
+    <h2>The gift, the smoke, and the shared meal</h2>
+
+    <p>Before the scapegoat there is the simpler and vaster fact of <em>offering</em>. Nearly every ancient religion gave gifts to its gods, and the words reveal what people thought they were doing. The Hebrew <strong>korban</strong> means "that which is brought near" — sacrifice as <em>approach</em>, a way to close the distance to God. The Greek <strong>thysia</strong> means "to make smoke" — the sweet savor rising to the Olympians. The Vedic <strong>yajña</strong> is the pouring of offerings into the sacred <strong>fire</strong>, whose god Agni carries them to heaven. And the old Latin tag names the transaction plainly: <em><strong>do ut des</strong></em>, "I give so that you may give."</p>
+
+    <p>But sacrifice was rarely only a bribe. Two other readings run alongside the gift. In one — associated with the scholar <strong>W. Robertson Smith</strong> — the heart of sacrifice is the <strong>shared meal</strong>: the victim is consumed <em>together</em> by the god and the worshippers, and the eating binds them into one community, a <em>communion</em>. In another, the offering <em>feeds</em> the god or sustains the cosmos itself. The Greeks split the difference ritually: an <strong>Olympian</strong> sacrifice (<em>thysia</em>) burned the god's portion — the fat and thigh-bones, the smoke — and the people feasted on the meat; but a <strong>chthonic</strong> offering to the powers below (<em>sphagia</em>, the holocaust) was burned or buried <em>whole</em>, given up entirely, not shared. What you did with the body encoded what you believed the gods were.</p>
+
+    <h2>The blood on the altar</h2>
+
+    <p>At the center of many sacrificial systems stood <strong>blood</strong>. In the Israelite Temple cult (ch07, ch10) the blood of the victim was dashed against the altar because, as Leviticus puts it, "the life of the flesh is in the blood... it is the blood that makes atonement." Blood was life, and life given back to its giver was the most potent offering of all. The whole apparatus of the Jerusalem Temple — the daily lambs, the sin-offerings and peace-offerings, the priestly courses — was an engine for the ordered, sanctioned shedding of blood, and its abrupt end with the Temple's destruction in 70 CE forced one of the great transformations in religious history (below).</p>
+
+    <h2>The ram in the thicket</h2>
+
+    <p>One of the deepest currents in the history of sacrifice is the <strong>substitution of an animal for a human being</strong>. The Hebrew Bible dramatizes exactly this turn in the <strong>Aqedah</strong>, the Binding of Isaac (Genesis 22): Abraham is commanded to sacrifice his son, raises the knife — and is stopped, a <strong>ram</strong> caught in a thicket offered in the boy's place. Whatever else it is, the story marks a memory of, and a decisive turn away from, child sacrifice; the same logic runs through the <strong>Passover lamb</strong>, whose blood on the doorposts substitutes for the firstborn, and through the biblical law that the firstborn of Israel must be <em>redeemed</em> rather than offered. Across many cultures the trend of history runs the same way: from human victim, to animal, to the bloodless substitute of grain, money, or prayer.</p>
+
+    <h2>Human sacrifice, honestly</h2>
+
+    <p>But the human victim was real, and honesty requires facing it. The best-documented case is the <strong>Aztec</strong> (ch29): human sacrifice was integral to their religion, understood as <em>repayment</em> — the gods had shed their own blood to create the world and to keep the sun moving, and humans owed blood in return to sustain the cosmos. The scale is debated — some Spanish colonial figures were clearly propaganda, and revisionist scholars stress the exaggeration — but the practice itself is beyond doubt, attested archaeologically (the great skull-rack, the <em>tzompantli</em>, has been excavated at Tenochtitlan). Other cases must be weighed more carefully: the <strong>Carthaginian</strong> <em>tophet</em> and the biblical horror of child sacrifice "to Molech" remain genuinely <strong>contested</strong>, with scholars still divided over whether the tophet cemeteries evidence ritual child-killing or the burial of children who died naturally; the <strong>Celtic</strong> "bog bodies" of northern Europe show signs of ritualized death but resist certain interpretation; and the <strong>Shang</strong> kings of early China (ch09) were buried with sacrificed retainers, documented in the oracle bones and the royal tombs. The archive's rule holds especially hard here: state what the evidence shows, mark what is disputed, and neither sensationalize nor explain away.</p>
+
+    <h2>The scapegoat mechanism</h2>
+
+    <p>The Israelite scapegoat had a Greek cousin: the <strong>pharmakos</strong>, a human victim — often a slave, a criminal, or a beggar — who, in times of plague, famine, or crisis, was ritually expelled or killed to carry away the city's pollution. The pattern of the <em>loaded and banished victim</em> was widespread enough that two twentieth-century thinkers built sweeping theories on it. <strong>René Girard</strong> argued that human desire is <strong>mimetic</strong> — we want what others want — which breeds rivalry and escalating violence, until a community unconsciously discharges its tension by uniting against a single <strong>scapegoat</strong>, whose killing restores peace; religion, on this view, grew up to ritually <em>repeat</em> that founding murder, and (Girard controversially added) the Gospels expose and break the mechanism by siding with the innocent victim. The classicist <strong>Walter Burkert</strong>, in <em>Homo Necans</em> ("Man the Killer," 1972), rooted sacrifice instead in the <strong>guilt and bonding of the hunt</strong> — the communal kill, ritualized. Both are powerful, influential, and <em>contested</em>: critics, and each of the two about the other, doubt the claim to a single <strong>universal</strong> origin, and much of the evidence is read differently by others. They are theories about sacrifice, offered here as such, not settled findings.</p>
+
+    <h2>The sacrifice that ends sacrifice</h2>
+
+    <p>Two of the world's largest traditions resolved the problem of blood by transforming it. <strong>Christianity</strong> (ch16) took the sacrificial system and declared it <em>fulfilled and finished</em>: Christ is the "<strong>Lamb of God</strong>," the one perfect, final sacrifice whose death ends the need for any other, and the <strong>Eucharist</strong> re-presents that one offering rather than adding new ones — sacrifice sublimated into a shared sacred meal that loops back to Robertson Smith's communion. <strong>Judaism</strong>, after the Temple's destruction left it with no altar, replaced sacrifice with <strong>prayer, study, and deeds of loving-kindness</strong> — "the service of the heart" (ch19). Elsewhere the bloodless turn took other forms: much of <strong>Hinduism</strong> shifted from Vedic animal sacrifice toward the offerings of <strong>pūjā</strong> and <strong>bhakti</strong> (ch30), though animal sacrifice persists in some traditions (notably to Kali); and <strong>Jainism</strong> and <strong>Buddhism</strong> (ch11, ch52) rejected Vedic blood-sacrifice outright in the name of <em><strong>ahiṃsā</strong></em>, non-violence. And in the sacrificial cosmogonies of ch46 — the cosmic <strong>Puruṣa</strong> and the giant <strong>Ymir</strong>, whose dismembered bodies <em>become</em> the world — sacrifice and creation are revealed as the same act: the world itself as the first offering.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The altar.</strong> The raised stone or table, often with <strong>fire</strong> or a channel for <strong>blood</strong>, is the encoded meeting-point of the human and divine worlds — the place where a gift crosses over. Its very shape (the horned altar, the fire-pit, the pyramid-top) marks the boundary being crossed.</li>
+      <li><strong>The rising smoke.</strong> The "sweet savor" ascending to heaven encodes the offering's <em>transfer</em> — the burned portion made invisible, translated from the human realm to the divine (the meaning folded into the Greek <em>thysia</em>, "to make smoke," and the Vedic fire).</li>
+      <li><strong>The substitute and the scarlet thread.</strong> The ram for Isaac, the lamb for the firstborn, the scapegoat's red wool: the encoding of <em>transfer of guilt or debt</em> onto a stand-in — one life accepted in place of another, one body carrying away the sins of many.</li>
+      <li><strong>The shared meal.</strong> Bread and wine, the sacrificial feast, the portions divided among god and worshippers: eating the offering encodes <em>communion</em>, the making of one body out of many — the symbol that Christianity placed at its very center.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Sacrifice runs through the whole archive. Its blood-cult is the heart of the <strong>Israelite Temple</strong> and its transformation in <strong>Rabbinic Judaism</strong> (ch07, ch10, ch19); its fire-offering is the <strong>Vedic</strong> yajña (ch05); its human victim is the <strong>Aztec</strong> sun-cult and the <strong>Shang</strong> royal tombs (ch29, ch09); its scapegoat is the Greek <strong>pharmakos</strong> (ch08). It is bound to <strong>sacred kingship</strong> and the dying king (ch49), to the <strong>dying-and-returning god</strong>, and to <strong>creation by sacrifice</strong> (ch46); and it reaches its most consequential reinterpretation in the <strong>Christian</strong> Lamb of God and Eucharist (ch16). To ask what a people were willing to give up, and to whom, is to ask what they held most sacred of all.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>That sacrifice — the offering of animals, food, drink, and objects to the divine — was near-universal in ancient religion, with well-attested systems: the Israelite Temple cult, the Greek thysia/sphagia, the Vedic yajña, and many more. The Leviticus 16 scapegoat ritual and the Greek pharmakos are documented; the substitution of animal for human (the Aqedah, the Passover lamb) is a clear textual pattern. Aztec human sacrifice is beyond reasonable doubt, attested archaeologically (the excavated Templo Mayor tzompantli). The post-70-CE transformations of Judaism and the Christian reinterpretation of sacrifice are historically clear.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The universal-origin theories of <strong>Girard</strong> (the scapegoat mechanism as the root of all religion and culture) and <strong>Burkert</strong> (sacrifice from the hunt) are influential but <strong>contested</strong>, and their claims to universality are widely doubted. The <em>scale</em> of Aztec sacrifice was exaggerated in some colonial sources. And whether the Carthaginian <strong>tophet</strong> evidences systematic child sacrifice remains genuinely disputed among specialists.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p><em>Why</em> sacrifice is so universal — gift, communion, feeding the gods, discharge of communal violence, or some braid of all of these — is unresolved; the competing theories each capture part of a phenomenon that may have no single cause. The interpretation of ambiguous physical evidence (bog bodies, some infant burials) remains open. The archive documents the act, the texts, and the debate, and does not pretend to have found the one key to the knife.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Comparative sacrifice: the Vedic yajña (offering into fire), the Greek thysia ("to make smoke") vs. chthonic sphagia, and the general typology — "Sacrifice," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/sacrifice-religion/Sacrifice-in-the-religions-of-the-world">https://www.britannica.com/topic/sacrifice-religion/Sacrifice-in-the-religions-of-the-world</a> ; "Sacrifice &amp; Do ut des," Hellenic Faith. <a href="https://hellenicfaith.com/do-ut-des/">https://hellenicfaith.com/do-ut-des/</a></li>
+        <li>The Israelite korban ("drawing near"), the Temple cult, and blood atonement (Leviticus 17:11) — "Korban," Wikipedia. <a href="https://en.wikipedia.org/wiki/Korban">https://en.wikipedia.org/wiki/Korban</a> ; "Sacrifice in Judaism," Kenyon College. <a href="https://www2.kenyon.edu/Depts/Religion/Projects/Reln91/Sacrifice/sacpage2.htm">https://www2.kenyon.edu/Depts/Religion/Projects/Reln91/Sacrifice/sacpage2.htm</a></li>
+        <li>The scapegoat of Leviticus 16, Azazel, and the scarlet-wool tradition — "Scapegoat," Britannica. <a href="https://www.britannica.com/topic/scapegoat">https://www.britannica.com/topic/scapegoat</a> ; "Azazel," Wikipedia. <a href="https://en.wikipedia.org/wiki/Azazel">https://en.wikipedia.org/wiki/Azazel</a> ; "The Goat for Azazel," TheTorah.com. <a href="https://www.thetorah.com/article/the-goat-for-azazel-why-was-it-really-pushed-off-a-cliff">https://www.thetorah.com/article/the-goat-for-azazel-why-was-it-really-pushed-off-a-cliff</a></li>
+        <li>The Greek pharmakos (human scapegoat ritual) — "Pharmakos," Wikipedia. <a href="https://en.wikipedia.org/wiki/Pharmakos">https://en.wikipedia.org/wiki/Pharmakos</a></li>
+        <li>Aztec human sacrifice as cosmic repayment; the tzompantli; and the debate over exaggerated scale — "Human sacrifice in Aztec culture," Wikipedia. <a href="https://en.wikipedia.org/wiki/Human_sacrifice_in_Aztec_culture">https://en.wikipedia.org/wiki/Human_sacrifice_in_Aztec_culture</a> ; "Nearly everything taught about Aztec 'sacrifice' is wrong," Mexicolore. <a href="https://www.mexicolore.co.uk/aztecs/home/nearly-everything-you-were-taught-about-aztec-sacrifice-is-wrong">https://www.mexicolore.co.uk/aztecs/home/nearly-everything-you-were-taught-about-aztec-sacrifice-is-wrong</a></li>
+        <li>René Girard's mimetic desire and scapegoat mechanism, and the comparison with Walter Burkert's Homo Necans (with the contested claim to universality) — "René Girard," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ren%C3%A9_Girard">https://en.wikipedia.org/wiki/Ren%C3%A9_Girard</a> ; "Violence and Religion: Walter Burkert and René Girard in Comparison" (ResearchGate). <a href="https://www.researchgate.net/publication/236826331_Violence_and_Religion_Walter_Burkert_and_Rene_Girard_in_Comparison">https://www.researchgate.net/publication/236826331_Violence_and_Religion_Walter_Burkert_and_Rene_Girard_in_Comparison</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the Aqedah and Passover lamb (ch07/ch10 sources); the Christian Lamb of God and Eucharist (ch16 sources); the Shang retainer sacrifice (ch09 sources); the Purusha/Ymir sacrificial cosmogonies (ch46 sources); ahimsa in Jainism/Buddhism (ch11/ch52 sources).</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch52 */
+  ch52: { html: `
+    <p class="lead">A monk walks a road in India wearing nothing at all, sweeping the ground ahead of him with a soft broom so as not to crush an ant, breathing through his awareness of the countless invisible lives in the air and the water. He owns nothing, not even a robe. He is a Jain, and he belongs to a tradition that took a single idea — <em>do no harm to any living thing</em> — further than any other religion on earth, and built an entire cosmology, ethics, and science of the soul around it.</p>
+
+    <h2>The ford-makers</h2>
+
+    <p>Jainism honors twenty-four <strong>Tīrthaṅkaras</strong> — the word means "ford-makers" or "crossing-makers," those who have found the ford across the river of rebirth and shown others the way. The twenty-fourth and last of the present age was <strong>Mahāvīra</strong> ("Great Hero"), by tradition born around 599 and dying around 527 BCE — a contemporary, near-neighbor, and rival of the Buddha, born like him a prince who renounced everything to seek liberation. Jains do not regard Mahavira as a founder but as a <em>reviver</em>: the twenty-third Tirthankara, <strong>Pārśvanātha</strong>, who taught some two and a half centuries earlier, is regarded by many historians as a genuine historical figure, which would make Jainism's roots among the oldest of any living tradition. Mahavira and the Buddha both belonged to the great <strong>śramaṇa</strong> ("striver") movement — the wandering renunciants of the Ganges plain who, in the axial age, broke with the Vedic sacrificial religion of the brahmins (ch05) and sought release not through ritual but through discipline and insight.</p>
+
+    <h2>No creator, and a universe full of souls</h2>
+
+    <p>Jainism is, strikingly, a religion with <strong>no creator god</strong>. The universe is eternal and uncreated, running by its own laws through endless cycles of ascending and descending ages, and shaped — in Jain cosmology — like a vast cosmic <em>man</em>. What fills it is not one God but countless <strong>jīvas</strong>, souls, and <strong>ajīva</strong>, non-soul (matter, space, time, motion). And souls are <em>everywhere</em>: not only in humans and animals but in plants, in tiny beings in earth, water, fire, and air, and in the <em>nigodas</em>, clusters of the most rudimentary life packed into every corner of the cosmos. Every one of these souls is, in its true nature, infinitely knowing and blissful — and every one is trapped, weighed down into matter and rebirth by <strong>karma</strong>.</p>
+
+    <p>Jain karma is not, as elsewhere, an abstract moral bookkeeping: it is a subtle <strong>physical substance</strong>, a fine dust that clings to the soul through our passions and actions and drags it down. Liberation (<em>mokṣa</em>) is the burning away of all accumulated karma and the stopping of any new karma from binding — after which the freed, weightless soul (<em>siddha</em>) rises to the very top of the universe and dwells there forever in omniscient bliss. This physical picture of karma is why Jain practice is so austere: the goal is to <em>starve</em> the influx of karma through non-action, non-attachment, and above all non-harm.</p>
+
+    <h2>Ahimsa, and the many-sidedness of truth</h2>
+
+    <p>The heart of Jain ethics is five vows — <strong>ahiṃsā</strong> (non-violence), <strong>satya</strong> (truth), <strong>asteya</strong> (not stealing), <strong>brahmacarya</strong> (chastity), and <strong>aparigraha</strong> (non-attachment/non-possession) — kept absolutely by monks and nuns (the <em>mahāvratas</em>, "great vows") and in lesser form by laypeople (<em>aṇuvratas</em>). Of these, <strong>ahimsa</strong> is supreme, and Jains have pursued it to lengths unmatched anywhere: strict vegetarianism (and avoidance even of root vegetables, whose harvesting kills the whole plant and the tiny lives around it); the monk's broom and mouth-cloth; the filtering of water; the exclusion of occupations that involve killing. It was this tradition, transmitted through his Gujarati upbringing, that decisively shaped <strong>Mahatma Gandhi</strong>'s ahimsa and his politics of nonviolence.</p>
+
+    <p>Jain thought matched this ethical humility with an epistemological one. <strong>Anekāntavāda</strong>, "many-sidedness," holds that reality is complex and that any single viewpoint grasps only part of the truth — famously illustrated by the parable of the <strong>blind men and the elephant</strong>, each certain, from the part he touches, that the whole is a wall, a rope, or a fan. Its companion doctrine, <strong>syādvāda</strong>, qualifies every assertion with <em>syāt</em>, "in some respect / maybe," yielding a seven-fold logic of conditional truth. In an age of dogma, Jainism built non-absolutism into its very theory of knowledge — a kind of intellectual ahimsa.</p>
+
+    <h2>The sky-clad and the white-clad</h2>
+
+    <p>Around the beginning of the common era Jainism divided into two great sects, still distinct today. The <strong>Digambara</strong> ("sky-clad") hold that a fully advanced monk renounces even clothing, going naked as the ultimate non-possession; they also hold that the original scriptural canon was lost, and that a woman must first be reborn as a man to attain liberation. The <strong>Śvetāmbara</strong> ("white-clad") monks and nuns wear simple white robes, preserve a written <strong>canon</strong> they trace to Mahavira's teaching, and hold that women can be liberated as they are (one Svetambara tradition even counts the nineteenth Tirthankara, Māllī, as a woman). Both sects share the philosophical core and the great summary text, the <strong>Tattvārtha Sūtra</strong>.</p>
+
+    <h2>Scripture, worship, and the fast unto death</h2>
+
+    <p>The Jain scriptures are the <strong>Āgamas</strong>, teachings ascribed to Mahavira, compiled by his chief disciples (<em>gaṇadharas</em>) and long transmitted orally in the <strong>Ardhamāgadhī Prākrit</strong> language before being written down — the anxiety over that oral transmission is part of what split the sects. Jain worship is distinctive precisely because there is no God to petition: in temple <strong>pūjā</strong> the images of the Tirthankaras are venerated not as gods who answer prayers but as perfected <em>examples</em>, liberated beings who are beyond the reach of appeal but who show the way. Daily practice centers on <strong>sāmāyika</strong> (a period of meditative equanimity, in which a layperson briefly "assumes ascetic status"), <strong>pratikramaṇa</strong> (ritual repentance), fasting, and the recitation of the <strong>Namokāra Mantra</strong>, which bows not to any deity but to the five worthy classes of soul (the arhats, the siddhas, and the spiritual teachers).</p>
+
+    <p>Most striking of all is <strong>sallekhanā</strong> (also <em>santhāra</em>): the vow, taken at the very end of life in the face of unavoidable death, to fast gradually and voluntarily to death, thinning away the body and the passions in a state of serene detachment. Jains sharply distinguish it from suicide, which is driven by passion; sallekhana is meant to be the calm, willed completion of a life of non-attachment. It is rare today, and legally fraught — an Indian court declared it illegal in 2015 before the ruling was stayed — but it remains, for Jains, the ideal death, and by tradition the emperor <strong>Chandragupta Maurya</strong> himself ended his life this way as a Jain ascetic.</p>
+
+    <h2>The record on the ground</h2>
+
+    <p>For a community that has always been small, Jainism has left an outsized mark. Its antiquity is attested from the Mauryan period onward; it drew royal patronage across Indian history; and it built some of India's most extraordinary sacred art: the colossal monolithic statue of <strong>Bāhubali (Gommaṭeśvara)</strong> at Shravanabelagola in Karnataka, fifty-seven feet tall, carved from a single rock around 981 CE and still ritually bathed in a great festival every twelve years; the exquisitely carved marble <strong>Dilwara temples</strong> at Mount Abu; and the rock-cut Jain caves at Ellora and elsewhere. Jain merchants and scholars, bound by their ethics into trade and learning rather than farming or war, became major patrons of libraries, manuscripts, and mathematics.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Jainism is unusually explicit about its symbols, having adopted an official emblem in 1975 that gathers its whole worldview into one image.</p>
+
+    <ul>
+      <li><strong>The Jain emblem.</strong> Its outline is the shape of the <strong>loka</strong>, the cosmos as a standing figure; at its heart is a raised <strong>open hand</strong> inscribed with the word <em>ahiṃsā</em> — the universe itself commanded to stop and do no harm; below the hand a <strong>wheel</strong> (dharmachakra) turns. Above sit a <strong>swastika</strong>, three <strong>dots</strong>, and a crescent with a dot.</li>
+      <li><strong>The swastika</strong>, ancient and auspicious in Indian religion, here encodes the <strong>four states of rebirth</strong> (heavenly beings, humans, animals/plants, and hell-beings) — the wheel of transmigration one must escape.</li>
+      <li><strong>The three dots</strong> above it are the <strong>Three Jewels</strong> of the path: Right Faith, Right Knowledge, and Right Conduct. The <strong>crescent and dot</strong> at the very top encode the abode of the liberated <strong>siddhas</strong> at the summit of the universe — the goal.</li>
+      <li><strong>Tirthankara iconography.</strong> The twenty-four are shown in profound stillness, either seated in meditation or standing in the <em>kāyotsarga</em> ("body-abandonment") posture, so motionless that vines grow up their legs; each is identified by a small emblem (a bull for the first Tirthankara, a lion, a lotus) and by the auspicious <em>śrīvatsa</em> mark on the chest. Their nudity or serenity encodes total non-attachment: a being who wants, and fears, nothing.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Jainism is one of the twin fruits of the axial-age <strong>śramaṇa</strong> revolution, and its closest sibling is <strong>Buddhism</strong> (ch11): both reject the creator-god and the Vedic sacrifice of <strong>early Vedic</strong> religion (ch05), both teach karma, rebirth, and liberation, and both arose in the same time and place — yet Jainism kept the reality of the soul that Buddhism denied, and pushed asceticism and non-harm further than the Buddha's Middle Way allowed. Its radical <strong>ahimsa</strong> is the sharpest instance of the turn away from blood-<strong>sacrifice</strong> (ch51), and it fed directly into the modern world through <strong>Gandhi</strong>. Its many-sidedness stands as one of the ancient world's boldest answers to the problem of competing truths, echoed in the pluralism of later <strong>Bhakti</strong> and modern thought (ch30).</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>That Jainism is an ancient, continuous Indian tradition of the śramaṇa movement, contemporary with early Buddhism; the historicity of Mahavira as a real 6th–5th century BCE teacher; the doctrines (no creator, jiva/ajiva, physical karma, the five vows, anekantavada); the Digambara/Svetambara split; the practices of ahimsa, samayika, and sallekhana; and the archaeological and artistic record (the Gommateshwara colossus of 981 CE, the Dilwara temples, Mauryan-era Jain presence). Its formative influence on Gandhi's ahimsa is well documented.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The traditional dates and full biographies of Mahavira and especially the earlier Tirthankaras are religious tradition, not established history — Parshvanatha (the 23rd) is <em>plausibly</em> historical, but the first twenty-two are legendary, set in vast mythical time-spans. The traditional claim that Chandragupta Maurya died by sallekhana is a later Jain tradition, not securely documented. The precise date of the sect split and of the loss (or not) of the original canon is debated.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The exact relationship and mutual influence between the earliest Jain and Buddhist communities; how much of the Agama canon preserves Mahavira's actual words after centuries of oral transmission; and the deep prehistory of the tradition before Parshvanatha. The archive reports the doctrines and practices as they are held and lived, and marks the legendary Tirthankara-lineage as sacred history rather than documented fact.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Jainism overview: Mahavira and the 24 Tirthankaras, the śramaṇa context, the core doctrines (ahimsa, anekantavada, aparigraha), jiva/ajiva, karma, and moksha — "Mahavira," Wikipedia. <a href="https://en.wikipedia.org/wiki/Mahavira">https://en.wikipedia.org/wiki/Mahavira</a> ; "Jainism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Jainism">https://en.wikipedia.org/wiki/Jainism</a></li>
+        <li>Doctrine and philosophy: anekantavada (many-sidedness) and syadvada (conditional/seven-fold predication); the five vows; the two sects — "Jainism" (doctrines overview), PMF IAS. <a href="https://www.pmfias.com/jainism/">https://www.pmfias.com/jainism/</a> ; "Jainism, Founder, Symbol, Teachings, Beliefs," Vajiram &amp; Ravi. <a href="https://vajiramandravi.com/upsc-exam/jainism/">https://vajiramandravi.com/upsc-exam/jainism/</a></li>
+        <li>Ritual practice: samayika (temporary ascetic status), puja and the veneration of Tirthankaras as exemplars, pratikramana, the Namokara mantra — "Jainism: Ritual practices and religious institutions," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Jainism/Ritual-practices-and-religious-institutions">https://www.britannica.com/topic/Jainism/Ritual-practices-and-religious-institutions</a> ; "Sāmāyika," Wikipedia. <a href="https://en.wikipedia.org/wiki/S%C4%81m%C4%81yika">https://en.wikipedia.org/wiki/S%C4%81m%C4%81yika</a></li>
+        <li>Sallekhana/santhara, the voluntary fast to death, its distinction from suicide, and its legal controversy — "Sallekhana," Wikipedia. <a href="https://en.wikipedia.org/wiki/Sallekhana">https://en.wikipedia.org/wiki/Sallekhana</a></li>
+        <li>The Jain emblem and its symbolism (the loka outline, the raised hand of ahimsa, the swastika of the four rebirths, the three jewels, the siddha crescent); Tirthankara iconography — "Jain Symbol," Jainworld. <a href="https://jainworld.com/education/jain-education-material/jain-symbol/">https://jainworld.com/education/jain-education-material/jain-symbol/</a> ; "Introduction to the Iconography of Jain Tirthankaras," Encyclopedia of Jainism. <a href="https://encyclopediaofjainism.com/introduction-to-the-iconography-of-jain-hrthankaras/">https://encyclopediaofjainism.com/introduction-to-the-iconography-of-jain-hrthankaras/</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch53 */
+  ch53: { html: `
+    <p class="lead">For weeks, monks bend over a table, tapping colored sand grain by grain from metal funnels into a vast, intricate diagram — a palace of deities rendered in dyed stone, dazzlingly precise. And then, when it is finished and has been contemplated, they destroy it: sweep the whole shimmering cosmos into a heap of grey dust and pour it into a river. The sand mandala is Tibetan Buddhism in miniature — a tradition of overwhelming ritual richness built entirely to teach that nothing whatever is to be clung to.</p>
+
+    <h2>The third vehicle</h2>
+
+    <p>Buddhism is often described as three "vehicles." The <strong>Theravada</strong> (ch11) preserves the earliest path; the <strong>Mahayana</strong> (ch20) opened liberation to all beings through the compassion of the bodhisattva. <strong>Vajrayana</strong> — the "<strong>Diamond</strong>" or "<strong>Thunderbolt Vehicle</strong>," named for the <em>vajra</em>, the indestructible adamantine scepter — is the third: a tantric development of Mahayana, grown from the same Indian <strong>Tantra</strong> (ch24) that transformed Hinduism, which claims to offer the <em>swiftest</em> route of all, the attainment of full Buddhahood not over countless lifetimes but potentially within a single one. It does this through powerful and secret techniques — deity visualization, mantra, mandala, and the direct transmission of a realized teacher — that are held to be too potent to practice without a qualified <strong>guru</strong> (<em>lama</em>) and initiation.</p>
+
+    <h2>Buddhism comes to the Land of Snows</h2>
+
+    <p>Vajrayana became the state religion of Tibet through a decisive act of importation. Around <strong>760 CE</strong> the Tibetan king <strong>Trisong Detsen</strong> invited two Indian masters — the philosopher <strong>Śāntarakṣita</strong> and, above all, the tantric adept <strong>Padmasambhava</strong> ("Guru Rinpoche," the "Lotus-Born") — to the Land of Snows. Tradition holds that Padmasambhava subdued the wild local gods and demons of Tibet, binding them by oath into protectors of the Dharma, and with the king founded <strong>Samye</strong>, the first monastery. A colossal translation project rendered the Sanskrit scriptures into Tibetan, creating the "Old Translations" that anchor the tradition. The Buddhism that took root did not erase the indigenous religion, <strong>Bön</strong> — the older Tibetan tradition of spirits, ritual, and (later) its own reformed monastic system — but absorbed and contended with it, so that Tibetan religion carries a deep substrate of the land's own gods, now sworn to the Buddha.</p>
+
+    <h2>The four schools</h2>
+
+    <p>Tibetan Buddhism developed four principal schools, each a distinct lineage of transmission.</p>
+
+    <ul>
+      <li><strong>Nyingma</strong>, "the Ancient Ones," the oldest, traces itself to Padmasambhava and the first translations. It preserves <strong>Dzogchen</strong> ("Great Perfection"), a teaching of the mind's primordial, sky-like purity, and the tradition of <em>terma</em> — "treasure texts" believed to have been hidden by Padmasambhava to be rediscovered by destined masters (<em>tertöns</em>) in later ages.</li>
+      <li><strong>Kagyu</strong>, the "Oral Lineage," specializes in yogic practices passed mouth-to-ear from master to disciple, tracing to the Indian adept <strong>Nāropa</strong>, his Tibetan translator-student <strong>Marpa</strong>, and Marpa's disciple, the beloved poet-hermit <strong>Milarepa</strong>. Its heart is <strong>Mahāmudrā</strong> and the "six yogas."</li>
+      <li><strong>Sakya</strong> became renowned for scholarship and, in the 13th century, for a period of political rule over Tibet under Mongol patronage.</li>
+      <li><strong>Gelug</strong>, "the Virtuous," the newest and now largest, was founded on the 14th–15th-century monastic reform of <strong>Tsongkhapa</strong>, who restored strict discipline and rigorous study. From the Gelug come the <strong>Dalai Lamas</strong> and <strong>Panchen Lamas</strong>.</li>
+    </ul>
+
+    <h2>The tantric method</h2>
+
+    <p>What distinguishes Vajrayana is its <em>method</em>. In <strong>deity yoga</strong>, the practitioner does not merely worship a Buddha but, through visualization and initiation, identifies with an enlightened deity, "taking the result as the path" — rehearsing Buddhahood until it becomes real. The <strong>mandala</strong> is the sacred map of this practice: a palace of the deity and its retinue, laid out in perfect sacred geometry, which the meditator enters in the mind. <strong>Mantra</strong> — sacred sound — is central (the tradition's very name, <em>Mantrayāna</em>, means "the Mantra Vehicle"); the most famous, <strong>Oṃ maṇi padme hūṃ</strong>, is the mantra of <strong>Avalokiteśvara</strong> (Tibetan <strong>Chenrezig</strong>), the bodhisattva of compassion, held to contain the essence of the whole path. And everywhere the two poles of enlightenment are joined: <strong>wisdom</strong> (<em>prajñā</em>, insight into emptiness) and <strong>method/compassion</strong> (<em>upāya</em>), symbolized by the ritual <strong>bell</strong> (wisdom) and <strong>vajra</strong> (method) held together in the lama's two hands, and dramatized in the "father-mother" (<em>yab-yum</em>) images of deities in union. Even the <strong>wrathful deities</strong>, fanged and flame-wreathed, are not demons but the ferocious energy of enlightenment itself, turned against ignorance.</p>
+
+    <h2>The reincarnate lamas</h2>
+
+    <p>Tibet produced one of the most distinctive institutions in all religion: the <strong>tulku</strong> system of <em>recognized reincarnations</em>. A great teacher, on dying, is believed to take rebirth deliberately to continue his work, and the child who is his reincarnation is sought out and identified by signs and tests, then enthroned and educated to resume the lineage. The most famous tulku line is the <strong>Dalai Lama</strong>, regarded as the successive emanation of Avalokiteśvara himself and, from the 17th century until 1959, the temporal ruler of Tibet; a parallel line is the <strong>Panchen Lama</strong>. The system is a living institution — and a contested one: the recognition of the current Panchen Lama is disputed between Tibetan Buddhists and the Chinese state, and the future of the Dalai Lama's own succession is a matter of international controversy today.</p>
+
+    <h2>Death, the bardo, and the sky</h2>
+
+    <p>Tibetan Buddhism mapped death with unusual precision. The <em><strong>Bardo Thödol</strong></em> — "Liberation Through Hearing in the Intermediate State," known in the West as the <strong>Tibetan Book of the Dead</strong> — is read aloud to the dying and the dead to guide the consciousness through the <strong>bardo</strong>, the roughly forty-nine-day transitional state, past a sequence of peaceful and wrathful visions that the text insists are projections of one's own mind, toward either liberation or a favorable rebirth (ch47). And in the treeless high plateau, where burial and cremation are difficult, the dead are given the extraordinary rite of <strong>sky burial</strong> (<em>jhator</em>): the body, now an empty vessel, is offered on a mountain charnel-ground to the vultures — a final act of generosity, feeding one's flesh back to living beings, and a last, literal lesson in impermanence.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <p>Tibetan Buddhism is perhaps the most densely visual and symbolic of all religious traditions; its art <em>is</em> its theology.</p>
+
+    <ul>
+      <li><strong>The mandala</strong> encodes the enlightened cosmos as sacred geometry — concentric rings of fire, vajras, and lotus petals around a central square palace — and, as sand, encodes impermanence by being destroyed. It is at once a map of the universe, a map of the mind, and a doorway to be entered.</li>
+      <li><strong>The vajra and bell</strong> encode the inseparable union of method/compassion and wisdom — the whole of the path held in two hands.</li>
+      <li><strong>Mantra in motion.</strong> The <strong>prayer wheel</strong>, a cylinder packed with printed mantras, is held to "recite" them with every turn; the <strong>prayer flags</strong> loose their printed prayers on the wind. Sacred sound is multiplied by motion, so that the very landscape prays.</li>
+      <li><strong>The eight auspicious symbols</strong> (<em>aṣṭamaṅgala</em>) — the endless knot, the lotus, the wheel, the parasol, the conch, the treasure vase, the golden fish, and the victory banner — recur throughout Tibetan art as a coded vocabulary of blessing, and the <strong>thangka</strong> scroll-painting encodes entire deities, lineages, and cosmologies for meditation, every color and gesture (<em>mudrā</em>) fixed by meaning.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Vajrayana is the third great turning of <strong>Buddhism</strong>, growing out of the <strong>Mahayana</strong> (ch20) and drawing directly on the Indian <strong>Tantra</strong> (ch24) that also reshaped Hinduism — the two are siblings of the same tantric age. Its taming of the local gods of Tibet parallels the way <strong>Shinto</strong> (ch25) and the <strong>Norse</strong> and <strong>Slavic</strong> worlds negotiated between old spirits and new creeds. Its map of the after-death bardo belongs with the great <strong>journeys to the underworld</strong> (ch47); its deity yoga and mandala are the fullest development of sacred <strong>symbology and encoding</strong> treated throughout this archive; and its living institution of the Dalai Lama carries the tradition into the politics of the modern world.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical transmission of Buddhism to Tibet from the 8th century under Trisong Detsen, the founding of Samye, and the great translation projects; the existence and doctrines of the four schools; the historicity of key figures (Tsongkhapa, Marpa, Milarepa, and the historical Padmasambhava behind the legend); the tantric methods of deity yoga, mandala, and mantra; the Bardo Thödol as a text; the tulku institution and the historical line of the Dalai and Panchen Lamas; and the practices of sky burial and the sand mandala. These are all well documented.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The miraculous hagiography of Padmasambhava (subduing demons, magical feats) is religious tradition, not history. The <em>terma</em> "treasure text" attributions — that specific scriptures were hidden by Padmasambhava and rediscovered centuries later — are matters of traditional faith; historians generally regard many terma as later compositions. And the specific identification of any tulku as the genuine rebirth of his predecessor is a religious claim, not an empirically verifiable one.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise pre-Buddhist content of <strong>Bön</strong> and how much of Tibetan Buddhism absorbed from it (the sources are late and contested); the historical kernel within the Padmasambhava traditions; and, as with all such practices, the archive documents what deity yoga and the bardo teachings are <em>held</em> to accomplish without adjudicating those inner claims. The politics of the current succession disputes are ongoing and unresolved.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Vajrayana overview: the "Diamond/Thunderbolt Vehicle," the vajra, the tantric extension of Mahayana, and its Himalayan spread — "Buddhist Schools: Vajrayana (Tibetan)," BuddhaNet. <a href="https://www.buddhanet.net/e-learning/history/b3schvaj/">https://www.buddhanet.net/e-learning/history/b3schvaj/</a> ; "What on Earth is Vajrayana," Tibet Travel. <a href="https://www.tibettravel.org/tibetan-buddhism/vajrayana-tibetan-buddhism.html">https://www.tibettravel.org/tibetan-buddhism/vajrayana-tibetan-buddhism.html</a></li>
+        <li>Padmasambhava, Śāntarakṣita, King Trisong Detsen (c. 760), Samye, and the translation project — "Padmasambhava," Wikipedia. <a href="https://en.wikipedia.org/wiki/Padmasambhava">https://en.wikipedia.org/wiki/Padmasambhava</a></li>
+        <li>The four schools (Nyingma, Kagyu, Sakya, Gelug), Bön, terma/Dzogchen, Tsongkhapa's reform, and the Dalai Lama's Gelug affiliation — "What Are the Four Schools of Tibetan Buddhism?", Lion's Roar. <a href="https://www.lionsroar.com/what-are-the-four-schools-of-tibetan-buddhism/">https://www.lionsroar.com/what-are-the-four-schools-of-tibetan-buddhism/</a> ; "Nyingma," Wikipedia. <a href="https://en.wikipedia.org/wiki/Nyingma">https://en.wikipedia.org/wiki/Nyingma</a></li>
+        <li>The mandala, vajra, and thangka as sacred symbolism and meditation aids — "Mandala Painting: Sacred Geometry in Tibetan Buddhism," Buddhas Art of Healing. <a href="https://buddhasartofhealing.com/blogs/thangka/mandala-painting-in-tibetan-buddhism">https://buddhasartofhealing.com/blogs/thangka/mandala-painting-in-tibetan-buddhism</a> ; "Unveiling the Meaning of Vajra Symbol in Buddhism," Lucky Thanka. <a href="https://luckythanka.com/blogs/blogpost/what-does-vajra-symbolize">https://luckythanka.com/blogs/blogpost/what-does-vajra-symbolize</a></li>
+        <li>Oṃ maṇi padme hūṃ, the mantra of Avalokiteśvara/Chenrezig — "What is the Meaning of Om Mani Padme Hum?" (Dalai Lama), Shambhala. <a href="https://www.shambhala.com/snowlion_articles/om-mani-padme-hum-dalai-lama/">https://www.shambhala.com/snowlion_articles/om-mani-padme-hum-dalai-lama/</a></li>
+        <li>The Bardo Thödol (Tibetan Book of the Dead), the 49-day bardo, and Dzogchen lineage — "Bardo Thödol," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Bardo-Thodol">https://www.britannica.com/topic/Bardo-Thodol</a> ; "Bardo Thodol," Wikipedia. <a href="https://en.wikipedia.org/wiki/Bardo_Thodol">https://en.wikipedia.org/wiki/Bardo_Thodol</a></li>
+        <li>Sky burial (jhator): the body as empty vessel, offered to vultures on charnel grounds — "How Sky Burial Works," HowStuffWorks. <a href="https://people.howstuffworks.com/culture-traditions/funerals/sky-burial.htm">https://people.howstuffworks.com/culture-traditions/funerals/sky-burial.htm</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch54 */
+  ch54: { html: `
+    <p class="lead">A monk asks his master about the meaning of the Buddha's coming from the West, and is answered with a slap, or a shout, or "the cypress tree in the garden." A dying farmer, unable to read a single sutra, simply says the name of a Buddha six times and is promised paradise. These are the two great faces of East Asian Buddhism — the most demanding path and the most merciful — and they grew, side by side, from the same Mahayana root.</p>
+
+    <h2>Two roads up the same mountain</h2>
+
+    <p>East Asian Buddhism came to be organized around a single deep question: is liberation something you achieve, or something you receive? The two answers became the two most influential and most opposite movements in the Buddhism of China, Korea, Japan, and Vietnam. <strong>Zen</strong> (Chinese <strong>Chan</strong>) is the path of <strong>self-power</strong> (Japanese <em>jiriki</em>): rigorous meditation, the hardest of roads, awakening won by one's own disciplined effort. <strong>Pure Land</strong> (<strong>Jōdo</strong>) is the path of <strong>other-power</strong> (<em>tariki</em>): the easiest of roads, salvation received as a gift through simple faith in the compassion of a Buddha. Between them they carried Buddhism to hundreds of millions.</p>
+
+    <h2>Zen: direct pointing to the mind</h2>
+
+    <p>Chan emerged in China from around the 6th century, a fusion of Indian Mahayana meditation with the native sensibility of <strong>Daoism</strong> (ch12). Tradition traces it to <strong>Bodhidharma</strong>, the Indian monk who is said to have come to China around 520 CE and to have sat facing a wall for nine years — an image that captures the whole tradition's radical trust in <em>direct experience</em> over book-learning. Chan defined itself in a famous four-line slogan: "<em>A special transmission outside the scriptures; not founded on words and letters; pointing directly to the human mind; seeing one's nature and becoming Buddha.</em>" Its pivotal figure is the Sixth Patriarch, <strong>Huineng</strong> (638–713), the semi-legendary illiterate woodcutter who is said to have awakened on hearing a line of the Diamond Sutra and whose teaching, preserved as the <strong>Platform Sutra</strong>, championed <strong>sudden enlightenment</strong> — awakening in a single flash of insight rather than through gradual accumulation.</p>
+
+    <p>The practice is <strong>zazen</strong>, seated meditation. Two great schools reached Japan and endure worldwide: <strong>Rinzai</strong>, brought by Eisai, which uses the <strong>kōan</strong> (Chinese <em>gōng'àn</em>) — the paradoxical riddle ("What is the sound of one hand clapping?"; "Show me your original face before your parents were born") designed to exhaust the rational mind until it breaks open into <em>satori</em>, sudden awakening — its classic collections the <em>Blue Cliff Record</em> and the <em>Gateless Gate</em>; and <strong>Sōtō</strong>, established by the great <strong>Dōgen</strong> (1200–1253), which teaches <strong>shikantaza</strong>, "just sitting," meditation with no object at all, holding that the sitting <em>is itself</em> the expression of the enlightenment already present. Zen's iconoclasm is proverbial — "if you meet the Buddha on the road, kill the Buddha" — a warning against clinging even to Buddhism itself. And its aesthetic remade a civilization: ink painting, calligraphy, the tea ceremony, the rock garden, archery, and the sword all became Zen arts of disciplined spontaneity.</p>
+
+    <h2>Pure Land: the vow of the compassionate Buddha</h2>
+
+    <p>Pure Land offered the exact opposite, and reached even more people. It centers on the Buddha <strong>Amitābha</strong> (Japanese <strong>Amida</strong>), "Infinite Light," who, the <strong>Sukhāvatīvyūha</strong> sutras teach, made a great <strong>vow</strong> as the monk Dharmākara: that he would create a paradise, the <strong>Pure Land</strong> (Sukhāvatī) in the west, and that anyone who called upon him in faith would be reborn there, in ideal conditions to attain enlightenment. The practice is the <em><strong>nembutsu</strong></em> — the recitation of the Name, <em>Namu Amida Butsu</em>, "I take refuge in Amida Buddha."</p>
+
+    <p>Its logic was the doctrine of <em><strong>mappō</strong></em>, the "age of the decline of the Dharma": in this degenerate final age, Pure Land teachers argued, human beings can no longer achieve liberation by their own strength, so the only hope is to abandon self-power and trust wholly in Amida's other-power. Systematized in China by <strong>Tanluan, Daochuo, and Shandao</strong>, it became in Japan a mass religion through two Kamakura-era teachers. <strong>Hōnen</strong> (1133–1212), a former Tendai monk, founded the first independent Pure Land school (Jōdo-shū), teaching that the single-hearted nembutsu was enough for anyone. His disciple <strong>Shinran</strong> (1173–1262) pushed the logic to its limit in <strong>Jōdo Shinshū</strong>, "True Pure Land": salvation is by <strong>faith alone</strong>, itself a gift of Amida; even a single sincere nembutsu suffices; and — in the startling doctrine of <em>akunin shōki</em> — it is precisely the <em>sinner</em>, the person who knows they cannot save themselves, who is the true object of the vow. Shinran abandoned monastic celibacy and married, founding a tradition of non-celibate clergy; Jōdo Shinshū became one of the largest Buddhist bodies in Japan. The parallel with the Protestant "justification by faith, not works" (ch31), reached entirely independently, is one of the most remarkable convergences in the history of religion.</p>
+
+    <h2>Together and apart</h2>
+
+    <p>In China the two were rarely rivals: <strong>Chan–Pure Land dual cultivation</strong> — meditating and reciting the Name — became the mainstream of later Chinese Buddhism. It was in Japan, in the ferment of the Kamakura period, that they crystallized into the sharply distinct schools (alongside <strong>Nichiren</strong>'s devotion to the Lotus Sutra) that shaped East Asian religion into the modern age. Practice ranges accordingly: the silent meditation hall, the <em>sesshin</em> retreat, and the master–student encounter of Zen; the recited Name, the temple, and the deathbed nembutsu of Pure Land.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The ensō.</strong> The Zen <strong>circle</strong>, brushed in a single uninhibited stroke of ink, encodes enlightenment, the void, and the whole universe at once — and, left open or imperfect, the acceptance of things as they are. It is the purest emblem of Zen's aesthetic of spontaneity.</li>
+      <li><strong>The empty and the ten oxen.</strong> Zen art uses <strong>empty space</strong> as a positive presence, and the <strong>Ten Ox-Herding Pictures</strong> encode the stages of the path as a search for a lost ox, ending in an empty circle and a return to the ordinary marketplace — awakening that looks, at last, like everyday life.</li>
+      <li><strong>The koan</strong> is language used to encode the <em>limit</em> of language: a verbal device built to defeat verbal thinking and force a leap beyond it.</li>
+      <li><strong>The Name and the welcoming descent.</strong> In Pure Land, the recited <strong>Name</strong> itself is the vehicle of salvation — sacred sound as the whole of practice. Its great visual symbol is the <em><strong>raigō</strong></em>, the painted scene of Amida and his bodhisattvas descending on clouds to welcome the dying soul to the Pure Land, and the <strong>lotus</strong> on which the reborn appear — encoding grace arriving from beyond the self.</li>
+    </ul>
+
+    <h2>The record and the reach</h2>
+
+    <p>Both traditions are historically well attested from their formative texts and lineages onward, and both left an enormous cultural imprint: Chan/Zen monasteries and their arts across China, Korea (<strong>Seon</strong>), Vietnam (<strong>Thiền</strong>), and Japan; the vast Pure Land devotional culture and its temples; and, in the modern era, Zen's outsized influence on Western spirituality and the arts, and Jōdo Shinshū's role as a major Japanese and diaspora tradition. What is <em>not</em> historical, and is not claimed here to be, is the metaphysical content of the faith — the existence of Amida's Pure Land, or the enlightenment said to be transmitted "mind to mind" down the Chan lineage — which the archive reports as belief, not fact.</p>
+
+    <h2>Connections</h2>
+
+    <p>Zen and Pure Land are two developments of the <strong>Mahayana</strong> (ch20), sharing its bodhisattva ideal and its buddhas-beyond-history. Zen's marriage to <strong>Daoism</strong> (ch12) gave it its naturalness and its love of paradox; Pure Land's other-power is Buddhism's closest approach to the <em>grace</em> of <strong>Christianity</strong> (ch16), and its faith-alone teaching independently mirrors the <strong>Reformation</strong> (ch31). Both belong to the same Kamakura reformation as <strong>Nichiren</strong> Buddhism, and both connect to the wider East Asian religious world of <strong>Shinto</strong> (ch25) and Confucianism with which they coexisted. Together they pose, more starkly than any other tradition, the question that also divides Christianity and Hindu Bhakti: is the soul saved by effort, or by grace?</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical development of Chan/Zen in China from around the 6th–8th centuries and its spread to Korea, Vietnam, and Japan; the historicity of Huineng's era and of later masters such as Dōgen and Eisai; the practices of zazen, shikantaza, and the kōan and their classic collections; the Chinese Pure Land systematizers (Tanluan, Daochuo, Shandao); the historical figures Hōnen and Shinran and the founding of Jōdo-shū and Jōdo Shinshū; the doctrines of mappō, nembutsu, other-power, and akunin shōki; and the immense cultural and artistic legacy of both.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The traditional biography of <strong>Bodhidharma</strong> (the nine years' wall-gazing) and much of the early Chan <strong>lineage</strong> are semi-legendary — scholars recognize the patriarchal transmission genealogies as, in significant part, later retrospective constructions rather than documented succession. The awakening of the illiterate <strong>Huineng</strong> is sacred narrative. And the metaphysical claims — the reality of Amida's Pure Land, the "mind-to-mind" transmission of enlightenment — are objects of faith, not verifiable history.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>How much of the earliest Chan history can be recovered behind the later legend; the precise dating and authorship of key texts (the Platform Sutra, the Pure Land sutras); and, as always, the inner efficacy of the practices, which the archive documents as they are taught and experienced without adjudicating them.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Zen/Chan origins and history: Bodhidharma (c. 520 CE, wall-gazing), the "special transmission outside the scriptures," Huineng and sudden enlightenment, zazen, kōan, and the Rinzai/Sōtō schools (Eisai, Dōgen, shikantaza) — "Zen," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Zen">https://www.britannica.com/topic/Zen</a> ; "Zen: Early Masters &amp; Teachings," University at Buffalo Research Guides. <a href="https://research.lib.buffalo.edu/buddhism/zen-early-masters">https://research.lib.buffalo.edu/buddhism/zen-early-masters</a></li>
+        <li>Zen practice and the meditation schools of East Asia (Seon, Thiền), kōan collections (Blue Cliff Record, Gateless Gate) — "What is Zen Buddhism?", Tricycle. <a href="https://tricycle.org/buddhism-meditation-schools/">https://tricycle.org/buddhism-meditation-schools/</a></li>
+        <li>Pure Land Buddhism: Amitābha/Amida and the vow, Sukhāvatī, the nembutsu, mappō, and the Chinese systematizers (Tanluan, Daochuo, Shandao) — "Pure Land Buddhism: History, Teachings, and Practices," Tricycle. <a href="https://tricycle.org/buddhism-pure-land/">https://tricycle.org/buddhism-pure-land/</a> ; "The Origins and Practices of Pure Land Buddhism," Learn Religions. <a href="https://www.learnreligions.com/pure-land-buddhism-450043">https://www.learnreligions.com/pure-land-buddhism-450043</a></li>
+        <li>Hōnen (Jōdo-shū) and Shinran (Jōdo Shinshū): the single-hearted nembutsu, faith alone, akunin shōki, and non-celibate clergy — "Jōdo Shinshū," Encyclopedia.com. <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/jodo-shinshu">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/jodo-shinshu</a> ; "Jōdo Shinshū," Wikipedia. <a href="https://en.wikipedia.org/wiki/J%C5%8Ddo_Shinsh%C5%AB">https://en.wikipedia.org/wiki/J%C5%8Ddo_Shinsh%C5%AB</a></li>
+        <li>Hōnen's foundational text drawing on Shandao and Tanluan (the Senchakushū) — "Senchakushū," Wikipedia. <a href="https://en.wikipedia.org/wiki/Senchakush%C5%AB">https://en.wikipedia.org/wiki/Senchakush%C5%AB</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch55 */
+  ch55: { html: `
+    <p class="lead">A prophet in third-century Persia set out to do something no one had quite tried before: to found, deliberately and from the start, a <em>world</em> religion — one that would absorb and complete Zoroaster, the Buddha, and Jesus all at once, be translated into every language, and carry its truth in paintings so that even the illiterate could see it. For a few centuries it nearly worked: the religion of Mani stretched from Spain to China. Then it was hunted to extinction, and very nearly erased from memory.</p>
+
+    <h2>The apostle of light</h2>
+
+    <p><strong>Mani</strong> (c. 216–274 CE) was born in Sasanian Mesopotamia and raised in a Jewish-Christian baptizing sect before, he said, a heavenly Twin revealed to him the true religion. He called himself the "<strong>Apostle of Light</strong>" and the final prophet in a great succession — <strong>Adam, Buddha, Zoroaster, and Jesus</strong> had each brought the truth to one people in one tongue, and each revelation had been corrupted after its founder's death. Mani meant to be the <strong>seal</strong> who gathered them all into one universal, portable, deliberately <em>designed</em> faith. Uniquely among the founders of religions, he <strong>wrote his own scriptures</strong>, precisely so that his teaching could not be garbled by later disciples — and he painted, too, producing an illustrated book so that his cosmology could be seen as well as read. For a time he enjoyed the favor of the Sasanian shah; but under a later king, and the pressure of the Zoroastrian priesthood, he was arrested and died in chains, a martyr to his own church.</p>
+
+    <h2>The two principles</h2>
+
+    <p>At the heart of Manichaeism is the most thoroughgoing <strong>dualism</strong> in the history of religion. There are two eternal, uncreated principles: the <strong>Kingdom of Light</strong> (good, spirit) and the <strong>Kingdom of Darkness</strong> (evil, matter), and they are not — as in most religions — a creator and its creation, but two coequal, opposed realities. The whole of cosmic history is the story of their entanglement. The Darkness invaded the Light; in the ensuing war, particles of Light were captured and mixed into <strong>matter</strong>; and the material world was constructed, by the powers of Light, as an elaborate <em>machine for separating the two again</em> — straining the trapped Light out of matter and ferrying it back home. Every living thing holds imprisoned sparks of Light, and human beings above all. <strong>Salvation</strong> is therefore <em>gnosis</em> — the saving knowledge of this cosmic drama and of one's own nature as trapped Light — together with an ascetic life that releases the Light rather than binding it deeper into flesh. This dualism gave Manichaeism its great intellectual appeal: it took the <strong>problem of evil</strong> with total seriousness, explaining suffering not as the mysterious will of a good God but as the presence of a genuinely independent Dark.</p>
+
+    <h2>The Elect and the Hearers</h2>
+
+    <p>The Manichaean church was built in two tiers. The <strong>Elect</strong> (the "perfect") lived under severe discipline: strict celibacy, no property, and radical non-violence extended even to plants — for to harvest or cook was to wound the Light trapped in living things. They ate only food prepared for them by others, believing that their digestion itself helped <em>liberate</em> the Light within it, releasing it back toward the Kingdom. Supporting them were the far more numerous <strong>Hearers</strong> (auditors), the ordinary faithful who lived and worked in the world, kept a lighter rule, and earned merit — and a better rebirth — by feeding and sustaining the Elect. Manichaean ethics centered on the "three seals": the sealing of the <strong>mouth</strong> (from impure food and speech), the <strong>hands</strong> (from harming the Light in the world), and the <strong>breast</strong> (from lust).</p>
+
+    <h2>The self-written scripture and the painted book</h2>
+
+    <p>Mani's determination to fix his own canon produced a distinctive body of scripture: a set of works he wrote himself — including the <em>Living Gospel</em>, the <em>Treasure of Life</em>, the <em>Shābuhragān</em> (composed in Middle Persian for the shah), a book of <em>Psalms</em> and <em>Prayers</em>, and his <em>Epistles</em> — plus the <em><strong>Āržang</strong></em>, the <strong>Book of Pictures</strong>, a painted volume illustrating the cosmology. Almost none of it survives intact. What we have is fragments, recovered in the modern era from the sands of Central Asia (the <strong>Turfan</strong> texts, in many languages), from Egypt (the Coptic <strong>Kephalaia</strong> and <strong>Psalm-Book</strong> of Medinet Madi — the Kephalaia being a detailed secondary account of Mani's teaching), and the astonishing <strong>Cologne Mani-Codex</strong>, the smallest ancient book ever found, a parchment less than two inches tall recounting Mani's early life. Much of what was long known about the religion came, ironically, from the writings of its <em>enemies</em>.</p>
+
+    <h2>From Rome to China, and out</h2>
+
+    <p>Manichaeism spread with remarkable speed in both directions along the roads of empire. Westward it reached North Africa, Italy, Gaul, and Spain — and there it caught, for nearly a decade, the young <strong>Augustine of Hippo</strong> (ch16, ch22), who was a Manichaean <strong>Hearer</strong> before his conversion to Christianity and then became one of its most formidable opponents, so that much of our Western knowledge of the sect comes through his attacks on it. Eastward it traveled the Silk Road into Central Asia and China, where it was tolerated under the Tang and, uniquely, became for a time the <strong>state religion of the Uyghur Khaganate</strong> — the only empire ever to adopt it. But everywhere it was eventually crushed: persecuted by the Sasanians as a rival, outlawed by Christian Rome, and later suppressed under Islam and in China. Its organized communities faded by around the 10th century in Central Asia, with scattered remnants surviving far longer in coastal China. A religion that had spanned a continent was extinguished so completely that "Manichaean" survives today mainly as a word for seeing the world in stark black and white.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>Light and darkness</strong> are the master-symbols, and unusually literal ones: Manichaeism did not use light <em>as a metaphor</em> for good so much as identify the good <em>with</em> light as a substance to be gathered and freed. This is the purest light-dark encoding in any religion.</li>
+      <li><strong>The painted book.</strong> Mani's <em>Āržang</em> made Manichaeism perhaps the only major religion to place <em>painting</em> at the center of its scripture — the cosmic drama encoded in images precisely so it could cross language barriers, an ancient recognition that a picture could carry doctrine where words could not.</li>
+      <li><strong>The sun and moon as vessels.</strong> In Manichaean cosmology the sun and moon are luminous <em>ships</em> that ferry the rescued Light upward; the waxing and waning moon is the vessel filling with Light and then discharging its cargo toward the Kingdom — the sky itself read as the machinery of salvation, with the <strong>Milky Way</strong> (the "Column of Glory") as the great column of ascending Light.</li>
+      <li><strong>The three seals</strong> (mouth, hands, breast) encode the whole ascetic ethic on the body itself — each a guarded gate against re-imprisoning the Light.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Manichaeism is the great <strong>synthesizer</strong> of late antiquity, deliberately fusing <strong>Zoroastrian</strong> dualism (ch06), <strong>Gnostic</strong> cosmic drama and the trapped divine spark (ch17), <strong>Christian</strong> figures and scripture (ch16), and <strong>Buddhist</strong> ideas of rebirth and the two-tier monastic/lay community (ch11, ch20) into one designed religion. Its most famous convert-then-enemy, <strong>Augustine</strong>, carried a lifelong preoccupation with the problem of evil out of it and into the mainstream of Western Christianity (ch16, ch22). And its radical dualism is the ancestor — typologically if not by direct descent — of the later medieval dualist movements (the Paulicians, Bogomils, and Cathars) so often labeled "neo-Manichaean." It stands as the great might-have-been of religious history: a world religion that failed.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historicity of Mani (c. 216–274 CE) and the founding of his church in Sasanian Mesopotamia; the radical two-principle dualism and the Light/Darkness cosmology; the two-tier structure of Elect and Hearers with its ascetic ethic; Mani's authorship of his own canon and the <em>Āržang</em> picture-book; the religion's vast spread from the Roman West to Tang China and the Uyghur adoption; Augustine's years as a Hearer and later opposition; and the eventual near-total suppression. The recovered texts (Turfan, the Coptic Kephalaia and Psalm-Book, the Cologne Mani-Codex) are real and studied.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>Much of the <em>content</em> of Mani's own scriptures is lost and known only in fragments or through hostile summaries, so some reconstructions of Manichaean doctrine are necessarily provisional. And the popular claim of a direct genealogical descent from Manichaeism to the medieval Cathars and Bogomils is <strong>contested</strong>: most scholars now see a typological resemblance (independent re-invention of dualism) rather than an unbroken underground transmission.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise details of Manichaean cosmology and liturgy in their original form; how much of the tradition's self-presentation (Mani's revelations, the Twin) reflects his actual teaching versus later elaboration; and the exact channels and degree of its influence on later dualist heresies. The archive reports the religion's structure and history as documented, and its lost scriptures as the genuine gap they are.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Manichaeism overview: Mani (c. 216–274 CE), the "Apostle of Light," the prophetic succession (Adam, Buddha, Zoroaster, Jesus), the Light/Darkness dualism and cosmology, the Elect and Hearers, and the spread and persecution — "Manichaeism," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Manichaeism">https://www.britannica.com/topic/Manichaeism</a> ; "Manichaeism," Encyclopedia.com. <a href="https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/manichaeism">https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/manichaeism</a></li>
+        <li>The radical dualism, the trapped light-particles, salvation by gnosis and asceticism, the two-tier community, and the peak spread (Roman West to China; the Uyghur Khaganate) — "Manichaeism," Grokipedia. <a href="https://grokipedia.com/page/Manichaeism">https://grokipedia.com/page/Manichaeism</a></li>
+        <li>Augustine as a Manichaean Hearer (c. 373–382) and later opponent; the problem of evil — Manichaeism overview (Augustine section), EncyclopedAI. <a href="https://encyclopedai.stavros.io/entries/manichaeism/">https://encyclopedai.stavros.io/entries/manichaeism/</a></li>
+        <li>Mani's self-authored scriptures (the seven treatises, the Shābuhragān) and the Āržang picture-book — "Manichaean scripture," Wikipedia. <a href="https://en.wikipedia.org/wiki/Manichaean_scripture">https://en.wikipedia.org/wiki/Manichaean_scripture</a></li>
+        <li>The Cologne Mani-Codex (the smallest ancient book, on Mani's early life) and the Coptic Kephalaia — "Cologne Mani-Codex," Wikipedia. <a href="https://en.wikipedia.org/wiki/Cologne_Mani-Codex">https://en.wikipedia.org/wiki/Cologne_Mani-Codex</a> ; "Coptic Manichean Texts," Encyclopaedia Iranica. <a href="https://www.iranicaonline.org/articles/coptic-manichean-texts/">https://www.iranicaonline.org/articles/coptic-manichean-texts/</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch56 */
+  ch56: { html: `
+    <p class="lead">At dawn on the bank of a river in southern Iraq, a man in white steps into the flowing water and is immersed three times by a priest, as his people have done for perhaps two thousand years. He is a Mandaean — one of the last living Gnostics on earth. His faith, and two others of the Near East, share a rare and difficult fate: small, ancient, closed to outsiders, guarding secrets, and persecuted almost without pause. They are the traditions the great monotheisms could neither absorb nor entirely destroy.</p>
+
+    <h2>The last of the Gnostics</h2>
+
+    <p>The <strong>Mandaeans</strong> call themselves "the first Baptists and the last Gnostics," and both halves are true. Theirs is the sole <strong>Gnostic</strong> religion (ch17) to survive in unbroken continuity from antiquity. Their supreme prophet is <strong>John the Baptist</strong> — not as the forerunner of Jesus, but as the final and greatest messenger; <strong>Jesus</strong>, in Mandaean scripture, is a <em>renegade</em> who corrupted John's baptism and led the nations astray. Their cosmology is thoroughly Gnostic: a <strong>World of Light</strong> ruled by the Great Life, a flawed and lower creator, a material world in which the soul is exiled, and salvation as the soul's <strong>ascent</strong> back through the heavens to the Light. Their scriptures — the <strong>Ginza Rabbā</strong> ("Great Treasure"), the <strong>Qolastā</strong> (prayer book), and the <strong>Book of John</strong> — are written in <strong>Mandaic</strong>, a form of Aramaic with its own script, and much of the corpus reaches back to the early centuries CE.</p>
+
+    <p>The center of Mandaean life is <strong>baptism</strong> (<em>masbuta</em>): not a once-in-a-lifetime rite of repentance as John's was, but a <em>repeated</em>, lifelong immersion in flowing "living water" (a <em>yardna</em>, a "Jordan"), performed by white-robed priests (<em>tarmida</em>) to purify the soul and keep it aligned with the world of Light. Numbering perhaps seventy thousand, historically settled along the rivers of southern Iraq and Iran, the Mandaeans have been scattered across a global diaspora by the wars and persecutions of recent decades, their ancient community now endangered.</p>
+
+    <h2>The people of the Peacock Angel</h2>
+
+    <p>The <strong>Yazidis</strong> are a Kurdish-speaking people whose monotheistic faith centers on one God, <strong>Xwedê</strong>, who created the world and placed it in the care of seven Holy Beings, chief among them <strong>Tawûsî Melek</strong>, the <strong>Peacock Angel</strong>. Their central myth is the source of both their identity and their long agony: when God created Adam and commanded the angels to bow to him, Tawûsî Melek alone <strong>refused</strong>, holding that he should bow to none but God — and for this he was cast down, until his tears of remorse quenched the fires of hell and he was restored as God's chief deputy and the intermediary between the divine and humanity. Because this "angel who refused to bow and was cast down" resembles, on the surface, the Islamic and Christian story of <strong>Iblis/Satan</strong>, the Yazidis have for centuries been slandered as "<strong>devil-worshippers</strong>" — a grave and false charge that has fueled repeated massacres, culminating in the <strong>genocide of 2014</strong>, when the so-called Islamic State murdered and enslaved thousands of Yazidis around Mount Sinjar. In truth Yazidis abhor the identification: for them Tawûsî Melek is not a devil but the holiest of God's servants. Their tradition, drawing on ancient Iranian roots and organized in the 12th century around the Sufi sheikh <strong>Adī ibn Musāfir</strong>, centers on the sacred valley of <strong>Lalish</strong> in northern Iraq, is transmitted largely by <strong>oral hymns</strong> (<em>qewls</em>), maintains a strict system of hereditary castes, and forbids marriage outside the faith.</p>
+
+    <h2>The community with no converts</h2>
+
+    <p>The <strong>Druze</strong> emerged in the early 11th century as an esoteric offshoot of <strong>Ismaili Shia Islam</strong> (ch21). Its followers accept the <strong>Fatimid caliph al-Ḥākim</strong> (r. 996–1021) as a manifestation of the divine unity; when he vanished during a night walk in 1021, the Druze held that he had gone into <strong>occultation</strong> and would return. The faith was organized by the missionary <strong>Ḥamza ibn ʿAlī</strong>, and it teaches a radical, philosophically Neoplatonic <strong>monotheism</strong> (<em>tawḥīd</em>, from which the Druze call themselves <em>al-Muwaḥḥidūn</em>, "the Unitarians") and a distinctive doctrine of <strong>reincarnation</strong> (<em>taqammuṣ</em>): a fixed number of Druze souls, each reborn only into another Druze body, cycling until they are ready to reunite with God.</p>
+
+    <p>The Druze are the most <em>closed</em> of all these communities. The faith has accepted <strong>no converts since about 1043</strong>; marriage outside it is forbidden; and its teachings are held in strict secrecy, its scriptures — the <strong>Epistles of Wisdom</strong> (<em>Rasāʾil al-Ḥikma</em>) — revealed only to the initiated religious elite, the <em><strong>ʿuqqāl</strong></em> ("the knowers"), while the majority of the community, the <em><strong>juhhāl</strong></em> ("the uninformed"), live faithfully without access to the inner doctrine. To survive among hostile majorities the Druze have long practiced <strong>taqiyya</strong>, the permitted concealment of one's true belief; today they form significant communities in Lebanon, Syria, and Israel.</p>
+
+    <h2>Guardians of mysteries</h2>
+
+    <p>Though distinct in origin and doctrine, these three faiths share a family resemblance that sets them apart. Each is <strong>small and endogamous</strong>, marrying only within and (Mandaeans and Druze especially) refusing converts, so that one is essentially <em>born</em> into the faith or not at all. Each <strong>guards an esoteric core</strong> — the Mandaean Gnostic mysteries, the Druze secret Epistles, the Yazidi oral hymns and hierarchy — accessible only to priests or initiates. Each is a <strong>syncretic survival</strong>, weaving pre-Islamic Iranian, Gnostic, and Abrahamic threads into something the surrounding orthodoxies rejected as heresy. And each has paid for its difference in blood, persecuted as heretics, apostates, or "devil-worshippers" across the centuries. They are living proof that the religious history of the Near East is far wider than its three famous monotheisms.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The darfash and the living water.</strong> The Mandaean sacred banner, the <em><strong>darfash</strong></em>, is a wooden cross-shaped standard draped in white silk and hung with a wreath of <strong>myrtle</strong> — and it is emphatically <em>not</em> a Christian cross but a symbol of the world of Light. <strong>Flowing water</strong> itself is the master-symbol: only "living" (moving) water can carry the purifying power of the Light, encoding the soul's descent from and return to its source.</li>
+      <li><strong>The Peacock Angel.</strong> The Yazidi <strong>peacock</strong>, represented in the bronze standards (<em>sanjak</em>) carried in procession, encodes Tawûsî Melek — its iridescent, "resurrecting" plumage a symbol of renewal and of the divine light refracted into the created world. At Lalish, the carved <strong>black serpent</strong> by the temple door and the sun-disks encode further layers of a deliberately guarded symbolism.</li>
+      <li><strong>The five-colored star.</strong> The Druze emblem is a five-pointed star in five colors — <strong>green, red, yellow, blue, and white</strong> — encoding the five cosmic <strong>principles</strong> or luminaries (the primordial intelligences through which the divine unity is mediated), a compact diagram of the whole Druze metaphysics.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>These three faiths gather up threads from across the archive's Near Eastern chapters. Mandaeism is the living continuation of <strong>Gnosticism</strong> (ch17), a cousin of <strong>Manichaeism</strong> (ch55), and a witness — through its exaltation of <strong>John the Baptist</strong> — to the world of <strong>early Christianity</strong> (ch16) seen from the outside. Yazidism draws on ancient <strong>Iranian/Zoroastrian</strong> roots (ch06) and was organized by a <strong>Sufi</strong> sheikh (ch27), and its Peacock Angel is a mirror-image of the <strong>Iblis/Satan</strong> figure of <strong>Islam</strong> (ch21) and the Christian <strong>devil</strong> (ch39) — the same story told with the opposite meaning. The Druze are an esoteric branch of <strong>Ismaili Shia Islam</strong> (ch21) shaped by <strong>Neoplatonism</strong>, and their reincarnation doctrine echoes ideas found from India to the Greek mysteries. Together they show how the "heresies" of one age become the guarded, enduring faiths of the next.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The existence, scriptures, and core practices of all three: Mandaeism as a continuous Gnostic tradition with John the Baptist as chief prophet, the Ginza Rabbā and masbuta baptism; Yazidism's monotheism, the seven Holy Beings and Tawûsî Melek, the organization under Sheikh Adī in the 12th century, and Lalish as its center; and the Druze as an 11th-century Ismaili offshoot venerating al-Ḥākim, with the Epistles of Wisdom, the ʿuqqāl/juhhāl division, taqammuṣ (reincarnation), and the closure to converts. The 2014 Yazidi genocide is a documented fact, recognized as genocide by the UN and others.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The "<strong>devil-worship</strong>" charge against the Yazidis is <strong>false</strong> — a hostile outside misreading of the Peacock Angel myth, and the archive states so plainly. Because the Druze and Yazidi inner teachings are deliberately secret and the Yazidi tradition is oral, many older outsider descriptions of their doctrines are unreliable, and some "authoritative" texts (e.g. certain purported Yazidi "black books") are of contested authenticity. The claim that al-Ḥākim did not die but entered occultation is a Druze article of faith, not a historical finding.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The exact age and origins of Mandaeism (clearly pre-Islamic, with roots plausibly in the first centuries CE, but its earliest history is debated); the precise pre-Islamic (Iranian, Zoroastrian, Mesopotamian) substrate beneath Yazidism; and the full content of the guarded Druze and Yazidi teachings, which by design remain incompletely known to outsiders. The archive reports what these communities are documented to believe and practice, respects the boundary of what they choose to keep secret, and refuses the ancient libels told about them.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Mandaeism: "the first Baptists and the last Gnostics," John the Baptist as supreme prophet and Jesus as a corruptor, the World of Light and the soul's ascent, the Ginza Rabbā/Qolastā/Book of John, and repeated baptism (masbuta) in living water — "Mandaeism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Mandaeism">https://en.wikipedia.org/wiki/Mandaeism</a> ; "Meet the Mandaeans, the Disciples of John the Baptist," Pauline Montagna (Medium). <a href="https://paulinemontagna.medium.com/meet-the-mandaeans-the-disciples-of-john-the-baptist-7948235720f5">https://paulinemontagna.medium.com/meet-the-mandaeans-the-disciples-of-john-the-baptist-7948235720f5</a></li>
+        <li>Yazidism: one God (Xwedê) and seven Holy Beings, Tawûsî Melek the Peacock Angel and the refusal-to-bow myth, the false "devil-worshipper" charge, Sheikh Adī (12th c) and Lalish, oral qewls and caste, and the 2014 genocide — "Yazidism and the Divine Mystery of Tawûsî Melek," Spiritual Arts Foundation. <a href="https://www.spiritualarts.org.uk/yazidism-and-the-divine-mystery-of-tawusi-melek/">https://www.spiritualarts.org.uk/yazidism-and-the-divine-mystery-of-tawusi-melek/</a> ; "Yazidi Religious Beliefs: History, Facts, and Traditions," peacock-angel.org. <a href="https://peacock-angel.org/yazidi.beliefs.htm">https://peacock-angel.org/yazidi.beliefs.htm</a></li>
+        <li>Druze: the 11th-century Ismaili offshoot, al-Ḥākim and his occultation, Ḥamza ibn ʿAlī, tawḥīd/al-Muwaḥḥidūn, reincarnation (taqammuṣ), the ʿuqqāl/juhhāl division, the secret Epistles of Wisdom, taqiyya, and no converts since ~1043 — "The Druze and al-Hakim: The Religion with No Converts," AM Digital. <a href="https://www.amdigital.co.uk/insights/blog/the-druze-and-al-hakim-the-religion-with-no-converts">https://www.amdigital.co.uk/insights/blog/the-druze-and-al-hakim-the-religion-with-no-converts</a> ; "Druze," GlobalSecurity.org. <a href="https://www.globalsecurity.org/military/intro/islam-druze.htm">https://www.globalsecurity.org/military/intro/islam-druze.htm</a></li>
+        <li>The Druze faith and the mystery of the divine (Neoplatonic tawhid, the five cosmic principles) — "Druze Faith and the Mystery of the Divine," Spiritual Arts Foundation. <a href="https://www.spiritualarts.org.uk/druze-faith-and-the-mystery-of-the-divine/">https://www.spiritualarts.org.uk/druze-faith-and-the-mystery-of-the-divine/</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch57 */
+  ch57: { html: `
+    <p class="lead">In a limestone cleft near the ruins of a lost capital in central Turkey, the gods walk in stone. Carved in low relief along the rock walls of the open-air sanctuary of Yazılıkaya, two processions of deities — the gods advancing from the left, the goddesses from the right — converge at the center, where the great Storm-god and the great Goddess meet face to face. It is a photograph, three thousand years old, of an entire pantheon: the assembled "thousand gods of Hatti," the deliberately vast and inclusive divine world of a Bronze Age empire that history forgot and archaeology recovered.</p>
+
+    <h2>The empire that was rediscovered</h2>
+
+    <p>The <strong>Hittites</strong> were an Indo-European people who built a great empire across Anatolia (roughly <strong>1650–1180 BCE</strong>), centered on their capital <strong>Hattusa</strong> (modern Boğazköy). For most of recorded history they were all but unknown — a name in the Hebrew Bible and a few Egyptian records — until, in the late 19th and early 20th centuries, archaeologists uncovered Hattusa and its royal archive of some <strong>thirty thousand cuneiform tablets</strong>, and scholars deciphered the <strong>Hittite language</strong>, which turned out to be the <em>oldest attested Indo-European language</em> in the world. Suddenly a whole vanished civilization, and one of the best-documented religions of the Bronze Age, came back into view.</p>
+
+    <h2>The thousand gods</h2>
+
+    <p>Hittite religion was extraordinarily <em>absorptive</em>. The Hittites themselves spoke of "the <strong>thousand gods of Hatti</strong>," and they meant it almost literally: when they conquered a city, they did not abolish its gods but carried the divine images back to Hattusa and added them to the state cult. The result was a pantheon layered from many peoples — the indigenous <strong>Hattians</strong>, the <strong>Hurrians</strong> of northern Syria (from whom the Hittites took much of their high theology), the <strong>Luwians</strong>, and the <strong>Mesopotamians</strong>. Two deities stood above the rest: the <strong>Storm-god</strong>, <strong>Tarhunna</strong> (identified with the Hurrian <strong>Teshub</strong>), lord of thunder and rain, depicted striding on a bull with the lightning in his hand; and the <strong>Sun-goddess of Arinna</strong> (identified with the Hurrian mother-goddess <strong>Hepat</strong>), "Queen of all lands," the protectress of the kingdom and the king. The Hittite <strong>king</strong> was her chief priest, and his first duty was to keep the festivals of the gods — neglect of the cult was believed to bring disaster on the land.</p>
+
+    <h2>The kingship in heaven</h2>
+
+    <p>The Hittites preserved, from their Hurrian neighbors, one of the most consequential myth-cycles of the ancient world: the <strong>Kumarbi Cycle</strong>, whose central poem is titled <em><strong>Kingship in Heaven</strong></em>. It tells of a succession of sky-rulers, each violently overthrowing the last: <strong>Alalu</strong> is toppled by <strong>Anu</strong> (the Sky); Anu is deposed by <strong>Kumarbi</strong>, who <em>bites off and swallows</em> Anu's genitals and is thereby impregnated with the storm-god; and from Kumarbi is born <strong>Teshub</strong>, who at last takes the throne of heaven. In the sequel, the <strong>Song of Ullikummi</strong>, Kumarbi begets a monstrous stone giant on a great rock to overthrow Teshub, and the storm-god must battle it.</p>
+
+    <p>The importance of this is hard to overstate, because the same story turns up in Greece. Hesiod's <strong>Theogony</strong> (ch08) tells of exactly this succession — <strong>Ouranos</strong> (Sky) castrated by <strong>Kronos</strong>, Kronos overthrown by <strong>Zeus</strong> the storm-god — complete with the castration of the sky-father and the swallowing motif, and Zeus's final battle with the monster <strong>Typhon</strong> mirrors Teshub's battle with Ullikummi. Scholars widely accept that the Greek succession myth descends, through Anatolian and Near Eastern intermediaries, from this older Hurrian-Hittite pattern. The birth of the Greek gods was, in part, written in Anatolia first.</p>
+
+    <h2>The god who vanished</h2>
+
+    <p>A distinctively Anatolian myth is that of the <strong>vanishing god</strong>, best preserved in the tale of <strong>Telipinu</strong>, a god of agriculture. Offended, Telipinu storms off in such a rage that "he put his right boot on his left foot and his left boot on his right," and with his departure the world dies: "trees withered, fields and springs dried up, oxen and sheep and women ceased to bear young, and famine crept over the world." The gods search frantically; at last a <strong>bee</strong> is sent to find and sting him awake, and through ritual appeasement he is soothed and brought home, and life returns. The myth was not told for entertainment but embedded in a <strong>ritual</strong> to recall an angry deity — a Bronze Age Anatolian version of the great pattern of the <strong>dying-and-returning god</strong> and the fertility that hangs on the divine presence.</p>
+
+    <h2>Oath, treaty, and the confession of sin</h2>
+
+    <p>Hittite religion left two things of unusual interest to the wider history of belief. First, the <strong>treaty</strong>. The Hittites were master diplomats, and their <strong>suzerain-vassal treaties</strong> — including the famous peace with Egypt after the Battle of Kadesh, the earliest surviving international treaty — invoked the gods of both sides as <strong>witnesses and enforcers</strong> of the sworn oath, with blessings for keeping it and curses for breaking it. Many scholars have noted that this treaty form closely resembles the structure of the biblical <strong>covenant</strong> between God and Israel (ch07) — a striking, if debated, formal parallel. Second, the <strong>plague prayers of Mursili II</strong>: when a plague ravaged the Hittites for twenty years, the king reasoned that a god must be angry, searched the old records, and concluded that his <em>father's</em> broken oath and neglected offerings had caused it — then confessed the inherited sin and begged the gods for relief. It is a remarkably developed theology of divine justice, inherited guilt, and the moral causation of history.</p>
+
+    <h2>Ritual, magic, and the scribe</h2>
+
+    <p>Hittite worship centered on a vast calendar of <strong>festivals</strong> that the king was obliged to celebrate, and on constant <strong>purification</strong> and <strong>magic</strong> rituals — many of them performed by ritual specialists, often the "<strong>Old Women</strong>" (<em>ḫašawa</em>), and preserved in meticulous written form. Divination was pervasive: the future was read in the flight of <strong>birds</strong>, in the entrails of sacrificed animals (extispicy), and by other omens, and no major royal decision was taken without consulting the gods. The Hittite scribes, working in both <strong>cuneiform</strong> and a separate <strong>Anatolian hieroglyphic</strong> (Luwian) script, produced one of the great multilingual archives of the ancient world.</p>
+
+    <h2>The long Anatolian afterlife</h2>
+
+    <p>When the Hittite empire collapsed around 1180 BCE in the great Bronze Age crisis, Anatolian religion did not vanish. The <strong>Luwians</strong> and the "Neo-Hittite" states of the early Iron Age carried its gods forward, and one Anatolian deity had an especially long future: <strong>Kubaba</strong>, a goddess of the region, developed into <strong>Kybele</strong> — <strong>Cybele</strong>, the great <strong>Mother of the Gods</strong> of Phrygia, whose ecstatic cult would be carried to Rome in 204 BCE as the <strong>Magna Mater</strong> (ch18, ch48). The thousand gods of Hatti outlived the empire that gathered them.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>Yazılıkaya as stone theology.</strong> The rock sanctuary is a symbol-system in itself: the ordered procession of the whole pantheon encodes the divine hierarchy; the meeting of <strong>Teshub and Hepat</strong> at the center encodes the sacred marriage at the heart of the cosmos; and the panel where the god <strong>Sharruma</strong> embraces and protects King Tudhaliya encodes the king's intimate bond with his divine patron.</li>
+      <li><strong>The storm-god on the bull.</strong> The image of the weather-god striding on a bull, mace and lightning in hand, is the master-symbol of Anatolian (and wider Near Eastern) divine power — the same iconography that clothes Baal and, distantly, informs later sky-gods.</li>
+      <li><strong>The winged sun-disk</strong>, borrowed from Egypt and Mesopotamia, became the emblem of Hittite <strong>kingship</strong> — the ruler shielded by the radiant, winged sun of divine favor.</li>
+      <li><strong>Two scripts for the sacred.</strong> The Hittites encoded their religion in both imported <strong>cuneiform</strong> and their own monumental <strong>hieroglyphs</strong>, so that the same gods could be named in clay archives and carved on public rock — writing itself as an instrument of the cult.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Hittite religion sits among the great Bronze Age faiths, contemporary and in contact with <strong>Egypt</strong> and <strong>Mesopotamia</strong> (ch02, ch03) — its treaty with Egypt is the first in history. Its <strong>Kingship in Heaven</strong> is the direct ancestor of the Greek succession myth of <strong>Hesiod</strong> (ch08), one of the clearest cases of Near Eastern myth flowing into the West. Its <strong>vanishing god</strong> Telipinu belongs with the <strong>dying-and-returning god</strong> and the fertility-renewal pattern that runs through the whole archive (ch01, ch49). Its <strong>treaty-oath</strong> form is the debated model for the Israelite <strong>covenant</strong> (ch07). And its goddess <strong>Kubaba/Cybele</strong> carries Anatolian religion forward into the <strong>Roman mystery cults</strong> and the story of the <strong>Great Goddess</strong> (ch18, ch48).</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The Hittite empire and its capital Hattusa; the recovery of the huge cuneiform archive and the decipherment of Hittite as the oldest attested Indo-European language; the "thousand gods" and their layered pantheon; the chief deities Tarhunna/Teshub and the Sun-goddess of Arinna/Hepat; the Kumarbi Cycle and the Telipinu vanishing-god myth as actual texts; the king's priestly role; the Yazılıkaya sanctuary; the Hittite–Egyptian treaty and the plague prayers of Mursili II. Hittite religion is, for a Bronze Age faith, unusually richly documented.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact) / contested</h4>
+        <p>The <em>direction and channel</em> of the influence from the Kumarbi Cycle to Hesiod is widely accepted in outline but debated in detail (how and through whom the transmission occurred). The formal parallel between Hittite treaties and the biblical covenant is real, but whether it reflects direct influence, a shared Near Eastern convention, or later independent development is debated. And the "Hittites" named in the Hebrew Bible are, in many passages, a Canaanite group whose relationship to the Anatolian empire is uncertain — the shared name should not be taken as simple identity.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The full pre-Hittite (Hattian) substrate of the religion; the precise mechanics of the myth's transmission to Greece; and the inner meaning of many rituals recorded only as instructions. The archive reports the abundant textual record and marks the cross-cultural influences as the real but debated connections they are.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The "thousand gods of Hatti," the absorptive pantheon, Tarhunna/Teshub the storm-god on the bull, and the Sun-goddess of Arinna/Hepat — "Hittite Religion," Encyclopedia.com. <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/hittite-religion">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/hittite-religion</a> ; "Sun goddess of Arinna," Wikipedia. <a href="https://en.wikipedia.org/wiki/Sun_goddess_of_Arinna">https://en.wikipedia.org/wiki/Sun_goddess_of_Arinna</a></li>
+        <li>The Kumarbi Cycle / "Kingship in Heaven," the Alalu–Anu–Kumarbi–Teshub succession (castration and swallowing), the Song of Ullikummi, and the parallels with Hesiod's Theogony (Ouranos–Kronos–Zeus, Typhon) — "Kumarbi," Wikipedia. <a href="https://en.wikipedia.org/wiki/Kumarbi">https://en.wikipedia.org/wiki/Kumarbi</a> ; "The Ancient Hurrian Myth That Inspired the Greek Gods," TheCollector. <a href="https://www.thecollector.com/kumarbi-cycle-hurrian-myth/">https://www.thecollector.com/kumarbi-cycle-hurrian-myth/</a></li>
+        <li>The Telipinu vanishing-god myth and its ritual context — "Telipinu (mythology)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Telipinu_(mythology)">https://en.wikipedia.org/wiki/Telipinu_(mythology)</a> ; "The Telepenus 'Vanishing God' Myth," University of Texas LRC. <a href="https://lrc.la.utexas.edu/eieol/hitol/20">https://lrc.la.utexas.edu/eieol/hitol/20</a></li>
+        <li>Hittite mythology and religion overview: the empire (c. 1650–1180 BCE), Hattusa, the Hurrian adoption, Yazılıkaya, treaties, and ritual — "Hittite mythology and religion," Wikipedia. <a href="https://en.wikipedia.org/wiki/Hittite_mythology_and_religion">https://en.wikipedia.org/wiki/Hittite_mythology_and_religion</a></li>
+        <li>Kingship in heaven and the Anatolia–Syria–Greece succession-myth connection (scholarly) — "Kingship in Heaven in Anatolia, Syria and Greece" (University of Reading / CentAUR). <a href="https://centaur.reading.ac.uk/79653/1/Kingship%20in%20Heaven%20in%20Anatolia%20Syria%20and%20Greece.%20Patterns%20of%20Convergence%20and%20Divergence%20(1).pdf">https://centaur.reading.ac.uk/79653/1/Kingship%20in%20Heaven%20in%20Anatolia%20Syria%20and%20Greece.%20Patterns%20of%20Convergence%20and%20Divergence%20(1).pdf</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the plague prayers of Mursili II; the Hittite–Egyptian (Kadesh) treaty and the covenant parallel (ch07 context); Kubaba/Cybele and the Anatolian afterlife (ch18/ch48 context).</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch58 */
+  ch58: { html: `
+    <p class="lead">In 1929 a farmer's plow on the Syrian coast struck the stone roof of an ancient tomb. Beneath it lay <strong>Ugarit</strong>, a Bronze Age city destroyed around 1185 BCE, and a library of clay tablets in an unknown alphabetic cuneiform. When they were read, they gave back something no one expected: the living voice of <strong>Canaanite religion</strong> — the faith of Baal and Asherah that the Hebrew prophets had spent centuries denouncing, now speaking, at last, in its own words rather than its enemies'.</p>
+
+    <h2>The recovered pantheon</h2>
+
+    <p>The tablets from Ugarit (Ras Shamra) revealed a pantheon organized as a divine family. At its head was <strong>El</strong> — the aged "father of the gods," the "creator of creatures," a wise and merciful bull-god who presided over the divine council. His consort was <strong>Athirat</strong> (the biblical <strong>Asherah</strong>), the mother of the gods, said to have seventy sons. But the god who dominated the myths, and the daily prayers of ordinary Canaanites, was <strong>Baal</strong> — properly <strong>Hadad</strong>, the <strong>storm-god</strong>, "the Rider on the Clouds," who brought the rains on which all life depended, and who in practical worship increasingly eclipsed the old high god El. Around them moved <strong>Anat</strong>, Baal's fierce warrior-sister; <strong>Yam</strong>, the Sea; <strong>Mot</strong>, Death; <strong>Dagan</strong>, the grain-god; and the radiant <strong>Shapash</strong>, the sun. Because their crops and their lives hung on the weather, it was to <strong>Baal</strong> that the Canaanites most often turned.</p>
+
+    <h2>The Baal Cycle</h2>
+
+    <p>The greatest of the Ugaritic texts is the <strong>Baal Cycle</strong>, a long poem on six tablets. In it Baal wins kingship among the gods by defeating <strong>Yam</strong>, the chaotic Sea — the ancient combat-myth (<em>Chaoskampf</em>, ch46) — and builds a magnificent palace on his holy mountain, <strong>Zaphon</strong>. But then he is challenged by <strong>Mot</strong>, Death, who swallows him down into the underworld; with Baal gone, the rains fail and the earth withers. His sister <strong>Anat</strong> hunts down Mot, splits him with a blade, winnows and burns and grinds him like grain — and Baal <strong>returns to life</strong>, and the world revives. It is at once a <strong>chaoskampf</strong> and a <strong>dying-and-returning-god</strong> myth (ch01), the drama of the seasons and the rains written as the death and resurrection of the storm.</p>
+
+    <h2>The matrix of the Bible</h2>
+
+    <p>Here is why Canaanite religion matters so enormously to this archive: <strong>Israelite religion grew up within it</strong> (ch07). The connections, once the Ugaritic texts were read, proved undeniable. The God of Israel absorbed the titles and imagery of both great Canaanite gods: like <strong>El</strong>, he is called by El's names (<em>El Shaddai</em>, <em>Elohim</em>) and presides over a divine council — and the very name <strong>Isra-el</strong> contains El's; like <strong>Baal</strong>, he is the "Rider on the Clouds" who thunders and gives rain and defeats the Sea and the sea-dragon <strong>Leviathan</strong> (a close cousin of Baal's foes Yam and Lotan). <strong>Asherah</strong>, El's consort, appears in Israelite worship paired with <strong>Yahweh</strong> (the "Yahweh and his Asherah" inscriptions of ch07), and had to be violently expelled as Israel became monotheist. The prophets' long war on <strong>Baal</strong> and the <strong>Asherah poles</strong> was not a clash with something alien but a <em>family quarrel</em> — the slow, contested extraction of one God from the Canaanite divine family that had been his own.</p>
+
+    <h2>The Phoenician cities</h2>
+
+    <p>The Iron Age heirs of the Canaanites were the <strong>Phoenicians</strong>, the great seafaring traders of the Levantine coast, and each of their cities had a patron god. <strong>Tyre</strong> worshipped <strong>Melqart</strong> — his name means "King of the City" — a god of the sea, the underworld, and kingship who <em>died and rose again</em> each year (his spring "awakening" celebrated by a festival), and whom the Greeks identified with their own <strong>Herakles</strong>. <strong>Sidon</strong> honored <strong>Eshmun</strong>, a god of <strong>healing</strong>. Everywhere the great goddess <strong>Astarte</strong> (the Canaanite Ashtart, cousin of Ishtar) was served as a deity of love, fertility, and war. And when the Phoenicians founded <strong>Carthage</strong> in the west, its chief powers were the god <strong>Baal Hammon</strong> and, above all, the goddess <strong>Tanit</strong>, the moon- and mother-goddess who became the city's patron.</p>
+
+    <h2>The tophet, honestly</h2>
+
+    <p>Carthage confronts the archive with one of its hardest questions. In precincts the Bible calls <strong>tophet</strong>, archaeologists have found vast cemeteries — over twenty thousand urns at Carthage alone — each holding the cremated remains of <strong>infants</strong> and young animals, buried under stone markers dedicated to Tanit and Baal Hammon. Classical writers (Greek and Roman) and the Hebrew Bible both accuse the Canaanites and Carthaginians of <strong>child sacrifice</strong> — the offering of children "to Molech" (from Punic <em>mlk</em>, likely the <em>name of the offering</em> rather than a god). The question is genuinely <strong>contested</strong>. One body of scholarship, supported by the dedications, the classical testimony, and osteological studies, concludes that ritual child sacrifice really did take place, at least sometimes. Another argues that the tophet was a specialized cemetery for infants who died naturally — in a world of appalling infant mortality — with cremation as the normal rite for the very young. The debate is old and not settled; the archive reports both the accusation and the doubt, and resolves neither. (See ch51 for the wider question of human sacrifice.)</p>
+
+    <h2>The alphabet and the record</h2>
+
+    <p>The Phoenicians' greatest gift to the world was not a god but a <strong>technology of the sacred and the mundane alike: the alphabet</strong>. By around the 11th century BCE they were writing with a set of <strong>twenty-two signs</strong>, one for each consonant — a radical simplification of the hundreds of signs needed for cuneiform or hieroglyphs, born of the needs of trade. Carried across the Mediterranean by Phoenician merchants, this <strong>abjad</strong> was adopted by the <strong>Greeks</strong>, who added signs for vowels (ch08), and became the ancestor of the Greek, Latin, and ultimately nearly all Western alphabets. The people who worshipped Baal and Tanit also gave humanity the means by which almost every scripture in this archive would eventually be written down.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The standing stone.</strong> Canaanite and Phoenician worship was often <strong>aniconic</strong>, focused on the <strong>massebah</strong> — a sacred standing stone or pillar (the Greek <em>baitylos</em>, from Semitic <em>bet-el</em>, "house of god") believed to house the god's presence. The idea that a god could dwell in a stone, and the very word <strong>Bethel</strong>, pass directly into the biblical world (ch07).</li>
+      <li><strong>The Asherah pole.</strong> The goddess Asherah was represented by a stylized <strong>sacred tree or wooden pole</strong>, an emblem of fertility and the divine feminine that the biblical reformers repeatedly cut down — the symbol at the center of the family quarrel over the goddess (ch48).</li>
+      <li><strong>The sign of Tanit.</strong> Carthage's goddess is marked by one of the most recognizable symbols of the ancient world: the <strong>"sign of Tanit,"</strong> a trapezoid (or triangle) topped by a horizontal bar and a <strong>disc</strong>, a schematic figure with upraised arms, stamped on countless stelae — a compact encoding of the goddess herself.</li>
+      <li><strong>The alphabet as encoding.</strong> The Phoenician letters were themselves born from <strong>pictures</strong> (the ox-head <em>aleph</em>, the house <em>bet</em>, the water <em>mem</em>), a acrophonic system in which the drawn thing named the sound — the deepest root of the sacred power of letters explored throughout this archive.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Canaanite religion is the immediate matrix out of which <strong>Israelite religion</strong> and the Bible emerged (ch07) — the single most important context for understanding the God of the Hebrew Bible. Its <strong>Baal-versus-Yam</strong> combat is a classic <strong>chaoskampf</strong> (ch46), and its <strong>Baal-and-Mot</strong> drama a prime <strong>dying-and-returning god</strong>. Its goddesses <strong>Asherah, Astarte, and Tanit</strong> belong with the <strong>Great Goddess</strong> (ch48); its <strong>tophet</strong> with the theme of <strong>sacrifice</strong> (ch51). At Ugarit it was contemporary with the <strong>Hittites</strong> (ch57) and <strong>Egypt</strong> (ch02); through <strong>Melqart-as-Herakles</strong> and above all through the <strong>alphabet</strong>, it flows directly into <strong>Greece</strong> (ch08) and the whole literate world.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The Ugaritic texts (discovered 1929) and the pantheon they reveal — El, Athirat/Asherah, Baal/Hadad, Anat, Yam, Mot — and the Baal Cycle as an actual poem; the deep continuity between Canaanite and early Israelite religion (a mainstream scholarly conclusion); the Phoenician city-gods (Melqart, Eshmun, Astarte) and the Carthaginian Baal Hammon and Tanit; the existence of the tophet precincts and their infant urns; and the Phoenician invention and spread of the consonantal alphabet as the ancestor of Western scripts. These are firmly established.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact) / contested</h4>
+        <p>Whether the Carthaginian <strong>tophet</strong> evidences systematic ritual <strong>child sacrifice</strong> or is a natural-death infant cemetery is <strong>genuinely unsettled</strong>, and the archive presents both cases. The lurid claims of Canaanite/Phoenician "<strong>sacred prostitution</strong>" derive largely from hostile Greek and biblical sources and are widely regarded by modern scholars as <strong>exaggerated or unfounded</strong>. And because the Phoenicians themselves left little continuous religious literature (their texts were largely on perishable papyrus), much of what is said about their beliefs depends on inscriptions, the earlier Ugaritic corpus, and often-hostile outside witnesses.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise theology behind the tophet and the true frequency of any sacrifice; the exact relationship between the Bronze Age Ugaritic religion and the later first-millennium Phoenician cults; and the degree to which biblical polemic distorts the Canaanite religion it describes. The archive leans on the recovered Canaanite voice of Ugarit precisely to hear the tradition apart from its enemies, while marking what remains contested.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Ugaritic-Canaanite religion: the discovery of Ugarit/Ras Shamra (1929), the pantheon (El, Athirat/Asherah, Baal/Hadad, Anat, Yam, Mot), and the Baal Cycle (Baal vs. Yam and Mot; death and return) — "Ugaritic-Canaanite Religion," Encyclopedia.com. <a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion">https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion</a> ; "Canaanite Religion," New World Encyclopedia. <a href="https://www.newworldencyclopedia.org/entry/Canaanite_Religion">https://www.newworldencyclopedia.org/entry/Canaanite_Religion</a></li>
+        <li>El as the aged high god and "father of the gods," and the Canaanite roots of biblical divine imagery — "El (deity)," Wikipedia. <a href="https://en.wikipedia.org/wiki/El_(deity)">https://en.wikipedia.org/wiki/El_(deity)</a></li>
+        <li>Phoenician religion and the city-gods: Melqart of Tyre (kingship, death-and-rising, equated with Herakles), Eshmun of Sidon (healing), Astarte, and Carthage's Baal Hammon and Tanit — "Melqart," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Melqart">https://www.britannica.com/topic/Melqart</a> ; "Phoenician Religion," World History Encyclopedia. <a href="https://www.worldhistory.org/Phoenician_Religion/">https://www.worldhistory.org/Phoenician_Religion/</a></li>
+        <li>The Carthage tophet and the child-sacrifice debate (the urns and stelae; the 2014 study for sacrifice; the natural-death-cemetery counter-argument) — "Study Concludes Child Sacrifice Took Place in Ancient Carthage," Archaeology Magazine. <a href="https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/">https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/</a> ; "Skeletal Remains from Punic Carthage Do Not Support Systematic Sacrifice of Infants," PLoS ONE / NCBI. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/</a></li>
+        <li>The Phoenician alphabet (22 consonants, c. 11th century BCE, ancestor of the Greek and Western alphabets) — "Phoenician alphabet," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Phoenician-alphabet">https://www.britannica.com/topic/Phoenician-alphabet</a> ; "How the Phoenician Alphabet Revolutionised Language," History Hit. <a href="https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/">https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the massebah/baitylos standing stone and the "sign of Tanit"; the "Yahweh and his Asherah" inscriptions and the Canaanite matrix of Israelite religion (ch07 sources); the contested "sacred prostitution" claims.</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch59 */
+  ch59: { html: `
+    <p class="lead">In the year 988, on the orders of Prince Vladimir of Kiev, men tied the great idol of the thunder-god <strong>Perun</strong> to a horse's tail, dragged it down through the city while twelve men beat it with sticks, and threw it into the <strong>Dnieper</strong> — and Rus became Christian. Far to the north, the old gods held out for four more centuries: <strong>Lithuania</strong> did not accept baptism until <strong>1387</strong>, the last pagan state in Europe. This is the story of the continent's final polytheists — and of the hard fact that we know them mostly through the words of the Christians who ended them.</p>
+
+    <h2>The last holdouts of pagan Europe</h2>
+
+    <p>The <strong>Slavs</strong> and the <strong>Balts</strong> were the last peoples of Europe to keep the old gods. The Slavic lands were Christianized between the 9th and 12th centuries — Kievan Rus under <strong>Vladimir the Great</strong> in 988, choosing Byzantine <strong>Orthodoxy</strong> (ch60); the western Slavs under German and Latin pressure. The <strong>Balts</strong> — Lithuanians, Latvians, and the now-vanished <strong>Old Prussians</strong> — held out longest of all, their conversion dragged out by the crusading <strong>Teutonic Knights</strong> until Lithuania's rulers finally accepted Christianity at the close of the 14th century, and folk practice persisting for centuries after. These were living European paganisms surviving into the high medieval age, contemporaries of the cathedrals and the scholastics — and precisely because they were the <em>last</em>, their suppression is unusually well recorded, if only by their enemies.</p>
+
+    <h2>The Slavic gods</h2>
+
+    <p>Our clearest snapshot is political: in <strong>980</strong>, Prince <strong>Vladimir</strong>, seeking to unify his realm, set up six idols on a hill above Kiev — <strong>Perun, Khors, Dazhbog, Stribog, Simargl, and Mokosh</strong> — a state pantheon meant to mirror the hierarchy of princes. At its head stood <strong>Perun</strong>, the <strong>thunder-god</strong>, lord of lightning and the oak, the warrior-god of the ruling <em>druzhina</em>. His great counterpart was conspicuously <em>absent</em> from the hill: <strong>Veles</strong> (Volos), god of cattle, wealth, the <strong>underworld</strong>, music, and magic — the "serpent" god, whose shrine stood <em>below</em>, in the merchants' quarter by the river. The opposition of these two — the sky-thunderer above and the wooly, watery serpent below — is thought to preserve the great Slavic myth of <strong>Perun versus Veles</strong>, the storm-god's battle with the serpent (a <em>chaoskampf</em>, ch46). Alongside them stood <strong>Svarog</strong> (sky, fire, the divine smith), <strong>Dazhbog</strong> (the sun, "giving-god"), <strong>Stribog</strong> (wind), and <strong>Mokosh</strong> — "moist Mother Earth," the one goddess of the pantheon, spinner and protector of women. Among the western Slavs the greatest sanctuary was the temple of the four-headed <strong>Svetovid</strong> at <strong>Arkona</strong> on the island of Rügen, whose god looked to the four quarters of the world — the last great pagan Slavic shrine, destroyed by the Danes in <strong>1168</strong>.</p>
+
+    <h2>The Baltic gods</h2>
+
+    <p>The Baltic pantheon, cognate but distinct, was headed by <strong>Dievas</strong>, the sky-god and supreme creator, and by <strong>Perkūnas</strong> (Latvian <em>Pērkons</em>), the <strong>thunder-god</strong> whose very name comes from a Baltic word for the <strong>oak</strong> — and who is a direct cousin of the Slavic Perun, both descended from the same Indo-European thunder-god. Most beloved of all was <strong>Saulė</strong>, the <strong>Sun-goddess</strong>, who appears more often than any other figure in the folk songs; with her belong <strong>Mėnuo/Mēness</strong> (the Moon), <strong>Žemyna</strong>, the earth-mother who receives the dead, and <strong>Velnias</strong>, a chthonic god of the underworld (a Baltic cousin of Veles). Baltic worship centered on <strong>sacred groves</strong> and <strong>oaks</strong>, and on the <strong>eternal fire</strong> kept perpetually burning by priests and priestesses — the felling of a sacred tree was punishable by death. Medieval sources speak of a central sanctuary, <strong>Romuva</strong>, whose undying flame was revered across the Baltic lands.</p>
+
+    <h2>The double faith and the folk survival</h2>
+
+    <p>Conversion did not erase the old gods; it drove them underground and into the folk. Scholars speak of <em><strong>dvoeverie</strong></em>, "double faith" — the long coexistence of Christian and pagan practice, in which the peasant kept the church's calendar <em>and</em> the field's older rites. Perun's thunder passed to the Christian <strong>St. Elijah</strong>; the household spirits (<strong>domovoi</strong>), the water- and forest-nymphs (<strong>rusalki</strong>, Baltic <em>laumės</em>), and the ambiguous witch <strong>Baba Yaga</strong> lived on in tale and custom for a thousand years. And in the Baltic lands the old religion survived, above all, in <strong>song</strong>: the <strong>dainos</strong>, the traditional Lithuanian and Latvian folk songs — more than two hundred thousand variants collected from the 1820s onward by scholars such as <strong>Krišjānis Barons</strong> — preserve Saulė, Perkūnas, and the whole sacred world of the pre-Christian Balts more fully than any chronicle.</p>
+
+    <h2>The problem of the sources</h2>
+
+    <p>No Slav or Balt wrote down their own theology while they still believed it. Everything we have comes from <em>outside</em> or <em>after</em>: the Christian <strong>Primary Chronicle</strong> of Nestor and other hostile clerical accounts; the reports of Arab travelers and German missionaries; the crusaders' records; and the folklore and dainos collected only in the modern era. This makes the reconstruction of Slavic and Baltic religion genuinely <strong>uncertain</strong> — the neat "pantheons" in popular books often owe as much to Romantic-era imagination and modern systematizing as to the fragmentary evidence. Some celebrated "sources," notably the <strong>Book of Veles</strong>, are outright modern <strong>forgeries</strong>. The honest picture is of a religion of the <strong>oak, the fire, the thunder, and the ancestors</strong>, richly alive but recoverable now only in pieces and through the distorting lens of those who destroyed or long outlived it.</p>
+
+    <h2>The old gods return</h2>
+
+    <p>Slavic and Baltic paganism has had one of the most vigorous modern revivals of any dead European religion. <strong>Rodnovery</strong>, the Slavic Native Faith, has grown across Eastern Europe since the late 20th century; and in the Baltic, <strong>Romuva</strong> in Lithuania and <strong>Dievturība</strong> in Latvia — reconstructing the old religion largely from the dainos and folklore — are among the most successful pagan revivals anywhere, with Romuva recognized (after a long campaign) as a traditional Lithuanian religion. Like modern <strong>Wicca</strong> and Paganism (ch38), these movements consciously rebuild an ancient faith from surviving fragments, and face the same honest question of how much is recovery and how much is new creation.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The oak and the thunder-mark.</strong> The <strong>oak</strong> — the tree most struck by lightning — is the sacred tree of both Perun and Perkūnas, and the thunder-god's power was encoded in <strong>"thunder-marks"</strong> (six-spoke wheels and rosettes) carved on houses for protection, and in the <strong>"thunder-stones"</strong> (prehistoric axes and fossils) believed to be his fallen bolts.</li>
+      <li><strong>The eternal fire.</strong> The perpetually tended <strong>flame</strong> of the Baltic sanctuaries encoded the presence and continuity of the sacred and of the community itself — its extinction an omen of catastrophe.</li>
+      <li><strong>The four-faced idol.</strong> The <strong>Svetovid</strong> of Arkona, carved with four heads facing the four directions, encoded a god who sees all quarters of the world at once — a striking image of divine omniscience in wood.</li>
+      <li><strong>The sun and the song.</strong> In the Baltic dainos the <strong>Sun</strong> (Saulė) is encoded through recurring images — the sun's daughters, the sun's copper boat, the celestial wedding — so that the <strong>song itself</strong> became the vessel of the sacred, the way a people with little monumental architecture kept its gods alive on the breath.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Slavic and Baltic paganism belong to the wider <strong>Indo-European</strong> family: their thunder-gods <strong>Perun</strong> and <strong>Perkūnas</strong> are cousins of the Norse <strong>Thor</strong> (ch23) and, further off, the Vedic <strong>Indra</strong> (ch05), all wielding the storm against a serpent (ch46). Their conversions tie them to the two Christendoms that absorbed them — Byzantine <strong>Orthodoxy</strong> for the Rus (ch60), Latin Christianity for the Balts. Their long <strong>folk survival</strong> parallels the vernacular religion beneath every official faith in this archive, and their contested reconstruction echoes the <strong>Great Goddess</strong> debate (ch48); their modern revival stands beside <strong>Wicca and modern Paganism</strong> (ch38) as the deliberate rebuilding of the old gods.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The late Christianization of the Slavs (Vladimir's conversion of Kievan Rus in 988) and of the Balts (Lithuania in 1387, the last in Europe); Vladimir's pantheon of 980 and the throwing-down of Perun; the destruction of the Arkona temple of Svetovid in 1168; the reality of the chief deities (Perun/Perkūnas, Veles/Velnias, Mokosh, Dievas, Saulė) attested in chronicles and folklore; the practices of sacred groves, oaks, and the eternal fire; the phenomenon of dvoeverie and the rich survival of the dainos; and the modern revivals (Rodnovery, Romuva, Dievturība).</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>Much of the <em>systematic</em> Slavic and Baltic mythology found in popular sources is <strong>reconstruction</strong>, built from fragmentary, hostile, and late evidence and often inflated by Romantic-era and modern invention. Specific elaborate genealogies and myths should be treated with caution. The <strong>Book of Veles</strong> and similar "recovered scriptures" are <strong>modern forgeries</strong>. The exact form of the Perun–Veles myth is a scholarly reconstruction, not a preserved text.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The true shape of pre-Christian Slavic and Baltic theology behind the chronicles; how much of the folklore preserves genuine pagan belief versus later Christian-era development; and how much the modern revivals recover versus create. The archive reports what is documented (the gods' names, the conversions, the sacred oak and fire, the songs) and marks the large reconstructed portion honestly as such.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Slavic religion and the pantheon: Vladimir's 980 idols (Perun, Khors, Dazhbog, Stribog, Simargl, Mokosh), the Primary Chronicle's list, Perun and Veles/Volos and their opposition, and the sources problem — "Slavic religion," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Slavic-religion">https://www.britannica.com/topic/Slavic-religion</a> ; "Slavic Gods (Deities of Slavic Religion)," Lidenz. <a href="https://lidenz.com/7-slavic-gods-kievan-rus/">https://lidenz.com/7-slavic-gods-kievan-rus/</a></li>
+        <li>The 988 conversion of Kievan Rus, the throwing-down of Perun, and the Arkona temple of Svetovid — "Slavic Mythology: Gods, Legends, Characters, and Culture," History Cooperative. <a href="https://historycooperative.org/slavic-mythology/">https://historycooperative.org/slavic-mythology/</a></li>
+        <li>Baltic religion and mythology: Dievas, Perkūnas (name from "oak"), Saulė, Žemyna, Velnias; sacred groves, oaks, and the eternal fire; Romuva sanctuary — "Baltic religion: Mythology," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Baltic-religion/Mythology">https://www.britannica.com/topic/Baltic-religion/Mythology</a> ; "Perkūnas," Grokipedia. <a href="https://grokipedia.com/page/Perk%C5%ABnas">https://grokipedia.com/page/Perk%C5%ABnas</a></li>
+        <li>Lithuania as Europe's last pagan state (converted 1387), the Teutonic crusade, and the persistence of folk practice — "In Search of Europe's Last Pagans," Arc Humanities. <a href="https://www.arc-humanities.org/blog/2022/04/17/in-search-of-europes-last-pagans/">https://www.arc-humanities.org/blog/2022/04/17/in-search-of-europes-last-pagans/</a> ; "The Last Pagans of Europe," Thomas Vitkus (Medium). <a href="https://medium.com/@adventuresomev/the-last-pagans-of-europe-65dc8068503c">https://medium.com/@adventuresomev/the-last-pagans-of-europe-65dc8068503c</a></li>
+        <li>The dainos as the great reservoir of Baltic religion (Krišjānis Barons, 200,000+ variants) and Saulė's prominence — "Saulė: The Sun Goddess and Celestial Mother," Mythologis. <a href="https://mythologis.com/mythologies/europe/baltic/gods/saule-sun-goddess-celestial-mother-baltic">https://mythologis.com/mythologies/europe/baltic/gods/saule-sun-goddess-celestial-mother-baltic</a></li>
+        <li>The modern revivals: Romuva (Lithuania, recognized as a traditional religion) and Dievturība (Latvia); Rodnovery — "Romuva (religion)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Romuva_(religion)">https://en.wikipedia.org/wiki/Romuva_(religion)</a> ; "The ancient Lithuanian religion bidding for state recognition," Euronews. <a href="https://www.euronews.com/culture/2021/12/12/what-is-romuva-here-s-the-lowdown-on-lithuania-s-latest-state-recognised-religion">https://www.euronews.com/culture/2021/12/12/what-is-romuva-here-s-the-lowdown-on-lithuania-s-latest-state-recognised-religion</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch60 */
+  ch60: { html: `
+    <p class="lead">When the envoys of Prince Vladimir of Kiev returned from the great church of Hagia Sophia in Constantinople, they reported that during the liturgy they had not known "whether we were in heaven or on earth" — for on earth there is no such beauty, and God dwells there among men. The story is a later legend, but it captures the essence of Eastern Orthodoxy better than any doctrine: a Christianity that argues not first from law or logic but from <em>beauty</em>, and that understands worship as the meeting-place of heaven and earth.</p>
+
+    <h2>The faith of the Christian empire</h2>
+
+    <p><strong>Eastern Orthodoxy</strong> is the Christianity that developed in the Greek-speaking Eastern Roman Empire — <strong>Byzantium</strong> — with its capital at <strong>Constantinople</strong>, from the 4th century until the city's fall in 1453, and it lives on today across Greece, the Balkans, Russia, and a global diaspora. It was here, in the empire that fused Roman statecraft, Greek philosophy, and Christian faith, that the doctrinal foundations of <em>all</em> Christianity were laid. The <strong>seven Ecumenical Councils</strong> — from <strong>Nicaea I (325)</strong>, which gave the Creed and defined the Son as "of one essence" with the Father against Arianism, through Constantinople, Ephesus, and <strong>Chalcedon (451)</strong>, to <strong>Nicaea II (787)</strong> — hammered out the doctrines of the <strong>Trinity</strong> and of the two natures of <strong>Christ</strong> that Catholics, Protestants, and Orthodox all still confess. Church and empire were bound in a partnership the Byzantines called <em><strong>symphonia</strong></em>, emperor and patriarch as the two authorities under God.</p>
+
+    <h2>Becoming god</h2>
+
+    <p>The distinctive heart of Orthodox theology is <em><strong>theosis</strong></em> — deification. Its classic statement, from Athanasius, is startling: "<strong>God became man so that man might become god.</strong>" Salvation, for the Orthodox, is not primarily a legal transaction in which a sinner is pardoned (as much Western theology would frame it) but a <em>transformation</em> — the human person, through grace, the sacraments (the "mysteries"), and prayer, growing into likeness with God and true communion with him. This does not mean humans become God in essence — God remains unique and unknowable in his being — but that they come to share in the divine life, gaining immortality, incorruption, and union. Theosis is the goal of the whole Christian life, and it colors everything else in Orthodoxy.</p>
+
+    <h2>The war over the image</h2>
+
+    <p>The most dramatic crisis of Byzantine religion was the <strong>Iconoclastic Controversy</strong> (726–843), a violent dispute over the veneration of <strong>icons</strong> — sacred images of Christ, the Virgin (the <em>Theotokos</em>), and the saints. The <strong>iconoclasts</strong> ("image-breakers"), backed for a century by emperors, condemned icons as idolatry and destroyed them. The <strong>iconodules</strong> ("image-venerators") defended them with a profound argument rooted in the <strong>Incarnation</strong>: because the invisible God had himself become <strong>visible flesh</strong> in Christ, he could now be depicted, and to deny this was to deny the reality of the Incarnation. Veneration, they insisted, was not worship of the wood and paint but passed <em>through</em> the image to the <strong>prototype</strong> it represented. The great defenders were <strong>John of Damascus</strong> and <strong>Theodore the Studite</strong>; their position was affirmed at <strong>Nicaea II (787)</strong> and finally sealed in 843, a day still celebrated as the "<strong>Triumph of Orthodoxy</strong>." The icon became, and remains, central to Orthodox worship and theology.</p>
+
+    <h2>The two lungs divide</h2>
+
+    <p>The unity of Christendom did not last. Over centuries the Greek East and Latin West drifted apart in language, custom, and theology, and the estrangement crystallized in the <strong>Great Schism</strong> conventionally dated to <strong>1054</strong>, when the papal legate Cardinal Humbert laid a bull of excommunication on the altar of Hagia Sophia and the patriarch responded in kind. Two great issues divided them: the claim of the <strong>Pope</strong> to universal authority over the whole Church, which the East rejected in favor of a communion of equal patriarchs; and the <em><strong>filioque</strong></em> — the Western addition to the Creed asserting that the Holy Spirit proceeds "from the Father <em>and the Son</em>," where the East held (and holds) that the Spirit proceeds <strong>from the Father alone</strong>. The rupture, hardened by the Crusaders' sack of Constantinople in <strong>1204</strong>, became permanent, splitting Christianity into the <strong>Catholic</strong> West and the <strong>Orthodox</strong> East — a division that endures to this day.</p>
+
+    <h2>The prayer of the heart</h2>
+
+    <p>Orthodoxy's mystical core is <strong>Hesychasm</strong> (from <em>hesychia</em>, "stillness"), the tradition of inner, unceasing prayer practiced above all by the monks of <strong>Mount Athos</strong>. Its instrument is the <strong>Jesus Prayer</strong> — "Lord Jesus Christ, Son of God, have mercy on me, a sinner" — repeated continually, synchronized with the breath, until it descends from the lips into the heart and prays itself. The hesychast monks claimed that through such prayer they could behold the <strong>uncreated Light</strong> — the very light that shone from Christ at his Transfiguration on Mount Tabor. When this was ridiculed by the philosopher Barlaam, the monk <strong>Gregory Palamas</strong> (1296–1359) defended it with a crucial distinction: God's <strong>essence</strong> is utterly beyond us, but his <strong>energies</strong> — his grace, love, and light — are truly God and can be genuinely experienced. Through the divine energies, a human being may really participate in God and even <em>see</em> his uncreated Light. Palamas's teaching was confirmed by councils at Constantinople (1341–1351) and became Orthodox dogma — the theological guarantee that <em>theosis</em> is real.</p>
+
+    <h2>Liturgy, monastery, and the Third Rome</h2>
+
+    <p>Orthodox life centers on the <strong>Divine Liturgy</strong> (chiefly that of St. John Chrysostom), experienced as a mystical participation in the heavenly worship — "heaven on earth." Its <strong>monasticism</strong>, descended from the Egyptian desert fathers, ranges from great communities to solitary hermits, with Mount Athos as its enduring heart. And Orthodoxy proved a great missionary faith: the brothers <strong>Cyril and Methodius</strong> created a Slavonic liturgy and the alphabet that became <strong>Cyrillic</strong>, carrying Orthodoxy to Bulgaria, Serbia, and the Rus (ch59). When Constantinople fell to the Ottomans in <strong>1453</strong>, Moscow claimed the mantle of the "<strong>Third Rome</strong>," and the various national churches (Greek, Russian, Serbian, Romanian, and more) continued as self-governing (<em>autocephalous</em>) members of one Orthodox communion.</p>
+
+    <h2>The other East: the Oriental Orthodox</h2>
+
+    <p>One earlier split must be noted for completeness. At the Council of <strong>Chalcedon (451)</strong>, over the precise way to describe the union of divine and human in Christ, a group of ancient churches parted from the imperial church — the <strong>Oriental Orthodox</strong>: the <strong>Coptic</strong> (Egyptian), <strong>Armenian</strong>, <strong>Ethiopian</strong>, and <strong>Syriac</strong> churches, who hold that Christ is in "one united nature" (<em>miaphysis</em>) and are often, somewhat misleadingly, called "Monophysite." These are among the oldest continuous Christian communities on earth, distinct from both the Eastern Orthodox and the Catholic West, and they carry their own ancient liturgies, languages, and traditions to the present day.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The icon.</strong> The icon is Orthodoxy's supreme symbol and its theology in paint: not a naturalistic portrait but a <strong>window into heaven</strong>, using inverse ("reverse") perspective so that the vanishing point lies in the viewer, drawing the beholder into the sacred rather than the eye into the picture. Gold grounds encode the uncreated light; every gesture and color is fixed by tradition. The icon <em>makes present</em> what it depicts.</li>
+      <li><strong>The dome and the church.</strong> The Orthodox church is a <strong>microcosm</strong> of the cosmos: the great <strong>dome</strong>, with the face of Christ <em>Pantokrator</em> ("Ruler of All") gazing down, encodes heaven itself descending over the assembly, so that to enter the church is to stand within the ordered universe.</li>
+      <li><strong>The iconostasis.</strong> The screen of icons dividing the nave from the sanctuary encodes the boundary — and the meeting — between the earthly congregation and the heavenly altar, opened at the climax of the Liturgy.</li>
+      <li><strong>The Jesus Prayer and the uncreated Light.</strong> The endlessly repeated Prayer is a <strong>verbal icon</strong>, the Name itself carrying the presence; and the <strong>uncreated Light</strong> of Tabor is the master-symbol of theosis — the visible radiance of a God who cannot be seen in his essence but can be truly met in his energies.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Eastern Orthodoxy is the direct continuation of <strong>early Christianity</strong> (ch16) and the <strong>patristic</strong> age (ch22), and the councils it convened defined the Trinity and Christology for <strong>all</strong> later Christianity, East and West. Its schism with Rome sets the stage for the <strong>Reformation</strong> (ch31), whose own iconoclasm would echo Byzantium's; its veneration of images stands against the aniconism of <strong>Islam</strong> (ch21) and Judaism. Its mysticism of the divine Name and the uncreated Light is a Christian cousin of <strong>Sufism</strong> (ch27), <strong>Kabbalah</strong> (ch26), and the meditative and devotional paths of <strong>Zen and Pure Land</strong> (ch54). And through Cyril and Methodius it carried the faith — and a new alphabet — to the <strong>Slavs</strong> (ch59), just as the Phoenicians once carried theirs (ch58).</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical development of Byzantine Christianity; the seven Ecumenical Councils and the doctrines they defined; the Iconoclastic Controversy (726–843) and its resolution at Nicaea II and in 843; the mutual excommunications of 1054 and the long East–West estrangement, hardened by the 1204 sack of Constantinople; the Hesychast controversy and Gregory Palamas's essence/energies distinction, confirmed by the councils of 1341–1351; the mission of Cyril and Methodius and the creation of the Slavonic/Cyrillic tradition; the fall of Constantinople (1453) and the rise of the autocephalous national churches; and the ancient Oriental Orthodox churches dating from the Chalcedonian split of 451. These are firmly documented history.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The famous story of <strong>Vladimir's envoys</strong> at Hagia Sophia ("heaven or earth") is a later, edifying <strong>legend</strong>, not a documented event. And the theological claims themselves — <em>theosis</em>, the reality of the <strong>uncreated Light</strong>, the efficacy of the icon and the Jesus Prayer — are matters of <strong>faith</strong>, reported here as Orthodox belief, not as verified fact.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise moment and character of the East–West schism is more a <em>process</em> than the single event of "1054" implies — the mutual excommunications of that year were narrow and personal, and the final, total break came only gradually, so historians debate exactly when the churches truly separated. The archive reports the well-attested history, marks the legend as legend, and presents the distinctive doctrines as the living faith they are.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Theosis/deification as the central Orthodox doctrine ("God became man so that man might become god") — "Theosis (Eastern Christian theology)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Theosis_(Eastern_Christian_theology)">https://en.wikipedia.org/wiki/Theosis_(Eastern_Christian_theology)</a> ; "Eastern Orthodoxy: Doctrine," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Eastern-Orthodoxy/Doctrine">https://www.britannica.com/topic/Eastern-Orthodoxy/Doctrine</a></li>
+        <li>The seven Ecumenical Councils (Nicaea I 325 through Nicaea II 787) and the definitions of the Trinity and Christology — "Eastern Orthodox Church," Theopedia. <a href="https://theopedia.com/eastern-orthodox-church">https://theopedia.com/eastern-orthodox-church</a></li>
+        <li>The Iconoclastic Controversy and the defense of icons (John of Damascus, Theodore the Studite; the Incarnation argument; Nicaea II 787) — "Iconoclastic Controversy," Encyclopædia Britannica. <a href="https://www.britannica.com/event/Iconoclastic-Controversy">https://www.britannica.com/event/Iconoclastic-Controversy</a></li>
+        <li>The Great Schism of 1054, the filioque, papal authority, and the bull on the altar of Hagia Sophia — "East–West Schism," Britannica. <a href="https://www.britannica.com/event/East-West-Schism-1054">https://www.britannica.com/event/East-West-Schism-1054</a> ; "The Great Schism," Orthodox Church in America. <a href="https://www.oca.org/orthodoxy/the-orthodox-faith/church-history/eleventh-century/the-great-schism">https://www.oca.org/orthodoxy/the-orthodox-faith/church-history/eleventh-century/the-great-schism</a></li>
+        <li>Hesychasm, the Jesus Prayer, Gregory Palamas, and the uncreated Light / essence–energies distinction — "Hesychasm," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Hesychasm">https://www.britannica.com/topic/Hesychasm</a> ; "Uncreated Light," Wikipedia. <a href="https://en.wikipedia.org/wiki/Uncreated_Light">https://en.wikipedia.org/wiki/Uncreated_Light</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the Divine Liturgy and "heaven on earth"; Mount Athos monasticism; Cyril and Methodius and Cyrillic; the fall of Constantinople (1453) and "Third Rome"; the Oriental Orthodox (Coptic, Armenian, Ethiopian, Syriac) and the Chalcedonian split of 451.</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch61 */
+  ch61: { html: `
+    <p class="lead">An elder sings a sequence of verses, and the song is also a map. Sung in the right order, it names every waterhole, ridge, and rock across hundreds of miles of desert, so that a person who knows the song can cross a country they have never seen — following the exact path an Ancestral Being walked at the beginning, when the world was sung into shape. This is a <strong>songline</strong>, and it belongs to what may be the oldest continuous religious tradition on earth.</p>
+
+    <h2>The oldest living tradition</h2>
+
+    <p>Aboriginal Australians have maintained their spiritual traditions for more than <strong>sixty-five thousand years</strong> — a continuity beside which every other religion in this archive is young. But it is a mistake, and one this chapter must flag at the outset, to speak of "<em>the</em>" Aboriginal religion, for there was never one: the continent held <strong>hundreds of distinct peoples</strong>, languages, and traditions, each with its own Ancestral Beings and its own Dreaming. What they share is not a single creed but a common <em>grammar</em> — the world shaped by ancestral travellers, those journeys written into the land, and every person bound by totem to a particular place and living thing. And crucially, this is not a religion of the dead past: it is <strong>alive today</strong>, practiced by living communities, even as it reaches back into deep prehistory. The archive places it here, at the book's chronological root, precisely because it is the closest thing we have to a living window onto the religious mind of the deep human past — while insisting it is a present, not a past, faith.</p>
+
+    <h2>The Dreaming</h2>
+
+    <p>At the center of Aboriginal belief is what English calls the <strong>Dreaming</strong> or <strong>Dreamtime</strong> — an inadequate translation of words like the Western Desert <strong>Tjukurpa</strong> and the Arrernte <strong>Altjira</strong>. It is <em>not</em> a "time" in the ordinary sense, and not a dream. It is better rendered as the "<strong>everywhen</strong>": an eternal, ongoing creative reality that is past, present, and future at once. In the Dreaming the great <strong>Ancestral Beings</strong> — part human, part animal, part landform — emerged into a featureless world and travelled across it, and in their journeys and deeds they <em>shaped</em> the land: this ridge is where an ancestor lay down, that waterhole is where one dug, that rock is an ancestor's body turned to stone. They did not then depart; they remain <em>present</em> in the country they made, in its features and its species. And they laid down the <strong>Law</strong> (also called Tjukurpa) — the pattern of kinship, ceremony, land-custody, and right living that people are bound to keep. To be Aboriginal in the traditional sense is to live inside a landscape that is at once map, scripture, ancestor, and law.</p>
+
+    <h2>Songlines and Country</h2>
+
+    <p>The travels of the Ancestral Beings are inscribed in the land as <strong>songlines</strong> (dreaming tracks) — routes across the country, each carried in a <strong>song-cycle</strong> that names its features in sequence. The songline is simultaneously a myth, a navigational map, a property register, and a liturgy; songlines cross the boundaries of many languages, each people singing its own stretch, so that a single track may run for a thousand miles through a dozen tongues. Bound up with this is the concept of <strong>Country</strong> — not "land" as property but a living, conscious, sacred web of which people are <em>part</em>. In the Aboriginal understanding a person does not own Country; a person <strong>belongs</strong> to it, is kin to it, and carries a sacred duty to "care for Country." Every individual is born with a <strong>totem</strong> — an ancestral being and an associated species and place — that fixes their identity, their kin obligations, and their responsibilities to a particular tract of the sacred land.</p>
+
+    <h2>The Ancestral Beings</h2>
+
+    <p>Among the countless Ancestral Beings, some are widespread. The most famous is the <strong>Rainbow Serpent</strong>, a great creator-being associated with water, rain, and fertility, known across much of the continent under many names, who carved rivers and gorges and remains in deep waterholes. In the Kimberley, the <strong>Wandjina</strong> are the supreme creator and rain beings of the Worrora, Ngarinyin, and Wunambal peoples — depicted with great dark eyes "like the eye of a storm" and, strikingly, <strong>no mouth</strong>, for a mouth would make them too powerful; they control the seasons and the rains. Across Arnhem Land, the desert, and every region, distinct beings shaped distinct countries. There is generally no single supreme "God" of the Western kind; there is the Dreaming, and the Ancestral Beings who fill and sustain it.</p>
+
+    <h2>Ceremony and the sacred object</h2>
+
+    <p>Aboriginal religion is transmitted entirely <strong>orally and through performance</strong> — there is no scripture. Its life is <strong>ceremony</strong>: the gatherings often called <em>corroboree</em>, the great <strong>initiation</strong> rites that make boys and girls into adults and open the sacred knowledge to them stage by stage, and the mortuary and increase rites that keep the land and its species fertile. Much of this knowledge is <strong>restricted</strong> — divided into "men's business" and "women's business," and graded by initiation, so that the deepest truths are held only by the fully initiated and are not to be shared with outsiders or the uninitiated. Sacred <strong>objects</strong> carry ancestral power, above all the incised stone or wooden <strong>tjurunga</strong> (churinga), regarded as holding the very essence of an ancestor and kept hidden from ordinary sight. Body painting, the <strong>bullroarer</strong>, the <strong>didgeridoo</strong>, and elaborate designs all serve the ceremonial re-enactment of the Dreaming — for in ceremony, the everywhen becomes present again.</p>
+
+    <h2>The record in stone</h2>
+
+    <p>Aboriginal Australia holds the <strong>oldest continuous painting tradition on earth</strong>. Its rock art spans tens of thousands of years: the enigmatic, elegant <strong>Gwion Gwion</strong> figures (the "Bradshaw" art) of the Kimberley, estimated at over twenty thousand years old; the great <strong>Wandjina</strong> images, repainted across generations; and the "<strong>X-ray</strong>" art of Arnhem Land, which shows animals and beings with their inner organs and bones — the life-essence made visible. Crucially, much of this art is not a <em>relic</em> but a <strong>living</strong> practice: certain images are ritually <strong>repainted</strong>, their power renewed by the act, so that a Wandjina figure on a rock wall may be at once ancient and freshly made — a tradition of continuous renewal rather than preservation.</p>
+
+    <h2>Dispossession and survival</h2>
+
+    <p>Colonization from 1788 brought catastrophe — dispossession, massacre, disease, the forced removal of children, and the deliberate destruction of language and ceremony. Sacred sites have been lost even in living memory: in 2020 the 46,000-year-old <strong>Juukan Gorge</strong> rock shelters were destroyed by mining, an act that caused national outrage. Yet the tradition endures. The struggle for <strong>land rights</strong>, for the protection of sacred sites, and for the <strong>repatriation</strong> of sacred objects and ancestral remains is itself now part of the living religious life of Aboriginal Australia — the defense of Country against those who would treat it as mere ground.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The songline.</strong> The single most remarkable encoding in this archive: a <strong>song</strong> that is simultaneously a <strong>map</strong>, a <strong>law</strong>, and a <strong>title-deed</strong>, so that the land itself is a text sung into legibility. Knowledge, navigation, and religion are one thing.</li>
+      <li><strong>The concentric circle.</strong> The iconography of Central and Western Desert painting reads the land from <strong>above</strong>: concentric circles for waterholes and sacred sites, connecting lines for the ancestors' paths, U-shapes for people seated — an aerial map of Country and Dreaming at once. And the famous <strong>dot-painting</strong> style both <em>reveals</em> a design's surface and <em>conceals</em> the restricted sacred knowledge beneath it, showing outsiders the pattern but not its inner meaning.</li>
+      <li><strong>The Rainbow Serpent and the Wandjina.</strong> The serpent encodes water, fertility, and the creative-destructive power that carved the land; the mouthless, storm-eyed Wandjina encodes a power so great it must be shown <em>without a mouth</em>.</li>
+      <li><strong>X-ray art</strong> encodes the belief that the true reality of a being is its <strong>inner life-essence</strong> — the bones and organs — not merely its outward form.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Aboriginal religion opens the archive's deepest chronological horizon, standing beside the <strong>Paleolithic and Neolithic</strong> (ch41–ch42) as a living tradition that may illuminate the religious world of the deep human past — though the archive resists the temptation to treat a present people as a museum of prehistory. Its <strong>totemism</strong> became, through Émile Durkheim's <em>Elementary Forms of the Religious Life</em>, the foundation of the modern <strong>sociology of religion</strong> — the theory that the sacred is society worshipping itself. Its "<strong>everywhen</strong>" is a conception of sacred time unlike either the line or the wheel of ch50; its <strong>Rainbow Serpent</strong> belongs with the world's <strong>creation</strong> beings (ch46); its purely <strong>oral</strong> transmission parallels the Vedic (ch05) and the Baltic dainos (ch59); and its sacred bond to <strong>Country</strong> connects to the reverence for sacred land found throughout this book. It is joined in the next chapters by the other great living oral traditions of the Americas and Oceania (ch62, ch63).</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The extraordinary <strong>antiquity</strong> and continuity of Aboriginal presence and culture in Australia (more than 60,000 years, archaeologically established), making it among the oldest continuous living traditions on earth; the reality of the core concepts — the Dreaming/Tjukurpa, songlines, totemism, connection to Country, the Ancestral Beings including the Rainbow Serpent and the Wandjina; the ceremonial and oral transmission and the restricted grading of sacred knowledge; and the rock-art record as the oldest continuous painting tradition, including living repainting. The colonial catastrophe and the destruction of sites such as Juukan Gorge (2020) are documented fact.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact) / to be rejected</h4>
+        <p>The idea of a <strong>single</strong> Aboriginal religion is false — the traditions are many and diverse. "<strong>Dreaming/Dreamtime</strong>" is an imperfect colonial-era translation and should not be taken literally as "a dream" or "a past age." Sensational appropriations — such as the pseudo-archaeological claim that the Wandjina depict "ancient aliens," or New Age repackagings of Aboriginal spirituality — are <strong>distortions</strong> and are rejected here. The precise dating and authorship of the oldest rock art (e.g. the Gwion Gwion) are debated.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and deliberately closed</h4>
+        <p>Much of the deepest content of these traditions is <strong>restricted sacred knowledge</strong>, not to be published, and the archive reports only what is already public and respects that boundary rather than treating it as a gap to be filled. The exact meanings of the most ancient rock art, and the full pre-contact diversity of belief across the continent, are in many cases unrecoverable or rightly held only by their custodians. The archive documents what is openly known, refuses the appropriations, and honors what is not ours to tell.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Dreaming/Dreamtime as the "everywhen," the Ancestral Beings and the shaping of the land, the Law (Tjukurpa/Altjira), and the 65,000-year continuity — "Dreamtime," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/religion-and-philosophy/dreamtime">https://www.ebsco.com/research-starters/religion-and-philosophy/dreamtime</a> ; "Australian Aboriginal mythology," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/religion-and-philosophy/australian-aboriginal-mythology/">https://www.ebsco.com/research-starters/religion-and-philosophy/australian-aboriginal-mythology/</a></li>
+        <li>Songlines: dreaming tracks as song, map, and law, crossing language boundaries — "Songline," Wikipedia. <a href="https://en.wikipedia.org/wiki/Songline">https://en.wikipedia.org/wiki/Songline</a></li>
+        <li>Totemism, connection to Country, sacred sites, and the diversity of traditions — "Australian Aboriginal Religions: History, Beliefs &amp; Practices," Study.com. <a href="https://study.com/academy/lesson/australian-aboriginal-religions-history-beliefs-practices.html">https://study.com/academy/lesson/australian-aboriginal-religions-history-beliefs-practices.html</a> ; "Aboriginal Religion," AboriginalCulture.com.au. <a href="https://www.aboriginalculture.com.au/aboriginal-religion/">https://www.aboriginalculture.com.au/aboriginal-religion/</a></li>
+        <li>The Wandjina (Kimberley creator/rain beings; mouthless, storm-eyed) and the reclaiming of sacred images from appropriation — "Wandjina," Wikipedia. <a href="https://en.wikipedia.org/wiki/Wandjina">https://en.wikipedia.org/wiki/Wandjina</a> ; "What are Wandjinas?", Creative Spirits. <a href="https://www.creativespirits.info/aboriginalculture/arts/what-are-wandjinas">https://www.creativespirits.info/aboriginalculture/arts/what-are-wandjinas</a></li>
+        <li>Rock art: the Gwion Gwion (Bradshaw) figures, Wandjina, and X-ray art as the oldest continuous painting tradition, including repainting — "Aboriginal Rock Art in Australia," Artark. <a href="https://artark.com.au/blogs/news/aboriginal-rock-art">https://artark.com.au/blogs/news/aboriginal-rock-art</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the Rainbow Serpent as widespread creator-being; the tjurunga/churinga and restricted men's/women's knowledge; Durkheim's use of Aboriginal totemism (ch context); the 2020 Juukan Gorge destruction; desert concentric-circle iconography and dot-painting.</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch62 */
+  ch62: { html: `
+    <p class="lead">Around the year 1100, on the floodplain across the river from modern St. Louis, stood a city. At its heart rose <strong>Monks Mound</strong> — a flat-topped earthen pyramid built up over centuries in fourteen stages, its base larger than that of the Great Pyramid of Giza, crowned by a great temple and the house of a paramount chief. This was <strong>Cahokia</strong>, the largest city in North America north of Mexico, home to perhaps fifteen thousand people, aligned to the sun by a great timber circle. It is the most dramatic monument of a religious world that Europeans would later pretend did not exist — the vast, ancient, and staggeringly diverse spiritual life of Native North America.</p>
+
+    <h2>The problem of "one" religion</h2>
+
+    <p>There is no such thing as <em>the</em> Native American religion. At the time of European contact, the peoples of North America spoke some <strong>three hundred distinct languages</strong> and lived in hundreds of nations, each with its own beliefs, ceremonies, and sacred stories — from the communal cyclic rituals of the Pueblo to the individual vision-seeking of the Plains, from the potlatch of the Northwest Coast to the mound-cities of the Mississippi. What follows traces <em>shared threads</em>, not a single creed, and it does so knowing two things: that these are <strong>living</strong> traditions, practiced today, not relics; and that many are <strong>oral</strong> and place-specific, and hold sacred knowledge that is not ours to tell.</p>
+
+    <h2>The sacred power in everything</h2>
+
+    <p>If there is a common intuition, it is that a <strong>sacred power pervades all things</strong>. English flattened this into the "<strong>Great Spirit</strong>," but the native concepts are subtler. The Lakota <strong>Wakan Tanka</strong> — often translated "Great Spirit" but closer to "<strong>Great Mystery</strong>" or "the Sacred" — is an abstract, omnipresent creative power, never fully personified, the sacredness residing in everything. The Algonquian <strong>Manitou</strong> (Gitche Manitou, "Great Spirit") is a spiritual power that can dwell in a rock, a tree, an animal, a person, or even a dream. The Iroquois and Huron <strong>orenda</strong> is a transmissible spiritual energy present in varying degrees in all things — a successful hunter's orenda overcoming his quarry's. This is an essentially <strong>animist</strong> vision: the world is alive and personed, the line between the human and animal worlds is thin, and animals, plants, mountains, and winds are relatives and powers, not resources.</p>
+
+    <h2>Creation and the trickster</h2>
+
+    <p>Two great patterns of creation recur (both treated in ch46). In the <strong>earth-diver</strong> myth, dominant across the north and east, the world begins as a limitless sea, and a creator sends an animal — muskrat, loon, beaver — diving to bring up a speck of mud from which the earth grows on the back of a great <strong>Turtle</strong>, so that this continent is "<strong>Turtle Island</strong>." In the Iroquois telling, <strong>Sky Woman</strong> falls from the sky-world and is caught on the turtle's back, where the earth is built for her. In the Southwest, the <strong>emergence</strong> myth prevails: the Pueblo and Diné (Navajo) peoples climbed up through a series of lower worlds into this one. And presiding over many creations is the <strong>trickster</strong> — <strong>Coyote</strong> in the West, <strong>Raven</strong> on the Northwest Coast, <strong>Nanabozho</strong> among the Anishinaabe — at once creator, culture-hero, fool, and cosmic disruptor, who shapes the world as much by blunder and appetite as by design, and who teaches by breaking every rule.</p>
+
+    <h2>The vision and the healer</h2>
+
+    <p>Across much of the continent, and especially on the Plains, the deepest religious act was the <strong>vision quest</strong>: a seeker went alone to a high or sacred place and fasted, without food or water, for days and nights, praying for a <strong>vision</strong> and a <strong>guardian spirit</strong> to guide their life. Visions, dreams, and altered states were not marginal but central — the primary channel to the spirit world, and the foundation of most healing. The <strong>medicine person</strong> (often called, imperfectly, a "shaman") was the specialist who could enter those states to heal, to find game, to see the future, and to mediate between the community and the powers.</p>
+
+    <h2>The great ceremonies</h2>
+
+    <p>Native ceremonial life was rich and various. The Plains <strong>Sun Dance</strong> renewed the world and the community through days of dancing, fasting, and — for some dancers — self-sacrifice and piercing, the suffering offered for the good of all. The <strong>Sacred Pipe</strong> (the calumet) was, for the Lakota and many others, the central holy object: given, the Lakota say, by <strong>White Buffalo Calf Woman</strong>, its rising smoke carried prayers between humans and the sacred, and its sharing sealed truth and peace. The <strong>sweat lodge</strong> purified; the Northwest Coast <strong>potlatch</strong> redistributed wealth and fixed status and rights in great gift-giving feasts; the Pueblo peoples danced the <strong>kachinas</strong> (ancestral spirit-beings) in their plaza and prayed in underground <strong>kivas</strong> on a communal, seasonal cycle; and the Southeastern peoples kept the <strong>Green Corn</strong> ceremony of renewal and forgiveness. Over much of the continent lay the shared grammar of the <strong>four directions</strong>, each with its color and power, gathered in the <strong>medicine wheel</strong>.</p>
+
+    <h2>The record in earth and stone</h2>
+
+    <p>North America holds monuments to match its faiths. For millennia its peoples raised <strong>mounds</strong>: the <strong>Adena</strong> and <strong>Hopewell</strong> built vast geometric earthworks and effigy mounds (the quarter-mile <strong>Serpent Mound</strong> of Ohio) for burial and ceremony; the <strong>Mississippian</strong> culture built the pyramid-cities, of which <strong>Cahokia</strong> (c. 950–1350) was the greatest, with its aligned "<strong>Woodhenge</strong>" and the shared religious art historians call the <strong>Southeastern Ceremonial Complex</strong> — the falcon-warrior "<strong>birdman</strong>," the cross-in-circle, the weeping eye. In the Southwest, the <strong>Ancestral Puebloans</strong> raised the great houses of <strong>Chaco Canyon</strong>, precisely aligned to the movements of the sun and moon. (The old racist "Mound Builder myth" — that some vanished non-Indian race must have built these works — is false and long refuted: they were built by the ancestors of today's Native peoples.)</p>
+
+    <h2>Catastrophe and renewal</h2>
+
+    <p>European colonization brought demographic collapse, dispossession, forced conversion, and the banning of ceremonies like the Sun Dance and the potlatch. Out of that crucible came powerful new movements. The <strong>Ghost Dance</strong>, born of the Paiute prophet <strong>Wovoka</strong>'s vision in 1889, promised that faithful dancing would bring back the dead, the buffalo, and a renewed earth free of the invaders — a messianic hope (ch50) that spread across the Plains and ended in the massacre of some 250 Lakota at <strong>Wounded Knee</strong> in 1890. The Iroquois prophet <strong>Handsome Lake</strong> founded the enduring <strong>Longhouse religion</strong> in 1799. And the <strong>Native American Church</strong>, crystallizing around 1885, built a new pan-Indian faith around the sacramental use of <strong>peyote</strong> — the vision-giving cactus used in the Americas for thousands of years — fused with Christian elements, and today the most widespread Indigenous religion in North America, its peyote sacrament now legally protected.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The medicine wheel and the four directions.</strong> The circle divided into four quarters, each with its color, animal, and power, encodes the whole cosmos and the human place within it — a map of the sacred order carried in a single figure.</li>
+      <li><strong>The cross-in-circle and the birdman.</strong> The Mississippian <strong>cross-in-circle</strong> encodes the four directions and the sacred fire/sun at the center; the <strong>birdman</strong> (the falcon-costumed warrior) encodes the union of the sky-power and the human ruler — the iconography of a whole religious civilization stamped on shell and copper.</li>
+      <li><strong>The sacred pipe and the rising smoke.</strong> The <strong>calumet</strong> encodes the covenant between the human and sacred worlds; its smoke, drawn in and breathed upward, is the visible carrier of prayer — the same intuition as incense across the archive.</li>
+      <li><strong>The mound as sacred mountain.</strong> The earthen pyramid encodes the <strong>world-axis</strong> and the raised meeting-place of earth and sky, kin to the Neolithic tumulus (ch42) and the Mesoamerican pyramid (ch29). And the <strong>Turtle</strong> encodes the whole earth borne on a living back — creation resting on a creature.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Native North American religion shares the <strong>earth-diver</strong> and <strong>emergence</strong> creation patterns explored in ch46, and its pervasive <strong>sacred power</strong> (Wakan Tanka, Manitou, orenda) is a close cousin of Polynesian <strong>mana</strong> (ch63) and of the animist substrate beneath the <strong>prehistoric</strong> traditions (ch41). Its <strong>mound-pyramids</strong> align it with the sacred mountains of the <strong>Neolithic</strong> (ch42) and the temple-pyramids of the <strong>Aztec, Maya, and Inca</strong> (ch29); its <strong>vision quest</strong> and medicine-work belong with the shamanism debated in ch41; and its <strong>Ghost Dance</strong> is a classic <strong>apocalyptic/millenarian</strong> movement (ch50) born, like so many, from catastrophe (ch35). It stands beside the <strong>Aboriginal</strong> (ch61) and <strong>Oceanic</strong> (ch63) traditions as one of the great living oral religions of the world.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The mound-building cultures and their monuments — Adena, Hopewell, and the Mississippian Cahokia (c. 950–1350) with Monks Mound and Woodhenge; the Ancestral Puebloan great houses of Chaco Canyon and their astronomical alignments — all built by the ancestors of today's Native peoples. The core religious concepts (Wakan Tanka, Manitou, orenda; animism; the earth-diver and emergence creations; the trickster) and the great ceremonies (Sun Dance, sacred pipe, potlatch, kachina, Green Corn, vision quest) are well attested. The Ghost Dance and Wounded Knee (1890), the Longhouse religion (Handsome Lake, 1799), and the Native American Church (peyotism) are documented history.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact) / to be rejected</h4>
+        <p>There is <strong>no single</strong> Native American religion, and "<strong>Great Spirit</strong>" is a simplifying colonial gloss. The racist <strong>"Mound Builder myth"</strong> — that a lost non-Native race built the earthworks — is <strong>false</strong> and rejected here. Commercial and New Age <strong>appropriations</strong> ("plastic medicine men," sold sweat-lodge and vision-quest "experiences") are distortions, not the traditions. Because so much pre-contact belief is reconstructed from <em>post</em>-contact ethnography, some accounts carry the distortions of their outside recorders.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open — and rightly restricted</h4>
+        <p>The specific religious meanings of much ancient art (the Southeastern Ceremonial Complex, Chaco's alignments) are debated; and, as with the Aboriginal traditions, much sacred knowledge is <strong>restricted</strong> by its communities and is not published here. The archive reports the well-documented monuments, movements, and public teachings, refuses the appropriations and the racist myth, and honors what is not ours to tell.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The concepts of sacred power: Wakan Tanka (Lakota), Manitou/Gitche Manitou (Algonquian), and orenda (Iroquois/Huron); animism; and the diversity of ~300 languages/traditions — "Wakan-Tanka," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Wakan-Tanka">https://www.britannica.com/topic/Wakan-Tanka</a> ; "Orenda," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/orenda">https://www.britannica.com/topic/orenda</a> ; "Native American religions," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Native-American-religion">https://www.britannica.com/topic/Native-American-religion</a></li>
+        <li>The trickster (Coyote, Raven, Nanabozho) and creation (earth-diver, Turtle Island, Sky Woman, emergence) — "Coyote and Raven, American Tricksters," Crash Course World Mythology. <a href="https://thecrashcourse.com/courses/coyote-and-raven-american-tricksters-crash-course-world-mythology-22/">https://thecrashcourse.com/courses/coyote-and-raven-american-tricksters-crash-course-world-mythology-22/</a></li>
+        <li>The vision quest, the medicine person, the Sun Dance, and the Sacred Pipe (White Buffalo Calf Woman) — "Vision quest," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/vision-quest">https://www.britannica.com/topic/vision-quest</a> ; "Sun Dance," World History Encyclopedia. <a href="https://www.worldhistory.org/Sun_Dance/">https://www.worldhistory.org/Sun_Dance/</a> ; "Sacred Pipe," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Sacred-Pipe">https://www.britannica.com/topic/Sacred-Pipe</a></li>
+        <li>The mound-builders and Cahokia (Monks Mound, c. 950–1350) and the Southeastern Ceremonial Complex — "Cahokia Mounds," Encyclopædia Britannica. <a href="https://www.britannica.com/place/Cahokia-Mounds">https://www.britannica.com/place/Cahokia-Mounds</a> ; "Southeastern Ceremonial Complex," Wikipedia. <a href="https://en.wikipedia.org/wiki/Southeastern_Ceremonial_Complex">https://en.wikipedia.org/wiki/Southeastern_Ceremonial_Complex</a></li>
+        <li>Chaco Canyon and Ancestral Puebloan astronomy — "Cultural Astronomy of the Ancestral Puebloan," Crow Canyon Archaeological Center. <a href="https://crowcanyon.org/resources/cultural-astronomy-of-the-ancestral-puebloan-chaco-hovenweep-mesa-verde-and-wupatki/">https://crowcanyon.org/resources/cultural-astronomy-of-the-ancestral-puebloan-chaco-hovenweep-mesa-verde-and-wupatki/</a></li>
+        <li>The Ghost Dance (Wovoka, 1889–90; Wounded Knee) and the Native American Church (peyotism, c. 1885) — "Ghost Dance," Encyclopedia.com. <a href="https://www.encyclopedia.com/history/united-states-and-canada/north-american-indigenous-peoples/ghost-dance">https://www.encyclopedia.com/history/united-states-and-canada/north-american-indigenous-peoples/ghost-dance</a> ; "Native American Church," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Native-American-Church">https://www.britannica.com/topic/Native-American-Church</a></li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch63 */
+  ch63: { html: `
+    <p class="lead">On a treeless island in the remotest corner of the Pacific stand hundreds of colossal stone figures, most with their backs to the sea, gazing inward over the land. They are the <strong>moai</strong> of Rapa Nui (Easter Island) — carved images of the ancestors, set up to face the living villages and to pour the ancestors' sacred power over them. They are the most famous monuments of Oceania, and they open onto a religious world built on two ideas that the English language borrowed and never gave back: <em>mana</em> and <em>taboo</em>.</p>
+
+    <h2>The peopling of the sea</h2>
+
+    <p>The settlement of the Pacific was one of the greatest feats in human history: over thousands of years, seafaring peoples crossed a third of the globe by canoe, navigating by the stars, the swells, and the birds to find and settle islands scattered across an ocean vaster than all the continents combined. Their religions divide, broadly, into two great regions (the third, Aboriginal Australia, has its own chapter, ch61): <strong>Polynesia</strong>, the great triangle from Hawai'i to New Zealand to Rapa Nui, with its grand gods and sacred chiefs; and <strong>Melanesia</strong>, the islands north and east of Australia, with its ancestor-spirits and secret societies. In both, the knowledge of <strong>navigation</strong> itself was sacred — a lore of the sky and sea held by master wayfinders.</p>
+
+    <h2>Mana and tapu</h2>
+
+    <p>Two concepts govern all of Polynesian (and much of Oceanic) religion. <strong>Mana</strong> is sacred power — a spiritual potency and efficacy that dwells in gods, in chiefs, in objects, in words, and in successful action; to have mana is to be charged with the sacred and effective in the world. <strong>Tapu</strong> (the source, via Captain Cook, of the English word <strong>taboo</strong>) is the sacred-forbidden: the state of being so charged with the sacred that contact is dangerous and restricted. The two are inseparable — what has great mana is tapu — and together they ordered all of life, from the chief's person to the preparation of food; the violation of an important tapu could be punishable by <strong>death</strong>. Society was ranked by mana: the <strong>ariki</strong> (chiefs) held it by descent from the gods, and the <strong>tohunga</strong> (Hawaiian <em>kahuna</em>), the priest-experts, knew how to wield and contain it.</p>
+
+    <h2>The gods and the world-parents</h2>
+
+    <p>Polynesian creation begins, in the classic Māori account, with <strong>Rangi</strong>, the Sky Father, and <strong>Papa</strong>, the Earth Mother, locked in embrace in the darkness, until their children force them apart to let in the light and make the world (the world-parent cosmogony of ch46). From them come the great gods, worshipped across Polynesia under related names: <strong>Tangaroa</strong> (Hawaiian <strong>Kanaloa</strong>), god of the sea; <strong>Tāne</strong> (<strong>Kāne</strong>), god of forests, birds, and light; <strong>Tū</strong> (<strong>Kū</strong>), god of war; and <strong>Rongo</strong> (<strong>Lono</strong>), god of agriculture and peace. Beloved above all is <strong>Māui</strong>, the trickster-hero who fished up the islands from the sea, snared the sun to slow it, and died seeking immortality for humankind. Regional deities loom large — the Hawaiian volcano goddess <strong>Pele</strong>, beautiful and destroying. Worship centered on the open sacred precinct, the <strong>marae</strong> (Hawaiian <strong>heiau</strong>), with offerings, chant, feasting, and — in some societies — <strong>human sacrifice</strong> to the war-god.</p>
+
+    <h2>Rapa Nui: the ancestors in stone</h2>
+
+    <p>Rapa Nui developed a self-contained Polynesian religious world of extraordinary intensity. Its people carved and raised nearly a thousand <strong>moai</strong>, ancestor-images set on stone platforms (<em>ahu</em>) facing the villages, channeling the ancestors' <strong>mana</strong> to protect and nourish the living. In a later age of upheaval the moai were toppled, and a new cult arose: the <strong>birdman</strong> (<em>tangata manu</em>) cult of the creator-god <strong>Makemake</strong>, in which each year the young men competed to retrieve the first sooty-tern egg from an offshore islet, the winner becoming the sacred birdman for the year. (The old story that the Rapa Nui simply destroyed their own environment and society in a self-inflicted "collapse" is now seriously <strong>contested</strong> by recent archaeology, which finds a more resilient and complex history.)</p>
+
+    <h2>Melanesia: ancestors, masks, and cargo</h2>
+
+    <p>Melanesian religion followed a different pattern — generally without Polynesia's grand pantheon of high gods, and centered instead on <strong>ancestor spirits</strong> and local powers, elaborate <strong>masks</strong> and carvings, and initiatory <strong>secret societies</strong>. Leadership was often the achievement of the "<strong>big man</strong>," whose status was earned through feasting and exchange rather than inherited by sacred descent, though <strong>mana</strong> operated here too. And Melanesia produced one of the most studied religious phenomena of the modern age: the <strong>cargo cults</strong> — millenarian movements, hundreds of them, in which prophets announced the imminent return of ancestors or heroes bringing "<strong>cargo</strong>," the manufactured wealth of the outsiders. The most famous, the <strong>John Frum</strong> movement on Tanna (from the late 1930s), still awaits its promised deliverer. Far from being merely "confused," these movements are <strong>logical</strong> within a cosmology in which wealth flows from the spirit world and ancestors provide for their descendants: if that is so, then performing the right rituals to obtain the cargo makes perfect sense — a genuine apocalyptic hope (ch50) born of colonial encounter.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The ancestor image.</strong> The <strong>moai</strong> and the smaller carved <strong>tiki</strong> encode the ancestor made present and the <strong>mana</strong> he channels to the living — the megalithic ancestor-cult of the Pacific, kin to the standing stones of the Neolithic (ch42).</li>
+      <li><strong>The tatau.</strong> Polynesian <strong>tattoo</strong> (<em>tatau</em> — the origin of the English word) is sacred encoding written on the body: its motifs record genealogy, rank, milestones, and protection, so that a person's history and mana are inscribed in their skin.</li>
+      <li><strong>Mana and tapu</strong> are themselves a symbolic <em>system</em> — an invisible economy of sacred power and prohibition mapped onto every person, object, and act, making the whole social world a diagram of the sacred.</li>
+      <li><strong>The star-path.</strong> The wayfinder's knowledge — the rising and setting points of the stars, the swells, the flight of birds — is an encoded <strong>cosmology of navigation</strong>, the sky read as a sacred map by which a people found their islands.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Oceanic religion contributes two of the most important concepts in the entire comparative study of religion: <strong>mana</strong> and <strong>taboo</strong>, which anthropology took as keys to the nature of the sacred itself — cousins of the Native American <strong>orenda</strong> and <strong>Wakan Tanka</strong> (ch62). Its <strong>world-parents</strong> Rangi and Papa belong with the creation cosmogonies of ch46; its <strong>moai</strong> ancestor-cult with the megaliths (ch42) and the reverence for the dead throughout this archive; its <strong>cargo cults</strong> with the apocalyptic and millenarian movements of ch50 and the new religious movements of ch35. It stands with the <strong>Aboriginal</strong> (ch61) and <strong>Native North American</strong> (ch62) traditions as one of the world's great living oral and Indigenous religious worlds.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The Austronesian settlement of the Pacific and the reality of sacred wayfinding navigation; the master-concepts of <strong>mana</strong> and <strong>tapu/taboo</strong>; the Polynesian pantheon (Tangaroa/Kanaloa, Tāne/Kāne, Tū/Kū, Rongo/Lono, Māui, Pele) and the Rangi-and-Papa creation; the marae/heiau cult (including human sacrifice in some societies); the Rapa Nui <strong>moai</strong> as ancestor images and the later <strong>birdman</strong> cult of Makemake; the Melanesian ancestor cults and secret societies; and the historical <strong>cargo cults</strong> (John Frum and many others). The Polynesian origin of the word "tattoo" (via Cook) is documented.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact) / contested</h4>
+        <p>The popular <strong>"ecocide/collapse"</strong> narrative of Rapa Nui — that the islanders thoughtlessly destroyed their environment and civilization — is now seriously <strong>disputed</strong> by recent archaeology and should not be told as settled fact. The term "<strong>cargo cult</strong>" is an outsider label, and the condescending caricature of the movements as mere confusion is <strong>rejected</strong> here in favor of their own internal logic. Much of what is recorded about pre-contact Oceanic religion comes through <strong>missionary and colonial</strong> sources and carries their distortions.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The precise pre-contact forms of many island religions (often reconstructed from post-contact records); the full history and meaning of the moai and the reasons for their toppling; and, as with the other living traditions, the archive reports the documented and public and leaves what is held privately to its custodians.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Polynesian religion: mana and tapu (the source of "taboo"), the ariki and tohunga, the pantheon (Tangaroa, Tāne, Tū, Rongo, Māui, Pele), and Rangi-and-Papa creation, with sacrifice and marae worship — "Polynesian culture: Religion," Encyclopædia Britannica. <a href="https://www.britannica.com/place/Polynesia/Religion">https://www.britannica.com/place/Polynesia/Religion</a> ; "Polynesian Religions: An Overview," Encyclopedia.com. <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/polynesian-religions-overview">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/polynesian-religions-overview</a></li>
+        <li>Tangaroa/Kanaloa and the sea-god's role in creation — "Tangaroa," Wikipedia. <a href="https://en.wikipedia.org/wiki/Tangaroa">https://en.wikipedia.org/wiki/Tangaroa</a></li>
+        <li>Rapa Nui: the moai as ancestor images channeling mana, and the birdman (tangata manu) cult of Makemake — "Rapa Nui (Easter Island) Moai," Smarthistory. <a href="https://smarthistory.org/easter-island-moai/">https://smarthistory.org/easter-island-moai/</a> ; "Makemake (deity)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Makemake_(deity)">https://en.wikipedia.org/wiki/Makemake_(deity)</a></li>
+        <li>Melanesian cargo cults as millenarian movements (John Frum, Tanna) logical within Melanesian cosmology — "Cargo Cult," Encyclopedia.com. <a href="https://www.encyclopedia.com/social-sciences-and-law/anthropology-and-archaeology/anthropology-terms-and-concepts/cargo-cult">https://www.encyclopedia.com/social-sciences-and-law/anthropology-and-archaeology/anthropology-terms-and-concepts/cargo-cult</a> ; "What Cargo Cult Rituals Reveal About Human Nature," SAPIENS. <a href="https://www.sapiens.org/culture/cargo-cult-rituals/">https://www.sapiens.org/culture/cargo-cult-rituals/</a></li>
+        <li>Polynesian tattoo (tatau) as sacred encoding of genealogy and rank, and the origin of the English word "tattoo" — "In Polynesia, tattoos are more than skin deep," National Geographic. <a href="https://www.nationalgeographic.com/culture/article/in-polynesia-tattoos-are-more-than-skin-deep">https://www.nationalgeographic.com/culture/article/in-polynesia-tattoos-are-more-than-skin-deep</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: sacred wayfinding navigation; the "big man" and secret societies of Melanesia; the contested Rapa Nui "collapse" narrative; mana/taboo in the anthropology of religion (ch62 context).</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch64 */
+  ch64: { html: `
+    <p class="lead">In April 1906, in a run-down former Methodist church on Azusa Street in Los Angeles, something broke loose that would remake world Christianity. Led by <strong>William J. Seymour</strong>, the one-eyed son of former slaves, a crowd of Black, white, Latino, and Asian worshippers prayed, wept, sang, fell to the floor, and — most astonishingly to onlookers — <strong>spoke in tongues</strong>, uttering syllables they believed the Holy Spirit was giving them directly. The revival ran day and night for three years and sent missionaries around the globe. From that stable-like mission grew the fastest-growing religious movement of the modern age.</p>
+
+    <h2>The third force</h2>
+
+    <p>Pentecostalism is often called the "<strong>third force</strong>" in Christianity, standing alongside Catholicism and Protestantism as a distinct stream — and today the most dynamic of the three. Born at the very start of the 20th century, it has grown from almost nothing to some <strong>600 million</strong> adherents (counting the wider charismatic movement), and it is the leading edge of the single greatest shift in modern religion: the movement of Christianity's center of gravity <strong>from the West to the Global South</strong>.</p>
+
+    <h2>The fire falls</h2>
+
+    <p>Pentecostalism grew out of the 19th-century <strong>Holiness movement</strong>, itself rooted in John Wesley's teaching of a "<strong>second blessing</strong>" of sanctification after conversion. The Holiness preacher <strong>Charles Fox Parham</strong>, at his Bible school in Topeka, Kansas, in <strong>1901</strong>, taught that there was a further, "third" experience — a <strong>baptism in the Holy Spirit</strong> — and that its biblical evidence was <strong>speaking in tongues</strong>. His student <strong>William J. Seymour</strong> carried the teaching to Los Angeles, where in 1906 the <strong>Azusa Street Revival</strong> ignited. What made Azusa historic was not only the ecstatic experience but its <strong>interracial</strong> character — extraordinary for its time (a Black pastor leading whites and Blacks together, though the interracial unity soon fractured under the pressures of a segregated society) — and its missionary energy, which broadcast the movement worldwide within a few years. Seymour chronicled it in a periodical, <em>The Apostolic Faith</em>.</p>
+
+    <h2>The baptism in the Spirit</h2>
+
+    <p>The heart of Pentecostalism is the conviction that the <strong>gifts of the Holy Spirit</strong> described in the New Testament — the <em>charismata</em> of 1 Corinthians 12 — are available to believers <em>today</em>, not confined to the apostolic past. Central is the <strong>baptism in the Holy Spirit</strong>, a direct, overwhelming experience of God typically evidenced by <strong>glossolalia</strong> (speaking in tongues), modeled on the first <strong>Pentecost</strong> in Acts 2, when the Spirit descended on the disciples as tongues of fire and they spoke in other languages. With it come the other gifts: <strong>prophecy</strong>, <strong>divine healing</strong>, miracles, and the discernment and casting-out of spirits. Pentecostalism is, above all, a religion of <strong>direct, felt, ecstatic experience</strong> of the divine — not primarily creed, sacrament, or institution, but the living presence of the Spirit, now.</p>
+
+    <h2>Three waves</h2>
+
+    <p>The movement spread in three great waves. <strong>Classical Pentecostalism</strong> built new denominations — the <strong>Assemblies of God</strong>, the largely African-American <strong>Church of God in Christ</strong>, and many more. Then, from the <strong>1960s</strong>, the <strong>Charismatic movement</strong> carried the gifts <em>into the existing churches</em>: Spirit baptism, tongues, and healing appeared among mainline Protestants and, remarkably, within the <strong>Roman Catholic Church</strong> (the Catholic Charismatic Renewal). Finally the <strong>neo-charismatic</strong> wave — the vast and still-growing world of independent, non-denominational, and African-initiated churches — carried the fire into every corner of the globe, often outside any traditional structure.</p>
+
+    <h2>The southern shift</h2>
+
+    <p>The deepest significance of Pentecostalism is demographic and global. In <strong>1900</strong>, Christianity was overwhelmingly a religion of Europe and North America; today the majority of the world's Christians live in the <strong>Global South</strong> — Africa, Latin America, and Asia — a proportion that continues to climb. And the Pentecostal-charismatic stream is the fastest-growing engine of that shift: from fewer than a million adherents in 1900 toward perhaps a <strong>billion</strong> by mid-century. In <strong>Latin America</strong> it swept the poor and marginalized, reshaping the religious landscape of Brazil and Central America; in <strong>Africa</strong> it fused with the deep local sense of a living spirit-world (ch33, ch40) and produced some of the world's largest churches; in <strong>South Korea</strong> fervent prayer built vast <strong>megachurches</strong> and a great missionary movement; and in <strong>China</strong> it grew in the house churches. Wherever it went, it offered direct spiritual power, healing, tight community, and dignity to the poor.</p>
+
+    <h2>The prosperity gospel</h2>
+
+    <p>One controversial offshoot deserves note: the <strong>prosperity gospel</strong> — the teaching that God rewards faith (and giving) with <strong>health and wealth</strong>. Enormously influential in West Africa, Brazil, and the American televangelist world, it promises material blessing as the believer's right, and it is sharply criticized <em>within</em> Christianity, including by many Pentecostals, as a distortion of the gospel. It is a genuine and widespread strand of modern global Christianity, and the archive reports it as such, neither endorsing nor caricaturing it.</p>
+
+    <h2>Worship and practice</h2>
+
+    <p>Pentecostal worship is participatory, emotional, and embodied: exuberant <strong>music</strong>, raised hands, dancing, weeping, and shouting; <strong>healing services</strong> with the laying-on of hands; and <strong>deliverance</strong> (exorcism) and "spiritual warfare" against demonic powers. It tends to be sparing of traditional liturgy, imagery, and hierarchy — Spirit- and Bible-centered rather than sacramental — and it has opened wide space for <strong>lay leadership</strong> and, in many settings, for <strong>women</strong> as preachers and founders, from Aimee Semple McPherson to countless African and Latin American church-planters.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>Tongues of fire.</strong> The master-symbol is <strong>glossolalia</strong> itself and the <strong>tongues of fire</strong> of Acts 2 — sacred, Spirit-given speech that encodes the direct descent of God upon the believer, the sign that the Pentecost has come again.</li>
+      <li><strong>The raised, open hands.</strong> Lifted, open palms encode both surrender to and reception of the Spirit — the body itself made a posture of openness to the divine.</li>
+      <li><strong>The laying on of hands.</strong> Touch encodes the <em>transmission</em> of the Spirit and of healing — power flowing person to person, as in the New Testament.</li>
+      <li><strong>The near-absence of images.</strong> Unlike the icon-rich traditions (ch60), Pentecostalism locates the sacred not in object or image but in <strong>experience</strong> and in the <strong>Word</strong> — an aniconic Christianity whose "sacred art" is music and testimony, encoding the conviction that God is met directly, not through mediation.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>Pentecostalism is the newest great turning of <strong>Christianity</strong> (ch16), a child of the <strong>Protestant</strong> Reformation's emphasis on Scripture and direct access to God (ch31) yet a distinct third stream beside it and <strong>Eastern Orthodoxy</strong> (ch60). Its recovery of <strong>ecstatic</strong> religion — tongues, prophecy, trance — echoes the ancient charismatic Montanists and the ecstasy of the <strong>mystery cults</strong> (ch18), and its stress on the <em>direct experience</em> of the divine parallels <strong>Sufism</strong> (ch27) and <strong>Bhakti</strong> (ch30). In Africa and the diaspora it engages the living spirit-world of <strong>African traditional</strong> and <strong>diaspora</strong> religion (ch33, ch40). And as the leading force in the <strong>southern shift</strong> of Christianity, it is one of the defining religious phenomena of the <strong>modern age</strong> (ch35).</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The historical origins — Parham's Topeka teaching (1901), the Azusa Street Revival under Seymour (1906) and its interracial character and global missionary impact; the doctrine of Spirit baptism and the gifts; the three waves (classical Pentecostal denominations, the 1960s Charismatic movement including the Catholic Charismatic Renewal, and the neo-charismatic/independent churches); and, above all, the <strong>demographic facts</strong>: the explosive growth of Pentecostal-charismatic Christianity and the shift of the Christian majority to the Global South. These are thoroughly documented by historians and by religious demography.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The <strong>theological claims</strong> — that glossolalia is the evidence of Spirit baptism, that divine <strong>healings</strong> and miracles occur as claimed, that spiritual warfare engages real demonic powers — are matters of <strong>faith</strong>, reported here as Pentecostal belief, not verified fact. (Linguists who have studied glossolalia generally find it is not a natural human language, though it is a genuine and meaningful vocal-religious practice; the archive states this neutrally.) The <strong>prosperity gospel</strong> is a real teaching but a contested one, and its promises are not endorsed here.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The long-term trajectory of the southern shift and of Pentecostal growth; the degree to which local Pentecostalisms absorb and transform prior Indigenous spiritual worlds; and, as always with claims of direct divine experience, the inner reality of what believers testify — which the archive documents as testimony without adjudicating it.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Azusa Street Revival (1906), William J. Seymour, Charles Parham, the Holiness roots, Spirit baptism, tongues, and the interracial and missionary character — "Azusa Street Revival," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/history/azusa-street-revival">https://www.ebsco.com/research-starters/history/azusa-street-revival</a> ; "William J. Seymour," Wikipedia. <a href="https://en.wikipedia.org/wiki/William_J._Seymour">https://en.wikipedia.org/wiki/William_J._Seymour</a></li>
+        <li>Parham's Topeka teaching (1901) that tongues is the evidence of Holy Spirit baptism; the Wesleyan/Holiness "second blessing" and the gifts of 1 Corinthians 12 — "Pentecostalism: William Seymour," Christian History Institute. <a href="https://christianhistoryinstitute.org/magazine/article/pentecostalism-seymour">https://christianhistoryinstitute.org/magazine/article/pentecostalism-seymour</a> ; "Azusa Street Revival," Wikipedia. <a href="https://en.wikipedia.org/wiki/Azusa_Street_Revival">https://en.wikipedia.org/wiki/Azusa_Street_Revival</a></li>
+        <li>The shift of Christianity to the Global South (69% of Christians in 2025, rising) and its regional growth — "The Global South concentrates the growth of Christianity," Evangelical Focus. <a href="https://evangelicalfocus.com/life-tech/34596/the-global-south-concentrates-the-growth-of-christianity">https://evangelicalfocus.com/life-tech/34596/the-global-south-concentrates-the-growth-of-christianity</a> ; "Perspectives from Global South Christianity," Lausanne Movement. <a href="https://lausanne.org/global-analysis/perspectives-from-global-south-christianity">https://lausanne.org/global-analysis/perspectives-from-global-south-christianity</a></li>
+        <li>The explosive growth of Pentecostal-charismatic Christianity (from &lt;1 million in 1900 toward ~1 billion), Latin American and Korean growth, and the prosperity gospel — "The Explosive Growth of Pentecostal-Charismatic Christianity in the Global South," Homiletic &amp; Pastoral Review. <a href="https://www.hprweb.com/2017/06/the-explosive-growth-of-pentecostal-charismatic-christianity-in-the-global-south-and-its-implications-for-catholic-evangelization/">https://www.hprweb.com/2017/06/the-explosive-growth-of-pentecostal-charismatic-christianity-in-the-global-south-and-its-implications-for-catholic-evangelization/</a></li>
+        <li>Supporting detail corroborated via the above and adjacent chapters: the Assemblies of God and Church of God in Christ; the 1960s Charismatic movement and Catholic Charismatic Renewal; megachurches in Seoul; African-initiated churches and the engagement with local spirit-worlds (ch33/ch40 context); women's leadership (Aimee Semple McPherson).</li>
+      </ul>
+    </div>
+  ` },
+
+  /* ------------------------------------------------------------------ ch65 */
+  ch65: { html: `
+    <p class="lead">In July 1850, in the Persian city of Tabriz, a young man who called himself the <strong>Báb</strong> — "the Gate" — was suspended by ropes before a firing squad of 750 soldiers. The first volley, it is said, cut his ropes and left him unharmed; when the smoke cleared he had vanished, found back in his cell finishing a conversation. A second regiment was brought; the second volley killed him. He was thirty. He had proclaimed that a new messenger of God was about to appear — and out of the movement he founded grew what may be the only major independent world religion born in the modern age: the <strong>Bahá'í Faith</strong>, whose whole purpose is to declare that all religions are one.</p>
+
+    <h2>A faith for a united world</h2>
+
+    <p>The Bahá'í Faith rests on three "onenesses": the <strong>oneness of God</strong>, the <strong>oneness of religion</strong>, and the <strong>oneness of humanity</strong>. It teaches that there is one God, unknowable in essence; that all the great religions come from that one God and form a single unfolding story; and that humankind is one family, now come of age and destined for unity. It is at once one of the youngest of the world's religions and one of the most geographically widespread, with communities in virtually every country on earth.</p>
+
+    <h2>The Báb and Bahá'u'lláh</h2>
+
+    <p>The faith has two founding figures. The <strong>Báb</strong> (Siyyid ʿAlí Muḥammad, 1819–1850), a merchant of Shiraz, declared in 1844 that he was the herald of one greater than himself, and his <strong>Bábí</strong> movement spread rapidly through Persia — and was savagely persecuted, with thousands of followers killed and the Báb himself executed in 1850. Among the Bábís was <strong>Bahá'u'lláh</strong> (Mírzá Ḥusayn-ʿAlí, 1817–1892), a Persian nobleman who, in 1863, declared that <em>he</em> was the one the Báb had foretold — the promised Manifestation of God for this age. Exiled by the Persian and Ottoman authorities ever farther from home — to Baghdad, Constantinople, Adrianople, and at last to the prison-city of <strong>ʿAkká</strong> (Acre) in Ottoman Palestine — he spent the rest of his life a prisoner, writing the enormous body of scripture on which the faith is built. It is from ʿAkká and neighboring <strong>Haifa</strong>, on <strong>Mount Carmel</strong>, that the Bahá'í world center grew, its golden-domed <strong>Shrine of the Báb</strong> and terraced gardens now among the most famous sights of the region.</p>
+
+    <h2>Progressive revelation</h2>
+
+    <p>The intellectual heart of the Bahá'í Faith is the doctrine of <strong>progressive revelation</strong>. God, it teaches, has never left humanity without guidance, but has sent a succession of <strong>Manifestations of God</strong> — Divine Educators — each renewing religion for a new age and preparing the way for the next, roughly every five hundred to a thousand years. Among these Manifestations Bahá'ís count <strong>Abraham, Krishna, Moses, Zoroaster, the Buddha, Jesus, Muhammad, the Báb, and Bahá'u'lláh</strong>. Each brought the same eternal truth in the form suited to their time and people; the apparent conflicts between religions are differences of <em>social teaching</em> fitted to different ages, not of essential truth. And the process has no end: future Manifestations will come. In this single framework the Bahá'í Faith attempts to gather the entire religious history this archive has surveyed into one continuous, divinely-guided story — an audacious and characteristically <em>modern</em> claim.</p>
+
+    <h2>The teachings for a coming age</h2>
+
+    <p>Bahá'u'lláh's social teachings were strikingly ahead of their 19th-century origin, and they define the faith's public character: the <strong>elimination of all prejudice</strong> of race, class, and nation; the full <strong>equality of women and men</strong>; <strong>universal education</strong>; the <strong>harmony of science and religion</strong> (neither to be sacrificed to the other); the adoption of a <strong>universal auxiliary language</strong>; the abolition of extremes of wealth and poverty; and, above all, <strong>world peace</strong> secured through a global federal commonwealth of nations. The faith is, in effect, a religion organized around the project of human unity.</p>
+
+    <h2>Scripture without clergy</h2>
+
+    <p>Bahá'u'lláh left a vast written revelation, including the <strong>Kitáb-i-Aqdas</strong> (the "Most Holy Book," the book of laws), the <strong>Kitáb-i-Íqán</strong> (on progressive revelation), and the lyrical <strong>Hidden Words</strong>. The faith has <strong>no clergy</strong> and no priesthood; instead it is governed by a distinctive <strong>elected administrative order</strong>, with local and national <strong>Spiritual Assemblies</strong> and, at its head, the <strong>Universal House of Justice</strong> — a nine-member body, elected every five years by all the national assemblies, seated in Haifa. Bahá'í <strong>Houses of Worship</strong> are built with <strong>nine sides</strong> and a central dome, open to the adherents of all religions.</p>
+
+    <h2>Persecution</h2>
+
+    <p>From its birth the faith has been persecuted, above all in the land of its origin. In <strong>Iran</strong>, the Bahá'ís are the largest non-Muslim religious minority — and, especially since the Islamic Revolution of <strong>1979</strong>, the target of a systematic state campaign: their holy sites destroyed, their young people barred from universities, their livelihoods restricted, their leaders imprisoned and sometimes executed. International bodies have condemned this as persecution rising, at times, toward the threshold of genocide. To be a Bahá'í in Iran is to hold a faith of universal peace under sustained attack.</p>
+
+    <h2>The wider new world faiths</h2>
+
+    <p>The Bahá'í Faith is the most successful of a distinctively modern kind of religion: the <strong>new world faith</strong> that arises in an age of global contact and sets out to <em>unite or transcend</em> the existing traditions. Others share the impulse. <strong>Caodaism</strong>, founded in Vietnam in <strong>1926</strong> as "the Great Way of the Third Era of Redemption," worships a supreme God, Cao Đài, through an elaborate pantheon of spirit-guides that famously includes not only Buddha, Laozi, Confucius, and Jesus but <strong>Victor Hugo</strong> and Joan of Arc — a deliberate fusion of East and West. The <strong>Ahmadiyya</strong>, founded in India in <strong>1889</strong> by Mirza Ghulam Ahmad, who claimed to be the awaited Mahdi and Messiah of several traditions at once, is a messianic movement within Islam, energetic in missionary work and persecuted as heretical by other Muslims. And <strong>Tenrikyo</strong>, founded in Japan by the peasant woman <strong>Nakayama Miki</strong> in 1838, teaches a path to the "<strong>Joyous Life</strong>" drawn from Shinto roots. (Other modern faiths — Rastafari, the many new religious movements — are treated in ch35 and ch40.) Together they mark the modern religious impulse to answer a newly interconnected world with a newly universal faith.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The nine-pointed star.</strong> The number <strong>nine</strong> — the highest single digit, a symbol of <strong>completeness and unity</strong>, and the numerical value of the word <strong>Bahá</strong> ("glory") in the Arabic abjad (ch10, ch21) — is the master-symbol of the faith: the nine-pointed star, the nine sides of every House of Worship, the nine members of the Universal House of Justice. Unity encoded in a number.</li>
+      <li><strong>The Greatest Name.</strong> The calligraphic rendering of <em>Yá Bahá'u'l-Abhá</em> ("O Glory of the All-Glorious") and the <strong>ringstone symbol</strong> — three horizontal strokes (the worlds of God, the Manifestations, and humanity) joined by a vertical line, flanked by two stars — encode the whole Bahá'í cosmology of the descent of revelation and the link between God and humankind.</li>
+      <li><strong>The terraced mountain.</strong> The golden <strong>Shrine of the Báb</strong> amid the great garden terraces of <strong>Mount Carmel</strong> encodes the faith's claim to gather and fulfill the sacred history of the very region where Judaism, Christianity, and Islam were born.</li>
+      <li><strong>The Divine Eye.</strong> In Caodaism, the <strong>left eye of God</strong> (the Divine Eye), radiant within a triangle, is the central symbol — the all-seeing conscience encoded as a single watching eye.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Bahá'í Faith stands to <strong>Shia Islam</strong> (ch21) somewhat as Christianity stands to Judaism — a new revelation grown from within an older one and then declaring its independence. Its doctrine of <strong>progressive revelation</strong> universalizes the prophetic successions found in <strong>Manichaeism</strong> (ch55) and Islam, gathering the founders of every tradition in this archive into one lineage. Its drive to unite all religions echoes the perennialism of <strong>Theosophy</strong> (ch37) and the comparative spirit of this whole book, and it belongs among the <strong>new religious movements</strong> of the modern age (ch35). Fittingly, the archive's final chapter is the tradition that most explicitly tries to make <em>one story</em> of everything the preceding chapters have told.</p>
+
+    <div class="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The history is thoroughly documented: the Báb and the Bábí movement and its bloody suppression (the Báb executed in 1850); Bahá'u'lláh's life, exiles, imprisonment at ʿAkká, and vast written corpus; the doctrines (the three onenesses, progressive revelation, the social teachings); the clergy-less administrative order and the Universal House of Justice (established 1963, seated in Haifa); the nine-sided Houses of Worship; and the systematic <strong>persecution of Bahá'ís in Iran</strong>, especially since 1979, which is well attested and internationally condemned. Caodaism (1926), the Ahmadiyya (1889), and Tenrikyo (1838) are likewise documented modern religions.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>The <strong>theological claims</strong> — that the Báb and Bahá'u'lláh were Manifestations of God, that revelation is progressive and divinely orchestrated — are matters of <strong>faith</strong>, reported here as Bahá'í belief. <strong>Progressive revelation</strong> is a Bahá'í interpretive <em>framework</em>, not a neutral historical description: mainstream history does not treat Krishna, the Buddha, Jesus, and the rest as a single divine succession, and the archive presents the doctrine as the faith's own reading of religious history, not as established fact. Adherent numbers (commonly cited around five to eight million) are estimates and are debated.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The long-term trajectory of the Bahá'í Faith and the other new world faiths; the degree to which they will fulfill their universalizing ambitions or remain distinct traditions among the others; and, as with every faith in this archive, the inner truth of their revelations, which the archive documents as belief without adjudicating. Here, at the end of the Nine Ages, the book closes on a tradition that tries to hold all the others in a single embrace — and on the same honest distinction it has kept throughout: between what a faith reveres and what the record can show.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Bahá'í Faith: the three onenesses, the Báb and Bahá'u'lláh, the exiles and the world center, and the core history — "Bahá'í Faith," Wikipedia. <a href="https://en.wikipedia.org/wiki/Bah%C3%A1%CA%BC%C3%AD_Faith">https://en.wikipedia.org/wiki/Bah%C3%A1%CA%BC%C3%AD_Faith</a> ; "Bahāʾ-Allāh," Encyclopaedia Iranica. <a href="https://www.iranicaonline.org/articles/baha-allah/">https://www.iranicaonline.org/articles/baha-allah/</a></li>
+        <li>Progressive revelation and the Manifestations of God (Abraham, Krishna, Moses, Zoroaster, Buddha, Jesus, Muhammad, the Báb, Bahá'u'lláh) — "Progressive revelation (Bahá'í)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Progressive_revelation_(Bah%C3%A1%CA%BC%C3%AD)">https://en.wikipedia.org/wiki/Progressive_revelation_(Bah%C3%A1%CA%BC%C3%AD)</a> ; "Progressive Revelation," Bahá'ís of the United States. <a href="https://www.bahai.us/beliefs/building-community/progressive-revelation/">https://www.bahai.us/beliefs/building-community/progressive-revelation/</a></li>
+        <li>The Kitáb-i-Aqdas and the Universal House of Justice (nine members, elected every five years, seated in Haifa; established 1963) — "The Kitáb-i-Aqdas," Bahá'í Reference Library. <a href="https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/3">https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/3</a> ; "The Universal House of Justice," bahai.org. <a href="https://www.bahai.org/the-universal-house-of-justice">https://www.bahai.org/the-universal-house-of-justice</a></li>
+        <li>The persecution of Bahá'ís in Iran (historic and post-1979 systematic state policy) — "Persecution of Bahá'ís," Wikipedia. <a href="https://en.wikipedia.org/wiki/Persecution_of_Bah%C3%A1%CA%BC%C3%ADs">https://en.wikipedia.org/wiki/Persecution_of_Bah%C3%A1%CA%BC%C3%ADs</a> ; "Who are the Baha'is and why are they so persecuted?", The Conversation. <a href="https://theconversation.com/who-are-the-bahais-and-why-are-they-so-persecuted-84042">https://theconversation.com/who-are-the-bahais-and-why-are-they-so-persecuted-84042</a></li>
+        <li>Caodaism (Vietnam, 1926; the syncretic pantheon and the Divine Eye) — "Caodaism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Caodaism">https://en.wikipedia.org/wiki/Caodaism</a> ; "Cao Dai (religious movement)," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/religion-and-philosophy/cao-dai-religious-movement/">https://www.ebsco.com/research-starters/religion-and-philosophy/cao-dai-religious-movement/</a></li>
+        <li>The Ahmadiyya (1889, Mirza Ghulam Ahmad, messianic claims) and Tenrikyo (Japan, Nakayama Miki, the Joyous Life) as fellow modern faiths — "Aḥmadiyyah," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Ahmadiyyah">https://www.britannica.com/topic/Ahmadiyyah</a> ; "Tenrikyō," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Tenrikyo">https://www.britannica.com/topic/Tenrikyo</a></li>
+      </ul>
+    </div>
   ` }
 };
