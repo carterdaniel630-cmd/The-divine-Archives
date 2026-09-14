@@ -89,6 +89,7 @@
         '<div class="game-head"><p class="eyebrow">The Divine Archives · Games</p>' +
           '<h2 id="' + ctx.titleId + '">The Reliquary</h2>' +
           "<p>Questions drawn only from the chapters of this archive. Every answer opens its source.</p></div>" +
+        '<div class="game-rule" role="presentation"></div>' +
         '<div class="rq-form">' +
           '<label>Set <select data-f="set"><option value="quick"' + (st.curatedOnly ? " selected" : "") + '>Quick (curated)</option><option value="full"' + (!st.curatedOnly ? " selected" : "") + ">Full bank</option></select></label>" +
           "<label>Era <select data-f=\"era\">" + eraOpts + "</select></label>" +
@@ -133,8 +134,10 @@
         (st.mode === "bot" ? '<div class="stat"><b>' + st.botScore + '</b><span>Archivist</span></div>' : "") +
         '<div class="stat"><b>' + st.streak + '</b><span>Streak</span></div></div>';
       render(
-        '<div class="game-head" style="margin-bottom:.6rem"><p class="eyebrow">The Reliquary · ' + esc(progress) + "</p>" +
-          '<h2 id="' + ctx.titleId + '" style="font-size:1.15rem;line-height:1.35">' + esc(q.q) + "</h2></div>" +
+        '<div class="game-head" style="margin-bottom:.5rem"><p class="eyebrow">The Reliquary · ' + esc(progress) + "</p>" +
+          (q.cat ? '<div class="rq-seals"><span class="game-seal">' + esc(q.cat) + "</span></div>" : "") +
+          '<h2 id="' + ctx.titleId + '" style="font-size:1.18rem;line-height:1.4">' + esc(q.q) + "</h2></div>" +
+        '<div class="game-rule" role="presentation"></div>' +
         scoreBar +
         '<div class="rq-choices" role="group" aria-label="Answer choices">' +
           st.shuffled.map(function (c, n) {

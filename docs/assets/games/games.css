@@ -100,11 +100,36 @@
   position: relative;
   width: min(46rem, 100%); max-height: calc(100dvh - 1.5rem);
   overflow: auto; -webkit-overflow-scrolling: touch;
-  background: var(--panel); color: var(--ink);
+  color: var(--ink);
+  /* illuminated leaf: candle-glow at the head, deep parchment ground */
+  background:
+    radial-gradient(120% 70% at 50% -8%, rgba(199,154,84,.14), transparent 58%),
+    radial-gradient(100% 60% at 50% 112%, rgba(120,86,40,.08), transparent 62%),
+    linear-gradient(180deg, var(--panel-2), var(--panel) 42%, var(--ground-2));
   border: 1px solid var(--line); border-radius: 14px;
-  box-shadow: 0 24px 70px rgba(0,0,0,.6);
-  padding: clamp(1rem, 3vw, 1.8rem);
+  box-shadow: 0 24px 70px rgba(0,0,0,.6), inset 0 1px 0 rgba(231,198,128,.06);
+  padding: clamp(1.1rem, 3vw, 2rem);
 }
+/* aged-paper grain over the leaf (generated, matches the site body grain) */
+.game-dialog::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  border-radius: 14px; opacity: .045; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* engraved inner rule + manuscript corner brackets */
+.game-dialog::after {
+  content: ""; position: absolute; inset: 7px; z-index: 0; pointer-events: none;
+  border: 1px solid var(--line-soft); border-radius: 9px;
+  background-repeat: no-repeat;
+  background-position: 6px 6px, calc(100% - 6px) 6px, calc(100% - 6px) calc(100% - 6px), 6px calc(100% - 6px);
+  background-size: 26px 26px;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23c79a54' stroke-width='1'%3E%3Cpath d='M4 16 L4 4 L16 4'/%3E%3Cpath d='M4 1 L7 4 L4 7 L1 4 Z' stroke-width='.7'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23c79a54' stroke-width='1'%3E%3Cpath d='M22 16 L22 4 L10 4'/%3E%3Cpath d='M22 1 L25 4 L22 7 L19 4 Z' stroke-width='.7'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23c79a54' stroke-width='1'%3E%3Cpath d='M22 10 L22 22 L10 22'/%3E%3Cpath d='M22 19 L25 22 L22 25 L19 22 Z' stroke-width='.7'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23c79a54' stroke-width='1'%3E%3Cpath d='M4 10 L4 22 L16 22'/%3E%3Cpath d='M4 19 L7 22 L4 25 L1 22 Z' stroke-width='.7'/%3E%3C/svg%3E");
+}
+.game-dialog > * { position: relative; z-index: 1; }
 .game-dialog .game-close {
   position: absolute; top: .55rem; right: .55rem;
   width: 2.1rem; height: 2.1rem; border-radius: 8px;
@@ -115,9 +140,42 @@
 .game-dialog .game-close:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
 
 .game-head { text-align: center; margin: 0 2rem 1rem; }
-.game-head .eyebrow { color: var(--gold); font-family: var(--font-display); text-transform: uppercase; letter-spacing: .18em; font-size: .62rem; margin: 0 0 .3rem; }
-.game-head h2 { font-family: var(--font-display); color: var(--parchment); font-weight: 500; letter-spacing: .04em; font-size: 1.5rem; margin: 0; }
-.game-head p { color: var(--ink-dim); font-family: var(--font-body); font-size: .95rem; margin: .4rem 0 0; }
+.game-head .eyebrow {
+  color: var(--gold); font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: .3em; font-size: .62rem; margin: 0 0 .5rem;
+  display: inline-flex; align-items: center; gap: .8rem;
+}
+.game-head .eyebrow::before, .game-head .eyebrow::after {
+  content: ""; height: 1px; width: min(14vw, 3.4rem);
+  background: linear-gradient(90deg, transparent, var(--line), var(--gold) 85%);
+}
+.game-head .eyebrow::after { transform: scaleX(-1); }
+.game-head h2 { font-family: var(--font-display); color: var(--parchment); font-weight: 500; letter-spacing: .05em; font-size: 1.55rem; margin: 0; text-shadow: 0 0 22px rgba(231,198,128,.14); }
+.game-head p { color: var(--ink-dim); font-family: var(--font-body); font-size: .98rem; font-style: italic; margin: .45rem 0 0; }
+
+/* ---------- illumination atoms (shared across games) ---------- */
+/* the site's lozenge-and-rules section mark, as a standalone divider */
+.game-rule { height: 16px; margin: .9rem auto 1rem; background:
+  url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2018'%3E%3Cpath%20d='M4%209h18M38%209h18'%20stroke='%23c79a54'%20stroke-width='1'/%3E%3Cpath%20d='M30%203l3.4%206L30%2015l-3.4-6z'%20fill='%23c79a54'/%3E%3C/svg%3E") center / 68px 16px no-repeat; opacity: .85; }
+/* scorched wavy divider (ember), echoing the chapter dividers */
+.game-rule--scorch { background:
+  url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20320%2010'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%205%20Q40%201%2080%205%20T160%205%20T240%205%20T320%205'%20stroke='%23b26a34'%20stroke-width='1.6'%20fill='none'%20opacity='.55'/%3E%3C/svg%3E") center / 100% 10px no-repeat; opacity: .8; height: 10px; }
+/* illuminated versal — the gold drop-capital treatment used on chapter openings */
+.game-versal::first-letter {
+  font-family: var(--font-head); font-weight: 600; float: left;
+  font-size: 3.1rem; line-height: .62; padding: .05em .1em 0 0; margin: .04em .08em 0 0;
+  color: var(--gold-bright); text-shadow: 0 0 16px rgba(231,198,128,.35);
+}
+/* wax-seal / cartouche medallion for era & category tags */
+.game-seal {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .16em; font-size: .56rem;
+  color: var(--gold); background: radial-gradient(120% 120% at 50% 20%, rgba(199,154,84,.14), transparent 70%);
+  border: 1px solid var(--line); border-radius: 999px; padding: .28rem .7rem;
+}
+.game-seal::before { content: ""; width: 5px; height: 5px; transform: rotate(45deg); background: var(--gold); }
+.game-seal.is-open { color: var(--warn); border-color: rgba(194,149,78,.5); }
+.game-seal.is-open::before { background: var(--warn); }
 
 .game-symbol-large { width: 128px; height: 128px; margin: .2rem auto .6rem; color: var(--gold); }
 .game-symbol-large svg { width: 100%; height: 100%; display: block; }
@@ -130,11 +188,16 @@
 }
 .game-source:hover { color: var(--gold-bright); border-color: var(--gold); }
 
-/* score strip shared by games */
-.game-scorebar { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; margin: .3rem 0 1rem; }
-.game-scorebar .stat { text-align: center; }
-.game-scorebar .stat b { display: block; font-family: var(--font-display); color: var(--parchment); font-size: 1.25rem; }
-.game-scorebar .stat span { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em; font-size: .58rem; color: var(--ink-faint); }
+/* score strip shared by games — engraved cartouche tablets */
+.game-scorebar { display: flex; gap: .7rem; justify-content: center; flex-wrap: wrap; margin: .3rem 0 1rem; }
+.game-scorebar .stat {
+  text-align: center; min-width: 6.5rem; padding: .5rem .8rem .45rem;
+  background: linear-gradient(180deg, rgba(199,154,84,.05), transparent);
+  border: 1px solid var(--line-soft); border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.25), inset 0 1px 0 rgba(231,198,128,.05);
+}
+.game-scorebar .stat b { display: block; font-family: var(--font-display); color: var(--gold-bright); font-size: 1.3rem; line-height: 1.1; text-shadow: 0 0 14px rgba(231,198,128,.2); }
+.game-scorebar .stat span { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .16em; font-size: .54rem; color: var(--ink-faint); }
 
 .game-placeholder { text-align: center; border: 1px dashed var(--line); border-radius: 10px; padding: 1.1rem; color: var(--ink-dim); font-family: var(--font-body); }
 .game-placeholder .phase { color: var(--warn); font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em; font-size: .62rem; }
@@ -172,7 +235,11 @@
 .rq-choice:hover:not([disabled]) { border-color:var(--gold); color:var(--parchment); }
 .rq-choice:focus-visible { outline:2px solid var(--gold-bright); outline-offset:2px; }
 .rq-choice[disabled] { cursor:default; }
-.rq-choice .rq-key { flex:none; width:1.7rem; height:1.7rem; border-radius:6px; display:grid; place-items:center; font-family:var(--font-display); font-size:.8rem; color:var(--gold); border:1px solid var(--line); }
+.rq-seals { display:flex; justify-content:center; flex-wrap:wrap; gap:.4rem; margin:.1rem 0 .5rem; }
+.rq-choice .rq-key { flex:none; width:1.9rem; height:1.9rem; border-radius:50%; display:grid; place-items:center; font-family:var(--font-display); font-size:.82rem; color:var(--gold); border:1px solid var(--line);
+  background: radial-gradient(120% 120% at 50% 22%, rgba(199,154,84,.12), var(--panel) 68%);
+  box-shadow: inset 0 1px 0 rgba(231,198,128,.08); }
+.rq-choice:hover:not([disabled]) .rq-key { border-color:var(--gold); color:var(--gold-bright); }
 .rq-choice.is-correct { border-color:var(--good); background:rgba(126,158,92,.16); color:var(--parchment); }
 .rq-choice.is-correct .rq-key { color:var(--good); border-color:var(--good); }
 .rq-choice.is-wrong { border-color:var(--ember); background:rgba(178,106,52,.14); }
@@ -184,15 +251,25 @@
 @media (max-width:460px){ .rq-form { grid-template-columns:1fr; } }
 
 /* ---------- Ouroboros (snake) ---------- */
-.ouro-stage { display:flex; justify-content:center; margin:.3rem 0 .5rem; }
-.ouro-canvas { width:min(320px, 82vw); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:10px; background:var(--panel); touch-action:none; image-rendering:auto; }
+.ouro-stage { position:relative; display:flex; justify-content:center; margin:.5rem auto .6rem; width:min(340px,86vw); padding:10px; }
+/* engraved corner brackets around the board, echoing the dialog frame */
+.ouro-stage::before, .ouro-stage::after {
+  content:""; position:absolute; width:22px; height:22px; pointer-events:none;
+  border:1px solid var(--gold); opacity:.6;
+}
+.ouro-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
+.ouro-stage::after  { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
+.ouro-canvas { width:min(320px, 82vw); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:10px; background:var(--panel); touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 8px 26px -14px #000; }
 .ouro-toast { min-height:2.4rem; text-align:center; font-family:var(--font-body); font-size:.9rem; color:var(--ink); margin:.3rem auto .2rem; max-width:34rem; line-height:1.4; }
 .ouro-toast .ouro-sym { color:var(--gold); }
 .ouro-toast strong { color:var(--parchment); }
 .ouro-controls { display:flex; flex-direction:column; align-items:center; gap:.4rem; }
 .ouro-dpad { display:grid; grid-template-columns:repeat(3,3rem); grid-template-rows:repeat(3,3rem); gap:.3rem; }
-.ouro-key { display:grid; place-items:center; background:var(--panel-2); border:1px solid var(--line); border-radius:8px; color:var(--gold); font-size:1rem; cursor:pointer; }
+.ouro-key { display:grid; place-items:center; border-radius:50%; border:1px solid var(--line); color:var(--gold); font-size:1rem; cursor:pointer;
+  background: radial-gradient(120% 120% at 50% 22%, rgba(199,154,84,.12), var(--panel-2) 68%);
+  box-shadow: inset 0 1px 0 rgba(231,198,128,.08), 0 4px 12px -8px #000; }
 .ouro-key:hover { color:var(--gold-bright); border-color:var(--gold); }
+.ouro-key:active { transform: translateY(1px); }
 .ouro-key:focus-visible { outline:2px solid var(--gold-bright); outline-offset:2px; }
 .ouro-key.up { grid-column:2; grid-row:1; } .ouro-key.left { grid-column:1; grid-row:2; }
 .ouro-key.pause { grid-column:2; grid-row:2; color:var(--ink-dim); font-size:.8rem; } .ouro-key.right { grid-column:3; grid-row:2; }
