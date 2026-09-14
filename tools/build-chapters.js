@@ -98,6 +98,7 @@ const HEADER = `  <header class="site-header">
         <a href="../eras.html">Eras</a>
         <a href="../traditions.html">Traditions</a>
         <a href="../themes.html">Themes</a>
+        <a href="../symbols.html">Symbols</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>
@@ -199,11 +200,11 @@ ${HEADER}
       ${plate}
       <p class="eyebrow">${esc(ch.eraLabel)}</p>
       <h1>${esc(ch.title)}</h1>
-      <p style="margin-top:0.6rem"><span class="badge is-published">In the archive</span>
+      <p style="margin-top:0.6rem"><span class="badge ${ch.pending ? "is-pending" : "is-published"}">${ch.pending ? "Recently added &middot; pending review" : "In the archive"}</span>
         <button type="button" class="print-btn" onclick="window.print()" title="Save this chapter as a PDF">Save as PDF</button></p>
     </div>
     <section class="wrap article">
-${rendered}${seeAlso(ch)}
+${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${seeAlso(ch)}
       <p class="print-only">From <strong>The Divine Archives</strong> &middot; ${url} &middot; a comparative library of the sacred.</p>
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>
