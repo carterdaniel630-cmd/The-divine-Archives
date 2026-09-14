@@ -335,3 +335,22 @@
 .fg-sel-mode { text-align:center; margin:.6rem 0; }
 .fg-result { text-align:center; }
 .fg-portrait-lg { width:120px; height:140px; margin:.2rem auto .5rem; }
+
+/* ---------- Archive Chess ---------- */
+.ch-status { text-align:center; font-family:var(--font-display); letter-spacing:.04em; font-size:.82rem; color:var(--ink); margin:.2rem 0 .5rem; min-height:1.1rem; }
+.ch-boardwrap { position:relative; display:flex; justify-content:center; padding:8px; margin:0 auto; }
+.ch-boardwrap::before, .ch-boardwrap::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
+.ch-boardwrap::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
+.ch-boardwrap::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
+.ch-board { width:min(360px, 92vw); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:6px; background:var(--panel); box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 8px 26px -14px #000; cursor:pointer; touch-action:manipulation; }
+.ch-fact { min-height:2.4rem; }
+.ch-fact .ch-sym { color:var(--gold); }
+.ch-fact strong { color:var(--parchment); }
+.ch-cards { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+.ch-card { width:130px; background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line); border-radius:10px; padding:.6rem .4rem; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:.15rem; transition:border-color .15s ease, box-shadow .15s ease; }
+.ch-card:hover { border-color:var(--gold); }
+.ch-card:focus-visible { outline:2px solid var(--gold-bright); outline-offset:2px; }
+.ch-card.is-sel { border-color:var(--gold); box-shadow:inset 0 0 0 1px var(--gold), 0 0 16px -4px var(--gold-bright); }
+.ch-card-emblem { font-size:1.3rem; line-height:1; }
+.ch-card-name { font-family:var(--font-display); color:var(--parchment); font-size:.86rem; letter-spacing:.02em; }
+.ch-card-ep { font-family:var(--font-body); color:var(--ink-faint); font-size:.62rem; font-style:italic; }

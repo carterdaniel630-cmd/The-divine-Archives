@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "note": "Archive Chess maps each chess role to a god of the chosen pantheon; capturing a piece reveals a fact about that god. Every fact is grounded in a real chapter — 'basis' must appear in that pantheon's chapter (checked by tools/verify-chess.js). Roles: K Q R B N P.",
+  "pantheons": {
+    "greek": {
+      "name": "The Olympians", "chapter": "ch08",
+      "roles": {
+        "K": { "god": "Zeus", "basis": "Zeus became king of a new order", "fact": "Zeus overthrew the Titans and became king of a new order, the Olympians." },
+        "Q": { "god": "Athena", "basis": "owl, aegis, and olive", "fact": "Athena, goddess of wisdom and war, is known in art by her owl, aegis, and olive." },
+        "R": { "god": "Poseidon", "basis": "Poseidon", "fact": "Poseidon, lord of the sea and earthquakes, was worshipped among the Olympians from the Bronze Age on." },
+        "B": { "god": "Apollo", "basis": "priestess of Apollo", "fact": "At Delphi the priestess of Apollo, the Pythia, delivered the god's oracles to all of Greece." },
+        "N": { "god": "Ares", "basis": "Ares", "fact": "Ares, god of war, stood among the twelve Olympians of the Greek pantheon." },
+        "P": { "god": "Initiate of Eleusis", "basis": "the Eleusinian Mysteries", "fact": "The Eleusinian Mysteries near Athens promised initiates a happier lot beyond death than the grey shades of Hades." }
+      }
+    },
+    "egyptian": {
+      "name": "The Ennead", "chapter": "ch02",
+      "roles": {
+        "K": { "god": "Osiris", "basis": "Osiris eventually became the god through whom every Egyptian", "fact": "Osiris — a good king murdered by his brother Set — became the god through whom every Egyptian hoped to live again." },
+        "Q": { "god": "Ma'at", "basis": "the concept of truth, balance, cosmic order, and justice", "fact": "Ma'at was at once a goddess and the concept of truth, balance, cosmic order, and justice, which the pharaoh existed to uphold." },
+        "R": { "god": "Ra", "basis": "Ra crossed the sky by day in his solar barque", "fact": "Ra crossed the sky by day in his solar barque and each night fought the chaos-serpent Apep so that dawn could come." },
+        "B": { "god": "Thoth", "basis": "the ibis-headed Thoth, scribe of the gods", "fact": "The ibis-headed Thoth, scribe of the gods, stood ready to record the verdict at the weighing of the heart." },
+        "N": { "god": "Anubis", "basis": "The jackal-headed Anubis", "fact": "The jackal-headed Anubis steadies the scales of judgment — and, myth said, embalmed Osiris to make the first mummy." },
+        "P": { "god": "Eye of Horus", "basis": "the Eye of Horus", "fact": "The six parts of the Eye of Horus doubled as fractions — 1/2, 1/4, 1/8 and on — used to measure grain." }
+      }
+    },
+    "norse": {
+      "name": "The Aesir", "chapter": "ch23",
+      "roles": {
+        "K": { "god": "Odin", "basis": "god of war and death, but also of poetry", "fact": "Odin, chief of the gods, is god of war and death but also of poetry, prophecy, and the runes he won hanging nine nights on the world-tree." },
+        "Q": { "god": "Freyja", "basis": "goddess of love, gold, and battle-slain", "fact": "Freyja was goddess of love, gold, and the battle-slain — she takes half the dead — and mistress of seidr." },
+        "R": { "god": "Yggdrasil", "basis": "the world-tree, an immense ash", "fact": "At the center of the Norse cosmos stands Yggdrasil, the world-tree, an immense ash whose roots and branches hold the worlds together." },
+        "B": { "god": "Baldr", "basis": "the beautiful and beloved god", "fact": "Baldr, the beautiful and beloved god whose death Loki engineers, is the first casualty on the road to Ragnarok." },
+        "N": { "god": "Thor", "basis": "the thunder-god, defender of gods and humans against the giants", "fact": "Thor, the thunder-god, defends gods and humans against the giants with his hammer Mjolnir." },
+        "P": { "god": "Einherjar", "basis": "the battle-slain welcomed to", "fact": "The battle-slain were welcomed to Odin's hall of Valhalla, to feast and fight until the last day." }
+      }
+    }
+  }
+}
