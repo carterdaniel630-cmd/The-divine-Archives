@@ -44,8 +44,10 @@
     // optional detailed hero art: a single 2x2 sheet (Zeus TL, Poseidon TR, Athena BL, Hades BR).
     // When present it replaces the procedural portraits on the select / VS / victory screens;
     // combat stays procedural. Set HERO_SHEET to the file (relative to this script) to enable.
-    var HERO_SHEET = null; // e.g. "art/heroes.png"
-    var HERO_ORDER = ["zeus", "poseidon", "athena", "hades"], HERO_INSET = 0.02;
+    var HERO_SHEET = "art/heroes.jpg";
+    var HERO_ORDER = ["zeus", "poseidon", "athena", "hades"], HERO_INSET = 0.015;
+    // horizontal focus (0..1) of each god's face within its cell, so portrait crops frame the face
+    var HERO_FOCUS = { zeus: 0.5, poseidon: 0.58, athena: 0.52, hades: 0.56 };
     var HERO = { img: null, ready: false };
     function loadHeroes() {
       if (!HERO_SHEET) return;
@@ -58,9 +60,10 @@
       var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2, mx = iw * HERO_INSET, my = ih * HERO_INSET;
       return { sx: col * iw + mx, sy: row * ih + my, sw: iw - 2 * mx, sh: ih - 2 * my };
     }
-    function drawCover(pc, img, sx, sy, sw, sh, dw, dh) {
+    function drawCover(pc, img, sx, sy, sw, sh, dw, dh, fx, fy) {
+      fx = fx == null ? 0.5 : fx; fy = fy == null ? 0.42 : fy;
       var sr = sw / sh, dr = dw / dh, cw = sw, ch = sh;
-      if (sr > dr) { cw = sh * dr; sx += (sw - cw) / 2; } else { ch = sw / dr; sy += (sh - ch) / 2; }
+      if (sr > dr) { cw = sh * dr; sx += (sw - cw) * fx; } else { ch = sw / dr; sy += (sh - ch) * fy; }
       pc.drawImage(img, sx, sy, cw, ch, 0, 0, dw, dh);
     }
     // global light direction (upper-right), for coherent cel shading
@@ -699,7 +702,7 @@
       var W = cvEl.clientWidth || 74, H = cvEl.clientHeight || 88;
       cvEl.width = W * d; cvEl.height = H * d; pc.setTransform(d, 0, 0, d, 0, 0);
       pc.clearRect(0, 0, W, H);
-      if (HERO.ready) { var cr = heroCrop(id); drawCover(pc, HERO.img, cr.sx, cr.sy, cr.sw, cr.sh, W, H); return; }
+      if (HERO.ready) { var cr = heroCrop(id); drawCover(pc, HERO.img, cr.sx, cr.sy, cr.sw, cr.sh, W, H, HERO_FOCUS[id], 0.36); return; }
       var cxL = W / 2 - 2, hy = H * 0.46;
       // shoulders
       pc.fillStyle = s.base; pc.strokeStyle = s.outline; pc.lineWidth = 2;
