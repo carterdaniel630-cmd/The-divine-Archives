@@ -354,3 +354,25 @@
 .ch-card-emblem { font-size:1.3rem; line-height:1; }
 .ch-card-name { font-family:var(--font-display); color:var(--parchment); font-size:.86rem; letter-spacing:.02em; }
 .ch-card-ep { font-family:var(--font-body); color:var(--ink-faint); font-size:.62rem; font-style:italic; }
+
+/* ---------- The Seeker's Path ---------- */
+.sk-intro { max-width:36rem; margin:.4rem auto .6rem; text-align:center; color:var(--ink); font-family:var(--font-body); font-size:1rem; line-height:1.6; }
+.sk-path { display:flex; align-items:center; justify-content:center; gap:.15rem; margin:.4rem 0 .3rem; flex-wrap:wrap; }
+.sk-dot { width:11px; height:11px; transform:rotate(45deg); border:1px solid var(--line); background:var(--panel-2); }
+.sk-dot.done { background:var(--gold); border-color:var(--gold); box-shadow:0 0 8px -1px var(--gold-bright); }
+.sk-dot.here { border-color:var(--gold-bright); background:var(--panel); box-shadow:0 0 0 2px rgba(231,198,128,.3); }
+.sk-link { width:14px; height:1px; background:var(--line); }
+.sk-count { text-align:center; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:.58rem; color:var(--gold); margin:.2rem 0 .5rem; }
+.sk-clue { max-width:38rem; margin:0 auto; background:linear-gradient(180deg, rgba(199,154,84,.05), transparent); border:1px solid var(--line-soft); border-radius:12px; padding:1rem 1.1rem; }
+.sk-riddle { font-family:var(--font-head); color:var(--parchment); font-size:1.15rem; line-height:1.5; margin:0 0 .6rem; }
+.sk-where { text-align:center; margin:.3rem 0 0; }
+.sk-open { border-color:var(--good); box-shadow:0 0 20px -6px var(--good); }
+@media (prefers-reduced-motion: no-preference){ .sk-shake { animation:sk-shake .4s ease; } }
+@keyframes sk-shake { 0%,100%{transform:translateX(0);} 20%{transform:translateX(-6px);} 40%{transform:translateX(6px);} 60%{transform:translateX(-4px);} 80%{transform:translateX(4px);} }
+.sk-form { display:flex; gap:.5rem; justify-content:center; max-width:38rem; margin:.7rem auto .2rem; }
+.sk-input { flex:1; min-width:0; font-family:var(--font-body); font-size:1.05rem; color:var(--parchment); background:var(--panel-2); border:1px solid var(--line); border-radius:8px; padding:.6rem .8rem; }
+.sk-input:focus-visible { outline:2px solid var(--gold-bright); outline-offset:1px; }
+.sk-feedback { text-align:center; min-height:1.2rem; font-family:var(--font-body); font-size:.92rem; margin:.5rem 0 .3rem; }
+.sk-feedback.ok { color:var(--good); font-family:var(--font-display); letter-spacing:.04em; }
+.sk-feedback.no { color:var(--ember); }
+.sk-hint { color:var(--warn); font-style:italic; }
