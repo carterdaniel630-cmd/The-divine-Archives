@@ -790,7 +790,37 @@
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
       fx = []; blood = []; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false;
-      running = true; last = performance.now(); raf = requestAnimationFrame(frame);
+      if (HERO.ready) vsSplash(function () { running = true; last = performance.now(); raf = requestAnimationFrame(frame); });
+      else { running = true; last = performance.now(); raf = requestAnimationFrame(frame); }
+    }
+    // brief cinematic VS card using the two hero portraits
+    function vsSplash(cb) {
+      var t0 = performance.now();
+      (function anim() {
+        var e = (performance.now() - t0) / 1000; drawSplash(e);
+        if (e < 1.5) raf = requestAnimationFrame(anim); else cb();
+      })();
+    }
+    function drawSplash(e) {
+      var t = Math.min(1, e / 0.42), pop = Math.min(1, Math.max(0, (e - 0.3) / 0.3)), pw = 250, ph = VH;
+      cx.clearRect(0, 0, VW, VH);
+      var sky = cx.createLinearGradient(0, 0, 0, VH); sky.addColorStop(0, "#241a2e"); sky.addColorStop(0.7, UI.ember); sky.addColorStop(1, "#140d07"); cx.fillStyle = sky; cx.fillRect(0, 0, VW, VH);
+      var ease = t < 1 ? 1 - Math.pow(1 - t, 3) : 1;
+      drawHeroPanel(curG1, -pw + ease * (30 + pw), 0, pw, ph);
+      drawHeroPanel(curG2, VW - 30 - pw + (1 - ease) * pw, 0, pw, ph);
+      // clash flash
+      if (pop > 0) { cx.save(); cx.globalCompositeOperation = "lighter"; cx.globalAlpha = 0.3 * (1 - Math.abs(pop - 0.5) * 2); cx.fillStyle = UI.goldB; cx.fillRect(VW / 2 - 60, 0, 120, VH); cx.restore(); }
+      cx.save(); cx.globalAlpha = pop; cx.translate(VW / 2, VH / 2); cx.scale(0.5 + pop * 0.6, 0.5 + pop * 0.6);
+      cx.font = "700 56px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillStyle = UI.goldB; cx.strokeStyle = "#20160a"; cx.lineWidth = 4; cx.strokeText("VS", 0, 18); cx.fillText("VS", 0, 18); cx.restore();
+    }
+    function drawHeroPanel(id, x, y, w, h) {
+      cx.save();
+      var P = new Path2D(); P.rect(x + 4, y + 18, w - 8, h - 36); cx.clip(P);
+      if (HERO.ready) { var cr = heroCrop(id); cx.save(); cx.translate(x + 4, y + 18); drawCover(cx, HERO.img, cr.sx, cr.sy, cr.sw, cr.sh, w - 8, h - 36, HERO_FOCUS[id], 0.28); cx.restore(); }
+      cx.restore();
+      cx.strokeStyle = "rgba(199,154,84,.5)"; cx.lineWidth = 1.5; cx.strokeRect(x + 4, y + 18, w - 8, h - 36);
+      cx.fillStyle = UI.goldB; cx.font = "700 17px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.shadowColor = "#000"; cx.shadowBlur = 6;
+      cx.fillText((ROSTER[id] || ZEUS).name.toUpperCase(), x + w / 2, y + h - 4); cx.shadowBlur = 0;
     }
     function attachKeys() {
       keyfn = function (e) {
