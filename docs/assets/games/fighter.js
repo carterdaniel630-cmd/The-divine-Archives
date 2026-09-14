@@ -117,6 +117,23 @@
       opt = opt || {}; var cap = capsule(ax, ay, bx, by, w1, w2, opt.bulge);
       cel(c, cap.path, opt.back ? s.baseSh : s.base, s.shadow, opt.back ? null : s.light, s.outline, cap.w, opt.ow || 2);
     }
+    // A whole limb as ONE smooth outline through several joints (no beaded joints)
+    function boneChain(c, pts, ws, s, opt) {
+      opt = opt || {}; var n = pts.length, norms = [], i;
+      for (i = 0; i < n; i++) {
+        var a = i > 0 ? pts[i - 1] : pts[i], b = i < n - 1 ? pts[i + 1] : pts[i];
+        var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy) || 1;
+        norms.push([-dy / L, dx / L]);
+      }
+      var P = new Path2D();
+      P.moveTo(pts[0][0] + norms[0][0] * ws[0], pts[0][1] + norms[0][1] * ws[0]);
+      for (i = 1; i < n; i++) P.lineTo(pts[i][0] + norms[i][0] * ws[i], pts[i][1] + norms[i][1] * ws[i]);
+      var e = pts[n - 1]; P.arc(e[0], e[1], ws[n - 1], Math.atan2(norms[n - 1][1], norms[n - 1][0]), Math.atan2(-norms[n - 1][1], -norms[n - 1][0]), false);
+      for (i = n - 2; i >= 0; i--) P.lineTo(pts[i][0] - norms[i][0] * ws[i], pts[i][1] - norms[i][1] * ws[i]);
+      var s0 = pts[0]; P.arc(s0[0], s0[1], ws[0], Math.atan2(-norms[0][1], -norms[0][0]), Math.atan2(norms[0][1], norms[0][0]), false);
+      P.closePath();
+      cel(c, P, opt.back ? s.baseSh : s.base, s.shadow, opt.back ? null : s.light, s.outline, Math.max.apply(null, ws), opt.ow || 2, opt.k);
+    }
 
     /* ===================== the figure ===================== */
     function drawFighter(c, f, t) {
@@ -130,27 +147,23 @@
 
       drawAura(c, f, t);
       drawCape(c, p, t, f, s, dmg);
-      // back limbs
-      bone(c, p.hip[0] - 6, p.hip[1], p.kneeB[0], p.kneeB[1], 8.5, 6.5, s, { back: true, bulge: 1.3 });
-      bone(c, p.kneeB[0], p.kneeB[1], p.footB[0], p.footB[1], 6.5, 4.6, s, { back: true, bulge: 1.35 });
+      // back limbs (single smooth outline each)
+      boneChain(c, [[p.hip[0] - 6, p.hip[1]], p.kneeB, p.footB], [8.5, 6.2, 4.6], s, { back: true });
       drawSandal(c, p.footB, s, true);
-      bone(c, p.shB[0], p.shB[1], p.elB[0], p.elB[1], 6.8, 5.4, s, { back: true, bulge: 1.25 });
-      bone(c, p.elB[0], p.elB[1], p.hnB[0], p.hnB[1], 5.2, 4.2, s, { back: true });
+      boneChain(c, [p.shB, p.elB, p.hnB], [6.8, 5.2, 4.2], s, { back: true });
       drawFist(c, p.hnB, s, true);
 
       drawTorso(c, p, s);
       // front leg
-      bone(c, p.hip[0] + 4, p.hip[1], p.kneeF[0], p.kneeF[1], 10, 7.2, s, { bulge: 1.4 });
+      boneChain(c, [[p.hip[0] + 4, p.hip[1]], p.kneeF, p.footF], [10, 7, 4.8], s, {});
       drawGreave(c, p.kneeF, p.footF, s);
-      bone(c, p.kneeF[0], p.kneeF[1], p.footF[0], p.footF[1], 7.2, 4.8, s, { bulge: 1.4 });
       drawSandal(c, p.footF, s, false);
 
       drawHead(c, p, s, t, f);
 
       // front arm + weapon
-      bone(c, p.shF[0], p.shF[1], p.elF[0], p.elF[1], 8, 6.4, s, { bulge: 1.4 });
+      boneChain(c, [p.shF, p.elF, p.hnF], [8, 6.2, 4.8], s, {});
       drawPauldron(c, p.shF, s);
-      bone(c, p.elF[0], p.elF[1], p.hnF[0], p.hnF[1], 6.4, 4.8, s, { bulge: 1.35 });
       drawFist(c, p.hnF, s, false);
       s.weapon(c, p, t, f, s);
 
@@ -224,66 +237,76 @@
 
     function drawHead(c, p, s, t, f) {
       var hx = p.head[0], hy = p.head[1], st = f.state;
-      bone(c, p.neck[0], p.neck[1], hx - 1, hy + 9, 6, 7, s, { bulge: 1 });
-      // hair back mass (wild, upswept)
+      var angry = (st === "light" || st === "heavy" || st === "special"), pain = (st === "hit" || st === "ko");
+      boneChain(c, [[p.neck[0], p.neck[1]], [hx - 3, hy + 12]], [6.5, 7.5], s, {});
+      // big swept-back hair mass
       var HB = new Path2D();
-      HB.moveTo(hx - 13, hy + 4);
-      HB.quadraticCurveTo(hx - 20, hy - 12, hx - 8, hy - 20);
-      HB.quadraticCurveTo(hx - 12, hy - 26, hx - 2, hy - 22);
-      HB.quadraticCurveTo(hx + 2, hy - 30, hx + 8, hy - 22);
-      HB.quadraticCurveTo(hx + 16, hy - 24, hx + 12, hy - 12);
-      HB.quadraticCurveTo(hx + 18, hy - 14, hx + 15, hy - 4);
-      HB.quadraticCurveTo(hx + 6, hy - 16, hx - 2, hy - 12);
-      HB.quadraticCurveTo(hx - 10, hy - 14, hx - 13, hy + 4);
+      HB.moveTo(hx - 15, hy + 8);
+      HB.quadraticCurveTo(hx - 26, hy - 14, hx - 11, hy - 25);
+      HB.quadraticCurveTo(hx - 17, hy - 32, hx - 4, hy - 27);
+      HB.quadraticCurveTo(hx + 3, hy - 36, hx + 11, hy - 27);
+      HB.quadraticCurveTo(hx + 22, hy - 29, hx + 16, hy - 13);
+      HB.quadraticCurveTo(hx + 24, hy - 15, hx + 17, hy - 1);
+      HB.quadraticCurveTo(hx + 7, hy - 19, hx - 4, hy - 15);
+      HB.quadraticCurveTo(hx - 13, hy - 17, hx - 15, hy + 8);
       HB.closePath();
-      cel(c, HB, s.hair, s.hairSh, null, s.outline, 16, 2);
-      // face
+      cel(c, HB, s.hair, s.hairSh, null, s.outline, 18, 2.2);
+      c.save(); c.clip(HB); c.strokeStyle = s.hairSh; c.lineWidth = 1.2;
+      for (var hs = 0; hs < 4; hs++) { c.beginPath(); c.moveTo(hx - 12 + hs * 7, hy - 24); c.quadraticCurveTo(hx - 4 + hs * 6, hy - 14, hx + 2 + hs * 5, hy - 2); c.stroke(); } c.restore();
+      // face profile (forehead → brow → straight nose → lips → chin → jaw)
       var F = new Path2D();
-      F.moveTo(hx - 7, hy - 12);
-      F.quadraticCurveTo(hx + 10, hy - 13, hx + 13, hy - 3);
-      F.lineTo(hx + 18, hy + 2);        // nose bridge → tip (straight Greek nose)
-      F.lineTo(hx + 12, hy + 5);
-      F.quadraticCurveTo(hx + 15, hy + 8, hx + 10, hy + 11);
-      F.quadraticCurveTo(hx + 3, hy + 14, hx - 6, hy + 9);
-      F.quadraticCurveTo(hx - 12, hy - 2, hx - 7, hy - 12);
+      F.moveTo(hx - 9, hy - 15);
+      F.quadraticCurveTo(hx + 9, hy - 17, hx + 13, hy - 5);
+      F.lineTo(hx + 21, hy + 3);
+      F.lineTo(hx + 12, hy + 6.5);
+      F.quadraticCurveTo(hx + 16, hy + 10, hx + 11, hy + 15);
+      F.quadraticCurveTo(hx + 4, hy + 19, hx - 7, hy + 13);
+      F.quadraticCurveTo(hx - 15, hy - 2, hx - 9, hy - 15);
       F.closePath();
-      cel(c, F, s.skin, s.skinSh, s.skinLit, s.outline, 12, 1.8);
-      // brow (expression)
-      var angry = (st === "light" || st === "heavy" || st === "special");
-      var pain = (st === "hit" || st === "ko");
-      c.strokeStyle = s.outline; c.lineWidth = 2; c.lineCap = "round";
+      cel(c, F, s.skin, s.skinSh, s.skinLit, s.outline, 15, 1.9);
+      // ear
+      var E = new Path2D(); E.ellipse(hx - 4, hy + 1, 2.6, 3.6, 0.2, 0, 7);
+      cel(c, E, s.skin, s.skinSh, null, s.outline, 3, 1.2);
+      // cheekbone shading
+      c.save(); c.clip(F); c.strokeStyle = s.skinSh; c.globalAlpha = .6; c.lineWidth = 1.4;
+      c.beginPath(); c.moveTo(hx + 3, hy + 3); c.quadraticCurveTo(hx + 8, hy + 6, hx + 6, hy + 10); c.stroke(); c.globalAlpha = 1; c.restore();
+      // thick brow
+      c.strokeStyle = s.outline; c.lineWidth = 2.6; c.lineCap = "round";
       c.beginPath();
-      if (angry) { c.moveTo(hx + 1, hy - 6); c.lineTo(hx + 9, hy - 3); }
-      else if (pain) { c.moveTo(hx + 1, hy - 3); c.lineTo(hx + 9, hy - 6); }
-      else { c.moveTo(hx + 1, hy - 5); c.lineTo(hx + 9, hy - 4); }
+      if (angry) { c.moveTo(hx + 2, hy - 9); c.lineTo(hx + 13, hy - 4); }
+      else if (pain) { c.moveTo(hx + 2, hy - 4); c.lineTo(hx + 13, hy - 9); }
+      else { c.moveTo(hx + 2, hy - 8); c.lineTo(hx + 13, hy - 6); }
       c.stroke();
-      // eye (glowing)
-      c.fillStyle = "#fff"; c.beginPath(); c.ellipse(hx + 6, hy - 1, 2.6, 1.9, 0, 0, 7); c.fill();
-      c.save(); c.shadowColor = s.eye; c.shadowBlur = 6; c.fillStyle = s.eye;
-      c.beginPath(); c.arc(hx + 7, hy - 1, 1.5, 0, 7); c.fill(); c.restore();
-      c.fillStyle = s.outline; c.beginPath(); c.arc(hx + 7.4, hy - 1, 0.8, 0, 7); c.fill();
-      // mouth — a fierce open snarl when fighting, a set line at rest
+      // deep-set almond eye
+      c.fillStyle = "#f4efdd";
+      c.beginPath(); c.moveTo(hx + 4, hy - 2); c.quadraticCurveTo(hx + 8, hy - 5.5, hx + 12.5, hy - 1.5); c.quadraticCurveTo(hx + 8, hy + 1.5, hx + 4, hy - 2); c.closePath(); c.fill();
+      c.save(); c.shadowColor = s.eye; c.shadowBlur = 8; c.fillStyle = s.eye; c.beginPath(); c.arc(hx + 9, hy - 2, 2.3, 0, 7); c.fill(); c.restore();
+      c.fillStyle = s.outline; c.beginPath(); c.arc(hx + 9.7, hy - 2, 1.2, 0, 7); c.fill();
+      c.fillStyle = "#fff"; c.globalAlpha = .8; c.beginPath(); c.arc(hx + 8.2, hy - 2.8, 0.7, 0, 7); c.fill(); c.globalAlpha = 1;
+      c.strokeStyle = s.outline; c.lineWidth = 1.6; c.beginPath(); c.moveTo(hx + 4, hy - 2.5); c.quadraticCurveTo(hx + 8, hy - 6, hx + 12.5, hy - 1.8); c.stroke();
+      // nostril + nose base
+      c.lineWidth = 1.2; c.beginPath(); c.moveTo(hx + 13, hy + 3.4); c.lineTo(hx + 18, hy + 3.8); c.stroke();
+      // mustache
+      c.fillStyle = s.hair; c.beginPath(); c.moveTo(hx + 2, hy + 6); c.quadraticCurveTo(hx + 9, hy + 5, hx + 13, hy + 7); c.quadraticCurveTo(hx + 9, hy + 9, hx + 2, hy + 8.5); c.closePath(); c.fill();
+      c.strokeStyle = s.outline; c.lineWidth = .8; c.stroke();
+      // mouth
       if (angry || pain) {
-        c.fillStyle = "#26120a"; c.beginPath();
-        c.moveTo(hx + 2, hy + 6); c.quadraticCurveTo(hx + 6, hy + 10, hx + 10.5, hy + 6.5);
-        c.quadraticCurveTo(hx + 6, hy + 7.5, hx + 2, hy + 6); c.closePath(); c.fill();
-        c.fillStyle = "#efe6cf"; c.beginPath(); c.moveTo(hx + 3, hy + 6); c.lineTo(hx + 9.5, hy + 6.3); c.lineTo(hx + 9, hy + 7.1); c.lineTo(hx + 3.4, hy + 6.9); c.closePath(); c.fill();
-        c.strokeStyle = s.outline; c.lineWidth = 1.2; c.beginPath(); c.moveTo(hx + 2, hy + 6); c.quadraticCurveTo(hx + 6, hy + 10, hx + 10.5, hy + 6.5); c.stroke();
-      } else {
-        c.strokeStyle = s.outline; c.lineWidth = 1.6; c.beginPath(); c.moveTo(hx + 3, hy + 7); c.quadraticCurveTo(hx + 6, hy + 7.6, hx + 9.5, hy + 6.8); c.stroke();
-      }
-      // beard in flowing locks
+        c.fillStyle = "#26120a"; c.beginPath(); c.moveTo(hx + 2, hy + 9); c.quadraticCurveTo(hx + 6, hy + 12.5, hx + 11, hy + 9.5); c.quadraticCurveTo(hx + 6, hy + 10.5, hx + 2, hy + 9); c.closePath(); c.fill();
+        c.fillStyle = "#efe6cf"; c.beginPath(); c.moveTo(hx + 3, hy + 9); c.lineTo(hx + 10, hy + 9.3); c.lineTo(hx + 9.5, hy + 10.1); c.lineTo(hx + 3.5, hy + 9.9); c.closePath(); c.fill();
+      } else { c.strokeStyle = s.outline; c.lineWidth = 1.5; c.beginPath(); c.moveTo(hx + 3, hy + 10); c.quadraticCurveTo(hx + 6, hy + 10.6, hx + 10, hy + 9.6); c.stroke(); }
+      // full beard in locks
       var B = new Path2D();
-      B.moveTo(hx - 7, hy + 8);
-      B.quadraticCurveTo(hx + 7, hy + 13, hx + 11, hy + 8);
-      B.quadraticCurveTo(hx + 15, hy + 24, hx + 4, hy + 34);
-      B.quadraticCurveTo(hx - 2, hy + 38, hx - 7, hy + 31);
-      B.quadraticCurveTo(hx - 15, hy + 22, hx - 7, hy + 8);
+      B.moveTo(hx - 8, hy + 9);
+      B.quadraticCurveTo(hx + 8, hy + 15, hx + 12, hy + 9);
+      B.quadraticCurveTo(hx + 17, hy + 27, hx + 5, hy + 39);
+      B.quadraticCurveTo(hx - 2, hy + 43, hx - 8, hy + 35);
+      B.quadraticCurveTo(hx - 17, hy + 25, hx - 8, hy + 9);
       B.closePath();
-      cel(c, B, s.hair, s.hairSh, null, s.outline, 14, 1.8);
-      c.save(); c.clip(B); c.strokeStyle = s.hairSh; c.lineWidth = 1;
-      c.beginPath(); c.moveTo(hx - 1, hy + 13); c.quadraticCurveTo(hx + 1, hy + 26, hx - 2, hy + 32); c.stroke();
-      c.beginPath(); c.moveTo(hx + 5, hy + 13); c.quadraticCurveTo(hx + 7, hy + 22, hx + 3, hy + 31); c.stroke(); c.restore();
+      cel(c, B, s.hair, s.hairSh, null, s.outline, 16, 2);
+      c.save(); c.clip(B); c.strokeStyle = s.hairSh; c.lineWidth = 1.1;
+      c.beginPath(); c.moveTo(hx - 2, hy + 14); c.quadraticCurveTo(hx, hy + 30, hx - 3, hy + 37); c.stroke();
+      c.beginPath(); c.moveTo(hx + 5, hy + 14); c.quadraticCurveTo(hx + 8, hy + 26, hx + 3, hy + 36); c.stroke();
+      c.beginPath(); c.moveTo(hx + 10, hy + 12); c.quadraticCurveTo(hx + 12, hy + 22, hx + 7, hy + 32); c.stroke(); c.restore();
       s.crown(c, hx, hy, s);
     }
 
@@ -459,9 +482,10 @@
         other.vx = f.facing * (kind === "heavy" ? 3.6 : kind === "special" ? 5.5 : 2);
         f.combo++;
         burst(hx, hy, kind); spray(hx, hy, other.skin.blood, kind);
-        shake = Math.max(shake, kind === "special" ? 9 : kind === "heavy" ? 6 : 3);
-        hitStop = Math.max(hitStop, kind === "special" ? 0.13 : kind === "heavy" ? 0.09 : 0.05);
-        if (kind !== "light") blood.push({ x: other.x + rnd(-12, 12), y: GROUND + rnd(0, 6), r: rnd(3, 7), col: other.skin.blood, life: .8 });
+        shake = Math.max(shake, kind === "special" ? 13 : kind === "heavy" ? 8 : 4);
+        hitStop = Math.max(hitStop, kind === "special" ? 0.16 : kind === "heavy" ? 0.11 : 0.06);
+        var pools = kind === "special" ? 5 : kind === "heavy" ? 3 : 1;
+        for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-16, 16), y: GROUND + rnd(0, 8), r: rnd(3, 8), col: other.skin.blood, life: 1 });
       } else { other.vx = f.facing * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04); }
       if (kind === "special") flash = 0.7;
       if (other.hp <= 0 && other.state !== "ko") { setState(other, "ko", 1.2); banner = { txt: f.skin.name + " prevails", t: 2.6 }; shake = 10; for (var i = 0; i < 8; i++) blood.push({ x: other.x + rnd(-20, 20), y: GROUND + rnd(-2, 8), r: rnd(3, 8), col: other.skin.blood, life: .9 }); }
@@ -471,7 +495,7 @@
       fx.push({ t: "flash", x: x, y: y, r: kind === "special" ? 34 : kind === "heavy" ? 24 : 16, life: 1, col: col });
       for (var i = 0; i < n; i++) { var a = (i / n) * 6.28; fx.push({ t: "line", x: x, y: y, a: a, len: rnd(10, kind === "special" ? 40 : 24), life: 1, col: col }); }
     }
-    function spray(x, y, col, kind) { var n = kind === "special" ? 16 : kind === "heavy" ? 11 : 6; for (var i = 0; i < n; i++) fx.push({ t: "blood", x: x, y: y, vx: rnd(-1, 1) * 6, vy: rnd(-5, 1), life: 1, r: rnd(1.4, 3.2), col: col }); }
+    function spray(x, y, col, kind) { var n = kind === "special" ? 26 : kind === "heavy" ? 18 : 9; for (var i = 0; i < n; i++) fx.push({ t: "blood", x: x, y: y, vx: rnd(-1, 1) * 9, vy: rnd(-7, 1.5), life: 1, r: rnd(1.6, 4), col: col }); }
     function drawFX(c) {
       for (var i = fx.length - 1; i >= 0; i--) {
         var e = fx[i];
@@ -513,7 +537,8 @@
       flash = Math.max(0, flash - dt * 2); shake = Math.max(0, shake - dt * 32);
       if (hitStop > 0) { hitStop -= dt; } else { gameT += dt; [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); }); }
       for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= dt * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
-      for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= dt * 0.08; if (blood[b].life <= 0) blood.splice(b, 1); }
+      for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= dt * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
+      if (blood.length > 60) blood.splice(0, blood.length - 60);
       cx.clearRect(0, 0, VW, VH);
       cx.save();
       if (shake > 0.3) cx.translate(rnd(-shake, shake), rnd(-shake, shake));
