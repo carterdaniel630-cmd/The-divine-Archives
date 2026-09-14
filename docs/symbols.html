@@ -73,6 +73,7 @@
 <script src="assets/plates.js"></script>
 <script src="assets/emblems.js"></script>
 <script src="assets/games/archive-games.js"></script>
+<script src="assets/games/reliquary.js"></script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -103,7 +104,8 @@
     var TRIGGER_FOR = {}; // chId -> game meta
     Object.keys(GAMES).forEach(function (k) {
       var g = GAMES[k]; TRIGGER_FOR[g.ch] = g;
-      AG.register(g.gameId, { title:g.title, subtitle:g.subtitle, phaseNote:g.phaseNote,
+      // only register a Phase-1 placeholder if a real game module hasn't already registered
+      if (!AG.isRegistered(g.gameId)) AG.register(g.gameId, { title:g.title, subtitle:g.subtitle, phaseNote:g.phaseNote,
         symbolSVG: ART[g.ch] || "", sourceHref:"chapters/"+g.ch+".html", sourceLabel:"Read “"+(chById(g.ch)||{}).title+"”" });
     });
 
