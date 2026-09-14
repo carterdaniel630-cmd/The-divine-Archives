@@ -1,0 +1,18 @@
+# Sources — Chapter 56: Mandaeans, Yazidis & Druze
+
+Per the project sourcing standard. A tradition chapter on three closed/esoteric Near Eastern minorities: the emphasis is on documented belief and practice, firmly refusing the false "devil-worship" libel against the Yazidis and respecting the deliberately guarded secrets of the Druze and Yazidi traditions.
+
+## Sources cited
+- **Mandaeism: "the first Baptists and the last Gnostics," John the Baptist as supreme prophet (Jesus as corruptor), the Gnostic World of Light and soul's ascent, the Ginza Rabbā/Qolastā/Book of John in Mandaic, and repeated baptism (masbuta) in flowing living water** — "Mandaeism," Wikipedia. https://en.wikipedia.org/wiki/Mandaeism ; "Meet the Mandaeans, the Disciples of John the Baptist," Pauline Montagna (Medium). https://paulinemontagna.medium.com/meet-the-mandaeans-the-disciples-of-john-the-baptist-7948235720f5
+- **Yazidism: one God (Xwedê) and seven Holy Beings; Tawûsî Melek the Peacock Angel and the refusal-to-bow myth; the false "devil-worshipper" charge; Sheikh Adī ibn Musāfir (12th c) and Lalish; oral qewls and caste; the 2014 genocide** — "Yazidism and the Divine Mystery of Tawûsî Melek," Spiritual Arts Foundation. https://www.spiritualarts.org.uk/yazidism-and-the-divine-mystery-of-tawusi-melek/ ; "Yazidi Religious Beliefs: History, Facts, and Traditions," peacock-angel.org. https://peacock-angel.org/yazidi.beliefs.htm
+- **Druze: the early-11th-century Ismaili offshoot; al-Ḥākim and his occultation; Ḥamza ibn ʿAlī; tawḥīd/al-Muwaḥḥidūn; reincarnation (taqammuṣ); the ʿuqqāl/juhhāl division; the secret Epistles of Wisdom; taqiyya; no converts since ~1043** — "The Druze and al-Hakim: The Religion with No Converts," AM Digital. https://www.amdigital.co.uk/insights/blog/the-druze-and-al-hakim-the-religion-with-no-converts ; "Druze," GlobalSecurity.org. https://www.globalsecurity.org/military/intro/islam-druze.htm
+- **Druze metaphysics: Neoplatonic tawhid and the five cosmic principles/luminaries (the five-colored star)** — "Druze Faith and the Mystery of the Divine," Spiritual Arts Foundation. https://www.spiritualarts.org.uk/druze-faith-and-the-mystery-of-the-divine/
+- **Supporting detail corroborated via the above and adjacent chapters:** the Mandaean darfash banner and tarmida priesthood; the Yazidi sanjak peacock standards, Lalish serpent/sun imagery; the Druze communities in Lebanon/Syria/Israel; the UN recognition of the 2014 Yazidi genocide.
+
+## Notes
+- Well-supported: the existence, scriptures, and core practices of all three; the historical crystallization of Yazidism (Sheikh Adī, 12th c) and the Druze (11th c, al-Ḥākim); the 2014 Yazidi genocide (documented, recognized as genocide).
+- Explicitly refused: the "devil-worship" charge against the Yazidis is false (a hostile misreading of the Peacock Angel myth), stated plainly.
+- Not reliable / contested: many older outsider accounts of the secret Druze and oral Yazidi doctrines; certain purported Yazidi "black book" texts are of contested authenticity; al-Ḥākim's occultation is an article of faith, not history.
+- Genuinely open: the exact age/origins of Mandaeism (clearly pre-Islamic; earliest history debated); the pre-Islamic substrate of Yazidism; the full guarded content of Druze and Yazidi teaching (respected as secret).
+- Placed in era 07 (High Medieval): the 11th–12th-c crystallization of the Druze and Yazidis, with Mandaeism's older roots noted.
+- Connects to ch17 (Gnosticism), ch55 (Manichaeism), ch16 (John the Baptist/early Christianity), ch06 (Iranian roots), ch27 (Sufism), ch21 (Ismaili Islam / Iblis), ch39 (the devil).

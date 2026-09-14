@@ -1,0 +1,17 @@
+# Sources — Chapter 64: Pentecostalism & Global Christianity
+
+Per the project sourcing standard. A tradition chapter on the fastest-growing modern religious movement: the emphasis is on documented history and demography, with the theological claims (tongues as evidence, healing, spiritual warfare) marked as faith and glossolalia described neutrally.
+
+## Sources cited
+- **The Azusa Street Revival (1906), William J. Seymour, Charles Parham, the Holiness roots, Spirit baptism and tongues, and the interracial/missionary character** — "Azusa Street Revival," EBSCO Research Starters. https://www.ebsco.com/research-starters/history/azusa-street-revival ; "William J. Seymour," Wikipedia. https://en.wikipedia.org/wiki/William_J._Seymour
+- **Parham's Topeka teaching (1901) that tongues is the evidence of Holy Spirit baptism; the Wesleyan/Holiness "second blessing"; the gifts of 1 Corinthians 12 and the Acts 2 model** — "Pentecostalism: William Seymour," Christian History Institute. https://christianhistoryinstitute.org/magazine/article/pentecostalism-seymour ; "Azusa Street Revival," Wikipedia. https://en.wikipedia.org/wiki/Azusa_Street_Revival
+- **The shift of Christianity to the Global South (69% of Christians in 2025, rising) and regional growth** — "The Global South concentrates the growth of Christianity," Evangelical Focus. https://evangelicalfocus.com/life-tech/34596/the-global-south-concentrates-the-growth-of-christianity ; "Perspectives from Global South Christianity," Lausanne Movement. https://lausanne.org/global-analysis/perspectives-from-global-south-christianity
+- **The explosive growth of Pentecostal-charismatic Christianity (from <1 million in 1900 toward ~1 billion), Latin American and Korean growth, and the prosperity gospel** — "The Explosive Growth of Pentecostal-Charismatic Christianity in the Global South," Homiletic & Pastoral Review. https://www.hprweb.com/2017/06/the-explosive-growth-of-pentecostal-charismatic-christianity-in-the-global-south-and-its-implications-for-catholic-evangelization/
+- **Supporting detail corroborated via the above and adjacent chapters:** the Assemblies of God and Church of God in Christ; the 1960s Charismatic movement and Catholic Charismatic Renewal; Seoul megachurches; African-initiated churches; women's leadership (Aimee Semple McPherson); linguistic study of glossolalia (generally not a natural language).
+
+## Notes
+- Well-supported: the origins (Parham 1901, Azusa 1906, Seymour); Spirit baptism and the gifts; the three waves; and above all the demographic facts (Pentecostal/charismatic growth and the Global-South majority) — thoroughly documented by history and religious demography.
+- Not supported (as fact): the theological claims (tongues as evidence of Spirit baptism; healings/miracles as claimed; real demonic powers in spiritual warfare) are faith, reported as belief. Glossolalia is described neutrally (studied; generally not a natural language, but a genuine vocal-religious practice). The prosperity gospel is real but contested; not endorsed.
+- Genuinely open: the long-term trajectory of the southern shift and Pentecostal growth; how far local Pentecostalisms absorb prior Indigenous spirit-worlds; the inner reality of testified experience (documented, not adjudicated).
+- Placed in era 09 (Modern).
+- Connects to ch16 (Christianity), ch31 (Protestant Reformation), ch60 (the wider Christian family), ch18 (ecstatic cults), ch27/ch30 (direct experience), ch33/ch40 (African/diaspora spirit-worlds), ch35 (modern religious change).

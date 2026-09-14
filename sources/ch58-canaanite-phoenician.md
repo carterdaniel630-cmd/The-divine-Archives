@@ -1,0 +1,18 @@
+# Sources — Chapter 58: Canaanite & Phoenician Religion
+
+Per the project sourcing standard. A tradition chapter that leans on the recovered Ugaritic corpus to hear Canaanite religion apart from its biblical/classical enemies: the emphasis is on documented pantheon and texts, with the child-sacrifice and "sacred prostitution" questions flagged honestly.
+
+## Sources cited
+- **Ugaritic-Canaanite religion: the 1929 discovery of Ugarit/Ras Shamra; the pantheon (El, Athirat/Asherah, Baal/Hadad, Anat, Yam, Mot, Dagan); the Baal Cycle (Baal vs. Yam the Sea and Mot the Death; death and revival)** — "Ugaritic-Canaanite Religion," Encyclopedia.com. https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion ; "Canaanite Religion," New World Encyclopedia. https://www.newworldencyclopedia.org/entry/Canaanite_Religion
+- **El as the aged high god / "father of the gods," and the Canaanite roots of biblical divine imagery** — "El (deity)," Wikipedia. https://en.wikipedia.org/wiki/El_(deity)
+- **Phoenician religion and city-gods: Melqart of Tyre (kingship, death-and-rising, equated with Herakles), Eshmun of Sidon (healing), Astarte, and Carthage's Baal Hammon and Tanit** — "Melqart," Encyclopædia Britannica. https://www.britannica.com/topic/Melqart ; "Phoenician Religion," World History Encyclopedia. https://www.worldhistory.org/Phoenician_Religion/
+- **The Carthage tophet and the child-sacrifice debate: the urns/stelae; the 2014 study concluding sacrifice; the natural-death infant-cemetery counter-argument** — "Study Concludes Child Sacrifice Took Place in Ancient Carthage," Archaeology Magazine. https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/ ; "Skeletal Remains from Punic Carthage Do Not Support Systematic Sacrifice of Infants," PLoS ONE / NCBI. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/
+- **The Phoenician alphabet: 22 consonants (c. 11th c BCE), spread by traders, ancestor of the Greek and all Western alphabets** — "Phoenician alphabet," Encyclopædia Britannica. https://www.britannica.com/topic/Phoenician-alphabet ; "How the Phoenician Alphabet Revolutionised Language," History Hit. https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/
+- **Supporting detail corroborated via the above and adjacent chapters:** the massebah/baitylos standing stone and "Bethel"; the Asherah pole; the "sign of Tanit"; the "Yahweh and his Asherah" inscriptions and the Canaanite matrix of Israelite religion (ch07 sources); Baal's Mount Zaphon; the contested "sacred prostitution" claims.
+
+## Notes
+- Well-supported: the Ugaritic texts and pantheon; the Baal Cycle; the deep Canaanite–Israelite continuity (mainstream scholarship); the Phoenician city-gods and Carthaginian deities; the tophet precincts and infant urns; the Phoenician alphabet as ancestor of Western scripts.
+- Contested/unsettled (flagged): whether the tophet evidences systematic child sacrifice or is a natural-death infant cemetery; the "sacred prostitution" claims (largely from hostile sources, widely doubted).
+- Genuinely open: the theology behind the tophet and any sacrifice's frequency; the relationship between Bronze Age Ugaritic and 1st-millennium Phoenician cults; how far biblical polemic distorts Canaanite religion.
+- Placed in era 03 (Early Iron Age), spanning Late Bronze Ugarit into the Iron Age Phoenician cities.
+- Connects to ch07 (Israel), ch46 (chaoskampf), ch01/theme (dying-returning god), ch48 (Great Goddess), ch51 (sacrifice), ch57 (Hittite/Bronze Age), ch02 (Egypt), ch08 (Greece/alphabet).

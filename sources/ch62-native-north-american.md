@@ -1,0 +1,19 @@
+# Sources — Chapter 62: Native North American Religion
+
+Per the project sourcing standard. A tradition chapter on a vast, diverse, living set of traditions: the emphasis is on documented monuments, concepts, ceremonies, and movements; the archive rejects the racist "Mound Builder" myth and New Age appropriations, flags "the Native American religion" and "Great Spirit" as oversimplifications, and respects restricted knowledge.
+
+## Sources cited
+- **The concepts of sacred power (Wakan Tanka, Manitou/Gitche Manitou, orenda); animism; and the diversity of ~300 languages/traditions** — "Wakan-Tanka," Encyclopædia Britannica. https://www.britannica.com/topic/Wakan-Tanka ; "Orenda," Encyclopædia Britannica. https://www.britannica.com/topic/orenda ; "Native American religions," Encyclopædia Britannica. https://www.britannica.com/topic/Native-American-religion
+- **The trickster (Coyote, Raven, Nanabozho) and creation (earth-diver, Turtle Island, Sky Woman, emergence)** — "Coyote and Raven, American Tricksters," Crash Course World Mythology. https://thecrashcourse.com/courses/coyote-and-raven-american-tricksters-crash-course-world-mythology-22/
+- **The vision quest, the medicine person, the Sun Dance, and the Sacred Pipe (White Buffalo Calf Woman)** — "Vision quest," Encyclopædia Britannica. https://www.britannica.com/topic/vision-quest ; "Sun Dance," World History Encyclopedia. https://www.worldhistory.org/Sun_Dance/ ; "Sacred Pipe," Encyclopædia Britannica. https://www.britannica.com/topic/Sacred-Pipe
+- **The mound-builders and Cahokia (Monks Mound, c. 950–1350; Woodhenge; larger base than the Great Pyramid) and the Southeastern Ceremonial Complex (birdman, cross-in-circle)** — "Cahokia Mounds," Encyclopædia Britannica. https://www.britannica.com/place/Cahokia-Mounds ; "Southeastern Ceremonial Complex," Wikipedia. https://en.wikipedia.org/wiki/Southeastern_Ceremonial_Complex
+- **Chaco Canyon and Ancestral Puebloan astronomy** — "Cultural Astronomy of the Ancestral Puebloan," Crow Canyon Archaeological Center. https://crowcanyon.org/resources/cultural-astronomy-of-the-ancestral-puebloan-chaco-hovenweep-mesa-verde-and-wupatki/
+- **The Ghost Dance (Wovoka, 1889–90; Wounded Knee) and the Native American Church (peyotism, c. 1885)** — "Ghost Dance," Encyclopedia.com. https://www.encyclopedia.com/history/united-states-and-canada/north-american-indigenous-peoples/ghost-dance ; "Native American Church," Encyclopædia Britannica. https://www.britannica.com/topic/Native-American-Church
+- **Supporting detail corroborated via the above and adjacent chapters:** the Hopewell/Adena earthworks and Serpent Mound; the potlatch, kachinas/kivas, Green Corn, sweat lodge, medicine wheel and four directions; the Longhouse religion (Handsome Lake, 1799).
+
+## Notes
+- Well-supported: the mound cultures and Cahokia/Chaco monuments (built by Native ancestors); the sacred-power concepts and animism; earth-diver/emergence creation and the trickster; the major ceremonies; the Ghost Dance/Wounded Knee, Longhouse religion, and Native American Church.
+- Rejected / not supported: a single "Native American religion"; "Great Spirit" as anything but a simplifying gloss; the racist "Mound Builder" myth (a lost non-Native race); commercial/New Age appropriations.
+- Caveats: much pre-contact belief is reconstructed from post-contact ethnography (with its distortions); much sacred knowledge is restricted and not published here; specific meanings of ancient art/alignments are debated.
+- Placement: era 07 (High Medieval), anchored on the Mississippian/Cahokia and Chaco florescence (c. 950–1350), while noting the traditions are far older and living.
+- Connects to ch46 (earth-diver/emergence), ch42 (mounds/sacred mountain), ch29 (Mesoamerican pyramids), ch41 (shamanism/animism), ch63 (mana), ch50/ch35 (Ghost Dance/millenarianism), ch61 (living oral traditions).
