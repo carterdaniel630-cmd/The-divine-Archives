@@ -1,0 +1,14 @@
+{
+  "note": "Facts for 'Dominion of the Ancients' (Risk). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-risk.js). `territory` ties the fact to the land you conquer.",
+  "facts": [
+    { "territory": "egypt", "label": "Egypt", "fact": "In the Egyptian judgment the jackal-headed Anubis steadies the scales as the heart is weighed against truth.", "basis": "jackal-headed Anubis", "chapter": "ch02" },
+    { "territory": "babylon", "label": "Babylon & Sumer", "fact": "The inlaid Standard of Ur gives a vivid picture of Early Dynastic kingship and its beliefs about the beyond.", "basis": "Standard of Ur", "chapter": "ch03" },
+    { "territory": "assyria", "label": "Assyria", "fact": "Mesopotamia's great underworld poem is the Descent of Inanna, in which even a goddess is stripped at each gate.", "basis": "Descent of Inanna", "chapter": "ch03" },
+    { "territory": "indus", "label": "The Indus", "fact": "Mohenjo-daro's most striking structure is the Great Bath, a watertight sunken tank of fitted brick sealed with bitumen.", "basis": "Great Bath", "chapter": "ch04" },
+    { "territory": "greece", "label": "Greece", "fact": "Greek myth tells of Persephone carried off to the underworld, sought by Demeter and returned for part of the year.", "basis": "carried off to the underworld", "chapter": "ch08" },
+    { "territory": "persia", "label": "Persia", "fact": "At Behistun, Darius carved his victories into living rock and credited Ahura Mazda — a landmark royal inscription.", "basis": "Behistun", "chapter": "ch06" },
+    { "territory": "bactria", "label": "Bactria", "fact": "Zoroastrians exposed their dead on the dakhmas, the Towers of Silence, so the sun and vultures might strip the bones.", "basis": "Towers of Silence", "chapter": "ch06" },
+    { "territory": "china", "label": "China", "fact": "The Zhou justified conquering the Shang by the Mandate of Heaven — a ruler holds power only while he rules justly.", "basis": "Mandate of Heaven", "chapter": "ch09" },
+    { "territory": "rome", "label": "Rome", "fact": "On the summit stood the Capitoline Triad — Jupiter, Juno, and Minerva — guarantors of Roman power.", "basis": "Capitoline Triad", "chapter": "ch13" }
+  ]
+}
