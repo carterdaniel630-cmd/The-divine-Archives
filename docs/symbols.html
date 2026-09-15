@@ -82,6 +82,7 @@
 <script src="assets/games/pong.js?v=2"></script>
 <script src="assets/games/minesweeper.js?v=2"></script>
 <script src="assets/games/pacman.js?v=2"></script>
+<script src="assets/games/pinball.js?v=2"></script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -115,7 +116,9 @@
       minesweeper:{ gameId:"minesweeper", ch:"ch04", title:"The Excavation", subtitle:"Clear the buried dig without striking a hazard.",
         phaseNote:"Minesweeper, reskinned as an archaeological dig — clear the site without striking a collapse or curse; every hazard you mark correctly turns up a real find. In development." },
       pacman:    { gameId:"pacman", ch:"ch29", title:"The Labyrinth", subtitle:"Thread the maze of the dead; outrun the shades.",
-        phaseNote:"Pac-Man, reskinned as the soul's passage through the maze of the dead — gather the offerings, light the sacred lamps to scatter the shades, and each lamp reveals a real underworld belief. In development." }
+        phaseNote:"Pac-Man, reskinned as the soul's passage through the maze of the dead — gather the offerings, light the sacred lamps to scatter the shades, and each lamp reveals a real underworld belief. In development." },
+      pinball:   { gameId:"pinball", ch:"ch46", title:"The Firmament", subtitle:"Launch the spark through the ordered heavens.",
+        phaseNote:"Pinball, reskinned to cosmogony — fire the soul-spark up through the heavens and ring the celestial bumpers; light each one to draw the cosmos out of the primordial chaos, revealing a real creation myth. In development." }
     };
     var TRIGGER_FOR = {}; // chId -> game meta
     Object.keys(GAMES).forEach(function (k) {

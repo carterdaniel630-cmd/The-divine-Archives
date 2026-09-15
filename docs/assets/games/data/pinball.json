@@ -1,0 +1,53 @@
+{
+  "note": "Facts for 'The Firmament' (Pinball). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-pinball.js). Theme: order struck out of the primordial chaos — the making of the cosmos.",
+  "facts": [
+    {
+      "label": "The cosmic egg",
+      "fact": "A single seed hatches the cosmos — the Rigveda's golden Hiranyagarbha, the Orphic world-egg — the cosmic egg recurs across traditions.",
+      "basis": "cosmic egg",
+      "chapter": "ch46"
+    },
+    {
+      "label": "The primordial ocean",
+      "fact": "Egypt's world rises from Nun, the limitless primordial ocean, on a first mound of dry earth — the oldest cosmogonies begin wet.",
+      "basis": "limitless primordial ocean",
+      "chapter": "ch46"
+    },
+    {
+      "label": "Marduk and Tiamat",
+      "fact": "In the Enuma Elish the god Marduk hacks in two the salt-sea monster Tiamat and builds the world from her body — order won by combat.",
+      "basis": "Marduk hacks in two",
+      "chapter": "ch46"
+    },
+    {
+      "label": "The sacrifice of Purusha",
+      "fact": "The Rigveda's Purusha Sukta sacrifices the cosmic Man Purusha — the moon from his mind, the sun from his eye — the world built from a body.",
+      "basis": "cosmic Man Purusha",
+      "chapter": "ch46"
+    },
+    {
+      "label": "The body of Ymir",
+      "fact": "The Norse gods slay the frost-giant Ymir and make the earth from his flesh, the sea from his blood, the mountains from his bones.",
+      "basis": "frost-giant Ymir",
+      "chapter": "ch46"
+    },
+    {
+      "label": "The act of separation",
+      "fact": "The commonest creative act is separation: sky from earth, waters above from below, light from dark — creation as the drawing of distinctions.",
+      "basis": "sky from earth",
+      "chapter": "ch46"
+    },
+    {
+      "label": "The Ogdoad",
+      "fact": "Hermopolis begins with the Ogdoad, eight primeval deities in pairs, while Genesis orders creation into a seven-day week.",
+      "basis": "eight primeval deities",
+      "chapter": "ch46"
+    },
+    {
+      "label": "The golden womb",
+      "fact": "The Rigveda's Hiranyagarbha is the golden womb from which all things are born, floating on the primal waters.",
+      "basis": "golden womb",
+      "chapter": "ch46"
+    }
+  ]
+}
