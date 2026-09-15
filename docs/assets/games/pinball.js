@@ -41,7 +41,7 @@
   });
 
   function mountGame(root, ctx) {
-    var VW = 320, VH = 460, GRAV = 0.17, REST = 0.68, MAXV = 10, SUB = 5;
+    var VW = 320, VH = 460, GRAV = 0.2, REST = 0.58, MAXV = 10, SUB = 5;
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var COL = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34") };
@@ -66,14 +66,14 @@
     ];
     var DRAIN = { x1: 120, x2: 200, y: 432 };
 
-    function mkFlipper(px, py, sign) { return { px: px, py: py, len: 52, sign: sign, rest: 0.5, up: -0.5, ang: 0.5, av: 0, active: false }; }
+    function mkFlipper(px, py, sign) { return { px: px, py: py, len: 44, sign: sign, rest: 0.5, up: -0.55, ang: 0.5, av: 0, active: false }; }
 
     function newBall() { return { x: 287, y: 348, vx: 0, vy: 0, r: 7, launched: false }; } // rests in the right launch lane
     function newGame() {
       BUMPERS.forEach(function (b) { b.hits = 0; b.lit = false; });
       st = {
         ball: newBall(), balls: 3, score: 0, collected: [], seen: {},
-        L: mkFlipper(120, 414, 1), R: mkFlipper(200, 414, -1),
+        L: mkFlipper(112, 416, 1), R: mkFlipper(208, 416, -1),
         sparks: [], stars: [], over: false, msg: "Tap Launch (or Space) to cast the spark", charge: 0
       };
       for (var i = 0; i < 26; i++) st.stars.push({ x: Math.random() * VW, y: Math.random() * VH * 0.7, r: Math.random() * 1.2 + 0.3, a: Math.random() * 0.5 + 0.1 });
@@ -149,7 +149,7 @@
       if (d < b.r + bm.r && d > 0.0001) {
         nx /= d; ny /= d; b.x = bm.x + nx * (b.r + bm.r); b.y = bm.y + ny * (b.r + bm.r);
         var vn = b.vx * nx + b.vy * ny; if (vn < 0) { b.vx -= (1 + REST) * vn * nx; b.vy -= (1 + REST) * vn * ny; }
-        b.vx += nx * 3.4; b.vy += ny * 3.4;
+        b.vx += nx * 2.8; b.vy += ny * 2.8;
         bm.hits++; st.score += 100; addSpark(bm.x, bm.y, COL.goldB);
         if (!bm.lit && bm.hits >= 3) { bm.lit = true; st.score += 500; revealFact(); }
         return true;
@@ -171,14 +171,21 @@
       for (var s = 0; s < steps; s++) {
         b.vy += GRAV / steps;
         b.x += b.vx / steps; b.y += b.vy / steps;
-        for (var i = 0; i < SEGS.length; i++) { var g = SEGS[i]; hitSeg(b, g[0], g[1], g[2], g[3], SLING.indexOf(i) >= 0 ? 4.2 : 0); }
+        for (var i = 0; i < SEGS.length; i++) { var g = SEGS[i]; hitSeg(b, g[0], g[1], g[2], g[3], SLING.indexOf(i) >= 0 ? 3.6 : 0); }
         for (var k = 0; k < BUMPERS.length; k++) hitBumper(b, BUMPERS[k]);
         hitFlipper(b, st.L); hitFlipper(b, st.R);
       }
       var sp = Math.hypot(b.vx, b.vy); if (sp > MAXV) { b.vx *= MAXV / sp; b.vy *= MAXV / sp; }
-      // drain
-      if (b.y > DRAIN.y - 2 && b.x > DRAIN.x1 && b.x < DRAIN.x2) return drain();
-      if (b.y > VH + 20) return drain();
+      // failsafe: if the ball is barely moving and low on the table, it has settled
+      // in a dead corner — nudge it once, and if it stays stuck, drain it (so you can lose).
+      if (sp < 0.55) {
+        b.stuck = (b.stuck || 0) + dt;
+        if (b.stuck > 1.2 && b.stuck < 1.28) { b.vx += (b.x < VW / 2 ? 2.4 : -2.4); b.vy -= 3.2; } // one gentle nudge
+        if (b.stuck > 3) return drain();
+      } else b.stuck = 0;
+      // drain (ball past the flippers, or off the bottom)
+      if (b.y > DRAIN.y - 4 && b.x > DRAIN.x1 && b.x < DRAIN.x2) return drain();
+      if (b.y > VH + 16) return drain();
     }
     function drain() {
       st.balls--;
