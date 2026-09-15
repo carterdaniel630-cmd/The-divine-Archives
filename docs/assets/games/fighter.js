@@ -141,6 +141,21 @@
         var up = ease(clamp(pr * 1.5, 0, 1));
         add(p, "hnF", 2 * up, -54 * up); add(p, "elF", 0, -40 * up); add(p, "shF", 0, -10 * up);
         add(p, "hnB", -8 * up, -34 * up); add(p, "elB", -5, -24 * up); add(p, "head", 0, -4 * up); add(p, "chest", 0, -3 * up);
+      } else if (st === "aerial") {
+        // a flying strike: front leg/fist drives forward and down, back leg tucks up
+        // behind — an unmistakable airborne silhouette, not the standing punch.
+        var ak = ease(clamp(pr * 1.45, 0, 1)), dive = f.aerialKind === "dive";
+        if (dive) {
+          add(p, "footF", 46 * ak, 30 * ak); add(p, "kneeF", 26 * ak, 12 * ak);
+          add(p, "footB", -20 * ak, -26 * ak); add(p, "kneeB", -12 * ak, -18 * ak);
+          add(p, "hnF", 10 * ak, -16 * ak); add(p, "hnB", -24 * ak, -14 * ak);
+          add(p, "chest", 6 * ak, 3 * ak); add(p, "head", 5 * ak, 1 * ak); add(p, "hip", 3 * ak, 2 * ak);
+        } else {
+          add(p, "hnF", 36 * ak, -6 * ak); add(p, "elF", 24 * ak, -3 * ak);
+          add(p, "footF", 10 * ak, 16 * ak); add(p, "kneeF", 6 * ak, 10 * ak);
+          add(p, "footB", -14 * ak, -22 * ak); add(p, "kneeB", -8 * ak, -14 * ak);
+          add(p, "hnB", -18 * ak, -6 * ak); add(p, "chest", 5 * ak, 0); add(p, "head", 4 * ak, 0);
+        }
       } else if (st === "hit") {
         var s = (1 - pr); add(p, "head", -10 * s, 0); add(p, "chest", -7 * s, 0); add(p, "neck", -8 * s, 0); add(p, "hnF", -8 * s, 4 * s); add(p, "hnB", -10 * s, 2 * s);
       } else if (st === "ko") {
@@ -206,10 +221,23 @@
       for (i = n - 2; i >= 0; i--) P.lineTo(pts[i][0] - norms[i][0] * ws[i], pts[i][1] - norms[i][1] * ws[i]);
       var s0 = pts[0]; P.arc(s0[0], s0[1], ws[0], Math.atan2(-norms[0][1], -norms[0][0]), Math.atan2(norms[0][1], norms[0][0]), false);
       P.closePath();
-      cel(c, P, opt.back ? s.baseSh : s.base, s.shadow, opt.back ? null : s.light, s.outline, Math.max.apply(null, ws), opt.ow || 2.6, opt.k);
-      // back limbs get a dark wash so they clearly recede behind the front ones,
-      // then the outline is re-struck on top so each limb keeps a crisp silhouette
-      if (opt.back) { c.save(); c.fillStyle = "rgba(6,4,2,0.34)"; c.fill(P); c.restore(); c.lineWidth = 2.6; c.strokeStyle = s.outline; c.lineJoin = "round"; c.stroke(P); }
+      var mw = Math.max.apply(null, ws), ow = opt.ow || 2.6;
+      // FRONT limbs: a dark "separation moat" struck under the limb first — its outer
+      // half survives as a halo once the fill covers the middle, so the limb visibly
+      // lifts off the torso and the limb behind it instead of merging into one blob.
+      if (!opt.back) { c.save(); c.lineJoin = "round"; c.lineCap = "round"; c.lineWidth = ow + 5; c.strokeStyle = "rgba(8,5,2,0.6)"; c.stroke(P); c.restore(); }
+      cel(c, P, opt.back ? s.baseSh : s.base, s.shadow, opt.back ? null : s.light, s.outline, mw, ow, opt.k);
+      if (opt.back) {
+        // back limbs get a heavier dark wash so they clearly recede; outline re-struck on top
+        c.save(); c.fillStyle = "rgba(6,4,2,0.46)"; c.fill(P); c.restore();
+        c.lineWidth = 2.4; c.strokeStyle = s.outline; c.lineJoin = "round"; c.stroke(P);
+      } else if (s.light) {
+        // front limbs get a bright rim along the lit edge so they read as rounded, near forms
+        c.save(); c.clip(P);
+        var Pr = new Path2D(); Pr.addPath(P, new DOMMatrix([1, 0, 0, 1, LX * mw * 1.5, LY * mw * 1.5]));
+        c.lineWidth = 2.2; c.strokeStyle = hexA(s.light, 0.55); c.lineJoin = "round"; c.stroke(Pr);
+        c.restore();
+      }
     }
 
     /* ===================== the figure ===================== */
@@ -218,7 +246,7 @@
       // blend the displayed skeleton toward the target pose so transitions ease in
       // instead of snapping (strikes blend faster to stay crisp).
       if (!f.dpose) f.dpose = clonePose(target);
-      var bf = (f.state === "light" || f.state === "kick" || f.state === "headbutt" || f.state === "special" || f.state === "throw" || f.state === "hit") ? 0.55 : 0.3;
+      var bf = (f.state === "light" || f.state === "kick" || f.state === "headbutt" || f.state === "special" || f.state === "throw" || f.state === "hit" || f.state === "aerial") ? 0.55 : 0.3;
       for (var jk in target) { var dj = f.dpose[jk], gj = target[jk]; if (dj) { dj[0] += (gj[0] - dj[0]) * bf; dj[1] += (gj[1] - dj[1]) * bf; } }
       var p = f.dpose;
       // ease facing turns so the character flips smoothly rather than mirroring instantly
@@ -228,9 +256,10 @@
       c.save();
       c.translate(f.x, GROUND - (f.y || 0));
       c.scale(sfx, 1);
-      // ground shadow
-      c.save(); c.scale(1, 0.28); c.globalAlpha = 0.42; c.fillStyle = "#000";
-      c.beginPath(); c.arc(2, (f.y || 0) * 0.9 + 8, 32, 0, 7); c.fill(); c.restore();
+      // ground shadow — shrinks and fades as the god leaps, so height reads clearly
+      var yh = f.y || 0, sr = 32 * (1 - Math.min(yh, 150) / 320);
+      c.save(); c.scale(1, 0.28); c.globalAlpha = 0.42 * (1 - Math.min(yh, 150) / 260); c.fillStyle = "#000";
+      c.beginPath(); c.arc(2, yh * 3.4 + 8, sr, 0, 7); c.fill(); c.restore();
 
       drawAura(c, f, t);
       drawCape(c, p, t, f, s, dmg);
@@ -678,9 +707,21 @@
     // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
     function tryAttack(f, other, kind) {
       if (f.cooldown > 0 || f.state === "hit" || f.state === "ko") return;
+      if (kind === "special") return trySpecial(f, other);
       // holding a relic? a strike hurls it instead of swinging.
       if (f.holding && (kind === "light" || kind === "heavy")) { throwItem(f, other); return; }
-      if (kind === "special") return trySpecial(f, other);
+      // AIRBORNE: a committed aerial strike — light = a flying punch, heavy = a diving
+      // kick that drives the god down and forward onto the foe. Distinct pose, generous
+      // reach, and it lands whether the enemy is level or below.
+      if (!f.onGround) {
+        var dive = kind === "heavy";
+        setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4;
+        f.aerialKind = dive ? "dive" : "punch";
+        f.vx = f.facing * (dive ? 3.6 : 2.6);
+        if (dive && f.vy > -2) f.vy = -6;            // heavy = commit downward into the dive
+        f._hit = { kind: "aerial", at: 0.22, done: false, fin: false, dive: dive };
+        return;
+      }
       var adx = Math.abs(other.x - f.x), move = kind, dur = 0.32, cd = 0.36;
       if (kind === "heavy") {
         if (adx < 48) { move = "headbutt"; dur = 0.34; cd = 0.5; }
@@ -737,6 +778,15 @@
       }
     }
     function resolveHit(f, other, kind, fin) {
+      // aerial strike: a fat hitbox around the god that reaches DOWN, so a leap onto a
+      // grounded foe connects (no strict horizontal-only gate like the ground strikes).
+      if (kind === "aerial") {
+        var axd = Math.abs(other.x - f.x), ayd = Math.abs((f.y || 0) - (other.y || 0));
+        if (axd > 78 || ayd > 130 || other.state === "ko") return;
+        var hy = GROUND - 72 - Math.min(f.y || 0, other.y || 0) * 0.5;
+        applyDamage(f, other, 15, "aerial", fin, (f.x + other.x) / 2, hy);
+        return;
+      }
       var reach = kind === "kick" ? 100 : kind === "headbutt" ? 50 : 62;
       var dx = (other.x - f.x) * f.facing;
       if (dx <= 4 || dx >= reach || other.state === "ko") return;
@@ -746,7 +796,7 @@
     // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
     function applyDamage(f, other, dmg, kind, fin, hx, hy) {
       if (other.state === "ko") return;
-      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special";
+      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial";
       var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
       if (fin) { dmg = 100; blocked = false; }
       var raw = dmg;
@@ -757,7 +807,7 @@
       if (!blocked) {
         setState(other, "hit", kind === "headbutt" ? 0.42 : 0.34); other.hitLock = 0.34; other.combo = 0;
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
-        other.vx = dir * (fin ? 6 : kind === "kick" || kind === "headbutt" ? 4.2 : kind === "special" ? 5 : 2);
+        other.vx = dir * (fin ? 6 : kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
         if (f) f.combo++;
         burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
         shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
