@@ -1,13 +1,45 @@
 {
-  "note": "Facts for 'The Tomb Robber' (treasure-hunt adventure). Each relic's `basis` substring must appear in the source chapter's rendered text (tools/verify-treasure.js). Recover the relic, learn what it meant.",
+  "note": "Facts + storyline for 'The Tomb Robber' (treasure-hunt expedition). Each relic's `basis` substring must appear in the source chapter's rendered text (tools/verify-treasure.js). Recover the relic, learn what it meant. `level` groups relics into the four sites of the expedition; the verifier ignores every key except the facts themselves.",
+  "story": {
+    "title": "The Expedition",
+    "intro": "You are holding the field journal of an expedition that never came home. Four ancient sites are ringed in its margins, each a place its author chased relics into and did not walk out of. You go where they could not return from — across Egypt, Sumer, the Indus, and the long road east. Bring back what you can carry. And read, on the way, what each thing actually meant to the people who made it.",
+    "outroWin": "You come up into the daylight with the journal filled in — not with a curse lifted or a conqueror's hoard, but with the meaning of the things themselves. A mask that was a face for eternity. A flood remembered in three scripts. A god of fire against the lie. The expedition failed at plunder and you have finished it as a record.",
+    "outroLose": "The ruin keeps you, the way it kept the one whose journal you carried. What you did lift is set down here — read it, and send someone better prepared.",
+    "sites": [
+      { "name": "The Valley of the Kings", "place": "Egypt", "chapter": "ch02",
+        "enter": "Egypt, first. The corridor drops past painted walls toward the burial chamber. Every trap here was set to keep robbers exactly like you out — and to keep the dead king's things ready for a life that never stopped.",
+        "clear": "You clear the last shaft with the mask and the spellbook. The Egyptians built all of this so a name would outlast the body. Onward — the journal points east, to the rivers." },
+      { "name": "The Ziggurat of Ur", "place": "Sumer", "chapter": "ch03",
+        "enter": "Between the two rivers, a mudbrick mountain built to bring heaven down to the city. The tablets underfoot are the oldest stories written anywhere — a king who wanted to live forever, a sea split to make the sky.",
+        "clear": "Sumer's relics are lighter than Egypt's gold and heavier in what they carry: the first literature humanity wrote down. The margin of the journal turns to a stranger script — the seals of the Indus." },
+      { "name": "Mohenjo-daro", "place": "The Indus", "chapter": "ch04",
+        "enter": "A city of fired brick laid out on a grid, its great tank still sealed against the water. No temple you can name, no king you can prove — only seals in a script no one has read. Take what you can and admit what you can't.",
+        "clear": "You leave the Indus with more questions than answers, which is the honest haul here. The last pages of the journal run off the map — to a cliff in Persia and a bone-fire in the east." },
+      { "name": "Behistun & the Oracle", "place": "The Road East", "chapter": "ch06",
+        "enter": "The final ring on the map covers half a world: a king's boast carved into a Persian cliff, and far beyond it a Chinese court cracking bone to hear the gods answer. One road, two ways of asking heaven what it wants.",
+        "clear": "The journal is full. You turn for the light with a Persian god of fire and a Chinese king's mandate written on shell — the far edge of the ancient world, closed." }
+    ]
+  },
   "facts": [
-    { "label": "The Golden Mask", "fact": "Howard Carter broke into the near-intact tomb of Tutankhamun in 1922 — asked what he saw, he answered, \"wonderful things.\"", "basis": "Tutankhamun", "chapter": "ch02" },
-    { "label": "The Book of Coming Forth", "fact": "The funerary spellbook we call the Book of the Dead bore an Egyptian name closer to The Book of Coming Forth by Day.", "basis": "coming forth by day", "chapter": "ch02" },
-    { "label": "The Scales of Judgment", "fact": "In the Egyptian judgment the heart is set against the feather of truth — the weighing of the heart, the moral centre of the afterlife.", "basis": "weighing of the heart", "chapter": "ch02" },
-    { "label": "The Standard of Ur", "fact": "The inlaid Standard of Ur gives a vivid picture of Early Dynastic kingship and its beliefs about the beyond.", "basis": "Standard of Ur", "chapter": "ch03" },
-    { "label": "The Indus Seal", "fact": "At Mohenjo-daro excavators turned up a small steatite seal showing a seated figure — famous, and still undeciphered.", "basis": "steatite seal", "chapter": "ch04" },
-    { "label": "The Great Bath token", "fact": "Mohenjo-daro's most striking structure is the Great Bath, a watertight sunken tank of fitted brick sealed with bitumen.", "basis": "Great Bath", "chapter": "ch04" },
-    { "label": "The Rock of Behistun", "fact": "At Behistun, Darius carved his victories into living rock and credited Ahura Mazda — one of the great royal inscriptions.", "basis": "Behistun", "chapter": "ch06" },
-    { "label": "The Oracle Bone", "fact": "China's oldest writing survives on oracle bones — ox scapulae and turtle shells cracked with heat to read the gods' answers.", "basis": "oracle bones", "chapter": "ch09" }
+    { "label": "The Golden Mask", "level": 0, "fact": "Howard Carter broke into the near-intact tomb of Tutankhamun in 1922 — asked what he saw, he answered, \"wonderful things.\"", "basis": "Tutankhamun", "chapter": "ch02" },
+    { "label": "The Book of Coming Forth", "level": 0, "fact": "The funerary spellbook we call the Book of the Dead bore an Egyptian name closer to The Book of Coming Forth by Day.", "basis": "coming forth by day", "chapter": "ch02" },
+    { "label": "The Scales of Judgment", "level": 0, "fact": "In the Egyptian judgment the heart is set against the feather of truth — the weighing of the heart, the moral centre of the afterlife.", "basis": "weighing of the heart", "chapter": "ch02" },
+    { "label": "The Jackal of Anubis", "level": 0, "fact": "Anubis, the jackal-headed god of embalming, watched over the body and steadied the scales at the weighing of the heart.", "basis": "Anubis", "chapter": "ch02" },
+    { "label": "The Scarab Seal", "level": 0, "fact": "The dung-rolling scarab beetle became a sign of the sun reborn each dawn, carved into amulets set over the heart of the dead.", "basis": "scarab", "chapter": "ch02" },
+
+    { "label": "The Standard of Ur", "level": 1, "fact": "The inlaid Standard of Ur gives a vivid picture of Early Dynastic kingship — war on one face, a feast on the other.", "basis": "Standard of Ur", "chapter": "ch03" },
+    { "label": "The Tablet of Gilgamesh", "level": 1, "fact": "Gilgamesh, king of Uruk, goes searching for eternal life and learns he cannot keep it — the oldest long poem we have.", "basis": "Gilgamesh", "chapter": "ch03" },
+    { "label": "The Enuma Elish", "level": 1, "fact": "Babylon's creation epic, the Enuma Elish, has Marduk split the sea-goddess Tiamat to make the sky and the earth.", "basis": "Enuma Elish", "chapter": "ch03" },
+    { "label": "The Seal of Inanna", "level": 1, "fact": "Inanna, goddess of love and war, descended into the underworld and was hung on a hook — dying and returning, a pattern older than any gospel.", "basis": "Inanna", "chapter": "ch03" },
+
+    { "label": "The Indus Seal", "level": 2, "fact": "At Mohenjo-daro excavators turned up a small steatite seal showing a seated figure — famous, and still undeciphered.", "basis": "steatite seal", "chapter": "ch04" },
+    { "label": "The Great Bath Token", "level": 2, "fact": "Mohenjo-daro's most striking structure is the Great Bath, a watertight sunken tank of fitted brick sealed with bitumen.", "basis": "Great Bath", "chapter": "ch04" },
+    { "label": "The Seated Lord", "level": 2, "fact": "One seal shows a seated horned figure some call \"Pashupati,\" read by a few as a forerunner of Shiva — a claim that is contested, not settled.", "basis": "Pashupati", "chapter": "ch04" },
+    { "label": "The Priest-King", "level": 2, "fact": "The small stone bust dubbed the \"priest-king\" may have been neither a priest nor a king — the name is a guess that stuck.", "basis": "priest-king", "chapter": "ch04" },
+
+    { "label": "The Rock of Behistun", "level": 3, "fact": "At Behistun, Darius carved his victories into a cliff in three scripts and credited Ahura Mazda — the key that later unlocked cuneiform.", "basis": "Behistun", "chapter": "ch06" },
+    { "label": "The Flame of the Wise Lord", "level": 3, "fact": "Zoroaster taught one supreme god, Ahura Mazda, the Wise Lord, set against the lie — fire kept as the sign of his truth.", "basis": "Ahura Mazda", "chapter": "ch06" },
+    { "label": "The Oracle Bone", "level": 3, "fact": "China's oldest writing survives on oracle bones — ox scapulae and turtle shells cracked with heat to read the gods' answers.", "basis": "oracle bones", "chapter": "ch09" },
+    { "label": "The Mandate of Heaven", "level": 3, "fact": "China's kings ruled by the Mandate of Heaven — a right to rule that could be lost if they governed badly, and handed to another house.", "basis": "Mandate of Heaven", "chapter": "ch09" }
   ]
 }
