@@ -38,9 +38,23 @@
 
     var canvas, cx, hudEl, raf = null, keyfn = null, keyup = null, last = 0, running = false;
     var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0;
+    var shots = [], debris = [], rain = [], groundItem = null, weather = null, debrisT = 0, itemT = 0, boltFlash = 0;
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
-    var KM1 = { left: "a", right: "d", block: "s", light: "j", heavy: "k", special: "l" };
-    var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", light: ",", heavy: ".", special: "/" };
+    var KM1 = { left: "a", right: "d", block: "s", light: "j", heavy: "k", special: "l", grab: "u" };
+    var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", light: ",", heavy: ".", special: "/", grab: "m" };
+    // weather profiles — one picked per match; drives the stage mood + hazards
+    var WEATHERS = [
+      { id: "clear", name: "Clear night", rain: 0, storm: false, dust: 0, debris: 0.10 },
+      { id: "rain", name: "Driving rain", rain: 90, storm: false, dust: 0, debris: 0.14 },
+      { id: "storm", name: "Thunderstorm", rain: 130, storm: true, dust: 0, debris: 0.22 },
+      { id: "embers", name: "Ashfall", rain: 0, storm: false, dust: 60, debris: 0.18 }
+    ];
+    // throwable relics that spawn on the ground mid-fight
+    var ITEM_KINDS = [
+      { id: "amphora", dmg: 14, r: 11, col: "#b8763a", colSh: "#7a4a20" },
+      { id: "boulder", dmg: 18, r: 13, col: "#8a8072", colSh: "#4f4842" },
+      { id: "spear", dmg: 16, r: 8, col: "#c9a24a", colSh: "#7a5a24" }
+    ];
     // optional detailed hero art: a single 2x2 sheet (Zeus TL, Poseidon TR, Athena BL, Hades BR).
     // When present it replaces the procedural portraits on the select / VS / victory screens;
     // combat stays procedural. Set HERO_SHEET to the file (relative to this script) to enable.
@@ -94,11 +108,29 @@
         add(p, "footF", 4, 10); add(p, "footB", -6, 8); add(p, "kneeF", 2, 8); add(p, "kneeB", -2, 8); add(p, "hnF", 6, -14);
       } else if (st === "block") {
         add(p, "hnF", -22, -2); add(p, "elF", -16, 2); add(p, "hnB", -6, 0); add(p, "chest", -5, 0); add(p, "head", -4, 0);
-      } else if (st === "light" || st === "heavy") {
-        var big = st === "heavy" ? 1.25 : 0.8, k = ease(pr < 0.35 ? pr / 0.35 : 1 - (pr - 0.35) / 0.65);
-        add(p, "hnF", 30 * big * k, 6 * big * k); add(p, "elF", 20 * big * k, 2 * big * k);
-        add(p, "chest", 7 * big * k, 0); add(p, "head", 6 * big * k, 0); add(p, "hip", 4 * big * k, 0);
-        add(p, "shF", 3 * big * k, 0); add(p, "footF", 10 * big * k, 0); add(p, "hnB", -8 * big * k, 0);
+      } else if (st === "light") {
+        // a sharp straight punch
+        var k = ease(pr < 0.35 ? pr / 0.35 : 1 - (pr - 0.35) / 0.65);
+        add(p, "hnF", 32 * k, 4 * k); add(p, "elF", 22 * k, 1 * k);
+        add(p, "chest", 6 * k, 0); add(p, "head", 5 * k, 0); add(p, "hip", 3 * k, 0);
+        add(p, "shF", 3 * k, 0); add(p, "footF", 8 * k, 0); add(p, "hnB", -8 * k, 0);
+      } else if (st === "kick") {
+        // a high roundhouse: the front leg swings up and out
+        var kk = ease(pr < 0.4 ? pr / 0.4 : 1 - (pr - 0.4) / 0.6);
+        add(p, "footF", 46 * kk, -70 * kk); add(p, "kneeF", 30 * kk, -46 * kk);
+        add(p, "chest", -6 * kk, 2 * kk); add(p, "head", -4 * kk, 0); add(p, "hip", -4 * kk, 4 * kk);
+        add(p, "hnB", -14 * kk, -6 * kk); add(p, "hnF", -6 * kk, 4 * kk); add(p, "shB", -3 * kk, 0);
+      } else if (st === "headbutt") {
+        // a lunging headbutt — the whole torso snaps forward
+        var hk = ease(pr < 0.3 ? pr / 0.3 : 1 - (pr - 0.3) / 0.7);
+        add(p, "head", 26 * hk, 8 * hk); add(p, "neck", 18 * hk, 5 * hk); add(p, "chest", 16 * hk, 4 * hk);
+        add(p, "hip", 8 * hk, 0); add(p, "shF", 8 * hk, 0); add(p, "shB", 6 * hk, 0);
+        add(p, "hnF", 4 * hk, 6 * hk); add(p, "footF", 12 * hk, 0);
+      } else if (st === "throw") {
+        // an overhand hurl
+        var tk = ease(pr < 0.35 ? pr / 0.35 : 1 - (pr - 0.35) / 0.65);
+        add(p, "hnF", 20 * tk, -18 * tk); add(p, "elF", 14 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk);
+        add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0);
       } else if (st === "special") {
         var up = ease(clamp(pr * 1.5, 0, 1));
         add(p, "hnF", 2 * up, -54 * up); add(p, "elF", 0, -40 * up); add(p, "shF", 0, -10 * up);
@@ -545,11 +577,23 @@
 
     /* ===================== stage ===================== */
     function drawStage(c, t) {
+      var wet = weather && weather.rain, storm = weather && weather.storm, ash = weather && weather.dust;
       var sky = c.createLinearGradient(0, 0, 0, VH);
-      sky.addColorStop(0, "#241a2e"); sky.addColorStop(0.45, "#3a2740"); sky.addColorStop(0.72, UI.ember); sky.addColorStop(1, "#2a1a0e");
+      if (storm) { sky.addColorStop(0, "#141420"); sky.addColorStop(0.5, "#1e2230"); sky.addColorStop(0.78, "#33303a"); sky.addColorStop(1, "#161018"); }
+      else if (wet) { sky.addColorStop(0, "#1a2030"); sky.addColorStop(0.5, "#243040"); sky.addColorStop(0.78, "#3a3a44"); sky.addColorStop(1, "#1a1a22"); }
+      else if (ash) { sky.addColorStop(0, "#2a1810"); sky.addColorStop(0.5, "#4a2410"); sky.addColorStop(0.78, UI.ember); sky.addColorStop(1, "#1a0e07"); }
+      else { sky.addColorStop(0, "#241a2e"); sky.addColorStop(0.45, "#3a2740"); sky.addColorStop(0.72, UI.ember); sky.addColorStop(1, "#2a1a0e"); }
       c.fillStyle = sky; c.fillRect(0, 0, VW, VH);
+      // storm lightning bolt across the sky
+      if (storm && boltFlash > 0.3) {
+        c.save(); c.globalAlpha = boltFlash; c.strokeStyle = "#eaf5ff"; c.lineWidth = 2.4; c.shadowColor = "#bfe3ff"; c.shadowBlur = 16;
+        var bx = VW * rnd(0.3, 0.7); c.beginPath(); c.moveTo(bx, 0);
+        for (var by = 0; by < VH * 0.6; by += 22) c.lineTo(bx + rnd(-14, 14), by);
+        c.stroke(); c.restore();
+      }
       if (flash > 0) { c.fillStyle = "rgba(220,235,255," + (flash * 0.5) + ")"; c.fillRect(0, 0, VW, VH); }
-      c.save(); c.globalAlpha = .5; c.fillStyle = UI.goldB; c.beginPath(); c.arc(VW * 0.5, VH * 0.34, 42, 0, 7); c.fill(); c.restore();
+      // moon (dimmed / veiled when it storms or rains)
+      c.save(); c.globalAlpha = storm ? .18 : wet ? .3 : .5; c.fillStyle = ash ? "#e7c680" : UI.goldB; c.beginPath(); c.arc(VW * 0.5, VH * 0.34, 42, 0, 7); c.fill(); c.restore();
       c.fillStyle = "rgba(20,13,7,.55)"; c.beginPath(); c.moveTo(0, GROUND);
       for (var m = 0; m <= VW; m += 60) c.lineTo(m, GROUND - 60 - Math.sin(m * 0.03) * 42 - (m % 120 ? 0 : 30));
       c.lineTo(VW, GROUND); c.closePath(); c.fill();
@@ -571,43 +615,102 @@
     }
 
     /* ===================== combat + FX ===================== */
+    // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
     function tryAttack(f, other, kind) {
       if (f.cooldown > 0 || f.state === "hit" || f.state === "ko" || !f.onGround) return;
-      if (kind === "special" && f.energy < 50) return;
-      var fin = kind === "special" && f.energy >= 100 && other.hp <= 30 && other.state !== "ko";
-      setState(f, kind === "special" ? "special" : kind, kind === "heavy" ? 0.5 : kind === "special" ? 0.9 : 0.32);
-      f.cooldown = kind === "heavy" ? 0.55 : kind === "special" ? 1.0 : 0.36;
-      if (kind === "special") { f.energy -= fin ? 100 : 50; f.aura = fin ? 1.9 : 1.2; flash = fin ? 0.9 : 0.5; }
-      f._hit = { kind: kind, at: kind === "special" ? 0.4 : 0.2, done: false, fin: fin };
+      // holding a relic? a strike hurls it instead of swinging.
+      if (f.holding && (kind === "light" || kind === "heavy")) { throwItem(f, other); return; }
+      if (kind === "special") return trySpecial(f, other);
+      var adx = Math.abs(other.x - f.x), move = kind, dur = 0.32, cd = 0.36;
+      if (kind === "heavy") {
+        if (adx < 48) { move = "headbutt"; dur = 0.34; cd = 0.5; }
+        else { move = "kick"; dur = 0.46; cd = 0.55; }
+      }
+      setState(f, move, dur); f.cooldown = cd;
+      f._hit = { kind: move, at: move === "kick" ? 0.42 : move === "headbutt" ? 0.3 : 0.24, done: false, fin: false };
+    }
+    // SPECIAL: a travelling energy blast (blockable). Charged + weakened foe = FINISH.
+    function trySpecial(f, other) {
+      if (f.energy < 40) return;
+      var fin = f.energy >= 100 && other.hp <= 30 && other.state !== "ko";
+      setState(f, "special", 0.9); f.cooldown = 1.0;
+      f.energy -= fin ? 100 : 40; f.aura = fin ? 1.9 : 1.2; flash = fin ? 0.6 : 0.35;
+      f._cast = { done: false, at: 0.42, fin: fin };
+    }
+    function spawnShot(f, fin) {
+      var y = GROUND - 92 - (f.y || 0);
+      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * (fin ? 8.2 : 6.4), owner: f, other: (f === p1 ? p2 : p1),
+        r: fin ? 20 : 12, dmg: fin ? 100 : 20, fin: !!fin, col: f.skin.eye, life: 1.6, t: 0 });
+      burst(f.x + f.facing * 30, y, fin ? "special" : "heavy"); shake = Math.max(shake, fin ? 10 : 5);
+    }
+    // THROW a held relic as a projectile
+    function throwItem(f, other) {
+      if (!f.holding) return;
+      setState(f, "throw", 0.3); f.cooldown = 0.4;
+      var it = f.holding; f.holding = null;
+      var y = GROUND - 96 - (f.y || 0);
+      shots.push({ x: f.x + f.facing * 26, y: y, vx: f.facing * 7.5, vy: -1.2, grav: 0.28, owner: f, other: other,
+        r: it.r, dmg: it.dmg, item: it, col: it.col, colSh: it.colSh, spin: 0, life: 2.2, t: 0 });
+    }
+    // pick up a relic you're standing over, or drop the one you hold
+    function tryGrab(f) {
+      if (f.state === "hit" || f.state === "ko" || !f.onGround) return;
+      if (f.holding) { // set it back down
+        groundItem = { kind: f.holding, x: clamp(f.x, 40, VW - 40), y: GROUND }; f.holding = null; return;
+      }
+      if (groundItem && Math.abs(groundItem.x - f.x) < 34) { f.holding = groundItem.kind; groundItem = null; }
+    }
+    function updateShots(dt) {
+      for (var i = shots.length - 1; i >= 0; i--) {
+        var sh = shots[i]; sh.t += dt; sh.life -= dt;
+        sh.x += sh.vx; if (sh.grav != null) { sh.vy = (sh.vy || 0) + sh.grav; sh.y += sh.vy; }
+        if (sh.spin != null) sh.spin += 0.4 * (sh.vx > 0 ? 1 : -1);
+        var o = sh.other, hit = false;
+        if (o && o.state !== "ko" && Math.abs(sh.x - o.x) < 26 && Math.abs(sh.y - (GROUND - 72 - (o.y || 0))) < 60) {
+          applyDamage(sh.owner, o, sh.dmg, sh.item ? "heavy" : (sh.fin ? "special" : "heavy"), sh.fin, sh.x, sh.y);
+          hit = true;
+        }
+        if (hit || sh.life <= 0 || sh.x < -30 || sh.x > VW + 30 || (sh.grav != null && sh.y > GROUND + 6)) {
+          if (sh.item && !hit) { groundItem = { kind: sh.item, x: clamp(sh.x, 40, VW - 40), y: GROUND }; }
+          shots.splice(i, 1);
+        }
+      }
     }
     function resolveHit(f, other, kind, fin) {
-      var reach = kind === "special" ? 170 : kind === "heavy" ? 78 : 60;
+      var reach = kind === "kick" ? 100 : kind === "headbutt" ? 50 : 62;
       var dx = (other.x - f.x) * f.facing;
       if (dx <= 4 || dx >= reach || other.state === "ko") return;
-      var dmg = fin ? 100 : kind === "special" ? 22 : kind === "heavy" ? 13 : 6;
-      var blocked = other.state === "block" && other.facing !== f.facing;
+      var dmg = kind === "kick" ? 13 : kind === "headbutt" ? 16 : 6;
+      applyDamage(f, other, dmg, kind, fin, (f.x + other.x) / 2, GROUND - 72);
+    }
+    // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
+    function applyDamage(f, other, dmg, kind, fin, hx, hy) {
+      if (other.state === "ko") return;
+      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special";
+      var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
+      if (fin) { dmg = 100; blocked = false; }
       if (blocked) dmg = Math.round(dmg * 0.25);
       other.hp = clamp(other.hp - dmg, 0, 100);
-      f.energy = clamp(f.energy + (kind === "special" ? 5 : 10), 0, 100);
+      if (f) { f.energy = clamp(f.energy + (heavy ? 8 : 10), 0, 100); }
       other.energy = clamp(other.energy + 6, 0, 100);
-      var hx = (f.x + other.x) / 2, hy = GROUND - 72;
       if (!blocked) {
-        setState(other, "hit", 0.34); other.hitLock = 0.34; other.combo = 0;
-        other.vx = f.facing * (kind === "heavy" ? 3.6 : kind === "special" ? 5.5 : 2);
-        f.combo++;
-        burst(hx, hy, kind); spray(hx, hy, other.skin.blood, kind);
-        shake = Math.max(shake, kind === "special" ? 13 : kind === "heavy" ? 8 : 4);
-        hitStop = Math.max(hitStop, kind === "special" ? 0.16 : kind === "heavy" ? 0.11 : 0.06);
-        var pools = kind === "special" ? 5 : kind === "heavy" ? 3 : 1;
-        for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-16, 16), y: GROUND + rnd(0, 8), r: rnd(3, 8), col: other.skin.blood, life: 1 });
-      } else { other.vx = f.facing * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04); }
-      if (kind === "special") flash = 0.7;
-      if (fin) { flash = 1; shake = 18; hitStop = Math.max(hitStop, 0.25); spray(hx, hy, other.skin.blood, "special"); spray(hx, hy, other.skin.blood, "special"); burst(hx, hy, "special"); }
+        setState(other, "hit", kind === "headbutt" ? 0.42 : 0.34); other.hitLock = 0.34; other.combo = 0;
+        var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
+        other.vx = dir * (fin ? 6 : kind === "kick" || kind === "headbutt" ? 4.2 : kind === "special" ? 5 : 2);
+        if (f) f.combo++;
+        burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
+        shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
+        hitStop = Math.max(hitStop, fin ? 0.25 : heavy ? 0.12 : 0.06);
+        var pools = fin ? 6 : heavy ? 4 : 2;   // more blood than before
+        for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-18, 18), y: GROUND + rnd(0, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
+      } else { other.vx = (f ? f.facing : 1) * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04); }
+      if (fin) { flash = 1; spray(hx, hy, other.skin.blood, "special"); spray(hx, hy, other.skin.blood, "special"); burst(hx, hy, "special"); }
       if (other.hp <= 0 && other.state !== "ko") {
         setState(other, "ko", 1.2); other.combo = 0;
-        banner = { txt: (fin ? "FINISH — " : "") + f.skin.name + (fin ? " triumphant" : " prevails"), t: 3, fin: !!fin };
-        shake = Math.max(shake, 12); winner = f;
-        for (var i = 0; i < (fin ? 16 : 8); i++) blood.push({ x: other.x + rnd(-24, 24), y: GROUND + rnd(-2, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
+        var name = f ? f.skin.name : "The arena";
+        banner = { txt: (fin ? "FINISH — " : "") + name + (fin ? " triumphant" : " prevails"), t: 3, fin: !!fin };
+        shake = Math.max(shake, 12); winner = f || (other === p1 ? p2 : p1);
+        for (var i = 0; i < (fin ? 18 : 10); i++) blood.push({ x: other.x + rnd(-24, 24), y: GROUND + rnd(-2, 8), r: rnd(3, 10), col: other.skin.blood, life: 1 });
       }
     }
     function burst(x, y, kind) {
@@ -627,12 +730,126 @@
       }
     }
 
+    /* ===================== projectiles, relics, debris ===================== */
+    function drawShots(c) {
+      for (var i = 0; i < shots.length; i++) {
+        var sh = shots[i];
+        if (sh.item) { drawItemAt(c, sh.item, sh.x, sh.y, sh.spin || 0); continue; }
+        // energy orb: bright core, colored halo, motion trail
+        c.save(); c.globalCompositeOperation = "lighter";
+        var g = c.createRadialGradient(sh.x, sh.y, 0, sh.x, sh.y, sh.r * 2.2);
+        g.addColorStop(0, "rgba(255,255,255,.95)"); g.addColorStop(0.4, hexA(sh.col, 0.8)); g.addColorStop(1, "rgba(0,0,0,0)");
+        c.fillStyle = g; c.beginPath(); c.arc(sh.x, sh.y, sh.r * 2.2, 0, 7); c.fill();
+        // comet tail
+        for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.4 - k * 0.06; c.fillStyle = sh.col; c.beginPath(); c.arc(sh.x - sh.vx * k * 1.4, sh.y, sh.r * (1 - k * 0.13), 0, 7); c.fill(); }
+        c.restore();
+      }
+    }
+    function drawItemAt(c, it, x, y, spin) {
+      c.save(); c.translate(x, y); c.rotate(spin);
+      c.strokeStyle = "#1a1109"; c.lineWidth = 1.5;
+      if (it.id === "amphora") {
+        c.fillStyle = it.col; c.beginPath(); c.ellipse(0, 0, it.r * 0.7, it.r, 0, 0, 7); c.fill(); c.stroke();
+        c.strokeStyle = it.colSh; c.lineWidth = 2.4; c.beginPath(); c.moveTo(-it.r * 0.6, -it.r * 0.5); c.quadraticCurveTo(-it.r * 1.1, 0, -it.r * 0.6, it.r * 0.4); c.stroke();
+        c.beginPath(); c.moveTo(it.r * 0.6, -it.r * 0.5); c.quadraticCurveTo(it.r * 1.1, 0, it.r * 0.6, it.r * 0.4); c.stroke();
+      } else if (it.id === "boulder") {
+        c.fillStyle = it.col; c.beginPath(); c.moveTo(-it.r, 2); c.lineTo(-it.r * 0.5, -it.r); c.lineTo(it.r * 0.6, -it.r * 0.7); c.lineTo(it.r, it.r * 0.4); c.lineTo(0, it.r); c.closePath(); c.fill(); c.stroke();
+        c.strokeStyle = it.colSh; c.beginPath(); c.moveTo(-it.r * 0.4, -it.r * 0.4); c.lineTo(it.r * 0.3, it.r * 0.2); c.stroke();
+      } else { // spear
+        c.strokeStyle = it.colSh; c.lineWidth = 3; c.beginPath(); c.moveTo(-it.r * 1.6, 0); c.lineTo(it.r * 1.2, 0); c.stroke();
+        c.fillStyle = it.col; c.beginPath(); c.moveTo(it.r * 1.2, -3.5); c.lineTo(it.r * 2, 0); c.lineTo(it.r * 1.2, 3.5); c.closePath(); c.fill();
+      }
+      c.restore();
+    }
+    function drawGroundItem(c, t) {
+      if (!groundItem) return;
+      var bob = Math.sin(t * 3) * 2;
+      c.save(); c.globalAlpha = 0.5; c.fillStyle = UI.goldB;
+      c.beginPath(); c.ellipse(groundItem.x, GROUND + 2, 12, 3, 0, 0, 7); c.fill(); c.restore();
+      // a soft "take me" glow
+      c.save(); c.globalCompositeOperation = "lighter"; c.globalAlpha = 0.3 + Math.sin(t * 4) * 0.12;
+      var g = c.createRadialGradient(groundItem.x, GROUND - 12 + bob, 2, groundItem.x, GROUND - 12 + bob, 22);
+      g.addColorStop(0, hexA(UI.goldB, 0.8)); g.addColorStop(1, "rgba(0,0,0,0)"); c.fillStyle = g;
+      c.beginPath(); c.arc(groundItem.x, GROUND - 12 + bob, 22, 0, 7); c.fill(); c.restore();
+      drawItemAt(c, groundItem.kind, groundItem.x, GROUND - 12 + bob, 0);
+    }
+    function drawHeld(c, f) {
+      if (!f.holding) return;
+      var hx = f.x + f.facing * 26, hy = GROUND - 108 - (f.y || 0);
+      drawItemAt(c, f.holding, hx, hy, 0);
+    }
+    function spawnDebris() {
+      var x = rnd(60, VW - 60);
+      debris.push({ x: x, y: -20, vy: rnd(2.4, 4.2), r: rnd(6, 12), spin: 0, vs: rnd(-0.2, 0.2), col: Math.random() < 0.5 ? "#5a4a34" : "#4a4038" });
+    }
+    function updateDebris(dt) {
+      for (var i = debris.length - 1; i >= 0; i--) {
+        var d = debris[i]; d.y += d.vy; d.spin += d.vs;
+        // hit a fighter?
+        [p1, p2].forEach(function (f) {
+          if (!f || d.hit || f.state === "ko") return;
+          if (Math.abs(d.x - f.x) < 22 && d.y > GROUND - 150 - (f.y || 0) && d.y < GROUND - 40 - (f.y || 0)) {
+            d.hit = true; applyDamage(null, f, 10, "debris", false, d.x, d.y);
+          }
+        });
+        if (d.hit || d.y > GROUND + 4) {
+          if (!d.hit) { for (var s = 0; s < 5; s++) fx.push({ t: "line", x: d.x, y: GROUND, a: rnd(3.4, 6), len: rnd(6, 16), life: 1, col: "#6a5a42" }); shake = Math.max(shake, 3); }
+          debris.splice(i, 1);
+        }
+      }
+    }
+    function drawDebris(c) {
+      for (var i = 0; i < debris.length; i++) {
+        var d = debris[i]; c.save(); c.translate(d.x, d.y); c.rotate(d.spin);
+        c.fillStyle = d.col; c.strokeStyle = "#160f08"; c.lineWidth = 1.4;
+        c.beginPath(); c.moveTo(-d.r, 2); c.lineTo(-d.r * 0.4, -d.r); c.lineTo(d.r * 0.7, -d.r * 0.6); c.lineTo(d.r, d.r * 0.5); c.lineTo(-d.r * 0.2, d.r); c.closePath(); c.fill(); c.stroke();
+        c.restore();
+      }
+    }
+    /* ---- weather ---- */
+    function initWeather(w) {
+      weather = w; rain = [];
+      var n = w.rain || w.dust;
+      for (var i = 0; i < n; i++) rain.push({ x: Math.random() * (VW + 60) - 30, y: Math.random() * VH, v: (w.rain ? rnd(8, 14) : rnd(0.6, 1.6)), len: w.rain ? rnd(9, 16) : 0, r: w.dust ? rnd(1, 2.4) : 0, drift: rnd(-0.4, 0.4) });
+    }
+    function updateWeather(dt, t) {
+      if (!weather) return;
+      for (var i = 0; i < rain.length; i++) {
+        var p = rain[i];
+        if (weather.rain) { p.y += p.v; p.x += 1.4; if (p.y > VH) { p.y = -10; p.x = Math.random() * (VW + 60) - 30; } }
+        else { p.y += p.v; p.x += Math.sin(t + i) * 0.4 + p.drift; if (p.y > VH) { p.y = -6; p.x = Math.random() * VW; } }
+      }
+      if (weather.storm) { boltFlash = Math.max(0, boltFlash - dt * 3); if (Math.random() < 0.006) { boltFlash = 1; flash = Math.max(flash, 0.5); } }
+    }
+    function drawWeather(c) {
+      if (!weather) return;
+      if (weather.rain) {
+        c.save(); c.strokeStyle = "rgba(180,205,230,.35)"; c.lineWidth = 1.2; c.lineCap = "round";
+        for (var i = 0; i < rain.length; i++) { var p = rain[i]; c.beginPath(); c.moveTo(p.x, p.y); c.lineTo(p.x - 2, p.y + p.len); c.stroke(); }
+        c.restore();
+      } else if (weather.dust) {
+        c.save(); c.globalCompositeOperation = "lighter";
+        for (var k = 0; k < rain.length; k++) { var d = rain[k]; c.globalAlpha = 0.4; c.fillStyle = k % 3 ? "#c9782e" : "#e7c680"; c.beginPath(); c.arc(d.x, d.y, d.r, 0, 7); c.fill(); }
+        c.restore();
+      }
+    }
+
     /* ===================== AI ===================== */
     function think(f, other, dt) {
       if (f.state === "hit" || f.state === "ko") return;
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
-      if (adx > 74) f.intent = "advance";
-      else if (f.aiT <= 0) { var r = Math.random(); f.intent = r < 0.48 ? "light" : r < 0.7 ? "heavy" : r < 0.85 ? "block" : (f.energy >= 50 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
+      // holding a relic: close a little, then hurl it
+      if (f.holding) { if (adx > 180) { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); return; } if (f.aiT <= 0) { tryAttack(f, other, "light"); f.aiT = 0.6; } return; }
+      // a relic lies nearby and I'm free — go grab it sometimes
+      if (groundItem && Math.abs(groundItem.x - f.x) < 30 && Math.random() < 0.04) { tryGrab(f); return; }
+      var wantItem = groundItem && Math.abs(groundItem.x - f.x) < 120 && adx > 130 && Math.random() < 0.5;
+      if (wantItem) { var gd = groundItem.x > f.x ? 1 : -1; f.facing = gd; f.vx = gd * 1.7; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); if (Math.abs(groundItem.x - f.x) < 30) tryGrab(f); return; }
+      if (adx > 74) {
+        // at range, sometimes throw an energy blast instead of closing
+        if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < 0.5) { tryAttack(f, other, "special"); f.aiT = 1.0 + Math.random(); return; }
+        f.intent = "advance";
+      }
+      else if (f.aiT <= 0) { var r = Math.random(); f.intent = r < 0.42 ? "light" : r < 0.66 ? "heavy" : r < 0.82 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
       if (f.intent === "advance") { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
       else if (f.intent === "block") { if (f.state === "idle" || f.state === "walk") setState(f, "block", 0.5); f.vx = 0; }
       else if (f.intent === "light" || f.intent === "heavy" || f.intent === "special") { tryAttack(f, other, f.intent); f.intent = "wait"; }
@@ -646,7 +863,7 @@
           '<div class="fg-hp"><i style="width:' + clamp(f.hp, 0, 100) + '%"></i></div>' +
           '<div class="fg-en"><i style="width:' + clamp(f.energy, 0, 100) + '%"></i></div></div>';
       }
-      hudEl.innerHTML = bar(p1, "l") + '<div class="fg-mid"><span class="fg-vs">✦</span></div>' + bar(p2, "r");
+      hudEl.innerHTML = bar(p1, "l") + '<div class="fg-mid"><span class="fg-vs">✦</span>' + (weather ? '<span class="fg-weather">' + weather.name + '</span>' : '') + '</div>' + bar(p2, "r");
     }
 
     /* ===================== loop ===================== */
@@ -655,7 +872,14 @@
       var dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts; var t = ts / 1000;
       for (var i = 0; i < motes.length; i++) { var mo = motes[i]; mo.y -= mo.v * dt * 30; mo.x += Math.sin(t + i) * 0.2; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
       flash = Math.max(0, flash - dt * 2); shake = Math.max(0, shake - dt * 32);
-      if (hitStop > 0) { hitStop -= dt; } else { gameT += dt; [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); }); }
+      updateWeather(dt, t);
+      if (hitStop > 0) { hitStop -= dt; } else {
+        gameT += dt; [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
+        updateShots(dt); updateDebris(dt);
+        // hazard + relic spawns, scaled by the weather
+        debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(2.2, 4.5); if (Math.random() < (weather ? weather.debris : 0.12) + 0.3) spawnDebris(); }
+        itemT -= dt; if (itemT <= 0 && winner == null) { itemT = rnd(7, 11); if (!groundItem && !p1.holding && !p2.holding) groundItem = { kind: ITEM_KINDS[(Math.random() * ITEM_KINDS.length) | 0], x: rnd(150, VW - 150), y: GROUND }; }
+      }
       for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= dt * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
       for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= dt * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
       if (blood.length > 60) blood.splice(0, blood.length - 60);
@@ -663,8 +887,13 @@
       cx.save();
       if (shake > 0.3) cx.translate(rnd(-shake, shake), rnd(-shake, shake));
       drawStage(cx, t);
+      drawGroundItem(cx, t);
+      drawDebris(cx);
       var order = p1.x < p2.x ? [p1, p2] : [p2, p1];
-      drawFighter(cx, order[0], gameT); drawFighter(cx, order[1], gameT);
+      drawFighter(cx, order[0], gameT); drawHeld(cx, order[0]);
+      drawFighter(cx, order[1], gameT); drawHeld(cx, order[1]);
+      drawShots(cx);
+      drawWeather(cx);
       drawFX(cx);
       if (p1.combo > 1 && p1.state !== "ko") comboText(cx, p1.combo);
       if (banner) { drawBanner(cx); banner.t -= dt; if (banner.t <= 0) banner = null; }
@@ -677,10 +906,12 @@
       f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
       if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) { f._hit.done = true; resolveHit(f, other, f._hit.kind, f._hit.fin); }
+      if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.fin); }
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
       f.x += f.vx; if (f.hitLock > 0 || f.state === "ko") f.vx *= 0.82;
       f.x = clamp(f.x, 40, VW - 40);
-      if ((f.state === "light" || f.state === "heavy" || f.state === "special" || f.state === "hit") && f.stTime >= f.stDur) { var was = f.state; setState(f, "idle", 1); f._hit = null; if (was !== "hit") f.combo = 0; }
+      var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1 };
+      if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, "idle", 1); f._hit = null; f._cast = null; if (was !== "hit") f.combo = 0; }
       if (f.state === "walk" && Math.abs(f.vx) < 0.1) setState(f, "idle", 1);
       if ((f.state === "idle" || f.state === "walk") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
     }
@@ -731,7 +962,7 @@
           '<div class="fg-sel-mode"><button class="rq-btn" data-a="mode">Opponent: ' + (sel.twoP ? "Player 2 (human)" : "the AI") + "</button></div>" +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
-          '<p class="rq-note">P1: A/D move · S guard · J/K light/heavy · L thunderbolt.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , . / strike." : " On touch, use the on-screen pads.") + " Fill the energy bar and land a special on a weakened foe for a FINISH.</p>";
+          '<p class="rq-note">P1: A/D move · S guard · J punch · K kick (headbutt up close) · L energy blast · U grab/throw a relic.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , punch · . kick · / blast · M grab." : " On touch, use the on-screen pads.") + " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Fill the energy bar and land a blast on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
         root.querySelectorAll(".fg-card").forEach(function (b) {
           b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); render(); });
@@ -752,9 +983,10 @@
         '<div class="fg-controls">' +
           '<div class="fg-pad fg-move"><button class="ouro-key" data-k="' + KM1.left + '" aria-label="Move left">◀</button>' +
             '<button class="ouro-key" data-k="' + KM1.block + '" aria-label="Guard">🛡</button><button class="ouro-key" data-k="' + KM1.right + '" aria-label="Move right">▶</button></div>' +
-          '<div class="fg-pad fg-atk"><button class="ouro-key fg-atk-l" data-atk="light" aria-label="Light strike">✦</button>' +
-            '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Heavy strike">✸</button>' +
-            '<button class="ouro-key fg-atk-s" data-atk="special" aria-label="Special">⚡</button></div>' +
+          '<div class="fg-pad fg-atk"><button class="ouro-key fg-atk-l" data-atk="light" aria-label="Punch">✦</button>' +
+            '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Kick / headbutt up close">✸</button>' +
+            '<button class="ouro-key fg-atk-s" data-atk="special" aria-label="Energy blast">⚡</button>' +
+            '<button class="ouro-key fg-atk-g" data-act="grab" aria-label="Pick up or throw a relic">✋</button></div>' +
         "</div>" +
         '<div class="rq-actions" style="margin-top:.4rem"><button class="rq-btn" data-a="back">‹ Choose fighters</button></div>';
       canvas = root.querySelector(".fg-canvas"); cx = canvas.getContext("2d");
@@ -764,7 +996,12 @@
         var k = b.getAttribute("data-k"), dn = function (e) { e.preventDefault(); keys[k] = true; }, up = function () { keys[k] = false; };
         b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up); b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
       });
-      root.querySelectorAll(".fg-atk .ouro-key").forEach(function (b) { b.addEventListener("click", function () { tryAttack(p1, p2, b.getAttribute("data-atk")); }); });
+      root.querySelectorAll(".fg-atk .ouro-key").forEach(function (b) {
+        b.addEventListener("click", function () {
+          if (b.getAttribute("data-act") === "grab") tryGrab(p1);
+          else tryAttack(p1, p2, b.getAttribute("data-atk"));
+        });
+      });
       root.querySelector('[data-a="back"]').addEventListener("click", selectScreen);
     }
     function showResult() {
@@ -789,7 +1026,9 @@
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1);
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
-      fx = []; blood = []; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false;
+      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false;
+      debrisT = rnd(2, 4); itemT = rnd(4, 7); boltFlash = 0;
+      initWeather(WEATHERS[(Math.random() * WEATHERS.length) | 0]);
       if (HERO.ready) vsSplash(function () { running = true; last = performance.now(); raf = requestAnimationFrame(frame); });
       else { running = true; last = performance.now(); raf = requestAnimationFrame(frame); }
     }
@@ -833,6 +1072,7 @@
           if (k === f.km.light) { tryAttack(f, o, "light"); e.preventDefault(); }
           else if (k === f.km.heavy) { tryAttack(f, o, "heavy"); e.preventDefault(); }
           else if (k === f.km.special) { tryAttack(f, o, "special"); e.preventDefault(); }
+          else if (k === f.km.grab) { tryGrab(f); e.preventDefault(); }
         });
       };
       keyup = function (e) { keys[e.key.toLowerCase()] = false; };
