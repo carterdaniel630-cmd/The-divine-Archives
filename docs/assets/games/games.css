@@ -259,7 +259,7 @@
 }
 .ouro-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .ouro-stage::after  { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.ouro-canvas { width:min(320px, 82vw); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:10px; background:var(--panel); touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 8px 26px -14px #000; }
+.ouro-canvas { width:min(320px, 82vw, 56dvh); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:10px; background:var(--panel); touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 8px 26px -14px #000; }
 .ouro-toast { min-height:2.4rem; text-align:center; font-family:var(--font-body); font-size:.9rem; color:var(--ink); margin:.3rem auto .2rem; max-width:34rem; line-height:1.4; }
 .ouro-toast .ouro-sym { color:var(--gold); }
 .ouro-toast strong { color:var(--parchment); }
@@ -286,13 +286,13 @@
 .zig-well-wrap::before, .zig-well-wrap::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .zig-well-wrap::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .zig-well-wrap::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.zig-well { width:min(190px, 44vw); height:auto; aspect-ratio:10/18; background:var(--panel); border:1px solid var(--line); border-radius:8px; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5); }
+.zig-well { width:min(190px, 44vw, 34dvh); height:auto; aspect-ratio:10/18; background:var(--panel); border:1px solid var(--line); border-radius:8px; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5); }
 .zig-side { display:flex; flex-direction:column; align-items:center; gap:.7rem; }
 .zig-next { text-align:center; }
 .zig-next-label { display:block; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:.54rem; color:var(--ink-faint); margin-bottom:.2rem; }
 .zig-next-cv { width:64px; height:64px; background:var(--panel); border:1px solid var(--line-soft); border-radius:6px; }
 .zig-mon-wrap { position:relative; }
-.zig-mon { width:min(120px, 26vw); height:auto; aspect-ratio:1/2; }
+.zig-mon { width:min(120px, 26vw, 19dvh); height:auto; aspect-ratio:1/2; }
 .zig-toast .zig-sym { color:var(--gold); }
 .zig-pad { display:grid; grid-template-columns:repeat(3,3rem); grid-template-rows:repeat(2,3rem); gap:.3rem; }
 .zig-pad .zig-rot { grid-column:1; grid-row:1; } .zig-pad .zig-left { grid-column:1; grid-row:2; }
@@ -315,8 +315,10 @@
   /* trim the header so the board and controls both stay on-screen */
   .game-head { margin:0 1.4rem .5rem; }
   .game-head h2 { font-size:1.05rem !important; }
-  .game-head p { font-size:.78rem; margin-top:.2rem; }
+  .game-head p { display:none; } /* drop the flavor line on phones so the board + controls both fit */
   .game-rule { margin:.4rem auto .5rem; }
+  .game-dialog { padding:.9rem .8rem; }
+  .ms-grid { width:min(94vw, 30rem, 62dvh); }
 }
 /* very short viewports: shrink the board + pad a touch more, trim spacing */
 @media (max-width:520px) and (max-height:680px){
@@ -344,7 +346,7 @@
 .fg-stage::before, .fg-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .fg-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .fg-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.fg-canvas { width:min(640px, 94vw); height:auto; aspect-ratio:2/1; border:1px solid var(--line); border-radius:8px; background:#241a2e; touch-action:none; box-shadow: inset 0 0 50px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
+.fg-canvas { width:min(640px, 94vw, 84dvh); height:auto; aspect-ratio:2/1; border:1px solid var(--line); border-radius:8px; background:#241a2e; touch-action:none; box-shadow: inset 0 0 50px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
 .fg-controls { display:flex; justify-content:space-between; gap:1rem; max-width:640px; margin:.6rem auto .2rem; }
 .fg-pad { display:flex; gap:.4rem; }
 .fg-pad .ouro-key { width:3rem; height:3rem; }
@@ -364,7 +366,7 @@
 .pg-stage::before, .pg-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .pg-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .pg-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.pg-canvas { width:min(640px, 94vw); height:auto; aspect-ratio:8/5; border:1px solid var(--line); border-radius:8px; background:#171019; touch-action:none; box-shadow: inset 0 0 46px rgba(0,0,0,.55), 0 10px 30px -16px #000; }
+.pg-canvas { width:min(640px, 94vw, 68dvh); height:auto; aspect-ratio:8/5; border:1px solid var(--line); border-radius:8px; background:#171019; touch-action:none; box-shadow: inset 0 0 46px rgba(0,0,0,.55), 0 10px 30px -16px #000; }
 .pg-toast { min-height:2.4rem; }
 .pg-controls { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; margin:.5rem auto .2rem; }
 .pg-pad { display:flex; flex-direction:column; gap:.4rem; }

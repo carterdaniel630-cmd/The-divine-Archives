@@ -111,7 +111,7 @@
         phaseNote:"A fighting game: the gods of Greece face off with their own weapons and powers — every fighter's arms and epithet grounded in the Early Greece chapter. In development." },
       pong:      { gameId:"pong", ch:"ch06", title:"Antithesis — The Eternal Contest", subtitle:"Two cosmic principles volley the sacred orb.",
         phaseNote:"Pong, reskinned to cosmic dualism — order and the Lie, yang and yin, Ma'at and Isfet — each point won uncovering a sourced fact about that opposition. In development." },
-      minesweeper:{ gameId:"minesweeper", ch:"ch03", title:"The Excavation", subtitle:"Clear the buried dig without striking a hazard.",
+      minesweeper:{ gameId:"minesweeper", ch:"ch04", title:"The Excavation", subtitle:"Clear the buried dig without striking a hazard.",
         phaseNote:"Minesweeper, reskinned as an archaeological dig — clear the site without striking a collapse or curse; every hazard you mark correctly turns up a real find. In development." }
     };
     var TRIGGER_FOR = {}; // chId -> game meta
@@ -167,24 +167,36 @@
       mount.appendChild(tgrid);
     }
 
-    /* randomized easter eggs: quietly make a random era emblem live this visit */
-    var eggs = A.eras.filter(function (e) { return EM[e.slug]; }).map(function (e) {
-      // find the emblem cell's .art element to (re)use as a trigger
-      return null; // emblems already rendered as links; seed among chapter symbols instead
-    });
-    // seed among a few non-primary chapter symbols so discovery varies visit-to-visit
-    var candidateIds = ["ch12","ch26","ch24","ch34","ch16","ch23","ch44"]; // bagua, tree of life, sri yantra, khanda, chi-rho, mjolnir, inti
-    var candEls = [];
-    candidateIds.forEach(function (id) {
-      if (TRIGGER_FOR[id]) return;
+    /* ---- easter eggs: every game is hidden somewhere on the page ----
+       In addition to the primary "Playable" symbols, ONE extra symbol per
+       game is quietly made live each visit (no tag — just the hover shimmer),
+       chosen at random from a thematic pool so what you find varies visit to
+       visit. Over a few visits, all eight games can be discovered by touch. */
+    function findArt(id) {
       var cellEl = Array.prototype.find.call(mount.querySelectorAll(".symbol-cell"), function (el) {
-        var a = el.querySelector("a[href$='" + id + ".html']"); return !!a;
+        return !!el.querySelector("a[href$='" + id + ".html']");
       });
-      var artEl = cellEl && cellEl.querySelector(".art");
-      if (artEl) candEls.push({ el: artEl, gameId: "reliquary", symbolName: (chById(id)||{}).title || "symbol",
-        symbolSVG: ART[id], sourceHref: "chapters/"+id+".html", sourceLabel: "Read chapter" });
+      return cellEl && cellEl.querySelector(".art");
+    }
+    var EGG_POOL = {
+      reliquary:   ["ch16", "ch30", "ch19"],
+      ouroboros:   ["ch20", "ch09", "ch17"],
+      ziggurat:    ["ch23", "ch42", "ch05"],
+      chess:       ["ch12", "ch18", "ch13"],
+      seeker:      ["ch11", "ch34", "ch27"],
+      fighter:     ["ch24", "ch14", "ch43"],
+      pong:        ["ch44", "ch25", "ch10"],
+      minesweeper: ["ch29", "ch41", "ch07"]
+    };
+    Object.keys(EGG_POOL).forEach(function (game) {
+      if (!AG.isRegistered(game)) return;
+      var pool = EGG_POOL[game].filter(function (id) { return !TRIGGER_FOR[id] && findArt(id) && !findArt(id).__daGame; });
+      if (!pool.length) return;
+      var id = pool[Math.floor(Math.random() * pool.length)], artEl = findArt(id);
+      AG.registerSymbol(artEl, { gameId: game, symbolName: (chById(id) || {}).title || "symbol",
+        symbolSVG: ART[id], sourceHref: "chapters/" + id + ".html",
+        sourceLabel: "Read “" + ((chById(id) || {}).title || "the chapter") + "”" });
     });
-    if (AG.seedEasterEggs) AG.seedEasterEggs(candEls);
 
     /* deep-link: symbols.html#play=<gameId> opens that game directly.
        Lets the homepage games menu launch any game in one click. */
