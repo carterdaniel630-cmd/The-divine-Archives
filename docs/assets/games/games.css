@@ -353,6 +353,25 @@
 @media (max-width:520px){ .fg-controls { gap:.4rem; } .fg-pad { gap:.3rem; } .fg-pad .ouro-key { width:2.5rem; height:2.5rem; font-size:.9rem; } }
 @media (max-width:380px){ .fg-pad .ouro-key { width:2.15rem; height:2.15rem; } }
 
+/* ---- Antithesis (Pong) ---- */
+.pg-hud { display:flex; align-items:center; justify-content:center; gap:1.4rem; margin:.2rem auto .3rem; }
+.pg-score { display:flex; flex-direction:column; align-items:center; min-width:4.5rem; }
+.pg-score b { font-family:var(--font-display,Georgia,serif); font-size:1.7rem; line-height:1; }
+.pg-score span { font-family:var(--font-display,Georgia,serif); font-size:.56rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim,#9c8f70); margin-top:.2rem; }
+.pg-l b { color:var(--gold-bright,#e7c680); } .pg-r b { color:#b98cff; }
+.pg-mid { color:var(--gold); font-size:.9rem; }
+.pg-stage { position:relative; display:flex; justify-content:center; padding:8px; margin:0 auto; }
+.pg-stage::before, .pg-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
+.pg-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
+.pg-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
+.pg-canvas { width:min(640px, 94vw); height:auto; aspect-ratio:8/5; border:1px solid var(--line); border-radius:8px; background:#171019; touch-action:none; box-shadow: inset 0 0 46px rgba(0,0,0,.55), 0 10px 30px -16px #000; }
+.pg-toast { min-height:2.4rem; }
+.pg-controls { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; margin:.5rem auto .2rem; }
+.pg-pad { display:flex; flex-direction:column; gap:.4rem; }
+.pg-pad .ouro-key { width:3rem; height:2.5rem; }
+.pg-mode { white-space:nowrap; }
+@media (max-width:520px){ .pg-controls { gap:.6rem; } .pg-pad { flex-direction:row; } .pg-pad .ouro-key { width:2.7rem; height:2.7rem; } }
+
 /* character select + result */
 .fg-sel-row-label { text-align:center; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:.6rem; color:var(--gold); margin:.6rem 0 .4rem; }
 .fg-cards { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }

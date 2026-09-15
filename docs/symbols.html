@@ -79,6 +79,7 @@
 <script src="assets/games/fighter.js"></script>
 <script src="assets/games/chess.js"></script>
 <script src="assets/games/seeker.js"></script>
+<script src="assets/games/pong.js"></script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -106,7 +107,9 @@
       seeker:    { gameId:"seeker", ch:"ch40", title:"The Seeker's Path", subtitle:"The gatekeeper opens the way — follow the clues into the chapters.",
         phaseNote:"A chain of riddle-clues built from real facts; each answer is found by reading the chapter it points to, unlocking the next. Built last, in Phase 6." },
       fighter:   { gameId:"fighter", ch:"ch08", title:"Theomachy — War of the Gods", subtitle:"A 1v1 duel of the Olympians, drawn from real myth.",
-        phaseNote:"A fighting game: the gods of Greece face off with their own weapons and powers — every fighter's arms and epithet grounded in the Early Greece chapter. In development." }
+        phaseNote:"A fighting game: the gods of Greece face off with their own weapons and powers — every fighter's arms and epithet grounded in the Early Greece chapter. In development." },
+      pong:      { gameId:"pong", ch:"ch06", title:"Antithesis — The Eternal Contest", subtitle:"Two cosmic principles volley the sacred orb.",
+        phaseNote:"Pong, reskinned to cosmic dualism — order and the Lie, yang and yin, Ma'at and Isfet — each point won uncovering a sourced fact about that opposition. In development." }
     };
     var TRIGGER_FOR = {}; // chId -> game meta
     Object.keys(GAMES).forEach(function (k) {

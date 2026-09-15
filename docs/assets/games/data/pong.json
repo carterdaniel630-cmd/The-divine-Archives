@@ -1,0 +1,41 @@
+{
+  "note": "Facts for 'Antithesis' (Pong). Each is grounded: its `basis` substring must appear in the source chapter's rendered text (tools/verify-pong.js). Theme: the eternal contest of paired cosmic principles.",
+  "facts": [
+    {
+      "label": "The Two Spirits",
+      "fact": "Zoroaster framed creation as a primal choice between two spirits — one bounteous, one destructive — who at the beginning chose life and truth, or the Lie.",
+      "basis": "two spirits",
+      "chapter": "ch06"
+    },
+    {
+      "label": "The Lie",
+      "fact": "Against the wholly good Ahura Mazda stands Angra Mainyu, the principle of the Lie (druj) — destruction and death set opposite order and truth.",
+      "basis": "principle of the Lie",
+      "chapter": "ch06"
+    },
+    {
+      "label": "Yang, the bright line",
+      "fact": "In the Chinese hexagrams an unbroken line stands for yang — the active, bright principle — the paired opposite of yin.",
+      "basis": "unbroken line for yang",
+      "chapter": "ch12"
+    },
+    {
+      "label": "Yin, the broken line",
+      "fact": "A broken line stands for yin — the receptive, dark principle — stacked with yang into the sixty-four figures of the Yijing.",
+      "basis": "broken line for yin",
+      "chapter": "ch12"
+    },
+    {
+      "label": "The Feather of Ma'at",
+      "fact": "In the Egyptian judgment the heart is weighed against the feather of Ma'at — truth, order, and justice — against which the disorder of Isfet is measured.",
+      "basis": "truth, order, and justice",
+      "chapter": "ch02"
+    },
+    {
+      "label": "Horus and Set",
+      "fact": "Egypt's great contest pits Horus, who grows up to avenge his father Osiris, against Set — order reclaiming the throne from chaos.",
+      "basis": "avenge his father",
+      "chapter": "ch02"
+    }
+  ]
+}
