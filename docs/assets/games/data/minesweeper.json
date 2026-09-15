@@ -1,0 +1,53 @@
+{
+  "note": "Facts for 'The Excavation' (Minesweeper). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-minesweeper.js). Theme: uncovering a buried site while avoiding its hazards; safely cleared ground yields a real find.",
+  "facts": [
+    {
+      "label": "Tutankhamun's tomb",
+      "fact": "In 1922 Howard Carter broke into the near-intact tomb of the minor pharaoh Tutankhamun — asked what he saw, he answered, \"wonderful things.\"",
+      "basis": "tutankhamun",
+      "chapter": "ch02"
+    },
+    {
+      "label": "Coming Forth by Day",
+      "fact": "The funerary spellbook we call the Book of the Dead bore an Egyptian name closer to The Book of Coming Forth by Day.",
+      "basis": "coming forth by day",
+      "chapter": "ch02"
+    },
+    {
+      "label": "The Standard of Ur",
+      "fact": "The inlaid panel called the Standard of Ur gives a vivid picture of Early Dynastic kingship and its beliefs about the beyond.",
+      "basis": "Standard of Ur",
+      "chapter": "ch03"
+    },
+    {
+      "label": "The Ziggurat of Ur",
+      "fact": "The great stepped platform-tower crowning a Mesopotamian city has its most famous survivor in the ziggurat of Ur.",
+      "basis": "ziggurat of Ur",
+      "chapter": "ch03"
+    },
+    {
+      "label": "Writing began as accounting",
+      "fact": "The earliest cuneiform tablets are accounts — measures of barley, heads of livestock, rations of beer — before writing ever recorded a myth.",
+      "basis": "earliest cuneiform tablets are accounts",
+      "chapter": "ch03"
+    },
+    {
+      "label": "The Indus seal",
+      "fact": "At Mohenjo-daro excavators turned up a small steatite seal showing a seated figure — famous but still undeciphered.",
+      "basis": "steatite seal",
+      "chapter": "ch04"
+    },
+    {
+      "label": "The Great Bath",
+      "fact": "Mohenjo-daro's most striking structure is the Great Bath, a watertight sunken tank of fitted brick sealed with bitumen.",
+      "basis": "Great Bath",
+      "chapter": "ch04"
+    },
+    {
+      "label": "The Behistun inscription",
+      "fact": "At Behistun, Darius carved his victories into living rock and credited Ahura Mazda — one of the most important royal inscriptions of the ancient world.",
+      "basis": "Behistun",
+      "chapter": "ch06"
+    }
+  ]
+}

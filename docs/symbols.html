@@ -80,6 +80,7 @@
 <script src="assets/games/chess.js"></script>
 <script src="assets/games/seeker.js"></script>
 <script src="assets/games/pong.js"></script>
+<script src="assets/games/minesweeper.js"></script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -109,7 +110,9 @@
       fighter:   { gameId:"fighter", ch:"ch08", title:"Theomachy — War of the Gods", subtitle:"A 1v1 duel of the Olympians, drawn from real myth.",
         phaseNote:"A fighting game: the gods of Greece face off with their own weapons and powers — every fighter's arms and epithet grounded in the Early Greece chapter. In development." },
       pong:      { gameId:"pong", ch:"ch06", title:"Antithesis — The Eternal Contest", subtitle:"Two cosmic principles volley the sacred orb.",
-        phaseNote:"Pong, reskinned to cosmic dualism — order and the Lie, yang and yin, Ma'at and Isfet — each point won uncovering a sourced fact about that opposition. In development." }
+        phaseNote:"Pong, reskinned to cosmic dualism — order and the Lie, yang and yin, Ma'at and Isfet — each point won uncovering a sourced fact about that opposition. In development." },
+      minesweeper:{ gameId:"minesweeper", ch:"ch03", title:"The Excavation", subtitle:"Clear the buried dig without striking a hazard.",
+        phaseNote:"Minesweeper, reskinned as an archaeological dig — clear the site without striking a collapse or curse; every hazard you mark correctly turns up a real find. In development." }
     };
     var TRIGGER_FOR = {}; // chId -> game meta
     Object.keys(GAMES).forEach(function (k) {
