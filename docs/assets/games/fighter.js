@@ -40,8 +40,8 @@
     var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0;
     var shots = [], debris = [], rain = [], groundItem = null, weather = null, debrisT = 0, itemT = 0, boltFlash = 0;
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
-    var KM1 = { left: "a", right: "d", block: "s", light: "j", heavy: "k", special: "l", grab: "u" };
-    var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", light: ",", heavy: ".", special: "/", grab: "m" };
+    var KM1 = { left: "a", right: "d", block: "s", jump: "w", light: "j", heavy: "k", special: "l", grab: "u" };
+    var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", jump: "arrowup", light: ",", heavy: ".", special: "/", grab: "m" };
     // weather profiles — one picked per match; drives the stage mood + hazards
     var WEATHERS = [
       { id: "clear", name: "Clear night", rain: 0, storm: false, dust: 0, debris: 0.10 },
@@ -627,7 +627,7 @@
     /* ===================== combat + FX ===================== */
     // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
     function tryAttack(f, other, kind) {
-      if (f.cooldown > 0 || f.state === "hit" || f.state === "ko" || !f.onGround) return;
+      if (f.cooldown > 0 || f.state === "hit" || f.state === "ko") return;
       // holding a relic? a strike hurls it instead of swinging.
       if (f.holding && (kind === "light" || kind === "heavy")) { throwItem(f, other); return; }
       if (kind === "special") return trySpecial(f, other);
@@ -799,9 +799,10 @@
       var hx = f.x + f.facing * 26, hy = GROUND - 108 - (f.y || 0);
       drawItemAt(c, f.holding, hx, hy, 0);
     }
+    function landDust(f) { for (var i = 0; i < 5; i++) fx.push({ t: "line", x: f.x + rnd(-11, 11), y: GROUND, a: rnd(3.4, 6), len: rnd(4, 12), life: 1, col: "#6a5a42" }); }
     function spawnDebris() {
       var x = rnd(60, VW - 60);
-      debris.push({ x: x, y: -20, vy: rnd(2.4, 4.2), r: rnd(6, 12), spin: 0, vs: rnd(-0.2, 0.2), col: Math.random() < 0.5 ? "#5a4a34" : "#4a4038" });
+      debris.push({ x: x, y: -20, vy: rnd(2.6, 4.6), r: rnd(7, 14), spin: 0, vs: rnd(-0.25, 0.25), col: Math.random() < 0.5 ? "#5a4a34" : "#4a4038" });
     }
     function updateDebris(dt) {
       for (var i = debris.length - 1; i >= 0; i--) {
@@ -859,6 +860,10 @@
     function think(f, other, dt) {
       if (f.state === "hit" || f.state === "ko") return;
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
+      // airborne: drift toward the foe and sometimes throw an aerial strike
+      if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
+      // occasionally leap — to close distance or dodge, and to bring the fight into the air
+      if (f.onGround && f.cooldown <= 0 && Math.random() < 0.012 && (adx < 60 || adx > 150)) { f.vy = 12.5; f.onGround = false; setState(f, "jump", 0.9); landDust(f); return; }
       // holding a relic: close a little, then hurl it
       if (f.holding) { if (adx > 180) { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); return; } if (f.aiT <= 0) { tryAttack(f, other, "light"); f.aiT = 0.6; } return; }
       // a relic lies nearby and I'm free — go grab it sometimes
@@ -897,10 +902,13 @@
       updateWeather(dt, t);
       if (hitStop > 0) { hitStop -= dt; } else {
         gameT += dt; [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
+        // keep the fighters from overlapping so you can always tell them apart
+        var sepdx = p2.x - p1.x, ad = Math.abs(sepdx);
+        if (ad < 46 && p1.state !== "ko" && p2.state !== "ko") { var push = (46 - ad) / 2, sgn = sepdx >= 0 ? 1 : -1; p1.x = clamp(p1.x - sgn * push, 40, VW - 40); p2.x = clamp(p2.x + sgn * push, 40, VW - 40); }
         updateShots(dt); updateDebris(dt);
-        // hazard + relic spawns, scaled by the weather
-        debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(2.2, 4.5); if (Math.random() < (weather ? weather.debris : 0.12) + 0.3) spawnDebris(); }
-        itemT -= dt; if (itemT <= 0 && winner == null) { itemT = rnd(7, 11); if (!groundItem && !p1.holding && !p2.holding) groundItem = { kind: ITEM_KINDS[(Math.random() * ITEM_KINDS.length) | 0], x: rnd(150, VW - 150), y: GROUND }; }
+        // falling debris — frequent enough to matter, in every weather (storms rain more)
+        debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(1.1, 2.4); if (Math.random() < (weather ? weather.debris : 0.14) + 0.55) { spawnDebris(); if (Math.random() < 0.4) spawnDebris(); } }
+        itemT -= dt; if (itemT <= 0 && winner == null) { itemT = rnd(6, 9); if (!groundItem && !p1.holding && !p2.holding) groundItem = { kind: ITEM_KINDS[(Math.random() * ITEM_KINDS.length) | 0], x: rnd(150, VW - 150), y: GROUND }; }
       }
       for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= dt * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
       for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= dt * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
@@ -944,14 +952,27 @@
         f.x += f.mvx;
       }
       f.x = clamp(f.x, 40, VW - 40);
-      var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1 };
-      if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, "idle", 1); f._hit = null; f._cast = null; if (was !== "hit") f.combo = 0; }
-      if (f.state === "walk" && Math.abs(f.vx) < 0.1) setState(f, "idle", 1);
-      if ((f.state === "idle" || f.state === "walk") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
+      // vertical: jump arc + gravity (f.y is height above the ground)
+      if (!f.onGround || f.y > 0 || f.vy !== 0) {
+        f.y += f.vy; f.vy -= 0.56;
+        if (f.y <= 0) { f.y = 0; f.vy = 0; if (!f.onGround) { f.onGround = true; landDust(f); if (f.state === "jump") setState(f, "idle", 1); } }
+        else f.onGround = false;
+      }
+      var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1 };
+      if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, f.onGround ? "idle" : "jump", 1); f._hit = null; f._cast = null; if (was !== "hit") f.combo = 0; }
+      if (f.state === "walk" && Math.abs(f.vx) < 0.1 && f.onGround) setState(f, "idle", 1);
+      if ((f.state === "idle" || f.state === "walk" || f.state === "jump") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
     }
     function humanControl(f, other) {
       var km = f.km || {};
-      if (f.state === "hit" || f.state === "ko" || f.cooldown > 0) { f.vx = 0; return; }
+      if (f.state === "hit" || f.state === "ko") { if (f.onGround) f.vx = 0; return; }
+      // leap out of idle/walk
+      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
+      if (!f.onGround) { // air control: drift, keep the current attack/jump pose
+        if (keys[km.left]) { f.vx = -2.4; f.facing = -1; } else if (keys[km.right]) { f.vx = 2.4; f.facing = 1; } else f.vx *= 0.9;
+        return;
+      }
+      if (f.cooldown > 0) { f.vx = 0; return; }
       f.vx = 0;
       if (keys[km.block]) { setState(f, "block", 0.4); return; }
       if (keys[km.left]) { f.vx = -3.1; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
@@ -1016,6 +1037,7 @@
         '<div class="fg-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Theomachy fighting stage"></canvas></div>' +
         '<div class="fg-controls">' +
           '<div class="fg-pad fg-move"><button class="ouro-key" data-k="' + KM1.left + '" aria-label="Move left">◀</button>' +
+            '<button class="ouro-key fg-jump" data-k="' + KM1.jump + '" aria-label="Jump">⤒</button>' +
             '<button class="ouro-key" data-k="' + KM1.block + '" aria-label="Guard">🛡</button><button class="ouro-key" data-k="' + KM1.right + '" aria-label="Move right">▶</button></div>' +
           '<div class="fg-pad fg-atk"><button class="ouro-key fg-atk-l" data-atk="light" aria-label="Punch">✦</button>' +
             '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Kick / headbutt up close">✸</button>' +
@@ -1098,7 +1120,7 @@
     function attachKeys() {
       keyfn = function (e) {
         var k = e.key.toLowerCase();
-        var moveKeys = [KM1.left, KM1.right, KM1.block, KM2.left, KM2.right, KM2.block];
+        var moveKeys = [KM1.left, KM1.right, KM1.block, KM1.jump, KM2.left, KM2.right, KM2.block, KM2.jump];
         if (moveKeys.indexOf(k) >= 0) { keys[k] = true; if (k.indexOf("arrow") === 0) e.preventDefault(); }
         if (!running) return;
         [p1, p2].forEach(function (f) {
