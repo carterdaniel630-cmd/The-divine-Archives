@@ -337,8 +337,11 @@
 .fg-hp, .fg-en { height:11px; background:rgba(0,0,0,.4); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-top:.25rem; }
 .fg-en { height:6px; }
 .fg-hp i { display:block; height:100%; background:linear-gradient(90deg, var(--ember), var(--gold-bright)); transition:width .18s ease; }
-.fg-r .fg-hp i, .fg-r .fg-en i { margin-left:auto; }
+.fg-r .fg-hp i, .fg-r .fg-en i, .fg-r .fg-gd i { margin-left:auto; }
 .fg-en i { display:block; height:100%; background:linear-gradient(90deg, #6f86c9, #bfe3ff); transition:width .18s ease; }
+.fg-gd { height:5px; background:rgba(0,0,0,.4); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-top:.25rem; }
+.fg-gd i { display:block; height:100%; background:linear-gradient(90deg, #7a5a2a, #e2b04a); transition:width .12s ease; }
+.fg-gd[data-low] i { background:linear-gradient(90deg, #a33, #e2b04a); }
 .fg-mid { flex:none; align-self:center; display:flex; flex-direction:column; align-items:center; gap:2px; }
 .fg-vs { color:var(--gold); font-size:1rem; }
 .fg-weather { font-family:var(--font-display,Georgia,serif); font-size:.52rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim,#9c8f70); white-space:nowrap; }

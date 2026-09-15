@@ -199,10 +199,20 @@
 
     /* ===================== the figure ===================== */
     function drawFighter(c, f, t) {
-      var p = poseFor(f, t), s = f.skin, dmg = 1 - clamp(f.hp, 0, 100) / 100;
+      var target = poseFor(f, t), s = f.skin, dmg = 1 - clamp(f.hp, 0, 100) / 100;
+      // blend the displayed skeleton toward the target pose so transitions ease in
+      // instead of snapping (strikes blend faster to stay crisp).
+      if (!f.dpose) f.dpose = clonePose(target);
+      var bf = (f.state === "light" || f.state === "kick" || f.state === "headbutt" || f.state === "special" || f.state === "throw" || f.state === "hit") ? 0.55 : 0.3;
+      for (var jk in target) { var dj = f.dpose[jk], gj = target[jk]; if (dj) { dj[0] += (gj[0] - dj[0]) * bf; dj[1] += (gj[1] - dj[1]) * bf; } }
+      var p = f.dpose;
+      // ease facing turns so the character flips smoothly rather than mirroring instantly
+      if (f.face == null) f.face = f.facing;
+      f.face += (f.facing - f.face) * 0.3;
+      var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
       c.save();
       c.translate(f.x, GROUND - (f.y || 0));
-      c.scale(f.facing, 1);
+      c.scale(sfx, 1);
       // ground shadow
       c.save(); c.scale(1, 0.28); c.globalAlpha = 0.42; c.fillStyle = "#000";
       c.beginPath(); c.arc(2, (f.y || 0) * 0.9 + 8, 32, 0, 7); c.fill(); c.restore();
@@ -569,8 +579,8 @@
       return out;
     }
     function Fighter(skin, x, facing, isAI, km) {
-      return { skin: skin, x: x, facing: facing, isAI: isAI, km: km || null, vx: 0, vy: 0, y: 0, onGround: true,
-        hp: 100, energy: 0, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6,
+      return { skin: skin, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
+        hp: 100, energy: 0, guard: 100, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6, dpose: null,
         aura: 0, cooldown: 0, hitLock: 0, combo: 0, wounds: makeWounds() };
     }
     function setState(f, st, dur) { if (f.state === st) return; f.state = st; f.stTime = 0; f.stDur = dur || 0.4; }
@@ -689,6 +699,7 @@
       var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special";
       var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
       if (fin) { dmg = 100; blocked = false; }
+      var raw = dmg;
       if (blocked) dmg = Math.round(dmg * 0.25);
       other.hp = clamp(other.hp - dmg, 0, 100);
       if (f) { f.energy = clamp(f.energy + (heavy ? 8 : 10), 0, 100); }
@@ -703,7 +714,17 @@
         hitStop = Math.max(hitStop, fin ? 0.25 : heavy ? 0.12 : 0.06);
         var pools = fin ? 6 : heavy ? 4 : 2;   // more blood than before
         for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-18, 18), y: GROUND + rnd(0, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
-      } else { other.vx = (f ? f.facing : 1) * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04); }
+      } else {
+        other.vx = (f ? f.facing : 1) * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04);
+        // guard absorbs the blow but the meter erodes; empty it and the guard breaks
+        other.guard = clamp(other.guard - (raw * 1.8 + 6), 0, 100);
+        if (other.guard <= 0) {
+          setState(other, "hit", 0.42); other.hitLock = 0.42; other.combo = 0;
+          other.vx = (f ? f.facing : 1) * 3.4; other.guard = 45;
+          other.hp = clamp(other.hp - 4, 0, 100); shake = Math.max(shake, 9);
+          banner = { txt: "GUARD BROKEN", t: 1.1, fin: false };
+        }
+      }
       if (fin) { flash = 1; spray(hx, hy, other.skin.blood, "special"); spray(hx, hy, other.skin.blood, "special"); burst(hx, hy, "special"); }
       if (other.hp <= 0 && other.state !== "ko") {
         setState(other, "ko", 1.2); other.combo = 0;
@@ -861,7 +882,8 @@
       function bar(f, side) {
         return '<div class="fg-side fg-' + side + '"><div class="fg-name">' + f.skin.name + ' <span>' + f.skin.epithet + '</span></div>' +
           '<div class="fg-hp"><i style="width:' + clamp(f.hp, 0, 100) + '%"></i></div>' +
-          '<div class="fg-en"><i style="width:' + clamp(f.energy, 0, 100) + '%"></i></div></div>';
+          '<div class="fg-en"><i style="width:' + clamp(f.energy, 0, 100) + '%"></i></div>' +
+          '<div class="fg-gd"' + (f.guard < 100 ? ' data-low="1"' : '') + '><i style="width:' + clamp(f.guard, 0, 100) + '%"></i></div></div>';
       }
       hudEl.innerHTML = bar(p1, "l") + '<div class="fg-mid"><span class="fg-vs">✦</span>' + (weather ? '<span class="fg-weather">' + weather.name + '</span>' : '') + '</div>' + bar(p2, "r");
     }
@@ -905,10 +927,22 @@
     function update(f, other, dt) {
       f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
+      // guard meter: erodes while you hold block, recovers while you don't; hold too long and it breaks
+      if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
+      else if (f.guard < 100) { f.guard = clamp(f.guard + dt * 16, 0, 100); }
       if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) { f._hit.done = true; resolveHit(f, other, f._hit.kind, f._hit.fin); }
       if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.fin); }
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
-      f.x += f.vx; if (f.hitLock > 0 || f.state === "ko") f.vx *= 0.82;
+      // weighty locomotion: ease the ACTUAL velocity toward the control's desired
+      // velocity so starts and stops carry momentum instead of snapping. Knockback
+      // (hit/ko) keeps its own impulse and just decays.
+      if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
+      else {
+        var accel = f.vx !== 0 ? 0.24 : 0.32;
+        f.mvx += (f.vx - f.mvx) * accel;
+        if (Math.abs(f.mvx) < 0.04) f.mvx = 0;
+        f.x += f.mvx;
+      }
       f.x = clamp(f.x, 40, VW - 40);
       var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1 };
       if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, "idle", 1); f._hit = null; f._cast = null; if (was !== "hit") f.combo = 0; }
@@ -920,8 +954,8 @@
       if (f.state === "hit" || f.state === "ko" || f.cooldown > 0) { f.vx = 0; return; }
       f.vx = 0;
       if (keys[km.block]) { setState(f, "block", 0.4); return; }
-      if (keys[km.left]) { f.vx = -2.5; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
-      else if (keys[km.right]) { f.vx = 2.5; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
+      if (keys[km.left]) { f.vx = -3.1; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
+      else if (keys[km.right]) { f.vx = 3.1; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
       else if (f.state === "walk" || f.state === "block") setState(f, "idle", 1);
     }
     function comboText(c, n) { c.save(); c.font = "700 22px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.textAlign = "center"; c.shadowColor = "#000"; c.shadowBlur = 6; c.fillText(n + " HIT", VW * 0.26, 54); c.restore(); }
