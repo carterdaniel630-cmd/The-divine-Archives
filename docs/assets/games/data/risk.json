@@ -9,6 +9,8 @@
     { "territory": "persia", "label": "Persia", "fact": "At Behistun, Darius carved his victories into living rock and credited Ahura Mazda — a landmark royal inscription.", "basis": "Behistun", "chapter": "ch06" },
     { "territory": "bactria", "label": "Bactria", "fact": "Zoroastrians exposed their dead on the dakhmas, the Towers of Silence, so the sun and vultures might strip the bones.", "basis": "Towers of Silence", "chapter": "ch06" },
     { "territory": "china", "label": "China", "fact": "The Zhou justified conquering the Shang by the Mandate of Heaven — a ruler holds power only while he rules justly.", "basis": "Mandate of Heaven", "chapter": "ch09" },
-    { "territory": "rome", "label": "Rome", "fact": "On the summit stood the Capitoline Triad — Jupiter, Juno, and Minerva — guarantors of Roman power.", "basis": "Capitoline Triad", "chapter": "ch13" }
+    { "territory": "rome", "label": "Rome", "fact": "On the summit stood the Capitoline Triad — Jupiter, Juno, and Minerva — guarantors of Roman power.", "basis": "Capitoline Triad", "chapter": "ch13" },
+    { "territory": "canaan", "label": "Canaan", "fact": "The clay tablets of Ugarit lay bare a Canaanite pantheon — El the father, Baal the storm-rider, Asherah the mother — the older world the Bible set itself against.", "basis": "Ugarit", "chapter": "ch07" },
+    { "territory": "hatti", "label": "Hatti", "fact": "The Hittites crowned a storm-god, Tarhunna, matched to the Hurrian Teshub — striding on a bull with the lightning in his fist.", "basis": "Teshub", "chapter": "ch57" }
   ]
 }
