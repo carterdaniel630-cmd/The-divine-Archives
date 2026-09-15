@@ -1,0 +1,53 @@
+{
+  "note": "Facts for 'The Labyrinth' (Pac-Man). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-pacman.js). Theme: the soul's passage through the maze of the dead.",
+  "facts": [
+    {
+      "label": "The weighing of the heart",
+      "fact": "In the Egyptian judgment the heart is set against the feather of truth — the weighing of the heart, the moral centerpiece of the Book of the Dead.",
+      "basis": "weighing of the heart",
+      "chapter": "ch02"
+    },
+    {
+      "label": "The forty-two judges",
+      "fact": "The dead recited a Negative Confession before forty-two divine judges — 'I have not stolen, I have not killed' — one denial for each.",
+      "basis": "forty-two divine judges",
+      "chapter": "ch02"
+    },
+    {
+      "label": "Anubis at the scales",
+      "fact": "The jackal-headed Anubis steadies the scales while Thoth records the verdict on the soul.",
+      "basis": "jackal-headed Anubis",
+      "chapter": "ch02"
+    },
+    {
+      "label": "The Descent of Inanna",
+      "fact": "Mesopotamia's great underworld poem is the Descent of Inanna, in which even a goddess is stripped of everything at each of the seven gates.",
+      "basis": "Descent of Inanna",
+      "chapter": "ch03"
+    },
+    {
+      "label": "Queen Ereshkigal",
+      "fact": "The Mesopotamian land of the dead is ruled by the great queen Ereshkigal, in a dust-dim house where all the dead go alike.",
+      "basis": "Ereshkigal",
+      "chapter": "ch03"
+    },
+    {
+      "label": "No paradise below",
+      "fact": "Unlike Egypt, Mesopotamia offered no weighing of the heart and no paradise for the righteous — the dead all shared one gloomy fate.",
+      "basis": "no paradise for the righteous",
+      "chapter": "ch03"
+    },
+    {
+      "label": "Persephone taken",
+      "fact": "Greek myth tells of Persephone carried off to the underworld, sought by her grieving mother Demeter, and returned for only part of the year.",
+      "basis": "carried off to the underworld",
+      "chapter": "ch08"
+    },
+    {
+      "label": "Orpheus the singer",
+      "fact": "A mystery current traced itself to the mythical singer Orpheus, who by legend descended into the underworld to reclaim the dead.",
+      "basis": "mythical singer Orpheus",
+      "chapter": "ch08"
+    }
+  ]
+}
