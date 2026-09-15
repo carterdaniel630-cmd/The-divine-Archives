@@ -53,7 +53,7 @@
 
     // level-paced tempo: starts unhurried, quickens one step per level, never
     // punishingly fast. Level rises every PER_LEVEL symbols swallowed.
-    var PER_LEVEL = 4, BASE_SPEED = 185, STEP_SPEED = 12, MIN_SPEED = 85;
+    var PER_LEVEL = 5, BASE_SPEED = 240, STEP_SPEED = 12, MIN_SPEED = 120;
     function levelFor(score) { return 1 + Math.floor(score / PER_LEVEL); }
     function speedFor(level) { return Math.max(MIN_SPEED, BASE_SPEED - (level - 1) * STEP_SPEED); }
 

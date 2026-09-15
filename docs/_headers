@@ -6,3 +6,10 @@
 
 /assets/*
   Cache-Control: public, max-age=86400, must-revalidate
+
+# Game code + shared stylesheets change often — always revalidate so fixes
+# reach players immediately (a 304 when nothing changed keeps it cheap).
+/assets/games/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/archive.css
+  Cache-Control: public, max-age=0, must-revalidate

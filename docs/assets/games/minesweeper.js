@@ -92,7 +92,7 @@
         '<p class="rq-note">Tap to dig. Turn on flag mode (or right-click / long-press) to mark a hazard. Mark one correctly to turn up a find.</p>';
       gridEl = root.querySelector(".ms-grid"); live = root.querySelector(".ms-toast");
       flagBtn = root.querySelector('[data-a="flag"]'); timerEl = root.querySelector("#ms-timer"); mineEl = root.querySelector("#ms-mines");
-      gridEl.style.setProperty("--cols", st.cols);
+      gridEl.style.setProperty("--cols", String(st.cols));
       root.querySelector('[data-a="level"]').addEventListener("click", cycleLevel);
       flagBtn.addEventListener("click", function () { flagMode = !flagMode; flagBtn.setAttribute("aria-pressed", flagMode ? "true" : "false"); flagBtn.textContent = "⚑ Flag mode: " + (flagMode ? "on" : "off"); flagBtn.classList.toggle("is-on", flagMode); });
       buildGrid();
