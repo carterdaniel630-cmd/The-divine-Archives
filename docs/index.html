@@ -62,6 +62,43 @@
     }
     .explore p { margin: 0; color: var(--ink-dim); font-size: 0.94rem; max-width: 18rem; }
 
+    /* The Games menu */
+    .games-home {
+      border-top: 1px solid var(--line-soft);
+      background: radial-gradient(85% 120% at 50% 0%, rgba(199,154,84,0.09), transparent 62%);
+      padding: 5.2rem 0 4.6rem;
+    }
+    .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+    @media (max-width: 860px) { .games-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .games-grid { grid-template-columns: 1fr; } }
+    .game-card {
+      display: flex; flex-direction: column; gap: 0.55rem; align-items: flex-start;
+      padding: 1.5rem 1.4rem 1.35rem; border: 1px solid var(--line-soft); border-radius: 5px;
+      background: linear-gradient(180deg, var(--panel), var(--ground)); color: inherit;
+      transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+    }
+    .game-card:hover {
+      border-color: var(--gold); transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(199,154,84,0.15);
+    }
+    .game-glyph {
+      width: 46px; height: 46px; color: var(--gold);
+      filter: drop-shadow(0 0 8px rgba(185,143,78,0.22));
+    }
+    .game-glyph svg { width: 100%; height: 100%; }
+    .game-card:hover .game-glyph { color: var(--gold-bright); }
+    .game-card-name {
+      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.09em;
+      color: var(--parchment); font-size: 0.98rem; line-height: 1.25;
+    }
+    .game-card-sub { color: var(--ink-dim); font-size: 0.9rem; line-height: 1.55; }
+    .game-card-play {
+      margin-top: auto; padding-top: 0.4rem; font-family: var(--font-display);
+      text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.66rem; color: var(--gold);
+    }
+    .game-card:hover .game-card-play { color: var(--gold-bright); }
+    .games-more { text-align: center; margin: 2.6rem auto 0; color: var(--ink-dim); font-style: italic; font-size: 0.92rem; max-width: 34rem; }
+
     .eras-home { padding: 5.5rem 0 4rem; }
     .section-head { text-align: center; margin-bottom: 3.4rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center; }
     .section-head h2 {
@@ -227,6 +264,61 @@
         <span class="num">&mdash; IV &mdash;</span><h3>The Symbols</h3>
         <p>Every sacred sign the archive draws, gathered in one place &mdash; and a few of them answer to a touch.</p>
       </article></a>
+      <a class="explore-cell" href="#games"><article>
+        <span class="num">&mdash; V &mdash;</span><h3>The Games</h3>
+        <p>Play the archive &mdash; duels of the gods, riddles, serpents and temples, each drawn from real chapters.</p>
+      </article></a>
+    </div>
+  </section>
+
+  <!-- THE GAMES -->
+  <section class="games-home" id="games" aria-label="Games">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Play the Archive</p>
+        <h2>The Games</h2>
+        <p>Seven ways into the same history. Every fact, fighter, and clue is drawn from a real chapter &mdash;
+           play on a laptop or on your phone, and follow any thread back to its source.</p>
+      </div>
+      <div class="games-grid">
+        <a class="game-card" href="symbols.html#play=fighter">
+          <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M20 44 L34 20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M34 20 L30 30 L38 28 L32 44" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M44 44 L50 38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="22" r="5" stroke="currentColor" stroke-width="2.4"/></svg></span>
+          <span class="game-card-name">Theomachy &mdash; War of the Gods</span>
+          <span class="game-card-sub">A 1v1 fighting game: Olympians duel with their own weapons, powers, and finishers.</span>
+          <span class="game-card-play">Enter the arena &rarr;</span>
+        </a>
+        <a class="game-card" href="symbols.html#play=chess">
+          <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M22 46 h20 v4 h-20z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M25 46 c-2-10 -6-12 -3-20 l4 4 3-6 3 6 4-4 c3 8 -1 10 -3 20" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="32" cy="16" r="3" stroke="currentColor" stroke-width="2.4"/></svg></span>
+          <span class="game-card-name">Archive Chess</span>
+          <span class="game-card-sub">A board of gods &mdash; Egyptian, Greek, or Norse &mdash; against an AI or a friend; facts fall with each capture.</span>
+          <span class="game-card-play">Set the board &rarr;</span>
+        </a>
+        <a class="game-card" href="symbols.html#play=ouroboros">
+          <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M44 20 A18 18 0 1 1 38 15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M38 9 L48 16 L37 22 Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+          <span class="game-card-name">Ouroboros</span>
+          <span class="game-card-sub">The serpent that devours its own tail &mdash; a game of Snake; each symbol swallowed unlocks a fact.</span>
+          <span class="game-card-play">Rouse the serpent &rarr;</span>
+        </a>
+        <a class="game-card" href="symbols.html#play=ziggurat">
+          <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M14 50 h36 M20 50 v-8 h24 v8 M26 42 v-8 h12 v8 M30 34 v-7 h4 v7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+          <span class="game-card-name">Ziggurat Builder</span>
+          <span class="game-card-sub">Raise the temple-mountain course by course &mdash; a game of falling blocks; cleared rows tell its myth.</span>
+          <span class="game-card-play">Lay the first course &rarr;</span>
+        </a>
+        <a class="game-card" href="symbols.html#play=reliquary">
+          <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M22 16 h20 v6 a10 10 0 0 1 -20 0 z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M32 32 v10 M24 46 h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <span class="game-card-name">The Reliquary</span>
+          <span class="game-card-sub">A trivia game drawn entirely from the archive&rsquo;s own chapters &mdash; filter by era, tradition, or theme.</span>
+          <span class="game-card-play">Open the reliquary &rarr;</span>
+        </a>
+        <a class="game-card" href="symbols.html#play=seeker">
+          <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="2.6"/><path d="M30 30 L46 46 M40 42 h6 v6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="game-card-name">The Seeker&rsquo;s Path</span>
+          <span class="game-card-sub">A chain of riddles solved by reading the chapters they point to &mdash; each answer opens the next door.</span>
+          <span class="game-card-play">Take the first clue &rarr;</span>
+        </a>
+      </div>
+      <p class="games-more">More games are on the way &mdash; a treasure-hunt adventure, pinball, and others, all held to the same standard.</p>
     </div>
   </section>
 

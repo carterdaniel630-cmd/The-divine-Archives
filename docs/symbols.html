@@ -179,6 +179,24 @@
         symbolSVG: ART[id], sourceHref: "chapters/"+id+".html", sourceLabel: "Read chapter" });
     });
     if (AG.seedEasterEggs) AG.seedEasterEggs(candEls);
+
+    /* deep-link: symbols.html#play=<gameId> opens that game directly.
+       Lets the homepage games menu launch any game in one click. */
+    function openFromHash() {
+      var m = /(?:^|[#&])play=([a-z0-9_-]+)/i.exec(location.hash || "");
+      if (!m) return;
+      var id = m[1];
+      var meta = GAMES[id];
+      if (!AG.isRegistered(id) && !meta) return;
+      var ch = meta ? meta.ch : null;
+      AG.open(id, { opts: meta ? {
+        symbolName: meta.title, symbolSVG: ART[ch] || "",
+        sourceHref: "chapters/" + ch + ".html",
+        sourceLabel: "Read “" + ((chById(ch) || {}).title || "the source chapter") + "”"
+      } : {} });
+    }
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
   })();
 </script>
 <script src="assets/ambient.js" defer></script>

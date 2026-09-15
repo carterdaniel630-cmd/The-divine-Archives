@@ -47,13 +47,19 @@
       goldB: (css.getPropertyValue("--gold-bright") || "#e7c680").trim(),
       ember: (css.getPropertyValue("--ember") || "#b26a34").trim()
     };
-    var canvas, cxr, live, scoreEl, bestEl, factToast;
+    var canvas, cxr, live, scoreEl, bestEl, levelEl, factToast;
     var st, timer = null, keyfn = null, touch = null, running = false, DPR = 1;
     var best = AG.bestScore("ouroboros");
 
+    // level-paced tempo: starts unhurried, quickens one step per level, never
+    // punishingly fast. Level rises every PER_LEVEL symbols swallowed.
+    var PER_LEVEL = 4, BASE_SPEED = 185, STEP_SPEED = 12, MIN_SPEED = 85;
+    function levelFor(score) { return 1 + Math.floor(score / PER_LEVEL); }
+    function speedFor(level) { return Math.max(MIN_SPEED, BASE_SPEED - (level - 1) * STEP_SPEED); }
+
     function newGame() {
       st = { snake: [{ x: 7, y: 7 }, { x: 6, y: 7 }, { x: 5, y: 7 }], dir: { x: 1, y: 0 }, nextDir: { x: 1, y: 0 },
-        food: null, score: 0, speed: 160, alive: true, paused: false, collected: [], seen: {} };
+        food: null, score: 0, level: 1, speed: speedFor(1), alive: true, paused: false, collected: [], seen: {} };
       placeFood();
     }
     function placeFood() {
@@ -76,6 +82,7 @@
           "<p>Guide the serpent to the symbols. Each one it swallows opens a fact from the archive.</p></div>" +
         '<div class="game-rule" role="presentation"></div>' +
         '<div class="game-scorebar"><div class="stat"><b id="ouro-score">0</b><span>Length gained</span></div>' +
+          '<div class="stat"><b id="ouro-level">1</b><span>Level</span></div>' +
           '<div class="stat"><b id="ouro-best">' + best + '</b><span>Your best</span></div></div>' +
         '<div class="ouro-stage"><canvas class="ouro-canvas" width="' + W + '" height="' + W + '" role="img" aria-label="Ouroboros snake board"></canvas></div>' +
         '<p class="ouro-toast" aria-live="polite"></p>' +
@@ -97,6 +104,7 @@
       cxr.setTransform(DPR, 0, 0, DPR, 0, 0);
       live = root.querySelector(".ouro-toast");
       scoreEl = root.querySelector("#ouro-score");
+      levelEl = root.querySelector("#ouro-level");
       bestEl = root.querySelector("#ouro-best");
       wireControls();
     }
@@ -143,11 +151,15 @@
       st.snake.unshift({ x: nx, y: ny });
       if (st.food && nx === st.food.x && ny === st.food.y) {
         st.score += 1;
-        st.speed = Math.max(80, st.speed - 5);
+        var lv = levelFor(st.score);
+        var leveledUp = lv > st.level;
+        st.level = lv;
+        st.speed = speedFor(lv);
         var f = st.food.fact; st.seen[f.label] = 1;
         if (!st.collected.some(function (c) { return c.label === f.label; })) st.collected.push(f);
         scoreEl.textContent = st.score;
-        showFact(f);
+        if (levelEl) levelEl.textContent = st.level;
+        showFact(f, leveledUp);
         placeFood();
       } else {
         st.snake.pop();
@@ -155,8 +167,9 @@
       draw();
     }
 
-    function showFact(f) {
-      live.innerHTML = '<span class="ouro-sym">✵</span> <strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
+    function showFact(f, leveledUp) {
+      live.innerHTML = (leveledUp ? '<span class="ouro-level-up">Level ' + st.level + ' — the coil quickens.</span> ' : "") +
+        '<span class="ouro-sym">✵</span> <strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
         ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a>";
     }
 
