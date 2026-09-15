@@ -206,7 +206,10 @@
       for (i = n - 2; i >= 0; i--) P.lineTo(pts[i][0] - norms[i][0] * ws[i], pts[i][1] - norms[i][1] * ws[i]);
       var s0 = pts[0]; P.arc(s0[0], s0[1], ws[0], Math.atan2(-norms[0][1], -norms[0][0]), Math.atan2(norms[0][1], norms[0][0]), false);
       P.closePath();
-      cel(c, P, opt.back ? s.baseSh : s.base, s.shadow, opt.back ? null : s.light, s.outline, Math.max.apply(null, ws), opt.ow || 2, opt.k);
+      cel(c, P, opt.back ? s.baseSh : s.base, s.shadow, opt.back ? null : s.light, s.outline, Math.max.apply(null, ws), opt.ow || 2.6, opt.k);
+      // back limbs get a dark wash so they clearly recede behind the front ones,
+      // then the outline is re-struck on top so each limb keeps a crisp silhouette
+      if (opt.back) { c.save(); c.fillStyle = "rgba(6,4,2,0.34)"; c.fill(P); c.restore(); c.lineWidth = 2.6; c.strokeStyle = s.outline; c.lineJoin = "round"; c.stroke(P); }
     }
 
     /* ===================== the figure ===================== */
@@ -1087,27 +1090,31 @@
         '<div class="fg-hud"></div>' +
         '<div class="fg-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Theomachy fighting stage"></canvas></div>' +
         '<div class="fg-controls">' +
-          '<div class="fg-pad fg-move"><button class="ouro-key" data-k="' + KM1.left + '" aria-label="Move left">◀</button>' +
+          '<div class="fg-dpad">' +
             '<button class="ouro-key fg-jump" data-k="' + KM1.jump + '" aria-label="Jump">⤒</button>' +
-            '<button class="ouro-key" data-k="' + KM1.block + '" aria-label="Guard">🛡</button><button class="ouro-key" data-k="' + KM1.right + '" aria-label="Move right">▶</button></div>' +
-          '<div class="fg-pad fg-atk"><button class="ouro-key fg-atk-l" data-atk="light" aria-label="Punch">✦</button>' +
-            '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Kick / headbutt up close">✸</button>' +
+            '<button class="ouro-key fg-left" data-k="' + KM1.left + '" aria-label="Move left">◀</button>' +
+            '<button class="ouro-key fg-guard" data-k="' + KM1.block + '" aria-label="Guard">🛡</button>' +
+            '<button class="ouro-key fg-right" data-k="' + KM1.right + '" aria-label="Move right">▶</button></div>' +
+          '<div class="fg-actions">' +
+            '<button class="ouro-key fg-atk-l" data-atk="light" aria-label="Punch">👊</button>' +
+            '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Kick">🦶</button>' +
             '<button class="ouro-key fg-atk-s" data-atk="special" aria-label="Energy blast">⚡</button>' +
-            '<button class="ouro-key fg-atk-g" data-act="grab" aria-label="Pick up or throw a relic">✋</button></div>' +
+            '<button class="ouro-key fg-atk-g" data-act="grab" aria-label="Grab / throw">✋</button></div>' +
         "</div>" +
         '<div class="rq-actions" style="margin-top:.4rem"><button class="rq-btn" data-a="back">‹ Choose fighters</button></div>';
       canvas = root.querySelector(".fg-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VW * DPR; canvas.height = VH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       hudEl = root.querySelector(".fg-hud");
-      root.querySelectorAll(".fg-move .ouro-key").forEach(function (b) {
-        var k = b.getAttribute("data-k"), dn = function (e) { e.preventDefault(); keys[k] = true; }, up = function () { keys[k] = false; };
-        b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up); b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
+      // movement: hold to move (touch + mouse)
+      root.querySelectorAll(".fg-dpad .ouro-key").forEach(function (b) {
+        var k = b.getAttribute("data-k"), dn = function (e) { e.preventDefault(); keys[k] = true; }, up = function (e) { if (e) e.preventDefault(); keys[k] = false; };
+        b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up, { passive: false }); b.addEventListener("touchcancel", up);
+        b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
       });
-      root.querySelectorAll(".fg-atk .ouro-key").forEach(function (b) {
-        b.addEventListener("click", function () {
-          if (b.getAttribute("data-act") === "grab") tryGrab(p1);
-          else tryAttack(p1, p2, b.getAttribute("data-atk"));
-        });
+      // attacks: fire instantly on press (touchstart/pointerdown), so they work mid-air and don't wait for a click
+      root.querySelectorAll(".fg-actions .ouro-key").forEach(function (b) {
+        var fire = function (e) { if (e) e.preventDefault(); if (!p1) return; if (b.getAttribute("data-act") === "grab") tryGrab(p1); else tryAttack(p1, p2, b.getAttribute("data-atk")); };
+        b.addEventListener("touchstart", fire, { passive: false }); b.addEventListener("mousedown", fire);
       });
       root.querySelector('[data-a="back"]').addEventListener("click", selectScreen);
     }

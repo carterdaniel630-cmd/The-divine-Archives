@@ -350,14 +350,19 @@
 .fg-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .fg-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
 .fg-canvas { width:min(640px, 100%, 84dvh); height:auto; aspect-ratio:2/1; border:1px solid var(--line); border-radius:8px; background:#241a2e; touch-action:none; box-shadow: inset 0 0 50px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
-.fg-controls { display:flex; justify-content:space-between; gap:1rem; max-width:640px; margin:.6rem auto .2rem; }
-.fg-pad { display:flex; gap:.4rem; }
-.fg-pad .ouro-key { width:3rem; height:3rem; }
-.fg-atk .fg-atk-s { color:#bfe3ff; }
-.fg-atk .fg-atk-g { color:var(--gold-bright); }
-.fg-move .fg-jump { color:#a6d8c8; }
-@media (max-width:520px){ .fg-controls { gap:.4rem; } .fg-pad { gap:.3rem; } .fg-pad .ouro-key { width:2.5rem; height:2.5rem; font-size:.9rem; } }
-@media (max-width:380px){ .fg-pad .ouro-key { width:2.15rem; height:2.15rem; } }
+/* two thumb-reachable clusters at the corners: a d-pad (left) and action buttons (right) */
+.fg-controls { display:flex; justify-content:space-between; align-items:flex-end; gap:.6rem; max-width:640px; margin:.55rem auto .2rem; padding:0 .2rem; }
+.fg-dpad { display:grid; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(2, 1fr); gap:.35rem; }
+.fg-dpad .fg-jump  { grid-column:2; grid-row:1; color:#a6d8c8; }
+.fg-dpad .fg-left  { grid-column:1; grid-row:2; }
+.fg-dpad .fg-guard { grid-column:2; grid-row:2; }
+.fg-dpad .fg-right { grid-column:3; grid-row:2; }
+.fg-actions { display:grid; grid-template-columns:repeat(2, 1fr); gap:.35rem; }
+.fg-actions .fg-atk-s { color:#bfe3ff; }
+.fg-actions .fg-atk-g { color:var(--gold-bright); }
+.fg-controls .ouro-key { width:3.3rem; height:3.3rem; font-size:1.15rem; }
+@media (max-width:520px){ .fg-controls .ouro-key { width:3.7rem; height:3.5rem; } }
+@media (max-width:360px){ .fg-controls .ouro-key { width:3.1rem; height:3rem; } }
 
 /* ---- Antithesis (Pong) ---- */
 .pg-hud { display:flex; align-items:center; justify-content:center; gap:1.4rem; margin:.2rem auto .3rem; }
