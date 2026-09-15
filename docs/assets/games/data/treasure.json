@@ -1,0 +1,13 @@
+{
+  "note": "Facts for 'The Tomb Robber' (treasure-hunt adventure). Each relic's `basis` substring must appear in the source chapter's rendered text (tools/verify-treasure.js). Recover the relic, learn what it meant.",
+  "facts": [
+    { "label": "The Golden Mask", "fact": "Howard Carter broke into the near-intact tomb of Tutankhamun in 1922 — asked what he saw, he answered, \"wonderful things.\"", "basis": "Tutankhamun", "chapter": "ch02" },
+    { "label": "The Book of Coming Forth", "fact": "The funerary spellbook we call the Book of the Dead bore an Egyptian name closer to The Book of Coming Forth by Day.", "basis": "coming forth by day", "chapter": "ch02" },
+    { "label": "The Scales of Judgment", "fact": "In the Egyptian judgment the heart is set against the feather of truth — the weighing of the heart, the moral centre of the afterlife.", "basis": "weighing of the heart", "chapter": "ch02" },
+    { "label": "The Standard of Ur", "fact": "The inlaid Standard of Ur gives a vivid picture of Early Dynastic kingship and its beliefs about the beyond.", "basis": "Standard of Ur", "chapter": "ch03" },
+    { "label": "The Indus Seal", "fact": "At Mohenjo-daro excavators turned up a small steatite seal showing a seated figure — famous, and still undeciphered.", "basis": "steatite seal", "chapter": "ch04" },
+    { "label": "The Great Bath token", "fact": "Mohenjo-daro's most striking structure is the Great Bath, a watertight sunken tank of fitted brick sealed with bitumen.", "basis": "Great Bath", "chapter": "ch04" },
+    { "label": "The Rock of Behistun", "fact": "At Behistun, Darius carved his victories into living rock and credited Ahura Mazda — one of the great royal inscriptions.", "basis": "Behistun", "chapter": "ch06" },
+    { "label": "The Oracle Bone", "fact": "China's oldest writing survives on oracle bones — ox scapulae and turtle shells cracked with heat to read the gods' answers.", "basis": "oracle bones", "chapter": "ch09" }
+  ]
+}
