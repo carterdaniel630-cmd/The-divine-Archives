@@ -21,6 +21,12 @@
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
   function rnd(a, b) { return a + Math.random() * (b - a); }
+  // strike timing with anticipation: pulls back (negative), snaps out to +1, then recovers to 0
+  function strikeCurve(pr) {
+    if (pr < 0.16) return -0.5 * ease(pr / 0.16);
+    if (pr < 0.44) return -0.5 + 1.5 * ease((pr - 0.16) / 0.28);
+    return 1 - ease((pr - 0.44) / 0.56);
+  }
 
   AG.register("fighter", {
     title: "Theomachy",
@@ -109,27 +115,27 @@
       } else if (st === "block") {
         add(p, "hnF", -22, -2); add(p, "elF", -16, 2); add(p, "hnB", -6, 0); add(p, "chest", -5, 0); add(p, "head", -4, 0);
       } else if (st === "light") {
-        // a sharp straight punch
-        var k = ease(pr < 0.35 ? pr / 0.35 : 1 - (pr - 0.35) / 0.65);
-        add(p, "hnF", 32 * k, 4 * k); add(p, "elF", 22 * k, 1 * k);
+        // a sharp straight punch — winds the shoulder back, then snaps out
+        var k = strikeCurve(pr);
+        add(p, "hnF", 34 * k, 4 * k); add(p, "elF", 23 * k, 1 * k);
         add(p, "chest", 6 * k, 0); add(p, "head", 5 * k, 0); add(p, "hip", 3 * k, 0);
-        add(p, "shF", 3 * k, 0); add(p, "footF", 8 * k, 0); add(p, "hnB", -8 * k, 0);
+        add(p, "shF", 4 * k, 0); add(p, "footF", 9 * k, 0); add(p, "hnB", -9 * k, 0);
       } else if (st === "kick") {
-        // a high roundhouse: the front leg swings up and out
-        var kk = ease(pr < 0.4 ? pr / 0.4 : 1 - (pr - 0.4) / 0.6);
-        add(p, "footF", 46 * kk, -70 * kk); add(p, "kneeF", 30 * kk, -46 * kk);
+        // a high roundhouse: chambers the knee, then whips the front leg up and out
+        var kk = strikeCurve(pr);
+        add(p, "footF", 48 * kk, -72 * kk); add(p, "kneeF", 31 * kk, -47 * kk);
         add(p, "chest", -6 * kk, 2 * kk); add(p, "head", -4 * kk, 0); add(p, "hip", -4 * kk, 4 * kk);
         add(p, "hnB", -14 * kk, -6 * kk); add(p, "hnF", -6 * kk, 4 * kk); add(p, "shB", -3 * kk, 0);
       } else if (st === "headbutt") {
-        // a lunging headbutt — the whole torso snaps forward
-        var hk = ease(pr < 0.3 ? pr / 0.3 : 1 - (pr - 0.3) / 0.7);
-        add(p, "head", 26 * hk, 8 * hk); add(p, "neck", 18 * hk, 5 * hk); add(p, "chest", 16 * hk, 4 * hk);
+        // a lunging headbutt — rocks back, then the whole torso snaps forward
+        var hk = strikeCurve(pr);
+        add(p, "head", 27 * hk, 8 * hk); add(p, "neck", 18 * hk, 5 * hk); add(p, "chest", 16 * hk, 4 * hk);
         add(p, "hip", 8 * hk, 0); add(p, "shF", 8 * hk, 0); add(p, "shB", 6 * hk, 0);
         add(p, "hnF", 4 * hk, 6 * hk); add(p, "footF", 12 * hk, 0);
       } else if (st === "throw") {
         // an overhand hurl
-        var tk = ease(pr < 0.35 ? pr / 0.35 : 1 - (pr - 0.35) / 0.65);
-        add(p, "hnF", 20 * tk, -18 * tk); add(p, "elF", 14 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk);
+        var tk = strikeCurve(pr);
+        add(p, "hnF", 22 * tk, -18 * tk); add(p, "elF", 15 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk);
         add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0);
       } else if (st === "special") {
         var up = ease(clamp(pr * 1.5, 0, 1));
@@ -141,8 +147,14 @@
         var kk = ease(pr);
         for (var j in p) { var pt = p[j], ang = -1.4 * kk, x = pt[0], y = pt[1]; p[j] = [x * Math.cos(ang) - y * Math.sin(ang) - 46 * kk, x * Math.sin(ang) + y * Math.cos(ang)]; }
       }
-      // subtle ready-bob
-      if (st === "idle") { var bob = Math.sin(t * 2.4 + f.phase) * 1.2; for (var q in p) p[q][1] += bob * 0.2; }
+      // living idle: a slow weight-shift + breathing sway so a waiting fighter isn't a statue
+      if (st === "idle") {
+        var bob = Math.sin(t * 2.4 + f.phase) * 1.2, sway = Math.sin(t * 1.5 + f.phase) * 2.2;
+        for (var q in p) p[q][1] += bob * 0.2;
+        add(p, "hip", sway * 0.5, 0); add(p, "chest", sway * 0.7, 0); add(p, "neck", sway * 0.8, 0); add(p, "head", sway, 0);
+        add(p, "hnF", sway * 0.6 + Math.sin(t * 2.4 + f.phase + 1) * 1.4, 0); add(p, "hnB", -sway * 0.5, 0);
+        add(p, "shF", sway * 0.4, 0); add(p, "shB", sway * 0.3, 0);
+      }
       return p;
     }
 
@@ -602,26 +614,61 @@
         c.stroke(); c.restore();
       }
       if (flash > 0) { c.fillStyle = "rgba(220,235,255," + (flash * 0.5) + ")"; c.fillRect(0, 0, VW, VH); }
+      // distant mountains — depth behind the temple
+      c.fillStyle = storm ? "rgba(24,26,40,.6)" : wet ? "rgba(30,38,52,.5)" : "rgba(40,26,44,.5)";
+      c.beginPath(); c.moveTo(0, GROUND);
+      for (var dm = 0; dm <= VW; dm += 46) c.lineTo(dm, GROUND - 96 - Math.sin(dm * 0.018 + 2) * 34 - (dm % 210 < 46 ? 46 : 0));
+      c.lineTo(VW, GROUND); c.closePath(); c.fill();
       // moon (dimmed / veiled when it storms or rains)
-      c.save(); c.globalAlpha = storm ? .18 : wet ? .3 : .5; c.fillStyle = ash ? "#e7c680" : UI.goldB; c.beginPath(); c.arc(VW * 0.5, VH * 0.34, 42, 0, 7); c.fill(); c.restore();
-      c.fillStyle = "rgba(20,13,7,.55)"; c.beginPath(); c.moveTo(0, GROUND);
+      c.save(); c.globalAlpha = storm ? .16 : wet ? .28 : .5; c.fillStyle = ash ? "#e7c680" : UI.goldB; c.beginPath(); c.arc(VW * 0.5, VH * 0.3, 40, 0, 7); c.fill(); c.restore();
+      // nearer hills
+      c.fillStyle = "rgba(20,13,7,.6)"; c.beginPath(); c.moveTo(0, GROUND);
       for (var m = 0; m <= VW; m += 60) c.lineTo(m, GROUND - 60 - Math.sin(m * 0.03) * 42 - (m % 120 ? 0 : 30));
       c.lineTo(VW, GROUND); c.closePath(); c.fill();
+      // colonnade with capitals
       for (var i = 0; i < 6; i++) {
-        var colx = 40 + i * 120, cw = 22, top = GROUND - 150;
-        var g = c.createLinearGradient(colx, 0, colx + cw, 0); g.addColorStop(0, "#1a130c"); g.addColorStop(0.5, "#2a2013"); g.addColorStop(1, "#120c07");
-        c.fillStyle = g; c.fillRect(colx, top, cw, 150); c.strokeStyle = "rgba(199,154,84,.35)"; c.lineWidth = 1; c.strokeRect(colx, top, cw, 150);
-        c.fillStyle = "#241a10"; c.fillRect(colx - 5, top - 8, cw + 10, 8); c.fillRect(colx - 5, GROUND - 6, cw + 10, 6);
-        c.strokeStyle = "rgba(20,13,7,.5)"; for (var fl = 1; fl < 4; fl++) { c.beginPath(); c.moveTo(colx + fl * cw / 4, top); c.lineTo(colx + fl * cw / 4, GROUND); c.stroke(); }
+        var colx = 40 + i * 120, cw = 22, top = GROUND - 154;
+        var g = c.createLinearGradient(colx, 0, colx + cw, 0); g.addColorStop(0, "#1a130c"); g.addColorStop(0.45, "#33270f"); g.addColorStop(0.55, "#3a2c14"); g.addColorStop(1, "#120c07");
+        c.fillStyle = g; c.fillRect(colx, top, cw, 154); c.strokeStyle = "rgba(199,154,84,.35)"; c.lineWidth = 1; c.strokeRect(colx, top, cw, 154);
+        c.fillStyle = "#3a2c15"; c.fillRect(colx - 6, top - 10, cw + 12, 10); c.fillRect(colx - 3, top - 16, cw + 6, 6); // capital
+        c.fillStyle = "#241a10"; c.fillRect(colx - 6, GROUND - 8, cw + 12, 8); // base
+        c.strokeStyle = "rgba(20,13,7,.5)"; for (var fl = 1; fl < 5; fl++) { c.beginPath(); c.moveTo(colx + fl * cw / 5, top); c.lineTo(colx + fl * cw / 5, GROUND); c.stroke(); } // fluting
       }
-      var fl2 = c.createLinearGradient(0, GROUND, 0, VH); fl2.addColorStop(0, "#2a2013"); fl2.addColorStop(1, "#0d0906");
+      // marble floor with receding tiles
+      var fl2 = c.createLinearGradient(0, GROUND, 0, VH); fl2.addColorStop(0, "#2f2416"); fl2.addColorStop(1, "#0d0906");
       c.fillStyle = fl2; c.fillRect(0, GROUND, VW, VH - GROUND);
+      c.strokeStyle = "rgba(199,154,84,.10)"; c.lineWidth = 1;
+      for (var tx = 0; tx <= VW; tx += 55) { c.beginPath(); c.moveTo(tx, GROUND); c.lineTo(VW / 2 + (tx - VW / 2) * 2.1, VH); c.stroke(); }
+      for (var ty = GROUND + 12; ty < VH; ty += 15) { c.beginPath(); c.moveTo(0, ty); c.lineTo(VW, ty); c.stroke(); }
       // blood decals on the marble
       for (var d = 0; d < blood.length; d++) { var bd = blood[d]; c.globalAlpha = clamp(bd.life, 0, .8); c.fillStyle = bd.col; c.beginPath(); c.arc(bd.x, bd.y, bd.r, 0, 7); c.fill(); }
       c.globalAlpha = 1;
-      c.strokeStyle = "rgba(199,154,84,.25)"; c.beginPath(); c.moveTo(0, GROUND); c.lineTo(VW, GROUND); c.stroke();
+      c.strokeStyle = "rgba(199,154,84,.3)"; c.beginPath(); c.moveTo(0, GROUND); c.lineTo(VW, GROUND); c.stroke();
+      // foreground braziers — flickering fire lights the arena
+      brazier(c, 24, t); brazier(c, VW - 24, t + 1.7);
       for (var k = 0; k < motes.length; k++) { var mo = motes[k]; c.globalAlpha = mo.a; c.fillStyle = UI.goldB; c.beginPath(); c.arc(mo.x, mo.y, mo.r, 0, 7); c.fill(); }
       c.globalAlpha = 1;
+    }
+    function brazier(c, x, t) {
+      var yb = GROUND - 4;
+      // stand + bowl
+      c.fillStyle = "#2a2013"; c.strokeStyle = "#120c07"; c.lineWidth = 1;
+      c.fillRect(x - 3, yb, 6, 30); c.beginPath(); c.moveTo(x - 12, yb); c.lineTo(x + 12, yb); c.lineTo(x + 8, yb - 8); c.lineTo(x - 8, yb - 8); c.closePath(); c.fill(); c.stroke();
+      // flame
+      c.save(); c.globalCompositeOperation = "lighter";
+      var fh = 22 + Math.sin(t * 9 + x) * 5;
+      var fg = c.createRadialGradient(x, yb - 12, 2, x, yb - 12, fh);
+      fg.addColorStop(0, "rgba(255,240,180,.95)"); fg.addColorStop(0.4, "rgba(230,140,50,.7)"); fg.addColorStop(1, "rgba(120,40,10,0)");
+      c.fillStyle = fg; c.beginPath();
+      c.moveTo(x - 7, yb - 8);
+      c.quadraticCurveTo(x - 5, yb - 12 - fh * 0.5, x + Math.sin(t * 12 + x) * 3, yb - 10 - fh);
+      c.quadraticCurveTo(x + 5, yb - 12 - fh * 0.5, x + 7, yb - 8);
+      c.closePath(); c.fill();
+      // warm glow pool on the floor
+      c.globalAlpha = 0.25 + Math.sin(t * 9 + x) * 0.05;
+      var pg = c.createRadialGradient(x, yb, 2, x, yb, 60); pg.addColorStop(0, "rgba(230,150,60,.5)"); pg.addColorStop(1, "rgba(0,0,0,0)");
+      c.fillStyle = pg; c.beginPath(); c.arc(x, yb, 60, 0, 7); c.fill();
+      c.restore();
     }
 
     /* ===================== combat + FX ===================== */
@@ -735,9 +782,12 @@
       }
     }
     function burst(x, y, kind) {
-      var col = kind === "special" ? "#bfe3ff" : kind === "block" ? "#cbb78a" : UI.goldB, n = kind === "light" ? 8 : 14;
-      fx.push({ t: "flash", x: x, y: y, r: kind === "special" ? 34 : kind === "heavy" ? 24 : 16, life: 1, col: col });
-      for (var i = 0; i < n; i++) { var a = (i / n) * 6.28; fx.push({ t: "line", x: x, y: y, a: a, len: rnd(10, kind === "special" ? 40 : 24), life: 1, col: col }); }
+      var col = kind === "special" ? "#bfe3ff" : kind === "block" ? "#cbb78a" : UI.goldB, n = kind === "light" ? 10 : kind === "special" ? 22 : 16;
+      fx.push({ t: "flash", x: x, y: y, r: kind === "special" ? 40 : kind === "heavy" ? 30 : 18, life: 1, col: col });
+      if (kind === "heavy" || kind === "special") fx.push({ t: "ring", x: x, y: y, r: kind === "special" ? 12 : 9, life: 1, col: col });
+      for (var i = 0; i < n; i++) { var a = (i / n) * 6.28; fx.push({ t: "line", x: x, y: y, a: a, len: rnd(12, kind === "special" ? 48 : 28), life: 1, col: col }); }
+      // flying sparks (gold, reusing the blood renderer with a bright colour)
+      if (kind !== "block") for (var sp = 0; sp < (kind === "light" ? 4 : 9); sp++) fx.push({ t: "blood", x: x, y: y, vx: rnd(-1, 1) * 8, vy: rnd(-7, -1), life: 1, r: rnd(1, 2.6), col: col });
     }
     function spray(x, y, col, kind) { var n = kind === "special" ? 26 : kind === "heavy" ? 18 : 9; for (var i = 0; i < n; i++) fx.push({ t: "blood", x: x, y: y, vx: rnd(-1, 1) * 9, vy: rnd(-7, 1.5), life: 1, r: rnd(1.6, 4), col: col }); }
     function drawFX(c) {
@@ -747,6 +797,7 @@
           // impact star
           c.strokeStyle = hexA("#ffffff", e.life); c.lineWidth = 2; for (var k = 0; k < 4; k++) { var aa = k * 0.785; c.beginPath(); c.moveTo(e.x - Math.cos(aa) * e.r, e.y - Math.sin(aa) * e.r); c.lineTo(e.x + Math.cos(aa) * e.r, e.y + Math.sin(aa) * e.r); c.stroke(); } c.restore(); }
         else if (e.t === "line") { c.strokeStyle = hexA(e.col, e.life); c.lineWidth = 2; c.beginPath(); var r0 = (1 - e.life) * 8; c.moveTo(e.x + Math.cos(e.a) * r0, e.y + Math.sin(e.a) * r0); c.lineTo(e.x + Math.cos(e.a) * (r0 + e.len), e.y + Math.sin(e.a) * (r0 + e.len)); c.stroke(); }
+        else if (e.t === "ring") { c.save(); c.globalCompositeOperation = "lighter"; c.strokeStyle = hexA(e.col, e.life * 0.85); c.lineWidth = 3.5 * e.life + 0.5; c.beginPath(); c.arc(e.x, e.y, e.r + (1 - e.life) * 46, 0, 7); c.stroke(); c.restore(); }
         else if (e.t === "blood") { c.fillStyle = hexA(e.col, clamp(e.life, 0, 1)); c.beginPath(); c.arc(e.x, e.y, e.r, 0, 7); c.fill(); }
       }
     }
@@ -910,7 +961,7 @@
         debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(1.1, 2.4); if (Math.random() < (weather ? weather.debris : 0.14) + 0.55) { spawnDebris(); if (Math.random() < 0.4) spawnDebris(); } }
         itemT -= dt; if (itemT <= 0 && winner == null) { itemT = rnd(6, 9); if (!groundItem && !p1.holding && !p2.holding) groundItem = { kind: ITEM_KINDS[(Math.random() * ITEM_KINDS.length) | 0], x: rnd(150, VW - 150), y: GROUND }; }
       }
-      for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= dt * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
+      for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= dt * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : e.t === "ring" ? 3.4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
       for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= dt * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
       if (blood.length > 60) blood.splice(0, blood.length - 60);
       cx.clearRect(0, 0, VW, VH);
