@@ -44,6 +44,10 @@
 
     var canvas, cx, hudEl, raf = null, keyfn = null, keyup = null, last = 0, running = false;
     var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0;
+    // fixed-timestep simulation: logic advances in whole FIXED steps regardless of
+    // display refresh, so movement/jumps are identical at 60/120/144 Hz. Rendering
+    // interpolates between the last two sim states by `acc/FIXED`.
+    var FIXED = 1 / 60, acc = 0, MAXSTEPS = 5;
     var shots = [], debris = [], rain = [], groundItem = null, weather = null, debrisT = 0, itemT = 0, boltFlash = 0;
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
     var KM1 = { left: "a", right: "d", block: "s", jump: "w", light: "j", heavy: "k", special: "l", grab: "u" };
@@ -253,11 +257,13 @@
       if (f.face == null) f.face = f.facing;
       f.face += (f.facing - f.face) * 0.3;
       var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
+      // fixed-timestep render interpolation: draw between the last two sim positions
+      var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
       c.save();
-      c.translate(f.x, GROUND - (f.y || 0));
+      c.translate(rx, GROUND - ry);
       c.scale(sfx, 1);
       // ground shadow — shrinks and fades as the god leaps, so height reads clearly
-      var yh = f.y || 0, sr = 32 * (1 - Math.min(yh, 150) / 320);
+      var yh = ry, sr = 32 * (1 - Math.min(yh, 150) / 320);
       c.save(); c.scale(1, 0.28); c.globalAlpha = 0.42 * (1 - Math.min(yh, 150) / 260); c.fillStyle = "#000";
       c.beginPath(); c.arc(2, yh * 3.4 + 8, sr, 0, 7); c.fill(); c.restore();
 
@@ -900,7 +906,8 @@
     }
     function drawHeld(c, f) {
       if (!f.holding) return;
-      var hx = f.x + f.facing * 26, hy = GROUND - 108 - (f.y || 0);
+      var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
+      var hx = rx + f.facing * 26, hy = GROUND - 108 - ry;
       drawItemAt(c, f.holding, hx, hy, 0);
     }
     function landDust(f) { for (var i = 0; i < 5; i++) fx.push({ t: "line", x: f.x + rnd(-11, 11), y: GROUND, a: rnd(3.4, 6), len: rnd(4, 12), life: 1, col: "#6a5a42" }); }
@@ -998,25 +1005,43 @@
     }
 
     /* ===================== loop ===================== */
+    // one fixed logic step (dt is always FIXED). All gameplay physics lives here,
+    // so it runs a deterministic number of times per second at any refresh rate.
+    function stepSim(dt) {
+      if (hitStop > 0) { hitStop -= dt; return; }
+      gameT += dt;
+      // remember pre-step positions for render interpolation
+      p1.px = p1.x; p1.py = (p1.y || 0); p2.px = p2.x; p2.py = (p2.y || 0);
+      [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
+      // keep the fighters from overlapping so you can always tell them apart
+      var sepdx = p2.x - p1.x, ad = Math.abs(sepdx);
+      if (ad < 46 && p1.state !== "ko" && p2.state !== "ko") { var push = (46 - ad) / 2, sgn = sepdx >= 0 ? 1 : -1; p1.x = clamp(p1.x - sgn * push, 40, VW - 40); p2.x = clamp(p2.x + sgn * push, 40, VW - 40); }
+      updateShots(dt); updateDebris(dt);
+      // falling debris — frequent enough to matter, in every weather (storms rain more)
+      debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(1.1, 2.4); if (Math.random() < (weather ? weather.debris : 0.14) + 0.55) { spawnDebris(); if (Math.random() < 0.4) spawnDebris(); } }
+      itemT -= dt; if (itemT <= 0 && winner == null) { itemT = rnd(6, 9); if (!groundItem && !p1.holding && !p2.holding) groundItem = { kind: ITEM_KINDS[(Math.random() * ITEM_KINDS.length) | 0], x: rnd(150, VW - 150), y: GROUND }; }
+    }
     function frame(ts) {
       if (!running) return;
-      var dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts; var t = ts / 1000;
-      for (var i = 0; i < motes.length; i++) { var mo = motes[i]; mo.y -= mo.v * dt * 30; mo.x += Math.sin(t + i) * 0.2; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
-      flash = Math.max(0, flash - dt * 2); shake = Math.max(0, shake - dt * 32);
-      updateWeather(dt, t);
-      if (hitStop > 0) { hitStop -= dt; } else {
-        gameT += dt; [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
-        // keep the fighters from overlapping so you can always tell them apart
-        var sepdx = p2.x - p1.x, ad = Math.abs(sepdx);
-        if (ad < 46 && p1.state !== "ko" && p2.state !== "ko") { var push = (46 - ad) / 2, sgn = sepdx >= 0 ? 1 : -1; p1.x = clamp(p1.x - sgn * push, 40, VW - 40); p2.x = clamp(p2.x + sgn * push, 40, VW - 40); }
-        updateShots(dt); updateDebris(dt);
-        // falling debris — frequent enough to matter, in every weather (storms rain more)
-        debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(1.1, 2.4); if (Math.random() < (weather ? weather.debris : 0.14) + 0.55) { spawnDebris(); if (Math.random() < 0.4) spawnDebris(); } }
-        itemT -= dt; if (itemT <= 0 && winner == null) { itemT = rnd(6, 9); if (!groundItem && !p1.holding && !p2.holding) groundItem = { kind: ITEM_KINDS[(Math.random() * ITEM_KINDS.length) | 0], x: rnd(150, VW - 150), y: GROUND }; }
-      }
-      for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= dt * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : e.t === "ring" ? 3.4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
-      for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= dt * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
+      // real elapsed time, clamped so a long stall can't spiral the accumulator
+      var real = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; var t = ts / 1000;
+      // --- purely-visual updates run once per rendered frame (real time) ---
+      for (var i = 0; i < motes.length; i++) { var mo = motes[i]; mo.y -= mo.v * real * 30; mo.x += Math.sin(t + i) * 0.2; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
+      flash = Math.max(0, flash - real * 2); shake = Math.max(0, shake - real * 32);
+      updateWeather(real, t);
+      for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= real * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : e.t === "ring" ? 3.4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
+      for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= real * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
       if (blood.length > 60) blood.splice(0, blood.length - 60);
+      // --- fixed-step simulation ---
+      acc += real; var steps = 0;
+      while (acc >= FIXED && steps < MAXSTEPS) { stepSim(FIXED); acc -= FIXED; steps++; }
+      if (steps === MAXSTEPS) acc = 0; // shed backlog after a long stall
+      // interpolate render positions between the last two sim states
+      var alpha = FIXED > 0 ? acc / FIXED : 0;
+      [p1, p2].forEach(function (f) {
+        f.rx = (f.px == null) ? f.x : f.px + (f.x - f.px) * alpha;
+        f.ry = (f.py == null) ? (f.y || 0) : f.py + ((f.y || 0) - f.py) * alpha;
+      });
       cx.clearRect(0, 0, VW, VH);
       cx.save();
       if (shake > 0.3) cx.translate(rnd(-shake, shake), rnd(-shake, shake));
@@ -1190,7 +1215,7 @@
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1);
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
-      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false;
+      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
       debrisT = rnd(2, 4); itemT = rnd(4, 7); boltFlash = 0;
       initWeather(WEATHERS[(Math.random() * WEATHERS.length) | 0]);
       if (HERO.ready) vsSplash(function () { running = true; last = performance.now(); raf = requestAnimationFrame(frame); });
