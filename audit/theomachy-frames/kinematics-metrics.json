@@ -1,0 +1,37 @@
+{
+  "frames_captured": 112,
+  "native_fps": 21.6,
+  "frame_dt_ms_median": 46.3,
+  "draw_ops_per_frame_median": 1396,
+  "draw_ops_by_method_total": {
+    "fillRect": 3142,
+    "beginPath": 32599,
+    "moveTo": 26986,
+    "lineTo": 28194,
+    "fill": 19119,
+    "arc": 5481,
+    "strokeRect": 672,
+    "stroke": 32860,
+    "quadraticCurveTo": 4539,
+    "clip": 6384
+  },
+  "walk_input_to_motion_ms": 14.100000000093132,
+  "walk_velocity_early_px_per_frame": [
+    0.74,
+    1.31,
+    1.74,
+    2.07,
+    2.31
+  ],
+  "walk_velocity_steady_px_per_frame": 2.94,
+  "walk_total_px": 51.2,
+  "subpixel_positions": "YES (107/112 non-integer)",
+  "jump_peak_height_px": 175.8,
+  "jump_time_to_peak_ms": 1124,
+  "jump_total_airtime_ms": null,
+  "hitstop_frozen_runs_frames": [
+    4,
+    9
+  ],
+  "knockback_max_px_per_frame": 42.6
+}
