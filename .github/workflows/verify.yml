@@ -1,0 +1,63 @@
+name: Verify game sourcing
+
+# Enforces the evidence-honesty invariant for the games layer: every fact/clue a
+# game surfaces must be grounded in real chapter text (its `basis` string must
+# appear in the source chapter). The tools/verify-*.js scripts check this; this
+# workflow runs all of them and fails the build if any one fails.
+
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "docs/assets/games/data/**"
+      - "docs/assets/chapters.js"
+      - "tools/verify-*.js"
+      - ".github/workflows/verify.yml"
+  pull_request:
+    paths:
+      - "docs/assets/games/data/**"
+      - "docs/assets/chapters.js"
+      - "tools/verify-*.js"
+      - ".github/workflows/verify.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run every game-sourcing verifier
+        run: |
+          set -uo pipefail
+          fail=0
+          shopt -s nullglob
+          scripts=(tools/verify-*.js)
+          if [ ${#scripts[@]} -eq 0 ]; then
+            echo "No verify-*.js scripts found — nothing to check."
+            exit 1
+          fi
+          for f in "${scripts[@]}"; do
+            echo "::group::$f"
+            if node "$f"; then
+              echo "PASS: $f"
+            else
+              echo "::error file=$f::sourcing verifier failed"
+              fail=1
+            fi
+            echo "::endgroup::"
+          done
+          if [ "$fail" -ne 0 ]; then
+            echo "One or more game-sourcing verifiers failed."
+            exit 1
+          fi
+          echo "All game-sourcing verifiers passed."
