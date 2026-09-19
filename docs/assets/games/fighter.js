@@ -73,6 +73,20 @@
     // horizontal focus (0..1) of each god's face within its cell, so portrait crops frame the face
     var HERO_FOCUS = { zeus: 0.5, poseidon: 0.58, athena: 0.52, hades: 0.56 };
     var HERO = { img: null, ready: false };
+    // D4: per-god archive facts, loaded from data/fighters.json, surfaced on the
+    // select + victory screens with a link back to the source chapter (ch08).
+    var FIGHTER_FACTS = {}, FACTS_CHAPTER = "ch08";
+    function loadFighterFacts(done) {
+      fetch(SCRIPT_BASE + "data/fighters.json").then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) { if (j && j.fighters) { FACTS_CHAPTER = j.chapter || "ch08"; j.fighters.forEach(function (f) { FIGHTER_FACTS[f.id] = f.fact; }); } })
+        .catch(function () {}).then(function () { if (done) done(); });
+    }
+    function factLine(id) {
+      var fx2 = FIGHTER_FACTS[id]; if (!fx2) return "";
+      return '<p class="fg-fact rq-note" style="margin-top:.5rem"><span class="ch-sym">✦</span> ' + esc2(fx2) +
+        ' <a class="game-source" href="chapters/' + FACTS_CHAPTER + '.html">› Read “Early Greece”</a></p>';
+    }
+    function esc2(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
     function loadHeroes() {
       if (!HERO_SHEET) return;
       var img = new Image();
@@ -1181,6 +1195,7 @@
             "<p>Choose your Olympian. Each god fights with the weapon myth gives them.</p></div>" +
           '<div class="game-rule" role="presentation"></div>' +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 1" : "You") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p1", id, sel.p1 === id); }).join("") + "</div>" +
+          factLine(sel.p1) +
           '<div class="fg-sel-mode"><button class="rq-btn" data-a="mode">Opponent: ' + (sel.twoP ? "Player 2 (human)" : "the AI") + "</button></div>" +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
@@ -1240,6 +1255,7 @@
         '<div class="game-rule" role="presentation"></div>' +
         '<div class="fg-result"><canvas class="fg-portrait fg-portrait-lg" data-god="' + (w === p1 ? curG1 : curG2) + '" width="120" height="140"></canvas>' +
           '<p class="rq-note">' + w.skin.name + ' — ' + w.skin.epithet + ' — stands over ' + l.skin.name + '.</p></div>' +
+        factLine(w === p1 ? curG1 : curG2) +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="rematch" autofocus>Rematch</button>' +
           '<button class="rq-btn" data-a="choose">Choose fighters</button>' +
           '<a class="game-source" href="chapters/ch08.html">› Read “Early Greece”</a></div>';
@@ -1307,7 +1323,8 @@
     }
     attachKeys();
     loadHeroes();
-    selectScreen();
+    root.innerHTML = '<div class="rq-loading">Summoning the gods…</div>';
+    loadFighterFacts(selectScreen);
 
     // read-only introspection for automated tests (only when the flag is set)
     if (window.__FIGHT_TEST__) window.__fightState = function () {
