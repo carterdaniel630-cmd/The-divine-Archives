@@ -95,6 +95,7 @@ Show a sourced, chapter‑linked fact per god on the select and/or result screen
 | **B1** | **Per‑chapter tags** (`tradition`/`theme`/`tags` on every chapter in `data.js`) to unlock cross‑game era/tradition/theme filtering | M | none | decision on tag vocabulary | assertion: every chapter has a `tradition` (or `theme`) tag; ≥1 additional game gains a working filter |
 | **B2** | **Grow thin fact banks** — Pong 6→≥14, Minesweeper/Pac‑Man/Pinball 8→≥14 | M | D1 (pacman) | none | count script: each ≥ target; all verifiers exit 0 |
 | **B3** | **Tap unused chapters** — add facts drawing on the 35 unused chapters (theme chapters mapped: Underworld→Pac‑Man done in D1, Apocalypse/Sacrifice/Great Goddess→Reliquary/Seeker/Risk) | L | B1 (tags help), B2 | none | coverage script: chapters surfaced by ≥1 game rises from 30 → target; verifiers exit 0 |
+| **B4** | **Add a Nubia/Kush chapter**, then source the Risk `nubia` tile to it. Raised during D2: the archive has no ancient-Nubia chapter, so `nubia` was left uncovered rather than conflate Kush with Egypt (ch02). | M | content (a new chapter) | Carter (chapter authoring) | new chapter published in `data.js`; `risk.json` `nubia` fact sourced to it; `verify-risk` exits 0; Risk shows 13/13 territories covered |
 
 ---
 
