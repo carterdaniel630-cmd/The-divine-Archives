@@ -103,6 +103,30 @@
     function clonePose(p) { var o = {}; for (var k in p) o[k] = [p[k][0], p[k][1]]; return o; }
     function add(p, k, dx, dy) { p[k][0] += dx; p[k][1] += dy; }
 
+    /* ---- F2: data-driven move system ---- */
+    var MOVES = window.FIGHTER_MOVES || {};
+    // interpolate a move's poseKeys at normalized progress pr -> additive joint offsets
+    function moveOffsets(move, pr) {
+      var ks = move && move.poseKeys; if (!ks || !ks.length) return {};
+      var i = 0; while (i < ks.length - 1 && ks[i + 1].at <= pr) i++;
+      var a = ks[i], b = ks[Math.min(i + 1, ks.length - 1)];
+      var span = (b.at - a.at) || 1, e = ease(clamp((pr - a.at) / span, 0, 1));
+      var out = {}, k, u = {};
+      for (k in (a.d || {})) u[k] = 1; for (k in (b.d || {})) u[k] = 1;
+      for (k in u) { var av = (a.d && a.d[k]) || [0, 0], bv = (b.d && b.d[k]) || [0, 0]; out[k] = [av[0] + (bv[0] - av[0]) * e, av[1] + (bv[1] - av[1]) * e]; }
+      return out;
+    }
+    // cancel-aware gate: recovery of a cancelable move can be interrupted into a listed follow-up
+    function canAct(f, newId) {
+      if (f.cooldown <= 0) return true;
+      var m = f.curMove;
+      if (m && m.cancelInto && m.cancelInto.indexOf(newId) >= 0) {
+        var fr = Math.round(f.stTime * 60);
+        if (m.cancelWindow && fr >= m.cancelWindow[0] && fr <= m.cancelWindow[1]) return true;
+      }
+      return false;
+    }
+
     function poseFor(f, t) {
       var p = clonePose(BASE);
       var br = Math.sin(t * 2.4 + f.phase) * 1.7;
@@ -118,24 +142,10 @@
         add(p, "footF", 4, 10); add(p, "footB", -6, 8); add(p, "kneeF", 2, 8); add(p, "kneeB", -2, 8); add(p, "hnF", 6, -14);
       } else if (st === "block") {
         add(p, "hnF", -22, -2); add(p, "elF", -16, 2); add(p, "hnB", -6, 0); add(p, "chest", -5, 0); add(p, "head", -4, 0);
-      } else if (st === "light") {
-        // a sharp straight punch — winds the shoulder back, then snaps out
-        var k = strikeCurve(pr);
-        add(p, "hnF", 34 * k, 4 * k); add(p, "elF", 23 * k, 1 * k);
-        add(p, "chest", 6 * k, 0); add(p, "head", 5 * k, 0); add(p, "hip", 3 * k, 0);
-        add(p, "shF", 4 * k, 0); add(p, "footF", 9 * k, 0); add(p, "hnB", -9 * k, 0);
-      } else if (st === "kick") {
-        // a high roundhouse: chambers the knee, then whips the front leg up and out
-        var kk = strikeCurve(pr);
-        add(p, "footF", 48 * kk, -72 * kk); add(p, "kneeF", 31 * kk, -47 * kk);
-        add(p, "chest", -6 * kk, 2 * kk); add(p, "head", -4 * kk, 0); add(p, "hip", -4 * kk, 4 * kk);
-        add(p, "hnB", -14 * kk, -6 * kk); add(p, "hnF", -6 * kk, 4 * kk); add(p, "shB", -3 * kk, 0);
-      } else if (st === "headbutt") {
-        // a lunging headbutt — rocks back, then the whole torso snaps forward
-        var hk = strikeCurve(pr);
-        add(p, "head", 27 * hk, 8 * hk); add(p, "neck", 18 * hk, 5 * hk); add(p, "chest", 16 * hk, 4 * hk);
-        add(p, "hip", 8 * hk, 0); add(p, "shF", 8 * hk, 0); add(p, "shB", 6 * hk, 0);
-        add(p, "hnF", 4 * hk, 6 * hk); add(p, "footF", 12 * hk, 0);
+      } else if (st === "light" || st === "kick" || st === "headbutt") {
+        // F2: the strike animation is now data — interpolated poseKeys from MOVES[st]
+        var off = moveOffsets(MOVES[st], pr);
+        for (var mk in off) add(p, mk, off[mk][0], off[mk][1]);
       } else if (st === "throw") {
         // an overhand hurl
         var tk = strikeCurve(pr);
@@ -631,7 +641,7 @@
     function Fighter(skin, x, facing, isAI, km) {
       return { skin: skin, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
         hp: 100, energy: 0, guard: 100, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6, dpose: null,
-        aura: 0, cooldown: 0, hitLock: 0, combo: 0, wounds: makeWounds() };
+        aura: 0, cooldown: 0, hitLock: 0, combo: 0, curMove: null, wounds: makeWounds() };
     }
     function setState(f, st, dur) { if (f.state === st) return; f.state = st; f.stTime = 0; f.stDur = dur || 0.4; }
 
@@ -712,29 +722,35 @@
     /* ===================== combat + FX ===================== */
     // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
     function tryAttack(f, other, kind) {
-      if (f.cooldown > 0 || f.state === "hit" || f.state === "ko") return;
-      if (kind === "special") return trySpecial(f, other);
+      if (f.state === "hit" || f.state === "ko") return;
+      if (kind === "special") { if (f.cooldown > 0) return; return trySpecial(f, other); }
       // holding a relic? a strike hurls it instead of swinging.
-      if (f.holding && (kind === "light" || kind === "heavy")) { throwItem(f, other); return; }
+      if (f.holding && (kind === "light" || kind === "heavy")) { if (f.cooldown > 0) return; throwItem(f, other); return; }
       // AIRBORNE: a committed aerial strike — light = a flying punch, heavy = a diving
       // kick that drives the god down and forward onto the foe. Distinct pose, generous
       // reach, and it lands whether the enemy is level or below.
       if (!f.onGround) {
+        if (f.cooldown > 0) return;
         var dive = kind === "heavy";
-        setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4;
+        setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4; f.curMove = null;
         f.aerialKind = dive ? "dive" : "punch";
         f.vx = f.facing * (dive ? 3.6 : 2.6);
         if (dive && f.vy > -2) f.vy = -6;            // heavy = commit downward into the dive
         f._hit = { kind: "aerial", at: 0.22, done: false, fin: false, dive: dive };
         return;
       }
-      var adx = Math.abs(other.x - f.x), move = kind, dur = 0.32, cd = 0.36;
-      if (kind === "heavy") {
-        if (adx < 48) { move = "headbutt"; dur = 0.34; cd = 0.5; }
-        else { move = "kick"; dur = 0.46; cd = 0.55; }
+      // GROUND MELEE (data-driven): pick the move, then gate through the cancel-aware check
+      var adx = Math.abs(other.x - f.x), id = kind === "light" ? "light" : (adx < 48 ? "headbutt" : "kick");
+      if (!canAct(f, id)) return;
+      var m = MOVES[id];
+      if (m) {
+        setState(f, id, m.total / 60); f.cooldown = m.total / 60; f.curMove = m;
+        f._hit = { kind: id, at: m.active[0] / m.total, done: false, fin: false, move: m };
+      } else { // fallback if move data failed to load — keep the game playable
+        var dur = id === "kick" ? 0.46 : id === "headbutt" ? 0.34 : 0.32;
+        setState(f, id, dur); f.cooldown = id === "kick" ? 0.55 : id === "headbutt" ? 0.5 : 0.36; f.curMove = null;
+        f._hit = { kind: id, at: id === "kick" ? 0.42 : id === "headbutt" ? 0.3 : 0.24, done: false, fin: false };
       }
-      setState(f, move, dur); f.cooldown = cd;
-      f._hit = { kind: move, at: move === "kick" ? 0.42 : move === "headbutt" ? 0.3 : 0.24, done: false, fin: false };
     }
     // SPECIAL: a travelling energy blast (blockable). Charged + weakened foe = FINISH.
     function trySpecial(f, other) {
@@ -793,14 +809,28 @@
         applyDamage(f, other, 15, "aerial", fin, (f.x + other.x) / 2, hy);
         return;
       }
+      var m = f._hit && f._hit.move;
+      if (m && m.hitbox && f.dpose && f.dpose[m.hitbox.joint]) {
+        // F2: joint-tied hitbox — reach follows the drawn limb (the extending fist/foot)
+        var jp = f.dpose[m.hitbox.joint];
+        var localX = jp[0] + m.hitbox.ox;                 // hitbox center in the fighter's local space
+        var hbCenterX = f.x + f.facing * localX;          // world x of the hitbox
+        var reachX = localX + m.hitbox.r;                 // outer extent, from the joint
+        if (window.__FIGHT_TEST__) { f.lastHbX = hbCenterX; f.lastFistX = f.x + f.facing * jp[0]; }
+        var dx = (other.x - f.x) * f.facing;
+        if (dx <= 4 || dx >= reachX || other.state === "ko") return;
+        applyDamage(f, other, m.onHit.damage, kind, fin, hbCenterX, GROUND - 72, m);
+        return;
+      }
+      // fallback (non-data moves): fixed reach distances
       var reach = kind === "kick" ? 100 : kind === "headbutt" ? 50 : 62;
-      var dx = (other.x - f.x) * f.facing;
-      if (dx <= 4 || dx >= reach || other.state === "ko") return;
+      var dxf = (other.x - f.x) * f.facing;
+      if (dxf <= 4 || dxf >= reach || other.state === "ko") return;
       var dmg = kind === "kick" ? 13 : kind === "headbutt" ? 16 : 6;
       applyDamage(f, other, dmg, kind, fin, (f.x + other.x) / 2, GROUND - 72);
     }
     // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
-    function applyDamage(f, other, dmg, kind, fin, hx, hy) {
+    function applyDamage(f, other, dmg, kind, fin, hx, hy, move) {
       if (other.state === "ko") return;
       var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial";
       var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
@@ -813,11 +843,14 @@
       if (!blocked) {
         setState(other, "hit", kind === "headbutt" ? 0.42 : 0.34); other.hitLock = 0.34; other.combo = 0;
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
-        other.vx = dir * (fin ? 6 : kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
+        // F2: knockback / hitstop come from move data when present, else the old constants
+        var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
+        other.vx = dir * (fin ? 6 : kb);
         if (f) f.combo++;
         burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
         shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
-        hitStop = Math.max(hitStop, fin ? 0.25 : heavy ? 0.12 : 0.06);
+        var hs = move && move.onHit && move.onHit.hitstop != null ? move.onHit.hitstop : (heavy ? 0.12 : 0.06);
+        hitStop = Math.max(hitStop, fin ? 0.25 : hs);
         var pools = fin ? 6 : heavy ? 4 : 2;   // more blood than before
         for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-18, 18), y: GROUND + rnd(0, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
       } else {
@@ -1067,7 +1100,12 @@
       // guard meter: erodes while you hold block, recovers while you don't; hold too long and it breaks
       if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
       else if (f.guard < 100) { f.guard = clamp(f.guard + dt * 16, 0, 100); }
-      if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) { f._hit.done = true; resolveHit(f, other, f._hit.kind, f._hit.fin); }
+      if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) {
+        f._hit.done = true;
+        // F2 root motion: step the whole body forward into the strike at contact
+        if (f._hit.move && f._hit.move.lunge && f.onGround) f.x = clamp(f.x + f.facing * f._hit.move.lunge, 40, VW - 40);
+        resolveHit(f, other, f._hit.kind, f._hit.fin);
+      }
       if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.fin); }
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
       // weighty locomotion: ease the ACTUAL velocity toward the control's desired
@@ -1088,7 +1126,7 @@
         else f.onGround = false;
       }
       var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1 };
-      if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, f.onGround ? "idle" : "jump", 1); f._hit = null; f._cast = null; if (was !== "hit") f.combo = 0; }
+      if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, f.onGround ? "idle" : "jump", 1); f._hit = null; f._cast = null; f.curMove = null; if (was !== "hit") f.combo = 0; }
       if (f.state === "walk" && Math.abs(f.vx) < 0.1 && f.onGround) setState(f, "idle", 1);
       if ((f.state === "idle" || f.state === "walk" || f.state === "jump") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
     }
@@ -1270,6 +1308,12 @@
     attachKeys();
     loadHeroes();
     selectScreen();
+
+    // read-only introspection for automated tests (only when the flag is set)
+    if (window.__FIGHT_TEST__) window.__fightState = function () {
+      function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, hp: f.hp, state: f.state, cooldown: f.cooldown, combo: f.combo, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX }; }
+      return (p1 && p2) ? { p1: snap(p1), p2: snap(p2), hitStop: hitStop, MOVES: Object.keys(MOVES) } : null;
+    };
 
     return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
   }
