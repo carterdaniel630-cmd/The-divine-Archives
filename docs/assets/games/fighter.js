@@ -443,7 +443,9 @@
       drawGreave(c, p.kneeF, p.footF, s);
       drawSandal(c, p.footF, s, false);
 
-      drawHead(c, p, s, t, f);
+      // layered cutout rig: real cropped head art when available, else procedural head
+      if (HERO.ready && f.godId && FIGHTER_ART[f.godId]) drawHeadArt(c, p, s, f, f.godId);
+      else drawHead(c, p, s, t, f);
 
       // front arm + weapon
       boneChain(c, [p.shF, p.elF, p.hnF], [8, 6.2, 4.8], s, {});
@@ -783,6 +785,57 @@
     };
     var ROSTER = { zeus: ZEUS, poseidon: POSEIDON, athena: ATHENA, hades: HADES };
     var ROSTER_IDS = ["zeus", "poseidon", "athena", "hades"];
+
+    /* ============================================================================
+       LAYERED CUTOUT RIG (prototype)
+       A fighter is drawn as an ordered stack of PARTS (head, torso, arms, legs).
+       Each part is either:
+         - "art": a bitmap cropped from a source sheet, drawn along its bone and
+           transformed by the skeleton — this is where real illustrated art drops in.
+         - "proc": the existing procedural placeholder (color-matched to the god's
+           portrait palette), used until art exists for that part.
+       Today only the HEAD has art (cropped from heroes.jpg); every other part
+       stays procedural, so the body reads as a color-matched placeholder. When a
+       full-body sheet is authored to the generation spec (see /audit/sprite-art-
+       spec.md), fill in that god's part crops here and flip the part to "art" —
+       no engine change. FIGHTER_ART[godId].head crops are fractions of that god's
+       quadrant of heroes.jpg (tuned so the face + crown fill the head silhouette).
+       ============================================================================ */
+    var FIGHTER_ART = {
+      zeus:     { head: { fx: 0.25, fy: 0.06, fw: 0.46, fh: 0.62, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42 } },
+      poseidon: { head: { fx: 0.31, fy: 0.04, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.40 } },
+      athena:   { head: { fx: 0.17, fy: 0.28, fw: 0.44, fh: 0.60, rx: 21, ry: 26, dy: -6, fX: 0.5, fY: 0.46 } },
+      hades:    { head: { fx: 0.33, fy: 0.12, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42 } }
+    };
+    function heroCell(id) {
+      var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
+      var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2;
+      return { sx: col * iw, sy: row * ih, sw: iw, sh: ih };
+    }
+    // Draw a god's real painterly head, cropped from heroes.jpg, clipped to a head
+    // silhouette so the portrait background is cut away. Sits on a short procedural
+    // neck in the god's palette; the crown/helm is part of the portrait, so no
+    // procedural crown is drawn over it.
+    function drawHeadArt(c, p, s, f, id) {
+      var A = FIGHTER_ART[id].head, cell = heroCell(id);
+      var hx = p.head[0], hy = p.head[1] + (A.dy || 0), lean = clamp((p.head[0] - p.neck[0]) * 0.010, -0.22, 0.22);
+      // neck stub connecting shoulders/neck joint up to the head
+      boneChain(c, [[p.neck[0], p.neck[1] + 2], [hx - 1, hy + A.ry * 0.7]], [6.6, 7.4], s, {});
+      c.save();
+      c.translate(hx, hy); c.rotate(lean);
+      var E = new Path2D(); E.ellipse(0, 0, A.rx, A.ry, 0, 0, 7);
+      // soft drop so the head reads as lifted off the torso
+      c.save(); c.shadowColor = "rgba(0,0,0,.5)"; c.shadowBlur = 6; c.shadowOffsetY = 2; c.fillStyle = "#000"; c.fill(E); c.restore();
+      c.save(); c.clip(E);
+      c.translate(-A.rx, -A.ry);
+      drawCover(c, HERO.img, cell.sx + A.fx * cell.sw, cell.sy + A.fy * cell.sh, A.fw * cell.sw, A.fh * cell.sh, A.rx * 2, A.ry * 2, A.fX, A.fY);
+      c.restore();
+      // silhouette outline + lit rim
+      c.lineWidth = 2.6; c.strokeStyle = s.outline; c.lineJoin = "round"; c.stroke(E);
+      c.lineWidth = 1.4; c.strokeStyle = hexA(s.rim, 0.5);
+      c.beginPath(); c.ellipse(-A.rx * 0.12, -A.ry * 0.12, A.rx - 2, A.ry - 2, 0, Math.PI * 1.05, Math.PI * 1.75); c.stroke();
+      c.restore();
+    }
 
     /* ===================== fighters ===================== */
     function makeWounds() {
