@@ -37,7 +37,7 @@
   });
 
   function mountGame(root, ctx) {
-    var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1;
+    var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1, MINSEP = 60;
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var UI = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96") };
@@ -391,10 +391,14 @@
       c.save();
       c.translate(rx, GROUND - ry);
       c.scale(sfx, 1);
-      // ground shadow — shrinks and fades as the god leaps, so height reads clearly
-      var yh = ry, sr = 32 * (1 - Math.min(yh, 150) / 320);
-      c.save(); c.scale(1, 0.28); c.globalAlpha = 0.42 * (1 - Math.min(yh, 150) / 260); c.fillStyle = "#000";
-      c.beginPath(); c.arc(2, yh * 3.4 + 8, sr, 0, 7); c.fill(); c.restore();
+      // ground shadow — shrinks and fades as the god leaps, so height reads clearly.
+      // A ring in the god's own accent colour rides the shadow, so each fighter keeps
+      // a distinct coloured footprint even when their bodies overlap in a clinch.
+      var yh = ry, sr = 32 * (1 - Math.min(yh, 150) / 320), sa = 0.42 * (1 - Math.min(yh, 150) / 260);
+      c.save(); c.scale(1, 0.28);
+      c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(2, yh * 3.4 + 8, sr, 0, 7); c.fill();
+      c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye;
+      c.beginPath(); c.arc(2, yh * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
 
       drawAura(c, f, t);
       drawCape(c, p, t, f, s, dmg);
@@ -602,7 +606,10 @@
 
     /* ---- energy aura (DBZ flame) ---- */
     function drawAura(c, f, t) {
-      var lvl = clamp(f.aura, 0, 1) * 0.7 + (f.state === "special" ? 0.5 : 0) + clamp(f.energy / 100, 0, 1) * 0.25;
+      // flare the attacker in their accent colour through the front of a strike, so
+      // in a fast exchange you can always see WHO just threw the blow.
+      var striking = (f.state === "light" || f.state === "kick" || f.state === "headbutt") && f.stTime < f.stDur * 0.55;
+      var lvl = clamp(f.aura, 0, 1) * 0.7 + (f.state === "special" ? 0.5 : 0) + (striking ? 0.42 : 0) + clamp(f.energy / 100, 0, 1) * 0.25;
       if (lvl < 0.12) return;
       c.save(); c.globalCompositeOperation = "lighter";
       var cxp = 0, cyp = -70, R = 46 + lvl * 20;
@@ -976,6 +983,10 @@
         // F2: knockback / hitstop come from move data when present, else the old constants
         var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
         other.vx = dir * (fin ? 6 : kb) / (charOf(other).weight || 1);
+        // corner relief: if the defender is pinned against the wall behind them,
+        // shove the ATTACKER back instead of burying them deeper in the corner, so
+        // a cornered player always gets breathing room from a clean hit.
+        if (f && f.onGround) { var wall = dir > 0 ? VW - 40 : 40; if (Math.abs(other.x - wall) < 52) f.vx -= dir * kb * 0.8; }
         if (f) f.combo++;
         burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
         shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
@@ -1149,8 +1160,15 @@
         if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < 0.5) { tryAttack(f, other, "special"); f.aiT = 1.0 + Math.random(); return; }
         f.intent = "advance";
       }
-      else if (f.aiT <= 0) { var r = Math.random(); f.intent = r < 0.42 ? "light" : r < 0.66 ? "heavy" : r < 0.82 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
+      else if (f.aiT <= 0) {
+        var r = Math.random();
+        // too close: often give ground rather than mash on top of the foe — this is
+        // what stops the AI from gluing itself to the player and wall-pinning them
+        if (adx < 54 && r < 0.34) { f.intent = "space"; f.aiT = 0.3 + Math.random() * 0.35; }
+        else { f.intent = r < 0.40 ? "light" : r < 0.62 ? "heavy" : r < 0.80 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
+      }
       if (f.intent === "advance") { f.vx = dir * (charOf(f).walkSpeed || 3.1) * 0.52; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
+      else if (f.intent === "space") { f.vx = -dir * (charOf(f).walkSpeed || 3.1) * 0.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
       else if (f.intent === "block") { if (f.state === "idle" || f.state === "walk") setState(f, "block", 0.5); f.vx = 0; }
       else if (f.intent === "light" || f.intent === "heavy" || f.intent === "special") { tryAttack(f, other, f.intent); f.intent = "wait"; }
       else { f.vx = 0; if (f.state === "walk") setState(f, "idle", 1); }
@@ -1176,9 +1194,17 @@
       // remember pre-step positions for render interpolation
       p1.px = p1.x; p1.py = (p1.y || 0); p2.px = p2.x; p2.py = (p2.y || 0);
       [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
-      // keep the fighters from overlapping so you can always tell them apart
-      var sepdx = p2.x - p1.x, ad = Math.abs(sepdx);
-      if (ad < 46 && p1.state !== "ko" && p2.state !== "ko") { var push = (46 - ad) / 2, sgn = sepdx >= 0 ? 1 : -1; p1.x = clamp(p1.x - sgn * push, 40, VW - 40); p2.x = clamp(p2.x + sgn * push, 40, VW - 40); }
+      // keep a real gap between the fighters so bodies read as two separate
+      // figures, not one blob. MINSEP is well under strike reach (~90px) so hits
+      // still land. Slack lost to a wall is transferred to the free fighter, so a
+      // cornered player isn't shoved through the wall and left overlapping.
+      var lo = p1.x <= p2.x ? p1 : p2, hi = p1.x <= p2.x ? p2 : p1;
+      if (hi.x - lo.x < MINSEP && lo.state !== "ko" && hi.state !== "ko") {
+        var need = MINSEP - (hi.x - lo.x), loX = lo.x - need / 2, hiX = hi.x + need / 2;
+        if (loX < 40) { hiX += 40 - loX; loX = 40; }
+        if (hiX > VW - 40) { loX -= hiX - (VW - 40); hiX = VW - 40; }
+        lo.x = clamp(loX, 40, VW - 40); hi.x = clamp(hiX, 40, VW - 40);
+      }
       updateShots(dt); updateDebris(dt);
       // falling debris — frequent enough to matter, in every weather (storms rain more)
       debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(1.1, 2.4); if (Math.random() < (weather ? weather.debris : 0.14) + 0.55) { spawnDebris(); if (Math.random() < 0.4) spawnDebris(); } }
