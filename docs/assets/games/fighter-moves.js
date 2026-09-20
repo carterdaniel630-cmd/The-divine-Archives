@@ -154,6 +154,19 @@
         kick: { hitbox: { joint: "footF", ox: 8, r: 22 }, onHit: { damage: 12, knockback: { x: 6.5 } } }, // long, wall-carrying sweep
         headbutt: { onHit: { damage: 15 } }
       }
+    },
+
+    // Athena — the technical fighter. Fastest on her feet and quickest to
+    // recover; her spear jab is short and snappy but hits for less.
+    athena: {
+      id: "athena",
+      walkSpeed: 3.6, jumpVel: 13.0, weight: 0.9,
+      factRef: { chapter: "ch08", basis: "owl, aegis, and olive" },
+      moves: {
+        light: { active: [3, 5], total: 13, cancelWindow: [2, 11], onHit: { damage: 5 } }, // fast jab, quick recovery
+        kick: { onHit: { damage: 12 } },
+        headbutt: { onHit: { damage: 14 } }
+      }
     }
 
   };
