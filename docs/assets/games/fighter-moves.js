@@ -167,6 +167,19 @@
         kick: { onHit: { damage: 12 } },
         headbutt: { onHit: { damage: 14 } }
       }
+    },
+
+    // Hades — the bruiser. Slow and heavy, but hits hardest with the most
+    // hitstop, and keeps his foe close (low knockback) to keep the pressure on.
+    hades: {
+      id: "hades",
+      walkSpeed: 2.8, jumpVel: 12.0, weight: 1.15,
+      factRef: { chapter: "ch08", basis: "realm of Hades" },
+      moves: {
+        light: { onHit: { damage: 8, hitstop: 0.09 } },
+        kick: { onHit: { damage: 15, hitstop: 0.16, knockback: { x: 3.0 } } }, // hard, low pushback = stays in range
+        headbutt: { onHit: { damage: 20, hitstop: 0.16 } }
+      }
     }
 
   };
