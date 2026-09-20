@@ -125,6 +125,28 @@
         });
       });
     }
+
+    /* ============================================================================
+       SKELETAL CUTOUT RIG — the real articulation. Each god ships as separate limb
+       PNGs (art/parts/<god>/) with a manifest of pivots. Every part binds to a bone
+       of the SAME animated skeleton that drives hitboxes: the rig reads the skeleton's
+       joint ANGLES and rebuilds the limb chain at the art's own proportions, so the
+       painted arm/leg swings on its own with the combat, not a flat picture on top.
+       Takes priority over the flat sprite when a god's parts are loaded. ========== */
+    var PARTS = {}, PARTMETA = {}, PARTS_READY = {};
+    function loadParts() {
+      HERO_ORDER.forEach(function (g) {
+        fetch(SCRIPT_BASE + "art/parts/" + g + "/manifest.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (man) {
+          if (!man) return; PARTMETA[g] = man; PARTS[g] = {}; var names = Object.keys(man), left = names.length;
+          names.forEach(function (nm) {
+            var im = new Image();
+            im.onload = function () { PARTS[g][nm] = im; if (--left <= 0) PARTS_READY[g] = true; };
+            im.onerror = function () { if (--left <= 0) PARTS_READY[g] = (Object.keys(PARTS[g]).length > 6); };
+            im.src = SCRIPT_BASE + "art/parts/" + g + "/" + nm + ".png";
+          });
+        }).catch(function () {});
+      });
+    }
     function heroCrop(id) {
       var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
       var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2, mx = iw * HERO_INSET, my = ih * HERO_INSET;
@@ -508,6 +530,70 @@
       return true;
     }
 
+    // draw one limb part: hinge its pivot at joint (jx,jy) and rotate so its body
+    // aligns to the bone direction boneA (up=true for parts that extend up from the
+    // pivot, i.e. torso/head; down for arms/legs), scaled by s.
+    function drawPart(c, P, M, name, jx, jy, boneA, up, s, alpha) {
+      var img = P[name], m = M[name]; if (!img || !m) return;
+      c.save(); c.translate(jx, jy); c.rotate(boneA + (up ? Math.PI / 2 : -Math.PI / 2)); c.scale(s, s);
+      if (alpha != null) c.globalAlpha = alpha;
+      c.drawImage(img, -m.pivotX, -m.pivotY); c.restore();
+    }
+    function pick(P, a, b, cc) { return P[a] ? a : P[b] ? b : (P[cc] ? cc : a); }
+    // Skeletal cutout: read the animated skeleton's joint angles and rebuild the limb
+    // chain at the ART's proportions, drawing each painted part along its bone. Walk /
+    // attack / hit / KO all come free because the skeleton (which also drives hitboxes)
+    // is already animating those joints.
+    function drawCutout(c, f, p, t) {
+      var g = f.godId, P = PARTS[g], M = PARTMETA[g];
+      function ang(a, b) { return Math.atan2(b[1] - a[1], b[0] - a[0]); }
+      var nThighF = pick(P, "thighR", "thighA", "thigh"), nShinF = pick(P, "shinR", "shinA", "shin");
+      var nThighB = pick(P, "thighL", "thighB", "thigh"), nShinB = pick(P, "shinL", "shinB", "shin");
+      var nUaF = pick(P, "upperArmR", "upperArm", "upperArmL"), nFaF = pick(P, "foreArmR", "foreArm", "foreArmL");
+      var nUaB = pick(P, "upperArmL", "upperArm", "upperArmR"), nFaB = pick(P, "foreArmL", "foreArm", "foreArmR");
+      function H(n, fac) { return (M[n] ? M[n].h : 40) * (fac || 1); }
+      var base = H("head", 0.5) + H("torso") + H(nThighF) + H(nShinF);
+      var s = GAMEH / base;
+      var torsoLen = H("torso") * s, uaLen = H(nUaF) * s, faLen = H(nFaF) * s, thLen = H(nThighF) * s, shinLen = H(nShinF) * s;
+      // bone angles from the skeleton (right-facing local space)
+      var tA = ang(p.hip, p.neck), hdA = ang(p.neck, p.head);
+      var uaFA = ang(p.shF, p.elF), faFA = ang(p.elF, p.hnF), uaBA = ang(p.shB, p.elB), faBA = ang(p.elB, p.hnB);
+      var hipF = [p.hip[0] + 4, p.hip[1]], hipB = [p.hip[0] - 6, p.hip[1]];
+      var thFA = ang(hipF, p.kneeF), shFA = ang(p.kneeF, p.footF), thBA = ang(hipB, p.kneeB), shBA = ang(p.kneeB, p.footB);
+      // FK chain at art proportions, rooted at the hip; feet land near y=0
+      var hx = 0, hy = -(thLen + shinLen) * 0.9;
+      var neck = [hx + torsoLen * Math.cos(tA), hy + torsoLen * Math.sin(tA)];
+      var shY = neck[1] + torsoLen * 0.12, shFp = [neck[0] + torsoLen * 0.10, shY], shBp = [neck[0] - torsoLen * 0.14, shY];
+      var elFp = [shFp[0] + uaLen * Math.cos(uaFA), shFp[1] + uaLen * Math.sin(uaFA)];
+      var hnFp = [elFp[0] + faLen * Math.cos(faFA), elFp[1] + faLen * Math.sin(faFA)];
+      var elBp = [shBp[0] + uaLen * Math.cos(uaBA), shBp[1] + uaLen * Math.sin(uaBA)];
+      var hnBp = [elBp[0] + faLen * Math.cos(faBA), elBp[1] + faLen * Math.sin(faBA)];
+      var hFp = [hx + 4, hy], hBp = [hx - 6, hy];
+      var knFp = [hFp[0] + thLen * Math.cos(thFA), hFp[1] + thLen * Math.sin(thFA)];
+      var ftFp = [knFp[0] + shinLen * Math.cos(shFA), knFp[1] + shinLen * Math.sin(shFA)];
+      var knBp = [hBp[0] + thLen * Math.cos(thBA), hBp[1] + thLen * Math.sin(thBA)];
+      var ftBp = [knBp[0] + shinLen * Math.cos(shBA), knBp[1] + shinLen * Math.sin(shBA)];
+      var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
+      var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
+      c.save(); c.translate(rx, GROUND - ry); c.scale(sfx, 1);
+      // ground shadow + accent ring
+      var sr = 30 * (1 - Math.min(ry, 150) / 320), sa = 0.4 * (1 - Math.min(ry, 150) / 260);
+      c.save(); c.scale(1, 0.28); c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr, 0, 7); c.fill();
+      c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
+      // shadow aura behind (Hades)
+      if (P.auraA) { var au = M.auraA, ausc = torsoLen / au.h * 1.5; c.save(); c.globalAlpha = 0.7; c.translate(neck[0] - 4, (neck[1] + hy) / 2); var sp = Math.sin(t * 2 + f.phase); c.scale(ausc * (sfx < 0 ? -1 : 1), ausc * (1 + sp * 0.04)); c.drawImage(P.auraA, -au.w / 2, -au.h / 2); c.restore(); }
+      // BACK leg + arm
+      drawPart(c, P, M, nThighB, hBp[0], hBp[1], thBA, false, s); drawPart(c, P, M, nShinB, knBp[0], knBp[1], shBA, false, s);
+      drawPart(c, P, M, nUaB, shBp[0], shBp[1], uaBA, false, s); drawPart(c, P, M, nFaB, elBp[0], elBp[1], faBA, false, s);
+      // TORSO + HEAD
+      drawPart(c, P, M, "torso", hx, hy, tA, true, s);
+      drawPart(c, P, M, "head", neck[0], neck[1], hdA, true, s);
+      // FRONT leg + arm (with weapon baked into foreArmR for Hades)
+      drawPart(c, P, M, nThighF, hFp[0], hFp[1], thFA, false, s); drawPart(c, P, M, nShinF, knFp[0], knFp[1], shFA, false, s);
+      drawPart(c, P, M, nUaF, shFp[0], shFp[1], uaFA, false, s); drawPart(c, P, M, nFaF, elFp[0], elFp[1], faFA, false, s);
+      c.restore();
+    }
+
     function drawFighter(c, f, t) {
       var target = poseFor(f, t), s = f.skin, dmg = 1 - clamp(f.hp, 0, 100) / 100;
       // rig: drive the displayed skeleton toward the target with a damped spring,
@@ -518,8 +604,9 @@
       // ease facing turns so the character flips smoothly rather than mirroring instantly
       if (f.face == null) f.face = f.facing;
       f.face += (f.facing - f.face) * 0.3;
-      // full-body painted sprite is the default renderer (skeleton above still drives
-      // hitboxes via f.dpose); procedural body is the fallback if sprites aren't loaded.
+      // renderer priority: skeletal cutout (real articulation) > flat painted sprite >
+      // procedural body. All three read the same skeleton, which drives hitboxes.
+      if (f.godId && PARTS_READY[f.godId]) { drawCutout(c, f, p, t); return; }
       if (SPRITE.ready && f.godId && SPRITES[f.godId] && SPRITES[f.godId].idle) { drawSprite(c, f, t); return; }
       var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
       // fixed-timestep render interpolation: draw between the last two sim positions
@@ -1832,6 +1919,7 @@
     attachKeys();
     loadHeroes();
     loadSprites();
+    loadParts();
     root.innerHTML = '<div class="rq-loading">Summoning the gods…</div>';
     loadFighterFacts(selectScreen);
 
