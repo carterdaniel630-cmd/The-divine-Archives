@@ -38,12 +38,16 @@
 
   function mountGame(root, ctx) {
     var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1, MINSEP = 60;
+    // DMG scales every hit so a match is a war of attrition, not a 3-hit blowout —
+    // longer fights give the neutral/defense game room to matter.
+    var DMG = 0.5;
+    var ATTACK_STATES = { light: 1, kick: 1, headbutt: 1, special: 1, throw: 1, aerial: 1 };
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var UI = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96") };
 
     var canvas, cx, hudEl, raf = null, keyfn = null, keyup = null, last = 0, running = false;
-    var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0;
+    var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0, callout = null;
     // fixed-timestep simulation: logic advances in whole FIXED steps regardless of
     // display refresh, so movement/jumps are identical at 60/120/144 Hz. Rendering
     // interpolates between the last two sim states by `acc/FIXED`.
@@ -767,7 +771,7 @@
     function Fighter(skin, x, facing, isAI, km, godId) {
       return { skin: skin, godId: godId || null, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
         hp: 100, energy: 0, guard: 100, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6, dpose: null,
-        aura: 0, cooldown: 0, hitLock: 0, combo: 0, curMove: null, wounds: makeWounds() };
+        aura: 0, cooldown: 0, hitLock: 0, stun: 0, dashT: 0, iframe: 0, combo: 0, curMove: null, wounds: makeWounds() };
     }
     function setState(f, st, dur) { if (f.state === st) return; f.state = st; f.stTime = 0; f.stDur = dur || 0.4; }
 
@@ -970,38 +974,55 @@
     function applyDamage(f, other, dmg, kind, fin, hx, hy, move) {
       if (other.state === "ko") return;
       var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial";
+      // i-frames from a dodge/back-dash beat the hit entirely
+      if (other.iframe > 0 && !fin && kind !== "debris") { burst(hx, hy, "block"); return; }
       var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
-      if (fin) { dmg = 100; blocked = false; }
+      // just-block / guard impact: tap block right as the blow lands (block held < 0.14s)
+      var parry = blocked && other.stTime < 0.14;
+      // counter-hit: you caught them mid-move (startup/active/recovery), not neutral
+      var counter = !blocked && !!f && !!ATTACK_STATES[other.state];
+      if (fin) { dmg = 100; blocked = false; parry = false; }
+      var base0 = dmg;                                        // pre-scale, for guard erosion
+      if (!fin) dmg = Math.max(1, Math.round(dmg * DMG));     // longevity
+      if (counter) dmg = Math.round(dmg * 1.4);              // counter-hit bonus
       var raw = dmg;
-      if (blocked) dmg = Math.round(dmg * 0.25);
+      if (blocked && !parry) dmg = Math.round(dmg * 0.25);
+      if (parry) dmg = 0;
       other.hp = clamp(other.hp - dmg, 0, 100);
       if (f) { f.energy = clamp(f.energy + (heavy ? 8 : 10), 0, 100); }
-      other.energy = clamp(other.energy + 6, 0, 100);
-      if (!blocked) {
-        setState(other, "hit", kind === "headbutt" ? 0.42 : 0.34); other.hitLock = 0.34; other.combo = 0;
+      other.energy = clamp(other.energy + (parry ? 14 : 6), 0, 100);
+      if (parry) {
+        // no chip, no guard loss; the ATTACKER eats extra recovery, so you get a
+        // guaranteed punish for reading the strike. This is the core defensive skill.
+        burst(hx, hy, "block"); flash = Math.max(flash, 0.3); shake = Math.max(shake, 6); hitStop = Math.max(hitStop, 0.09);
+        if (f) { f.cooldown += 0.26; f.stun = Math.max(f.stun, 0.24); f.vx = -(f.facing || 1) * 2.0; }
+        other.vx = 0; callout = { txt: "PARRY", t: 0.7, col: other.skin.eye };
+      } else if (!blocked) {
+        var hstun = (kind === "headbutt" ? 0.42 : heavy ? 0.36 : 0.28) * (counter ? 1.45 : 1);
+        setState(other, "hit", hstun); other.hitLock = hstun; other.stun = hstun; other.combo = 0;
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
-        // F2: knockback / hitstop come from move data when present, else the old constants
         var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
-        other.vx = dir * (fin ? 6 : kb) / (charOf(other).weight || 1);
+        other.vx = dir * (fin ? 6 : kb) * (counter ? 1.2 : 1) / (charOf(other).weight || 1);
         // corner relief: if the defender is pinned against the wall behind them,
-        // shove the ATTACKER back instead of burying them deeper in the corner, so
-        // a cornered player always gets breathing room from a clean hit.
+        // shove the ATTACKER back instead of burying them deeper in the corner.
         if (f && f.onGround) { var wall = dir > 0 ? VW - 40 : 40; if (Math.abs(other.x - wall) < 52) f.vx -= dir * kb * 0.8; }
         if (f) f.combo++;
+        if (counter) callout = { txt: "COUNTER", t: 0.6, col: f ? f.skin.eye : "#e7c680" };
         burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
-        shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
+        shake = Math.max(shake, fin ? 18 : counter ? 12 : heavy ? 9 : 4);
         var hs = move && move.onHit && move.onHit.hitstop != null ? move.onHit.hitstop : (heavy ? 0.12 : 0.06);
-        hitStop = Math.max(hitStop, fin ? 0.25 : hs);
+        hitStop = Math.max(hitStop, fin ? 0.25 : counter ? hs + 0.05 : hs);
         var pools = fin ? 6 : heavy ? 4 : 2;   // more blood than before
         for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-18, 18), y: GROUND + rnd(0, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
       } else {
         other.vx = (f ? f.facing : 1) * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04);
+        other.stun = Math.max(other.stun, kind === "special" ? 0.18 : heavy ? 0.15 : 0.12);   // block-stun
         // guard absorbs the blow but the meter erodes; empty it and the guard breaks
-        other.guard = clamp(other.guard - (raw * 1.8 + 6), 0, 100);
+        other.guard = clamp(other.guard - (base0 * 1.8 + 6), 0, 100);
         if (other.guard <= 0) {
-          setState(other, "hit", 0.42); other.hitLock = 0.42; other.combo = 0;
+          setState(other, "hit", 0.5); other.hitLock = 0.5; other.stun = 0.5; other.combo = 0;
           other.vx = (f ? f.facing : 1) * 3.4; other.guard = 45;
-          other.hp = clamp(other.hp - 4, 0, 100); shake = Math.max(shake, 9);
+          other.hp = clamp(other.hp - 2, 0, 100); shake = Math.max(shake, 9);
           banner = { txt: "GUARD BROKEN", t: 1.1, fin: false };
         }
       }
@@ -1144,6 +1165,7 @@
     /* ===================== AI ===================== */
     function think(f, other, dt) {
       if (f.state === "hit" || f.state === "ko") return;
+      if (f.stun > 0) return;
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
       // airborne: drift toward the foe and sometimes throw an aerial strike
       if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
@@ -1245,6 +1267,7 @@
       drawWeather(cx);
       drawFX(cx);
       if (p1.combo > 1 && p1.state !== "ko") comboText(cx, p1.combo);
+      if (callout) { drawCallout(cx, callout); callout.t -= real; if (callout.t <= 0) callout = null; }
       if (banner) { drawBanner(cx); banner.t -= real; if (banner.t <= 0) banner = null; }
       cx.restore();
       renderHUD();
@@ -1253,6 +1276,7 @@
     }
     function update(f, other, dt) {
       f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
+      f.stun = Math.max(0, (f.stun || 0) - dt); f.dashT = Math.max(0, (f.dashT || 0) - dt); f.iframe = Math.max(0, (f.iframe || 0) - dt);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
       // guard meter: erodes while you hold block, recovers while you don't; hold too long and it breaks
       if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
@@ -1290,6 +1314,9 @@
     function humanControl(f, other) {
       var km = f.km || {};
       if (f.state === "hit" || f.state === "ko") { if (f.onGround) f.vx = 0; return; }
+      // block-stun / recovery: locked out of acting for a beat (this is what makes an
+      // unsafe move punishable — you can't just mash out of a blocked heavy).
+      if (f.stun > 0) { if (f.onGround && f.dashT <= 0) f.vx = 0; return; }
       // leap out of idle/walk
       if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
       if (!f.onGround) { // air control: drift, keep the current attack/jump pose
@@ -1305,6 +1332,16 @@
       else if (f.state === "walk" || f.state === "block") setState(f, "idle", 1);
     }
     function comboText(c, n) { c.save(); c.font = "700 22px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.textAlign = "center"; c.shadowColor = "#000"; c.shadowBlur = 6; c.fillText(n + " HIT", VW * 0.26, 54); c.restore(); }
+    // transient skill callout — PARRY / COUNTER — punches in then fades, so the
+    // player gets clear feedback that a read (not a mash) just paid off.
+    function drawCallout(c, o) {
+      var a = clamp(o.t / 0.7, 0, 1), pop = 1 + (1 - a) * 0.4;
+      c.save(); c.globalAlpha = a; c.translate(VW / 2, 68); c.scale(pop, pop);
+      c.font = "800 26px Cinzel, Georgia, serif"; c.textAlign = "center";
+      c.lineWidth = 4; c.strokeStyle = "#160d05"; c.strokeText(o.txt, 0, 0);
+      c.fillStyle = o.col || UI.goldB; c.shadowColor = o.col || UI.goldB; c.shadowBlur = 12; c.fillText(o.txt, 0, 0);
+      c.restore();
+    }
     function drawBanner(c) { c.save(); c.textAlign = "center"; c.globalAlpha = clamp(banner.t, 0, 1); c.font = "700 32px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.shadowColor = "#000"; c.shadowBlur = 12; c.fillText(banner.txt, VW / 2, VH / 2); c.restore(); }
 
     /* ===================== portraits ===================== */
@@ -1413,7 +1450,7 @@
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1, g1);
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null, g2);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
-      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
+      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; callout = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
       debrisT = rnd(2, 4); itemT = rnd(4, 7); boltFlash = 0;
       initWeather(WEATHERS[(Math.random() * WEATHERS.length) | 0]);
       if (HERO.ready) vsSplash(function () { running = true; last = performance.now(); raf = requestAnimationFrame(frame); });
