@@ -801,39 +801,122 @@
        no engine change. FIGHTER_ART[godId].head crops are fractions of that god's
        quadrant of heroes.jpg (tuned so the face + crown fill the head silhouette).
        ============================================================================ */
+    // Per-god head: silhouette (rx,ry,dy), portrait crop (fx,fy,fw,fh + focus fX,fY),
+    // facial-feature bands as fractions of the crop height (eyeY/jawY/browY) that the
+    // rig warps, and an optional separate BACK layer (Athena's plume) that sways.
     var FIGHTER_ART = {
-      zeus:     { head: { fx: 0.25, fy: 0.06, fw: 0.46, fh: 0.62, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42 } },
-      poseidon: { head: { fx: 0.31, fy: 0.04, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.40 } },
-      athena:   { head: { fx: 0.17, fy: 0.28, fw: 0.44, fh: 0.60, rx: 21, ry: 26, dy: -6, fX: 0.5, fY: 0.46 } },
-      hades:    { head: { fx: 0.33, fy: 0.12, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42 } }
+      zeus:     { head: { fx: 0.25, fy: 0.06, fw: 0.46, fh: 0.62, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42, eyeY: 0.46, jawY: 0.70, browY: 0.40 } },
+      poseidon: { head: { fx: 0.31, fy: 0.04, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.40, eyeY: 0.44, jawY: 0.68, browY: 0.38 } },
+      athena:   { head: { fx: 0.17, fy: 0.30, fw: 0.44, fh: 0.58, rx: 21, ry: 26, dy: -6, fX: 0.5, fY: 0.48, eyeY: 0.50, jawY: 0.74, browY: 0.44,
+                          plume: { fx: 0.22, fy: 0.02, fw: 0.34, fh: 0.34, ax: -4, ay: -20, w: 30, h: 26, sway: 1 } } },
+      hades:    { head: { fx: 0.33, fy: 0.12, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42, eyeY: 0.44, jawY: 0.70, browY: 0.38 } }
     };
     function heroCell(id) {
       var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
       var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2;
       return { sx: col * iw, sy: row * ih, sw: iw, sh: ih };
     }
-    // Draw a god's real painterly head, cropped from heroes.jpg, clipped to a head
-    // silhouette so the portrait background is cut away. Sits on a short procedural
-    // neck in the god's palette; the crown/helm is part of the portrait, so no
-    // procedural crown is drawn over it.
+    // weight for dangly sway: 1 at the crown (hair/plume) and chin (beard), ~0 across
+    // the rigid face, so hair and beard trail while the face stays put.
+    function swayW(v) { return Math.max(0, 1 - v / 0.24) * 0.7 + Math.max(0, (v - 0.78) / 0.22); }
+
+    // Advance a fighter's facial-rig state from its combat state (blink/jaw/brow/
+    // flinch/turn + neck-lag + hair-sway springs). Cosmetic, integrated in real time.
+    function updateHeadRig(f, dt) {
+      var H = f.head || (f.head = { blink: 0, blinkT: rnd(1.6, 4.4), jaw: 0, brow: 0, flinch: 0, turn: 0, hx: null, hy: null, hvx: 0, hvy: 0, rot: 0, dangle: 0, dvel: 0, lastHx: 0 });
+      var st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1);
+      var attacking = st === "light" || st === "kick" || st === "headbutt" || st === "special" || st === "throw" || st === "aerial";
+      var jawT = 0, browT = 0;
+      if (attacking) { jawT = pr < 0.5 ? 0.95 : 0.25; browT = -0.85; }     // shout + furrow
+      else if (st === "hit") { jawT = 0.55; browT = 0.9; }                   // grimace, brows up
+      else if (st === "block") { browT = -0.45; jawT = 0; }
+      else if (st === "ko") { jawT = 0.3; browT = 0.2; }
+      else if (winner === f) { browT = 0.15; jawT = 0; }                     // proud
+      // blink on an idle-ish cadence (not mid-shout / KO)
+      H.blinkT -= dt;
+      if (H.blinkT <= 0 && !attacking && st !== "ko") { H.blink = 1; H.blinkT = rnd(2.2, 5.2); }
+      H.blink = Math.max(0, H.blink - dt * 9);
+      H.jaw += (jawT - H.jaw) * Math.min(1, dt * 20);
+      H.brow += (browT - H.brow) * Math.min(1, dt * 15);
+      // flinch impulse on the frame hit/ko begins
+      if ((st === "hit" || st === "ko") && f.stTime < dt * 2.2) H.flinch = 1;
+      H.flinch = Math.max(0, H.flinch - dt * 5);
+      // neck-lag spring: displayed head trails the skeleton's head joint
+      var jx = 0, jy = 0; if (f.dpose && f.dpose.head) { jx = f.dpose.head[0]; jy = f.dpose.head[1]; }
+      if (H.hx == null) { H.hx = jx; H.hy = jy; }
+      var w = 46, k = w * w, cc = 2 * 0.6 * w, sub = dt > 0.02 ? 2 : 1, sdt = dt / sub, i;
+      for (i = 0; i < sub; i++) {
+        H.hvx += (k * (jx - H.hx) - cc * H.hvx) * sdt; H.hvy += (k * (jy - H.hy) - cc * H.hvy) * sdt;
+        H.hx += H.hvx * sdt; H.hy += H.hvy * sdt;
+      }
+      // hair/beard/plume pendulum driven by the head's horizontal velocity
+      var drive = -H.hvx * 0.02;
+      var dw2 = 10 * 6.283, dk = dw2 * dw2, dcc = 2 * 0.35 * dw2;
+      for (i = 0; i < sub; i++) { H.dvel += (dk * (drive - H.dangle) - dcc * H.dvel) * sdt; H.dangle += H.dvel * sdt; }
+      H.dangle = clamp(H.dangle, -0.6, 0.6);
+      // slight head turn/lean into motion + a proud lift on victory
+      H.turn += (clamp(-H.hvx * 0.05, -0.5, 0.5) - H.turn) * Math.min(1, dt * 10);
+      return H;
+    }
+
+    // Draw the god's real head as a warpable strip mesh clipped to the head
+    // silhouette: jaw strips drop (mouth open), eye band squashes (blink), brow band
+    // shifts (anger/hurt), and crown+chin strips sway (hair/beard physics).
+    function drawFaceMesh(c, A, cell, H) {
+      var sx0 = cell.sx + A.fx * cell.sw, sy0 = cell.sy + A.fy * cell.sh, sW = A.fw * cell.sw, sH = A.fh * cell.sh;
+      var N = 20, dw = A.rx * 2, dh = A.ry * 2, jawAmt = A.ry * 0.62;
+      // dark mouth cavity behind the face, revealed when the jaw drops
+      c.fillStyle = "#1a0e0a"; c.fillRect(-A.rx, -A.ry, dw, dh);
+      for (var i = 0; i < N; i++) {
+        var v0 = i / N, v1 = (i + 1) / N, vc = (v0 + v1) / 2;
+        var dyoff = 0, dxoff = H.dangle * swayW(vc) * (A.rx * 0.5) + H.turn * (A.rx * 0.12);
+        if (vc > A.jawY) dyoff += H.jaw * ((vc - A.jawY) / (1 - A.jawY)) * jawAmt;   // mouth open
+        if (Math.abs(vc - A.browY) < 0.08) dyoff += -H.brow * 3.2;                    // brow raise/furrow
+        var syTop = sy0 + sH * v0, sHt = sH * (v1 - v0);
+        var dTop = -A.ry + dh * v0 + dyoff, dHt = dh * (v1 - v0) + 0.6;               // +0.6 avoids seams
+        c.drawImage(HERO.img, sx0, syTop, sW, sHt, -A.rx + dxoff, dTop, dw, dHt);
+      }
+    }
+
+    // The full rigged, reactive head: back plume (sway) → neck stub → head mesh
+    // (clipped, warped, blink lid, hit-flash) → collar hiding the seam → outline.
     function drawHeadArt(c, p, s, f, id) {
-      var A = FIGHTER_ART[id].head, cell = heroCell(id);
-      var hx = p.head[0], hy = p.head[1] + (A.dy || 0), lean = clamp((p.head[0] - p.neck[0]) * 0.010, -0.22, 0.22);
-      // neck stub connecting shoulders/neck joint up to the head
-      boneChain(c, [[p.neck[0], p.neck[1] + 2], [hx - 1, hy + A.ry * 0.7]], [6.6, 7.4], s, {});
+      var A = FIGHTER_ART[id].head, cell = heroCell(id), H = updateHeadRig(f, Math.min(0.033, curReal));
+      var hx = H.hx, hy = H.hy + (A.dy || 0);
+      var lean = clamp((hx - p.neck[0]) * 0.010 + H.turn * 0.15, -0.28, 0.28);
+      if (f.state === "ko") lean += 0.7;                                   // slumped
+      var flinchX = -H.flinch * 5;                                         // head jerks back on a hit
+      // neck stub first (behind the head)
+      boneChain(c, [[p.neck[0], p.neck[1] + 2], [hx - 1, hy + A.ry * 0.72]], [6.6, 7.4], s, {});
       c.save();
-      c.translate(hx, hy); c.rotate(lean);
+      c.translate(hx + flinchX, hy); c.rotate(lean);
+      // ---- back layer: Athena's plume, swaying behind the helm ----
+      if (A.plume) {
+        var pl = A.plume; c.save(); c.translate(pl.ax, pl.ay); c.rotate(H.dangle * 0.8);
+        c.drawImage(HERO.img, cell.sx + pl.fx * cell.sw, cell.sy + pl.fy * cell.sh, pl.fw * cell.sw, pl.fh * cell.sh, -pl.w / 2, -pl.h, pl.w, pl.h);
+        c.restore();
+      }
       var E = new Path2D(); E.ellipse(0, 0, A.rx, A.ry, 0, 0, 7);
-      // soft drop so the head reads as lifted off the torso
       c.save(); c.shadowColor = "rgba(0,0,0,.5)"; c.shadowBlur = 6; c.shadowOffsetY = 2; c.fillStyle = "#000"; c.fill(E); c.restore();
       c.save(); c.clip(E);
-      c.translate(-A.rx, -A.ry);
-      drawCover(c, HERO.img, cell.sx + A.fx * cell.sw, cell.sy + A.fy * cell.sh, A.fw * cell.sw, A.fh * cell.sh, A.rx * 2, A.ry * 2, A.fX, A.fY);
+      drawFaceMesh(c, A, cell, H);
+      // blink: a skin-toned lid sweeping down over the eye band
+      if (H.blink > 0.02) {
+        var ey = -A.ry + A.ry * 2 * A.eyeY, bh = A.ry * 0.34 * H.blink;
+        c.fillStyle = s.skinSh || s.skin || "#caa"; c.globalAlpha = 0.92;
+        c.beginPath(); c.ellipse(0, ey - bh * 0.5, A.rx * 0.92, bh, 0, 0, 7); c.fill(); c.globalAlpha = 1;
+      }
+      // hit flash — the head lights up on impact
+      if (H.flinch > 0.02) { c.globalCompositeOperation = "lighter"; c.fillStyle = "rgba(255,240,220," + (H.flinch * 0.5) + ")"; c.fillRect(-A.rx, -A.ry, A.rx * 2, A.ry * 2); c.globalCompositeOperation = "source-over"; }
       c.restore();
       // silhouette outline + lit rim
       c.lineWidth = 2.6; c.strokeStyle = s.outline; c.lineJoin = "round"; c.stroke(E);
       c.lineWidth = 1.4; c.strokeStyle = hexA(s.rim, 0.5);
       c.beginPath(); c.ellipse(-A.rx * 0.12, -A.ry * 0.12, A.rx - 2, A.ry - 2, 0, Math.PI * 1.05, Math.PI * 1.75); c.stroke();
+      // ---- collar / mantle over the neck seam (god's metal + cloth) ----
+      var cw = A.rx * 0.95, cyv = A.ry * 0.86;
+      var G = new Path2D(); G.moveTo(-cw, cyv - 3); G.quadraticCurveTo(0, cyv + 9, cw, cyv - 3); G.quadraticCurveTo(cw * 0.7, cyv + 6, 0, cyv + 5); G.quadraticCurveTo(-cw * 0.7, cyv + 6, -cw, cyv - 3); G.closePath();
+      cel(c, G, s.metal, s.metalSh, s.rim, s.outline, 10, 1.6, 0.6);
       c.restore();
     }
 
@@ -1652,6 +1735,8 @@
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
       window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
+      // force a state on a fighter, for deterministic capture of head reactions
+      window.__setState = function (which, stt, dur) { var f = which === "p2" ? p2 : p1; if (f) { setState(f, stt, dur || 0.6); return f.state; } return null; };
       // throw verification: put the foe grounded-adjacent and command-throw them
       window.__throwTest = function () {
         if (!p1 || !p2) return null;
