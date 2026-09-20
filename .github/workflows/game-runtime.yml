@@ -1,0 +1,45 @@
+name: Game runtime checks
+
+# Runtime safety net for the games layer, with NO path filter on the game JS so
+# it runs on every push/PR (a change anywhere can break a shared global). Two gates:
+#   1. no-undef lint over docs/assets/games — catches undeclared references like the
+#      `banner.t -= dt` regression (dt out of scope) before they ship.
+#   2. a headless play-to-KO of Theomachy that fails on ANY uncaught page error —
+#      exercises the full match incl. the end-of-match banner/result path.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: no-undef lint over docs/assets/games
+        run: |
+          npm install --no-save eslint@8
+          npx eslint --no-eslintrc -c tools/eslint-games.json --ext .js docs/assets/games
+
+      - name: Install Playwright + Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Headless play-to-KO (fails on any page error)
+        run: |
+          (cd docs && python3 -m http.server 8099 >/tmp/server.log 2>&1 &)
+          for i in $(seq 1 20); do curl -sf -o /dev/null http://localhost:8099/symbols.html && break; sleep 0.5; done
+          FIGHT_URL="http://localhost:8099/symbols.html" node tools/ci-play-fighter.js

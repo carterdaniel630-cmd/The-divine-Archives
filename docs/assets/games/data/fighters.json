@@ -1,11 +1,19 @@
 {
-  "version": 1,
-  "note": "Each fighter's epithet + weapon is grounded in the Early Greece chapter (ch08). 'basis' must appear in the source chapter (checked by tools/verify-fighters.js). Move-set/animation is game design; the god, weapon and epithet are drawn from real myth as the chapter records it.",
+  "version": 2,
+  "note": "Each fighter's epithet, weapon, and a surfaced archive fact are grounded in the Early Greece chapter (ch08). 'basis' must appear in ch08 (checked by tools/verify-fighters.js, which also requires a non-empty 'fact'). fighter.js loads this file and shows the fact + source link on the select and victory screens (D4). Move-set/animation is game design; the god, weapon, epithet, and fact are drawn from real myth as the chapter records it.",
   "chapter": "ch08",
   "fighters": [
-    { "id": "zeus", "name": "Zeus", "epithet": "King of the Olympians", "weapon": "the thunderbolt", "basis": "thunderbolt" },
-    { "id": "poseidon", "name": "Poseidon", "epithet": "Lord of the Sea", "weapon": "the trident", "basis": "trident" },
-    { "id": "athena", "name": "Athena", "epithet": "Goddess of Wisdom and War", "weapon": "spear and aegis", "basis": "aegis" },
-    { "id": "hades", "name": "Hades", "epithet": "Lord of the Dead", "weapon": "the bident", "basis": "the realm of Hades" }
+    { "id": "zeus", "name": "Zeus", "epithet": "King of the Olympians", "weapon": "the thunderbolt",
+      "basis": "Zeus became king of a new order",
+      "fact": "Zeus overthrew the Titans and became king of a new order, the Olympians — marked in Greek art by his thunderbolt and eagle." },
+    { "id": "poseidon", "name": "Poseidon", "epithet": "Lord of the Sea", "weapon": "the trident",
+      "basis": "po-se-da-o",
+      "fact": "Poseidon, lord of the sea with his trident, is among the oldest attested Greek gods — written po-se-da-o in Bronze Age Linear B." },
+    { "id": "athena", "name": "Athena", "epithet": "Goddess of Wisdom and War", "weapon": "spear and aegis",
+      "basis": "owl, aegis, and olive",
+      "fact": "Athena, goddess of wisdom and war, is identified in art by her owl, aegis, and olive." },
+    { "id": "hades", "name": "Hades", "epithet": "Lord of the Dead", "weapon": "the bident",
+      "basis": "realm of Hades",
+      "fact": "The dead crossed the river Styx to the realm of Hades — a dim, strengthless existence, early Greece as bleak on death as Mesopotamia." }
   ]
 }

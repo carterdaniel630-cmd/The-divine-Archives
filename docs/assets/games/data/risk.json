@@ -1,5 +1,5 @@
 {
-  "note": "Facts for 'Dominion of the Ancients' (Risk). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-risk.js). `territory` ties the fact to the land you conquer.",
+  "note": "Facts for 'Dominion of the Ancients' (Risk). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-risk.js). `territory` ties the fact to the land you conquer. GAP: the `nubia` tile is intentionally left uncovered — the archive has no dedicated ancient-Nubia/Kush chapter, and sourcing Nubia to ch02 (Egypt) would conflate Kush with Egypt. Backlogged (B4: add a Nubia/Kush chapter); until then Nubia reveals no fact on capture.",
   "facts": [
     { "territory": "egypt", "label": "Egypt", "fact": "In the Egyptian judgment the jackal-headed Anubis steadies the scales as the heart is weighed against truth.", "basis": "jackal-headed Anubis", "chapter": "ch02" },
     { "territory": "babylon", "label": "Babylon & Sumer", "fact": "The inlaid Standard of Ur gives a vivid picture of Early Dynastic kingship and its beliefs about the beyond.", "basis": "Standard of Ur", "chapter": "ch03" },
@@ -11,6 +11,7 @@
     { "territory": "china", "label": "China", "fact": "The Zhou justified conquering the Shang by the Mandate of Heaven — a ruler holds power only while he rules justly.", "basis": "Mandate of Heaven", "chapter": "ch09" },
     { "territory": "rome", "label": "Rome", "fact": "On the summit stood the Capitoline Triad — Jupiter, Juno, and Minerva — guarantors of Roman power.", "basis": "Capitoline Triad", "chapter": "ch13" },
     { "territory": "canaan", "label": "Canaan", "fact": "The clay tablets of Ugarit lay bare a Canaanite pantheon — El the father, Baal the storm-rider, Asherah the mother — the older world the Bible set itself against.", "basis": "Ugarit", "chapter": "ch07" },
-    { "territory": "hatti", "label": "Hatti", "fact": "The Hittites crowned a storm-god, Tarhunna, matched to the Hurrian Teshub — striding on a bull with the lightning in his fist.", "basis": "Teshub", "chapter": "ch57" }
+    { "territory": "hatti", "label": "Hatti", "fact": "The Hittites crowned a storm-god, Tarhunna, matched to the Hurrian Teshub — striding on a bull with the lightning in his fist.", "basis": "Teshub", "chapter": "ch57" },
+    { "territory": "arabia", "label": "Arabia", "fact": "Before Islam, Mecca's cube-shaped shrine, the Kaaba, stood at the center of Arabian polytheism — the many gods the tribes kept before the one.", "basis": "Arabian polytheism", "chapter": "ch21" }
   ]
 }

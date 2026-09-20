@@ -1,53 +1,65 @@
 {
-  "note": "Facts for 'The Labyrinth' (Pac-Man). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-pacman.js). Theme: the soul's passage through the maze of the dead.",
+  "note": "Facts for 'The Labyrinth' (Pac-Man): the soul's passage through the maze of the dead. Re-sourced (D1) to ch47 'Journeys to the Underworld', the comparative chapter the game is themed on. Each fact's `basis` substring must appear in ch47's rendered text (tools/verify-pacman.js).",
   "facts": [
     {
+      "label": "The seven gates",
+      "fact": "In the oldest descent we can read, Inanna goes down to her sister Ereshkigal, surrendering one mark of power at each of the underworld's seven gates until she arrives naked and bowed low.",
+      "basis": "seven gates",
+      "chapter": "ch47"
+    },
+    {
+      "label": "The land of no return",
+      "fact": "The Mesopotamian dead went to a bleak 'land of no return' — a house whose dwellers are deprived of light, where dust is their food and clay their bread.",
+      "basis": "land of no return",
+      "chapter": "ch47"
+    },
+    {
+      "label": "Katabasis",
+      "fact": "The Greeks named the journey katabasis, the 'going down' — and, almost uniquely, their heroes went into Hades and came back.",
+      "basis": "katabasis",
+      "chapter": "ch47"
+    },
+    {
+      "label": "The ferryman Charon",
+      "fact": "Aeneas made the fullest journey of all, guided by the Sibyl past the ferryman Charon and the rivers of the dead.",
+      "basis": "Charon",
+      "chapter": "ch47"
+    },
+    {
+      "label": "The Duat",
+      "fact": "The Egyptian dead travelled through the Duat, the underworld through which the sun-god himself sailed each night, battling the serpent Apophis before rising reborn at dawn.",
+      "basis": "the Duat",
+      "chapter": "ch47"
+    },
+    {
       "label": "The weighing of the heart",
-      "fact": "In the Egyptian judgment the heart is set against the feather of truth — the weighing of the heart, the moral centerpiece of the Book of the Dead.",
-      "basis": "weighing of the heart",
-      "chapter": "ch02"
+      "fact": "The climax of the Book of the Dead is the Weighing of the Heart, set on a balance against the feather of Maat — death imagined, earlier than anywhere, as a moral reckoning.",
+      "basis": "Weighing of the Heart",
+      "chapter": "ch47"
     },
     {
-      "label": "The forty-two judges",
-      "fact": "The dead recited a Negative Confession before forty-two divine judges — 'I have not stolen, I have not killed' — one denial for each.",
-      "basis": "forty-two divine judges",
-      "chapter": "ch02"
+      "label": "Ammit the Devourer",
+      "fact": "If the heart is heavy with wrongdoing it is thrown to Ammit, 'the Devourer' — part crocodile, part lion, part hippopotamus — and the soul is annihilated.",
+      "basis": "Ammit",
+      "chapter": "ch47"
     },
     {
-      "label": "Anubis at the scales",
-      "fact": "The jackal-headed Anubis steadies the scales while Thoth records the verdict on the soul.",
-      "basis": "jackal-headed Anubis",
-      "chapter": "ch02"
+      "label": "The Chinvat bridge",
+      "fact": "Zoroastrianism sends every soul across the Chinvat bridge, which widens for the righteous and narrows to a knife-edge for the wicked — one of the earliest clear afterlife judgments.",
+      "basis": "Chinvat bridge",
+      "chapter": "ch47"
     },
     {
-      "label": "The Descent of Inanna",
-      "fact": "Mesopotamia's great underworld poem is the Descent of Inanna, in which even a goddess is stripped of everything at each of the seven gates.",
-      "basis": "Descent of Inanna",
-      "chapter": "ch03"
+      "label": "The bureaucratic hell",
+      "fact": "Chinese religion built a vast bureaucratic underworld, Diyu, with courts, magistrates, and registers administering karmic punishment — the afterlife imagined as an imperial government.",
+      "basis": "Diyu",
+      "chapter": "ch47"
     },
     {
-      "label": "Queen Ereshkigal",
-      "fact": "The Mesopotamian land of the dead is ruled by the great queen Ereshkigal, in a dust-dim house where all the dead go alike.",
-      "basis": "Ereshkigal",
-      "chapter": "ch03"
-    },
-    {
-      "label": "No paradise below",
-      "fact": "Unlike Egypt, Mesopotamia offered no weighing of the heart and no paradise for the righteous — the dead all shared one gloomy fate.",
-      "basis": "no paradise for the righteous",
-      "chapter": "ch03"
-    },
-    {
-      "label": "Persephone taken",
-      "fact": "Greek myth tells of Persephone carried off to the underworld, sought by her grieving mother Demeter, and returned for only part of the year.",
-      "basis": "carried off to the underworld",
-      "chapter": "ch08"
-    },
-    {
-      "label": "Orpheus the singer",
-      "fact": "A mystery current traced itself to the mythical singer Orpheus, who by legend descended into the underworld to reclaim the dead.",
-      "basis": "mythical singer Orpheus",
-      "chapter": "ch08"
+      "label": "The un-judged dead",
+      "fact": "Not every underworld weighed its dead: the Norse Hel was, for the most part, simply where you went if you did not die in battle — no divine tribunal decided it.",
+      "basis": "Norse Hel",
+      "chapter": "ch47"
     }
   ]
 }

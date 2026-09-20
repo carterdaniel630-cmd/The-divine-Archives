@@ -15,6 +15,7 @@ const text=strip((C[bank.chapter]||{}).html||"");
 let fails=0,ok=0;
 if(!C[bank.chapter]){console.log("  FAIL unknown chapter "+bank.chapter);process.exit(1);}
 bank.fighters.forEach(f=>{
+  if(!f.fact||!String(f.fact).trim()){console.log("  FAIL ["+f.name+"] missing surfaced fact");fails++;return;}
   if(!f.basis||text.indexOf(String(f.basis).toLowerCase())===-1){console.log("  FAIL ["+f.name+"] basis not in "+bank.chapter+': "'+f.basis+'"');fails++;return;}
   ok++;
 });
