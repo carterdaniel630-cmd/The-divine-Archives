@@ -31,7 +31,9 @@
       hitbox: { joint: "hnF", ox: 6, oy: 0, r: 14 },
       onHit: { damage: 6, hitstop: 0.06, knockback: { x: 2, y: 0 } },
       lunge: 6,
-      cancelInto: ["kick", "headbutt"], cancelWindow: [3, 15],
+      // jabs chain into another jab (a rekka string), into the heavies, or into the
+      // blast as a finisher — so a basic bread-and-butter combo is easy to find.
+      cancelInto: ["light", "kick", "headbutt", "special"], cancelWindow: [3, 15],
       poseKeys: [
         { at: 0.00, d: {} },
         { at: 0.18, d: { hnF: [-17, -2], elF: [-11, 0], chest: [-3, 0], hnB: [4, 0] } },
@@ -47,7 +49,7 @@
       hitbox: { joint: "footF", ox: 4, oy: 0, r: 16 },
       onHit: { damage: 13, hitstop: 0.12, knockback: { x: 4.2, y: 0 } },
       lunge: 10,
-      cancelInto: [], cancelWindow: [0, 0],
+      cancelInto: ["special"], cancelWindow: [12, 26],   // kick -> blast combo ender
       poseKeys: [
         { at: 0.00, d: {} },
         { at: 0.22, d: { footF: [-8, 0], kneeF: [-6, 0], hnB: [6, 0] } },
@@ -63,7 +65,7 @@
       hitbox: { joint: "head", ox: 6, oy: 0, r: 12 },
       onHit: { damage: 16, hitstop: 0.12, knockback: { x: 4.2, y: 0 } },
       lunge: 16,
-      cancelInto: [], cancelWindow: [0, 0],
+      cancelInto: ["special"], cancelWindow: [6, 18],   // headbutt -> blast ender
       poseKeys: [
         { at: 0.00, d: {} },
         { at: 0.20, d: { head: [-10, 0], neck: [-6, 0], chest: [-6, 0], hip: [-3, 0] } },

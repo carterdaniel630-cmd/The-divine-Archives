@@ -148,33 +148,46 @@
       st[3] += (k * (ty - st[1]) - cc * st[3]) * dt;
       st[0] += st[2] * dt; st[1] += st[3] * dt;
     }
-    /* ---- rig: arc-based limb shaping ----
-       The spring already makes the mid joint (elbow/knee) LAG the hand/foot, so a
-       fast strike is no longer three collinear points — the limb curves. On top of
-       that we bow the mid joint outward along the arc so the bend is always read-
-       able and the extremity travels a curve, not a straight chord. Strict length-
-       locked IK is deliberately NOT used: this art extends the arm well past its
-       rest length on a punch, so locking length would stub every strike and move
-       the hitbox. Bowing keeps reach + hitboxes intact while killing the stiff,
-       straight-stick look. Sign bends elbows back-and-down, knees forward. */
-    function bowJoint(p, rootx, rooty, midK, endK, sign, gain) {
-      var m = p[midK], e = p[endK];
-      var dx = e[0] - rootx, dy = e[1] - rooty, L = Math.hypot(dx, dy) || 1;
-      var px = -dy / L, py = dx / L;                 // unit perpendicular to root->end
-      // signed distance the sprung mid already sits off the root->end line
-      var off = (m[0] - rootx) * px + (m[1] - rooty) * py;
-      // desired bow grows with limb length (a reaching strike bends more), min so a
-      // resting/straight limb still shows a joint; keep the spring's own lag too.
-      var want = sign * (6 + L * 0.14) * gain;
-      var add = want - off;
-      m[0] += px * add; m[1] += py * add;
+    /* ---- rig: 2-bone IK limb shaping ----
+       Keep the spring's shoulder/hand (hip/foot) and SOLVE the elbow/knee so both
+       bones hold their rest length — the limb bends naturally instead of the
+       previous "bow" hack that shoved the mid joint off-line and rubber-stretched
+       the thigh (~1.3x). The hitbox anchors (hand/foot) are never moved, so reach
+       is untouched; only the drawn mid joint is repositioned. When the target is
+       within reach the segments are exact (no stretch — fixes the extended leg on
+       kicks); when a punch genuinely over-reaches the art's short arm, the limb
+       just straightens (an honest full extension) rather than bending oddly. The
+       bend solution nearest the sprung mid is chosen, so keyframed knee lifts and
+       elbow angles are preserved. */
+    var IKREST = (function () {
+      function d(a, b) { return Math.hypot(a[0] - b[0], a[1] - b[1]); }
+      var hipF = [BASE.hip[0] + 4, BASE.hip[1]], hipB = [BASE.hip[0] - 6, BASE.hip[1]];
+      return {
+        armF: [d(BASE.shF, BASE.elF), d(BASE.elF, BASE.hnF)],
+        armB: [d(BASE.shB, BASE.elB), d(BASE.elB, BASE.hnB)],
+        legF: [d(hipF, BASE.kneeF), d(BASE.kneeF, BASE.footF)],
+        legB: [d(hipB, BASE.kneeB), d(BASE.kneeB, BASE.footB)]
+      };
+    })();
+    function ik2(rx, ry, ex, ey, l1, l2, mx, my) {
+      var dx = ex - rx, dy = ey - ry, d = Math.hypot(dx, dy) || 1e-4;
+      var dc = Math.max(Math.abs(l1 - l2) + 0.01, Math.min(d, l1 + l2 - 0.01));
+      var a = (l1 * l1 - l2 * l2 + dc * dc) / (2 * dc), h = Math.sqrt(Math.max(0, l1 * l1 - a * a));
+      var ux = dx / d, uy = dy / d, px = -uy, py = ux, bx = rx + ux * a, by = ry + uy * a;
+      var s1x = bx + px * h, s1y = by + py * h, s2x = bx - px * h, s2y = by - py * h;
+      var d1 = (s1x - mx) * (s1x - mx) + (s1y - my) * (s1y - my), d2 = (s2x - mx) * (s2x - mx) + (s2y - my) * (s2y - my);
+      return d1 <= d2 ? [s1x, s1y] : [s2x, s2y];
+    }
+    function solveMid(p, rootx, rooty, midK, endK, L) {
+      var m = p[midK], e = p[endK], s = ik2(rootx, rooty, e[0], e[1], L[0], L[1], m[0], m[1]);
+      m[0] = s[0]; m[1] = s[1];
     }
     function shapeLimbs(p) {
       var H = p.hip;
-      bowJoint(p, p.shF[0], p.shF[1], "elF", "hnF", 1, 1.0);   // front arm elbow bows down/back
-      bowJoint(p, p.shB[0], p.shB[1], "elB", "hnB", 1, 0.9);
-      bowJoint(p, H[0] + 4, H[1], "kneeF", "footF", -1, 0.85); // front knee bows forward
-      bowJoint(p, H[0] - 6, H[1], "kneeB", "footB", -1, 0.85);
+      solveMid(p, p.shF[0], p.shF[1], "elF", "hnF", IKREST.armF);
+      solveMid(p, p.shB[0], p.shB[1], "elB", "hnB", IKREST.armB);
+      solveMid(p, H[0] + 4, H[1], "kneeF", "footF", IKREST.legF);
+      solveMid(p, H[0] - 6, H[1], "kneeB", "footB", IKREST.legB);
     }
 
     // advance a fighter's sprung pose toward `target`, returning positions {joint:[x,y]}
@@ -264,10 +277,15 @@
       add(p, "shF", 0, -br * 0.4); add(p, "shB", 0, -br * 0.4); add(p, "hnF", br * 0.4, -br * 0.4);
       var st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1);
       if (st === "walk") {
-        var w = Math.sin(t * 9 + f.phase) * 11;
-        add(p, "footF", w, -Math.max(0, w) * 0.7); add(p, "kneeF", w * 0.6, 0);
-        add(p, "footB", -w, -Math.max(0, -w) * 0.7); add(p, "kneeB", -w * 0.6, 0);
-        add(p, "hnF", 0, w * 0.3); add(p, "hnB", 0, -w * 0.3); add(p, "hip", 0, -Math.abs(w) * 0.1);
+        // a fuller stride: bigger step, feet lift, arms counter-swing to the legs, and
+        // the hips/torso bob and sway so it reads as walking, not a rigid glide. The IK
+        // then bends the knees/elbows to match, keeping the limbs natural.
+        var w = Math.sin(t * 9 + f.phase) * 13;
+        add(p, "footF", w, -Math.max(0, w) * 0.9); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.4);
+        add(p, "footB", -w, -Math.max(0, -w) * 0.9); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.4);
+        add(p, "hnF", -w * 0.5, 0); add(p, "elF", -w * 0.3, 0); add(p, "hnB", w * 0.5, 0); add(p, "elB", w * 0.3, 0);
+        var bob = -Math.abs(w) * 0.14;
+        add(p, "hip", w * 0.12, bob); add(p, "chest", w * 0.10, bob * 0.6); add(p, "neck", w * 0.11, 0); add(p, "head", w * 0.13, 0);
       } else if (st === "jump") {
         add(p, "footF", 4, 10); add(p, "footB", -6, 8); add(p, "kneeF", 2, 8); add(p, "kneeB", -2, 8); add(p, "hnF", 6, -14);
       } else if (st === "block") {
@@ -853,7 +871,7 @@
     // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
     function tryAttack(f, other, kind) {
       if (f.state === "hit" || f.state === "ko") return;
-      if (kind === "special") { if (f.cooldown > 0) return; return trySpecial(f, other); }
+      if (kind === "special") { if (f.cooldown > 0 && !canAct(f, "special")) return; return trySpecial(f, other); }
       // holding a relic? a strike hurls it instead of swinging.
       if (f.holding && (kind === "light" || kind === "heavy")) { if (f.cooldown > 0) return; throwItem(f, other); return; }
       // AIRBORNE: a committed aerial strike — light = a flying punch, heavy = a diving
@@ -1004,6 +1022,9 @@
       var base0 = dmg;                                        // pre-scale, for guard erosion
       if (!fin) dmg = Math.max(1, Math.round(dmg * DMG));     // longevity
       if (counter) dmg = Math.round(dmg * 1.4);              // counter-hit bonus
+      // combo damage scaling: each extra hit in a string does less, so long
+      // cancel combos reward execution without becoming a one-touch kill.
+      if (f && f.combo > 0 && !fin) dmg = Math.max(1, Math.round(dmg * Math.max(0.35, 1 - f.combo * 0.13)));
       var raw = dmg;
       if (blocked && !parry) dmg = Math.round(dmg * 0.25);
       if (parry) dmg = 0;
@@ -1246,7 +1267,10 @@
       // still land. Slack lost to a wall is transferred to the free fighter, so a
       // cornered player isn't shoved through the wall and left overlapping.
       var lo = p1.x <= p2.x ? p1 : p2, hi = p1.x <= p2.x ? p2 : p1;
-      if (hi.x - lo.x < MINSEP && lo.state !== "ko" && hi.state !== "ko") {
+      // only separate when both are grounded — a jump lets you pass THROUGH the foe
+      // and land on the far side (cross-up / side-switch), which the hard floor blocked.
+      var airborne = (p1.y || 0) > 26 || (p2.y || 0) > 26;
+      if (!airborne && hi.x - lo.x < MINSEP && lo.state !== "ko" && hi.state !== "ko") {
         var need = MINSEP - (hi.x - lo.x), loX = lo.x - need / 2, hiX = hi.x + need / 2;
         if (loX < 40) { hiX += 40 - loX; loX = 40; }
         if (hiX > VW - 40) { loX -= hiX - (VW - 40); hiX = VW - 40; }
@@ -1360,9 +1384,14 @@
       if (eR) { if (f.tapDir === 1 && f.tapT > 0) { startDash(f, 1); } else { f.tapDir = 1; f.tapT = 0.24; } }
       if (f.dashT > 0) return;                    // mid-dash: keep the burst, ignore other input
       // leap out of idle/walk
-      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
-      if (!f.onGround) { // air control: drift, keep the current attack/jump pose
-        if (keys[km.left]) { f.vx = -2.4; f.facing = -1; } else if (keys[km.right]) { f.vx = 2.4; f.facing = 1; } else f.vx *= 0.9;
+      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) {
+        f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f);
+        // a directional jump commits real horizontal momentum, so you actually arc
+        // OVER the foe and land on the far side (cross-up), not just hop straight up.
+        f.vx = keys[km.left] ? -5 : keys[km.right] ? 5 : (f.mvx || 0);
+      }
+      if (!f.onGround) { // air control: steer the arc (enough to clear the foe for a cross-up)
+        if (keys[km.left]) { f.vx = -4.4; } else if (keys[km.right]) { f.vx = 4.4; } else f.vx *= 0.96;
         return;
       }
       if (f.cooldown > 0) { f.vx = 0; return; }
@@ -1423,7 +1452,7 @@
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
           '<p class="rq-note">P1: A/D move · S guard · J punch · K kick (headbutt up close) · L energy blast · U grab.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , punch · . kick · / blast · M grab." : " On touch, use the on-screen pads.") +
-            " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game." +
+            " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game. <b>Combos:</b> chain jabs and cancel a jab or kick into the blast (e.g. punch → punch → kick → blast); <b>jump over</b> a foe to switch sides (cross-up)." +
             " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Fill the energy bar and land a blast on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
         root.querySelectorAll(".fg-card").forEach(function (b) {
