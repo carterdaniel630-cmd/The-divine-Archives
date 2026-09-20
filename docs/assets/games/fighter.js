@@ -1102,7 +1102,7 @@
       drawWeather(cx);
       drawFX(cx);
       if (p1.combo > 1 && p1.state !== "ko") comboText(cx, p1.combo);
-      if (banner) { drawBanner(cx); banner.t -= dt; if (banner.t <= 0) banner = null; }
+      if (banner) { drawBanner(cx); banner.t -= real; if (banner.t <= 0) banner = null; }
       cx.restore();
       renderHUD();
       if (winner && !banner && !resultShown) { resultShown = true; showResult(); return; }
