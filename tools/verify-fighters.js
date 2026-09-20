@@ -20,5 +20,22 @@ bank.fighters.forEach(f=>{
   ok++;
 });
 console.log("Theomachy fighters: "+bank.fighters.length+" | grounded in "+bank.chapter+": "+ok+" | failures: "+fails);
+
+// F3.2: also check each per-god character's factRef basis appears in its chapter.
+let cok=0,cn=0;
+try{
+  const cctx={window:{},console};vm.createContext(cctx);
+  vm.runInContext(fs.readFileSync(path.join(ROOT,"docs/assets/games/fighter-moves.js"),"utf8"),cctx);
+  const chars=cctx.window.FIGHTER_CHARACTERS||{};
+  Object.keys(chars).forEach(g=>{
+    const fr=chars[g].factRef; cn++;
+    if(!fr||!fr.chapter||!fr.basis){console.log("  FAIL [char "+g+"] missing factRef");fails++;return;}
+    const t=strip((C[fr.chapter]||{}).html||"");
+    if(t.indexOf(String(fr.basis).toLowerCase())===-1){console.log("  FAIL [char "+g+"] factRef basis not in "+fr.chapter+': "'+fr.basis+'"');fails++;return;}
+    cok++;
+  });
+  console.log("Per-god characters: "+cn+" | factRef grounded: "+cok+" | failures so far: "+fails);
+}catch(e){console.log("  FAIL reading FIGHTER_CHARACTERS: "+e.message);fails++;}
+
 if(fails){process.exit(1);}
-console.log("VERIFY OK — every fighter's epithet/weapon is grounded in real chapter text.");
+console.log("VERIFY OK — fighters + per-god factRefs are grounded in real chapter text.");

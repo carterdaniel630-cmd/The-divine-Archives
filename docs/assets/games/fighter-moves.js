@@ -71,6 +71,115 @@
         { at: 0.60, d: { head: [10, 3], chest: [6, 2] } },
         { at: 1.00, d: {} }
       ]
+    },
+
+    /* ---- F3.1: special / throw / aerial migrated into the same data model.
+       These spawn a projectile or a thrown relic rather than a melee hitbox,
+       so combat logic (energy cost, finisher, projectile) stays in fighter.js;
+       the DATA supplies the timeline (ticks), cast frame, cooldown and pose. ---- */
+    special: {
+      id: "special", kind: "special",
+      total: 54, cast: 23, cooldownTicks: 60,   // charge, then release the blast at `cast`
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.45, d: { hnF: [2, -54], elF: [0, -40], shF: [0, -10], hnB: [-8, -34], elB: [-5, -24], head: [0, -4], chest: [0, -3] } },
+        { at: 0.85, d: { hnF: [2, -54], elF: [0, -40], shF: [0, -10], hnB: [-8, -34], elB: [-5, -24], head: [0, -4], chest: [0, -3] } },
+        { at: 1.00, d: {} }
+      ]
+    },
+
+    throw: {
+      id: "throw", kind: "throw",
+      total: 18, cooldownTicks: 24,             // the relic is released as the arm comes over
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.25, d: { hnF: [-11, 9], elF: [-7, 7] } },
+        { at: 0.45, d: { hnF: [22, -18], elF: [15, -14], shF: [4, -6], chest: [8, 0], head: [6, 0] } },
+        { at: 1.00, d: {} }
+      ]
+    },
+
+    aerialPunch: {
+      id: "aerialPunch", kind: "aerial",
+      total: 25, cooldownTicks: 24, hitAt: 0.22, driveVx: 2.6,
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.45, d: { hnF: [36, -6], elF: [24, -3], footF: [10, 16], kneeF: [6, 10], footB: [-14, -22], kneeB: [-8, -14], hnB: [-18, -6], chest: [5, 0], head: [4, 0] } },
+        { at: 1.00, d: { hnF: [36, -6], elF: [24, -3], footF: [10, 16], kneeF: [6, 10], footB: [-14, -22], kneeB: [-8, -14], hnB: [-18, -6], chest: [5, 0], head: [4, 0] } }
+      ]
+    },
+
+    aerialDive: {
+      id: "aerialDive", kind: "aerial",
+      total: 30, cooldownTicks: 30, hitAt: 0.22, driveVx: 3.6, driveVy: -6,
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.45, d: { footF: [46, 30], kneeF: [26, 12], footB: [-20, -26], kneeB: [-12, -18], hnF: [10, -16], hnB: [-24, -14], chest: [6, 3], head: [5, 1], hip: [3, 2] } },
+        { at: 1.00, d: { footF: [46, 30], kneeF: [26, 12], footB: [-20, -26], kneeB: [-12, -18], hnF: [10, -16], hnB: [-24, -14], chest: [6, 3], head: [5, 1], hip: [3, 2] } }
+      ]
+    }
+
+  };
+
+  /* ==========================================================================
+     F3.2 — per-god movesets (the four Greek gods are the proof set). Each god
+     is the shared base move with its own overrides merged on top, plus
+     locomotion stats and a factRef grounded in ch08 (checked by
+     tools/verify-fighters.js). Cross-tradition gods can be added later as
+     pure data entries here — no engine change.
+     ========================================================================== */
+  window.FIGHTER_CHARACTERS = {
+
+    // Zeus — the balanced baseline zoner. Average speed, weight, and damage;
+    // stats declared explicitly so the kit is self-describing.
+    zeus: {
+      id: "zeus",
+      walkSpeed: 3.1, jumpVel: 12.5, weight: 1.0,
+      factRef: { chapter: "ch08", basis: "Zeus became king of a new order" },
+      moves: {
+        light: { onHit: { damage: 6 } },
+        kick: { onHit: { damage: 13, knockback: { x: 4.2 } } },
+        headbutt: { onHit: { damage: 16 } }
+      }
+    },
+
+    // Poseidon — the long-reach spacer. Slower and heavier than Zeus, but his
+    // trident sweep has the longest reach and the biggest pushback in the set.
+    poseidon: {
+      id: "poseidon",
+      walkSpeed: 2.6, jumpVel: 11.5, weight: 1.2,
+      factRef: { chapter: "ch08", basis: "po-se-da-o" },
+      moves: {
+        light: { onHit: { damage: 7 } },                                  // trident poke
+        kick: { hitbox: { joint: "footF", ox: 8, r: 22 }, onHit: { damage: 12, knockback: { x: 6.5 } } }, // long, wall-carrying sweep
+        headbutt: { onHit: { damage: 15 } }
+      }
+    },
+
+    // Athena — the technical fighter. Fastest on her feet and quickest to
+    // recover; her spear jab is short and snappy but hits for less.
+    athena: {
+      id: "athena",
+      walkSpeed: 3.6, jumpVel: 13.0, weight: 0.9,
+      factRef: { chapter: "ch08", basis: "owl, aegis, and olive" },
+      moves: {
+        light: { active: [3, 5], total: 13, cancelWindow: [2, 11], onHit: { damage: 5 } }, // fast jab, quick recovery
+        kick: { onHit: { damage: 12 } },
+        headbutt: { onHit: { damage: 14 } }
+      }
+    },
+
+    // Hades — the bruiser. Slow and heavy, but hits hardest with the most
+    // hitstop, and keeps his foe close (low knockback) to keep the pressure on.
+    hades: {
+      id: "hades",
+      walkSpeed: 2.8, jumpVel: 12.0, weight: 1.15,
+      factRef: { chapter: "ch08", basis: "realm of Hades" },
+      moves: {
+        light: { onHit: { damage: 8, hitstop: 0.09 } },
+        kick: { onHit: { damage: 15, hitstop: 0.16, knockback: { x: 3.0 } } }, // hard, low pushback = stays in range
+        headbutt: { onHit: { damage: 20, hitstop: 0.16 } }
+      }
     }
 
   };
