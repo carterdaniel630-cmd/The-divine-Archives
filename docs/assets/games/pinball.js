@@ -53,7 +53,7 @@
     var SEGS = [
       [16, 60, 16, 372], [304, 60, 304, 372],                 // 0,1 side walls
       [16, 60, 96, 28], [96, 28, 224, 22], [224, 28, 304, 60], // 2,3,4 top arc
-      [16, 372, 120, 430], [304, 372, 200, 430],               // 5,6 bottom funnels
+      [16, 372, 114, 416], [304, 372, 206, 416],               // 5,6 bottom funnels — end AT the flipper pivots (no gap)
       [62, 330, 116, 380], [258, 330, 204, 380],               // 7,8 slingshots (kick)
       [270, 116, 270, 362]                                     // 9 launch-lane wall (ball shoots up the right lane)
     ];
@@ -66,14 +66,17 @@
     ];
     var DRAIN = { x1: 120, x2: 200, y: 432 };
 
-    function mkFlipper(px, py, sign) { return { px: px, py: py, len: 44, sign: sign, rest: 0.5, up: -0.55, ang: 0.5, av: 0, active: false }; }
+    // Flippers pivot at the inner ends of the funnels (so there is no gap the ball
+    // can slip through), rest just above the drain line pointing down-inward, and
+    // swing up. len is tuned so the two tips leave a ball-width drain gap at rest.
+    function mkFlipper(px, py, sign) { return { px: px, py: py, len: 40, sign: sign, rest: 0.34, up: -0.5, ang: 0.34, av: 0, active: false }; }
 
     function newBall() { return { x: 287, y: 348, vx: 0, vy: 0, r: 7, launched: false }; } // rests in the right launch lane
     function newGame() {
       BUMPERS.forEach(function (b) { b.hits = 0; b.lit = false; });
       st = {
         ball: newBall(), balls: 3, score: 0, collected: [], seen: {},
-        L: mkFlipper(112, 416, 1), R: mkFlipper(208, 416, -1),
+        L: mkFlipper(114, 416, 1), R: mkFlipper(206, 416, -1),
         sparks: [], stars: [], over: false, msg: "Tap Launch (or Space) to cast the spark", charge: 0
       };
       for (var i = 0; i < 26; i++) st.stars.push({ x: Math.random() * VW, y: Math.random() * VH * 0.7, r: Math.random() * 1.2 + 0.3, a: Math.random() * 0.5 + 0.1 });
