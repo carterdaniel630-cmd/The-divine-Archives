@@ -141,6 +141,19 @@
         kick: { onHit: { damage: 13, knockback: { x: 4.2 } } },
         headbutt: { onHit: { damage: 16 } }
       }
+    },
+
+    // Poseidon — the long-reach spacer. Slower and heavier than Zeus, but his
+    // trident sweep has the longest reach and the biggest pushback in the set.
+    poseidon: {
+      id: "poseidon",
+      walkSpeed: 2.6, jumpVel: 11.5, weight: 1.2,
+      factRef: { chapter: "ch08", basis: "po-se-da-o" },
+      moves: {
+        light: { onHit: { damage: 7 } },                                  // trident poke
+        kick: { hitbox: { joint: "footF", ox: 8, r: 22 }, onHit: { damage: 12, knockback: { x: 6.5 } } }, // long, wall-carrying sweep
+        headbutt: { onHit: { damage: 15 } }
+      }
     }
 
   };
