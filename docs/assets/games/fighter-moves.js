@@ -120,4 +120,28 @@
     }
 
   };
+
+  /* ==========================================================================
+     F3.2 — per-god movesets (the four Greek gods are the proof set). Each god
+     is the shared base move with its own overrides merged on top, plus
+     locomotion stats and a factRef grounded in ch08 (checked by
+     tools/verify-fighters.js). Cross-tradition gods can be added later as
+     pure data entries here — no engine change.
+     ========================================================================== */
+  window.FIGHTER_CHARACTERS = {
+
+    // Zeus — the balanced baseline zoner. Average speed, weight, and damage;
+    // stats declared explicitly so the kit is self-describing.
+    zeus: {
+      id: "zeus",
+      walkSpeed: 3.1, jumpVel: 12.5, weight: 1.0,
+      factRef: { chapter: "ch08", basis: "Zeus became king of a new order" },
+      moves: {
+        light: { onHit: { damage: 6 } },
+        kick: { onHit: { damage: 13, knockback: { x: 4.2 } } },
+        headbutt: { onHit: { damage: 16 } }
+      }
+    }
+
+  };
 })();

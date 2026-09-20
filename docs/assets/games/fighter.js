@@ -119,6 +119,21 @@
 
     /* ---- F2: data-driven move system ---- */
     var MOVES = window.FIGHTER_MOVES || {};
+    /* ---- F3.2: per-god characters. Each god's kit is the shared base move with
+       its own overrides merged on top (deep-merged for onHit/hitbox), plus
+       locomotion stats (walkSpeed/jumpVel/weight) and a factRef. A god not in the
+       table falls back to the shared base moves. ---- */
+    var CHARS = window.FIGHTER_CHARACTERS || {};
+    function charOf(f) { return (f && f.godId && CHARS[f.godId]) || {}; }
+    function mergeMove(base, ov) {
+      if (!ov) return base; if (!base) return ov;
+      var m = {}; for (var k in base) m[k] = base[k]; for (var k2 in ov) m[k2] = ov[k2];
+      if (base.onHit || ov.onHit) { m.onHit = {}; var bo = base.onHit || {}, oo = ov.onHit || {}; for (var a in bo) m.onHit[a] = bo[a]; for (var b in oo) m.onHit[b] = oo[b]; if (bo.knockback || oo.knockback) { m.onHit.knockback = Object.assign({}, bo.knockback, oo.knockback); } }
+      if (base.hitbox || ov.hitbox) { m.hitbox = Object.assign({}, base.hitbox, ov.hitbox); }
+      return m;
+    }
+    // resolve a move for a specific fighter: base move with that god's override merged in
+    function moveFor(f, id) { var base = MOVES[id], ov = (charOf(f).moves || {})[id]; return ov ? mergeMove(base, ov) : base; }
     // interpolate a move's poseKeys at normalized progress pr -> additive joint offsets
     function moveOffsets(move, pr) {
       var ks = move && move.poseKeys; if (!ks || !ks.length) return {};
@@ -157,19 +172,19 @@
       } else if (st === "block") {
         add(p, "hnF", -22, -2); add(p, "elF", -16, 2); add(p, "hnB", -6, 0); add(p, "chest", -5, 0); add(p, "head", -4, 0);
       } else if (st === "light" || st === "kick" || st === "headbutt") {
-        // F2: the strike animation is now data — interpolated poseKeys from MOVES[st]
-        var off = moveOffsets(MOVES[st], pr);
+        // F2/F3.2: the strike animation is data — poseKeys from the god's resolved move
+        var off = moveOffsets(moveFor(f, st), pr);
         for (var mk in off) add(p, mk, off[mk][0], off[mk][1]);
       } else if (st === "throw") {
-        var mvT = MOVES.throw;
+        var mvT = moveFor(f, "throw");
         if (mvT) { var oT = moveOffsets(mvT, pr); for (var kT in oT) add(p, kT, oT[kT][0], oT[kT][1]); }
         else { var tk = strikeCurve(pr); add(p, "hnF", 22 * tk, -18 * tk); add(p, "elF", 15 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk); add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0); }
       } else if (st === "special") {
-        var mvS = MOVES.special;
+        var mvS = moveFor(f, "special");
         if (mvS) { var oS = moveOffsets(mvS, pr); for (var kS in oS) add(p, kS, oS[kS][0], oS[kS][1]); }
         else { var up = ease(clamp(pr * 1.5, 0, 1)); add(p, "hnF", 2 * up, -54 * up); add(p, "elF", 0, -40 * up); add(p, "shF", 0, -10 * up); add(p, "hnB", -8 * up, -34 * up); add(p, "elB", -5, -24 * up); add(p, "head", 0, -4 * up); add(p, "chest", 0, -3 * up); }
       } else if (st === "aerial") {
-        var mvA = MOVES[f.aerialKind === "dive" ? "aerialDive" : "aerialPunch"];
+        var mvA = moveFor(f, f.aerialKind === "dive" ? "aerialDive" : "aerialPunch");
         if (mvA) { var oA = moveOffsets(mvA, pr); for (var kA in oA) add(p, kA, oA[kA][0], oA[kA][1]); }
         else {
           var ak = ease(clamp(pr * 1.45, 0, 1)), dive = f.aerialKind === "dive";
@@ -644,8 +659,8 @@
       }
       return out;
     }
-    function Fighter(skin, x, facing, isAI, km) {
-      return { skin: skin, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
+    function Fighter(skin, x, facing, isAI, km, godId) {
+      return { skin: skin, godId: godId || null, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
         hp: 100, energy: 0, guard: 100, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6, dpose: null,
         aura: 0, cooldown: 0, hitLock: 0, combo: 0, curMove: null, wounds: makeWounds() };
     }
@@ -739,7 +754,7 @@
         if (f.cooldown > 0) return;
         var dive = kind === "heavy";
         f.aerialKind = dive ? "dive" : "punch";
-        var am = MOVES[dive ? "aerialDive" : "aerialPunch"];
+        var am = moveFor(f, dive ? "aerialDive" : "aerialPunch");
         if (am) {
           setState(f, "aerial", am.total / 60); f.cooldown = (am.cooldownTicks || am.total) / 60; f.curMove = null;
           f.vx = f.facing * (am.driveVx != null ? am.driveVx : (dive ? 3.6 : 2.6));
@@ -756,7 +771,7 @@
       // GROUND MELEE (data-driven): pick the move, then gate through the cancel-aware check
       var adx = Math.abs(other.x - f.x), id = kind === "light" ? "light" : (adx < 48 ? "headbutt" : "kick");
       if (!canAct(f, id)) return;
-      var m = MOVES[id];
+      var m = moveFor(f, id);
       if (m) {
         setState(f, id, m.total / 60); f.cooldown = m.total / 60; f.curMove = m;
         f._hit = { kind: id, at: m.active[0] / m.total, done: false, fin: false, move: m };
@@ -770,7 +785,7 @@
     function trySpecial(f, other) {
       if (f.energy < 40) return;
       var fin = f.energy >= 100 && other.hp <= 30 && other.state !== "ko";
-      var sm = MOVES.special;
+      var sm = moveFor(f, "special");
       if (sm) { setState(f, "special", sm.total / 60); f.cooldown = (sm.cooldownTicks || sm.total) / 60; f._cast = { done: false, at: (sm.cast || 25) / sm.total, fin: fin }; }
       else { setState(f, "special", 0.9); f.cooldown = 1.0; f._cast = { done: false, at: 0.42, fin: fin }; }
       f.energy -= fin ? 100 : 40; f.aura = fin ? 1.9 : 1.2; flash = fin ? 0.6 : 0.35;
@@ -784,7 +799,7 @@
     // THROW a held relic as a projectile
     function throwItem(f, other) {
       if (!f.holding) return;
-      var tm = MOVES.throw;
+      var tm = moveFor(f, "throw");
       if (tm) { setState(f, "throw", tm.total / 60); f.cooldown = (tm.cooldownTicks || tm.total) / 60; }
       else { setState(f, "throw", 0.3); f.cooldown = 0.4; }
       var it = f.holding; f.holding = null;
@@ -862,7 +877,7 @@
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
         // F2: knockback / hitstop come from move data when present, else the old constants
         var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
-        other.vx = dir * (fin ? 6 : kb);
+        other.vx = dir * (fin ? 6 : kb) / (charOf(other).weight || 1);
         if (f) f.combo++;
         burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
         shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
@@ -1024,7 +1039,7 @@
       // airborne: drift toward the foe and sometimes throw an aerial strike
       if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
       // occasionally leap — to close distance or dodge, and to bring the fight into the air
-      if (f.onGround && f.cooldown <= 0 && Math.random() < 0.012 && (adx < 60 || adx > 150)) { f.vy = 12.5; f.onGround = false; setState(f, "jump", 0.9); landDust(f); return; }
+      if (f.onGround && f.cooldown <= 0 && Math.random() < 0.012 && (adx < 60 || adx > 150)) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); landDust(f); return; }
       // holding a relic: close a little, then hurl it
       if (f.holding) { if (adx > 180) { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); return; } if (f.aiT <= 0) { tryAttack(f, other, "light"); f.aiT = 0.6; } return; }
       // a relic lies nearby and I'm free — go grab it sometimes
@@ -1037,7 +1052,7 @@
         f.intent = "advance";
       }
       else if (f.aiT <= 0) { var r = Math.random(); f.intent = r < 0.42 ? "light" : r < 0.66 ? "heavy" : r < 0.82 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
-      if (f.intent === "advance") { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
+      if (f.intent === "advance") { f.vx = dir * (charOf(f).walkSpeed || 3.1) * 0.52; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
       else if (f.intent === "block") { if (f.state === "idle" || f.state === "walk") setState(f, "block", 0.5); f.vx = 0; }
       else if (f.intent === "light" || f.intent === "heavy" || f.intent === "special") { tryAttack(f, other, f.intent); f.intent = "wait"; }
       else { f.vx = 0; if (f.state === "walk") setState(f, "idle", 1); }
@@ -1151,7 +1166,7 @@
       var km = f.km || {};
       if (f.state === "hit" || f.state === "ko") { if (f.onGround) f.vx = 0; return; }
       // leap out of idle/walk
-      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
+      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
       if (!f.onGround) { // air control: drift, keep the current attack/jump pose
         if (keys[km.left]) { f.vx = -2.4; f.facing = -1; } else if (keys[km.right]) { f.vx = 2.4; f.facing = 1; } else f.vx *= 0.9;
         return;
@@ -1159,8 +1174,9 @@
       if (f.cooldown > 0) { f.vx = 0; return; }
       f.vx = 0;
       if (keys[km.block]) { setState(f, "block", 0.4); return; }
-      if (keys[km.left]) { f.vx = -3.1; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
-      else if (keys[km.right]) { f.vx = 3.1; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
+      var ws = charOf(f).walkSpeed || 3.1;
+      if (keys[km.left]) { f.vx = -ws; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
+      else if (keys[km.right]) { f.vx = ws; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
       else if (f.state === "walk" || f.state === "block") setState(f, "idle", 1);
     }
     function comboText(c, n) { c.save(); c.font = "700 22px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.textAlign = "center"; c.shadowColor = "#000"; c.shadowBlur = 6; c.fillText(n + " HIT", VW * 0.26, 54); c.restore(); }
@@ -1269,8 +1285,8 @@
     function startFight(g1, g2, twoP) {
       curG1 = g1; curG2 = g2; curTwoP = twoP;
       shell(twoP);
-      p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1);
-      p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null);
+      p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1, g1);
+      p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null, g2);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
       fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
       debrisT = rnd(2, 4); itemT = rnd(4, 7); boltFlash = 0;
@@ -1337,6 +1353,13 @@
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
       window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
+      // resolved per-god stats, for the F3.2 "differs on >=3 stats" assertion
+      window.__charStats = function (g) {
+        var fake = { godId: g };
+        function md(id) { var m = moveFor(fake, id) || {}; return { damage: m.onHit && m.onHit.damage, total: m.total, kb: m.onHit && m.onHit.knockback && m.onHit.knockback.x, reach: m.hitbox ? (m.hitbox.ox + m.hitbox.r) : null, hitstop: m.onHit && m.onHit.hitstop }; }
+        var c = CHARS[g] || {};
+        return { present: !!CHARS[g], walkSpeed: c.walkSpeed, jumpVel: c.jumpVel, weight: c.weight, factRef: c.factRef || null, light: md("light"), kick: md("kick"), headbutt: md("headbutt") };
+      };
     }
 
     return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
