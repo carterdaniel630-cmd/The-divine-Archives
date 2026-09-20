@@ -47,7 +47,7 @@
     // fixed-timestep simulation: logic advances in whole FIXED steps regardless of
     // display refresh, so movement/jumps are identical at 60/120/144 Hz. Rendering
     // interpolates between the last two sim states by `acc/FIXED`.
-    var FIXED = 1 / 60, acc = 0, MAXSTEPS = 5;
+    var FIXED = 1 / 60, acc = 0, MAXSTEPS = 5, curReal = 1 / 60;
     var shots = [], debris = [], rain = [], groundItem = null, weather = null, debrisT = 0, itemT = 0, boltFlash = 0;
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
     var KM1 = { left: "a", right: "d", block: "s", jump: "w", light: "j", heavy: "k", special: "l", grab: "u" };
@@ -117,6 +117,77 @@
     function clonePose(p) { var o = {}; for (var k in p) o[k] = [p[k][0], p[k][1]]; return o; }
     function add(p, k, dx, dy) { p[k][0] += dx; p[k][1] += dy; }
 
+    /* ---- rig: pose dynamics (spring) ----
+       Each displayed joint is driven toward its authored target by a damped
+       spring, integrated in real time. Extremities (hands, feet, head) run
+       UNDER-damped so they shoot past the target and settle back — that
+       snap-out-and-recoil is the follow-through/whip the audit found missing;
+       the core (hip, chest, shoulders) is near-critical so the torso stays
+       planted. This replaces the old constant-rate low-pass, which could only
+       lag a target, never overshoot it. f = frequency (Hz), z = damping ratio
+       (<1 overshoots, 1 is critical). State per joint is [x, y, vx, vy]. */
+    var TAU = Math.PI * 2;
+    var DYN_DEFAULT = { f: 6.0, z: 0.9 };
+    var DYN = {
+      hnF: { f: 9.0, z: 0.52 }, hnB: { f: 8.4, z: 0.55 },
+      footF: { f: 8.4, z: 0.55 }, footB: { f: 8.0, z: 0.58 },
+      head: { f: 6.0, z: 0.64 },
+      elF: { f: 7.6, z: 0.62 }, elB: { f: 7.2, z: 0.66 },
+      kneeF: { f: 7.4, z: 0.66 }, kneeB: { f: 7.0, z: 0.70 },
+      neck: { f: 6.0, z: 0.80 },
+      hip: { f: 5.2, z: 0.96 }, chest: { f: 5.6, z: 0.92 },
+      shF: { f: 6.2, z: 0.88 }, shB: { f: 6.2, z: 0.88 }
+    };
+    function springStep(st, tx, ty, cfg, dt) {
+      var w = cfg.f * TAU, k = w * w, cc = 2 * cfg.z * w;
+      st[2] += (k * (tx - st[0]) - cc * st[2]) * dt;
+      st[3] += (k * (ty - st[1]) - cc * st[3]) * dt;
+      st[0] += st[2] * dt; st[1] += st[3] * dt;
+    }
+    /* ---- rig: arc-based limb shaping ----
+       The spring already makes the mid joint (elbow/knee) LAG the hand/foot, so a
+       fast strike is no longer three collinear points — the limb curves. On top of
+       that we bow the mid joint outward along the arc so the bend is always read-
+       able and the extremity travels a curve, not a straight chord. Strict length-
+       locked IK is deliberately NOT used: this art extends the arm well past its
+       rest length on a punch, so locking length would stub every strike and move
+       the hitbox. Bowing keeps reach + hitboxes intact while killing the stiff,
+       straight-stick look. Sign bends elbows back-and-down, knees forward. */
+    function bowJoint(p, rootx, rooty, midK, endK, sign, gain) {
+      var m = p[midK], e = p[endK];
+      var dx = e[0] - rootx, dy = e[1] - rooty, L = Math.hypot(dx, dy) || 1;
+      var px = -dy / L, py = dx / L;                 // unit perpendicular to root->end
+      // signed distance the sprung mid already sits off the root->end line
+      var off = (m[0] - rootx) * px + (m[1] - rooty) * py;
+      // desired bow grows with limb length (a reaching strike bends more), min so a
+      // resting/straight limb still shows a joint; keep the spring's own lag too.
+      var want = sign * (6 + L * 0.14) * gain;
+      var add = want - off;
+      m[0] += px * add; m[1] += py * add;
+    }
+    function shapeLimbs(p) {
+      var H = p.hip;
+      bowJoint(p, p.shF[0], p.shF[1], "elF", "hnF", 1, 1.0);   // front arm elbow bows down/back
+      bowJoint(p, p.shB[0], p.shB[1], "elB", "hnB", 1, 0.9);
+      bowJoint(p, H[0] + 4, H[1], "kneeF", "footF", -1, 0.85); // front knee bows forward
+      bowJoint(p, H[0] - 6, H[1], "kneeB", "footB", -1, 0.85);
+    }
+
+    // advance a fighter's sprung pose toward `target`, returning positions {joint:[x,y]}
+    function springPose(f, target) {
+      if (!f.dyn) { f.dyn = {}; for (var k0 in target) f.dyn[k0] = [target[k0][0], target[k0][1], 0, 0]; }
+      var dt = Math.min(0.033, curReal), sub = dt > 0.02 ? 2 : 1, sdt = dt / sub, out = {};
+      for (var k in target) {
+        var st = f.dyn[k]; if (!st) st = f.dyn[k] = [target[k][0], target[k][1], 0, 0];
+        var cfg = DYN[k] || DYN_DEFAULT, tx = target[k][0], ty = target[k][1];
+        for (var i = 0; i < sub; i++) springStep(st, tx, ty, cfg, sdt);
+        out[k] = [st[0], st[1]];
+      }
+      // expose the current sprung positions for joint-tied hitboxes + test hooks
+      f.dpose = out; f._target = target;
+      return out;
+    }
+
     /* ---- F2: data-driven move system ---- */
     var MOVES = window.FIGHTER_MOVES || {};
     /* ---- F3.2: per-god characters. Each god's kit is the shared base move with
@@ -145,6 +216,32 @@
       for (k in u) { var av = (a.d && a.d[k]) || [0, 0], bv = (b.d && b.d[k]) || [0, 0]; out[k] = [av[0] + (bv[0] - av[0]) * e, av[1] + (bv[1] - av[1]) * e]; }
       return out;
     }
+    /* ---- rig: whole-body drive ----
+       The old strikes moved only the attacking limb — the torso stood still, so a
+       punch read as a puppet's arm on a mannequin. driveBody adds the thing a real
+       fighter does: coil back (anticipation), then drive the hips/spine/head
+       forward into the blow (commitment + weight transfer), then settle
+       (follow-through). bodyDrive(pr) is that timing as a signed curve: <0 wind-up,
+       +1 at contact, easing back to 0. Applied to the core in every strike state,
+       so the whole body commits, not just the fist. */
+    function dsmooth(x) { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }
+    function dseg(pr, a0, v0, a1, v1) { return v0 + (v1 - v0) * dsmooth((pr - a0) / (a1 - a0)); }
+    function bodyDrive(pr) {
+      if (pr < 0.20) return dseg(pr, 0, 0, 0.20, -0.60);      // coil back
+      if (pr < 0.42) return dseg(pr, 0.20, -0.60, 0.42, 1.0); // explode forward to contact
+      if (pr < 0.64) return dseg(pr, 0.42, 1.0, 0.64, 0.22);  // follow-through
+      return dseg(pr, 0.64, 0.22, 1.0, 0);                    // settle
+    }
+    function driveBody(p, drv, gain) {
+      gain = gain == null ? 1 : gain;
+      var fx = drv * 8 * gain, up = Math.max(0, drv);
+      add(p, "hip", fx * 0.45, up * 2.2 * gain);              // hips lead + drop into the blow
+      add(p, "chest", fx * 0.85, 0); add(p, "neck", fx * 1.05, 0); add(p, "head", fx * 1.25, 0);
+      add(p, "shF", fx * 0.9, 0); add(p, "shB", fx * 0.6, 0);
+      add(p, "footB", -up * 3 * gain, 0);                     // back foot plants and pushes
+      add(p, "kneeF", up * 2 * gain, up * 1.5 * gain);        // front knee bends under the weight
+    }
+
     // cancel-aware gate: recovery of a cancelable move can be interrupted into a listed follow-up
     function canAct(f, newId) {
       if (f.cooldown <= 0) return true;
@@ -175,10 +272,12 @@
         // F2/F3.2: the strike animation is data — poseKeys from the god's resolved move
         var off = moveOffsets(moveFor(f, st), pr);
         for (var mk in off) add(p, mk, off[mk][0], off[mk][1]);
+        driveBody(p, bodyDrive(pr), st === "kick" ? 1.15 : st === "headbutt" ? 1.1 : 0.9);
       } else if (st === "throw") {
         var mvT = moveFor(f, "throw");
         if (mvT) { var oT = moveOffsets(mvT, pr); for (var kT in oT) add(p, kT, oT[kT][0], oT[kT][1]); }
         else { var tk = strikeCurve(pr); add(p, "hnF", 22 * tk, -18 * tk); add(p, "elF", 15 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk); add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0); }
+        driveBody(p, bodyDrive(pr), 0.8);
       } else if (st === "special") {
         var mvS = moveFor(f, "special");
         if (mvS) { var oS = moveOffsets(mvS, pr); for (var kS in oS) add(p, kS, oS[kS][0], oS[kS][1]); }
@@ -278,12 +377,11 @@
     /* ===================== the figure ===================== */
     function drawFighter(c, f, t) {
       var target = poseFor(f, t), s = f.skin, dmg = 1 - clamp(f.hp, 0, 100) / 100;
-      // blend the displayed skeleton toward the target pose so transitions ease in
-      // instead of snapping (strikes blend faster to stay crisp).
-      if (!f.dpose) f.dpose = clonePose(target);
-      var bf = (f.state === "light" || f.state === "kick" || f.state === "headbutt" || f.state === "special" || f.state === "throw" || f.state === "hit" || f.state === "aerial") ? 0.55 : 0.3;
-      for (var jk in target) { var dj = f.dpose[jk], gj = target[jk]; if (dj) { dj[0] += (gj[0] - dj[0]) * bf; dj[1] += (gj[1] - dj[1]) * bf; } }
-      var p = f.dpose;
+      // rig: drive the displayed skeleton toward the target with a damped spring,
+      // so extremities snap out, overshoot and settle instead of sliding linearly,
+      // then bow the elbows/knees so limbs bend on an arc instead of straight sticks.
+      var p = springPose(f, target);
+      shapeLimbs(p);
       // ease facing turns so the character flips smoothly rather than mirroring instantly
       if (f.face == null) f.face = f.facing;
       f.face += (f.facing - f.face) * 0.3;
@@ -1090,6 +1188,7 @@
       if (!running) return;
       // real elapsed time, clamped so a long stall can't spiral the accumulator
       var real = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; var t = ts / 1000;
+      curReal = real; // last real frame delta, read by the pose-dynamics spring in drawFighter
       // --- purely-visual updates run once per rendered frame (real time) ---
       for (var i = 0; i < motes.length; i++) { var mo = motes[i]; mo.y -= mo.v * real * 30; mo.x += Math.sin(t + i) * 0.2; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
       flash = Math.max(0, flash - real * 2); shake = Math.max(0, shake - real * 32);
@@ -1353,6 +1452,9 @@
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
       window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
+      // rig introspection: current displayed (sprung) pose + its authored target,
+      // for measuring overshoot/follow-through and per-frame limb-length stability
+      window.__rig = function (which) { var f = which === "p2" ? p2 : p1; return f ? { dpose: f.dpose, target: f._target, state: f.state } : null; };
       // resolved per-god stats, for the F3.2 "differs on >=3 stats" assertion
       window.__charStats = function (g) {
         var fake = { godId: g };
