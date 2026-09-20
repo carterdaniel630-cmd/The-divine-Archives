@@ -37,7 +37,7 @@
   });
 
   function mountGame(root, ctx) {
-    var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1, MINSEP = 60;
+    var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1, MINSEP = 74;
     // DMG scales every hit so a match is a war of attrition, not a 3-hit blowout —
     // longer fights give the neutral/defense game room to matter.
     var DMG = 0.5;
@@ -131,16 +131,19 @@
        lag a target, never overshoot it. f = frequency (Hz), z = damping ratio
        (<1 overshoots, 1 is critical). State per joint is [x, y, vx, vy]. */
     var TAU = Math.PI * 2;
-    var DYN_DEFAULT = { f: 6.0, z: 0.9 };
+    // Looser, lower-frequency springs read as fluid weight; the earlier high-stiffness
+    // set snapped to each pose and looked mechanical. Extremities are under-damped so
+    // they trail and settle (follow-through/whip); the core stays a touch firmer.
+    var DYN_DEFAULT = { f: 5.4, z: 0.86 };
     var DYN = {
-      hnF: { f: 9.0, z: 0.52 }, hnB: { f: 8.4, z: 0.55 },
-      footF: { f: 8.4, z: 0.55 }, footB: { f: 8.0, z: 0.58 },
-      head: { f: 6.0, z: 0.64 },
-      elF: { f: 7.6, z: 0.62 }, elB: { f: 7.2, z: 0.66 },
-      kneeF: { f: 7.4, z: 0.66 }, kneeB: { f: 7.0, z: 0.70 },
-      neck: { f: 6.0, z: 0.80 },
-      hip: { f: 5.2, z: 0.96 }, chest: { f: 5.6, z: 0.92 },
-      shF: { f: 6.2, z: 0.88 }, shB: { f: 6.2, z: 0.88 }
+      hnF: { f: 7.6, z: 0.44 }, hnB: { f: 7.0, z: 0.47 },
+      footF: { f: 7.2, z: 0.46 }, footB: { f: 6.8, z: 0.50 },
+      head: { f: 5.2, z: 0.56 },
+      elF: { f: 6.4, z: 0.54 }, elB: { f: 6.0, z: 0.58 },
+      kneeF: { f: 6.4, z: 0.58 }, kneeB: { f: 6.0, z: 0.62 },
+      neck: { f: 5.2, z: 0.72 },
+      hip: { f: 4.6, z: 0.92 }, chest: { f: 4.9, z: 0.86 },
+      shF: { f: 5.4, z: 0.80 }, shB: { f: 5.4, z: 0.82 }
     };
     function springStep(st, tx, ty, cfg, dt) {
       var w = cfg.f * TAU, k = w * w, cc = 2 * cfg.z * w;
@@ -320,11 +323,15 @@
       }
       // living idle: a slow weight-shift + breathing sway so a waiting fighter isn't a statue
       if (st === "idle") {
-        var bob = Math.sin(t * 2.4 + f.phase) * 1.2, sway = Math.sin(t * 1.5 + f.phase) * 2.2;
-        for (var q in p) p[q][1] += bob * 0.2;
-        add(p, "hip", sway * 0.5, 0); add(p, "chest", sway * 0.7, 0); add(p, "neck", sway * 0.8, 0); add(p, "head", sway, 0);
-        add(p, "hnF", sway * 0.6 + Math.sin(t * 2.4 + f.phase + 1) * 1.4, 0); add(p, "hnB", -sway * 0.5, 0);
-        add(p, "shF", sway * 0.4, 0); add(p, "shB", sway * 0.3, 0);
+        // a fighting-stance idle: weight shifts side to side, chest/shoulders lift with
+        // breath, hands bob — so a waiting god sways on his feet instead of standing rigid.
+        var bob = Math.sin(t * 2.2 + f.phase) * 1.5, sway = Math.sin(t * 1.35 + f.phase) * 3.0, br2 = Math.sin(t * 2.2 + f.phase + 0.6);
+        for (var q in p) p[q][1] += bob * 0.16;
+        add(p, "hip", sway * 0.6, Math.abs(sway) * 0.12); add(p, "chest", sway * 0.85, -br2 * 0.8);
+        add(p, "neck", sway * 0.95, -br2 * 0.6); add(p, "head", sway * 1.15, -br2 * 0.4);
+        add(p, "hnF", sway * 0.7 + br2 * 1.8, br2 * 0.8); add(p, "hnB", -sway * 0.6, -br2 * 0.6);
+        add(p, "shF", sway * 0.5, -br2 * 0.5); add(p, "shB", sway * 0.35, -br2 * 0.4);
+        add(p, "kneeF", sway * 0.25, 0); add(p, "kneeB", -sway * 0.25, 0);
       }
       return p;
     }
@@ -896,7 +903,7 @@
         return;
       }
       // GROUND MELEE (data-driven): pick the move, then gate through the cancel-aware check
-      var adx = Math.abs(other.x - f.x), id = kind === "light" ? "light" : (adx < 48 ? "headbutt" : "kick");
+      var adx = Math.abs(other.x - f.x), id = kind === "light" ? "light" : (adx < 60 ? "headbutt" : "kick");
       if (!canAct(f, id)) return;
       var m = moveFor(f, id);
       if (m) {
@@ -1267,10 +1274,11 @@
       // still land. Slack lost to a wall is transferred to the free fighter, so a
       // cornered player isn't shoved through the wall and left overlapping.
       var lo = p1.x <= p2.x ? p1 : p2, hi = p1.x <= p2.x ? p2 : p1;
-      // only separate when both are grounded — a jump lets you pass THROUGH the foe
-      // and land on the far side (cross-up / side-switch), which the hard floor blocked.
-      var airborne = (p1.y || 0) > 26 || (p2.y || 0) > 26;
-      if (!airborne && hi.x - lo.x < MINSEP && lo.state !== "ko" && hi.state !== "ko") {
+      // don't separate while a jump OR a dash is passing through — that's how you get
+      // to the far side of the foe (a jump-over cross-up, or a grounded dash-through
+      // side-switch). The hard floor otherwise pins you to one side.
+      var passing = (p1.y || 0) > 26 || (p2.y || 0) > 26 || p1.dashT > 0 || p2.dashT > 0;
+      if (!passing && hi.x - lo.x < MINSEP && lo.state !== "ko" && hi.state !== "ko") {
         var need = MINSEP - (hi.x - lo.x), loX = lo.x - need / 2, hiX = hi.x + need / 2;
         if (loX < 40) { hiX += 40 - loX; loX = 40; }
         if (hiX > VW - 40) { loX -= hiX - (VW - 40); hiX = VW - 40; }
@@ -1341,7 +1349,7 @@
       // weighty locomotion: ease the ACTUAL velocity toward the control's desired
       // velocity so starts and stops carry momentum instead of snapping. Knockback
       // (hit/ko) keeps its own impulse and just decays.
-      if (f.dashT > 0 && f.state !== "hit" && f.state !== "ko") { f.x += f.mvx; f.mvx *= 0.82; f.vx = 0; } // dash burst decays
+      if (f.dashT > 0 && f.state !== "hit" && f.state !== "ko") { f.x += f.mvx; f.mvx *= 0.86; f.vx = 0; } // dash burst decays
       else if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
       else {
         var accel = f.vx !== 0 ? 0.24 : 0.32;
@@ -1367,9 +1375,12 @@
     function startDash(f, dir) {
       if (f.dashT > 0 || !f.onGround || f.cooldown > 0 || f.stun > 0) return;
       var back = dir !== f.facing;
-      f.dashT = 0.20; f.mvx = dir * (back ? 10 : 11.5); f.facing = f.facing; f.tapT = 0; f.tapDir = 0;
-      if (back) f.iframe = 0.15;                 // back-dash slips through a strike
-      setState(f, "walk", 0.2); landDust(f);
+      // a forward dash reaches a bit further so it can carry you THROUGH the foe to
+      // the far side (mid-fight side-switch); both dashes are invincible while moving,
+      // so the pass-through is safe.
+      f.dashT = back ? 0.22 : 0.30; f.mvx = dir * (back ? 10.5 : 14.5); f.tapT = 0; f.tapDir = 0;
+      f.iframe = back ? 0.16 : 0.22;
+      setState(f, "walk", 0.22); landDust(f);
     }
     function humanControl(f, other) {
       var km = f.km || {};
