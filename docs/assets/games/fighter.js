@@ -97,6 +97,34 @@
       img.onload = function () { HERO.img = img; HERO.ready = true; try { root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); }); } catch (e) { } };
       img.src = SCRIPT_BASE + HERO_SHEET;
     }
+
+    /* ============================================================================
+       FULL-BODY PAINTED SPRITES (drop-in) — the fighters are now painted per-god
+       sprites sliced from the lineup art. One idle frame ships; the loader also
+       looks for optional pose frames ({god}_attack_windup|attack_strike|block|
+       hurt|ko|victory.png) in art/sprites/ and cross-fades to them, with all
+       motion layered on by code (transforms + a feet-pivoted strip-mesh bend).
+       The old cropped-head-on-procedural-body rig is retired behind USE_HEAD_RIG.
+       Hitboxes/movement/logic are unchanged — the skeleton still drives them; the
+       sprite is purely what you see. ============================================ */
+    var USE_HEAD_RIG = false;                      // old head-on-body rig, off by default
+    var SPRITE_META = { cw: 320, ch: 512, pivotX: 160, baseY: 486, figH: 460 };
+    var GAMEH = 172;                               // on-canvas fighter height (px)
+    var SPRITE_POSES = ["idle", "attack_windup", "attack_strike", "block", "hurt", "ko", "victory"];
+    var SPRITES = {};                              // godId -> { idle:Image, ... } (only loaded frames)
+    var SPRITE = { ready: false, pending: 0 };
+    var SBUF = null, SBX = null;                   // offscreen buffer for flash + pose crossfade
+    function loadSprites() {
+      HERO_ORDER.forEach(function (g) {
+        SPRITES[g] = {};
+        SPRITE_POSES.forEach(function (pose) {
+          var im = new Image();
+          im.onload = function () { SPRITES[g][pose] = im; if (pose === "idle") SPRITE.ready = true; };
+          im.onerror = function () { };            // optional pose frames may be absent -> fallback to idle
+          im.src = SCRIPT_BASE + "art/sprites/" + g + "_" + pose + ".png";
+        });
+      });
+    }
     function heroCrop(id) {
       var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
       var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2, mx = iw * HERO_INSET, my = ih * HERO_INSET;
@@ -404,6 +432,82 @@
     }
 
     /* ===================== the figure ===================== */
+    /* ---- sprite animation: code motion + pose-frame crossfade over one painted pose ---- */
+    function stateToPose(f) {
+      var st = f.state;
+      if (st === "ko") return "ko";
+      if (st === "hit") return "hurt";
+      if (st === "block") return "block";
+      if (st === "light" || st === "kick" || st === "headbutt" || st === "throw" || st === "special" || st === "aerial")
+        return (clamp(f.stTime / f.stDur, 0, 1) < 0.3) ? "attack_windup" : "attack_strike";
+      if (winner === f) return "victory";
+      return "idle";
+    }
+    function frameFor(set, pose) { return (set && set[pose]) || (set && set.idle) || null; }
+    // advance the per-fighter sprite transform state (bob / squash / lean-shear / rot /
+    // flash / shake) toward targets derived from the combat state, + pose crossfade.
+    function updateSpriteAnim(f, t) {
+      var S = f.spr || (f.spr = { bob: 0, sx: 1, sy: 1, lean: 0, rot: 0, flash: 0, shake: 0, pose: "idle", prev: "idle", fade: 1 });
+      var dt = Math.min(0.033, curReal), st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1), ph = f.phase;
+      var tb = 0, tl = 0, tsx = 1, tsy = 1, trot = 0;
+      var atk = st === "light" || st === "kick" || st === "headbutt" || st === "throw" || st === "special" || st === "aerial";
+      if (st === "idle") { tb = Math.sin(t * 2.2 + ph) * 2.4; tsy = 1 + Math.sin(t * 2.2 + ph) * 0.014; tl = Math.sin(t * 1.3 + ph) * 2.2; }
+      else if (st === "walk") { tb = Math.abs(Math.sin(t * 9 + ph)) * -2.4; tl = 9 + Math.sin(t * 9 + ph) * 5; tsy = 1 + Math.sin(t * 18 + ph) * 0.02; }
+      else if (st === "jump") { tl = 6; tsy = 1.05; tsx = 0.97; }
+      else if (st === "block") { tsy = 0.9; tsx = 1.04; tl = -6; tb = 3; }
+      else if (atk) {
+        if (pr < 0.22) { tl = -9; tsy = 0.93; tsx = 1.04; }            // windup: coil back + squash
+        else if (pr < 0.5) { tl = 24; tsx = 1.06; tsy = 1.03; }        // strike: lunge forward + stretch
+        else { tl = 5; }                                               // recover
+      } else if (st === "hit") { tl = -15; tb = -2; }
+      else if (st === "ko") { trot = -1.28; tb = 8; tl = -6; }         // slump / fall back
+      else if (winner === f) { tsy = 1.03; tl = Math.sin(t * 1.6 + ph) * 3.4; tb = Math.sin(t * 1.6 + ph) * 1.5; }
+      // if a dedicated pose FRAME exists, it already encodes the pose — so code motion
+      // drops to secondary (bob/flash/small sway) instead of re-applying the big lean/
+      // rotation/squash on top. With only the idle frame, code motion does it all.
+      var set0 = SPRITES[f.godId], pose0 = stateToPose(f), hasPose = !!(set0 && set0[pose0] && pose0 !== "idle");
+      if (hasPose) { tl *= 0.3; trot = 0; tsx = 1 + (tsx - 1) * 0.3; tsy = 1 + (tsy - 1) * 0.3; }
+      var k = Math.min(1, dt * 12), kr = Math.min(1, dt * 6);
+      S.bob += (tb - S.bob) * k; S.lean += (tl - S.lean) * k; S.sx += (tsx - S.sx) * k; S.sy += (tsy - S.sy) * k; S.rot += (trot - S.rot) * kr;
+      // impact reactions on the frame a hit/ko begins
+      if ((st === "hit" || st === "ko") && f.stTime < dt * 2.2) { S.flash = 1; S.shake = 5; }
+      S.flash = Math.max(0, S.flash - dt * 4); S.shake = Math.max(0, S.shake - dt * 26);
+      // pose crossfade
+      var want = stateToPose(f);
+      if (want !== S.pose) { S.prev = S.pose; S.pose = want; S.fade = 0; }
+      S.fade = Math.min(1, S.fade + dt * 9);
+      return S;
+    }
+    function drawSprite(c, f, t) {
+      var set = SPRITES[f.godId], M = SPRITE_META, S = updateSpriteAnim(f, t);
+      var cur = frameFor(set, S.pose), prev = frameFor(set, S.prev); if (!cur) return false;
+      if (!SBUF) { SBUF = document.createElement("canvas"); SBUF.width = M.cw; SBUF.height = M.ch; SBX = SBUF.getContext("2d"); }
+      SBX.clearRect(0, 0, M.cw, M.ch);
+      if (prev && prev !== cur && S.fade < 1) { SBX.globalAlpha = 1 - S.fade; SBX.drawImage(prev, 0, 0); SBX.globalAlpha = S.fade; SBX.drawImage(cur, 0, 0); SBX.globalAlpha = 1; }
+      else SBX.drawImage(cur, 0, 0);
+      if (S.flash > 0.02) { SBX.globalCompositeOperation = "source-atop"; SBX.fillStyle = "rgba(255,248,230," + (S.flash * 0.75) + ")"; SBX.fillRect(0, 0, M.cw, M.ch); SBX.globalCompositeOperation = "source-over"; }
+      var facing = f.face < 0 ? -1 : 1, gs = GAMEH / M.figH;
+      var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
+      // ground shadow (kept from the procedural path)
+      c.save(); c.translate(rx, GROUND - ry); c.scale(1, 0.28);
+      var sr = 30 * (1 - Math.min(ry, 150) / 320), sa = 0.4 * (1 - Math.min(ry, 150) / 260);
+      c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr, 0, 7); c.fill();
+      c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
+      // body: feet-pivoted, flipped by facing, KO-rotated, squash/stretch, then a
+      // strip-mesh bend where horizontal shear grows toward the head.
+      c.save();
+      c.translate(rx + S.shake, GROUND - ry - S.bob);
+      c.scale(facing, 1); c.rotate(S.rot); c.scale(S.sx * gs, S.sy * gs);
+      var N = 22, figH = M.figH, baseY = M.baseY, px2 = M.pivotX, ch = M.ch;
+      for (var i = 0; i < N; i++) {
+        var yA = ch * i / N, yB = ch * (i + 1) / N, vc = (baseY - (yA + yB) / 2) / figH;
+        var dxs = S.lean * clamp(vc, 0, 1.25);
+        c.drawImage(SBUF, 0, yA, M.cw, yB - yA, -px2 + dxs, yA - baseY, M.cw, (yB - yA) + 0.6);
+      }
+      c.restore();
+      return true;
+    }
+
     function drawFighter(c, f, t) {
       var target = poseFor(f, t), s = f.skin, dmg = 1 - clamp(f.hp, 0, 100) / 100;
       // rig: drive the displayed skeleton toward the target with a damped spring,
@@ -414,6 +518,9 @@
       // ease facing turns so the character flips smoothly rather than mirroring instantly
       if (f.face == null) f.face = f.facing;
       f.face += (f.facing - f.face) * 0.3;
+      // full-body painted sprite is the default renderer (skeleton above still drives
+      // hitboxes via f.dpose); procedural body is the fallback if sprites aren't loaded.
+      if (SPRITE.ready && f.godId && SPRITES[f.godId] && SPRITES[f.godId].idle) { drawSprite(c, f, t); return; }
       var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
       // fixed-timestep render interpolation: draw between the last two sim positions
       var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
@@ -443,8 +550,8 @@
       drawGreave(c, p.kneeF, p.footF, s);
       drawSandal(c, p.footF, s, false);
 
-      // layered cutout rig: real cropped head art when available, else procedural head
-      if (HERO.ready && f.godId && FIGHTER_ART[f.godId]) drawHeadArt(c, p, s, f, f.godId);
+      // retired head-on-body rig (behind USE_HEAD_RIG, off by default); else plain head
+      if (USE_HEAD_RIG && HERO.ready && f.godId && FIGHTER_ART[f.godId]) drawHeadArt(c, p, s, f, f.godId);
       else drawHead(c, p, s, t, f);
 
       // front arm + weapon
@@ -1724,6 +1831,7 @@
     }
     attachKeys();
     loadHeroes();
+    loadSprites();
     root.innerHTML = '<div class="rq-loading">Summoning the gods…</div>';
     loadFighterFacts(selectScreen);
 
