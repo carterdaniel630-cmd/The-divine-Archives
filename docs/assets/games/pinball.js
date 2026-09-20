@@ -205,28 +205,72 @@
         ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a>";
     }
 
+    /* ---------------- celestial bumper art ---------------- */
+    // Each bumper is a distinct heavenly body, not a plain disc: the Sun rays, the
+    // Moon a crescent, the Pole Star a four-point star, the Earth a banded globe.
+    // Lit ones bloom with gold. Gives the table the ornate, sourced-cosmos feel the
+    // "Firmament" name promises instead of four grey circles.
+    function drawBumper(bm, t) {
+      var x = bm.x, y = bm.y, r = bm.r, lit = bm.lit, pulse = lit ? 1 + Math.sin(t * 4 + x) * 0.05 : 1;
+      cx.save();
+      if (lit) { cx.shadowColor = COL.goldB; cx.shadowBlur = 22; }
+      // faint halo ring
+      cx.strokeStyle = lit ? "rgba(231,198,128,.5)" : "rgba(199,154,84,.22)"; cx.lineWidth = 1;
+      cx.beginPath(); cx.arc(x, y, r + 6, 0, 7); cx.stroke();
+      var rr = r * pulse;
+      if (bm.name === "Sun") {
+        for (var i = 0; i < 12; i++) { var a = i / 12 * 6.283 + t * 0.3, r0 = rr + 2, r1 = rr + (lit ? 9 : 5); cx.strokeStyle = lit ? COL.goldB : "rgba(199,154,84,.4)"; cx.lineWidth = 2; cx.beginPath(); cx.moveTo(x + Math.cos(a) * r0, y + Math.sin(a) * r0); cx.lineTo(x + Math.cos(a) * r1, y + Math.sin(a) * r1); cx.stroke(); }
+        var sg = cx.createRadialGradient(x - rr * 0.3, y - rr * 0.3, 2, x, y, rr);
+        sg.addColorStop(0, lit ? "#fff2cf" : "#6a4e26"); sg.addColorStop(1, lit ? "#e6a63a" : "#3a2a15");
+        cx.fillStyle = sg; cx.beginPath(); cx.arc(x, y, rr, 0, 7); cx.fill();
+      } else if (bm.name === "Moon") {
+        var mg = cx.createRadialGradient(x - rr * 0.3, y - rr * 0.3, 2, x, y, rr);
+        mg.addColorStop(0, lit ? "#f2ecd8" : "#59503c"); mg.addColorStop(1, lit ? "#b8ac82" : "#2c2718");
+        cx.fillStyle = mg; cx.beginPath(); cx.arc(x, y, rr, 0, 7); cx.fill();
+        cx.globalCompositeOperation = "destination-out"; cx.beginPath(); cx.arc(x + rr * 0.5, y - rr * 0.15, rr * 0.85, 0, 7); cx.fill();
+        cx.globalCompositeOperation = "source-over";
+      } else if (bm.name === "Pole Star") {
+        var pg = cx.createRadialGradient(x, y, 1, x, y, rr); pg.addColorStop(0, lit ? "#fff" : "#8a7a4e"); pg.addColorStop(1, lit ? "#e7c680" : "#3a2c18");
+        cx.fillStyle = pg; cx.beginPath(); cx.arc(x, y, rr * 0.5, 0, 7); cx.fill();
+        cx.fillStyle = lit ? COL.goldB : "rgba(199,154,84,.55)";
+        for (var s = 0; s < 4; s++) { var aa = s / 4 * 6.283 + Math.PI / 4 * (s % 2), lng = (s % 2 ? rr * 0.7 : rr * 1.15); cx.save(); cx.translate(x, y); cx.rotate(s / 4 * 6.283); cx.beginPath(); cx.moveTo(0, -lng); cx.lineTo(rr * 0.22, 0); cx.lineTo(0, lng); cx.lineTo(-rr * 0.22, 0); cx.closePath(); cx.fill(); cx.restore(); }
+      } else { // Earth
+        var eg = cx.createRadialGradient(x - rr * 0.3, y - rr * 0.3, 2, x, y, rr);
+        eg.addColorStop(0, lit ? "#bfe0d6" : "#3c4e48"); eg.addColorStop(1, lit ? "#2f6a58" : "#1a2620");
+        cx.fillStyle = eg; cx.beginPath(); cx.arc(x, y, rr, 0, 7); cx.fill();
+        cx.save(); cx.beginPath(); cx.arc(x, y, rr, 0, 7); cx.clip(); cx.fillStyle = lit ? "rgba(120,180,110,.7)" : "rgba(90,120,80,.4)";
+        cx.beginPath(); cx.ellipse(x - rr * 0.2, y - rr * 0.3, rr * 0.5, rr * 0.3, 0.4, 0, 7); cx.fill();
+        cx.beginPath(); cx.ellipse(x + rr * 0.35, y + rr * 0.25, rr * 0.4, rr * 0.55, -0.3, 0, 7); cx.fill(); cx.restore();
+      }
+      cx.restore();
+      cx.strokeStyle = lit ? COL.goldB : "rgba(199,154,84,.4)"; cx.lineWidth = 1.5; cx.beginPath(); cx.arc(x, y, rr, 0, 7); cx.stroke();
+      cx.fillStyle = lit ? "#241606" : "rgba(231,198,128,.5)"; cx.font = "600 8px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText(bm.name.toUpperCase(), x, y + r + 15);
+    }
+
     /* ---------------- render ---------------- */
     function draw() {
       var g = cx.createLinearGradient(0, 0, 0, VH); g.addColorStop(0, "#1a1226"); g.addColorStop(0.6, "#140d1c"); g.addColorStop(1, "#0d0906");
       cx.fillStyle = g; cx.fillRect(0, 0, VW, VH);
       for (var i = 0; i < st.stars.length; i++) { var s = st.stars[i]; cx.globalAlpha = s.a; cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
+      // concentric orbit rings — the ordered heavens, centered on the Pole Star
+      var oc = BUMPERS[2], nT = (last || 0) / 1000;
+      cx.save(); cx.strokeStyle = "rgba(199,154,84,.10)"; cx.lineWidth = 1;
+      for (var o = 0; o < 4; o++) { cx.beginPath(); cx.arc(oc.x, oc.y, 46 + o * 40, 0, 7); cx.stroke(); }
+      // a slow travelling glint on the outermost ring
+      var ga = nT * 0.5, gr = 46 + 3 * 40; cx.fillStyle = "rgba(231,198,128,.5)"; cx.beginPath(); cx.arc(oc.x + Math.cos(ga) * gr, oc.y + Math.sin(ga) * gr, 1.6, 0, 7); cx.fill();
+      cx.restore();
+      // launch-lane glow (right channel the spark rides up)
+      var lg = cx.createLinearGradient(270, 0, 304, 0); lg.addColorStop(0, "rgba(231,198,128,0)"); lg.addColorStop(1, "rgba(178,106,52,.18)");
+      cx.fillStyle = lg; cx.fillRect(272, 60, 32, 300);
       // walls
       cx.strokeStyle = "rgba(199,154,84,.55)"; cx.lineWidth = 3; cx.lineCap = "round";
       SEGS.forEach(function (sg, i) { cx.strokeStyle = SLING.indexOf(i) >= 0 ? COL.ember : "rgba(199,154,84,.5)"; cx.beginPath(); cx.moveTo(sg[0], sg[1]); cx.lineTo(sg[2], sg[3]); cx.stroke(); });
       // drain gap marker
       cx.strokeStyle = "rgba(180,60,60,.4)"; cx.setLineDash([3, 5]); cx.beginPath(); cx.moveTo(DRAIN.x1, DRAIN.y); cx.lineTo(DRAIN.x2, DRAIN.y); cx.stroke(); cx.setLineDash([]);
-      // bumpers
-      BUMPERS.forEach(function (bm) {
-        cx.save();
-        var rg = cx.createRadialGradient(bm.x - bm.r * 0.3, bm.y - bm.r * 0.3, 2, bm.x, bm.y, bm.r);
-        rg.addColorStop(0, bm.lit ? "#fff2cf" : "#4a3a22"); rg.addColorStop(1, bm.lit ? COL.gold : "#2a2013");
-        if (bm.lit) { cx.shadowColor = COL.goldB; cx.shadowBlur = 16; }
-        cx.fillStyle = rg; cx.beginPath(); cx.arc(bm.x, bm.y, bm.r, 0, 7); cx.fill();
-        cx.restore();
-        cx.strokeStyle = bm.lit ? COL.goldB : "rgba(199,154,84,.4)"; cx.lineWidth = 1.5; cx.beginPath(); cx.arc(bm.x, bm.y, bm.r, 0, 7); cx.stroke();
-        cx.fillStyle = bm.lit ? "#2a1a0a" : "rgba(231,198,128,.5)"; cx.font = "600 8px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText(bm.name.toUpperCase(), bm.x, bm.y + 3);
-      });
+      // bumpers — distinct celestial bodies
+      var nowT = (last || 0) / 1000;
+      BUMPERS.forEach(function (bm) { drawBumper(bm, nowT); });
       // flippers
       [st.L, st.R].forEach(function (f) {
         var tx = f.px + Math.cos(f.ang) * f.len * f.sign, ty = f.py + Math.sin(f.ang) * f.len;
