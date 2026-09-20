@@ -161,28 +161,20 @@
         var off = moveOffsets(MOVES[st], pr);
         for (var mk in off) add(p, mk, off[mk][0], off[mk][1]);
       } else if (st === "throw") {
-        // an overhand hurl
-        var tk = strikeCurve(pr);
-        add(p, "hnF", 22 * tk, -18 * tk); add(p, "elF", 15 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk);
-        add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0);
+        var mvT = MOVES.throw;
+        if (mvT) { var oT = moveOffsets(mvT, pr); for (var kT in oT) add(p, kT, oT[kT][0], oT[kT][1]); }
+        else { var tk = strikeCurve(pr); add(p, "hnF", 22 * tk, -18 * tk); add(p, "elF", 15 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk); add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0); }
       } else if (st === "special") {
-        var up = ease(clamp(pr * 1.5, 0, 1));
-        add(p, "hnF", 2 * up, -54 * up); add(p, "elF", 0, -40 * up); add(p, "shF", 0, -10 * up);
-        add(p, "hnB", -8 * up, -34 * up); add(p, "elB", -5, -24 * up); add(p, "head", 0, -4 * up); add(p, "chest", 0, -3 * up);
+        var mvS = MOVES.special;
+        if (mvS) { var oS = moveOffsets(mvS, pr); for (var kS in oS) add(p, kS, oS[kS][0], oS[kS][1]); }
+        else { var up = ease(clamp(pr * 1.5, 0, 1)); add(p, "hnF", 2 * up, -54 * up); add(p, "elF", 0, -40 * up); add(p, "shF", 0, -10 * up); add(p, "hnB", -8 * up, -34 * up); add(p, "elB", -5, -24 * up); add(p, "head", 0, -4 * up); add(p, "chest", 0, -3 * up); }
       } else if (st === "aerial") {
-        // a flying strike: front leg/fist drives forward and down, back leg tucks up
-        // behind — an unmistakable airborne silhouette, not the standing punch.
-        var ak = ease(clamp(pr * 1.45, 0, 1)), dive = f.aerialKind === "dive";
-        if (dive) {
-          add(p, "footF", 46 * ak, 30 * ak); add(p, "kneeF", 26 * ak, 12 * ak);
-          add(p, "footB", -20 * ak, -26 * ak); add(p, "kneeB", -12 * ak, -18 * ak);
-          add(p, "hnF", 10 * ak, -16 * ak); add(p, "hnB", -24 * ak, -14 * ak);
-          add(p, "chest", 6 * ak, 3 * ak); add(p, "head", 5 * ak, 1 * ak); add(p, "hip", 3 * ak, 2 * ak);
-        } else {
-          add(p, "hnF", 36 * ak, -6 * ak); add(p, "elF", 24 * ak, -3 * ak);
-          add(p, "footF", 10 * ak, 16 * ak); add(p, "kneeF", 6 * ak, 10 * ak);
-          add(p, "footB", -14 * ak, -22 * ak); add(p, "kneeB", -8 * ak, -14 * ak);
-          add(p, "hnB", -18 * ak, -6 * ak); add(p, "chest", 5 * ak, 0); add(p, "head", 4 * ak, 0);
+        var mvA = MOVES[f.aerialKind === "dive" ? "aerialDive" : "aerialPunch"];
+        if (mvA) { var oA = moveOffsets(mvA, pr); for (var kA in oA) add(p, kA, oA[kA][0], oA[kA][1]); }
+        else {
+          var ak = ease(clamp(pr * 1.45, 0, 1)), dive = f.aerialKind === "dive";
+          if (dive) { add(p, "footF", 46 * ak, 30 * ak); add(p, "kneeF", 26 * ak, 12 * ak); add(p, "footB", -20 * ak, -26 * ak); add(p, "kneeB", -12 * ak, -18 * ak); add(p, "hnF", 10 * ak, -16 * ak); add(p, "hnB", -24 * ak, -14 * ak); add(p, "chest", 6 * ak, 3 * ak); add(p, "head", 5 * ak, 1 * ak); add(p, "hip", 3 * ak, 2 * ak); }
+          else { add(p, "hnF", 36 * ak, -6 * ak); add(p, "elF", 24 * ak, -3 * ak); add(p, "footF", 10 * ak, 16 * ak); add(p, "kneeF", 6 * ak, 10 * ak); add(p, "footB", -14 * ak, -22 * ak); add(p, "kneeB", -8 * ak, -14 * ak); add(p, "hnB", -18 * ak, -6 * ak); add(p, "chest", 5 * ak, 0); add(p, "head", 4 * ak, 0); }
         }
       } else if (st === "hit") {
         var s = (1 - pr); add(p, "head", -10 * s, 0); add(p, "chest", -7 * s, 0); add(p, "neck", -8 * s, 0); add(p, "hnF", -8 * s, 4 * s); add(p, "hnB", -10 * s, 2 * s);
@@ -746,11 +738,19 @@
       if (!f.onGround) {
         if (f.cooldown > 0) return;
         var dive = kind === "heavy";
-        setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4; f.curMove = null;
         f.aerialKind = dive ? "dive" : "punch";
-        f.vx = f.facing * (dive ? 3.6 : 2.6);
-        if (dive && f.vy > -2) f.vy = -6;            // heavy = commit downward into the dive
-        f._hit = { kind: "aerial", at: 0.22, done: false, fin: false, dive: dive };
+        var am = MOVES[dive ? "aerialDive" : "aerialPunch"];
+        if (am) {
+          setState(f, "aerial", am.total / 60); f.cooldown = (am.cooldownTicks || am.total) / 60; f.curMove = null;
+          f.vx = f.facing * (am.driveVx != null ? am.driveVx : (dive ? 3.6 : 2.6));
+          if (dive && am.driveVy != null && f.vy > -2) f.vy = am.driveVy;
+          f._hit = { kind: "aerial", at: am.hitAt != null ? am.hitAt : 0.22, done: false, fin: false, dive: dive };
+        } else { // fallback
+          setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4; f.curMove = null;
+          f.vx = f.facing * (dive ? 3.6 : 2.6);
+          if (dive && f.vy > -2) f.vy = -6;
+          f._hit = { kind: "aerial", at: 0.22, done: false, fin: false, dive: dive };
+        }
         return;
       }
       // GROUND MELEE (data-driven): pick the move, then gate through the cancel-aware check
@@ -770,9 +770,10 @@
     function trySpecial(f, other) {
       if (f.energy < 40) return;
       var fin = f.energy >= 100 && other.hp <= 30 && other.state !== "ko";
-      setState(f, "special", 0.9); f.cooldown = 1.0;
+      var sm = MOVES.special;
+      if (sm) { setState(f, "special", sm.total / 60); f.cooldown = (sm.cooldownTicks || sm.total) / 60; f._cast = { done: false, at: (sm.cast || 25) / sm.total, fin: fin }; }
+      else { setState(f, "special", 0.9); f.cooldown = 1.0; f._cast = { done: false, at: 0.42, fin: fin }; }
       f.energy -= fin ? 100 : 40; f.aura = fin ? 1.9 : 1.2; flash = fin ? 0.6 : 0.35;
-      f._cast = { done: false, at: 0.42, fin: fin };
     }
     function spawnShot(f, fin) {
       var y = GROUND - 92 - (f.y || 0);
@@ -783,7 +784,9 @@
     // THROW a held relic as a projectile
     function throwItem(f, other) {
       if (!f.holding) return;
-      setState(f, "throw", 0.3); f.cooldown = 0.4;
+      var tm = MOVES.throw;
+      if (tm) { setState(f, "throw", tm.total / 60); f.cooldown = (tm.cooldownTicks || tm.total) / 60; }
+      else { setState(f, "throw", 0.3); f.cooldown = 0.4; }
       var it = f.holding; f.holding = null;
       var y = GROUND - 96 - (f.y || 0);
       shots.push({ x: f.x + f.facing * 26, y: y, vx: f.facing * 7.5, vy: -1.2, grav: 0.28, owner: f, other: other,
@@ -1327,10 +1330,14 @@
     loadFighterFacts(selectScreen);
 
     // read-only introspection for automated tests (only when the flag is set)
-    if (window.__FIGHT_TEST__) window.__fightState = function () {
-      function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, hp: f.hp, state: f.state, cooldown: f.cooldown, combo: f.combo, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX }; }
-      return (p1 && p2) ? { p1: snap(p1), p2: snap(p2), hitStop: hitStop, MOVES: Object.keys(MOVES) } : null;
-    };
+    if (window.__FIGHT_TEST__) {
+      window.__fightState = function () {
+        function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, y: f.y, hp: f.hp, energy: f.energy, facing: f.facing, onGround: f.onGround, state: f.state, cast: f._cast ? (f._cast.done ? "done" : "pending") : "none", cooldown: f.cooldown, combo: f.combo, holding: !!f.holding, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX }; }
+        return (p1 && p2) ? { p1: snap(p1), p2: snap(p2), hitStop: hitStop, shots: shots.length, MOVES: Object.keys(MOVES) } : null;
+      };
+      // test affordance: hand p1 a throwable relic so the throw path can be exercised
+      window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
+    }
 
     return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
   }

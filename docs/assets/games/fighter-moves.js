@@ -71,6 +71,52 @@
         { at: 0.60, d: { head: [10, 3], chest: [6, 2] } },
         { at: 1.00, d: {} }
       ]
+    },
+
+    /* ---- F3.1: special / throw / aerial migrated into the same data model.
+       These spawn a projectile or a thrown relic rather than a melee hitbox,
+       so combat logic (energy cost, finisher, projectile) stays in fighter.js;
+       the DATA supplies the timeline (ticks), cast frame, cooldown and pose. ---- */
+    special: {
+      id: "special", kind: "special",
+      total: 54, cast: 23, cooldownTicks: 60,   // charge, then release the blast at `cast`
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.45, d: { hnF: [2, -54], elF: [0, -40], shF: [0, -10], hnB: [-8, -34], elB: [-5, -24], head: [0, -4], chest: [0, -3] } },
+        { at: 0.85, d: { hnF: [2, -54], elF: [0, -40], shF: [0, -10], hnB: [-8, -34], elB: [-5, -24], head: [0, -4], chest: [0, -3] } },
+        { at: 1.00, d: {} }
+      ]
+    },
+
+    throw: {
+      id: "throw", kind: "throw",
+      total: 18, cooldownTicks: 24,             // the relic is released as the arm comes over
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.25, d: { hnF: [-11, 9], elF: [-7, 7] } },
+        { at: 0.45, d: { hnF: [22, -18], elF: [15, -14], shF: [4, -6], chest: [8, 0], head: [6, 0] } },
+        { at: 1.00, d: {} }
+      ]
+    },
+
+    aerialPunch: {
+      id: "aerialPunch", kind: "aerial",
+      total: 25, cooldownTicks: 24, hitAt: 0.22, driveVx: 2.6,
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.45, d: { hnF: [36, -6], elF: [24, -3], footF: [10, 16], kneeF: [6, 10], footB: [-14, -22], kneeB: [-8, -14], hnB: [-18, -6], chest: [5, 0], head: [4, 0] } },
+        { at: 1.00, d: { hnF: [36, -6], elF: [24, -3], footF: [10, 16], kneeF: [6, 10], footB: [-14, -22], kneeB: [-8, -14], hnB: [-18, -6], chest: [5, 0], head: [4, 0] } }
+      ]
+    },
+
+    aerialDive: {
+      id: "aerialDive", kind: "aerial",
+      total: 30, cooldownTicks: 30, hitAt: 0.22, driveVx: 3.6, driveVy: -6,
+      poseKeys: [
+        { at: 0.00, d: {} },
+        { at: 0.45, d: { footF: [46, 30], kneeF: [26, 12], footB: [-20, -26], kneeB: [-12, -18], hnF: [10, -16], hnB: [-24, -14], chest: [6, 3], head: [5, 1], hip: [3, 2] } },
+        { at: 1.00, d: { footF: [46, 30], kneeF: [26, 12], footB: [-20, -26], kneeB: [-12, -18], hnF: [10, -16], hnB: [-24, -14], chest: [6, 3], head: [5, 1], hip: [3, 2] } }
+      ]
     }
 
   };
