@@ -916,13 +916,31 @@
       shots.push({ x: f.x + f.facing * 26, y: y, vx: f.facing * 7.5, vy: -1.2, grav: 0.28, owner: f, other: other,
         r: it.r, dmg: it.dmg, item: it, col: it.col, colSh: it.colSh, spin: 0, life: 2.2, t: 0 });
     }
-    // pick up a relic you're standing over, or drop the one you hold
+    // grab: at point-blank it's a COMMAND THROW (unblockable — the answer to a
+    // turtle) which the victim can escape by grabbing back (throw-tech). Otherwise
+    // it picks up / sets down a relic as before.
     function tryGrab(f) {
-      if (f.state === "hit" || f.state === "ko" || !f.onGround) return;
-      if (f.holding) { // set it back down
-        groundItem = { kind: f.holding, x: clamp(f.x, 40, VW - 40), y: GROUND }; f.holding = null; return;
-      }
+      if (f.state === "hit" || f.state === "ko" || !f.onGround || f.stun > 0 || f.cooldown > 0) return;
+      var other = f === p1 ? p2 : p1;
+      if (other && other.state !== "ko" && Math.abs(other.x - f.x) < 58 && !f.holding) { doThrow(f, other); return; }
+      if (f.holding) { groundItem = { kind: f.holding, x: clamp(f.x, 40, VW - 40), y: GROUND }; f.holding = null; return; }
       if (groundItem && Math.abs(groundItem.x - f.x) < 34) { f.holding = groundItem.kind; groundItem = null; }
+    }
+    function doThrow(f, other) {
+      f.facing = other.x > f.x ? 1 : -1;
+      setState(f, "throw", 0.42); f.cooldown = 0.5;
+      // throw-tech: the victim escapes if they grab back in time (or, for the AI, on a read)
+      var teching = other.state !== "hit" && other.state !== "ko" && other.stun <= 0 &&
+        (other.isAI ? (Math.abs(other.x - f.x) < 60 && Math.random() < 0.22) : (other.km && !!keys[other.km.grab]));
+      if (teching) {
+        var d = f.facing; f.vx = 0; f.mvx = -d * 3; other.mvx = d * 3; f.cooldown = 0.3;
+        burst((f.x + other.x) / 2, GROUND - 70, "block"); hitStop = Math.max(hitStop, 0.06);
+        callout = { txt: "THROW BREAK", t: 0.6, col: "#e7c680" }; return;
+      }
+      other.facing = -f.facing;
+      applyDamage(f, other, 16, "grab", false, (f.x + other.x) / 2, GROUND - 70);
+      if (other.state !== "ko") { other.vy = 6.5; other.onGround = false; }   // toss up and away
+      callout = { txt: "THROW", t: 0.5, col: f.skin.eye };
     }
     function updateShots(dt) {
       for (var i = shots.length - 1; i >= 0; i--) {
@@ -973,10 +991,11 @@
     // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
     function applyDamage(f, other, dmg, kind, fin, hx, hy, move) {
       if (other.state === "ko") return;
-      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial";
-      // i-frames from a dodge/back-dash beat the hit entirely
-      if (other.iframe > 0 && !fin && kind !== "debris") { burst(hx, hy, "block"); return; }
-      var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
+      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial" || kind === "grab";
+      // i-frames from a dodge/back-dash beat the hit entirely (a throw still grabs)
+      if (other.iframe > 0 && !fin && kind !== "debris" && kind !== "grab") { burst(hx, hy, "block"); return; }
+      // a command throw is unblockable — holding block does not stop it
+      var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris" && kind !== "grab";
       // just-block / guard impact: tap block right as the blow lands (block held < 0.14s)
       var parry = blocked && other.stTime < 0.14;
       // counter-hit: you caught them mid-move (startup/active/recovery), not neutral
@@ -1001,7 +1020,7 @@
         var hstun = (kind === "headbutt" ? 0.42 : heavy ? 0.36 : 0.28) * (counter ? 1.45 : 1);
         setState(other, "hit", hstun); other.hitLock = hstun; other.stun = hstun; other.combo = 0;
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
-        var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
+        var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "grab" ? 5.5 : kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
         other.vx = dir * (fin ? 6 : kb) * (counter ? 1.2 : 1) / (charOf(other).weight || 1);
         // corner relief: if the defender is pinned against the wall behind them,
         // shove the ATTACKER back instead of burying them deeper in the corner.
@@ -1171,6 +1190,11 @@
       if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
       // occasionally leap — to close distance or dodge, and to bring the fight into the air
       if (f.onGround && f.cooldown <= 0 && Math.random() < 0.012 && (adx < 60 || adx > 150)) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); landDust(f); return; }
+      // dash in from mid-range to close the gap or whiff-punish; back-dash out on a read
+      if (f.onGround && f.dashT <= 0 && f.cooldown <= 0 && f.aiT <= 0) {
+        if (adx > 82 && adx < 150 && Math.random() < 0.05) { startDash(f, dir); f.aiT = 0.4; return; }
+        if (adx < 52 && Math.random() < 0.02) { startDash(f, -dir); f.aiT = 0.5; return; }   // evade back
+      }
       // holding a relic: close a little, then hurl it
       if (f.holding) { if (adx > 180) { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); return; } if (f.aiT <= 0) { tryAttack(f, other, "light"); f.aiT = 0.6; } return; }
       // a relic lies nearby and I'm free — go grab it sometimes
@@ -1186,7 +1210,8 @@
         var r = Math.random();
         // too close: often give ground rather than mash on top of the foe — this is
         // what stops the AI from gluing itself to the player and wall-pinning them
-        if (adx < 54 && r < 0.34) { f.intent = "space"; f.aiT = 0.3 + Math.random() * 0.35; }
+        if (adx < 54 && r < 0.30) { f.intent = "space"; f.aiT = 0.3 + Math.random() * 0.35; }
+        else if (adx < 46 && r < 0.46) { tryGrab(f); f.intent = "wait"; f.aiT = 0.6 + Math.random() * 0.4; }  // command-throw mixup vs turtling
         else { f.intent = r < 0.40 ? "light" : r < 0.62 ? "heavy" : r < 0.80 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
       }
       if (f.intent === "advance") { f.vx = dir * (charOf(f).walkSpeed || 3.1) * 0.52; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
@@ -1276,7 +1301,7 @@
     }
     function update(f, other, dt) {
       f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
-      f.stun = Math.max(0, (f.stun || 0) - dt); f.dashT = Math.max(0, (f.dashT || 0) - dt); f.iframe = Math.max(0, (f.iframe || 0) - dt);
+      f.stun = Math.max(0, (f.stun || 0) - dt); f.dashT = Math.max(0, (f.dashT || 0) - dt); f.iframe = Math.max(0, (f.iframe || 0) - dt); f.tapT = Math.max(0, (f.tapT || 0) - dt);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
       // guard meter: erodes while you hold block, recovers while you don't; hold too long and it breaks
       if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
@@ -1292,7 +1317,8 @@
       // weighty locomotion: ease the ACTUAL velocity toward the control's desired
       // velocity so starts and stops carry momentum instead of snapping. Knockback
       // (hit/ko) keeps its own impulse and just decays.
-      if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
+      if (f.dashT > 0 && f.state !== "hit" && f.state !== "ko") { f.x += f.mvx; f.mvx *= 0.82; f.vx = 0; } // dash burst decays
+      else if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
       else {
         var accel = f.vx !== 0 ? 0.24 : 0.32;
         f.mvx += (f.vx - f.mvx) * accel;
@@ -1311,12 +1337,28 @@
       if (f.state === "walk" && Math.abs(f.vx) < 0.1 && f.onGround) setState(f, "idle", 1);
       if ((f.state === "idle" || f.state === "walk" || f.state === "jump") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
     }
+    // a committed burst step. Toward the foe = dash-in (close range / whiff-punish);
+    // away = back-dash with brief invincibility (the evade/bait tool). Momentum
+    // carries then settles, so it reads as a real dash, not a teleport.
+    function startDash(f, dir) {
+      if (f.dashT > 0 || !f.onGround || f.cooldown > 0 || f.stun > 0) return;
+      var back = dir !== f.facing;
+      f.dashT = 0.20; f.mvx = dir * (back ? 10 : 11.5); f.facing = f.facing; f.tapT = 0; f.tapDir = 0;
+      if (back) f.iframe = 0.15;                 // back-dash slips through a strike
+      setState(f, "walk", 0.2); landDust(f);
+    }
     function humanControl(f, other) {
       var km = f.km || {};
       if (f.state === "hit" || f.state === "ko") { if (f.onGround) f.vx = 0; return; }
       // block-stun / recovery: locked out of acting for a beat (this is what makes an
       // unsafe move punishable — you can't just mash out of a blocked heavy).
       if (f.stun > 0) { if (f.onGround && f.dashT <= 0) f.vx = 0; return; }
+      // double-tap left/right = dash. Detect the key's rising edge and pair it with
+      // a recent tap in the same direction.
+      var L = !!keys[km.left], R = !!keys[km.right], eL = L && !f._kl, eR = R && !f._kr; f._kl = L; f._kr = R;
+      if (eL) { if (f.tapDir === -1 && f.tapT > 0) { startDash(f, -1); } else { f.tapDir = -1; f.tapT = 0.24; } }
+      if (eR) { if (f.tapDir === 1 && f.tapT > 0) { startDash(f, 1); } else { f.tapDir = 1; f.tapT = 0.24; } }
+      if (f.dashT > 0) return;                    // mid-dash: keep the burst, ignore other input
       // leap out of idle/walk
       if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
       if (!f.onGround) { // air control: drift, keep the current attack/jump pose
@@ -1515,6 +1557,13 @@
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
       window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
+      // throw verification: put the foe grounded-adjacent and command-throw them
+      window.__throwTest = function () {
+        if (!p1 || !p2) return null;
+        p2.x = p1.x + p1.facing * 42; p2.y = 0; p2.onGround = true; p2.state = "idle"; p2.stun = 0; p2.iframe = 0; p2.hp = 100;
+        p1.cooldown = 0; p1.stun = 0; p1.holding = null;
+        var hp0 = p2.hp; tryGrab(p1); return { hp0: hp0, hp1: p2.hp, st: p2.state, popped: p2.vy > 1 };
+      };
       // rig introspection: current displayed (sprung) pose + its authored target,
       // for measuring overshoot/follow-through and per-frame limb-length stability
       window.__rig = function (which) { var f = which === "p2" ? p2 : p1; return f ? { dpose: f.dpose, target: f._target, state: f.state } : null; };
