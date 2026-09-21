@@ -539,20 +539,26 @@
     // bone. Because every part is skinned to the tuned skeleton's OWN joints, the
     // proportions are the skeleton's (correct) and children always meet parents at a
     // shared joint — so walk / attack / hurt / KO all come free and seams stay closed.
-    function skin(c, P, M, name, J0, J1, tipFrac) {
+    function skin(c, P, M, name, J0, J1, tipFrac, dark, restLen) {
       var img = P[name], m = M[name]; if (!img || !m) return 1;
       var px = m.pivotX, py = m.pivotY, tx = m.w * 0.5, ty = m.h * (tipFrac == null ? 1 : tipFrac);
       var vx = tx - px, vy = ty - py, nl = Math.sqrt(vx * vx + vy * vy) || 1, na = Math.atan2(vy, vx);
       var dx = J1[0] - J0[0], dy = J1[1] - J0[1], tl = Math.sqrt(dx * dx + dy * dy), ta = Math.atan2(dy, dx);
-      var sc = nl > 0.5 ? tl / nl : 1;
+      // draw the part along the bone, but never stretch it past ~1.16x its rest length —
+      // a kick throws the foot beyond the leg's reach, and a rubber-limb reads terribly.
+      // The part still points at the far joint; it just stops short (the hitbox still reaches).
+      var drawLen = (restLen && tl > restLen * 1.16) ? restLen * 1.16 : tl;
+      var sc = nl > 0.5 ? drawLen / nl : 1;
       c.save(); c.translate(J0[0], J0[1]); c.rotate(ta - na); c.scale(sc, sc);
-      c.drawImage(img, -px, -py); c.restore(); return sc;
+      c.drawImage(img, -px, -py);
+      // darken a back-side limb so it recedes behind the torso (source-atop keeps the alpha)
+      if (dark) { c.globalCompositeOperation = "source-atop"; c.fillStyle = "rgba(8,6,14," + dark + ")"; c.fillRect(-px, -py, m.w, m.h); }
+      c.restore(); return sc;
     }
     var RIG_CFG = { athena: { singleLeg: true, weapon: "spear", shield: "shield" } };
     function drawCutout(c, f, p, t) {
       var g = f.godId, P = PARTS[g], M = PARTMETA[g], cfg = RIG_CFG[g] || {};
       var nThighF = pick(P, "thighR", "thighA", "thigh"), nShinF = pick(P, "shinR", "shinA", "shin");
-      var nThighB = pick(P, "thighL", "thighB", "thigh"), nShinB = pick(P, "shinL", "shinB", "shin");
       var nUaF = pick(P, "upperArmR", "upperArm", "upperArmL"), nFaF = pick(P, "foreArmR", "foreArm", "foreArmL");
       var nUaB = pick(P, "upperArmL", "upperArm", "upperArmR"), nFaB = pick(P, "foreArmL", "foreArm", "foreArmR");
       var single = !!cfg.singleLeg;
@@ -570,9 +576,13 @@
       c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
       // shadow aura behind (Hades), centred on the torso
       if (P.auraA) { var au = M.auraA, ausc = bs * (tm ? tm.h : 400) / au.h * 1.05, mid = [(p.hip[0] + p.neck[0]) / 2 - 2, (p.hip[1] + p.neck[1]) / 2]; c.save(); c.globalAlpha = 0.7; c.translate(mid[0], mid[1]); var sp = Math.sin(t * 2 + f.phase); c.scale(ausc, ausc * (1 + sp * 0.04)); c.drawImage(P.auraA, -au.w / 2, -au.h / 2); c.restore(); }
-      // BACK leg + arm (single-leg gods have no shin — the thigh art is the whole leg)
-      if (single) skin(c, P, M, nThighB, hipB, p.footB); else { skin(c, P, M, nThighB, hipB, p.kneeB); skin(c, P, M, nShinB, p.kneeB, p.footB); }
-      skin(c, P, M, nUaB, p.shB, p.elB); skin(c, P, M, nFaB, p.elB, p.hnB);
+      // BACK leg: drawn from the FRONT (armoured) leg art, darkened to recede — the source
+      // paintings only armour the near leg, so reusing it keeps both legs consistent.
+      var DK = 0.34, legBrest = IKREST.legB;
+      if (single) skin(c, P, M, nThighF, hipB, p.footB, 1, DK, legBrest[0] + legBrest[1]);
+      else { skin(c, P, M, nThighF, hipB, p.kneeB, 1, DK, legBrest[0]); skin(c, P, M, nShinF, p.kneeB, p.footB, 1, DK, legBrest[1]); }
+      // BACK arm keeps its own art (Hades bakes a weapon into the front forearm), just darkened
+      skin(c, P, M, nUaB, p.shB, p.elB, 1, DK, IKREST.armB[0]); skin(c, P, M, nFaB, p.elB, p.hnB, 1, DK, IKREST.armB[1]);
       // shield rides the back arm (far side), tucked behind the torso
       if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield]; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -sh.width * 0.5, -sh.height * 0.5); c.restore(); }
       // TORSO + HEAD (head sized to the body, tilted with the neck)
@@ -580,9 +590,11 @@
       // head sized to the body but damped: the painted crops include a full mane/beard/
       // crown, so scaling them 1:1 to the (short) torso bone reads as a bobble-head.
       if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.8; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
-      // FRONT leg + arm
-      if (single) skin(c, P, M, nThighF, hipF, p.footF); else { skin(c, P, M, nThighF, hipF, p.kneeF); skin(c, P, M, nShinF, p.kneeF, p.footF); }
-      skin(c, P, M, nUaF, p.shF, p.elF); skin(c, P, M, nFaF, p.elF, p.hnF);
+      // FRONT leg + arm (length-capped so a kick extends but never rubber-stretches)
+      var legFrest = IKREST.legF;
+      if (single) skin(c, P, M, nThighF, hipF, p.footF, 1, 0, legFrest[0] + legFrest[1]);
+      else { skin(c, P, M, nThighF, hipF, p.kneeF, 1, 0, legFrest[0]); skin(c, P, M, nShinF, p.kneeF, p.footF, 1, 0, legFrest[1]); }
+      skin(c, P, M, nUaF, p.shF, p.elF, 1, 0, IKREST.armF[0]); skin(c, P, M, nFaF, p.elF, p.hnF, 1, 0, IKREST.armF[1]);
       // spear couched in the front hand: the art has its point at the LEFT and a painted
       // grip-hand ~57% across, so mirror it (point leads toward the foe) and grip there.
       // The hold angle follows the forearm but is pulled toward horizontal, so it reads as
