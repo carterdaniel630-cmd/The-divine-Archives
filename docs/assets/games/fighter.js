@@ -330,15 +330,16 @@
       add(p, "shF", 0, -br * 0.4); add(p, "shB", 0, -br * 0.4); add(p, "hnF", br * 0.4, -br * 0.4);
       var st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1);
       if (st === "walk") {
-        // a fuller stride: bigger step, feet lift, arms counter-swing to the legs, and
-        // the hips/torso bob and sway so it reads as walking, not a rigid glide. The IK
-        // then bends the knees/elbows to match, keeping the limbs natural.
-        var w = Math.sin(t * 9 + f.phase) * 13;
-        add(p, "footF", w, -Math.max(0, w) * 0.9); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.4);
-        add(p, "footB", -w, -Math.max(0, -w) * 0.9); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.4);
-        add(p, "hnF", -w * 0.5, 0); add(p, "elF", -w * 0.3, 0); add(p, "hnB", w * 0.5, 0); add(p, "elB", w * 0.3, 0);
-        var bob = -Math.abs(w) * 0.14;
-        add(p, "hip", w * 0.12, bob); add(p, "chest", w * 0.10, bob * 0.6); add(p, "neck", w * 0.11, 0); add(p, "head", w * 0.13, 0);
+        // Stride is tied to DISTANCE travelled, not to time — so the planted foot tracks
+        // the ground and the god steps instead of moon-walking. The swing foot lifts, the
+        // arms counter-swing to the legs, and the hips drop at each footfall for weight;
+        // the IK then bends the knees/elbows to match, keeping the limbs natural.
+        var ph = f.x * 0.28 + f.phase, w = Math.sin(ph) * 15;
+        add(p, "footF", w, -Math.max(0, w) * 1.05); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.5);
+        add(p, "footB", -w, -Math.max(0, -w) * 1.05); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.5);
+        add(p, "hnF", -w * 0.55, 0); add(p, "elF", -w * 0.32, 0); add(p, "hnB", w * 0.55, 0); add(p, "elB", w * 0.32, 0);
+        var bob = -Math.abs(Math.cos(ph)) * 2.4;  // body dips at each footfall (twice a stride)
+        add(p, "hip", w * 0.10, bob); add(p, "chest", w * 0.08, bob * 0.6); add(p, "neck", w * 0.09, bob * 0.3); add(p, "head", w * 0.10, bob * 0.2);
       } else if (st === "jump") {
         add(p, "footF", 4, 10); add(p, "footB", -6, 8); add(p, "kneeF", 2, 8); add(p, "kneeB", -2, 8); add(p, "hnF", 6, -14);
       } else if (st === "block") {
