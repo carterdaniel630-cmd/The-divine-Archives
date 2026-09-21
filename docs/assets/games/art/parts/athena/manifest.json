@@ -1,0 +1,62 @@
+{
+  "head": {
+    "w": 168,
+    "h": 457,
+    "pivotX": 84,
+    "pivotY": 411
+  },
+  "torso": {
+    "w": 381,
+    "h": 438,
+    "pivotX": 191,
+    "pivotY": 412
+  },
+  "upperArmR": {
+    "w": 264,
+    "h": 203,
+    "pivotX": 132,
+    "pivotY": 28
+  },
+  "upperArmL": {
+    "w": 263,
+    "h": 200,
+    "pivotX": 132,
+    "pivotY": 28
+  },
+  "foreArmR": {
+    "w": 251,
+    "h": 273,
+    "pivotX": 105,
+    "pivotY": 38
+  },
+  "foreArmL": {
+    "w": 433,
+    "h": 229,
+    "pivotX": 182,
+    "pivotY": 32
+  },
+  "thighR": {
+    "w": 206,
+    "h": 447,
+    "pivotX": 103,
+    "pivotY": 45
+  },
+  "thighL": {
+    "w": 210,
+    "h": 466,
+    "pivotX": 105,
+    "pivotY": 47
+  },
+  "spear": {
+    "w": 769,
+    "h": 106,
+    "pivotX": 385,
+    "pivotY": 53
+  },
+  "shield": {
+    "w": 377,
+    "h": 381,
+    "pivotX": 189,
+    "pivotY": 191
+  }
+}

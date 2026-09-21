@@ -37,17 +37,21 @@
   });
 
   function mountGame(root, ctx) {
-    var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1;
+    var VW = 660, VH = 330, GROUND = VH - 30, DPR = 1, MINSEP = 74;
+    // DMG scales every hit so a match is a war of attrition, not a 3-hit blowout —
+    // longer fights give the neutral/defense game room to matter.
+    var DMG = 0.5;
+    var ATTACK_STATES = { light: 1, kick: 1, headbutt: 1, special: 1, throw: 1, aerial: 1 };
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var UI = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96") };
 
     var canvas, cx, hudEl, raf = null, keyfn = null, keyup = null, last = 0, running = false;
-    var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0;
+    var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0, callout = null;
     // fixed-timestep simulation: logic advances in whole FIXED steps regardless of
     // display refresh, so movement/jumps are identical at 60/120/144 Hz. Rendering
     // interpolates between the last two sim states by `acc/FIXED`.
-    var FIXED = 1 / 60, acc = 0, MAXSTEPS = 5;
+    var FIXED = 1 / 60, acc = 0, MAXSTEPS = 5, curReal = 1 / 60;
     var shots = [], debris = [], rain = [], groundItem = null, weather = null, debrisT = 0, itemT = 0, boltFlash = 0;
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
     var KM1 = { left: "a", right: "d", block: "s", jump: "w", light: "j", heavy: "k", special: "l", grab: "u" };
@@ -93,6 +97,56 @@
       img.onload = function () { HERO.img = img; HERO.ready = true; try { root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); }); } catch (e) { } };
       img.src = SCRIPT_BASE + HERO_SHEET;
     }
+
+    /* ============================================================================
+       FULL-BODY PAINTED SPRITES (drop-in) — the fighters are now painted per-god
+       sprites sliced from the lineup art. One idle frame ships; the loader also
+       looks for optional pose frames ({god}_attack_windup|attack_strike|block|
+       hurt|ko|victory.png) in art/sprites/ and cross-fades to them, with all
+       motion layered on by code (transforms + a feet-pivoted strip-mesh bend).
+       The old cropped-head-on-procedural-body rig is retired behind USE_HEAD_RIG.
+       Hitboxes/movement/logic are unchanged — the skeleton still drives them; the
+       sprite is purely what you see. ============================================ */
+    var USE_HEAD_RIG = false;                      // old head-on-body rig, off by default
+    var SPRITE_META = { cw: 320, ch: 512, pivotX: 160, baseY: 486, figH: 460 };
+    var GAMEH = 172;                               // on-canvas fighter height (px)
+    var SPRITE_POSES = ["idle", "attack_windup", "attack_strike", "block", "hurt", "ko", "victory"];
+    var SPRITES = {};                              // godId -> { idle:Image, ... } (only loaded frames)
+    var SPRITE = { ready: false, pending: 0 };
+    var SBUF = null, SBX = null;                   // offscreen buffer for flash + pose crossfade
+    function loadSprites() {
+      HERO_ORDER.forEach(function (g) {
+        SPRITES[g] = {};
+        SPRITE_POSES.forEach(function (pose) {
+          var im = new Image();
+          im.onload = function () { SPRITES[g][pose] = im; if (pose === "idle") SPRITE.ready = true; };
+          im.onerror = function () { };            // optional pose frames may be absent -> fallback to idle
+          im.src = SCRIPT_BASE + "art/sprites/" + g + "_" + pose + ".png";
+        });
+      });
+    }
+
+    /* ============================================================================
+       SKELETAL CUTOUT RIG — the real articulation. Each god ships as separate limb
+       PNGs (art/parts/<god>/) with a manifest of pivots. Every part binds to a bone
+       of the SAME animated skeleton that drives hitboxes: the rig reads the skeleton's
+       joint ANGLES and rebuilds the limb chain at the art's own proportions, so the
+       painted arm/leg swings on its own with the combat, not a flat picture on top.
+       Takes priority over the flat sprite when a god's parts are loaded. ========== */
+    var PARTS = {}, PARTMETA = {}, PARTS_READY = {};
+    function loadParts() {
+      HERO_ORDER.forEach(function (g) {
+        fetch(SCRIPT_BASE + "art/parts/" + g + "/manifest.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (man) {
+          if (!man) return; PARTMETA[g] = man; PARTS[g] = {}; var names = Object.keys(man), left = names.length;
+          names.forEach(function (nm) {
+            var im = new Image();
+            im.onload = function () { PARTS[g][nm] = im; if (--left <= 0) PARTS_READY[g] = true; };
+            im.onerror = function () { if (--left <= 0) PARTS_READY[g] = (Object.keys(PARTS[g]).length > 6); };
+            im.src = SCRIPT_BASE + "art/parts/" + g + "/" + nm + ".png";
+          });
+        }).catch(function () {});
+      });
+    }
     function heroCrop(id) {
       var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
       var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2, mx = iw * HERO_INSET, my = ih * HERO_INSET;
@@ -116,6 +170,93 @@
     };
     function clonePose(p) { var o = {}; for (var k in p) o[k] = [p[k][0], p[k][1]]; return o; }
     function add(p, k, dx, dy) { p[k][0] += dx; p[k][1] += dy; }
+
+    /* ---- rig: pose dynamics (spring) ----
+       Each displayed joint is driven toward its authored target by a damped
+       spring, integrated in real time. Extremities (hands, feet, head) run
+       UNDER-damped so they shoot past the target and settle back — that
+       snap-out-and-recoil is the follow-through/whip the audit found missing;
+       the core (hip, chest, shoulders) is near-critical so the torso stays
+       planted. This replaces the old constant-rate low-pass, which could only
+       lag a target, never overshoot it. f = frequency (Hz), z = damping ratio
+       (<1 overshoots, 1 is critical). State per joint is [x, y, vx, vy]. */
+    var TAU = Math.PI * 2;
+    // Looser, lower-frequency springs read as fluid weight; the earlier high-stiffness
+    // set snapped to each pose and looked mechanical. Extremities are under-damped so
+    // they trail and settle (follow-through/whip); the core stays a touch firmer.
+    var DYN_DEFAULT = { f: 5.4, z: 0.86 };
+    var DYN = {
+      hnF: { f: 7.6, z: 0.44 }, hnB: { f: 7.0, z: 0.47 },
+      footF: { f: 7.2, z: 0.46 }, footB: { f: 6.8, z: 0.50 },
+      head: { f: 5.2, z: 0.56 },
+      elF: { f: 6.4, z: 0.54 }, elB: { f: 6.0, z: 0.58 },
+      kneeF: { f: 6.4, z: 0.58 }, kneeB: { f: 6.0, z: 0.62 },
+      neck: { f: 5.2, z: 0.72 },
+      hip: { f: 4.6, z: 0.92 }, chest: { f: 4.9, z: 0.86 },
+      shF: { f: 5.4, z: 0.80 }, shB: { f: 5.4, z: 0.82 }
+    };
+    function springStep(st, tx, ty, cfg, dt) {
+      var w = cfg.f * TAU, k = w * w, cc = 2 * cfg.z * w;
+      st[2] += (k * (tx - st[0]) - cc * st[2]) * dt;
+      st[3] += (k * (ty - st[1]) - cc * st[3]) * dt;
+      st[0] += st[2] * dt; st[1] += st[3] * dt;
+    }
+    /* ---- rig: 2-bone IK limb shaping ----
+       Keep the spring's shoulder/hand (hip/foot) and SOLVE the elbow/knee so both
+       bones hold their rest length — the limb bends naturally instead of the
+       previous "bow" hack that shoved the mid joint off-line and rubber-stretched
+       the thigh (~1.3x). The hitbox anchors (hand/foot) are never moved, so reach
+       is untouched; only the drawn mid joint is repositioned. When the target is
+       within reach the segments are exact (no stretch — fixes the extended leg on
+       kicks); when a punch genuinely over-reaches the art's short arm, the limb
+       just straightens (an honest full extension) rather than bending oddly. The
+       bend solution nearest the sprung mid is chosen, so keyframed knee lifts and
+       elbow angles are preserved. */
+    var IKREST = (function () {
+      function d(a, b) { return Math.hypot(a[0] - b[0], a[1] - b[1]); }
+      var hipF = [BASE.hip[0] + 4, BASE.hip[1]], hipB = [BASE.hip[0] - 6, BASE.hip[1]];
+      return {
+        armF: [d(BASE.shF, BASE.elF), d(BASE.elF, BASE.hnF)],
+        armB: [d(BASE.shB, BASE.elB), d(BASE.elB, BASE.hnB)],
+        legF: [d(hipF, BASE.kneeF), d(BASE.kneeF, BASE.footF)],
+        legB: [d(hipB, BASE.kneeB), d(BASE.kneeB, BASE.footB)]
+      };
+    })();
+    function ik2(rx, ry, ex, ey, l1, l2, mx, my) {
+      var dx = ex - rx, dy = ey - ry, d = Math.hypot(dx, dy) || 1e-4;
+      var dc = Math.max(Math.abs(l1 - l2) + 0.01, Math.min(d, l1 + l2 - 0.01));
+      var a = (l1 * l1 - l2 * l2 + dc * dc) / (2 * dc), h = Math.sqrt(Math.max(0, l1 * l1 - a * a));
+      var ux = dx / d, uy = dy / d, px = -uy, py = ux, bx = rx + ux * a, by = ry + uy * a;
+      var s1x = bx + px * h, s1y = by + py * h, s2x = bx - px * h, s2y = by - py * h;
+      var d1 = (s1x - mx) * (s1x - mx) + (s1y - my) * (s1y - my), d2 = (s2x - mx) * (s2x - mx) + (s2y - my) * (s2y - my);
+      return d1 <= d2 ? [s1x, s1y] : [s2x, s2y];
+    }
+    function solveMid(p, rootx, rooty, midK, endK, L) {
+      var m = p[midK], e = p[endK], s = ik2(rootx, rooty, e[0], e[1], L[0], L[1], m[0], m[1]);
+      m[0] = s[0]; m[1] = s[1];
+    }
+    function shapeLimbs(p) {
+      var H = p.hip;
+      solveMid(p, p.shF[0], p.shF[1], "elF", "hnF", IKREST.armF);
+      solveMid(p, p.shB[0], p.shB[1], "elB", "hnB", IKREST.armB);
+      solveMid(p, H[0] + 4, H[1], "kneeF", "footF", IKREST.legF);
+      solveMid(p, H[0] - 6, H[1], "kneeB", "footB", IKREST.legB);
+    }
+
+    // advance a fighter's sprung pose toward `target`, returning positions {joint:[x,y]}
+    function springPose(f, target) {
+      if (!f.dyn) { f.dyn = {}; for (var k0 in target) f.dyn[k0] = [target[k0][0], target[k0][1], 0, 0]; }
+      var dt = Math.min(0.033, curReal), sub = dt > 0.02 ? 2 : 1, sdt = dt / sub, out = {};
+      for (var k in target) {
+        var st = f.dyn[k]; if (!st) st = f.dyn[k] = [target[k][0], target[k][1], 0, 0];
+        var cfg = DYN[k] || DYN_DEFAULT, tx = target[k][0], ty = target[k][1];
+        for (var i = 0; i < sub; i++) springStep(st, tx, ty, cfg, sdt);
+        out[k] = [st[0], st[1]];
+      }
+      // expose the current sprung positions for joint-tied hitboxes + test hooks
+      f.dpose = out; f._target = target;
+      return out;
+    }
 
     /* ---- F2: data-driven move system ---- */
     var MOVES = window.FIGHTER_MOVES || {};
@@ -145,6 +286,32 @@
       for (k in u) { var av = (a.d && a.d[k]) || [0, 0], bv = (b.d && b.d[k]) || [0, 0]; out[k] = [av[0] + (bv[0] - av[0]) * e, av[1] + (bv[1] - av[1]) * e]; }
       return out;
     }
+    /* ---- rig: whole-body drive ----
+       The old strikes moved only the attacking limb — the torso stood still, so a
+       punch read as a puppet's arm on a mannequin. driveBody adds the thing a real
+       fighter does: coil back (anticipation), then drive the hips/spine/head
+       forward into the blow (commitment + weight transfer), then settle
+       (follow-through). bodyDrive(pr) is that timing as a signed curve: <0 wind-up,
+       +1 at contact, easing back to 0. Applied to the core in every strike state,
+       so the whole body commits, not just the fist. */
+    function dsmooth(x) { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }
+    function dseg(pr, a0, v0, a1, v1) { return v0 + (v1 - v0) * dsmooth((pr - a0) / (a1 - a0)); }
+    function bodyDrive(pr) {
+      if (pr < 0.20) return dseg(pr, 0, 0, 0.20, -0.60);      // coil back
+      if (pr < 0.42) return dseg(pr, 0.20, -0.60, 0.42, 1.0); // explode forward to contact
+      if (pr < 0.64) return dseg(pr, 0.42, 1.0, 0.64, 0.22);  // follow-through
+      return dseg(pr, 0.64, 0.22, 1.0, 0);                    // settle
+    }
+    function driveBody(p, drv, gain) {
+      gain = gain == null ? 1 : gain;
+      var fx = drv * 8 * gain, up = Math.max(0, drv);
+      add(p, "hip", fx * 0.45, up * 2.2 * gain);              // hips lead + drop into the blow
+      add(p, "chest", fx * 0.85, 0); add(p, "neck", fx * 1.05, 0); add(p, "head", fx * 1.25, 0);
+      add(p, "shF", fx * 0.9, 0); add(p, "shB", fx * 0.6, 0);
+      add(p, "footB", -up * 3 * gain, 0);                     // back foot plants and pushes
+      add(p, "kneeF", up * 2 * gain, up * 1.5 * gain);        // front knee bends under the weight
+    }
+
     // cancel-aware gate: recovery of a cancelable move can be interrupted into a listed follow-up
     function canAct(f, newId) {
       if (f.cooldown <= 0) return true;
@@ -163,10 +330,16 @@
       add(p, "shF", 0, -br * 0.4); add(p, "shB", 0, -br * 0.4); add(p, "hnF", br * 0.4, -br * 0.4);
       var st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1);
       if (st === "walk") {
-        var w = Math.sin(t * 9 + f.phase) * 11;
-        add(p, "footF", w, -Math.max(0, w) * 0.7); add(p, "kneeF", w * 0.6, 0);
-        add(p, "footB", -w, -Math.max(0, -w) * 0.7); add(p, "kneeB", -w * 0.6, 0);
-        add(p, "hnF", 0, w * 0.3); add(p, "hnB", 0, -w * 0.3); add(p, "hip", 0, -Math.abs(w) * 0.1);
+        // Stride is tied to DISTANCE travelled, not to time — so the planted foot tracks
+        // the ground and the god steps instead of moon-walking. The swing foot lifts, the
+        // arms counter-swing to the legs, and the hips drop at each footfall for weight;
+        // the IK then bends the knees/elbows to match, keeping the limbs natural.
+        var ph = f.x * 0.16 + f.phase, w = Math.sin(ph) * 15;
+        add(p, "footF", w, -Math.max(0, w) * 1.05); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.5);
+        add(p, "footB", -w, -Math.max(0, -w) * 1.05); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.5);
+        add(p, "hnF", -w * 0.55, 0); add(p, "elF", -w * 0.32, 0); add(p, "hnB", w * 0.55, 0); add(p, "elB", w * 0.32, 0);
+        var bob = -Math.abs(Math.cos(ph)) * 2.4;  // body dips at each footfall (twice a stride)
+        add(p, "hip", w * 0.10, bob); add(p, "chest", w * 0.08, bob * 0.6); add(p, "neck", w * 0.09, bob * 0.3); add(p, "head", w * 0.10, bob * 0.2);
       } else if (st === "jump") {
         add(p, "footF", 4, 10); add(p, "footB", -6, 8); add(p, "kneeF", 2, 8); add(p, "kneeB", -2, 8); add(p, "hnF", 6, -14);
       } else if (st === "block") {
@@ -175,10 +348,12 @@
         // F2/F3.2: the strike animation is data — poseKeys from the god's resolved move
         var off = moveOffsets(moveFor(f, st), pr);
         for (var mk in off) add(p, mk, off[mk][0], off[mk][1]);
+        driveBody(p, bodyDrive(pr), st === "kick" ? 1.15 : st === "headbutt" ? 1.1 : 0.9);
       } else if (st === "throw") {
         var mvT = moveFor(f, "throw");
         if (mvT) { var oT = moveOffsets(mvT, pr); for (var kT in oT) add(p, kT, oT[kT][0], oT[kT][1]); }
         else { var tk = strikeCurve(pr); add(p, "hnF", 22 * tk, -18 * tk); add(p, "elF", 15 * tk, -14 * tk); add(p, "shF", 4 * tk, -6 * tk); add(p, "chest", 8 * tk, 0); add(p, "head", 6 * tk, 0); }
+        driveBody(p, bodyDrive(pr), 0.8);
       } else if (st === "special") {
         var mvS = moveFor(f, "special");
         if (mvS) { var oS = moveOffsets(mvS, pr); for (var kS in oS) add(p, kS, oS[kS][0], oS[kS][1]); }
@@ -192,18 +367,28 @@
           else { add(p, "hnF", 36 * ak, -6 * ak); add(p, "elF", 24 * ak, -3 * ak); add(p, "footF", 10 * ak, 16 * ak); add(p, "kneeF", 6 * ak, 10 * ak); add(p, "footB", -14 * ak, -22 * ak); add(p, "kneeB", -8 * ak, -14 * ak); add(p, "hnB", -18 * ak, -6 * ak); add(p, "chest", 5 * ak, 0); add(p, "head", 4 * ak, 0); }
         }
       } else if (st === "hit") {
-        var s = (1 - pr); add(p, "head", -10 * s, 0); add(p, "chest", -7 * s, 0); add(p, "neck", -8 * s, 0); add(p, "hnF", -8 * s, 4 * s); add(p, "hnB", -10 * s, 2 * s);
+        // a real flinch: snap back hard on impact, then recover — the head/torso whip
+        // away from the blow, the arms fly, and the feet stagger, so a clean hit READS.
+        var s = 1 - ease(pr), snap = Math.sin(Math.min(1, pr * 3) * Math.PI) * (1 - pr);
+        add(p, "head", -20 * s - 8 * snap, -2 * snap); add(p, "neck", -15 * s - 5 * snap, 0);
+        add(p, "chest", -14 * s - 4 * snap, 0); add(p, "hip", -6 * s, 2 * s);
+        add(p, "hnF", -16 * s, 8 * s); add(p, "elF", -10 * s, 4 * s); add(p, "hnB", -18 * s, 4 * s); add(p, "elB", -11 * s, 3 * s);
+        add(p, "footB", -10 * s, 0); add(p, "kneeF", 5 * s, 0);   // stagger a half-step back
       } else if (st === "ko") {
         var kk = ease(pr);
         for (var j in p) { var pt = p[j], ang = -1.4 * kk, x = pt[0], y = pt[1]; p[j] = [x * Math.cos(ang) - y * Math.sin(ang) - 46 * kk, x * Math.sin(ang) + y * Math.cos(ang)]; }
       }
       // living idle: a slow weight-shift + breathing sway so a waiting fighter isn't a statue
       if (st === "idle") {
-        var bob = Math.sin(t * 2.4 + f.phase) * 1.2, sway = Math.sin(t * 1.5 + f.phase) * 2.2;
-        for (var q in p) p[q][1] += bob * 0.2;
-        add(p, "hip", sway * 0.5, 0); add(p, "chest", sway * 0.7, 0); add(p, "neck", sway * 0.8, 0); add(p, "head", sway, 0);
-        add(p, "hnF", sway * 0.6 + Math.sin(t * 2.4 + f.phase + 1) * 1.4, 0); add(p, "hnB", -sway * 0.5, 0);
-        add(p, "shF", sway * 0.4, 0); add(p, "shB", sway * 0.3, 0);
+        // a fighting-stance idle: weight shifts side to side, chest/shoulders lift with
+        // breath, hands bob — so a waiting god sways on his feet instead of standing rigid.
+        var bob = Math.sin(t * 2.2 + f.phase) * 1.5, sway = Math.sin(t * 1.35 + f.phase) * 3.0, br2 = Math.sin(t * 2.2 + f.phase + 0.6);
+        for (var q in p) p[q][1] += bob * 0.16;
+        add(p, "hip", sway * 0.6, Math.abs(sway) * 0.12); add(p, "chest", sway * 0.85, -br2 * 0.8);
+        add(p, "neck", sway * 0.95, -br2 * 0.6); add(p, "head", sway * 1.15, -br2 * 0.4);
+        add(p, "hnF", sway * 0.7 + br2 * 1.8, br2 * 0.8); add(p, "hnB", -sway * 0.6, -br2 * 0.6);
+        add(p, "shF", sway * 0.5, -br2 * 0.5); add(p, "shB", sway * 0.35, -br2 * 0.4);
+        add(p, "kneeF", sway * 0.25, 0); add(p, "kneeB", -sway * 0.25, 0);
       }
       return p;
     }
@@ -276,27 +461,189 @@
     }
 
     /* ===================== the figure ===================== */
+    /* ---- sprite animation: code motion + pose-frame crossfade over one painted pose ---- */
+    function stateToPose(f) {
+      var st = f.state;
+      if (st === "ko") return "ko";
+      if (st === "hit") return "hurt";
+      if (st === "block") return "block";
+      if (st === "light" || st === "kick" || st === "headbutt" || st === "throw" || st === "special" || st === "aerial")
+        return (clamp(f.stTime / f.stDur, 0, 1) < 0.3) ? "attack_windup" : "attack_strike";
+      if (winner === f) return "victory";
+      return "idle";
+    }
+    function frameFor(set, pose) { return (set && set[pose]) || (set && set.idle) || null; }
+    // advance the per-fighter sprite transform state (bob / squash / lean-shear / rot /
+    // flash / shake) toward targets derived from the combat state, + pose crossfade.
+    function updateSpriteAnim(f, t) {
+      var S = f.spr || (f.spr = { bob: 0, sx: 1, sy: 1, lean: 0, rot: 0, flash: 0, shake: 0, pose: "idle", prev: "idle", fade: 1 });
+      var dt = Math.min(0.033, curReal), st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1), ph = f.phase;
+      var tb = 0, tl = 0, tsx = 1, tsy = 1, trot = 0;
+      var atk = st === "light" || st === "kick" || st === "headbutt" || st === "throw" || st === "special" || st === "aerial";
+      if (st === "idle") { tb = Math.sin(t * 2.2 + ph) * 2.4; tsy = 1 + Math.sin(t * 2.2 + ph) * 0.014; tl = Math.sin(t * 1.3 + ph) * 2.2; }
+      else if (st === "walk") { tb = Math.abs(Math.sin(t * 9 + ph)) * -2.4; tl = 9 + Math.sin(t * 9 + ph) * 5; tsy = 1 + Math.sin(t * 18 + ph) * 0.02; }
+      else if (st === "jump") { tl = 6; tsy = 1.05; tsx = 0.97; }
+      else if (st === "block") { tsy = 0.9; tsx = 1.04; tl = -6; tb = 3; }
+      else if (atk) {
+        if (pr < 0.22) { tl = -9; tsy = 0.93; tsx = 1.04; }            // windup: coil back + squash
+        else if (pr < 0.5) { tl = 24; tsx = 1.06; tsy = 1.03; }        // strike: lunge forward + stretch
+        else { tl = 5; }                                               // recover
+      } else if (st === "hit") { tl = -15; tb = -2; }
+      else if (st === "ko") { trot = -1.28; tb = 8; tl = -6; }         // slump / fall back
+      else if (winner === f) { tsy = 1.03; tl = Math.sin(t * 1.6 + ph) * 3.4; tb = Math.sin(t * 1.6 + ph) * 1.5; }
+      // if a dedicated pose FRAME exists, it already encodes the pose — so code motion
+      // drops to secondary (bob/flash/small sway) instead of re-applying the big lean/
+      // rotation/squash on top. With only the idle frame, code motion does it all.
+      var set0 = SPRITES[f.godId], pose0 = stateToPose(f), hasPose = !!(set0 && set0[pose0] && pose0 !== "idle");
+      if (hasPose) { tl *= 0.3; trot = 0; tsx = 1 + (tsx - 1) * 0.3; tsy = 1 + (tsy - 1) * 0.3; }
+      var k = Math.min(1, dt * 12), kr = Math.min(1, dt * 6);
+      S.bob += (tb - S.bob) * k; S.lean += (tl - S.lean) * k; S.sx += (tsx - S.sx) * k; S.sy += (tsy - S.sy) * k; S.rot += (trot - S.rot) * kr;
+      // impact reactions on the frame a hit/ko begins
+      if ((st === "hit" || st === "ko") && f.stTime < dt * 2.2) { S.flash = 1; S.shake = 5; }
+      S.flash = Math.max(0, S.flash - dt * 4); S.shake = Math.max(0, S.shake - dt * 26);
+      // pose crossfade
+      var want = stateToPose(f);
+      if (want !== S.pose) { S.prev = S.pose; S.pose = want; S.fade = 0; }
+      S.fade = Math.min(1, S.fade + dt * 9);
+      return S;
+    }
+    function drawSprite(c, f, t) {
+      var set = SPRITES[f.godId], M = SPRITE_META, S = updateSpriteAnim(f, t);
+      var cur = frameFor(set, S.pose), prev = frameFor(set, S.prev); if (!cur) return false;
+      if (!SBUF) { SBUF = document.createElement("canvas"); SBUF.width = M.cw; SBUF.height = M.ch; SBX = SBUF.getContext("2d"); }
+      SBX.clearRect(0, 0, M.cw, M.ch);
+      if (prev && prev !== cur && S.fade < 1) { SBX.globalAlpha = 1 - S.fade; SBX.drawImage(prev, 0, 0); SBX.globalAlpha = S.fade; SBX.drawImage(cur, 0, 0); SBX.globalAlpha = 1; }
+      else SBX.drawImage(cur, 0, 0);
+      if (S.flash > 0.02) { SBX.globalCompositeOperation = "source-atop"; SBX.fillStyle = "rgba(255,248,230," + (S.flash * 0.75) + ")"; SBX.fillRect(0, 0, M.cw, M.ch); SBX.globalCompositeOperation = "source-over"; }
+      var facing = f.face < 0 ? -1 : 1, gs = GAMEH / M.figH;
+      var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
+      // ground shadow (kept from the procedural path)
+      c.save(); c.translate(rx, GROUND - ry); c.scale(1, 0.28);
+      var sr = 30 * (1 - Math.min(ry, 150) / 320), sa = 0.4 * (1 - Math.min(ry, 150) / 260);
+      c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr, 0, 7); c.fill();
+      c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
+      // body: feet-pivoted, flipped by facing, KO-rotated, squash/stretch, then a
+      // strip-mesh bend where horizontal shear grows toward the head.
+      c.save();
+      c.translate(rx + S.shake, GROUND - ry - S.bob);
+      c.scale(facing, 1); c.rotate(S.rot); c.scale(S.sx * gs, S.sy * gs);
+      var N = 22, figH = M.figH, baseY = M.baseY, px2 = M.pivotX, ch = M.ch;
+      for (var i = 0; i < N; i++) {
+        var yA = ch * i / N, yB = ch * (i + 1) / N, vc = (baseY - (yA + yB) / 2) / figH;
+        var dxs = S.lean * clamp(vc, 0, 1.25);
+        c.drawImage(SBUF, 0, yA, M.cw, yB - yA, -px2 + dxs, yA - baseY, M.cw, (yB - yA) + 0.6);
+      }
+      c.restore();
+      return true;
+    }
+
+    // draw one limb part: hinge its pivot at joint (jx,jy) and rotate so its body
+    // aligns to the bone direction boneA (up=true for parts that extend up from the
+    // pivot, i.e. torso/head; down for arms/legs), scaled by s.
+    function pick(P, a, b, cc) { return P[a] ? a : P[b] ? b : (P[cc] ? cc : a); }
+    // Skin one painted part onto a skeleton bone: place the part's pivot (proximal
+    // joint) at J0 and its distal tip at J1, scaling uniformly so the art fills the
+    // bone. Because every part is skinned to the tuned skeleton's OWN joints, the
+    // proportions are the skeleton's (correct) and children always meet parents at a
+    // shared joint — so walk / attack / hurt / KO all come free and seams stay closed.
+    // 2D skeletal skinning with SEPARATE thickness and length scale. Thickness (cross)
+    // is one shared body scale, so every limb keeps the source art's true relative width;
+    // length is per-bone, so a limb lengthens/shortens to fit the (tuned) skeleton without
+    // getting fatter. Uniform scaling coupled the two and made the short-torso/long-leg
+    // skeleton render as thick legs + a thin torso — the "puppet" look. opt: {tip,up,cross,
+    // rest,dark}. The part's art axis is vertical: limbs point down (+y), torso/head up.
+    function skin(c, P, M, name, J0, J1, opt) {
+      opt = opt || {};
+      var img = P[name], m = M[name]; if (!img || !m) return;
+      var px = m.pivotX, py = m.pivotY, tipFrac = opt.tip == null ? 1 : opt.tip;
+      var nl = Math.abs(m.h * tipFrac - py) || 1;
+      var dx = J1[0] - J0[0], dy = J1[1] - J0[1], tl = Math.sqrt(dx * dx + dy * dy), ta = Math.atan2(dy, dx);
+      // never stretch a limb past ~1.16x its rest length — a kick throws the foot beyond the
+      // leg's reach, and a rubber-limb reads terribly; it stops short, the hitbox still reaches.
+      var drawLen = (opt.rest && tl > opt.rest * 1.16) ? opt.rest * 1.16 : tl;
+      var along = drawLen / nl, cross = opt.cross || along;
+      c.save(); c.translate(J0[0], J0[1]); c.rotate(ta + (opt.up ? Math.PI / 2 : -Math.PI / 2)); c.scale(cross, along);
+      c.drawImage(img, -px, -py);
+      // darken a back-side limb so it recedes behind the torso (source-atop keeps the alpha)
+      if (opt.dark) { c.globalCompositeOperation = "source-atop"; c.fillStyle = "rgba(8,6,14," + opt.dark + ")"; c.fillRect(-px, -py, m.w, m.h); }
+      c.restore();
+    }
+    var RIG_CFG = { athena: { singleLeg: true, weapon: "spear", shield: "shield" } };
+    function drawCutout(c, f, p, t) {
+      var g = f.godId, P = PARTS[g], M = PARTMETA[g], cfg = RIG_CFG[g] || {};
+      var nThighF = pick(P, "thighR", "thighA", "thigh"), nShinF = pick(P, "shinR", "shinA", "shin");
+      var nUaF = pick(P, "upperArmR", "upperArm", "upperArmL"), nFaF = pick(P, "foreArmR", "foreArm", "foreArmL");
+      var nUaB = pick(P, "upperArmL", "upperArm", "upperArmR"), nFaB = pick(P, "foreArmL", "foreArm", "foreArmR");
+      var single = !!cfg.singleLeg;
+      // body scale = torso bone length / torso art length; reused for head/aura/props
+      var tm = M.torso, tnl = tm ? Math.sqrt(Math.pow(tm.w * 0.5 - tm.pivotX, 2) + Math.pow(tm.pivotY, 2)) : 1;
+      var tl = Math.sqrt(Math.pow(p.neck[0] - p.hip[0], 2) + Math.pow(p.neck[1] - p.hip[1], 2));
+      var bs = tnl > 0.5 ? tl / tnl : 1;
+      var hipF = [p.hip[0] + 4, p.hip[1]], hipB = [p.hip[0] - 6, p.hip[1]];
+      var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
+      var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
+      c.save(); c.translate(rx, GROUND - ry); c.scale(sfx, 1);
+      // ground shadow + accent ring
+      var sr = 30 * (1 - Math.min(ry, 150) / 320), sa = 0.4 * (1 - Math.min(ry, 150) / 260);
+      c.save(); c.scale(1, 0.28); c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr, 0, 7); c.fill();
+      c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
+      // shadow aura behind (Hades), centred on the torso
+      if (P.auraA) { var au = M.auraA, ausc = bs * (tm ? tm.h : 400) / au.h * 1.05, mid = [(p.hip[0] + p.neck[0]) / 2 - 2, (p.hip[1] + p.neck[1]) / 2]; c.save(); c.globalAlpha = 0.7; c.translate(mid[0], mid[1]); var sp = Math.sin(t * 2 + f.phase); c.scale(ausc, ausc * (1 + sp * 0.04)); c.drawImage(P.auraA, -au.w / 2, -au.h / 2); c.restore(); }
+      // BACK leg: drawn from the FRONT (armoured) leg art, darkened to recede — the source
+      // paintings only armour the near leg, so reusing it keeps both legs consistent.
+      var DK = 0.34, legBrest = IKREST.legB, armBrest = IKREST.armB;
+      if (single) skin(c, P, M, nThighF, hipB, p.footB, { dark: DK, rest: legBrest[0] + legBrest[1], cross: bs });
+      else { skin(c, P, M, nThighF, hipB, p.kneeB, { dark: DK, rest: legBrest[0], cross: bs }); skin(c, P, M, nShinF, p.kneeB, p.footB, { dark: DK, rest: legBrest[1], cross: bs }); }
+      // BACK arm keeps its own art (Hades bakes a weapon into the front forearm), just darkened
+      skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs });
+      // shield rides the back arm (far side), tucked behind the torso
+      if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield]; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -sh.width * 0.5, -sh.height * 0.5); c.restore(); }
+      // TORSO + HEAD (head sized to the body, tilted with the neck)
+      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs });
+      // head sized to the body but damped: the painted crops include a full mane/beard/
+      // crown, so scaling them 1:1 to the (short) torso bone reads as a bobble-head.
+      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.8; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
+      // FRONT leg + arm (length-capped so a kick extends but never rubber-stretches)
+      var legFrest = IKREST.legF, armFrest = IKREST.armF;
+      if (single) skin(c, P, M, nThighF, hipF, p.footF, { rest: legFrest[0] + legFrest[1], cross: bs });
+      else { skin(c, P, M, nThighF, hipF, p.kneeF, { rest: legFrest[0], cross: bs }); skin(c, P, M, nShinF, p.kneeF, p.footF, { rest: legFrest[1], cross: bs }); }
+      skin(c, P, M, nUaF, p.shF, p.elF, { rest: armFrest[0], cross: bs }); skin(c, P, M, nFaF, p.elF, p.hnF, { rest: armFrest[1], cross: bs });
+      // spear couched in the front hand: the art has its point at the LEFT and a painted
+      // grip-hand ~57% across, so mirror it (point leads toward the foe) and grip there.
+      // The hold angle follows the forearm but is pulled toward horizontal, so it reads as
+      // a levelled spear at rest and swings to a full thrust when the arm extends forward.
+      if (cfg.weapon && P[cfg.weapon]) { var sp2 = P[cfg.weapon], fa = Math.atan2(p.hnF[1] - p.elF[1], p.hnF[0] - p.elF[0]); var hold = fa * 0.42; c.save(); c.translate(p.hnF[0], p.hnF[1]); c.rotate(hold); c.scale(-bs, bs); c.drawImage(sp2, -sp2.width * 0.57, -sp2.height * 0.5); c.restore(); }
+      c.restore();
+    }
+
     function drawFighter(c, f, t) {
       var target = poseFor(f, t), s = f.skin, dmg = 1 - clamp(f.hp, 0, 100) / 100;
-      // blend the displayed skeleton toward the target pose so transitions ease in
-      // instead of snapping (strikes blend faster to stay crisp).
-      if (!f.dpose) f.dpose = clonePose(target);
-      var bf = (f.state === "light" || f.state === "kick" || f.state === "headbutt" || f.state === "special" || f.state === "throw" || f.state === "hit" || f.state === "aerial") ? 0.55 : 0.3;
-      for (var jk in target) { var dj = f.dpose[jk], gj = target[jk]; if (dj) { dj[0] += (gj[0] - dj[0]) * bf; dj[1] += (gj[1] - dj[1]) * bf; } }
-      var p = f.dpose;
+      // rig: drive the displayed skeleton toward the target with a damped spring,
+      // so extremities snap out, overshoot and settle instead of sliding linearly,
+      // then bow the elbows/knees so limbs bend on an arc instead of straight sticks.
+      var p = springPose(f, target);
+      shapeLimbs(p);
       // ease facing turns so the character flips smoothly rather than mirroring instantly
       if (f.face == null) f.face = f.facing;
-      f.face += (f.facing - f.face) * 0.3;
+      f.face += (f.facing - f.face) * 0.45;   // snappy turn, so a cross-up flips cleanly
+      // renderer priority: skeletal cutout (real articulation) > flat painted sprite >
+      // procedural body. All three read the same skeleton, which drives hitboxes.
+      if (f.godId && PARTS_READY[f.godId]) { drawCutout(c, f, p, t); return; }
+      if (SPRITE.ready && f.godId && SPRITES[f.godId] && SPRITES[f.godId].idle) { drawSprite(c, f, t); return; }
       var sfx = Math.abs(f.face) < 0.08 ? (f.face < 0 ? -0.08 : 0.08) : f.face;
       // fixed-timestep render interpolation: draw between the last two sim positions
       var rx = (f.rx != null ? f.rx : f.x), ry = (f.ry != null ? f.ry : (f.y || 0));
       c.save();
       c.translate(rx, GROUND - ry);
       c.scale(sfx, 1);
-      // ground shadow — shrinks and fades as the god leaps, so height reads clearly
-      var yh = ry, sr = 32 * (1 - Math.min(yh, 150) / 320);
-      c.save(); c.scale(1, 0.28); c.globalAlpha = 0.42 * (1 - Math.min(yh, 150) / 260); c.fillStyle = "#000";
-      c.beginPath(); c.arc(2, yh * 3.4 + 8, sr, 0, 7); c.fill(); c.restore();
+      // ground shadow — shrinks and fades as the god leaps, so height reads clearly.
+      // A ring in the god's own accent colour rides the shadow, so each fighter keeps
+      // a distinct coloured footprint even when their bodies overlap in a clinch.
+      var yh = ry, sr = 32 * (1 - Math.min(yh, 150) / 320), sa = 0.42 * (1 - Math.min(yh, 150) / 260);
+      c.save(); c.scale(1, 0.28);
+      c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(2, yh * 3.4 + 8, sr, 0, 7); c.fill();
+      c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye;
+      c.beginPath(); c.arc(2, yh * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
 
       drawAura(c, f, t);
       drawCape(c, p, t, f, s, dmg);
@@ -312,7 +659,9 @@
       drawGreave(c, p.kneeF, p.footF, s);
       drawSandal(c, p.footF, s, false);
 
-      drawHead(c, p, s, t, f);
+      // retired head-on-body rig (behind USE_HEAD_RIG, off by default); else plain head
+      if (USE_HEAD_RIG && HERO.ready && f.godId && FIGHTER_ART[f.godId]) drawHeadArt(c, p, s, f, f.godId);
+      else drawHead(c, p, s, t, f);
 
       // front arm + weapon
       boneChain(c, [p.shF, p.elF, p.hnF], [8, 6.2, 4.8], s, {});
@@ -504,7 +853,10 @@
 
     /* ---- energy aura (DBZ flame) ---- */
     function drawAura(c, f, t) {
-      var lvl = clamp(f.aura, 0, 1) * 0.7 + (f.state === "special" ? 0.5 : 0) + clamp(f.energy / 100, 0, 1) * 0.25;
+      // flare the attacker in their accent colour through the front of a strike, so
+      // in a fast exchange you can always see WHO just threw the blow.
+      var striking = (f.state === "light" || f.state === "kick" || f.state === "headbutt") && f.stTime < f.stDur * 0.55;
+      var lvl = clamp(f.aura, 0, 1) * 0.7 + (f.state === "special" ? 0.5 : 0) + (striking ? 0.42 : 0) + clamp(f.energy / 100, 0, 1) * 0.25;
       if (lvl < 0.12) return;
       c.save(); c.globalCompositeOperation = "lighter";
       var cxp = 0, cyp = -70, R = 46 + lvl * 20;
@@ -650,6 +1002,140 @@
     var ROSTER = { zeus: ZEUS, poseidon: POSEIDON, athena: ATHENA, hades: HADES };
     var ROSTER_IDS = ["zeus", "poseidon", "athena", "hades"];
 
+    /* ============================================================================
+       LAYERED CUTOUT RIG (prototype)
+       A fighter is drawn as an ordered stack of PARTS (head, torso, arms, legs).
+       Each part is either:
+         - "art": a bitmap cropped from a source sheet, drawn along its bone and
+           transformed by the skeleton — this is where real illustrated art drops in.
+         - "proc": the existing procedural placeholder (color-matched to the god's
+           portrait palette), used until art exists for that part.
+       Today only the HEAD has art (cropped from heroes.jpg); every other part
+       stays procedural, so the body reads as a color-matched placeholder. When a
+       full-body sheet is authored to the generation spec (see /audit/sprite-art-
+       spec.md), fill in that god's part crops here and flip the part to "art" —
+       no engine change. FIGHTER_ART[godId].head crops are fractions of that god's
+       quadrant of heroes.jpg (tuned so the face + crown fill the head silhouette).
+       ============================================================================ */
+    // Per-god head: silhouette (rx,ry,dy), portrait crop (fx,fy,fw,fh + focus fX,fY),
+    // facial-feature bands as fractions of the crop height (eyeY/jawY/browY) that the
+    // rig warps, and an optional separate BACK layer (Athena's plume) that sways.
+    var FIGHTER_ART = {
+      zeus:     { head: { fx: 0.25, fy: 0.06, fw: 0.46, fh: 0.62, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42, eyeY: 0.46, jawY: 0.70, browY: 0.40 } },
+      poseidon: { head: { fx: 0.31, fy: 0.04, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.40, eyeY: 0.44, jawY: 0.68, browY: 0.38 } },
+      athena:   { head: { fx: 0.17, fy: 0.30, fw: 0.44, fh: 0.58, rx: 21, ry: 26, dy: -6, fX: 0.5, fY: 0.48, eyeY: 0.50, jawY: 0.74, browY: 0.44,
+                          plume: { fx: 0.22, fy: 0.02, fw: 0.34, fh: 0.34, ax: -4, ay: -20, w: 30, h: 26, sway: 1 } } },
+      hades:    { head: { fx: 0.33, fy: 0.12, fw: 0.42, fh: 0.60, rx: 22, ry: 27, dy: -7, fX: 0.5, fY: 0.42, eyeY: 0.44, jawY: 0.70, browY: 0.38 } }
+    };
+    function heroCell(id) {
+      var i = HERO_ORDER.indexOf(id); if (i < 0) i = 0;
+      var col = i % 2, row = (i / 2) | 0, iw = HERO.img.width / 2, ih = HERO.img.height / 2;
+      return { sx: col * iw, sy: row * ih, sw: iw, sh: ih };
+    }
+    // weight for dangly sway: 1 at the crown (hair/plume) and chin (beard), ~0 across
+    // the rigid face, so hair and beard trail while the face stays put.
+    function swayW(v) { return Math.max(0, 1 - v / 0.24) * 0.7 + Math.max(0, (v - 0.78) / 0.22); }
+
+    // Advance a fighter's facial-rig state from its combat state (blink/jaw/brow/
+    // flinch/turn + neck-lag + hair-sway springs). Cosmetic, integrated in real time.
+    function updateHeadRig(f, dt) {
+      var H = f.head || (f.head = { blink: 0, blinkT: rnd(1.6, 4.4), jaw: 0, brow: 0, flinch: 0, turn: 0, hx: null, hy: null, hvx: 0, hvy: 0, rot: 0, dangle: 0, dvel: 0, lastHx: 0 });
+      var st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1);
+      var attacking = st === "light" || st === "kick" || st === "headbutt" || st === "special" || st === "throw" || st === "aerial";
+      var jawT = 0, browT = 0;
+      if (attacking) { jawT = pr < 0.5 ? 0.95 : 0.25; browT = -0.85; }     // shout + furrow
+      else if (st === "hit") { jawT = 0.55; browT = 0.9; }                   // grimace, brows up
+      else if (st === "block") { browT = -0.45; jawT = 0; }
+      else if (st === "ko") { jawT = 0.3; browT = 0.2; }
+      else if (winner === f) { browT = 0.15; jawT = 0; }                     // proud
+      // blink on an idle-ish cadence (not mid-shout / KO)
+      H.blinkT -= dt;
+      if (H.blinkT <= 0 && !attacking && st !== "ko") { H.blink = 1; H.blinkT = rnd(2.2, 5.2); }
+      H.blink = Math.max(0, H.blink - dt * 9);
+      H.jaw += (jawT - H.jaw) * Math.min(1, dt * 20);
+      H.brow += (browT - H.brow) * Math.min(1, dt * 15);
+      // flinch impulse on the frame hit/ko begins
+      if ((st === "hit" || st === "ko") && f.stTime < dt * 2.2) H.flinch = 1;
+      H.flinch = Math.max(0, H.flinch - dt * 5);
+      // neck-lag spring: displayed head trails the skeleton's head joint
+      var jx = 0, jy = 0; if (f.dpose && f.dpose.head) { jx = f.dpose.head[0]; jy = f.dpose.head[1]; }
+      if (H.hx == null) { H.hx = jx; H.hy = jy; }
+      var w = 46, k = w * w, cc = 2 * 0.6 * w, sub = dt > 0.02 ? 2 : 1, sdt = dt / sub, i;
+      for (i = 0; i < sub; i++) {
+        H.hvx += (k * (jx - H.hx) - cc * H.hvx) * sdt; H.hvy += (k * (jy - H.hy) - cc * H.hvy) * sdt;
+        H.hx += H.hvx * sdt; H.hy += H.hvy * sdt;
+      }
+      // hair/beard/plume pendulum driven by the head's horizontal velocity
+      var drive = -H.hvx * 0.02;
+      var dw2 = 10 * 6.283, dk = dw2 * dw2, dcc = 2 * 0.35 * dw2;
+      for (i = 0; i < sub; i++) { H.dvel += (dk * (drive - H.dangle) - dcc * H.dvel) * sdt; H.dangle += H.dvel * sdt; }
+      H.dangle = clamp(H.dangle, -0.6, 0.6);
+      // slight head turn/lean into motion + a proud lift on victory
+      H.turn += (clamp(-H.hvx * 0.05, -0.5, 0.5) - H.turn) * Math.min(1, dt * 10);
+      return H;
+    }
+
+    // Draw the god's real head as a warpable strip mesh clipped to the head
+    // silhouette: jaw strips drop (mouth open), eye band squashes (blink), brow band
+    // shifts (anger/hurt), and crown+chin strips sway (hair/beard physics).
+    function drawFaceMesh(c, A, cell, H) {
+      var sx0 = cell.sx + A.fx * cell.sw, sy0 = cell.sy + A.fy * cell.sh, sW = A.fw * cell.sw, sH = A.fh * cell.sh;
+      var N = 20, dw = A.rx * 2, dh = A.ry * 2, jawAmt = A.ry * 0.62;
+      // dark mouth cavity behind the face, revealed when the jaw drops
+      c.fillStyle = "#1a0e0a"; c.fillRect(-A.rx, -A.ry, dw, dh);
+      for (var i = 0; i < N; i++) {
+        var v0 = i / N, v1 = (i + 1) / N, vc = (v0 + v1) / 2;
+        var dyoff = 0, dxoff = H.dangle * swayW(vc) * (A.rx * 0.5) + H.turn * (A.rx * 0.12);
+        if (vc > A.jawY) dyoff += H.jaw * ((vc - A.jawY) / (1 - A.jawY)) * jawAmt;   // mouth open
+        if (Math.abs(vc - A.browY) < 0.08) dyoff += -H.brow * 3.2;                    // brow raise/furrow
+        var syTop = sy0 + sH * v0, sHt = sH * (v1 - v0);
+        var dTop = -A.ry + dh * v0 + dyoff, dHt = dh * (v1 - v0) + 0.6;               // +0.6 avoids seams
+        c.drawImage(HERO.img, sx0, syTop, sW, sHt, -A.rx + dxoff, dTop, dw, dHt);
+      }
+    }
+
+    // The full rigged, reactive head: back plume (sway) → neck stub → head mesh
+    // (clipped, warped, blink lid, hit-flash) → collar hiding the seam → outline.
+    function drawHeadArt(c, p, s, f, id) {
+      var A = FIGHTER_ART[id].head, cell = heroCell(id), H = updateHeadRig(f, Math.min(0.033, curReal));
+      var hx = H.hx, hy = H.hy + (A.dy || 0);
+      var lean = clamp((hx - p.neck[0]) * 0.010 + H.turn * 0.15, -0.28, 0.28);
+      if (f.state === "ko") lean += 0.7;                                   // slumped
+      var flinchX = -H.flinch * 5;                                         // head jerks back on a hit
+      // neck stub first (behind the head)
+      boneChain(c, [[p.neck[0], p.neck[1] + 2], [hx - 1, hy + A.ry * 0.72]], [6.6, 7.4], s, {});
+      c.save();
+      c.translate(hx + flinchX, hy); c.rotate(lean);
+      // ---- back layer: Athena's plume, swaying behind the helm ----
+      if (A.plume) {
+        var pl = A.plume; c.save(); c.translate(pl.ax, pl.ay); c.rotate(H.dangle * 0.8);
+        c.drawImage(HERO.img, cell.sx + pl.fx * cell.sw, cell.sy + pl.fy * cell.sh, pl.fw * cell.sw, pl.fh * cell.sh, -pl.w / 2, -pl.h, pl.w, pl.h);
+        c.restore();
+      }
+      var E = new Path2D(); E.ellipse(0, 0, A.rx, A.ry, 0, 0, 7);
+      c.save(); c.shadowColor = "rgba(0,0,0,.5)"; c.shadowBlur = 6; c.shadowOffsetY = 2; c.fillStyle = "#000"; c.fill(E); c.restore();
+      c.save(); c.clip(E);
+      drawFaceMesh(c, A, cell, H);
+      // blink: a skin-toned lid sweeping down over the eye band
+      if (H.blink > 0.02) {
+        var ey = -A.ry + A.ry * 2 * A.eyeY, bh = A.ry * 0.34 * H.blink;
+        c.fillStyle = s.skinSh || s.skin || "#caa"; c.globalAlpha = 0.92;
+        c.beginPath(); c.ellipse(0, ey - bh * 0.5, A.rx * 0.92, bh, 0, 0, 7); c.fill(); c.globalAlpha = 1;
+      }
+      // hit flash — the head lights up on impact
+      if (H.flinch > 0.02) { c.globalCompositeOperation = "lighter"; c.fillStyle = "rgba(255,240,220," + (H.flinch * 0.5) + ")"; c.fillRect(-A.rx, -A.ry, A.rx * 2, A.ry * 2); c.globalCompositeOperation = "source-over"; }
+      c.restore();
+      // silhouette outline + lit rim
+      c.lineWidth = 2.6; c.strokeStyle = s.outline; c.lineJoin = "round"; c.stroke(E);
+      c.lineWidth = 1.4; c.strokeStyle = hexA(s.rim, 0.5);
+      c.beginPath(); c.ellipse(-A.rx * 0.12, -A.ry * 0.12, A.rx - 2, A.ry - 2, 0, Math.PI * 1.05, Math.PI * 1.75); c.stroke();
+      // ---- collar / mantle over the neck seam (god's metal + cloth) ----
+      var cw = A.rx * 0.95, cyv = A.ry * 0.86;
+      var G = new Path2D(); G.moveTo(-cw, cyv - 3); G.quadraticCurveTo(0, cyv + 9, cw, cyv - 3); G.quadraticCurveTo(cw * 0.7, cyv + 6, 0, cyv + 5); G.quadraticCurveTo(-cw * 0.7, cyv + 6, -cw, cyv - 3); G.closePath();
+      cel(c, G, s.metal, s.metalSh, s.rim, s.outline, 10, 1.6, 0.6);
+      c.restore();
+    }
+
     /* ===================== fighters ===================== */
     function makeWounds() {
       var out = [], types = ["bruise", "cut", "blood"];
@@ -662,7 +1148,7 @@
     function Fighter(skin, x, facing, isAI, km, godId) {
       return { skin: skin, godId: godId || null, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
         hp: 100, energy: 0, guard: 100, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6, dpose: null,
-        aura: 0, cooldown: 0, hitLock: 0, combo: 0, curMove: null, wounds: makeWounds() };
+        aura: 0, cooldown: 0, hitLock: 0, stun: 0, dashT: 0, iframe: 0, combo: 0, curMove: null, wounds: makeWounds() };
     }
     function setState(f, st, dur) { if (f.state === st) return; f.state = st; f.stTime = 0; f.stDur = dur || 0.4; }
 
@@ -744,7 +1230,7 @@
     // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
     function tryAttack(f, other, kind) {
       if (f.state === "hit" || f.state === "ko") return;
-      if (kind === "special") { if (f.cooldown > 0) return; return trySpecial(f, other); }
+      if (kind === "special") { if (f.cooldown > 0 && !canAct(f, "special")) return; return trySpecial(f, other); }
       // holding a relic? a strike hurls it instead of swinging.
       if (f.holding && (kind === "light" || kind === "heavy")) { if (f.cooldown > 0) return; throwItem(f, other); return; }
       // AIRBORNE: a committed aerial strike — light = a flying punch, heavy = a diving
@@ -769,7 +1255,7 @@
         return;
       }
       // GROUND MELEE (data-driven): pick the move, then gate through the cancel-aware check
-      var adx = Math.abs(other.x - f.x), id = kind === "light" ? "light" : (adx < 48 ? "headbutt" : "kick");
+      var adx = Math.abs(other.x - f.x), id = kind === "light" ? "light" : (adx < 60 ? "headbutt" : "kick");
       if (!canAct(f, id)) return;
       var m = moveFor(f, id);
       if (m) {
@@ -792,9 +1278,14 @@
     }
     function spawnShot(f, fin) {
       var y = GROUND - 92 - (f.y || 0);
-      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * (fin ? 8.2 : 6.4), owner: f, other: (f === p1 ? p2 : p1),
-        r: fin ? 20 : 12, dmg: fin ? 100 : 20, fin: !!fin, col: f.skin.eye, life: 1.6, t: 0 });
-      burst(f.x + f.facing * 30, y, fin ? "special" : "heavy"); shake = Math.max(shake, fin ? 10 : 5);
+      // each god's special is its own lore-weapon (Zeus bolt, Poseidon wave, Athena owl,
+      // Hades soul); the record carries the kind + colours so drawShots renders it.
+      var sp = charOf(f).special || { kind: "orb", col: f.skin.eye, col2: f.skin.eye, r: 12, speed: 6.4 };
+      var spd = sp.speed * (fin ? 1.28 : 1), rr = sp.r * (fin ? 1.7 : 1);
+      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * spd, dir: f.facing, owner: f, other: (f === p1 ? p2 : p1),
+        r: rr, dmg: fin ? 100 : 20, fin: !!fin, kind: sp.kind, col: sp.col, col2: sp.col2 || sp.col, life: 1.7, t: 0 });
+      burst(f.x + f.facing * 22, y, "heavy"); shake = Math.max(shake, fin ? 10 : 5);
+      if (sp.name) callout = { txt: sp.name + (fin ? " — FINISH" : ""), t: 0.6, col: sp.col };
     }
     // THROW a held relic as a projectile
     function throwItem(f, other) {
@@ -807,13 +1298,31 @@
       shots.push({ x: f.x + f.facing * 26, y: y, vx: f.facing * 7.5, vy: -1.2, grav: 0.28, owner: f, other: other,
         r: it.r, dmg: it.dmg, item: it, col: it.col, colSh: it.colSh, spin: 0, life: 2.2, t: 0 });
     }
-    // pick up a relic you're standing over, or drop the one you hold
+    // grab: at point-blank it's a COMMAND THROW (unblockable — the answer to a
+    // turtle) which the victim can escape by grabbing back (throw-tech). Otherwise
+    // it picks up / sets down a relic as before.
     function tryGrab(f) {
-      if (f.state === "hit" || f.state === "ko" || !f.onGround) return;
-      if (f.holding) { // set it back down
-        groundItem = { kind: f.holding, x: clamp(f.x, 40, VW - 40), y: GROUND }; f.holding = null; return;
-      }
+      if (f.state === "hit" || f.state === "ko" || !f.onGround || f.stun > 0 || f.cooldown > 0) return;
+      var other = f === p1 ? p2 : p1;
+      if (other && other.state !== "ko" && Math.abs(other.x - f.x) < 58 && !f.holding) { doThrow(f, other); return; }
+      if (f.holding) { groundItem = { kind: f.holding, x: clamp(f.x, 40, VW - 40), y: GROUND }; f.holding = null; return; }
       if (groundItem && Math.abs(groundItem.x - f.x) < 34) { f.holding = groundItem.kind; groundItem = null; }
+    }
+    function doThrow(f, other) {
+      f.facing = other.x > f.x ? 1 : -1;
+      setState(f, "throw", 0.42); f.cooldown = 0.5;
+      // throw-tech: the victim escapes if they grab back in time (or, for the AI, on a read)
+      var teching = other.state !== "hit" && other.state !== "ko" && other.stun <= 0 &&
+        (other.isAI ? (Math.abs(other.x - f.x) < 60 && Math.random() < 0.22) : (other.km && !!keys[other.km.grab]));
+      if (teching) {
+        var d = f.facing; f.vx = 0; f.mvx = -d * 3; other.mvx = d * 3; f.cooldown = 0.3;
+        burst((f.x + other.x) / 2, GROUND - 70, "block"); hitStop = Math.max(hitStop, 0.06);
+        callout = { txt: "THROW BREAK", t: 0.6, col: "#e7c680" }; return;
+      }
+      other.facing = -f.facing;
+      applyDamage(f, other, 16, "grab", false, (f.x + other.x) / 2, GROUND - 70);
+      if (other.state !== "ko") { other.vy = 6.5; other.onGround = false; }   // toss up and away
+      callout = { txt: "THROW", t: 0.5, col: f.skin.eye };
     }
     function updateShots(dt) {
       for (var i = shots.length - 1; i >= 0; i--) {
@@ -864,35 +1373,60 @@
     // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
     function applyDamage(f, other, dmg, kind, fin, hx, hy, move) {
       if (other.state === "ko") return;
-      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial";
-      var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris";
-      if (fin) { dmg = 100; blocked = false; }
+      var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial" || kind === "grab";
+      // i-frames from a dodge/back-dash beat the hit entirely (a throw still grabs)
+      if (other.iframe > 0 && !fin && kind !== "debris" && kind !== "grab") { burst(hx, hy, "block"); return; }
+      // a command throw is unblockable — holding block does not stop it
+      var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris" && kind !== "grab";
+      // just-block / guard impact: tap block right as the blow lands (block held < 0.14s)
+      var parry = blocked && other.stTime < 0.14;
+      // counter-hit: you caught them mid-move (startup/active/recovery), not neutral
+      var counter = !blocked && !!f && !!ATTACK_STATES[other.state];
+      if (fin) { dmg = 100; blocked = false; parry = false; }
+      var base0 = dmg;                                        // pre-scale, for guard erosion
+      if (!fin) dmg = Math.max(1, Math.round(dmg * DMG));     // longevity
+      if (counter) dmg = Math.round(dmg * 1.4);              // counter-hit bonus
+      // combo damage scaling: each extra hit in a string does less, so long
+      // cancel combos reward execution without becoming a one-touch kill.
+      if (f && f.combo > 0 && !fin) dmg = Math.max(1, Math.round(dmg * Math.max(0.35, 1 - f.combo * 0.13)));
       var raw = dmg;
-      if (blocked) dmg = Math.round(dmg * 0.25);
+      if (blocked && !parry) dmg = Math.round(dmg * 0.25);
+      if (parry) dmg = 0;
       other.hp = clamp(other.hp - dmg, 0, 100);
       if (f) { f.energy = clamp(f.energy + (heavy ? 8 : 10), 0, 100); }
-      other.energy = clamp(other.energy + 6, 0, 100);
-      if (!blocked) {
-        setState(other, "hit", kind === "headbutt" ? 0.42 : 0.34); other.hitLock = 0.34; other.combo = 0;
+      other.energy = clamp(other.energy + (parry ? 14 : 6), 0, 100);
+      if (parry) {
+        // no chip, no guard loss; the ATTACKER eats extra recovery, so you get a
+        // guaranteed punish for reading the strike. This is the core defensive skill.
+        burst(hx, hy, "block"); flash = Math.max(flash, 0.3); shake = Math.max(shake, 6); hitStop = Math.max(hitStop, 0.09);
+        if (f) { f.cooldown += 0.26; f.stun = Math.max(f.stun, 0.24); f.vx = -(f.facing || 1) * 2.0; }
+        other.vx = 0; callout = { txt: "PARRY", t: 0.7, col: other.skin.eye };
+      } else if (!blocked) {
+        var hstun = (kind === "headbutt" ? 0.42 : heavy ? 0.36 : 0.28) * (counter ? 1.45 : 1);
+        setState(other, "hit", hstun); other.hitLock = hstun; other.stun = hstun; other.combo = 0;
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
-        // F2: knockback / hitstop come from move data when present, else the old constants
-        var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
-        other.vx = dir * (fin ? 6 : kb) / (charOf(other).weight || 1);
+        var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "grab" ? 5.5 : kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
+        other.vx = dir * (fin ? 6 : kb) * (counter ? 1.2 : 1) / (charOf(other).weight || 1);
+        // corner relief: if the defender is pinned against the wall behind them,
+        // shove the ATTACKER back instead of burying them deeper in the corner.
+        if (f && f.onGround) { var wall = dir > 0 ? VW - 40 : 40; if (Math.abs(other.x - wall) < 52) f.vx -= dir * kb * 0.8; }
         if (f) f.combo++;
+        if (counter) callout = { txt: "COUNTER", t: 0.6, col: f ? f.skin.eye : "#e7c680" };
         burst(hx, hy, fin ? "special" : heavy ? "heavy" : "light"); spray(hx, hy, other.skin.blood, fin ? "special" : heavy ? "heavy" : "light");
-        shake = Math.max(shake, fin ? 18 : heavy ? 9 : 4);
+        shake = Math.max(shake, fin ? 18 : counter ? 12 : heavy ? 9 : 4);
         var hs = move && move.onHit && move.onHit.hitstop != null ? move.onHit.hitstop : (heavy ? 0.12 : 0.06);
-        hitStop = Math.max(hitStop, fin ? 0.25 : hs);
+        hitStop = Math.max(hitStop, fin ? 0.25 : counter ? hs + 0.05 : hs);
         var pools = fin ? 6 : heavy ? 4 : 2;   // more blood than before
         for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-18, 18), y: GROUND + rnd(0, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
       } else {
         other.vx = (f ? f.facing : 1) * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04);
+        other.stun = Math.max(other.stun, kind === "special" ? 0.18 : heavy ? 0.15 : 0.12);   // block-stun
         // guard absorbs the blow but the meter erodes; empty it and the guard breaks
-        other.guard = clamp(other.guard - (raw * 1.8 + 6), 0, 100);
+        other.guard = clamp(other.guard - (base0 * 1.8 + 6), 0, 100);
         if (other.guard <= 0) {
-          setState(other, "hit", 0.42); other.hitLock = 0.42; other.combo = 0;
+          setState(other, "hit", 0.5); other.hitLock = 0.5; other.stun = 0.5; other.combo = 0;
           other.vx = (f ? f.facing : 1) * 3.4; other.guard = 45;
-          other.hp = clamp(other.hp - 4, 0, 100); shake = Math.max(shake, 9);
+          other.hp = clamp(other.hp - 2, 0, 100); shake = Math.max(shake, 9);
           banner = { txt: "GUARD BROKEN", t: 1.1, fin: false };
         }
       }
@@ -931,15 +1465,74 @@
       for (var i = 0; i < shots.length; i++) {
         var sh = shots[i];
         if (sh.item) { drawItemAt(c, sh.item, sh.x, sh.y, sh.spin || 0); continue; }
-        // energy orb: bright core, colored halo, motion trail
+        var dir = sh.dir || (sh.vx > 0 ? 1 : -1);
         c.save(); c.globalCompositeOperation = "lighter";
-        var g = c.createRadialGradient(sh.x, sh.y, 0, sh.x, sh.y, sh.r * 2.2);
-        g.addColorStop(0, "rgba(255,255,255,.95)"); g.addColorStop(0.4, hexA(sh.col, 0.8)); g.addColorStop(1, "rgba(0,0,0,0)");
-        c.fillStyle = g; c.beginPath(); c.arc(sh.x, sh.y, sh.r * 2.2, 0, 7); c.fill();
-        // comet tail
-        for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.4 - k * 0.06; c.fillStyle = sh.col; c.beginPath(); c.arc(sh.x - sh.vx * k * 1.4, sh.y, sh.r * (1 - k * 0.13), 0, 7); c.fill(); }
+        // a soft coloured aura (NOT a white core) so each god's silhouette + colour reads
+        var g = c.createRadialGradient(sh.x, sh.y, 0, sh.x, sh.y, sh.r * 1.7);
+        g.addColorStop(0, hexA(sh.col, 0.55)); g.addColorStop(0.6, hexA(sh.col2 || sh.col, 0.3)); g.addColorStop(1, "rgba(0,0,0,0)");
+        c.fillStyle = g; c.beginPath(); c.arc(sh.x, sh.y, sh.r * 1.7, 0, 7); c.fill();
+        if (sh.kind === "bolt") drawBolt(c, sh, dir);
+        else if (sh.kind === "wave") drawWave(c, sh, dir);
+        else if (sh.kind === "owl") drawOwl(c, sh, dir);
+        else if (sh.kind === "soul") drawSoul(c, sh, dir);
+        else { for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.4 - k * 0.06; c.fillStyle = sh.col; c.beginPath(); c.arc(sh.x - sh.vx * k * 1.4, sh.y, sh.r * (1 - k * 0.13), 0, 7); c.fill(); } }
         c.restore();
       }
+    }
+    // Zeus — keraunos: a long jagged bolt streaking forward, crackling white over blue,
+    // with a couple of forked branches so it reads unmistakably as lightning.
+    function drawBolt(c, sh, dir) {
+      var n = 8, len = sh.r * 5.4, seg = len / n, seed = (sh.t * 40) | 0, half = len * 0.55;
+      function rnd(i) { var x = Math.sin((seed + i) * 12.9898) * 43758.5; return x - Math.floor(x); }
+      var pts = []; for (var j = 0; j <= n; j++) pts.push([sh.x + dir * (half - seg * j), sh.y + (j === 0 || j === n ? 0 : (rnd(j) - 0.5) * sh.r * 1.6)]);
+      for (var pass = 0; pass < 2; pass++) {
+        c.beginPath(); c.moveTo(pts[0][0], pts[0][1]); for (var q = 1; q < pts.length; q++) c.lineTo(pts[q][0], pts[q][1]);
+        // a fork off the middle
+        var mid = pts[4]; c.moveTo(mid[0], mid[1]); c.lineTo(mid[0] - dir * sh.r * 1.4, mid[1] + sh.r * 1.5);
+        c.strokeStyle = pass === 0 ? sh.col2 : "#ffffff"; c.lineWidth = pass === 0 ? sh.r * 0.85 : sh.r * 0.36;
+        c.shadowColor = sh.col2; c.shadowBlur = 14; c.lineJoin = "round"; c.lineCap = "round"; c.stroke();
+      }
+      c.shadowBlur = 0;
+    }
+    // Poseidon — a rolling wave crest with a foam lip, curling toward the foe.
+    function drawWave(c, sh, dir) {
+      var R = sh.r * 1.7;
+      c.save(); c.translate(sh.x, sh.y); c.scale(dir, 1);
+      var g = c.createLinearGradient(0, -R, 0, R); g.addColorStop(0, hexA(sh.col, 0.95)); g.addColorStop(1, hexA(sh.col2, 0.7));
+      c.fillStyle = g; c.beginPath();
+      c.moveTo(-R, R * 0.7); c.quadraticCurveTo(-R * 0.2, -R * 1.1, R * 0.9, -R * 0.2);
+      c.quadraticCurveTo(R * 1.15, R * 0.2, R * 0.5, R * 0.5); c.quadraticCurveTo(0, R * 0.8, -R, R * 0.7); c.closePath(); c.fill();
+      // foam crest
+      c.strokeStyle = "#ffffff"; c.lineWidth = 2.4; c.globalAlpha = 0.9;
+      c.beginPath(); c.moveTo(-R * 0.6, R * 0.1 + Math.sin(sh.t * 18) * 2); c.quadraticCurveTo(0, -R * 0.7, R * 0.85, -R * 0.15); c.stroke();
+      c.restore();
+    }
+    // Athena — the owl: a spread-winged silhouette of gold light, wings beating.
+    function drawOwl(c, sh, dir) {
+      var R = sh.r * 1.4, beat = Math.sin(sh.t * 22) * 0.5 + 0.5;
+      c.save(); c.translate(sh.x, sh.y); c.scale(dir, 1);
+      c.fillStyle = sh.col; c.shadowColor = sh.col; c.shadowBlur = 12;
+      // body
+      c.beginPath(); c.ellipse(0, 0, R * 0.5, R * 0.72, 0, 0, 7); c.fill();
+      // wings (flap with beat)
+      var wy = -R * 0.2 - beat * R * 0.5;
+      c.beginPath(); c.moveTo(0, -R * 0.1); c.quadraticCurveTo(-R * 1.3, wy, -R * 1.5, R * 0.3); c.quadraticCurveTo(-R * 0.7, R * 0.2, 0, R * 0.4); c.closePath(); c.fill();
+      c.beginPath(); c.moveTo(0, -R * 0.1); c.quadraticCurveTo(R * 1.3, wy, R * 1.5, R * 0.3); c.quadraticCurveTo(R * 0.7, R * 0.2, 0, R * 0.4); c.closePath(); c.fill();
+      // eyes
+      c.shadowBlur = 0; c.fillStyle = "#fff"; c.beginPath(); c.arc(-R * 0.2, -R * 0.35, R * 0.12, 0, 7); c.arc(R * 0.2, -R * 0.35, R * 0.12, 0, 7); c.fill();
+      c.restore();
+    }
+    // Hades — a soul-wraith: a skull-orb trailing dark violet flame.
+    function drawSoul(c, sh, dir) {
+      var R = sh.r * 1.2;
+      // trailing gloom
+      for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.34 - k * 0.05; c.fillStyle = sh.col2; c.beginPath(); c.arc(sh.x - dir * k * 5, sh.y + Math.sin(sh.t * 12 + k) * 3, R * (1 - k * 0.12), 0, 7); c.fill(); }
+      c.globalAlpha = 1; c.save(); c.translate(sh.x, sh.y);
+      c.fillStyle = sh.col; c.shadowColor = sh.col; c.shadowBlur = 12;
+      c.beginPath(); c.arc(0, -R * 0.1, R * 0.62, Math.PI, 0); c.quadraticCurveTo(R * 0.5, R * 0.5, R * 0.2, R * 0.5); c.lineTo(-R * 0.2, R * 0.5); c.quadraticCurveTo(-R * 0.5, R * 0.5, -R * 0.62, -R * 0.1); c.fill();
+      // eye sockets
+      c.shadowBlur = 0; c.fillStyle = "#1a0f2e"; c.beginPath(); c.arc(-R * 0.24, -R * 0.15, R * 0.16, 0, 7); c.arc(R * 0.24, -R * 0.15, R * 0.16, 0, 7); c.fill();
+      c.restore();
     }
     function drawItemAt(c, it, x, y, spin) {
       c.save(); c.translate(x, y); c.rotate(spin);
@@ -1035,11 +1628,17 @@
     /* ===================== AI ===================== */
     function think(f, other, dt) {
       if (f.state === "hit" || f.state === "ko") return;
+      if (f.stun > 0) return;
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
       // airborne: drift toward the foe and sometimes throw an aerial strike
       if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
       // occasionally leap — to close distance or dodge, and to bring the fight into the air
       if (f.onGround && f.cooldown <= 0 && Math.random() < 0.012 && (adx < 60 || adx > 150)) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); landDust(f); return; }
+      // dash in from mid-range to close the gap or whiff-punish; back-dash out on a read
+      if (f.onGround && f.dashT <= 0 && f.cooldown <= 0 && f.aiT <= 0) {
+        if (adx > 82 && adx < 150 && Math.random() < 0.05) { startDash(f, dir); f.aiT = 0.4; return; }
+        if (adx < 52 && Math.random() < 0.02) { startDash(f, -dir); f.aiT = 0.5; return; }   // evade back
+      }
       // holding a relic: close a little, then hurl it
       if (f.holding) { if (adx > 180) { f.vx = dir * 1.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); return; } if (f.aiT <= 0) { tryAttack(f, other, "light"); f.aiT = 0.6; } return; }
       // a relic lies nearby and I'm free — go grab it sometimes
@@ -1051,8 +1650,16 @@
         if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < 0.5) { tryAttack(f, other, "special"); f.aiT = 1.0 + Math.random(); return; }
         f.intent = "advance";
       }
-      else if (f.aiT <= 0) { var r = Math.random(); f.intent = r < 0.42 ? "light" : r < 0.66 ? "heavy" : r < 0.82 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
+      else if (f.aiT <= 0) {
+        var r = Math.random();
+        // too close: often give ground rather than mash on top of the foe — this is
+        // what stops the AI from gluing itself to the player and wall-pinning them
+        if (adx < 54 && r < 0.30) { f.intent = "space"; f.aiT = 0.3 + Math.random() * 0.35; }
+        else if (adx < 46 && r < 0.46) { tryGrab(f); f.intent = "wait"; f.aiT = 0.6 + Math.random() * 0.4; }  // command-throw mixup vs turtling
+        else { f.intent = r < 0.40 ? "light" : r < 0.62 ? "heavy" : r < 0.80 ? "block" : (f.energy >= 40 ? "special" : "light"); f.aiT = 0.45 + Math.random() * 0.6; }
+      }
       if (f.intent === "advance") { f.vx = dir * (charOf(f).walkSpeed || 3.1) * 0.52; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
+      else if (f.intent === "space") { f.vx = -dir * (charOf(f).walkSpeed || 3.1) * 0.6; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); }
       else if (f.intent === "block") { if (f.state === "idle" || f.state === "walk") setState(f, "block", 0.5); f.vx = 0; }
       else if (f.intent === "light" || f.intent === "heavy" || f.intent === "special") { tryAttack(f, other, f.intent); f.intent = "wait"; }
       else { f.vx = 0; if (f.state === "walk") setState(f, "idle", 1); }
@@ -1078,9 +1685,21 @@
       // remember pre-step positions for render interpolation
       p1.px = p1.x; p1.py = (p1.y || 0); p2.px = p2.x; p2.py = (p2.y || 0);
       [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
-      // keep the fighters from overlapping so you can always tell them apart
-      var sepdx = p2.x - p1.x, ad = Math.abs(sepdx);
-      if (ad < 46 && p1.state !== "ko" && p2.state !== "ko") { var push = (46 - ad) / 2, sgn = sepdx >= 0 ? 1 : -1; p1.x = clamp(p1.x - sgn * push, 40, VW - 40); p2.x = clamp(p2.x + sgn * push, 40, VW - 40); }
+      // keep a real gap between the fighters so bodies read as two separate
+      // figures, not one blob. MINSEP is well under strike reach (~90px) so hits
+      // still land. Slack lost to a wall is transferred to the free fighter, so a
+      // cornered player isn't shoved through the wall and left overlapping.
+      var lo = p1.x <= p2.x ? p1 : p2, hi = p1.x <= p2.x ? p2 : p1;
+      // don't separate while a jump OR a dash is passing through — that's how you get
+      // to the far side of the foe (a jump-over cross-up, or a grounded dash-through
+      // side-switch). The hard floor otherwise pins you to one side.
+      var passing = (p1.y || 0) > 26 || (p2.y || 0) > 26 || p1.dashT > 0 || p2.dashT > 0;
+      if (!passing && hi.x - lo.x < MINSEP && lo.state !== "ko" && hi.state !== "ko") {
+        var need = MINSEP - (hi.x - lo.x), loX = lo.x - need / 2, hiX = hi.x + need / 2;
+        if (loX < 40) { hiX += 40 - loX; loX = 40; }
+        if (hiX > VW - 40) { loX -= hiX - (VW - 40); hiX = VW - 40; }
+        lo.x = clamp(loX, 40, VW - 40); hi.x = clamp(hiX, 40, VW - 40);
+      }
       updateShots(dt); updateDebris(dt);
       // falling debris — frequent enough to matter, in every weather (storms rain more)
       debrisT -= dt; if (debrisT <= 0 && winner == null) { debrisT = rnd(1.1, 2.4); if (Math.random() < (weather ? weather.debris : 0.14) + 0.55) { spawnDebris(); if (Math.random() < 0.4) spawnDebris(); } }
@@ -1090,6 +1709,7 @@
       if (!running) return;
       // real elapsed time, clamped so a long stall can't spiral the accumulator
       var real = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; var t = ts / 1000;
+      curReal = real; // last real frame delta, read by the pose-dynamics spring in drawFighter
       // --- purely-visual updates run once per rendered frame (real time) ---
       for (var i = 0; i < motes.length; i++) { var mo = motes[i]; mo.y -= mo.v * real * 30; mo.x += Math.sin(t + i) * 0.2; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
       flash = Math.max(0, flash - real * 2); shake = Math.max(0, shake - real * 32);
@@ -1120,6 +1740,7 @@
       drawWeather(cx);
       drawFX(cx);
       if (p1.combo > 1 && p1.state !== "ko") comboText(cx, p1.combo);
+      if (callout) { drawCallout(cx, callout); callout.t -= real; if (callout.t <= 0) callout = null; }
       if (banner) { drawBanner(cx); banner.t -= real; if (banner.t <= 0) banner = null; }
       cx.restore();
       renderHUD();
@@ -1128,6 +1749,7 @@
     }
     function update(f, other, dt) {
       f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
+      f.stun = Math.max(0, (f.stun || 0) - dt); f.dashT = Math.max(0, (f.dashT || 0) - dt); f.iframe = Math.max(0, (f.iframe || 0) - dt); f.tapT = Math.max(0, (f.tapT || 0) - dt);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
       // guard meter: erodes while you hold block, recovers while you don't; hold too long and it breaks
       if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
@@ -1143,7 +1765,8 @@
       // weighty locomotion: ease the ACTUAL velocity toward the control's desired
       // velocity so starts and stops carry momentum instead of snapping. Knockback
       // (hit/ko) keeps its own impulse and just decays.
-      if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
+      if (f.dashT > 0 && f.state !== "hit" && f.state !== "ko") { f.x += f.mvx; f.mvx *= 0.86; f.vx = 0; } // dash burst decays
+      else if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
       else {
         var accel = f.vx !== 0 ? 0.24 : 0.32;
         f.mvx += (f.vx - f.mvx) * accel;
@@ -1160,26 +1783,69 @@
       var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1 };
       if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, f.onGround ? "idle" : "jump", 1); f._hit = null; f._cast = null; f.curMove = null; if (was !== "hit") f.combo = 0; }
       if (f.state === "walk" && Math.abs(f.vx) < 0.1 && f.onGround) setState(f, "idle", 1);
-      if ((f.state === "idle" || f.state === "walk" || f.state === "jump") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
+      // Always turn to face the opponent unless mid-committed-move — so crossing to the
+      // other side (dash-through, jump-over) turns the WHOLE body, and walking away is a
+      // backpedal (you keep facing the foe) rather than mooning them.
+      var committed = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, aerial: 1, hit: 1, ko: 1 };
+      if (!f.isAI && !committed[f.state] && f.dashT <= 0) f.facing = (other.x > f.x) ? 1 : -1;
+    }
+    // a committed burst step. Toward the foe = dash-in (close range / whiff-punish);
+    // away = back-dash with brief invincibility (the evade/bait tool). Momentum
+    // carries then settles, so it reads as a real dash, not a teleport.
+    function startDash(f, dir) {
+      if (f.dashT > 0 || !f.onGround || f.cooldown > 0 || f.stun > 0) return;
+      var back = dir !== f.facing;
+      // a forward dash reaches a bit further so it can carry you THROUGH the foe to
+      // the far side (mid-fight side-switch); both dashes are invincible while moving,
+      // so the pass-through is safe.
+      f.dashT = back ? 0.22 : 0.30; f.mvx = dir * (back ? 10.5 : 14.5); f.tapT = 0; f.tapDir = 0;
+      f.iframe = back ? 0.16 : 0.22;
+      setState(f, "walk", 0.22); landDust(f);
     }
     function humanControl(f, other) {
       var km = f.km || {};
       if (f.state === "hit" || f.state === "ko") { if (f.onGround) f.vx = 0; return; }
+      // block-stun / recovery: locked out of acting for a beat (this is what makes an
+      // unsafe move punishable — you can't just mash out of a blocked heavy).
+      if (f.stun > 0) { if (f.onGround && f.dashT <= 0) f.vx = 0; return; }
+      // double-tap left/right = dash. Detect the key's rising edge and pair it with
+      // a recent tap in the same direction.
+      var L = !!keys[km.left], R = !!keys[km.right], eL = L && !f._kl, eR = R && !f._kr; f._kl = L; f._kr = R;
+      if (eL) { if (f.tapDir === -1 && f.tapT > 0) { startDash(f, -1); } else { f.tapDir = -1; f.tapT = 0.24; } }
+      if (eR) { if (f.tapDir === 1 && f.tapT > 0) { startDash(f, 1); } else { f.tapDir = 1; f.tapT = 0.24; } }
+      if (f.dashT > 0) return;                    // mid-dash: keep the burst, ignore other input
       // leap out of idle/walk
-      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f); }
-      if (!f.onGround) { // air control: drift, keep the current attack/jump pose
-        if (keys[km.left]) { f.vx = -2.4; f.facing = -1; } else if (keys[km.right]) { f.vx = 2.4; f.facing = 1; } else f.vx *= 0.9;
+      if (keys[km.jump] && f.onGround && f.state !== "block" && f.cooldown <= 0) {
+        f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); keys[km.jump] = false; landDust(f);
+        // a directional jump commits real horizontal momentum, so you actually arc
+        // OVER the foe and land on the far side (cross-up), not just hop straight up.
+        f.vx = keys[km.left] ? -5 : keys[km.right] ? 5 : (f.mvx || 0);
+      }
+      if (!f.onGround) { // air control: steer the arc (enough to clear the foe for a cross-up)
+        if (keys[km.left]) { f.vx = -4.4; } else if (keys[km.right]) { f.vx = 4.4; } else f.vx *= 0.96;
         return;
       }
       if (f.cooldown > 0) { f.vx = 0; return; }
       f.vx = 0;
       if (keys[km.block]) { setState(f, "block", 0.4); return; }
       var ws = charOf(f).walkSpeed || 3.1;
-      if (keys[km.left]) { f.vx = -ws; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
-      else if (keys[km.right]) { f.vx = ws; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
+      // move on input; facing is handled by the auto-face above (always face the foe), so
+      // pressing away walks backward instead of turning your back to the opponent.
+      if (keys[km.left]) { f.vx = -ws; if (f.state !== "walk") setState(f, "walk", 1); }
+      else if (keys[km.right]) { f.vx = ws; if (f.state !== "walk") setState(f, "walk", 1); }
       else if (f.state === "walk" || f.state === "block") setState(f, "idle", 1);
     }
     function comboText(c, n) { c.save(); c.font = "700 22px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.textAlign = "center"; c.shadowColor = "#000"; c.shadowBlur = 6; c.fillText(n + " HIT", VW * 0.26, 54); c.restore(); }
+    // transient skill callout — PARRY / COUNTER — punches in then fades, so the
+    // player gets clear feedback that a read (not a mash) just paid off.
+    function drawCallout(c, o) {
+      var a = clamp(o.t / 0.7, 0, 1), pop = 1 + (1 - a) * 0.4;
+      c.save(); c.globalAlpha = a; c.translate(VW / 2, 68); c.scale(pop, pop);
+      c.font = "800 26px Cinzel, Georgia, serif"; c.textAlign = "center";
+      c.lineWidth = 4; c.strokeStyle = "#160d05"; c.strokeText(o.txt, 0, 0);
+      c.fillStyle = o.col || UI.goldB; c.shadowColor = o.col || UI.goldB; c.shadowBlur = 12; c.fillText(o.txt, 0, 0);
+      c.restore();
+    }
     function drawBanner(c) { c.save(); c.textAlign = "center"; c.globalAlpha = clamp(banner.t, 0, 1); c.font = "700 32px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.shadowColor = "#000"; c.shadowBlur = 12; c.fillText(banner.txt, VW / 2, VH / 2); c.restore(); }
 
     /* ===================== portraits ===================== */
@@ -1218,7 +1884,9 @@
           '<div class="fg-sel-mode"><button class="rq-btn" data-a="mode">Opponent: ' + (sel.twoP ? "Player 2 (human)" : "the AI") + "</button></div>" +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
-          '<p class="rq-note">P1: A/D move · S guard · J punch · K kick (headbutt up close) · L energy blast · U grab/throw a relic.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , punch · . kick · / blast · M grab." : " On touch, use the on-screen pads.") + " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Fill the energy bar and land a blast on a weakened foe for a FINISH.</p>";
+          '<p class="rq-note">P1: A/D move · S guard · J punch · K kick (headbutt up close) · L energy blast · U grab.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , punch · . kick · / blast · M grab." : " On touch, use the on-screen pads.") +
+            " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game. <b>Combos:</b> chain jabs and cancel a jab or kick into the blast (e.g. punch → punch → kick → blast); <b>jump over</b> a foe to switch sides (cross-up)." +
+            " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Fill the energy bar and land a blast on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
         root.querySelectorAll(".fg-card").forEach(function (b) {
           b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); render(); });
@@ -1288,7 +1956,7 @@
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1, g1);
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null, g2);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
-      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
+      fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; callout = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
       debrisT = rnd(2, 4); itemT = rnd(4, 7); boltFlash = 0;
       initWeather(WEATHERS[(Math.random() * WEATHERS.length) | 0]);
       if (HERO.ready) vsSplash(function () { running = true; last = performance.now(); raf = requestAnimationFrame(frame); });
@@ -1342,6 +2010,8 @@
     }
     attachKeys();
     loadHeroes();
+    loadSprites();
+    loadParts();
     root.innerHTML = '<div class="rq-loading">Summoning the gods…</div>';
     loadFighterFacts(selectScreen);
 
@@ -1353,6 +2023,23 @@
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
       window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
+      // start an arbitrary matchup, for deterministic capture of any two gods
+      window.__startFight = function (g1, g2) { startFight(g1, g2, false); return { g1: g1, g2: g2 }; };
+      // grant full energy and fire the special, for deterministic capture of each god's move
+      window.__special = function (which) { var f = which === "p2" ? p2 : p1; if (f) { f.energy = 100; f.cooldown = 0; trySpecial(f, f === p1 ? p2 : p1); return f.state; } return null; };
+      window.__shots = function () { return shots.map(function (s) { return { kind: s.kind, col: s.col, x: Math.round(s.x), r: s.r }; }); };
+      // force a state on a fighter, for deterministic capture of head reactions
+      window.__setState = function (which, stt, dur) { var f = which === "p2" ? p2 : p1; if (f) { setState(f, stt, dur || 0.6); return f.state; } return null; };
+      // throw verification: put the foe grounded-adjacent and command-throw them
+      window.__throwTest = function () {
+        if (!p1 || !p2) return null;
+        p2.x = p1.x + p1.facing * 42; p2.y = 0; p2.onGround = true; p2.state = "idle"; p2.stun = 0; p2.iframe = 0; p2.hp = 100;
+        p1.cooldown = 0; p1.stun = 0; p1.holding = null;
+        var hp0 = p2.hp; tryGrab(p1); return { hp0: hp0, hp1: p2.hp, st: p2.state, popped: p2.vy > 1 };
+      };
+      // rig introspection: current displayed (sprung) pose + its authored target,
+      // for measuring overshoot/follow-through and per-frame limb-length stability
+      window.__rig = function (which) { var f = which === "p2" ? p2 : p1; return f ? { dpose: f.dpose, target: f._target, state: f.state } : null; };
       // resolved per-god stats, for the F3.2 "differs on >=3 stats" assertion
       window.__charStats = function (g) {
         var fake = { godId: g };

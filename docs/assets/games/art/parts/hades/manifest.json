@@ -1,0 +1,74 @@
+{
+  "head": {
+    "w": 238,
+    "h": 345,
+    "pivotX": 119,
+    "pivotY": 311
+  },
+  "torso": {
+    "w": 308,
+    "h": 353,
+    "pivotX": 154,
+    "pivotY": 332
+  },
+  "upperArmL": {
+    "w": 203,
+    "h": 323,
+    "pivotX": 102,
+    "pivotY": 45
+  },
+  "upperArmR": {
+    "w": 217,
+    "h": 332,
+    "pivotX": 109,
+    "pivotY": 46
+  },
+  "foreArmL": {
+    "w": 253,
+    "h": 345,
+    "pivotX": 106,
+    "pivotY": 48
+  },
+  "foreArmR": {
+    "w": 562,
+    "h": 342,
+    "pivotX": 236,
+    "pivotY": 48
+  },
+  "thighL": {
+    "w": 194,
+    "h": 353,
+    "pivotX": 97,
+    "pivotY": 35
+  },
+  "thighR": {
+    "w": 194,
+    "h": 353,
+    "pivotX": 97,
+    "pivotY": 35
+  },
+  "shinL": {
+    "w": 227,
+    "h": 395,
+    "pivotX": 114,
+    "pivotY": 40
+  },
+  "shinR": {
+    "w": 229,
+    "h": 400,
+    "pivotX": 115,
+    "pivotY": 40
+  },
+  "auraA": {
+    "w": 400,
+    "h": 350,
+    "pivotX": 200,
+    "pivotY": 175
+  },
+  "auraB": {
+    "w": 412,
+    "h": 378,
+    "pivotX": 206,
+    "pivotY": 189
+  }
+}
