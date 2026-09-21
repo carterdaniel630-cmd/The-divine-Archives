@@ -138,6 +138,8 @@
       id: "zeus",
       walkSpeed: 3.1, jumpVel: 12.5, weight: 1.0,
       factRef: { chapter: "ch08", basis: "Zeus became king of a new order" },
+      // the keraunos — the thunderbolt forged by the Cyclopes: a fast, jagged bolt.
+      special: { kind: "bolt", name: "KERAUNOS", col: "#eaf6ff", col2: "#7fb8ff", r: 12, speed: 7.6 },
       moves: {
         light: { onHit: { damage: 6 } },
         kick: { onHit: { damage: 13, knockback: { x: 4.2 } } },
@@ -151,6 +153,8 @@
       id: "poseidon",
       walkSpeed: 2.6, jumpVel: 11.5, weight: 1.2,
       factRef: { chapter: "ch08", basis: "po-se-da-o" },
+      // the earth-shaker's surge — a rolling tidal wave, big and slow with heavy push.
+      special: { kind: "wave", name: "SEISMOS", col: "#5fe0d6", col2: "#2b7fb0", r: 17, speed: 5.4 },
       moves: {
         light: { onHit: { damage: 7 } },                                  // trident poke
         kick: { hitbox: { joint: "footF", ox: 8, r: 22 }, onHit: { damage: 12, knockback: { x: 6.5 } } }, // long, wall-carrying sweep
@@ -164,6 +168,8 @@
       id: "athena",
       walkSpeed: 3.6, jumpVel: 13.0, weight: 0.9,
       factRef: { chapter: "ch08", basis: "owl, aegis, and olive" },
+      // her sacred owl (glaux) loosed as a bolt of gold — swift, precise, mid-weight.
+      special: { kind: "owl", name: "GLAUX", col: "#ffe08a", col2: "#c79a54", r: 13, speed: 6.9 },
       moves: {
         light: { active: [3, 5], total: 13, cancelWindow: [2, 11], onHit: { damage: 5 } }, // fast jab, quick recovery
         kick: { onHit: { damage: 12 } },
@@ -177,6 +183,8 @@
       id: "hades",
       walkSpeed: 2.8, jumpVel: 12.0, weight: 1.15,
       factRef: { chapter: "ch08", basis: "realm of Hades" },
+      // a loosed shade from the underworld — a slow, heavy soul-wraith wreathed in gloom.
+      special: { kind: "soul", name: "PSYCHE", col: "#b483ff", col2: "#4a2d7a", r: 15, speed: 5.6 },
       moves: {
         light: { onHit: { damage: 8, hitstop: 0.09 } },
         kick: { onHit: { damage: 15, hitstop: 0.16, knockback: { x: 3.0 } } }, // hard, low pushback = stays in range

@@ -334,7 +334,7 @@
         // the ground and the god steps instead of moon-walking. The swing foot lifts, the
         // arms counter-swing to the legs, and the hips drop at each footfall for weight;
         // the IK then bends the knees/elbows to match, keeping the limbs natural.
-        var ph = f.x * 0.28 + f.phase, w = Math.sin(ph) * 15;
+        var ph = f.x * 0.16 + f.phase, w = Math.sin(ph) * 15;
         add(p, "footF", w, -Math.max(0, w) * 1.05); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.5);
         add(p, "footB", -w, -Math.max(0, -w) * 1.05); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.5);
         add(p, "hnF", -w * 0.55, 0); add(p, "elF", -w * 0.32, 0); add(p, "hnB", w * 0.55, 0); add(p, "elB", w * 0.32, 0);
@@ -367,7 +367,13 @@
           else { add(p, "hnF", 36 * ak, -6 * ak); add(p, "elF", 24 * ak, -3 * ak); add(p, "footF", 10 * ak, 16 * ak); add(p, "kneeF", 6 * ak, 10 * ak); add(p, "footB", -14 * ak, -22 * ak); add(p, "kneeB", -8 * ak, -14 * ak); add(p, "hnB", -18 * ak, -6 * ak); add(p, "chest", 5 * ak, 0); add(p, "head", 4 * ak, 0); }
         }
       } else if (st === "hit") {
-        var s = (1 - pr); add(p, "head", -10 * s, 0); add(p, "chest", -7 * s, 0); add(p, "neck", -8 * s, 0); add(p, "hnF", -8 * s, 4 * s); add(p, "hnB", -10 * s, 2 * s);
+        // a real flinch: snap back hard on impact, then recover — the head/torso whip
+        // away from the blow, the arms fly, and the feet stagger, so a clean hit READS.
+        var s = 1 - ease(pr), snap = Math.sin(Math.min(1, pr * 3) * Math.PI) * (1 - pr);
+        add(p, "head", -20 * s - 8 * snap, -2 * snap); add(p, "neck", -15 * s - 5 * snap, 0);
+        add(p, "chest", -14 * s - 4 * snap, 0); add(p, "hip", -6 * s, 2 * s);
+        add(p, "hnF", -16 * s, 8 * s); add(p, "elF", -10 * s, 4 * s); add(p, "hnB", -18 * s, 4 * s); add(p, "elB", -11 * s, 3 * s);
+        add(p, "footB", -10 * s, 0); add(p, "kneeF", 5 * s, 0);   // stagger a half-step back
       } else if (st === "ko") {
         var kk = ease(pr);
         for (var j in p) { var pt = p[j], ang = -1.4 * kk, x = pt[0], y = pt[1]; p[j] = [x * Math.cos(ang) - y * Math.sin(ang) - 46 * kk, x * Math.sin(ang) + y * Math.cos(ang)]; }
@@ -619,7 +625,7 @@
       shapeLimbs(p);
       // ease facing turns so the character flips smoothly rather than mirroring instantly
       if (f.face == null) f.face = f.facing;
-      f.face += (f.facing - f.face) * 0.3;
+      f.face += (f.facing - f.face) * 0.45;   // snappy turn, so a cross-up flips cleanly
       // renderer priority: skeletal cutout (real articulation) > flat painted sprite >
       // procedural body. All three read the same skeleton, which drives hitboxes.
       if (f.godId && PARTS_READY[f.godId]) { drawCutout(c, f, p, t); return; }
@@ -1272,9 +1278,14 @@
     }
     function spawnShot(f, fin) {
       var y = GROUND - 92 - (f.y || 0);
-      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * (fin ? 8.2 : 6.4), owner: f, other: (f === p1 ? p2 : p1),
-        r: fin ? 20 : 12, dmg: fin ? 100 : 20, fin: !!fin, col: f.skin.eye, life: 1.6, t: 0 });
-      burst(f.x + f.facing * 30, y, fin ? "special" : "heavy"); shake = Math.max(shake, fin ? 10 : 5);
+      // each god's special is its own lore-weapon (Zeus bolt, Poseidon wave, Athena owl,
+      // Hades soul); the record carries the kind + colours so drawShots renders it.
+      var sp = charOf(f).special || { kind: "orb", col: f.skin.eye, col2: f.skin.eye, r: 12, speed: 6.4 };
+      var spd = sp.speed * (fin ? 1.28 : 1), rr = sp.r * (fin ? 1.7 : 1);
+      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * spd, dir: f.facing, owner: f, other: (f === p1 ? p2 : p1),
+        r: rr, dmg: fin ? 100 : 20, fin: !!fin, kind: sp.kind, col: sp.col, col2: sp.col2 || sp.col, life: 1.7, t: 0 });
+      burst(f.x + f.facing * 22, y, "heavy"); shake = Math.max(shake, fin ? 10 : 5);
+      if (sp.name) callout = { txt: sp.name + (fin ? " — FINISH" : ""), t: 0.6, col: sp.col };
     }
     // THROW a held relic as a projectile
     function throwItem(f, other) {
@@ -1454,15 +1465,74 @@
       for (var i = 0; i < shots.length; i++) {
         var sh = shots[i];
         if (sh.item) { drawItemAt(c, sh.item, sh.x, sh.y, sh.spin || 0); continue; }
-        // energy orb: bright core, colored halo, motion trail
+        var dir = sh.dir || (sh.vx > 0 ? 1 : -1);
         c.save(); c.globalCompositeOperation = "lighter";
-        var g = c.createRadialGradient(sh.x, sh.y, 0, sh.x, sh.y, sh.r * 2.2);
-        g.addColorStop(0, "rgba(255,255,255,.95)"); g.addColorStop(0.4, hexA(sh.col, 0.8)); g.addColorStop(1, "rgba(0,0,0,0)");
-        c.fillStyle = g; c.beginPath(); c.arc(sh.x, sh.y, sh.r * 2.2, 0, 7); c.fill();
-        // comet tail
-        for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.4 - k * 0.06; c.fillStyle = sh.col; c.beginPath(); c.arc(sh.x - sh.vx * k * 1.4, sh.y, sh.r * (1 - k * 0.13), 0, 7); c.fill(); }
+        // a soft coloured aura (NOT a white core) so each god's silhouette + colour reads
+        var g = c.createRadialGradient(sh.x, sh.y, 0, sh.x, sh.y, sh.r * 1.7);
+        g.addColorStop(0, hexA(sh.col, 0.55)); g.addColorStop(0.6, hexA(sh.col2 || sh.col, 0.3)); g.addColorStop(1, "rgba(0,0,0,0)");
+        c.fillStyle = g; c.beginPath(); c.arc(sh.x, sh.y, sh.r * 1.7, 0, 7); c.fill();
+        if (sh.kind === "bolt") drawBolt(c, sh, dir);
+        else if (sh.kind === "wave") drawWave(c, sh, dir);
+        else if (sh.kind === "owl") drawOwl(c, sh, dir);
+        else if (sh.kind === "soul") drawSoul(c, sh, dir);
+        else { for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.4 - k * 0.06; c.fillStyle = sh.col; c.beginPath(); c.arc(sh.x - sh.vx * k * 1.4, sh.y, sh.r * (1 - k * 0.13), 0, 7); c.fill(); } }
         c.restore();
       }
+    }
+    // Zeus — keraunos: a long jagged bolt streaking forward, crackling white over blue,
+    // with a couple of forked branches so it reads unmistakably as lightning.
+    function drawBolt(c, sh, dir) {
+      var n = 8, len = sh.r * 5.4, seg = len / n, seed = (sh.t * 40) | 0, half = len * 0.55;
+      function rnd(i) { var x = Math.sin((seed + i) * 12.9898) * 43758.5; return x - Math.floor(x); }
+      var pts = []; for (var j = 0; j <= n; j++) pts.push([sh.x + dir * (half - seg * j), sh.y + (j === 0 || j === n ? 0 : (rnd(j) - 0.5) * sh.r * 1.6)]);
+      for (var pass = 0; pass < 2; pass++) {
+        c.beginPath(); c.moveTo(pts[0][0], pts[0][1]); for (var q = 1; q < pts.length; q++) c.lineTo(pts[q][0], pts[q][1]);
+        // a fork off the middle
+        var mid = pts[4]; c.moveTo(mid[0], mid[1]); c.lineTo(mid[0] - dir * sh.r * 1.4, mid[1] + sh.r * 1.5);
+        c.strokeStyle = pass === 0 ? sh.col2 : "#ffffff"; c.lineWidth = pass === 0 ? sh.r * 0.85 : sh.r * 0.36;
+        c.shadowColor = sh.col2; c.shadowBlur = 14; c.lineJoin = "round"; c.lineCap = "round"; c.stroke();
+      }
+      c.shadowBlur = 0;
+    }
+    // Poseidon — a rolling wave crest with a foam lip, curling toward the foe.
+    function drawWave(c, sh, dir) {
+      var R = sh.r * 1.7;
+      c.save(); c.translate(sh.x, sh.y); c.scale(dir, 1);
+      var g = c.createLinearGradient(0, -R, 0, R); g.addColorStop(0, hexA(sh.col, 0.95)); g.addColorStop(1, hexA(sh.col2, 0.7));
+      c.fillStyle = g; c.beginPath();
+      c.moveTo(-R, R * 0.7); c.quadraticCurveTo(-R * 0.2, -R * 1.1, R * 0.9, -R * 0.2);
+      c.quadraticCurveTo(R * 1.15, R * 0.2, R * 0.5, R * 0.5); c.quadraticCurveTo(0, R * 0.8, -R, R * 0.7); c.closePath(); c.fill();
+      // foam crest
+      c.strokeStyle = "#ffffff"; c.lineWidth = 2.4; c.globalAlpha = 0.9;
+      c.beginPath(); c.moveTo(-R * 0.6, R * 0.1 + Math.sin(sh.t * 18) * 2); c.quadraticCurveTo(0, -R * 0.7, R * 0.85, -R * 0.15); c.stroke();
+      c.restore();
+    }
+    // Athena — the owl: a spread-winged silhouette of gold light, wings beating.
+    function drawOwl(c, sh, dir) {
+      var R = sh.r * 1.4, beat = Math.sin(sh.t * 22) * 0.5 + 0.5;
+      c.save(); c.translate(sh.x, sh.y); c.scale(dir, 1);
+      c.fillStyle = sh.col; c.shadowColor = sh.col; c.shadowBlur = 12;
+      // body
+      c.beginPath(); c.ellipse(0, 0, R * 0.5, R * 0.72, 0, 0, 7); c.fill();
+      // wings (flap with beat)
+      var wy = -R * 0.2 - beat * R * 0.5;
+      c.beginPath(); c.moveTo(0, -R * 0.1); c.quadraticCurveTo(-R * 1.3, wy, -R * 1.5, R * 0.3); c.quadraticCurveTo(-R * 0.7, R * 0.2, 0, R * 0.4); c.closePath(); c.fill();
+      c.beginPath(); c.moveTo(0, -R * 0.1); c.quadraticCurveTo(R * 1.3, wy, R * 1.5, R * 0.3); c.quadraticCurveTo(R * 0.7, R * 0.2, 0, R * 0.4); c.closePath(); c.fill();
+      // eyes
+      c.shadowBlur = 0; c.fillStyle = "#fff"; c.beginPath(); c.arc(-R * 0.2, -R * 0.35, R * 0.12, 0, 7); c.arc(R * 0.2, -R * 0.35, R * 0.12, 0, 7); c.fill();
+      c.restore();
+    }
+    // Hades — a soul-wraith: a skull-orb trailing dark violet flame.
+    function drawSoul(c, sh, dir) {
+      var R = sh.r * 1.2;
+      // trailing gloom
+      for (var k = 1; k <= 5; k++) { c.globalAlpha = 0.34 - k * 0.05; c.fillStyle = sh.col2; c.beginPath(); c.arc(sh.x - dir * k * 5, sh.y + Math.sin(sh.t * 12 + k) * 3, R * (1 - k * 0.12), 0, 7); c.fill(); }
+      c.globalAlpha = 1; c.save(); c.translate(sh.x, sh.y);
+      c.fillStyle = sh.col; c.shadowColor = sh.col; c.shadowBlur = 12;
+      c.beginPath(); c.arc(0, -R * 0.1, R * 0.62, Math.PI, 0); c.quadraticCurveTo(R * 0.5, R * 0.5, R * 0.2, R * 0.5); c.lineTo(-R * 0.2, R * 0.5); c.quadraticCurveTo(-R * 0.5, R * 0.5, -R * 0.62, -R * 0.1); c.fill();
+      // eye sockets
+      c.shadowBlur = 0; c.fillStyle = "#1a0f2e"; c.beginPath(); c.arc(-R * 0.24, -R * 0.15, R * 0.16, 0, 7); c.arc(R * 0.24, -R * 0.15, R * 0.16, 0, 7); c.fill();
+      c.restore();
     }
     function drawItemAt(c, it, x, y, spin) {
       c.save(); c.translate(x, y); c.rotate(spin);
@@ -1713,7 +1783,11 @@
       var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1 };
       if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, f.onGround ? "idle" : "jump", 1); f._hit = null; f._cast = null; f.curMove = null; if (was !== "hit") f.combo = 0; }
       if (f.state === "walk" && Math.abs(f.vx) < 0.1 && f.onGround) setState(f, "idle", 1);
-      if ((f.state === "idle" || f.state === "walk" || f.state === "jump") && !f.isAI) f.facing = (other.x > f.x) ? 1 : -1;
+      // Always turn to face the opponent unless mid-committed-move — so crossing to the
+      // other side (dash-through, jump-over) turns the WHOLE body, and walking away is a
+      // backpedal (you keep facing the foe) rather than mooning them.
+      var committed = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, aerial: 1, hit: 1, ko: 1 };
+      if (!f.isAI && !committed[f.state] && f.dashT <= 0) f.facing = (other.x > f.x) ? 1 : -1;
     }
     // a committed burst step. Toward the foe = dash-in (close range / whiff-punish);
     // away = back-dash with brief invincibility (the evade/bait tool). Momentum
@@ -1755,8 +1829,10 @@
       f.vx = 0;
       if (keys[km.block]) { setState(f, "block", 0.4); return; }
       var ws = charOf(f).walkSpeed || 3.1;
-      if (keys[km.left]) { f.vx = -ws; f.facing = -1; if (f.state !== "walk") setState(f, "walk", 1); }
-      else if (keys[km.right]) { f.vx = ws; f.facing = 1; if (f.state !== "walk") setState(f, "walk", 1); }
+      // move on input; facing is handled by the auto-face above (always face the foe), so
+      // pressing away walks backward instead of turning your back to the opponent.
+      if (keys[km.left]) { f.vx = -ws; if (f.state !== "walk") setState(f, "walk", 1); }
+      else if (keys[km.right]) { f.vx = ws; if (f.state !== "walk") setState(f, "walk", 1); }
       else if (f.state === "walk" || f.state === "block") setState(f, "idle", 1);
     }
     function comboText(c, n) { c.save(); c.font = "700 22px Cinzel, Georgia, serif"; c.fillStyle = UI.goldB; c.textAlign = "center"; c.shadowColor = "#000"; c.shadowBlur = 6; c.fillText(n + " HIT", VW * 0.26, 54); c.restore(); }
@@ -1949,6 +2025,9 @@
       window.__fightGive = function () { if (p1) { p1.holding = ITEM_KINDS[0]; return true; } return false; };
       // start an arbitrary matchup, for deterministic capture of any two gods
       window.__startFight = function (g1, g2) { startFight(g1, g2, false); return { g1: g1, g2: g2 }; };
+      // grant full energy and fire the special, for deterministic capture of each god's move
+      window.__special = function (which) { var f = which === "p2" ? p2 : p1; if (f) { f.energy = 100; f.cooldown = 0; trySpecial(f, f === p1 ? p2 : p1); return f.state; } return null; };
+      window.__shots = function () { return shots.map(function (s) { return { kind: s.kind, col: s.col, x: Math.round(s.x), r: s.r }; }); };
       // force a state on a fighter, for deterministic capture of head reactions
       window.__setState = function (which, stt, dur) { var f = which === "p2" ? p2 : p1; if (f) { setState(f, stt, dur || 0.6); return f.state; } return null; };
       // throw verification: put the foe grounded-adjacent and command-throw them
