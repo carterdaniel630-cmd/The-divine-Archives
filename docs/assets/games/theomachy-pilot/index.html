@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theomachy — Pose Pilot: Zeus vs. Hades</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: radial-gradient(120% 90% at 50% 0%, #1c2438 0%, #100b06 70%); color: #e8dcc0;
+         font: 15px/1.5 "Iowan Old Style", Georgia, serif; min-height: 100vh; padding: 20px 16px 48px; }
+  .wrap { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 22px; letter-spacing: .5px; margin: 0 0 2px; }
+  h1 span { color: #8fd0ff; }
+  .tag { color: #b483ff; }
+  .lede { color: #a99b78; font-size: 13px; margin: 0 0 16px; }
+  .stage { position: relative; width: 100%; aspect-ratio: 760 / 360; background: #0c0906;
+           border: 1px solid #3a2f1c; border-radius: 10px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.5); }
+  canvas { display: block; width: 100%; height: 100%; image-rendering: auto; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin: 14px 0 6px; }
+  button { font: inherit; font-size: 13px; color: #14100a; background: #e8c24a; border: 0; border-radius: 6px;
+           padding: 6px 12px; cursor: pointer; }
+  button.alt { background: #2a2016; color: #e8dcc0; border: 1px solid #4a3c24; }
+  .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .card { background: #1a150d; border: 1px solid #33291a; border-radius: 8px; padding: 12px 14px; }
+  .card h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #c79a54; }
+  kbd { display: inline-block; min-width: 20px; text-align: center; background: #2c2214; border: 1px solid #4a3c24;
+        border-bottom-width: 2px; border-radius: 4px; padding: 1px 6px; font: 12px ui-monospace, monospace; color: #ffe9a8; }
+  .row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 13px; border-bottom: 1px dashed #2a2114; }
+  .row:last-child { border-bottom: 0; }
+  .note { color: #8a7c5c; font-size: 12px; margin-top: 12px; }
+  a { color: #8fd0ff; }
+  @media (max-width: 560px) { .controls { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Theomachy — <span>Pose Pilot</span></h1>
+  <p class="lede">Rigid pose-based sprites (no skeleton warping). <b>Zeus</b> vs. <span class="tag">Hades — placeholder</span>.
+     Every strike opens on an anticipation frame, holds its impact frame, and lands with hit-stop, screen-shake and a smear trail.</p>
+
+  <div class="stage"><canvas id="game"></canvas></div>
+
+  <div class="bar">
+    <button id="rematch">Rematch (R)</button>
+    <button class="alt" id="p2mode">Player 2: AI</button>
+    <span class="note">Tip: build meter by fighting, then spend it on Zeus's signature moves.</span>
+  </div>
+
+  <div class="controls">
+    <div class="card">
+      <h3>Zeus — Player 1</h3>
+      <div class="row"><span>Move / Jump</span><span><kbd>A</kbd> <kbd>D</kbd> · <kbd>W</kbd></span></div>
+      <div class="row"><span>Punch / Kick</span><span><kbd>J</kbd> / <kbd>K</kbd></span></div>
+      <div class="row"><span>Block (hold)</span><span><kbd>L</kbd></span></div>
+      <div class="row"><span>Keraunos — bolt throw</span><span><kbd>U</kbd></span></div>
+      <div class="row"><span>Anabasis — rising uppercut</span><span><kbd>I</kbd></span></div>
+      <div class="row"><span>Bronte — thunderclap slam</span><span><kbd>O</kbd></span></div>
+    </div>
+    <div class="card">
+      <h3>Hades — Player 2 <span class="tag">(placeholder)</span></h3>
+      <div class="row"><span>Default</span><span>AI opponent</span></div>
+      <div class="row"><span>Move / Jump</span><span><kbd>←</kbd> <kbd>→</kbd> · <kbd>↑</kbd></span></div>
+      <div class="row"><span>Block (hold)</span><span><kbd>↓</kbd></span></div>
+      <div class="row"><span>Punch / Kick</span><span><kbd>1</kbd> / <kbd>2</kbd></span></div>
+      <div class="row"><span>Shade-bolt</span><span><kbd>3</kbd></span></div>
+      <div class="row"><span>Signature moves</span><span>— none yet —</span></div>
+    </div>
+  </div>
+
+  <p class="note">This is a self-contained pilot for review. It does not touch the live Theomachy on
+     <code>symbols.html</code>. See <a href="pose-sheet.html">the Zeus pose sheet</a> and <code>README.md</code> for the
+     honest pose-to-pose consistency report and the integration plan.</p>
+</div>
+
+<script src="poses.js"></script>
+<script src="pilot.js"></script>
+<script>
+  var api = window.THEO_PILOT.mount(document.getElementById("game"));
+  var btn = document.getElementById("p2mode"), ai = true;
+  btn.addEventListener("click", function () {
+    ai = !ai; api.setP2AI(ai);
+    btn.textContent = "Player 2: " + (ai ? "AI" : "Human");
+  });
+  document.getElementById("rematch").addEventListener("click", function () { api.reset(); });
+  window.__api = api;   // for the screenshot harness
+</script>
+</body>
+</html>

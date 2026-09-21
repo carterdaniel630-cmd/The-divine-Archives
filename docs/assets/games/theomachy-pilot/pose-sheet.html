@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theomachy — Zeus Pose Sheet</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #14100a; color: #e8dcc0; font: 15px/1.5 "Iowan Old Style", Georgia, serif; padding: 24px 16px 60px; }
+  h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: .5px; }
+  .sub { color:#a99b78; margin: 0 0 20px; font-size: 13px; max-width: 720px; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #c79a54; border-bottom: 1px solid #3a2f1c; padding-bottom: 6px; margin: 28px 0 12px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cell { background: #1d1810; border: 1px solid #33291a; border-radius: 8px; padding: 6px 6px 4px; text-align: center; }
+  .cell canvas { display: block; border-radius: 5px; background:
+      linear-gradient(#20304d 0%, #172033 62%, #241a10 62%, #1a130a 100%); }
+  .cap { font-size: 11px; letter-spacing: .3px; color: #d7c69a; margin-top: 4px; }
+  .cap small { display:block; color:#8a7c5c; font-size:10px; letter-spacing:0; }
+  .ph { color:#b483ff; }
+</style>
+</head>
+<body>
+  <h1>Theomachy — Pose Sheet</h1>
+  <p class="sub">Rigid whole-body poses (constant-length segments, no warping / no skeleton skinning).
+     Each cell is a complete authored stance drawn from the same source of truth the game uses,
+     so what you see here is exactly what plays in the match. Feet sit on the same baseline in every
+     cell (the pivot), so poses swap without jumping.</p>
+  <div id="root"></div>
+
+<script src="poses.js"></script>
+<script>
+(function () {
+  var T = window.THEO, CW = 150, CH = 196, FOOTY = 176, SCALE = 0.9;
+  var groups = [
+    ["Core states", ["idle","walkA","walkB","walkC","walkD","punchWind","punchHit","punchRec","kickWind","kickHit","kickRec","block","hit","ko1","ko2","victory"]],
+    ["Signature — Keraunos (thunderbolt throw)", ["boltWind","boltRelease","boltRec"]],
+    ["Signature — Anabasis (rising bolt-uppercut)", ["upperWind","upperHit","upperRec"]],
+    ["Signature — Bronte (thunderclap slam)", ["clapWind","clapHit","clapRec"]]
+  ];
+  var LABEL = {
+    idle:"idle", walkA:"walk 1", walkB:"walk 2", walkC:"walk 3", walkD:"walk 4",
+    punchWind:"punch · anticipation", punchHit:"punch · IMPACT", punchRec:"punch · recover",
+    kickWind:"kick · anticipation", kickHit:"kick · IMPACT", kickRec:"kick · recover",
+    block:"block", hit:"hit-react", ko1:"KO · fall", ko2:"KO · down", victory:"victory",
+    boltWind:"cock · anticipation", boltRelease:"release · IMPACT", boltRec:"recover",
+    upperWind:"coil · anticipation", upperHit:"rise · IMPACT", upperRec:"recover",
+    clapWind:"raise · anticipation", clapHit:"slam · IMPACT", clapRec:"recover"
+  };
+  var root = document.getElementById("root");
+
+  function cellFor(name, pal) {
+    var cell = document.createElement("div"); cell.className = "cell";
+    var cv = document.createElement("canvas"); cv.width = CW; cv.height = CH;
+    var c = cv.getContext("2d");
+    // ground baseline marker
+    c.strokeStyle = "rgba(199,154,84,.35)"; c.lineWidth = 1;
+    c.beginPath(); c.moveTo(0, FOOTY); c.lineTo(CW, FOOTY); c.stroke();
+    // shadow
+    c.save(); c.translate(CW/2, FOOTY); c.scale(1,.26); c.globalAlpha=.4; c.fillStyle="#000";
+    c.beginPath(); c.arc(0,8,26,0,7); c.fill(); c.restore();
+    c.save(); c.translate(CW/2, FOOTY); c.scale(SCALE, SCALE);
+    T.draw(c, T.POSES[name], pal, 0.2);
+    c.restore();
+    cell.appendChild(cv);
+    var cap = document.createElement("div"); cap.className = "cap";
+    cap.innerHTML = (LABEL[name]||name) + "<small>" + name + "</small>";
+    cell.appendChild(cap);
+    return cell;
+  }
+
+  groups.forEach(function (g) {
+    var h = document.createElement("h2"); h.textContent = "Zeus — " + g[0]; root.appendChild(h);
+    var grid = document.createElement("div"); grid.className = "grid";
+    g[1].forEach(function (n) { grid.appendChild(cellFor(n, T.ZEUS)); });
+    root.appendChild(grid);
+  });
+
+  // placeholder Hades row (same rigid kit, recoloured)
+  var hh = document.createElement("h2"); hh.innerHTML = 'Hades — <span class="ph">placeholder</span> (same rigid kit, recoloured until his own pass)';
+  root.appendChild(hh);
+  var hg = document.createElement("div"); hg.className = "grid";
+  ["idle","walkA","punchHit","kickHit","block","hit","ko2"].forEach(function (n) { hg.appendChild(cellFor(n, T.HADES)); });
+  root.appendChild(hg);
+})();
+</script>
+</body>
+</html>
