@@ -17,21 +17,46 @@
   var T = window.THEO;
   var VW = 760, VH = 360, GROUND = VH - 40, TICK = 1 / 60, GRAV = 0.9, MINSEP = 66;
 
-  /* ---- clips: ordered discrete pose frames. dur in ticks (60/s). ---------
-     hit  = this frame's melee attack key (checked against ATK)
-     spawn= this frame spawns a projectile / shock
-     The first frame of every strike is the anticipation; the `hit`/`spawn`
-     frame is the held impact. */
+  /* ---- clips: keyframed poses interpolated over time (Tekken-like fluid motion
+     of RIGID parts — no warp). dur in ticks (60/s); each key has a normalized
+     time `at`. Interpolating angles between keys gives smooth whole-body motion:
+     idle -> coil (anticipation) -> extend (held impact) -> recover -> idle.
+     hit   : { key, at, smear } fires the melee once when pr crosses `at`.
+     spawn : { kind, at } fires a projectile / shock once.
+     charged: swap in the lightning torso/forearm art for signatures. */
   var CLIPS = {
-    punch: [["punchWind", 6], ["punchHit", 8, { hit: "punch", smear: "hand" }], ["punchRec", 8]],
-    kick:  [["kickWind", 9], ["kickHit", 11, { hit: "kick", smear: "foot" }], ["kickRec", 11]],
-    bolt:  [["boltWind", 13], ["boltRelease", 8, { spawn: "bolt", smear: "hand" }], ["boltRec", 13]],
-    upper: [["upperWind", 9], ["upperHit", 12, { hit: "upper", smear: "hand" }], ["upperRec", 15]],
-    clap:  [["clapWind", 13], ["clapHit", 11, { hit: "clap", spawn: "shock", smear: "hand" }], ["clapRec", 15]],
-    hit:   [["hit", 16]],
-    ko:    [["ko1", 24], ["ko2", 100000]],
-    victory: [["victory", 100000]]
+    punch: { dur: 22, charged: false, hit: { key: "punch", at: 0.44, smear: "hand" },
+      keys: [["idle", 0], ["punchWind", 0.22], ["punchHit", 0.44], ["punchHit", 0.60], ["punchRec", 0.82], ["idle", 1]] },
+    kick: { dur: 30, hit: { key: "kick", at: 0.46, smear: "foot" },
+      keys: [["idle", 0], ["kickWind", 0.24], ["kickHit", 0.46], ["kickHit", 0.60], ["kickRec", 0.80], ["idle", 1]] },
+    bolt: { dur: 34, charged: true, spawn: { kind: "bolt", at: 0.52 }, smearAt: 0.52,
+      keys: [["idle", 0], ["boltWind", 0.30], ["boltWind", 0.42], ["boltRelease", 0.52], ["boltRec", 0.74], ["idle", 1]] },
+    upper: { dur: 32, charged: true, hit: { key: "upper", at: 0.42, smear: "hand" },
+      keys: [["idle", 0], ["upperWind", 0.22], ["upperHit", 0.42], ["upperHit", 0.56], ["upperRec", 0.80], ["idle", 1]] },
+    clap: { dur: 36, charged: true, hit: { key: "clap", at: 0.54, smear: "hand" }, spawn: { kind: "shock", at: 0.54 },
+      keys: [["idle", 0], ["clapWind", 0.28], ["clapWind", 0.42], ["clapHit", 0.54], ["clapHit", 0.66], ["clapRec", 0.84], ["idle", 1]] },
+    hit: { dur: 18, keys: [["hit", 0], ["hit", 0.40], ["idle", 1]] },
+    ko: { dur: 100000, keys: [["ko1", 0], ["ko1", 0.0018], ["ko2", 0.006], ["ko2", 1]] },
+    victory: { dur: 100000, keys: [["victory", 0], ["victory", 1]] }
   };
+  // pose fields to interpolate
+  var PF = ["to", "hd", "fs", "fe", "bs", "be", "fh", "fk", "bh", "bk"];
+  function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function lerpPose(A, B, e) {
+    var o = {}; for (var i = 0; i < PF.length; i++) { var k = PF[i]; o[k] = A[k] + (B[k] - A[k]) * e; }
+    var ar = A.r || [0, 0], br = B.r || [0, 0]; o.r = [ar[0] + (br[0] - ar[0]) * e, ar[1] + (br[1] - ar[1]) * e];
+    o.rot = (A.rot || 0) + ((B.rot || 0) - (A.rot || 0)) * e;
+    o.fx = e < 0.5 ? A.fx : B.fx;
+    return o;
+  }
+  function sampleClip(clip, pr) {
+    var ks = clip.keys, i = 0;
+    while (i < ks.length - 1 && ks[i + 1][1] <= pr) i++;
+    var a = ks[i], b = ks[Math.min(i + 1, ks.length - 1)];
+    var span = (b[1] - a[1]) || 1, e = ease(Math.max(0, Math.min(1, (pr - a[1]) / span)));
+    return lerpPose(POSE(a[0]), POSE(b[0]), e);
+  }
+  function POSE(n) { return T.POSES[n]; }
   // melee attack stats. reach = px in front of the fighter's centre the blow
   // covers; consistent with how far the pose actually extends the fist/foot.
   var ATK = {
@@ -46,7 +71,7 @@
   /* ---- characters --------------------------------------------------------- */
   var CHARS = {
     zeus: {
-      id: "zeus", name: "ZEUS", pal: T.ZEUS, walk: 3.0, jump: 13,
+      id: "zeus", name: "ZEUS", pal: T.ZEUS, walk: 3.0, jump: 13, paint: true,
       moves: { punch: "punch", kick: "kick", bolt: "bolt", upper: "upper", clap: "clap" },
       boltCol: T.ZEUS
     },
@@ -68,7 +93,8 @@
     return {
       char: char, pal: char.pal, x: x, y: 0, vx: 0, vy: 0, facing: facing, onGround: true,
       hp: 100, energy: 0, human: human,
-      state: "idle", act: null, clip: null, frame: 0, frameT: 0, cooldown: 0, hitLanded: false, stun: 0,
+      state: "idle", act: null, clip: null, actT: 0, actDur: 1, cooldown: 0, hitLanded: false, spawned: false,
+      stun: 0, charged: false, blockBlend: 0, walkPh: 0,
       phase: Math.random() * 6, breath: 0,
       smearT: 0, smearFrom: null, smearTo: null, smearKind: "hand"
     };
@@ -79,7 +105,8 @@
   function canAct(f) { return !gameOver && f.state !== "ko" && f.state !== "hit" && f.state !== "act" && f.cooldown <= 0 && f.stun <= 0; }
 
   function start(f, actName) {
-    f.state = "act"; f.act = actName; f.clip = CLIPS[actName]; f.frame = 0; f.frameT = 0; f.hitLanded = false; f.vx = 0;
+    f.state = "act"; f.act = actName; f.clip = CLIPS[actName]; f.actT = 0; f.actDur = CLIPS[actName].dur;
+    f.hitLanded = false; f.spawned = false; f.charged = !!CLIPS[actName].charged; f.vx = 0;
   }
   function tryMove(f, key) {
     if (!canAct(f)) return;
@@ -91,15 +118,21 @@
     if (key === "clap" && mv.clap && f.energy >= SPECIALS.clap) { f.energy -= SPECIALS.clap; return start(f, "clap"); }
   }
 
-  /* ---- current pose for a fighter (drives draw AND the front-extremity FX) - */
+  /* ---- current pose for a fighter (drives draw AND the front-extremity FX).
+     Everything is a smooth interpolation of rigid poses. */
+  function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function poseOf(f, t) {
-    if (f.state === "act") { var fr = f.clip[f.frame]; return T.POSES[fr[0]]; }
-    if (f.state === "hit") return T.POSES.hit;
-    if (f.state === "ko") return T.POSES[f.clip[f.frame][0]];
-    if (f.state === "block") return T.POSES.block;
-    if (f.state === "walk") { var seq = ["walkA", "walkB", "walkC", "walkD"]; return T.POSES[seq[Math.floor(Math.abs(f.x) * 0.09 + f.phase) % 4]]; }
-    // idle: slow breath swap
-    return (Math.floor(t * 1.6 + f.phase) % 2) ? T.POSES.idle2 : T.POSES.idle;
+    if (f.state === "act") return sampleClip(f.clip, clamp(f.actT / f.actDur, 0, 1));
+    if (f.state === "hit") return sampleClip(CLIPS.hit, clamp(f.actT / f.actDur, 0, 1));
+    if (f.state === "ko") return sampleClip(CLIPS.ko, clamp(f.actT / f.actDur, 0, 1));
+    // continuous breathing idle (blend the two breath poses on a sine)
+    var idleP = lerpPose(T.POSES.idle, T.POSES.idle2, (Math.sin(t * 2.2 + f.phase) + 1) / 2);
+    if (f.state === "block") return lerpPose(idleP, T.POSES.block, f.blockBlend);
+    if (f.state === "walk") {
+      var seq = ["walkA", "walkB", "walkC", "walkD"], ph = f.walkPh, idx = Math.floor(ph) % 4, fr = ph - Math.floor(ph);
+      return lerpPose(T.POSES[seq[idx]], T.POSES[seq[(idx + 1) % 4]], ease(fr));
+    }
+    return idleP;
   }
 
   /* ---- simulation step ---------------------------------------------------- */
@@ -153,22 +186,20 @@
     if (f.state !== "act" && f.state !== "ko") f.vx *= 0.6;  // ground friction on knockback
     else if (f.state === "ko") f.vx *= 0.85;
     f.x = Math.max(30, Math.min(VW - 30, f.x));
-    // advance the current clip (discrete frames)
+    // walk phase (distance-tied) + smooth block blend
+    if (f.state === "walk") f.walkPh += Math.abs(f.vx) * 0.055 + 0.02;
+    f.blockBlend += ((f.state === "block" ? 1 : 0) - f.blockBlend) * 0.4;
+    // advance action clips (time-based -> smooth interpolation in poseOf)
     if (f.state === "act") {
-      var fr = f.clip[f.frame], data = fr[2] || {};
-      // on entering the impact frame, arm the smear + resolve the hit/spawn once
-      if (f.frameT === 0) {
-        if (data.smear) armSmear(f, fr[0], data.smear);
-        if (data.spawn === "bolt") spawnBolt(f);
-        if (data.spawn === "shock") spawnShock(f);
-      }
-      if (data.hit && !f.hitLanded) tryHit(f, data.hit);
-      f.frameT++;
-      if (f.frameT >= fr[1]) { f.frame++; f.frameT = 0; if (f.frame >= f.clip.length) endAction(f); }
+      var pr = f.actT / f.actDur, C = f.clip;
+      if (C.hit && !f.hitLanded && pr >= C.hit.at) { armSmear(f, C.hit.at, C.hit.smear); tryHit(f, C.hit.key); }
+      if (C.spawn && !f.spawned && pr >= C.spawn.at) { f.spawned = true; if (C.spawn.kind === "bolt") { armSmear(f, C.smearAt || C.spawn.at, "hand"); spawnBolt(f); } else spawnShock(f); }
+      f.actT++;
+      if (f.actT >= f.actDur) endAction(f);
     } else if (f.state === "hit") {
-      f.frameT++; if (f.frameT >= f.clip[0][1]) { f.state = "idle"; }
+      f.actT++; if (f.actT >= f.actDur) f.state = "idle";
     } else if (f.state === "ko") {
-      if (f.frame < f.clip.length - 1) { f.frameT++; if (f.frameT >= f.clip[f.frame][1]) { f.frame++; f.frameT = 0; } }
+      f.actT = Math.min(f.actDur, f.actT + 1);
     }
     if (f.smearT > 0) f.smearT--;
   }
@@ -202,22 +233,22 @@
     hitStop = Math.max(hitStop, atk.hitstop); shake = Math.max(shake, atk.shake);
     f.energy = Math.min(100, f.energy + 6); o.energy = Math.min(100, o.energy + 3);
     burst(cx, cy, "#fff3c0", 14, 3.4); burst(cx, cy, o.pal.energy, 10, 2.6);
-    if (o.hp <= 0) { koFighter(o); } else { o.state = "hit"; o.frame = 0; o.frameT = 0; o.stun = 12; o.clip = CLIPS.hit; }
+    if (o.hp <= 0) { koFighter(o); } else { o.state = "hit"; o.actT = 0; o.actDur = CLIPS.hit.dur; o.stun = 12; o.clip = CLIPS.hit; }
   }
 
   function koFighter(o) {
-    o.state = "ko"; o.frame = 0; o.frameT = 0; o.clip = CLIPS.ko; o.vx = o.facing * -2;
+    o.state = "ko"; o.actT = 0; o.actDur = CLIPS.ko.dur; o.clip = CLIPS.ko; o.vx = o.facing * -2;
     gameOver = true; winner = opp(o);
-    winner.state = "victory"; winner.clip = CLIPS.victory; winner.frame = 0; winner.act = null;
+    winner.state = "victory"; winner.clip = CLIPS.victory; winner.actT = 0; winner.actDur = CLIPS.victory.dur; winner.act = null;
     shake = Math.max(shake, 14); hitStop = Math.max(hitStop, 12);
   }
 
   /* ---- smear / trail ------------------------------------------------------- */
   // Capture the fist/foot local position at the wind-up pose and at the impact
   // pose; the draw layer streaks between them + drops ghost limbs across the swing.
-  function armSmear(f, impactPoseName, kind) {
-    var windName = f.clip[Math.max(0, f.frame - 1)][0];
-    var a = T.skeleton(T.POSES[windName]), b = T.skeleton(T.POSES[impactPoseName]);
+  function skelOf(f, pose) { return (f.char.paint && window.THEO_PAINT && window.THEO_PAINT.ready()) ? window.THEO_PAINT.skeleton(pose) : T.skeleton(pose); }
+  function armSmear(f, atTime, kind) {
+    var a = skelOf(f, sampleClip(f.clip, Math.max(0, atTime - 0.12))), b = skelOf(f, sampleClip(f.clip, atTime));
     var jf = kind === "foot" ? "ftF" : "hnF", js = kind === "foot" ? "hipF" : "shF";
     f.smearFrom = a[jf].slice(); f.smearTo = b[jf].slice();
     f.smearRoot = b[js].slice(); f.smearKind = kind; f.smearT = 6;
@@ -225,7 +256,7 @@
 
   /* ---- projectiles: Keraunos bolt + Bronte ground shock ------------------- */
   function spawnBolt(f) {
-    var sk = T.skeleton(T.POSES.boltRelease), wx = f.x + f.facing * sk.hnF[0], wy = GROUND - (f.y || 0) + sk.hnF[1];
+    var sk = skelOf(f, T.POSES.boltRelease), wx = f.x + f.facing * sk.hnF[0], wy = GROUND - (f.y || 0) + sk.hnF[1];
     projectiles.push({ x: wx, y: wy, vx: f.facing * 8.2, owner: f, pal: f.char.boltCol, life: 90, r: 12, kind: "bolt", seed: Math.random() * 99 });
   }
   function spawnShock(f) {
@@ -242,7 +273,7 @@
           o.hp = Math.max(0, o.hp - 11); o.vx = (pr.vx > 0 ? 1 : -1) * 4.5; o.energy = Math.min(100, o.energy + 3);
           hitStop = Math.max(hitStop, 7); shake = Math.max(shake, 8);
           burst(pr.x, pr.y, "#fff3c0", 16, 3.6); burst(pr.x, pr.y, pr.pal.energy, 12, 2.8);
-          if (o.hp <= 0) koFighter(o); else if (o.state !== "ko") { o.state = "hit"; o.frame = 0; o.frameT = 0; o.stun = 10; o.clip = CLIPS.hit; }
+          if (o.hp <= 0) koFighter(o); else if (o.state !== "ko") { o.state = "hit"; o.actT = 0; o.actDur = CLIPS.hit.dur; o.stun = 10; o.clip = CLIPS.hit; }
           projectiles.splice(i, 1); continue;
         }
         if (pr.x < -30 || pr.x > VW + 30 || pr.life <= 0) projectiles.splice(i, 1);
@@ -343,9 +374,12 @@
     // whole-body breath bob for idle/walk (rigid translation, not a warp)
     var bob = 0;
     if (f.state === "idle") bob = Math.sin(t * 2.2 + f.phase) * 1.6;
-    else if (f.state === "walk") bob = -Math.abs(Math.sin(Math.abs(f.x) * 0.18 + f.phase)) * 2.2;
+    else if (f.state === "walk") bob = -Math.abs(Math.sin(f.walkPh * Math.PI)) * 3;
     c.translate(0, -bob);
-    T.draw(c, poseOf(f, t), f.pal, t);
+    var pose = poseOf(f, t);
+    if (f.char.paint && window.THEO_PAINT && window.THEO_PAINT.ready())
+      window.THEO_PAINT.draw(c, pose, { charged: f.charged && f.state === "act" });
+    else T.draw(c, pose, f.pal, t);
     c.restore();
   }
 
@@ -435,6 +469,7 @@
   window.THEO_PILOT = {
     mount: function (canvas, opts) {
       cv = canvas; c = cv.getContext("2d"); cv.width = VW; cv.height = VH;
+      if (window.THEO_PAINT) window.THEO_PAINT.load((opts && opts.base) || "", function () {});
       reset();
       window.addEventListener("keydown", function (e) {
         var kk = e.key.length === 1 ? e.key.toLowerCase() : e.key; keys[kk] = true;

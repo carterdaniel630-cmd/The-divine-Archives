@@ -28,9 +28,11 @@
   <div id="root"></div>
 
 <script src="poses.js"></script>
+<script src="zeus-painted.js"></script>
 <script>
 (function () {
-  var T = window.THEO, CW = 150, CH = 196, FOOTY = 176, SCALE = 0.9;
+  var T = window.THEO, PT = window.THEO_PAINT, CW = 150, CH = 196, FOOTY = 176, SCALE = 0.9;
+  var CHARGED = { boltWind: 1, boltRelease: 1, boltRec: 1, upperWind: 1, upperHit: 1, upperRec: 1, clapWind: 1, clapHit: 1, clapRec: 1, victory: 1 };
   var groups = [
     ["Core states", ["idle","walkA","walkB","walkC","walkD","punchWind","punchHit","punchRec","kickWind","kickHit","kickRec","block","hit","ko1","ko2","victory"]],
     ["Signature — Keraunos (thunderbolt throw)", ["boltWind","boltRelease","boltRec"]],
@@ -48,7 +50,7 @@
   };
   var root = document.getElementById("root");
 
-  function cellFor(name, pal) {
+  function cellFor(name, pal, painted) {
     var cell = document.createElement("div"); cell.className = "cell";
     var cv = document.createElement("canvas"); cv.width = CW; cv.height = CH;
     var c = cv.getContext("2d");
@@ -58,9 +60,15 @@
     // shadow
     c.save(); c.translate(CW/2, FOOTY); c.scale(1,.26); c.globalAlpha=.4; c.fillStyle="#000";
     c.beginPath(); c.arc(0,8,26,0,7); c.fill(); c.restore();
-    c.save(); c.translate(CW/2, FOOTY); c.scale(SCALE, SCALE);
-    T.draw(c, T.POSES[name], pal, 0.2);
-    c.restore();
+    if (painted && PT && PT.ready()) {
+      c.save(); c.translate(CW/2, FOOTY); c.scale(0.82, 0.82);
+      PT.draw(c, T.POSES[name], { charged: !!CHARGED[name] });
+      c.restore();
+    } else {
+      c.save(); c.translate(CW/2, FOOTY); c.scale(SCALE, SCALE);
+      T.draw(c, T.POSES[name], pal, 0.2);
+      c.restore();
+    }
     cell.appendChild(cv);
     var cap = document.createElement("div"); cap.className = "cap";
     cap.innerHTML = (LABEL[name]||name) + "<small>" + name + "</small>";
@@ -68,19 +76,23 @@
     return cell;
   }
 
-  groups.forEach(function (g) {
-    var h = document.createElement("h2"); h.textContent = "Zeus — " + g[0]; root.appendChild(h);
-    var grid = document.createElement("div"); grid.className = "grid";
-    g[1].forEach(function (n) { grid.appendChild(cellFor(n, T.ZEUS)); });
-    root.appendChild(grid);
-  });
-
-  // placeholder Hades row (same rigid kit, recoloured)
-  var hh = document.createElement("h2"); hh.innerHTML = 'Hades — <span class="ph">placeholder</span> (same rigid kit, recoloured until his own pass)';
-  root.appendChild(hh);
-  var hg = document.createElement("div"); hg.className = "grid";
-  ["idle","walkA","punchHit","kickHit","block","hit","ko2"].forEach(function (n) { hg.appendChild(cellFor(n, T.HADES)); });
-  root.appendChild(hg);
+  function build() {
+    root.innerHTML = "";
+    groups.forEach(function (g) {
+      var h = document.createElement("h2"); h.textContent = "Zeus — " + g[0]; root.appendChild(h);
+      var grid = document.createElement("div"); grid.className = "grid";
+      g[1].forEach(function (n) { grid.appendChild(cellFor(n, T.ZEUS, true)); });
+      root.appendChild(grid);
+    });
+    // placeholder Hades row (procedural recolor until his own painted pass)
+    var hh = document.createElement("h2"); hh.innerHTML = 'Hades — <span class="ph">placeholder</span> (procedural recolor until his own painted pass)';
+    root.appendChild(hh);
+    var hg = document.createElement("div"); hg.className = "grid";
+    ["idle","walkA","punchHit","kickHit","block","hit","ko2"].forEach(function (n) { hg.appendChild(cellFor(n, T.HADES, false)); });
+    root.appendChild(hg);
+  }
+  // build once art is ready (painted Zeus); falls back to procedural if it can't load
+  if (PT) { PT.load("", build); setTimeout(function(){ if (!PT.ready()) build(); }, 1500); } else build();
 })();
 </script>
 </body>
