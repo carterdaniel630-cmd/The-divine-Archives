@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "Theomachy — War of the Gods" (1v1 fighter)
+   THE DIVINE ARCHIVES — Mini-Games: "Divine Casualties — War of the Gods" (1v1 fighter)
 
    A duel of the Olympians, each god fought with the weapon myth actually gives
    them — every fighter's arms and epithet grounded in the Early Greece chapter
@@ -29,7 +29,7 @@
   }
 
   AG.register("fighter", {
-    title: "Theomachy",
+    title: "Divine Casualties",
     subtitle: "War of the Gods — a duel of the Olympians, drawn from real myth.",
     symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch08) || "",
     sourceHref: "chapters/ch08.html", sourceLabel: "Read “Early Greece”",
@@ -1876,7 +1876,7 @@
       function render() {
         root.innerHTML =
           '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">The Divine Archives · Games</p>' +
-            '<h2 id="' + ctx.titleId + '" style="font-size:1.3rem">Theomachy — War of the Gods</h2>' +
+            '<h2 id="' + ctx.titleId + '" style="font-size:1.3rem">Divine Casualties — War of the Gods</h2>' +
             "<p>Choose your Olympian. Each god fights with the weapon myth gives them.</p></div>" +
           '<div class="game-rule" role="presentation"></div>' +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 1" : "You") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p1", id, sel.p1 === id); }).join("") + "</div>" +
@@ -1901,9 +1901,9 @@
     function shell(twoP) {
       root.innerHTML =
         '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">The Divine Archives · Games</p>' +
-          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">Theomachy</h2></div>' +
+          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">Divine Casualties</h2></div>' +
         '<div class="fg-hud"></div>' +
-        '<div class="fg-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Theomachy fighting stage"></canvas></div>' +
+        '<div class="fg-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Divine Casualties fighting stage"></canvas></div>' +
         '<div class="fg-controls">' +
           '<div class="fg-dpad">' +
             '<button class="ouro-key fg-jump" data-k="' + KM1.jump + '" aria-label="Jump">⤒</button>' +
@@ -1937,7 +1937,7 @@
       running = false; if (raf) cancelAnimationFrame(raf);
       var w = winner, l = (w === p1) ? p2 : p1;
       root.innerHTML =
-        '<div class="game-head"><p class="eyebrow">Theomachy · the dust settles</p>' +
+        '<div class="game-head"><p class="eyebrow">Divine Casualties · the dust settles</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.35rem">' + w.skin.name + ' is victorious</h2></div>' +
         '<div class="game-rule" role="presentation"></div>' +
         '<div class="fg-result"><canvas class="fg-portrait fg-portrait-lg" data-god="' + (w === p1 ? curG1 : curG2) + '" width="120" height="140"></canvas>' +

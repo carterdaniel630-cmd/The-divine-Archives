@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Verify every Theomachy fighter's epithet/weapon grounding is real chapter text:
+/* Verify every Divine Casualties fighter's epithet/weapon grounding is real chapter text:
    its `basis` must appear in the source chapter's rendered body. */
 "use strict";
 const fs=require("fs"),vm=require("vm"),path=require("path");
@@ -19,7 +19,7 @@ bank.fighters.forEach(f=>{
   if(!f.basis||text.indexOf(String(f.basis).toLowerCase())===-1){console.log("  FAIL ["+f.name+"] basis not in "+bank.chapter+': "'+f.basis+'"');fails++;return;}
   ok++;
 });
-console.log("Theomachy fighters: "+bank.fighters.length+" | grounded in "+bank.chapter+": "+ok+" | failures: "+fails);
+console.log("Divine Casualties fighters: "+bank.fighters.length+" | grounded in "+bank.chapter+": "+ok+" | failures: "+fails);
 
 // F3.2: also check each per-god character's factRef basis appears in its chapter.
 let cok=0,cn=0;

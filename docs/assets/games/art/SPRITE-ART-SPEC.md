@@ -1,4 +1,4 @@
-# Theomachy — Full-Body Pose-Set Spec
+# Divine Casualties — Full-Body Pose-Set Spec
 
 The fighters are full-body painted sprites (sliced from the lineup art). One
 **idle** frame per god ships and drives everything via code motion. Optional

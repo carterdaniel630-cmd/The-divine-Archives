@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Theomachy move data (F2: data-driven move system)
+   THE DIVINE ARCHIVES — Divine Casualties move data (F2: data-driven move system)
 
    One record per move. The move-runner in fighter.js reads these to drive
    BOTH combat (timeline, joint-tied hitbox, hitstop, knockback, cancels,
