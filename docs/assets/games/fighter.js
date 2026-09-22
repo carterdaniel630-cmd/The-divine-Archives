@@ -1640,6 +1640,29 @@
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
       // airborne: drift toward the foe and sometimes throw an aerial strike
       if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
+      // ---- reactive neutral: anti-air, block-on-reaction, whiff-punish ----
+      // A skill gate (`react`) plus a short refractory timer keep the AI sharp but
+      // human: it READS telegraphed moves (their startup/recovery) rather than
+      // reacting frame-perfectly, so the neutral game feels fought, not scripted.
+      var react = f.react != null ? f.react : (f.react = 0.52);
+      if (f.onGround && f.cooldown <= 0 && f.stun <= 0 && (f.aiReact = (f.aiReact || 0) - dt) <= 0) {
+        var oAtk = !!ATTACK_STATES[other.state], oProg = other.stDur > 0 ? other.stTime / other.stDur : 1;
+        var canGuard = f.state === "idle" || f.state === "walk";
+        // ANTI-AIR: the foe is above me and falling in — put up the guard on the jump-in,
+        // then the whiff-punish rule below cashes out when they land in recovery.
+        if (!other.onGround && other.y > 26 && other.vy < 3 && adx < 98 && canGuard && Math.random() < react) {
+          setState(f, "block", 0.55); f.vx = 0; f.aiReact = 0.45; return;
+        }
+        // WHIFF-PUNISH: they committed to a move and are now in its recovery — close and hit.
+        if (oAtk && oProg > 0.55 && adx < 128 && Math.random() < react) {
+          if (adx > 58 && f.dashT <= 0) { startDash(f, dir); f.aiReact = 0.28; return; }
+          tryAttack(f, other, (adx < 72 && f.energy < 40) ? "heavy" : "light"); f.aiReact = 0.5; return;
+        }
+        // BLOCK ON REACTION: a strike (not a throw) is winding up in my face — guard it.
+        if (oAtk && oProg < 0.5 && adx < 104 && other.state !== "throw" && canGuard && Math.random() < react * 0.9) {
+          setState(f, "block", 0.42); f.vx = 0; f.aiReact = 0.32; return;
+        }
+      }
       // occasionally leap — to close distance or dodge, and to bring the fight into the air
       if (f.onGround && f.cooldown <= 0 && Math.random() < 0.012 && (adx < 60 || adx > 150)) { f.vy = charOf(f).jumpVel || 12.5; f.onGround = false; setState(f, "jump", 0.9); landDust(f); return; }
       // dash in from mid-range to close the gap or whiff-punish; back-dash out on a read
