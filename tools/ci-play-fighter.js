@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* CI runtime check for Theomachy: load the fighter and PLAY A REAL MATCH TO KO in
+/* CI runtime check for Divine Casualties: load the fighter and PLAY A REAL MATCH TO KO in
    headless Chromium, failing on ANY uncaught page error. This catches runtime
    ReferenceErrors that a static lint might miss and, crucially, exercises the
    end-of-match BANNER + result path (the class of bug where `banner.t -= dt`

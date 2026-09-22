@@ -328,7 +328,7 @@
   .game-head p { display:none; }
 }
 
-/* ---------- Theomachy (1v1 fighter) ---------- */
+/* ---------- Divine Casualties (1v1 fighter) ---------- */
 .fg-hud { display:flex; align-items:flex-start; gap:.6rem; margin:.2rem auto .5rem; max-width:640px; }
 .fg-side { flex:1; min-width:0; }
 .fg-side.fg-r { text-align:right; }
