@@ -165,8 +165,11 @@
     var BASE = {
       footB: [-20, 0], kneeB: [-15, -40], footF: [21, 0], kneeF: [15, -40],
       hip: [0, -74], chest: [3, -116], neck: [4, -128], head: [7, -148],
-      shF: [12, -122], elF: [27, -116], hnF: [38, -110],
-      shB: [-4, -122], elB: [-17, -108], hnB: [-22, -116]
+      // Arms hang into a natural ready stance with realistic reach (~45% of body
+      // height), so the tall painted arm art isn't crushed to a flat blob behind the
+      // torso. Front arm forward of the chest, back arm tucked behind — both visible.
+      shF: [13, -121], elF: [31, -97], hnF: [46, -71],
+      shB: [-5, -121], elB: [-19, -99], hnB: [-31, -75]
     };
     function clonePose(p) { var o = {}; for (var k in p) o[k] = [p[k][0], p[k][1]]; return o; }
     function add(p, k, dx, dy) { p[k][0] += dx; p[k][1] += dy; }
@@ -598,11 +601,13 @@
       skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs });
       // shield rides the back arm (far side), tucked behind the torso
       if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield]; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -sh.width * 0.5, -sh.height * 0.5); c.restore(); }
-      // TORSO + HEAD (head sized to the body, tilted with the neck)
-      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs });
+      // TORSO + HEAD (head sized to the body, tilted with the neck). Torso drawn a
+      // touch narrower than full body scale so the arms read beside it instead of
+      // vanishing behind a full front-view chest.
+      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs * 0.82 });
       // head sized to the body but damped: the painted crops include a full mane/beard/
       // crown, so scaling them 1:1 to the (short) torso bone reads as a bobble-head.
-      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.8; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
+      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.58; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
       // FRONT leg + arm (length-capped so a kick extends but never rubber-stretches)
       var legFrest = IKREST.legF, armFrest = IKREST.armF;
       if (single) skin(c, P, M, nThighF, hipF, p.footF, { rest: legFrest[0] + legFrest[1], cross: bs });
