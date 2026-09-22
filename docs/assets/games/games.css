@@ -339,6 +339,11 @@
 .fg-hp i { display:block; height:100%; background:linear-gradient(90deg, var(--ember), var(--gold-bright)); transition:width .18s ease; }
 .fg-r .fg-hp i, .fg-r .fg-en i, .fg-r .fg-gd i { margin-left:auto; }
 .fg-en i { display:block; height:100%; background:linear-gradient(90deg, #6f86c9, #bfe3ff); transition:width .18s ease; }
+/* full meter: the bar glows and pulses to signal a SUPER is ready */
+.fg-en[data-full] { border-color:#ffe08a; box-shadow:0 0 7px rgba(255,224,138,.85); animation:fg-meter-full .8s ease-in-out infinite; }
+.fg-en[data-full] i { background:linear-gradient(90deg, #ffd873, #fff4c8); }
+@keyframes fg-meter-full { 0%,100% { box-shadow:0 0 5px rgba(255,224,138,.6); } 50% { box-shadow:0 0 11px rgba(255,224,138,1); } }
+@media (prefers-reduced-motion: reduce) { .fg-en[data-full] { animation:none; } }
 .fg-gd { height:5px; background:rgba(0,0,0,.4); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-top:.25rem; }
 .fg-gd i { display:block; height:100%; background:linear-gradient(90deg, #7a5a2a, #e2b04a); transition:width .12s ease; }
 .fg-gd[data-low] i { background:linear-gradient(90deg, #a33, #e2b04a); }

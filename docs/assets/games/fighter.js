@@ -1267,25 +1267,33 @@
         f._hit = { kind: id, at: id === "kick" ? 0.42 : id === "headbutt" ? 0.3 : 0.24, done: false, fin: false };
       }
     }
-    // SPECIAL: a travelling energy blast (blockable). Charged + weakened foe = FINISH.
+    // SPECIAL: a travelling energy blast (blockable, 40 meter). At FULL meter it
+    // fires as a SUPER — bigger, faster, ~2x damage — usable any time (100 meter);
+    // a Super that lands on a weakened foe becomes the cinematic FINISH. Because the
+    // ground normals cancel into `special`, a combo string naturally ends in a Super
+    // when the meter is full.
     function trySpecial(f, other) {
       if (f.energy < 40) return;
-      var fin = f.energy >= 100 && other.hp <= 30 && other.state !== "ko";
+      var sup = f.energy >= 100 && other.state !== "ko";
       var sm = moveFor(f, "special");
-      if (sm) { setState(f, "special", sm.total / 60); f.cooldown = (sm.cooldownTicks || sm.total) / 60; f._cast = { done: false, at: (sm.cast || 25) / sm.total, fin: fin }; }
-      else { setState(f, "special", 0.9); f.cooldown = 1.0; f._cast = { done: false, at: 0.42, fin: fin }; }
-      f.energy -= fin ? 100 : 40; f.aura = fin ? 1.9 : 1.2; flash = fin ? 0.6 : 0.35;
+      if (sm) { setState(f, "special", sm.total / 60); f.cooldown = (sm.cooldownTicks || sm.total) / 60; f._cast = { done: false, at: (sm.cast || 25) / sm.total, sup: sup }; }
+      else { setState(f, "special", 0.9); f.cooldown = 1.0; f._cast = { done: false, at: 0.42, sup: sup }; }
+      f.energy -= sup ? 100 : 40; f.aura = sup ? 1.9 : 1.2; flash = sup ? 0.6 : 0.35;
     }
-    function spawnShot(f, fin) {
+    function spawnShot(f, sup) {
       var y = GROUND - 92 - (f.y || 0);
+      var other = (f === p1 ? p2 : p1);
+      // a Super that would put an already-weakened foe away lands as a cinematic
+      // FINISH (unblockable, 100); otherwise a Super is a strong, blockable blast.
+      var fin = !!sup && other && other.hp <= 34 && other.state !== "ko";
       // each god's special is its own lore-weapon (Zeus bolt, Poseidon wave, Athena owl,
       // Hades soul); the record carries the kind + colours so drawShots renders it.
       var sp = charOf(f).special || { kind: "orb", col: f.skin.eye, col2: f.skin.eye, r: 12, speed: 6.4 };
-      var spd = sp.speed * (fin ? 1.28 : 1), rr = sp.r * (fin ? 1.7 : 1);
-      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * spd, dir: f.facing, owner: f, other: (f === p1 ? p2 : p1),
-        r: rr, dmg: fin ? 100 : 20, fin: !!fin, kind: sp.kind, col: sp.col, col2: sp.col2 || sp.col, life: 1.7, t: 0 });
-      burst(f.x + f.facing * 22, y, "heavy"); shake = Math.max(shake, fin ? 10 : 5);
-      if (sp.name) callout = { txt: sp.name + (fin ? " — FINISH" : ""), t: 0.6, col: sp.col };
+      var spd = sp.speed * (sup ? 1.24 : 1), rr = sp.r * (fin ? 1.7 : sup ? 1.5 : 1);
+      shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * spd, dir: f.facing, owner: f, other: other,
+        r: rr, dmg: fin ? 100 : (sup ? 50 : 20), fin: !!fin, sup: !!sup, kind: sp.kind, col: sp.col, col2: sp.col2 || sp.col, life: 1.7, t: 0 });
+      burst(f.x + f.facing * 22, y, "heavy"); shake = Math.max(shake, sup ? 11 : 5);
+      if (sp.name) callout = { txt: sp.name + (fin ? " — FINISH" : sup ? " — SUPER" : ""), t: 0.6, col: sp.col };
     }
     // THROW a held relic as a projectile
     function throwItem(f, other) {
@@ -1331,7 +1339,7 @@
         if (sh.spin != null) sh.spin += 0.4 * (sh.vx > 0 ? 1 : -1);
         var o = sh.other, hit = false;
         if (o && o.state !== "ko" && Math.abs(sh.x - o.x) < 26 && Math.abs(sh.y - (GROUND - 72 - (o.y || 0))) < 60) {
-          applyDamage(sh.owner, o, sh.dmg, sh.item ? "heavy" : (sh.fin ? "special" : "heavy"), sh.fin, sh.x, sh.y);
+          applyDamage(sh.owner, o, sh.dmg, sh.item ? "heavy" : (sh.fin || sh.sup ? "special" : "heavy"), sh.fin, sh.x, sh.y);
           hit = true;
         }
         if (hit || sh.life <= 0 || sh.x < -30 || sh.x > VW + 30 || (sh.grav != null && sh.y > GROUND + 6)) {
@@ -1647,7 +1655,7 @@
       if (wantItem) { var gd = groundItem.x > f.x ? 1 : -1; f.facing = gd; f.vx = gd * 1.7; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); if (Math.abs(groundItem.x - f.x) < 30) tryGrab(f); return; }
       if (adx > 74) {
         // at range, sometimes throw an energy blast instead of closing
-        if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < 0.5) { tryAttack(f, other, "special"); f.aiT = 1.0 + Math.random(); return; }
+        if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < (f.energy >= 100 ? 0.72 : 0.5)) { tryAttack(f, other, "special"); f.aiT = 1.0 + Math.random(); return; }
         f.intent = "advance";
       }
       else if (f.aiT <= 0) {
@@ -1670,7 +1678,7 @@
       function bar(f, side) {
         return '<div class="fg-side fg-' + side + '"><div class="fg-name">' + f.skin.name + ' <span>' + f.skin.epithet + '</span></div>' +
           '<div class="fg-hp"><i style="width:' + clamp(f.hp, 0, 100) + '%"></i></div>' +
-          '<div class="fg-en"><i style="width:' + clamp(f.energy, 0, 100) + '%"></i></div>' +
+          '<div class="fg-en"' + (f.energy >= 100 ? ' data-full="1"' : '') + '><i style="width:' + clamp(f.energy, 0, 100) + '%"></i></div>' +
           '<div class="fg-gd"' + (f.guard < 100 ? ' data-low="1"' : '') + '><i style="width:' + clamp(f.guard, 0, 100) + '%"></i></div></div>';
       }
       hudEl.innerHTML = bar(p1, "l") + '<div class="fg-mid"><span class="fg-vs">✦</span>' + (weather ? '<span class="fg-weather">' + weather.name + '</span>' : '') + '</div>' + bar(p2, "r");
@@ -1760,7 +1768,7 @@
         if (f._hit.move && f._hit.move.lunge && f.onGround) f.x = clamp(f.x + f.facing * f._hit.move.lunge, 40, VW - 40);
         resolveHit(f, other, f._hit.kind, f._hit.fin);
       }
-      if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.fin); }
+      if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.sup); }
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
       // weighty locomotion: ease the ACTUAL velocity toward the control's desired
       // velocity so starts and stops carry momentum instead of snapping. Knockback
@@ -1886,7 +1894,7 @@
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
           '<p class="rq-note">P1: A/D move · S guard · J punch · K kick (headbutt up close) · L energy blast · U grab.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , punch · . kick · / blast · M grab." : " On touch, use the on-screen pads.") +
             " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game. <b>Combos:</b> chain jabs and cancel a jab or kick into the blast (e.g. punch → punch → kick → blast); <b>jump over</b> a foe to switch sides (cross-up)." +
-            " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Fill the energy bar and land a blast on a weakened foe for a FINISH.</p>";
+            " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Chain a jab into a kick into a blast for a combo; fill the meter for a SUPER (a maxed blast, any time) — land it on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
         root.querySelectorAll(".fg-card").forEach(function (b) {
           b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); render(); });
