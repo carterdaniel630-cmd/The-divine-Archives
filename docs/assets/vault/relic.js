@@ -91,6 +91,12 @@
     }
   }
 
+  // square Hebrew -> palaeo-Hebrew (Unicode Phoenician block), final forms folded
+  var PALEO = { "א": 0, "ב": 1, "ג": 2, "ד": 3, "ה": 4, "ו": 5, "ז": 6, "ח": 7, "ט": 8, "י": 9, "כ": 10, "ך": 10, "ל": 11, "מ": 12, "ם": 12, "נ": 13, "ן": 13, "ס": 14, "ע": 15, "פ": 16, "ף": 16, "צ": 17, "ץ": 17, "ק": 18, "ר": 19, "ש": 20, "ת": 21 };
+  function toPaleo(str) {
+    return Array.prototype.map.call(str, function (ch) { var k = PALEO[ch]; return k == null ? ch : String.fromCodePoint(0x10900 + k); }).join("");
+  }
+
   // ---------------------------------------------------------------- scroll
   function scroll(root, item) {
     var cols = item && item.artifact && item.artifact.columns;
@@ -134,7 +140,19 @@
     var trBtn = el("button", { type: "button", "aria-pressed": "false", text: "Show translation" });
     var toggle = el("button", { type: "button", text: "Unroll the scroll" });
     var ctrls = el("div", { class: "relic-ctrls" }, [toggle, trBtn]);
-    var scrollEl = el("div", { class: "scroll", "data-open": "false", dir: "rtl" }, [body]);
+    var scrollEl = el("div", { class: "scroll theme-" + ((item.artifact && item.artifact.theme) || "parchment"), "data-open": "false", dir: "rtl" }, [body]);
+    if (item.artifact && item.artifact.paleo) {
+      var paleoB = el("button", { type: "button", "aria-pressed": "false", text: "Palaeo-Hebrew letters" });
+      paleoB.addEventListener("click", function () {
+        var on = paleoB.getAttribute("aria-pressed") !== "true"; paleoB.setAttribute("aria-pressed", String(on));
+        Array.prototype.forEach.call(sheet.querySelectorAll(".s-line[lang=he] .s-word"), function (b) {
+          if (!b.hasAttribute("data-sq")) b.setAttribute("data-sq", b.textContent);
+          b.textContent = on ? toPaleo(b.getAttribute("data-sq")) : b.getAttribute("data-sq");
+          b.classList.toggle("s-paleo", on);
+        });
+      });
+      ctrls.appendChild(paleoB);
+    }
 
     root.appendChild(el("div", { class: "relic-live" }, [ctrls, scrollEl, gloss,
       el("p", { class: "relic-hint", text: "Hebrew scrolls open from the right. Drag the parchment to travel along it, and touch a word to read its meaning." })]));
@@ -494,6 +512,131 @@
     setPanel(pn, "A chest, not a monument", "", "Touch the chest, lid, cherubim, rings or poles for the verse that specifies it.");
   }
 
+  // ---------------------------------------------------------------- shared: flip-card grid
+  function cardGrid(cards) {
+    var grid = el("div", { class: "flip-cards" });
+    cards.forEach(function (c) {
+      var card = el("button", { type: "button", class: "flip", "aria-pressed": "false" }, [
+        el("span", { class: "f-front" }, [el("strong", { text: c.t }), c.s ? el("em", { text: c.s }) : null]),
+        el("span", { class: "f-back", text: c.d })
+      ]);
+      card.addEventListener("click", function () { card.setAttribute("aria-pressed", String(card.getAttribute("aria-pressed") !== "true")); });
+      grid.appendChild(card);
+    });
+    return grid;
+  }
+
+  // ---------------------------------------------------------------- cards (generic)
+  function cards(root, item) {
+    var A = item.artifact;
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("h4", { class: "relic-subhead", text: A.cardsTitle || "Turn each card" }), cardGrid(A.cards)
+    ]));
+    root.classList.add("is-live");
+  }
+
+  // ---------------------------------------------------------------- timeline (generic)
+  function timeline(root, item) {
+    var A = item.artifact, ev = A.events;
+    var kids = [];
+    var gstat = el("p", { class: "g-status", role: "status", "aria-live": "polite" });
+    if (A.line) {
+      kids.push(el("div", { class: "tl-line theme-" + (A.theme || "plain") }, [
+        A.lineHead ? el("p", { class: "pap-head", text: A.lineHead }) : null,
+        glossLine(A.line, A.lineLang || "en", A.lineDir || "ltr", gstat),
+        A.lineTr ? el("p", { class: "pap-tr", text: A.lineTr }) : null
+      ]));
+      kids.push(gstat);
+    }
+    var yBig = el("p", { class: "tl-year" }), tBig = el("p", { class: "tl-title" }), dBig = el("p", { class: "tl-desc" });
+    var plaque = el("div", { class: "tl-plaque theme-" + (A.theme || "plain"), role: "status", "aria-live": "polite" }, [yBig, tBig, dBig]);
+    var slider = el("input", { type: "range", min: "0", max: String(ev.length - 1), value: "0", step: "1", "aria-label": "Move through the documented history" });
+    var ticks = el("div", { class: "l-ticks", "aria-hidden": "true" });
+    ev.forEach(function (e, i) {
+      var b = el("button", { type: "button", tabindex: "-1", text: String(e.y), style: "left:" + (ev.length > 1 ? 100 * i / (ev.length - 1) : 50) + "%" });
+      b.addEventListener("click", function () { slider.value = String(i); upd(); });
+      ticks.appendChild(b);
+    });
+    var prev = el("button", { type: "button", text: "◀ Earlier" }), next = el("button", { type: "button", text: "Later ▶" });
+    function upd() {
+      var i = +slider.value, e = ev[i];
+      plaque.classList.remove("tl-in"); void plaque.offsetWidth; plaque.classList.add("tl-in");
+      yBig.textContent = e.y; tBig.textContent = e.t; dBig.textContent = e.d;
+      Array.prototype.forEach.call(ticks.children, function (t, k) { t.classList.toggle("on", k === i); });
+      prev.disabled = i === 0; next.disabled = i === ev.length - 1;
+    }
+    prev.addEventListener("click", function () { slider.value = String(Math.max(0, +slider.value - 1)); upd(); });
+    next.addEventListener("click", function () { slider.value = String(Math.min(ev.length - 1, +slider.value + 1)); upd(); });
+    slider.addEventListener("input", upd);
+    kids.push(plaque, el("div", { class: "l-time" }, [slider, ticks]), el("div", { class: "relic-ctrls" }, [prev, next]));
+    if (A.cards) kids.push(el("h4", { class: "relic-subhead", text: A.cardsTitle || "Turn each card" }), cardGrid(A.cards));
+    root.appendChild(el("div", { class: "relic-live" }, kids));
+    root.classList.add("is-live");
+    upd();
+  }
+
+  // ---------------------------------------------------------------- codex (generic)
+  function codex(root, item) {
+    var A = item.artifact, pages = A.pages, at = 0;
+    function pageEl(p, side) {
+      if (!p) return el("div", { class: "cx-page cx-" + side + " cx-blank" });
+      return el("div", { class: "cx-page cx-" + side }, [
+        p.h ? el("p", { class: "cx-h", text: p.h }) : null,
+        el("p", { class: "cx-t" + (p.big ? " cx-big" : ""), text: p.t }),
+        p.n ? el("p", { class: "cx-n", text: p.n }) : null,
+        el("span", { class: "cx-folio", text: String(pages.indexOf(p) + 1) })
+      ]);
+    }
+    var spread = el("div", { class: "cx-spread" });
+    var book = el("div", { class: "codex theme-" + (A.theme || "vellum") }, [spread]);
+    var prev = el("button", { type: "button", text: "◀ Turn back" }), next = el("button", { type: "button", text: "Turn the page ▶" });
+    var count = el("span", { class: "cx-count" });
+    function show(dir) {
+      spread.innerHTML = "";
+      spread.appendChild(pageEl(pages[at], "l")); spread.appendChild(pageEl(pages[at + 1], "r"));
+      if (dir && !reduce) { spread.classList.remove("cx-turn-f", "cx-turn-b"); void spread.offsetWidth; spread.classList.add(dir > 0 ? "cx-turn-f" : "cx-turn-b"); }
+      prev.disabled = at === 0; next.disabled = at + 2 >= pages.length;
+      count.textContent = "pages " + (at + 1) + (pages[at + 1] ? "–" + (at + 2) : "") + " of " + pages.length;
+    }
+    prev.addEventListener("click", function () { if (at > 0) { at -= 2; show(-1); } });
+    next.addEventListener("click", function () { if (at + 2 < pages.length) { at += 2; show(1); } });
+    book.addEventListener("click", function (e) {
+      if (e.target.closest("button")) return;
+      var r = book.getBoundingClientRect();
+      if (e.clientX > r.left + r.width / 2) next.click(); else prev.click();
+    });
+    book.setAttribute("tabindex", "0"); book.setAttribute("aria-label", A.title + ": use the arrow keys to turn pages");
+    book.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") next.click(); if (e.key === "ArrowLeft") prev.click(); });
+    root.appendChild(el("div", { class: "relic-live" }, [book, el("div", { class: "relic-ctrls" }, [prev, count, next]),
+      el("p", { class: "relic-hint", text: "Touch the right-hand page to turn forward, the left to turn back." })]));
+    root.classList.add("is-live");
+    show(0);
+  }
+
+  // ---------------------------------------------------------------- inscription (generic, carved)
+  function inscription(root, item) {
+    var A = item.artifact;
+    var gstat = el("p", { class: "g-status", role: "status", "aria-live": "polite" });
+    var line = el("p", { class: "ins-line", lang: A.lang || "he", dir: A.dir || "rtl" });
+    var btns = A.words.map(function (w, i) {
+      var b = el("button", { type: "button", class: "g-word ins-word" + (A.disputed && A.disputed.indexOf(i) !== -1 ? " is-disp" : ""), text: w[0] });
+      function show() { gstat.textContent = w[0] + " — " + w[1]; }
+      b.addEventListener("mouseenter", show); b.addEventListener("focus", show); b.addEventListener("click", show);
+      line.appendChild(b); line.appendChild(document.createTextNode(" "));
+      return b;
+    });
+    var box = el("div", { class: "ins-box theme-" + (A.theme || "limestone") }, [line, A.translation ? el("p", { class: "ins-tr", text: A.translation }) : null]);
+    var kids = [box, gstat];
+    if (A.disputed) {
+      var dB = el("button", { type: "button", "aria-pressed": "false", text: A.disputedLabel || "Show the disputed words" });
+      dB.addEventListener("click", function () { var on = dB.getAttribute("aria-pressed") !== "true"; dB.setAttribute("aria-pressed", String(on)); box.classList.toggle("show-disp", on); if (on) gstat.textContent = A.disputedNote || ""; });
+      kids.push(el("div", { class: "relic-ctrls" }, [dB]));
+    }
+    if (A.events) { /* optional mini-timeline below */ }
+    root.appendChild(el("div", { class: "relic-live" }, kids));
+    root.classList.add("is-live");
+  }
+
   function init() {
     var V = window.VAULT || { items: [] };
     Array.prototype.forEach.call(document.querySelectorAll("[data-vault-relic]"), function (root) {
@@ -506,6 +649,10 @@
         else if (kind === "lance") lance(root, item);
         else if (kind === "crown") crown(root, item);
         else if (kind === "ark") ark(root, item);
+        else if (kind === "timeline") timeline(root, item);
+        else if (kind === "codex") codex(root, item);
+        else if (kind === "cards") cards(root, item);
+        else if (kind === "inscription") inscription(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }

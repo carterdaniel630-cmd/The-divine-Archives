@@ -225,15 +225,242 @@ window.VAULT = {
         rights: "There is no verified object to photograph. Manuscript and early printed depictions of the Ark published in IIIF can be opened in the viewer below.",
         external: []
       }
+    },
+    {
+      id: "v08", slug: "nag-hammadi-codices", status: "published", pending: true,
+      title: "The Nag Hammadi Codices", category: "manuscripts",
+      source: "vault/v08-nag-hammadi-codices.md",
+      held: "Coptic Museum, Cairo",
+      dated: "Bound after the 340s CE (dated cartonnage); texts older",
+      summary: "Thirteen leather-bound papyrus books found in a sealed jar in 1945: the Gospel of Thomas, Sethian and Valentinian scriptures, Hermetic tractates, even a scrap of Plato. What the library is, what it isn't, and who may have buried it.",
+      artifact: {
+        type: "codex", theme: "papyrus", title: "Open the codex",
+        sub: "A leather-bound papyrus book like those in the jar. Turn its pages for the lines that made the find famous, in this archive's working renderings from the Coptic.",
+        pages: [
+          { h: "Codex II · Gospel of Thomas", t: "These are the hidden sayings that the living Jesus spoke, and Didymos Judas Thomas wrote them down.", n: "The opening lines" },
+          { h: "Gospel of Thomas · saying 77", t: "Split a piece of wood: I am there. Lift up the stone, and you will find me there.", big: true },
+          { h: "Codex VI · The Thunder, Perfect Mind", t: "I am the first and the last. I am the honoured one and the scorned one. I am the whore and the holy one.", big: true },
+          { h: "The library", t: "Thirteen codices. Some fifty-two texts. Coptic, translated from Greek. Bound after the 340s CE.", n: "Dated letters recycled as stiffening in the covers fix the binding date." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the codices belong to the Coptic Museum and to the facsimile edition's publishers and are not republished here.", external: [] }
+    },
+    {
+      id: "v09", slug: "codex-gigas", status: "published", pending: true,
+      title: "The Codex Gigas (“Devil's Bible”)", category: "manuscripts",
+      source: "vault/v09-codex-gigas.md",
+      held: "National Library of Sweden, Stockholm",
+      dated: "Early 13th century, Bohemia",
+      summary: "The largest surviving medieval manuscript (92 cm tall, about 75 kg), with a Bible, Josephus, Isidore, medicine, exorcisms, and a full-page devil facing the Heavenly City. Plundered from Prague in 1648 and thrown from a burning castle in 1697. The legend of the walled-up monk, and what the script says instead.",
+      artifact: {
+        type: "codex", theme: "giant", title: "Turn the giant's pages",
+        sub: "A walk through what the one enormous volume holds, in its own order of wonders. The devil and the city are described, not drawn.",
+        pages: [
+          { h: "The size of it", t: "92 × 50 × 22 cm. About 75 kg. 310 vellum leaves.", big: true, n: "The largest surviving medieval manuscript." },
+          { h: "Scripture", t: "The Old Testament and the New, in the Latin Vulgate." },
+          { h: "History and knowledge", t: "Josephus's Antiquities and Jewish War; Isidore of Seville's Etymologies; the Chronicle of Cosmas of Prague." },
+          { h: "Body and soul", t: "Medical works; confessions and penitential texts; formulae against demons, illness and theft." },
+          { h: "The devil", t: "A full-page devil, horned and clawed, crouches in an ermine loincloth, almost a metre high.", n: "Page 290." },
+          { h: "The Heavenly City", t: "On the facing page, the City of God. Sin and salvation are set face to face across the opening." },
+          { h: "The legend", t: "A monk walled up alive promises a book in a single night and sells his soul to finish it.", n: "Late folklore. The uniform script points to one scribe working for years." },
+          { h: "Its journey", t: "Podlažice. Prague, under Rudolf II. Taken by the Swedish army in 1648. Thrown from the burning castle in Stockholm in 1697." }
+        ]
+      },
+      study: { manifest: "", rights: "The National Library of Sweden publishes the complete Codex Gigas online.", external: [ { label: "National Library of Sweden — the Codex Gigas", href: "https://www.kb.se/in-english/the-codex-gigas.html" } ] }
+    },
+    {
+      id: "v10", slug: "copper-scroll", status: "published", pending: true,
+      title: "The Copper Scroll", category: "texts",
+      source: "vault/v10-copper-scroll.md",
+      held: "The Jordan Museum, Amman",
+      dated: "1st century CE (debated); found 1952, Qumran Cave 3",
+      summary: "A Dead Sea Scroll punched into copper: 64 hiding places of silver and gold, sawn into 23 strips to be read, tagged with seven unexplained Greek letter-groups, and never once found.",
+      artifact: {
+        type: "scroll", theme: "copper", title: "Unroll the copper",
+        sub: "The first entry of the treasure list and the seven Greek letter-groups, set out on a copper sheet. Touch a letter-group to see what has been proposed.",
+        columns: [
+          { kind: "rule", heading: "3Q15 · column 1, the first entry", lines: [["In the ruin in the Valley of Achor,"], ["under the steps that go eastward,"], ["forty cubits:"], ["a chest of silver and its vessels,"], ["a weight of seventeen talents."]], note: "A working rendering after the published translations. About 64 entries follow in the same terse style." },
+          { kind: "rule", heading: "The seven Greek letter-groups", lines: [[["ΚΕΝ", "Greek letters after an entry; perhaps an abbreviated name. The meaning is unknown."]], [["ΧΑΓ", "Greek letters after an entry; perhaps an abbreviated name. The meaning is unknown."]], [["ΗΝ", "Greek letters after an entry; perhaps an abbreviated name. The meaning is unknown."]], [["ΘΕ", "Greek letters after an entry; perhaps an abbreviated name. The meaning is unknown."]], [["ΔΙ", "Greek letters after an entry; proposed as the start of a name such as Didymos. The meaning is unknown."]], [["ΤΡ", "Greek letters after an entry; perhaps an abbreviated name. The meaning is unknown."]], [["ΣΚ", "Greek letters after an entry; perhaps an abbreviated name. The meaning is unknown."]]], note: "Proposals include abbreviated names of the people who kept each cache, numerals, and cues to a companion document. The claim that they spell 'Akhenaten' has no scholarly support." },
+          { kind: "text", heading: "“Another writing”", lines: [["The list says a duplicate,"], ["with further explanation,"], ["was hidden elsewhere."]], note: "No such second document has been found." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the scroll belong to the Jordan Museum and to their photographers.", external: [] }
+    },
+    {
+      id: "v11", slug: "rohonc-codex", status: "published", pending: true,
+      title: "The Rohonc Codex", category: "manuscripts",
+      source: "vault/v11-rohonc-codex.md",
+      held: "Library of the Hungarian Academy of Sciences, Budapest",
+      dated: "Paper watermarked 16th century; writing undated",
+      summary: "448 small pages in an unknown script of about 200 signs, with crucifixions beside crescents. Given to the Hungarian Academy in 1838, it is suspected as a forger's hoax and proposed as a coded prayer book. Every reading so far, and why none has held.",
+      artifact: {
+        type: "cards", title: "Six readings of an unread book",
+        sub: "Each card is one attempt to explain the Rohonc Codex. Turn it to see how it fared.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "Old Hungarian runes", s: "Székely script", d: "Proposed by several readers. The sign inventory and structure do not match; no consistent reading results." },
+          { t: "Dacian", s: "an ancient language", d: "A 2000s claim of a Dacian text. Rejected by linguists: it rests on an invented language model." },
+          { t: "Brahmi / Indic", s: "script comparison", d: "A proposed Indic-script reading produced no connected text accepted by other specialists." },
+          { t: "Sumerian and others", s: "various", d: "Numerous claims with no independent confirmation." },
+          { t: "A 19th-century hoax", s: "Sámuel Literáti Nemes", d: "Proposed by Károly Szabó. Nemes did forge documents in the 1830s, but the book's length and consistency make a hoax hard to prove." },
+          { t: "A coded prayer book", s: "Király & Tokai, 2018", d: "Proposed in Cryptologia: a cipher-script paraphrasing New Testament texts, like a breviary. Serious and partial; no full reading yet." }
+        ]
+      },
+      study: { manifest: "", rights: "The Hungarian Academy of Sciences holds the manuscript and its images.", external: [] }
+    },
+    {
+      id: "v12", slug: "ketef-hinnom-scrolls", status: "published", pending: true,
+      title: "The Ketef Hinnom Silver Scrolls", category: "texts",
+      source: "vault/v12-ketef-hinnom-scrolls.md",
+      held: "The Israel Museum, Jerusalem",
+      dated: "Late 7th – early 6th century BCE (most scholars)",
+      summary: "Two tiny silver amulets from a Jerusalem tomb, excavated in 1979 and unrolled over three years, carrying the Priestly Blessing (‘May YHWH bless you and keep you’). They are about four centuries older than the Dead Sea Scrolls and the oldest known artefacts bearing words also found in the Bible.",
+      artifact: {
+        type: "scroll", theme: "silver", paleo: true, title: "Unroll the amulet",
+        sub: "The Priestly Blessing on a strip of silver. Switch to palaeo-Hebrew to see the letters the amulets use; touch a word for its meaning.",
+        columns: [
+          { kind: "hebrew", heading: "Numbers 6:24–26",
+            lines: [
+              [["יברכך", "may he bless you"], ["יהוה", "YHWH, the divine name"], ["וישמרך", "and keep you"]],
+              [["יאר", "may he make shine"], ["יהוה", "YHWH"], ["פניו", "his face"], ["אליך", "upon you"], ["ויחנך", "and be gracious to you"]],
+              [["ישא", "may he lift up"], ["יהוה", "YHWH"], ["פניו", "his face"], ["אליך", "to you"], ["וישם", "and set, give"], ["לך", "to you"], ["שלום", "peace"]]
+            ],
+            translation: "May YHWH bless you and keep you; may YHWH make his face shine upon you and be gracious to you; may YHWH lift up his face to you and give you peace.",
+            note: "The biblical (Masoretic) text. The amulets carry a shorter form and are damaged in places; parts of their readings are reconstructed." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the amulets belong to the Israel Museum and the excavators.", external: [] }
+    },
+    {
+      id: "v13", slug: "tilma-of-guadalupe", status: "published", pending: true,
+      title: "The Tilma of Guadalupe", category: "relics",
+      source: "vault/v13-tilma-of-guadalupe.md",
+      held: "Basilica of Our Lady of Guadalupe, Mexico City",
+      dated: "Devotion attested by 1556; tradition dates the image to 1531",
+      summary: "The cloak venerated as Juan Diego's, bearing the image of Our Lady of Guadalupe. It was attacked in 1556 as 'painted by an Indian, Marcos', survived a bomb in 1921, and was studied in infrared in 1979. The Nahuatl account, the documents, the science and the myths, kept apart.",
+      artifact: {
+        type: "timeline", theme: "tilma", title: "The cloak through time",
+        sub: "The Virgin's most famous words in Nahuatl, then the documented history. Touch a Nahuatl word for its meaning.",
+        lineHead: "Nican Mopohua", lineLang: "nah",
+        line: [["Cuix", "is it not so? (question particle)"], ["amo", "not"], ["nican", "here"], ["nica", "I am (present)"], ["nimonantzin?", "I, your revered mother"]],
+        lineTr: "“Am I not here, I who am your mother?”",
+        events: [
+          { y: 1531, t: "The apparitions (tradition)", d: "Four appearances to Juan Diego at Tepeyac; roses in December; the image on his cloak before the bishop." },
+          { y: 1556, t: "“Painted by an Indian, Marcos”", d: "Fray Francisco de Bustamante preaches against the devotion; Archbishop Montúfar's inquiry records it. The image and its cult exist, and are already disputed." },
+          { y: 1648, t: "First printed account", d: "Miguel Sánchez publishes the story in Spanish." },
+          { y: 1649, t: "The Nican Mopohua in print", d: "Luis Lasso de la Vega prints the Nahuatl account, widely attributed to Antonio Valeriano." },
+          { y: 1810, t: "A national banner", d: "Hidalgo's insurgents march under the Guadalupe image in the war of independence." },
+          { y: 1921, t: "The bomb", d: "A bomb hidden in flowers explodes beneath the image. The image is unharmed; a bronze altar crucifix is bent." },
+          { y: 1979, t: "Infrared study", d: "Philip Callahan finds no underdrawing in face, hands and robe, and later additions (moon, angel, rays, stars)." },
+          { y: 2002, t: "Juan Diego canonised", d: "After a Vatican commission defends his historicity against doubts raised in 1996." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the image belong to the Basilica and are not republished here.", external: [] }
+    },
+    {
+      id: "v14", slug: "holy-grail", status: "published", pending: true,
+      title: "The Holy Grail", category: "relics",
+      source: "vault/v14-holy-grail.md",
+      held: "Claimants in Valencia, Genoa, León and elsewhere",
+      dated: "Legend from c. 1190 (Chrétien de Troyes)",
+      summary: "The Gospels mention a cup and say nothing of its fate. The Grail was born in French romance around 1190. Valencia's agate cup, Genoa's glass dish and León's onyx chalice, set against the literature that made them sacred, and the modern 'bloodline' hoax.",
+      artifact: {
+        type: "timeline", theme: "grail", title: "How a cup became the Grail",
+        sub: "Move through the texts and objects in order. The claimants are on the cards below.",
+        events: [
+          { y: "c. 30", t: "“A cup” at the Last Supper", d: "Mark 14:23; Matthew 26:27; Luke 22; 1 Corinthians 11:25. Nothing is said of its fate." },
+          { y: 1101, t: "The Sacro Catino taken", d: "Crusaders carry a green dish from Caesarea to Genoa. It is later identified with the Grail, and later still shown to be medieval Islamic glass." },
+          { y: "c. 1190", t: "Chrétien's graal", d: "Perceval, or the Story of the Grail: a mysterious dish in a procession, not yet the Last Supper cup. Unfinished." },
+          { y: "c. 1200", t: "Robert de Boron", d: "Joseph d'Arimathie makes the Grail the Last Supper vessel that caught Christ's blood." },
+          { y: 1399, t: "Valencia's cup documented", d: "The agate cup is recorded at San Juan de la Peña; the cup itself may be ancient, the mounting medieval." },
+          { y: 1982, t: "Papal Masses", d: "John Paul II (1982) and Benedict XVI (2006) celebrate with the Valencia chalice." },
+          { y: 2014, t: "León's claim", d: "Two historians propose the Chalice of Doña Urraca. Most specialists reject the argument." }
+        ],
+        cardsTitle: "Three claimants: turn each card",
+        cards: [
+          { t: "Valencia", s: "Santo Cáliz", d: "An agate cup perhaps of the 2nd century BCE to 1st century CE, in a medieval mounting; documented from 1399." },
+          { t: "Genoa", s: "Sacro Catino", d: "A hexagonal dish once thought to be emerald: 9th–10th-century Islamic glass, broken after being taken to Paris under Napoleon." },
+          { t: "León", s: "Chalice of Doña Urraca", d: "Onyx cups in an 11th-century royal mounting; its 2014 Grail claim was widely rejected." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the chalices belong to their cathedrals and are not republished here.", external: [] }
+    },
+    {
+      id: "v15", slug: "true-cross", status: "published", pending: true,
+      title: "The True Cross", category: "relics",
+      source: "vault/v15-true-cross.md",
+      held: "Fragments worldwide: Rome, Jerusalem, Mount Athos, Paris and others",
+      dated: "Venerated in Jerusalem by the 380s (Egeria)",
+      summary: "Wood venerated as the Cross in fourth-century Jerusalem, where deacons guarded it because a pilgrim once bit off a piece. Helena's discovery legend and Eusebius's silence, Calvin's 'shipload' and the 1870 attempt to measure every fragment.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "The wood through time",
+        sub: "From the discovery legend to the tape measure.",
+        events: [
+          { y: "326–328", t: "Helena in Jerusalem (legend)", d: "Later writers say the empress found the Cross beneath a temple over Golgotha. Eusebius, who describes her journey, does not mention it." },
+          { y: "380s", t: "Egeria's Good Friday", d: "Pilgrims kiss wood laid on a table on Golgotha while deacons watch, because someone once bit off a piece." },
+          { y: 395, t: "Ambrose tells the story", d: "The first surviving telling of Helena's discovery, in the funeral oration for Theodosius." },
+          { y: 614, t: "Taken by Persia", d: "Khosrow II captures Jerusalem and its relic." },
+          { y: 630, t: "Restored by Heraclius", d: "The emperor returns the relic to Jerusalem." },
+          { y: 1543, t: "Calvin's “shipload”", d: "The Treatise on Relics mocks the number of fragments: enough to fill a ship." },
+          { y: 1870, t: "Rohault de Fleury's count", d: "Measuring the known fragments, he finds they make up only a small fraction of a cross, which answers Calvin's sum but proves nothing about authenticity." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of reliquaries belong to their churches and museums.", external: [] }
+    },
+    {
+      id: "v16", slug: "james-ossuary", status: "published", pending: true,
+      title: "The James Ossuary", category: "relics",
+      source: "vault/v16-james-ossuary.md",
+      held: "Returned to its private owner after a criminal trial",
+      dated: "Box: 1st century BCE – 1st century CE type; inscription disputed",
+      summary: "A first-century bone box inscribed 'James, son of Joseph, brother of Jesus'. It was declared a forgery by the Israel Antiquities Authority, and its owner was acquitted after an eight-year trial that proved nothing either way. One disputed phrase, and the odds behind common names.",
+      artifact: {
+        type: "inscription", theme: "limestone", title: "The inscription",
+        sub: "Cut into the side of the limestone box, right to left. Touch a word for its meaning, and see which words are disputed.",
+        lang: "arc", dir: "rtl",
+        words: [["יעקוב", "Ya'akov: James"], ["בר", "son of (Aramaic)"], ["יוסף", "Yosef: Joseph"], ["אחוי", "his brother"], ["דישוע", "of Yeshua: Jesus"]],
+        translation: "James, son of Joseph, brother of Jesus",
+        disputed: [3, 4], disputedLabel: "Show the disputed words",
+        disputedNote: "Critics argue that ‘brother of Jesus’ was added in modern times; defenders say the whole line is ancient. The 2012 verdict settled neither."
+      },
+      study: { manifest: "", rights: "Photographs of the ossuary belong to its owner and to the publications that printed them.", external: [] }
+    },
+    {
+      id: "v17", slug: "gospel-of-jesus-wife", status: "published", pending: true,
+      title: "The “Gospel of Jesus's Wife”", category: "manuscripts",
+      source: "vault/v17-gospel-of-jesus-wife.md",
+      held: "A papyrus fragment now recognised as a modern forgery",
+      dated: "Papyrus old; writing modern (forgery)",
+      summary: "A card-sized Coptic fragment in which Jesus says 'my wife', announced by a Harvard historian in 2012 and exposed by 2016: a text patched together from an online Gospel of Thomas, down to its typo. How a forgery is caught, step by step.",
+      artifact: {
+        type: "timeline", theme: "forgery", title: "How a forgery was caught",
+        sub: "The fragment's two famous phrases, then the evidence as it arrived.",
+        lineHead: "The fragment (translated)",
+        line: [["“Jesus said to them, ‘My wife…’”", "The line that made headlines. Its wording is assembled from phrases in the Coptic Gospel of Thomas."], ["“…she will be able to be my disciple…”", "Also patched from Thomas: compare sayings 55 and 101."]],
+        events: [
+          { y: 2012, t: "Announced in Rome", d: "Karen King presents the fragment at the International Congress of Coptic Studies, cautiously." },
+          { y: 2012, t: "A patchwork text", d: "Francis Watson shows nearly every phrase comes from the Coptic Gospel of Thomas, cut up and reassembled." },
+          { y: 2014, t: "Old papyrus", d: "Tests date the papyrus to antiquity, but old blank papyrus is available to forgers, so the date does not fix the writing." },
+          { y: 2014, t: "The companion fake", d: "A Coptic John fragment from the same owner is shown to be copied line by line from a 1924 edition." },
+          { y: 2015, t: "The modern typo", d: "The fragment repeats an error from Michael Grondin's 2002 online edition of Thomas." },
+          { y: 2016, t: "The owner found", d: "Ariel Sabar traces the fragment to Walter Fritz. The provenance documents collapse." },
+          { y: 2016, t: "King concedes", d: "“The evidence now presses in the direction of forgery.”" }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the fragment were published by Harvard Divinity School and are not republished here.", external: [] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Nag Hammadi Codices", category: "manuscripts", note: "The 1945 Coptic library of Gnostic and other texts." },
-    { title: "The Codex Gigas (\"Devil's Bible\")", category: "manuscripts", note: "The giant 13th-century Bohemian codex and its full-page devil." },
-    { title: "The Copper Scroll", category: "texts", note: "The Qumran treasure list hammered into copper (covered briefly in V02)." },
-    { title: "The Rohonc Codex", category: "manuscripts", note: "An illustrated book in an unread script, and whether it is a forgery." },
-    { title: "The Ketef Hinnom Silver Scrolls", category: "texts", note: "Tiny silver amulets bearing the Priestly Blessing — among the oldest biblical text." },
-    { title: "The Tilma of Guadalupe", category: "relics", note: "The image of Our Lady of Guadalupe, its history, and the studies of it." }
+    { title: "Codex Sinaiticus", category: "manuscripts", note: "The oldest complete New Testament, divided among four libraries and reunited online." },
+    { title: "The Book of Soyga", category: "manuscripts", note: "John Dee's unreadable book of letter tables, and the tables later decoded." },
+    { title: "The Papyrus of Ani", category: "manuscripts", note: "The finest Book of the Dead: the weighing of the heart, spell by spell." },
+    { title: "The Book of Kells", category: "manuscripts", note: "Insular Gospel book: the Chi-Rho page and the symbolism of its knots." },
+    { title: "The Mesha Stele", category: "texts", note: "A Moabite king's victory inscription naming Israel and YHWH." },
+    { title: "The Tel Dan Stele", category: "texts", note: "An Aramaic inscription read as 'House of David', and the debate over that reading." },
+    { title: "The Sudarium of Oviedo", category: "relics", note: "The cloth said to have covered Christ's face, radiocarbon-dated to the 7th century." },
+    { title: "The Veil of Veronica", category: "relics", note: "Rome's veil and the Manoppello image, and how 'true image' relics multiplied." },
+    { title: "The Black Stone of the Kaaba", category: "relics", note: "The stone set in the Kaaba's corner at Mecca: tradition, history and the limits of study." },
+    { title: "The Sacred Tooth Relic", category: "relics", note: "The Buddha's tooth at Kandy: kingship, procession and a relic's politics." }
   ]
 };

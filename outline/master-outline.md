@@ -152,4 +152,14 @@ registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
 | V05 | The Holy Lance ("Spear of Destiny") | `PUBLISHED — pending review` |
 | V06 | The Crown of Thorns | `PUBLISHED — pending review` |
 | V07 | The Ark of the Covenant | `PUBLISHED — pending review` |
-| — | Nag Hammadi Codices · Codex Gigas · Copper Scroll · Rohonc Codex · Ketef Hinnom scrolls · Tilma of Guadalupe | `not started` (queued) |
+| V08 | The Nag Hammadi Codices | `PUBLISHED — pending review` |
+| V09 | The Codex Gigas | `PUBLISHED — pending review` |
+| V10 | The Copper Scroll | `PUBLISHED — pending review` |
+| V11 | The Rohonc Codex | `PUBLISHED — pending review` |
+| V12 | The Ketef Hinnom Silver Scrolls | `PUBLISHED — pending review` |
+| V13 | The Tilma of Guadalupe | `PUBLISHED — pending review` |
+| V14 | The Holy Grail | `PUBLISHED — pending review` |
+| V15 | The True Cross | `PUBLISHED — pending review` |
+| V16 | The James Ossuary | `PUBLISHED — pending review` |
+| V17 | The "Gospel of Jesus's Wife" | `PUBLISHED — pending review` |
+| — | Batch 3 queue: Codex Sinaiticus · Book of Soyga · Papyrus of Ani · Book of Kells · Mesha Stele · Tel Dan Stele · Sudarium of Oviedo · Veil of Veronica · Black Stone of the Kaaba · Sacred Tooth Relic | `not started` (queued) |

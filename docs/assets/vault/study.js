@@ -436,6 +436,8 @@
     }
 
     function load(url) {
+      root.classList.remove("no-manifest");
+      setTimeout(function () { viewer.forceRedraw && viewer.forceRedraw(); }, 0);
       setStatus("Loading the image list from the holding institution…");
       fetch(url, { mode: "cors" }).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
@@ -578,8 +580,9 @@
     // ---- start ----------------------------------------------------------
     if (study.manifest) load(study.manifest);
     else {
-      stage.classList.add("is-empty");
-      setStatus("This object has no scans that can be embedded here — use the official viewers above, or paste a IIIF manifest URL below to study any published images.");
+      root.classList.add("no-manifest");
+      setStatus("");
+      customRow.insertBefore(el("p", { class: "tiny", text: "No openly licensed scans of this object can be embedded here. To study published images from any library, paste their IIIF manifest link:" }), customRow.firstChild);
     }
   }
 

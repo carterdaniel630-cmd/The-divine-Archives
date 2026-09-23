@@ -54,7 +54,8 @@ a.vault-card:hover, a.vault-card:focus-visible { border-color: var(--gold); tran
 .study-pagelinks { font-size: .9rem; }
 .study-region { display: grid; grid-template-columns: minmax(0, 14rem) 1fr; gap: 1rem; align-items: start; margin: .8rem 0; padding: .8rem; border: 1px solid var(--line); }
 .study-region img { max-width: 100%; height: auto; border: 1px solid var(--line-soft); background: #000; }
-.study-custom { display: flex; gap: .4rem; margin-top: 1rem; }
+.study-custom { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+.study-custom > p { flex: 1 0 100%; margin: 0 0 .2rem; }
 .study-custom input { flex: 1; min-width: 0; }
 .study-text { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .study-text h4 { font-family: var(--font-head); color: var(--parchment); margin: 1.2rem 0 .4rem; font-size: 1.1rem; }
@@ -66,6 +67,9 @@ a.vault-card:hover, a.vault-card:focus-visible { border-color: var(--gold); tran
 .study .tiny { font-size: .82rem; color: var(--ink-dim); }
 .study-noscript { font-size: .9rem; color: var(--ink-dim); }
 .study.is-live .study-noscript { display: none; }
+/* no embeddable scans: show only the official links and the paste-a-manifest box until something is opened */
+.study.no-manifest .study-bar, .study.no-manifest .study-stage, .study.no-manifest .study-enhance, .study.no-manifest .study-pagelinks { display: none; }
+.study.no-manifest .study-custom { margin-top: .4rem; }
 
 @media (max-width: 40rem) {
   .study { padding: .8rem; }
