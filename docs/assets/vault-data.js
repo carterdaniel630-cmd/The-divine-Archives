@@ -45,6 +45,34 @@ window.VAULT = {
       id: "v02", slug: "dead-sea-scrolls", status: "published", pending: true,
       title: "The Dead Sea Scrolls", category: "manuscripts",
       source: "vault/v02-dead-sea-scrolls.md",
+      artifact: {
+        type: "scroll",
+        title: "Unroll the scroll",
+        sub: "The words the entry discusses, set out as a scroll carries them: consonants only, hanging from ruled lines, sheets sewn edge to edge, read from the right.",
+        columns: [
+          { kind: "hebrew", heading: "Isaiah 40:3",
+            lines: [
+              [["קול", "a voice"], ["קורא", "calling, crying out"], ["במדבר", "in the wilderness"], ["פנו", "clear, prepare"], ["דרך", "the way of"], ["יהוה", "YHWH, the divine name (read aloud as Adonai, 'the Lord')"]],
+              [["ישרו", "make straight"], ["בערבה", "in the desert (the Arabah)"], ["מסלה", "a highway"], ["לאלהינו", "for our God"]]
+            ],
+            translation: "A voice calls out: \u201cIn the wilderness clear the way of the LORD; make straight in the desert a highway for our God.\u201d",
+            note: "The verse as in the Masoretic Text, in consonants only. The Great Isaiah Scroll (1QIsa\u1d43) preserves the whole chapter. Where the pause falls (\u2018a voice calls: in the wilderness\u2026\u2019 or \u2018a voice calling in the wilderness\u2019) differs between the Hebrew accents and the Greek, and the Gospels follow the Greek." },
+          { kind: "rule", heading: "Community Rule \u00b7 1QS VIII 13\u201314",
+            lines: [
+              ["\u2026they shall separate themselves from the dwelling of the men of injustice,"],
+              ["to go into the wilderness, to prepare there the way of", ["הואהא", "HIM: an unusual extended writing, used here in place of God's name"]],
+              ["as it is written:"],
+              ["\u201cIn the wilderness prepare the way of", ["\u2022\u2022\u2022\u2022", "four dots, standing where the divine name would be written"]],
+              ["make straight in the desert a highway for our God.\u201d"]
+            ],
+            note: "This archive's working translation. The community read Isaiah 40:3 as its own command to withdraw into the desert, and would not write the Name even when quoting it." },
+          { kind: "name", heading: "The Name, set apart", square: "יהוה", paleo: "\ud802\udd09\ud802\udd04\ud802\udd05\ud802\udd04",
+            translation: "In several scrolls written in the square script, the scribe switches to the old palaeo-Hebrew letters for this one word." },
+          { kind: "text", heading: "4Q521 \u00b7 the one who is to come",
+            lines: [["\u2026he will heal the wounded, give life to the dead,"], ["and bring good news to the poor\u2026"]],
+            note: "Compare Luke 7:22 and Matthew 11:5." }
+        ]
+      },
       held: "Israel Antiquities Authority & The Israel Museum, Jerusalem",
       dated: "c. 3rd century BCE – 1st century CE",
       summary: "Some 900–1,000 manuscripts from eleven caves near Qumran — the oldest copies of the Hebrew Bible, lost scriptures like Enoch and Jubilees, a sect's rules and war-liturgy, cryptic alphabets, a treasure list on copper — and the forgeries that followed them onto the market.",
@@ -61,6 +89,7 @@ window.VAULT = {
       id: "v03", slug: "emerald-tablet", status: "published", pending: true,
       title: "The Emerald Tablet", category: "texts",
       source: "vault/v03-emerald-tablet.md",
+      artifact: { type: "tablet", title: "The Tablet", sub: "The standard Latin text, cut into green stone as the legend describes it. Touch any line to raise its meaning." },
       held: "No physical tablet is known — the text survives in Arabic & Latin sources",
       dated: "Earliest datable text c. 750–850 CE (Arabic)",
       summary: "Fourteen lines that became the scripture of European alchemy — 'that which is below is like that which is above.' Traced from the Arabic Book of the Secret of Creation to Newton's own translation, with the Latin and a line-by-line working translation, and kept apart from Doreal's 20th-century 'Tablets of Thoth.'",

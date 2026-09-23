@@ -183,7 +183,8 @@ function head(title, desc, url, rel, type, extra) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
-  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=1" />
+  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=2" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=2" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -228,10 +229,31 @@ function itemPage(item) {
       { "@type": "ListItem", position: 3, name: item.title, item: url }
     ]
   });
-  // viewer sits right after the opening scene, before the first section
-  const body = e.lead.join("\n") + "\n" + studyBlock(item) + "\n" + e.sections.map((s) => s.html).join("\n\n");
+  // the object's own words (scroll) and the viewer sit right after the opening scene
+  let sectionsHtml = e.sections.map((s) => s.html).join("\n\n");
+  const art = item.artifact;
+  let relicTop = "";
+  if (art && art.type === "tablet") {
+    // the entry's Latin/English blockquote becomes the carved tablet (one source for the text)
+    sectionsHtml = sectionsHtml.replace(/<blockquote class="vault-text">[\s\S]*?<\/blockquote>/, (bq) =>
+      `<section class="relic relic-tablet" data-vault-relic="${esc(item.id)}" data-relic-kind="tablet">\n` +
+      `<h3 class="relic-title">${esc(art.title)}</h3><p class="relic-sub">${esc(art.sub)}</p>\n${bq}\n</section>`);
+  } else if (art && art.type === "scroll") {
+    const txt = (w) => (typeof w === "string" ? w : w[0]);
+    const cols = art.columns.map((c) => {
+      const lines = (c.lines || []).map((ln) => `<p class="${c.kind === "hebrew" ? "s-static-he" : ""}"${c.kind === "hebrew" ? ' lang="he"' : ""}>${esc(ln.map(txt).join(" "))}</p>`).join("");
+      const names = c.kind === "name" ? `<p class="s-static-he" lang="he">${esc(c.square)} &middot; <span lang="phn">${esc(c.paleo)}</span></p>` : "";
+      return `<div class="s-static-col"><h4>${esc(c.heading)}</h4>${lines}${names}${c.translation ? `<p><em>${esc(c.translation)}</em></p>` : ""}${c.note ? `<p class="tiny">${esc(c.note)}</p>` : ""}</div>`;
+    }).join("\n");
+    relicTop = `<section class="relic relic-scroll" data-vault-relic="${esc(item.id)}" data-relic-kind="scroll">\n` +
+      `<h2 class="relic-title">${esc(art.title)}</h2><p class="relic-sub">${esc(art.sub)}</p>\n<div class="relic-static">\n${cols}\n</div>\n</section>\n`;
+  }
+  const body = e.lead.join("\n") + "\n" + relicTop + studyBlock(item) + "\n" + sectionsHtml;
+  const fonts = art && art.type === "scroll"
+    ? '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&display=swap" />\n'
+    : "";
   return `${head(fullTitle, desc, url, "../", "article",
-    `  <script type="application/ld+json">${jsonld}</script>\n  <script type="application/ld+json">${crumbld}</script>\n`)}
+    fonts + `  <script type="application/ld+json">${jsonld}</script>\n  <script type="application/ld+json">${crumbld}</script>\n`)}
 <body>
 <a class="skip-link" href="#vault-mount">Skip to content</a>
 <div class="page">
@@ -262,8 +284,9 @@ ${item.pending ? `      <div class="pending-banner"><strong>Recently added &midd
 ${footer("../")}
 </div>
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
-<script src="../assets/vault-data.js?v=1" defer></script>
-<script src="../assets/vault/study.js?v=1" defer></script>
+<script src="../assets/vault-data.js?v=2" defer></script>
+<script src="../assets/vault/study.js?v=2" defer></script>
+<script src="../assets/vault/relic.js?v=1" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>
