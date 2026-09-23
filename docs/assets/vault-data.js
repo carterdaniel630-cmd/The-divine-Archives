@@ -448,19 +448,226 @@ window.VAULT = {
         ]
       },
       study: { manifest: "", rights: "Photographs of the fragment were published by Harvard Divinity School and are not republished here.", external: [] }
+    },
+    {
+      id: "v18", slug: "codex-sinaiticus", status: "published", pending: true,
+      title: "Codex Sinaiticus", category: "manuscripts",
+      source: "vault/v18-codex-sinaiticus.md",
+      held: "British Library, Leipzig University Library, St Catherine's Monastery, National Library of Russia",
+      dated: "c. 330–360 CE",
+      summary: "The oldest complete New Testament, in a fourth-century Greek Bible now split among four libraries: London, Leipzig, Sinai and St Petersburg. It ends Mark at 16:8, includes Barnabas and Hermas, and still carries the dispute over how it left Mount Sinai.",
+      artifact: {
+        type: "codex", theme: "vellum", title: "Turn the fourth-century pages",
+        sub: "How the codex writes: capitals without spaces, sacred names contracted. The first page is in the style of the codex, not a facsimile of its line breaks.",
+        pages: [
+          { h: "John 1:1, as its scribes wrote", t: "ΕΝΑΡΧΗΗΝΟΛΟΓΟΣΚΑΙΟΛΟΓΟΣΗΝΠΡΟΣΤΟΝΘ̅Ν̅ΚΑΙΘ̅Σ̅ΗΝΟΛΟΓΟΣ", u: true, n: "Scriptio continua: no spaces between words. Θ̅Ν̅ and Θ̅Σ̅ are contracted sacred names." },
+          { h: "The same words, separated", t: "En archē ēn ho logos, kai ho logos ēn pros ton theon, kai theos ēn ho logos. In the beginning was the Word, and the Word was with God, and the Word was God." },
+          { h: "The sacred names", t: "Θ̅Σ̅ God · Κ̅Σ̅ Lord · Ι̅Σ̅ Jesus · Χ̅Σ̅ Christ", big: true, n: "Nomina sacra: holiness marked in the spelling itself." },
+          { h: "Mark 16:8, where Mark ends here", t: "…for they were afraid.", big: true, n: "The longer ending, Mark 16:9–20, is absent." },
+          { h: "Books later left out", t: "After Revelation: the Epistle of Barnabas and part of the Shepherd of Hermas." },
+          { h: "One book, four libraries", t: "London, 347 leaves · Leipzig, 43 · Sinai, 12 and fragments · St Petersburg, fragments of 3.", n: "Reunited online by the Codex Sinaiticus Project in 2009." }
+        ]
+      },
+      study: { manifest: "", rights: "The four holding libraries publish the complete manuscript through the Codex Sinaiticus Project.", external: [ { label: "Codex Sinaiticus Project — the whole manuscript online", href: "https://www.codexsinaiticus.org/" } ] }
+    },
+    {
+      id: "v19", slug: "book-of-soyga", status: "published", pending: true,
+      title: "The Book of Soyga", category: "manuscripts",
+      source: "vault/v19-book-of-soyga.md",
+      held: "Bodleian Library, Oxford (MS Bodley 908); British Library (Sloane MS 8)",
+      dated: "16th century; owned by John Dee",
+      summary: "John Dee's book of magic, ending in 36 grids of letters he could never read. An angel told him only Michael could explain it. Rediscovered in 1994; in 2006 a cryptographer showed the grids are generated from seed words by a fixed rule, not hidden messages.",
+      artifact: {
+        type: "timeline", theme: "grimoire", title: "Words turned backwards",
+        sub: "The book hides words by reversing them. Touch each one, then follow the book's history.",
+        lineHead: "Reversals in the manuscript",
+        line: [["Soyga", "read backwards: Agyos, from the Greek hagios, 'holy'"], ["Sipal", "read backwards: Lapis, Latin 'stone'"], ["Munob", "read backwards: Bonum, Latin 'good'"]],
+        events: [
+          { y: "16th c.", t: "The book is written", d: "A Latin compilation of angel names, astrology and spells, ending in 36 tables of 36 × 36 letters. Author and date unknown." },
+          { y: 1583, t: "Dee asks an angel", d: "In a crystal-gazing session with Edward Kelley, Dee asks the angel Uriel about the book, and is told only the archangel Michael can interpret it." },
+          { y: 1609, t: "Dee dies; the book vanishes", d: "It is thought lost for nearly four centuries." },
+          { y: 1994, t: "Found twice over", d: "Two copies are identified in the Bodleian (MS Bodley 908) and the British Library (Sloane MS 8) under the title Aldaraia sive Soyga vocor." },
+          { y: 2006, t: "The tables explained", d: "Jim Reeds shows each table is generated from a seed word by a fixed rule, and reconstructs the method: a real decipherment of how they were made, with no hidden message inside." }
+        ]
+      },
+      study: { manifest: "", rights: "Images of both manuscripts belong to the Bodleian and British Libraries.", external: [] }
+    },
+    {
+      id: "v20", slug: "papyrus-of-ani", status: "published", pending: true,
+      title: "The Papyrus of Ani", category: "manuscripts",
+      source: "vault/v20-papyrus-of-ani.md",
+      held: "British Museum, London (EA 10470)",
+      dated: "c. 1250 BCE (19th Dynasty)",
+      summary: "A 24-metre Book of the Dead made for the scribe Ani at Thebes. Its judgment scene, the heart weighed against the feather of Ma'at before the Devourer, is the most famous image of the afterlife from the ancient world. Spell 125 and the 42 denials of the Negative Confession.",
+      artifact: {
+        type: "scales", title: "The weighing of the heart",
+        sub: "Spell 125 made interactive. Speak each denial of the Negative Confession and watch the balance, as Egyptian belief held it would. The glyphs are the Egyptian signs for heart and feather.",
+        declarations: ["I have not robbed with violence.", "I have not killed man or woman.", "I have not stolen the offerings of the gods.", "I have not told lies.", "I have not caused anyone to weep."],
+        prompt: "The heart outweighs the feather. Speak the denials.",
+        verdict: "Balanced against Ma'at: maa-kheru, “true of voice”.",
+        hint: "Five of the 42 denials, in this archive's working renderings. The painted vignette shows the balance level; this interaction illustrates the belief, it is not a claim about what happened to Ani."
+      },
+      study: { manifest: "", rights: "The British Museum publishes photographs of the Papyrus of Ani in its collection database, under its own licence terms.", external: [ { label: "British Museum — Papyrus of Ani (EA 10470)", href: "https://www.britishmuseum.org/collection/object/Y_EA10470-3" } ] }
+    },
+    {
+      id: "v21", slug: "book-of-kells", status: "published", pending: true,
+      title: "The Book of Kells", category: "manuscripts",
+      source: "vault/v21-book-of-kells.md",
+      held: "Trinity College Dublin (MS 58)",
+      dated: "c. 800 CE",
+      summary: "The high point of Insular art: the four Gospels in Latin, with a Chi-Rho page where cats watch mice steal a wafer and an otter holds a fish. It was stolen for its jewelled cover in 1007 and found under a sod. The symbols it certainly uses, and the ones still argued over.",
+      artifact: {
+        type: "codex", theme: "insular", title: "Open the Gospel book",
+        sub: "The book's most famous opening and the symbols it uses, page by page.",
+        pages: [
+          { h: "The Chi-Rho page", t: "XPI autem generatio", big: true, n: "Matthew 1:18: ‘Now the birth of Christ…’ The Greek letters Chi-Rho-Iota fill almost the whole page." },
+          { h: "In the margins", t: "Cats watching mice nibble a wafer; an otter holding a fish; moths.", n: "Read as Eucharistic and resurrection symbols, or as observation and humour. The meanings are debated." },
+          { h: "The four living creatures", t: "A man for Matthew · a lion for Mark · an ox for Luke · an eagle for John.", n: "From Ezekiel and Revelation, assigned to the evangelists in a system set out by Jerome." },
+          { h: "Ornament as meditation", t: "Spirals within spirals, knots too small to see without a lens.", n: "Often read as visual prayer; that reading is widely held, not recorded by the makers." },
+          { h: "1007", t: "The great Gospel of Colum Cille is stolen from Kells for its jewelled cover, and found months later under a sod, the cover gone.", n: "Annals of Ulster." },
+          { h: "Today", t: "At Trinity College Dublin since the 1660s. Digitised in full.", n: "340 folios survive." }
+        ]
+      },
+      study: { manifest: "", rights: "Trinity College Dublin publishes the complete Book of Kells in its Digital Collections.", external: [ { label: "Trinity College Dublin — the Book of Kells", href: "https://www.tcd.ie/library/research-collections/book-of-kells.php" } ] }
+    },
+    {
+      id: "v22", slug: "mesha-stele", status: "published", pending: true,
+      title: "The Mesha Stele", category: "texts",
+      source: "vault/v22-mesha-stele.md",
+      held: "Musée du Louvre, Paris (AO 5066)",
+      dated: "c. 840 BCE",
+      summary: "A Moabite king's victory stone, smashed by fire and cold water in 1869 and rebuilt from a paper squeeze. It tells the story of 2 Kings 3 from the other side and carries the earliest certain mention of YHWH outside the Bible.",
+      artifact: {
+        type: "inscription", theme: "basalt", paleo: true, title: "The first line of the stone",
+        sub: "In the script the stone uses, closely related to early Hebrew. Touch a word; switch to square Hebrew letters to compare.",
+        lang: "he", dir: "rtl",
+        words: [["אנך", "I (am)"], ["משע", "Mesha"], ["בן", "son of"], ["כמש[…]", "Chemosh[…]: the end of the father's name is lost"], ["מלך", "king of"], ["מאב", "Moab"], ["הדיבני", "the Dibonite"]],
+        translation: "I am Mesha, son of Chemosh[…], king of Moab, the Dibonite."
+      },
+      study: { manifest: "", rights: "The Louvre publishes photographs of the stele and the squeeze in its collections database.", external: [ { label: "Musée du Louvre — Stèle de Mésha", href: "https://collections.louvre.fr/en/ark:/53355/cl010120339" } ] }
+    },
+    {
+      id: "v23", slug: "tel-dan-stele", status: "published", pending: true,
+      title: "The Tel Dan Stele", category: "texts",
+      source: "vault/v23-tel-dan-stele.md",
+      held: "The Israel Museum, Jerusalem",
+      dated: "Late 9th century BCE",
+      summary: "Three basalt fragments of an Aramaean king's boast, dug up in 1993–94, naming a king of Israel and bytdwd, the 'House of David'. The first mention of David outside the Bible, what it proves and what it doesn't.",
+      artifact: {
+        type: "inscription", theme: "basalt", paleo: true, title: "The words that made headlines",
+        sub: "Two phrases from the broken stone, in its Old Aramaic letters. Touch a word; see which one is debated.",
+        lang: "arc", dir: "rtl",
+        words: [["מלך", "king of"], ["ישראל", "Israel"], ["…", "a gap: the stone is broken between the phrases"], ["ביתדוד", "bytdwd: 'House of David', the majority reading; minority readings include a place name or 'house of Dod'"]],
+        translation: "…king of Israel … House of David…",
+        disputed: [3], disputedLabel: "Show the debated word",
+        disputedNote: "Most scholars read bytdwd as ‘House of David’, the dynasty of Judah; a minority proposed other readings. It names a dynasty; it does not prove the biblical stories of David."
+      },
+      study: { manifest: "", rights: "Photographs of the fragments belong to the Israel Museum and the excavators.", external: [] }
+    },
+    {
+      id: "v24", slug: "sudarium-of-oviedo", status: "published", pending: true,
+      title: "The Sudarium of Oviedo", category: "relics",
+      source: "vault/v24-sudarium-of-oviedo.md",
+      held: "Cámara Santa, Oviedo Cathedral, Spain",
+      dated: "Documented 1075; radiocarbon c. 7th century CE",
+      summary: "A stained linen face-cloth, venerated as the sudarium of John 20:7 and shown three times a year. Documented from the opening of the Arca Santa in 1075, radiocarbon-dated to around the seventh century, and claimed to match the Shroud.",
+      artifact: {
+        type: "timeline", theme: "veil", title: "The face-cloth through time",
+        sub: "The Gospel line behind the relic, then its documented history.",
+        lineHead: "John 20:7", lineLang: "grc",
+        line: [["καὶ", "and"], ["τὸ", "the"], ["σουδάριον", "sudarium, face-cloth (a Latin loanword in the Greek)"], ["ὃ", "which"], ["ἦν", "was"], ["ἐπὶ", "upon"], ["τῆς", "the"], ["κεφαλῆς", "head"], ["αὐτοῦ", "his"], ["οὐ", "not"], ["μετὰ", "with"], ["τῶν", "the"], ["ὀθονίων", "linen cloths"], ["κείμενον", "lying"], ["ἀλλὰ", "but"], ["χωρὶς", "apart"], ["ἐντετυλιγμένον", "rolled up, folded"], ["εἰς", "in"], ["ἕνα", "one"], ["τόπον", "place"]],
+        lineTr: "…and the face-cloth that had been on his head, not lying with the linen cloths but rolled up in a place by itself.",
+        events: [
+          { y: "c. 570", t: "A possible early mention", d: "An anonymous pilgrim from Piacenza mentions a sudarium in Jerusalem. The link to this cloth cannot be demonstrated." },
+          { y: 614, t: "Flight from Jerusalem (tradition)", d: "Tradition says the cloth left ahead of the Persian conquest and travelled through North Africa to Spain." },
+          { y: "9th c.", t: "The Holy Chamber", d: "Alfonso II of Asturias builds the Cámara Santa in Oviedo to house relics." },
+          { y: 1075, t: "The Arca Santa opened", d: "Alfonso VI, with El Cid among the witnesses, opens the relic chest and has its contents listed: the cloth's firm documentary anchor." },
+          { y: 1990, t: "Radiocarbon: Arizona", d: "The linen dates to around the seventh century CE." },
+          { y: 1992, t: "Radiocarbon: Toronto", d: "A second test agrees. Defenders argue contamination skews the date; no retest has overturned it." },
+          { y: 2007, t: "A later test", d: "Again, a date around the seventh century." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the cloth belong to the Cathedral of Oviedo and the researchers who made them.", external: [] }
+    },
+    {
+      id: "v25", slug: "veil-of-veronica", status: "published", pending: true,
+      title: "The Veil of Veronica", category: "relics",
+      source: "vault/v25-veil-of-veronica.md",
+      held: "St Peter's Basilica, Rome; rival image at Manoppello",
+      dated: "Venerated at St Peter's from the 12th century",
+      summary: "The 'true image' of Christ's face that drew the crowds of the 1300 Jubilee. A legend not in the Gospels, a name with a false etymology, a relic reported lost in the Sack of Rome yet still shown each year, and a transparent veil at Manoppello claimed to be the original.",
+      artifact: {
+        type: "timeline", theme: "veil", title: "The true image through time",
+        sub: "The name first (touch each word), then the history.",
+        lineHead: "The name",
+        line: [["Veronica", "a Latin form of the Greek name Berenike; the medieval etymology 'vera icon' is a folk etymology"], ["vera", "Latin: true"], ["icon", "from Greek eikōn: image"]],
+        events: [
+          { y: "12th c.", t: "At St Peter's", d: "A cloth venerated as the Veronica is kept at Old St Peter's." },
+          { y: 1300, t: "The first Jubilee", d: "Displayed to the crowds of pilgrims; Dante later writes of those who come far 'to see our Veronica'." },
+          { y: 1527, t: "The Sack of Rome", d: "Contemporary letters report the relic stolen or destroyed; others say it survived. The Vatican never declared it lost." },
+          { y: "c. 1616–1629", t: "Copies restricted", d: "The papacy restricts reproductions of the Veronica, which some read as a sign the image was no longer visible. That reading is debated." },
+          { y: 1999, t: "The Manoppello claim", d: "Heinrich Pfeiffer argues the veil at Manoppello is the original. Claims of sea-silk and an unpainted image lack independent study." },
+          { y: 2006, t: "A papal visit", d: "Benedict XVI prays before the Manoppello image, without ruling on its authenticity." },
+          { y: "Each year", t: "Passion Sunday", d: "A Veronica relic is shown briefly, from a gallery high in St Peter's; observers report no visible image." }
+        ]
+      },
+      study: { manifest: "", rights: "No openly licensed photographs of the relic are available; it is shown only at a distance.", external: [] }
+    },
+    {
+      id: "v26", slug: "black-stone", status: "published", pending: true,
+      title: "The Black Stone of the Kaaba", category: "relics",
+      source: "vault/v26-black-stone.md",
+      held: "Eastern corner of the Kaaba, the Sacred Mosque, Mecca",
+      dated: "Venerated in Islam since its beginning; never scientifically examined",
+      summary: "The fragments of dark stone in a silver frame that pilgrims salute on every circuit of the Kaaba. Carried off by the Qarmatians in 930 and returned broken in 952. Its place in Islamic practice, and why no one can say what it is made of.",
+      artifact: {
+        type: "timeline", theme: "kaaba", title: "The stone and its story",
+        sub: "The words of the caliph ʿUmar, then the documented history. Touch each phrase.",
+        lineHead: "Sahih al-Bukhari, Book of Hajj",
+        line: [["“I know that you are a stone", "ʿUmar ibn al-Khaṭṭāb, the second caliph, addressing the Black Stone"], ["that can neither harm nor benefit.", "In Islamic teaching the stone has no power of its own and is not worshipped"], ["Had I not seen the Messenger of God kiss you,", "The Prophet's example is the reason for the rite"], ["I would not have kissed you.”", "Reported in the hadith collection of al-Bukhari"]],
+        events: [
+          { y: "c. 605", t: "The rebuilding of the Kaaba", d: "Tradition: Muhammad, before his prophetic mission, settles a dispute between clans by placing the stone on a cloak that each clan lifts together." },
+          { y: 930, t: "Taken by the Qarmatians", d: "Raiders from eastern Arabia sack Mecca during the pilgrimage and carry the stone away." },
+          { y: 952, t: "Returned in pieces", d: "After more than twenty years the stone comes back, broken; later damage breaks it further." },
+          { y: "Today", t: "Fragments in silver", d: "The fragments are held in a silver casing, renewed over the centuries. The stone has never been scientifically analysed." }
+        ]
+      },
+      study: { manifest: "", rights: "This entry reproduces no images of the Black Stone.", external: [] }
+    },
+    {
+      id: "v27", slug: "sacred-tooth-relic", status: "published", pending: true,
+      title: "The Sacred Tooth Relic", category: "relics",
+      source: "vault/v27-sacred-tooth-relic.md",
+      held: "Sri Dalada Maligawa (Temple of the Sacred Tooth Relic), Kandy",
+      dated: "In Sri Lanka since the 4th century CE (tradition)",
+      summary: "The Buddha's tooth, smuggled to Sri Lanka in a princess's hair according to the chronicle, carried in procession by elephants each year. For a thousand years it was the proof of a king's right to rule. The Portuguese claimed to have burned it in 1561.",
+      artifact: {
+        type: "timeline", theme: "perahera", title: "The relic through time",
+        sub: "From Kalinga to Kandy, and the procession that honours it each year.",
+        events: [
+          { y: "4th c.", t: "Arrival from Kalinga", d: "The chronicle Dāṭhāvaṃsa: Princess Hemamala hides the tooth in her hair and, with Prince Danta, brings it to Anuradhapura." },
+          { y: "Centuries", t: "Relic and crown", d: "The tooth moves with the royal capital; possessing it legitimates a king." },
+          { y: 1560, t: "Captured at Jaffna?", d: "Portuguese chroniclers say forces of Viceroy Constantino de Bragança seized the tooth." },
+          { y: 1561, t: "Destroyed at Goa?", d: "The Portuguese say they ground and burned it, refusing a vast ransom. Sinhalese tradition holds the captured tooth was a replica." },
+          { y: "1590s", t: "The Kandy temple", d: "The relic comes to rest with the last Sinhalese kingdom at Kandy." },
+          { y: 1998, t: "The bombing", d: "An LTTE truck bomb kills sixteen or seventeen people and damages the temple; the relic chamber is not reached." },
+          { y: "Every year", t: "The Esala Perahera", d: "Elephants, drummers and fire-dancers process through Kandy by night; the great elephant carries the relic's casket." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the temple and procession belong to their photographers; the relic itself is rarely shown.", external: [ { label: "Sri Dalada Maligawa — official site", href: "https://sridaladamaligawa.lk/" } ] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "Codex Sinaiticus", category: "manuscripts", note: "The oldest complete New Testament, divided among four libraries and reunited online." },
-    { title: "The Book of Soyga", category: "manuscripts", note: "John Dee's unreadable book of letter tables, and the tables later decoded." },
-    { title: "The Papyrus of Ani", category: "manuscripts", note: "The finest Book of the Dead: the weighing of the heart, spell by spell." },
-    { title: "The Book of Kells", category: "manuscripts", note: "Insular Gospel book: the Chi-Rho page and the symbolism of its knots." },
-    { title: "The Mesha Stele", category: "texts", note: "A Moabite king's victory inscription naming Israel and YHWH." },
-    { title: "The Tel Dan Stele", category: "texts", note: "An Aramaic inscription read as 'House of David', and the debate over that reading." },
-    { title: "The Sudarium of Oviedo", category: "relics", note: "The cloth said to have covered Christ's face, radiocarbon-dated to the 7th century." },
-    { title: "The Veil of Veronica", category: "relics", note: "Rome's veil and the Manoppello image, and how 'true image' relics multiplied." },
-    { title: "The Black Stone of the Kaaba", category: "relics", note: "The stone set in the Kaaba's corner at Mecca: tradition, history and the limits of study." },
-    { title: "The Sacred Tooth Relic", category: "relics", note: "The Buddha's tooth at Kandy: kingship, procession and a relic's politics." }
+    { title: "The Birmingham Qur'an Manuscript", category: "manuscripts", note: "Leaves radiocarbon-dated to 568–645 CE, and what that date can and cannot mean." },
+    { title: "The Sana'a Palimpsest", category: "manuscripts", note: "An early Qur'an with an older text erased beneath it." },
+    { title: "The Diamond Sutra of Dunhuang", category: "manuscripts", note: "The oldest dated printed book (868 CE), from a sealed cave library." },
+    { title: "The Dresden Codex", category: "manuscripts", note: "The finest Maya book: Venus tables, eclipse cycles and the gods of the calendar." },
+    { title: "The Popol Vuh Manuscript", category: "manuscripts", note: "The K'iche' Maya creation epic, preserved in one 18th-century copy." },
+    { title: "The Kartarpur Bir", category: "manuscripts", note: "The early Sikh scripture volume and its contested history." },
+    { title: "The Pyramid Texts of Unas", category: "texts", note: "The oldest religious texts carved inside a tomb, c. 2350 BCE." },
+    { title: "The Cyrus Cylinder", category: "texts", note: "A Persian king's clay proclamation, and its modern 'human rights' myth." },
+    { title: "The Rök Runestone", category: "texts", note: "The longest runic inscription, its ciphers, and a father's grief." },
+    { title: "The Gundestrup Cauldron", category: "relics", note: "A silver cauldron of gods from a Danish bog: Celtic, Thracian, or both?" }
   ]
 };

@@ -11,6 +11,8 @@
               papyrus, and flip-cards for the four rival lances.
      crown  — a ring of rushes circled by John 19:2, gold bindings as stations.
      ark    — Exodus 25 as a to-scale blueprint with a cubit switch.
+     codex / timeline / cards / inscription — reusable forms for later entries.
+     scales — the weighing of the heart (Book of the Dead, Spell 125).
    Only primary text goes on the object; commentary stays in the entry.
    Mounts on <section data-vault-relic="vNN">. The static text inside the
    mount is the no-JS / print fallback and is hidden once the relic is live.
@@ -582,7 +584,7 @@
       if (!p) return el("div", { class: "cx-page cx-" + side + " cx-blank" });
       return el("div", { class: "cx-page cx-" + side }, [
         p.h ? el("p", { class: "cx-h", text: p.h }) : null,
-        el("p", { class: "cx-t" + (p.big ? " cx-big" : ""), text: p.t }),
+        el("p", { class: "cx-t" + (p.big ? " cx-big" : "") + (p.u ? " cx-uncial" : ""), text: p.t }),
         p.n ? el("p", { class: "cx-n", text: p.n }) : null,
         el("span", { class: "cx-folio", text: String(pages.indexOf(p) + 1) })
       ]);
@@ -619,7 +621,8 @@
     var gstat = el("p", { class: "g-status", role: "status", "aria-live": "polite" });
     var line = el("p", { class: "ins-line", lang: A.lang || "he", dir: A.dir || "rtl" });
     var btns = A.words.map(function (w, i) {
-      var b = el("button", { type: "button", class: "g-word ins-word" + (A.disputed && A.disputed.indexOf(i) !== -1 ? " is-disp" : ""), text: w[0] });
+      var b = el("button", { type: "button", class: "g-word ins-word" + (A.disputed && A.disputed.indexOf(i) !== -1 ? " is-disp" : "") + (A.paleo ? " s-paleo" : ""), text: A.paleo ? toPaleo(w[0]) : w[0] });
+      b.setAttribute("data-sq", w[0]);
       function show() { gstat.textContent = w[0] + " — " + w[1]; }
       b.addEventListener("mouseenter", show); b.addEventListener("focus", show); b.addEventListener("click", show);
       line.appendChild(b); line.appendChild(document.createTextNode(" "));
@@ -632,9 +635,66 @@
       dB.addEventListener("click", function () { var on = dB.getAttribute("aria-pressed") !== "true"; dB.setAttribute("aria-pressed", String(on)); box.classList.toggle("show-disp", on); if (on) gstat.textContent = A.disputedNote || ""; });
       kids.push(el("div", { class: "relic-ctrls" }, [dB]));
     }
-    if (A.events) { /* optional mini-timeline below */ }
+    if (A.paleo) {
+      var pB = el("button", { type: "button", "aria-pressed": "false", text: "Show in square Hebrew letters" });
+      pB.addEventListener("click", function () {
+        var sq = pB.getAttribute("aria-pressed") !== "true"; pB.setAttribute("aria-pressed", String(sq));
+        btns.forEach(function (b) { b.textContent = sq ? b.getAttribute("data-sq") : toPaleo(b.getAttribute("data-sq")); b.classList.toggle("s-paleo", !sq); });
+      });
+      var row = kids[kids.length - 1];
+      if (row.classList && row.classList.contains("relic-ctrls")) row.appendChild(pB); else kids.push(el("div", { class: "relic-ctrls" }, [pB]));
+    }
     root.appendChild(el("div", { class: "relic-live" }, kids));
     root.classList.add("is-live");
+  }
+
+  // ---------------------------------------------------------------- scales (weighing of the heart)
+  function scales(root, item) {
+    var A = item.artifact, decl = A.declarations, done = 0, MAX = 16;
+    var svg = sv("svg", { viewBox: "0 0 420 250", class: "scales-svg", role: "img", "aria-label": "A balance: the heart on one pan, the feather of Ma'at on the other" });
+    svg.appendChild(sv("rect", { x: 205, y: 60, width: 10, height: 170, class: "sc-post" }));
+    svg.appendChild(sv("rect", { x: 170, y: 228, width: 80, height: 12, rx: 3, class: "sc-post" }));
+    svg.appendChild(sv("circle", { cx: 210, cy: 60, r: 7, class: "sc-pivot" }));
+    var beam = sv("g", { class: "sc-beam" });
+    beam.appendChild(sv("rect", { x: 70, y: 56, width: 280, height: 8, rx: 4, class: "sc-bar" }));
+    function pan(x, glyph, label) {
+      return sv("g", { class: "sc-pan-g" }, [
+        sv("line", { x1: x, y1: 60, x2: x - 30, y2: 130, class: "sc-cord" }), sv("line", { x1: x, y1: 60, x2: x + 30, y2: 130, class: "sc-cord" }),
+        sv("path", { d: "M" + (x - 42) + " 130 Q " + x + " 158 " + (x + 42) + " 130 Z", class: "sc-pan" }),
+        sv("text", { x: x, y: 124, "text-anchor": "middle", class: "sc-glyph", text: glyph }),
+        sv("text", { x: x, y: 176, "text-anchor": "middle", class: "sc-label", text: label })
+      ]);
+    }
+    var left = pan(90, "𓄣", "the heart (ib)"), right = pan(330, "𓆄", "the feather of Ma'at");
+    beam.appendChild(left); beam.appendChild(right);
+    svg.appendChild(beam);
+    var verdict = el("p", { class: "sc-verdict", role: "status", "aria-live": "polite" });
+    var list = el("div", { class: "sc-decl" });
+    var btns = decl.map(function (d) {
+      var b = el("button", { type: "button", class: "sc-line", "aria-pressed": "false", text: d });
+      b.addEventListener("click", function () {
+        if (b.getAttribute("aria-pressed") === "true") return;
+        b.setAttribute("aria-pressed", "true"); done++; tilt();
+      });
+      list.appendChild(b); return b;
+    });
+    function tilt() {
+      var a = MAX * (1 - done / decl.length);
+      beam.style.transform = "rotate(" + (-a) + "deg)";
+      // keep the pans hanging level while the beam turns
+      left.style.transform = "rotate(" + a + "deg)"; right.style.transform = "rotate(" + a + "deg)";
+      left.style.transformOrigin = "90px 60px"; right.style.transformOrigin = "330px 60px";
+      verdict.textContent = done === decl.length ? A.verdict : (done ? "The balance steadies…" : A.prompt);
+      root.classList.toggle("sc-true", done === decl.length);
+    }
+    var reset = el("button", { type: "button", text: "Begin again" });
+    reset.addEventListener("click", function () { done = 0; btns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); }); tilt(); });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "scales-stage" }, [svg]), verdict, list, el("div", { class: "relic-ctrls" }, [reset]),
+      el("p", { class: "relic-hint", text: A.hint || "" })
+    ]));
+    root.classList.add("is-live");
+    tilt();
   }
 
   function init() {
@@ -653,6 +713,7 @@
         else if (kind === "codex") codex(root, item);
         else if (kind === "cards") cards(root, item);
         else if (kind === "inscription") inscription(root, item);
+        else if (kind === "scales") scales(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }

@@ -195,7 +195,7 @@ function head(title, desc, url, rel, type, extra) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
   <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=3" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=6" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=7" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -249,9 +249,10 @@ function itemPage(item) {
     sectionsHtml = sectionsHtml.replace(/<blockquote class="vault-text">[\s\S]*?<\/blockquote>/, (bq) =>
       `<section class="relic relic-tablet" data-vault-relic="${esc(item.id)}" data-relic-kind="tablet">\n` +
       `<h3 class="relic-title">${esc(art.title)}</h3><p class="relic-sub">${esc(art.sub)}</p>\n${bq}\n</section>`);
-  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription"].indexOf(art.type) !== -1) {
+  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales"].indexOf(art.type) !== -1) {
     // static fallback: the object's own words (if any) and its documented stations
     const bits = [];
+    if (art.declarations) bits.push("<ul>" + art.declarations.map((d) => `<li>${esc(d)}</li>`).join("") + "</ul>");
     if (art.words) bits.push(`<p class="s-static-he" lang="${esc(art.lang || "he")}">${esc(art.words.map((w) => w[0]).join(" "))}</p>`);
     if (art.line) bits.push(`<p lang="${esc(art.lineLang || "en")}"><strong>${esc(art.line.map((w) => w[0]).join(" "))}</strong></p>`);
     if (art.pages) bits.push(art.pages.map((pg) => `<p>${pg.h ? `<strong>${esc(pg.h)}.</strong> ` : ""}${esc(pg.t)}${pg.n ? ` <em>${esc(pg.n)}</em>` : ""}</p>`).join(""));
@@ -274,8 +275,8 @@ function itemPage(item) {
       `<h2 class="relic-title">${esc(art.title)}</h2><p class="relic-sub">${esc(art.sub)}</p>\n<div class="relic-static">\n${cols}\n</div>\n</section>\n`;
   }
   const body = e.lead.join("\n") + "\n" + relicTop + studyBlock(item) + "\n" + sectionsHtml;
-  const fonts = art && (["scroll", "ark", "inscription"].indexOf(art.type) !== -1 || art.lineLang === "he")
-    ? '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&display=swap" />\n'
+  const fonts = art && (["scroll", "ark", "inscription", "scales"].indexOf(art.type) !== -1 || art.lineLang === "he")
+    ? '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" />\n'
     : "";
   return `${head(fullTitle, desc, url, "../", "article",
     fonts + `  <script type="application/ld+json">${jsonld}</script>\n  <script type="application/ld+json">${crumbld}</script>\n`)}
@@ -309,9 +310,9 @@ ${item.pending ? `      <div class="pending-banner"><strong>Recently added &midd
 ${footer("../")}
 </div>
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
-<script src="../assets/vault-data.js?v=4" defer></script>
+<script src="../assets/vault-data.js?v=5" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
-<script src="../assets/vault/relic.js?v=4" defer></script>
+<script src="../assets/vault/relic.js?v=5" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>

@@ -162,4 +162,14 @@ registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
 | V15 | The True Cross | `PUBLISHED — pending review` |
 | V16 | The James Ossuary | `PUBLISHED — pending review` |
 | V17 | The "Gospel of Jesus's Wife" | `PUBLISHED — pending review` |
-| — | Batch 3 queue: Codex Sinaiticus · Book of Soyga · Papyrus of Ani · Book of Kells · Mesha Stele · Tel Dan Stele · Sudarium of Oviedo · Veil of Veronica · Black Stone of the Kaaba · Sacred Tooth Relic | `not started` (queued) |
+| V18 | Codex Sinaiticus | `PUBLISHED — pending review` |
+| V19 | The Book of Soyga | `PUBLISHED — pending review` |
+| V20 | The Papyrus of Ani | `PUBLISHED — pending review` |
+| V21 | The Book of Kells | `PUBLISHED — pending review` |
+| V22 | The Mesha Stele | `PUBLISHED — pending review` |
+| V23 | The Tel Dan Stele | `PUBLISHED — pending review` |
+| V24 | The Sudarium of Oviedo | `PUBLISHED — pending review` |
+| V25 | The Veil of Veronica | `PUBLISHED — pending review` |
+| V26 | The Black Stone of the Kaaba | `PUBLISHED — pending review` |
+| V27 | The Sacred Tooth Relic | `PUBLISHED — pending review` |
+| — | Batch 4 queue: Birmingham Qur'an · Sana'a Palimpsest · Diamond Sutra · Dresden Codex · Popol Vuh manuscript · Kartarpur Bir · Pyramid Texts of Unas · Cyrus Cylinder · Rök Runestone · Gundestrup Cauldron | `not started` (queued) |
