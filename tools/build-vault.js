@@ -195,7 +195,7 @@ function head(title, desc, url, rel, type, extra) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
   <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=3" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=7" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=8" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -312,7 +312,7 @@ ${footer("../")}
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
 <script src="../assets/vault-data.js?v=5" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
-<script src="../assets/vault/relic.js?v=5" defer></script>
+<script src="../assets/vault/relic.js?v=6" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>

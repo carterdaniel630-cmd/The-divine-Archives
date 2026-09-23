@@ -136,9 +136,25 @@
       if (i < cols.length - 1) sheet.appendChild(el("span", { class: "s-seam", "aria-hidden": "true" }));
     });
 
-    var rollR = el("button", { type: "button", class: "scroll-roll roll-r", "aria-label": "Unroll the scroll", "aria-expanded": "false" });
+    // columns ink in one after another as the scroll opens
+    Array.prototype.forEach.call(sheet.querySelectorAll(".s-col"), function (c, i) { c.style.setProperty("--i", i); });
+
+    var rollR = el("button", { type: "button", class: "scroll-roll roll-r", "aria-label": "Unroll the scroll", "aria-expanded": "false" },
+      [el("span", { class: "scroll-tie", "aria-hidden": "true" }, [el("span", { class: "scroll-knot" })])]);
     var rollL = el("span", { class: "scroll-roll roll-l", "aria-hidden": "true" });
-    var body = el("div", { class: "scroll-body" }, [rollR, el("div", { class: "scroll-window" }, [sheet]), rollL]);
+    var win = el("div", { class: "scroll-window" }, [sheet, el("span", { class: "scroll-spill", "aria-hidden": "true" })]);
+    // decorative light: a slow aura and drifting motes (hidden for reduced motion)
+    var motes = el("div", { class: "scroll-motes", "aria-hidden": "true" });
+    for (var m = 0; m < 18; m++) {
+      var mo = el("span", { class: "mote" });
+      mo.style.setProperty("--x", (4 + Math.random() * 92).toFixed(1) + "%");
+      mo.style.setProperty("--d", (7 + Math.random() * 8).toFixed(1) + "s");
+      mo.style.setProperty("--w", (-Math.random() * 12).toFixed(1) + "s");
+      mo.style.setProperty("--s", (2 + Math.random() * 3.5).toFixed(1) + "px");
+      mo.style.setProperty("--dx", ((Math.random() - .5) * 60).toFixed(0) + "px");
+      motes.appendChild(mo);
+    }
+    var body = el("div", { class: "scroll-body" }, [el("span", { class: "scroll-aura", "aria-hidden": "true" }), motes, rollR, win, rollL]);
     var trBtn = el("button", { type: "button", "aria-pressed": "false", text: "Show translation" });
     var toggle = el("button", { type: "button", text: "Unroll the scroll" });
     var ctrls = el("div", { class: "relic-ctrls" }, [toggle, trBtn]);
@@ -165,6 +181,10 @@
       rollR.setAttribute("aria-expanded", String(open));
       rollR.setAttribute("aria-label", open ? "Roll the scroll up" : "Unroll the scroll");
       toggle.textContent = open ? "Roll it up" : "Unroll the scroll";
+      if (open && !reduce) {
+        scrollEl.classList.remove("is-opening"); void scrollEl.offsetWidth; scrollEl.classList.add("is-opening");
+        clearTimeout(scrollEl._ot); scrollEl._ot = setTimeout(function () { scrollEl.classList.remove("is-opening"); }, 2200);
+      }
       if (open) { sheet.scrollLeft = 0; setTimeout(function () { sheet.focus({ preventScroll: true }); }, reduce ? 0 : 900); }
     }
     toggle.addEventListener("click", function () { setOpen(scrollEl.getAttribute("data-open") !== "true"); });
