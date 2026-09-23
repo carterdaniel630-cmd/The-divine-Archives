@@ -516,3 +516,13 @@ body { font-size: 1.06rem; }
   .print-only { display: block; margin-top: 2rem; padding-top: 0.8rem; border-top: 1px solid #c9bda2; font-size: 9pt; color: #6b5f45; }
   #chapter-mount .article { animation: none !important; transform: none !important; }
 }
+
+/* ---------------------------------------------------------------- "In the Vault" on chapter and era pages */
+.vault-links { margin: 2.6rem 0 1rem; }
+.vault-links .vl-list { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+.vault-links .vl-item { display: block; padding: .8rem 1rem; border: 1px solid var(--line); border-left: 3px solid var(--gold); background: var(--panel); color: var(--parchment); text-decoration: none; transition: border-color .2s; }
+.vault-links .vl-item:hover, .vault-links .vl-item:focus-visible { border-color: var(--gold); }
+.vault-links .vl-t { display: block; font-family: var(--font-display); letter-spacing: .04em; }
+.vault-links .vl-m { display: block; font-size: .8rem; color: var(--ink-faint); margin: .15rem 0 .35rem; }
+.vault-links .vl-s { display: block; font-size: .9rem; color: var(--ink-dim); line-height: 1.5; }
+.vault-links > p.tiny { font-size: .88rem; color: var(--ink-faint); line-height: 1.5; }

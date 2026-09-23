@@ -143,53 +143,60 @@ template (open on the object, then symbology and encoding, connections, and the 
 plus a study viewer that loads the holding institution's own IIIF scans live. Sources: `/vault/*.md`;
 registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
 
-| ID | Entry | Status |
-|---|---|---|
-| V01 | The Voynich Manuscript | `PUBLISHED — pending review` |
-| V02 | The Dead Sea Scrolls | `PUBLISHED — pending review` |
-| V03 | The Emerald Tablet | `PUBLISHED — pending review` |
-| V04 | The Shroud of Turin | `PUBLISHED — pending review` |
-| V05 | The Holy Lance ("Spear of Destiny") | `PUBLISHED — pending review` |
-| V06 | The Crown of Thorns | `PUBLISHED — pending review` |
-| V07 | The Ark of the Covenant | `PUBLISHED — pending review` |
-| V08 | The Nag Hammadi Codices | `PUBLISHED — pending review` |
-| V09 | The Codex Gigas | `PUBLISHED — pending review` |
-| V10 | The Copper Scroll | `PUBLISHED — pending review` |
-| V11 | The Rohonc Codex | `PUBLISHED — pending review` |
-| V12 | The Ketef Hinnom Silver Scrolls | `PUBLISHED — pending review` |
-| V13 | The Tilma of Guadalupe | `PUBLISHED — pending review` |
-| V14 | The Holy Grail | `PUBLISHED — pending review` |
-| V15 | The True Cross | `PUBLISHED — pending review` |
-| V16 | The James Ossuary | `PUBLISHED — pending review` |
-| V17 | The "Gospel of Jesus's Wife" | `PUBLISHED — pending review` |
-| V18 | Codex Sinaiticus | `PUBLISHED — pending review` |
-| V19 | The Book of Soyga | `PUBLISHED — pending review` |
-| V20 | The Papyrus of Ani | `PUBLISHED — pending review` |
-| V21 | The Book of Kells | `PUBLISHED — pending review` |
-| V22 | The Mesha Stele | `PUBLISHED — pending review` |
-| V23 | The Tel Dan Stele | `PUBLISHED — pending review` |
-| V24 | The Sudarium of Oviedo | `PUBLISHED — pending review` |
-| V25 | The Veil of Veronica | `PUBLISHED — pending review` |
-| V26 | The Black Stone of the Kaaba | `PUBLISHED — pending review` |
-| V27 | The Sacred Tooth Relic | `PUBLISHED — pending review` |
-| V28 | The Birmingham Qur'an Manuscript | `PUBLISHED — pending review` |
-| V29 | The Sana'a Palimpsest | `PUBLISHED — pending review` |
-| V30 | The Diamond Sutra of Dunhuang | `PUBLISHED — pending review` |
-| V31 | The Dresden Codex | `PUBLISHED — pending review` |
-| V32 | The Popol Vuh Manuscript | `PUBLISHED — pending review` |
-| V33 | The Kartarpur Bir | `PUBLISHED — pending review` |
-| V34 | The Pyramid Texts of Unas | `PUBLISHED — pending review` |
-| V35 | The Cyrus Cylinder | `PUBLISHED — pending review` |
-| V36 | The Rök Runestone | `PUBLISHED — pending review` |
-| V37 | The Gundestrup Cauldron | `PUBLISHED — pending review` |
-| V38 | The Aleppo Codex | `PUBLISHED — pending review` |
-| V39 | The Derveni Papyrus | `PUBLISHED — pending review` |
-| V40 | The Gospel of Judas (Codex Tchacos) | `PUBLISHED — pending review` |
-| V41 | The Codex Borgia | `PUBLISHED — pending review` |
-| V42 | The Lindisfarne Gospels | `PUBLISHED — pending review` |
-| V43 | The Merneptah Stele | `PUBLISHED — pending review` |
-| V44 | The Pilate Stone | `PUBLISHED — pending review` |
-| V45 | The Nebra Sky Disc | `PUBLISHED — pending review` |
-| V46 | The Piprahwa Relics | `PUBLISHED — pending review` |
-| V47 | The Kensington Runestone | `PUBLISHED — pending review` |
-| — | Batch 6 queue: Great Isaiah Scroll · Book of Enoch in Ge'ez · Vienna Dioscurides · Codex Mendoza · Ishtar Gate · Rosetta Stone · Behistun Inscription · Oracle Bones of Anyang · Phaistos Disc · Holy Mandylion | `not started` (queued) |
+**Placement rule.** The Vault is a showcase, not a separate library. Every object is filed under the
+**era of its own date** (`era` in the registry) and names its **home chapters** (`chapters`). Those
+chapters list it in an "In the Vault" section, the era page lists it under "From the Vault", the Vault
+index is organised by era, and the entry page links back to its era and chapters. Comparisons made in an
+entry's Connections text stay linked there but do not make a chapter a home. Rebuild order:
+`build-vault.js`, then `build-chapters.js`, then `build-pages.js`.
+
+| # | Object | Era | Home chapters (listed there under “In the Vault”) | Status |
+|---|---|---|---|---|
+| V01 | The Voynich Manuscript | Era VII · The High Medieval | Scholasticism (ch28); Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
+| V02 | The Dead Sea Scrolls | Era IV · The Axial Age | Second Temple Judaism (ch10); Early Christianity (ch16); Rabbinic Judaism (ch19); The End of Days (ch50); Gnosticism (ch17); Pistis Sophia (ch45) | `PUBLISHED — pending review` |
+| V03 | The Emerald Tablet | Era VI · The Early Medieval | Roman Mystery Cults (ch18); Gnosticism (ch17); Islam (ch21); Scholasticism (ch28); Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
+| V04 | The Shroud of Turin | Era VII · The High Medieval | Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `PUBLISHED — pending review` |
+| V05 | The Holy Lance (“Spear of Destiny”) | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V06 | The Crown of Thorns | Era VII · The High Medieval | Scholasticism (ch28); Eastern Orthodoxy & Byzantium (ch60); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V07 | The Ark of the Covenant | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Second Temple Judaism (ch10); Rabbinic Judaism (ch19); Eastern Orthodoxy & Byzantium (ch60) | `PUBLISHED — pending review` |
+| V08 | The Nag Hammadi Codices | Era V · Late Antiquity | Gnosticism (ch17); Pistis Sophia (ch45); Early Christianity (ch16); Manichaeism (ch55) | `PUBLISHED — pending review` |
+| V09 | The Codex Gigas (“Devil's Bible”) | Era VII · The High Medieval | Scholasticism (ch28) | `PUBLISHED — pending review` |
+| V10 | The Copper Scroll | Era IV · The Axial Age | Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
+| V11 | The Rohonc Codex | Era VIII · The Early Modern | The Reformation (ch31) | `PUBLISHED — pending review` |
+| V12 | The Ketef Hinnom Silver Scrolls | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Rabbinic Judaism (ch19) | `PUBLISHED — pending review` |
+| V13 | The Tilma of Guadalupe | Era VIII · The Early Modern | The Aztec (ch43); The Great Goddess (ch48) | `PUBLISHED — pending review` |
+| V14 | The Holy Grail | Era VII · The High Medieval | Sacred Kingship (ch49); Celtic & Germanic (ch14) | `PUBLISHED — pending review` |
+| V15 | The True Cross | Era V · Late Antiquity | Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `PUBLISHED — pending review` |
+| V16 | The James Ossuary | Era IV · The Axial Age | Early Christianity (ch16); Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
+| V17 | The “Gospel of Jesus's Wife” | Era IX · The Modern Age | Early Christianity (ch16) | `PUBLISHED — pending review` |
+| V18 | Codex Sinaiticus | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
+| V19 | The Book of Soyga | Era VIII · The Early Modern | Kabbalah (ch26); Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
+| V20 | The Papyrus of Ani | Era II · The Bronze Age | Egypt (ch02); Journeys to the Underworld (ch47) | `PUBLISHED — pending review` |
+| V21 | The Book of Kells | Era VI · The Early Medieval | Celtic & Germanic (ch14); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
+| V22 | The Mesha Stele | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58) | `PUBLISHED — pending review` |
+| V23 | The Tel Dan Stele | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V24 | The Sudarium of Oviedo | Era V · Late Antiquity | Patristic Christianity (ch22); Scholasticism (ch28) | `PUBLISHED — pending review` |
+| V25 | The Veil of Veronica | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `PUBLISHED — pending review` |
+| V26 | The Black Stone of the Kaaba | Era VI · The Early Medieval | Islam (ch21) | `PUBLISHED — pending review` |
+| V27 | The Sacred Tooth Relic | Era V · Late Antiquity | Buddhism (ch11); Mahayana Buddhism (ch20); Tibetan & Vajrayana Buddhism (ch53); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V28 | The Birmingham Qur'an Manuscript | Era V · Late Antiquity | Islam (ch21) | `PUBLISHED — pending review` |
+| V29 | The Sana'a Palimpsest | Era V · Late Antiquity | Islam (ch21) | `PUBLISHED — pending review` |
+| V30 | The Diamond Sutra of Dunhuang | Era VI · The Early Medieval | Buddhism (ch11); Mahayana Buddhism (ch20); Zen & Pure Land Buddhism (ch54); Tibetan & Vajrayana Buddhism (ch53) | `PUBLISHED — pending review` |
+| V31 | The Dresden Codex | Era VII · The High Medieval | The Maya (ch29); The Aztec (ch43); Creation & the First Order (ch46); The End of Days (ch50) | `PUBLISHED — pending review` |
+| V32 | The Popol Vuh Manuscript | Era VIII · The Early Modern | The Maya (ch29); Creation & the First Order (ch46); Journeys to the Underworld (ch47); The Flood (ch01) | `PUBLISHED — pending review` |
+| V33 | The Kartarpur Bir | Era VIII · The Early Modern | Sikhism (ch34); Bhakti (ch30); Sufism (ch27) | `PUBLISHED — pending review` |
+| V34 | The Pyramid Texts of Unas | Era II · The Bronze Age | Egypt (ch02); Sacred Kingship (ch49); Journeys to the Underworld (ch47); The End of Days (ch50) | `PUBLISHED — pending review` |
+| V35 | The Cyrus Cylinder | Era IV · The Axial Age | Mesopotamia (ch03); Zoroaster (ch06); Second Temple Judaism (ch10); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V36 | The Rök Runestone | Era VI · The Early Medieval | Norse Paganism (ch23); Celtic & Germanic (ch14); The End of Days (ch50) | `PUBLISHED — pending review` |
+| V37 | The Gundestrup Cauldron | Era IV · The Axial Age | Celtic & Germanic (ch14); Sacrifice & the Scapegoat (ch51); Journeys to the Underworld (ch47) | `PUBLISHED — pending review` |
+| V38 | The Aleppo Codex | Era VI · The Early Medieval | Second Temple Judaism (ch10); Rabbinic Judaism (ch19) | `PUBLISHED — pending review` |
+| V39 | The Derveni Papyrus | Era IV · The Axial Age | Early Greece (ch08); Classical Greece (ch15); Roman Mystery Cults (ch18); Journeys to the Underworld (ch47) | `PUBLISHED — pending review` |
+| V40 | The Gospel of Judas (Codex Tchacos) | Era V · Late Antiquity | Gnosticism (ch17); Early Christianity (ch16); Pistis Sophia (ch45) | `PUBLISHED — pending review` |
+| V41 | The Codex Borgia | Era VII · The High Medieval | The Aztec (ch43); The Maya (ch29); Creation & the First Order (ch46); Sacrifice & the Scapegoat (ch51) | `PUBLISHED — pending review` |
+| V42 | The Lindisfarne Gospels | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22); Celtic & Germanic (ch14) | `PUBLISHED — pending review` |
+| V43 | The Merneptah Stele | Era II · The Bronze Age | Egypt (ch02); Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V44 | The Pilate Stone | Era IV · The Axial Age | Rome (ch13); Early Christianity (ch16); Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
+| V45 | The Nebra Sky Disc | Era II · The Bronze Age | The Neolithic (ch42); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
+| V46 | The Piprahwa Relics | Era IV · The Axial Age | Buddhism (ch11); Mahayana Buddhism (ch20); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V47 | The Kensington Runestone | Era IX · The Modern Age | Norse Paganism (ch23) | `PUBLISHED — pending review` |
+| — | Batch 6 queue: Great Isaiah Scroll · Book of Enoch in Ge'ez · Vienna Dioscurides · Codex Mendoza · Ishtar Gate · Rosetta Stone · Behistun Inscription · Oracle Bones of Anyang · Phaistos Disc · Holy Mandylion | — | placed on publication | `not started` (queued) |

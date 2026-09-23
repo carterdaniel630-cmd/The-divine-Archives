@@ -33,7 +33,7 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js", "assets/emblems.js"]) {
+for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js", "assets/emblems.js", "assets/vault-data.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [] };
@@ -41,6 +41,7 @@ const CHAPTERS = sandbox.window.CHAPTERS || {};
 const PLATES = sandbox.window.PLATES || {};
 const PLATE_ART = sandbox.window.PLATE_ART || {};
 const EMBLEMS = sandbox.window.EMBLEMS || {};
+const VAULT = sandbox.window.VAULT || { items: [], categories: {} };
 
 // --- helpers (mirroring archive.js) ---------------------------------------
 const esc = (s) =>
@@ -80,6 +81,22 @@ function seeAlso(ch) {
       '<div class="tiles">\n' + themes.map(chapterTile).join("\n") + "\n      </div></div>";
   }
   return out;
+}
+
+// objects in the Vault that belong to this chapter (their registry lists it among their chapters)
+function vaultFor(ch) {
+  const items = VAULT.items.filter((i) => i.status === "published" && (i.chapters || []).indexOf(ch.id) !== -1)
+    .sort((a, b) => (a.year || 0) - (b.year || 0));
+  if (!items.length) return "";
+  const eraName = (slug) => { const e = eraBySlug(slug); return e ? e.name : ""; };
+  return '\n      <div class="vault-links" id="in-the-vault">' +
+    '<p class="eyebrow center">In the Vault &middot; objects and texts from this tradition</p>' +
+    '<p class="tiny center" style="margin:-.3rem 0 1rem">Manuscripts, inscriptions and relics connected with this chapter, each studied in its own Vault entry.</p>' +
+    '<div class="vl-list">\n' + items.map((i) =>
+      '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.title) + "</span>" +
+      '<span class="vl-m">' + esc(VAULT.categories[i.category] || "") + (eraName(i.era) ? " &middot; " + esc(eraName(i.era)) : "") + " &middot; " + esc(i.dated) + "</span>" +
+      '<span class="vl-s">' + esc(clip(i.summary, 170)) + "</span></a>").join("\n") +
+    "\n      </div></div>";
 }
 
 const HEADER = `  <header class="site-header">
@@ -205,7 +222,7 @@ ${HEADER}
         <button type="button" class="print-btn" onclick="window.print()" title="Save this chapter as a PDF">Save as PDF</button></p>
     </div>
     <section class="wrap article">
-${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${seeAlso(ch)}
+${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${vaultFor(ch)}${seeAlso(ch)}
       <p class="print-only">From <strong>The Divine Archives</strong> &middot; ${url} &middot; a comparative library of the sacred.</p>
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>

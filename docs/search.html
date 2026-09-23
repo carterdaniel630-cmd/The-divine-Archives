@@ -97,17 +97,17 @@
         });
         return { d: d, score: score };
       }).filter(function (x) { return x.score > 0; }).sort(function (a, b) { return b.score - a.score; });
-      statusEl.textContent = hits.length + (hits.length === 1 ? " chapter" : " chapters") + " found";
+      statusEl.textContent = hits.length + (hits.length === 1 ? " result" : " results") + " found";
       hits.forEach(function (x) {
         var d = x.d, a = document.createElement("a");
-        a.className = "card"; a.href = "chapters/" + encodeURIComponent(d.id) + ".html";
+        a.className = "card"; a.href = d.url || ("chapters/" + encodeURIComponent(d.id) + ".html");
         a.innerHTML = '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
           '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(d.title) + "</span>" +
           '<span class="eyebrow" style="margin:0">' + esc(d.era) + "</span></div>" +
           '<p class="muted" style="margin:0.6rem 0 0;font-size:0.92rem;line-height:1.6">' + snippet(d, terms[0]) + "</p>";
         results.appendChild(a);
       });
-      if (!hits.length) results.innerHTML = '<p class="notice">No chapter matches &ldquo;' + esc(q) + '&rdquo;.</p>';
+      if (!hits.length) results.innerHTML = '<p class="notice">Nothing matches &ldquo;' + esc(q) + '&rdquo;.</p>';
     }
     fetch("assets/search-index.json").then(function (r) { return r.json(); }).then(function (data) {
       INDEX = data;

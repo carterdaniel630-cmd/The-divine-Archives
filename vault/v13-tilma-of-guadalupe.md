@@ -31,7 +31,7 @@ Above the altar of the modern Basilica of Guadalupe, behind glass, hangs a lengt
 
 ## Connections
 
-Aztec religion (ch43), colonial-era religion and its syntheses (ch33, ch40), Marian devotion and apparitions, and the Shroud of Turin (V04), another image whose making is disputed.
+Aztec religion (ch43), the Great Goddess (ch48), where Guadalupe and the Aztec mother-goddess Tonantzin are discussed, Marian devotion and apparitions, and the Shroud of Turin (V04), another image whose making is disputed.
 
 ## The evidence, honestly
 

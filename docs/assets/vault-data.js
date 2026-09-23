@@ -21,6 +21,7 @@ window.VAULT = {
   items: [
     {
       id: "v01", slug: "voynich-manuscript", status: "published", pending: true,
+      era: "07-high-medieval", year: 1420, chapters: ["ch28", "ch37"],
       title: "The Voynich Manuscript", category: "manuscripts",
       source: "vault/v01-voynich-manuscript.md",
       held: "Beinecke Rare Book & Manuscript Library, Yale University — MS 408",
@@ -43,6 +44,7 @@ window.VAULT = {
     },
     {
       id: "v02", slug: "dead-sea-scrolls", status: "published", pending: true,
+      era: "04-axial-age", year: -100, chapters: ["ch10", "ch16", "ch19", "ch50", "ch17", "ch45"],
       title: "The Dead Sea Scrolls", category: "manuscripts",
       source: "vault/v02-dead-sea-scrolls.md",
       artifact: {
@@ -87,6 +89,7 @@ window.VAULT = {
     },
     {
       id: "v03", slug: "emerald-tablet", status: "published", pending: true,
+      era: "06-early-medieval", year: 800, chapters: ["ch18", "ch17", "ch21", "ch28", "ch37"],
       title: "The Emerald Tablet", category: "texts",
       source: "vault/v03-emerald-tablet.md",
       artifact: { type: "tablet", title: "The Tablet", sub: "The standard Latin text, cut into green stone as the legend describes it. Touch any line to raise its meaning." },
@@ -104,6 +107,7 @@ window.VAULT = {
     },
     {
       id: "v04", slug: "shroud-of-turin", status: "published", pending: true,
+      era: "07-high-medieval", year: 1354, chapters: ["ch22", "ch60", "ch31"],
       title: "The Shroud of Turin", category: "relics",
       source: "vault/v04-shroud-of-turin.md",
       held: "Chapel of the Shroud, Turin Cathedral — owned by the Holy See since 1983",
@@ -137,6 +141,7 @@ window.VAULT = {
     },
     {
       id: "v05", slug: "holy-lance", status: "published", pending: true,
+      era: "05-late-antiquity", year: 700, chapters: ["ch16", "ch22", "ch60", "ch49"],
       title: "The Holy Lance (“Spear of Destiny”)", category: "relics",
       source: "vault/v05-holy-lance.md",
       held: "Vienna (Imperial Treasury), Rome (St Peter's), Etchmiadzin (Armenia); copy in Kraków",
@@ -171,6 +176,7 @@ window.VAULT = {
     },
     {
       id: "v06", slug: "crown-of-thorns", status: "published", pending: true,
+      era: "07-high-medieval", year: 1238, chapters: ["ch28", "ch60", "ch49"],
       title: "The Crown of Thorns", category: "relics",
       source: "vault/v06-crown-of-thorns.md",
       held: "Notre-Dame de Paris (axial chapel, reliquary of 2024)",
@@ -202,6 +208,7 @@ window.VAULT = {
     },
     {
       id: "v07", slug: "ark-of-the-covenant", status: "published", pending: true,
+      era: "03-early-iron-age", year: -1000, chapters: ["ch07", "ch10", "ch19", "ch60"],
       title: "The Ark of the Covenant", category: "relics",
       source: "vault/v07-ark-of-the-covenant.md",
       held: "No verified object; the Ethiopian Orthodox Church holds it is kept at Aksum",
@@ -228,6 +235,7 @@ window.VAULT = {
     },
     {
       id: "v08", slug: "nag-hammadi-codices", status: "published", pending: true,
+      era: "05-late-antiquity", year: 350, chapters: ["ch17", "ch45", "ch16", "ch55"],
       title: "The Nag Hammadi Codices", category: "manuscripts",
       source: "vault/v08-nag-hammadi-codices.md",
       held: "Coptic Museum, Cairo",
@@ -247,6 +255,7 @@ window.VAULT = {
     },
     {
       id: "v09", slug: "codex-gigas", status: "published", pending: true,
+      era: "07-high-medieval", year: 1220, chapters: ["ch28"],
       title: "The Codex Gigas (“Devil's Bible”)", category: "manuscripts",
       source: "vault/v09-codex-gigas.md",
       held: "National Library of Sweden, Stockholm",
@@ -270,6 +279,7 @@ window.VAULT = {
     },
     {
       id: "v10", slug: "copper-scroll", status: "published", pending: true,
+      era: "04-axial-age", year: 50, chapters: ["ch10"],
       title: "The Copper Scroll", category: "texts",
       source: "vault/v10-copper-scroll.md",
       held: "The Jordan Museum, Amman",
@@ -288,6 +298,7 @@ window.VAULT = {
     },
     {
       id: "v11", slug: "rohonc-codex", status: "published", pending: true,
+      era: "08-early-modern", year: 1550, chapters: ["ch31"],
       title: "The Rohonc Codex", category: "manuscripts",
       source: "vault/v11-rohonc-codex.md",
       held: "Library of the Hungarian Academy of Sciences, Budapest",
@@ -310,6 +321,7 @@ window.VAULT = {
     },
     {
       id: "v12", slug: "ketef-hinnom-scrolls", status: "published", pending: true,
+      era: "03-early-iron-age", year: -600, chapters: ["ch07", "ch19"],
       title: "The Ketef Hinnom Silver Scrolls", category: "texts",
       source: "vault/v12-ketef-hinnom-scrolls.md",
       held: "The Israel Museum, Jerusalem",
@@ -333,6 +345,7 @@ window.VAULT = {
     },
     {
       id: "v13", slug: "tilma-of-guadalupe", status: "published", pending: true,
+      era: "08-early-modern", year: 1531, chapters: ["ch43", "ch48"],
       title: "The Tilma of Guadalupe", category: "relics",
       source: "vault/v13-tilma-of-guadalupe.md",
       held: "Basilica of Our Lady of Guadalupe, Mexico City",
@@ -359,6 +372,7 @@ window.VAULT = {
     },
     {
       id: "v14", slug: "holy-grail", status: "published", pending: true,
+      era: "07-high-medieval", year: 1190, chapters: ["ch49", "ch14"],
       title: "The Holy Grail", category: "relics",
       source: "vault/v14-holy-grail.md",
       held: "Claimants in Valencia, Genoa, León and elsewhere",
@@ -387,6 +401,7 @@ window.VAULT = {
     },
     {
       id: "v15", slug: "true-cross", status: "published", pending: true,
+      era: "05-late-antiquity", year: 380, chapters: ["ch22", "ch60", "ch31"],
       title: "The True Cross", category: "relics",
       source: "vault/v15-true-cross.md",
       held: "Fragments worldwide: Rome, Jerusalem, Mount Athos, Paris and others",
@@ -409,6 +424,7 @@ window.VAULT = {
     },
     {
       id: "v16", slug: "james-ossuary", status: "published", pending: true,
+      era: "04-axial-age", year: 30, chapters: ["ch16", "ch10"],
       title: "The James Ossuary", category: "relics",
       source: "vault/v16-james-ossuary.md",
       held: "Returned to its private owner after a criminal trial",
@@ -427,6 +443,7 @@ window.VAULT = {
     },
     {
       id: "v17", slug: "gospel-of-jesus-wife", status: "published", pending: true,
+      era: "09-modern", year: 2012, chapters: ["ch16"],
       title: "The “Gospel of Jesus's Wife”", category: "manuscripts",
       source: "vault/v17-gospel-of-jesus-wife.md",
       held: "A papyrus fragment now recognised as a modern forgery",
@@ -451,6 +468,7 @@ window.VAULT = {
     },
     {
       id: "v18", slug: "codex-sinaiticus", status: "published", pending: true,
+      era: "05-late-antiquity", year: 345, chapters: ["ch16", "ch22"],
       title: "Codex Sinaiticus", category: "manuscripts",
       source: "vault/v18-codex-sinaiticus.md",
       held: "British Library, Leipzig University Library, St Catherine's Monastery, National Library of Russia",
@@ -472,6 +490,7 @@ window.VAULT = {
     },
     {
       id: "v19", slug: "book-of-soyga", status: "published", pending: true,
+      era: "08-early-modern", year: 1560, chapters: ["ch26", "ch37"],
       title: "The Book of Soyga", category: "manuscripts",
       source: "vault/v19-book-of-soyga.md",
       held: "Bodleian Library, Oxford (MS Bodley 908); British Library (Sloane MS 8)",
@@ -494,6 +513,7 @@ window.VAULT = {
     },
     {
       id: "v20", slug: "papyrus-of-ani", status: "published", pending: true,
+      era: "02-bronze-age", year: -1250, chapters: ["ch02", "ch47"],
       title: "The Papyrus of Ani", category: "manuscripts",
       source: "vault/v20-papyrus-of-ani.md",
       held: "British Museum, London (EA 10470)",
@@ -511,6 +531,7 @@ window.VAULT = {
     },
     {
       id: "v21", slug: "book-of-kells", status: "published", pending: true,
+      era: "06-early-medieval", year: 800, chapters: ["ch14", "ch22"],
       title: "The Book of Kells", category: "manuscripts",
       source: "vault/v21-book-of-kells.md",
       held: "Trinity College Dublin (MS 58)",
@@ -532,6 +553,7 @@ window.VAULT = {
     },
     {
       id: "v22", slug: "mesha-stele", status: "published", pending: true,
+      era: "03-early-iron-age", year: -840, chapters: ["ch07", "ch58"],
       title: "The Mesha Stele", category: "texts",
       source: "vault/v22-mesha-stele.md",
       held: "Musée du Louvre, Paris (AO 5066)",
@@ -548,6 +570,7 @@ window.VAULT = {
     },
     {
       id: "v23", slug: "tel-dan-stele", status: "published", pending: true,
+      era: "03-early-iron-age", year: -830, chapters: ["ch07", "ch58", "ch49"],
       title: "The Tel Dan Stele", category: "texts",
       source: "vault/v23-tel-dan-stele.md",
       held: "The Israel Museum, Jerusalem",
@@ -566,6 +589,7 @@ window.VAULT = {
     },
     {
       id: "v24", slug: "sudarium-of-oviedo", status: "published", pending: true,
+      era: "05-late-antiquity", year: 650, chapters: ["ch22", "ch28"],
       title: "The Sudarium of Oviedo", category: "relics",
       source: "vault/v24-sudarium-of-oviedo.md",
       held: "Cámara Santa, Oviedo Cathedral, Spain",
@@ -591,6 +615,7 @@ window.VAULT = {
     },
     {
       id: "v25", slug: "veil-of-veronica", status: "published", pending: true,
+      era: "07-high-medieval", year: 1150, chapters: ["ch60", "ch31"],
       title: "The Veil of Veronica", category: "relics",
       source: "vault/v25-veil-of-veronica.md",
       held: "St Peter's Basilica, Rome; rival image at Manoppello",
@@ -615,6 +640,7 @@ window.VAULT = {
     },
     {
       id: "v26", slug: "black-stone", status: "published", pending: true,
+      era: "06-early-medieval", year: 630, chapters: ["ch21"],
       title: "The Black Stone of the Kaaba", category: "relics",
       source: "vault/v26-black-stone.md",
       held: "Eastern corner of the Kaaba, the Sacred Mosque, Mecca",
@@ -636,6 +662,7 @@ window.VAULT = {
     },
     {
       id: "v27", slug: "sacred-tooth-relic", status: "published", pending: true,
+      era: "05-late-antiquity", year: 350, chapters: ["ch11", "ch20", "ch53", "ch49"],
       title: "The Sacred Tooth Relic", category: "relics",
       source: "vault/v27-sacred-tooth-relic.md",
       held: "Sri Dalada Maligawa (Temple of the Sacred Tooth Relic), Kandy",
@@ -658,6 +685,7 @@ window.VAULT = {
     },
     {
       id: "v28", slug: "birmingham-quran", status: "published", pending: true,
+      era: "05-late-antiquity", year: 600, chapters: ["ch21"],
       title: "The Birmingham Qur'an Manuscript", category: "manuscripts",
       source: "vault/v28-birmingham-quran.md",
       held: "Cadbury Research Library, University of Birmingham (Mingana Islamic Arabic 1572a)",
@@ -676,6 +704,7 @@ window.VAULT = {
     },
     {
       id: "v29", slug: "sanaa-palimpsest", status: "published", pending: true,
+      era: "05-late-antiquity", year: 620, chapters: ["ch21"],
       title: "The Sana'a Palimpsest", category: "manuscripts",
       source: "vault/v29-sanaa-palimpsest.md",
       held: "Dar al-Makhtutat, Sana'a (DAM 01-27.1); four detached leaves in private and institutional hands",
@@ -695,6 +724,7 @@ window.VAULT = {
     },
     {
       id: "v30", slug: "diamond-sutra", status: "published", pending: true,
+      era: "06-early-medieval", year: 868, chapters: ["ch11", "ch20", "ch54", "ch53"],
       title: "The Diamond Sutra of Dunhuang", category: "manuscripts",
       source: "vault/v30-diamond-sutra.md",
       held: "British Library, London (Or.8210/P.2)",
@@ -718,6 +748,7 @@ window.VAULT = {
     },
     {
       id: "v31", slug: "dresden-codex", status: "published", pending: true,
+      era: "07-high-medieval", year: 1200, chapters: ["ch29", "ch43", "ch46", "ch50"],
       title: "The Dresden Codex", category: "manuscripts",
       source: "vault/v31-dresden-codex.md",
       held: "SLUB Dresden (Saxon State and University Library), Mscr.Dresd.R.310",
@@ -743,6 +774,7 @@ window.VAULT = {
     },
     {
       id: "v32", slug: "popol-vuh-manuscript", status: "published", pending: true,
+      era: "08-early-modern", year: 1701, chapters: ["ch29", "ch46", "ch47", "ch01"],
       title: "The Popol Vuh Manuscript", category: "manuscripts",
       source: "vault/v32-popol-vuh-manuscript.md",
       held: "The Newberry Library, Chicago (Ayer MS 1515)",
@@ -759,6 +791,7 @@ window.VAULT = {
     },
     {
       id: "v33", slug: "kartarpur-bir", status: "published", pending: true,
+      era: "08-early-modern", year: 1604, chapters: ["ch34", "ch30", "ch27"],
       title: "The Kartarpur Bir", category: "manuscripts",
       source: "vault/v33-kartarpur-bir.md",
       held: "The Sodhi family, Kartarpur (Jalandhar district), Punjab",
@@ -776,6 +809,7 @@ window.VAULT = {
     },
     {
       id: "v34", slug: "pyramid-texts-of-unas", status: "published", pending: true,
+      era: "02-bronze-age", year: -2350, chapters: ["ch02", "ch49", "ch47", "ch50"],
       title: "The Pyramid Texts of Unas", category: "texts",
       source: "vault/v34-pyramid-texts-of-unas.md",
       held: "In place: the Pyramid of Unas, Saqqara, Egypt",
@@ -798,6 +832,7 @@ window.VAULT = {
     },
     {
       id: "v35", slug: "cyrus-cylinder", status: "published", pending: true,
+      era: "04-axial-age", year: -539, chapters: ["ch03", "ch06", "ch10", "ch49"],
       title: "The Cyrus Cylinder", category: "texts",
       source: "vault/v35-cyrus-cylinder.md",
       held: "British Museum, London (BM 90920)",
@@ -815,6 +850,7 @@ window.VAULT = {
     },
     {
       id: "v36", slug: "rok-runestone", status: "published", pending: true,
+      era: "06-early-medieval", year: 810, chapters: ["ch23", "ch14", "ch50"],
       title: "The Rök Runestone", category: "texts",
       source: "vault/v36-rok-runestone.md",
       held: "Beside Rök church, Östergötland, Sweden (Ög 136)",
@@ -833,6 +869,7 @@ window.VAULT = {
     },
     {
       id: "v37", slug: "gundestrup-cauldron", status: "published", pending: true,
+      era: "04-axial-age", year: -100, chapters: ["ch14", "ch51", "ch47"],
       title: "The Gundestrup Cauldron", category: "relics",
       source: "vault/v37-gundestrup-cauldron.md",
       held: "National Museum of Denmark, Copenhagen",
@@ -865,6 +902,7 @@ window.VAULT = {
     },
     {
       id: "v38", slug: "aleppo-codex", status: "published", pending: true,
+      era: "06-early-medieval", year: 930, chapters: ["ch10", "ch19"],
       title: "The Aleppo Codex", category: "manuscripts",
       source: "vault/v38-aleppo-codex.md",
       held: "The Israel Museum, Jerusalem (Shrine of the Book); Ben-Zvi Institute",
@@ -883,6 +921,7 @@ window.VAULT = {
     },
     {
       id: "v39", slug: "derveni-papyrus", status: "published", pending: true,
+      era: "04-axial-age", year: -340, chapters: ["ch08", "ch15", "ch18", "ch47"],
       title: "The Derveni Papyrus", category: "manuscripts",
       source: "vault/v39-derveni-papyrus.md",
       held: "Archaeological Museum of Thessaloniki",
@@ -906,6 +945,7 @@ window.VAULT = {
     },
     {
       id: "v40", slug: "gospel-of-judas", status: "published", pending: true,
+      era: "05-late-antiquity", year: 280, chapters: ["ch17", "ch16", "ch45"],
       title: "The Gospel of Judas (Codex Tchacos)", category: "manuscripts",
       source: "vault/v40-gospel-of-judas.md",
       held: "Coptic Museum, Cairo",
@@ -928,6 +968,7 @@ window.VAULT = {
     },
     {
       id: "v41", slug: "codex-borgia", status: "published", pending: true,
+      era: "07-high-medieval", year: 1500, chapters: ["ch43", "ch29", "ch46", "ch51"],
       title: "The Codex Borgia", category: "manuscripts",
       source: "vault/v41-codex-borgia.md",
       held: "Vatican Apostolic Library (Borg.mess.1)",
@@ -947,6 +988,7 @@ window.VAULT = {
     },
     {
       id: "v42", slug: "lindisfarne-gospels", status: "published", pending: true,
+      era: "05-late-antiquity", year: 715, chapters: ["ch16", "ch22", "ch14"],
       title: "The Lindisfarne Gospels", category: "manuscripts",
       source: "vault/v42-lindisfarne-gospels.md",
       held: "British Library, London (Cotton MS Nero D IV)",
@@ -968,6 +1010,7 @@ window.VAULT = {
     },
     {
       id: "v43", slug: "merneptah-stele", status: "published", pending: true,
+      era: "02-bronze-age", year: -1208, chapters: ["ch02", "ch07", "ch58", "ch49"],
       title: "The Merneptah Stele", category: "texts",
       source: "vault/v43-merneptah-stele.md",
       held: "Egyptian Museum, Cairo (JE 31408)",
@@ -985,6 +1028,7 @@ window.VAULT = {
     },
     {
       id: "v44", slug: "pilate-stone", status: "published", pending: true,
+      era: "04-axial-age", year: 30, chapters: ["ch13", "ch16", "ch10"],
       title: "The Pilate Stone", category: "texts",
       source: "vault/v44-pilate-stone.md",
       held: "The Israel Museum, Jerusalem (a replica stands at Caesarea)",
@@ -1003,6 +1047,7 @@ window.VAULT = {
     },
     {
       id: "v45", slug: "nebra-sky-disc", status: "published", pending: true,
+      era: "02-bronze-age", year: -1600, chapters: ["ch42", "ch46"],
       title: "The Nebra Sky Disc", category: "relics",
       source: "vault/v45-nebra-sky-disc.md",
       held: "State Museum of Prehistory, Halle (Saale), Germany",
@@ -1024,6 +1069,7 @@ window.VAULT = {
     },
     {
       id: "v46", slug: "piprahwa-relics", status: "published", pending: true,
+      era: "04-axial-age", year: -200, chapters: ["ch11", "ch20", "ch49"],
       title: "The Piprahwa Relics", category: "relics",
       source: "vault/v46-piprahwa-relics.md",
       held: "Indian Museum, Kolkata; National Museum, New Delhi; gems returned to India in 2025",
@@ -1043,6 +1089,7 @@ window.VAULT = {
     },
     {
       id: "v47", slug: "kensington-runestone", status: "published", pending: true,
+      era: "09-modern", year: 1898, chapters: ["ch23"],
       title: "The Kensington Runestone", category: "texts",
       source: "vault/v47-kensington-runestone.md",
       held: "Runestone Museum, Alexandria, Minnesota",

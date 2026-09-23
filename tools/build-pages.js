@@ -54,6 +54,7 @@ const A = sandbox.window.ARCHIVE || { eras: [], chapters: [], themes: [] };
 const EMBLEMS = sandbox.window.EMBLEMS || {};
 const PLATE_ART = sandbox.window.PLATE_ART || {};
 const CHAPTERS = sandbox.window.CHAPTERS || {};
+const VAULT = sandbox.window.VAULT || { items: [], categories: {} };
 
 // --- helpers (mirroring archive.js exactly) -------------------------------
 const esc = (s) =>
@@ -246,6 +247,18 @@ function pageForEra(era) {
     ? '\n      <p class="eyebrow center" style="margin:2.6rem 0 1.4rem">Comparative themes across this age</p>\n' +
       '      <div class="tiles">\n' + themeChapters.map(themeTileForEra).join("\n") + "\n      </div>"
     : "";
+  const objs = VAULT.items.filter((i) => i.status === "published" && i.era === era.slug).sort((a, b) => (a.year || 0) - (b.year || 0));
+  const vaultBlock = objs.length
+    ? '\n      <div class="vault-links" id="in-the-vault">\n      <p class="eyebrow center" style="margin:2.6rem 0 .6rem">From the Vault &middot; objects of this age</p>\n' +
+      '      <p class="tiny center" style="margin:0 0 1.2rem">Manuscripts, inscriptions and relics made in this age, in date order. Each is also listed on the chapters it belongs to. <a href="../vault.html#era-' + esc(era.slug) + '">See them in the Vault &rarr;</a></p>\n' +
+      '      <div class="vl-list">\n' + objs.map((i) => {
+        const chs = (i.chapters || []).map((id) => A.chapters.find((c) => c.id === id && c.status === "published")).filter(Boolean);
+        return '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.title) + "</span>" +
+          '<span class="vl-m">' + esc(VAULT.categories[i.category] || "") + " &middot; " + esc(i.dated) + "</span>" +
+          '<span class="vl-s">' + esc(clip(i.summary, 150)) + "</span>" +
+          (chs.length ? '<span class="vl-m" style="margin-top:.4rem">Chapters: ' + chs.map((c) => esc(c.title)).join(", ") + "</span>" : "") + "</a>";
+      }).join("\n") + "\n      </div></div>"
+    : "";
   const jsonld = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -297,7 +310,7 @@ ${HEADER}
       <p class="eyebrow center" style="margin-bottom:1.4rem">Traditions of this age</p>
       <div class="tiles">
 ${tiles}
-      </div>${themeBlock}
+      </div>${vaultBlock}${themeBlock}
     </section>
   </main>
 
@@ -327,6 +340,17 @@ function buildSearchIndex() {
     summary: c.summary || "",
     text: clip(stripHtml((CHAPTERS[c.id] && CHAPTERS[c.id].html) || ""), 3200)
   }));
+  VAULT.items.filter((i) => i.status === "published").forEach((i) => {
+    const era = eraBySlug(i.era);
+    let md = "";
+    try { md = fs.readFileSync(path.join(ROOT, i.source), "utf8"); } catch (e) { md = ""; }
+    docs.push({
+      id: i.id, url: "vault/" + i.slug + ".html", title: i.title,
+      era: "The Vault" + (era ? " · " + era.name : ""),
+      summary: i.summary || "",
+      text: clip(md.replace(/^#.*$/gm, " ").replace(/[*_>`#]/g, "").replace(/https?:\/\/\S+/g, " "), 3200)
+    });
+  });
   return JSON.stringify(docs);
 }
 // root-level header/footer (root-relative links) for search.html
@@ -396,17 +420,17 @@ ${FOOTER_ROOT}
         });
         return { d: d, score: score };
       }).filter(function (x) { return x.score > 0; }).sort(function (a, b) { return b.score - a.score; });
-      statusEl.textContent = hits.length + (hits.length === 1 ? " chapter" : " chapters") + " found";
+      statusEl.textContent = hits.length + (hits.length === 1 ? " result" : " results") + " found";
       hits.forEach(function (x) {
         var d = x.d, a = document.createElement("a");
-        a.className = "card"; a.href = "chapters/" + encodeURIComponent(d.id) + ".html";
+        a.className = "card"; a.href = d.url || ("chapters/" + encodeURIComponent(d.id) + ".html");
         a.innerHTML = '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap">' +
           '<span style="font-family:var(--font-display);letter-spacing:0.05em;color:var(--parchment);font-size:1.15rem">' + esc(d.title) + "</span>" +
           '<span class="eyebrow" style="margin:0">' + esc(d.era) + "</span></div>" +
           '<p class="muted" style="margin:0.6rem 0 0;font-size:0.92rem;line-height:1.6">' + snippet(d, terms[0]) + "</p>";
         results.appendChild(a);
       });
-      if (!hits.length) results.innerHTML = '<p class="notice">No chapter matches &ldquo;' + esc(q) + '&rdquo;.</p>';
+      if (!hits.length) results.innerHTML = '<p class="notice">Nothing matches &ldquo;' + esc(q) + '&rdquo;.</p>';
     }
     fetch("assets/search-index.json").then(function (r) { return r.json(); }).then(function (data) {
       INDEX = data;

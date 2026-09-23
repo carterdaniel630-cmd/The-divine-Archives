@@ -25,7 +25,7 @@ In **1838** the Hungarian nobleman **Count Gusztáv Batthyány** gave his family
 
 ## Connections
 
-The Voynich Manuscript (V01) and the Book of Soyga (queued), which are other unread or disputed scripts, and the Reformation-era Christianity of Central Europe (ch31).
+The Voynich Manuscript (V01) and the Book of Soyga (V19), which are other unread or disputed scripts, and the Reformation-era Christianity of Central Europe (ch31).
 
 ## The evidence, honestly
 

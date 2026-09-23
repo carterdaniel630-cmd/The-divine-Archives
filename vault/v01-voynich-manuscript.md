@@ -83,7 +83,7 @@ A genuine decipherment must do three things. It must produce **connected, gramma
 
 ## Connections
 
-The manuscript belongs to the world described in the archive's chapters on **late-medieval scholasticism and natural philosophy** and on the **esoteric revival** that later adopted it. Its Prague owners moved in the same circle of **Rudolf II's court alchemy** that preserved Hermetic texts such as the **Emerald Tablet** (Vault V03). It also belongs to a small family of unread or disputed scripts, including the **Rohonc Codex** and the **Book of Soyga**, which are candidates for later Vault entries.
+The manuscript belongs to the world described in the archive's chapters on **late-medieval scholasticism and natural philosophy** (Scholasticism, ch28) and on the **esoteric revival** that later adopted it (Theosophy & the Occult Revival, ch37). Its Prague owners moved in the same circle of **Rudolf II's court alchemy** that preserved Hermetic texts such as the **Emerald Tablet** (Vault V03). It also belongs to a small family of unread or disputed scripts, including the **Rohonc Codex** (V11) and the **Book of Soyga** (V19).
 
 ## The evidence, honestly
 

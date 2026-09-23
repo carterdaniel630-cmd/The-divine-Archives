@@ -28,6 +28,19 @@ const sandbox = { window: {} };
 vm.createContext(sandbox);
 vm.runInContext(fs.readFileSync(path.join(DOCS, "assets/vault-data.js"), "utf8"), sandbox, { filename: "vault-data.js" });
 const V = sandbox.window.VAULT;
+// the archive's eras and chapters, so each object is placed in the main structure
+vm.runInContext(fs.readFileSync(path.join(DOCS, "assets/data.js"), "utf8"), sandbox, { filename: "data.js" });
+const ARCH = sandbox.window.ARCHIVE || { eras: [], chapters: [] };
+const eraOf = (slug) => ARCH.eras.find((e) => e.slug === slug) || null;
+const chapterOf = (id) => ARCH.chapters.find((c) => c.id === id && c.status === "published") || null;
+const itemOf = (id) => V.items.find((i) => i.id === id && i.status === "published") || null;
+const yearLabel = (y) => (y < 0 ? `c. ${-y} BCE` : `c. ${y} CE`);
+// cross-references in an entry's Connections: "(ch21)" and "(V03)" become links
+function linkRefs(html, rel) {
+  return html
+    .replace(/\b(ch\d\d)\b/g, (m, id) => { const c = chapterOf(id); return c ? `<a href="${rel}chapters/${id}.html" title="${esc(c.title)}">${id}</a>` : m; })
+    .replace(/\bV(\d\d)\b/g, (m, n) => { const it = itemOf("v" + n); return it ? `<a href="${rel}vault/${it.slug}.html" title="${esc(it.title)}">V${n}</a>` : m; });
+}
 
 // ---------- helpers --------------------------------------------------------
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
@@ -134,7 +147,8 @@ function renderEntry(mdPath) {
     const hl = heading.toLowerCase();
     if (hl.startsWith("the evidence")) return { heading, html: renderEvidence(content) };
     if (hl === "sources") return { heading, html: renderSources(content) };
-    return { heading, html: `<h2>${inline(heading)}</h2>\n${renderBlocks(content)}` };
+    const html = `<h2>${inline(heading)}</h2>\n${renderBlocks(content)}`;
+    return { heading, html: hl === "connections" ? linkRefs(html, "../") : html };
   });
   return { title, lead, sections };
 }
@@ -194,7 +208,7 @@ function head(title, desc, url, rel, type, extra) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
-  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=3" />
+  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
   <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=14" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
@@ -305,7 +319,7 @@ ${header("../")}
       <dl class="vault-facts">
         <dt>Held</dt><dd>${esc(item.held)}</dd>
         <dt>Date evidence</dt><dd>${esc(item.dated)}</dd>
-      </dl>
+${placeFacts(item)}      </dl>
     </div>
     <section class="wrap article">
 ${item.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This entry is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the entry is cleared.</div>\n` : ""}${body}
@@ -326,21 +340,41 @@ ${footer("../")}
 `;
 }
 
+// where the object sits in the main archive: its era and the chapters it belongs to
+function placeFacts(item) {
+  const era = eraOf(item.era);
+  const chs = (item.chapters || []).map(chapterOf).filter(Boolean);
+  let out = "";
+  if (era) out += `        <dt>Era</dt><dd><a href="../eras/${era.slug}.html">Era ${esc(era.num)} &middot; ${esc(era.name)}</a></dd>\n`;
+  if (chs.length) out += `        <dt>In the archive</dt><dd>${chs.map((c) => `<a href="../chapters/${c.id}.html">${esc(c.title)}</a>`).join(" &middot; ")}</dd>\n`;
+  return out;
+}
+
 // ---------- index -------------------------------------------------------------
 function indexPage() {
   const url = `${SITE}/vault.html`;
   const title = "The Vault — The Divine Archives";
   const desc = "Manuscripts, relics and contested objects — the Voynich Manuscript, the Dead Sea Scrolls, the Emerald Tablet and more — studied from the holding institutions' own scans under the archive's evidence standard.";
-  const byCat = {};
-  Object.keys(V.categories).forEach((k) => { byCat[k] = []; });
-  V.items.filter((i) => i.status === "published").forEach((i) => byCat[i.category].push(
-    `<a class="vault-card" href="vault/${i.slug}.html"><p class="eyebrow">${esc(i.id.toUpperCase())}</p><h3>${esc(i.title)}</h3>` +
+  const pub = V.items.filter((i) => i.status === "published");
+  const card = (i) =>
+    `<a class="vault-card" href="vault/${i.slug}.html" data-cat="${esc(i.category)}"><p class="eyebrow">${esc(i.id.toUpperCase())} &middot; ${esc(V.categories[i.category] || "")}</p><h3>${esc(i.title)}</h3>` +
     `<p class="meta">${esc(i.held)} &middot; ${esc(i.dated)}</p><p>${esc(clip(i.summary, 220))}</p>` +
-    (i.pending ? `<span class="badge is-pending">Recently added &middot; pending review</span>` : "") + `</a>`));
-  (V.queue || []).forEach((q) => byCat[q.category].push(
-    `<div class="vault-card is-queued"><p class="eyebrow">In preparation</p><h3>${esc(q.title)}</h3><p>${esc(q.note)}</p></div>`));
-  const sections = Object.keys(V.categories).filter((k) => byCat[k].length).map((k) =>
-    `<h2 class="vault-cat">${esc(V.categories[k])}</h2>\n<div class="vault-grid">\n${byCat[k].join("\n")}\n</div>`).join("\n");
+    (i.pending ? `<span class="badge is-pending">Recently added &middot; pending review</span>` : "") + `</a>`;
+  // one section per era, in the archive's order; objects in date order within it
+  const sections = ARCH.eras.map((era) => {
+    const list = pub.filter((i) => i.era === era.slug).sort((x, y) => x.year - y.year);
+    if (!list.length) return "";
+    return `<section class="vault-era" id="era-${esc(era.slug)}">\n<h2 class="vault-cat"><span class="vault-era-num">Era ${esc(era.num)}</span> ${esc(era.name)} <span class="vault-era-dates">${esc(era.dates)}</span></h2>\n` +
+      `<p class="vault-era-link"><a href="eras/${esc(era.slug)}.html">The traditions of this age &rarr;</a></p>\n<div class="vault-grid">\n${list.map(card).join("\n")}\n</div>\n</section>`;
+  }).join("\n");
+  const unplaced = pub.filter((i) => !eraOf(i.era));
+  const unplacedBlock = unplaced.length ? `<section class="vault-era"><h2 class="vault-cat">Other objects</h2>\n<div class="vault-grid">\n${unplaced.map(card).join("\n")}\n</div></section>` : "";
+  const eraNav = ARCH.eras.filter((era) => pub.some((i) => i.era === era.slug)).map((era) =>
+    `<a href="#era-${esc(era.slug)}">${esc(era.name)} <span>(${pub.filter((i) => i.era === era.slug).length})</span></a>`).join("");
+  const catBtns = `<button type="button" data-f="all" aria-pressed="true">Everything (${pub.length})</button>` +
+    Object.keys(V.categories).map((k) => `<button type="button" data-f="${esc(k)}" aria-pressed="false">${esc(V.categories[k])} (${pub.filter((i) => i.category === k).length})</button>`).join("");
+  const queued = (V.queue || []).length ? `<section class="vault-era vault-queue"><h2 class="vault-cat">In preparation</h2>\n<p class="tiny">Objects being researched for the next batch. Each will be placed in its era and linked from its chapters when published.</p>\n<div class="vault-grid">\n` +
+    V.queue.map((q) => `<div class="vault-card is-queued" data-cat="${esc(q.category)}"><p class="eyebrow">In preparation &middot; ${esc(V.categories[q.category] || "")}</p><h3>${esc(q.title)}</h3><p>${esc(q.note)}</p></div>`).join("\n") + `\n</div></section>` : "";
   return `${head(title, desc, url, "", "website")}
 <body>
 <a class="skip-link" href="#maincontent">Skip to content</a>
@@ -355,16 +389,33 @@ ${header("")}
     <section class="wrap">
       <div class="vault-intro">
         <p class="lead">Some things in the history of the sacred are not traditions but <em>objects</em>: a book in an unknown script, a library sealed in desert caves, a tablet that exists only as a text, a cloth or a spear claimed to have touched the divine. The Vault gathers them.</p>
+        <p>The Vault is a showcase, not a separate library. Every object here also has its place in the main archive: it is filed below under its <strong>age</strong>, it appears on that age&rsquo;s page, and it is listed on the chapter of each <strong>tradition</strong> it belongs to. The chapters tell the story; the Vault lets you study the object itself.</p>
         <p>Every entry holds these objects to the same standard as the rest of the archive. It separates what the physical evidence shows (materials, dating, ownership, testing) from what has been <em>claimed</em>, and it ends with the same three-part honesty section: what is well supported, what is not, and what is genuinely open. Where the holding institution publishes its scans openly, the entry has a <strong>study viewer</strong>. You can magnify any page, enhance faded ink, cut out a region at full resolution, and copy a study packet with image links and scrutiny rules for your own AI or human analysis. The images always load from the institution itself and are never copied here. Where images are copyrighted, the entry links to the official viewer instead.</p>
         <p class="tiny">Attempts at decipherment and translation are labelled as attempts. A reading counts only when it holds up on text it was not built from.</p>
       </div>
-${sections}
+      <nav class="vault-eranav" aria-label="Jump to an age">${eraNav}</nav>
+      <div class="relic-ctrls vault-filter" role="group" aria-label="Show only">${catBtns}</div>
+${sections}${unplacedBlock}
+${queued}
       <p class="tiny" style="margin-top:2.5rem">See the <a href="methodology.html">methodology</a> for the sourcing standard and the meaning of the pending-review tag.</p>
     </section>
   </main>
 
 ${footer("")}
 </div>
+<script>
+(function () {
+  var btns = document.querySelectorAll(".vault-filter button");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var f = b.getAttribute("data-f");
+      Array.prototype.forEach.call(btns, function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      Array.prototype.forEach.call(document.querySelectorAll(".vault-card"), function (c) { c.hidden = f !== "all" && c.getAttribute("data-cat") !== f; });
+      Array.prototype.forEach.call(document.querySelectorAll(".vault-era"), function (s) { s.hidden = !s.querySelector(".vault-card:not([hidden])"); });
+    });
+  });
+})();
+</script>
 <script src="assets/ambient.js" defer></script>
 </body>
 </html>

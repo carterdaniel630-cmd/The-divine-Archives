@@ -79,3 +79,17 @@ a.vault-card:hover, a.vault-card:focus-visible { border-color: var(--gold); tran
   .vault-facts dt { margin-top: .4rem; }
 }
 @media print { .study-live { display: none; } }
+
+/* ---------------------------------------------------------------- index: organised by age */
+.vault-eranav { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem .5rem; margin: 1.6rem auto .8rem; max-width: 60rem; }
+.vault-eranav a { font-family: var(--font-display); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .7rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-dim); }
+.vault-eranav a:hover, .vault-eranav a:focus-visible { color: var(--gold-bright); border-color: var(--gold); }
+.vault-eranav a span { color: var(--ink-faint); }
+.vault-filter { margin-bottom: 1rem; }
+.vault-filter button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold-bright); }
+.vault-era { margin-top: 2.6rem; scroll-margin-top: 5rem; }
+.vault-era-num { display: block; font-size: .72rem; letter-spacing: .2em; color: var(--gold); }
+.vault-era-dates { display: block; font-size: .8rem; letter-spacing: .08em; color: var(--ink-faint); font-family: var(--font-body); font-style: italic; text-transform: none; }
+.vault-era-link { text-align: center; margin: -.4rem 0 1rem; font-size: .9rem; }
+.vault-facts dd a { color: var(--gold); }
+.vault-card[hidden], .vault-era[hidden] { display: none !important; }
