@@ -135,3 +135,17 @@ Each tradition chapter should cover, where the evidence allows:
 - **Cross-disciplinary angle** — psychology / sociology / biology where relevant
 - **Connections** — links to adjacent traditions in the same era
 - **Evidence-honesty close** — supported / not supported / genuinely open
+
+## The Vault — manuscripts, relics & contested objects (added 2026-09-23)
+
+A standing section alongside the eras, for **objects** rather than traditions. Entries use the chapter
+template (open on the object, then symbology and encoding, connections, and the evidence-honesty close)
+plus a study viewer that loads the holding institution's own IIIF scans live. Sources: `/vault/*.md`;
+registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
+
+| ID | Entry | Status |
+|---|---|---|
+| V01 | The Voynich Manuscript | `PUBLISHED — pending review` |
+| V02 | The Dead Sea Scrolls | `PUBLISHED — pending review` |
+| V03 | The Emerald Tablet | `PUBLISHED — pending review` |
+| — | Shroud of Turin · Holy Lance · Crown of Thorns · Ark of the Covenant · Nag Hammadi Codices · Codex Gigas · Copper Scroll · Rohonc Codex · Ketef Hinnom scrolls · Tilma of Guadalupe | `not started` (queued) |

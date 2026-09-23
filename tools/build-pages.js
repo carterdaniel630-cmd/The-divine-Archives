@@ -47,7 +47,7 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/chapters.js"]) {
+for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/chapters.js", "assets/vault-data.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [], themes: [] };
@@ -193,6 +193,7 @@ const HEADER = `  <header class="site-header">
         <a href="../traditions.html">Traditions</a>
         <a href="../themes.html">Themes</a>
         <a href="../symbols.html">Symbols</a>
+        <a href="../vault.html">Vault</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>
@@ -434,6 +435,10 @@ function buildSitemap() {
   ];
   A.eras.forEach((e) => urls.push(SITE + "/eras/" + e.slug + ".html"));
   A.chapters.filter((c) => c.status === "published").forEach((c) => urls.push(SITE + "/chapters/" + c.id + ".html"));
+  // The Vault (manuscripts, relics & contested objects) — see tools/build-vault.js
+  const VAULT = sandbox.window.VAULT || { items: [] };
+  urls.push(SITE + "/vault.html");
+  VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push(SITE + "/vault/" + v.slug + ".html"));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map((u) => "  <url><loc>" + u + "</loc></url>").join("\n") +

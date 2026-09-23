@@ -99,6 +99,7 @@ const HEADER = `  <header class="site-header">
         <a href="../traditions.html">Traditions</a>
         <a href="../themes.html">Themes</a>
         <a href="../symbols.html">Symbols</a>
+        <a href="../vault.html">Vault</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>
