@@ -105,25 +105,31 @@
     if (!cols || !cols.length) return;
 
     var gloss = el("p", { class: "scroll-gloss", role: "status", "aria-live": "polite", text: "" });
-    function word(w) {
-      // w: [hebrew, gloss] or plain string
-      if (typeof w === "string") return document.createTextNode(w + " ");
-      var b = el("button", { type: "button", class: "s-word" + (w[2] ? " " + w[2] : ""), "data-gloss": w[1], lang: "he" , text: w[0] });
+    function word(w, lang, cjk) {
+      // w: [word, gloss] or plain string
+      if (typeof w === "string") return document.createTextNode(w + (cjk ? "" : " "));
+      // vertical text: Chromium sizes <button> content as if horizontal, so vertical words are focusable spans
+      var b = cjk ? el("span", { role: "button", tabindex: "0", class: "s-word" + (w[2] ? " " + w[2] : ""), "data-gloss": w[1], lang: lang, text: w[0] })
+                  : el("button", { type: "button", class: "s-word" + (w[2] ? " " + w[2] : ""), "data-gloss": w[1], lang: lang, text: w[0] });
+      if (cjk) b.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); b.click(); } });
       b.addEventListener("mouseenter", function () { gloss.textContent = w[0] + " — " + w[1]; });
       b.addEventListener("focus", function () { gloss.textContent = w[0] + " — " + w[1]; });
       b.addEventListener("click", function () { gloss.textContent = w[0] + " — " + w[1]; b.classList.add("is-read"); });
-      return el("span", {}, [b, " "]);
+      return el("span", {}, [b, cjk ? "" : " "]);
     }
 
     var sheet = el("div", { class: "scroll-sheet", tabindex: "0", "aria-label": "Scroll columns — drag or use the arrow keys to move along the scroll" });
     cols.forEach(function (c, i) {
       var col = el("section", { class: "s-col s-" + c.kind, "aria-label": c.heading });
       col.appendChild(el("h4", { class: "s-head", text: c.heading }));
+      var cjk = c.kind === "cjk", lang = c.lang || (c.kind === "hebrew" ? "he" : cjk ? "zh-Hant" : "en");
+      var holder = cjk ? el("div", { class: "s-vert", lang: lang }) : col;
       (c.lines || []).forEach(function (ln) {
-        var p = el("p", { class: "s-line", dir: c.kind === "hebrew" ? "rtl" : "ltr", lang: c.kind === "hebrew" ? "he" : "en" });
-        ln.forEach(function (w) { p.appendChild(word(w)); });
-        col.appendChild(p);
+        var p = el("p", { class: "s-line", dir: c.kind === "hebrew" ? "rtl" : "ltr", lang: lang });
+        ln.forEach(function (w) { p.appendChild(word(w, lang, cjk)); });
+        holder.appendChild(p);
       });
+      if (cjk) col.appendChild(holder);
       if (c.kind === "name") {
         col.appendChild(el("div", { class: "s-names" }, [
           el("div", {}, [el("span", { class: "s-big", lang: "he", text: c.square }), el("span", { class: "s-cap", text: "square script" })]),
@@ -173,7 +179,7 @@
     }
 
     root.appendChild(el("div", { class: "relic-live" }, [ctrls, scrollEl, gloss,
-      el("p", { class: "relic-hint", text: "Hebrew scrolls open from the right. Drag the parchment to travel along it, and touch a word to read its meaning." })]));
+      el("p", { class: "relic-hint", text: (item.artifact && item.artifact.hint) || "Hebrew scrolls open from the right. Drag the parchment to travel along it, and touch a word to read its meaning." })]));
     root.classList.add("is-live");
 
     function setOpen(open) {
@@ -636,6 +642,21 @@
   }
 
   // ---------------------------------------------------------------- inscription (generic, carved)
+  // bare consonant skeleton (rasm): strip vowel signs, fold dotted letters to their undotted shapes
+  var RASM = { "ب": "ٮ", "ت": "ٮ", "ث": "ٮ", "ن": "ٮ", "ي": "ى", "ئ": "ى", "ج": "ح", "خ": "ح", "ذ": "د", "ز": "ر", "ش": "س", "ض": "ص", "ظ": "ط", "غ": "ع", "ف": "ڡ", "ق": "ٯ", "ة": "ه", "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ؤ": "و" };
+  function toRasm(str) {
+    var t = str.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, "");
+    return t.replace(/[\s\S]/g, function (ch, i) {
+      // a final nun keeps its bowl: dotless ں
+      if (ch === "ن" && (i === t.length - 1 || /\s/.test(t.charAt(i + 1)))) return "ں";
+      return RASM[ch] || ch;
+    });
+  }
+  // standard runological transliteration to short-twig younger futhark (as on the Rök stone)
+  var RUNE = { f: "ᚠ", u: "ᚢ", þ: "ᚦ", "ą": "ᚭ", o: "ᚭ", r: "ᚱ", k: "ᚴ", h: "ᚽ", n: "ᚿ", i: "ᛁ", a: "ᛆ", s: "ᛌ", t: "ᛐ", b: "ᛓ", m: "ᛙ", l: "ᛚ", "ʀ": "ᛧ", R: "ᛧ" };
+  function toRunes(str) { return str.replace(/[fuþąorkhniastbmlʀR]/g, function (ch) { return RUNE[ch]; }); }
+  var ALT = { rasm: toRasm, runes: toRunes };
+
   function inscription(root, item) {
     var A = item.artifact;
     var gstat = el("p", { class: "g-status", role: "status", "aria-live": "polite" });
@@ -663,6 +684,15 @@
       });
       var row = kids[kids.length - 1];
       if (row.classList && row.classList.contains("relic-ctrls")) row.appendChild(pB); else kids.push(el("div", { class: "relic-ctrls" }, [pB]));
+    }
+    if (A.alt && ALT[A.alt]) {
+      var f = ALT[A.alt], altOn = !!A.altStart;
+      var aB = el("button", { type: "button", "aria-pressed": String(altOn), text: A.altLabel || "Show the other script" });
+      var paint = function () { btns.forEach(function (b) { b.textContent = altOn ? f(b.getAttribute("data-sq")) : b.getAttribute("data-sq"); b.classList.toggle("is-alt", altOn); }); line.classList.toggle("alt-" + A.alt, altOn); };
+      aB.addEventListener("click", function () { altOn = !altOn; aB.setAttribute("aria-pressed", String(altOn)); paint(); });
+      paint();
+      var row2 = kids[kids.length - 1];
+      if (row2.classList && row2.classList.contains("relic-ctrls")) row2.appendChild(aB); else kids.push(el("div", { class: "relic-ctrls" }, [aB]));
     }
     root.appendChild(el("div", { class: "relic-live" }, kids));
     root.classList.add("is-live");
@@ -717,6 +747,217 @@
     tilt();
   }
 
+  // shared: an annular sector (ring segment) as an SVG path, angles in degrees clockwise from 12 o'clock
+  function arcPath(cx, cy, r0, r1, a0, a1) {
+    function pt(r, a) { var t = (a - 90) * Math.PI / 180; return (cx + r * Math.cos(t)).toFixed(2) + " " + (cy + r * Math.sin(t)).toFixed(2); }
+    var big = (a1 - a0) > 180 ? 1 : 0;
+    return "M" + pt(r1, a0) + " A" + r1 + " " + r1 + " 0 " + big + " 1 " + pt(r1, a1) +
+      " L" + pt(r0, a1) + " A" + r0 + " " + r0 + " 0 " + big + " 0 " + pt(r0, a0) + " Z";
+  }
+  // shared: a small seeded random generator, so schematic drawings are the same on every visit
+  function seeded(seed) { var x = seed >>> 0; return function () { x = (x * 1664525 + 1013904223) >>> 0; return x / 4294967296; }; }
+
+  // ---------------------------------------------------------------- venus (Dresden Codex)
+  // Maya bar-and-dot numerals. Places are written top (highest) to bottom (units).
+  // Day counts use 20 in the second place and 18 in the third (a 360-day tun).
+  function mayaDigits(n, dayCount) {
+    var d = [n % 20]; n = Math.floor(n / 20);
+    var base = dayCount ? [18, 20, 20] : [20, 20, 20], k = 0;
+    while (n > 0) { d.push(n % base[k]); n = Math.floor(n / base[k]); k = Math.min(k + 1, 2); }
+    return d.reverse();
+  }
+  function mayaNumeral(n, dayCount, scale) {
+    var digits = mayaDigits(n, dayCount), S = scale || 1, rowH = 46, w = 64;
+    var g = sv("svg", { viewBox: "0 0 " + w + " " + (digits.length * rowH), class: "maya-num", width: w * S, height: digits.length * rowH * S, "aria-hidden": "true" });
+    digits.forEach(function (v, i) {
+      var y0 = i * rowH + 4, bars = Math.floor(v / 5), dots = v % 5;
+      if (v === 0) {
+        // the shell sign for zero
+        g.appendChild(sv("ellipse", { cx: 32, cy: y0 + 19, rx: 20, ry: 11, class: "mn-shell" }));
+        g.appendChild(sv("path", { d: "M16 " + (y0 + 17) + " Q32 " + (y0 + 11) + " 48 " + (y0 + 17) + " M18 " + (y0 + 23) + " Q32 " + (y0 + 28) + " 46 " + (y0 + 23), class: "mn-shell-l" }));
+        return;
+      }
+      var h = 7, gap = 3, stack = bars * (h + gap) + (dots ? 11 : 0), y = y0 + (38 - stack) / 2;
+      if (dots) { for (var k = 0; k < dots; k++) g.appendChild(sv("circle", { cx: 32 - (dots - 1) * 6.5 + k * 13, cy: y + 4.5, r: 4.2, class: "mn-dot" })); y += 11; }
+      for (var b = 0; b < bars; b++) { g.appendChild(sv("rect", { x: 8, y: y, width: 48, height: h, rx: 3, class: "mn-bar" })); y += h + gap; }
+    });
+    return g;
+  }
+  function venus(root, item) {
+    var A = item.artifact, total = A.phases.reduce(function (s, p) { return s + p.days; }, 0);
+    var W = 360, C = 180, svg = sv("svg", { viewBox: "0 0 " + W + " " + W, class: "venus-svg", role: "group", "aria-label": "The Venus cycle of " + total + " days, divided as the Dresden Codex divides it" });
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 150, class: "vn-orbit" }));
+    var pn = panel(), numBox = el("div", { class: "vn-num", "aria-hidden": "true" }), segs = [];
+    function show(title, sub, body, n, dayCount) {
+      setPanel(pn, title, sub, body);
+      numBox.innerHTML = ""; numBox.appendChild(mayaNumeral(n, dayCount, 1));
+      numBox.appendChild(el("span", { class: "vn-arabic", text: n.toLocaleString("en") }));
+    }
+    var a = 0;
+    A.phases.forEach(function (p, i) {
+      var span = p.days / total * 360, a0 = a, a1 = a + Math.max(span, 3);
+      var path = sv("path", { d: arcPath(C, C, 112, 150, a0 + 0.6, a1 - 0.6), class: "vn-seg vn-" + p.kind, tabindex: "0", role: "button", "aria-label": p.name + ", " + p.days + " days" });
+      function pick() { segs.forEach(function (s) { s.classList.remove("on"); }); path.classList.add("on"); show(p.name, p.days + " days", p.d, p.days, false); }
+      path.addEventListener("click", pick);
+      path.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      segs.push(path); svg.appendChild(path);
+      var mid = (a0 + a1) / 2, t = (mid - 90) * Math.PI / 180, r = 170;
+      svg.appendChild(sv("text", { x: (C + r * Math.cos(t)).toFixed(1), y: (C + r * Math.sin(t) + 4).toFixed(1), class: "vn-lab", "text-anchor": "middle", text: p.days }));
+      a = a + span;
+    });
+    // the planet itself, drawn as a bright star at the centre
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 70, class: "vn-core" }));
+    svg.appendChild(sv("path", { d: "M180 138 L187 172 L221 180 L187 188 L180 222 L173 188 L139 180 L173 172 Z", class: "vn-star" }));
+    svg.appendChild(sv("text", { x: C, y: C + 58, class: "vn-core-lab", "text-anchor": "middle", text: total + " days" }));
+    var mult = el("div", { class: "relic-ctrls vn-mult" });
+    (A.multiples || []).forEach(function (m) {
+      var b = el("button", { type: "button", text: m.label });
+      b.addEventListener("click", function () { segs.forEach(function (s) { s.classList.remove("on"); }); show(m.label, m.sub, m.d, m.n, true); });
+      mult.appendChild(b);
+    });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "venus-stage" }, [svg, numBox]), mult, pn,
+      A.hint ? el("p", { class: "relic-hint", text: A.hint }) : null
+    ]));
+    root.classList.add("is-live");
+    var p0 = A.phases[0]; segs[0].classList.add("on"); show(p0.name, p0.days + " days", p0.d, p0.days, false);
+  }
+
+  // ---------------------------------------------------------------- palimpsest (two texts on one leaf)
+  function palimpsest(root, item) {
+    var A = item.artifact, W = 520, H = 640, rnd = seeded(A.seed || 7);
+    var svg = sv("svg", { viewBox: "0 0 " + W + " " + H, class: "pal-svg", role: "img", "aria-label": "Schematic of a palimpsest leaf: an upper text written over an erased lower text" });
+    svg.appendChild(sv("defs", {}, [
+      sv("filter", { id: "pal-glow", x: "-20%", y: "-20%", width: "140%", height: "140%" }, [sv("feGaussianBlur", { stdDeviation: "2.2", result: "b" }), sv("feMerge", {}, [sv("feMergeNode", { in: "b" }), sv("feMergeNode", { in: "SourceGraphic" })])])
+    ]));
+    svg.appendChild(sv("path", { d: "M18 22 Q120 8 260 16 T502 20 L506 330 Q512 470 500 620 Q300 634 150 626 T16 618 Q8 420 14 230 Z", class: "pal-leaf" }));
+    var uv = sv("rect", { x: 0, y: 0, width: W, height: H, class: "pal-uv" });
+    function rows(cls, y0, dy, n, tilt, x0, x1) {
+      var g = sv("g", { class: cls, transform: "rotate(" + tilt + " " + W / 2 + " " + H / 2 + ")" });
+      for (var r = 0; r < n; r++) {
+        var x = x1, y = y0 + r * dy;
+        while (x > x0) {
+          var len = 8 + rnd() * 46; if (x - len < x0) break;
+          g.appendChild(sv("rect", { x: (x - len).toFixed(1), y: (y + (rnd() - .5) * 3).toFixed(1), width: len.toFixed(1), height: (3 + rnd() * 2.5).toFixed(1), rx: 2 }));
+          if (rnd() < .35) g.appendChild(sv("circle", { cx: (x - len * rnd()).toFixed(1), cy: (y - 6 - rnd() * 4).toFixed(1), r: 1.6 }));
+          x -= len + 7 + rnd() * 12;
+        }
+      }
+      return g;
+    }
+    var lower = rows("pal-lower", 70, 27, 20, -2.2, 46, 476);
+    var upper = rows("pal-upper", 62, 30, 18, 0, 40, 482);
+    svg.appendChild(lower); svg.appendChild(uv); svg.appendChild(upper);
+    var pn = panel();
+    var range = el("input", { type: "range", min: "0", max: "100", value: "0", "aria-label": "Ultraviolet light: reveal the erased lower text" });
+    function setUV(v) {
+      v = +v; range.value = v;
+      upper.style.opacity = (1 - v * .0078).toFixed(3);
+      lower.style.opacity = (.07 + v * .0088).toFixed(3);
+      uv.style.opacity = (v * .0065).toFixed(3);
+      stage.classList.toggle("is-uv", v > 45);
+      var L = v > 55 ? A.layers[1] : A.layers[0];
+      setPanel(pn, L.t, L.s, L.d);
+    }
+    range.addEventListener("input", function () { setUV(range.value); });
+    var bU = el("button", { type: "button", text: A.layers[0].button || "Upper text" }), bL = el("button", { type: "button", text: A.layers[1].button || "Lower text" });
+    function glide(to) {
+      if (reduce) return setUV(to);
+      var from = +range.value, t0 = null;
+      function step(ts) { if (t0 === null) t0 = ts; var k = Math.min(1, (ts - t0) / 1400), e = k * k * (3 - 2 * k); setUV(Math.round(from + (to - from) * e)); if (k < 1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    bU.addEventListener("click", function () { glide(0); }); bL.addEventListener("click", function () { glide(100); });
+    var stage = el("div", { class: "pal-stage" }, [svg]);
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "relic-ctrls" }, [bU, bL]),
+      stage, el("label", { class: "pal-slider" }, [el("span", { text: "Daylight" }), range, el("span", { text: "Ultraviolet" })]),
+      pn, A.hint ? el("p", { class: "relic-hint", text: A.hint }) : null
+    ]));
+    root.classList.add("is-live");
+    setUV(0);
+  }
+
+  // ---------------------------------------------------------------- cauldron (Gundestrup), seen from above
+  function cauldron(root, item) {
+    var A = item.artifact, C = 200, pn = panel(), parts = [];
+    var svg = sv("svg", { viewBox: "0 0 400 400", class: "cauldron-svg", role: "group", "aria-label": "The Gundestrup cauldron seen from above: outer plates, inner plates and the base plate" });
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 192, class: "cd-rim" }));
+    function add(el0, p) {
+      el0.setAttribute("tabindex", "0"); el0.setAttribute("role", "button"); el0.setAttribute("aria-label", p.t);
+      function pick() { parts.forEach(function (x) { x.classList.remove("on"); }); el0.classList.add("on"); setPanel(pn, p.t, p.s, p.d); }
+      el0.addEventListener("click", pick);
+      el0.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      parts.push(el0); return el0;
+    }
+    var n = A.outer.length;
+    A.outer.forEach(function (p, i) {
+      var a0 = i * 360 / n, a1 = (i + 1) * 360 / n;
+      var path = sv("path", { d: arcPath(C, C, 138, 184, a0 + 1.2, a1 - 1.2), class: "cd-plate cd-outer" + (p.missing ? " is-missing" : "") });
+      svg.appendChild(add(path, p));
+      var t = ((a0 + a1) / 2 - 90) * Math.PI / 180;
+      svg.appendChild(sv("text", { x: (C + 161 * Math.cos(t)).toFixed(1), y: (C + 161 * Math.sin(t) + 4).toFixed(1), class: "cd-num" + (p.missing ? " cd-miss" : ""), "text-anchor": "middle", text: p.missing ? "?" : p.k }));
+    });
+    var m = A.inner.length;
+    A.inner.forEach(function (p, i) {
+      var a0 = i * 360 / m + 18, a1 = (i + 1) * 360 / m + 18;
+      svg.appendChild(add(sv("path", { d: arcPath(C, C, 84, 128, a0 + 1.5, a1 - 1.5), class: "cd-plate cd-inner" }), p));
+      var t = ((a0 + a1) / 2 - 90) * Math.PI / 180;
+      svg.appendChild(sv("text", { x: (C + 106 * Math.cos(t)).toFixed(1), y: (C + 106 * Math.sin(t) + 4).toFixed(1), class: "cd-num", "text-anchor": "middle", text: p.k }));
+    });
+    svg.appendChild(add(sv("circle", { cx: C, cy: C, r: 72, class: "cd-plate cd-base" }), A.base));
+    svg.appendChild(sv("text", { x: C, y: C + 5, class: "cd-num cd-base-lab", "text-anchor": "middle", text: A.base.k }));
+    parts.forEach(function (x) { if (x.classList.contains("is-missing")) x.setAttribute("aria-label", "The missing eighth outer plate"); });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "cauldron-stage" }, [svg]), pn,
+      el("p", { class: "relic-hint", text: A.hint || "Touch a plate. Outer ring: the outer plates; middle ring: the inner plates; centre: the base plate." })
+    ]));
+    root.classList.add("is-live");
+    parts[parts.length - 1].classList.add("on"); setPanel(pn, A.base.t, A.base.s, A.base.d);
+  }
+
+  // ---------------------------------------------------------------- chamber (Pyramid Texts), a burial-chamber wall under a starry gable
+  function chamber(root, item) {
+    var A = item.artifact, W = 640, H = 430, rnd = seeded(5), pn = panel(), zones = [];
+    var svg = sv("svg", { viewBox: "0 0 " + W + " " + H, class: "chamber-svg", role: "group", "aria-label": "Schematic of a Pyramid Texts wall: columns of spells beneath a gabled ceiling of stars" });
+    svg.appendChild(sv("path", { d: "M20 150 L320 20 L620 150 Z", class: "ch-gable" }));
+    for (var i = 0; i < 46; i++) {
+      var x = 60 + rnd() * 520, y = 40 + rnd() * 100;
+      if (y < 150 - Math.abs(x - 320) * 130 / 300 - 10 && y > 34) {
+        var r = 5 + rnd() * 2, pts = [];
+        for (var k = 0; k < 10; k++) { var ang = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r * .42 : r; pts.push((x + rr * Math.cos(ang)).toFixed(1) + "," + (y + rr * Math.sin(ang)).toFixed(1)); }
+        svg.appendChild(sv("polygon", { points: pts.join(" "), class: "ch-star" }));
+      }
+    }
+    svg.appendChild(sv("rect", { x: 20, y: 150, width: 600, height: 262, class: "ch-wall" }));
+    // the king's name in a cartouche, in real hieroglyphs
+    svg.appendChild(sv("rect", { x: 262, y: 160, width: 116, height: 40, rx: 20, class: "ch-cart" }));
+    svg.appendChild(sv("line", { x1: 380, y1: 170, x2: 380, y2: 190, class: "ch-cart-tie" }));
+    svg.appendChild(sv("text", { x: 320, y: 190, class: "ch-glyph", "text-anchor": "middle", text: A.cartouche || "" }));
+    var n = A.spells.length, zw = 600 / n;
+    A.spells.forEach(function (p, i) {
+      var g = sv("g", { class: "ch-zone", tabindex: "0", role: "button", "aria-label": p.t });
+      var x0 = 20 + i * zw;
+      g.appendChild(sv("rect", { x: x0 + 3, y: 208, width: zw - 6, height: 198, class: "ch-hit" }));
+      for (var c = 0; c < Math.floor(zw / 15); c++) {
+        var cx = x0 + 9 + c * 15, yy = 214;
+        g.appendChild(sv("line", { x1: cx - 2, y1: 210, x2: cx - 2, y2: 402, class: "ch-rule" }));
+        while (yy < 396) { var h = 4 + rnd() * 9; g.appendChild(sv("rect", { x: cx + 1 + rnd() * 2, y: yy, width: 6 + rnd() * 3, height: h, rx: 1.5, class: "ch-sign" })); yy += h + 3 + rnd() * 4; }
+      }
+      g.appendChild(sv("text", { x: x0 + zw / 2, y: 425, class: "ch-lab", "text-anchor": "middle", text: p.k }));
+      function pick() { zones.forEach(function (z) { z.classList.remove("on"); }); g.classList.add("on"); setPanel(pn, p.t, p.s, p.d); }
+      g.addEventListener("click", pick);
+      g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      zones.push(g); svg.appendChild(g);
+    });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "chamber-stage" }, [svg]), pn,
+      el("p", { class: "relic-hint", text: A.hint || "Touch a panel of the wall to read its spell." })
+    ]));
+    root.classList.add("is-live");
+    zones[0].classList.add("on"); setPanel(pn, A.spells[0].t, A.spells[0].s, A.spells[0].d);
+  }
+
   function init() {
     var V = window.VAULT || { items: [] };
     Array.prototype.forEach.call(document.querySelectorAll("[data-vault-relic]"), function (root) {
@@ -734,6 +975,10 @@
         else if (kind === "cards") cards(root, item);
         else if (kind === "inscription") inscription(root, item);
         else if (kind === "scales") scales(root, item);
+        else if (kind === "venus") venus(root, item);
+        else if (kind === "palimpsest") palimpsest(root, item);
+        else if (kind === "cauldron") cauldron(root, item);
+        else if (kind === "chamber") chamber(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }

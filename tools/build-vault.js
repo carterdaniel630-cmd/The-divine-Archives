@@ -195,7 +195,7 @@ function head(title, desc, url, rel, type, extra) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
   <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=3" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=8" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=13" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -249,7 +249,7 @@ function itemPage(item) {
     sectionsHtml = sectionsHtml.replace(/<blockquote class="vault-text">[\s\S]*?<\/blockquote>/, (bq) =>
       `<section class="relic relic-tablet" data-vault-relic="${esc(item.id)}" data-relic-kind="tablet">\n` +
       `<h3 class="relic-title">${esc(art.title)}</h3><p class="relic-sub">${esc(art.sub)}</p>\n${bq}\n</section>`);
-  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales"].indexOf(art.type) !== -1) {
+  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber"].indexOf(art.type) !== -1) {
     // static fallback: the object's own words (if any) and its documented stations
     const bits = [];
     if (art.declarations) bits.push("<ul>" + art.declarations.map((d) => `<li>${esc(d)}</li>`).join("") + "</ul>");
@@ -260,7 +260,10 @@ function itemPage(item) {
     if (art.greek) bits.push(`<p lang="grc">${esc(Array.isArray(art.greek) ? art.greek.map((w) => w[0]).join(" ") : art.greek)}</p>`);
     if (art.inscription) bits.push(`<p><strong>${esc(art.inscription)}</strong></p>`);
     if (art.translation) bits.push(`<p><em>${esc(art.translation)}</em></p>`);
-    const list = (art.events || art.stops || art.parts || []).concat(art.cards || []).map((x) =>
+    if (art.phases) bits.push("<ul>" + art.phases.map((x) => `<li><strong>${esc(x.name)}</strong> (${esc(x.days)} days): ${esc(x.d)}</li>`).join("") + "</ul>");
+    if (art.layers) bits.push(art.layers.map((x) => `<p><strong>${esc(x.t)}</strong> (${esc(x.s)}): ${esc(x.d)}</p>`).join(""));
+    const plates = art.base ? [art.base].concat(art.inner || [], (art.outer || []).filter((x) => !x.missing)) : [];
+    const list = (art.events || art.stops || art.parts || art.spells || []).concat(art.cards || [], plates).map((x) =>
       `<li><strong>${esc(x.y || x.t)}</strong>${x.s ? " (" + esc(x.s) + ")" : ""}${x.y ? " " + esc(x.t) : ""}: ${esc(x.d)}</li>`).join("");
     relicTop = `<section class="relic relic-${art.type}" data-vault-relic="${esc(item.id)}" data-relic-kind="${art.type}">\n` +
       `<h2 class="relic-title">${esc(art.title)}</h2><p class="relic-sub">${esc(art.sub)}</p>\n<div class="relic-static">${bits.join("")}<ul>${list}</ul></div>\n</section>\n`;
@@ -275,8 +278,10 @@ function itemPage(item) {
       `<h2 class="relic-title">${esc(art.title)}</h2><p class="relic-sub">${esc(art.sub)}</p>\n<div class="relic-static">\n${cols}\n</div>\n</section>\n`;
   }
   const body = e.lead.join("\n") + "\n" + relicTop + studyBlock(item) + "\n" + sectionsHtml;
-  const fonts = art && (["scroll", "ark", "inscription", "scales"].indexOf(art.type) !== -1 || art.lineLang === "he")
-    ? '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" />\n'
+  // scripts the object needs: the base Hebrew/Phoenician/Egyptian set, plus any the item names (e.g. Arabic, Gurmukhi, Runic)
+  const extraFonts = (art && art.fonts) || [];
+  const fonts = art && (["scroll", "ark", "inscription", "scales", "chamber"].indexOf(art.type) !== -1 || art.lineLang === "he" || extraFonts.length)
+    ? `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&family=Noto+Sans+Egyptian+Hieroglyphs${extraFonts.map((f) => "&family=" + f).join("")}&display=swap" />\n`
     : "";
   return `${head(fullTitle, desc, url, "../", "article",
     fonts + `  <script type="application/ld+json">${jsonld}</script>\n  <script type="application/ld+json">${crumbld}</script>\n`)}
@@ -310,9 +315,9 @@ ${item.pending ? `      <div class="pending-banner"><strong>Recently added &midd
 ${footer("../")}
 </div>
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
-<script src="../assets/vault-data.js?v=5" defer></script>
+<script src="../assets/vault-data.js?v=6" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
-<script src="../assets/vault/relic.js?v=6" defer></script>
+<script src="../assets/vault/relic.js?v=9" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>

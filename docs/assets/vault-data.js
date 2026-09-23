@@ -655,19 +655,226 @@ window.VAULT = {
         ]
       },
       study: { manifest: "", rights: "Photographs of the temple and procession belong to their photographers; the relic itself is rarely shown.", external: [ { label: "Sri Dalada Maligawa — official site", href: "https://sridaladamaligawa.lk/" } ] }
+    },
+    {
+      id: "v28", slug: "birmingham-quran", status: "published", pending: true,
+      title: "The Birmingham Qur'an Manuscript", category: "manuscripts",
+      source: "vault/v28-birmingham-quran.md",
+      held: "Cadbury Research Library, University of Birmingham (Mingana Islamic Arabic 1572a)",
+      dated: "Parchment radiocarbon-dated 568–645 CE (95.4% probability)",
+      summary: "Two parchment leaves in Hijazi script, recognised in 2015 inside a later manuscript and radiocarbon-dated to 568–645 CE. They belong with sixteen leaves in Paris. What a date for the animal's death can and cannot say about when the words were written.",
+      artifact: {
+        type: "inscription", theme: "hijazi", title: "The opening of Sura Ṭā Hā",
+        sub: "Qurʾan 20:1–2, which begins on one of the Birmingham leaves. Touch a word; then strip the text back to the bare letter-shapes the early scribes wrote.",
+        lang: "ar", dir: "rtl", fonts: ["Noto+Naskh+Arabic"],
+        words: [["طه", "Ṭā Hā: two separate letters, one of the 'disconnected letters' that open some suras; their meaning is not known"], ["مَا", "not"], ["أَنزَلْنَا", "We sent down"], ["عَلَيْكَ", "to you"], ["الْقُرْآنَ", "the Qurʾan"], ["لِتَشْقَىٰ", "that you should be distressed"]],
+        translation: "Ṭā Hā. We did not send down the Qurʾan to you to cause you distress.",
+        alt: "rasm", altLabel: "Show the bare consonant skeleton",
+        hint: "The skeleton view removes vowel signs and letter-dots, the stripped-down form (rasm) of the writing system. Hijazi scribes wrote no vowel signs and only some of the dots, so this shows the principle, not a copy of the leaf."
+      },
+      study: { manifest: "", rights: "The Cadbury Research Library publishes images of the leaves; the Bibliothèque nationale de France publishes the Paris leaves in Gallica.", external: [ { label: "University of Birmingham — the Birmingham Qur'an", href: "https://www.birmingham.ac.uk/facilities/cadbury/birmingham-quran-mingana-collection/birmingham-quran" }, { label: "BnF — Arabe 328", href: "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc386200" } ] }
+    },
+    {
+      id: "v29", slug: "sanaa-palimpsest", status: "published", pending: true,
+      title: "The Sana'a Palimpsest", category: "manuscripts",
+      source: "vault/v29-sanaa-palimpsest.md",
+      held: "Dar al-Makhtutat, Sana'a (DAM 01-27.1); four detached leaves in private and institutional hands",
+      dated: "Lower text: one detached leaf radiocarbon-dated 578–669 CE (95%)",
+      summary: "A Qur'an codex written over an erased older Qur'an. Found in 1972 in the roof of the Great Mosque of Sana'a. The upper text follows the standard text; the lower text has different readings and a different order of suras. It is the only known witness to a non-ʿUthmānic Qur'an text, and scholars disagree about what that means.",
+      artifact: {
+        type: "palimpsest", title: "Two texts on one leaf",
+        sub: "A schematic leaf. Raise the ultraviolet, as imaging did, and the erased writing underneath comes back.",
+        seed: 29,
+        layers: [
+          { t: "The upper text", s: "the writing you see", button: "Upper text", d: "A later Qur'an copy written over the scraped leaf. It follows the standard ʿUthmānic text and sura order, with some unfinished decoration." },
+          { t: "The lower text", s: "erased, recovered by imaging", button: "Lower text", d: "The first writing on the leaf. Its readings often differ from the standard text in wording, and its suras run in an order that matches no known tradition. The erasure was deliberate, and the reason is unknown." }
+        ],
+        hint: "Schematic only: the strokes stand for lines of writing; no letters are reproduced. Photographs of the real leaves belong to their holders."
+      },
+      study: { manifest: "", rights: "Images of Ṣanʿāʾ 1 were published by the researchers with their editions; the leaves belong to the Yemeni authorities and to the holders of the detached leaves.", external: [] }
+    },
+    {
+      id: "v30", slug: "diamond-sutra", status: "published", pending: true,
+      title: "The Diamond Sutra of Dunhuang", category: "manuscripts",
+      source: "vault/v30-diamond-sutra.md",
+      held: "British Library, London (Or.8210/P.2)",
+      dated: "Printed 11 May 868 CE (dated colophon)",
+      summary: "A five-metre scroll printed from woodblocks, found in a sealed cave library on the Silk Road and dated by its maker to 868. It is the oldest complete printed book that carries a date. Its text teaches that all conditioned things are like a dream.",
+      artifact: {
+        type: "scroll", theme: "paper", title: "Unroll the sutra",
+        sub: "Read from the right, top to bottom, as the scroll is read: its title, its closing verse and the printer's dedication.",
+        fonts: ["Noto+Serif+TC:wght@400;600"],
+        hint: "Chinese scrolls, like Hebrew ones, open from the right. Drag the paper to travel along it and touch a character-group to read its meaning.",
+        columns: [
+          { kind: "cjk", heading: "The title", lines: [[["金剛", "Diamond (Sanskrit vajra: 'diamond' or 'thunderbolt')"], ["般若", "wisdom (prajñā)"], ["波羅蜜", "perfection (pāramitā)"], ["經", "sutra, scripture"]]],
+            translation: "The Diamond Perfection of Wisdom Sutra (Vajracchedikā Prajñāpāramitā).", note: "The Chinese translation printed here is Kumārajīva's, of around 402 CE." },
+          { kind: "cjk", heading: "The closing verse", lines: [[["一切", "all"], ["有為法", "conditioned things (dharmas made by causes)"]], [["如夢", "are like a dream"], ["幻", "an illusion"], ["泡", "a bubble"], ["影", "a shadow"]], [["如露", "like dew"], ["亦如電", "and like lightning"]], [["應作", "one should"], ["如是觀", "view them in this way"]]],
+            translation: "All conditioned things are like a dream, an illusion, a bubble, a shadow, like dew and like lightning: view them in this way." },
+          { kind: "cjk", heading: "The printer's dedication", lines: [[["咸通九年", "in the ninth year of Xiantong"], ["四月十五日", "on the fifteenth day of the fourth month"]], [["王玠", "Wang Jie"], ["為二親", "on behalf of his two parents"]], [["敬造", "reverently made"], ["普施", "for free distribution to all"]]],
+            translation: "On the fifteenth day of the fourth month of the ninth year of Xiantong [11 May 868], Wang Jie reverently made this for free distribution, on behalf of his two parents.", note: "The colophon is why the scroll is famous: it dates the printing to the day." }
+        ]
+      },
+      study: { manifest: "", rights: "The British Library publishes the scroll in its digitised manuscripts and through the International Dunhuang Programme.", external: [ { label: "International Dunhuang Programme — the Diamond Sutra", href: "https://idp.bl.uk/discover/learning/buddhism-on-the-silk-roads/articles/buddhism-on-the-ground/buddhist-texts-the-diamond-sutra/" } ] }
+    },
+    {
+      id: "v31", slug: "dresden-codex", status: "published", pending: true,
+      title: "The Dresden Codex", category: "manuscripts",
+      source: "vault/v31-dresden-codex.md",
+      held: "SLUB Dresden (Saxon State and University Library), Mscr.Dresd.R.310",
+      dated: "Usually dated 11th–14th century; the date is debated",
+      summary: "The finest of the four Maya books that survived the Spanish conquest: a folding screen of bark paper, bought in Vienna in 1739 and damaged by water in 1945. Its tables track Venus, predict eclipse seasons, and bind both to the sacred 260-day count.",
+      artifact: {
+        type: "venus", title: "The Venus table",
+        sub: "The 584-day cycle of Venus, divided as the codex divides it, with the numbers in Maya bar-and-dot notation. A dot is one, a bar is five, and a shell is zero.",
+        phases: [
+          { name: "Morning star", kind: "morning", days: 236, d: "Venus rises before the sun. The codex's pages treat its first appearance, the heliacal rising, as a moment of danger, with the god of the planet spearing victims." },
+          { name: "Hidden (superior conjunction)", kind: "hidden", days: 90, d: "Venus passes behind the sun. The real disappearance is shorter and varies; 90 is a canonical figure chosen to make the table's cycles fit." },
+          { name: "Evening star", kind: "evening", days: 250, d: "Venus shines after sunset." },
+          { name: "Hidden (inferior conjunction)", kind: "hidden", days: 8, d: "Venus passes between the earth and the sun, and vanishes for about eight days." }
+        ],
+        multiples: [
+          { label: "One cycle: 584", n: 584, sub: "written 1.11.4 in the day count", d: "The table's Venus year. The true mean is 583.92 days; the Maya kept the table in step with corrections." },
+          { label: "Five cycles: 2,920", n: 2920, sub: "= 8 solar years of 365 days", d: "Five Venus cycles end almost exactly where eight years of 365 days end, so the pattern repeats against the seasons." },
+          { label: "The great cycle: 37,960", n: 37960, sub: "= 65 × 584 = 146 × 260 = 104 × 365", d: "After 104 years the Venus cycle, the sacred 260-day count and the 365-day year all meet again. The table covers this span." }
+        ],
+        hint: "Large numbers are written in the Maya day count, in which the third place counts 360 days, not 400."
+      },
+      study: { manifest: "", rights: "SLUB Dresden publishes the complete codex in its digital collections.", external: [ { label: "SLUB Dresden — the Dresden Maya Codex", href: "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex/content" } ] }
+    },
+    {
+      id: "v32", slug: "popol-vuh-manuscript", status: "published", pending: true,
+      title: "The Popol Vuh Manuscript", category: "manuscripts",
+      source: "vault/v32-popol-vuh-manuscript.md",
+      held: "The Newberry Library, Chicago (Ayer MS 1515)",
+      dated: "Copied c. 1700–1715 by Francisco Ximénez; the lost K'iche' original c. 1550s",
+      summary: "The K'iche' Maya book of creation, the Hero Twins and the lords of Xibalba, which survives only because a Dominican friar in Chichicastenango copied it around 1701, K'iche' beside Spanish. The alphabetic original, written by K'iche' nobles after the conquest, is lost.",
+      artifact: {
+        type: "inscription", theme: "folio", title: "The first words",
+        sub: "The opening of the K'iche' text, in modern spelling. Touch each word.",
+        lang: "quc", dir: "ltr",
+        words: [["Are", "this is"], ["u xe'", "its root, its beginning"], ["ojer", "ancient"], ["tzij", "word"], ["waral", "here"], ["K'iche'", "K'iche' (Quiché)"], ["u b'i'", "its name"]],
+        translation: "This is the beginning of the ancient word, here in this place called K'iche'."
+      },
+      study: { manifest: "", rights: "The Newberry Library publishes the manuscript digitally; a facsimile is also in the Library of Congress's World Digital Library collection.", external: [ { label: "The Newberry — Popol Vuh research guide", href: "https://www.newberry.org/collection/research-guide/popol-vuh" }, { label: "Library of Congress — Popol Vuh (digital facsimile)", href: "https://www.loc.gov/item/2021668226" } ] }
+    },
+    {
+      id: "v33", slug: "kartarpur-bir", status: "published", pending: true,
+      title: "The Kartarpur Bir", category: "manuscripts",
+      source: "vault/v33-kartarpur-bir.md",
+      held: "The Sodhi family, Kartarpur (Jalandhar district), Punjab",
+      dated: "Completed 1604 (tradition and colophon evidence)",
+      summary: "The volume that Sikh tradition holds is the first Adi Granth, compiled by Guru Arjan in 1604 with Bhai Gurdas as scribe. It was kept by a rival claimant to the Guruship, and scholars have seldom been allowed to see it. Its authority is revered, and its text history is debated.",
+      artifact: {
+        type: "inscription", theme: "folio", title: "The Mul Mantar",
+        sub: "The opening statement of the Sikh scripture, in Gurmukhi letters. Touch each phrase.",
+        lang: "pa", dir: "ltr", fonts: ["Noto+Sans+Gurmukhi"],
+        words: [["ੴ", "Ik Oankar: One, the Creator (the numeral one joined to the sign for Oankar)"], ["ਸਤਿ ਨਾਮੁ", "Sat Nam: Truth is the Name"], ["ਕਰਤਾ ਪੁਰਖੁ", "Karta Purakh: the Creator Being"], ["ਨਿਰਭਉ", "Nirbhau: without fear"], ["ਨਿਰਵੈਰੁ", "Nirvair: without enmity"], ["ਅਕਾਲ ਮੂਰਤਿ", "Akal Murat: timeless form"], ["ਅਜੂਨੀ", "Ajuni: not born"], ["ਸੈਭੰ", "Saibhang: self-existent"], ["ਗੁਰ ਪ੍ਰਸਾਦਿ", "Gur Prasad: known by the Guru's grace"]],
+        translation: "One Creator. Truth is the Name. The Creator Being, without fear, without enmity, timeless in form, unborn, self-existent, known by the Guru's grace.",
+        hint: "Renderings of the Mul Mantar vary; this archive's working rendering follows common English versions."
+      },
+      study: { manifest: "", rights: "No photographic record of the manuscript has been published with its owners' permission; this entry reproduces none.", external: [] }
+    },
+    {
+      id: "v34", slug: "pyramid-texts-of-unas", status: "published", pending: true,
+      title: "The Pyramid Texts of Unas", category: "texts",
+      source: "vault/v34-pyramid-texts-of-unas.md",
+      held: "In place: the Pyramid of Unas, Saqqara, Egypt",
+      dated: "Carved c. 2350 BCE (end of the 5th Dynasty)",
+      summary: "The oldest large body of religious writing in the world: 283 spells carved and painted blue on the walls of a king's burial chambers under a ceiling of stars. They were meant for no living reader, and were found in 1881. They include the notorious 'Cannibal Hymn'.",
+      artifact: {
+        type: "chamber", title: "The walls of the burial chamber",
+        sub: "A schematic of Unas's burial chamber: a gabled ceiling of stars over walls of spells. The cartouche carries the king's name in hieroglyphs.",
+        cartouche: "𓃹𓈖𓇋𓋴",
+        spells: [
+          { k: "I", t: "Unas has not died", s: "Utterance 213", d: "“Unas, you have not gone away dead: you have gone away alive.” The spell denies death outright and sends the king to sit on the throne of Osiris." },
+          { k: "II", t: "The offering ritual", s: "the offering spells", d: "The words of the priests' offering service, listing bread, beer, cloth and ointments with a spoken formula for each, so the offerings would never end." },
+          { k: "III", t: "Against serpents", s: "Utterances 226–243", d: "Short, very old spells to repel snakes and dangerous creatures from the tomb, some in language that was already archaic." },
+          { k: "IV", t: "The 'Cannibal Hymn'", s: "Utterances 273–274", d: "“The sky is overcast, the stars are darkened…” The king hunts the gods, cooks and eats them, and takes in their power. It is ritual language of royal supremacy, not a record of real cannibalism." },
+          { k: "V", t: "Ascent to the sky", s: "several utterances", d: "The king climbs to the sky by ladder, smoke, wings or a leap, to join the sun-god's boat and the undying circumpolar stars." }
+        ],
+        hint: "Schematic: the blue marks stand for columns of hieroglyphs. The quotations are this archive's working renderings, guided by the translations of Faulkner and Allen."
+      },
+      study: { manifest: "", rights: "Photographs of the chambers belong to their photographers and the Egyptian antiquities authorities.", external: [] }
+    },
+    {
+      id: "v35", slug: "cyrus-cylinder", status: "published", pending: true,
+      title: "The Cyrus Cylinder", category: "texts",
+      source: "vault/v35-cyrus-cylinder.md",
+      held: "British Museum, London (BM 90920)",
+      dated: "After 539 BCE",
+      summary: "A clay barrel inscribed in Babylonian cuneiform after Cyrus of Persia took Babylon. It praises Cyrus as Marduk's chosen king and records the return of gods and peoples to their homes. It is often called the first charter of human rights, which it is not, and it is read beside the Bible's decree of Cyrus.",
+      artifact: {
+        type: "inscription", theme: "clay", title: "“I am Cyrus”",
+        sub: "The opening of line 20, in transliterated Akkadian. Touch a word.",
+        lang: "akk", dir: "ltr",
+        words: [["anāku", "I (am)"], ["Kuraš", "Cyrus"], ["šar kiššati", "king of the universe"], ["šarru rabû", "the great king"], ["šarru dannu", "the mighty king"], ["šar Bābili", "king of Babylon"], ["šar māt Šumeri u Akkadî", "king of the land of Sumer and Akkad"], ["šar kibrāt erbetti", "king of the four quarters (of the world)"]],
+        translation: "I am Cyrus, king of the universe, the great king, the mighty king, king of Babylon, king of Sumer and Akkad, king of the four quarters.",
+        hint: "Transliteration normalised by this archive from the standard editions; the cylinder itself is written in cuneiform signs."
+      },
+      study: { manifest: "", rights: "The British Museum publishes photographs and a translation of the cylinder in its collection database.", external: [ { label: "British Museum — the Cyrus Cylinder", href: "https://www.britishmuseum.org/collection/object/W_1880-0617-1941" } ] }
+    },
+    {
+      id: "v36", slug: "rok-runestone", status: "published", pending: true,
+      title: "The Rök Runestone", category: "texts",
+      source: "vault/v36-rok-runestone.md",
+      held: "Beside Rök church, Östergötland, Sweden (Ög 136)",
+      dated: "Early 9th century CE",
+      summary: "A granite slab carrying the longest runic inscription in the world, some 760 runes, raised by a father for his dead son. It is full of riddles and written partly in cipher, and it names Theodoric the Great. No two scholars read it quite the same way.",
+      artifact: {
+        type: "inscription", theme: "granite", title: "The first line",
+        sub: "The stone's opening words in short-twig runes. Touch a word; switch to the letter-for-letter transliteration.",
+        lang: "non", dir: "ltr", fonts: ["Noto+Sans+Runic"],
+        words: [["aft", "after, in memory of"], ["uamuþ", "Vámóðr (Vämod), the dead son"], ["stąnta", "stand"], ["runaʀ", "runes"], ["þaʀ", "these"], ["n", "and (the first word of the next clause)"], ["uarin", "Varinn (Varin), the father"], ["faþi", "coloured, wrote"], ["faþiʀ", "the father"], ["aft", "in memory of"], ["faikiąn", "doomed, dead"], ["sunu", "son"]],
+        translation: "In memory of Vámóðr stand these runes. And Varinn coloured them, the father, in memory of his dead son.",
+        alt: "runes", altStart: true, altLabel: "Show the transliteration",
+        hint: "The runes are generated letter for letter from the standard transliteration, using the short-twig forms of the younger futhark the stone uses. Cipher passages elsewhere on the stone are not shown."
+      },
+      study: { manifest: "", rights: "Photographs of the stone are widely published; the Swedish National Heritage Board maintains the runic record.", external: [ { label: "Uppsala University — the Rök Stone", href: "https://www.uu.se/en/news/2022/2022-01-27-new-book-gives-insight-into-rok-stones-runes" } ] }
+    },
+    {
+      id: "v37", slug: "gundestrup-cauldron", status: "published", pending: true,
+      title: "The Gundestrup Cauldron", category: "relics",
+      source: "vault/v37-gundestrup-cauldron.md",
+      held: "National Museum of Denmark, Copenhagen",
+      dated: "Made c. 150 BCE–1st century CE; found 1891",
+      summary: "Nine kilograms of gilded silver, taken apart and laid in a Danish bog. Its plates show an antlered figure holding a torc and a serpent, a giant dipping a man into a vat, and a bull sacrifice. Probably made far to the south-east. Celtic gods, Thracian silversmiths, or both?",
+      artifact: {
+        type: "cauldron", title: "The plates, seen from above",
+        sub: "The cauldron was found dismantled, its plates stacked inside the bowl. Here they are set back in rings. Touch a plate.",
+        base: { k: "Base", t: "The base medallion", s: "round plate in the bottom of the bowl", d: "A great collapsed bull, with a sword-wielding figure above it and a dog. Read as a sacrifice or a hunt. The medallion may have been fitted later, perhaps to repair damage." },
+        inner: [
+          { k: "A", t: "The antlered figure", s: "inner plate", d: "A cross-legged figure with antlers, holding a torc in one hand and a ram-horned serpent in the other, among stags and other animals. Usually called Cernunnos, a god named on a Gaulish monument; the cauldron itself names no one." },
+          { k: "B", t: "The wheel", s: "inner plate", d: "A bearded bust holds a broken wheel, with a figure in a horned helmet. The wheel suggests a sky god, often called Taranis; that identification is an inference." },
+          { k: "C", t: "The procession and the vat", s: "inner plate", d: "Foot soldiers march under a tree-like band while riders go the other way above; a giant figure holds a man head-down over a vat. Read as sacrifice, as initiation, or as a return from death." },
+          { k: "D", t: "The bulls", s: "inner plate", d: "Three bulls, each with a man about to strike them with a sword." },
+          { k: "E", t: "The goddess with wheels", s: "inner plate", d: "A female bust between two wheels, flanked by elephants and griffins: creatures no northern European smith would have seen." }
+        ],
+        outer: [
+          { k: "1", t: "Outer plate 1", s: "a great face", d: "A large bust of a god or goddess grasping smaller figures or animals, a show of superhuman power. The eyes once held inlaid glass." },
+          { k: "2", t: "Outer plate 2", s: "a great face", d: "Another divine bust holding smaller beings. Stags, birds, boars, sea-creatures and small human figures appear across the outer plates." },
+          { k: "3", t: "Outer plate 3", s: "a great face", d: "Some busts are bearded men and some are women; one woman's hair is being dressed by a small attendant." },
+          { k: "4", t: "Outer plate 4", s: "a great face", d: "The busts are usually read as deities, but none is labelled, and names given to them are modern proposals." },
+          { k: "5", t: "Outer plate 5", s: "a great face", d: "The hair, torcs and poses echo Celtic art; the animals and some techniques point to the Thracian silverwork of the lower Danube." },
+          { k: "6", t: "Outer plate 6", s: "a great face", d: "The plates were made by different hands: metallurgical and stylistic study suggests several silversmiths." },
+          { k: "7", t: "Outer plate 7", s: "a great face", d: "Like the rest, it was taken off the bowl and laid inside before the cauldron was deposited in the bog." },
+          { missing: true, t: "The missing plate", s: "an eighth outer plate", d: "The layout implies an eighth outer plate that was never found. It may have been removed before the cauldron went into the bog." }
+        ],
+        hint: "The descriptions summarise the imagery; the arrangement here is schematic, and the plates’ original order is itself debated."
+      },
+      study: { manifest: "", rights: "The National Museum of Denmark publishes photographs of the cauldron.", external: [ { label: "National Museum of Denmark — the Gundestrup Cauldron", href: "https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-early-iron-age/the-gundestrup-cauldron/" } ] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Birmingham Qur'an Manuscript", category: "manuscripts", note: "Leaves radiocarbon-dated to 568–645 CE, and what that date can and cannot mean." },
-    { title: "The Sana'a Palimpsest", category: "manuscripts", note: "An early Qur'an with an older text erased beneath it." },
-    { title: "The Diamond Sutra of Dunhuang", category: "manuscripts", note: "The oldest dated printed book (868 CE), from a sealed cave library." },
-    { title: "The Dresden Codex", category: "manuscripts", note: "The finest Maya book: Venus tables, eclipse cycles and the gods of the calendar." },
-    { title: "The Popol Vuh Manuscript", category: "manuscripts", note: "The K'iche' Maya creation epic, preserved in one 18th-century copy." },
-    { title: "The Kartarpur Bir", category: "manuscripts", note: "The early Sikh scripture volume and its contested history." },
-    { title: "The Pyramid Texts of Unas", category: "texts", note: "The oldest religious texts carved inside a tomb, c. 2350 BCE." },
-    { title: "The Cyrus Cylinder", category: "texts", note: "A Persian king's clay proclamation, and its modern 'human rights' myth." },
-    { title: "The Rök Runestone", category: "texts", note: "The longest runic inscription, its ciphers, and a father's grief." },
-    { title: "The Gundestrup Cauldron", category: "relics", note: "A silver cauldron of gods from a Danish bog: Celtic, Thracian, or both?" }
+    { title: "The Aleppo Codex", category: "manuscripts", note: "The Masoretes' model Bible, its missing leaves, and how it left Aleppo." },
+    { title: "The Derveni Papyrus", category: "manuscripts", note: "Europe's oldest surviving book: a charred Orphic commentary from a funeral pyre." },
+    { title: "The Gospel of Judas (Codex Tchacos)", category: "manuscripts", note: "A lost Gnostic gospel, a looted codex, and a contested first translation." },
+    { title: "The Codex Borgia", category: "manuscripts", note: "A painted Mexican divinatory book of the 260-day count, on deerskin." },
+    { title: "The Lindisfarne Gospels", category: "manuscripts", note: "A Northumbrian Gospel book with the oldest English Gospels written between its lines." },
+    { title: "The Merneptah Stele", category: "texts", note: "A pharaoh's victory hymn with the earliest mention of Israel." },
+    { title: "The Pilate Stone", category: "texts", note: "A dedication at Caesarea naming Pontius Pilate as prefect of Judaea." },
+    { title: "The Nebra Sky Disc", category: "relics", note: "A bronze disc with sun, moon and Pleiades: looted, recovered in a police sting, and debated." },
+    { title: "The Piprahwa Relics", category: "relics", note: "A reliquary inscription naming the Buddha's kin, and the arguments over its authenticity." },
+    { title: "The Kensington Runestone", category: "texts", note: "A Minnesota runestone claimed as medieval Norse, and why runologists reject it." }
   ]
 };

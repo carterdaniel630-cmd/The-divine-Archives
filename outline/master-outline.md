@@ -172,4 +172,14 @@ registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
 | V25 | The Veil of Veronica | `PUBLISHED — pending review` |
 | V26 | The Black Stone of the Kaaba | `PUBLISHED — pending review` |
 | V27 | The Sacred Tooth Relic | `PUBLISHED — pending review` |
-| — | Batch 4 queue: Birmingham Qur'an · Sana'a Palimpsest · Diamond Sutra · Dresden Codex · Popol Vuh manuscript · Kartarpur Bir · Pyramid Texts of Unas · Cyrus Cylinder · Rök Runestone · Gundestrup Cauldron | `not started` (queued) |
+| V28 | The Birmingham Qur'an Manuscript | `PUBLISHED — pending review` |
+| V29 | The Sana'a Palimpsest | `PUBLISHED — pending review` |
+| V30 | The Diamond Sutra of Dunhuang | `PUBLISHED — pending review` |
+| V31 | The Dresden Codex | `PUBLISHED — pending review` |
+| V32 | The Popol Vuh Manuscript | `PUBLISHED — pending review` |
+| V33 | The Kartarpur Bir | `PUBLISHED — pending review` |
+| V34 | The Pyramid Texts of Unas | `PUBLISHED — pending review` |
+| V35 | The Cyrus Cylinder | `PUBLISHED — pending review` |
+| V36 | The Rök Runestone | `PUBLISHED — pending review` |
+| V37 | The Gundestrup Cauldron | `PUBLISHED — pending review` |
+| — | Batch 5 queue: Aleppo Codex · Derveni Papyrus · Gospel of Judas (Codex Tchacos) · Codex Borgia · Lindisfarne Gospels · Merneptah Stele · Pilate Stone · Nebra Sky Disc · Piprahwa Relics · Kensington Runestone | `not started` (queued) |
