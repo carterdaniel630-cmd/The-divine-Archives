@@ -148,4 +148,8 @@ registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
 | V01 | The Voynich Manuscript | `PUBLISHED — pending review` |
 | V02 | The Dead Sea Scrolls | `PUBLISHED — pending review` |
 | V03 | The Emerald Tablet | `PUBLISHED — pending review` |
-| — | Shroud of Turin · Holy Lance · Crown of Thorns · Ark of the Covenant · Nag Hammadi Codices · Codex Gigas · Copper Scroll · Rohonc Codex · Ketef Hinnom scrolls · Tilma of Guadalupe | `not started` (queued) |
+| V04 | The Shroud of Turin | `PUBLISHED — pending review` |
+| V05 | The Holy Lance ("Spear of Destiny") | `PUBLISHED — pending review` |
+| V06 | The Crown of Thorns | `PUBLISHED — pending review` |
+| V07 | The Ark of the Covenant | `PUBLISHED — pending review` |
+| — | Nag Hammadi Codices · Codex Gigas · Copper Scroll · Rohonc Codex · Ketef Hinnom scrolls · Tilma of Guadalupe | `not started` (queued) |

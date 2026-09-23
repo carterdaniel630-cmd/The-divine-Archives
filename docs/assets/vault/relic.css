@@ -1,7 +1,7 @@
 /* THE DIVINE ARCHIVES — Vault relics: the carved tablet and the unrolling scroll */
 
 .relic { margin: 2.2rem 0 2.6rem; }
-.relic-scroll { position: relative; left: 50%; transform: translateX(-50%); width: min(72rem, calc(100vw - 2rem)); }
+.relic-scroll, .relic-linen { position: relative; left: 50%; transform: translateX(-50%); width: min(72rem, calc(100vw - 2rem)); }
 .relic-title { text-align: center; margin-bottom: .3rem; }
 .relic-sub { text-align: center; color: var(--ink-dim); font-size: .95rem; margin: 0 auto 1rem; max-width: var(--measure); }
 .relic.is-live > blockquote, .relic.is-live > .relic-static { display: none; }
@@ -150,3 +150,94 @@
   .scroll[data-open="false"] .roll-r { animation: none; }
 }
 @media print { .relic-live { display: none; } .relic.is-live > blockquote, .relic.is-live > .relic-static { display: block; } }
+
+/* ---------------------------------------------------------------- shared panels */
+.relic-panel { max-width: 44rem; margin: .8rem auto 0; padding: .8rem 1rem; border: 1px solid var(--line); border-left: 3px solid var(--gold); background: var(--panel); min-height: 4.2rem; }
+.relic-panel .rp-t { margin: 0 0 .25rem; color: var(--parchment); }
+.relic-panel .rp-s { color: var(--ink-dim); font-size: .9rem; }
+.relic-panel .rp-d { margin: 0; font-size: .97rem; line-height: 1.55; }
+.relic-subhead { text-align: center; font-family: var(--font-head); color: var(--parchment); margin: 1.8rem 0 .6rem; font-size: 1.15rem; }
+.g-line { margin: .3rem 0; line-height: 2; }
+.g-word { font: inherit; background: none; border: 0; padding: 0 .06rem; margin: 0; cursor: pointer; color: inherit; border-radius: 2px; transition: color .2s, text-shadow .2s, background .2s; }
+.g-word:hover, .g-word:focus-visible { outline: none; color: #7a2408; background: rgba(255,236,190,.35); text-shadow: 0 0 8px rgba(255,226,160,.9); }
+.g-status { min-height: 1.5em; text-align: center; color: var(--gold-bright); font-style: italic; margin: .7rem 0 0; }
+.pap-head { font-family: var(--font-display); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #6d4c22; text-align: center; margin: 0 0 .4rem; }
+.pap-tr { font-family: var(--font-body); font-style: italic; color: #3a230e; text-align: center; margin: .4rem 0 0; font-size: .98rem; }
+
+/* ---------------------------------------------------------------- linen */
+.linen-wrap { position: relative; border-radius: 2px; box-shadow: 0 14px 34px rgba(0,0,0,.5); overflow: hidden; transition: filter .8s ease; }
+.linen-wrap.is-neg { filter: invert(1) hue-rotate(180deg) contrast(1.05); }
+.linen-svg { display: block; width: 100%; height: auto; }
+.linen-svg .l-lab { font-family: var(--font-display); font-size: 15px; letter-spacing: .12em; fill: rgba(95,65,30,.55); text-transform: uppercase; }
+.linen-svg .l-small { font-size: 11px; }
+.linen-svg .l-burns, .linen-svg .l-patches, .linen-svg .l-water, .linen-svg .l-sample { transition: opacity .7s ease; }
+.l-time { position: relative; max-width: 50rem; margin: 1.1rem auto .4rem; }
+.l-time input[type=range] { width: 100%; accent-color: var(--gold); }
+.l-slabel { display: block; text-align: center; font-family: var(--font-display); letter-spacing: .12em; color: var(--ink-dim); font-size: .8rem; text-transform: uppercase; }
+.l-year { font-size: 1.5rem; color: var(--gold-bright); margin-left: .3rem; letter-spacing: .05em; }
+.l-ticks { position: relative; height: 1.4rem; margin: 0 .5rem; }
+.l-ticks button { position: absolute; transform: translateX(-50%); font: inherit; font-size: .66rem; color: var(--ink-faint); background: none; border: 0; padding: 0; cursor: pointer; }
+.l-ticks button.on { color: var(--gold-bright); }
+@media (max-width: 40rem) { .l-ticks button:nth-child(even) { display: none; } }
+
+/* ---------------------------------------------------------------- lance */
+.lance-stage { background: radial-gradient(ellipse at 50% 60%, #2a1d10, #0e0905 70%); border: 1px solid var(--line); padding: 1rem 0; border-radius: 3px; }
+.lance-svg { display: block; width: 100%; height: auto; }
+.lance-svg .lp { cursor: pointer; transition: filter .25s; outline: none; }
+.lance-svg .lp:hover, .lance-svg .lp:focus-visible, .lance-svg .lp.on { filter: drop-shadow(0 0 6px rgba(231,198,128,.85)); }
+.lance-svg .band-text { font-family: var(--font-display); font-size: 17px; letter-spacing: .12em; fill: #4a2f07; }
+.papyrus {
+  max-width: 44rem; margin: 1.6rem auto 0; padding: 1.1rem 1.4rem; color: #2a190a;
+  background: repeating-linear-gradient(90deg, rgba(120,90,40,.10) 0 3px, transparent 3px 11px), repeating-linear-gradient(0deg, rgba(120,90,40,.08) 0 2px, transparent 2px 13px), linear-gradient(180deg, #e6d3a3, #d2b77c);
+  box-shadow: 0 10px 26px rgba(0,0,0,.45); clip-path: polygon(0 3%, 3% 0, 97% 2%, 100% 5%, 99% 96%, 96% 100%, 4% 98%, 0 95%);
+}
+.papyrus .g-line { text-align: center; font-family: "Noto Serif", "GFS Didot", "Palatino Linotype", Georgia, serif; font-size: 1.35rem; }
+.flip-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: .8rem; max-width: 50rem; margin: 0 auto; }
+.flip { position: relative; height: 10.5rem; perspective: 900px; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+.flip .f-front, .flip .f-back {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .3rem; padding: .9rem;
+  border: 1px solid var(--line); border-radius: 3px; backface-visibility: hidden; transition: transform .6s ease; text-align: center;
+}
+.flip .f-front { background: linear-gradient(180deg, var(--panel-2), var(--ground-2)); }
+.flip .f-front strong { font-family: var(--font-head); font-size: 1.3rem; color: var(--parchment); }
+.flip .f-front em { color: var(--ink-dim); font-size: .85rem; }
+.flip .f-back { background: var(--panel); transform: rotateY(180deg); font-size: .88rem; line-height: 1.45; }
+.flip[aria-pressed="true"] .f-front { transform: rotateY(-180deg); }
+.flip[aria-pressed="true"] .f-back { transform: rotateY(0); }
+.flip:focus-visible .f-front, .flip:focus-visible .f-back { border-color: var(--gold); }
+
+/* ---------------------------------------------------------------- crown */
+.crown-stage { max-width: 30rem; margin: 0 auto; }
+.crown-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.crown-greek { font-family: "Noto Serif", "GFS Didot", "Palatino Linotype", Georgia, serif; font-size: 15.5px; fill: var(--gold-bright); letter-spacing: .06em; }
+.crown-rot { transform-origin: 200px 200px; animation: crown-turn 120s linear infinite; }
+.crown-stage:hover .crown-rot { animation-play-state: paused; }
+@keyframes crown-turn { to { transform: rotate(360deg); } }
+.crown-svg .bind { cursor: pointer; outline: none; }
+.crown-svg .bind-gold { fill: #c99a3e; stroke: #6e4c12; transition: fill .2s; }
+.crown-svg .bind-line { stroke: #f3d98e; stroke-width: 1.3; }
+.crown-svg .bind:hover .bind-gold, .crown-svg .bind:focus-visible .bind-gold, .crown-svg .bind.on .bind-gold { fill: #f1cf72; filter: drop-shadow(0 0 5px rgba(241,207,114,.9)); }
+.crown-mid { font-family: var(--font-display); font-size: 13px; letter-spacing: .14em; fill: var(--ink-dim); }
+.crown-mid2 { font-size: 10px; fill: var(--ink-faint); }
+.crown-tr { text-align: center; font-style: italic; color: var(--ink); margin: .2rem auto 0; max-width: 36rem; }
+
+/* ---------------------------------------------------------------- ark */
+.vellum {
+  max-width: 52rem; margin: 0 auto; padding: 1.2rem 1.3rem 1rem; color: #2a190a; border-radius: 2px;
+  background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(95,58,20,.3) 100%), linear-gradient(180deg, #ead9b4, #d6bd8c);
+  box-shadow: 0 14px 34px rgba(0,0,0,.5);
+}
+.vellum .g-line { text-align: center; font-family: "Noto Serif Hebrew", "Times New Roman", serif; font-size: 1.6rem; }
+.ark-svg { display: block; width: 100%; height: auto; margin-top: .6rem; }
+.ark-svg .bp-ground { stroke: rgba(70,45,15,.6); stroke-width: 1.5; }
+.ark-svg .bp-dim { stroke: #7a2a10; stroke-width: 1; stroke-dasharray: 4 3; }
+.ark-svg .bp-t { font-family: var(--font-body); font-size: 13px; fill: #5a2410; font-style: italic; }
+.ark-svg .bp-gold { fill: rgba(201,154,62,.35); stroke: #6e4c12; stroke-width: 1.4; }
+.ark-svg .bp-bright { fill: rgba(233,196,106,.55); }
+.ark-svg .bp-end { fill: rgba(201,154,62,.2); stroke-dasharray: 5 3; }
+.ark-svg .bp-mould { fill: none; stroke: #6e4c12; stroke-width: 1; }
+.ark-svg .bp-ring { fill: rgba(110,76,18,.18); stroke: #6e4c12; stroke-width: 2.5; }
+.ark-svg .bp-person { fill: rgba(70,45,15,.28); }
+.ark-svg .bp-part { cursor: pointer; outline: none; transition: filter .2s; }
+.ark-svg .bp-part:hover, .ark-svg .bp-part:focus-visible, .ark-svg .bp-part.on { filter: drop-shadow(0 0 5px rgba(180,110,20,.9)); }
+.bp-sum { text-align: center; font-size: .92rem; color: #4a2c10; margin: .4rem 0 0; }

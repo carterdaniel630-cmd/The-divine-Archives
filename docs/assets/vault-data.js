@@ -101,14 +101,134 @@ window.VAULT = {
           { label: "Khunrath, Amphitheatrum (1609) — Princeton University Library", href: "https://dpul.princeton.edu/alchemy/catalog/wm117v989" }
         ]
       }
+    },
+    {
+      id: "v04", slug: "shroud-of-turin", status: "published", pending: true,
+      title: "The Shroud of Turin", category: "relics",
+      source: "vault/v04-shroud-of-turin.md",
+      held: "Chapel of the Shroud, Turin Cathedral — owned by the Holy See since 1983",
+      dated: "Radiocarbon 1260–1390 CE (1988; contested); documented from c. 1354",
+      summary: "A 4.4-metre linen bearing the faint negative-like image of a crucified man — documented from the 1350s, radiocarbon-dated to 1260–1390, its image still unexplained. Every test and every challenge, set side by side, with the Church's own distinction between icon and relic.",
+      artifact: {
+        type: "linen", title: "The Linen through time",
+        sub: "A to-scale schematic of the cloth (not a photograph; the figure is deliberately not drawn). Move through its documented history and watch its scars accumulate.",
+        events: [
+          { y: 1354, t: "First documented at Lirey", d: "Shown in the church founded by Geoffroi de Charny; a pilgrim's badge from the showings survives in the Musée de Cluny." },
+          { y: 1389, t: "The d'Arcis memorandum", d: "The bishop of Troyes tells Clement VII an artist confessed to painting it; Clement permits showings only as a 'representation'." },
+          { y: 1453, t: "To the House of Savoy", d: "Margaret de Charny passes the cloth to Duke Louis I of Savoy." },
+          { y: 1532, t: "Fire at Chambéry", d: "Molten silver from the reliquary scorches through the folded cloth, leaving two long lines of burns and holes, and water stains." },
+          { y: 1534, t: "The Poor Clares' patches", d: "Nuns of Chambéry sew about thirty patches over the holes and a backing cloth beneath." },
+          { y: 1578, t: "To Turin", d: "Moved to the new Savoy capital." },
+          { y: 1898, t: "Secondo Pia's photograph", d: "The glass negative shows a more natural, positive-looking face: the image on the cloth behaves like a negative. Try the negative switch." },
+          { y: 1978, t: "STURP examines the cloth", d: "Five days of direct study: no paint forms the image; the colour lies in the topmost fibrils. (McCrone disagreed about pigment.)" },
+          { y: 1983, t: "Bequeathed to the pope", d: "Umberto II leaves it to the Holy See, to remain in Turin." },
+          { y: 1988, t: "Radiocarbon sample cut", d: "A strip from one corner is divided among Arizona, Oxford and Zurich: 1260–1390 CE at 95% (Nature, 1989). Its representativeness is still argued." },
+          { y: 1997, t: "Fire in the Guarini Chapel", d: "The cloth, in its case, is carried out of the burning chapel." },
+          { y: 2002, t: "Patches removed", d: "Conservation removes the 1534 patches and backing; the reverse is photographed for the first time." }
+        ]
+      },
+      study: {
+        manifest: "",
+        rights: "Photographs of the Shroud are controlled by the Archdiocese of Turin and are not republished here. Secondo Pia's 1898 photographs are in the public domain; any IIIF-published copy can be opened in the viewer below.",
+        external: [
+          { label: "Santa Sindone — the Archdiocese of Turin's official Shroud site", href: "https://sindone.org/en/" }
+        ]
+      }
+    },
+    {
+      id: "v05", slug: "holy-lance", status: "published", pending: true,
+      title: "The Holy Lance (“Spear of Destiny”)", category: "relics",
+      source: "vault/v05-holy-lance.md",
+      held: "Vienna (Imperial Treasury), Rome (St Peter's), Etchmiadzin (Armenia); copy in Kraków",
+      dated: "Vienna lance: early medieval (c. 7th–8th century)",
+      summary: "One Gospel sentence, four rival spearheads, and a 1970s occult myth. The Habsburg lance's gold sleeve reads LANCEA ET CLAVVS DOMINI, but metallurgy dates the blade centuries after the Crucifixion, and the 'Spear of Destiny' Hitler legend traces to a single 1972 book.",
+      artifact: {
+        type: "lance", title: "The Lance and the Word",
+        sub: "The Vienna spearhead, drawn schematically with its nail-pin and sleeves. The gold band turns to show its fourteenth-century inscription. Below it is the only Gospel sentence behind every lance.",
+        inscription: "+ LANCEA ET CLAVVS DOMINI +",
+        parts: [
+          { id: "blade", t: "The blade", d: "A winged spearhead of Carolingian type, broken and rejoined. Metallurgical study (Feather, 2003) dated it to about the 7th century; imaging reported in 2025 points to the 8th." },
+          { id: "nail", t: "The nail-pin", d: "An iron pin set into an opening in the blade, venerated as a nail of the Cross, which makes the lance a double relic." },
+          { id: "silver", t: "The silver sleeve", d: "An earlier binding over the break, from the Ottonian/Salian period." },
+          { id: "gold", t: "The gold sleeve", d: "Added for Charles IV in the mid-14th century, inscribed LANCEA ET CLAVVS DOMINI, 'the lance and nail of the Lord'. It records a medieval belief; it is not a date." }
+        ],
+        greek: [["ἀλλ᾽", "but"], ["εἷς", "one"], ["τῶν", "of the"], ["στρατιωτῶν", "soldiers"], ["λόγχῃ", "with a lance (lonchē, the word behind the later name 'Longinus')"], ["αὐτοῦ", "his"], ["τὴν", "the"], ["πλευρὰν", "side"], ["ἔνυξεν", "pierced"], ["καὶ", "and"], ["ἐξῆλθεν", "came out"], ["εὐθὺς", "at once"], ["αἷμα", "blood"], ["καὶ", "and"], ["ὕδωρ", "water"]],
+        translation: "But one of the soldiers pierced his side with a lance, and at once blood and water came out. (John 19:34)",
+        cards: [
+          { t: "Vienna", s: "Imperial Treasury, Hofburg", d: "Imperial regalia from the 10th century; moved to Nuremberg in 1938 and returned to Vienna on 6 January 1946. Dated early medieval." },
+          { t: "Rome", s: "St Peter's Basilica", d: "Venerated in Constantinople for centuries; sent by Sultan Bayezid II to Pope Innocent VIII in 1492. Never scientifically dated." },
+          { t: "Etchmiadzin", s: "Armenian Apostolic Church", d: "Tradition says the apostle Thaddeus brought it; first attested in the 13th century; long kept at Geghard ('lance') monastery." },
+          { t: "Antioch (lost)", s: "First Crusade, 1098", d: "Dug up after Peter Bartholomew's visions of St Andrew; doubted at once; Peter died after an ordeal by fire in 1099." }
+        ]
+      },
+      study: {
+        manifest: "",
+        rights: "The Imperial Treasury (Kunsthistorisches Museum Wien) publishes its own photographs of the Holy Lance; they are not copied here.",
+        external: [
+          { label: "Kunsthistorisches Museum Wien — Imperial Treasury", href: "https://www.khm.at/en/visit/locations/imperial-treasury-vienna" }
+        ]
+      }
+    },
+    {
+      id: "v06", slug: "crown-of-thorns", status: "published", pending: true,
+      title: "The Crown of Thorns", category: "relics",
+      source: "vault/v06-crown-of-thorns.md",
+      held: "Notre-Dame de Paris (axial chapel, reliquary of 2024)",
+      dated: "Documented from 1238 (Paris); earlier history by tradition; never dated",
+      summary: "A ring of bundled rushes bound with gold thread, with no thorns left on it, for which Saint Louis paid almost half his annual revenue and built the Sainte-Chapelle. Traced from the Gospel mockery through Constantinople, Venice and the Revolution to the night Notre-Dame burned.",
+      artifact: {
+        type: "crown", title: "The Ring of Rushes",
+        sub: "The Gospel line circles the crown. Each gold binding holds one stop in the relic's documented journey.",
+        greek: "Καὶ οἱ στρατιῶται πλέξαντες στέφανον ἐξ ἀκανθῶν ἐπέθηκαν αὐτοῦ τῇ κεφαλῇ ·",
+        translation: "And the soldiers wove a crown of thorns and put it on his head. (John 19:2)",
+        stops: [
+          { t: "Jerusalem", s: "tradition", d: "Late-antique pilgrims describe a crown of thorns venerated in Jerusalem. The link to the Paris relic is tradition, not a chain of documents." },
+          { t: "Constantinople", s: "Byzantine era", d: "A crown kept among the Passion relics of the Byzantine emperors." },
+          { t: "Venice", s: "1238", d: "Baldwin II's barons pledge it to Venetian lenders; Louis IX pays the debt: about 135,000 livres tournois." },
+          { t: "Paris", s: "1239", d: "Carried to France by two Dominican friars; Louis receives it, by the accounts barefoot." },
+          { t: "Sainte-Chapelle", s: "1242–1248", d: "A chapel of stained glass is built around it as a walk-in reliquary." },
+          { t: "Notre-Dame", s: "1806", d: "After surviving the Revolution in the Bibliothèque nationale, it is given to the cathedral." },
+          { t: "The fire", s: "15 April 2019", d: "Rescued from the burning cathedral by the fire brigade's chaplain, Father Jean-Marc Fournier, and kept at the Louvre." },
+          { t: "Return", s: "December 2024", d: "Re-enshrined in Sylvain Dubuisson's new reliquary in the axial chapel." }
+        ]
+      },
+      study: {
+        manifest: "",
+        rights: "Photographs of the relic belong to the cathedral and to their photographers and are not republished here.",
+        external: [
+          { label: "Notre-Dame de Paris — official site", href: "https://www.notredamedeparis.fr/en/" }
+        ]
+      }
+    },
+    {
+      id: "v07", slug: "ark-of-the-covenant", status: "published", pending: true,
+      title: "The Ark of the Covenant", category: "relics",
+      source: "vault/v07-ark-of-the-covenant.md",
+      held: "No verified object; the Ethiopian Orthodox Church holds it is kept at Aksum",
+      dated: "Last mentioned before 586 BCE (2 Chronicles 35:3)",
+      summary: "The most precisely described object in the Bible, measured to the half-cubit, and one found nowhere. What the texts say it was and did, the four traditions of its fate (Babylon, Mount Nebo, beneath the Temple, Aksum), and what archaeology can and cannot add.",
+      artifact: {
+        type: "ark", title: "The Ark as Exodus measures it",
+        sub: "Drawn to scale from Exodus 25:10–22 beside a person 1.70 m tall. Switch the cubit to see how much the ancient unit matters; touch any part for its verse.",
+        hebrew: [["ועשו", "they shall make"], ["ארון", "an ark (a chest)"], ["עצי", "of wood of"], ["שטים", "acacia"], ["אמתים", "two cubits"], ["וחצי", "and a half"], ["ארכו", "its length"], ["ואמה", "and a cubit"], ["וחצי", "and a half"], ["רחבו", "its width"], ["ואמה", "and a cubit"], ["וחצי", "and a half"], ["קמתו", "its height"]],
+        translation: "They shall make an ark of acacia wood: two cubits and a half its length, a cubit and a half its width, and a cubit and a half its height. (Exodus 25:10)",
+        parts: [
+          { id: "chest", t: "The chest", v: "Exodus 25:10–11", d: "Acacia wood overlaid with pure gold inside and out, with a gold moulding around it. The 'testimony' (the tablets) goes inside (25:16)." },
+          { id: "rings", t: "The four rings", v: "Exodus 25:12", d: "Cast gold rings at its four feet or corners, two on each side." },
+          { id: "poles", t: "The poles", v: "Exodus 25:13–15", d: "Acacia overlaid with gold, run through the rings: 'the poles shall remain in the rings; they shall not be removed from it.'" },
+          { id: "kapporet", t: "The kapporet (‘mercy seat’)", v: "Exodus 25:17", d: "A lid of pure gold, the same length and width as the chest. Its name shares a root with kipper, 'to atone' (Leviticus 16)." },
+          { id: "cherubim", t: "The cherubim", v: "Exodus 25:18–22", d: "Two cherubim of hammered gold, one at each end, facing each other, wings spread above the lid. 'There I will meet with you… from between the two cherubim.' Drawn here only as wing-forms." }
+        ]
+      },
+      study: {
+        manifest: "",
+        rights: "There is no verified object to photograph. Manuscript and early printed depictions of the Ark published in IIIF can be opened in the viewer below.",
+        external: []
+      }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Shroud of Turin", category: "relics", note: "Linen cloth bearing a faint body image; the 1988 radiocarbon tests, the objections to them, and the image-formation debate." },
-    { title: "The Holy Lance (\"Spear of Destiny\")", category: "relics", note: "Several rival lance relics (Vienna, the Vatican, Etchmiadzin, Kraków) and the modern 'Spear of Destiny' mythology." },
-    { title: "The Crown of Thorns", category: "relics", note: "The relic of Notre-Dame de Paris, its medieval history, and its rescue from the 2019 fire." },
-    { title: "The Ark of the Covenant", category: "relics", note: "The biblical texts, the question of its fate, and the Ethiopian Orthodox tradition at Aksum." },
     { title: "The Nag Hammadi Codices", category: "manuscripts", note: "The 1945 Coptic library of Gnostic and other texts." },
     { title: "The Codex Gigas (\"Devil's Bible\")", category: "manuscripts", note: "The giant 13th-century Bohemian codex and its full-page devil." },
     { title: "The Copper Scroll", category: "texts", note: "The Qumran treasure list hammered into copper (covered briefly in V02)." },
