@@ -862,19 +862,220 @@ window.VAULT = {
         hint: "The descriptions summarise the imagery; the arrangement here is schematic, and the plates’ original order is itself debated."
       },
       study: { manifest: "", rights: "The National Museum of Denmark publishes photographs of the cauldron.", external: [ { label: "National Museum of Denmark — the Gundestrup Cauldron", href: "https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-early-iron-age/the-gundestrup-cauldron/" } ] }
+    },
+    {
+      id: "v38", slug: "aleppo-codex", status: "published", pending: true,
+      title: "The Aleppo Codex", category: "manuscripts",
+      source: "vault/v38-aleppo-codex.md",
+      held: "The Israel Museum, Jerusalem (Shrine of the Book); Ben-Zvi Institute",
+      dated: "c. 930 CE, Tiberias",
+      summary: "The 'Crown of Aleppo': the model Hebrew Bible whose vowels and accents were added by the master Masorete Aaron ben Asher, and which Maimonides called the text everyone relied on. Kept for six centuries in Aleppo's great synagogue, damaged in the riots of 1947, and brought to Israel with about 40% of its leaves missing, most of the Torah among them.",
+      artifact: {
+        type: "inscription", theme: "folio", title: "The Masoretes' signs",
+        sub: "Isaiah 40:1, which survives in the codex, with the vowel signs the Masoretes added. Touch a word; then take the signs away to see the consonantal text they were fitted around.",
+        lang: "he", dir: "rtl",
+        words: [["נַחֲמוּ", "comfort"], ["נַחֲמוּ", "comfort"], ["עַמִּי", "my people"], ["יֹאמַר", "says"], ["אֱלֹהֵיכֶם", "your God"]],
+        translation: "Comfort, comfort my people, says your God.",
+        alt: "consonants", altLabel: "Remove the vowel signs",
+        hint: "The codex also carries cantillation accents and marginal Masoretic notes; this view shows the vowels only, printed in a modern typeface."
+      },
+      study: { manifest: "", rights: "Images of the codex are published by the Ben-Zvi Institute and the Israel Museum.", external: [ { label: "Israel Museum — the Aleppo Codex", href: "https://www.imj.org.il/en/collections/226966-0" } ] }
+    },
+    {
+      id: "v39", slug: "derveni-papyrus", status: "published", pending: true,
+      title: "The Derveni Papyrus", category: "manuscripts",
+      source: "vault/v39-derveni-papyrus.md",
+      held: "Archaeological Museum of Thessaloniki",
+      dated: "Roll c. 340–320 BCE; the text composed c. 400 BCE",
+      summary: "A papyrus roll half-burned on a funeral pyre near Thessaloniki, the oldest surviving book in Europe. It is a philosopher's allegorical commentary on a secret Orphic poem about the birth of the gods, which opens by telling the uninitiated to shut the doors.",
+      artifact: {
+        type: "scroll", theme: "charred", dir: "ltr", title: "Unroll the charred papyrus",
+        sub: "Three lines the roll preserves or quotes, in the Greek. Greek rolls read from the left.",
+        fonts: ["Noto+Serif:ital@0;1"],
+        hint: "This papyrus survived because the pyre carbonised it. Drag it to travel along the roll and touch a word to read its meaning.",
+        columns: [
+          { kind: "greek", lang: "grc", heading: "Column VII · the poem's warning", lines: [[["φθέγξομαι", "I shall speak"], ["οἷς", "to those for whom"], ["θέμις", "it is lawful"], ["ἐστί·", "it is"]], [["θύρας", "the doors"], ["δ᾽", "and"], ["ἐπίθεσθε", "shut"], ["βέβηλοι", "you uninitiated"]]],
+            translation: "I shall speak to those for whom it is lawful: shut the doors, you uninitiated.", note: "The line is known from later writers; the papyrus preserves parts of it, and the full verse is a reconstruction." },
+          { kind: "greek", lang: "grc", heading: "Column XVII · Zeus", lines: [[["Ζεὺς", "Zeus"], ["κεφαλή,", "the head"]], [["Ζεὺς", "Zeus"], ["μέσσα,", "the middle"]], [["Διὸς", "from Zeus"], ["δ᾽", "and"], ["ἐκ", "out of"], ["πάντα", "all things"], ["τέτυκται", "are made"]]],
+            translation: "Zeus the head, Zeus the middle, and from Zeus all things are made.", note: "A verse of the Orphic poem quoted by the commentator; its end is partly restored." },
+          { kind: "greek", lang: "grc", heading: "Column IV · Heraclitus", lines: [[["ἥλιος", "the sun"]], [["εὖρος", "in breadth"], ["ποδὸς", "of a foot"], ["ἀνθρωπείου", "human"]]],
+            translation: "The sun: the breadth of a human foot.", note: "The commentator quotes Heraclitus; this is the oldest surviving copy of any of his words." }
+        ]
+      },
+      study: { manifest: "", rights: "The Archaeological Museum of Thessaloniki holds the papyrus; multispectral images were published with the scholarly editions.", external: [ { label: "UNESCO Memory of the World — the Derveni Papyrus", href: "https://www.unesco.org/en/memory-world/derveni-papyrus-oldest-book-europe" } ] }
+    },
+    {
+      id: "v40", slug: "gospel-of-judas", status: "published", pending: true,
+      title: "The Gospel of Judas (Codex Tchacos)", category: "manuscripts",
+      source: "vault/v40-gospel-of-judas.md",
+      held: "Coptic Museum, Cairo",
+      dated: "Codex radiocarbon-dated 220–340 CE; the Greek original before c. 180 CE",
+      summary: "A Gnostic gospel that the church father Irenaeus denounced around 180 and that was then lost for 1,700 years. It surfaced in a Coptic papyrus codex dug up in Middle Egypt, which rotted for years in a New York bank vault. Unveiled in 2006 as the story of a heroic Judas, a reading many specialists quickly disputed.",
+      artifact: {
+        type: "codex", theme: "papyrus", title: "Open the codex",
+        sub: "The gospel's own words at key points, in this archive's working renderings from published translations, and its title in Coptic.",
+        fonts: ["Noto+Sans+Coptic"],
+        pages: [
+          { h: "The opening", t: "The secret account of the revelation that Jesus spoke in conversation with Judas Iscariot, during a week, three days before he celebrated Passover.", n: "The first words of the gospel." },
+          { h: "Jesus laughs", t: "Jesus laughs at the disciples' prayers and sacrifice, saying they serve a lesser god.", n: "Laughter at the disciples is a recurring feature of the text." },
+          { h: "“You thirteenth daimon”", t: "Jesus calls Judas the thirteenth daimon and says he will be cursed by the other generations.", n: "The 2006 translation rendered daimōn as 'spirit'; critics argued it means 'demon', and that Judas is not a hero here." },
+          { h: "“You will exceed them all”", t: "“You will sacrifice the man who bears me.”", n: "Read in 2006 as praise of Judas; read by others as the darkest line in the text." },
+          { h: "The end", t: "Judas received some money and handed him over to them.", n: "The gospel ends here, before the crucifixion." },
+          { h: "The title", t: "ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲛ̄ⲓⲟⲩⲇⲁⲥ", lang: "cop", big: true, n: "“The Gospel of Judas”, written at the end in Coptic." }
+        ]
+      },
+      study: { manifest: "", rights: "The codex belongs to Egypt; photographs were published by the National Geographic Society with the critical edition.", external: [] }
+    },
+    {
+      id: "v41", slug: "codex-borgia", status: "published", pending: true,
+      title: "The Codex Borgia", category: "manuscripts",
+      source: "vault/v41-codex-borgia.md",
+      held: "Vatican Apostolic Library (Borg.mess.1)",
+      dated: "Late 15th or early 16th century, central Mexico",
+      summary: "A painted screenfold of deerskin from the Puebla–Tlaxcala region of Mexico, among the very few divinatory books to survive the conquest. It is a manual of the 260-day count, with gods, omens, a Venus almanac and a mysterious central section that may describe a journey through the night.",
+      artifact: {
+        type: "daycount", title: "The 260-day count",
+        sub: "The count the Borgia is built on: thirteen numbers turning against twenty day-signs, so that every day has its own name and no name repeats for 260 days.",
+        signs: [["Cipactli", "crocodile"], ["Ehecatl", "wind"], ["Calli", "house"], ["Cuetzpalin", "lizard"], ["Coatl", "serpent"], ["Miquiztli", "death"], ["Mazatl", "deer"], ["Tochtli", "rabbit"], ["Atl", "water"], ["Itzcuintli", "dog"], ["Ozomatli", "monkey"], ["Malinalli", "grass"], ["Acatl", "reed"], ["Ocelotl", "jaguar"], ["Cuauhtli", "eagle"], ["Cozcacuauhtli", "vulture"], ["Ollin", "movement"], ["Tecpatl", "flint"], ["Quiahuitl", "rain"], ["Xochitl", "flower"]],
+        startNote: "The count begins with 1 Crocodile. Each day, both wheels move on one place.",
+        dayNote: "Number and sign advance together; after 13 days the numbers start again at 1, while the signs carry on.",
+        trecenaNote: "A new 'thirteen' (trecena) begins. The Borgia assigns each of the twenty trecenas its own patron deities.",
+        loopNote: "260 days: the wheels are back where they began. 260 is the smallest number that both 13 and 20 divide.",
+        hint: "Day-sign names are in Nahuatl, the Aztec language; the Borgia's painters shared this calendar with the Aztecs."
+      },
+      study: { manifest: "https://digi.vatlib.it/iiif/MSS_Borg.mess.1/manifest.json", rights: "The Vatican Apostolic Library publishes the codex through its DigiVatLib service.", external: [ { label: "DigiVatLib — Borg.mess.1", href: "https://digi.vatlib.it/view/MSS_Borg.mess.1" } ] }
+    },
+    {
+      id: "v42", slug: "lindisfarne-gospels", status: "published", pending: true,
+      title: "The Lindisfarne Gospels", category: "manuscripts",
+      source: "vault/v42-lindisfarne-gospels.md",
+      held: "British Library, London (Cotton MS Nero D IV)",
+      dated: "c. 715–720 CE; Old English gloss added c. 950–970",
+      summary: "The four Gospels made on Holy Island in honour of St Cuthbert, probably by one man, Bishop Eadfrith. Two centuries later the priest Aldred wrote a word-by-word Old English translation between the lines, the oldest surviving English version of the Gospels, and a colophon naming the book's makers.",
+      artifact: {
+        type: "codex", theme: "insular", title: "Open the Gospel book",
+        sub: "Aldred's colophon, which names the four men behind the book, then its great pages.",
+        pages: [
+          { h: "The scribe", t: "Eadfrith, bishop of the church of Lindisfarne, first wrote this book for God and for Saint Cuthbert and for all the saints whose relics are on the island.", n: "Aldred's colophon, 10th century, in translation." },
+          { h: "The binder", t: "Æthelwald, bishop of the Lindisfarne islanders, pressed it on the outside and covered it, as he well knew how.", n: "The colophon, continued." },
+          { h: "The metalworker", t: "Billfrith the anchorite forged the ornaments on the outside and adorned it with gold and gems and gilded silver.", n: "The jewelled cover is lost." },
+          { h: "The glossator", t: "Aldred, an unworthy and most miserable priest, glossed it in English between the lines, with the help of God and Saint Cuthbert.", n: "The gloss is the oldest surviving English translation of the Gospels." },
+          { h: "The Chi-Rho page", t: "Christi autem generatio", big: true, n: "Matthew 1:18, the birth of Christ, as in the Book of Kells (V21)." },
+          { h: "Carpet pages", t: "Pages of pure ornament built on the cross, interlaced birds and beasts filling every space.", n: "Before each Gospel." }
+        ]
+      },
+      study: { manifest: "", rights: "The British Library publishes the complete manuscript in its digitised manuscripts.", external: [ { label: "British Library — the Lindisfarne Gospels", href: "https://www.bl.uk/collection-items/lindisfarne-gospels" } ] }
+    },
+    {
+      id: "v43", slug: "merneptah-stele", status: "published", pending: true,
+      title: "The Merneptah Stele", category: "texts",
+      source: "vault/v43-merneptah-stele.md",
+      held: "Egyptian Museum, Cairo (JE 31408)",
+      dated: "c. 1208 BCE",
+      summary: "A pharaoh's granite hymn of victory, found by Flinders Petrie in 1896. Of its 28 lines, one names Israel, about 3,200 years ago, the earliest certain mention of Israel anywhere. The hieroglyphs say something precise about what Israel was.",
+      artifact: {
+        type: "inscription", theme: "granite", title: "The Canaan lines",
+        sub: "The closing lines (27–28), in English. Touch each name to see how the scribe classified it.",
+        lang: "en", dir: "ltr",
+        words: [["Canaan is plundered with every evil;", "Canaan: written with the sign for a foreign land (𓈉)"], ["Ashkelon is carried off;", "Ashkelon: a city, with the foreign-land sign"], ["Gezer is seized;", "Gezer: a city, with the foreign-land sign"], ["Yenoam is made as though it never was;", "Yenoam: a city, with the foreign-land sign"], ["Israel is laid waste, his seed is not;", "Israel: written with the signs for a people (𓌙𓀀𓁐𓏥): throw-stick, man, woman and plural strokes, not the foreign-land sign"], ["Kharu has become a widow for Egypt.", "Kharu (Hurru): Syria-Palestine as a whole"]],
+        translation: "The only name in the list classed as a people rather than a land is Israel.",
+        hint: "Determinatives are silent signs that tell the reader what kind of thing a word is. Renderings follow standard translations."
+      },
+      study: { manifest: "", rights: "Photographs of the stele belong to the Egyptian Museum and their photographers.", external: [] }
+    },
+    {
+      id: "v44", slug: "pilate-stone", status: "published", pending: true,
+      title: "The Pilate Stone", category: "texts",
+      source: "vault/v44-pilate-stone.md",
+      held: "The Israel Museum, Jerusalem (a replica stands at Caesarea)",
+      dated: "c. 26–36 CE",
+      summary: "A broken limestone block from Caesarea, reused as a step in the Roman theatre, which names Pontius Pilate as prefect of Judaea. Found in 1961, it is the only inscription from Pilate's lifetime that names him, and it corrected the title later Roman writers gave him.",
+      artifact: {
+        type: "inscription", theme: "limestone", title: "The inscription",
+        sub: "The four surviving lines in Latin. Letters in brackets are restorations; show them to see how much is reconstructed.",
+        lang: "la", dir: "ltr",
+        words: [["[…]S TIBERIEVM", "a building named for the emperor Tiberius, a 'Tiberieum'; the first word is lost"], ["[…PO]NTIVS PILATVS", "Pontius Pilate"], ["[…PRAEF]ECTVS IVDA[EA]E", "prefect of Judaea: his title in his own time"], ["[…FE]CIT D[E…]", "made, dedicated… (the end is uncertain)"]],
+        translation: "…Tiberieum … Pontius Pilate … prefect of Judaea … made/dedicated…",
+        disputed: [0, 3], disputedLabel: "Show the uncertain restorations",
+        disputedNote: "The first and last lines are the least certain. One proposal restores the first as 'Nautis Tiberieum', a structure for sailors such as a lighthouse; others suggest a temple for the emperor cult."
+      },
+      study: { manifest: "", rights: "Photographs of the stone belong to the Israel Museum.", external: [] }
+    },
+    {
+      id: "v45", slug: "nebra-sky-disc", status: "published", pending: true,
+      title: "The Nebra Sky Disc", category: "relics",
+      source: "vault/v45-nebra-sky-disc.md",
+      held: "State Museum of Prehistory, Halle (Saale), Germany",
+      dated: "Buried c. 1600 BCE (Early Bronze Age); a later date was proposed in 2020 and rejected by most specialists",
+      summary: "A bronze disc 30 cm across with a gold sun or full moon, a crescent and 32 stars, among them a cluster read as the Pleiades. It was dug up by looters in 1999, recovered in a Swiss police sting in 2002, and altered at least four times in antiquity. It may be the oldest known concrete depiction of the sky.",
+      artifact: {
+        type: "skydisc", title: "The disc, stage by stage",
+        sub: "The disc was changed several times before it was buried. Step through the stages archaeologists have reconstructed.",
+        stages: [
+          { short: "Sky", t: "Stage 1: sun, moon and stars", s: "the first design", d: "A large gold disc (sun or full moon), a crescent moon and 32 gold stars. Seven stars form a tight group usually identified as the Pleiades." },
+          { short: "Horizons", t: "Stage 2: the horizon arcs", s: "added later", d: "Two gold arcs are added at the edges; one star is covered and two are moved. Each arc spans about 82°, close to the angle between the midsummer and midwinter sunsets on the horizon at this latitude." },
+          { short: "Boat", t: "Stage 3: the boat", s: "added later", d: "A curved gold band with fine strokes is added at the bottom, often read as a sun-boat, a motif known from Egypt and later Nordic art. The reading is an interpretation." },
+          { short: "Holes", t: "Stage 4: the rim pierced", s: "a change of use?", d: "About 39 small holes are punched around the edge, perhaps to fix the disc to something, such as a standard or a textile." },
+          { short: "Buried", t: "Stage 5: loss and burial", s: "c. 1600 BCE", d: "One horizon arc has gone. The disc is buried on the Mittelberg hilltop with two swords, two axes, a chisel and spiral bracelets." }
+        ],
+        hint: "Schematic: the numbers of stars, arcs and holes follow published descriptions, but the star positions here are not traced from the disc."
+      },
+      study: { manifest: "", rights: "The State Museum of Prehistory in Halle holds the disc and the rights to its photographs.", external: [ { label: "Austrian Academy of Sciences — The Nebra Sky Disc dates from the Early Bronze Age", href: "https://www.oeaw.ac.at/en/news/the-nebra-sky-disc-dates-from-the-early-bronze-age" } ] }
+    },
+    {
+      id: "v46", slug: "piprahwa-relics", status: "published", pending: true,
+      title: "The Piprahwa Relics", category: "relics",
+      source: "vault/v46-piprahwa-relics.md",
+      held: "Indian Museum, Kolkata; National Museum, New Delhi; gems returned to India in 2025",
+      dated: "Stupa deposit c. 3rd–2nd century BCE or earlier (debated)",
+      summary: "Bone fragments, a soapstone urn and some 1,800 gems dug from a stupa in 1898 by a British estate manager. The urn's inscription says the shrine holds relics of the Buddha, or of the Buddha's kinsmen, depending on how it is read. In 2025 India halted a Sotheby's sale of the gems.",
+      artifact: {
+        type: "inscription", theme: "soapstone", title: "The words around the lid",
+        sub: "The urn's inscription in Brahmi letters, given here in transliteration. Touch a word; the key word is the one scholars dispute.",
+        lang: "pra", dir: "ltr",
+        words: [["sukiti-bhatinaṃ", "of the Sukiti brothers (or 'of the brothers of the well-famed one')"], ["sa-bhaginikanaṃ", "with their sisters"], ["sa-puta-dalanaṃ", "with their sons and wives"], ["iyaṃ", "this"], ["salila-nidhane", "deposit of relics (literally 'bodily-remains deposit')"], ["budhasa", "of the Buddha"], ["bhagavate", "the Blessed One"], ["sakiyanaṃ", "of the Sakyas (the Buddha's clan)"]],
+        translation: "This deposit of relics of the Blessed One, the Buddha, is (the pious gift) of the Sakyas, the brothers of Sukiti, with their sisters, sons and wives.",
+        disputed: [5, 7], disputedLabel: "Show the disputed reading",
+        hint: "Transliteration follows the standard readings published since 1898.",
+        disputedNote: "Most read it as relics of the Buddha given by his Sakya kin. Others read 'of the Sakyas, kinsmen of the Buddha': relics of his relatives, not of the Buddha himself."
+      },
+      study: { manifest: "", rights: "The relics are held by Indian national museums; images belong to them.", external: [] }
+    },
+    {
+      id: "v47", slug: "kensington-runestone", status: "published", pending: true,
+      title: "The Kensington Runestone", category: "texts",
+      source: "vault/v47-kensington-runestone.md",
+      held: "Runestone Museum, Alexandria, Minnesota",
+      dated: "Claims 1362; found 1898; judged a modern creation by runologists",
+      summary: "A greywacke slab a Swedish immigrant farmer said he found under the roots of a tree in Minnesota in 1898, telling of Norse explorers killed in 1362. Scholars rejected it within months, and its runes and language point to the nineteenth century. It remains a beloved local symbol and a case study in how claims are tested.",
+      artifact: {
+        type: "timeline", theme: "forgery", title: "How the stone has been tested",
+        sub: "The stone's own words in translation (touch each phrase), then its history.",
+        lineHead: "The inscription, in the usual translation",
+        line: [["8 Goths and 22 Norwegians", "'Goths' for Swedes (Götar) and the mixed party are among the features critics found odd for 1362"], ["on an exploration journey from Vinland to the west.", "Vinland is known from the sagas, which were widely published by the 1800s"], ["We had camp by 2 skerries one day's journey north from this stone.", "The language mixes forms closer to 19th-century Swedish than to 14th-century Norse, runologists say"], ["We were out fishing one day. After we came home we found 10 men red with blood and dead.", ""], ["AVM, save from evil!", "AVM: Ave Maria, 'Hail Mary'"], ["Year 1362", "Written with pentadic number-signs; whether they fit a 14th-century date is argued over"]],
+        events: [
+          { y: 1898, t: "The find", d: "Olof Öhman reports finding the slab in the roots of an aspen on his farm near Kensington, Minnesota." },
+          { y: 1899, t: "First verdict", d: "Scholars in Minnesota and at the university in Christiania (Oslo) pronounce it a modern forgery." },
+          { y: 1907, t: "Holand's campaign", d: "Hjalmar Holand buys the stone and spends decades arguing for its authenticity." },
+          { y: "1948–49", t: "At the Smithsonian", d: "The stone is exhibited in Washington; scholarly opinion does not change." },
+          { y: 1967, t: "The Gran tape", d: "In a recorded interview, the children of Öhman's neighbour John Gran say their father made the stone with Öhman as a hoax. It is hearsay, and supporters dispute it." },
+          { y: "2000s", t: "The debate revived", d: "Supporters cite geology and a dotted rune form found in a medieval Gotland text; runologists maintain the language and runes are modern." }
+        ]
+      },
+      study: { manifest: "", rights: "The Runestone Museum in Alexandria displays the stone.", external: [ { label: "MNopedia — Kensington Runestone", href: "https://www.mnhs.org/mnopedia/search/index/thing/kensington-runestone" } ] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Aleppo Codex", category: "manuscripts", note: "The Masoretes' model Bible, its missing leaves, and how it left Aleppo." },
-    { title: "The Derveni Papyrus", category: "manuscripts", note: "Europe's oldest surviving book: a charred Orphic commentary from a funeral pyre." },
-    { title: "The Gospel of Judas (Codex Tchacos)", category: "manuscripts", note: "A lost Gnostic gospel, a looted codex, and a contested first translation." },
-    { title: "The Codex Borgia", category: "manuscripts", note: "A painted Mexican divinatory book of the 260-day count, on deerskin." },
-    { title: "The Lindisfarne Gospels", category: "manuscripts", note: "A Northumbrian Gospel book with the oldest English Gospels written between its lines." },
-    { title: "The Merneptah Stele", category: "texts", note: "A pharaoh's victory hymn with the earliest mention of Israel." },
-    { title: "The Pilate Stone", category: "texts", note: "A dedication at Caesarea naming Pontius Pilate as prefect of Judaea." },
-    { title: "The Nebra Sky Disc", category: "relics", note: "A bronze disc with sun, moon and Pleiades: looted, recovered in a police sting, and debated." },
-    { title: "The Piprahwa Relics", category: "relics", note: "A reliquary inscription naming the Buddha's kin, and the arguments over its authenticity." },
-    { title: "The Kensington Runestone", category: "texts", note: "A Minnesota runestone claimed as medieval Norse, and why runologists reject it." }
+    { title: "The Great Isaiah Scroll", category: "manuscripts", note: "The one complete biblical book among the Dead Sea Scrolls, and how closely it matches the medieval text." },
+    { title: "The Book of Enoch in Ge'ez", category: "manuscripts", note: "A book quoted in the New Testament, lost in the West and kept whole only in Ethiopia." },
+    { title: "The Vienna Dioscurides", category: "manuscripts", note: "A Byzantine herbal of 512, and the line between medicine and magic." },
+    { title: "The Codex Mendoza", category: "manuscripts", note: "An Aztec tribute record painted for a Spanish viceroy." },
+    { title: "The Ishtar Gate", category: "relics", note: "Babylon's blue-glazed gate of dragons and bulls, and the procession it framed." },
+    { title: "The Rosetta Stone", category: "texts", note: "One decree in three scripts, and the key to hieroglyphs." },
+    { title: "The Behistun Inscription", category: "texts", note: "Darius's cliff-face proclamation in three languages, and the decipherment of cuneiform." },
+    { title: "The Oracle Bones of Anyang", category: "texts", note: "Shang kings' questions to their ancestors, cracked in fire: China's oldest writing." },
+    { title: "The Phaistos Disc", category: "relics", note: "A clay disc stamped with unknown signs, and every failed decipherment." },
+    { title: "The Holy Mandylion", category: "relics", note: "The Image of Edessa: a face not made by hands, and its legend." }
   ]
 };

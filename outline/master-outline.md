@@ -182,4 +182,14 @@ registry: `docs/assets/vault-data.js`; build: `node tools/build-vault.js`.
 | V35 | The Cyrus Cylinder | `PUBLISHED — pending review` |
 | V36 | The Rök Runestone | `PUBLISHED — pending review` |
 | V37 | The Gundestrup Cauldron | `PUBLISHED — pending review` |
-| — | Batch 5 queue: Aleppo Codex · Derveni Papyrus · Gospel of Judas (Codex Tchacos) · Codex Borgia · Lindisfarne Gospels · Merneptah Stele · Pilate Stone · Nebra Sky Disc · Piprahwa Relics · Kensington Runestone | `not started` (queued) |
+| V38 | The Aleppo Codex | `PUBLISHED — pending review` |
+| V39 | The Derveni Papyrus | `PUBLISHED — pending review` |
+| V40 | The Gospel of Judas (Codex Tchacos) | `PUBLISHED — pending review` |
+| V41 | The Codex Borgia | `PUBLISHED — pending review` |
+| V42 | The Lindisfarne Gospels | `PUBLISHED — pending review` |
+| V43 | The Merneptah Stele | `PUBLISHED — pending review` |
+| V44 | The Pilate Stone | `PUBLISHED — pending review` |
+| V45 | The Nebra Sky Disc | `PUBLISHED — pending review` |
+| V46 | The Piprahwa Relics | `PUBLISHED — pending review` |
+| V47 | The Kensington Runestone | `PUBLISHED — pending review` |
+| — | Batch 6 queue: Great Isaiah Scroll · Book of Enoch in Ge'ez · Vienna Dioscurides · Codex Mendoza · Ishtar Gate · Rosetta Stone · Behistun Inscription · Oracle Bones of Anyang · Phaistos Disc · Holy Mandylion | `not started` (queued) |

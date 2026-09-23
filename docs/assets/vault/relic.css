@@ -601,3 +601,73 @@
 .ch-lab { font-family: var(--font-display); font-size: 12px; fill: var(--ink-dim); letter-spacing: .1em; }
 .s-vert .s-word { display: inline; line-height: inherit; padding: .1rem 0; }
 .cd-num.cd-miss { fill: #d8cfbd; font-size: 16px; }
+
+/* ---------------------------------------------------------------- scroll: left-to-right Greek papyrus, charred */
+.scroll[dir="ltr"] .scroll-sheet { direction: ltr; }
+.s-line[lang="grc"] { direction: ltr; text-align: left; line-height: 2.3rem; }
+.s-line[lang="grc"] .s-word { font-family: "Noto Serif", "GFS Didot", "Gentium Plus", Georgia, serif; font-size: 1.25rem; letter-spacing: .02em; }
+.scroll.theme-charred {
+  --roll-lo: #0d0805; --roll-mid: #3a2515; --roll-hi: #6b4a2a; --roll-edge-a: #5a3a20; --roll-edge-b: #150c06;
+  --aura: rgba(255,120,40,.26); --aura-2: rgba(200,60,20,.14); --mote: #ffb36a; --mote-glow: rgba(255,110,30,.85); --spill: rgba(255,170,90,.8);
+}
+.scroll.theme-charred .scroll-tie { display: none; }
+.scroll.theme-charred .scroll-sheet {
+  background-color: #2a1a0f;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.7), transparent 9%, transparent 91%, rgba(0,0,0,.7)),
+    radial-gradient(ellipse at 50% 50%, transparent 45%, rgba(0,0,0,.65) 100%),
+    radial-gradient(ellipse 6rem 4rem at 30% 70%, rgba(0,0,0,.45), transparent), radial-gradient(ellipse 4rem 7rem at 72% 30%, rgba(0,0,0,.4), transparent),
+    repeating-linear-gradient(90deg, rgba(120,80,40,.12) 0 2px, transparent 2px 7px),
+    repeating-linear-gradient(0deg, rgba(120,80,40,.08) 0 1px, transparent 1px 5px),
+    linear-gradient(180deg, #3b2616, #24160c);
+  background-size: auto, auto, 37rem 100%, 45rem 100%, auto, auto, auto;
+  background-repeat: no-repeat, no-repeat, repeat-x, repeat-x, repeat, repeat, no-repeat;
+  background-attachment: scroll, scroll, local, local, local, local, scroll;
+  box-shadow: inset 0 0 50px rgba(0,0,0,.8);
+}
+.scroll.theme-charred .s-col { background-image: none; color: #e6c9a2; }
+.scroll.theme-charred .s-head { color: #ffb36a; text-shadow: 0 0 8px rgba(255,120,40,.5); }
+.scroll.theme-charred .s-word { color: #f0d2a8; text-shadow: 0 0 6px rgba(255,120,40,.35); }
+.scroll.theme-charred .s-word:hover, .scroll.theme-charred .s-word:focus-visible { color: #fff1d6; text-shadow: 0 0 8px rgba(255,170,80,.95), 0 0 20px rgba(255,100,30,.7); }
+.scroll.theme-charred .s-tr, .scroll.theme-charred .s-note { color: #dcbf98; border-color: rgba(255,170,90,.3); }
+.scroll.theme-charred .s-seam { background: repeating-linear-gradient(180deg, rgba(255,150,70,.25) 0 7px, transparent 7px 14px); }
+
+/* ---------------------------------------------------------------- inscription: more surfaces and scripts */
+.ins-line[lang="la"], .ins-line[lang="pra"], .ins-line[lang="en"] { font-family: var(--font-body); font-size: 1.5rem; line-height: 1.9; }
+.ins-line[lang="la"] { font-family: "Cinzel", var(--font-display); letter-spacing: .12em; font-size: 1.45rem; }
+.ins-line[lang="pra"] { font-style: italic; }
+.ins-box.theme-soapstone { background: radial-gradient(ellipse at 40% 25%, rgba(255,255,255,.2), transparent 60%), linear-gradient(180deg, #b9b3a2, #8f8876); border-radius: 50% 50% 8px 8px / 16% 16% 8px 8px; padding-top: 2.8rem; }
+.ins-box.theme-soapstone .ins-word { color: #2f2a20; }
+
+/* ---------------------------------------------------------------- skydisc (Nebra) */
+.disc-stage { max-width: 24rem; margin: .4rem auto 0; padding: .8rem; border-radius: 50%; background: radial-gradient(circle, rgba(120,200,170,.16), transparent 70%); }
+.disc-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 22px rgba(0,0,0,.6)); }
+.disc-body { fill: url(#disc-g); stroke: #0f2a24; stroke-width: 2; }
+.disc-gold { fill: url(#gold-g); stroke: rgba(90,60,10,.5); stroke-width: .8; }
+.disc-pl { filter: drop-shadow(0 0 4px rgba(255,220,130,.9)); }
+.disc-hatch { stroke: #6b4a12; stroke-width: 1; }
+.disc-hole { fill: #0d211c; stroke: rgba(0,0,0,.4); }
+.disc-st { opacity: 0; transition: opacity .8s ease; }
+.disc-svg[data-stage="1"] .disc-s1, .disc-svg[data-stage="2"] .disc-s1, .disc-svg[data-stage="3"] .disc-s1, .disc-svg[data-stage="4"] .disc-s1, .disc-svg[data-stage="5"] .disc-s1,
+.disc-svg[data-stage="2"] .disc-s2, .disc-svg[data-stage="3"] .disc-s2, .disc-svg[data-stage="4"] .disc-s2, .disc-svg[data-stage="5"] .disc-s2,
+.disc-svg[data-stage="3"] .disc-s3, .disc-svg[data-stage="4"] .disc-s3, .disc-svg[data-stage="5"] .disc-s3,
+.disc-svg[data-stage="4"] .disc-s4, .disc-svg[data-stage="5"] .disc-s4 { opacity: 1; }
+.disc-arc-l.is-lost { fill: none; stroke: rgba(230,200,120,.5); stroke-dasharray: 4 4; }
+.disc-stages button { font-size: .88rem; }
+
+/* ---------------------------------------------------------------- daycount (260-day count) */
+.dc-stage { max-width: 25rem; margin: .4rem auto 0; padding: .6rem; border-radius: 50%; background: radial-gradient(circle, rgba(231,198,128,.14), transparent 70%); }
+.dc-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 12px 22px rgba(0,0,0,.55)); }
+.dc-outer, .dc-inner { transform-origin: 180px 180px; transform-box: view-box; transition: transform .7s cubic-bezier(.3,1.2,.5,1); }
+.dc-sign { fill: #efe2c4; stroke: #6b3a1a; stroke-width: 1; }
+.dc-sign:nth-child(4n+1) { fill: #e6c9a0; }
+.dc-sign-lab { font-family: var(--font-display); font-size: 10px; fill: #5a2410; letter-spacing: .04em; }
+.dc-num { fill: #b8452a; stroke: #4a1a0a; stroke-width: 1; }
+.dc-num-lab { font-family: var(--font-display); font-size: 14px; fill: #fff1d6; }
+.dc-core { fill: #1d140c; stroke: #c79a54; stroke-width: 2; }
+.dc-big { font-family: var(--font-display); font-size: 17px; fill: #f3dca8; }
+.dc-sub { font-size: 12px; fill: #d8c29a; font-style: italic; }
+.dc-cnt { font-size: 10px; fill: #a89070; letter-spacing: .1em; text-transform: uppercase; }
+.dc-pointer { fill: #e7c680; }
+@media (prefers-reduced-motion: reduce) { .dc-outer, .dc-inner, .disc-st { transition: none; } }
+.cx-t[lang="cop"] { font-family: "Noto Sans Coptic", "Antinoou", "Segoe UI Historic", serif; font-style: normal; font-size: 1.6rem; letter-spacing: .06em; }

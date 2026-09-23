@@ -164,7 +164,7 @@
     var trBtn = el("button", { type: "button", "aria-pressed": "false", text: "Show translation" });
     var toggle = el("button", { type: "button", text: "Unroll the scroll" });
     var ctrls = el("div", { class: "relic-ctrls" }, [toggle, trBtn]);
-    var scrollEl = el("div", { class: "scroll theme-" + ((item.artifact && item.artifact.theme) || "parchment"), "data-open": "false", dir: "rtl" }, [body]);
+    var scrollEl = el("div", { class: "scroll theme-" + ((item.artifact && item.artifact.theme) || "parchment"), "data-open": "false", dir: (item.artifact && item.artifact.dir) || "rtl" }, [body]);
     if (item.artifact && item.artifact.paleo) {
       var paleoB = el("button", { type: "button", "aria-pressed": "false", text: "Palaeo-Hebrew letters" });
       paleoB.addEventListener("click", function () {
@@ -610,7 +610,7 @@
       if (!p) return el("div", { class: "cx-page cx-" + side + " cx-blank" });
       return el("div", { class: "cx-page cx-" + side }, [
         p.h ? el("p", { class: "cx-h", text: p.h }) : null,
-        el("p", { class: "cx-t" + (p.big ? " cx-big" : "") + (p.u ? " cx-uncial" : ""), text: p.t }),
+        el("p", p.lang ? { class: "cx-t" + (p.big ? " cx-big" : "") + (p.u ? " cx-uncial" : ""), lang: p.lang, text: p.t } : { class: "cx-t" + (p.big ? " cx-big" : "") + (p.u ? " cx-uncial" : ""), text: p.t }),
         p.n ? el("p", { class: "cx-n", text: p.n }) : null,
         el("span", { class: "cx-folio", text: String(pages.indexOf(p) + 1) })
       ]);
@@ -655,7 +655,9 @@
   // standard runological transliteration to short-twig younger futhark (as on the Rök stone)
   var RUNE = { f: "ᚠ", u: "ᚢ", þ: "ᚦ", "ą": "ᚭ", o: "ᚭ", r: "ᚱ", k: "ᚴ", h: "ᚽ", n: "ᚿ", i: "ᛁ", a: "ᛆ", s: "ᛌ", t: "ᛐ", b: "ᛓ", m: "ᛙ", l: "ᛚ", "ʀ": "ᛧ", R: "ᛧ" };
   function toRunes(str) { return str.replace(/[fuþąorkhniastbmlʀR]/g, function (ch) { return RUNE[ch]; }); }
-  var ALT = { rasm: toRasm, runes: toRunes };
+  // pointed Hebrew to bare consonants: remove the Masoretes' vowel and accent signs (keep maqaf and sof pasuq)
+  function toConsonants(str) { return str.replace(/[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]/g, ""); }
+  var ALT = { rasm: toRasm, runes: toRunes, consonants: toConsonants };
 
   function inscription(root, item) {
     var A = item.artifact;
@@ -958,6 +960,101 @@
     zones[0].classList.add("on"); setPanel(pn, A.spells[0].t, A.spells[0].s, A.spells[0].d);
   }
 
+  // ---------------------------------------------------------------- skydisc (Nebra): the disc as it changed, stage by stage
+  function skydisc(root, item) {
+    var A = item.artifact, C = 160, R = 150, pn = panel();
+    var svg = sv("svg", { viewBox: "0 0 320 320", class: "disc-svg", role: "img", "aria-label": "Schematic of the Nebra sky disc" });
+    svg.appendChild(sv("defs", {}, [
+      sv("radialGradient", { id: "disc-g", cx: "45%", cy: "40%", r: "65%" }, [sv("stop", { offset: "0%", "stop-color": "#3f7f6e" }), sv("stop", { offset: "70%", "stop-color": "#23574b" }), sv("stop", { offset: "100%", "stop-color": "#163a32" })]),
+      sv("linearGradient", { id: "gold-g", x1: "0", y1: "0", x2: "1", y2: "1" }, [sv("stop", { offset: "0%", "stop-color": "#fbe7a6" }), sv("stop", { offset: "55%", "stop-color": "#d9a93e" }), sv("stop", { offset: "100%", "stop-color": "#9a6b1a" })])
+    ]));
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: R, class: "disc-body" }));
+    // stars: fixed, documented count of 32; positions are schematic, with the Pleiades as a tight group of seven
+    var rnd = seeded(1600), stars = [], pleiades = [[196, 96], [210, 88], [206, 104], [220, 100], [214, 114], [228, 90], [200, 118]];
+    pleiades.forEach(function (p) { stars.push({ x: p[0], y: p[1], pl: true }); });
+    while (stars.length < 32) {
+      var x = 40 + rnd() * 240, y = 40 + rnd() * 240, dx = x - C, dy = y - C;
+      if (dx * dx + dy * dy > 118 * 118) continue;
+      if (Math.hypot(x - 108, y - 110) < 40 || Math.hypot(x - 208, y - 190) < 38 || Math.hypot(x - 212, y - 102) < 26) continue;
+      if (stars.some(function (s) { return Math.hypot(s.x - x, s.y - y) < 22; })) continue;
+      stars.push({ x: x, y: y });
+    }
+    var g1 = sv("g", { class: "disc-st disc-s1" });
+    stars.forEach(function (s) { g1.appendChild(sv("circle", { cx: s.x.toFixed(1), cy: s.y.toFixed(1), r: 6.5, class: "disc-gold" + (s.pl ? " disc-pl" : "") })); });
+    g1.appendChild(sv("circle", { cx: 108, cy: 110, r: 32, class: "disc-gold" }));
+    g1.appendChild(sv("path", { d: "M188 160 A40 40 0 1 0 228 222 A31 31 0 1 1 188 160 Z", class: "disc-gold" }));
+    var g2 = sv("g", { class: "disc-st disc-s2" });
+    function rim(a0, a1) { return arcPath(C, C, R - 13, R - 3, a0, a1); }
+    g2.appendChild(sv("path", { d: rim(49, 131), class: "disc-gold disc-arc-r" }));
+    var leftArc = sv("path", { d: rim(229, 311), class: "disc-gold disc-arc-l" });
+    g2.appendChild(leftArc);
+    var g3 = sv("g", { class: "disc-st disc-s3" });
+    g3.appendChild(sv("path", { d: "M112 258 Q160 290 208 258 L204 252 Q160 280 116 252 Z", class: "disc-gold disc-boat" }));
+    for (var h = 0; h < 11; h++) { var xx = 120 + h * 8; g3.appendChild(sv("line", { x1: xx, y1: 255 + Math.abs(xx - 160) * -0.05 + 6, x2: xx + 3, y2: 262 + Math.abs(xx - 160) * -0.05 + 6, class: "disc-hatch" })); }
+    var g4 = sv("g", { class: "disc-st disc-s4" });
+    for (var k = 0; k < 39; k++) { var t = (k / 39) * 2 * Math.PI; g4.appendChild(sv("circle", { cx: (C + (R - 5) * Math.cos(t)).toFixed(1), cy: (C + (R - 5) * Math.sin(t)).toFixed(1), r: 2.4, class: "disc-hole" })); }
+    [g1, g2, g3, g4].forEach(function (g) { svg.appendChild(g); });
+    var stageBtns = el("div", { class: "relic-ctrls disc-stages", role: "group", "aria-label": "Stages of the disc" });
+    function setStage(n) {
+      svg.setAttribute("data-stage", n);
+      leftArc.classList.toggle("is-lost", n >= 5);
+      Array.prototype.forEach.call(stageBtns.children, function (b, i) { b.setAttribute("aria-pressed", String(i + 1 === n)); });
+      var s = A.stages[n - 1]; setPanel(pn, s.t, s.s, s.d);
+    }
+    A.stages.forEach(function (s, i) {
+      var b = el("button", { type: "button", "aria-pressed": "false", text: (i + 1) + ". " + s.short });
+      b.addEventListener("click", function () { setStage(i + 1); });
+      stageBtns.appendChild(b);
+    });
+    root.appendChild(el("div", { class: "relic-live" }, [stageBtns, el("div", { class: "disc-stage" }, [svg]), pn,
+      el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    setStage(1);
+  }
+
+  // ---------------------------------------------------------------- daycount (the 260-day count): 13 numbers turning against 20 day-signs
+  function daycount(root, item) {
+    var A = item.artifact, signs = A.signs, day = 0, pn = panel();
+    var svg = sv("svg", { viewBox: "0 0 360 360", class: "dc-svg", role: "img", "aria-label": "The 260-day count: a wheel of 13 numbers turning against a wheel of 20 day-signs" });
+    var C = 180, outer = sv("g", { class: "dc-outer" }), inner = sv("g", { class: "dc-inner" });
+    signs.forEach(function (s, i) {
+      var a0 = i * 18, a1 = a0 + 18;
+      outer.appendChild(sv("path", { d: arcPath(C, C, 118, 172, a0 + .6, a1 - .6), class: "dc-sign" }));
+      var t = ((a0 + a1) / 2 - 90) * Math.PI / 180;
+      var tx = sv("text", { x: (C + 145 * Math.cos(t)).toFixed(1), y: (C + 145 * Math.sin(t) + 4).toFixed(1), class: "dc-sign-lab", "text-anchor": "middle", text: s[0].slice(0, 4) });
+      outer.appendChild(tx);
+    });
+    for (var n = 0; n < 13; n++) {
+      var a0 = n * 360 / 13, a1 = a0 + 360 / 13, t2 = ((a0 + a1) / 2 - 90) * Math.PI / 180;
+      inner.appendChild(sv("path", { d: arcPath(C, C, 70, 112, a0 + .8, a1 - .8), class: "dc-num" }));
+      inner.appendChild(sv("text", { x: (C + 91 * Math.cos(t2)).toFixed(1), y: (C + 91 * Math.sin(t2) + 5).toFixed(1), class: "dc-num-lab", "text-anchor": "middle", text: n + 1 }));
+    }
+    svg.appendChild(outer); svg.appendChild(inner);
+    svg.appendChild(sv("path", { d: "M180 2 L172 16 L188 16 Z", class: "dc-pointer" }));
+    var big = sv("text", { x: C, y: C - 4, class: "dc-big", "text-anchor": "middle", text: "" });
+    var sub = sv("text", { x: C, y: C + 22, class: "dc-sub", "text-anchor": "middle", text: "" });
+    var cnt = sv("text", { x: C, y: C + 42, class: "dc-cnt", "text-anchor": "middle", text: "" });
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 64, class: "dc-core" })); svg.appendChild(big); svg.appendChild(sub); svg.appendChild(cnt);
+    function show() {
+      var num = day % 13, sg = day % 20;
+      inner.style.transform = "rotate(" + (-(num + .5) * 360 / 13) + "deg)";
+      outer.style.transform = "rotate(" + (-(sg + .5) * 18) + "deg)";
+      var s = signs[sg];
+      big.textContent = (num + 1) + " " + s[0]; sub.textContent = s[1]; cnt.textContent = "day " + (day + 1) + " of 260";
+      setPanel(pn, (num + 1) + " " + s[0], s[1], day === 0 ? A.startNote : (day % 260 === 0 ? A.loopNote : (num === 0 ? A.trecenaNote : A.dayNote)));
+    }
+    function step(k) { day = ((day + k) % 260 + 260) % 260; show(); }
+    var ctr = el("div", { class: "relic-ctrls" }, [
+      el("button", { type: "button", text: "◀ Previous day", onclick: function () { step(-1); } }),
+      el("button", { type: "button", text: "Next day ▶", onclick: function () { step(1); } }),
+      el("button", { type: "button", text: "Jump 20 days", onclick: function () { step(20); } }),
+      el("button", { type: "button", text: "Back to 1 " + signs[0][0], onclick: function () { day = 0; show(); } })
+    ]);
+    root.appendChild(el("div", { class: "relic-live" }, [ctr, el("div", { class: "dc-stage" }, [svg]), pn, el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    show();
+  }
+
   function init() {
     var V = window.VAULT || { items: [] };
     Array.prototype.forEach.call(document.querySelectorAll("[data-vault-relic]"), function (root) {
@@ -979,6 +1076,8 @@
         else if (kind === "palimpsest") palimpsest(root, item);
         else if (kind === "cauldron") cauldron(root, item);
         else if (kind === "chamber") chamber(root, item);
+        else if (kind === "skydisc") skydisc(root, item);
+        else if (kind === "daycount") daycount(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }

@@ -195,7 +195,7 @@ function head(title, desc, url, rel, type, extra) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
   <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=3" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=13" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=14" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -249,7 +249,7 @@ function itemPage(item) {
     sectionsHtml = sectionsHtml.replace(/<blockquote class="vault-text">[\s\S]*?<\/blockquote>/, (bq) =>
       `<section class="relic relic-tablet" data-vault-relic="${esc(item.id)}" data-relic-kind="tablet">\n` +
       `<h3 class="relic-title">${esc(art.title)}</h3><p class="relic-sub">${esc(art.sub)}</p>\n${bq}\n</section>`);
-  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber"].indexOf(art.type) !== -1) {
+  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber", "skydisc", "daycount"].indexOf(art.type) !== -1) {
     // static fallback: the object's own words (if any) and its documented stations
     const bits = [];
     if (art.declarations) bits.push("<ul>" + art.declarations.map((d) => `<li>${esc(d)}</li>`).join("") + "</ul>");
@@ -261,6 +261,8 @@ function itemPage(item) {
     if (art.inscription) bits.push(`<p><strong>${esc(art.inscription)}</strong></p>`);
     if (art.translation) bits.push(`<p><em>${esc(art.translation)}</em></p>`);
     if (art.phases) bits.push("<ul>" + art.phases.map((x) => `<li><strong>${esc(x.name)}</strong> (${esc(x.days)} days): ${esc(x.d)}</li>`).join("") + "</ul>");
+    if (art.signs) bits.push("<p>" + art.signs.map((x) => `${esc(x[0])} (${esc(x[1])})`).join(" · ") + "</p>");
+    if (art.stages) bits.push("<ol>" + art.stages.map((x) => `<li><strong>${esc(x.t)}</strong>: ${esc(x.d)}</li>`).join("") + "</ol>");
     if (art.layers) bits.push(art.layers.map((x) => `<p><strong>${esc(x.t)}</strong> (${esc(x.s)}): ${esc(x.d)}</p>`).join(""));
     const plates = art.base ? [art.base].concat(art.inner || [], (art.outer || []).filter((x) => !x.missing)) : [];
     const list = (art.events || art.stops || art.parts || art.spells || []).concat(art.cards || [], plates).map((x) =>
@@ -315,9 +317,9 @@ ${item.pending ? `      <div class="pending-banner"><strong>Recently added &midd
 ${footer("../")}
 </div>
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
-<script src="../assets/vault-data.js?v=6" defer></script>
+<script src="../assets/vault-data.js?v=7" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
-<script src="../assets/vault/relic.js?v=9" defer></script>
+<script src="../assets/vault/relic.js?v=10" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>
