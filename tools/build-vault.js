@@ -39,8 +39,9 @@ const clip = (s, n) => {
 function inline(s) {
   s = esc(s);
   s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${u}">${t}</a>`);
-  s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-  s = s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  // bold first (allowing *italic* nested inside, e.g. **a *b***), then italic
+  s = s.replace(/\*\*(.+?)\*\*(?!\*)/g, "<strong>$1</strong>");
+  s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   s = s.replace(/(^|[\s(])(https?:\/\/[^\s<)]+[^\s<).,;])/g, (m, pre, u) => `${pre}<a href="${u}" rel="noopener">${u}</a>`);
   return s;
 }

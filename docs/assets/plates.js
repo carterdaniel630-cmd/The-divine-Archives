@@ -988,7 +988,7 @@
           '<path d="M96 112 L100 122 L104 112 Z" stroke-width="0.9" opacity="0.8"/></g>' +
       '</svg>',
       "Interpretive illustration",
-      "The Aztec Sun Stone (Piedra del Sol) read as a cosmogram: concentric calendar rings, the day-sign ticks, the *nahui-ollin* &ldquo;four-motion&rdquo; glyph of the Fifth Sun, and the face of Tonatiuh with its knife-tongue at the center. An original geometric rendering, not a copy of the monument."
+      "The Aztec Sun Stone (Piedra del Sol) read as a cosmogram: concentric calendar rings, the day-sign ticks, the <em>nahui-ollin</em> &ldquo;four-motion&rdquo; glyph of the Fifth Sun, and the face of Tonatiuh with its knife-tongue at the center. An original geometric rendering, not a copy of the monument."
     ),
 
     /* Ch44 — The Inca: Inti, the sun, over the stepped terraces of the Andes */

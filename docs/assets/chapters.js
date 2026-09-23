@@ -8,7 +8,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch01 */
   ch01: { html: `
-    <p class="lead"><em>Comparative theme · cross-era · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A clerk undresses in the British Museum</h2>
 
@@ -100,7 +99,6 @@ window.CHAPTERS = {
 
     <p><strong>The ark as ordered space.</strong> The vessel itself is symbolic. Genesis gives Noah's ark exact proportions and three decks; the Babylonian and Sumerian arks are described with equal care. A sealed, measured box carrying the seed of all life through the chaos-waters is a small, ordered cosmos — a floating image of the created world riding out its own undoing. Even here the traditions differ tellingly: the Mesopotamian ark is often a cube, the biblical one an oblong barge, each a different culture's idea of the right shape for a world in miniature.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -134,7 +132,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -178,7 +175,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch02 */
   ch02: { html: `
-    <p class="lead"><em>Tradition chapter · Era 02 — Bronze Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A heart on the scales</h2>
 
@@ -284,7 +280,6 @@ window.CHAPTERS = {
 
     <p><strong>Architecture as theology.</strong> Finally, the Egyptian temple was a symbol built at scale: its plan a model of the cosmos, its floor rising and its ceiling lowering and darkening as one moved inward toward the hidden sanctuary of the god, its columns carved as marsh plants so the whole building re-enacted the first mound of creation emerging from the waters. To walk into a temple was to walk into the Egyptian cosmos in miniature.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -314,7 +309,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -351,65 +345,64 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch03 */
   ch03: { html: `
-    <p class="lead"><em>Tradition chapter · Era 02 — Bronze Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>The pit of the golden dead</h2>
 
-    <p>In the winter of 1928, at the ruins of Ur in southern Iraq, Leonard Woolley&amp;rsquo;s workmen cleared the earth from a burial unlike anything the modern world had seen. At the bottom of a great sloping pit lay the bodies of dozens of people &amp;mdash; in one grave, seventy-four of them, most of them women &amp;mdash; laid out in neat rows, dressed in their finest, gold ribbons in their hair and cups of copper and silver beside their hands. There were oxen still yoked to wagons, soldiers with their spears, musicians with their lyres. They had gone down into the pit alive, arranged themselves, and died there, all at once, in attendance on a single important corpse. Woolley called these graves the &amp;ldquo;death pits,&amp;rdquo; and the richest of the tomb chambers belonged to a woman whose cylinder seal named her Puabi.</p>
+    <p>In the winter of 1928, at the ruins of Ur in southern Iraq, Leonard Woolley&rsquo;s workmen cleared the earth from a burial unlike anything the modern world had seen. At the bottom of a great sloping pit lay the bodies of dozens of people &mdash; in one grave, seventy-four of them, most of them women &mdash; laid out in neat rows, dressed in their finest, gold ribbons in their hair and cups of copper and silver beside their hands. There were oxen still yoked to wagons, soldiers with their spears, musicians with their lyres. They had gone down into the pit alive, arranged themselves, and died there, all at once, in attendance on a single important corpse. Woolley called these graves the &ldquo;death pits,&rdquo; and the richest of the tomb chambers belonged to a woman whose cylinder seal named her Puabi.</p>
 
-    <p>Woolley, a man of his time, imagined the scene as serene: the retainers filing down in their jewelry, drinking a cup of poison, lying down to sleep and follow their mistress into the next world. It made a beautiful and terrible story. But when the skulls that survived were re-examined a lifetime later, with CT scanners and X-ray fluorescence, the beautiful version came apart. Several showed the marks of blunt-force trauma to the head, and traces suggesting the bodies had been heated and treated to preserve them for the days of the funeral. The attendants of Ur, it now seems, were more likely killed than lulled &amp;mdash; and then kept, like grave goods, until the ceremony was ready.</p>
+    <p>Woolley, a man of his time, imagined the scene as serene: the retainers filing down in their jewelry, drinking a cup of poison, lying down to sleep and follow their mistress into the next world. It made a beautiful and terrible story. But when the skulls that survived were re-examined a lifetime later, with CT scanners and X-ray fluorescence, the beautiful version came apart. Several showed the marks of blunt-force trauma to the head, and traces suggesting the bodies had been heated and treated to preserve them for the days of the funeral. The attendants of Ur, it now seems, were more likely killed than lulled &mdash; and then kept, like grave goods, until the ceremony was ready.</p>
 
-    <p>That single find opens onto everything this chapter is about: a civilization that invented writing and the city, that gave the world its first literature and its first law codes, and that lived under gods it believed had made human beings for one purpose &amp;mdash; to work, and to serve. Mesopotamia is where the recorded religious imagination begins. It is also, as the death pit warns, a place we are still learning to read honestly.</p>
+    <p>That single find opens onto everything this chapter is about: a civilization that invented writing and the city, that gave the world its first literature and its first law codes, and that lived under gods it believed had made human beings for one purpose &mdash; to work, and to serve. Mesopotamia is where the recorded religious imagination begins. It is also, as the death pit warns, a place we are still learning to read honestly.</p>
 
-    <h2>The textual record: the world&amp;rsquo;s first literature</h2>
+    <h2>The textual record: the world&rsquo;s first literature</h2>
 
-    <p>Around 3300 BCE, in the temple-city of Uruk, someone pressed the first true writing into wet clay &amp;mdash; not to sing of gods, but to count. The earliest cuneiform tablets are accounts: measures of barley, heads of livestock, rations of beer. Only over centuries did the script of wedge-shaped marks grow supple enough to hold poetry, prayer, and law. When it did, Mesopotamia produced the oldest literature we possess.</p>
+    <p>Around 3300 BCE, in the temple-city of Uruk, someone pressed the first true writing into wet clay &mdash; not to sing of gods, but to count. The earliest cuneiform tablets are accounts: measures of barley, heads of livestock, rations of beer. Only over centuries did the script of wedge-shaped marks grow supple enough to hold poetry, prayer, and law. When it did, Mesopotamia produced the oldest literature we possess.</p>
 
-    <p>That literature survived because of how it was made and taught. Scribes trained for years in the &lt;em&gt;edubba&lt;/em&gt;, the &amp;ldquo;tablet house,&amp;rdquo; copying and recopying by hand: sign-lists, proverbs, hymns, and the great narrative poems. Because a clay tablet, once baked or simply buried, can last five thousand years, we can still read what they read &amp;mdash; the &lt;em&gt;Epic of Gilgamesh&lt;/em&gt;; the &lt;em&gt;Descent of Inanna&lt;/em&gt; into the underworld; the flood poem &lt;em&gt;Atrahasis&lt;/em&gt;; and the Babylonian creation epic, &lt;em&gt;Enuma Elish&lt;/em&gt;. Alongside the myths sat something just as characteristic: endless scholarly compilations of omens, medical diagnoses, star charts, and word-lists. The Mesopotamian scribe was priest, scientist, and archivist at once, and he believed the universe was a text to be read as surely as a tablet.</p>
+    <p>That literature survived because of how it was made and taught. Scribes trained for years in the <em>edubba</em>, the &ldquo;tablet house,&rdquo; copying and recopying by hand: sign-lists, proverbs, hymns, and the great narrative poems. Because a clay tablet, once baked or simply buried, can last five thousand years, we can still read what they read &mdash; the <em>Epic of Gilgamesh</em>; the <em>Descent of Inanna</em> into the underworld; the flood poem <em>Atrahasis</em>; and the Babylonian creation epic, <em>Enuma Elish</em>. Alongside the myths sat something just as characteristic: endless scholarly compilations of omens, medical diagnoses, star charts, and word-lists. The Mesopotamian scribe was priest, scientist, and archivist at once, and he believed the universe was a text to be read as surely as a tablet.</p>
 
     <h2>The first author has a name</h2>
 
-    <p>The scribal world was not wholly anonymous. Around 2300 BCE the Akkadian king Sargon appointed his daughter <strong>Enheduanna</strong> high priestess of the moon-god Nanna at Ur, and she became the first author in human history known by name &amp;mdash; the first person anywhere to sign her work and to write in the first person about her own relationship to the divine. Her hymns, above all the &lt;em&gt;Exaltation of Inanna&lt;/em&gt; (&lt;em&gt;Nin-me-šara&lt;/em&gt;), are addressed to the goddess Inanna and are strikingly personal: Enheduanna names herself, describes being driven from her temple office by a usurper named Lugalanne, and pleads with Inanna to restore her. Tradition also credits her with a second great Inanna hymn and the cycle of &lt;em&gt;Sumerian Temple Hymns&lt;/em&gt;. That the oldest named author in the world is a woman, a priestess, and a theologian writing about her own faith is among the more remarkable facts the tablets preserve &amp;mdash; though it is worth flagging that some scholars question how much of the surviving corpus she personally composed, since every copy we possess was written down centuries after her lifetime.</p>
+    <p>The scribal world was not wholly anonymous. Around 2300 BCE the Akkadian king Sargon appointed his daughter <strong>Enheduanna</strong> high priestess of the moon-god Nanna at Ur, and she became the first author in human history known by name &mdash; the first person anywhere to sign her work and to write in the first person about her own relationship to the divine. Her hymns, above all the <em>Exaltation of Inanna</em> (<em>Nin-me-šara</em>), are addressed to the goddess Inanna and are strikingly personal: Enheduanna names herself, describes being driven from her temple office by a usurper named Lugalanne, and pleads with Inanna to restore her. Tradition also credits her with a second great Inanna hymn and the cycle of <em>Sumerian Temple Hymns</em>. That the oldest named author in the world is a woman, a priestess, and a theologian writing about her own faith is among the more remarkable facts the tablets preserve &mdash; though it is worth flagging that some scholars question how much of the surviving corpus she personally composed, since every copy we possess was written down centuries after her lifetime.</p>
 
     <h2>Cosmology and the gods</h2>
 
-    <p>The Mesopotamian universe was crowded &amp;mdash; later god-lists name well over three thousand deities &amp;mdash; but a handful ran the cosmos. <strong>An</strong> (Akkadian Anu) was the remote sky-father. <strong>Enlil</strong>, lord of wind and storm, held the Tablet of Destinies and ruled as king of the gods from his temple at Nippur. <strong>Enki</strong> (Akkadian Ea), god of the sweet underground waters and of wisdom, was the clever one, the friend of humanity who again and again warns a favored man of the gods&amp;rsquo; darker plans. <strong>Inanna</strong> (Akkadian Ishtar), goddess of sexual love and of war, was the most electric figure in the pantheon &amp;mdash; contradictory, ungovernable, worshipped from Uruk to Nineveh. The moon-god <strong>Nanna</strong> (Sin) presided over Ur; the sun-god <strong>Utu</strong> (Shamash) saw everything and so became the god of justice.</p>
+    <p>The Mesopotamian universe was crowded &mdash; later god-lists name well over three thousand deities &mdash; but a handful ran the cosmos. <strong>An</strong> (Akkadian Anu) was the remote sky-father. <strong>Enlil</strong>, lord of wind and storm, held the Tablet of Destinies and ruled as king of the gods from his temple at Nippur. <strong>Enki</strong> (Akkadian Ea), god of the sweet underground waters and of wisdom, was the clever one, the friend of humanity who again and again warns a favored man of the gods&rsquo; darker plans. <strong>Inanna</strong> (Akkadian Ishtar), goddess of sexual love and of war, was the most electric figure in the pantheon &mdash; contradictory, ungovernable, worshipped from Uruk to Nineveh. The moon-god <strong>Nanna</strong> (Sin) presided over Ur; the sun-god <strong>Utu</strong> (Shamash) saw everything and so became the god of justice.</p>
 
-    <p>The fullest creation story we have is Babylon&amp;rsquo;s &lt;em&gt;Enuma Elish&lt;/em&gt;. In it the world begins as a mingling of waters: Apsu, the fresh, and <strong>Tiamat</strong>, the salt-sea mother of chaos. The younger gods grow noisy and troublesome (that word again &amp;mdash; in Mesopotamia the gods are forever losing patience with noise), and when Tiamat raises an army of monsters against them, the young champion <strong>Marduk</strong> agrees to fight on the condition that he be made king of the gods. He slays Tiamat, splits her body like a shellfish to make the sky and the earth, sets the stars in their courses, and then &amp;mdash; the crucial part &amp;mdash; fashions humankind from the blood of a slain rebel god, expressly so that human beings can do the gods&amp;rsquo; labor and let the gods rest. This is the Mesopotamian anthropology in a sentence: people were made to work so that heaven would not have to. It is a long way from being made in a god&amp;rsquo;s image.</p>
+    <p>The fullest creation story we have is Babylon&rsquo;s <em>Enuma Elish</em>. In it the world begins as a mingling of waters: Apsu, the fresh, and <strong>Tiamat</strong>, the salt-sea mother of chaos. The younger gods grow noisy and troublesome (that word again &mdash; in Mesopotamia the gods are forever losing patience with noise), and when Tiamat raises an army of monsters against them, the young champion <strong>Marduk</strong> agrees to fight on the condition that he be made king of the gods. He slays Tiamat, splits her body like a shellfish to make the sky and the earth, sets the stars in their courses, and then &mdash; the crucial part &mdash; fashions humankind from the blood of a slain rebel god, expressly so that human beings can do the gods&rsquo; labor and let the gods rest. This is the Mesopotamian anthropology in a sentence: people were made to work so that heaven would not have to. It is a long way from being made in a god&rsquo;s image.</p>
 
-    <p>The &lt;em&gt;Enuma Elish&lt;/em&gt; was not only a story. It was recited each spring at the <strong>Akitu</strong>, the Babylonian New Year festival, where its telling re-enthroned Marduk, renewed the cosmos against chaos, and reaffirmed that Babylon &amp;mdash; Marduk&amp;rsquo;s city &amp;mdash; stood at the center of the world. Myth here did political work.</p>
+    <p>The <em>Enuma Elish</em> was not only a story. It was recited each spring at the <strong>Akitu</strong>, the Babylonian New Year festival, where its telling re-enthroned Marduk, renewed the cosmos against chaos, and reaffirmed that Babylon &mdash; Marduk&rsquo;s city &mdash; stood at the center of the world. Myth here did political work.</p>
 
     <h2>Law and the moral order</h2>
 
-    <p>In 1901, French archaeologists at Susa unearthed a black stone pillar more than two meters tall, carved top to bottom with cuneiform. At its head, in relief, the sun-god Shamash &amp;mdash; god of justice &amp;mdash; hands the seated king <strong>Hammurabi</strong> of Babylon the rod and ring of authority. Below run some 282 rulings: if a man does this, that shall be done to him. It is the famous &amp;ldquo;Code of Hammurabi,&amp;rdquo; from about 1754 BCE, and it contains the ancestor of a phrase everyone knows &amp;mdash; an eye for an eye, a bone for a bone, the principle of exact retaliation (&lt;em&gt;lex talionis&lt;/em&gt;), scaled carefully by the rank of the people involved.</p>
+    <p>In 1901, French archaeologists at Susa unearthed a black stone pillar more than two meters tall, carved top to bottom with cuneiform. At its head, in relief, the sun-god Shamash &mdash; god of justice &mdash; hands the seated king <strong>Hammurabi</strong> of Babylon the rod and ring of authority. Below run some 282 rulings: if a man does this, that shall be done to him. It is the famous &ldquo;Code of Hammurabi,&rdquo; from about 1754 BCE, and it contains the ancestor of a phrase everyone knows &mdash; an eye for an eye, a bone for a bone, the principle of exact retaliation (<em>lex talionis</em>), scaled carefully by the rank of the people involved.</p>
 
-    <p>But here honesty requires a correction of the textbook picture. Recent scholarship &amp;mdash; Marc Van De Mieroop and Norman Yoffee among others &amp;mdash; increasingly doubts that this was a &amp;ldquo;law code&amp;rdquo; in any working sense. Actual Babylonian court records almost never cite it; judges did not seem to rule by it. The stele reads better as a <strong>royal monument</strong> &amp;mdash; a king&amp;rsquo;s advertisement of his own justice, addressed as much to the gods and to posterity as to any courtroom. Its epilogue invites the wronged man to come, read the king&amp;rsquo;s just words, and be comforted. Whether it was living statute or ideological display is genuinely debated; what is not in doubt is the theology behind it. Justice descended from the gods, through the king, to the land. To be a good king was to &lt;em&gt;uphold&lt;/em&gt; that order &amp;mdash; the same conviction, in a different key, that ran through Egypt&amp;rsquo;s Ma&amp;rsquo;at next door.</p>
+    <p>But here honesty requires a correction of the textbook picture. Recent scholarship &mdash; Marc Van De Mieroop and Norman Yoffee among others &mdash; increasingly doubts that this was a &ldquo;law code&rdquo; in any working sense. Actual Babylonian court records almost never cite it; judges did not seem to rule by it. The stele reads better as a <strong>royal monument</strong> &mdash; a king&rsquo;s advertisement of his own justice, addressed as much to the gods and to posterity as to any courtroom. Its epilogue invites the wronged man to come, read the king&rsquo;s just words, and be comforted. Whether it was living statute or ideological display is genuinely debated; what is not in doubt is the theology behind it. Justice descended from the gods, through the king, to the land. To be a good king was to <em>uphold</em> that order &mdash; the same conviction, in a different key, that ran through Egypt&rsquo;s Ma&rsquo;at next door.</p>
 
     <h2>Ritual, the temple, and the reading of signs</h2>
 
-    <p>At the heart of every Mesopotamian city stood the house of its god &amp;mdash; often crowned by a <strong>ziggurat</strong>, the great stepped platform-tower whose most famous survivor is the ziggurat of Ur, raised to the moon-god Nanna. The temple was not a congregation&amp;rsquo;s meeting-hall; it was, quite literally, the god&amp;rsquo;s household. The cult statue &lt;em&gt;was&lt;/em&gt; the god&amp;rsquo;s presence, and the priests&amp;rsquo; daily task was domestic: to wash it, clothe it, set meals before it twice a day, and put it to bed. A god properly fed and housed kept the city safe; a god neglected, or whose statue was carried off in war, was a catastrophe.</p>
+    <p>At the heart of every Mesopotamian city stood the house of its god &mdash; often crowned by a <strong>ziggurat</strong>, the great stepped platform-tower whose most famous survivor is the ziggurat of Ur, raised to the moon-god Nanna. The temple was not a congregation&rsquo;s meeting-hall; it was, quite literally, the god&rsquo;s household. The cult statue <em>was</em> the god&rsquo;s presence, and the priests&rsquo; daily task was domestic: to wash it, clothe it, set meals before it twice a day, and put it to bed. A god properly fed and housed kept the city safe; a god neglected, or whose statue was carried off in war, was a catastrophe.</p>
 
-    <p>Because the gods&amp;rsquo; will governed everything and was never quite knowable, Mesopotamians became the ancient world&amp;rsquo;s great masters of <strong>divination</strong>. They read the future in the liver and entrails of sacrificed sheep (extispicy), in the movements of the planets, in the flight of birds, in dreams, in the shapes of oil on water, in monstrous births. This was not idle superstition but a scholarly discipline: vast reference works catalogued omens and their meanings, and a king would not go to war, lay a foundation, or crown an heir without asking the gods through the diviners first. Shamash and the storm-god Adad were the patrons of the liver-omen. Behind all of it lay a distinctive mood &amp;mdash; an anxious sense that the gods&amp;rsquo; intentions were real, consequential, and maddeningly hard to read, and that a prudent person spent his life watching for signs.</p>
+    <p>Because the gods&rsquo; will governed everything and was never quite knowable, Mesopotamians became the ancient world&rsquo;s great masters of <strong>divination</strong>. They read the future in the liver and entrails of sacrificed sheep (extispicy), in the movements of the planets, in the flight of birds, in dreams, in the shapes of oil on water, in monstrous births. This was not idle superstition but a scholarly discipline: vast reference works catalogued omens and their meanings, and a king would not go to war, lay a foundation, or crown an heir without asking the gods through the diviners first. Shamash and the storm-god Adad were the patrons of the liver-omen. Behind all of it lay a distinctive mood &mdash; an anxious sense that the gods&rsquo; intentions were real, consequential, and maddeningly hard to read, and that a prudent person spent his life watching for signs.</p>
 
     <h2>Demons, exorcists, and the suffering self</h2>
 
-    <p>Alongside the great gods swarmed a second population: demons, ghosts, and malevolent spirits blamed for disease, misfortune, and madness. The most feared was <strong>Lamashtu</strong>, a lion-headed she-demon who preyed on pregnant women and newborns. Against her, Mesopotamians turned &amp;mdash; remarkably &amp;mdash; to another demon: <strong>Pazuzu</strong>, the snarling king of the wind-demons, whose hideous face was worn as an amulet and set over doorways and birthing-beds precisely because his evil was reckoned stronger than hers. (It is Pazuzu&amp;rsquo;s head that Hollywood later borrowed for &lt;em&gt;The Exorcist&lt;/em&gt;.) Fighting evil with a greater evil was a recognized strategy, and it ran through a whole industry of protection: clay figurines of guardian spirits buried under thresholds, incantations, and amulets.</p>
+    <p>Alongside the great gods swarmed a second population: demons, ghosts, and malevolent spirits blamed for disease, misfortune, and madness. The most feared was <strong>Lamashtu</strong>, a lion-headed she-demon who preyed on pregnant women and newborns. Against her, Mesopotamians turned &mdash; remarkably &mdash; to another demon: <strong>Pazuzu</strong>, the snarling king of the wind-demons, whose hideous face was worn as an amulet and set over doorways and birthing-beds precisely because his evil was reckoned stronger than hers. (It is Pazuzu&rsquo;s head that Hollywood later borrowed for <em>The Exorcist</em>.) Fighting evil with a greater evil was a recognized strategy, and it ran through a whole industry of protection: clay figurines of guardian spirits buried under thresholds, incantations, and amulets.</p>
 
-    <p>Two kinds of professional attended the sufferer. The &lt;em&gt;asû&lt;/em&gt; was closer to a physician, applying poultices and drugs; the &lt;em&gt;āšipu&lt;/em&gt; was an exorcist and incantation-priest who diagnosed the supernatural cause and drove it out with ritual and spell. Great compilations preserve their craft, among them the anti-witchcraft series &lt;em&gt;Maqlû&lt;/em&gt; (&amp;ldquo;Burning&amp;rdquo;), a long sequence of incantations and rites for undoing the sorcery of an enemy. Mesopotamian religion, seen from below, was less about cosmic epics than about keeping this particular fever, this particular run of bad luck, from killing you.</p>
+    <p>Two kinds of professional attended the sufferer. The <em>asû</em> was closer to a physician, applying poultices and drugs; the <em>āšipu</em> was an exorcist and incantation-priest who diagnosed the supernatural cause and drove it out with ritual and spell. Great compilations preserve their craft, among them the anti-witchcraft series <em>Maqlû</em> (&ldquo;Burning&rdquo;), a long sequence of incantations and rites for undoing the sorcery of an enemy. Mesopotamian religion, seen from below, was less about cosmic epics than about keeping this particular fever, this particular run of bad luck, from killing you.</p>
 
-    <p>Behind the demons lay a subtler idea: the <strong>personal god</strong>. Each individual was thought to have a personal god or goddess &amp;mdash; &amp;ldquo;my god&amp;rdquo; &amp;mdash; a divine patron whose favor meant health and success and whose withdrawal left one exposed to demons and disaster. This produced Mesopotamia&amp;rsquo;s most searching literature. The poem &lt;em&gt;Ludlul bēl nēmeqi&lt;/em&gt; (&amp;ldquo;I Will Praise the Lord of Wisdom&amp;rdquo;), often called the &amp;ldquo;Babylonian Job,&amp;rdquo; follows a righteous man, Šubši-mašrâ-Šakkan, who loses everything though he has done no wrong; his god and goddess fall silent, his prayers go unanswered, and he cries that what looks good to a man may be an offense to a god. He is finally, and mysteriously, restored by Marduk. A related dialogue, the &lt;em&gt;Babylonian Theodicy&lt;/em&gt;, debates the justice of the gods head-on. Written centuries before the biblical book of Job, these texts show the same terrible question &amp;mdash; why do the innocent suffer? &amp;mdash; already being asked, and left genuinely open.</p>
+    <p>Behind the demons lay a subtler idea: the <strong>personal god</strong>. Each individual was thought to have a personal god or goddess &mdash; &ldquo;my god&rdquo; &mdash; a divine patron whose favor meant health and success and whose withdrawal left one exposed to demons and disaster. This produced Mesopotamia&rsquo;s most searching literature. The poem <em>Ludlul bēl nēmeqi</em> (&ldquo;I Will Praise the Lord of Wisdom&rdquo;), often called the &ldquo;Babylonian Job,&rdquo; follows a righteous man, Šubši-mašrâ-Šakkan, who loses everything though he has done no wrong; his god and goddess fall silent, his prayers go unanswered, and he cries that what looks good to a man may be an offense to a god. He is finally, and mysteriously, restored by Marduk. A related dialogue, the <em>Babylonian Theodicy</em>, debates the justice of the gods head-on. Written centuries before the biblical book of Job, these texts show the same terrible question &mdash; why do the innocent suffer? &mdash; already being asked, and left genuinely open.</p>
 
     <h2>The grimmest afterlife</h2>
 
-    <p>For all its religious energy, Mesopotamia offered almost nothing to hope for after death, and this is one of its most striking contrasts with Egypt. There was no weighing of the heart, no paradise for the righteous. The dead &amp;mdash; all of them, good and bad alike &amp;mdash; went down to the &lt;em&gt;Kur&lt;/em&gt;, the &amp;ldquo;land of no return,&amp;rdquo; a dark house where the shades ate dust and clay and the great queen <strong>Ereshkigal</strong> reigned. The poem of the &lt;em&gt;Descent of Inanna&lt;/em&gt; shows even a goddess stripped of everything and hung as a corpse when she trespasses there, freed only by Enki&amp;rsquo;s cunning and only at the price of sending her lover Dumuzi down in her place. The best a dead Mesopotamian could hope for was to be remembered, named, and given water-offerings by the living. It was a religion intensely concerned with &lt;em&gt;this&lt;/em&gt; life &amp;mdash; with health, harvest, and the favor of the gods now &amp;mdash; precisely because the next one held so little.</p>
+    <p>For all its religious energy, Mesopotamia offered almost nothing to hope for after death, and this is one of its most striking contrasts with Egypt. There was no weighing of the heart, no paradise for the righteous. The dead &mdash; all of them, good and bad alike &mdash; went down to the <em>Kur</em>, the &ldquo;land of no return,&rdquo; a dark house where the shades ate dust and clay and the great queen <strong>Ereshkigal</strong> reigned. The poem of the <em>Descent of Inanna</em> shows even a goddess stripped of everything and hung as a corpse when she trespasses there, freed only by Enki&rsquo;s cunning and only at the price of sending her lover Dumuzi down in her place. The best a dead Mesopotamian could hope for was to be remembered, named, and given water-offerings by the living. It was a religion intensely concerned with <em>this</em> life &mdash; with health, harvest, and the favor of the gods now &mdash; precisely because the next one held so little.</p>
 
     <h2>What the ground shows</h2>
 
-    <p>Mesopotamia&amp;rsquo;s archaeology is deep and, unusually, often matches its texts. The temple-cities named in the literature &amp;mdash; Uruk, Ur, Nippur, Eridu &amp;mdash; have been dug, their ziggurats and temple accounts recovered. The Royal Cemetery of Ur, with its death pits, cylinder seals, and the inlaid panel known as the Standard of Ur, gives a vivid, material picture of Early Dynastic kingship and its beliefs about the beyond, around 2600&amp;ndash;2450 BCE. The stele of Hammurabi survives intact in the Louvre. Tens of thousands of administrative and scholarly tablets let us reconstruct temple economies, school curricula, and the omen sciences in extraordinary detail. Few ancient religions can be checked against their own paperwork the way this one can.</p>
+    <p>Mesopotamia&rsquo;s archaeology is deep and, unusually, often matches its texts. The temple-cities named in the literature &mdash; Uruk, Ur, Nippur, Eridu &mdash; have been dug, their ziggurats and temple accounts recovered. The Royal Cemetery of Ur, with its death pits, cylinder seals, and the inlaid panel known as the Standard of Ur, gives a vivid, material picture of Early Dynastic kingship and its beliefs about the beyond, around 2600&ndash;2450 BCE. The stele of Hammurabi survives intact in the Louvre. Tens of thousands of administrative and scholarly tablets let us reconstruct temple economies, school curricula, and the omen sciences in extraordinary detail. Few ancient religions can be checked against their own paperwork the way this one can.</p>
 
     <h2>Connections</h2>
 
-    <p>Mesopotamia is the hinge of the Bronze-Age world this project is mapping. It is the homeland of the flood story traced in Chapter 1 &amp;mdash; Ziusudra, Atrahasis, and Utnapishtim were Mesopotamian heroes before Noah was a Hebrew one. Its creation epic stands behind later cosmologies: the &lt;em&gt;Enuma Elish&lt;/em&gt;&amp;rsquo;s watery chaos, Tiamat, is widely compared to the &lt;em&gt;tehom&lt;/em&gt;, &amp;ldquo;the deep,&amp;rdquo; over which the spirit of God hovers in Genesis 1, and both describe the &lt;em&gt;ordering&lt;/em&gt; of pre-existing chaos rather than creation from nothing &amp;mdash; though whether Genesis borrowed directly or shared a common Near-Eastern inheritance is debated. Hammurabi&amp;rsquo;s divine-justice monument sits in the same conversation as later biblical law. And the contrast with Egypt (Chapter 2) is illuminating precisely because the two were contemporaries: two great river civilizations, one facing death with confident hope and elaborate tombs, the other with dust and resignation, each shaped by the river it depended on and the gods it imagined behind it.</p>
+    <p>Mesopotamia is the hinge of the Bronze-Age world this project is mapping. It is the homeland of the flood story traced in Chapter 1 &mdash; Ziusudra, Atrahasis, and Utnapishtim were Mesopotamian heroes before Noah was a Hebrew one. Its creation epic stands behind later cosmologies: the <em>Enuma Elish</em>&rsquo;s watery chaos, Tiamat, is widely compared to the <em>tehom</em>, &ldquo;the deep,&rdquo; over which the spirit of God hovers in Genesis 1, and both describe the <em>ordering</em> of pre-existing chaos rather than creation from nothing &mdash; though whether Genesis borrowed directly or shared a common Near-Eastern inheritance is debated. Hammurabi&rsquo;s divine-justice monument sits in the same conversation as later biblical law. And the contrast with Egypt (Chapter 2) is illuminating precisely because the two were contemporaries: two great river civilizations, one facing death with confident hope and elaborate tombs, the other with dust and resignation, each shaped by the river it depended on and the gods it imagined behind it.</p>
 
     <h2>The believer's lens</h2>
 
@@ -421,51 +414,49 @@ window.CHAPTERS = {
 
     <h2>Symbology and sacred encoding</h2>
 
-    <p>Mesopotamia did not merely write about its gods; it encoded them &amp;mdash; in numbers, in signs, in the very measurements of its buildings and the movements of its sky. For a civilization that invented writing, the idea that reality was itself a kind of script came naturally, and it built several distinct symbolic systems on that idea.</p>
+    <p>Mesopotamia did not merely write about its gods; it encoded them &mdash; in numbers, in signs, in the very measurements of its buildings and the movements of its sky. For a civilization that invented writing, the idea that reality was itself a kind of script came naturally, and it built several distinct symbolic systems on that idea.</p>
 
-    <p><strong>Writing as sacred power.</strong> Cuneiform was never only a tool for accounts. Its invention was credited to the goddess <strong>Nisaba</strong> (later to the god <strong>Nabu</strong>), and to write was to participate in something the gods did. The clearest expression of this is the mythical <strong>Tablet of Destinies</strong> &amp;mdash; a single clay tablet whose possession conferred supreme authority over the cosmos, so that the plot of more than one myth turns on who holds it. Power, in Mesopotamia, could be literally inscribed. The endless scholarly lists the scribes compiled &amp;mdash; of gods, words, stones, stars &amp;mdash; were themselves a way of ordering and controlling the world by naming it in the right sequence.</p>
+    <p><strong>Writing as sacred power.</strong> Cuneiform was never only a tool for accounts. Its invention was credited to the goddess <strong>Nisaba</strong> (later to the god <strong>Nabu</strong>), and to write was to participate in something the gods did. The clearest expression of this is the mythical <strong>Tablet of Destinies</strong> &mdash; a single clay tablet whose possession conferred supreme authority over the cosmos, so that the plot of more than one myth turns on who holds it. Power, in Mesopotamia, could be literally inscribed. The endless scholarly lists the scribes compiled &mdash; of gods, words, stones, stars &mdash; were themselves a way of ordering and controlling the world by naming it in the right sequence.</p>
 
-    <p><strong>The numbers of the gods.</strong> The great deities were each assigned a number within the base-60 (sexagesimal) system Mesopotamia gave the world &amp;mdash; the same system behind our 60-minute hour and 360-degree circle. Anu, the sky-father, held <strong>60</strong>; Enlil <strong>50</strong>; Ea/Enki <strong>40</strong>; the moon-god Sin <strong>30</strong>; the sun-god Shamash <strong>20</strong>; and Inanna/Ishtar <strong>15</strong> (exactly half her father Sin&amp;rsquo;s). These are genuinely attested divine numbers, occasionally used to &lt;em&gt;write&lt;/em&gt; a god&amp;rsquo;s name as a numeral. What they meant to their users is less certain, and this is a place to be careful: the elaborate modern systems that turn these numbers into musical frequencies or &amp;ldquo;Anunnaki&amp;rdquo; codes are twentieth- and twenty-first-century inventions, not ancient Mesopotamian doctrine, and should not be read back into the sources.</p>
+    <p><strong>The numbers of the gods.</strong> The great deities were each assigned a number within the base-60 (sexagesimal) system Mesopotamia gave the world &mdash; the same system behind our 60-minute hour and 360-degree circle. Anu, the sky-father, held <strong>60</strong>; Enlil <strong>50</strong>; Ea/Enki <strong>40</strong>; the moon-god Sin <strong>30</strong>; the sun-god Shamash <strong>20</strong>; and Inanna/Ishtar <strong>15</strong> (exactly half her father Sin&rsquo;s). These are genuinely attested divine numbers, occasionally used to <em>write</em> a god&rsquo;s name as a numeral. What they meant to their users is less certain, and this is a place to be careful: the elaborate modern systems that turn these numbers into musical frequencies or &ldquo;Anunnaki&rdquo; codes are twentieth- and twenty-first-century inventions, not ancient Mesopotamian doctrine, and should not be read back into the sources.</p>
 
-    <p><strong>Numbered into stone.</strong> One case shows number-symbolism put to work with unusual directness. An inscription of the Assyrian king <strong>Sargon II</strong> (late 8th century BCE) records that he built the wall of his new capital, Dur-Sharrukin (Khorsabad), to a length of <strong>16,283 cubits</strong> &amp;mdash; the numerical value of his own name. It is frequently cited as the earliest documented example of what later traditions would call gematria or isopsephy: assigning number-values to a name and embedding them in the physical world. (It sits just past this era&amp;rsquo;s edge, in the Iron Age, but it is the mature form of a Bronze-Age habit of mind.)</p>
+    <p><strong>Numbered into stone.</strong> One case shows number-symbolism put to work with unusual directness. An inscription of the Assyrian king <strong>Sargon II</strong> (late 8th century BCE) records that he built the wall of his new capital, Dur-Sharrukin (Khorsabad), to a length of <strong>16,283 cubits</strong> &mdash; the numerical value of his own name. It is frequently cited as the earliest documented example of what later traditions would call gematria or isopsephy: assigning number-values to a name and embedding them in the physical world. (It sits just past this era&rsquo;s edge, in the Iron Age, but it is the mature form of a Bronze-Age habit of mind.)</p>
 
-    <p><strong>Seals: identity and protection in miniature.</strong> Almost every person of standing carried a <strong>cylinder seal</strong> &amp;mdash; a small carved stone rolled across wet clay to sign documents. But the tiny scenes on them were a symbolic language in their own right: presentation scenes before a god, protective spirits, mythological combats, divine emblems. A seal marked its owner&amp;rsquo;s identity and, many believed, carried apotropaic power &amp;mdash; a portable icon as much as a signature.</p>
+    <p><strong>Seals: identity and protection in miniature.</strong> Almost every person of standing carried a <strong>cylinder seal</strong> &mdash; a small carved stone rolled across wet clay to sign documents. But the tiny scenes on them were a symbolic language in their own right: presentation scenes before a god, protective spirits, mythological combats, divine emblems. A seal marked its owner&rsquo;s identity and, many believed, carried apotropaic power &mdash; a portable icon as much as a signature.</p>
 
-    <p><strong>Architecture as cosmology.</strong> The ziggurat was a theological statement in mud-brick. The great ziggurat of Babylon bore the name <strong>Etemenanki</strong>, &amp;ldquo;the House of the Foundation of Heaven and Earth&amp;rdquo; &amp;mdash; a built claim that the temple was the hinge joining the divine and human worlds, the cosmic mountain and the point where the god descended. Temple and city names routinely encoded such claims; to read the name was to read the theology.</p>
+    <p><strong>Architecture as cosmology.</strong> The ziggurat was a theological statement in mud-brick. The great ziggurat of Babylon bore the name <strong>Etemenanki</strong>, &ldquo;the House of the Foundation of Heaven and Earth&rdquo; &mdash; a built claim that the temple was the hinge joining the divine and human worlds, the cosmic mountain and the point where the god descended. Temple and city names routinely encoded such claims; to read the name was to read the theology.</p>
 
-    <p><strong>The sky as divine writing.</strong> Finally, Mesopotamians read the heavens as a text the gods had written. The major gods were identified with the visible planets &amp;mdash; Ishtar with Venus, Shamash with the Sun, Sin with the Moon, Marduk with Jupiter, Ninurta/Nergal with Saturn and Mars, Nabu with Mercury &amp;mdash; and the vast omen series &lt;em&gt;Enuma Anu Enlil&lt;/em&gt; catalogued celestial signs and their meanings. This conviction, that the sky was a script to be decoded, is the direct ancestor of later astrology, and one of Mesopotamia&amp;rsquo;s longest-lived exports.</p>
+    <p><strong>The sky as divine writing.</strong> Finally, Mesopotamians read the heavens as a text the gods had written. The major gods were identified with the visible planets &mdash; Ishtar with Venus, Shamash with the Sun, Sin with the Moon, Marduk with Jupiter, Ninurta/Nergal with Saturn and Mars, Nabu with Mercury &mdash; and the vast omen series <em>Enuma Anu Enlil</em> catalogued celestial signs and their meanings. This conviction, that the sky was a script to be decoded, is the direct ancestor of later astrology, and one of Mesopotamia&rsquo;s longest-lived exports.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>What&amp;rsquo;s well supported by the evidence</h4>
+        <h4>What&rsquo;s well supported by the evidence</h4>
         <p></p>
       </div>
       <div class="ev unsupported">
         <h4></h4>
-        <p>- Writing was invented in southern Mesopotamia (Uruk) around 3300 BCE, first for   administration, and Mesopotamia produced the oldest surviving literature, law   monuments, and scholarly omen-texts. - The major deities (An/Anu, Enlil, Enki/Ea, Inanna/Ishtar, Nanna/Sin, Utu/Shamash,   Marduk), the temple-and-ziggurat cult centered on feeding and housing the god&amp;rsquo;s   statue, and the central role of divination are all richly attested in texts and   archaeology. - The &lt;em&gt;Enuma Elish&lt;/em&gt;&amp;rsquo;s account of Marduk, Tiamat, and the creation of   humans to labor for the gods, and its recitation at the Akitu festival, are   securely documented. - Enheduanna, high priestess of Nanna at Ur (c. 2300 BCE), is the earliest author   known by name, and the &lt;em&gt;Exaltation of Inanna&lt;/em&gt; is attributed to her &amp;mdash;   the oldest literary work credited to a named, self-identifying author. - The world of demons and protective magic (Lamashtu and the apotropaic use of   Pazuzu), the healing/exorcist professions (&lt;em&gt;asû&lt;/em&gt; and &lt;em&gt;āšipu&lt;/em&gt;) and   the &lt;em&gt;Maqlû&lt;/em&gt; anti-witchcraft series, the &amp;ldquo;personal god,&amp;rdquo; and the   suffering-righteous literature (&lt;em&gt;Ludlul bēl nēmeqi&lt;/em&gt;, the &lt;em&gt;Babylonian   Theodicy&lt;/em&gt;) are all well attested. - The Royal Cemetery of Ur and its mass retainer burials are real; recent forensic   work indicates at least some attendants died of blunt-force trauma and that bodies   were treated to preserve them. - The grim, undifferentiated Mesopotamian underworld (the &lt;em&gt;Kur&lt;/em&gt; under   Ereshkigal), in sharp contrast to Egypt&amp;rsquo;s judged afterlife, is well attested. - The divine numbers (Anu 60, Enlil 50, Ea 40, Sin 30, Shamash 20, Ishtar 15), the   planet&amp;ndash;god identifications, cylinder-seal iconography, and the celestial omen   series &lt;em&gt;Enuma Anu Enlil&lt;/em&gt; are documented; Sargon II&amp;rsquo;s Khorsabad wall   &amp;ldquo;built to the number of his name&amp;rdquo; is a real inscription and an early   documented instance of name-numerology.</p>
+        <p>- Writing was invented in southern Mesopotamia (Uruk) around 3300 BCE, first for   administration, and Mesopotamia produced the oldest surviving literature, law   monuments, and scholarly omen-texts. - The major deities (An/Anu, Enlil, Enki/Ea, Inanna/Ishtar, Nanna/Sin, Utu/Shamash,   Marduk), the temple-and-ziggurat cult centered on feeding and housing the god&rsquo;s   statue, and the central role of divination are all richly attested in texts and   archaeology. - The <em>Enuma Elish</em>&rsquo;s account of Marduk, Tiamat, and the creation of   humans to labor for the gods, and its recitation at the Akitu festival, are   securely documented. - Enheduanna, high priestess of Nanna at Ur (c. 2300 BCE), is the earliest author   known by name, and the <em>Exaltation of Inanna</em> is attributed to her &mdash;   the oldest literary work credited to a named, self-identifying author. - The world of demons and protective magic (Lamashtu and the apotropaic use of   Pazuzu), the healing/exorcist professions (<em>asû</em> and <em>āšipu</em>) and   the <em>Maqlû</em> anti-witchcraft series, the &ldquo;personal god,&rdquo; and the   suffering-righteous literature (<em>Ludlul bēl nēmeqi</em>, the <em>Babylonian   Theodicy</em>) are all well attested. - The Royal Cemetery of Ur and its mass retainer burials are real; recent forensic   work indicates at least some attendants died of blunt-force trauma and that bodies   were treated to preserve them. - The grim, undifferentiated Mesopotamian underworld (the <em>Kur</em> under   Ereshkigal), in sharp contrast to Egypt&rsquo;s judged afterlife, is well attested. - The divine numbers (Anu 60, Enlil 50, Ea 40, Sin 30, Shamash 20, Ishtar 15), the   planet&ndash;god identifications, cylinder-seal iconography, and the celestial omen   series <em>Enuma Anu Enlil</em> are documented; Sargon II&rsquo;s Khorsabad wall   &ldquo;built to the number of his name&rdquo; is a real inscription and an early   documented instance of name-numerology.</p>
       </div>
       <div class="ev open">
-        <h4>What&amp;rsquo;s not supported by the evidence</h4>
+        <h4>What&rsquo;s not supported by the evidence</h4>
         <p></p>
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>- Woolley&amp;rsquo;s romantic reconstruction of the Ur retainers peacefully drinking   poison. The forensic evidence points to killing, not a gentle self-administered   sleep. - The popular image of the &amp;ldquo;Code of Hammurabi&amp;rdquo; as a functioning statutory   law code governing Babylonian courts. Court records rarely invoke it; many scholars   now read it as a royal monument to the king&amp;rsquo;s justice. - Any claim that Genesis simply &amp;ldquo;copied&amp;rdquo; the &lt;em&gt;Enuma Elish&lt;/em&gt;. The   parallels (watery chaos, ordering rather than creation ex nihilo) are real and   important, but direct literary dependence is not established. - The modern esoteric systems built on the divine numbers &amp;mdash; &amp;ldquo;Anunnaki&amp;rdquo;   frequency codes, sound-healing chords, and the like. The number assignments are   ancient; these interpretations of them are twentieth-/twenty-first-century   inventions and are not what the numbers meant to Mesopotamians.</p>
+        <p>- Woolley&rsquo;s romantic reconstruction of the Ur retainers peacefully drinking   poison. The forensic evidence points to killing, not a gentle self-administered   sleep. - The popular image of the &ldquo;Code of Hammurabi&rdquo; as a functioning statutory   law code governing Babylonian courts. Court records rarely invoke it; many scholars   now read it as a royal monument to the king&rsquo;s justice. - Any claim that Genesis simply &ldquo;copied&rdquo; the <em>Enuma Elish</em>. The   parallels (watery chaos, ordering rather than creation ex nihilo) are real and   important, but direct literary dependence is not established. - The modern esoteric systems built on the divine numbers &mdash; &ldquo;Anunnaki&rdquo;   frequency codes, sound-healing chords, and the like. The number assignments are   ancient; these interpretations of them are twentieth-/twenty-first-century   inventions and are not what the numbers meant to Mesopotamians.</p>
       </div>
       <div class="ev open">
-        <h4>What&amp;rsquo;s genuinely open</h4>
+        <h4>What&rsquo;s genuinely open</h4>
         <p></p>
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>- The exact date and compositional history of the &lt;em&gt;Enuma Elish&lt;/em&gt; (a 12th-century   BCE origin under Nebuchadnezzar I is widely favored, but not certain), and the   precise nature of its relationship to Genesis 1. - The full meaning of the Ur death pits &amp;mdash; who the victims were, whether they went   willingly, and how representative the practice was of Mesopotamian religion rather   than a short-lived royal fashion. - Whether the Code of Hammurabi is best read as legislation, a record of case-law, or   royal ideological display &amp;mdash; a live scholarly debate. - How much continuity to assume across the long Sumerian-to-Babylonian transition   (e.g., in equating Sumerian Inanna with Akkadian Ishtar), where names and functions   shifted over centuries. - How much of the Enheduanna corpus was personally composed by her, given that all   surviving copies are Old Babylonian, several centuries after her lifetime &amp;mdash; a   question of authorship that scholars genuinely dispute.</p>
+        <p>- The exact date and compositional history of the <em>Enuma Elish</em> (a 12th-century   BCE origin under Nebuchadnezzar I is widely favored, but not certain), and the   precise nature of its relationship to Genesis 1. - The full meaning of the Ur death pits &mdash; who the victims were, whether they went   willingly, and how representative the practice was of Mesopotamian religion rather   than a short-lived royal fashion. - Whether the Code of Hammurabi is best read as legislation, a record of case-law, or   royal ideological display &mdash; a live scholarly debate. - How much continuity to assume across the long Sumerian-to-Babylonian transition   (e.g., in equating Sumerian Inanna with Akkadian Ishtar), where names and functions   shifted over centuries. - How much of the Enheduanna corpus was personally composed by her, given that all   surviving copies are Old Babylonian, several centuries after her lifetime &mdash; a   question of authorship that scholars genuinely dispute.</p>
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -475,15 +466,15 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts and translations</h4>
       <ul>
-        <li>&lt;em&gt;Enuma Elish&lt;/em&gt; (Babylonian creation epic) &amp;mdash;</li>
-        <li>&lt;em&gt;The Descent of Inanna into the Underworld&lt;/em&gt; —</li>
+        <li><em>Enuma Elish</em> (Babylonian creation epic) &mdash;</li>
+        <li><em>The Descent of Inanna into the Underworld</em> —</li>
         <li>The Law Stele of Hammurabi (Louvre) —</li>
       </ul>
       <h4>Enheduanna, demons, and the suffering-righteous literature</h4>
       <ul>
-        <li>Enheduanna and the &lt;em&gt;Exaltation of Inanna&lt;/em&gt; —</li>
-        <li>Demons and exorcism (Lamashtu, Pazuzu, the &lt;em&gt;āšipu&lt;/em&gt;, &lt;em&gt;Maqlû&lt;/em&gt;) —</li>
-        <li>&lt;em&gt;Ludlul bēl nēmeqi&lt;/em&gt; (the "Babylonian Job") and the &lt;em&gt;Babylonian Theodicy&lt;/em&gt; —</li>
+        <li>Enheduanna and the <em>Exaltation of Inanna</em> —</li>
+        <li>Demons and exorcism (Lamashtu, Pazuzu, the <em>āšipu</em>, <em>Maqlû</em>) —</li>
+        <li><em>Ludlul bēl nēmeqi</em> (the "Babylonian Job") and the <em>Babylonian Theodicy</em> —</li>
       </ul>
       <h4>Deities, cult, and divination</h4>
       <ul>
@@ -493,10 +484,10 @@ window.CHAPTERS = {
       </ul>
       <h4>The Royal Cemetery of Ur</h4>
       <ul>
-        <li>A. Baadsgaard et al., &amp;ldquo;Human sacrifice and intentional corpse preservation in</li>
+        <li>A. Baadsgaard et al., &ldquo;Human sacrifice and intentional corpse preservation in</li>
         <li><a href="<a href="https://www.penn.museum/sites/expedition/a-spectacular-discovery/">Penn">https://www.penn.museum/sites/expedition/a-spectacular-discovery/">Penn</a> Museum, Expedition: A Spectacular Discovery</a>.</li>
       </ul>
-      <h4>On the Hammurabi &amp;ldquo;code&amp;rdquo; debate</h4>
+      <h4>On the Hammurabi &ldquo;code&rdquo; debate</h4>
       <ul>
         <li><a href="<a href="https://en.wikipedia.org/wiki/Code_of_Hammurabi">Wikipedia:">https://en.wikipedia.org/wiki/Code_of_Hammurabi">Wikipedia:</a> Code of Hammurabi</a> (summarizing Van De Mieroop, Yoffee, and others).</li>
       </ul>
@@ -506,55 +497,54 @@ window.CHAPTERS = {
       </ul>
       <h4>Symbology and sacred encoding</h4>
       <ul>
-        <li>Divine numbers of the gods &amp;mdash; <a href="<a href="https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia:">https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia:</a> Sin (mythology)</a>); god-list traditions.</li>
-        <li>Nisaba and Nabu as patrons of writing &amp;mdash; <a href="<a href="https://en.wikipedia.org/wiki/Nisaba">Wikipedia:">https://en.wikipedia.org/wiki/Nisaba">Wikipedia:</a> Nisaba</a>.</li>
-        <li>Sargon II&amp;rsquo;s Khorsabad wall built to the numerical value of his name (earliest</li>
-        <li>Celestial divination series &lt;em&gt;Enuma Anu Enlil&lt;/em&gt; and planet&amp;ndash;god</li>
+        <li>Divine numbers of the gods &mdash; <a href="<a href="https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia:">https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia:</a> Sin (mythology)</a>); god-list traditions.</li>
+        <li>Nisaba and Nabu as patrons of writing &mdash; <a href="<a href="https://en.wikipedia.org/wiki/Nisaba">Wikipedia:">https://en.wikipedia.org/wiki/Nisaba">Wikipedia:</a> Nisaba</a>.</li>
+        <li>Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest</li>
+        <li>Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god</li>
       </ul>
     </div>
   ` },
 
   /* ------------------------------------------------------------------ ch04 */
   ch04: { html: `
-    <p class="lead"><em>Tradition chapter · Era 02 — Bronze Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A god that may not be a god</h2>
 
-    <p>Sometime around 1928, in the ruins of Mohenjo-daro on the plain of the Indus, excavators turned up a small steatite seal, barely an inch and a half square. It shows a figure seated with legs folded beneath it, heels together, in what looks unmistakably like a yogic posture. The figure wears a tall horned headdress and is surrounded by animals &amp;mdash; a tiger, an elephant, a rhinoceros, a water buffalo, and, below the seat, two deer. The great archaeologist Sir John Marshall, who was directing the excavation of the newly discovered Indus civilization, looked at this seal and saw something breathtaking: a <strong>proto-Shiva</strong>. Here, he argued, three thousand years before the Hindu god was worshipped by name, was Shiva in an early form &amp;mdash; Pashupati, &amp;ldquo;Lord of Animals,&amp;rdquo; the horned yogi, master of the beasts, perhaps even three-faced.</p>
+    <p>Sometime around 1928, in the ruins of Mohenjo-daro on the plain of the Indus, excavators turned up a small steatite seal, barely an inch and a half square. It shows a figure seated with legs folded beneath it, heels together, in what looks unmistakably like a yogic posture. The figure wears a tall horned headdress and is surrounded by animals &mdash; a tiger, an elephant, a rhinoceros, a water buffalo, and, below the seat, two deer. The great archaeologist Sir John Marshall, who was directing the excavation of the newly discovered Indus civilization, looked at this seal and saw something breathtaking: a <strong>proto-Shiva</strong>. Here, he argued, three thousand years before the Hindu god was worshipped by name, was Shiva in an early form &mdash; Pashupati, &ldquo;Lord of Animals,&rdquo; the horned yogi, master of the beasts, perhaps even three-faced.</p>
 
-    <p>It is one of the most famous objects in the archaeology of religion, and nearly a century later scholars are still arguing about almost every word of Marshall&amp;rsquo;s description. Is the figure male? Is it a god at all, or a chieftain, a shaman, a mythic hero? Are those three faces, or an artifact of a wide horned mask? Is it seated in yoga, or simply in the cross-legged way people sat? Is it Shiva&amp;rsquo;s ancestor, or a version of the &amp;ldquo;Master (or Mistress) of Animals&amp;rdquo; motif found from Mesopotamia to the Aegean in the same era? We cannot settle it &amp;mdash; and the reason we cannot is the single most important fact about Indus religion, the fact that governs this entire chapter: <strong>their writing has never been read.</strong></p>
+    <p>It is one of the most famous objects in the archaeology of religion, and nearly a century later scholars are still arguing about almost every word of Marshall&rsquo;s description. Is the figure male? Is it a god at all, or a chieftain, a shaman, a mythic hero? Are those three faces, or an artifact of a wide horned mask? Is it seated in yoga, or simply in the cross-legged way people sat? Is it Shiva&rsquo;s ancestor, or a version of the &ldquo;Master (or Mistress) of Animals&rdquo; motif found from Mesopotamia to the Aegean in the same era? We cannot settle it &mdash; and the reason we cannot is the single most important fact about Indus religion, the fact that governs this entire chapter: <strong>their writing has never been read.</strong></p>
 
     <p>This is a civilization we can see in extraordinary material detail and cannot hear in its own voice at all. What follows is therefore a chapter with more honest uncertainty in it than any so far, and that is exactly as it should be.</p>
 
     <h2>The silent civilization</h2>
 
-    <p>The scale is easy to underestimate. The Indus (or Harappan) civilization of its mature phase, roughly <strong>2600 to 1900 BCE</strong>, was the largest of the Bronze Age &amp;mdash; larger in area than Egypt and Mesopotamia combined, spread across more than a thousand known sites in what is now Pakistan and northwest India. Its great cities &amp;mdash; Harappa, Mohenjo-daro, Dholavira, Rakhigarhi, Lothal &amp;mdash; were laid out on grids, built of standardized kiln-fired brick, and served by the most advanced water and drainage engineering anywhere in the ancient world: covered sewers, private bathrooms, wells, and public reservoirs. Their system of weights was so precisely standardized that it hardly varied across the entire territory for centuries.</p>
+    <p>The scale is easy to underestimate. The Indus (or Harappan) civilization of its mature phase, roughly <strong>2600 to 1900 BCE</strong>, was the largest of the Bronze Age &mdash; larger in area than Egypt and Mesopotamia combined, spread across more than a thousand known sites in what is now Pakistan and northwest India. Its great cities &mdash; Harappa, Mohenjo-daro, Dholavira, Rakhigarhi, Lothal &mdash; were laid out on grids, built of standardized kiln-fired brick, and served by the most advanced water and drainage engineering anywhere in the ancient world: covered sewers, private bathrooms, wells, and public reservoirs. Their system of weights was so precisely standardized that it hardly varied across the entire territory for centuries.</p>
 
-    <p>And then the strangeness. For a civilization this large and sophisticated, the Indus cities are almost eerily quiet about the things other Bronze Age powers shouted. There are <strong>no securely identified temples.</strong> No great palaces. No royal tombs stuffed with gold like Ur&amp;rsquo;s, no pyramids, no monumental inscriptions boasting of kings, no reliefs of rulers smiting enemies, no obvious images of war at all. Where Egypt and Mesopotamia broadcast a hierarchy of god-kings and priesthoods in stone, the Indus is, by comparison, faceless &amp;mdash; egalitarian in appearance, decentralized, and reticent. Whatever their religion was, it did not express itself the way their contemporaries&amp;rsquo; did, and that absence is itself one of the most intriguing pieces of evidence we have.</p>
+    <p>And then the strangeness. For a civilization this large and sophisticated, the Indus cities are almost eerily quiet about the things other Bronze Age powers shouted. There are <strong>no securely identified temples.</strong> No great palaces. No royal tombs stuffed with gold like Ur&rsquo;s, no pyramids, no monumental inscriptions boasting of kings, no reliefs of rulers smiting enemies, no obvious images of war at all. Where Egypt and Mesopotamia broadcast a hierarchy of god-kings and priesthoods in stone, the Indus is, by comparison, faceless &mdash; egalitarian in appearance, decentralized, and reticent. Whatever their religion was, it did not express itself the way their contemporaries&rsquo; did, and that absence is itself one of the most intriguing pieces of evidence we have.</p>
 
     <h2>The wall we cannot read</h2>
 
-    <p>Everything would be different if we could read the <strong>Indus script.</strong> We have it in abundance &amp;mdash; some four thousand inscribed objects, most of them the little seals and their impressions &amp;mdash; carrying a sign-system of roughly four hundred distinct characters. And it is, after a century of effort and dozens of confident &amp;ldquo;decipherments,&amp;rdquo; still completely undeciphered. No bilingual key like the Rosetta Stone has ever been found; we do not know what language, if any, lies behind the signs.</p>
+    <p>Everything would be different if we could read the <strong>Indus script.</strong> We have it in abundance &mdash; some four thousand inscribed objects, most of them the little seals and their impressions &mdash; carrying a sign-system of roughly four hundred distinct characters. And it is, after a century of effort and dozens of confident &ldquo;decipherments,&rdquo; still completely undeciphered. No bilingual key like the Rosetta Stone has ever been found; we do not know what language, if any, lies behind the signs.</p>
 
-    <p>The longest single inscription only sharpens the frustration. At <strong>Dholavira</strong>, in Gujarat, excavators found the remains of a great <strong>&amp;ldquo;signboard&amp;rdquo;</strong> that had stood over the north gate of the citadel: ten large Indus signs, each about 37 centimeters high, once inlaid in white gypsum on a wooden board perhaps three meters long, which fell and rotted but left its letters legible in the ground. It is the closest thing the Indus world has to a monumental public text &amp;mdash; a sign meant to be read by everyone entering the city &amp;mdash; and we cannot read a character of it.</p>
+    <p>The longest single inscription only sharpens the frustration. At <strong>Dholavira</strong>, in Gujarat, excavators found the remains of a great <strong>&ldquo;signboard&rdquo;</strong> that had stood over the north gate of the citadel: ten large Indus signs, each about 37 centimeters high, once inlaid in white gypsum on a wooden board perhaps three meters long, which fell and rotted but left its letters legible in the ground. It is the closest thing the Indus world has to a monumental public text &mdash; a sign meant to be read by everyone entering the city &mdash; and we cannot read a character of it.</p>
 
-    <p>There is not even agreement that the signs <em>encode language at all.</em> The dominant view, argued by scholars such as <strong>Asko Parpola</strong> and <strong>Iravatham Mahadevan</strong>, holds that the script is true writing, most likely recording an early Dravidian language. But in a provocative 2004 paper, <strong>Steve Farmer, Richard Sproat, and Michael Witzel</strong> argued the opposite: that the inscriptions are too short (averaging around five signs), contain too many rare signs used only once, and lack the repetition real languages produce &amp;mdash; and that the &amp;ldquo;script&amp;rdquo; may therefore be a system of non-linguistic emblems (for clans, deities, or goods) rather than writing. Parpola and others have pushed back hard, and computational studies have gone both ways. The debate is unresolved. Until it is &amp;mdash; if it ever is &amp;mdash; the Indus people keep their theology to themselves, and every claim about their gods is an inference from things, not texts.</p>
+    <p>There is not even agreement that the signs <em>encode language at all.</em> The dominant view, argued by scholars such as <strong>Asko Parpola</strong> and <strong>Iravatham Mahadevan</strong>, holds that the script is true writing, most likely recording an early Dravidian language. But in a provocative 2004 paper, <strong>Steve Farmer, Richard Sproat, and Michael Witzel</strong> argued the opposite: that the inscriptions are too short (averaging around five signs), contain too many rare signs used only once, and lack the repetition real languages produce &mdash; and that the &ldquo;script&rdquo; may therefore be a system of non-linguistic emblems (for clans, deities, or goods) rather than writing. Parpola and others have pushed back hard, and computational studies have gone both ways. The debate is unresolved. Until it is &mdash; if it ever is &mdash; the Indus people keep their theology to themselves, and every claim about their gods is an inference from things, not texts.</p>
 
-    <h2>What the objects suggest &amp;mdash; held loosely</h2>
+    <h2>What the objects suggest &mdash; held loosely</h2>
 
     <p>With that warning fixed firmly in place, here is what the material remains have been taken to suggest. Every item on this list is an interpretation, and the honest ones are offered as such.</p>
 
-    <p><strong>The seated horned figure.</strong> Marshall&amp;rsquo;s &amp;ldquo;proto-Shiva&amp;rdquo; (the seal is catalogued as M-420) remains the flashpoint. The identification with Shiva rests on later features read backward: Shiva as Pashupati (lord of animals), as the archetypal yogi, as horned/bull-associated. Critics &amp;mdash; among them Doris Srinivasan &amp;mdash; have argued the figure may be a divine bull-man or buffalo deity, that the &amp;ldquo;three faces&amp;rdquo; are questionable, and that the whole &amp;ldquo;Master of Animals&amp;rdquo; composition belongs to a widespread Bronze Age motif rather than to a specifically Indian god. The scholar Shubhangana Atre has proposed the central deity of the Indus was in fact a goddess, a &amp;ldquo;Lady of Beasts.&amp;rdquo; No reading commands consensus.</p>
+    <p><strong>The seated horned figure.</strong> Marshall&rsquo;s &ldquo;proto-Shiva&rdquo; (the seal is catalogued as M-420) remains the flashpoint. The identification with Shiva rests on later features read backward: Shiva as Pashupati (lord of animals), as the archetypal yogi, as horned/bull-associated. Critics &mdash; among them Doris Srinivasan &mdash; have argued the figure may be a divine bull-man or buffalo deity, that the &ldquo;three faces&rdquo; are questionable, and that the whole &ldquo;Master of Animals&rdquo; composition belongs to a widespread Bronze Age motif rather than to a specifically Indian god. The scholar Shubhangana Atre has proposed the central deity of the Indus was in fact a goddess, a &ldquo;Lady of Beasts.&rdquo; No reading commands consensus.</p>
 
-    <p><strong>The &amp;ldquo;Priest-King.&amp;rdquo;</strong> A small steatite bust from Mohenjo-daro, bearded and serene, its robe carved with a <strong>trefoil</strong> pattern once filled with red pigment, is among the most reproduced of all Indus objects &amp;mdash; and its very name is a lesson in reading later categories backward. Marshall and his contemporaries called it the &amp;ldquo;Priest-King&amp;rdquo; on the analogy of the priest-kings of Mesopotamia, but the Indus has produced no textual, architectural, or funerary evidence of either priests or kings. We do not know whether the bust portrays a ruler, a deity, an ancestor, or an abstraction; the confident title is a modern projection onto a civilization that left no rulers&amp;rsquo; names at all.</p>
+    <p><strong>The &ldquo;Priest-King.&rdquo;</strong> A small steatite bust from Mohenjo-daro, bearded and serene, its robe carved with a <strong>trefoil</strong> pattern once filled with red pigment, is among the most reproduced of all Indus objects &mdash; and its very name is a lesson in reading later categories backward. Marshall and his contemporaries called it the &ldquo;Priest-King&rdquo; on the analogy of the priest-kings of Mesopotamia, but the Indus has produced no textual, architectural, or funerary evidence of either priests or kings. We do not know whether the bust portrays a ruler, a deity, an ancestor, or an abstraction; the confident title is a modern projection onto a civilization that left no rulers&rsquo; names at all.</p>
 
-    <p><strong>A goddess, or goddesses.</strong> Excavators have recovered large numbers of terracotta female figurines, some with elaborate headdresses, some bearing soot marks that may mean lamps or offerings were burned before them. These are widely read as evidence of a fertility or mother-goddess cult &amp;mdash; a plausible and popular interpretation. But figurines are slippery: without texts we cannot be sure which were cult objects, which were votive, and which were toys, and recent scholarship urges caution against assuming a single unified goddess.</p>
+    <p><strong>A goddess, or goddesses.</strong> Excavators have recovered large numbers of terracotta female figurines, some with elaborate headdresses, some bearing soot marks that may mean lamps or offerings were burned before them. These are widely read as evidence of a fertility or mother-goddess cult &mdash; a plausible and popular interpretation. But figurines are slippery: without texts we cannot be sure which were cult objects, which were votive, and which were toys, and recent scholarship urges caution against assuming a single unified goddess.</p>
 
-    <p><strong>Water and purity.</strong> The most striking single structure is the <strong>Great Bath</strong> of Mohenjo-daro, a large, watertight sunken tank of fitted brick sealed with bitumen, reached by two staircases. It looks purpose-built for communal immersion, and it is very often read as a place of ritual bathing &amp;mdash; a possible ancestor of the ritual-purity concerns that run through later Indian religion. That reading is attractive and unprovable; the tank could have served other public functions.</p>
+    <p><strong>Water and purity.</strong> The most striking single structure is the <strong>Great Bath</strong> of Mohenjo-daro, a large, watertight sunken tank of fitted brick sealed with bitumen, reached by two staircases. It looks purpose-built for communal immersion, and it is very often read as a place of ritual bathing &mdash; a possible ancestor of the ritual-purity concerns that run through later Indian religion. That reading is attractive and unprovable; the tank could have served other public functions.</p>
 
-    <p><strong>Trees, animals, and stones.</strong> Seals show a horned figure standing in a <strong>pipal</strong> (sacred fig) tree, and the pipal remains sacred in later Indian tradition; a deity or spirit in a tree is a reasonable inference. Cattle imagery is everywhere, especially the enigmatic single-horned &amp;ldquo;unicorn&amp;rdquo; bull that dominates the seals, hinting at a special status for the bull. Cones and ring-stones found at the sites have been interpreted &amp;mdash; again first by Marshall &amp;mdash; as <em>lingam</em> and <em>yoni</em> forms prefiguring Shaiva worship, though many archaeologists read them as ordinary architectural or utilitarian objects. At <strong>Kalibangan</strong>, rows of pits with ash and terracotta stelae have been claimed as <strong>fire altars</strong> suggesting a fire-ritual, but whether these are ritual or simply hearths is disputed.</p>
+    <p><strong>Trees, animals, and stones.</strong> Seals show a horned figure standing in a <strong>pipal</strong> (sacred fig) tree, and the pipal remains sacred in later Indian tradition; a deity or spirit in a tree is a reasonable inference. Cattle imagery is everywhere, especially the enigmatic single-horned &ldquo;unicorn&rdquo; bull that dominates the seals, hinting at a special status for the bull. Cones and ring-stones found at the sites have been interpreted &mdash; again first by Marshall &mdash; as <em>lingam</em> and <em>yoni</em> forms prefiguring Shaiva worship, though many archaeologists read them as ordinary architectural or utilitarian objects. At <strong>Kalibangan</strong>, rows of pits with ash and terracotta stelae have been claimed as <strong>fire altars</strong> suggesting a fire-ritual, but whether these are ritual or simply hearths is disputed.</p>
 
-    <p><strong>The quiet dead.</strong> Harappan burials, where found, are generally modest: extended inhumations with some pottery and personal ornaments, and no lavish royal tombs. Compared with the death-pits of Ur or the tombs of Egypt, the Indus dead were sent off with striking restraint &amp;mdash; which may say something real about how little this culture invested in an elaborate afterlife, or may simply reflect burial customs we have not fully recovered.</p>
+    <p><strong>The quiet dead.</strong> Harappan burials, where found, are generally modest: extended inhumations with some pottery and personal ornaments, and no lavish royal tombs. Compared with the death-pits of Ur or the tombs of Egypt, the Indus dead were sent off with striking restraint &mdash; which may say something real about how little this culture invested in an elaborate afterlife, or may simply reflect burial customs we have not fully recovered.</p>
 
     <h2>The believer's lens</h2>
 
@@ -566,23 +556,22 @@ window.CHAPTERS = {
 
     <h2>Symbology and sacred encoding</h2>
 
-    <p>For a civilization defined by an unread script, the theme of sacred encoding is not a side-topic &amp;mdash; it is the whole predicament in miniature.</p>
+    <p>For a civilization defined by an unread script, the theme of sacred encoding is not a side-topic &mdash; it is the whole predicament in miniature.</p>
 
-    <p><strong>The great cipher.</strong> The Indus script is the largest undeciphered corpus of the ancient world, and it sits mostly on <strong>seals</strong> &amp;mdash; small carved stamps whose practical job was almost certainly administrative, pressed into clay to mark goods and ownership. Yet the same seals carry the civilization&amp;rsquo;s richest religious imagery: the horned figure, the tree spirit, composite animals, ritual scenes. So the encoded and the sacred are literally combined on a single object, and both halves resist us &amp;mdash; we can neither read the signs nor confirm the meaning of the pictures. It is the purest case in this whole archive of a symbol system that is demonstrably <em>there</em>, plainly systematic, and still locked.</p>
+    <p><strong>The great cipher.</strong> The Indus script is the largest undeciphered corpus of the ancient world, and it sits mostly on <strong>seals</strong> &mdash; small carved stamps whose practical job was almost certainly administrative, pressed into clay to mark goods and ownership. Yet the same seals carry the civilization&rsquo;s richest religious imagery: the horned figure, the tree spirit, composite animals, ritual scenes. So the encoded and the sacred are literally combined on a single object, and both halves resist us &mdash; we can neither read the signs nor confirm the meaning of the pictures. It is the purest case in this whole archive of a symbol system that is demonstrably <em>there</em>, plainly systematic, and still locked.</p>
 
-    <p><strong>The unicorn and the altar-object.</strong> The most common seal image is the so-called <strong>unicorn</strong> &amp;mdash; a bull-like animal in profile shown with a single horn &amp;mdash; standing before a mysterious object usually called the &amp;ldquo;standard&amp;rdquo; or &amp;ldquo;manger,&amp;rdquo; possibly a ritual filter or incense-burner. What it meant is unknown; that it meant <em>something</em>, repeated on thousands of seals, is hard to doubt.</p>
+    <p><strong>The unicorn and the altar-object.</strong> The most common seal image is the so-called <strong>unicorn</strong> &mdash; a bull-like animal in profile shown with a single horn &mdash; standing before a mysterious object usually called the &ldquo;standard&rdquo; or &ldquo;manger,&rdquo; possibly a ritual filter or incense-burner. What it meant is unknown; that it meant <em>something</em>, repeated on thousands of seals, is hard to doubt.</p>
 
-    <p><strong>The swastika.</strong> Among Indus motifs is the <strong>swastika</strong>, an equilateral hooked cross that was, for thousands of years across Eurasia, a benign symbol of auspicious fortune &amp;mdash; and remained sacred in Hindu, Jain, and Buddhist use long before its twentieth-century appropriation by Nazism inverted its associations in the West. Its presence here is part of the honest, and uncomfortable, long history of the sign.</p>
+    <p><strong>The swastika.</strong> Among Indus motifs is the <strong>swastika</strong>, an equilateral hooked cross that was, for thousands of years across Eurasia, a benign symbol of auspicious fortune &mdash; and remained sacred in Hindu, Jain, and Buddhist use long before its twentieth-century appropriation by Nazism inverted its associations in the West. Its presence here is part of the honest, and uncomfortable, long history of the sign.</p>
 
-    <p><strong>The order in the weights.</strong> There is one Indus &amp;ldquo;code&amp;rdquo; we <em>can</em> read, and it is not religious: the standardized system of cubical stone weights, in a regular binary-then-decimal ratio, uniform across the whole territory. It is a reminder that not every encoded system is sacred &amp;mdash; and a caution that, precisely because we cannot read the script, the temptation to pour mystical meaning into Indus symbols must be resisted. The safest honest statement is that the Indus people built elaborate symbolic and administrative systems whose religious content we can see the shape of and cannot yet read.</p>
+    <p><strong>The order in the weights.</strong> There is one Indus &ldquo;code&rdquo; we <em>can</em> read, and it is not religious: the standardized system of cubical stone weights, in a regular binary-then-decimal ratio, uniform across the whole territory. It is a reminder that not every encoded system is sacred &mdash; and a caution that, precisely because we cannot read the script, the temptation to pour mystical meaning into Indus symbols must be resisted. The safest honest statement is that the Indus people built elaborate symbolic and administrative systems whose religious content we can see the shape of and cannot yet read.</p>
 
     <h2>Connections</h2>
 
-    <p>The Indus was not isolated. Sumerian texts speak of trade with a distant land called <strong>Meluhha</strong>, widely identified with the Indus region, and the archaeology confirms the link: Indus-style seals and distinctive etched carnelian beads have been found at Ur and elsewhere in Mesopotamia, and a class of &amp;ldquo;Persian Gulf&amp;rdquo; seals marks the trade route between them. The Indus and the Mesopotamia of Chapter 3 were contemporaries and commercial partners &amp;mdash; two utterly different religious worlds, one loud with gods and kings, the other silent, exchanging goods across the Arabian Sea.</p>
+    <p>The Indus was not isolated. Sumerian texts speak of trade with a distant land called <strong>Meluhha</strong>, widely identified with the Indus region, and the archaeology confirms the link: Indus-style seals and distinctive etched carnelian beads have been found at Ur and elsewhere in Mesopotamia, and a class of &ldquo;Persian Gulf&rdquo; seals marks the trade route between them. The Indus and the Mesopotamia of Chapter 3 were contemporaries and commercial partners &mdash; two utterly different religious worlds, one loud with gods and kings, the other silent, exchanging goods across the Arabian Sea.</p>
 
-    <p>The forward connection is more fraught, and it is where this chapter hands off to the next. Around 1900 BCE the Indus cities declined &amp;mdash; not by a single catastrophe but through a drawn-out combination of climate change, shifting and drying rivers, and the fading of the trade and urban systems that held them together. In the centuries after, the archaeological and linguistic record of northwest India is increasingly that of the <strong>Vedic</strong> culture and its Indo-Aryan language. How the two relate is one of the most contested questions in the field &amp;mdash; and one heavily charged with modern political and national identity. Recent ancient-DNA work, including a genome from a Harappan individual at <strong>Rakhigarhi</strong>, indicates that the steppe-pastoralist ancestry associated with Indo-European speakers was <em>absent</em> in the Harappan population and arrived in South Asia largely <em>after</em> the Indus decline, around 2000&amp;ndash;1500 BCE &amp;mdash; as a substantial admixture layered onto the large existing population, not a wholesale replacement. Whether, and how much, Indus religion survived that transition to shape later Hinduism &amp;mdash; the yogi, the goddess, the sacred bull and pipal, ritual bathing &amp;mdash; is the great open question the next chapter, on the early Vedic world, must take up.</p>
+    <p>The forward connection is more fraught, and it is where this chapter hands off to the next. Around 1900 BCE the Indus cities declined &mdash; not by a single catastrophe but through a drawn-out combination of climate change, shifting and drying rivers, and the fading of the trade and urban systems that held them together. In the centuries after, the archaeological and linguistic record of northwest India is increasingly that of the <strong>Vedic</strong> culture and its Indo-Aryan language. How the two relate is one of the most contested questions in the field &mdash; and one heavily charged with modern political and national identity. Recent ancient-DNA work, including a genome from a Harappan individual at <strong>Rakhigarhi</strong>, indicates that the steppe-pastoralist ancestry associated with Indo-European speakers was <em>absent</em> in the Harappan population and arrived in South Asia largely <em>after</em> the Indus decline, around 2000&ndash;1500 BCE &mdash; as a substantial admixture layered onto the large existing population, not a wholesale replacement. Whether, and how much, Indus religion survived that transition to shape later Hinduism &mdash; the yogi, the goddess, the sacred bull and pipal, ritual bathing &mdash; is the great open question the next chapter, on the early Vedic world, must take up.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -592,7 +581,7 @@ window.CHAPTERS = {
       </div>
       <div class="ev unsupported">
         <h4></h4>
-        <p>- The scale, urban planning, standardized weights, and advanced water/drainage   engineering of the mature Harappan civilization (c. 2600&amp;ndash;1900 BCE) are richly   documented. - The Indus script exists as a systematic sign-system (~400 signs on ~4,000 objects,   mostly seals) and remains genuinely undeciphered; no proposed decipherment is   accepted. - The material religious remains are real: the seated horned figure of seal M-420,   the trefoil-robed &amp;ldquo;Priest-King&amp;rdquo; bust, large numbers of female   figurines, the Great Bath at Mohenjo-daro, pipal-tree and bull/"unicorn" imagery,   the ten-sign Dholavira &amp;ldquo;signboard,&amp;rdquo; and modest burials. - The near-total absence of identified temples, palaces, royal tombs, and war/ruler   monumental art, in sharp contrast to Egypt and Mesopotamia. - Long-distance trade with Mesopotamia (the &amp;ldquo;Meluhha&amp;rdquo; of Sumerian texts;   Indus seals and carnelian beads found at Ur). - Ancient DNA indicating steppe-pastoralist ancestry was absent among the Harappans   and entered South Asia mainly after the Indus decline (c. 2000&amp;ndash;1500 BCE), as   admixture rather than replacement.</p>
+        <p>- The scale, urban planning, standardized weights, and advanced water/drainage   engineering of the mature Harappan civilization (c. 2600&ndash;1900 BCE) are richly   documented. - The Indus script exists as a systematic sign-system (~400 signs on ~4,000 objects,   mostly seals) and remains genuinely undeciphered; no proposed decipherment is   accepted. - The material religious remains are real: the seated horned figure of seal M-420,   the trefoil-robed &ldquo;Priest-King&rdquo; bust, large numbers of female   figurines, the Great Bath at Mohenjo-daro, pipal-tree and bull/"unicorn" imagery,   the ten-sign Dholavira &ldquo;signboard,&rdquo; and modest burials. - The near-total absence of identified temples, palaces, royal tombs, and war/ruler   monumental art, in sharp contrast to Egypt and Mesopotamia. - Long-distance trade with Mesopotamia (the &ldquo;Meluhha&rdquo; of Sumerian texts;   Indus seals and carnelian beads found at Ur). - Ancient DNA indicating steppe-pastoralist ancestry was absent among the Harappans   and entered South Asia mainly after the Indus decline (c. 2000&ndash;1500 BCE), as   admixture rather than replacement.</p>
       </div>
       <div class="ev open">
         <h4>What's not supported by the evidence</h4>
@@ -600,7 +589,7 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>- The confident identification of seal M-420 as the god Shiva. &amp;ldquo;Proto-Shiva&amp;rdquo;   is one interpretation among several (Master/Mistress of Animals, bull/buffalo deity,   shaman), none proven. - Any claim that the Indus script has been read, or that a specific religious text or   myth has been recovered from it &amp;mdash; including the Dholavira signboard, which   remains undeciphered. - The identification of the Mohenjo-daro bust as a &amp;ldquo;Priest-King.&amp;rdquo; The   name is Marshall&amp;rsquo;s analogy to Mesopotamia; there is no Indus evidence for   priests or kings, and the figure&amp;rsquo;s identity is unknown. - The assertion that Harappan religion simply <em>is</em> early Hinduism, or that specific   Hindu deities and doctrines are demonstrably present. The parallels are suggestive,   not established. - Certainty about the function of the figurines or the Great Bath as specifically   cultic.</p>
+        <p>- The confident identification of seal M-420 as the god Shiva. &ldquo;Proto-Shiva&rdquo;   is one interpretation among several (Master/Mistress of Animals, bull/buffalo deity,   shaman), none proven. - Any claim that the Indus script has been read, or that a specific religious text or   myth has been recovered from it &mdash; including the Dholavira signboard, which   remains undeciphered. - The identification of the Mohenjo-daro bust as a &ldquo;Priest-King.&rdquo; The   name is Marshall&rsquo;s analogy to Mesopotamia; there is no Indus evidence for   priests or kings, and the figure&rsquo;s identity is unknown. - The assertion that Harappan religion simply <em>is</em> early Hinduism, or that specific   Hindu deities and doctrines are demonstrably present. The parallels are suggestive,   not established. - Certainty about the function of the figurines or the Great Bath as specifically   cultic.</p>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
@@ -608,11 +597,10 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>- Essentially the entire religious <em>content</em> of the Indus civilization: its deities,   myths, priesthood (if any), and cosmology. - The identity and sex of the horned figure, and whether the central Indus deity was   a god, a goddess, both, or neither. - Whether the Indus script encodes a language at all, and if so which one (the   Dravidian hypothesis vs. the non-linguistic thesis). - The function of the Great Bath, the meaning of the &amp;ldquo;unicorn&amp;rdquo; and its   altar-object, and whether the Kalibangan structures are fire altars. - The degree of continuity between Indus religion and later Hinduism, and how the   Harappan world related to the incoming Indo-Aryan/Vedic culture &amp;mdash; a debate   entangled with modern politics that should be reported, not adjudicated.</p>
+        <p>- Essentially the entire religious <em>content</em> of the Indus civilization: its deities,   myths, priesthood (if any), and cosmology. - The identity and sex of the horned figure, and whether the central Indus deity was   a god, a goddess, both, or neither. - Whether the Indus script encodes a language at all, and if so which one (the   Dravidian hypothesis vs. the non-linguistic thesis). - The function of the Great Bath, the meaning of the &ldquo;unicorn&rdquo; and its   altar-object, and whether the Kalibangan structures are fire altars. - The degree of continuity between Indus religion and later Hinduism, and how the   Harappan world related to the incoming Indo-Aryan/Vedic culture &mdash; a debate   entangled with modern politics that should be reported, not adjudicated.</p>
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -620,23 +608,23 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <ul>
       </ul>
-      <h4>The seals, the Great Bath, and the &amp;ldquo;proto-Shiva&amp;rdquo; debate</h4>
+      <h4>The seals, the Great Bath, and the &ldquo;proto-Shiva&rdquo; debate</h4>
       <ul>
         <li>John Marshall, <em>Mohenjo-Daro and the Indus Civilization</em> (1931), for the original</li>
         <li><a href="<a href="https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia:">https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia:</a> Pashupati seal</a> (surveying</li>
         <li><a href="<a href="https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/">The">https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/">The</a> Print: how a post about the Pashupati seal triggered an identity debate</a>.</li>
-        <li>The &amp;ldquo;Priest-King&amp;rdquo; bust and its contested name —</li>
+        <li>The &ldquo;Priest-King&rdquo; bust and its contested name —</li>
       </ul>
       <h4>The undeciphered script</h4>
       <ul>
         <li><a href="<a href="https://www.harappa.com/content/introduction-study-indus-script">Harappa.com:">https://www.harappa.com/content/introduction-study-indus-script">Harappa.com:</a> Introduction to the Study of the Indus Script</a> (Iravatham Mahadevan).</li>
-        <li>The Dholavira &amp;ldquo;signboard&amp;rdquo; (ten large signs over the north gate) —</li>
+        <li>The Dholavira &ldquo;signboard&rdquo; (ten large signs over the north gate) —</li>
         <li>Asko Parpola, <em>Deciphering the Indus Script</em> (1994) and <em>The Roots of Hinduism</em> (2015).</li>
-        <li>S. Farmer, R. Sproat &amp;amp; M. Witzel, &amp;ldquo;The Collapse of the Indus-Script Thesis&amp;rdquo; (2004) &amp;mdash; <a href="<a href="https://safarmer.com/fsw2.pdf">PDF">https://safarmer.com/fsw2.pdf">PDF</a></a> (the non-linguistic argument).</li>
+        <li>S. Farmer, R. Sproat &amp; M. Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004) &mdash; <a href="<a href="https://safarmer.com/fsw2.pdf">PDF">https://safarmer.com/fsw2.pdf">PDF</a></a> (the non-linguistic argument).</li>
       </ul>
       <h4>Decline and the Indo-Aryan question (ancient DNA)</h4>
       <ul>
-        <li>V. Shinde et al., &amp;ldquo;An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers,&amp;rdquo; <em>Cell</em> (2019); V. Narasimhan et al., <em>Science</em> (2019).</li>
+        <li>V. Shinde et al., &ldquo;An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers,&rdquo; <em>Cell</em> (2019); V. Narasimhan et al., <em>Science</em> (2019).</li>
         <li><a href="<a href="https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in:">https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in:</a> two genetic studies and the Indo-Aryan migration</a>.</li>
       </ul>
       <h4>General</h4>
@@ -648,7 +636,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch05 */
   ch05: { html: `
-    <p class="lead"><em>Tradition chapter · Era 02 — Bronze Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A hymn that was never written down</h2>
 
@@ -742,7 +729,6 @@ window.CHAPTERS = {
 
     <p>Three connections frame the Early Vedic world. Looking <em>back and beside</em>, there is the unresolved relationship with the <strong>Indus Valley</strong> of the previous chapter: whether Vedic religion inherited elements from a Harappan substrate (a proto-Rudra, a goddess, sacred trees and ritual water) or largely displaced it is genuinely open, and — as noted there — recent ancient-DNA work indicates a real influx of steppe-pastoralist, Indo-Aryan-speaking ancestry into South Asia <em>after</em> the Indus decline, layered onto the existing population. Looking <em>across</em> the Bronze Age, the contrast with Egypt and Mesopotamia is total and illuminating: three great contemporary religious worlds, two of them monumental, temple-building, image-making, and literate in stone and clay, the third aniconic, monument-less, and literate only in living memory. Looking <em>forward</em>, the Vedic root feeds two of the next era's great developments — the inward turn of the <strong>Upanishads</strong> toward <em>brahman</em> and <em>atman</em>, and, through the Indo-Iranian sibling relationship, the reforming vision of <strong>Zoroaster</strong> in Persia, whose very vocabulary of gods and demons is the Vedic one turned inside out.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -772,7 +758,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -782,7 +767,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts (translations)</h4>
       <ul>
-        <li><em>The Rigveda</em>, trans. Stephanie Jamison &amp;amp; Joel Brereton (2014), the current</li>
+        <li><em>The Rigveda</em>, trans. Stephanie Jamison &amp; Joel Brereton (2014), the current</li>
         <li>Creation hymns: <a href="<a href="https://en.wikipedia.org/wiki/Nasadiya_Sukta">Wikipedia:">https://en.wikipedia.org/wiki/Nasadiya_Sukta">Wikipedia:</a> Nasadiya Sukta</a>;</li>
         <li>The Gayatri Mantra (Rigveda 3.62.10) — <a href="<a href="https://en.wikipedia.org/wiki/Gayatri_Mantra">Wikipedia:">https://en.wikipedia.org/wiki/Gayatri_Mantra">Wikipedia:</a> Gayatri Mantra</a>.</li>
       </ul>
@@ -814,7 +799,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch06 */
   ch06: { html: `
-    <p class="lead"><em>Tradition chapter · Era 03 — Early Iron Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A fire that has not gone out</h2>
 
@@ -898,7 +882,6 @@ window.CHAPTERS = {
 
     <p>How much of this the Abrahamic traditions <em>owe</em> to Zoroastrianism is genuinely open. The parallels are real and widely noted, and the historical opportunity for influence (the Persian period) is undeniable. But the case must be stated with care, because our systematic Zoroastrian texts were written down late — after the very developments they are invoked to explain — so that skeptics can argue for independent development, or even influence in the other direction, while others maintain the oral Zoroastrian tradition long predates the contact and shaped Jewish thought during the exile. The honest verdict is: striking, important, and unresolved. This project will return to it directly in the Second Temple Judaism chapter of the next era, and in the chapters on Christianity, Islam, and the dualist heresies (Manichaeism, Gnosticism) that Zoroastrian ideas most visibly touched.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -928,7 +911,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -959,7 +941,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch07 */
   ch07: { html: `
-    <p class="lead"><em>Tradition chapter · Era 03 — Early Iron Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A blessing "by Yahweh and his Asherah"</h2>
 
@@ -1061,7 +1042,6 @@ window.CHAPTERS = {
 
     <p>Backward and beside, this chapter's connections are dense: to <strong>Canaan/Ugarit</strong> (the El–Baal–Asherah world Israel grew from), to <strong>Mesopotamia</strong> (the shared flood of Chapter 1, the creation and law parallels of Chapter 3 — Genesis 1's ordered cosmos answering the <em>Enuma Elish</em>, the Covenant Code echoing Hammurabi), and to <strong>Egypt</strong> (the Exodus memory, and the Great Hymn to the Aten's echo in Psalm 104, Chapter 2). Forward, everything here is prologue to the transformation that the next era must open with: the <strong>Babylonian exile</strong> of 586 BCE, which destroyed the Temple, ended the monarchy, and — paradoxically — forged the crisis in which Israelite monolatry finally hardened into full <strong>monotheism</strong> and the religion we can properly call <strong>Judaism</strong> was born. It is also in and after the exile, under Persian rule, that the <strong>Zoroastrian-influence</strong> question raised in Chapter 6 comes due.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1091,7 +1071,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -1130,7 +1109,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch08 */
   ch08: { html: `
-    <p class="lead"><em>Tradition chapter · Era 03 — Early Iron Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>Zeus, written in the Bronze Age</h2>
 
@@ -1214,7 +1192,6 @@ window.CHAPTERS = {
 
     <p>Early Greek religion is a great crossroads. Its succession myth ties it to the <strong>Near East</strong> (the Kumarbi cycle; the <em>Enuma Elish</em> of Chapter 3), its sky-father to the <strong>Indo-European</strong> world (the Vedic Dyaus and Iranian material of Chapters 5 and 6), its alphabet and its love-goddess to the <strong>Levant and Phoenicia</strong> of Chapter 7, and its flood story (Deucalion) to the comparative flood theme of Chapter 1. Herodotus even claimed the Greeks got their gods from <strong>Egypt</strong> — an overstatement, but a witness to how conscious the Greeks were of eastern debts. Forward, everything here is the seedbed of the next era's <strong>classical Greece</strong>: the Olympian myths that the tragedians will interrogate, the mystery and Orphic ideas of the soul that Pythagoras and Plato will philosophize, and a pantheon that <strong>Rome</strong> will adopt wholesale.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1244,7 +1221,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -1277,7 +1253,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch09 */
   ch09: { html: `
-    <p class="lead"><em>Tradition chapter · Era 03 — Early Iron Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>Dragon bones in the medicine shop</h2>
 
@@ -1359,7 +1334,6 @@ window.CHAPTERS = {
 
     <p>Early China is the great study in <em>contrast</em> for this era. Developing in relative isolation from the Near Eastern and Mediterranean world, it produced a religion strikingly <em>unlike</em> the others in this archive: with <strong>no creator god, no anthropomorphic pantheon rich in myth, and no separate priesthood</strong> — instead, an impersonal moral <strong>Heaven</strong>, a spirit-world of <strong>ancestors</strong>, and a king who was priest, diviner, and Son of Heaven in one. Where Israel (Chapter 7) was moving toward one transcendent God and Greece (Chapter 8) toward a family of vivid Olympians, China built its sacred order around the family dead and the moral scrutiny of Heaven. Forward, everything here flows into the next era's <strong>Axial Age</strong>: <strong>Confucius</strong> will make the Zhou ideal of <em>li</em>, <em>xiao</em>, and virtue the basis of his teaching; <strong>Daoism</strong> will draw on the older nature-cosmology and the way (<em>Dao</em>) of Heaven; and the <em>Yijing</em>'s lines will be philosophized into the full <strong>yin-yang</strong> system. The Mandate of Heaven, meanwhile, will outlast every dynasty that invoked it.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1389,7 +1363,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -1423,7 +1396,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch10 */
   ch10: { html: `
-    <p class="lead"><em>Tradition chapter · Era 04 — Axial Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>Jars in a cliff</h2>
 
@@ -1505,7 +1477,6 @@ window.CHAPTERS = {
 
     <p>This chapter is a great junction. It is the direct sequel to <strong>pre-exilic Israel</strong> (Chapter 7), completing the journey to monotheism; it is where the fingerprints of <strong>Zoroaster</strong> (Chapter 6) are most hotly sought; and it plays out in the Babylon and under the Persia we met in Chapters 3 and 6. Sideways, across the Axial Age, it is locked in dialogue with <strong>Hellenism</strong> and Greek philosophy (the Septuagint, Philo), tying it to the classical-Greece thread of Chapter 8. And forward, it is the indispensable seedbed of the next era's giants: <strong>Christianity</strong>, which begins as one of these Second Temple Judaisms; <strong>Rabbinic Judaism</strong>, the Pharisees' heirs who will remake the religion around Torah after the Temple's fall; and, more distantly, <strong>Islam</strong>, <strong>Gnosticism</strong>, and the esoteric traditions of <strong>Kabbalah</strong>.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1535,7 +1506,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -1569,7 +1539,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch11 */
   ch11: { html: `
-    <p class="lead"><em>Tradition chapter · Era 04 — Axial Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A throne with no one on it</h2>
 
@@ -1649,7 +1618,6 @@ window.CHAPTERS = {
 
     <p>Buddhism's deepest tie is to <strong>Chapter 5</strong>: it is a child and a rebel of the Vedic world, sharing its vocabulary of <strong>karma, rebirth, and samsara</strong> while rejecting its sacrifice, its priesthood, and — most sharply — its <strong>atman</strong>. It is the sibling of <strong>Jainism</strong> and a member of the śramaṇa ferment. Across the Axial Age, it belongs with the other great transformations this era gathers: <strong>Confucius</strong> and the Chinese sages, the <strong>Greek philosophers</strong> (Chapter 8's world, coming to flower), and the <strong>prophets and sages of Israel</strong> (Chapters 7 and 10) — all, in Karl Jaspers's famous phrase, part of the "Axial Age" in which humanity turned, across Eurasia, toward inwardness, ethics, and transcendence. Forward, Buddhism's story is only beginning: the <strong>Mahayana</strong> and its bodhisattvas, the spread to <strong>China, Tibet, Southeast Asia, and Japan</strong>, and the Greco-Buddhist art of <strong>Gandhara</strong> all belong to later chapters of this archive.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1679,7 +1647,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -1713,7 +1680,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch12 */
   ch12: { html: `
-    <p class="lead"><em>Tradition chapter · Era 04 — Axial Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>Two answers to a broken world</h2>
 
@@ -1811,7 +1777,6 @@ window.CHAPTERS = {
 
     <p>Confucianism and Daoism grow directly out of <strong>Chapter 9</strong> — the Zhou world, the Mandate of Heaven, ancestor-reverence, and oracle-bone divination are their shared inheritance, and the <em>Yijing</em> is the bridge. Across the Axial Age they belong beside the era's other great awakenings: the <strong>Buddha</strong> (Chapter 11) and the <strong>Upanishadic sages</strong> (Chapter 5) turning inward in India, the <strong>Greek philosophers</strong> (Chapter 8) reasoning their way toward first principles, and the <strong>prophets of Israel</strong> (Chapters 7, 10) — all part of what Karl Jaspers named the <strong>Axial Age</strong>, the near-simultaneous turn across Eurasia toward ethics, reflection, and transcendence. The comparison with <strong>Greece</strong> is especially rich: like the Greeks, the Chinese produced rival schools arguing in public over the good life and the good state — but where Greek thought prized abstract definition and formal logic, Chinese thought prized concrete example, harmony, and the cultivation of conduct. Forward, both traditions have vast futures in this archive: the arrival of <strong>Buddhism</strong> in China and the three-way conversation of the <strong>three teachings</strong>; the flowering of <strong>religious Daoism</strong> and its alchemy; and the great medieval <strong>Neo-Confucian</strong> synthesis, all of which belong to later chapters.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1841,7 +1806,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -1882,7 +1846,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch13 */
   ch13: { html: `
-    <p class="lead"><em>Tradition chapter · Era 04 — Axial Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>The flame that could not go out</h2>
 
@@ -1966,7 +1929,6 @@ window.CHAPTERS = {
 
     <p>Rome's religion is unthinkable without <strong>Greece</strong> (Chapter 8): Roman gods wear Greek myths, and the whole literary pantheon is an act of <em>interpretatio</em>. Its ritual and divinatory core, though, is deeply <strong>Etruscan</strong> — the triad, the temple form, the liver-reading. Across the Axial Age, Rome is the great <em>institutional</em> counterpart to the era's more inward turns: where the Buddha (Chapter 11), the Chinese sages (Chapter 12), and the prophets of Israel (Chapters 7, 10) turned toward ethics and transcendence, Rome perfected religion as <strong>public order and civic duty</strong> — a different kind of axial achievement. Forward, Rome is the hinge of much of this archive: the imperial cult sets the stage for the clashes of <strong>early Christianity</strong> and the making of <strong>Rabbinic Judaism</strong>; the <strong>mystery religions</strong> flooding into the empire — Isis, Cybele, and above all <strong>Mithras</strong> — belong to the next era's chapter on Roman religion in Late Antiquity; and Rome's eventual Christianization will transform, and in many ways preserve, this whole apparatus, right down to the title <em>Pontifex Maximus</em>, which the popes carry to this day.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -1996,7 +1958,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2030,7 +1991,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch14 */
   ch14: { html: `
-    <p class="lead"><em>Tradition chapter · Era 04 — Axial Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A cauldron in a bog, a body in the peat</h2>
 
@@ -2106,7 +2066,6 @@ window.CHAPTERS = {
 
     <p>Celtic and Germanic religion are branches of the great <strong>Indo-European</strong> family that runs through this archive: their sky-gods, their thunder-gods, their priestly loremasters, and their fire-and-water sacrifices are cousins of the <strong>Vedic</strong> world (Chapter 5), the <strong>Greek</strong> (Chapter 8), and the <strong>Roman</strong> (Chapter 13) — ancient writers themselves compared the <strong>druids</strong> to the <strong>brahmins</strong> and the <strong>magi</strong>, and the comparison is apt. Within the Axial Age, these are the traditions of Europe's edge — non-literate, tribal, grove-worshipping — standing beside the era's great textual and philosophical transformations as their oldest-feeling counterpoint. Forward, their stories run deep into this archive: the <strong>Germanic</strong> thread flowers into the fully-recorded <strong>Norse paganism</strong> of the early medieval north; the <strong>Celtic</strong> thread survives Christianization folded into Irish and Welsh literature and folk practice; and both are reborn, in the modern era, as self-conscious new religious movements — revival <strong>Druidry</strong> and <strong>Heathenry</strong> — that belong to the final chapters of this work.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2136,7 +2095,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2168,7 +2126,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch15 */
   ch15: { html: `
-    <p class="lead"><em>Tradition chapter · Era 04 — Axial Age · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>The philosopher on trial for his gods</h2>
 
@@ -2238,7 +2195,6 @@ window.CHAPTERS = {
 
     <p>Classical Greek philosophy grows out of the <strong>early Greek religion of Chapter 8</strong> — its gods, its Delphic oracle, and above all its <strong>mystery cults</strong> (Eleusis, Orpheus), whose promise of a blessed afterlife the Orphic tablets and Pythagorean reincarnation carry forward. It is the intellectual peak of the <strong>Axial Age</strong>, standing beside the other great turns of Chapters 10–14: the <strong>Buddha's</strong> analysis of the self (Chapter 11), the <strong>Chinese sages</strong> (Chapter 12), the ritual order of <strong>Rome</strong> (Chapter 13), and the prophetic monotheism of <strong>Israel</strong> (Chapters 7, 10) — Greece's distinctive contribution being the turn to <strong>reason</strong> as the road to truth. Forward, its influence is almost immeasurable: Plato's transcendent Good and immortal soul, Aristotle's Unmoved Mover, and the Stoic Logos become the philosophical scaffolding of <strong>Hellenistic Judaism</strong> (Philo), <strong>Christianity</strong> (the Logos of John's Gospel; the Church Fathers' debt to Plato and Aristotle), <strong>Gnosticism</strong> and <strong>Neoplatonism</strong> (Late Antiquity), and, through them, medieval <strong>Islamic</strong>, <strong>Jewish</strong>, and <strong>Christian</strong> theology. When a medieval theologian argues for God as the Unmoved Mover or the Good itself, he is speaking Greek.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2268,7 +2224,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2302,7 +2257,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch16 */
   ch16: { html: `
-    <p class="lead"><em>Tradition chapter · Era 05 — Late Antiquity · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A fish scratched on a wall</h2>
 
@@ -2374,7 +2328,6 @@ window.CHAPTERS = {
 
     <p>Christianity is unthinkable without <strong>Second Temple Judaism</strong> (Chapter 10) — its scriptures, its messianic and apocalyptic hopes, its God — and it grew up in the religious marketplace of the Roman Empire (Chapter 13), whose imperial cult it defied and whose roads and Greek language it used to spread. Its theology drew deeply on <strong>Greek philosophy</strong> (Chapter 15): the Gospel of John opens by identifying Christ with the <strong>Logos</strong>, and the Church Fathers would build Christian doctrine with the tools of Plato and Aristotle. It is the sibling and rival of the <strong>Gnosticism</strong> and the <strong>Roman mystery cults</strong> of the next chapters, and of the <strong>Rabbinic Judaism</strong> forming in the same centuries. Forward, its story dominates much of this archive: the great <strong>Christological councils</strong> and the making of orthodoxy, the split of <strong>East and West</strong>, the rise of <strong>Islam</strong> partly in response to it (Chapter on the early medieval), the <strong>medieval</strong> church, the <strong>Reformation</strong>, and the countless movements and mysticisms that flow from it down to the present.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2404,7 +2357,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2435,7 +2387,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch17 */
   ch17: { html: `
-    <p class="lead"><em>Tradition chapter · Era 05 — Late Antiquity · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A jar buried in the Egyptian sand</h2>
 
@@ -2507,7 +2458,6 @@ window.CHAPTERS = {
 
     <p>Gnosticism is the great <strong>sibling and rival</strong> of the early Christianity of Chapter 16 — sharing its Christ and its scriptures but reading them utterly against the grain — and it draws deeply on the <strong>Platonism</strong> of Chapter 15 (the material world as a debased copy of a higher reality, the divine soul longing to ascend) and on <strong>Jewish</strong> scripture and apocalyptic (Chapter 10), radically reinterpreted. It runs alongside the <strong>Hermeticism</strong> of Greco-Roman Egypt and the <strong>Roman mystery cults</strong> of the next chapter, with which it shares the promise of a secret path to salvation. Its family extends beyond itself: the <strong>Mandaeans</strong> of Iraq and Iran — who revere <strong>John the Baptist</strong>, reject Jesus, and preserve an ancient dualist, baptizing faith — survive as the <strong>last living Gnostics</strong> to this day; and the dualist world-religion of <strong>Manichaeism</strong>, founded by the prophet <strong>Mani</strong> in third-century Persia, carried a comparable vision of light imprisoned in darkness from Rome to China. Forward, the Gnostic impulse resurfaces again and again in this archive: in the medieval dualist heresies of the <strong>Bogomils</strong> and <strong>Cathars</strong>, and in the modern occult and psychological revivals — from the <strong>Theosophists</strong> to <strong>Carl Jung</strong>, who saw in the Gnostic myths a map of the psyche. The fullest Gnostic scripture of all, the <strong>Pistis Sophia</strong> &mdash; known a century and a half before Nag Hammadi &mdash; has its own chapter (Chapter 45).</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2537,7 +2487,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2567,7 +2516,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch18 */
   ch18: { html: `
-    <p class="lead"><em>Tradition chapter · Era 05 — Late Antiquity · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>Down into the cave</h2>
 
@@ -2651,7 +2599,6 @@ window.CHAPTERS = {
 
     <p>The Roman mysteries are the heirs of the <strong>Greek mystery cults</strong> of Chapter 8 (Eleusis, Orpheus) and of the <strong>Orphic-Pythagorean</strong> hope of Chapter 15, and they grew within the civic religion of <strong>Rome</strong> (Chapter 13), which had already imported <strong>Magna Mater</strong> and suppressed the <strong>Bacchanalia</strong>. They carry forward the Egyptian religion of <strong>Isis and Osiris</strong> (Chapter 2) and the Persian name of <strong>Mithra</strong> (Chapter 6) into new forms. Above all they are the <strong>rivals and siblings</strong> of the <strong>early Christianity</strong> and <strong>Gnosticism</strong> of Chapters 16 and 17 — fellow seekers, in the same anxious age, of a personal salvation the old gods did not promise. Forward, the mysteries <strong>faded</strong> as Christianity triumphed and the temples closed in the fourth and fifth centuries; but their initiatory, secret, salvation-seeking impulse never wholly died, resurfacing in the <strong>Hermetic</strong> and esoteric currents and, much later, in the initiatory societies of the modern Western esoteric tradition treated in the final chapters of this archive.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2681,7 +2628,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2711,7 +2657,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch19 */
   ch19: { html: `
-    <p class="lead"><em>Tradition chapter · Era 05 — Late Antiquity · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>A sage carried out in a coffin</h2>
 
@@ -2773,13 +2718,12 @@ window.CHAPTERS = {
 
     <p><strong>The crowns on the letters.</strong> That premise shaped the sacred craft of the <strong>scribe</strong> (<em>sofer</em>), who copies a <strong>Torah scroll</strong> by hand under exacting rules, where a <strong>single wrong letter invalidates the whole</strong>. Certain letters are written with tiny decorative <strong>crowns</strong> (<em>tagin</em>), and a famous Talmudic legend has Moses shown a vision of <strong>Rabbi Akiva</strong> expounding mountains of law from the ornamental strokes on the letters — an image of the tradition's faith that infinite meaning is folded into the smallest marks of the text.</p>
 
-    <p><strong>The chariot and the palaces.</strong> Late antiquity also produced the first Jewish <strong>mysticism</strong>: the <strong>Merkabah</strong> ("Chariot") tradition, meditating on <strong>Ezekiel's</strong> vision of the divine throne-chariot, and the <strong>Hekhalot</strong> ("Palaces") literature, describing the perilous ascent of the mystic through <strong>seven heavenly palaces</strong> toward the throne of glory. The Talmud warns of its dangers with the haunting tale of the *<em>four who entered the </em>pardes**<em> (the "orchard" of mystical knowledge): one died, one went mad, one became a heretic, and only Rabbi Akiva "entered in peace and departed in peace." </em>A symbol honesty note:<em> the <strong>menorah</strong>, the seven-branched lampstand of the Temple, was already the ancient emblem of Judaism, but the <strong>Star of David</strong> (</em>Magen David*) became a widespread Jewish symbol only much <strong>later</strong>, in the medieval and modern periods — it is not an ancient sign of the faith.</p>
+    <p><strong>The chariot and the palaces.</strong> Late antiquity also produced the first Jewish <strong>mysticism</strong>: the <strong>Merkabah</strong> ("Chariot") tradition, meditating on <strong>Ezekiel's</strong> vision of the divine throne-chariot, and the <strong>Hekhalot</strong> ("Palaces") literature, describing the perilous ascent of the mystic through <strong>seven heavenly palaces</strong> toward the throne of glory. The Talmud warns of its dangers with the haunting tale of the <strong>four who entered the <em>pardes</em></strong> (the "orchard" of mystical knowledge): one died, one went mad, one became a heretic, and only Rabbi Akiva "entered in peace and departed in peace." <em>A symbol honesty note:</em> the <strong>menorah</strong>, the seven-branched lampstand of the Temple, was already the ancient emblem of Judaism, but the <strong>Star of David</strong> (<em>Magen David</em>) became a widespread Jewish symbol only much <strong>later</strong>, in the medieval and modern periods — it is not an ancient sign of the faith.</p>
 
     <h2>Connections</h2>
 
     <p>Rabbinic Judaism is the direct heir of <strong>Second Temple Judaism</strong> (Chapter 10), and specifically of the <strong>Pharisees</strong>, carrying the Hebrew Bible and the covenant into a new, Temple-less form. Its great sibling is <strong>Christianity</strong> (Chapter 16): the two are the twin reformulations of Israel's faith after 70 CE, defining themselves partly against each other in the long "parting of the ways." Its Babylonian heartland lay under <strong>Zoroastrian</strong> Persian rule (Chapter 6), and scholars study the Talmud's engagement with that world. Forward, rabbinic Judaism is the trunk from which <strong>all later Judaism</strong> grows: the <strong>Geonim</strong> and the medieval commentators, the flowering of the <strong>Kabbalah</strong> in high-medieval Spain (a later chapter), the challenge of the scripture-only <strong>Karaites</strong>, the philosophy of <strong>Maimonides</strong>, and every modern Jewish movement — Orthodox, Conservative, Reform — that defines itself in relation to the rabbinic tradition. The book became the homeland, and the homeland endured.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2809,7 +2753,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -2839,7 +2782,6 @@ window.CHAPTERS = {
 
   /* ------------------------------------------------------------------ ch20 */
   ch20: { html: `
-    <p class="lead"><em>Tradition chapter · Era 05 — Late Antiquity · <strong>DRAFT — READY FOR REVIEW</strong></em>  ---</p>
 
     <h2>The bodhisattva with a thousand arms</h2>
 
@@ -2913,7 +2855,6 @@ window.CHAPTERS = {
 
     <p>Mahayana is the child of the <strong>early Buddhism</strong> of Chapter 11 — it keeps the Four Noble Truths, the Eightfold Path, karma, rebirth, and <em>anatta</em>, and radicalizes dependent origination into emptiness — even as it transforms the tradition's ideal, cosmology, and devotion. Its philosophy of no-fixed-self and no-fixed-essence is the great counter-melody to the <strong>Upanishadic</strong> quest for the eternal Self (Chapter 5). Within its own era, its turn toward a <strong>compassionate cosmic savior</strong> and <strong>salvation by grace</strong> rhymes remarkably with the contemporaneous rise of <strong>Christianity</strong> (Chapter 16) and the <strong>mystery cults</strong> (Chapter 18) — not by mutual influence, so far as we know, but as a shared movement of the Late-Antique religious spirit across Eurasia. Forward, the Mahayana is the root of most of the Buddhist world still to come in this archive: the <strong>Vajrayana</strong> and <strong>Tantra</strong> of Tibet and the Himalayas, <strong>Chan/Zen</strong>, <strong>Pure Land</strong>, and the whole vast flowering of <strong>East Asian</strong> Buddhism.</p>
 
-    <p>---</p>
 
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
@@ -2943,7 +2884,6 @@ window.CHAPTERS = {
       </div>
       <div class="ev open">
         <h4></h4>
-        <p>---</p>
       </div>
     </div>
 
@@ -3126,7 +3066,7 @@ window.CHAPTERS = {
 
     <p>Against all this stood <strong>Irenaeus of Lyons</strong> (c. 180), whose <em>Against Heresies</em> set out the tools orthodoxy would use for centuries: the <strong>rule of faith</strong> (a summary of core belief), <strong>apostolic succession</strong> (bishops in a line back to the apostles), and a fixed set of Gospels — Irenaeus insisted there were exactly <strong>four</strong>, no more and no fewer.</p>
 
-    <p>### The canon</p>
+    <h3>The canon</h3>
 
     <p>The list of accepted books came together slowly and unevenly. The <strong>Muratorian Fragment</strong> (a Latin list usually dated <strong>c. 170–200</strong>) names most of the New Testament but not all, and includes a book or two later dropped. Not until <strong>Athanasius's Thirty-Ninth Festal Letter of 367</strong> do we find the <strong>exact twenty-seven books</strong> of the present New Testament listed as canonical — though, as scholars caution, this was the first surviving <em>complete</em> list, not the moment the canon was invented; it ratified a consensus already largely formed. Western councils at <strong>Hippo (393)</strong> and <strong>Carthage (397)</strong> confirmed the same list. The <strong>Old Testament</strong> canon remained contested — Greek-speaking churches used the larger Septuagint; Jerome would argue for the shorter Hebrew list — a disagreement that survives today in the difference between Catholic and Protestant Bibles.</p>
 

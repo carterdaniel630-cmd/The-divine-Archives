@@ -22,8 +22,9 @@ function esc(s) {
 function inline(s) {
   s = esc(s);
   s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${u}">${t}</a>`);
-  s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-  s = s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  // bold first (allowing *italic* nested inside, e.g. **a *b***), then italic
+  s = s.replace(/\*\*(.+?)\*\*(?!\*)/g, "<strong>$1</strong>");
+  s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   return s;
 }
 // linkify a source line: bold lead stays, trailing bare URL(s) become links
@@ -47,6 +48,9 @@ function convert(id, md) {
   for (const ln of lines) {
     if (/^#\s+/.test(ln)) continue;
     if (/^\*Recently added.*\*\s*$/.test(ln)) continue;
+    // internal workflow metadata and markdown rules never reach the public page
+    if (/^\*(Tradition chapter|Comparative theme|Theme chapter).*\*\s*$/.test(ln)) continue;
+    if (/^\s*-{3,}\s*$/.test(ln)) continue;
     kept.push(ln);
   }
   const body = kept.join("\n");
