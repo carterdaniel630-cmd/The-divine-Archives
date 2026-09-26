@@ -209,7 +209,7 @@ function head(title, desc, url, rel, type, extra) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
   <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=14" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=17" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -263,7 +263,7 @@ function itemPage(item) {
     sectionsHtml = sectionsHtml.replace(/<blockquote class="vault-text">[\s\S]*?<\/blockquote>/, (bq) =>
       `<section class="relic relic-tablet" data-vault-relic="${esc(item.id)}" data-relic-kind="tablet">\n` +
       `<h3 class="relic-title">${esc(art.title)}</h3><p class="relic-sub">${esc(art.sub)}</p>\n${bq}\n</section>`);
-  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber", "skydisc", "daycount"].indexOf(art.type) !== -1) {
+  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber", "skydisc", "daycount", "gate", "cartouche", "oracle"].indexOf(art.type) !== -1) {
     // static fallback: the object's own words (if any) and its documented stations
     const bits = [];
     if (art.declarations) bits.push("<ul>" + art.declarations.map((d) => `<li>${esc(d)}</li>`).join("") + "</ul>");
@@ -275,7 +275,11 @@ function itemPage(item) {
     if (art.inscription) bits.push(`<p><strong>${esc(art.inscription)}</strong></p>`);
     if (art.translation) bits.push(`<p><em>${esc(art.translation)}</em></p>`);
     if (art.phases) bits.push("<ul>" + art.phases.map((x) => `<li><strong>${esc(x.name)}</strong> (${esc(x.days)} days): ${esc(x.d)}</li>`).join("") + "</ul>");
-    if (art.signs) bits.push("<p>" + art.signs.map((x) => `${esc(x[0])} (${esc(x[1])})`).join(" · ") + "</p>");
+    if (art.signs && Array.isArray(art.signs[0])) bits.push("<p>" + art.signs.map((x) => `${esc(x[0])} (${esc(x[1])})`).join(" · ") + "</p>");
+    if (art.beasts) bits.push("<ul>" + Object.keys(art.beasts).map((k) => `<li><strong>${esc(art.beasts[k].t)}</strong>: ${esc(art.beasts[k].d)}</li>`).join("") + "</ul>");
+    if (art.plaque) bits.push(`<p><strong>${esc(art.plaque.t)}</strong>: ${esc(art.plaque.d)}</p>`);
+    if (art.signs && art.signs[0] && art.signs[0].glyph) bits.push(`<p lang="grc"><strong>${esc(art.greek.join(""))}</strong></p><ul>` + art.signs.map((x) => `<li><span lang="egy">${esc(x.glyph)}</span> ${esc(x.sound)}: ${esc(x.d)}</li>`).join("") + "</ul>");
+    if (art.record) bits.push("<ul>" + art.record.map((x) => `<li><span lang="zh-Hant">${esc(x.zh)}</span> ${esc(x.en)} (${esc(x.note)})</li>`).join("") + "</ul>");
     if (art.stages) bits.push("<ol>" + art.stages.map((x) => `<li><strong>${esc(x.t)}</strong>: ${esc(x.d)}</li>`).join("") + "</ol>");
     if (art.layers) bits.push(art.layers.map((x) => `<p><strong>${esc(x.t)}</strong> (${esc(x.s)}): ${esc(x.d)}</p>`).join(""));
     const plates = art.base ? [art.base].concat(art.inner || [], (art.outer || []).filter((x) => !x.missing)) : [];
@@ -296,7 +300,7 @@ function itemPage(item) {
   const body = e.lead.join("\n") + "\n" + relicTop + studyBlock(item) + "\n" + sectionsHtml;
   // scripts the object needs: the base Hebrew/Phoenician/Egyptian set, plus any the item names (e.g. Arabic, Gurmukhi, Runic)
   const extraFonts = (art && art.fonts) || [];
-  const fonts = art && (["scroll", "ark", "inscription", "scales", "chamber"].indexOf(art.type) !== -1 || art.lineLang === "he" || extraFonts.length)
+  const fonts = art && (["scroll", "ark", "inscription", "scales", "chamber", "cartouche"].indexOf(art.type) !== -1 || art.lineLang === "he" || extraFonts.length)
     ? `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&family=Noto+Sans+Egyptian+Hieroglyphs${extraFonts.map((f) => "&family=" + f).join("")}&display=swap" />\n`
     : "";
   return `${head(fullTitle, desc, url, "../", "article",
@@ -331,9 +335,9 @@ ${item.pending ? `      <div class="pending-banner"><strong>Recently added &midd
 ${footer("../")}
 </div>
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
-<script src="../assets/vault-data.js?v=7" defer></script>
+<script src="../assets/vault-data.js?v=8" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
-<script src="../assets/vault/relic.js?v=10" defer></script>
+<script src="../assets/vault/relic.js?v=11" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>

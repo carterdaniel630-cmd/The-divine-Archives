@@ -199,4 +199,14 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 | V45 | The Nebra Sky Disc | Era II · The Bronze Age | The Neolithic (ch42); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
 | V46 | The Piprahwa Relics | Era IV · The Axial Age | Buddhism (ch11); Mahayana Buddhism (ch20); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
 | V47 | The Kensington Runestone | Era IX · The Modern Age | Norse Paganism (ch23) | `PUBLISHED — pending review` |
-| — | Batch 6 queue: Great Isaiah Scroll · Book of Enoch in Ge'ez · Vienna Dioscurides · Codex Mendoza · Ishtar Gate · Rosetta Stone · Behistun Inscription · Oracle Bones of Anyang · Phaistos Disc · Holy Mandylion | — | placed on publication | `not started` (queued) |
+| V48 | The Great Isaiah Scroll | Era IV · The Axial Age | Second Temple Judaism (ch10); Pre-exilic Israel (ch07) | `PUBLISHED — pending review` |
+| V49 | The Book of Enoch | Era IV · The Axial Age | Second Temple Judaism (ch10); The End of Days (ch50); Eastern Orthodoxy & Byzantium (ch60) | `PUBLISHED — pending review` |
+| V50 | The Vienna Dioscurides | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60) | `PUBLISHED — pending review` |
+| V51 | The Codex Mendoza | Era VIII · The Early Modern | The Aztec (ch43) | `PUBLISHED — pending review` |
+| V52 | The Ishtar Gate | Era IV · The Axial Age | Mesopotamia (ch03); Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
+| V53 | The Rosetta Stone | Era IV · The Axial Age | Egypt (ch02); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V54 | The Behistun Inscription | Era IV · The Axial Age | Zoroaster (ch06); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V55 | The Oracle Bones of Anyang | Era III · The Early Iron Age | Early China (ch09); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V56 | The Phaistos Disc | Era II · The Bronze Age | Early Greece (ch08) | `PUBLISHED — pending review` |
+| V57 | The Holy Mandylion | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
+| — | Batch 7 queue: Lion Man of Hohlenstein-Stadel · Venus of Willendorf · Göbekli Tepe's Pillars · Kojiki Manuscripts · Inca Khipu · Kalpa Sutra Manuscripts · Benin Bronzes · Staff God of Tiwanaku · Kebra Nagast · Hebrew Amulets of Late Antiquity | — | placed on publication | `not started` (queued) |

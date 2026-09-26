@@ -1,4 +1,7 @@
 /* THE DIVINE ARCHIVES — Vault relics: the carved tablet and the unrolling scroll */
+/* self-hosted hieroglyph font (SIL OFL 1.1, Noto Project), so cartouches never render blank if Google Fonts is unreachable */
+@font-face { font-family: "Vault Hieroglyphs"; src: url("../vendor/fonts/NotoSansEgyptianHieroglyphs.woff2") format("woff2"); font-display: swap; unicode-range: U+13000-1343F; }
+
 
 .relic { margin: 2.2rem 0 2.6rem; }
 .relic-scroll, .relic-linen { position: relative; left: 50%; transform: translateX(-50%); width: min(72rem, calc(100vw - 2rem)); }
@@ -472,7 +475,7 @@
 .scales-svg .sc-bar { fill: #c99a3e; }
 .scales-svg .sc-cord { stroke: #c9a45e; stroke-width: 1.4; }
 .scales-svg .sc-pan { fill: #b88a3a; stroke: #6e4c12; }
-.scales-svg .sc-glyph { font-family: "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 34px; fill: #f3e2b4; }
+.scales-svg .sc-glyph { font-family: "Vault Hieroglyphs", "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 34px; fill: #f3e2b4; }
 .scales-svg .sc-label { font-family: var(--font-display); font-size: 11px; letter-spacing: .12em; fill: var(--ink-dim); text-transform: uppercase; }
 .scales-svg .sc-beam { transform-origin: 210px 60px; transition: transform 1.2s cubic-bezier(.3,1.4,.5,1); }
 .scales-svg .sc-pan-g { transition: transform 1.2s cubic-bezier(.3,1.4,.5,1); }
@@ -591,7 +594,7 @@
 .ch-wall { fill: #e5dccb; stroke: #b9a77c; stroke-width: 2; }
 .ch-cart { fill: #efe7d6; stroke: #2a4ca0; stroke-width: 2.4; }
 .ch-cart-tie { stroke: #2a4ca0; stroke-width: 3; }
-.ch-glyph { font-family: "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 26px; fill: #22449a; }
+.ch-glyph { font-family: "Vault Hieroglyphs", "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 26px; fill: #22449a; }
 .ch-zone { cursor: pointer; outline: none; }
 .ch-hit { fill: transparent; stroke: transparent; stroke-width: 2; transition: fill .25s, stroke .25s; }
 .ch-rule { stroke: rgba(34,68,154,.25); stroke-width: 1; }
@@ -671,3 +674,51 @@
 .dc-pointer { fill: #e7c680; }
 @media (prefers-reduced-motion: reduce) { .dc-outer, .dc-inner, .disc-st { transition: none; } }
 .cx-t[lang="cop"] { font-family: "Noto Sans Coptic", "Antinoou", "Segoe UI Historic", serif; font-style: normal; font-size: 1.6rem; letter-spacing: .06em; }
+
+/* ---------------------------------------------------------------- gate (Ishtar Gate) */
+.gate-stage { max-width: 40rem; margin: 0 auto; }
+.gate-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 16px 26px rgba(0,0,0,.6)); }
+.gate-wall { fill: url(#gate-brick); stroke: #0e2358; stroke-width: 2; }
+.gate-arch { fill: #0a0f1f; }
+.gate-trim { fill: none; stroke: #d9b45a; stroke-width: 4; }
+.gate-beast { cursor: pointer; outline: none; }
+.gate-tile { fill: rgba(20,50,130,.35); stroke: rgba(217,180,90,.35); transition: fill .25s, stroke .25s; }
+.gate-icon { fill: #e8c46a; stroke: #7a5a1a; stroke-width: 1; }
+.gate-dragon .gate-icon { fill: #f1e2b8; }
+.gate-beast:hover .gate-tile, .gate-beast:focus-visible .gate-tile, .gate-beast.on .gate-tile { fill: rgba(231,198,128,.25); stroke: #e7c680; }
+.gate-plaque-r { fill: #203f86; stroke: #d9b45a; stroke-width: 2; }
+.gate-plaque-l { stroke: #f1e2b8; stroke-width: 2; stroke-dasharray: 3 2; opacity: .8; }
+.gate-plaque.on .gate-plaque-r, .gate-plaque:hover .gate-plaque-r { fill: #2a54b0; }
+
+/* ---------------------------------------------------------------- cartouche (Rosetta Stone) */
+.ct-stage { max-width: 34rem; margin: 0 auto; padding: 1.6rem 1rem 1.2rem; text-align: center; border-radius: 6px;
+  background: radial-gradient(ellipse at 40% 25%, rgba(255,255,255,.06), transparent 60%), linear-gradient(180deg, #3b3a3d, #232226); box-shadow: 0 16px 34px rgba(0,0,0,.55), inset 0 0 30px rgba(0,0,0,.5); }
+.ct-greek { margin: 0; font-family: "Noto Serif", Georgia, serif; font-size: 1.9rem; letter-spacing: .18em; color: #d9d2c4; }
+.ct-gl { transition: color .25s, text-shadow .25s; }
+.ct-gl.on { color: #ffd37a; text-shadow: 0 0 10px rgba(255,200,100,.8); }
+.ct-arrow { margin: .3rem 0; color: var(--ink-faint); }
+.ct-ring { display: inline-flex; gap: .15rem; align-items: center; padding: .5rem 1.4rem; border: 3px solid #cfc6b4; border-radius: 999px; position: relative; }
+.ct-ring::after { content: ""; position: absolute; right: -12px; top: 18%; bottom: 18%; width: 6px; background: #cfc6b4; border-radius: 2px; }
+.ct-sign { font: inherit; font-family: "Vault Hieroglyphs", "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 2.4rem; line-height: 1.2; background: none; border: 0; color: #e8e0cf; cursor: pointer; padding: .1rem .15rem; border-radius: 4px; transition: color .25s, text-shadow .25s; }
+.ct-sign:hover, .ct-sign:focus-visible, .ct-sign.on { color: #ffd37a; text-shadow: 0 0 12px rgba(255,200,100,.85); outline: none; }
+.ct-sounds { display: flex; justify-content: center; gap: 1.35rem; margin: .5rem 0 0; font-family: var(--font-display); font-size: .85rem; letter-spacing: .1em; color: var(--ink-dim); }
+
+/* ---------------------------------------------------------------- oracle (Shang oracle bones) */
+.oracle-stage { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 1.4rem; align-items: center; max-width: 44rem; margin: 0 auto; }
+.oracle-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 12px 20px rgba(0,0,0,.55)); }
+.or-shell { fill: #d8c9a3; stroke: #8a7446; stroke-width: 3; }
+.or-seam { stroke: rgba(110,85,40,.45); stroke-width: 1.5; fill: none; }
+.or-hollow { fill: rgba(90,60,25,.55); }
+.or-glow { fill: rgba(255,120,30,0); transition: fill .8s ease; }
+.oracle-stage[data-step="1"] .or-glow { fill: rgba(255,120,30,.75); filter: blur(3px); }
+.or-crack { fill: none; stroke: #2a1406; stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 80; stroke-dashoffset: 80; transition: stroke-dashoffset 1.2s ease; }
+.oracle-stage:not([data-step="0"]):not([data-step="1"]) .or-crack { stroke-dashoffset: 0; }
+.or-lines { display: grid; gap: .6rem; }
+.or-line { margin: 0; padding: .6rem .8rem; border: 1px solid var(--line); background: var(--panel); opacity: .18; transition: opacity .6s ease; }
+.or-line.on { opacity: 1; border-left: 3px solid var(--gold); }
+.or-zh { display: block; font-family: "Noto Serif TC", "Noto Serif CJK TC", serif; font-size: 1.35rem; color: var(--parchment); letter-spacing: .08em; }
+.or-en { display: block; font-size: .98rem; color: var(--ink-dim); margin-top: .2rem; }
+.or-note { display: block; font-size: .8rem; color: var(--ink-faint); margin-top: .2rem; font-style: italic; }
+@media (max-width: 40rem) { .oracle-stage { grid-template-columns: 1fr; } .oracle-svg { max-width: 12rem; margin: 0 auto; } }
+@media (prefers-reduced-motion: reduce) { .or-crack, .or-glow, .or-line { transition: none; } }
+.relic-panel, .g-status, .scroll-gloss { font-family: var(--font-body), "Vault Hieroglyphs"; }

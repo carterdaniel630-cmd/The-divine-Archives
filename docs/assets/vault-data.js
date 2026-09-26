@@ -1110,19 +1110,252 @@ window.VAULT = {
         ]
       },
       study: { manifest: "", rights: "The Runestone Museum in Alexandria displays the stone.", external: [ { label: "MNopedia — Kensington Runestone", href: "https://www.mnhs.org/mnopedia/search/index/thing/kensington-runestone" } ] }
+    },
+    {
+      id: "v48", slug: "great-isaiah-scroll", status: "published", pending: true,
+      era: "04-axial-age", year: -125, chapters: ["ch10", "ch07"],
+      title: "The Great Isaiah Scroll", category: "manuscripts",
+      source: "vault/v48-great-isaiah-scroll.md",
+      held: "The Israel Museum, Jerusalem (Shrine of the Book), 1QIsaᵃ",
+      dated: "c. 150–100 BCE (palaeography); radiocarbon ranges into the 4th–2nd centuries BCE",
+      summary: "The only complete book of the Hebrew Bible among the Dead Sea Scrolls: all 66 chapters of Isaiah in 54 columns on a scroll 7.34 metres long, copied about a thousand years before the oldest complete medieval Hebrew Bibles, and remarkably close to them.",
+      artifact: {
+        type: "scroll", theme: "parchment", title: "Unroll the Isaiah scroll",
+        sub: "Two of its verses in the consonantal Hebrew of the standard text, as a scroll carries them: no vowel signs, read from the right.",
+        columns: [
+          { kind: "hebrew", heading: "Isaiah 2:4", lines: [[["וכתתו", "they shall beat"], ["חרבותם", "their swords"], ["לאתים", "into ploughshares"]], [["וחניתותיהם", "and their spears"], ["למזמרות", "into pruning hooks"]], [["לא", "not"], ["ישא", "shall lift up"], ["גוי", "nation"], ["אל", "against"], ["גוי", "nation"], ["חרב", "sword"]], [["ולא", "and not"], ["ילמדו", "shall they learn"], ["עוד", "any more"], ["מלחמה", "war"]]],
+            translation: "They shall beat their swords into ploughshares and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war any more.",
+            note: "The scroll itself often spells words more fully, adding vowel letters: it writes לוא for לא, for example." },
+          { kind: "hebrew", heading: "Isaiah 40:8", lines: [[["יבש", "withers"], ["חציר", "the grass"]], [["נבל", "fades"], ["ציץ", "the flower"]], [["ודבר", "but the word of"], ["אלהינו", "our God"]], [["יקום", "will stand"], ["לעולם", "for ever"]]],
+            translation: "The grass withers, the flower fades, but the word of our God will stand for ever.",
+            note: "The scroll leaves three blank lines after chapter 33, dividing the book into two halves, a feature scholars have linked to how Isaiah was copied and arranged." }
+        ]
+      },
+      study: { manifest: "", rights: "The Israel Museum publishes high-resolution images of the scroll in its Digital Dead Sea Scrolls project.", external: [ { label: "Israel Museum — the Great Isaiah Scroll", href: "http://dss.collections.imj.org.il/isaiah" } ] }
+    },
+    {
+      id: "v49", slug: "book-of-enoch", status: "published", pending: true,
+      era: "04-axial-age", year: -200, chapters: ["ch10", "ch50", "ch60"],
+      title: "The Book of Enoch", category: "manuscripts",
+      source: "vault/v49-book-of-enoch.md",
+      held: "Complete text in Ge'ez manuscripts (Ethiopia and European libraries); Aramaic fragments from Qumran (Israel Antiquities Authority)",
+      dated: "Written 3rd century BCE–1st century CE; Qumran fragments c. 200 BCE onwards; Ge'ez manuscripts from the 14th–15th century",
+      summary: "The book of the Watchers, the fallen angels who taught forbidden arts, and of Enoch's journeys through the heavens. Quoted in the New Testament's Letter of Jude, dropped by most churches, and preserved whole only in Ethiopia, where it is Scripture.",
+      artifact: {
+        type: "codex", theme: "vellum", title: "Open the book",
+        sub: "Its title in Ge'ez, then the five books it contains.",
+        fonts: ["Noto+Sans+Ethiopic"],
+        pages: [
+          { h: "The title", t: "መጽሐፈ ሄኖክ", lang: "gez", big: true, n: "Mäṣḥafä Henok, 'the Book of Enoch', in the Ge'ez script of Ethiopia." },
+          { h: "I · The Book of the Watchers", t: "Chapters 1–36. Angels called Watchers descend, take human wives, father giants and teach metallurgy, sorcery and astrology. Enoch intercedes, and tours the ends of the earth.", n: "The oldest part, 3rd century BCE." },
+          { h: "II · The Parables (Similitudes)", t: "Chapters 37–71. Visions of a heavenly figure called the Son of Man, the Chosen One, who judges the kings of the earth.", n: "The only part not found at Qumran; its date is debated." },
+          { h: "III · The Astronomical Book", t: "Chapters 72–82. The angel Uriel shows Enoch the courses of sun and moon in a 364-day year.", n: "Perhaps the earliest part of all, and important for the Qumran calendar." },
+          { h: "IV · The Dream Visions", t: "Chapters 83–90. The history of Israel told as an allegory of animals: sheep, wolves and a white bull.", n: "The 'Animal Apocalypse', 2nd century BCE." },
+          { h: "V · The Epistle of Enoch", t: "Chapters 91–108. Woes on the wicked, blessings on the righteous, and the 'Apocalypse of Weeks', history in ten weeks.", n: "Ends with the birth of Noah." },
+          { h: "Quoted in the New Testament", t: "“Behold, the Lord came with ten thousands of his holy ones, to execute judgment on all…”", n: "Jude 14–15, quoting 1 Enoch 1:9." }
+        ]
+      },
+      study: { manifest: "", rights: "Manuscripts are held in Ethiopian churches and monasteries and in European libraries; images belong to their holders.", external: [] }
+    },
+    {
+      id: "v50", slug: "vienna-dioscurides", status: "published", pending: true,
+      era: "05-late-antiquity", year: 512, chapters: ["ch60"],
+      title: "The Vienna Dioscurides", category: "manuscripts",
+      source: "vault/v50-vienna-dioscurides.md",
+      held: "Austrian National Library, Vienna (Cod. med. gr. 1)",
+      dated: "c. 512 CE, Constantinople",
+      summary: "A great illustrated herbal made in Constantinople around 512 for the princess Anicia Juliana, with hundreds of full-page paintings of plants. It passed through Byzantine, Arab, Jewish and Ottoman hands before an emperor's envoy bought it in 1569. In it the mandrake is shown as medicine and as legend.",
+      artifact: {
+        type: "codex", theme: "vellum", title: "Turn the herbal's pages",
+        sub: "The book's famous openings, page by page.",
+        pages: [
+          { h: "The patron", t: "Anicia Juliana enthroned between Magnanimity and Prudence, with a kneeling figure of the Gratitude of the Arts.", n: "A dedication portrait, among the earliest surviving in any manuscript." },
+          { h: "Seven physicians", t: "Two pages of famous physicians of antiquity gathered as in a learned assembly, with Galen at the head.", n: "Medicine as a lineage of authorities." },
+          { h: "The mandrake", t: "Discovery (Heuresis) hands Dioscorides a mandrake root; beside it lies a dog, dead.", n: "The legend: the root shrieks when pulled, killing whoever pulls it, so a dog must do it." },
+          { h: "The herbal", t: "Plant after plant in full-page paintings, with the Greek text of Dioscorides' De materia medica.", n: "About 383 of some 435 plant pictures survive." },
+          { h: "Many hands", t: "Plant names added in Arabic, Hebrew, Turkish and Latin by later readers.", n: "A book used for a thousand years." },
+          { h: "1569", t: "Bought in Constantinople for the Habsburg emperor, on the advice of the envoy Ogier Ghiselin de Busbecq.", n: "In Vienna ever since." }
+        ]
+      },
+      study: { manifest: "", rights: "The Austrian National Library publishes the manuscript in its digital collections.", external: [ { label: "UNESCO Memory of the World — Vienna Dioscurides (nomination)", href: "https://media.unesco.org/sites/default/files/webform/mow001/austria_vienna_dioscurides.pdf" } ] }
+    },
+    {
+      id: "v51", slug: "codex-mendoza", status: "published", pending: true,
+      era: "08-early-modern", year: 1541, chapters: ["ch43"],
+      title: "The Codex Mendoza", category: "manuscripts",
+      source: "vault/v51-codex-mendoza.md",
+      held: "Bodleian Library, Oxford (MS. Arch. Selden. A. 1)",
+      dated: "c. 1541–1553, Mexico City",
+      summary: "Painted by Nahua artists for the first viceroy of New Spain, with Spanish notes: the founding of Tenochtitlan, the tribute of the empire, and an Aztec life from birth to old age. Bound for the emperor Charles V, it was seized by French privateers and ended up in Oxford.",
+      artifact: {
+        type: "codex", theme: "papyrus", title: "Open the codex",
+        sub: "Its three parts, page by page.",
+        pages: [
+          { h: "The founding", t: "An eagle alights on a cactus growing from a stone in a lake divided by canals: the sign of Tenochtitlan.", n: "The frontispiece. The same emblem is on the flag of Mexico today." },
+          { h: "Part I · History", t: "The founding in the year 2 House (1325) and the conquests of each ruler down to the Spanish arrival, shown as burning temples of defeated towns.", n: "A burning temple is the Aztec sign for conquest." },
+          { h: "Part II · Tribute", t: "Town by town: cloaks, warriors' suits, feathers, jade, cacao, maize, sent to the ruler Motecuhzoma.", n: "Probably copied from an older tribute record." },
+          { h: "Part III · A life", t: "A child's naming and education, training for war or for the priesthood, marriage, punishments and old age.", n: "Young men could enter the calmecac, the priests' school." },
+          { h: "Seized at sea", t: "The ship carrying it to Spain was taken by French privateers; by 1553 it belonged to the royal cosmographer André Thevet.", n: "His name is written on its pages." },
+          { h: "Oxford", t: "It passed through Richard Hakluyt and Samuel Purchas to John Selden, and reached the Bodleian in 1659.", n: "In Oxford ever since." }
+        ]
+      },
+      study: { manifest: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/2fea788e-2aa2-4f08-b6d9-648c00486220.json", rights: "The Bodleian Libraries publish the complete codex in Digital Bodleian.", external: [ { label: "Digital Bodleian — MS. Arch. Selden. A. 1", href: "https://digital.bodleian.ox.ac.uk/objects/2fea788e-2aa2-4f08-b6d9-648c00486220/" } ] }
+    },
+    {
+      id: "v52", slug: "ishtar-gate", status: "published", pending: true,
+      era: "04-axial-age", year: -575, chapters: ["ch03", "ch10"],
+      title: "The Ishtar Gate", category: "relics",
+      source: "vault/v52-ishtar-gate.md",
+      held: "Reconstructed in the Pergamonmuseum, Berlin; panels in other museums; foundations in place at Babylon",
+      dated: "c. 575 BCE (reign of Nebuchadnezzar II)",
+      summary: "Babylon's northern gate, faced with glazed blue bricks and rows of bulls and dragons, the beasts of the storm god and of Marduk. Through it ran the Processional Way of the New Year festival. Excavated by Robert Koldewey's German expedition in the early 1900s and rebuilt in Berlin.",
+      artifact: {
+        type: "gate", title: "The gate and its beasts",
+        sub: "A schematic of the gate's front. Touch a beast, or the inscription plaque.",
+        beasts: {
+          bull: { t: "The aurochs (wild bull)", s: "beast of Adad", d: "The storm god Adad's animal. The bulls are shown in relief and in flat glaze, in alternating rows." },
+          dragon: { t: "The mušḫuššu (dragon)", s: "beast of Marduk", d: "Scaly, horned, with a serpent's tongue, a lion's forelegs and an eagle's hind claws: the dragon of Marduk, Babylon's god, and of his son Nabu." },
+          lion: { t: "The lions of the Processional Way", s: "beast of Ishtar", d: "Along the walls of the road leading to the gate strode about 120 glazed lions, the animal of Ishtar, the goddess the gate was named for." }
+        },
+        plaque: { t: "The dedication", s: "Nebuchadnezzar's inscription", d: "“I placed wild bulls and ferocious dragons in the gateways and thus adorned them with luxurious splendour so that people might gaze on them in wonder.” (from the standard translation of the plaque)" },
+        hint: "Schematic: the numbers and placement of beasts here are illustrative, not a count of the real rows."
+      },
+      study: { manifest: "", rights: "Photographs of the reconstruction belong to the Staatliche Museen zu Berlin and their photographers.", external: [ { label: "Staatliche Museen zu Berlin — From Fragment to Monument: The Ishtar Gate", href: "https://www.smb.museum/en/exhibitions/detail/from-fragment-to-monument/" } ] }
+    },
+    {
+      id: "v53", slug: "rosetta-stone", status: "published", pending: true,
+      era: "04-axial-age", year: -196, chapters: ["ch02", "ch49"],
+      title: "The Rosetta Stone", category: "texts",
+      source: "vault/v53-rosetta-stone.md",
+      held: "British Museum, London (EA 24)",
+      dated: "196 BCE",
+      summary: "A priestly decree honouring the boy-king Ptolemy V, carved in hieroglyphs, Demotic and Greek. Found by French soldiers in 1799, taken by the British in 1801, and used by Thomas Young and Jean-François Champollion to crack the Egyptian script. Egypt asks for its return.",
+      artifact: {
+        type: "cartouche", title: "How the name was read",
+        sub: "The king's name in the Greek text above, and inside the oval cartouche below. Touch each sign to see how it was matched to a Greek letter.",
+        greek: ["Π", "Τ", "Ο", "Λ", "Ε", "Μ", "Α", "Ι", "Ο", "Σ"],
+        intro: { t: "The key", s: "a foreign name, spelled out", d: "Egyptian script mostly writes meaning and sound together, but a foreign king's name had to be spelled by sound. That made the cartouches of Ptolemy, and later of Cleopatra, the way in." },
+        signs: [
+          { glyph: "𓊪", sound: "p", name: "stool", greek: [0], d: "A stool (or mat): p, matching Greek Π." },
+          { glyph: "𓏏", sound: "t", name: "loaf of bread", greek: [1], d: "A loaf: t, matching Τ." },
+          { glyph: "𓍯", sound: "o / w", name: "lasso", greek: [2], d: "A looped cord, read by Champollion as o, matching Ο." },
+          { glyph: "𓃭", sound: "l", name: "lion", greek: [3], d: "A recumbent lion: used for l in foreign names, matching Λ." },
+          { glyph: "𓐝", sound: "m", name: "sign for m", greek: [5], d: "m, matching Μ. Egyptian writing leaves most vowels unwritten, so Ε and Α have no sign here." },
+          { glyph: "𓇌", sound: "i / y", name: "two reeds", greek: [7], d: "Two reed leaves: i or y, matching Ι." },
+          { glyph: "𓋴", sound: "s", name: "folded cloth", greek: [9], d: "A folded cloth: s, matching Σ. Thomas Young had already guessed several of these values; Champollion confirmed them with the name Cleopatra, which shares p, t, o and l." }
+        ],
+        hint: "The full royal cartouche on the stone adds titles after the name ('living for ever, beloved of Ptah'); only the name is shown here."
+      },
+      study: { manifest: "", rights: "The British Museum publishes photographs of the stone in its collection database.", external: [ { label: "British Museum — the Rosetta Stone: everything you need to know", href: "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone" } ] }
+    },
+    {
+      id: "v54", slug: "behistun-inscription", status: "published", pending: true,
+      era: "04-axial-age", year: -520, chapters: ["ch06", "ch49"],
+      title: "The Behistun Inscription", category: "texts",
+      source: "vault/v54-behistun-inscription.md",
+      held: "In place: Mount Bisotun, Kermanshah Province, Iran (UNESCO World Heritage Site)",
+      dated: "c. 520 BCE",
+      summary: "Darius the Great's account of how he seized the Persian throne, carved about 60 metres up a cliff in Old Persian, Elamite and Babylonian, beneath a relief of the king and the winged symbol of Ahuramazda. Copied at great risk by Henry Rawlinson, it opened cuneiform to modern reading.",
+      artifact: {
+        type: "inscription", theme: "granite", title: "“I am Darius”",
+        sub: "The first line of the Old Persian text, in transliteration. Touch a word.",
+        lang: "peo", dir: "ltr",
+        words: [["adam", "I (am)"], ["Dārayavauš", "Darius"], ["xšāyaθiya vazraka", "the great king"], ["xšāyaθiya xšāyaθiyānām", "king of kings"], ["xšāyaθiya Pārsaiy", "king in Persia"], ["xšāyaθiya dahyūnām", "king of the lands"], ["Vištāspahyā puça", "son of Hystaspes"], ["Aršāmahyā napā", "grandson of Arsames"], ["Haxāmanišiya", "an Achaemenid"]],
+        translation: "I am Darius, the great king, king of kings, king in Persia, king of the lands, son of Hystaspes, grandson of Arsames, an Achaemenid.",
+        hint: "Transliteration after the standard editions; on the rock it is written in Old Persian cuneiform."
+      },
+      study: { manifest: "", rights: "Photographs of the monument belong to their photographers.", external: [ { label: "Livius — the Behistun inscription, Persian text", href: "https://www.livius.org/sources/content/behistun-persian-text/behistun-t-01/" } ] }
+    },
+    {
+      id: "v55", slug: "oracle-bones-of-anyang", status: "published", pending: true,
+      era: "03-early-iron-age", year: -1200, chapters: ["ch09", "ch49"],
+      title: "The Oracle Bones of Anyang", category: "texts",
+      source: "vault/v55-oracle-bones-of-anyang.md",
+      held: "Institute of History and Philology, Academia Sinica (Taipei); Institute of Archaeology and museums in China; collections worldwide",
+      dated: "c. 1250–1050 BCE (late Shang)",
+      summary: "Turtle shells and cattle shoulder-blades that Shang kings had cracked in fire to put questions to their ancestors, then had the questions and answers carved beside the cracks. Sold as 'dragon bones' for medicine until 1899, they are the oldest body of Chinese writing.",
+      artifact: {
+        type: "oracle", title: "Crack the shell",
+        sub: "Follow a Shang divination step by step, then read the record carved beside the crack.",
+        fonts: ["Noto+Serif+TC:wght@400;600"],
+        steps: [
+          { button: "Prepare the shell", t: "A prepared plastron", s: "the underside of a turtle shell", d: "The shell is cleaned, polished and cut with rows of hollows on the back, so that heat will crack it in a controlled way." },
+          { button: "Apply heat", t: "Heat", s: "a glowing stick in a hollow", d: "The diviner speaks the charge, the question put to the ancestors, and presses a hot brand into a hollow." },
+          { button: "Read the crack", t: "The crack", s: "卜 · bu", d: "A crack appears on the front in a shape like 卜, the character that still means 'to divine'. The king reads it as auspicious or not." },
+          { button: "Read the record", t: "The record is carved", s: "preface and charge", d: "Engravers cut the date, the diviner's name and the charge beside the crack.", show: 2 },
+          { button: "See the outcome", t: "The prognostication", s: "the king's reading", d: "The king's interpretation is added.", show: 3 },
+          { button: "Begin again", t: "The verification", s: "what happened", d: "Sometimes the outcome was recorded too. Here the king had said a birth on certain days would be good; the record notes that the child was born later, and that it 'was not good: a girl'. The words show Shang values, not a judgement of this archive.", show: 4 }
+        ],
+        record: [
+          { zh: "甲申卜，㱿貞", en: "Crack-making on day jiashen, Que divined:", note: "the preface: date and diviner" },
+          { zh: "婦好娩，嘉", en: "Lady Hao's childbirth will be good.", note: "the charge put to the ancestors" },
+          { zh: "王占曰", en: "The king read the cracks and said: if it is on a ding day, it will be good…", note: "the prognostication" },
+          { zh: "三旬又一日甲寅娩，不嘉，惟女", en: "Thirty-one days later, on jiayin, she gave birth. It was not good: it was a girl.", note: "the verification" }
+        ],
+        hint: "A widely cited inscription about Fu Hao, a consort of king Wu Ding; the English follows standard translations. The shell drawing is schematic."
+      },
+      study: { manifest: "", rights: "Images of oracle bones belong to their holding institutions.", external: [] }
+    },
+    {
+      id: "v56", slug: "phaistos-disc", status: "published", pending: true,
+      era: "02-bronze-age", year: -1700, chapters: ["ch08"],
+      title: "The Phaistos Disc", category: "relics",
+      source: "vault/v56-phaistos-disc.md",
+      held: "Heraklion Archaeological Museum, Crete",
+      dated: "Usually c. 1850–1600 BCE (Middle Minoan); the dating and even its authenticity have been questioned",
+      summary: "A fired clay disc about 16 cm across, found in the Minoan palace of Phaistos in 1908, with 45 different signs pressed into it by stamps in a spiral on both sides: printing, in a sense, three thousand years early. It is unread, and probably unreadable unless more text turns up.",
+      artifact: {
+        type: "cards", title: "Every attempt to read it",
+        sub: "The disc has 241 or 242 stamped signs in 61 groups. Each card is one kind of claimed decipherment; turn it to see how it fares.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "Greek", s: "an early Greek text", d: "Readings as Greek appear regularly. None is accepted, and the disc appears older than the earliest written Greek (Linear B)." },
+          { t: "Luwian or Anatolian", s: "a neighbouring language", d: "Proposed from similarities to Anatolian hieroglyphs. Unconfirmed." },
+          { t: "A Minoan hymn or prayer", s: "religious text", d: "Some read repeated sign-groups as a refrain. Possible, but the meaning cannot be tested." },
+          { t: "A calendar", s: "astronomical", d: "Readings as a calendar or star-list rest on counting signs. Numerology can fit almost any count." },
+          { t: "Linear A values", s: "sign comparison", d: "Some signs resemble Linear A, itself undeciphered; borrowing its sound values gives partial words but no proof." },
+          { t: "A forgery", s: "Eisenberg, 2008", d: "Argued that the excavator made it. Most scholars reject this; the find is documented and a sealing found in 1955 has a matching sign. A thermoluminescence test, which could settle its age, has not been allowed." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the disc belong to the Heraklion Archaeological Museum.", external: [] }
+    },
+    {
+      id: "v57", slug: "holy-mandylion", status: "published", pending: true,
+      era: "05-late-antiquity", year: 544, chapters: ["ch60", "ch22"],
+      title: "The Holy Mandylion", category: "relics",
+      source: "vault/v57-holy-mandylion.md",
+      held: "Claimed by the Holy Face of Genoa (San Bartolomeo degli Armeni) and the Mandylion of the Vatican; the original's fate is unknown",
+      dated: "Legend from the 4th century; image attested at Edessa from the 6th; in Constantinople 944–1204",
+      summary: "The Image of Edessa: a cloth said to bear Christ's face, not made by human hands, sent to King Abgar of Edessa. The first of the 'true images', carried in triumph to Constantinople in 944 and lost from view after 1204. Two cloths claim to be it, and one theory says it was the Shroud.",
+      artifact: {
+        type: "timeline", theme: "veil", title: "The image through time",
+        sub: "The legend's letter first (touch each phrase), then the documented history.",
+        lineHead: "The legend: King Abgar writes to Jesus",
+        line: [["Abgar, ruler of Edessa,", "Abgar V, king of Osroene in northern Mesopotamia, in the time of Jesus"], ["to Jesus the good physician…", "The king is ill and asks for healing"], ["come to me and heal my suffering.", "In the earliest version, told by Eusebius c. 325, Jesus replies by letter; no image is mentioned"]],
+        events: [
+          { y: "c. 325", t: "The letters", d: "Eusebius records an exchange of letters between Abgar and Jesus, from the Edessa archives. No image." },
+          { y: "c. 400", t: "A portrait", d: "The Syriac Doctrine of Addai adds a portrait of Jesus painted by the king's envoy." },
+          { y: 544, t: "The siege", d: "Writing c. 593, Evagrius says an image 'made by God' saved Edessa from the Persians in 544: the first record of the cloth as miraculous." },
+          { y: 944, t: "To Constantinople", d: "The Byzantine army takes the image from Edessa to Constantinople, where it is received with great ceremony on 16 August." },
+          { y: 1204, t: "Lost from view", d: "The Fourth Crusade sacks Constantinople; the image's later fate is not documented." },
+          { y: "Today", t: "Two claimants", d: "The Holy Face of Genoa and the Mandylion of Rome (Vatican) are each said to be the original. Neither has been scientifically dated." },
+          { y: 1978, t: "The Shroud theory", d: "Ian Wilson proposes that the Mandylion was the Shroud of Turin folded to show only the face. Most historians find the case unproven." }
+        ]
+      },
+      study: { manifest: "", rights: "No openly licensed images of the claimants are embedded here.", external: [] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Great Isaiah Scroll", category: "manuscripts", note: "The one complete biblical book among the Dead Sea Scrolls, and how closely it matches the medieval text." },
-    { title: "The Book of Enoch in Ge'ez", category: "manuscripts", note: "A book quoted in the New Testament, lost in the West and kept whole only in Ethiopia." },
-    { title: "The Vienna Dioscurides", category: "manuscripts", note: "A Byzantine herbal of 512, and the line between medicine and magic." },
-    { title: "The Codex Mendoza", category: "manuscripts", note: "An Aztec tribute record painted for a Spanish viceroy." },
-    { title: "The Ishtar Gate", category: "relics", note: "Babylon's blue-glazed gate of dragons and bulls, and the procession it framed." },
-    { title: "The Rosetta Stone", category: "texts", note: "One decree in three scripts, and the key to hieroglyphs." },
-    { title: "The Behistun Inscription", category: "texts", note: "Darius's cliff-face proclamation in three languages, and the decipherment of cuneiform." },
-    { title: "The Oracle Bones of Anyang", category: "texts", note: "Shang kings' questions to their ancestors, cracked in fire: China's oldest writing." },
-    { title: "The Phaistos Disc", category: "relics", note: "A clay disc stamped with unknown signs, and every failed decipherment." },
-    { title: "The Holy Mandylion", category: "relics", note: "The Image of Edessa: a face not made by hands, and its legend." }
+    { title: "The Lion Man of Hohlenstein-Stadel", category: "relics", note: "A lion-headed figure carved from mammoth ivory 40,000 years ago." },
+    { title: "The Venus of Willendorf", category: "relics", note: "A limestone figurine and a century of arguments about what she meant." },
+    { title: "Göbekli Tepe's Pillars", category: "relics", note: "Carved stone enclosures older than farming, and the claims made about them." },
+    { title: "The Kojiki Manuscripts", category: "manuscripts", note: "Japan's oldest chronicle of the gods, and its earliest surviving copy." },
+    { title: "The Inca Khipu", category: "texts", note: "Knotted cords that recorded numbers, and perhaps more." },
+    { title: "The Kalpa Sutra Manuscripts", category: "manuscripts", note: "Illuminated Jain lives of the Tirthankaras." },
+    { title: "The Benin Bronzes", category: "relics", note: "Royal altar art of Benin, taken in 1897, and the return movement." },
+    { title: "The Staff God of Tiwanaku", category: "relics", note: "The Gateway of the Sun and the figure at its centre." },
+    { title: "The Kebra Nagast", category: "manuscripts", note: "Ethiopia's 'Glory of the Kings' and the Ark at Aksum." },
+    { title: "The Hebrew Amulets of Late Antiquity", category: "texts", note: "Magic bowls and metal amulets naming angels and demons." }
   ]
 };

@@ -1055,6 +1055,112 @@
     show();
   }
 
+  // ---------------------------------------------------------------- gate (Ishtar Gate): a glazed-brick facade with its beasts
+  function gate(root, item) {
+    var A = item.artifact, pn = panel(), parts = [];
+    var svg = sv("svg", { viewBox: "0 0 600 420", class: "gate-svg", role: "group", "aria-label": "Schematic of the Ishtar Gate facade with rows of glazed-brick animals" });
+    svg.appendChild(sv("defs", {}, [
+      sv("pattern", { id: "gate-brick", width: 24, height: 12, patternUnits: "userSpaceOnUse" }, [
+        sv("rect", { width: 24, height: 12, fill: "#1d3f8f" }),
+        sv("path", { d: "M0 11.5 H24 M12 0 V6 M0 6 H24 M0 6 V12 M24 6 V12", stroke: "rgba(0,0,20,.35)", "stroke-width": 1, fill: "none" })
+      ])
+    ]));
+    // towers, crenellations and the arched passage
+    svg.appendChild(sv("path", { d: "M60 400 V70 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 V110 h140 V70 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 v-14 h20 v14 h20 V400 Z", class: "gate-wall" }));
+    svg.appendChild(sv("path", { d: "M250 400 V230 A50 50 0 0 1 350 230 V400 Z", class: "gate-arch" }));
+    svg.appendChild(sv("path", { d: "M244 400 V230 A56 56 0 0 1 356 230 V400", class: "gate-trim" }));
+    var rows = [[120, "bull"], [200, "dragon"], [280, "bull"], [360, "dragon"]];
+    rows.forEach(function (r) {
+      [80, 140, 200, 400, 460, 520].forEach(function (x) {
+        var kind = A.beasts[r[1]];
+        var g = sv("g", { class: "gate-beast gate-" + r[1], tabindex: "0", role: "button", "aria-label": kind.t });
+        g.appendChild(sv("rect", { x: x - 24, y: r[0] - 22, width: 48, height: 44, rx: 4, class: "gate-tile" }));
+        // simple emblems, not portraits: a horned head for the bull, a crested serpent-neck for the dragon
+        if (r[1] === "bull") g.appendChild(sv("path", { d: "M" + (x - 16) + " " + (r[0] - 12) + " Q" + (x - 12) + " " + (r[0] - 2) + " " + (x - 6) + " " + (r[0] - 4) + " M" + (x + 16) + " " + (r[0] - 12) + " Q" + (x + 12) + " " + (r[0] - 2) + " " + (x + 6) + " " + (r[0] - 4) + " M" + (x - 8) + " " + (r[0] - 4) + " Q" + x + " " + (r[0] - 8) + " " + (x + 8) + " " + (r[0] - 4) + " L" + (x + 5) + " " + (r[0] + 12) + " Q" + x + " " + (r[0] + 16) + " " + (x - 5) + " " + (r[0] + 12) + " Z", class: "gate-icon" }));
+        else g.appendChild(sv("path", { d: "M" + (x - 14) + " " + (r[0] + 14) + " Q" + (x - 16) + " " + r[0] + " " + (x - 4) + " " + (r[0] - 2) + " Q" + (x + 8) + " " + (r[0] - 4) + " " + (x + 4) + " " + (r[0] - 14) + " l6 -2 l-2 5 l7 1 l-6 4 Q" + (x + 16) + " " + (r[0] + 2) + " " + (x + 2) + " " + (r[0] + 4) + " Q" + (x - 8) + " " + (r[0] + 6) + " " + (x - 6) + " " + (r[0] + 14) + " Z", class: "gate-icon" }));
+        function pick() { parts.forEach(function (p) { p.classList.remove("on"); }); Array.prototype.forEach.call(svg.querySelectorAll(".gate-" + r[1]), function (p) { p.classList.add("on"); }); setPanel(pn, kind.t, kind.s, kind.d); }
+        g.addEventListener("click", pick);
+        g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+        parts.push(g); svg.appendChild(g);
+      });
+    });
+    var plaque = sv("g", { class: "gate-beast gate-plaque", tabindex: "0", role: "button", "aria-label": A.plaque.t });
+    plaque.appendChild(sv("rect", { x: 262, y: 128, width: 76, height: 70, rx: 3, class: "gate-plaque-r" }));
+    for (var i = 0; i < 6; i++) plaque.appendChild(sv("line", { x1: 270, y1: 140 + i * 10, x2: 330, y2: 140 + i * 10, class: "gate-plaque-l" }));
+    function pickPlaque() { parts.forEach(function (p) { p.classList.remove("on"); }); plaque.classList.add("on"); setPanel(pn, A.plaque.t, A.plaque.s, A.plaque.d); }
+    plaque.addEventListener("click", pickPlaque);
+    plaque.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pickPlaque(); } });
+    parts.push(plaque); svg.appendChild(plaque);
+    var lion = el("button", { type: "button", text: A.beasts.lion.t });
+    lion.addEventListener("click", function () { parts.forEach(function (p) { p.classList.remove("on"); }); setPanel(pn, A.beasts.lion.t, A.beasts.lion.s, A.beasts.lion.d); });
+    root.appendChild(el("div", { class: "relic-live" }, [el("div", { class: "gate-stage" }, [svg]), el("div", { class: "relic-ctrls" }, [lion]), pn,
+      el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    pickPlaque();
+  }
+
+  // ---------------------------------------------------------------- cartouche (Rosetta Stone): a royal name, sign by sign, against the Greek
+  function cartouche(root, item) {
+    var A = item.artifact, pn = panel(), btns = [], greekEls = [];
+    var greek = el("p", { class: "ct-greek", lang: "grc", "aria-label": "The name in the Greek text" });
+    A.greek.forEach(function (ch, i) { var s = el("span", { class: "ct-gl", text: ch }); greekEls.push(s); greek.appendChild(s); });
+    var ring = el("div", { class: "ct-ring", role: "group", "aria-label": "The cartouche" });
+    A.signs.forEach(function (sg, i) {
+      var b = el("button", { type: "button", class: "ct-sign", lang: "egy", "aria-label": sg.name + ", sound " + sg.sound, text: sg.glyph });
+      function pick() {
+        btns.forEach(function (x) { x.classList.remove("on"); }); b.classList.add("on");
+        greekEls.forEach(function (g) { g.classList.remove("on"); }); (sg.greek || []).forEach(function (k) { if (greekEls[k]) greekEls[k].classList.add("on"); });
+        setPanel(pn, sg.glyph + "  " + sg.sound, sg.name, sg.d);
+      }
+      b.addEventListener("click", pick); b.addEventListener("mouseenter", pick); b.addEventListener("focus", pick);
+      btns.push(b); ring.appendChild(b);
+    });
+    var sounds = el("p", { class: "ct-sounds", "aria-hidden": "true" });
+    A.signs.forEach(function (sg) { sounds.appendChild(el("span", { text: sg.sound })); });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "ct-stage" }, [greek, el("p", { class: "ct-arrow", text: "↓" }), ring, sounds]), pn,
+      el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    setPanel(pn, A.intro.t, A.intro.s, A.intro.d);
+  }
+
+  // ---------------------------------------------------------------- oracle (Shang oracle bones): heat the hollow, read the crack, then the record
+  function oracle(root, item) {
+    var A = item.artifact, pn = panel(), step = 0;
+    var svg = sv("svg", { viewBox: "0 0 300 400", class: "oracle-svg", role: "img", "aria-label": "Schematic of a turtle plastron prepared for divination" });
+    svg.appendChild(sv("path", { d: "M150 18 C215 22 262 70 268 150 C272 230 262 300 230 350 C205 385 180 392 150 392 C120 392 95 385 70 350 C38 300 28 230 32 150 C38 70 85 22 150 18 Z", class: "or-shell" }));
+    svg.appendChild(sv("path", { d: "M150 20 V390 M38 140 H262 M34 240 H266 M60 320 H240", class: "or-seam" }));
+    var hollows = [[110, 100], [190, 100], [100, 190], [200, 190], [110, 280], [190, 280]];
+    hollows.forEach(function (h) { svg.appendChild(sv("ellipse", { cx: h[0], cy: h[1], rx: 7, ry: 11, class: "or-hollow" })); });
+    var glow = sv("circle", { cx: 100, cy: 190, r: 16, class: "or-glow" });
+    var crack = sv("path", { d: "M100 172 V208 M100 190 L124 182", class: "or-crack" });
+    svg.appendChild(glow); svg.appendChild(crack);
+    var lines = el("div", { class: "or-lines" });
+    A.record.forEach(function (r) {
+      var row = el("p", { class: "or-line" });
+      row.appendChild(el("span", { class: "or-zh", lang: "zh-Hant", text: r.zh }));
+      row.appendChild(el("span", { class: "or-en", text: r.en }));
+      row.appendChild(el("span", { class: "or-note", text: r.note }));
+      lines.appendChild(row);
+    });
+    var btn = el("button", { type: "button", text: A.steps[0].button });
+    function go() {
+      step = Math.min(step + 1, A.steps.length - 1);
+      var s = A.steps[step];
+      stage.setAttribute("data-step", step);
+      Array.prototype.forEach.call(lines.children, function (row, i) { row.classList.toggle("on", i < (s.show || 0)); });
+      setPanel(pn, s.t, s.s, s.d);
+      btn.textContent = step >= A.steps.length - 1 ? "Begin again" : A.steps[step].button;
+      if (step >= A.steps.length - 1) { btn.onclick = reset; } 
+    }
+    function reset() { step = 0; stage.setAttribute("data-step", 0); Array.prototype.forEach.call(lines.children, function (row) { row.classList.remove("on"); }); setPanel(pn, A.steps[0].t, A.steps[0].s, A.steps[0].d); btn.textContent = A.steps[0].button; btn.onclick = go; }
+    btn.onclick = go;
+    var stage = el("div", { class: "oracle-stage", "data-step": "0" }, [svg, lines]);
+    root.appendChild(el("div", { class: "relic-live" }, [el("div", { class: "relic-ctrls" }, [btn]), stage, pn, el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    setPanel(pn, A.steps[0].t, A.steps[0].s, A.steps[0].d);
+  }
+
   function init() {
     var V = window.VAULT || { items: [] };
     Array.prototype.forEach.call(document.querySelectorAll("[data-vault-relic]"), function (root) {
@@ -1078,6 +1184,9 @@
         else if (kind === "chamber") chamber(root, item);
         else if (kind === "skydisc") skydisc(root, item);
         else if (kind === "daycount") daycount(root, item);
+        else if (kind === "gate") gate(root, item);
+        else if (kind === "cartouche") cartouche(root, item);
+        else if (kind === "oracle") oracle(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }
