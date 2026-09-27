@@ -12,16 +12,16 @@
     "pivotY": 412
   },
   "upperArmR": {
-    "w": 264,
-    "h": 203,
-    "pivotX": 132,
-    "pivotY": 28
+    "w": 203,
+    "h": 264,
+    "pivotX": 90,
+    "pivotY": 21
   },
   "upperArmL": {
-    "w": 263,
-    "h": 200,
-    "pivotX": 132,
-    "pivotY": 28
+    "w": 200,
+    "h": 263,
+    "pivotX": 104,
+    "pivotY": 21
   },
   "foreArmR": {
     "w": 251,
@@ -30,22 +30,10 @@
     "pivotY": 38
   },
   "foreArmL": {
-    "w": 433,
-    "h": 229,
-    "pivotX": 182,
-    "pivotY": 32
-  },
-  "thighR": {
-    "w": 206,
-    "h": 447,
-    "pivotX": 103,
-    "pivotY": 45
-  },
-  "thighL": {
-    "w": 210,
-    "h": 466,
-    "pivotX": 105,
-    "pivotY": 47
+    "w": 135,
+    "h": 427,
+    "pivotX": 61,
+    "pivotY": 30
   },
   "spear": {
     "w": 769,
@@ -58,5 +46,17 @@
     "h": 381,
     "pivotX": 189,
     "pivotY": 191
+  },
+  "shinL": {
+    "w": 210,
+    "h": 466,
+    "pivotX": 105,
+    "pivotY": 47
+  },
+  "shinR": {
+    "w": 206,
+    "h": 447,
+    "pivotX": 103,
+    "pivotY": 45
   }
 }

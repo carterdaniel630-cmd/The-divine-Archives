@@ -133,16 +133,16 @@
        joint ANGLES and rebuilds the limb chain at the art's own proportions, so the
        painted arm/leg swings on its own with the combat, not a flat picture on top.
        Takes priority over the flat sprite when a god's parts are loaded. ========== */
-    var PARTS = {}, PARTMETA = {}, PARTS_READY = {};
+    var PARTS = {}, PARTMETA = {}, PARTS_READY = {}, PARTS_VER = 2;   // bump when part art changes (cache-bust)
     function loadParts() {
       HERO_ORDER.forEach(function (g) {
-        fetch(SCRIPT_BASE + "art/parts/" + g + "/manifest.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (man) {
+        fetch(SCRIPT_BASE + "art/parts/" + g + "/manifest.json?v=" + PARTS_VER).then(function (r) { return r.ok ? r.json() : null; }).then(function (man) {
           if (!man) return; PARTMETA[g] = man; PARTS[g] = {}; var names = Object.keys(man), left = names.length;
           names.forEach(function (nm) {
             var im = new Image();
             im.onload = function () { PARTS[g][nm] = im; if (--left <= 0) PARTS_READY[g] = true; };
             im.onerror = function () { if (--left <= 0) PARTS_READY[g] = (Object.keys(PARTS[g]).length > 6); };
-            im.src = SCRIPT_BASE + "art/parts/" + g + "/" + nm + ".png";
+            im.src = SCRIPT_BASE + "art/parts/" + g + "/" + nm + ".png?v=" + PARTS_VER;
           });
         }).catch(function () {});
       });
@@ -412,6 +412,11 @@
         add(p, "footF", w, -Math.max(0, w) * 1.05); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.5);
         add(p, "footB", -w, -Math.max(0, -w) * 1.05); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.5);
         add(p, "hnF", -w * 0.55, 0); add(p, "elF", -w * 0.32, 0); add(p, "hnB", w * 0.55, 0); add(p, "elB", w * 0.32, 0);
+        // lean into the direction of travel (forward when advancing, upright-back when
+        // retreating) so the upper body carries the step instead of riding on stiff legs
+        var lean = clamp((f.mvx || 0) * f.facing, -4.5, 5) * (f.mvx * f.facing > 0 ? 0.95 : 0.55);
+        add(p, "chest", lean * 0.55, 0); add(p, "neck", lean * 0.85, 0); add(p, "head", lean * 1.05, 0);
+        add(p, "shF", lean * 0.7, 0); add(p, "shB", lean * 0.6, 0); add(p, "hnF", lean * 0.6, 0); add(p, "hnB", lean * 0.5, 0);
         var bob = -Math.abs(Math.cos(ph)) * 2.4;  // body dips at each footfall (twice a stride)
         add(p, "hip", w * 0.10, bob); add(p, "chest", w * 0.08, bob * 0.6); add(p, "neck", w * 0.09, bob * 0.3); add(p, "head", w * 0.10, bob * 0.2);
       } else if (st === "jump") {
@@ -452,12 +457,21 @@
         var kk = ease(pr);
         for (var j in p) { var pt = p[j], ang = -1.4 * kk, x = pt[0], y = pt[1]; p[j] = [x * Math.cos(ang) - y * Math.sin(ang) - 46 * kk, x * Math.sin(ang) + y * Math.cos(ang)]; }
       }
+      // landing: absorb the drop — hips sink into bent knees, then spring back up
+      var la = f.landAt != null ? t - f.landAt : 9;
+      if (la >= 0 && la < 0.26 && f.onGround && (st === "idle" || st === "walk" || st === "block")) {
+        var dip = Math.sin((la / 0.26) * Math.PI) * 7;
+        for (var lq in p) if (lq !== "footF" && lq !== "footB") p[lq][1] += dip * (lq === "head" || lq === "neck" ? 0.9 : 1);
+      }
       // living idle: a slow weight-shift + breathing sway so a waiting fighter isn't a statue
       if (st === "idle") {
         // a fighting-stance idle: weight shifts side to side, chest/shoulders lift with
         // breath, hands bob — so a waiting god sways on his feet instead of standing rigid.
-        var bob = Math.sin(t * 2.2 + f.phase) * 1.5, sway = Math.sin(t * 1.35 + f.phase) * 3.0, br2 = Math.sin(t * 2.2 + f.phase + 0.6);
-        for (var q in p) p[q][1] += bob * 0.16;
+        var sway = Math.sin(t * 1.35 + f.phase) * 3.0, br2 = Math.sin(t * 2.2 + f.phase + 0.6);
+        // the fighting-stance bounce: the body sinks into bent knees and rises on a steady
+        // rhythm while the feet stay planted (the IK bends the knees to absorb it)
+        var bnc = (1 - Math.cos(t * 3.8 + f.phase)) * 1.5;
+        for (var q in p) if (q !== "footF" && q !== "footB") p[q][1] += bnc * (q === "hnF" || q === "hnB" ? 0.8 : 1);
         add(p, "hip", sway * 0.6, Math.abs(sway) * 0.12); add(p, "chest", sway * 0.85, -br2 * 0.8);
         add(p, "neck", sway * 0.95, -br2 * 0.6); add(p, "head", sway * 1.15, -br2 * 0.4);
         add(p, "hnF", sway * 0.7 + br2 * 1.8, br2 * 0.8); add(p, "hnB", -sway * 0.6, -br2 * 0.6);
@@ -646,12 +660,34 @@
     // LEFT (head and sandals), so every Zeus part is mirrored; Poseidon's and Hades's
     // shin art has the toes pointing left, so their shins are mirrored. Without this they
     // looked or stepped away from their opponent.
+    // Athena's leg art is a greave (knee to sandal) with no thigh, so her thighs and the
+    // pteruges (the leather strip skirt worn under a Greek cuirass) are drawn in code.
+    // Poseidon's head crop includes a tall crown and wide mane, so it draws a touch larger.
     var RIG_CFG = {
-      athena: { singleLeg: true, weapon: "spear", shield: "shield" },
+      athena: { weapon: "spear", shield: "shield", flipShins: true, armCross: 0.78, thigh: { base: "#c28d67", baseSh: "#8e6246", shadow: "#946246", light: "#dcae88", outline: "#2a180c" }, pteruges: true },
       zeus: { mirror: true },
-      poseidon: { flipShins: true },
+      poseidon: { flipShins: true, headScale: 0.7, torsoCross: 0.95 },
       hades: { flipShins: true }
     };
+    // a thigh drawn as one tapered, cel-shaded limb from hip to knee (see boneChain)
+    function drawThigh(c, hip, knee, bs, sk, back) {
+      var m = [(hip[0] + knee[0]) / 2, (hip[1] + knee[1]) / 2], u = bs / 0.107;
+      boneChain(c, [hip, m, knee], [7.4 * u, 6.9 * u, 5.6 * u], sk, { back: back, ow: 2 });
+    }
+    // pteruges: overlapping leather strips hanging from the waist, each swinging with the
+    // thigh beneath it, so the skirt moves with the stride instead of sitting like a plate.
+    function drawPteruges(c, p, hip, knee, back, t, f) {
+      var dir = Math.atan2(knee[1] - hip[1], knee[0] - hip[0]), n = 4, L = Math.hypot(knee[0] - hip[0], knee[1] - hip[1]) * 0.74;
+      for (var i = 0; i < n; i++) {
+        var ox = (i - (n - 1) / 2) * 3.6 + (back ? -2 : 2), a = lerp(Math.PI / 2, dir, 0.7) + (i - 1.5) * 0.06 + Math.sin(t * 3 + i + f.phase) * 0.02;
+        c.save(); c.translate(p.hip[0] + ox, p.hip[1] - 4); c.rotate(a - Math.PI / 2);
+        c.beginPath(); c.moveTo(-2.3, 0); c.lineTo(2.3, 0); c.lineTo(2.1, L - 1.6); c.quadraticCurveTo(0, L + 1.2, -2.1, L - 1.6); c.closePath();
+        c.fillStyle = back ? "#5a3a1e" : (i % 2 ? "#8a5a2c" : "#7a4d25"); c.fill();
+        c.lineWidth = 1.1; c.strokeStyle = "#2a180a"; c.stroke();
+        c.fillStyle = back ? "#8a6a2a" : "#d9ad4a"; c.fillRect(-2.1, L - 4.2, 4.2, 1.6);   // bronze-tipped hem
+        c.restore();
+      }
+    }
     function drawCutout(c, f, p, t) {
       var g = f.godId, P = PARTS[g], M = PARTMETA[g], cfg = RIG_CFG[g] || {};
       var nThighF = pick(P, "thighR", "thighA", "thigh"), nShinF = pick(P, "shinR", "shinA", "shin");
@@ -676,23 +712,31 @@
       // paintings only armour the near leg, so reusing it keeps both legs consistent.
       var DK = 0.34, legBrest = IKREST.legB, armBrest = IKREST.armB;
       if (single) skin(c, P, M, nThighF, hipB, p.footB, { dark: DK, rest: legBrest[0] + legBrest[1], cross: bs, flip: mir });
-      else { skin(c, P, M, nThighF, hipB, p.kneeB, { dark: DK, rest: legBrest[0], cross: bs, flip: mir }); skin(c, P, M, nShinF, p.kneeB, p.footB, { dark: DK, rest: legBrest[1], cross: bs, flip: fShin }); }
+      else {
+        if (cfg.thigh) drawThigh(c, hipB, p.kneeB, bs, cfg.thigh, true); else skin(c, P, M, nThighF, hipB, p.kneeB, { dark: DK, rest: legBrest[0], cross: bs, flip: mir });
+        skin(c, P, M, nShinF, p.kneeB, p.footB, { dark: DK, rest: legBrest[1], cross: bs, flip: fShin });
+      }
       // BACK arm keeps its own art (Hades bakes a weapon into the front forearm), just darkened
-      skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs, flip: mir }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs, flip: mir });
+      skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs * (cfg.armCross || 1), flip: mir }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs * (cfg.armCross || 1), flip: mir });
       // shield rides the back arm (far side), tucked behind the torso
       if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield]; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -sh.width * 0.5, -sh.height * 0.5); c.restore(); }
       // TORSO + HEAD (head sized to the body, tilted with the neck). Torso drawn a
       // touch narrower than full body scale so the arms read beside it instead of
       // vanishing behind a full front-view chest.
-      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs * 0.82, flip: mir });
+      if (cfg.pteruges) drawPteruges(c, p, hipB, p.kneeB, true, t, f);
+      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs * (cfg.torsoCross || 0.82), flip: mir });
       // head sized to the body but damped: the painted crops include a full mane/beard/
       // crown, so scaling them 1:1 to the (short) torso bone reads as a bobble-head.
-      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.58; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(mir ? -hs : hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
+      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * (cfg.headScale || 0.58); c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(mir ? -hs : hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
       // FRONT leg + arm (length-capped so a kick extends but never rubber-stretches)
       var legFrest = IKREST.legF, armFrest = IKREST.armF;
       if (single) skin(c, P, M, nThighF, hipF, p.footF, { rest: legFrest[0] + legFrest[1], cross: bs, flip: mir });
-      else { skin(c, P, M, nThighF, hipF, p.kneeF, { rest: legFrest[0], cross: bs, flip: mir }); skin(c, P, M, nShinF, p.kneeF, p.footF, { rest: legFrest[1], cross: bs, flip: fShin }); }
-      skin(c, P, M, nUaF, p.shF, p.elF, { rest: armFrest[0], cross: bs, flip: mir }); skin(c, P, M, nFaF, p.elF, p.hnF, { rest: armFrest[1], cross: bs, flip: mir });
+      else {
+        skin(c, P, M, nShinF, p.kneeF, p.footF, { rest: legFrest[1], cross: bs, flip: fShin });
+        if (cfg.thigh) drawThigh(c, hipF, p.kneeF, bs, cfg.thigh, false); else skin(c, P, M, nThighF, hipF, p.kneeF, { rest: legFrest[0], cross: bs, flip: mir });
+      }
+      if (cfg.pteruges) drawPteruges(c, p, hipF, p.kneeF, false, t, f);
+      skin(c, P, M, nUaF, p.shF, p.elF, { rest: armFrest[0], cross: bs * (cfg.armCross || 1), flip: mir }); skin(c, P, M, nFaF, p.elF, p.hnF, { rest: armFrest[1], cross: bs * (cfg.armCross || 1), flip: mir });
       // spear couched in the front hand: the art has its point at the LEFT and a painted
       // grip-hand ~57% across, so mirror it (point leads toward the foe) and grip there.
       // The hold angle follows the forearm but is pulled toward horizontal, so it reads as
@@ -1894,7 +1938,7 @@
       // vertical: jump arc + gravity (f.y is height above the ground)
       if (!f.onGround || f.y > 0 || f.vy !== 0) {
         f.y += f.vy; f.vy -= 0.56;
-        if (f.y <= 0) { f.y = 0; f.vy = 0; if (!f.onGround) { f.onGround = true; landDust(f); if (f.state === "jump") setState(f, "idle", 1); } }
+        if (f.y <= 0) { f.y = 0; f.vy = 0; if (!f.onGround) { f.onGround = true; f.landAt = gameT; landDust(f); if (f.state === "jump") setState(f, "idle", 1); } }
         else f.onGround = false;
       }
       var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1 };
