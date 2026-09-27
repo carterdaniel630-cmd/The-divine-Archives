@@ -1,9 +1,8 @@
 <!--
-  PLACEHOLDER — replace with the chat-provided master outline.
-  CLAUDE.md specifies: "master-outline.md <- full framework, copy from
-  chat-provided version." Carter has an authoritative outline in the companion
-  chat that should overwrite this file. Until then, this scaffold mirrors the
-  era taxonomy in CLAUDE.md so the folder structure and status board are usable.
+  Note (2026-09-27): CLAUDE.md said to copy this file from a chat-provided master
+  outline. That outline was never pasted into the repository, so this file is
+  maintained as the live framework and status board. If Carter's original outline
+  is supplied, reconcile it here rather than overwriting the status board.
 -->
 
 # The Divine Archives — Master Outline
@@ -120,6 +119,32 @@ every remaining chapter and added the lens structure throughout.
 | ch40 — African Diaspora Religions | Tradition | 09-modern | **PENDING REVIEW** | `eras/09-modern/ch40-diaspora-religions-modern.md` |
 
 **Modern (era 09) traditions complete** (ch35–ch40): New Religious Movements, Spiritualism, Theosophy & the Occult Revival, Wicca & Modern Paganism, Satanism, African Diaspora Religions.
+
+**Later additions (ch45–ch65)**: the Pistis Sophia chapter, six comparative themes and fourteen further traditions, bringing the archive to **65 chapters** (58 traditions + 7 themes). Status mirrors `docs/assets/data.js`: all 21 were cleared by Carter.
+
+| Chapter | Type | Era | Status | Location |
+|---|---|---|---|---|
+| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
+| ch46 — Creation & the First Order | Comparative theme | cross-era | **CLEARED** | `themes/ch46-creation.md` |
+| ch47 — Journeys to the Underworld | Comparative theme | cross-era | **CLEARED** | `themes/ch47-underworld.md` |
+| ch48 — The Great Goddess | Comparative theme | cross-era | **CLEARED** | `themes/ch48-great-goddess.md` |
+| ch49 — Sacred Kingship | Comparative theme | cross-era | **CLEARED** | `themes/ch49-sacred-kingship.md` |
+| ch50 — The End of Days | Comparative theme | cross-era | **CLEARED** | `themes/ch50-apocalypse.md` |
+| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | **CLEARED** | `themes/ch51-sacrifice.md` |
+| ch52 — Jainism | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch52-jainism-axial-age.md` |
+| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
+| ch54 — Zen & Pure Land Buddhism | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch54-zen-pure-land-buddhism-early-medieval.md` |
+| ch55 — Manichaeism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch55-manichaeism-late-antiquity.md` |
+| ch56 — Mandaeans, Yazidis & Druze | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch56-mandaeans-yazidis-druze-high-medieval.md` |
+| ch57 — Hittite & Anatolian | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch57-hittite-anatolian-bronze-age.md` |
+| ch58 — Canaanite & Phoenician | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch58-canaanite-phoenician-early-iron-age.md` |
+| ch59 — Slavic & Baltic Paganism | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch59-slavic-baltic-paganism-high-medieval.md` |
+| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
+| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | **CLEARED** | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
+| ch62 — Native North American | Tradition | 07-high-medieval | **CLEARED** | `eras/07-high-medieval/ch62-native-north-american-high-medieval.md` |
+| ch63 — Oceania | Tradition | 08-early-modern | **CLEARED** | `eras/08-early-modern/ch63-oceania-early-modern.md` |
+| ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
+| ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **CLEARED** | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 

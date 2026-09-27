@@ -1,3 +1,5 @@
+> **Historical document (noted 2026-09-27).** The status, counts and plans below were true when this was written and have since been overtaken (the work shipped; the archive now has 65 chapters). For the current state see [`README.md`](/README.md), the status board in [`outline/master-outline.md`](/outline/master-outline.md) and the latest audit, [`00-audit/site-audit.md`](/00-audit/site-audit.md).
+
 # 00-audit / CONTEXT.md — Divine Archives Full-Build Audit
 
 **STATUS: 🟡 READY FOR REVIEW** — audit pass 1 (backlog) complete; **remediation pass applied** the Do-now bucket + the missing-uploads gap on 2026-08-16.

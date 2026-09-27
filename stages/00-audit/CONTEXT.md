@@ -1,3 +1,5 @@
+> **Historical document (noted 2026-09-27).** The status, counts and plans below were true when this was written and have since been overtaken (the work shipped; the archive now has 65 chapters). For the current state see [`README.md`](/README.md), the status board in [`outline/master-outline.md`](/outline/master-outline.md) and the latest audit, [`00-audit/site-audit.md`](/00-audit/site-audit.md).
+
 # Stage 0 — Ground-Truth Audit (validated against production `main`)
 
 **Track:** Site Overhaul (getconexto.com). **Branch:** `claude/site-overhaul` (based on `origin/main`).

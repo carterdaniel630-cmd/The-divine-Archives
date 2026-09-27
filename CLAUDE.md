@@ -17,11 +17,30 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   07-high-medieval/         <- Kabbalah, Sufism, scholasticism, Aztec/Maya/Inca, Bhakti
   08-early-modern/          <- Reformation, witch trials, colonial-era African religion, Sikhism
   09-modern/                <- NRMs, Spiritualism, Wicca/modern Paganism, Theosophy, diaspora syntheses
+/themes/                    <- comparative-theme chapters (cross-era), incl. the ch01-the-flood.md template
 /outline/
-  master-outline.md         <- full framework, copy from chat-provided version
+  master-outline.md         <- full framework + chapter status board (the chat-provided version was never pasted in; this file is maintained as the live framework)
 /sources/
-  (per-chapter citation logs)
+  (per-chapter citation logs; also per-Vault-entry logs and pantheon.md)
+/vault/                     <- Vault entries (V01…), one markdown file per sacred object or text
+/content/chapters.js        <- chapter bodies as HTML, built from the markdown (read by tools, not deployed)
+/docs/                      <- the website, deployed as-is (see "Build & deploy" below)
+/functions/                 <- Cloudflare Pages Functions (api/subscribe for the home-page form)
+/tools/                     <- build-*.js (prerender), md-to-chapter.js, verify-*.js (game facts vs chapter text)
+/art-source/                <- source artwork kept out of the deployed site
 ```
+
+## Build & deploy (repo mechanics)
+- Production deploys from `main` only: `.github/workflows/deploy.yml` runs `wrangler pages deploy docs`
+  to Cloudflare Pages on every push. Work on a feature branch and merge by fast-forward when approved.
+- Pages are prerendered and the output is committed. After a content change run, in order:
+  `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`.
+- A chapter's body goes into `content/chapters.js` via `node tools/md-to-chapter.js <id> <file.md>`;
+  its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
+- `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.
+- Besides chapters the site carries the Vault (`docs/vault/`, data in `docs/assets/vault-data.js`), the
+  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`) and 12 mini-games (`docs/assets/games/`),
+  all held to the same sourcing standard.
 
 ## Sourcing standard (non-negotiable)
 - Every specific factual/archaeological claim needs a real, checkable source (web search during drafting, not memory-only)
