@@ -112,10 +112,16 @@
       wireControls();
     }
 
+    // turns go into a short queue (up to 3), each checked against the one before it, so
+    // two quick presses inside one step (a tight U-turn) both happen instead of the
+    // second overwriting the first
     function setDir(dx, dy) {
       if (!st || !st.alive) return;
-      if (dx === -st.dir.x && dy === -st.dir.y) return; // no reversing
-      st.nextDir = { x: dx, y: dy };
+      if (!st.q) st.q = [];
+      var ref = st.q.length ? st.q[st.q.length - 1] : st.dir;
+      if ((dx === -ref.x && dy === -ref.y) || (dx === ref.x && dy === ref.y)) return; // no reversing, no repeats
+      if (st.q.length < 3) st.q.push({ x: dx, y: dy });
+      st.nextDir = st.q[0];
     }
     var DIRS = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
     function wireControls() {
@@ -145,7 +151,8 @@
     function togglePause() { if (!st || !st.alive) return; st.paused = !st.paused; if (!st.paused) loop(); else if (timer) { clearTimeout(timer); timer = null; } }
 
     function step() {
-      st.dir = st.nextDir;
+      if (st.q && st.q.length) st.dir = st.q.shift(); else st.dir = st.nextDir;
+      st.nextDir = (st.q && st.q[0]) || st.dir;
       var head = st.snake[0];
       var nx = (head.x + st.dir.x + GRID) % GRID;   // wrap around
       var ny = (head.y + st.dir.y + GRID) % GRID;

@@ -113,7 +113,7 @@
   function negamax(b, color, cast, ep, depth, alpha, beta) {
     var moves = legalMoves(b, color, cast, ep);
     if (!moves.length) { if (attacked(b, findKing(b, color), opp(color))) return -99000 - depth; return 0; }
-    if (depth === 0) return (color === "w" ? 1 : -1) * staticEval(b);
+    if (depth === 0) return quiesce(b, color, cast, ep, alpha, beta, 4);
     moves.sort(function (a, z) { return (b[z.to] ? VAL[b[z.to].t] : 0) - (b[a.to] ? VAL[b[a.to].t] : 0); });
     var best = -1e9;
     for (var i = 0; i < moves.length; i++) {
@@ -122,6 +122,23 @@
       if (sc > best) best = sc; if (best > alpha) alpha = best; if (alpha >= beta) break;
     }
     return best;
+  }
+  // quiescence: at the horizon, keep resolving captures (best victim, cheapest attacker
+  // first) until the position is quiet, so the AI doesn't grab a piece that is
+  // simply recaptured one move past its search depth
+  function quiesce(b, color, cast, ep, alpha, beta, qd) {
+    var stand = (color === "w" ? 1 : -1) * staticEval(b);
+    if (stand >= beta || qd <= 0) return stand;
+    if (stand > alpha) alpha = stand;
+    var caps = legalMoves(b, color, cast, ep).filter(function (m) { return b[m.to] || m.promo; });
+    caps.sort(function (a, z) { return ((b[z.to] ? VAL[b[z.to].t] : 0) - VAL[b[z.from].t] / 10) - ((b[a.to] ? VAL[b[a.to].t] : 0) - VAL[b[a.from].t] / 10); });
+    for (var i = 0; i < caps.length; i++) {
+      var m = caps[i], p = b[m.from];
+      var sc = -quiesce(apply(b, m).board, opp(color), nextCastle(cast, m, p), epAfter(m, p), -beta, -alpha, qd - 1);
+      if (sc >= beta) return sc;
+      if (sc > alpha) alpha = sc;
+    }
+    return alpha;
   }
   function bestMove(b, color, cast, ep, depth) {
     var moves = legalMoves(b, color, cast, ep); if (!moves.length) return null;

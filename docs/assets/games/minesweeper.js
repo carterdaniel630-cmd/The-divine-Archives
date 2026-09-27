@@ -89,7 +89,7 @@
         '<button class="rq-btn ms-flag" data-a="flag" aria-pressed="false">⚑ Flag mode: off</button>' +
         '<div class="ms-grid-wrap"><div class="ms-grid" role="grid" aria-label="Excavation grid"></div></div>' +
         '<p class="ouro-toast ms-toast" aria-live="polite"></p>' +
-        '<p class="rq-note">Tap to dig. Turn on flag mode (or right-click / long-press) to mark a hazard. Mark one correctly to turn up a find.</p>';
+        '<p class="rq-note">Tap to dig. Turn on flag mode (or right-click / long-press) to mark a hazard. Mark one correctly to turn up a find. Tap a number whose hazards are all marked to clear around it.</p>';
       gridEl = root.querySelector(".ms-grid"); live = root.querySelector(".ms-toast");
       flagBtn = root.querySelector('[data-a="flag"]'); timerEl = root.querySelector("#ms-timer"); mineEl = root.querySelector("#ms-mines");
       gridEl.style.setProperty("--cols", String(st.cols));
@@ -131,9 +131,24 @@
       if (c.flag && c.mine && !c.found) { c.found = true; revealFact(); }
       paint(x, y); updateHUD();
     }
+    // chording: clicking an open number whose flags already match it opens all its
+    // other neighbours at once (a wrong flag there sets off the mine, as in the classic)
+    function chord(x, y) {
+      var c = st.cells[idx(x, y)], nb = neighbors(x, y), flags = 0;
+      nb.forEach(function (n) { if (st.cells[idx(n[0], n[1])].flag) flags++; });
+      if (!c.adj || flags !== c.adj) return;
+      for (var i = 0; i < nb.length; i++) {
+        var nc = st.cells[idx(nb[i][0], nb[i][1])];
+        if (nc.flag || nc.open) continue;
+        if (nc.mine) return loseAt(nb[i][0], nb[i][1]);
+        flood(nb[i][0], nb[i][1]);
+      }
+      updateHUD(); checkWin();
+    }
     function dig(x, y) {
       if (st.over) return; var c = st.cells[idx(x, y)];
-      if (c.flag || c.open) return;
+      if (c.open) return chord(x, y);
+      if (c.flag) return;
       if (!st.started) placeMines(x, y);
       if (c.mine) return loseAt(x, y);
       flood(x, y);

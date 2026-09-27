@@ -113,7 +113,7 @@
       st.grid = TILE; st.dots = dots; st.midR = midR; st.penC = midC;
       st.player = mkEnt(pC, pR, 0.115);
       st.player.mouth = 0;
-      st.ghosts = [];
+      st.ghosts = []; st.modeI = 0; st.modeT = 0;
       for (var i = 0; i < 4; i++) st.ghosts.push(mkGhost(midC + (i % 2 ? 1 : -1) * ((i >> 1) + 0), midR, i));
       st.score = st.score || 0; st.lives = lives; st.level = st.level || 1;
       st.fright = 0; st.collected = st.collected || []; st.seen = st.seen || {};
@@ -161,19 +161,33 @@
       return { x: cx0 + (tx0 - cx0) * e.prog, y: cy0 + (ty0 - cy0) * e.prog };
     }
 
+    // Each shade hunts its own way, after the arcade original: the first chases your tile,
+    // the second cuts ahead of you, the third flanks (the point opposite the first shade,
+    // through the tile two ahead of you), and the fourth chases only from afar and
+    // otherwise drifts to its corner. They alternate SCATTER (each to a home corner) and
+    // CHASE on a timer; every switch reverses them, which is the tell to watch for.
+    var MODES = [["scatter", 7], ["chase", 20], ["scatter", 7], ["chase", 20], ["scatter", 5], ["chase", 1e9]];
+    function ghostMode() { return MODES[Math.min(st.modeI || 0, MODES.length - 1)][0]; }
+    function ghostTarget(g) {
+      var R = st.grid.length, C = st.grid[0].length, p = st.player, pd = p.dir || { x: 0, y: 0 };
+      var corners = [{ x: C - 2, y: -2 }, { x: 1, y: -2 }, { x: C - 1, y: R + 1 }, { x: 0, y: R + 1 }];
+      if (ghostMode() === "scatter") return corners[g.idx % 4];
+      if (g.idx % 4 === 1) return { x: p.tx + pd.x * 4, y: p.ty + pd.y * 4 };
+      if (g.idx % 4 === 2) { var b = st.ghosts[0], ax = p.tx + pd.x * 2, ay = p.ty + pd.y * 2; return { x: ax + (ax - b.tx), y: ay + (ay - b.ty) }; }
+      if (g.idx % 4 === 3) { var dx = g.tx - p.tx, dy = g.ty - p.ty; return dx * dx + dy * dy > 64 ? { x: p.tx, y: p.ty } : corners[3]; }
+      return { x: p.tx, y: p.ty };
+    }
     function ghostChoose(g) {
-      var opts = [], dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+      var opts = [], dirs = [[0, -1], [-1, 0], [0, 1], [1, 0]];   // arcade tie-break order: up, left, down, right
       for (var i = 0; i < 4; i++) {
         var d = dirs[i]; if (d[0] === -g.dir.x && d[1] === -g.dir.y) continue; // no reversing
         if (!isWall(g.ty + d[1], wrapC(g.tx + d[0]))) opts.push(d);
       }
       if (!opts.length) return { x: -g.dir.x, y: -g.dir.y };
       if (st.fright > 0 && !g.eaten) { return vecOf(opts[(Math.random() * opts.length) | 0]); }
-      var target = g.eaten ? { x: st.penC, y: st.midR } : { x: st.player.tx, y: st.player.ty };
-      // a little scatter randomness so they don't move as one
-      if (!g.eaten && Math.random() < 0.18) return vecOf(opts[(Math.random() * opts.length) | 0]);
+      var target = g.eaten ? { x: st.penC, y: st.midR } : ghostTarget(g);
       var bestO = opts[0], bestD = 1e9;
-      opts.forEach(function (d) { var nx = wrapC(g.tx + d[0]), ny = g.ty + d[1], dd = Math.abs(nx - target.x) + Math.abs(ny - target.y); if (dd < bestD) { bestD = dd; bestO = d; } });
+      opts.forEach(function (d) { var nx = wrapC(g.tx + d[0]), ny = g.ty + d[1], dd = (nx - target.x) * (nx - target.x) + (ny - target.y) * (ny - target.y); if (dd < bestD) { bestD = dd; bestO = d; } });
       return vecOf(bestO);
     }
     function vecOf(a) { return { x: a[0], y: a[1] }; }
@@ -191,6 +205,11 @@
         if (g.eaten && g.tx === st.penC && g.ty === st.midR && !g.moving) { g.eaten = false; g.penT = 0.4; }
       });
       if (st.fright > 0) st.fright = Math.max(0, st.fright - dt);
+      else {                                          // the scatter/chase clock pauses while they're frightened
+        st.modeT = (st.modeT || 0) + dt;
+        var mi = st.modeI || 0;
+        if (mi < MODES.length - 1 && st.modeT >= MODES[mi][1]) { st.modeI = mi + 1; st.modeT = 0; st.ghosts.forEach(function (g) { if (!g.eaten && g.penT <= 0) g.dir = { x: -g.dir.x, y: -g.dir.y }; }); }
+      }
       checkCollisions();
       if (st.dots <= 0 && !st.over) nextLevel();
     }
@@ -227,7 +246,7 @@
       var midC = st.midC, midR = ROWS >> 1;
       st.player = mkEnt(midC, ROWS - 2, 0.115); if (isWall(ROWS - 2, midC)) st.player = mkEnt(midC, midR + 2, 0.115);
       st.player.mouth = 0;
-      st.ghosts.forEach(function (g, i) { g.tx = midC + (i % 2 ? 1 : -1); g.ty = midR; g.moving = false; g.dir = { x: 0, y: 0 }; g.eaten = false; g.penT = 0.4 + i * 0.4; });
+      st.modeI = 0; st.modeT = 0; st.ghosts.forEach(function (g, i) { g.tx = midC + (i % 2 ? 1 : -1); g.ty = midR; g.moving = false; g.dir = { x: 0, y: 0 }; g.eaten = false; g.penT = 0.4 + i * 0.4; });
       st.fright = 0; st.ready = 1.0; updateHUD();
     }
     function nextLevel() {
