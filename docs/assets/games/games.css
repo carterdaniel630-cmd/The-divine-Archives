@@ -461,6 +461,10 @@
 .rk-next { white-space:nowrap; }
 
 /* ---- The Tomb Robber (treasure-hunt platformer) ---- */
+.tr-hudrow { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
+.tr-snd { background:none; border:1px solid var(--line); border-radius:999px; color:var(--ink-faint, #a89878); font:inherit; font-size:.72rem; padding:.2rem .7rem; cursor:pointer; }
+.tr-snd[aria-pressed="true"] { color:var(--gold-bright); border-color:var(--gold); }
+.tr-snd:focus-visible { outline:2px solid var(--gold-bright); outline-offset:2px; }
 .tr-hud { display:flex; align-items:center; justify-content:center; gap:1.3rem; margin:.2rem auto .35rem; }
 .tr-stage { position:relative; display:flex; justify-content:center; padding:8px; margin:0 auto; }
 .tr-stage::before, .tr-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }

@@ -189,7 +189,7 @@
         B.gems(42, 44, 7); B.foe("gharial", 47); B.gems(59, 63, 7); B.ring(69, 5);
         B.hint(80, "Inside the walls. The tiger won't follow you here.");
         B.check(81); B.foe("peacock", 83, { deco: true }); B.statue(86, "piers");
-        B.crate(82); B.crate(87, 5); B.plate(88, 9); B.plate(92);
+        B.crate(82); B.crate(87, 5); B.plate(88, 9); B.plate(91);
         B.hint(84, "Two plates. One crate waits up on the platform — push it off the edge.");
         B.check(97); B.ring(102, 4); B.relic(103, 7);
         B.hint(97, "The Great Bath: a sealed brick tank, stairs at both ends. Swing across.");
@@ -309,6 +309,97 @@
     var run = null;
     function factsForLevel(i) { return (DATA.facts || []).filter(function (f) { return (f.level | 0) === i; }); }
 
+    /* ================= sound: synthesized in WebAudio, no files ================= */
+    var SFX = (function () {
+      var ac = null, master = null, nbuf = null, amb = null, rumble = null, on = true;
+      try { on = localStorage.getItem("da.games.sfx") !== "off"; } catch (e) { }
+      function ensure() {
+        if (!on) return false;
+        try {
+          if (!ac) {
+            var AC = window.AudioContext || window.webkitAudioContext; if (!AC) { on = false; return false; }
+            ac = new AC(); master = ac.createGain(); master.gain.value = 0.32; master.connect(ac.destination);
+            nbuf = ac.createBuffer(1, ac.sampleRate, ac.sampleRate); var d = nbuf.getChannelData(0); for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+          }
+          if (ac.state === "suspended") ac.resume();
+        } catch (e) { return false; }
+        return true;
+      }
+      function env(g, t0, a, peak, dur) { g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(peak, t0 + a); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur); }
+      function tone(f, dur, type, vol, f2, delay) {
+        if (!ensure()) return; var t0 = ac.currentTime + (delay || 0), o = ac.createOscillator(), g = ac.createGain();
+        o.type = type || "sine"; o.frequency.setValueAtTime(f, t0); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
+        env(g, t0, 0.008, vol || 0.2, dur); o.connect(g); g.connect(master); o.start(t0); o.stop(t0 + dur + 0.05);
+      }
+      function noise(dur, vol, ftype, f, f2, q, delay) {
+        if (!ensure()) return; var t0 = ac.currentTime + (delay || 0), n = ac.createBufferSource(), fl = ac.createBiquadFilter(), g = ac.createGain();
+        n.buffer = nbuf; n.loop = true; fl.type = ftype || "lowpass"; fl.frequency.setValueAtTime(f || 1000, t0); if (f2) fl.frequency.exponentialRampToValueAtTime(f2, t0 + dur); fl.Q.value = q || 0.7;
+        env(g, t0, 0.005, vol || 0.2, dur); n.connect(fl); fl.connect(g); g.connect(master); n.start(t0); n.stop(t0 + dur + 0.05);
+      }
+      var P = {
+        jump: function () { tone(260, 0.14, "triangle", 0.09, 520); },
+        land: function () { noise(0.09, 0.12, "lowpass", 500, 150); },
+        whip: function () { noise(0.05, 0.05, "bandpass", 900, 3000, 2); noise(0.07, 0.3, "highpass", 2400, 6000, 0.8, 0.09); tone(1800, 0.04, "square", 0.05, 900, 0.09); },
+        latch: function () { tone(700, 0.08, "triangle", 0.1, 1100); noise(0.25, 0.06, "bandpass", 500, 1400, 1.5, 0.05); },
+        release: function () { noise(0.22, 0.07, "bandpass", 1200, 400, 1.2); },
+        gem: function () { tone(1320, 0.12, "sine", 0.1); tone(1980, 0.18, "sine", 0.07, null, 0.05); },
+        relic: function () { [523, 659, 784, 1046].forEach(function (f, i) { tone(f, 0.5, "triangle", 0.11, null, i * 0.08); }); tone(2093, 0.8, "sine", 0.05, null, 0.3); },
+        canteen: function () { tone(440, 0.2, "sine", 0.1, 660); tone(660, 0.3, "sine", 0.08, 880, 0.12); },
+        check: function () { noise(0.5, 0.1, "bandpass", 300, 1400, 0.8); tone(392, 0.3, "triangle", 0.06, null, 0.1); },
+        hurt: function () { tone(180, 0.25, "sawtooth", 0.12, 70); noise(0.15, 0.12, "lowpass", 900, 200); },
+        fall: function () { tone(600, 0.6, "triangle", 0.1, 90); },
+        splash: function () { noise(0.5, 0.22, "bandpass", 2400, 500, 0.9); noise(0.3, 0.12, "lowpass", 400, 120, 1, 0.05); },
+        stomp: function () { tone(220, 0.1, "square", 0.08, 110); noise(0.08, 0.1, "bandpass", 1500, 600, 1); },
+        stun: function () { tone(160, 0.3, "sawtooth", 0.08, 90); tone(900, 0.2, "sine", 0.05, 1500, 0.05); },
+        roar: function () { if (!ensure()) return; var t0 = ac.currentTime, o = ac.createOscillator(), g = ac.createGain(), fl = ac.createBiquadFilter(), lfo = ac.createOscillator(), lg = ac.createGain();
+          o.type = "sawtooth"; o.frequency.setValueAtTime(120, t0); o.frequency.linearRampToValueAtTime(75, t0 + 1.1); lfo.frequency.value = 28; lg.gain.value = 18; lfo.connect(lg); lg.connect(o.frequency);
+          fl.type = "lowpass"; fl.frequency.setValueAtTime(700, t0); fl.frequency.linearRampToValueAtTime(260, t0 + 1.1); env(g, t0, 0.08, 0.2, 1.2);
+          o.connect(fl); fl.connect(g); g.connect(master); o.start(t0); lfo.start(t0); o.stop(t0 + 1.3); lfo.stop(t0 + 1.3); noise(1.0, 0.1, "bandpass", 500, 200, 1.2); },
+        growl: function () { tone(110, 0.5, "sawtooth", 0.07, 80); noise(0.4, 0.06, "lowpass", 400, 200); },
+        gate: function () { noise(1.4, 0.14, "lowpass", 200, 600, 4); tone(55, 1.2, "sawtooth", 0.05, 70); },
+        lever: function () { tone(300, 0.05, "square", 0.1, 200); noise(0.05, 0.12, "bandpass", 2000, 1000, 2, 0.06); },
+        plate: function () { tone(140, 0.12, "square", 0.08, 90); },
+        glyph: function (i) { tone(392 * Math.pow(1.26, i || 0), 0.4, "triangle", 0.1); tone(784 * Math.pow(1.26, i || 0), 0.4, "sine", 0.04, null, 0.03); },
+        wrong: function () { tone(220, 0.35, "sawtooth", 0.08); tone(233, 0.35, "sawtooth", 0.08); },
+        solved: function () { [392, 494, 587, 784].forEach(function (f, i) { tone(f, 0.6, "triangle", 0.09, null, i * 0.11); }); },
+        crumble: function () { noise(0.4, 0.1, "lowpass", 900, 200); },
+        spear: function () { noise(0.12, 0.07, "highpass", 3000, 1200, 1); },
+        thunk: function () { tone(120, 0.08, "square", 0.06, 60); },
+        crash: function () { noise(1.2, 0.3, "lowpass", 1200, 80); tone(60, 0.8, "sine", 0.2, 30); },
+        clear: function () { [523, 659, 784, 1046, 1318].forEach(function (f, i) { tone(f, 0.7, "triangle", 0.1, null, i * 0.1); }); },
+        over: function () { [392, 330, 262, 196].forEach(function (f, i) { tone(f, 0.6, "triangle", 0.1, null, i * 0.18); }); }
+      };
+      // looping beds: a biome ambience (wind / rain / marsh / tomb hush) and the boulder's rumble
+      function bed(kind) {
+        if (!ensure()) return;
+        if (!amb) {
+          var n = ac.createBufferSource(), fl = ac.createBiquadFilter(), g = ac.createGain(), dr = ac.createOscillator(), dg = ac.createGain();
+          n.buffer = nbuf; n.loop = true; fl.type = "bandpass"; g.gain.value = 0; dr.type = "sine"; dr.frequency.value = 55; dg.gain.value = 0;
+          n.connect(fl); fl.connect(g); g.connect(master); dr.connect(dg); dg.connect(master); n.start(); dr.start();
+          amb = { n: n, fl: fl, g: g, dr: dr, dg: dg, kind: null };
+        }
+        if (amb.kind === kind) return; amb.kind = kind;
+        var t = ac.currentTime, cfg = { wind: [420, 0.5, 0.05, 0], rain: [2600, 0.4, 0.07, 0], marsh: [900, 1.2, 0.025, 0], snow: [700, 0.6, 0.05, 0], tomb: [180, 0.8, 0.03, 0.035] }[kind] || [600, 0.6, 0.03, 0];
+        amb.fl.frequency.setTargetAtTime(cfg[0], t, 0.6); amb.fl.Q.setTargetAtTime(cfg[1], t, 0.6); amb.g.gain.setTargetAtTime(cfg[2], t, 0.8); amb.dg.gain.setTargetAtTime(cfg[3], t, 0.8);
+      }
+      function rumbleOn(v) {
+        if (!ensure()) return;
+        if (!rumble) { var n = ac.createBufferSource(), fl = ac.createBiquadFilter(), g = ac.createGain(); n.buffer = nbuf; n.loop = true; fl.type = "lowpass"; fl.frequency.value = 140; g.gain.value = 0; n.connect(fl); fl.connect(g); g.connect(master); n.start(); rumble = g; }
+        rumble.gain.setTargetAtTime(v ? 0.35 : 0, ac.currentTime, 0.15);
+      }
+      function stopAll() { try { if (amb) { amb.g.gain.setTargetAtTime(0, ac.currentTime, 0.2); amb.dg.gain.setTargetAtTime(0, ac.currentTime, 0.2); amb.kind = null; } if (rumble) rumble.gain.setTargetAtTime(0, ac.currentTime, 0.1); } catch (e) { } }
+      return {
+        play: function (name, a) { if (on && P[name]) { try { P[name](a); } catch (e) { } } },
+        bed: function (k) { if (on) { try { bed(k); } catch (e) { } } },
+        rumble: function (v) { if (on || !v) { try { if (ac || v) rumbleOn(v); } catch (e) { } } },
+        stop: stopAll,
+        close: function () { stopAll(); try { if (ac) ac.close(); } catch (e) { } ac = null; amb = null; rumble = null; },
+        isOn: function () { return on; },
+        toggle: function () { on = !on; try { localStorage.setItem("da.games.sfx", on ? "on" : "off"); } catch (e) { } if (!on) stopAll(); else ensure(); return on; },
+        wake: ensure
+      };
+    })();
+
     /* ================= level instance ================= */
     function newLevel(li) {
       var def = LEVELS[li], lv = makeLevel(def), E = lv.E;
@@ -404,20 +495,20 @@
     /* ================= damage / respawn ================= */
     function loseHeart() {
       st.hearts -= 1; run.hearts = st.hearts; st.shake = Math.max(st.shake, 7); st.flashT = 0.28;
-      if (st.hearts <= 0) { st.over = true; setTimeout(function () { endScreen(false); }, 800); return true; }
+      if (st.hearts <= 0) { st.over = true; SFX.rumble(false); SFX.play("over"); setTimeout(function () { endScreen(false); }, 800); return true; }
       return false;
     }
     function hurt(fromX) {
       var p = st.p; if (p.inv > 0 || st.over) return false;
       p.inv = 1.4; p.swing = null;
-      var d = p.x >= fromX ? 1 : -1; p.vx = d * 4; p.vy = -5.5; p.knock = 0.25;
+      var d = p.x >= fromX ? 1 : -1; p.vx = d * 4; p.vy = -5.5; p.knock = 0.25; SFX.play("hurt");
       burst(p.x, p.y, "#e8d2a0", 8);
       loseHeart();
       return true;
     }
     function respawn(why) {
       var p = st.p; if (st.over) return;
-      if (why === "water") splash(p.x, 10 * TILE + 6);
+      if (why === "water") { splash(p.x, 10 * TILE + 6); SFX.play("splash"); } else if (why !== "boulder") SFX.play("fall"); else SFX.play("hurt");
       if (loseHeart()) return;
       var cp = null; st.checks.forEach(function (k) { if (k.on) cp = k; });
       var sx = cp ? cp.x : st.spawn.x, sy = cp ? cp.y - 12.01 : st.spawn.y;
@@ -447,20 +538,22 @@
       if (st.shake > 0) st.shake = Math.max(0, st.shake - dt * 22);
       if (st.flashT > 0) st.flashT -= dt;
       if (p.y > LH + 30) respawn("fall");
+      var mc = Math.floor((p.x) / TILE), bn = biomeNameAt(st.def, mc);
+      SFX.bed(isDark(mc) ? "tomb" : ({ egypt: "wind", sumer: "marsh", indus: "rain", persia: "snow", china: "wind" })[bn]);
       press = {};
     }
     function movePlayer(dt) {
       var p = st.p, ax = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
       if (p.knock > 0) ax = 0;
       var a = p.onGround ? 0.55 : 0.36;
-      if (ax) { p.vx += ax * a; p.face = ax; } else p.vx *= p.onGround ? 0.72 : 0.97;
+      if (ax) { p.vx += ax * a; p.face = ax; } else p.vx *= p.onGround ? 0.72 : 0.992;   // airborne momentum carries
       if (Math.abs(p.vx) < 0.05) p.vx = 0;
       // top speed; a swing release keeps its extra speed in the air and bleeds it off
       var cap = p.onGround ? 3.3 : Math.max(3.3, p.airCap || 0); p.airCap = p.onGround ? 0 : Math.max(0, (p.airCap || 0) - 0.03);
       if (p.knock <= 0) p.vx = clamp(p.vx, -cap, cap);
       if (press.jump) p.buffer = 8; else if (p.buffer > 0) p.buffer--;       // jump buffer
       if (p.onGround) p.coyote = 7; else if (p.coyote > 0) p.coyote--;       // coyote time
-      if (p.buffer > 0 && p.coyote > 0) { p.vy = -8.8; p.coyote = 0; p.buffer = 0; p.onGround = false; puff(p.x, p.y + p.hh, 4); }
+      if (p.buffer > 0 && p.coyote > 0) { p.vy = -8.8; p.coyote = 0; p.buffer = 0; p.onGround = false; puff(p.x, p.y + p.hh, 4); SFX.play("jump"); }
       if (!keys.jump && p.vy < -3.6 && p.knock <= 0 && !(p.fling > 0)) p.vy = -3.6;   // tap = hop, hold = full leap
       if (p.fling > 0) p.fling = Math.max(0, p.fling - dt);
       p.vy = Math.min(10, p.vy + 0.5);
@@ -468,7 +561,7 @@
       var wasAir = !p.onGround, vyBefore = p.vy;
       moveX(p, p.vx); pushCrates(p);
       moveY(p, p.vy, true);
-      if (p.onGround && wasAir && vyBefore > 3) { p.land = 0.16; puff(p.x, p.y + p.hh, 3); }
+      if (p.onGround && wasAir && vyBefore > 3) { p.land = 0.16; puff(p.x, p.y + p.hh, 3); SFX.play("land"); }
       if (p.land > 0) p.land -= dt;
       p.run += Math.abs(p.vx) * 0.19;
       p.x = clamp(p.x, TILE + p.hw, st.LW - TILE - p.hw);
@@ -497,8 +590,9 @@
       if (overlapSolid(p)) { p.x = ox; p.y = oy; s.th -= s.om; s.om *= -0.35; }
       p.vx = p.x - ox; p.vy = p.y - oy; if (Math.abs(p.vx) > 0.2) p.face = p.vx > 0 ? 1 : -1;
       if (press.jump || press.down) {
-        p.swing = null; p.whip = null; if (press.jump) { p.vy = Math.min(p.vy, 0) - 4.4; p.fling = 0.35; }
-        p.vx = clamp(p.vx * 1.1, -6, 6); p.airCap = Math.abs(p.vx); p.knock = 0;
+        SFX.play("release"); p.swing = null; p.whip = null; if (press.jump) { p.vy = Math.min(p.vy, 0) - 4.4; p.fling = 0.35; }
+        var dirX = p.vx > 0.3 ? 1 : p.vx < -0.3 ? -1 : p.face;                   // a jump off the rope always carries you onward
+        p.vx = dirX * clamp(Math.max(Math.abs(p.vx) * 1.1, press.jump ? 3.8 : 0), 0, 6); p.airCap = Math.abs(p.vx); p.knock = 0;
       }
     }
 
@@ -519,7 +613,7 @@
           p.swing = { ax: bestR.x, ay: bestR.y, L: L, th: th, om: (p.vx * Math.cos(th) - p.vy * Math.sin(th)) / L };
           var ox = p.x, oy = p.y; p.x = bestR.x + L * Math.sin(th); p.y = bestR.y + L * Math.cos(th);
           if (overlapSolid(p)) { p.x = ox; p.y = oy; p.swing.L = Math.hypot(p.x - bestR.x, p.y - bestR.y); }
-          p.onGround = false; p.whip = null;
+          p.onGround = false; p.whip = null; SFX.play("latch");
           spark(bestR.x, bestR.y, 6);
         }
       }
@@ -532,20 +626,20 @@
     function whipHit() {
       var o = whipOrigin(), d = whipDir(), reach = st.p.whip.up ? 112 : 84, pts = [];
       for (var i = 2; i <= 8; i++) pts.push({ x: o.x + d.x * reach * i / 8, y: o.y + d.y * reach * i / 8 });
-      var tip = pts[pts.length - 1]; spark(tip.x, tip.y, 5);
+      var tip = pts[pts.length - 1]; spark(tip.x, tip.y, 5); SFX.play("whip");
       function hits(x, y, hw, hh) { for (var j = 0; j < pts.length; j++) if (Math.abs(pts[j].x - x) < hw + 4 && Math.abs(pts[j].y - y) < hh + 4) return true; return false; }
       st.foes.forEach(function (f) {
         if (!f.alive || f.deco) return; var bb = foeBox(f); if (!hits(bb.x, bb.y, bb.hw, bb.hh)) return;
-        if (f.type === "lion" || f.type === "leopard") { f.stun = 2.2; f.vx = st.p.face * 2.5; burst(bb.x, bb.y - 6, "#fff2c0", 6); toast("The " + f.type + " staggers back — go!"); }
+        if (f.type === "lion" || f.type === "leopard") { SFX.play("stun"); f.stun = 2.2; f.vx = st.p.face * 2.5; burst(bb.x, bb.y - 6, "#fff2c0", 6); toast("The " + f.type + " staggers back — go!"); }
         else if (f.type === "gharial") { f.lungeT = 0; f.lunge = 0; f.cool = 2.5; burst(bb.x, bb.y, "#bfe8ff", 6); }
-        else { f.alive = false; run.score += 50; poof(bb.x, bb.y); }
+        else { f.alive = false; run.score += 50; poof(bb.x, bb.y); SFX.play("stomp"); }
       });
       st.chases.forEach(function (ch) {
-        if (ch.state === "run" && hits(ch.x, ch.y, ch.hw, ch.hh)) { ch.stun = 1.3; ch.vx = st.p.face * 3; ch.vy = -2; burst(ch.x, ch.y - 8, "#fff2c0", 8); st.shake = 3; }
+        if (ch.state === "run" && hits(ch.x, ch.y, ch.hw, ch.hh)) { SFX.play("stun"); ch.stun = 1.3; ch.vx = st.p.face * 3; ch.vy = -2; burst(ch.x, ch.y - 8, "#fff2c0", 8); st.shake = 3; }
       });
       st.lv.E.levers.forEach(function (lv) {
         var lx = lv.c * TILE + TILE / 2, ly = lv.r * TILE + TILE / 2;
-        if (!lv.on && hits(lx, ly, 10, 12)) { lv.on = true; spark(lx, ly, 10); st.shake = 3; toast("<strong>Clack.</strong> Something heavy shifts inside the wall."); }
+        if (!lv.on && hits(lx, ly, 10, 12)) { lv.on = true; SFX.play("lever"); spark(lx, ly, 10); st.shake = 3; toast("<strong>Clack.</strong> Something heavy shifts inside the wall."); }
       });
     }
 
@@ -558,7 +652,7 @@
         m.dx = m.x - ox; m.dy = m.y - oy;
       });
       st.lv.E.crumbles.forEach(function (k) {
-        if (k.state === 1) { k.t += dt; if (k.t > 0.42) { k.state = 2; k.t = 0; for (var i = 0; i < 4; i++) st.parts.push({ k: "rubble", x: k.c * TILE + 4 + i * 5, y: k.r * TILE + 6, vx: (Math.random() - 0.5) * 1.5, vy: -Math.random(), life: 1.4, col: "#7a6450" }); } }
+        if (k.state === 1) { k.t += dt; if (k.t > 0.42) { k.state = 2; k.t = 0; SFX.play("crumble"); for (var i = 0; i < 4; i++) st.parts.push({ k: "rubble", x: k.c * TILE + 4 + i * 5, y: k.r * TILE + 6, vx: (Math.random() - 0.5) * 1.5, vy: -Math.random(), life: 1.4, col: "#7a6450" }); } }
         else if (k.state === 2) { k.t += dt; if (k.t > 3.2 && !boxHit(p, k.c * TILE + 12, k.r * TILE + 12, 12, 12)) { k.state = 0; k.t = 0; } }
       });
       st.crates.forEach(function (k) {
@@ -567,14 +661,14 @@
       st.lv.E.plates.forEach(function (pl) {
         var px = pl.c * TILE + TILE / 2, fy = (pl.r + 1) * TILE, was = pl.down;
         // a crate pushed over a plate drops into its socket and stays
-        st.crates.forEach(function (k) { if (!k.locked && Math.abs(k.x - px) < 15 && Math.abs(k.y + k.hh - fy) < 3) { k.locked = true; k.x = px; spark(px, fy - 4, 6); } });
+        st.crates.forEach(function (k) { if (!k.locked && Math.abs(k.x - px) < 15 && Math.abs(k.y + k.hh - fy) < 3) { k.locked = true; k.x = px; spark(px, fy - 4, 6); SFX.play("thunk"); } });
         pl.down = (p.onGround && Math.abs(p.x - px) < 12 && Math.abs(p.y + p.hh - fy) < 3) ||
           st.crates.some(function (k) { return Math.abs(k.x - px) < 2 && Math.abs(k.y + k.hh - fy) < 3; });
-        if (pl.down && !was) { st.shake = Math.max(st.shake, 2); puff(px, fy, 3); }
+        if (pl.down && !was) { st.shake = Math.max(st.shake, 2); puff(px, fy, 3); SFX.play("plate"); }
       });
       st.lv.E.gates.forEach(function (g) {
         var want = g.trig.length > 0 && g.trig.every(trigOk);
-        if (want && !g.want) { st.shake = Math.max(st.shake, 4); toast("<strong>A door grinds open.</strong>"); }
+        if (want && !g.want) { st.shake = Math.max(st.shake, 4); SFX.play("gate"); toast("<strong>A door grinds open.</strong>"); }
         g.want = want;
         g.open = clamp(g.open + (want ? dt * 0.9 : -dt * 1.4), 0, 1);
         if (g.open < 0.7 && Math.abs(p.x - (g.c * TILE + 12)) < 18 && overlapSolid(p)) p.x = g.c * TILE - p.hw - 0.5;
@@ -582,12 +676,12 @@
     }
     function interact() {
       var p = st.p;
-      st.relics.forEach(function (rl) { if (!rl.got && Math.abs(rl.x - p.x) < 16 && Math.abs(rl.y - p.y) < 20) { rl.got = true; st.got++; run.score += 100; run.collected.push(rl.fact); showFact(rl.fact); sparkle(rl.x, rl.y); } });
-      st.gems.forEach(function (g) { if (!g.got && Math.abs(g.x - p.x) < 12 && Math.abs(g.y - p.y) < 16) { g.got = true; run.score += 10; spark(g.x, g.y, 3); } });
-      st.canteens.forEach(function (k) { if (!k.got && Math.abs(k.x - p.x) < 12 && Math.abs(k.y - p.y) < 18) { k.got = true; st.hearts = Math.min(MAXHEARTS, st.hearts + 1); run.hearts = st.hearts; toast("<strong>Water.</strong> A canteen left by the last expedition — one heart back."); sparkle(k.x, k.y); } });
-      st.checks.forEach(function (k) { if (!k.on && Math.abs(k.x - p.x) < 18 && Math.abs(k.y - (p.y + p.hh)) < 30) { st.checks.forEach(function (o) { if (o.x < k.x) o.on = true; }); k.on = true; sparkle(k.x, k.y - 20); } });
+      st.relics.forEach(function (rl) { if (!rl.got && Math.abs(rl.x - p.x) < 16 && Math.abs(rl.y - p.y) < 20) { rl.got = true; st.got++; run.score += 100; run.collected.push(rl.fact); showFact(rl.fact); sparkle(rl.x, rl.y); SFX.play("relic"); } });
+      st.gems.forEach(function (g) { if (!g.got && Math.abs(g.x - p.x) < 12 && Math.abs(g.y - p.y) < 16) { g.got = true; run.score += 10; spark(g.x, g.y, 3); SFX.play("gem"); } });
+      st.canteens.forEach(function (k) { if (!k.got && Math.abs(k.x - p.x) < 12 && Math.abs(k.y - p.y) < 18) { k.got = true; st.hearts = Math.min(MAXHEARTS, st.hearts + 1); run.hearts = st.hearts; toast("<strong>Water.</strong> A canteen left by the last expedition — one heart back."); sparkle(k.x, k.y); SFX.play("canteen"); } });
+      st.checks.forEach(function (k) { if (!k.on && Math.abs(k.x - p.x) < 18 && Math.abs(k.y - (p.y + p.hh)) < 30) { st.checks.forEach(function (o) { if (o.x < k.x) o.on = true; }); k.on = true; sparkle(k.x, k.y - 20); SFX.play("check"); } });
       st.lv.E.hints.forEach(function (h) { if (!h.shown && p.x > h.c * TILE) { h.shown = true; toast(h.text); } });
-      st.lv.E.levers.forEach(function (lv) { if (!lv.on && Math.abs(p.x - (lv.c * TILE + 12)) < 14 && Math.abs(p.y - (lv.r * TILE + 12)) < 18) { lv.on = true; toast("<strong>Clack.</strong> The lever drops."); } });
+      st.lv.E.levers.forEach(function (lv) { if (!lv.on && Math.abs(p.x - (lv.c * TILE + 12)) < 14 && Math.abs(p.y - (lv.r * TILE + 12)) < 18) { lv.on = true; SFX.play("lever"); toast("<strong>Clack.</strong> The lever drops."); } });
       // glyph floors: register the sign you step onto
       var onT = -1, gs = null;
       if (p.onGround) st.lv.E.glyphsets.forEach(function (set) { set.tiles.forEach(function (tl, i) { if (Math.abs(p.x - (tl.c * TILE + 12)) < 10 && Math.abs(p.y + p.hh - (tl.r + 1) * TILE) < 3) { onT = tl.c; gs = { set: set, i: i }; } }); });
@@ -600,17 +694,17 @@
         if (t === 4 && p.y + p.hh > r * TILE + 8) { respawn("water"); return; }
         if (t === 3 && p.y + p.hh > r * TILE + 12) { if (r >= ROWS - 1) { respawn("spikes"); return; } if (hurt(p.x - p.face * 10)) p.vy = -7; }
       }
-      if (!st.over && Math.abs(st.exit.x - p.x) < 14 && Math.abs(st.exit.y - (p.y + p.hh)) < 10 && p.onGround) { st.over = true; st.won = true; sparkle(st.exit.x, st.exit.y - 20); setTimeout(clearedSite, 450); }
+      if (!st.over && Math.abs(st.exit.x - p.x) < 14 && Math.abs(st.exit.y - (p.y + p.hh)) < 10 && p.onGround) { st.over = true; st.won = true; sparkle(st.exit.x, st.exit.y - 20); SFX.play("clear"); SFX.rumble(false); setTimeout(clearedSite, 450); }
     }
     function stepGlyph(set, i) {
       if (set.solved) return;
       var need = set.order[set.prog], tl = set.tiles[i];
       if (tl.lit) return;
       if (tl.sym === need) {
-        tl.lit = true; set.prog++; spark(tl.c * TILE + 12, (tl.r + 1) * TILE - 4, 6);
-        if (set.prog >= set.order.length) { set.solved = true; toast("<strong>The floor answers.</strong> Deep in the wall, a bar slides back."); st.shake = 5; }
+        tl.lit = true; set.prog++; spark(tl.c * TILE + 12, (tl.r + 1) * TILE - 4, 6); SFX.play("glyph", set.prog - 1);
+        if (set.prog >= set.order.length) { set.solved = true; SFX.play("solved"); toast("<strong>The floor answers.</strong> Deep in the wall, a bar slides back."); st.shake = 5; }
       } else {
-        set.prog = 0; set.tiles.forEach(function (x) { x.lit = false; }); st.shake = 4;
+        set.prog = 0; set.tiles.forEach(function (x) { x.lit = false; }); st.shake = 4; SFX.play("wrong");
         burst(tl.c * TILE + 12, (tl.r + 1) * TILE - 4, "#c86a4a", 6);
         toast("<strong>Wrong sign</strong> — the floor goes dark. Read the wall again.");
       }
@@ -646,7 +740,7 @@
           if (f.stun > 0) { f.stun -= dt; f.x += f.vx; f.vx *= 0.9; }
           else {
             var near = Math.abs(p.x - f.x) < 150 && Math.abs(p.y - (f.y - 12)) < 36;
-            if (near) { f.dir = p.x < f.x ? -1 : 1; f.state = "charge"; } else f.state = "walk";
+            if (near) { if (f.state !== "charge") SFX.play("growl"); f.dir = p.x < f.x ? -1 : 1; f.state = "charge"; } else f.state = "walk";
             var spd = f.state === "charge" ? (f.type === "leopard" ? 2.6 : 2.3) : 0.6, nx = f.x + f.dir * spd;
             if (nx < f.x0 + 20 || nx > f.x1 - 20 || !groundAhead(nx, f.y, f.dir)) { if (f.state !== "charge") f.dir *= -1; } else f.x = nx;
             f.gait = (f.gait || 0) + spd * 0.09;
@@ -661,8 +755,8 @@
         var bb = foeBox(f);
         if (!(f.stun > 0) && boxHit(p, bb.x, bb.y, bb.hw, bb.hh)) {
           var small = (f.type === "cobra" || f.type === "scorpion" || f.type === "bat");
-          if (small && p.vy > 1 && p.y + p.hh < bb.y + 2) { f.alive = false; p.vy = -6.5; run.score += 50; poof(bb.x, bb.y); }
-          else if ((f.type === "lion" || f.type === "leopard") && p.vy > 1 && p.y + p.hh < bb.y - 4) { f.stun = 1.6; f.vx = 0; p.vy = -7.5; burst(bb.x, bb.y - 10, "#fff2c0", 6); }
+          if (small && p.vy > 1 && p.y + p.hh < bb.y + 2) { f.alive = false; p.vy = -6.5; run.score += 50; poof(bb.x, bb.y); SFX.play("stomp"); }
+          else if ((f.type === "lion" || f.type === "leopard") && p.vy > 1 && p.y + p.hh < bb.y - 4) { f.stun = 1.6; f.vx = 0; p.vy = -7.5; burst(bb.x, bb.y - 10, "#fff2c0", 6); SFX.play("stun"); }
           else if (f.type !== "gharial" || f.lunge > 0.25) hurt(bb.x);
         }
       });
@@ -672,26 +766,26 @@
       st.boulders.forEach(function (b) {
         if (b.state === "idle" && p.x > b.trig && p.x < b.trig + 3 * TILE) {
           var c0 = Math.max(2, Math.floor(b.trig / TILE) - 13);
-          b.state = "roll"; b.x = c0 * TILE; b.y = (standRowAt(c0) + 1) * TILE - b.R; b.vx = 1.5; b.vy = 0; st.shake = 8;
+          b.state = "roll"; b.x = c0 * TILE; b.y = (standRowAt(c0) + 1) * TILE - b.R; b.vx = 1.5; b.vy = 0; st.shake = 8; SFX.rumble(true);
         }
         if (b.state !== "roll") return;
         b.vx = Math.min(3.05, b.vx + 0.05); b.x += b.vx; b.rot += b.vx / b.R;
         st.shake = Math.max(st.shake, 2.4);
         var lead = Math.floor((b.x + b.R * 0.75) / TILE), bottomRow = Math.floor((b.y + b.R - 2) / TILE), wall = false;
         for (var r = Math.floor((b.y - b.R * 0.6) / TILE); r < bottomRow; r++) if (solidAt(lead, r)) wall = true;
-        if (wall) { b.state = "done"; debris(b.x + b.R * 0.5, b.y); st.shake = 12; return; }
+        if (wall) { b.state = "done"; debris(b.x + b.R * 0.5, b.y); st.shake = 12; SFX.rumble(false); SFX.play("crash"); return; }
         var cc = Math.floor(b.x / TILE), rr = Math.floor(b.y / TILE), topY = null;
         for (var r2 = Math.max(0, rr); r2 < ROWS; r2++) if (solidAt(cc, r2)) { topY = r2 * TILE; break; }
-        if (topY == null) { b.vy += 0.5; b.y += b.vy; if (b.y > LH + b.R * 2) { b.state = "done"; st.shake = 10; debris(b.x, LH - 10); } }
+        if (topY == null) { b.vy += 0.5; b.y += b.vy; if (b.y > LH + b.R * 2) { b.state = "done"; st.shake = 10; debris(b.x, LH - 10); SFX.rumble(false); SFX.play("crash"); } }
         else { var want = topY - b.R; if (b.y < want) { b.vy += 0.5; b.y = Math.min(want, b.y + b.vy); if (b.y === want) b.vy = 0; } else if (b.y - want < TILE + 2) b.y = want; }
-        if (Math.hypot(clamp(b.x, p.x - p.hw, p.x + p.hw) - b.x, clamp(b.y, p.y - p.hh, p.y + p.hh) - b.y) < b.R - 3) { b.state = "idle"; respawn("boulder"); return; }
+        if (Math.hypot(clamp(b.x, p.x - p.hw, p.x + p.hw) - b.x, clamp(b.y, p.y - p.hh, p.y + p.hh) - b.y) < b.R - 3) { b.state = "idle"; SFX.rumble(false); respawn("boulder"); return; }
         if (Math.random() < 0.4) st.parts.push({ k: "dust", x: b.x - b.R * 0.6, y: b.y + b.R - 2, vx: -Math.random(), vy: -Math.random() * 0.8, life: 0.8, col: "rgba(200,170,120,.5)" });
       });
     }
     function updateChases(dt) {
       var p = st.p;
       st.chases.forEach(function (ch) {
-        if (ch.state === "idle" && p.x > ch.trig && p.x < ch.end) { ch.state = "run"; ch.x = Math.max(TILE * 2, st.cam - 40); ch.y = (standRowAt(Math.floor(ch.x / TILE)) + 1) * TILE - ch.hh - 0.01; ch.vx = 2; ch.vy = 0; ch.pause = 0.4; st.shake = 5; }
+        if (ch.state === "idle" && p.x > ch.trig && p.x < ch.end) { ch.state = "run"; ch.x = Math.max(TILE * 2, st.cam - 40); ch.y = (standRowAt(Math.floor(ch.x / TILE)) + 1) * TILE - ch.hh - 0.01; ch.vx = 2; ch.vy = 0; ch.pause = 0.4; st.shake = 5; SFX.play("roar"); }
         if (ch.state === "idle" || ch.state === "done") return;
         ch.gait += Math.abs(ch.vx) * 0.075;
         if (ch.state === "leave") { ch.dir = -1; ch.vx = -2.4; ch.vy = Math.min(10, ch.vy + 0.5); moveX(ch, ch.vx); moveY(ch, ch.vy, false); if (ch.x < st.cam - 80) ch.state = "done"; return; }
@@ -713,7 +807,7 @@
         moveX(ch, ch.vx); moveY(ch, ch.vy, false);
         if (ch.pounce > 0) ch.pounce -= dt;
         if (ch.y > LH + 40) { ch.x = Math.max(TILE * 2, st.cam - 50); ch.y = 9 * TILE - ch.hh; ch.vy = 0; ch.pause = 0.8; }
-        if (ch.stun <= 0 && ch.pause <= 0 && boxHit(p, ch.x, ch.y, ch.hw - 4, ch.hh)) { if (hurt(ch.x)) { ch.pause = 1.3; ch.vx = -dir * 1.5; p.vx = dir * 5.5; } }
+        if (ch.stun <= 0 && ch.pause <= 0 && boxHit(p, ch.x, ch.y, ch.hw - 4, ch.hh)) { if (hurt(ch.x)) { SFX.play("growl"); ch.pause = 1.3; ch.vx = -dir * 1.5; p.vx = dir * 5.5; } }
       });
     }
     function updateTraps(dt) {
@@ -723,7 +817,7 @@
         if (Math.abs(x - p.x) > VIEWW) return;
         tr.warn = ph > 0.62 && ph < 0.8;
         if (tr.warn && Math.random() < 0.3) st.parts.push({ k: "dust", x: x + (Math.random() - 0.5) * 10, y: 4 * TILE + 2, vx: 0, vy: 0.8, life: 0.7, col: "rgba(210,190,150,.6)" });
-        if (ph >= 0.8 && !tr.fired) { tr.fired = true; st.spears.push({ x: x, y: 4 * TILE - 30, vy: 0 }); }
+        if (ph >= 0.8 && !tr.fired) { tr.fired = true; st.spears.push({ x: x, y: 4 * TILE - 30, vy: 0 }); if (Math.abs(x - p.x) < VIEWW * 0.6) SFX.play("spear"); }
         if (ph < 0.8) tr.fired = false;
       });
       for (var i = st.spears.length - 1; i >= 0; i--) {
@@ -1497,7 +1591,7 @@
     }
 
     /* ---------------- story flow ---------------- */
-    function stopLoop() { running = false; if (raf) { cancelAnimationFrame(raf); raf = null; } }
+    function stopLoop() { running = false; if (raf) { cancelAnimationFrame(raf); raf = null; } SFX.stop(); }
     function siteRecapList() {
       if (!run.collected.length) return '<p class="rq-note" style="text-align:center">No relics carried out yet.</p>';
       var items = run.collected.map(function (f) { return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) + ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>"; }).join("");
@@ -1541,7 +1635,7 @@
       });
     }
     function playSite(i) {
-      shell(); newLevel(i); updateHUD(); acc = 0; hudCache = "";
+      SFX.wake(); shell(); newLevel(i); updateHUD(); acc = 0; hudCache = "";
       toast('<strong>' + esc(LEVELS[i].place) + ' — ' + esc(LEVELS[i].name) + '.</strong> Run for the far door.');
       running = true; last = performance.now(); raf = requestAnimationFrame(loop);
     }
@@ -1585,25 +1679,28 @@
       root.innerHTML =
         '<div class="game-head" style="margin-bottom:.35rem"><p class="eyebrow">The Divine Archives · Games</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Tomb Robber</h2></div>' +
-        '<div class="pm-hud tr-hud"></div>' +
-        '<div class="tr-stage"><canvas class="tr-canvas" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div>' +
+        '<div class="tr-hudrow"><div class="pm-hud tr-hud"></div><button class="tr-snd" type="button" aria-pressed="' + (SFX.isOn() ? "true" : "false") + '" title="Sound (M)">' + (SFX.isOn() ? "♪ Sound on" : "♪ Sound off") + '</button></div>' +
+        '<div class="tr-stage"><canvas class="tr-canvas" tabindex="0" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div>' +
         '<p class="ouro-toast tr-toast" aria-live="polite"></p>' +
         '<div class="tr-controls"><button class="ouro-key" data-k="left" aria-label="Left">◀</button>' +
           '<button class="ouro-key" data-k="right" aria-label="Right">▶</button>' +
           '<span class="tr-gap"></span>' +
           '<button class="ouro-key tr-whip" data-k="whip" aria-label="Crack the whip">Whip</button>' +
           '<button class="ouro-key tr-jump" data-k="jump" aria-label="Jump">⤒</button></div>' +
-        '<p class="rq-note tr-keys">←/→ run · ↑ or Space jump (hold for height) · <b>J</b> or <b>X</b> whip · whip a bronze ring to swing, jump to let go, ↓ to drop.</p>';
+        '<p class="rq-note tr-keys">←/→ run · ↑ or Space jump (hold for height) · <b>J</b> or <b>X</b> whip · whip a bronze ring to swing, jump to let go, ↓ to drop · <b>M</b> sound.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
+      var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);
+      try { canvas.focus({ preventScroll: true }); } catch (e) { }   // keep keyboard focus inside the dialog (Esc still closes it)
       root.querySelectorAll(".tr-controls .ouro-key").forEach(function (b) {
         var k = b.getAttribute("data-k");
-        var dn = function (e) { e.preventDefault(); setKey(k, true); }, up = function () { setKey(k, false); };
+        var dn = function (e) { e.preventDefault(); SFX.wake(); setKey(k, true); }, up = function () { setKey(k, false); };
         b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up); b.addEventListener("touchcancel", up);
         b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
       });
     }
+    function toggleSound() { var on = SFX.toggle(), sb = root.querySelector(".tr-snd"); if (sb) { sb.textContent = on ? "♪ Sound on" : "♪ Sound off"; sb.setAttribute("aria-pressed", on ? "true" : "false"); } }
     function mapKey(k) {
       if (k === "arrowleft" || k === "a") return "left";
       if (k === "arrowright" || k === "d") return "right";
@@ -1612,14 +1709,15 @@
       if (k === "j" || k === "x" || k === "k") return "whip";
       return null;
     }
-    keyfn = function (e) { var m = mapKey(e.key.toLowerCase()); if (!m || !running) return; e.preventDefault(); if (!e.repeat) setKey(m, true); };
+    keyfn = function (e) { var kk = e.key.toLowerCase(); if (running && kk === "m" && !e.repeat) { toggleSound(); return; } var m = mapKey(kk); if (!m || !running) return; SFX.wake(); e.preventDefault(); if (!e.repeat) setKey(m, true); };
     keyup = function (e) { var m = mapKey(e.key.toLowerCase()); if (m) setKey(m, false); };
     document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
 
     // test hooks (CI / capture only)
     if (window.__TR_TEST) {
+      window.__trLevels = function () { return LEVELS.map(function (d) { var lv = makeLevel(d); return { w: lv.W, grid: lv.grid, E: lv.E }; }); };
       window.__tr = {
-        state: function () { return st && { li: st.li, x: st.p.x, y: st.p.y, vx: st.p.vx, onGround: st.p.onGround, hearts: st.hearts, got: st.got, total: st.relics.length, over: st.over, won: !!st.won, gates: st.lv.E.gates.map(function (g) { return +g.open.toFixed(2); }), swing: !!st.p.swing, cam: st.cam, vy: st.p.vy, movers: st.movers.map(function (m) { return +(m.x / TILE).toFixed(1); }), trig: st.lv.E.gates.map(function (g) { return g.trig.map(trigOk); }), t: +st.t.toFixed(2) }; },
+        state: function () { return st && { li: st.li, x: st.p.x, y: st.p.y, vx: st.p.vx, onGround: st.p.onGround, hearts: st.hearts, got: st.got, total: st.relics.length, over: st.over, won: !!st.won, gates: st.lv.E.gates.map(function (g) { return +g.open.toFixed(2); }), swing: !!st.p.swing, cam: st.cam, vy: st.p.vy, movers: st.movers.map(function (m) { return +(m.x / TILE).toFixed(1); }), trig: st.lv.E.gates.map(function (g) { return g.trig.map(trigOk); }), t: +st.t.toFixed(2), crates: st.crates.map(function (k) { return [+(k.x / TILE).toFixed(1), +(k.y / TILE).toFixed(1), !!k.locked]; }) }; },
         warp: function (c, r) { st.p.x = c * TILE + 12; st.p.y = (r == null ? standRowAt(c) + 1 : r + 1) * TILE - 12.01; st.p.vx = st.p.vy = 0; st.p.swing = null; st.cam = clamp(st.p.x - VIEWW * 0.45, 0, st.LW - VIEWW); },
         play: function (i) { if (!run) run = { score: 0, hearts: MAXHEARTS, collected: [] }; if (!DATA) return false; playSite(i); return true; },
         god: function () { st.hearts = 99; run.hearts = 99; },
@@ -1631,6 +1729,6 @@
     root.innerHTML = '<div class="rq-loading">Lighting the torches…</div>';
     loadData().then(startRun).catch(function () { root.innerHTML = '<p class="game-placeholder">The expedition could not be loaded. Please reload the page.</p>'; });
 
-    return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
+    return function cleanup() { SFX.close(); running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
   }
 })();
