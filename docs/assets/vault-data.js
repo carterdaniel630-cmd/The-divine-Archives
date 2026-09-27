@@ -1343,19 +1343,256 @@ window.VAULT = {
         ]
       },
       study: { manifest: "", rights: "No openly licensed images of the claimants are embedded here.", external: [] }
+    },
+    {
+      id: "v58", slug: "lion-man", status: "published", pending: true,
+      era: "01-prehistory", year: -38000, chapters: ["ch41"],
+      title: "The Lion Man of Hohlenstein-Stadel", category: "relics",
+      source: "vault/v58-lion-man.md",
+      held: "Museum Ulm, Germany",
+      dated: "c. 41,000–35,000 years old (radiocarbon on the find layer)",
+      summary: "A figure 31 cm tall, carved from mammoth ivory, with a cave lion's head on an upright body. Found smashed in a German cave a week before the Second World War and pieced together over seventy years, it is among the oldest known figurative sculptures, and among the oldest images of a being that does not exist in nature.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "Pieced together over seventy years",
+        sub: "The figure was found in hundreds of fragments. Follow how it was rebuilt.",
+        events: [
+          { y: "c. 40,000 BP", t: "Carved", d: "A carver shapes a tusk of mammoth ivory into a lion-headed figure, a task experiments suggest took hundreds of hours. It is laid at the back of the Stadel cave." },
+          { y: 1939, t: "Found", d: "On 25 August, the last days of a dig led by Robert Wetzel, geologist Otto Völzing recovers ivory fragments. A week later the war begins; the fragments go to storage in Ulm." },
+          { y: 1969, t: "A figure emerges", d: "Archaeologist Joachim Hahn, inventorying the finds, assembles more than 200 fragments into a standing figure with an animal head." },
+          { y: "1987–88", t: "More pieces", d: "Further fragments from the old collection are added by Elisabeth Schmid and the head is recognised as a lion's." },
+          { y: "2009–12", t: "Back to the cave", d: "New excavations sift the 1939 spoil heaps and recover hundreds more fragments." },
+          { y: 2013, t: "Restored", d: "After a full restoration the figure is shown in its most complete form, now 31 cm tall." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the figure belong to Museum Ulm.", external: [ { label: "Museum Ulm — archaeology collection", href: "https://museumulm.de/en/collections/archaeology/" } ] }
+    },
+    {
+      id: "v59", slug: "venus-of-willendorf", status: "published", pending: true,
+      era: "01-prehistory", year: -28000, chapters: ["ch41", "ch48"],
+      title: "The Venus of Willendorf", category: "relics",
+      source: "vault/v59-venus-of-willendorf.md",
+      held: "Natural History Museum, Vienna",
+      dated: "c. 30,000–25,000 years old (Gravettian)",
+      summary: "An 11-centimetre limestone figure of a woman with no face, found beside the Danube in 1908. She is perhaps the most famous image of the Ice Age. The name 'Venus' is a modern joke, and her meaning is unknown. A 2022 scan traced her stone to northern Italy.",
+      artifact: {
+        type: "cards", title: "What was she?",
+        sub: "Each card is one reading of the figure. Turn it to see the evidence for and against.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "A fertility goddess", s: "the classic reading", d: "Widely proposed. The figure stresses breasts, belly and vulva. But no evidence tells us she was a goddess, or worshipped at all." },
+          { t: "A 'Mother Goddess' cult", s: "20th-century theory", d: "Linked to a supposed universal prehistoric goddess religion. Most archaeologists now reject a single Ice Age goddess cult (see The Great Goddess, ch48)." },
+          { t: "A self-portrait", s: "LeRoy McDermott, 1996", d: "Proposed that women carved their own bodies seen from above, explaining the foreshortening. Suggestive; untestable." },
+          { t: "An amulet or charm", s: "for pregnancy or health", d: "Small enough to carry. Possible, and consistent with its wear, but not provable." },
+          { t: "An ideal of plenty", s: "survival in the Ice Age", d: "Read as celebrating body fat and abundance in a hard climate. An interpretation, not evidence." },
+          { t: "The name 'Venus'", s: "a modern label", d: "Early archaeologists nicknamed such figures after the Roman goddess of love, partly in jest. The name says nothing about their meaning." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the figure belong to the Natural History Museum, Vienna.", external: [ { label: "Scientific Reports (2022) — The microstructure and the origin of the Venus from Willendorf", href: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8885675/" } ] }
+    },
+    {
+      id: "v60", slug: "gobekli-tepe", status: "published", pending: true,
+      era: "01-prehistory", year: -9500, chapters: ["ch42", "ch41"],
+      title: "Göbekli Tepe's Pillars", category: "relics",
+      source: "vault/v60-gobekli-tepe.md",
+      held: "In place: Göbekli Tepe, Şanlıurfa Province, Turkey (UNESCO World Heritage Site)",
+      dated: "c. 9500–8000 BCE (Pre-Pottery Neolithic)",
+      summary: "Round enclosures of carved T-shaped pillars, some 5 metres tall, raised by people who had not yet begun to farm. Their foxes, snakes, vultures and belted human figures were hailed as the world's first temple. New work shows people also lived there, and claims about comets and lost civilisations are not supported.",
+      artifact: {
+        type: "enclosure", title: "An enclosure, seen from above",
+        sub: "A schematic plan of Enclosure D: a ring of pillars set in a wall, around two great central pillars. Touch a pillar.",
+        ringCount: 11,
+        centre: [
+          { k: "P18", t: "Pillar 18", s: "central pillar", d: "About 5.5 m tall. The T-shaped top is a head: carved arms reach round the sides, the hands meet above a belt, and a fox pelt hangs from the belt. The pillars are stylised human or superhuman beings." },
+          { k: "P31", t: "Pillar 31", s: "central pillar", d: "The twin of Pillar 18, also with arms, hands and belt. The paired central figures have been read as ancestors, spirits or gods; the builders left no text." }
+        ],
+        named: [
+          { at: 2, k: "P43", t: "Pillar 43, 'the Vulture Stone'", s: "in the ring", d: "Carved with a vulture holding a disc, a scorpion, birds and other animals. A 2017 paper read it as a star map recording a comet strike; the excavators and most archaeologists reject that reading." }
+        ],
+        ring: { t: "A pillar of the ring", s: "set into the enclosure wall", d: "Ring pillars carry reliefs of foxes, boars, snakes, cranes, bulls and other wild animals, many of them dangerous. Why these animals were chosen is unknown." },
+        hint: "Schematic: the plan follows published descriptions of Enclosure D, but pillar positions and numbers here are approximate."
+      },
+      study: { manifest: "", rights: "Photographs of the site belong to the German Archaeological Institute and their photographers.", external: [ { label: "German Archaeological Institute — The Tepe Telegrams blog", href: "https://www.dainst.blog/the-tepe-telegrams/2016/06/02/gobekli-tepe-the-first-20-years-of-research/" } ] }
+    },
+    {
+      id: "v61", slug: "kojiki", status: "published", pending: true,
+      era: "07-high-medieval", year: 1371, chapters: ["ch25", "ch46"],
+      title: "The Kojiki: the Shinpukuji Manuscript", category: "manuscripts",
+      source: "vault/v61-kojiki.md",
+      held: "Ōsu Kannon (Shinpukuji), Nagoya, Japan",
+      dated: "Text completed 712 CE; oldest manuscript copied 1371–1372",
+      summary: "The 'Record of Ancient Matters', presented to the Japanese court in 712: the birth of the gods, Izanagi and Izanami, the sun goddess Amaterasu, and the descent of the emperors. Its oldest surviving copy was made by a monk of Shinpukuji in 1371–72 and is a National Treasure of Japan.",
+      artifact: {
+        type: "scroll", theme: "paper", title: "Unroll the record",
+        sub: "The Kojiki's first words, in the classical Chinese characters it was written in. Read from the right, top to bottom.",
+        fonts: ["Noto+Serif+TC:wght@400;600"],
+        hint: "Japanese scrolls open from the right. Drag the paper to travel along it, and touch a character-group to read its meaning.",
+        columns: [
+          { kind: "cjk", heading: "The beginning", lines: [[["天地", "heaven and earth"], ["初發", "first opened"], ["之時", "at the time when"]], [["於", "in"], ["高天原", "Takamanohara, the Plain of High Heaven"], ["成神名", "the deity who came into being was named"]], [["天之御中主神", "Ame-no-minakanushi, Lord of the Centre of Heaven"]]],
+            translation: "At the time when heaven and earth first opened, in the Plain of High Heaven there came into being a deity named Ame-no-minakanushi." },
+          { kind: "cjk", heading: "The first three", lines: [[["次", "next"], ["高御產巢日神", "Takamimusuhi, the High Generative deity"]], [["次", "next"], ["神產巢日神", "Kamimusuhi, the Divine Generative deity"]], [["此三柱神者", "these three deities"], ["並獨神成坐而", "all came into being alone"], ["隱身也", "and hid their bodies"]]],
+            translation: "Next, Takamimusuhi; next, Kamimusuhi. These three deities all came into being alone, and hid their bodies.", note: "Written in Chinese characters, partly used for their sounds to spell Japanese names." }
+        ]
+      },
+      study: { manifest: "", rights: "Images of the Shinpukuji manuscript belong to the temple; facsimiles are published in Japan.", external: [] }
+    },
+    {
+      id: "v62", slug: "inca-khipu", status: "published", pending: true,
+      era: "07-high-medieval", year: 1450, chapters: ["ch44"],
+      title: "The Inca Khipu", category: "texts",
+      source: "vault/v62-inca-khipu.md",
+      held: "About 1,000 or more in museums worldwide (Lima, Berlin, New York, Harvard and elsewhere)",
+      dated: "Mostly c. 1400–1600 CE; earlier Wari examples c. 600–1000 CE",
+      summary: "Bundles of knotted cords that ran the largest empire of the Americas without an alphabet: census counts, tribute, calendars, and, the Spanish said, histories. The numbers were cracked in 1912. Whether some khipus also recorded words remains one of the great open questions of decipherment.",
+      artifact: {
+        type: "khipu", title: "Read a khipu",
+        sub: "An illustrative khipu built on the rules Leland Locke worked out in 1912. Touch or hover over a cord to read its number, then the top cord.",
+        intro: { t: "How to read it", s: "knots in decimal places", d: "Each pendant cord holds a number. Knots nearest the main cord are the largest place value. Single knots mark hundreds and tens; the units use a long knot of 2 to 9 turns, or a figure-eight knot for 1. An empty place is zero." },
+        cords: [
+          { label: "Cord 1", v: 23, col: "#c9b48a" },
+          { label: "Cord 2", v: 141, col: "#8a5a34" },
+          { label: "Cord 3", v: 8, col: "#b8452a" },
+          { label: "Cord 4", v: 1, col: "#e8dcc2" },
+          { label: "Cord 5", v: 60, col: "#6b4a2a" },
+          { label: "Cord 6", v: 205, col: "#c9b48a" }
+        ],
+        sumNote: "The top cord rises above the main cord and records the total of the pendants: 438. Locke found exactly this kind of sum cord, which proved that the knots were numbers.",
+        hint: "Illustrative: the knot rules are real, but this khipu is not a transcription of any single surviving khipu."
+      },
+      study: { manifest: "", rights: "Images of khipus belong to their holding museums; the Open Khipu Repository publishes data on many of them.", external: [ { label: "Khipu Field Guide — What's a khipu?", href: "https://khipufieldguide.com/guidebook/Introduction.html" } ] }
+    },
+    {
+      id: "v63", slug: "kalpa-sutra-manuscripts", status: "published", pending: true,
+      era: "07-high-medieval", year: 1450, chapters: ["ch52"],
+      title: "The Kalpa Sutra Manuscripts", category: "manuscripts",
+      source: "vault/v63-kalpa-sutra-manuscripts.md",
+      held: "Jain temple libraries (bhandars) in India; museums worldwide (V&A, British Library, others)",
+      dated: "Text attributed to Bhadrabahu; illustrated copies mostly 14th–16th century, western India",
+      summary: "The Shvetambara Jain scripture of the lives of the Jinas, read aloud each year at Paryushana. From the 14th century it was copied on paper in western India with brilliant miniatures in red, blue and gold, above all the fourteen dreams of Queen Trishala before the birth of Mahavira.",
+      artifact: {
+        type: "cards", title: "The fourteen dreams",
+        sub: "Before Mahavira's birth, Queen Trishala dreamed fourteen auspicious dreams, painted again and again in these manuscripts. Turn each card.",
+        cardsTitle: "Turn each dream",
+        cards: [
+          { t: "1 · An elephant", s: "white, four-tusked", d: "A great white elephant: majesty and strength." },
+          { t: "2 · A bull", s: "white", d: "A magnificent white bull." },
+          { t: "3 · A lion", s: "", d: "A lion, playful and powerful." },
+          { t: "4 · Shri", s: "the goddess of fortune", d: "The goddess Shri (Lakshmi) anointed by elephants." },
+          { t: "5 · A garland", s: "of flowers", d: "A garland of fragrant flowers." },
+          { t: "6 · The moon", s: "full", d: "The full moon." },
+          { t: "7 · The sun", s: "rising", d: "The rising sun." },
+          { t: "8 · A banner", s: "on a golden staff", d: "A great banner." },
+          { t: "9 · A vase", s: "full and golden", d: "A full vessel of gold." },
+          { t: "10 · A lotus lake", s: "", d: "A lake filled with lotuses." },
+          { t: "11 · The ocean", s: "of milk", d: "The milky ocean." },
+          { t: "12 · A celestial palace", s: "vimana", d: "A palace of the gods." },
+          { t: "13 · A heap of jewels", s: "", d: "A heap of precious stones." },
+          { t: "14 · A smokeless fire", s: "", d: "A blazing fire without smoke." }
+        ]
+      },
+      study: { manifest: "", rights: "Images belong to the holding libraries and museums; many leaves are published by the V&A and the British Library.", external: [ { label: "V&A — Kalpasutra manuscript page", href: "https://collections.vam.ac.uk/item/O1271072/kalpasutra-manuscript-page-unknown/" } ] }
+    },
+    {
+      id: "v64", slug: "benin-bronzes", status: "published", pending: true,
+      era: "08-early-modern", year: 1550, chapters: ["ch33"],
+      title: "The Benin Bronzes", category: "relics",
+      source: "vault/v64-benin-bronzes.md",
+      held: "Dispersed since 1897: British Museum, Berlin, and more than 130 other institutions; returns to Nigeria under way since 2022",
+      dated: "Cast c. 13th–19th century; the palace plaques mostly 16th–17th century",
+      summary: "Thousands of cast brass plaques, heads and ivory carvings from the royal court of Benin, made for the altars of the Oba's ancestors and for the palace. The British army looted them in 1897 and sold them to museums around the world. Their return is one of the defining restitution cases of our time.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "The bronzes through time",
+        sub: "From the royal guild of casters to the return.",
+        events: [
+          { y: "13th–15th c.", t: "The casting guild", d: "The Igun Eronmwon, the Oba's guild of brass casters, works by the lost-wax method; tradition traces the craft to the reign of Oba Oguola." },
+          { y: "16th–17th c.", t: "The palace plaques", d: "Hundreds of brass plaques clad the palace pillars, showing the Oba, chiefs, warriors, rituals and Portuguese traders, whose brass manillas supplied much of the metal." },
+          { y: "Each reign", t: "Ancestral altars", d: "Commemorative heads of past Obas are set on royal altars with carved ivory tusks, the centre of the kingdom's ancestor rites." },
+          { y: 1897, t: "The punitive expedition", d: "After a British party is killed, a force of about 1,200 takes Benin City, burns it, exiles Oba Ovonramwen and carries off thousands of objects." },
+          { y: "1897 on", t: "Sold and scattered", d: "The objects are auctioned to cover costs and enter museums across Europe and America." },
+          { y: 2022, t: "Returns begin", d: "Germany signs a joint declaration with Nigeria and hands over the first bronzes; London's Horniman Museum transfers ownership of 72 objects." },
+          { y: 2023, t: "The Oba's ownership", d: "A Nigerian presidential declaration recognises the Oba of Benin as owner of returned objects, prompting debate over where they will be kept." }
+        ]
+      },
+      study: { manifest: "", rights: "Images belong to the many holding institutions; the Digital Benin project gathers records of the dispersed collection.", external: [ { label: "British Museum — the Benin Bronzes (contested objects)", href: "https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes" } ] }
+    },
+    {
+      id: "v65", slug: "gateway-of-the-sun", status: "published", pending: true,
+      era: "05-late-antiquity", year: 700, chapters: ["ch44"],
+      title: "The Staff God of Tiwanaku", category: "relics",
+      source: "vault/v65-gateway-of-the-sun.md",
+      held: "In place: Tiwanaku, near Lake Titicaca, Bolivia (UNESCO World Heritage Site)",
+      dated: "Tiwanaku flourished c. 500–1000 CE; the gateway's exact date is uncertain",
+      summary: "A monolithic gateway of andesite at Tiwanaku, carved with a frontal figure holding two staffs, its head ringed with rays, flanked by rows of winged attendants. The figure belongs to a 'Staff God' tradition running through Andean art for two thousand years. Later writers linked it to the Inca creator Viracocha.",
+      artifact: {
+        type: "cards", title: "Reading the gateway",
+        sub: "What the carving shows, and what has been claimed about it. Turn each card.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "The central figure", s: "the Staff God", d: "A frontal being standing on a stepped platform, holding a staff in each hand, with a rayed head-dress. The pose is documented across the Andes." },
+          { t: "The attendants", s: "48 winged figures", d: "Three rows of winged figures, some bird-headed, run or kneel toward the centre, holding staffs." },
+          { t: "An older tradition", s: "from Chavín", d: "Staff-holding deities appear much earlier, as on the Raimondi Stela of the Chavín culture of Peru, over a thousand years before Tiwanaku." },
+          { t: "Viracocha?", s: "a later identification", d: "Often called Viracocha, the Inca creator, whose myths begin at Lake Titicaca. But Tiwanaku is centuries older than the Inca, and its people's own name for the figure is unknown." },
+          { t: "A calendar?", s: "Arthur Posnansky and others", d: "The frieze has been read as a calendar. The counting depends on how the figures are grouped; it is not accepted by most archaeologists." },
+          { t: "Moved and broken", s: "the stone's history", d: "The gateway was found cracked and not certainly in its original position; it has been moved and re-erected, which complicates astronomical readings." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the site belong to their photographers.", external: [] }
+    },
+    {
+      id: "v66", slug: "kebra-nagast", status: "published", pending: true,
+      era: "07-high-medieval", year: 1320, chapters: ["ch60", "ch40", "ch49"],
+      title: "The Kebra Nagast", category: "manuscripts",
+      source: "vault/v66-kebra-nagast.md",
+      held: "Many Ge'ez manuscripts in Ethiopia and in European libraries (British Library's Magdala collection among them)",
+      dated: "Compiled c. 1314–1322 CE; surviving manuscripts mostly later",
+      summary: "Ethiopia's 'Glory of the Kings': how the Queen of Sheba visited Solomon, bore his son Menelik, and how Menelik brought the Ark of the Covenant to Aksum. It gave the Solomonic dynasty its legitimacy for 650 years, and it is revered by Rastafari. A copy looted from Magdala was returned to Ethiopia in 1872.",
+      artifact: {
+        type: "codex", theme: "vellum", title: "Open the book",
+        sub: "The story the book tells, and the book's own story.",
+        fonts: ["Noto+Sans+Ethiopic"],
+        pages: [
+          { h: "The title", t: "ክብረ ነገሥት", lang: "gez", big: true, n: "Kəbrä Nägäśt, 'the Glory of the Kings', in Ge'ez." },
+          { h: "Makeda", t: "The Queen of Sheba, Makeda, travels to Jerusalem to learn Solomon's wisdom, and turns to the God of Israel.", n: "Expanding 1 Kings 10." },
+          { h: "Menelik", t: "She bears Solomon's son, Menelik, who grows up in Ethiopia and returns to Jerusalem to meet his father.", n: "The founder of the dynasty." },
+          { h: "The Ark", t: "Menelik returns home with the firstborn sons of Israel's nobles, who bring the Ark of the Covenant with them. The glory of Zion passes to Ethiopia.", n: "Ethiopian tradition holds that the Ark is at Aksum today (see V07)." },
+          { h: "c. 1314–1322", t: "Compiled in Ge'ez by Yeshaq, a churchman of Aksum, soon after the Solomonic dynasty took power in 1270.", n: "The colophon says it was translated from Arabic, itself from Coptic; that claim is debated." },
+          { h: "1868 · 1872", t: "British troops take manuscripts from the fortress of Magdala. Emperor Yohannes IV asks for this book back, and one copy is returned in 1872.", n: "A rare early restitution." }
+        ]
+      },
+      study: { manifest: "", rights: "Ethiopian manuscripts belong to their churches and libraries; British Library copies are catalogued in its Magdala collection.", external: [] }
+    },
+    {
+      id: "v67", slug: "incantation-bowls", status: "published", pending: true,
+      era: "05-late-antiquity", year: 600, chapters: ["ch19", "ch56"],
+      title: "The Aramaic Incantation Bowls", category: "texts",
+      source: "vault/v67-incantation-bowls.md",
+      held: "About 2,000 or more in museums and private collections (Penn Museum, British Museum, Schøyen Collection and others)",
+      dated: "c. 5th–7th century CE, Sasanian Mesopotamia",
+      summary: "Clay bowls written with spells in a spiral, sometimes around a drawing of a chained demon, and buried upside down under houses to trap evil. Made for Jewish, Christian, Mandaean and pagan clients in Babylonia, they are the everyday magic of the world that produced the Babylonian Talmud.",
+      artifact: {
+        type: "bowl", title: "A bowl against demons",
+        sub: "The opening formula of many Jewish Aramaic bowls, spiralling inward. Touch a word below; then turn the bowl over, as it was buried.",
+        lang: "arc",
+        spiral: "אסותא מן שמיא לפלוני בר פלונית",
+        repeat: 9,
+        words: [["אסותא", "healing"], ["מן", "from"], ["שמיא", "heaven"], ["לפלוני", "for N (the client)"], ["בר", "son of"], ["פלונית", "N (his mother)"]],
+        translation: "Healing from heaven for N son of N.",
+        buried: "Turned face down and buried at a threshold or in a corner of the house: the demons trapped beneath.",
+        hint: "Clients were named by their mothers' names, as in many Jewish prayers for the sick. N stands for the names written on real bowls. The drawing is schematic."
+      },
+      study: { manifest: "", rights: "Images of bowls belong to their holding museums; the origins of many privately held bowls are disputed.", external: [ { label: "British Museum — incantation bowl", href: "https://www.britishmuseum.org/collection/object/W_1851-0903-3" } ] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Lion Man of Hohlenstein-Stadel", category: "relics", note: "A lion-headed figure carved from mammoth ivory 40,000 years ago." },
-    { title: "The Venus of Willendorf", category: "relics", note: "A limestone figurine and a century of arguments about what she meant." },
-    { title: "Göbekli Tepe's Pillars", category: "relics", note: "Carved stone enclosures older than farming, and the claims made about them." },
-    { title: "The Kojiki Manuscripts", category: "manuscripts", note: "Japan's oldest chronicle of the gods, and its earliest surviving copy." },
-    { title: "The Inca Khipu", category: "texts", note: "Knotted cords that recorded numbers, and perhaps more." },
-    { title: "The Kalpa Sutra Manuscripts", category: "manuscripts", note: "Illuminated Jain lives of the Tirthankaras." },
-    { title: "The Benin Bronzes", category: "relics", note: "Royal altar art of Benin, taken in 1897, and the return movement." },
-    { title: "The Staff God of Tiwanaku", category: "relics", note: "The Gateway of the Sun and the figure at its centre." },
-    { title: "The Kebra Nagast", category: "manuscripts", note: "Ethiopia's 'Glory of the Kings' and the Ark at Aksum." },
-    { title: "The Hebrew Amulets of Late Antiquity", category: "texts", note: "Magic bowls and metal amulets naming angels and demons." }
+    { title: "The Churinga of Central Australia", category: "relics", note: "Sacred boards of the Arrernte, and why this archive will not show them." },
+    { title: "The Kumulipo", category: "texts", note: "The Hawaiian creation chant, written down for a king in 1889." },
+    { title: "The Pictish Stones", category: "relics", note: "Carved symbols no one can read, from early medieval Scotland." },
+    { title: "The Bogomil Tombstones (Stećci)", category: "relics", note: "Medieval Bosnian gravestones and the heresy myth around them." },
+    { title: "The Book of Shadows", category: "manuscripts", note: "Gerald Gardner's working book, and the making of Wicca." },
+    { title: "The Book of the Law", category: "manuscripts", note: "Crowley's Cairo manuscript of 1904 and the founding of Thelema." },
+    { title: "The Satanic Bible (1969)", category: "texts", note: "LaVey's text as a document of a modern religion." },
+    { title: "The Golden Plates", category: "relics", note: "Joseph Smith's plates, the witnesses, and the Book of Mormon manuscripts." },
+    { title: "The Báb's Tablets", category: "manuscripts", note: "Star-shaped talismans and the scripts of a new faith." },
+    { title: "The Haitian Vèvè", category: "texts", note: "Sacred ground drawings of Vodou, made to call the lwa." }
   ]
 };

@@ -1161,6 +1161,113 @@
     setPanel(pn, A.steps[0].t, A.steps[0].s, A.steps[0].d);
   }
 
+  // ---------------------------------------------------------------- enclosure (Göbekli Tepe): a ring of T-pillars around two central giants, seen from above
+  function enclosure(root, item) {
+    var A = item.artifact, C = 200, pn = panel(), parts = [];
+    var svg = sv("svg", { viewBox: "0 0 400 400", class: "enc-svg", role: "group", "aria-label": "Schematic plan of a Göbekli Tepe enclosure: a ring of T-shaped pillars around two central pillars" });
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 176, class: "enc-ground" }));
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 150, class: "enc-wall" }));
+    function pillar(x, y, ang, big, p) {
+      var g = sv("g", { class: "enc-pillar" + (big ? " is-big" : "") + (p && p.t ? " is-named" : ""), transform: "translate(" + x.toFixed(1) + " " + y.toFixed(1) + ") rotate(" + ang.toFixed(1) + ")", tabindex: "0", role: "button", "aria-label": (p && p.t) || "A pillar of the ring" });
+      var w = big ? 16 : 11, l = big ? 58 : 34;
+      g.appendChild(sv("rect", { x: -l / 2, y: -w / 2, width: l, height: w, rx: 2, class: "enc-top" }));
+      g.appendChild(sv("rect", { x: -w / 3, y: -w / 2, width: w / 1.5, height: w, class: "enc-shaft" }));
+      function pick() { parts.forEach(function (q) { q.classList.remove("on"); }); g.classList.add("on"); var d = p && p.t ? p : A.ring; setPanel(pn, d.t, d.s, d.d); }
+      g.addEventListener("click", pick);
+      g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      parts.push(g); svg.appendChild(g);
+      if (p && p.k) svg.appendChild(sv("text", { x: x.toFixed(1), y: (y + (big ? 44 : 22)).toFixed(1), class: "enc-lab", "text-anchor": "middle", text: p.k }));
+    }
+    var n = A.ringCount || 11;
+    for (var i = 0; i < n; i++) {
+      var a = i * 360 / n - 90, t = a * Math.PI / 180, named = (A.named || []).filter(function (p) { return p.at === i; })[0];
+      pillar(C + 150 * Math.cos(t), C + 150 * Math.sin(t), a + 90, false, named);
+    }
+    A.centre.forEach(function (p, k) { pillar(C + (k ? 34 : -34), C, 90, true, p); });
+    root.appendChild(el("div", { class: "relic-live" }, [el("div", { class: "enc-stage" }, [svg]), pn, el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    parts[parts.length - 2].classList.add("on"); setPanel(pn, A.centre[0].t, A.centre[0].s, A.centre[0].d);
+  }
+
+  // ---------------------------------------------------------------- khipu: knotted cords read by Locke's decimal rules
+  function khipu(root, item) {
+    var A = item.artifact, pn = panel(), cords = A.cords, W = 520, H = 330, gap = W / (cords.length + 2);
+    var svg = sv("svg", { viewBox: "0 0 " + W + " " + H, class: "kh-svg", role: "group", "aria-label": "An illustrative khipu: pendant cords with knots in decimal positions, and a top cord recording their sum" });
+    svg.appendChild(sv("path", { d: "M20 40 Q" + W / 2 + " 30 " + (W - 20) + " 40", class: "kh-main" }));
+    var rows = { 100: 95, 10: 165, 1: 245 }; // hundreds, tens, units bands
+    [[100, "hundreds"], [10, "tens"], [1, "units"]].forEach(function (r) { svg.appendChild(sv("text", { x: 8, y: rows[r[0]] + 4, class: "kh-band", text: r[1] })); svg.appendChild(sv("line", { x1: 60, y1: rows[r[0]], x2: W - 10, y2: rows[r[0]], class: "kh-bandline" })); });
+    var els = [];
+    function knots(g, x, v) {
+      var h = Math.floor(v / 100), t = Math.floor(v / 10) % 10, u = v % 10;
+      function singles(n, y) { for (var k = 0; k < n; k++) g.appendChild(sv("circle", { cx: x, cy: y - (n - 1) * 5 + k * 10, r: 4.2, class: "kh-knot" })); }
+      singles(h, rows[100]); singles(t, rows[10]);
+      if (u === 1) g.appendChild(sv("path", { d: "M" + (x - 5) + " " + (rows[1] - 8) + " q10 4 0 8 q-10 4 0 8 q10 -4 0 -8", class: "kh-eight" }));
+      else if (u > 1) { var len = 6 + u * 4; g.appendChild(sv("rect", { x: x - 5, y: rows[1] - len / 2, width: 10, height: len, rx: 5, class: "kh-long" })); for (var c = 1; c < u; c++) g.appendChild(sv("line", { x1: x - 5, y1: rows[1] - len / 2 + c * (len / u), x2: x + 5, y2: rows[1] - len / 2 + c * (len / u), class: "kh-turn" })); }
+    }
+    function cordEl(x, v, col, label, isTop) {
+      var g = sv("g", { class: "kh-cord" + (isTop ? " is-top" : ""), tabindex: "0", role: "button", "aria-label": label + ": " + v });
+      g.appendChild(sv("path", { d: isTop ? "M" + x + " 40 Q" + (x + 8) + " 22 " + (x + 2) + " 8" : "M" + x + " 40 Q" + (x + 4) + " 160 " + (x - 2) + " 300", class: "kh-string", style: "stroke:" + col }));
+      if (!isTop) knots(g, x, v); else g.appendChild(sv("text", { x: x + 12, y: 16, class: "kh-sum", text: "Σ" }));
+      function pick() {
+        els.forEach(function (e) { e.classList.remove("on"); }); g.classList.add("on");
+        var h = Math.floor(v / 100), t = Math.floor(v / 10) % 10, u = v % 10;
+        var how = isTop ? A.sumNote : (h + " single knot" + (h === 1 ? "" : "s") + " in the hundreds band, " + t + " in the tens band, and " + (u === 0 ? "no knot" : u === 1 ? "a figure-eight knot (1)" : "a long knot of " + u + " turns") + " in the units band.");
+        setPanel(pn, label + " = " + v, isTop ? "the top cord" : "a pendant cord", how);
+      }
+      g.addEventListener("click", pick); g.addEventListener("mouseenter", pick);
+      g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      els.push(g); svg.appendChild(g);
+    }
+    var total = 0;
+    cords.forEach(function (c, i) { total += c.v; cordEl(gap * (i + 1.5), c.v, c.col, c.label, false); });
+    cordEl(W / 2, total, "#e7c680", "Top cord", true);
+    root.appendChild(el("div", { class: "relic-live" }, [el("div", { class: "kh-stage" }, [svg]), pn, el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    setPanel(pn, A.intro.t, A.intro.s, A.intro.d);
+  }
+
+  // ---------------------------------------------------------------- bowl (incantation bowl): text spiralling inward to a bound demon; turn it over to bury it
+  function bowl(root, item) {
+    var A = item.artifact, status = el("p", { class: "g-status", role: "status", "aria-live": "polite" });
+    var svg = sv("svg", { viewBox: "0 0 360 360", class: "bowl-svg", role: "img", "aria-label": "An incantation bowl: Aramaic text written in a spiral around a bound demon at the centre" });
+    var C = 180, pts = [], turns = 3.3, r0 = 150, r1 = 46, N = 400;
+    for (var i = 0; i <= N; i++) { var f = i / N, ang = -Math.PI / 2 + f * turns * 2 * Math.PI, r = r0 - (r0 - r1) * f; pts.push((C + r * Math.cos(ang)).toFixed(1) + " " + (C + r * Math.sin(ang)).toFixed(1)); }
+    svg.appendChild(sv("defs", {}, [sv("path", { id: "bowl-spiral", d: "M" + pts.join(" L") })]));
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 172, class: "bowl-rim" }));
+    svg.appendChild(sv("circle", { cx: C, cy: C, r: 164, class: "bowl-in" }));
+    var text = sv("text", { class: "bowl-text", lang: "arc" });
+    var tp = sv("textPath", { href: "#bowl-spiral", startOffset: "0" });
+    var phrase = A.spiral; tp.textContent = (phrase + " · ").repeat(A.repeat || 5);
+    text.appendChild(tp); svg.appendChild(text);
+    // the bound demon: a schematic figure with chained wrists and ankles
+    var fig = sv("g", { class: "bowl-fig" });
+    fig.appendChild(sv("circle", { cx: C, cy: C - 22, r: 9 }));
+    fig.appendChild(sv("path", { d: "M" + C + " " + (C - 13) + " V" + (C + 12) + " M" + (C - 16) + " " + (C - 4) + " L" + C + " " + (C - 8) + " L" + (C + 16) + " " + (C - 4) + " M" + (C - 11) + " " + (C + 28) + " L" + C + " " + (C + 12) + " L" + (C + 11) + " " + (C + 28) }));
+    fig.appendChild(sv("path", { d: "M" + (C - 16) + " " + (C - 4) + " q16 8 32 0 M" + (C - 11) + " " + (C + 28) + " q11 6 22 0", class: "bowl-chain" }));
+    svg.appendChild(fig);
+    // the underside, seen once the bowl is turned over: bare clay and a foot-ring, the spell hidden against the floor
+    var back = sv("svg", { viewBox: "0 0 360 360", class: "bowl-back", "aria-hidden": "true" }, [
+      sv("circle", { cx: C, cy: C, r: 172, class: "bowl-rim" }),
+      sv("circle", { cx: C, cy: C, r: 150, class: "bowl-out" }),
+      sv("circle", { cx: C, cy: C, r: 58, class: "bowl-foot" }),
+      sv("circle", { cx: C, cy: C, r: 46, class: "bowl-out" })]);
+    var inner = el("div", { class: "bowl-inner" }, [svg, back]);
+    var line = glossLine(A.words, "arc", "rtl", status);
+    var turn = el("button", { type: "button", "aria-pressed": "false", text: "Turn the bowl over" });
+    turn.addEventListener("click", function () {
+      var on = turn.getAttribute("aria-pressed") !== "true"; turn.setAttribute("aria-pressed", String(on));
+      inner.classList.toggle("is-over", on);
+      turn.textContent = on ? "Turn it back" : "Turn the bowl over";
+      status.textContent = on ? A.buried : "";
+    });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "bowl-stage" }, [inner]),
+      el("div", { class: "relic-ctrls" }, [turn]),
+      el("div", { class: "bowl-words" }, [line, el("p", { class: "ins-tr", text: A.translation })]), status,
+      el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+  }
+
   function init() {
     var V = window.VAULT || { items: [] };
     Array.prototype.forEach.call(document.querySelectorAll("[data-vault-relic]"), function (root) {
@@ -1187,6 +1294,9 @@
         else if (kind === "gate") gate(root, item);
         else if (kind === "cartouche") cartouche(root, item);
         else if (kind === "oracle") oracle(root, item);
+        else if (kind === "enclosure") enclosure(root, item);
+        else if (kind === "khipu") khipu(root, item);
+        else if (kind === "bowl") bowl(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }

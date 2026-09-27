@@ -209,4 +209,14 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 | V55 | The Oracle Bones of Anyang | Era III · The Early Iron Age | Early China (ch09); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
 | V56 | The Phaistos Disc | Era II · The Bronze Age | Early Greece (ch08) | `PUBLISHED — pending review` |
 | V57 | The Holy Mandylion | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
-| — | Batch 7 queue: Lion Man of Hohlenstein-Stadel · Venus of Willendorf · Göbekli Tepe's Pillars · Kojiki Manuscripts · Inca Khipu · Kalpa Sutra Manuscripts · Benin Bronzes · Staff God of Tiwanaku · Kebra Nagast · Hebrew Amulets of Late Antiquity | — | placed on publication | `not started` (queued) |
+| V58 | The Lion Man of Hohlenstein-Stadel | Era I · Prehistory | The Paleolithic (ch41) | `PUBLISHED — pending review` |
+| V59 | The Venus of Willendorf | Era I · Prehistory | The Paleolithic (ch41); The Great Goddess (ch48) | `PUBLISHED — pending review` |
+| V60 | Göbekli Tepe's Pillars | Era I · Prehistory | The Neolithic (ch42); The Paleolithic (ch41) | `PUBLISHED — pending review` |
+| V61 | The Kojiki: the Shinpukuji Manuscript | Era VII · The High Medieval | Shinto (ch25); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
+| V62 | The Inca Khipu | Era VII · The High Medieval | The Inca (ch44) | `PUBLISHED — pending review` |
+| V63 | The Kalpa Sutra Manuscripts | Era VII · The High Medieval | Jainism (ch52) | `PUBLISHED — pending review` |
+| V64 | The Benin Bronzes | Era VIII · The Early Modern | African Traditional Religion (ch33) | `PUBLISHED — pending review` |
+| V65 | The Staff God of Tiwanaku | Era V · Late Antiquity | The Inca (ch44) | `PUBLISHED — pending review` |
+| V66 | The Kebra Nagast | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); African Diaspora Religions (ch40); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
+| V67 | The Aramaic Incantation Bowls | Era V · Late Antiquity | Rabbinic Judaism (ch19); Mandaeans, Yazidis & Druze (ch56) | `PUBLISHED — pending review` |
+| — | Batch 8 queue: Churinga of Central Australia · Kumulipo · Pictish Stones · Bogomil Tombstones (Stećci) · Book of Shadows · Book of the Law · Satanic Bible (1969) · Golden Plates · Báb's Tablets · Haitian Vèvè | — | placed on publication | `not started` (queued) |

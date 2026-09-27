@@ -145,6 +145,10 @@ img { max-width: 100%; }
   letter-spacing: 0.16em; font-size: 0.68rem;
 }
 .site-header nav a { color: var(--ink-dim); }
+@media (max-width: 560px) {
+  .site-header .bar { flex-wrap: wrap; row-gap: 0.55rem; }
+  .site-header nav { margin-left: 0; gap: 0.55rem 1.1rem; }
+}
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--gold-bright); }
 .site-header nav a[aria-current="page"] { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
 

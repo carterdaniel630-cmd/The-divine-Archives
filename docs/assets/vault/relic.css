@@ -722,3 +722,50 @@
 @media (max-width: 40rem) { .oracle-stage { grid-template-columns: 1fr; } .oracle-svg { max-width: 12rem; margin: 0 auto; } }
 @media (prefers-reduced-motion: reduce) { .or-crack, .or-glow, .or-line { transition: none; } }
 .relic-panel, .g-status, .scroll-gloss { font-family: var(--font-body), "Vault Hieroglyphs"; }
+
+/* ---------------------------------------------------------------- enclosure (Göbekli Tepe) */
+.enc-stage { max-width: 26rem; margin: 0 auto; }
+.enc-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 22px rgba(0,0,0,.55)); }
+.enc-ground { fill: #6b5a41; stroke: #3f3322; stroke-width: 2; }
+.enc-wall { fill: none; stroke: #8a7556; stroke-width: 22; opacity: .85; }
+.enc-pillar { cursor: pointer; outline: none; }
+.enc-top { fill: #d8c9a6; stroke: #6d5a3a; stroke-width: 1.2; transition: fill .25s, filter .25s; }
+.enc-shaft { fill: rgba(80,62,35,.35); }
+.enc-pillar.is-named .enc-top { fill: #eadbb4; }
+.enc-pillar:hover .enc-top, .enc-pillar:focus-visible .enc-top, .enc-pillar.on .enc-top { fill: #f3dd9c; filter: drop-shadow(0 0 6px rgba(255,210,120,.9)); }
+.enc-lab { font-family: var(--font-display); font-size: 11px; fill: #f3e6c4; pointer-events: none; }
+
+/* ---------------------------------------------------------------- khipu */
+.kh-stage { max-width: 38rem; margin: 0 auto; padding: .6rem; border-radius: 6px; background: linear-gradient(180deg, #2a2016, #17110b); border: 1px solid var(--line); }
+.kh-svg { width: 100%; height: auto; display: block; }
+.kh-main { fill: none; stroke: #d9c7a0; stroke-width: 6; stroke-linecap: round; }
+.kh-band { font-family: var(--font-display); font-size: 10px; letter-spacing: .1em; fill: var(--ink-faint); text-transform: uppercase; }
+.kh-bandline { stroke: rgba(231,198,128,.12); stroke-dasharray: 3 5; }
+.kh-cord { cursor: pointer; outline: none; }
+.kh-string { fill: none; stroke-width: 4; stroke-linecap: round; transition: stroke-width .2s; }
+.kh-knot { fill: #f1e2bd; stroke: #4a3a22; stroke-width: 1; }
+.kh-long { fill: #f1e2bd; stroke: #4a3a22; stroke-width: 1; }
+.kh-turn { stroke: #4a3a22; stroke-width: 1; }
+.kh-eight { fill: none; stroke: #f1e2bd; stroke-width: 3; }
+.kh-sum { font-family: var(--font-display); font-size: 14px; fill: #e7c680; }
+.kh-cord:hover .kh-string, .kh-cord:focus-visible .kh-string, .kh-cord.on .kh-string { stroke-width: 6; filter: drop-shadow(0 0 5px rgba(255,210,120,.8)); }
+
+/* ---------------------------------------------------------------- bowl (incantation bowl) */
+.bowl-stage { max-width: 24rem; margin: 0 auto; perspective: 900px; }
+.bowl-inner { transition: transform 1.2s cubic-bezier(.5,0,.3,1); transform-style: preserve-3d; }
+.bowl-inner.is-over { transform: rotateX(180deg); }
+.bowl-inner { position: relative; }
+.bowl-svg, .bowl-back { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.bowl-back { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotateX(180deg); filter: drop-shadow(0 16px 26px rgba(0,0,0,.6)); }
+.bowl-out { fill: #a67a4e; }
+.bowl-foot { fill: none; stroke: #6b4a2a; stroke-width: 6; }
+.bowl-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 16px 26px rgba(0,0,0,.6)); transition: filter 1.2s; }
+.bowl-rim { fill: #b98a5c; stroke: #6b4a2a; stroke-width: 3; }
+.bowl-in { fill: #d9b98e; }
+.bowl-text { font-family: "Noto Serif Hebrew", "SBL Hebrew", serif; font-size: 13px; fill: #2a160a; }
+.bowl-fig { fill: none; stroke: #3a1f0c; stroke-width: 2.4; stroke-linecap: round; }
+.bowl-fig circle { fill: #3a1f0c; }
+.bowl-chain { stroke-dasharray: 3 2; stroke: #6b2a12; }
+.bowl-words { max-width: 36rem; margin: .8rem auto 0; text-align: center; }
+.bowl-words .g-line { font-family: "Noto Serif Hebrew", serif; font-size: 1.6rem; }
+@media (prefers-reduced-motion: reduce) { .bowl-inner, .bowl-svg { transition: none; } }
