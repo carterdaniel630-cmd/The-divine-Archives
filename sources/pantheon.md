@@ -2,7 +2,7 @@
 
 Per the project sourcing standard, this log records the sources behind the Pantheon directory (`docs/pantheon.html`, data in `docs/assets/pantheon-data.js`). Each figure's one- or two-sentence description summarises its home chapter, and that chapter's own source log carries the detailed citations. The references below are the general works used to check names, epithets and attributes, together with the specific sources behind each claim flagged as contested.
 
-**Drafting note (2026-09-27).** The descriptions were written from the archive's chapters and checked against the standard references below. The directory is published with the "Recently added — pending full review" tag. The portraits are the archive's own interpretive emblems, built from each figure's traditional attributes. They reproduce no historical image and make no claim about appearance. Figures whose traditions avoid depicting them, such as the prophets of Islam, are not included.
+**Drafting note (2026-09-27).** The descriptions were written from the archive's chapters and checked against the standard references below. The directory is published with the "Recently added — pending full review" tag. The portraits are the archive's own interpretive emblems, built from each figure's traditional attributes. They reproduce no historical image and make no claim about appearance. Where a tradition forbids picturing a figure (the God of Israel, the Prophet Muhammad and his family), the emblem is only the name in its own script.
 
 ## General references by tradition
 
@@ -92,3 +92,18 @@ Per the project sourcing standard, this log records the sources behind the Panth
 - **Baphomet and the Templars:** Barber, *Trial of the Templars* (above).
 - **Mithras and Mithra:** R. Beck, *The Religion of the Mithras Cult in the Roman Empire* (Oxford University Press, 2006).
 - **Laozi, Parshvanatha, Gilgamesh, Padmasambhava (historicity):** see the source logs of chapters ch12, ch52, ch03 and ch53.
+
+## Added 2026-09-27: biblical and Islamic figures
+
+*Texts*
+- The Hebrew Bible (JPS *Tanakh*, 1985) and the New Revised Standard Version, including the deuterocanonical books (Tobit, Judith, 1 Maccabees)
+- The Qur'an, trans. M. A. S. Abdel Haleem (Oxford University Press, 2004): suras 12 (Yūsuf), 19 (Maryam), 21, 37:99–113 (Abraham's son), 38 (David and Solomon)
+
+*Reference and history*
+- M. D. Coogan (ed.), *The Oxford Encyclopedia of the Books of the Bible* (Oxford University Press, 2011)
+- I. Finkelstein and N. A. Silberman, *The Bible Unearthed* (Free Press, 2001), for the archaeology of the patriarchs, Exodus, conquest and united monarchy
+- E. P. Sanders, *The Historical Figure of Jesus* (Penguin, 1993)
+- J. J. Collins, *Daniel* (Hermeneia, Fortress, 1993), for the date of Daniel
+- K. Jansen, *The Making of the Magdalen* (Princeton University Press, 2000), for Gregory I's sermon of 591
+- W. M. Watt, *Muhammad: Prophet and Statesman* (Oxford University Press, 1961)
+- C. Gruber, *The Praiseworthy One: The Prophet Muhammad in Islamic Texts and Images* (Indiana University Press, 2018), for aniconism and the *hilye*

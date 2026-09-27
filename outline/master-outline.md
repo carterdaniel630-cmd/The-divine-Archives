@@ -233,9 +233,9 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 
 ## The Pantheon — directory of gods, spirits & mythic figures (added 2026-09-27)
 
-A searchable directory at `pantheon.html`: 144 figures from 27 traditions, in five kinds (Gods & Goddesses; Spirits, Angels & Demons; Heroes & Sages; Tricksters; Primordial Beings). Data lives in `docs/assets/pantheon-data.js`; the emblem portraits are drawn by `docs/assets/pantheon-art.js`; sources in `sources/pantheon.md`.
+A searchable directory at `pantheon.html`: 199 figures from 30 traditions, in six kinds (Gods & Goddesses; Spirits, Angels & Demons; Heroes & Sages; Tricksters; Primordial Beings; Prophets & Biblical Figures). The biblical and Islamic figures were added 2026-09-27; the God of Israel, the Shang high god, Olódùmarè and Muhammad and his family are shown only by name or light, following their traditions. Data lives in `docs/assets/pantheon-data.js`; the emblem portraits are drawn by `docs/assets/pantheon-art.js`; sources in `sources/pantheon.md`.
 
 - **Placement:** every figure is homed on one or more chapters (field `ch`), and each of those chapters shows it in an "In the Pantheon" strip. Related Vault entries are linked from the figure's detail view (field `v`). Figures are also in site search.
 - **Portraits:** interpretive emblems built from traditional attributes, one consistent style, tinted by tradition. Not likenesses, and not copies of any historical image.
-- **Evidence honesty:** figures with a disputed identification or history carry a `contested` tag, with the dispute stated in the detail view. Figures whose traditions avoid depicting them are not included.
+- **Evidence honesty:** figures with a disputed identification or history carry a `contested` tag, with the dispute stated in the detail view. Where a tradition forbids picturing a figure, the emblem is the name in its own script.
 - **Status:** `PUBLISHED — pending review`. Add figures as new chapters are drafted.

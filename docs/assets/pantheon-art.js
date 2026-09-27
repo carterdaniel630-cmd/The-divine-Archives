@@ -31,12 +31,15 @@
     storm: function () { return P("M14 30 q0 -10 10 -10 q4 -8 14 -4 q8 -6 14 2 q10 -2 10 8 q6 4 0 10 H18 q-6 -2 -4 -6 Z", "a") + P("M70 18 L62 34 L70 34 L60 52", "a") + P("M26 38 L22 48", "a") + P("M36 38 L32 48", "a"); },
     earth: function () { return P("M4 70 H96 M4 78 H96 M4 86 H96 M10 62 H90", "a") + C(16, 74, 1.4, "af") + C(84, 82, 1.4, "af") + C(28, 82, 1.2, "af") + C(72, 66, 1.2, "af"); },
     mountain: function () { return P("M2 78 L20 50 L30 62 L42 40 L50 52 L58 40 L70 62 L80 50 L98 78", "a") + P("M38 46 L42 40 L46 46 M54 46 L58 40 L62 46", "a"); },
-    clouds: function () { return P("M8 34 q0 -8 8 -8 q2 -8 12 -6 q6 -6 12 2 q8 0 8 8 Z M60 22 q0 -7 7 -7 q2 -7 10 -5 q6 -4 10 2 q7 1 6 10 Z", "a"); }
+    clouds: function () { return P("M8 34 q0 -8 8 -8 q2 -8 12 -6 q6 -6 12 2 q8 0 8 8 Z M60 22 q0 -7 7 -7 q2 -7 10 -5 q6 -4 10 2 q7 1 6 10 Z", "a"); },
+    rainbow: function () { return P("M6 70 A44 44 0 0 1 94 70", "a") + P("M12 70 A38 38 0 0 1 88 70", "a") + P("M18 70 A32 32 0 0 1 82 70", "a"); },
+    dunes: function () { return P("M2 74 C16 64 28 64 40 72 C52 80 66 62 80 64 C88 65 94 68 98 72 M2 84 C20 78 34 80 48 86 C62 90 80 78 98 82", "a") + C(78, 24, 6, "a"); }
   };
 
   // ---------------------------------------------------------------- crowns and headdresses (drawn over the head; head top ~y33)
   var HAT_BACK = {
     halo: function () { return C(50, 45, 19, "a") + C(50, 45, 22, "a"); },
+    crossnimbus: function () { return C(50, 45, 20, "s") + P("M50 25 V33 M30 45 H38 M62 45 H70", "sw2") + C(50, 45, 20, "a"); },
     rays: function () { var s = ""; for (var i = 0; i < 13; i++) { var a = Math.PI + i * Math.PI / 12, r2 = i % 2 ? 24 : 29; s += P("M" + (50 + 15 * Math.cos(a)).toFixed(1) + " " + (46 + 15 * Math.sin(a)).toFixed(1) + " L" + (50 + r2 * Math.cos(a)).toFixed(1) + " " + (46 + r2 * Math.sin(a)).toFixed(1)); } return s; },
     hood: function () { var s = ""; for (var i = 0; i < 5; i++) { var a = Math.PI * (1.12 + i * .19), x = 50 + 19 * Math.cos(a), y = 44 + 19 * Math.sin(a); s += E(x.toFixed(1), y.toFixed(1), 4.2, 6, "s", (a * 180 / Math.PI + 90).toFixed(0)); } return P("M33 60 C28 40 36 24 50 22 C64 24 72 40 67 60", "s") + s; },
     veil: function () { return P("M36 44 C36 28 44 24 50 24 C56 24 64 28 64 44 L70 76 L60 70 L58 46 C58 38 54 34 50 34 C46 34 42 38 42 46 L40 70 L30 76 Z", "s"); },
@@ -99,7 +102,13 @@
       for (var i = 0; i < 9; i++) { var a = Math.PI * (1.05 + i * .1125), x = 50 + 30 * Math.cos(a), y = 70 + 30 * Math.sin(a); s += P("M50 70 L" + x.toFixed(1) + " " + y.toFixed(1), "a") + E(x.toFixed(1), y.toFixed(1), 4, 5.5, "s") + C(x.toFixed(1), y.toFixed(1), 1.8, "af"); }
       return s + P("M42 96 C40 80 44 66 50 58 C56 66 60 80 58 96 Z", "s") + P("M50 58 C48 50 48 44 52 40 C56 38 60 40 60 44 C58 44 55 46 54 50 C53 54 52 56 50 58 Z", "s") + P("M60 44 L65 45 L60 46") + C(56, 42, 1, "f") + P("M52 38 l-2 -6 M54 38 l0 -6 M56 38 l2 -6") + C(50, 32, 1, "f") + C(54, 32, 1, "f") + C(58, 32, 1, "f");
     },
-    glyph: function (ch) { return C(50, 50, 26, "s") + '<text class="pt-g" x="50" y="61" text-anchor="middle">' + ch + "</text>"; }
+    glyph: function (ch) {
+      var n = Array.from(ch).length, size = n <= 1 ? 30 : n <= 3 ? 24 : n <= 4 ? 21 : 17;
+      var lang = /[\u0600-\u06ff]/.test(ch) ? "ar" : /[\u0590-\u05ff]/.test(ch) ? "he" : "zh";
+      if (lang === "ar") size = Math.round(size * (n <= 3 ? 0.9 : 0.72));
+      var dy = lang === "ar" ? 0.18 : 0.36;
+      return C(50, 50, 30, "s") + C(50, 50, 26, "a") + '<text class="pt-g" lang="' + lang + '" x="50" y="' + (50 + size * dy).toFixed(1) + '" text-anchor="middle" style="font-size:' + size + 'px">' + ch + "</text>";
+    }
   };
 
   // ---------------------------------------------------------------- held items (right hand, around x 74)
@@ -146,7 +155,16 @@
     ring: function () { return C(74, 50, 9, "sw2") + C(74, 50, 3, "f"); },
     blade: function () { return P("M72 90 L72 40 L76 40 L76 90 Z", "s") + P("M76 40 L84 44 L80 48 L86 52 L80 56 L86 60 L80 64 L86 68 L76 72 Z", "s"); },
     torc: function () { return P("M64 52 C64 38 84 38 84 52 C84 62 78 66 74 66 C70 66 64 62 64 52", "sw2") + C(71, 65, 2.4, "f") + C(77, 65, 2.4, "f"); },
-    star: function () { var s = ""; for (var i = 0; i < 8; i++) { var a = i * Math.PI / 4; s += P("M74 46 L" + (74 + 11 * Math.cos(a)).toFixed(1) + " " + (46 + 11 * Math.sin(a)).toFixed(1)); } return s + C(74, 46, 3.2, "f"); }
+    star: function () { var s = ""; for (var i = 0; i < 8; i++) { var a = i * Math.PI / 4; s += P("M74 46 L" + (74 + 11 * Math.cos(a)).toFixed(1) + " " + (46 + 11 * Math.sin(a)).toFixed(1)); } return s + C(74, 46, 3.2, "f"); },
+    cross: function () { return P("M72 92 L72 42 L64 42 L64 36 L72 36 L72 26 L76 26 L76 36 L84 36 L84 42 L76 42 L76 92 Z", "s"); },
+    tablets: function () { return P("M62 76 L62 44 C62 38 70 38 70 44 L70 76 Z M72 76 L72 44 C72 38 80 38 80 44 L80 76 Z", "s") + P("M64 50 h4 M64 55 h4 M64 60 h4 M64 65 h4 M74 50 h4 M74 55 h4 M74 60 h4 M74 65 h4"); },
+    ship: function () { return P("M58 66 L90 66 L86 76 L62 76 Z", "s") + P("M62 66 L62 54 L86 54 L86 66 Z", "s") + P("M60 54 L74 46 L88 54") + P("M68 58 h4 M76 58 h4"); },
+    ladder: function () { var s = P("M66 94 L70 22 M82 94 L78 22"); for (var i = 0; i < 7; i++) { var y = 30 + i * 10; s += P("M" + (69.6 - i * 0.55).toFixed(1) + " " + y + " L" + (78.4 + i * 0.55).toFixed(1) + " " + y); } return s; },
+    spade: function () { return P("M74 90 L74 44") + P("M68 44 L80 44 L80 34 C80 30 68 30 68 34 Z", "s") + P("M70 90 H78"); },
+    purse: function () { return P("M66 58 C62 70 64 80 74 80 C84 80 86 70 82 58 Z", "s") + P("M66 58 Q74 52 82 58 M70 54 L74 50 L78 54") + C(70, 84, 1.4, "f") + C(76, 86, 1.4, "f"); },
+    book: function () { return P("M62 44 L84 44 L84 76 L62 76 Z", "s") + P("M65 47 L81 47 L81 73 L65 73 Z") + P("M73 50 V70 M68 58 H78", "a"); },
+    yoke: function () { return P("M58 50 Q74 40 90 50", "sw2") + P("M64 48 V60 M84 48 V60") + P("M60 60 Q64 66 68 60 M80 60 Q84 66 88 60"); },
+    trumpet: function () { return P("M64 86 L80 34", "sw2") + P("M76 34 L90 22 L84 38 Z", "s") + C(63, 88, 2.2, "f"); }
   };
 
   // ---------------------------------------------------------------- extras
@@ -160,7 +178,11 @@
     eye1: function () { return C(54.5, 44, 1.4, "f") + P("M42 42 L48 42 M42 40 L48 46"); },
     goggles: function () { return C(45.5, 44, 3.4) + C(54.5, 44, 3.4) + P("M44 54 L46 58 L48 54 M52 54 L54 58 L56 54"); },
     owl: function () { return E(24, 76, 6, 8, "s") + C(21.5, 73, 1.8) + C(26.5, 73, 1.8) + P("M19 68 l1 -3 l2 2 M29 68 l-1 -3 l-2 2"); },
-    fox: function () { return P("M14 90 C14 80 20 74 26 74 L24 68 L28 72 L31 67 L31 74 C34 76 34 80 30 82 C34 86 36 92 32 96 L16 96 Z", "s") + C(28, 76, .9, "f"); }
+    fox: function () { return P("M14 90 C14 80 20 74 26 74 L24 68 L28 72 L31 67 L31 74 C34 76 34 80 30 82 C34 86 36 92 32 96 L16 96 Z", "s") + C(28, 76, .9, "f"); },
+    lion: function () { return C(24, 80, 9, "s") + C(24, 82, 5.5, "s") + C(22, 81, .9, "f") + C(26, 81, .9, "f") + P("M16 74 l-3 -3 M20 71 l-1 -4 M28 71 l1 -4 M32 74 l3 -3 M22 86 q2 2 4 0"); },
+    lamb: function () { return E(24, 84, 10, 6.5, "s") + C(15, 80, 4.2, "s") + P("M18 90 v6 M22 90 v6 M28 90 v6 M32 90 v6") + C(14, 79, .8, "f"); },
+    fish: function () { return P("M12 84 C18 76 30 76 36 84 C30 92 18 92 12 84 Z M36 84 L42 78 L42 90 Z", "s") + C(17, 83, 1, "f"); },
+    dove: function () { return P("M70 22 C76 16 84 16 88 20 C84 20 82 22 82 24 C88 24 92 28 92 30 C86 30 80 30 76 28 C72 30 68 28 70 22 Z", "s") + C(74, 21, .8, "f") + P("M68 22 l-4 1 M68 22 l-3 -2"); }
   };
 
   function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
@@ -206,7 +228,7 @@
     double: "double crown of Egypt", helmet: "crested helmet", winged: "winged hat", antlers: "antlers", feathers: "feather headdress",
     topknot: "matted hair and crescent moon", throne: "throne sign", feather: "ostrich feather", crescent: "crescent moon", wreath: "wreath",
     cap: "cap", hat: "broad hat", tophat: "top hat", mian: "imperial crown with bead strings", peacock_c: "peacock feather", mural: "turreted crown",
-    triplemoon: "triple moon", halo: "halo", rays: "rays of light", hood: "serpent hood", veil: "veil", lionskin: "lion skin",
+    triplemoon: "triple moon", halo: "halo", crossnimbus: "halo with a cross", rays: "rays of light", hood: "serpent hood", veil: "veil", lionskin: "lion skin",
     thunderbolt: "thunderbolt", trident: "trident", spear: "spear", hammer: "hammer", lotus: "lotus", ankh: "ankh", scales: "scales",
     scroll: "scroll", staff: "staff", bow: "bow", sword: "sword", serpent_i: "serpent", torch: "torch", drum: "hand drum", cup: "cup",
     wheel: "discus (chakra)", mirror: "mirror", flail: "crook and flail", fruit: "pomegranate or peach", wheat: "sheaf of grain", maize: "maize",
@@ -215,7 +237,7 @@
     hook: "fish-hook", heart: "heart", vase: "vessel", ring: "ring", blade: "saw-toothed blade", torc: "torc", star: "eight-pointed star",
     sun: "the sun", moon: "the moon", stars: "stars", waves: "water", flames: "fire", tree: "a tree", storm: "storm cloud and lightning",
     earth: "the earth below", mountain: "mountains", clouds: "clouds",
-    wings: "wings", arms4: "four arms", eye3: "third eye", eye1: "a single eye", goggles: "goggle eyes", owl: "owl", ravens: "two ravens", fox: "fox"
+    wings: "wings", lion: "lion", lamb: "lamb or ram", fish: "fish", dove: "dove", cross: "cross", tablets: "tablets of the Law", ship: "ark", ladder: "ladder", spade: "spade", purse: "money bag", book: "book", yoke: "yoke", trumpet: "trumpet", rainbow: "rainbow", dunes: "the desert", arms4: "four arms", eye3: "third eye", eye1: "a single eye", goggles: "goggle eyes", owl: "owl", ravens: "two ravens", fox: "fox"
   };
   function parts(fig) {
     var p = String(fig.p).split(" "), out = [];

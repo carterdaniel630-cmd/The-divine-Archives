@@ -546,6 +546,8 @@ body { font-size: 1.06rem; }
 .pt-svg .pt-sin { fill: none; stroke: #1f150c; stroke-width: 5.4; stroke-linecap: round; stroke-dasharray: 2.4 1.4; }
 .pt-svg .pt-sw2 { fill: none; stroke: var(--gold-bright); stroke-width: 2.3; stroke-linecap: round; }
 .pt-svg .pt-g { font-family: "Noto Serif TC", "Noto Serif SC", "Songti SC", serif; font-size: 30px; fill: var(--gold-bright); }
+.pt-svg .pt-g[lang="ar"] { font-family: "Amiri", "Noto Naskh Arabic", "Scheherazade New", "Geeza Pro", serif; }
+.pt-svg .pt-g[lang="he"] { font-family: "Noto Serif Hebrew", "SBL Hebrew", "Times New Roman", serif; }
 .pt-svg .pt-bg { opacity: .9; }
 
 .pantheon-page .page-head { padding-bottom: .4rem; }
