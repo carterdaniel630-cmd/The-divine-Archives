@@ -162,7 +162,7 @@ img { max-width: 100%; }
 .crumb a { color: var(--ink-dim); }
 .crumb .sep { color: var(--line); }
 
-.page-head { padding: 3.6rem 0 1rem; text-align: center; }
+.page-head { padding: 3.6rem 1rem 1rem; text-align: center; }
 .page-head h1 {
   font-family: var(--font-display); font-weight: 400;
   text-transform: uppercase; letter-spacing: 0.14em;
@@ -530,3 +530,82 @@ body { font-size: 1.06rem; }
 .vault-links .vl-m { display: block; font-size: .8rem; color: var(--ink-faint); margin: .15rem 0 .35rem; }
 .vault-links .vl-s { display: block; font-size: .9rem; color: var(--ink-dim); line-height: 1.5; }
 .vault-links > p.tiny { font-size: .88rem; color: var(--ink-faint); line-height: 1.5; }
+
+/* ---------- the Pantheon: directory of figures (pantheon.html) ---------- */
+/* emblem line styles, shared with the chapter "Figures" strip */
+.pt-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.pt-svg .pt-disc { fill: #120b06; }
+.pt-svg .pt-ring { fill: none; stroke: var(--gold); stroke-width: 1.3; }
+.pt-svg .pt-ring2 { fill: none; stroke: var(--gold); stroke-width: .5; stroke-dasharray: .8 2.2; opacity: .8; }
+.pt-svg .pt-s { fill: #1f150c; stroke: var(--gold-bright); stroke-width: 1.15; stroke-linejoin: round; }
+.pt-svg .pt-l { fill: none; stroke: var(--gold-bright); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; }
+.pt-svg .pt-f { fill: var(--gold-bright); stroke: none; }
+.pt-svg .pt-a { fill: none; stroke: var(--acc, var(--gold)); stroke-width: 1; stroke-linecap: round; opacity: .75; }
+.pt-svg .pt-af { fill: var(--acc, var(--gold)); stroke: none; opacity: .85; }
+.pt-svg .pt-sw { fill: none; stroke: var(--gold-bright); stroke-width: 8; stroke-linecap: round; }
+.pt-svg .pt-sin { fill: none; stroke: #1f150c; stroke-width: 5.4; stroke-linecap: round; stroke-dasharray: 2.4 1.4; }
+.pt-svg .pt-sw2 { fill: none; stroke: var(--gold-bright); stroke-width: 2.3; stroke-linecap: round; }
+.pt-svg .pt-g { font-family: "Noto Serif TC", "Noto Serif SC", "Songti SC", serif; font-size: 30px; fill: var(--gold-bright); }
+.pt-svg .pt-bg { opacity: .9; }
+
+.pantheon-page .page-head { padding-bottom: .4rem; }
+.pantheon-main { max-width: 100rem; padding-top: .6rem; }
+.pn-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1rem; padding: .9rem 1rem; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; position: sticky; top: 3.6rem; z-index: 5; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.pn-search { flex: 1 1 18rem; display: flex; align-items: center; gap: .6rem; background: #120b06; border: 1px solid var(--line); border-radius: 999px; padding: .15rem .95rem; transition: border-color .2s, box-shadow .2s; }
+.pn-search:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(199,154,84,.18); }
+.pn-search svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: var(--ink-dim); stroke-width: 2; stroke-linecap: round; flex: none; }
+.pn-search input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--parchment); font: 500 1rem/2.4 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+.pn-search input::placeholder { color: var(--ink-faint); }
+.pn-pills { display: flex; flex-wrap: wrap; gap: .45rem; }
+.pn-pill { font: 600 .8rem/1 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; letter-spacing: .02em; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: .6rem .95rem; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.pn-pill:hover { border-color: var(--gold); color: var(--parchment); }
+.pn-pill[aria-pressed="true"] { background: linear-gradient(180deg, var(--gold-bright), var(--gold)); color: #1a1008; border-color: var(--gold-bright); }
+.pn-trad { font: 500 .85rem system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #120b06; border: 1px solid var(--line); border-radius: 999px; padding: .55rem .9rem; }
+.pn-count { margin: 1rem .2rem .7rem; color: var(--ink-faint); font: 500 .8rem system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; letter-spacing: .04em; }
+.pn-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(9.2rem, 1fr)); }
+.pn-cell[hidden] { display: none !important; }
+.pn-card { position: relative; aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: .3rem; padding: .7rem .5rem .6rem; text-decoration: none; color: var(--parchment); background: radial-gradient(120% 90% at 50% 0%, #2a1d11 0%, var(--panel) 60%); border: 1px solid var(--line); border-radius: 12px; transition: transform .18s ease, border-color .18s, box-shadow .18s; overflow: hidden; }
+.pn-card:hover, .pn-card:focus-visible { transform: translateY(-3px); border-color: var(--acc); box-shadow: 0 10px 26px rgba(0,0,0,.45), 0 0 0 1px var(--acc) inset; color: var(--parchment); }
+.pn-art { width: 62%; flex: none; filter: drop-shadow(0 4px 10px rgba(0,0,0,.5)); }
+.pn-name { font: 700 .92rem/1.15 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; text-align: center; margin-top: .2rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pn-badge { display: inline-block; font: 600 .66rem/1 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; letter-spacing: .03em; padding: .28rem .5rem; border-radius: 999px; color: var(--acc); background: color-mix(in srgb, var(--acc) 16%, transparent); border: 1px solid color-mix(in srgb, var(--acc) 45%, transparent); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pn-flag { position: absolute; top: .45rem; right: .45rem; font: 600 .56rem/1 system-ui, sans-serif; text-transform: uppercase; letter-spacing: .08em; color: var(--warn); border: 1px solid rgba(194,149,78,.5); border-radius: 4px; padding: .2rem .3rem; background: rgba(20,13,7,.8); }
+.pn-empty { text-align: center; color: var(--ink-dim); margin: 2rem 0; }
+.pn-dialog { width: min(58rem, calc(100vw - 2rem)); max-height: calc(100vh - 2rem); padding: 0; color: var(--ink); background: var(--ground-2); border: 1px solid var(--acc, var(--gold)); border-radius: 16px; box-shadow: 0 30px 90px rgba(0,0,0,.7); }
+.pn-dialog::backdrop { background: rgba(8,5,3,.72); backdrop-filter: blur(3px); }
+.pn-d { position: relative; display: grid; grid-template-columns: minmax(12rem, 20rem) 1fr; gap: 1.6rem; padding: 1.8rem; }
+.pn-d-x { position: absolute; top: .6rem; right: .8rem; background: none; border: 0; color: var(--ink-dim); font-size: 1.8rem; line-height: 1; cursor: pointer; padding: .2rem .4rem; }
+.pn-d-x:hover { color: var(--gold-bright); }
+.pn-d-art .pt-svg { max-width: 20rem; margin: 0 auto; filter: drop-shadow(0 8px 22px rgba(0,0,0,.6)); }
+.pn-d-cap { font-size: .8rem; color: var(--ink-faint); font-style: italic; text-align: center; margin: .8rem 0 0; }
+.pn-d-kicker { margin: 0 0 .5rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.pn-kind { font: 600 .66rem/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); }
+.pn-d h2 { font-family: var(--font-display); font-weight: 500; color: var(--parchment); letter-spacing: .06em; margin: .2rem 0 .1rem; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.pn-d-ep { font-family: var(--font-head); font-style: italic; color: var(--gold-bright); font-size: 1.2rem; margin: 0 0 .9rem; }
+.pn-d-desc { margin: 0 0 .9rem; font-size: 1.08rem; }
+.pn-d-contest { border-left: 3px solid var(--warn); padding: .5rem .8rem; background: rgba(194,149,78,.08); font-size: .98rem; margin: 0 0 1rem; }
+.pn-d-h { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .18em; font-size: .66rem; color: var(--gold); margin: 1rem 0 .4rem; }
+.pn-d-links { list-style: none; margin: 0; padding: 0; }
+.pn-d-links li { margin: .25rem 0; }
+.pn-d-meta { color: var(--ink-faint); font-size: .85rem; }
+.pn-d-nav { display: flex; justify-content: space-between; gap: .6rem; margin-top: 1.4rem; }
+.pn-d-nav button { font: 600 .8rem system-ui, sans-serif; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: .5rem .9rem; cursor: pointer; }
+.pn-d-nav button:hover { border-color: var(--gold); color: var(--parchment); }
+.pn-about { max-width: var(--measure); margin: 3rem auto 1rem; }
+@media (max-width: 700px) {
+  .pn-bar { position: static; }
+  .pn-grid { grid-template-columns: repeat(auto-fill, minmax(7.4rem, 1fr)); gap: .55rem; }
+  .pn-name { font-size: .82rem; }
+  .pn-d { grid-template-columns: 1fr; padding: 1.4rem 1.1rem; gap: 1rem; }
+  .pn-d-art .pt-svg { max-width: 11rem; }
+}
+@media (prefers-reduced-motion: reduce) { .pn-card { transition: none; } .pn-card:hover { transform: none; } }
+
+/* chapter pages: "Figures of this tradition" strip */
+.pantheon-links { margin: 2.2rem 0 1rem; }
+.pantheon-links .pl-list { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)); }
+.pantheon-links .pl-item { display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: .7rem .4rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); text-decoration: none; color: var(--parchment); transition: border-color .2s; }
+.pantheon-links .pl-item:hover, .pantheon-links .pl-item:focus-visible { border-color: var(--acc, var(--gold)); }
+.pantheon-links .pl-art { width: 3.6rem; }
+.pantheon-links .pl-n { font-family: var(--font-head); font-weight: 600; font-size: .98rem; text-align: center; line-height: 1.15; }
+.pantheon-links .pl-e { font-size: .76rem; color: var(--ink-faint); text-align: center; font-style: italic; }

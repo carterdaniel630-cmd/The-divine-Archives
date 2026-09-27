@@ -172,6 +172,7 @@ function header(rel) {
         <a href="${rel}traditions.html">Traditions</a>
         <a href="${rel}themes.html">Themes</a>
         <a href="${rel}symbols.html">Symbols</a>
+        <a href="${rel}pantheon.html">Pantheon</a>
         <a href="${rel}vault.html" aria-current="page">Vault</a>
         <a href="${rel}methodology.html">Methodology</a>
         <a href="${rel}about.html">About</a>

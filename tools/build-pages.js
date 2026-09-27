@@ -47,7 +47,7 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/chapters.js", "assets/vault-data.js"]) {
+for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/chapters.js", "assets/vault-data.js", "assets/pantheon-data.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [], themes: [] };
@@ -194,6 +194,7 @@ const HEADER = `  <header class="site-header">
         <a href="../traditions.html">Traditions</a>
         <a href="../themes.html">Themes</a>
         <a href="../symbols.html">Symbols</a>
+        <a href="../pantheon.html">Pantheon</a>
         <a href="../vault.html">Vault</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
@@ -351,6 +352,16 @@ function buildSearchIndex() {
       text: clip(md.replace(/^#.*$/gm, " ").replace(/[*_>`#]/g, "").replace(/https?:\/\/\S+/g, " "), 3200)
     });
   });
+  // The Pantheon: one entry per figure, opening its detail view
+  const PANTHEON = sandbox.window.PANTHEON || { figures: [], traditions: {}, kinds: {} };
+  PANTHEON.figures.forEach((f) => {
+    docs.push({
+      id: "fig-" + f.id, url: "pantheon.html#" + f.id, title: f.n,
+      era: "The Pantheon · " + ((PANTHEON.traditions[f.t] || {}).name || ""),
+      summary: f.e + ". " + f.d,
+      text: [f.d, f.c || "", PANTHEON.kinds[f.k] || ""].join(" ")
+    });
+  });
   return JSON.stringify(docs);
 }
 // root-level header/footer (root-relative links) for search.html
@@ -462,6 +473,7 @@ function buildSitemap() {
   // The Vault (manuscripts, relics & contested objects) — see tools/build-vault.js
   const VAULT = sandbox.window.VAULT || { items: [] };
   urls.push(SITE + "/vault.html");
+  urls.push(SITE + "/pantheon.html");
   VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push(SITE + "/vault/" + v.slug + ".html"));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

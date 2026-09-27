@@ -220,3 +220,12 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 | V66 | The Kebra Nagast | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); African Diaspora Religions (ch40); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
 | V67 | The Aramaic Incantation Bowls | Era V · Late Antiquity | Rabbinic Judaism (ch19); Mandaeans, Yazidis & Druze (ch56) | `PUBLISHED — pending review` |
 | — | Batch 8 queue: Churinga of Central Australia · Kumulipo · Pictish Stones · Bogomil Tombstones (Stećci) · Book of Shadows · Book of the Law · Satanic Bible (1969) · Golden Plates · Báb's Tablets · Haitian Vèvè | — | placed on publication | `not started` (queued) |
+
+## The Pantheon — directory of gods, spirits & mythic figures (added 2026-09-27)
+
+A searchable directory at `pantheon.html`: 144 figures from 27 traditions, in five kinds (Gods & Goddesses; Spirits, Angels & Demons; Heroes & Sages; Tricksters; Primordial Beings). Data lives in `docs/assets/pantheon-data.js`; the emblem portraits are drawn by `docs/assets/pantheon-art.js`; sources in `sources/pantheon.md`.
+
+- **Placement:** every figure is homed on one or more chapters (field `ch`), and each of those chapters shows it in an "In the Pantheon" strip. Related Vault entries are linked from the figure's detail view (field `v`). Figures are also in site search.
+- **Portraits:** interpretive emblems built from traditional attributes, one consistent style, tinted by tradition. Not likenesses, and not copies of any historical image.
+- **Evidence honesty:** figures with a disputed identification or history carry a `contested` tag, with the dispute stated in the detail view. Figures whose traditions avoid depicting them are not included.
+- **Status:** `PUBLISHED — pending review`. Add figures as new chapters are drafted.

@@ -33,7 +33,7 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js", "assets/emblems.js", "assets/vault-data.js"]) {
+for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js", "assets/emblems.js", "assets/vault-data.js", "assets/pantheon-data.js", "assets/pantheon-art.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [] };
@@ -42,6 +42,8 @@ const PLATES = sandbox.window.PLATES || {};
 const PLATE_ART = sandbox.window.PLATE_ART || {};
 const EMBLEMS = sandbox.window.EMBLEMS || {};
 const VAULT = sandbox.window.VAULT || { items: [], categories: {} };
+const PANTHEON = sandbox.window.PANTHEON || { figures: [], traditions: {} };
+const PANTHEON_ART = sandbox.window.PANTHEON_ART;
 
 // --- helpers (mirroring archive.js) ---------------------------------------
 const esc = (s) =>
@@ -99,6 +101,21 @@ function vaultFor(ch) {
     "\n      </div></div>";
 }
 
+// Figures from the Pantheon directory whose home chapters include this one.
+function figuresFor(ch) {
+  const figs = PANTHEON.figures.filter((f) => f.ch.indexOf(ch.id) !== -1).sort((a, b) => a.n.localeCompare(b.n));
+  if (!figs.length || !PANTHEON_ART) return "";
+  return '\n      <div class="pantheon-links" id="figures">' +
+    '<p class="eyebrow center">In the Pantheon &middot; figures in this chapter</p>' +
+    '<p class="tiny center" style="margin:-.3rem 0 1rem">Gods, spirits and mythic figures discussed here, each with an entry in <a href="../pantheon.html">the Pantheon</a>. Their emblems are interpretive drawings of traditional attributes.</p>' +
+    '<div class="pl-list">\n' + figs.map((f) => {
+      const tr = PANTHEON.traditions[f.t] || { color: "#c79a54" };
+      return '        <a class="pl-item" href="../pantheon.html#' + f.id + '" style="--acc:' + tr.color + '"><span class="pl-art">' + PANTHEON_ART.svg(f, tr.color, "ch" + ch.id + f.id) + "</span>" +
+        '<span class="pl-n">' + esc(f.n) + '</span><span class="pl-e">' + esc(f.e) + "</span></a>";
+    }).join("\n") +
+    "\n      </div></div>";
+}
+
 const HEADER = `  <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="../index.html">
@@ -116,6 +133,7 @@ const HEADER = `  <header class="site-header">
         <a href="../traditions.html">Traditions</a>
         <a href="../themes.html">Themes</a>
         <a href="../symbols.html">Symbols</a>
+        <a href="../pantheon.html">Pantheon</a>
         <a href="../vault.html">Vault</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
@@ -222,7 +240,7 @@ ${HEADER}
         <button type="button" class="print-btn" onclick="window.print()" title="Save this chapter as a PDF">Save as PDF</button></p>
     </div>
     <section class="wrap article">
-${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${vaultFor(ch)}${seeAlso(ch)}
+${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${figuresFor(ch)}${vaultFor(ch)}${seeAlso(ch)}
       <p class="print-only">From <strong>The Divine Archives</strong> &middot; ${url} &middot; a comparative library of the sacred.</p>
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>
