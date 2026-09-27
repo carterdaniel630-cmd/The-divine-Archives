@@ -18,3 +18,8 @@ Per the project sourcing standard. Keeps the historically attested (Muhammad's p
 - Added kalam theology (Mu'tazila/mihna/Ash'ari), tafsir, the Night Journey, the greater/lesser jihad distinction, women of early Islam (Khadija, Fatima), and the three Shia branches + the Hidden Imam.
 - Header/frontmatter normalized to the standard "*Recently added — pending full review.*" form and standard Sources bullet list; the old "note on faith and history" is now the explicit Believer's/Skeptical lens split.
 - Cross-links: Judaism (ch10, ch19), Christianity (ch16), Zoroastrian Persia (ch6), Greek philosophy (ch15, ch28), Sufism (ch27), Sikhism (ch34).
+
+## Added 2026-09-27 (ported from branch `claude/next-ptzs6g`, Batch II, 2026-09-10)
+
+- The founding women: Khadija, the Mothers of the Believers (Qur'an 33:6), Aisha and the Battle of the Camel (656), Zaynab bint Jahsh, and Fatima and the Fatimid claim of descent — "Battle of the Camel" and "Zaynab bint Jahsh," Wikipedia; "Fatimid dynasty," Britannica. https://en.wikipedia.org/wiki/Battle_of_the_Camel · https://en.wikipedia.org/wiki/Zaynab_bint_Jahsh · https://www.britannica.com/topic/Fatimid-dynasty
+- The Kharijites (Siffin, Nahrawan, Ibn Muljam, the Azariqa) and the Ibadis of Oman — "Kharijites" and "Battle of Nahrawan," Wikipedia; "Ibadiyyah," Britannica. https://en.wikipedia.org/wiki/Kharijites · https://en.wikipedia.org/wiki/Battle_of_Nahrawan · https://www.britannica.com/topic/Ibadiyyah

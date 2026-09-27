@@ -234,3 +234,64 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 - **Fighter:** solid core. It has a fixed step, real frame data, cancels, hitstop, per-god tuning and a throw tech. The gaps that matter most for feel are: no input buffer, attacks read outside the sim tick, OS key-repeat mashing, hits checked only on the first active frame, and no hurtboxes or hitstun data. All four gods share one move list.
 - **Ziggurat:** 7-bag ✅, but no SRS, **no lock delay**, **no DAS/ARR** (OS key repeat), no hold, a single-piece preview and a short well.
 - **Bug across three games:** Pong, Firmament and Tomb Robber run faster on high-refresh displays because their physics is per frame.
+
+---
+
+## Stage 4 — Branch inventory
+
+Remote branches as of 2026-09-27, compared with `origin/main` (`bf89a0f`). "Unique" counts commits on the branch but not on main. `git cherry` was used to find commits already on main in a different form (cherry-picked or ported).
+
+### 4.1 Already merged into `main` (safe to delete)
+
+| Branch | Last commit | Merged | Recommendation |
+|---|---|---|---|
+| `claude/session-start-ikztvo` | 2026-08-17 `6474251` | Y (0 unique, 172 behind) | **This is the GitHub default branch** (Stage 2.3). Switch the default to `main`, then delete. |
+| `claude/divine-archives-status-images-w5l0fk` | 2026-08-15 `5c7a7fe` | Y | Delete. The stale preview branch flagged in the August audit (F8.2); still present. |
+| `claude/games-fighter-cutout` | 2026-09-21 `2134ae6` | Y | Delete |
+| `claude/games-fighter-rig` | 2026-09-20 `3d6f883` | Y | Delete |
+| `claude/games-fighter-f3` | 2026-09-20 `d4a494f` | Y | Delete |
+| `claude/games-build` | 2026-09-20 `7e6c574` | Y | Delete |
+| `claude/site-information-updates-0ycl4c` | 2026-09-15 `9933d71` | Y | Delete |
+| `claude/mini-games-layer` | 2026-09-14 `1fe117f` | Y | Delete |
+| `claude/content-port-new-chapters` | 2026-09-14 `66df8ed` | Y | Delete |
+| `claude/stage-3-ycbpej` | 2026-09-12 `6602667` | Y | Delete |
+| `claude/ch45-pistis-sophia` | 2026-09-12 `b76fcec` | Y | Delete |
+| `claude/site-overhaul` | 2026-09-11 `1c14aee` | Y | Delete |
+| `claude/divine-archives-completion-2bplik` | 2026-09-06 `5132a07` | Y | Delete |
+| `claude/divine-archives-update-xg83tz` | 2026-09-06 `5132a07` | Y (same commit as above) | Delete |
+
+### 4.2 Not merged: content already on `main` in another form
+
+| Branch | Last commit | Unique | Finding | Recommendation |
+|---|---|---|---|---|
+| `claude/locate-current-task-cmjnz3` | 2026-09-22 `ae31f02` | 6 | All 6 commits are **patch-equivalent** to commits on main (`git cherry` = all `-`): the Divine Casualties rename and fighter work were cherry-picked on 2026-09-27. | Delete. |
+| `claude/pistis-sophia-research-8ytkke` | 2026-09-11 `834164f` | 3 | Adds Pistis Sophia as **ch43** plus a Stage 0 audit. The chapter was later ported to main as **ch45** (`b76fcec`, "port of the reviewed chapter, renumbered"), untagged there as approved; the audit is `stages/00-audit/CONTEXT.md`'s predecessor. | Delete (superseded). |
+| `claude/pose-based-fighter-sprites-ot2nig` | 2026-09-21 `f341bd0` | 2 | A 1,300-line "pose-based sprite" pilot for the fighter (Zeus vs placeholder Hades). Superseded by the skeletal cut-out rig on main. | Delete (superseded). |
+| `claude/state-audit` | 2026-09-23 `b60455f` | 1 | A read-only state audit (`00-audit/state-audit-2026-09-23.md`). Superseded by this report. | Delete, or keep for the record. |
+| `claude/games-audit` | 2026-09-19 `2399c5f` | 6 | A games audit in `audit/01-05*.md` plus frame captures. Written before the rename (uses "Theomachy"); its fighter findings overlap Stage 3. One live item: `audit/04-content-needs.md:48`, Risk territories `nubia` and `arabia` have no fact. | Don't merge (stale); carry the Risk-facts item forward. |
+| `claude/divine-archives-audit-nr3mln` | 2026-08-25 `10edf1f` | 1 | "Phase 1: competitive & structural audit for comprehensive expansion" (`icm/stage-5…`). A planning document, since overtaken by the expansion to 65 chapters. | Delete, or keep for the record. |
+
+### 4.3 Not merged: real work that main lacks
+
+| Branch | Last commit | Unique | Finding | Action taken / recommendation |
+|---|---|---|---|---|
+| `claude/next-ptzs6g` | 2026-09-10 `7f61f44` | 1 | "Batch II: deepen ch21 Islam": about 860 sourced words that the September completion pass never absorbed. Three new sections: **the founding women** (Khadija, ʿAʾisha, Zaynab, Fatima), **the Mihna**, and **the Kharijites and Ibadis**. | **Ported to main (2026-09-27).** The founding-women and Kharijite/Ibadi sections were added to `eras/06-early-medieval/ch21-islam-early-medieval.md` with matching evidence and source entries; `sources/ch21-islam.md` records the port. The Mihna section was **not** ported because main already covers it (`## Reason and revelation: the kalam`). Because this is text Carter hasn't reviewed, **ch21 now carries the pending-review tag** (`data.js`, status board row). The branch can then be deleted. |
+| `claude/pending-reviews-approval-bhb8n4` | 2026-08-18 `157e3d9` | 1 | "**Clear pending-review tags on ch26–ch42 per Carter's batch review**" (`data.js` + status board). **Never merged**, so main still shows those chapters as pending. But the approval predates the September **completion pass**, which rewrote and roughly doubled those chapters (e.g. `9bdcf7f` ch26 Kabbalah, `f672e37` ch27 Sufism, 2026-09-04) and split ch29 into ch29/ch43/ch44. | **Not merged.** The review covered text that has since been replaced, so clearing the tags now would publish unreviewed text as reviewed. **Decision for Carter:** re-review the current ch26–ch44 in a batch, or confirm the August approval still stands. |
+| `claude/orchard-merch-stage-setup-7kcebk` | 2026-08-19 `d6a285d` | 15 | Merch pipeline for "Divine Archives + Pip's Orchard", an A.T.L.E. parent-company restructure audit and dashboard, Printify catalog. **Not part of the website.** | Don't merge into the site repo. Move to a separate business repo if it's still wanted. |
+| `claude/divine-archives-status-lq6zz4` | 2026-08-22 `583fada` | 3 | Merch stage 05: Printify draft agent, Tree of Life dry run. | Same as above. |
+| `claude/printify-merch-status-mmly9k` | 2026-08-22 `ad34a6b` | 1 | Printify merch agent (dry-run). | Same as above. |
+| `claude/current-update-annu7g` | 2026-08-24 `96e9e04` | 1 | Merch: hybrid Tree of Life aesthetic. | Same as above. |
+| `claude/parallel-build-workstreams-yq09vz` | 2026-08-23 `ce6aeb9` | 1 | Merch: emblem style test and caption drafts. | Same as above. |
+| `claude/parallel-build-workstreams-te4g1k` | 2026-08-23 `5b08fa8` | 1 | Merch WS1: Tree of Life symbol candidate. | Same as above. |
+| `claude/clipyield-ugc-init-h52c0c` | 2026-08-23 `d0663fa` | 1 | "clipyield-ugc-automation": an **unrelated project** that was initialised in this repo. | Move to its own repo; never merge here. |
+
+### 4.4 This audit's branch
+
+| Branch | Last commit | Unique | Action |
+|---|---|---|---|
+| `claude/state-audit-fzv14x` | 2026-09-27 | This report (stages 1–4) + the ch21 port | **Merged to main** on approval (fast-forward). |
+
+### Stage 4 summary
+
+- **31 remote branches besides `main`:** 14 fully merged, 6 superseded (their content is on main in another form, or obsolete), 7 merch/business branches and 1 unrelated project that don't belong in the site repo, and 2 with real site work: ch21 (now ported) and the unmerged ch26–ch42 review clearance (held for Carter).
+- **Branch deletion** is a repository-settings action. The August audit recorded that this environment's push path refuses remote branch deletion, so the 20 deletions recommended above need to be done in the GitHub UI, along with switching the default branch to `main`.

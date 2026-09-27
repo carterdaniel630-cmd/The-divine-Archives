@@ -87,7 +87,7 @@ every remaining chapter and added the lens structure throughout.
 
 **Late Antiquity (era 05) traditions complete** (ch16–ch20).
 
-| ch21 — Islam | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
+| ch21 — Islam | Tradition | 06-early-medieval | **PENDING REVIEW** (new sections 2026-09-27: the founding women; Kharijites & Ibadis) | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
 | ch22 — Patristic Christianity | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
 | ch23 — Norse Paganism | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch23-norse-paganism-early-medieval.md` |
 | ch24 — Tantra | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch24-tantra-early-medieval.md` |
