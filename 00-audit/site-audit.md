@@ -158,3 +158,79 @@ Because the default branch is stale (below), this is also the README visitors se
 - **CLAUDE.md** policy text matches the implementation. Its file structure omits `themes/`, `vault/`, `docs/` and `tools/`, and it documents neither the build pipeline nor the Vault, Pantheon or games.
 - **Master outline** is still a placeholder, and its status board stops at 44 of 65 chapters.
 - **Four planning docs** (`00-audit/CONTEXT.md`, `stages/00-audit`, `stages/01-ssg-indexing`, `icm/BATCH-I…`) report statuses that are no longer true.
+
+---
+
+## Stage 3 — Games
+
+Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbols.html:79-91`.
+
+### 3.1 Summary table
+
+| Game | Genre | Tick model | Input | Frame / timing data | Refresh-rate safe? |
+|---|---|---|---|---|---|
+| **Divine Casualties** `fighter.js` | 2D fighter | **Fixed 60 Hz step** with accumulator, `MAXSTEPS = 5`, render interpolation (`fighter.js:51-54`, `stepSim` `:1798`) | `keydown`/`keyup` into a `keys{}` map for movement; **attacks fire directly from `keydown`** (`:2111-2123`); touch pad (`:2042`) | **Yes**: per-move `startup/active/recovery/total` in ticks, `onHit {damage, hitstop, knockback}`, `cancelInto/cancelWindow` (`fighter-moves.js:5-120`); per-god overrides and stats (`fighter-moves.js:133-196`) | Yes (fixed step) |
+| **Ziggurat Builder** `ziggurat.js` | Tetris-like | `setTimeout` gravity at `dropMs() = max(120, 820 − 70·(level−1))` ms (`:376-386`); redraws only on events | `keydown` → one action per event (`:351-360`); swipe/tap | Gravity table only | Yes (timer-based) |
+| **Ouroboros** `ouroboros.js` | Snake | `setTimeout` step at `speedFor(level)` = 240 → 120 ms (`:56-58, 309-312`) + rAF for ambient art (`:339`) | `keydown`, swipe, pad; **one-slot direction latch** `nextDir` (`:112-118, 148`) | Speed table | Yes |
+| **The Labyrinth** `pacman.js` | Pac-Man | rAF, variable `dt` clamped to 50 ms (`:358`); movement `prog += speed·dt·60` (`:152`) | `keydown`, swipe, pad; **pre-turn buffer** `player.want` (`:129, 143-144`) | Ghost/fright timers in seconds | Yes (dt-scaled) |
+| **Antithesis** `pong.js` | Pong | rAF, `dt` clamped to 50 ms (`:248`), but **physics is per frame**: `b.x += b.vx`, paddles `±6.4` per frame (`:136-140`) | keys, mouse drag, touch drag, pads | — | **No**: about 2.4× faster at 144 Hz |
+| **The Firmament** `pinball.js` | Pinball | rAF, `dt` ≤ 33 ms (`:301`); 5 substeps per frame (`:44, 173-176`), but **per-frame gravity and velocity** | keys, mouse, touch | — | **No**: substeps prevent tunnelling but speed scales with refresh |
+| **The Tomb Robber** `treasure.js` | Platformer | rAF, `dt` ≤ 33 ms (`:252`), but **per-frame physics**: `vx += 0.6`, `vy += 0.5`, `x += vx` (`:152-158`) | keys, mouse, touch | — | **No** |
+| **The Excavation** `minesweeper.js` | Minesweeper | Event-driven; 1 s `setInterval` clock (`:175`) | click, right-click/`contextmenu`, long-press (`:117`), flag mode | — | n/a |
+| **Archive Chess** `chess.js` | Chess | Turn-based; AI via `setTimeout(aiMove, 220)` (`:237`) | click/tap | — | n/a |
+| **Dominion of the Ancients** `risk.js` | Risk-like | Turn-based; AI sequenced by `setTimeout` 420 ms (`:232`); rAF for rendering | click | — | n/a |
+| **The Reliquary** `reliquary.js` | Trivia | Event-driven DOM | click, keys 1–4 | — | n/a |
+| **The Seeker's Path** `seeker.js` | Riddle chain | Event-driven DOM | form submit | — | n/a |
+
+### 3.2 Divine Casualties vs fighting-game standards
+
+| Standard | Present? | Evidence and gap |
+|---|---|---|
+| Fixed-rate simulation | ✅ | 60 Hz fixed step, deterministic per refresh rate (`fighter.js:51-54`). |
+| Per-move frame data | ✅ | `startup`, `active [first,last]`, `recovery`, `total` in ticks (`fighter-moves.js:11-14`, e.g. light `:30`, kick `:48`, headbutt `:64`). Data-driven poses (`poseKeys`). |
+| Per-character movesets | ✅ partial | Each god overrides base moves and has `walkSpeed/jumpVel/weight` (`fighter-moves.js:137-196`). The overrides tune numbers (damage, hitstop, windows); all four share the same **move list** (light, kick, headbutt, special, throw, two aerials), so characters differ in feel but not in kit. |
+| Hitstop | ✅ | Global freeze of the whole sim while `hitStop > 0` (`fighter.js:1800`); per-move `onHit.hitstop` in **seconds** (e.g. 0.06–0.16 s, finisher 0.25 s at `:1511`). Frozen together; no per-character hitstop or shake-only victim. |
+| Cancels | ✅ | `cancelInto` + `cancelWindow` checked in ticks (`fighter.js:383-391`). |
+| Throws / throw tech | ✅ | Grab and tech window (`fighter.js:1409`). |
+| **Input buffer** | ❌ | No buffer. Attacks resolve **immediately on the `keydown` event, outside the fixed step** (`fighter.js:2119-2122` → `tryAttack` `:1316`). A press during recovery is **dropped** unless it lands inside a cancel window. The genre standard is a 3–10 frame buffer consumed in the sim tick. |
+| Key repeat | ❌ | No `e.repeat` filter (`:2112`): **holding J fires repeated attacks** at the OS auto-repeat rate. |
+| Active frames honoured | ❌ | The hit is resolved **once**, when `stTime` reaches the *first* active tick (`fighter.js:1348` sets `at = active[0]/total`; `:1874-1878` fires once). Later active ticks never check, so an opponent who walks into a live hitbox on tick 5–6 isn't hit. |
+| Hurtboxes | ❌ | Hits test **horizontal distance only** (`fighter.js:1454-1456`: `dx` against reach); grounded moves have no vertical/hurtbox test, so crouch/low/high distinctions aren't possible. Aerials use a crude box (`:1440-1441`). |
+| Blocking model | ⚠️ | Block is a **button** (`KM1.block = "s"`), not hold-back; there is no high/low. Chip, parry and counter callouts exist (`:1412, 1494-1515`). |
+| Special inputs | ⚠️ | Specials are one button with an energy meter; no motion inputs. Fine for a web audience, but not genre-standard. |
+| Frame advantage / hitstun data | ⚠️ | Hitstun and blockstun aren't per-move data (only damage, hitstop, knockback), so advantage on hit or block can't be tuned or read. |
+| Netplay / rollback | n/a | Local 2P only. |
+
+### 3.3 Ziggurat Builder vs Tetris guideline
+
+| Standard | Present? | Evidence and gap |
+|---|---|---|
+| **7-bag randomizer** | ✅ | Fisher–Yates bag of 7 (`ziggurat.js:43, 72, 79`). |
+| **SRS rotation** | ❌ | One-direction matrix rotation (`rot` `:98`). Kicks are horizontal only, `[0, −1, 1, −2, 2]` (`:101`): no SRS offset tables, no vertical kicks, no separate I-piece table. **Z also rotates clockwise** (`:356`); there is no counter-clockwise rotation. |
+| **Lock delay** | ❌ | None. When gravity finds the piece grounded it **locks on that tick** (`:384`), and soft drop onto the stack locks at once (`:108`). No 0.5 s delay, no move/rotate reset. |
+| **DAS / ARR** | ❌ | No implementation. Each `keydown` event moves one cell (`:353-354`); holding a key relies on the **OS auto-repeat** (typically about 500 ms delay, 30 ms rate, not configurable, and it also re-fires rotate and hard drop). No `e.repeat` filter. |
+| Soft/hard drop | ✅ | Soft drop 1 pt per cell and resets gravity (`:108`); hard drop 2 pts per cell (`:109`). |
+| Ghost piece | ✅ | Dashed landing guide (draw loop). |
+| Hold | ❌ | Not implemented. |
+| Next queue | ⚠️ | One piece (`drawNext`); the guideline shows 3–6. |
+| Scoring / levels | ✅ | 100/300/500/800 × level (`:134-135`); level every 10 lines (`:136`). No T-spin, back-to-back or combo detection. |
+| Field | ⚠️ | 10×18 visible (`:54`), no hidden buffer rows above (guideline 10×20 + 20 hidden). |
+| Gravity curve | ⚠️ | Linear 820 ms → 120 ms floor (`:376`); the guideline curve is exponential and reaches 20G. |
+
+### 3.4 Other games: notable gaps
+
+- **Frame-rate dependence (bug):** `pong.js:136-140`, `treasure.js:152-158` and `pinball.js:173-176` advance positions and velocities **per rendered frame** even though `dt` is computed. On 120/144 Hz displays these games run 2–2.4× faster; on a throttled tab, slower. `pacman.js:152` and `fighter.js` scale correctly.
+- **Ouroboros:** the single-slot `nextDir` latch (`ouroboros.js:118, 148`) means two quick turns inside one step collapse to the last one, so a tight U-turn needs two ticks. The standard fix is a 2–3 entry input queue.
+- **Labyrinth:** ghosts all chase the player's tile with 18% random moves and random choices when frightened (`pacman.js:165-176`). There are no per-ghost targeting personalities and no scatter/chase mode cycle. Buffered turning is present.
+- **Tomb Robber:** jump only while `onGround` (`treasure.js:155`), with no coyote time and no jump buffering; no variable jump height (release doesn't cut `vy`).
+- **Excavation:** first click is safe (mines exclude the clicked cell and its neighbours, `minesweeper.js:63-65`). Chording (clicking a satisfied number) isn't implemented.
+- **Chess:** full legal rules (castling, en passant, promotion, check/mate/stalemate) and alpha-beta negamax at **fixed depth 3** (`chess.js:113-132, 240`), with capture-first ordering. No quiescence search, so it can blunder at the horizon.
+- **Dominion:** classic attacker/defender dice (`risk.js:33, 153-154`).
+- **Reliquary / Seeker:** event-driven DOM quizzes; no timing concerns.
+- **Verification:** every game except the fighter has a data-grounding verifier (`tools/verify-*.js`) run by `.github/workflows/verify.yml`. Only the fighter has a runtime play test (`tools/ci-play-fighter.js`). None tests input feel or timing.
+
+### Stage 3 summary
+
+- **Fighter:** solid core. It has a fixed step, real frame data, cancels, hitstop, per-god tuning and a throw tech. The gaps that matter most for feel are: no input buffer, attacks read outside the sim tick, OS key-repeat mashing, hits checked only on the first active frame, and no hurtboxes or hitstun data. All four gods share one move list.
+- **Ziggurat:** 7-bag ✅, but no SRS, **no lock delay**, **no DAS/ARR** (OS key repeat), no hold, a single-piece preview and a short well.
+- **Bug across three games:** Pong, Firmament and Tomb Robber run faster on high-refresh displays because their physics is per frame.
