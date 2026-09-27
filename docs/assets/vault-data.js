@@ -1580,19 +1580,261 @@ window.VAULT = {
         hint: "Clients were named by their mothers' names, as in many Jewish prayers for the sick. N stands for the names written on real bowls. The drawing is schematic."
       },
       study: { manifest: "", rights: "Images of bowls belong to their holding museums; the origins of many privately held bowls are disputed.", external: [ { label: "British Museum — incantation bowl", href: "https://www.britishmuseum.org/collection/object/W_1851-0903-3" } ] }
+    },
+    {
+      id: "v68", slug: "tjurunga", status: "published", pending: true,
+      era: "09-modern", year: 1899, chapters: ["ch61"],
+      title: "The Tjurunga of Central Australia", category: "relics",
+      source: "vault/v68-tjurunga.md",
+      held: "Held by their Arrernte and neighbouring custodians; many collected examples in museums (Strehlow Research Centre, Alice Springs, and elsewhere), with restricted access and returns under way",
+      dated: "Kept over many generations; most museum examples collected c. 1890s–1960s",
+      summary: "Sacred boards and stones of the Arrernte and their neighbours, which embody ancestral beings of the Dreaming and are seen only by those entitled to see them. Collectors took thousands into museums, and European thinkers built theories of religion on them. This entry tells their history but shows none of them.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "A history without pictures",
+        sub: "Tjurunga may be seen only by those with the right to see them, so this archive shows none. Follow instead how they left their Country, and how they are going back.",
+        events: [
+          { y: "Ancestral time", t: "Held on Country", d: "In Arrernte belief, tjurunga carry the power of ancestral beings of the Altyerre, the Dreaming, and are bound to particular places, songs and people. They are kept hidden and shown only in ceremony, to those entitled." },
+          { y: 1896, t: "The ceremonies watched", d: "At the Alice Springs telegraph station, Arrernte men perform a long cycle of ceremonies before the biologist Baldwin Spencer and the telegraph master Francis Gillen." },
+          { y: 1899, t: "Published", d: "Spencer and Gillen's The Native Tribes of Central Australia describes tjurunga ('churinga') in detail, with photographs. Many such images are now regarded as restricted." },
+          { y: 1912, t: "Into theory", d: "Émile Durkheim builds his account of the sacred and of totemism in The Elementary Forms of Religious Life largely on the Arrernte evidence of Spencer, Gillen and the missionary Carl Strehlow." },
+          { y: "1930s–1970s", t: "The Strehlow collection", d: "Carl Strehlow's son, the linguist T. G. H. Strehlow, records songs and ceremonies and receives many tjurunga from senior men, a collection that became the subject of long and bitter dispute." },
+          { y: "Today", t: "Going home", d: "The collection is held by the Strehlow Research Centre in Alice Springs under restricted access, and Australian and overseas museums are returning secret-sacred objects to their communities." }
+        ]
+      },
+      study: { manifest: "", rights: "Tjurunga are secret-sacred. By the wishes of their custodians this archive reproduces no image of them.", external: [ { label: "Strehlow Research Centre (Northern Territory Government)", href: "https://nt.gov.au/leisure/arts-culture-heritage/organisations-and-venues/museums-galleries-art-centres/alice-springs/strehlow-research-centre" } ] }
+    },
+    {
+      id: "v69", slug: "kumulipo", status: "published", pending: true,
+      era: "09-modern", year: 1889, chapters: ["ch63", "ch46"],
+      title: "The Kumulipo", category: "texts",
+      source: "vault/v69-kumulipo.md",
+      held: "Printed for King Kalākaua in 1889; Queen Liliʻuokalani's English translation published in 1897",
+      dated: "Composed in the 18th century for the chief Kalaninuiamamao; first printed 1889",
+      summary: "A Hawaiian creation chant of 2,102 lines in sixteen ages, from the first night and the birth of the coral polyp to the gods and the chiefs. Composed in honour of an 18th-century chief, printed by King Kalākaua in 1889, and translated by the deposed Queen Liliʻuokalani while she was held prisoner.",
+      artifact: {
+        type: "scroll", theme: "paper", dir: "ltr", title: "The first night",
+        sub: "The opening lines of the Kumulipo in Hawaiian, with Queen Liliʻuokalani's 1897 translation. Touch a line to read it.",
+        hint: "Drag the paper to travel along it, and touch a line to read its meaning. The spelling follows the printed text, without modern diacritics.",
+        columns: [
+          { kind: "latin", lang: "haw", heading: "The earth becomes hot", lines: [
+            [["O ke au i kahuli wela ka honua", "At the time when the earth became hot"]],
+            [["O ke au i kahuli lole ka lani", "At the time when the heavens turned about"]],
+            [["O ke au i kukaiaka ka la", "At the time when the sun was darkened"]],
+            [["E hoomalamalama i ka malama", "To cause the moon to shine"]],
+            [["O ke au o Makalii ka po", "The time of the rise of the Pleiades"]],
+            [["O ka walewale hookumu honua ia", "The slime, this was the source of the earth"]]
+          ], translation: "At the time when the earth became hot, when the heavens turned about, when the sun was darkened to cause the moon to shine, the time of the rise of the Pleiades: the slime, this was the source of the earth." },
+          { kind: "latin", lang: "haw", heading: "Darkness", lines: [
+            [["O ke kumu o ka lipo, i lipo ai", "The source of the darkness that made darkness"]],
+            [["O ke kumu o ka Po, i po ai", "The source of the night that made night"]],
+            [["O ka lipolipo, o ka lipolipo", "The intense darkness, the deep darkness"]],
+            [["O ka lipo o ka la, o ka lipo o ka po", "Darkness of the sun, darkness of the night"]],
+            [["Po wale hoi", "Nothing but night"]]
+          ], translation: "The source of the darkness that made darkness, the source of the night that made night; the intense darkness, the deep darkness; darkness of the sun, darkness of the night: nothing but night." },
+          { kind: "latin", lang: "haw", heading: "The night gives birth", lines: [
+            [["Hanau ka po", "The night gave birth"]],
+            [["Hanau Kumulipo i ka po, he kane", "Born was Kumulipo in the night, a male"]],
+            [["Hanau Poele i ka po, he wahine", "Born was Poʻele in the night, a female"]],
+            [["Hanau ka Uku-koakoa, hanau kana, he Akoakoa, puka", "Born was the coral polyp, born was the coral, came forth"]]
+          ], translation: "The night gave birth: born was Kumulipo ('source of deep darkness') in the night, a male; born was Poʻele ('dark night') in the night, a female. Born was the coral polyp; born was the coral; it came forth.",
+            note: "The first living thing born in the chant is the coral polyp. The first age goes on to the creatures of the sea and the plants of the land." }
+        ]
+      },
+      study: { manifest: "", rights: "The 1889 Hawaiian text and Liliʻuokalani's 1897 translation are in the public domain.", external: [ { label: "Liliʻuokalani's translation (Internet Sacred Text Archive)", href: "https://sacred-texts.com/pac/lku/index.htm" }, { label: "Kumulipo, Hawaiian text and translation (Kamehameha Schools)", href: "https://blogs.ksbe.edu/adakina/files/2008/02/kumulipo-text.pdf" } ] }
+    },
+    {
+      id: "v70", slug: "pictish-stones", status: "published", pending: true,
+      era: "06-early-medieval", year: 650, chapters: ["ch14", "ch22"],
+      title: "The Pictish Stones", category: "relics",
+      source: "vault/v70-pictish-stones.md",
+      held: "About 350 carved stones and objects, mostly in north-east Scotland (Aberlemno in place; Meigle Museum; the Museum of Scotland and others)",
+      dated: "c. 6th–9th century CE",
+      summary: "Standing stones of the Picts of early medieval Scotland, carved with a small set of symbols repeated across the country: crescents crossed by broken rods, double discs, combs and mirrors, and a strange beast no one can identify. Later stones add the Christian cross. What the symbols mean, and whether they are writing, is unknown.",
+      artifact: {
+        type: "cards", title: "Reading the symbols",
+        sub: "The same few symbols recur on stones across Pictland. Turn each card to see what is known, and what has been claimed.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "Crescent and V-rod", s: "the most common symbol", d: "A crescent crossed by a rod bent in a V, often with floral ends. It appears on stones and on silver objects. Its meaning is unknown." },
+          { t: "Double disc and Z-rod", s: "two circles joined", d: "Two discs joined by a bar and crossed by a rod bent like a Z. Common, often paired with the crescent. Unexplained." },
+          { t: "The Pictish Beast", s: "an unknown animal", d: "A creature with a long snout, a curling crest and scrolled feet, drawn with great consistency. It has been read as a dolphin, a water-horse or a mythical beast; none is proven." },
+          { t: "Mirror and comb", s: "often at the bottom", d: "Often added below other symbols. It has been read as marking a woman, or a status. The reading is debated." },
+          { t: "Class I, II and III", s: "Allen and Anderson, 1903", d: "Class I: symbols on undressed stones. Class II: symbols with a carved Christian cross on dressed slabs. Class III: crosses without the symbols. The classes roughly follow the conversion of the Picts." },
+          { t: "A written language?", s: "Lee, Jonathan and Ziman, 2010", d: "A statistical study argued that the symbols behave like a writing system. The linguist Richard Sproat and others argued that such tests cannot tell writing from other symbol systems. It remains open." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the stones belong to their holders and photographers.", external: [ { label: "Lee, Jonathan and Ziman, 'Pictish symbols revealed as a written language' (2010)", href: "https://royalsocietypublishing.org/doi/10.1098/rspa.2010.0041" } ] }
+    },
+    {
+      id: "v71", slug: "stecci", status: "published", pending: true,
+      era: "07-high-medieval", year: 1400, chapters: ["ch60", "ch17"],
+      title: "The Stećci: Medieval Tombstones of Bosnia", category: "relics",
+      source: "vault/v71-stecci.md",
+      held: "In place: about 70,000 at some 3,300 sites in Bosnia and Herzegovina, Croatia, Montenegro and Serbia (28 sites a UNESCO World Heritage Site)",
+      dated: "12th–16th century CE, most from the 14th–15th",
+      summary: "Great carved gravestones of medieval Bosnia and its neighbours, shaped as slabs, chests and gabled houses, carved with spirals, crescents, hunts, circle dances and a man with a raised hand. Long called the tombstones of the dualist Bogomil heretics, they were in fact raised by Catholic, Orthodox and Bosnian Church Christians alike.",
+      artifact: {
+        type: "cards", title: "What the stones show",
+        sub: "The main motifs carved on the stećci, and the myth that grew around them. Turn each card.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "The raised hand", s: "the best-known figure", d: "A man with an oversized open right hand, famously at Radimlja near Stolac. Read as a greeting, an oath or a mark of rank. Its meaning is not recorded." },
+          { t: "Spirals, rosettes and vines", s: "ornament", d: "Running spirals, rosettes and vine scrolls, shared with the wider art of the medieval Balkans." },
+          { t: "Crescent and star", s: "sky signs", d: "Crescents, stars and discs. Sometimes read as heavenly or even Islamic symbols, but they appear on stones from before the Ottoman conquest." },
+          { t: "The hunt and the kolo", s: "scenes of life", d: "Hunters with dogs and deer, tournaments, and the kolo, the circle dance still danced in the region. Perhaps scenes of life, perhaps of funeral rites." },
+          { t: "Inscriptions", s: "in Bosnian Cyrillic", d: "A minority carry epitaphs in bosančica, the Bosnian Cyrillic script, naming the dead, their families and the stone-carvers." },
+          { t: "'Bogomil tombstones'", s: "a 19th-century idea", d: "Once attributed to the dualist Bogomils. Modern scholarship and UNESCO describe them as used across the region's Christian communities: Catholic, Orthodox and the Bosnian Church." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the stones belong to their photographers.", external: [ { label: "UNESCO — Stećci Medieval Tombstone Graveyards", href: "https://whc.unesco.org/en/list/1504/" } ] }
+    },
+    {
+      id: "v72", slug: "book-of-shadows", status: "published", pending: true,
+      era: "09-modern", year: 1949, chapters: ["ch38"],
+      title: "The Book of Shadows", category: "manuscripts",
+      source: "vault/v72-book-of-shadows.md",
+      held: "Gerald Gardner's own manuscripts in private hands; copied by hand by generations of initiates",
+      dated: "Begun c. 1946–1949 as 'Ye Bok of ye Art Magical'; revised through the 1950s",
+      summary: "The handwritten ritual book of Gerald Gardner's witchcraft, copied by each new initiate, and the founding scripture of Wicca. Gardner presented its rites as those of a surviving ancient witch cult; historians have traced them to twentieth-century sources, from Crowley to folklore, and to Doreen Valiente's poetry.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "The making of a book",
+        sub: "How a private notebook became the scripture of a new religion.",
+        events: [
+          { y: 1939, t: "The claimed initiation", d: "Gardner later said he was initiated this year into a coven in the New Forest. Whether such a coven existed, and what it practised, is debated." },
+          { y: "c. 1946–49", t: "Ye Bok of ye Art Magical", d: "Gardner writes rituals, charms and notes in a leather-bound notebook in mock-archaic spelling, drawing on Crowley, ceremonial magic and folklore." },
+          { y: 1951, t: "The law repealed", d: "England's Witchcraft Act of 1735 is replaced by the Fraudulent Mediums Act. Gardner begins to publicise his witchcraft." },
+          { y: 1953, t: "Doreen Valiente", d: "Valiente is initiated. She persuades Gardner to cut much of the Crowley material and rewrites key texts, including the Charge of the Goddess, in her own words." },
+          { y: 1954, t: "Witchcraft Today", d: "Gardner's book presents the witch cult to the public. The Book of Shadows itself remains secret, copied by hand by each initiate." },
+          { y: 1964, t: "The Rede", d: "Valiente speaks the couplet 'Eight words the Wiccan Rede fulfil: an it harm none, do what ye will', the best-known form of Wicca's ethic." },
+          { y: 1999, t: "The historians' verdict", d: "Ronald Hutton's The Triumph of the Moon traces Wicca's sources and treats it as a new religion of the twentieth century." }
+        ]
+      },
+      study: { manifest: "", rights: "Gardnerian Books of Shadows are oath-bound; published versions differ and are not reproduced here.", external: [ { label: "The Doreen Valiente Foundation", href: "https://www.doreenvaliente.org/" } ] }
+    },
+    {
+      id: "v73", slug: "book-of-the-law", status: "published", pending: true,
+      era: "09-modern", year: 1904, chapters: ["ch37"],
+      title: "The Book of the Law", category: "manuscripts",
+      source: "vault/v73-book-of-the-law.md",
+      held: "The handwritten manuscript survives in private hands; facsimiles have been published since 1938",
+      dated: "Written in Cairo on 8, 9 and 10 April 1904",
+      summary: "Sixty-five handwritten pages that Aleister Crowley said were dictated to him in a Cairo hotel in April 1904 by a being called Aiwass, and the scripture of his religion, Thelema: 'Do what thou wilt shall be the whole of the Law.' The manuscript was lost and found again five years later in his attic, behind a pair of skis.",
+      artifact: {
+        type: "codex", theme: "vellum", title: "Open the book",
+        sub: "Three days, three voices, and the objects around them.",
+        pages: [
+          { h: "Liber AL vel Legis", t: "The Book of the Law, sub figura CCXX", big: true, n: "Its Latin title; 'AL' is also read as a Hebrew word for God, and CCXX (220) is the number of its verses." },
+          { h: "The stele", t: "In March 1904 Crowley's wife Rose led him to a painted funerary stele of the Egyptian priest Ankh-ef-en-Khonsu in the Cairo museum. Its inventory number was 666.", n: "Crowley called it the Stele of Revealing." },
+          { h: "8 April · Nuit", t: "\"Every man and every woman is a star.\"", n: "Chapter I, spoken by Nuit, goddess of the night sky (I:3)." },
+          { h: "9 April · Hadit", t: "The second chapter speaks as Hadit, the point at the centre of Nuit's infinite circle.", n: "Chapter II." },
+          { h: "10 April · Ra-Hoor-Khuit", t: "The third chapter speaks as Ra-Hoor-Khuit, a warlike form of Horus, announcing a new age, the Aeon of Horus.", n: "Chapter III." },
+          { h: "The Law", t: "\"Do what thou wilt shall be the whole of the Law.\" · \"Love is the law, love under will.\"", n: "I:40 and I:57." },
+          { h: "1909", t: "The lost manuscript is found in the attic of Boleskine House in Scotland while Crowley is looking for his skis. It is printed that year.", n: "The book's own story of its survival." }
+        ]
+      },
+      study: { manifest: "", rights: "The manuscript belongs to its holders; the 1904 text is widely published.", external: [ { label: "Liber Legis (Hermetic Library)", href: "https://hermetic.com/legis/index" } ] }
+    },
+    {
+      id: "v74", slug: "satanic-bible", status: "published", pending: true,
+      era: "09-modern", year: 1969, chapters: ["ch39"],
+      title: "The Satanic Bible", category: "texts",
+      source: "vault/v74-satanic-bible.md",
+      held: "Published by Avon Books, New York, 1969; in print ever since",
+      dated: "Published December 1969",
+      summary: "Anton LaVey's book of 1969, the founding text of the Church of Satan: an atheist philosophy of self-interest, indulgence and personal responsibility, in which Satan is a symbol, not a being. It borrows heavily from an 1896 tract and from John Dee's Enochian calls, and it remains in print.",
+      artifact: {
+        type: "cards", title: "Inside the book",
+        sub: "Its four books, its principles, and its sources. Turn each card.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "The Book of Satan", s: "Fire", d: "A fierce prose poem attacking conventional morality. Most of it is adapted from Might Is Right (1896), by the pseudonymous 'Ragnar Redbeard'." },
+          { t: "The Book of Lucifer", s: "Air", d: "LaVey's essays: Satan as a symbol of human nature, indulgence instead of abstinence, and a critique of Christianity." },
+          { t: "The Book of Belial", s: "Earth", d: "LaVey's account of ritual and 'greater magic', treated as a psychological tool." },
+          { t: "The Book of Leviathan", s: "Water", d: "Invocations and the Enochian calls of the Elizabethan magus John Dee, taken from Crowley's printing and rewritten with Satanic wording." },
+          { t: "The Nine Satanic Statements", s: "the opening creed", d: "Nine short statements beginning 'Satan represents indulgence instead of abstinence', the most-quoted part of the book." },
+          { t: "Satan as symbol", s: "an atheist religion", d: "LaVey did not worship a literal devil. The Church of Satan describes itself as atheistic; Satan stands for pride, carnality and rebellion." }
+        ]
+      },
+      study: { manifest: "", rights: "The Satanic Bible is in copyright; only brief phrases are quoted.", external: [ { label: "Church of Satan — 'Anton LaVey and the Right of Might'", href: "https://churchofsatan.com/anton-lavey-and-the-right-of-might/" } ] }
+    },
+    {
+      id: "v75", slug: "golden-plates", status: "published", pending: true,
+      era: "09-modern", year: 1827, chapters: ["ch35"],
+      title: "The Golden Plates", category: "relics",
+      source: "vault/v75-golden-plates.md",
+      held: "Not held: Joseph Smith said he returned them to the angel Moroni. The manuscripts of the Book of Mormon are held by the Church of Jesus Christ of Latter-day Saints",
+      dated: "Obtained, by Joseph Smith's account, on 22 September 1827",
+      summary: "Metal plates engraved in 'reformed Egyptian' that Joseph Smith said an angel led him to in a hill in western New York, and from which he dictated the Book of Mormon, published in 1830. Eleven witnesses signed statements that they had seen them. No one else has, and their existence and nature are matters of faith and debate.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "From the hill to the book",
+        sub: "The plates' story as the historical record tells it: what Smith and the witnesses said, and what survives.",
+        events: [
+          { y: 1823, t: "The angel", d: "Smith said the angel Moroni appeared to him on the night of 21–22 September and told him of a record buried in a nearby hill." },
+          { y: 1827, t: "The plates", d: "On 22 September, by his account, Smith received the plates, with instruments for translating them. He said he was forbidden to show them." },
+          { y: 1828, t: "The characters", d: "Martin Harris takes a sheet of characters copied from the plates to the classicist Charles Anthon in New York. Harris said Anthon confirmed them; Anthon later wrote that he had called them a hoax." },
+          { y: 1828, t: "The lost pages", d: "The first 116 manuscript pages of the translation, lent to Harris, are lost and never found." },
+          { y: 1829, t: "The witnesses", d: "Three witnesses state that an angel showed them the plates; eight more state that Smith showed them and they handled them. Their statements are printed in the book." },
+          { y: 1830, t: "The Book of Mormon", d: "Printed in March by E. B. Grandin at Palmyra, New York. Smith said the plates were then returned to the angel." },
+          { y: 2017, t: "The manuscript", d: "The Church of Jesus Christ of Latter-day Saints buys the printer's manuscript from the Community of Christ for $35 million." }
+        ]
+      },
+      study: { manifest: "", rights: "No plates exist to photograph. Book of Mormon manuscripts are published by the Joseph Smith Papers project.", external: [ { label: "The Church of Jesus Christ of Latter-day Saints — Gold Plates", href: "https://www.churchofjesuschrist.org/study/history/topics/gold-plates?lang=eng" }, { label: "The Joseph Smith Papers", href: "https://www.josephsmithpapers.org/" } ] }
+    },
+    {
+      id: "v76", slug: "bab-star-tablet", status: "published", pending: true,
+      era: "09-modern", year: 1848, chapters: ["ch65"],
+      title: "The Báb's Star Tablet", category: "manuscripts",
+      source: "vault/v76-bab-star-tablet.md",
+      held: "British Library, London (Or. 6887), among other star tablets of the Báb",
+      dated: "Written between 1844 and 1850, the years of the Báb's mission",
+      summary: "A tablet in the Báb's own hand, its lines of Arabic writing laid out as a five-pointed star, the haykal or 'temple', whose points stand for the head, hands and feet of the human body. The Báb, the forerunner of the Bahá'í Faith, wrote such stars as talismans, full of letter-numbers and derivatives of the word Bahá, 'glory'.",
+      artifact: {
+        type: "haykal", title: "A star of writing",
+        sub: "A schematic star tablet. Show the human form it stands for, then read its numbers.",
+        phrase: "بسم الله الأبهى · بهاء · أبهى · بهيّ ·", repeat: 5,
+        words: [["بسم", "in the name of"], ["الله", "God"], ["الأبهى", "the Most Glorious"], ["بهاء", "Bahá: glory"], ["أبهى", "abhá: most glorious"], ["بهيّ", "bahí: glorious"]],
+        body: ["head", "hand", "foot", "foot", "hand"],
+        intro: { t: "The haykal", s: "'temple'", d: "The Báb wrote some tablets in the shape of a five-pointed star, which he called the haykal, 'temple'. Its lines are made of writing, not ink rules." },
+        form: { t: "The human form", s: "head, hands and feet", d: "The five points stand for the head, the two hands and the two feet: the star is a body, a temple of the spirit. The Báb said such stars should be carried by men; for women he gave a design of circles." },
+        numbers: { t: "Huwa: 'He'", s: "5 and 6", d: "In the abjad system each Arabic letter has a number. Five lines make the star, and five is the letter hā' (ه). Together they enclose six chambers, and six is wāw (و). Hā' and wāw spell huwa (هو), 'He': God.",
+          lines: "Five lines make the frame of the star. Five is the value of the letter hā' (ه).", chambers: "The five lines enclose six chambers: five points and the pentagon at the centre. Six is the value of the letter wāw (و)." },
+        hint: "Schematic: the lines repeat an invocation and derivatives of the word Bahá, in the manner of the star tablets. It is not a transcription of the British Library tablet. No image of the Báb is shown, in keeping with Bahá'í practice."
+      },
+      study: { manifest: "", rights: "The tablet belongs to the British Library.", external: [ { label: "Bahá'í World News Service — British Library marks the bicentenary", href: "https://news.bahai.org/story/1358/" }, { label: "The significance of the Báb's Star Tablet", href: "https://bicentenary.bahai.org/the-bab/cards/article-significance-of-the-babs-star-tablet/" } ] }
+    },
+    {
+      id: "v77", slug: "haitian-veve", status: "published", pending: true,
+      era: "09-modern", year: 1900, chapters: ["ch40", "ch33"],
+      title: "The Haitian Vèvè", category: "texts",
+      source: "vault/v77-haitian-veve.md",
+      held: "Drawn anew for each ceremony and effaced during it; recorded in published collections such as Milo Rigaud's Vè-Vè (1974)",
+      dated: "A living practice; documented from the 19th and 20th centuries",
+      summary: "Designs traced on the temple floor in cornmeal, flour or ash by a Vodou priest or priestess to call a particular lwa, or spirit: a cross and cane for Legba, serpents for Damballa, a heart for Ezili. Each is made to be danced over and erased. Their origins in Kongo and Fon sign-traditions are still being traced.",
+      artifact: {
+        type: "veve", title: "Traced in cornmeal",
+        sub: "Choose a lwa and watch its vèvè drawn on the earthen floor.",
+        lwa: [
+          { k: "legba", name: "Legba", s: "keeper of the gate", d: "Legba's vèvè is drawn first, to open the way between the living and the lwa. Its cross marks the crossroads; the cane is the old man's crutch." },
+          { k: "damballa", name: "Damballa", s: "the serpent", d: "Damballa, the great serpent of the sky and waters, often paired with his wife Ayida-Wedo, the rainbow. His vèvè shows serpents rising around a pole or an egg." },
+          { k: "ezili", name: "Ezili Freda", s: "love and luxury", d: "Ezili Freda's vèvè is a heart, often filled with a lattice. The fierce Ezili Dantor's heart is pierced by a knife." },
+          { k: "baron", name: "Baron Samedi", s: "lord of the cemetery", d: "The Baron's vèvè raises a cross on a stepped tomb: he is the first man buried in every cemetery and head of the Gede spirits of the dead." }
+        ],
+        hint: "Schematic: vèvè differ from house to house and priest to priest. These follow common published forms and are not copies of any one drawing."
+      },
+      study: { manifest: "", rights: "Vèvè are sacred designs of a living religion; photographs of ceremonies belong to their participants.", external: [ { label: "Visit Haiti — a visual guide to vèvè", href: "https://visithaiti.com/art-culture/veve-vodou-symbols-cosmograms/" } ] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
   queue: [
-    { title: "The Churinga of Central Australia", category: "relics", note: "Sacred boards of the Arrernte, and why this archive will not show them." },
-    { title: "The Kumulipo", category: "texts", note: "The Hawaiian creation chant, written down for a king in 1889." },
-    { title: "The Pictish Stones", category: "relics", note: "Carved symbols no one can read, from early medieval Scotland." },
-    { title: "The Bogomil Tombstones (Stećci)", category: "relics", note: "Medieval Bosnian gravestones and the heresy myth around them." },
-    { title: "The Book of Shadows", category: "manuscripts", note: "Gerald Gardner's working book, and the making of Wicca." },
-    { title: "The Book of the Law", category: "manuscripts", note: "Crowley's Cairo manuscript of 1904 and the founding of Thelema." },
-    { title: "The Satanic Bible (1969)", category: "texts", note: "LaVey's text as a document of a modern religion." },
-    { title: "The Golden Plates", category: "relics", note: "Joseph Smith's plates, the witnesses, and the Book of Mormon manuscripts." },
-    { title: "The Báb's Tablets", category: "manuscripts", note: "Star-shaped talismans and the scripts of a new faith." },
-    { title: "The Haitian Vèvè", category: "texts", note: "Sacred ground drawings of Vodou, made to call the lwa." }
+    { title: "The Malleus Maleficarum", category: "texts", note: "The witch-hunters' manual of 1486, and how far it was used." },
+    { title: "The Zohar (Mantua printing)", category: "texts", note: "The first printing of Kabbalah's great book, and the fight over it." },
+    { title: "The Sefer Yetzirah", category: "texts", note: "The Book of Creation: letters and numbers as the building blocks of the world." },
+    { title: "The Mawangdui Silk Texts", category: "manuscripts", note: "The oldest manuscripts of the Daodejing, from a Han tomb." },
+    { title: "The Bardo Thödol", category: "texts", note: "The 'Tibetan Book of the Dead' as a rediscovered treasure text." },
+    { title: "The Codex Boturini", category: "manuscripts", note: "The Aztec migration from Aztlan, told in footprints." },
+    { title: "The Hinton St Mary Mosaic", category: "relics", note: "One of the earliest known pictures of Christ, on a Roman villa floor in Dorset." },
+    { title: "The Picatrix", category: "texts", note: "The Arabic manual of astral magic that reached Renaissance Europe." },
+    { title: "The Berlin Gold Hat", category: "relics", note: "A Bronze Age golden cone covered in calendar symbols." },
+    { title: "The Diwan Abatur", category: "manuscripts", note: "The Mandaean scroll of the soul's journey through the watch-houses." }
   ]
 };

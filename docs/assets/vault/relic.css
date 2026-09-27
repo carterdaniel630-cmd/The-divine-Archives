@@ -769,3 +769,29 @@
 .bowl-words { max-width: 36rem; margin: .8rem auto 0; text-align: center; }
 .bowl-words .g-line { font-family: "Noto Serif Hebrew", serif; font-size: 1.6rem; }
 @media (prefers-reduced-motion: reduce) { .bowl-inner, .bowl-svg { transition: none; } }
+
+/* ---------- haykal: the Báb's star tablet ---------- */
+.hk-stage { max-width: 27rem; margin: 0 auto; padding: .8rem; border-radius: 8px; background: radial-gradient(circle at 50% 45%, #f3e7cb 0%, #e3d0a6 62%, #c9ae7b 100%); box-shadow: inset 0 0 40px rgba(90,60,20,.35), 0 18px 40px rgba(0,0,0,.5); }
+.hk-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.hk-rule { stroke: rgba(92,52,20,.18); stroke-width: 13; stroke-linecap: round; }
+.hk-text { font-family: "Noto Naskh Arabic", "Amiri", "Scheherazade New", "Vault Arabic", serif; font-size: 11.5px; fill: #3a1f0c; transition: fill .4s; }
+.hk-text.on { fill: #8a3b12; }
+.hk-ch { fill: rgba(138,59,18,0); stroke: none; transition: fill .45s; }
+.hk-ch.on { fill: rgba(138,59,18,.16); }
+.hk-body { opacity: 0; transition: opacity .6s; }
+.hk-svg.show-body .hk-body { opacity: 1; }
+.hk-lab { font-family: var(--font-display); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; fill: #6b3a16; }
+.hk-num { opacity: 0; transition: opacity .8s; }
+.hk-svg.show-num .hk-num { opacity: 1; }
+.hk-big { font-family: "Noto Naskh Arabic", "Amiri", serif; font-size: 44px; fill: #8a3b12; paint-order: stroke; stroke: #f3e7cb; stroke-width: 6px; }
+.bowl-words .g-line[lang="ar"] { font-family: "Noto Naskh Arabic", "Amiri", serif; font-size: 1.5rem; }
+
+/* ---------- vèvè: cornmeal on an earthen floor ---------- */
+.vv-stage { max-width: 25rem; margin: 0 auto; }
+.vv-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 16px 30px rgba(0,0,0,.55)); }
+.vv-floor { fill: #3b2616; stroke: #5a3d24; stroke-width: 3; }
+.vv-line { fill: none; stroke: #efe2bf; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; opacity: .95; transition: stroke-dashoffset 1.4s ease-in-out; }
+.vv-svg.is-drawn .vv-line { stroke-dashoffset: 0; }
+.vv-grain { fill: #efe2bf; opacity: 0; transition: opacity 2.4s 1.2s; }
+.vv-svg.is-drawn .vv-grain { opacity: .5; }
+@media (prefers-reduced-motion: reduce) { .vv-line, .vv-grain, .hk-ch, .hk-num, .hk-body { transition: none; } }

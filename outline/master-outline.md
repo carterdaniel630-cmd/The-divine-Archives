@@ -219,7 +219,17 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 | V65 | The Staff God of Tiwanaku | Era V · Late Antiquity | The Inca (ch44) | `PUBLISHED — pending review` |
 | V66 | The Kebra Nagast | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); African Diaspora Religions (ch40); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
 | V67 | The Aramaic Incantation Bowls | Era V · Late Antiquity | Rabbinic Judaism (ch19); Mandaeans, Yazidis & Druze (ch56) | `PUBLISHED — pending review` |
-| — | Batch 8 queue: Churinga of Central Australia · Kumulipo · Pictish Stones · Bogomil Tombstones (Stećci) · Book of Shadows · Book of the Law · Satanic Bible (1969) · Golden Plates · Báb's Tablets · Haitian Vèvè | — | placed on publication | `not started` (queued) |
+| V68 | The Tjurunga of Central Australia | Era IX · The Modern Age | Aboriginal Australian Dreaming (ch61) | `PUBLISHED — pending review` |
+| V69 | The Kumulipo | Era IX · The Modern Age | Oceania (ch63); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
+| V70 | The Pictish Stones | Era VI · The Early Medieval | Celtic & Germanic (ch14); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
+| V71 | The Stećci: Medieval Tombstones of Bosnia | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); Gnosticism (ch17) | `PUBLISHED — pending review` |
+| V72 | The Book of Shadows | Era IX · The Modern Age | Wicca & Modern Paganism (ch38) | `PUBLISHED — pending review` |
+| V73 | The Book of the Law | Era IX · The Modern Age | Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
+| V74 | The Satanic Bible | Era IX · The Modern Age | Satanism (ch39) | `PUBLISHED — pending review` |
+| V75 | The Golden Plates | Era IX · The Modern Age | New Religious Movements (ch35) | `PUBLISHED — pending review` |
+| V76 | The Báb's Star Tablet | Era IX · The Modern Age | Bahá'í & New Faiths (ch65) | `PUBLISHED — pending review` |
+| V77 | The Haitian Vèvè | Era IX · The Modern Age | African Diaspora Religions (ch40); African Traditional Religion (ch33) | `PUBLISHED — pending review` |
+| — | Batch 9 queue: Malleus Maleficarum · Zohar (Mantua printing) · Sefer Yetzirah · Mawangdui Silk Texts · Bardo Thödol · Codex Boturini · Hinton St Mary Mosaic · Picatrix · Berlin Gold Hat · Diwan Abatur | — | placed on publication | `not started` (queued) |
 
 ## The Pantheon — directory of gods, spirits & mythic figures (added 2026-09-27)
 

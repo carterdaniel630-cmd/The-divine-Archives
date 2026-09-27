@@ -1268,6 +1268,112 @@
     root.classList.add("is-live");
   }
 
+  // ---------------------------------------------------------------- haykal (the Báb's star tablet): a five-pointed star written in lines of text
+  function haykal(root, item) {
+    var A = item.artifact, pn = panel(), status = el("p", { class: "g-status", role: "status", "aria-live": "polite" });
+    var C = { x: 200, y: 212 }, R = 176, r = R * 0.381966;
+    function pt(rad, deg) { var a = deg * Math.PI / 180; return [C.x + rad * Math.cos(a), C.y + rad * Math.sin(a)]; }
+    var tips = [0, 1, 2, 3, 4].map(function (k) { return pt(R, -90 + k * 72); });
+    var inner = [0, 1, 2, 3, 4].map(function (k) { return pt(r, -90 + 36 + k * 72); });
+    var svg = sv("svg", { viewBox: "0 0 400 400", class: "hk-svg", role: "img", "aria-label": "A five-pointed star formed by five lines of Arabic script" });
+    var defs = sv("defs"); svg.appendChild(defs);
+    // six chambers: five outer triangles and the inner pentagon
+    var chambers = [];
+    tips.forEach(function (t, k) {
+      var a = inner[(k + 4) % 5], b = inner[k];
+      var poly = sv("polygon", { points: [t, b, a].map(function (q) { return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" "), class: "hk-ch" });
+      chambers.push(poly); svg.appendChild(poly);
+    });
+    var mid = sv("polygon", { points: inner.map(function (q) { return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" "), class: "hk-ch" });
+    chambers.push(mid); svg.appendChild(mid);
+    // the five lines of the star, each written with the phrase
+    var lines = [];
+    for (var k = 0; k < 5; k++) {
+      var a0 = tips[k], a1 = tips[(k + 2) % 5], id = "hk-" + item.id + "-" + k;
+      // run every line left to right so its letters stand upright
+      var s0 = a0[0] <= a1[0] ? a0 : a1, s1 = s0 === a0 ? a1 : a0;
+      defs.appendChild(sv("path", { id: id, d: "M" + s0[0].toFixed(1) + " " + s0[1].toFixed(1) + " L" + s1[0].toFixed(1) + " " + s1[1].toFixed(1) }));
+      svg.appendChild(sv("path", { d: "M" + a0[0].toFixed(1) + " " + a0[1].toFixed(1) + " L" + a1[0].toFixed(1) + " " + a1[1].toFixed(1), class: "hk-rule" }));
+      var t = sv("text", { class: "hk-text", lang: "ar" }); var tp = sv("textPath", { href: "#" + id, startOffset: "2%" });
+      tp.textContent = (A.phrase + " ").repeat(A.repeat || 6); t.appendChild(tp); svg.appendChild(t); lines.push(t);
+    }
+    // the human form, shown on request
+    var body = sv("g", { class: "hk-body" });
+    (A.body || []).forEach(function (b, i) {
+      var q = i === 1 || i === 4 ? tips[i] : pt(R + 18, -90 + i * 72);
+      body.appendChild(sv("text", { x: q[0].toFixed(1), y: (q[1] + (i === 0 ? -2 : i === 1 || i === 4 ? -16 : 10)).toFixed(1), "text-anchor": "middle", class: "hk-lab", text: b }));
+    });
+    svg.appendChild(body);
+    var numG = sv("g", { class: "hk-num" });
+    numG.appendChild(sv("text", { x: 200, y: 222, "text-anchor": "middle", class: "hk-big", lang: "ar", text: "هو" }));
+    svg.appendChild(numG);
+    var bForm = el("button", { type: "button", "aria-pressed": "false", text: "The human form" });
+    var bNum = el("button", { type: "button", "aria-pressed": "false", text: "Read the numbers" });
+    var timers = [];
+    function clear() { timers.forEach(clearTimeout); timers = []; chambers.forEach(function (c) { c.classList.remove("on"); }); lines.forEach(function (l) { l.classList.remove("on"); }); svg.classList.remove("show-num"); }
+    bForm.addEventListener("click", function () {
+      var on = bForm.getAttribute("aria-pressed") !== "true"; bForm.setAttribute("aria-pressed", String(on)); svg.classList.toggle("show-body", on);
+      if (on) setPanel(pn, A.form.t, A.form.s, A.form.d); else setPanel(pn, A.intro.t, A.intro.s, A.intro.d);
+    });
+    bNum.addEventListener("click", function () {
+      var on = bNum.getAttribute("aria-pressed") !== "true"; bNum.setAttribute("aria-pressed", String(on)); clear();
+      if (!on) { setPanel(pn, A.intro.t, A.intro.s, A.intro.d); return; }
+      lines.forEach(function (l, i) { timers.push(setTimeout(function () { l.classList.add("on"); setPanel(pn, (i + 1) + " line" + (i ? "s" : ""), "the frame", A.numbers.lines); }, 350 * i)); });
+      chambers.forEach(function (c, i) { timers.push(setTimeout(function () { c.classList.add("on"); setPanel(pn, (i + 1) + " chamber" + (i ? "s" : ""), "the spaces inside", A.numbers.chambers); }, 1900 + 350 * i)); });
+      timers.push(setTimeout(function () { svg.classList.add("show-num"); setPanel(pn, A.numbers.t, A.numbers.s, A.numbers.d); }, 4200));
+    });
+    root.appendChild(el("div", { class: "relic-live" }, [
+      el("div", { class: "hk-stage" }, [svg]),
+      el("div", { class: "relic-ctrls" }, [bForm, bNum]), pn,
+      el("div", { class: "bowl-words" }, [glossLine(A.words, "ar", "rtl", status), status]),
+      el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    setPanel(pn, A.intro.t, A.intro.s, A.intro.d);
+  }
+
+  // ---------------------------------------------------------------- vèvè: cornmeal ground drawings that trace themselves
+  var VEVE = {
+    legba: ["M150 38 V262", "M58 150 H242", "M192 250 V76 q0 -20 -18 -20 q-14 0 -14 14", "M100 92 v20 M90 102 h20", "M100 188 v20 M90 198 h20", "M218 188 v20 M208 198 h20",
+      "M150 38 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0", "M150 262 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0", "M58 150 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0", "M242 150 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0",
+      "M150 136 L164 150 L150 164 L136 150 Z"],
+    damballa: ["M150 72 V262", "M150 50 m-13 0 a13 17 0 1 0 26 0 a13 17 0 1 0 -26 0", "M146 250 C104 240 150 204 114 182 C80 162 128 124 104 98 q-6 -8 -14 -4",
+      "M154 250 C196 240 150 204 186 182 C220 162 172 124 196 98 q6 -8 14 -4", "M96 262 H204", "M70 76 l6 -12 l6 12 l-12 -8 h12 Z", "M218 76 l6 -12 l6 12 l-12 -8 h12 Z", "M88 94 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0", "M212 94 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0"],
+    ezili: ["M150 252 C62 192 48 124 94 98 C120 84 144 96 150 120 C156 96 180 84 206 98 C252 124 238 192 150 252 Z",
+      "M96 110 L190 204 M84 138 L170 224 M116 100 L206 190 M140 102 L218 180", "M204 110 L110 204 M216 138 L130 224 M184 100 L94 190 M160 102 L82 180",
+      "M150 84 V40 M136 54 h28", "M92 90 c-18 -6 -30 -24 -16 -34 c10 -6 20 4 12 12", "M208 90 c18 -6 30 -24 16 -34 c-10 -6 -20 4 -12 12", "M150 252 v18 m-8 -6 h16"],
+    baron: ["M150 42 V204", "M108 92 H192", "M96 204 H204 V222 H96 Z", "M80 222 H220 V240 H80 Z", "M64 240 H236 V258 H64 Z", "M86 130 v22 M75 141 h22", "M214 130 v22 M203 141 h22", "M150 42 m-5 -6 l10 0"]
+  };
+  function veve(root, item) {
+    var A = item.artifact, pn = panel();
+    var svg = sv("svg", { viewBox: "0 0 300 300", class: "vv-svg", role: "img", "aria-label": "A vèvè traced in cornmeal on an earthen floor" });
+    var defs = sv("defs", {}, [sv("filter", { id: "vv-grain-" + item.id, x: "-10%", y: "-10%", width: "120%", height: "120%" }, [
+      sv("feTurbulence", { type: "fractalNoise", baseFrequency: "1.4", numOctaves: "2", seed: "7", result: "n" }),
+      sv("feDisplacementMap", { in: "SourceGraphic", in2: "n", scale: "2.4" })])]);
+    svg.appendChild(defs);
+    svg.appendChild(sv("circle", { cx: 150, cy: 150, r: 146, class: "vv-floor" }));
+    var g = sv("g", { class: "vv-draw", filter: "url(#vv-grain-" + item.id + ")" }); svg.appendChild(g);
+    var dust = sv("g", { class: "vv-dust" }); svg.appendChild(dust);
+    var btns = [];
+    function draw(L, b) {
+      btns.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      g.innerHTML = ""; dust.innerHTML = "";
+      (VEVE[L.k] || []).forEach(function (d, i) {
+        var p = sv("path", { d: d, class: "vv-line", pathLength: "1", style: "transition-delay:" + (i * 0.28).toFixed(2) + "s" });
+        g.appendChild(p);
+      });
+      for (var j = 0; j < 90; j++) { var a = Math.random() * 6.283, rr = 20 + Math.random() * 118; dust.appendChild(sv("circle", { cx: (150 + rr * Math.cos(a)).toFixed(1), cy: (150 + rr * Math.sin(a)).toFixed(1), r: (0.4 + Math.random() * 0.9).toFixed(2), class: "vv-grain" })); }
+      // start the tracing on the next frame so the transition runs
+      requestAnimationFrame(function () { requestAnimationFrame(function () { svg.classList.add("is-drawn"); }); });
+      svg.classList.remove("is-drawn");
+      setPanel(pn, L.name, L.s, L.d);
+    }
+    var row = el("div", { class: "relic-ctrls" });
+    A.lwa.forEach(function (L) { var b = el("button", { type: "button", "aria-pressed": "false", text: L.name }); b.addEventListener("click", function () { draw(L, b); }); btns.push(b); row.appendChild(b); });
+    root.appendChild(el("div", { class: "relic-live" }, [el("div", { class: "vv-stage" }, [svg]), row, pn, el("p", { class: "relic-hint", text: A.hint || "" })]));
+    root.classList.add("is-live");
+    draw(A.lwa[0], btns[0]);
+  }
+
   function init() {
     var V = window.VAULT || { items: [] };
     Array.prototype.forEach.call(document.querySelectorAll("[data-vault-relic]"), function (root) {
@@ -1297,6 +1403,8 @@
         else if (kind === "enclosure") enclosure(root, item);
         else if (kind === "khipu") khipu(root, item);
         else if (kind === "bowl") bowl(root, item);
+        else if (kind === "haykal") haykal(root, item);
+        else if (kind === "veve") veve(root, item);
       } catch (e) { /* leave the static fallback in place */ }
     });
   }

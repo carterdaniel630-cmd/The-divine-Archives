@@ -210,7 +210,7 @@ function head(title, desc, url, rel, type, extra) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
   <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=18" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=19" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -264,7 +264,7 @@ function itemPage(item) {
     sectionsHtml = sectionsHtml.replace(/<blockquote class="vault-text">[\s\S]*?<\/blockquote>/, (bq) =>
       `<section class="relic relic-tablet" data-vault-relic="${esc(item.id)}" data-relic-kind="tablet">\n` +
       `<h3 class="relic-title">${esc(art.title)}</h3><p class="relic-sub">${esc(art.sub)}</p>\n${bq}\n</section>`);
-  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber", "skydisc", "daycount", "gate", "cartouche", "oracle", "enclosure", "khipu", "bowl"].indexOf(art.type) !== -1) {
+  } else if (art && ["linen", "lance", "crown", "ark", "timeline", "codex", "cards", "inscription", "scales", "venus", "palimpsest", "cauldron", "chamber", "skydisc", "daycount", "gate", "cartouche", "oracle", "enclosure", "khipu", "bowl", "haykal", "veve"].indexOf(art.type) !== -1) {
     // static fallback: the object's own words (if any) and its documented stations
     const bits = [];
     if (art.declarations) bits.push("<ul>" + art.declarations.map((d) => `<li>${esc(d)}</li>`).join("") + "</ul>");
@@ -283,6 +283,8 @@ function itemPage(item) {
     if (art.record) bits.push("<ul>" + art.record.map((x) => `<li><span lang="zh-Hant">${esc(x.zh)}</span> ${esc(x.en)} (${esc(x.note)})</li>`).join("") + "</ul>");
     if (art.centre) bits.push("<ul>" + art.centre.concat(art.named || []).map((x) => `<li><strong>${esc(x.t)}</strong>: ${esc(x.d)}</li>`).join("") + "</ul>");
     if (art.cords) bits.push("<p>" + art.cords.map((x) => `${esc(x.label)}: ${esc(x.v)}`).join(" · ") + ` · top cord: ${art.cords.reduce((a, x) => a + x.v, 0)}</p>`);
+    if (art.lwa) bits.push("<ul>" + art.lwa.map((x) => `<li><strong>${esc(x.name)}</strong> (${esc(x.s)}): ${esc(x.d)}</li>`).join("") + "</ul>");
+    if (art.numbers) bits.push(`<p><strong>${esc(art.intro.t)}</strong>: ${esc(art.intro.d)}</p><p><strong>${esc(art.numbers.t)}</strong>: ${esc(art.numbers.d)}</p>`);
     if (art.spiral) bits.push(`<p class="s-static-he" lang="arc">${esc(art.spiral)}</p>`);
     if (art.stages) bits.push("<ol>" + art.stages.map((x) => `<li><strong>${esc(x.t)}</strong>: ${esc(x.d)}</li>`).join("") + "</ol>");
     if (art.layers) bits.push(art.layers.map((x) => `<p><strong>${esc(x.t)}</strong> (${esc(x.s)}): ${esc(x.d)}</p>`).join(""));
@@ -304,7 +306,7 @@ function itemPage(item) {
   const body = e.lead.join("\n") + "\n" + relicTop + studyBlock(item) + "\n" + sectionsHtml;
   // scripts the object needs: the base Hebrew/Phoenician/Egyptian set, plus any the item names (e.g. Arabic, Gurmukhi, Runic)
   const extraFonts = (art && art.fonts) || [];
-  const fonts = art && (["scroll", "ark", "inscription", "scales", "chamber", "cartouche", "bowl"].indexOf(art.type) !== -1 || art.lineLang === "he" || extraFonts.length)
+  const fonts = art && (["scroll", "ark", "inscription", "scales", "chamber", "cartouche", "bowl", "haykal"].indexOf(art.type) !== -1 || art.lineLang === "he" || extraFonts.length)
     ? `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&family=Noto+Sans+Egyptian+Hieroglyphs${extraFonts.map((f) => "&family=" + f).join("")}&display=swap" />\n`
     : "";
   return `${head(fullTitle, desc, url, "../", "article",
@@ -339,9 +341,9 @@ ${item.pending ? `      <div class="pending-banner"><strong>Recently added &midd
 ${footer("../")}
 </div>
 <script src="../assets/vendor/openseadragon/openseadragon.min.js" defer></script>
-<script src="../assets/vault-data.js?v=9" defer></script>
+<script src="../assets/vault-data.js?v=10" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
-<script src="../assets/vault/relic.js?v=12" defer></script>
+<script src="../assets/vault/relic.js?v=13" defer></script>
 <script src="../assets/ambient.js" defer></script>
 </body>
 </html>

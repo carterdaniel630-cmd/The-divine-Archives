@@ -462,13 +462,13 @@
     // ---------------------------------------------------------------- African Diaspora (ch40)
     { id: "papa-legba", n: "Papa Legba", t: "diaspora", k: "spirit", ch: ["ch40"], e: "Keeper of the gate",
       d: "The Vodou lwa who opens the gate between people and the spirits and is saluted first in every ceremony; he is related to Legba and Eshu of West Africa.",
-      p: "human hat staff - -" },
+      p: "human hat staff - -", v: ["v77"] },
     { id: "ezili-freda", n: "Ezili Freda", t: "diaspora", k: "spirit", ch: ["ch40"], e: "Lady of love",
       d: "Lwa of love, luxury and beauty in Haitian Vodou, often associated with images of the Virgin Mary. Her vèvè is a heart.",
-      p: "human crown heart - -" },
+      p: "human crown heart - -", v: ["v77"] },
     { id: "baron-samedi", n: "Baron Samedi", t: "diaspora", k: "spirit", ch: ["ch40", "ch47"], e: "Lord of the cemetery",
       d: "Head of the Gede, the lwa of death and the dead in Haitian Vodou, dressed in top hat and tails, bawdy, and also a healer.",
-      p: "human tophat staff earth -" },
+      p: "human tophat staff earth -", v: ["v77"] },
 
     // ---------------------------------------------------------------- Jewish, Christian & Islamic (ch10, ch16, ch19, ch21, ch26, ch39)
     { id: "michael", n: "Michael", t: "abrahamic", k: "spirit", ch: ["ch10", "ch16", "ch21"], e: "Who is like God?",
@@ -491,7 +491,7 @@
       p: "flame - - stars -" },
     { id: "satan", n: "Satan", t: "abrahamic", k: "spirit", ch: ["ch10", "ch16", "ch39"], e: "The adversary",
       d: "In the Hebrew Bible 'the satan' is an accuser in God's court (Job); later Jewish and Christian writings make him the chief enemy of God. Modern Satanists use him as a symbol of rebellion.",
-      p: "human horns - flames wings" },
+      p: "human horns - flames wings", v: ["v74"] },
 
     // ---------------------------------------------------------------- Gnostic (ch17, ch45)
     { id: "sophia", n: "Sophia", t: "gnostic", k: "primordial", ch: ["ch17", "ch45"], e: "Wisdom",
@@ -539,13 +539,13 @@
     // ---------------------------------------------------------------- Modern Pagan & Occult (ch37, ch38, ch39)
     { id: "horned-god", n: "The Horned God", t: "modern", k: "deity", ch: ["ch38"], e: "Lord of the wild",
       d: "The god of modern Wicca, lord of animals, the hunt and death, partner of the Goddess.",
-      p: "human antlers - tree -", c: "His form was shaped by Margaret Murray's theory of a surviving pagan witch cult, which historians now reject." },
+      p: "human antlers - tree -", v: ["v72"], c: "His form was shaped by Margaret Murray's theory of a surviving pagan witch cult, which historians now reject." },
     { id: "triple-goddess", n: "The Triple Goddess", t: "modern", k: "deity", ch: ["ch38", "ch48"], e: "Maiden, Mother, Crone",
       d: "The Goddess of modern Wicca and Paganism in threefold form, popularised by Robert Graves in The White Goddess (1948).",
-      p: "human triplemoon - moon -", c: "Ancient triple goddesses existed, but the idea of one universal Triple Goddess is modern." },
+      p: "human triplemoon - moon -", v: ["v72"], c: "Ancient triple goddesses existed, but the idea of one universal Triple Goddess is modern." },
     { id: "baphomet", n: "Baphomet", t: "modern", k: "spirit", ch: ["ch37", "ch39"], e: "The goat-headed idol",
       d: "Named in the 1307–1312 trials of the Knights Templar as an idol they supposedly worshipped. The familiar winged, goat-headed image was drawn by Éliphas Lévi in 1856 and later adopted by modern Satanism.",
-      p: "goat - torch stars wings", c: "The Templar confessions were extracted under torture, and historians do not accept that they worshipped any such idol." }
+      p: "goat - torch stars wings", v: ["v74"], c: "The Templar confessions were extracted under torture, and historians do not accept that they worshipped any such idol." }
   ];
 
   window.PANTHEON = { traditions: TRADITIONS, kinds: KINDS, figures: F };
