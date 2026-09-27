@@ -1,7 +1,10 @@
 /* ==========================================================================
    Cloudflare Pages Function — POST /api/subscribe
-   Backs the homepage email-capture form. Deploys automatically with the site
-   (it lives under the deployed /docs root as docs/functions/api/subscribe.js).
+   Backs the homepage email-capture form. Deploys automatically with the site:
+   `wrangler pages deploy docs` (run from the repo root by .github/workflows/
+   deploy.yml) compiles Functions from ./functions at the repo root. It used to sit
+   in docs/functions/, where Pages never picked it up and the source was served as
+   a plain static file (moved 2026-09-27).
 
    To actually STORE addresses, bind a KV namespace named SUBSCRIBERS to this
    Pages project (Cloudflare dashboard → the Pages project → Settings →

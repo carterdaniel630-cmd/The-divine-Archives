@@ -10,13 +10,13 @@ on:
     branches: ["**"]
     paths:
       - "docs/assets/games/data/**"
-      - "docs/assets/chapters.js"
+      - "content/chapters.js"
       - "tools/verify-*.js"
       - ".github/workflows/verify.yml"
   pull_request:
     paths:
       - "docs/assets/games/data/**"
-      - "docs/assets/chapters.js"
+      - "content/chapters.js"
       - "tools/verify-*.js"
       - ".github/workflows/verify.yml"
   workflow_dispatch: {}

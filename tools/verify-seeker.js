@@ -8,7 +8,7 @@ const ROOT=path.resolve(__dirname,"..");
 const noop={textContent:"",appendChild(){},setAttribute(){},style:{}};
 const doc={createElement(){return noop;},querySelectorAll(){return[];},addEventListener(){},head:noop,documentElement:noop,body:noop};
 const ctx={window:{},document:doc,console};vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(path.join(ROOT,"docs/assets/chapters.js"),"utf8"),ctx);
+vm.runInContext(fs.readFileSync(path.join(ROOT,"content/chapters.js"),"utf8"),ctx);
 const C=ctx.window.CHAPTERS;
 function norm(s){return String(s==null?"":s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();}
 function strip(h){return norm(h.replace(/<[^>]+>/g," ").replace(/&mdash;/g," ").replace(/&[a-z]+;/g," ").replace(/&#\d+;/g," "));}

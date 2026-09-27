@@ -521,7 +521,6 @@
 .scroll.theme-paper .scroll-tie { display: none; }
 .scroll.theme-paper .scroll-sheet { background-color: #d9bf82; }
 .scroll.theme-paper .s-col { background-image: repeating-linear-gradient(90deg, transparent 0 2.65rem, rgba(120,70,20,.18) 2.65rem calc(2.65rem + 1px)); background-position: 0 0; }
-.scroll.theme-paper .s-col.s-en { background-image: none; }
 .scroll.theme-paper .s-word { color: #1a0e05; }
 .scroll.theme-paper .s-word:hover, .scroll.theme-paper .s-word:focus-visible { color: #8a1c08; }
 

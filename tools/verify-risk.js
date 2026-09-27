@@ -7,7 +7,7 @@ const ROOT=path.resolve(__dirname,"..");
 const noop={textContent:"",appendChild(){},setAttribute(){},style:{}};
 const doc={createElement(){return noop;},querySelectorAll(){return[];},addEventListener(){},head:noop,documentElement:noop,body:noop};
 const ctx={window:{},document:doc,console};vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(path.join(ROOT,"docs/assets/chapters.js"),"utf8"),ctx);
+vm.runInContext(fs.readFileSync(path.join(ROOT,"content/chapters.js"),"utf8"),ctx);
 const C=ctx.window.CHAPTERS;
 function strip(h){return h.replace(/<[^>]+>/g," ").replace(/&mdash;/g,"—").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&amp;/g,"&").replace(/&[a-z]+;/g," ").replace(/&#\d+;/g," ").replace(/\s+/g," ").trim().toLowerCase();}
 const text={};Object.keys(C).forEach(id=>text[id]=strip((C[id]||{}).html||""));

@@ -1,3 +1,5 @@
+> **Retired (2026-09-27):** the full-body sprite renderer this spec fed was removed from `fighter.js`; the fighters are drawn by the skeletal cut-out rig from `docs/assets/games/art/parts/`. The sprites are kept here, undeployed, as source art.
+
 # Divine Casualties — Full-Body Pose-Set Spec
 
 The fighters are full-body painted sprites (sliced from the lineup art). One

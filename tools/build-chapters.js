@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* ==========================================================================
    THE DIVINE ARCHIVES — static chapter prerenderer
-   Reads the authoring sources (docs/assets/data.js, chapters.js, plates.js)
+   Reads the authoring sources (docs/assets/data.js, content/chapters.js, plates.js)
    and writes one fully-baked, crawlable static page per published chapter to
    docs/chapters/<id>.html — so a chapter page no longer ships the 404 KB
    chapters.js monolith, and its content/title/description are visible to
@@ -33,9 +33,11 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/chapters.js", "assets/plates.js", "assets/emblems.js", "assets/vault-data.js", "assets/pantheon-data.js", "assets/pantheon-art.js"]) {
+for (const f of ["assets/data.js", "assets/plates.js", "assets/emblems.js", "assets/vault-data.js", "assets/pantheon-data.js", "assets/pantheon-art.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
+// the chapter bodies live outside the deployed folder (no page loads them; only these tools do)
+vm.runInContext(fs.readFileSync(path.join(DOCS, "..", "content", "chapters.js"), "utf8"), sandbox, { filename: "content/chapters.js" });
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [] };
 const CHAPTERS = sandbox.window.CHAPTERS || {};
 const PLATES = sandbox.window.PLATES || {};
@@ -45,7 +47,7 @@ const VAULT = sandbox.window.VAULT || { items: [], categories: {} };
 const PANTHEON = sandbox.window.PANTHEON || { figures: [], traditions: {} };
 const PANTHEON_ART = sandbox.window.PANTHEON_ART;
 
-// --- helpers (mirroring archive.js) ---------------------------------------
+// --- helpers (mirroring the retired client-side renderers of archive.js) --
 const esc = (s) =>
   String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])

@@ -13,7 +13,7 @@ const doc = { createElement() { return noop; }, querySelectorAll() { return []; 
 const ctx = { window: {}, document: doc, console };
 vm.createContext(ctx);
 load("docs/assets/data.js", ctx);
-load("docs/assets/chapters.js", ctx);
+load("content/chapters.js", ctx);
 const A = ctx.window.ARCHIVE, C = ctx.window.CHAPTERS;
 const eraSlugs = new Set(A.eras.map(e => e.slug).concat(["theme"]));
 function strip(h) {

@@ -43,7 +43,6 @@ a.vault-card:hover, a.vault-card:focus-visible { border-color: var(--gold); tran
 .study button.linkish { background: none; border: 0; padding: 0; color: var(--gold); text-decoration: underline; }
 .study-folio { min-width: 8rem; max-width: 60vw; }
 .study-stage { position: relative; height: min(78vh, 52rem); background: #0b0703; border: 1px solid var(--line-soft); overflow: hidden; touch-action: none; }
-.study-stage.is-empty { height: 8rem; }
 .study-osd { position: absolute !important; inset: 0; width: 100%; height: 100%; }
 .study-catch { position: absolute; inset: 0; display: none; cursor: crosshair; z-index: 5; }
 .study-rect { position: absolute; display: none; border: 2px solid var(--gold-bright); background: rgba(231,198,128,.12); z-index: 6; pointer-events: none; }

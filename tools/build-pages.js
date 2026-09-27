@@ -47,16 +47,18 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/chapters.js", "assets/vault-data.js", "assets/pantheon-data.js"]) {
+for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/vault-data.js", "assets/pantheon-data.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
+// the chapter bodies live outside the deployed folder (no page loads them; only these tools do)
+vm.runInContext(fs.readFileSync(path.join(DOCS, "..", "content", "chapters.js"), "utf8"), sandbox, { filename: "content/chapters.js" });
 const A = sandbox.window.ARCHIVE || { eras: [], chapters: [], themes: [] };
 const EMBLEMS = sandbox.window.EMBLEMS || {};
 const PLATE_ART = sandbox.window.PLATE_ART || {};
 const CHAPTERS = sandbox.window.CHAPTERS || {};
 const VAULT = sandbox.window.VAULT || { items: [], categories: {} };
 
-// --- helpers (mirroring archive.js exactly) -------------------------------
+// --- helpers (mirroring the retired client-side renderers of archive.js) --
 const esc = (s) =>
   String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
@@ -81,7 +83,7 @@ function badge(status, pending) {
   const s = STATUS[status] || STATUS.planned;
   return '<span class="badge ' + s.cls + '">' + s.label + "</span>";
 }
-// tile thumbnail: chapter plate art, else era emblem (mirrors archive.js artFor)
+// tile thumbnail: chapter plate art, else era emblem (same rule the retired archive.js artFor used)
 function artFor(ch, era) {
   if (ch && PLATE_ART[ch.id]) return PLATE_ART[ch.id];
   if (era && EMBLEMS[era.slug]) return EMBLEMS[era.slug];
@@ -149,7 +151,7 @@ function themesFragment() {
   }).join("\n");
 }
 
-// traditions.html tiles (mirrors archive.js renderTraditions draw(), unfiltered)
+// traditions.html tiles (what the retired archive.js renderTraditions drew, unfiltered)
 function traditionsRows() {
   const rows = [];
   A.eras.forEach((era) => {
