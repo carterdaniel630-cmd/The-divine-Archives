@@ -4,7 +4,7 @@ name: Game runtime checks
 # it runs on every push/PR (a change anywhere can break a shared global). Two gates:
 #   1. no-undef lint over docs/assets/games — catches undeclared references like the
 #      `banner.t -= dt` regression (dt out of scope) before they ship.
-#   2. a headless play-to-KO of Theomachy that fails on ANY uncaught page error —
+#   2. a headless play-to-KO of Divine Casualties that fails on ANY uncaught page error —
 #      exercises the full match incl. the end-of-match banner/result path.
 
 on:
