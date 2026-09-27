@@ -246,6 +246,70 @@
       solveMid(p, H[0] - 6, H[1], "kneeB", "footB", IKREST.legB);
     }
 
+    /* ---- rig: anatomical limbs (drawing only) ----
+       The sprung pose above moves every joint on its own spring in x/y. That keeps the
+       hitboxes honest, but drawn directly it made the limbs rubbery: bones changed
+       length, hands slid on straight lines, and the elbow/knee solver took whichever
+       bend lay nearest, so a limb passing through straight could snap to the wrong side
+       and flip back. The drawn skeleton is now rebuilt from it:
+         - arms are animated in JOINT-ANGLE space: the target pose is solved into a
+           shoulder angle and an elbow angle, those angles are sprung (the forearm a
+           little looser, for whip), and the arm is rebuilt with fixed bone lengths, so
+           fists travel on arcs and the arm never stretches or shrinks;
+         - elbows and knees bend only the anatomical way (elbow behind, knee in front),
+           so they cannot flip;
+         - legs keep the sprung feet exactly, so a planted foot stays planted.
+       f.dpose (hitboxes) is not changed by any of this. */
+    function ikSigned(rx, ry, ex, ey, l1, l2, sgn) {
+      var dx = ex - rx, dy = ey - ry, d = Math.hypot(dx, dy) || 1e-4;
+      var dc = Math.max(Math.abs(l1 - l2) + 0.01, Math.min(d, l1 + l2 - 0.01));
+      var a = (l1 * l1 - l2 * l2 + dc * dc) / (2 * dc), h = Math.sqrt(Math.max(0, l1 * l1 - a * a));
+      var ux = dx / d, uy = dy / d, bx = rx + ux * a, by = ry + uy * a;
+      // cross(v, w) of the limb line v and the root->mid vector w picks the bend side
+      var m1 = [bx - uy * h, by + ux * h], m2 = [bx + uy * h, by - ux * h];
+      var c1 = dx * (m1[1] - ry) - dy * (m1[0] - rx);
+      return (c1 * sgn >= 0) ? m1 : m2;
+    }
+    var ELBOW = 1, KNEE = -1;                       // bend sides (see ikSigned)
+    function wrapA(a) { while (a > Math.PI) a -= TAU; while (a < -Math.PI) a += TAU; return a; }
+    function armAngles(root, end, L) {
+      var dT = Math.hypot(end[0] - root[0], end[1] - root[1]), reach = L[0] + L[1];
+      var st = clamp(dT / reach, 1, 1.08);           // a slight honest reach at full extension
+      var m = ikSigned(root[0], root[1], end[0], end[1], L[0] * st, L[1] * st, ELBOW);
+      var a1 = Math.atan2(m[1] - root[1], m[0] - root[0]);
+      var a2 = Math.atan2(end[1] - m[1], end[0] - m[0]);
+      return { a1: a1, r: wrapA(a2 - a1), st: st };
+    }
+    // which sign the elbow angle has when bent the anatomical way (from the rest stance)
+    var ELBOW_SIGN = (function () { var s = armAngles(BASE.shB, BASE.hnB, IKREST.armB).r; return s >= 0 ? 1 : -1; })();
+    var ARM_DYN = { up: { f: 6.0, z: 0.66 }, fore: { f: 7.6, z: 0.52 }, st: { f: 6, z: 0.9 } };
+    function angSpring(st, i, target, cfg, dt) {
+      var w = cfg.f * TAU, k = w * w, cc = 2 * cfg.z * w, e = wrapA(target - st[i]);
+      st[i + 1] += (k * e - cc * st[i + 1]) * dt; st[i] += st[i + 1] * dt;
+    }
+    function anatomicalPose(f, p, target) {
+      var d = clonePose(p), dt = Math.min(0.033, curReal), sub = dt > 0.02 ? 2 : 1, sdt = dt / sub;
+      if (!f.armSt) f.armSt = {};
+      ["F", "B"].forEach(function (k) {
+        var L = IKREST["arm" + k], want = armAngles(target["sh" + k], target["hn" + k], L);
+        var S = f.armSt[k] || (f.armSt[k] = [want.a1, 0, want.r, 0, want.st, 0]);
+        for (var i = 0; i < sub; i++) {
+          angSpring(S, 0, want.a1, ARM_DYN.up, sdt); angSpring(S, 2, want.r, ARM_DYN.fore, sdt);
+          var w = ARM_DYN.st.f * TAU; S[5] += (w * w * (want.st - S[4]) - 2 * ARM_DYN.st.z * w * S[5]) * sdt; S[4] += S[5] * sdt;
+        }
+        // the elbow may straighten fully but never bend backwards
+        var r = S[2]; if (r * ELBOW_SIGN < 0) { r = 0; S[3] *= -0.3; S[2] = 0; }
+        var sc = clamp(S[4], 1, 1.08), sh = d["sh" + k];
+        var el = [sh[0] + Math.cos(S[0]) * L[0] * sc, sh[1] + Math.sin(S[0]) * L[0] * sc];
+        d["el" + k] = el; d["hn" + k] = [el[0] + Math.cos(S[0] + r) * L[1] * sc, el[1] + Math.sin(S[0] + r) * L[1] * sc];
+      });
+      // legs: keep the sprung hips and feet (planted feet stay put); knees always bend forward
+      var H = d.hip, LF = IKREST.legF, LB = IKREST.legB;
+      d.kneeF = ikSigned(H[0] + 4, H[1], d.footF[0], d.footF[1], LF[0], LF[1], KNEE);
+      d.kneeB = ikSigned(H[0] - 6, H[1], d.footB[0], d.footB[1], LB[0], LB[1], KNEE);
+      return d;
+    }
+
     // advance a fighter's sprung pose toward `target`, returning positions {joint:[x,y]}
     function springPose(f, target) {
       if (!f.dyn) { f.dyn = {}; for (var k0 in target) f.dyn[k0] = [target[k0][0], target[k0][1], 0, 0]; }
@@ -332,6 +396,13 @@
       add(p, "chest", 0, -br * 0.5); add(p, "neck", 0, -br * 0.6); add(p, "head", 0, -br * 0.7);
       add(p, "shF", 0, -br * 0.4); add(p, "shB", 0, -br * 0.4); add(p, "hnF", br * 0.4, -br * 0.4);
       var st = f.state, pr = clamp(f.stTime / f.stDur, 0, 1);
+      // a raised guard for the neutral states: the hands come up in front of the chest
+      // instead of hanging splayed at the hips (the old scarecrow stance). Strikes start
+      // from BASE, so their authored keys are unchanged; the springs blend between them.
+      if (st === "idle" || st === "walk" || st === "jump" || (st === "block")) {
+        add(p, "hnF", -4, -30); add(p, "elF", -4, -6);
+        add(p, "hnB", 38, -34); add(p, "elB", 12, -4);
+      }
       if (st === "walk") {
         // Stride is tied to DISTANCE travelled, not to time — so the planted foot tracks
         // the ground and the god steps instead of moon-walking. The swing foot lifts, the
@@ -565,19 +636,28 @@
       // leg's reach, and a rubber-limb reads terribly; it stops short, the hitbox still reaches.
       var drawLen = (opt.rest && tl > opt.rest * 1.16) ? opt.rest * 1.16 : tl;
       var along = drawLen / nl, cross = opt.cross || along;
-      c.save(); c.translate(J0[0], J0[1]); c.rotate(ta + (opt.up ? Math.PI / 2 : -Math.PI / 2)); c.scale(cross, along);
+      c.save(); c.translate(J0[0], J0[1]); c.rotate(ta + (opt.up ? Math.PI / 2 : -Math.PI / 2)); c.scale(opt.flip ? -cross : cross, along);
       c.drawImage(img, -px, -py);
       // darken a back-side limb so it recedes behind the torso (source-atop keeps the alpha)
       if (opt.dark) { c.globalCompositeOperation = "source-atop"; c.fillStyle = "rgba(8,6,14," + opt.dark + ")"; c.fillRect(-px, -py, m.w, m.h); }
       c.restore();
     }
-    var RIG_CFG = { athena: { singleLeg: true, weapon: "spear", shield: "shield" } };
+    // Art orientation: the rig's fighters face +x. Zeus's profile art was painted facing
+    // LEFT (head and sandals), so every Zeus part is mirrored; Poseidon's and Hades's
+    // shin art has the toes pointing left, so their shins are mirrored. Without this they
+    // looked or stepped away from their opponent.
+    var RIG_CFG = {
+      athena: { singleLeg: true, weapon: "spear", shield: "shield" },
+      zeus: { mirror: true },
+      poseidon: { flipShins: true },
+      hades: { flipShins: true }
+    };
     function drawCutout(c, f, p, t) {
       var g = f.godId, P = PARTS[g], M = PARTMETA[g], cfg = RIG_CFG[g] || {};
       var nThighF = pick(P, "thighR", "thighA", "thigh"), nShinF = pick(P, "shinR", "shinA", "shin");
       var nUaF = pick(P, "upperArmR", "upperArm", "upperArmL"), nFaF = pick(P, "foreArmR", "foreArm", "foreArmL");
       var nUaB = pick(P, "upperArmL", "upperArm", "upperArmR"), nFaB = pick(P, "foreArmL", "foreArm", "foreArmR");
-      var single = !!cfg.singleLeg;
+      var single = !!cfg.singleLeg, mir = !!cfg.mirror, fShin = mir || !!cfg.flipShins;
       // body scale = torso bone length / torso art length; reused for head/aura/props
       var tm = M.torso, tnl = tm ? Math.sqrt(Math.pow(tm.w * 0.5 - tm.pivotX, 2) + Math.pow(tm.pivotY, 2)) : 1;
       var tl = Math.sqrt(Math.pow(p.neck[0] - p.hip[0], 2) + Math.pow(p.neck[1] - p.hip[1], 2));
@@ -595,24 +675,24 @@
       // BACK leg: drawn from the FRONT (armoured) leg art, darkened to recede — the source
       // paintings only armour the near leg, so reusing it keeps both legs consistent.
       var DK = 0.34, legBrest = IKREST.legB, armBrest = IKREST.armB;
-      if (single) skin(c, P, M, nThighF, hipB, p.footB, { dark: DK, rest: legBrest[0] + legBrest[1], cross: bs });
-      else { skin(c, P, M, nThighF, hipB, p.kneeB, { dark: DK, rest: legBrest[0], cross: bs }); skin(c, P, M, nShinF, p.kneeB, p.footB, { dark: DK, rest: legBrest[1], cross: bs }); }
+      if (single) skin(c, P, M, nThighF, hipB, p.footB, { dark: DK, rest: legBrest[0] + legBrest[1], cross: bs, flip: mir });
+      else { skin(c, P, M, nThighF, hipB, p.kneeB, { dark: DK, rest: legBrest[0], cross: bs, flip: mir }); skin(c, P, M, nShinF, p.kneeB, p.footB, { dark: DK, rest: legBrest[1], cross: bs, flip: fShin }); }
       // BACK arm keeps its own art (Hades bakes a weapon into the front forearm), just darkened
-      skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs });
+      skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs, flip: mir }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs, flip: mir });
       // shield rides the back arm (far side), tucked behind the torso
       if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield]; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -sh.width * 0.5, -sh.height * 0.5); c.restore(); }
       // TORSO + HEAD (head sized to the body, tilted with the neck). Torso drawn a
       // touch narrower than full body scale so the arms read beside it instead of
       // vanishing behind a full front-view chest.
-      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs * 0.82 });
+      skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs * 0.82, flip: mir });
       // head sized to the body but damped: the painted crops include a full mane/beard/
       // crown, so scaling them 1:1 to the (short) torso bone reads as a bobble-head.
-      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.58; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
+      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * 0.58; c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(mir ? -hs : hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
       // FRONT leg + arm (length-capped so a kick extends but never rubber-stretches)
       var legFrest = IKREST.legF, armFrest = IKREST.armF;
-      if (single) skin(c, P, M, nThighF, hipF, p.footF, { rest: legFrest[0] + legFrest[1], cross: bs });
-      else { skin(c, P, M, nThighF, hipF, p.kneeF, { rest: legFrest[0], cross: bs }); skin(c, P, M, nShinF, p.kneeF, p.footF, { rest: legFrest[1], cross: bs }); }
-      skin(c, P, M, nUaF, p.shF, p.elF, { rest: armFrest[0], cross: bs }); skin(c, P, M, nFaF, p.elF, p.hnF, { rest: armFrest[1], cross: bs });
+      if (single) skin(c, P, M, nThighF, hipF, p.footF, { rest: legFrest[0] + legFrest[1], cross: bs, flip: mir });
+      else { skin(c, P, M, nThighF, hipF, p.kneeF, { rest: legFrest[0], cross: bs, flip: mir }); skin(c, P, M, nShinF, p.kneeF, p.footF, { rest: legFrest[1], cross: bs, flip: fShin }); }
+      skin(c, P, M, nUaF, p.shF, p.elF, { rest: armFrest[0], cross: bs, flip: mir }); skin(c, P, M, nFaF, p.elF, p.hnF, { rest: armFrest[1], cross: bs, flip: mir });
       // spear couched in the front hand: the art has its point at the LEFT and a painted
       // grip-hand ~57% across, so mirror it (point leads toward the foe) and grip there.
       // The hold angle follows the forearm but is pulled toward horizontal, so it reads as
@@ -626,11 +706,11 @@
       // rig: drive the displayed skeleton toward the target with a damped spring,
       // so extremities snap out, overshoot and settle instead of sliding linearly,
       // then bow the elbows/knees so limbs bend on an arc instead of straight sticks.
-      var p = springPose(f, target);
-      shapeLimbs(p);
+      var p = anatomicalPose(f, springPose(f, target), target);
       // ease facing turns so the character flips smoothly rather than mirroring instantly
-      if (f.face == null) f.face = f.facing;
-      f.face += (f.facing - f.face) * 0.45;   // snappy turn, so a cross-up flips cleanly
+      // turn by flipping on the spot, as 2D fighters do. Easing the mirror scale through
+      // zero squashed the whole body paper-thin for a few frames: a cardboard cut-out turning.
+      f.face = f.facing;
       // renderer priority: skeletal cutout (real articulation) > flat painted sprite >
       // procedural body. All three read the same skeleton, which drives hitboxes.
       if (f.godId && PARTS_READY[f.godId]) { drawCutout(c, f, p, t); return; }
@@ -1640,6 +1720,7 @@
 
     /* ===================== AI ===================== */
     function think(f, other, dt) {
+      if (window.__FIGHT_TEST__ && window.__FOE_FROZEN) return;   // test-only: a still opponent for capture
       if (f.state === "hit" || f.state === "ko") return;
       if (f.stun > 0) return;
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
