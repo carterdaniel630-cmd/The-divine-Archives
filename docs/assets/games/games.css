@@ -466,12 +466,18 @@
 .tr-stage::before, .tr-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .tr-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .tr-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.tr-canvas { width:min(440px, 100%, 66dvh); height:auto; aspect-ratio:364/260; border:1px solid var(--line); border-radius:8px; background:#140d08; touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
+.tr-canvas { width:min(680px, 100%, calc((100dvh - 260px) * 1.6667)); min-width:min(300px, 100%); height:auto; aspect-ratio:480/288; border:1px solid var(--line); border-radius:8px; background:#140d08; touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
 .tr-toast { min-height:2.4rem; }
 .tr-controls { display:flex; align-items:center; justify-content:center; gap:1.2rem; margin:.5rem auto .2rem; }
 .tr-controls .ouro-key { width:3.2rem; height:3.2rem; }
 .tr-controls .tr-jump { width:4rem; color:var(--gold-bright); }
-@media (max-width:520px){ .tr-controls .ouro-key { width:3.6rem; height:3.4rem; } .tr-controls .tr-jump { width:4.6rem; } }
+.tr-controls .tr-whip { width:4rem; font-family:var(--font-display); font-size:.72rem; letter-spacing:.06em; color:var(--gold-bright); }
+.tr-gap { width:1.2rem; }
+.tr-hearts { color:#e0584a; letter-spacing:.08em; }
+.tr-lost { color:rgba(224,88,74,.25); }
+.tr-keys { text-align:center; }
+@media (hover:hover) and (pointer:fine) { .tr-controls { display:none; } }
+@media (max-width:520px){ .tr-controls { gap:.6rem; } .tr-controls .ouro-key { width:3.4rem; height:3.4rem; } .tr-controls .tr-jump, .tr-controls .tr-whip { width:4.2rem; } .tr-keys { display:none; } }
 /* narrative story cards between the four expedition sites */
 .tr-card { max-width:38rem; margin:.2rem auto; padding:.7rem .9rem; border:1px solid var(--line); border-radius:10px;
   background:linear-gradient(180deg, rgba(199,154,84,.06), rgba(0,0,0,.14)); font-size:.96rem; line-height:1.6; color:var(--ink, #cdbb96); }
@@ -567,7 +573,7 @@
   .ch-board { width:min(460px, 100%, 60dvh); }
   .pb-canvas { width:min(390px, 100%, 56dvh); }
   .rk-canvas { width:min(520px, 100%, 62dvh); }
-  .tr-canvas { width:min(620px, 100%, 66dvh); }
+  .tr-canvas { width:min(860px, 100%, calc((100dvh - 250px) * 1.6667)); }
   .pg-canvas { width:min(720px, 100%, 62dvh); }
   .fg-canvas { width:min(820px, 100%, 84dvh); }
 }
