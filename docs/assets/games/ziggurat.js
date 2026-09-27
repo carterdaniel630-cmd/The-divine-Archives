@@ -51,7 +51,7 @@
   });
 
   function mountGame(root, ctx) {
-    var COLS = 10, ROWS = 18, CELL = 22, W = COLS * CELL, H = ROWS * CELL;
+    var COLS = 10, ROWS = 20, CELL = 22, W = COLS * CELL, H = ROWS * CELL;
     var ZW = 150, ZH = 300;                 // monument canvas (logical)
     var css = getComputedStyle(document.documentElement);
     function v(name, fb) { return (css.getPropertyValue(name) || fb).trim(); }
@@ -63,25 +63,34 @@
     // piece palette (earthen clay/brick tones, on-theme)
     var TILE = [null, COL.goldB, COL.gold, COL.ember, v("--good", "#7e9e5c"), "#9c5a44", COL.ink, COL.parch];
 
-    var well, wctx, mon, mctx, nextCv, nctx, live, scoreEl, courseEl, levelEl, bestEl;
-    var st, timer = null, keyfn = null, touch = null, DPR = 1, tileCache = {}, wellBg = null;
+    var well, wctx, mon, mctx, nextCv, nctx, holdCv, hctx, live, scoreEl, courseEl, levelEl, bestEl;
+    var st, raf = null, keyfn = null, keyupfn = null, touch = null, DPR = 1, tileCache = {}, wellBg = null;
     var best = AG.bestScore("ziggurat");
 
-    /* ---------------- state ---------------- */
+    /* ---------------- state ----------------
+       Guideline mechanics: 7-bag, SRS rotation with wall kicks (separate I table),
+       rotate both ways, hold (once per piece), 3-piece preview, 0.5 s lock delay that
+       resets on a successful move/rotate (up to 15 times), DAS/ARR auto-shift, and the
+       guideline gravity curve. Everything runs off one rAF clock. */
+    var DAS = 0.167, ARR = 0.033, SOFT = 0.03, LOCK = 0.5, MAX_RESETS = 15;
     function emptyBoard() { var b = []; for (var y = 0; y < ROWS; y++) { b.push(new Array(COLS).fill(0)); } return b; }
     function newBag() { var a = BAG.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
     function newGame() {
-      st = { board: emptyBoard(), bag: newBag(), piece: null, next: null,
-        score: 0, lines: 0, level: 1, alive: true, paused: false, revealed: 0, collected: [] };
-      st.next = fromBag();
+      st = { board: emptyBoard(), bag: newBag(), piece: null, queue: [], hold: null, canHold: true,
+        score: 0, lines: 0, level: 1, alive: true, paused: false, revealed: 0, collected: [],
+        grav: 0, lockT: 0, resets: 0, das: { dir: 0, t: 0, arr: 0 }, softT: 0, dirty: true };
+      while (st.queue.length < 5) st.queue.push(fromBag());
       spawn();
     }
-    function fromBag() { if (!st.bag.length) st.bag = newBag(); var k = st.bag.pop(); var s = SHAPES[k]; return { m: s.m.map(function (r) { return r.slice(); }), c: s.c }; }
-    function spawn() {
-      st.piece = st.next; st.next = fromBag();
+    function makePiece(k) { var s0 = SHAPES[k]; return { k: k, m: s0.m.map(function (r) { return r.slice(); }), c: s0.c, r: 0 }; }
+    function fromBag() { if (!st.bag.length) st.bag = newBag(); return makePiece(st.bag.pop()); }
+    function spawn(piece) {
+      st.piece = piece || st.queue.shift(); if (!piece) st.queue.push(fromBag());
       st.piece.x = Math.floor((COLS - st.piece.m[0].length) / 2); st.piece.y = -topGap(st.piece.m);
+      st.grav = 0; st.lockT = 0; st.resets = 0; st.dirty = true;
       if (collides(st.piece, 0, 0)) { st.alive = false; return gameOver(); }
-      drawNext();
+      if (!collides(st.piece, 0, 1)) st.piece.y += 1;     // guideline: drop one row immediately on spawn
+      drawNext(); drawHold();
     }
     function topGap(m) { for (var r = 0; r < m.length; r++) for (var c = 0; c < m[r].length; c++) if (m[r][c]) return r; return 0; }
 
@@ -95,30 +104,53 @@
       }
       return false;
     }
-    function rot(m) { var n = m.length, out = []; for (var i = 0; i < n; i++) { out.push([]); for (var j = 0; j < n; j++) out[i].push(m[n - 1 - j][i]); } return out; }
-    function tryRotate() {
-      var m = rotate(st.piece.m);
-      var kicks = [0, -1, 1, -2, 2];
-      for (var i = 0; i < kicks.length; i++) { if (!collides(st.piece, kicks[i], 0, m)) { st.piece.m = m; st.piece.x += kicks[i]; return true; } }
+    function rotCW(m) { var n = m.length, out = []; for (var i = 0; i < n; i++) { out.push([]); for (var j = 0; j < n; j++) out[i].push(m[n - 1 - j][i]); } return out; }
+    // SRS kick tables, (x, y) with +y UP as published; applied as (x, -y) here
+    var KICK_JLSTZ = { "0>1": [[0,0],[-1,0],[-1,1],[0,-2],[-1,-2]], "1>0": [[0,0],[1,0],[1,-1],[0,2],[1,2]],
+      "1>2": [[0,0],[1,0],[1,-1],[0,2],[1,2]], "2>1": [[0,0],[-1,0],[-1,1],[0,-2],[-1,-2]],
+      "2>3": [[0,0],[1,0],[1,1],[0,-2],[1,-2]], "3>2": [[0,0],[-1,0],[-1,-1],[0,2],[-1,2]],
+      "3>0": [[0,0],[-1,0],[-1,-1],[0,2],[-1,2]], "0>3": [[0,0],[1,0],[1,1],[0,-2],[1,-2]] };
+    var KICK_I = { "0>1": [[0,0],[-2,0],[1,0],[-2,-1],[1,2]], "1>0": [[0,0],[2,0],[-1,0],[2,1],[-1,-2]],
+      "1>2": [[0,0],[-1,0],[2,0],[-1,2],[2,-1]], "2>1": [[0,0],[1,0],[-2,0],[1,-2],[-2,1]],
+      "2>3": [[0,0],[2,0],[-1,0],[2,1],[-1,-2]], "3>2": [[0,0],[-2,0],[1,0],[-2,-1],[1,2]],
+      "3>0": [[0,0],[1,0],[-2,0],[1,-2],[-2,1]], "0>3": [[0,0],[-1,0],[2,0],[-1,2],[2,-1]] };
+    function tryRotate(dir) {
+      var p = st.piece; if (p.k === "O") return false;
+      var m = dir > 0 ? rotCW(p.m) : rotCW(rotCW(rotCW(p.m))), to = (p.r + (dir > 0 ? 1 : 3)) % 4;
+      var kicks = (p.k === "I" ? KICK_I : KICK_JLSTZ)[p.r + ">" + to];
+      for (var i = 0; i < kicks.length; i++) {
+        var dx = kicks[i][0], dy = -kicks[i][1];
+        if (!collides(p, dx, dy, m)) { p.m = m; p.x += dx; p.y += dy; p.r = to; return true; }
+      }
       return false;
     }
-    function rotate(m) { return rot(m); }
-
-    function move(dx) { if (!active()) return; if (!collides(st.piece, dx, 0)) { st.piece.x += dx; draw(); } }
-    function softDrop() { if (!active()) return; if (!collides(st.piece, 0, 1)) { st.piece.y += 1; st.score += 1; scoreEl.textContent = st.score; draw(); resetTimer(); } else lock(); }
+    function grounded() { return collides(st.piece, 0, 1); }
+    // a successful move/rotate while resting on the stack buys more lock time (capped)
+    function moved() { st.dirty = true; if (grounded() && st.resets < MAX_RESETS) { st.lockT = 0; st.resets++; } }
+    function move(dx) { if (!active()) return false; if (!collides(st.piece, dx, 0)) { st.piece.x += dx; moved(); return true; } return false; }
+    function softStep() { if (!active()) return; if (!collides(st.piece, 0, 1)) { st.piece.y += 1; st.score += 1; scoreEl.textContent = st.score; st.grav = 0; st.dirty = true; } }
     function hardDrop() { if (!active()) return; var d = 0; while (!collides(st.piece, 0, d + 1)) d++; st.piece.y += d; st.score += d * 2; lock(); }
-    function doRotate() { if (!active()) return; if (tryRotate()) draw(); }
+    function doRotate(dir) { if (!active()) return; if (tryRotate(dir || 1)) moved(); }
+    function doHold() {
+      if (!active() || !st.canHold) return;
+      var cur = makePiece(st.piece.k), prev = st.hold; st.hold = cur; st.canHold = false;
+      if (prev) spawn(makePiece(prev.k)); else spawn();
+      st.canHold = false; drawHold();
+    }
     function active() { return st && st.alive && !st.paused && st.piece; }
 
     function lock() {
-      var m = st.piece.m, col = st.piece.c;
+      var m = st.piece.m, col = st.piece.c, above = true;
       for (var r = 0; r < m.length; r++) for (var c = 0; c < m[r].length; c++) {
-        if (m[r][c] && st.piece.y + r >= 0) st.board[st.piece.y + r][st.piece.x + c] = col;
+        if (!m[r][c]) continue;
+        if (st.piece.y + r >= 0) { st.board[st.piece.y + r][st.piece.x + c] = col; above = false; }
       }
+      if (above) { st.alive = false; return gameOver(); }       // lock out: the whole piece settled above the well
       clearLines();
+      st.canHold = true;
       spawn();
+      if (!st.alive) return;
       draw(); drawMonument();
-      resetTimer();
     }
 
     function clearLines() {
@@ -169,25 +201,29 @@
         '<div class="zig-stage">' +
           '<div class="zig-well-wrap"><canvas class="zig-well" width="' + W + '" height="' + H + '" role="img" aria-label="Ziggurat builder well"></canvas></div>' +
           '<div class="zig-side">' +
-            '<div class="zig-next"><span class="zig-next-label">Next</span><canvas class="zig-next-cv" width="80" height="80" aria-hidden="true"></canvas></div>' +
+            '<div class="zig-queues"><div class="zig-next zig-hold"><span class="zig-next-label">Hold</span><canvas class="zig-hold-cv" width="80" height="80" aria-hidden="true"></canvas></div>' +
+            '<div class="zig-next"><span class="zig-next-label">Next</span><canvas class="zig-next-cv" width="80" height="200" aria-hidden="true"></canvas></div></div>' +
             '<div class="zig-mon-wrap"><canvas class="zig-mon" width="' + ZW + '" height="' + ZH + '" role="img" aria-label="The rising ziggurat"></canvas></div>' +
           "</div>" +
         "</div>" +
         '<p class="ouro-toast zig-toast" aria-live="polite"></p>' +
         '<div class="ouro-controls">' +
           '<div class="zig-pad">' +
-            '<button class="ouro-key zig-rot" data-a="rotate" aria-label="Rotate">⟳</button>' +
+            '<button class="ouro-key zig-rot" data-a="rotate" aria-label="Rotate clockwise">⟳</button>' +
+            '<button class="ouro-key zig-ccw" data-a="ccw" aria-label="Rotate counter-clockwise">⟲</button>' +
+            '<button class="ouro-key zig-hold-btn" data-a="hold" aria-label="Hold piece">Hold</button>' +
             '<button class="ouro-key zig-left" data-a="left" aria-label="Move left">◀</button>' +
             '<button class="ouro-key zig-pause" data-a="pause" aria-label="Pause">‖</button>' +
             '<button class="ouro-key zig-right" data-a="right" aria-label="Move right">▶</button>' +
             '<button class="ouro-key zig-down" data-a="soft" aria-label="Soft drop">▼</button>' +
             '<button class="ouro-key zig-drop" data-a="hard" aria-label="Hard drop">⤓</button>' +
           "</div>" +
-          '<p class="rq-note">← → move · ↑/X rotate · ↓ soft drop · space hard drop · P pause</p>' +
+          '<p class="rq-note">← → move (hold to slide) · ↑/X rotate · Z rotate back · ↓ soft drop · space hard drop · C/Shift hold · P pause</p>' +
         "</div>";
       well = root.querySelector(".zig-well"); wctx = well.getContext("2d");
       mon = root.querySelector(".zig-mon"); mctx = mon.getContext("2d");
       nextCv = root.querySelector(".zig-next-cv"); nctx = nextCv.getContext("2d");
+      holdCv = root.querySelector(".zig-hold-cv"); hctx = holdCv.getContext("2d");
       // backing store matches the displayed size, so the larger board stays crisp
       var shownW = well.getBoundingClientRect().width || W;
       DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shownW / W);
@@ -281,13 +317,25 @@
       }
     }
 
+    function drawMini(c, pc, cx0, cy0, sz, dim) {
+      var m = pc.m, rows = [], r, cc;
+      for (r = 0; r < m.length; r++) if (m[r].some(function (v2) { return v2; })) rows.push(r);
+      var minC = 9, maxC = 0; for (r = 0; r < m.length; r++) for (cc = 0; cc < m[r].length; cc++) if (m[r][cc]) { minC = Math.min(minC, cc); maxC = Math.max(maxC, cc); }
+      var w = (maxC - minC + 1) * sz, h = rows.length * sz, ox = cx0 - w / 2, oy = cy0 - h / 2;
+      c.globalAlpha = dim ? 0.35 : 1;
+      rows.forEach(function (rr, i) { for (var k = minC; k <= maxC; k++) if (m[rr][k]) tile(c, ox + (k - minC) * sz, oy + i * sz, sz, pc.c); });
+      c.globalAlpha = 1;
+    }
     function drawNext() {
       if (!nctx) return;
-      nctx.clearRect(0, 0, 80, 80);
-      var m = st.next.m, n = m.length, sz = 16, offx = (80 - m[0].length * sz) / 2, offy = (80 - n * sz) / 2;
-      for (var r = 0; r < n; r++) for (var c = 0; c < m[r].length; c++) if (m[r][c]) tile(nctx, offx + c * sz, offy + r * sz, sz, st.next.c);
+      nctx.clearRect(0, 0, 80, 200);
+      st.queue.slice(0, 3).forEach(function (pc, i) { drawMini(nctx, pc, 40, 36 + i * 64, i === 0 ? 16 : 13); });
     }
-
+    function drawHold() {
+      if (!hctx) return;
+      hctx.clearRect(0, 0, 80, 80);
+      if (st.hold) drawMini(hctx, st.hold, 40, 40, 15, !st.canHold);
+    }
     // the rising monument: cleared courses build a broad stepped ziggurat.
     // A tier is added every PER_TIER courses (capped), and the current tier
     // grows in height as its courses are laid — so the silhouette always reads
@@ -343,49 +391,83 @@
     }
 
     /* ---------------- input ---------------- */
-    var DIRS = { left: function () { move(-1); }, right: function () { move(1); }, rotate: doRotate, soft: softDrop, hard: hardDrop, pause: togglePause };
+    var held = { soft: false };
+    function press(dir) { if (!active()) return; move(dir); st.das = { dir: dir, t: 0, arr: 0 }; }
+    function release(dir) { if (st && st.das.dir === dir) st.das = { dir: 0, t: 0, arr: 0 }; }
+    var DIRS = { left: function () { move(-1); }, right: function () { move(1); }, rotate: function () { doRotate(1); }, ccw: function () { doRotate(-1); },
+      soft: function () { softStep(); }, hard: hardDrop, hold: doHold, pause: togglePause };
     function wireControls() {
       root.querySelectorAll(".zig-pad .ouro-key").forEach(function (b) {
-        b.addEventListener("click", function () { var a = b.getAttribute("data-a"); if (DIRS[a]) DIRS[a](); });
+        var a = b.getAttribute("data-a");
+        if (a === "left" || a === "right") {           // held pad buttons auto-shift like the keys
+          var dir = a === "left" ? -1 : 1;
+          var dn = function (e) { e.preventDefault(); press(dir); }, up = function () { release(dir); };
+          b.addEventListener("pointerdown", dn); b.addEventListener("pointerup", up); b.addEventListener("pointerleave", up); b.addEventListener("pointercancel", up);
+        } else if (a === "soft") {
+          b.addEventListener("pointerdown", function (e) { e.preventDefault(); softStep(); held.soft = true; });
+          ["pointerup", "pointerleave", "pointercancel"].forEach(function (ev) { b.addEventListener(ev, function () { held.soft = false; }); });
+        } else b.addEventListener("click", function () { if (DIRS[a]) DIRS[a](); });
       });
       keyfn = function (e) {
-        var k = e.key.toLowerCase();
-        if (k === "arrowleft" || k === "a") { e.preventDefault(); move(-1); }
-        else if (k === "arrowright" || k === "d") { e.preventDefault(); move(1); }
-        else if (k === "arrowup" || k === "x" || k === "w") { e.preventDefault(); doRotate(); }
-        else if (k === "z") { e.preventDefault(); doRotate(); }
-        else if (k === "arrowdown" || k === "s") { e.preventDefault(); softDrop(); }
-        else if (k === " " || k === "spacebar") { e.preventDefault(); hardDrop(); }
-        else if (k === "p") { e.preventDefault(); togglePause(); }
+        var k = e.key.toLowerCase(), code = e.code;
+        var mapped = true;
+        if (k === "arrowleft" || k === "a") { if (!e.repeat) press(-1); }
+        else if (k === "arrowright" || k === "d") { if (!e.repeat) press(1); }
+        else if (k === "arrowup" || k === "x" || k === "w") { if (!e.repeat) doRotate(1); }
+        else if (k === "z" || k === "control" || k === "q") { if (!e.repeat) doRotate(-1); }
+        else if (k === "arrowdown" || k === "s") { if (!e.repeat) { softStep(); held.soft = true; } }
+        else if (k === " " || k === "spacebar") { if (!e.repeat) hardDrop(); }
+        else if (k === "c" || k === "shift" || code === "ShiftLeft") { if (!e.repeat) doHold(); }
+        else if (k === "p") { if (!e.repeat) togglePause(); }
+        else mapped = false;
+        if (mapped) e.preventDefault();
       };
-      document.addEventListener("keydown", keyfn);
+      keyupfn = function (e) {
+        var k = e.key.toLowerCase();
+        if (k === "arrowleft" || k === "a") release(-1);
+        else if (k === "arrowright" || k === "d") release(1);
+        else if (k === "arrowdown" || k === "s") held.soft = false;
+      };
+      document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyupfn);
       // touch: horizontal swipe = move, down swipe = hard drop, tap = rotate
       well.addEventListener("touchstart", function (e) { var t = e.changedTouches[0]; touch = { x: t.clientX, y: t.clientY, t: Date.now() }; }, { passive: true });
       well.addEventListener("touchend", function (e) {
         if (!touch) return; var t = e.changedTouches[0]; var dx = t.clientX - touch.x, dy = t.clientY - touch.y;
-        if (Math.abs(dx) < 14 && Math.abs(dy) < 14 && Date.now() - touch.t < 300) { doRotate(); }
-        else if (Math.abs(dx) > Math.abs(dy)) { move(dx > 0 ? 1 : -1); }
-        else if (dy > 24) { hardDrop(); } else if (dy < -14) { doRotate(); }
+        if (Math.abs(dx) < 14 && Math.abs(dy) < 14 && Date.now() - touch.t < 300) { doRotate(1); }
+        else if (Math.abs(dx) > Math.abs(dy)) { var n = Math.max(1, Math.round(Math.abs(dx) / 26)); for (var i = 0; i < n; i++) move(dx > 0 ? 1 : -1); }
+        else if (dy > 24) { hardDrop(); } else if (dy < -14) { doHold(); }
         touch = null;
       }, { passive: true });
     }
-
-    function togglePause() { if (!st || !st.alive) return; st.paused = !st.paused; live.textContent = st.paused ? "Paused." : ""; if (!st.paused) loop(); else if (timer) { clearTimeout(timer); timer = null; } }
+    function togglePause() { if (!st || !st.alive) return; st.paused = !st.paused; live.textContent = st.paused ? "Paused." : ""; if (!st.paused) loop(); }
 
     /* ---------------- loop ---------------- */
-    function dropMs() { return Math.max(120, 820 - (st.level - 1) * 70); }
-    function resetTimer() { if (timer) { clearTimeout(timer); timer = null; } if (st && st.alive && !st.paused) loop(); }
-    function loop() {
-      if (!st.alive || st.paused) return;
-      timer = setTimeout(function () {
-        if (!st || !st.alive || st.paused) return;
-        if (!collides(st.piece, 0, 1)) { st.piece.y += 1; draw(); loop(); }
-        else { lock(); }
-      }, dropMs());
+    // guideline gravity: seconds per row = (0.8 - (level-1)*0.007)^(level-1)
+    function gravSec() { var L = Math.min(st.level, 20) - 1; return Math.max(0.017, Math.pow(0.8 - L * 0.007, L)); }
+    var lastT = 0;
+    function loop() { lastT = performance.now(); if (!raf) raf = requestAnimationFrame(tick); }
+    function tick(ts) {
+      raf = null;
+      if (!st || !st.alive) return;
+      var dt = Math.min(0.1, (ts - lastT) / 1000 || 0); lastT = ts;
+      if (!st.paused) {
+        // auto-shift: one step on press, then after DAS repeat every ARR
+        var d = st.das;
+        if (d.dir) { d.t += dt; if (d.t >= DAS) { d.arr += dt; while (d.arr >= ARR) { d.arr -= ARR; if (!move(d.dir)) { d.arr = 0; break; } } } }
+        if (held.soft) { st.softT += dt; while (st.softT >= SOFT) { st.softT -= SOFT; softStep(); } } else st.softT = 0;
+        if (grounded()) {
+          st.lockT += dt; if (st.lockT >= LOCK) lock();
+        } else {
+          st.grav += dt; var g = gravSec();
+          while (st.grav >= g && !grounded()) { st.grav -= g; st.piece.y += 1; st.dirty = true; if (grounded() && st.resets > 0) break; }
+          if (grounded()) st.grav = 0;
+        }
+      }
+      if (st.alive && st.dirty) { st.dirty = false; draw(); }
+      if (st.alive) raf = requestAnimationFrame(tick);
     }
-
     function gameOver() {
-      st.alive = false; if (timer) { clearTimeout(timer); timer = null; }
+      st.alive = false; if (raf) { cancelAnimationFrame(raf); raf = null; }
       var newBest = false; if (st.score > best) { best = st.score; newBest = true; }
       AG.addHighScore("ziggurat", { score: st.score, lines: st.lines });
       var list = st.collected.map(function (f) {
@@ -405,20 +487,22 @@
 
     /* ---------------- boot ---------------- */
     function boot() {
-      if (timer) { clearTimeout(timer); timer = null; }
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
       shell(); newGame(); draw(); drawMonument(); drawNext();
       live.textContent = "Complete a row to lay the first course of the temple-mountain.";
       loop();
     }
 
+    if (window.__ZIG_TEST) window.__zig = function () { return st && { x: st.piece && st.piece.x, y: st.piece && st.piece.y, k: st.piece && st.piece.k, r: st.piece && st.piece.r, hold: st.hold && st.hold.k, queue: st.queue.slice(0, 3).map(function (q) { return q.k; }), alive: st.alive, lines: st.lines, filled: st.board.reduce(function (a, row) { return a + row.filter(Boolean).length; }, 0) }; };
     root.innerHTML = '<div class="rq-loading">Wetting the clay…</div>';
     loadFacts().then(boot).catch(function () {
       root.innerHTML = '<p class="game-placeholder">The courses could not be loaded. Please reload the page.</p>';
     });
 
     return function cleanup() {
-      if (timer) { clearTimeout(timer); timer = null; }
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
       if (keyfn) document.removeEventListener("keydown", keyfn);
+      if (keyupfn) document.removeEventListener("keyup", keyupfn);
       if (st) st.alive = false;
     };
   }
