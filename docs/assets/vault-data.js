@@ -1822,19 +1822,226 @@ window.VAULT = {
         hint: "Schematic: vèvè differ from house to house and priest to priest. These follow common published forms and are not copies of any one drawing."
       },
       study: { manifest: "", rights: "Vèvè are sacred designs of a living religion; photographs of ceremonies belong to their participants.", external: [ { label: "Visit Haiti — a visual guide to vèvè", href: "https://visithaiti.com/art-culture/veve-vodou-symbols-cosmograms/" } ] }
+    },
+    {
+      id: "v78", slug: "malleus-maleficarum", status: "published", pending: true,
+      era: "08-early-modern", year: 1486, chapters: ["ch32", "ch31"],
+      title: "The Malleus Maleficarum", category: "texts",
+      source: "vault/v78-malleus-maleficarum.md",
+      held: "Printed at Speyer in 1486 and reprinted many times; copies in many libraries",
+      dated: "Written by the Dominican Heinrich Kramer (Institoris), first printed 1486",
+      summary: "The 'Hammer of Witches', a Latin handbook on identifying, trying and punishing witches, written by the inquisitor Heinrich Kramer after a failed witch trial at Innsbruck. How much it was actually used in the trials, and how far Jacob Sprenger contributed, are both debated.",
+      artifact: {
+        type: "timeline", theme: "grimoire", title: "The hammer through time",
+        sub: "From a failed trial to a book reprinted for two centuries. Move through the documented history.",
+        events: [
+          { y: 1484, t: "The papal bull", d: "Innocent VIII's Summis desiderantes affectibus backs Kramer's inquisitions in Germany. It was later printed at the front of the Malleus." },
+          { y: 1485, t: "Innsbruck", d: "Kramer's witch trial at Innsbruck collapses; the local bishop orders him out. He writes the Malleus soon afterwards." },
+          { y: 1486, t: "First printing", d: "Printed at Speyer. Its three parts argue that witchcraft is real, describe the witches' deeds and set out how to try them." },
+          { y: 1487, t: "The approbations", d: "Printed with the bull at the front and a Cologne theology faculty approval that most historians think Kramer manipulated or partly forged." },
+          { y: 1519, t: "Sprenger named", d: "Jacob Sprenger appears as co-author. How much, if anything, he contributed is contested." },
+          { y: 1520, t: "First wave", d: "Some thirteen or fourteen editions have been printed." },
+          { y: 1538, t: "A warning from Spain", d: "The Spanish Inquisition tells its judges not to believe everything the book says." },
+          { y: 1669, t: "Second wave", d: "A new burst of editions runs from 1574 to 1669, during the great trial waves. How far the book caused trials is debated." }
+        ]
+      },
+      study: { manifest: "", rights: "Early printed copies belong to their holding libraries.", external: [] }
+    },
+    {
+      id: "v79", slug: "zohar-mantua", status: "published", pending: true,
+      era: "08-early-modern", year: 1558, chapters: ["ch26", "ch19"],
+      title: "The Zohar, First Printings", category: "texts",
+      source: "vault/v79-zohar-mantua.md",
+      held: "Copies of the Mantua and Cremona editions in Jewish and national libraries",
+      dated: "Printed at Mantua and Cremona, 1558–1560; the Zohar itself first circulated in Castile in the 1280s",
+      summary: "Kabbalah's great book was printed for the first time in two rival Italian editions, Mantua in three volumes and Cremona in one folio, over the protests of rabbis who thought secret lore should stay in manuscript. The Mantua pagination is still used to cite the Zohar today.",
+      artifact: {
+        type: "codex", theme: "vellum", title: "Open the Mantua Zohar",
+        sub: "Turn the pages for the opening homily, the fight over printing it and the question of who wrote it.",
+        pages: [
+          { h: "Zohar 1:1a · the opening", t: "Rabbi Ḥizkiyah opened: 'Like a rose among thorns.'", big: true, n: "Song of Songs 2:2. The Mantua folio numbers (here 1a) remain the standard way to cite the book." },
+          { h: "The rose", t: "Thirteen petals, read as the thirteen attributes of mercy; red and white, judgment and mercy.", n: "This archive's summary of the homily." },
+          { h: "1558 · the objection", t: "Kabbalah should pass from master to disciple, not be sold to anyone who can read.", n: "The case made by opponents of the printing." },
+          { h: "1558 · the reply", t: "Isaac de Lattes's responsum, printed in the Mantua edition, defends publication.", n: "Mantua: Meir ben Ephraim and Jacob ben Naphtali. Cremona: Vincenzo Conti." },
+          { h: "Who wrote it?", t: "Tradition: Shimon bar Yoḥai, second century. Scholem: Moses de León, Castile, 1280s. Recent work: a circle of authors.", n: "The question is treated in the entry below." }
+        ]
+      },
+      study: { manifest: "", rights: "Printed copies belong to their holding libraries.", external: [] }
+    },
+    {
+      id: "v80", slug: "sefer-yetzirah", status: "published", pending: true,
+      era: "05-late-antiquity", year: 400, chapters: ["ch26", "ch19"],
+      title: "The Sefer Yetzirah", category: "texts",
+      source: "vault/v80-sefer-yetzirah.md",
+      held: "Known from medieval manuscripts in three recensions",
+      dated: "Date disputed: late antiquity to the early Islamic period; commented on by the 10th century",
+      summary: "A very short Hebrew book describing creation through 'thirty-two wondrous paths': ten sefirot and the twenty-two letters, divided into three mothers, seven doubles and twelve simples and combined in 231 gates. Its date and setting are among the most disputed questions in Jewish studies.",
+      artifact: {
+        type: "scroll", title: "Unroll the thirty-two paths",
+        sub: "The opening words and the three mother letters. Touch a word for its meaning; the scroll reads from the right.",
+        columns: [
+          { kind: "hebrew", heading: "Sefer Yetzirah 1:1",
+            lines: [
+              [["בשלשים", "with thirty"], ["ושתים", "and two"], ["נתיבות", "paths"], ["פליאות", "wondrous"], ["חכמה", "of wisdom"]],
+              [["חקק", "he engraved"], ["יה", "Yah (a divine name)"]]
+            ],
+            translation: "With thirty-two wondrous paths of wisdom Yah engraved (and created his world).", note: "The verse continues with a list of divine names; the text varies between recensions." },
+          { kind: "hebrew", heading: "The three mothers",
+            lines: [[["א", "aleph: air"], ["מ", "mem: water"], ["ש", "shin: fire"]]],
+            translation: "Aleph, mem, shin: air, water and fire.", note: "Then seven doubles (planets, days) and twelve simples (zodiac signs, months)." }
+        ]
+      },
+      study: { manifest: "", rights: "", external: [ { label: "Sefaria: Sefer Yetzirah, Hebrew and English", href: "https://www.sefaria.org/Sefer_Yetzirah" } ] }
+    },
+    {
+      id: "v81", slug: "mawangdui-silk-texts", status: "published", pending: true,
+      era: "04-axial-age", year: -168, chapters: ["ch12", "ch09"],
+      title: "The Mawangdui Silk Texts", category: "manuscripts",
+      source: "vault/v81-mawangdui-silk-texts.md",
+      held: "Hunan Museum, Changsha",
+      dated: "Buried in Tomb 3, Mawangdui, in 168 BCE; excavated 1973",
+      summary: "Silk manuscripts from a Han tomb, including two copies of the Laozi (Daodejing), then the oldest known. They put the De section before the Dao section and write heng, 'constant', where later editions avoid an emperor's name with chang.",
+      artifact: {
+        type: "scroll", theme: "paper", title: "Unroll the silk",
+        sub: "The famous opening line as the silk copies write it. Read from the right, top to bottom; touch a group for its meaning.",
+        fonts: ["Noto+Serif+TC:wght@400;600"],
+        hint: "Chinese texts open from the right and read top to bottom. Drag the silk to travel along it and touch a character-group to read its meaning.",
+        columns: [
+          { kind: "cjk", heading: "Laozi, the Dao section, first line", lines: [[["道", "the way (dao)"], ["可道也", "can be spoken of"]], [["非", "is not"], ["恒", "heng: constant (later editions: 常 chang)"], ["道也", "the way"]]],
+            translation: "The way that can be spoken of is not the constant way.", note: "In the silk copies this line opens the second half of the book, not the first." }
+        ]
+      },
+      study: { manifest: "", rights: "The manuscripts belong to the Hunan Museum.", external: [] }
+    },
+    {
+      id: "v82", slug: "bardo-thodol", status: "published", pending: true,
+      era: "07-high-medieval", year: 1350, chapters: ["ch53", "ch11"],
+      title: "The Bardo Thödol", category: "texts",
+      source: "vault/v82-bardo-thodol.md",
+      held: "A treasure text of the Nyingma school, in many Tibetan xylograph and manuscript copies",
+      dated: "Revealed by Karma Lingpa (1326–1386); attributed by tradition to Padmasambhava, 8th century",
+      summary: "'Liberation through Hearing in the Intermediate State', read aloud to the dying and the dead to guide them through the bardos of dying, of reality and of becoming. Its English title, 'The Tibetan Book of the Dead', dates from Evans-Wentz's edition of 1927.",
+      artifact: {
+        type: "cards", title: "The three bardos",
+        sub: "Each card is one stage of the passage as the text describes it. Turn it to read what the dead are told.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "Chikhai", s: "the bardo of dying", d: "The elements dissolve and the Clear Light dawns. To recognise it is liberation at once." },
+          { t: "Chönyi", s: "the bardo of reality", d: "Forty-two peaceful and fifty-eight wrathful deities appear. They are the mind's own projections; recognising them frees the dead." },
+          { t: "Sidpa", s: "the bardo of becoming", d: "Without recognition, karma drives the mind toward rebirth; the text teaches how to choose a womb or close the womb door." },
+          { t: "Bright and dull lights", s: "the choice", d: "Each buddha's dazzling light shines beside a soft light leading to a realm of rebirth. Go toward the dazzling one." }
+        ]
+      },
+      study: { manifest: "", rights: "", external: [] }
+    },
+    {
+      id: "v83", slug: "codex-boturini", status: "published", pending: true,
+      era: "08-early-modern", year: 1530, chapters: ["ch43", "ch29"],
+      title: "The Codex Boturini", category: "manuscripts",
+      source: "vault/v83-codex-boturini.md",
+      held: "Biblioteca Nacional de Antropología e Historia, Mexico City",
+      dated: "Shortly before or after the Spanish conquest; c. 1520s–1540s",
+      summary: "The 'Strip of the Pilgrimage', a 5.5-metre amate screenfold drawn in black and never coloured, telling the Mexica migration from Aztlan in footprints, place glyphs and year counts. It breaks off mid-story, during the war of Colhuacan against Xochimilco.",
+      artifact: {
+        type: "timeline", title: "Follow the footprints",
+        sub: "The episodes of the strip in order. Its year counts are the Mexica's own; the dates are not converted to our calendar.",
+        events: [
+          { y: "1 Flint", t: "Aztlan", d: "A couple on an island; a man paddles to the shore. The footprints set out." },
+          { y: "Colhuacan", t: "The curved hill", d: "Huitzilopochtli speaks from a cave in the curved hill." },
+          { y: "Eight tribes", t: "Fellow travellers", d: "Eight other peoples, each marked by a name glyph, walk with the Mexica." },
+          { y: "The tree", t: "The broken tree", d: "A tree splits: the Mexica must separate from the others." },
+          { y: "Year counts", t: "The long walk", d: "Place after place, with strings of year signs showing how long they stayed." },
+          { y: "The end", t: "War for Colhuacan", d: "The Mexica fight Xochimilco for the lord of Colhuacan. The strip stops here." }
+        ]
+      },
+      study: { manifest: "", rights: "The codex belongs to INAH, Mexico.", external: [ { label: "INAH: Códice Boturini, digital edition", href: "https://www.codiceboturini.inah.gob.mx/" } ] }
+    },
+    {
+      id: "v84", slug: "hinton-st-mary-mosaic", status: "published", pending: true,
+      era: "05-late-antiquity", year: 350, chapters: ["ch16", "ch18"],
+      title: "The Hinton St Mary Mosaic", category: "relics",
+      source: "vault/v84-hinton-st-mary-mosaic.md",
+      held: "British Museum, London (central medallion on display)",
+      dated: "4th century CE; found 1963",
+      summary: "A Roman mosaic floor from Dorset whose central roundel shows a man before a Chi-Rho, flanked by pomegranates: probably one of the earliest pictures of Christ, though some read it as Constantine. Another room shows Bellerophon killing the Chimera.",
+      artifact: {
+        type: "cards", title: "Reading the floor",
+        sub: "Each card is one element of the mosaic. Turn it for what it may mean and how sure we can be.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "The bust", s: "Christ or emperor?", d: "Most scholars read it as Christ; some as Constantine. It follows fourth-century portrait conventions, not a likeness." },
+          { t: "☧ the Chi-Rho", s: "Χ + Ρ", d: "The first letters of Christos, a sign Constantine made famous after 312." },
+          { t: "Pomegranates", s: "life after death", d: "Persephone's fruit in myth; for Christians a possible sign of resurrection and eternal life." },
+          { t: "Bellerophon", s: "hero and monster", d: "A pagan hero killing the Chimera, perhaps read here as good overcoming evil." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the mosaic belong to the British Museum.", external: [ { label: "British Museum: fieldwork at Hinton St Mary", href: "https://www.britishmuseum.org/research/projects/archaeological-fieldwork-hinton-st-mary-dorset" } ] }
+    },
+    {
+      id: "v85", slug: "picatrix", status: "published", pending: true,
+      era: "06-early-medieval", year: 1000, chapters: ["ch21", "ch37"],
+      title: "The Picatrix", category: "texts",
+      source: "vault/v85-picatrix.md",
+      held: "Arabic, Castilian-derived Latin and vernacular manuscripts in many libraries",
+      dated: "Arabic original, al-Andalus, 10th–11th century; Castilian translation 1256–1258",
+      summary: "The Ghāyat al-Ḥakīm, 'The Goal of the Sage', an Arabic handbook of astral magic from Muslim Spain, translated for Alfonso X and known in Latin as Picatrix. It teaches how to make talismans at the right celestial moment. Its authorship is disputed.",
+      artifact: {
+        type: "codex", theme: "grimoire", title: "Open the Goal of the Sage",
+        sub: "Turn the pages for the book's four parts and its central idea, summarised in this archive's words.",
+        pages: [
+          { h: "Book I", t: "On the heavens and the nature of magic: the lower world receives the influence of the higher.", n: "Summary." },
+          { h: "Book II", t: "On the figures of the heavens, and the 28 mansions of the Moon in which talismans are made.", n: "Summary." },
+          { h: "Book III", t: "On the properties of the planets: their metals, stones, colours, incenses, and the prayers addressed to them.", n: "Summary." },
+          { h: "Book IV", t: "On spirits, the rites of the Sabians of Harran, and potions and fumigations.", n: "Summary." },
+          { h: "Who wrote it?", t: "Not Maslama al-Majrīṭī, as the manuscripts say. Perhaps Maslama ibn Qāsim al-Qurṭubī (d. 964), as Maribel Fierro argued in 1996.", n: "Still debated." }
+        ]
+      },
+      study: { manifest: "", rights: "", external: [] }
+    },
+    {
+      id: "v86", slug: "berlin-gold-hat", status: "published", pending: true,
+      era: "03-early-iron-age", year: -900, chapters: ["ch42", "ch14"],
+      title: "The Berlin Gold Hat", category: "relics",
+      source: "vault/v86-berlin-gold-hat.md",
+      held: "Neues Museum (Museum für Vor- und Frühgeschichte), Berlin",
+      dated: "Late Bronze Age, c. 1000–800 BCE; bought 1996, find-spot unknown",
+      summary: "A 74.5 cm cone of paper-thin gold, covered with stamped circles and crescents, one of four 'Schifferstadt-type' gold hats. Wilfried Menghin read its ornament as a lunisolar calendar; the reading is contested, and the hat's find-spot is unknown.",
+      artifact: {
+        type: "cards", title: "The four gold hats",
+        sub: "Each card is one of the four known cones. Turn it for where and when it was found.",
+        cardsTitle: "Turn each card",
+        cards: [
+          { t: "Schifferstadt", s: "found 1835", d: "Near Speyer, Germany. The short cone that names the type. Historisches Museum der Pfalz, Speyer." },
+          { t: "Avanton", s: "found 1844", d: "Near Poitiers, France; incomplete. Musée d'Archéologie nationale, Saint-Germain-en-Laye." },
+          { t: "Ezelsdorf-Buch", s: "found 1953", d: "Near Nuremberg; crushed and restored to about 88 cm. Germanisches Nationalmuseum." },
+          { t: "Berlin", s: "bought 1996", d: "The best preserved, 74.5 cm. Find-spot unknown: it surfaced on the art market." },
+          { t: "The calendar reading", s: "contested", d: "Menghin counted the circles as days of lunar and solar years. Critics say such counts depend on which motifs are chosen." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the hat belong to the Staatliche Museen zu Berlin.", external: [] }
+    },
+    {
+      id: "v87", slug: "diwan-abatur", status: "published", pending: true,
+      era: "08-early-modern", year: 1750, chapters: ["ch56", "ch17"],
+      title: "The Diwan Abatur", category: "manuscripts",
+      source: "vault/v87-diwan-abatur.md",
+      held: "Bodleian Library, Oxford (Drower Collection, DC 8); Vatican Library (Borgiani Siriaci 175)",
+      dated: "The published copy DC 8 is 18th-century; the text is older, date uncertain",
+      summary: "A Mandaean illustrated scroll over six metres long that maps the soul's road after death through the maṭarātā, or watch-houses, across the river Hitpun in the ship Shahrat, to Abatur, who weighs it. Published in English by E. S. Drower in 1950.",
+      artifact: {
+        type: "timeline", title: "The soul's road",
+        sub: "Move along the scroll as the soul travels it. These are stages of the journey, not dates.",
+        events: [
+          { y: "Death", t: "Leaving the body", d: "The soul departs, and the rites of the living help it on its way." },
+          { y: "Maṭarātā", t: "The watch-houses", d: "Stations guarded by beings of the lower worlds, among them the sons of Ptahil and the seven planets. The soul is held and purified." },
+          { y: "Hitpun", t: "The river", d: "The ship Shahrat, 'she kept watch', carries souls across the river that divides the lower world from the World of Light." },
+          { y: "The scales", t: "Abatur", d: "Abatur of the Scales weighs the soul. If it balances, it passes on." },
+          { y: "Light", t: "The World of Light", d: "The soul rejoins the light from which it came." }
+        ]
+      },
+      study: { manifest: "", rights: "Manuscripts belong to the Bodleian and Vatican libraries.", external: [] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
-  queue: [
-    { title: "The Malleus Maleficarum", category: "texts", note: "The witch-hunters' manual of 1486, and how far it was used." },
-    { title: "The Zohar (Mantua printing)", category: "texts", note: "The first printing of Kabbalah's great book, and the fight over it." },
-    { title: "The Sefer Yetzirah", category: "texts", note: "The Book of Creation: letters and numbers as the building blocks of the world." },
-    { title: "The Mawangdui Silk Texts", category: "manuscripts", note: "The oldest manuscripts of the Daodejing, from a Han tomb." },
-    { title: "The Bardo Thödol", category: "texts", note: "The 'Tibetan Book of the Dead' as a rediscovered treasure text." },
-    { title: "The Codex Boturini", category: "manuscripts", note: "The Aztec migration from Aztlan, told in footprints." },
-    { title: "The Hinton St Mary Mosaic", category: "relics", note: "One of the earliest known pictures of Christ, on a Roman villa floor in Dorset." },
-    { title: "The Picatrix", category: "texts", note: "The Arabic manual of astral magic that reached Renaissance Europe." },
-    { title: "The Berlin Gold Hat", category: "relics", note: "A Bronze Age golden cone covered in calendar symbols." },
-    { title: "The Diwan Abatur", category: "manuscripts", note: "The Mandaean scroll of the soul's journey through the watch-houses." }
-  ]
+  queue: []
 };
