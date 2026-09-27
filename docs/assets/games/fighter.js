@@ -287,8 +287,44 @@
       var w = cfg.f * TAU, k = w * w, cc = 2 * cfg.z * w, e = wrapA(target - st[i]);
       st[i + 1] += (k * e - cc * st[i + 1]) * dt; st[i] += st[i + 1] * dt;
     }
+    // Rest offsets of the upper-body joints in the TORSO's frame (hip -> neck is the spine).
+    var SPINE0 = Math.atan2(BASE.neck[1] - BASE.hip[1], BASE.neck[0] - BASE.hip[0]);
+    var SPINE_LEN = Math.hypot(BASE.neck[0] - BASE.hip[0], BASE.neck[1] - BASE.hip[1]);
+    var HEAD0 = Math.atan2(BASE.head[1] - BASE.neck[1], BASE.head[0] - BASE.neck[0]);
+    var HEAD_LEN = Math.hypot(BASE.head[0] - BASE.neck[0], BASE.head[1] - BASE.neck[1]);
+    // how far each joint may drift from where the torso carries it (0 = welded to the torso)
+    var SPINE_SLACK = { chest: 0.25, shF: 0.3, shB: 0.3 };
+    var HEAD_DYN = { f: 6.2, z: 0.62 }, HEAD_MAX = 0.5;
+    /* ---- rig: one body, not loose parts ----
+       Every joint used to ride its own spring, so the head, shoulders and hips each wobbled
+       on their own and the parts drifted apart. The drawn skeleton is now a hierarchy:
+       the spine (hip -> neck) is the root; neck, chest and shoulders are carried rigidly in
+       its frame (with a little slack so strikes can still roll a shoulder forward); the head
+       hangs off the neck and turns RELATIVE to the torso, on its own gently lagging spring,
+       so it follows every lean, lunge and flinch of the body instead of floating above it. */
+    function hierarchy(f, d, T, dt) {
+      var H = d.hip, sa = Math.atan2(d.neck[1] - H[1], d.neck[0] - H[0]), rot = sa - SPINE0;
+      var cs = Math.cos(rot), sn = Math.sin(rot);
+      function carry(k) { var o = [BASE[k][0] - BASE.hip[0], BASE[k][1] - BASE.hip[1]]; return [H[0] + o[0] * cs - o[1] * sn, H[1] + o[0] * sn + o[1] * cs]; }
+      d.neck = [H[0] + Math.cos(sa) * SPINE_LEN, H[1] + Math.sin(sa) * SPINE_LEN];
+      for (var k in SPINE_SLACK) { var r = carry(k), w = SPINE_SLACK[k]; d[k] = [r[0] + (d[k][0] - r[0]) * w, r[1] + (d[k][1] - r[1]) * w]; }
+      // head: its authored/sprung tilt relative to the spine, clamped, then sprung as an ANGLE
+      // (read from the un-sprung TARGET pose, so the head spring is the only lag, not a
+      // spring stacked on the neck's and head's own point springs)
+      var tRot = Math.atan2(T.neck[1] - T.hip[1], T.neck[0] - T.hip[0]) - SPINE0;
+      var want = wrapA(Math.atan2(T.head[1] - T.neck[1], T.head[0] - T.neck[0]) - (HEAD0 + tRot));
+      want = clamp(want, -HEAD_MAX, HEAD_MAX);
+      var S = f.headSt || (f.headSt = [want, 0]), w0 = HEAD_DYN.f * TAU;
+      for (var n = Math.ceil(dt / 0.004), h = dt / n, i = 0; i < n; i++) {   // small steps: stiff spring stays stable
+        S[1] += (w0 * w0 * wrapA(want - S[0]) - 2 * HEAD_DYN.z * w0 * S[1]) * h; S[0] += S[1] * h;
+      }
+      var ha = HEAD0 + rot + S[0];
+      if (window.__FIGHT_TEST__) f._hd = [rot, want, S[0], tRot];
+      d.head = [d.neck[0] + Math.cos(ha) * HEAD_LEN, d.neck[1] + Math.sin(ha) * HEAD_LEN];
+    }
     function anatomicalPose(f, p, target) {
       var d = clonePose(p), dt = Math.min(0.033, curReal), sub = dt > 0.02 ? 2 : 1, sdt = dt / sub;
+      hierarchy(f, d, target, dt);
       if (!f.armSt) f.armSt = {};
       ["F", "B"].forEach(function (k) {
         var L = IKREST["arm" + k], want = armAngles(target["sh" + k], target["hn" + k], L);
@@ -2179,7 +2215,7 @@
     // read-only introspection for automated tests (only when the flag is set)
     if (window.__FIGHT_TEST__) {
       window.__fightState = function () {
-        function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, y: f.y, hp: f.hp, energy: f.energy, facing: f.facing, onGround: f.onGround, state: f.state, cast: f._cast ? (f._cast.done ? "done" : "pending") : "none", cooldown: f.cooldown, combo: f.combo, holding: !!f.holding, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX }; }
+        function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, y: f.y, hp: f.hp, energy: f.energy, facing: f.facing, onGround: f.onGround, state: f.state, cast: f._cast ? (f._cast.done ? "done" : "pending") : "none", cooldown: f.cooldown, combo: f.combo, holding: !!f.holding, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX, hd: f._hd }; }
         return (p1 && p2) ? { p1: snap(p1), p2: snap(p2), hitStop: hitStop, shots: shots.length, MOVES: Object.keys(MOVES) } : null;
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
