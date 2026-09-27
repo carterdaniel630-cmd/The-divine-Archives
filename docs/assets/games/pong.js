@@ -50,7 +50,7 @@
     };
     var LIGHT = "#e7c680", DARK = "#b98cff"; // Order (gold) vs Chaos (violet)
 
-    var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1;
+    var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1, acc = 0, STEP = 1 / 60;
     var keys = {}, st = null, twoP = false, temper = 1; // 0 mild, 1 even, 2 fierce
     var best = AG.bestScore("pong");
 
@@ -245,10 +245,17 @@
     /* ---------------- loop ---------------- */
     function loop(ts) {
       if (!running) return;
-      var dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts;
-      for (var i = 0; i < st.motes.length; i++) { var mo = st.motes[i]; mo.y -= mo.v * dt * 26; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
-      for (var s = st.sparks.length - 1; s >= 0; s--) { var sp = st.sparks[s]; sp.x += sp.vx; sp.y += sp.vy; sp.vy += 0.12; sp.life -= dt * 2.2; if (sp.life <= 0) st.sparks.splice(s, 1); }
-      if (!st.over) step(dt);
+      // fixed 60 Hz simulation: the physics constants are per-tick, so the game runs at
+      // the same speed on a 60, 120 or 144 Hz display (rendering still follows the display)
+      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; acc += dt;
+      var n = 0;
+      while (acc >= STEP && n < 6) {
+        acc -= STEP; n++;
+        for (var i = 0; i < st.motes.length; i++) { var mo = st.motes[i]; mo.y -= mo.v * STEP * 26; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
+        for (var s = st.sparks.length - 1; s >= 0; s--) { var sp = st.sparks[s]; sp.x += sp.vx; sp.y += sp.vy; sp.vy += 0.12; sp.life -= STEP * 2.2; if (sp.life <= 0) st.sparks.splice(s, 1); }
+        if (!st.over) step(STEP);
+      }
+      if (n === 6) acc = 0;
       draw();
       if (!st.over) raf = requestAnimationFrame(loop);
     }

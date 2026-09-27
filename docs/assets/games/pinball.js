@@ -46,7 +46,7 @@
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var COL = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34") };
 
-    var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1;
+    var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1, acc = 0, STEP = 1 / 60;
     var st = null, best = AG.bestScore("pinball");
 
     // static table walls (segments) + slings + bumpers
@@ -298,9 +298,16 @@
 
     function loop(ts) {
       if (!running) return;
-      var dt = Math.min(0.033, (ts - last) / 1000 || 0); last = ts;
-      if (!st.over) physics(dt);
-      for (var s = st.sparks.length - 1; s >= 0; s--) { var sp = st.sparks[s]; sp.x += sp.vx; sp.y += sp.vy; sp.vy += 0.15; sp.life -= dt * 2.4; if (sp.life <= 0) st.sparks.splice(s, 1); }
+      // fixed 60 Hz simulation (substeps inside): per-tick gravity/velocity no longer
+      // scale with the display refresh rate
+      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; acc += dt;
+      var n = 0;
+      while (acc >= STEP && n < 6) {
+        acc -= STEP; n++;
+        if (!st.over) physics(STEP);
+        for (var s = st.sparks.length - 1; s >= 0; s--) { var sp = st.sparks[s]; sp.x += sp.vx; sp.y += sp.vy; sp.vy += 0.15; sp.life -= STEP * 2.4; if (sp.life <= 0) st.sparks.splice(s, 1); }
+      }
+      if (n === 6) acc = 0;
       draw(); updateHUD();
       if (!st.over) raf = requestAnimationFrame(loop);
     }
