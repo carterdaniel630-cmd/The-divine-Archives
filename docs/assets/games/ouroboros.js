@@ -48,7 +48,7 @@
       ember: (css.getPropertyValue("--ember") || "#b26a34").trim()
     };
     var canvas, cxr, live, scoreEl, bestEl, levelEl, factToast;
-    var st, timer = null, keyfn = null, touch = null, running = false, DPR = 1;
+    var st, timer = null, keyfn = null, touch = null, running = false, DPR = 1, bgCache = null, raf = 0;
     var best = AG.bestScore("ouroboros");
 
     // level-paced tempo: starts unhurried, quickens one step per level, never
@@ -99,9 +99,12 @@
       canvas = root.querySelector(".ouro-canvas");
       cxr = canvas.getContext("2d");
       // render at device resolution for crisp engraving, draw in logical W units
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = W * DPR; canvas.height = W * DPR;
+      // backing store matches the DISPLAYED size (the board is drawn larger on big screens)
+      var shown = canvas.getBoundingClientRect().width || W;
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shown / W);
+      canvas.width = Math.round(W * DPR); canvas.height = Math.round(W * DPR);
       cxr.setTransform(DPR, 0, 0, DPR, 0, 0);
+      bgCache = null;
       live = root.querySelector(".ouro-toast");
       scoreEl = root.querySelector("#ouro-score");
       levelEl = root.querySelector("#ouro-level");
@@ -174,39 +177,64 @@
     }
 
     function draw() {
+      var now = (window.performance ? performance.now() : Date.now()) / 1000;
       cxr.clearRect(0, 0, W, W);
-      cxr.fillStyle = COL.ground; cxr.fillRect(0, 0, W, W);
-      drawWatermark();
-      // subtle grid
-      cxr.strokeStyle = COL.line; cxr.lineWidth = 1; cxr.globalAlpha = 0.5;
-      for (var i = 1; i < GRID; i++) { cxr.beginPath(); cxr.moveTo(i * CELL, 0); cxr.lineTo(i * CELL, W); cxr.stroke(); cxr.beginPath(); cxr.moveTo(0, i * CELL); cxr.lineTo(W, i * CELL); cxr.stroke(); }
-      cxr.globalAlpha = 1;
-      if (st.food) drawFood(st.food);
-      drawSerpent();
+      drawBoard();
+      if (st.food) drawFood(st.food, now);
+      drawSerpent(now);
     }
 
-    // faint ouroboros ring engraved behind the board (a coil with a mouth-gap)
-    function drawWatermark() {
-      var cx = W / 2, cy = W / 2, R = W * 0.40;
-      cxr.save();
-      cxr.globalAlpha = 0.07; cxr.strokeStyle = COL.gold; cxr.lineWidth = 2;
-      cxr.beginPath(); cxr.arc(cx, cy, R, -Math.PI * 0.42, Math.PI * 1.5); cxr.stroke();
-      // small arrowhead at the "head" end of the coil, echoing PLATE_ART.ch37
-      var ax = cx + R * Math.cos(-Math.PI * 0.42), ay = cy + R * Math.sin(-Math.PI * 0.42);
-      cxr.beginPath(); cxr.moveTo(ax, ay); cxr.lineTo(ax + 7, ay - 3); cxr.lineTo(ax + 3, ay + 6); cxr.closePath();
-      cxr.fillStyle = COL.gold; cxr.fill();
-      cxr.restore();
+    // the board: a carved stone disc, cached once. Engraved coil with a mouth-gap, twelve
+    // stations around it, a faint dotted grid at the cell centres, and a vignette.
+    function drawBoard() {
+      if (!bgCache) {
+        bgCache = document.createElement("canvas"); bgCache.width = Math.round(W * DPR); bgCache.height = Math.round(W * DPR);
+        var b = bgCache.getContext("2d"); b.setTransform(DPR, 0, 0, DPR, 0, 0);
+        var g = b.createRadialGradient(W * 0.5, W * 0.44, W * 0.05, W / 2, W / 2, W * 0.75);
+        g.addColorStop(0, "#33261a"); g.addColorStop(0.55, "#221810"); g.addColorStop(1, "#0f0a06");
+        b.fillStyle = g; b.fillRect(0, 0, W, W);
+        // stone grain
+        for (var k = 0; k < 900; k++) { b.fillStyle = "rgba(" + (Math.random() < 0.5 ? "255,230,190" : "0,0,0") + "," + (Math.random() * 0.05).toFixed(3) + ")"; b.fillRect(Math.random() * W, Math.random() * W, 1 + Math.random() * 1.5, 1 + Math.random() * 1.5); }
+        var cx = W / 2, cy = W / 2, R = W * 0.42;
+        // engraved coil: a dark cut with a lit lower lip, so it reads as carved
+        b.lineCap = "round";
+        b.strokeStyle = "rgba(0,0,0,0.45)"; b.lineWidth = 7; b.beginPath(); b.arc(cx, cy, R, -Math.PI * 0.40, Math.PI * 1.48); b.stroke();
+        b.strokeStyle = "rgba(231,198,128,0.10)"; b.lineWidth = 2; b.beginPath(); b.arc(cx, cy + 1.5, R, -Math.PI * 0.40, Math.PI * 1.48); b.stroke();
+        var ax = cx + R * Math.cos(-Math.PI * 0.40), ay = cy + R * Math.sin(-Math.PI * 0.40);
+        b.fillStyle = "rgba(231,198,128,0.14)"; b.beginPath(); b.moveTo(ax + 9, ay - 2); b.lineTo(ax - 3, ay - 7); b.lineTo(ax - 1, ay + 6); b.closePath(); b.fill();
+        // twelve stations
+        for (var s2 = 0; s2 < 12; s2++) {
+          var an = s2 * Math.PI / 6, r1 = R + 9, r2 = R + 15;
+          b.strokeStyle = "rgba(231,198,128,0.13)"; b.lineWidth = s2 % 3 === 0 ? 2 : 1;
+          b.beginPath(); b.moveTo(cx + r1 * Math.cos(an), cy + r1 * Math.sin(an)); b.lineTo(cx + r2 * Math.cos(an), cy + r2 * Math.sin(an)); b.stroke();
+        }
+        b.strokeStyle = "rgba(231,198,128,0.06)"; b.lineWidth = 1; b.beginPath(); b.arc(cx, cy, R + 19, 0, Math.PI * 2); b.stroke();
+        // cell centres: tiny drilled points instead of ruled lines
+        b.fillStyle = "rgba(0,0,0,0.35)";
+        for (var y = 0; y < GRID; y++) for (var x = 0; x < GRID; x++) { b.beginPath(); b.arc(x * CELL + CELL / 2, y * CELL + CELL / 2 + 0.6, 0.9, 0, Math.PI * 2); b.fill(); }
+        b.fillStyle = "rgba(231,198,128,0.07)";
+        for (var y2 = 0; y2 < GRID; y2++) for (var x2 = 0; x2 < GRID; x2++) { b.beginPath(); b.arc(x2 * CELL + CELL / 2, y2 * CELL + CELL / 2, 0.8, 0, Math.PI * 2); b.fill(); }
+        // vignette
+        var v = b.createRadialGradient(W / 2, W / 2, W * 0.35, W / 2, W / 2, W * 0.74);
+        v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,0.55)");
+        b.fillStyle = v; b.fillRect(0, 0, W, W);
+      }
+      cxr.drawImage(bgCache, 0, 0, W, W);
     }
 
-    // an engraved sigil token: a glowing ring around a four-point star
-    function drawFood(food) {
-      var fx = food.x * CELL + CELL / 2, fy = food.y * CELL + CELL / 2, s = CELL * 0.22;
+    // a symbol: a pulsing sigil — rays, a glowing ring and a four-point star
+    function drawFood(food, now) {
+      var fx = food.x * CELL + CELL / 2, fy = food.y * CELL + CELL / 2, pulse = 0.5 + 0.5 * Math.sin(now * 4), s = CELL * (0.22 + pulse * 0.03);
       cxr.save();
+      var halo = cxr.createRadialGradient(fx, fy, 0, fx, fy, CELL * 1.1);
+      halo.addColorStop(0, "rgba(231,198,128," + (0.30 + pulse * 0.2).toFixed(2) + ")"); halo.addColorStop(1, "rgba(231,198,128,0)");
+      cxr.fillStyle = halo; cxr.beginPath(); cxr.arc(fx, fy, CELL * 1.1, 0, Math.PI * 2); cxr.fill();
+      cxr.strokeStyle = "rgba(231,198,128,0.35)"; cxr.lineWidth = 1;
+      for (var k = 0; k < 8; k++) { var an = k * Math.PI / 4 + now * 0.6, r1 = CELL * 0.46, r2 = CELL * (0.62 + pulse * 0.08); cxr.beginPath(); cxr.moveTo(fx + r1 * Math.cos(an), fy + r1 * Math.sin(an)); cxr.lineTo(fx + r2 * Math.cos(an), fy + r2 * Math.sin(an)); cxr.stroke(); }
       cxr.shadowColor = COL.goldB; cxr.shadowBlur = 10;
       cxr.strokeStyle = COL.goldB; cxr.lineWidth = 1.6;
       cxr.beginPath(); cxr.arc(fx, fy, CELL * 0.34, 0, Math.PI * 2); cxr.stroke();
-      cxr.shadowBlur = 0;
-      cxr.fillStyle = COL.goldB;
+      cxr.shadowBlur = 0; cxr.fillStyle = "#fff1c8";
       cxr.beginPath();
       cxr.moveTo(fx, fy - s); cxr.lineTo(fx + s * 0.3, fy - s * 0.3); cxr.lineTo(fx + s, fy);
       cxr.lineTo(fx + s * 0.3, fy + s * 0.3); cxr.lineTo(fx, fy + s); cxr.lineTo(fx - s * 0.3, fy + s * 0.3);
@@ -214,57 +242,68 @@
       cxr.restore();
     }
 
-    // the serpent: circles tapering tail→head, gold-lit, with a scaled sheen;
-    // the head carries eyes and a forked tongue pointed the way it travels.
-    function drawSerpent() {
-      var n = st.snake.length, i, s, cx, cy, r, g;
-      var ctr = function (p) { return { x: p.x * CELL + CELL / 2, y: p.y * CELL + CELL / 2 }; };
+    // the serpent: one continuous scaled body (dark belly edge, gold back, a lit ridge and
+    // chevron scales), tapering to the tail, with a wedge-shaped head and slit-pupilled eyes.
+    function drawSerpent(now) {
+      var n = st.snake.length, i;
+      var ctr = function (p) { return [p.x * CELL + CELL / 2, p.y * CELL + CELL / 2]; };
       var adj = function (a, b) { return Math.abs(a.x - b.x) + Math.abs(a.y - b.y) === 1; }; // not a wrap jump
-      // continuous body: capsules between adjacent cells, tapering tail→head
-      for (i = n - 1; i >= 1; i--) {
-        s = st.snake[i]; var prev = st.snake[i - 1];
-        var t = i / (n - 1);
-        cx = s.x * CELL + CELL / 2; cy = s.y * CELL + CELL / 2;
-        r = CELL * 0.44 * (1 - 0.34 * t);
-        if (adj(s, prev)) {
-          var pc = ctr(prev);
-          cxr.strokeStyle = COL.gold; cxr.lineCap = "round"; cxr.lineWidth = r * 2;
-          cxr.beginPath(); cxr.moveTo(cx, cy); cxr.lineTo(pc.x, pc.y); cxr.stroke();
+      function widthAt(i) { var t = n > 1 ? i / (n - 1) : 0; return CELL * 0.78 * (1 - 0.55 * t * t); }
+      function segs(fn) { for (var k = n - 1; k >= 1; k--) { var a = st.snake[k], b = st.snake[k - 1]; if (adj(a, b)) fn(ctr(a), ctr(b), widthAt(k), widthAt(k - 1), k); } }
+      cxr.save(); cxr.lineCap = "round"; cxr.lineJoin = "round";
+      // drop shadow
+      segs(function (a, b, w0) { cxr.strokeStyle = "rgba(0,0,0,0.35)"; cxr.lineWidth = w0; cxr.beginPath(); cxr.moveTo(a[0] + 1.5, a[1] + 2.5); cxr.lineTo(b[0] + 1.5, b[1] + 2.5); cxr.stroke(); });
+      // dark belly edge, then the gold body, then a lit ridge along the back
+      segs(function (a, b, w0) { cxr.strokeStyle = "#4a2d10"; cxr.lineWidth = w0 + 2; cxr.beginPath(); cxr.moveTo(a[0], a[1]); cxr.lineTo(b[0], b[1]); cxr.stroke(); });
+      segs(function (a, b, w0) { cxr.strokeStyle = COL.gold; cxr.lineWidth = w0; cxr.beginPath(); cxr.moveTo(a[0], a[1]); cxr.lineTo(b[0], b[1]); cxr.stroke(); });
+      segs(function (a, b, w0) { cxr.strokeStyle = "rgba(255,236,190,0.55)"; cxr.lineWidth = w0 * 0.28; cxr.beginPath(); cxr.moveTo(a[0] - 1.2, a[1] - 1.2); cxr.lineTo(b[0] - 1.2, b[1] - 1.2); cxr.stroke(); });
+      // chevron scales
+      segs(function (a, b, w0, w1, k) {
+        var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L, px = -uy, py = ux, hw = w0 * 0.34;
+        for (var q = 0.25; q < 1; q += 0.5) {
+          var mx = a[0] + dx * q, my = a[1] + dy * q;
+          cxr.strokeStyle = "rgba(60,34,10,0.55)"; cxr.lineWidth = 1;
+          cxr.beginPath(); cxr.moveTo(mx - ux * 2 + px * hw, my - uy * 2 + py * hw); cxr.lineTo(mx + ux * 1.5, my + uy * 1.5); cxr.lineTo(mx - ux * 2 - px * hw, my - uy * 2 - py * hw); cxr.stroke();
         }
-      }
-      // beaded sheen + scale arc on each segment, over the continuous body
-      for (i = n - 1; i >= 1; i--) {
-        s = st.snake[i];
-        var t2 = i / (n - 1);
-        cx = s.x * CELL + CELL / 2; cy = s.y * CELL + CELL / 2;
-        r = CELL * 0.44 * (1 - 0.34 * t2);
-        g = cxr.createRadialGradient(cx - r * 0.35, cy - r * 0.35, r * 0.15, cx, cy, r);
-        g.addColorStop(0, COL.goldB); g.addColorStop(1, COL.gold);
-        cxr.fillStyle = g;
-        cxr.beginPath(); cxr.arc(cx, cy, r, 0, Math.PI * 2); cxr.fill();
-        cxr.strokeStyle = "rgba(20,13,7,0.30)"; cxr.lineWidth = 1;
-        cxr.beginPath(); cxr.arc(cx, cy, r * 0.62, -0.9, 1.1); cxr.stroke();
-      }
-      // head
-      var h = st.snake[0], hx = h.x * CELL + CELL / 2, hy = h.y * CELL + CELL / 2, hr = CELL * 0.5;
-      var hg = cxr.createRadialGradient(hx - hr * 0.3, hy - hr * 0.35, hr * 0.2, hx, hy, hr);
-      hg.addColorStop(0, "#f3d999"); hg.addColorStop(1, COL.goldB);
-      cxr.save(); cxr.shadowColor = COL.goldB; cxr.shadowBlur = 8;
-      cxr.fillStyle = hg; cxr.beginPath(); cxr.arc(hx, hy, hr * 0.92, 0, Math.PI * 2); cxr.fill();
-      cxr.restore();
-      var dx = st.dir.x, dy = st.dir.y, px = -dy, py = dx;
-      var ex = hx + dx * hr * 0.26, ey = hy + dy * hr * 0.26;
-      cxr.fillStyle = "#140d07";
-      [1, -1].forEach(function (sg) {
-        cxr.beginPath(); cxr.arc(ex + px * hr * 0.34 * sg, ey + py * hr * 0.34 * sg, hr * 0.13, 0, Math.PI * 2); cxr.fill();
       });
-      // forked tongue
-      var mx = hx + dx * hr * 0.5, my = hy + dy * hr * 0.5, tx = hx + dx * hr * 1.05, ty = hy + dy * hr * 1.05;
-      cxr.strokeStyle = COL.ember; cxr.lineWidth = 1.4;
-      cxr.beginPath(); cxr.moveTo(mx, my); cxr.lineTo(tx, ty);
-      cxr.lineTo(tx + dx * 3 + px * 3, ty + dy * 3 + py * 3);
-      cxr.moveTo(tx, ty); cxr.lineTo(tx + dx * 3 - px * 3, ty + dy * 3 - py * 3);
-      cxr.stroke();
+      // tail tip
+      var tl = ctr(st.snake[n - 1]); cxr.fillStyle = COL.gold; cxr.beginPath(); cxr.arc(tl[0], tl[1], widthAt(n - 1) / 2, 0, Math.PI * 2); cxr.fill();
+      // head: a wedge pointed the way it travels
+      var h = ctr(st.snake[0]), dx = st.dir.x, dy = st.dir.y, px = -dy, py = dx, hr = CELL * 0.56;
+      var nose = [h[0] + dx * hr * 1.0, h[1] + dy * hr * 1.0], back = [h[0] - dx * hr * 0.55, h[1] - dy * hr * 0.55];
+      cxr.shadowColor = COL.goldB; cxr.shadowBlur = 10;
+      var hg = cxr.createRadialGradient(h[0] - 2, h[1] - 2, 1, h[0], h[1], hr * 1.1);
+      hg.addColorStop(0, "#f7dfa0"); hg.addColorStop(1, COL.gold);
+      cxr.fillStyle = hg; cxr.strokeStyle = "#4a2d10"; cxr.lineWidth = 1.4;
+      cxr.beginPath();
+      cxr.moveTo(nose[0], nose[1]);
+      cxr.quadraticCurveTo(h[0] + dx * hr * 0.55 + px * hr * 0.95, h[1] + dy * hr * 0.55 + py * hr * 0.95, back[0] + px * hr * 0.62, back[1] + py * hr * 0.62);
+      cxr.quadraticCurveTo(back[0] - dx * hr * 0.25, back[1] - dy * hr * 0.25, back[0] - px * hr * 0.62, back[1] - py * hr * 0.62);
+      cxr.quadraticCurveTo(h[0] + dx * hr * 0.55 - px * hr * 0.95, h[1] + dy * hr * 0.55 - py * hr * 0.95, nose[0], nose[1]);
+      cxr.closePath(); cxr.fill(); cxr.shadowBlur = 0; cxr.stroke();
+      // eyes: amber with a slit pupil
+      [1, -1].forEach(function (sg) {
+        var ex = h[0] + dx * hr * 0.22 + px * hr * 0.42 * sg, ey = h[1] + dy * hr * 0.22 + py * hr * 0.42 * sg;
+        cxr.fillStyle = "#e0701c"; cxr.beginPath(); cxr.arc(ex, ey, hr * 0.17, 0, Math.PI * 2); cxr.fill();
+        cxr.fillStyle = "#140d07"; cxr.beginPath(); cxr.ellipse(ex, ey, hr * 0.05 + Math.abs(dy) * hr * 0.09, hr * 0.05 + Math.abs(dx) * hr * 0.09, 0, 0, Math.PI * 2); cxr.fill();
+      });
+      // forked tongue, flickering
+      if (Math.sin(now * 9) > -0.2) {
+        var mx = nose[0], my = nose[1], tx = mx + dx * hr * 0.55, ty = my + dy * hr * 0.55;
+        cxr.strokeStyle = "#c2432a"; cxr.lineWidth = 1.3;
+        cxr.beginPath(); cxr.moveTo(mx, my); cxr.lineTo(tx, ty);
+        cxr.lineTo(tx + dx * 3 + px * 3, ty + dy * 3 + py * 3);
+        cxr.moveTo(tx, ty); cxr.lineTo(tx + dx * 3 - px * 3, ty + dy * 3 - py * 3);
+        cxr.stroke();
+      }
+      cxr.restore();
+    }
+
+    // ambient animation between steps (the sigil's pulse, the tongue); stops with the game
+    function animate() {
+      raf = 0;
+      if (!st || !canvas || !canvas.isConnected) return;
+      draw(); raf = requestAnimationFrame(animate);
     }
 
     function loop() {
@@ -297,6 +336,7 @@
       shell();
       newGame();
       draw();
+      if (!raf) raf = requestAnimationFrame(animate);
       st.alive = true;
       // brief "get ready" so the snake doesn't move before the player looks
       live.textContent = "Swipe or press an arrow key to steer the serpent…";
@@ -310,6 +350,7 @@
 
     return function cleanup() {
       if (timer) { clearTimeout(timer); timer = null; }
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
       if (keyfn) document.removeEventListener("keydown", keyfn);
       if (st) st.alive = false;
     };

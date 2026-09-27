@@ -351,7 +351,7 @@
           '<button class="ouro-key" data-k="right" aria-label="Right">▶</button></div>' +
         '<p class="rq-note">←/→ or A/D run · ↑ / Space / the ⤒ pad to jump. Stomp serpents from above; touching a spike or serpent costs a life.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VIEWW * DPR; canvas.height = VIEWH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       root.querySelectorAll(".tr-controls .ouro-key").forEach(function (b) {
         var k = b.getAttribute("data-k");

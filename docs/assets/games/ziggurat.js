@@ -64,7 +64,7 @@
     var TILE = [null, COL.goldB, COL.gold, COL.ember, v("--good", "#7e9e5c"), "#9c5a44", COL.ink, COL.parch];
 
     var well, wctx, mon, mctx, nextCv, nctx, live, scoreEl, courseEl, levelEl, bestEl;
-    var st, timer = null, keyfn = null, touch = null, DPR = 1;
+    var st, timer = null, keyfn = null, touch = null, DPR = 1, tileCache = {}, wellBg = null;
     var best = AG.bestScore("ziggurat");
 
     /* ---------------- state ---------------- */
@@ -188,8 +188,11 @@
       well = root.querySelector(".zig-well"); wctx = well.getContext("2d");
       mon = root.querySelector(".zig-mon"); mctx = mon.getContext("2d");
       nextCv = root.querySelector(".zig-next-cv"); nctx = nextCv.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
-      [[well, W, H], [mon, ZW, ZH]].forEach(function (p) { p[0].width = p[1] * DPR; p[0].height = p[2] * DPR; p[0].getContext("2d").setTransform(DPR, 0, 0, DPR, 0, 0); });
+      // backing store matches the displayed size, so the larger board stays crisp
+      var shownW = well.getBoundingClientRect().width || W;
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shownW / W);
+      [[well, W, H], [mon, ZW, ZH]].forEach(function (p) { p[0].width = Math.round(p[1] * DPR); p[0].height = Math.round(p[2] * DPR); p[0].getContext("2d").setTransform(DPR, 0, 0, DPR, 0, 0); });
+      tileCache = {}; wellBg = null;
       live = root.querySelector(".zig-toast");
       scoreEl = root.querySelector("#zig-score"); courseEl = root.querySelector("#zig-courses");
       levelEl = root.querySelector("#zig-level"); bestEl = root.querySelector("#zig-best");
@@ -198,44 +201,83 @@
 
     function roundRect(c, x, y, w, h, r) { c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
 
-    // an inscribed clay tile: mortar border, lit top edge, a small wedge mark
-    function tile(c, px, py, size, colIdx) {
-      var col = TILE[colIdx];
-      c.fillStyle = col; roundRect(c, px + 1, py + 1, size - 2, size - 2, 3); c.fill();
-      // top highlight / bottom shade for relief
-      c.fillStyle = "rgba(255,241,214,.14)"; roundRect(c, px + 2, py + 2, size - 4, (size - 4) * 0.42, 2); c.fill();
-      c.fillStyle = "rgba(20,13,7,.20)"; c.fillRect(px + 2, py + size - Math.max(3, size * 0.22), size - 4, size * 0.18);
-      // mortar border
-      c.strokeStyle = "rgba(20,13,7,.55)"; c.lineWidth = 1; roundRect(c, px + 1, py + 1, size - 2, size - 2, 3); c.stroke();
-      // engraved wedge (cuneiform mark)
-      c.strokeStyle = "rgba(20,13,7,.32)"; c.lineWidth = 1;
-      var cx = px + size * 0.5, cy = py + size * 0.52;
-      c.beginPath(); c.moveTo(cx - size * 0.14, cy - size * 0.12); c.lineTo(cx + size * 0.14, cy - size * 0.12);
-      c.moveTo(cx, cy - size * 0.04); c.lineTo(cx, cy + size * 0.16); c.stroke();
+    // a fired mud-brick: grained clay, a bevelled edge lit from the upper left, and two
+    // pressed cuneiform wedges. Each colour/size is rendered once and reused.
+    function brickImage(size, colIdx) {
+      var key = colIdx + "@" + size;
+      if (tileCache[key]) return tileCache[key];
+      var cv = document.createElement("canvas"), sc = DPR; cv.width = Math.ceil(size * sc); cv.height = Math.ceil(size * sc);
+      var c = cv.getContext("2d"); c.setTransform(sc, 0, 0, sc, 0, 0);
+      var col = TILE[colIdx], s = size;
+      roundRect(c, 1, 1, s - 2, s - 2, 2.5); c.fillStyle = col; c.fill();
+      c.save(); roundRect(c, 1, 1, s - 2, s - 2, 2.5); c.clip();
+      // grain: a seeded speckle so every brick of a colour matches
+      var seed = colIdx * 97 + 13; function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+      for (var k = 0; k < s * 2.2; k++) { c.fillStyle = rnd() < 0.5 ? "rgba(255,240,210,0.10)" : "rgba(30,15,5,0.14)"; c.fillRect(rnd() * s, rnd() * s, 1 + rnd(), 1 + rnd()); }
+      // bevel
+      var g = c.createLinearGradient(0, 0, s, s); g.addColorStop(0, "rgba(255,244,220,0.30)"); g.addColorStop(0.45, "rgba(255,244,220,0)"); g.addColorStop(0.6, "rgba(20,10,4,0)"); g.addColorStop(1, "rgba(20,10,4,0.38)");
+      c.fillStyle = g; c.fillRect(0, 0, s, s);
+      c.restore();
+      c.strokeStyle = "rgba(20,12,5,0.7)"; c.lineWidth = 1; roundRect(c, 1, 1, s - 2, s - 2, 2.5); c.stroke();
+      c.strokeStyle = "rgba(255,240,210,0.22)"; c.beginPath(); c.moveTo(2.5, s - 3); c.lineTo(2.5, 2.5); c.lineTo(s - 3, 2.5); c.stroke();
+      // pressed wedges: a horizontal and a vertical stroke with triangular heads
+      function wedge(x, y, dx, dy, L) {
+        var px = -dy, py = dx, hw = s * 0.07;
+        c.fillStyle = "rgba(25,12,4,0.42)"; c.beginPath(); c.moveTo(x - px * hw, y - py * hw); c.lineTo(x + px * hw, y + py * hw); c.lineTo(x + dx * L, y + dy * L); c.closePath(); c.fill();
+        c.fillStyle = "rgba(255,240,210,0.16)"; c.beginPath(); c.moveTo(x + px * hw, y + py * hw); c.lineTo(x + dx * L, y + dy * L); c.lineTo(x + px * hw * 0.4 + dx * L * 0.4, y + py * hw * 0.4 + dy * L * 0.4); c.closePath(); c.fill();
+      }
+      wedge(s * 0.28, s * 0.36, 1, 0, s * 0.42); wedge(s * 0.52, s * 0.5, 0, 1, s * 0.3);
+      tileCache[key] = cv;
+      return cv;
+    }
+    function tile(c, px, py, size, colIdx) { c.drawImage(brickImage(size, colIdx), px, py, size, size); }
+
+    // the well: a dusk sky behind a faint mud-brick wall, so the board reads as a building site
+    function drawWellBg() {
+      if (!wellBg) {
+        wellBg = document.createElement("canvas"); wellBg.width = Math.round(W * DPR); wellBg.height = Math.round(H * DPR);
+        var b = wellBg.getContext("2d"); b.setTransform(DPR, 0, 0, DPR, 0, 0);
+        var g = b.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#121629"); g.addColorStop(0.55, "#2a1f2a"); g.addColorStop(0.85, "#4a2c1c"); g.addColorStop(1, "#5c361e");
+        b.fillStyle = g; b.fillRect(0, 0, W, H);
+        for (var k = 0; k < 40; k++) { var y = Math.random() * H * 0.5; b.fillStyle = "rgba(255,240,210," + (0.25 + Math.random() * 0.5) * (1 - y / (H * 0.5)) + ")"; b.fillRect(Math.random() * W, y, 1, 1); }
+        b.beginPath(); b.arc(W * 0.78, H * 0.12, 9, 0, Math.PI * 2); b.fillStyle = "rgba(231,198,128,0.55)"; b.fill();
+        b.beginPath(); b.arc(W * 0.78 + 3.5, H * 0.12 - 2, 8, 0, Math.PI * 2); b.fillStyle = "#141729"; b.fill();
+        // faint coursed brickwork
+        b.strokeStyle = "rgba(231,198,128,0.05)"; b.lineWidth = 1;
+        for (var r = 0; r < ROWS; r++) {
+          b.beginPath(); b.moveTo(0, r * CELL + 0.5); b.lineTo(W, r * CELL + 0.5); b.stroke();
+          for (var x = (r % 2 ? CELL : CELL / 2); x < W; x += CELL * 2) { b.beginPath(); b.moveTo(x + 0.5, r * CELL); b.lineTo(x + 0.5, (r + 1) * CELL); b.stroke(); }
+        }
+        var v = b.createRadialGradient(W / 2, H / 2, H * 0.2, W / 2, H / 2, H * 0.7); v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,0.45)");
+        b.fillStyle = v; b.fillRect(0, 0, W, H);
+      }
+      wctx.drawImage(wellBg, 0, 0, W, H);
     }
 
     function draw() {
       wctx.clearRect(0, 0, W, H);
-      wctx.fillStyle = COL.ground; wctx.fillRect(0, 0, W, H);
-      // faint grid
-      wctx.strokeStyle = COL.line; wctx.lineWidth = 1; wctx.globalAlpha = .5;
-      for (var x = 1; x < COLS; x++) { wctx.beginPath(); wctx.moveTo(x * CELL, 0); wctx.lineTo(x * CELL, H); wctx.stroke(); }
-      for (var y = 1; y < ROWS; y++) { wctx.beginPath(); wctx.moveTo(0, y * CELL); wctx.lineTo(W, y * CELL); wctx.stroke(); }
-      wctx.globalAlpha = 1;
-      // settled board
+      drawWellBg();
+      // settled board, with a soft shadow under the stack
+      for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) if (st.board[y][x]) {
+        wctx.fillStyle = "rgba(0,0,0,0.28)"; wctx.fillRect(x * CELL + 2, y * CELL + 3, CELL - 2, CELL - 2);
+      }
       for (y = 0; y < ROWS; y++) for (x = 0; x < COLS; x++) if (st.board[y][x]) tile(wctx, x * CELL, y * CELL, CELL, st.board[y][x]);
       // ghost + active piece
       if (st.piece) {
         var d = 0; while (!collides(st.piece, 0, d + 1)) d++;
         var m = st.piece.m;
+        wctx.save(); wctx.setLineDash([3, 3]); wctx.strokeStyle = COL.goldB; wctx.globalAlpha = .45; wctx.lineWidth = 1.2;
         for (var r = 0; r < m.length; r++) for (var c = 0; c < m[r].length; c++) {
           if (!m[r][c]) continue;
           var gx = (st.piece.x + c) * CELL, gy = (st.piece.y + r + d) * CELL;
-          if (st.piece.y + r + d >= 0) { wctx.strokeStyle = TILE[st.piece.c]; wctx.globalAlpha = .28; wctx.lineWidth = 1.5; roundRect(wctx, gx + 2, gy + 2, CELL - 4, CELL - 4, 3); wctx.stroke(); wctx.globalAlpha = 1; }
+          if (st.piece.y + r + d >= 0) { roundRect(wctx, gx + 2.5, gy + 2.5, CELL - 5, CELL - 5, 3); wctx.stroke(); }
         }
+        wctx.restore();
+        wctx.save(); wctx.shadowColor = "rgba(231,198,128,0.45)"; wctx.shadowBlur = 8;
         for (r = 0; r < m.length; r++) for (c = 0; c < m[r].length; c++) {
           if (m[r][c] && st.piece.y + r >= 0) tile(wctx, (st.piece.x + c) * CELL, (st.piece.y + r) * CELL, CELL, st.piece.c);
         }
+        wctx.restore();
       }
     }
 
@@ -253,6 +295,9 @@
     function drawMonument() {
       mctx.clearRect(0, 0, ZW, ZH);
       var courses = st.lines, cx = ZW / 2, groundY = ZH - 14;
+      var sky = mctx.createLinearGradient(0, 0, 0, ZH); sky.addColorStop(0, "#121629"); sky.addColorStop(0.7, "#3a2620"); sky.addColorStop(1, "#6a4022");
+      mctx.fillStyle = sky; roundRect(mctx, 0, 0, ZW, ZH, 8); mctx.fill();
+      mctx.fillStyle = "#3b2616"; mctx.beginPath(); mctx.moveTo(0, groundY + 2); mctx.quadraticCurveTo(ZW * 0.3, groundY - 6, ZW * 0.6, groundY); mctx.quadraticCurveTo(ZW * 0.85, groundY + 5, ZW, groundY - 2); mctx.lineTo(ZW, ZH); mctx.lineTo(0, ZH); mctx.closePath(); mctx.fill();
       mctx.strokeStyle = COL.line; mctx.lineWidth = 1;
       mctx.beginPath(); mctx.moveTo(8, groundY + 2); mctx.lineTo(ZW - 8, groundY + 2); mctx.stroke();
       if (courses <= 0) {

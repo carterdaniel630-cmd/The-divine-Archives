@@ -360,7 +360,7 @@
         '<div class="rk-controls"><button class="rq-btn rk-next" data-a="next"></button></div>' +
         '<p class="rq-note">Tap a land, then a neighbour to attack — the higher dice win. Hold a whole region or a ★capital for extra armies. Trade a set of three cards for a host. Be the last power standing.</p>';
       canvas = root.querySelector(".rk-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VW * DPR; canvas.height = VH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       hudEl = root.querySelector(".rk-hud"); msgEl = root.querySelector(".rk-msg"); live = root.querySelector(".rk-toast");
       btnEl = root.querySelector(".rk-next"); tradeEl = root.querySelector(".rk-cards"); logEl = root.querySelector(".rk-log");
       canvas.addEventListener("click", function (e) { var r = canvas.getBoundingClientRect(); onClick(terrAt((e.clientX - r.left) / r.width * VW, (e.clientY - r.top) / r.height * VH)); });

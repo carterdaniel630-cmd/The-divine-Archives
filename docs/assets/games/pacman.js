@@ -238,29 +238,80 @@
     }
 
     /* ---------------- render ---------------- */
+    // the maze: walls merged into continuous carved passages (cached per maze, since walls
+    // never change), flagstone floors, and a pool of light carried by the seeker.
+    var wallCache = null, wallFor = null;
+    function isWall(r, c) { return r < 0 || c < 0 || r >= ROWS || c >= COLS || st.grid[r][c] === 0; }
+    function buildWalls() {
+      wallCache = document.createElement("canvas"); wallCache.width = Math.round(VW * DPR); wallCache.height = Math.round(VH * DPR); wallFor = st.grid;
+      var b = wallCache.getContext("2d"); b.setTransform(DPR, 0, 0, DPR, 0, 0);
+      // floor: dark flagstones
+      b.fillStyle = "#120d08"; b.fillRect(0, 0, VW, VH);
+      for (var r = 0; r < ROWS; r++) for (var c = 0; c < COLS; c++) {
+        if (isWall(r, c)) continue;
+        b.fillStyle = (r + c) % 2 ? "#0e0a06" : "#120d08"; b.fillRect(c * CELL + 0.5, r * CELL + 0.5, CELL - 1, CELL - 1);
+      }
+      // stone mass
+      for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++) {
+        if (!isWall(r, c)) continue;
+        var x = c * CELL, y = r * CELL, g = b.createLinearGradient(x, y, x + CELL, y + CELL);
+        g.addColorStop(0, "#5a4428"); g.addColorStop(1, "#3a2a18");
+        b.fillStyle = g; b.fillRect(x, y, CELL, CELL);
+        // chisel marks
+        b.fillStyle = "rgba(0,0,0,0.18)"; b.fillRect(x + ((r * 7 + c * 3) % 13), y + ((r * 5 + c * 11) % 15), 3, 1);
+      }
+      // edges where stone meets corridor: a lit gold lip on top/left faces, shadow on bottom/right
+      b.lineCap = "round";
+      for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++) {
+        if (!isWall(r, c)) continue;
+        var x0 = c * CELL, y0 = r * CELL, x1 = x0 + CELL, y1 = y0 + CELL;
+        function edge(ax, ay, bx, by, lit) {
+          b.strokeStyle = lit ? "rgba(231,198,128,0.55)" : "rgba(199,154,84,0.30)"; b.lineWidth = 1.4;
+          b.beginPath(); b.moveTo(ax, ay); b.lineTo(bx, by); b.stroke();
+        }
+        if (!isWall(r + 1, c)) edge(x0, y1 - 0.7, x1, y1 - 0.7, true);
+        if (!isWall(r - 1, c)) edge(x0, y0 + 0.7, x1, y0 + 0.7, false);
+        if (!isWall(r, c + 1)) edge(x1 - 0.7, y0, x1 - 0.7, y1, true);
+        if (!isWall(r, c - 1)) edge(x0 + 0.7, y0, x0 + 0.7, y1, false);
+      }
+      // soft shadow cast into the corridors
+      for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++) {
+        if (isWall(r, c)) continue;
+        var sx = c * CELL, sy = r * CELL;
+        b.fillStyle = "rgba(0,0,0,0.35)";
+        if (isWall(r - 1, c)) b.fillRect(sx, sy, CELL, 3);
+        if (isWall(r, c - 1)) b.fillRect(sx, sy, 3, CELL);
+      }
+    }
     function draw() {
       cx.clearRect(0, 0, VW, VH);
-      cx.fillStyle = "#0d0906"; cx.fillRect(0, 0, VW, VH);
-      // walls
-      for (var r = 0; r < ROWS; r++) for (var c = 0; c < COLS; c++) {
-        var tv = st.grid[r][c];
-        if (tv === 0) drawWall(r, c);
-      }
-      // dots + lamps
+      if (!wallCache || wallFor !== st.grid) buildWalls();
+      cx.drawImage(wallCache, 0, 0, VW, VH);
+      var now = performance.now();
+      // offerings: small gold coins
       for (var r2 = 0; r2 < ROWS; r2++) for (var c2 = 0; c2 < COLS; c2++) {
         var t = st.grid[r2][c2], x = c2 * CELL + CELL / 2, y = r2 * CELL + CELL / 2;
-        if (t === 3) { cx.fillStyle = COL.gold; cx.beginPath(); cx.arc(x, y, 2.1, 0, 7); cx.fill(); }
-        else if (t === 4) { var pulse = 2.6 + Math.sin(performance.now() / 180) * 1.4; cx.save(); cx.shadowColor = COL.goldB; cx.shadowBlur = 10; cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(x, y, pulse + 2.4, 0, 7); cx.fill(); cx.restore(); }
+        if (t === 3) { cx.fillStyle = "#8a6326"; cx.beginPath(); cx.arc(x + 0.4, y + 0.5, 2.3, 0, 7); cx.fill(); cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(x, y, 2.1, 0, 7); cx.fill(); }
       }
       st.ghosts.forEach(drawGhost);
       drawSeeker();
-      if (st.ready > 0) { cx.fillStyle = "rgba(231,198,128,.9)"; cx.font = "600 16px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText(st.dnotice || "Enter the labyrinth…", VW / 2, VH / 2 - 6); }
-    }
-    function drawWall(r, c) {
-      var x = c * CELL, y = r * CELL;
-      var g = cx.createLinearGradient(x, y, x, y + CELL); g.addColorStop(0, "#2a2013"); g.addColorStop(1, "#160f08");
-      cx.fillStyle = g; roundRect(x + 1.5, y + 1.5, CELL - 3, CELL - 3, 5); cx.fill();
-      cx.strokeStyle = "rgba(199,154,84,.34)"; cx.lineWidth = 1; cx.stroke();
+      // darkness beyond the seeker's light
+      var p = entPix(st.player), R = CELL * (st.fright > 0 ? 9 : 6.5) + Math.sin(now / 140) * 2;
+      var dk = cx.createRadialGradient(p.x, p.y, R * 0.25, p.x, p.y, R);
+      dk.addColorStop(0, "rgba(8,5,3,0)"); dk.addColorStop(1, "rgba(8,5,3,0.62)");
+      cx.fillStyle = dk; cx.fillRect(0, 0, VW, VH);
+      // lamps burn through the dark: a flickering flame in a bowl
+      for (var r3 = 0; r3 < ROWS; r3++) for (var c3 = 0; c3 < COLS; c3++) {
+        if (st.grid[r3][c3] !== 4) continue;
+        var lx = c3 * CELL + CELL / 2, ly = r3 * CELL + CELL / 2, fl = Math.sin(now / 90 + c3) * 0.5 + Math.sin(now / 53 + r3) * 0.5;
+        var hal = cx.createRadialGradient(lx, ly, 0, lx, ly, CELL * 1.6); hal.addColorStop(0, "rgba(231,168,80,0.45)"); hal.addColorStop(1, "rgba(231,168,80,0)");
+        cx.fillStyle = hal; cx.beginPath(); cx.arc(lx, ly, CELL * 1.6, 0, 7); cx.fill();
+        cx.fillStyle = "#6b4a24"; cx.beginPath(); cx.ellipse(lx, ly + 4, 5.5, 2.4, 0, 0, Math.PI * 2); cx.fill();
+        cx.save(); cx.shadowColor = "#ffb347"; cx.shadowBlur = 12;
+        cx.fillStyle = "#ffcf6a"; cx.beginPath(); cx.moveTo(lx - 3.2, ly + 3); cx.quadraticCurveTo(lx - 3.6 + fl, ly - 3, lx + fl * 1.5, ly - 7 - fl); cx.quadraticCurveTo(lx + 3.6 + fl, ly - 3, lx + 3.2, ly + 3); cx.closePath(); cx.fill();
+        cx.fillStyle = "#fff4d0"; cx.beginPath(); cx.ellipse(lx + fl * 0.5, ly, 1.4, 2.6, 0, 0, Math.PI * 2); cx.fill(); cx.restore();
+      }
+      if (st.ready > 0) { cx.fillStyle = "rgba(231,198,128,.95)"; cx.font = "600 16px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText(st.dnotice || "Enter the labyrinth…", VW / 2, VH / 2 - 6); }
     }
     function drawSeeker() {
       var p = entPix(st.player), a = Math.abs(Math.sin(st.player.mouth)) * 0.5 + 0.06;
@@ -347,7 +398,9 @@
           '<button class="ouro-key down" data-d="down" aria-label="Down">▼</button>' +
         "</div><p class=\"rq-note\">Arrow keys / WASD, swipe, or the pad. Light the four lamps; each reveals a belief of the dead.</p></div>";
       canvas = root.querySelector(".pm-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VW * DPR; canvas.height = VH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      var shown = canvas.getBoundingClientRect().width || VW;
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shown / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      wallCache = null;
       hudEl = root.querySelector(".pm-hud"); live = root.querySelector(".pm-toast");
       wire();
     }

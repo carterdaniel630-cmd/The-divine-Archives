@@ -251,7 +251,7 @@
 @media (max-width:460px){ .rq-form { grid-template-columns:1fr; } }
 
 /* ---------- Ouroboros (snake) ---------- */
-.ouro-stage { position:relative; display:flex; justify-content:center; margin:.5rem auto .6rem; width:min(340px,86vw); padding:10px; }
+.ouro-stage { position:relative; display:flex; justify-content:center; margin:.5rem auto .6rem; width:min(460px,86vw); padding:10px; }
 /* engraved corner brackets around the board, echoing the dialog frame */
 .ouro-stage::before, .ouro-stage::after {
   content:""; position:absolute; width:22px; height:22px; pointer-events:none;
@@ -259,7 +259,7 @@
 }
 .ouro-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .ouro-stage::after  { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.ouro-canvas { width:min(320px, 100%, 56dvh); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:10px; background:var(--panel); touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 8px 26px -14px #000; }
+.ouro-canvas { width:min(440px, 100%, 56dvh); height:auto; aspect-ratio:1/1; border:1px solid var(--line); border-radius:10px; background:var(--panel); touch-action:none; image-rendering:auto; box-shadow: inset 0 0 40px rgba(0,0,0,.45), 0 8px 26px -14px #000; }
 .ouro-toast { min-height:2.4rem; text-align:center; font-family:var(--font-body); font-size:.9rem; color:var(--ink); margin:.3rem auto .2rem; max-width:34rem; line-height:1.4; }
 .ouro-toast .ouro-sym { color:var(--gold); }
 .ouro-toast strong { color:var(--parchment); }
@@ -286,13 +286,13 @@
 .zig-well-wrap::before, .zig-well-wrap::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .zig-well-wrap::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .zig-well-wrap::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.zig-well { width:min(190px, 44vw, 34dvh); height:auto; aspect-ratio:10/18; background:var(--panel); border:1px solid var(--line); border-radius:8px; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5); }
+.zig-well { width:min(250px, 44vw, 46dvh); height:auto; aspect-ratio:10/18; background:var(--panel); border:1px solid var(--line); border-radius:8px; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5); }
 .zig-side { display:flex; flex-direction:column; align-items:center; gap:.7rem; }
 .zig-next { text-align:center; }
 .zig-next-label { display:block; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:.54rem; color:var(--ink-faint); margin-bottom:.2rem; }
 .zig-next-cv { width:64px; height:64px; background:var(--panel); border:1px solid var(--line-soft); border-radius:6px; }
 .zig-mon-wrap { position:relative; }
-.zig-mon { width:min(120px, 26vw, 19dvh); height:auto; aspect-ratio:1/2; }
+.zig-mon { width:min(150px, 26vw, 26dvh); border-radius:8px; border:1px solid var(--line); height:auto; aspect-ratio:1/2; }
 .zig-toast .zig-sym { color:var(--gold); }
 .zig-pad { display:grid; grid-template-columns:repeat(3,3rem); grid-template-rows:repeat(2,3rem); gap:.3rem; }
 .zig-pad .zig-rot { grid-column:1; grid-row:1; } .zig-pad .zig-left { grid-column:1; grid-row:2; }
@@ -422,7 +422,7 @@
 .pm-stage::before, .pm-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .pm-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .pm-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.pm-canvas { width:min(380px, 100%, 52dvh); height:auto; aspect-ratio:19/21; border:1px solid var(--line); border-radius:8px; background:#0d0906; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
+.pm-canvas { width:min(460px, 100%, 58dvh); height:auto; aspect-ratio:19/21; border:1px solid var(--line); border-radius:8px; background:#0d0906; touch-action:none; box-shadow: inset 0 0 40px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
 .pm-toast { min-height:2.4rem; }
 
 /* ---- The Firmament (Pinball) ---- */
@@ -533,3 +533,38 @@
 .sk-feedback.ok { color:var(--good); font-family:var(--font-display); letter-spacing:.04em; }
 .sk-feedback.no { color:var(--ember); }
 .sk-hint { color:var(--warn); font-style:italic; }
+
+/* ---- The Excavation: visual pass (a strung dig grid over topsoil) ---- */
+.ms-grid { gap:2px; padding:10px; width:min(100%,34rem);
+  background:
+    linear-gradient(0deg, rgba(0,0,0,.25), rgba(0,0,0,.25)),
+    #b89a64; /* the gaps between squares read as the taut survey strings */
+  border:1px solid #6b5230; border-radius:6px;
+  box-shadow: 0 0 0 6px #2a1d10, 0 0 0 7px #4a3620, inset 0 0 30px rgba(0,0,0,.35), 0 14px 34px -12px #000; }
+.ms-cell { border:0; border-radius:1px; font-size:min(3.8vw,1.08rem);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.17 0 0 0 0 0.08 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(155deg,#8a6a3e,#6b4f2c 60%,#5a4124);
+  box-shadow: inset 1px 1px 0 rgba(255,225,160,.22), inset -1px -2px 2px rgba(0,0,0,.35); }
+.ms-cell:nth-child(3n) { filter:hue-rotate(-4deg) brightness(.96); }
+.ms-cell:nth-child(7n+2) { filter:brightness(1.05); }
+.ms-cell:hover:not(.is-open) { background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.17 0 0 0 0 0.08 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(155deg,#a07c48,#7d5c34 60%,#654a2a); }
+.ms-cell.is-open { filter:none;
+  background: radial-gradient(120% 120% at 50% 35%, #2c2014 0%, #1a120a 70%, #120c06 100%);
+  box-shadow: inset 0 3px 7px rgba(0,0,0,.7), inset 0 -1px 0 rgba(255,220,150,.06); }
+.ms-cell.is-open[data-n] { text-shadow: 0 0 8px currentColor, 0 1px 0 #000; }
+.ms-cell.is-flag { color:#d6452c; text-shadow: 0 1px 0 #000, 0 0 6px rgba(214,69,44,.6); }
+.ms-cell.is-mine { background: radial-gradient(circle at 50% 45%, #6a2616, #1a0f08); text-shadow:0 0 10px #ff7a4a; }
+
+/* ---- visual pass: on large screens the games get a wider leaf and bigger boards ---- */
+@media (min-width: 1100px) and (min-height: 820px) {
+  .game-dialog { width:min(58rem, 100%); }
+  .ch-board { width:min(460px, 100%, 60dvh); }
+  .pb-canvas { width:min(390px, 100%, 56dvh); }
+  .rk-canvas { width:min(520px, 100%, 62dvh); }
+  .tr-canvas { width:min(620px, 100%, 66dvh); }
+  .pg-canvas { width:min(720px, 100%, 62dvh); }
+  .fg-canvas { width:min(820px, 100%, 84dvh); }
+}
