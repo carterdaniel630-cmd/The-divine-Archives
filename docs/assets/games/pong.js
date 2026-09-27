@@ -87,6 +87,7 @@
         '<p class="rq-note">Your paddle (gold, left): W/S or ↑/↓, drag, or the pad.' + (twoP ? " Player 2 (violet, right): the right pad." : "") + ' First to ' + WIN + ' wins the contest.</p>';
       canvas = root.querySelector(".pg-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      fieldBg = null;
       hudEl = root.querySelector(".pg-hud"); live = root.querySelector(".pg-toast");
       wireControls();
     }
@@ -158,7 +159,7 @@
         sparkAt(b.x, b.y, dir > 0 ? LIGHT : DARK, 12);
       }
     }
-    function sparkAt(x, y, col, n) { n = n || 5; for (var i = 0; i < n; i++) st.sparks.push({ x: x, y: y, vx: rnd(-3, 3), vy: rnd(-3, 3), life: 1, r: rnd(1, 2.6), col: col }); }
+    function sparkAt(x, y, col, n) { n = n || 5; if (n >= 5) (st.rings || (st.rings = [])).push({ x: x, y: y, t: 0, col: col }); for (var i = 0; i < n; i++) st.sparks.push({ x: x, y: y, vx: rnd(-3, 3), vy: rnd(-3, 3), life: 1, r: rnd(1, 2.6), col: col }); }
 
     function point(winner, serveDir) {
       winner.score++;
@@ -183,9 +184,8 @@
     function draw() {
       cx.clearRect(0, 0, VW, VH);
       // field
-      var g = cx.createLinearGradient(0, 0, VW, 0);
-      g.addColorStop(0, "#241a2e"); g.addColorStop(0.5, "#171019"); g.addColorStop(1, "#1a1226");
-      cx.fillStyle = g; cx.fillRect(0, 0, VW, VH);
+      if (!fieldBg) fieldBg = buildField();
+      cx.drawImage(fieldBg, 0, 0, VW, VH);
       // drifting motes
       for (var i = 0; i < st.motes.length; i++) { var mo = st.motes[i]; cx.globalAlpha = mo.a; cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(mo.x, mo.y, mo.r, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
@@ -202,10 +202,26 @@
       paddle(st.pl, LIGHT, "#8a6428"); paddle(st.pr, DARK, "#3a2a5a");
       // ball
       if (st.serveT <= 0 || Math.floor(st.serveT * 8) % 2 === 0) drawBall(st.ball);
+      // impact shockwaves
+      if (st.rings) for (var q = st.rings.length - 1; q >= 0; q--) { var rg = st.rings[q]; rg.t += 1 / 60; if (rg.t > 0.45) { st.rings.splice(q, 1); continue; } var u = rg.t / 0.45; cx.strokeStyle = hexA(rg.col.charAt(0) === "#" ? rg.col : COL.goldB, (1 - u) * 0.7); cx.lineWidth = 2 * (1 - u) + 0.5; cx.beginPath(); cx.arc(rg.x, rg.y, 6 + u * 34, 0, 7); cx.stroke(); }
       // sparks
       for (var s = st.sparks.length - 1; s >= 0; s--) { var sp = st.sparks[s]; cx.globalAlpha = clamp(sp.life, 0, 1); cx.fillStyle = sp.col; cx.beginPath(); cx.arc(sp.x, sp.y, sp.r, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
       if (st.serveT > 0 && !st.over) { cx.fillStyle = "rgba(231,198,128,.85)"; cx.font = "600 15px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText("The orb is cast…", VW / 2, VH / 2 - 54); }
+    }
+    // the field: a dark sky split between order (warm, left) and its opposite (violet,
+    // right), soft nebulae and a scatter of fixed stars; drawn once
+    var fieldBg = null;
+    function buildField() {
+      var cv = document.createElement("canvas"); cv.width = Math.round(VW * DPR); cv.height = Math.round(VH * DPR);
+      var f = cv.getContext("2d"); f.setTransform(DPR, 0, 0, DPR, 0, 0);
+      var g = f.createLinearGradient(0, 0, VW, 0); g.addColorStop(0, "#241a2e"); g.addColorStop(0.5, "#130d18"); g.addColorStop(1, "#1a1226");
+      f.fillStyle = g; f.fillRect(0, 0, VW, VH);
+      [[VW * 0.22, VH * 0.35, 120, "rgba(231,178,90,.10)"], [VW * 0.3, VH * 0.8, 90, "rgba(199,120,60,.07)"], [VW * 0.78, VH * 0.3, 110, "rgba(150,110,230,.11)"], [VW * 0.7, VH * 0.75, 100, "rgba(110,80,200,.08)"]].forEach(function (n) {
+        var rg = f.createRadialGradient(n[0], n[1], 2, n[0], n[1], n[2]); rg.addColorStop(0, n[3]); rg.addColorStop(1, "rgba(0,0,0,0)"); f.fillStyle = rg; f.fillRect(0, 0, VW, VH); });
+      var seed = 7; function R() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+      for (var i = 0; i < 90; i++) { var x = R() * VW, y = R() * VH; f.fillStyle = x < VW / 2 ? "rgba(255,232,190," + (0.2 + R() * 0.6) + ")" : "rgba(210,200,255," + (0.2 + R() * 0.6) + ")"; f.fillRect(x, y, R() < 0.9 ? 1 : 1.6, R() < 0.9 ? 1 : 1.6); }
+      return cv;
     }
     function sideGlow(x, col) {
       var g = cx.createLinearGradient(x === 0 ? 0 : VW, 0, x === 0 ? 60 : VW - 60, 0);

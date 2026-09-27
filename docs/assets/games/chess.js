@@ -184,7 +184,7 @@
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var C = { panel: v("--panel", "#1e150d"), ground: v("--ground", "#140d07"), gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96"), line: v("--line", "#3a2c1a"), good: v("--good", "#7e9e5c"), parch: v("--parchment", "#e6dabf") };
-    var LIGHT = "#2e2114", DARK = "#1a120a", SELCOL = "rgba(199,154,84,.5)", MOVECOL = "rgba(126,158,92,.5)", CHKCOL = "rgba(178,60,52,.6)";
+    var SELCOL = "rgba(199,154,84,.5)", MOVECOL = "rgba(126,158,92,.5)", CHKCOL = "rgba(178,60,52,.6)";
     var ACCENT = { greek: "#bfe3ff", egyptian: "#57c6c6", norse: "#9a86c8" };
 
     var canvas, cx, boardEl, factEl, statusEl, raf = null, DPR = 1, N = 8, SZ = 44, BW = N * SZ;
@@ -197,15 +197,52 @@
     }
 
     /* ---- rendering ---- */
+    // the board itself: veined limestone and dark basalt squares with a bevel, and
+    // file/rank letters cut into the edge squares; built once per resolution
+    var boardBg = null;
+    function buildBoard() {
+      var cv = document.createElement("canvas"); cv.width = Math.round(BW * DPR); cv.height = Math.round(BW * DPR); cv.dpr = DPR;
+      var b = cv.getContext("2d"); b.setTransform(DPR, 0, 0, DPR, 0, 0);
+      var seed = 12345; function R() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+      for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++) {
+        var x = c * SZ, y = r * SZ, dk = (r + c) % 2 === 1;
+        var g = b.createLinearGradient(x, y, x + SZ, y + SZ);
+        if (dk) { g.addColorStop(0, "#2a2a22"); g.addColorStop(1, "#171710"); } else { g.addColorStop(0, "#6e5a3c"); g.addColorStop(1, "#54432a"); }
+        b.fillStyle = g; b.fillRect(x, y, SZ, SZ);
+        // veins
+        b.save(); b.beginPath(); b.rect(x, y, SZ, SZ); b.clip();
+        for (var v = 0; v < 3; v++) {
+          b.strokeStyle = dk ? "rgba(140,150,120," + (0.06 + R() * 0.08) + ")" : "rgba(255,236,196," + (0.08 + R() * 0.1) + ")"; b.lineWidth = 0.6 + R() * 0.8;
+          var sx = x + R() * SZ, sy = y - 4; b.beginPath(); b.moveTo(sx, sy);
+          for (var k = 1; k <= 5; k++) b.lineTo(sx + (R() - 0.5) * 18 + k * (R() - 0.3) * 4, y + k * SZ / 5 + 2);
+          b.stroke();
+        }
+        for (var sp = 0; sp < 14; sp++) { b.fillStyle = R() < 0.5 ? "rgba(0,0,0,.12)" : "rgba(255,240,210,.06)"; b.fillRect(x + R() * SZ, y + R() * SZ, 1, 1); }
+        b.restore();
+        // bevel: lit top-left, shaded bottom-right
+        b.fillStyle = "rgba(255,240,210," + (dk ? 0.07 : 0.14) + ")"; b.fillRect(x, y, SZ, 1.2); b.fillRect(x, y, 1.2, SZ);
+        b.fillStyle = "rgba(0,0,0,.28)"; b.fillRect(x, y + SZ - 1.2, SZ, 1.2); b.fillRect(x + SZ - 1.2, y, 1.2, SZ);
+      }
+      // coordinates cut into the edge squares
+      b.font = "600 7.5px Cinzel, Georgia, serif";
+      for (var f = 0; f < 8; f++) {
+        b.fillStyle = (7 + f) % 2 ? "rgba(231,198,128,.55)" : "rgba(40,28,14,.75)"; b.textAlign = "right"; b.textBaseline = "bottom"; b.fillText("abcdefgh"[f], f * SZ + SZ - 3, BW - 2);
+        b.fillStyle = f % 2 ? "rgba(231,198,128,.55)" : "rgba(40,28,14,.75)"; b.textAlign = "left"; b.textBaseline = "top"; b.fillText(String(8 - f), 3, f * SZ + 2);
+      }
+      var vg = b.createRadialGradient(BW / 2, BW / 2, BW * 0.3, BW / 2, BW / 2, BW * 0.75); vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,.35)");
+      b.fillStyle = vg; b.fillRect(0, 0, BW, BW);
+      return cv;
+    }
     function draw() {
       cx.clearRect(0, 0, BW, BW);
       var kInChk = null;
       if (inCheck(st.board, st.turn)) kInChk = findKing(st.board, st.turn);
+      if (!boardBg || boardBg.dpr !== DPR) boardBg = buildBoard();
+      cx.drawImage(boardBg, 0, 0, BW, BW);
       for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++) {
         var i = idx(r, c), x = c * SZ, y = r * SZ;
-        cx.fillStyle = (r + c) % 2 ? DARK : LIGHT; cx.fillRect(x, y, SZ, SZ);
-        if (st.last && (st.last.from === i || st.last.to === i)) { cx.fillStyle = "rgba(199,154,84,.16)"; cx.fillRect(x, y, SZ, SZ); }
-        if (i === kInChk) { cx.fillStyle = CHKCOL; cx.fillRect(x, y, SZ, SZ); }
+        if (st.last && (st.last.from === i || st.last.to === i)) { cx.fillStyle = "rgba(231,198,128,.16)"; cx.fillRect(x, y, SZ, SZ); cx.strokeStyle = "rgba(231,198,128,.55)"; cx.lineWidth = 1.5; cx.strokeRect(x + 1.5, y + 1.5, SZ - 3, SZ - 3); }
+        if (i === kInChk) { var kg = cx.createRadialGradient(x + SZ / 2, y + SZ / 2, 2, x + SZ / 2, y + SZ / 2, SZ * 0.7); kg.addColorStop(0, "rgba(230,80,60,.75)"); kg.addColorStop(1, "rgba(178,60,52,0)"); cx.fillStyle = kg; cx.fillRect(x, y, SZ, SZ); }
       }
       // selection + legal targets
       if (st.sel != null) { var sr = st.sel >> 3, sc2 = st.sel & 7; cx.fillStyle = SELCOL; cx.fillRect(sc2 * SZ, sr * SZ, SZ, SZ);
@@ -213,7 +250,9 @@
           if (st.board[m.to] || m.ep) { cx.lineWidth = 3; cx.strokeStyle = MOVECOL; cx.beginPath(); cx.arc(cxp, cyp, SZ * 0.42, 0, 7); cx.stroke(); } else { cx.beginPath(); cx.arc(cxp, cyp, SZ * 0.16, 0, 7); cx.fill(); } });
       }
       // pieces
+      cx.save(); cx.shadowColor = "rgba(0,0,0,.65)"; cx.shadowBlur = 5; cx.shadowOffsetY = 2;   // pieces stand off the stone
       for (r = 0; r < 8; r++) for (c = 0; c < 8; c++) { var p = st.board[idx(r, c)]; if (!p) continue; var pan = p.c === "w" ? st.wPan : st.bPan; pieceArt(cx, c * SZ + SZ / 2, r * SZ + SZ / 2 + SZ * 0.03, SZ * 0.86, p.t, p.c, ACCENT[pan]); }
+      cx.restore();
       // edge frame
       cx.strokeStyle = C.line; cx.lineWidth = 2; cx.strokeRect(1, 1, BW - 2, BW - 2);
     }

@@ -265,34 +265,81 @@
     }
 
     /* ---------------- render ---------------- */
+    var mapBg = null;
+    function buildMapBg() {
+      var cv = document.createElement("canvas"); cv.width = Math.round(VW * DPR); cv.height = Math.round(VH * DPR); cv.dpr = DPR;
+      var m = cv.getContext("2d"); m.setTransform(DPR, 0, 0, DPR, 0, 0);
+      var R = mulberry(77);
+      // parchment land
+      var lg = m.createRadialGradient(VW * 0.45, VH * 0.4, 30, VW * 0.5, VH * 0.5, VW * 0.8);
+      lg.addColorStop(0, "#7a6644"); lg.addColorStop(0.7, "#5e4c30"); lg.addColorStop(1, "#3e3020");
+      m.fillStyle = lg; m.fillRect(0, 0, VW, VH);
+      for (var i = 0; i < 900; i++) { m.fillStyle = R() < 0.5 ? "rgba(255,240,200,.05)" : "rgba(40,25,10,.07)"; m.fillRect(R() * VW, R() * VH, 1 + R() * 2, 1 + R() * 2); }
+      // deserts: stippled sand (Sahara west of the Nile, the Arabian interior)
+      [[20, 200, 70, 90], [138, 225, 50, 40], [230, 190, 40, 25]].forEach(function (d) { for (var k = 0; k < 160; k++) { m.fillStyle = "rgba(230,200,140,.18)"; m.fillRect(d[0] + R() * d[2], d[1] + R() * d[3], 1, 1); } });
+      // the seas
+      var SEAS = [
+        [[0, 116], [28, 121], [50, 111], [66, 117], [72, 134], [100, 137], [108, 127], [122, 121], [133, 131], [129, 166], [110, 171], [80, 167], [50, 172], [20, 167], [0, 164]],   // Mediterranean
+        [[92, 48], [112, 40], [146, 42], [160, 54], [146, 66], [118, 70], [96, 62]],                                                                                                // Black Sea
+        [[208, 70], [220, 66], [228, 82], [226, 110], [214, 118], [208, 100]],                                                                                                       // Caspian
+        [[118, 176], [127, 174], [146, 214], [158, 262], [150, 266], [138, 222]],                                                                                                    // Red Sea
+        [[198, 184], [208, 180], [228, 198], [240, 214], [232, 220], [214, 204]],                                                                                                    // Persian Gulf
+        [[150, 300], [166, 276], [190, 262], [214, 244], [236, 226], [252, 222], [270, 214], [288, 226], [312, 214], [344, 206], [344, 300]]                                          // Arabian Sea
+      ];
+      function poly(pts) { m.beginPath(); m.moveTo(pts[0][0], pts[0][1]); for (var j = 1; j < pts.length; j++) { var a = pts[j - 1], b = pts[j]; m.quadraticCurveTo(a[0], a[1], (a[0] + b[0]) / 2, (a[1] + b[1]) / 2); } m.closePath(); }
+      SEAS.forEach(function (pts) {
+        poly(pts); m.save(); m.shadowColor = "rgba(20,12,4,.8)"; m.shadowBlur = 6; m.fillStyle = "#1b3446"; m.fill(); m.restore();
+        m.save(); poly(pts); m.clip();
+        var sg = m.createLinearGradient(0, 0, 0, VH); sg.addColorStop(0, "#23455a"); sg.addColorStop(1, "#15283a"); m.fillStyle = sg; m.fillRect(0, 0, VW, VH);
+        m.strokeStyle = "rgba(200,225,235,.12)"; m.lineWidth = 0.8;
+        for (var y = 0; y < VH; y += 7) { m.beginPath(); for (var x = 0; x <= VW; x += 6) { var yy = y + Math.sin(x * 0.25 + y) * 1.2; if (x) m.lineTo(x, yy); else m.moveTo(x, yy); } m.stroke(); }
+        m.restore();
+        poly(pts); m.strokeStyle = "rgba(40,25,10,.85)"; m.lineWidth = 1.6; m.stroke();
+        poly(pts); m.strokeStyle = "rgba(210,190,150,.35)"; m.lineWidth = 0.6; m.stroke();
+      });
+      // rivers: the Nile, the Tigris and Euphrates, the Indus, the Yellow River
+      var RIV = [[[102, 300], [98, 262], [94, 226], [98, 196], [104, 172]], [[150, 104], [168, 128], [186, 158], [204, 184]], [[176, 98], [196, 128], [206, 160], [208, 182]],
+        [[300, 100], [292, 140], [286, 184], [282, 216]], [[344, 86], [326, 96], [314, 104]]];
+      RIV.forEach(function (rv) { m.beginPath(); m.moveTo(rv[0][0], rv[0][1]); for (var j = 1; j < rv.length; j++) { var a = rv[j - 1], b = rv[j]; m.quadraticCurveTo(a[0] + (R() - 0.5) * 6, a[1], (a[0] + b[0]) / 2, (a[1] + b[1]) / 2); } m.lineTo(rv[rv.length - 1][0], rv[rv.length - 1][1]); m.strokeStyle = "rgba(20,12,4,.5)"; m.lineWidth = 3; m.stroke(); m.strokeStyle = "#3d7090"; m.lineWidth = 1.6; m.stroke(); });
+      // mountain ranges: the Taurus, the Zagros, the Hindu Kush, the Himalaya
+      function peak(x, y, s2) { m.fillStyle = "rgba(40,28,14,.55)"; m.beginPath(); m.moveTo(x - s2, y); m.lineTo(x, y - s2 * 1.2); m.lineTo(x + s2, y); m.fill(); m.fillStyle = "rgba(240,225,190,.35)"; m.beginPath(); m.moveTo(x, y - s2 * 1.2); m.lineTo(x + s2 * 0.35, y - s2 * 0.6); m.lineTo(x - s2 * 0.15, y - s2 * 0.7); m.fill(); }
+      [[138, 104], [148, 100], [158, 104], [206, 152], [212, 162], [218, 172], [244, 122], [252, 116], [260, 124], [296, 150], [306, 146], [316, 152], [326, 148]].forEach(function (pk) { peak(pk[0], pk[1], 5 + R() * 2); });
+      // compass rose
+      m.save(); m.translate(318, 272); m.strokeStyle = "rgba(231,198,128,.7)"; m.fillStyle = "rgba(231,198,128,.75)"; m.lineWidth = 0.8;
+      m.beginPath(); m.arc(0, 0, 11, 0, 7); m.stroke();
+      for (var q = 0; q < 4; q++) { m.save(); m.rotate(q * Math.PI / 2); m.beginPath(); m.moveTo(0, -15); m.lineTo(3, 0); m.lineTo(-3, 0); m.closePath(); m.fill(); m.restore(); }
+      m.font = "700 7px Cinzel, Georgia, serif"; m.textAlign = "center"; m.fillText("N", 0, -18); m.restore();
+      // sea names, as on an old map
+      m.fillStyle = "rgba(200,220,230,.4)"; m.font = "italic 7px Georgia, serif"; m.textAlign = "center";
+      m.fillText("Mare Nostrum", 62, 150); m.fillText("Erythraean Sea", 262, 262);
+      // frame + vignette
+      var vg = m.createRadialGradient(VW / 2, VH / 2, VH * 0.35, VW / 2, VH / 2, VW * 0.72); vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(10,6,2,.55)");
+      m.fillStyle = vg; m.fillRect(0, 0, VW, VH);
+      m.strokeStyle = "rgba(231,198,128,.35)"; m.lineWidth = 1; m.strokeRect(3.5, 3.5, VW - 7, VH - 7); m.strokeRect(6.5, 6.5, VW - 13, VH - 13);
+      return cv;
+    }
     function colOf(id) { return SIDE_COL[st.own[id]] || SIDE_COL.neutral; }
     function render() {
       if (!cx) return;
       cx.clearRect(0, 0, VW, VH);
-      // sea
-      var g = cx.createRadialGradient(VW * 0.5, VH * 0.42, 20, VW * 0.5, VH * 0.5, VW * 0.8);
-      g.addColorStop(0, "#16283a"); g.addColorStop(1, "#0b1118"); cx.fillStyle = g; cx.fillRect(0, 0, VW, VH);
-      // faint sea grid
-      cx.strokeStyle = "rgba(120,160,190,.05)"; cx.lineWidth = 1;
-      for (var gx = 0; gx < VW; gx += 24) { cx.beginPath(); cx.moveTo(gx, 0); cx.lineTo(gx, VH); cx.stroke(); }
-      for (var gy = 0; gy < VH; gy += 24) { cx.beginPath(); cx.moveTo(0, gy); cx.lineTo(VW, gy); cx.stroke(); }
-      // routes (sea = dashed, land drawn under the landmass)
+      // an antique map of the ancient world (cached): parchment land, the real seas and
+      // rivers in schematic position, mountain ranges, deserts, a compass rose
+      if (!mapBg || mapBg.dpr !== DPR) mapBg = buildMapBg();
+      cx.drawImage(mapBg, 0, 0, VW, VH);
+      // routes: roads over land, dashed sea-lanes
       EDGES.forEach(function (e) {
         var a = TMAP[e[0]], b = TMAP[e[1]];
-        cx.strokeStyle = e[2] === "sea" ? "rgba(180,205,225,.30)" : "rgba(120,90,50,.55)";
-        cx.lineWidth = e[2] === "sea" ? 1 : 3; cx.setLineDash(e[2] === "sea" ? [3, 3] : []);
+        if (e[2] === "sea") { cx.strokeStyle = "rgba(210,230,240,.42)"; cx.lineWidth = 1; cx.setLineDash([3, 3]); }
+        else { cx.strokeStyle = "rgba(60,38,16,.75)"; cx.lineWidth = 2.2; cx.setLineDash([5, 2]); }
         cx.beginPath(); cx.moveTo(a.x, a.y); cx.lineTo(b.x, b.y); cx.stroke();
       });
       cx.setLineDash([]);
-      // landmass underlayer — big overlapping blobs read as continents
-      TERR.forEach(function (t) { var pts = BLOB[t.id + "L"] || (BLOB[t.id + "L"] = blobPts(t.id, t.x, t.y, 25, 9)); pathBlob(pts); cx.fillStyle = "#2c2416"; cx.fill(); });
-      TERR.forEach(function (t) { var pts = BLOB[t.id + "L"]; pathBlob(pts); cx.strokeStyle = "rgba(210,180,120,.10)"; cx.lineWidth = 1; cx.stroke(); });
       // provinces — owner-coloured blob with region tint ring + border
       TERR.forEach(function (t) {
         var sel = st.sel === t.id, tgt = st.sel && st.own[t.id] !== st.own[st.sel] && ADJ[st.sel].indexOf(t.id) >= 0 && st.phase === "attack";
         var pts = BLOB[t.id] || (BLOB[t.id] = blobPts(t.id, t.x, t.y, 16, 8));
         cx.save();
-        if (sel) { cx.shadowColor = colOf(t.id); cx.shadowBlur = 14; }
+        if (sel) { cx.shadowColor = colOf(t.id); cx.shadowBlur = 14; } else { cx.shadowColor = "rgba(10,6,2,.7)"; cx.shadowBlur = 5; cx.shadowOffsetY = 1.5; }
         pathBlob(pts); cx.fillStyle = colOf(t.id); cx.fill(); cx.restore();
         pathBlob(pts); cx.strokeStyle = tgt ? "#fff" : sel ? "#fff2cf" : "rgba(12,8,4,.7)"; cx.lineWidth = tgt ? 2.6 : 1.4; cx.stroke();
         // region tint wash on top for grouping

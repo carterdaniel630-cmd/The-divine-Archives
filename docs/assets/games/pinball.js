@@ -159,7 +159,7 @@
       }
       return false;
     }
-    function addSpark(x, y, col) { for (var i = 0; i < 6; i++) st.sparks.push({ x: x, y: y, vx: rnd(-3, 3), vy: rnd(-3, 3), life: 1, col: col }); }
+    function addSpark(x, y, col) { (st.rings || (st.rings = [])).push({ x: x, y: y, t: 0, col: col }); for (var i = 0; i < 6; i++) st.sparks.push({ x: x, y: y, vx: rnd(-3, 3), vy: rnd(-3, 3), life: 1, col: col }); }
 
     function stepFlipper(f, dt) {
       var target = f.active ? f.up : f.rest, prev = f.ang;
@@ -264,8 +264,13 @@
       var lg = cx.createLinearGradient(270, 0, 304, 0); lg.addColorStop(0, "rgba(231,198,128,0)"); lg.addColorStop(1, "rgba(178,106,52,.18)");
       cx.fillStyle = lg; cx.fillRect(272, 60, 32, 300);
       // walls
-      cx.strokeStyle = "rgba(199,154,84,.55)"; cx.lineWidth = 3; cx.lineCap = "round";
-      SEGS.forEach(function (sg, i) { cx.strokeStyle = SLING.indexOf(i) >= 0 ? COL.ember : "rgba(199,154,84,.5)"; cx.beginPath(); cx.moveTo(sg[0], sg[1]); cx.lineTo(sg[2], sg[3]); cx.stroke(); });
+      // walls: a soft glow pass, then the bright rail
+      cx.lineCap = "round";
+      cx.save(); cx.shadowColor = "rgba(231,178,90,.55)"; cx.shadowBlur = 8;
+      SEGS.forEach(function (sg, i) { cx.strokeStyle = SLING.indexOf(i) >= 0 ? COL.ember : "rgba(199,154,84,.62)"; cx.lineWidth = 3; cx.beginPath(); cx.moveTo(sg[0], sg[1]); cx.lineTo(sg[2], sg[3]); cx.stroke(); });
+      cx.restore();
+      cx.strokeStyle = "rgba(255,236,196,.35)"; cx.lineWidth = 1;
+      SEGS.forEach(function (sg) { cx.beginPath(); cx.moveTo(sg[0], sg[1]); cx.lineTo(sg[2], sg[3]); cx.stroke(); });
       // drain gap marker
       cx.strokeStyle = "rgba(180,60,60,.4)"; cx.setLineDash([3, 5]); cx.beginPath(); cx.moveTo(DRAIN.x1, DRAIN.y); cx.lineTo(DRAIN.x2, DRAIN.y); cx.stroke(); cx.setLineDash([]);
       // bumpers — distinct celestial bodies
@@ -278,8 +283,16 @@
         cx.strokeStyle = "#7a5a2a"; cx.lineWidth = 3; cx.stroke();
         cx.fillStyle = COL.gold; cx.beginPath(); cx.arc(f.px, f.py, 4, 0, 7); cx.fill();
       });
-      // ball
+      // hit rings off the bumpers and slings
+      if (st.rings) for (var q = st.rings.length - 1; q >= 0; q--) { var rg = st.rings[q]; rg.t += 1 / 60; if (rg.t > 0.4) { st.rings.splice(q, 1); continue; } var u = rg.t / 0.4; cx.globalAlpha = 1 - u; cx.strokeStyle = rg.col || COL.goldB; cx.lineWidth = 2 * (1 - u) + 0.5; cx.beginPath(); cx.arc(rg.x, rg.y, 8 + u * 26, 0, 7); cx.stroke(); }
+      cx.globalAlpha = 1;
+      // ball, with a comet trail of its recent positions
       var b = st.ball;
+      var tr = st.trail || (st.trail = []);
+      if (b.launched) { tr.push([b.x, b.y]); if (tr.length > 12) tr.shift(); } else tr.length = 0;
+      cx.save(); cx.globalCompositeOperation = "lighter";
+      for (var k = 0; k < tr.length; k++) { var a0 = (k + 1) / tr.length; cx.globalAlpha = a0 * 0.35; cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(tr[k][0], tr[k][1], b.r * (0.4 + a0 * 0.6), 0, 7); cx.fill(); }
+      cx.restore();
       cx.save(); cx.shadowColor = COL.goldB; cx.shadowBlur = 10;
       var bg = cx.createRadialGradient(b.x - 2, b.y - 2, 1, b.x, b.y, b.r);
       bg.addColorStop(0, "#fff8e6"); bg.addColorStop(1, COL.gold); cx.fillStyle = bg;
