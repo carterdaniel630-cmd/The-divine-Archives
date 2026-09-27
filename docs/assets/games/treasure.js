@@ -22,6 +22,18 @@
     if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/treasure.json";
     return "assets/games/data/treasure.json";
   })();
+  // the explorer: painted cut-out parts sliced from the character turnaround sheet
+  // (art-source/tomb-robber/), hinged at hip and knee so the legs actually run and tuck.
+  var ART_BASE = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "") || "assets/games/") + "art/treasure/";
+  var ART = { ready: false, man: null, img: {} };
+  function loadArt() {
+    if (ART.man) return;
+    ART.man = {};
+    fetch(ART_BASE + "manifest.json?v=1").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
+      if (!m) return; var names = ["body", "thigh", "shin"], left = names.length;
+      names.forEach(function (n) { var im = new Image(); im.onload = function () { ART.img[n] = im; if (--left === 0) { ART.man = m; ART.ready = true; } }; im.src = ART_BASE + n + ".png?v=1"; });
+    }).catch(function () {});
+  }
   var DATA = null, loadingPromise = null;
   function loadData() {
     if (DATA) return Promise.resolve(DATA);
@@ -227,6 +239,41 @@
       cx.restore();
     }
     function drawPlayer(p) {
+      if (!ART.ready) return drawPlayerSimple(p);
+      var M = ART.man, I = ART.img, H = 34, sc = H / M.figH;          // on-screen figure height
+      var moving = p.onGround && Math.abs(p.vx) > 0.4, ph = p.run, air = !p.onGround;
+      // leg angles (radians, + = foot swings back): thigh from the hip, shin from the knee
+      var tF = 0, kF = 0.08, tB = 0, kB = 0.08, bob = 0, lean = 0;
+      if (moving) {
+        var sp = Math.min(1, Math.abs(p.vx) / 3.4);
+        tF = -Math.sin(ph) * 0.62 * sp; tB = Math.sin(ph) * 0.62 * sp;
+        kF = 0.1 + Math.max(0, Math.cos(ph)) * 0.95 * sp; kB = 0.1 + Math.max(0, -Math.cos(ph)) * 0.95 * sp;   // swing leg folds
+        bob = -Math.abs(Math.cos(ph)) * 1.3 * sp; lean = 0.09 * sp;
+      } else if (air) {
+        var up = clamp(-p.vy / 8.6, -1, 1);                             // rising: tucked; falling: reaching down
+        tF = -0.55 - 0.25 * up; kF = 0.95 + 0.35 * up; tB = 0.25; kB = 0.7 + 0.3 * up; lean = 0.06;
+      } else {
+        bob = Math.sin(st.t * 2.4) * 0.35;                                // breathing
+      }
+      if (p.inv > 0.9) lean = -0.28;                                      // knocked back by a hit
+      var hipY = p.y + p.hh - M.footFromHip * sc + bob;                   // feet on the hitbox floor
+      cx.save(); cx.translate(p.x, hipY); cx.scale(p.face, 1);
+      if (p.inv > 0 && Math.floor(p.inv * 12) % 2) cx.globalAlpha = 0.45;
+      cx.rotate(lean); cx.scale(sc, sc);
+      function leg(t, k) {
+        cx.save(); cx.rotate(t);
+        cx.save(); cx.scale(0.8, 1); cx.drawImage(I.thigh, -M.thigh.pivotX, -M.thigh.pivotY); cx.restore();
+        cx.translate(M.kneeFromHip[0] * 0.8, M.kneeFromHip[1]); cx.rotate(k);
+        cx.save(); cx.scale(0.8, 1); cx.drawImage(I.shin, -M.shin.pivotX, -M.shin.pivotY); cx.restore();
+        cx.restore();
+      }
+      // back leg, darkened so it recedes; then the near leg; then the torso over both hips
+      cx.save(); cx.filter = "brightness(0.62)"; leg(tB, kB); cx.restore();   // (filter: no-op where unsupported)
+      leg(tF, kF);
+      cx.drawImage(I.body, -M.body.pivotX, -M.body.pivotY);
+      cx.globalAlpha = 1; cx.restore();
+    }
+    function drawPlayerSimple(p) {
       cx.save(); cx.translate(p.x, p.y); cx.scale(p.face, 1);
       if (p.inv > 0 && Math.floor(p.inv * 12) % 2) cx.globalAlpha = 0.4;
       var leg = p.onGround && Math.abs(p.vx) > 0.4 ? Math.sin(p.run) * 4 : 0;
@@ -262,6 +309,10 @@
       var items = run.collected.map(function (f) { return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) + ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>"; }).join("");
       return '<ul class="ouro-facts">' + items + "</ul>";
     }
+    // the explorer's portrait (from the character sheets) beside the journal text
+    function portrait(smile) {
+      return '<img class="tr-portrait" src="' + ART_BASE + (smile ? "portrait-smile" : "portrait") + '.png?v=1" alt="" width="220" height="273">';
+    }
     // a full-panel narrative card between sites
     function storyCard(opts) {
       stopLoop();
@@ -269,7 +320,7 @@
         '<div class="game-head" style="margin-bottom:.4rem"><p class="eyebrow">The Tomb Robber · ' + esc(opts.eyebrow) + '</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.25rem">' + esc(opts.title) + '</h2></div>' +
         '<div class="game-rule" role="presentation"></div>' +
-        '<div class="tr-card">' + opts.body + '</div>' +
+        '<div class="tr-card">' + portrait(opts.smile) + opts.body + '</div>' +
         '<div class="rq-actions" style="gap:.5rem;margin-top:.6rem">' +
           '<button class="rq-btn rq-primary" data-a="go" autofocus>' + esc(opts.cta) + '</button>' +
           (opts.chapter ? '<a class="game-source" href="chapters/' + opts.chapter + '.html">› ' + esc(chapterTitle(opts.chapter)) + "</a>" : "") +
@@ -307,7 +358,7 @@
       var i = st.level, site = ((DATA.story || {}).sites || [])[i] || {};
       if (i < LEVELS.length - 1) {
         storyCard({
-          eyebrow: esc(LEVELS[i].place) + " cleared", title: "Onward",
+          eyebrow: esc(LEVELS[i].place) + " cleared", title: "Onward", smile: true,
           body: '<p>' + esc(site.clear || "") + '</p>' +
             '<p class="rq-note" style="text-align:center">Plunder so far: <strong>' + run.score + '</strong> · relics carried: <strong>' + run.collected.length + '</strong></p>',
           cta: "To " + LEVELS[i + 1].place, onGo: function () { enterSite(i + 1); }
@@ -327,7 +378,7 @@
           '<h2 id="' + ctx.titleId + '">' + (won ? "The expedition, finished" : "Lost on the " + LEVELS[st.level].place + " road") + '</h2>' +
           '<p>' + run.collected.length + ' relic' + (run.collected.length === 1 ? "" : "s") + ' · ' + run.score + ' in plunder' + (nb ? ' · <span style="color:var(--gold-bright)">a new best</span>' : "") + "</p></div>" +
         '<div class="game-rule" role="presentation"></div>' +
-        '<p class="tr-card" style="margin-bottom:.5rem">' + esc(won ? (story.outroWin || "") : (story.outroLose || "")) + '</p>' +
+        '<div class="tr-card" style="margin-bottom:.5rem">' + portrait(won) + '<p>' + esc(won ? (story.outroWin || "") : (story.outroLose || "")) + '</p></div>' +
         '<p class="rq-note" style="text-align:center;margin-bottom:.3rem">' + (won ? "Everything the expedition was really after — the meaning, sourced:" : "What you did carry out:") + '</p>' +
         siteRecapList() +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>' + (won ? "Run it again" : "Try again") + '</button>' +
@@ -370,6 +421,7 @@
     keyup = function (e) { var k = e.key.toLowerCase(); if (k === "arrowleft" || k === "a") setKey("left", false); else if (k === "arrowright" || k === "d") setKey("right", false); else if (k === "arrowup" || k === "w" || k === " " || k === "spacebar") setKey("jump", false); };
     document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
 
+    loadArt();
     root.innerHTML = '<div class="rq-loading">Lighting the torches…</div>';
     loadData().then(startRun).catch(function () { root.innerHTML = '<p class="game-placeholder">The temple could not be loaded. Please reload the page.</p>'; });
 

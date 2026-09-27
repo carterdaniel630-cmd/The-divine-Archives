@@ -1,0 +1,26 @@
+{
+ "figH": 662,
+ "body": {
+  "pivotX": 74.0,
+  "pivotY": 352,
+  "w": 156,
+  "h": 406
+ },
+ "thigh": {
+  "pivotX": 61.0,
+  "pivotY": 17,
+  "w": 128,
+  "h": 181
+ },
+ "shin": {
+  "pivotX": 41.0,
+  "pivotY": 8,
+  "w": 113,
+  "h": 165
+ },
+ "kneeFromHip": [
+  -15.0,
+  153
+ ],
+ "footFromHip": 310
+}
