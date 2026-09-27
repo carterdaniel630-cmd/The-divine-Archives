@@ -1410,7 +1410,7 @@
           setState(f, "aerial", am.total / 60); f.cooldown = (am.cooldownTicks || am.total) / 60; f.curMove = null;
           f.vx = f.facing * (am.driveVx != null ? am.driveVx : (dive ? 3.6 : 2.6));
           if (dive && am.driveVy != null && f.vy > -2) f.vy = am.driveVy;
-          f._hit = { kind: "aerial", at: am.hitAt != null ? am.hitAt : 0.22, done: false, fin: false, dive: dive };
+          f._hit = { kind: "aerial", at: am.hitAt != null ? am.hitAt : 0.22, until: (am.hitAt != null ? am.hitAt : 0.22) + 0.2, done: false, fin: false, dive: dive };
         } else { // fallback
           setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4; f.curMove = null;
           f.vx = f.facing * (dive ? 3.6 : 2.6);
@@ -1425,7 +1425,8 @@
       var m = moveFor(f, id);
       if (m) {
         setState(f, id, m.total / 60); f.cooldown = m.total / 60; f.curMove = m;
-        f._hit = { kind: id, at: m.active[0] / m.total, done: false, fin: false, move: m };
+        // the hitbox is live for the move's whole active window, not just its first tick
+        f._hit = { kind: id, at: m.active[0] / m.total, until: (m.active[1] + 1) / m.total, done: false, fin: false, move: m };
       } else { // fallback if move data failed to load — keep the game playable
         var dur = id === "kick" ? 0.46 : id === "headbutt" ? 0.34 : 0.32;
         setState(f, id, dur); f.cooldown = id === "kick" ? 0.55 : id === "headbutt" ? 0.5 : 0.36; f.curMove = null;
@@ -1474,6 +1475,8 @@
     // grab: at point-blank it's a COMMAND THROW (unblockable — the answer to a
     // turtle) which the victim can escape by grabbing back (throw-tech). Otherwise
     // it picks up / sets down a relic as before.
+    var BUF_TICKS = 8;                        // ~133 ms input buffer
+    function doAction(f, other, kind) { if (kind === "grab") tryGrab(f); else tryAttack(f, other, kind); }
     function tryGrab(f) {
       if (f.state === "hit" || f.state === "ko" || !f.onGround || f.stun > 0 || f.cooldown > 0) return;
       var other = f === p1 ? p2 : p1;
@@ -1521,7 +1524,7 @@
         if (axd > 78 || ayd > 130 || other.state === "ko") return;
         var hy = GROUND - 72 - Math.min(f.y || 0, other.y || 0) * 0.5;
         applyDamage(f, other, 15, "aerial", fin, (f.x + other.x) / 2, hy);
-        return;
+        return true;
       }
       var m = f._hit && f._hit.move;
       if (m && m.hitbox && f.dpose && f.dpose[m.hitbox.joint]) {
@@ -1532,16 +1535,17 @@
         var reachX = localX + m.hitbox.r;                 // outer extent, from the joint
         if (window.__FIGHT_TEST__) { f.lastHbX = hbCenterX; f.lastFistX = f.x + f.facing * jp[0]; }
         var dx = (other.x - f.x) * f.facing;
-        if (dx <= 4 || dx >= reachX || other.state === "ko") return;
+        if (dx <= 4 || dx >= reachX || other.state === "ko") return false;
         applyDamage(f, other, m.onHit.damage, kind, fin, hbCenterX, GROUND - 72, m);
-        return;
+        return true;
       }
       // fallback (non-data moves): fixed reach distances
       var reach = kind === "kick" ? 100 : kind === "headbutt" ? 50 : 62;
       var dxf = (other.x - f.x) * f.facing;
-      if (dxf <= 4 || dxf >= reach || other.state === "ko") return;
+      if (dxf <= 4 || dxf >= reach || other.state === "ko") return false;
       var dmg = kind === "kick" ? 13 : kind === "headbutt" ? 16 : 6;
       applyDamage(f, other, dmg, kind, fin, (f.x + other.x) / 2, GROUND - 72);
+      return true;
     }
     // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
     function applyDamage(f, other, dmg, kind, fin, hx, hy, move) {
@@ -1952,10 +1956,19 @@
       if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
       else if (f.guard < 100) { f.guard = clamp(f.guard + dt * 16, 0, 100); }
       if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) {
-        f._hit.done = true;
         // F2 root motion: step the whole body forward into the strike at contact
-        if (f._hit.move && f._hit.move.lunge && f.onGround) f.x = clamp(f.x + f.facing * f._hit.move.lunge, 40, VW - 40);
-        resolveHit(f, other, f._hit.kind, f._hit.fin);
+        if (!f._hit.lunged) { f._hit.lunged = true; if (f._hit.move && f._hit.move.lunge && f.onGround) f.x = clamp(f.x + f.facing * f._hit.move.lunge, 40, VW - 40); }
+        // checked on every active tick until it connects (hit or block) or the window closes
+        var landed = resolveHit(f, other, f._hit.kind, f._hit.fin);
+        if (landed || f._hit.until == null || f.stTime >= f._hit.until * f.stDur) f._hit.done = true;
+      }
+      // input buffer: a press is held for a few ticks and fires on the first tick the
+      // fighter can act, so a button pressed a hair early in recovery isn't swallowed
+      if (f.buf) {
+        var sig0 = f.state + "|" + f.stTime + "|" + !!f.holding + "|" + !!groundItem + "|" + f.cooldown;
+        doAction(f, other, f.buf.kind);
+        var sig1 = f.state + "|" + f.stTime + "|" + !!f.holding + "|" + !!groundItem + "|" + f.cooldown;
+        if (sig1 !== sig0 || --f.buf.t <= 0) f.buf = null;
       }
       if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.sup); }
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
@@ -2192,14 +2205,16 @@
       keyfn = function (e) {
         var k = e.key.toLowerCase();
         var moveKeys = [KM1.left, KM1.right, KM1.block, KM1.jump, KM2.left, KM2.right, KM2.block, KM2.jump];
-        if (moveKeys.indexOf(k) >= 0) { keys[k] = true; if (k.indexOf("arrow") === 0) e.preventDefault(); }
+        keys[k] = true;                       // every key is tracked held/released (the throw-tech reads the grab key)
+        if (moveKeys.indexOf(k) >= 0 && k.indexOf("arrow") === 0) e.preventDefault();
         if (!running) return;
+        // attacks are queued into the fighter's input buffer and resolved inside the
+        // fixed sim step (not here on the key event); OS key-repeat never re-fires them
         [p1, p2].forEach(function (f) {
-          if (!f || !f.km) return; var o = (f === p1) ? p2 : p1;
-          if (k === f.km.light) { tryAttack(f, o, "light"); e.preventDefault(); }
-          else if (k === f.km.heavy) { tryAttack(f, o, "heavy"); e.preventDefault(); }
-          else if (k === f.km.special) { tryAttack(f, o, "special"); e.preventDefault(); }
-          else if (k === f.km.grab) { tryGrab(f); e.preventDefault(); }
+          if (!f || !f.km) return;
+          var kind = k === f.km.light ? "light" : k === f.km.heavy ? "heavy" : k === f.km.special ? "special" : k === f.km.grab ? "grab" : null;
+          if (!kind) return; e.preventDefault(); if (e.repeat) return;
+          f.buf = { kind: kind, t: BUF_TICKS };
         });
       };
       keyup = function (e) { keys[e.key.toLowerCase()] = false; };
@@ -2215,7 +2230,7 @@
     // read-only introspection for automated tests (only when the flag is set)
     if (window.__FIGHT_TEST__) {
       window.__fightState = function () {
-        function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, y: f.y, hp: f.hp, energy: f.energy, facing: f.facing, onGround: f.onGround, state: f.state, cast: f._cast ? (f._cast.done ? "done" : "pending") : "none", cooldown: f.cooldown, combo: f.combo, holding: !!f.holding, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX, hd: f._hd }; }
+        function snap(f) { var j = f.dpose && f.dpose.hnF; return { x: f.x, y: f.y, hp: f.hp, energy: f.energy, facing: f.facing, onGround: f.onGround, state: f.state, cast: f._cast ? (f._cast.done ? "done" : "pending") : "none", cooldown: f.cooldown, combo: f.combo, holding: !!f.holding, curMove: f.curMove && f.curMove.id, fistX: j ? f.x + f.facing * j[0] : null, lastHbX: f.lastHbX, lastFistX: f.lastFistX, hd: f._hd, buf: f.buf ? f.buf.kind + ":" + f.buf.t : null }; }
         return (p1 && p2) ? { p1: snap(p1), p2: snap(p2), hitStop: hitStop, shots: shots.length, MOVES: Object.keys(MOVES) } : null;
       };
       // test affordance: hand p1 a throwable relic so the throw path can be exercised
