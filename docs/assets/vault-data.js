@@ -2040,6 +2040,30 @@ window.VAULT = {
         ]
       },
       study: { manifest: "", rights: "Manuscripts belong to the Bodleian and Vatican libraries.", external: [] }
+    },
+    {
+      id: "v88", slug: "skull-reliquary-saint-maximin", status: "published", pending: true,
+      era: "07-high-medieval", year: 1279, chapters: ["ch16", "ch45", "ch31"],
+      title: "The Skull of \u201cMary Magdalene\u201d at Saint-Maximin", category: "relics",
+      source: "vault/v88-skull-reliquary-saint-maximin.md",
+      held: "Crypt of the Basilica of Saint-Maximin-la-Sainte-Baume, Provence, France",
+      dated: "Venerated there since the \u201cdiscovery\u201d of 1279; the present gilded reliquary is dated MDCCCLX (1860)",
+      summary: "A darkened skull in a gilded reliquary of flowing golden hair carried by four angels, venerated as Mary Magdalene's since Charles of Salerno announced her tomb in 1279. The Provence legend has no trace before the eleventh century, Vézelay claimed her first, and a 2017 study reconstructed the face of a woman of about fifty without identifying her.",
+      artifact: {
+        type: "timeline", theme: "reliquary", title: "A skull and its story",
+        sub: "From the Gospels to the golden reliquary: tradition and testing, kept apart.",
+        events: [
+          { y: "1st c.", t: "The Gospels", d: "Mary Magdalene is named as a witness of the crucifixion and the first to find the tomb empty. Nothing is said of her later life or burial." },
+          { y: "6th–7th c.", t: "Other traditions", d: "Gregory of Tours places her at Ephesus; Modestus of Jerusalem says she returned to Jerusalem." },
+          { y: 591, t: "The composite Magdalene", d: "Gregory the Great identifies her with the sinful woman of Luke 7 and with Mary of Bethany. The Eastern churches never do." },
+          { y: "11th c.", t: "Vézelay and the voyage", d: "The first traces of the story that she sailed to Provence appear in documents connected with Vézelay, which claims her body." },
+          { y: 1279, t: "Saint-Maximin", d: "Charles of Salerno has the crypt excavated and announces her tomb. In 1295 Boniface VIII recognizes the relics, and Vézelay declines." },
+          { y: 1794, t: "The Revolution", d: "The relics are despoiled; the sacristan Joseph Bastide saves the skull." },
+          { y: 1860, t: "The golden reliquary", d: "The present reliquary, gilded hair carried by four angels, bears the date MDCCCLX." },
+          { y: 2017, t: "A study without a verdict", d: "Photogrammetry and hair analysis support a facial reconstruction of a woman of about fifty. The identification still rests on tradition." }
+        ]
+      },
+      study: { manifest: "", rights: "Photographs of the relic belong to the basilica; none is reproduced here. The museum shows a modelled rendition, not a replica.", external: [] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */

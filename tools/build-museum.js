@@ -59,6 +59,8 @@ const NO_IMAGE = { v68: "The Vault shows no image of the tjurunga: they are secr
 const LIVING = ["ch33", "ch61", "ch62", "ch63"];
 // objects shown in a floor vitrine rather than a standing case
 const FLOOR = { v84: true };
+// objects with a purpose-built rendition instead of a generic stand-in (each labelled a rendition, not a replica)
+const RENDITION = { v88: "magdalene" };
 // tradition trails: a family of rooms walked in chronological order
 const TRAILS = [
   { id: "christianity", name: "Christianity", rooms: ["ch16", "ch22", "ch60", "ch28", "ch31", "ch64"] },
@@ -145,7 +147,7 @@ for (const wing of Object.keys(wingRooms)) {
       out.vault[vid] = {
         title: i.title, category: VAULT.categories[i.category] || i.category, dated: i.dated, held: i.held, summary: i.summary,
         slug: i.slug, home: homeRoomOfVault(i), pending: !!i.pending,
-        prop: NO_IMAGE[vid] ? null : propFor(i), noImage: NO_IMAGE[vid] || null, floor: !!FLOOR[vid],
+        prop: NO_IMAGE[vid] ? null : (RENDITION[vid] || propFor(i)), rendition: !!RENDITION[vid], noImage: NO_IMAGE[vid] || null, floor: !!FLOOR[vid],
         forgery: /forger/i.test(i.dated || "") || /\bforgery\b/i.test(i.title)
       };
     }

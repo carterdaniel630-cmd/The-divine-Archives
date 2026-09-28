@@ -6,6 +6,9 @@
    §3, option A): an entrance hall, the Rotunda of comparative themes, and a long
    Spine gallery with one wing per Age; each chapter is a room.
 
+   Clicking a Vault case takes its object out of the glass (inspect.js): a close-up
+   you can turn, zoom and open, with the object's label beside it.
+
    The Rotunda's dome is a planetarium (sky.js): the real sky over a site the
    archive writes about, whose constellations open cards like any exhibit.
 
@@ -18,6 +21,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
+import { createInspector, buildModel } from "./inspect.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -571,6 +575,7 @@ function prop(kind) {
     case "disc": add(new THREE.CylinderGeometry(0.16, 0.16, 0.012, 32), MAT.verdigris, 0, 0.16, 0, Math.PI / 2 - 0.4); break;
     case "cords": add(new THREE.CylinderGeometry(0.01, 0.01, 0.5, 6), MAT.wood, 0, 0.36, 0, 0, 0, Math.PI / 2); for (let i = 0; i < 7; i++) add(new THREE.CylinderGeometry(0.006, 0.006, 0.3, 5), MAT.linen, -0.21 + i * 0.07, 0.21); break;
     case "pillar": add(new THREE.BoxGeometry(0.16, 0.5, 0.1), MAT.stone, 0, 0.25); add(new THREE.BoxGeometry(0.3, 0.08, 0.12), MAT.stone, 0.06, 0.52); break;
+    case "magdalene": { const r = buildModel("magdalene", S.insp.materials).root; r.scale.setScalar(0.95); g.add(r); break; }
     default: add(new THREE.BoxGeometry(0.36, 0.2, 0.24), MAT.wood, 0, 0.1); add(new THREE.BoxGeometry(0.38, 0.05, 0.26), MAT.gold, 0, 0.225);
   }
   return g;
@@ -837,9 +842,10 @@ function openCard(ex) {
     const v = findVaultItem(d.id);
     h = `<p class="mu-cat">Vault · ${esc(v.category)}</p><h2 id="mu-card-h">${esc(v.title)}</h2>` +
       (v.forgery ? `<span class="mu-flag">Proven forgery</span>` : "") +
-      (v.prop ? `<span class="mu-flag soft">Stand-in, not a replica</span>` : "") +
+      (v.prop && !v.rendition ? `<span class="mu-flag soft">Stand-in, not a replica</span>` : "") +
       (v.noImage ? `<span class="mu-flag soft">No image shown</span>` : "") +
       (v.floor ? `<span class="mu-flag soft">Generic mosaic pattern, not the floor itself</span>` : "") +
+      (v.rendition ? `<span class="mu-flag soft">A modelled rendition, not a replica</span>` : "") +
       (v.pending ? `<span class="mu-flag soft">Recently added · pending review</span>` : "") +
       `<p class="mu-meta">${esc(v.dated)}<br>${esc(v.held)}</p><p>${esc(v.summary)}</p>` +
       (v.noImage ? `<p class="mu-contested">${esc(v.noImage)}</p>` : "") +
@@ -899,6 +905,17 @@ function openCard(ex) {
     h = `<p class="mu-cat">Comparative theme</p><h2 id="mu-card-h">${esc(d.name)}</h2><p>This alcove is reserved for a theme chapter that has not been written yet. It will open when the chapter is published.</p><div class="mu-actions">${btn("themes.html", "All themes")}</div>`;
   } else if (d.type === "end") {
     h = `<p class="mu-cat">The Spine gallery</p><h2 id="mu-card-h">Here the Nine Ages end, for now</h2><p>The archive is still being written; new chapters open new rooms, and the museum is rebuilt from the archive each time.</p><div class="mu-actions">${btn("index.html", "Back to the archive")}</div>`;
+  }
+  // a Vault object with a stand-in comes out of its case: turn it, zoom it, open it, beside its label
+  if (d.type === "vault" && S.insp) {
+    const v = findVaultItem(d.id);
+    if (v && v.prop && !v.floor) {
+      S.cardAt = performance.now(); unlock();
+      S.insp.open(v.prop, h, v.rendition
+        ? "A modelled rendition from published descriptions, not a replica of the object."
+        : "A generic stand-in for this kind of object, not a replica of it. Any writing on it is illustrative marks, not the text.");
+      return;
+    }
   }
   b.innerHTML = h;
   S.card = ex; S.cardAt = performance.now();
@@ -1094,6 +1111,7 @@ function bindInput() {
   });
   window.addEventListener("keydown", (e) => {
     if (!$("mu-card-wrap").hidden) { if (e.key === "Escape") { e.preventDefault(); closeCard(); } return; }
+    if (S.insp && S.insp.active) return;
     if (e.target && /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(e.target.tagName)) return;
     if (e.key === "Escape" && !$("mu-guide").hidden) { toggleGuide(false); return; }
     if (e.code === "KeyE" || e.key === "Enter") { const ex = S.hover || pick(0, 0) || skyAt(0, 0); if (ex) { e.preventDefault(); openCard(ex); } return; }
@@ -1110,6 +1128,8 @@ function bindInput() {
   // cannot land on a button that has just appeared under the finger
   $("mu-card-wrap").addEventListener("click", (e) => { if (performance.now() - (S.cardAt || 0) < 450) { e.preventDefault(); e.stopPropagation(); } }, true);
   $("mu-card-x").addEventListener("click", closeCard);
+  S.insp.el.addEventListener("click", (e) => { if (performance.now() - (S.cardAt || 0) < 450) { e.preventDefault(); e.stopPropagation(); } }, true);
+  S.insp.el.addEventListener("click", (e) => { const go = e.target.closest("[data-go]"); if (go) { S.insp.close(); teleport(go.getAttribute("data-go")); } });
   $("mu-card-wrap").addEventListener("click", (e) => {
     if (e.target === $("mu-card-wrap")) { closeCard(); return; }
     const go = e.target.closest("[data-go]"); if (go) { closeCard(); teleport(go.getAttribute("data-go")); return; }
@@ -1172,6 +1192,7 @@ function tick(now) {
   requestAnimationFrame(tick);
   if (S.paused || document.hidden) { last = now; return; }
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
+  if (S.insp && S.insp.active) { S.insp.render(dt); return; }
   if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
@@ -1219,7 +1240,9 @@ async function start() {
     const [m] = await Promise.all([fetch("museum/manifest.json").then((r) => r.json()), document.fonts ? Promise.race([document.fonts.load("600 40px Cinzel"), new Promise((r) => setTimeout(r, 1500))]) : null]);
     S.manifest = m;
     for (const r of m.rooms) S.rooms[r.id] = Object.assign({}, r);
-    makeTextures(); makeMaterials(); build();
+    makeTextures(); makeMaterials();
+    S.insp = createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
+    build();
   } catch (e) {
     showDirectory("The museum could not be loaded, so here is its directory.");
     return;
@@ -1252,6 +1275,8 @@ window.__MU = {
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
+  inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),
+  insp: () => ({ active: S.insp.active, yaw: S.insp.state.yaw, dist: S.insp.state.dist }),
   open: (i) => openCard(S.exhibits[i]),
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },
