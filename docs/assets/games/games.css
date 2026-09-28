@@ -440,7 +440,7 @@
 .rk-stage::before, .rk-stage::after { content:""; position:absolute; width:20px; height:20px; pointer-events:none; border:1px solid var(--gold); opacity:.6; }
 .rk-stage::before { top:0; left:0; border-right:0; border-bottom:0; border-top-left-radius:6px; }
 .rk-stage::after { bottom:0; right:0; border-left:0; border-top:0; border-bottom-right-radius:6px; }
-.rk-canvas { width:min(400px, 100%, 62dvh); height:auto; aspect-ratio:340/300; border:1px solid var(--line); border-radius:8px; background:#120d10; touch-action:manipulation; box-shadow: inset 0 0 40px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
+.rk-canvas { width:min(400px, 100%, 62dvh); height:auto; aspect-ratio:344/300; border:1px solid var(--line); border-radius:8px; background:#120d10; touch-action:manipulation; box-shadow: inset 0 0 40px rgba(0,0,0,.5), 0 10px 30px -16px #000; }
 .rk-msg { text-align:center; min-height:1.6rem; margin:.35rem auto .1rem; font-family:var(--font-body); font-size:.86rem; color:var(--ink); max-width:34rem; }
 .rk-toast { min-height:2rem; }
 .rk-controls { display:flex; justify-content:center; margin:.2rem auto; }
@@ -714,7 +714,7 @@
   .ms-grid { width:min(100%, 34rem, calc(100dvh - 330px)); }
   .pm-canvas { width:min(460px, 100%, calc((100dvh - 290px) * 19 / 21)); }
   .pb-canvas { width:min(390px, 100%, calc((100dvh - 330px) * 320 / 460)); }
-  .rk-canvas { width:min(520px, 100%, calc((100dvh - 385px) * 340 / 300)); }
+  .rk-canvas { width:min(520px, 100%, calc((100dvh - 385px) * 344 / 300)); }
   .tr-canvas { width:min(860px, 100%, calc((100dvh - 375px) * 1.6667)); }
 }
 
