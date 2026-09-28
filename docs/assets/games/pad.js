@@ -203,5 +203,19 @@
     };
   }
 
-  window.ArchivePad = { create: create };
+  // For games that read the keyboard only: a physical controller "types" the game's own
+  // keys. map: { up: "ArrowUp", a: " ", start: "p", ... } -> returns stop()
+  function bridge(map) {
+    var raf = 0, stopped = false;
+    function send(type, key) {
+      if (!key) return;
+      var ev; try { ev = new KeyboardEvent(type, { key: key, bubbles: true, cancelable: true }); } catch (e) { return; }
+      (document.activeElement || document).dispatchEvent(ev);
+    }
+    var pad = create({ ui: false, onDown: function (id) { send("keydown", map[id]); }, onUp: function (id) { send("keyup", map[id]); } });
+    (function loop() { if (stopped) return; pad.poll(); raf = requestAnimationFrame(loop); })();
+    return function stop() { stopped = true; cancelAnimationFrame(raf); pad.release(); pad.destroy(); };
+  }
+
+  window.ArchivePad = { create: create, bridge: bridge };
 })();

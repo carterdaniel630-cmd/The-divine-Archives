@@ -130,7 +130,16 @@
       if (window.console) console.error(err);
     }
 
-    openState = { overlay: overlay, trigger: ctx.trigger || null, cleanup: cleanup };
+    // physical game controllers for the keyboard-only arcade games (the action games read them directly)
+    var PADKEYS = {
+      ouroboros: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight", start: "p" },
+      pacman: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight" },
+      ziggurat: { left: "ArrowLeft", right: "ArrowRight", down: "ArrowDown", up: "ArrowUp", a: " ", b: "x", x: "z", y: "c", l: "c", r: "c", start: "p" },
+      pong: { up: "w", down: "s" },
+      pinball: { left: "ArrowLeft", right: "ArrowRight", l: "ArrowLeft", r: "ArrowRight", a: " ", b: " " }
+    };
+    var stopBridge = (window.ArchivePad && PADKEYS[gameId]) ? window.ArchivePad.bridge(PADKEYS[gameId]) : null;
+    openState = { overlay: overlay, trigger: ctx.trigger || null, cleanup: cleanup, stopBridge: stopBridge };
 
     // focus management + trap + Esc
     (dialog.querySelector("[autofocus]") || closeBtn).focus();
@@ -157,6 +166,7 @@
   function close() {
     if (!openState) return;
     try { if (typeof openState.cleanup === "function") openState.cleanup(); } catch (e) {}
+    if (openState.stopBridge) openState.stopBridge();
     openState.overlay.removeEventListener("keydown", onKeydown);
     if (openState.overlay.parentNode) openState.overlay.parentNode.removeChild(openState.overlay);
     if (openState.trigger) openState.trigger.setAttribute("aria-expanded", "false");
