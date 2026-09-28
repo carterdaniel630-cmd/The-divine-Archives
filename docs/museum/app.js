@@ -25,6 +25,7 @@ import { createInspector } from "./inspect.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=2";
 import { makeFauna } from "./fauna.js?v=1";
+import { createSound } from "./sound.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -54,7 +55,7 @@ const S = {
   pos: new THREE.Vector3(0, EYE, 11), yaw: 0, pitch: 0,
   keys: new Set(), locked: false, auto: null, hover: null, card: null,
   reduce: store.get("mu-rm") === "1" || (store.get("mu-rm") == null && mqReduce.matches),
-  where: "", dirty: true, started: false, regions: [], exhibits: [], lampAnchors: [], areas: []
+  where: "", dirty: true, started: false, regions: [], exhibits: [], lampAnchors: [], areas: [], snd: createSound()
 };
 
 // ---------------------------------------------------------------- renderer
@@ -926,7 +927,7 @@ function openCard(ex) {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
       `<p>The objects in the cases are <strong>generic stand-ins</strong>, never replicas, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
-      `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. "Reduce motion" stills them and turns off the lightning.</p>` +
+      `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. Animals live in them, and each room has its own sound (Sound button to turn it off). "Reduce motion" stills them and turns off the lightning.</p>` +
       `<p>Every label keeps belief and evidence apart and links to the archive's page, where the sources and the evidence verdict live. Chapters marked "pending review" have new material not yet cleared in the keeper's review.</p>` +
       `<div class="mu-actions">${btn("methodology.html", "The methodology")}${btn("index.html", "The archive", true)}</div>`;
   } else if (d.type === "trails") {
@@ -1183,8 +1184,12 @@ function bindInput() {
   $("mu-dir-btn").addEventListener("click", showDirectory);
   $("mu-help-btn").addEventListener("click", () => { $("mu-intro").hidden = false; $("mu-enter").textContent = "Back to the museum"; unlock(); });
   $("mu-motion-btn").addEventListener("click", () => setReduce(!S.reduce));
+  // sound: browsers only allow it to start after a click or key press
+  const sb = $("mu-sound-btn"), paintSound = () => { sb.setAttribute("aria-pressed", String(S.snd.on)); sb.querySelector(".mu-l").textContent = S.snd.on ? "Sound on" : "Sound off"; };
+  sb.addEventListener("click", () => { S.snd.toggle(); paintSound(); }); paintSound();
+  ["pointerdown", "keydown", "touchstart"].forEach((ev) => document.addEventListener(ev, () => S.snd.wake(), { passive: true }));
   window.addEventListener("pagehide", savePos);
-  document.addEventListener("visibilitychange", () => { if (document.hidden) savePos(); else S.dirty = true; });
+  document.addEventListener("visibilitychange", () => { S.snd.pause(document.hidden); if (document.hidden) savePos(); else S.dirty = true; });
 }
 function lookAt(v) { const dx = v.x - S.pos.x, dz = v.z - S.pos.z; S.yaw = Math.atan2(-dx, -dz); S.pitch = Math.atan2(v.y - EYE, Math.hypot(dx, dz)) * 0.8; S.dirty = true; }
 function toggleGuide(on) {
@@ -1228,13 +1233,18 @@ function tick(now) {
   requestAnimationFrame(tick);
   if (S.paused || document.hidden) { last = now; return; }
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
+  if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.insp && S.insp.active) { S.insp.render(dt); return; }
   if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
   if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, S.reduce)) S.dirty = true;
-  if (S.world) { if (S.world.update(dt, S.pos, S.inRoom, S.reduce)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4; }
+  if (S.world) {
+    if (S.world.update(dt, S.pos, S.inRoom, S.reduce)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
+    const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
+    S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
+  }
   if (!S.reduce && idleT > 0.12) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
@@ -1309,6 +1319,7 @@ async function start() {
 window.__MU = {
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
+  snd: () => S.snd.probe(),
   bolt: (id) => S.world && S.world.forceBolt(id),
   world: () => S.world ? [S.world.time.toFixed(2), S.paused, S.pos.x.toFixed(1), S.pos.z.toFixed(1)].concat(S.world.areas.filter((a) => a.pit || a.skyG.visible).map((a) => a.id + (a.pit ? ":pit" + (a.pit.visible ? "+" : "-") : "") + (a.skyG.visible ? ":sky" : ""))) : null,
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
