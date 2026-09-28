@@ -23,6 +23,7 @@ import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
+import { createWorld } from "./world.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -52,11 +53,11 @@ const S = {
   pos: new THREE.Vector3(0, EYE, 11), yaw: 0, pitch: 0,
   keys: new Set(), locked: false, auto: null, hover: null, card: null,
   reduce: store.get("mu-rm") === "1" || (store.get("mu-rm") == null && mqReduce.matches),
-  where: "", dirty: true, started: false, regions: [], exhibits: [], lampAnchors: []
+  where: "", dirty: true, started: false, regions: [], exhibits: [], lampAnchors: [], areas: []
 };
 
 // ---------------------------------------------------------------- renderer
-let renderer, scene, camera, lantern, pool = [], lampPoints;
+let renderer, scene, camera, lantern, pool = [], lampPoints, flashLight;
 function initRenderer() {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance" });
@@ -65,7 +66,7 @@ function initRenderer() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, touch ? 1.5 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.15;
+  renderer.toneMappingExposure = 1.3;
   renderer.localClippingEnabled = true;              // the planetarium clips its lines at the horizon
   canvas.setAttribute("tabindex", "0");
   canvas.setAttribute("aria-label", "The museum in 3D. Use the Room guide button for an accessible list of this room's exhibits.");
@@ -75,7 +76,8 @@ function initRenderer() {
   scene.fog = new THREE.Fog("#0b0704", 10, 52);
   camera = new THREE.PerspectiveCamera(touch ? 70 : 64, 1, 0.05, 140);
   scene.add(camera);
-  scene.add(new THREE.HemisphereLight("#8a6a44", "#1a120a", 1.15));
+  scene.add(new THREE.HemisphereLight("#8a6a44", "#1a120a", 1.3));
+  flashLight = new THREE.HemisphereLight("#c4d2ff", "#262a3a", 0); scene.add(flashLight);   // lightning in the skylights
   scene.add(new THREE.AmbientLight("#40301f", 0.6));
   lantern = new THREE.PointLight("#ffcf94", 5, 9, 1.6);
   camera.add(lantern);
@@ -334,8 +336,11 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
     z.trim.push(boxAt(Math.hypot(x1 - x0, z1 - z0) + 0.16, 0.16, 0.42, (x0 + x1) / 2, dh, (z0 + z1) / 2, ang));
   }
 }
-function rect(z, x0, x1, z0, z1, h) {
-  z.floor.push(flat(x0, x1, z0, z1, 0, false));
+function rect(z, x0, x1, z0, z1, h, hole) {
+  if (!hole) z.floor.push(flat(x0, x1, z0, z1, 0, false));
+  else {                                  // a floor round a glass-covered pit (world.js fills it)
+    z.floor.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
+  }
   z.ceil.push(flat(x0, x1, z0, z1, h, true, 3));
   z.box.expandByPoint(new THREE.Vector3(x0, 0, z0)); z.box.expandByPoint(new THREE.Vector3(x1, h, z1));
 }
@@ -361,7 +366,9 @@ function build() {
   const M = S.manifest;
   // ---- entrance hall
   const zh = zone("hall");
-  rect(zh, HALL.x0, HALL.x1, HALL.z0, HALL.z1, HALL.h);
+  const hallHole = { x0: -3.2, x1: 3.2, z0: 3, z1: 11 };
+  rect(zh, HALL.x0, HALL.x1, HALL.z0, HALL.z1, HALL.h, hallHole);
+  S.areas.push({ id: "hall", kind: "hall", axis: "z", hole: hallHole, bounds: { x0: HALL.x0, x1: HALL.x1, z0: HALL.z0, z1: HALL.z1 }, sky: { x0: -8, x1: 8, z0: 1, z1: 13, y: HALL.h }, lamp: [0, 5.6, 7] });
   wall(zh, HALL.x0, HALL.z1, HALL.x1, HALL.z1, HALL.h);
   wall(zh, HALL.x0, HALL.z0, HALL.x0, HALL.z1, HALL.h);
   wall(zh, HALL.x1, HALL.z0, HALL.x1, HALL.z1, HALL.h);
@@ -406,7 +413,9 @@ function build() {
   const zs = zone("spine");
   const nW = M.eras.length, zEnd = WING_Z0 - (nW - 1) * WING_STEP - 12;
   S.spineEnd = zEnd;
-  rect(zs, -SPINE_HALF, SPINE_HALF, zEnd, SPINE_Z0, SPINE_H);
+  const spineHole = { x0: -1.4, x1: 1.4, z0: zEnd + 1.5, z1: SPINE_Z0 - 1.5 };
+  rect(zs, -SPINE_HALF, SPINE_HALF, zEnd, SPINE_Z0, SPINE_H, spineHole);
+  S.areas.push({ id: "spine", kind: "spine", axis: "z", hole: spineHole, bounds: { x0: -SPINE_HALF, x1: SPINE_HALF, z0: zEnd, z1: SPINE_Z0 }, sky: { x0: -3.2, x1: 3.2, z0: zEnd + 1, z1: SPINE_Z0 - 1, y: SPINE_H }, lamp: [0, 6.4, (zEnd + SPINE_Z0) / 2] });
   const doorsW = [], doorsE = [];
   M.eras.forEach((e, k) => { const zk = WING_Z0 - k * WING_STEP; (k % 2 === 0 ? doorsW : doorsE).push([SPINE_Z0 - zk - WING_DOOR / 2, SPINE_Z0 - zk + WING_DOOR / 2]); });
   wall(zs, -SPINE_HALF, SPINE_Z0, -SPINE_HALF, zEnd, SPINE_H, doorsW, WING_DOOR_H);
@@ -433,7 +442,9 @@ function build() {
     const xa = s * SPINE_HALF, xb = s * (SPINE_HALF + len);
     const zw = zone(e.slug);
     S.eras[e.slug] = Object.assign({}, e, { k, side: s, zk, xa, xb });
-    rect(zw, Math.min(xa, xb), Math.max(xa, xb), zk - COR_W / 2, zk + COR_W / 2, COR_H);
+    const cx0 = Math.min(xa, xb), cx1 = Math.max(xa, xb), corHole = { x0: cx0 + 1, x1: cx1 - 1, z0: zk - 0.8, z1: zk + 0.8 };
+    rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole);
+    S.areas.push({ id: "cor:" + e.slug, kind: "corridor", axis: "x", hole: corHole, bounds: { x0: cx0, x1: cx1, z0: zk - COR_W / 2, z1: zk + COR_W / 2 }, sky: { x0: cx0 + 0.6, x1: cx1 - 0.6, z0: zk - 1.4, z1: zk + 1.4, y: COR_H }, lamp: [(cx0 + cx1) / 2, 3.9, zk] });
     region("wing-" + e.slug, "Wing " + e.num + " · " + e.name, xa, xb, zk - COR_W / 2, zk + COR_W / 2, { era: e.slug });
     const gapsN = [], gapsS = [];
     ids.forEach((id, i) => {
@@ -444,7 +455,10 @@ function build() {
       const ez = north ? zk - COR_W / 2 : zk + COR_W / 2, bz = north ? ez - ROOM_D : ez + ROOM_D;
       const f = frame(cx, ez, 0, north ? -1 : 1);
       const x0 = cx - ROOM_W / 2, x1 = cx + ROOM_W / 2;
-      rect(zw, x0, x1, Math.min(ez, bz), Math.max(ez, bz), ROOM_H);
+      const dz = north ? -1 : 1, rz0 = Math.min(ez, bz), rz1 = Math.max(ez, bz);
+      const roomHole = { x0: cx - 5.3, x1: cx + 5.3, z0: Math.min(ez + dz * 1.2, ez + dz * 12.8), z1: Math.max(ez + dz * 1.2, ez + dz * 12.8) };
+      rect(zw, x0, x1, rz0, rz1, ROOM_H, roomHole);
+      S.areas.push({ id, kind: "room", axis: "z", hole: roomHole, bounds: { x0, x1, z0: rz0, z1: rz1 }, sky: { x0: x0 + 0.9, x1: x1 - 0.9, z0: rz0 + 0.9, z1: rz1 - 0.9, y: ROOM_H }, lamp: [cx, 4.4, (ez + bz) / 2] });
       wall(zw, x0, bz, x1, bz, ROOM_H);
       wall(zw, x0, ez, x0, bz, ROOM_H);
       wall(zw, x1, ez, x1, bz, ROOM_H);
@@ -460,6 +474,9 @@ function build() {
     for (let a = 4; a < len; a += 8) lamp(s * (SPINE_HALF + a), 3.9, zk, 0.7);
   });
   finishZones();
+  // skies and grounds (world.js)
+  S.world = createWorld({ scene, quality: touch ? 1 : 2 });
+  S.areas.forEach((a) => S.world.addArea(a));
   // lamp glows (one Points object)
   const lp = new Float32Array(S.lampAnchors.length * 3);
   S.lampAnchors.forEach((l, i) => lp.set([l.p.x, l.p.y, l.p.z], i * 3));
@@ -908,6 +925,7 @@ function openCard(ex) {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
       `<p>The objects in the cases are <strong>generic stand-ins</strong>, never replicas, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
+      `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. "Reduce motion" stills them and turns off the lightning.</p>` +
       `<p>Every label keeps belief and evidence apart and links to the archive's page, where the sources and the evidence verdict live. Chapters marked "pending review" have new material not yet cleared in the keeper's review.</p>` +
       `<div class="mu-actions">${btn("methodology.html", "The methodology")}${btn("index.html", "The archive", true)}</div>`;
   } else if (d.type === "trails") {
@@ -1215,6 +1233,7 @@ function tick(now) {
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
   if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, S.reduce)) S.dirty = true;
+  if (S.world) { if (S.world.update(dt, S.pos, S.inRoom, S.reduce)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4; }
   if (!S.reduce && idleT > 0.12) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
@@ -1289,6 +1308,8 @@ async function start() {
 window.__MU = {
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
+  bolt: (id) => S.world && S.world.forceBolt(id),
+  world: () => S.world ? [S.world.time.toFixed(2), S.paused, S.pos.x.toFixed(1), S.pos.z.toFixed(1)].concat(S.world.areas.filter((a) => a.pit || a.skyG.visible).map((a) => a.id + (a.pit ? ":pit" + (a.pit.visible ? "+" : "-") : "") + (a.skyG.visible ? ":sky" : ""))) : null,
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
