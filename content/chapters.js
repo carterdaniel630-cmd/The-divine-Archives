@@ -100,38 +100,33 @@ window.CHAPTERS = {
     <p><strong>The ark as ordered space.</strong> The vessel itself is symbolic. Genesis gives Noah's ark exact proportions and three decks; the Babylonian and Sumerian arks are described with equal care. A sealed, measured box carrying the seed of all life through the chaos-waters is a small, ordered cosmos — a floating image of the created world riding out its own undoing. Even here the traditions differ tellingly: the Mesopotamian ark is often a cube, the biblical one an oblong barge, each a different culture's idea of the right shape for a world in miniature.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>There is a documented literary lineage of Mesopotamian flood stories — Ziusudra (Sumerian), Atrahasis (Old Babylonian, including the recently translated "Ark Tablet"), and Utnapishtim in <em>Gilgamesh</em> Tablet XI — spanning roughly a millennium, with the <em>Gilgamesh</em> version adapted from <em>Atrahasis</em>. The tradition continued in continuous written transmission into the Hellenistic world through Berossus's Greek <em>Babyloniaca</em> (c. 281 BCE).</li>
+          <li>The <em>Gilgamesh</em> flood tablet is genuinely older than the biblical text, and the Genesis flood narrative stands in a close, mainstream-recognized relationship to this Mesopotamian tradition (with the theology reworked from many capricious gods to one moral God, and the plot largely preserved — including the telltale released birds). The Qur'anic account of Nuh is a third Abrahamic retelling of the same inherited story, again reshaped to its own theology.</li>
+          <li>Mesopotamian city mounds contain real, water-laid flood deposits (Ur, Kish, Shuruppak), confirming that severe local flooding was a recurring reality.</li>
+          <li>Flood stories are found across many, though not all, world cultures.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- There is a documented literary lineage of Mesopotamian flood stories —   Ziusudra (Sumerian), Atrahasis (Old Babylonian, including the recently   translated "Ark Tablet"), and Utnapishtim in <em>Gilgamesh</em> Tablet XI — spanning   roughly a millennium, with the <em>Gilgamesh</em> version adapted from <em>Atrahasis</em>.   The tradition continued in continuous written transmission into the Hellenistic   world through Berossus's Greek <em>Babyloniaca</em> (c. 281 BCE). - The <em>Gilgamesh</em> flood tablet is genuinely older than the biblical text, and   the Genesis flood narrative stands in a close, mainstream-recognized relationship   to this Mesopotamian tradition (with the theology reworked from many capricious   gods to one moral God, and the plot largely preserved — including the   telltale released birds). The Qur'anic account of Nuh is a third Abrahamic   retelling of the same inherited story, again reshaped to its own theology. - Mesopotamian city mounds contain real, water-laid flood deposits (Ur, Kish,   Shuruppak), confirming that severe local flooding was a recurring reality. - Flood stories are found across many, though not all, world cultures.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- A single, worldwide flood covering the whole earth. Geology, biology, and the   distribution of the deposits all contradict it; the "flood layers" at   different sites date to different centuries and cannot be one event. - The claim that flood myths are literally <em>universal</em>. They are common but   patchy — notably sparse in much of sub-Saharan Africa, and absent as a   world-ending deluge in Egypt, whose flood was life-giving. - The idea, sometimes still repeated, that Woolley "found Noah's Flood" at Ur,   or that the Black Sea deluge is established fact. Neither claim survives   current evidence.</p>
+        <ul>
+          <li>A single, worldwide flood covering the whole earth. Geology, biology, and the distribution of the deposits all contradict it; the "flood layers" at different sites date to different centuries and cannot be one event.</li>
+          <li>The claim that flood myths are literally <em>universal</em>. They are common but patchy — notably sparse in much of sub-Saharan Africa, and absent as a world-ending deluge in Egypt, whose flood was life-giving.</li>
+          <li>The idea, sometimes still repeated, that Woolley "found Noah's Flood" at Ur, or that the Black Sea deluge is established fact. Neither claim survives current evidence.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Exactly <em>when</em> and <em>how</em> the biblical writers absorbed the Mesopotamian   material — during the Babylonian exile, or from an earlier shared Near Eastern   inheritance, or both. - Whether any specific historical flood (a particular Tigris–Euphrates   inundation, or the Black Sea rise in a milder form) lies at the root of the   Mesopotamian tradition, or whether the memory is a composite of many. - How much of the global spread is independent invention versus deep, ancient   diffusion. The strong-diffusion hypotheses (including Paleolithic-era   transmission) are stimulating but unproven, and the balance among real floods,   borrowing, independent origin, and cognitive universals is unsettled.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Exactly <em>when</em> and <em>how</em> the biblical writers absorbed the Mesopotamian material — during the Babylonian exile, or from an earlier shared Near Eastern inheritance, or both.</li>
+          <li>Whether any specific historical flood (a particular Tigris–Euphrates inundation, or the Black Sea rise in a milder form) lies at the root of the Mesopotamian tradition, or whether the memory is a composite of many.</li>
+          <li>How much of the global spread is independent invention versus deep, ancient diffusion. The strong-diffusion hypotheses (including Paleolithic-era transmission) are stimulating but unproven, and the balance among real floods, borrowing, independent origin, and cognitive universals is unsettled.</li>
+        </ul>
         <p>The honest summary is the one George Smith's tablet first forced on a startled room in 1872: the Flood is not one event we can dig up. It is a story — several stories — that humanity told, borrowed, and reinvented across the ancient world, anchored in real and terrifying water, and we can trace some of its family tree with real confidence while admitting, without embarrassment, how much of its origin remains in the dark.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
       </div>
     </div>
 
@@ -281,34 +276,34 @@ window.CHAPTERS = {
     <p><strong>Architecture as theology.</strong> Finally, the Egyptian temple was a symbol built at scale: its plan a model of the cosmos, its floor rising and its ceiling lowering and darkening as one moved inward toward the hidden sanctuary of the god, its columns carved as marsh plants so the whole building re-enacted the first mound of creation emerging from the waters. To walk into a temple was to walk into the Egyptian cosmos in miniature.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The three-stage development of Egyptian mortuary literature — Pyramid Texts (Old Kingdom, from c. 2400 BCE), Coffin Texts (First Intermediate/Middle Kingdom), Book of the Dead (New Kingdom) — is securely documented, as is the broad "democratization" trend from royal-only toward wider access.</li>
+          <li>Ma'at as the organizing concept of order/justice, and the weighing-of-the-heart judgment with its Negative Confession (Book of the Dead Spell 125), are directly attested in Egyptian texts and illustrations such as the Papyrus of Ani.</li>
+          <li>Mummification practice, the sacred status of writing under Thoth, and the institution of the House of Life are well evidenced archaeologically and textually.</li>
+          <li>The Amarna period is a real historical episode: Akhenaten did elevate the Aten, suppress the plural "gods," relocate the capital, and have his program reversed after his death.</li>
+          <li>Bronze Age Egypt was integrated into an international system, as the Amarna Letters (Akkadian diplomatic tablets) directly show.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The three-stage development of Egyptian mortuary literature — Pyramid Texts   (Old Kingdom, from c. 2400 BCE), Coffin Texts (First Intermediate/Middle   Kingdom), Book of the Dead (New Kingdom) — is securely documented, as is the   broad "democratization" trend from royal-only toward wider access. - Ma'at as the organizing concept of order/justice, and the weighing-of-the-heart   judgment with its Negative Confession (Book of the Dead Spell 125), are directly   attested in Egyptian texts and illustrations such as the Papyrus of Ani. - Mummification practice, the sacred status of writing under Thoth, and the   institution of the House of Life are well evidenced archaeologically and   textually. - The Amarna period is a real historical episode: Akhenaten did elevate the Aten,   suppress the plural "gods," relocate the capital, and have his program reversed   after his death. - Bronze Age Egypt was integrated into an international system, as the Amarna   Letters (Akkadian diplomatic tablets) directly show.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The popular idea of a single, fixed Egyptian "Bible" or unified creation story.   Egypt held multiple creation traditions (Heliopolis, Memphis, Hermopolis) at   once, without harmonizing them. - The framing of the Negative Confession as a formal, numbered legal code ("the 42   Laws of Ma'at") on the model of the Ten Commandments. The ancient text is a   declaration of innocence, not a promulgated code; the "42 laws" packaging is   modern. - Any claim that we have a continuous <em>ancient Egyptian</em> narrative of the Osiris   myth. The connected story derives largely from Plutarch (2nd century CE, Greek),   read back onto fragmentary Egyptian sources.</p>
+        <ul>
+          <li>The popular idea of a single, fixed Egyptian "Bible" or unified creation story. Egypt held multiple creation traditions (Heliopolis, Memphis, Hermopolis) at once, without harmonizing them.</li>
+          <li>The framing of the Negative Confession as a formal, numbered legal code ("the 42 Laws of Ma'at") on the model of the Ten Commandments. The ancient text is a declaration of innocence, not a promulgated code; the "42 laws" packaging is modern.</li>
+          <li>Any claim that we have a continuous <em>ancient Egyptian</em> narrative of the Osiris myth. The connected story derives largely from Plutarch (2nd century CE, Greek), read back onto fragmentary Egyptian sources.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Whether Atenism is best called monotheism, monolatry/henotheism, or a   politically motivated "monopoly" cult. The scholarly debate is unresolved. - The nature and extent of any influence from Atenism (or Egyptian religion more   broadly) on the emergence of Israelite monotheism. The Aten Hymn / Psalm 104   resemblance is real and discussed, but direct dependence is speculative and   contested; the once-popular Akhenaten-as-source-of-Moses idea (Freud and others)   is not supported by evidence and should be treated as speculation. - How ordinary, non-literate Egyptians actually understood these doctrines. Our   sources are overwhelmingly the product of a tiny scribal elite; the personal   piety, household cult, and oracle records from Deir el-Medina give a real but   partial window onto the majority, and much of their inner religious life is   still inferred. - Whether "resurrection" and "dying-and-rising god" language, borrowed from later   traditions, accurately captures the Osirian afterlife, or imports assumptions   Egypt did not share — a live question best deferred to the comparative   dying-and-rising-god chapter.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Whether Atenism is best called monotheism, monolatry/henotheism, or a politically motivated "monopoly" cult. The scholarly debate is unresolved.</li>
+          <li>The nature and extent of any influence from Atenism (or Egyptian religion more broadly) on the emergence of Israelite monotheism. The Aten Hymn / Psalm 104 resemblance is real and discussed, but direct dependence is speculative and contested; the once-popular Akhenaten-as-source-of-Moses idea (Freud and others) is not supported by evidence and should be treated as speculation.</li>
+          <li>How ordinary, non-literate Egyptians actually understood these doctrines. Our sources are overwhelmingly the product of a tiny scribal elite; the personal piety, household cult, and oracle records from Deir el-Medina give a real but partial window onto the majority, and much of their inner religious life is still inferred.</li>
+          <li>Whether "resurrection" and "dying-and-rising god" language, borrowed from later traditions, accurately captures the Osirian afterlife, or imports assumptions Egypt did not share — a live question best deferred to the comparative dying-and-rising-god chapter.</li>
+        </ul>
       </div>
     </div>
 
@@ -429,34 +424,39 @@ window.CHAPTERS = {
     <p><strong>The sky as divine writing.</strong> Finally, Mesopotamians read the heavens as a text the gods had written. The major gods were identified with the visible planets &mdash; Ishtar with Venus, Shamash with the Sun, Sin with the Moon, Marduk with Jupiter, Ninurta/Nergal with Saturn and Mars, Nabu with Mercury &mdash; and the vast omen series <em>Enuma Anu Enlil</em> catalogued celestial signs and their meanings. This conviction, that the sky was a script to be decoded, is the direct ancestor of later astrology, and one of Mesopotamia&rsquo;s longest-lived exports.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>What&rsquo;s well supported by the evidence</h4>
-        <p></p>
+        <h4>What’s well supported by the evidence</h4>
+        <ul>
+          <li>Writing was invented in southern Mesopotamia (Uruk) around 3300 BCE, first for administration, and Mesopotamia produced the oldest surviving literature, law monuments, and scholarly omen-texts.</li>
+          <li>The major deities (An/Anu, Enlil, Enki/Ea, Inanna/Ishtar, Nanna/Sin, Utu/Shamash, Marduk), the temple-and-ziggurat cult centered on feeding and housing the god’s statue, and the central role of divination are all richly attested in texts and archaeology.</li>
+          <li>The <em>Enuma Elish</em>’s account of Marduk, Tiamat, and the creation of humans to labor for the gods, and its recitation at the Akitu festival, are securely documented.</li>
+          <li>Enheduanna, high priestess of Nanna at Ur (c. 2300 BCE), is the earliest author known by name, and the <em>Exaltation of Inanna</em> is attributed to her — the oldest literary work credited to a named, self-identifying author.</li>
+          <li>The world of demons and protective magic (Lamashtu and the apotropaic use of Pazuzu), the healing/exorcist professions (<em>asû</em> and <em>āšipu</em>) and the <em>Maqlû</em> anti-witchcraft series, the “personal god,” and the suffering-righteous literature (<em>Ludlul bēl nēmeqi</em>, the <em>Babylonian Theodicy</em>) are all well attested.</li>
+          <li>The Royal Cemetery of Ur and its mass retainer burials are real; recent forensic work indicates at least some attendants died of blunt-force trauma and that bodies were treated to preserve them.</li>
+          <li>The grim, undifferentiated Mesopotamian underworld (the <em>Kur</em> under Ereshkigal), in sharp contrast to Egypt’s judged afterlife, is well attested.</li>
+          <li>The divine numbers (Anu 60, Enlil 50, Ea 40, Sin 30, Shamash 20, Ishtar 15), the planet–god identifications, cylinder-seal iconography, and the celestial omen series <em>Enuma Anu Enlil</em> are documented; Sargon II’s Khorsabad wall “built to the number of his name” is a real inscription and an early documented instance of name-numerology.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- Writing was invented in southern Mesopotamia (Uruk) around 3300 BCE, first for   administration, and Mesopotamia produced the oldest surviving literature, law   monuments, and scholarly omen-texts. - The major deities (An/Anu, Enlil, Enki/Ea, Inanna/Ishtar, Nanna/Sin, Utu/Shamash,   Marduk), the temple-and-ziggurat cult centered on feeding and housing the god&rsquo;s   statue, and the central role of divination are all richly attested in texts and   archaeology. - The <em>Enuma Elish</em>&rsquo;s account of Marduk, Tiamat, and the creation of   humans to labor for the gods, and its recitation at the Akitu festival, are   securely documented. - Enheduanna, high priestess of Nanna at Ur (c. 2300 BCE), is the earliest author   known by name, and the <em>Exaltation of Inanna</em> is attributed to her &mdash;   the oldest literary work credited to a named, self-identifying author. - The world of demons and protective magic (Lamashtu and the apotropaic use of   Pazuzu), the healing/exorcist professions (<em>asû</em> and <em>āšipu</em>) and   the <em>Maqlû</em> anti-witchcraft series, the &ldquo;personal god,&rdquo; and the   suffering-righteous literature (<em>Ludlul bēl nēmeqi</em>, the <em>Babylonian   Theodicy</em>) are all well attested. - The Royal Cemetery of Ur and its mass retainer burials are real; recent forensic   work indicates at least some attendants died of blunt-force trauma and that bodies   were treated to preserve them. - The grim, undifferentiated Mesopotamian underworld (the <em>Kur</em> under   Ereshkigal), in sharp contrast to Egypt&rsquo;s judged afterlife, is well attested. - The divine numbers (Anu 60, Enlil 50, Ea 40, Sin 30, Shamash 20, Ishtar 15), the   planet&ndash;god identifications, cylinder-seal iconography, and the celestial omen   series <em>Enuma Anu Enlil</em> are documented; Sargon II&rsquo;s Khorsabad wall   &ldquo;built to the number of his name&rdquo; is a real inscription and an early   documented instance of name-numerology.</p>
+        <h4>What’s not supported by the evidence</h4>
+        <ul>
+          <li>Woolley’s romantic reconstruction of the Ur retainers peacefully drinking poison. The forensic evidence points to killing, not a gentle self-administered sleep.</li>
+          <li>The popular image of the “Code of Hammurabi” as a functioning statutory law code governing Babylonian courts. Court records rarely invoke it; many scholars now read it as a royal monument to the king’s justice.</li>
+          <li>Any claim that Genesis simply “copied” the <em>Enuma Elish</em>. The parallels (watery chaos, ordering rather than creation ex nihilo) are real and important, but direct literary dependence is not established.</li>
+          <li>The modern esoteric systems built on the divine numbers — “Anunnaki” frequency codes, sound-healing chords, and the like. The number assignments are ancient; these interpretations of them are twentieth-/twenty-first-century inventions and are not what the numbers meant to Mesopotamians.</li>
+        </ul>
       </div>
       <div class="ev open">
-        <h4>What&rsquo;s not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Woolley&rsquo;s romantic reconstruction of the Ur retainers peacefully drinking   poison. The forensic evidence points to killing, not a gentle self-administered   sleep. - The popular image of the &ldquo;Code of Hammurabi&rdquo; as a functioning statutory   law code governing Babylonian courts. Court records rarely invoke it; many scholars   now read it as a royal monument to the king&rsquo;s justice. - Any claim that Genesis simply &ldquo;copied&rdquo; the <em>Enuma Elish</em>. The   parallels (watery chaos, ordering rather than creation ex nihilo) are real and   important, but direct literary dependence is not established. - The modern esoteric systems built on the divine numbers &mdash; &ldquo;Anunnaki&rdquo;   frequency codes, sound-healing chords, and the like. The number assignments are   ancient; these interpretations of them are twentieth-/twenty-first-century   inventions and are not what the numbers meant to Mesopotamians.</p>
-      </div>
-      <div class="ev open">
-        <h4>What&rsquo;s genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The exact date and compositional history of the <em>Enuma Elish</em> (a 12th-century   BCE origin under Nebuchadnezzar I is widely favored, but not certain), and the   precise nature of its relationship to Genesis 1. - The full meaning of the Ur death pits &mdash; who the victims were, whether they went   willingly, and how representative the practice was of Mesopotamian religion rather   than a short-lived royal fashion. - Whether the Code of Hammurabi is best read as legislation, a record of case-law, or   royal ideological display &mdash; a live scholarly debate. - How much continuity to assume across the long Sumerian-to-Babylonian transition   (e.g., in equating Sumerian Inanna with Akkadian Ishtar), where names and functions   shifted over centuries. - How much of the Enheduanna corpus was personally composed by her, given that all   surviving copies are Old Babylonian, several centuries after her lifetime &mdash; a   question of authorship that scholars genuinely dispute.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <h4>What’s genuinely open</h4>
+        <ul>
+          <li>The exact date and compositional history of the <em>Enuma Elish</em> (a 12th-century BCE origin under Nebuchadnezzar I is widely favored, but not certain), and the precise nature of its relationship to Genesis 1.</li>
+          <li>The full meaning of the Ur death pits — who the victims were, whether they went willingly, and how representative the practice was of Mesopotamian religion rather than a short-lived royal fashion.</li>
+          <li>Whether the Code of Hammurabi is best read as legislation, a record of case-law, or royal ideological display — a live scholarly debate.</li>
+          <li>How much continuity to assume across the long Sumerian-to-Babylonian transition (e.g., in equating Sumerian Inanna with Akkadian Ishtar), where names and functions shifted over centuries.</li>
+          <li>How much of the Enheduanna corpus was personally composed by her, given that all surviving copies are Old Babylonian, several centuries after her lifetime — a question of authorship that scholars genuinely dispute.</li>
+        </ul>
       </div>
     </div>
 
@@ -573,34 +573,38 @@ window.CHAPTERS = {
     <p>The forward connection is more fraught, and it is where this chapter hands off to the next. Around 1900 BCE the Indus cities declined &mdash; not by a single catastrophe but through a drawn-out combination of climate change, shifting and drying rivers, and the fading of the trade and urban systems that held them together. In the centuries after, the archaeological and linguistic record of northwest India is increasingly that of the <strong>Vedic</strong> culture and its Indo-Aryan language. How the two relate is one of the most contested questions in the field &mdash; and one heavily charged with modern political and national identity. Recent ancient-DNA work, including a genome from a Harappan individual at <strong>Rakhigarhi</strong>, indicates that the steppe-pastoralist ancestry associated with Indo-European speakers was <em>absent</em> in the Harappan population and arrived in South Asia largely <em>after</em> the Indus decline, around 2000&ndash;1500 BCE &mdash; as a substantial admixture layered onto the large existing population, not a wholesale replacement. Whether, and how much, Indus religion survived that transition to shape later Hinduism &mdash; the yogi, the goddess, the sacred bull and pipal, ritual bathing &mdash; is the great open question the next chapter, on the early Vedic world, must take up.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The scale, urban planning, standardized weights, and advanced water/drainage engineering of the mature Harappan civilization (c. 2600–1900 BCE) are richly documented.</li>
+          <li>The Indus script exists as a systematic sign-system (~400 signs on ~4,000 objects, mostly seals) and remains genuinely undeciphered; no proposed decipherment is accepted.</li>
+          <li>The material religious remains are real: the seated horned figure of seal M-420, the trefoil-robed “Priest-King” bust, large numbers of female figurines, the Great Bath at Mohenjo-daro, pipal-tree and bull/"unicorn" imagery, the ten-sign Dholavira “signboard,” and modest burials.</li>
+          <li>The near-total absence of identified temples, palaces, royal tombs, and war/ruler monumental art, in sharp contrast to Egypt and Mesopotamia.</li>
+          <li>Long-distance trade with Mesopotamia (the “Meluhha” of Sumerian texts; Indus seals and carnelian beads found at Ur).</li>
+          <li>Ancient DNA indicating steppe-pastoralist ancestry was absent among the Harappans and entered South Asia mainly after the Indus decline (c. 2000–1500 BCE), as admixture rather than replacement.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The scale, urban planning, standardized weights, and advanced water/drainage   engineering of the mature Harappan civilization (c. 2600&ndash;1900 BCE) are richly   documented. - The Indus script exists as a systematic sign-system (~400 signs on ~4,000 objects,   mostly seals) and remains genuinely undeciphered; no proposed decipherment is   accepted. - The material religious remains are real: the seated horned figure of seal M-420,   the trefoil-robed &ldquo;Priest-King&rdquo; bust, large numbers of female   figurines, the Great Bath at Mohenjo-daro, pipal-tree and bull/"unicorn" imagery,   the ten-sign Dholavira &ldquo;signboard,&rdquo; and modest burials. - The near-total absence of identified temples, palaces, royal tombs, and war/ruler   monumental art, in sharp contrast to Egypt and Mesopotamia. - Long-distance trade with Mesopotamia (the &ldquo;Meluhha&rdquo; of Sumerian texts;   Indus seals and carnelian beads found at Ur). - Ancient DNA indicating steppe-pastoralist ancestry was absent among the Harappans   and entered South Asia mainly after the Indus decline (c. 2000&ndash;1500 BCE), as   admixture rather than replacement.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The confident identification of seal M-420 as the god Shiva. &ldquo;Proto-Shiva&rdquo;   is one interpretation among several (Master/Mistress of Animals, bull/buffalo deity,   shaman), none proven. - Any claim that the Indus script has been read, or that a specific religious text or   myth has been recovered from it &mdash; including the Dholavira signboard, which   remains undeciphered. - The identification of the Mohenjo-daro bust as a &ldquo;Priest-King.&rdquo; The   name is Marshall&rsquo;s analogy to Mesopotamia; there is no Indus evidence for   priests or kings, and the figure&rsquo;s identity is unknown. - The assertion that Harappan religion simply <em>is</em> early Hinduism, or that specific   Hindu deities and doctrines are demonstrably present. The parallels are suggestive,   not established. - Certainty about the function of the figurines or the Great Bath as specifically   cultic.</p>
+        <ul>
+          <li>The confident identification of seal M-420 as the god Shiva. “Proto-Shiva” is one interpretation among several (Master/Mistress of Animals, bull/buffalo deity, shaman), none proven.</li>
+          <li>Any claim that the Indus script has been read, or that a specific religious text or myth has been recovered from it — including the Dholavira signboard, which remains undeciphered.</li>
+          <li>The identification of the Mohenjo-daro bust as a “Priest-King.” The name is Marshall’s analogy to Mesopotamia; there is no Indus evidence for priests or kings, and the figure’s identity is unknown.</li>
+          <li>The assertion that Harappan religion simply <em>is</em> early Hinduism, or that specific Hindu deities and doctrines are demonstrably present. The parallels are suggestive, not established.</li>
+          <li>Certainty about the function of the figurines or the Great Bath as specifically cultic.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Essentially the entire religious <em>content</em> of the Indus civilization: its deities,   myths, priesthood (if any), and cosmology. - The identity and sex of the horned figure, and whether the central Indus deity was   a god, a goddess, both, or neither. - Whether the Indus script encodes a language at all, and if so which one (the   Dravidian hypothesis vs. the non-linguistic thesis). - The function of the Great Bath, the meaning of the &ldquo;unicorn&rdquo; and its   altar-object, and whether the Kalibangan structures are fire altars. - The degree of continuity between Indus religion and later Hinduism, and how the   Harappan world related to the incoming Indo-Aryan/Vedic culture &mdash; a debate   entangled with modern politics that should be reported, not adjudicated.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Essentially the entire religious <em>content</em> of the Indus civilization: its deities, myths, priesthood (if any), and cosmology.</li>
+          <li>The identity and sex of the horned figure, and whether the central Indus deity was a god, a goddess, both, or neither.</li>
+          <li>Whether the Indus script encodes a language at all, and if so which one (the Dravidian hypothesis vs. the non-linguistic thesis).</li>
+          <li>The function of the Great Bath, the meaning of the “unicorn” and its altar-object, and whether the Kalibangan structures are fire altars.</li>
+          <li>The degree of continuity between Indus religion and later Hinduism, and how the Harappan world related to the incoming Indo-Aryan/Vedic culture — a debate entangled with modern politics that should be reported, not adjudicated.</li>
+        </ul>
       </div>
     </div>
 
@@ -730,34 +734,35 @@ window.CHAPTERS = {
     <p>Three connections frame the Early Vedic world. Looking <em>back and beside</em>, there is the unresolved relationship with the <strong>Indus Valley</strong> of the previous chapter: whether Vedic religion inherited elements from a Harappan substrate (a proto-Rudra, a goddess, sacred trees and ritual water) or largely displaced it is genuinely open, and — as noted there — recent ancient-DNA work indicates a real influx of steppe-pastoralist, Indo-Aryan-speaking ancestry into South Asia <em>after</em> the Indus decline, layered onto the existing population. Looking <em>across</em> the Bronze Age, the contrast with Egypt and Mesopotamia is total and illuminating: three great contemporary religious worlds, two of them monumental, temple-building, image-making, and literate in stone and clay, the third aniconic, monument-less, and literate only in living memory. Looking <em>forward</em>, the Vedic root feeds two of the next era's great developments — the inward turn of the <strong>Upanishads</strong> toward <em>brahman</em> and <em>atman</em>, and, through the Indo-Iranian sibling relationship, the reforming vision of <strong>Zoroaster</strong> in Persia, whose very vocabulary of gods and demons is the Vedic one turned inside out.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The Vedic corpus (Rig, Sama, Yajur, Atharva, and their Brahmana/Aranyaka layers) exists and was transmitted orally with extraordinary fidelity via formalized memorization techniques; the Rigveda's internal stratification (older "family books" 2–7; later Mandalas 1, 8, 9, 10) is well established.</li>
+          <li>The core pantheon (Indra, Agni, Soma, Varuna–Mitra, Ushas, the Ashvins, Rudra, Yama, and others), the organizing concept of <strong>Rta</strong>, and Vedic henotheism are richly documented in the hymns.</li>
+          <li>The centrality of the <strong>fire sacrifice</strong> (yajna), the specialist priesthoods, the soma cult, and the <em>aniconic</em>, temple-less character of early Vedic religion.</li>
+          <li>The <strong>Atharvaveda</strong>'s household and folk religion — healing charms against named diseases (takman fever, jaundice), charms for love, progeny, cattle, and cursing, protective amulets, and the Hymn to the Earth (Prithivi Sukta, AV 12.1) — is directly attested and doubles as the oldest layer of Indian medicine.</li>
+          <li>The Indo-European and Indo-Iranian kinship of Vedic religion: cognate deities (Dyaus Pita / Zeus / Jupiter), shared poetic formulae, the soma/haoma inheritance, and the deva/asura ↔ daeva/ahura inversion between Vedic and Iranian tradition.</li>
+          <li>Ancient DNA indicating steppe-pastoralist (Indo-Aryan-associated) ancestry entered South Asia largely after the Indus decline (c. 2000–1500 BCE) as admixture.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The Vedic corpus (Rig, Sama, Yajur, Atharva, and their Brahmana/Aranyaka layers)   exists and was transmitted orally with extraordinary fidelity via formalized   memorization techniques; the Rigveda's internal stratification (older "family   books" 2–7; later Mandalas 1, 8, 9, 10) is well established. - The core pantheon (Indra, Agni, Soma, Varuna–Mitra, Ushas, the Ashvins, Rudra,   Yama, and others), the organizing concept of <strong>Rta</strong>, and Vedic henotheism are   richly documented in the hymns. - The centrality of the <strong>fire sacrifice</strong> (yajna), the specialist priesthoods, the   soma cult, and the <em>aniconic</em>, temple-less character of early Vedic religion. - The <strong>Atharvaveda</strong>'s household and folk religion — healing charms against named   diseases (takman fever, jaundice), charms for love, progeny, cattle, and cursing,   protective amulets, and the Hymn to the Earth (Prithivi Sukta, AV 12.1) — is   directly attested and doubles as the oldest layer of Indian medicine. - The Indo-European and Indo-Iranian kinship of Vedic religion: cognate deities   (Dyaus Pita / Zeus / Jupiter), shared poetic formulae, the soma/haoma inheritance,   and the deva/asura ↔ daeva/ahura inversion between Vedic and Iranian tradition. - Ancient DNA indicating steppe-pastoralist (Indo-Aryan-associated) ancestry   entered South Asia largely after the Indus decline (c. 2000–1500 BCE) as admixture.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Precise absolute dates. "c. 1500–1200 BCE" for the Rigveda's core is a scholarly   convention with wide margins; claims of extreme antiquity (a Rigveda older than,   or indigenous to, the Indus cities) are not supported by mainstream linguistic and   archaeological evidence and are often politically motivated. - Reading the classical/modern <strong>caste</strong> system back into early Vedic society. The   varna verse (Purusha Sukta) is in the latest Rigvedic layer and is widely regarded   as possibly interpolated; birth-fixed caste is a much later development. - The claim that developed doctrines of <strong>karma, rebirth, and Brahman–atman</strong> are   present in the early Samhitas. These emerge in the later Upanishadic layer (the   next era), foreshadowed by the <em>bandhu</em> homologies but not yet doctrine.</p>
+        <ul>
+          <li>Precise absolute dates. "c. 1500–1200 BCE" for the Rigveda's core is a scholarly convention with wide margins; claims of extreme antiquity (a Rigveda older than, or indigenous to, the Indus cities) are not supported by mainstream linguistic and archaeological evidence and are often politically motivated.</li>
+          <li>Reading the classical/modern <strong>caste</strong> system back into early Vedic society. The varna verse (Purusha Sukta) is in the latest Rigvedic layer and is widely regarded as possibly interpolated; birth-fixed caste is a much later development.</li>
+          <li>The claim that developed doctrines of <strong>karma, rebirth, and Brahman–atman</strong> are present in the early Samhitas. These emerge in the later Upanishadic layer (the next era), foreshadowed by the <em>bandhu</em> homologies but not yet doctrine.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The botanical identity of <strong>soma</strong>. Candidates include <em>Ephedra</em> (currently the   leading proposal), the fly-agaric mushroom (<em>Amanita muscaria</em>, famously argued by   R. G. Wasson), Syrian rue, and others; none is established. - The <strong>absolute chronology</strong> of composition and the identification of the Vedic   world with any specific archaeological culture. - The <strong>degree of continuity</strong> between Indus and Vedic religion, and the finer   details of the Indo-Aryan arrival — a field entangled with modern politics, to be   reported rather than adjudicated. - How literally the Vedic poets took their own cosmology — the skeptical close of the   Nasadiya Sukta suggests at least some held the deepest questions genuinely open.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The botanical identity of <strong>soma</strong>. Candidates include <em>Ephedra</em> (currently the leading proposal), the fly-agaric mushroom (<em>Amanita muscaria</em>, famously argued by R. G. Wasson), Syrian rue, and others; none is established.</li>
+          <li>The <strong>absolute chronology</strong> of composition and the identification of the Vedic world with any specific archaeological culture.</li>
+          <li>The <strong>degree of continuity</strong> between Indus and Vedic religion, and the finer details of the Indo-Aryan arrival — a field entangled with modern politics, to be reported rather than adjudicated.</li>
+          <li>How literally the Vedic poets took their own cosmology — the skeptical close of the Nasadiya Sukta suggests at least some held the deepest questions genuinely open.</li>
+        </ul>
       </div>
     </div>
 
@@ -883,34 +888,35 @@ window.CHAPTERS = {
     <p>How much of this the Abrahamic traditions <em>owe</em> to Zoroastrianism is genuinely open. The parallels are real and widely noted, and the historical opportunity for influence (the Persian period) is undeniable. But the case must be stated with care, because our systematic Zoroastrian texts were written down late — after the very developments they are invoked to explain — so that skeptics can argue for independent development, or even influence in the other direction, while others maintain the oral Zoroastrian tradition long predates the contact and shaped Jewish thought during the exile. The honest verdict is: striking, important, and unresolved. This project will return to it directly in the Second Temple Judaism chapter of the next era, and in the chapters on Christianity, Islam, and the dualist heresies (Manichaeism, Gnosticism) that Zoroastrian ideas most visibly touched.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>Zoroastrianism is an ancient Iranian religion founded on the teaching of Zarathustra, whose own hymns (the Gathas) survive within the Avesta and are linguistically very archaic (Old Avestan, close to Rigvedic Sanskrit).</li>
+          <li>Its core: Ahura Mazda as supreme good creator; the Amesha Spentas and yazatas; the opposition of asha (truth/order) and druj (the Lie); Angra Mainyu/Ahriman as the hostile spirit; the ethical triad of good thoughts, words, and deeds; and a linear, finite history ending in the triumph of good.</li>
+          <li>Fire as central sacred symbol (not idol), the Yasna liturgy and haoma, exposure of the dead (dakhmas), and the sudreh/kusti initiation (Navjote) are all well attested.</li>
+          <li>The individual afterlife — the three-day wait, the <strong>Chinvat Bridge</strong>, the weighing of deeds, the <strong>daēnā</strong> met as radiant maiden or hag, and the provisional House of Song / House of the Lie — is attested from the Avesta onward. The twelve-thousand-year cosmic timeline and the three Saoshyants born of Zarathustra's preserved seed are laid out in the (later) Pahlavi Bundahishn.</li>
+          <li>Its Indo-Iranian kinship with Vedic religion (asha/rta, haoma/soma, daeva/deva inversion) and its status as the imperial religion of Achaemenid and especially Sasanian Persia.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- Zoroastrianism is an ancient Iranian religion founded on the teaching of   Zarathustra, whose own hymns (the Gathas) survive within the Avesta and are   linguistically very archaic (Old Avestan, close to Rigvedic Sanskrit). - Its core: Ahura Mazda as supreme good creator; the Amesha Spentas and yazatas;   the opposition of asha (truth/order) and druj (the Lie); Angra Mainyu/Ahriman   as the hostile spirit; the ethical triad of good thoughts, words, and deeds; and   a linear, finite history ending in the triumph of good. - Fire as central sacred symbol (not idol), the Yasna liturgy and haoma, exposure   of the dead (dakhmas), and the sudreh/kusti initiation (Navjote) are all   well attested. - The individual afterlife — the three-day wait, the <strong>Chinvat Bridge</strong>, the   weighing of deeds, the <strong>daēnā</strong> met as radiant maiden or hag, and the provisional   House of Song / House of the Lie — is attested from the Avesta onward. The   twelve-thousand-year cosmic timeline and the three Saoshyants born of Zarathustra's   preserved seed are laid out in the (later) Pahlavi Bundahishn. - Its Indo-Iranian kinship with Vedic religion (asha/rta, haoma/soma,   daeva/deva inversion) and its status as the imperial religion of Achaemenid and   especially Sasanian Persia.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- A confident, precise date (or even certain individual historicity) for   Zarathustra. Estimates span roughly 1500–600 BCE. - The claim that Zoroastrian influence on Jewish, Christian, and Islamic   eschatology is a settled, proven fact. The parallels and the historical   opportunity are real; the direction, timing, and extent are debated, complicated   by the late writing-down of the Avesta. - The popular decoding of the <strong>Faravahar</strong> (feathers = good/evil thoughts,   words, deeds) as an ancient, attested doctrine; it is a modern devotional   reading, and even whether the figure depicts the fravashi or the khvarenah is   disputed. - The characterization of Zoroastrians as "fire-worshippers."</p>
+        <ul>
+          <li>A confident, precise date (or even certain individual historicity) for Zarathustra. Estimates span roughly 1500–600 BCE.</li>
+          <li>The claim that Zoroastrian influence on Jewish, Christian, and Islamic eschatology is a settled, proven fact. The parallels and the historical opportunity are real; the direction, timing, and extent are debated, complicated by the late writing-down of the Avesta.</li>
+          <li>The popular decoding of the <strong>Faravahar</strong> (feathers = good/evil thoughts, words, deeds) as an ancient, attested doctrine; it is a modern devotional reading, and even whether the figure depicts the fravashi or the khvarenah is disputed.</li>
+          <li>The characterization of Zoroastrians as "fire-worshippers."</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Whether the system is best described as monotheism (evil as a derivative,   defeated rebel — arguably the Gathas' view) or as a true dualism of two   primordial principles (the later systematic and Zurvanite view). The tradition   itself has held both. - The precise nature and extent of Zoroastrianism's influence on the Abrahamic   and dualist traditions. - The botanical identity of <strong>haoma</strong> (the same question as Vedic soma — Ephedra   is the leading candidate; unresolved). - How much of the later Pahlavi systematization reflects Zarathustra's own   teaching versus centuries of development.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Whether the system is best described as monotheism (evil as a derivative, defeated rebel — arguably the Gathas' view) or as a true dualism of two primordial principles (the later systematic and Zurvanite view). The tradition itself has held both.</li>
+          <li>The precise nature and extent of Zoroastrianism's influence on the Abrahamic and dualist traditions.</li>
+          <li>The botanical identity of <strong>haoma</strong> (the same question as Vedic soma — Ephedra is the leading candidate; unresolved).</li>
+          <li>How much of the later Pahlavi systematization reflects Zarathustra's own teaching versus centuries of development.</li>
+        </ul>
       </div>
     </div>
 
@@ -1043,34 +1049,37 @@ window.CHAPTERS = {
     <p>Backward and beside, this chapter's connections are dense: to <strong>Canaan/Ugarit</strong> (the El–Baal–Asherah world Israel grew from), to <strong>Mesopotamia</strong> (the shared flood of Chapter 1, the creation and law parallels of Chapter 3 — Genesis 1's ordered cosmos answering the <em>Enuma Elish</em>, the Covenant Code echoing Hammurabi), and to <strong>Egypt</strong> (the Exodus memory, and the Great Hymn to the Aten's echo in Psalm 104, Chapter 2). Forward, everything here is prologue to the transformation that the next era must open with: the <strong>Babylonian exile</strong> of 586 BCE, which destroyed the Temple, ended the monarchy, and — paradoxically — forged the crisis in which Israelite monolatry finally hardened into full <strong>monotheism</strong> and the religion we can properly call <strong>Judaism</strong> was born. It is also in and after the exile, under Persian rule, that the <strong>Zoroastrian-influence</strong> question raised in Chapter 6 comes due.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>Israel emerged largely <em>within</em> Canaan in Iron Age I (Merneptah Stele; the highland settlement explosion; material continuity with Canaanite culture), rather than through a large-scale external Exodus and conquest as literally described.</li>
+          <li>Early Israelite religion was not originally monotheistic. Yahweh was worshipped alongside other deities; he was identified/merged with the Canaanite high god <strong>El</strong>; and <strong>Asherah</strong> was venerated in Yahwistic contexts (Kuntillet Ajrud, Khirbet el-Qom).</li>
+          <li>Worship was widespread and local (high places, standing stones, the Arad sanctuary, the northern calf shrines) and included a rich <strong>household/folk religion</strong> (the Judean pillar figurines, teraphim, ancestor offerings). The pre-exilic dead went to <strong>Sheol</strong>, a neutral shadowy underworld, with no developed resurrection or judgment yet.</li>
+          <li>The <strong>Ugaritic Baal Cycle</strong> (Baal vs. Yam and Mot) supplies the mythic vocabulary the Hebrew poets reused and re-credited to Yahweh — the divine combat with the Sea and with Leviathan/Rahab (Psalm 74, Isaiah 27, Job 26) and the "swallowing up of death" (Isaiah 25).</li>
+          <li>The centralizing reforms of Hezekiah and (especially) <strong>Josiah (c. 622 BCE)</strong>, tied to an early form of Deuteronomy, are historically grounded.</li>
+          <li>The Hebrew Bible is a <strong>composite</strong> text compiled over centuries (multiple sources, not Mosaic authorship), though the exact source model is debated.</li>
+          <li>A <strong>Davidic dynasty</strong> existed (Tel Dan Stele); the Ketef Hinnom amulets (c. 600 BCE) are the oldest surviving biblical text; the alphabet is a Levantine Bronze Age invention.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- Israel emerged largely <em>within</em> Canaan in Iron Age I (Merneptah Stele; the   highland settlement explosion; material continuity with Canaanite culture),   rather than through a large-scale external Exodus and conquest as literally   described. - Early Israelite religion was not originally monotheistic. Yahweh was worshipped   alongside other deities; he was identified/merged with the Canaanite high god   <strong>El</strong>; and <strong>Asherah</strong> was venerated in Yahwistic contexts (Kuntillet Ajrud,   Khirbet el-Qom). - Worship was widespread and local (high places, standing stones, the Arad   sanctuary, the northern calf shrines) and included a rich <strong>household/folk   religion</strong> (the Judean pillar figurines, teraphim, ancestor offerings). The   pre-exilic dead went to <strong>Sheol</strong>, a neutral shadowy underworld, with no   developed resurrection or judgment yet. - The <strong>Ugaritic Baal Cycle</strong> (Baal vs. Yam and Mot) supplies the mythic vocabulary   the Hebrew poets reused and re-credited to Yahweh — the divine combat with the   Sea and with Leviathan/Rahab (Psalm 74, Isaiah 27, Job 26) and the "swallowing up   of death" (Isaiah 25). - The centralizing reforms of Hezekiah and (especially) <strong>Josiah (c. 622 BCE)</strong>,   tied to an early form of Deuteronomy, are historically grounded. - The Hebrew Bible is a <strong>composite</strong> text compiled over centuries (multiple   sources, not Mosaic authorship), though the exact source model is debated. - A <strong>Davidic dynasty</strong> existed (Tel Dan Stele); the Ketef Hinnom amulets (c. 600   BCE) are the oldest surviving biblical text; the alphabet is a Levantine   Bronze Age invention.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The biblical framing of an <strong>original pure monotheism</strong> later corrupted by   apostasy. The historical arrow runs the other way: from polytheism/monolatry   <em>toward</em> monotheism. - A historical Exodus and conquest at the scale and in the manner the Bible   narrates. - Reading later developments — full monotheism, rabbinic practice, <strong>gematria</strong> —   back into the pre-exilic period.</p>
+        <ul>
+          <li>The biblical framing of an <strong>original pure monotheism</strong> later corrupted by apostasy. The historical arrow runs the other way: from polytheism/monolatry <em>toward</em> monotheism.</li>
+          <li>A historical Exodus and conquest at the scale and in the manner the Bible narrates.</li>
+          <li>Reading later developments — full monotheism, rabbinic practice, <strong>gematria</strong> — back into the pre-exilic period.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Whether "his Asherah" refers to the <strong>goddess herself</strong> or to a wooden cult   <strong>object/symbol</strong> bearing her name (scholars are divided). - The <strong>historicity and scale</strong> of the United Monarchy of David and Solomon: that   a Davidic line existed is supported; whether it ruled a large, wealthy empire is   hotly debated (minimalists vs. maximalists). - The precise <strong>origin of Yahweh</strong> (the Kenite–Midianite/southern hypothesis is   strong but unproven). - The exact <strong>dating and composition</strong> of the biblical sources. - The extent and nature of <strong>child sacrifice</strong> in Israel and Judah.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Whether "his Asherah" refers to the <strong>goddess herself</strong> or to a wooden cult <strong>object/symbol</strong> bearing her name (scholars are divided).</li>
+          <li>The <strong>historicity and scale</strong> of the United Monarchy of David and Solomon: that a Davidic line existed is supported; whether it ruled a large, wealthy empire is hotly debated (minimalists vs. maximalists).</li>
+          <li>The precise <strong>origin of Yahweh</strong> (the Kenite–Midianite/southern hypothesis is strong but unproven).</li>
+          <li>The exact <strong>dating and composition</strong> of the biblical sources.</li>
+          <li>The extent and nature of <strong>child sacrifice</strong> in Israel and Judah.</li>
+        </ul>
       </div>
     </div>
 
@@ -1193,34 +1202,35 @@ window.CHAPTERS = {
     <p>Early Greek religion is a great crossroads. Its succession myth ties it to the <strong>Near East</strong> (the Kumarbi cycle; the <em>Enuma Elish</em> of Chapter 3), its sky-father to the <strong>Indo-European</strong> world (the Vedic Dyaus and Iranian material of Chapters 5 and 6), its alphabet and its love-goddess to the <strong>Levant and Phoenicia</strong> of Chapter 7, and its flood story (Deucalion) to the comparative flood theme of Chapter 1. Herodotus even claimed the Greeks got their gods from <strong>Egypt</strong> — an overstatement, but a witness to how conscious the Greeks were of eastern debts. Forward, everything here is the seedbed of the next era's <strong>classical Greece</strong>: the Olympian myths that the tragedians will interrogate, the mystery and Orphic ideas of the soul that Pythagoras and Plato will philosophize, and a pantheon that <strong>Rome</strong> will adopt wholesale.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The major Greek gods (Zeus, Hera, Poseidon, Athena, Ares, Hermes, Dionysus, and more) were already worshipped in Mycenaean Bronze Age Greece, attested by name in Linear B tablets (c. 1400–1200 BCE).</li>
+          <li>Greek religion was non-dogmatic and non-scriptural — a matter of practice (orthopraxy), civic and household ritual, sacrifice, festivals, and oracles, without creed or church — while Homer and Hesiod (c. 750–700 BCE) served as the shared cultural reference for myth.</li>
+          <li>Strong Near Eastern influence on Greek myth, clearest in the Hesiodic succession myth's parallels with the Hurrian-Hittite Kumarbi cycle and Mesopotamian cosmogony.</li>
+          <li>The Greek alphabet was adapted from Phoenician with the crucial innovation of vowels; the grim default afterlife (Hades) coexisted with mystery cults (Eleusis, Orphism) offering initiates a better fate.</li>
+          <li>Below the civic cult ran a rich everyday religion: <strong>household worship</strong> (Hestia's hearth, Zeus Ktesios in the kadiskos, Zeus Herkeios, Hekate at the crossroads), the civic <strong>hero-cults</strong> of the powerful dead at their tombs, and the inscribed lead <strong>curse tablets</strong> (katadesmoi/defixiones) buried to bind an enemy — some 1,600 known.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The major Greek gods (Zeus, Hera, Poseidon, Athena, Ares, Hermes, Dionysus, and   more) were already worshipped in Mycenaean Bronze Age Greece, attested by name in   Linear B tablets (c. 1400–1200 BCE). - Greek religion was non-dogmatic and non-scriptural — a matter of practice   (orthopraxy), civic and household ritual, sacrifice, festivals, and oracles,   without creed or church — while Homer and Hesiod (c. 750–700 BCE) served as the   shared cultural reference for myth. - Strong Near Eastern influence on Greek myth, clearest in the Hesiodic succession   myth's parallels with the Hurrian-Hittite Kumarbi cycle and Mesopotamian   cosmogony. - The Greek alphabet was adapted from Phoenician with the crucial innovation of   vowels; the grim default afterlife (Hades) coexisted with mystery cults (Eleusis,   Orphism) offering initiates a better fate. - Below the civic cult ran a rich everyday religion: <strong>household worship</strong> (Hestia's   hearth, Zeus Ktesios in the kadiskos, Zeus Herkeios, Hekate at the crossroads),   the civic <strong>hero-cults</strong> of the powerful dead at their tombs, and the inscribed   lead <strong>curse tablets</strong> (katadesmoi/defixiones) buried to bind an enemy — some   1,600 known.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- "Homer" as a single historical author who composed and wrote the epics alone.   The Homeric Question and the demonstrated oral-formulaic tradition make this at   best uncertain. - A single, unified, systematic "Greek religion" or theology. Practice was local,   various, and unsystematic; Hesiod's tidy genealogy is one poet's synthesis. - Reading later classical philosophy, developed Orphic doctrine, or Herodotus's   claim of wholesale Egyptian origin back onto the earliest layers.</p>
+        <ul>
+          <li>"Homer" as a single historical author who composed and wrote the epics alone. The Homeric Question and the demonstrated oral-formulaic tradition make this at best uncertain.</li>
+          <li>A single, unified, systematic "Greek religion" or theology. Practice was local, various, and unsystematic; Hesiod's tidy genealogy is one poet's synthesis.</li>
+          <li>Reading later classical philosophy, developed Orphic doctrine, or Herodotus's claim of wholesale Egyptian origin back onto the earliest layers.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The Homeric Question — the authorship, unity, and manner of composition of the   Iliad and Odyssey. - How much religious continuity bridged the Dark Age between Mycenaean and Archaic   Greece. - The origins of specific deities (e.g., how much of Dionysus or Aphrodite is   native, Near Eastern, or Aegean). - The actual content of the Eleusinian secret and the earliest form of Orphism. - The historical kernel, if any, behind the myths (the Trojan War; the Deucalion   flood).</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The Homeric Question — the authorship, unity, and manner of composition of the Iliad and Odyssey.</li>
+          <li>How much religious continuity bridged the Dark Age between Mycenaean and Archaic Greece.</li>
+          <li>The origins of specific deities (e.g., how much of Dionysus or Aphrodite is native, Near Eastern, or Aegean).</li>
+          <li>The actual content of the Eleusinian secret and the earliest form of Orphism.</li>
+          <li>The historical kernel, if any, behind the myths (the Trojan War; the Deucalion flood).</li>
+        </ul>
       </div>
     </div>
 
@@ -1335,34 +1345,34 @@ window.CHAPTERS = {
     <p>Early China is the great study in <em>contrast</em> for this era. Developing in relative isolation from the Near Eastern and Mediterranean world, it produced a religion strikingly <em>unlike</em> the others in this archive: with <strong>no creator god, no anthropomorphic pantheon rich in myth, and no separate priesthood</strong> — instead, an impersonal moral <strong>Heaven</strong>, a spirit-world of <strong>ancestors</strong>, and a king who was priest, diviner, and Son of Heaven in one. Where Israel (Chapter 7) was moving toward one transcendent God and Greece (Chapter 8) toward a family of vivid Olympians, China built its sacred order around the family dead and the moral scrutiny of Heaven. Forward, everything here flows into the next era's <strong>Axial Age</strong>: <strong>Confucius</strong> will make the Zhou ideal of <em>li</em>, <em>xiao</em>, and virtue the basis of his teaching; <strong>Daoism</strong> will draw on the older nature-cosmology and the way (<em>Dao</em>) of Heaven; and the <em>Yijing</em>'s lines will be philosophized into the full <strong>yin-yang</strong> system. The Mandate of Heaven, meanwhile, will outlast every dynasty that invoked it.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>Shang religion is directly documented by the <strong>oracle-bone inscriptions</strong> (from c. 1250 BCE): divination by pyromancy, addressed to the high god <strong>Di/Shangdi</strong> and, above all, to the <strong>royal ancestors</strong>, with the king as sole intermediary.</li>
+          <li><strong>Ancestor veneration</strong> was the core of the tradition; <strong>human sacrifice</strong> and companion burial are attested archaeologically (the Anyang royal tombs; Fu Hao's tomb); ritual <strong>bronze vessels</strong> were made to offer food and drink to the dead.</li>
+          <li>The <strong>Zhou</strong> introduced <strong>Tian</strong> (Heaven) and the <strong>Mandate of Heaven</strong> (<em>Tianming</em>) — a conditional, virtue-based, revocable theory of legitimate rule — which became foundational to Chinese political-religious thought.</li>
+          <li>Chinese writing originated in a divinatory setting and is continuous with the modern script; the <strong>Yijing</strong> has genuine early-Zhou divinatory roots.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- Shang religion is directly documented by the <strong>oracle-bone inscriptions</strong> (from   c. 1250 BCE): divination by pyromancy, addressed to the high god <strong>Di/Shangdi</strong>   and, above all, to the <strong>royal ancestors</strong>, with the king as sole intermediary. - <strong>Ancestor veneration</strong> was the core of the tradition; <strong>human sacrifice</strong> and   companion burial are attested archaeologically (the Anyang royal tombs; Fu Hao's   tomb); ritual <strong>bronze vessels</strong> were made to offer food and drink to the dead. - The <strong>Zhou</strong> introduced <strong>Tian</strong> (Heaven) and the <strong>Mandate of Heaven</strong>   (<em>Tianming</em>) — a conditional, virtue-based, revocable theory of legitimate rule —   which became foundational to Chinese political-religious thought. - Chinese writing originated in a divinatory setting and is continuous with the   modern script; the <strong>Yijing</strong> has genuine early-Zhou divinatory roots.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Reading later systematized cosmology back into the Shang: the developed doctrines   of <strong>yin-yang and the Five Phases</strong>, philosophical <strong>Daoism</strong>, and the creation   myths of <strong>Pangu</strong> and <strong>Nüwa</strong> are all later and should not be assumed for the   Bronze Age. - The picture of a single, unified "early Chinese religion." <strong>Sanxingdui</strong> shows a   wholly distinct contemporary ritual culture; early China was plural. - The legendary <strong>Xia dynasty</strong> and the sage-kings as established literal history   (their historicity is debated).</p>
+        <ul>
+          <li>Reading later systematized cosmology back into the Shang: the developed doctrines of <strong>yin-yang and the Five Phases</strong>, philosophical <strong>Daoism</strong>, and the creation myths of <strong>Pangu</strong> and <strong>Nüwa</strong> are all later and should not be assumed for the Bronze Age.</li>
+          <li>The picture of a single, unified "early Chinese religion." <strong>Sanxingdui</strong> shows a wholly distinct contemporary ritual culture; early China was plural.</li>
+          <li>The legendary <strong>Xia dynasty</strong> and the sage-kings as established literal history (their historicity is debated).</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The precise nature of <strong>Di</strong> — a distinct high god, or the supreme collective   ancestor of the Shang line? Scholars differ. - Whether early Chinese religion (and Shang kingship) is rightly called   <strong>shamanic</strong>. K. C. Chang's shaman-king thesis is influential but contested;   Keightley and others read the Shang elite as bureaucratic mediators, and the   Chinese evidence often fits spirit-possession better than ecstatic soul-flight. - The meaning of the <strong>taotie</strong> motif on the bronzes. - The original meaning of the Neolithic ritual <strong>jades</strong> (the Heaven/Earth reading   of <em>bi</em> and <em>cong</em> derives largely from later texts). - The dates and editorial history of the transmitted classics, and how far their   idealized Zhou reflects reality.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The precise nature of <strong>Di</strong> — a distinct high god, or the supreme collective ancestor of the Shang line? Scholars differ.</li>
+          <li>Whether early Chinese religion (and Shang kingship) is rightly called <strong>shamanic</strong>. K. C. Chang's shaman-king thesis is influential but contested; Keightley and others read the Shang elite as bureaucratic mediators, and the Chinese evidence often fits spirit-possession better than ecstatic soul-flight.</li>
+          <li>The meaning of the <strong>taotie</strong> motif on the bronzes.</li>
+          <li>The original meaning of the Neolithic ritual <strong>jades</strong> (the Heaven/Earth reading of <em>bi</em> and <em>cong</em> derives largely from later texts).</li>
+          <li>The dates and editorial history of the transmitted classics, and how far their idealized Zhou reflects reality.</li>
+        </ul>
       </div>
     </div>
 
@@ -1478,34 +1488,35 @@ window.CHAPTERS = {
     <p>This chapter is a great junction. It is the direct sequel to <strong>pre-exilic Israel</strong> (Chapter 7), completing the journey to monotheism; it is where the fingerprints of <strong>Zoroaster</strong> (Chapter 6) are most hotly sought; and it plays out in the Babylon and under the Persia we met in Chapters 3 and 6. Sideways, across the Axial Age, it is locked in dialogue with <strong>Hellenism</strong> and Greek philosophy (the Septuagint, Philo), tying it to the classical-Greece thread of Chapter 8. And forward, it is the indispensable seedbed of the next era's giants: <strong>Christianity</strong>, which begins as one of these Second Temple Judaisms; <strong>Rabbinic Judaism</strong>, the Pharisees' heirs who will remake the religion around Torah after the Temple's fall; and, more distantly, <strong>Islam</strong>, <strong>Gnosticism</strong>, and the esoteric traditions of <strong>Kabbalah</strong>.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The <strong>Babylonian exile</strong> (586 BCE) was the decisive transformation: it is in and after the exile that Israelite monolatry becomes explicit <strong>monotheism</strong> (Second Isaiah), that Torah moves to the center, and that non-sacrificial, text-centered worship (the seed of the synagogue) emerges.</li>
+          <li>Second Temple Judaism was strikingly <strong>diverse</strong> — Pharisees, Sadducees, Essenes, Zealots, Samaritans, Hellenistic/diaspora Jews, and apocalyptic groups — as the <strong>Dead Sea Scrolls</strong> dramatically confirmed.</li>
+          <li>A large, layered <strong>literature</strong> existed with no single fixed canon: the emerging Tanakh, the Septuagint, the Apocrypha/Deuterocanon, and the Pseudepigrapha (1 Enoch, Jubilees, etc.).</li>
+          <li>New theological developments — a personalized <strong>Satan</strong>, ranked <strong>angels and demons</strong>, <strong>resurrection</strong> and final judgment (Daniel), and the <strong>apocalyptic</strong> genre — appear developed in this period.</li>
+          <li><strong>Messianic expectation was itself plural</strong> — Davidic royal, priestly (the two messiahs of Qumran), the prophet like Moses, and the heavenly Danielic/Enochic "son of man" — and the personified figure of <strong>Wisdom</strong> (Sophia) develops in the wisdom books (Proverbs 8, Ben Sira 24, the Wisdom of Solomon), later feeding Philo's Logos, Christology, and Gnosticism.</li>
+          <li>The historical framework (Persian → Hellenistic → Roman; the Maccabean revolt; Herod's Temple; the destruction of 70 CE) is well established.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The <strong>Babylonian exile</strong> (586 BCE) was the decisive transformation: it is in and   after the exile that Israelite monolatry becomes explicit <strong>monotheism</strong> (Second   Isaiah), that Torah moves to the center, and that non-sacrificial, text-centered   worship (the seed of the synagogue) emerges. - Second Temple Judaism was strikingly <strong>diverse</strong> — Pharisees, Sadducees, Essenes,   Zealots, Samaritans, Hellenistic/diaspora Jews, and apocalyptic groups — as the   <strong>Dead Sea Scrolls</strong> dramatically confirmed. - A large, layered <strong>literature</strong> existed with no single fixed canon: the emerging   Tanakh, the Septuagint, the Apocrypha/Deuterocanon, and the Pseudepigrapha (1   Enoch, Jubilees, etc.). - New theological developments — a personalized <strong>Satan</strong>, ranked <strong>angels and   demons</strong>, <strong>resurrection</strong> and final judgment (Daniel), and the <strong>apocalyptic</strong>   genre — appear developed in this period. - <strong>Messianic expectation was itself plural</strong> — Davidic royal, priestly (the two   messiahs of Qumran), the prophet like Moses, and the heavenly Danielic/Enochic   "son of man" — and the personified figure of <strong>Wisdom</strong> (Sophia) develops in the   wisdom books (Proverbs 8, Ben Sira 24, the Wisdom of Solomon), later feeding   Philo's Logos, Christology, and Gnosticism. - The historical framework (Persian → Hellenistic → Roman; the Maccabean revolt;   Herod's Temple; the destruction of 70 CE) is well established.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The picture of a single, monolithic "Judaism" in this era. It was plural. - A fixed, early biblical canon settled by a "Council of Jamnia" (a discredited   idea); canonization was gradual and still open at the period's end. - The claim that Zoroastrian influence on Jewish angelology, dualism, and   eschatology is a <strong>proven</strong> fact. The parallels and the historical window are   real; direct borrowing is unprovable ("resonance," not demonstrated dependence).</p>
+        <ul>
+          <li>The picture of a single, monolithic "Judaism" in this era. It was plural.</li>
+          <li>A fixed, early biblical canon settled by a "Council of Jamnia" (a discredited idea); canonization was gradual and still open at the period's end.</li>
+          <li>The claim that Zoroastrian influence on Jewish angelology, dualism, and eschatology is a <strong>proven</strong> fact. The parallels and the historical window are real; direct borrowing is unprovable ("resonance," not demonstrated dependence).</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The precise <strong>extent and direction of influence</strong> — Zoroastrian <em>and</em> Hellenistic —   on Second Temple theology. - The <strong>identity of the Qumran community</strong> (the majority view links it to the   Essenes, but this is debated) and the figure of its "Teacher of Righteousness." - The <strong>dating and provenance</strong> of many pseudepigrapha. - How the diverse <strong>messianic expectations</strong> of the age related to one another —   material this project takes up directly in the Christianity chapter.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The precise <strong>extent and direction of influence</strong> — Zoroastrian <em>and</em> Hellenistic — on Second Temple theology.</li>
+          <li>The <strong>identity of the Qumran community</strong> (the majority view links it to the Essenes, but this is debated) and the figure of its "Teacher of Righteousness."</li>
+          <li>The <strong>dating and provenance</strong> of many pseudepigrapha.</li>
+          <li>How the diverse <strong>messianic expectations</strong> of the age related to one another — material this project takes up directly in the Christianity chapter.</li>
+        </ul>
       </div>
     </div>
 
@@ -1619,34 +1630,33 @@ window.CHAPTERS = {
     <p>Buddhism's deepest tie is to <strong>Chapter 5</strong>: it is a child and a rebel of the Vedic world, sharing its vocabulary of <strong>karma, rebirth, and samsara</strong> while rejecting its sacrifice, its priesthood, and — most sharply — its <strong>atman</strong>. It is the sibling of <strong>Jainism</strong> and a member of the śramaṇa ferment. Across the Axial Age, it belongs with the other great transformations this era gathers: <strong>Confucius</strong> and the Chinese sages, the <strong>Greek philosophers</strong> (Chapter 8's world, coming to flower), and the <strong>prophets and sages of Israel</strong> (Chapters 7 and 10) — all, in Karl Jaspers's famous phrase, part of the "Axial Age" in which humanity turned, across Eurasia, toward inwardness, ethics, and transcendence. Forward, Buddhism's story is only beginning: the <strong>Mahayana</strong> and its bodhisattvas, the spread to <strong>China, Tibet, Southeast Asia, and Japan</strong>, and the Greco-Buddhist art of <strong>Gandhara</strong> all belong to later chapters of this archive.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>A historical teacher (the Buddha, Siddhartha Gautama) founded a <strong>śramaṇa</strong> renunciant movement in the Ganges plain around the fifth century BCE, in reaction to Vedic ritualism.</li>
+          <li><strong>Jainism</strong>, the parallel śramaṇa tradition of <strong>Mahavira</strong> (the 24th Tirthankara), is well attested and survives today — with its eternal soul (<em>jiva</em>), its material conception of karma, its radical <strong>ahimsa</strong>, the doctrine of <strong>anekantavada</strong>, <em>sallekhana</em>, and the Digambara/Svetambara split — affirming the very soul Buddhism denies. <strong>Mara</strong> the tempter and the six realms of rebirth are early Buddhist material (the painted "Wheel of Life" is a later depiction).</li>
+          <li>The core teaching — the <strong>Four Noble Truths</strong>, the <strong>Eightfold Path</strong>, the three marks (<strong>anicca, dukkha, anatta</strong>), <strong>dependent origination</strong>, <strong>karma and rebirth reinterpreted without a permanent self</strong>, and <strong>nirvana</strong> — is well attested in the early texts, as is Buddhism's <strong>non-theism</strong> (no creator god).</li>
+          <li>The <strong>Sangha</strong> and its <strong>Vinaya</strong>, the <strong>Pali Canon</strong> (Tipitaka, written c. 1st century BCE), the historical patronage of <strong>Ashoka</strong> and his edicts, and early <strong>aniconism</strong> followed by the first Buddha images (c. 1st century CE, with Greek influence at Gandhara).</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- A historical teacher (the Buddha, Siddhartha Gautama) founded a <strong>śramaṇa</strong>   renunciant movement in the Ganges plain around the fifth century BCE, in reaction   to Vedic ritualism. - <strong>Jainism</strong>, the parallel śramaṇa tradition of <strong>Mahavira</strong> (the 24th   Tirthankara), is well attested and survives today — with its eternal soul (<em>jiva</em>),   its material conception of karma, its radical <strong>ahimsa</strong>, the doctrine of   <strong>anekantavada</strong>, <em>sallekhana</em>, and the Digambara/Svetambara split — affirming the   very soul Buddhism denies. <strong>Mara</strong> the tempter and the six realms of rebirth are   early Buddhist material (the painted "Wheel of Life" is a later depiction). - The core teaching — the <strong>Four Noble Truths</strong>, the <strong>Eightfold Path</strong>, the three   marks (<strong>anicca, dukkha, anatta</strong>), <strong>dependent origination</strong>, <strong>karma and rebirth   reinterpreted without a permanent self</strong>, and <strong>nirvana</strong> — is well attested in the   early texts, as is Buddhism's <strong>non-theism</strong> (no creator god). - The <strong>Sangha</strong> and its <strong>Vinaya</strong>, the <strong>Pali Canon</strong> (Tipitaka, written c. 1st   century BCE), the historical patronage of <strong>Ashoka</strong> and his edicts, and early   <strong>aniconism</strong> followed by the first Buddha images (c. 1st century CE, with Greek   influence at Gandhara).</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The detailed traditional <strong>biography</strong> as literal history — the sheltered-prince   narrative, the exact Four Sights, the miraculous elements are later hagiography. - <strong>Precise dates</strong> for the Buddha (traditional c. 563–483 BCE vs. the "short   chronology" c. 480–400 BCE — both are scholarly reconstructions). - The assumption that the earliest texts preserve the Buddha's <strong>verbatim words</strong>;   they are the product of long oral transmission and later redaction. - Reading later <strong>Mahayana/Tantric</strong> doctrine, iconography, and mantra practice back   into early Buddhism.</p>
+        <ul>
+          <li>The detailed traditional <strong>biography</strong> as literal history — the sheltered-prince narrative, the exact Four Sights, the miraculous elements are later hagiography.</li>
+          <li><strong>Precise dates</strong> for the Buddha (traditional c. 563–483 BCE vs. the "short chronology" c. 480–400 BCE — both are scholarly reconstructions).</li>
+          <li>The assumption that the earliest texts preserve the Buddha's <strong>verbatim words</strong>; they are the product of long oral transmission and later redaction.</li>
+          <li>Reading later <strong>Mahayana/Tantric</strong> doctrine, iconography, and mantra practice back into early Buddhism.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The Buddha's <strong>dates</strong> and the finer details of his life. - <strong>How much</strong> of the earliest teaching can be securely recovered from the later   canon. - The precise original meaning of <strong>nirvana</strong> and <strong>anatta</strong>, debated within   Buddhism from antiquity onward (does anything "remain" in nirvana? what exactly is   denied by "non-self"?).</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The Buddha's <strong>dates</strong> and the finer details of his life.</li>
+          <li><strong>How much</strong> of the earliest teaching can be securely recovered from the later canon.</li>
+          <li>The precise original meaning of <strong>nirvana</strong> and <strong>anatta</strong>, debated within Buddhism from antiquity onward (does anything "remain" in nirvana? what exactly is denied by "non-self"?).</li>
+        </ul>
       </div>
     </div>
 
@@ -1778,34 +1788,36 @@ window.CHAPTERS = {
     <p>Confucianism and Daoism grow directly out of <strong>Chapter 9</strong> — the Zhou world, the Mandate of Heaven, ancestor-reverence, and oracle-bone divination are their shared inheritance, and the <em>Yijing</em> is the bridge. Across the Axial Age they belong beside the era's other great awakenings: the <strong>Buddha</strong> (Chapter 11) and the <strong>Upanishadic sages</strong> (Chapter 5) turning inward in India, the <strong>Greek philosophers</strong> (Chapter 8) reasoning their way toward first principles, and the <strong>prophets of Israel</strong> (Chapters 7, 10) — all part of what Karl Jaspers named the <strong>Axial Age</strong>, the near-simultaneous turn across Eurasia toward ethics, reflection, and transcendence. The comparison with <strong>Greece</strong> is especially rich: like the Greeks, the Chinese produced rival schools arguing in public over the good life and the good state — but where Greek thought prized abstract definition and formal logic, Chinese thought prized concrete example, harmony, and the cultivation of conduct. Forward, both traditions have vast futures in this archive: the arrival of <strong>Buddhism</strong> in China and the three-way conversation of the <strong>three teachings</strong>; the flowering of <strong>religious Daoism</strong> and its alchemy; and the great medieval <strong>Neo-Confucian</strong> synthesis, all of which belong to later chapters.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>A historical teacher, <strong>Kongzi/Confucius</strong> (trad. 551–479 BCE), taught in the state of Lu during the collapse of the Zhou order, and a tradition of collecting his sayings existed by c. 300 BCE (confirmed by recently excavated bamboo manuscripts).</li>
+          <li>The core Confucian concepts — <strong>ren, li, xiao, junzi</strong>, government by moral example, and the elaborations of <strong>Mencius</strong> (innate goodness; the right of rebellion) and <strong>Xunzi</strong> (nature as crooked; Heaven as impersonal nature) — are well attested in the Warring States texts.</li>
+          <li>The <strong>Daodejing</strong> existed in partial, clustered form by c. 300 BCE (<strong>Guodian</strong> slips) and near-complete form by c. 200 BCE (<strong>Mawangdui</strong>); the <strong>Zhuangzi</strong>'s Inner Chapters derive from a real fourth-century-BCE thinker.</li>
+          <li><strong>Mohism</strong>, founded by <strong>Mozi</strong> (c. 470–391 BCE), was a major Warring States school: consequentialist ethics of collective benefit, <strong>jian'ai</strong> (impartial care), condemnation of aggression with expert defensive warfare, frugality against lavish funerals, and a frankly <strong>theistic</strong> doctrine of Heaven's Will (<em>Tianzhi</em>) and moral-enforcing spirits — before it vanished after the Qin unification.</li>
+          <li>The later emergence of <strong>organized religious Daoism</strong> with the <strong>Celestial Masters</strong> (traditionally 142 CE) as an institution distinct from the earlier philosophical texts.</li>
+          <li>The <strong>Yijing</strong> as a genuine Zhou-era divination system built on yin/yang lines, trigrams, and hexagrams.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- A historical teacher, <strong>Kongzi/Confucius</strong> (trad. 551–479 BCE), taught in the state   of Lu during the collapse of the Zhou order, and a tradition of collecting his   sayings existed by c. 300 BCE (confirmed by recently excavated bamboo manuscripts). - The core Confucian concepts — <strong>ren, li, xiao, junzi</strong>, government by moral example,   and the elaborations of <strong>Mencius</strong> (innate goodness; the right of rebellion) and   <strong>Xunzi</strong> (nature as crooked; Heaven as impersonal nature) — are well attested in the   Warring States texts. - The <strong>Daodejing</strong> existed in partial, clustered form by c. 300 BCE (<strong>Guodian</strong>   slips) and near-complete form by c. 200 BCE (<strong>Mawangdui</strong>); the <strong>Zhuangzi</strong>'s Inner   Chapters derive from a real fourth-century-BCE thinker. - <strong>Mohism</strong>, founded by <strong>Mozi</strong> (c. 470–391 BCE), was a major Warring States school:   consequentialist ethics of collective benefit, <strong>jian'ai</strong> (impartial care),   condemnation of aggression with expert defensive warfare, frugality against lavish   funerals, and a frankly <strong>theistic</strong> doctrine of Heaven's Will (<em>Tianzhi</em>) and   moral-enforcing spirits — before it vanished after the Qin unification. - The later emergence of <strong>organized religious Daoism</strong> with the <strong>Celestial Masters</strong>   (traditionally 142 CE) as an institution distinct from the earlier philosophical   texts. - The <strong>Yijing</strong> as a genuine Zhou-era divination system built on yin/yang lines,   trigrams, and hexagrams.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- That Confucius <strong>wrote</strong> the Analects (it is a later, layered compilation) or   personally <strong>authored</strong> the Five Classics (he was, at most, a transmitter/editor in   tradition; the ascriptions are traditional). - The <strong>Laozi legend</strong> as literal biography — the elder contemporary of Confucius, the   ox, the frontier pass, the single-author composition. "Laozi" may be a tradition   rather than a man. - That Confucius wrote the <strong>"Ten Wings"</strong> of the Yijing, or that <strong>Fuxi</strong> devised the   trigrams (both traditional attributions, not history). - Conflating <strong>philosophical Daoism</strong> (<em>daojia</em>) with <strong>religious Daoism</strong> (<em>daojiao</em>)   — a widespread but real error.</p>
+        <ul>
+          <li>That Confucius <strong>wrote</strong> the Analects (it is a later, layered compilation) or personally <strong>authored</strong> the Five Classics (he was, at most, a transmitter/editor in tradition; the ascriptions are traditional).</li>
+          <li>The <strong>Laozi legend</strong> as literal biography — the elder contemporary of Confucius, the ox, the frontier pass, the single-author composition. "Laozi" may be a tradition rather than a man.</li>
+          <li>That Confucius wrote the <strong>"Ten Wings"</strong> of the Yijing, or that <strong>Fuxi</strong> devised the trigrams (both traditional attributions, not history).</li>
+          <li>Conflating <strong>philosophical Daoism</strong> (<em>daojia</em>) with <strong>religious Daoism</strong> (<em>daojiao</em>) — a widespread but real error.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Whether a single historical <strong>Laozi</strong> existed at all, and the precise process by   which the <em>Daodejing</em> reached its final form. - How much of the <strong>Analects</strong> preserves Confucius's own words versus his school's   later development. - The exact authorship and dating of the outer layers of the <strong>Zhuangzi</strong>. - The long-debated relationship and mutual influence between the schools during the   Warring States, and how much of "Daoism" is a retrospective category imposed by   later (especially Han) classifiers.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Whether a single historical <strong>Laozi</strong> existed at all, and the precise process by which the <em>Daodejing</em> reached its final form.</li>
+          <li>How much of the <strong>Analects</strong> preserves Confucius's own words versus his school's later development.</li>
+          <li>The exact authorship and dating of the outer layers of the <strong>Zhuangzi</strong>.</li>
+          <li>The long-debated relationship and mutual influence between the schools during the Warring States, and how much of "Daoism" is a retrospective category imposed by later (especially Han) classifiers.</li>
+        </ul>
       </div>
     </div>
 
@@ -1930,34 +1942,33 @@ window.CHAPTERS = {
     <p>Rome's religion is unthinkable without <strong>Greece</strong> (Chapter 8): Roman gods wear Greek myths, and the whole literary pantheon is an act of <em>interpretatio</em>. Its ritual and divinatory core, though, is deeply <strong>Etruscan</strong> — the triad, the temple form, the liver-reading. Across the Axial Age, Rome is the great <em>institutional</em> counterpart to the era's more inward turns: where the Buddha (Chapter 11), the Chinese sages (Chapter 12), and the prophets of Israel (Chapters 7, 10) turned toward ethics and transcendence, Rome perfected religion as <strong>public order and civic duty</strong> — a different kind of axial achievement. Forward, Rome is the hinge of much of this archive: the imperial cult sets the stage for the clashes of <strong>early Christianity</strong> and the making of <strong>Rabbinic Judaism</strong>; the <strong>mystery religions</strong> flooding into the empire — Isis, Cybele, and above all <strong>Mithras</strong> — belong to the next era's chapter on Roman religion in Late Antiquity; and Rome's eventual Christianization will transform, and in many ways preserve, this whole apparatus, right down to the title <em>Pontifex Maximus</em>, which the popes carry to this day.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The character of Roman religion as <strong>public, ritual, and contractual</strong> — the <em>pax deorum</em>, <em>pietas</em>, <em>do ut des</em>, orthopraxy over orthodoxy, and the fusion of religion with the state — is very well attested in inscriptions, calendars, laws, and Latin literature.</li>
+          <li>The <strong>priestly colleges</strong> (pontiffs, augurs, Vestals, flamens, haruspices), the <strong>Capitoline Triad</strong>, the systems of <strong>augury, haruspicy, and the Sibylline Books</strong>, and the <strong>household cult</strong> of Lares, Penates, and Genius (richly confirmed by Pompeii).</li>
+          <li>The cult of the dead: the <strong>Di Manes</strong>, the <strong>Parentalia</strong> (honoring the dead) and the <strong>Lemuria</strong> (expelling the malevolent Lemures with black beans), and the wide range of Roman afterlife views, from Elysian hope to the Epicurean epitaph (<em>non fui, fui, non sum, non curo</em>).</li>
+          <li>The historical <strong>Bacchanalia suppression of 186 BCE</strong> (the surviving <em>Senatus consultum</em> inscription), the <strong>importation of Magna Mater in 204 BCE</strong>, and the development of the <strong>imperial cult</strong> and formal <strong>apotheosis</strong> of emperors.</li>
+          <li>The Etruscan roots of key institutions and the <strong>Greek syncretism</strong> of the pantheon.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The character of Roman religion as <strong>public, ritual, and contractual</strong> — the <em>pax   deorum</em>, <em>pietas</em>, <em>do ut des</em>, orthopraxy over orthodoxy, and the fusion of religion   with the state — is very well attested in inscriptions, calendars, laws, and Latin   literature. - The <strong>priestly colleges</strong> (pontiffs, augurs, Vestals, flamens, haruspices), the   <strong>Capitoline Triad</strong>, the systems of <strong>augury, haruspicy, and the Sibylline Books</strong>,   and the <strong>household cult</strong> of Lares, Penates, and Genius (richly confirmed by Pompeii). - The cult of the dead: the <strong>Di Manes</strong>, the <strong>Parentalia</strong> (honoring the dead) and   the <strong>Lemuria</strong> (expelling the malevolent Lemures with black beans), and the wide   range of Roman afterlife views, from Elysian hope to the Epicurean epitaph   (<em>non fui, fui, non sum, non curo</em>). - The historical <strong>Bacchanalia suppression of 186 BCE</strong> (the surviving <em>Senatus consultum</em>   inscription), the <strong>importation of Magna Mater in 204 BCE</strong>, and the development of the   <strong>imperial cult</strong> and formal <strong>apotheosis</strong> of emperors. - The Etruscan roots of key institutions and the <strong>Greek syncretism</strong> of the pantheon.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The <strong>legendary early history</strong> as literal fact — the religious foundations ascribed to   Romulus and especially <strong>Numa Pompilius</strong> (the traditional founder of Rome's priesthoods   and calendar) are later constructions, not documented events. - The idea that ordinary Romans <strong>"didn't really believe"</strong> and practiced empty ritual —   a modern caricature; the evidence for genuine devotion, fear of the gods, and heartfelt   vow-paying is abundant, even if belief was not the tradition's organizing category. - Reading the later, salvation-oriented <strong>mystery cults</strong> (Isis, Mithras) back into the   civic religion of the Republic, as though Rome always offered personal immortality.</p>
+        <ul>
+          <li>The <strong>legendary early history</strong> as literal fact — the religious foundations ascribed to Romulus and especially <strong>Numa Pompilius</strong> (the traditional founder of Rome's priesthoods and calendar) are later constructions, not documented events.</li>
+          <li>The idea that ordinary Romans <strong>"didn't really believe"</strong> and practiced empty ritual — a modern caricature; the evidence for genuine devotion, fear of the gods, and heartfelt vow-paying is abundant, even if belief was not the tradition's organizing category.</li>
+          <li>Reading the later, salvation-oriented <strong>mystery cults</strong> (Isis, Mithras) back into the civic religion of the Republic, as though Rome always offered personal immortality.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The <strong>earliest layer</strong> of Roman religion — how far the abstract <em>numen</em> preceded the   personal gods, and how much of "original" Roman practice we can recover beneath the   heavy Greek and Etruscan overlay. - The precise <strong>motives</strong> behind episodes like the Bacchanalia crackdown (religious fear,   political control, moral panic, or a mix), which the sources report through a hostile lens. - How <strong>sincerely and how widely</strong> the imperial cult was believed versus performed as   political loyalty — a question that varied enormously by region and period.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The <strong>earliest layer</strong> of Roman religion — how far the abstract <em>numen</em> preceded the personal gods, and how much of "original" Roman practice we can recover beneath the heavy Greek and Etruscan overlay.</li>
+          <li>The precise <strong>motives</strong> behind episodes like the Bacchanalia crackdown (religious fear, political control, moral panic, or a mix), which the sources report through a hostile lens.</li>
+          <li>How <strong>sincerely and how widely</strong> the imperial cult was believed versus performed as political loyalty — a question that varied enormously by region and period.</li>
+        </ul>
       </div>
     </div>
 
@@ -2067,34 +2078,35 @@ window.CHAPTERS = {
     <p>Celtic and Germanic religion are branches of the great <strong>Indo-European</strong> family that runs through this archive: their sky-gods, their thunder-gods, their priestly loremasters, and their fire-and-water sacrifices are cousins of the <strong>Vedic</strong> world (Chapter 5), the <strong>Greek</strong> (Chapter 8), and the <strong>Roman</strong> (Chapter 13) — ancient writers themselves compared the <strong>druids</strong> to the <strong>brahmins</strong> and the <strong>magi</strong>, and the comparison is apt. Within the Axial Age, these are the traditions of Europe's edge — non-literate, tribal, grove-worshipping — standing beside the era's great textual and philosophical transformations as their oldest-feeling counterpoint. Forward, their stories run deep into this archive: the <strong>Germanic</strong> thread flowers into the fully-recorded <strong>Norse paganism</strong> of the early medieval north; the <strong>Celtic</strong> thread survives Christianization folded into Irish and Welsh literature and folk practice; and both are reborn, in the modern era, as self-conscious new religious movements — revival <strong>Druidry</strong> and <strong>Heathenry</strong> — that belong to the final chapters of this work.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>That the Iron Age Celtic and Germanic peoples practiced a <strong>non-literate, largely outdoor religion</strong> centered on <strong>sacred groves and waters</strong>, with <strong>votive deposition</strong> of weapons and treasure (abundantly confirmed by archaeology) and a learned priestly class among the Celts, the <strong>druids</strong>.</li>
+          <li>The reality of <strong>sacrifice</strong>, including at least <strong>occasional human sacrifice</strong>, evidenced by the <strong>bog bodies</strong> (Lindow Man), the excavated northern-Gallic war-sanctuaries (<strong>Gournay-sur-Aronde</strong>, <strong>Ribemont-sur-Ancre</strong>), and the mass <strong>weapon deposits</strong> (Illerup, Nydam), and described (with bias) by classical writers.</li>
+          <li>The classical sources' <strong>threefold</strong> Celtic learned class — <strong>druids, bards, and vates</strong> (Strabo/Posidonius) — and the Germanic reverence for prophetic <strong>seeresses</strong> (Tacitus names <strong>Veleda</strong> and Aurinia). The Germanic gods survive in the English <strong>weekday names</strong> (Tiw, Woden, Thunor, Frig).</li>
+          <li>The existence of the named gods (<strong>Lugh/Lugus, Cernunnos, Taranis, Epona</strong>; the Germanic <strong>Wodan, Tiwaz, Thunor, Nerthus</strong>) from inscriptions and Tacitus, and the reverence for <strong>threeness</strong> and the <strong>head</strong> in Celtic art.</li>
+          <li>The <strong>Coligny calendar</strong> as a genuine Gaulish lunisolar ritual calendar, and the later appearance of <strong>runes</strong> (c. 2nd c. CE) and <strong>ogham</strong> (c. 4th c. CE).</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- That the Iron Age Celtic and Germanic peoples practiced a <strong>non-literate, largely   outdoor religion</strong> centered on <strong>sacred groves and waters</strong>, with <strong>votive deposition</strong>   of weapons and treasure (abundantly confirmed by archaeology) and a learned priestly   class among the Celts, the <strong>druids</strong>. - The reality of <strong>sacrifice</strong>, including at least <strong>occasional human sacrifice</strong>, evidenced   by the <strong>bog bodies</strong> (Lindow Man), the excavated northern-Gallic war-sanctuaries   (<strong>Gournay-sur-Aronde</strong>, <strong>Ribemont-sur-Ancre</strong>), and the mass <strong>weapon deposits</strong>   (Illerup, Nydam), and described (with bias) by classical writers. - The classical sources' <strong>threefold</strong> Celtic learned class — <strong>druids, bards, and vates</strong>   (Strabo/Posidonius) — and the Germanic reverence for prophetic <strong>seeresses</strong> (Tacitus   names <strong>Veleda</strong> and Aurinia). The Germanic gods survive in the English <strong>weekday   names</strong> (Tiw, Woden, Thunor, Frig). - The existence of the named gods (<strong>Lugh/Lugus, Cernunnos, Taranis, Epona</strong>; the Germanic   <strong>Wodan, Tiwaz, Thunor, Nerthus</strong>) from inscriptions and Tacitus, and the reverence for   <strong>threeness</strong> and the <strong>head</strong> in Celtic art. - The <strong>Coligny calendar</strong> as a genuine Gaulish lunisolar ritual calendar, and the later   appearance of <strong>runes</strong> (c. 2nd c. CE) and <strong>ogham</strong> (c. 4th c. CE).</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Detailed, confident reconstructions of Celtic or Germanic <strong>theology and myth</strong> for this   period — we do not have it; the vivid systems often presented as "Celtic mythology" or   "Germanic mythology" draw heavily on <strong>much later</strong> Irish, Welsh, and Norse texts. - Reading the medieval Icelandic <strong>Eddas</strong> and Norse cosmology back onto the <strong>Axial-Age   Germani</strong> (that material belongs to the later Norse chapter). - The classical claims of <strong>routine, mass human sacrifice</strong> (e.g. Caesar's wicker man) as   reliable fact rather than possibly propagandistic hostile report. - The popular image of the druids as builders of <strong>Stonehenge</strong> (millennia older than the   Celts) or as keepers of a unified pan-Celtic "faith."</p>
+        <ul>
+          <li>Detailed, confident reconstructions of Celtic or Germanic <strong>theology and myth</strong> for this period — we do not have it; the vivid systems often presented as "Celtic mythology" or "Germanic mythology" draw heavily on <strong>much later</strong> Irish, Welsh, and Norse texts.</li>
+          <li>Reading the medieval Icelandic <strong>Eddas</strong> and Norse cosmology back onto the <strong>Axial-Age Germani</strong> (that material belongs to the later Norse chapter).</li>
+          <li>The classical claims of <strong>routine, mass human sacrifice</strong> (e.g. Caesar's wicker man) as reliable fact rather than possibly propagandistic hostile report.</li>
+          <li>The popular image of the druids as builders of <strong>Stonehenge</strong> (millennia older than the Celts) or as keepers of a unified pan-Celtic "faith."</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- How much of the later <strong>Irish and Welsh literature</strong> preserves authentic pre-Christian   religion, and how much is medieval Christian reshaping — a live and contested question. - The <strong>frequency, meaning, and context</strong> of human sacrifice and the bog bodies. - Whether there was any such thing as a single <strong>"Celtic religion"</strong> or "Germanic religion"   at all, versus a patchwork of local cults loosely related — and indeed how meaningful the   ethnic label <strong>"Celtic"</strong> itself is, now much debated among archaeologists. - The true antiquity of the <strong>four Celtic festivals</strong> and much of the ritual calendar known   only from late sources.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>How much of the later <strong>Irish and Welsh literature</strong> preserves authentic pre-Christian religion, and how much is medieval Christian reshaping — a live and contested question.</li>
+          <li>The <strong>frequency, meaning, and context</strong> of human sacrifice and the bog bodies.</li>
+          <li>Whether there was any such thing as a single <strong>"Celtic religion"</strong> or "Germanic religion" at all, versus a patchwork of local cults loosely related — and indeed how meaningful the ethnic label <strong>"Celtic"</strong> itself is, now much debated among archaeologists.</li>
+          <li>The true antiquity of the <strong>four Celtic festivals</strong> and much of the ritual calendar known only from late sources.</li>
+        </ul>
       </div>
     </div>
 
@@ -2196,34 +2208,33 @@ window.CHAPTERS = {
     <p>Classical Greek philosophy grows out of the <strong>early Greek religion of Chapter 8</strong> — its gods, its Delphic oracle, and above all its <strong>mystery cults</strong> (Eleusis, Orpheus), whose promise of a blessed afterlife the Orphic tablets and Pythagorean reincarnation carry forward. It is the intellectual peak of the <strong>Axial Age</strong>, standing beside the other great turns of Chapters 10–14: the <strong>Buddha's</strong> analysis of the self (Chapter 11), the <strong>Chinese sages</strong> (Chapter 12), the ritual order of <strong>Rome</strong> (Chapter 13), and the prophetic monotheism of <strong>Israel</strong> (Chapters 7, 10) — Greece's distinctive contribution being the turn to <strong>reason</strong> as the road to truth. Forward, its influence is almost immeasurable: Plato's transcendent Good and immortal soul, Aristotle's Unmoved Mover, and the Stoic Logos become the philosophical scaffolding of <strong>Hellenistic Judaism</strong> (Philo), <strong>Christianity</strong> (the Logos of John's Gospel; the Church Fathers' debt to Plato and Aristotle), <strong>Gnosticism</strong> and <strong>Neoplatonism</strong> (Late Antiquity), and, through them, medieval <strong>Islamic</strong>, <strong>Jewish</strong>, and <strong>Christian</strong> theology. When a medieval theologian argues for God as the Unmoved Mover or the Good itself, he is speaking Greek.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The historical reality and core teachings of the major figures — the <strong>Presocratics</strong>, <strong>Socrates</strong> (and his trial and execution for impiety in 399 BCE), <strong>Plato</strong>, <strong>Aristotle</strong>, and the <strong>Hellenistic schools</strong> (Stoicism, Epicureanism) — are exceptionally well attested in surviving texts and testimonia.</li>
+          <li>The philosophical reconceptions of the divine: <strong>Xenophanes'</strong> one non-anthropomorphic god, <strong>Heraclitus'</strong> and the Stoics' <strong>Logos</strong>, Plato's <strong>Forms</strong>, <strong>Demiurge</strong>, and <strong>immortal soul</strong>, Aristotle's <strong>Unmoved Mover</strong>, and Epicurus's remote, uninvolved gods.</li>
+          <li>The continuation of <strong>traditional civic religion and the mysteries</strong> alongside philosophy, and the historical existence of the <strong>Orphic gold tablets</strong> and <strong>Pythagorean</strong> number- mysticism (the tetractys).</li>
+          <li>The <strong>Sophists'</strong> religious skepticism — <strong>Protagoras's</strong> agnosticism, <strong>Prodicus's</strong> naturalistic theory of religion's origin, and the <strong>Sisyphus fragment</strong> (Critias/Euripides) on the gods as a human invention for social control — and the great <strong>healing cult of Asclepius</strong> (Epidaurus and other asklepieia), with its dream-<strong>incubation</strong>, votive body-parts, and <em>iamata</em> testimonials, as the era's lived popular religion.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The historical reality and core teachings of the major figures — the <strong>Presocratics</strong>,   <strong>Socrates</strong> (and his trial and execution for impiety in 399 BCE), <strong>Plato</strong>, <strong>Aristotle</strong>,   and the <strong>Hellenistic schools</strong> (Stoicism, Epicureanism) — are exceptionally well attested   in surviving texts and testimonia. - The philosophical reconceptions of the divine: <strong>Xenophanes'</strong> one non-anthropomorphic   god, <strong>Heraclitus'</strong> and the Stoics' <strong>Logos</strong>, Plato's <strong>Forms</strong>, <strong>Demiurge</strong>, and   <strong>immortal soul</strong>, Aristotle's <strong>Unmoved Mover</strong>, and Epicurus's remote, uninvolved gods. - The continuation of <strong>traditional civic religion and the mysteries</strong> alongside philosophy,   and the historical existence of the <strong>Orphic gold tablets</strong> and <strong>Pythagorean</strong> number-   mysticism (the tetractys). - The <strong>Sophists'</strong> religious skepticism — <strong>Protagoras's</strong> agnosticism, <strong>Prodicus's</strong>   naturalistic theory of religion's origin, and the <strong>Sisyphus fragment</strong> (Critias/Euripides)   on the gods as a human invention for social control — and the great <strong>healing cult of   Asclepius</strong> (Epidaurus and other asklepieia), with its dream-<strong>incubation</strong>, votive   body-parts, and <em>iamata</em> testimonials, as the era's lived popular religion.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- A reliable biography of <strong>Pythagoras</strong>, around whom legend accreted heavily; much   "Pythagorean" doctrine comes from later followers, and the historical man is hard to   recover. - The picture of the philosophers as <strong>atheists</strong> who rejected religion wholesale — most   (Xenophanes, Plato, Aristotle, the Stoics) were reforming or refounding the idea of the   divine, not abolishing it; even Epicurus affirmed that gods exist. - Reading later <strong>Neoplatonic</strong>, Christian, or modern "sacred geometry" and numerology   systems back into the classical figures as though fully formed there.</p>
+        <ul>
+          <li>A reliable biography of <strong>Pythagoras</strong>, around whom legend accreted heavily; much "Pythagorean" doctrine comes from later followers, and the historical man is hard to recover.</li>
+          <li>The picture of the philosophers as <strong>atheists</strong> who rejected religion wholesale — most (Xenophanes, Plato, Aristotle, the Stoics) were reforming or refounding the idea of the divine, not abolishing it; even Epicurus affirmed that gods exist.</li>
+          <li>Reading later <strong>Neoplatonic</strong>, Christian, or modern "sacred geometry" and numerology systems back into the classical figures as though fully formed there.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The exact teachings of <strong>Socrates</strong> as against Plato's literary portrait of him (the   "Socratic problem"). - How far Plato meant the <strong>Demiurge</strong> and the <em>Timaeus</em> creation story literally versus as   myth — debated since antiquity. - The precise relationship among <strong>Orphism, Pythagoreanism, and the Bacchic mysteries</strong>,   and how widespread their salvation-eschatology really was. - How philosophical ideas of a single, rational God actually related to, and affected,   the <strong>lived polytheism</strong> of ordinary Greeks.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The exact teachings of <strong>Socrates</strong> as against Plato's literary portrait of him (the "Socratic problem").</li>
+          <li>How far Plato meant the <strong>Demiurge</strong> and the <em>Timaeus</em> creation story literally versus as myth — debated since antiquity.</li>
+          <li>The precise relationship among <strong>Orphism, Pythagoreanism, and the Bacchic mysteries</strong>, and how widespread their salvation-eschatology really was.</li>
+          <li>How philosophical ideas of a single, rational God actually related to, and affected, the <strong>lived polytheism</strong> of ordinary Greeks.</li>
+        </ul>
       </div>
     </div>
 
@@ -2329,34 +2340,34 @@ window.CHAPTERS = {
     <p>Christianity is unthinkable without <strong>Second Temple Judaism</strong> (Chapter 10) — its scriptures, its messianic and apocalyptic hopes, its God — and it grew up in the religious marketplace of the Roman Empire (Chapter 13), whose imperial cult it defied and whose roads and Greek language it used to spread. Its theology drew deeply on <strong>Greek philosophy</strong> (Chapter 15): the Gospel of John opens by identifying Christ with the <strong>Logos</strong>, and the Church Fathers would build Christian doctrine with the tools of Plato and Aristotle. It is the sibling and rival of the <strong>Gnosticism</strong> and the <strong>Roman mystery cults</strong> of the next chapters, and of the <strong>Rabbinic Judaism</strong> forming in the same centuries. Forward, its story dominates much of this archive: the great <strong>Christological councils</strong> and the making of orthodoxy, the split of <strong>East and West</strong>, the rise of <strong>Islam</strong> partly in response to it (Chapter on the early medieval), the <strong>medieval</strong> church, the <strong>Reformation</strong>, and the countless movements and mysticisms that flow from it down to the present.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The <strong>existence and crucifixion of Jesus</strong> — a Galilean Jewish teacher baptized by John and executed under Pontius Pilate around 30–33 CE — is affirmed by a very broad scholarly consensus, on multiple independent early sources plus Josephus and Tacitus.</li>
+          <li>That his followers <strong>proclaimed him risen</strong> within a very few years (the pre-Pauline creed of 1 Cor 15), and that this belief launched a rapidly spreading movement led by <strong>Paul</strong>, whose Gentile mission opened it to the Roman world.</li>
+          <li>The <strong>diversity</strong> of early Christianities (Jewish-Christian, Marcionite, Gnostic, proto-orthodox), the slow <strong>formation of the New Testament canon</strong>, the domestic worship and rites of <strong>baptism</strong> and <strong>Eucharist</strong>, the reality of <strong>persecution and martyrdom</strong>, and the <strong>legalization under Constantine</strong> and establishment under Theodosius.</li>
+          <li>The prominence of <strong>women</strong> in the earliest movement — Mary Magdalene, the deacon <strong>Phoebe</strong> and the apostle <strong>Junia</strong> (Romans 16), Prisca, the order of widows — with restrictions appearing later (the Pastoral letters); and the martyr <strong>Perpetua</strong>, whose prison diary (203 CE) is among the earliest writings by a Christian woman.</li>
+          <li>The early <strong>cult of the martyrs</strong>: the <em>Martyrdom of Polycarp</em> (c. 155 CE) already shows relic- veneration and annual commemoration on the martyr's <em>dies natalis</em> — the seed of the cult of saints and the calendar of saints.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The <strong>existence and crucifixion of Jesus</strong> — a Galilean Jewish teacher baptized by John and   executed under Pontius Pilate around 30–33 CE — is affirmed by a very broad scholarly consensus, on   multiple independent early sources plus Josephus and Tacitus. - That his followers <strong>proclaimed him risen</strong> within a very few years (the pre-Pauline creed of 1 Cor   15), and that this belief launched a rapidly spreading movement led by <strong>Paul</strong>, whose Gentile   mission opened it to the Roman world. - The <strong>diversity</strong> of early Christianities (Jewish-Christian, Marcionite, Gnostic, proto-orthodox),   the slow <strong>formation of the New Testament canon</strong>, the domestic worship and rites of <strong>baptism</strong> and   <strong>Eucharist</strong>, the reality of <strong>persecution and martyrdom</strong>, and the <strong>legalization under   Constantine</strong> and establishment under Theodosius. - The prominence of <strong>women</strong> in the earliest movement — Mary Magdalene, the deacon <strong>Phoebe</strong> and   the apostle <strong>Junia</strong> (Romans 16), Prisca, the order of widows — with restrictions appearing later   (the Pastoral letters); and the martyr <strong>Perpetua</strong>, whose prison diary (203 CE) is among the   earliest writings by a Christian woman. - The early <strong>cult of the martyrs</strong>: the <em>Martyrdom of Polycarp</em> (c. 155 CE) already shows relic-   veneration and annual commemoration on the martyr's <em>dies natalis</em> — the seed of the cult of   saints and the calendar of saints.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence (as history)</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The <strong>miraculous and theological claims</strong> — the virgin birth, the miracles, and above all the   <strong>resurrection</strong> and divinity of Jesus — are matters of <strong>faith</strong>, not propositions history can   establish; this chapter records them as the tradition's beliefs, not as demonstrated facts (and   equally does not claim to disprove them). - The traditional <strong>authorship</strong> of the Gospels by eyewitnesses, and the assumption that they are   straightforward biography rather than later, theologically-shaped testimony. - The old picture of a single, uniform original Christianity later corrupted by "heresies" — the   evidence shows diversity from the very beginning.</p>
+        <ul>
+          <li>The <strong>miraculous and theological claims</strong> — the virgin birth, the miracles, and above all the <strong>resurrection</strong> and divinity of Jesus — are matters of <strong>faith</strong>, not propositions history can establish; this chapter records them as the tradition's beliefs, not as demonstrated facts (and equally does not claim to disprove them).</li>
+          <li>The traditional <strong>authorship</strong> of the Gospels by eyewitnesses, and the assumption that they are straightforward biography rather than later, theologically-shaped testimony.</li>
+          <li>The old picture of a single, uniform original Christianity later corrupted by "heresies" — the evidence shows diversity from the very beginning.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The <strong>historical Jesus</strong> beneath the Gospel portraits — how much of his teaching and biography can   be securely recovered (the unresolved "quest"). - The precise <strong>dating and authorship</strong> of several New Testament books, and the existence and shape of   the hypothesized <strong>Q</strong> source. - The exact process and timing of the <strong>parting of the ways</strong> between Christianity and Judaism, now   seen as more gradual and regionally varied than once thought. - How and why Christianity <strong>grew</strong> so successfully — the relative weight of its charity, its   martyr-witness, its message, and Constantine's patronage.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The <strong>historical Jesus</strong> beneath the Gospel portraits — how much of his teaching and biography can be securely recovered (the unresolved "quest").</li>
+          <li>The precise <strong>dating and authorship</strong> of several New Testament books, and the existence and shape of the hypothesized <strong>Q</strong> source.</li>
+          <li>The exact process and timing of the <strong>parting of the ways</strong> between Christianity and Judaism, now seen as more gradual and regionally varied than once thought.</li>
+          <li>How and why Christianity <strong>grew</strong> so successfully — the relative weight of its charity, its martyr-witness, its message, and Constantine's patronage.</li>
+        </ul>
       </div>
     </div>
 
@@ -2459,34 +2470,34 @@ window.CHAPTERS = {
     <p>Gnosticism is the great <strong>sibling and rival</strong> of the early Christianity of Chapter 16 — sharing its Christ and its scriptures but reading them utterly against the grain — and it draws deeply on the <strong>Platonism</strong> of Chapter 15 (the material world as a debased copy of a higher reality, the divine soul longing to ascend) and on <strong>Jewish</strong> scripture and apocalyptic (Chapter 10), radically reinterpreted. It runs alongside the <strong>Hermeticism</strong> of Greco-Roman Egypt and the <strong>Roman mystery cults</strong> of the next chapter, with which it shares the promise of a secret path to salvation. Its family extends beyond itself: the <strong>Mandaeans</strong> of Iraq and Iran — who revere <strong>John the Baptist</strong>, reject Jesus, and preserve an ancient dualist, baptizing faith — survive as the <strong>last living Gnostics</strong> to this day; and the dualist world-religion of <strong>Manichaeism</strong>, founded by the prophet <strong>Mani</strong> in third-century Persia, carried a comparable vision of light imprisoned in darkness from Rome to China. Forward, the Gnostic impulse resurfaces again and again in this archive: in the medieval dualist heresies of the <strong>Bogomils</strong> and <strong>Cathars</strong>, and in the modern occult and psychological revivals — from the <strong>Theosophists</strong> to <strong>Carl Jung</strong>, who saw in the Gnostic myths a map of the psyche. The fullest Gnostic scripture of all, the <strong>Pistis Sophia</strong> &mdash; known a century and a half before Nag Hammadi &mdash; has its own chapter (Chapter 45).</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The existence, in the <strong>2nd–3rd centuries CE</strong>, of a <strong>family of movements</strong> teaching a transcendent true God distinct from an inferior world-<strong>creator (Demiurge)</strong>, a fallen or trapped <strong>divine spark</strong> in humanity, and salvation by revealed <strong>gnosis</strong> — attested both by the hostile <strong>heresiologists</strong> (Irenaeus and others) and, since 1945, by the Gnostics' own texts at <strong>Nag Hammadi</strong>.</li>
+          <li>The major schools and teachers — <strong>Sethian</strong> Gnosticism, <strong>Valentinus</strong>, <strong>Basilides</strong> — and their characteristic doctrines (the Sophia myth, the thirty Aeons, the three human natures, <strong>docetism</strong>, the 365 heavens and <strong>Abraxas</strong>).</li>
+          <li>The reality of the <strong>Nag Hammadi</strong> discovery (1945) and its major texts, the recovered <strong>Gospel of Judas</strong>, and the <strong>Gospel of Thomas</strong> as a collection of 114 sayings; the survival of the <strong>Mandaeans</strong> and the historical spread of <strong>Manichaeism</strong>.</li>
+          <li><strong>Manichaeism</strong> as a major Late-Antique world religion: <strong>Mani</strong> (c. 216–274 CE), the absolute <strong>Light/Darkness</strong> dualism, the two ranks of <strong>Elect</strong> and <strong>Hearers</strong>, the spread from Rome to China, and <strong>Augustine's</strong> nine years as a Hearer. And <strong>Hermeticism</strong>: the <strong>Corpus Hermeticum</strong> (1st–3rd c. CE), <strong>Hermes Trismegistus</strong> (Hermes/Thoth), the soul's ascent, and the macrocosm–microcosm "as above, so below" correspondence.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The existence, in the <strong>2nd–3rd centuries CE</strong>, of a <strong>family of movements</strong> teaching a   transcendent true God distinct from an inferior world-<strong>creator (Demiurge)</strong>, a fallen or   trapped <strong>divine spark</strong> in humanity, and salvation by revealed <strong>gnosis</strong> — attested both by   the hostile <strong>heresiologists</strong> (Irenaeus and others) and, since 1945, by the Gnostics' own   texts at <strong>Nag Hammadi</strong>. - The major schools and teachers — <strong>Sethian</strong> Gnosticism, <strong>Valentinus</strong>, <strong>Basilides</strong> — and   their characteristic doctrines (the Sophia myth, the thirty Aeons, the three human natures,   <strong>docetism</strong>, the 365 heavens and <strong>Abraxas</strong>). - The reality of the <strong>Nag Hammadi</strong> discovery (1945) and its major texts, the recovered <strong>Gospel   of Judas</strong>, and the <strong>Gospel of Thomas</strong> as a collection of 114 sayings; the survival of the   <strong>Mandaeans</strong> and the historical spread of <strong>Manichaeism</strong>. - <strong>Manichaeism</strong> as a major Late-Antique world religion: <strong>Mani</strong> (c. 216–274 CE), the absolute   <strong>Light/Darkness</strong> dualism, the two ranks of <strong>Elect</strong> and <strong>Hearers</strong>, the spread from Rome to   China, and <strong>Augustine's</strong> nine years as a Hearer. And <strong>Hermeticism</strong>: the <strong>Corpus Hermeticum</strong>   (1st–3rd c. CE), <strong>Hermes Trismegistus</strong> (Hermes/Thoth), the soul's ascent, and the   macrocosm–microcosm "as above, so below" correspondence.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The old, one-sided picture derived solely from the <strong>heresiologists</strong> — including their lurid   accusations of Gnostic <strong>libertine orgies</strong>, which the Gnostics' own writings (mostly strongly   <strong>ascetic</strong>) do not bear out and which were likely hostile slander. - The assumption that <strong>"Gnosticism" was a single, unified religion or church</strong> with one doctrine   — the sources show great diversity, and the very category is contested. - Treating the <strong>Gospel of Thomas</strong> or the <strong>Gospel of Judas</strong> as reliable historical accounts of   Jesus's life rather than as later theological/esoteric works (whatever early sayings Thomas may   contain). - Treating the <strong>Emerald Tablet</strong> as a Late-Antique Hermetic text (it is first attested in medieval   Arabic sources), or the <strong>Kybalion</strong> (1908) as ancient Hermetic wisdom (it is a modern New Thought   work). The genuine ancient Hermetica are the Corpus Hermeticum and the <em>Asclepius</em>.</p>
+        <ul>
+          <li>The old, one-sided picture derived solely from the <strong>heresiologists</strong> — including their lurid accusations of Gnostic <strong>libertine orgies</strong>, which the Gnostics' own writings (mostly strongly <strong>ascetic</strong>) do not bear out and which were likely hostile slander.</li>
+          <li>The assumption that <strong>"Gnosticism" was a single, unified religion or church</strong> with one doctrine — the sources show great diversity, and the very category is contested.</li>
+          <li>Treating the <strong>Gospel of Thomas</strong> or the <strong>Gospel of Judas</strong> as reliable historical accounts of Jesus's life rather than as later theological/esoteric works (whatever early sayings Thomas may contain).</li>
+          <li>Treating the <strong>Emerald Tablet</strong> as a Late-Antique Hermetic text (it is first attested in medieval Arabic sources), or the <strong>Kybalion</strong> (1908) as ancient Hermetic wisdom (it is a modern New Thought work). The genuine ancient Hermetica are the Corpus Hermeticum and the <em>Asclepius</em>.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Whether <strong>"Gnosticism" is a usefully coherent category</strong> at all — a serious and unresolved   scholarly debate. - The <strong>origins</strong> of the Gnostic movements: whether they arose from within Christianity, from   Hellenistic Judaism, from Platonism, or from some pre-Christian source — and how early. - The <strong>date and independence</strong> of the <strong>Gospel of Thomas</strong>, and how much authentic early Jesus   tradition (if any) it preserves. - The precise relationships among the schools, and between Gnosticism, <strong>Hermeticism</strong>, and   <strong>Manichaeism</strong>.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>Whether <strong>"Gnosticism" is a usefully coherent category</strong> at all — a serious and unresolved scholarly debate.</li>
+          <li>The <strong>origins</strong> of the Gnostic movements: whether they arose from within Christianity, from Hellenistic Judaism, from Platonism, or from some pre-Christian source — and how early.</li>
+          <li>The <strong>date and independence</strong> of the <strong>Gospel of Thomas</strong>, and how much authentic early Jesus tradition (if any) it preserves.</li>
+          <li>The precise relationships among the schools, and between Gnosticism, <strong>Hermeticism</strong>, and <strong>Manichaeism</strong>.</li>
+        </ul>
       </div>
     </div>
 
@@ -2600,34 +2611,33 @@ window.CHAPTERS = {
     <p>The Roman mysteries are the heirs of the <strong>Greek mystery cults</strong> of Chapter 8 (Eleusis, Orpheus) and of the <strong>Orphic-Pythagorean</strong> hope of Chapter 15, and they grew within the civic religion of <strong>Rome</strong> (Chapter 13), which had already imported <strong>Magna Mater</strong> and suppressed the <strong>Bacchanalia</strong>. They carry forward the Egyptian religion of <strong>Isis and Osiris</strong> (Chapter 2) and the Persian name of <strong>Mithra</strong> (Chapter 6) into new forms. Above all they are the <strong>rivals and siblings</strong> of the <strong>early Christianity</strong> and <strong>Gnosticism</strong> of Chapters 16 and 17 — fellow seekers, in the same anxious age, of a personal salvation the old gods did not promise. Forward, the mysteries <strong>faded</strong> as Christianity triumphed and the temples closed in the fourth and fifth centuries; but their initiatory, secret, salvation-seeking impulse never wholly died, resurfacing in the <strong>Hermetic</strong> and esoteric currents and, much later, in the initiatory societies of the modern Western esoteric tradition treated in the final chapters of this archive.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The historical reality and wide spread of the <strong>mystery cults</strong> — <strong>Mithras</strong>, <strong>Isis</strong> (and Serapis), <strong>Cybele/Attis</strong>, <strong>Bacchus</strong> — as initiatory, secret, salvation-oriented religions of the Roman Empire, existing alongside civic religion; and their core features (initiation, secrecy, personal savior, hope of a blessed afterlife).</li>
+          <li>The archaeology of <strong>Mithraism</strong> (the mithraea, the seven grades, the tauroctony) and the literary account of an <strong>Isiac initiation</strong> in Apuleius; the <strong>taurobolium</strong> of Cybele's cult (with its inscriptions, some recording a 20-year validity).</li>
+          <li>That the mysteries and <strong>Christianity</strong> were contemporaneous rivals answering a shared hunger for personal salvation.</li>
+          <li>The Late-Antique drift toward <strong>solar monotheism</strong>: the state cult of <strong>Sol Invictus</strong> founded by <strong>Aurelian (274 CE)</strong>, its 25 December festival, and Constantine's continued solar imagery; and the <strong>twilight</strong> of the mysteries — Julian's failed revival (361–363), the anti-pagan laws of Theodosius (390s), and the end of the Eleusinian Mysteries when the site was sacked c. 396 CE.</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The historical reality and wide spread of the <strong>mystery cults</strong> — <strong>Mithras</strong>, <strong>Isis</strong> (and   Serapis), <strong>Cybele/Attis</strong>, <strong>Bacchus</strong> — as initiatory, secret, salvation-oriented religions of   the Roman Empire, existing alongside civic religion; and their core features (initiation,   secrecy, personal savior, hope of a blessed afterlife). - The archaeology of <strong>Mithraism</strong> (the mithraea, the seven grades, the tauroctony) and the   literary account of an <strong>Isiac initiation</strong> in Apuleius; the <strong>taurobolium</strong> of Cybele's cult   (with its inscriptions, some recording a 20-year validity). - That the mysteries and <strong>Christianity</strong> were contemporaneous rivals answering a shared hunger for   personal salvation. - The Late-Antique drift toward <strong>solar monotheism</strong>: the state cult of <strong>Sol Invictus</strong> founded by   <strong>Aurelian (274 CE)</strong>, its 25 December festival, and Constantine's continued solar imagery; and the   <strong>twilight</strong> of the mysteries — Julian's failed revival (361–363), the anti-pagan laws of Theodosius   (390s), and the end of the Eleusinian Mysteries when the site was sacked c. 396 CE.</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- Confident, detailed reconstruction of <strong>Mithraic doctrine</strong> — with no surviving scripture, much   is inference from images, and the astronomical/precession interpretation, however attractive, is   <strong>unproven</strong>. - The claim that Roman Mithraism is simply <strong>imported Persian religion</strong> (the name is Persian; the   cult appears to be largely a new Roman creation). - The popular claim that <strong>Christianity copied the mysteries</strong> — Mithras was not a dying-and-rising   god, the chronology often runs the other way, and the "dying and rising god" category itself is   contested; this is a textbook zone of <strong>parallelomania</strong> and partisan bias on all sides.</p>
+        <ul>
+          <li>Confident, detailed reconstruction of <strong>Mithraic doctrine</strong> — with no surviving scripture, much is inference from images, and the astronomical/precession interpretation, however attractive, is <strong>unproven</strong>.</li>
+          <li>The claim that Roman Mithraism is simply <strong>imported Persian religion</strong> (the name is Persian; the cult appears to be largely a new Roman creation).</li>
+          <li>The popular claim that <strong>Christianity copied the mysteries</strong> — Mithras was not a dying-and-rising god, the chronology often runs the other way, and the "dying and rising god" category itself is contested; this is a textbook zone of <strong>parallelomania</strong> and partisan bias on all sides.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The <strong>true meaning</strong> of the tauroctony and of Mithraic ritual, perhaps permanently lost with the   initiates' secret. - The precise <strong>origins</strong> and lines of development of each cult, and how much genuine eastern content   each preserved. - The exact nature and extent of <strong>mutual influence</strong> among the mysteries, Gnosticism, and early   Christianity in their shared milieu. - Whether rites like the <strong>taurobolium</strong> were originally understood to confer immortality at all, or   acquired that meaning only later.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The <strong>true meaning</strong> of the tauroctony and of Mithraic ritual, perhaps permanently lost with the initiates' secret.</li>
+          <li>The precise <strong>origins</strong> and lines of development of each cult, and how much genuine eastern content each preserved.</li>
+          <li>The exact nature and extent of <strong>mutual influence</strong> among the mysteries, Gnosticism, and early Christianity in their shared milieu.</li>
+          <li>Whether rites like the <strong>taurobolium</strong> were originally understood to confer immortality at all, or acquired that meaning only later.</li>
+        </ul>
       </div>
     </div>
 
@@ -2725,34 +2735,33 @@ window.CHAPTERS = {
     <p>Rabbinic Judaism is the direct heir of <strong>Second Temple Judaism</strong> (Chapter 10), and specifically of the <strong>Pharisees</strong>, carrying the Hebrew Bible and the covenant into a new, Temple-less form. Its great sibling is <strong>Christianity</strong> (Chapter 16): the two are the twin reformulations of Israel's faith after 70 CE, defining themselves partly against each other in the long "parting of the ways." Its Babylonian heartland lay under <strong>Zoroastrian</strong> Persian rule (Chapter 6), and scholars study the Talmud's engagement with that world. Forward, rabbinic Judaism is the trunk from which <strong>all later Judaism</strong> grows: the <strong>Geonim</strong> and the medieval commentators, the flowering of the <strong>Kabbalah</strong> in high-medieval Spain (a later chapter), the challenge of the scripture-only <strong>Karaites</strong>, the philosophy of <strong>Maimonides</strong>, and every modern Jewish movement — Orthodox, Conservative, Reform — that defines itself in relation to the rabbinic tradition. The book became the homeland, and the homeland endured.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The <strong>destruction of the Temple in 70 CE</strong> and the failed <strong>Bar Kokhba revolt</strong> (132–135), and the consequent transformation of Judaism from a Temple-and-sacrifice religion into one centered on <strong>Torah study, prayer, and law</strong>, carried by the heirs of the <strong>Pharisees</strong>, the <strong>rabbis</strong>.</li>
+          <li>The compilation of the <strong>Mishnah</strong> (c. 200 CE, Judah ha-Nasi), the two <strong>Talmuds</strong> (Jerusalem c. 400; Babylonian c. 500–600), and the <strong>Midrash</strong>; the doctrine of the <strong>Oral Torah</strong>; the culture of <strong>dialectical study</strong>; and the replacement of sacrifice by <strong>prayer</strong> (Amidah, Shema) and the <strong>synagogue</strong>.</li>
+          <li>The rise of the <strong>Babylonian</strong> academies (<strong>Sura</strong>, <strong>Pumbedita</strong>) and the primacy of the <strong>Babylonian Talmud</strong>; and the Late-Antique origins of Jewish <strong>mysticism</strong> (<strong>Merkabah/Hekhalot</strong>) and of <strong>Sefer Yetzirah</strong>.</li>
+          <li>The rabbinic doctrine of interpretive authority captured in the <strong>Oven of Akhnai</strong> ("It is not in heaven"; the law follows the majority, not miracles or a heavenly voice); and the archaeological evidence of a broader popular Judaism than the texts — the <strong>zodiac-and-Helios mosaic floors</strong> (Beth Alpha, Hammat Tiberias, Sepphoris) and the figurative biblical paintings at <strong>Dura-Europos</strong> (244 CE).</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The <strong>destruction of the Temple in 70 CE</strong> and the failed <strong>Bar Kokhba revolt</strong> (132–135), and the   consequent transformation of Judaism from a Temple-and-sacrifice religion into one centered on   <strong>Torah study, prayer, and law</strong>, carried by the heirs of the <strong>Pharisees</strong>, the <strong>rabbis</strong>. - The compilation of the <strong>Mishnah</strong> (c. 200 CE, Judah ha-Nasi), the two <strong>Talmuds</strong> (Jerusalem c.   400; Babylonian c. 500–600), and the <strong>Midrash</strong>; the doctrine of the <strong>Oral Torah</strong>; the culture   of <strong>dialectical study</strong>; and the replacement of sacrifice by <strong>prayer</strong> (Amidah, Shema) and the   <strong>synagogue</strong>. - The rise of the <strong>Babylonian</strong> academies (<strong>Sura</strong>, <strong>Pumbedita</strong>) and the primacy of the   <strong>Babylonian Talmud</strong>; and the Late-Antique origins of Jewish <strong>mysticism</strong> (<strong>Merkabah/Hekhalot</strong>)   and of <strong>Sefer Yetzirah</strong>. - The rabbinic doctrine of interpretive authority captured in the <strong>Oven of Akhnai</strong> ("It is not in   heaven"; the law follows the majority, not miracles or a heavenly voice); and the archaeological   evidence of a broader popular Judaism than the texts — the <strong>zodiac-and-Helios mosaic floors</strong>   (Beth Alpha, Hammat Tiberias, Sepphoris) and the figurative biblical paintings at   <strong>Dura-Europos</strong> (244 CE).</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The dramatic <strong>Yavneh legend</strong> (Yohanan ben Zakkai's coffin, the neat "council" that fixed the   canon and replaced sacrifice with prayer in one stroke) as literal history — it is a later,   idealized tradition; the real transition was slower and messier. - The traditional claim that the <strong>Oral Torah</strong> was given complete at Sinai and transmitted verbatim —   historically, rabbinic law visibly <strong>developed</strong> over centuries. - The assumption that the rabbis <strong>immediately governed all Jews</strong>. In their own early centuries the   rabbis were a <strong>small, self-selected male elite</strong>, largely <strong>marginal or absent</strong> in non-rabbinic   sources (inscriptions, archaeology, Roman and Christian writings); the "<strong>rabbinization</strong>" of the   wider Jewish population was <strong>gradual, uneven, and regional</strong>, not complete until the early Middle   Ages.</p>
+        <ul>
+          <li>The dramatic <strong>Yavneh legend</strong> (Yohanan ben Zakkai's coffin, the neat "council" that fixed the canon and replaced sacrifice with prayer in one stroke) as literal history — it is a later, idealized tradition; the real transition was slower and messier.</li>
+          <li>The traditional claim that the <strong>Oral Torah</strong> was given complete at Sinai and transmitted verbatim — historically, rabbinic law visibly <strong>developed</strong> over centuries.</li>
+          <li>The assumption that the rabbis <strong>immediately governed all Jews</strong>. In their own early centuries the rabbis were a <strong>small, self-selected male elite</strong>, largely <strong>marginal or absent</strong> in non-rabbinic sources (inscriptions, archaeology, Roman and Christian writings); the "<strong>rabbinization</strong>" of the wider Jewish population was <strong>gradual, uneven, and regional</strong>, not complete until the early Middle Ages.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The precise <strong>historical process</strong> by which rabbinic Judaism became normative, and how much   <strong>non-rabbinic</strong> Judaism persisted alongside it and for how long. - The <strong>dating and authorship</strong> of key texts, especially <strong>Sefer Yetzirah</strong> and the <strong>Hekhalot</strong>   literature (proposals range across several centuries). - How much the Talmud's engagement with its <strong>Zoroastrian Persian</strong> environment shaped its law and   lore — an active field of research. - The exact nature and chronology of the <strong>"parting of the ways"</strong> with Christianity, now seen as   more gradual and mutual than the old picture.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The precise <strong>historical process</strong> by which rabbinic Judaism became normative, and how much <strong>non-rabbinic</strong> Judaism persisted alongside it and for how long.</li>
+          <li>The <strong>dating and authorship</strong> of key texts, especially <strong>Sefer Yetzirah</strong> and the <strong>Hekhalot</strong> literature (proposals range across several centuries).</li>
+          <li>How much the Talmud's engagement with its <strong>Zoroastrian Persian</strong> environment shaped its law and lore — an active field of research.</li>
+          <li>The exact nature and chronology of the <strong>"parting of the ways"</strong> with Christianity, now seen as more gradual and mutual than the old picture.</li>
+        </ul>
       </div>
     </div>
 
@@ -2856,34 +2865,34 @@ window.CHAPTERS = {
     <p>Mahayana is the child of the <strong>early Buddhism</strong> of Chapter 11 — it keeps the Four Noble Truths, the Eightfold Path, karma, rebirth, and <em>anatta</em>, and radicalizes dependent origination into emptiness — even as it transforms the tradition's ideal, cosmology, and devotion. Its philosophy of no-fixed-self and no-fixed-essence is the great counter-melody to the <strong>Upanishadic</strong> quest for the eternal Self (Chapter 5). Within its own era, its turn toward a <strong>compassionate cosmic savior</strong> and <strong>salvation by grace</strong> rhymes remarkably with the contemporaneous rise of <strong>Christianity</strong> (Chapter 16) and the <strong>mystery cults</strong> (Chapter 18) — not by mutual influence, so far as we know, but as a shared movement of the Late-Antique religious spirit across Eurasia. Forward, the Mahayana is the root of most of the Buddhist world still to come in this archive: the <strong>Vajrayana</strong> and <strong>Tantra</strong> of Tibet and the Himalayas, <strong>Chan/Zen</strong>, <strong>Pure Land</strong>, and the whole vast flowering of <strong>East Asian</strong> Buddhism.</p>
 
 
-    <div class="evidence">
+    <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
         <h4>What's well supported by the evidence</h4>
-        <p></p>
+        <ul>
+          <li>The emergence of the <strong>Mahayana</strong> as a movement of new scriptures and ideals within Indian Buddhism around the <strong>1st century BCE–1st century CE</strong>, centered on the <strong>bodhisattva</strong> ideal and universal compassion.</li>
+          <li>The philosophy of <strong>emptiness</strong> (<em>shunyata</em>), <strong>Nagarjuna</strong> (c. 150–250 CE) and the <strong>Madhyamaka</strong>, the <strong>Prajnaparamita</strong> sutras, the <strong>Yogachara</strong> ("Mind-Only") school of Asanga and Vasubandhu, and the doctrines of <strong>buddha-nature</strong>, the <strong>trikaya</strong>, and <strong>skillful means</strong> (<em>upaya</em>).</li>
+          <li>The rise of devotion to celestial <strong>Buddhas and bodhisattvas</strong> (Amitabha, Avalokiteshvara, and others) and the <strong>Pure Land</strong>; and the spread of the Mahayana along the <strong>Silk Road</strong> to China, Korea, Japan, and beyond, where it became the dominant form of Buddhism.</li>
+          <li>The revised scholarly understanding that the Mahayana was originally a <strong>minority, largely monastic</strong> movement, not a mass lay revolt.</li>
+          <li>The East Asian <strong>feminization of Avalokiteshvara into the goddess Guanyin</strong> (male in India, established as female by the Song dynasty; the Lotus Sutra's "Universal Gate" and the Miaoshan legend), and the Mahayana <strong>"cult of the book"</strong> — the sutra venerated as a shrine, with copying as a meritorious act (a spur to printing; the Diamond Sutra of 868 CE the oldest dated printed book).</li>
+        </ul>
       </div>
       <div class="ev unsupported">
-        <h4></h4>
-        <p>- The emergence of the <strong>Mahayana</strong> as a movement of new scriptures and ideals within Indian Buddhism   around the <strong>1st century BCE–1st century CE</strong>, centered on the <strong>bodhisattva</strong> ideal and universal   compassion. - The philosophy of <strong>emptiness</strong> (<em>shunyata</em>), <strong>Nagarjuna</strong> (c. 150–250 CE) and the <strong>Madhyamaka</strong>,   the <strong>Prajnaparamita</strong> sutras, the <strong>Yogachara</strong> ("Mind-Only") school of Asanga and Vasubandhu, and   the doctrines of <strong>buddha-nature</strong>, the <strong>trikaya</strong>, and <strong>skillful means</strong> (<em>upaya</em>). - The rise of devotion to celestial <strong>Buddhas and bodhisattvas</strong> (Amitabha, Avalokiteshvara, and   others) and the <strong>Pure Land</strong>; and the spread of the Mahayana along the <strong>Silk Road</strong> to China,   Korea, Japan, and beyond, where it became the dominant form of Buddhism. - The revised scholarly understanding that the Mahayana was originally a <strong>minority, largely monastic</strong>   movement, not a mass lay revolt. - The East Asian <strong>feminization of Avalokiteshvara into the goddess Guanyin</strong> (male in India,   established as female by the Song dynasty; the Lotus Sutra's "Universal Gate" and the Miaoshan   legend), and the Mahayana <strong>"cult of the book"</strong> — the sutra venerated as a shrine, with copying   as a meritorious act (a spur to printing; the Diamond Sutra of 868 CE the oldest dated printed book).</p>
-      </div>
-      <div class="ev open">
         <h4>What's not supported by the evidence</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The traditional claim that the <strong>Mahayana sutras are the literal words of the historical Buddha</strong> —   historically they were composed centuries after his death (the tradition holds them <em>buddhavacana</em>   and explains the gap by <em>upaya</em> and legend; this chapter records the belief and dates the texts, and   does not confuse the two). - The older textbook picture of the Mahayana as a <strong>lay-led democratic movement</strong> (now overturned). - The use of "<strong>Hinayana</strong>" as a fair description of <strong>Theravada</strong> — it is a polemical term, not a   neutral one.</p>
+        <ul>
+          <li>The traditional claim that the <strong>Mahayana sutras are the literal words of the historical Buddha</strong> — historically they were composed centuries after his death (the tradition holds them <em>buddhavacana</em> and explains the gap by <em>upaya</em> and legend; this chapter records the belief and dates the texts, and does not confuse the two).</li>
+          <li>The older textbook picture of the Mahayana as a <strong>lay-led democratic movement</strong> (now overturned).</li>
+          <li>The use of "<strong>Hinayana</strong>" as a fair description of <strong>Theravada</strong> — it is a polemical term, not a neutral one.</li>
+        </ul>
       </div>
       <div class="ev open">
         <h4>What's genuinely open</h4>
-        <p></p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
-        <p>- The precise <strong>social origins</strong> and early institutional forms of the Mahayana (an active field since   the work of Schopen, Nattier, and others). - The <strong>dating, authorship, and interrelation</strong> of the major sutras, composed and edited over many   centuries. - The <strong>biography of Nagarjuna</strong> and other founding figures, around whom much legend gathered. - Whether the Late-Antique parallels between Mahayana devotionalism and Mediterranean <strong>savior   religions</strong> reflect any real contact or are independent responses to a shared age.</p>
-      </div>
-      <div class="ev open">
-        <h4></h4>
+        <ul>
+          <li>The precise <strong>social origins</strong> and early institutional forms of the Mahayana (an active field since the work of Schopen, Nattier, and others).</li>
+          <li>The <strong>dating, authorship, and interrelation</strong> of the major sutras, composed and edited over many centuries.</li>
+          <li>The <strong>biography of Nagarjuna</strong> and other founding figures, around whom much legend gathered.</li>
+          <li>Whether the Late-Antique parallels between Mahayana devotionalism and Mediterranean <strong>savior religions</strong> reflect any real contact or are independent responses to a shared age.</li>
+        </ul>
       </div>
     </div>
 

@@ -112,7 +112,7 @@ function renderEvidence(content) {
     if (m) groups.push({ head: m[1], body: [] });
     else if (groups.length) groups[groups.length - 1].body.push(ln);
   });
-  let h = '<div class="evidence">\n  <div class="evidence-head">&#10022; The evidence, honestly</div>';
+  let h = '<div class="evidence" id="evidence">\n  <div class="evidence-head">&#10022; The evidence, honestly</div>';
   groups.forEach((g, idx) => {
     h += `\n  <div class="ev ${classes[idx] || "open"}"><h4>${inline(g.head)}</h4>${renderBlocks(g.body.join("\n"))}</div>`;
   });
@@ -147,7 +147,8 @@ function renderEntry(mdPath) {
     const hl = heading.toLowerCase();
     if (hl.startsWith("the evidence")) return { heading, html: renderEvidence(content) };
     if (hl === "sources") return { heading, html: renderSources(content) };
-    const html = `<h2>${inline(heading)}</h2>\n${renderBlocks(content)}`;
+    const hid = /^symbology/.test(hl) ? "symbology" : hl === "connections" ? "connections" : "";
+    const html = `<h2${hid ? ` id="${hid}"` : ""}>${inline(heading)}</h2>\n${renderBlocks(content)}`;
     return { heading, html: hl === "connections" ? linkRefs(html, "../") : html };
   });
   return { title, lead, sections };

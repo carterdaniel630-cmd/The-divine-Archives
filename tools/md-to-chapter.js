@@ -39,6 +39,38 @@ function parseBlocks(text) {
   return text.split(/\n\s*\n/).map((b) => b.trim()).filter(Boolean);
 }
 
+// "## The evidence, honestly": three groups (supported / not supported / open). Each group opens
+// with a bold lead, either on a line of its own followed by bullets or paragraphs
+// ("**What's well supported**\n\n- …"), or as the start of a single paragraph ("**Supported.** text").
+function evidenceHtml(content) {
+  const classes = ["supported", "unsupported", "open"];
+  const groups = [];
+  for (const b of parseBlocks(content)) {
+    const one = b.replace(/\n/g, " ").trim();
+    const m = one.match(/^\*\*([^*]+)\*\*\s*(.*)$/);
+    if (m && !/^-\s+/.test(b)) groups.push({ label: m[1].replace(/[.:]\s*$/, ""), blocks: m[2] ? [m[2]] : [] });
+    else if (groups.length) groups[groups.length - 1].blocks.push(b);
+    else groups.push({ label: "", blocks: [b] });
+  }
+  let ev = '    <div class="evidence" id="evidence">\n      <div class="evidence-head">&#10022; The evidence, honestly</div>';
+  groups.forEach((g, idx) => {
+    ev += `\n      <div class="ev ${classes[idx] || "open"}">\n        <h4>${inline(g.label)}</h4>`;
+    for (const b of g.blocks) {
+      const bl = b.split("\n");
+      if (bl.every((l) => /^-\s+/.test(l.trim()) || /^\s+\S/.test(l) || !l.trim()) && /^-\s+/.test(bl[0].trim())) {
+        // bullet list; indented lines continue the previous item
+        const items = [];
+        for (const l of bl) { if (/^-\s+/.test(l.trim())) items.push(l.trim().replace(/^-\s+/, "")); else if (l.trim()) items[items.length - 1] += " " + l.trim(); }
+        ev += "\n        <ul>" + items.map((t) => `\n          <li>${inline(t)}</li>`).join("") + "\n        </ul>";
+      } else {
+        ev += `\n        <p>${inline(b.replace(/\n/g, " ").trim())}</p>`;
+      }
+    }
+    ev += "\n      </div>";
+  });
+  return ev + "\n    </div>";
+}
+
 function convert(id, md) {
   const raw = fs.readFileSync(md, "utf8").replace(/\r\n/g, "\n");
   // strip H1 + pending line
@@ -69,19 +101,7 @@ function convert(id, md) {
     const hlow = heading.toLowerCase();
 
     if (hlow.startsWith("the evidence")) {
-      const blocks = parseBlocks(content); // 3 bold-led paragraphs
-      const classes = ["supported", "unsupported", "open"];
-      let ev = '    <div class="evidence">\n      <div class="evidence-head">&#10022; The evidence, honestly</div>';
-      blocks.forEach((b, idx) => {
-        const one = b.replace(/\n/g, " ").trim();
-        const m = one.match(/^\*\*([^*]+)\*\*\s*(.*)$/);
-        const label = m ? m[1].replace(/[.:]\s*$/, "") : "";
-        const rest = m ? m[2] : one;
-        const cls = classes[idx] || "open";
-        ev += `\n      <div class="ev ${cls}">\n        <h4>${inline(label)}</h4>\n        <p>${inline(rest)}</p>\n      </div>`;
-      });
-      ev += "\n    </div>";
-      out.push(ev);
+      out.push(evidenceHtml(content));
     } else if (hlow === "sources") {
       let src = '    <div class="sources">\n      <h3>Sources</h3>\n      <ul>';
       const clines = content.split("\n");
@@ -126,6 +146,10 @@ function convert(id, md) {
   return `  /* ------------------------------------------------------------------ ${id} */\n  ${id}: { html: \`\n${html}\n  \` }`;
 }
 
-const [, , id, mdPath] = process.argv;
-if (!id || !mdPath) { console.error("usage: md-to-chapter.js <id> <markdown>"); process.exit(1); }
-process.stdout.write(convert(id, mdPath));
+if (require.main === module) {
+  const [, , id, mdPath] = process.argv;
+  if (!id || !mdPath) { console.error("usage: md-to-chapter.js <id> <markdown>"); process.exit(1); }
+  process.stdout.write(convert(id, mdPath));
+} else {
+  module.exports = { convert, evidenceHtml, inline };
+}

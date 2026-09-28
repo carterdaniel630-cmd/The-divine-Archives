@@ -118,6 +118,24 @@ function figuresFor(ch) {
     "\n      </div></div>";
 }
 
+// Stable in-page anchors: every section heading gets an id from its text ("The skeptical lens" ->
+// #the-skeptical-lens, "Symbology and sacred encoding" -> #symbology), and the evidence panel is
+// #evidence. The Virtual Museum's label cards and any other deep link rely on these.
+function withAnchors(html) {
+  const used = new Set(["figures", "in-the-vault", "evidence", "chapter-mount"]);
+  html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (m, inner) => {
+    const text = inner.replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "").replace(/&#\d+;/g, "");
+    let id = /^symbology/i.test(text) ? "symbology" : text.toLowerCase().replace(/['’]/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").split("-").slice(0, 6).join("-");
+    if (!id) return m;
+    let k = id, n = 2;
+    while (used.has(k)) k = id + "-" + n++;
+    used.add(k);
+    return '<h2 id="' + k + '">' + inner + "</h2>";
+  });
+  return html.replace('<div class="evidence">', '<div class="evidence" id="evidence">');
+}
+
 const HEADER = `  <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="../index.html">
@@ -168,7 +186,7 @@ function pageFor(ch) {
   const url = `${SITE}/chapters/${ch.id}.html`;
   const fullTitle = `${ch.title} — The Divine Archives`;
   const desc = clip(ch.summary, 155);
-  const rendered = (CHAPTERS[ch.id] && CHAPTERS[ch.id].html) || "";
+  const rendered = withAnchors((CHAPTERS[ch.id] && CHAPTERS[ch.id].html) || "");
   const plate = PLATES[ch.id] || "";
 
   const crumbMid = ch.era
