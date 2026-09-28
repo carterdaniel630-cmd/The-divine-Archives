@@ -47,6 +47,7 @@
     var UI = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96") };
 
     var canvas, cx, hudEl, raf = null, keyfn = null, keyup = null, last = 0, running = false;
+    var kbKeys = {}, pads = [], paused = false;   // keyboard + controllers merge into keys (see bindPads)
     var keys = {}, p1, p2, motes = [], fx = [], blood = [], shake = 0, hitStop = 0, flash = 0, banner = null, gameT = 0, callout = null;
     // fixed-timestep simulation: logic advances in whole FIXED steps regardless of
     // display refresh, so movement/jumps are identical at 60/120/144 Hz. Rendering
@@ -1287,6 +1288,8 @@
     }
     // ONE damage path for punches, kicks, headbutts, blasts, thrown relics, debris.
     function applyDamage(f, other, dmg, kind, fin, hx, hy, move) {
+      // f strikes, other is struck: the struck player's controller shakes hard, the striker's lightly
+      pads.forEach(function (pd) { if (pd.f === other) pd.pad.rumble(fin ? 320 : 140, fin ? 1 : 0.75); else if (pd.f === f) pd.pad.rumble(70, 0.35); });
       if (other.state === "ko") return;
       var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial" || kind === "grab";
       // i-frames from a dodge/back-dash beat the hit entirely (a throw still grabs)
@@ -1646,8 +1649,10 @@
     }
     function frame(ts) {
       if (!running) return;
+      pads.forEach(function (pd) { pd.pad.poll(); });
       // real elapsed time, clamped so a long stall can't spiral the accumulator
       var real = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; var t = ts / 1000;
+      if (paused) real = 0;
       curReal = real; // last real frame delta, read by the pose-dynamics spring in drawFighter
       // --- purely-visual updates run once per rendered frame (real time) ---
       for (var i = 0; i < motes.length; i++) { var mo = motes[i]; mo.y -= mo.v * real * 30; mo.x += Math.sin(t + i) * 0.2; if (mo.y < 0) { mo.y = VH; mo.x = Math.random() * VW; } }
@@ -1682,6 +1687,11 @@
       if (callout) { drawCallout(cx, callout); callout.t -= real; if (callout.t <= 0) callout = null; }
       if (banner) { drawBanner(cx); banner.t -= real; if (banner.t <= 0) banner = null; }
       cx.restore();
+      if (paused) {
+        cx.fillStyle = "rgba(10,7,3,.6)"; cx.fillRect(0, 0, VW, VH);
+        cx.textAlign = "center"; cx.fillStyle = UI.goldB; cx.font = "700 40px Cinzel, Georgia, serif"; cx.fillText("PAUSED", VW / 2, VH / 2);
+        cx.font = "16px 'EB Garamond', Georgia, serif"; cx.fillStyle = "#cdbb96"; cx.fillText("Start or P to fight on", VW / 2, VH / 2 + 30);
+      }
       renderHUD();
       if (winner && !banner && !resultShown) { resultShown = true; showResult(); return; }
       raf = requestAnimationFrame(frame);
@@ -1756,6 +1766,8 @@
       // block-stun / recovery: locked out of acting for a beat (this is what makes an
       // unsafe move punishable — you can't just mash out of a blocked heavy).
       if (f.stun > 0) { if (f.onGround && f.dashT <= 0) f.vx = 0; return; }
+      // the controller's dash button (L): toward the held direction, else a back-dash
+      if (f.wantDash) { var wd = f.wantDash; f.wantDash = 0; startDash(f, wd); }
       // double-tap left/right = dash. Detect the key's rising edge and pair it with
       // a recent tap in the same direction.
       var L = !!keys[km.left], R = !!keys[km.right], eL = L && !f._kl, eR = R && !f._kr; f._kl = L; f._kr = R;
@@ -1832,7 +1844,7 @@
           '<div class="fg-sel-mode"><button class="rq-btn" data-a="mode">Opponent: ' + (sel.twoP ? "Player 2 (human)" : "the AI") + "</button></div>" +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
-          '<p class="rq-note">P1: A/D move · S guard · J punch · K kick (headbutt up close) · L energy blast · U grab.' + (sel.twoP ? " P2: ←/→ · ↓ guard · , punch · . kick · / blast · M grab." : " On touch, use the on-screen pads.") +
+          '<p class="rq-note"><b>Controls</b> follow a fighting-pad layout: D-pad to move, ↑ jump, ↓ or <b>R</b> guard; <b>X</b> punch, <b>A</b> kick (headbutt up close), <b>Y</b> energy blast, <b>B</b> grab; <b>L</b> dash; <b>Start</b> pause. Keyboard: A/D move · W jump · S guard · J punch · K kick · L blast · U grab · I dash · P pause.' + (sel.twoP ? " P2: ←/→ · ↑ jump · ↓ guard · , punch · . kick · / blast · M grab (or a second game controller)." : " On touch, use the on-screen controller; a game controller works too.") +
             " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game. <b>Combos:</b> chain jabs and cancel a jab or kick into the blast (e.g. punch → punch → kick → blast); <b>jump over</b> a foe to switch sides (cross-up)." +
             " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Chain a jab into a kick into a blast for a combo; fill the meter for a SUPER (a maxed blast, any time) — land it on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
@@ -1851,35 +1863,58 @@
         '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">The Divine Archives · Games</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">Divine Casualties</h2></div>' +
         '<div class="fg-hud"></div>' +
-        '<div class="fg-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Divine Casualties fighting stage"></canvas></div>' +
-        '<div class="fg-controls">' +
-          '<div class="fg-dpad">' +
-            '<button class="ouro-key fg-jump" data-k="' + KM1.jump + '" aria-label="Jump">⤒</button>' +
-            '<button class="ouro-key fg-left" data-k="' + KM1.left + '" aria-label="Move left">◀</button>' +
-            '<button class="ouro-key fg-guard" data-k="' + KM1.block + '" aria-label="Guard">🛡</button>' +
-            '<button class="ouro-key fg-right" data-k="' + KM1.right + '" aria-label="Move right">▶</button></div>' +
-          '<div class="fg-actions">' +
-            '<button class="ouro-key fg-atk-l" data-atk="light" aria-label="Punch">👊</button>' +
-            '<button class="ouro-key fg-atk-h" data-atk="heavy" aria-label="Kick">🦶</button>' +
-            '<button class="ouro-key fg-atk-s" data-atk="special" aria-label="Energy blast">⚡</button>' +
-            '<button class="ouro-key fg-atk-g" data-act="grab" aria-label="Grab / throw">✋</button></div>' +
-        "</div>" +
+        '<div class="ap-host"><div class="fg-stage ap-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Divine Casualties fighting stage"></canvas></div></div>' +
         '<div class="rq-actions" style="margin-top:.4rem"><button class="rq-btn" data-a="back">‹ Choose fighters</button></div>';
       canvas = root.querySelector(".fg-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VW * DPR; canvas.height = VH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       hudEl = root.querySelector(".fg-hud");
-      // movement: hold to move (touch + mouse)
-      root.querySelectorAll(".fg-dpad .ouro-key").forEach(function (b) {
-        var k = b.getAttribute("data-k"), dn = function (e) { e.preventDefault(); keys[k] = true; }, up = function (e) { if (e) e.preventDefault(); keys[k] = false; };
-        b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up, { passive: false }); b.addEventListener("touchcancel", up);
-        b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
-      });
-      // attacks: fire instantly on press (touchstart/pointerdown), so they work mid-air and don't wait for a click
-      root.querySelectorAll(".fg-actions .ouro-key").forEach(function (b) {
-        var fire = function (e) { if (e) e.preventDefault(); if (!p1) return; if (b.getAttribute("data-act") === "grab") tryGrab(p1); else tryAttack(p1, p2, b.getAttribute("data-atk")); };
-        b.addEventListener("touchstart", fire, { passive: false }); b.addEventListener("mousedown", fire);
-      });
       root.querySelector('[data-a="back"]').addEventListener("click", selectScreen);
+    }
+    /* ---- controllers: an on-screen fighting pad for Player 1 (which also shows the
+       keyboard map), plus physical game controllers: #1 drives Player 1, #2 Player 2 ---- */
+    var PAD_ATK = { x: "light", a: "heavy", y: "special", b: "grab" };
+    var KEYPAD1 = { a: "left", d: "right", w: "up", s: "down", j: "x", k: "a", l: "y", u: "b", i: "l", p: "start" };
+    function dropPads() { pads.forEach(function (pd) { pd.pad.destroy(); }); pads = []; }
+    function bindPads(twoP) {
+      dropPads(); paused = false;
+      if (!window.ArchivePad) return;
+      function forFighter(getF, km, index, ui) {
+        var padKeys = {}, rec = { pad: null };
+        function sync() {
+          var h = rec.pad.held, want = {};
+          want[km.left] = h.left; want[km.right] = h.right; want[km.jump] = h.up; want[km.block] = h.down || h.r; want[km.grab] = h.b;
+          Object.keys(want).forEach(function (k) {
+            var v = !!want[k]; if (padKeys[k] === v) return;
+            padKeys[k] = v; keys[k] = v || !!kbKeys[k];
+          });
+        }
+        rec.pad = window.ArchivePad.create({
+          layout: "four", ui: ui, gamepadIndex: index, dpadKeys: "W A S D",
+          buttons: ui ? { x: { cap: "Punch", key: "J" }, a: { cap: "Kick", key: "K" }, y: { cap: "Blast", key: "L" }, b: { cap: "Grab", key: "U" },
+            l: { cap: "Dash", key: "I" }, r: { cap: "Guard", key: "S" }, start: { cap: "Pause", key: "P" } } : {},
+          onDown: function (id) {
+            var f = getF(); if (!f) return;
+            if (id === "start") { togglePause(); return; }
+            if (paused) return;
+            if (PAD_ATK[id]) f.buf = { kind: PAD_ATK[id], t: BUF_TICKS };
+            if (id === "l") { var h = rec.pad.held; f.wantDash = h.left ? -1 : h.right ? 1 : -f.facing; }
+            sync();
+          },
+          onUp: function () { sync(); }
+        });
+        Object.defineProperty(rec, "f", { get: getF });
+        pads.push(rec);
+        return rec.pad;
+      }
+      var main = forFighter(function () { return p1; }, KM1, 0, true);
+      root.querySelector(".ap-host").appendChild(main.el);
+      if (twoP) forFighter(function () { return p2; }, KM2, 1, false);
+    }
+    function togglePause() {
+      if (!running || winner) return;
+      paused = !paused;
+      if (paused) { Object.keys(keys).forEach(function (k) { keys[k] = false; }); kbKeys = {}; pads.forEach(function (pd) { pd.pad.release(); }); }
+      else last = performance.now();
     }
     function showResult() {
       running = false; if (raf) cancelAnimationFrame(raf);
@@ -1901,6 +1936,7 @@
     function startFight(g1, g2, twoP) {
       curG1 = g1; curG2 = g2; curTwoP = twoP;
       shell(twoP);
+      bindPads(twoP);
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1, g1);
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null, g2);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
@@ -1939,10 +1975,20 @@
       cx.fillStyle = UI.goldB; cx.font = "700 17px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.shadowColor = "#000"; cx.shadowBlur = 6;
       cx.fillText((ROSTER[id] || ZEUS).name.toUpperCase(), x + w / 2, y + h - 4); cx.shadowBlur = 0;
     }
+    // is key k currently held down by this controller? (so releasing the keyboard key doesn't cancel it)
+    function isPadKey(pd, k) {
+      var f = pd.f, h = pd.pad.held; if (!f || !f.km) return false; var km = f.km;
+      return (k === km.left && h.left) || (k === km.right && h.right) || (k === km.jump && h.up) || (k === km.block && (h.down || h.r)) || (k === km.grab && h.b);
+    }
     function attachKeys() {
       keyfn = function (e) {
         var k = e.key.toLowerCase();
         var moveKeys = [KM1.left, KM1.right, KM1.block, KM1.jump, KM2.left, KM2.right, KM2.block, KM2.jump];
+        if (pads[0] && KEYPAD1[k]) pads[0].pad.lit(KEYPAD1[k], true);
+        if (k === "p" && !e.repeat && running) { togglePause(); return; }
+        if (paused) return;
+        if (k === "i" && !e.repeat && running && p1) { p1.wantDash = keys[KM1.left] ? -1 : keys[KM1.right] ? 1 : -p1.facing; return; }
+        kbKeys[k] = true;
         keys[k] = true;                       // every key is tracked held/released (the throw-tech reads the grab key)
         if (moveKeys.indexOf(k) >= 0 && k.indexOf("arrow") === 0) e.preventDefault();
         if (!running) return;
@@ -1955,7 +2001,12 @@
           f.buf = { kind: kind, t: BUF_TICKS };
         });
       };
-      keyup = function (e) { keys[e.key.toLowerCase()] = false; };
+      keyup = function (e) {
+        var k = e.key.toLowerCase(); kbKeys[k] = false;
+        if (pads[0] && KEYPAD1[k]) pads[0].pad.lit(KEYPAD1[k], false);
+        var fromPad = pads.some(function (pd) { return pd.pad.held && isPadKey(pd, k); });
+        keys[k] = fromPad;
+      };
       document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
     }
     attachKeys();
@@ -1998,6 +2049,6 @@
       };
     }
 
-    return function cleanup() { running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
+    return function cleanup() { dropPads(); running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
   }
 })();

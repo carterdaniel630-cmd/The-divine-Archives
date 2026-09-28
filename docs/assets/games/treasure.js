@@ -306,6 +306,7 @@
 
     var canvas, cx, hudEl, live, keyfn = null, keyup = null, raf = null, last = 0, running = false, DPR = 1, acc = 0;
     var keys = {}, press = {}, st = null, best = AG.bestScore("treasure");
+    var kbKeys = {}, padKeys = {}, pad = null, paused = false;   // keyboard and controller are merged into keys
     var run = null;
     function factsForLevel(i) { return (DATA.facts || []).filter(function (f) { return (f.level | 0) === i; }); }
 
@@ -500,6 +501,7 @@
     }
     function hurt(fromX) {
       var p = st.p; if (p.inv > 0 || st.over) return false;
+      if (pad) pad.rumble(160, 0.8);
       p.inv = 1.4; p.swing = null;
       var d = p.x >= fromX ? 1 : -1; p.vx = d * 4; p.vy = -5.5; p.knock = 0.25; SFX.play("hurt");
       burst(p.x, p.y, "#e8d2a0", 8);
@@ -1581,11 +1583,13 @@
     var hudCache = "";
     function loop(ts) {
       if (!running) return;
-      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; acc += dt;
+      if (pad) pad.poll();
+      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; acc += paused ? 0 : dt;
       var n = 0; while (acc >= STEP && n < 6) { step(); acc -= STEP; n++; }
       if (n === 6) acc = 0;
       if (!running) return;
       draw();
+      if (paused) drawPaused();
       var h = st.hearts + "|" + st.got + "|" + run.score; if (h !== hudCache) { hudCache = h; updateHUD(); }
       if (running) raf = requestAnimationFrame(loop);
     }
@@ -1674,31 +1678,47 @@
     }
 
     /* ---------------- shell / input ---------------- */
-    function setKey(k, on) { if (on && !keys[k]) press[k] = true; keys[k] = on; }
+    function setKey(k, on) { setSrc(kbKeys, k, on); }
     function shell() {
       root.innerHTML =
         '<div class="game-head" style="margin-bottom:.35rem"><p class="eyebrow">The Divine Archives · Games</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Tomb Robber</h2></div>' +
         '<div class="tr-hudrow"><div class="pm-hud tr-hud"></div><button class="tr-snd" type="button" aria-pressed="' + (SFX.isOn() ? "true" : "false") + '" title="Sound (M)">' + (SFX.isOn() ? "♪ Sound on" : "♪ Sound off") + '</button></div>' +
-        '<div class="tr-stage"><canvas class="tr-canvas" tabindex="0" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div>' +
+        '<div class="ap-host"><div class="tr-stage ap-stage"><canvas class="tr-canvas" tabindex="0" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div></div>' +
         '<p class="ouro-toast tr-toast" aria-live="polite"></p>' +
-        '<div class="tr-controls"><button class="ouro-key" data-k="left" aria-label="Left">◀</button>' +
-          '<button class="ouro-key" data-k="right" aria-label="Right">▶</button>' +
-          '<span class="tr-gap"></span>' +
-          '<button class="ouro-key tr-whip" data-k="whip" aria-label="Crack the whip">Whip</button>' +
-          '<button class="ouro-key tr-jump" data-k="jump" aria-label="Jump">⤒</button></div>' +
-        '<p class="rq-note tr-keys">←/→ run · ↑ or Space jump (hold for height) · <b>J</b> or <b>X</b> whip · whip a bronze ring to swing, jump to let go, ↓ to drop · <b>M</b> sound.</p>';
+        '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), crack the whip with <b>B</b> (J or X). Whip a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);
       try { canvas.focus({ preventScroll: true }); } catch (e) { }   // keep keyboard focus inside the dialog (Esc still closes it)
-      root.querySelectorAll(".tr-controls .ouro-key").forEach(function (b) {
-        var k = b.getAttribute("data-k");
-        var dn = function (e) { e.preventDefault(); SFX.wake(); setKey(k, true); }, up = function () { setKey(k, false); };
-        b.addEventListener("touchstart", dn, { passive: false }); b.addEventListener("touchend", up); b.addEventListener("touchcancel", up);
-        b.addEventListener("mousedown", dn); b.addEventListener("mouseup", up); b.addEventListener("mouseleave", up);
-      });
+      // the controller: two-button console layout (D-pad, B whip, A jump, Select, Start)
+      if (pad) pad.destroy();
+      pad = window.ArchivePad ? window.ArchivePad.create({
+        layout: "two", dpadKeys: "← → ↑ ↓",
+        buttons: { a: { cap: "Jump", key: "Space" }, b: { cap: "Whip", key: "J" }, select: { cap: "Sound", key: "M" }, start: { cap: "Pause", key: "P" } },
+        onDown: function (id) { SFX.wake(); if (id === "start") togglePause(); else if (id === "select") toggleSound(); else padSync(); },
+        onUp: function () { padSync(); }
+      }) : null;
+      if (pad) root.querySelector(".ap-host").appendChild(pad.el);
+      paused = false;
+    }
+    // merge the keyboard and the controller: a key is down if either source holds it
+    function setSrc(src, k, on) { src[k] = on; var now = !!(kbKeys[k] || padKeys[k]); if (now && !keys[k]) press[k] = true; keys[k] = now; }
+    function padSync() {
+      var h = pad.held;
+      setSrc(padKeys, "left", h.left); setSrc(padKeys, "right", h.right); setSrc(padKeys, "down", h.down);
+      setSrc(padKeys, "jump", h.a || h.up); setSrc(padKeys, "whip", h.b);
+    }
+    function togglePause() {
+      if (!running || !st || st.over) return;
+      paused = !paused; if (paused) { SFX.stop(); keys = {}; kbKeys = {}; padKeys = {}; } else { SFX.wake(); last = performance.now(); }
+    }
+    function drawPaused() {
+      cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      cx.fillStyle = "rgba(10,7,3,.62)"; cx.fillRect(0, 0, VIEWW, VIEWH);
+      cx.textAlign = "center"; cx.fillStyle = "#e7c680"; cx.font = "600 34px Cinzel, Georgia, serif"; cx.fillText("Paused", VIEWW / 2, VIEWH / 2);
+      cx.font = "15px 'EB Garamond', Georgia, serif"; cx.fillStyle = "#cdbb96"; cx.fillText("Start or P to carry on", VIEWW / 2, VIEWH / 2 + 28);
     }
     function toggleSound() { var on = SFX.toggle(), sb = root.querySelector(".tr-snd"); if (sb) { sb.textContent = on ? "♪ Sound on" : "♪ Sound off"; sb.setAttribute("aria-pressed", on ? "true" : "false"); } }
     function mapKey(k) {
@@ -1709,8 +1729,16 @@
       if (k === "j" || k === "x" || k === "k") return "whip";
       return null;
     }
-    keyfn = function (e) { var kk = e.key.toLowerCase(); if (running && kk === "m" && !e.repeat) { toggleSound(); return; } var m = mapKey(kk); if (!m || !running) return; SFX.wake(); e.preventDefault(); if (!e.repeat) setKey(m, true); };
-    keyup = function (e) { var m = mapKey(e.key.toLowerCase()); if (m) setKey(m, false); };
+    // which controller button a key stands for, so the on-screen pad lights up as a key map
+    var KEYPAD = { arrowleft: "left", a: "left", arrowright: "right", d: "right", arrowdown: "down", s: "down", arrowup: "up", w: "up", " ": "a", spacebar: "a", j: "b", x: "b", k: "b", m: "select", p: "start" };
+    keyfn = function (e) {
+      var kk = e.key.toLowerCase();
+      if (pad && KEYPAD[kk]) pad.lit(KEYPAD[kk], true);
+      if (running && kk === "m" && !e.repeat) { toggleSound(); return; }
+      if (running && kk === "p" && !e.repeat) { togglePause(); return; }
+      var m = mapKey(kk); if (!m || !running || paused) return; SFX.wake(); e.preventDefault(); if (!e.repeat) setKey(m, true);
+    };
+    keyup = function (e) { var kk = e.key.toLowerCase(); if (pad && KEYPAD[kk]) pad.lit(KEYPAD[kk], false); var m = mapKey(kk); if (m) setKey(m, false); };
     document.addEventListener("keydown", keyfn); document.addEventListener("keyup", keyup);
 
     // test hooks (CI / capture only)
@@ -1729,6 +1757,6 @@
     root.innerHTML = '<div class="rq-loading">Lighting the torches…</div>';
     loadData().then(startRun).catch(function () { root.innerHTML = '<p class="game-placeholder">The expedition could not be loaded. Please reload the page.</p>'; });
 
-    return function cleanup() { SFX.close(); running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
+    return function cleanup() { if (pad) pad.destroy(); SFX.close(); running = false; if (raf) cancelAnimationFrame(raf); if (keyfn) document.removeEventListener("keydown", keyfn); if (keyup) document.removeEventListener("keyup", keyup); };
   }
 })();
