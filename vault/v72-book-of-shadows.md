@@ -1,6 +1,6 @@
 # The Book of Shadows: The Making of Wicca
 
-*Vault entry V72 · Manuscripts · Gerald Gardner's manuscripts in private hands; copied by initiates · Recently added — pending full review.*
+*Vault entry V72 · Manuscripts · Gerald Gardner's manuscripts in private hands; copied by initiates*
 
 Some time in the late **1940s**, a retired British customs officer named **Gerald Gardner** began filling a leather-bound notebook with rituals, charms and invocations, written in mock-archaic spelling: *Ye Bok of ye Art Magical*. Gardner said he had been initiated in **1939** into a coven of hereditary witches in the **New Forest**, the survivors of an ancient pagan religion. His notebook, renamed the **Book of Shadows**, became the ritual book of the religion he launched, **Wicca**. Every new initiate was expected to copy it out by hand.
 

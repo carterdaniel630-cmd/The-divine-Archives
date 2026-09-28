@@ -1,6 +1,6 @@
 # The Popol Vuh Manuscript: The Book of the Council
 
-*Vault entry V32 · Manuscripts · The Newberry Library, Chicago (Ayer MS 1515) · Recently added — pending full review.*
+*Vault entry V32 · Manuscripts · The Newberry Library, Chicago (Ayer MS 1515)*
 
 Around **1701**, a Dominican friar named **Francisco Ximénez** (born 1666) was parish priest of **Santo Tomás Chichicastenango** in the Guatemalan highlands. There he saw a book written in **K'iche'**, the Maya language of his parishioners, in the **Latin alphabet**. He copied it in two columns, **K'iche' on the left and Spanish on the right**, into a volume of his own writings on the language and on Christian doctrine. The book he copied is **lost**. His copy is now in **Chicago**, and it is the **only reason** the K'iche' creation epic survives.
 

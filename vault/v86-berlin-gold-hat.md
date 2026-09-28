@@ -1,6 +1,6 @@
 # The Berlin Gold Hat: A Calendar Worn on the Head?
 
-*Vault entry V86 · Relics & Artifacts · Late Bronze Age, c. 1000–800 BCE · Neues Museum, Berlin · Recently added — pending full review.*
+*Vault entry V86 · Relics & Artifacts · Late Bronze Age, c. 1000–800 BCE · Neues Museum, Berlin*
 
 It stands in a dark room of the **Neues Museum** in Berlin, lit from above: a tall **cone of beaten gold**, **74.5 centimetres** high, with a small brim at the bottom and a star at the tip. It weighs only about **490 grams**; the gold is thinner than paper. Every centimetre is covered with bands of stamped ornament: rows of **circles**, discs, crescents and almond-shaped eyes, applied with small punches and wheels. Nobody knows where it was found. The museum bought it in **1996**, from the art market.
 

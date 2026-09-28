@@ -1,6 +1,6 @@
 # The Ketef Hinnom Silver Scrolls: The Oldest Words of Scripture
 
-*Vault entry V12 · Texts & Tablets · The Israel Museum, Jerusalem · Recently added — pending full review.*
+*Vault entry V12 · Texts & Tablets · The Israel Museum, Jerusalem*
 
 In **1979**, on a slope overlooking Jerusalem's **Hinnom Valley**, a thirteen-year-old volunteer on **Gabriel Barkay's** excavation was clearing a burial cave. A collapsed ceiling had sealed its lowest chamber, and it had escaped the looting that emptied the rest. Among the finds, with pottery, jewellery and arrowheads, were **two tiny rolled strips of silver**. The larger was under 10 centimetres long when unrolled, and the smaller about 4. They were **amulets**, meant to be worn on a cord. Unrolling them without destroying them took **three years**. Inside, scratched into the silver in the **old Hebrew script**, was the divine name **YHWH** and words that anyone who knows the Hebrew Bible recognises: **"May YHWH bless you and keep you."**
 

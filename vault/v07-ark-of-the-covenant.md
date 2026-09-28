@@ -1,6 +1,6 @@
 # The Ark of the Covenant: The Object Described in Every Detail and Found Nowhere
 
-*Vault entry V07 · Relics & Sacred Objects · No surviving object is verified; the Ethiopian Orthodox Tewahedo Church holds that it is kept at Aksum · Recently added — pending full review.*
+*Vault entry V07 · Relics & Sacred Objects · No surviving object is verified; the Ethiopian Orthodox Tewahedo Church holds that it is kept at Aksum*
 
 It may be the most precisely described object in the Bible. **Exodus 25** gives its measurements to the half-cubit, its wood, its gold, its rings and poles, and the two golden **cherubim** facing each other across its lid with their wings spread. Priests carried it into the Jordan and around Jericho. Philistines captured it, and it was brought back. David danced before it. Solomon installed it in the innermost room of the Temple. Then, somewhere between Solomon and the Babylonian destruction of Jerusalem in **586 BCE**, it **drops out of the record**. When the Roman general Pompey forced his way into the Holy of Holies of the rebuilt Temple in 63 BCE, the Roman historian **Tacitus** says he found **the shrine empty**. **Josephus** describes the innermost room of that Temple as holding **nothing at all**.
 

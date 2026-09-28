@@ -1,6 +1,6 @@
 # The Sudarium of Oviedo: The Face-Cloth in the Holy Chamber
 
-*Vault entry V24 · Relics & Sacred Objects · Cámara Santa, Cathedral of San Salvador, Oviedo (Spain) · Recently added — pending full review.*
+*Vault entry V24 · Relics & Sacred Objects · Cámara Santa, Cathedral of San Salvador, Oviedo (Spain)*
 
 Three times a year the Cathedral of Oviedo shows a cloth. It is a piece of linen about **84 by 53 centimetres**, stained brown and dirty, with no image on it: only **blotches of what appear to be blood and fluid**, in patterns that have been mapped with great care. The Gospel of John (20:6–7) says that when Peter entered the empty tomb he saw the linen cloths lying there, "and the **sudarium** that had been on his head, not lying with the linen cloths but rolled up in a place by itself". The **Sudarium of Oviedo** is venerated as that cloth, wrapped around the dead Jesus's face after the crucifixion.
 

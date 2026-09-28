@@ -1,6 +1,6 @@
 # The Kartarpur Bir: The First Volume of the Sikh Scripture
 
-*Vault entry V33 · Manuscripts · The Sodhi family, Kartarpur, Punjab · Recently added — pending full review.*
+*Vault entry V33 · Manuscripts · The Sodhi family, Kartarpur, Punjab*
 
 In **1604**, Sikh tradition holds, the fifth Guru, **Guru Arjan**, completed a great anthology of hymns. It gathered the compositions of the first five Gurus with those of Hindu and Muslim devotional poets such as **Kabir**, **Namdev**, **Ravidas** and the Sufi **Shaikh Farid**. The scribe was the Guru's relative and follower **Bhai Gurdas**. The volume, the **Adi Granth**, was installed in the newly built **Harmandir Sahib** at Amritsar. A century later the tenth Guru, **Guru Gobind Singh**, ended the line of human Gurus and declared the scripture, as **Guru Granth Sahib**, the Guru for all time. A manuscript that Sikh tradition identifies as that first 1604 volume is kept today, privately, in the town of **Kartarpur**. It is the **Kartarpur Bir**.
 

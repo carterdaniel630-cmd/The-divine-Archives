@@ -1,7 +1,5 @@
 # Chapter 48 — The Great Goddess: The Divine Feminine and Its Modern Myth
 
-*Recently added — pending full review.*
-
 Goddesses are everywhere in the human record — queens of heaven, mothers of the gods, bringers of grain and death. But behind the many real goddesses stands a modern idea: that they were all, once, one Great Goddess, worshipped in a peaceful matriarchy before the sky-gods came. This chapter documents the goddesses we can actually attest — and treats that seductive, influential, and largely rejected hypothesis with the same honesty as everything else.
 
 ## A woman giving birth between two leopards

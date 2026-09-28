@@ -1,7 +1,5 @@
 # Chapter 29 — The Maya: The People of the Maize and the Glyph
 
-*Recently added — pending full review.*
-
 The rainforest civilization that built the only complete writing system in the ancient Americas and a religion of blood, maize, and dazzlingly precise time — its creation epic recovered from a single surviving book, its gods and kings read at last from deciphered glyphs, and the honest separation of what the stones and codices show from what the conquerors' fire destroyed.
 
 ## The rope through the tongue

@@ -1,6 +1,6 @@
 # The Piprahwa Relics: Bones, Jewels and an Inscription
 
-*Vault entry V46 · Relics & Objects · Indian Museum, Kolkata; National Museum, New Delhi · Recently added — pending full review.*
+*Vault entry V46 · Relics & Objects · Indian Museum, Kolkata; National Museum, New Delhi*
 
 In **January 1898** **William Claxton Peppé**, an English estate manager in the Terai of northern India, near the Nepal border, had his workmen dig into a large brick mound on his land at **Piprahwa**. It was an ancient **stupa**. About **18 feet** down they reached a massive **sandstone coffer**. Inside were **five small vessels**: urns and caskets of **soapstone** and **crystal**, holding **bone fragments**, ash, and some **1,800 tiny offerings**: pearls, gems, gold leaf and stars, beads and shells. Around the lid of one urn ran a line of writing in the **Brahmi** script. It seemed to say that these were **relics of the Buddha**, enshrined by his own people, the **Sakyas**.
 

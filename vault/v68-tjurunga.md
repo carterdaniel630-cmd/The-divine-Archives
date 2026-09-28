@@ -1,6 +1,6 @@
 # The Tjurunga of Central Australia: Objects Not to Be Seen
 
-*Vault entry V68 · Relics & Objects · Held by their custodians; many in museums under restricted access · Recently added — pending full review.*
+*Vault entry V68 · Relics & Objects · Held by their custodians; many in museums under restricted access*
 
 In **1896**, at the telegraph station in **Alice Springs**, Arrernte men held a long cycle of ceremonies in front of two outsiders: the biologist **Baldwin Spencer** and the telegraph master **Francis Gillen**. Among the things the men revealed were flat, oval boards of wood and stone, carved with circles, lines and arcs. They called them **tjurunga** (in older spelling, *churinga*). Three years later Spencer and Gillen published photographs of them. Today those photographs are treated as something that should never have been printed, and this entry does not reproduce any.
 

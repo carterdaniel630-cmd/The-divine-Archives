@@ -1,7 +1,5 @@
 # Chapter 51 — Sacrifice & the Scapegoat: The Gift of Blood
 
-*Recently added — pending full review.*
-
 To make something *sacred* — the word literally means "to make holy" — the ancient world gave it up: burned it, poured it out, killed it, drove it into the desert. Sacrifice is one of the most universal of all religious acts and one of the most troubling, and running through it is a single dark and durable idea: that the many can be spared by loading their guilt onto one, and sending that one away to die.
 
 ## Two goats and a scarlet thread

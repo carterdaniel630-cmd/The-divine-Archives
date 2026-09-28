@@ -1,6 +1,6 @@
 # The Phaistos Disc: Printed Signs Nobody Can Read
 
-*Vault entry V56 · Relics & Objects · Heraklion Archaeological Museum, Crete · Recently added — pending full review.*
+*Vault entry V56 · Relics & Objects · Heraklion Archaeological Museum, Crete*
 
 On **3 July 1908** the Italian archaeologist **Luigi Pernier** was excavating the **Minoan palace of Phaistos** in southern Crete. In a room of the palace complex he found a small disc of fired clay, about **16 centimetres** across. Both faces were covered with a **spiral** of little pictures: a walking man, a head with a plumed crest, a fish, a bird, a ship, a flower. Each sign had been **pressed into the wet clay with a stamp**, so that every occurrence of a sign is identical. It is the earliest known text made with something like **movable type**, and it has never been deciphered.
 

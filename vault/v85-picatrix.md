@@ -1,6 +1,6 @@
 # The Picatrix: The Goal of the Sage
 
-*Vault entry V85 · Texts & Tablets · Arabic original compiled in al-Andalus, 10th–11th century; Castilian translation 1256–1258 · Recently added — pending full review.*
+*Vault entry V85 · Texts & Tablets · Arabic original compiled in al-Andalus, 10th–11th century; Castilian translation 1256–1258*
 
 Take a stone engraved at the right hour, it says, when the Moon is in the right mansion and the right planet is rising, and the power of the heavens will pour down into the image you have cut. Burn the right incense, speak the prayer to the planet in its own words, and wear the talisman. This is the teaching of the ***Ghāyat al-Ḥakīm***, "**The Goal of the Sage**", an Arabic handbook of astral magic written in Muslim Spain. In Latin Europe it was called ***Picatrix***, and for five centuries it was the most complete manual of talismanic magic that European readers had.
 

@@ -1,7 +1,5 @@
 # Chapter 42 — The Neolithic: Temples Before the City
 
-*Recently added — pending full review.*
-
 The age when humans settled, farmed, and raised the first monuments to the sacred — a hilltop sanctuary older than agriculture, towns that buried their dead beneath the floor and kept their plastered skulls, and the great stones aligned to the turning sun — and the honest reckoning with a religion we can read only in architecture, never in words.
 
 ## The temple that came first

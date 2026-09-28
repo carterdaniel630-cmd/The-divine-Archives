@@ -1,6 +1,6 @@
 # The Pilate Stone: The Prefect in Stone
 
-*Vault entry V44 · Texts & Tablets · The Israel Museum, Jerusalem · Recently added — pending full review.*
+*Vault entry V44 · Texts & Tablets · The Israel Museum, Jerusalem*
 
 In **June 1961** an Italian team led by **Antonio Frova** was excavating the Roman **theatre** at **Caesarea Maritima**, the port city Herod the Great had built on the coast of Judaea. The archaeologist **Maria Teresa Fortuna Canivet** turned over a limestone block that had been used as a **step** in a later rebuilding of the theatre. Its underside carried four broken lines of Latin, and in the second line was a name known from every Christian creed: **PILATVS**.
 

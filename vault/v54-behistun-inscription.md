@@ -1,6 +1,6 @@
 # The Behistun Inscription: A King on a Cliff
 
-*Vault entry V54 · Texts & Tablets · Mount Bisotun, Kermanshah, Iran · Recently added — pending full review.*
+*Vault entry V54 · Texts & Tablets · Mount Bisotun, Kermanshah, Iran*
 
 On the old royal road from Babylon to Ecbatana, a limestone cliff rises from the plain at **Bisotun** in western Iran. High on its face, far out of reach, a relief shows a king with his foot on a fallen man. Nine bound captives stand before him, roped together at the neck. Above them floats a figure in a **winged disc**. Around the relief run columns of **cuneiform** in three languages. In the **1830s and 1840s** a young British officer, **Henry Rawlinson**, climbed ladders and ropes to copy them, and at the most dangerous spot a local boy swung across on ropes to take paper casts. The text he brought down became the key that opened **cuneiform**, the writing of ancient Mesopotamia.
 

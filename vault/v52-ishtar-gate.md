@@ -1,6 +1,6 @@
 # The Ishtar Gate: Babylon's Blue Door of Dragons
 
-*Vault entry V52 · Relics & Objects · Pergamonmuseum, Berlin (reconstruction) · Recently added — pending full review.*
+*Vault entry V52 · Relics & Objects · Pergamonmuseum, Berlin (reconstruction)*
 
 Each spring, at the **New Year festival** (*Akitu*), the statues of Babylon's gods were carried in procession along a broad road lined with walls of **blue glazed brick**, where **lions** strode in yellow and white relief. The road ran through a double gate faced with the same shining blue, set with row after row of **bulls** and **dragons**. The king who built it, **Nebuchadnezzar II** (r. 605–562 BCE), set a plaque in it:
 

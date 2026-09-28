@@ -1,6 +1,6 @@
 # The Kensington Runestone: Norse Explorers in Minnesota?
 
-*Vault entry V47 · Texts & Tablets · Runestone Museum, Alexandria, Minnesota · Recently added — pending full review.*
+*Vault entry V47 · Texts & Tablets · Runestone Museum, Alexandria, Minnesota*
 
 In **November 1898** **Olof Öhman**, a Swedish immigrant farmer near **Kensington**, Minnesota, was clearing trees on his land. According to his account, he pulled up an **aspen** and found a flat grey slab gripped in its roots. It weighed about **90 kg** and was carved on its face and one edge with **runes**. Translated, they told of **8 Goths and 22 Norwegians** on a journey of exploration from Vinland, of ten men found "**red with blood and dead**", a prayer to the Virgin, and a year: **1362**. If genuine, Scandinavians had reached the middle of North America 130 years before Columbus.
 

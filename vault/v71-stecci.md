@@ -1,6 +1,6 @@
 # The Stećci: Medieval Tombstones of Bosnia
 
-*Vault entry V71 · Relics & Objects · In place across Bosnia and Herzegovina, Croatia, Montenegro and Serbia · Recently added — pending full review.*
+*Vault entry V71 · Relics & Objects · In place across Bosnia and Herzegovina, Croatia, Montenegro and Serbia*
 
 On a hillside at **Radimlja**, near Stolac in Herzegovina, about 130 great blocks of limestone lie in rows beside the road. Some are flat slabs, some chests, some shaped like little houses with gabled roofs. Their sides are carved with spirals, vines, crescents, horsemen hunting deer, and a line of dancers holding hands. On one, a man stands with his **right hand raised and open**, the hand carved larger than life. These are **stećci** (singular *stećak*), the medieval tombstones of Bosnia and its neighbours, and for a century and a half they were wrongly known as the graves of heretics.
 

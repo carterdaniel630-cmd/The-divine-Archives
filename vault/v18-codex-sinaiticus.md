@@ -1,6 +1,6 @@
 # Codex Sinaiticus: The Bible in Four Libraries
 
-*Vault entry V18 · Manuscripts & Codices · British Library (London), Leipzig University Library, St Catherine's Monastery (Sinai), National Library of Russia (St Petersburg) · Recently added — pending full review.*
+*Vault entry V18 · Manuscripts & Codices · British Library (London), Leipzig University Library, St Catherine's Monastery (Sinai), National Library of Russia (St Petersburg)*
 
 In **1844** the young German scholar **Constantin von Tischendorf** was visiting **St Catherine's Monastery** at the foot of Mount Sinai. By his own later account, which the monks have always disputed, he saw old parchment leaves in a basket and was told they were bound for the fire. He left with **43 leaves** of an ancient Greek Bible and gave them to **Leipzig**. In **1859** he returned under the patronage of the Russian Tsar and was shown the rest. The manuscript went to **St Petersburg**. How it came to leave Sinai, whether as loan, gift or appropriation, is a **dispute that has never been resolved**. In **1933** the Soviet government, needing hard currency, **sold** most of it to the **British Museum** for £100,000.
 

@@ -1,6 +1,6 @@
 # The Holy Grail: A Cup Made of Stories
 
-*Vault entry V14 · Relics & Sacred Objects · Claimants in Valencia, Genoa, León and elsewhere · Recently added — pending full review.*
+*Vault entry V14 · Relics & Sacred Objects · Claimants in Valencia, Genoa, León and elsewhere*
 
 In the Cathedral of **Valencia**, in a chapel of its own, stands a small cup of **dark red agate**, about 9 centimetres across. It is mounted on a gold stem with two curved handles and a base carved from an inverted cup of chalcedony. Pope John Paul II celebrated Mass with it in 1982, and Benedict XVI did the same in 2006, calling it "this most famous chalice". It is the most widely known of the objects venerated as the **Holy Chalice**, the cup of the Last Supper. It is **not the only one**. Around the world, perhaps **two hundred places** claim a Grail. What connects them all is not an ancient chain of custody but **a set of stories written in France around the year 1200**.
 

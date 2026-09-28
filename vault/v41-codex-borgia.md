@@ -1,6 +1,6 @@
 # The Codex Borgia: A Painted Book of Days
 
-*Vault entry V41 · Manuscripts · Vatican Apostolic Library (Borg.mess.1) · Recently added — pending full review.*
+*Vault entry V41 · Manuscripts · Vatican Apostolic Library (Borg.mess.1)*
 
 In **1805** the naturalist **Alexander von Humboldt**, in Rome, examined the collections of the late **Cardinal Stefano Borgia**, a passionate collector of antiquities from every continent. Among them was a long strip of **deerskin**, folded like a screen and painted on both sides with gods, day-signs, numbers and brilliantly coloured scenes. How it came to Italy from Mexico is unknown. Humboldt published pages from it. When the cardinal's collection went to the **Vatican**, the book went with it and took his name. It is one of the **very few religious books from central Mexico** to survive the Spanish conquest.
 

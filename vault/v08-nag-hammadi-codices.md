@@ -1,6 +1,6 @@
 # The Nag Hammadi Codices: A Library in a Jar
 
-*Vault entry V08 · Manuscripts & Codices · Coptic Museum, Cairo · Recently added — pending full review.*
+*Vault entry V08 · Manuscripts & Codices · Coptic Museum, Cairo*
 
 In December 1945, near the Upper Egyptian town of Nag Hammadi, a farmer named **Muhammad Ali al-Samman** and his brothers were digging for *sabakh*, a nitrate-rich soil used as fertiliser, at the foot of the cliff called **Jabal al-Tarif**. They uncovered a **sealed clay jar** about a metre tall. By Muhammad Ali's later account, he hesitated to break it, fearing a *jinn* inside, then smashed it and found no gold, only **leather-bound books of papyrus**. The find passed through village hands, antiquities dealers and a family feud before the books reached scholars. What they held was the largest discovery of lost early Christian writings ever made: **twelve codices and eight leaves of a thirteenth**, containing some **fifty-two texts**, most of them unknown for sixteen centuries.
 

@@ -1,6 +1,6 @@
 # The Book of Kells: The Gospels as Labyrinth
 
-*Vault entry V21 · Manuscripts & Codices · Trinity College Dublin (MS 58) · Recently added — pending full review.*
+*Vault entry V21 · Manuscripts & Codices · Trinity College Dublin (MS 58)*
 
 On one page of the **Book of Kells**, three Latin words fill almost the whole sheet. Or rather, one word does. A gigantic **Chi** (Χ) sweeps across the vellum, followed by a **Rho** (Ρ) and an **Iota** (Ι), the first letters of *Christos* in Greek. Together they spell out **XPI**, the medieval abbreviation for *Christi*. Around and inside the letters, spirals coil within spirals. Knots interlace. Angels peer out of the curves. In a corner, **two cats watch two mice nibbling a Eucharistic wafer**, and an **otter holds a fish**. At the bottom, almost lost, is the rest of the sentence: ***autem generatio***. The words come from **Matthew 1:18**: "Now the birth of Christ [was on this wise]". It is the most famous page of the most famous book in Ireland.
 

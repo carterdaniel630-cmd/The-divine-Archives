@@ -1,7 +1,5 @@
 # Chapter 32 — The Witch Trials: The Persecution of an Imaginary Crime
 
-*Recently added — pending full review.*
-
 The two-and-a-half centuries in which early modern Europe hunted, tortured, and killed tens of thousands of its own people — overwhelmingly poor women — for a crime that, as its persecutors imagined it, did not exist; told as the documented history of a persecution, not as evidence that its victims were what they were accused of being.
 
 ## The confession

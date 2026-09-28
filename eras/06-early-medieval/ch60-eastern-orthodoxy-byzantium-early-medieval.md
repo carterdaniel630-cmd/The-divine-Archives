@@ -1,7 +1,5 @@
 # Chapter 60 — Eastern Orthodoxy & Byzantium: Heaven on Earth
 
-*Recently added — pending full review.*
-
 When the envoys of Prince Vladimir of Kiev returned from the great church of Hagia Sophia in Constantinople, they reported that during the liturgy they had not known "whether we were in heaven or on earth" — for on earth there is no such beauty, and God dwells there among men. The story is a later legend, but it captures the essence of Eastern Orthodoxy better than any doctrine: a Christianity that argues not first from law or logic but from *beauty*, and that understands worship as the meeting-place of heaven and earth.
 
 ## The faith of the Christian empire

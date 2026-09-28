@@ -1,7 +1,5 @@
 # Chapter 41 — The Paleolithic: The First Religion
 
-*Recently added — pending full review.*
-
 The deepest reach of the human religious imagination — tens of thousands of years of painted caves, carved figures, bone flutes, deliberate graves, and a lion-headed man who never walked the earth — and the discipline of saying honestly, across so vast a silence, what the evidence can and cannot tell us about the first faith.
 
 ## The lion-headed man

@@ -1,6 +1,6 @@
 # The Book of Soyga: John Dee's Unreadable Tables
 
-*Vault entry V19 · Manuscripts & Codices · Bodleian Library, Oxford (MS Bodley 908) and British Library (Sloane MS 8) · Recently added — pending full review.*
+*Vault entry V19 · Manuscripts & Codices · Bodleian Library, Oxford (MS Bodley 908) and British Library (Sloane MS 8)*
 
 In **1583**, at his house in Mortlake by the Thames, the Elizabethan mathematician and astrologer **John Dee** sat with his scryer **Edward Kelley** before a crystal stone. Dee, who spent much of his life trying to converse with angels, asked a question that had troubled him for years. What did his **Book of Soyga** mean? According to the diary in which Dee recorded these sessions, the angel **Uriel** answered that the book had been revealed to Adam in Paradise, and that only the archangel **Michael** could interpret it. Dee never found out what it meant. After his death the book dropped out of sight. For four centuries it was thought **lost**.
 

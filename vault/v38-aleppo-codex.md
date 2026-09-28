@@ -1,6 +1,6 @@
 # The Aleppo Codex: The Crown of the Hebrew Bible
 
-*Vault entry V38 · Manuscripts · The Israel Museum, Jerusalem · Recently added — pending full review.*
+*Vault entry V38 · Manuscripts · The Israel Museum, Jerusalem*
 
 In **December 1947**, days after the United Nations voted to partition Palestine, rioters in **Aleppo** set fire to the city's ancient **Central Synagogue**. In a locked iron chest in a side chamber lay the community's greatest treasure, a Bible its keepers called ***Keter Aram Tsova***, **the Crown of Aleppo**. When the fires died down, the manuscript had survived, but **scattered and damaged**. For ten years it was hidden. In **1958** it was smuggled to **Jerusalem**. By then about **40%** of its leaves were missing, among them **almost all of the Torah**. Only a few stray leaves have come to light since.
 

@@ -1,6 +1,6 @@
 # The Gospel of Judas: A Lost Gospel, a Looted Codex and a Disputed Translation
 
-*Vault entry V40 · Manuscripts · Coptic Museum, Cairo (Codex Tchacos) · Recently added — pending full review.*
+*Vault entry V40 · Manuscripts · Coptic Museum, Cairo (Codex Tchacos)*
 
 Around **180 CE**, **Irenaeus**, bishop of Lyon, listed the books of groups he called heretics. One group, he wrote, honoured **Cain** and the men of Sodom, and "they produce a fictitious history of this kind, which they style **the Gospel of Judas**." For 1,800 years that one sentence was all that was known of it. Then, in the **1970s**, a leather-bound **papyrus codex** in **Coptic** was found, probably in a burial cave near **al-Minya** in Middle Egypt. On its pages, after a letter of Peter and a text about James, was a work ending with the words **"The Gospel of Judas."**
 

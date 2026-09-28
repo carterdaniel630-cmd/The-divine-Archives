@@ -1,6 +1,6 @@
 # The Zohar, First Printings: Kabbalah Goes to Press
 
-*Vault entry V79 · Texts & Tablets · Mantua, 1558–1560, and Cremona, 1558–1560 · Recently added — pending full review.*
+*Vault entry V79 · Texts & Tablets · Mantua, 1558–1560, and Cremona, 1558–1560*
 
 In **1553**, in Rome and across Italy, copies of the **Talmud** were heaped up and burned on the orders of the Church. Five years later, in two small Italian cities a short journey apart, presses began to print a book that had until then circulated only in manuscript among a few initiates: the ***Zohar***, the "Book of Radiance", the great text of **Kabbalah**. In **Mantua**, two Jewish partners, **Meir ben Ephraim of Padua** and **Jacob ben Naphtali ha-Kohen of Gazzuolo**, printed it in three quarto volumes (**1558–1560**). In **Cremona**, the Christian printer **Vincenzo Conti** issued it as a single large folio (**1558–1560**). Which press put the first sheets out is reported differently; the two editions appeared in rivalry, almost together.
 

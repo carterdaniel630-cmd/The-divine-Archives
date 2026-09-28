@@ -1,6 +1,6 @@
 # The Haitian Vèvè: Drawings That Call the Spirits
 
-*Vault entry V77 · Texts & Tablets · Drawn anew for each ceremony · Recently added — pending full review.*
+*Vault entry V77 · Texts & Tablets · Drawn anew for each ceremony*
 
 In a Vodou temple (*ounfò*) in Haiti, before the drums begin, the priest (*oungan*) or priestess (*manbo*) kneels on the earthen floor of the dance space, the *peristil*, beside the painted centre-post, the *poto mitan*. Taking a handful of **cornmeal**, they let it trickle between thumb and fingers, tracing an intricate design on the ground: a cross with a walking stick, serpents around a pole, a heart filled with lattice. Each design is a **vèvè**, the sign of a particular **lwa** (spirit). Offerings are placed on it, songs are sung to it, and as the ceremony goes on the dancers' feet blur it into the dust.
 

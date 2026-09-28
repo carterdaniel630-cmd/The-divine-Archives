@@ -1,6 +1,6 @@
 # The Oracle Bones of Anyang: Questions to the Ancestors
 
-*Vault entry V55 · Texts & Tablets · Academia Sinica, Taipei; institutions in China and worldwide · Recently added — pending full review.*
+*Vault entry V55 · Texts & Tablets · Academia Sinica, Taipei; institutions in China and worldwide*
 
 In Chinese pharmacies of the late nineteenth century one could buy **"dragon bones"**, fragments of old bone and shell ground into medicine. In **1899** the scholar **Wang Yirong** noticed that some of them bore **carved signs** that looked like a very ancient form of Chinese writing. Collectors traced the bones to farmland near **Anyang** in Henan. From **1928** archaeologists excavating there found the royal capital of the **late Shang dynasty**, called **Yinxu**, "the ruins of Yin". They found the palaces and tombs of kings, and pits holding tens of thousands of inscribed **turtle shells** and **cattle shoulder-blades**. They are the earliest substantial body of **Chinese writing**, and they are almost all records of **divination**.
 

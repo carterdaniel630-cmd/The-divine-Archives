@@ -1,7 +1,5 @@
 # Chapter 54 — Zen & Pure Land: The Hardest Road and the Easiest
 
-*Recently added — pending full review.*
-
 A monk asks his master about the meaning of the Buddha's coming from the West, and is answered with a slap, or a shout, or "the cypress tree in the garden." A dying farmer, unable to read a single sutra, simply says the name of a Buddha six times and is promised paradise. These are the two great faces of East Asian Buddhism — the most demanding path and the most merciful — and they grew, side by side, from the same Mahayana root.
 
 ## Two roads up the same mountain

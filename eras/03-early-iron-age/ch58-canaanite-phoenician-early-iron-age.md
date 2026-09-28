@@ -1,7 +1,5 @@
 # Chapter 58 — Canaanite & Phoenician Religion: The Gods the Bible Fought
 
-*Recently added — pending full review.*
-
 In 1929 a farmer's plow on the Syrian coast struck the stone roof of an ancient tomb. Beneath it lay **Ugarit**, a Bronze Age city destroyed around 1185 BCE, and a library of clay tablets in an unknown alphabetic cuneiform. When they were read, they gave back something no one expected: the living voice of **Canaanite religion** — the faith of Baal and Asherah that the Hebrew prophets had spent centuries denouncing, now speaking, at last, in its own words rather than its enemies'.
 
 ## The recovered pantheon

@@ -1,6 +1,6 @@
 # The Gundestrup Cauldron: Gods in Silver from a Danish Bog
 
-*Vault entry V37 · Relics & Objects · National Museum of Denmark, Copenhagen · Recently added — pending full review.*
+*Vault entry V37 · Relics & Objects · National Museum of Denmark, Copenhagen*
 
 On **28 May 1891** peat-cutters in a small bog called **Rævemose**, near **Gundestrup** in the north of Jutland, struck metal. Under the peat lay a great **silver bowl**, and stacked inside it a set of **silver plates** crowded with **gods, beasts and warriors**. Someone had **taken the cauldron apart** before it was laid in the bog, placing the rim and the decorated plates in the bottom of the bowl. It is the **largest known piece of European Iron Age silverwork**.
 

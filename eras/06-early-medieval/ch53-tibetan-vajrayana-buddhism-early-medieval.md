@@ -1,7 +1,5 @@
 # Chapter 53 — Tibetan & Vajrayana Buddhism: The Diamond Vehicle
 
-*Recently added — pending full review.*
-
 For weeks, monks bend over a table, tapping colored sand grain by grain from metal funnels into a vast, intricate diagram — a palace of deities rendered in dyed stone, dazzlingly precise. And then, when it is finished and has been contemplated, they destroy it: sweep the whole shimmering cosmos into a heap of grey dust and pour it into a river. The sand mandala is Tibetan Buddhism in miniature — a tradition of overwhelming ritual richness built entirely to teach that nothing whatever is to be clung to.
 
 ## The third vehicle

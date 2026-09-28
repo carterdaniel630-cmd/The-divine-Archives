@@ -1,6 +1,6 @@
 # The Dead Sea Scrolls: A Library from the Caves
 
-*Vault entry V02 · Manuscripts & Codices · Israel Antiquities Authority and The Israel Museum, Jerusalem (with smaller holdings elsewhere) · Recently added — pending full review.*
+*Vault entry V02 · Manuscripts & Codices · Israel Antiquities Authority and The Israel Museum, Jerusalem (with smaller holdings elsewhere)*
 
 In the winter of 1946–47 a Bedouin shepherd of the Ta'amireh tribe threw a stone into a cave in the cliffs above the north-western shore of the Dead Sea, heard pottery break, and later climbed in. Inside were tall clay jars. In the jars were **leather scrolls wrapped in linen**. One of them, taken out of that cave (now called **Qumran Cave 1**), was a copy of the **Book of Isaiah seven metres long**, complete from its first chapter to its sixty-sixth. It was about a thousand years older than any Hebrew manuscript of Isaiah scholars had held before. Over the next decade, Bedouin searchers and archaeologists found **eleven caves** around the ruin of **Khirbet Qumran**. Between them they held the remains of roughly **900–1,000 manuscripts**, most of them broken into tens of thousands of fragments.
 

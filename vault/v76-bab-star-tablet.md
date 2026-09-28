@@ -1,6 +1,6 @@
 # The Báb's Star Tablet: A Temple of Words
 
-*Vault entry V76 · Manuscripts · British Library, London (Or. 6887) · Recently added — pending full review.*
+*Vault entry V76 · Manuscripts · British Library, London (Or. 6887)*
 
 In **2019**, to mark two hundred years since the birth of the **Báb**, the British Library put on display a sheet of paper covered in fine Arabic script. The lines of writing were not laid out in rows. They formed a **five-pointed star**, each of its five strokes made of words, the whole in the Báb's own hand. The Báb called such a figure a ***haykal***, a "temple", and he wrote many of them: prayers, talismans and letters in the shape of the human body.
 

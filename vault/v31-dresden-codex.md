@@ -1,6 +1,6 @@
 # The Dresden Codex: The Maya Book of Venus
 
-*Vault entry V31 · Manuscripts · SLUB Dresden, Mscr.Dresd.R.310 · Recently added — pending full review.*
+*Vault entry V31 · Manuscripts · SLUB Dresden, Mscr.Dresd.R.310*
 
 In **1739** **Johann Christian Götze**, director of the Royal Library in Dresden, bought from a private owner in **Vienna** a folded strip of painted bark-paper, covered in pictures and signs no one in Europe could read. Nobody knows how it reached Vienna, though a gift sent to the Habsburg court after the conquest of Mexico is one guess. In **February 1945**, in the firebombing of Dresden, the vault where it was kept was flooded, and some pages were **water-damaged**. It survived. It is the finest of the **four Maya books** known to have outlasted the Spanish conquest, when friars burned such books as works of idolatry.
 

@@ -1,6 +1,6 @@
 # The Tilma of Guadalupe: An Image on a Cloak
 
-*Vault entry V13 · Relics & Sacred Objects · Basilica of Our Lady of Guadalupe, Mexico City · Recently added — pending full review.*
+*Vault entry V13 · Relics & Sacred Objects · Basilica of Our Lady of Guadalupe, Mexico City*
 
 Above the altar of the modern Basilica of Guadalupe, behind glass, hangs a length of coarse cloth about **1.7 metres tall**. On it is the image of a young woman with a dark, gentle face, hands joined, standing on a crescent moon and wrapped in a blue-green mantle scattered with stars. She is surrounded by golden rays and held up by an angel. The Church calls her **Our Lady of Guadalupe**. Millions of pilgrims come to see her every year. The cloth is venerated as the **tilma** (cloak) of **Juan Diego**, an Indigenous convert. According to the tradition, in **December 1531** the image appeared on it when he opened the cloak before the bishop of Mexico and let fall the roses he had been told to gather on the hill of **Tepeyac**.
 

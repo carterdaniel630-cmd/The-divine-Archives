@@ -1,6 +1,6 @@
 # The Cyrus Cylinder: A Conqueror's Proclamation, and a Modern Myth
 
-*Vault entry V35 · Texts & Tablets · British Museum, London (BM 90920) · Recently added — pending full review.*
+*Vault entry V35 · Texts & Tablets · British Museum, London (BM 90920)*
 
 In **1879** the archaeologist **Hormuzd Rassam**, digging for the British Museum at **Babylon**, recovered a **barrel-shaped cylinder of baked clay** about **23 centimetres** long, broken and incomplete. It was covered in **Babylonian cuneiform**. It came from the ruins of Marduk's great temple, the **Esagila**, and was made as a **foundation deposit**: Mesopotamian kings buried building inscriptions for the gods and for future rulers to find. Its speaker was **Cyrus the Great**, the Persian king who had taken Babylon in **539 BCE**.
 

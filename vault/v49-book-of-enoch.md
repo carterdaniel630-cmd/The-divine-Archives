@@ -1,6 +1,6 @@
 # The Book of Enoch: The Scripture Only Ethiopia Kept
 
-*Vault entry V49 · Manuscripts · Ge'ez manuscripts in Ethiopia and Europe; Aramaic fragments from Qumran · Recently added — pending full review.*
+*Vault entry V49 · Manuscripts · Ge'ez manuscripts in Ethiopia and Europe; Aramaic fragments from Qumran*
 
 Genesis says only this of **Enoch**, seventh from Adam: he "walked with God; and he was not, for God took him" (Genesis 5:24). From that one strange line grew an entire literature. By the third century BCE, Jewish writers were composing books in Enoch's name: visions of heaven, a history of the fallen angels, the secrets of the calendar, the end of days. The **Letter of Jude** in the New Testament quotes one of them as prophecy. Then, in most of the Christian world, the book disappeared. In **1773** the Scottish traveller **James Bruce** came home from Ethiopia with **three manuscripts** of it, written in **Ge'ez**, the classical language of the Ethiopian church, where it had been read as **Scripture** all along.
 

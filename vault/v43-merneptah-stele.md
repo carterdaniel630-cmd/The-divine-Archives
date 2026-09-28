@@ -1,6 +1,6 @@
 # The Merneptah Stele: The First Mention of Israel
 
-*Vault entry V43 · Texts & Tablets · Egyptian Museum, Cairo (JE 31408) · Recently added — pending full review.*
+*Vault entry V43 · Texts & Tablets · Egyptian Museum, Cairo (JE 31408)*
 
 In **1896** **Flinders Petrie** was digging in the ruined mortuary temple of the pharaoh **Merneptah** at **Thebes**. He found a **black granite stele** over three metres tall, lying face-down. One side carried an inscription of the earlier king **Amenhotep III**. Merneptah, the thirteenth son and successor of Ramesses II, had taken the stone and carved his own text on the back. An epigrapher, **Wilhelm Spiegelberg**, read it for Petrie on the spot. Near the end he came to a name he did not expect. Petrie is said to have told his colleagues that evening that this stele would be better known than anything else he had found. The name was **Israel**.
 

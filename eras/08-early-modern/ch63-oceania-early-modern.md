@@ -1,7 +1,5 @@
 # Chapter 63 — Oceania: Mana, Taboo, and the Gods of the Sea
 
-*Recently added — pending full review.*
-
 On a treeless island in the remotest corner of the Pacific stand hundreds of colossal stone figures, most with their backs to the sea, gazing inward over the land. They are the **moai** of Rapa Nui (Easter Island) — carved images of the ancestors, set up to face the living villages and to pour the ancestors' sacred power over them. They are the most famous monuments of Oceania, and they open onto a religious world built on two ideas that the English language borrowed and never gave back: *mana* and *taboo*.
 
 ## The peopling of the sea

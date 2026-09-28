@@ -1,7 +1,5 @@
 # Chapter 40 — The Diaspora Religions: The Gods That Survived the Crossing
 
-*Recently added — pending full review.*
-
 The living Afro-Atlantic faiths — Haitian Vodou, Cuban Santería, Brazilian Candomblé, Kongo-derived Palo, the Voodoo of New Orleans, and the newer fire of Rastafari — that grew from the African religions carried into slavery and reforged in the Americas, and the honest work of seeing them as the rich, healing, community faiths they are, behind the racist caricature the word "voodoo" has draped over them.
 
 ## The oath at Bois Caïman

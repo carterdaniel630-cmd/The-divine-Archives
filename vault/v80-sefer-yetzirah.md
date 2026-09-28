@@ -1,6 +1,6 @@
 # The Sefer Yetzirah: The Book of Creation
 
-*Vault entry V80 · Texts & Tablets · Date of composition disputed (late antiquity to early Islamic period) · Recently added — pending full review.*
+*Vault entry V80 · Texts & Tablets · Date of composition disputed (late antiquity to early Islamic period)*
 
 It is one of the shortest books in Jewish literature, a few pages long, and one of the strangest. It begins: "**With thirty-two wondrous paths of wisdom** Yah, the Lord of hosts, engraved and created his world." It then describes those paths: **ten** *sefirot* and the **twenty-two** letters of the Hebrew alphabet. God, in this book, makes the world the way a scribe makes a text, by carving, weighing and combining **letters**. The ***Sefer Yetzirah***, the "Book of Formation" or "Book of Creation", is the oldest surviving work of Jewish speculation about language and cosmos, and the root of much later Kabbalah.
 

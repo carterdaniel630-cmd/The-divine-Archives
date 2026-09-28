@@ -1,6 +1,6 @@
 # The Codex Mendoza: An Aztec World for a Spanish Emperor
 
-*Vault entry V51 · Manuscripts · Bodleian Library, Oxford (MS. Arch. Selden. A. 1) · Recently added — pending full review.*
+*Vault entry V51 · Manuscripts · Bodleian Library, Oxford (MS. Arch. Selden. A. 1)*
 
 Around **1541**, twenty years after the fall of **Tenochtitlan**, the first viceroy of New Spain, **Antonio de Mendoza**, commissioned a book for the emperor **Charles V**. Indigenous **tlacuiloque**, painter-scribes trained in the old way, painted its pages in the pictorial script of central Mexico. A Spanish interpreter added notes and a commentary. It was meant to explain to the king the empire he now ruled: how it began, what it collected, and how its people lived. The ship carrying it across the Atlantic was **taken by French privateers**. The book survived, travelled through the hands of scholars in France and England, and has been in **Oxford** since 1659.
 

@@ -1,6 +1,6 @@
 # The Nebra Sky Disc: A Bronze Age Sky
 
-*Vault entry V45 · Relics & Objects · State Museum of Prehistory, Halle (Saale) · Recently added — pending full review.*
+*Vault entry V45 · Relics & Objects · State Museum of Prehistory, Halle (Saale)*
 
 In **July 1999** two men with **metal detectors**, working illegally, dug into the summit of the **Mittelberg**, a hill near **Nebra** in Saxony-Anhalt, Germany. They found a hoard: two bronze **swords**, two **axes**, a **chisel**, fragments of **spiral bracelets**, and a round green plate of bronze inlaid with **gold**. They sold it on, damaging it in the process. In **February 2002**, in a hotel in **Basel**, a buyer who said he represented a museum met the dealers. He was **Harald Meller**, the state archaeologist, working with the Swiss police. The disc was seized. The looters were later convicted, and one led archaeologists to the find spot.
 

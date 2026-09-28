@@ -1,6 +1,6 @@
 # The Inca Khipu: An Empire Tied in Knots
 
-*Vault entry V62 · Texts & Tablets · About 1,000 or more in museums worldwide · Recently added — pending full review.*
+*Vault entry V62 · Texts & Tablets · About 1,000 or more in museums worldwide*
 
 In **1583**, the **Third Council of Lima**, the Catholic bishops of Spanish Peru, ordered that the Indigenous peoples' **khipus** be taken and burned, because they were used to record "idolatry" and to confess sins in the old way. The khipu was the **knotted cord** of the Andes: a main cord from which hung dozens or hundreds of coloured pendant cords, knotted in patterns. With them the **Inca**, who ruled the largest state in the Americas, counted people, llamas, tribute and time. The Spanish chroniclers said that the khipu specialists, the ***khipukamayuq***, could also read out **histories, laws and songs** from them. Whether that is true is still unknown.
 

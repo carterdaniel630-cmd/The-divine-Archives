@@ -1,7 +1,5 @@
 # Chapter 50 — The End of Days: Apocalypse and the Shape of Time
 
-*Recently added — pending full review.*
-
 Somewhere in the last few centuries before the common era, a new idea entered the religious imagination and never left it: that history is going *somewhere* — that it has an end, a last battle between good and evil, a final judgment, and a world made new. Where that idea came from, how it spread to half of humanity, and why some traditions instead imagined the end as a wheel that turns forever, is one of the great stories this archive has to tell.
 
 ## A battle plan for the end of the world

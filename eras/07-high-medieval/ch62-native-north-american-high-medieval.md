@@ -1,7 +1,5 @@
 # Chapter 62 — Native North American Religion: The Sacred in All Things
 
-*Recently added — pending full review.*
-
 Around the year 1100, on the floodplain across the river from modern St. Louis, stood a city. At its heart rose **Monks Mound** — a flat-topped earthen pyramid built up over centuries in fourteen stages, its base larger than that of the Great Pyramid of Giza, crowned by a great temple and the house of a paramount chief. This was **Cahokia**, the largest city in North America north of Mexico, home to perhaps fifteen thousand people, aligned to the sun by a great timber circle. It is the most dramatic monument of a religious world that Europeans would later pretend did not exist — the vast, ancient, and staggeringly diverse spiritual life of Native North America.
 
 ## The problem of "one" religion

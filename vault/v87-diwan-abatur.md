@@ -1,6 +1,6 @@
 # The Diwan Abatur: A Map of the Soul's Road
 
-*Vault entry V87 · Manuscripts · Mandaean illustrated scroll; the copy Drower published (DC 8) is 18th-century · Bodleian Library, Oxford, and Vatican Library · Recently added — pending full review.*
+*Vault entry V87 · Manuscripts · Mandaean illustrated scroll; the copy Drower published (DC 8) is 18th-century · Bodleian Library, Oxford, and Vatican Library*
 
 Unrolled, it runs for more than **six metres**. Along it walk and sit strange figures drawn in ink: beings with human bodies and the heads of beasts, towers with animals chained at their doors, a **boat** on a river, and a great figure seated with a pair of **scales**. Between the pictures run lines of Mandaic script. This is the ***Diwan Abatur***, the "Scroll of Abatur", a sacred illustrated scroll of the **Mandaeans**, the Gnostic baptising community of southern Iraq and Iran. It maps the road that a soul travels after death, through a series of watch-houses, to the place where it is **weighed**.
 

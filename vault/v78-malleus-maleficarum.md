@@ -1,6 +1,6 @@
 # The Malleus Maleficarum: The Hammer of Witches
 
-*Vault entry V78 · Texts & Tablets · First printed at Speyer, 1486 · Recently added — pending full review.*
+*Vault entry V78 · Texts & Tablets · First printed at Speyer, 1486*
 
 In the autumn of **1485** a Dominican inquisitor named **Heinrich Kramer** (in Latin, *Institoris*) was questioning women in **Innsbruck**. One of them, **Helena Scheuberin**, a burgher's wife, had defied him; Kramer's questions about her sexual life scandalised the court. Her lawyers had the proceedings dismissed on procedural grounds, and the local bishop, **Georg Golser of Brixen**, told Kramer he had "presumed much that had not been proved" and ordered him out of the diocese, calling him, in a letter, a man who seemed to have become childish with age. Kramer left, and wrote a book. It was printed at **Speyer in 1486** as the ***Malleus Maleficarum***, "the Hammer of Witches".
 

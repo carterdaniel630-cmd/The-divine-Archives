@@ -1,6 +1,6 @@
 # The Black Stone of the Kaaba
 
-*Vault entry V26 · Relics & Sacred Objects · Set in the eastern corner of the Kaaba, the Sacred Mosque, Mecca · Recently added — pending full review.*
+*Vault entry V26 · Relics & Sacred Objects · Set in the eastern corner of the Kaaba, the Sacred Mosque, Mecca*
 
 Pilgrims circling the **Kaaba** during the Hajj pass one corner again and again. Set into the wall there, about a metre and a half above the ground and held in a **silver frame**, are the dark, polished fragments of a stone: the **Black Stone** (*al-Ḥajar al-Aswad*). Many pilgrims try to **kiss or touch it** as they pass, as the Prophet Muhammad is reported to have done. When the crowds make that impossible, as they usually do, pilgrims **raise a hand towards it** from a distance at the start of each circuit.
 

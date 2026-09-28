@@ -1,6 +1,6 @@
 # The Pyramid Texts of Unas: Spells for a King Who Would Not Die
 
-*Vault entry V34 · Texts & Tablets · In place: the Pyramid of Unas, Saqqara · Recently added — pending full review.*
+*Vault entry V34 · Texts & Tablets · In place: the Pyramid of Unas, Saqqara*
 
 In **1880** workmen of Egypt's Antiquities Service broke into a ruined pyramid at **Saqqara**, the pyramid of the Sixth-Dynasty king **Pepi I**. They found its inner walls **covered in columns of hieroglyphs**. **Auguste Mariette**, the head of the service, was dying and doubted the report: no Old Kingdom pyramid had ever been found inscribed. His successor, **Gaston Maspero**, pressed on. In **1881** he entered the smaller, older pyramid of **Unas**, last king of the **Fifth Dynasty** (c. 2350 BCE). From floor to ceiling its chambers were carved with spells, the signs **filled with blue pigment**. Above them, on the gabled ceiling, were carved **stars**. It is the **oldest large body of religious writing** known from anywhere in the world.
 

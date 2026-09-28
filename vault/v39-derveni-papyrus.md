@@ -1,6 +1,6 @@
 # The Derveni Papyrus: Europe's Oldest Book, Saved by Fire
 
-*Vault entry V39 · Manuscripts · Archaeological Museum of Thessaloniki · Recently added — pending full review.*
+*Vault entry V39 · Manuscripts · Archaeological Museum of Thessaloniki*
 
 On **15 January 1962**, road-workers widening the highway from **Thessaloniki** to Kavala uncovered a group of rich **Macedonian cist tombs** at **Derveni**, about 10 km north of the city. On the covering slabs of the tomb labelled **A** lay the remains of a **funeral pyre**, and in the ash a **charred lump of papyrus**. Papyrus does not survive in Greece's damp soil. This roll survived because the fire had turned it to **carbon** without consuming it. It is **the oldest surviving book in Europe**.
 

@@ -1,7 +1,5 @@
 # Chapter 44 — The Inca: The Empire of the Sun
 
-*Recently added — pending full review.*
-
 The religion of the largest empire the Americas ever knew — a living sun-emperor, a landscape wired with sacred lines and shrines, the mummified dead who still ruled, and children carried to die on the roof of the world — reconstructed from stone, frozen bodies, knotted cords, and the records of the conquerors who overthrew it, with a steady eye on how much of it we can actually read.
 
 ## The child on the summit

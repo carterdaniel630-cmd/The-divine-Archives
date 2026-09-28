@@ -1,6 +1,6 @@
 # The Great Isaiah Scroll: A Whole Book from Qumran
 
-*Vault entry V48 · Manuscripts · The Israel Museum, Jerusalem (1QIsaᵃ) · Recently added — pending full review.*
+*Vault entry V48 · Manuscripts · The Israel Museum, Jerusalem (1QIsaᵃ)*
 
 In **1947** Bedouin shepherds took a handful of leather scrolls from a cave above the Dead Sea (V02). One of them, when unrolled, turned out to be a **complete book of the Bible**: the prophet **Isaiah**, all **66 chapters**, in **54 columns** on seventeen sheets of parchment sewn end to end. It is **7.34 metres** long. Before 1947 the oldest complete manuscripts of Isaiah in Hebrew were medieval, from around 1000 CE. This scroll was about **a thousand years older**.
 

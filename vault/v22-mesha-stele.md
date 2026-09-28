@@ -1,6 +1,6 @@
 # The Mesha Stele: A King of Moab Answers the Bible
 
-*Vault entry V22 · Texts & Tablets · Musée du Louvre, Paris (AO 5066) · Recently added — pending full review.*
+*Vault entry V22 · Texts & Tablets · Musée du Louvre, Paris (AO 5066)*
 
 In **1868** an Anglican missionary, **F. A. Klein**, was shown a black basalt stone, about a metre tall and rounded at the top, lying at **Dhiban** in what is now Jordan. It was covered with **34 lines** of writing in an alphabet close to early Hebrew. European consulates began bidding for it. Before it could be removed, the local **Bani Hamida** people **heated it in a fire, poured cold water over it and shattered it**. Accounts differ on whether they wanted to spite the Ottoman authorities or to multiply its value. Fortunately the French scholar **Charles Clermont-Ganneau** had already obtained a **squeeze**, a papier-mâché impression, of the intact text, torn in haste while still wet. From that squeeze and most of the recovered pieces, the stone was **reassembled**. It is now in the **Louvre**.
 

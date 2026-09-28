@@ -1,6 +1,6 @@
 # The Codex Gigas: The Devil's Bible
 
-*Vault entry V09 · Manuscripts & Codices · National Library of Sweden (Kungliga biblioteket), Stockholm · Recently added — pending full review.*
+*Vault entry V09 · Manuscripts & Codices · National Library of Sweden (Kungliga biblioteket), Stockholm*
 
 It takes two people to lift it. Bound in wooden boards covered with leather and metal fittings, the **Codex Gigas** ("giant book") is about **92 centimetres tall, 50 wide and 22 thick**, and weighs around **75 kilograms**. It is the **largest surviving medieval manuscript**. Open it towards the end and you reach a page found in no other Bible: a **full-page devil**, nearly a metre high, green-faced, horned, clawed, crouching in an ermine loincloth. On the facing page is a **Heavenly City**. The pairing gave the book its nickname, the **Devil's Bible**, and a legend that has never let go of it.
 

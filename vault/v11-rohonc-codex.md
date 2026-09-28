@@ -1,6 +1,6 @@
 # The Rohonc Codex: A Prayer Book No One Can Read
 
-*Vault entry V11 · Manuscripts & Codices · Library of the Hungarian Academy of Sciences, Budapest · Recently added — pending full review.*
+*Vault entry V11 · Manuscripts & Codices · Library of the Hungarian Academy of Sciences, Budapest*
 
 In **1838** the Hungarian nobleman **Count Gusztáv Batthyány** gave his family library to the **Hungarian Academy of Sciences**. Among the thirty thousand volumes was a small book, about **12 by 10 centimetres**, of **448 paper pages**. It was written right to left in a script of about **two hundred distinct signs**, and it had **87 drawings**: crucifixions, a Last Supper, soldiers, and symbols that look **Christian, pagan and Islamic** by turns. It had come from the library at **Rohonc** (today Rechnitz, in Austria). Nearly two centuries later, it is still **unread**.
 

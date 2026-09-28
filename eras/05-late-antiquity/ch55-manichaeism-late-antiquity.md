@@ -1,7 +1,5 @@
 # Chapter 55 — Manichaeism: The Religion of Light
 
-*Recently added — pending full review.*
-
 A prophet in third-century Persia set out to do something no one had quite tried before: to found, deliberately and from the start, a *world* religion — one that would absorb and complete Zoroaster, the Buddha, and Jesus all at once, be translated into every language, and carry its truth in paintings so that even the illiterate could see it. For a few centuries it nearly worked: the religion of Mani stretched from Spain to China. Then it was hunted to extinction, and very nearly erased from memory.
 
 ## The apostle of light

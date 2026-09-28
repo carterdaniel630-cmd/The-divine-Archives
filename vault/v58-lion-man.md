@@ -1,6 +1,6 @@
 # The Lion Man of Hohlenstein-Stadel: The First Imagined Being
 
-*Vault entry V58 · Relics & Objects · Museum Ulm, Germany · Recently added — pending full review.*
+*Vault entry V58 · Relics & Objects · Museum Ulm, Germany*
 
 On **25 August 1939**, in the last days of an excavation in the **Hohlenstein-Stadel** cave in the Lone valley of southern Germany, the geologist **Otto Völzing** recovered a mass of broken **mammoth ivory** from the back of the cave. The dig, led by the anatomist **Robert Wetzel**, was closed a week later when the Second World War began, and the fragments went into storage in Ulm unrecognised. Thirty years later they were found to belong to a single figure: a standing body with a **lion's head**. It is one of the oldest known sculptures in the world, and one of the oldest images of something no one has ever seen: a being that is part human, part animal.
 

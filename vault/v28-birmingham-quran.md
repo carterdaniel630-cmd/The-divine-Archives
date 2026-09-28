@@ -1,6 +1,6 @@
 # The Birmingham Qur'an Manuscript: Two Leaves and a Date
 
-*Vault entry V28 · Manuscripts · Cadbury Research Library, University of Birmingham (Mingana Islamic Arabic 1572a) · Recently added — pending full review.*
+*Vault entry V28 · Manuscripts · Cadbury Research Library, University of Birmingham (Mingana Islamic Arabic 1572a)*
 
 In **2015** a doctoral researcher, **Alba Fedeli**, was studying Qur'an fragments in the **Mingana Collection** at the University of Birmingham. She noticed that **two leaves** bound into one manuscript did not belong with the rest. Their script was different, and so was their parchment. They had been **misbound** with leaves of another early Qur'an. The university sent samples to the **Oxford Radiocarbon Accelerator Unit**. The answer came back **568–645 CE**, at 95.4% probability. News reports around the world called them among **the oldest Qur'an fragments known**.
 

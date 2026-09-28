@@ -1,6 +1,6 @@
 # The Rök Runestone: A Father's Riddles
 
-*Vault entry V36 · Texts & Tablets · Rök, Östergötland, Sweden (Ög 136) · Recently added — pending full review.*
+*Vault entry V36 · Texts & Tablets · Rök, Östergötland, Sweden (Ög 136)*
 
 For centuries the stone lay built into the wall of a **storehouse** beside the church at **Rök**, in the plains of Östergötland in southern Sweden, its carved faces partly hidden. In **1843** workers found carving on more sides than the one they could see; in **1862** it was taken out of the wall and set up in the churchyard. It is a **granite slab about 2.4 metres high**, covered on **five faces** with some **760 runes**. It is **the longest runic inscription in the world**. Carved in the early **ninth century**, it begins plainly:
 

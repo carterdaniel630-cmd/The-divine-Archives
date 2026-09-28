@@ -1,6 +1,6 @@
 # The James Ossuary: A Bone Box and a Disputed Line
 
-*Vault entry V16 · Relics & Sacred Objects · Returned to its private owner, Oded Golan, after a criminal trial · Recently added — pending full review.*
+*Vault entry V16 · Relics & Sacred Objects · Returned to its private owner, Oded Golan, after a criminal trial*
 
 In **October 2002**, at a press conference in Washington, D.C., a limestone box about 50 centimetres long was presented to the world. It was an **ossuary**, a chest for bones of the kind Jews in and around Jerusalem used for secondary burial in the first century BCE and first century CE. Along one side ran a short **Aramaic** inscription: ***Ya'akov bar Yosef akhui di Yeshua***, "**James, son of Joseph, brother of Jesus**." If genuine, and if it referred to the Jesus of the Gospels, it would be the **earliest physical reference to Jesus** ever found. Within a year the **Israel Antiquities Authority** declared the inscription a **forgery**. Within two years the box's owner was on trial. The trial ended in **2012** with an acquittal that **settled nothing** about the inscription.
 

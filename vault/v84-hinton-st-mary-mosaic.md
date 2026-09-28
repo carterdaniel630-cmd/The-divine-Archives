@@ -1,6 +1,6 @@
 # The Hinton St Mary Mosaic: A Face Before the Chi-Rho
 
-*Vault entry V84 · Relics & Artifacts · Hinton St Mary, Dorset, 4th century CE · British Museum, London · Recently added — pending full review.*
+*Vault entry V84 · Relics & Artifacts · Hinton St Mary, Dorset, 4th century CE · British Museum, London*
 
 In **1963**, in the Dorset village of **Hinton St Mary**, the blacksmith **Walter White** was digging a post-hole when his spade struck a floor of small coloured stones. Excavation uncovered the mosaic pavement of two rooms of a Roman building. In the middle of the larger room was a roundel: the head and shoulders of a clean-shaven, fair-haired man in a cloak, and behind his head the monogram **☧**, the **Chi-Rho**, the first two Greek letters of *Christos*. On either side of him hangs a **pomegranate**. If the face is Christ's, as most scholars think, it is one of the earliest known pictures of him anywhere, and the earliest from Britain.
 

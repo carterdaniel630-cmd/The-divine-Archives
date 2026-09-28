@@ -1,6 +1,6 @@
 # The Kojiki: The Shinpukuji Manuscript
 
-*Vault entry V61 · Manuscripts · Ōsu Kannon (Shinpukuji), Nagoya, Japan · Recently added — pending full review.*
+*Vault entry V61 · Manuscripts · Ōsu Kannon (Shinpukuji), Nagoya, Japan*
 
 In **1371 and 1372**, a monk named **Ken'yu** at the Buddhist temple of **Shinpukuji** in Owari province copied out, in three volumes, a Japanese book that was already more than six hundred years old. It began: *"At the time when heaven and earth first opened..."* His copy is the **oldest surviving manuscript** of the **Kojiki**, the "Record of Ancient Matters", Japan's oldest surviving book. It is kept today at the temple of **Ōsu Kannon** in Nagoya and is a **National Treasure** of Japan.
 

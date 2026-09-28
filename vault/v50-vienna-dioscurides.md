@@ -1,6 +1,6 @@
 # The Vienna Dioscurides: Medicine, Magic and a Princess's Herbal
 
-*Vault entry V50 · Manuscripts · Austrian National Library, Vienna (Cod. med. gr. 1) · Recently added — pending full review.*
+*Vault entry V50 · Manuscripts · Austrian National Library, Vienna (Cod. med. gr. 1)*
 
 Around **512** the people of the Constantinople suburb of Honoratae wanted to thank a patron. **Anicia Juliana**, daughter of a western emperor and one of the richest women of the Roman world, had paid for a new church there. Their gift was a **book**: a luxurious copy of the most famous work of ancient medicine, **Dioscorides' *De materia medica***, with a painting of **every plant**. On one of its first pages Juliana sits enthroned, flanked by personified virtues. It is one of the greatest books to survive from late antiquity, and it has been in constant use ever since.
 

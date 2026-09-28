@@ -1,6 +1,6 @@
 # The Kalpa Sutra Manuscripts: Fourteen Dreams in Gold
 
-*Vault entry V63 · Manuscripts · Jain temple libraries (bhandars) in India; museums worldwide · Recently added — pending full review.*
+*Vault entry V63 · Manuscripts · Jain temple libraries (bhandars) in India; museums worldwide*
 
 Each year at the end of summer, during the eight-day festival of **Paryushana**, Shvetambara Jain monks in western India read aloud from a book that the community holds among its most sacred: the **Kalpa Sutra**. On the fifth day the reading reaches the **birth of Mahavira**, the twenty-fourth Jina. Before his birth his mother, **Queen Trishala**, dreamed **fourteen dreams**, and in temples silver replicas of the dreams are shown to the congregation and families make offerings to honour them. For centuries the book was copied by hand and **illustrated**, in brilliant **red, blue and gold**, and gifting a copy to a temple library was an act of religious merit.
 

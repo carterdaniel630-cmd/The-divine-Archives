@@ -1,6 +1,6 @@
 # The Diamond Sutra of Dunhuang: The Oldest Dated Printed Book
 
-*Vault entry V30 · Manuscripts · British Library, London (Or.8210/P.2) · Recently added — pending full review.*
+*Vault entry V30 · Manuscripts · British Library, London (Or.8210/P.2)*
 
 Around **1900**, a Daoist monk named **Wang Yuanlu**, who had made himself caretaker of the **Mogao caves** near **Dunhuang**, found a **sealed doorway** behind a painted wall. Behind it was a small chamber, now called **Cave 17** or **the Library Cave**, packed from floor to ceiling with **tens of thousands of manuscripts, paintings and prints**. It had been walled up around the year 1000, and the reason is unknown. In **1907** the archaeologist **Aurel Stein** bought a large share of the collection from Wang. Among the rolls he took to London was a scroll about **five metres long**, printed from carved wooden blocks. At its end it gives the day it was made: **11 May 868**.
 

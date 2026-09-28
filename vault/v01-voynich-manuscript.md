@@ -1,6 +1,6 @@
 # The Voynich Manuscript: A Book Nobody Can Read
 
-*Vault entry V01 · Manuscripts & Codices · Beinecke Rare Book & Manuscript Library, Yale University, MS 408 · Recently added — pending full review.*
+*Vault entry V01 · Manuscripts & Codices · Beinecke Rare Book & Manuscript Library, Yale University, MS 408*
 
 A small book, about the size of a modern hardback (roughly 23 by 16 centimetres), lies in a climate-controlled vault in New Haven. It is bound in limp vellum. Inside are roughly 240 surviving pages of calfskin covered in a flowing, confident script that nobody alive, and as far as anyone can prove nobody dead, has ever been able to read. Beside the writing are plants that match no plant exactly, circles of stars and naked women, a zodiac with Latin-alphabet month names added by a later hand, green pools linked by tubes, and a folding sheet of nine rosettes joined by causeways. The book is catalogued as **Beinecke MS 408, "Cipher manuscript"**. Everyone else calls it the **Voynich Manuscript**, after the antiquarian bookseller who brought it to light in 1912.
 

@@ -1,6 +1,6 @@
 # The Kebra Nagast: The Glory of the Kings
 
-*Vault entry V66 · Manuscripts · Many Ge'ez manuscripts in Ethiopia and in European libraries · Recently added — pending full review.*
+*Vault entry V66 · Manuscripts · Many Ge'ez manuscripts in Ethiopia and in European libraries*
 
 In **August 1872**, the **British Museum** sent a manuscript back to Ethiopia. Four years earlier, a British army under **Sir Robert Napier** had stormed the mountain fortress of **Magdala**, where the Emperor **Tewodros II** took his own life, and carried away hundreds of manuscripts from his library and the churches. The new emperor, **Yohannes IV**, wrote to the British government asking for one book in particular: the ***Kebra Nagast***, the "Glory of the Kings". Without it, he wrote, his people would not obey him. A copy was returned. The book told how Ethiopia's kings descended from **Solomon** and the **Queen of Sheba**, and how the **Ark of the Covenant** came to Ethiopia.
 

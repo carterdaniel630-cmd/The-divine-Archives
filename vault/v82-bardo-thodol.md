@@ -1,6 +1,6 @@
 # The Bardo Thödol: "Liberation Through Hearing in the In-Between"
 
-*Vault entry V82 · Texts & Tablets · Revealed as a treasure text by Karma Lingpa, 14th century · Recently added — pending full review.*
+*Vault entry V82 · Texts & Tablets · Revealed as a treasure text by Karma Lingpa, 14th century*
 
 In Tibet, when someone dies, a lama may sit beside the body and read aloud. The reading continues for days, as long as **forty-nine**, addressed not to the mourners but to the dead person, by name: "O child of noble family, listen without distraction. Now what is called death has arrived." The text tells the consciousness where it is, what it is seeing, and how to be free. Its Tibetan name is ***Bardo Thödol*** (*bar do thos grol*), "**Liberation through Hearing in the Intermediate State**". Since **1927**, English readers have known it as ***The Tibetan Book of the Dead***.
 

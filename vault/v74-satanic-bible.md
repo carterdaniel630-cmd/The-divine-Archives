@@ -1,6 +1,6 @@
 # The Satanic Bible: A Religion Without a Devil
 
-*Vault entry V74 · Texts & Tablets · Published by Avon Books, 1969 · Recently added — pending full review.*
+*Vault entry V74 · Texts & Tablets · Published by Avon Books, 1969*
 
 On **Walpurgisnacht**, 30 April **1966**, in a black-painted Victorian house on California Street in **San Francisco**, a former carnival organist and occult lecturer named **Anton Szandor LaVey** shaved his head and declared the founding of the **Church of Satan**. Three years later, in December **1969**, the paperback house **Avon Books** published his *Satanic Bible*. Its cover carried a goat's head inside an inverted five-pointed star: the **Sigil of Baphomet**. The book has never gone out of print, and it remains the core text of the Church of Satan.
 

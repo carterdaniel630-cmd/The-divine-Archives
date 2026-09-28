@@ -1,6 +1,6 @@
 # Göbekli Tepe's Pillars: Stone Beings Before Farming
 
-*Vault entry V60 · Relics & Objects · In place: Göbekli Tepe, Şanlıurfa Province, Turkey · Recently added — pending full review.*
+*Vault entry V60 · Relics & Objects · In place: Göbekli Tepe, Şanlıurfa Province, Turkey*
 
 On a limestone ridge above the Harran plain in south-eastern Turkey, excavators have uncovered circles of great stone pillars, each shaped like a **T**, standing inside rough stone walls. The largest are over **5 metres** tall. On their sides are carved **foxes, boars, snakes, vultures, scorpions** and **cranes**, and on two central pillars, **arms** that reach around from the back and **hands** that meet above a **belt**: the pillars are people, or beings. They were raised some **11,500 years** ago, by people who hunted and gathered, before pottery, before metal and, it seemed at first, before farming.
 

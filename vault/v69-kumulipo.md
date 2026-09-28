@@ -1,6 +1,6 @@
 # The Kumulipo: The Hawaiian Song of Creation
 
-*Vault entry V69 · Texts & Tablets · Printed 1889; translated 1897 · Recently added — pending full review.*
+*Vault entry V69 · Texts & Tablets · Printed 1889; translated 1897*
 
 In **1895**, after a failed rising to restore her to the throne, **Queen Liliʻuokalani**, the last monarch of the Hawaiian Kingdom, was held prisoner in a room of **ʻIolani Palace** in Honolulu. She spent part of her confinement translating a chant her brother, **King Kalākaua**, had printed in **1889**: the **Kumulipo**, the genealogy of her line from the beginning of the world. Her English version was published in **1897**. It begins in heat and darkness: *"At the time when the earth became hot, at the time when the heavens turned about..."*
 

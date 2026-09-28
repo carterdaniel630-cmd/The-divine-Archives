@@ -1,6 +1,6 @@
 # The "Gospel of Jesus's Wife": Anatomy of a Forgery
 
-*Vault entry V17 · Manuscripts & Codices · A papyrus fragment once studied at Harvard; now recognised as a modern forgery · Recently added — pending full review.*
+*Vault entry V17 · Manuscripts & Codices · A papyrus fragment once studied at Harvard; now recognised as a modern forgery*
 
 In **September 2012**, at an international congress of Coptic studies in Rome, the Harvard historian **Karen L. King** presented a scrap of papyrus smaller than a business card. It had eight broken lines of **Coptic** on one side. In one of them Jesus says, "**my wife**…". King was careful. She said the fragment did **not** prove that Jesus was married, only that some early Christians may have **discussed** it. She provisionally titled it ***The Gospel of Jesus's Wife***. The news travelled around the world within hours. Four years later, the fragment had become a **textbook case of how forgeries are exposed**, and King herself agreed that it was almost certainly fake.
 

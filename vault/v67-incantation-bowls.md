@@ -1,6 +1,6 @@
 # The Aramaic Incantation Bowls: Traps for Demons
 
-*Vault entry V67 · Texts & Tablets · About 2,000 or more in museums and private collections · Recently added — pending full review.*
+*Vault entry V67 · Texts & Tablets · About 2,000 or more in museums and private collections*
 
 Between **1888 and 1900**, excavators from the University of Pennsylvania at **Nippur** in southern Iraq kept turning up ordinary clay **bowls**, the kind used for food, buried **upside down** under the floors of houses. Inside, written in ink, were **spells** that spiralled from the rim to the centre. Many had a drawing in the middle: a figure with wild hair, its hands and feet **bound in chains**. The spells were written for named clients, to protect their homes, wives, children and cattle from **demons**, the evil eye and curses. In **1913** **James Montgomery** published forty of them as *Aramaic Incantation Texts from Nippur*. Today some **2,000** or more are known.
 

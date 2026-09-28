@@ -1,7 +1,5 @@
 # Chapter 35 — New Religious Movements: The Faiths of the Modern Age
 
-*Recently added — pending full review.*
-
 The explosion of brand-new religions across the last two centuries — from the prophets of the American frontier to the global movements and doomsday sects of the present — and the honest work of describing them as religions: neither dismissed as "cults" nor exempted from the evidence-honesty this book applies to every faith, ancient or new.
 
 ## The golden plates

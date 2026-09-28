@@ -1,7 +1,5 @@
 # Chapter 47 — Journeys to the Underworld: The Descent and the Judgment
 
-*Recently added — pending full review.*
-
 Almost every people that imagined death also imagined a *place* the dead go down to — and, more strangely, imagined someone going there and coming back. The descent to the underworld is one of the oldest and most widespread of all sacred stories, and where the traveller is *weighed* at the bottom, we can watch a civilization deciding what it thinks a good life is.
 
 ## Seven gates, and a hook

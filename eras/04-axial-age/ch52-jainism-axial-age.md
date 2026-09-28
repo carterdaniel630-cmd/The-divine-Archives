@@ -1,7 +1,5 @@
 # Chapter 52 — Jainism: The Religion of Harmlessness
 
-*Recently added — pending full review.*
-
 A monk walks a road in India wearing nothing at all, sweeping the ground ahead of him with a soft broom so as not to crush an ant, breathing through his awareness of the countless invisible lives in the air and the water. He owns nothing, not even a robe. He is a Jain, and he belongs to a tradition that took a single idea — *do no harm to any living thing* — further than any other religion on earth, and built an entire cosmology, ethics, and science of the soul around it.
 
 ## The ford-makers

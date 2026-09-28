@@ -1,6 +1,6 @@
 # The Golden Plates: A Record No One Can See
 
-*Vault entry V75 · Relics & Objects · Not held: returned, by Joseph Smith's account, to an angel · Recently added — pending full review.*
+*Vault entry V75 · Relics & Objects · Not held: returned, by Joseph Smith's account, to an angel*
 
 Before dawn on **22 September 1827**, **Joseph Smith**, a twenty-one-year-old farmer's son of Manchester, near Palmyra in western New York, went up a hill near his family's farm. He said that an angel named **Moroni** had shown him a stone box buried in its side four years earlier, and that this night, at last, he was permitted to take what was in it: a book of thin **metal plates** that looked like gold, bound with three rings and engraved in an unknown script. From them, over the next two years, he dictated the **Book of Mormon**, the founding scripture of the Latter Day Saint movement. The plates themselves, he said, were then taken back by the angel.
 

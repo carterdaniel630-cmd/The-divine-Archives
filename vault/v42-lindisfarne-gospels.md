@@ -1,6 +1,6 @@
 # The Lindisfarne Gospels: A Book for a Saint
 
-*Vault entry V42 · Manuscripts · British Library, London (Cotton MS Nero D IV) · Recently added — pending full review.*
+*Vault entry V42 · Manuscripts · British Library, London (Cotton MS Nero D IV)*
 
 In **687** **Cuthbert**, monk, hermit and bishop, died on the rocky islet of Inner Farne. He was buried at the monastery of **Lindisfarne**, the Holy Island off the Northumbrian coast. In **698** his coffin was opened and his body was found, it was said, **incorrupt**, and his cult took hold. Around the same years, a monk of Lindisfarne began one of the most ambitious books ever made in early medieval Europe: the **four Gospels**, written and painted in honour of God and **St Cuthbert**. Two hundred and fifty years later another member of the community wrote in the back of the book who had made it.
 

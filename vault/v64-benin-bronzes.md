@@ -1,6 +1,6 @@
 # The Benin Bronzes: The King's Ancestors, Taken and Returned
 
-*Vault entry V64 · Relics & Objects · Dispersed since 1897; returns to Nigeria under way since 2022 · Recently added — pending full review.*
+*Vault entry V64 · Relics & Objects · Dispersed since 1897; returns to Nigeria under way since 2022*
 
 In **February 1897**, a British force of about **1,200** men under Admiral **Harry Rawson** marched on **Benin City**, capital of the kingdom of **Benin** in what is now southern **Nigeria** (not the modern Republic of Benin). The attack followed the killing, in January, of a British party that had tried to reach the city during a sacred royal festival. The city was taken and burned, and the **Oba**, **Ovonramwen**, was sent into exile. From the royal palace and its **altars** the soldiers carried away thousands of objects in **brass**, **ivory** and **wood**. They were auctioned to pay for the expedition and scattered to museums across Europe and North America. The world came to know them as the **Benin Bronzes**.
 

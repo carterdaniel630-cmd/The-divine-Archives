@@ -1,7 +1,5 @@
 # Chapter 56 — Mandaeans, Yazidis & Druze: The Guarded Faiths
 
-*Recently added — pending full review.*
-
 At dawn on the bank of a river in southern Iraq, a man in white steps into the flowing water and is immersed three times by a priest, as his people have done for perhaps two thousand years. He is a Mandaean — one of the last living Gnostics on earth. His faith, and two others of the Near East, share a rare and difficult fate: small, ancient, closed to outsiders, guarding secrets, and persecuted almost without pause. They are the traditions the great monotheisms could neither absorb nor entirely destroy.
 
 ## The last of the Gnostics

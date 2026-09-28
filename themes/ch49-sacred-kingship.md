@@ -1,7 +1,5 @@
 # Chapter 49 — Sacred Kingship: The Ruler Between Heaven and Earth
 
-*Recently added — pending full review.*
-
 For most of recorded history the person who ruled was also, in some measure, holy — a god, a god's son, a god's chosen, or a god's hostage. The idea that political power is sacred is one of the most widespread in human history, and one of the most consequential: it built the pyramids and the Mandate of Heaven, and it left behind a haunting, half-mythical figure — the king who must be killed.
 
 ## The priest who waited to be murdered

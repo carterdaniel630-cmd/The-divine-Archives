@@ -1,6 +1,6 @@
 # The Staff God of Tiwanaku: The Gateway of the Sun
 
-*Vault entry V65 · Relics & Objects · In place: Tiwanaku, Bolivia · Recently added — pending full review.*
+*Vault entry V65 · Relics & Objects · In place: Tiwanaku, Bolivia*
 
 At almost **3,850 metres** above sea level, on the high plain near the southern shore of **Lake Titicaca** in Bolivia, a single block of **andesite** stands in the ruins of **Tiwanaku**. It is a gateway about **3 metres** high and **4 metres** wide, cut from one stone, cracked through the top. Above the doorway, in the centre of a carved frieze, a figure faces the viewer. It stands on a stepped platform and holds a **staff** in each hand, and its head is ringed with **rays** ending in animal heads. On both sides, rows of smaller **winged figures** turn toward it. The Spanish and later travellers called it the **Puerta del Sol**, the **Gateway of the Sun**. Its builders' name for it, and for the figure, is lost.
 

@@ -1,6 +1,6 @@
 # Chapter 46 — Creation & the First Order
 
-*Comparative theme · cross-era · **Recently added — pending full review.***
+*Comparative theme · cross-era*
 
 ---
 

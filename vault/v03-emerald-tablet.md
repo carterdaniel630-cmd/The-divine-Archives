@@ -1,6 +1,6 @@
 # The Emerald Tablet: The Text Without an Object
 
-*Vault entry V03 · Texts & Tablets · No physical tablet is known; the text survives in Arabic and Latin manuscripts and early printed books · Recently added — pending full review.*
+*Vault entry V03 · Texts & Tablets · No physical tablet is known; the text survives in Arabic and Latin manuscripts and early printed books*
 
 The story comes before the text. A seeker, called **Balīnūs** in the Arabic sources (the name stands for Apollonius of Tyana, the first-century wonder-worker), goes down into a vault beneath a statue of **Hermes**. There he finds an old man seated on a golden throne, holding a **tablet of green stone**. On it, in a script the seeker can read, is written a short, strange text about the "one thing" from which all things come. That is the frame in which the **Emerald Tablet** (*Tabula Smaragdina*) first appears in writing. It is a tablet **inside a story**. No archaeologist has ever found it. No museum holds it. **Every "photograph" of it is an illustration.**
 

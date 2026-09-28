@@ -1,6 +1,6 @@
 # The Veil of Veronica: The "True Image" and Its Doubles
 
-*Vault entry V25 · Relics & Sacred Objects · A relic kept in St Peter's Basilica, Rome; a rival image at Manoppello (Abruzzo) · Recently added — pending full review.*
+*Vault entry V25 · Relics & Sacred Objects · A relic kept in St Peter's Basilica, Rome; a rival image at Manoppello (Abruzzo)*
 
 During the **first Christian Jubilee** in **1300**, pilgrims crowded into Old St Peter's in Rome to see one thing above all others: a cloth said to bear the **face of Christ**, impressed on it when a woman wiped his face on the way to Calvary. The poet **Dante**, who may have been among them, wrote of the pilgrim who comes from far away "to see our **Veronica**". The name was understood as ***vera icon***, "**true image**". It became one of the great wonders of medieval Rome, and one of the most copied images in Europe.
 

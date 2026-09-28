@@ -1,6 +1,6 @@
 # The Tel Dan Stele: "House of David" in Stone
 
-*Vault entry V23 · Texts & Tablets · The Israel Museum, Jerusalem · Recently added — pending full review.*
+*Vault entry V23 · Texts & Tablets · The Israel Museum, Jerusalem*
 
 In **July 1993**, at the excavation of **Tel Dan** in far northern Israel, the surveyor **Gila Cook** noticed a piece of basalt built into a later wall. On it were letters in **Old Aramaic**. The excavation's director, **Avraham Biran**, published it within months. In **1994** two more fragments turned up. Together they form part of a **victory inscription** set up by a king of **Aram-Damascus**, almost certainly **Hazael**, in the **late ninth century BCE**. He boasts of killing kings of **Israel** and of **bytdwd**: in the reading most scholars accept, the "**House of David**". It was the first time the name **David** had been found **outside the Bible**, in an inscription less than two centuries after the time the Bible places him.
 

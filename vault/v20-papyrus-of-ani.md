@@ -1,6 +1,6 @@
 # The Papyrus of Ani: A Heart on the Scales
 
-*Vault entry V20 · Manuscripts & Codices · British Museum, London (EA 10470) · Recently added — pending full review.*
+*Vault entry V20 · Manuscripts & Codices · British Museum, London (EA 10470)*
 
 A scribe named **Ani** stands with his wife **Tutu** in a hall of judgment. In the centre stands a **balance**. On one pan lies **Ani's heart**. On the other lies a single **feather**, the sign of ***Ma'at***: truth, order, rightness. The jackal-headed **Anubis** checks the plumb line. The ibis-headed **Thoth** stands ready with his palette to record the verdict. Crouched beside the scales is **Ammit**, the "Devourer", part crocodile, part lion, part hippopotamus, waiting to eat any heart heavier than truth. This scene, painted in the thirteenth century BCE, is the most famous image of judgment after death from the ancient world. It comes from the **Papyrus of Ani**.
 

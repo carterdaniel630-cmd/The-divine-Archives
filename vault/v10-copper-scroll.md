@@ -1,6 +1,6 @@
 # The Copper Scroll: A Treasure List Hammered into Metal
 
-*Vault entry V10 · Texts & Tablets · The Jordan Museum, Amman · Recently added — pending full review.*
+*Vault entry V10 · Texts & Tablets · The Jordan Museum, Amman*
 
 Most of the Dead Sea Scrolls (V02) are skins or papyri. In **1952**, archaeologists in **Qumran Cave 3** found two rolls of something else: **copper**, corroded so badly that they could not be unrolled. They had once been a single sheet about **2.4 metres long**, inscribed by punching letters into the metal. For three years nobody could read them. In **1955–56**, at the **Manchester College of Science and Technology**, the engineer **Henry Wright Baker** built a device to cut the rolls into **23 curved strips**. The philologist **John Allegro** was involved in the project. When the strips were read, the text turned out to be unlike anything else from Qumran. It was a **plain list of places where treasure was hidden**.
 

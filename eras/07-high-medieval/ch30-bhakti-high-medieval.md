@@ -1,7 +1,5 @@
 # Chapter 30 — Bhakti: The Religion of Love
 
-*Recently added — pending full review.*
-
 The devotional revolution that swept across medieval India — a religion of passionate, personal love for God, sung in the mother tongue by weavers and washerwomen and untouchables, needing no priest, no temple, and no Sanskrit, only the heart — and the honest distinction between what the movement taught, what history can date, and where devotion has wrapped its saints in legend.
 
 ## The flowers under the shroud

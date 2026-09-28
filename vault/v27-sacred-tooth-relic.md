@@ -1,6 +1,6 @@
 # The Sacred Tooth Relic: The Buddha's Tooth at Kandy
 
-*Vault entry V27 · Relics & Sacred Objects · Sri Dalada Maligawa (Temple of the Sacred Tooth Relic), Kandy, Sri Lanka · Recently added — pending full review.*
+*Vault entry V27 · Relics & Sacred Objects · Sri Dalada Maligawa (Temple of the Sacred Tooth Relic), Kandy, Sri Lanka*
 
 Every year in **July or August**, in the hill city of **Kandy**, a procession winds through the streets by night. Dozens of **caparisoned elephants** move among fire-dancers, drummers, whip-crackers and torch-bearers. On the back of the greatest elephant rides a **casket**, a replica container standing in for the relic itself, which stays in its temple. The festival is the **Esala Perahera**. It honours what is believed to be a **tooth of the Buddha**, the most sacred relic of Sri Lankan Buddhism and for centuries the **sign of the right to rule** the island.
 

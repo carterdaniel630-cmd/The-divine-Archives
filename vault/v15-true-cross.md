@@ -1,6 +1,6 @@
 # The True Cross: Splinters of a Legend
 
-*Vault entry V15 · Relics & Sacred Objects · Fragments in churches worldwide; notable relics in Rome, Jerusalem, Mount Athos, Paris and elsewhere · Recently added — pending full review.*
+*Vault entry V15 · Relics & Sacred Objects · Fragments in churches worldwide; notable relics in Rome, Jerusalem, Mount Athos, Paris and elsewhere*
 
 Sometime in the **380s**, a pilgrim from the western edge of the Roman world, a woman named **Egeria**, stood in Jerusalem on Good Friday and watched a ritual she described in a letter to the women of her community. The bishop sat at a table on Golgotha. A silver-gilt casket was opened, and **pieces of wood** were laid out. One by one the faithful came forward, **bent down, touched the wood with their forehead and eyes, and kissed it**. Deacons stood around the table and **watched closely**, because someone had once, Egeria reports, **bitten off a piece and carried it away**. This is one of the earliest eyewitness descriptions of the relic venerated as the **True Cross**.
 

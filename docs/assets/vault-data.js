@@ -20,7 +20,7 @@ window.VAULT = {
   },
   items: [
     {
-      id: "v01", slug: "voynich-manuscript", status: "published", pending: true,
+      id: "v01", slug: "voynich-manuscript", status: "published", pending: false,
       era: "07-high-medieval", year: 1420, chapters: ["ch28", "ch37"],
       title: "The Voynich Manuscript", category: "manuscripts",
       source: "vault/v01-voynich-manuscript.md",
@@ -43,7 +43,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v02", slug: "dead-sea-scrolls", status: "published", pending: true,
+      id: "v02", slug: "dead-sea-scrolls", status: "published", pending: false,
       era: "04-axial-age", year: -100, chapters: ["ch10", "ch16", "ch19", "ch50", "ch17", "ch45"],
       title: "The Dead Sea Scrolls", category: "manuscripts",
       source: "vault/v02-dead-sea-scrolls.md",
@@ -88,7 +88,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v03", slug: "emerald-tablet", status: "published", pending: true,
+      id: "v03", slug: "emerald-tablet", status: "published", pending: false,
       era: "06-early-medieval", year: 800, chapters: ["ch18", "ch17", "ch21", "ch28", "ch37"],
       title: "The Emerald Tablet", category: "texts",
       source: "vault/v03-emerald-tablet.md",
@@ -106,7 +106,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v04", slug: "shroud-of-turin", status: "published", pending: true,
+      id: "v04", slug: "shroud-of-turin", status: "published", pending: false,
       era: "07-high-medieval", year: 1354, chapters: ["ch22", "ch60", "ch31"],
       title: "The Shroud of Turin", category: "relics",
       source: "vault/v04-shroud-of-turin.md",
@@ -140,7 +140,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v05", slug: "holy-lance", status: "published", pending: true,
+      id: "v05", slug: "holy-lance", status: "published", pending: false,
       era: "05-late-antiquity", year: 700, chapters: ["ch16", "ch22", "ch60", "ch49"],
       title: "The Holy Lance (“Spear of Destiny”)", category: "relics",
       source: "vault/v05-holy-lance.md",
@@ -175,7 +175,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v06", slug: "crown-of-thorns", status: "published", pending: true,
+      id: "v06", slug: "crown-of-thorns", status: "published", pending: false,
       era: "07-high-medieval", year: 1238, chapters: ["ch28", "ch60", "ch49"],
       title: "The Crown of Thorns", category: "relics",
       source: "vault/v06-crown-of-thorns.md",
@@ -207,7 +207,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v07", slug: "ark-of-the-covenant", status: "published", pending: true,
+      id: "v07", slug: "ark-of-the-covenant", status: "published", pending: false,
       era: "03-early-iron-age", year: -1000, chapters: ["ch07", "ch10", "ch19", "ch60"],
       title: "The Ark of the Covenant", category: "relics",
       source: "vault/v07-ark-of-the-covenant.md",
@@ -234,7 +234,7 @@ window.VAULT = {
       }
     },
     {
-      id: "v08", slug: "nag-hammadi-codices", status: "published", pending: true,
+      id: "v08", slug: "nag-hammadi-codices", status: "published", pending: false,
       era: "05-late-antiquity", year: 350, chapters: ["ch17", "ch45", "ch16", "ch55"],
       title: "The Nag Hammadi Codices", category: "manuscripts",
       source: "vault/v08-nag-hammadi-codices.md",
@@ -254,7 +254,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the codices belong to the Coptic Museum and to the facsimile edition's publishers and are not republished here.", external: [] }
     },
     {
-      id: "v09", slug: "codex-gigas", status: "published", pending: true,
+      id: "v09", slug: "codex-gigas", status: "published", pending: false,
       era: "07-high-medieval", year: 1220, chapters: ["ch28"],
       title: "The Codex Gigas (“Devil's Bible”)", category: "manuscripts",
       source: "vault/v09-codex-gigas.md",
@@ -278,7 +278,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The National Library of Sweden publishes the complete Codex Gigas online.", external: [ { label: "National Library of Sweden — the Codex Gigas", href: "https://www.kb.se/in-english/the-codex-gigas.html" } ] }
     },
     {
-      id: "v10", slug: "copper-scroll", status: "published", pending: true,
+      id: "v10", slug: "copper-scroll", status: "published", pending: false,
       era: "04-axial-age", year: 50, chapters: ["ch10"],
       title: "The Copper Scroll", category: "texts",
       source: "vault/v10-copper-scroll.md",
@@ -297,7 +297,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the scroll belong to the Jordan Museum and to their photographers.", external: [] }
     },
     {
-      id: "v11", slug: "rohonc-codex", status: "published", pending: true,
+      id: "v11", slug: "rohonc-codex", status: "published", pending: false,
       era: "08-early-modern", year: 1550, chapters: ["ch31"],
       title: "The Rohonc Codex", category: "manuscripts",
       source: "vault/v11-rohonc-codex.md",
@@ -320,7 +320,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Hungarian Academy of Sciences holds the manuscript and its images.", external: [] }
     },
     {
-      id: "v12", slug: "ketef-hinnom-scrolls", status: "published", pending: true,
+      id: "v12", slug: "ketef-hinnom-scrolls", status: "published", pending: false,
       era: "03-early-iron-age", year: -600, chapters: ["ch07", "ch19"],
       title: "The Ketef Hinnom Silver Scrolls", category: "texts",
       source: "vault/v12-ketef-hinnom-scrolls.md",
@@ -344,7 +344,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the amulets belong to the Israel Museum and the excavators.", external: [] }
     },
     {
-      id: "v13", slug: "tilma-of-guadalupe", status: "published", pending: true,
+      id: "v13", slug: "tilma-of-guadalupe", status: "published", pending: false,
       era: "08-early-modern", year: 1531, chapters: ["ch43", "ch48"],
       title: "The Tilma of Guadalupe", category: "relics",
       source: "vault/v13-tilma-of-guadalupe.md",
@@ -371,7 +371,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the image belong to the Basilica and are not republished here.", external: [] }
     },
     {
-      id: "v14", slug: "holy-grail", status: "published", pending: true,
+      id: "v14", slug: "holy-grail", status: "published", pending: false,
       era: "07-high-medieval", year: 1190, chapters: ["ch49", "ch14"],
       title: "The Holy Grail", category: "relics",
       source: "vault/v14-holy-grail.md",
@@ -400,7 +400,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the chalices belong to their cathedrals and are not republished here.", external: [] }
     },
     {
-      id: "v15", slug: "true-cross", status: "published", pending: true,
+      id: "v15", slug: "true-cross", status: "published", pending: false,
       era: "05-late-antiquity", year: 380, chapters: ["ch22", "ch60", "ch31"],
       title: "The True Cross", category: "relics",
       source: "vault/v15-true-cross.md",
@@ -423,7 +423,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of reliquaries belong to their churches and museums.", external: [] }
     },
     {
-      id: "v16", slug: "james-ossuary", status: "published", pending: true,
+      id: "v16", slug: "james-ossuary", status: "published", pending: false,
       era: "04-axial-age", year: 30, chapters: ["ch16", "ch10"],
       title: "The James Ossuary", category: "relics",
       source: "vault/v16-james-ossuary.md",
@@ -442,7 +442,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the ossuary belong to its owner and to the publications that printed them.", external: [] }
     },
     {
-      id: "v17", slug: "gospel-of-jesus-wife", status: "published", pending: true,
+      id: "v17", slug: "gospel-of-jesus-wife", status: "published", pending: false,
       era: "09-modern", year: 2012, chapters: ["ch16"],
       title: "The “Gospel of Jesus's Wife”", category: "manuscripts",
       source: "vault/v17-gospel-of-jesus-wife.md",
@@ -467,7 +467,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the fragment were published by Harvard Divinity School and are not republished here.", external: [] }
     },
     {
-      id: "v18", slug: "codex-sinaiticus", status: "published", pending: true,
+      id: "v18", slug: "codex-sinaiticus", status: "published", pending: false,
       era: "05-late-antiquity", year: 345, chapters: ["ch16", "ch22"],
       title: "Codex Sinaiticus", category: "manuscripts",
       source: "vault/v18-codex-sinaiticus.md",
@@ -489,7 +489,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The four holding libraries publish the complete manuscript through the Codex Sinaiticus Project.", external: [ { label: "Codex Sinaiticus Project — the whole manuscript online", href: "https://www.codexsinaiticus.org/" } ] }
     },
     {
-      id: "v19", slug: "book-of-soyga", status: "published", pending: true,
+      id: "v19", slug: "book-of-soyga", status: "published", pending: false,
       era: "08-early-modern", year: 1560, chapters: ["ch26", "ch37"],
       title: "The Book of Soyga", category: "manuscripts",
       source: "vault/v19-book-of-soyga.md",
@@ -512,7 +512,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of both manuscripts belong to the Bodleian and British Libraries.", external: [] }
     },
     {
-      id: "v20", slug: "papyrus-of-ani", status: "published", pending: true,
+      id: "v20", slug: "papyrus-of-ani", status: "published", pending: false,
       era: "02-bronze-age", year: -1250, chapters: ["ch02", "ch47"],
       title: "The Papyrus of Ani", category: "manuscripts",
       source: "vault/v20-papyrus-of-ani.md",
@@ -530,7 +530,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The British Museum publishes photographs of the Papyrus of Ani in its collection database, under its own licence terms.", external: [ { label: "British Museum — Papyrus of Ani (EA 10470)", href: "https://www.britishmuseum.org/collection/object/Y_EA10470-3" } ] }
     },
     {
-      id: "v21", slug: "book-of-kells", status: "published", pending: true,
+      id: "v21", slug: "book-of-kells", status: "published", pending: false,
       era: "06-early-medieval", year: 800, chapters: ["ch14", "ch22"],
       title: "The Book of Kells", category: "manuscripts",
       source: "vault/v21-book-of-kells.md",
@@ -552,7 +552,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Trinity College Dublin publishes the complete Book of Kells in its Digital Collections.", external: [ { label: "Trinity College Dublin — the Book of Kells", href: "https://www.tcd.ie/library/research-collections/book-of-kells.php" } ] }
     },
     {
-      id: "v22", slug: "mesha-stele", status: "published", pending: true,
+      id: "v22", slug: "mesha-stele", status: "published", pending: false,
       era: "03-early-iron-age", year: -840, chapters: ["ch07", "ch58"],
       title: "The Mesha Stele", category: "texts",
       source: "vault/v22-mesha-stele.md",
@@ -569,7 +569,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Louvre publishes photographs of the stele and the squeeze in its collections database.", external: [ { label: "Musée du Louvre — Stèle de Mésha", href: "https://collections.louvre.fr/en/ark:/53355/cl010120339" } ] }
     },
     {
-      id: "v23", slug: "tel-dan-stele", status: "published", pending: true,
+      id: "v23", slug: "tel-dan-stele", status: "published", pending: false,
       era: "03-early-iron-age", year: -830, chapters: ["ch07", "ch58", "ch49"],
       title: "The Tel Dan Stele", category: "texts",
       source: "vault/v23-tel-dan-stele.md",
@@ -588,7 +588,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the fragments belong to the Israel Museum and the excavators.", external: [] }
     },
     {
-      id: "v24", slug: "sudarium-of-oviedo", status: "published", pending: true,
+      id: "v24", slug: "sudarium-of-oviedo", status: "published", pending: false,
       era: "05-late-antiquity", year: 650, chapters: ["ch22", "ch28"],
       title: "The Sudarium of Oviedo", category: "relics",
       source: "vault/v24-sudarium-of-oviedo.md",
@@ -614,7 +614,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the cloth belong to the Cathedral of Oviedo and the researchers who made them.", external: [] }
     },
     {
-      id: "v25", slug: "veil-of-veronica", status: "published", pending: true,
+      id: "v25", slug: "veil-of-veronica", status: "published", pending: false,
       era: "07-high-medieval", year: 1150, chapters: ["ch60", "ch31"],
       title: "The Veil of Veronica", category: "relics",
       source: "vault/v25-veil-of-veronica.md",
@@ -639,7 +639,7 @@ window.VAULT = {
       study: { manifest: "", rights: "No openly licensed photographs of the relic are available; it is shown only at a distance.", external: [] }
     },
     {
-      id: "v26", slug: "black-stone", status: "published", pending: true,
+      id: "v26", slug: "black-stone", status: "published", pending: false,
       era: "06-early-medieval", year: 630, chapters: ["ch21"],
       title: "The Black Stone of the Kaaba", category: "relics",
       source: "vault/v26-black-stone.md",
@@ -661,7 +661,7 @@ window.VAULT = {
       study: { manifest: "", rights: "This entry reproduces no images of the Black Stone.", external: [] }
     },
     {
-      id: "v27", slug: "sacred-tooth-relic", status: "published", pending: true,
+      id: "v27", slug: "sacred-tooth-relic", status: "published", pending: false,
       era: "05-late-antiquity", year: 350, chapters: ["ch11", "ch20", "ch53", "ch49"],
       title: "The Sacred Tooth Relic", category: "relics",
       source: "vault/v27-sacred-tooth-relic.md",
@@ -684,7 +684,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the temple and procession belong to their photographers; the relic itself is rarely shown.", external: [ { label: "Sri Dalada Maligawa — official site", href: "https://sridaladamaligawa.lk/" } ] }
     },
     {
-      id: "v28", slug: "birmingham-quran", status: "published", pending: true,
+      id: "v28", slug: "birmingham-quran", status: "published", pending: false,
       era: "05-late-antiquity", year: 600, chapters: ["ch21"],
       title: "The Birmingham Qur'an Manuscript", category: "manuscripts",
       source: "vault/v28-birmingham-quran.md",
@@ -703,7 +703,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Cadbury Research Library publishes images of the leaves; the Bibliothèque nationale de France publishes the Paris leaves in Gallica.", external: [ { label: "University of Birmingham — the Birmingham Qur'an", href: "https://www.birmingham.ac.uk/facilities/cadbury/birmingham-quran-mingana-collection/birmingham-quran" }, { label: "BnF — Arabe 328", href: "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc386200" } ] }
     },
     {
-      id: "v29", slug: "sanaa-palimpsest", status: "published", pending: true,
+      id: "v29", slug: "sanaa-palimpsest", status: "published", pending: false,
       era: "05-late-antiquity", year: 620, chapters: ["ch21"],
       title: "The Sana'a Palimpsest", category: "manuscripts",
       source: "vault/v29-sanaa-palimpsest.md",
@@ -723,7 +723,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of Ṣanʿāʾ 1 were published by the researchers with their editions; the leaves belong to the Yemeni authorities and to the holders of the detached leaves.", external: [] }
     },
     {
-      id: "v30", slug: "diamond-sutra", status: "published", pending: true,
+      id: "v30", slug: "diamond-sutra", status: "published", pending: false,
       era: "06-early-medieval", year: 868, chapters: ["ch11", "ch20", "ch54", "ch53"],
       title: "The Diamond Sutra of Dunhuang", category: "manuscripts",
       source: "vault/v30-diamond-sutra.md",
@@ -747,7 +747,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The British Library publishes the scroll in its digitised manuscripts and through the International Dunhuang Programme.", external: [ { label: "International Dunhuang Programme — the Diamond Sutra", href: "https://idp.bl.uk/discover/learning/buddhism-on-the-silk-roads/articles/buddhism-on-the-ground/buddhist-texts-the-diamond-sutra/" } ] }
     },
     {
-      id: "v31", slug: "dresden-codex", status: "published", pending: true,
+      id: "v31", slug: "dresden-codex", status: "published", pending: false,
       era: "07-high-medieval", year: 1200, chapters: ["ch29", "ch43", "ch46", "ch50"],
       title: "The Dresden Codex", category: "manuscripts",
       source: "vault/v31-dresden-codex.md",
@@ -773,7 +773,7 @@ window.VAULT = {
       study: { manifest: "", rights: "SLUB Dresden publishes the complete codex in its digital collections.", external: [ { label: "SLUB Dresden — the Dresden Maya Codex", href: "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex/content" } ] }
     },
     {
-      id: "v32", slug: "popol-vuh-manuscript", status: "published", pending: true,
+      id: "v32", slug: "popol-vuh-manuscript", status: "published", pending: false,
       era: "08-early-modern", year: 1701, chapters: ["ch29", "ch46", "ch47", "ch01"],
       title: "The Popol Vuh Manuscript", category: "manuscripts",
       source: "vault/v32-popol-vuh-manuscript.md",
@@ -790,7 +790,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Newberry Library publishes the manuscript digitally; a facsimile is also in the Library of Congress's World Digital Library collection.", external: [ { label: "The Newberry — Popol Vuh research guide", href: "https://www.newberry.org/collection/research-guide/popol-vuh" }, { label: "Library of Congress — Popol Vuh (digital facsimile)", href: "https://www.loc.gov/item/2021668226" } ] }
     },
     {
-      id: "v33", slug: "kartarpur-bir", status: "published", pending: true,
+      id: "v33", slug: "kartarpur-bir", status: "published", pending: false,
       era: "08-early-modern", year: 1604, chapters: ["ch34", "ch30", "ch27"],
       title: "The Kartarpur Bir", category: "manuscripts",
       source: "vault/v33-kartarpur-bir.md",
@@ -808,7 +808,7 @@ window.VAULT = {
       study: { manifest: "", rights: "No photographic record of the manuscript has been published with its owners' permission; this entry reproduces none.", external: [] }
     },
     {
-      id: "v34", slug: "pyramid-texts-of-unas", status: "published", pending: true,
+      id: "v34", slug: "pyramid-texts-of-unas", status: "published", pending: false,
       era: "02-bronze-age", year: -2350, chapters: ["ch02", "ch49", "ch47", "ch50"],
       title: "The Pyramid Texts of Unas", category: "texts",
       source: "vault/v34-pyramid-texts-of-unas.md",
@@ -831,7 +831,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the chambers belong to their photographers and the Egyptian antiquities authorities.", external: [] }
     },
     {
-      id: "v35", slug: "cyrus-cylinder", status: "published", pending: true,
+      id: "v35", slug: "cyrus-cylinder", status: "published", pending: false,
       era: "04-axial-age", year: -539, chapters: ["ch03", "ch06", "ch10", "ch49"],
       title: "The Cyrus Cylinder", category: "texts",
       source: "vault/v35-cyrus-cylinder.md",
@@ -849,7 +849,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The British Museum publishes photographs and a translation of the cylinder in its collection database.", external: [ { label: "British Museum — the Cyrus Cylinder", href: "https://www.britishmuseum.org/collection/object/W_1880-0617-1941" } ] }
     },
     {
-      id: "v36", slug: "rok-runestone", status: "published", pending: true,
+      id: "v36", slug: "rok-runestone", status: "published", pending: false,
       era: "06-early-medieval", year: 810, chapters: ["ch23", "ch14", "ch50"],
       title: "The Rök Runestone", category: "texts",
       source: "vault/v36-rok-runestone.md",
@@ -868,7 +868,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stone are widely published; the Swedish National Heritage Board maintains the runic record.", external: [ { label: "Uppsala University — the Rök Stone", href: "https://www.uu.se/en/news/2022/2022-01-27-new-book-gives-insight-into-rok-stones-runes" } ] }
     },
     {
-      id: "v37", slug: "gundestrup-cauldron", status: "published", pending: true,
+      id: "v37", slug: "gundestrup-cauldron", status: "published", pending: false,
       era: "04-axial-age", year: -100, chapters: ["ch14", "ch51", "ch47"],
       title: "The Gundestrup Cauldron", category: "relics",
       source: "vault/v37-gundestrup-cauldron.md",
@@ -901,7 +901,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The National Museum of Denmark publishes photographs of the cauldron.", external: [ { label: "National Museum of Denmark — the Gundestrup Cauldron", href: "https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-early-iron-age/the-gundestrup-cauldron/" } ] }
     },
     {
-      id: "v38", slug: "aleppo-codex", status: "published", pending: true,
+      id: "v38", slug: "aleppo-codex", status: "published", pending: false,
       era: "06-early-medieval", year: 930, chapters: ["ch10", "ch19"],
       title: "The Aleppo Codex", category: "manuscripts",
       source: "vault/v38-aleppo-codex.md",
@@ -920,7 +920,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of the codex are published by the Ben-Zvi Institute and the Israel Museum.", external: [ { label: "Israel Museum — the Aleppo Codex", href: "https://www.imj.org.il/en/collections/226966-0" } ] }
     },
     {
-      id: "v39", slug: "derveni-papyrus", status: "published", pending: true,
+      id: "v39", slug: "derveni-papyrus", status: "published", pending: false,
       era: "04-axial-age", year: -340, chapters: ["ch08", "ch15", "ch18", "ch47"],
       title: "The Derveni Papyrus", category: "manuscripts",
       source: "vault/v39-derveni-papyrus.md",
@@ -944,7 +944,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Archaeological Museum of Thessaloniki holds the papyrus; multispectral images were published with the scholarly editions.", external: [ { label: "UNESCO Memory of the World — the Derveni Papyrus", href: "https://www.unesco.org/en/memory-world/derveni-papyrus-oldest-book-europe" } ] }
     },
     {
-      id: "v40", slug: "gospel-of-judas", status: "published", pending: true,
+      id: "v40", slug: "gospel-of-judas", status: "published", pending: false,
       era: "05-late-antiquity", year: 280, chapters: ["ch17", "ch16", "ch45"],
       title: "The Gospel of Judas (Codex Tchacos)", category: "manuscripts",
       source: "vault/v40-gospel-of-judas.md",
@@ -967,7 +967,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The codex belongs to Egypt; photographs were published by the National Geographic Society with the critical edition.", external: [] }
     },
     {
-      id: "v41", slug: "codex-borgia", status: "published", pending: true,
+      id: "v41", slug: "codex-borgia", status: "published", pending: false,
       era: "07-high-medieval", year: 1500, chapters: ["ch43", "ch29", "ch46", "ch51"],
       title: "The Codex Borgia", category: "manuscripts",
       source: "vault/v41-codex-borgia.md",
@@ -987,7 +987,7 @@ window.VAULT = {
       study: { manifest: "https://digi.vatlib.it/iiif/MSS_Borg.mess.1/manifest.json", rights: "The Vatican Apostolic Library publishes the codex through its DigiVatLib service.", external: [ { label: "DigiVatLib — Borg.mess.1", href: "https://digi.vatlib.it/view/MSS_Borg.mess.1" } ] }
     },
     {
-      id: "v42", slug: "lindisfarne-gospels", status: "published", pending: true,
+      id: "v42", slug: "lindisfarne-gospels", status: "published", pending: false,
       era: "05-late-antiquity", year: 715, chapters: ["ch16", "ch22", "ch14"],
       title: "The Lindisfarne Gospels", category: "manuscripts",
       source: "vault/v42-lindisfarne-gospels.md",
@@ -1009,7 +1009,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The British Library publishes the complete manuscript in its digitised manuscripts.", external: [ { label: "British Library — the Lindisfarne Gospels", href: "https://www.bl.uk/collection-items/lindisfarne-gospels" } ] }
     },
     {
-      id: "v43", slug: "merneptah-stele", status: "published", pending: true,
+      id: "v43", slug: "merneptah-stele", status: "published", pending: false,
       era: "02-bronze-age", year: -1208, chapters: ["ch02", "ch07", "ch58", "ch49"],
       title: "The Merneptah Stele", category: "texts",
       source: "vault/v43-merneptah-stele.md",
@@ -1027,7 +1027,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stele belong to the Egyptian Museum and their photographers.", external: [] }
     },
     {
-      id: "v44", slug: "pilate-stone", status: "published", pending: true,
+      id: "v44", slug: "pilate-stone", status: "published", pending: false,
       era: "04-axial-age", year: 30, chapters: ["ch13", "ch16", "ch10"],
       title: "The Pilate Stone", category: "texts",
       source: "vault/v44-pilate-stone.md",
@@ -1046,7 +1046,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stone belong to the Israel Museum.", external: [] }
     },
     {
-      id: "v45", slug: "nebra-sky-disc", status: "published", pending: true,
+      id: "v45", slug: "nebra-sky-disc", status: "published", pending: false,
       era: "02-bronze-age", year: -1600, chapters: ["ch42", "ch46"],
       title: "The Nebra Sky Disc", category: "relics",
       source: "vault/v45-nebra-sky-disc.md",
@@ -1068,7 +1068,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The State Museum of Prehistory in Halle holds the disc and the rights to its photographs.", external: [ { label: "Austrian Academy of Sciences — The Nebra Sky Disc dates from the Early Bronze Age", href: "https://www.oeaw.ac.at/en/news/the-nebra-sky-disc-dates-from-the-early-bronze-age" } ] }
     },
     {
-      id: "v46", slug: "piprahwa-relics", status: "published", pending: true,
+      id: "v46", slug: "piprahwa-relics", status: "published", pending: false,
       era: "04-axial-age", year: -200, chapters: ["ch11", "ch20", "ch49"],
       title: "The Piprahwa Relics", category: "relics",
       source: "vault/v46-piprahwa-relics.md",
@@ -1088,7 +1088,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The relics are held by Indian national museums; images belong to them.", external: [] }
     },
     {
-      id: "v47", slug: "kensington-runestone", status: "published", pending: true,
+      id: "v47", slug: "kensington-runestone", status: "published", pending: false,
       era: "09-modern", year: 1898, chapters: ["ch23"],
       title: "The Kensington Runestone", category: "texts",
       source: "vault/v47-kensington-runestone.md",
@@ -1112,7 +1112,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Runestone Museum in Alexandria displays the stone.", external: [ { label: "MNopedia — Kensington Runestone", href: "https://www.mnhs.org/mnopedia/search/index/thing/kensington-runestone" } ] }
     },
     {
-      id: "v48", slug: "great-isaiah-scroll", status: "published", pending: true,
+      id: "v48", slug: "great-isaiah-scroll", status: "published", pending: false,
       era: "04-axial-age", year: -125, chapters: ["ch10", "ch07"],
       title: "The Great Isaiah Scroll", category: "manuscripts",
       source: "vault/v48-great-isaiah-scroll.md",
@@ -1134,7 +1134,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Israel Museum publishes high-resolution images of the scroll in its Digital Dead Sea Scrolls project.", external: [ { label: "Israel Museum — the Great Isaiah Scroll", href: "http://dss.collections.imj.org.il/isaiah" } ] }
     },
     {
-      id: "v49", slug: "book-of-enoch", status: "published", pending: true,
+      id: "v49", slug: "book-of-enoch", status: "published", pending: false,
       era: "04-axial-age", year: -200, chapters: ["ch10", "ch50", "ch60"],
       title: "The Book of Enoch", category: "manuscripts",
       source: "vault/v49-book-of-enoch.md",
@@ -1158,7 +1158,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Manuscripts are held in Ethiopian churches and monasteries and in European libraries; images belong to their holders.", external: [] }
     },
     {
-      id: "v50", slug: "vienna-dioscurides", status: "published", pending: true,
+      id: "v50", slug: "vienna-dioscurides", status: "published", pending: false,
       era: "05-late-antiquity", year: 512, chapters: ["ch60"],
       title: "The Vienna Dioscurides", category: "manuscripts",
       source: "vault/v50-vienna-dioscurides.md",
@@ -1180,7 +1180,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Austrian National Library publishes the manuscript in its digital collections.", external: [ { label: "UNESCO Memory of the World — Vienna Dioscurides (nomination)", href: "https://media.unesco.org/sites/default/files/webform/mow001/austria_vienna_dioscurides.pdf" } ] }
     },
     {
-      id: "v51", slug: "codex-mendoza", status: "published", pending: true,
+      id: "v51", slug: "codex-mendoza", status: "published", pending: false,
       era: "08-early-modern", year: 1541, chapters: ["ch43"],
       title: "The Codex Mendoza", category: "manuscripts",
       source: "vault/v51-codex-mendoza.md",
@@ -1202,7 +1202,7 @@ window.VAULT = {
       study: { manifest: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/2fea788e-2aa2-4f08-b6d9-648c00486220.json", rights: "The Bodleian Libraries publish the complete codex in Digital Bodleian.", external: [ { label: "Digital Bodleian — MS. Arch. Selden. A. 1", href: "https://digital.bodleian.ox.ac.uk/objects/2fea788e-2aa2-4f08-b6d9-648c00486220/" } ] }
     },
     {
-      id: "v52", slug: "ishtar-gate", status: "published", pending: true,
+      id: "v52", slug: "ishtar-gate", status: "published", pending: false,
       era: "04-axial-age", year: -575, chapters: ["ch03", "ch10"],
       title: "The Ishtar Gate", category: "relics",
       source: "vault/v52-ishtar-gate.md",
@@ -1223,7 +1223,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the reconstruction belong to the Staatliche Museen zu Berlin and their photographers.", external: [ { label: "Staatliche Museen zu Berlin — From Fragment to Monument: The Ishtar Gate", href: "https://www.smb.museum/en/exhibitions/detail/from-fragment-to-monument/" } ] }
     },
     {
-      id: "v53", slug: "rosetta-stone", status: "published", pending: true,
+      id: "v53", slug: "rosetta-stone", status: "published", pending: false,
       era: "04-axial-age", year: -196, chapters: ["ch02", "ch49"],
       title: "The Rosetta Stone", category: "texts",
       source: "vault/v53-rosetta-stone.md",
@@ -1249,7 +1249,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The British Museum publishes photographs of the stone in its collection database.", external: [ { label: "British Museum — the Rosetta Stone: everything you need to know", href: "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone" } ] }
     },
     {
-      id: "v54", slug: "behistun-inscription", status: "published", pending: true,
+      id: "v54", slug: "behistun-inscription", status: "published", pending: false,
       era: "04-axial-age", year: -520, chapters: ["ch06", "ch49"],
       title: "The Behistun Inscription", category: "texts",
       source: "vault/v54-behistun-inscription.md",
@@ -1267,7 +1267,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the monument belong to their photographers.", external: [ { label: "Livius — the Behistun inscription, Persian text", href: "https://www.livius.org/sources/content/behistun-persian-text/behistun-t-01/" } ] }
     },
     {
-      id: "v55", slug: "oracle-bones-of-anyang", status: "published", pending: true,
+      id: "v55", slug: "oracle-bones-of-anyang", status: "published", pending: false,
       era: "03-early-iron-age", year: -1200, chapters: ["ch09", "ch49"],
       title: "The Oracle Bones of Anyang", category: "texts",
       source: "vault/v55-oracle-bones-of-anyang.md",
@@ -1297,7 +1297,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of oracle bones belong to their holding institutions.", external: [] }
     },
     {
-      id: "v56", slug: "phaistos-disc", status: "published", pending: true,
+      id: "v56", slug: "phaistos-disc", status: "published", pending: false,
       era: "02-bronze-age", year: -1700, chapters: ["ch08"],
       title: "The Phaistos Disc", category: "relics",
       source: "vault/v56-phaistos-disc.md",
@@ -1320,7 +1320,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the disc belong to the Heraklion Archaeological Museum.", external: [] }
     },
     {
-      id: "v57", slug: "holy-mandylion", status: "published", pending: true,
+      id: "v57", slug: "holy-mandylion", status: "published", pending: false,
       era: "05-late-antiquity", year: 544, chapters: ["ch60", "ch22"],
       title: "The Holy Mandylion", category: "relics",
       source: "vault/v57-holy-mandylion.md",
@@ -1345,7 +1345,7 @@ window.VAULT = {
       study: { manifest: "", rights: "No openly licensed images of the claimants are embedded here.", external: [] }
     },
     {
-      id: "v58", slug: "lion-man", status: "published", pending: true,
+      id: "v58", slug: "lion-man", status: "published", pending: false,
       era: "01-prehistory", year: -38000, chapters: ["ch41"],
       title: "The Lion Man of Hohlenstein-Stadel", category: "relics",
       source: "vault/v58-lion-man.md",
@@ -1367,7 +1367,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the figure belong to Museum Ulm.", external: [ { label: "Museum Ulm — archaeology collection", href: "https://museumulm.de/en/collections/archaeology/" } ] }
     },
     {
-      id: "v59", slug: "venus-of-willendorf", status: "published", pending: true,
+      id: "v59", slug: "venus-of-willendorf", status: "published", pending: false,
       era: "01-prehistory", year: -28000, chapters: ["ch41", "ch48"],
       title: "The Venus of Willendorf", category: "relics",
       source: "vault/v59-venus-of-willendorf.md",
@@ -1390,7 +1390,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the figure belong to the Natural History Museum, Vienna.", external: [ { label: "Scientific Reports (2022) — The microstructure and the origin of the Venus from Willendorf", href: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8885675/" } ] }
     },
     {
-      id: "v60", slug: "gobekli-tepe", status: "published", pending: true,
+      id: "v60", slug: "gobekli-tepe", status: "published", pending: false,
       era: "01-prehistory", year: -9500, chapters: ["ch42", "ch41"],
       title: "Göbekli Tepe's Pillars", category: "relics",
       source: "vault/v60-gobekli-tepe.md",
@@ -1414,7 +1414,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the site belong to the German Archaeological Institute and their photographers.", external: [ { label: "German Archaeological Institute — The Tepe Telegrams blog", href: "https://www.dainst.blog/the-tepe-telegrams/2016/06/02/gobekli-tepe-the-first-20-years-of-research/" } ] }
     },
     {
-      id: "v61", slug: "kojiki", status: "published", pending: true,
+      id: "v61", slug: "kojiki", status: "published", pending: false,
       era: "07-high-medieval", year: 1371, chapters: ["ch25", "ch46"],
       title: "The Kojiki: the Shinpukuji Manuscript", category: "manuscripts",
       source: "vault/v61-kojiki.md",
@@ -1436,7 +1436,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of the Shinpukuji manuscript belong to the temple; facsimiles are published in Japan.", external: [] }
     },
     {
-      id: "v62", slug: "inca-khipu", status: "published", pending: true,
+      id: "v62", slug: "inca-khipu", status: "published", pending: false,
       era: "07-high-medieval", year: 1450, chapters: ["ch44"],
       title: "The Inca Khipu", category: "texts",
       source: "vault/v62-inca-khipu.md",
@@ -1461,7 +1461,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of khipus belong to their holding museums; the Open Khipu Repository publishes data on many of them.", external: [ { label: "Khipu Field Guide — What's a khipu?", href: "https://khipufieldguide.com/guidebook/Introduction.html" } ] }
     },
     {
-      id: "v63", slug: "kalpa-sutra-manuscripts", status: "published", pending: true,
+      id: "v63", slug: "kalpa-sutra-manuscripts", status: "published", pending: false,
       era: "07-high-medieval", year: 1450, chapters: ["ch52"],
       title: "The Kalpa Sutra Manuscripts", category: "manuscripts",
       source: "vault/v63-kalpa-sutra-manuscripts.md",
@@ -1492,7 +1492,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images belong to the holding libraries and museums; many leaves are published by the V&A and the British Library.", external: [ { label: "V&A — Kalpasutra manuscript page", href: "https://collections.vam.ac.uk/item/O1271072/kalpasutra-manuscript-page-unknown/" } ] }
     },
     {
-      id: "v64", slug: "benin-bronzes", status: "published", pending: true,
+      id: "v64", slug: "benin-bronzes", status: "published", pending: false,
       era: "08-early-modern", year: 1550, chapters: ["ch33"],
       title: "The Benin Bronzes", category: "relics",
       source: "vault/v64-benin-bronzes.md",
@@ -1515,7 +1515,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images belong to the many holding institutions; the Digital Benin project gathers records of the dispersed collection.", external: [ { label: "British Museum — the Benin Bronzes (contested objects)", href: "https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes" } ] }
     },
     {
-      id: "v65", slug: "gateway-of-the-sun", status: "published", pending: true,
+      id: "v65", slug: "gateway-of-the-sun", status: "published", pending: false,
       era: "05-late-antiquity", year: 700, chapters: ["ch44"],
       title: "The Staff God of Tiwanaku", category: "relics",
       source: "vault/v65-gateway-of-the-sun.md",
@@ -1538,7 +1538,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the site belong to their photographers.", external: [] }
     },
     {
-      id: "v66", slug: "kebra-nagast", status: "published", pending: true,
+      id: "v66", slug: "kebra-nagast", status: "published", pending: false,
       era: "07-high-medieval", year: 1320, chapters: ["ch60", "ch40", "ch49"],
       title: "The Kebra Nagast", category: "manuscripts",
       source: "vault/v66-kebra-nagast.md",
@@ -1561,7 +1561,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Ethiopian manuscripts belong to their churches and libraries; British Library copies are catalogued in its Magdala collection.", external: [] }
     },
     {
-      id: "v67", slug: "incantation-bowls", status: "published", pending: true,
+      id: "v67", slug: "incantation-bowls", status: "published", pending: false,
       era: "05-late-antiquity", year: 600, chapters: ["ch19", "ch56"],
       title: "The Aramaic Incantation Bowls", category: "texts",
       source: "vault/v67-incantation-bowls.md",
@@ -1582,7 +1582,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of bowls belong to their holding museums; the origins of many privately held bowls are disputed.", external: [ { label: "British Museum — incantation bowl", href: "https://www.britishmuseum.org/collection/object/W_1851-0903-3" } ] }
     },
     {
-      id: "v68", slug: "tjurunga", status: "published", pending: true,
+      id: "v68", slug: "tjurunga", status: "published", pending: false,
       era: "09-modern", year: 1899, chapters: ["ch61"],
       title: "The Tjurunga of Central Australia", category: "relics",
       source: "vault/v68-tjurunga.md",
@@ -1604,7 +1604,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Tjurunga are secret-sacred. By the wishes of their custodians this archive reproduces no image of them.", external: [ { label: "Strehlow Research Centre (Northern Territory Government)", href: "https://nt.gov.au/leisure/arts-culture-heritage/organisations-and-venues/museums-galleries-art-centres/alice-springs/strehlow-research-centre" } ] }
     },
     {
-      id: "v69", slug: "kumulipo", status: "published", pending: true,
+      id: "v69", slug: "kumulipo", status: "published", pending: false,
       era: "09-modern", year: 1889, chapters: ["ch63", "ch46"],
       title: "The Kumulipo", category: "texts",
       source: "vault/v69-kumulipo.md",
@@ -1643,7 +1643,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The 1889 Hawaiian text and Liliʻuokalani's 1897 translation are in the public domain.", external: [ { label: "Liliʻuokalani's translation (Internet Sacred Text Archive)", href: "https://sacred-texts.com/pac/lku/index.htm" }, { label: "Kumulipo, Hawaiian text and translation (Kamehameha Schools)", href: "https://blogs.ksbe.edu/adakina/files/2008/02/kumulipo-text.pdf" } ] }
     },
     {
-      id: "v70", slug: "pictish-stones", status: "published", pending: true,
+      id: "v70", slug: "pictish-stones", status: "published", pending: false,
       era: "06-early-medieval", year: 650, chapters: ["ch14", "ch22"],
       title: "The Pictish Stones", category: "relics",
       source: "vault/v70-pictish-stones.md",
@@ -1666,7 +1666,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stones belong to their holders and photographers.", external: [ { label: "Lee, Jonathan and Ziman, 'Pictish symbols revealed as a written language' (2010)", href: "https://royalsocietypublishing.org/doi/10.1098/rspa.2010.0041" } ] }
     },
     {
-      id: "v71", slug: "stecci", status: "published", pending: true,
+      id: "v71", slug: "stecci", status: "published", pending: false,
       era: "07-high-medieval", year: 1400, chapters: ["ch60", "ch17"],
       title: "The Stećci: Medieval Tombstones of Bosnia", category: "relics",
       source: "vault/v71-stecci.md",
@@ -1689,7 +1689,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stones belong to their photographers.", external: [ { label: "UNESCO — Stećci Medieval Tombstone Graveyards", href: "https://whc.unesco.org/en/list/1504/" } ] }
     },
     {
-      id: "v72", slug: "book-of-shadows", status: "published", pending: true,
+      id: "v72", slug: "book-of-shadows", status: "published", pending: false,
       era: "09-modern", year: 1949, chapters: ["ch38"],
       title: "The Book of Shadows", category: "manuscripts",
       source: "vault/v72-book-of-shadows.md",
@@ -1712,7 +1712,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Gardnerian Books of Shadows are oath-bound; published versions differ and are not reproduced here.", external: [ { label: "The Doreen Valiente Foundation", href: "https://www.doreenvaliente.org/" } ] }
     },
     {
-      id: "v73", slug: "book-of-the-law", status: "published", pending: true,
+      id: "v73", slug: "book-of-the-law", status: "published", pending: false,
       era: "09-modern", year: 1904, chapters: ["ch37"],
       title: "The Book of the Law", category: "manuscripts",
       source: "vault/v73-book-of-the-law.md",
@@ -1735,7 +1735,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The manuscript belongs to its holders; the 1904 text is widely published.", external: [ { label: "Liber Legis (Hermetic Library)", href: "https://hermetic.com/legis/index" } ] }
     },
     {
-      id: "v74", slug: "satanic-bible", status: "published", pending: true,
+      id: "v74", slug: "satanic-bible", status: "published", pending: false,
       era: "09-modern", year: 1969, chapters: ["ch39"],
       title: "The Satanic Bible", category: "texts",
       source: "vault/v74-satanic-bible.md",
@@ -1758,7 +1758,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The Satanic Bible is in copyright; only brief phrases are quoted.", external: [ { label: "Church of Satan — 'Anton LaVey and the Right of Might'", href: "https://churchofsatan.com/anton-lavey-and-the-right-of-might/" } ] }
     },
     {
-      id: "v75", slug: "golden-plates", status: "published", pending: true,
+      id: "v75", slug: "golden-plates", status: "published", pending: false,
       era: "09-modern", year: 1827, chapters: ["ch35"],
       title: "The Golden Plates", category: "relics",
       source: "vault/v75-golden-plates.md",
@@ -1781,7 +1781,7 @@ window.VAULT = {
       study: { manifest: "", rights: "No plates exist to photograph. Book of Mormon manuscripts are published by the Joseph Smith Papers project.", external: [ { label: "The Church of Jesus Christ of Latter-day Saints — Gold Plates", href: "https://www.churchofjesuschrist.org/study/history/topics/gold-plates?lang=eng" }, { label: "The Joseph Smith Papers", href: "https://www.josephsmithpapers.org/" } ] }
     },
     {
-      id: "v76", slug: "bab-star-tablet", status: "published", pending: true,
+      id: "v76", slug: "bab-star-tablet", status: "published", pending: false,
       era: "09-modern", year: 1848, chapters: ["ch65"],
       title: "The Báb's Star Tablet", category: "manuscripts",
       source: "vault/v76-bab-star-tablet.md",
@@ -1803,7 +1803,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The tablet belongs to the British Library.", external: [ { label: "Bahá'í World News Service — British Library marks the bicentenary", href: "https://news.bahai.org/story/1358/" }, { label: "The significance of the Báb's Star Tablet", href: "https://bicentenary.bahai.org/the-bab/cards/article-significance-of-the-babs-star-tablet/" } ] }
     },
     {
-      id: "v77", slug: "haitian-veve", status: "published", pending: true,
+      id: "v77", slug: "haitian-veve", status: "published", pending: false,
       era: "09-modern", year: 1900, chapters: ["ch40", "ch33"],
       title: "The Haitian Vèvè", category: "texts",
       source: "vault/v77-haitian-veve.md",
@@ -1824,7 +1824,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Vèvè are sacred designs of a living religion; photographs of ceremonies belong to their participants.", external: [ { label: "Visit Haiti — a visual guide to vèvè", href: "https://visithaiti.com/art-culture/veve-vodou-symbols-cosmograms/" } ] }
     },
     {
-      id: "v78", slug: "malleus-maleficarum", status: "published", pending: true,
+      id: "v78", slug: "malleus-maleficarum", status: "published", pending: false,
       era: "08-early-modern", year: 1486, chapters: ["ch32", "ch31"],
       title: "The Malleus Maleficarum", category: "texts",
       source: "vault/v78-malleus-maleficarum.md",
@@ -1848,7 +1848,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Early printed copies belong to their holding libraries.", external: [] }
     },
     {
-      id: "v79", slug: "zohar-mantua", status: "published", pending: true,
+      id: "v79", slug: "zohar-mantua", status: "published", pending: false,
       era: "08-early-modern", year: 1558, chapters: ["ch26", "ch19"],
       title: "The Zohar, First Printings", category: "texts",
       source: "vault/v79-zohar-mantua.md",
@@ -1869,7 +1869,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Printed copies belong to their holding libraries.", external: [] }
     },
     {
-      id: "v80", slug: "sefer-yetzirah", status: "published", pending: true,
+      id: "v80", slug: "sefer-yetzirah", status: "published", pending: false,
       era: "05-late-antiquity", year: 400, chapters: ["ch26", "ch19"],
       title: "The Sefer Yetzirah", category: "texts",
       source: "vault/v80-sefer-yetzirah.md",
@@ -1894,7 +1894,7 @@ window.VAULT = {
       study: { manifest: "", rights: "", external: [ { label: "Sefaria: Sefer Yetzirah, Hebrew and English", href: "https://www.sefaria.org/Sefer_Yetzirah" } ] }
     },
     {
-      id: "v81", slug: "mawangdui-silk-texts", status: "published", pending: true,
+      id: "v81", slug: "mawangdui-silk-texts", status: "published", pending: false,
       era: "04-axial-age", year: -168, chapters: ["ch12", "ch09"],
       title: "The Mawangdui Silk Texts", category: "manuscripts",
       source: "vault/v81-mawangdui-silk-texts.md",
@@ -1914,7 +1914,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The manuscripts belong to the Hunan Museum.", external: [] }
     },
     {
-      id: "v82", slug: "bardo-thodol", status: "published", pending: true,
+      id: "v82", slug: "bardo-thodol", status: "published", pending: false,
       era: "07-high-medieval", year: 1350, chapters: ["ch53", "ch11"],
       title: "The Bardo Thödol", category: "texts",
       source: "vault/v82-bardo-thodol.md",
@@ -1935,7 +1935,7 @@ window.VAULT = {
       study: { manifest: "", rights: "", external: [] }
     },
     {
-      id: "v83", slug: "codex-boturini", status: "published", pending: true,
+      id: "v83", slug: "codex-boturini", status: "published", pending: false,
       era: "08-early-modern", year: 1530, chapters: ["ch43", "ch29"],
       title: "The Codex Boturini", category: "manuscripts",
       source: "vault/v83-codex-boturini.md",
@@ -1957,7 +1957,7 @@ window.VAULT = {
       study: { manifest: "", rights: "The codex belongs to INAH, Mexico.", external: [ { label: "INAH: Códice Boturini, digital edition", href: "https://www.codiceboturini.inah.gob.mx/" } ] }
     },
     {
-      id: "v84", slug: "hinton-st-mary-mosaic", status: "published", pending: true,
+      id: "v84", slug: "hinton-st-mary-mosaic", status: "published", pending: false,
       era: "05-late-antiquity", year: 350, chapters: ["ch16", "ch18"],
       title: "The Hinton St Mary Mosaic", category: "relics",
       source: "vault/v84-hinton-st-mary-mosaic.md",
@@ -1978,7 +1978,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the mosaic belong to the British Museum.", external: [ { label: "British Museum: fieldwork at Hinton St Mary", href: "https://www.britishmuseum.org/research/projects/archaeological-fieldwork-hinton-st-mary-dorset" } ] }
     },
     {
-      id: "v85", slug: "picatrix", status: "published", pending: true,
+      id: "v85", slug: "picatrix", status: "published", pending: false,
       era: "06-early-medieval", year: 1000, chapters: ["ch21", "ch37"],
       title: "The Picatrix", category: "texts",
       source: "vault/v85-picatrix.md",
@@ -1999,7 +1999,7 @@ window.VAULT = {
       study: { manifest: "", rights: "", external: [] }
     },
     {
-      id: "v86", slug: "berlin-gold-hat", status: "published", pending: true,
+      id: "v86", slug: "berlin-gold-hat", status: "published", pending: false,
       era: "03-early-iron-age", year: -900, chapters: ["ch42", "ch14"],
       title: "The Berlin Gold Hat", category: "relics",
       source: "vault/v86-berlin-gold-hat.md",
@@ -2021,7 +2021,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the hat belong to the Staatliche Museen zu Berlin.", external: [] }
     },
     {
-      id: "v87", slug: "diwan-abatur", status: "published", pending: true,
+      id: "v87", slug: "diwan-abatur", status: "published", pending: false,
       era: "08-early-modern", year: 1750, chapters: ["ch56", "ch17"],
       title: "The Diwan Abatur", category: "manuscripts",
       source: "vault/v87-diwan-abatur.md",

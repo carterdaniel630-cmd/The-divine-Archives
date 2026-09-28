@@ -1,6 +1,6 @@
 # The Sana'a Palimpsest: The Qur'an Beneath the Qur'an
 
-*Vault entry V29 · Manuscripts · Dar al-Makhtutat, Sana'a (DAM 01-27.1) · Recently added — pending full review.*
+*Vault entry V29 · Manuscripts · Dar al-Makhtutat, Sana'a (DAM 01-27.1)*
 
 In **1972** heavy rain brought down part of the **Great Mosque of Sana'a**, one of the oldest mosques in Yemen. Restorers working between the ceiling and the roof found a **mass of old parchment and paper**: thousands of fragments of worn-out Qur'an copies. They had been put there because a damaged copy of the Qur'an is not thrown away. From the 1980s a Yemeni–German project led by scholars including **Gerd-R. Puin** sorted and photographed the fragments. In **1981** one group of leaves was recognised as a **palimpsest**, a manuscript written over an earlier text that had been scraped or washed away. Under a Qur'an there was **another Qur'an**.
 

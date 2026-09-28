@@ -1,7 +1,5 @@
 # Chapter 27 — Sufism: The Path of the Heart
 
-*Recently added — pending full review.*
-
 The mystical heart of Islam — a path of love, remembrance, and the annihilation of the self in God, carried by wandering ascetics, a martyr who cried "I am the Truth," world-shaping philosophers, the greatest devotional poets who ever lived, and the orders that spread Islam across half the world — told with care for what the tradition teaches, what history can trace, and the ways the modern West has remade it in its own image.
 
 ## The turning

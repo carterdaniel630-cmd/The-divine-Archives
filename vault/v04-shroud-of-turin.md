@@ -1,6 +1,6 @@
 # The Shroud of Turin: A Cloth That Will Not Settle
 
-*Vault entry V04 · Relics & Sacred Objects · Chapel of the Shroud, Cathedral of St John the Baptist, Turin; owned by the Holy See since 1983 · Recently added — pending full review.*
+*Vault entry V04 · Relics & Sacred Objects · Chapel of the Shroud, Cathedral of St John the Baptist, Turin; owned by the Holy See since 1983*
 
 On the evening of 28 May 1898, an amateur photographer named **Secondo Pia** developed a glass plate in his darkroom in Turin. He had just been allowed to photograph a long, yellowed strip of linen displayed above the cathedral altar. On it was the faint, straw-coloured image of a man, front and back, laid head to head. When the negative emerged in the developing bath, Pia saw something he had not expected. The dark-and-light values of the cloth's image were **reversed on the plate**, and the reversal looked like a more natural face, the way an ordinary photograph looks. The image on the cloth, in other words, behaves like a **negative**. That discovery, made more than five centuries after the cloth's first documented appearance, turned a medieval relic into a modern scientific problem, and it has not been settled since.
 

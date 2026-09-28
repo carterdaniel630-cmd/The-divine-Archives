@@ -1,6 +1,6 @@
 # The Crown of Thorns: A Ring of Rushes in Paris
 
-*Vault entry V06 · Relics & Sacred Objects · Notre-Dame de Paris (axial chapel) · Recently added — pending full review.*
+*Vault entry V06 · Relics & Sacred Objects · Notre-Dame de Paris (axial chapel)*
 
 On the evening of **15 April 2019**, as the roof of Notre-Dame de Paris burned, the chaplain of the Paris fire brigade, **Father Jean-Marc Fournier**, went into the cathedral with firefighters to bring out its treasures. Among the objects carried to safety was a circlet about the size of a dinner plate, sealed in a ring of crystal and gold. Inside it was **no thorn at all**, only a ring of **bundled rushes bound with gold thread**. It is the object that King **Louis IX** of France bought for a sum close to half his annual revenue, and for which he built one of the most beautiful buildings in Europe. It is venerated as the **Crown of Thorns** placed on Jesus' head before his crucifixion.
 

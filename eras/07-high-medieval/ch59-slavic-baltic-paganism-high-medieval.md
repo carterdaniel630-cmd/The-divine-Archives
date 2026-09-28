@@ -1,7 +1,5 @@
 # Chapter 59 — Slavic & Baltic Paganism: Europe's Last Old Gods
 
-*Recently added — pending full review.*
-
 In the year 988, on the orders of Prince Vladimir of Kiev, men tied the great idol of the thunder-god **Perun** to a horse's tail, dragged it down through the city while twelve men beat it with sticks, and threw it into the **Dnieper** — and Rus became Christian. Far to the north, the old gods held out for four more centuries: **Lithuania** did not accept baptism until **1387**, the last pagan state in Europe. This is the story of the continent's final polytheists — and of the hard fact that we know them mostly through the words of the Christians who ended them.
 
 ## The last holdouts of pagan Europe

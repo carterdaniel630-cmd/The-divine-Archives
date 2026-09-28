@@ -1,7 +1,5 @@
 # Chapter 57 — Hittite & Anatolian Religion: The Thousand Gods of Hatti
 
-*Recently added — pending full review.*
-
 In a limestone cleft near the ruins of a lost capital in central Turkey, the gods walk in stone. Carved in low relief along the rock walls of the open-air sanctuary of Yazılıkaya, two processions of deities — the gods advancing from the left, the goddesses from the right — converge at the center, where the great Storm-god and the great Goddess meet face to face. It is a photograph, three thousand years old, of an entire pantheon: the assembled "thousand gods of Hatti," the deliberately vast and inclusive divine world of a Bronze Age empire that history forgot and archaeology recovered.
 
 ## The empire that was rediscovered

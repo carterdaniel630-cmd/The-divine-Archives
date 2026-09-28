@@ -1,6 +1,6 @@
 # The Mawangdui Silk Texts: The Laozi Before It Was Edited
 
-*Vault entry V81 · Manuscripts · Tomb 3, Mawangdui, Changsha, sealed in 168 BCE · Hunan Museum, Changsha · Recently added — pending full review.*
+*Vault entry V81 · Manuscripts · Tomb 3, Mawangdui, Changsha, sealed in 168 BCE · Hunan Museum, Changsha*
 
 In **December 1973**, archaeologists working at **Mawangdui**, on the edge of **Changsha** in Hunan province, opened the third of a group of Han dynasty tombs belonging to the family of the **Marquis of Dai**. The man buried there, generally identified as a son of the marquis **Li Cang**, had died in **168 BCE**. Inside a lacquered box lay rolls and folded sheets of **silk** covered in writing: some thirty texts on philosophy, medicine, astronomy, divination and war. Among them were **two copies of the *Laozi***, the book later called the ***Daodejing***, now known as **Laozi A** and **Laozi B**. They were, at the time, the oldest known manuscripts of the text by more than five hundred years.
 

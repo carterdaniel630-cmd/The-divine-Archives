@@ -1,6 +1,6 @@
 # The Rosetta Stone: One Decree in Three Scripts
 
-*Vault entry V53 · Texts & Tablets · British Museum, London (EA 24) · Recently added — pending full review.*
+*Vault entry V53 · Texts & Tablets · British Museum, London (EA 24)*
 
 In **July 1799**, French soldiers of Napoleon's expedition to Egypt were rebuilding an old fort near the Nile port of **Rashid**, which Europeans called **Rosetta**. The engineer officer **Pierre-François Bouchard** noticed a slab of dark granodiorite built into a wall. It carried three bands of writing: **hieroglyphs** at the top, broken; a flowing Egyptian script in the middle; and **Greek** at the bottom. The scholars with the army understood at once that if the three said the same thing, the Greek might unlock the other two. When the French surrendered Egypt in **1801**, the stone was handed to the British under the **Treaty of Alexandria**. It has been in the **British Museum** since **1802**.
 

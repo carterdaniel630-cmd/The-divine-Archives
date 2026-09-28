@@ -1,7 +1,5 @@
 # Chapter 64 — Pentecostalism & Global Christianity: The Fire and the Southern Shift
 
-*Recently added — pending full review.*
-
 In April 1906, in a run-down former Methodist church on Azusa Street in Los Angeles, something broke loose that would remake world Christianity. Led by **William J. Seymour**, the one-eyed son of former slaves, a crowd of Black, white, Latino, and Asian worshippers prayed, wept, sang, fell to the floor, and — most astonishingly to onlookers — **spoke in tongues**, uttering syllables they believed the Holy Spirit was giving them directly. The revival ran day and night for three years and sent missionaries around the globe. From that stable-like mission grew the fastest-growing religious movement of the modern age.
 
 ## The third force

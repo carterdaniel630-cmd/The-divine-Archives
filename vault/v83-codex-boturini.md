@@ -1,6 +1,6 @@
 # The Codex Boturini: A Migration Told in Footprints
 
-*Vault entry V83 · Manuscripts · Before or just after the Spanish conquest (c. 1520s–1540s) · Biblioteca Nacional de Antropología e Historia, Mexico City · Recently added — pending full review.*
+*Vault entry V83 · Manuscripts · Before or just after the Spanish conquest (c. 1520s–1540s) · Biblioteca Nacional de Antropología e Historia, Mexico City*
 
 It begins with an island. A man and a woman sit in a house on a small island surrounded by water; beside it, a pyramid, a date sign, and a man paddling a canoe to the shore. From the shore a line of **black footprints** sets out across the paper, and the footprints keep walking, page after page, for more than five metres. This is the ***Tira de la Peregrinación***, the "Strip of the Pilgrimage", better known as the **Codex Boturini**: the story of how the **Mexica** (the people we call Aztecs) left their homeland of **Aztlan** and wandered for generations before coming to the Valley of Mexico.
 

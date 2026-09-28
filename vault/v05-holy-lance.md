@@ -1,6 +1,6 @@
 # The Holy Lance: Four Spears and a Myth
 
-*Vault entry V05 · Relics & Sacred Objects · Rival relics in Vienna (Imperial Treasury, Hofburg), Rome (St Peter's), and Vagharshapat, Armenia (Etchmiadzin); a copy in Kraków · Recently added — pending full review.*
+*Vault entry V05 · Relics & Sacred Objects · Rival relics in Vienna (Imperial Treasury, Hofburg), Rome (St Peter's), and Vagharshapat, Armenia (Etchmiadzin); a copy in Kraków*
 
 In a glass case in the **Imperial Treasury** of the Hofburg palace in Vienna lies an iron spearhead about half a metre long. Its blade was broken long ago and has been bound together with a sleeve of **silver**, and over that, a sleeve of **gold**. Down its centre, set into an opening in the blade, is a slender iron pin, venerated as a **nail from the Cross**. On the gold sleeve, added for the emperor Charles IV in the fourteenth century, is an inscription: **LANCEA ET CLAVVS DOMINI**, "the lance and nail of the Lord." For a thousand years this object was part of the regalia of the **Holy Roman Empire**. It was carried before German kings, invoked in battle, and treated as the spear that pierced Christ's side on the cross.
 

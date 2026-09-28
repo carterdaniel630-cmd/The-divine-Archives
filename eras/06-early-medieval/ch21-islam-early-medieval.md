@@ -1,7 +1,5 @@
 # Chapter 21 — Islam: The Recitation and the Oneness of God
 
-*Recently added — pending full review.*
-
 The faith that began in a cave above Mecca and within a century stretched from Spain to the Indus — the prophet and his message, the Book held to be God's own uncreated speech, the community and the law it built, the theologians who fought over reason and revelation, the great schism that never healed, and the civilization it launched — told with the historical record and the tradition's own sacred understanding both set down, and each kept clearly distinct from the other.
 
 ## "Recite!"

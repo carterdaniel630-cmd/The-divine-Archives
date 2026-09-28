@@ -1,7 +1,5 @@
 # Chapter 65 — Bahá'í & the New World Faiths: One God, One Religion, One Humanity
 
-*Recently added — pending full review.*
-
 In July 1850, in the Persian city of Tabriz, a young man who called himself the **Báb** — "the Gate" — was suspended by ropes before a firing squad of 750 soldiers. The first volley, it is said, cut his ropes and left him unharmed; when the smoke cleared he had vanished, found back in his cell finishing a conversation. A second regiment was brought; the second volley killed him. He was thirty. He had proclaimed that a new messenger of God was about to appear — and out of the movement he founded grew what may be the only major independent world religion born in the modern age: the **Bahá'í Faith**, whose whole purpose is to declare that all religions are one.
 
 ## A faith for a united world

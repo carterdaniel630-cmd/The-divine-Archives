@@ -1,7 +1,5 @@
 # Chapter 43 — The Aztec: The Debt of the Fifth Sun
 
-*Recently added — pending full review.*
-
 The religion of the Mexica of Tenochtitlan — a cosmos five times created and destroyed, a sun that must be fed with human blood to keep it moving, and a pantheon of terrible and subtle gods — told from the temple the Spanish tore down and the codices they could not entirely burn, with the reality of its sacrifices held carefully apart from the propaganda that magnified them.
 
 ## The stone at the foot of the stair

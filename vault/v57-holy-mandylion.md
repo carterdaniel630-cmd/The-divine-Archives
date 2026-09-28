@@ -1,6 +1,6 @@
 # The Holy Mandylion: The Face Not Made by Hands
 
-*Vault entry V57 · Relics & Objects · Claimed by Genoa and the Vatican · Recently added — pending full review.*
+*Vault entry V57 · Relics & Objects · Claimed by Genoa and the Vatican*
 
 On **16 August 944**, the city of **Constantinople** turned out for a procession. The Byzantine army had besieged **Edessa** (modern Şanlıurfa in Turkey), then under Muslim rule, and had lifted the siege in exchange for the city's most sacred treasure: a cloth said to bear the **face of Christ**, imprinted not by any artist but by Christ himself. The emperor received it and placed it in the palace chapel of the Pharos among the empire's holiest relics. The Byzantines called it the **Mandylion**, "the little cloth". Its story had begun centuries earlier, with a king who wrote to Jesus.
 

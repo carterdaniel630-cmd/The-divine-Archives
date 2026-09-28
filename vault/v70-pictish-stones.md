@@ -1,6 +1,6 @@
 # The Pictish Stones: Symbols Without a Key
 
-*Vault entry V70 · Relics & Objects · About 350 stones and objects, mostly in north-east Scotland · Recently added — pending full review.*
+*Vault entry V70 · Relics & Objects · About 350 stones and objects, mostly in north-east Scotland*
 
 In the churchyard and by the roadside at **Aberlemno** in Angus, Scotland, great slabs of stone stand in the open. On one, above a hunting scene, are two strange signs: a **crescent** crossed by a rod bent in a V, and a **double disc** crossed by a rod bent in a Z. On another, the back of a Christian cross-slab shows warriors fighting, sometimes read as the battle of **Nechtansmere** (685). The same signs appear on stones across the north and east of Scotland. They were carved by the **Picts**, a people who left almost no writing of their own, and nobody knows what they mean.
 

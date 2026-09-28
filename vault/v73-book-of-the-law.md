@@ -1,6 +1,6 @@
 # The Book of the Law: Three Days in Cairo
 
-*Vault entry V73 · Manuscripts · Manuscript in private hands; facsimiles published · Recently added — pending full review.*
+*Vault entry V73 · Manuscripts · Manuscript in private hands; facsimiles published*
 
 In **March 1904**, in Cairo, **Rose Kelly**, the wife of the English occultist **Aleister Crowley**, fell into what he called a trance and told him that the god **Horus** was waiting for him. To test her, he took her to the museum and asked her to find Horus. She walked past several images and stopped at a small painted wooden stele of a priest named **Ankh-ef-en-Khonsu** standing before the falcon-headed god. Its museum number was **666**, the number of the Beast of Revelation, which Crowley had taken as his own. On **8, 9 and 10 April**, at noon, Crowley sat at a desk in their rooms and, he said, wrote down the words of a voice that spoke from behind him. The result was **Liber AL vel Legis**, the Book of the Law.
 

@@ -1,6 +1,6 @@
 # The Venus of Willendorf: A Face Nobody Carved
 
-*Vault entry V59 · Relics & Objects · Natural History Museum, Vienna · Recently added — pending full review.*
+*Vault entry V59 · Relics & Objects · Natural History Museum, Vienna*
 
 On **7 August 1908**, at a railway cutting beside the Danube near the village of **Willendorf** in Austria, a workman named **Josef Veram** was digging in an excavation directed by **Josef Szombathy**, **Hugo Obermaier** and **Josef Bayer**. From the loess he lifted a small stone figure, **about 11 centimetres** tall: a woman with heavy breasts, a rounded belly and wide hips, her thin arms resting on her breasts. Her head has **no face**. Instead it is covered with rows of carved bands, perhaps braided hair or a woven cap. She has become the most famous image of the Ice Age.
 

@@ -1,7 +1,5 @@
 # Chapter 61 — Aboriginal Australian Religion: The Dreaming
 
-*Recently added — pending full review.*
-
 An elder sings a sequence of verses, and the song is also a map. Sung in the right order, it names every waterhole, ridge, and rock across hundreds of miles of desert, so that a person who knows the song can cross a country they have never seen — following the exact path an Ancestral Being walked at the beginning, when the world was sung into shape. This is a **songline**, and it belongs to what may be the oldest continuous religious tradition on earth.
 
 ## The oldest living tradition
