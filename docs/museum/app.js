@@ -760,7 +760,9 @@ function dropWing(zoneId) {
   const Z = ZONES[zoneId]; if (!Z || !Z.built) return;
   Z.exGroup.traverse((o) => {
     if (o.geometry) o.geometry.dispose();
-    if (o.material && o.material !== MAT.hit && !Object.values(MAT).includes(o.material)) { if (o.material.map) o.material.map.dispose(); o.material.dispose(); }
+    // dispose only materials this wing made: not the museum's shared ones nor the inspector's (a mesh may carry an array)
+    const shared = (m) => m === MAT.hit || Object.values(MAT).includes(m) || (S.insp && Object.values(S.insp.materials).includes(m));
+    [].concat(o.material || []).forEach((m) => { if (shared(m)) return; if (m.map && m.map.isTexture) m.map.dispose(); m.dispose(); });
   });
   scene.remove(Z.exGroup); Z.exGroup = null; Z.built = false;
   removeSegs(Z.segs);
