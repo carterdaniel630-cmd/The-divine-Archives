@@ -152,109 +152,79 @@
     return ties[Math.floor(Math.random() * ties.length)] || pick;
   }
 
-  /* ===================== piece sigils (engraved, per role) ===================== */
-  function pieceArt(c, x, y, sz, role, side, accent) {
-    // side: "w" bright gold, "b" dark bronze; accent tints the gem per pantheon
-    var lit = side === "w" ? "#f0d38a" : "#6a5a86", dark = side === "w" ? "#9a7433" : "#2a2440", out = side === "w" ? "#3a2c1a" : "#0e0a1a", rim = side === "w" ? "#ffe9b0" : "#9a86c8";
-    c.save(); c.translate(x, y); var s = sz;
-    c.lineWidth = Math.max(1.5, s * 0.045); c.strokeStyle = out; c.lineJoin = "round"; c.lineCap = "round";
-    function grad(h) { var g = c.createLinearGradient(0, -h, 0, h); g.addColorStop(0, lit); g.addColorStop(1, dark); return g; }
-    // base plinth
-    c.fillStyle = grad(s * 0.5); c.beginPath(); c.moveTo(-s * 0.30, s * 0.40); c.lineTo(s * 0.30, s * 0.40); c.lineTo(s * 0.22, s * 0.30); c.lineTo(-s * 0.22, s * 0.30); c.closePath(); c.fill(); c.stroke();
-    c.fillStyle = grad(s * 0.5);
-    if (role === "P") { c.beginPath(); c.moveTo(-s * 0.13, s * 0.30); c.lineTo(s * 0.13, s * 0.30); c.lineTo(s * 0.08, -s * 0.02); c.lineTo(-s * 0.08, -s * 0.02); c.closePath(); c.fill(); c.stroke(); c.beginPath(); c.arc(0, -s * 0.12, s * 0.13, 0, 7); c.fill(); c.stroke(); }
-    else if (role === "R") { c.beginPath(); c.moveTo(-s * 0.20, s * 0.30); c.lineTo(-s * 0.20, -s * 0.18); c.lineTo(s * 0.20, -s * 0.18); c.lineTo(s * 0.20, s * 0.30); c.closePath(); c.fill(); c.stroke(); c.beginPath(); for (var b = -2; b <= 2; b++) { var bx = b * s * 0.1; c.rect(bx - s * 0.035, -s * 0.32, s * 0.07, s * 0.14); } c.fill(); c.stroke(); }
-    else if (role === "B") { c.beginPath(); c.moveTo(0, -s * 0.42); c.quadraticCurveTo(s * 0.20, -s * 0.12, s * 0.12, s * 0.30); c.lineTo(-s * 0.12, s * 0.30); c.quadraticCurveTo(-s * 0.20, -s * 0.12, 0, -s * 0.42); c.closePath(); c.fill(); c.stroke(); c.beginPath(); c.moveTo(-s * 0.06, -s * 0.16); c.lineTo(s * 0.06, -s * 0.06); c.stroke(); }
-    else if (role === "N") { c.beginPath(); c.moveTo(-s * 0.16, s * 0.30); c.lineTo(-s * 0.14, -s * 0.06); c.quadraticCurveTo(-s * 0.18, -s * 0.28, s * 0.02, -s * 0.40); c.quadraticCurveTo(s * 0.22, -s * 0.44, s * 0.20, -s * 0.16); c.lineTo(s * 0.06, -s * 0.10); c.quadraticCurveTo(s * 0.14, s * 0.02, s * 0.16, s * 0.30); c.closePath(); c.fill(); c.stroke(); c.fillStyle = out; c.beginPath(); c.arc(s * 0.08, -s * 0.28, s * 0.03, 0, 7); c.fill(); c.fillStyle = grad(s * 0.5); c.beginPath(); c.moveTo(s * 0.16, -s * 0.36); c.lineTo(s * 0.26, -s * 0.40); c.lineTo(s * 0.18, -s * 0.30); c.closePath(); c.fill(); }
-    else { // K / Q crowns
-      c.beginPath(); c.moveTo(-s * 0.18, s * 0.30); c.lineTo(-s * 0.18, -s * 0.04); c.lineTo(s * 0.18, -s * 0.04); c.lineTo(s * 0.18, s * 0.30); c.closePath(); c.fill(); c.stroke();
-      c.beginPath();
-      if (role === "K") { c.moveTo(-s * 0.22, -s * 0.04); c.lineTo(-s * 0.22, -s * 0.24); c.lineTo(-s * 0.08, -s * 0.14); c.lineTo(0, -s * 0.30); c.lineTo(s * 0.08, -s * 0.14); c.lineTo(s * 0.22, -s * 0.24); c.lineTo(s * 0.22, -s * 0.04); }
-      else { c.moveTo(-s * 0.24, -s * 0.04); c.lineTo(-s * 0.20, -s * 0.30); c.lineTo(-s * 0.08, -s * 0.14); c.lineTo(0, -s * 0.36); c.lineTo(s * 0.08, -s * 0.14); c.lineTo(s * 0.20, -s * 0.30); c.lineTo(s * 0.24, -s * 0.04); }
-      c.closePath(); c.fill(); c.stroke();
-      // gem (pantheon accent)
-      c.fillStyle = accent || rim; c.beginPath(); c.arc(0, role === "K" ? -s * 0.30 : -s * 0.30, s * 0.05, 0, 7); c.fill();
-      if (role === "K") { c.strokeStyle = accent || rim; c.lineWidth = s * 0.04; c.beginPath(); c.moveTo(0, -s * 0.40); c.lineTo(0, -s * 0.24); c.moveTo(-s * 0.06, -s * 0.32); c.lineTo(s * 0.06, -s * 0.32); c.stroke(); }
-    }
-    c.restore();
-  }
-
   /* ===================== the game instance ===================== */
   function mountGame(root, ctx) {
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var C = { panel: v("--panel", "#1e150d"), ground: v("--ground", "#140d07"), gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96"), line: v("--line", "#3a2c1a"), good: v("--good", "#7e9e5c"), parch: v("--parchment", "#e6dabf") };
     var SELCOL = "rgba(199,154,84,.5)", MOVECOL = "rgba(126,158,92,.5)", CHKCOL = "rgba(178,60,52,.6)";
-    var ACCENT = { greek: "#bfe3ff", egyptian: "#57c6c6", norse: "#9a86c8" };
 
-    var canvas, cx, boardEl, factEl, statusEl, raf = null, DPR = 1, N = 8, SZ = 44, BW = N * SZ;
+    var canvas, cx, factEl, statusEl, trayW, trayB, raf = null, DPR = 1, N = 8, SZ = 44, BW = N * SZ, M = 32, TOT = BW + 2 * M;
+    var ART = window.ChessArt;
     var st, cfg = { you: "greek", foe: "egyptian", twoP: false }, keyfn = null;
 
     function newState(youPan, foePan, twoP) {
       return { board: initBoard(), turn: "w", cast: { wk: true, wq: true, bk: true, bq: true }, ep: null,
-        sel: null, legal: [], last: null, over: false, result: "", captures: [],
+        sel: null, legal: [], last: null, over: false, result: "", captures: [], anim: null,
         wPan: youPan, bPan: foePan, twoP: twoP, thinking: false };
     }
 
-    /* ---- rendering ---- */
-    // the board itself: veined limestone and dark basalt squares with a bevel, and
-    // file/rank letters cut into the edge squares; built once per resolution
+    /* ---- rendering: the framed board (chess-art.js), statuette pieces, a sliding move ---- */
     var boardBg = null;
-    function buildBoard() {
-      var cv = document.createElement("canvas"); cv.width = Math.round(BW * DPR); cv.height = Math.round(BW * DPR); cv.dpr = DPR;
-      var b = cv.getContext("2d"); b.setTransform(DPR, 0, 0, DPR, 0, 0);
-      var seed = 12345; function R() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
-      for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++) {
-        var x = c * SZ, y = r * SZ, dk = (r + c) % 2 === 1;
-        var g = b.createLinearGradient(x, y, x + SZ, y + SZ);
-        if (dk) { g.addColorStop(0, "#2a2a22"); g.addColorStop(1, "#171710"); } else { g.addColorStop(0, "#6e5a3c"); g.addColorStop(1, "#54432a"); }
-        b.fillStyle = g; b.fillRect(x, y, SZ, SZ);
-        // veins
-        b.save(); b.beginPath(); b.rect(x, y, SZ, SZ); b.clip();
-        for (var v = 0; v < 3; v++) {
-          b.strokeStyle = dk ? "rgba(140,150,120," + (0.06 + R() * 0.08) + ")" : "rgba(255,236,196," + (0.08 + R() * 0.1) + ")"; b.lineWidth = 0.6 + R() * 0.8;
-          var sx = x + R() * SZ, sy = y - 4; b.beginPath(); b.moveTo(sx, sy);
-          for (var k = 1; k <= 5; k++) b.lineTo(sx + (R() - 0.5) * 18 + k * (R() - 0.3) * 4, y + k * SZ / 5 + 2);
-          b.stroke();
-        }
-        for (var sp = 0; sp < 14; sp++) { b.fillStyle = R() < 0.5 ? "rgba(0,0,0,.12)" : "rgba(255,240,210,.06)"; b.fillRect(x + R() * SZ, y + R() * SZ, 1, 1); }
-        b.restore();
-        // bevel: lit top-left, shaded bottom-right
-        b.fillStyle = "rgba(255,240,210," + (dk ? 0.07 : 0.14) + ")"; b.fillRect(x, y, SZ, 1.2); b.fillRect(x, y, 1.2, SZ);
-        b.fillStyle = "rgba(0,0,0,.28)"; b.fillRect(x, y + SZ - 1.2, SZ, 1.2); b.fillRect(x + SZ - 1.2, y, 1.2, SZ);
-      }
-      // coordinates cut into the edge squares
-      b.font = "600 7.5px Cinzel, Georgia, serif";
-      for (var f = 0; f < 8; f++) {
-        b.fillStyle = (7 + f) % 2 ? "rgba(231,198,128,.55)" : "rgba(40,28,14,.75)"; b.textAlign = "right"; b.textBaseline = "bottom"; b.fillText("abcdefgh"[f], f * SZ + SZ - 3, BW - 2);
-        b.fillStyle = f % 2 ? "rgba(231,198,128,.55)" : "rgba(40,28,14,.75)"; b.textAlign = "left"; b.textBaseline = "top"; b.fillText(String(8 - f), 3, f * SZ + 2);
-      }
-      var vg = b.createRadialGradient(BW / 2, BW / 2, BW * 0.3, BW / 2, BW / 2, BW * 0.75); vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,.35)");
-      b.fillStyle = vg; b.fillRect(0, 0, BW, BW);
-      return cv;
+    function sq(i) { return { x: M + (i & 7) * SZ, y: M + (i >> 3) * SZ }; }
+    function drawPiece(p, x, y, lift) {
+      var pan = p.c === "w" ? st.wPan : st.bPan, img = ART.sprite(pan, p.t, p.c, SZ * 0.98 * DPR);
+      // contact shadow on the stone
+      cx.fillStyle = "rgba(0,0,0," + (lift ? 0.25 : 0.45) + ")"; cx.beginPath(); cx.ellipse(x + SZ / 2, y + SZ * 0.9, SZ * 0.3, SZ * 0.075, 0, 0, 7); cx.fill();
+      cx.drawImage(img, x + SZ * 0.01, y - (lift || 0), SZ * 0.98, SZ * 0.98);
     }
     function draw() {
-      cx.clearRect(0, 0, BW, BW);
+      cx.clearRect(0, 0, TOT, TOT);
       var kInChk = null;
       if (inCheck(st.board, st.turn)) kInChk = findKing(st.board, st.turn);
-      if (!boardBg || boardBg.dpr !== DPR) boardBg = buildBoard();
-      cx.drawImage(boardBg, 0, 0, BW, BW);
-      for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++) {
-        var i = idx(r, c), x = c * SZ, y = r * SZ;
-        if (st.last && (st.last.from === i || st.last.to === i)) { cx.fillStyle = "rgba(231,198,128,.16)"; cx.fillRect(x, y, SZ, SZ); cx.strokeStyle = "rgba(231,198,128,.55)"; cx.lineWidth = 1.5; cx.strokeRect(x + 1.5, y + 1.5, SZ - 3, SZ - 3); }
-        if (i === kInChk) { var kg = cx.createRadialGradient(x + SZ / 2, y + SZ / 2, 2, x + SZ / 2, y + SZ / 2, SZ * 0.7); kg.addColorStop(0, "rgba(230,80,60,.75)"); kg.addColorStop(1, "rgba(178,60,52,0)"); cx.fillStyle = kg; cx.fillRect(x, y, SZ, SZ); }
+      if (!boardBg || boardBg.dpr !== DPR) { boardBg = ART.board(BW, DPR, M); boardBg.dpr = DPR; }
+      cx.drawImage(boardBg, 0, 0, TOT, TOT);
+      // last move, check
+      for (var i = 0; i < 64; i++) {
+        var q = sq(i);
+        if (st.last && (st.last.from === i || st.last.to === i)) { cx.fillStyle = "rgba(231,198,128,.2)"; cx.fillRect(q.x, q.y, SZ, SZ); }
+        if (i === kInChk) { var kg = cx.createRadialGradient(q.x + SZ / 2, q.y + SZ / 2, 2, q.x + SZ / 2, q.y + SZ / 2, SZ * 0.72); kg.addColorStop(0, "rgba(240,90,60,.85)"); kg.addColorStop(1, "rgba(178,60,52,0)"); cx.fillStyle = kg; cx.fillRect(q.x, q.y, SZ, SZ); }
       }
-      // selection + legal targets
-      if (st.sel != null) { var sr = st.sel >> 3, sc2 = st.sel & 7; cx.fillStyle = SELCOL; cx.fillRect(sc2 * SZ, sr * SZ, SZ, SZ);
-        st.legal.forEach(function (m) { if (m.from !== st.sel) return; var tr = m.to >> 3, tc = m.to & 7, cxp = tc * SZ + SZ / 2, cyp = tr * SZ + SZ / 2; cx.fillStyle = MOVECOL;
-          if (st.board[m.to] || m.ep) { cx.lineWidth = 3; cx.strokeStyle = MOVECOL; cx.beginPath(); cx.arc(cxp, cyp, SZ * 0.42, 0, 7); cx.stroke(); } else { cx.beginPath(); cx.arc(cxp, cyp, SZ * 0.16, 0, 7); cx.fill(); } });
+      // selection: a gold ring; legal targets: jewels, capture brackets
+      if (st.sel != null) {
+        var s0 = sq(st.sel); cx.strokeStyle = "rgba(247,214,140,.95)"; cx.lineWidth = 2.2; cx.strokeRect(s0.x + 2, s0.y + 2, SZ - 4, SZ - 4);
+        cx.fillStyle = "rgba(247,214,140,.18)"; cx.fillRect(s0.x, s0.y, SZ, SZ);
+        st.legal.forEach(function (m) {
+          if (m.from !== st.sel) return; var t = sq(m.to), mx = t.x + SZ / 2, my = t.y + SZ / 2;
+          if (st.board[m.to] || m.ep) {
+            cx.strokeStyle = "rgba(126,190,110,.95)"; cx.lineWidth = 2.4; var k = SZ * 0.26;
+            [[t.x + 3, t.y + 3, 1, 1], [t.x + SZ - 3, t.y + 3, -1, 1], [t.x + 3, t.y + SZ - 3, 1, -1], [t.x + SZ - 3, t.y + SZ - 3, -1, -1]].forEach(function (c) { cx.beginPath(); cx.moveTo(c[0], c[1] + c[3] * k); cx.lineTo(c[0], c[1]); cx.lineTo(c[0] + c[2] * k, c[1]); cx.stroke(); });
+          } else {
+            var jg = cx.createRadialGradient(mx - 2, my - 2, 0, mx, my, SZ * 0.14); jg.addColorStop(0, "#e8ffe0"); jg.addColorStop(0.5, "rgba(126,190,110,.9)"); jg.addColorStop(1, "rgba(60,110,50,.6)");
+            cx.fillStyle = jg; cx.beginPath(); cx.arc(mx, my, SZ * 0.12, 0, 7); cx.fill();
+          }
+        });
       }
-      // pieces
-      cx.save(); cx.shadowColor = "rgba(0,0,0,.65)"; cx.shadowBlur = 5; cx.shadowOffsetY = 2;   // pieces stand off the stone
-      for (r = 0; r < 8; r++) for (c = 0; c < 8; c++) { var p = st.board[idx(r, c)]; if (!p) continue; var pan = p.c === "w" ? st.wPan : st.bPan; pieceArt(cx, c * SZ + SZ / 2, r * SZ + SZ / 2 + SZ * 0.03, SZ * 0.86, p.t, p.c, ACCENT[pan]); }
-      cx.restore();
-      // edge frame
-      cx.strokeStyle = C.line; cx.lineWidth = 2; cx.strokeRect(1, 1, BW - 2, BW - 2);
+      // pieces (the one in flight is drawn last, lifted)
+      var a = st.anim, now = performance.now(), k2 = a ? Math.min(1, (now - a.t0) / a.dur) : 1;
+      for (i = 0; i < 64; i++) { var p = st.board[i]; if (!p || (a && i === a.to && k2 < 1)) continue; var q2 = sq(i); drawPiece(p, q2.x, q2.y); }
+      if (a && k2 < 1) {
+        var e = k2 < 0.5 ? 2 * k2 * k2 : 1 - Math.pow(-2 * k2 + 2, 2) / 2, f = sq(a.from), t2 = sq(a.to);
+        if (a.cap) { cx.globalAlpha = 1 - k2; drawPiece(a.cap, t2.x, t2.y); cx.globalAlpha = 1; }
+        drawPiece(a.p, f.x + (t2.x - f.x) * e, f.y + (t2.y - f.y) * e, Math.sin(k2 * Math.PI) * SZ * 0.18);
+        raf = requestAnimationFrame(draw);
+      } else if (a) { st.anim = null; }
+    }
+    function drawTrays() {
+      function tray(el, color) {
+        if (!el) return; el.innerHTML = "";
+        st.captures.filter(function (p) { return p.c === color; }).sort(function (x, y) { return VAL[y.t] - VAL[x.t]; }).forEach(function (p) {
+          var c = document.createElement("canvas"), px = 28 * Math.min(window.devicePixelRatio || 1, 2); c.width = c.height = px; c.className = "ch-cap";
+          c.getContext("2d").drawImage(ART.sprite(p.c === "w" ? st.wPan : st.bPan, p.t, p.c, px), 0, 0);
+          el.appendChild(c);
+        });
+      }
+      tray(trayB, "b"); tray(trayW, "w");
     }
     function inCheck(b, color) { return attacked(b, findKing(b, color), opp(color)); }
 
@@ -266,7 +236,11 @@
     }
 
     /* ---- interaction ---- */
-    function tileFromXY(px, py) { var rect = canvas.getBoundingClientRect(); var c = Math.floor((px - rect.left) / (rect.width / 8)), r = Math.floor((py - rect.top) / (rect.height / 8)); if (!inB(r, c)) return -1; return idx(r, c); }
+    function tileFromXY(px, py) {
+      var rect = canvas.getBoundingClientRect(), k = TOT / rect.width;
+      var c = Math.floor(((px - rect.left) * k - M) / SZ), r = Math.floor(((py - rect.top) * k - M) / SZ);
+      if (!inB(r, c)) return -1; return idx(r, c);
+    }
     function humanTurn() { return !st.over && !st.thinking && (st.turn === "w" || st.twoP); }
     function onClick(ev) {
       if (!humanTurn()) return;
@@ -282,15 +256,16 @@
 
     function doMove(m) {
       var piece = st.board[m.from], res = apply(st.board, m);
+      st.anim = { p: piece.t === "P" && m.promo ? { t: "Q", c: piece.c } : piece, from: m.from, to: m.to, cap: st.board[m.to], t0: performance.now(), dur: 230 };
       st.board = res.board; st.cast = nextCastle(st.cast, m, piece); st.ep = epAfter(m, piece); st.last = { from: m.from, to: m.to };
       st.sel = null; st.legal = [];
-      if (res.captured) showCapture(res.captured, piece.c);
+      if (res.captured) { showCapture(res.captured, piece.c); drawTrays(); }
       st.turn = opp(st.turn);
       // end conditions
       var lm = legalMoves(st.board, st.turn, st.cast, st.ep);
       if (!lm.length) { st.over = true; if (inCheck(st.board, st.turn)) { var winPan = st.turn === "w" ? st.bPan : st.wPan; st.result = "Checkmate — " + DATA.pantheons[winPan].name + " triumph."; } else st.result = "Stalemate — the board is still."; }
       draw(); setStatus();
-      if (!st.over && st.turn === "b" && !st.twoP) { st.thinking = true; setStatus(); setTimeout(aiMove, 220); }
+      if (!st.over && st.turn === "b" && !st.twoP) { st.thinking = true; setStatus(); setTimeout(aiMove, 320); }
     }
     function aiMove() {
       var depth = 3, m = bestMove(st.board, "b", st.cast, st.ep, depth);
@@ -315,7 +290,7 @@
         return '<div class="ch-cards">' + PANS.map(function (k) {
           var pan = DATA.pantheons[k];
           return '<button class="ch-card' + (cur === k ? " is-sel" : "") + '" data-role="' + role + '" data-pan="' + k + '">' +
-            '<span class="ch-card-emblem" style="color:' + ACCENT[k] + '">✶</span><span class="ch-card-name">' + panLabel(k) + '</span>' +
+            '<canvas class="ch-card-art" data-pan="' + k + '" width="112" height="64" aria-hidden="true"></canvas><span class="ch-card-name">' + panLabel(k) + '</span>' +
             '<span class="ch-card-ep">' + esc(pan.name) + '</span></button>';
         }).join("") + "</div>";
       }
@@ -331,6 +306,11 @@
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="play" autofocus>Set the board ♟</button></div>' +
           '<p class="rq-note">Tap a god, then tap where it moves. Full chess — castling, promotion, en passant. Capture a god to reveal its lore.</p>';
         root.querySelectorAll(".ch-card").forEach(function (b) { b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-pan"); render(); }); });
+        // each card shows the pantheon's king and queen as statuettes
+        root.querySelectorAll(".ch-card-art").forEach(function (cv) {
+          var pan = cv.getAttribute("data-pan"), c = cv.getContext("2d"), side = cv.closest('[data-role="foe"]') ? "b" : "w";
+          c.drawImage(ART.sprite(pan, "Q", side, 128), -2, -2, 68, 68); c.drawImage(ART.sprite(pan, "K", side, 128), 46, -2, 68, 68);
+        });
         root.querySelector('[data-a="mode"]').addEventListener("click", function () { sel.twoP = !sel.twoP; render(); });
         root.querySelector('[data-a="play"]').addEventListener("click", function () { cfg = { you: sel.you, foe: sel.foe, twoP: sel.twoP }; startGame(); });
       }
@@ -341,14 +321,16 @@
         '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">Archive Chess</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.15rem">' + esc(DATA.pantheons[cfg.you].name) + ' vs ' + esc(DATA.pantheons[cfg.foe].name) + '</h2></div>' +
         '<p class="ch-status" aria-live="polite"></p>' +
-        '<div class="ch-boardwrap"><canvas class="ch-board" width="' + BW + '" height="' + BW + '" role="img" aria-label="Chess board"></canvas></div>' +
+        '<div class="ch-tray ch-tray-b" aria-label="Gods taken from Black"></div>' +
+        '<div class="ch-boardwrap"><canvas class="ch-board" width="' + TOT + '" height="' + TOT + '" role="img" aria-label="Chess board"></canvas></div>' +
+        '<div class="ch-tray ch-tray-w" aria-label="Gods taken from White"></div>' +
         '<p class="ouro-toast ch-fact" aria-live="polite"></p>' +
         '<div class="rq-actions" style="gap:.5rem;margin-top:.3rem"><button class="rq-btn" data-a="new">New match</button>' +
           '<button class="rq-btn" data-a="resign">Resign</button>' +
           '<a class="game-source" href="chapters/ch02.html">› The pantheons</a></div>';
       canvas = root.querySelector(".ch-board"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || BW) / BW); canvas.width = Math.round(BW * DPR); canvas.height = Math.round(BW * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      statusEl = root.querySelector(".ch-status"); factEl = root.querySelector(".ch-fact");
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || TOT) / TOT); canvas.width = Math.round(TOT * DPR); canvas.height = Math.round(TOT * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      statusEl = root.querySelector(".ch-status"); factEl = root.querySelector(".ch-fact"); trayW = root.querySelector(".ch-tray-w"); trayB = root.querySelector(".ch-tray-b");
       canvas.addEventListener("click", onClick);
       root.querySelector('[data-a="new"]').addEventListener("click", selectScreen);
       root.querySelector('[data-a="resign"]').addEventListener("click", function () { if (st.over) return; st.over = true; st.result = "Resigned — " + DATA.pantheons[st.turn === "w" ? st.bPan : st.wPan].name + " take the field."; setStatus(); });
