@@ -172,6 +172,13 @@ Carter asked for a night-sky or planetarium look on the ceilings, with interacti
     - the hooded head with the skull behind glass;
     - the little shrine holding the vial of the *noli me tangere*.
   - It is labelled a rendition, not a replica.
+- **Detailed V88 (2026-09-28).** The reliquary now has a module of its own, `docs/museum/reliquary.js`.
+  - Worn gilding is drawn as procedural colour, roughness and relief maps: tarnish in the recesses, patches rubbed through to bronze, scratches.
+  - The model adds claw feet, a chased rosette frieze, enamelled shields, feathered double wings, pleated robes and an ashlar niche.
+  - In the inspector it stands in a limestone niche. A spotlight casts soft shadows, a polished floor reflects it (a mirrored copy under a translucent floor), and two candles flicker.
+  - In the museum case a single static spotlight throws its shadow on the niche. The shadow map is drawn once, because the piece never moves.
+  - Touch devices get the lighter build and a 1024 shadow map.
+  - The V88 entry states that the wear, shadows and reflection are rendered effects, not a record of the object's condition.
 
 ## Owed / needs Carter
 

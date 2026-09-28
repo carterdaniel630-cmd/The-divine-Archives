@@ -21,7 +21,8 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector, buildModel } from "./inspect.js?v=2";
+import { createInspector } from "./inspect.js?v=3";
+import { buildReliquary } from "./reliquary.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -590,12 +591,17 @@ function caseAt(group, x, z, yaw, item, id, zoneId) {
     // a purpose-built rendition stands in its own niche: a stone plinth, a tall vitrine and an arched back
     m(new THREE.BoxGeometry(1.45, 0.5, 0.8), MAT.darkstone, 0.25);
     m(new THREE.BoxGeometry(1.5, 0.04, 0.85), MAT.bronze, 0.52);
-    const r = buildModel(item.prop, S.insp.materials).root; r.position.y = 0.54; c.add(r);
+    const r = buildReliquary(S.insp.materials.gold.envMap, 1).root; r.position.y = 0.54; c.add(r);
+    r.traverse((o) => { o.castShadow = o.isMesh && o.name !== "glass"; });
     m(new THREE.BoxGeometry(1.4, 1.45, 0.72), MAT.glass, 0.54 + 0.725);
     m(new THREE.BoxGeometry(1.44, 0.04, 0.76), MAT.bronze, 2.0);
-    const back = m(new THREE.BoxGeometry(1.9, 2.6, 0.12), MAT.stone, 1.3); back.position.z = -0.5;
+    const back = m(new THREE.BoxGeometry(1.9, 2.6, 0.12), MAT.stone, 1.3); back.position.z = -0.5; back.receiveShadow = true;
     const arch = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.12, 32, 1, false, -Math.PI / 2, Math.PI), MAT.stone); arch.rotation.x = Math.PI / 2; arch.position.set(0, 2.6, -0.5); c.add(arch);
-    const light = new THREE.PointLight("#ffd9a0", 3, 3.2, 1.6); light.position.set(0, 2.3, 0.6); c.add(light);
+    // one warm spot from above and in front: it throws the reliquary's shadow on the niche (drawn once, the piece never moves)
+    const light = new THREE.SpotLight("#ffd9a0", 9, 4, 0.62, 0.6, 1.6); light.position.set(0.35, 1.95, 0.3); light.target.position.set(0, 0.95, 0); c.add(light, light.target);
+    light.castShadow = true; light.shadow.mapSize.set(1024, 1024); light.shadow.bias = -0.0005; light.shadow.normalBias = 0.02; light.shadow.radius = 4;
+    light.shadow.camera.near = 0.3; light.shadow.camera.far = 4; light.shadow.autoUpdate = false; light.shadow.needsUpdate = true;
+    const ptop = c.children.find((o) => o.geometry && o.geometry.parameters && o.geometry.parameters.width === 1.5); if (ptop) ptop.receiveShadow = true;
   } else if (!item.prop) {
     // no image: a plain plaque on a plinth instead of a case (see the Vault entry)
     m(new THREE.BoxGeometry(0.8, 1.0, 0.5), MAT.darkstone, 0.5);
@@ -761,7 +767,7 @@ function dropWing(zoneId) {
   Z.exGroup.traverse((o) => {
     if (o.geometry) o.geometry.dispose();
     // dispose only materials this wing made: not the museum's shared ones nor the inspector's (a mesh may carry an array)
-    const shared = (m) => m === MAT.hit || Object.values(MAT).includes(m) || (S.insp && Object.values(S.insp.materials).includes(m));
+    const shared = (m) => m === MAT.hit || m.userData.shared || Object.values(MAT).includes(m) || (S.insp && Object.values(S.insp.materials).includes(m));
     [].concat(o.material || []).forEach((m) => { if (shared(m)) return; if (m.map && m.map.isTexture) m.map.dispose(); m.dispose(); });
   });
   scene.remove(Z.exGroup); Z.exGroup = null; Z.built = false;
@@ -1288,7 +1294,7 @@ window.__MU = {
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),
   insp: () => ({ active: S.insp.active, yaw: S.insp.state.yaw, dist: S.insp.state.dist }),
-  inspView: (yaw, pitch, dist) => Object.assign(S.insp.state, { yaw, pitch, dist, spin: false, want: null }),
+  inspView: (yaw, pitch, dist, ty) => Object.assign(S.insp.state, { yaw, pitch, dist, spin: false, want: null }, ty != null ? { ty } : {}),
   open: (i) => openCard(S.exhibits[i]),
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },

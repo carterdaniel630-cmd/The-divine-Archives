@@ -42,6 +42,8 @@ The museum shows a **modelled rendition** of the reliquary in a niche of its own
 
 It is **not a replica**. It is not modelled from measurements, and its details are simplified.
 
+In the close-up view the rendition stands in a stone niche under a single warm light. The wear on its gilding (tarnish, rubbed patches, scratches) is a rendered effect chosen to suggest age. It is **not a record** of the reliquary's actual condition. The same is true of the shadows and of the reflection in the floor.
+
 ## The evidence, honestly
 
 **What's well supported by the evidence**
