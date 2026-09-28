@@ -126,25 +126,25 @@ every remaining chapter and added the lens structure throughout.
 |---|---|---|---|---|
 | ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
 | ch46 — Creation & the First Order | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections) | `themes/ch46-creation.md` |
-| ch47 — Journeys to the Underworld | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `themes/ch47-underworld.md` |
-| ch48 — The Great Goddess | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `themes/ch48-great-goddess.md` |
-| ch49 — Sacred Kingship | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `themes/ch49-sacred-kingship.md` |
-| ch50 — The End of Days | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `themes/ch50-apocalypse.md` |
-| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `themes/ch51-sacrifice.md` |
-| ch52 — Jainism | Tradition | 04-axial-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/04-axial-age/ch52-jainism-axial-age.md` |
-| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
-| ch54 — Zen & Pure Land Buddhism | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/06-early-medieval/ch54-zen-pure-land-buddhism-early-medieval.md` |
-| ch55 — Manichaeism | Tradition | 05-late-antiquity | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/05-late-antiquity/ch55-manichaeism-late-antiquity.md` |
-| ch56 — Mandaeans, Yazidis & Druze | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/07-high-medieval/ch56-mandaeans-yazidis-druze-high-medieval.md` |
-| ch57 — Hittite & Anatolian | Tradition | 02-bronze-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/02-bronze-age/ch57-hittite-anatolian-bronze-age.md` |
-| ch58 — Canaanite & Phoenician | Tradition | 03-early-iron-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/03-early-iron-age/ch58-canaanite-phoenician-early-iron-age.md` |
-| ch59 — Slavic & Baltic Paganism | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/07-high-medieval/ch59-slavic-baltic-paganism-high-medieval.md` |
-| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
-| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
-| ch62 — Native North American | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/07-high-medieval/ch62-native-north-american-high-medieval.md` |
-| ch63 — Oceania | Tradition | 08-early-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/08-early-modern/ch63-oceania-early-modern.md` |
-| ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
-| ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new plate for ch47–ch65) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
+| ch47 — Journeys to the Underworld | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch47-underworld.md` |
+| ch48 — The Great Goddess | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch48-great-goddess.md` |
+| ch49 — Sacred Kingship | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch49-sacred-kingship.md` |
+| ch50 — The End of Days | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch50-apocalypse.md` |
+| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch51-sacrifice.md` |
+| ch52 — Jainism | Tradition | 04-axial-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/04-axial-age/ch52-jainism-axial-age.md` |
+| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
+| ch54 — Zen & Pure Land Buddhism | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch54-zen-pure-land-buddhism-early-medieval.md` |
+| ch55 — Manichaeism | Tradition | 05-late-antiquity | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/05-late-antiquity/ch55-manichaeism-late-antiquity.md` |
+| ch56 — Mandaeans, Yazidis & Druze | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch56-mandaeans-yazidis-druze-high-medieval.md` |
+| ch57 — Hittite & Anatolian | Tradition | 02-bronze-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/02-bronze-age/ch57-hittite-anatolian-bronze-age.md` |
+| ch58 — Canaanite & Phoenician | Tradition | 03-early-iron-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/03-early-iron-age/ch58-canaanite-phoenician-early-iron-age.md` |
+| ch59 — Slavic & Baltic Paganism | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch59-slavic-baltic-paganism-high-medieval.md` |
+| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
+| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
+| ch62 — Native North American | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch62-native-north-american-high-medieval.md` |
+| ch63 — Oceania | Tradition | 08-early-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/08-early-modern/ch63-oceania-early-modern.md` |
+| ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
+| ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
 
 Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
 
