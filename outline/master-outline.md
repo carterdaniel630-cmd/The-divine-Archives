@@ -124,29 +124,29 @@ every remaining chapter and added the lens structure throughout.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
-| ch46 — Creation & the First Order | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections) | `themes/ch46-creation.md` |
-| ch47 — Journeys to the Underworld | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch47-underworld.md` |
-| ch48 — The Great Goddess | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch48-great-goddess.md` |
-| ch49 — Sacred Kingship | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch49-sacred-kingship.md` |
-| ch50 — The End of Days | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch50-apocalypse.md` |
-| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `themes/ch51-sacrifice.md` |
-| ch52 — Jainism | Tradition | 04-axial-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/04-axial-age/ch52-jainism-axial-age.md` |
-| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
-| ch54 — Zen & Pure Land Buddhism | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch54-zen-pure-land-buddhism-early-medieval.md` |
-| ch55 — Manichaeism | Tradition | 05-late-antiquity | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/05-late-antiquity/ch55-manichaeism-late-antiquity.md` |
-| ch56 — Mandaeans, Yazidis & Druze | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch56-mandaeans-yazidis-druze-high-medieval.md` |
-| ch57 — Hittite & Anatolian | Tradition | 02-bronze-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/02-bronze-age/ch57-hittite-anatolian-bronze-age.md` |
-| ch58 — Canaanite & Phoenician | Tradition | 03-early-iron-age | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/03-early-iron-age/ch58-canaanite-phoenician-early-iron-age.md` |
-| ch59 — Slavic & Baltic Paganism | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch59-slavic-baltic-paganism-high-medieval.md` |
-| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
-| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
-| ch62 — Native North American | Tradition | 07-high-medieval | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch62-native-north-american-high-medieval.md` |
-| ch63 — Oceania | Tradition | 08-early-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/08-early-modern/ch63-oceania-early-modern.md` |
-| ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
-| ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **PENDING REVIEW** (2026-09-28: new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
+| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **CLEARED** (2026-09-28; new believer's & skeptical lens sections) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
+| ch46 — Creation & the First Order | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections) | `themes/ch46-creation.md` |
+| ch47 — Journeys to the Underworld | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch47-underworld.md` |
+| ch48 — The Great Goddess | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch48-great-goddess.md` |
+| ch49 — Sacred Kingship | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch49-sacred-kingship.md` |
+| ch50 — The End of Days | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch50-apocalypse.md` |
+| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch51-sacrifice.md` |
+| ch52 — Jainism | Tradition | 04-axial-age | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/04-axial-age/ch52-jainism-axial-age.md` |
+| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
+| ch54 — Zen & Pure Land Buddhism | Tradition | 06-early-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch54-zen-pure-land-buddhism-early-medieval.md` |
+| ch55 — Manichaeism | Tradition | 05-late-antiquity | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/05-late-antiquity/ch55-manichaeism-late-antiquity.md` |
+| ch56 — Mandaeans, Yazidis & Druze | Tradition | 07-high-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch56-mandaeans-yazidis-druze-high-medieval.md` |
+| ch57 — Hittite & Anatolian | Tradition | 02-bronze-age | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/02-bronze-age/ch57-hittite-anatolian-bronze-age.md` |
+| ch58 — Canaanite & Phoenician | Tradition | 03-early-iron-age | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/03-early-iron-age/ch58-canaanite-phoenician-early-iron-age.md` |
+| ch59 — Slavic & Baltic Paganism | Tradition | 07-high-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch59-slavic-baltic-paganism-high-medieval.md` |
+| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
+| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
+| ch62 — Native North American | Tradition | 07-high-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch62-native-north-american-high-medieval.md` |
+| ch63 — Oceania | Tradition | 08-early-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/08-early-modern/ch63-oceania-early-modern.md` |
+| ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
+| ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
 
-Status values: `not started` · `researching` · `drafting` · `PUBLISHED — pending review` · `revising` · `CLEARED`.
+Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
 ## Per-chapter content checklist (from CLAUDE.md)
 
@@ -177,83 +177,83 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 
 | # | Object | Era | Home chapters (listed there under “In the Vault”) | Status |
 |---|---|---|---|---|
-| V01 | The Voynich Manuscript | Era VII · The High Medieval | Scholasticism (ch28); Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
-| V02 | The Dead Sea Scrolls | Era IV · The Axial Age | Second Temple Judaism (ch10); Early Christianity (ch16); Rabbinic Judaism (ch19); The End of Days (ch50); Gnosticism (ch17); Pistis Sophia (ch45) | `PUBLISHED — pending review` |
-| V03 | The Emerald Tablet | Era VI · The Early Medieval | Roman Mystery Cults (ch18); Gnosticism (ch17); Islam (ch21); Scholasticism (ch28); Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
-| V04 | The Shroud of Turin | Era VII · The High Medieval | Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `PUBLISHED — pending review` |
-| V05 | The Holy Lance (“Spear of Destiny”) | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V06 | The Crown of Thorns | Era VII · The High Medieval | Scholasticism (ch28); Eastern Orthodoxy & Byzantium (ch60); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V07 | The Ark of the Covenant | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Second Temple Judaism (ch10); Rabbinic Judaism (ch19); Eastern Orthodoxy & Byzantium (ch60) | `PUBLISHED — pending review` |
-| V08 | The Nag Hammadi Codices | Era V · Late Antiquity | Gnosticism (ch17); Pistis Sophia (ch45); Early Christianity (ch16); Manichaeism (ch55) | `PUBLISHED — pending review` |
-| V09 | The Codex Gigas (“Devil's Bible”) | Era VII · The High Medieval | Scholasticism (ch28) | `PUBLISHED — pending review` |
-| V10 | The Copper Scroll | Era IV · The Axial Age | Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
-| V11 | The Rohonc Codex | Era VIII · The Early Modern | The Reformation (ch31) | `PUBLISHED — pending review` |
-| V12 | The Ketef Hinnom Silver Scrolls | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Rabbinic Judaism (ch19) | `PUBLISHED — pending review` |
-| V13 | The Tilma of Guadalupe | Era VIII · The Early Modern | The Aztec (ch43); The Great Goddess (ch48) | `PUBLISHED — pending review` |
-| V14 | The Holy Grail | Era VII · The High Medieval | Sacred Kingship (ch49); Celtic & Germanic (ch14) | `PUBLISHED — pending review` |
-| V15 | The True Cross | Era V · Late Antiquity | Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `PUBLISHED — pending review` |
-| V16 | The James Ossuary | Era IV · The Axial Age | Early Christianity (ch16); Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
-| V17 | The “Gospel of Jesus's Wife” | Era IX · The Modern Age | Early Christianity (ch16) | `PUBLISHED — pending review` |
-| V18 | Codex Sinaiticus | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
-| V19 | The Book of Soyga | Era VIII · The Early Modern | Kabbalah (ch26); Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
-| V20 | The Papyrus of Ani | Era II · The Bronze Age | Egypt (ch02); Journeys to the Underworld (ch47) | `PUBLISHED — pending review` |
-| V21 | The Book of Kells | Era VI · The Early Medieval | Celtic & Germanic (ch14); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
-| V22 | The Mesha Stele | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58) | `PUBLISHED — pending review` |
-| V23 | The Tel Dan Stele | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V24 | The Sudarium of Oviedo | Era V · Late Antiquity | Patristic Christianity (ch22); Scholasticism (ch28) | `PUBLISHED — pending review` |
-| V25 | The Veil of Veronica | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `PUBLISHED — pending review` |
-| V26 | The Black Stone of the Kaaba | Era VI · The Early Medieval | Islam (ch21) | `PUBLISHED — pending review` |
-| V27 | The Sacred Tooth Relic | Era V · Late Antiquity | Buddhism (ch11); Mahayana Buddhism (ch20); Tibetan & Vajrayana Buddhism (ch53); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V28 | The Birmingham Qur'an Manuscript | Era V · Late Antiquity | Islam (ch21) | `PUBLISHED — pending review` |
-| V29 | The Sana'a Palimpsest | Era V · Late Antiquity | Islam (ch21) | `PUBLISHED — pending review` |
-| V30 | The Diamond Sutra of Dunhuang | Era VI · The Early Medieval | Buddhism (ch11); Mahayana Buddhism (ch20); Zen & Pure Land Buddhism (ch54); Tibetan & Vajrayana Buddhism (ch53) | `PUBLISHED — pending review` |
-| V31 | The Dresden Codex | Era VII · The High Medieval | The Maya (ch29); The Aztec (ch43); Creation & the First Order (ch46); The End of Days (ch50) | `PUBLISHED — pending review` |
-| V32 | The Popol Vuh Manuscript | Era VIII · The Early Modern | The Maya (ch29); Creation & the First Order (ch46); Journeys to the Underworld (ch47); The Flood (ch01) | `PUBLISHED — pending review` |
-| V33 | The Kartarpur Bir | Era VIII · The Early Modern | Sikhism (ch34); Bhakti (ch30); Sufism (ch27) | `PUBLISHED — pending review` |
-| V34 | The Pyramid Texts of Unas | Era II · The Bronze Age | Egypt (ch02); Sacred Kingship (ch49); Journeys to the Underworld (ch47); The End of Days (ch50) | `PUBLISHED — pending review` |
-| V35 | The Cyrus Cylinder | Era IV · The Axial Age | Mesopotamia (ch03); Zoroaster (ch06); Second Temple Judaism (ch10); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V36 | The Rök Runestone | Era VI · The Early Medieval | Norse Paganism (ch23); Celtic & Germanic (ch14); The End of Days (ch50) | `PUBLISHED — pending review` |
-| V37 | The Gundestrup Cauldron | Era IV · The Axial Age | Celtic & Germanic (ch14); Sacrifice & the Scapegoat (ch51); Journeys to the Underworld (ch47) | `PUBLISHED — pending review` |
-| V38 | The Aleppo Codex | Era VI · The Early Medieval | Second Temple Judaism (ch10); Rabbinic Judaism (ch19) | `PUBLISHED — pending review` |
-| V39 | The Derveni Papyrus | Era IV · The Axial Age | Early Greece (ch08); Classical Greece (ch15); Roman Mystery Cults (ch18); Journeys to the Underworld (ch47) | `PUBLISHED — pending review` |
-| V40 | The Gospel of Judas (Codex Tchacos) | Era V · Late Antiquity | Gnosticism (ch17); Early Christianity (ch16); Pistis Sophia (ch45) | `PUBLISHED — pending review` |
-| V41 | The Codex Borgia | Era VII · The High Medieval | The Aztec (ch43); The Maya (ch29); Creation & the First Order (ch46); Sacrifice & the Scapegoat (ch51) | `PUBLISHED — pending review` |
-| V42 | The Lindisfarne Gospels | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22); Celtic & Germanic (ch14) | `PUBLISHED — pending review` |
-| V43 | The Merneptah Stele | Era II · The Bronze Age | Egypt (ch02); Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V44 | The Pilate Stone | Era IV · The Axial Age | Rome (ch13); Early Christianity (ch16); Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
-| V45 | The Nebra Sky Disc | Era II · The Bronze Age | The Neolithic (ch42); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
-| V46 | The Piprahwa Relics | Era IV · The Axial Age | Buddhism (ch11); Mahayana Buddhism (ch20); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V47 | The Kensington Runestone | Era IX · The Modern Age | Norse Paganism (ch23) | `PUBLISHED — pending review` |
-| V48 | The Great Isaiah Scroll | Era IV · The Axial Age | Second Temple Judaism (ch10); Pre-exilic Israel (ch07) | `PUBLISHED — pending review` |
-| V49 | The Book of Enoch | Era IV · The Axial Age | Second Temple Judaism (ch10); The End of Days (ch50); Eastern Orthodoxy & Byzantium (ch60) | `PUBLISHED — pending review` |
-| V50 | The Vienna Dioscurides | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60) | `PUBLISHED — pending review` |
-| V51 | The Codex Mendoza | Era VIII · The Early Modern | The Aztec (ch43) | `PUBLISHED — pending review` |
-| V52 | The Ishtar Gate | Era IV · The Axial Age | Mesopotamia (ch03); Second Temple Judaism (ch10) | `PUBLISHED — pending review` |
-| V53 | The Rosetta Stone | Era IV · The Axial Age | Egypt (ch02); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V54 | The Behistun Inscription | Era IV · The Axial Age | Zoroaster (ch06); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V55 | The Oracle Bones of Anyang | Era III · The Early Iron Age | Early China (ch09); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V56 | The Phaistos Disc | Era II · The Bronze Age | Early Greece (ch08) | `PUBLISHED — pending review` |
-| V57 | The Holy Mandylion | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
-| V58 | The Lion Man of Hohlenstein-Stadel | Era I · Prehistory | The Paleolithic (ch41) | `PUBLISHED — pending review` |
-| V59 | The Venus of Willendorf | Era I · Prehistory | The Paleolithic (ch41); The Great Goddess (ch48) | `PUBLISHED — pending review` |
-| V60 | Göbekli Tepe's Pillars | Era I · Prehistory | The Neolithic (ch42); The Paleolithic (ch41) | `PUBLISHED — pending review` |
-| V61 | The Kojiki: the Shinpukuji Manuscript | Era VII · The High Medieval | Shinto (ch25); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
-| V62 | The Inca Khipu | Era VII · The High Medieval | The Inca (ch44) | `PUBLISHED — pending review` |
-| V63 | The Kalpa Sutra Manuscripts | Era VII · The High Medieval | Jainism (ch52) | `PUBLISHED — pending review` |
-| V64 | The Benin Bronzes | Era VIII · The Early Modern | African Traditional Religion (ch33) | `PUBLISHED — pending review` |
-| V65 | The Staff God of Tiwanaku | Era V · Late Antiquity | The Inca (ch44) | `PUBLISHED — pending review` |
-| V66 | The Kebra Nagast | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); African Diaspora Religions (ch40); Sacred Kingship (ch49) | `PUBLISHED — pending review` |
-| V67 | The Aramaic Incantation Bowls | Era V · Late Antiquity | Rabbinic Judaism (ch19); Mandaeans, Yazidis & Druze (ch56) | `PUBLISHED — pending review` |
-| V68 | The Tjurunga of Central Australia | Era IX · The Modern Age | Aboriginal Australian Dreaming (ch61) | `PUBLISHED — pending review` |
-| V69 | The Kumulipo | Era IX · The Modern Age | Oceania (ch63); Creation & the First Order (ch46) | `PUBLISHED — pending review` |
-| V70 | The Pictish Stones | Era VI · The Early Medieval | Celtic & Germanic (ch14); Patristic Christianity (ch22) | `PUBLISHED — pending review` |
-| V71 | The Stećci: Medieval Tombstones of Bosnia | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); Gnosticism (ch17) | `PUBLISHED — pending review` |
-| V72 | The Book of Shadows | Era IX · The Modern Age | Wicca & Modern Paganism (ch38) | `PUBLISHED — pending review` |
-| V73 | The Book of the Law | Era IX · The Modern Age | Theosophy & the Occult Revival (ch37) | `PUBLISHED — pending review` |
-| V74 | The Satanic Bible | Era IX · The Modern Age | Satanism (ch39) | `PUBLISHED — pending review` |
-| V75 | The Golden Plates | Era IX · The Modern Age | New Religious Movements (ch35) | `PUBLISHED — pending review` |
-| V76 | The Báb's Star Tablet | Era IX · The Modern Age | Bahá'í & New Faiths (ch65) | `PUBLISHED — pending review` |
-| V77 | The Haitian Vèvè | Era IX · The Modern Age | African Diaspora Religions (ch40); African Traditional Religion (ch33) | `PUBLISHED — pending review` |
+| V01 | The Voynich Manuscript | Era VII · The High Medieval | Scholasticism (ch28); Theosophy & the Occult Revival (ch37) | `CLEARED` |
+| V02 | The Dead Sea Scrolls | Era IV · The Axial Age | Second Temple Judaism (ch10); Early Christianity (ch16); Rabbinic Judaism (ch19); The End of Days (ch50); Gnosticism (ch17); Pistis Sophia (ch45) | `CLEARED` |
+| V03 | The Emerald Tablet | Era VI · The Early Medieval | Roman Mystery Cults (ch18); Gnosticism (ch17); Islam (ch21); Scholasticism (ch28); Theosophy & the Occult Revival (ch37) | `CLEARED` |
+| V04 | The Shroud of Turin | Era VII · The High Medieval | Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `CLEARED` |
+| V05 | The Holy Lance (“Spear of Destiny”) | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); Sacred Kingship (ch49) | `CLEARED` |
+| V06 | The Crown of Thorns | Era VII · The High Medieval | Scholasticism (ch28); Eastern Orthodoxy & Byzantium (ch60); Sacred Kingship (ch49) | `CLEARED` |
+| V07 | The Ark of the Covenant | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Second Temple Judaism (ch10); Rabbinic Judaism (ch19); Eastern Orthodoxy & Byzantium (ch60) | `CLEARED` |
+| V08 | The Nag Hammadi Codices | Era V · Late Antiquity | Gnosticism (ch17); Pistis Sophia (ch45); Early Christianity (ch16); Manichaeism (ch55) | `CLEARED` |
+| V09 | The Codex Gigas (“Devil's Bible”) | Era VII · The High Medieval | Scholasticism (ch28) | `CLEARED` |
+| V10 | The Copper Scroll | Era IV · The Axial Age | Second Temple Judaism (ch10) | `CLEARED` |
+| V11 | The Rohonc Codex | Era VIII · The Early Modern | The Reformation (ch31) | `CLEARED` |
+| V12 | The Ketef Hinnom Silver Scrolls | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Rabbinic Judaism (ch19) | `CLEARED` |
+| V13 | The Tilma of Guadalupe | Era VIII · The Early Modern | The Aztec (ch43); The Great Goddess (ch48) | `CLEARED` |
+| V14 | The Holy Grail | Era VII · The High Medieval | Sacred Kingship (ch49); Celtic & Germanic (ch14) | `CLEARED` |
+| V15 | The True Cross | Era V · Late Antiquity | Patristic Christianity (ch22); Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `CLEARED` |
+| V16 | The James Ossuary | Era IV · The Axial Age | Early Christianity (ch16); Second Temple Judaism (ch10) | `CLEARED` |
+| V17 | The “Gospel of Jesus's Wife” | Era IX · The Modern Age | Early Christianity (ch16) | `CLEARED` |
+| V18 | Codex Sinaiticus | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22) | `CLEARED` |
+| V19 | The Book of Soyga | Era VIII · The Early Modern | Kabbalah (ch26); Theosophy & the Occult Revival (ch37) | `CLEARED` |
+| V20 | The Papyrus of Ani | Era II · The Bronze Age | Egypt (ch02); Journeys to the Underworld (ch47) | `CLEARED` |
+| V21 | The Book of Kells | Era VI · The Early Medieval | Celtic & Germanic (ch14); Patristic Christianity (ch22) | `CLEARED` |
+| V22 | The Mesha Stele | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58) | `CLEARED` |
+| V23 | The Tel Dan Stele | Era III · The Early Iron Age | Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58); Sacred Kingship (ch49) | `CLEARED` |
+| V24 | The Sudarium of Oviedo | Era V · Late Antiquity | Patristic Christianity (ch22); Scholasticism (ch28) | `CLEARED` |
+| V25 | The Veil of Veronica | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); The Reformation (ch31) | `CLEARED` |
+| V26 | The Black Stone of the Kaaba | Era VI · The Early Medieval | Islam (ch21) | `CLEARED` |
+| V27 | The Sacred Tooth Relic | Era V · Late Antiquity | Buddhism (ch11); Mahayana Buddhism (ch20); Tibetan & Vajrayana Buddhism (ch53); Sacred Kingship (ch49) | `CLEARED` |
+| V28 | The Birmingham Qur'an Manuscript | Era V · Late Antiquity | Islam (ch21) | `CLEARED` |
+| V29 | The Sana'a Palimpsest | Era V · Late Antiquity | Islam (ch21) | `CLEARED` |
+| V30 | The Diamond Sutra of Dunhuang | Era VI · The Early Medieval | Buddhism (ch11); Mahayana Buddhism (ch20); Zen & Pure Land Buddhism (ch54); Tibetan & Vajrayana Buddhism (ch53) | `CLEARED` |
+| V31 | The Dresden Codex | Era VII · The High Medieval | The Maya (ch29); The Aztec (ch43); Creation & the First Order (ch46); The End of Days (ch50) | `CLEARED` |
+| V32 | The Popol Vuh Manuscript | Era VIII · The Early Modern | The Maya (ch29); Creation & the First Order (ch46); Journeys to the Underworld (ch47); The Flood (ch01) | `CLEARED` |
+| V33 | The Kartarpur Bir | Era VIII · The Early Modern | Sikhism (ch34); Bhakti (ch30); Sufism (ch27) | `CLEARED` |
+| V34 | The Pyramid Texts of Unas | Era II · The Bronze Age | Egypt (ch02); Sacred Kingship (ch49); Journeys to the Underworld (ch47); The End of Days (ch50) | `CLEARED` |
+| V35 | The Cyrus Cylinder | Era IV · The Axial Age | Mesopotamia (ch03); Zoroaster (ch06); Second Temple Judaism (ch10); Sacred Kingship (ch49) | `CLEARED` |
+| V36 | The Rök Runestone | Era VI · The Early Medieval | Norse Paganism (ch23); Celtic & Germanic (ch14); The End of Days (ch50) | `CLEARED` |
+| V37 | The Gundestrup Cauldron | Era IV · The Axial Age | Celtic & Germanic (ch14); Sacrifice & the Scapegoat (ch51); Journeys to the Underworld (ch47) | `CLEARED` |
+| V38 | The Aleppo Codex | Era VI · The Early Medieval | Second Temple Judaism (ch10); Rabbinic Judaism (ch19) | `CLEARED` |
+| V39 | The Derveni Papyrus | Era IV · The Axial Age | Early Greece (ch08); Classical Greece (ch15); Roman Mystery Cults (ch18); Journeys to the Underworld (ch47) | `CLEARED` |
+| V40 | The Gospel of Judas (Codex Tchacos) | Era V · Late Antiquity | Gnosticism (ch17); Early Christianity (ch16); Pistis Sophia (ch45) | `CLEARED` |
+| V41 | The Codex Borgia | Era VII · The High Medieval | The Aztec (ch43); The Maya (ch29); Creation & the First Order (ch46); Sacrifice & the Scapegoat (ch51) | `CLEARED` |
+| V42 | The Lindisfarne Gospels | Era V · Late Antiquity | Early Christianity (ch16); Patristic Christianity (ch22); Celtic & Germanic (ch14) | `CLEARED` |
+| V43 | The Merneptah Stele | Era II · The Bronze Age | Egypt (ch02); Pre-exilic Israel (ch07); Canaanite & Phoenician (ch58); Sacred Kingship (ch49) | `CLEARED` |
+| V44 | The Pilate Stone | Era IV · The Axial Age | Rome (ch13); Early Christianity (ch16); Second Temple Judaism (ch10) | `CLEARED` |
+| V45 | The Nebra Sky Disc | Era II · The Bronze Age | The Neolithic (ch42); Creation & the First Order (ch46) | `CLEARED` |
+| V46 | The Piprahwa Relics | Era IV · The Axial Age | Buddhism (ch11); Mahayana Buddhism (ch20); Sacred Kingship (ch49) | `CLEARED` |
+| V47 | The Kensington Runestone | Era IX · The Modern Age | Norse Paganism (ch23) | `CLEARED` |
+| V48 | The Great Isaiah Scroll | Era IV · The Axial Age | Second Temple Judaism (ch10); Pre-exilic Israel (ch07) | `CLEARED` |
+| V49 | The Book of Enoch | Era IV · The Axial Age | Second Temple Judaism (ch10); The End of Days (ch50); Eastern Orthodoxy & Byzantium (ch60) | `CLEARED` |
+| V50 | The Vienna Dioscurides | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60) | `CLEARED` |
+| V51 | The Codex Mendoza | Era VIII · The Early Modern | The Aztec (ch43) | `CLEARED` |
+| V52 | The Ishtar Gate | Era IV · The Axial Age | Mesopotamia (ch03); Second Temple Judaism (ch10) | `CLEARED` |
+| V53 | The Rosetta Stone | Era IV · The Axial Age | Egypt (ch02); Sacred Kingship (ch49) | `CLEARED` |
+| V54 | The Behistun Inscription | Era IV · The Axial Age | Zoroaster (ch06); Sacred Kingship (ch49) | `CLEARED` |
+| V55 | The Oracle Bones of Anyang | Era III · The Early Iron Age | Early China (ch09); Sacred Kingship (ch49) | `CLEARED` |
+| V56 | The Phaistos Disc | Era II · The Bronze Age | Early Greece (ch08) | `CLEARED` |
+| V57 | The Holy Mandylion | Era V · Late Antiquity | Eastern Orthodoxy & Byzantium (ch60); Patristic Christianity (ch22) | `CLEARED` |
+| V58 | The Lion Man of Hohlenstein-Stadel | Era I · Prehistory | The Paleolithic (ch41) | `CLEARED` |
+| V59 | The Venus of Willendorf | Era I · Prehistory | The Paleolithic (ch41); The Great Goddess (ch48) | `CLEARED` |
+| V60 | Göbekli Tepe's Pillars | Era I · Prehistory | The Neolithic (ch42); The Paleolithic (ch41) | `CLEARED` |
+| V61 | The Kojiki: the Shinpukuji Manuscript | Era VII · The High Medieval | Shinto (ch25); Creation & the First Order (ch46) | `CLEARED` |
+| V62 | The Inca Khipu | Era VII · The High Medieval | The Inca (ch44) | `CLEARED` |
+| V63 | The Kalpa Sutra Manuscripts | Era VII · The High Medieval | Jainism (ch52) | `CLEARED` |
+| V64 | The Benin Bronzes | Era VIII · The Early Modern | African Traditional Religion (ch33) | `CLEARED` |
+| V65 | The Staff God of Tiwanaku | Era V · Late Antiquity | The Inca (ch44) | `CLEARED` |
+| V66 | The Kebra Nagast | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); African Diaspora Religions (ch40); Sacred Kingship (ch49) | `CLEARED` |
+| V67 | The Aramaic Incantation Bowls | Era V · Late Antiquity | Rabbinic Judaism (ch19); Mandaeans, Yazidis & Druze (ch56) | `CLEARED` |
+| V68 | The Tjurunga of Central Australia | Era IX · The Modern Age | Aboriginal Australian Dreaming (ch61) | `CLEARED` |
+| V69 | The Kumulipo | Era IX · The Modern Age | Oceania (ch63); Creation & the First Order (ch46) | `CLEARED` |
+| V70 | The Pictish Stones | Era VI · The Early Medieval | Celtic & Germanic (ch14); Patristic Christianity (ch22) | `CLEARED` |
+| V71 | The Stećci: Medieval Tombstones of Bosnia | Era VII · The High Medieval | Eastern Orthodoxy & Byzantium (ch60); Gnosticism (ch17) | `CLEARED` |
+| V72 | The Book of Shadows | Era IX · The Modern Age | Wicca & Modern Paganism (ch38) | `CLEARED` |
+| V73 | The Book of the Law | Era IX · The Modern Age | Theosophy & the Occult Revival (ch37) | `CLEARED` |
+| V74 | The Satanic Bible | Era IX · The Modern Age | Satanism (ch39) | `CLEARED` |
+| V75 | The Golden Plates | Era IX · The Modern Age | New Religious Movements (ch35) | `CLEARED` |
+| V76 | The Báb's Star Tablet | Era IX · The Modern Age | Bahá'í & New Faiths (ch65) | `CLEARED` |
+| V77 | The Haitian Vèvè | Era IX · The Modern Age | African Diaspora Religions (ch40); African Traditional Religion (ch33) | `CLEARED` |
 | — | Batch 9 queue: Malleus Maleficarum · Zohar (Mantua printing) · Sefer Yetzirah · Mawangdui Silk Texts · Bardo Thödol · Codex Boturini · Hinton St Mary Mosaic · Picatrix · Berlin Gold Hat · Diwan Abatur | — | placed on publication | `not started` (queued) |
 
 ## The Pantheon — directory of gods, spirits & mythic figures (added 2026-09-27)
@@ -263,4 +263,4 @@ A searchable directory at `pantheon.html`: 199 figures from 30 traditions, in si
 - **Placement:** every figure is homed on one or more chapters (field `ch`), and each of those chapters shows it in an "In the Pantheon" strip. Related Vault entries are linked from the figure's detail view (field `v`). Figures are also in site search.
 - **Portraits:** interpretive emblems built from traditional attributes, one consistent style, tinted by tradition. Not likenesses, and not copies of any historical image.
 - **Evidence honesty:** figures with a disputed identification or history carry a `contested` tag, with the dispute stated in the detail view. Where a tradition forbids picturing a figure, the emblem is the name in its own script.
-- **Status:** `PUBLISHED — pending review`. Add figures as new chapters are drafted.
+- **Status:** `CLEARED`. Add figures as new chapters are drafted.

@@ -57,7 +57,7 @@ phase starts. Gate 0, which closes this stage, needs three things from Carter:
 ## Status of the gates (2026-09-28)
 - **G0 and G4:** passed on the PLAN §13 recommendations, as Carter asked for the whole plan in one batch.
 - **G1:** budget met in emulation (see the report). The real-phone half is owed, together with G3.
-- **G2 (style):** open. Carter reviews the live museum.
+- **G2 (style):** passed. Carter passed the items under review (2026-09-28) and asked for a planetarium ceiling as the next visual step.
 - **G3 (real device):** open. Emulation only so far.
 - **G5+:** superseded, because every wing was generated at once.
 

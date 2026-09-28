@@ -119,7 +119,7 @@ Software rendering (SwiftShader) and emulated devices overstate CPU cost and say
 
 ## Owed / needs Carter
 
-1. **Style sign-off** on the live museum (Gate 2), with notes for a second visual pass.
+1. ~~Style sign-off on the live museum (Gate 2).~~ Passed by Carter, 2026-09-28.
 2. **A real mid-range phone check** (Gate 1/3 hardware). The numbers above come from emulation.
-3. **Review of the 21 chapters** with new lens sections and plates (ch45–ch65).
+3. ~~Review of the 21 chapters with new lens sections and plates (ch45–ch65).~~ Cleared by Carter, 2026-09-28.
 4. Whether to keep the museum linked from the home page and chapters while it is in beta.
