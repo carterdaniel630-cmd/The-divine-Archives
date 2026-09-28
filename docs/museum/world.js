@@ -152,14 +152,14 @@ function skyMaterial(key, q) {
     uCover: { value: P.cover }, uDens: { value: P.dens }, uSpeed: { value: P.speed }, uSun: { value: P.sun || 0 },
     uStars: { value: P.stars || 0 }, uMoon: { value: P.moon || 0 }, uAurora: { value: P.aurora || 0 }, uRain: { value: P.rain || 0 },
     uHaze: { value: P.haze || 0 }, uRays: { value: P.rays || 0 }, uBirds: { value: P.birds || 0 }, uMilky: { value: P.milky || 0 },
-    uEmber: { value: P.ember || 0 }, uCycle: { value: P.cycle || 0 }, uSeed: { value: Math.random() * 50 }
+    uEmber: { value: P.ember || 0 }, uRaptor: { value: 0 }, uGulls: { value: 0 }, uCycle: { value: P.cycle || 0 }, uSeed: { value: Math.random() * 50 }
   };
   const m = new THREE.ShaderMaterial({
     uniforms: u, depthWrite: true,
     defines: { OCT: q > 1 ? 5 : 3 },
     vertexShader: `varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position, 1.); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
     fragmentShader: `
-uniform float uTime, uFlash, uCover, uDens, uSpeed, uSun, uStars, uMoon, uAurora, uRain, uHaze, uRays, uBirds, uMilky, uEmber, uCycle, uSeed;
+uniform float uTime, uFlash, uCover, uDens, uSpeed, uSun, uStars, uMoon, uAurora, uRain, uHaze, uRays, uBirds, uMilky, uEmber, uCycle, uSeed, uRaptor, uGulls;
 uniform vec3 uZen, uHor, uCloud, uShade, uSunCol, uSunDir; uniform vec4 uBolt;
 varying vec3 vW;
 ${GLSL_NOISE}
@@ -218,6 +218,23 @@ void main(){
       vec2 q = d.xz / (up + .2) - bc; float fl = sin(uTime * 7. + fi * 2.) * .012;
       float b = min(seg(q, vec2(-.014, .006 + fl * .5), vec2(0., 0.)), seg(q, vec2(.014, .006 + fl * .5), vec2(0., 0.)));
       col = mix(col, vec3(.08, .07, .07), smoothstep(.0022, .0008, b) * uBirds);
+    }
+  }
+  // a bird of prey circling high up (eagle, condor, hawk), and gulls gliding
+  if (uRaptor > 0.) {
+    vec2 sp = d.xz / (up + .2); float a = uTime * .12 + uSeed; vec2 c = vec2(.15, -.1) + vec2(cos(a), sin(a)) * .5;
+    float hd = a + 1.5708, cs = cos(hd), sn = sin(hd); vec2 lp = mat2(cs, -sn, sn, cs) * (sp - c) / uRaptor;
+    float span = .11, ax = abs(lp.x) / span, wing = step(ax, 1.) * smoothstep(.003, .0, abs(lp.y + .01 * ax) - .016 * (1. - ax * ax * .6));
+    float fingers = step(.8, ax) * step(ax, 1.) * step(.5, fract(lp.y * 160.)); wing *= 1. - fingers * .7;
+    float bod = smoothstep(.003, .0, length(lp * vec2(4., 1.)) - .028), tail = step(abs(lp.x), .012 + (-lp.y - .02) * .3) * step(-.055, lp.y) * step(lp.y, -.02);
+    col = mix(col, vec3(.06, .05, .05), clamp(max(max(wing, bod), tail), 0., 1.) * .92);
+  }
+  if (uGulls > 0.) {
+    for (int i = 0; i < 3; i++) { float fi = float(i), ph = fract(uTime * (.01 + fi * .003) + fi * .41);
+      vec2 q2 = d.xz / (up + .2) - vec2(mix(-1.3, 1.3, ph), (fi - 1.) * .45 + sin(ph * 5. + fi) * .1); float x = abs(q2.x);
+      float yb = -abs(x - .02) * .5 + .012 + sin(uTime * 2. + fi) * .002 * step(.5, fract(uTime * .2 + fi * .3));
+      float g2 = step(x, .045) * smoothstep(.0025, .0, abs(q2.y - yb) - .0025 * (1. - x / .045));
+      col = mix(col, vec3(.95, .95, .95) * .9, g2);
     }
   }
   // lightning: the whole cloud deck lights from inside, and a bolt forks across
@@ -385,7 +402,7 @@ function pitMat(o, LU) {
   const m = new THREE.MeshBasicMaterial({ map: o.map || null, vertexColors: true, side: o.side || THREE.FrontSide });
   const amp = o.sway || 0;
   m.onBeforeCompile = (sh) => {
-    Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime });
+    Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime }, o.uniforms || {});
     sh.vertexShader = "uniform float uTime; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
       #ifdef USE_INSTANCING
       vec3 io = (instanceMatrix * vec4(0., 0., 0., 1.)).xyz;
@@ -394,11 +411,13 @@ function pitMat(o, LU) {
       #endif
       float sw = sin(uTime * 1.6 + io.x * 1.3 + io.z * .9) + .5 * sin(uTime * 2.7 + io.x * 3.1);
       transformed.x += sw * ${amp.toFixed(3)} * transformed.y * transformed.y * 2.; transformed.z += sw * ${(amp * 0.5).toFixed(3)} * transformed.y * transformed.y;
+      ${o.vert || ""}`).replace("#include <skinning_vertex>", `#include <skinning_vertex>
       vec4 wpp = vec4(transformed, 1.);
       #ifdef USE_INSTANCING
       wpp = instanceMatrix * wpp;
       #endif
       vWp = (modelMatrix * wpp).xyz;`);
+    if (o.head) sh.vertexShader = o.head + "\n" + sh.vertexShader;
     sh.fragmentShader = "uniform float uTime, uWater, uLava; uniform vec3 uAmb, uSun, uSunDir, uLamp; varying vec3 vWp;\n#define OCT 3\n" + GLSL_NOISE +
       sh.fragmentShader.replace("#include <envmap_fragment>", `
       vec3 nW = normalize(cross(dFdx(vWp), dFdy(vWp))); if (dot(nW, cameraPosition - vWp) < 0.) nW = -nW;
@@ -413,9 +432,10 @@ function pitMat(o, LU) {
       if (uLava > 0.) { float cr = fbm(vWp.xz * 1.7); float crack = smoothstep(.018, .0, abs(cr - .5)) + .35 * smoothstep(.05, .0, abs(cr - .5)); float pulse = .7 + .3 * sin(uTime * 1.1 + vWp.x * 2.);
         outgoingLight = mix(outgoingLight, vec3(.95, .22, .04) * 1.4 * pulse, clamp(crack, 0., 1.) * uLava); }`);
   };
-  m.customProgramCacheKey = () => "pit" + amp;
+  m.customProgramCacheKey = () => "pit" + amp + (o.key || "");
   return m;
 }
+export { pitMat, colorize, mergeG, blade, rot, rockGeo, PLANT_U };
 function lightOf(A) {
   const P = skyOf(A.env.sky), lit = P.lit || 0.8;
   const amb = C(P.hor).lerp(C(P.zen), 0.5).multiplyScalar(0.35 + 0.75 * lit);
@@ -534,7 +554,7 @@ const BIOME = {
     tint: () => [1, 1, 1], extras: "zen", scatter: [["tuft", 0.4, "bank"]] },
   jungle: { tex: "leaf", h: (s, t, A) => -0.8 + 0.18 * fbm2(s * 0.35, t * 0.35, 32) - 0.35 * smooth(1.3, 0.7, Math.hypot(s - A.L / 2, t)), wet: -0.95, water: { y: -0.97, flow: [0.04, 0.02], calm: 0.8, deep: "#0c3a34", shallow: "#2a8a78" },
     tint: (h, w) => h < w + 0.02 ? [0.55, 0.55, 0.45] : [0.62, 0.6, 0.46], scatter: [["leafBig", 3, "bank"], ["fern", 2.6, "bank"], ["mossrock", 0.2, "bank"], ["mushroom", 0.6, "bank"], ["branch", 0.25, "bank"], ["flower", 0.5, "bank"], ["tuft", 2, "bank"]] },
-  terraces: { tex: "grass", h: (s, t, A) => -1.15 + Math.floor(smooth(0, A.L, s) * 4.999) * 0.14 + 0.02 * fbm2(s, t, 34), tint: () => [1, 1, 1], extras: "terraces", scatter: [["tuft", 7, "any"], ["flower", 0.8, "any"], ["rock", 0.08, "any"]] },
+  terraces: { tex: "grass", h: (s, t, A) => -1.15 + Math.floor(smooth(0, A.L, s) * 4.999) * 0.14 + 0.02 * fbm2(s, t, 34), tint: () => [0.62, 0.72, 0.5], extras: "terraces", scatter: [["tuft", 7, "any"], ["flower", 0.8, "any"], ["rock", 0.08, "any"]] },
   ash: { tex: "ash", h: (s, t) => -0.9 + 0.16 * fbm2(s * 0.35, t * 0.35, 36), lava: 1, tint: () => [1, 1, 1], scatter: [["rock", 0.2, "any"], ["pebble", 0.8, "any"]], embers: true },
   void: { tex: "ash", void: true }
 };
@@ -572,6 +592,7 @@ function localFrame(A) {
 function buildSky(A, q) {
   const r = A.sky, g = new THREE.Group();
   const mat = skyMaterial(A.env.sky, q); A.skyMat = mat;
+  const fa = A.env.fauna || []; mat.uniforms.uRaptor.value = fa.includes("condor") ? 1.4 : fa.includes("eagle") ? 1.1 : fa.includes("hawk") ? 0.8 : 0; mat.uniforms.uGulls.value = fa.includes("gulls") ? 1 : 0;
   const p = new THREE.Mesh(new THREE.PlaneGeometry(r.x1 - r.x0, r.z1 - r.z0), mat);
   p.rotation.x = Math.PI / 2; p.position.set((r.x0 + r.x1) / 2, r.y - 0.02, (r.z0 + r.z1) / 2); g.add(p);
   // a bronze frame round the skylight, with glazing bars

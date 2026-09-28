@@ -23,7 +23,8 @@ import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=1";
+import { createWorld } from "./world.js?v=2";
+import { makeFauna } from "./fauna.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -475,7 +476,7 @@ function build() {
   });
   finishZones();
   // skies and grounds (world.js)
-  S.world = createWorld({ scene, quality: touch ? 1 : 2 });
+  S.world = createWorld({ scene, quality: touch ? 1 : 2, fauna: (A, q) => makeFauna(A, q, S.world) });
   S.areas.forEach((a) => S.world.addArea(a));
   // lamp glows (one Points object)
   const lp = new Float32Array(S.lampAnchors.length * 3);
