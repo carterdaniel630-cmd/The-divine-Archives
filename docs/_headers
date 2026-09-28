@@ -13,3 +13,12 @@
   Cache-Control: public, max-age=0, must-revalidate
 /assets/archive.css
   Cache-Control: public, max-age=0, must-revalidate
+
+# The Virtual Museum is an entry point, not content: keep it and its data out of search results.
+/museum.html
+  X-Robots-Tag: noindex, follow
+/museum/*
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/vendor/three/*
+  Cache-Control: public, max-age=604800

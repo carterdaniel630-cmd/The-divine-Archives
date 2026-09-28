@@ -1,0 +1,125 @@
+# Virtual Museum — Phases 1–4 build report (single batch)
+
+**Branch:** `claude/virtual-museum` → fast-forwarded to `main`. **Date:** 2026-09-28.
+Carter asked for the whole plan (`museum/00-scoping/PLAN.md`) to be completed as one batch. Each
+gate that PLAN §12 put between phases was therefore passed on the recommendations in PLAN §13. Every
+one of those choices is listed below and can be reversed; none needed new infrastructure.
+
+## What shipped
+
+- **`/museum.html`** (beta):
+  - **walls, floors and props:** built procedurally from the site's data;
+  - **structure:** an entrance hall, the Rotunda of comparative themes (7 bays plus 1 reserved) and
+    the Spine gallery with **9 wings, one per Age, holding all 65 chapters** (58 rooms, 7 bays);
+  - **exhibits:** all **87 Vault objects** and **199 Pantheon figures** are placed, each once in its
+    home room;
+  - **links:** every exhibit opens the archive's own page.
+- **`tools/build-museum.js`:**
+  - **inputs:** `data.js`, `plates.js`, `emblems.js`, `vault-data.js`, `pantheon-data.js`,
+    `pantheon-art.js`, and the chapter→game map read out of `symbols.html`;
+  - **outputs:** `docs/museum/manifest.json` (32 KB) and ten per-wing detail files in
+    `docs/museum/wings/` (14–173 KB raw, 5–22 KB gzipped), and it prerenders the fallback directory
+    into `museum.html`;
+  - **no duplicated text:** nothing is typed twice. The only curated inputs are the living-tradition
+    list, the no-image list, the floor-vitrine override and the six tradition trails.
+- **`docs/museum/app.js`** (75 KB, 23 KB gzipped): the engine.
+- **`docs/assets/vendor/three/`:** three.js r186 core and module, minified once with esbuild. The
+  exact command is in its `README.txt`, and the MIT licence is included.
+- **Site hooks:**
+  - a "VII · The Museum (beta)" card on the home page (the Arcade becomes VIII);
+  - a "Walk this chapter's room in the Museum (beta)" link at the foot of every chapter page;
+  - `X-Robots-Tag` headers for `/museum.html` and `/museum/*`.
+
+## Decisions taken on the recommendations (PLAN §13)
+
+| # | Decision | Taken as |
+|---|---|---|
+| 1 | Layout | **A**: one wing per Age off a chronological Spine, themes in a central Rotunda. Tradition trails (Christianity, Judaism, Buddhism, Islam, Gnosis & dualism, Western esotericism) are offered from the entrance-hall board and the Room guide, not as floor inlays |
+| 2 | Engine | **Three.js**, vendored, no bundler |
+| 3 | Art style | "Cathedral archive": stone, dark wood, bronze, candlelight, all procedural. **Carter to review live** |
+| 4 | Figures | The Pantheon's **emblem medallions** in wall niches; `glyph:` figures (Muhammad, Fatima, Ali) as **calligraphy panels** |
+| 5 | Objects | **Generic stand-in props** chosen by object type, each label saying "Stand-in, not a replica". The Hinton St Mary mosaic lies in a floor vitrine with a **generic tesserae pattern**, so labelled. V17 carries a **"Proven forgery"** band |
+| 6 | Home room | The **first chapter** in an item's list. Other rooms list it on their "See also" board, which links to it and offers "go there" |
+| 7 | Living traditions | Kept in the repo's wings (ch33, ch61, ch62, ch63), each with **"A living tradition"** plaque text. **V68 (tjurunga) and V76 (the Báb's tablet) get plaques, no case or prop** |
+| 8 | Unclear placements | Kept as `data.js` files them: ch21 in VI; ch45 its own room; ch56 one room; ch60 a standard room (its 5 cases fit) |
+| 9 | Thin rooms | Built as they are (ch64 now has its new illustration, so no room is empty) |
+| 10 | Symbology carvings | **Plate only**. Structured symbology extraction stays a content task for later |
+| 11 | Out-of-scope fixes | **Done** in this batch (see below) |
+| 12 | Tools and money | Nothing paid. No Blender (see "Deviations"). esbuild ran once, outside the repo |
+| 13 | Hardware | No physical phone was available. Measured with Chromium's device emulation and network/CPU throttling instead. **A real-device check is still owed** |
+| 14 | Preview deploys | Not used. The museum is additive, `noindex`, and changes no existing URL, so it went straight to production as "beta" |
+| 15 | Entry point | `/museum.html`, labelled beta, linked from the home page and every chapter |
+
+## Deviations from the plan, and why
+
+- **No Blender, no baked lightmaps, no glTF.**
+  - Why: Blender is not installed here and no artist was engaged.
+  - Instead: the building is generated in code from the manifest. That makes all 65 rooms cost
+    about the same as one, keeps the whole museum in sync with the archive on every rebuild, and
+    downloads no model files at all.
+  - Lighting: a pool of four point lights that follow the visitor to the nearest lamps, a lantern
+    light on the camera, hemisphere fill and fog.
+  - A future art pass can still replace the kit with glTF props. PLAN §8 remains the spec for that.
+- **See-also items share one board per room**, which opens a list with links and "go there". PLAN
+  had one plaque per item, but rooms such as ch21 (13 items) or ch49 (22) would have been
+  unreadable.
+- **Wall art is the archive's SVG drawn onto canvases at runtime.** No texture files are shipped,
+  so there is no KTX2 step.
+
+## Measurements (headless Chromium, SwiftShader; see "Owed")
+
+| Budget item (PLAN §9) | Budget | Measured |
+|---|---|---|
+| JS, gzipped | ≤ 250 kB | **219 kB** (three core 104 + module 92 + app 23) |
+| Entrance + hallway download | ≤ 4 MB mobile | about **260 kB** (HTML, CSS, JS, manifest; fonts are the site's own) |
+| Per-room/wing download | ≤ 3 MB mobile | **5–22 kB** gzipped per wing file |
+| Draw calls | ≤ 80 mobile | steady state across all 65 rooms: median **29**, busiest room **52** (ch16), Rotunda **46**, a wing corridor **50**, hall **18** |
+| Triangles | ≤ 150 k mobile | max about **24 k** in a room |
+| Cold start, emulated phone, CPU ×4 | ≤ 5 s first interactive | **2.0 s** on fast 4G (9 Mbps, 60 ms). **6.1 s** on slow 4G (1.6 Mbps, 150 ms), over budget, and that figure includes a 1.5 s font wait because Google Fonts is blocked in the test sandbox |
+| Wing load after a teleport, same profiles | ≤ 1 s prefetched | **2.2 s** fast 4G, **4.3 s** slow 4G when not prefetched, with software rendering (SwiftShader). Walking prefetches wing data from 30 m away |
+
+Software rendering (SwiftShader) and emulated devices overstate CPU cost and say nothing about real GPU frame rates. Frame rate was therefore not measured; the real-device check below is owed.
+
+## Tests run (all passing at merge)
+
+- **All 65 rooms:** each rendered with exactly its home Vault objects and home figures (manifest vs
+  scene), and the location label names the right room.
+- **Links:** 84 distinct card links from the first 60 exhibits, including `#evidence`, `#symbology`
+  and `#figures` anchors, all resolve.
+- **Collision:** walking into a case or wall stops.
+- **Room guide and directory:** the Room guide lists the room's exhibits and trail steps. The
+  directory lists 65 rooms, and "walk there" enters 3D at the room.
+- **Phone:**
+  - `#ch16` deep link skips the intro;
+  - tap-to-walk moves;
+  - a tap on an exhibit opens its card. A bug was found and fixed here: the browser's click after a
+    tap could fire a card link the moment the card appeared.
+- **Reduced motion:** honoured from the OS setting and the toggle.
+- **Fallbacks:** without WebGL, the directory appears with an explanation; with JavaScript off, the
+  directory's 365 links are all present.
+- **Search visibility:** `noindex, follow` meta and header, and nothing museum-related in
+  `sitemap.xml`.
+- **Site checks:** all twelve game verifiers still pass.
+
+## Also done in this batch (PLAN §0 / §13 item 11)
+
+- **Evidence panel fixed on ch01–ch20.**
+  - Cause: the converter read "verdict heading + bullet list" as a single paragraph.
+  - Fix: the converter was repaired, and the 20 panels regenerated with word-for-word identical
+    text.
+- **Stable anchors:**
+  - chapter `<h2>`s get ids (`#symbology`, `#the-skeptical-lens`, …) and the panel is
+    `#evidence`;
+  - Vault pages get `#evidence`, `#symbology` and `#connections`.
+- **Believer's and skeptical lens sections for ch45–ch65** (21 pairs), each restating claims already
+  sourced in its own chapter.
+- **Interpretive plates for ch47–ch65** (19), drawn from each chapter's symbology section.
+- **Pending review:** those 21 chapters carry the pending-review tag again until Carter clears the
+  new material.
+
+## Owed / needs Carter
+
+1. **Style sign-off** on the live museum (Gate 2), with notes for a second visual pass.
+2. **A real mid-range phone check** (Gate 1/3 hardware). The numbers above come from emulation.
+3. **Review of the 21 chapters** with new lens sections and plates (ch45–ch65).
+4. Whether to keep the museum linked from the home page and chapters while it is in beta.

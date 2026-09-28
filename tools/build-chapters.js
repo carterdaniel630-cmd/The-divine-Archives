@@ -136,6 +136,12 @@ function withAnchors(html) {
   return html.replace('<div class="evidence">', '<div class="evidence" id="evidence">');
 }
 
+// the chapter's room in the Virtual Museum (museum.html, noindex; built by tools/build-museum.js)
+function museumLink(ch) {
+  return '\n      <p class="tiny center" style="margin-top:2rem"><a href="../museum.html#' + ch.id + '">' +
+    (ch.kind === "theme" ? "Visit this theme&rsquo;s alcove in the Museum (beta)" : "Walk this chapter&rsquo;s room in the Museum (beta)") + " &rarr;</a></p>";
+}
+
 const HEADER = `  <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="../index.html">
@@ -260,7 +266,7 @@ ${HEADER}
         <button type="button" class="print-btn" onclick="window.print()" title="Save this chapter as a PDF">Save as PDF</button></p>
     </div>
     <section class="wrap article">
-${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${figuresFor(ch)}${vaultFor(ch)}${seeAlso(ch)}
+${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This chapter is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the chapter is cleared.</div>\n` : ""}${rendered}${figuresFor(ch)}${vaultFor(ch)}${seeAlso(ch)}${museumLink(ch)}
       <p class="print-only">From <strong>The Divine Archives</strong> &middot; ${url} &middot; a comparative library of the sacred.</p>
       <div class="chapter-nav">${backNav}<a href="../eras.html">Browse the ages &rarr;</a></div>
     </section>

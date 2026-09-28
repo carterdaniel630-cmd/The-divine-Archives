@@ -28,13 +28,15 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 /functions/                 <- Cloudflare Pages Functions (api/subscribe for the home-page form)
 /tools/                     <- build-*.js (prerender), md-to-chapter.js, verify-*.js (game facts vs chapter text)
 /art-source/                <- source artwork kept out of the deployed site
+/museum/                    <- Virtual Museum governance, plan and phase reports (the museum is docs/museum.html + docs/museum/)
 ```
 
 ## Build & deploy (repo mechanics)
 - Production deploys from `main` only: `.github/workflows/deploy.yml` runs `wrangler pages deploy docs`
   to Cloudflare Pages on every push. Work on a feature branch and merge by fast-forward when approved.
 - Pages are prerendered and the output is committed. After a content change run, in order:
-  `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`.
+  `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`,
+  `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
 - A chapter's body goes into `content/chapters.js` via `node tools/md-to-chapter.js <id> <file.md>`;
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.

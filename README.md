@@ -47,6 +47,7 @@ The-divine-Archives/
 ├── functions/            # Cloudflare Pages Functions (POST /api/subscribe for the home-page form)
 ├── tools/                # Build, conversion and verification scripts
 ├── art-source/           # Source artwork kept out of the deployed site
+├── museum/               # Virtual Museum planning and phase reports (the museum itself is docs/museum*)
 ├── .github/workflows/    # deploy.yml (deploy), verify.yml + game-runtime.yml (checks)
 ├── 00-audit/             # Site audits (current: 00-audit/site-audit.md)
 ├── drafts/, icm/, stages/, mini-games/   # Historical planning and working notes
@@ -66,6 +67,11 @@ and no runtime build. Sections:
 - **Symbols**: the site's sacred symbols, twelve of which open a mini-game. Every
   fact shown in a game is checked against chapter text by a
   `tools/verify-*.js` script.
+- the **Museum** (beta, `museum.html`): a walkable 3D building, one room per
+  chapter in a wing per Age, generated from the same data files by
+  `tools/build-museum.js`. It is `noindex` and never in the sitemap; the chapter,
+  Vault and Pantheon pages stay canonical. Three.js is vendored in
+  `docs/assets/vendor/three/`.
 
 The chapter, era, listing, Vault, search-index and sitemap pages are
 **prerendered** and the output is committed. After changing content, rebuild
@@ -75,6 +81,7 @@ in this order:
 node tools/build-vault.js
 node tools/build-chapters.js
 node tools/build-pages.js
+node tools/build-museum.js
 ```
 
 To add or update a chapter's body, convert its markdown with

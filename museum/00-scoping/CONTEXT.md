@@ -1,7 +1,7 @@
 # Virtual Museum — Stage 0 CONTEXT (governance)
 
 **Track:** Virtual Museum. **Branch:** `claude/virtual-museum`, cut from `origin/main` at
-`ba6781e` (2026-09-28). **Stage:** 0, scoping only: nothing is built. **Owner / approver:** Carter.
+`ba6781e` (2026-09-28). **Stage:** 0 closed. Phases 1–4 were built in one batch at Carter's request (2026-09-28); see `museum/01-build/REPORT.md`. **Owner / approver:** Carter.
 
 ## Goal
 A walkable 3D museum at getconexto.com: halls and rooms, one room per chapter (or tradition), with
@@ -53,6 +53,13 @@ phase starts. Gate 0, which closes this stage, needs three things from Carter:
 | G3 Pilot (preview) | Pilot works on the preview alias: interaction, fallback, a11y, noindex checks pass |
 | G4 Pilot (production) | Carter approves going live at `/museum.html` |
 | G5+ Expansion | One wing per phase, each approved separately |
+
+## Status of the gates (2026-09-28)
+- **G0 and G4:** passed on the PLAN §13 recommendations, as Carter asked for the whole plan in one batch.
+- **G1:** budget met in emulation (see the report). The real-phone half is owed, together with G3.
+- **G2 (style):** open. Carter reviews the live museum.
+- **G3 (real device):** open. Emulation only so far.
+- **G5+:** superseded, because every wing was generated at once.
 
 ## Files in this stage
 - `CONTEXT.md`: this file.
