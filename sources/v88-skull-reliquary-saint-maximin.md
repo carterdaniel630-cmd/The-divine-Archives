@@ -5,7 +5,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 **Drafting note (2026-09-28).** Added at Carter's request, together with a modelled rendition of the reliquary in the museum.
 
 - **How the facts were checked:** by web search while drafting. The drafting environment's network policy blocked direct access to Wikipedia, SAGE, PubMed Central and History Hit, so claims were confirmed from search excerpts of those sources and of the others listed. Page-level quotations should be re-checked in review.
-- **Images:** no photographs of the relic are reproduced. The museum's model follows published descriptions (gilded hair, four angels, the date MDCCCLX) and is labelled as a rendition, not a replica.
+- **Images:** no photographs of the relic are reproduced. The museum's model follows published descriptions (gilded hair, four angels, the date MDCCCLX, the place made for the vial of the *noli me tangere*) and a photograph of the reliquary shared by Carter for the purpose. It is labelled as a rendition, not a replica.
 
 ## Sources cited
 

@@ -106,6 +106,7 @@ function makeEnv(renderer) {
 
 // ---------------------------------------------------------------- models
 // each returns { root, actions: [{ id, label, alt }], act(id), update(dt), target (look-at y), fit (camera distance) }
+function put(parent, obj) { parent.add(obj); return obj; }   // add a child and return the CHILD (Object3D.add returns the parent)
 function mesh(geo, mat, x, y, z) { const m = new THREE.Mesh(geo, mat); m.position.set(x || 0, y || 0, z || 0); return m; }
 
 function scrollModel(M) {
@@ -190,7 +191,7 @@ function casketModel(M, chest) {
   if (!chest) root.add(mesh(new THREE.BoxGeometry(W + 0.006, 0.025, D + 0.006), M.gold, 0, H - 0.02, 0));
   // inside: a wrapped bundle (a stand-in for "a relic", not any particular one)
   const bundle = mesh(new THREE.SphereGeometry(0.1, 20, 14), M.linen, 0, 0.09, 0); bundle.scale.set(1.5, 0.55, 0.9); root.add(bundle);
-  root.add(mesh(new THREE.TorusGeometry(0.075, 0.008, 8, 24), M.velvet, 0, 0.1, 0)).rotation.x = Math.PI / 2;
+  put(root, mesh(new THREE.TorusGeometry(0.075, 0.008, 8, 24), M.velvet, 0, 0.1, 0)).rotation.x = Math.PI / 2;
   // the lid hinges at the back edge
   const lidPivot = new THREE.Group(); lidPivot.position.set(0, H, -D / 2); root.add(lidPivot);
   if (chest) {
@@ -295,10 +296,10 @@ function cordsModel(M) {
 function simpleModel(M, kind) {
   const root = new THREE.Group(); let target = 0.2, fit = 1.3;
   if (kind === "spear") {
-    root.add(mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.9, 12), M.wood, 0, 0.3)).rotation.z = Math.PI / 2;
+    put(root, mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.9, 12), M.wood, 0, 0.3)).rotation.z = Math.PI / 2;
     const tip = mesh(new THREE.ConeGeometry(0.05, 0.3, 4), M.bronze, 0.6, 0.3); tip.rotation.z = -Math.PI / 2; tip.scale.set(1, 1, 0.3); root.add(tip);
-    root.add(mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.08, 12), M.gold, 0.43, 0.3)).rotation.z = Math.PI / 2;
-    root.add(mesh(new THREE.TorusGeometry(0.03, 0.006, 8, 20), M.gold, 0.32, 0.3)).rotation.y = Math.PI / 2;
+    put(root, mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.08, 12), M.gold, 0.43, 0.3)).rotation.z = Math.PI / 2;
+    put(root, mesh(new THREE.TorusGeometry(0.03, 0.006, 8, 20), M.gold, 0.32, 0.3)).rotation.y = Math.PI / 2;
     target = 0.3; fit = 1.7;
   } else if (kind === "ring") {
     const g = new THREE.Group(); g.position.y = 0.2; root.add(g);
@@ -311,49 +312,147 @@ function simpleModel(M, kind) {
 }
 
 // V88: the reliquary of Saint-Maximin, modelled from published descriptions (not a replica):
-// a gilded head-and-hair reliquary carried by four angels, a darkened skull behind glass
+// a gilded head of flowing hair carried by four angels, the darkened skull behind glass in its face
+function skullGeometry() {
+  const g = new THREE.SphereGeometry(0.1, 72, 54), P = g.attributes.position, col = [], R = rng(17), v = new THREE.Vector3();
+  const bump = (x, y, cx, cy, w) => Math.exp(-(((x - cx) * (x - cx) + (y - cy) * (y - cy)) / (w * w)));
+  for (let i = 0; i < P.count; i++) {
+    v.fromBufferAttribute(P, i).normalize();
+    const front = Math.max(0, -v.z), low = Math.max(0, -v.y);
+    let r = 1, dark = 0;
+    r *= 1 + 0.1 * Math.max(0, v.z);                                                  // the long back of the cranium
+    r *= 1 - 0.3 * low * low * (0.4 + 0.6 * front);                                    // the face narrows below the cheekbones
+    r *= 1 + 0.05 * front * bump(v.x, v.y, 0, 0.2, 0.18) + 0.04 * front * (bump(v.x, v.y, 0.42, -0.12, 0.12) + bump(v.x, v.y, -0.42, -0.12, 0.12));   // brow, cheekbones
+    if (front > 0.35) {
+      const eyes = bump(v.x, v.y, 0.3, 0.02, 0.15) + bump(v.x, v.y, -0.3, 0.02, 0.15), nose = bump(v.x * 1.7, v.y, 0, -0.25, 0.1);
+      r *= 1 - 0.3 * eyes - 0.2 * nose; dark = Math.min(1, eyes * 1.3 + nose * 1.2);
+    }
+    P.setXYZ(i, v.x * 0.84 * r * 0.1, v.y * 0.98 * r * 0.1, v.z * 1.08 * r * 0.1);
+    const n = 0.8 + R() * 0.25, k = 1 - dark * 0.85;                                   // a darkened, mottled patina
+    col.push(0.2 * n * k, 0.14 * n * k, 0.09 * n * k);
+  }
+  g.setAttribute("color", new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+  return g;
+}
+// the plinth's frieze: engraved rosettes in a gilded band (a texture, tinted by the gold material)
+function friezeTex() {
+  return canvasTex(2048, 256, (g, w, h) => {
+    g.fillStyle = "#f2d690"; g.fillRect(0, 0, w, h);
+    g.strokeStyle = "rgba(90,60,20,.75)"; g.lineWidth = 3;
+    g.strokeRect(8, 8, w - 16, h - 16); g.strokeRect(20, 20, w - 40, h - 40);
+    for (let x = 90; x < w - 60; x += 118) {
+      if (Math.abs(x - w / 2) < 150) continue;                                       // the central niche
+      g.beginPath(); g.arc(x, h / 2, 44, 0, TAU); g.stroke(); g.beginPath(); g.arc(x, h / 2, 12, 0, TAU); g.stroke();
+      for (let k = 0; k < 8; k++) { const a = k / 8 * TAU; g.beginPath(); g.ellipse(x + Math.cos(a) * 26, h / 2 + Math.sin(a) * 26, 12, 5, a, 0, TAU); g.stroke(); }
+    }
+    g.fillStyle = "rgba(90,60,20,.25)"; for (let x = 30; x < w; x += 22) { g.fillRect(x, 26, 10, 4); g.fillRect(x, h - 30, 10, 4); }
+  });
+}
+function shield(M, colours) {
+  const sh = new THREE.Shape(); sh.moveTo(-0.045, 0.05); sh.lineTo(0.045, 0.05); sh.lineTo(0.045, -0.005); sh.quadraticCurveTo(0.045, -0.045, 0, -0.06); sh.quadraticCurveTo(-0.045, -0.045, -0.045, -0.005); sh.closePath();
+  const tex = canvasTex(128, 160, (g, w, h) => {
+    if (colours === "stripes") { for (let i = 0; i < 8; i++) { g.fillStyle = i % 2 ? "#c8a040" : "#b8262a"; g.fillRect(i * w / 8, 0, w / 8, h * 0.55); } g.fillStyle = "#2a4fa8"; g.fillRect(0, h * 0.55, w, h); g.fillStyle = "#e8c860"; for (let i = 0; i < 4; i++) g.fillRect(12 + i * 30, h * 0.7, 10, 10); }
+    else { g.fillStyle = "#2a4fa8"; g.fillRect(0, 0, w, h); g.fillStyle = "#e8c860"; [[30, 70], [64, 70], [98, 70], [47, 104], [81, 104], [64, 134]].forEach(([x, y]) => { g.beginPath(); g.moveTo(x, y - 12); g.lineTo(x + 6, y); g.lineTo(x, y + 8); g.lineTo(x - 6, y); g.fill(); }); g.fillStyle = "#c83030"; g.fillRect(14, 22, 100, 10); for (let i = 0; i < 3; i++) g.fillRect(28 + i * 32, 22, 10, 26); }
+  });
+  const m = new THREE.Mesh(new THREE.ShapeGeometry(sh), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.3, metalness: 0.1 }));
+  const rim = new THREE.Mesh(new THREE.ShapeGeometry(sh), M.gold); rim.scale.set(1.12, 1.1, 1); rim.position.z = -0.002;
+  const g = new THREE.Group(); g.add(rim, m); return g;
+}
+// a standing angel: a pleated gilded robe, bare feet, curly head, tall narrow wings, arms raised forward
+function angel(M, side) {
+  const g = new THREE.Group();
+  const prof = [[0, 0], [0.1, 0], [0.105, 0.03], [0.085, 0.16], [0.07, 0.3], [0.06, 0.4], [0.07, 0.45], [0.06, 0.5], [0.03, 0.53], [0, 0.535]];
+  const lg = new THREE.LatheGeometry(prof.map((p) => new THREE.Vector2(p[0], p[1])), 72), P = lg.attributes.position, v = new THREE.Vector3();
+  for (let i = 0; i < P.count; i++) { v.fromBufferAttribute(P, i); const ang = Math.atan2(v.z, v.x), low = 1 - Math.min(1, v.y / 0.45); const k = 1 + 0.07 * low * Math.sin(ang * 22) + 0.02 * Math.sin(ang * 7); P.setXYZ(i, v.x * k, v.y, v.z * k * 0.8); }   // deep pleats, a flattened body
+  lg.computeVertexNormals(); g.add(new THREE.Mesh(lg, M.gold));
+  put(g, mesh(new THREE.SphereGeometry(0.018, 10, 8), M.gold, 0.03, 0.01, 0.075)).scale.set(1, 0.5, 1.8);             // a bare foot
+  const head = new THREE.Group(); head.position.y = 0.585; g.add(head);
+  head.add(mesh(new THREE.SphereGeometry(0.04, 22, 16), M.gold));
+  const R = rng(side > 0 ? 5 : 9); for (let i = 0; i < 16; i++) { const a = R() * TAU, b2 = R() * 1.2; head.add(mesh(new THREE.SphereGeometry(0.013, 8, 6), M.goldDark, Math.cos(a) * Math.cos(b2) * 0.04, Math.sin(b2) * 0.035 + 0.005, Math.sin(a) * Math.cos(b2) * 0.04 - 0.008)); }   // curls
+  // the wings: tall, narrow, feathered, rising behind the shoulders and falling to the knees
+  const sh = new THREE.Shape(); sh.moveTo(0, 0); sh.bezierCurveTo(0.07, 0.1, 0.09, 0.3, 0.05, 0.46); sh.bezierCurveTo(0.03, 0.3, 0.02, 0.05, -0.01, -0.28); sh.bezierCurveTo(-0.01, -0.12, -0.01, -0.05, 0, 0);
+  const wg = new THREE.ShapeGeometry(sh, 20), wm = new THREE.MeshStandardMaterial({ color: "#d8ad55", metalness: 1, roughness: 0.32, side: THREE.DoubleSide, envMap: M.gold.envMap });
+  for (let k = 0; k < 2; k++) {
+    // the wing lies in the angel's side plane and spreads backward, which on the reliquary means outward, facing the viewer
+    const w = new THREE.Mesh(wg, wm); w.position.set(0.012 * (k ? -1 : 1), 0.44, -0.05 - k * 0.015); w.rotation.y = Math.PI / 2 + (k ? 0.25 : 0.1); w.scale.set(1.9, 1.35, 1); g.add(w);
+  }
+  // the arms, reaching up and inward toward the bust they hold (the angel faces +x for side -1, -x for side +1)
+  const arm = (dz) => { const a = new THREE.Group(); a.position.set(0, 0.5, dz); const upper = mesh(new THREE.CylinderGeometry(0.016, 0.013, 0.2, 10), M.gold, 0, 0.1, 0); a.add(upper); a.add(mesh(new THREE.SphereGeometry(0.014, 10, 8), M.gold, 0, 0.2, 0)); a.rotation.z = side * 0.85; a.rotation.x = -dz * 3; g.add(a); };
+  arm(0.035); arm(-0.035);
+  // sleeves falling from the arms
+  const sleeve = mesh(new THREE.ConeGeometry(0.035, 0.14, 12, 1, true), M.gold, -side * 0.02, 0.44, 0); sleeve.rotation.z = side * 0.5; g.add(sleeve);
+  return g;
+}
+// V88: the reliquary of Saint-Maximin (1860), modelled after published descriptions and a photograph
+// (not a replica): a gilded plinth with a rosette frieze and two enamelled shields; four angels lifting
+// a gilded bust whose hood frames the skull behind a glass window; between them, a small shrine
+// holding the glass vial of the "noli me tangere". The model faces +z.
 function magdaleneModel(M) {
   const root = new THREE.Group();
-  // stepped octagonal base
-  root.add(mesh(new THREE.CylinderGeometry(0.34, 0.37, 0.07, 8), M.goldDark, 0, 0.035));
-  root.add(mesh(new THREE.CylinderGeometry(0.3, 0.32, 0.05, 8), M.gold, 0, 0.095));
-  for (let i = 0; i < 8; i++) { const a = i / 8 * TAU + Math.PI / 8; root.add(mesh(new THREE.SphereGeometry(0.018, 10, 8), M.gold, Math.cos(a) * 0.33, 0.07, Math.sin(a) * 0.33)); }
-  // four kneeling angels at the corners, wings raised, hands lifted toward the reliquary
-  for (let i = 0; i < 4; i++) {
-    const a = i / 4 * TAU + Math.PI / 4, g = new THREE.Group(); g.position.set(Math.cos(a) * 0.2, 0.12, Math.sin(a) * 0.2); g.rotation.y = -a - Math.PI / 2; root.add(g);
-    g.add(mesh(new THREE.ConeGeometry(0.06, 0.2, 14), M.gold, 0, 0.1));                       // robe
-    g.add(mesh(new THREE.SphereGeometry(0.03, 16, 12), M.gold, 0, 0.23));                      // head
-    g.add(mesh(new THREE.TorusGeometry(0.03, 0.004, 6, 20), M.goldDark, 0, 0.27)).rotation.x = Math.PI / 2; // halo
-    [-1, 1].forEach((s) => {
-      const wing = new THREE.Mesh(new THREE.CircleGeometry(0.12, 18, 0, Math.PI * 0.55), new THREE.MeshStandardMaterial({ color: "#d8ad55", metalness: 1, roughness: 0.3, side: THREE.DoubleSide, envMap: M.gold.envMap }));
-      wing.position.set(s * 0.02, 0.16, -0.03); wing.rotation.set(0.25, s * 0.5, s > 0 ? 0.25 : Math.PI - 0.25 - Math.PI * 0.55); g.add(wing);
-      const arm = mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.12, 8), M.gold, s * 0.035, 0.22, 0.03); arm.rotation.x = -0.9; arm.rotation.z = -s * 0.3; g.add(arm);
-    });
+  const gildTex = friezeTex(); gildTex.wrapS = THREE.RepeatWrapping;
+  const frieze = new THREE.MeshStandardMaterial({ color: "#ffe4a8", map: gildTex, metalness: 0.75, roughness: 0.38, envMap: M.gold.envMap, envMapIntensity: 1.3 });
+  // the plinth, on four scrolled feet
+  const PW = 1.1, PD = 0.46, PH = 0.16, FY = 0.07;
+  [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([sx, sz]) => { const f = mesh(new THREE.SphereGeometry(0.05, 16, 12), M.gold, sx * (PW / 2 - 0.06), FY / 2 + 0.01, sz * (PD / 2 - 0.05)); f.scale.set(1.3, 0.8, 1); root.add(f); put(root, mesh(new THREE.TorusGeometry(0.035, 0.012, 8, 16, Math.PI), M.goldDark, sx * (PW / 2 - 0.02), FY, sz * (PD / 2 - 0.05))).rotation.y = Math.PI / 2; });
+  root.add(mesh(new THREE.BoxGeometry(PW, 0.03, PD), M.goldDark, 0, FY + 0.015, 0));
+  const band = new THREE.Mesh(new THREE.BoxGeometry(PW - 0.02, PH - 0.05, PD - 0.02), [M.gold, M.gold, M.gold, M.gold, frieze, frieze]); band.position.y = FY + 0.03 + (PH - 0.05) / 2; root.add(band);
+  root.add(mesh(new THREE.BoxGeometry(PW + 0.02, 0.025, PD + 0.02), M.gold, 0, FY + PH, 0));
+  root.add(mesh(new THREE.BoxGeometry(PW - 0.06, 0.01, PD - 0.06), M.stone, 0, FY + PH + 0.017, 0));      // the pale stone top the figures stand on
+  const TOP = FY + PH + 0.022;
+  // the central niche in the frieze, with a small standing figure
+  const niche = new THREE.Group(); niche.position.set(0, FY + 0.03, PD / 2); root.add(niche);
+  niche.add(mesh(new THREE.BoxGeometry(0.13, PH - 0.02, 0.02), M.goldDark, 0, (PH - 0.05) / 2, 0.005));
+  put(niche, mesh(new THREE.ConeGeometry(0.075, 0.06, 4), M.gold, 0, PH - 0.02, 0.01)).rotation.y = Math.PI / 4;
+  niche.add(mesh(new THREE.CapsuleGeometry(0.014, 0.05, 4, 10), M.gold, 0, 0.055, 0.02));
+  // two enamelled shields on the frieze
+  [[-0.38, "stripes"], [0.38, "lilies"]].forEach(([x, c]) => { const s2 = shield(M, c); s2.position.set(x, FY + 0.03 + (PH - 0.05) / 2, PD / 2 + 0.002); root.add(s2); });
+  // the small shrine in the middle: a round base, four columns, a ribbed dome, and the glass vial inside
+  const shrine = new THREE.Group(); shrine.position.y = TOP; root.add(shrine);
+  shrine.add(mesh(new THREE.CylinderGeometry(0.12, 0.13, 0.025, 32), M.gold, 0, 0.0125));
+  shrine.add(mesh(new THREE.CylinderGeometry(0.1, 0.11, 0.02, 32), M.goldDark, 0, 0.035));
+  for (let i = 0; i < 4; i++) { const a = i / 4 * TAU + Math.PI / 4; shrine.add(mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.26, 10), M.gold, Math.cos(a) * 0.075, 0.175, Math.sin(a) * 0.075)); shrine.add(mesh(new THREE.BoxGeometry(0.024, 0.02, 0.024), M.gold, Math.cos(a) * 0.075, 0.31, Math.sin(a) * 0.075)); }
+  shrine.add(mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.035, 32), M.gold, 0, 0.335));
+  for (let i = 0; i < 8; i++) { const a = i / 8 * TAU; put(shrine, mesh(new THREE.TorusGeometry(0.03, 0.006, 6, 14, Math.PI), M.goldDark, Math.cos(a) * 0.095, 0.335, Math.sin(a) * 0.095)).rotation.y = -a + Math.PI / 2; }   // arcade
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(0.095, 32, 16, 0, TAU, 0, Math.PI / 2), M.gold); dome.position.y = 0.35; dome.scale.y = 0.7; shrine.add(dome);
+  for (let i = 0; i < 12; i++) { const a = i / 12 * TAU, rib = mesh(new THREE.TorusGeometry(0.095, 0.004, 6, 24, Math.PI / 2), M.goldDark, 0, 0.35, 0); rib.rotation.y = a; rib.scale.y = 0.7; shrine.add(rib); }
+  shrine.add(mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.16, 16), M.glass, 0, 0.16));                     // the vial of the "noli me tangere"
+  shrine.add(mesh(new THREE.CylinderGeometry(0.022, 0.03, 0.03, 16), M.gold, 0, 0.07)); shrine.add(mesh(new THREE.CylinderGeometry(0.024, 0.02, 0.025, 16), M.gold, 0, 0.25));
+  shrine.add(mesh(new THREE.ConeGeometry(0.024, 0.04, 8), M.gold, 0, 0.285));
+  shrine.add(mesh(new THREE.SphereGeometry(0.006, 8, 6), new THREE.MeshStandardMaterial({ color: "#6a3a2a", roughness: 0.8 }), 0, 0.16));
+  // four angels, two on each side, lifting the bust
+  [[-0.27, 0.07, -1], [-0.22, -0.12, -1], [0.27, 0.07, 1], [0.22, -0.12, 1]].forEach(([x, z, side]) => { const g = angel(M, side); g.position.set(x, TOP, z); g.rotation.y = side < 0 ? Math.PI / 2 - 0.25 : -Math.PI / 2 + 0.25; root.add(g); });
+  // the bust: gilded shoulders with a collar and a clasp, the neck, the hooded head
+  const bust = new THREE.Group(); bust.position.y = TOP + 0.43; root.add(bust);
+  const bl = new THREE.LatheGeometry([[0, 0], [0.2, 0], [0.21, 0.02], [0.19, 0.06], [0.13, 0.1], [0.075, 0.12], [0.06, 0.14], [0.058, 0.24], [0, 0.245]].map((p) => new THREE.Vector2(p[0], p[1])), 48);
+  const bm = new THREE.Mesh(bl, M.gold); bm.scale.z = 0.62; bust.add(bm);
+  const collar = mesh(new THREE.TorusGeometry(0.13, 0.012, 8, 40), M.goldDark, 0, 0.085, 0); collar.rotation.x = Math.PI / 2; collar.scale.y = 0.62; bust.add(collar);
+  put(bust, mesh(new THREE.CylinderGeometry(0.024, 0.024, 0.01, 20), M.goldDark, 0, 0.09, 0.083)).rotation.x = Math.PI / 2;    // the clasp at the breast
+  // the head: a hood of gold framing a glass window over the face; the skull inside faces +z
+  const head = new THREE.Group(); head.position.y = 0.38; bust.add(head);
+  const skull = new THREE.Mesh(skullGeometry(), new THREE.MeshStandardMaterial({ vertexColors: true, color: "#6e5e50", roughness: 0.9, metalness: 0 })); skull.rotation.y = Math.PI; skull.scale.setScalar(1.05); head.add(skull);
+  for (let t = 0; t < 10; t++) { const a = -0.55 + t * 0.122; head.add(mesh(new THREE.BoxGeometry(0.009, 0.013, 0.006), M.bone, Math.sin(a) * 0.054, -0.09, 0.012 + Math.cos(a) * 0.054)); }
+  head.add(mesh(new THREE.SphereGeometry(0.02, 12, 8), new THREE.MeshStandardMaterial({ color: "#8a1a1a", roughness: 0.4 }), 0.1, 0.1, 0.07));   // a red wax seal on the frame
+  const hood = new THREE.Mesh(new THREE.SphereGeometry(0.13, 48, 32, Math.PI / 2 + 0.72, TAU - 1.44, 0, Math.PI * 0.86), M.gold); hood.scale.set(1, 1.28, 1); head.add(hood);
+  const glass = new THREE.Mesh(new THREE.SphereGeometry(0.128, 32, 24, Math.PI / 2 - 0.72, 1.44, 0.12, Math.PI * 0.72), M.glass); glass.scale.set(1, 1.28, 1); head.add(glass);
+  const rimPts = []; for (let i = 0; i <= 48; i++) { const t = i / 48 * TAU, th = 0.12 + (Math.PI * 0.72) * (0.5 - 0.5 * Math.cos(t)), ph = Math.PI / 2 + Math.sin(t) * 0.72; rimPts.push(new THREE.Vector3(-Math.cos(ph) * Math.sin(th) * 0.131, Math.cos(th) * 0.131 * 1.28, Math.sin(ph) * Math.sin(th) * 0.131)); }
+  head.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(rimPts, true), 96, 0.007, 8, true), M.goldDark));   // the window's frame
+  // the hair: long wavy locks from under the hood down over the shoulders and back
+  const R = rng(88), pt = (ang, rad, y) => new THREE.Vector3(Math.cos(ang) * rad, y, Math.sin(ang) * rad * 0.8);
+  for (let i = 0; i < 90; i++) {
+    const ang = Math.PI / 2 + 0.95 + (i / 90) * (TAU - 1.9) + (R() - 0.5) * 0.06;          // everywhere but the face
+    const r0 = 0.12, fall = 0.3 + R() * 0.14, pts = [];
+    for (let k = 0; k <= 7; k++) { const t = k / 7, wave = Math.sin(t * 9 + i) * 0.014; pts.push(pt(ang + wave * 2, r0 + t * t * 0.17 + wave, -0.02 - t * fall)); }   // waves spreading out over the shoulders
+    head.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 36, 0.008 + R() * 0.005, 6), R() < 0.3 ? M.goldDark : M.gold));
   }
-  // the head reliquary: a gilded crown of hair falling in long locks around a glazed front
-  const head = new THREE.Group(); head.position.y = 0.46; root.add(head);
-  head.add(mesh(new THREE.CylinderGeometry(0.08, 0.13, 0.12, 24), M.goldDark, 0, -0.14));   // neck / socle
-  const R = rng(88);
-  for (let i = 0; i < 46; i++) {                                                             // locks of hair
-    const a = (i / 46) * TAU, side = Math.cos(a), back = Math.sin(a);
-    if (back < -0.55 && Math.abs(side) < 0.55) continue;                                     // keep the face open
-    const top = new THREE.Vector3(Math.cos(a) * 0.05, 0.16, Math.sin(a) * 0.05);
-    const mid = new THREE.Vector3(Math.cos(a) * 0.15, 0.06 + R() * 0.03, Math.sin(a) * 0.15);
-    const low = new THREE.Vector3(Math.cos(a) * (0.17 + R() * 0.04), -0.12 - R() * 0.1, Math.sin(a) * (0.17 + R() * 0.04));
-    const end = low.clone().add(new THREE.Vector3((R() - 0.5) * 0.05, -0.08, (R() - 0.5) * 0.05));
-    head.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([top, mid, low, end]), 24, 0.012 + R() * 0.006, 6), R() < 0.3 ? M.goldDark : M.gold));
-  }
-  head.add(mesh(new THREE.SphereGeometry(0.13, 32, 20, 0, TAU, 0, Math.PI * 0.55), M.gold, 0, 0.02));   // crown of the head
-  // the skull, darkened, seen through the glass in the face opening (turned toward -z, the front)
-  const skull = new THREE.Group(); skull.position.set(0, -0.01, -0.05); head.add(skull);
-  const cran = mesh(new THREE.SphereGeometry(0.095, 32, 22), M.skull); cran.scale.set(0.9, 1, 1.05); skull.add(cran);
-  const jaw = mesh(new THREE.SphereGeometry(0.06, 24, 14, 0, TAU, Math.PI * 0.45, Math.PI * 0.55), M.skull, 0, -0.06, -0.03); jaw.scale.set(1.05, 0.9, 1); skull.add(jaw);
-  [-1, 1].forEach((s) => { const o = mesh(new THREE.SphereGeometry(0.024, 16, 12), M.socket, s * 0.035, 0.0, -0.08); o.scale.set(1, 0.85, 0.5); skull.add(o); });
-  const nose = mesh(new THREE.ConeGeometry(0.012, 0.03, 3), M.socket, 0, -0.04, -0.088); nose.rotation.x = Math.PI; skull.add(nose);
-  const glassFront = mesh(new THREE.SphereGeometry(0.12, 32, 20, Math.PI * 0.2, Math.PI * 0.6, Math.PI * 0.2, Math.PI * 0.6), M.glass, 0, -0.01, -0.02); glassFront.rotation.y = Math.PI; head.add(glassFront);
-  const frame = mesh(new THREE.TorusGeometry(0.1, 0.008, 8, 40), M.gold, 0, -0.01, -0.12); head.add(frame);
-  root.rotation.y = Math.PI;                                                                  // the face toward the viewer
-  return { root, target: 0.42, fit: 1.35, actions: [{ id: "face", label: "Look at the face", camera: { yaw: 0, pitch: 0.12, dist: 0.7 } }], act() { return null; }, update() { return false; } };
+  return {
+    root, target: 0.6, fit: 2.4,
+    actions: [
+      { id: "face", label: "Look at the face", camera: { yaw: 0, pitch: 0.12, dist: 0.62, target: TOP + 0.81 } },
+      { id: "shrine", label: "See the little shrine", camera: { yaw: 0.25, pitch: 0.05, dist: 0.8, target: TOP + 0.2 } },
+      { id: "plinth", label: "The plinth", camera: { yaw: 0, pitch: 0.1, dist: 1.3, target: 0.15 } }
+    ],
+    act() { return null; }, update() { return false; }
+  };
 }
 
 export function buildModel(kind, M) {
@@ -400,7 +499,7 @@ export function createInspector(opt) {
 
   function frame() {
     const m = st.model; if (!m) return;
-    st.yaw = 0.6; st.pitch = 0.35; st.dist = m.fit; st.want = null;
+    st.yaw = 0.6; st.pitch = 0.35; st.dist = m.fit; st.want = null; st.ty = m.target;
   }
   function paintActs() {
     const m = st.model;
@@ -470,9 +569,10 @@ export function createInspector(opt) {
   function render(dt) {
     const m = st.model;
     if (st.spin && !reduce()) st.yaw += dt * 0.25;
-    if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); }
+    if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); if (st.want.target != null) st.ty = ease(st.ty, st.want.target, k); }
     if (m) m.update(dt);
-    const t = new THREE.Vector3(0, m ? m.target : 0.2, 0);
+    if (st.ty == null) st.ty = m ? m.target : 0.2;
+    const t = new THREE.Vector3(0, st.ty, 0);
     cam.position.set(t.x + Math.sin(st.yaw) * Math.cos(st.pitch) * st.dist, t.y + Math.sin(st.pitch) * st.dist, t.z + Math.cos(st.yaw) * Math.cos(st.pitch) * st.dist);
     cam.lookAt(t);
     renderer.render(scene, cam);

@@ -151,6 +151,28 @@ Carter asked for a night-sky or planetarium look on the ceilings, with interacti
 - **Cost:** `sky.json` is 207 KB (88 KB gzipped), loaded after the museum starts. The Rotunda
   now draws about 32 calls.
 
+## Addendum, 2026-09-28: the object inspector and V88
+
+- **Every Vault case opens.**
+  - **Opening it:** clicking a case takes its object out of the glass into a close-up (`docs/museum/inspect.js`), with the object's label beside it.
+  - **Handling it:** you can turn it by dragging and zoom with the wheel or a pinch.
+  - **What each kind does:**
+    - scrolls unroll;
+    - books open and turn their pages;
+    - caskets and chests lift their lids;
+    - tablets, slabs, bones and discs turn over;
+    - bowls tilt to show their inner spiral;
+    - cloth unfolds and khipu cords fan out.
+  - **Honesty:** every model is a generic stand-in for its kind of object, and any writing on it is illustrative marks, not the text. The inspector says so under every object.
+- **V88, the skull of "Mary Magdalene" at Saint-Maximin** is a new Vault entry, added at Carter's request and pending review.
+  - It stands in its home room (Early Christianity, ch16) in a niche of its own.
+  - It is a modelled rendition of the 1860 reliquary, after published descriptions and a photograph Carter supplied:
+    - the frieze plinth with its shields;
+    - four angels lifting the bust;
+    - the hooded head with the skull behind glass;
+    - the little shrine holding the vial of the *noli me tangere*.
+  - It is labelled a rendition, not a replica.
+
 ## Owed / needs Carter
 
 1. ~~Style sign-off on the live museum (Gate 2).~~ Passed by Carter, 2026-09-28.

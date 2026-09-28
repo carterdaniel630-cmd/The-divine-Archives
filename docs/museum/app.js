@@ -21,7 +21,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector, buildModel } from "./inspect.js?v=1";
+import { createInspector, buildModel } from "./inspect.js?v=2";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -575,7 +575,6 @@ function prop(kind) {
     case "disc": add(new THREE.CylinderGeometry(0.16, 0.16, 0.012, 32), MAT.verdigris, 0, 0.16, 0, Math.PI / 2 - 0.4); break;
     case "cords": add(new THREE.CylinderGeometry(0.01, 0.01, 0.5, 6), MAT.wood, 0, 0.36, 0, 0, 0, Math.PI / 2); for (let i = 0; i < 7; i++) add(new THREE.CylinderGeometry(0.006, 0.006, 0.3, 5), MAT.linen, -0.21 + i * 0.07, 0.21); break;
     case "pillar": add(new THREE.BoxGeometry(0.16, 0.5, 0.1), MAT.stone, 0, 0.25); add(new THREE.BoxGeometry(0.3, 0.08, 0.12), MAT.stone, 0.06, 0.52); break;
-    case "magdalene": { const r = buildModel("magdalene", S.insp.materials).root; r.scale.setScalar(0.95); g.add(r); break; }
     default: add(new THREE.BoxGeometry(0.36, 0.2, 0.24), MAT.wood, 0, 0.1); add(new THREE.BoxGeometry(0.38, 0.05, 0.26), MAT.gold, 0, 0.225);
   }
   return g;
@@ -587,6 +586,16 @@ function caseAt(group, x, z, yaw, item, id, zoneId) {
     m(new THREE.BoxGeometry(2.4, 0.3, 1.8), MAT.darkstone, 0.15);
     const top = m(new THREE.PlaneGeometry(2.1, 1.5), new THREE.MeshLambertMaterial({ map: TEX.mosaic }), 0.305); top.rotation.x = -Math.PI / 2;
     m(new THREE.BoxGeometry(2.3, 0.02, 1.7), MAT.glass, 0.33);
+  } else if (item.rendition) {
+    // a purpose-built rendition stands in its own niche: a stone plinth, a tall vitrine and an arched back
+    m(new THREE.BoxGeometry(1.45, 0.5, 0.8), MAT.darkstone, 0.25);
+    m(new THREE.BoxGeometry(1.5, 0.04, 0.85), MAT.bronze, 0.52);
+    const r = buildModel(item.prop, S.insp.materials).root; r.position.y = 0.54; c.add(r);
+    m(new THREE.BoxGeometry(1.4, 1.45, 0.72), MAT.glass, 0.54 + 0.725);
+    m(new THREE.BoxGeometry(1.44, 0.04, 0.76), MAT.bronze, 2.0);
+    const back = m(new THREE.BoxGeometry(1.9, 2.6, 0.12), MAT.stone, 1.3); back.position.z = -0.5;
+    const arch = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.12, 32, 1, false, -Math.PI / 2, Math.PI), MAT.stone); arch.rotation.x = Math.PI / 2; arch.position.set(0, 2.6, -0.5); c.add(arch);
+    const light = new THREE.PointLight("#ffd9a0", 3, 3.2, 1.6); light.position.set(0, 2.3, 0.6); c.add(light);
   } else if (!item.prop) {
     // no image: a plain plaque on a plinth instead of a case (see the Vault entry)
     m(new THREE.BoxGeometry(0.8, 1.0, 0.5), MAT.darkstone, 0.5);
@@ -912,7 +921,7 @@ function openCard(ex) {
     if (v && v.prop && !v.floor) {
       S.cardAt = performance.now(); unlock();
       S.insp.open(v.prop, h, v.rendition
-        ? "A modelled rendition from published descriptions, not a replica of the object."
+        ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
         : "A generic stand-in for this kind of object, not a replica of it. Any writing on it is illustrative marks, not the text.");
       return;
     }
@@ -1277,6 +1286,7 @@ window.__MU = {
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),
   insp: () => ({ active: S.insp.active, yaw: S.insp.state.yaw, dist: S.insp.state.dist }),
+  inspView: (yaw, pitch, dist) => Object.assign(S.insp.state, { yaw, pitch, dist, spin: false, want: null }),
   open: (i) => openCard(S.exhibits[i]),
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },

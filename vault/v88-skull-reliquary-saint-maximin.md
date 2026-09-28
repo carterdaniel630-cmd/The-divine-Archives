@@ -35,7 +35,12 @@ Mary Magdalene in the earliest Christian sources and in the debate over women's 
 
 ## In the museum
 
-The case in the museum holds a **modelled rendition** of the reliquary's form: gilded hair, four angels and a darkened skull under glass. It is **not a replica**, and it is drawn from published descriptions, not from measurements.
+The museum shows a **modelled rendition** of the reliquary in a niche of its own. It follows published descriptions and a photograph of the reliquary in the crypt, supplied by the site's editor:
+- a gilded **plinth** with a rosette frieze and two enamelled shields;
+- **four angels** lifting a gilded **bust**, whose hood frames the darkened skull behind a glass window;
+- between the angels, a small columned **shrine** holding a glass vial. The published study reports that the reliquary's maker designed a place below the skull for the vial of the *noli me tangere*.
+
+It is **not a replica**. It is not modelled from measurements, and its details are simplified.
 
 ## The evidence, honestly
 

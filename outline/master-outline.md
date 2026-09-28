@@ -254,6 +254,7 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 | V75 | The Golden Plates | Era IX · The Modern Age | New Religious Movements (ch35) | `CLEARED` |
 | V76 | The Báb's Star Tablet | Era IX · The Modern Age | Bahá'í & New Faiths (ch65) | `CLEARED` |
 | V77 | The Haitian Vèvè | Era IX · The Modern Age | African Diaspora Religions (ch40); African Traditional Religion (ch33) | `CLEARED` |
+| V88 | The Skull of "Mary Magdalene" at Saint-Maximin | Era VII · The High Medieval | Early Christianity (ch16); Pistis Sophia (ch45); The Reformation (ch31) | `PUBLISHED — pending review` |
 | — | Batch 9 queue: Malleus Maleficarum · Zohar (Mantua printing) · Sefer Yetzirah · Mawangdui Silk Texts · Bardo Thödol · Codex Boturini · Hinton St Mary Mosaic · Picatrix · Berlin Gold Hat · Diwan Abatur | — | placed on publication | `not started` (queued) |
 
 ## The Pantheon — directory of gods, spirits & mythic figures (added 2026-09-27)
