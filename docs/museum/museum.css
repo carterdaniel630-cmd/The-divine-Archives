@@ -120,3 +120,26 @@
 .dir-ex span { color: var(--ink-faint); font-family: var(--font-display); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .2rem; }
 
 @media (prefers-reduced-motion: reduce) { .mu-fade { transition: none; } }
+
+/* ---- the planetarium controls (in the Rotunda) and sky-lore cards ---- */
+.mu-sky { position: fixed; left: 50%; bottom: .8rem; transform: translateX(-50%); z-index: 14; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: .35rem .45rem; max-width: min(46rem, calc(100vw - 1.2rem)); padding: .45rem .7rem; background: rgba(10,14,28,.86); border: 1px solid rgba(160,180,230,.28); border-radius: 6px;
+  box-shadow: 0 8px 24px -10px #000; }
+.mu-sky[hidden] { display: none; }
+.mu-sky-t { font-family: var(--font-display); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: #b9c8ef; }
+.mu-sky-l { font-size: .8rem; color: var(--ink); display: flex; align-items: center; gap: .35rem; }
+.mu-sky select, .mu-sky button { background: rgba(20,26,48,.9); color: #dfe6fb; border: 1px solid rgba(160,180,230,.35); border-radius: 3px; padding: .28rem .5rem;
+  font-family: var(--font-display); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.mu-sky select { text-transform: none; font-family: var(--font-body); font-size: .82rem; letter-spacing: 0; }
+.mu-sky button:hover, .mu-sky button[aria-pressed="true"] { color: #f3d58c; border-color: #d9a950; }
+.mu-sky-time { flex-basis: 100%; margin: 0; text-align: center; font-size: .74rem; color: #9fb0da; }
+body.mu-in-sky .mu-tag { bottom: 6.2rem; }
+.mu-lore { border-top: 1px solid var(--line); margin-top: .8rem; padding-top: .6rem; }
+.mu-lore h3 { margin: 0 0 .3rem; font-family: var(--font-head); font-size: 1.02rem; color: var(--parchment); }
+.mu-lore p { margin: .3rem 0; }
+@media (max-width: 520px) {
+  .mu-sky { bottom: .5rem; padding: .35rem .45rem; gap: .3rem; }
+  .mu-sky-t { display: none; }
+  .mu-sky-time { font-size: .68rem; }
+  body.mu-in-sky .mu-tag { bottom: 7.4rem; }
+}

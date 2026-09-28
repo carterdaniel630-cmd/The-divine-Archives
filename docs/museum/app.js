@@ -6,6 +6,9 @@
    §3, option A): an entrance hall, the Rotunda of comparative themes, and a long
    Spine gallery with one wing per Age; each chapter is a room.
 
+   The Rotunda's dome is a planetarium (sky.js): the real sky over a site the
+   archive writes about, whose constellations open cards like any exhibit.
+
    Everything here is procedural: walls, floors and props are built from
    primitives, and every picture on a wall is the archive's own SVG art
    (chapter plates, era emblems, Pantheon emblems) drawn onto a canvas. Label
@@ -14,6 +17,7 @@
    Units are metres; -z is north. Test hook: window.__MU.
    ========================================================================== */
 import * as THREE from "three";
+import { createSky } from "./sky.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -57,6 +61,7 @@ function initRenderer() {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.15;
+  renderer.localClippingEnabled = true;              // the planetarium clips its lines at the horizon
   canvas.setAttribute("tabindex", "0");
   canvas.setAttribute("aria-label", "The museum in 3D. Use the Room guide button for an accessible list of this room's exhibits.");
   $("mu-stage").appendChild(canvas);
@@ -128,6 +133,19 @@ function makeTextures() {
     g.strokeStyle = "#2a1c0f"; g.lineWidth = 4; g.strokeRect(24, 24, w - 48, h - 48);
     noise(g, w, h, 1500, 0.2, ["#0e0804", "#3c2a18"]);
   }, true);
+  // the hall and the Spine: a night-blue vault scattered with gilded stars
+  const starVault = (g, w, h, gold) => {
+    g.fillStyle = gold ? "#000" : "#172a5e"; g.fillRect(0, 0, w, h);
+    if (!gold) { const r = g.createRadialGradient(w / 2, h / 2, 10, w / 2, h / 2, w * 0.7); r.addColorStop(0, "rgba(40,60,110,.35)"); r.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = r; g.fillRect(0, 0, w, h); }
+    let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+    for (let i = 0; i < 900; i++) { const x = rnd() * w, y = rnd() * h, a = 0.25 + rnd() * 0.6; g.fillStyle = gold ? `rgba(255,236,200,${a * 0.6})` : `rgba(210,220,255,${a * 0.5})`; g.fillRect(x, y, 1.4, 1.4); }
+    const star5 = (x, y, r) => { g.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r * 0.42 : r; g.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); } g.closePath(); g.fill(); };
+    seed = 11;
+    for (let i = 0; i < 26; i++) { const x = 24 + rnd() * (w - 48), y = 24 + rnd() * (h - 48), r = 9 + rnd() * 9; g.fillStyle = gold ? "#ffd98a" : "#d9ad52"; star5(x, y, r); if (!gold) { g.fillStyle = "rgba(255,240,190,.5)"; star5(x - 1, y - 1, r * 0.45); } }
+  };
+  TEX.vault = canvasTex(1024, 1024, (g, w, h) => starVault(g, w, h, false), true);
+  TEX.vaultGlow = canvasTex(1024, 1024, (g, w, h) => starVault(g, w, h, true), true);
+  TEX.vault.repeat.set(0.37, 0.37); TEX.vaultGlow.repeat.set(0.37, 0.37);   // one tile per ~8 m, so the pattern hardly repeats
   TEX.glow = canvasTex(64, 64, (g, w) => {
     const r = g.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w / 2);
     r.addColorStop(0, "rgba(255,214,150,1)"); r.addColorStop(0.25, "rgba(255,170,90,.55)"); r.addColorStop(1, "rgba(255,140,60,0)");
@@ -151,6 +169,7 @@ function makeMaterials() {
   MAT.wall = new THREE.MeshLambertMaterial({ map: TEX.wall, side: THREE.DoubleSide });
   MAT.dado = new THREE.MeshLambertMaterial({ map: TEX.dado, side: THREE.DoubleSide });
   MAT.ceil = new THREE.MeshLambertMaterial({ map: TEX.ceil, side: THREE.DoubleSide });
+  MAT.vault = new THREE.MeshLambertMaterial({ map: TEX.vault, emissive: "#ffffff", emissiveMap: TEX.vaultGlow, emissiveIntensity: 0.55, side: THREE.DoubleSide });
   MAT.bronze = new THREE.MeshPhongMaterial({ color: "#5a3e22", specular: "#8f6c40", shininess: 30, emissive: "#0e0803" });
   MAT.frame = new THREE.MeshLambertMaterial({ color: "#3a2614" });
   MAT.stone = new THREE.MeshLambertMaterial({ color: "#6d5a44" });
@@ -317,7 +336,8 @@ function rect(z, x0, x1, z0, z1, h) {
 }
 function finishZones() {
   for (const z of Object.values(ZONES)) {
-    for (const [k, mat] of [["floor", MAT.floor], ["wall", MAT.wall], ["dado", MAT.dado], ["ceil", MAT.ceil], ["trim", MAT.frame]]) {
+    const ceil = z.id === "hall" || z.id === "spine" ? MAT.vault : MAT.ceil;
+    for (const [k, mat] of [["floor", MAT.floor], ["wall", MAT.wall], ["dado", MAT.dado], ["ceil", ceil], ["trim", MAT.frame]]) {
       if (!z[k].length) continue;
       const m = new THREE.Mesh(merge(z[k]), mat); m.matrixAutoUpdate = false; z.group.add(m); z[k] = [];
     }
@@ -354,8 +374,7 @@ function build() {
   const N = 48, gapA = Math.asin(2.1 / ROT.r);
   const floorG = new THREE.CircleGeometry(ROT.r, N).rotateX(-Math.PI / 2).translate(ROT.cx, 0, ROT.cz);
   scaleUV(floorG, ROT.r / 1.5); zr.floor.push(floorG);
-  const dome = new THREE.SphereGeometry(ROT.r, N, 16, 0, Math.PI * 2, 0, Math.PI / 2).translate(ROT.cx, ROT.h, ROT.cz);
-  scaleUV(dome, 6); zr.ceil.push(dome);
+  // the dome is the planetarium (sky.js), built after the zones
   for (let i = 0; i < N; i++) {
     const a0 = i / N * Math.PI * 2, a1 = (i + 1) / N * Math.PI * 2, mid = (a0 + a1) / 2;
     const gapS = Math.abs(angDiff(mid, Math.PI / 2)) < gapA, gapN = Math.abs(angDiff(mid, -Math.PI / 2)) < gapA;
@@ -365,7 +384,7 @@ function build() {
   }
   zr.box.set(new THREE.Vector3(-ROT.r, 0, ROT.cz - ROT.r), new THREE.Vector3(ROT.r, ROT.h + ROT.r, ROT.cz + ROT.r));
   region("rotunda", "The Rotunda · Comparative themes", -ROT.r, ROT.r, ROT.cz - ROT.r, ROT.cz + ROT.r, { round: true });
-  lamp(ROT.cx, 7, ROT.cz, 1.6);
+  // no lamp under the dome: the planetarium needs the dark (the bays keep their lamps)
   // theme bays (8 positions, the eighth for a theme still in preparation)
   const themeRooms = M.themes;
   themeRooms.forEach((t, k) => {
@@ -447,6 +466,11 @@ function build() {
   S.lampAnchors.forEach((l, i) => { mtx.makeTranslation(l.p.x, l.p.y, l.p.z); bulbs.setMatrixAt(i, mtx); });
   scene.add(bulbs);
   buildStatic();
+  // the planetarium
+  S.sky = createSky({ center: new THREE.Vector3(ROT.cx, ROT.h, ROT.cz), radius: ROT.r, onChange: () => { S.dirty = true; skyPanel(); } });
+  S.sky.setScale(renderer.getPixelRatio());
+  scene.add(S.sky.root);
+  S.sky.load("museum/sky.json?v=1").then(() => { skySites(); skyPanel(); locate(); }).catch(() => { S.sky = null; });
 }
 function scaleUV(g, s) { const uv = g.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setXY(i, uv.getX(i) * s, uv.getY(i) * s); }
 function angDiff(a, b) { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; return d; }
@@ -508,6 +532,14 @@ function buildStatic() {
     placeOnWall(p, x, 2.4, z, f.fx, f.fz); g.add(lod(p, 24));
     addExhibit(g, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
   }
+  // the planetarium's star projector at the centre of the Rotunda
+  const proj = new THREE.Group(); proj.position.set(ROT.cx, 0, ROT.cz);
+  proj.add(new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.5, 1.05, 16).translate(0, 0.525, 0), MAT.bronze));
+  proj.add(new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 16).translate(0, 1.4, 0), MAT.darkstone));
+  const holes = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 6, 4), MAT.flame, 60), mt = new THREE.Matrix4();
+  for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
+  proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
+  addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
   // room door signs are built with each wing's exhibits
 }
 function hitBoxFor(obj, depth, pad) {
@@ -737,6 +769,7 @@ function manageZones() {
     if (!l.obj.parent) { LOD.splice(i, 1); continue; }
     l.obj.visible = l.obj.position.distanceTo(S.pos) < l.far;
   }
+  if (S.sky) S.sky.root.visible = !!(ZONES.rotunda && ZONES.rotunda.group.visible);
   const inside = S.regions.find((r) => r.room && S.pos.x > r.x0 && S.pos.x < r.x1 && S.pos.z > r.z0 && S.pos.z < r.z1);
   S.inRoom = inside ? inside.room : null;
   for (const z of Object.values(ZONES)) {
@@ -772,6 +805,8 @@ function locate() {
     if (p.x >= r.x0 - 0.05 && p.x <= r.x1 + 0.05 && p.z >= r.z0 - 0.05 && p.z <= r.z1 + 0.05) { reg = r; if (r.room) break; }
   }
   if (!reg) return;
+  const inRot = reg.id === "rotunda" && !!(S.sky && S.sky.state.data);
+  if ($("mu-sky").hidden === inRot) { $("mu-sky").hidden = !inRot; document.body.classList.toggle("mu-in-sky", inRot); }
   let text, sub;
   if (reg.room) { const e = S.eras[reg.era]; sub = "Wing " + e.num + " · " + e.name; text = reg.label; }
   else if (reg.id === "rotunda") {
@@ -855,6 +890,10 @@ function openCard(ex) {
   } else if (d.type === "trails") {
     h = `<p class="mu-cat">Trails</p><h2 id="mu-card-h">Walk one tradition through the ages</h2><p>The museum is arranged by time, so a single tradition's rooms are spread across the wings. A trail takes you through them in order.</p><ul class="mu-list">` +
       S.manifest.trails.map((t) => `<li><strong>${esc(t.name)}</strong><small>${t.rooms.map((id) => esc(roomTitle(id))).join(" → ")} · <button type="button" data-trail="${t.id}">start</button></small></li>`).join("") + `</ul>`;
+  } else if (d.type === "sky") {
+    if (!S.sky || !S.sky.state.data) return;
+    h = S.sky.card(d, (id) => roomTitle(id));
+    S.sky.highlight(d.what === "cons" ? d.id : null);
   } else if (d.type === "directory") { showDirectory(); return; }
   else if (d.type === "reserved") {
     h = `<p class="mu-cat">Comparative theme</p><h2 id="mu-card-h">${esc(d.name)}</h2><p>This alcove is reserved for a theme chapter that has not been written yet. It will open when the chapter is published.</p><div class="mu-actions">${btn("themes.html", "All themes")}</div>`;
@@ -867,11 +906,31 @@ function openCard(ex) {
   $("mu-card-wrap").hidden = false;
   $("mu-card").focus();
 }
-function closeCard() { $("mu-card-wrap").hidden = true; S.card = null; S.dirty = true; $("mu-stage").querySelector("canvas").focus(); }
+function closeCard() { $("mu-card-wrap").hidden = true; S.card = null; S.dirty = true; if (S.sky) S.sky.highlight(null); S.skyHover = null; $("mu-stage").querySelector("canvas").focus(); }
 function findFig(id) { let any = null; for (const D of Object.values(S.detail)) { const f = D.figs[id]; if (f && f.svg) return f; if (f) any = f; } return any; }
 function findVault(id) { return Object.values(S.detail).find((D) => D.vault[id]); }
 function findVaultItem(id) { const D = findVault(id); return D ? D.vault[id] : null; }
 function findVaultSlug(id) { return S.manifest.names.vault[id][2]; }
+
+// ---------------------------------------------------------------- planetarium controls
+function skySites() {
+  const sel = $("mu-sky-site"); if (!sel || !S.sky) return;
+  sel.innerHTML = S.sky.state.data.sites.map((x) => `<option value="${x.id}">${esc(x.name)}</option>`).join("");
+  sel.addEventListener("change", () => S.sky.setSite(sel.value));
+  $("mu-sky-now").addEventListener("click", () => { S.sky.setMode(S.sky.state.mode === "now" ? "tonight" : "now"); skyPanel(); });
+  $("mu-sky-run").addEventListener("click", () => { S.sky.toggleRun(); skyPanel(); });
+  $("mu-sky-lines").addEventListener("click", () => { S.sky.toggleLines(); skyPanel(); S.dirty = true; });
+  $("mu-sky-about").addEventListener("click", () => openCard({ data: { type: "sky", what: "about" } }));
+}
+function skyPanel() {
+  if (!S.sky || !S.sky.state.data) return;
+  const st = S.sky.state;
+  $("mu-sky-now").textContent = st.mode === "now" ? "Tonight, 22:00" : "Now";
+  $("mu-sky-run").textContent = st.run ? "Stop the sky" : "Run the sky";
+  $("mu-sky-run").setAttribute("aria-pressed", String(st.run));
+  $("mu-sky-lines").setAttribute("aria-pressed", String(st.lines));
+  const t = S.sky.timeLabel(), el = $("mu-sky-time"); if (el.textContent !== t) el.textContent = t;
+}
 
 // ---------------------------------------------------------------- room guide
 function renderGuide() {
@@ -891,6 +950,18 @@ function renderGuide() {
     }
   } else {
     h += `<p class="mu-trail">You are in ${esc(S.where.split("|")[1] || "the museum")}. Walk into a room, or choose one:</p>`;
+  }
+  if (S.sky && S.sky.state.data && S.where.indexOf("The Rotunda") === 0) {
+    const L = S.sky.state.data.lore, C = S.sky.state.data.cons;
+    const cons = [...new Set(L.flatMap((e) => e.targets).filter((t) => C.some((c) => c.id === t)))];
+    const pl = [...new Set(L.flatMap((e) => e.targets).filter((t) => t.startsWith("planet:")).map((t) => t.slice(7)))];
+    const nm = { lun: "The Moon", mer: "Mercury", ven: "Venus", mar: "Mars", jup: "Jupiter", sat: "Saturn" };
+    h += `<h3>The planetarium overhead</h3><p class="mu-trail">${esc(S.sky.timeLabel())}</p><ul>` +
+      `<li><button type="button" data-skyopen="about">About this sky<small>what the dome shows, and its sources</small></button></li>` +
+      `<li><button type="button" data-skyopen="mw">The Milky Way<small>the archive's lore</small></button></li>` +
+      `<li><button type="button" data-skyopen="horizon">The horizon<small>the archive's lore</small></button></li>` +
+      pl.map((id) => `<li><button type="button" data-skyopen="planet:${id}">${esc(nm[id])}<small>where it is on this date, and its lore</small></button></li>`).join("") +
+      cons.map((id) => `<li><button type="button" data-skyopen="cons:${id}">${esc(C.find((c) => c.id === id).name)}<small>constellation with lore in the archive</small></button></li>`).join("") + `</ul>`;
   }
   h += `<h3>Go to a room</h3><ul><li><button type="button" data-go="@hall">The entrance hall</button></li><li><button type="button" data-go="@rotunda">The Rotunda · themes</button></li>` +
     S.manifest.eras.map((e) => `<li><button type="button" data-go="@${e.slug}">Wing ${esc(e.num)} · ${esc(e.name)}</button></li>`).join("") + `</ul>`;
@@ -963,6 +1034,19 @@ function pick(cx, cy) {
   if (w && w.distance < hit.distance - 0.3) return null;
   return S.exhibits.find((e) => e.mesh === hit.object) || null;
 }
+// the planetarium: what part of the dome is under this screen point (only from inside the Rotunda)
+function skyAt(cx, cy) {
+  if (!S.sky || !S.sky.state.data || !S.sky.root.visible || Math.hypot(S.pos.x - ROT.cx, S.pos.z - ROT.cz) > ROT.r - 0.2) return null;
+  ndc.set(cx, cy); ray.setFromCamera(ndc, camera);
+  const r = S.sky.pickRay(ray.ray.origin, ray.ray.direction);
+  if (!r) return null;
+  return r.type === "cons" ? { data: { type: "sky", what: "cons", id: r.id, mw: r.mw, name: skyName(r) } }
+    : r.type === "planet" ? { data: { type: "sky", what: "planet", id: r.id, name: skyName(r) } } : { data: { type: "sky", what: "horizon", name: "The horizon" } };
+}
+function skyName(r) {
+  if (r.type === "planet") return { lun: "The Moon", mer: "Mercury", ven: "Venus", mar: "Mars", jup: "Jupiter", sat: "Saturn" }[r.id];
+  const c = S.sky.state.data.cons.find((x) => x.id === r.id); return c ? c.name : r.id;
+}
 function wallMeshes() {
   const out = [];
   for (const z of Object.values(ZONES)) if (z.group.visible) z.group.children.forEach((m) => { if (m.material === MAT.wall) out.push(m); });
@@ -979,7 +1063,7 @@ function unlock() { if (document.pointerLockElement) document.exitPointerLock();
 function bindInput() {
   const c = renderer.domElement;
   document.addEventListener("pointerlockchange", () => { S.locked = document.pointerLockElement === c; $("mu-reticle").hidden = !S.locked; });
-  document.addEventListener("mousemove", (e) => { if (!S.locked || Math.abs(e.movementX) > 180 || Math.abs(e.movementY) > 180) return; S.yaw -= e.movementX * 0.0024; S.pitch = Math.max(-1.2, Math.min(1.2, S.pitch - e.movementY * 0.0024)); S.dirty = true; });
+  document.addEventListener("mousemove", (e) => { if (!S.locked || Math.abs(e.movementX) > 180 || Math.abs(e.movementY) > 180) return; S.yaw -= e.movementX * 0.0024; S.pitch = Math.max(-1.2, Math.min(1.48, S.pitch - e.movementY * 0.0024)); S.dirty = true; });
   // pointer: drag to look; tap/click to inspect or (touch) walk
   let down = null;
   c.addEventListener("pointerdown", (e) => { down = { x: e.clientX, y: e.clientY, t: performance.now(), yaw: S.yaw, pitch: S.pitch, moved: false }; c.setPointerCapture(e.pointerId); c.focus(); });
@@ -987,15 +1071,15 @@ function bindInput() {
     if (!down || S.locked) return;
     const dx = e.clientX - down.x, dy = e.clientY - down.y;
     if (Math.hypot(dx, dy) > 6) down.moved = true;
-    if (down.moved) { S.yaw = down.yaw - dx * 0.005; S.pitch = Math.max(-1.1, Math.min(1.1, down.pitch - dy * 0.004)); S.dirty = true; }
+    if (down.moved) { S.yaw = down.yaw - dx * 0.005; S.pitch = Math.max(-1.1, Math.min(1.45, down.pitch - dy * 0.004)); S.dirty = true; }
   });
   c.addEventListener("pointerup", (e) => {
     if (!down) return;
     const tap = !down.moved && performance.now() - down.t < 450; down = null;
     if (!tap) return;
-    if (S.locked) { const ex = pick(0, 0); if (ex) openCard(ex); return; }
+    if (S.locked) { const ex = pick(0, 0) || skyAt(0, 0); if (ex) openCard(ex); return; }
     const r = c.getBoundingClientRect(), cx = ((e.clientX - r.left) / r.width) * 2 - 1, cy = -((e.clientY - r.top) / r.height) * 2 + 1;
-    const ex = pick(cx, cy);
+    const ex = pick(cx, cy) || skyAt(cx, cy);
     if (ex) { openCard(ex); return; }
     if (!touch && e.pointerType === "mouse") { lock(); return; }
     const fp = floorPoint(cx, cy);
@@ -1012,7 +1096,7 @@ function bindInput() {
     if (!$("mu-card-wrap").hidden) { if (e.key === "Escape") { e.preventDefault(); closeCard(); } return; }
     if (e.target && /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(e.target.tagName)) return;
     if (e.key === "Escape" && !$("mu-guide").hidden) { toggleGuide(false); return; }
-    if (e.code === "KeyE" || e.key === "Enter") { const ex = S.hover || pick(0, 0); if (ex) { e.preventDefault(); openCard(ex); } return; }
+    if (e.code === "KeyE" || e.key === "Enter") { const ex = S.hover || pick(0, 0) || skyAt(0, 0); if (ex) { e.preventDefault(); openCard(ex); } return; }
     if (e.code === "KeyG") { toggleGuide(); return; }
     if (["KeyW", "KeyA", "KeyS", "KeyD", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "ShiftLeft", "ShiftRight"].includes(e.code)) {
       if (e.code.startsWith("Arrow")) e.preventDefault();
@@ -1029,6 +1113,7 @@ function bindInput() {
   $("mu-card-wrap").addEventListener("click", (e) => {
     if (e.target === $("mu-card-wrap")) { closeCard(); return; }
     const go = e.target.closest("[data-go]"); if (go) { closeCard(); teleport(go.getAttribute("data-go")); return; }
+    const sk = e.target.closest("[data-sky]"); if (sk) { openCard({ data: { type: "sky", what: sk.getAttribute("data-sky") } }); return; }
     const tr = e.target.closest("[data-trail]"); if (tr) { const t = S.manifest.trails.find((x) => x.id === tr.getAttribute("data-trail")); closeCard(); teleport(t.rooms[0]); }
   });
   $("mu-guide-btn").addEventListener("click", () => toggleGuide());
@@ -1036,6 +1121,7 @@ function bindInput() {
   $("mu-guide-body").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     if (b.hasAttribute("data-go")) { teleport(b.getAttribute("data-go")); return; }
+    if (b.hasAttribute("data-skyopen")) { const [what, id] = b.getAttribute("data-skyopen").split(":"); openCard({ data: { type: "sky", what, id } }); return; }
     const ex = S.exhibits[+b.getAttribute("data-ex")]; if (ex) { lookAt(ex.center); openCard(ex); }
   });
   $("mu-dir-btn").addEventListener("click", showDirectory);
@@ -1090,6 +1176,7 @@ function tick(now) {
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
+  if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, S.reduce)) S.dirty = true;
   if (!S.reduce && idleT > 0.12) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
@@ -1099,11 +1186,15 @@ function tick(now) {
   // hover (centre of view when looking with the mouse)
   const ex = (S.locked || !touch) && $("mu-card-wrap").hidden ? pick(0, 0) : null;
   const near = ex && ex.center.distanceTo(S.pos) < 6 ? ex : null;
-  if (near !== S.hover) {
-    S.hover = near;
-    const tag = $("mu-tag");
-    if (near) { tag.innerHTML = `<kbd>${touch ? "tap" : "E"}</kbd>` + esc(near.data.name); tag.hidden = false; } else tag.hidden = true;
-    $("mu-reticle").classList.toggle("on", !!near);
+  // nothing close in view: is the centre of the view on the planetarium's sky?
+  const sky = !near && (S.locked || !touch) && $("mu-card-wrap").hidden ? skyAt(0, 0) : null;
+  const skyKey = sky ? sky.data.what + ":" + (sky.data.id || "") : null;
+  if (near !== S.hover || skyKey !== S.skyHover) {
+    S.hover = near; S.skyHover = skyKey;
+    const tag = $("mu-tag"), show = near || sky;
+    if (show) { tag.innerHTML = `<kbd>${touch ? "tap" : "E"}</kbd>` + esc(show.data.name); tag.hidden = false; } else tag.hidden = true;
+    $("mu-reticle").classList.toggle("on", !!show);
+    if (S.sky && $("mu-card-wrap").hidden) S.sky.highlight(sky && sky.data.what === "cons" ? sky.data.id : null);
   }
   renderer.render(scene, camera);
 }
@@ -1158,6 +1249,9 @@ async function start() {
 window.__MU = {
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
+  look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
+  sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
+  skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   open: (i) => openCard(S.exhibits[i]),
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },

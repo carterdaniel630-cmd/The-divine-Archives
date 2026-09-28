@@ -37,6 +37,8 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - Pages are prerendered and the output is committed. After a content change run, in order:
   `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`,
   `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
+  The museum's planetarium has its own step, `node tools/build-sky.js` (star catalogue in
+  `tools/data/d3-celestial/`, lore in `museum/sky-lore.json`, checked by `tools/verify-sky.js`).
 - A chapter's body goes into `content/chapters.js` via `node tools/md-to-chapter.js <id> <file.md>`;
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.

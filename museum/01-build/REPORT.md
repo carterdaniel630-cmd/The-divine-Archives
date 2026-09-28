@@ -117,6 +117,40 @@ Software rendering (SwiftShader) and emulated devices overstate CPU cost and say
 - **Pending review:** those 21 chapters carry the pending-review tag again until Carter clears the
   new material.
 
+## Addendum, 2026-09-28: the planetarium and the star vaults
+
+Carter asked for a night-sky or planetarium look on the ceilings, with interactive constellations.
+
+- **The Rotunda's dome is a planetarium** (`docs/museum/sky.js`, `docs/museum/ephem.js`):
+  - **what it shows:** the real sky over one of six sites the archive writes about: Babylon (ch03),
+    Giza (ch02), Delphi (ch08), Stonehenge (ch42), Chichén Itzá (ch29) or Rapa Nui (ch63). It includes
+    5,044 stars to magnitude 6 (XHIP), the Milky Way (Vieira's outlines), the 88 IAU constellations
+    with figures and names, and the Moon and five planets at their computed positions;
+  - **time:** the sky turns with the site's sidereal time. It shows "tonight, 22:00" by default, with
+    "Now" and "Run the sky" (20 minutes of sky a second) as options;
+  - **picking:** tapping or looking at the dome picks the constellation whose official IAU boundary
+    contains that point, or a planet, the Moon, or the horizon. The boundary is outlined in gold;
+  - **cards:** each card gives the astronomy, then only what the archive's chapters say. The
+    curated lore (`museum/sky-lore.json`, 18 entries) has 43 `basis` quotes that
+    `tools/verify-sky.js` checks against chapter text in CI, and contested or refuted claims carry
+    their verdict (the Mithraic star-map theory is "Contested"; the Dogon/Sirius B claim is "Not
+    supported"). A constellation the archive does not discuss says so;
+  - **honesty notes on the cards:**
+    - the stick figures are a convention;
+    - the positions are modern (J2000), and precession means the ancient sky differed;
+    - the Moon is drawn larger than life.
+- **Accuracy:** checked against the astronomy-engine library for 1990–2045.
+  - Planets are within 0.17°.
+  - The Moon is within 0.32°.
+  - Sidereal time is within 0.005°.
+  - The IAU-boundary test puts 99% of 3,240 catalogued stars in their catalogue constellation. The
+    remainder lie on a border, and the cards use the catalogue's own assignment for named stars.
+- **The entrance hall and the Spine** have a lapis vault with gilded five-pointed stars (decoration,
+  not a star map). The Rotunda's central lamp was removed so the dome is dark, and a star-projector
+  prop at its centre opens "About this sky".
+- **Cost:** `sky.json` is 207 KB (88 KB gzipped), loaded after the museum starts. The Rotunda
+  now draws about 32 calls.
+
 ## Owed / needs Carter
 
 1. ~~Style sign-off on the live museum (Gate 2).~~ Passed by Carter, 2026-09-28.

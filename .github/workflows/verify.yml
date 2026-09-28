@@ -10,12 +10,16 @@ on:
     branches: ["**"]
     paths:
       - "docs/assets/games/data/**"
+      - "museum/sky-lore.json"
+      - "docs/museum/sky.json"
       - "content/chapters.js"
       - "tools/verify-*.js"
       - ".github/workflows/verify.yml"
   pull_request:
     paths:
       - "docs/assets/games/data/**"
+      - "museum/sky-lore.json"
+      - "docs/museum/sky.json"
       - "content/chapters.js"
       - "tools/verify-*.js"
       - ".github/workflows/verify.yml"

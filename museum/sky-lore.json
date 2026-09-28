@@ -1,0 +1,118 @@
+{
+  "about": "Curated input for the planetarium in the Rotunda (tools/build-sky.js). Every entry restates what an archive chapter says; each string in `basis` must appear word for word in that chapter's text, which tools/verify-sky.js checks. `targets` are IAU constellation ids, `planet:<id>` (mer ven mar jup sat lun), `mw` (the Milky Way), `horizon`, or `circumpolar:<lat>` (every constellation whose centre never sets at that latitude). Nothing here may go beyond its chapter; where the archive says nothing about a constellation, its card says so.",
+  "entries": [
+    {
+      "id": "mithras-taurus",
+      "targets": ["Tau"],
+      "chapter": "ch18",
+      "title": "The bull of Mithras?",
+      "text": "At the centre of every mithraeum stood the tauroctony, Mithras slaying the bull. An influential modern theory (David Ulansey and others) reads the whole scene as an astronomical map: the bull as the constellation Taurus, the dog, snake, scorpion and raven as other constellations, encoding the precession of the equinoxes. The chapter calls it ingenious and much debated, and, lacking any text, unprovable.",
+      "basis": ["the bull as the constellation Taurus", "encoding the precession of the equinoxes", "It is ingenious and much debated", "unprovable"],
+      "verdict": "contested"
+    },
+    {
+      "id": "zodiac-synagogues",
+      "targets": ["Ari", "Tau", "Gem", "Cnc", "Leo", "Vir", "Lib", "Sco", "Sgr", "Cap", "Aqr", "Psc"],
+      "chapter": "ch19",
+      "title": "The zodiac on synagogue floors",
+      "text": "At Beth Alpha, Hammat Tiberias, Sepphoris and other sites, congregations of the fourth to sixth centuries laid mosaic floors whose central panel is a zodiac wheel, with the sun-god Helios in his four-horse chariot at its centre. Around him ran the twelve signs and the four seasons. That synagogues displayed the zodiac underfoot startled the archaeologists who found them.",
+      "basis": ["central panel is a zodiac wheel", "Around him ran the twelve signs and the four seasons", "startled the archaeologists who found th"]
+    },
+    {
+      "id": "zodiac-mithras",
+      "targets": ["Ari", "Tau", "Gem", "Cnc", "Leo", "Vir", "Lib", "Sco", "Sgr", "Cap", "Aqr", "Psc"],
+      "chapter": "ch18",
+      "title": "The ring of the zodiac around Mithras",
+      "text": "The Mithraic bull-slaying scene is framed by the sun and moon, the twin torchbearers and the ring of the zodiac. On the astronomical reading it is a star chart in mythic disguise; on any reading it is a picture built to be decoded by those with the knowledge.",
+      "basis": ["and the ring of the zodiac", "a star chart in mythic disguise", "a picture built to be decoded by those with the knowledge"]
+    },
+    {
+      "id": "sirius-dogon",
+      "targets": ["CMa"],
+      "chapter": "ch33",
+      "title": "Sirius and the Dogon: a modern legend",
+      "text": "Robert Temple's The Sirius Mystery (1976) popularized the claim that the Dogon possessed impossible ancient knowledge of Sirius B, the invisible companion of Sirius, and so must have met visitors from the stars. It does not survive scrutiny: the anthropologist Walter van Beek, restudying the Dogon, found no such knowledge among them, and the original account likely owed much to Marcel Griaule's own leading questions in the 1940s.",
+      "basis": ["popularized by Robert Temple's The Sirius Mystery (1976)", "the invisible companion star Sirius B", "does not survive scrutiny", "found no such knowledge among them", "Marcel Griaule's own leading questions in the 1940s"],
+      "verdict": "not supported"
+    },
+    {
+      "id": "manichaean-column",
+      "targets": ["mw"],
+      "chapter": "ch55",
+      "title": "The Column of Glory",
+      "text": "Manichaeism read the sky itself as the machinery of salvation, with the Milky Way, the \"Column of Glory\", as the great column of ascending Light.",
+      "basis": ["the sky itself read as the machinery of salvation", "with the Milky Way (the \"Column of Glory\") as the great column of ascending Light"]
+    },
+    {
+      "id": "manichaean-moon",
+      "targets": ["planet:lun"],
+      "chapter": "ch55",
+      "title": "The Moon as a ship of Light",
+      "text": "In Manichaean teaching the waxing and waning Moon is the vessel filling with Light and then discharging its cargo toward the Kingdom.",
+      "basis": ["the waxing and waning moon is the vessel filling with Light and then discharging its cargo toward the Kingdom"]
+    },
+    {
+      "id": "pyramid-texts",
+      "targets": ["circumpolar:29.98"],
+      "chapter": "ch02",
+      "title": "The stars that never set",
+      "text": "Seen from Giza, this part of the sky circles the pole and never sets. The Pyramid Texts, the oldest substantial body of religious writing from Egypt, exist to launch the king, and the king alone, into the sky to join the sun god and the circumpolar stars.",
+      "basis": ["They are the oldest substantial body of religious writing from Egypt", "into the sky to join the sun god and the circumpolar stars"]
+    },
+    {
+      "id": "mesopotamia-venus", "targets": ["planet:ven"], "chapter": "ch03", "title": "Ishtar's star",
+      "text": "Mesopotamians read the heavens as a text the gods had written, and identified the major gods with the visible planets: Ishtar with Venus. The vast omen series Enuma Anu Enlil catalogued celestial signs and their meanings.",
+      "basis": ["Mesopotamians read the heavens as a text the gods had written", "Ishtar with Venus", "Enuma Anu Enlil catalogued celestial signs and their meanings"]
+    },
+    {
+      "id": "mesopotamia-jupiter", "targets": ["planet:jup"], "chapter": "ch03", "title": "Marduk's star",
+      "text": "Mesopotamians identified the major gods with the visible planets: Marduk with Jupiter.",
+      "basis": ["The major gods were identified with the visible planets", "Marduk with Jupiter"]
+    },
+    {
+      "id": "mesopotamia-mars-saturn", "targets": ["planet:mar", "planet:sat"], "chapter": "ch03", "title": "Ninurta and Nergal",
+      "text": "Mesopotamians identified the major gods with the visible planets: Ninurta and Nergal with Saturn and Mars.",
+      "basis": ["The major gods were identified with the visible planets", "Ninurta/Nergal with Saturn and Mars"]
+    },
+    {
+      "id": "mesopotamia-mercury", "targets": ["planet:mer"], "chapter": "ch03", "title": "Nabu's star",
+      "text": "Mesopotamians identified the major gods with the visible planets: Nabu with Mercury.",
+      "basis": ["The major gods were identified with the visible planets", "Nabu with Mercury"]
+    },
+    {
+      "id": "mesopotamia-moon", "targets": ["planet:lun"], "chapter": "ch03", "title": "Sin, the Moon",
+      "text": "In Mesopotamia the Moon was the god Sin, as the Sun was Shamash.",
+      "basis": ["Shamash with the Sun, Sin with the Moon"]
+    },
+    {
+      "id": "maya-venus", "targets": ["planet:ven"], "chapter": "ch29", "title": "The Dresden Codex's Venus table",
+      "text": "The Maya Dresden Codex encodes the synodic cycle of Venus, feared as a bringer of war, with an accuracy of hours across centuries, alongside eclipse tables.",
+      "basis": ["The Dresden Codex encodes the synodic cycle of Venus — feared as a bringer of war — with an accuracy of hours across centuries, alongside eclipse tables"]
+    },
+    {
+      "id": "aztec-venus", "targets": ["planet:ven"], "chapter": "ch43", "title": "Quetzalcoatl",
+      "text": "To the Mexica, Quetzalcoatl, the Feathered Serpent, god of wind, wisdom, priesthood and the calendar, was the culture-bringer identified with the planet Venus.",
+      "basis": ["Quetzalcoatl , the Feathered Serpent, god of wind, wisdom, priesthood, and the calendar, the culture-bringer identified with the planet Venus"]
+    },
+    {
+      "id": "aztec-moon", "targets": ["planet:lun"], "chapter": "ch43", "title": "The sun's victory over the moon and stars",
+      "text": "When a sacrificial victim's heart was cut out at the top of the Mexica pyramid, the body rolled down the steps, the killing re-enacting the myth: the sun's daily victory over the moon and stars.",
+      "basis": ["the body rolled down the steps", "the killing re-enacting the myth, the sun's daily victory over the moon and stars"]
+    },
+    {
+      "id": "mithraic-planets", "targets": ["planet:mer", "planet:ven", "planet:mar", "planet:jup", "planet:sat", "planet:lun"], "chapter": "ch18", "title": "The seven grades of Mithras",
+      "text": "The seven grades of Mithraic initiation were each linked to one of the seven classical planets, and appear to encode the ascent of the soul through the planetary spheres.",
+      "basis": ["each linked to one of the seven classical planets", "appear to encode the ascent of the soul through the planetary spheres"]
+    },
+    {
+      "id": "wayfinding", "targets": ["horizon"], "chapter": "ch63", "title": "The star-path",
+      "text": "Pacific wayfinders crossed a third of the globe by canoe, navigating by the stars, the swells and the birds. Their knowledge of the rising and setting points of the stars was an encoded cosmology of navigation: the sky read as a sacred map by which a people found their islands.",
+      "basis": ["navigating by the stars, the swells, and the birds", "the rising and setting points of the stars", "the sky read as a sacred map by which a people found their islands"]
+    },
+    {
+      "id": "sky-as-writing", "targets": ["about"], "chapter": "ch03", "title": "The sky as divine writing",
+      "text": "Mesopotamian scribes compiled lists of gods, words, stones and stars; in the Babylonian creation epic Marduk sets the stars in their courses. This conviction, that the sky was a script to be decoded, is the direct ancestor of later astrology.",
+      "basis": ["of gods, words, stones, stars", "The Babylonian creation epic", "sets the stars in their courses", "This conviction, that the sky was a script to be decoded, is the direct ancestor of later astr"]
+    }
+  ]
+}

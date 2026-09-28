@@ -71,7 +71,11 @@ and no runtime build. Sections:
   chapter in a wing per Age, generated from the same data files by
   `tools/build-museum.js`. It is `noindex` and never in the sitemap; the chapter,
   Vault and Pantheon pages stay canonical. Three.js is vendored in
-  `docs/assets/vendor/three/`.
+  `docs/assets/vendor/three/`. The Rotunda's dome is a **planetarium**: the real
+  sky over a site the archive writes about, built by `tools/build-sky.js` from the
+  d3-celestial catalogues (`tools/data/d3-celestial/`, BSD licence). Its constellation
+  cards quote only chapter text (`museum/sky-lore.json`, checked by
+  `tools/verify-sky.js`).
 
 The chapter, era, listing, Vault, search-index and sitemap pages are
 **prerendered** and the output is committed. After changing content, rebuild
@@ -82,6 +86,7 @@ node tools/build-vault.js
 node tools/build-chapters.js
 node tools/build-pages.js
 node tools/build-museum.js
+node tools/build-sky.js      # only when the planetarium's lore or data change
 ```
 
 To add or update a chapter's body, convert its markdown with

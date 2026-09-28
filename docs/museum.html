@@ -9,7 +9,7 @@
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/archive.css" />
-  <link rel="stylesheet" href="museum/museum.css?v=1" />
+  <link rel="stylesheet" href="museum/museum.css?v=2" />
   <script type="importmap">{ "imports": { "three": "./assets/vendor/three/three.module.min.js" } }</script>
 </head>
 <body class="museum-page">
@@ -50,6 +50,16 @@
 <p class="mu-tag" id="mu-tag" hidden aria-hidden="true"></p>
 <div class="mu-fade" id="mu-fade" aria-hidden="true"></div>
 
+<div class="mu-sky" id="mu-sky" hidden role="group" aria-label="Planetarium controls">
+  <span class="mu-sky-t">Planetarium</span>
+  <label class="mu-sky-l">Sky over <select id="mu-sky-site"></select></label>
+  <button type="button" id="mu-sky-now">Now</button>
+  <button type="button" id="mu-sky-run" aria-pressed="false">Run the sky</button>
+  <button type="button" id="mu-sky-lines" aria-pressed="true">Figures</button>
+  <button type="button" id="mu-sky-about">About this sky</button>
+  <p class="mu-sky-time" id="mu-sky-time" aria-live="polite"></p>
+</div>
+
 <aside class="mu-guide" id="mu-guide" hidden aria-label="Room guide">
   <div class="mu-guide-head"><h2 id="mu-guide-h">Room guide</h2><button type="button" class="mu-x" id="mu-guide-x" aria-label="Close the room guide">&times;</button></div>
   <div id="mu-guide-body"></div>
@@ -75,6 +85,6 @@
   </div>
 </main>
 
-<script type="module" src="museum/app.js?v=1"></script>
+<script type="module" src="museum/app.js?v=2"></script>
 </body>
 </html>
