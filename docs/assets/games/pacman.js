@@ -420,6 +420,7 @@
       var shown = canvas.getBoundingClientRect().width || VW;
       DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shown / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       wallCache = null;
+      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); wallCache = null; draw(); });
       hudEl = root.querySelector(".pm-hud"); live = root.querySelector(".pm-toast");
       wire();
     }

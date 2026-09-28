@@ -229,6 +229,7 @@
       DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shownW / W);
       [[well, W, H], [mon, ZW, ZH]].forEach(function (p) { p[0].width = Math.round(p[1] * DPR); p[0].height = Math.round(p[2] * DPR); p[0].getContext("2d").setTransform(DPR, 0, 0, DPR, 0, 0); });
       tileCache = {}; wellBg = null;
+      AG.onFit(well, function () { DPR = AG.scaleFor(well, W); [[well, W, H], [mon, ZW, ZH]].forEach(function (p) { p[0].width = Math.round(p[1] * DPR); p[0].height = Math.round(p[2] * DPR); p[0].getContext("2d").setTransform(DPR, 0, 0, DPR, 0, 0); }); tileCache = {}; wellBg = null; draw(); });
       live = root.querySelector(".zig-toast");
       scoreEl = root.querySelector("#zig-score"); courseEl = root.querySelector("#zig-courses");
       levelEl = root.querySelector("#zig-level"); bestEl = root.querySelector("#zig-best");

@@ -1866,7 +1866,8 @@
         '<div class="ap-host"><div class="fg-stage ap-stage"><canvas class="fg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Divine Casualties fighting stage"></canvas></div></div>' +
         '<div class="rq-actions" style="margin-top:.4rem"><button class="rq-btn" data-a="back">‹ Choose fighters</button></div>';
       canvas = root.querySelector(".fg-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2); canvas.width = VW * DPR; canvas.height = VH * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      DPR = AG.scaleFor(canvas, VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); });
       hudEl = root.querySelector(".fg-hud");
       root.querySelector('[data-a="back"]').addEventListener("click", selectScreen);
     }

@@ -98,6 +98,7 @@
         "</div><p class=\"rq-note\">Left/Right or A/D flip · Space or Launch fires the spark. Guard the drain between the flippers.</p>";
       canvas = root.querySelector(".pb-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); draw(); });
       hudEl = root.querySelector(".pb-hud"); live = root.querySelector(".pb-toast");
       wire();
     }

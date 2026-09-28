@@ -105,6 +105,7 @@
       canvas.width = Math.round(W * DPR); canvas.height = Math.round(W * DPR);
       cxr.setTransform(DPR, 0, 0, DPR, 0, 0);
       bgCache = null;
+      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, W); canvas.width = Math.round(W * DPR); canvas.height = Math.round(W * DPR); cxr.setTransform(DPR, 0, 0, DPR, 0, 0); bgCache = null; draw(); });
       live = root.querySelector(".ouro-toast");
       scoreEl = root.querySelector("#ouro-score");
       levelEl = root.querySelector("#ouro-level");

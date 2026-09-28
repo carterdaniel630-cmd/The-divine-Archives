@@ -625,11 +625,19 @@
       if (p.whip.t > 0.3) p.whip = null;
     }
     function whipDir() { var up = st.p.whip && st.p.whip.up; return { x: st.p.face * (up ? 0.62 : 0.97), y: up ? -0.78 : -0.22 }; }
+    // the lash: straight up-and-out at a lever or ring overhead; otherwise an arc that leaves the
+    // shoulder level and cracks down near the ground, so it reaches snakes and scorpions as well as bats
+    function whipPoint(t, ext, drawn) {
+      var p = st.p, o = (drawn && p.hand) || whipOrigin(), up = p.whip && p.whip.up;   // the drawn lash leaves the hand; the hit test uses the body
+      if (up) { var d = whipDir(), R = 112 * ext; return { x: o.x + d.x * R * t, y: o.y + d.y * R * t }; }
+      var R2 = 88 * ext;
+      return { x: o.x + p.face * R2 * t, y: o.y + R2 * (-0.24 * t + 0.46 * t * t) };
+    }
     function whipHit() {
-      var o = whipOrigin(), d = whipDir(), reach = st.p.whip.up ? 112 : 84, pts = [];
-      for (var i = 2; i <= 8; i++) pts.push({ x: o.x + d.x * reach * i / 8, y: o.y + d.y * reach * i / 8 });
-      var tip = pts[pts.length - 1]; spark(tip.x, tip.y, 5); SFX.play("whip");
-      function hits(x, y, hw, hh) { for (var j = 0; j < pts.length; j++) if (Math.abs(pts[j].x - x) < hw + 4 && Math.abs(pts[j].y - y) < hh + 4) return true; return false; }
+      var pts = [];
+      for (var i = 2; i <= 10; i++) pts.push(whipPoint(i / 10, 1));
+      var tip = pts[pts.length - 1]; spark(tip.x, tip.y, 9); SFX.play("whip"); st.shake = Math.max(st.shake || 0, 1.5);
+      function hits(x, y, hw, hh) { for (var j = 0; j < pts.length; j++) if (Math.abs(pts[j].x - x) < hw + 6 && Math.abs(pts[j].y - y) < hh + 7) return true; return false; }
       st.foes.forEach(function (f) {
         if (!f.alive || f.deco) return; var bb = foeBox(f); if (!hits(bb.x, bb.y, bb.hw, bb.hh)) return;
         if (f.type === "lion" || f.type === "leopard") { SFX.play("stun"); f.stun = 2.2; f.vx = st.p.face * 2.5; burst(bb.x, bb.y - 6, "#fff2c0", 6); toast("The " + f.type + " staggers back — go!"); }
@@ -1502,13 +1510,15 @@
     }
     function drawWhip() {
       var p = st.p; if (!p.whip || p.swing) return;
-      var o = p.hand || whipOrigin(), d = whipDir(), t = p.whip.t, reach = p.whip.up ? 112 : 84;
-      var ext = t < 0.1 ? t / 0.1 : t < 0.16 ? 1 : Math.max(0, 1 - (t - 0.16) / 0.14);
-      var tx = o.x + d.x * reach * ext, ty = o.y + d.y * reach * ext;
-      var mx = (o.x + tx) / 2 - d.y * 14 * (1 - ext) * p.face, my = (o.y + ty) / 2 + d.x * 14 * (1 - ext) * p.face + 6 * (1 - ext);
-      cx.strokeStyle = "#3a2412"; cx.lineWidth = 2.2; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(o.x, o.y); cx.quadraticCurveTo(mx, my, tx, ty); cx.stroke();
-      cx.strokeStyle = "#7a5230"; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(o.x, o.y); cx.quadraticCurveTo(mx, my - 0.6, tx, ty); cx.stroke();
-      if (t > 0.09 && t < 0.15) { cx.fillStyle = "rgba(255,245,200,.9)"; cx.beginPath(); for (var i = 0; i < 8; i++) { var a = i / 8 * 6.28, r = i % 2 ? 3 : 8; cx.lineTo(tx + Math.cos(a) * r, ty + Math.sin(a) * r); } cx.fill(); }
+      var t = p.whip.t, ext = t < 0.1 ? t / 0.1 : t < 0.18 ? 1 : Math.max(0, 1 - (t - 0.18) / 0.12), pts = [];
+      for (var k = 0; k <= 12; k++) { var q = whipPoint(k / 12, ext, true); q.y += Math.sin(k / 12 * Math.PI) * 7 * (1 - ext); pts.push(q); }   // slack while it unrolls
+      [["#2a1a0c", 2.6], ["#8a5c34", 1.1]].forEach(function (sty) { cx.strokeStyle = sty[0]; cx.lineWidth = sty[1]; cx.lineCap = "round"; cx.lineJoin = "round"; cx.beginPath(); pts.forEach(function (q, i) { if (i) cx.lineTo(q.x, q.y); else cx.moveTo(q.x, q.y); }); cx.stroke(); });
+      var tp = pts[pts.length - 1];
+      if (t > 0.08 && t < 0.2) {                                                     // the crack: a bright star at the tip and a ring of air
+        var f = 1 - Math.abs(t - 0.12) / 0.08;
+        cx.fillStyle = "rgba(255,245,200," + (0.95 * f).toFixed(2) + ")"; cx.beginPath(); for (var i = 0; i < 10; i++) { var a = i / 10 * 6.28, r = i % 2 ? 4 : 12; cx.lineTo(tp.x + Math.cos(a) * r, tp.y + Math.sin(a) * r); } cx.fill();
+        cx.strokeStyle = "rgba(255,240,200," + (0.6 * f).toFixed(2) + ")"; cx.lineWidth = 1.2; cx.beginPath(); cx.arc(tp.x, tp.y, 6 + (t - 0.08) * 160, 0, 7); cx.stroke();
+      }
     }
     function drawRope() {
       var p = st.p, s = p.swing, h = p.hand || { x: p.x, y: p.y - 12 };
@@ -1689,6 +1699,7 @@
         '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), crack the whip with <b>B</b> (J or X). Whip a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
+      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR); });
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);
       try { canvas.focus({ preventScroll: true }); } catch (e) { }   // keep keyboard focus inside the dialog (Esc still closes it)
@@ -1745,7 +1756,7 @@
     if (window.__TR_TEST) {
       window.__trLevels = function () { return LEVELS.map(function (d) { var lv = makeLevel(d); return { w: lv.W, grid: lv.grid, E: lv.E }; }); };
       window.__tr = {
-        state: function () { return st && { li: st.li, x: st.p.x, y: st.p.y, vx: st.p.vx, onGround: st.p.onGround, hearts: st.hearts, got: st.got, total: st.relics.length, over: st.over, won: !!st.won, gates: st.lv.E.gates.map(function (g) { return +g.open.toFixed(2); }), swing: !!st.p.swing, cam: st.cam, vy: st.p.vy, movers: st.movers.map(function (m) { return +(m.x / TILE).toFixed(1); }), trig: st.lv.E.gates.map(function (g) { return g.trig.map(trigOk); }), t: +st.t.toFixed(2), crates: st.crates.map(function (k) { return [+(k.x / TILE).toFixed(1), +(k.y / TILE).toFixed(1), !!k.locked]; }) }; },
+        state: function () { return st && { li: st.li, x: st.p.x, y: st.p.y, vx: st.p.vx, onGround: st.p.onGround, hearts: st.hearts, got: st.got, total: st.relics.length, over: st.over, won: !!st.won, gates: st.lv.E.gates.map(function (g) { return +g.open.toFixed(2); }), swing: !!st.p.swing, cam: st.cam, vy: st.p.vy, movers: st.movers.map(function (m) { return +(m.x / TILE).toFixed(1); }), trig: st.lv.E.gates.map(function (g) { return g.trig.map(trigOk); }), t: +st.t.toFixed(2), face: st.p.face, whip: !!st.p.whip, foes: st.foes.filter(function (f) { return f.alive && !f.deco; }).map(function (f) { return [f.type, +(f.x / TILE).toFixed(1)]; }), crates: st.crates.map(function (k) { return [+(k.x / TILE).toFixed(1), +(k.y / TILE).toFixed(1), !!k.locked]; }) }; },
         warp: function (c, r) { st.p.x = c * TILE + 12; st.p.y = (r == null ? standRowAt(c) + 1 : r + 1) * TILE - 12.01; st.p.vx = st.p.vy = 0; st.p.swing = null; st.cam = clamp(st.p.x - VIEWW * 0.45, 0, st.LW - VIEWW); },
         play: function (i) { if (!run) run = { score: 0, hearts: MAXHEARTS, collected: [] }; if (!DATA) return false; playSite(i); return true; },
         god: function () { st.hearts = 99; run.hearts = 99; },

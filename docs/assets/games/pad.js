@@ -7,9 +7,8 @@
         buttons you can slide between, shoulder buttons, Select and Start;
      2. a physical game controller through the browser's Gamepad API
         (standard mapping: A/B/X/Y, bumpers, triggers, D-pad, left stick);
-     3. the keyboard, which each game still reads itself; the on-screen pad
-        doubles as its key map (each button shows its key) and lights up as
-        keys are pressed.
+     3. the keyboard, which each game still reads itself; on a computer the
+        pad shows a one-line key legend and lights up as keys are pressed.
 
    Layouts:
      "two"  — D-pad, two face buttons (B left, A right), Select, Start:
@@ -63,8 +62,14 @@
       var b = btns[id]; if (!b) return "";
       return '<span class="ap-btn ap-' + id + '" data-b="' + id + '" role="button" aria-label="' + (b.cap || GLYPH[id]) + '">' +
         '<span class="ap-g">' + GLYPH[id] + "</span>" +
-        (b.cap ? '<span class="ap-cap">' + b.cap + "</span>" : "") +
-        (b.key ? '<kbd class="ap-key">' + b.key + "</kbd>" : "") + "</span>";
+        (b.cap ? '<span class="ap-cap">' + b.cap + "</span>" : "") + "</span>";
+    }
+    // the keyboard equivalents, as one legend line (shown only where there is a keyboard and mouse)
+    function legend() {
+      var parts = [];
+      if (opts.dpadKeys) parts.push("<b>Move</b> " + opts.dpadKeys);
+      ["a", "b", "x", "y", "l", "r", "select", "start"].forEach(function (id) { var b = btns[id]; if (b && b.key) parts.push("<b>" + (b.cap || GLYPH[id]) + "</b> " + b.key); });
+      return parts.length ? '<p class="ap-legend">' + parts.join('<span aria-hidden="true"> · </span>') + "</p>" : "";
     }
     function build() {
       el = document.createElement("div");
@@ -74,15 +79,13 @@
       el.innerHTML =
         (layout === "four" && (btns.l || btns.r) ? '<div class="ap-shoulders">' + faceBtn("l") + faceBtn("r") + "</div>" : "") +
         '<div class="ap-body">' +
-          '<div class="ap-grip ap-grip-l"></div><div class="ap-grip ap-grip-r"></div>' +
           '<div class="ap-dwell"><div class="ap-dpad" aria-label="Direction pad">' +
             '<span class="ap-arm ap-up" data-d="up"></span><span class="ap-arm ap-left" data-d="left"></span>' +
             '<span class="ap-arm ap-right" data-d="right"></span><span class="ap-arm ap-down" data-d="down"></span>' +
-            '<span class="ap-hub"></span></div>' +
-            (opts.dpadKeys ? '<kbd class="ap-key ap-dkey">' + opts.dpadKeys + "</kbd>" : "") + "</div>" +
-          '<div class="ap-mid">' + faceBtn("select") + faceBtn("start") + '<span class="ap-brand" aria-hidden="true">✦ DIVINE ARCHIVES</span></div>' +
+            '<span class="ap-hub"></span></div></div>' +
+          '<div class="ap-mid">' + faceBtn("select") + faceBtn("start") + "</div>" +
           '<div class="ap-face">' + (layout === "four" ? faceBtn("y") + faceBtn("x") + faceBtn("b") + faceBtn("a") : faceBtn("b") + faceBtn("a")) + "</div>" +
-        "</div>" +
+        "</div>" + legend() +
         '<p class="ap-status" aria-live="polite"></p>';
       dpadEl = el.querySelector(".ap-dpad");
       el.querySelectorAll(".ap-arm").forEach(function (a) { armEls[a.getAttribute("data-d")] = a; });

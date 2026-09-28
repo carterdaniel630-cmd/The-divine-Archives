@@ -106,6 +106,15 @@
     closeBtn.addEventListener("click", close);
     dialog.appendChild(closeBtn);
 
+    // full screen: the browser's own full screen where it exists (it hides the address bar), and on
+    // phones the wide action games also turn to landscape; otherwise (iPhone) the dialog fills the window
+    var fsBtn = document.createElement("button");
+    fsBtn.className = "game-fs"; fsBtn.type = "button";
+    fsBtn.setAttribute("aria-pressed", "false");
+    fsBtn.innerHTML = '<span aria-hidden="true">⛶</span> <span class="game-fs-l">Full screen</span>';
+    fsBtn.addEventListener("click", function () { toggleFull(); });
+    dialog.appendChild(fsBtn);
+
     var body = document.createElement("div");
     body.setAttribute("data-game-body", "");
     dialog.appendChild(body);
@@ -139,7 +148,7 @@
       pinball: { left: "ArrowLeft", right: "ArrowRight", l: "ArrowLeft", r: "ArrowRight", a: " ", b: " " }
     };
     var stopBridge = (window.ArchivePad && PADKEYS[gameId]) ? window.ArchivePad.bridge(PADKEYS[gameId]) : null;
-    openState = { overlay: overlay, trigger: ctx.trigger || null, cleanup: cleanup, stopBridge: stopBridge };
+    openState = { overlay: overlay, dialog: dialog, fsBtn: fsBtn, gameId: gameId, trigger: ctx.trigger || null, cleanup: cleanup, stopBridge: stopBridge };
 
     // focus management + trap + Esc
     (dialog.querySelector("[autofocus]") || closeBtn).focus();
@@ -147,9 +156,73 @@
     return openState;
   }
 
+  var LANDSCAPE = { treasure: 1, fighter: 1, pong: 1 };
+  function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
+  function setFullClass(on) {
+    if (!openState) return;
+    openState.overlay.classList.toggle("is-full", on); openState.dialog.classList.toggle("is-full", on);
+    openState.fsBtn.setAttribute("aria-pressed", String(on));
+    openState.fsBtn.querySelector(".game-fs-l").textContent = on ? "Exit full screen" : "Full screen";
+    // size the main picture to the room left over, then let the game re-measure its canvases
+    var settle = function () { fitMain(on); try { window.dispatchEvent(new Event("archive:fit")); } catch (e) { /* old browser */ } };
+    setTimeout(settle, 60); setTimeout(settle, 450);
+  }
+  // the largest canvas in the dialog grows to the biggest size that fits beside or above everything
+  // else (a canvas never grows past its drawing size by CSS alone, so this is done here)
+  function fitMain(on) {
+    if (!openState) return;
+    var d = openState.dialog, best = null, ba = 0;
+    Array.prototype.forEach.call(d.querySelectorAll("canvas"), function (c) { var r = c.getBoundingClientRect(), a = r.width * r.height; if (a > ba) { ba = a; best = c; } });
+    if (!best) return;
+    ["width", "max-width", "max-height", "height"].forEach(function (k) { best.style.removeProperty(k); });
+    if (!on || !openState.overlay.classList.contains("is-full")) return;
+    // binary-search the widest size at which the whole dialog still fits the screen without scrolling
+    var r0 = best.getBoundingClientRect().width, pw = d.clientWidth - 24;
+    var set = function (w) { best.style.setProperty("width", w + "px", "important"); best.style.setProperty("height", "auto", "important"); best.style.setProperty("max-width", "100%", "important"); best.style.setProperty("max-height", "none", "important"); };
+    var fits = function () { return d.scrollHeight <= d.clientHeight + 1 && d.scrollWidth <= d.clientWidth + 1; };
+    var lo = Math.floor(r0), hi = Math.max(lo, Math.floor(Math.max(pw, window.innerWidth)));
+    set(lo);
+    var tallEnough = function () { return best.getBoundingClientRect().height >= window.innerHeight * 0.6; };
+    if (!fits()) {
+      // not everything fits even at the current size (a phone on its side): make the picture as tall as
+      // the screen and let the text below it scroll
+      var ratio = best.width / best.height, w = Math.floor(Math.min(pw, (window.innerHeight - 16) * ratio));
+      set(Math.max(lo, w)); best.scrollIntoView({ block: "center" });
+      return;
+    }
+    while (hi - lo > 4) { var mid = (lo + hi) >> 1; set(mid); if (fits() && best.getBoundingClientRect().width >= mid - 1) lo = mid; else hi = mid; }
+    set(lo);
+    if (!tallEnough()) {                     // fitting everything would leave the picture too small: scroll instead
+      var ratio2 = best.width / best.height; set(Math.floor(Math.min(pw, (window.innerHeight - 16) * ratio2))); best.scrollIntoView({ block: "center" });
+    }
+  }
+  function toggleFull(force) {
+    if (!openState) return;
+    var on = force != null ? force : !openState.overlay.classList.contains("is-full");
+    var ov = openState.overlay;
+    if (on) {
+      setFullClass(true);
+      var req = ov.requestFullscreen || ov.webkitRequestFullscreen;
+      if (req) {
+        try {
+          var pr = req.call(ov, { navigationUI: "hide" });
+          var lock = function () { if (LANDSCAPE[openState && openState.gameId] && screen.orientation && screen.orientation.lock && window.matchMedia("(pointer: coarse)").matches) screen.orientation.lock("landscape").catch(function () {}); };
+          if (pr && pr.then) pr.then(lock).catch(function () {}); else lock();
+        } catch (e) { /* stay in the window-filling fallback */ }
+      }
+    } else {
+      if (fsElement()) { var ex = document.exitFullscreen || document.webkitExitFullscreen; if (ex) try { ex.call(document); } catch (e) { /* ignore */ } }
+      if (screen.orientation && screen.orientation.unlock) try { screen.orientation.unlock(); } catch (e) { /* ignore */ }
+      setFullClass(false);
+    }
+  }
+  // leaving the browser's full screen (Esc, the back gesture) also leaves the full-screen layout
+  function onFsChange() { if (openState && !fsElement() && openState.overlay.classList.contains("is-full") && (document.fullscreenEnabled || document.webkitFullscreenEnabled)) setFullClass(false); }
+  document.addEventListener("fullscreenchange", onFsChange); document.addEventListener("webkitfullscreenchange", onFsChange);
+
   function onKeydown(e) {
     if (!openState) return;
-    if (e.key === "Escape") { e.preventDefault(); close(); return; }
+    if (e.key === "Escape") { e.preventDefault(); if (openState.overlay.classList.contains("is-full") && !fsElement()) { toggleFull(false); return; } close(); return; }
     if (e.key !== "Tab") return;
     var f = focusables(openState.overlay);
     if (!f.length) return;
@@ -165,6 +238,7 @@
 
   function close() {
     if (!openState) return;
+    if (openState.overlay.classList.contains("is-full")) toggleFull(false);
     try { if (typeof openState.cleanup === "function") openState.cleanup(); } catch (e) {}
     if (openState.stopBridge) openState.stopBridge();
     openState.overlay.removeEventListener("keydown", onKeydown);
@@ -234,7 +308,21 @@
     return chosen;
   }
 
+  // a game's canvases re-measure when the dialog enters or leaves full screen (or the window
+  // resizes), so the bigger picture stays sharp; the listener drops itself once the canvas is gone
+  function onFit(canvas, fn) {
+    var t = null;
+    function h() { if (!canvas.isConnected) { window.removeEventListener("archive:fit", h); window.removeEventListener("resize", h2); return; } try { fn(); } catch (e) { if (window.console) console.error(e); } }
+    function h2() { clearTimeout(t); t = setTimeout(h, 180); }
+    window.addEventListener("archive:fit", h); window.addEventListener("resize", h2);
+  }
+  function scaleFor(canvas, logicalW, cap) {
+    var w = canvas.getBoundingClientRect().width || logicalW;
+    return Math.min(cap || 3, Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, w / logicalW));
+  }
+
   window.ArchiveGames = {
+    onFit: onFit, scaleFor: scaleFor,
     register: register, registerSymbol: registerSymbol, isRegistered: isRegistered,
     open: open, close: close,
     lsGet: lsGet, lsSet: lsSet,
