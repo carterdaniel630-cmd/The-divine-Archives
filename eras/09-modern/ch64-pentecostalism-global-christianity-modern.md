@@ -30,6 +30,14 @@ One controversial offshoot deserves note: the **prosperity gospel** — the teac
 
 Pentecostal worship is participatory, emotional, and embodied: exuberant **music**, raised hands, dancing, weeping, and shouting; **healing services** with the laying-on of hands; and **deliverance** (exorcism) and "spiritual warfare" against demonic powers. It tends to be sparing of traditional liturgy, imagery, and hierarchy — Spirit- and Bible-centered rather than sacramental — and it has opened wide space for **lay leadership** and, in many settings, for **women** as preachers and founders, from Aimee Semple McPherson to countless African and Latin American church-planters.
 
+## The believer's lens
+
+For Pentecostals, the **Holy Spirit** who came upon the apostles at Pentecost has come again, in power, in their own time. At the **Azusa Street** revival of **1906**, led by **William J. Seymour**, worshippers of every race spoke in tongues and felt the barriers between them fall. Every believer can receive the **baptism in the Spirit**, often shown by **speaking in tongues**, and the gifts of the early church (prophecy, healing, discernment) are available now. Worship is expectant and embodied: raised hands, loud praise, prayer for the sick, spiritual warfare against the powers of evil. The movement's rapid spread, to Latin America, Africa and Asia, is to believers the Spirit's work, a new Pentecost for a world church whose centre is now in the Global South. Some preachers add the **prosperity gospel**, the promise that faith brings health and wealth, a teaching that is contested within the movement and outside it.
+
+## The skeptical lens
+
+The historian traces the movement's origins to **Charles Parham's** teaching in Topeka (**1901**) and the Azusa Street revival (**1906**), with its remarkable interracial character and global missionary reach, and follows its "three waves": classical Pentecostal denominations, the Charismatic movement of the **1960s** (including Catholic Charismatic Renewal) and independent neo-charismatic churches. The demographer documents its explosive growth and the **shift of the Christian majority to the Global South**. The claims of faith are not historical findings: that tongues are evidence of Spirit baptism, that healings occur as claimed, that demons are real. Linguists who have studied glossolalia generally find that it is **not a natural human language**, though it is a genuine and meaningful religious practice. The **prosperity gospel** is a contested teaching whose promises this archive does not endorse. How far local Pentecostalisms absorb earlier Indigenous religious worlds is still being studied.
+
 ## Symbology and sacred encoding
 
 - **Tongues of fire.** The master-symbol is **glossolalia** itself and the **tongues of fire** of Acts 2 — sacred, Spirit-given speech that encodes the direct descent of God upon the believer, the sign that the Pentecost has come again.

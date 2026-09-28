@@ -143,6 +143,14 @@ mysteries." It is a fitting close to a comparative survey: alongside every peopl
 confident story of the beginning stands at least one ancient voice that looked at the same
 darkness and said, *we cannot be sure.*
 
+## The believer's lens
+
+For those who hold them sacred, creation stories are not early attempts at science but statements of **what the world is for and who made it so**. In Genesis a single God orders the formless deep by speaking, and the week of making ends in the Sabbath. In Babylon, **Marduk** splits the monster **Tiamat** to make heaven and earth. In the Rigveda the world comes from the sacrificed body of the cosmic man **Purusha**. For each tradition the story explains why the world has the shape it has, why its rituals matter, and where human beings stand in it. Believers today read these texts in many ways, from literal history to theological poetry; on every reading, the claim that matters is that the world is **ordered, intended and answerable** to its source.
+
+## The skeptical lens
+
+The comparative historian sees recurring **patterns**, not a single original myth: a watery chaos that is ordered, a battle with a sea-monster (**Marduk and Tiamat, Baal and Yamm, Zeus and Typhon**), a world made from a sacrificed giant (**Ymir, Purusha**), a world made by a word. Some of these are shared inheritances or borrowings within one cultural sphere, like the Near Eastern combat myth whose imagery survives in Hebrew poetry even though **Genesis 1 omits the battle**; others arise independently. The texts can be dated and placed: the Enuma Elish, the Egyptian cosmogonies of Heliopolis, Memphis and Hermopolis, Genesis 1–2, Hesiod, the Eddas. They reveal the societies that told them: Purusha's division into four classes is in the Rigveda's latest layer and encodes a social order. Even the doctrine of **creation out of nothing** turns out to be a later theological development, not the plain sense of Genesis 1:1. The oldest voice of doubt is inside the tradition itself: the Nasadiya hymn asks whether even the highest one knows how the world began.
+
 ## Symbology and sacred encoding
 
 Creation myths are dense with encoded meaning — the world's origin is where a culture stores its

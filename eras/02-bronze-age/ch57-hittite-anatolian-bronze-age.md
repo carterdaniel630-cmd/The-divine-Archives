@@ -32,6 +32,14 @@ Hittite worship centered on a vast calendar of **festivals** that the king was o
 
 When the Hittite empire collapsed around 1180 BCE in the great Bronze Age crisis, Anatolian religion did not vanish. The **Luwians** and the "Neo-Hittite" states of the early Iron Age carried its gods forward, and one Anatolian deity had an especially long future: **Kubaba**, a goddess of the region, developed into **Kybele** — **Cybele**, the great **Mother of the Gods** of Phrygia, whose ecstatic cult would be carried to Rome in 204 BCE as the **Magna Mater** (ch18, ch48). The thousand gods of Hatti outlived the empire that gathered them.
 
+## The believer's lens
+
+For the Hittites, the land was ruled by the gods and the king was their **servant and priest**. The "**thousand gods of Hatti**" (native Hattian deities, gods of conquered and allied peoples, the gods of Hurrian neighbours) were gathered in, not driven out, and each had to be honoured correctly; in the rock sanctuary of **Yazılıkaya** the Storm-god and the Sun-goddess meet at the head of their divine processions. When the god **Telipinu** vanished in anger, the land withered, and ritual brought him home. Treaties were sworn before the gods as witnesses, and a broken oath brought divine punishment: when plague struck, King **Mursili II** searched out the sins of his father and confessed them in prayer to end it. To the Hittite worshipper, prosperity depended on the gods' presence and good will, and scribes, priests and king worked to keep it.
+
+## The skeptical lens
+
+The historian has, for a Bronze Age religion, an **unusually rich record**: the cuneiform archives of **Hattusa**, written in the oldest attested Indo-European language; the Yazılıkaya reliefs; the **Hittite–Egyptian treaty**; the plague prayers of Mursili II; and the actual texts of the **Kumarbi Cycle** and the Telipinu myth. Scholars broadly accept that the Kumarbi Cycle, with its succession of heavenly kings, lies behind **Hesiod's** Theogony, but how and through whom it reached Greece is debated. The resemblance between Hittite treaties and the **biblical covenant** is real; whether it reflects direct influence or a shared Near Eastern convention is debated too. The "Hittites" of the Hebrew Bible are often a Canaanite group whose link with the Anatolian empire is uncertain. Much remains unknown: the older Hattian layer, and the meaning of rituals recorded only as step-by-step instructions.
+
 ## Symbology and sacred encoding
 
 - **Yazılıkaya as stone theology.** The rock sanctuary is a symbol-system in itself: the ordered procession of the whole pantheon encodes the divine hierarchy; the meeting of **Teshub and Hepat** at the center encodes the sacred marriage at the heart of the cosmos; and the panel where the god **Sharruma** embraces and protects King Tudhaliya encodes the king's intimate bond with his divine patron.

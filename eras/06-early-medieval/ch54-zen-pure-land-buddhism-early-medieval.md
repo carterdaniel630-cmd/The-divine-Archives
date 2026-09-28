@@ -22,6 +22,14 @@ Its logic was the doctrine of ***mappō***, the "age of the decline of the Dharm
 
 In China the two were rarely rivals: **Chan–Pure Land dual cultivation** — meditating and reciting the Name — became the mainstream of later Chinese Buddhism. It was in Japan, in the ferment of the Kamakura period, that they crystallized into the sharply distinct schools (alongside **Nichiren**'s devotion to the Lotus Sutra) that shaped East Asian religion into the modern age. Practice ranges accordingly: the silent meditation hall, the *sesshin* retreat, and the master–student encounter of Zen; the recited Name, the temple, and the deathbed nembutsu of Pure Land.
 
+## The believer's lens
+
+Zen and Pure Land are, to their followers, **two roads up the same mountain**. Zen points directly at the mind: the Buddha-nature is already present, and seated meditation (**zazen**; in Dōgen's Sōtō school, **shikantaza**, "just sitting") and the paradoxical **kōan** break the habit of grasping so that it can be seen. Its masters answered questions with a shout or "the cypress tree in the garden" because awakening cannot be handed over in words. Pure Land begins from the opposite side: in an age of decline (**mappō**) no one can save themselves, but the Buddha **Amida** vowed to bring into his Pure Land all who call on him. Saying his name, the **nembutsu**, is enough; for **Shinran**, even the wish to say it is Amida's gift, and the Buddha's compassion reaches the wicked first of all. One path is the most demanding, the other the most merciful, and both are held to lead to the same awakening.
+
+## The skeptical lens
+
+The historian traces Chan's development in China from roughly the **sixth to eighth centuries**, and its spread to Korea, Vietnam and Japan, where **Eisai** and **Dōgen** founded Japanese schools; and the Pure Land line from the Chinese teachers **Tanluan**, **Daochuo** and **Shandao** to **Hōnen** and **Shinran**, who founded Jōdo-shū and Jōdo Shinshū. Much of the early Chan story is **semi-legendary**: Bodhidharma's nine years facing a wall, and the illiterate **Huineng's** sudden awakening, are sacred narratives, and scholars regard the neat line of patriarchs as largely a **later reconstruction** made to establish authority. The dating and authorship of key texts, including the *Platform Sutra* and the Pure Land sutras, are debated. The existence of Amida's Pure Land and the "mind-to-mind" transmission of enlightenment are objects of faith, not verifiable history. What is not in doubt is their immense cultural reach, from temple gardens and ink painting to the everyday piety of millions.
+
 ## Symbology and sacred encoding
 
 - **The ensō.** The Zen **circle**, brushed in a single uninhibited stroke of ink, encodes enlightenment, the void, and the whole universe at once — and, left open or imperfect, the acceptance of things as they are. It is the purest emblem of Zen's aesthetic of spontaneity.

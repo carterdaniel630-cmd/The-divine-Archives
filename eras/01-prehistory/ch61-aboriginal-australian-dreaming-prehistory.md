@@ -30,6 +30,14 @@ Aboriginal Australia holds the **oldest continuous painting tradition on earth**
 
 Colonization from 1788 brought catastrophe — dispossession, massacre, disease, the forced removal of children, and the deliberate destruction of language and ceremony. Sacred sites have been lost even in living memory: in 2020 the 46,000-year-old **Juukan Gorge** rock shelters were destroyed by mining, an act that caused national outrage. Yet the tradition endures. The struggle for **land rights**, for the protection of sacred sites, and for the **repatriation** of sacred objects and ancestral remains is itself now part of the living religious life of Aboriginal Australia — the defense of Country against those who would treat it as mere ground.
 
+## The believer's lens
+
+For Aboriginal peoples, the **Dreaming** (in one Western Desert language, **Tjukurpa**) is not a dream and not only a past age. It is the time when the **Ancestral Beings** travelled across the land, shaping its waterholes, ridges and rocks, and it remains present: the law they laid down still holds, and the land still carries their power. Their journeys are sung in **songlines**, and to know the song is to know the country and one's obligations to it. **Country** is kin, not property; people belong to it through their totems and their ceremonies. The **Rainbow Serpent** and the **Wandjina** are among the Ancestral Beings whose presence is renewed in ceremony and in the repainting of rock art. Much of this knowledge is **restricted** and passed on only to those who have the right to hold it, and that restriction is itself part of the law.
+
+## The skeptical lens
+
+The archaeologist confirms the **extraordinary antiquity** of Aboriginal presence in Australia, more than **60,000 years**, and a rock-art record that is among the oldest continuous painting traditions on earth, including living repainting; the exact dating and authorship of the oldest art, such as the Gwion Gwion, is debated. The anthropologist stresses that there is **no single** Aboriginal religion: the traditions are many and diverse, and "Dreaming" and "Dreamtime" are imperfect colonial-era translations. Much of what outsiders have written about these traditions is distorted, and sensational appropriations, from "ancient aliens" readings of the Wandjina to New Age repackagings, are **rejected** here. The historian documents the colonial catastrophe and continuing harm, including the destruction of the **Juukan Gorge** rock shelters in **2020**. And much of the deepest content is restricted sacred knowledge; the archive treats that not as a gap to fill but as a boundary to respect.
+
 ## Symbology and sacred encoding
 
 - **The songline.** The single most remarkable encoding in this archive: a **song** that is simultaneously a **map**, a **law**, and a **title-deed**, so that the land itself is a text sung into legibility. Knowledge, navigation, and religion are one thing.

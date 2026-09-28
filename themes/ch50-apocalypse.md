@@ -37,6 +37,14 @@ The difference between the *linear* end (one final consummation, after which tim
 
 The apocalyptic hope has never stayed safely in the future. Again and again, communities have concluded that the end is *now* — and set a date. The **Millerites** of 1840s America awaited Christ's return on a calculated day and met the "**Great Disappointment**" when it passed; the pattern has repeated in countless movements down to the present, and it stands behind many of the modern new religious movements (ch35). Failed prophecy, strikingly, often does not destroy such groups but reshapes them, as they reinterpret the date rather than abandon the hope — one of the most studied phenomena in the psychology of religion.
 
+## The believer's lens
+
+For those who expect it, the end of days is the promise that **history means something**. In Zoroastrian teaching the world moves toward the **Frashokereti**, the making-wonderful, when the saviour **Saoshyant** comes, the dead rise and evil is defeated for ever. In Jewish apocalyptic, as in the book of Daniel, the dead will rise to judgment; in the Book of **Revelation** Christ returns, evil is judged, and a new heaven and new earth descend; in Islam the **Hour** will come, the dead be raised for judgment, and before it the **Mahdi** and the returning **Jesus** defeat the Deceiver, the **Dajjal**. Other traditions see a wheel rather than a line: the Hindu ages turning through vast cycles, the Norse **Ragnarök** followed by a green world rising from the sea. Either way, suffering and injustice are not the last word; to believers, the expected end gives the present its moral seriousness and its hope.
+
+## The skeptical lens
+
+The historian can date the texts and trace the growth of the idea: the Zoroastrian eschatology; the **apocalyptic turn** in Second Temple Judaism, documented in Daniel, Enoch and the Dead Sea Scrolls (the **War Scroll** is a battle plan for the last war); Revelation; the Qur'an's Day of Resurrection and the hadith traditions of the Mahdi and the Dajjal. Whether Jewish apocalyptic, and through it Christian and Islamic, **derives from Persia** is contested: the parallels are real, but the dating of the Zoroastrian texts and the direction of influence are debated, and some scholars locate the origins within Israelite tradition. The sociologist notes that **millenarian movements**, expecting the end soon, recur throughout history, and that their predicted dates have passed. This archive treats no prophecy as a forecast; it records what traditions expect, and why the imagination divides so readily between the line and the wheel remains an open question.
+
 ## Symbology and sacred encoding
 
 The apocalypse is the most densely *encoded* body of religious writing there is — deliberately so, since it was often written in coded images to be understood only by the faithful under persecution.

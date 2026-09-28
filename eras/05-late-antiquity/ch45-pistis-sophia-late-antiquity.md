@@ -159,6 +159,14 @@ where we seem to look directly at a Gnostic sacrament being performed rather tha
 described — a scene of enormous value for understanding what these communities actually **did**,
 not only what they thought.
 
+## The believer's lens
+
+To the community that treasured it, the Pistis Sophia was not a story about the past but a **revelation**: the risen Saviour, returned after **eleven years** in his garment of light, finally tells his disciples everything he had held back. Its heart is a drama of the soul told as the drama of a divine being. **Pistis Sophia**, deceived by the arrogant power **Authadēs**, falls into the chaos and cries out in **thirteen repentances**, and is lifted up again; every seeker who has mistaken a false light for the true one can find their own fall and rescue in hers. Salvation comes through the **mysteries** the Saviour gives, which forgive sins and free the soul from the wheel of rebirth and the cup of forgetfulness. That **Mary Magdalene** asks most of the questions, and is defended when Peter objects, is to such readers a sign that insight, not rank, qualifies a disciple to speak. For later esoteric readers, from the Theosophists onward, the book became a key to a hidden Christianity; those readings belong to their own history, but the longing they express is the one the text itself addresses.
+
+## The skeptical lens
+
+The historian reads the Pistis Sophia as a **Coptic translation of a lost Greek compilation**, assembled in **Egypt** in roughly the **third and fourth centuries CE**, and preserved in a single manuscript, the **Askew Codex** in the British Library. Its setting, the risen Jesus teaching for years after Easter, is a recognised **genre** of revelation dialogue, which puts new doctrine in the mouth of Christ; the book is evidence for what a Gnostic community believed, not for what the historical Jesus said. Its four "books" appear to be layers of different age, the fourth usually judged the oldest, and it reuses the **Psalms** and the **Odes of Solomon** as scripture for its own myth. Who produced it (Sethian, Barbeloite, Valentinian-adjacent or a school of its own) is unresolved, and how its rites were actually performed is largely inferred. The Peter–Mary quarrel is textually explicit and important for the history of early Christian women, but it tells us about debates in the author's time, not about the first disciples.
+
 ## Symbology and sacred encoding
 
 If Chapter 17 called Gnosticism "the tradition of sacred encoding itself," the Pistis Sophia is
