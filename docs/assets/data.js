@@ -462,6 +462,11 @@ window.ARCHIVE = {
       era: "07-high-medieval", eraLabel: "High Medieval · The Cathars & Medieval Heresy",
       status: "published", pending: true,
       source: "eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md",
-      summary: "The good men and good women of Languedoc: two principles, souls as fallen angels, the consolamentum with the Gospel of John laid on the head, and the few Cathar texts the inquisitors missed; the Albigensian Crusade, Béziers and the pyre at Montségur; the inquisition and the Montaillou register; and the other dissenters, Waldensians, Marguerite Porete, the Spiritual Franciscans, Wyclif and Hus. With the great historians’ quarrel over whether the Cathar church was real or built by its persecutors, and the Grail legends and ‘Cathar castles’ sorted from the record." }
+      summary: "The good men and good women of Languedoc: two principles, souls as fallen angels, the consolamentum with the Gospel of John laid on the head, and the few Cathar texts the inquisitors missed; the Albigensian Crusade, Béziers and the pyre at Montségur; the inquisition and the Montaillou register; and the other dissenters, Waldensians, Marguerite Porete, the Spiritual Franciscans, Wyclif and Hus. With the great historians’ quarrel over whether the Cathar church was real or built by its persecutors, and the Grail legends and ‘Cathar castles’ sorted from the record." },
+    { id: "ch73", title: "Sabbateans, Frankists & Hasidim", kind: "tradition",
+      era: "08-early-modern", eraLabel: "Early Modern · Sabbateans, Frankists & Hasidim",
+      status: "published", pending: true,
+      source: "eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md",
+      summary: "Messiahs and mystics in the Jewish early modern world: Luria’s shattered vessels and the catastrophe of 1648; Sabbatai Zevi, his prophet Nathan and the frenzy of 1665–66 that Glückel of Hameln remembered, ending in the Messiah’s conversion to Islam; the secret believers, the Dönme of Salonika and the amulet controversy; Jacob Frank, the burned Talmud and the mass baptisms; and, in the same borderlands, the Baal Shem Tov, the Maggid, the rebbes and their dynasties, and the fierce opposition of the Vilna Gaon. A symbology of sparks and husks, the niggun and the rebbe’s table, with hagiography and hostile sources marked as such." }
   ]
 };

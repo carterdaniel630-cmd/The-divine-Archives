@@ -1189,6 +1189,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M22 160 L60 118 L78 128 L100 70 L122 128 L140 116 L178 160 Z" stroke="currentColor" stroke-width="1.3"/><path d="M92 74 L92 62 L96 62 L96 58 L104 58 L104 62 L108 62 L108 74" stroke="currentColor" stroke-width="1.1"/><rect x="76" y="26" width="48" height="30" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M100 26 L100 56 M82 34 L96 34 M82 40 L96 40 M82 46 L96 46 M104 34 L118 34 M104 40 L118 40 M104 46 L118 46" stroke="currentColor" stroke-width="0.8" opacity="0.7"/><g stroke="currentColor" stroke-width="1" opacity="0.6"><path d="M40 178 C44 170 48 170 52 178 M60 178 C64 168 68 168 72 178 M128 178 C132 168 136 168 140 178 M148 178 C152 170 156 170 160 178"/></g></svg>',
       "Interpretive illustration",
       "An open book, the Gospel of John laid on the head in the consolamentum, above the peak of Montségur, where some two hundred good men and women were burned in 1244. An original, interpretive drawing; the Cathars left no emblem of their own."
+    ),
+
+    /* Ch73 — Sabbateans and Hasidim: the shattered vessels and the rising sparks */
+    "ch73": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M74 128 C70 110 74 96 84 88 L116 88 C126 96 130 110 126 128 Z" stroke="currentColor" stroke-width="1.2" opacity="0.35" stroke-dasharray="3 3"/><path d="M52 150 L66 138 L72 152 Z M132 146 L146 136 L150 154 Z M88 164 L104 158 L100 172 Z M60 116 L70 104 L78 118 Z M124 112 L136 102 L140 118 Z" stroke="currentColor" stroke-width="1.1"/><g fill="currentColor"><circle cx="100" cy="30" r="3"/><circle cx="86" cy="46" r="2"/><circle cx="114" cy="44" r="2.2"/><circle cx="96" cy="62" r="1.6"/><circle cx="108" cy="70" r="1.4"/><circle cx="78" cy="66" r="1.3"/><circle cx="124" cy="62" r="1.3"/></g><path d="M100 36 L100 80 M86 50 L92 78 M114 48 L108 78" stroke="currentColor" stroke-width="0.6" opacity="0.45" stroke-dasharray="1 3"/></svg>',
+      "Interpretive illustration",
+      "The image at the heart of Lurianic Kabbalah and the movements that grew from it: the vessels that could not hold the divine light shattered, and sparks of holiness, scattered among the fragments, rise again through repair (tikkun). An original, interpretive drawing."
     )
 
   };

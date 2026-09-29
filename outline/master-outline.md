@@ -156,6 +156,7 @@ every remaining chapter and added the lens structure throughout.
 | ch70 — Pre-Islamic Arabia | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md` |
 | ch71 — Korea | Tradition | 06-early-medieval | published, **pending review** | `eras/06-early-medieval/ch71-korea-early-medieval.md` |
 | ch72 — The Cathars & Medieval Heresy | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md` |
+| ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
