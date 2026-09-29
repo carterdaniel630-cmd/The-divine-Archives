@@ -1252,6 +1252,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M14 150 C50 138 80 142 100 146 C130 140 160 136 186 148" stroke="currentColor" stroke-width="1"/><path d="M68 146 L82 120 L96 104 L110 106 L122 124 L134 146 Z" stroke="currentColor" stroke-width="1.4"/><path d="M78 128 L126 130 M88 114 L116 116" stroke="currentColor" stroke-width="0.8" opacity="0.7"/><path d="M102 104 L102 40" stroke="currentColor" stroke-width="1.4"/><path d="M96 40 L102 28 L108 40 Z" stroke="currentColor" stroke-width="1.2"/><path d="M94 44 C96 54 98 58 102 60 C106 58 108 54 110 44" stroke="currentColor" stroke-width="1"/><path d="M102 70 C88 74 80 70 70 78 M102 80 C116 84 124 80 134 88" stroke="currentColor" stroke-width="1"/><circle cx="150" cy="54" r="10" stroke="currentColor" stroke-width="1"/><path d="M40 60 C52 56 62 58 72 54" stroke="currentColor" stroke-width="0.8" opacity="0.6"/></svg>',
       "Interpretive illustration",
       "An ovoo, the stone cairn of the steppe, crowned with a trident-tipped sülde spirit banner and hung with scarves under the open sky. An original, interpretive drawing."
+    ),
+
+    /* Ch82 — Akbar & the Mughal Synthesis: the jharokha window and the sun of the divine light */
+    "ch82": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M52 164 L52 92 C52 60 76 42 100 36 C124 42 148 60 148 92 L148 164" stroke="currentColor" stroke-width="1.4"/><path d="M66 164 L66 98 C66 74 84 60 100 54 C116 60 134 74 134 98 L134 164" stroke="currentColor" stroke-width="1"/><path d="M44 164 L156 164 M60 140 L140 140" stroke="currentColor" stroke-width="1.2"/><circle cx="100" cy="98" r="13" stroke="currentColor" stroke-width="1.2"/><path d="M100 78 L100 72 M100 118 L100 124 M80 98 L74 98 M120 98 L126 98 M86 84 L82 80 M114 84 L118 80 M86 112 L82 116 M114 112 L118 116" stroke="currentColor" stroke-width="1"/><path d="M76 140 L76 128 C76 124 80 122 84 124 M124 140 L124 128 C124 124 120 122 116 124" stroke="currentColor" stroke-width="0.8" opacity="0.7"/><path d="M40 60 L46 52 L52 60 M148 60 L154 52 L160 60" stroke="currentColor" stroke-width="0.8" opacity="0.6"/></svg>',
+      "Interpretive illustration",
+      "A pointed Mughal arch framing a jharokha balcony, with the radiant sun at its centre: the ‘divine light’ that Abu'l-Fazl said passed from God to the king. An original, interpretive drawing."
     )
 
   };

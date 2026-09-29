@@ -1,6 +1,6 @@
 # Sources — Chapter 81: Tengri & the Mongols
 
-Per the project sourcing standard. Per the project sourcing standard. The chapter separates the medieval record (the Orkhon inscriptions, the Secret History, the friars' reports, Mongol letters and seals) from modern reconstruction (neo-Tengrism), notes that most of that record comes from outsiders, and treats purge figures as estimates and the site of Chinggis Khan's grave as unknown.
+Per the project sourcing standard. The chapter separates the medieval record (the Orkhon inscriptions, the Secret History, the friars' reports, Mongol letters and seals) from modern reconstruction (neo-Tengrism), notes that most of that record comes from outsiders, and treats purge figures as estimates and the site of Chinggis Khan's grave as unknown.
 
 ## Sources cited
 - **Religion in the Mongol empire and religious policy** — "Religion in the Mongol Empire," Wikipedia. https://en.wikipedia.org/wiki/Religion_in_the_Mongol_Empire ; World History Encyclopedia, "Religion in the Mongol Empire." https://www.worldhistory.org/article/1469/religion-in-the-mongol-empire/ ; TheCollector, "How Religiously Tolerant Were the Mongols?" https://www.thecollector.com/mongols-religiously-tolerant/

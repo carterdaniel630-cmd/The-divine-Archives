@@ -165,6 +165,7 @@ every remaining chapter and added the lens structure throughout.
 | ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
 | ch80 — Shi'ism | Tradition | 06-early-medieval | published, **pending review** | `eras/06-early-medieval/ch80-shiism-early-medieval.md` |
 | ch81 — Tengri & the Mongols | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md` |
+| ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
