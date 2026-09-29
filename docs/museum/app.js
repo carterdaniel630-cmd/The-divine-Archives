@@ -21,7 +21,8 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=3";
+import { createInspector } from "./inspect.js?v=5";
+import { buildRelic, hasRelic } from "./relics.js?v=1";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=2";
 import { makeFauna } from "./fauna.js?v=1";
@@ -55,7 +56,7 @@ const S = {
   pos: new THREE.Vector3(0, EYE, 11), yaw: 0, pitch: 0,
   keys: new Set(), locked: false, auto: null, hover: null, card: null,
   reduce: store.get("mu-rm") === "1" || (store.get("mu-rm") == null && mqReduce.matches),
-  where: "", dirty: true, started: false, regions: [], exhibits: [], lampAnchors: [], areas: [], snd: createSound()
+  where: "", dirty: true, started: false, regions: [], exhibits: [], lampAnchors: [], areas: [], relicQ: [], snd: createSound()
 };
 
 // ---------------------------------------------------------------- renderer
@@ -599,12 +600,60 @@ function prop(kind) {
   }
   return g;
 }
+// build the next queued rendition for a case: the nearest to the visitor, if its wing is still standing
+function buildQueuedRelic() {
+  S.relicQ = S.relicQ.filter((q) => q.p.parent);
+  if (!S.relicQ.length) return false;
+  const v = new THREE.Vector3(); let best = 0, bd = 1e9;
+  S.relicQ.forEach((q, i) => { q.c.getWorldPosition(v); const d = v.distanceToSquared(S.pos); if (d < bd) { bd = d; best = i; } });
+  const q = S.relicQ.splice(best, 1)[0], rel = buildRelic(q.id, S.insp.materials.gold.envMap, 1, q.fit || [0.7, 0.62, 0.7]);
+  if (!rel) return false;
+  const r = mergeStatic(rel.root); r.position.y = q.y != null ? q.y - 0.06 : 0.975;
+  q.c.remove(q.p); q.p.traverse((o) => { if (o.geometry) o.geometry.dispose(); });
+  q.c.add(r); S.dirty = true; return true;
+}
+// a case's object never moves: merge its meshes by material into one mesh each (fewer draw calls)
+function mergeStatic(root) {
+  root.updateMatrixWorld(true);
+  const inv = new THREE.Matrix4().copy(root.matrixWorld).invert(), buckets = new Map(), keep = [];
+  root.traverse((o) => {
+    if (!o.isMesh || !o.visible) return;
+    let vis = true; for (let a = o; a && a !== root; a = a.parent) if (!a.visible) vis = false; if (!vis) return;
+    const mats = [].concat(o.material), m = new THREE.Matrix4().multiplyMatrices(inv, o.matrixWorld);
+    if (mats.some((x) => x.transparent)) { keep.push([o, m]); return; }
+    const g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone(); g.applyMatrix4(m);
+    const pieces = Array.isArray(o.material) && o.geometry.groups.length ? o.geometry.groups.map((gr) => [gr.start, gr.count, o.material[gr.materialIndex]]) : [[0, g.attributes.position.count, mats[0]]];
+    for (const [start, count, mat] of pieces) {
+      if (!mat) continue;
+      const n = Math.min(count, g.attributes.position.count - start), pos = g.attributes.position.array.slice(start * 3, (start + n) * 3);
+      const nor = g.attributes.normal ? g.attributes.normal.array.slice(start * 3, (start + n) * 3) : new Float32Array(n * 3);
+      const uv = g.attributes.uv ? g.attributes.uv.array.slice(start * 2, (start + n) * 2) : new Float32Array(n * 2);
+      const col = g.attributes.color && mat.vertexColors ? g.attributes.color.array.slice(start * 3, (start + n) * 3) : null;
+      if (!buckets.has(mat)) buckets.set(mat, []);
+      buckets.get(mat).push({ pos, nor, uv, col });
+    }
+    g.dispose();
+  });
+  const out = new THREE.Group();
+  for (const [mat, list] of buckets) {
+    let n = 0; list.forEach((l) => { n += l.pos.length / 3; });
+    const P = new Float32Array(n * 3), N = new Float32Array(n * 3), U = new Float32Array(n * 2), Cc = mat.vertexColors ? new Float32Array(n * 3).fill(1) : null; let o = 0;
+    list.forEach((l) => { P.set(l.pos, o * 3); N.set(l.nor, o * 3); U.set(l.uv, o * 2); if (Cc && l.col) Cc.set(l.col, o * 3); o += l.pos.length / 3; });
+    const G = new THREE.BufferGeometry(); G.setAttribute("position", new THREE.BufferAttribute(P, 3)); G.setAttribute("normal", new THREE.BufferAttribute(N, 3)); G.setAttribute("uv", new THREE.BufferAttribute(U, 2)); if (Cc) G.setAttribute("color", new THREE.BufferAttribute(Cc, 3));
+    const mm = new THREE.Mesh(G, mat); mm.matrixAutoUpdate = false; out.add(mm);
+  }
+  keep.forEach(([o, m]) => { const c = new THREE.Mesh(o.geometry, o.material); c.matrix.copy(m); c.matrixAutoUpdate = false; out.add(c); });
+  // the original geometries are no longer needed (the kept transparent ones are reused)
+  const kept = new Set(keep.map(([o]) => o.geometry)); root.traverse((o) => { if (o.isMesh && !kept.has(o.geometry)) o.geometry.dispose(); });
+  return out;
+}
 function caseAt(group, x, z, yaw, item, id, zoneId) {
   const c = new THREE.Group(); c.position.set(x, 0, z); c.rotation.y = yaw; group.add(c);
   const m = (geo, mat, y) => { const o = new THREE.Mesh(geo, mat); o.position.y = y; c.add(o); return o; };
   if (item.floor) {
     m(new THREE.BoxGeometry(2.4, 0.3, 1.8), MAT.darkstone, 0.15);
-    const top = m(new THREE.PlaneGeometry(2.1, 1.5), new THREE.MeshLambertMaterial({ map: TEX.mosaic }), 0.305); top.rotation.x = -Math.PI / 2;
+    if (hasRelic(id)) { const p = new THREE.Group(); p.position.y = 0.305; c.add(p); S.relicQ.push({ c, p, id, fit: [2.1, 0.06, 1.5], y: 0.305 }); }   // the floor's own rendition, under the glass
+    else { const top = m(new THREE.PlaneGeometry(2.1, 1.5), new THREE.MeshLambertMaterial({ map: TEX.mosaic }), 0.305); top.rotation.x = -Math.PI / 2; }
     m(new THREE.BoxGeometry(2.3, 0.02, 1.7), MAT.glass, 0.33);
   } else if (item.rendition) {
     // a purpose-built rendition stands in its own niche: a stone plinth, a tall vitrine and an arched back
@@ -632,7 +681,11 @@ function caseAt(group, x, z, yaw, item, id, zoneId) {
     m(new THREE.BoxGeometry(0.96, 0.05, 0.96), MAT.bronze, 0.95);
     m(new THREE.BoxGeometry(0.86, 0.72, 0.86), MAT.glass, 1.34);
     m(new THREE.BoxGeometry(0.88, 0.03, 0.88), MAT.bronze, 1.715);
-    const p = prop(item.prop); p.position.y = 0.975; c.add(p);
+    // the object's rendition, sized to the case; it is built a moment later (one per frame, nearest first) so that
+    // walking into a wing never stalls
+    // (the room's shared-material meshes are baked together, so the placeholder is an empty marker)
+    const p = hasRelic(id) ? new THREE.Group() : prop(item.prop); p.position.y = 0.975; c.add(p);
+    if (hasRelic(id)) S.relicQ.push({ c, p, id });
     if (item.forgery) { const band = m(new THREE.PlaneGeometry(0.86, 0.14), new THREE.MeshBasicMaterial({ map: textTex(["PROVEN FORGERY"], { w: 512, h: 84, size: 44, fg: "#f0a878", bg: "#2a120a" }) }), 0.8); band.position.z = 0.456; }
   }
   const hit = hitBoxFor(c, 0.4, 0.05);
@@ -787,7 +840,7 @@ function dropWing(zoneId) {
     if (o.geometry) o.geometry.dispose();
     // dispose only materials this wing made: not the museum's shared ones nor the inspector's (a mesh may carry an array)
     const shared = (m) => m === MAT.hit || m.userData.shared || Object.values(MAT).includes(m) || (S.insp && Object.values(S.insp.materials).includes(m));
-    [].concat(o.material || []).forEach((m) => { if (shared(m)) return; if (m.map && m.map.isTexture) m.map.dispose(); m.dispose(); });
+    [].concat(o.material || []).forEach((m) => { if (shared(m)) return; ["map", "normalMap", "roughnessMap"].forEach((k) => { if (m[k] && m[k].isTexture) m[k].dispose(); }); m.dispose(); });
   });
   scene.remove(Z.exGroup); Z.exGroup = null; Z.built = false;
   removeSegs(Z.segs);
@@ -878,10 +931,10 @@ function openCard(ex) {
     const v = findVaultItem(d.id);
     h = `<p class="mu-cat">Vault · ${esc(v.category)}</p><h2 id="mu-card-h">${esc(v.title)}</h2>` +
       (v.forgery ? `<span class="mu-flag">Proven forgery</span>` : "") +
-      (v.prop && !v.rendition ? `<span class="mu-flag soft">Stand-in, not a replica</span>` : "") +
+      (v.prop && !v.rendition && !hasRelic(d.id) ? `<span class="mu-flag soft">Stand-in, not a replica</span>` : "") +
       (v.noImage ? `<span class="mu-flag soft">No image shown</span>` : "") +
       (v.floor ? `<span class="mu-flag soft">Generic mosaic pattern, not the floor itself</span>` : "") +
-      (v.rendition ? `<span class="mu-flag soft">A modelled rendition, not a replica</span>` : "") +
+      (v.rendition || (v.prop && hasRelic(d.id)) ? `<span class="mu-flag soft">A modelled rendition, not a replica</span>` : "") +
       (v.pending ? `<span class="mu-flag soft">Recently added · pending review</span>` : "") +
       `<p class="mu-meta">${esc(v.dated)}<br>${esc(v.held)}</p><p>${esc(v.summary)}</p>` +
       (v.noImage ? `<p class="mu-contested">${esc(v.noImage)}</p>` : "") +
@@ -926,7 +979,7 @@ function openCard(ex) {
   } else if (d.type === "about") {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
-      `<p>The objects in the cases are <strong>generic stand-ins</strong>, never replicas, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
+      `<p>The objects in the cases are <strong>modelled renditions</strong> built from the descriptions in their Vault entries, never replicas: none is modelled from measurements or scans, and any writing on them is illustrative marks, not the text, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
       `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. Animals live in them, and each room has its own sound (Sound button to turn it off). "Reduce motion" stills them and turns off the lightning.</p>` +
       `<p>Every label keeps belief and evidence apart and links to the archive's page, where the sources and the evidence verdict live. Chapters marked "pending review" have new material not yet cleared in the keeper's review.</p>` +
       `<div class="mu-actions">${btn("methodology.html", "The methodology")}${btn("index.html", "The archive", true)}</div>`;
@@ -946,11 +999,12 @@ function openCard(ex) {
   // a Vault object with a stand-in comes out of its case: turn it, zoom it, open it, beside its label
   if (d.type === "vault" && S.insp) {
     const v = findVaultItem(d.id);
-    if (v && v.prop && !v.floor) {
+    if (v && v.prop && (!v.floor || hasRelic(d.id))) {
       S.cardAt = performance.now(); unlock();
       S.insp.open(v.prop, h, v.rendition
         ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
-        : "A generic stand-in for this kind of object, not a replica of it. Any writing on it is illustrative marks, not the text.");
+        : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Any writing on it is illustrative marks, not the text."
+        : "A generic stand-in for this kind of object, not a replica of it. Any writing on it is illustrative marks, not the text.", d.id);
       return;
     }
   }
@@ -1234,6 +1288,7 @@ function tick(now) {
   if (S.paused || document.hidden) { last = now; return; }
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
+  if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active) { S.insp.render(dt); return; }
   if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }

@@ -168,3 +168,5 @@ body.mu-in-sky .mu-tag { bottom: 6.2rem; }
   .mu-insp-panel { left:.5rem; right:.5rem; top:auto; bottom:.5rem; width:auto; max-height:42vh; }
   .mu-insp-hint { top:auto; bottom:calc(42vh + 1rem); }
 }
+/* while the inspector makes the object */
+.mu-insp-busy .mu-insp-view::after { content:"Preparing the object…"; position:absolute; left:50%; top:45%; transform:translateX(-50%); color:var(--ink-faint); font-size:.9rem; letter-spacing:.06em; }

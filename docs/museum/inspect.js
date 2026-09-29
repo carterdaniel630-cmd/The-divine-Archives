@@ -15,6 +15,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { buildReliquary, reliquaryStage } from "./reliquary.js?v=1";
+import { buildRelic, hasRelic } from "./relics.js?v=1";
 
 const TAU = Math.PI * 2;
 const ease = (a, b, k) => a + (b - a) * k;
@@ -345,6 +346,8 @@ export function buildModel(kind, M) {
 }
 
 // ---------------------------------------------------------------- the inspector
+// the reflection is a copy of the object: after the object moves (a book opens, a lid lifts) copy its parts' poses
+function syncMirror(a, b) { for (let i = 0; i < a.children.length && i < b.children.length; i++) { const x = a.children[i], y = b.children[i]; y.position.copy(x.position); y.quaternion.copy(x.quaternion); y.scale.copy(x.scale); y.visible = x.visible; if (x.material) y.material = x.material; syncMirror(x, y); } }
 export function createInspector(opt) {
   const renderer = opt.renderer, reduce = opt.reduce || (() => false);
   const env = makeEnv(renderer), M = materials(env);
@@ -380,32 +383,48 @@ export function createInspector(opt) {
     st.yaw = 0.6; st.pitch = 0.35; st.dist = m.fit; st.want = null; st.ty = m.target;
   }
   function paintActs() {
-    const m = st.model;
+    const m = st.model; if (!m) return;
     acts.innerHTML = m.actions.map((a) => `<button type="button" data-act="${a.id}" aria-pressed="${a.on ? "true" : "false"}"${a.needs && !(m.isOpen && m.isOpen()) ? " disabled" : ""}>${a.on && a.alt ? a.alt : a.label}</button>`).join("");
   }
-  function open(kind, html, noteText) {
-    if (st.model) scene.remove(st.model.root);
+  // free what the last object made (its own geometry, materials and textures; not the shared ones)
+  function drop(m) {
+    if (!m) return; scene.remove(m.root); if (!m.own) return;
+    m.root.traverse((o) => { if (o.geometry) o.geometry.dispose(); [].concat(o.material || []).forEach((mt) => { if (!mt || (mt.userData && mt.userData.shared) || Object.values(M).includes(mt)) return; ["map", "normalMap", "roughnessMap"].forEach((k) => { if (mt[k] && mt[k].isTexture && !(mt[k].userData && mt[k].userData.shared)) mt[k].dispose(); }); mt.dispose(); }); });
+  }
+  let pending = 0;
+  function open(kind, html, noteText, id) {
+    drop(st.model); st.model = null;
     unstage();
-    st.model = buildModel(kind, M); st.model.actions.forEach((a) => { a.on = false; });
-    scene.add(st.model.root);
-    if (st.model.stage) {
-      stage = reliquaryStage(env); reflection = stage.mirror(st.model.root);
-      scene.add(stage.group, reflection);
-      plain.concat(plinth, glow).forEach((o) => { o.visible = false; });
-      scene.background = new THREE.Color("#070504");
-    }
-    body.innerHTML = html; note.textContent = noteText;
-    frame(); paintActs();
+    body.innerHTML = html; note.textContent = noteText; acts.innerHTML = "";
     st.active = true; st.spin = !reduce(); st.idle = 0;
     el.hidden = false; document.body.classList.add("mu-inspecting");
     resize();
     el.querySelector(".mu-insp-panel").focus({ preventScroll: true });
+    // the object is made a moment later, so the label appears at once even on a slow device
+    const ticket = ++pending;
+    el.classList.add("mu-insp-busy");
+    setTimeout(() => {
+      if (ticket !== pending || !st.active) return;
+      const coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+      const relic = id && hasRelic(id) ? buildRelic(id, env, coarse ? 1 : 2, [0.9, 0.9, 0.9]) : null;
+      if (relic) { relic.own = true; relic.stage = true; if (relic.note) note.textContent = noteText + " " + relic.note; }
+      st.model = relic || buildModel(kind, M); st.model.actions.forEach((a) => { a.on = false; });
+      scene.add(st.model.root);
+      if (st.model.stage) {
+        stage = reliquaryStage(env); reflection = stage.mirror(st.model.root);
+        scene.add(stage.group, reflection);
+        plain.concat(plinth, glow).forEach((o) => { o.visible = false; });
+        scene.background = new THREE.Color("#070504");
+      }
+      frame(); paintActs(); el.classList.remove("mu-insp-busy");
+    }, 40);
   }
+
   function close() {
     if (!st.active) return;
     st.active = false; el.hidden = true; document.body.classList.remove("mu-inspecting");
     cam.clearViewOffset();
-    unstage();
+    unstage(); drop(st.model); st.model = null;
     if (opt.onClose) opt.onClose();
   }
   function unstage() {
@@ -443,7 +462,7 @@ export function createInspector(opt) {
     const b = e.target.closest("button"); if (!b) return;
     if (b.dataset.i === "close") { close(); return; }
     if (b.dataset.i === "reset") { frame(); return; }
-    if (b.dataset.act) {
+    if (b.dataset.act && st.model) {
       const a = st.model.actions.find((x) => x.id === b.dataset.act);
       const r = st.model.act(a.id);
       if (r != null) a.on = !!r;
@@ -464,7 +483,7 @@ export function createInspector(opt) {
     const m = st.model;
     if (st.spin && !reduce()) st.yaw += dt * 0.25;
     if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); if (st.want.target != null) st.ty = ease(st.ty, st.want.target, k); }
-    if (m) m.update(dt);
+    if (m && m.update(dt) && reflection) syncMirror(m.root, reflection);
     if (stage) stage.update(dt, reduce());
     if (st.ty == null) st.ty = m ? m.target : 0.2;
     const t = new THREE.Vector3(0, st.ty, 0);

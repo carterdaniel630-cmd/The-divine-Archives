@@ -39,6 +39,8 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
   The museum's planetarium has its own step, `node tools/build-sky.js` (star catalogue in
   `tools/data/d3-celestial/`, lore in `museum/sky-lore.json`, checked by `tools/verify-sky.js`).
+  The museum's skies and grounds (`docs/museum/world.js`, table `ENV`), animals (`fauna.js`), sound
+  (`sound.js`) and the Vault objects' renditions (`relics.js`, one `CAT` entry per object) are code, with no build step.
 - A chapter's body goes into `content/chapters.js` via `node tools/md-to-chapter.js <id> <file.md>`;
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.

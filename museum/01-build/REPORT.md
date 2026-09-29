@@ -180,6 +180,14 @@ Carter asked for a night-sky or planetarium look on the ceilings, with interacti
   - Touch devices get the lighter build and a 1024 shadow map.
   - The V88 entry states that the wear, shadows and reflection are rendered effects, not a record of the object's condition.
 
+- **Skies, grounds, animals, sound and renditions (2026-09-28).** Carter asked for every relic at the V88 standard, a slightly brighter museum, skies and grounds that suit each room, sound in every room, and animals.
+  - `docs/museum/world.js`: every room, corridor, the hall and the Spine have their own sky in a skylight (a shader with parallax, lightning in the storm rooms, the Spine passing from day to night). Under a glass floor on a bronze grid is a sunken ground lit by that sky: brooks, rivers, the Nile, lotus ponds, a shore with breaking waves, dunes, snow, a cave, ash with glowing cracks, a starry abyss, and more. The choices are in one table, `ENV`. The planetarium is untouched.
+  - `docs/museum/fauna.js`: fish that school and leap; birds, bats and insects; and walkers on small skeletons (cats that stalk lizards and pounce, herons, ibises and cranes that wade and strike, crabs, frogs, turtles, scorpions, ravens, an owl, hares, mice).
+  - `docs/museum/sound.js`: each area's sound is synthesised with Web Audio from its sky, ground and animals. Nothing is downloaded. It starts after the first click, and a Sound button turns it off.
+  - `docs/museum/relics.js`: a modelled rendition of each of the 85 Vault objects the museum shows, built from the physical details in its Vault entry. Each carries illustrative marks, never the text, and can be turned, opened or unrolled. Objects whose existence is in question (the Ark, the Golden Plates) follow their texts' descriptions and say so. V68 and V76 still get no model. The cases show the same renditions at lower texture resolution.
+  - Reduce motion stills the water, clouds, plants and animals and turns off the lightning. The lightning never pulses more than twice in a second, and never more often than every several seconds.
+  - Exposure is 1.3, up from 1.15, and the hemisphere light 1.3, up from 1.15.
+
 ## Owed / needs Carter
 
 1. ~~Style sign-off on the live museum (Gate 2).~~ Passed by Carter, 2026-09-28.
