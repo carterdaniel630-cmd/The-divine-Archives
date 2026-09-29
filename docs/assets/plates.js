@@ -1259,6 +1259,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M52 164 L52 92 C52 60 76 42 100 36 C124 42 148 60 148 92 L148 164" stroke="currentColor" stroke-width="1.4"/><path d="M66 164 L66 98 C66 74 84 60 100 54 C116 60 134 74 134 98 L134 164" stroke="currentColor" stroke-width="1"/><path d="M44 164 L156 164 M60 140 L140 140" stroke="currentColor" stroke-width="1.2"/><circle cx="100" cy="98" r="13" stroke="currentColor" stroke-width="1.2"/><path d="M100 78 L100 72 M100 118 L100 124 M80 98 L74 98 M120 98 L126 98 M86 84 L82 80 M114 84 L118 80 M86 112 L82 116 M114 112 L118 116" stroke="currentColor" stroke-width="1"/><path d="M76 140 L76 128 C76 124 80 122 84 124 M124 140 L124 128 C124 124 120 122 116 124" stroke="currentColor" stroke-width="0.8" opacity="0.7"/><path d="M40 60 L46 52 L52 60 M148 60 L154 52 L160 60" stroke="currentColor" stroke-width="0.8" opacity="0.6"/></svg>',
       "Interpretive illustration",
       "A pointed Mughal arch framing a jharokha balcony, with the radiant sun at its centre: the ‘divine light’ that Abu'l-Fazl said passed from God to the king. An original, interpretive drawing."
+    ),
+
+    /* Ch83 — Global Hinduism & the Guru Movements: the syllable Om over the river and a string of 108 beads */
+    "ch83": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M20 150 C50 144 70 156 100 150 C130 144 150 156 180 150 M30 164 C60 158 80 170 110 164 C140 158 160 168 176 164" stroke="currentColor" stroke-width="1" opacity="0.7"/><path d="M70 72 C70 60 88 58 90 70 C92 80 80 84 74 84 C92 84 96 100 86 108 C76 116 62 110 60 100" stroke="currentColor" stroke-width="1.6"/><path d="M90 90 C100 80 118 84 118 98 C118 110 106 116 100 110" stroke="currentColor" stroke-width="1.6"/><path d="M96 60 C104 66 116 66 124 60" stroke="currentColor" stroke-width="1.3"/><circle cx="112" cy="50" r="3" stroke="currentColor" stroke-width="1.2"/><circle cx="100" cy="100" r="62" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.5 5" opacity="0.8"/><circle cx="100" cy="162" r="4" stroke="currentColor" stroke-width="1"/><path d="M140 34 L146 28 M150 42 L158 38 M156 54 L164 54" stroke="currentColor" stroke-width="0.9" opacity="0.6"/></svg>',
+      "Interpretive illustration",
+      "The syllable Om, whose three sounds and silence the Mandukya Upanishad reads as the states of consciousness, encircled by a string of prayer beads above a flowing river at dawn. An original, interpretive drawing."
     )
 
   };
