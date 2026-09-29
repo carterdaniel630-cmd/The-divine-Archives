@@ -174,7 +174,7 @@ every remaining chapter and added the lens structure throughout.
 | ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
 | ch83 — Global Hinduism & the Guru Movements | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch83-global-hinduism-guru-movements-modern.md` |
 
-Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
+Status values: `not started` · `researching` · `drafting` · `published, pending review` · `revising` · `CLEARED`.
 
 ## Per-chapter content checklist (from CLAUDE.md)
 
@@ -282,8 +282,17 @@ entry's Connections text stay linked there but do not make a chapter a home. Reb
 | V75 | The Golden Plates | Era IX · The Modern Age | New Religious Movements (ch35) | `CLEARED` |
 | V76 | The Báb's Star Tablet | Era IX · The Modern Age | Bahá'í & New Faiths (ch65) | `CLEARED` |
 | V77 | The Haitian Vèvè | Era IX · The Modern Age | African Diaspora Religions (ch40); African Traditional Religion (ch33) | `CLEARED` |
+| V78 | The Malleus Maleficarum | Era VIII · The Early Modern | The Witch Trials (ch32); The Reformation (ch31) | `CLEARED` |
+| V79 | The Zohar, First Printings | Era VIII · The Early Modern | Kabbalah (ch26); Rabbinic Judaism (ch19) | `CLEARED` |
+| V80 | The Sefer Yetzirah | Era V · Late Antiquity | Kabbalah (ch26); Rabbinic Judaism (ch19) | `CLEARED` |
+| V81 | The Mawangdui Silk Texts | Era IV · The Axial Age | Confucianism & Daoism (ch12); Early China (ch09) | `CLEARED` |
+| V82 | The Bardo Thödol | Era VII · The High Medieval | Tibetan & Vajrayana Buddhism (ch53); Buddhism (ch11) | `CLEARED` |
+| V83 | The Codex Boturini | Era VIII · The Early Modern | The Aztec (ch43); The Maya (ch29) | `CLEARED` |
+| V84 | The Hinton St Mary Mosaic | Era V · Late Antiquity | Early Christianity (ch16); Roman Mystery Cults (ch18) | `CLEARED` |
+| V85 | The Picatrix | Era VI · The Early Medieval | Islam (ch21); Theosophy & the Occult Revival (ch37) | `CLEARED` |
+| V86 | The Berlin Gold Hat | Era III · The Early Iron Age | The Neolithic (ch42); Celtic & Germanic (ch14) | `CLEARED` |
+| V87 | The Diwan Abatur | Era VIII · The Early Modern | Mandaeans, Yazidis & Druze (ch56); Gnosticism (ch17) | `CLEARED` |
 | V88 | The Skull of "Mary Magdalene" at Saint-Maximin | Era VII · The High Medieval | Early Christianity (ch16); Pistis Sophia (ch45); The Reformation (ch31) | `PUBLISHED — pending review` |
-| — | Batch 9 queue: Malleus Maleficarum · Zohar (Mantua printing) · Sefer Yetzirah · Mawangdui Silk Texts · Bardo Thödol · Codex Boturini · Hinton St Mary Mosaic · Picatrix · Berlin Gold Hat · Diwan Abatur | — | placed on publication | `not started` (queued) |
 
 ## The Pantheon — directory of gods, spirits & mythic figures (added 2026-09-27)
 

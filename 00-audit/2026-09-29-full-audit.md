@@ -5,6 +5,12 @@
 - **Method:** measured from the repository. I ran every build script in a throwaway git worktree and diffed the output, ran every `tools/verify-*.js`, crawled every internal link in `docs/`, reconverted every chapter's markdown and compared it with the published body, scanned topic coverage with grep, and loaded 13 key pages plus the museum in headless Chromium (desktop, and Pixel 7 emulation).
 - **Limits:** outbound web access is blocked in this sandbox (`403` from the egress proxy, including Wikipedia and getconexto.com). So **external link liveness and the live site could not be checked here**. Those items are tagged `needs-live-check`. No real phone was available either.
 
+
+> **Corrections (added 2026-09-29, during the fixes on `claude/audit-fixes`):**
+> 1. **CLAUDE.md drift (§3.5) was wrong.** `main`'s CLAUDE.md already has the build order ("Build & deploy") and the full file-structure list. The audit read a stale local copy. No change was needed.
+> 2. **Finding C was mis-stated.** ch03's text matches its markdown. The 4% gap came from raw HTML (`<em>`, `&rsquo;`) in the markdown, which the converter escapes. ch45 and ch46 are not simply behind their markdown. Since ch45 was first added, the live page has been a condensed version (the one Carter cleared) and the markdown a longer draft. Each has material the other lacks: the live pages have a lead paragraph, a research note and extra sources. Resolving that is Carter's call, so it is on hold.
+> 3. **Also found:** 7 external URLs that contain parentheses are cut short at the first `)`. There are 3 in chapters (ch03, ch14, ch16) and 4 in Vault pages (black-stone, holy-lance, kartarpur-bir, skull-reliquary-saint-maximin). The cause is the markdown link pattern in the converters. Not yet fixed; this is a proposed follow-up.
+
 ---
 
 ## 0. Headline findings
