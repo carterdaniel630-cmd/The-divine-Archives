@@ -117,9 +117,9 @@ rather than pretending to subscribe anyone.
 
 ## Status
 
-- **74 chapters** are live: 67 traditions across the nine eras and 7
-  comparative themes. The nine Batch III chapters (ch66–ch74, one per era)
-  carry the pending-review tag. The per-chapter review status is on the
+- **83 chapters** are live: 76 traditions across the nine eras and 7
+  comparative themes. The eighteen Batch III and Batch IV chapters (ch66–ch83,
+  two per era) carry the pending-review tag. The per-chapter review status is on the
   [status board](outline/master-outline.md).
 - The **Vault** and the **Pantheon** are live, and so are **12 games**.
 - The latest full audit is [`00-audit/site-audit.md`](00-audit/site-audit.md).

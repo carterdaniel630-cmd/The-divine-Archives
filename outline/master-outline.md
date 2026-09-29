@@ -146,10 +146,11 @@ every remaining chapter and added the lens structure throughout.
 | ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
 | ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
 
-**Batch III (2026-09-29): one new tradition per era**, auto-published with the pending-review tag, bringing the archive to **74 chapters** (67 traditions + 7 themes).
+**Batch III (2026-09-29): one new tradition per era**, auto-published with the pending-review tag, bringing the archive to 74 chapters (67 traditions + 7 themes).
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
+| ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
 | ch67 — Minoan Crete | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch67-minoan-crete-bronze-age.md` |
 | ch68 — Nubia & Kush | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
 | ch69 — The Upanishads & the Hindu Synthesis | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md` |
@@ -158,7 +159,12 @@ every remaining chapter and added the lens structure throughout.
 | ch72 — The Cathars & Medieval Heresy | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md` |
 | ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
 | ch74 — Secularism & the Nones | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch74-secularism-nonreligion-modern.md` |
-| ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
+
+**Batch IV (2026-09-29): a second new tradition per era**, auto-published with the pending-review tag, bringing the archive to **83 chapters** (76 traditions + 7 themes).
+
+| Chapter | Type | Era | Status | Location |
+|---|---|---|---|---|
+| ch75 — Siberian & Arctic Shamanism | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch75-siberian-arctic-shamanism-prehistory.md` |
 | ch76 — The Olmec | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
 | ch77 — The Etruscans | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
 | ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
@@ -167,7 +173,6 @@ every remaining chapter and added the lens structure throughout.
 | ch81 — Tengri & the Mongols | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md` |
 | ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
 | ch83 — Global Hinduism & the Guru Movements | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch83-global-hinduism-guru-movements-modern.md` |
-| ch75 — Siberian & Arctic Shamanism | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch75-siberian-arctic-shamanism-prehistory.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
