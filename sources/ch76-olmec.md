@@ -1,0 +1,23 @@
+# Sources — Chapter 76: The Olmec
+
+Per the project sourcing standard. Olmec religion is known from images and deposits without readable texts; the chapter separates excavated evidence from unprovenanced objects and later-ethnography readings, and rejects alternative-origin claims.
+
+## Sources cited
+- **The Olmec, their sites and chronology** — "Olmecs," Wikipedia. https://en.wikipedia.org/wiki/Olmecs ; Britannica, "Olmec." https://www.britannica.com/topic/Olmec ; *Cambridge World Prehistory*, "The Olmec, 1800–400 BCE." https://www.cambridge.org/core/books/abs/cambridge-world-prehistory/olmec-1800400-bce/2C66AF7B3D041260EE2BFC94DF085029
+- **Olmec religion and iconography (were-jaguar; Joralemon's gods; Taube)** — "Olmec religion," Wikipedia. https://en.wikipedia.org/wiki/Olmec_religion ; Encyclopedia.com, "Olmec Religion." https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/olmec-religion ; P. D. Joralemon, *A Study of Olmec Iconography* (Internet Archive). https://archive.org/details/spcaa-07-joralemon-olmec-iconography ; K. Taube, "The Olmec Maize God" (Mesoweb). https://www.mesoweb.com/publications/Works2/Taube[1996]2022.pdf ; K. Taube, "The Rainmakers" (Mesoweb). https://www.mesoweb.com/publications/Works2/Taube[1995]2022.pdf
+- **Colossal heads** — World History Encyclopedia, "Olmec Colossal Stone Heads." https://www.worldhistory.org/article/672/olmec-colossal-stone-heads/ ; *Live Science*, "No two are alike." https://www.livescience.com/archaeology/no-two-are-alike-the-colossal-stone-heads-of-olmec-in-mexico
+- **La Venta, Complex A, the Massive Offerings and Offering 4** — "La Venta," Wikipedia. https://en.wikipedia.org/wiki/La_Venta ; S. Gillespie and M. Volk, "A 3D model of Complex A, La Venta" (2014). https://people.clas.ufl.edu/sgillesp/files/gillespie_and_volk_2014_3d_model_complex_a_la_venta_final-1.pdf ; tDAR, "La Venta's Offering 4." https://core.tdar.org/document/395106/la-ventas-offering-4-representation-of-olmec-ritual-practices ; "Olmec figurine," Wikipedia. https://en.wikipedia.org/wiki/Olmec_figurine
+- **El Manatí** — "El Manatí," Wikipedia. https://en.wikipedia.org/wiki/El_Manat%C3%AD ; "Mesoamerican rubber balls," Wikipedia. https://en.wikipedia.org/wiki/Mesoamerican_rubber_balls
+- **The ballgame and Paso de la Amada** — "Mesoamerican ballgame," Wikipedia. https://en.wikipedia.org/wiki/Mesoamerican_ballgame ; "Origins of the Mesoamerican ballgame: Earliest ballcourt from the highlands," *Science Advances* (2020). https://www.science.org/doi/10.1126/sciadv.aay6964
+- **Las Limas and transformation figures** — "Las Limas Monument 1," Wikipedia. https://en.wikipedia.org/wiki/Las_Limas_Monument_1 ; Dumbarton Oaks, "Kneeling Transformation Figure." https://www.doaks.org/resources/olmec-art/catalogue/05-kneeling-transformation-figure
+- **Chalcatzingo** — "Chalcatzingo," Wikipedia. https://en.wikipedia.org/wiki/Chalcatzingo ; PARI Journal, special Chalcatzingo issue (Mesoweb). https://www.mesoweb.com/pari/publications/journal/901/PARI0901.pdf
+- **Cacao at San Lorenzo** — T. Powis et al., "Cacao use and the San Lorenzo Olmec," *PNAS* (2011). https://www.pnas.org/doi/10.1073/pnas.1100620108
+- **The Cascajal block** — "Olmec hieroglyphs," Wikipedia. https://en.wikipedia.org/wiki/Olmec_hieroglyphs ; J. Skidmore, "The Cascajal Block: The Earliest Precolumbian Writing" (Mesoweb). https://www.mesoweb.com/reports/Cascajal.pdf ; *Ancient Mesoamerica*, "Digital imaging and archaeometric analysis of the Cascajal block." https://www.cambridge.org/core/journals/ancient-mesoamerica/article/digital-imaging-and-archaeometric-analysis-of-the-cascajal-block-establishing-context-and-authenticity-for-the-earliest-known-olmec-text/42B1EB580DAA062892886EA04F115046
+- **Mother culture and sister cultures** — Encyclopedia.pub, "Olmec Influences on Mesoamerican Cultures." https://encyclopedia.pub/entry/29160
+- **Alternative-origin claims and their rejection** — "Olmec alternative origin speculations," Wikipedia. https://en.wikipedia.org/wiki/Olmec_alternative_origin_speculations ; "Ivan Van Sertima," Wikipedia. https://en.wikipedia.org/wiki/Ivan_Van_Sertima
+
+## Notes
+- Well-supported: sites and dates; colossal heads and thrones; La Venta offerings; El Manatí deposits (oldest rubber balls); Chalcatzingo; composite imagery; cacao at San Lorenzo; spread of Olmec style.
+- Not supported: African/Chinese/Atlantean/extraterrestrial origins; unprovenanced objects as secure evidence; knowledge of Olmec god names or myths.
+- Open: mother vs sister culture; Joralemon's gods; shaman reading of transformation figures; infant sacrifice at El Manatí; Cascajal block; the c. 400 BCE decline.
+- Placed in era 02 (Bronze Age) by date.

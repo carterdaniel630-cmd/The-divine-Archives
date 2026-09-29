@@ -111,7 +111,16 @@ export const ENV = {
   ch71: { sky: "mist", ground: "zen", fauna: ["crane", "koi"] },                       // mountain temples
   ch72: { sky: "overcast", ground: "ruins", fauna: ["ravens", "swallows"] },           // Montségur
   ch73: { sky: "twilight", ground: "field", fauna: ["songbirds", "doves"] },           // the shtetl at dusk
-  ch74: { sky: "clear", ground: "meadow", fauna: ["songbirds", "butterflies"] }        // an open sky
+  ch74: { sky: "clear", ground: "meadow", fauna: ["songbirds", "butterflies"] },       // an open sky
+  ch75: { sky: "aurora", ground: "snow", fauna: ["ravens", "owl"] },                   // the northern shaman's sky
+  ch76: { sky: "rain", ground: "jungle", fauna: ["macaws", "frogs", "turtles"] },      // the Gulf Coast swamps
+  ch77: { sky: "dusk", ground: "ruins", fauna: ["swallows", "lizards"] },              // the painted tombs
+  ch78: { sky: "highland", ground: "steppe", fauna: ["eagle", "hares"] },              // the kurgans of the steppe
+  ch79: { sky: "rays", ground: "highland", fauna: ["doves", "songbirds"] },            // mountain churches
+  ch80: { sky: "dusk", ground: "desert", fauna: ["doves", "swallows"] },               // Karbala
+  ch81: { sky: "clear", ground: "steppe", fauna: ["eagle", "hawk"] },                  // the Eternal Blue Sky
+  ch82: { sky: "golden", ground: "garden", fauna: ["songbirds", "doves"] },            // Fatehpur Sikri
+  ch83: { sky: "dawn", ground: "river", fauna: ["kingfisher", "songbirds"] }           // the Ganges at Rishikesh
 };
 
 // ---------------------------------------------------------------- sky presets

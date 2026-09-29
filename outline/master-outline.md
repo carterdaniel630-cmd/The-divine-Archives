@@ -159,6 +159,7 @@ every remaining chapter and added the lens structure throughout.
 | ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
 | ch74 — Secularism & the Nones | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch74-secularism-nonreligion-modern.md` |
 | ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
+| ch76 — The Olmec | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 

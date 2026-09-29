@@ -477,6 +477,11 @@ window.ARCHIVE = {
       era: "01-prehistory", eraLabel: "Prehistory · The San & Southern African Rock Art",
       status: "published", pending: true,
       source: "eras/01-prehistory/ch66-san-rock-art-prehistory.md",
-      summary: "From the 73,000-year-old drawing at Blombos and the painted stones of Apollo 11 to the Linton panel on South Africa’s coat of arms: the rock art of the San and the rare chance to read it with the people’s own words, the 12,000 pages of |Xam testimony recorded in the 1870s. |Kaggen the mantis, the eland and its potency, the rain-animal, and the healing dance in which n|om ‘boils’ and healers bleed from the nose; the trance interpretation of the art and its critics; and the San today, from colonial violence to the Kalahari court victory and their own code of research ethics. With the ‘living fossil’ error named and set aside." }
+      summary: "From the 73,000-year-old drawing at Blombos and the painted stones of Apollo 11 to the Linton panel on South Africa’s coat of arms: the rock art of the San and the rare chance to read it with the people’s own words, the 12,000 pages of |Xam testimony recorded in the 1870s. |Kaggen the mantis, the eland and its potency, the rain-animal, and the healing dance in which n|om ‘boils’ and healers bleed from the nose; the trance interpretation of the art and its critics; and the San today, from colonial violence to the Kalahari court victory and their own code of research ethics. With the ‘living fossil’ error named and set aside." },
+    { id: "ch76", title: "The Olmec", kind: "tradition",
+      era: "02-bronze-age", eraLabel: "Bronze Age · The Olmec",
+      status: "published", pending: true,
+      source: "eras/02-bronze-age/ch76-olmec-bronze-age.md",
+      summary: "The first great art of Mesoamerica, c. 1600–400 BCE: offerings thrown into the sacred spring at El Manatí, with the world’s oldest rubber balls and the bones of newborn children; the colossal heads and throne-altars of San Lorenzo and La Venta; serpentine mosaics and jade figurines buried where no one would see them; the were-jaguar, the Olmec Dragon and the Maize God; rain-making in the cave of Chalcatzingo; and the earliest cacao and ballgame. With the ‘mother culture’ debate, the contested Cascajal block and the ‘African Olmec’ claim weighed against the evidence." }
   ]
 };
