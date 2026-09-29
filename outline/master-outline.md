@@ -154,6 +154,7 @@ every remaining chapter and added the lens structure throughout.
 | ch68 — Nubia & Kush | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
 | ch69 — The Upanishads & the Hindu Synthesis | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md` |
 | ch70 — Pre-Islamic Arabia | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md` |
+| ch71 — Korea | Tradition | 06-early-medieval | published, **pending review** | `eras/06-early-medieval/ch71-korea-early-medieval.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
