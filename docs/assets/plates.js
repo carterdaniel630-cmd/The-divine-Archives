@@ -1231,6 +1231,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M44 132 C52 118 72 112 96 114 C118 116 136 114 148 104 C156 98 160 92 158 86 C154 84 150 86 146 90" stroke="currentColor" stroke-width="1.5"/><path d="M44 132 C40 138 44 144 54 144 L150 144 C156 144 160 138 156 132 C150 124 146 120 146 110" stroke="currentColor" stroke-width="1.5"/><path d="M62 144 C58 138 62 132 70 134 M86 144 C82 138 86 132 94 134 M120 144 C116 138 120 132 128 134" stroke="currentColor" stroke-width="1.1"/><path d="M152 88 C150 76 142 66 130 60 C120 56 108 54 96 56 M140 70 C132 64 126 56 124 46 M126 62 C116 58 110 50 108 42 M112 58 C100 56 92 50 88 42 M98 56 C86 58 76 54 70 48 M84 58 C72 62 62 60 56 54" stroke="currentColor" stroke-width="1.2"/><circle cx="150" cy="94" r="2" fill="currentColor"/><path d="M30 166 C60 160 90 170 120 164 C140 160 160 166 172 164" stroke="currentColor" stroke-width="0.8" opacity="0.5"/></svg>',
       "Interpretive illustration",
       "A recumbent stag, legs folded beneath it and antlers streaming back along its body, in the manner of the Scythian animal style (the gold stag from Kostromskaya is the best-known example). An original, interpretive drawing, not a copy of any object."
+    ),
+
+    /* Ch79 — The first Christian kingdoms: Ezana's coin, from crescent to cross */
+    "ch79": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><circle cx="60" cy="104" r="38" stroke="currentColor" stroke-width="1.3"/><circle cx="140" cy="104" r="38" stroke="currentColor" stroke-width="1.3"/><path d="M50 86 A10 10 0 1 0 70 86 A8 8 0 1 1 50 86 Z" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="80" r="3" stroke="currentColor" stroke-width="0.9"/><path d="M140 72 L140 92 M131 80 L149 80" stroke="currentColor" stroke-width="2"/><path d="M46 132 C46 116 52 106 60 106 C68 106 74 116 74 132 M126 132 C126 116 132 106 140 106 C148 106 154 116 154 132" stroke="currentColor" stroke-width="1.1"/><path d="M52 104 L60 96 L68 104 M132 104 L140 96 L148 104" stroke="currentColor" stroke-width="1"/><path d="M94 104 L106 104 M102 100 L106 104 L102 108" stroke="currentColor" stroke-width="1.2" opacity="0.7"/></svg>',
+      "Interpretive illustration",
+      "Two coins in the manner of King Ezana of Aksum (mid-fourth century): on the earlier the crescent and disc of the old gods above the crowned king, on the later the cross. An original, interpretive drawing, not a copy of particular coins."
     )
 
   };

@@ -162,6 +162,7 @@ every remaining chapter and added the lens structure throughout.
 | ch76 — The Olmec | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
 | ch77 — The Etruscans | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
 | ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
+| ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 

@@ -492,6 +492,11 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · The Scythians & the Steppe",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch78-scythians-steppe-axial-age.md",
-      summary: "The mounted nomads of the Iron Age steppe, from the Danube to the Altai: the tattooed ‘Ice Maiden’ frozen in her tomb with six horses; Herodotus’s Scythians, with their hearth-goddess Tabiti, the sword of Ares on a mountain of brushwood, willow-rod diviners and the Enarees; the royal funerals of the Dnieper kurgans, which archaeology has largely confirmed; hemp burned in felt tents, now proven by chemistry; gold stags and griffins of the animal style; horses masked as antlered beasts; and the warrior women behind the Amazon myth. With Herodotus checked against the ground, and modern ancestral claims against the evidence." }
+      summary: "The mounted nomads of the Iron Age steppe, from the Danube to the Altai: the tattooed ‘Ice Maiden’ frozen in her tomb with six horses; Herodotus’s Scythians, with their hearth-goddess Tabiti, the sword of Ares on a mountain of brushwood, willow-rod diviners and the Enarees; the royal funerals of the Dnieper kurgans, which archaeology has largely confirmed; hemp burned in felt tents, now proven by chemistry; gold stags and griffins of the animal style; horses masked as antlered beasts; and the warrior women behind the Amazon myth. With Herodotus checked against the ground, and modern ancestral claims against the evidence." },
+    { id: "ch79", title: "The First Christian Kingdoms", kind: "tradition",
+      era: "05-late-antiquity", eraLabel: "Late Antiquity · Armenia, Georgia & Aksum",
+      status: "published", pending: true,
+      source: "eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md",
+      summary: "Three kingdoms outside Rome that made Christianity their state religion before Rome did: Armenia, where Gregory survived the pit of Khor Virap, Mesrop Mashtots invented an alphabet to carry the Bible, and Vardan died at Avarayr; Georgia, converted through the captive woman Nino and her grapevine cross; and Aksum, whose king Ezana replaced the crescent with the cross on his coins, with the shipwrecked Frumentius as first bishop. Then Ethiopia’s own Christianity: the Nine Saints, the Garima Gospels, the 81-book Bible, the tabot in every church and the Ark claimed at Aksum, and the rock-cut New Jerusalem of Lalibela." }
   ]
 };
