@@ -14,47 +14,47 @@ window.ARCHIVE = {
     { slug: "01-prehistory", num: "I", name: "Prehistory",
       dates: "before c. 3500 BCE",
       blurb: "Before writing, belief left its mark in ochre, in bone, and in stone. The earliest evidence of ritual — deliberate burial, painted caves, and the great megaliths — and what it can and cannot tell us about the first religious imagination.",
-      traditions: ["The Paleolithic", "The Neolithic", "Aboriginal Australian Dreaming"] },
+      traditions: ["The Paleolithic", "The Neolithic", "Aboriginal Australian Dreaming", "The San & Southern African Rock Art", "Siberian & Arctic Shamanism"] },
 
     { slug: "02-bronze-age", num: "II", name: "The Bronze Age",
       dates: "c. 3300 – 1200 BCE",
       blurb: "The first civilizations learned to write, and with writing came the first scriptures. Gods of the city and the river, kings who spoke for heaven, and the earliest recorded myths of creation, order, and the flood.",
-      traditions: ["Mesopotamia", "Egypt", "Indus Valley", "Early Vedic", "Hittite & Anatolian"] },
+      traditions: ["Mesopotamia", "Egypt", "Indus Valley", "Early Vedic", "Hittite & Anatolian", "Minoan Crete", "The Olmec"] },
 
     { slug: "03-early-iron-age", num: "III", name: "The Early Iron Age",
       dates: "c. 1200 – 550 BCE",
       blurb: "Empires fell and smaller peoples found their voices. The world of pre-exilic Israel, the earliest Greece of Homer and Hesiod, the reforms of Zoroaster, and the ritual order of early China.",
-      traditions: ["Pre-exilic Israel", "Early Greece", "Zoroaster", "Early China", "Canaanite & Phoenician"] },
+      traditions: ["Pre-exilic Israel", "Early Greece", "Zoroaster", "Early China", "Canaanite & Phoenician", "Nubia & Kush", "The Etruscans"] },
 
     { slug: "04-axial-age", num: "IV", name: "The Axial Age",
       dates: "c. 800 BCE – 200 CE",
       blurb: "Across a few centuries and half a world, humanity asked its deepest questions anew — and the answers still shape us. Classical Greece, Second Temple Judaism, the Buddha, Confucius and the Dao, Rome, and the Celtic and Germanic north.",
-      traditions: ["Classical Greece", "Second Temple Judaism", "Buddhism", "Confucianism & Daoism", "Rome", "Celtic & Germanic", "Jainism"] },
+      traditions: ["Classical Greece", "Second Temple Judaism", "Buddhism", "Confucianism & Daoism", "Rome", "Celtic & Germanic", "Jainism", "The Upanishads & the Hindu Synthesis", "The Scythians & the Steppe"] },
 
     { slug: "05-late-antiquity", num: "V", name: "Late Antiquity",
       dates: "c. 200 – 800 CE",
       blurb: "The old gods gave way and new faiths spread along the roads of empire. Early Christianity and its rival Gnosticisms, the Roman mystery cults, the making of Rabbinic Judaism, and the flowering of Mahayana Buddhism.",
-      traditions: ["Early Christianity", "Gnosticism", "Pistis Sophia", "Roman mystery cults", "Rabbinic Judaism", "Mahayana Buddhism", "Manichaeism"] },
+      traditions: ["Early Christianity", "Gnosticism", "Pistis Sophia", "Roman mystery cults", "Rabbinic Judaism", "Mahayana Buddhism", "Manichaeism", "Pre-Islamic Arabia", "The First Christian Kingdoms"] },
 
     { slug: "06-early-medieval", num: "VI", name: "The Early Medieval",
       dates: "c. 800 – 1100 CE",
       blurb: "A new revelation reshaped three continents, while older ways endured at the edges. The rise of Islam, the patristic Christian settlement, Norse paganism before the cross, the currents of Tantra, and the kami of Shinto.",
-      traditions: ["Islam", "Patristic Christianity", "Norse paganism", "Tantra", "Shinto", "Tibetan & Vajrayana Buddhism", "Zen & Pure Land Buddhism", "Eastern Orthodoxy & Byzantium"] },
+      traditions: ["Islam", "Patristic Christianity", "Norse paganism", "Tantra", "Shinto", "Tibetan & Vajrayana Buddhism", "Zen & Pure Land Buddhism", "Eastern Orthodoxy & Byzantium", "Korea", "Shi'ism"] },
 
     { slug: "07-high-medieval", num: "VII", name: "The High Medieval",
       dates: "c. 1100 – 1500 CE",
       blurb: "An age of mystics and system-builders on every continent. Kabbalah and Sufism, the great scholastic syntheses, the temple religions of the Aztec, Maya, and Inca, and the devotional fire of the Bhakti movements.",
-      traditions: ["Kabbalah", "Sufism", "Scholasticism", "The Maya", "The Aztec", "The Inca", "Bhakti", "Mandaeans, Yazidis & Druze", "Slavic & Baltic Paganism", "Native North American"] },
+      traditions: ["Kabbalah", "Sufism", "Scholasticism", "The Maya", "The Aztec", "The Inca", "Bhakti", "Mandaeans, Yazidis & Druze", "Slavic & Baltic Paganism", "Native North American", "The Cathars & Medieval Heresy", "Tengri & the Mongols"] },
 
     { slug: "08-early-modern", num: "VIII", name: "The Early Modern",
       dates: "c. 1500 – 1800 CE",
       blurb: "Reformation and rupture, encounter and conquest. The splintering of Western Christianity, the terror of the witch trials, the religions of Africa on the eve of the colonial age, and the birth of Sikhism.",
-      traditions: ["The Reformation", "The Witch Trials", "African Traditional Religion", "Sikhism", "Oceania"] },
+      traditions: ["The Reformation", "The Witch Trials", "African Traditional Religion", "Sikhism", "Oceania", "Sabbateans, Frankists & Hasidim", "Akbar & the Mughal Synthesis"] },
 
     { slug: "09-modern", num: "IX", name: "The Modern Age",
       dates: "c. 1800 – present",
       blurb: "Faith did not fade; it multiplied and remade itself. New religious movements, Spiritualism and the séance, the revival of Paganism and Wicca, Theosophy and the occult, and the living syntheses of the diaspora.",
-      traditions: ["New Religious Movements", "Spiritualism", "Theosophy & the Occult Revival", "Wicca & Modern Paganism", "Satanism", "African Diaspora Religions", "Pentecostalism & Global Christianity", "Bahá'í & New Faiths"] }
+      traditions: ["New Religious Movements", "Spiritualism", "Theosophy & the Occult Revival", "Wicca & Modern Paganism", "Satanism", "African Diaspora Religions", "Pentecostalism & Global Christianity", "Bahá'í & New Faiths", "Secularism & the Nones", "Global Hinduism & the Guru Movements"] }
   ],
 
   // Cross-cutting comparative themes (span eras)
