@@ -1,0 +1,104 @@
+# Chapter 74 — Secularism & the Nones: Living Without Gods
+
+*Recently added — pending full review.*
+
+On **10 November 1793**, in the second year of the French Republic, the cathedral of **Notre-Dame de Paris** was given a new religion. In the nave, workmen had built a mountain of painted canvas topped by a small Greek temple inscribed "**To Philosophy**", with busts of Voltaire, Rousseau and other heroes of the Enlightenment. Young women dressed in white processed around it, and from the temple came a woman, in most accounts an actress of the Opéra, playing the **Goddess of Reason**, while the crowd sang a hymn to Liberty. It was the **Festival of Reason**, the high point of the revolutionary campaign to "dechristianize" France. It did not last. Within months its promoters had gone to the guillotine, and Robespierre, who thought atheism aristocratic, replaced the Cult of Reason with a **Cult of the Supreme Being**. The scene is a good emblem of this chapter's subject: the attempt, in the modern age, to live without the gods, and how often that attempt has borrowed the forms of religion itself.
+
+## The largest new "tradition"
+
+The fastest-growing religious category of the modern world is **no religion**. The Pew Research Center estimates that the number of people with no religious affiliation grew from **1.6 billion** in 2010 to **1.9 billion** in 2020, roughly a quarter of humanity, the largest share of them in China. In the United States, Pew's 2023–24 Religious Landscape Study found that **29%** of adults are religious "**nones**", atheists, agnostics or "nothing in particular", up from 16% in 2007, though the rise may have levelled off. In parts of Europe and East Asia, nones are the majority: South Korea's 2015 census counted **56%** (ch71).
+
+"No religion" does not mean no belief. Pew found in 2025 that many unaffiliated people around the world still believe in God or a higher power, in spirits, or in life after death, and pray or meditate. Some call themselves "**spiritual but not religious**". A minority are convinced **atheists**, who deny that any god exists, or **agnostics**, who hold that the question cannot be answered. Nonreligion is as varied as religion.
+
+## Doubt in the ancient world
+
+Unbelief is not modern. Every major literate civilization has left traces of it.
+
+- In **India**, the **Cārvāka** or **Lokāyata** school taught that only what is perceived is real, that the soul dies with the body, and that the Vedas were the invention of priests seeking a living. Their own texts are lost; they are known from their opponents' summaries (ch69).
+- In **Greece**, the Sophist **Protagoras** (fifth century BCE) wrote that about the gods he could not know whether they exist or not; **Diagoras of Melos** was notorious as "the atheist" and was condemned at Athens; **Democritus** explained the world by atoms and the void; **Epicurus** taught that the gods, if they exist, take no interest in us, and that death is nothing to fear. The Roman poet **Lucretius** set out Epicurus's philosophy in *On the Nature of Things*, whose rediscovery in 1417 fed Renaissance thought. The classicist **Tim Whitmarsh** has argued that ancient atheism was more widespread than usually thought.
+- In **China**, the Confucian **Xunzi** (third century BCE) argued that "Heaven" is simply nature, that rain comes whether or not one performs the rain dance, and that rites are valuable for their human effects, not because spirits hear them (ch12).
+
+Such voices were rare and often persecuted, and none built a lasting movement. Until the modern era, unbelief was a private opinion or an accusation.
+
+## From Enlightenment to "God is dead"
+
+In early modern Europe, "atheist" was mostly a slur thrown at enemies. That began to change in the seventeenth and eighteenth centuries.
+
+- **Baruch Spinoza** (1632–1677), excommunicated by the Jewish community of Amsterdam in 1656, identified God with Nature and read the Bible as a human document; he was denounced across Europe as an atheist.
+- **David Hume**'s essays and *Dialogues Concerning Natural Religion* (1779) dismantled the arguments for miracles and for design.
+- **Baron d'Holbach**'s *System of Nature* (1770), published under a false name, was the first full, open defence of atheism and materialism in modern Europe.
+- Revolutionary **France** experimented with state cults of Reason and of the Supreme Being (1793–1794). The United States took a different path: the **First Amendment** (1791) forbade Congress to establish a religion, and Thomas Jefferson wrote in 1802 of "a wall of separation between Church and State".
+- In the nineteenth century **Auguste Comte** founded a "**Religion of Humanity**" with its own calendar of secular saints and its own temples; his positivism shaped the founders of the Brazilian republic, whose flag carries his motto. **Charles Darwin**'s *On the Origin of Species* (1859) offered a natural explanation of life's design, and **Thomas Huxley** coined "**agnostic**" in 1869. **Friedrich Nietzsche** announced in 1882 that "**God is dead**", not as a cheerful fact but as a crisis of values.
+- Organized **freethought** appeared: **Charles Bradlaugh** founded the **National Secular Society** in England in 1866 and was elected to Parliament in 1880, but was repeatedly excluded for refusing to swear a religious oath, until he took his seat in 1886; the American orator **Robert Ingersoll**, "the Great Agnostic", filled lecture halls across the country.
+
+## State atheism
+
+In the twentieth century, for the first time, governments made atheism official policy, and the record is grim. After 1917 the **Soviet** state closed or destroyed most churches, mosques and synagogues, killed or imprisoned tens of thousands of clergy, and sponsored the **League of Militant Godless**, which by the early 1930s claimed 5.5 million members, antireligious museums and parades. In **1967** Communist **Albania** declared itself the world's first officially atheist state and banned all religious practice until 1990; mosques, churches and Sufi lodges were demolished or repurposed and clergy imprisoned or executed. China's **Cultural Revolution** (1966–1976) attacked temples, monasteries and believers of every faith. These campaigns failed to eliminate religion, which revived when they ended; but they are part of the honest history of secularism, just as persecution is part of the history of religions.
+
+## Secular humanism and its rituals
+
+Alongside the political story runs a humanist one. The **Humanist Manifesto** of 1933, signed by 34 American thinkers, called for a "religious humanism" centred on human welfare, science and democracy instead of God. Later humanist organizations gave up the religious language, but not the need for **community and ritual**. Humanists International (founded 1952) links national bodies; humanist celebrants conduct **weddings**, **namings** and **funerals**, legally recognized in some countries (Scotland from 2005); and in 2013 two comedians in London founded the **Sunday Assembly**, secular gatherings with songs, talks and coffee, "all the best bits of church, but with no religion". The flourishing of such rituals suggests that much of what religion does, marking life's passages, gathering community, expressing awe, is wanted by those who do not believe.
+
+## Why religion declines, or does not
+
+For much of the twentieth century sociologists expected religion to fade. The **secularization thesis**, drawing on **Max Weber**'s idea of the "disenchantment of the world" by science and bureaucracy, predicted that modernization would push religion out of public life and eventually out of private belief. The evidence has proved more complicated.
+
+- The sociologist **Peter Berger**, who had predicted secularization in the 1960s, argued in **1999** that the world was "as furiously religious as it ever was", with Western Europe the exception, not the rule.
+- **José Casanova** (*Public Religions in the Modern World*, 1994) distinguished three meanings of secularization: the separation of religion from other spheres such as state and science, which has largely happened; the decline of belief, which is uneven; and the privatization of religion, which has not happened, since religions remain loud in public life.
+- **Pippa Norris** and **Ronald Inglehart** (*Sacred and Secular*, 2004) argued that religiosity falls where people have **existential security**: wealth, health care, welfare. Poorer and less secure societies remain religious, and have more children.
+- The philosopher **Charles Taylor** (*A Secular Age*, 2007) argued that modern secularity is not the absence of religion but a change in the **conditions of belief**: in 1500 it was almost impossible not to believe in God; now belief is one option among others, even for believers.
+
+Demography complicates the picture further. Religious populations generally have more children than secular ones, and the religiously unaffiliated are concentrated in ageing societies, so their share of the world's population may eventually level off or fall even as individuals continue to leave religion.
+
+## The believer's lens
+
+For many secular people, life without gods is not an absence but a positive view of the world. **Secular humanists** hold that this life is the only one we have, that meaning is made by human beings, that morality rests on human welfare and fellow-feeling, and that the universe, as science reveals it, is worthy of awe; the astronomer **Carl Sagan** and many others wrote of a spiritual response to nature without the supernatural. Many nones simply do not think much about religion at all. Others keep a private spirituality without institutions.
+
+Religious people read secularization in different ways. For some it is loss, the eclipse of God in a materialist age; for others, a purification, freeing faith from state power and social convention; for others still, an opportunity for mission. The archive reports these perspectives as belief and conviction, and applies to them the same evidence-honesty as to every other.
+
+## The skeptical lens
+
+The historian and social scientist can say a good deal with confidence: that nonreligion has grown dramatically in many countries since the 1960s; that the growth is uneven, strongest in wealthy, secure societies, and weakest in much of Africa, the Middle East and South Asia; that state atheism, where imposed by force, failed and caused great suffering; and that the old secularization thesis in its strong form, that modernity must end religion, has not been borne out.
+
+The **cognitive science of religion** offers explanations for why belief comes easily to human minds: a tendency to detect agents, perhaps over-sensitively (Justin Barrett's "hyperactive agency detection"), to see purpose in nature, and to imagine minds that survive the body (Pascal Boyer and others). These theories are **debated**, and they explain why belief is natural, not whether it is true; atheists and believers both cite them.
+
+Psychological research also shows how persistent **distrust of atheists** is. A 2017 study led by **Will Gervais** in thirteen countries found that people, including many atheists, intuitively associated immoral acts with atheism. Yet studies of behaviour find little evidence that nonbelievers are less moral; secular societies are among the most peaceful and least corrupt, though the direction of cause and effect is disputed.
+
+Finally, the question of whether any god exists is not one the social sciences can answer. The archive reports atheism and agnosticism as positions held, as it reports theism, without adjudicating the metaphysical question.
+
+## Symbology and sacred encoding
+
+- **The Goddess of Reason.** Revolutionary France personified Reason and Liberty as goddesses and staged festivals in former churches: a secular cause borrowing the forms of cult.
+- **The Republican calendar.** In 1793 France abolished the Christian calendar, dating years from the founding of the Republic and replacing saints' days with plants, animals and tools. Comte's **Positivist calendar** later named its months after great figures of human history, Moses, Homer, Aristotle, Caesar, Shakespeare and others: time re-sanctified around humanity.
+- **"Order and Progress".** The motto *Ordem e Progresso* on the flag of **Brazil** comes from Comte's positivist formula; it is perhaps the only national emblem that quotes a secular religion.
+- **The Happy Human.** The stylized figure raising its arms, shaped like a letter H, won a competition held by the British Humanist Association in **1965**, designed by **Dennis Barrington**; it is now the international symbol of humanism.
+- **The scarlet A and the atomic symbol.** In 2007 the "Out Campaign" adopted a red letter **A** for atheists; American Atheists uses a stylized atom. Symbols for those who reject sacred symbols.
+- **Parody religions.** The **Flying Spaghetti Monster** (2005), invented to protest the teaching of intelligent design in Kansas schools, and the older **Invisible Pink Unicorn** use the form of religion to satirize it. In some countries "Pastafarians" have sought the right to wear a colander in official photographs, testing the law's treatment of religion.
+- **The Darwin fish.** The Christian fish symbol (*ichthys*, an acrostic of "Jesus Christ, Son of God, Saviour" in Greek) redrawn with legs, a small emblem of the contest between evolution and creation.
+
+## Connections
+
+The Cārvākas belong to the debates of **ch69**; Epicurus and the Greek doubters to **Classical Greece** (ch15); Xunzi to **Confucianism & Daoism** (ch12). The modern story grows out of **the Reformation** (ch31), whose religious wars made toleration and the secular state attractive, and out of the Enlightenment's quarrel with **Scholasticism** (ch28). Revolutionary and positivist cults stand beside the **New Religious Movements** (ch35) and the occult revival of **ch37**, which were often rival answers to the same loss of traditional faith. LaVeyan **Satanism** (ch39) is an atheist philosophy in religious dress. The nones are a large presence in the religious landscapes of **Korea** (ch71) and of the West, where they meet **Pentecostalism** (ch64), the fastest-growing Christian movement. And the question of what religion does for people, which humanist rituals try to answer, runs through every chapter of this archive.
+
+## The evidence, honestly
+
+**Well-supported by evidence.** The growth of the religiously unaffiliated to about 1.9 billion people in 2020 and 29% of U.S. adults (Pew); the diversity of belief among nones; ancient traditions of doubt and materialism in India, Greece and China; the Enlightenment critics (Spinoza, Hume, d'Holbach); the French revolutionary cults; the separation of church and state in the U.S. and France; the nineteenth-century freethought movement; the history of state atheism in the Soviet Union, Albania and China and its persecutions; humanist organizations and rituals; and the major theories of secularization and their critics.
+
+**Not supported (as established fact).** That modernization must inevitably end religion (the strong secularization thesis); that nonbelievers are less moral than believers; that cognitive theories of religion disprove (or prove) any religious claim. The existence or non-existence of God is not established by the evidence surveyed here and is reported as belief on all sides.
+
+**Genuinely open.** Whether the growth of nonreligion in the West will continue or level off; whether demographic trends will reverse it globally; how to measure "religion" and "nonreligion" when many people belong without believing or believe without belonging; how far the cognitive science of religion explains belief; and whether secular societies can sustain community and meaning in the long run without religion.
+
+## Sources
+
+- The size of the unaffiliated population — Pew Research Center, "How the Global Religious Landscape Changed From 2010 to 2020" (2025). https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/ ; Pew, "Countries with the most people with no religion." https://www.pewresearch.org/religion/2025/06/09/religiously-unaffiliated-population-change/ ; Pew, "Decline of Christianity in the U.S. Has Slowed, May Have Leveled Off" (Religious Landscape Study, 2025). https://www.pewresearch.org/wp-content/uploads/sites/20/2025/02/PR_2025.02.26_religious-landscape-study_report.pdf ; Pew, "Religious 'Nones' in America: Who They Are and What They Believe" (2024). https://www.pewresearch.org/religion/2024/01/24/religious-nones-in-america-who-they-are-and-what-they-believe/ ; Pew, "Many Adults Without a Religion Hold Spiritual Beliefs Globally" (2025). https://www.pewresearch.org/religion/2025/09/04/many-religious-nones-around-the-world-hold-spiritual-beliefs/
+- Ancient doubt — Internet Encyclopedia of Philosophy, "Lokāyata/Cārvāka – Indian Materialism." https://iep.utm.edu/indmat/ ; Britannica, "Charvaka." https://www.britannica.com/topic/Charvaka ; T. Whitmarsh, *Battling the Gods: Atheism in the Ancient World* (2015), reviewed in Bryn Mawr Classical Review. https://bmcr.brynmawr.edu/2016/2016.06.20/
+- d'Holbach and early modern atheism — "The System of Nature," Wikipedia. https://en.wikipedia.org/wiki/The_System_of_Nature ; Britannica, "Paul-Henri Dietrich, baron d'Holbach." https://www.britannica.com/biography/Paul-Henri-Dietrich-baron-dHolbach ; Humanists UK, "Baron d'Holbach." https://humanists.uk/humanism/the-humanist-tradition/enlightenment/baron-dholbach/
+- The Cult of Reason and dechristianization — "Dechristianization of France during the French Revolution," Wikipedia. https://en.wikipedia.org/wiki/Dechristianization_of_France_during_the_French_Revolution ; Encyclopedia.com, "Reason, Cult of Goddess of." https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/reason-cult-goddess
+- Bradlaugh and Ingersoll — "Charles Bradlaugh," Wikipedia. https://en.wikipedia.org/wiki/Charles_Bradlaugh ; Britannica, "Charles Bradlaugh." https://www.britannica.com/biography/Charles-Bradlaugh ; *Cambridge History of Atheism*, "Robert Ingersoll." https://www.cambridge.org/core/books/abs/cambridge-history-of-atheism/robert-ingersoll/EA0B2496A05FA5BE1F90E9B6E9C28E5D
+- State atheism — "League of Militant Atheists," Wikipedia. https://en.wikipedia.org/wiki/League_of_Militant_Atheists ; D. Peris, *Storming the Heavens: The Soviet League of the Militant Godless*, review (Project MUSE). https://muse.jhu.edu/article/9194/pdf ; Balkan Insight, "How Albania Became the World's First Atheist Country." https://balkaninsight.com/2019/08/28/how-albania-became-the-worlds-first-atheist-country/btj/
+- Humanism, the Manifesto, the Sunday Assembly, the Happy Human — "Humanist Manifesto I," Wikipedia. https://en.wikipedia.org/wiki/Humanist_Manifesto_I ; American Humanist Association, "Humanist Manifesto I." https://americanhumanist.org/what-is-humanism/manifesto1/ ; "Sunday Assembly," Wikipedia. https://en.wikipedia.org/wiki/Sunday_Assembly ; Humanists UK, "The Happy Human Symbol." https://humanists.uk/humanism/the-happy-human-symbol/
+- Blasphemy and apostasy laws — Humanists UK, "Most people live under blasphemy laws – Freedom of Thought report" (2025). https://humanists.uk/2025/01/30/most-people-worldwide-live-under-blasphemy-laws-freedom-of-thought-report/ ; Humanists International, "The right to apostasy in the world." https://humanists.international/get-involved/resources/the-right-to-apostasy-in-the-world/
+- Secularization theory (Weber, Berger, Casanova, Norris and Inglehart, Taylor) — "Desecularization," Wikipedia. https://en.wikipedia.org/wiki/Desecularization ; Intercultural Theology, "Classic Secularization Theory and its Critics." https://interculturaltheology.com/classic-secularization-theory-and-its-critics/ ; Springer, "The Contemporary Landscape of Theories of Secularization." https://link.springer.com/chapter/10.1007/978-3-319-47700-8_1
+- New Atheism — "New Atheism," Wikipedia. https://en.wikipedia.org/wiki/New_Atheism
+- Cognitive science of religion — "Cognitive science of religion," Wikipedia. https://en.wikipedia.org/wiki/Cognitive_science_of_religion
+- Distrust of atheists — W. Gervais et al., "Global evidence of extreme intuitive moral prejudice against atheists," *Nature Human Behaviour* (2017). https://www.nature.com/articles/s41562-017-0151 ; *The Conversation*, "Are religious people more moral?" https://theconversation.com/are-religious-people-more-moral-84560

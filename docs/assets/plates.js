@@ -1196,6 +1196,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M74 128 C70 110 74 96 84 88 L116 88 C126 96 130 110 126 128 Z" stroke="currentColor" stroke-width="1.2" opacity="0.35" stroke-dasharray="3 3"/><path d="M52 150 L66 138 L72 152 Z M132 146 L146 136 L150 154 Z M88 164 L104 158 L100 172 Z M60 116 L70 104 L78 118 Z M124 112 L136 102 L140 118 Z" stroke="currentColor" stroke-width="1.1"/><g fill="currentColor"><circle cx="100" cy="30" r="3"/><circle cx="86" cy="46" r="2"/><circle cx="114" cy="44" r="2.2"/><circle cx="96" cy="62" r="1.6"/><circle cx="108" cy="70" r="1.4"/><circle cx="78" cy="66" r="1.3"/><circle cx="124" cy="62" r="1.3"/></g><path d="M100 36 L100 80 M86 50 L92 78 M114 48 L108 78" stroke="currentColor" stroke-width="0.6" opacity="0.45" stroke-dasharray="1 3"/></svg>',
       "Interpretive illustration",
       "The image at the heart of Lurianic Kabbalah and the movements that grew from it: the vessels that could not hold the divine light shattered, and sparks of holiness, scattered among the fragments, rise again through repair (tikkun). An original, interpretive drawing."
+    ),
+
+    /* Ch74 — Secularism: the temple to Philosophy and the Happy Human */
+    "ch74": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M30 160 C50 120 70 104 100 98 C130 104 150 120 170 160 Z" stroke="currentColor" stroke-width="1.1" opacity="0.6"/><path d="M72 98 L100 80 L128 98 Z" stroke="currentColor" stroke-width="1.3"/><path d="M76 98 L76 120 M88 98 L88 120 M100 98 L100 120 M112 98 L112 120 M124 98 L124 120 M72 120 L128 120" stroke="currentColor" stroke-width="1.1"/><circle cx="100" cy="34" r="7" stroke="currentColor" stroke-width="1.3"/><path d="M100 41 L100 66 M100 66 L88 78 M100 66 L112 78 M100 48 C92 44 86 36 82 28 M100 48 C108 44 114 36 118 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+      "Interpretive illustration",
+      "A small classical temple on an artificial mountain, after the Temple of Philosophy built in Notre-Dame for the Festival of Reason in 1793, beneath a figure with raised arms in the manner of the Happy Human, the humanist emblem designed in 1965. An original, interpretive drawing."
     )
 
   };

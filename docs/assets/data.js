@@ -467,6 +467,11 @@ window.ARCHIVE = {
       era: "08-early-modern", eraLabel: "Early Modern · Sabbateans, Frankists & Hasidim",
       status: "published", pending: true,
       source: "eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md",
-      summary: "Messiahs and mystics in the Jewish early modern world: Luria’s shattered vessels and the catastrophe of 1648; Sabbatai Zevi, his prophet Nathan and the frenzy of 1665–66 that Glückel of Hameln remembered, ending in the Messiah’s conversion to Islam; the secret believers, the Dönme of Salonika and the amulet controversy; Jacob Frank, the burned Talmud and the mass baptisms; and, in the same borderlands, the Baal Shem Tov, the Maggid, the rebbes and their dynasties, and the fierce opposition of the Vilna Gaon. A symbology of sparks and husks, the niggun and the rebbe’s table, with hagiography and hostile sources marked as such." }
+      summary: "Messiahs and mystics in the Jewish early modern world: Luria’s shattered vessels and the catastrophe of 1648; Sabbatai Zevi, his prophet Nathan and the frenzy of 1665–66 that Glückel of Hameln remembered, ending in the Messiah’s conversion to Islam; the secret believers, the Dönme of Salonika and the amulet controversy; Jacob Frank, the burned Talmud and the mass baptisms; and, in the same borderlands, the Baal Shem Tov, the Maggid, the rebbes and their dynasties, and the fierce opposition of the Vilna Gaon. A symbology of sparks and husks, the niggun and the rebbe’s table, with hagiography and hostile sources marked as such." },
+    { id: "ch74", title: "Secularism & the Nones", kind: "tradition",
+      era: "09-modern", eraLabel: "Modern · Secularism & the Nones",
+      status: "published", pending: true,
+      source: "eras/09-modern/ch74-secularism-nonreligion-modern.md",
+      summary: "The modern age’s fastest-growing ‘tradition’ is no religion: 1.9 billion people in 2020, 29% of American adults. Doubt in the ancient world, from the Cārvākas and Diagoras to Epicurus and Xunzi; the Enlightenment critics and the Festival of Reason in Notre-Dame; Comte’s Religion of Humanity, Darwin, Huxley and ‘God is dead’; the freethinkers; the grim record of state atheism in the Soviet Union, Albania and China; humanist rituals and the Sunday Assembly; and the great debate over whether modernity ends religion. A symbology of secular cults, calendars and emblems, with the question of God reported, not decided." }
   ]
 };
