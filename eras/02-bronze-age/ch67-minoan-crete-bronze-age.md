@@ -1,7 +1,5 @@
 # Chapter 67 — Minoan Crete: Goddesses, Bulls and the Peak of the Mountain
 
-*Recently added — pending full review.*
-
 In **1903**, in two stone-lined pits under the floor of the palace at **Knossos**, Arthur Evans's workmen found the broken pieces of several small figures in **faience**, a glazed quartz paste. Two of them were put back together in the months that followed. One was a woman in a flounced skirt and an open bodice, holding a snake in each outstretched hand; a small cat sat on her head. The other had snakes coiled over her arms and round her tall hat. Evans called the pits the **Temple Repositories**, and the figures a **"Snake Goddess"** and her votary. They became the most famous images of a religion that has left no readable scripture, no names of gods, no myths in its own words. They are also a good place to begin, because the missing head, the left arm and the cat of the best-known figure were supplied by Evans's restorers. Much of what the world believes about the religion of Bronze Age Crete was built the same way: from real fragments, joined by confident guesses.
 
 ## A civilization without a readable scripture

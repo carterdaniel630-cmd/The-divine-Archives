@@ -1,7 +1,5 @@
 # Chapter 69 — The Upanishads & the Hindu Synthesis: That Thou Art
 
-*Recently added — pending full review.*
-
 King **Janaka** of Videha, the story goes, was holding a great sacrifice with rich fees, and the learned brahmins of the Kuru and Pañcāla lands had come to it. He had a thousand cows penned, with gold tied to the horns of each, and announced that they would go to the most learned of the brahmins present. None dared claim them, until **Yājñavalkya** told his pupil to drive them home. The others were outraged and challenged him one after another. A woman, **Gārgī Vācaknavī**, pressed him so hard on what the world was "woven upon", warp and woof, that he warned her not to question too far, lest her head fall off; she came back later with two questions she compared to arrows, and was answered with the **imperishable** (*akṣara*), which "is not coarse, not fine, not short, not long", and on which space itself is woven. The scene is told in the **Bṛhadāraṇyaka Upaniṣad**, one of the two oldest Upanishads. It captures the new thing happening in north India in the middle of the first millennium BCE: priests and kings, and at least one woman, arguing not about how to perform the sacrifice, but about what lies behind it, and behind the self who performs it.
 
 ## After the Veda

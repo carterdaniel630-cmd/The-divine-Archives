@@ -1,7 +1,5 @@
 # Chapter 68 — Nubia & Kush: The Holy Mountain and the Lion God
 
-*Recently added — pending full review.*
-
 On the right bank of the Nile, near the Fourth Cataract in northern Sudan, a flat-topped sandstone mountain rises about a hundred metres above the plain. At its southern corner a pinnacle about 75 metres high stands apart from the cliff. Seen from the right place, it looks like a rearing cobra, the **uraeus** that Egyptian kings wore on their brow, crowned with the tall white crown of Upper Egypt. The mountain is **Jebel Barkal**. Egyptian pharaohs of the New Kingdom called it the "**Pure Mountain**" and said that the god **Amun** lived inside it. When Egypt's hold on the south collapsed, a line of Nubian kings took over the claim: the god in the mountain, they said, had chosen *them*. Around 728 BCE one of them, **Piye**, marched north and conquered Egypt. For about seventy years, as the **Twenty-fifth Dynasty**, Nubian kings ruled as pharaohs from the Sudan to the Mediterranean, and their descendants went on attributing their kingship to the Amun of Jebel Barkal for nearly a thousand years more.
 
 ## Kush: names and periods

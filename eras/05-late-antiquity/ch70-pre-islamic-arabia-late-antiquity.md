@@ -1,7 +1,5 @@
 # Chapter 70 — Pre-Islamic Arabia: Stones, Stars and the Coming of the One God
 
-*Recently added — pending full review.*
-
 In the black basalt desert east of the Hawran, on the borderlands of what are now Syria, Jordan and Saudi Arabia, the rocks are covered with writing. Some two thousand years ago the nomads who grazed their herds there scratched their names and their fathers' names into the boulders in a script now called **Safaitic**, and often added a line about their lives: that they had camped here in the spring, that they were watching for rain, that they grieved for a brother killed in a raid. Then, very often, a prayer. The goddess most often called on is **Allāt**: asked for safety, for plunder, for rain, for a reunion with a loved one, and sometimes asked to curse whoever would deface the carving. More than fifty thousand such inscriptions are known. They are the voices of ordinary Arabians practising their own religion before Judaism, Christianity and Islam reached the desert, and they tell a different and more detailed story than the one later remembered.
 
 ## Two kinds of evidence

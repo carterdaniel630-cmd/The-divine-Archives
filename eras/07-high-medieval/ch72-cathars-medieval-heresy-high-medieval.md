@@ -1,7 +1,5 @@
 # Chapter 72 — The Cathars & Medieval Heresy: The Good Men and the War on Heresy
 
-*Recently added — pending full review.*
-
 On the morning of **16 March 1244**, the defenders of **Montségur**, a fortress on a limestone peak in the foothills of the Pyrenees, came down the mountain. The castle had surrendered after a siege of about ten months. The garrison was allowed to go free, but the heretics among them were given a choice: renounce their faith or burn. Some two hundred men and women, led by their bishop **Bertrand Marty**, refused. Some of the defenders who could have left chose instead to receive the heretics' only sacrament in the last days of the truce, so that they would die with them. They were burned together in an enclosure of stakes at the foot of the mountain. The Catholic chroniclers called them **Cathars**, heretics who believed that the visible world was made by an evil power. They called themselves the **good men** and **good women**, or simply **good Christians**. Who they really were, what they believed, and how far the Church's war on them created the very enemy it fought, are among the liveliest arguments in medieval history.
 
 ## A century of heresy

@@ -1,7 +1,5 @@
 # Chapter 73 — Messiahs and Mystics: Sabbateans, Frankists & the Hasidim
 
-*Recently added — pending full review.*
-
 In Hamburg in the 1640s and 1650s, a Jewish woman named **Glückel** married into a merchant family of the town of Hameln, raised twelve children, ran a business in gold and pearls, and in her widowhood wrote her memoirs in Yiddish for her children. They are one of the great personal documents of early modern Europe. In them she remembers the winter of 1665–1666, when the news reached Hamburg that the **Messiah** had appeared in the Ottoman Empire. Some sold their houses and land; the Portuguese Jews of the city danced in their synagogue wearing broad green silk ribbons, the Messiah's colour. Her father-in-law in Hameln packed two great casks with linen and provisions, dried peas and beans and preserved meat, ready to set off for the Holy Land at a moment's notice, and kept them packed for years, waiting. Then word came that the Messiah had become a Muslim.
 
 That messiah was **Sabbatai Zevi**. The movement around him was the greatest messianic upheaval in Jewish history since antiquity, and its collapse, its underground survival and the revival of Jewish mysticism that followed it in the Polish borderlands, as **Hasidism**, are the subject of this chapter.

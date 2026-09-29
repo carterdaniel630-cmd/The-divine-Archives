@@ -1,7 +1,5 @@
 # Chapter 74 — Secularism & the Nones: Living Without Gods
 
-*Recently added — pending full review.*
-
 On **10 November 1793**, in the second year of the French Republic, the cathedral of **Notre-Dame de Paris** was given a new religion. In the nave, workmen had built a mountain of painted canvas topped by a small Greek temple inscribed "**To Philosophy**", with busts of Voltaire, Rousseau and other heroes of the Enlightenment. Young women dressed in white processed around it, and from the temple came a woman, in most accounts an actress of the Opéra, playing the **Goddess of Reason**, while the crowd sang a hymn to Liberty. It was the **Festival of Reason**, the high point of the revolutionary campaign to "dechristianize" France. It did not last. Within months its promoters had gone to the guillotine, and Robespierre, who thought atheism aristocratic, replaced the Cult of Reason with a **Cult of the Supreme Being**. The scene is a good emblem of this chapter's subject: the attempt, in the modern age, to live without the gods, and how often that attempt has borrowed the forms of religion itself.
 
 ## The largest new "tradition"

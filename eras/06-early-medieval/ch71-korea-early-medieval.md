@@ -1,7 +1,5 @@
 # Chapter 71 — Korea: Shamans, Buddhas and the Way of Heaven
 
-*Recently added — pending full review.*
-
 High on the slope of Mount Toham above the old Silla capital of Gyeongju, behind a wooden gate and a pane of protective glass, a granite Buddha sits in a round chamber built of carved stone blocks. He faces east, towards the sea, where the sun rises. Around him, carved in relief on the walls, stand bodhisattvas, disciples, guardian kings and a many-headed Avalokiteśvara. The grotto of **Seokguram** was begun in **751** by a minister of the kingdom of Unified Silla, and finished by the royal court in 774. It is one of the masterpieces of Buddhist art in East Asia. A few kilometres away, in villages and apartment blocks of modern Korea, women called **mudang** still perform the ecstatic rituals of a religion far older than the Buddha's arrival, dancing, singing, and speaking in the voices of the dead. Korean religion is layered like that: shamanism at the base, Buddhism and Confucianism laid over it, then Christianity and a string of new religions, and all of them still alive.
 
 ## Foundations: the bear, the tiger and the son of heaven

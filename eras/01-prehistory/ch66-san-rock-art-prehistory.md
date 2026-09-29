@@ -1,7 +1,5 @@
 # Chapter 66 — The San & Southern African Rock Art: Eland, Rain and the Trance Dance
 
-*Recently added — pending full review.*
-
 In 1917 a slab of sandstone about two metres long was cut out of the back wall of a rock shelter on the farm **Linton**, in the Eastern Cape of South Africa, and carried to the South African Museum in Cape Town, where it has been on display ever since. It is covered with paintings in red, white and black, made with a fineness that seems impossible on rock: people with arms stretched back, some bending forward, one with lines of red falling from the nose; a long, sinuous red band bordered with tiny white dots, running across the scene; fish, eels, and a scatter of other figures. The **Linton panel** is one of the masterpieces of the rock art of the **San**, the hunter-gatherers of southern Africa. Two of its figures, slightly altered, stand on South Africa's coat of arms, above a motto in the extinct **|Xam** San language. What the panel meant to its painters is one of the most argued questions in the study of prehistoric religion, and it is also one of the few where the people's own words can be brought to bear.
 
 ## The oldest continuous story
