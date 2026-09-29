@@ -1,0 +1,109 @@
+# Chapter 66 — The San & Southern African Rock Art: Eland, Rain and the Trance Dance
+
+*Recently added — pending full review.*
+
+In 1917 a slab of sandstone about two metres long was cut out of the back wall of a rock shelter on the farm **Linton**, in the Eastern Cape of South Africa, and carried to the South African Museum in Cape Town, where it has been on display ever since. It is covered with paintings in red, white and black, made with a fineness that seems impossible on rock: people with arms stretched back, some bending forward, one with lines of red falling from the nose; a long, sinuous red band bordered with tiny white dots, running across the scene; fish, eels, and a scatter of other figures. The **Linton panel** is one of the masterpieces of the rock art of the **San**, the hunter-gatherers of southern Africa. Two of its figures, slightly altered, stand on South Africa's coat of arms, above a motto in the extinct **|Xam** San language. What the panel meant to its painters is one of the most argued questions in the study of prehistoric religion, and it is also one of the few where the people's own words can be brought to bear.
+
+## The oldest continuous story
+
+Southern Africa holds some of the earliest evidence anywhere for the symbolic mind.
+
+- At **Blombos Cave**, on the southern Cape coast, people processed ochre in shells about 100,000 years ago, engraved crosshatched designs on pieces of ochre about 75,000 years ago, and, on a flake of stone from levels about **73,000** years old, drew a crosshatched pattern with an ochre crayon: the oldest known drawing.
+- At **Apollo 11 Cave** in southern Namibia, seven slabs of stone painted with animals, one perhaps a feline with human legs, were found in layers dated to roughly **30,000** years ago, among the oldest figurative art in Africa.
+- At **Tsodilo Hills** in Botswana, a claim published in 2006 that a rock in "Rhino Cave" carved to resemble a python's head was the focus of a 70,000-year-old ritual was widely reported; archaeologists who excavated the site challenged it, pointing out that the dates come from deposits in front of the wall, not from the carving. It remains **contested**.
+
+The painted and engraved rock art of the region is much younger, mostly from the last few thousand years, and some was made within the last two centuries: paintings in the **Maloti-Drakensberg** mountains show horses, wagons and men with guns. Radiocarbon dating of mineral crusts over and under the paint shows that Drakensberg art goes back more than 2,000 years. There are tens of thousands of sites across southern Africa, and the **uKhahlamba-Drakensberg** park alone holds hundreds of shelters with many thousands of images. The makers were ancestors of the people now called **San**.
+
+## Who the San are
+
+"**San**" is the collective name, originally a Khoekhoe word, for the many hunter-gatherer peoples of southern Africa who speak, or spoke, languages with click consonants; the older English term "**Bushmen**" is considered offensive by some and accepted by others, and many San prefer the names of their own groups: **Ju|'hoansi**, **!Xun**, **Naro**, **|Xam** and others. Genetic studies show that the ancestors of the Khoe-San diverged from other human populations very early, perhaps **260,000–350,000 years** ago, making them carriers of some of the deepest lineages of our species.
+
+Their history since the arrival of herders and farmers in the last two thousand years, and above all since European colonization, has been one of dispossession. In the eighteenth and nineteenth centuries colonial commandos and settlers killed many San in the Cape; historians such as Mohamed Adhikari describe it as genocide. The |Xam people of the Karoo, whose words are central to this chapter, were destroyed as a community, and their language is extinct. San communities today live in Namibia, Botswana, South Africa and Angola; in **2006** San and Bakgalagadi evicted from the **Central Kalahari Game Reserve** won the right in Botswana's High Court to return to their land.
+
+## Their own words: the Bleek and Lloyd archive
+
+What makes the San case special is that, uniquely for a rock-art tradition of this kind, there is a large body of testimony from the people themselves. In the 1870s the German linguist **Wilhelm Bleek** and his sister-in-law **Lucy Lloyd** in Cape Town recorded, from |Xam men who had been brought to the city as prisoners, among them **||kabbo**, **Diä!kwain** and **|han≠kass'o**, more than **12,000 pages** of narratives, beliefs, songs and personal histories, written in |Xam with English translation. The **Bleek and Lloyd collection**, now held by the University of Cape Town and other institutions, is on UNESCO's Memory of the World register. The |Xam narrators also commented on copies of rock paintings shown to them. In the twentieth century anthropologists, among them **Lorna Marshall**, **Megan Biesele** and **Richard Katz**, recorded the religion of the Ju|'hoansi and other Kalahari San, who still practised it.
+
+## Gods, tricksters and the dead
+
+San religion varied from group to group, but some themes recur.
+
+- **A trickster-creator.** Among the |Xam the central figure is **|Kaggen**, whose name means "mantis": a trickster who could take the form of a praying mantis, an eland, a hare or a louse, who created the **eland**, his favourite animal, and the moon, which in one story he made from his shoe and threw into the sky. He is foolish and wise, creative and troublesome, and he protects the eland from hunters. Among the Ju|'hoansi a great god, **||'aen** or **≠Gao!na**, creator of all things, stands with a lesser god, **||'ausi** or **||Gauwa**, who brings both sickness and help, and with the spirits of the dead, the **||gauwasi**, who hover around the living and bring illness.
+- **Potency.** Many San speak of a supernatural power, **n|om** among the Ju|'hoansi, present in certain people, animals, songs and plants. It is strongest in the **eland**, the largest antelope, fat and full of power.
+- **Rain.** The |Xam told of a **rain-animal**, a great creature of the waterholes, sometimes like a bull or a hippo, which rain-makers would capture in trance, lead across the land, and cut, so that its blood and milk fell as rain.
+- **The dead and the stars.** Stories place the dead among the stars; the |Xam narrators described how a girl threw ashes into the sky to make the Milky Way.
+
+## The trance dance
+
+At the heart of Kalahari San religion, as recorded in the twentieth century, is the **healing dance**. At night, around a fire, women sit and clap complex rhythms and sing medicine songs, while men, and sometimes women, dance around them for hours. As the dance intensifies, the healers' **n|om** "boils" in their bellies and rises up the spine. They enter **!kia**, an altered state of consciousness: they tremble, sweat, stagger, sometimes fall, and sometimes **bleed from the nose**. In this state they lay their hands on everyone present, drawing sickness out of their bodies and shrieking it away into the night, and they may travel out of the body to argue with the gods and the spirits of the dead for the lives of the sick. Richard Katz's study of the Ju|'hoansi, *Boiling Energy* (1982), found that healing power was not restricted to a few specialists: many adults, men especially but also women, had learned to heal. The dance also heals quarrels, and brings the community together. It is still performed.
+
+## The trance interpretation of the art
+
+For most of the twentieth century, the rock paintings were read as simple records of daily life, hunting scenes, or "art for art's sake". In the 1970s and 1980s the archaeologist **David Lewis-Williams** and colleagues proposed a very different reading, which transformed the field. Drawing on the Bleek and Lloyd testimony and the Kalahari ethnography, they argued that much of the art, especially in the Drakensberg, refers to the experience of **healers in trance**:
+
+- figures bleeding from the nose, bending forward, with arms stretched back, as dancers are described in trance;
+- figures merging with animals, especially the **eland**, a dying eland with its lowered head and crossing legs being compared to a healer in deep trance, "dying" to enter the spirit world;
+- **rain-animals** being led across the rock, as the rain-makers described;
+- lines of dots, zigzags and nested curves, compared with the geometric patterns seen in the first stage of altered states of consciousness (the "neuropsychological model", which Lewis-Williams later extended to European cave art, ch41);
+- the rock face itself as a **veil** between this world and the spirit world, with animals and people entering and leaving through cracks.
+
+On the Linton panel, Lewis-Williams reads the long red band edged with white dots as a line of **potency**, and the figures as healers.
+
+## The debate
+
+The trance interpretation won wide acceptance, but it has serious critics.
+
+- **Anne Solomon**, **Pippa Skotnes** and others have argued that the model reduces a diverse art, made over thousands of years by many groups, to a single meaning; that the |Xam of the nineteenth-century Karoo, who painted little, were different from the Kalahari San of the twentieth century and from the Drakensberg painters; and that the Bleek and Lloyd texts say little directly about trance dancing among the |Xam. Solomon has emphasized the dead, the spirits and myth as themes of the art.
+- The **neuropsychological model**'s claim that geometric forms reflect universal brain states in trance has been challenged by neuroscientists and archaeologists (it is also contested for European caves, ch41).
+- Some researchers stress that paintings may have served **many purposes**: rain-making, initiation, marking territory, telling stories, and recording contact with herders and colonists.
+
+Most specialists now accept that the art is deeply **religious** and that trance and potency are among its themes, while debating how central they are and how far the same meaning applies everywhere.
+
+## The believer's lens
+
+For many San today, the dance, the songs and n|om are living realities, and the paintings are the work of their ancestors, places where power still resides. Some communities are Christian, many combine Christian and older practice, and some healers are consulted by non-San. The **San Code of Research Ethics**, launched by the South African San Council in **2017**, the first such code written by an indigenous people in Africa, asks researchers to show respect, honesty, justice and care, and to share benefits; it is a statement that San knowledge belongs to the San. The archive reports San belief as belief, and notes that the question of what the art "means" is, for San communities, also a question of who has the right to say.
+
+## The skeptical lens
+
+Four cautions apply.
+
+1. **Time.** The testimony of the 1870s and the ethnography of the 1950s describe particular San groups in the last centuries, often under colonial pressure. Using them to read paintings that may be thousands of years old, made by other groups hundreds of kilometres away, assumes a continuity that has to be argued, not presumed. The same applies, still more strongly, to using the San as a window on the religion of the first modern humans.
+2. **The "living fossil" error.** The deep genetic lineages of the Khoe-San do not make their culture or religion "ancient" or unchanged. San societies have their own long histories, of change, contact and trade, like everyone else's. Presenting them as Stone Age survivals has a long, damaging colonial history.
+3. **Very early claims.** The Blombos drawing and the Apollo 11 stones are secure, but what they meant is unknown; they are evidence of symbolism, not of any particular religion. The Tsodilo "python ritual" is disputed.
+4. **The single-key problem.** The trance interpretation is powerful, but any single explanation of a whole art tradition risks becoming unfalsifiable: whatever is painted can be read as trance.
+
+## Symbology and sacred encoding
+
+- **The eland.** The great antelope is the most frequently and carefully painted animal in the Drakensberg, often shaded in several colours. For the |Xam it was |Kaggen's favourite, for Ju|'hoansi the animal richest in n|om, and it plays a role in girls' puberty rites (the "Eland Bull dance") and boys' first-kill rites. Its prominence in the art encodes its religious weight; it is not a mere record of diet.
+- **Nasal blood and arms-back posture.** Painted figures bleeding from the nose, or with arms held back, match descriptions of healers in trance, and are among the strongest links between the art and the dance.
+- **The line of potency.** Red lines fringed with white dots, like the Linton panel's, are read by Lewis-Williams as threads of potency or paths to the spirit world; others see different meanings. The reading is **interpretive**.
+- **The rock as veil.** Figures appear to emerge from or disappear into cracks and steps in the rock surface, suggesting that the rock itself was a boundary between worlds.
+- **Therianthropes.** Figures part human and part animal, some with antelope heads or hooves, are read as healers transformed in trance or as spirit beings.
+- **The rain-animal.** Large, strange creatures, sometimes with lines coming from their mouths or surrounded by fish, are identified with the |Xam rain-animal: a sacred scene of rain-making.
+- **The coat of arms.** South Africa's coat of arms (2000) uses two figures from the Linton panel, facing each other in greeting, and the |Xam motto **!ke e: |xarra ||ke**, rendered "diverse people unite". The choice honoured the San; critics have noted the irony of using the words of an extinct language whose speakers were destroyed.
+
+## Connections
+
+The deep antiquity of symbolic behaviour at Blombos and Apollo 11 belongs with **The Paleolithic** (ch41), where the neuropsychological model and its critics also appear for European caves. The San trance dance invites comparison with shamanic traditions elsewhere, from Siberia to **Korea**'s mudang (ch71) and the ecstatic rites of **African Diaspora Religions** (ch40). The relationship between San and the farming peoples of the region belongs to **African Traditional Religion** (ch33). The use of ethnography to interpret ancient images is also at issue for **Aboriginal Australian Dreaming** (ch61), whose rock art and living traditions raise the same questions of continuity and of who may speak for sacred knowledge. Rain-making links to kingship and the control of weather in **Sacred Kingship** (ch49), and the healer's journey to argue with the gods for the sick to **Journeys to the Underworld** (ch47).
+
+## The evidence, honestly
+
+**Well-supported by evidence.** The early symbolic artefacts of southern Africa (the Blombos ochre and drawing, about 73,000 years; the Apollo 11 painted stones, about 30,000 years); the great quantity and range of San rock art, with dates reaching back more than 2,000 years in the Drakensberg and into the colonial period; the Bleek and Lloyd archive of |Xam testimony; the ethnography of the Kalahari healing dance, n|om and !kia; |Kaggen, the rain-animal and other beliefs as recorded; the colonial violence against the San and the destruction of the |Xam; the deep genetic divergence of Khoe-San lineages; the Linton panel's use on the coat of arms; and the San Code of Research Ethics (2017).
+
+**Not supported (as established fact).** That the San are a "living fossil" whose religion is unchanged since the Stone Age; that all San art has a single meaning; that the Tsodilo "python" was the site of a 70,000-year-old ritual; that geometric motifs in rock art are proven to be universal trance imagery.
+
+**Genuinely open.** How central trance is to the meaning of the art, and whether the interpretation applies equally across regions and periods; what the earliest symbolic artefacts meant to their makers; how far nineteenth- and twentieth-century testimony can be projected back into prehistory; and how San communities, researchers and heritage bodies will share authority over the art's interpretation.
+
+## Sources
+
+- The Linton panel and the coat of arms — *The Conversation*, "Rock art: how South Africa's coat of arms got to feature an ancient San painting." https://theconversation.com/rock-art-how-south-africas-coat-of-arms-got-to-feature-an-ancient-san-painting-195297 ; "Coat of arms of South Africa," Wikipedia. https://en.wikipedia.org/wiki/Coat_of_arms_of_South_Africa ; South African Government, "National Coat of Arms." https://www.gov.za/about-sa/national-coat-arms ; Iziko Museums, "Archaeology." https://www.iziko.org.za/collection/archaeology/ ; "Examining the Remaining Rock Art at Linton, Eastern Cape," ResearchGate. https://www.researchgate.net/publication/379247506
+- Blombos Cave — C. Henshilwood et al., "An abstract drawing from the 73,000-year-old levels at Blombos Cave, South Africa," *Nature* (2018). https://www.nature.com/articles/s41586-018-0514-3 ; "Blombos Cave," Wikipedia. https://en.wikipedia.org/wiki/Blombos_Cave
+- Apollo 11 Cave — "Apollo 11 Cave," Wikipedia. https://en.wikipedia.org/wiki/Apollo_11_Cave ; Metropolitan Museum of Art, "Apollo 11 and Wonderwerk Cave Stones." https://www.metmuseum.org/essays/apollo-11-ca-25500-23500-b-c-and-wonderwerk-ca-8000-b-c-cave-stones ; British Museum African Rock Art, "Origins of rock art in Africa." https://africanrockart.britishmuseum.org/introduction/origins/
+- Tsodilo "python" controversy — "Tsodilo," Wikipedia. https://en.wikipedia.org/wiki/Tsodilo ; L. Robbins et al., "World's Oldest Ritual Site? The 'Python Cave' at Tsodilo Hills," Semantic Scholar. https://www.semanticscholar.org/paper/World's-Oldest-Ritual-Site-The-Python-Cave-at-Hills-Robbins-Campbell/f8d25682d1bcc7c4e08f1c7d3591fca0c317f167
+- Drakensberg rock art and its dating — A. Mazel, "Dating rock paintings in the uKhahlamba-Drakensberg and the Biggarsberg," *Southern African Humanities*. https://www.sahumanities.org/index.php/sah/article/view/158 ; Smarthistory, "uKhahlamba Drakensberg rock paintings (San)." https://smarthistory.org/ukhahlamba-drakensberg-rock-paintings-san/
+- Khoe-San genetic divergence — C. Schlebusch et al., "Southern African ancient genomes estimate modern human divergence to 350,000 to 260,000 years ago," *Science* (2017). https://www.science.org/doi/10.1126/science.aao6266 ; "Khoe-San Genomes Reveal Unique Variation and Confirm the Deepest Population Divergence in Homo sapiens," *Molecular Biology and Evolution* (2020). https://academic.oup.com/mbe/article/37/10/2944/5874945
+- The San, colonial violence and land rights — "San people," Wikipedia. https://en.wikipedia.org/wiki/San_people ; "Ancestral land conflict in Botswana," Wikipedia. https://en.wikipedia.org/wiki/Ancestral_land_conflict_in_Botswana ; Cultural Survival, "Foragers to First Peoples: The Kalahari San Today." https://www.culturalsurvival.org/publications/cultural-survival-quarterly/foragers-first-peoples-kalahari-san-today
+- The Bleek and Lloyd archive — Smithsonian Libraries, "Sound from the Thinking Strings." https://library.si.edu/exhibition/artists-books-and-africa/sound-thinking-strings-full ; *SciELO South Africa*, "Beyond the Cult of 'Salvation' and 'Remarkable Equality': A New Paradigm for the Bleek-Lloyd Collection." https://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-01902006000100011 ; *The Conversation*, "An ancient San rock art mural in South Africa reveals new meaning." https://theconversation.com/an-ancient-san-rock-art-mural-in-south-africa-reveals-new-meaning-157177
+- San beliefs (|Kaggen; n|om; the healing dance) — "|Kaggen's code: paintings of moths in southern African hunter-gatherer rock art," ResearchGate. https://www.researchgate.net/publication/298951245 ; British Library Sound Archive, "Ju|'hoansi healing songs from the Kalahari." https://www.nts.live/editorial/british-library-sound-archive-healing-songs ; R. Katz, *Boiling Energy: Community Healing among the Kalahari !Kung* (Harvard, 1982).
+- The trance interpretation and its critics — "David Lewis-Williams," Wikipedia. https://en.wikipedia.org/wiki/David_Lewis-Williams ; J. D. Lewis-Williams, *San Rock Art* (JSTOR). https://www.jstor.org/stable/j.ctt3fgwsf ; "The southern San and the trance dance: a pivotal debate," *Antiquity*. https://www.cambridge.org/core/journals/antiquity/article/abs/southern-san-and-the-trance-dance-a-pivotal-debate-in-the-interpretation-of-san-rock-paintings/CB3AF67952770777B47E1DB6B380BB35 ; "The death of trance: recent perspectives on San ethnographies and rock arts," *Antiquity*. https://www.cambridge.org/core/journals/antiquity/article/abs/death-of-trance-recent-perspectives-on-san-ethnographies-and-rock-arts/321C6BD979EB8A1DA2380EAA4FC38662 ; "Writing San Histories: The /Xam and 'Shamanism' Revisited," *Journal of Southern African Studies* (2011). https://www.tandfonline.com/doi/abs/10.1080/03057070.2011.552548 ; G. Blundell, "On Neuropsychology in Southern African Rock Art Research," *Anthropology of Consciousness* (1998). https://anthrosource.onlinelibrary.wiley.com/doi/abs/10.1525/ac.1998.9.1.3
+- The San Code of Research Ethics (2017) — GroundUp, "San Council launches code of ethics for researchers." https://groundup.org.za/article/san-council-launches-code-ethics-researchers/ ; South African San Institute, *San Code of Research Ethics* (2017). https://trust-project.eu/wp-content/uploads/2017/03/San-Code-of-RESEARCH-Ethics-Booklet-final.pdf

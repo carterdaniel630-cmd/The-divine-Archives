@@ -158,6 +158,7 @@ every remaining chapter and added the lens structure throughout.
 | ch72 — The Cathars & Medieval Heresy | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md` |
 | ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
 | ch74 — Secularism & the Nones | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch74-secularism-nonreligion-modern.md` |
+| ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 

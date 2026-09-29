@@ -1203,6 +1203,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M30 160 C50 120 70 104 100 98 C130 104 150 120 170 160 Z" stroke="currentColor" stroke-width="1.1" opacity="0.6"/><path d="M72 98 L100 80 L128 98 Z" stroke="currentColor" stroke-width="1.3"/><path d="M76 98 L76 120 M88 98 L88 120 M100 98 L100 120 M112 98 L112 120 M124 98 L124 120 M72 120 L128 120" stroke="currentColor" stroke-width="1.1"/><circle cx="100" cy="34" r="7" stroke="currentColor" stroke-width="1.3"/><path d="M100 41 L100 66 M100 66 L88 78 M100 66 L112 78 M100 48 C92 44 86 36 82 28 M100 48 C108 44 114 36 118 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
       "Interpretive illustration",
       "A small classical temple on an artificial mountain, after the Temple of Philosophy built in Notre-Dame for the Festival of Reason in 1793, beneath a figure with raised arms in the manner of the Happy Human, the humanist emblem designed in 1965. An original, interpretive drawing."
+    ),
+
+    /* Ch66 — The San: the eland and the line of dots */
+    "ch66": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M56 104 C60 88 80 82 104 84 C120 85 132 86 140 80 C146 76 150 70 152 64 L156 58 M152 64 L160 60 M140 80 C146 84 150 92 150 98" stroke="currentColor" stroke-width="1.4"/><path d="M152 64 C156 70 156 78 150 82" stroke="currentColor" stroke-width="1.1"/><path d="M56 104 C54 112 56 118 62 122 L64 140 M72 120 L74 140 M122 96 C126 104 126 112 124 120 L126 140 M134 92 C138 100 138 110 136 118 L140 138" stroke="currentColor" stroke-width="1.3"/><path d="M84 84 C88 78 100 76 110 80" stroke="currentColor" stroke-width="0.9" opacity="0.6"/><path d="M22 160 C50 150 80 170 110 158 C140 146 160 164 182 154" stroke="currentColor" stroke-width="1.4"/><g fill="currentColor" opacity="0.85"><circle cx="30" cy="154" r="1.3"/><circle cx="42" cy="152" r="1.3"/><circle cx="56" cy="154" r="1.3"/><circle cx="70" cy="159" r="1.3"/><circle cx="86" cy="162" r="1.3"/><circle cx="102" cy="158" r="1.3"/><circle cx="118" cy="152" r="1.3"/><circle cx="134" cy="150" r="1.3"/><circle cx="150" cy="154" r="1.3"/><circle cx="166" cy="156" r="1.3"/></g></svg>',
+      "Interpretive illustration",
+      "An eland, the animal most carefully painted in San rock art and richest in supernatural potency, above a line fringed with dots of the kind that David Lewis-Williams reads as a thread of potency on the Linton panel. An original, interpretive drawing, not a copy of a painting."
     )
 
   };
