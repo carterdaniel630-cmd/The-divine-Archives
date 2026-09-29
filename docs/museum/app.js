@@ -24,8 +24,8 @@ import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=6";
 import { buildRelic, hasRelic } from "./relics.js?v=1";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=2";
-import { makeFauna } from "./fauna.js?v=1";
+import { createWorld } from "./world.js?v=3";
+import { makeFauna } from "./fauna.js?v=2";
 import { createSound } from "./sound.js?v=1";
 
 // ---------------------------------------------------------------- constants

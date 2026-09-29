@@ -102,7 +102,16 @@ export const ENV = {
   ch39: { sky: "tempest", ground: "ash", fauna: ["bats", "ravens"] },
   ch40: { sky: "dusk", ground: "jungle", fauna: ["frogs", "butterflies"] },
   ch64: { sky: "rays", ground: "meadow", fauna: ["doves", "songbirds"] },             // wind and fire
-  ch65: { sky: "heavenly", ground: "garden", fauna: ["doves", "songbirds"] }          // the terraced gardens
+  ch65: { sky: "heavenly", ground: "garden", fauna: ["doves", "songbirds"] },         // the terraced gardens
+  ch66: { sky: "starry", ground: "redearth", fauna: ["lizards", "scorpions"] },        // the trance dance by night
+  ch67: { sky: "clear", ground: "shore", fauna: ["gulls", "crabs", "swallows"] },      // island of the peak sanctuaries
+  ch68: { sky: "golden", ground: "nile", fauna: ["ibis", "crane", "lizards"] },        // Napata and Meroë on the Nile
+  ch69: { sky: "dawn", ground: "forestbrook", fauna: ["songbirds", "kingfisher", "dragonflies"] }, // the forest teachers
+  ch70: { sky: "starry", ground: "desert", fauna: ["scorpions", "lizards"] },          // the desert shrines
+  ch71: { sky: "mist", ground: "zen", fauna: ["crane", "koi"] },                       // mountain temples
+  ch72: { sky: "overcast", ground: "ruins", fauna: ["ravens", "swallows"] },           // Montségur
+  ch73: { sky: "twilight", ground: "field", fauna: ["songbirds", "doves"] },           // the shtetl at dusk
+  ch74: { sky: "clear", ground: "meadow", fauna: ["songbirds", "butterflies"] }        // an open sky
 };
 
 // ---------------------------------------------------------------- sky presets

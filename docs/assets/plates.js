@@ -1147,6 +1147,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><path d="M100.0 30.0 L115.0 58.7 L145.0 46.4 L138.1 78.0 L168.9 87.8 L143.3 107.6 L160.6 135.0 L128.3 133.7 L123.9 165.8 L100.0 144.0 L76.1 165.8 L71.7 133.7 L39.4 135.0 L56.7 107.6 L31.1 87.8 L61.9 78.0 L55.0 46.4 L85.0 58.7 Z" stroke="currentColor" stroke-width="1.5"/><circle cx="100" cy="100" r="34" stroke="currentColor" stroke-width="1" opacity="0.7"/><circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="0.7" opacity="0.35"/><g fill="currentColor"><circle cx="100.0" cy="78.0" r="1.8"/><circle cx="114.1" cy="83.1" r="1.8"/><circle cx="121.7" cy="96.2" r="1.8"/><circle cx="119.1" cy="111.0" r="1.8"/><circle cx="107.5" cy="120.7" r="1.8"/><circle cx="92.5" cy="120.7" r="1.8"/><circle cx="80.9" cy="111.0" r="1.8"/><circle cx="78.3" cy="96.2" r="1.8"/><circle cx="85.9" cy="83.1" r="1.8"/></g></svg>',
       "Interpretive illustration",
       "The nine-pointed star, used by Bahá&rsquo;ís as a symbol of completeness and unity, nine being the highest single digit. An original rendering."
+    ),
+
+    /* Ch67 — Minoan Crete: the double axe between horns of consecration */
+    "ch67": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M38 150 L162 150 L162 158 L38 158 Z" stroke="currentColor" stroke-width="1.2"/><path d="M44 150 C40 118 44 92 56 72 C58 96 60 118 70 136 L130 136 C140 118 142 96 144 72 C156 92 160 118 156 150" stroke="currentColor" stroke-width="1.4"/><line x1="100" y1="150" x2="100" y2="40" stroke="currentColor" stroke-width="2"/><path d="M100 58 C88 50 78 44 66 46 C70 58 70 70 66 82 C78 84 88 78 100 70 C112 78 122 84 134 82 C130 70 130 58 134 46 C122 44 112 50 100 58 Z" stroke="currentColor" stroke-width="1.3"/><path d="M100 96 C92 91 85 87 77 88 C80 96 80 104 77 112 C85 113 92 109 100 104 C108 109 115 113 123 112 C120 104 120 96 123 88 C115 87 108 91 100 96 Z" stroke="currentColor" stroke-width="1" opacity="0.8"/><path d="M20 176 C40 170 60 182 80 176 C100 170 120 182 140 176 C160 170 176 180 186 176" stroke="currentColor" stroke-width="0.8" opacity="0.5"/></svg>',
+      "Interpretive illustration",
+      "A double axe (labrys) on its shaft, set between a pair of horns of consecration, as on Minoan altars and seals. Both are recurring sacred signs whose exact meaning is inferred, not recorded. An original, interpretive drawing, not a copy of any object."
     )
 
   };
