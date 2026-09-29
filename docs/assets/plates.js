@@ -1154,6 +1154,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M38 150 L162 150 L162 158 L38 158 Z" stroke="currentColor" stroke-width="1.2"/><path d="M44 150 C40 118 44 92 56 72 C58 96 60 118 70 136 L130 136 C140 118 142 96 144 72 C156 92 160 118 156 150" stroke="currentColor" stroke-width="1.4"/><line x1="100" y1="150" x2="100" y2="40" stroke="currentColor" stroke-width="2"/><path d="M100 58 C88 50 78 44 66 46 C70 58 70 70 66 82 C78 84 88 78 100 70 C112 78 122 84 134 82 C130 70 130 58 134 46 C122 44 112 50 100 58 Z" stroke="currentColor" stroke-width="1.3"/><path d="M100 96 C92 91 85 87 77 88 C80 96 80 104 77 112 C85 113 92 109 100 104 C108 109 115 113 123 112 C120 104 120 96 123 88 C115 87 108 91 100 96 Z" stroke="currentColor" stroke-width="1" opacity="0.8"/><path d="M20 176 C40 170 60 182 80 176 C100 170 120 182 140 176 C160 170 176 180 186 176" stroke="currentColor" stroke-width="0.8" opacity="0.5"/></svg>',
       "Interpretive illustration",
       "A double axe (labrys) on its shaft, set between a pair of horns of consecration, as on Minoan altars and seals. Both are recurring sacred signs whose exact meaning is inferred, not recorded. An original, interpretive drawing, not a copy of any object."
+    ),
+
+    /* Ch68 — Nubia & Kush: the Pure Mountain and the pyramids of Napata */
+    "ch68": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><circle cx="150" cy="52" r="11" stroke="currentColor" stroke-width="1" opacity="0.7"/><path d="M22 132 L34 92 L96 88 L108 96 L110 132" stroke="currentColor" stroke-width="1.4"/><path d="M110 132 L112 104 C113 92 116 80 114 68 C118 64 124 66 124 72 C122 82 120 96 121 112 L122 132" stroke="currentColor" stroke-width="1.4"/><path d="M114 68 C112 62 116 58 120 60" stroke="currentColor" stroke-width="1"/><path d="M132 132 L144 100 L156 132 Z M150 132 L160 108 L170 132 Z M60 150 L70 124 L80 150 Z" stroke="currentColor" stroke-width="1.1"/><path d="M18 132 L184 132" stroke="currentColor" stroke-width="1"/><path d="M20 164 C44 158 66 170 90 164 C114 158 136 170 160 164 C170 161 178 162 184 164 M28 176 C52 170 74 182 98 176 C122 170 144 182 172 176" stroke="currentColor" stroke-width="0.8" opacity="0.55"/></svg>',
+      "Interpretive illustration",
+      "The flat-topped mountain of Jebel Barkal with its free-standing pinnacle, read in antiquity as a rearing royal cobra, above the Nile, with the steep pyramids of the Kushite kings. An original, interpretive drawing, not a survey of the site."
     )
 
   };

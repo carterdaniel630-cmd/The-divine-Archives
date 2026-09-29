@@ -437,6 +437,11 @@ window.ARCHIVE = {
       era: "02-bronze-age", eraLabel: "Bronze Age · Minoan Crete",
       status: "published", pending: true,
       source: "eras/02-bronze-age/ch67-minoan-crete-bronze-age.md",
-      summary: "A religion with no readable scripture: the peak sanctuaries and sacred caves of Bronze Age Crete, the palaces with their pillar crypts and lustral basins, the faience ‘Snake Goddess’ and the forgeries Evans’s vision inspired, the gold rings of epiphany, bull-leaping and bull sacrifice, the contested human sacrifice at Anemospilia, and the Greek gods of Mycenaean Knossos, including the ‘Mistress of the Labyrinth’. A symbology of the double axe, the horns of consecration and the undeciphered Linear A libation formula, with the Great Goddess and the peaceful matriarchy marked as interpretations, not findings." }
+      summary: "A religion with no readable scripture: the peak sanctuaries and sacred caves of Bronze Age Crete, the palaces with their pillar crypts and lustral basins, the faience ‘Snake Goddess’ and the forgeries Evans’s vision inspired, the gold rings of epiphany, bull-leaping and bull sacrifice, the contested human sacrifice at Anemospilia, and the Greek gods of Mycenaean Knossos, including the ‘Mistress of the Labyrinth’. A symbology of the double axe, the horns of consecration and the undeciphered Linear A libation formula, with the Great Goddess and the peaceful matriarchy marked as interpretations, not findings." },
+    { id: "ch68", title: "Nubia & Kush", kind: "tradition",
+      era: "03-early-iron-age", eraLabel: "Early Iron Age · Nubia & Kush",
+      status: "published", pending: true,
+      source: "eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md",
+      summary: "Egypt’s southern twin: the great mounds and retainer burials of Kerma; Amun in the ‘Pure Mountain’ of Jebel Barkal; the Kushite pharaohs of the Twenty-fifth Dynasty, Piye’s Victory Stela and the revival of the pyramid; Meroë’s own gods, the lion-headed Apedemak above all, and its ruling queens, the Kandake of Acts 8; the Nubian pilgrims who kept Isis’s temple at Philae open until the sixth century; and Christian Nubia and the paintings of Faras. A symbology of the uraeus mountain, the ram and the lion, and the Meroitic script, whose signs can be read but whose language still cannot." }
   ]
 };
