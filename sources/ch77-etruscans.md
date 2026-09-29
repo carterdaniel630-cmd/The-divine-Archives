@@ -1,0 +1,22 @@
+# Sources — Chapter 77: The Etruscans
+
+Per the project sourcing standard. The Etrusca disciplina is known mainly from later Roman writers; Etruscan texts are only partly readable. The chapter separates the surviving objects and inscriptions from the Roman accounts and from modern claims.
+
+## Sources cited
+- **The Liver of Piacenza** — "Liver of Piacenza," Wikipedia. https://en.wikipedia.org/wiki/Liver_of_Piacenza ; World History Encyclopedia, "Etruscan Model Liver For Divination." https://www.worldhistory.org/image/6300/etruscan-model-liver-for-divination/ ; Zenodo, "The Templum and the Liver of Piacenza in the works by Deecke, Körte, Van der Meer, Aveni and Romano." https://zenodo.org/records/13379147
+- **The Etrusca disciplina, Tages and Vegoia** — "Etruscan religion," Wikipedia. https://en.wikipedia.org/wiki/Etrusca_disciplina ; "Vegoia," Wikipedia. https://en.wikipedia.org/wiki/Vegoia ; Columbia Italian Academy, "Disciplina Etrusca: Religion, Identity, and the Fate of the Etruscans." https://italianacademy.columbia.edu/events/disciplina-etrusca-religion-identity-and-fate-etruscans-context-roman-italy
+- **The Pyrgi tablets** — "Pyrgi Tablets," Wikipedia. https://en.wikipedia.org/wiki/Pyrgi_Tablets ; Museo Nazionale Etrusco di Villa Giulia, "Pyrgi Tablets." https://www.museoetru.it/works/lamine-doro-da-pyrgi
+- **The Liber Linteus** — "Liber Linteus," Wikipedia. https://en.wikipedia.org/wiki/Liber_Linteus ; Bryn Mawr Classical Review, *Liber Linteus Zagrabiensis* (2008). https://bmcr.brynmawr.edu/2008/2008.05.37/ ; *National Geographic*, "What was the mystery message written on the mummy's wrappings?" https://www.nationalgeographic.com/history/history-magazine/article/what-was-the-mystery-message-written-on-the-mummys-wrappings
+- **The Etruscan language** — "Etruscan language," Wikipedia. https://en.wikipedia.org/wiki/Etruscan_language ; Metropolitan Museum of Art, "Etruscan Language and Inscriptions." https://www.metmuseum.org/essays/etruscan-language-and-inscriptions
+- **Deities (Tinia, Uni, Menrva and the Capitoline Triad)** — Britannica, "Tinia." https://www.britannica.com/topic/Tinia ; "Uni (mythology)," Wikipedia. https://en.wikipedia.org/wiki/Uni_(mythology) ; "Menrva," Wikipedia. https://en.wikipedia.org/wiki/Menrva ; "Capitoline Triad," Wikipedia. https://en.wikipedia.org/wiki/Capitoline_Triad
+- **Tombs, Charun and Vanth** — "Monterozzi necropolis," Wikipedia. https://en.wikipedia.org/wiki/Monterozzi_necropolis ; World History Encyclopedia, "Etruscan Tomb Paintings." https://www.worldhistory.org/article/1013/etruscan-tomb-paintings/ ; "Tomb of the Charuns," Wikipedia. https://en.wikipedia.org/wiki/Tomb_of_the_Charuns ; University of Warwick, "Demons of Death." https://warwick.ac.uk/fac/arts/classics/research/undergrads/final_demons_of_death.pdf
+- **The Fanum Voltumnae and Campo della Fiera** — "Fanum Voltumnae," Wikipedia. https://en.wikipedia.org/wiki/Fanum_Voltumnae ; S. Stopponi, "Orvieto, Campo della Fiera: Fanum Voltumnae," Academia.edu. https://www.academia.edu/53262903/ ; Bryn Mawr Classical Review, *Velzna II: lo scavo di Campo della Fiera di Orvieto* (2023). https://bmcr.brynmawr.edu/2023/2023.11.40/
+- **The Etruscan saecula (Censorinus)** — Censorinus, *De Die Natali* 17 (ToposText). https://topostext.org/work/741 ; M. Nielsen, "The conception of time among the Etruscans," Leiden. https://scholarlypublications.universiteitleiden.nl/access/item:2721246/download
+- **Etruscan origins and ancient DNA** — C. Posth et al., "The origin and legacy of the Etruscans through a 2000-year archeogenomic time transect," *Science Advances* (2021). https://www.science.org/doi/10.1126/sciadv.abi7673 ; "Etruscan origins," Wikipedia. https://en.wikipedia.org/wiki/Etruscan_origins
+- **Spurinna and Caesar** — Suetonius, *Life of Julius Caesar* 81 (LacusCurtius). https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Julius*.html
+
+## Notes
+- Well-supported: city-states and chronology; Liver of Piacenza; Pyrgi tablets; Liber Linteus; Tarquinia/Cerveteri tombs; main deities; Roman accounts of the discipline and haruspices; 2021 aDNA local origin.
+- Not supported: Lydian migration; decipherments via modern languages; divination as effective prediction; lituus-crosier derivation.
+- Open: Liber Linteus; Mesopotamian link; native vs borrowed gods; Campo della Fiera = Fanum Voltumnae; darkening tomb imagery; persona/phersu.
+- Placed in era 03 (Early Iron Age), from the Villanovan origins; the chapter runs to the Roman absorption.

@@ -482,6 +482,11 @@ window.ARCHIVE = {
       era: "02-bronze-age", eraLabel: "Bronze Age · The Olmec",
       status: "published", pending: true,
       source: "eras/02-bronze-age/ch76-olmec-bronze-age.md",
-      summary: "The first great art of Mesoamerica, c. 1600–400 BCE: offerings thrown into the sacred spring at El Manatí, with the world’s oldest rubber balls and the bones of newborn children; the colossal heads and throne-altars of San Lorenzo and La Venta; serpentine mosaics and jade figurines buried where no one would see them; the were-jaguar, the Olmec Dragon and the Maize God; rain-making in the cave of Chalcatzingo; and the earliest cacao and ballgame. With the ‘mother culture’ debate, the contested Cascajal block and the ‘African Olmec’ claim weighed against the evidence." }
+      summary: "The first great art of Mesoamerica, c. 1600–400 BCE: offerings thrown into the sacred spring at El Manatí, with the world’s oldest rubber balls and the bones of newborn children; the colossal heads and throne-altars of San Lorenzo and La Venta; serpentine mosaics and jade figurines buried where no one would see them; the were-jaguar, the Olmec Dragon and the Maize God; rain-making in the cave of Chalcatzingo; and the earliest cacao and ballgame. With the ‘mother culture’ debate, the contested Cascajal block and the ‘African Olmec’ claim weighed against the evidence." },
+    { id: "ch77", title: "The Etruscans", kind: "tradition",
+      era: "03-early-iron-age", eraLabel: "Early Iron Age · The Etruscans",
+      status: "published", pending: true,
+      source: "eras/03-early-iron-age/ch77-etruscans-early-iron-age.md",
+      summary: "The people Rome called the most devoted to religion: the ‘Etruscan discipline’ revealed by the child-sage Tages and the prophetess Vegoia; the bronze Liver of Piacenza, a sheep’s liver mapped as the sixteen regions of the sky; lightning lore and the sacred templum; Tinia, Uni and Menrva, forerunners of Rome’s Capitoline gods; the gold Pyrgi tablets that make Uni and Astarte one goddess; the linen ritual book that ended up wrapping an Egyptian mummy; painted tombs of banquets and death demons; and the ten ages allotted to their nation. With ancient DNA settling the origins debate and ‘decipherments’ weighed against the evidence." }
   ]
 };
