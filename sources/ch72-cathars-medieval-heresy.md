@@ -1,0 +1,24 @@
+# Sources — Chapter 72: The Cathars & Medieval Heresy
+
+Per the project sourcing standard. Nearly all evidence comes from the persecutors; the chapter uses the surviving Cathar texts, reports the Moore/Pegg revisionist debate without resolving it, and separates the modern Grail and 'Cathar Country' legends from the record.
+
+## Sources cited
+- **Catharism: beliefs, perfects and believers, the consolamentum** — "Catharism," Wikipedia. https://en.wikipedia.org/wiki/Catharism ; World History Encyclopedia, "Cathars." https://www.worldhistory.org/Cathars/ ; "Credentes," Wikipedia. https://en.wikipedia.org/wiki/Credentes ; Encyclopaedia Iranica, "Cathars, Albigensians, and Bogomils." https://www.iranicaonline.org/articles/cathars-albigensians-and-bogomils/
+- **The Albigensian Crusade and Béziers** — Britannica, "Albigensian Crusade." https://www.britannica.com/event/Albigensian-Crusade ; "Albigensian Crusade," Wikipedia. https://en.wikipedia.org/wiki/Albigensian_Crusade ; "Arnaud Amalric," Wikipedia. https://en.wikipedia.org/wiki/Arnaud_Amalric ; A. Holt, "The Medieval Origins of a Modern Phrase." https://apholt.com/2014/12/01/the-medieval-origins-of-a-modern-phrase-killem-all-let-god-sortem-out/
+- **Montségur (1244)** — "Siege of Montségur," Wikipedia. https://en.wikipedia.org/wiki/Siege_of_Monts%C3%A9gur
+- **Cathar texts** — "Book of the Secret Supper," Wikipedia. https://en.wikipedia.org/wiki/Book_of_the_Secret_Supper ; Gnostic Society Library, "Cathar Texts and Rituals." http://www.gnosis.org/library/cathtx.htm ; "Rite of Lyon," Wikipedia. https://en.wikipedia.org/wiki/Rite_of_Lyon ; Gnostic Society Library, "The Book of the Two Principles." http://www.gnosis.org/library/cathar-two-principles.htm
+- **The historiographical debate (Moore, Pegg)** — Harvard University Press, R. I. Moore, *The War on Heresy*. https://www.hup.harvard.edu/books/9780674416895 ; Reviews in History, "The War on Heresy." https://reviews.history.ac.uk/review/1546/ ; review of A. Sennis (ed.), *Cathars in Question*, Project MUSE. https://muse.jhu.edu/article/745477/pdf ; "Historiography of heresy: The debate over 'Catharism' in medieval Languedoc," ResearchGate. https://www.researchgate.net/publication/328584650
+- **Saint-Félix (1167) and the Bogomils** — "Council of Saint-Félix," Wikipedia. https://en.wikipedia.org/wiki/Council_of_Saint-F%C3%A9lix ; B. Hamilton, "The Cathar council of Saint-Félix reconsidered." https://heyjoe.fbk.eu/index.php/afp/article/download/12098/12099/12105 ; "Nicetas (Bogomil bishop)," Wikipedia. https://en.wikipedia.org/wiki/Nicetas_(Bogomil_bishop)
+- **The inquisition** — "Medieval Inquisition," Wikipedia. https://en.wikipedia.org/wiki/Medieval_Inquisition ; "Ad abolendam," Wikipedia. https://en.wikipedia.org/wiki/Ad_abolendam ; "Inquisition in France," Wikipedia. https://en.wikipedia.org/wiki/Inquisition_in_France ; "Pope Gregory IX," Wikipedia. https://en.wikipedia.org/wiki/Pope_Gregory_IX
+- **The Fournier register and Montaillou** — "Fournier Register," Wikipedia. https://en.wikipedia.org/wiki/Fournier_Register ; "Montaillou (book)," Wikipedia. https://en.wikipedia.org/wiki/Montaillou_(book)
+- **The Waldensians** — "Waldensians," Wikipedia. https://en.wikipedia.org/wiki/Waldensians ; "Peter Waldo," Wikipedia. https://en.wikipedia.org/wiki/Peter_Waldo ; Musée protestant, "A History of the Waldensians." https://museeprotestant.org/en/notice/a-history-of-the-waldensians/
+- **Marguerite Porete, the beguines and the Free Spirit** — "Marguerite Porete," Wikipedia. https://en.wikipedia.org/wiki/Marguerite_Porete ; "Brethren of the Free Spirit," Wikipedia. https://en.wikipedia.org/wiki/Brethren_of_the_Free_Spirit
+- **Spiritual Franciscans and Fraticelli** — "Spiritual Franciscanism," Wikipedia. https://en.wikipedia.org/wiki/Spiritual_Franciscanism ; "Fraticelli," Wikipedia. https://en.wikipedia.org/wiki/Fraticelli
+- **Wyclif, the Lollards and Hus** — Britannica, "Lollards." https://www.britannica.com/topic/Lollards ; "Lollardy," Wikipedia. https://en.wikipedia.org/wiki/Lollardy ; "Jan Hus," Wikipedia. https://en.wikipedia.org/wiki/Jan_Hus
+- **Otto Rahn, the Grail myth and "Cathar Country"** — "Otto Rahn," Wikipedia. https://en.wikipedia.org/wiki/Otto_Rahn ; "Cathar castles," Wikipedia. https://en.wikipedia.org/wiki/Cathar_castles
+
+## Notes
+- Well-supported: dissenting dualist groups attested in their own texts; consolamentum and perfects; the crusade, Béziers, burnings; the inquisition and Fournier register; Montségur; Waldensians, Porete, Wyclif, Hus.
+- Not supported: Arnaud's 'Kill them all' (second-hand, decades later); Cathar Grail/treasure/bloodline; today's castles as Cathar buildings; dove/Occitan cross as Cathar symbols; Free Spirit as a proven sect.
+- Open: how organized/uniform the Cathar church was; Bogomil links and Saint-Félix; the endura; numbers.
+- Placed in era 07 (High Medieval). Complements ch17 and ch55 on dualism and ch32 on persecution.

@@ -1182,6 +1182,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><circle cx="100" cy="92" r="40" stroke="currentColor" stroke-width="1.4"/><path d="M60 92 A20 20 0 0 1 100 92 A20 20 0 0 0 140 92" stroke="currentColor" stroke-width="1.4"/><path d="M60 92 A40 40 0 0 0 140 92" fill="currentColor" opacity="0.16"/><g stroke="currentColor" stroke-width="3"><path d="M34 38 L52 56 M30 42 L48 60 M26 46 L44 64"/><path d="M148 56 L156 48 M160 44 L168 36 M152 60 L170 42 M156 64 L164 56 M168 52 L174 46"/><path d="M26 138 L34 146 M38 150 L44 156 M30 134 L48 152 M34 130 L42 138 M46 142 L52 148"/><path d="M148 152 L166 134 M152 156 L160 148 M164 144 L170 138 M156 160 L174 142"/></g><circle cx="78" cy="170" r="3" fill="currentColor"/><path d="M92 170 L112 170 M126 160 L126 180" stroke="currentColor" stroke-width="2.2"/></svg>',
       "Interpretive illustration",
       "The taegeuk, the yin–yang circle at the centre of the South Korean flag, with the four trigrams for heaven, earth, water and fire, above the three basic vowel strokes of Hangul, which its 1446 commentary explains as heaven (a dot), earth (a horizontal line) and humanity (a vertical line). An original, interpretive drawing."
+    ),
+
+    /* Ch72 — The Cathars: the book on the head, and the peak of Montségur */
+    "ch72": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M22 160 L60 118 L78 128 L100 70 L122 128 L140 116 L178 160 Z" stroke="currentColor" stroke-width="1.3"/><path d="M92 74 L92 62 L96 62 L96 58 L104 58 L104 62 L108 62 L108 74" stroke="currentColor" stroke-width="1.1"/><rect x="76" y="26" width="48" height="30" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M100 26 L100 56 M82 34 L96 34 M82 40 L96 40 M82 46 L96 46 M104 34 L118 34 M104 40 L118 40 M104 46 L118 46" stroke="currentColor" stroke-width="0.8" opacity="0.7"/><g stroke="currentColor" stroke-width="1" opacity="0.6"><path d="M40 178 C44 170 48 170 52 178 M60 178 C64 168 68 168 72 178 M128 178 C132 168 136 168 140 178 M148 178 C152 170 156 170 160 178"/></g></svg>',
+      "Interpretive illustration",
+      "An open book, the Gospel of John laid on the head in the consolamentum, above the peak of Montségur, where some two hundred good men and women were burned in 1244. An original, interpretive drawing; the Cathars left no emblem of their own."
     )
 
   };

@@ -7804,5 +7804,140 @@ window.CHAPTERS = {
         <li>Religion in South Korea today (2015 census) — "Religion in South Korea," Wikipedia. <a href="https://en.wikipedia.org/wiki/Religion_in_South_Korea">https://en.wikipedia.org/wiki/Religion_in_South_Korea</a> ; U.S. Department of State, <em>2023 Report on International Religious Freedom: South Korea</em>. <a href="https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-korea">https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-korea</a></li>
       </ul>
     </div>
+  ` },
+  /* ------------------------------------------------------------------ ch72 */
+  ch72: { html: `
+    <p class="lead">On the morning of <strong>16 March 1244</strong>, the defenders of <strong>Montségur</strong>, a fortress on a limestone peak in the foothills of the Pyrenees, came down the mountain. The castle had surrendered after a siege of about ten months. The garrison was allowed to go free, but the heretics among them were given a choice: renounce their faith or burn. Some two hundred men and women, led by their bishop <strong>Bertrand Marty</strong>, refused. Some of the defenders who could have left chose instead to receive the heretics' only sacrament in the last days of the truce, so that they would die with them. They were burned together in an enclosure of stakes at the foot of the mountain. The Catholic chroniclers called them <strong>Cathars</strong>, heretics who believed that the visible world was made by an evil power. They called themselves the <strong>good men</strong> and <strong>good women</strong>, or simply <strong>good Christians</strong>. Who they really were, what they believed, and how far the Church's war on them created the very enemy it fought, are among the liveliest arguments in medieval history.</p>
+
+    <h2>A century of heresy</h2>
+
+    <p>Latin Christendom had known few popular heresies for centuries when, in the early eleventh century, groups accused of heresy began to appear: at Orléans in 1022, where canons were burned; at Arras, at Monforte in Italy, and elsewhere. From the twelfth century the accusations multiply. Three broad kinds of dissent run through the High and late Middle Ages:</p>
+
+    <ul>
+      <li><strong>Dualist</strong> movements, above all those later called <strong>Cathars</strong>, in southern France (Languedoc) and northern Italy.</li>
+      <li><strong>Evangelical</strong> movements of poverty and preaching, such as the <strong>Waldensians</strong>, who wanted to live like the apostles and read the Bible in their own language.</li>
+      <li><strong>Mystical</strong> and <strong>reforming</strong> movements: the beguines and the alleged "<strong>Free Spirit</strong>", the radical <strong>Spiritual Franciscans</strong>, and later <strong>Wyclif</strong> and the <strong>Lollards</strong> in England and <strong>Jan Hus</strong> in Bohemia.</li>
+    </ul>
+
+    <p>The Church's response, the crusade, the inquisition and the stake, shaped Europe as much as the heresies did.</p>
+
+    <h2>The good Christians of Languedoc</h2>
+
+    <p>In the second half of the twelfth century, in the towns and castles of <strong>Languedoc</strong>, the land between Toulouse, Carcassonne and the Pyrenees, a religious movement took root that the Church called heretical. Its members did not use the name "Cathar", which was coined by a German monk, <strong>Eckbert of Schönau</strong>, in the 1160s from the Greek for "pure"; in the south they were often called <strong>Albigensians</strong>, after the town of Albi. What is known of their beliefs comes mostly from their enemies, supplemented by a few texts of their own:</p>
+
+    <ul>
+      <li><strong>Two principles.</strong> The good God created the invisible, spiritual world. The visible, material world, with its bodies, lust and death, was the work of an evil principle, Satan or a fallen angel. Some Cathars held that the two principles were eternal and equal ("absolute" dualism); others, that the evil one was a creature who rebelled ("moderate" dualism).</li>
+      <li><strong>Souls as fallen angels.</strong> Human souls were spirits of heaven trapped in bodies, passing from body to body until they were freed.</li>
+      <li><strong>Christ.</strong> Christ was an angel or spirit sent to show the way home; he did not have a real material body, so he did not truly suffer or die on the cross, and the sacraments of matter, bread, wine and water, were empty.</li>
+      <li><strong>Rejection of the Church.</strong> The Catholic Church, with its wealth, its sacraments and its violence, was the church of the wicked. Many Cathars rejected the Old Testament God as the creator of the evil world.</li>
+    </ul>
+
+    <p>At the centre of the movement were the <strong>perfects</strong>, men and women (the term <em>perfecti</em> was the inquisitors' word) who had received the one sacrament, the <strong>consolamentum</strong>, and lived an austere life: no meat, eggs or cheese, no sexual relations, no oaths, no killing, frequent fasting, and a life of prayer and preaching, often working at a trade. Ordinary <strong>believers</strong> (<em>credentes</em>) lived normal lives, honoured the perfects with a ritual bow and blessing (the <em>melioramentum</em>), and hoped to receive the consolamentum on their deathbed. The perfects recited the <strong>Lord's Prayer</strong>, which only they were entitled to say, with the phrase "our supersubstantial bread".</p>
+
+    <h2>The consolamentum</h2>
+
+    <p>The <strong>consolamentum</strong>, "consolation", was baptism, ordination and last rites in one. A candidate who had been prepared was received in a house before believers. The officiating good man laid the <strong>Gospel of John</strong> on the candidate's head, while the others laid on their right hands, and prayed that the Holy Spirit, the Comforter, would come. The candidate promised to keep the rules of the good Christians for life. If he or she then sinned, the sacrament was lost, and had to be received again. This is why many believers waited until death was near. The <strong>endura</strong>, a fast unto death after the deathbed consolamentum, is recorded in some inquisition testimony from the last phase of the movement; how widespread it was, and whether it was a practice or an occasional act, is <strong>debated</strong>.</p>
+
+    <h2>Texts of their own</h2>
+
+    <p>Almost nothing written by the Cathars survives, because the inquisitors destroyed their books. Three important texts do:</p>
+
+    <ul>
+      <li>the <strong>Interrogatio Iohannis</strong>, "The Questions of John", also called the <strong>Secret Supper</strong>, a dialogue in which Jesus reveals to John at the Last Supper how Satan made the world. It came from the <strong>Bogomils</strong> of Bulgaria; a Cathar bishop brought it to Italy around 1190, and two Latin copies survive, one from the inquisition archive of Carcassonne;</li>
+      <li>the <strong>Ritual of Lyon</strong>, an Occitan manuscript of the fourteenth century that contains a complete Occitan New Testament and the ritual of the consolamentum and other rites;</li>
+      <li>the <strong>Book of the Two Principles</strong>, an Italian Cathar treatise of the mid-thirteenth century arguing for dualism from scripture and philosophy, discovered in a Florence library in 1939.</li>
+    </ul>
+
+    <h2>The crusade</h2>
+
+    <p>Preaching missions failed to win Languedoc back. In <strong>1208</strong> the papal legate <strong>Peter of Castelnau</strong> was murdered, and Pope <strong>Innocent III</strong> proclaimed a crusade against the heretics and their protectors, the first crusade against Christians in Christian lands. The <strong>Albigensian Crusade</strong> (1209–1229) was fought largely by northern French barons under <strong>Simon de Montfort</strong>, and ended with the lands of the counts of Toulouse passing to the French crown.</p>
+
+    <p>At <strong>Béziers</strong> in July <strong>1209</strong> the crusaders sacked the city and killed much of its population, Catholics as well as heretics, including people who had taken refuge in the churches. The papal legate <strong>Arnaud Amalric</strong> wrote to the pope that nearly 20,000 had been killed, certainly an exaggeration. The famous command attributed to him, "<strong>Kill them all; God will know his own</strong>", is reported only some decades later by the Cistercian writer <strong>Caesarius of Heisterbach</strong>, who says Arnaud "is said to have" spoken it; most historians regard it as doubtful. Mass burnings of heretics followed at Minerve (1210) and Lavaur (1211).</p>
+
+    <h2>The inquisition</h2>
+
+    <p>The crusade conquered territory; it did not end the heresy. The instrument that did was the <strong>inquisition</strong>. In 1184 the decree <em>Ad abolendam</em> had ordered bishops to seek out heretics; the <strong>Fourth Lateran Council</strong> of 1215 set out procedures; and from <strong>1231–1233</strong> Pope <strong>Gregory IX</strong> began commissioning special inquisitors, mostly <strong>Dominican</strong> friars, answerable to the papacy. The inquisitors of Toulouse and Carcassonne interrogated whole districts, recorded thousands of depositions, imposed penances (wearing yellow crosses, pilgrimages, imprisonment) and handed the unrepentant over to the secular power to be burned.</p>
+
+    <p>The fall of Montségur in 1244 broke the organized church. A last revival led by the notary <strong>Pèire Autier</strong> around 1300 was hunted down; Autier was burned in 1310, and the last known good man of Languedoc, <strong>Guillaume Bélibaste</strong>, in 1321. The register of <strong>Jacques Fournier</strong>, bishop of Pamiers and later Pope Benedict XII, who questioned the villagers of <strong>Montaillou</strong> and its region between 1318 and 1325, survives in the Vatican. It is one of the richest records of peasant life in medieval Europe, and the historian <strong>Emmanuel Le Roy Ladurie</strong> built his celebrated <em>Montaillou</em> (1975) on it.</p>
+
+    <h2>The poor and the mystics</h2>
+
+    <p>Other dissenters were condemned for different reasons.</p>
+
+    <ul>
+      <li><strong>The Waldensians.</strong> About 1170 <strong>Valdès</strong> (later called Peter Waldo), a rich merchant of Lyon, had parts of the Bible translated into the vernacular, gave away his property, and began preaching poverty. Forbidden to preach without licence, his followers, the <strong>Poor of Lyon</strong>, refused to stop, and were condemned in 1184. They rejected oaths, the death penalty and prayers for the dead, and survived in hidden communities in the Alps and elsewhere, joining the Reformation in 1532. A Waldensian church still exists in Italy.</li>
+      <li><strong>The beguines and the "Free Spirit".</strong> Beguines were laywomen who lived religious lives without taking vows. One of them, <strong>Marguerite Porete</strong>, wrote <em>The Mirror of Simple Souls</em>, about the soul "annihilated" in the love of God. She was burned in Paris on <strong>1 June 1310</strong> for refusing to withdraw it. The <strong>Council of Vienne</strong> (1311–1312) condemned beguines and the errors of a supposed sect of the "<strong>Free Spirit</strong>" said to teach that the perfect soul was beyond sin. Whether such a sect existed, or was largely constructed from misread mystical writings, is <strong>debated</strong>. Porete's book survived anonymously and was read for centuries as an orthodox work.</li>
+      <li><strong>The Spiritual Franciscans and Fraticelli</strong>, who insisted on the absolute poverty of Christ and the apostles, were condemned by the papacy; some were burned.</li>
+      <li><strong>Wyclif, the Lollards and Hus.</strong> The Oxford theologian <strong>John Wyclif</strong> (d. 1384) attacked the wealth of the Church and the doctrine of transubstantiation and inspired an English Bible translation; his followers, the <strong>Lollards</strong>, were persecuted. In Bohemia <strong>Jan Hus</strong>, influenced by Wyclif, was burned at the <strong>Council of Constance</strong> on <strong>6 July 1415</strong>, despite a promise of safe conduct, and his death sparked the Hussite wars. These movements are the bridge to <strong>the Reformation</strong> (ch31).</li>
+    </ul>
+
+    <h2>The believer's lens</h2>
+
+    <p>For the good Christians themselves, the evidence of their own texts and of the depositions suggests a faith of great seriousness: the true Church was the persecuted one, as Christ had foretold; the good men and women lived as the apostles did, in poverty and purity; and the consolamentum restored the fallen soul to its heavenly spirit. They believed they were the real Christians and the Church of Rome the church of the wolf. Waldensians and Hussites saw themselves as reformers returning to the Gospel; Protestant and Czech traditions later honoured them as forerunners. Marguerite Porete wrote as a mystic seeking union with God. For the medieval Church, by contrast, heresy was a disease that killed souls, and the inquisitors believed they were saving those they could and protecting the faithful from the rest. The archive reports both perspectives as belief.</p>
+
+    <h2>The skeptical lens</h2>
+
+    <p>The historian's central problem is that nearly all the evidence comes <strong>from the persecutors</strong>: polemical treatises, sermons, and inquisitors' records of interrogations shaped by their questions and by fear. Since about 1990 historians have argued fiercely about what that means.</p>
+
+    <ul>
+      <li><strong>The traditional view</strong>, represented by scholars such as Malcolm Barber, Bernard Hamilton and Malcolm Lambert, holds that Catharism was a real, organized dualist church with bishops and dioceses, connected to the Bogomils of the Balkans, who were themselves connected to earlier dualists.</li>
+      <li><strong>The revisionist view</strong>, argued by <strong>R. I. Moore</strong> (<em>The War on Heresy</em>, 2012) and <strong>Mark Gregory Pegg</strong> (<em>The Corruption of Angels</em>), holds that the idea of an international Cathar counter-church was largely constructed by churchmen, who joined scattered local dissenters into a single enemy, projected onto them an old model of dualist heresy, and used the fight against it to extend their power. For Pegg, the "good men" of Languedoc were a local religious culture, not a branch of an international church.</li>
+      <li><strong>The key disputed document</strong> is the record of a Cathar "council" at <strong>Saint-Félix</strong> in 1167, where a Bogomil bishop, <strong>Nicetas</strong>, is said to have organized Cathar dioceses. It survives only in a seventeenth-century printed copy of a lost manuscript. Many scholars accept it; others suspect it.</li>
+    </ul>
+
+    <p>Most specialists now take a middle position: the good men were real, their dualism is attested in their own texts, and there were contacts with the Balkans; but the inquisitors' image of a single, uniform "Cathar church" was partly their own creation, and local belief was more varied.</p>
+
+    <p>The popular afterlife of the Cathars is another matter. Nineteenth-century Occitan regionalists and Protestant writers made them heroes of freedom; the German writer <strong>Otto Rahn</strong> claimed in <em>Crusade Against the Grail</em>, published in the 1930s, that Montségur was the Grail castle and the Cathars the Grail's guardians, and later joined the SS; the "Cathar treasure" smuggled out of Montségur, reported in inquisition testimony as money, became a legend of the Grail or of secret knowledge. The claim that the Cathars possessed the Holy Grail, or a secret bloodline of Christ, has no historical basis. Many of the dramatic "<strong>Cathar castles</strong>" visited by tourists today were rebuilt as royal French fortresses after the crusade; "Cathar Country" is a modern heritage brand.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>The Gospel of John as sacrament.</strong> Laying the book itself on the candidate's head in the consolamentum made the text, above all its prologue ("In the beginning was the Word"), the material vehicle of the Spirit in a religion that distrusted matter. The Ritual of Lyon's Occitan New Testament shows the good Christians reading scripture in their own tongue.</li>
+      <li><strong>The yellow cross.</strong> Penitent heretics were made to wear two large <strong>yellow crosses</strong>, sewn on the chest and back of their clothes, for years or for life: a sign of shame imposed by the inquisition, encoding a sentence in cloth.</li>
+      <li><strong>The dove.</strong> In modern Languedoc the <strong>dove</strong> is widely used as a "Cathar" emblem, and the so-called "Occitan cross" appears on flags and souvenirs. Neither is attested as a medieval Cathar symbol; the Cathars, who rejected the cross as an instrument of torture, left no known emblem of their own.</li>
+      <li><strong>"Supersubstantial bread".</strong> The Cathar Lord's Prayer used the phrase <em>panem supersubstantialem</em> from the Latin of Matthew 6:11, understood as the spiritual bread of the word, not material bread: a single word bearing a theology.</li>
+      <li><strong>The Secret Supper's cosmology.</strong> The Interrogatio Iohannis encodes dualism in a story: Satan, once steward of heaven, fell, made the visible world and the human body from clay, and imprisoned angels in them.</li>
+      <li><strong>The pyre.</strong> The public burning of heretics, with its ritual of sentence, handing over to the secular arm and execution, was a staged theology of purification by fire.</li>
+      <li><strong>The Mirror's seven stages.</strong> Marguerite Porete described the soul's ascent in seven stages, ending in the soul's "annihilation" in God, a numbered symbolic map of mystical union like many in medieval mysticism.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The dualism of the good Christians belongs to a long family: the Gnostics of <strong>ch17</strong>, the <strong>Manichaeans</strong> of ch55 (medieval writers called the Cathars "Manichees") and the Bogomils, whose links with them are traced and questioned here. The crusade and the inquisition belong to the world of <strong>Scholasticism</strong> (ch28), whose friars and theologians ran them, and they built the machinery later turned on witches in <strong>The Witch Trials</strong> (ch32). The Waldensians, Lollards and Hussites lead to <strong>the Reformation</strong> (ch31). Porete's mysticism of annihilation in God can be compared with <strong>Sufism</strong> (ch27) and <strong>Kabbalah</strong> (ch26). The Grail legends attached to Montségur belong to the story of the <strong>Holy Grail</strong> in the Vault (V14), and the modern fascination with the Cathars to the occult revival of <strong>ch37</strong>.</p>
+
+    <div class="evidence" id="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The existence of dissenting religious groups in Languedoc and northern Italy in the twelfth and thirteenth centuries, whose dualist beliefs are attested in their own surviving texts (the Interrogatio Iohannis, the Ritual of Lyon, the Book of the Two Principles) as well as by their opponents; the consolamentum and the life of the perfects; the Albigensian Crusade (1209–1229), the massacre at Béziers and the mass burnings; the inquisition and its records, including the Fournier register; the fall of Montségur (1244); the Waldensians, the condemnation of Porete (1310), Wyclif and the Lollards, and the burning of Hus (1415).</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>That Arnaud Amalric said "Kill them all, God will know his own" (reported decades later, second-hand); that the Cathars held the Holy Grail, a secret treasure of knowledge or a bloodline of Christ; that the "Cathar castles" as seen today are Cathar buildings; that the dove or the Occitan cross was a Cathar symbol; that the Free Spirit was a proven organized sect.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>How organized and uniform the Cathar church was, and how far the inquisitors constructed it (Moore and Pegg against the traditional view); the extent of Bogomil influence and the authenticity of the Saint-Félix document; the practice of the endura; and the numbers of believers and of victims.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Catharism: beliefs, perfects and believers, the consolamentum — "Catharism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Catharism">https://en.wikipedia.org/wiki/Catharism</a> ; World History Encyclopedia, "Cathars." <a href="https://www.worldhistory.org/Cathars/">https://www.worldhistory.org/Cathars/</a> ; "Credentes," Wikipedia. <a href="https://en.wikipedia.org/wiki/Credentes">https://en.wikipedia.org/wiki/Credentes</a> ; Encyclopaedia Iranica, "Cathars, Albigensians, and Bogomils." <a href="https://www.iranicaonline.org/articles/cathars-albigensians-and-bogomils/">https://www.iranicaonline.org/articles/cathars-albigensians-and-bogomils/</a></li>
+        <li>The Albigensian Crusade and Béziers — Britannica, "Albigensian Crusade." <a href="https://www.britannica.com/event/Albigensian-Crusade">https://www.britannica.com/event/Albigensian-Crusade</a> ; "Albigensian Crusade," Wikipedia. <a href="https://en.wikipedia.org/wiki/Albigensian_Crusade">https://en.wikipedia.org/wiki/Albigensian_Crusade</a> ; "Arnaud Amalric," Wikipedia. <a href="https://en.wikipedia.org/wiki/Arnaud_Amalric">https://en.wikipedia.org/wiki/Arnaud_Amalric</a> ; A. Holt, "The Medieval Origins of a Modern Phrase." <a href="https://apholt.com/2014/12/01/the-medieval-origins-of-a-modern-phrase-killem-all-let-god-sortem-out/">https://apholt.com/2014/12/01/the-medieval-origins-of-a-modern-phrase-killem-all-let-god-sortem-out/</a></li>
+        <li>Montségur (1244) — "Siege of Montségur," Wikipedia. <a href="https://en.wikipedia.org/wiki/Siege_of_Monts%C3%A9gur">https://en.wikipedia.org/wiki/Siege_of_Monts%C3%A9gur</a></li>
+        <li>Cathar texts — "Book of the Secret Supper," Wikipedia. <a href="https://en.wikipedia.org/wiki/Book_of_the_Secret_Supper">https://en.wikipedia.org/wiki/Book_of_the_Secret_Supper</a> ; Gnostic Society Library, "Cathar Texts and Rituals." <a href="http://www.gnosis.org/library/cathtx.htm">http://www.gnosis.org/library/cathtx.htm</a> ; "Rite of Lyon," Wikipedia. <a href="https://en.wikipedia.org/wiki/Rite_of_Lyon">https://en.wikipedia.org/wiki/Rite_of_Lyon</a> ; Gnostic Society Library, "The Book of the Two Principles." <a href="http://www.gnosis.org/library/cathar-two-principles.htm">http://www.gnosis.org/library/cathar-two-principles.htm</a></li>
+        <li>The historiographical debate (Moore, Pegg) — Harvard University Press, R. I. Moore, <em>The War on Heresy</em>. <a href="https://www.hup.harvard.edu/books/9780674416895">https://www.hup.harvard.edu/books/9780674416895</a> ; Reviews in History, "The War on Heresy." <a href="https://reviews.history.ac.uk/review/1546/">https://reviews.history.ac.uk/review/1546/</a> ; review of A. Sennis (ed.), <em>Cathars in Question</em>, Project MUSE. <a href="https://muse.jhu.edu/article/745477/pdf">https://muse.jhu.edu/article/745477/pdf</a> ; "Historiography of heresy: The debate over 'Catharism' in medieval Languedoc," ResearchGate. <a href="https://www.researchgate.net/publication/328584650">https://www.researchgate.net/publication/328584650</a></li>
+        <li>Saint-Félix (1167) and the Bogomils — "Council of Saint-Félix," Wikipedia. <a href="https://en.wikipedia.org/wiki/Council_of_Saint-F%C3%A9lix">https://en.wikipedia.org/wiki/Council_of_Saint-F%C3%A9lix</a> ; B. Hamilton, "The Cathar council of Saint-Félix reconsidered." <a href="https://heyjoe.fbk.eu/index.php/afp/article/download/12098/12099/12105">https://heyjoe.fbk.eu/index.php/afp/article/download/12098/12099/12105</a> ; "Nicetas (Bogomil bishop)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Nicetas_(Bogomil_bishop)">https://en.wikipedia.org/wiki/Nicetas_(Bogomil_bishop)</a></li>
+        <li>The inquisition — "Medieval Inquisition," Wikipedia. <a href="https://en.wikipedia.org/wiki/Medieval_Inquisition">https://en.wikipedia.org/wiki/Medieval_Inquisition</a> ; "Ad abolendam," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ad_abolendam">https://en.wikipedia.org/wiki/Ad_abolendam</a> ; "Inquisition in France," Wikipedia. <a href="https://en.wikipedia.org/wiki/Inquisition_in_France">https://en.wikipedia.org/wiki/Inquisition_in_France</a> ; "Pope Gregory IX," Wikipedia. <a href="https://en.wikipedia.org/wiki/Pope_Gregory_IX">https://en.wikipedia.org/wiki/Pope_Gregory_IX</a></li>
+        <li>The Fournier register and Montaillou — "Fournier Register," Wikipedia. <a href="https://en.wikipedia.org/wiki/Fournier_Register">https://en.wikipedia.org/wiki/Fournier_Register</a> ; "Montaillou (book)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Montaillou_(book)">https://en.wikipedia.org/wiki/Montaillou_(book)</a></li>
+        <li>The Waldensians — "Waldensians," Wikipedia. <a href="https://en.wikipedia.org/wiki/Waldensians">https://en.wikipedia.org/wiki/Waldensians</a> ; "Peter Waldo," Wikipedia. <a href="https://en.wikipedia.org/wiki/Peter_Waldo">https://en.wikipedia.org/wiki/Peter_Waldo</a> ; Musée protestant, "A History of the Waldensians." <a href="https://museeprotestant.org/en/notice/a-history-of-the-waldensians/">https://museeprotestant.org/en/notice/a-history-of-the-waldensians/</a></li>
+        <li>Marguerite Porete, the beguines and the Free Spirit — "Marguerite Porete," Wikipedia. <a href="https://en.wikipedia.org/wiki/Marguerite_Porete">https://en.wikipedia.org/wiki/Marguerite_Porete</a> ; "Brethren of the Free Spirit," Wikipedia. <a href="https://en.wikipedia.org/wiki/Brethren_of_the_Free_Spirit">https://en.wikipedia.org/wiki/Brethren_of_the_Free_Spirit</a></li>
+        <li>Spiritual Franciscans and Fraticelli — "Spiritual Franciscanism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Spiritual_Franciscanism">https://en.wikipedia.org/wiki/Spiritual_Franciscanism</a> ; "Fraticelli," Wikipedia. <a href="https://en.wikipedia.org/wiki/Fraticelli">https://en.wikipedia.org/wiki/Fraticelli</a></li>
+        <li>Wyclif, the Lollards and Hus — Britannica, "Lollards." <a href="https://www.britannica.com/topic/Lollards">https://www.britannica.com/topic/Lollards</a> ; "Lollardy," Wikipedia. <a href="https://en.wikipedia.org/wiki/Lollardy">https://en.wikipedia.org/wiki/Lollardy</a> ; "Jan Hus," Wikipedia. <a href="https://en.wikipedia.org/wiki/Jan_Hus">https://en.wikipedia.org/wiki/Jan_Hus</a></li>
+        <li>Otto Rahn, the Grail myth and "Cathar Country" — "Otto Rahn," Wikipedia. <a href="https://en.wikipedia.org/wiki/Otto_Rahn">https://en.wikipedia.org/wiki/Otto_Rahn</a> ; "Cathar castles," Wikipedia. <a href="https://en.wikipedia.org/wiki/Cathar_castles">https://en.wikipedia.org/wiki/Cathar_castles</a></li>
+      </ul>
+    </div>
   ` }
 };
