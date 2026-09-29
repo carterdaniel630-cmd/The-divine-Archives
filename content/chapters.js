@@ -7402,5 +7402,157 @@ window.CHAPTERS = {
         <li>Ezana's campaign and the end of Meroë — "Ezana Stone," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ezana_Stone">https://en.wikipedia.org/wiki/Ezana_Stone</a> ; G. Hatke, <em>Aksum and Nubia</em> (2013), ISAW. <a href="https://dlib.nyu.edu/awdl/isaw/hatke2013-aksum-and-nubia/">https://dlib.nyu.edu/awdl/isaw/hatke2013-aksum-and-nubia/</a></li>
       </ul>
     </div>
+  ` },
+  /* ------------------------------------------------------------------ ch69 */
+  ch69: { html: `
+    <p class="lead">King <strong>Janaka</strong> of Videha, the story goes, was holding a great sacrifice with rich fees, and the learned brahmins of the Kuru and Pañcāla lands had come to it. He had a thousand cows penned, with gold tied to the horns of each, and announced that they would go to the most learned of the brahmins present. None dared claim them, until <strong>Yājñavalkya</strong> told his pupil to drive them home. The others were outraged and challenged him one after another. A woman, <strong>Gārgī Vācaknavī</strong>, pressed him so hard on what the world was "woven upon", warp and woof, that he warned her not to question too far, lest her head fall off; she came back later with two questions she compared to arrows, and was answered with the <strong>imperishable</strong> (<em>akṣara</em>), which "is not coarse, not fine, not short, not long", and on which space itself is woven. The scene is told in the <strong>Bṛhadāraṇyaka Upaniṣad</strong>, one of the two oldest Upanishads. It captures the new thing happening in north India in the middle of the first millennium BCE: priests and kings, and at least one woman, arguing not about how to perform the sacrifice, but about what lies behind it, and behind the self who performs it.</p>
+
+    <h2>After the Veda</h2>
+
+    <p>The four <strong>Vedas</strong> (ch05) were collections of hymns, chants and ritual formulas for the fire sacrifice, with prose manuals, the <strong>Brāhmaṇas</strong>, explaining the rites. The <strong>Upaniṣads</strong> began as the last layers of that literature, attached to particular Vedic schools, and so were later called <strong>Vedānta</strong>, "the end of the Veda". The word <em>upaniṣad</em> is usually explained as "sitting down near" a teacher, or as "hidden connection", correspondence, since the texts are full of equations between ritual, cosmos and person.</p>
+
+    <p>The oldest, the <strong>Bṛhadāraṇyaka</strong> and the <strong>Chāndogya</strong>, are usually dated to about the seventh to sixth centuries BCE, before the Buddha; the <strong>Taittirīya</strong>, <strong>Aitareya</strong> and <strong>Kauṣītaki</strong> are also early; verse Upanishads such as the <strong>Kaṭha</strong>, <strong>Īśā</strong>, <strong>Śvetāśvatara</strong> and <strong>Muṇḍaka</strong> are later, and the brief <strong>Māṇḍūkya</strong> later still. The Indologist Patrick Olivelle warns that any dating of these texts "that attempts a precision closer than a few centuries is as stable as a house of cards". Later tradition recognizes 108 Upanishads, many of them medieval; about a dozen "principal" ones are the common core.</p>
+
+    <h2>Ātman and Brahman</h2>
+
+    <p>The Upanishads do not teach one system. They record many teachers, with different answers. But a few ideas run through them and became the foundation of much later Indian thought.</p>
+
+    <ul>
+      <li><strong>Brahman.</strong> In the Vedas <em>brahman</em> meant the power of the sacred formula. The Upanishads use it for the ultimate reality, the ground of everything that is.</li>
+      <li><strong>Ātman.</strong> The self: at first breath or body, then the innermost, unchanging subject, the one who sees but cannot be seen.</li>
+      <li><strong>Their identity.</strong> The most famous teaching is that these two are one. In the Chāndogya, the teacher <strong>Uddālaka Āruṇi</strong> instructs his son <strong>Śvetaketu</strong>: he has him dissolve salt in water overnight, then taste the water from the top, the middle and the bottom. The salt cannot be seen, but it is everywhere. So it is with the subtle essence of all things: "that is the self, <strong>that you are</strong>" (<em>tat tvam asi</em>, 6.8.7), repeated nine times. In the Bṛhadāraṇyaka, Yājñavalkya describes the self only by negation, <em>neti neti</em>, "not this, not this", because it cannot be grasped.</li>
+    </ul>
+
+    <p>The <em>tat tvam asi</em> sentence was later read in opposite ways. <strong>Advaita</strong> Vedānta (Śaṅkara, eighth century) took it as strict identity: the individual self is Brahman, and the world of separate things is appearance. Theistic Vedāntins such as <strong>Rāmānuja</strong> and <strong>Madhva</strong> read it as a relation between God and souls that are real and distinct. The Upanishads themselves allow both kinds of reading.</p>
+
+    <h2>Karma, rebirth and release</h2>
+
+    <p>The Upanishads are the earliest texts in which three ideas that became basic to Hindu, Buddhist and Jain thought appear together.</p>
+
+    <ul>
+      <li><strong>Rebirth.</strong> In the "<strong>doctrine of the five fires</strong>" (Chāndogya 5; Bṛhadāraṇyaka 6), taught by a king, <strong>Pravāhaṇa Jaivali</strong>, to a brahmin, the dead go up in the smoke of the funeral pyre and return to earth in rain, plants, food and semen; those who know follow the <strong>path of the gods</strong> and do not return, those who only sacrifice follow the <strong>path of the fathers</strong> and are born again.</li>
+      <li><strong>Karma.</strong> Yājñavalkya teaches that "as a man acts, as he behaves, so he becomes: doing good he becomes good, doing evil he becomes evil" (Bṛhadāraṇyaka 4.4.5). <em>Karma</em>, "action", once meant ritual action; here it becomes the moral law that shapes future lives.</li>
+      <li><strong>Liberation.</strong> Freedom from the cycle, <em>mokṣa</em>, comes through knowledge of the self. "He who knows 'I am Brahman' becomes this whole world" (Bṛhadāraṇyaka 1.4.10).</li>
+    </ul>
+
+    <p>That several of these teachings are given by <strong>kings</strong>, not priests, has led some scholars to argue that they came from outside brahmin circles. Others see literary convention. The same centuries saw the rise of the <strong>śramaṇa</strong> movements, wandering renouncers who rejected the Vedic sacrifice: the Buddha (ch11), Mahāvīra (ch52) and the Ājīvikas. How far the Upanishads and the śramaṇas shaped each other, and which came first, is <strong>debated</strong>.</p>
+
+    <h2>The epics and the Gītā</h2>
+
+    <p>Between about the fourth century BCE and the fourth century CE, two great Sanskrit epics took shape, both composed and expanded over centuries.</p>
+
+    <ul>
+      <li>The <strong>Mahābhārata</strong>, traditionally called the poem of "a hundred thousand verses" and often described as the longest poem in the world, tells of the war between two branches of a royal family, the Pāṇḍavas and the Kauravas, at <strong>Kurukṣetra</strong>. It is also an encyclopedia of dharma, with long teachings on duty, kingship and release.</li>
+      <li>The <strong>Rāmāyaṇa</strong>, attributed to the poet <strong>Vālmīki</strong>, tells of <strong>Rāma</strong>, prince of Ayodhya, exiled to the forest, whose wife <strong>Sītā</strong> is carried off by the demon king <strong>Rāvaṇa</strong> of Laṅkā and recovered with the help of the monkey <strong>Hanumān</strong>. Rāma became the model of the righteous king.</li>
+    </ul>
+
+    <p>Within the Mahābhārata stands the <strong>Bhagavad Gītā</strong>, "the Song of the Lord", usually dated to about the second or first century BCE. On the eve of battle the warrior <strong>Arjuna</strong> refuses to fight his own kin. His charioteer <strong>Kṛṣṇa</strong> answers him: the self does not die when the body dies; Arjuna must do his duty as a warrior, but act without attachment to the fruits of action (<em>niṣkāma karma</em>). The Gītā brings together the paths of <strong>action</strong>, <strong>knowledge</strong> and <strong>devotion</strong>, and in its eleventh chapter Kṛṣṇa reveals himself as the supreme God, a terrifying cosmic form in which all beings are created and devoured. It became the most commented-on text of Hinduism and a founding text of <strong>bhakti</strong> (ch30).</p>
+
+    <h2>Dharma: the law books</h2>
+
+    <p>A separate literature set out <strong>dharma</strong>, the right order of society and the duties of each person. The <strong>Dharmasūtras</strong> (roughly third to first centuries BCE) were followed by the verse <strong>Mānava Dharmaśāstra</strong>, the "<strong>Laws of Manu</strong>", composed around the second century BCE to the second century CE. It lays out:</p>
+
+    <ul>
+      <li>the four <strong>varṇas</strong>, brahmins, kṣatriyas, vaiśyas and śūdras, with their duties and their graded purity (the social reality of countless <em>jātis</em>, birth groups, was more complex than the fourfold scheme);</li>
+      <li>the four <strong>āśramas</strong> or stages of life: student, householder, forest-dweller, renouncer. Olivelle has argued that these began as alternative lifelong paths and were only later ordered as stages;</li>
+      <li>the four <strong>aims of life</strong> (<em>puruṣārtha</em>): dharma, wealth and power (<em>artha</em>), pleasure (<em>kāma</em>) and liberation (<em>mokṣa</em>).</li>
+    </ul>
+
+    <p>Manu is also severe: it subordinates women to fathers, husbands and sons, and prescribes harsh penalties for śūdras who offend brahmins. In 1927 the Dalit leader <strong>B. R. Ambedkar</strong> publicly burned a copy of Manu as a symbol of caste oppression. How far the text described actual practice, and how far it was a brahmin ideal, is <strong>debated</strong>.</p>
+
+    <h2>The six viewpoints</h2>
+
+    <p>Classical Indian philosophy organized itself into schools. Six that accepted the authority of the Veda came to be called the orthodox <strong>darśanas</strong>, "viewpoints":</p>
+
+    <ul>
+      <li><strong>Sāṃkhya</strong>, a dualism of pure consciousness (<em>puruṣa</em>) and matter (<em>prakṛti</em>) with its three qualities (<em>guṇas</em>);</li>
+      <li><strong>Yoga</strong>, the discipline of stilling the mind, systematized in the <strong>Yoga Sūtras</strong> attributed to Patañjali (dated variously, most often between the second century BCE and the fifth century CE), with its eight limbs from ethical restraints to absorption (<em>samādhi</em>);</li>
+      <li><strong>Nyāya</strong>, logic and the theory of valid knowledge;</li>
+      <li><strong>Vaiśeṣika</strong>, an atomist account of the categories of reality;</li>
+      <li><strong>Mīmāṃsā</strong>, the interpretation of the Vedic ritual commands, which held the Veda to be eternal and authorless and did not need a creator god;</li>
+      <li><strong>Vedānta</strong>, the interpretation of the Upanishads, organized around the <strong>Brahma Sūtras</strong> attributed to Bādarāyaṇa.</li>
+    </ul>
+
+    <p>They argued with each other, and with the Buddhists, Jains and materialists (the Cārvākas), for well over a thousand years.</p>
+
+    <h2>From fire altar to temple</h2>
+
+    <p>A religion centred on the fire sacrifice gradually became one centred on <strong>gods, images and temples</strong>.</p>
+
+    <ul>
+      <li>In about <strong>113 BCE</strong> a Greek ambassador, <strong>Heliodorus</strong>, from the Indo-Greek king Antialcidas, set up a pillar crowned by the bird <strong>Garuḍa</strong> at Besnagar in central India, dedicated to <strong>Vāsudeva</strong>, "god of gods", and called himself a <strong>Bhāgavata</strong>, a devotee. It is among the earliest inscriptions of devotion to Vāsudeva-Kṛṣṇa, and a Greek wrote it.</li>
+      <li>The <strong>Purāṇas</strong>, "ancient tales", composed from about the third to the tenth centuries CE and later, gathered myths of creation and destruction, genealogies of kings, and the deeds of <strong>Viṣṇu</strong>, <strong>Śiva</strong> and the <strong>Goddess</strong>, including Viṣṇu's <strong>avatāras</strong>, his descents to restore dharma.</li>
+      <li>Under the <strong>Gupta</strong> kings (fourth to sixth centuries CE) the first free-standing stone temples appear: small flat-roofed shrines such as Temple 17 at Sanchi, and then the <strong>Daśāvatāra temple at Deogarh</strong> (around 500 CE), with a tower over the sanctum and reliefs of Viṣṇu on the serpent Ananta. Worship with offerings to a sacred image, <strong>pūjā</strong>, became the everyday centre of religion.</li>
+    </ul>
+
+    <p>By the end of this period most of what is now called Hinduism was in place: the Vedas as the highest authority, rarely read; the Upanishadic ideas of self, karma and liberation; the epics and Purāṇas as the stories people actually knew; dharma as the order of society; and devotion to personal gods in temples and homes.</p>
+
+    <h2>The believer's lens</h2>
+
+    <p>For most Hindus the Vedas, including the Upanishads, are <strong>śruti</strong>, "what was heard": eternal truth perceived by ancient seers, not composed by human authors. The epics, Purāṇas and law books are <strong>smṛti</strong>, "what is remembered", authoritative but secondary. On this view the Upanishads do not invent ideas; they reveal what is always so: that the self in every creature is the same reality as the ground of the world, and that knowing this frees one from death and rebirth. The Gītā teaches how to live in the world meanwhile: do one's duty, without craving, as an offering to God. Kṛṣṇa and Rāma are divine descents into history, and the stories of the epics are, for many, sacred history. Hindus today understand these teachings in many ways, from the non-dualism of Advaita to the loving devotion of Vaiṣṇavas and Śaivas, and this diversity is itself part of the tradition's self-understanding.</p>
+
+    <h2>The skeptical lens</h2>
+
+    <p>The historian dates the texts to human authors over many centuries, and notes that the dating is <strong>uncertain</strong> by centuries. The Upanishads, epics and law books were composed and transmitted by a small, largely brahmin, male elite; what most people believed and did is much less documented.</p>
+
+    <p>Several popular claims go beyond the evidence:</p>
+
+    <ul>
+      <li><strong>Precise antiquity.</strong> Traditional chronology places the Mahābhārata war at the start of the present age, the <strong>Kali Yuga</strong>, in 3102 BCE, and some writers date it astronomically. Mainstream scholarship finds no archaeological or textual basis for these dates; the epics as we have them are much later compositions.</li>
+      <li><strong>Physical remains of epic events.</strong> The chain of shoals between India and Sri Lanka, <strong>Adam's Bridge</strong>, is identified in tradition with the causeway Rāma's army built (Rāma Setu). Geological study treats it as a natural formation; the claim that it is man-made has been voiced, including by a former Geological Survey official, but is not supported by published geological work.</li>
+      <li><strong>Ancient science.</strong> Claims that the Upanishads or Vedas anticipated quantum physics, modern cosmology or advanced technology read modern ideas into ancient texts; resemblances of phrasing are not scientific knowledge.</li>
+      <li><strong>The word "Hinduism".</strong> The name became common through British usage in the nineteenth century, and some scholars have argued that "Hinduism" as a single religion was a colonial construction. Others, such as David Lorenzen, argue that a recognizable Hindu religious identity existed well before colonial rule. The debate is <strong>open</strong>.</li>
+    </ul>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>Oṃ (AUM).</strong> The sacred syllable. The <strong>Māṇḍūkya Upaniṣad</strong> analyses it into three sounds, <strong>A</strong>, <strong>U</strong> and <strong>M</strong>, equated with the three states of waking, dreaming and dreamless sleep, and the silence after it with <strong>turīya</strong>, "the fourth", the pure self beyond them. A single syllable made a map of consciousness.</li>
+      <li><strong>The great sayings (mahāvākyas).</strong> Later Vedānta chose four sentences, one from each Veda, as the essence of the Upanishads: <em>prajñānam brahma</em>, "consciousness is Brahman" (Aitareya); <em>ahaṃ brahmāsmi</em>, "I am Brahman" (Bṛhadāraṇyaka); <em>tat tvam asi</em>, "that you are" (Chāndogya); <em>ayam ātmā brahma</em>, "this self is Brahman" (Māṇḍūkya).</li>
+      <li><strong>Correspondences.</strong> The Upanishads encode the world as a web of equations: the sun is the eye, the wind is the breath, the fire is speech, the horse of the royal horse sacrifice is the year and the cosmos (Bṛhadāraṇyaka 1.1). This is a systematic symbolism, not decoration.</li>
+      <li><strong>The Gāyatrī.</strong> The verse to the sun god Savitṛ (Ṛg Veda 3.62.10), in a metre of three lines of eight syllables, taught to young men at initiation and recited daily; the Bṛhadāraṇyaka (5.14) speaks of its "fourth foot", beyond the three spoken ones.</li>
+      <li><strong>The chariot.</strong> The <strong>Kaṭha Upaniṣad</strong> compares the self to the owner of a chariot, the body to the chariot, the intellect to the driver, the mind to the reins and the senses to the horses. The Gītā's scene of Arjuna and Kṛṣṇa in the chariot extends the image.</li>
+      <li><strong>Garuḍa and the avatāras.</strong> Garuḍa, Viṣṇu's eagle, was already the emblem of the Bhāgavatas at Besnagar. The ten <strong>avatāras</strong>, from fish and tortoise to Rāma, Kṛṣṇa and the coming Kalki, give a sacred history in a numbered series.</li>
+      <li><strong>The temple as cosmos.</strong> Hindu temple-building manuals treat the temple as a model of the universe and of the body of the god: the square ground plan is laid out on a sacred grid (the <em>vāstu-puruṣa-maṇḍala</em>), the tower is the world mountain, and the dark sanctum, <em>garbhagṛha</em>, is the "womb-house".</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The Upanishads grow out of the <strong>Vedic</strong> religion of ch05 and share their questions with the <strong>Buddhism</strong> of ch11 and the <strong>Jainism</strong> of ch52, which rejected the Vedas but accepted karma and rebirth. Yoga passed into <strong>Tantra</strong> (ch24) and <strong>Tibetan Buddhism</strong> (ch53), and the Gītā's devotion flowered in <strong>Bhakti</strong> (ch30) and, later, <strong>Sikhism</strong> (ch34). The Upanishadic teaching of an inner self one with the absolute has been compared with <strong>Neoplatonism</strong> and <strong>Sufism</strong> (ch27), with the Greek mystery religions (ch15, ch18), and with the perennialism of <strong>Theosophy</strong> (ch37) and the Western yoga movement (ch35). Its ideas of cyclical time and a cosmic sacrifice appear in <strong>Creation &amp; the First Order</strong> (ch46) and <strong>The End of Days</strong> (ch50), and its kings who teach the self belong to <strong>Sacred Kingship</strong> (ch49).</p>
+
+    <div class="evidence" id="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The existence, content and relative order of the principal Upanishads, with the Bṛhadāraṇyaka and Chāndogya earliest and probably pre-Buddhist; their teachings on ātman and Brahman, karma, rebirth and liberation, including the five-fires doctrine and <em>tat tvam asi</em>; the composition of the Mahābhārata, Rāmāyaṇa and Gītā over the last centuries BCE and first centuries CE; the content of Manu and the dharma literature; the six darśanas and their texts; the Heliodorus pillar (c. 113 BCE); the Gupta-era temples and the Purāṇas; and the later readings of the Upanishads by Śaṅkara, Rāmānuja and Madhva.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>Precise early dates for the texts; the dating of the Kurukṣetra war to 3102 BCE or any astronomical dating of epic events; Adam's Bridge as a built causeway; claims that the Upanishads or Vedas contain modern science. The belief that the Vedas are authorless and eternal (<em>śruti</em>), and that Kṛṣṇa and Rāma are divine descents, are <strong>faith claims</strong>, reported here as belief.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>The exact dates of the early Upanishads and the Gītā; whether the Upanishadic ideas of karma and rebirth arose inside brahmin circles, among the kṣatriyas, or in contact with the śramaṇa movements and the culture of the eastern Ganges; whether the āśramas began as alternatives or as stages; how far Manu described real society; and whether "Hinduism" was a unified religion before colonial rule.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>The Upanishads: dating (Bṛhadāraṇyaka and Chāndogya earliest; Olivelle's caution) and overview — "Upanishads," Wikipedia. <a href="https://en.wikipedia.org/wiki/Upanishads">https://en.wikipedia.org/wiki/Upanishads</a> ; "Brihadaranyaka Upanishad," Wikipedia. <a href="https://en.wikipedia.org/wiki/Brihadaranyaka_Upanishad">https://en.wikipedia.org/wiki/Brihadaranyaka_Upanishad</a> ; "Chandogya Upanishad," Wikipedia. <a href="https://en.wikipedia.org/wiki/Chandogya_Upanishad">https://en.wikipedia.org/wiki/Chandogya_Upanishad</a></li>
+        <li>Yājñavalkya, Gārgī and the debate at Janaka's court; <em>neti neti</em> — "Yajnavalkya," Wikipedia. <a href="https://en.wikipedia.org/wiki/Yajnavalkya">https://en.wikipedia.org/wiki/Yajnavalkya</a> ; "Bahudakshina Yajna," Wikipedia. <a href="https://en.wikipedia.org/wiki/Bahudakshina_Yajna">https://en.wikipedia.org/wiki/Bahudakshina_Yajna</a> ; "Debates in ancient India," Wikipedia. <a href="https://en.wikipedia.org/wiki/Debates_in_ancient_India">https://en.wikipedia.org/wiki/Debates_in_ancient_India</a></li>
+        <li><em>Tat tvam asi</em> and the salt in water (Chāndogya 6) — Chāndogya Upaniṣad 6.8.7, Wisdom Library. <a href="https://www.wisdomlib.org/hinduism/book/chandogya-upanishad-english/d/doc239302.html">https://www.wisdomlib.org/hinduism/book/chandogya-upanishad-english/d/doc239302.html</a> ; "Uddālaka Āruṇi," Wikipedia. <a href="https://en.wikipedia.org/wiki/Udd%C4%81laka_%C4%80ru%E1%B9%87i">https://en.wikipedia.org/wiki/Udd%C4%81laka_%C4%80ru%E1%B9%87i</a> ; "Mahāvākyas," Wikipedia. <a href="https://en.wikipedia.org/wiki/Mah%C4%81v%C4%81kyas">https://en.wikipedia.org/wiki/Mah%C4%81v%C4%81kyas</a></li>
+        <li>The five fires and two paths; karma in Bṛhadāraṇyaka 4.4.5 — "Panchagni Vidya," Wikipedia. <a href="https://en.wikipedia.org/wiki/Panchagni_Vidya">https://en.wikipedia.org/wiki/Panchagni_Vidya</a> ; "Pravahana Jaivali," Wikipedia. <a href="https://en.wikipedia.org/wiki/Pravahana_Jaivali">https://en.wikipedia.org/wiki/Pravahana_Jaivali</a> ; "Karma in Hinduism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Karma_in_Hinduism">https://en.wikipedia.org/wiki/Karma_in_Hinduism</a></li>
+        <li>The epics and the Gītā (dating, content) — "Mahabharata," Wikipedia. <a href="https://en.wikipedia.org/wiki/Mahabharata">https://en.wikipedia.org/wiki/Mahabharata</a> ; "Ramayana," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ramayana">https://en.wikipedia.org/wiki/Ramayana</a> ; "Bhagavad Gita," Wikipedia. <a href="https://en.wikipedia.org/wiki/Bhagavad_Gita">https://en.wikipedia.org/wiki/Bhagavad_Gita</a> ; "Bhagavad Gita," Britannica. <a href="https://www.britannica.com/topic/Bhagavad-Gita">https://www.britannica.com/topic/Bhagavad-Gita</a> ; World History Encyclopedia, "Bhagavad Gita." <a href="https://www.worldhistory.org/Bhagavad_Gita/">https://www.worldhistory.org/Bhagavad_Gita/</a></li>
+        <li>Manu, the āśramas and the puruṣārthas; Ambedkar — "Manusmriti," Wikipedia. <a href="https://en.wikipedia.org/wiki/Manusmriti">https://en.wikipedia.org/wiki/Manusmriti</a> ; "Puruṣārtha," Wikipedia. <a href="https://en.wikipedia.org/wiki/Puru%E1%B9%A3%C4%81rtha">https://en.wikipedia.org/wiki/Puru%E1%B9%A3%C4%81rtha</a></li>
+        <li>The six darśanas; the Yoga Sūtras; the Brahma Sūtras — "Yoga Sutras of Patanjali," Wikipedia. <a href="https://en.wikipedia.org/wiki/Yoga_Sutras_of_Patanjali">https://en.wikipedia.org/wiki/Yoga_Sutras_of_Patanjali</a> ; Internet Encyclopedia of Philosophy, "Yoga Sutras of Patanjali." <a href="https://iep.utm.edu/yoga/">https://iep.utm.edu/yoga/</a> ; Britannica, "Yoga-sutras." <a href="https://www.britannica.com/topic/Yoga-sutras">https://www.britannica.com/topic/Yoga-sutras</a></li>
+        <li>The Heliodorus pillar — "Heliodorus pillar," Wikipedia. <a href="https://en.wikipedia.org/wiki/Heliodorus_pillar">https://en.wikipedia.org/wiki/Heliodorus_pillar</a></li>
+        <li>Gupta temples and the Purāṇas — "Dashavatara Temple, Deogarh," Wikipedia. <a href="https://en.wikipedia.org/wiki/Dashavatara_Temple,_Deogarh">https://en.wikipedia.org/wiki/Dashavatara_Temple,_Deogarh</a> ; World History Encyclopedia, "Gupta Architecture." <a href="https://www.worldhistory.org/Gupta_Architecture/">https://www.worldhistory.org/Gupta_Architecture/</a> ; "Hindu temple architecture," Wikipedia. <a href="https://en.wikipedia.org/wiki/Hindu_temple_architecture">https://en.wikipedia.org/wiki/Hindu_temple_architecture</a> ; "Epic-Puranic chronology," Wikipedia. <a href="https://en.wikipedia.org/wiki/Epic-Puranic_chronology">https://en.wikipedia.org/wiki/Epic-Puranic_chronology</a></li>
+        <li>Oṃ, the Māṇḍūkya and turīya; the Gāyatrī — "Turiya," Wikipedia. <a href="https://en.wikipedia.org/wiki/Turiya">https://en.wikipedia.org/wiki/Turiya</a> ; "Gayatri Mantra," Wikipedia. <a href="https://en.wikipedia.org/wiki/Gayatri_Mantra">https://en.wikipedia.org/wiki/Gayatri_Mantra</a></li>
+        <li>The "Hinduism" debate — "David Lorenzen," Wikipedia. <a href="https://en.wikipedia.org/wiki/David_Lorenzen">https://en.wikipedia.org/wiki/David_Lorenzen</a> ; E. Bloch, M. Keppens and R. Hegde (eds.), <em>Rethinking Religion in India: The Colonial Construction of Hinduism</em> (Routledge). <a href="https://www.routledge.com/Rethinking-Religion-in-India-The-Colonial-Construction-of-Hinduism/Bloch-Keppens-Hegde/p/book/9780415500029">https://www.routledge.com/Rethinking-Religion-in-India-The-Colonial-Construction-of-Hinduism/Bloch-Keppens-Hegde/p/book/9780415500029</a></li>
+        <li>Adam's Bridge (natural shoals; man-made claims) — "Adam's Bridge," Wikipedia. <a href="https://en.wikipedia.org/wiki/Adam's_Bridge">https://en.wikipedia.org/wiki/Adam's_Bridge</a> ; "Physical features of Adam's Bridge interpreted from ICESat-2 based high-resolution digital bathymetric elevation model," <em>Scientific Reports</em> (2024). <a href="https://www.nature.com/articles/s41598-024-65908-2">https://www.nature.com/articles/s41598-024-65908-2</a></li>
+        <li>The Kali Yuga epoch (3102 BCE) — "Hindu chronology," Wikipedia. <a href="https://en.wikipedia.org/wiki/Hindu_chronology">https://en.wikipedia.org/wiki/Hindu_chronology</a></li>
+      </ul>
+    </div>
   ` }
 };

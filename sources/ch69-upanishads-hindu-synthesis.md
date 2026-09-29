@@ -1,0 +1,24 @@
+# Sources — Chapter 69: The Upanishads & the Hindu Synthesis
+
+Per the project sourcing standard. Dates for this literature are uncertain by centuries and are given as ranges; faith claims (śruti as authorless, the avatāras) are reported as belief; popular claims about epic chronology, Rāma Setu and ancient science are sorted from the evidence.
+
+## Sources cited
+- **The Upanishads: dating (Bṛhadāraṇyaka and Chāndogya earliest; Olivelle's caution) and overview** — "Upanishads," Wikipedia. https://en.wikipedia.org/wiki/Upanishads ; "Brihadaranyaka Upanishad," Wikipedia. https://en.wikipedia.org/wiki/Brihadaranyaka_Upanishad ; "Chandogya Upanishad," Wikipedia. https://en.wikipedia.org/wiki/Chandogya_Upanishad
+- **Yājñavalkya, Gārgī and the debate at Janaka's court; *neti neti*** — "Yajnavalkya," Wikipedia. https://en.wikipedia.org/wiki/Yajnavalkya ; "Bahudakshina Yajna," Wikipedia. https://en.wikipedia.org/wiki/Bahudakshina_Yajna ; "Debates in ancient India," Wikipedia. https://en.wikipedia.org/wiki/Debates_in_ancient_India
+- ***Tat tvam asi* and the salt in water (Chāndogya 6)** — Chāndogya Upaniṣad 6.8.7, Wisdom Library. https://www.wisdomlib.org/hinduism/book/chandogya-upanishad-english/d/doc239302.html ; "Uddālaka Āruṇi," Wikipedia. https://en.wikipedia.org/wiki/Udd%C4%81laka_%C4%80ru%E1%B9%87i ; "Mahāvākyas," Wikipedia. https://en.wikipedia.org/wiki/Mah%C4%81v%C4%81kyas
+- **The five fires and two paths; karma in Bṛhadāraṇyaka 4.4.5** — "Panchagni Vidya," Wikipedia. https://en.wikipedia.org/wiki/Panchagni_Vidya ; "Pravahana Jaivali," Wikipedia. https://en.wikipedia.org/wiki/Pravahana_Jaivali ; "Karma in Hinduism," Wikipedia. https://en.wikipedia.org/wiki/Karma_in_Hinduism
+- **The epics and the Gītā (dating, content)** — "Mahabharata," Wikipedia. https://en.wikipedia.org/wiki/Mahabharata ; "Ramayana," Wikipedia. https://en.wikipedia.org/wiki/Ramayana ; "Bhagavad Gita," Wikipedia. https://en.wikipedia.org/wiki/Bhagavad_Gita ; "Bhagavad Gita," Britannica. https://www.britannica.com/topic/Bhagavad-Gita ; World History Encyclopedia, "Bhagavad Gita." https://www.worldhistory.org/Bhagavad_Gita/
+- **Manu, the āśramas and the puruṣārthas; Ambedkar** — "Manusmriti," Wikipedia. https://en.wikipedia.org/wiki/Manusmriti ; "Puruṣārtha," Wikipedia. https://en.wikipedia.org/wiki/Puru%E1%B9%A3%C4%81rtha
+- **The six darśanas; the Yoga Sūtras; the Brahma Sūtras** — "Yoga Sutras of Patanjali," Wikipedia. https://en.wikipedia.org/wiki/Yoga_Sutras_of_Patanjali ; Internet Encyclopedia of Philosophy, "Yoga Sutras of Patanjali." https://iep.utm.edu/yoga/ ; Britannica, "Yoga-sutras." https://www.britannica.com/topic/Yoga-sutras
+- **The Heliodorus pillar** — "Heliodorus pillar," Wikipedia. https://en.wikipedia.org/wiki/Heliodorus_pillar
+- **Gupta temples and the Purāṇas** — "Dashavatara Temple, Deogarh," Wikipedia. https://en.wikipedia.org/wiki/Dashavatara_Temple,_Deogarh ; World History Encyclopedia, "Gupta Architecture." https://www.worldhistory.org/Gupta_Architecture/ ; "Hindu temple architecture," Wikipedia. https://en.wikipedia.org/wiki/Hindu_temple_architecture ; "Epic-Puranic chronology," Wikipedia. https://en.wikipedia.org/wiki/Epic-Puranic_chronology
+- **Oṃ, the Māṇḍūkya and turīya; the Gāyatrī** — "Turiya," Wikipedia. https://en.wikipedia.org/wiki/Turiya ; "Gayatri Mantra," Wikipedia. https://en.wikipedia.org/wiki/Gayatri_Mantra
+- **The "Hinduism" debate** — "David Lorenzen," Wikipedia. https://en.wikipedia.org/wiki/David_Lorenzen ; E. Bloch, M. Keppens and R. Hegde (eds.), *Rethinking Religion in India: The Colonial Construction of Hinduism* (Routledge). https://www.routledge.com/Rethinking-Religion-in-India-The-Colonial-Construction-of-Hinduism/Bloch-Keppens-Hegde/p/book/9780415500029
+- **Adam's Bridge (natural shoals; man-made claims)** — "Adam's Bridge," Wikipedia. https://en.wikipedia.org/wiki/Adam's_Bridge ; "Physical features of Adam's Bridge interpreted from ICESat-2 based high-resolution digital bathymetric elevation model," *Scientific Reports* (2024). https://www.nature.com/articles/s41598-024-65908-2
+- **The Kali Yuga epoch (3102 BCE)** — "Hindu chronology," Wikipedia. https://en.wikipedia.org/wiki/Hindu_chronology
+
+## Notes
+- Well-supported: the principal Upanishads, their relative order and teachings; the epics and Gītā as multi-century compositions; Manu's content; the darśanas; the Heliodorus pillar; Gupta temples and Purāṇas.
+- Not supported: precise early dates; 3102 BCE or astronomical dating of the war; Adam's Bridge as built; modern science in the Vedas.
+- Open: exact dates; origins of karma/rebirth (brahmin, kṣatriya, śramaṇa, eastern Ganges); āśramas as alternatives or stages; Manu vs practice; the 'Hinduism' construction debate.
+- Placed in era 04 (Axial Age). Fills the gap between ch05 (Early Vedic) and ch30 (Bhakti) / ch24 (Tantra).

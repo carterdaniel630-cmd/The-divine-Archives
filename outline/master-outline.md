@@ -152,6 +152,7 @@ every remaining chapter and added the lens structure throughout.
 |---|---|---|---|---|
 | ch67 — Minoan Crete | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch67-minoan-crete-bronze-age.md` |
 | ch68 — Nubia & Kush | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
+| ch69 — The Upanishads & the Hindu Synthesis | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 

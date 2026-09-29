@@ -442,6 +442,11 @@ window.ARCHIVE = {
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Nubia & Kush",
       status: "published", pending: true,
       source: "eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md",
-      summary: "Egypt’s southern twin: the great mounds and retainer burials of Kerma; Amun in the ‘Pure Mountain’ of Jebel Barkal; the Kushite pharaohs of the Twenty-fifth Dynasty, Piye’s Victory Stela and the revival of the pyramid; Meroë’s own gods, the lion-headed Apedemak above all, and its ruling queens, the Kandake of Acts 8; the Nubian pilgrims who kept Isis’s temple at Philae open until the sixth century; and Christian Nubia and the paintings of Faras. A symbology of the uraeus mountain, the ram and the lion, and the Meroitic script, whose signs can be read but whose language still cannot." }
+      summary: "Egypt’s southern twin: the great mounds and retainer burials of Kerma; Amun in the ‘Pure Mountain’ of Jebel Barkal; the Kushite pharaohs of the Twenty-fifth Dynasty, Piye’s Victory Stela and the revival of the pyramid; Meroë’s own gods, the lion-headed Apedemak above all, and its ruling queens, the Kandake of Acts 8; the Nubian pilgrims who kept Isis’s temple at Philae open until the sixth century; and Christian Nubia and the paintings of Faras. A symbology of the uraeus mountain, the ram and the lion, and the Meroitic script, whose signs can be read but whose language still cannot." },
+    { id: "ch69", title: "The Upanishads & the Hindu Synthesis", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · The Upanishads & the Hindu Synthesis",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md",
+      summary: "From fire altar to temple: the Upanishads and their debates at Janaka’s court, the self (ātman) and the absolute (Brahman) and ‘that you are’; the first teachings of karma, rebirth and liberation; the Mahābhārata, the Rāmāyaṇa and the Bhagavad Gītā; the Laws of Manu, varṇa and the stages and aims of life; the six philosophical ‘viewpoints’; and the Greek ambassador’s Garuḍa pillar, the Purāṇas and the first Gupta temples. A symbology of Om and the four states, the great sayings and the temple as cosmos, with epic chronologies, Rāma’s bridge and ‘Vedic science’ sorted from the evidence." }
   ]
 };
