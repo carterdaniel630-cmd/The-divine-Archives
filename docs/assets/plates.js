@@ -1238,6 +1238,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><circle cx="60" cy="104" r="38" stroke="currentColor" stroke-width="1.3"/><circle cx="140" cy="104" r="38" stroke="currentColor" stroke-width="1.3"/><path d="M50 86 A10 10 0 1 0 70 86 A8 8 0 1 1 50 86 Z" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="80" r="3" stroke="currentColor" stroke-width="0.9"/><path d="M140 72 L140 92 M131 80 L149 80" stroke="currentColor" stroke-width="2"/><path d="M46 132 C46 116 52 106 60 106 C68 106 74 116 74 132 M126 132 C126 116 132 106 140 106 C148 106 154 116 154 132" stroke="currentColor" stroke-width="1.1"/><path d="M52 104 L60 96 L68 104 M132 104 L140 96 L148 104" stroke="currentColor" stroke-width="1"/><path d="M94 104 L106 104 M102 100 L106 104 L102 108" stroke="currentColor" stroke-width="1.2" opacity="0.7"/></svg>',
       "Interpretive illustration",
       "Two coins in the manner of King Ezana of Aksum (mid-fourth century): on the earlier the crescent and disc of the old gods above the crowned king, on the later the cross. An original, interpretive drawing, not a copy of particular coins."
+    ),
+
+    /* Ch80 — Shi'ism: the open hand of the Five and the two-pointed sword */
+    "ch80": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M78 150 C70 136 68 118 70 100 L70 64 C70 58 78 58 78 64 L78 96 M78 96 L78 50 C78 44 86 44 86 50 L86 94 M86 94 L86 44 C86 38 94 38 94 44 L94 94 M94 94 L94 50 C94 44 102 44 102 50 L102 100 C106 92 112 86 118 88 C122 90 120 96 116 102 C110 112 106 124 104 138 C102 146 98 150 92 152 Z" stroke="currentColor" stroke-width="1.4"/><circle cx="88" cy="118" r="7" stroke="currentColor" stroke-width="1"/><path d="M140 44 L140 150 M140 150 L136 158 L144 158 Z M132 60 L148 60" stroke="currentColor" stroke-width="1.4"/><path d="M140 44 L134 30 M140 44 L146 30" stroke="currentColor" stroke-width="1.6"/></svg>',
+      "Interpretive illustration",
+      "An open hand, read in Shi'ism as the five holy persons of the Prophet's family (the panjetan), beside Zulfiqar, the two-pointed sword of Ali. An original, interpretive drawing."
     )
 
   };

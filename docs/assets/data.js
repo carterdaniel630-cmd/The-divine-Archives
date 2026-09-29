@@ -497,6 +497,11 @@ window.ARCHIVE = {
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Armenia, Georgia & Aksum",
       status: "published", pending: true,
       source: "eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md",
-      summary: "Three kingdoms outside Rome that made Christianity their state religion before Rome did: Armenia, where Gregory survived the pit of Khor Virap, Mesrop Mashtots invented an alphabet to carry the Bible, and Vardan died at Avarayr; Georgia, converted through the captive woman Nino and her grapevine cross; and Aksum, whose king Ezana replaced the crescent with the cross on his coins, with the shipwrecked Frumentius as first bishop. Then Ethiopia’s own Christianity: the Nine Saints, the Garima Gospels, the 81-book Bible, the tabot in every church and the Ark claimed at Aksum, and the rock-cut New Jerusalem of Lalibela." }
+      summary: "Three kingdoms outside Rome that made Christianity their state religion before Rome did: Armenia, where Gregory survived the pit of Khor Virap, Mesrop Mashtots invented an alphabet to carry the Bible, and Vardan died at Avarayr; Georgia, converted through the captive woman Nino and her grapevine cross; and Aksum, whose king Ezana replaced the crescent with the cross on his coins, with the shipwrecked Frumentius as first bishop. Then Ethiopia’s own Christianity: the Nine Saints, the Garima Gospels, the 81-book Bible, the tabot in every church and the Ark claimed at Aksum, and the rock-cut New Jerusalem of Lalibela." },
+    { id: "ch80", title: "Shi'ism", kind: "tradition",
+      era: "06-early-medieval", eraLabel: "Early Medieval · Shi'ism",
+      status: "published", pending: true,
+      source: "eras/06-early-medieval/ch80-shiism-early-medieval.md",
+      summary: "The ‘party of Ali’: the succession dispute after Muhammad and the words at Ghadir Khumm; Husayn’s martyrdom at Karbala in 680 and the mourning of Muharram, from passion plays to the Arba’in walk; the Imams and the branches they divided — Zaydis, Isma’ilis with the Fatimids and the Aga Khan, and Twelvers with their hidden Imam in occultation since 941; the jurists who speak in his absence; the Safavid conversion of Iran and Khomeini’s rule of the jurist. A symbology of the Five of the Cloak, Zulfiqar, the clay of Karbala and the esoteric readings of the Isma’ilis, with faith claims and sectarian myths kept apart from the record." }
   ]
 };

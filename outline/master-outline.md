@@ -163,6 +163,7 @@ every remaining chapter and added the lens structure throughout.
 | ch77 — The Etruscans | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
 | ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
 | ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
+| ch80 — Shi'ism | Tradition | 06-early-medieval | published, **pending review** | `eras/06-early-medieval/ch80-shiism-early-medieval.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
