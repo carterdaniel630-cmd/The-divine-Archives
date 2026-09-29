@@ -502,6 +502,11 @@ window.ARCHIVE = {
       era: "06-early-medieval", eraLabel: "Early Medieval · Shi'ism",
       status: "published", pending: true,
       source: "eras/06-early-medieval/ch80-shiism-early-medieval.md",
-      summary: "The ‘party of Ali’: the succession dispute after Muhammad and the words at Ghadir Khumm; Husayn’s martyrdom at Karbala in 680 and the mourning of Muharram, from passion plays to the Arba’in walk; the Imams and the branches they divided — Zaydis, Isma’ilis with the Fatimids and the Aga Khan, and Twelvers with their hidden Imam in occultation since 941; the jurists who speak in his absence; the Safavid conversion of Iran and Khomeini’s rule of the jurist. A symbology of the Five of the Cloak, Zulfiqar, the clay of Karbala and the esoteric readings of the Isma’ilis, with faith claims and sectarian myths kept apart from the record." }
+      summary: "The ‘party of Ali’: the succession dispute after Muhammad and the words at Ghadir Khumm; Husayn’s martyrdom at Karbala in 680 and the mourning of Muharram, from passion plays to the Arba’in walk; the Imams and the branches they divided — Zaydis, Isma’ilis with the Fatimids and the Aga Khan, and Twelvers with their hidden Imam in occultation since 941; the jurists who speak in his absence; the Safavid conversion of Iran and Khomeini’s rule of the jurist. A symbology of the Five of the Cloak, Zulfiqar, the clay of Karbala and the esoteric readings of the Isma’ilis, with faith claims and sectarian myths kept apart from the record." },
+    { id: "ch81", title: "Tengri & the Mongols", kind: "tradition",
+      era: "07-high-medieval", eraLabel: "High Medieval · Tengri & the Mongols",
+      status: "published", pending: true,
+      source: "eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md",
+      summary: "The Eternal Blue Sky of the steppe peoples: Tengri in the Old Turkic Orkhon inscriptions, Chinggis Khan on Burkhan Khaldun and the shaman Kököchü, the ‘by the power of Eternal Heaven’ formula on Mongol letters and seals, and a religious policy of tolerance that was pragmatism more than creed, as William of Rubruck’s 1254 debate at Karakorum shows. Then the khanates choose: Ghazan’s Islam in 1295, Kublai and the Tibetan lama Phagpa, Altan Khan’s title ‘Dalai Lama’ in 1578; the purges of 1937–39 and the post-1990 revival and neo-Tengrism. A symbology of the ovoo, khadag, sülde banner, milk libations, scapulimancy and the soyombo, with modern revival kept distinct from the medieval record." }
   ]
 };

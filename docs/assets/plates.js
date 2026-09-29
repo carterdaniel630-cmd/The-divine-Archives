@@ -1245,6 +1245,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M78 150 C70 136 68 118 70 100 L70 64 C70 58 78 58 78 64 L78 96 M78 96 L78 50 C78 44 86 44 86 50 L86 94 M86 94 L86 44 C86 38 94 38 94 44 L94 94 M94 94 L94 50 C94 44 102 44 102 50 L102 100 C106 92 112 86 118 88 C122 90 120 96 116 102 C110 112 106 124 104 138 C102 146 98 150 92 152 Z" stroke="currentColor" stroke-width="1.4"/><circle cx="88" cy="118" r="7" stroke="currentColor" stroke-width="1"/><path d="M140 44 L140 150 M140 150 L136 158 L144 158 Z M132 60 L148 60" stroke="currentColor" stroke-width="1.4"/><path d="M140 44 L134 30 M140 44 L146 30" stroke="currentColor" stroke-width="1.6"/></svg>',
       "Interpretive illustration",
       "An open hand, read in Shi'ism as the five holy persons of the Prophet's family (the panjetan), beside Zulfiqar, the two-pointed sword of Ali. An original, interpretive drawing."
+    ),
+
+    /* Ch81 — Tengri & the Mongols: an ovoo cairn under the Eternal Blue Sky */
+    "ch81": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M14 150 C50 138 80 142 100 146 C130 140 160 136 186 148" stroke="currentColor" stroke-width="1"/><path d="M68 146 L82 120 L96 104 L110 106 L122 124 L134 146 Z" stroke="currentColor" stroke-width="1.4"/><path d="M78 128 L126 130 M88 114 L116 116" stroke="currentColor" stroke-width="0.8" opacity="0.7"/><path d="M102 104 L102 40" stroke="currentColor" stroke-width="1.4"/><path d="M96 40 L102 28 L108 40 Z" stroke="currentColor" stroke-width="1.2"/><path d="M94 44 C96 54 98 58 102 60 C106 58 108 54 110 44" stroke="currentColor" stroke-width="1"/><path d="M102 70 C88 74 80 70 70 78 M102 80 C116 84 124 80 134 88" stroke="currentColor" stroke-width="1"/><circle cx="150" cy="54" r="10" stroke="currentColor" stroke-width="1"/><path d="M40 60 C52 56 62 58 72 54" stroke="currentColor" stroke-width="0.8" opacity="0.6"/></svg>',
+      "Interpretive illustration",
+      "An ovoo, the stone cairn of the steppe, crowned with a trident-tipped sülde spirit banner and hung with scarves under the open sky. An original, interpretive drawing."
     )
 
   };

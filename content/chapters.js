@@ -8883,5 +8883,122 @@ window.CHAPTERS = {
         <li>Symbols (Zulfiqar; the hand of Fatima) — "Zulfiqar," Wikipedia. <a href="https://en.wikipedia.org/wiki/Zulfiqar">https://en.wikipedia.org/wiki/Zulfiqar</a> ; Al-Islam.org, "Is there any significance of the Hamsa hand in Shia Islam?" <a href="https://al-islam.org/ask/is-there-any-significance-of-the-hamsa-hand-in-shia-islam-i-have-heard-that-it-is-called-the-hand-of-fatima-is-this-true-and-if-so-why">https://al-islam.org/ask/is-there-any-significance-of-the-hamsa-hand-in-shia-islam-i-have-heard-that-it-is-called-the-hand-of-fatima-is-this-true-and-if-so-why</a></li>
       </ul>
     </div>
+  ` },
+  /* ------------------------------------------------------------------ ch81 */
+  ch81: { html: `
+    <p class="lead">On 30 May 1254, at the camp of the Great Khan <strong>Möngke</strong> at <strong>Karakorum</strong> in Mongolia, a Flemish Franciscan friar, <strong>William of Rubruck</strong>, took part in a public debate. The khan had ordered the representatives of the religions at his court to argue their faiths before three of his secretaries, a Christian, a Muslim and a Buddhist. William, with the Nestorian Christians on his side, argued first against a Buddhist monk about whether there is one God, then against the Muslims, who, he says, agreed that there is one God and declined to argue further. At the end, nobody was converted. The Mongols, William wrote, "clapped their hands" and drank a great deal. A few days later Möngke summoned him and explained his own faith: "We Mongols believe that there is only one God, by whom we live and by whom we die, and for whom we have an upright heart. But as God gave the hand several fingers, so he has given men several ways." The God he meant was <strong>Tengri</strong>, the Eternal Heaven, in whose name the Mongols had conquered the largest land empire the world had ever seen.</p>
+
+    <h2>The sky over the steppe</h2>
+
+    <p>The peoples of the Mongolian and Central Asian steppe, Turks and Mongols alike, venerated <strong>Tengri</strong> (Mongolian <em>Tenggeri</em>), the <strong>sky</strong>, as the supreme power. The word appears as the name of a god in the records of the <strong>Xiongnu</strong>, whose rulers styled themselves "sons of heaven" in the second century BCE, and it is central to the first texts written in a Turkic language, the <strong>Orkhon inscriptions</strong>, carved in 732 and 735 in the Orkhon valley of Mongolia in memory of the Göktürk prince <strong>Kül Tegin</strong> and his brother <strong>Bilge Qaghan</strong>. They speak of the ruler as "heaven-like and heaven-born", made khagan by Tengri; of <strong>Umay</strong>, the goddess of fertility and children associated with the queen; and of the sacred <strong>Earth and Water</strong> (<em>Yer-Sub</em>), the spirits of the land. When the Turks were disobedient and disunited, the inscriptions say, Tengri let them be conquered; when they were loyal, Tengri raised them up.</p>
+
+    <p>This religion, which modern writers call <strong>Tengrism</strong>, had no scriptures, priesthood or temples in the usual sense. Its elements, reconstructed from inscriptions, Chinese, Persian and European reports, and later Mongol and Turkic folklore, included:</p>
+
+    <ul>
+      <li><strong>Tengri</strong>, the Eternal Blue Sky, source of fate, life and the ruler's mandate, sometimes one supreme sky, sometimes many "tengris" (Mongol tradition later counted 99);</li>
+      <li><strong>Etügen</strong> or <strong>Itügen</strong>, the Earth, the mother;</li>
+      <li>the spirits of <strong>mountains</strong>, <strong>rivers</strong>, <strong>springs</strong> and particular places, the "masters" of the land;</li>
+      <li>the <strong>ancestors</strong>, above all of the ruling clan, honoured with offerings;</li>
+      <li><strong>shamans</strong> (Mongolian <em>böö</em>, female <em>udagan</em>), who mediated with spirits, healed and divined.</li>
+    </ul>
+
+    <h2>Genghis Khan and the mandate of heaven</h2>
+
+    <p>The Mongol conqueror <strong>Temüjin</strong>, proclaimed <strong>Chinggis</strong> (Genghis) <strong>Khan</strong> at a great assembly in <strong>1206</strong>, understood his mission in these terms. The <em>Secret History of the Mongols</em>, a Mongol chronicle of the thirteenth century, tells how the young Temüjin, fleeing enemies, hid on the sacred mountain <strong>Burkhan Khaldun</strong> in the Khentii range; afterwards he took off his hat, hung his belt around his neck, knelt nine times towards the sun and offered libations of mare's milk, and declared that he would honour the mountain every day. The mountain, where by tradition he was later buried in a secret grave never found, is a UNESCO World Heritage Site with its sacred landscape.</p>
+
+    <p>The shaman <strong>Kököchü</strong>, called <strong>Teb Tengri</strong>, "Most Heavenly", proclaimed that heaven had given the whole world to Temüjin and his sons, and by some accounts gave him the title Chinggis. When Kököchü grew too powerful and quarrelled with the khan's family, Chinggis had him killed: the khan, not the shaman, spoke for heaven.</p>
+
+    <p>Mongol edicts and letters to foreign rulers opened with the formula "<strong>By the power of Eternal Heaven</strong>" (<em>Möngke Tenggeri-yin küčün-dür</em>). The letters sent to Pope Innocent IV in 1246 and to the kings of France demanded submission: heaven had ordained that the Mongols rule the earth, and those who resisted resisted heaven itself.</p>
+
+    <h2>Religious policy: many fingers of one hand</h2>
+
+    <p>The Mongol empire was famous in its time for its <strong>religious tolerance</strong>, or, more precisely, its religious <strong>pragmatism</strong>. Chinggis and his successors exempted clergy of all religions, Buddhist monks, Daoist masters, Christian priests, Muslim scholars and others, from taxes and forced labour, in exchange for their prayers for the khan. The court welcomed religious specialists as sources of blessing, healing and legitimacy, and the khans' families included Nestorian Christian wives and mothers, such as <strong>Sorghaghtani Beki</strong>, mother of Möngke, Kublai and Hülegü. At the same time, Mongol law, the <strong>Yasa</strong>, imposed Mongol customs that could clash with those of subject religions, such as rules on slaughtering animals that offended Muslims and Jews, and the conquests themselves destroyed temples, mosques and cities along with their people. Tolerance meant that no religion was imposed; it did not mean that the religions of the conquered were safe.</p>
+
+    <h2>Rituals of the Mongol court</h2>
+
+    <p>European travellers such as <strong>John of Plano Carpini</strong> (1245–1247) and William of Rubruck describe Mongol religious practice at first hand:</p>
+
+    <ul>
+      <li><strong>Felt images</strong> (<em>ongghon</em>, <em>ongon</em>) of ancestors and protective spirits hung in the tents, and were "fed" with mare's milk and meat;</li>
+      <li><strong>libations</strong> of fermented mare's milk (<em>kumis</em>) flicked to the four directions, to heaven and earth, before drinking;</li>
+      <li><strong>divination</strong> by reading the cracks in the burned shoulder blades of sheep (scapulimancy), which Möngke consulted before decisions;</li>
+      <li><strong>purification</strong> by passing between two fires, required of envoys and goods coming to the khan;</li>
+      <li><strong>taboos</strong> against touching the threshold of a tent, washing clothes in running water in summer, or spilling milk, which could offend the spirits of the hearth and the waters;</li>
+      <li>the veneration of the <strong>dead</strong>: the khans were buried in secret places, and later, a shrine of felt tents, the <strong>Eight White Tents</strong>, preserved relics of Chinggis in the Ordos region, where rites to him continue.</li>
+    </ul>
+
+    <h2>The khanates choose their religions</h2>
+
+    <p>As the empire divided after the 1260s, the Mongol rulers of its successor states adopted the great religions of the peoples they ruled:</p>
+
+    <ul>
+      <li>In <strong>Iran</strong>, the Ilkhan <strong>Ghazan</strong> converted to <strong>Islam</strong> in <strong>1295</strong>, and the Ilkhanate became a Muslim state; the Golden Horde in the west, and later the Chagatai khanate, also became Muslim.</li>
+      <li>In <strong>China</strong>, <strong>Kublai Khan</strong>, founder of the Yuan dynasty, adopted <strong>Tibetan Buddhism</strong>, making the Sakya lama <strong>Phagpa</strong> his Imperial Preceptor (1260), and Phagpa devised a new script for Mongolian.</li>
+      <li>In <strong>Mongolia</strong> itself, after the Yuan fell in 1368, Buddhism faded and shamanic practice continued, until the <strong>second conversion</strong>: in <strong>1578</strong> the Tümed ruler <strong>Altan Khan</strong> met the Gelugpa lama <strong>Sonam Gyatso</strong> at Kokonor and gave him the Mongolian title <strong>Dalai</strong> ("Ocean") <strong>Lama</strong>; he became the third Dalai Lama, his two predecessors being so named retroactively. Gelugpa Buddhism spread rapidly, and Buddhist missionaries suppressed shamanic practices, burning ongon images and replacing blood sacrifices with Buddhist rites, while absorbing the mountain spirits and the ovoo cult into Buddhism.</li>
+    </ul>
+
+    <p>Buddhism dominated Mongolia until the twentieth century, when the Communist government, especially in the purges of <strong>1937–1939</strong>, destroyed most monasteries and killed thousands of monks (estimates are often given of about 17,000), and suppressed shamanism too. Since <strong>1990</strong>, Buddhism and shamanism have both revived, and shamans practise openly in Ulaanbaatar and the countryside, in far greater numbers than under socialism. In Kazakhstan, Kyrgyzstan and among some Turkic peoples of Russia, intellectuals and movements have promoted <strong>Tengrism</strong> as a national spiritual heritage, sometimes called neo-Tengrism, with varying degrees of popular practice.</p>
+
+    <h2>The believer's lens</h2>
+
+    <p>For those who hold to Tengri today, in Mongolia, Central Asia or Siberia, the Eternal Blue Sky is the supreme power over life and fate, and the land is alive with spirits of mountains, rivers and places who must be respected. Offering milk to the sky, circling an ovoo cairn and adding a stone, honouring ancestors and consulting shamans are ways of living in harmony with heaven and earth. For many Mongols Chinggis Khan is not only a national hero but a sacred ancestor whose spirit protects the nation. For Mongolian Buddhists, the conversion of the sixteenth century brought the teaching of the Buddha to the steppe, and the spirits of the land became its protectors.</p>
+
+    <h2>The skeptical lens</h2>
+
+    <p>The historian notes, first, that there is no ancient Tengrist scripture, and that our knowledge of steppe religion comes from brief inscriptions, the accounts of outsiders (Chinese annalists, Muslim chroniclers, Christian friars), the <em>Secret History</em>, and much later folklore. Modern reconstructions of "Tengrism" as a systematic monotheism or national religion often owe as much to twentieth-century nationalism and scholarship as to medieval evidence, and scholars debate whether "Tengrism" existed as a distinct religion or was a family of related practices.</p>
+
+    <p>Second, the famous Mongol "tolerance" was <strong>political</strong>: religious leaders were exempted from taxes because their prayers were useful, and the khans' letters make clear that heaven's mandate required submission. Massacres of conquered cities, of all faiths, were part of the same empire.</p>
+
+    <p>Third, the location of Chinggis Khan's grave is <strong>unknown</strong>, despite expeditions; the legend that everyone who knew it was killed is a later story, not a documented fact.</p>
+
+    <h2>Symbology and sacred encoding</h2>
+
+    <ul>
+      <li><strong>Blue and the sky.</strong> "Eternal Blue Sky" is the central image; the blue silk scarf, <strong>khadag</strong>, offered at ovoos, shrines and to honoured guests (a practice shared with Tibet), and the colour blue in the Mongolian flag and national symbolism evoke it.</li>
+      <li><strong>The ovoo.</strong> A cairn of stones, often topped with branches, blue scarves and offerings, on passes and hills, where travellers stop, circle it three times clockwise and add a stone. Communities hold annual ovoo rites to the spirits of the land. Buddhism absorbed and reinterpreted the ovoo.</li>
+      <li><strong>The sülde, the spirit banner.</strong> A standard of horse-hair tassels on a trident spear-head, believed to carry the spirit (<em>sülde</em>) of Chinggis Khan and of the nation; white banners for peace and black for war. The black banner, in tradition, held Chinggis's own spirit.</li>
+      <li><strong>Nine.</strong> Chinggis knelt nine times to the mountain; the nine-tailed white banner stood before his tent; nine was a sacred number of completeness in Mongol and Turkic ritual.</li>
+      <li><strong>Milk.</strong> White foods, milk and kumis, were the purest offerings, flicked to the sky and the directions; spilling milk was a grave offence.</li>
+      <li><strong>The shoulder blade.</strong> Scapulimancy, reading the cracks of a burned sheep's shoulder blade, parallels the much older oracle bones of Shang China (ch09, Vault V55): heaven's answer written in fire and bone.</li>
+      <li><strong>The Old Turkic script.</strong> The runiform alphabet of the Orkhon inscriptions, carved on royal steles, made the words of the khagans and of Tengri's mandate monumental.</li>
+      <li><strong>The soyombo.</strong> The emblem on Mongolia's flag, created by the Buddhist leader Zanabazar in 1686, combines fire, sun, moon, the yin-yang, and triangles and bars symbolizing the defence and unity of the people: Buddhist and older steppe symbolism fused into a national sign.</li>
+    </ul>
+
+    <h2>Connections</h2>
+
+    <p>The religion of the Eternal Heaven stands in the line of the steppe peoples of <strong>The Scythians &amp; the Steppe</strong> (ch78), and its shamans are part of the northern Asian tradition of <strong>Siberian &amp; Arctic Shamanism</strong> (ch75). The Mongol courts were meeting places of <strong>Islam</strong> (ch21), <strong>Shi'ism</strong> (ch80) and <strong>Sufism</strong> (ch27), <strong>Nestorian</strong> and other Eastern Christians (ch60), <strong>Tibetan &amp; Vajrayana Buddhism</strong> (ch53), Chinese religion (ch12) and Manichaeans (ch55). The Mongol conquests shaped <strong>Korea</strong> (ch71), whose Tripitaka Koreana was carved to repel them. The khan who rules by heaven's mandate is a case for <strong>Sacred Kingship</strong> (ch49), and the conquerors' later conversions for the history of how empires choose their gods.</p>
+
+    <div class="evidence" id="evidence">
+      <div class="evidence-head">&#10022; The evidence, honestly</div>
+      <div class="ev supported">
+        <h4>Well-supported by evidence</h4>
+        <p>The veneration of Tengri among Turkic and Mongol peoples, attested in the Orkhon inscriptions (732–735), Chinese and Persian sources and the <em>Secret History</em>; the Mongol formula "By the power of Eternal Heaven" in edicts and letters; the role of shamans and of Kököchü at Chinggis's court; the rituals described by Carpini and Rubruck (felt images, libations, scapulimancy, purification by fire); the exemption of clergy from taxation; Rubruck's debate of 1254; the conversions of Ghazan (1295), Kublai and Phagpa, and Altan Khan and the Dalai Lama title (1578); the suppression of shamanism by Buddhist missionaries; the communist purges of the 1930s; and the post-1990 revivals.</p>
+      </div>
+      <div class="ev unsupported">
+        <h4>Not supported (as established fact)</h4>
+        <p>That "Tengrism" was an organized monotheistic religion with fixed doctrines comparable to the scriptural religions; the legend that all who knew Chinggis Khan's grave were killed; any known location of that grave.</p>
+      </div>
+      <div class="ev open">
+        <h4>Genuinely open</h4>
+        <p>How far steppe religion was monotheistic, polytheistic or both; the relationship between Tengri and the Chinese concept of Heaven (<em>tian</em>); the exact numbers killed in the 1930s purges; the numbers of shamans today; and how much of modern neo-Tengrism reflects historical practice.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Religion in the Mongol empire and religious policy — "Religion in the Mongol Empire," Wikipedia. <a href="https://en.wikipedia.org/wiki/Religion_in_the_Mongol_Empire">https://en.wikipedia.org/wiki/Religion_in_the_Mongol_Empire</a> ; World History Encyclopedia, "Religion in the Mongol Empire." <a href="https://www.worldhistory.org/article/1469/religion-in-the-mongol-empire/">https://www.worldhistory.org/article/1469/religion-in-the-mongol-empire/</a> ; TheCollector, "How Religiously Tolerant Were the Mongols?" <a href="https://www.thecollector.com/mongols-religiously-tolerant/">https://www.thecollector.com/mongols-religiously-tolerant/</a></li>
+        <li>Tengri and Tengrism — "Tengrism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Tengrism">https://en.wikipedia.org/wiki/Tengrism</a> ; "Tengri," Wikipedia. <a href="https://en.wikipedia.org/wiki/Tengri">https://en.wikipedia.org/wiki/Tengri</a> ; Encyclopedia.com, "Tengri." <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri</a> ; "Yer-sub," Wikipedia. <a href="https://en.wikipedia.org/wiki/Yer-sub">https://en.wikipedia.org/wiki/Yer-sub</a></li>
+        <li>The Orkhon inscriptions — "Orkhon inscriptions," Wikipedia. <a href="https://en.wikipedia.org/wiki/Orkhon_inscriptions">https://en.wikipedia.org/wiki/Orkhon_inscriptions</a> ; "Kul Tigin," Wikipedia. <a href="https://en.wikipedia.org/wiki/Kul_Tigin">https://en.wikipedia.org/wiki/Kul_Tigin</a> ; "Old Turkic script," Wikipedia. <a href="https://en.wikipedia.org/wiki/Old_Turkic_script">https://en.wikipedia.org/wiki/Old_Turkic_script</a></li>
+        <li>Burkhan Khaldun and Chinggis's grave — UNESCO, "Great Burkhan Khaldun Mountain and its surrounding sacred landscape." <a href="https://whc.unesco.org/en/list/1440/">https://whc.unesco.org/en/list/1440/</a> ; "Burkhan Khaldun," Wikipedia. <a href="https://en.wikipedia.org/wiki/Burkhan_Khaldun">https://en.wikipedia.org/wiki/Burkhan_Khaldun</a> ; "Burial place of Genghis Khan," Wikipedia. <a href="https://en.wikipedia.org/wiki/Burial_place_of_Genghis_Khan">https://en.wikipedia.org/wiki/Burial_place_of_Genghis_Khan</a> ; <em>National Geographic</em>, "Where is Genghis Khan's tomb?" <a href="https://www.nationalgeographic.com/history/article/genghis-khan-tomb-location">https://www.nationalgeographic.com/history/article/genghis-khan-tomb-location</a></li>
+        <li>William of Rubruck and the 1254 debate — "William of Rubruck," Wikipedia. <a href="https://en.wikipedia.org/wiki/William_of_Rubruck">https://en.wikipedia.org/wiki/William_of_Rubruck</a> ; Encyclopaedia Iranica, "William of Rubruck." <a href="https://www.iranicaonline.org/articles/william-of-rubruck/">https://www.iranicaonline.org/articles/william-of-rubruck/</a> ; Northern Virginia Community College, "William of Rubruck's Account of the Mongols." <a href="https://novaonline.nvcc.edu/eli/evans/HIS111/Documents/Mongols/rubruck.html">https://novaonline.nvcc.edu/eli/evans/HIS111/Documents/Mongols/rubruck.html</a> ; Appia Institute, "Debate in Front of Möngke Khan." <a href="https://www.appiainstitute.org/articles/asia/debate-in-front-of-mongke-khan-the-first-face-to-face-discussion-of-doctrines-between-eastern-and-western-religions/">https://www.appiainstitute.org/articles/asia/debate-in-front-of-mongke-khan-the-first-face-to-face-discussion-of-doctrines-between-eastern-and-western-religions/</a></li>
+        <li>Ongon and Mongol shamans — "Ongon," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ongon">https://en.wikipedia.org/wiki/Ongon</a> ; "Mongol mythology," Wikipedia. <a href="https://en.wikipedia.org/wiki/Mongol_mythology">https://en.wikipedia.org/wiki/Mongol_mythology</a></li>
+        <li>Ghazan's conversion — "Ghazan," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ghazan">https://en.wikipedia.org/wiki/Ghazan</a> ; <em>BSOAS</em>, "Ghazan, Islam and Mongol tradition: a view from the Mamlūk sultanate." <a href="https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/abs/ghazan-islam-and-mongol-tradition-a-view-from-the-mamluk-sultanate1/5A1347ECF0B9F4A9B788FE52E1C4EB81">https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/abs/ghazan-islam-and-mongol-tradition-a-view-from-the-mamluk-sultanate1/5A1347ECF0B9F4A9B788FE52E1C4EB81</a></li>
+        <li>Kublai, Phagpa and the Dalai Lama title — "Drogön Chögyal Phagpa," Wikipedia. <a href="https://en.wikipedia.org/wiki/Drog%C3%B6n_Ch%C3%B6gyal_Phagpa">https://en.wikipedia.org/wiki/Drog%C3%B6n_Ch%C3%B6gyal_Phagpa</a> ; "Imperial Preceptor," Wikipedia. <a href="https://en.wikipedia.org/wiki/Imperial_Preceptor">https://en.wikipedia.org/wiki/Imperial_Preceptor</a> ; "3rd Dalai Lama," Wikipedia. <a href="https://en.wikipedia.org/wiki/3rd_Dalai_Lama">https://en.wikipedia.org/wiki/3rd_Dalai_Lama</a> ; Britannica, "Altan." <a href="https://www.britannica.com/biography/Altan">https://www.britannica.com/biography/Altan</a></li>
+        <li>Buddhism, shamanism and the purges in Mongolia — "Buddhism in Mongolia," Wikipedia. <a href="https://en.wikipedia.org/wiki/Buddhism_in_Mongolia">https://en.wikipedia.org/wiki/Buddhism_in_Mongolia</a> ; GIS Réseau Asie, "Mongolia's Moving Religious Landscape." <a href="https://www.gis-reseau-asie.org/en/article/mongolias-moving-religious-landscape">https://www.gis-reseau-asie.org/en/article/mongolias-moving-religious-landscape</a> ; "Contemporary shamanisms in Mongolia," ResearchGate. <a href="https://www.researchgate.net/publication/233088535">https://www.researchgate.net/publication/233088535</a></li>
+        <li>Ovoo — Oxford Research Encyclopedia of Asian History, "Sacred Cairns (Ovoo) in the Mongolian Cultural World." <a href="https://oxfordre.com/asianhistory/display/10.1093/acrefore/9780190277727.001.0001/acrefore-9780190277727-e-829">https://oxfordre.com/asianhistory/display/10.1093/acrefore/9780190277727.001.0001/acrefore-9780190277727-e-829</a> ; "Ovoo," Wikipedia. <a href="https://en.wikipedia.org/wiki/Ovoo">https://en.wikipedia.org/wiki/Ovoo</a></li>
+        <li>Neo-Tengrism — "Religious revival, nationalism and the 'invention of tradition': Political Tengrism in Central Asia and Tatarstan," ResearchGate. <a href="https://www.researchgate.net/publication/233110240">https://www.researchgate.net/publication/233110240</a> ; "'Tengrism' in Kyrgyzstan: In Search of New Religious and Political Legitimacy," ResearchGate. <a href="https://www.researchgate.net/publication/313108127">https://www.researchgate.net/publication/313108127</a></li>
+      </ul>
+    </div>
   ` }
 };
