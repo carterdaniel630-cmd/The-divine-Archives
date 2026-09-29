@@ -447,6 +447,11 @@ window.ARCHIVE = {
       era: "04-axial-age", eraLabel: "Axial Age · The Upanishads & the Hindu Synthesis",
       status: "published", pending: true,
       source: "eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md",
-      summary: "From fire altar to temple: the Upanishads and their debates at Janaka’s court, the self (ātman) and the absolute (Brahman) and ‘that you are’; the first teachings of karma, rebirth and liberation; the Mahābhārata, the Rāmāyaṇa and the Bhagavad Gītā; the Laws of Manu, varṇa and the stages and aims of life; the six philosophical ‘viewpoints’; and the Greek ambassador’s Garuḍa pillar, the Purāṇas and the first Gupta temples. A symbology of Om and the four states, the great sayings and the temple as cosmos, with epic chronologies, Rāma’s bridge and ‘Vedic science’ sorted from the evidence." }
+      summary: "From fire altar to temple: the Upanishads and their debates at Janaka’s court, the self (ātman) and the absolute (Brahman) and ‘that you are’; the first teachings of karma, rebirth and liberation; the Mahābhārata, the Rāmāyaṇa and the Bhagavad Gītā; the Laws of Manu, varṇa and the stages and aims of life; the six philosophical ‘viewpoints’; and the Greek ambassador’s Garuḍa pillar, the Purāṇas and the first Gupta temples. A symbology of Om and the four states, the great sayings and the temple as cosmos, with epic chronologies, Rāma’s bridge and ‘Vedic science’ sorted from the evidence." },
+    { id: "ch70", title: "Pre-Islamic Arabia", kind: "tradition",
+      era: "05-late-antiquity", eraLabel: "Late Antiquity · Pre-Islamic Arabia",
+      status: "published", pending: true,
+      source: "eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md",
+      summary: "Arabia before Islam, from the rocks and from the later books: Allāt, al-ʿUzzā, Manāt and the gods of the north; the Nabataean stone ‘houses of god’ at Petra and Hegra; the nomads’ prayers, sacrifices and laments in fifty thousand Safaitic inscriptions; Almaqah’s great temple at Maʾrib; the Ḥimyarite turn to ‘the Merciful’ two centuries before Muhammad, the Najrān martyrs and Abraha; and Mecca as Islamic tradition remembers it. A symbology of betyls and eye-idols, crescent and disc, the ibex and the sacred months, with the ‘moon god’ claim and the Book of Idols weighed against the inscriptions." }
   ]
 };

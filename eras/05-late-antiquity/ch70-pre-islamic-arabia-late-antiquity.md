@@ -1,0 +1,119 @@
+# Chapter 70 — Pre-Islamic Arabia: Stones, Stars and the Coming of the One God
+
+*Recently added — pending full review.*
+
+In the black basalt desert east of the Hawran, on the borderlands of what are now Syria, Jordan and Saudi Arabia, the rocks are covered with writing. Some two thousand years ago the nomads who grazed their herds there scratched their names and their fathers' names into the boulders in a script now called **Safaitic**, and often added a line about their lives: that they had camped here in the spring, that they were watching for rain, that they grieved for a brother killed in a raid. Then, very often, a prayer. The goddess most often called on is **Allāt**: asked for safety, for plunder, for rain, for a reunion with a loved one, and sometimes asked to curse whoever would deface the carving. More than fifty thousand such inscriptions are known. They are the voices of ordinary Arabians practising their own religion before Judaism, Christianity and Islam reached the desert, and they tell a different and more detailed story than the one later remembered.
+
+## Two kinds of evidence
+
+The religion of Arabia before Islam is known from two very different kinds of source, and much of the history of the subject is the story of their disagreement.
+
+- **Islamic-era writings.** The **Qur'an** argues against those who "associate" other beings with God (*mushrikūn*) and names three goddesses, **al-Lāt**, **al-ʿUzzā** and **Manāt** (53:19–20). The biographies of the Prophet and the histories describe Meccan cults, and **Hishām ibn al-Kalbī** (d. 819/821) wrote the *Kitāb al-Aṣnām*, the **Book of Idols**, a catalogue of the gods and sanctuaries of the "time of ignorance" (*jāhiliyya*). These texts were written a century or more after the events, by Muslims describing a past they regarded as idolatrous, and many historians treat their details with caution.
+- **Inscriptions and archaeology.** Tens of thousands of inscriptions in the pre-Islamic scripts of Arabia (Safaitic, Hismaic, Dadanitic, Taymanitic, Nabataean Aramaic and the Sabaic and other languages of the south), along with temples, altars, stelae and tombs. These are contemporary and written by the worshippers themselves, but they are brief, and they come mostly from the north and the south, not from Mecca, where no pre-Islamic inscriptions or excavations of that period are known.
+
+## Gods of the north
+
+In the northern half of the peninsula and its borderlands, the inscriptions name a recognizable set of deities.
+
+- **Allāt**, "the Goddess", the most widely worshipped. The Greek historian Herodotus already knew of an Arabian goddess he called **Alilat** in the fifth century BCE. She had temples at Palmyra, where she was shown like Athena with a lion, and at Ṭāʾif near Mecca.
+- **al-ʿUzzā**, "the Mightiest", associated with the morning or evening star (Venus), and prominent among the Nabataeans at Petra.
+- **Manāt**, a goddess of fate and portion, whose shrine lay on the coast between Mecca and Medina; the Book of Idols calls her the most ancient.
+- **Ruḍā** (Ruḍaw), a god known from Assyrian records of the seventh century BCE to late antiquity, in some communities the father of Allāt, in others part of an astral triad.
+- **Dushara** (Dhū Sharā, "he of the Sharā mountains"), the chief god of the **Nabataean** kingdom, whose capital was Petra. The Nabataeans wrote dedications to "Dushara and all the gods".
+- At the oasis of **Taymāʾ** a stele of the sixth century BCE names the god **Ṣalm** of Maḥram with Shingalā and Ashīrā; the Babylonian king **Nabonidus** lived at Taymāʾ for ten years in the same century.
+- **Hubal**, remembered in Islamic tradition as the chief idol inside the Kaʿba, appears in only one pre-Islamic inscription, a Nabataean tomb text at **Hegra** (Madāʾin Ṣāliḥ), beside Dushara and Manāt.
+
+The Nabataeans, whose kingdom stretched from Petra to Hegra until Rome annexed it in 106 CE, very often worshipped their gods in the form of a **betyl**, an upright stone block, sometimes plain and sometimes carved with a stylized pair of eyes and a nose. The stone was not a portrait but a house or presence of the god; the Greek word *baitylos* comes from the Semitic *bēt-ʾel*, "house of god".
+
+## The nomads' religion, from the rocks
+
+The Safaitic inscriptions, studied above all by **Michael Macdonald** and **Ahmad Al-Jallad**, give an eyewitness picture of nomad religion in the centuries around the turn of the era. They show:
+
+- **Prayer for everyday needs.** Security on the journey, rain, recovery from illness, revenge, plunder, the return of an absent person.
+- **Sacrifice.** Inscriptions record slaughtering animals (the verb *dbḥ*) to particular gods, sometimes at named places.
+- **Mourning.** Long inscriptions record grief for relatives and friends, and some mortuary sites were visited again and again by later writers who added their own laments.
+- **Many gods, one supreme.** Allāt is by far the most invoked, but prayers also go to **Rḍw**, **Dushara**, **Baʿal-Samīn** ("lord of heaven"), **Gad** (the fortune of the tribe), and to **ʾlh**, "the god", the ancestor of the name **Allāh**. A few inscriptions appear to speak of a creator who brings light against the darkness of death. How this "god" related to the others is a live research question.
+
+## The kingdoms of the south
+
+Southern Arabia, modern Yemen, was a land of irrigated cities and kingdoms made rich by the trade in **frankincense** and **myrrh**: **Sabaʾ** (Sheba), **Qatabān**, **Ḥaḍramawt**, **Maʿīn**, and later **Ḥimyar**. Each had a national god: **Almaqah** for Sabaʾ, **ʿAmm** for Qatabān, **Sayīn** for Ḥaḍramawt, **Wadd** for Maʿīn. Their inscriptions in the South Arabian alphabet (*musnad*) are formal dedications by kings and nobles, and they reveal a religion of temples, priests, pilgrimages and communal feasts.
+
+The greatest temple was the **Awwām** temple of Almaqah at **Maʾrib**, the Sabaean capital, known locally as **Maḥram Bilqīs**, "the sanctuary of Bilqīs", after the name later tradition gave the Queen of Sheba. It had a huge oval enclosure and a monumental entrance hall of tall square pillars, and received hundreds of inscribed dedications. Sabaean kings also held ritual **hunts**, especially of the ibex, which seem to have been sacred acts, and there was a regular pilgrimage to Almaqah. Carved stelae show the **crescent and disc**, and the **bull** and **ibex** are the animals most associated with the gods in art. The Queen of Sheba herself, who visits Solomon in 1 Kings 10 and appears in the Qur'an (27) and the Ethiopian *Kebra Nagast* (Vault, V66), has not been identified in any South Arabian inscription.
+
+## The turn to one God
+
+The most dramatic change in pre-Islamic Arabia happened in the south, and it is documented in stone. From about **380 CE**, the inscriptions of the kingdom of **Ḥimyar**, which by then ruled most of southern Arabia, stop mentioning the old gods. Instead they invoke **Raḥmānān**, "the Merciful", "Lord of heaven" or "Lord of heaven and earth". The temples of Almaqah fell out of use. Byzantine and later sources credit King **Malkīkarib Yuhaʾmin** with the change, and many of the new inscriptions are explicitly **Jewish**: they mention Israel, use Hebrew words such as *amen* and *shalom*, and name synagogues. Scholars such as Christian Robin argue that the Ḥimyarite elite adopted Judaism or a monotheism close to it, while the population's religion is less clear.
+
+In about **523**, the Jewish king **Yūsuf Asʾar Yathʾar**, remembered in Islamic tradition as **Dhū Nuwās**, massacred Christians at **Najrān** in the north of his kingdom. Syriac and Greek sources, and inscriptions of Yūsuf's own officers, record the campaign. The Christian king of **Aksum** in Ethiopia invaded in about 525 with Byzantine encouragement, and Ḥimyar came under Christian rulers. One of them, the Aksumite general **Abraha**, made himself king and left long inscriptions that open "By the power of the Merciful One and His Messiah". One, at **Murayghān** in central Arabia, records a campaign against the tribes of Maʿadd. Islamic tradition remembers Abraha's expedition against Mecca with an elephant, in the "Year of the Elephant" traditionally dated to 570, the year of Muhammad's birth, and the Qur'an's short sura 105 speaks of "the companions of the elephant". A fragmentary inscription of Abraha published in 2025 may mention elephants; the reading is hypothetical, and the connection between his known campaigns and the Meccan story is debated.
+
+Christianity also had deep roots among the Arab tribes of the north, including the **Ghassānids**, allies of Byzantium, and the **Lakhmids** of al-Ḥīra, allies of Persia; and there were Jewish tribes at **Yathrib** (Medina), **Khaybar** and elsewhere in the Ḥijāz. By the sixth century, monotheism was all around the peninsula.
+
+## Mecca before Islam
+
+What is known of Mecca itself comes almost entirely from Islamic tradition. It describes:
+
+- the **Kaʿba**, "the cube", a stone shrine housing the image of **Hubal** and surrounded, the sources say, by **360 idols**, with the **Black Stone** (Vault, V26) built into its corner;
+- **circumambulation** of the shrine, and rites at nearby sites that were later incorporated, reinterpreted, into the Islamic **ḥajj**;
+- a **sacred territory** (*ḥaram*) where fighting was forbidden, and **sacred months** of truce for pilgrimage and trade fairs;
+- **divination with arrows** before Hubal, which the Qur'an later forbids (5:90);
+- **kāhins**, soothsayers who spoke in rhymed prose (*sajʿ*) inspired by **jinn**, and poets thought to have a jinn companion;
+- theophoric names such as **ʿAbd Manāt**, **ʿAbd al-ʿUzzā** and **ʿAbd Shams** ("servant of the Sun");
+- a few **ḥanīfs**, individuals such as **Zayd ibn ʿAmr** who, the tradition says, rejected the idols and sought "the religion of Abraham".
+
+The Qur'an also reports that the Meccans acknowledged **Allāh** as creator and lord of the Kaʿba while worshipping other beings as intercessors or as "daughters of God" (e.g. 29:61; 53:19–23; 39:3). A story told in early biographies, the so-called "**Satanic verses**" incident, has Muhammad briefly praising the three goddesses as intercessors before the words were withdrawn as Satan's; its historicity is **disputed** among both Muslim and non-Muslim scholars.
+
+## The believer's lens
+
+For Muslims, the history of Arabia is framed by the Qur'an. God's first house, the Kaʿba, was built by **Abraham** and his son **Ishmael** as a sanctuary of the one God (Qur'an 2:125–127). Over time the Arabs fell away into idolatry, which tradition says was introduced by a chieftain, **ʿAmr ibn Luḥayy**, who brought idols from Syria; the age before Muhammad was the *jāhiliyya*, the time of ignorance. The ḥanīfs kept a remnant of Abraham's faith. With the revelation to Muhammad and the conquest of Mecca in 630, the idols were destroyed and the Kaʿba restored to the worship of God alone; the pilgrimage rites were purified and kept. The goddesses were, in the Qur'an's words, "nothing but names you have named" (53:23).
+
+Some Arabs today, Muslim and not, also value the pre-Islamic past as cultural heritage: its poetry above all, the celebrated *Muʿallaqāt*, and its sites, such as Hegra, opened to visitors in Saudi Arabia, and Maʾrib in Yemen. A small number of modern revivalist pagans have taken up the old goddesses. The archive reports these views as belief and heritage.
+
+## The skeptical lens
+
+The historian's first observation is that almost everything written about Mecca before Islam comes from **Muslim sources written generations later**, with a religious reason to present the past as idolatrous and dark. Numbers such as the **360 idols** are traditional, and the Book of Idols mixes genuine memory with antiquarian reconstruction.
+
+The second is that the **inscriptions** tell a story of gradual change, not a single sudden break: Ḥimyar turned to one God some two centuries before Islam; Christianity and Judaism were present across the peninsula; and among the nomads of the north a god called **ʾlh** already had a prominent place. Some scholars, notably **Gerald Hawting** and **Patricia Crone**, argued from the Qur'an itself that its opponents were not simple idolaters but monotheists of a kind, who honoured lesser beings as angels or intercessors; others think this goes beyond the evidence. The debate is **open**.
+
+The third is to set aside claims that the evidence does not support. The idea, spread by some Christian polemicists since the 1990s, that Allāh was originally a **moon god**, Hubal or another, is rejected by specialists: the name derives from *al-ilāh*, "the god", and the evidence links Hubal and Allāh as distinct figures. The story that the Kaʿba was founded by Abraham is a **faith claim**; there is no archaeological evidence either way, and no pre-Islamic source connects Abraham with Mecca. The "Year of the Elephant" date of 570 is traditional and may not fit Abraha's known reign.
+
+## Symbology and sacred encoding
+
+- **The stone as presence.** Across Arabia gods were worshipped in **aniconic stones**: the Nabataean betyls, the cubic stone of Allāt at Ṭāʾif, the stone of Dhū l-Khalaṣa. The word *kaʿba*, "cube", and the Black Stone set in its corner belong to this world of sacred stones; the Qur'an redefined the Kaʿba as the house of the one God.
+- **Eye-idols.** Some Nabataean betyls carry only a pair of stylized eyes and a nose, a minimal sign that the stone sees and is present. One from Petra is inscribed "the goddess of Ḥayyān son of Nybat".
+- **The crescent and the disc.** South Arabian altars and stelae often carry a crescent enclosing a disc. It is an astral emblem of the gods, not evidence of a single "moon god" behind later Islam; the crescent's association with Islam is much later.
+- **The ibex and the bull.** The sacred animals of the southern gods, carved in rows on friezes and altars; the ibex hunt was a royal rite.
+- **The *musnad* alphabet.** The South Arabian script, used for monumental inscriptions in carefully cut, geometric letters, was itself a display of piety and power in temple dedications. Ethiopian script descends from it.
+- **Divine names as theology.** The move from Almaqah and ʿAmm to **Raḥmānān** in Ḥimyar, and the appearance of *ʾlh* among the nomads, show religious change encoded in names. *Raḥmān* would become one of the names of God in the Qur'an (al-Raḥmān, "the Merciful").
+- **Sacred time and space.** The *ḥaram* and the **sacred months** encoded peace into the calendar and the landscape, making pilgrimage and markets possible; both passed into Islam.
+- **Divining arrows.** Blank or marked arrows (*azlām*) drawn before an idol to decide marriages, journeys and disputes, a technology of divine answer later forbidden.
+
+## Connections
+
+Pre-Islamic Arabia is the setting from which **Islam** (ch21) emerged, and this chapter is its prehistory. Its gods are cousins of the **Canaanite and Phoenician** deities of ch58, with whom they share names and the practice of standing stones, and of the Mesopotamian gods of ch03 (the Venus goddess, the storm god, the "lord of heaven"). Ḥimyar's Judaism links it to **Rabbinic Judaism** (ch19); the Najrān martyrs and Abraha to **Early** and **Eastern Christianity** (ch16, ch60) and to the Aksumite and Nubian world of ch68. The goddesses al-Lāt, al-ʿUzzā and Manāt belong in the comparisons of **The Great Goddess** (ch48), the kāhins and jinn in the history of ecstatic speech also found in **Early Greece** (ch08) and **Pentecostalism** (ch64), and Arabian sacrifice in **Sacrifice & the Scapegoat** (ch51). In the Vault, the **Black Stone** (V26), the **Birmingham Qur'an** (V28) and the **Kebra Nagast** (V66) touch this chapter.
+
+## The evidence, honestly
+
+**Well-supported by evidence.** The worship of Allāt, al-ʿUzzā, Manāt, Ruḍā, Dushara and other deities, attested in inscriptions across northern Arabia; the Nabataean betyl cult; the Safaitic record of nomad prayer, sacrifice and mourning; the South Arabian kingdoms, their national gods and the Awwām temple at Maʾrib; the shift of Ḥimyarite inscriptions to Raḥmānān from about 380 CE and the Judaism of its elite; the Najrān massacre of about 523, the Aksumite conquest and Abraha's Christian inscriptions; the presence of Christian and Jewish Arabs before Islam; and the Qur'an's own testimony that its opponents acknowledged Allāh while honouring intercessors.
+
+**Not supported (as established fact).** That Allāh was originally a moon god, or the same as Hubal; that the details of the Book of Idols (including the 360 idols) are accurate history; that the Queen of Sheba is attested in South Arabian inscriptions; that Abraham founded the Kaʿba (a faith claim with no archaeological evidence either way).
+
+**Genuinely open.** The religion of Mecca itself before Islam, for which there is no contemporary evidence; whether the Qur'an's opponents were polytheists or monotheists of a kind; what the nomads meant by *ʾlh* and how it relates to Allāh; how deep Ḥimyar's Judaism went; the historicity of the "Satanic verses" story; and the date and nature of Abraha's campaign and its relation to the Year of the Elephant.
+
+## Sources
+
+- Overview: religion in pre-Islamic Arabia; deities — "Religion in pre-Islamic Arabia," Wikipedia. https://en.wikipedia.org/wiki/Religion_in_pre-Islamic_Arabia ; "List of pre-Islamic Arabian deities," Wikipedia. https://en.wikipedia.org/wiki/List_of_pre-Islamic_Arabian_deities ; Britannica, "Arabian religion." https://www.britannica.com/topic/Arabian-religion/The-historical-setting
+- Ibn al-Kalbī's Book of Idols and its reliability — "Book of Idols," Wikipedia. https://en.wikipedia.org/wiki/Book_of_Idols
+- The goddesses — "Al-Lat," Wikipedia. https://en.wikipedia.org/wiki/Al-Lat ; "Al-Uzza," Wikipedia. https://en.wikipedia.org/wiki/Al-Uzza ; "Manat (goddess)," Wikipedia. https://en.wikipedia.org/wiki/Manat_(goddess) ; "Ruda (deity)," Wikipedia. https://en.wikipedia.org/wiki/Ruda_(deity)
+- Nabataean religion, Dushara and betyls — "Nabataean religion," Wikipedia. https://en.wikipedia.org/wiki/Nabataean_religion ; J. Healey, "The Religion of the Nabataeans – A Conspectus." https://almuslih.org/wp-content/uploads/2024/12/Healey-J-%E2%80%93-The-Religion-of-the-Nabataeans-converted.pdf ; R. Wenning, "Decoding Nabataean betyls" (2008). https://archiv.ub.uni-heidelberg.de/propylaeumdok/611/1/Wenning_Decoding_Nabataean_betyls_2008.pdf
+- Hegra; Hubal's inscription — "Hegra (Mada'in Salih)," Wikipedia. https://en.wikipedia.org/wiki/Hegra_(Mada'in_Salih) ; UNESCO, "Hegra Archaeological Site." https://whc.unesco.org/en/list/1293/ ; "Hubal," Wikipedia. https://en.wikipedia.org/wiki/Hubal
+- Taymāʾ — "Tayma stones," Wikipedia. https://en.wikipedia.org/wiki/Tayma_stones ; Livius, "Tayma Oasis." https://www.livius.org/articles/place/tayma-oasis/
+- Safaitic inscriptions and nomad religion — A. Al-Jallad, *The Religion and Rituals of the Nomads of Pre-Islamic Arabia* (Brill, 2022; open access). https://archive.org/details/oapen-20.500.12657-54655 ; "Safaitic," Wikipedia. https://en.wikipedia.org/wiki/Safaitic ; A. Al-Jallad, "The 'One' God in a Safaitic Inscription." https://almuslih.org/wp-content/uploads/2014/12/Jallad-A-al-The-One-God-in-a-Safaitic-inscription.pdf ; "Sacrifice in the Safaitic inscriptions in the light of new evidence." https://www.academia.edu/34177701/SACRIFICE_IN_THE_SAFAITIC_INSCRIPTIONS_IN_THE_LIGHT_OF_NEW_EVIDENCE ; A. Al-Jallad and H. Sidky, "Late Antique Allāh," *Arabian Archaeology and Epigraphy*. https://onlinelibrary.wiley.com/doi/10.1111/aae.70019
+- South Arabia: Almaqah and the Awwām temple — "Almaqah," Wikipedia. https://en.wikipedia.org/wiki/Almaqah ; "Temple of Awwam," Wikipedia. https://en.wikipedia.org/wiki/Temple_of_Awwam
+- Ḥimyar, Raḥmānān, Judaism and Najrān — "Himyar," Wikipedia. https://en.wikipedia.org/wiki/Himyar ; "Rahmanan," Wikipedia. https://en.wikipedia.org/wiki/Rahmanan ; "Malkikarib Yuhamin," Wikipedia. https://en.wikipedia.org/wiki/Malkikarib_Yuhamin ; "Dhu Nuwas," Wikipedia. https://en.wikipedia.org/wiki/Dhu_Nuwas ; "The Judaism of the Ancient Kingdom of Ḥimyar in Arabia," in *Diversity and Rabbinization* (Open Book Publishers). https://books.openbookpublishers.com/10.11647/obp.0219/ch7.xhtml
+- Abraha and the elephant — "Abraha," Wikipedia. https://en.wikipedia.org/wiki/Abraha ; Z. al-Bāriqī and C. J. Robin, "Fragment of a Ḥimyarite inscription commissioned by King Abraha, with the hypothetical mention of elephants." https://www.academia.edu/145725998/
+- Monotheism, ḥanīfs, Zayd ibn ʿAmr — "Monotheism in pre-Islamic Arabia," Wikipedia. https://en.wikipedia.org/wiki/Monotheism_in_pre-Islamic_Arabia ; "Hanif," Wikipedia. https://en.wikipedia.org/wiki/Hanif ; "Zayd ibn Amr," Wikipedia. https://en.wikipedia.org/wiki/Zayd_ibn_Amr ; "Amr ibn Luhay," Wikipedia. https://en.wikipedia.org/wiki/Amr_ibn_Luhay
+- Kāhins, sajʿ and jinn — "Saj'," Wikipedia. https://en.wikipedia.org/wiki/Saj%27 ; "Jinn," Wikipedia. https://en.wikipedia.org/wiki/Jinn
+- The Qur'anic pagans debate (Hawting, Crone) — P. Crone, "The Religion of the Qurʾānic Pagans: God and the Lesser Deities." https://www.ias.edu/sites/default/files/hs/Crone_Articles/Crone_Quranic_Deities.pdf ; review of Crone, *The Qurʾānic Pagans and Related Matters*, *American Journal of Islam and Society*. https://www.ajis.org/index.php/ajiss/article/view/777
+- The "Satanic verses" story — "Satanic Verses," Wikipedia. https://en.wikipedia.org/wiki/Satanic_Verses
+- The moon-god claim and its rejection — "Allah as a lunar deity," Wikipedia. https://en.wikipedia.org/wiki/Allah_as_a_lunar_deity
+- Pre-Islamic pilgrimage and the Black Stone — "Hajj," Wikipedia. https://en.wikipedia.org/wiki/Hajj ; "Black Stone," Wikipedia. https://en.wikipedia.org/wiki/Black_Stone
