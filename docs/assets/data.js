@@ -487,6 +487,11 @@ window.ARCHIVE = {
       era: "03-early-iron-age", eraLabel: "Early Iron Age · The Etruscans",
       status: "published", pending: true,
       source: "eras/03-early-iron-age/ch77-etruscans-early-iron-age.md",
-      summary: "The people Rome called the most devoted to religion: the ‘Etruscan discipline’ revealed by the child-sage Tages and the prophetess Vegoia; the bronze Liver of Piacenza, a sheep’s liver mapped as the sixteen regions of the sky; lightning lore and the sacred templum; Tinia, Uni and Menrva, forerunners of Rome’s Capitoline gods; the gold Pyrgi tablets that make Uni and Astarte one goddess; the linen ritual book that ended up wrapping an Egyptian mummy; painted tombs of banquets and death demons; and the ten ages allotted to their nation. With ancient DNA settling the origins debate and ‘decipherments’ weighed against the evidence." }
+      summary: "The people Rome called the most devoted to religion: the ‘Etruscan discipline’ revealed by the child-sage Tages and the prophetess Vegoia; the bronze Liver of Piacenza, a sheep’s liver mapped as the sixteen regions of the sky; lightning lore and the sacred templum; Tinia, Uni and Menrva, forerunners of Rome’s Capitoline gods; the gold Pyrgi tablets that make Uni and Astarte one goddess; the linen ritual book that ended up wrapping an Egyptian mummy; painted tombs of banquets and death demons; and the ten ages allotted to their nation. With ancient DNA settling the origins debate and ‘decipherments’ weighed against the evidence." },
+    { id: "ch78", title: "The Scythians & the Steppe", kind: "tradition",
+      era: "04-axial-age", eraLabel: "Axial Age · The Scythians & the Steppe",
+      status: "published", pending: true,
+      source: "eras/04-axial-age/ch78-scythians-steppe-axial-age.md",
+      summary: "The mounted nomads of the Iron Age steppe, from the Danube to the Altai: the tattooed ‘Ice Maiden’ frozen in her tomb with six horses; Herodotus’s Scythians, with their hearth-goddess Tabiti, the sword of Ares on a mountain of brushwood, willow-rod diviners and the Enarees; the royal funerals of the Dnieper kurgans, which archaeology has largely confirmed; hemp burned in felt tents, now proven by chemistry; gold stags and griffins of the animal style; horses masked as antlered beasts; and the warrior women behind the Amazon myth. With Herodotus checked against the ground, and modern ancestral claims against the evidence." }
   ]
 };

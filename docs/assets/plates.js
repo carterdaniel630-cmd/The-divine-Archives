@@ -1224,6 +1224,13 @@
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M40 110 C38 76 66 52 104 54 C140 56 164 78 162 106 C160 132 138 150 108 150 C98 150 94 142 86 142 C70 142 42 138 40 110 Z" stroke="currentColor" stroke-width="1.4"/><ellipse cx="102" cy="102" rx="44" ry="30" stroke="currentColor" stroke-width="0.9" opacity="0.7"/><g stroke="currentColor" stroke-width="0.7" opacity="0.6"><path d="M102 54 L102 72 M140 62 L128 78 M160 96 L144 98 M152 132 L138 120 M112 150 L108 132 M80 142 L84 126 M50 128 L64 118 M42 98 L58 100 M56 70 L70 80 M80 56 L86 74"/></g><path d="M70 102 L134 102 M102 76 L102 128" stroke="currentColor" stroke-width="0.8" opacity="0.6"/><path d="M118 96 C124 86 132 86 136 94" stroke="currentColor" stroke-width="1.2"/><path d="M100 18 L94 34 L102 34 L96 48" stroke="currentColor" stroke-width="1.3"/></svg>',
       "Interpretive illustration",
       "A bronze liver in the manner of the Liver of Piacenza, its surface divided into regions of the sky, each belonging to a god, with a lightning bolt above: the haruspex read the gods' will from entrails and lightning by the same sixteenfold map. An original, interpretive drawing, not a copy of the object."
+    ),
+
+    /* Ch78 — The Scythians: the recumbent stag of the animal style */
+    "ch78": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><path d="M44 132 C52 118 72 112 96 114 C118 116 136 114 148 104 C156 98 160 92 158 86 C154 84 150 86 146 90" stroke="currentColor" stroke-width="1.5"/><path d="M44 132 C40 138 44 144 54 144 L150 144 C156 144 160 138 156 132 C150 124 146 120 146 110" stroke="currentColor" stroke-width="1.5"/><path d="M62 144 C58 138 62 132 70 134 M86 144 C82 138 86 132 94 134 M120 144 C116 138 120 132 128 134" stroke="currentColor" stroke-width="1.1"/><path d="M152 88 C150 76 142 66 130 60 C120 56 108 54 96 56 M140 70 C132 64 126 56 124 46 M126 62 C116 58 110 50 108 42 M112 58 C100 56 92 50 88 42 M98 56 C86 58 76 54 70 48 M84 58 C72 62 62 60 56 54" stroke="currentColor" stroke-width="1.2"/><circle cx="150" cy="94" r="2" fill="currentColor"/><path d="M30 166 C60 160 90 170 120 164 C140 160 160 166 172 164" stroke="currentColor" stroke-width="0.8" opacity="0.5"/></svg>',
+      "Interpretive illustration",
+      "A recumbent stag, legs folded beneath it and antlers streaming back along its body, in the manner of the Scythian animal style (the gold stag from Kostromskaya is the best-known example). An original, interpretive drawing, not a copy of any object."
     )
 
   };

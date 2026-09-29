@@ -161,6 +161,7 @@ every remaining chapter and added the lens structure throughout.
 | ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
 | ch76 — The Olmec | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
 | ch77 — The Etruscans | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
+| ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
 
 Status values: `not started` · `researching` · `drafting` · `CLEARED` · `revising` · `CLEARED`.
 
