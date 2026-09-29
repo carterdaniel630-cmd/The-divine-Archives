@@ -205,3 +205,13 @@ Every Vault object in the museum now has a **Read it in English** button in the 
 - **No English to give** (26), with the reason: undeciphered (Voynich, Rohonc, Phaistos, Pictish symbols), pictorial (Borgia, Boturini), or no writing at all (Nebra, Lion Man, Benin, relic cloths).
 
 Data: `docs/museum/english.js`. Every quoted line was checked against a published copy before it went in.
+
+## Addendum: real scans (2026-09-29)
+
+Eleven Vault objects now have a **View the real scan** button in the inspector, which shows a published 3D scan of the actual object in Sketchfab's own embedded viewer. As with the Vault's manuscript viewer, the scan is loaded in the visitor's browser straight from the publisher, only when asked for; nothing is downloaded into or hosted by the site, and the caption names the maker and links to the Sketchfab page, where its licence is given.
+
+- **Published by the holding museum or an official heritage body (6):** Rosetta Stone (British Museum), Venus of Willendorf (Natural History Museum Vienna), Lion Man (Baden-Württemberg State Office for Monument Preservation, CT scan), an oracle bone (British Library), a Pictish cross-slab at Aberlemno (Historic Environment Scotland), Rök runestone (Arkeologerna).
+- **Scans of the real object by professional or independent makers (5):** stećci at Radimlja (Global Digital Heritage), Kensington Runestone (Artec 3D), Merneptah Stele and the chambers of Unas's pyramid (photographed on site in Cairo and Saqqara), Cyrus Cylinder (photographed at the British Museum).
+- **Left out:** scans whose subject or maker was unclear (Tel Dan, Behistun, Ishtar Gate bricks, Phaistos Disc, Gate of the Sun), imitations and reconstructions (Berlin Gold Hat copies, Göbekli Tepe sculptures), and the Benin Bronzes, pending a decision on objects whose return is claimed.
+
+Data: `docs/museum/scans.js`. The session environment blocks Sketchfab, so the embeds were checked for markup, toggling and layout, not for the remote content itself.

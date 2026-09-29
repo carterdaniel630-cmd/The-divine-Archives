@@ -17,6 +17,7 @@ import * as THREE from "three";
 import { buildReliquary, reliquaryStage } from "./reliquary.js?v=1";
 import { buildRelic, hasRelic } from "./relics.js?v=1";
 import { englishHTML, hasEnglish } from "./english.js?v=1";
+import { scanEmbed } from "./scans.js?v=1";
 
 const TAU = Math.PI * 2;
 const ease = (a, b, k) => a + (b - a) * k;
@@ -372,8 +373,9 @@ export function createInspector(opt) {
   el.innerHTML =
     '<div class="mu-insp-view" aria-hidden="true"></div>' +
     '<div class="mu-insp-bar" role="toolbar" aria-label="Examine the object"><span class="mu-insp-acts"></span>' +
-      '<button type="button" data-i="en" hidden>Read it in English</button><button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
+      '<button type="button" data-i="scan" hidden aria-pressed="false">View the real scan</button><button type="button" data-i="en" hidden>Read it in English</button><button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
     '<p class="mu-insp-hint">Drag to turn it · scroll or pinch to zoom</p>' +
+    '<div class="mu-scan" hidden><div class="mu-scan-frame"></div><p class="mu-scan-cap"></p></div>' +
     '<aside class="mu-insp-panel" role="dialog" aria-modal="true" aria-labelledby="mu-card-h" tabindex="-1"><div class="mu-insp-body"></div>' +
       '<p class="mu-insp-note"></p></aside>';
   document.body.appendChild(el);
@@ -398,6 +400,7 @@ export function createInspector(opt) {
     unstage();
     body.innerHTML = html + (id ? englishHTML(id) : ""); note.textContent = noteText; acts.innerHTML = "";
     el.querySelector('[data-i="en"]').hidden = !(id && hasEnglish(id));
+    hideScan(); st.scanId = id && scanEmbed(id) ? id : null; el.querySelector('[data-i="scan"]').hidden = !st.scanId;
     st.active = true; st.spin = !reduce(); st.idle = 0;
     el.hidden = false; document.body.classList.add("mu-inspecting");
     resize();
@@ -424,7 +427,7 @@ export function createInspector(opt) {
 
   function close() {
     if (!st.active) return;
-    st.active = false; el.hidden = true; document.body.classList.remove("mu-inspecting");
+    st.active = false; el.hidden = true; document.body.classList.remove("mu-inspecting"); hideScan();
     cam.clearViewOffset();
     unstage(); drop(st.model); st.model = null;
     if (opt.onClose) opt.onClose();
@@ -463,7 +466,8 @@ export function createInspector(opt) {
   el.addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     if (b.dataset.i === "close") { close(); return; }
-    if (b.dataset.i === "reset") { frame(); return; }
+    if (b.dataset.i === "reset") { hideScan(); frame(); return; }
+    if (b.dataset.i === "scan") { if (st.scanOn) hideScan(); else showScan(); return; }
     if (b.dataset.i === "en") { const d = body.querySelector(".mu-en"); if (d) { d.open = true; d.scrollIntoView({ block: "start", behavior: reduce() ? "auto" : "smooth" }); d.querySelector("summary").focus({ preventScroll: true }); } return; }
     if (b.dataset.act && st.model) {
       const a = st.model.actions.find((x) => x.id === b.dataset.act);
@@ -482,7 +486,26 @@ export function createInspector(opt) {
     st.spin = false;
   });
 
+  // a real scan, in the publisher's own viewer, fetched only when asked for
+  function showScan() {
+    const e = st.scanId && scanEmbed(st.scanId); if (!e) return;
+    const box = el.querySelector(".mu-scan"), f = document.createElement("iframe");
+    f.src = e.src; f.title = "3D scan of the object"; f.allow = "autoplay; fullscreen; xr-spatial-tracking"; f.setAttribute("allowfullscreen", ""); f.loading = "eager";
+    box.querySelector(".mu-scan-frame").replaceChildren(f);
+    const who = e.s.kind === "museum" ? "Published by " + e.s.by : "Scanned by " + e.s.by;
+    box.querySelector(".mu-scan-cap").innerHTML = "A real 3D scan of the object" + (e.s.what ? " (" + e.s.what + ")" : "") + ". " + who + ", shown in Sketchfab's viewer. <a target=\"_blank\" rel=\"noopener\" href=\"" + e.page + "\">Open it on Sketchfab</a>, where its licence is given.";
+    box.hidden = false; st.scanOn = true; el.classList.add("mu-scanning");
+    const bar = el.querySelector(".mu-insp-bar").getBoundingClientRect(); box.style.top = Math.round(bar.bottom + 8) + "px";
+    const b = el.querySelector('[data-i="scan"]'); b.textContent = "Back to the rendition"; b.setAttribute("aria-pressed", "true");
+  }
+  function hideScan() {
+    const box = el.querySelector(".mu-scan"); if (!box) return;
+    box.hidden = true; box.querySelector(".mu-scan-frame").replaceChildren(); st.scanOn = false; el.classList.remove("mu-scanning");
+    const b = el.querySelector('[data-i="scan"]'); if (b) { b.textContent = "View the real scan"; b.setAttribute("aria-pressed", "false"); }
+  }
+
   function render(dt) {
+    if (st.scanOn) return;
     const m = st.model;
     if (st.spin && !reduce()) st.yaw += dt * 0.25;
     if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); if (st.want.target != null) st.ty = ease(st.ty, st.want.target, k); }

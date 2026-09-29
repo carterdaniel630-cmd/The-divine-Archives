@@ -21,7 +21,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=6";
+import { createInspector } from "./inspect.js?v=7";
 import { buildRelic, hasRelic } from "./relics.js?v=1";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=3";
