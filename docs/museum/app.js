@@ -21,7 +21,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=5";
+import { createInspector } from "./inspect.js?v=6";
 import { buildRelic, hasRelic } from "./relics.js?v=1";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=2";
@@ -1003,8 +1003,8 @@ function openCard(ex) {
       S.cardAt = performance.now(); unlock();
       S.insp.open(v.prop, h, v.rendition
         ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
-        : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Any writing on it is illustrative marks, not the text."
-        : "A generic stand-in for this kind of object, not a replica of it. Any writing on it is illustrative marks, not the text.", d.id);
+        : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
+        : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.", d.id);
       return;
     }
   }

@@ -16,6 +16,7 @@
 import * as THREE from "three";
 import { buildReliquary, reliquaryStage } from "./reliquary.js?v=1";
 import { buildRelic, hasRelic } from "./relics.js?v=1";
+import { englishHTML, hasEnglish } from "./english.js?v=1";
 
 const TAU = Math.PI * 2;
 const ease = (a, b, k) => a + (b - a) * k;
@@ -371,7 +372,7 @@ export function createInspector(opt) {
   el.innerHTML =
     '<div class="mu-insp-view" aria-hidden="true"></div>' +
     '<div class="mu-insp-bar" role="toolbar" aria-label="Examine the object"><span class="mu-insp-acts"></span>' +
-      '<button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
+      '<button type="button" data-i="en" hidden>Read it in English</button><button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
     '<p class="mu-insp-hint">Drag to turn it · scroll or pinch to zoom</p>' +
     '<aside class="mu-insp-panel" role="dialog" aria-modal="true" aria-labelledby="mu-card-h" tabindex="-1"><div class="mu-insp-body"></div>' +
       '<p class="mu-insp-note"></p></aside>';
@@ -395,7 +396,8 @@ export function createInspector(opt) {
   function open(kind, html, noteText, id) {
     drop(st.model); st.model = null;
     unstage();
-    body.innerHTML = html; note.textContent = noteText; acts.innerHTML = "";
+    body.innerHTML = html + (id ? englishHTML(id) : ""); note.textContent = noteText; acts.innerHTML = "";
+    el.querySelector('[data-i="en"]').hidden = !(id && hasEnglish(id));
     st.active = true; st.spin = !reduce(); st.idle = 0;
     el.hidden = false; document.body.classList.add("mu-inspecting");
     resize();
@@ -462,6 +464,7 @@ export function createInspector(opt) {
     const b = e.target.closest("button"); if (!b) return;
     if (b.dataset.i === "close") { close(); return; }
     if (b.dataset.i === "reset") { frame(); return; }
+    if (b.dataset.i === "en") { const d = body.querySelector(".mu-en"); if (d) { d.open = true; d.scrollIntoView({ block: "start", behavior: reduce() ? "auto" : "smooth" }); d.querySelector("summary").focus({ preventScroll: true }); } return; }
     if (b.dataset.act && st.model) {
       const a = st.model.actions.find((x) => x.id === b.dataset.act);
       const r = st.model.act(a.id);

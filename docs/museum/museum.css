@@ -170,3 +170,11 @@ body.mu-in-sky .mu-tag { bottom: 6.2rem; }
 }
 /* while the inspector makes the object */
 .mu-insp-busy .mu-insp-view::after { content:"Preparing the object…"; position:absolute; left:50%; top:45%; transform:translateX(-50%); color:var(--ink-faint); font-size:.9rem; letter-spacing:.06em; }
+/* "Read it in English" on an object's label */
+.mu-en { margin:1rem 0 0; padding:.6rem .75rem; border:1px solid var(--line); border-radius:4px; background:rgba(40,28,16,.55); }
+.mu-en summary { cursor:pointer; color:var(--gold-bright); font-family:var(--font-head); letter-spacing:.03em; }
+.mu-en summary:focus-visible { outline:1px solid var(--gold); outline-offset:3px; }
+.mu-en-kind { margin:.55rem 0 .4rem; font-size:.74rem; color:var(--ink-faint); font-style:italic; }
+.mu-en blockquote { margin:.3rem 0; padding-left:.7rem; border-left:2px solid var(--gold); }
+.mu-en blockquote p, .mu-en > p { margin:.3rem 0; }
+.mu-en-src { margin:.5rem 0 0; padding-left:1.1rem; font-size:.74rem; }

@@ -194,3 +194,14 @@ Carter asked for a night-sky or planetarium look on the ceilings, with interacti
 2. **A real mid-range phone check** (Gate 1/3 hardware). The numbers above come from emulation.
 3. ~~Review of the 21 chapters with new lens sections and plates (ch45–ch65).~~ Cleared by Carter, 2026-09-28.
 4. Whether to keep the museum linked from the home page and chapters while it is in beta.
+
+## Addendum: Read it in English (2026-09-29)
+
+Every Vault object in the museum now has a **Read it in English** button in the inspector. It opens a panel under the label with what the real object says (the rendition's own marks stay illustrative), in one of four forms, each labelled and sourced:
+
+- **Public-domain translation, quoted exactly** (27 objects): KJV, Newton's Emerald Tablet, Budge, Charles, Chamberlain, Legge, Westcott, Macauliffe, King and Thompson, Liliʻuokalani, Barth, Evans-Wentz, Summers, Pickthall, the 1830 Book of Mormon, the 1909 Book of the Law.
+- **Literal rendering** of a short published reading (Pilate Stone, James Ossuary, Holy Lance sleeve, Mesha, Merneptah, Kensington, the Diamond Sutra colophon, and others).
+- **Summary in our own words** where the standard translations are still in copyright (Pyramid Texts, Cyrus Cylinder, Gospel of Judas, Satanic Bible, Book of Shadows and others): described, not copied.
+- **No English to give**, with the reason: undeciphered (Voynich, Rohonc, Phaistos, Pictish symbols), pictorial (Borgia, Boturini), or no writing at all (Nebra, Lion Man, Benin, relic cloths).
+
+Data: `docs/museum/english.js`. Every quoted line was checked against a published copy before it went in.
