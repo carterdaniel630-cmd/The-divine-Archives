@@ -27,11 +27,13 @@ function inline(s) {
   s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   return s;
 }
-// linkify a source line: bold lead stays, trailing bare URL(s) become links
+// linkify a source line: bold lead stays, trailing bare URL(s) become links.
+// Markdown links are already anchors after inline(), so only text outside an
+// <a>…</a> is linkified (re-wrapping them garbled ch01–ch20's source lists).
 function sourceLine(s) {
   s = inline(s);
-  s = s.replace(/(https?:\/\/[^\s<]+)/g, (m, u) => `<a href="${u}">${u}</a>`);
-  return s;
+  return s.split(/(<a\b[^>]*>.*?<\/a>)/).map((part, i) => i % 2 ? part :
+    part.replace(/(https?:\/\/[^\s<]+)/g, (m, u) => `<a href="${u}">${u}</a>`)).join("");
 }
 
 function parseBlocks(text) {

@@ -156,9 +156,9 @@ window.CHAPTERS = {
       </ul>
       <h4>Comparison and interpretation</h4>
       <ul>
-        <li><a href="<a href="https://biologos.org/articles/gilgamesh-atrahasis-and-the-flood">BioLogos:">https://biologos.org/articles/gilgamesh-atrahasis-and-the-flood">BioLogos:</a> Gilgamesh, Atrahasis and the Flood</a>.</li>
-        <li><a href="<a href="https://www.thetorah.com/article/the-mesopotamian-origin-of-the-biblical-flood-story">TheTorah.com:">https://www.thetorah.com/article/the-mesopotamian-origin-of-the-biblical-flood-story">TheTorah.com:</a> The Mesopotamian Origin of the Biblical Flood Story</a>.</li>
-        <li><a href="<a href="https://bigthink.com/high-culture/flood-myth-origin/">Big">https://bigthink.com/high-culture/flood-myth-origin/">Big</a> Think: Why are flood myths so common?</a>.</li>
+        <li><a href="https://biologos.org/articles/gilgamesh-atrahasis-and-the-flood">BioLogos: Gilgamesh, Atrahasis and the Flood</a>.</li>
+        <li><a href="https://www.thetorah.com/article/the-mesopotamian-origin-of-the-biblical-flood-story">TheTorah.com: The Mesopotamian Origin of the Biblical Flood Story</a>.</li>
+        <li><a href="https://bigthink.com/high-culture/flood-myth-origin/">Big Think: Why are flood myths so common?</a>.</li>
       </ul>
       <h4>Archaeology and geology</h4>
       <ul>
@@ -319,8 +319,8 @@ window.CHAPTERS = {
       </ul>
       <h4>Deities, cosmology, and the Osiris myth</h4>
       <ul>
-        <li><a href="<a href="https://more.bham.ac.uk/birminghamegyptology/eton-myers-project/virtual-museum/toward-the-horizon/osiris-the-mythological-origins-of-mummification/">Birmingham">https://more.bham.ac.uk/birminghamegyptology/eton-myers-project/virtual-museum/toward-the-horizon/osiris-the-mythological-origins-of-mummification/">Birmingham</a> Egyptology: Osiris and the origins of mummification</a>.</li>
-        <li><a href="<a href="https://africame.factsanddetails.com/article/entry-1098.html">Facts">https://africame.factsanddetails.com/article/entry-1098.html">Facts</a> and Details: Book of the Dead and Egyptian religious texts</a>.</li>
+        <li><a href="https://more.bham.ac.uk/birminghamegyptology/eton-myers-project/virtual-museum/toward-the-horizon/osiris-the-mythological-origins-of-mummification/">Birmingham Egyptology: Osiris and the origins of mummification</a>.</li>
+        <li><a href="https://africame.factsanddetails.com/article/entry-1098.html">Facts and Details: Book of the Dead and Egyptian religious texts</a>.</li>
       </ul>
       <h4>Folk and personal religion</h4>
       <ul>
@@ -330,10 +330,10 @@ window.CHAPTERS = {
       </ul>
       <h4>The Amarna period and the monotheism debate</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Atenism">Wikipedia:">https://en.wikipedia.org/wiki/Atenism">Wikipedia:</a> Atenism</a>.</li>
-        <li><a href="<a href="https://www.asor.org/anetoday/2021/05/monotheism-monopoly-akhenaten">ASOR:">https://www.asor.org/anetoday/2021/05/monotheism-monopoly-akhenaten">ASOR:</a> Monotheism or Monopoly? Akhenaten and His Religious-Political Reform</a>.</li>
-        <li><a href="<a href="https://www.britannica.com/biography/Akhenaten/Religion-of-the-Aton">Britannica:">https://www.britannica.com/biography/Akhenaten/Religion-of-the-Aton">Britannica:</a> Akhenaten — Religion of the Aton</a>.</li>
-        <li><a href="<a href="https://the-past.com/feature/breaking-maat-akhenaten-and-the-battle-for-egyptian-tradition-and-identity/">The">https://the-past.com/feature/breaking-maat-akhenaten-and-the-battle-for-egyptian-tradition-and-identity/">The</a> Past: Breaking Ma'at — Akhenaten and the battle for Egyptian tradition</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Atenism">Wikipedia: Atenism</a>.</li>
+        <li><a href="https://www.asor.org/anetoday/2021/05/monotheism-monopoly-akhenaten">ASOR: Monotheism or Monopoly? Akhenaten and His Religious-Political Reform</a>.</li>
+        <li><a href="https://www.britannica.com/biography/Akhenaten/Religion-of-the-Aton">Britannica: Akhenaten — Religion of the Aton</a>.</li>
+        <li><a href="https://the-past.com/feature/breaking-maat-akhenaten-and-the-battle-for-egyptian-tradition-and-identity/">The Past: Breaking Ma'at — Akhenaten and the battle for Egyptian tradition</a>.</li>
       </ul>
     </div>
   ` },
@@ -478,27 +478,27 @@ window.CHAPTERS = {
       </ul>
       <h4>Deities, cult, and divination</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Mesopotamian-religion/The-gods-and-demons">Britannica:">https://www.britannica.com/topic/Mesopotamian-religion/The-gods-and-demons">Britannica:</a> Mesopotamian religion — the gods and demons</a>.</li>
-        <li><a href="<a href="https://www.worldhistory.org/Mesopotamian_Religion/">World">https://www.worldhistory.org/Mesopotamian_Religion/">World</a> History Encyclopedia: Mesopotamian Religion</a>.</li>
-        <li><a href="<a href="https://www.ancient-origins.net/history-ancient-traditions/mesopotamian-divination-0020299">Ancient">https://www.ancient-origins.net/history-ancient-traditions/mesopotamian-divination-0020299">Ancient</a> Origins: Divination and Omens in Mesopotamian Society</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Mesopotamian-religion/The-gods-and-demons">Britannica: Mesopotamian religion — the gods and demons</a>.</li>
+        <li><a href="https://www.worldhistory.org/Mesopotamian_Religion/">World History Encyclopedia: Mesopotamian Religion</a>.</li>
+        <li><a href="https://www.ancient-origins.net/history-ancient-traditions/mesopotamian-divination-0020299">Ancient Origins: Divination and Omens in Mesopotamian Society</a>.</li>
       </ul>
       <h4>The Royal Cemetery of Ur</h4>
       <ul>
         <li>A. Baadsgaard et al., &ldquo;Human sacrifice and intentional corpse preservation in</li>
-        <li><a href="<a href="https://www.penn.museum/sites/expedition/a-spectacular-discovery/">Penn">https://www.penn.museum/sites/expedition/a-spectacular-discovery/">Penn</a> Museum, Expedition: A Spectacular Discovery</a>.</li>
+        <li><a href="https://www.penn.museum/sites/expedition/a-spectacular-discovery/">Penn Museum, Expedition: A Spectacular Discovery</a>.</li>
       </ul>
       <h4>On the Hammurabi &ldquo;code&rdquo; debate</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Code_of_Hammurabi">Wikipedia:">https://en.wikipedia.org/wiki/Code_of_Hammurabi">Wikipedia:</a> Code of Hammurabi</a> (summarizing Van De Mieroop, Yoffee, and others).</li>
+        <li><a href="https://en.wikipedia.org/wiki/Code_of_Hammurabi">Wikipedia: Code of Hammurabi</a> (summarizing Van De Mieroop, Yoffee, and others).</li>
       </ul>
       <h4>On Enuma Elish and Genesis</h4>
       <ul>
-        <li><a href="<a href="https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/">Bible">https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/">Bible</a> Odyssey: The Enuma Elish and the Bible</a>;</li>
+        <li><a href="https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/">Bible Odyssey: The Enuma Elish and the Bible</a>;</li>
       </ul>
       <h4>Symbology and sacred encoding</h4>
       <ul>
-        <li>Divine numbers of the gods &mdash; <a href="<a href="https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia:">https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia:</a> Sin (mythology)</a>); god-list traditions.</li>
-        <li>Nisaba and Nabu as patrons of writing &mdash; <a href="<a href="https://en.wikipedia.org/wiki/Nisaba">Wikipedia:">https://en.wikipedia.org/wiki/Nisaba">Wikipedia:</a> Nisaba</a>.</li>
+        <li>Divine numbers of the gods &mdash; <a href="https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia: Sin (mythology)</a>); god-list traditions.</li>
+        <li>Nisaba and Nabu as patrons of writing &mdash; <a href="https://en.wikipedia.org/wiki/Nisaba">Wikipedia: Nisaba</a>.</li>
         <li>Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest</li>
         <li>Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god</li>
       </ul>
@@ -615,25 +615,25 @@ window.CHAPTERS = {
       <h4>The seals, the Great Bath, and the &ldquo;proto-Shiva&rdquo; debate</h4>
       <ul>
         <li>John Marshall, <em>Mohenjo-Daro and the Indus Civilization</em> (1931), for the original</li>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia:">https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia:</a> Pashupati seal</a> (surveying</li>
-        <li><a href="<a href="https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/">The">https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/">The</a> Print: how a post about the Pashupati seal triggered an identity debate</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia: Pashupati seal</a> (surveying</li>
+        <li><a href="https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/">The Print: how a post about the Pashupati seal triggered an identity debate</a>.</li>
         <li>The &ldquo;Priest-King&rdquo; bust and its contested name —</li>
       </ul>
       <h4>The undeciphered script</h4>
       <ul>
-        <li><a href="<a href="https://www.harappa.com/content/introduction-study-indus-script">Harappa.com:">https://www.harappa.com/content/introduction-study-indus-script">Harappa.com:</a> Introduction to the Study of the Indus Script</a> (Iravatham Mahadevan).</li>
+        <li><a href="https://www.harappa.com/content/introduction-study-indus-script">Harappa.com: Introduction to the Study of the Indus Script</a> (Iravatham Mahadevan).</li>
         <li>The Dholavira &ldquo;signboard&rdquo; (ten large signs over the north gate) —</li>
         <li>Asko Parpola, <em>Deciphering the Indus Script</em> (1994) and <em>The Roots of Hinduism</em> (2015).</li>
-        <li>S. Farmer, R. Sproat &amp; M. Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004) &mdash; <a href="<a href="https://safarmer.com/fsw2.pdf">PDF">https://safarmer.com/fsw2.pdf">PDF</a></a> (the non-linguistic argument).</li>
+        <li>S. Farmer, R. Sproat &amp; M. Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004) &mdash; <a href="https://safarmer.com/fsw2.pdf">PDF</a> (the non-linguistic argument).</li>
       </ul>
       <h4>Decline and the Indo-Aryan question (ancient DNA)</h4>
       <ul>
         <li>V. Shinde et al., &ldquo;An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers,&rdquo; <em>Cell</em> (2019); V. Narasimhan et al., <em>Science</em> (2019).</li>
-        <li><a href="<a href="https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in:">https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in:</a> two genetic studies and the Indo-Aryan migration</a>.</li>
+        <li><a href="https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in: two genetic studies and the Indo-Aryan migration</a>.</li>
       </ul>
       <h4>General</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Indus_Valley_Civilisation">Wikipedia:">https://en.wikipedia.org/wiki/Indus_Valley_Civilisation">Wikipedia:</a> Indus Valley Civilisation</a> and <a href="<a href="https://en.wikipedia.org/wiki/Religion_of_the_Indus_Valley_Civilisation">Religion">https://en.wikipedia.org/wiki/Religion_of_the_Indus_Valley_Civilisation">Religion</a> of the Indus Valley Civilisation</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Indus_Valley_Civilisation">Wikipedia: Indus Valley Civilisation</a> and <a href="https://en.wikipedia.org/wiki/Religion_of_the_Indus_Valley_Civilisation">Religion of the Indus Valley Civilisation</a>.</li>
       </ul>
     </div>
   ` },
@@ -773,8 +773,8 @@ window.CHAPTERS = {
       <h4>Primary texts (translations)</h4>
       <ul>
         <li><em>The Rigveda</em>, trans. Stephanie Jamison &amp; Joel Brereton (2014), the current</li>
-        <li>Creation hymns: <a href="<a href="https://en.wikipedia.org/wiki/Nasadiya_Sukta">Wikipedia:">https://en.wikipedia.org/wiki/Nasadiya_Sukta">Wikipedia:</a> Nasadiya Sukta</a>;</li>
-        <li>The Gayatri Mantra (Rigveda 3.62.10) — <a href="<a href="https://en.wikipedia.org/wiki/Gayatri_Mantra">Wikipedia:">https://en.wikipedia.org/wiki/Gayatri_Mantra">Wikipedia:</a> Gayatri Mantra</a>.</li>
+        <li>Creation hymns: <a href="https://en.wikipedia.org/wiki/Nasadiya_Sukta">Wikipedia: Nasadiya Sukta</a>;</li>
+        <li>The Gayatri Mantra (Rigveda 3.62.10) — <a href="https://en.wikipedia.org/wiki/Gayatri_Mantra">Wikipedia: Gayatri Mantra</a>.</li>
       </ul>
       <h4>The Atharvaveda (household charms and healing)</h4>
       <ul>
@@ -783,7 +783,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Deities, Rta, and the pantheon</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Vedic-religion">Britannica:">https://www.britannica.com/topic/Vedic-religion">Britannica:</a> Vedic religion</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Vedic-religion">Britannica: Vedic religion</a>;</li>
       </ul>
       <h4>Ritual, texts, and transmission</h4>
       <ul>
@@ -792,7 +792,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Comparative and Indo-Iranian</h4>
       <ul>
-        <li>On soma/haoma and the plant debate: <a href="<a href="https://en.wikipedia.org/wiki/Botanical_identity_of_soma%E2%80%93haoma">Wikipedia:">https://en.wikipedia.org/wiki/Botanical_identity_of_soma%E2%80%93haoma">Wikipedia:</a> Botanical identity of soma–haoma</a>.</li>
+        <li>On soma/haoma and the plant debate: <a href="https://en.wikipedia.org/wiki/Botanical_identity_of_soma%E2%80%93haoma">Wikipedia: Botanical identity of soma–haoma</a>.</li>
         <li>Indo-European poetics and theonyms (Dyaus/Zeus/Jupiter): M. L. West, *Indo-European</li>
       </ul>
       <h4>On dating and the Indo-Aryan question</h4>
@@ -926,11 +926,11 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts and translations</h4>
       <ul>
-        <li>The <strong>Gathas</strong> and the <strong>Avesta</strong> — see <a href="<a href="https://www.iranicaonline.org/articles/gathas-i-texts/">Encyclopaedia">https://www.iranicaonline.org/articles/gathas-i-texts/">Encyclopaedia</a> Iranica: "Gathas"</a></li>
+        <li>The <strong>Gathas</strong> and the <strong>Avesta</strong> — see <a href="https://www.iranicaonline.org/articles/gathas-i-texts/">Encyclopaedia Iranica: "Gathas"</a></li>
       </ul>
       <h4>The prophet, dating, and doctrine</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/biography/Zarathustra">Britannica:">https://www.britannica.com/biography/Zarathustra">Britannica:</a> Zarathustra</a>;</li>
+        <li><a href="https://www.britannica.com/biography/Zarathustra">Britannica: Zarathustra</a>;</li>
       </ul>
       <h4>Eschatology and its influence</h4>
       <ul>
@@ -1089,13 +1089,13 @@ window.CHAPTERS = {
       </ul>
       <h4>Origins and emergence</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Merneptah_Stele">Wikipedia:">https://en.wikipedia.org/wiki/Merneptah_Stele">Wikipedia:</a> Merneptah Stele</a>;</li>
-        <li>On Yahweh's southern origins: <a href="<a href="https://en.wikipedia.org/wiki/Kenite_hypothesis">Wikipedia:">https://en.wikipedia.org/wiki/Kenite_hypothesis">Wikipedia:</a> Kenite hypothesis</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Merneptah_Stele">Wikipedia: Merneptah Stele</a>;</li>
+        <li>On Yahweh's southern origins: <a href="https://en.wikipedia.org/wiki/Kenite_hypothesis">Wikipedia: Kenite hypothesis</a></li>
       </ul>
       <h4>Yahweh, El, Asherah, and the rise of monotheism</h4>
       <ul>
         <li>Mark S. Smith, *The Early History of God: Yahweh and the Other Deities in</li>
-        <li><a href="<a href="https://www.worldhistory.org/Asherah/">World">https://www.worldhistory.org/Asherah/">World</a> History Encyclopedia: Asherah</a>;</li>
+        <li><a href="https://www.worldhistory.org/Asherah/">World History Encyclopedia: Asherah</a>;</li>
         <li>The Ugaritic background: the texts from Ras Shamra.</li>
         <li>The <strong>Baal Cycle</strong> (Baal vs. Yam and Mot) and its biblical echoes (Leviathan,</li>
       </ul>
@@ -1106,12 +1106,12 @@ window.CHAPTERS = {
       </ul>
       <h4>Cult, reform, and folk religion</h4>
       <ul>
-        <li><a href="<a href="https://library.biblicalarchaeology.org/book/aspects-monotheism/the-religious-reforms-of-hezekiah-and-josiah/">Biblical">https://library.biblicalarchaeology.org/book/aspects-monotheism/the-religious-reforms-of-hezekiah-and-josiah/">Biblical</a> Archaeology Society: The Religious Reforms of Hezekiah and Josiah</a>;</li>
+        <li><a href="https://library.biblicalarchaeology.org/book/aspects-monotheism/the-religious-reforms-of-hezekiah-and-josiah/">Biblical Archaeology Society: The Religious Reforms of Hezekiah and Josiah</a>;</li>
       </ul>
       <h4>Text, inscriptions, and history</h4>
       <ul>
         <li>The Documentary Hypothesis and its revisions (Wellhausen; and critics/updaters</li>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Tel_Dan_stele">Wikipedia:">https://en.wikipedia.org/wiki/Tel_Dan_stele">Wikipedia:</a> Tel Dan Stele</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Tel_Dan_stele">Wikipedia: Tel Dan Stele</a>;</li>
       </ul>
     </div>
   ` },
@@ -1240,7 +1240,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Mycenaean origins and the poets</h4>
       <ul>
-        <li>On Linear B and the Mycenaean gods: <a href="<a href="https://www.worldhistory.org/Linear_B_Script/">World">https://www.worldhistory.org/Linear_B_Script/">World</a> History Encyclopedia: Linear B Script</a>;</li>
+        <li>On Linear B and the Mycenaean gods: <a href="https://www.worldhistory.org/Linear_B_Script/">World History Encyclopedia: Linear B Script</a>;</li>
         <li>Homer and Hesiod; the Homeric Question and oral tradition (Milman Parry and</li>
       </ul>
       <h4>Myth and Near Eastern influence</h4>
@@ -1249,14 +1249,14 @@ window.CHAPTERS = {
       </ul>
       <h4>Practice, oracles, and the afterlife</h4>
       <ul>
-        <li><a href="<a href="https://www.worldhistory.org/Greek_Religion/">World">https://www.worldhistory.org/Greek_Religion/">World</a> History Encyclopedia: Ancient Greek Religion</a>;</li>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia:">https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia:</a> Eleusinian Mysteries</a>;</li>
+        <li><a href="https://www.worldhistory.org/Greek_Religion/">World History Encyclopedia: Ancient Greek Religion</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia: Eleusinian Mysteries</a>;</li>
         <li>Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) —</li>
         <li>Hero-cult and the curse tablets (katadesmoi/defixiones) —</li>
       </ul>
       <h4>The alphabet</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">Wikipedia:">https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">Wikipedia:</a> History of the Greek alphabet</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">Wikipedia: History of the Greek alphabet</a></li>
       </ul>
     </div>
   ` },
@@ -1382,11 +1382,11 @@ window.CHAPTERS = {
       </ul>
       <h4>Oracle bones and Shang religion</h4>
       <ul>
-        <li><a href="<a href="https://smarthistory.org/oracle-bone/">Smarthistory:">https://smarthistory.org/oracle-bone/">Smarthistory:</a> Oracle Bone, Shang Dynasty</a>;</li>
+        <li><a href="https://smarthistory.org/oracle-bone/">Smarthistory: Oracle Bone, Shang Dynasty</a>;</li>
       </ul>
       <h4>The Zhou and the Mandate of Heaven</h4>
       <ul>
-        <li><a href="<a href="https://www.worldhistory.org/Mandate_of_Heaven/">World">https://www.worldhistory.org/Mandate_of_Heaven/">World</a> History Encyclopedia: Mandate of Heaven</a>;</li>
+        <li><a href="https://www.worldhistory.org/Mandate_of_Heaven/">World History Encyclopedia: Mandate of Heaven</a>;</li>
       </ul>
       <h4>The wu and the shamanism debate</h4>
       <ul>
@@ -1395,7 +1395,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Bronzes, sacrifice, and Sanxingdui</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Taotie">Wikipedia:">https://en.wikipedia.org/wiki/Taotie">Wikipedia:</a> Taotie</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Taotie">Wikipedia: Taotie</a>;</li>
       </ul>
       <h4>Divination and symbol</h4>
       <ul>
@@ -1526,11 +1526,11 @@ window.CHAPTERS = {
       </ul>
       <h4>The period, the exile, and diversity</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Jewish-Diaspora">Britannica:">https://www.britannica.com/topic/Jewish-Diaspora">Britannica:</a> Jewish Diaspora</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Jewish-Diaspora">Britannica: Jewish Diaspora</a>;</li>
       </ul>
       <h4>The sects and the Scrolls</h4>
       <ul>
-        <li><a href="<a href="https://www.jewishvirtuallibrary.org/pharisees-sadducees-and-essenes">Jewish">https://www.jewishvirtuallibrary.org/pharisees-sadducees-and-essenes">Jewish</a> Virtual Library: Pharisees, Sadducees &amp; Essenes</a>;</li>
+        <li><a href="https://www.jewishvirtuallibrary.org/pharisees-sadducees-and-essenes">Jewish Virtual Library: Pharisees, Sadducees &amp; Essenes</a>;</li>
       </ul>
       <h4>Theology and the Zoroastrian question</h4>
       <ul>
@@ -1543,7 +1543,7 @@ window.CHAPTERS = {
       </ul>
       <h4>The literature</h4>
       <ul>
-        <li><a href="<a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My">https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My</a> Jewish Learning: Apocrypha and Pseudepigrapha</a>;</li>
+        <li><a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My Jewish Learning: Apocrypha and Pseudepigrapha</a>;</li>
       </ul>
     </div>
   ` },
@@ -1666,12 +1666,12 @@ window.CHAPTERS = {
       </ul>
       <h4>The Buddha and his context</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Buddhism">Britannica:">https://www.britannica.com/topic/Buddhism">Britannica:</a> Buddhism</a>; on the śramaṇa</li>
+        <li><a href="https://www.britannica.com/topic/Buddhism">Britannica: Buddhism</a>; on the śramaṇa</li>
       </ul>
       <h4>Doctrine</h4>
       <ul>
-        <li>On <strong>anatta</strong> vs. the Upanishadic <strong>atman</strong>: <a href="<a href="https://www.learnreligions.com/anatman-anatta-449669">LearnReligions:">https://www.learnreligions.com/anatman-anatta-449669">LearnReligions:</a> Anatman/Anatta</a></li>
-        <li>On <strong>Mara</strong> and the six realms / Wheel of Life: <a href="<a href="https://www.learnreligions.com/the-wheel-of-life-4123213">LearnReligions:">https://www.learnreligions.com/the-wheel-of-life-4123213">LearnReligions:</a> The Wheel of Life</a>.</li>
+        <li>On <strong>anatta</strong> vs. the Upanishadic <strong>atman</strong>: <a href="https://www.learnreligions.com/anatman-anatta-449669">LearnReligions: Anatman/Anatta</a></li>
+        <li>On <strong>Mara</strong> and the six realms / Wheel of Life: <a href="https://www.learnreligions.com/the-wheel-of-life-4123213">LearnReligions: The Wheel of Life</a>.</li>
       </ul>
       <h4>Jainism</h4>
       <ul>
@@ -1679,11 +1679,11 @@ window.CHAPTERS = {
       </ul>
       <h4>Texts, the Sangha, and Ashoka</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Buddhism/The-Pali-canon-Tipitaka">Britannica:">https://www.britannica.com/topic/Buddhism/The-Pali-canon-Tipitaka">Britannica:</a> The Pali Canon (Tipitaka)</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Buddhism/The-Pali-canon-Tipitaka">Britannica: The Pali Canon (Tipitaka)</a>;</li>
       </ul>
       <h4>Symbol and art</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Dharmacakra">Wikipedia:">https://en.wikipedia.org/wiki/Dharmacakra">Wikipedia:</a> Dharmachakra</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Dharmacakra">Wikipedia: Dharmachakra</a>;</li>
       </ul>
     </div>
   ` },
@@ -1827,7 +1827,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Confucius, the Analects, and the Confucian tradition</h4>
       <ul>
-        <li><a href="<a href="https://plato.stanford.edu/entries/confucius/">Stanford">https://plato.stanford.edu/entries/confucius/">Stanford</a> Encyclopedia of Philosophy: Confucius</a>;</li>
+        <li><a href="https://plato.stanford.edu/entries/confucius/">Stanford Encyclopedia of Philosophy: Confucius</a>;</li>
       </ul>
       <h4>Mohism</h4>
       <ul>
@@ -1835,23 +1835,23 @@ window.CHAPTERS = {
       </ul>
       <h4>Mencius, Xunzi, and the Mandate of Heaven</h4>
       <ul>
-        <li><a href="<a href="https://plato.stanford.edu/entries/mencius/">SEP:">https://plato.stanford.edu/entries/mencius/">SEP:</a> Mencius</a>; <a href="<a href="https://plato.stanford.edu/entries/xunzi/">SEP:">https://plato.stanford.edu/entries/xunzi/">SEP:</a> Xunzi</a>;</li>
+        <li><a href="https://plato.stanford.edu/entries/mencius/">SEP: Mencius</a>; <a href="https://plato.stanford.edu/entries/xunzi/">SEP: Xunzi</a>;</li>
       </ul>
       <h4>Laozi, the Daodejing, and the manuscripts</h4>
       <ul>
-        <li><a href="<a href="https://plato.stanford.edu/entries/laozi/">SEP:">https://plato.stanford.edu/entries/laozi/">SEP:</a> Laozi</a>; on the Guodian and Mawangdui</li>
+        <li><a href="https://plato.stanford.edu/entries/laozi/">SEP: Laozi</a>; on the Guodian and Mawangdui</li>
       </ul>
       <h4>Zhuangzi</h4>
       <ul>
-        <li><a href="<a href="https://plato.stanford.edu/entries/zhuangzi/">Stanford">https://plato.stanford.edu/entries/zhuangzi/">Stanford</a> Encyclopedia of Philosophy: Zhuangzi</a>;</li>
+        <li><a href="https://plato.stanford.edu/entries/zhuangzi/">Stanford Encyclopedia of Philosophy: Zhuangzi</a>;</li>
       </ul>
       <h4>Religious Daoism and the Celestial Masters</h4>
       <ul>
-        <li><a href="<a href="https://plato.stanford.edu/entries/daoism-religion/">SEP:">https://plato.stanford.edu/entries/daoism-religion/">SEP:</a> Religious Daoism</a>;</li>
+        <li><a href="https://plato.stanford.edu/entries/daoism-religion/">SEP: Religious Daoism</a>;</li>
       </ul>
       <h4>The Yijing and symbolism</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Yijing">Britannica:">https://www.britannica.com/topic/Yijing">Britannica:</a> Yijing</a>; on the trigrams, yin/yang,</li>
+        <li><a href="https://www.britannica.com/topic/Yijing">Britannica: Yijing</a>; on the trigrams, yin/yang,</li>
       </ul>
     </div>
   ` },
@@ -1978,15 +1978,15 @@ window.CHAPTERS = {
       </ul>
       <h4>State religion, priesthoods, and concepts</h4>
       <ul>
-        <li><a href="<a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com:">https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com:</a> Roman Religion</a>;</li>
+        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com: Roman Religion</a>;</li>
       </ul>
       <h4>Divination and the pantheon</h4>
       <ul>
-        <li><a href="<a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford">https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford</a> Classical Dictionary: Roman Divination</a>;</li>
+        <li><a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford Classical Dictionary: Roman Divination</a>;</li>
       </ul>
       <h4>Household and folk religion</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Lar-Roman-deities">Britannica:">https://www.britannica.com/topic/Lar-Roman-deities">Britannica:</a> Lar</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Lar-Roman-deities">Britannica: Lar</a>;</li>
       </ul>
       <h4>The dead and the afterlife</h4>
       <ul>
@@ -1995,7 +1995,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Foreign cults and the imperial cult</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Bacchanalia">Wikipedia:">https://en.wikipedia.org/wiki/Bacchanalia">Wikipedia:</a> Bacchanalia</a> (and the <em>Senatus consultum de Bacchanalibus</em>);</li>
+        <li><a href="https://en.wikipedia.org/wiki/Bacchanalia">Wikipedia: Bacchanalia</a> (and the <em>Senatus consultum de Bacchanalibus</em>);</li>
       </ul>
     </div>
   ` },
@@ -2116,7 +2116,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Celtic religion, druids, and the sources problem</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Celtic-religion">Britannica:">https://www.britannica.com/topic/Celtic-religion">Britannica:</a> Celtic religion</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>;</li>
       </ul>
       <h4>The druidic orders and the Gallic sanctuaries</h4>
       <ul>
@@ -2125,13 +2125,13 @@ window.CHAPTERS = {
       </ul>
       <h4>Germanic religion and Tacitus</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia:">https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia:</a> Germanic paganism</a>;</li>
-        <li>The Germanic seeress (Veleda, Aurinia/Albruna) — <a href="<a href="https://en.wikipedia.org/wiki/Seeress_(Germanic">Wikipedia:">https://en.wikipedia.org/wiki/Seeress_(Germanic">Wikipedia:</a> Seeress (Germanic)</a>).</li>
-        <li>The gods in the weekday names — <a href="<a href="https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">The">https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">The</a> Conversation: the gods behind the days of the week</a>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia: Germanic paganism</a>;</li>
+        <li>The Germanic seeress (Veleda, Aurinia/Albruna) — <a href="https://en.wikipedia.org/wiki/Seeress_(Germanic">Wikipedia: Seeress (Germanic)</a>).</li>
+        <li>The gods in the weekday names — <a href="https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">The Conversation: the gods behind the days of the week</a>.</li>
       </ul>
       <h4>Sacred encoding — calendar, runes, ogham, and the bog</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Coligny_calendar">Wikipedia:">https://en.wikipedia.org/wiki/Coligny_calendar">Wikipedia:</a> Coligny calendar</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Coligny_calendar">Wikipedia: Coligny calendar</a>;</li>
       </ul>
     </div>
   ` },
@@ -2244,7 +2244,7 @@ window.CHAPTERS = {
       </ul>
       <h4>The Presocratics and the critique of myth</h4>
       <ul>
-        <li><a href="<a href="https://plato.stanford.edu/entries/xenophanes/">Stanford">https://plato.stanford.edu/entries/xenophanes/">Stanford</a> Encyclopedia of Philosophy: Xenophanes</a>;</li>
+        <li><a href="https://plato.stanford.edu/entries/xenophanes/">Stanford Encyclopedia of Philosophy: Xenophanes</a>;</li>
       </ul>
       <h4>The Sophists' skepticism and the healing cult</h4>
       <ul>
@@ -2257,11 +2257,11 @@ window.CHAPTERS = {
       </ul>
       <h4>Hellenistic schools</h4>
       <ul>
-        <li><a href="<a href="https://iep.utm.edu/epicur/">Internet">https://iep.utm.edu/epicur/">Internet</a> Encyclopedia of Philosophy: Epicurus</a>;</li>
+        <li><a href="https://iep.utm.edu/epicur/">Internet Encyclopedia of Philosophy: Epicurus</a>;</li>
       </ul>
       <h4>Sacred encoding — number, isopsephy, and the gold tablets</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/tetraktys">Britannica:">https://www.britannica.com/topic/tetraktys">Britannica:</a> Tetraktys</a> and</li>
+        <li><a href="https://www.britannica.com/topic/tetraktys">Britannica: Tetraktys</a> and</li>
       </ul>
     </div>
   ` },
@@ -2377,21 +2377,21 @@ window.CHAPTERS = {
       </ul>
       <h4>The historical Jesus and the sources</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Wikipedia:">https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Wikipedia:</a> Sources for the historicity of Jesus</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Wikipedia: Sources for the historicity of Jesus</a>;</li>
       </ul>
       <h4>Paul, canon formation, and diversity</h4>
       <ul>
-        <li>On Marcion and the canon, <a href="<a href="https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale">https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale</a> Bible Study: Formation of the New Testament Canon</a></li>
+        <li>On Marcion and the canon, <a href="https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale Bible Study: Formation of the New Testament Canon</a></li>
       </ul>
       <h4>Women and the martyr cult</h4>
       <ul>
-        <li>Junia and Phoebe — <a href="<a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person">Wikipedia:">https://en.wikipedia.org/wiki/Junia_(New_Testament_person">Wikipedia:</a> Junia (New Testament person)</a>);</li>
-        <li>The Passion of Perpetua and Felicity (203 CE) — <a href="<a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia:">https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia:</a> Passion of Saints Perpetua and Felicity</a>;</li>
-        <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="<a href="https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia:">https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia:</a> Dies natalis</a>;</li>
+        <li>Junia and Phoebe — <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person">Wikipedia: Junia (New Testament person)</a>);</li>
+        <li>The Passion of Perpetua and Felicity (203 CE) — <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia: Passion of Saints Perpetua and Felicity</a>;</li>
+        <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia: Dies natalis</a>;</li>
       </ul>
       <h4>Symbol and sacred encoding</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Ichthys">Wikipedia:">https://en.wikipedia.org/wiki/Ichthys">Wikipedia:</a> Ichthys</a>; <a href="<a href="https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical">https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical</a> Archaeology Society: The Staurogram</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Ichthys">Wikipedia: Ichthys</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical Archaeology Society: The Staurogram</a>;</li>
       </ul>
     </div>
   ` },
@@ -2507,11 +2507,11 @@ window.CHAPTERS = {
       </ul>
       <h4>Gnostic systems, schools, and the Nag Hammadi discovery</h4>
       <ul>
-        <li><a href="<a href="https://iep.utm.edu/gnostic/">Internet">https://iep.utm.edu/gnostic/">Internet</a> Encyclopedia of Philosophy: Gnosticism</a>;</li>
+        <li><a href="https://iep.utm.edu/gnostic/">Internet Encyclopedia of Philosophy: Gnosticism</a>;</li>
       </ul>
       <h4>Texts</h4>
       <ul>
-        <li>On the Gospel of Thomas, <a href="<a href="https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart">https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart</a> Ehrman: The Gospel of Thomas — An Overview</a></li>
+        <li>On the Gospel of Thomas, <a href="https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart Ehrman: The Gospel of Thomas — An Overview</a></li>
       </ul>
       <h4>Manichaeism and Hermeticism</h4>
       <ul>
@@ -2520,7 +2520,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Sacred encoding — Abraxas and the numbered cosmos</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Abraxas">Wikipedia:">https://en.wikipedia.org/wiki/Abraxas">Wikipedia:</a> Abraxas</a> (on the isopsephy of 365 and Basilides).</li>
+        <li><a href="https://en.wikipedia.org/wiki/Abraxas">Wikipedia: Abraxas</a> (on the isopsephy of 365 and Basilides).</li>
       </ul>
     </div>
   ` },
@@ -2647,20 +2647,20 @@ window.CHAPTERS = {
       </ul>
       <h4>The mysteries and Mithraism</h4>
       <ul>
-        <li><a href="<a href="https://the-past.com/feature/the-mystery-of-mithras/">The">https://the-past.com/feature/the-mystery-of-mithras/">The</a> Past: The mystery of Mithras</a>;</li>
+        <li><a href="https://the-past.com/feature/the-mystery-of-mithras/">The Past: The mystery of Mithras</a>;</li>
       </ul>
       <h4>Isis and Cybele</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Mysteries_of_Isis">Wikipedia:">https://en.wikipedia.org/wiki/Mysteries_of_Isis">Wikipedia:</a> Mysteries of Isis</a> (and Apuleius, *The</li>
+        <li><a href="https://en.wikipedia.org/wiki/Mysteries_of_Isis">Wikipedia: Mysteries of Isis</a> (and Apuleius, *The</li>
       </ul>
       <h4>The "dying and rising god" and the parallels debate</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Wikipedia:">https://en.wikipedia.org/wiki/Dying-and-rising_god">Wikipedia:</a> Dying-and-rising god</a> (on the contested</li>
+        <li><a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Wikipedia: Dying-and-rising god</a> (on the contested</li>
       </ul>
       <h4>Sol Invictus and the twilight of paganism</h4>
       <ul>
-        <li>Aurelian's Sol Invictus (274 CE) and the 25 December festival — <a href="<a href="https://www.britannica.com/topic/Sol-Invictus">Britannica:">https://www.britannica.com/topic/Sol-Invictus">Britannica:</a> Sol Invictus</a>;</li>
-        <li>Julian's revival and the anti-pagan laws — <a href="<a href="https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Wikipedia:">https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Wikipedia:</a> Persecution of pagans under Theodosius I</a>;</li>
+        <li>Aurelian's Sol Invictus (274 CE) and the 25 December festival — <a href="https://www.britannica.com/topic/Sol-Invictus">Britannica: Sol Invictus</a>;</li>
+        <li>Julian's revival and the anti-pagan laws — <a href="https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Wikipedia: Persecution of pagans under Theodosius I</a>;</li>
       </ul>
     </div>
   ` },
@@ -2771,20 +2771,20 @@ window.CHAPTERS = {
       </ul>
       <h4>The transformation, Yavneh, and the rabbis</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/biography/Johanan-ben-Zakkai">Britannica:">https://www.britannica.com/biography/Johanan-ben-Zakkai">Britannica:</a> Johanan ben Zakkai</a>;</li>
+        <li><a href="https://www.britannica.com/biography/Johanan-ben-Zakkai">Britannica: Johanan ben Zakkai</a>;</li>
       </ul>
       <h4>The texts</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Oral_Torah">Wikipedia:">https://en.wikipedia.org/wiki/Oral_Torah">Wikipedia:</a> Oral Torah</a>; <a href="<a href="https://www.britannica.com/topic/Mishna">Britannica:">https://www.britannica.com/topic/Mishna">Britannica:</a> Mishna</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Oral_Torah">Wikipedia: Oral Torah</a>; <a href="https://www.britannica.com/topic/Mishna">Britannica: Mishna</a>;</li>
       </ul>
       <h4>The Oven of Akhnai and the synagogue mosaics</h4>
       <ul>
-        <li>The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — <a href="<a href="https://en.wikipedia.org/wiki/Not_in_Heaven">Wikipedia:">https://en.wikipedia.org/wiki/Not_in_Heaven">Wikipedia:</a> Not in Heaven</a>;</li>
-        <li>The zodiac-and-Helios synagogue mosaics — <a href="<a href="https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/">My">https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/">My</a> Jewish Learning: Astrology in the Ancient Synagogue</a>;</li>
+        <li>The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — <a href="https://en.wikipedia.org/wiki/Not_in_Heaven">Wikipedia: Not in Heaven</a>;</li>
+        <li>The zodiac-and-Helios synagogue mosaics — <a href="https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/">My Jewish Learning: Astrology in the Ancient Synagogue</a>;</li>
       </ul>
       <h4>Sacred encoding — letters, Sefer Yetzirah, and mysticism</h4>
       <ul>
-        <li><a href="<a href="https://en.wikipedia.org/wiki/Sefer_Yetzirah">Wikipedia:">https://en.wikipedia.org/wiki/Sefer_Yetzirah">Wikipedia:</a> Sefer Yetzirah</a>; on Merkabah and Hekhalot</li>
+        <li><a href="https://en.wikipedia.org/wiki/Sefer_Yetzirah">Wikipedia: Sefer Yetzirah</a>; on Merkabah and Hekhalot</li>
       </ul>
     </div>
   ` },
@@ -2902,11 +2902,11 @@ window.CHAPTERS = {
       </ul>
       <h4>The Great Vehicle, the bodhisattva, and emptiness</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Buddhism/Mahayana">Britannica:">https://www.britannica.com/topic/Buddhism/Mahayana">Britannica:</a> Buddhism — Mahayana</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Buddhism/Mahayana">Britannica: Buddhism — Mahayana</a>;</li>
       </ul>
       <h4>Celestial Buddhas, Pure Land, and the spread</h4>
       <ul>
-        <li><a href="<a href="https://www.britannica.com/topic/Pure-Land-Buddhism">Britannica:">https://www.britannica.com/topic/Pure-Land-Buddhism">Britannica:</a> Pure-Land Buddhism</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Pure-Land-Buddhism">Britannica: Pure-Land Buddhism</a>;</li>
       </ul>
       <h4>Origins scholarship and sacred encoding</h4>
       <ul>
@@ -2915,7 +2915,7 @@ window.CHAPTERS = {
       <h4>Guanyin and the cult of the book</h4>
       <ul>
         <li>The feminization of Avalokiteshvara into Guanyin and the Miaoshan legend — [Embodied Philosophy: From</li>
-        <li>The Mahayana "cult of the book" (Schopen) and sutra-copying merit — <a href="<a href="https://en.wikipedia.org/wiki/Sutra_copying">Wikipedia:">https://en.wikipedia.org/wiki/Sutra_copying">Wikipedia:</a> Sutra copying</a>.</li>
+        <li>The Mahayana "cult of the book" (Schopen) and sutra-copying merit — <a href="https://en.wikipedia.org/wiki/Sutra_copying">Wikipedia: Sutra copying</a>.</li>
       </ul>
     </div>
   ` },
