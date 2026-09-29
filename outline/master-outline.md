@@ -146,7 +146,7 @@ every remaining chapter and added the lens structure throughout.
 | ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
 | ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
 
-**Batch III (2026-09-29): one new tradition per era**, auto-published with the pending-review tag.
+**Batch III (2026-09-29): one new tradition per era**, auto-published with the pending-review tag, bringing the archive to **74 chapters** (67 traditions + 7 themes).
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
