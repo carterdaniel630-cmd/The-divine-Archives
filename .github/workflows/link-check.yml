@@ -1,0 +1,44 @@
+name: Weekly external link check
+
+# Checks every external link a reader can click on the built site (docs/) plus the
+# museum's "Read it in English" source links, and reports. It never edits content.
+# The run fails (and GitHub notifies) only when a link is dead: 404/410 or a host
+# that no longer exists. Links that refuse automated checks (403/429), time out or
+# return 5xx are listed under "check by hand" and do not fail the run.
+# The report is in the run's summary and in the `link-report` artifact.
+
+on:
+  schedule:
+    - cron: "23 6 * * 1"   # Mondays 06:23 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: link-check
+  cancel-in-progress: true
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check external links
+        run: node tools/check-links.js --out link-report.md
+
+      - name: Upload the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: link-report.md
+          if-no-files-found: ignore

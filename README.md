@@ -114,6 +114,10 @@ rather than pretending to subscribe anyone.
   changes, so every game fact must still appear in its source chapter.
 - `game-runtime.yml` lints the game code for undeclared references and plays
   the fighter to a KO in a headless browser.
+- `link-check.yml` runs every Monday (or by hand from the Actions tab) and checks
+  every external link on the site with `tools/check-links.js`. It reports and never
+  edits: dead links (404/410, vanished hosts) fail the run, and links that refuse
+  automated checks are listed to open by hand. The report is in the run summary.
 
 ## Status
 
