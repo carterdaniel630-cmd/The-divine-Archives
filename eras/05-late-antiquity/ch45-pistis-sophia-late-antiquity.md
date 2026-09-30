@@ -1,8 +1,12 @@
 # Chapter 45 — Pistis Sophia: The Fallen Wisdom and the Books of the Saviour
 
-*Tradition chapter · Era 05 — Late Antiquity · **Reviewed — cleared.***
+*Tradition chapter · Era 05 — Late Antiquity · revised 2026-09-30 (full text published), pending review*
+
+*Recently added — pending full review.*
 
 ---
+
+The fullest Gnostic gospel the world possessed before Nag Hammadi — a Coptic scripture that surfaced in a London library **160 years** before the 1945 find. In it the risen Jesus, eleven years after the resurrection, unrolls the whole map of the heavens; a fallen aeon named **Faith-Wisdom** sings her way up out of Chaos; and **Mary Magdalene**, over Peter's objection, asks the sharpest questions of all.
 
 ## A book that surfaced a lifetime before Nag Hammadi
 

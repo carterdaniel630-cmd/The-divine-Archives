@@ -106,21 +106,38 @@ function convert(id, md) {
       out.push(evidenceHtml(content));
     } else if (hlow === "sources") {
       let src = '    <div class="sources">\n      <h3>Sources</h3>\n      <ul>';
-      const clines = content.split("\n");
-      let openList = true;
-      for (let ln of clines) {
-        ln = ln.trim();
-        if (!ln) continue;
-        if (/^\*[^*].*\*$/.test(ln)) {
-          // italic subhead
+      // items: a "- " bullet (indented lines continue it), an italic subhead, or a
+      // paragraph (unindented lines up to a blank line). "*Note on sourcing:*" paragraphs
+      // become the source note; other paragraphs follow the list they sit under.
+      const items = [];
+      for (const raw of content.split("\n")) {
+        const ln = raw.trim();
+        const last = items[items.length - 1];
+        if (!ln) { if (last && last.k === "p") last.done = true; continue; }
+        if (/^-\s+/.test(ln)) items.push({ k: "li", t: ln.replace(/^-\s+/, "") });
+        else if (/^\*[^*]+\*$/.test(ln)) items.push({ k: "h4", t: ln.replace(/^\*|\*$/g, "") });
+        else if (last && last.k === "li" && /^\s/.test(raw)) last.t += " " + ln;
+        else if (last && last.k === "p" && !last.done) last.t += " " + ln;
+        else items.push({ k: "p", t: ln });
+      }
+      let openList = true, note = "";
+      for (const it of items) {
+        if (it.k === "h4") {
           if (openList) { src += "\n      </ul>"; openList = false; }
-          src += `\n      <h4>${inline(ln.replace(/^\*|\*$/g, ""))}</h4>\n      <ul>`;
+          src += `\n      <h4>${inline(it.t)}</h4>\n      <ul>`;
           openList = true;
-        } else if (/^-\s+/.test(ln)) {
-          src += `\n        <li>${sourceLine(ln.replace(/^-\s+/, ""))}</li>`;
+        } else if (it.k === "li") {
+          if (!openList) { src += "\n      <ul>"; openList = true; }
+          src += `\n        <li>${sourceLine(it.t)}</li>`;
+        } else if (/^\*Note on sourcing:\*\s*/.test(it.t)) {
+          note = it.t.replace(/^\*Note on sourcing:\*\s*/, "");
+        } else {
+          if (openList) { src += "\n      </ul>"; openList = false; }
+          src += `\n      <p>${sourceLine(it.t)}</p>`;
         }
       }
       if (openList) src += "\n      </ul>";
+      if (note) src += `\n      <p class="source-note">${inline(note)}</p>`;
       src += "\n    </div>";
       out.push(src);
     } else {

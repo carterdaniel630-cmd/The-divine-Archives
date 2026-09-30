@@ -124,8 +124,8 @@ every remaining chapter and added the lens structure throughout.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **CLEARED** (2026-09-28; new believer's & skeptical lens sections) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
-| ch46 — Creation & the First Order | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections) | `themes/ch46-creation.md` |
+| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | published, **pending review** (2026-09-30: the full markdown text replaced the condensed live version; was CLEARED 2026-09-28) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
+| ch46 — Creation & the First Order | Comparative theme | cross-era | published, **pending review** (2026-09-30: the full markdown text replaced the condensed live version; was CLEARED 2026-09-28) | `themes/ch46-creation.md` |
 | ch47 — Journeys to the Underworld | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch47-underworld.md` |
 | ch48 — The Great Goddess | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch48-great-goddess.md` |
 | ch49 — Sacred Kingship | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch49-sacred-kingship.md` |

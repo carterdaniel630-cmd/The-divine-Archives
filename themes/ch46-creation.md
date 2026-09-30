@@ -1,8 +1,12 @@
 # Chapter 46 — Creation & the First Order
 
-*Comparative theme · cross-era*
+*Comparative theme · cross-era · revised 2026-09-30 (full text published), pending review*
+
+*Recently added — pending full review.*
 
 ---
+
+How the ordered world came to be — the same raw materials of water and darkness, made into very different worlds. Four shapes recur (order from a watery chaos, order won by combat, the world built from a slain body, the world spoken into being) and, against them all, one ancient hymn that looks at the beginning and admits it cannot be sure.
 
 ## A word that remembers a monster
 
