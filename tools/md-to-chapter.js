@@ -21,7 +21,8 @@ function esc(s) {
 // inline markdown -> html (run AFTER esc)
 function inline(s) {
   s = esc(s);
-  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${u}">${t}</a>`);
+  // the URL may hold one level of balanced parentheses, e.g. wiki/Sin_(mythology)
+  s = s.replace(/\[([^\]]+)\]\(((?:[^()\s]|\([^()\s]*\))+)\)/g, (m, t, u) => `<a href="${u}">${t}</a>`);
   // bold first (allowing *italic* nested inside, e.g. **a *b***), then italic
   s = s.replace(/\*\*(.+?)\*\*(?!\*)/g, "<strong>$1</strong>");
   s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");

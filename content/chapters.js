@@ -497,7 +497,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Symbology and sacred encoding</h4>
       <ul>
-        <li>Divine numbers of the gods &mdash; <a href="https://en.wikipedia.org/wiki/Sin_(mythology">Wikipedia: Sin (mythology)</a>); god-list traditions.</li>
+        <li>Divine numbers of the gods &mdash; <a href="https://en.wikipedia.org/wiki/Sin_(mythology)">Wikipedia: Sin (mythology)</a>; god-list traditions.</li>
         <li>Nisaba and Nabu as patrons of writing &mdash; <a href="https://en.wikipedia.org/wiki/Nisaba">Wikipedia: Nisaba</a>.</li>
         <li>Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest</li>
         <li>Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god</li>
@@ -2126,7 +2126,7 @@ window.CHAPTERS = {
       <h4>Germanic religion and Tacitus</h4>
       <ul>
         <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia: Germanic paganism</a>;</li>
-        <li>The Germanic seeress (Veleda, Aurinia/Albruna) — <a href="https://en.wikipedia.org/wiki/Seeress_(Germanic">Wikipedia: Seeress (Germanic)</a>).</li>
+        <li>The Germanic seeress (Veleda, Aurinia/Albruna) — <a href="https://en.wikipedia.org/wiki/Seeress_(Germanic)">Wikipedia: Seeress (Germanic)</a>.</li>
         <li>The gods in the weekday names — <a href="https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">The Conversation: the gods behind the days of the week</a>.</li>
       </ul>
       <h4>Sacred encoding — calendar, runes, ogham, and the bog</h4>
@@ -2385,7 +2385,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Women and the martyr cult</h4>
       <ul>
-        <li>Junia and Phoebe — <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person">Wikipedia: Junia (New Testament person)</a>);</li>
+        <li>Junia and Phoebe — <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person)">Wikipedia: Junia (New Testament person)</a>;</li>
         <li>The Passion of Perpetua and Felicity (203 CE) — <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia: Passion of Saints Perpetua and Felicity</a>;</li>
         <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia: Dies natalis</a>;</li>
       </ul>
