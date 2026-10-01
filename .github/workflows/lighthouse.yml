@@ -1,0 +1,77 @@
+name: Lighthouse (mobile performance)
+
+# On every pull request that changes the site, runs Lighthouse (mobile, performance only)
+# on the pages in tools/perf-pages.json: the home page, an era page, three chapters, the
+# museum and the twelve games. It serves the base branch and the pull request side by side
+# on the same runner, alternates runs between them (3 per page, median kept) so both see the
+# same machine, and fails if any page's mobile performance score drops by more than 5 points.
+# The comparison table is in the run summary and in the `lighthouse` artifact.
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "tools/serve.js"
+      - "tools/lighthouse-pages.js"
+      - "tools/perf-pages.json"
+      - ".github/workflows/lighthouse.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out the pull request
+        uses: actions/checkout@v4
+        with:
+          path: pr
+
+      - name: Check out the base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: base
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Lighthouse
+        working-directory: pr
+        run: npm install --no-save --no-package-lock --no-audit --no-fund lighthouse@13.5.0
+
+      - name: Serve both builds
+        run: |
+          node pr/tools/serve.js 8081 base/docs > /dev/null 2>&1 &
+          node pr/tools/serve.js 8082 pr/docs > /dev/null 2>&1 &
+          for p in 8081 8082; do
+            for i in $(seq 1 30); do curl -sf "http://localhost:$p/index.html" > /dev/null && break; sleep 1; done
+          done
+
+      - name: Run Lighthouse and compare
+        working-directory: pr
+        run: >
+          node tools/lighthouse-pages.js
+          --target base=http://localhost:8081
+          --target pr=http://localhost:8082
+          --runs 3 --max-drop 5
+          --out lh-results.json --md lh-report.md
+
+      - name: Upload the results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse
+          path: |
+            pr/lh-results.json
+            pr/lh-report.md
+          if-no-files-found: ignore
