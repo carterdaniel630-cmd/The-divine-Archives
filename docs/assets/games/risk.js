@@ -272,6 +272,26 @@
        sea-lanes, shield tokens, walled capitals, pip dice and an attack arrow. */
     var G = 2, GW = VW * G, GH = VH * G;       // territory grid: two cells per map unit
     var IDG = null, BOX = [], mapBg = null, polLines = null, routesCv = null, fillCv = null, fillSig = "", TINT = {};
+    var PREGRID = null;                         // the territory grid read from data/risk-grid.png, when it fits
+    function loadGrid() {
+      if (window.__RISK_GRID_FRESH) return Promise.resolve(null);       // tools/build-risk-grid.js: compute it
+      return new Promise(function (done) {
+        var im = new Image();
+        im.onload = function () {
+          try {
+            if (im.width !== GW || im.height !== GH) return done(null);
+            var c = mk(GW, GH), m = c.getContext("2d"); m.drawImage(im, 0, 0);
+            var px = m.getImageData(0, 0, GW, GH).data, n = GW * GH, id = new Int8Array(n);
+            for (var i = 0; i < n; i++) id[i] = Math.round(px[i * 4] / 8) - 2;   // stored as (id + 2) * 8 in red
+            // stale if the provinces moved: each province's centre must still be its own
+            for (var k = 0; k < TERR.length; k++) if (id[Math.round(TERR[k].y * G) * GW + Math.round(TERR[k].x * G)] !== k) return done(null);
+            done(id);
+          } catch (e) { done(null); }
+        };
+        im.onerror = function () { done(null); };
+        im.src = DATA_URL.replace(/[^/]*$/, "risk-grid.png");
+      });
+    }
     var ROUTE = [], last = 0, frameN = 0;
     function h2(i, j, seed) { var n = (i * 374761393 + j * 668265263 + seed * 1442695041) | 0; n = Math.imul(n ^ (n >>> 13), 1274126177); n ^= n >>> 16; return (n >>> 0) / 4294967296; }
     function noise(x, y, s, seed) {
@@ -285,6 +305,15 @@
 
     // -1 sea, -2 unclaimed land, otherwise the index of the province in TERR
     function buildGrid() {
+      var n = GW * GH, x, y, i, k, id = PREGRID && PREGRID.length === n ? PREGRID : null;
+      if (!id) id = computeGrid();
+      IDG = id;
+      gridTail(id, n);
+    }
+    // the slow part (about 0.4 s on a laptop, over a second on a phone): every cell of the map
+    // finds its nearest province through noisy borders. The result never changes, so
+    // tools/build-risk-grid.js saves it as data/risk-grid.png and the game reads that instead.
+    function computeGrid() {
       var sc = mk(GW, GH), sm = sc.getContext("2d"); sm.scale(G, G); sm.fillStyle = "#000";
       SEAS.forEach(function (p) { polyOn(sm, p); sm.fill(); });
       var sea = sm.getImageData(0, 0, GW, GH).data, n = GW * GH, id = new Int8Array(n), x, y, i, k;
@@ -316,7 +345,10 @@
         }
       });
       for (i = 0; i < n; i++) if (id[i] >= 0 && !keep[i]) id[i] = -2;
-      IDG = id;
+      return id;
+    }
+    function gridTail(id, n) {
+      var x, y, k;
       // per-province bounding boxes and white masks (fill + rim) for highlights
       BOX = TERR.map(function () { return { x0: GW, y0: GH, x1: 0, y1: 0 }; });
       for (y = 0; y < GH; y++) for (x = 0; x < GW; x++) { k = id[y * GW + x]; if (k >= 0) { var b = BOX[k]; if (x < b.x0) b.x0 = x; if (y < b.y0) b.y0 = y; if (x > b.x1) b.x1 = x; if (y > b.y1) b.y1 = y; } }
@@ -689,7 +721,7 @@
         '<div class="rk-controls"><button class="rq-btn rk-next" data-a="next"></button></div>' +
         '<p class="rq-note">Tap a land, then a neighbour to attack — the higher dice win. Lands border each other only along the drawn roads and sea-lanes. Hold a whole region or a walled capital for extra armies. Trade a set of three cards for a host. Be the last power standing.</p>';
       canvas = root.querySelector(".rk-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); if (st && !st.over) render(); });
       hudEl = root.querySelector(".rk-hud"); msgEl = root.querySelector(".rk-msg"); live = root.querySelector(".rk-toast");
       btnEl = root.querySelector(".rk-next"); tradeEl = root.querySelector(".rk-cards"); logEl = root.querySelector(".rk-log");
@@ -720,10 +752,11 @@
     }
 
     // read-only introspection for automated tests (only when a test flag is set)
+    if (window.__ARCHIVE_TEST__) window.__riskGrid = function () { return IDG ? { w: GW, h: GH, fromFile: IDG === PREGRID, data: Array.from(IDG) } : null; };
     if (window.__ARCHIVE_TEST__) window.__riskState = function () { return st ? { own: st.own, arm: st.arm, adj: ADJ, over: st.over, phase: st.phase, ai: st.aiThinking, winner: st.winner, pool: st.pool } : null; };
 
     root.innerHTML = '<div class="rq-loading">Drawing the borders of the ancient world…</div>';
-    loadFacts().then(function (fs2) { fs2.forEach(function (f) { if (f.territory) factByTerr[f.territory] = f; }); boot(); }).catch(function () {
+    Promise.all([loadFacts(), loadGrid()]).then(function (r) { PREGRID = r[1]; r[0].forEach(function (f) { if (f.territory) factByTerr[f.territory] = f; }); boot(); }).catch(function () {
       root.innerHTML = '<p class="game-placeholder">The campaign could not be loaded. Please reload the page.</p>';
     });
 
