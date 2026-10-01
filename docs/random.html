@@ -13,7 +13,9 @@
       fetch("assets/search-index.json")
         .then(function (r) { return r.json(); })
         .then(function (docs) {
-          if (!docs || !docs.length) throw new Error("empty");
+          // the index also holds Vault objects and Pantheon figures; only chapters live under chapters/
+          docs = (docs || []).filter(function (d) { return /^ch\d+$/.test(d.id); });
+          if (!docs.length) throw new Error("empty");
           var pick = docs[Math.floor(Math.random() * docs.length)];
           location.replace("chapters/" + encodeURIComponent(pick.id) + ".html");
         })
