@@ -275,6 +275,7 @@ ${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot
 ${FOOTER}
 </div>
 <script src="../assets/ambient.js" defer></script>
+<script src="../site-config.js" defer></script>
 </body>
 </html>
 `;
