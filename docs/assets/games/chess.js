@@ -329,7 +329,7 @@
           '<button class="rq-btn" data-a="resign">Resign</button>' +
           '<a class="game-source" href="chapters/ch02.html">› The pantheons</a></div>';
       canvas = root.querySelector(".ch-board"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || TOT) / TOT); canvas.width = Math.round(TOT * DPR); canvas.height = Math.round(TOT * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || TOT) / TOT); canvas.width = Math.round(TOT * DPR); canvas.height = Math.round(TOT * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, TOT); canvas.width = Math.round(TOT * DPR); canvas.height = Math.round(TOT * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); draw(); });
       statusEl = root.querySelector(".ch-status"); factEl = root.querySelector(".ch-fact"); trayW = root.querySelector(".ch-tray-w"); trayB = root.querySelector(".ch-tray-b");
       canvas.addEventListener("click", onClick);

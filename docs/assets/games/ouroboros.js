@@ -101,7 +101,7 @@
       // render at device resolution for crisp engraving, draw in logical W units
       // backing store matches the DISPLAYED size (the board is drawn larger on big screens)
       var shown = canvas.getBoundingClientRect().width || W;
-      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shown / W);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, shown / W);
       canvas.width = Math.round(W * DPR); canvas.height = Math.round(W * DPR);
       cxr.setTransform(DPR, 0, 0, DPR, 0, 0);
       bgCache = null;

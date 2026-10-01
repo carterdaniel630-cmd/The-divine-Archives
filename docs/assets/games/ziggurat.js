@@ -226,7 +226,7 @@
       holdCv = root.querySelector(".zig-hold-cv"); hctx = holdCv.getContext("2d");
       // backing store matches the displayed size, so the larger board stays crisp
       var shownW = well.getBoundingClientRect().width || W;
-      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, shownW / W);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, shownW / W);
       [[well, W, H], [mon, ZW, ZH]].forEach(function (p) { p[0].width = Math.round(p[1] * DPR); p[0].height = Math.round(p[2] * DPR); p[0].getContext("2d").setTransform(DPR, 0, 0, DPR, 0, 0); });
       tileCache = {}; wellBg = null;
       AG.onFit(well, function () { DPR = AG.scaleFor(well, W); [[well, W, H], [mon, ZW, ZH]].forEach(function (p) { p[0].width = Math.round(p[1] * DPR); p[0].height = Math.round(p[2] * DPR); p[0].getContext("2d").setTransform(DPR, 0, 0, DPR, 0, 0); }); tileCache = {}; wellBg = null; draw(); });

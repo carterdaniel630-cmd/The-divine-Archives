@@ -86,7 +86,7 @@
         "</div>" +
         '<p class="rq-note">Your paddle (gold, left): W/S or ↑/↓, drag, or the pad.' + (twoP ? " Player 2 (violet, right): the right pad." : "") + ' First to ' + WIN + ' wins the contest.</p>';
       canvas = root.querySelector(".pg-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || VW) / VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       fieldBg = null;
       AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VW); canvas.width = Math.round(VW * DPR); canvas.height = Math.round(VH * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); fieldBg = null; draw(); });
       hudEl = root.querySelector(".pg-hud"); live = root.querySelector(".pg-toast");

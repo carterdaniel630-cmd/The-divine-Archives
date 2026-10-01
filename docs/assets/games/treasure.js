@@ -1698,7 +1698,7 @@
         '<p class="ouro-toast tr-toast" aria-live="polite"></p>' +
         '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), crack the whip with <b>B</b> (J or X). Whip a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
+      DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
       AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR); });
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);

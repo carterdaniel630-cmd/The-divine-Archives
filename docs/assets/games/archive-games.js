@@ -316,9 +316,12 @@
     function h2() { clearTimeout(t); t = setTimeout(h, 180); }
     window.addEventListener("archive:fit", h); window.addEventListener("resize", h2);
   }
+  // backing-store scale for a game canvas: the screen's pixels for the size it is shown at
+  // (device pixel ratio capped at 2). It may go below 1 when a game is shown smaller than its
+  // logical width, as on phones; a floor of 1 used to make phones draw up to 4x the pixels.
   function scaleFor(canvas, logicalW, cap) {
     var w = canvas.getBoundingClientRect().width || logicalW;
-    return Math.min(cap || 3, Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, w / logicalW));
+    return Math.min(cap || 3, Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, w / logicalW));
   }
 
   window.ArchiveGames = {
