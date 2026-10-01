@@ -9,6 +9,7 @@
    one-second window, longest single frame.
 
    Usage: node tools/fps-games.js [--base http://localhost:8080] [--cpu 4] [--seconds 10] [--out fps.json]
+                                  [--only fighter,pong] [--shots <folder>]
    Needs Playwright (CHROME_PATH optional). Numbers come from a headless browser
    drawing in software, so read them as relative, not as a real phone's.
    ========================================================================== */
@@ -20,11 +21,13 @@ const BASE = opt("--base", "http://localhost:8080").replace(/\/$/, "");
 const CPU = parseFloat(opt("--cpu", "4"));
 const SECONDS = parseFloat(opt("--seconds", "10"));
 const OUT = opt("--out", "fps.json");
+const SHOTS = opt("--shots", null);               // folder: save a screenshot of each game at the end of its run
 const { chromium } = require("playwright");
 
 const rnd = (a) => a[Math.floor(Math.random() * a.length)];
 const ARROWS = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 // how to get each game moving, and what to keep doing while measuring
+const ONLY = opt("--only", null);
 const GAMES = {
   fighter:     { start: /to the arena/i, keys: ["d", "a", "j", "k", "l", "w"], every: 180 },
   chess:       { start: /set the board/i, keys: [], every: 1000 },
@@ -37,7 +40,7 @@ const GAMES = {
   pacman:      { keys: ARROWS, every: 300 },
   pinball:     { start: /launch/i, keys: ["ArrowLeft", "ArrowRight", " "], every: 220 },
   risk:        { tapCanvas: true, keys: [], every: 1000 },
-  treasure:    { start: /begin the expedition/i, then: true, keys: ["ArrowRight", "ArrowLeft", "ArrowUp", " "], every: 220 },
+  treasure:    { start: /begin the expedition/i, then: /^enter /i, keys: ["ArrowRight", "ArrowLeft", "ArrowUp", " "], every: 220 },
 };
 
 (async () => {
@@ -47,7 +50,7 @@ const GAMES = {
     userAgent: "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36" });
   await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
   const out = {};
-  for (const [id, g] of Object.entries(GAMES)) {
+  for (const [id, g] of Object.entries(GAMES).filter(([k]) => !ONLY || ONLY.split(",").includes(k))) {
     const page = await ctx.newPage();
     const errors = [];
     page.on("pageerror", (e) => errors.push(String(e).slice(0, 160)));
@@ -57,7 +60,7 @@ const GAMES = {
     await cdp.send("Emulation.setCPUThrottlingRate", { rate: CPU });
     const click = async (re) => { const b = page.locator(".game-dialog button:visible").filter({ hasText: re }).first(); if (await b.count()) { await b.click({ timeout: 3000 }).catch(() => {}); return true; } return false; };
     if (g.start) await click(g.start);
-    if (g.then) { await page.waitForTimeout(800); await page.keyboard.press("Enter"); await click(/./); }
+    if (g.then) { await page.waitForTimeout(800); await click(g.then); }          // a second screen, e.g. the Tomb Robber's "Enter Egypt"
     await page.waitForTimeout(1000);
     const box = async () => (await page.locator(".game-dialog canvas:visible").first().boundingBox().catch(() => null));
     await page.evaluate(() => window.__fpsReset && window.__fpsReset());
@@ -68,7 +71,8 @@ const GAMES = {
       if (g.tapCanvas) { const b = await box(); if (b) await page.touchscreen.tap(b.x + Math.random() * b.width, b.y + Math.random() * b.height).catch(() => {}); }
       await page.waitForTimeout(g.every);
     }
-    const f = await page.evaluate(() => window.__fps || null);
+    const f = await page.evaluate(() => window.__fps || null);             // read first: a screenshot stalls the page
+    if (SHOTS) { fs.mkdirSync(SHOTS, { recursive: true }); await page.screenshot({ path: `${SHOTS}/fps-${id}.jpg`, type: "jpeg", quality: 60 }).catch(() => {}); }
     out[id] = f ? { avg: +f.avg.toFixed(1), min: f.min == null ? null : +f.min.toFixed(1), worstFrameMs: Math.round(f.worstFrameMs), seconds: +f.seconds.toFixed(1), errors } : { error: "overlay not found", errors };
     console.log(id.padEnd(12), JSON.stringify(out[id]));
     await page.close();
