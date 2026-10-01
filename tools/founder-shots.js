@@ -58,8 +58,8 @@ const SHOTS = [
     page.on("requestfailed", (r) => { if (r.url().startsWith(BASE)) failed.push(r.url().slice(BASE.length)); });
     const resp = await page.goto(BASE + s.url, { waitUntil: "load" }).catch((e) => ({ status: () => "ERR " + e.message }));
     await page.waitForTimeout(s.wait || 600);
-    if (s.scrollTo) await page.evaluate((sel) => { const el = document.querySelector(sel); if (el) window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 8); }, s.scrollTo);
-    await page.waitForTimeout(300);
+    if (s.scrollTo) await page.evaluate((sel) => { const el = document.querySelector(sel); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 8, behavior: "instant" }); }, s.scrollTo);   // the site scrolls smoothly; jump instead
+    await page.waitForTimeout(700);
     const info = await page.evaluate(() => ({
       title: document.title, finalUrl: location.pathname + location.search + location.hash,
       hscroll: document.documentElement.scrollWidth > window.innerWidth + 1,
