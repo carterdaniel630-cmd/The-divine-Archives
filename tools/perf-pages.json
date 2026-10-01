@@ -1,0 +1,23 @@
+{
+  "note": "Pages measured by tools/lighthouse-pages.js (baseline and the Lighthouse CI workflow). Games open inside symbols.html via #play=<id>.",
+  "pages": [
+    { "name": "Home", "path": "/index.html" },
+    { "name": "Era: High Medieval", "path": "/eras/07-high-medieval.html" },
+    { "name": "Chapter ch07 Pre-exilic Israel (largest)", "path": "/chapters/ch07.html" },
+    { "name": "Chapter ch45 Pistis Sophia", "path": "/chapters/ch45.html" },
+    { "name": "Chapter ch80 Shi'ism", "path": "/chapters/ch80.html" },
+    { "name": "Museum", "path": "/museum.html" },
+    { "name": "Game: Divine Casualties (fighter)", "path": "/symbols.html#play=fighter" },
+    { "name": "Game: Archive Chess", "path": "/symbols.html#play=chess" },
+    { "name": "Game: Ouroboros", "path": "/symbols.html#play=ouroboros" },
+    { "name": "Game: Ziggurat Builder", "path": "/symbols.html#play=ziggurat" },
+    { "name": "Game: The Reliquary", "path": "/symbols.html#play=reliquary" },
+    { "name": "Game: The Seeker's Path", "path": "/symbols.html#play=seeker" },
+    { "name": "Game: Antithesis (pong)", "path": "/symbols.html#play=pong" },
+    { "name": "Game: The Excavation (minesweeper)", "path": "/symbols.html#play=minesweeper" },
+    { "name": "Game: The Labyrinth (pac-man)", "path": "/symbols.html#play=pacman" },
+    { "name": "Game: The Firmament (pinball)", "path": "/symbols.html#play=pinball" },
+    { "name": "Game: Dominion of the Ancients (risk)", "path": "/symbols.html#play=risk" },
+    { "name": "Game: The Tomb Robber (treasure)", "path": "/symbols.html#play=treasure" }
+  ]
+}
