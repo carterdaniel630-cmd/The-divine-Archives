@@ -63,7 +63,7 @@ jobs:
           node tools/lighthouse-pages.js
           --target base=http://localhost:8081
           --target pr=http://localhost:8082
-          --runs 3 --max-drop 5
+          --runs 3 --max-drop 5 --confirm 6
           --out lh-results.json --md lh-report.md
 
       - name: Upload the results

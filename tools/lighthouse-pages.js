@@ -5,12 +5,14 @@
 
    Each page is run --runs times per build and the run with the median
    performance score is kept. With two builds the runs alternate between them,
-   page by page, so both see the same machine conditions; the comparison then
-   fails if any page's mobile score drops by more than --max-drop points.
+   page by page, so both see the same machine conditions. A page whose median
+   drops by more than --max-drop points is re-measured with --confirm more runs
+   per build (default 6), and the comparison fails only if the drop holds over
+   all its runs: single runs of the same page can differ by 10 points.
 
    Usage:
      node tools/lighthouse-pages.js --target pr=http://localhost:8082 [--target base=http://localhost:8081]
-          [--runs 3] [--max-drop 5] [--out lh-results.json] [--md lh-report.md] [--only <name substring>]
+          [--runs 3] [--max-drop 5] [--confirm 6] [--out lh-results.json] [--md lh-report.md] [--only <name substring>]
    Needs the `lighthouse` package (npm i lighthouse) and Chrome/Chromium (CHROME_PATH, or found
    automatically). Exit code 1 when a page drops more than --max-drop against the base build.
    ========================================================================== */
@@ -24,6 +26,7 @@ const one = (name, d) => { const v = all(name); return v.length ? v[v.length - 1
 const targets = all("--target").map((t) => { const [k, ...u] = t.split("="); return { key: k, url: u.join("=").replace(/\/$/, "") }; });
 const RUNS = parseInt(one("--runs", "3"), 10);
 const MAX_DROP = parseFloat(one("--max-drop", "5"));
+const CONFIRM = parseInt(one("--confirm", "6"), 10);   // extra runs per build for a page that seems to drop
 const OUT = one("--out", "lh-results.json");
 const MD = one("--md", "lh-report.md");
 const ONLY = one("--only", null);
@@ -63,11 +66,21 @@ const median = (runs) => runs.slice().sort((x, y) => x.score - y.score)[Math.flo
   try {
     for (const p of pages) {
       const runs = {}; targets.forEach((t) => (runs[t.key] = []));
-      for (let r = 0; r < RUNS; r++) {
-        for (const t of (r % 2 ? targets.slice().reverse() : targets)) {     // alternate the order each round
-          const res = await lighthouse(t.url + p.path, flags);
-          runs[t.key].push(pick(res.lhr));
+      const round = async (n, from) => {
+        for (let r = from; r < from + n; r++) {
+          for (const t of (r % 2 ? targets.slice().reverse() : targets)) {   // alternate the order each round
+            const res = await lighthouse(t.url + p.path, flags);
+            runs[t.key].push(pick(res.lhr));
+          }
         }
+      };
+      await round(RUNS, 0);
+      // Confirm a drop before believing it: a noisy page's median of 3 can swing more than
+      // --max-drop by chance, while a real regression survives more runs. Re-measure only
+      // the pages that look worse, and judge on the median of all their runs.
+      if (targets.length > 1 && CONFIRM > 0) {
+        const b = median(runs[targets[0].key]).score, h = median(runs[targets[targets.length - 1].key]).score;
+        if (b - h > MAX_DROP) { console.log(`  ${p.name}: ${b} → ${h}, confirming with ${CONFIRM} more runs each…`); await round(CONFIRM, RUNS); }
       }
       for (const t of targets) results[t.key][p.name] = { median: median(runs[t.key]), runs: runs[t.key].map((x) => x.score) };
       console.log(p.name.padEnd(42), targets.map((t) => `${t.key} ${results[t.key][p.name].median.score} [${results[t.key][p.name].runs.join(",")}]`).join("  "));
@@ -78,7 +91,7 @@ const median = (runs) => runs.slice().sort((x, y) => x.score - y.score)[Math.flo
 
   // ---- report
   const head = targets[targets.length - 1].key, base = targets.length > 1 ? targets[0].key : null;
-  let md = `## Lighthouse (mobile, performance)\n\nMedian of ${RUNS} run(s) per page. LCP = largest contentful paint, CLS = cumulative layout shift, TBT = total blocking time, weight = bytes transferred.\n\n`;
+  let md = `## Lighthouse (mobile, performance)\n\nMedian of ${RUNS} run(s) per page (${CONFIRM} more for a page that seemed to drop). LCP = largest contentful paint, CLS = cumulative layout shift, TBT = total blocking time, weight = bytes transferred.\n\n`;
   md += base ? `| Page | ${base} | ${head} | Change | LCP | CLS | TBT | Weight |\n|---|---|---|---|---|---|---|---|\n`
              : `| Page | Score | LCP | CLS | TBT | Weight | Requests |\n|---|---|---|---|---|---|---|\n`;
   const fails = [];
