@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-01T00:22:52.848Z",
+  "cpuSlowdown": 1,
+  "seconds": 10,
+  "results": {
+    "fighter": {
+      "avg": 32.8,
+      "min": 30.5,
+      "worstFrameMs": 83,
+      "seconds": 10.1,
+      "errors": []
+    },
+    "chess": {
+      "avg": 33.5,
+      "min": 30.5,
+      "worstFrameMs": 50,
+      "seconds": 10,
+      "errors": []
+    },
+    "ouroboros": {
+      "avg": 35.5,
+      "min": 32.9,
+      "worstFrameMs": 67,
+      "seconds": 10.2,
+      "errors": []
+    },
+    "ziggurat": {
+      "avg": 36.5,
+      "min": 34.4,
+      "worstFrameMs": 50,
+      "seconds": 10.1,
+      "errors": []
+    },
+    "reliquary": {
+      "avg": 37.2,
+      "min": 35,
+      "worstFrameMs": 67,
+      "seconds": 10,
+      "errors": []
+    },
+    "seeker": {
+      "avg": 36.4,
+      "min": 33.9,
+      "worstFrameMs": 83,
+      "seconds": 10,
+      "errors": []
+    },
+    "pong": {
+      "avg": 32.9,
+      "min": 28.6,
+      "worstFrameMs": 83,
+      "seconds": 10,
+      "errors": []
+    },
+    "minesweeper": {
+      "avg": 38.7,
+      "min": 34.4,
+      "worstFrameMs": 50,
+      "seconds": 10.1,
+      "errors": []
+    },
+    "pacman": {
+      "avg": 34.7,
+      "min": 32,
+      "worstFrameMs": 50,
+      "seconds": 10.1,
+      "errors": []
+    },
+    "pinball": {
+      "avg": 33.2,
+      "min": 31.9,
+      "worstFrameMs": 67,
+      "seconds": 10,
+      "errors": []
+    },
+    "risk": {
+      "avg": 32.7,
+      "min": 29,
+      "worstFrameMs": 117,
+      "seconds": 10.8,
+      "errors": []
+    },
+    "treasure": {
+      "avg": 28.3,
+      "min": 25.5,
+      "worstFrameMs": 83,
+      "seconds": 10,
+      "errors": []
+    }
+  }
+}

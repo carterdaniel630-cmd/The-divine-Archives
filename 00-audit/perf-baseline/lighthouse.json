@@ -1,0 +1,284 @@
+{
+  "date": "2026-10-01T00:10:06.987Z",
+  "runs": 3,
+  "targets": [
+    {
+      "key": "main",
+      "url": "http://localhost:8090"
+    }
+  ],
+  "results": {
+    "main": {
+      "Home": {
+        "median": {
+          "score": 100,
+          "lcpMs": 1543,
+          "cls": 0,
+          "tbtMs": 0,
+          "bytes": 56010,
+          "requests": 8
+        },
+        "runs": [
+          100,
+          99,
+          100
+        ]
+      },
+      "Era: High Medieval": {
+        "median": {
+          "score": 99,
+          "lcpMs": 1684,
+          "cls": 0,
+          "tbtMs": 0,
+          "bytes": 29703,
+          "requests": 5
+        },
+        "runs": [
+          99,
+          99,
+          99
+        ]
+      },
+      "Chapter ch07 Pre-exilic Israel (largest)": {
+        "median": {
+          "score": 99,
+          "lcpMs": 1686,
+          "cls": 0,
+          "tbtMs": 0,
+          "bytes": 39995,
+          "requests": 7
+        },
+        "runs": [
+          99,
+          99,
+          99
+        ]
+      },
+      "Chapter ch45 Pistis Sophia": {
+        "median": {
+          "score": 99,
+          "lcpMs": 1683,
+          "cls": 0,
+          "tbtMs": 0,
+          "bytes": 33505,
+          "requests": 7
+        },
+        "runs": [
+          99,
+          99,
+          99
+        ]
+      },
+      "Chapter ch80 Shi'ism": {
+        "median": {
+          "score": 99,
+          "lcpMs": 1684,
+          "cls": 0,
+          "tbtMs": 0,
+          "bytes": 30156,
+          "requests": 7
+        },
+        "runs": [
+          99,
+          99,
+          99
+        ]
+      },
+      "Museum": {
+        "median": {
+          "score": 94,
+          "lcpMs": 2767,
+          "cls": 0.041,
+          "tbtMs": 0,
+          "bytes": 402307,
+          "requests": 18
+        },
+        "runs": [
+          99,
+          94,
+          92
+        ]
+      },
+      "Game: Divine Casualties (fighter)": {
+        "median": {
+          "score": 90,
+          "lcpMs": 2830,
+          "cls": 0,
+          "tbtMs": 159,
+          "bytes": 6380460,
+          "requests": 80
+        },
+        "runs": [
+          90,
+          92,
+          89
+        ]
+      },
+      "Game: Archive Chess": {
+        "median": {
+          "score": 94,
+          "lcpMs": 2465,
+          "cls": 0,
+          "tbtMs": 0,
+          "bytes": 289318,
+          "requests": 33
+        },
+        "runs": [
+          94,
+          90,
+          94
+        ]
+      },
+      "Game: Ouroboros": {
+        "median": {
+          "score": 94,
+          "lcpMs": 2461,
+          "cls": 0,
+          "tbtMs": 67,
+          "bytes": 289052,
+          "requests": 33
+        },
+        "runs": [
+          97,
+          94,
+          91
+        ]
+      },
+      "Game: Ziggurat Builder": {
+        "median": {
+          "score": 94,
+          "lcpMs": 2468,
+          "cls": 0,
+          "tbtMs": 68,
+          "bytes": 288891,
+          "requests": 33
+        },
+        "runs": [
+          94,
+          95,
+          94
+        ]
+      },
+      "Game: The Reliquary": {
+        "median": {
+          "score": 96,
+          "lcpMs": 2166,
+          "cls": 0,
+          "tbtMs": 104,
+          "bytes": 292861,
+          "requests": 33
+        },
+        "runs": [
+          96,
+          96,
+          91
+        ]
+      },
+      "Game: The Seeker's Path": {
+        "median": {
+          "score": 92,
+          "lcpMs": 2729,
+          "cls": 0,
+          "tbtMs": 5,
+          "bytes": 289185,
+          "requests": 33
+        },
+        "runs": [
+          94,
+          92,
+          92
+        ]
+      },
+      "Game: Antithesis (pong)": {
+        "median": {
+          "score": 95,
+          "lcpMs": 2384,
+          "cls": 0,
+          "tbtMs": 68,
+          "bytes": 288528,
+          "requests": 33
+        },
+        "runs": [
+          95,
+          90,
+          97
+        ]
+      },
+      "Game: The Excavation (minesweeper)": {
+        "median": {
+          "score": 92,
+          "lcpMs": 2714,
+          "cls": 0,
+          "tbtMs": 2,
+          "bytes": 288743,
+          "requests": 34
+        },
+        "runs": [
+          92,
+          95,
+          89
+        ]
+      },
+      "Game: The Labyrinth (pac-man)": {
+        "median": {
+          "score": 95,
+          "lcpMs": 2192,
+          "cls": 0,
+          "tbtMs": 154,
+          "bytes": 289003,
+          "requests": 33
+        },
+        "runs": [
+          96,
+          91,
+          95
+        ]
+      },
+      "Game: The Firmament (pinball)": {
+        "median": {
+          "score": 94,
+          "lcpMs": 2152,
+          "cls": 0,
+          "tbtMs": 160,
+          "bytes": 288619,
+          "requests": 33
+        },
+        "runs": [
+          96,
+          94,
+          94
+        ]
+      },
+      "Game: Dominion of the Ancients (risk)": {
+        "median": {
+          "score": 71,
+          "lcpMs": 2107,
+          "cls": 0,
+          "tbtMs": 1585,
+          "bytes": 289169,
+          "requests": 33
+        },
+        "runs": [
+          71,
+          70,
+          71
+        ]
+      },
+      "Game: The Tomb Robber (treasure)": {
+        "median": {
+          "score": 82,
+          "lcpMs": 4111,
+          "cls": 0,
+          "tbtMs": 56,
+          "bytes": 556332,
+          "requests": 38
+        },
+        "runs": [
+          82,
+          81,
+          82
+        ]
+      }
+    }
+  }
+}
