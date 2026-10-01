@@ -5,6 +5,35 @@ A comparative reference work covering every documented spiritual/religious tradi
 organized chronologically by era (not by region). Each chapter covers one culture/tradition
 within its era, or one cross-cutting comparative theme (e.g. flood myths, creation cosmogonies).
 
+## Operating rules (standing, set by Carter 2026-10-01)
+
+### Roles
+- **Carter**: ideas, decisions, approvals. He works only from a phone. Never assign him
+  technical steps you can do yourself.
+- **Claude (chat)**: turns his ideas into plans and prompts.
+- **Claude Code (CC)**: builds, tests, verifies, reports.
+
+### Pre-approved: do these without asking, but report them
+- Repo settings, branches, workflows, CI and GitHub Actions setup (via the API or gh) when your
+  access allows
+- Bug fixes, performance fixes, link fixes, doc updates
+- Running builds, verify scripts, Lighthouse and audits
+- Opening branches and PRs
+
+### Needs Carter's approval: stop and ask first
+- Merging to main, or anything that changes the live site
+- Publishing or clearing any chapter, Pantheon figure, Vault object, or other new content
+- Deleting anything (files, branches, data)
+- Anything involving money, accounts, credentials, DNS, the domain, or Cloudflare
+- New features, games, or museum rooms
+- Anything touching religious-sensitivity rules (e.g. images of the Báb, sacred objects)
+
+### Reporting
+- Write reports for a non-technical reader: say what changed, what it means, and what you need
+  from him.
+- If something only Carter can do, give phone-only steps, or ask permission to do it yourself.
+- End every report with a short "Needs your decision" list, or "Nothing needed."
+
 ## File structure
 ```
 /eras/
