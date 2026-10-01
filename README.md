@@ -1,130 +1,138 @@
 # The Divine Archives
 
-A long-term comparative reference work on world religion, mythology and the
-esoteric, organized **chronologically by era**, not by region. Each chapter
-covers one culture or tradition within its era, or a cross-cutting comparative
-theme (flood myths, creation, the underworld, sacred kingship and so on).
+A comparative reference work on world religion and mythology, with evidence
+honesty. It is organized **chronologically by era**, not by region: each chapter
+covers one tradition within its era, or one theme that runs across eras (flood
+myths, creation, the underworld, sacred kingship and so on).
 
-Live at **getconexto.com**.
+**Live at [getconexto.com](https://getconexto.com).**
 
-The defining commitment is **evidence honesty**: every factual and
-archaeological claim is sourced from real primary texts and current scholarly
-consensus, contested points are flagged as contested rather than resolved by
-picking a side, and genuine gaps in the record are named instead of papered
-over. Every chapter ends with a plain reckoning of what is supported, what
-isn't, and what is still open.
+Every factual and archaeological claim is sourced from real primary texts and
+current scholarship. Contested points are flagged as contested rather than
+settled by picking a side, and gaps in the record are named, not papered over.
+Every chapter ends with a plain account of what the evidence supports, what it
+doesn't, and what is still open.
+
+## What is on the site
+
+| Section | What it is | Size |
+|---|---|---|
+| **Chapters** | One tradition or theme per chapter, each with a symbology section and an evidence-honesty close | **83** (76 traditions across nine eras + 7 themes) |
+| **Eras** | The nine ages, from Prehistory to the Modern Age, each listing its chapters and objects | 9 |
+| **Traditions / Themes / Compare / Search / Random** | Other ways into the same chapters | — |
+| **The Vault** | Sacred objects and texts (manuscripts, relics, inscriptions), each with a study page | **88** entries |
+| **The Pantheon** | A searchable directory of gods, spirits, heroes and prophets | **199** figures, 30 traditions |
+| **Symbols and games** | The archive's sacred symbols; twelve of them open a game whose facts all come from chapter text | **12** games |
+| **The Museum** (beta) | A walkable 3D building with one room per chapter, and a planetarium | **83** rooms in 10 wings |
+| **Methodology / About** | The sourcing standard and what the "pending review" tag means | — |
+
+Chapters per era: Prehistory 5 · Bronze Age 7 · Early Iron Age 7 · Axial Age 9 ·
+Late Antiquity 9 · Early Medieval 10 · High Medieval 12 · Early Modern 7 · Modern 10 ·
+cross-era themes 7.
+
+### Review status
+
+New chapters go live at once with a visible **"Recently added — pending full
+review"** banner, and the banner comes off only when Carter clears the chapter in
+a batch review. **11 chapters** carry it now: Batch IV (ch75–ch83, one per era),
+plus ch45 and ch46, whose full text replaced a shorter live version on 2026-09-30.
+One Vault entry (V88) is also pending. The chapter-by-chapter status is on the
+[status board](outline/master-outline.md).
 
 ## How the work runs
 
-The full rules are in **[`CLAUDE.md`](CLAUDE.md)**. In short:
+The rules are in **[`CLAUDE.md`](CLAUDE.md)**: the sourcing standard, the depth
+standard, the symbology section every chapter needs, and the publishing policy.
+In short:
 
-1. **Research and draft** one chapter at a time from real, checkable sources,
-   in the narrative style of the template chapter
-   [`themes/ch01-the-flood.md`](themes/ch01-the-flood.md). Each chapter covers
-   the textual record, cosmology, law, ritual, archaeology, a symbology section
-   and connections, and closes with an evidence-honesty section. Sources are
-   logged per chapter in [`sources/`](sources/).
-2. **Auto-publish with a tag.** A new chapter goes live as soon as it is drafted,
-   carrying a visible **"Recently added — pending full review"** banner.
-3. **Batch review.** Carter reviews in batches and sends correction notes;
-   chapters are revised in place, and the pending tag comes off only when Carter
-   clears that chapter.
+1. **Research and draft** one chapter at a time from real, checkable sources, in
+   the style of the template chapter [`themes/ch01-the-flood.md`](themes/ch01-the-flood.md).
+   Log the sources in [`sources/`](sources/).
+2. **Publish with the pending tag**, straight away.
+3. **Batch review**: Carter sends corrections, chapters are revised in place, and
+   the tag comes off when Carter clears them.
 
 ## Repository layout
 
 ```
 The-divine-Archives/
-├── CLAUDE.md             # Project rules: sourcing standard, publishing policy, symbology mandate
-├── outline/
-│   └── master-outline.md # Framework, era taxonomy, chapter status board
-├── eras/                 # Tradition chapters (markdown), filed by era 01-prehistory … 09-modern
-├── themes/               # Comparative-theme chapters (cross-era), including the ch01 template
-├── vault/                # Vault entries V01…: sacred objects and texts, one markdown file each
-├── sources/              # Citation logs: one per chapter, per Vault entry, and for the Pantheon
-├── content/
-│   └── chapters.js       # Chapter bodies as HTML (built from the markdown; read by the tools, not deployed)
-├── docs/                 # The website (deployed as-is to Cloudflare Pages)
-├── functions/            # Cloudflare Pages Functions (POST /api/subscribe for the home-page form)
-├── tools/                # Build, conversion and verification scripts
-├── art-source/           # Source artwork kept out of the deployed site
-├── museum/               # Virtual Museum planning and phase reports (the museum itself is docs/museum*)
-├── .github/workflows/    # deploy.yml (deploy), verify.yml + game-runtime.yml (checks)
-├── 00-audit/             # Site audits (current: 00-audit/site-audit.md)
-├── drafts/, icm/, stages/, mini-games/   # Historical planning and working notes
-└── README.md
+├── CLAUDE.md               project rules
+├── README.md
+├── outline/master-outline.md   framework and the chapter / Vault status board
+├── eras/                   tradition chapters (markdown), one folder per era, 01-prehistory … 09-modern
+├── themes/                 cross-era theme chapters, including the ch01 template
+├── vault/                  Vault entries V01–V88 (markdown)
+├── sources/                citation logs: one per chapter, one per Vault entry, and the Pantheon
+├── content/chapters.js     chapter bodies as HTML, converted from the markdown (build input, not deployed)
+├── docs/                   the website, deployed exactly as it is
+├── functions/              Cloudflare Pages Functions (the home page's email form)
+├── tools/                  build, conversion, check and measurement scripts
+├── museum/                 museum plan, phase reports and the planetarium's lore
+├── art-source/             source artwork kept out of the website
+├── 00-audit/               audits, the founder guide and the performance baseline
+├── .github/workflows/      deploy and checks (see below)
+└── drafts/, icm/, stages/, mini-games/   older planning notes, kept for the record
 ```
 
-## Website
+## The website
 
-`docs/` is a static site: HTML, CSS and vanilla JavaScript, with no framework
-and no runtime build. Sections:
-
-- home, **eras**, **traditions**, **themes**, and one page per **chapter**;
-- **compare**, **search**, and **random**;
-- **methodology** (the sourcing standard and the pending-review tag) and **about**;
-- the **Vault**: an interactive study page for each sacred object or text;
-- the **Pantheon**: a directory of divine and sacred figures;
-- **Symbols**: the site's sacred symbols, twelve of which open a mini-game. Every
-  fact shown in a game is checked against chapter text by a
-  `tools/verify-*.js` script.
-- the **Museum** (beta, `museum.html`): a walkable 3D building, one room per
-  chapter in a wing per Age, generated from the same data files by
-  `tools/build-museum.js`. It is `noindex` and never in the sitemap; the chapter,
-  Vault and Pantheon pages stay canonical. Three.js is vendored in
-  `docs/assets/vendor/three/`. The Rotunda's dome is a **planetarium**: the real
-  sky over a site the archive writes about, built by `tools/build-sky.js` from the
-  d3-celestial catalogues (`tools/data/d3-celestial/`, BSD licence). Its constellation
-  cards quote only chapter text (`museum/sky-lore.json`, checked by
-  `tools/verify-sky.js`).
-
-The chapter, era, listing, Vault, search-index and sitemap pages are
-**prerendered** and the output is committed. After changing content, rebuild
-in this order:
+`docs/` is a static site: plain HTML, CSS and JavaScript, no framework and
+nothing built at request time. The chapter, era, listing, Vault, search-index
+and sitemap pages are **prerendered**, and the generated files are committed.
+After changing content, rebuild in this order:
 
 ```sh
 node tools/build-vault.js
 node tools/build-chapters.js
 node tools/build-pages.js
 node tools/build-museum.js
-node tools/build-sky.js      # only when the planetarium's lore or data change
+node tools/build-sky.js        # only when the planetarium's lore or star data change
 ```
 
-To add or update a chapter's body, convert its markdown with
-`node tools/md-to-chapter.js <id> <file.md>` and replace that chapter's block in
-`content/chapters.js`; its entry (title, era, `pending` flag) lives in
-`docs/assets/data.js`.
+A chapter's body is converted from its markdown with
+`node tools/md-to-chapter.js <id> <file.md>` and placed in `content/chapters.js`;
+its listing entry (title, era, `pending` flag) lives in `docs/assets/data.js`.
 
-To preview locally, serve the folder: `python3 -m http.server -d docs`.
+To preview locally: `node tools/serve.js 8080` and open http://localhost:8080
+(it compresses files the way Cloudflare does; `python3 -m http.server -d docs`
+also works).
 
-### Deploy
+The Museum is `noindex` and kept out of the sitemap, so search engines send
+people to the chapter, Vault and Pantheon pages. Three.js is included in
+`docs/assets/vendor/three/`. The planetarium's star data come from the
+d3-celestial catalogues (`tools/data/d3-celestial/`, BSD licence).
 
-Every push to `main` runs `.github/workflows/deploy.yml`, which publishes
-`docs/` (plus `functions/`) to **Cloudflare Pages** with
-`wrangler pages deploy docs`. The custom domain is attached in the Cloudflare
-dashboard. `docs/CNAME` is a leftover from the GitHub Pages setup, and
-Cloudflare ignores it.
+## Deploy
 
-The email form's function answers `not_configured` until a KV namespace named
-`SUBSCRIBERS` is bound to the Pages project. The form says so honestly
-rather than pretending to subscribe anyone.
+Every push to **`main`** runs `.github/workflows/deploy.yml`, which publishes
+`docs/` (and `functions/`) to **Cloudflare Pages** with `wrangler pages deploy docs`.
+The domain getconexto.com is attached in the Cloudflare dashboard. Work happens
+on feature branches and reaches `main` by fast-forward once approved.
 
-### Checks
+- `docs/CNAME` is left over from GitHub Pages; Cloudflare ignores it.
+- The email form answers "not configured" until a KV namespace named
+  `SUBSCRIBERS` is bound to the Pages project, and says so honestly.
+- **Analytics:** Cloudflare Web Analytics is wired in but off. Paste the site
+  token into `docs/assets/site-config.js` (`cfAnalyticsToken`) to turn it on. It
+  sets no cookies.
+- **Note:** the GitHub *default* branch is still the old `claude/session-start-ikztvo`.
+  Production is `main`. Scheduled checks (the weekly link check) run only once the
+  default branch is set to `main` in the repository's settings.
 
-- `verify.yml` runs every `tools/verify-*.js` whenever chapter text or game data
-  changes, so every game fact must still appear in its source chapter.
-- `game-runtime.yml` lints the game code for undeclared references and plays
-  the fighter to a KO in a headless browser.
-- `link-check.yml` runs every Monday (or by hand from the Actions tab) and checks
-  every external link on the site with `tools/check-links.js`. It reports and never
-  edits: dead links (404/410, vanished hosts) fail the run, and links that refuse
-  automated checks are listed to open by hand. The report is in the run summary.
+## Checks
 
-## Status
+| Workflow | When | What it does |
+|---|---|---|
+| `verify.yml` | chapter text or game data changes | every fact a game shows must appear in its source chapter (`tools/verify-*.js`) |
+| `game-runtime.yml` | every push and pull request | lints the game code and plays the fighter to a knockout in a headless browser |
+| `link-check.yml` | Mondays, or by hand | checks every external link (`tools/check-links.js`); fails only on dead links |
+| `lighthouse.yml` | pull requests that change the site | mobile Lighthouse on the home page, an era, three chapters, the museum and the twelve games, base vs. pull request; fails if a page's score drops more than 5 points |
 
-- **83 chapters** are live: 76 traditions across the nine eras and 7
-  comparative themes. Batch III (ch66–ch74) was cleared on 2026-09-29. The nine
-  Batch IV chapters (ch75–ch83, one per era) carry the pending-review tag, and so do
-  ch45 and ch46, whose full markdown text replaced a condensed live version on 2026-09-30. The per-chapter review status is on the
-  [status board](outline/master-outline.md).
-- The **Vault** and the **Pantheon** are live, and so are **12 games**.
-- The latest full audit is [`00-audit/site-audit.md`](00-audit/site-audit.md).
+## Reports
+
+- [`00-audit/founder-guide.md`](00-audit/founder-guide.md): every section of the
+  site in plain language, with phone screenshots, and what a newcomer sees first.
+- [`00-audit/perf-baseline.md`](00-audit/perf-baseline.md): Lighthouse scores and
+  game frame rates, with the top fixes.
+- [`00-audit/2026-09-29-full-audit.md`](00-audit/2026-09-29-full-audit.md): the
+  latest full audit (content, sourcing, site health, museum and games).
