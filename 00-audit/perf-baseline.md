@@ -215,3 +215,23 @@ Average of two runs each. "Min" is the worst one-second stretch.
 The load score mostly measures how fast a page *opens*, so the drawing-size fix (#1) barely
 moves it. That fix shows up in the frame rates above. The precomputed map (#3) shows up here,
 in Risk's score.
+
+---
+
+## The fighter's download and the first-screen buttons — 2026-10-04 (branch `claude/first-screen-fighter`)
+
+Measured side by side against `main` (which does not yet have PR #12), 5 alternating
+Lighthouse runs each, phone setting.
+
+| Page | Before | After | What changed |
+|---|---|---|---|
+| Divine Casualties (fighter) | score 91, main content at 2.85 s, **6,232 KB** downloaded | **score 95, 2.45 s, 725 KB** | half-size WebP art and only the two gods in play: the art alone went from 5,943 KB to 438 KB |
+| Home page | 99, 1.69 s, 56 KB | 99, 1.68 s, 56 KB | the five first-screen buttons cost nothing measurable |
+
+**Fighter frame rate** (CPU 4× slower, two alternating rounds): 26.5 → 51.7 FPS against `main`.
+That is mostly PR #12's drawing-size fix (47.9 when measured alone). The lighter art doesn't
+slow the game down.
+
+**Look:** paused-match screenshots on a 1440-pixel high-density screen, before vs after, show
+the gods at the same size and detail. The art is drawn at no more than 0.47× its original
+resolution anywhere measured, so half-size art loses nothing visible.
