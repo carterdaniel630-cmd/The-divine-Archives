@@ -54,7 +54,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 /vault/                     <- Vault entries (V01…), one markdown file per sacred object or text
 /content/chapters.js        <- chapter bodies as HTML, built from the markdown (read by tools, not deployed)
 /docs/                      <- the website, deployed as-is (see "Build & deploy" below)
-/functions/                 <- Cloudflare Pages Functions (api/subscribe for the home-page form)
+/functions/                 <- Cloudflare Pages Functions (api/subscribe for the home-page form; api/visits for the footer's visitor counter, D1 binding VISITS_DB)
 /tools/                     <- build-*.js (prerender), md-to-chapter.js, verify-*.js (game facts vs chapter text)
 /art-source/                <- source artwork kept out of the deployed site
 /museum/                    <- Virtual Museum governance, plan and phase reports (the museum is docs/museum.html + docs/museum/)

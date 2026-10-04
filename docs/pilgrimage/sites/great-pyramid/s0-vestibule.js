@@ -2,11 +2,12 @@
 import * as THREE from "three";
 import site, { V0 } from "./site.js?v=1";
 import * as R from "./relics.js?v=1";
-import { drawCartouche } from "./glyphs.js?v=1";
+import { drawCartouche, hieroFont } from "./glyphs.js?v=1";
 import { Bucket, room, V } from "../../kit.js?v=1";
 import { markers, sign, glassCase, goldMat, lamp, finish } from "../../parts.js?v=1";
 
-export function build(ctx) {
+export async function build(ctx) {
+  await hieroFont();   // the hieroglyph font, for the cartouche drawn on a canvas
   const x0 = V0.x - 4, x1 = V0.x + 4, z0 = V0.z - 5, z1 = V0.z + 5, H = 4.8;
   const panel = new THREE.MeshStandardMaterial({ color: "#2a1d12", roughness: 0.7 });
   const ceil = new THREE.MeshStandardMaterial({ color: "#140d07", roughness: 0.9 });
@@ -51,7 +52,7 @@ export function build(ctx) {
   ng.fillStyle = "#e7c680"; ng.textAlign = "center"; ng.font = "600 40px Cinzel, Georgia, serif"; ng.fillText("Khufu", 256, 74);
   drawCartouche(ng, 256, 110, 130, "ink");
   ng.fillStyle = "#cdbb96"; ng.font = "italic 26px 'Cormorant Garamond', Georgia, serif";
-  ng.fillText("ḫ · w · f · w, read top to bottom", 256, 690); ng.fillText("our drawing of the signs", 256, 724);
+  ng.fillText("ḫ · w · f · w, read top to bottom", 256, 690); ng.fillText("standard sign forms", 256, 724);
   const nt = new THREE.CanvasTexture(nb); nt.colorSpace = THREE.SRGBColorSpace;
   const board = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 1.5), new THREE.MeshBasicMaterial({ map: nt, fog: true })); board.position.set(V0.x - 2.4, 2.05, z1 - 0.03); board.rotation.y = Math.PI; ctx.group.add(board);
   ctx.hit(board, ctx.infoById("v-names"));

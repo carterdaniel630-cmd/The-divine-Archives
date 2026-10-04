@@ -21,6 +21,7 @@
 import * as THREE from "three";
 import { stoneMaterial } from "./stone.js?v=1";
 import { portal } from "./portal.js?v=1";
+import { createSound } from "./sound.js?v=1";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -64,8 +65,33 @@ function initRenderer() {
   lamp = new THREE.PointLight("#ffd7a0", 1.3, 8, 1.6);           // the visitor's own lamp
   camera.add(lamp); lamp.position.set(0.15, 0.05, 0);
   for (let i = 0; i < 4; i++) { const l = new THREE.PointLight("#ffc488", 0, 14, 1.25); scene.add(l); pool.push(l); }
+  makeMotes();
   sun = new THREE.DirectionalLight("#fff1d6", 0); sun.position.set(-40, 80, -60); scene.add(sun); scene.add(sun.target);
   resize(); window.addEventListener("resize", resize);
+}
+// dust in the lamplight: a few faint motes drifting round the visitor indoors (atmosphere, drawn sparsely)
+function makeMotes() {
+  const N = touch ? 90 : 160, pos = new Float32Array(N * 3), seed = [];
+  for (let i = 0; i < N; i++) { seed.push({ x: (Math.random() - 0.5) * 3.2, y: (Math.random() - 0.5) * 2.2, z: (Math.random() - 0.5) * 3.2, ph: Math.random() * 6.3, v: 0.02 + Math.random() * 0.05 }); }
+  const c = document.createElement("canvas"); c.width = c.height = 32; const q = c.getContext("2d");
+  const r = q.createRadialGradient(16, 16, 0, 16, 16, 16); r.addColorStop(0, "rgba(255,236,200,1)"); r.addColorStop(1, "rgba(255,220,170,0)"); q.fillStyle = r; q.fillRect(0, 0, 32, 32);
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  const pts = new THREE.Points(g, new THREE.PointsMaterial({ map: tex, size: 0.02, sizeAttenuation: true, transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending, color: "#ffe0b0" }));
+  pts.frustumCulled = false; scene.add(pts);
+  let t = 0, placed = false;
+  S.motes = { pts, update(dt, centre, show) {
+    pts.visible = show; if (!show) return;
+    t += dt;
+    if (!placed) { for (const s of seed) { s.x += centre.x; s.y += centre.y; s.z += centre.z; } placed = true; }
+    for (let i = 0; i < N; i++) {
+      // each mote hangs in the air, drifting; one that falls out of the box round the visitor reappears on its far side
+      const s = seed[i]; s.y += s.v * dt * 0.3; s.x += Math.sin(t * 0.3 + s.ph) * s.v * dt; s.z += Math.cos(t * 0.25 + s.ph) * s.v * dt;
+      for (const [k, h] of [["x", 1.6], ["y", 1.1], ["z", 1.6]]) { const d = s[k] - centre[k]; if (Math.abs(d) > 4 * h) s[k] = centre[k] + (Math.random() * 2 - 1) * h; else if (d > h) s[k] -= 2 * h; else if (d < -h) s[k] += 2 * h; }
+      pos[i * 3] = s.x; pos[i * 3 + 1] = s.y; pos[i * 3 + 2] = s.z;
+    }
+    g.attributes.position.needsUpdate = true;
+  } };
 }
 function resize() {
   const w = window.innerWidth, h = window.innerHeight;
@@ -230,6 +256,7 @@ function walkTo(t) {
 }
 const angDiff = (a, b) => { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; return d; };
 function step(dt) {
+  const px0 = S.pos.x, pz0 = S.pos.z;
   let mx = 0, mz = 0; const k = S.keys;
   if (k.has("KeyW") || k.has("ArrowUp")) mz += 1;
   if (k.has("KeyS") || k.has("ArrowDown")) mz -= 1;
@@ -269,6 +296,9 @@ function step(dt) {
   if (Math.abs(lw - S.lean) > 0.001) { S.lean += (lw - S.lean) * Math.min(1, dt * 3); moved = true; }
   const y = S.foot + S.eye; if (Math.abs(y - S.pos.y) > 1e-4) { S.pos.y = y; moved = true; }
   if (moved) S.dirty = true;
+  // footsteps: one about every 0.7 m walked, of wood on the boards, of stone or rock elsewhere
+  S.stepDist = (S.stepDist || 0) + Math.hypot(S.pos.x - px0, S.pos.z - pz0);
+  if (S.stepDist > 0.7) { S.stepDist = 0; if (S.snd) S.snd.step((S.region && S.region.surface) || "stone"); }
   // portals: standing in any portal region (they overlap the rooms they open from) takes you through
   if (!S.portalT) {
     const pr = S.regions.find((r) => r.portal && r.contains(S.pos.x, S.pos.z) && Math.abs(r.floorAt(S.pos.x, S.pos.z) - S.foot) < STEP);
@@ -481,6 +511,11 @@ function bindInput() {
   $("pg-back").addEventListener("click", () => walkRoute(-1));
   $("mu-help-btn").addEventListener("click", () => { $("mu-intro").hidden = false; $("mu-enter").textContent = "Back to the site"; unlock(); });
   $("mu-motion-btn").addEventListener("click", () => setReduce(!S.reduce));
+  // sound: woken by the first gesture (browsers require one); the button turns it off and on
+  const sb = $("mu-sound-btn"), paintSound = () => { if (!sb) return; sb.setAttribute("aria-pressed", String(S.snd.on)); sb.querySelector(".mu-l").textContent = S.snd.on ? "Sound on" : "Sound off"; };
+  if (sb) sb.addEventListener("click", () => { S.snd.wake(); S.snd.set(!S.snd.on); paintSound(); });
+  paintSound();
+  ["pointerdown", "keydown", "touchstart"].forEach((ev) => document.addEventListener(ev, () => S.snd.wake(), { passive: true }));
   document.addEventListener("visibilitychange", () => { if (!document.hidden) S.dirty = true; });
   window.addEventListener("pageshow", () => { $("mu-fade").classList.remove("gold", "on"); S.portalT = false; });
 }
@@ -498,6 +533,8 @@ function tick(now) {
   secT += dt; if (secT > 0.3) { secT = 0; manageSections(); }
   locT += dt; if (locT > 0.25) { locT = 0; locate(); }
   idle += dt;
+  if (S.motes) S.motes.update(S.reduce ? 0 : dt, S.pos, !(S.region && S.region.outside) && !(S.region && S.region.section === "v"));
+  if (S.snd) S.snd.update(dt, { outside: !!(S.region && S.region.outside), fan: (S.region && S.region.fan) || 0 });
   for (const a of S.anims) if (a.p.distanceTo(S.pos) < 25 && a.fx.group.parent && a.fx.group.parent.visible !== false) { if (a.fx.update(S.reduce ? 0 : dt)) S.dirty = true; }
   if (!S.dirty && (S.reduce || idle < 0.12)) return;   // like the museum: a fresh frame at least every 0.12 s
   idle = 0; S.dirty = false;
@@ -530,6 +567,7 @@ export async function start(siteId) {
     S.site = mod.default; S.site.id = siteId;
     S.regions = S.site.regions; S.outlineOn = {};
   } catch (e) { console.error(e); $("mu-status").textContent = "This site could not be loaded."; showFallback(); return; }
+  S.snd = createSound();
   bindInput(); setReduce(S.reduce);
   const first = S.site.sections[0], st = first.start;
   place(st.x, st.z, st.yaw, st.y);

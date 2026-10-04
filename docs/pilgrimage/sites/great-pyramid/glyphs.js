@@ -4,8 +4,10 @@
    cartouche, read top to bottom:
      Aa1 (a round sign crossed by lines, read ḫ), G43 (the quail chick, w),
      I9 (the horned viper, f), G43 again (w).
-   The sign values are the standard ones of Gardiner's sign list; the shapes are
-   our own drawing, not traced from any inscription. Everything else on the site
+   The sign values are the standard ones of Gardiner's sign list. The signs are
+   set in the Noto Sans Egyptian Hieroglyphs font (SIL OFL, vendored in
+   docs/assets/vendor/fonts/), the standard Unicode forms; if the font cannot
+   load, our own drawing of each sign is used instead. Everything else on the site
    that looks like writing (the Lepsius slab, the builders' gang marks other than
    the cartouche) is labelled on site as illustrative marks.
 
@@ -19,6 +21,22 @@ const SIGNS = {
   I9: { h: 0.62, d: "M12 62 C12 52 24 48 34 54 C48 62 62 64 74 58 C82 54 86 46 86 36", fill: false, horns: "M22 52 L19 40 M30 53 L30 41", w: 9 }
 };
 export const KHUFU = ["Aa1", "G43", "I9", "G43"];
+const CHAR = { Aa1: "\u{1340D}", G43: "\u{13171}", I9: "\u{13191}" };
+const FONT = "PG Hieroglyphs";
+const FS = { Aa1: 0.9, G43: 0.92, I9: 0.68 };   // the viper is a wide sign: set it smaller to sit inside the ring
+let fontReady = null;
+// load the hieroglyph font once (resolves true when it can be used on a canvas)
+export function hieroFont() {
+  if (fontReady) return fontReady;
+  fontReady = (async () => {
+    try {
+      const f = new FontFace(FONT, "url(../assets/vendor/fonts/NotoSansEgyptianHieroglyphs.woff2)");
+      await f.load(); document.fonts.add(f); return true;
+    } catch (e) { return false; }
+  })();
+  return fontReady;
+}
+let fontOK = false; hieroFont().then((ok) => { fontOK = ok; });
 
 // an SVG of the cartouche, for the info cards; labels name each sign
 export function cartoucheSVG(o) {
@@ -30,18 +48,19 @@ export function cartoucheSVG(o) {
     const S = SIGNS[s], h = cell * S.h, k = cell / 100, x = (W - cell) / 2;
     rows.push({ s, y: y + h / 2 });
     const tf = `translate(${x} ${y - (cell - h) / 2}) scale(${k})`;
-    if (s === "G43") parts += `<g transform="${tf}"><path d="${S.d.split(" M48")[0]}" fill="${ink}" stroke="${ink}" stroke-width="2"/><path d="${S.legs}" fill="none" stroke="${ink}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+    if (o.font !== false) parts += `<text x="${W / 2}" y="${y + h * 0.82}" font-size="${cell * FS[s]}" text-anchor="middle" fill="${ink}" font-family="'${FONT}', 'Vault Hieroglyphs', 'Noto Sans Egyptian Hieroglyphs', serif">${CHAR[s]}</text>`;
+    else if (s === "G43") parts += `<g transform="${tf}"><path d="${S.d.split(" M48")[0]}" fill="${ink}" stroke="${ink}" stroke-width="2"/><path d="${S.legs}" fill="none" stroke="${ink}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
     else if (s === "I9") parts += `<g transform="${tf}"><path d="${S.d}" fill="none" stroke="${ink}" stroke-width="${S.w}" stroke-linecap="round"/><path d="${S.horns}" fill="none" stroke="${ink}" stroke-width="4" stroke-linecap="round"/></g>`;
     else parts += `<g transform="${tf}"><path d="${S.d}" fill="none" stroke="${ink}" stroke-width="5" stroke-linecap="round"/></g>`;
     y += h + 6;
   }
   const H = y + pad;
   const label = (r) => `<text x="${W + 14}" y="${r.y + 5}" font-size="15" fill="#cdbb96" font-family="Georgia,serif">${{ Aa1: "Aa1 · ḫ (kh)", G43: "G43 · w", I9: "I9 · f" }[r.s]}</text>`;
-  return `<svg viewBox="0 0 ${W + 150} ${H + 34}" width="100%" style="max-width:300px" role="img" aria-label="Khufu's name in hieroglyphs, in its cartouche: four signs read kh, w, f, w. Our own drawing.">` +
+  return `<svg viewBox="0 0 ${W + 150} ${H + 34}" width="100%" style="max-width:300px" role="img" aria-label="Khufu's name in hieroglyphs, in its cartouche: four signs read kh, w, f, w.">` +
     `<rect x="8" y="6" width="${W - 16}" height="${H - 12}" rx="${(W - 16) / 2.4}" fill="none" stroke="${col}" stroke-width="3"/>` +
     `<line x1="22" y1="${H + 2}" x2="${W - 22}" y2="${H + 2}" stroke="${col}" stroke-width="5" stroke-linecap="round"/>` +
     parts + rows.map(label).join("") +
-    `<text x="0" y="${H + 30}" font-size="14" fill="#cdbb96" font-style="italic" font-family="Georgia,serif">Ḫwfw, &ldquo;Khufu&rdquo;. Our drawing; read top to bottom.</text></svg>`;
+    `<text x="0" y="${H + 30}" font-size="14" fill="#cdbb96" font-style="italic" font-family="Georgia,serif">Ḫwfw, &ldquo;Khufu&rdquo;, read top to bottom (standard sign forms).</text></svg>`;
 }
 
 // draw the cartouche on a canvas, centred on (cx, top), cell size in px; style: "ink" (board) or "ochre" (builders' paint)
@@ -59,6 +78,10 @@ export function drawCartouche(g, cx, top, cell, style) {
   g.lineWidth = cell * 0.06; g.beginPath(); g.moveTo(cx - W / 2 + cell * 0.12, top + H + cell * 0.07); g.lineTo(cx + W / 2 - cell * 0.12, top + H + cell * 0.07); g.stroke();
   KHUFU.forEach((s, i) => {
     const S = SIGNS[s], h = heights[i], k = cell / 100;
+    if (fontOK) {
+      g.save(); g.fillStyle = ink; g.textAlign = "center"; g.textBaseline = "alphabetic"; g.font = `${cell * FS[s]}px "${FONT}"`;
+      g.fillText(CHAR[s], cx, y + h * 0.82); g.restore(); y += h + cell * 0.06; return;
+    }
     g.save(); g.translate(cx - cell / 2, y - (cell - h) / 2); g.scale(k, k);
     g.strokeStyle = ink; g.fillStyle = ink;
     if (s === "G43") { g.lineWidth = 2; const body = new Path2D(S.d.split(" M48")[0]); g.fill(body); g.stroke(body); g.lineWidth = 5; g.stroke(new Path2D(S.legs)); }

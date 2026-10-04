@@ -35,9 +35,20 @@ export function markers(ctx, site, sectionId) {
 // ---------------------------------------------------------------- lamps: a small warm fitting plus a light anchor for the engine's pool
 const lampMat = new THREE.MeshBasicMaterial({ color: "#ffd9a0", fog: true });
 const bracketMat = new THREE.MeshStandardMaterial({ color: "#2a2520", roughness: 0.6, metalness: 0.5 });
+// a soft halo round each lamp: a glow sprite shared by every lamp
+let HALO = null;
+function haloMat() {
+  if (HALO) return HALO;
+  const c = document.createElement("canvas"); c.width = c.height = 64; const q = c.getContext("2d");
+  const r = q.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, "rgba(255,226,170,.85)"); r.addColorStop(0.3, "rgba(255,200,120,.28)"); r.addColorStop(1, "rgba(255,180,90,0)");
+  q.fillStyle = r; q.fillRect(0, 0, 64, 64);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  return (HALO = new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.75 }));
+}
 export function lamp(ctx, x, y, z, strength, nx, nz) {
   const g = new THREE.Group();
   const bulb = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.07, 0.07), lampMat); g.add(bulb);
+  const halo = new THREE.Sprite(haloMat()); halo.scale.setScalar(0.55 + 0.25 * (strength || 1)); halo.position.set(0, -0.02, 0.05); g.add(halo);
   const br = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.03, 0.09), bracketMat); br.position.y = 0.05; g.add(br);
   g.position.set(x, y, z); if (nx || nz) g.rotation.y = Math.atan2(nx || 0, nz || 0);
   ctx.group.add(g);

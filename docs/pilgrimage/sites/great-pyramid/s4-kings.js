@@ -3,10 +3,11 @@ import * as THREE from "three";
 import site from "./site.js?v=1";
 import { D } from "./dims.js?v=1";
 import { Bucket, room, wall, V, outlineBox } from "../../kit.js?v=1";
-import { drawCartouche } from "./glyphs.js?v=1";
+import { drawCartouche, hieroFont } from "./glyphs.js?v=1";
 import { markers, lamp, finish } from "../../parts.js?v=1";
 
-export function build(ctx) {
+export async function build(ctx) {
+  await hieroFont();   // the hieroglyph font, for the cartouche drawn on a canvas
   const M = { lime: ctx.mat("limestone"), gal: ctx.mat("gallery"), granite: ctx.mat("granite"), gfloor: ctx.mat("granite", { roughness: 0.55 }), floor: ctx.mat("floor") };
   const B = new Bucket(), F = new Bucket();
   const pw2 = D.pw / 2, W2 = D.ggW / 2, y0 = D.kcFloor, lowH = D.lowH;
