@@ -77,7 +77,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.
 - Besides chapters the site carries the Vault (`docs/vault/`, data in `docs/assets/vault-data.js`), the
-  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`) and 12 mini-games (`docs/assets/games/`),
+  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`; its figure grid is prerendered into the page by `build-pages.js`, so rebuild after changing a figure) and 12 mini-games (`docs/assets/games/`),
   all held to the same sourcing standard.
 
 ## Sourcing standard (non-negotiable)
