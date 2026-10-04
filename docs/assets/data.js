@@ -475,7 +475,7 @@ window.ARCHIVE = {
       summary: "The modern age’s fastest-growing ‘tradition’ is no religion: 1.9 billion people in 2020, 29% of American adults. Doubt in the ancient world, from the Cārvākas and Diagoras to Epicurus and Xunzi; the Enlightenment critics and the Festival of Reason in Notre-Dame; Comte’s Religion of Humanity, Darwin, Huxley and ‘God is dead’; the freethinkers; the grim record of state atheism in the Soviet Union, Albania and China; humanist rituals and the Sunday Assembly; and the great debate over whether modernity ends religion. A symbology of secular cults, calendars and emblems, with the question of God reported, not decided." },
     { id: "ch66", title: "The San & Southern African Rock Art", kind: "tradition",
       era: "01-prehistory", eraLabel: "Prehistory · The San & Southern African Rock Art",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/01-prehistory/ch66-san-rock-art-prehistory.md",
       summary: "From the 73,000-year-old drawing at Blombos and the painted stones of Apollo 11 to the Linton panel on South Africa’s coat of arms: the rock art of the San and the rare chance to read it with the people’s own words, the 12,000 pages of |Xam testimony recorded in the 1870s. |Kaggen the mantis, the eland and its potency, the rain-animal, and the healing dance in which n|om ‘boils’ and healers bleed from the nose; the trance interpretation of the art and its critics; and the San today, from colonial violence to the Kalahari court victory and their own code of research ethics. With the ‘living fossil’ error named and set aside." },
     { id: "ch76", title: "The Olmec", kind: "tradition",
