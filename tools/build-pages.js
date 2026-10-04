@@ -48,7 +48,7 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/vault-data.js", "assets/pantheon-data.js"]) {
+for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/vault-data.js", "assets/pantheon-data.js", "assets/pantheon-art.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 // the chapter bodies live outside the deployed folder (no page loads them; only these tools do)
@@ -462,6 +462,64 @@ ${FOOTER_ROOT}
 `;
 }
 
+// ---------- 2b. the Pantheon ------------------------------------------------
+// Prerenders the directory that docs/assets/pantheon.js used to build in the
+// browser: the toolbar, the count line and every figure card (emblem, name,
+// tradition, contested flag), so the 199 figures are in the page itself.
+// pantheon.js now attaches to this markup instead of creating it; the page
+// looks and behaves the same. Each figure's epithet and description also go
+// into an ItemList JSON-LD block (the detail view itself stays a dialog).
+const PANTHEON = sandbox.window.PANTHEON || { figures: [], traditions: {}, kinds: {} };
+const PANTHEON_ART = sandbox.window.PANTHEON_ART;
+const pantheonFigures = () => PANTHEON.figures.slice().sort((a, b) => a.n.localeCompare(b.n, "en"));
+function pantheonFragment() {
+  const P = PANTHEON;
+  const kinds = [["all", "All"]].concat(Object.keys(P.kinds).map((k) => [k, P.kinds[k]]));
+  const trads = Object.keys(P.traditions).sort((a, b) => P.traditions[a].name.localeCompare(P.traditions[b].name, "en"));
+  const figs = pantheonFigures();
+  const bar =
+    '      <div class="pn-bar">' +
+    '<label class="pn-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>' +
+    '<input type="search" placeholder="Search Characters..." aria-label="Search characters" autocomplete="off" spellcheck="false"></label>' +
+    '<div class="pn-pills" role="group" aria-label="Filter by kind">' +
+    kinds.map((k) => `<button type="button" class="pn-pill" data-k="${esc(k[0])}" aria-pressed="${k[0] === "all"}">${esc(k[1])}</button>`).join("") +
+    "</div>" +
+    '<select class="pn-trad" aria-label="Filter by tradition"><option value="all">Every tradition</option>' +
+    trads.map((t) => `<option value="${esc(t)}">${esc(P.traditions[t].name)}</option>`).join("") +
+    "</select></div>";
+  const count = `      <p class="pn-count" role="status" aria-live="polite">${figs.length} figures from ${Object.keys(P.traditions).length} traditions</p>`;
+  const cards = figs.map((f) => {
+    const tr = P.traditions[f.t];
+    return `        <li class="pn-cell"><a class="pn-card" href="#${esc(f.id)}" data-id="${esc(f.id)}" style="--acc:${tr.color}">` +
+      `<span class="pn-art">${PANTHEON_ART.svg(f, tr.color, "c" + f.id)}</span>` +
+      `<span class="pn-name">${esc(f.n)}</span>` +
+      `<span class="pn-badge">${esc(tr.name)}</span>` +
+      (f.c ? '<span class="pn-flag" title="Something about this figure is contested">contested</span>' : "") +
+      "</a></li>";
+  }).join("\n");
+  const empty = '      <p class="pn-empty" hidden="">No figure matches that search. Try another name, a tradition, or a word such as <em>sun</em> or <em>underworld</em>.</p>';
+  return bar + "\n" + count + "\n      <ul class=\"pn-grid\">\n" + cards + "\n      </ul>\n" + empty;
+}
+function pantheonJsonLd() {
+  const P = PANTHEON;
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "The Pantheon — gods, spirits and mythic figures",
+    url: SITE + "/pantheon.html",
+    numberOfItems: P.figures.length,
+    itemListElement: pantheonFigures().map((f, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: SITE + "/pantheon.html#" + f.id,
+      name: f.n,
+      description: P.traditions[f.t].name + " · " + f.e + " — " + f.d
+    }))
+  };
+  // keep "</" out of the inline script
+  return '  <script type="application/ld+json">' + JSON.stringify(ld).replace(/<\//g, "<\\/") + "</script>";
+}
+
 // ---------- 3. sitemap ----------------------------------------------------
 function buildSitemap() {
   // [url, lastmod or null]. lastmod comes from content/dates.json (tools/stamp-dates.js):
@@ -496,7 +554,9 @@ const injections = [
   ["index.html", "spine", spineFragment()],
   ["eras.html", "ages", agesFragment()],
   ["themes.html", "themes", themesFragment()],
-  ["traditions.html", "traditions", traditionsFragment()]
+  ["traditions.html", "traditions", traditionsFragment()],
+  ["pantheon.html", "pantheon", pantheonFragment()],
+  ["pantheon.html", "pantheon-ld", pantheonJsonLd()]
 ];
 for (const [file, name, frag] of injections) {
   const p = path.join(DOCS, file);

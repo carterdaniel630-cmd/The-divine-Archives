@@ -77,7 +77,7 @@ The-divine-Archives/
 ## The website
 
 `docs/` is a static site: plain HTML, CSS and JavaScript, no framework and
-nothing built at request time. The chapter, era, listing, Vault, search-index
+nothing built at request time. The chapter, era, listing, Vault, Pantheon, search-index
 and sitemap pages are **prerendered**, and the generated files are committed.
 After changing content, rebuild in this order:
 
