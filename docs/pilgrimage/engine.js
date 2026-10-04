@@ -193,7 +193,7 @@ function findWay(from, to, target) {
   }
   if (!prev.has(to)) return null;
   const pts = [target]; let r = to;
-  while (prev.has(r)) { const q = prev.get(r); pts.unshift({ x: q.p.x, z: q.p.z }); r = q.r; }
+  while (prev.has(r)) { const q = prev.get(r); pts.unshift({ x: q.p.x, z: q.p.z, join: true }); r = q.r; }
   return pts;
 }
 // where a tap on the stone (floor, wall or ceiling) means to go: the nearest walkable spot below the point hit
@@ -208,6 +208,14 @@ function tapTarget(hit) {
     if (d < bd) { bd = d; best = { r, x, z }; }
   }
   return best;
+}
+// in a narrow passage the stone ahead is always close (a 1.2 m passage's ceiling meets the eye a metre or
+// two on), so a tap ahead or behind in the passage you are in means: walk along it that way, up to 12 m
+function alongPassage(t) {
+  const r = t.r, w = r.bx1 - r.bx0, l = r.bz1 - r.bz0;
+  if (r !== S.region || Math.min(w, l) > 1.6) return t;
+  if (l >= w) { const sg = Math.sign(t.z - S.pos.z) || 1; return { r, x: (r.bx0 + r.bx1) / 2, z: Math.max(r.bz0 + 0.05, Math.min(r.bz1 - 0.05, S.pos.z + sg * 12)) }; }
+  const sg = Math.sign(t.x - S.pos.x) || 1; return { r, z: (r.bz0 + r.bz1) / 2, x: Math.max(r.bx0 + 0.05, Math.min(r.bx1 - 0.05, S.pos.x + sg * 12)) };
 }
 function walkTo(t) {
   const way = S.region && findWay(S.region, t.r, { x: t.x, z: t.z });
@@ -236,7 +244,8 @@ function step(dt) {
     for (let i = 0; i < sub; i++) moved = tryMove((fx * mz + rx * mx) / n * speed * dt / sub, (fz * mz + rz * mx) / n * speed * dt / sub) || moved;
   } else if (S.auto) {
     const a = S.auto, dx = a.x - S.pos.x, dz = a.z - S.pos.z, d = Math.hypot(dx, dz);
-    if (d < 0.2) { S.auto = S.route.length ? S.route.shift() : null; if (!S.auto) paintRoute(); }
+    // a join between two regions must be reached exactly (it may be a narrow overlap); other stops loosely
+    if (d < (a.join ? 0.04 : 0.2)) { S.auto = S.route.length ? S.route.shift() : null; if (!S.auto) paintRoute(); }
     else {
       S.yaw += angDiff(Math.atan2(-dx, -dz), S.yaw) * Math.min(1, dt * 5);
       const v = Math.min(d, WALK * 1.2 * slow * dt);
@@ -417,7 +426,7 @@ function bindInput() {
     const inf = pick(cx, cy); if (inf) { openCard(inf); return; }
     if (!touch && e.pointerType === "mouse") { lock(); return; }
     const fp = floorPoint(cx, cy), t = fp && tapTarget(fp);
-    if (t) walkTo(t);
+    if (t) walkTo(alongPassage(t));
   });
   window.addEventListener("keydown", (e) => {
     if (!$("mu-card-wrap").hidden) { if (e.key === "Escape") { e.preventDefault(); closeCard(); } return; }
@@ -523,8 +532,9 @@ window.__PG = {
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
   walk: (dir) => walkRoute(dir),
   route: () => ({ auto: !!S.auto, left: S.route.length }),
-  tap: (cx, cy) => { const fp = floorPoint(cx, cy), t = fp && tapTarget(fp); return t ? (walkTo(t) ? t.r.id : "no way") : null; },
+  tap: (cx, cy) => { const fp = floorPoint(cx, cy), t = fp && tapTarget(fp); return t ? (walkTo(alongPassage(t)) ? t.r.id : "no way") : null; },
   walkTo: (x, z, y) => { const t = tapTarget({ x, z, y: y + 0.5 }); return t ? (walkTo(t) ? t.r.id : "no way") : null; },
+  way: () => [S.auto, ...S.route].filter(Boolean).map((q) => [+q.x.toFixed(2), +q.z.toFixed(2)]),
   joins: () => [...joins()].map(([r, es]) => [r.id, es.map((e) => e.to.id)]),
   key: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },
   open: (id) => openCard(S.site.info.find((i) => i.id === id) || S.site.about),
