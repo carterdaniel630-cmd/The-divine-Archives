@@ -205,11 +205,11 @@ Average of two runs each. "Min" is the worst one-second stretch.
 | Ziggurat Builder | 90 | 97 | +7 | |
 | The Reliquary | 91 | 91 | 0 | |
 | The Seeker's Path | 94 | 96 | +2 | |
-| Antithesis (pong) | 96 | 90 | −6 | clean 5-run re-test running (the batch overlapped another measurement) |
+| Antithesis (pong) | 89 | 96 | +7 | clean 5-run re-test (the first batch, which overlapped another measurement, showed 96 → 90; that was noise) |
 | The Excavation (minesweeper) | 94 | 96 | +2 | |
 | The Labyrinth (pac-man) | 97 | 97 | 0 | |
 | The Firmament (pinball) | 96 | 91 | −5 | clean 5-run re-test running (its own before-runs ranged 91–100) |
-| **Dominion of the Ancients (risk)** | **78** | **88** | **+10** | the precomputed map; total blocking time on opening fell sharply. Clean re-test running |
+| **Dominion of the Ancients (risk)** | **78** | **89** | **+11** | clean 5-run re-test: the page's frozen time while opening fell **623 → 265 ms** (the precomputed map) |
 | The Tomb Robber (treasure) | 84 | 85 | +1 | |
 
 The load score mostly measures how fast a page *opens*, so the drawing-size fix (#1) barely
