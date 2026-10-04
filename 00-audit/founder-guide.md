@@ -305,20 +305,25 @@ know there's a 3D museum and twelve games unless they kept scrolling.
 ## Top 5 friction points (honest)
 
 1. **"Open a chapter at random" fails about 3 times in 4** with an error page, on the live site
-   today. It's the cheapest way to make a first impression of "broken". *Fix ready on this
-   branch; it needs your OK to merge.*
+   today. It's the cheapest way to make a first impression of "broken". *Fixed (live since
+   PR #11 was merged).*
 2. **The first screen doesn't show what's inside.** There's no menu and no buttons on it. The
    best hooks (Vault, Museum, games) are 5–8 full-screen panels down. A short strip of 3–4
-   inviting links on the first screen would fix most of this.
+   inviting links on the first screen would fix most of this. *Options are in
+   [`plans-2026-10.md`](plans-2026-10.md).*
 3. **The floating music control sits on top of the text on every page,** in the bottom-right
    corner, and it isn't labelled. On a phone it covers words in the chapters and the games'
-   instructions.
+   instructions. *Fixed in PR #12 (awaiting review): smaller on phones, tucks away while you
+   scroll down, hidden during games.*
 4. **The games are slow on mid-range phones,** most of all the Tomb Robber, the fighter, Pac-Man
    and pinball. The fighter is also a 6 MB download, and the Risk game freezes the page for
    about 1.5 s while it opens. The cause and the cheapest fixes are in
-   [`perf-baseline.md`](perf-baseline.md).
+   [`perf-baseline.md`](perf-baseline.md). *Partly fixed in PR #12 (awaiting review): the fighter
+   is about twice as smooth, the Tomb Robber +58%, Pac-Man +30%, and Risk opens about 60%
+   faster. The fighter's download has a plan in [`plans-2026-10.md`](plans-2026-10.md).*
 5. **Small rough edges that read as unfinished:**
-   - the cramped "symbols respond to a touch" tip;
-   - the Compare table cut off at the screen edge;
-   - the chapter title appearing only at the bottom of the first screen;
-   - the email sign-up that invites you to join and then says it isn't open.
+   - the cramped "symbols respond to a touch" tip (*fixed in PR #12*);
+   - the Compare table cut off at the screen edge (*a swipe cue was added in PR #12*);
+   - the chapter title appearing only at the bottom of the first screen (*option C in the plans*);
+   - the email sign-up that invites you to join and then says it isn't open (*hidden in PR #12
+     until the Kit list exists*).
