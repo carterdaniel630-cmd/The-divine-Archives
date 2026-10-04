@@ -3,7 +3,8 @@ import * as THREE from "three";
 import site from "./site.js?v=1";
 import { D } from "./dims.js?v=1";
 import { Bucket, wall, V } from "../../kit.js?v=1";
-import { markers, lamp, finish } from "../../parts.js?v=1";
+import { markers, lamp, finish, glassCase } from "../../parts.js?v=1";
+import { dixonSet } from "./relics.js?v=1";
 
 export function build(ctx) {
   const M = { lime: ctx.mat("limestone"), qc: ctx.mat("qc"), floor: ctx.mat("floor"), rough: ctx.mat("rock", { color: new THREE.Color("#d8c9ac") }) };
@@ -58,6 +59,12 @@ export function build(ctx) {
   for (const [z, dir] of [[z0, -1], [z1, 1]]) {
     const tube = new THREE.Mesh(new THREE.BoxGeometry(sh, sh, 0.8), new THREE.MeshBasicMaterial({ color: "#050302", side: THREE.BackSide }));
     tube.position.set(sx, y0 + shY + sh / 2, z + dir * 0.4); ctx.group.add(tube);
+  }
+  // the Dixon relics, copies in a case below the northern shaft where they were found
+  {
+    const set = dixonSet().root; set.scale.setScalar(2.2);   // shown at twice life size, so they read through the glass
+    const cs = glassCase(ctx, -3.4, z0 + 0.75, set, ctx.infoById("dixon")); cs.position.y = y0;
+    ctx.group.children[ctx.group.children.length - 1].position.y += y0;   // the case's hit box
   }
   lamp(ctx, x0 + 0.05, y0 + 2.6, 0, 0.8, 1, 0);
   lamp(ctx, -1.0, y0 + 2.6, z1 - 0.05, 0.7, 0, -1);

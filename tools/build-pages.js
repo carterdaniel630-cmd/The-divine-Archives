@@ -614,7 +614,7 @@ function pilgrimageSitePage(s) {
     <p class="tiny"><a href="../pilgrimage.html">All Pilgrimage sites</a> · <a href="../museum.html">The museum</a></p>
   </div>
 </main>
-<script type="module">import { start } from "./engine.js?v=2"; start(${JSON.stringify(s.id)});</script>
+<script type="module">import { start } from "./engine.js?v=3"; start(${JSON.stringify(s.id)});</script>
 <script src="../site-config.js" defer></script>
 </body>
 </html>

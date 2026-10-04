@@ -2,7 +2,8 @@
 import * as THREE from "three";
 import site from "./site.js?v=1";
 import { D } from "./dims.js?v=1";
-import { Bucket, room, wall, V } from "../../kit.js?v=1";
+import { Bucket, room, wall, V, outlineBox } from "../../kit.js?v=1";
+import { drawCartouche } from "./glyphs.js?v=1";
 import { markers, lamp, finish } from "../../parts.js?v=1";
 
 export function build(ctx) {
@@ -86,5 +87,35 @@ export function build(ctx) {
 
   finish(ctx, F, { lfloor: M.floor, gfl: M.gfloor }, ["lfloor", "gfl"]);
   finish(ctx, B, { gal: M.gal, lime: M.lime, granite: M.granite }, []);
+  ctx.outline("relieving", relievingChambers());
   markers(ctx, site, "s4");
+}
+
+// ---- the five relieving chambers above the ceiling (outline only, off until switched on)
+// Heights are the middles of the ranges Vyse recorded (Operations, 1840); Campbell's, the top one, has a gable whose
+// apex Vyse put 69 ft 3 in above the King's Chamber floor. The granite layers between are sized to meet that total.
+// Plan size: taken as the King's Chamber's own, APPROX.
+function relievingChambers() {
+  const g = new THREE.Group(), FT = 0.3048;
+  const cx = (D.kcX0 + D.kcX1) / 2, cz = (D.kcZ0 + D.kcZ1) / 2, L = D.kcEW, W = D.kcNS;
+  const hs = [3.0, 2.92, 3.42, 2.88].map((f) => f * FT), campbellWall = 1.0, apex = 69.25 * FT;
+  const t = (apex - D.kcH - hs.reduce((a, b) => a + b, 0) - 8.6 * FT) / 5;      // Campbell's centre height up to 8 ft 7 in
+  let y = D.kcFloor + D.kcH;
+  const names = ["Davison's (1765)", "Wellington's", "Nelson's", "Lady Arbuthnot's"];
+  hs.forEach((h, i) => { y += t; g.add(outlineBox(cx, y + h / 2, cz, L, h, W, 0, "#e7b080")); void names[i]; y += h; });
+  y += t;
+  const top = outlineBox(cx, y + campbellWall / 2, cz, L, campbellWall, W, 0, "#e7b080"); g.add(top);
+  // Campbell's gable: two roof slopes meeting along the east–west ridge
+  const ridgeY = y + 8.6 * FT, wy = y + campbellWall, x0 = cx - L / 2, x1 = cx + L / 2;
+  const pts = [x0, wy, cz - W / 2, x0, ridgeY, cz, x0, ridgeY, cz, x0, wy, cz + W / 2, x1, wy, cz - W / 2, x1, ridgeY, cz, x1, ridgeY, cz, x1, wy, cz + W / 2, x0, ridgeY, cz, x1, ridgeY, cz];
+  const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
+  const gl = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: "#e7b080", transparent: true, opacity: 0.9, depthTest: false })); gl.renderOrder = 10; g.add(gl);
+  // the builders' red marks: our drawing of Khufu's cartouche, towards the west end of Campbell's south side, placed approximately
+  const c = document.createElement("canvas"); c.width = 256; c.height = 512; const q = c.getContext("2d");
+  drawCartouche(q, 128, 30, 150, "ochre");
+  q.strokeStyle = "rgba(168,52,30,.6)"; q.lineWidth = 5; q.beginPath(); q.moveTo(10, 495); q.lineTo(246, 492); q.stroke();   // a levelling line
+  const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace;
+  const mark = new THREE.Mesh(new THREE.PlaneGeometry(0.85, 1.7), new THREE.MeshBasicMaterial({ map: tx, transparent: true, depthTest: false, depthWrite: false, side: THREE.DoubleSide }));
+  mark.position.set(x0 + 1.6, wy + 0.25, cz + W / 2 - 0.4); mark.rotation.x = -0.6; mark.renderOrder = 11; g.add(mark);
+  return g;
 }

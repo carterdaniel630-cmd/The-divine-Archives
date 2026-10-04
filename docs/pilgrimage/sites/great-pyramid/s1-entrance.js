@@ -4,6 +4,7 @@ import site from "./site.js?v=1";
 import { D } from "./dims.js?v=1";
 import { Bucket, passage, wall, V, outlineBox } from "../../kit.js?v=1";
 import { markers, lamp, rail, sign, finish } from "../../parts.js?v=1";
+import { drawColumns } from "./glyphs.js?v=1";
 
 export function build(ctx) {
   const M = { block: ctx.mat("block"), core: ctx.mat("core"), tread: ctx.mat("core", { color: new THREE.Color("#d9c39c") }), lime: ctx.mat("limestone"), floor: ctx.mat("floor"), granite: ctx.mat("granite"), wood: ctx.mat("wood") };
@@ -51,6 +52,20 @@ export function build(ctx) {
     const yb = ledgeY + 2.55 + tier * 1.2, ya = yb + 1.55, z0 = recessZ - 0.15 + dz;
     beam(-recessW - 0.2, yb, 0.02, ya, z0, 2.0, 0.78);
     beam(recessW + 0.2, yb, -0.02, ya, z0, 2.0, 0.78);
+  }
+  // the Lepsius inscription of 1842 on the lower western gable stone: eleven columns (the marks shown are illustrative, not the text)
+  {
+    const x0 = -recessW - 0.2, y0 = ledgeY + 2.55, x1 = 0.02, y1 = y0 + 1.55, ang = Math.atan2(y1 - y0, x1 - x0);
+    const c = document.createElement("canvas"); c.width = 512; c.height = 320; const g = c.getContext("2d");
+    g.fillStyle = "rgba(0,0,0,0)"; g.fillRect(0, 0, 512, 320);
+    g.strokeStyle = "rgba(70,55,40,.55)"; g.lineWidth = 5; g.strokeRect(12, 12, 488, 296);
+    drawColumns(g, 26, 24, 460, 272, 11, 1842, "rgba(60,46,32,.8)");
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+    const slab = new THREE.Mesh(new THREE.PlaneGeometry(0.78, 0.49), new THREE.MeshStandardMaterial({ map: t, transparent: true, roughness: 0.9, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 }));
+    const holder = new THREE.Group(); holder.position.set((x0 + x1) / 2 - 0.05, (y0 + y1) / 2, recessZ - 0.15 - 0.004); holder.rotation.y = Math.PI;
+    slab.rotation.z = -ang; holder.add(slab); ctx.group.add(holder);
+    const hitP = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.7), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false })); hitP.rotation.z = -ang; const hh = holder.clone(false); hh.add(hitP); ctx.group.add(hh);
+    ctx.hit(hitP, ctx.infoById("lepsius"));
   }
   // a lid of masonry over the recess, behind the gables, up to where the face's courses resume
   const yLid = ledgeY + 7 * ch, zLid = faceZ(yLid);

@@ -359,6 +359,7 @@ function openCard(info) {
   if (!info) return;
   unlock();
   if (info.relic) { openRelic(info); return; }
+  S.cardInfo = info;
   const links = (info.links || []).map((l, i) => linkBtn(l.href, l.label, i > 0)).join("");
   const toggles = (info.toggle ? [info.toggle] : []).map((t) => `<button type="button" class="pg-toggle" data-outline="${esc(t.id)}" aria-pressed="${S.outlineOn[t.id] ? "true" : "false"}">${esc(S.outlineOn[t.id] ? t.off : t.on)}</button>`).join("");
   $("mu-card-body").innerHTML =
@@ -367,6 +368,7 @@ function openCard(info) {
     info.html +
     (info.diagram ? `<div class="pg-diagram">${info.diagram}</div>` : "") +
     (toggles ? `<div class="mu-actions">${toggles}</div>` : "") +
+    (info.objects ? `<div class="mu-actions">${info.objects.map((o, i) => `<button type="button" class="pg-toggle" data-object="${i}">${esc(o.button)}</button>`).join("")}</div>` : "") +
     (links ? `<div class="mu-actions">${links}</div>` : "") +
     (info.sources ? `<p class="pg-src"><strong>Sources:</strong> ${info.sources}</p>` : "");
   $("mu-card-wrap").hidden = false; S.cardAt = performance.now();
@@ -375,16 +377,23 @@ function openCard(info) {
 function closeCard() { $("mu-card-wrap").hidden = true; S.dirty = true; renderer.domElement.focus(); }
 async function openRelic(info) {
   const r = info.relic;
+  // a site's own relic: its builder lives in the site's relics.js; hand it to the museum's inspector catalogue
+  if (r.build) {
+    const [own, cat] = await Promise.all([import(`./sites/${S.site.id}/relics.js?v=${S.site.version || 1}`), import("../museum/relics.js?v=1")]);
+    if (!cat.CAT[r.id]) cat.CAT[r.id] = () => own[r.build]();
+  }
   if (!S.insp) {
     const m = await import("../museum/inspect.js?v=7");
     S.insp = m.createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     const cl = S.insp.el.querySelector('[data-i="close"]'); if (cl) cl.textContent = "Back to the site";
   }
-  const html = `<p class="mu-cat">Vault · ${esc(r.category)}</p><h2 id="mu-card-h">${esc(r.title)}</h2>` +
+  const html = `<p class="mu-cat">${r.slug ? "Vault" : "Modelled copy"} · ${esc(r.category)}</p><h2 id="mu-card-h">${esc(r.title)}</h2>` +
     `<p class="mu-meta">${esc(r.held)} · ${esc(r.dated)}</p>` + info.html +
-    `<div class="mu-actions">${linkBtn("../vault/" + r.slug + ".html", "Open the Vault entry")}${linkBtn("../vault/" + r.slug + ".html#evidence", "The evidence, honestly", true)}</div>`;
+    (r.slug ? `<div class="mu-actions">${linkBtn("../vault/" + r.slug + ".html", "Open the Vault entry")}${linkBtn("../vault/" + r.slug + ".html#evidence", "The evidence, honestly", true)}</div>`
+      : (info.links || []).length ? `<div class="mu-actions">${info.links.map((l, i) => linkBtn(l.href, l.label, i > 0)).join("")}</div>` : "") +
+    (info.sources ? `<p class="pg-src"><strong>Sources:</strong> ${info.sources}</p>` : "");
   S.cardAt = performance.now();
-  S.insp.open(r.kind || "tablet", html, "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks. This object is shown here for comparison: it does not come from this site.", r.id);
+  S.insp.open(r.kind || "tablet", html, r.note || "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks. This object is shown here for comparison: it does not come from this site.", r.id);
 }
 
 // ---------------------------------------------------------------- the guide (accessible list)
@@ -445,6 +454,8 @@ function bindInput() {
   $("mu-card-x").addEventListener("click", closeCard);
   $("mu-card-wrap").addEventListener("click", (e) => {
     if (e.target === $("mu-card-wrap")) { closeCard(); return; }
+    const ob = e.target.closest("[data-object]");
+    if (ob) { const inf = S.cardInfo && S.cardInfo.objects && S.cardInfo.objects[+ob.getAttribute("data-object")]; if (inf) { $("mu-card-wrap").hidden = true; openRelic(inf); } return; }
     const t = e.target.closest("[data-outline]");
     if (t) { const id = t.getAttribute("data-outline"); S.outlineOn[id] = !S.outlineOn[id]; if (S.outlines[id]) S.outlines[id].visible = S.outlineOn[id]; const inf = S.site.info.find((i) => i.toggle && i.toggle.id === id); if (inf) openCard(inf); S.dirty = true; }
   });
