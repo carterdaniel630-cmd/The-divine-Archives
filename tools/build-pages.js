@@ -555,7 +555,7 @@ function pilgrimageSitePage(s) {
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="stylesheet" href="../museum/museum.css?v=6" />
+  <link rel="stylesheet" href="../museum/museum.css?v=7" />
   <link rel="stylesheet" href="pilgrimage.css?v=1" />
   <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
 </head>
@@ -614,7 +614,7 @@ function pilgrimageSitePage(s) {
     <p class="tiny"><a href="../pilgrimage.html">All Pilgrimage sites</a> · <a href="../museum.html">The museum</a></p>
   </div>
 </main>
-<script type="module">import { start } from "./engine.js?v=3"; start(${JSON.stringify(s.id)});</script>
+<script type="module">import { start } from "./engine.js?v=4"; start(${JSON.stringify(s.id)});</script>
 <script src="../site-config.js" defer></script>
 </body>
 </html>

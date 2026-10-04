@@ -60,6 +60,7 @@
 .mu-tag kbd { font-family: var(--font-display); font-size: .62rem; color: var(--gold-bright); border: 1px solid var(--line); border-radius: 3px; padding: .05rem .3rem; margin-right: .35rem; }
 .mu-fade { position: fixed; inset: 0; z-index: 30; background: #0a0603; opacity: 0; pointer-events: none; transition: opacity .35s; }
 .mu-fade.on { opacity: 1; }
+.mu-fade.gold { background: radial-gradient(circle at 50% 55%, #fff6d8 0%, #f2c46a 38%, #b07a2a 72%, #3a240c 100%); transition: opacity .55s ease-in; }
 
 /* ---- room guide ---- */
 .mu-guide { position: fixed; z-index: 25; top: 3.4rem; right: .6rem; bottom: .6rem; width: min(22rem, calc(100vw - 1.2rem)); overflow: auto;

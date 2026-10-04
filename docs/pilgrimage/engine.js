@@ -20,6 +20,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { stoneMaterial } from "./stone.js?v=1";
+import { portal } from "./portal.js?v=1";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -30,14 +31,14 @@ const store = {
 };
 const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 // speeds, field of view and turning follow the museum (docs/museum/app.js) so walking feels the same in both
-const WALK = 3.0, RUN = 6.0, STOOP = 0.7, STEP = 0.5, LOAD_NEAR = 26, DROP_FAR = 60, PX = touch ? 512 : 1024;
+const WALK = 3.0, RUN = 6.0, STEP = 0.5, LOAD_NEAR = 26, DROP_FAR = 60, PX = touch ? 512 : 1024;
 
 const S = {
   site: null, regions: [], sections: {}, info: [], hits: [], floors: [], outlines: {},
   pos: new THREE.Vector3(), foot: 0, eye: 1.62, yaw: 0, pitch: 0, lean: 0, region: null,
   keys: new Set(), auto: null, route: [], locked: false, hover: null, dirty: true, started: false,
   reduce: store.get("pg-rm") === "1" || (store.get("pg-rm") == null && mqReduce.matches),
-  lightAnchors: [], fps: { n: 0, t: 0, v: 0 }, insp: null, busy: 0
+  lightAnchors: [], anims: [], fps: { n: 0, t: 0, v: 0 }, insp: null, busy: 0
 };
 let renderer, scene, camera, lamp, pool = [], sun, hemi;
 
@@ -94,7 +95,9 @@ async function loadSection(sec) {
     // build on the next frame so the page keeps responding
     await new Promise((r) => requestAnimationFrame(r));
     const group = new THREE.Group(); group.name = sec.id;
-    const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s) => { const a = { p: new THREE.Vector3(x, y, z), s: s || 1, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch };
+    const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s) => { const a = { p: new THREE.Vector3(x, y, z), s: s || 1, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
+      // a golden portal (portal.js), animated by the engine while the visitor is near
+      portal: (o, x, y, z, yaw) => { const fx = portal(o); fx.group.position.set(x, y, z); fx.group.rotation.y = yaw || 0; group.add(fx.group); S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y + 1.4, z), fx }); return fx; } };
     const out = (await mod.build(ctx)) || {};
     group.traverse((o) => { if (o.isMesh && o.userData.floor) S.floors.push(o); });
     scene.add(group);
@@ -110,6 +113,7 @@ function dropSection(sec) {
   S.floors = S.floors.filter((m) => !sec.group.getObjectById(m.id));
   S.hits = S.hits.filter((m) => !sec.group.getObjectById(m.id));
   S.lightAnchors = S.lightAnchors.filter((a) => a.sec !== sec.id);
+  S.anims.filter((a) => a.sec === sec.id).forEach((a) => a.fx.dispose()); S.anims = S.anims.filter((a) => a.sec !== sec.id);
   for (const [k, v] of Object.entries(S.outlines)) if (sec.group.getObjectById(v.id)) delete S.outlines[k];
   if (sec.dispose) sec.dispose();
   sec.group = null; sec.state = null; sec.ready = null;
@@ -233,9 +237,7 @@ function step(dt) {
   if (k.has("KeyD")) mx += 1;
   if (k.has("ArrowLeft")) { S.yaw += 1.9 * dt; S.dirty = true; }
   if (k.has("ArrowRight")) { S.yaw -= 1.9 * dt; S.dirty = true; }
-  // bent double in a low passage you go more slowly
-  const slow = S.region && S.region.eye < 1.3 ? STOOP : 1;
-  const speed = ((k.has("ShiftLeft") || k.has("ShiftRight")) ? RUN : WALK) * slow;
+  const speed = (k.has("ShiftLeft") || k.has("ShiftRight")) ? RUN : WALK;
   const fx = -Math.sin(S.yaw), fz = -Math.cos(S.yaw), rx = -fz, rz = fx;
   let moved = false;
   if (mx || mz) {
@@ -247,8 +249,11 @@ function step(dt) {
     // a join between two regions must be reached exactly (it may be a narrow overlap); other stops loosely
     if (d < (a.join ? 0.04 : 0.2)) { S.auto = S.route.length ? S.route.shift() : null; if (!S.auto) paintRoute(); }
     else {
-      S.yaw += angDiff(Math.atan2(-dx, -dz), S.yaw) * Math.min(1, dt * 5);
-      const v = Math.min(d, WALK * 1.2 * slow * dt);
+      // face where the walk is going, as the museum does; near a join, look past it to the next leg so the
+      // turn is one smooth swing rather than a jerk at each corner
+      const nx = S.route[0], ahead = nx && d < 1.6 ? { x: nx.x - S.pos.x, z: nx.z - S.pos.z } : { x: dx, z: dz };
+      S.yaw += angDiff(Math.atan2(-ahead.x, -ahead.z), S.yaw) * Math.min(1, dt * 5);
+      const v = Math.min(d, WALK * 1.2 * dt);
       moved = tryMove(dx / d * v, dz / d * v);
       // stuck against stone (a waypoint just outside reach): go on to the next one, or stop
       a.stuck = moved ? 0 : (a.stuck || 0) + dt;
@@ -257,7 +262,7 @@ function step(dt) {
   }
   // eye height follows the region (stooping in low passages), smoothly
   const want = S.region ? S.region.eye : 1.62;
-  if (Math.abs(want - S.eye) > 0.002) { S.eye += (want - S.eye) * Math.min(1, dt * 5); moved = true; }
+  if (Math.abs(want - S.eye) > 0.002) { S.eye += (want - S.eye) * Math.min(1, dt * 2.5); moved = true; }
   // on a sloping floor the head tips to follow the slope, so you look along the passage rather than into
   // its ceiling or floor (a passage only 1.2 m high closes the view within a metre if you look level)
   const lw = slopeAhead();
@@ -267,7 +272,12 @@ function step(dt) {
   // portals: standing in any portal region (they overlap the rooms they open from) takes you through
   if (!S.portalT) {
     const pr = S.regions.find((r) => r.portal && r.contains(S.pos.x, S.pos.z) && Math.abs(r.floorAt(S.pos.x, S.pos.z) - S.foot) < STEP);
-    if (pr) { S.portalT = true; S.auto = null; S.route = []; paintRoute(); goTo(pr.portal, () => { setTimeout(() => { S.portalT = false; }, 400); }); }
+    if (pr) {
+      S.portalT = true; S.auto = null; S.route = []; S.keys.clear(); paintRoute();
+      const f = $("mu-fade"); f.classList.add("gold");
+      if (pr.href) { f.classList.add("on"); setTimeout(() => { window.location.href = pr.href; }, S.reduce ? 0 : 650); }   // out of the site (to the museum)
+      else goTo(pr.portal, () => { f.classList.remove("gold"); setTimeout(() => { S.portalT = false; }, 400); });
+    }
   }
 }
 
@@ -472,6 +482,7 @@ function bindInput() {
   $("mu-help-btn").addEventListener("click", () => { $("mu-intro").hidden = false; $("mu-enter").textContent = "Back to the site"; unlock(); });
   $("mu-motion-btn").addEventListener("click", () => setReduce(!S.reduce));
   document.addEventListener("visibilitychange", () => { if (!document.hidden) S.dirty = true; });
+  window.addEventListener("pageshow", () => { $("mu-fade").classList.remove("gold", "on"); S.portalT = false; });
 }
 function setReduce(v) { S.reduce = v; store.set("pg-rm", v ? "1" : "0"); $("mu-motion-btn").setAttribute("aria-pressed", String(v)); S.dirty = true; }
 
@@ -487,7 +498,8 @@ function tick(now) {
   secT += dt; if (secT > 0.3) { secT = 0; manageSections(); }
   locT += dt; if (locT > 0.25) { locT = 0; locate(); }
   idle += dt;
-  if (!S.dirty && idle < 0.5) return;
+  for (const a of S.anims) if (a.p.distanceTo(S.pos) < 25 && a.fx.group.parent && a.fx.group.parent.visible !== false) { if (a.fx.update(S.reduce ? 0 : dt)) S.dirty = true; }
+  if (!S.dirty && (S.reduce || idle < 0.12)) return;   // like the museum: a fresh frame at least every 0.12 s
   idle = 0; S.dirty = false;
   camera.position.copy(S.pos);
   camera.rotation.set(Math.max(-1.3, Math.min(1.5, S.pitch + S.lean)), S.yaw, 0, "YXZ");

@@ -29,6 +29,7 @@ const REF = {
   nms: "National Museums Scotland, collection record and story &ldquo;Pyramid casing stone&rdquo; (nms.ac.uk)",
   lepsius: "R. Lepsius, letter of 17 January 1843, in his <em>Letters from Egypt, Ethiopia, and the Peninsula of Sinai</em> (English translation, London, 1853)",
   gardiner: "A. H. Gardiner, <em>Egyptian Grammar</em>, 3rd ed. (Oxford, 1957), sign list (Aa1, G43, I9)",
+  edgar: "J. and M. Edgar, <em>The Great Pyramid Passages and Chambers</em>, vol. 1 (Glasgow, 1910)",
   beckerath: "J. von Beckerath, <em>Handbuch der &auml;gyptischen K&ouml;nigsnamen</em>, 2nd ed. (Mainz, 1999)"
 };
 const L = {
@@ -63,6 +64,7 @@ const regions = [
   // vestibule
   region({ id: "v", section: "v", x0: V0.x - 4, x1: V0.x + 4, z0: V0.z - 5, z1: V0.z + 5, y: 0, holes: CASES.map(([x, z]) => [V0.x + x - 0.6, V0.x + x + 0.6, V0.z + z - 0.6, V0.z + z + 0.6]) }),
   region({ id: "v-door", section: "v", x0: V0.x - 0.8, x1: V0.x + 0.8, z0: V0.z - 5.6, z1: V0.z - 4.6, y: 0, inset: 0.05, portal: "s1" }),
+  region({ id: "v-exit", section: "v", x0: V0.x - 0.8, x1: V0.x + 0.8, z0: V0.z + 4.6, z1: V0.z + 5.6, y: 0, inset: 0.05, portal: "museum", href: "../museum.html#portal" }),
   // s1: the ledge outside, the mouth, the descending passage
   region({ id: "ledge", section: "s1", x0: -3.6, x1: 3.6, z0: -110.2, z1: D.entZ - 1.6, y: D.entY, outside: true }),
   region({ id: "recess", section: "s1", x0: -2.1, x1: 2.1, z0: D.entZ - 1.6, z1: D.entZ, y: D.entY, open: "n", outside: true }),
@@ -189,10 +191,10 @@ const info = [
   { id: "v-casing", section: "v", pos: [V0.x + 2.6, 1.9, V0.z - 3.6], relic: { id: "gp-casing", build: "casing", title: "A casing stone from the Great Pyramid", category: "Building stone", held: "National Museum of Scotland, Edinburgh", dated: "Khufu's reign (26th century BCE); taken to Scotland in 1872", kind: "slab", note: "A modelled rendition: fine limestone with its outer face at the pyramid's slope, 25 inches long as recorded; its height and depth are estimated." }, title: "A casing stone (from the outside of the pyramid)",
     html: "<p>The pyramid was once sheathed in polished white Tura limestone, the stone Merer&rsquo;s boats carried. Almost all of it was stripped in later centuries for building in Cairo. In the 1870s Waynman Dixon and James Grant found a casing block in rubble at the base and Dixon shipped it to Charles Piazzi Smyth in Edinburgh. It is now in the National Museum of Scotland. Egypt has questioned how it left the country.</p><p>Smyth held that its length, 25 inches, was a sacred &ldquo;pyramid inch&rdquo; cubit encoded by the builders. That idea, part of nineteenth-century &ldquo;pyramidology&rdquo;, is not supported: Petrie&rsquo;s own survey, which set out to test it, found no such unit.</p>",
     flags: [COPY, { t: "Export questioned by Egypt", soft: false }], links: [L.ch02], sources: REF.nms + "; " + REF.petrie + "." },
-  { id: "v-door", section: "v", pos: [V0.x, 2.9, V0.z - 4.9], cat: "The way in", title: "To the north face of the pyramid",
-    html: "<p>Walk through this doorway to arrive outside the pyramid&rsquo;s original entrance, about 17 metres up its north face. The gilded frame on the ledge brings you back here.</p>" },
-  { id: "v-back", section: "v", pos: [V0.x, 2.9, V0.z + 4.9], cat: "The Pilgrimage", title: "Back to the museum",
-    html: "<p>Return to the Rotunda of the museum, or to the list of sites.</p>", links: [{ href: "../museum.html#ch02", label: "Back to the museum" }, { href: "../pilgrimage.html", label: "All Pilgrimage sites" }] },
+  { id: "v-door", section: "v", pos: [V0.x, 3.45, V0.z - 4.4], cat: "The way in", title: "To the north face of the pyramid",
+    html: "<p>Walk into the golden portal to arrive outside the pyramid&rsquo;s original entrance, about 17 metres up its north face. The golden portal on the ledge brings you back here.</p><p>The portals are the archive&rsquo;s own way between its spaces, not part of any site.</p>" },
+  { id: "v-back", section: "v", pos: [V0.x, 3.45, V0.z + 4.4], cat: "The Pilgrimage", title: "Back to the museum",
+    html: "<p>Walk into the golden portal to step back into the museum&rsquo;s Rotunda, beside its own golden arch. Or go to the list of sites.</p>", links: [{ href: "../museum.html#portal", label: "Back to the museum" }, { href: "../pilgrimage.html", label: "All Pilgrimage sites" }] },
   // ---- I: entrance and descending passage
   { id: "entrance", section: "s1", pos: [1.25, D.entY + 1.6, D.entZ - 1.4], cat: "I · Entrance", title: "The original entrance and its gable stones",
     html: "<p>The pyramid&rsquo;s own entrance is on the north face, about 17 metres above the base (Petrie: 668.2 inches) and about 7.3 metres east of the centre line. Over it, two tiers of huge limestone beams lean together in pairs, a gable that carries the weight of the masonry above the opening.</p><p>The smooth outer casing of fine limestone that once covered this face is gone. It was stripped in the Middle Ages, and the rough, stepped core masonry is what you see now. The entrance would once have sat in a flat, sloping face.</p>",
@@ -229,6 +231,9 @@ const info = [
   { id: "slots", section: "s3", pos: [0.86, walk(-12) + 0.62, -12], cat: "III · Grand Gallery", title: "The slots in the ramps",
     html: "<p>Regular rectangular holes are cut along the tops of both ramps. Suggestions include sockets for timber beams that held the plugs before they were let down, or for scaffolding. None is proven.</p>",
     flags: [{ t: "Purpose debated", soft: false }], sources: REF.lehner + "." },
+  { id: "groove", section: "s3", pos: [-0.62, walk(-16) + D.ggH / 2 + 0.3, -16], cat: "III · Grand Gallery", title: "The groove along the walls",
+    html: "<p>Look up the walls: just above the third overlap a shallow groove runs the whole length of the gallery on both sides, opposite each other. It is about 6 inches (15 centimetres) wide and three-quarters of an inch deep. Petrie found its lower edge lies midway between the floor and the roof.</p><p>What it was for is not known. Various builders&rsquo; uses have been proposed; none is established.</p>",
+    flags: [{ t: "Purpose unknown", soft: false }], sources: REF.petrie + "; " + REF.edgar + "." },
   { id: "bigvoid", section: "s3", pos: [0, walk(-8) + 6.8, -8], cat: "III · Grand Gallery", title: "The Big Void",
     toggle: { id: "bigvoid", on: "Show roughly where it lies", off: "Hide its outline" },
     html: "<p>In 2017 three independent muon-imaging methods detected a large empty space above the Grand Gallery, at least 30 metres long, with a cross-section like the gallery&rsquo;s. No one has seen into it. Whether it is one space or several, and whether it slopes or lies level, is not known. Its purpose is unknown too.</p><p>Claims that it holds treasure or lost knowledge are not supported. The outline drawn here is only a rough guide to where the scans put it.</p>",
@@ -251,6 +256,9 @@ const info = [
   { id: "shafts", section: "s4", pos: [-2.6, D.kcFloor + 1.25, D.kcZ0 + 0.12], cat: "IV · King's Chamber", title: "The two shafts",
     html: "<p>Narrow shafts about 20 centimetres square leave the north and south walls and run up to the outer faces of the pyramid. Whether they were for air, or were paths for the king&rsquo;s spirit towards the stars (an interpretation drawn from later religious texts), is debated. Fans were fitted to them in 1993 to ventilate the chamber.</p>",
     flags: [{ t: "Purpose debated", soft: false }, APPROX], sources: REF.lehner + "." },
+  { id: "davison", section: "s4", pos: [D.ggW / 2 - 0.42, D.kcFloor + 3.2, D.stepZ1 - 0.3], cat: "IV · King's Chamber", title: "Davison's way up (1765)",
+    html: "<p>High in the east corner of the gallery&rsquo;s south wall, above the Great Step, a small rough hole leads into a narrow passage. In 1765 Nathaniel Davison, a British diplomat, climbed to it by a ladder and crawled through to the lowest of the chambers above the King&rsquo;s Chamber, which now bears his name. Notches in the passage once held pieces of wood for climbing.</p><p>It is usually described as a forced passage; how and when it was first made is not certain. It is not open to visitors.</p>",
+    flags: [{ t: "Size and position approximate", soft: true }], sources: REF.vyse + "; " + REF.edgar + "." },
   { id: "relieving", section: "s4", pos: [-5.2, D.kcFloor + D.kcH - 0.45, D.cofferZ - 0.4], cat: "IV · King's Chamber", title: "Look up: five chambers above",
     html: "<p>Above this ceiling are five low &ldquo;relieving chambers&rdquo;, one over another, roofed with granite beams and topped by a gable of limestone. The lowest was found by Nathaniel Davison in 1765, the four above it by Howard Vyse in 1837. They are not open to visitors. Switch them on to see them as outlines, to the heights Vyse recorded: each only about 0.4 to 1.5 metres high, Campbell&rsquo;s, the highest, up to 2.6 metres under its gable. From this floor to the top of that gable is about 21 metres (69 feet 3 inches).</p><p>Inside, the work gangs left marks in red paint: levelling lines, and the names of their gangs, which include the king&rsquo;s names. On the ceiling of Campbell&rsquo;s chamber, towards the west end, Khufu&rsquo;s cartouche is part of a gang name usually translated &ldquo;the gang, Friends of Khufu&rdquo;; in Lady Arbuthnot&rsquo;s chamber the gangs used the fuller name Khnum-Khufu. The red marks shown on the outlines are our drawing of the cartouche, placed approximately, not a copy of the paintings.</p><p>Claims that Vyse forged these marks are not supported: some run into joints and behind blocks that could not be reached once the masonry was set, and some are upside down or cut off, as marks painted at the quarry would be.</p>",
     toggle: { id: "relieving", on: "Show the chambers above", off: "Hide the chambers above" }, diagram: cartoucheSVG({ ink: "#c0503a", color: "#c0503a" }),
@@ -286,4 +294,4 @@ const about = { id: "about", cat: "About this model", title: "How close is this 
     "<p><strong>The stone</strong> is drawn in code from the stones&rsquo; known make-up: fine white limestone and red Aswan granite with feldspar, quartz and mica. It is not photographed, so it is a likeness, not a record.</p>",
   diagram: sectionSVG(), links: [L.ch02], sources: REF.petrie + "; " + REF.lehner + "; " + REF.sp2017 + "; " + REF.sp2023 + "." };
 
-export default { title: "The Great Pyramid of Khufu", version: 3, stones: ["core", "block", "limestone", "floor", "wood", "rock", "gallery", "granite", "qc"], sections, regions, route, info, about, D, V0 };
+export default { title: "The Great Pyramid of Khufu", version: 4, stones: ["core", "block", "limestone", "floor", "wood", "rock", "gallery", "granite", "qc"], sections, regions, route, info, about, D, V0 };

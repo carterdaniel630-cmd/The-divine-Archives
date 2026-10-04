@@ -27,6 +27,7 @@ import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=4";
 import { makeFauna } from "./fauna.js?v=3";
 import { createSound } from "./sound.js?v=1";
+import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -566,15 +567,24 @@ function buildStatic() {
   proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
   addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
   // the portal to the Pilgrimage: a gilded arch standing free in the Rotunda, off the walking line
-  const pa = Math.PI / 2 - 0.62, pr = ROT.r - 3.2, px = ROT.cx + pr * Math.cos(pa), pz = ROT.cz + pr * Math.sin(pa);
-  const portal = new THREE.Group(); portal.position.set(px, 0, pz); portal.rotation.y = Math.atan2(ROT.cx - px, ROT.cz + ROT.r - pz);   // faces the doorway from the entrance hall
-  for (const sx of [-1, 1]) portal.add(new THREE.Mesh(new THREE.BoxGeometry(0.16, 2.9, 0.22).translate(sx * 0.82, 1.45, 0), MAT.gold));
-  portal.add(new THREE.Mesh(new THREE.TorusGeometry(0.82, 0.08, 8, 24, Math.PI).translate(0, 2.9, 0), MAT.gold));
-  const haze = new THREE.Mesh(new THREE.PlaneGeometry(1.48, 2.9).translate(0, 1.45, 0), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 256, h: 512, size: 30, bg: "#2a1c10" }) }));
-  portal.add(haze);
-  g.add(portal); addBox(px, pz, 0.9);
-  addExhibit(g, hitBoxFor(portal, 0.3), { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "rotunda");
+  const { px, pz } = portalPose();
+  // a golden archway of moving light (docs/pilgrimage/portal.js): tap it to read about the Pilgrimage, or walk
+  // straight through it to step into the first open site
+  const fx = goldenPortal({ w: 1.5, h: 2.5, tint: "#ffe2b0" });
+  const portal = fx.group; portal.position.set(px, 0, pz); portal.rotation.y = Math.atan2(ROT.cx - px, ROT.cz + ROT.r - pz);   // faces the doorway from the entrance hall
+  const pPlaque = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 0.34), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 512, h: 128, size: 40, bg: "#2a1c10" }) }));
+  pPlaque.position.set(0, 3.95, 0.14); portal.add(pPlaque);
+  g.add(portal);
+  const pq = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), portal.rotation.y), side = new THREE.Vector3(1, 0, 0).applyQuaternion(pq);
+  for (const sx of [-1, 1]) addBox(px + side.x * sx * 0.83, pz + side.z * sx * 0.83, 0.16);   // only the pillars block; the opening is open
+  S.portalFx = { fx, pos: new THREE.Vector3(px, 0, pz), inv: pq.clone().invert(), fired: !!S.portalArrived };
+  const hit = hitBoxFor(portal, 0.3); addExhibit(g, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "rotunda");
   // room door signs are built with each wing's exhibits
+}
+// where the Pilgrimage portal stands in the Rotunda, and which way it faces (also used to arrive back through it)
+function portalPose() {
+  const pa = Math.PI / 2 - 0.62, pr = ROT.r - 3.2, px = ROT.cx + pr * Math.cos(pa), pz = ROT.cz + pr * Math.sin(pa);
+  return { px, pz, ry: Math.atan2(ROT.cx - px, ROT.cz + ROT.r - pz) };
 }
 function hitBoxFor(obj, depth, pad) {
   obj.updateMatrixWorld(true);
@@ -1236,6 +1246,9 @@ function bindInput() {
   $("mu-card-x").addEventListener("click", closeCard);
   S.insp.el.addEventListener("click", (e) => { if (performance.now() - (S.cardAt || 0) < 450) { e.preventDefault(); e.stopPropagation(); } }, true);
   S.insp.el.addEventListener("click", (e) => { const go = e.target.closest("[data-go]"); if (go) { S.insp.close(); teleport(go.getAttribute("data-go")); } });
+  // a link into the Pilgrimage goes through the golden portal's flash
+  $("mu-card-wrap").addEventListener("click", (e) => { const a = e.target.closest('a[href^="pilgrimage/"]'); if (a && !e.defaultPrevented) { e.preventDefault(); stepThroughPortal(a.getAttribute("href")); } });
+  window.addEventListener("pageshow", () => { $("mu-fade").classList.remove("gold", "on"); if (S.portalFx) S.portalFx.fired = true; });
   $("mu-card-wrap").addEventListener("click", (e) => {
     if (e.target === $("mu-card-wrap")) { closeCard(); return; }
     const go = e.target.closest("[data-go]"); if (go) { closeCard(); teleport(go.getAttribute("data-go")); return; }
@@ -1296,6 +1309,24 @@ function enter3d() {
   renderer.domElement.focus();
 }
 
+// ---------------------------------------------------------------- the golden portal to the Pilgrimage
+const pLocal = new THREE.Vector3();
+function portalTick(dt) {
+  const P = S.portalFx, d = P.pos.distanceTo(pLocal.set(S.pos.x, 0, S.pos.z));
+  if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(S.reduce ? 0 : dt)) S.dirty = true; }
+  // inside the opening: within its width, and within a hand's breadth of its plane
+  pLocal.set(S.pos.x - P.pos.x, 0, S.pos.z - P.pos.z).applyQuaternion(P.inv);
+  if (!P.fired && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
+  if (P.fired && Math.abs(pLocal.z) > 1.2) P.fired = false;
+}
+function stepThroughPortal(href) {
+  const live = ((window.PILGRIMAGE && window.PILGRIMAGE.sites) || []).filter((x) => x.status === "live");
+  const to = href || (live.length === 1 ? "pilgrimage/" + live[0].id + ".html" : "pilgrimage.html");
+  S.auto = null; S.keys.clear();
+  const f = $("mu-fade"); f.classList.add("gold", "on");
+  setTimeout(() => { window.location.href = to; }, S.reduce ? 0 : 650);
+}
+
 // ---------------------------------------------------------------- loop
 let last = performance.now(), idleT = 0, locT = 0, zoneT = 0;
 function tick(now) {
@@ -1315,6 +1346,7 @@ function tick(now) {
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
+  if (S.portalFx) portalTick(dt);
   if (!S.reduce && idleT > 0.12) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
@@ -1369,7 +1401,11 @@ async function start() {
   // where to begin: a room in the hash, else where you were, else the entrance
   const hash = (location.hash || "").replace("#", "");
   let saved = null; try { saved = JSON.parse(store.sget("mu-pos") || "null"); } catch (e) { saved = null; }
-  if (hash && S.rooms[hash]) teleport(hash, true);
+  if (hash === "portal") {   // back from the Pilgrimage: step out of the golden arch, facing into the Rotunda
+    const P = portalPose(), ox = Math.sin(P.ry) * 1.9, oz = Math.cos(P.ry) * 1.9;
+    S.pos.set(P.px + ox, EYE, P.pz + oz); S.yaw = Math.atan2(-ox, -oz); S.portalArrived = true; if (S.portalFx) S.portalFx.fired = true;
+  }
+  else if (hash && S.rooms[hash]) teleport(hash, true);
   else if (saved && isFinite(saved.x)) { S.pos.set(saved.x, EYE, saved.z); S.yaw = saved.yaw || 0; }
   else { S.pos.set(0, EYE, 11); S.yaw = 0; }
   manageZones(); locate();
@@ -1389,6 +1425,7 @@ async function start() {
 window.__MU = {
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
+  segsNear: (x, z, r) => { const out = new Set(); for (const arr of GRID.values()) for (const g of arr) { const dx = g[2] - g[0], dz = g[3] - g[1], L2 = dx * dx + dz * dz; let t = L2 ? ((x - g[0]) * dx + (z - g[1]) * dz) / L2 : 0; t = Math.max(0, Math.min(1, t)); if (Math.hypot(x - g[0] - t * dx, z - g[1] - t * dz) < r) out.add(g.slice(0, 4).map((v) => +v.toFixed(2)).join(",")); } return [...out]; },
   snd: () => S.snd.probe(),
   bolt: (id) => S.world && S.world.forceBolt(id),
   world: () => S.world ? [S.world.time.toFixed(2), S.paused, S.pos.x.toFixed(1), S.pos.z.toFixed(1)].concat(S.world.areas.filter((a) => a.pit || a.skyG.visible).map((a) => a.id + (a.pit ? ":pit" + (a.pit.visible ? "+" : "-") : "") + (a.skyG.visible ? ":sky" : ""))) : null,

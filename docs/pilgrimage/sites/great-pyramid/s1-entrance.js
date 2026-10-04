@@ -110,13 +110,8 @@ export function build(ctx) {
 
   // ---- the North Face Corridor, known from muon scans (outline only; position APPROX)
   ctx.outline("nfc", outlineBox(0, ledgeY + 5.9, recessZ + 2.1 + 4.5, 2, 2, 9));
-  // the gilded frame on the ledge that leads back to the Vestibule
-  const gold = new THREE.MeshStandardMaterial({ color: "#c79a54", roughness: 0.35, metalness: 0.85 });
-  const fr = new THREE.Group(); fr.position.set(-2.75, ledgeY, -110.05);
-  for (const sx of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.1, 2.3, 0.1), gold); p.position.set(sx * 0.55, 1.15, 0); fr.add(p); }
-  const top = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.1, 0.1), gold); top.position.y = 2.33; fr.add(top);
-  const veil = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 2.25), new THREE.MeshBasicMaterial({ color: "#2a1d12", transparent: true, opacity: 0.85 })); veil.position.y = 1.13; fr.add(veil);
-  ctx.group.add(fr);
+  // the golden portal on the ledge that leads back to the Vestibule
+  ctx.portal({ w: 1.0, h: 2.0, tint: "#fff0d8", sparks: 50 }, -2.75, ledgeY, -110.05, 0);
   // daylight on the ledge
   ctx.light(0, ledgeY + 2.2, recessZ - 2.5, 0.6);
   markers(ctx, site, "s1");

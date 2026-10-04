@@ -5,6 +5,7 @@ import { D } from "./dims.js?v=1";
 import { Bucket, wall, V, outlineBox } from "../../kit.js?v=1";
 import { markers, lamp, rail, finish } from "../../parts.js?v=1";
 
+const IN6 = 0.0254;   // one inch, in metres
 export function build(ctx) {
   const M = { gal: ctx.mat("gallery"), lime: ctx.mat("limestone"), floor: ctx.mat("floor"), wood: ctx.mat("wood") };
   const B = new Bucket(), F = new Bucket();
@@ -28,6 +29,18 @@ export function build(ctx) {
       const xi = sg * (W2 - k * os), h = D.ggWall0 + (k - 1) * cH;
       ledge(x, xi, h); band(xi, h, h + cH); x = xi;
     }
+  }
+  // the groove: a shallow channel along each wall just above the third overlap, its lower edge midway between floor
+  // and roof (Petrie), 6 in wide and 3/4 in deep, running the whole length (purpose unknown)
+  const grooveMat = ctx.mat("gallery", { color: new THREE.Color("#6e5e4a") }), shade = new THREE.MeshBasicMaterial({ color: "#1c140c" });
+  for (const sg of [-1, 1]) {
+    const x = sg * (W2 - 3 * os) - sg * 0.004, h0 = D.ggH / 2, h1 = h0 + 6 * IN6;
+    const geo = new THREE.BufferGeometry(), pts = [P(x, zA, h0), P(x, zE, h0), P(x, zE, h1), P(x, zA, h1)];
+    geo.setFromPoints([pts[0], pts[1], pts[2], pts[0], pts[2], pts[3]]); geo.computeVertexNormals();
+    geo.setAttribute("uv", new THREE.Float32BufferAttribute([0, 0, D.ggRun / 2.4, 0, D.ggRun / 2.4, 0.06, 0, 0, D.ggRun / 2.4, 0.06, 0, 0.06], 2));
+    const g = new THREE.Mesh(geo, grooveMat); grooveMat.side = THREE.DoubleSide; ctx.group.add(g);
+    const lip = new THREE.BufferGeometry(); lip.setFromPoints([P(x - sg * 0.001, zA, h1 - 0.012), P(x - sg * 0.001, zE, h1 - 0.012), P(x - sg * 0.001, zE, h1), P(x - sg * 0.001, zA, h1 - 0.012), P(x - sg * 0.001, zE, h1), P(x - sg * 0.001, zA, h1)]);
+    const lm = new THREE.Mesh(lip, shade); shade.side = THREE.DoubleSide; ctx.group.add(lm);
   }
   // the roof: slabs spanning the narrow top, at the gallery's slope
   const xr = W2 - D.overlaps * os;

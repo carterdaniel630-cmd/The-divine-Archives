@@ -87,6 +87,9 @@ export function build(ctx) {
 
   finish(ctx, F, { lfloor: M.floor, gfl: M.gfloor }, ["lfloor", "gfl"]);
   finish(ctx, B, { gal: M.gal, lime: M.lime, granite: M.granite }, []);
+  // Davison's way up (1765): the forced hole at the top of the gallery's south wall, in its east corner (size APPROX)
+  { const top = y0 + platH; const hole = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 0.8), new THREE.MeshBasicMaterial({ color: "#070503" }));
+    hole.position.set(W2 - 0.42, top - 0.55, D.stepZ1 - 0.006); hole.rotation.y = Math.PI; ctx.group.add(hole); }
   ctx.outline("relieving", relievingChambers());
   markers(ctx, site, "s4");
 }
