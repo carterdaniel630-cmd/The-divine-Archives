@@ -58,6 +58,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 /tools/                     <- build-*.js (prerender), md-to-chapter.js, verify-*.js (game facts vs chapter text)
 /art-source/                <- source artwork kept out of the deployed site
 /museum/                    <- Virtual Museum governance, plan and phase reports (the museum is docs/museum.html + docs/museum/)
+/plans/                     <- plans awaiting approval or in build (pilgrimage-sites.md, reviewer-agent.md)
 ```
 
 ## Build & deploy (repo mechanics)
@@ -75,7 +76,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.
 - Besides chapters the site carries the Vault (`docs/vault/`, data in `docs/assets/vault-data.js`), the
-  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`) and 12 mini-games (`docs/assets/games/`),
+  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`), the Pilgrimage of walkable sites (`docs/pilgrimage/`, list in `docs/assets/pilgrimage-data.js`, pages written by `build-pages.js`, checked by `tools/verify-pilgrimage.js`; every on-site claim follows the evidence standard and every dimension names its survey source in the site's `dims.js`) and 12 mini-games (`docs/assets/games/`),
   all held to the same sourcing standard.
 
 ## Sourcing standard (non-negotiable)

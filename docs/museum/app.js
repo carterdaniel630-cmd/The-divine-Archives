@@ -565,6 +565,15 @@ function buildStatic() {
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
   proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
   addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
+  // the portal to the Pilgrimage: a gilded arch standing free in the Rotunda, off the walking line
+  const pa = Math.PI / 2 - 0.62, pr = ROT.r - 3.2, px = ROT.cx + pr * Math.cos(pa), pz = ROT.cz + pr * Math.sin(pa);
+  const portal = new THREE.Group(); portal.position.set(px, 0, pz); portal.rotation.y = Math.atan2(ROT.cx - px, ROT.cz + ROT.r - pz);   // faces the doorway from the entrance hall
+  for (const sx of [-1, 1]) portal.add(new THREE.Mesh(new THREE.BoxGeometry(0.16, 2.9, 0.22).translate(sx * 0.82, 1.45, 0), MAT.gold));
+  portal.add(new THREE.Mesh(new THREE.TorusGeometry(0.82, 0.08, 8, 24, Math.PI).translate(0, 2.9, 0), MAT.gold));
+  const haze = new THREE.Mesh(new THREE.PlaneGeometry(1.48, 2.9).translate(0, 1.45, 0), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 256, h: 512, size: 30, bg: "#2a1c10" }) }));
+  portal.add(haze);
+  g.add(portal); addBox(px, pz, 0.9);
+  addExhibit(g, hitBoxFor(portal, 0.3), { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "rotunda");
   // room door signs are built with each wing's exhibits
 }
 function hitBoxFor(obj, depth, pad) {
@@ -976,6 +985,12 @@ function openCard(ex) {
     const e = S.manifest.eras.find((x) => x.slug === d.era);
     h = `<p class="mu-cat">Wing ${esc(e.num)}</p><h2 id="mu-card-h">${esc(e.name)}</h2><p class="mu-meta">${esc(e.dates)}</p><p>${esc(e.blurb || "")}</p>` +
       `<div class="mu-actions">${btn("eras/" + e.slug + ".html", "Read about this age")}</div><p class="mu-meta" style="margin-top:.8rem">Rooms: ${(S.manifest.wings[e.slug] || []).map((id) => `<button type="button" class="mu-linkish" data-go="${id}">${esc(roomTitle(id))}</button>`).join(" · ")}</p>`;
+  } else if (d.type === "pilgrimage") {
+    const P = (window.PILGRIMAGE && window.PILGRIMAGE.sites) || [], live = P.filter((x) => x.status === "live");
+    h = `<p class="mu-cat">A portal</p><h2 id="mu-card-h">The Pilgrimage</h2>` +
+      `<p>Step through to walk inside the sacred sites themselves, modelled from published surveys, with copies of their relics linked to the Vault. Sites open one or two at a time; ${P.length - live.length} more are in preparation.</p>` +
+      (live.length ? `<ul class="mu-list">${live.map((x) => `<li><a href="pilgrimage/${esc(x.id)}.html">${esc(x.name)}</a><small>${esc(x.place || "")}${x.pending ? " · recently added, pending review" : ""}</small></li>`).join("")}</ul>` : "") +
+      `<div class="mu-actions">${live.length ? btn("pilgrimage/" + live[0].id + ".html", "Walk the " + live[0].name.replace(/^The /, "")) : ""}${btn("pilgrimage.html", "All sites", true)}</div>`;
   } else if (d.type === "about") {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
