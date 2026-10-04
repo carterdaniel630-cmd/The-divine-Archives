@@ -40,6 +40,18 @@
     [data-panel] { display: none; }
     [data-panel].on { display: block; }
     .cmp-note { font-size: 0.82rem; color: var(--ink-faint); margin: 0.5rem 0 0; }
+    /* phones: say that the table scrolls sideways, and fade the edge where more columns hide */
+    .cmp-wrap { position: relative; }
+    .cmp-wrap::before, .cmp-wrap::after { content: ""; position: absolute; top: calc(1.2rem + 1px); bottom: calc(0.6rem + 1px); width: 2.4rem; pointer-events: none; opacity: 0; transition: opacity .3s; z-index: 2; }
+    .cmp-wrap::before { left: 1px; background: linear-gradient(to right, var(--ground), rgba(0,0,0,0)); }
+    .cmp-wrap::after { right: 1px; background: linear-gradient(to left, var(--ground), rgba(0,0,0,0)); }
+    .cmp-wrap.more-left::before, .cmp-wrap.more-right::after { opacity: 1; }
+    .cmp-hint { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.58rem; color: var(--gold); text-align: right; margin: 1rem 0 -0.7rem; transition: opacity .3s; }
+    .cmp-hint span { display: inline-block; animation: cmp-nudge 1.6s ease-in-out infinite; }
+    .cmp-hint.seen { opacity: 0.45; }
+    .cmp-hint.seen span { animation: none; }
+    @keyframes cmp-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+    @media (prefers-reduced-motion: reduce) { .cmp-hint span { animation: none; } }
   </style>
 </head>
 <body>
@@ -197,6 +209,32 @@
     tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.getAttribute('data-theme'), true); }); });
     var q = new URLSearchParams(location.search).get('theme');
     if (q) show(q, false);
+  })();
+</script>
+<script>
+  // a visible "swipe sideways" cue for each comparison table that is wider than the screen
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll(".cmp-scroll")).map(function (sc) {
+      var hint = document.createElement("p");
+      hint.className = "cmp-hint"; hint.setAttribute("aria-hidden", "true");
+      hint.innerHTML = "Swipe the table sideways to see every tradition <span>&rarr;</span>";
+      var wrap = document.createElement("div"); wrap.className = "cmp-wrap";
+      sc.parentNode.insertBefore(hint, sc); sc.parentNode.insertBefore(wrap, sc); wrap.appendChild(sc);
+      function update() {
+        var over = sc.scrollWidth - sc.clientWidth > 4;
+        hint.style.display = over ? "" : "none";
+        wrap.classList.toggle("more-left", over && sc.scrollLeft > 4);
+        wrap.classList.toggle("more-right", over && sc.scrollWidth - sc.clientWidth - sc.scrollLeft > 4);
+        if (sc.scrollLeft > 30) hint.classList.add("seen");
+      }
+      sc.addEventListener("scroll", update, { passive: true });
+      return update;
+    });
+    function all() { items.forEach(function (f) { f(); }); }
+    window.addEventListener("resize", all);
+    // tables in hidden themes have no width until their tab opens
+    Array.prototype.forEach.call(document.querySelectorAll(".theme-switch button"), function (b) { b.addEventListener("click", function () { setTimeout(all, 0); }); });
+    all();
   })();
 </script>
 <script src="assets/ambient.js?v=2" defer></script>
