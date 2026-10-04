@@ -23,7 +23,7 @@ doesn't, and what is still open.
 | **The Vault** | Sacred objects and texts (manuscripts, relics, inscriptions), each with a study page | **88** entries |
 | **The Pantheon** | A searchable directory of gods, spirits, heroes and prophets | **199** figures, 30 traditions |
 | **Symbols and games** | The archive's sacred symbols; twelve of them open a game whose facts all come from chapter text | **12** games |
-| **The Pilgrimage** (beta) | Walkable models of sacred sites, sized from published surveys, reached through a portal in the Museum's Rotunda; each holds relic copies linked to the Vault | **1** open (the Great Pyramid), 71 queued |
+| **The Pilgrimage** (beta) | Walkable models of sacred sites, sized from published surveys, reached through the golden portal in the Museum's entrance hall; each holds relic copies linked to the Vault | **1** open (the Great Pyramid), 71 queued |
 | **The Museum** (beta) | A walkable 3D building with one room per chapter, and a planetarium | **83** rooms in 10 wings |
 | **Methodology / About** | The sourcing standard and what the "pending review" tag means | — |
 

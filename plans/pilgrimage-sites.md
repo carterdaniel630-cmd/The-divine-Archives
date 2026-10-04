@@ -1,6 +1,6 @@
 # The Pilgrimage: walkable sacred sites (plan, not built)
 
-**Status (2026-10-04):** the **Great Pyramid is IN BUILD** (branch `claude/pilgrimage-pyramid`, preview only, not merged). Every other site is **QUEUED**; sites are added one or two at a time later, each as one entry in `docs/assets/pilgrimage-data.js` plus its module folder. The Qumran caves stay the recommended next site.
+**Status (2026-10-04):** the **Great Pyramid is LIVE** (approved by Carter 2026-10-04 and merged; it carries the pending-review tag until he clears it). Its portal stands in the museum's entrance hall, and Pilgrimage is in the site's top menu. Every other site is **QUEUED**; sites are added one or two at a time later, each as one entry in `docs/assets/pilgrimage-data.js` plus its module folder. The Qumran caves stay the recommended next site.
 **Track rule:** one or two sites at a time, alongside other work. This track never blocks existing work.
 
 ## What it is
@@ -64,7 +64,7 @@ Chapter ids are the archive's own (`docs/assets/data.js`). Vault ids are the Vau
 
 | Site | Chapters | Vault | Label | Suggested / notes |
 |---|---|---|---|---|
-| **Great Pyramid interior** · **IN BUILD** | ch02, ch49, ch47 | none direct; V34 Pyramid Texts of Unas related (comparison only) | — | **IN BUILD (preview).** See plan below. Its Vault links are weaker than expected: no Vault object comes from Khufu's pyramid. |
+| **Great Pyramid interior** · **LIVE (pending review)** | ch02, ch49, ch47 | none direct; V34 Pyramid Texts of Unas related (comparison only) | — | **LIVE, pending review.** See plan below. Its Vault links are weaker than expected: no Vault object comes from Khufu's pyramid. |
 | Tomb of Tutankhamun (KV62) | ch02, ch47 | none (V20 Papyrus of Ani related) | — | The wall paintings are our own renderings. |
 | Tomb of Nefertari (QV66) | ch02, ch47 | none (V20 related: Book of the Dead scenes) | — | Access is restricted for conservation, so we rely on published surveys. |
 | Karnak | ch02, ch49 | none (V43 Merneptah Stele related: Theban) | — | Large. Model the hypostyle hall first. |
@@ -163,7 +163,7 @@ Chapter ids are the archive's own (`docs/assets/data.js`). Vault ids are the Vau
 | Bois Caïman | ch40 | none (V77 Haitian Vèvè related) | — | **Suggested (C):** historians debate details, and even the date, of the 1791 ceremony. |
 | Azusa Street Mission | ch64 | none | **(R)** | Demolished in 1931. Built from photographs and accounts as references only. (©) doesn't apply. |
 
-**Count:** 72 sites (1 in the Rotunda and 71 across the nine eras). **1 IN BUILD** (the Great Pyramid); **71 QUEUED** (every other site, including the Qumran caves). Pilot pair: the Great Pyramid interior and the Qumran caves.
+**Count:** 72 sites (1 in the Rotunda and 71 across the nine eras). **1 LIVE** (the Great Pyramid, pending review); **71 QUEUED** (every other site, including the Qumran caves). Pilot pair: the Great Pyramid interior and the Qumran caves.
 
 **Strongest Vault links for later waves** (an object found at, or kept at, the site): Göbekli Tepe (V60),
 Yinxu (V55), Mogao (V30), Lindisfarne (V42), Notre-Dame (V06), and Qumran (V02, V10, V48, V49).

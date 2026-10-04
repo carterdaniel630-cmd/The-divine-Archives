@@ -566,26 +566,24 @@ function buildStatic() {
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
   proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
   addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
-  // the portal to the Pilgrimage: a gilded arch standing free in the Rotunda, off the walking line
+  // the portal to the Pilgrimage: a golden arch against the entrance hall's north wall, beside the way into the Rotunda
   const { px, pz } = portalPose();
   // a golden archway of moving light (docs/pilgrimage/portal.js): tap it to read about the Pilgrimage, or walk
   // straight through it to step into the first open site
   const fx = goldenPortal({ w: 1.5, h: 2.5, tint: "#ffe2b0" });
-  const portal = fx.group; portal.position.set(px, 0, pz); portal.rotation.y = Math.atan2(ROT.cx - px, ROT.cz + ROT.r - pz);   // faces the doorway from the entrance hall
+  const portal = fx.group; portal.position.set(px, 0, pz); portal.rotation.y = portalPose().ry;
   const pPlaque = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 0.34), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 512, h: 128, size: 40, bg: "#2a1c10" }) }));
   pPlaque.position.set(0, 3.95, 0.14); portal.add(pPlaque);
   g.add(portal);
   const pq = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), portal.rotation.y), side = new THREE.Vector3(1, 0, 0).applyQuaternion(pq);
   for (const sx of [-1, 1]) addBox(px + side.x * sx * 0.83, pz + side.z * sx * 0.83, 0.16);   // only the pillars block; the opening is open
   S.portalFx = { fx, pos: new THREE.Vector3(px, 0, pz), inv: pq.clone().invert(), fired: !!S.portalArrived };
-  const hit = hitBoxFor(portal, 0.3); addExhibit(g, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "rotunda");
+  const hit = hitBoxFor(portal, 0.3); addExhibit(g, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
   // room door signs are built with each wing's exhibits
 }
-// where the Pilgrimage portal stands in the Rotunda, and which way it faces (also used to arrive back through it)
-function portalPose() {
-  const pa = Math.PI / 2 - 0.62, pr = ROT.r - 3.2, px = ROT.cx + pr * Math.cos(pa), pz = ROT.cz + pr * Math.sin(pa);
-  return { px, pz, ry: Math.atan2(ROT.cx - px, ROT.cz + ROT.r - pz) };
-}
+// where the Pilgrimage portal stands, and which way it faces (also used to arrive back through it): against the
+// entrance hall's north wall, to the right of the doorway into the Rotunda, facing the visitor coming in
+function portalPose() { return { px: 5.6, pz: HALL.z0 + 0.45, ry: 0 }; }
 function hitBoxFor(obj, depth, pad) {
   obj.updateMatrixWorld(true);
   const b = new THREE.Box3().setFromObject(obj), sz = new THREE.Vector3(), c = new THREE.Vector3();

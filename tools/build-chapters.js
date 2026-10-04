@@ -162,6 +162,7 @@ const HEADER = `  <header class="site-header">
         <a href="../symbols.html">Symbols</a>
         <a href="../pantheon.html">Pantheon</a>
         <a href="../vault.html">Vault</a>
+        <a href="../pilgrimage.html">Pilgrimage</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>

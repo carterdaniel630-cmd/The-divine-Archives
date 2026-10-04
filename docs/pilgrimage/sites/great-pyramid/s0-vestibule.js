@@ -17,11 +17,11 @@ export function build(ctx) {
   // gold dado and cornice lines all round
   const strip = (len, x, y, z, rotY) => { const m = new THREE.Mesh(new THREE.BoxGeometry(len, 0.035, 0.03), goldMat); m.position.set(x, y, z); m.rotation.y = rotY; ctx.group.add(m); };
   for (const y of [0.95, H - 0.4]) { strip(8, V0.x, y, z0 + 0.02, 0); strip(8, V0.x, y, z1 - 0.02, 0); strip(10, x0 + 0.02, y, V0.z, Math.PI / 2); strip(10, x1 - 0.02, y, V0.z, Math.PI / 2); }
-  // the two ways out are golden portals (../../portal.js): north to the pyramid, south back to the museum's Rotunda
+  // the two ways out are golden portals (../../portal.js): north to the pyramid, south back to the museum
   ctx.portal({ w: 1.4, h: 2.3, tint: "#ffd9a0" }, V0.x, 0, z0 + 0.2, 0);
   sign(ctx, ["To the Great Pyramid", "the north face, Giza"], V0.x, 3.9, z0 + 0.03, 0, 2.6, 0.62);
   ctx.portal({ w: 1.4, h: 2.3, tint: "#fff0d8" }, V0.x, 0, z1 - 0.2, Math.PI);
-  sign(ctx, ["Back to the Museum", "the Rotunda"], V0.x, 3.9, z1 - 0.03, Math.PI, 2.6, 0.62);
+  sign(ctx, ["Back to the Museum", "the entrance hall"], V0.x, 3.9, z1 - 0.03, Math.PI, 2.6, 0.62);
   // the board: what this site is, with a cross-section
   sign(ctx, ["The Great Pyramid of Khufu", "c. 2560 BCE · the five spaces you can walk"], x1 - 0.03, 2.3, V0.z - 1.5, -Math.PI / 2, 2.4, 0.6);
   sign(ctx, ["Before you enter", "sizes from published surveys · stone drawn in code"], x1 - 0.03, 1.6, V0.z - 1.5, -Math.PI / 2, 2.4, 0.45, { size: 52 });

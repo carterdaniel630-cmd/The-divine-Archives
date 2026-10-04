@@ -199,6 +199,7 @@ const HEADER = `  <header class="site-header">
         <a href="../symbols.html">Symbols</a>
         <a href="../pantheon.html">Pantheon</a>
         <a href="../vault.html">Vault</a>
+        <a href="../pilgrimage.html">Pilgrimage</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>
@@ -512,14 +513,14 @@ function pilgrimageListPage() {
 <body>
 <a class="skip-link" href="#pg-list">Skip to content</a>
 <div class="page">
-${HEADER_ROOT}
+${HEADER_ROOT.replace('<a href="pilgrimage.html">', '<a href="pilgrimage.html" aria-current="page">')}
 
   <main id="pg-list">
     <div class="page-head">
       <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><span>The Pilgrimage</span></p>
       <p class="eyebrow">Walkable sacred sites</p>
       <h1>The Pilgrimage</h1>
-      <p class="lede">Step through a portal from the museum&rsquo;s Rotunda and walk inside the places themselves, modelled from published surveys. Each holds copies of its relics, linked to the Vault and to the chapters. Sites open one or two at a time.</p>
+      <p class="lede">Step through the golden portal in the museumStep through a portal from the museum&rsquo;s Rotunda and walkrsquo;s entrance hall and walk inside the places themselves, modelled from published surveys. Each holds copies of its relics, linked to the Vault and to the chapters. Sites open one or two at a time.</p>
     </div>
     <section class="wrap" style="max-width:64rem;padding-block:1rem 2rem">
       <p class="tiny center" style="margin:0 auto;max-width:44rem">Every site is our own model. No one else&rsquo;s photographs or 3D scans are used; published plans and measurements are references only. What is measured, what is approximate and what is unknown is said on site, by the same evidence standard as the chapters.</p>
@@ -529,7 +530,7 @@ ${HEADER_ROOT}
         <li><span class="pg-tag S">Exterior only</span> ${esc(LABELS.S[1])}</li>
       </ul>
 ${sections}
-      <p class="tiny center" style="margin-top:2.4rem">The way in: <a href="museum.html">the museum</a>, through the portal in the Rotunda. See the <a href="methodology.html">methodology</a> for the sourcing standard.</p>
+      <p class="tiny center" style="margin-top:2.4rem">The way in: <a href="museum.html">the museum</a>, through the golden portal in its entrance hall. See the <a href="methodology.html">methodology</a> for the sourcing standard.</p>
     </section>
   </main>
 
