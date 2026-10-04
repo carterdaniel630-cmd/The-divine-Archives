@@ -73,7 +73,7 @@
     // optional detailed hero art: a single 2x2 sheet (Zeus TL, Poseidon TR, Athena BL, Hades BR).
     // When present it replaces the procedural portraits on the select / VS / victory screens;
     // combat stays procedural. Set HERO_SHEET to the file (relative to this script) to enable.
-    var HERO_SHEET = "art/heroes.jpg";
+    var HERO_SHEET = "art/heroes.webp";   // 60% of art-source/fighter/heroes.jpg (tools/build-fighter-art.js)
     var HERO_ORDER = ["zeus", "poseidon", "athena", "hades"], HERO_INSET = 0.015;
     // horizontal focus (0..1) of each god's face within its cell, so portrait crops frame the face
     var HERO_FOCUS = { zeus: 0.5, poseidon: 0.58, athena: 0.52, hades: 0.56 };
@@ -107,18 +107,22 @@
        joint ANGLES and rebuilds the limb chain at the art's own proportions, so the
        painted arm/leg swings on its own with the combat, not a flat picture on top.
        Takes priority over the flat sprite when a god's parts are loaded. ========== */
-    var PARTS = {}, PARTMETA = {}, PARTS_READY = {}, PARTS_VER = 2;   // bump when part art changes (cache-bust)
-    function loadParts() {
-      HERO_ORDER.forEach(function (g) {
+    // The parts are half-size WebP files made by tools/build-fighter-art.js from the originals in
+    // art-source/; each manifest keeps the ORIGINAL size and pivot, and every part is drawn at its
+    // manifest size, so the rig is unchanged. Only the gods in play are loaded (not all four).
+    var PARTS = {}, PARTMETA = {}, PARTS_READY = {}, PARTS_LOADING = {}, PARTS_VER = 3;   // bump when part art changes (cache-bust)
+    function loadParts(gods) {
+      (gods || HERO_ORDER).forEach(function (g) {
+        if (!g || PARTS_LOADING[g]) return; PARTS_LOADING[g] = true;
         fetch(SCRIPT_BASE + "art/parts/" + g + "/manifest.json?v=" + PARTS_VER).then(function (r) { return r.ok ? r.json() : null; }).then(function (man) {
           if (!man) return; PARTMETA[g] = man; PARTS[g] = {}; var names = Object.keys(man), left = names.length;
           names.forEach(function (nm) {
             var im = new Image();
             im.onload = function () { PARTS[g][nm] = im; if (--left <= 0) PARTS_READY[g] = true; };
             im.onerror = function () { if (--left <= 0) PARTS_READY[g] = (Object.keys(PARTS[g]).length > 6); };
-            im.src = SCRIPT_BASE + "art/parts/" + g + "/" + nm + ".png?v=" + PARTS_VER;
+            im.src = SCRIPT_BASE + "art/parts/" + g + "/" + nm + ".webp?v=" + PARTS_VER;
           });
-        }).catch(function () {});
+        }).catch(function () { PARTS_LOADING[g] = false; });
       });
     }
     function heroCrop(id) {
@@ -562,7 +566,7 @@
       var drawLen = (opt.rest && tl > opt.rest * 1.16) ? opt.rest * 1.16 : tl;
       var along = drawLen / nl, cross = opt.cross || along;
       c.save(); c.translate(J0[0], J0[1]); c.rotate(ta + (opt.up ? Math.PI / 2 : -Math.PI / 2)); c.scale(opt.flip ? -cross : cross, along);
-      c.drawImage(img, -px, -py);
+      c.drawImage(img, -px, -py, m.w, m.h);
       // darken a back-side limb so it recedes behind the torso (source-atop keeps the alpha)
       if (opt.dark) { c.globalCompositeOperation = "source-atop"; c.fillStyle = "rgba(8,6,14," + opt.dark + ")"; c.fillRect(-px, -py, m.w, m.h); }
       c.restore();
@@ -618,7 +622,7 @@
       c.save(); c.scale(1, 0.28); c.globalAlpha = sa; c.fillStyle = "#000"; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr, 0, 7); c.fill();
       c.globalAlpha = Math.min(1, sa * 1.5); c.lineWidth = 3.2; c.strokeStyle = f.skin.eye; c.beginPath(); c.arc(0, ry * 3.4 + 8, sr + 1.5, 0, 7); c.stroke(); c.restore();
       // shadow aura behind (Hades), centred on the torso
-      if (P.auraA) { var au = M.auraA, ausc = bs * (tm ? tm.h : 400) / au.h * 1.05, mid = [(p.hip[0] + p.neck[0]) / 2 - 2, (p.hip[1] + p.neck[1]) / 2]; c.save(); c.globalAlpha = 0.7; c.translate(mid[0], mid[1]); var sp = Math.sin(t * 2 + f.phase); c.scale(ausc, ausc * (1 + sp * 0.04)); c.drawImage(P.auraA, -au.w / 2, -au.h / 2); c.restore(); }
+      if (P.auraA) { var au = M.auraA, ausc = bs * (tm ? tm.h : 400) / au.h * 1.05, mid = [(p.hip[0] + p.neck[0]) / 2 - 2, (p.hip[1] + p.neck[1]) / 2]; c.save(); c.globalAlpha = 0.7; c.translate(mid[0], mid[1]); var sp = Math.sin(t * 2 + f.phase); c.scale(ausc, ausc * (1 + sp * 0.04)); c.drawImage(P.auraA, -au.w / 2, -au.h / 2, au.w, au.h); c.restore(); }
       // BACK leg: drawn from the FRONT (armoured) leg art, darkened to recede — the source
       // paintings only armour the near leg, so reusing it keeps both legs consistent.
       var DK = 0.34, legBrest = IKREST.legB, armBrest = IKREST.armB;
@@ -630,7 +634,7 @@
       // BACK arm keeps its own art (Hades bakes a weapon into the front forearm), just darkened
       skin(c, P, M, nUaB, p.shB, p.elB, { dark: DK, rest: armBrest[0], cross: bs * (cfg.armCross || 1), flip: mir }); skin(c, P, M, nFaB, p.elB, p.hnB, { dark: DK, rest: armBrest[1], cross: bs * (cfg.armCross || 1), flip: mir });
       // shield rides the back arm (far side), tucked behind the torso
-      if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield]; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -sh.width * 0.5, -sh.height * 0.5); c.restore(); }
+      if (cfg.shield && P[cfg.shield]) { var sh = P[cfg.shield], shm = M[cfg.shield] || { w: sh.width, h: sh.height }; c.save(); c.translate(p.hnB[0], p.hnB[1]); c.scale(bs, bs); c.drawImage(sh, -shm.w * 0.5, -shm.h * 0.5, shm.w, shm.h); c.restore(); }
       // TORSO + HEAD (head sized to the body, tilted with the neck). Torso drawn a
       // touch narrower than full body scale so the arms read beside it instead of
       // vanishing behind a full front-view chest.
@@ -638,7 +642,7 @@
       skin(c, P, M, "torso", p.hip, p.neck, { tip: 0, up: true, cross: bs * (cfg.torsoCross || 0.82), flip: mir });
       // head sized to the body but damped: the painted crops include a full mane/beard/
       // crown, so scaling them 1:1 to the (short) torso bone reads as a bobble-head.
-      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * (cfg.headScale || 0.58); c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(mir ? -hs : hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY); c.restore(); }
+      if (P.head && M.head) { var hm = M.head, ha = Math.atan2(p.head[1] - p.neck[1], p.head[0] - p.neck[0]), hs = bs * (cfg.headScale || 0.58); c.save(); c.translate(p.neck[0], p.neck[1]); c.rotate(ha + Math.PI / 2); c.scale(mir ? -hs : hs, hs); c.drawImage(P.head, -hm.pivotX, -hm.pivotY, hm.w, hm.h); c.restore(); }
       // FRONT leg + arm (length-capped so a kick extends but never rubber-stretches)
       var legFrest = IKREST.legF, armFrest = IKREST.armF;
       if (single) skin(c, P, M, nThighF, hipF, p.footF, { rest: legFrest[0] + legFrest[1], cross: bs, flip: mir });
@@ -652,7 +656,7 @@
       // grip-hand ~57% across, so mirror it (point leads toward the foe) and grip there.
       // The hold angle follows the forearm but is pulled toward horizontal, so it reads as
       // a levelled spear at rest and swings to a full thrust when the arm extends forward.
-      if (cfg.weapon && P[cfg.weapon]) { var sp2 = P[cfg.weapon], fa = Math.atan2(p.hnF[1] - p.elF[1], p.hnF[0] - p.elF[0]); var hold = fa * 0.42; c.save(); c.translate(p.hnF[0], p.hnF[1]); c.rotate(hold); c.scale(-bs, bs); c.drawImage(sp2, -sp2.width * 0.57, -sp2.height * 0.5); c.restore(); }
+      if (cfg.weapon && P[cfg.weapon]) { var sp2 = P[cfg.weapon], fa = Math.atan2(p.hnF[1] - p.elF[1], p.hnF[0] - p.elF[0]); var hold = fa * 0.42; c.save(); c.translate(p.hnF[0], p.hnF[1]); c.rotate(hold); c.scale(-bs, bs); var spm = M[cfg.weapon] || { w: sp2.width, h: sp2.height }; c.drawImage(sp2, -spm.w * 0.57, -spm.h * 0.5, spm.w, spm.h); c.restore(); }
       c.restore();
     }
 
@@ -1849,7 +1853,7 @@
             " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Chain a jab into a kick into a blast for a combo; fill the meter for a SUPER (a maxed blast, any time) — land it on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
         root.querySelectorAll(".fg-card").forEach(function (b) {
-          b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); render(); });
+          b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); loadParts([sel.p1, sel.p2]); render(); });
         });
         root.querySelector('[data-a="mode"]').addEventListener("click", function () { sel.twoP = !sel.twoP; render(); });
         root.querySelector('[data-a="fight"]').addEventListener("click", function () { startFight(sel.p1, sel.p2, sel.twoP); });
@@ -1935,7 +1939,7 @@
       root.querySelector('[data-a="choose"]').addEventListener("click", selectScreen);
     }
     function startFight(g1, g2, twoP) {
-      curG1 = g1; curG2 = g2; curTwoP = twoP;
+      curG1 = g1; curG2 = g2; curTwoP = twoP; loadParts([g1, g2]);
       shell(twoP);
       bindPads(twoP);
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1, g1);
@@ -2012,7 +2016,7 @@
     }
     attachKeys();
     loadHeroes();
-    loadParts();
+    loadParts([curG1, curG2]);
     root.innerHTML = '<div class="rq-loading">Summoning the gods…</div>';
     loadFighterFacts(selectScreen);
 

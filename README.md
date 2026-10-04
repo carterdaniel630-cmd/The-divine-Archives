@@ -102,6 +102,16 @@ people to the chapter, Vault and Pantheon pages. Three.js is included in
 `docs/assets/vendor/three/`. The planetarium's star data come from the
 d3-celestial catalogues (`tools/data/d3-celestial/`, BSD licence).
 
+Two pieces of game art are generated, not edited by hand:
+
+- **The fighter's art**: the full-size originals live in `art-source/fighter/`.
+  `node tools/build-fighter-art.js` writes the half-size WebP parts and the portrait sheet
+  into `docs/assets/games/art/`. Re-run it after changing the art, and bump `PARTS_VER` in
+  `fighter.js`.
+- **The Risk map's territory grid** (`docs/assets/games/data/risk-grid.png`):
+  `node tools/build-risk-grid.js` writes it with the game's own code. Re-run it after moving
+  provinces or seas in `risk.js`; until then the game falls back to computing the grid.
+
 ## Deploy
 
 Every push to **`main`** runs `.github/workflows/deploy.yml`, which publishes

@@ -37,6 +37,27 @@
       animation: fade-rise 1.5s ease-out 0.3s both;
     }
     .masthead .search { margin-top: 0.4rem; animation: fade-rise 1.5s ease-out 0.45s both; }
+    /* doorways: the archive's strongest ways in, on the first screen */
+    .doorways {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem;
+      max-width: 34rem; margin: -0.2rem auto 0; animation: fade-rise 1.5s ease-out 0.55s both;
+    }
+    .doorways a {
+      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em;
+      font-size: 0.64rem; line-height: 1; color: var(--parchment);
+      display: inline-flex; align-items: center; min-height: 42px; box-sizing: border-box;   /* thumb-sized */
+      padding: 0.5rem 0.95rem; border: 1px solid var(--line); border-radius: 2px;
+      background: rgba(27, 20, 13, 0.55); transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .doorways a:hover, .doorways a:focus-visible { border-color: var(--gold); color: var(--gold-bright); background: rgba(199, 154, 84, 0.08); }
+    .doorways a .dw-mark { color: var(--gold); margin-right: 0.35em; }
+    @media (max-width: 560px) {
+      .masthead { padding: 3.2rem 1.2rem 2.6rem; gap: 1.35rem; }
+      .emblem { width: 80px; height: 80px; }
+      .doorways { gap: 0.45rem; }
+      .doorways a { padding: 0.45rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.13em; }
+      .scroll-cue { margin-top: 0.4rem; }
+    }
     .scroll-cue {
       margin-top: 1.2rem; color: var(--ink-faint); font-family: var(--font-display);
       text-transform: uppercase; letter-spacing: 0.34em; font-size: 0.62rem;
@@ -245,6 +266,14 @@
         <button type="submit">Search</button>
       </form>
     </div>
+
+    <nav class="doorways" aria-label="Ways in">
+      <a href="eras.html">The Nine Ages</a>
+      <a href="vault.html">The Vault</a>
+      <a href="museum.html">The Museum</a>
+      <a href="#games">Play</a>
+      <a href="random.html" rel="nofollow"><span class="dw-mark" aria-hidden="true">&#10022;</span>A chapter at random</a>
+    </nav>
 
     <p class="scroll-cue">Descend through the ages<span>&darr;</span></p>
   </header>
