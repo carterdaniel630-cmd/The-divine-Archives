@@ -309,7 +309,9 @@ know there's a 3D museum and twelve games unless they kept scrolling.
    PR #11 was merged).*
 2. **The first screen doesn't show what's inside.** There's no menu and no buttons on it. The
    best hooks (Vault, Museum, games) are 5–8 full-screen panels down. A short strip of 3–4
-   inviting links on the first screen would fix most of this. *Options are in
+   inviting links on the first screen would fix most of this. *Fixed on the
+   `claude/first-screen-fighter` branch: five buttons under the search box (The Nine Ages,
+   The Vault, The Museum, Play, A chapter at random). Other options are in
    [`plans-2026-10.md`](plans-2026-10.md).*
 3. **The floating music control sits on top of the text on every page,** in the bottom-right
    corner, and it isn't labelled. On a phone it covers words in the chapters and the games'
@@ -320,7 +322,8 @@ know there's a 3D museum and twelve games unless they kept scrolling.
    about 1.5 s while it opens. The cause and the cheapest fixes are in
    [`perf-baseline.md`](perf-baseline.md). *Partly fixed in PR #12 (awaiting review): the fighter
    is about twice as smooth, the Tomb Robber +58%, Pac-Man +30%, and Risk opens about 60%
-   faster. The fighter's download has a plan in [`plans-2026-10.md`](plans-2026-10.md).*
+   faster. The fighter's download drops from about 6 MB to about 0.4 MB on the
+   `claude/first-screen-fighter` branch.*
 5. **Small rough edges that read as unfinished:**
    - the cramped "symbols respond to a touch" tip (*fixed in PR #12*);
    - the Compare table cut off at the screen edge (*a swipe cue was added in PR #12*);
