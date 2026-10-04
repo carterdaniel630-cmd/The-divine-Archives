@@ -147,3 +147,48 @@ node tools/fps-games.js --base http://localhost:8080 --cpu 4 --shots fps-shots  
 The **Lighthouse check** (`.github/workflows/lighthouse.yml`) now runs the same page list on
 every pull request that changes the site. It compares the pull request with the branch it targets
 on the same machine, and fails if any page's mobile score drops by more than 5 points.
+
+---
+
+## After the fixes — 2026-10-04 (branch `claude/speed-ux-fixes`, PR #12)
+
+Two speed fixes were applied, from the top-10 list above:
+- **#1:** the games draw at the phone's real resolution.
+- **#3:** Dominion of the Ancients reads a precomputed map instead of building it.
+
+Measured the same way as above, but **side by side in one session**: `main` (before) and the
+branch (after), served at the same time and measured alternately, two rounds each. This session
+ran on a faster machine than the baseline above, so the numbers below are higher across the
+board. **Compare before with after in this section, not with the tables above.** Games that
+were already smooth now sit at this machine's 60 FPS ceiling.
+
+### Frame rate while playing (390-pixel phone screen, CPU slowed 4×)
+
+Average of two runs each. "Min" is the worst one-second stretch.
+
+| Game | Before: avg (min) | After: avg (min) | Change |
+|---|---|---|---|
+| Divine Casualties (fighter) | 25.4 (22.3) | **47.9 (37.0)** | **+89%**: nearly twice as smooth |
+| The Tomb Robber (treasure) | 12.8 (11.6) | **20.2 (17.4)** | **+58%**: still the slowest game (see below) |
+| The Labyrinth (pac-man) | 39.3 (28.6) | **51.1 (41.0)** | **+30%** |
+| The Firmament (pinball) | 43.1 (35.0) | 43.5 (38.0) | none: its canvas was already the right size |
+| Dominion of the Ancients (risk) | 56.6 (50.2) | 56.0 (50.3) | none in play (it opens much faster, see below) |
+| Archive Chess | 59.3 | 59.6 | at the ceiling |
+| Ouroboros | 59.3 | 59.4 | at the ceiling |
+| Ziggurat Builder | 59.1 | 58.4 | at the ceiling |
+| The Reliquary | 59.8 | 59.9 | at the ceiling |
+| The Seeker's Path | 60.0 | 59.8 | at the ceiling |
+| Antithesis (pong) | 59.9 | 59.9 | at the ceiling |
+| The Excavation (minesweeper) | 59.9 | 59.9 | at the ceiling |
+
+- **Caught and fixed during measurement:** the first "after" run showed Risk *slower* in play
+  (57.9 → 52.0). Its map layers are drawn at exactly twice its size, and the new fractional
+  scale forced the browser to resample them every frame. Risk was barely oversized to begin
+  with, so it keeps its old sizing rule and only gets the map fix. The Risk row shows the
+  re-measurement after that correction.
+- **Opening Dominion of the Ancients** (CPU profile, full speed): set-up time **574 → 228 ms**,
+  and the map step **342 → 46 ms**. On a mid-range phone that is roughly 2.3 s → 0.9 s of
+  frozen screen.
+- **The Tomb Robber** is still the slowest game. Its remaining cost is fixes #4 and #8 on the
+  list: the per-frame brightness filter, the full-size lighting layer, and its large character
+  art.
