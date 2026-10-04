@@ -58,6 +58,8 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 /tools/                     <- build-*.js (prerender), md-to-chapter.js, verify-*.js (game facts vs chapter text)
 /art-source/                <- source artwork kept out of the deployed site
 /museum/                    <- Virtual Museum governance, plan and phase reports (the museum is docs/museum.html + docs/museum/)
+/reviews/                   <- reviewer + auditor: REVIEWER.md, AUDITOR.md, scorecard.md, status.json (auto-pass on/off),
+                               cleared.json (Carter's clearance log); batch reports live on the review-log branch
 ```
 
 ## Build & deploy (repo mechanics)
@@ -76,6 +78,10 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - A chapter's body goes into `content/chapters.js` via `node tools/md-to-chapter.js <id> <file.md>`;
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.
+- `review.yml` runs on every PR: `node tools/review-checks.js` (internal links, garbled links, 2 MB file limit,
+  sitemap coverage, pending banners, new/changed content must be `pending` unless cleared in `reviews/cleared.json`,
+  Wikipedia share warning, and with `--build` that the committed output matches a fresh build), plus a `guard` job
+  that fails any PR into main from a `review-test/` branch or carrying the planted-error marker. Keep it passing.
 - Besides chapters the site carries the Vault (`docs/vault/`, data in `docs/assets/vault-data.js`), the
   Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`) and 12 mini-games (`docs/assets/games/`),
   all held to the same sourcing standard.

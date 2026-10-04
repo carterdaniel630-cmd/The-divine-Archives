@@ -1,6 +1,14 @@
-# Reviewer agent and auditor (plan, not built)
+# Reviewer agent and auditor (plan, built)
 
-**Status:** planning only. Nothing is built, no workflow is added, and no key or account is created. Opened 2026-10-04 at Carter's request.
+**Status:** BUILT 2026-10-04 (option B/C). Opened 2026-10-04 at Carter's request and approved the same day with
+these decisions: (1) option B/C, the AI review and the audit run as separate scheduled Claude Code sessions, with no
+API key and no Anthropic API calls in CI; (2) accuracy threshold 90%, and any missed planted fake source or
+sensitivity error suspends auto-PASS; (3) planted-error test batches monthly; (4) the self-fix list in §1c stands as
+written. Built: `tools/review-checks.js` and `.github/workflows/review.yml` (automatic checks and the `review-test/`
+guard), `reviews/REVIEWER.md`, `reviews/AUDITOR.md`, `reviews/scorecard.md`, `reviews/status.json` (auto-PASS off
+until the baseline test batch), `reviews/cleared.json` and `reviews/README.md`. The scheduled sessions themselves are
+set up separately. Not yet built from §1a: the headless run of every game and 3D page, and the per-section page-weight
+budget.
 
 ## The goal
 

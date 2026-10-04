@@ -1,0 +1,102 @@
+name: Review checks
+
+# The automatic half of the review (plans/reviewer-agent.md §1a; reviews/README.md).
+# No AI runs here and no API key is used: the AI review is a separate scheduled
+# Claude Code session that follows reviews/REVIEWER.md.
+#
+#   checks  runs tools/review-checks.js against the PR's base (links, garbled links,
+#           file sizes, sitemap, pending banners, pending status of new/changed
+#           content, Wikipedia share), then the build-matches-committed check as its
+#           own step, and uploads both JSON results as an artifact.
+#   guard   keeps the auditor's planted-error test batches away from main: it fails
+#           any PR into main whose head branch starts with "review-test/", that adds
+#           any file under review-test/, or whose added lines contain the planted-error
+#           marker REVIEW-TEST-PLANTED (defined in tools/review-checks.js and
+#           documented in reviews/AUDITOR.md; the files that define it are excluded).
+
+on:
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository (full history, for the diff base)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Review checks
+        id: checks
+        run: node tools/review-checks.js --base "origin/${{ github.base_ref || 'main' }}" --json review-checks.json
+
+      # build-og.js needs a browser only when a share card is out of date, so a
+      # failure here without Playwright still means "output not rebuilt and committed".
+      - name: Build output matches what is committed
+        if: always()
+        run: node tools/review-checks.js --base "origin/${{ github.base_ref || 'main' }}" --only build --json review-checks-build.json
+
+      - name: Upload the results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: review-checks
+          path: |
+            review-checks.json
+            review-checks-build.json
+          if-no-files-found: warn
+
+  guard:
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository (full history, for the diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Keep review-test batches out of main
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          MARKER: REVIEW-TEST-PLANTED
+        run: |
+          set -uo pipefail
+          fail=0
+          case "$HEAD_REF" in
+            review-test/*)
+              echo "::error::This PR comes from a review-test/ branch. Test batches must never be merged into main."
+              fail=1 ;;
+          esac
+          base="$(git merge-base origin/main HEAD)"
+          added_files="$(git diff --name-only --diff-filter=AMR "$base" HEAD -- 'review-test/' || true)"
+          if [ -n "$added_files" ]; then
+            echo "::error::This PR adds files under review-test/ (planted-error test material):"
+            echo "$added_files"
+            fail=1
+          fi
+          # Added lines containing the marker, outside the files that define and document it.
+          hits="$(git diff --unified=0 "$base" HEAD -- . \
+                    ':(exclude).github/workflows/review.yml' \
+                    ':(exclude)tools/review-checks.js' \
+                    ':(exclude)reviews/REVIEWER.md' \
+                    ':(exclude)reviews/AUDITOR.md' \
+                    ':(exclude)reviews/README.md' \
+                    ':(exclude)plans/reviewer-agent.md' \
+                    ':(exclude)CLAUDE.md' \
+                  | awk -v m="$MARKER" '/^\+\+\+ /{f=substr($0,7); next} /^\+/ && index($0, m) {print f ": " substr($0,2)}')"
+          if [ -n "$hits" ]; then
+            echo "::error::This PR adds the planted-error marker ($MARKER). Planted test errors must never reach main:"
+            echo "$hits"
+            fail=1
+          fi
+          if [ "$fail" -ne 0 ]; then exit 1; fi
+          echo "Guard passed: no review-test branch, folder or planted-error marker in this PR."
