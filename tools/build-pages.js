@@ -30,6 +30,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const SEO = require("./seo");
 
 const ROOT = path.join(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
@@ -286,7 +287,7 @@ function pageForEra(era) {
   <meta property="og:title" content="${esc(fullTitle)}" />
   <meta property="og:description" content="${esc(desc)}" />
   <meta property="og:url" content="${url}" />
-  <meta name="twitter:card" content="summary" />
+${SEO.shareTags("era-" + era.slug, era.name + " — The Divine Archives")}  <meta name="twitter:card" content="${SEO.twitterCard("era-" + era.slug)}" />
   <meta name="twitter:title" content="${esc(fullTitle)}" />
   <meta name="twitter:description" content="${esc(desc)}" />
   <script type="application/ld+json">${jsonld}</script>
@@ -463,25 +464,27 @@ ${FOOTER_ROOT}
 
 // ---------- 3. sitemap ----------------------------------------------------
 function buildSitemap() {
+  // [url, lastmod or null]. lastmod comes from content/dates.json (tools/stamp-dates.js):
+  // a chapter's or Vault entry's own date; an era page takes its newest chapter's.
   const urls = [
-    SITE + "/",
-    SITE + "/eras.html",
-    SITE + "/themes.html",
-    SITE + "/traditions.html",
-    SITE + "/about.html",
-    SITE + "/methodology.html",
-    SITE + "/compare.html"
-  ];
-  A.eras.forEach((e) => urls.push(SITE + "/eras/" + e.slug + ".html"));
-  A.chapters.filter((c) => c.status === "published").forEach((c) => urls.push(SITE + "/chapters/" + c.id + ".html"));
+    "/", "/eras.html", "/themes.html", "/traditions.html", "/about.html",
+    "/methodology.html", "/compare.html", "/symbols.html"
+  ].map((u) => [SITE + u, null]);
+  const pub = A.chapters.filter((c) => c.status === "published");
+  const mod = (key) => (SEO.dates(key) || {}).modified || null;
+  A.eras.forEach((e) => {
+    const latest = pub.filter((c) => c.era === e.slug).map((c) => mod(c.id)).filter(Boolean).sort().pop() || null;
+    urls.push([SITE + "/eras/" + e.slug + ".html", latest]);
+  });
+  pub.forEach((c) => urls.push([SITE + "/chapters/" + c.id + ".html", mod(c.id)]));
   // The Vault (manuscripts, relics & contested objects) — see tools/build-vault.js
   const VAULT = sandbox.window.VAULT || { items: [] };
-  urls.push(SITE + "/vault.html");
-  urls.push(SITE + "/pantheon.html");
-  VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push(SITE + "/vault/" + v.slug + ".html"));
+  urls.push([SITE + "/vault.html", null]);
+  urls.push([SITE + "/pantheon.html", null]);
+  VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map((u) => "  <url><loc>" + u + "</loc></url>").join("\n") +
+    urls.map(([u, d]) => "  <url><loc>" + u + "</loc>" + (d ? "<lastmod>" + d + "</lastmod>" : "") + "</url>").join("\n") +
     "\n</urlset>\n";
 }
 

@@ -18,6 +18,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const SEO = require("./seo");
 
 const ROOT = path.join(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
@@ -201,7 +202,7 @@ function footer(rel) {
 }
 const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E";
 
-function head(title, desc, url, rel, type, extra) {
+function head(title, desc, url, rel, type, extra, ogKey) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,7 +220,7 @@ function head(title, desc, url, rel, type, extra) {
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(desc)}" />
   <meta property="og:url" content="${url}" />
-  <meta name="twitter:card" content="summary" />
+${SEO.shareTags(ogKey || "site", title)}  <meta name="twitter:card" content="${SEO.twitterCard(ogKey || "site")}" />
   <meta name="twitter:title" content="${esc(title)}" />
   <meta name="twitter:description" content="${esc(desc)}" />
 ${extra || ""}</head>`;
@@ -248,7 +249,9 @@ function itemPage(item) {
   const jsonld = JSON.stringify({
     "@context": "https://schema.org", "@type": "Article", headline: e.title || item.title,
     description: desc, url, inLanguage: "en",
-    isPartOf: { "@type": "WebSite", name: "The Divine Archives", url: SITE + "/" }
+    isPartOf: { "@type": "WebSite", name: "The Divine Archives", url: SITE + "/" },
+    ...(SEO.imageUrl(item.id) ? { image: SEO.imageUrl(item.id) } : {}),
+    ...(SEO.dates(item.id) ? { datePublished: SEO.dates(item.id).published, dateModified: SEO.dates(item.id).modified } : {})
   });
   const crumbld = JSON.stringify({
     "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
@@ -312,7 +315,7 @@ function itemPage(item) {
     ? `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;600&family=Noto+Sans+Phoenician&family=Noto+Sans+Egyptian+Hieroglyphs${extraFonts.map((f) => "&family=" + f).join("")}&display=swap" />\n`
     : "";
   return `${head(fullTitle, desc, url, "../", "article",
-    fonts + `  <script type="application/ld+json">${jsonld}</script>\n  <script type="application/ld+json">${crumbld}</script>\n`)}
+    fonts + `  <script type="application/ld+json">${jsonld}</script>\n  <script type="application/ld+json">${crumbld}</script>\n`, item.id)}
 <body>
 <a class="skip-link" href="#vault-mount">Skip to content</a>
 <div class="page">
