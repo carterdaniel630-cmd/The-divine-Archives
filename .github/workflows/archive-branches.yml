@@ -1,0 +1,41 @@
+name: Archive branches
+
+# Tags each branch listed in .github/archive-branches.txt as archive/<branch> at its tip,
+# confirms the tag exists on the remote, and only then deletes the branch. Never touches
+# main or the repository's default branch. Runs when the list changes on main, or by hand.
+on:
+  push:
+    branches: [main]
+    paths: [".github/archive-branches.txt"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Tag, check, then delete
+        env:
+          DEFAULT: ${{ github.event.repository.default_branch }}
+        run: |
+          set -u
+          git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*' --tags
+          done=0; skipped=0
+          while IFS= read -r b; do
+            case "$b" in ''|'#'*) continue ;; esac
+            if [ "$b" = "main" ] || [ "$b" = "$DEFAULT" ]; then echo "skip $b (protected)"; skipped=$((skipped+1)); continue; fi
+            if ! git rev-parse -q --verify "refs/remotes/origin/$b" >/dev/null; then echo "skip $b (no such branch)"; skipped=$((skipped+1)); continue; fi
+            sha=$(git rev-parse "refs/remotes/origin/$b")
+            git push origin "$sha:refs/tags/archive/$b"
+            if [ "$(git ls-remote origin "refs/tags/archive/$b" | cut -f1)" = "$sha" ]; then
+              git push origin --delete "$b" && echo "archived $b at $sha" && done=$((done+1))
+            else
+              echo "::error::tag archive/$b not confirmed; branch $b kept"
+            fi
+          done < .github/archive-branches.txt
+          echo "archived $done branch(es), skipped $skipped"

@@ -1,0 +1,34 @@
+# Branches to archive: each is tagged archive/<branch> at its current tip, the tag is checked,
+# and only then is the branch deleted (recover any of them with: git checkout -b <name> archive/<name>).
+# Approved by Carter on 2026-10-04 (decision 8: tag first, then delete merged and stale branches;
+# keep the seven merch/side-project branches and the Pistis Sophia branches).
+# The workflow .github/workflows/archive-branches.yml runs when this file changes on main.
+claude/audit-fixes
+claude/founder-baseline
+claude/speed-ux-fixes
+claude/state-audit-fzv14x
+claude/virtual-museum
+claude/content-port-new-chapters
+claude/divine-archives-completion-2bplik
+claude/divine-archives-update-xg83tz
+claude/divine-archives-status-images-w5l0fk
+claude/games-build
+claude/games-fighter-cutout
+claude/games-fighter-f3
+claude/games-fighter-rig
+claude/locate-current-task-cmjnz3
+claude/mini-games-layer
+claude/site-information-updates-0ycl4c
+claude/site-overhaul
+claude/stage-3-ycbpej
+claude/games-audit
+claude/divine-archives-audit-nr3mln
+claude/state-audit
+claude/pending-reviews-approval-bhb8n4
+claude/next-ptzs6g
+claude/pose-based-fighter-sprites-ot2nig
+claude/seo-quick-fixes
+claude/pantheon-static
+claude/compare-underworld-link
+claude/first-screen-fighter
+claude/pilgrimage
