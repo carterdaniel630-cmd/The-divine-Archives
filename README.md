@@ -78,11 +78,13 @@ The-divine-Archives/
 ## The website
 
 `docs/` is a static site: plain HTML, CSS and JavaScript, no framework and
-nothing built at request time. The chapter, era, listing, Vault, search-index
+nothing built at request time. The chapter, era, listing, Vault, Pantheon, search-index
 and sitemap pages are **prerendered**, and the generated files are committed.
 After changing content, rebuild in this order:
 
 ```sh
+node tools/stamp-dates.js      # published / revised dates (content/dates.json)
+node tools/build-og.js         # share images, only the ones whose title or art changed (needs Playwright)
 node tools/build-vault.js
 node tools/build-chapters.js
 node tools/build-pages.js
@@ -93,6 +95,12 @@ node tools/build-sky.js        # only when the planetarium's lore or star data c
 A chapter's body is converted from its markdown with
 `node tools/md-to-chapter.js <id> <file.md>` and placed in `content/chapters.js`;
 its listing entry (title, era, `pending` flag) lives in `docs/assets/data.js`.
+
+Search and sharing: every chapter, Vault entry and era page has its own
+1200×630 share image in `docs/assets/og/` (drawn from the chapter's plate or the
+era's emblem; the hand-written pages use `site.jpg`), and its Article data and
+sitemap entry carry the dates from `content/dates.json`. `stamp-dates.js` moves a
+chapter's "revised" date only when its markdown changes.
 
 To preview locally: `node tools/serve.js 8080` and open http://localhost:8080
 (it compresses files the way Cloudflare does; `python3 -m http.server -d docs`
@@ -126,7 +134,7 @@ on feature branches and reaches `main` by fast-forward once approved.
 - The email form answers "not configured" until a KV namespace named
   `SUBSCRIBERS` is bound to the Pages project, and says so honestly.
 - **Analytics:** Cloudflare Web Analytics is wired in but off. Paste the site
-  token into `docs/assets/site-config.js` (`cfAnalyticsToken`) to turn it on. It
+  token into `docs/site-config.js` (`cfAnalyticsToken`) to turn it on. It
   sets no cookies.
 - **Note:** the GitHub *default* branch is still the old `claude/session-start-ikztvo`.
   Production is `main`. Scheduled checks (the weekly link check) run only once the

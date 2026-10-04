@@ -65,6 +65,8 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - Production deploys from `main` only: `.github/workflows/deploy.yml` runs `wrangler pages deploy docs`
   to Cloudflare Pages on every push. Work on a feature branch and merge by fast-forward when approved.
 - Pages are prerendered and the output is committed. After a content change run, in order:
+  `node tools/stamp-dates.js` (dates in `content/dates.json`), `node tools/build-og.js` (share images in
+  `docs/assets/og/`; renders only changed cards, needs Playwright),
   `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`,
   `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
   The museum's planetarium has its own step, `node tools/build-sky.js` (star catalogue in
@@ -76,7 +78,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.
 - Besides chapters the site carries the Vault (`docs/vault/`, data in `docs/assets/vault-data.js`), the
-  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`), the Pilgrimage of walkable sites (`docs/pilgrimage/`, list in `docs/assets/pilgrimage-data.js`, pages written by `build-pages.js`, checked by `tools/verify-pilgrimage.js`; every on-site claim follows the evidence standard and every dimension names its survey source in the site's `dims.js`) and 12 mini-games (`docs/assets/games/`),
+  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`; its figure grid is prerendered into the page by `build-pages.js`, so rebuild after changing a figure), the Pilgrimage of walkable sites (`docs/pilgrimage/`, list in `docs/assets/pilgrimage-data.js`, pages written by `build-pages.js`, checked by `tools/verify-pilgrimage.js`; every on-site claim follows the evidence standard and every dimension names its survey source in the site's `dims.js`) and 12 mini-games (`docs/assets/games/`),
   all held to the same sourcing standard.
 
 ## Sourcing standard (non-negotiable)
