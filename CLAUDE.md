@@ -64,6 +64,8 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - Production deploys from `main` only: `.github/workflows/deploy.yml` runs `wrangler pages deploy docs`
   to Cloudflare Pages on every push. Work on a feature branch and merge by fast-forward when approved.
 - Pages are prerendered and the output is committed. After a content change run, in order:
+  `node tools/stamp-dates.js` (dates in `content/dates.json`), `node tools/build-og.js` (share images in
+  `docs/assets/og/`; renders only changed cards, needs Playwright),
   `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`,
   `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
   The museum's planetarium has its own step, `node tools/build-sky.js` (star catalogue in

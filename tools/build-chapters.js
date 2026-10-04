@@ -15,6 +15,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const SEO = require("./seo");
 
 const ROOT = path.join(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
@@ -210,7 +211,9 @@ function pageFor(ch) {
     url: url,
     inLanguage: "en",
     isPartOf: { "@type": "WebSite", name: "The Divine Archives", url: SITE + "/" },
-    publisher: { "@type": "Organization", name: "The Divine Archives", url: SITE + "/" }
+    publisher: { "@type": "Organization", name: "The Divine Archives", url: SITE + "/" },
+    ...(SEO.imageUrl(ch.id) ? { image: SEO.imageUrl(ch.id) } : {}),
+    ...(SEO.dates(ch.id) ? { datePublished: SEO.dates(ch.id).published, dateModified: SEO.dates(ch.id).modified } : {})
   });
 
   const crumb2 = ch.era
@@ -241,7 +244,7 @@ function pageFor(ch) {
   <meta property="og:title" content="${esc(fullTitle)}" />
   <meta property="og:description" content="${esc(desc)}" />
   <meta property="og:url" content="${url}" />
-  <meta name="twitter:card" content="summary" />
+${SEO.shareTags(ch.id, ch.title + " — The Divine Archives")}  <meta name="twitter:card" content="${SEO.twitterCard(ch.id)}" />
   <meta name="twitter:title" content="${esc(fullTitle)}" />
   <meta name="twitter:description" content="${esc(desc)}" />
   <script type="application/ld+json">${jsonld}</script>
