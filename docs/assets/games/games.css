@@ -91,6 +91,8 @@
   background: rgba(10,7,3,.78);
   backdrop-filter: blur(2px);
 }
+/* phones: no blur behind the game window (a full-screen blur every frame costs frame rate; speed fix #7) */
+@media (pointer: coarse) { .game-overlay { backdrop-filter: none; background: rgba(10,7,3,.9); } }
 @media (prefers-reduced-motion: no-preference) {
   .game-overlay { animation: game-fade .25s ease both; }
   .game-dialog  { animation: game-rise .3s cubic-bezier(.2,.8,.2,1) both; }

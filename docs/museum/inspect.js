@@ -16,7 +16,7 @@
 import * as THREE from "three";
 import { buildReliquary, reliquaryStage } from "./reliquary.js?v=1";
 import { buildRelic, hasRelic } from "./relics.js?v=1";
-import { englishHTML, hasEnglish } from "./english.js?v=1";
+import { englishHTML, hasEnglish } from "./english.js?v=2";
 import { scanEmbed } from "./scans.js?v=1";
 
 const TAU = Math.PI * 2;

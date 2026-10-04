@@ -1,0 +1,24 @@
+name: Link guard
+
+# On every push that changes the site's pages (not only on pull requests): fails if a page carries a
+# garbled source link (href="<…, or a link nested inside a link — the 2026-09-29 audit's "finding B")
+# or an internal link to a file that does not exist. Same checks as review.yml, run on pushes too.
+on:
+  push:
+    branches: ["**"]
+    paths: ["docs/**/*.html", "tools/build-*.js", "tools/md-to-chapter.js", "tools/review-checks.js", ".github/workflows/links.yml"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Garbled and broken internal links
+        run: node tools/review-checks.js --only garbled-links,internal-links

@@ -1474,14 +1474,14 @@
       // hanging from the rope: the body tilts with it (rotate about the hands, not the hips)
       if (p.swing) { cx.translate(0, -24); cx.rotate(-p.swing.th * p.face * 0.9); cx.translate(0, 24); }
       cx.rotate(lean); cx.scale(sc, sc);
-      function leg(t, k) {
+      function leg(t, k, dark) {
         cx.save(); cx.rotate(t);
-        cx.save(); cx.scale(0.8, 1); cx.drawImage(I.thigh, -M.thigh.pivotX, -M.thigh.pivotY); cx.restore();
+        cx.save(); cx.scale(0.8, 1); cx.drawImage(dark ? darker(I.thigh) : I.thigh, -M.thigh.pivotX, -M.thigh.pivotY); cx.restore();
         cx.translate(M.kneeFromHip[0] * 0.8, M.kneeFromHip[1]); cx.rotate(k);
-        cx.save(); cx.scale(0.8, 1); cx.drawImage(I.shin, -M.shin.pivotX, -M.shin.pivotY); cx.restore();
+        cx.save(); cx.scale(0.8, 1); cx.drawImage(dark ? darker(I.shin) : I.shin, -M.shin.pivotX, -M.shin.pivotY); cx.restore();
         cx.restore();
       }
-      cx.save(); cx.filter = "brightness(0.62)"; leg(tB, kB); cx.restore();   // back leg recedes (filter is a no-op where unsupported)
+      leg(tB, kB, true);   // back leg recedes: a darkened copy made once (speed fix #4; a per-frame filter was costly)
       leg(tF, kF);
       cx.drawImage(I.body, -M.body.pivotX, -M.body.pivotY);
       // the whip arm: a raised sleeve and fist while lashing or holding the rope
@@ -1536,13 +1536,23 @@
       cx.globalAlpha = 1;
     }
 
+    // a copy of a sprite at 62% brightness, made once and kept (replaces a per-frame brightness filter)
+    var DARK = new Map();
+    function darker(img) {
+      var d = DARK.get(img); if (d) return d;
+      if (!img || !img.width) return img;
+      d = document.createElement("canvas"); d.width = img.width; d.height = img.height;
+      var g = d.getContext("2d"); g.drawImage(img, 0, 0); g.globalCompositeOperation = "source-atop"; g.fillStyle = "rgba(0,0,0,.38)"; g.fillRect(0, 0, d.width, d.height);
+      DARK.set(img, d); return d;
+    }
     /* ---------- light: dark tomb zones with torch and lantern light cut out ---------- */
-    var lightCv = null, lx = null;
+    // drawn at half resolution and scaled up: the layer is all soft gradients (speed fix #4)
+    var lightCv = null, lx = null, LQ = 0.5;
     function drawLighting(cam) {
       var zones = st.lv.E.dark; if (!zones.length) return;
       if (!zones.some(function (z) { return (z[1] + 1) * TILE > cam && z[0] * TILE < cam + VIEWW; })) return;
-      if (!lightCv || lightCv.width !== Math.round(VIEWW * DPR)) { lightCv = document.createElement("canvas"); lightCv.width = Math.round(VIEWW * DPR); lightCv.height = Math.round(VIEWH * DPR); lx = lightCv.getContext("2d"); }
-      lx.setTransform(DPR, 0, 0, DPR, 0, 0); lx.globalCompositeOperation = "source-over"; lx.clearRect(0, 0, VIEWW, VIEWH);
+      if (!lightCv || lightCv.width !== Math.round(VIEWW * DPR * LQ)) { lightCv = document.createElement("canvas"); lightCv.width = Math.round(VIEWW * DPR * LQ); lightCv.height = Math.round(VIEWH * DPR * LQ); lx = lightCv.getContext("2d"); }
+      lx.setTransform(DPR * LQ, 0, 0, DPR * LQ, 0, 0); lx.globalCompositeOperation = "source-over"; lx.clearRect(0, 0, VIEWW, VIEWH);
       zones.forEach(function (z) {
         var x0 = z[0] * TILE - cam, x1 = (z[1] + 1) * TILE - cam, ramp = 72;
         var g = lx.createLinearGradient(x0 - ramp * 0.3, 0, x0 + ramp, 0); g.addColorStop(0, "rgba(6,4,3,0)"); g.addColorStop(1, "rgba(6,4,3,.9)");
@@ -1559,7 +1569,7 @@
       st.lv.E.glyphsets.forEach(function (gs) { gs.tiles.forEach(function (tl) { if (tl.lit) hole(tl.c * TILE + 12 - cam, (tl.r + 1) * TILE - 10, 34, 0.7); }); });
       st.checks.forEach(function (k) { if (k.on) hole(k.x - cam, k.y - 8, 60, 0.8); });
       hole(st.exit.x - cam, st.exit.y - 22, 60, 0.7);
-      cx.setTransform(1, 0, 0, 1, 0, 0); cx.drawImage(lightCv, 0, 0); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      cx.setTransform(1, 0, 0, 1, 0, 0); cx.drawImage(lightCv, 0, 0, Math.round(VIEWW * DPR), Math.round(VIEWH * DPR)); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       cx.globalCompositeOperation = "lighter";
       st.lv.E.torches.forEach(function (tc) { var x = tc.c * TILE + 12 - cam; if (x < -80 || x > VIEWW + 80) return; var g = cx.createRadialGradient(x, tc.r * TILE + 6, 2, x, tc.r * TILE + 6, 70); g.addColorStop(0, "rgba(255,150,60,.22)"); g.addColorStop(1, "rgba(255,120,40,0)"); cx.fillStyle = g; cx.fillRect(x - 70, tc.r * TILE - 64, 140, 140); });
       cx.globalCompositeOperation = "source-over";
