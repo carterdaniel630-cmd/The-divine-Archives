@@ -62,8 +62,10 @@
 
 /* ---------- first-visit hint ---------- */
 .games-hint {
-  position: fixed; left: 50%; bottom: 1.1rem; transform: translateX(-50%);
-  z-index: 60; max-width: min(30rem, calc(100vw - 2rem));
+  /* pinned to both edges and centred: "left: 50%" + translate let the box use only half the
+     screen's width, which squeezed it into a narrow column on phones */
+  position: fixed; left: 1rem; right: 1rem; bottom: 1.1rem; margin: 0 auto;
+  z-index: 61; max-width: 30rem; box-sizing: border-box;
   display: flex; gap: .75rem; align-items: flex-start;
   background: var(--panel-2); color: var(--ink);
   border: 1px solid var(--line); border-radius: 10px;
