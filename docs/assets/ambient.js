@@ -336,7 +336,14 @@
       ".da-audio.is-on .mute{color:var(--gold-bright,#e6c27a)}" +
       "@keyframes da-pulse{0%,100%{opacity:1}50%{opacity:.45}}" +
       "@media (prefers-reduced-motion:reduce){.da-audio.is-on .dot{animation:none}}" +
-      "@media (max-width:640px){.da-audio .vol{width:56px}}" +
+      // phones: a smaller button with no slider (the phone's own volume keys do that), tucked away
+      // while the reader scrolls down so it never sits on top of the text; and none at all while a
+      // game is open (every game has its own sound button)
+      "@media (max-width:640px){.da-audio{right:.6rem;bottom:.6rem;transition:transform .3s ease,opacity .3s ease}" +
+        ".da-audio .vol{display:none}.da-audio .mute{width:34px;height:34px}.da-audio .mute svg{width:18px;height:18px}" +
+        ".da-audio.is-tucked{transform:translateY(160%);opacity:0;pointer-events:none}}" +
+      "@media (max-width:640px) and (prefers-reduced-motion:reduce){.da-audio{transition:none}}" +
+      "body:has(.game-overlay) .da-audio{display:none}" +
       "@media print{.da-audio{display:none}}";
     document.head.appendChild(s);
   }
@@ -388,6 +395,21 @@
 
     wrap.appendChild(slider); wrap.appendChild(btn);
     document.body.appendChild(wrap);
+
+    // tuck the control away while scrolling down (it only takes effect on narrow screens, in CSS);
+    // bring it back on scrolling up, near the end of the page, or when it gets keyboard focus
+    var lastY = window.scrollY || 0, ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var y = window.scrollY || 0, atEnd = window.innerHeight + y >= document.documentElement.scrollHeight - 80;
+        if (y > lastY + 4 && y > 160 && !atEnd) wrap.classList.add("is-tucked");
+        else if (y < lastY - 4 || atEnd || y <= 160) wrap.classList.remove("is-tucked");
+        lastY = y;
+      });
+    }, { passive: true });
+    wrap.addEventListener("focusin", function () { wrap.classList.remove("is-tucked"); });
 
     // off by default — play only if the visitor turned it on before (opt-in)
     if (localStorage.getItem(KEY_ON) === "on") {

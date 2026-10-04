@@ -319,7 +319,7 @@ ${tiles}
 
 ${FOOTER}
 </div>
-<script src="../assets/ambient.js" defer></script>
+<script src="../assets/ambient.js?v=2" defer></script>
 <script src="../site-config.js" defer></script>
 </body>
 </html>
@@ -454,7 +454,7 @@ ${FOOTER_ROOT}
     input.addEventListener("input", function () { draw(input.value); });
   })();
 </script>
-<script src="assets/ambient.js" defer></script>
+<script src="assets/ambient.js?v=2" defer></script>
 <script src="site-config.js" defer></script>
 </body>
 </html>

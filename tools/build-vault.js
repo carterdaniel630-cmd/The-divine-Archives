@@ -346,7 +346,7 @@ ${footer("../")}
 <script src="../assets/vault-data.js?v=10" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
 <script src="../assets/vault/relic.js?v=13" defer></script>
-<script src="../assets/ambient.js" defer></script>
+<script src="../assets/ambient.js?v=2" defer></script>
 <script src="../site-config.js" defer></script>
 </body>
 </html>
@@ -429,7 +429,7 @@ ${footer("")}
   });
 })();
 </script>
-<script src="assets/ambient.js" defer></script>
+<script src="assets/ambient.js?v=2" defer></script>
 <script src="site-config.js" defer></script>
 </body>
 </html>
