@@ -23,44 +23,64 @@
   var state = { q: "", kind: "all", trad: "all" };
   try { var saved = JSON.parse(sessionStorage.getItem("pantheon-filter") || "null"); if (saved) { state.kind = saved.kind || "all"; state.trad = saved.trad || "all"; } } catch (e) { /* storage unavailable */ }
 
-  // ---------------------------------------------------------------- toolbar
-  var bar = el("div", { class: "pn-bar" });
-  var search = el("label", { class: "pn-search" }, '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>');
-  var input = el("input", { type: "search", placeholder: "Search Characters...", "aria-label": "Search characters", autocomplete: "off", spellcheck: "false" });
-  search.appendChild(input);
-  var pills = el("div", { class: "pn-pills", role: "group", "aria-label": "Filter by kind" });
-  var kinds = [["all", "All"]].concat(Object.keys(P.kinds).map(function (k) { return [k, P.kinds[k]]; }));
-  kinds.forEach(function (k) {
-    var b = el("button", { type: "button", class: "pn-pill", "data-k": k[0], "aria-pressed": String(state.kind === k[0]) }, esc(k[1]));
-    b.addEventListener("click", function () { state.kind = k[0]; render(); });
-    pills.appendChild(b);
-  });
-  var sel = el("select", { class: "pn-trad", "aria-label": "Filter by tradition" });
-  sel.appendChild(el("option", { value: "all" }, "Every tradition"));
-  Object.keys(P.traditions).sort(function (a, b) { return P.traditions[a].name.localeCompare(P.traditions[b].name); }).forEach(function (t) {
-    var o = el("option", { value: t }, esc(P.traditions[t].name)); sel.appendChild(o);
+  // The directory is prerendered into the page by tools/build-pages.js (so its
+  // figures are readable without JavaScript); this script attaches to that
+  // markup. If it is missing (an old cached page), it builds the same markup.
+  var pre = mount.querySelector(".pn-bar") && mount.querySelector(".pn-grid");
+  var bar, input, pills, sel, count, grid, empty;
+  if (pre) {
+    bar = mount.querySelector(".pn-bar"); input = bar.querySelector("input");
+    pills = bar.querySelector(".pn-pills"); sel = bar.querySelector(".pn-trad");
+    count = mount.querySelector(".pn-count"); grid = mount.querySelector(".pn-grid"); empty = mount.querySelector(".pn-empty");
+  } else {
+    // ---------------------------------------------------------------- toolbar
+    bar = el("div", { class: "pn-bar" });
+    var search = el("label", { class: "pn-search" }, '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>');
+    input = el("input", { type: "search", placeholder: "Search Characters...", "aria-label": "Search characters", autocomplete: "off", spellcheck: "false" });
+    search.appendChild(input);
+    pills = el("div", { class: "pn-pills", role: "group", "aria-label": "Filter by kind" });
+    [["all", "All"]].concat(Object.keys(P.kinds).map(function (k) { return [k, P.kinds[k]]; })).forEach(function (k) {
+      pills.appendChild(el("button", { type: "button", class: "pn-pill", "data-k": k[0], "aria-pressed": String(k[0] === "all") }, esc(k[1])));
+    });
+    sel = el("select", { class: "pn-trad", "aria-label": "Filter by tradition" });
+    sel.appendChild(el("option", { value: "all" }, "Every tradition"));
+    Object.keys(P.traditions).sort(function (a, b) { return P.traditions[a].name.localeCompare(P.traditions[b].name); }).forEach(function (t) {
+      sel.appendChild(el("option", { value: t }, esc(P.traditions[t].name)));
+    });
+    bar.appendChild(search); bar.appendChild(pills); bar.appendChild(sel);
+    count = el("p", { class: "pn-count", role: "status", "aria-live": "polite" });
+    grid = el("ul", { class: "pn-grid" });
+    empty = el("p", { class: "pn-empty", hidden: "" }, "No figure matches that search. Try another name, a tradition, or a word such as <em>sun</em> or <em>underworld</em>.");
+    mount.appendChild(bar); mount.appendChild(count); mount.appendChild(grid); mount.appendChild(empty);
+    figs.forEach(function (f) {
+      var tr = P.traditions[f.t];
+      var li = el("li", { class: "pn-cell" });
+      li.appendChild(el("a", { class: "pn-card", href: "#" + f.id, "data-id": f.id, style: "--acc:" + tr.color },
+        '<span class="pn-art">' + ART.svg(f, tr.color, "c" + f.id) + "</span>" +
+        '<span class="pn-name">' + esc(f.n) + "</span>" +
+        '<span class="pn-badge">' + esc(tr.name) + "</span>" +
+        (f.c ? '<span class="pn-flag" title="Something about this figure is contested">contested</span>' : "")));
+      grid.appendChild(li);
+    });
+  }
+  Array.prototype.forEach.call(pills.querySelectorAll(".pn-pill"), function (b) {
+    b.addEventListener("click", function () { state.kind = b.getAttribute("data-k"); render(); });
   });
   sel.value = state.trad;
+  if (sel.value !== state.trad) { state.trad = "all"; sel.value = "all"; }
   sel.addEventListener("change", function () { state.trad = sel.value; render(); });
-  bar.appendChild(search); bar.appendChild(pills); bar.appendChild(sel);
-  var count = el("p", { class: "pn-count", role: "status", "aria-live": "polite" });
-  var grid = el("ul", { class: "pn-grid" });
-  var empty = el("p", { class: "pn-empty", hidden: "" }, "No figure matches that search. Try another name, a tradition, or a word such as <em>sun</em> or <em>underworld</em>.");
-  mount.appendChild(bar); mount.appendChild(count); mount.appendChild(grid); mount.appendChild(empty);
 
   // ---------------------------------------------------------------- cards
-  var cards = figs.map(function (f) {
-    var tr = P.traditions[f.t];
-    var li = el("li", { class: "pn-cell" });
-    var a = el("a", { class: "pn-card", href: "#" + f.id, "data-id": f.id, style: "--acc:" + tr.color },
-      '<span class="pn-art">' + ART.svg(f, tr.color, "c" + f.id) + "</span>" +
-      '<span class="pn-name">' + esc(f.n) + "</span>" +
-      '<span class="pn-badge">' + esc(tr.name) + "</span>" +
-      (f.c ? '<span class="pn-flag" title="Something about this figure is contested">contested</span>' : ""));
+  // Walk the cards in page order, so Previous / Next follow the grid as shown.
+  var byId = {}; figs.forEach(function (f) { byId[f.id] = f; });
+  var cards = [];
+  Array.prototype.forEach.call(grid.querySelectorAll(".pn-card"), function (a) {
+    var f = byId[a.getAttribute("data-id")];
+    if (!f) return;
     a.addEventListener("click", function (e) { e.preventDefault(); open(f.id, true); });
-    li.appendChild(a); grid.appendChild(li);
-    return { f: f, li: li };
+    cards.push({ f: f, li: a.parentNode });
   });
+  figs = cards.map(function (c) { return c.f; });
 
   var shown = [];
   function render() {

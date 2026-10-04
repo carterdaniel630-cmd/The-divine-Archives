@@ -58,6 +58,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 /tools/                     <- build-*.js (prerender), md-to-chapter.js, verify-*.js (game facts vs chapter text)
 /art-source/                <- source artwork kept out of the deployed site
 /museum/                    <- Virtual Museum governance, plan and phase reports (the museum is docs/museum.html + docs/museum/)
+/plans/                     <- plans awaiting approval or in build (pilgrimage-sites.md, reviewer-agent.md)
 /reviews/                   <- reviewer + auditor: REVIEWER.md, AUDITOR.md, scorecard.md, status.json (auto-pass on/off),
                                cleared.json (Carter's clearance log); batch reports live on the review-log branch
 ```
@@ -83,7 +84,7 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   Wikipedia share warning, and with `--build` that the committed output matches a fresh build), plus a `guard` job
   that fails any PR into main from a `review-test/` branch or carrying the planted-error marker. Keep it passing.
 - Besides chapters the site carries the Vault (`docs/vault/`, data in `docs/assets/vault-data.js`), the
-  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`) and 12 mini-games (`docs/assets/games/`),
+  Pantheon (`docs/pantheon.html`, `docs/assets/pantheon-data.js`; its figure grid is prerendered into the page by `build-pages.js`, so rebuild after changing a figure), the Pilgrimage of walkable sites (`docs/pilgrimage/`, list in `docs/assets/pilgrimage-data.js`, pages written by `build-pages.js`, checked by `tools/verify-pilgrimage.js`; every on-site claim follows the evidence standard and every dimension names its survey source in the site's `dims.js`) and 12 mini-games (`docs/assets/games/`),
   all held to the same sourcing standard.
 
 ## Sourcing standard (non-negotiable)

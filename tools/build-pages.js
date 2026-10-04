@@ -48,7 +48,7 @@ const sandbox = {
   console
 };
 vm.createContext(sandbox);
-for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/vault-data.js", "assets/pantheon-data.js"]) {
+for (const f of ["assets/data.js", "assets/emblems.js", "assets/plates.js", "assets/vault-data.js", "assets/pantheon-data.js", "assets/pantheon-art.js", "assets/pilgrimage-data.js"]) {
   vm.runInContext(fs.readFileSync(path.join(DOCS, f), "utf8"), sandbox, { filename: f });
 }
 // the chapter bodies live outside the deployed folder (no page loads them; only these tools do)
@@ -199,6 +199,7 @@ const HEADER = `  <header class="site-header">
         <a href="../symbols.html">Symbols</a>
         <a href="../pantheon.html">Pantheon</a>
         <a href="../vault.html">Vault</a>
+        <a href="../pilgrimage.html">Pilgrimage</a>
         <a href="../methodology.html">Methodology</a>
         <a href="../about.html">About</a>
       </nav>
@@ -462,13 +463,231 @@ ${FOOTER_ROOT}
 `;
 }
 
+// ---------- 2c. the Pilgrimage: the list of sites, and one page per live site ----------
+// Data: docs/assets/pilgrimage-data.js. A "live" site gets docs/pilgrimage/<id>.html, a shell that
+// loads docs/pilgrimage/engine.js with the site's module (docs/pilgrimage/sites/<id>/site.js).
+const PILG = sandbox.window.PILGRIMAGE || { sites: [] };
+const LABELS = { R: ["Reconstruction", "Lost or destroyed: what you walk is a labelled reconstruction."], C: ["Claimed site", "A claimed or traditional site: the dispute over it is shown on site."], S: ["Exterior only", "Religiously restricted or sensitive: shown from outside only."] };
+function pilgrimageListPage() {
+  const chTitle = (id) => { const c = A.chapters.find((x) => x.id === id); return c ? c.title : id; };
+  const vTitle = (id) => { const v = (VAULT.items || []).find((x) => x.id === id); return v ? v.title : id; };
+  const groups = [{ slug: null, title: "The Rotunda", sub: "comparative themes" }].concat(A.eras.map((e) => ({ slug: e.slug, title: "Era " + e.num + " · " + e.name, sub: e.dates })));
+  const card = (s) => {
+    const live = s.status === "live";
+    const tags = (live ? '<span class="pg-tag live">Open · walk it</span>' : '<span class="pg-tag">Coming</span>') +
+      (s.label ? `<span class="pg-tag ${esc(s.label)}" title="${esc(LABELS[s.label][1])}">${esc(LABELS[s.label][0])}</span>` : "") +
+      (live && s.pending ? '<span class="pg-tag" style="border-color:var(--warn);color:var(--warn)">Recently added · pending review</span>' : "");
+    const chs = (s.chapters || []).map((id) => `<a href="chapters/${esc(id)}.html">${esc(chTitle(id))}</a>`).join(", ");
+    const vs = (s.vault || []).map((id) => { const v = (VAULT.items || []).find((x) => x.id === id); return v ? `<a href="vault/${esc(v.slug)}.html">${esc(v.title)}</a>` : ""; }).filter(Boolean).join(", ");
+    return `        <li class="pg-site${live ? " is-live" : ""}">${tags}<h3>${live ? `<a href="pilgrimage/${esc(s.id)}.html">${esc(s.name)}</a>` : esc(s.name)}</h3>` +
+      (s.blurb ? `<p>${esc(s.blurb)}</p>` : "") +
+      (chs ? `<p class="pg-meta">Chapters: ${chs}</p>` : "") + (vs ? `<p class="pg-meta">Vault: ${vs}</p>` : "") +
+      (live ? `<a class="pg-go" href="pilgrimage/${esc(s.id)}.html">Enter the site</a>` : "") + "</li>";
+  };
+  const sections = groups.map((g) => {
+    const list = PILG.sites.filter((s) => (s.era || null) === g.slug);
+    if (!list.length) return "";
+    return `    <section class="pg-era"><h2>${esc(g.title)}<span>${esc(g.sub)}</span></h2>\n      <ul class="pg-sites">\n${list.map(card).join("\n")}\n      </ul>\n    </section>`;
+  }).join("\n");
+  const nLive = PILG.sites.filter((s) => s.status === "live").length;
+  const url = SITE + "/pilgrimage.html", title = "The Pilgrimage — The Divine Archives";
+  const desc = "Walk inside the world's sacred sites, modelled from published surveys and linked to the archive's chapters and Vault objects. " + nLive + " open, " + (PILG.sites.length - nLive) + " in preparation.";
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${esc(title)}</title>
+  <meta name="description" content="${esc(desc)}" />
+  <link rel="icon" href="${FAVICON}" />
+  <link rel="stylesheet" href="assets/archive.css" />
+  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
+  <link rel="canonical" href="${url}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="${esc(title)}" />
+  <meta property="og:description" content="${esc(desc)}" />
+  <meta property="og:url" content="${url}" />
+  <meta name="twitter:card" content="summary" />
+</head>
+<body>
+<a class="skip-link" href="#pg-list">Skip to content</a>
+<div class="page">
+${HEADER_ROOT.replace('<a href="pilgrimage.html">', '<a href="pilgrimage.html" aria-current="page">')}
+
+  <main id="pg-list">
+    <div class="page-head">
+      <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><span>The Pilgrimage</span></p>
+      <p class="eyebrow">Walkable sacred sites</p>
+      <h1>The Pilgrimage</h1>
+      <p class="lede">Step through the golden portal in the museumStep through a portal from the museum&rsquo;s Rotunda and walkrsquo;s entrance hall and walk inside the places themselves, modelled from published surveys. Each holds copies of its relics, linked to the Vault and to the chapters. Sites open one or two at a time.</p>
+    </div>
+    <section class="wrap" style="max-width:64rem;padding-block:1rem 2rem">
+      <p class="tiny center" style="margin:0 auto;max-width:44rem">Every site is our own model. No one else&rsquo;s photographs or 3D scans are used; published plans and measurements are references only. What is measured, what is approximate and what is unknown is said on site, by the same evidence standard as the chapters.</p>
+      <ul class="pg-key">
+        <li><span class="pg-tag R">Reconstruction</span> ${esc(LABELS.R[1])}</li>
+        <li><span class="pg-tag C">Claimed site</span> ${esc(LABELS.C[1])}</li>
+        <li><span class="pg-tag S">Exterior only</span> ${esc(LABELS.S[1])}</li>
+      </ul>
+${sections}
+      <p class="tiny center" style="margin-top:2.4rem">The way in: <a href="museum.html">the museum</a>, through the golden portal in its entrance hall. See the <a href="methodology.html">methodology</a> for the sourcing standard.</p>
+    </section>
+  </main>
+
+${FOOTER_ROOT}
+</div>
+<script src="assets/ambient.js?v=2" defer></script>
+<script src="site-config.js" defer></script>
+</body>
+</html>
+`;
+}
+function pilgrimageSitePage(s) {
+  const title = s.name + " — The Pilgrimage · The Divine Archives";
+  const chs = (s.chapters || []).map((id) => { const c = A.chapters.find((x) => x.id === id); return c ? `<li><a href="../chapters/${esc(id)}.html">${esc(c.title)}</a></li>` : ""; }).join("");
+  const vs = (s.vault || []).map((id) => { const v = (VAULT.items || []).find((x) => x.id === id); return v ? `<li><a href="../vault/${esc(v.slug)}.html">${esc(v.title)}</a></li>` : ""; }).join("");
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>${esc(title)}</title>
+  <meta name="description" content="${esc(s.blurb || s.name)}" />
+  <!-- A walkable model is an entry point, like the museum: the chapter and Vault pages are canonical. -->
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="${FAVICON}" />
+  <link rel="stylesheet" href="../assets/archive.css" />
+  <link rel="stylesheet" href="../museum/museum.css?v=7" />
+  <link rel="stylesheet" href="pilgrimage.css?v=1" />
+  <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body class="museum-page pilgrimage-page">
+<a class="skip-link" href="#pg-fallback">Skip to the text version</a>
+<div id="mu-stage" aria-hidden="true"></div>
+<header class="mu-bar" id="mu-bar" hidden>
+  <a class="mu-brand" href="../pilgrimage.html" aria-label="Back to the list of Pilgrimage sites">
+    <svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" opacity="0.5"/><path d="M60 24 L64 56 L60 60 L56 56 Z M60 96 L56 64 L60 60 L64 64 Z M24 60 L56 56 L60 60 L56 64 Z M96 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/></svg>
+    <span>The Pilgrimage</span>
+  </a>
+  <p class="mu-where" id="mu-where" aria-live="polite"></p>
+  <nav class="mu-tools" aria-label="Site tools">
+    <button type="button" id="mu-guide-btn" aria-controls="mu-guide" aria-expanded="false"><span class="mu-l">Guide</span><span class="mu-s">Guide</span></button>
+    <button type="button" id="mu-help-btn">Help</button>
+    <button type="button" id="mu-motion-btn" aria-pressed="false"><span class="mu-l">Reduce motion</span><span class="mu-s">Motion</span></button>
+  </nav>
+</header>
+<div class="mu-intro" id="mu-intro" hidden>
+  <div class="mu-intro-card" role="dialog" aria-modal="true" aria-labelledby="mu-intro-h">
+    <p class="mu-kicker">The Pilgrimage · ${esc(s.place || "")}</p>
+    ${s.pending ? '<p class="pg-pending">Recently added · pending full review</p>' : ""}
+    <h1 id="mu-intro-h">${esc(s.name)}</h1>
+    <p>${esc(s.blurb || "")}</p>
+    <p class="mu-note">Sizes, slopes and proportions come from published survey measurements; the stone is drawn in code, not photographed. Gold markers open notes on what you see, including <strong>what is measured, what is approximate and what is unknown</strong>. Objects in the cases are renditions, not replicas.</p>
+    <div class="mu-keys" id="mu-keys"></div>
+    <div class="mu-intro-actions">
+      <button type="button" class="mu-enter" id="mu-enter">Enter</button>
+    </div>
+    <p class="mu-small" id="mu-status" aria-live="polite">Preparing the site&hellip;</p>
+  </div>
+</div>
+<div class="mu-reticle" id="mu-reticle" hidden aria-hidden="true"></div>
+<p class="mu-tag" id="mu-tag" hidden aria-hidden="true"></p>
+<div class="mu-fade" id="mu-fade" aria-hidden="true"></div>
+<div class="pg-nav" id="pg-nav" hidden><button type="button" id="pg-back">&lsaquo; Walk back</button><button type="button" id="pg-walk" aria-pressed="false">Walk on &rsaquo;</button></div>
+<p class="pg-busy" id="pg-busy" hidden>Building the next section&hellip;</p>
+<aside class="mu-guide" id="mu-guide" hidden aria-label="Guide">
+  <div class="mu-guide-head"><h2 id="mu-guide-h">Guide</h2><button type="button" class="mu-x" id="mu-guide-x" aria-label="Close the guide">&times;</button></div>
+  <div id="mu-guide-body"></div>
+</aside>
+<div class="mu-card-wrap" id="mu-card-wrap" hidden>
+  <div class="mu-card" id="mu-card" role="dialog" aria-modal="true" aria-labelledby="mu-card-h" tabindex="-1">
+    <button type="button" class="mu-x" id="mu-card-x" aria-label="Close">&times;</button>
+    <div id="mu-card-body"></div>
+    <p class="mu-card-foot">A model, not a photograph. The linked chapter and Vault pages carry the full sources and the evidence verdict.</p>
+  </div>
+</div>
+<main class="pg-fallback" id="pg-fallback">
+  <div class="wrap">
+    <p class="eyebrow">The Pilgrimage${s.pending ? " · recently added, pending full review" : ""}</p>
+    <h1>${esc(s.name)}</h1>
+    <p class="lede">${esc(s.blurb || "")}</p>
+    <p>This site is a walkable 3D model and needs a browser with WebGL. Its notes draw on these pages of the archive:</p>
+    ${chs ? `<h3>Chapters</h3><ul>${chs}</ul>` : ""}${vs ? `<h3>Vault</h3><ul>${vs}</ul>` : ""}
+    <p class="tiny"><a href="../pilgrimage.html">All Pilgrimage sites</a> · <a href="../museum.html">The museum</a></p>
+  </div>
+</main>
+<script type="module">import { start } from "./engine.js?v=4"; start(${JSON.stringify(s.id)});</script>
+<script src="../site-config.js" defer></script>
+</body>
+</html>
+`;
+}
+
+// ---------- 2b. the Pantheon ------------------------------------------------
+// Prerenders the directory that docs/assets/pantheon.js used to build in the
+// browser: the toolbar, the count line and every figure card (emblem, name,
+// tradition, contested flag), so the 199 figures are in the page itself.
+// pantheon.js now attaches to this markup instead of creating it; the page
+// looks and behaves the same. Each figure's epithet and description also go
+// into an ItemList JSON-LD block (the detail view itself stays a dialog).
+const PANTHEON = sandbox.window.PANTHEON || { figures: [], traditions: {}, kinds: {} };
+const PANTHEON_ART = sandbox.window.PANTHEON_ART;
+const pantheonFigures = () => PANTHEON.figures.slice().sort((a, b) => a.n.localeCompare(b.n, "en"));
+function pantheonFragment() {
+  const P = PANTHEON;
+  const kinds = [["all", "All"]].concat(Object.keys(P.kinds).map((k) => [k, P.kinds[k]]));
+  const trads = Object.keys(P.traditions).sort((a, b) => P.traditions[a].name.localeCompare(P.traditions[b].name, "en"));
+  const figs = pantheonFigures();
+  const bar =
+    '      <div class="pn-bar">' +
+    '<label class="pn-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>' +
+    '<input type="search" placeholder="Search Characters..." aria-label="Search characters" autocomplete="off" spellcheck="false"></label>' +
+    '<div class="pn-pills" role="group" aria-label="Filter by kind">' +
+    kinds.map((k) => `<button type="button" class="pn-pill" data-k="${esc(k[0])}" aria-pressed="${k[0] === "all"}">${esc(k[1])}</button>`).join("") +
+    "</div>" +
+    '<select class="pn-trad" aria-label="Filter by tradition"><option value="all">Every tradition</option>' +
+    trads.map((t) => `<option value="${esc(t)}">${esc(P.traditions[t].name)}</option>`).join("") +
+    "</select></div>";
+  const count = `      <p class="pn-count" role="status" aria-live="polite">${figs.length} figures from ${Object.keys(P.traditions).length} traditions</p>`;
+  const cards = figs.map((f) => {
+    const tr = P.traditions[f.t];
+    return `        <li class="pn-cell"><a class="pn-card" href="#${esc(f.id)}" data-id="${esc(f.id)}" style="--acc:${tr.color}">` +
+      `<span class="pn-art">${PANTHEON_ART.svg(f, tr.color, "c" + f.id)}</span>` +
+      `<span class="pn-name">${esc(f.n)}</span>` +
+      `<span class="pn-badge">${esc(tr.name)}</span>` +
+      (f.c ? '<span class="pn-flag" title="Something about this figure is contested">contested</span>' : "") +
+      "</a></li>";
+  }).join("\n");
+  const empty = '      <p class="pn-empty" hidden="">No figure matches that search. Try another name, a tradition, or a word such as <em>sun</em> or <em>underworld</em>.</p>';
+  return bar + "\n" + count + "\n      <ul class=\"pn-grid\">\n" + cards + "\n      </ul>\n" + empty;
+}
+function pantheonJsonLd() {
+  const P = PANTHEON;
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "The Pantheon — gods, spirits and mythic figures",
+    url: SITE + "/pantheon.html",
+    numberOfItems: P.figures.length,
+    itemListElement: pantheonFigures().map((f, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: SITE + "/pantheon.html#" + f.id,
+      name: f.n,
+      description: P.traditions[f.t].name + " · " + f.e + " — " + f.d
+    }))
+  };
+  // keep "</" out of the inline script
+  return '  <script type="application/ld+json">' + JSON.stringify(ld).replace(/<\//g, "<\\/") + "</script>";
+}
+
 // ---------- 3. sitemap ----------------------------------------------------
 function buildSitemap() {
   // [url, lastmod or null]. lastmod comes from content/dates.json (tools/stamp-dates.js):
   // a chapter's or Vault entry's own date; an era page takes its newest chapter's.
   const urls = [
     "/", "/eras.html", "/themes.html", "/traditions.html", "/about.html",
-    "/methodology.html", "/compare.html", "/symbols.html"
+    "/methodology.html", "/compare.html", "/symbols.html", "/pilgrimage.html"
   ].map((u) => [SITE + u, null]);
   const pub = A.chapters.filter((c) => c.status === "published");
   const mod = (key) => (SEO.dates(key) || {}).modified || null;
@@ -496,7 +715,9 @@ const injections = [
   ["index.html", "spine", spineFragment()],
   ["eras.html", "ages", agesFragment()],
   ["themes.html", "themes", themesFragment()],
-  ["traditions.html", "traditions", traditionsFragment()]
+  ["traditions.html", "traditions", traditionsFragment()],
+  ["pantheon.html", "pantheon", pantheonFragment()],
+  ["pantheon.html", "pantheon-ld", pantheonJsonLd()]
 ];
 for (const [file, name, frag] of injections) {
   const p = path.join(DOCS, file);
@@ -515,6 +736,12 @@ for (const era of A.eras) {
 // content search: index + page
 const siChanged = writeIfChanged(path.join(DOCS, "assets", "search-index.json"), buildSearchIndex());
 const spChanged = writeIfChanged(path.join(DOCS, "search.html"), searchPage());
+
+// the Pilgrimage
+const pgChanged = writeIfChanged(path.join(DOCS, "pilgrimage.html"), pilgrimageListPage());
+let pgN = 0;
+for (const s of PILG.sites.filter((x) => x.status === "live")) { if (writeIfChanged(path.join(DOCS, "pilgrimage", s.id + ".html"), pilgrimageSitePage(s))) pgN++; }
+if (pgChanged || pgN) changed.push("pilgrimage (" + PILG.sites.filter((x) => x.status === "live").length + " live)");
 
 // sitemap
 const sm = writeIfChanged(path.join(DOCS, "sitemap.xml"), buildSitemap());

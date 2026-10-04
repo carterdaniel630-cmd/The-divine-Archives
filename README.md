@@ -23,6 +23,7 @@ doesn't, and what is still open.
 | **The Vault** | Sacred objects and texts (manuscripts, relics, inscriptions), each with a study page | **88** entries |
 | **The Pantheon** | A searchable directory of gods, spirits, heroes and prophets | **199** figures, 30 traditions |
 | **Symbols and games** | The archive's sacred symbols; twelve of them open a game whose facts all come from chapter text | **12** games |
+| **The Pilgrimage** (beta) | Walkable models of sacred sites, sized from published surveys, reached through the golden portal in the Museum's entrance hall; each holds relic copies linked to the Vault | **1** open (the Great Pyramid), 71 queued |
 | **The Museum** (beta) | A walkable 3D building with one room per chapter, and a planetarium | **83** rooms in 10 wings |
 | **Methodology / About** | The sourcing standard and what the "pending review" tag means | — |
 
@@ -77,7 +78,7 @@ The-divine-Archives/
 ## The website
 
 `docs/` is a static site: plain HTML, CSS and JavaScript, no framework and
-nothing built at request time. The chapter, era, listing, Vault, search-index
+nothing built at request time. The chapter, era, listing, Vault, Pantheon, search-index
 and sitemap pages are **prerendered**, and the generated files are committed.
 After changing content, rebuild in this order:
 
@@ -104,6 +105,8 @@ chapter's "revised" date only when its markdown changes.
 To preview locally: `node tools/serve.js 8080` and open http://localhost:8080
 (it compresses files the way Cloudflare does; `python3 -m http.server -d docs`
 also works).
+
+The Pilgrimage (`docs/pilgrimage.html`, one page per open site in `docs/pilgrimage/`) is built the same way: the list of sites is `docs/assets/pilgrimage-data.js`, each open site is a module folder `docs/pilgrimage/sites/<id>/` (a `site.js` with its sections, walkable regions, route and info points, plus one module per section), and `build-pages.js` writes the pages. Adding a site is one data entry plus its folder. `tools/verify-pilgrimage.js` checks the links and that every info point cites its sources.
 
 The Museum is `noindex` and kept out of the sitemap, so search engines send
 people to the chapter, Vault and Pantheon pages. Three.js is included in

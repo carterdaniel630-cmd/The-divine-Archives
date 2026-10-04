@@ -1,0 +1,40 @@
+/* The Divine Archives — the Pilgrimage. Site pages reuse museum.css (bar, cards, guide, inspector);
+   these rules add the walking controls, and style the list of sites on pilgrimage.html. */
+
+/* ---- site pages: walking controls at the bottom ---- */
+.pg-nav { position: fixed; left: 50%; bottom: max(.8rem, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 14; display: flex; gap: .5rem; }
+.pg-nav[hidden] { display: none; }
+.pg-nav button { font: inherit; font-family: var(--font-display); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; min-height: 44px; padding: .55rem 1rem;
+  background: rgba(20,13,7,.88); color: var(--gold-bright); border: 1px solid var(--gold); border-radius: 3px; cursor: pointer; box-shadow: 0 8px 22px -12px #000; }
+.pg-nav button[aria-pressed="true"] { background: var(--gold); color: #1a1008; }
+.pg-busy { position: fixed; right: .8rem; bottom: max(.8rem, env(safe-area-inset-bottom)); z-index: 14; margin: 0; padding: .3rem .6rem; font-size: .72rem; letter-spacing: .1em;
+  text-transform: uppercase; font-family: var(--font-display); color: var(--ink-dim); background: rgba(20,13,7,.8); border: 1px solid var(--line); border-radius: 3px; }
+.pg-busy[hidden] { display: none; }
+.mu-card .pg-diagram { margin: .9rem 0 .2rem; padding: .5rem; border: 1px solid var(--line); border-radius: 4px; background: rgba(0,0,0,.25); }
+.mu-card .pg-diagram svg { display: block; width: 100%; height: auto; }
+.mu-card .pg-src { margin-top: .9rem; font-size: .8rem; color: var(--ink-dim); line-height: 1.5; }
+.mu-card .pg-src strong { color: var(--gold); font-family: var(--font-display); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; }
+.pg-pending { display: inline-block; margin: 0 0 .6rem; padding: .18rem .55rem; border: 1px solid var(--warn); color: var(--warn); border-radius: 2px;
+  font-family: var(--font-display); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; }
+.pg-fallback { padding: 3rem 0 4rem; }
+.pilgrimage-page.is-3d .pg-fallback { display: none; }
+
+/* ---- pilgrimage.html: the list of sites ---- */
+.pg-era { margin: 2.2rem 0 0; }
+.pg-era h2 { font-family: var(--font-display); color: var(--gold); font-size: .9rem; letter-spacing: .14em; text-transform: uppercase; border-bottom: 1px solid var(--line); padding-bottom: .4rem; margin: 0 0 .8rem; }
+.pg-era h2 span { color: var(--ink-faint); font-size: .72rem; letter-spacing: .08em; margin-left: .4rem; text-transform: none; font-family: var(--font-head); }
+.pg-sites { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .7rem; }
+.pg-site { border: 1px solid var(--line); border-radius: 4px; background: var(--panel); padding: .75rem .85rem; }
+.pg-site.is-live { border-color: var(--gold); background: linear-gradient(180deg, rgba(199,154,84,.12), rgba(30,21,13,1) 60%); }
+.pg-site h3 { margin: 0 0 .25rem; font-family: var(--font-head); font-size: 1.12rem; color: var(--parchment); line-height: 1.2; }
+.pg-site h3 a { color: inherit; text-decoration: none; }
+.pg-site h3 a:hover { color: var(--gold-bright); }
+.pg-site p { margin: .3rem 0 0; font-size: .86rem; color: var(--ink-dim); line-height: 1.45; }
+.pg-site .pg-meta a { color: var(--ink); }
+.pg-tag { display: inline-block; margin: 0 .3rem .25rem 0; padding: .08rem .45rem; border-radius: 2px; font-family: var(--font-display); font-size: .56rem; letter-spacing: .12em; text-transform: uppercase;
+  border: 1px solid var(--line); color: var(--ink-faint); }
+.pg-tag.live { border-color: var(--gold); color: var(--gold-bright); }
+.pg-tag.R, .pg-tag.C, .pg-tag.S { border-color: var(--ember); color: #e2a574; }
+.pg-go { display: inline-block; margin-top: .6rem; background: var(--gold); color: #1a1008 !important; padding: .45rem .8rem; border-radius: 3px; text-decoration: none;
+  font-family: var(--font-display); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; }
+.pg-key { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .3rem; font-size: .9rem; color: var(--ink-dim); }
