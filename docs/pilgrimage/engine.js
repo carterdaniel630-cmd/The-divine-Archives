@@ -29,11 +29,12 @@ const store = {
   set(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* storage blocked */ } }
 };
 const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-const WALK = 1.6, RUN = 3.2, STEP = 0.5, LOAD_NEAR = 26, DROP_FAR = 60, PX = touch ? 512 : 1024;
+// speeds, field of view and turning follow the museum (docs/museum/app.js) so walking feels the same in both
+const WALK = 3.0, RUN = 6.0, STOOP = 0.7, STEP = 0.5, LOAD_NEAR = 26, DROP_FAR = 60, PX = touch ? 512 : 1024;
 
 const S = {
   site: null, regions: [], sections: {}, info: [], hits: [], floors: [], outlines: {},
-  pos: new THREE.Vector3(), foot: 0, eye: 1.62, yaw: 0, pitch: 0, region: null,
+  pos: new THREE.Vector3(), foot: 0, eye: 1.62, yaw: 0, pitch: 0, lean: 0, region: null,
   keys: new Set(), auto: null, route: [], locked: false, hover: null, dirty: true, started: false,
   reduce: store.get("pg-rm") === "1" || (store.get("pg-rm") == null && mqReduce.matches),
   lightAnchors: [], fps: { n: 0, t: 0, v: 0 }, insp: null, busy: 0
@@ -56,7 +57,7 @@ function initRenderer() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color("#050302");
   scene.fog = new THREE.Fog("#050302", 8, 46);
-  camera = new THREE.PerspectiveCamera(touch ? 72 : 66, 1, 0.03, 900);
+  camera = new THREE.PerspectiveCamera(touch ? 70 : 64, 1, 0.03, 900);
   scene.add(camera);
   hemi = new THREE.HemisphereLight("#8a7356", "#1a120a", 0.45); scene.add(hemi);
   lamp = new THREE.PointLight("#ffd7a0", 1.3, 8, 1.6);           // the visitor's own lamp
@@ -150,6 +151,71 @@ function tryMove(dx, dz) {
   r = regionAt(S.pos.x, nz, S.foot); if (r && Math.abs(dz) > 1e-4) { S.pos.z = nz; S.region = r; S.foot = r.floorAt(S.pos.x, nz); return true; }
   return false;
 }
+// the rise of the floor in the direction the visitor faces, as an angle
+function slopeAhead() {
+  const r = S.region; if (!r || r.y1 == null) return 0;
+  const fx = -Math.sin(S.yaw), fz = -Math.cos(S.yaw);
+  const g = r.axis === "x" ? (r.y1 - r.y) / (r.x1 - r.x0) * fx : (r.y1 - r.y) / (r.z1 - r.z0) * fz;
+  return Math.atan(g) * 0.85;
+}
+// ---------------------------------------------------------------- finding the way: regions joined where they overlap
+// Two regions join where their walkable rectangles overlap and their floors meet there (within a step).
+// A tap is walked through the chain of joins, so a tap anywhere in view (round a corner, up a side tunnel)
+// gets you there, as in the museum.
+function joins() {
+  if (S.joins) return S.joins;
+  const J = new Map(S.regions.map((r) => [r, []]));
+  for (let i = 0; i < S.regions.length; i++) for (let j = i + 1; j < S.regions.length; j++) {
+    const a = S.regions[i], b = S.regions[j];
+    if (a.portal || b.portal) continue;
+    const x0 = Math.max(a.bx0, b.bx0), x1 = Math.min(a.bx1, b.bx1), z0 = Math.max(a.bz0, b.bz0), z1 = Math.min(a.bz1, b.bz1);
+    if (x0 > x1 || z0 > z1) continue;
+    let best = null, bd = 1e9; const cx = (x0 + x1) / 2, cz = (z0 + z1) / 2;
+    for (let u = 0; u <= 6; u++) for (let v = 0; v <= 6; v++) {
+      const x = x0 + (x1 - x0) * u / 6, z = z0 + (z1 - z0) * v / 6;
+      if (!a.contains(x, z) || !b.contains(x, z) || Math.abs(a.floorAt(x, z) - b.floorAt(x, z)) >= STEP * 0.8) continue;
+      const d = Math.hypot(x - cx, z - cz); if (d < bd) { bd = d; best = { x, z }; }
+    }
+    if (best) { J.get(a).push({ to: b, p: best }); J.get(b).push({ to: a, p: best }); }
+  }
+  return (S.joins = J);
+}
+function findWay(from, to, target) {
+  if (from === to) return [target];
+  const J = joins(), dist = new Map([[from, 0]]), at = new Map([[from, { x: S.pos.x, z: S.pos.z }]]), prev = new Map(), open = [from];
+  while (open.length) {
+    open.sort((a, b) => dist.get(a) - dist.get(b));
+    const u = open.shift(); if (u === to) break;
+    for (const e of J.get(u)) {
+      const d = dist.get(u) + Math.hypot(e.p.x - at.get(u).x, e.p.z - at.get(u).z);
+      if (d < (dist.has(e.to) ? dist.get(e.to) : 1e9)) { dist.set(e.to, d); at.set(e.to, e.p); prev.set(e.to, { r: u, p: e.p }); if (!open.includes(e.to)) open.push(e.to); }
+    }
+  }
+  if (!prev.has(to)) return null;
+  const pts = [target]; let r = to;
+  while (prev.has(r)) { const q = prev.get(r); pts.unshift({ x: q.p.x, z: q.p.z }); r = q.r; }
+  return pts;
+}
+// where a tap on the stone (floor, wall or ceiling) means to go: the nearest walkable spot below the point hit
+function tapTarget(hit) {
+  let best = null, bd = 1e9;
+  for (const r of S.regions) {
+    if (r.portal && !r.contains(hit.x, hit.z)) continue;
+    const x = Math.max(r.bx0, Math.min(r.bx1, hit.x)), z = Math.max(r.bz0, Math.min(r.bz1, hit.z));
+    const plan = Math.hypot(x - hit.x, z - hit.z), below = hit.y - r.floorAt(x, z);
+    if (plan > 0.9 || below < -0.4 || below > 4.5 || !r.contains(x, z)) continue;
+    const d = plan * 2 + Math.max(0, below - 0.1) * 0.5;
+    if (d < bd) { bd = d; best = { r, x, z }; }
+  }
+  return best;
+}
+function walkTo(t) {
+  const way = S.region && findWay(S.region, t.r, { x: t.x, z: t.z });
+  if (!way) return false;
+  if (S.reduce) { fadeThen(() => { jumpAlong(way); }); return true; }   // reduced motion: a fade, not a walk
+  S.auto = way.shift(); S.route = way; paintRoute();
+  return true;
+}
 const angDiff = (a, b) => { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; return d; };
 function step(dt) {
   let mx = 0, mz = 0; const k = S.keys;
@@ -157,9 +223,11 @@ function step(dt) {
   if (k.has("KeyS") || k.has("ArrowDown")) mz -= 1;
   if (k.has("KeyA")) mx -= 1;
   if (k.has("KeyD")) mx += 1;
-  if (k.has("ArrowLeft")) { S.yaw += 1.8 * dt; S.dirty = true; }
-  if (k.has("ArrowRight")) { S.yaw -= 1.8 * dt; S.dirty = true; }
-  const speed = (k.has("ShiftLeft") || k.has("ShiftRight")) ? RUN : WALK;
+  if (k.has("ArrowLeft")) { S.yaw += 1.9 * dt; S.dirty = true; }
+  if (k.has("ArrowRight")) { S.yaw -= 1.9 * dt; S.dirty = true; }
+  // bent double in a low passage you go more slowly
+  const slow = S.region && S.region.eye < 1.3 ? STOOP : 1;
+  const speed = ((k.has("ShiftLeft") || k.has("ShiftRight")) ? RUN : WALK) * slow;
   const fx = -Math.sin(S.yaw), fz = -Math.cos(S.yaw), rx = -fz, rz = fx;
   let moved = false;
   if (mx || mz) {
@@ -170,17 +238,21 @@ function step(dt) {
     const a = S.auto, dx = a.x - S.pos.x, dz = a.z - S.pos.z, d = Math.hypot(dx, dz);
     if (d < 0.2) { S.auto = S.route.length ? S.route.shift() : null; if (!S.auto) paintRoute(); }
     else {
-      if (!S.reduce || !a.instant) S.yaw += angDiff(Math.atan2(-dx, -dz), S.yaw) * Math.min(1, dt * 4);
-      const v = Math.min(d, WALK * 1.15 * dt);
+      S.yaw += angDiff(Math.atan2(-dx, -dz), S.yaw) * Math.min(1, dt * 5);
+      const v = Math.min(d, WALK * 1.2 * slow * dt);
       moved = tryMove(dx / d * v, dz / d * v);
-      a.t = (a.t || 0) + dt;
-      if (!moved && a.t > 0.4) { S.auto = null; S.route = []; paintRoute(); }
+      // stuck against stone (a waypoint just outside reach): go on to the next one, or stop
+      a.stuck = moved ? 0 : (a.stuck || 0) + dt;
+      if (a.stuck > 0.3) { S.auto = S.route.length ? S.route.shift() : null; if (!S.auto) { S.route = []; paintRoute(); } }
     }
   }
   // eye height follows the region (stooping in low passages), smoothly
   const want = S.region ? S.region.eye : 1.62;
   if (Math.abs(want - S.eye) > 0.002) { S.eye += (want - S.eye) * Math.min(1, dt * 5); moved = true; }
-  // a slight lean of the head into the slope while walking a passage
+  // on a sloping floor the head tips to follow the slope, so you look along the passage rather than into
+  // its ceiling or floor (a passage only 1.2 m high closes the view within a metre if you look level)
+  const lw = slopeAhead();
+  if (Math.abs(lw - S.lean) > 0.001) { S.lean += (lw - S.lean) * Math.min(1, dt * 3); moved = true; }
   const y = S.foot + S.eye; if (Math.abs(y - S.pos.y) > 1e-4) { S.pos.y = y; moved = true; }
   if (moved) S.dirty = true;
   // portals: standing in any portal region (they overlap the rooms they open from) takes you through
@@ -213,6 +285,10 @@ function walkRoute(dir) {
     void p; return;
   }
   S.auto = path.shift(); S.route = path; paintRoute();
+}
+function jumpAlong(path) {
+  for (const q of path) { let g = 0; while (g++ < 400 && Math.hypot(q.x - S.pos.x, q.z - S.pos.z) > 0.25) { const d = Math.hypot(q.x - S.pos.x, q.z - S.pos.z); if (!tryMove((q.x - S.pos.x) / d * Math.min(d, 0.2), (q.z - S.pos.z) / d * Math.min(d, 0.2))) break; } }
+  S.eye = S.region ? S.region.eye : 1.62; S.pos.y = S.foot + S.eye; manageSections(); locate(); S.dirty = true;
 }
 function paintRoute() { const b = $("pg-walk"); if (b) b.setAttribute("aria-pressed", String(!!S.auto)); }
 
@@ -262,8 +338,8 @@ function pick(cx, cy) {
 function sectionVisible(o) { let p = o; while (p) { if (p.visible === false) return false; p = p.parent; } return true; }
 function wallMeshes() { const out = []; for (const s of S.site.sections) if (s.group && s.group.visible) s.group.traverse((o) => { if (o.isMesh && o.userData.wall) out.push(o); }); return out; }
 function floorPoint(cx, cy) {
-  ndc.set(cx, cy); ray.setFromCamera(ndc, camera); ray.far = 30;
-  const h = ray.intersectObjects(S.floors.filter((m) => sectionVisible(m)), false)[0];
+  ndc.set(cx, cy); ray.setFromCamera(ndc, camera); ray.far = 40;
+  const h = ray.intersectObjects(S.floors.concat(wallMeshes()).filter((m) => sectionVisible(m)), false)[0];
   return h ? h.point : null;
 }
 // section modules register their clickable things through ctx.hit
@@ -323,14 +399,14 @@ function unlock() { if (document.pointerLockElement) document.exitPointerLock();
 function bindInput() {
   const c = renderer.domElement;
   document.addEventListener("pointerlockchange", () => { S.locked = document.pointerLockElement === c; $("mu-reticle").hidden = !S.locked; });
-  document.addEventListener("mousemove", (e) => { if (!S.locked || Math.abs(e.movementX) > 180 || Math.abs(e.movementY) > 180) return; S.yaw -= e.movementX * 0.0024; S.pitch = Math.max(-1.3, Math.min(1.4, S.pitch - e.movementY * 0.0024)); S.dirty = true; });
+  document.addEventListener("mousemove", (e) => { if (!S.locked || Math.abs(e.movementX) > 180 || Math.abs(e.movementY) > 180) return; S.yaw -= e.movementX * 0.0024; S.pitch = Math.max(-1.2, Math.min(1.48, S.pitch - e.movementY * 0.0024)); S.dirty = true; });
   let down = null;
   c.addEventListener("pointerdown", (e) => { down = { x: e.clientX, y: e.clientY, t: performance.now(), yaw: S.yaw, pitch: S.pitch, moved: false }; c.setPointerCapture(e.pointerId); c.focus(); });
   c.addEventListener("pointermove", (e) => {
     if (!down || S.locked) return;
     const dx = e.clientX - down.x, dy = e.clientY - down.y;
-    if (Math.hypot(dx, dy) > 7) down.moved = true;
-    if (down.moved) { S.yaw = down.yaw - dx * 0.005; S.pitch = Math.max(-1.25, Math.min(1.35, down.pitch - dy * 0.004)); S.dirty = true; }
+    if (Math.hypot(dx, dy) > 6) down.moved = true;
+    if (down.moved) { S.yaw = down.yaw - dx * 0.005; S.pitch = Math.max(-1.1, Math.min(1.45, down.pitch - dy * 0.004)); S.dirty = true; }
   });
   c.addEventListener("pointerup", (e) => {
     if (!down) return;
@@ -340,8 +416,8 @@ function bindInput() {
     const r = c.getBoundingClientRect(), cx = ((e.clientX - r.left) / r.width) * 2 - 1, cy = -((e.clientY - r.top) / r.height) * 2 + 1;
     const inf = pick(cx, cy); if (inf) { openCard(inf); return; }
     if (!touch && e.pointerType === "mouse") { lock(); return; }
-    const fp = floorPoint(cx, cy);
-    if (fp) { S.route = []; S.auto = { x: fp.x, z: fp.z }; paintRoute(); }
+    const fp = floorPoint(cx, cy), t = fp && tapTarget(fp);
+    if (t) walkTo(t);
   });
   window.addEventListener("keydown", (e) => {
     if (!$("mu-card-wrap").hidden) { if (e.key === "Escape") { e.preventDefault(); closeCard(); } return; }
@@ -394,7 +470,7 @@ function tick(now) {
   if (!S.dirty && idle < 0.5) return;
   idle = 0; S.dirty = false;
   camera.position.copy(S.pos);
-  camera.rotation.set(S.pitch, S.yaw, 0, "YXZ");
+  camera.rotation.set(Math.max(-1.3, Math.min(1.5, S.pitch + S.lean)), S.yaw, 0, "YXZ");
   updateLights();
   // markers face the camera and pulse gently
   for (const h of S.hits) if (h.userData.marker) { h.userData.marker.quaternion.copy(camera.quaternion); }
@@ -447,6 +523,9 @@ window.__PG = {
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
   walk: (dir) => walkRoute(dir),
   route: () => ({ auto: !!S.auto, left: S.route.length }),
+  tap: (cx, cy) => { const fp = floorPoint(cx, cy), t = fp && tapTarget(fp); return t ? (walkTo(t) ? t.r.id : "no way") : null; },
+  walkTo: (x, z, y) => { const t = tapTarget({ x, z, y: y + 0.5 }); return t ? (walkTo(t) ? t.r.id : "no way") : null; },
+  joins: () => [...joins()].map(([r, es]) => [r.id, es.map((e) => e.to.id)]),
   key: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },
   open: (id) => openCard(S.site.info.find((i) => i.id === id) || S.site.about),
   close: () => closeCard(),

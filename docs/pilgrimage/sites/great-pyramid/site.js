@@ -240,4 +240,4 @@ const about = { id: "about", cat: "About this model", title: "How close is this 
     "<p><strong>The stone</strong> is drawn in code from the stones&rsquo; known make-up: fine white limestone and red Aswan granite with feldspar, quartz and mica. It is not photographed, so it is a likeness, not a record.</p>",
   diagram: sectionSVG(), links: [L.ch02], sources: REF.petrie + "; " + REF.lehner + "; " + REF.sp2017 + "; " + REF.sp2023 + "." };
 
-export default { title: "The Great Pyramid of Khufu", version: 1, stones: ["core", "block", "limestone", "floor", "wood", "rock", "gallery", "granite", "qc"], sections, regions, route, info, about, D, V0 };
+export default { title: "The Great Pyramid of Khufu", version: 2, stones: ["core", "block", "limestone", "floor", "wood", "rock", "gallery", "granite", "qc"], sections, regions, route, info, about, D, V0 };

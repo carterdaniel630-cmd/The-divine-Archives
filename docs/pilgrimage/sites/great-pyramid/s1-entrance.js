@@ -3,7 +3,7 @@ import * as THREE from "three";
 import site from "./site.js?v=1";
 import { D } from "./dims.js?v=1";
 import { Bucket, passage, wall, V, outlineBox } from "../../kit.js?v=1";
-import { markers, lamp, rail, finish } from "../../parts.js?v=1";
+import { markers, lamp, rail, sign, finish } from "../../parts.js?v=1";
 
 export function build(ctx) {
   const M = { block: ctx.mat("block"), core: ctx.mat("core"), tread: ctx.mat("core", { color: new THREE.Color("#d9c39c") }), lime: ctx.mat("limestone"), floor: ctx.mat("floor"), granite: ctx.mat("granite"), wood: ctx.mat("wood") };
@@ -71,6 +71,9 @@ export function build(ctx) {
   for (let i = 0; i < 7; i++) { const b = new THREE.Mesh(new THREE.BoxGeometry(0.02, hv, 0.02), barMat); b.position.set(-pw2 + 0.08 + i * (D.pw - 0.16) / 6, gy + hv / 2, gz); bars.add(b); }
   for (const y of [0.15, hv - 0.15]) { const b = new THREE.Mesh(new THREE.BoxGeometry(D.pw, 0.03, 0.03), barMat); b.position.set(0, gy + y, gz); bars.add(b); }
   ctx.group.add(bars);
+  // way-finding (the archive's signs, not the site's): the way on is the robbers' tunnel, back up on the right
+  sign(ctx, ["No way on here", "the robbers' tunnel: back up, on your right"], 0, gy + hv * 0.55, gz - 0.06, Math.PI, D.pw * 0.92, D.pw * 0.23, { size: 72 });
+  sign(ctx, ["The way on", "through the robbers' tunnel"], pw2 - 0.02, D.descFloor(D.rtZ0) + 0.95, D.rtZ0, -Math.PI / 2, 0.9, 0.23, { size: 72 });
   const dark = new THREE.Mesh(new THREE.PlaneGeometry(D.pw, hv), new THREE.MeshBasicMaterial({ color: "#000000" })); dark.position.set(0, D.descFloor(D.descEndZ) + hv / 2, D.descEndZ - 0.01); dark.rotation.y = Math.PI; ctx.group.add(dark);
   // modern boards, a rail and lamps
   const boardY = (z) => D.descFloor(z) + 0.03;
