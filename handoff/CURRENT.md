@@ -5,8 +5,8 @@ Repo: carterdaniel630-cmd/The-divine-Archives. Site: getconexto.com (Cloudflare 
 works from a phone; merging to main and any live-site change need his approval.
 
 ## State of main
-- `main` = this handoff commit, on top of `420c4ba` (PR #12 merged; deploy succeeded).
-- Live now: everything from PRs #11 and #12 (listed below).
+- `main` = merge commit `5609b63` (PR #13 + Compare fix) plus this handoff update; PR #12 deploy succeeded.
+- Live now (after the deploy of this push): everything from PRs #11, #12 and #13, plus the Compare fix.
 
 ## Work in this session
 
@@ -30,33 +30,25 @@ works from a phone; merging to main and any live-site change need his approval.
 | Music control, Compare swipe hint, Symbols tip fix | DONE, live (PR #12) | `ambient.js`, `compare.html`, `games.css` |
 | Email sign-up hidden (code kept) | DONE, live (PR #12) | `docs/index.html` (`hidden` attribute) |
 | Plans: first screen, fighter download | DONE | `00-audit/plans-2026-10.md` |
-| First-screen doorway buttons (option A) | DONE, IN PR #13, not live | branch `claude/first-screen-fighter` |
-| Fighter 6.2 MB → 0.7 MB (WebP half-size parts, only gods in play) | DONE, IN PR #13, not live | same branch; originals moved to `art-source/fighter/` |
-| Compare: Underworld note → link to ch47 | DONE, on its own branch, not live | branch `claude/compare-underworld-link` |
+| First-screen doorway buttons (option A) | DONE, merged to main (PR #13) | `docs/index.html` |
+| Fighter 6.2 MB → 0.7 MB (WebP half-size parts, only gods in play) | DONE, merged to main (PR #13) | `tools/build-fighter-art.js`; originals in `art-source/fighter/` |
+| Compare: Underworld note → link to ch47 | DONE, merged to main | `docs/compare.html` |
 | V76 English entry (Báb's Star Tablet) | NOT STARTED: blocked (source unreachable) | — |
 
 Not committed anywhere: nothing. All the work above is pushed.
 
 ## Branches and PRs
-- **PR #13** (draft): `claude/first-screen-fighter`, head `ac9b83d`. Checks: runtime ×2 passed;
-  **lighthouse was still running** at handoff. Carter APPROVED merging #13.
-- `claude/compare-underworld-link`, head `b18eb17` = PR #13 + one commit (the Compare fix).
-  Carter APPROVED this fix going live. No PR.
-- Merged and done: PR #11 (`claude/founder-baseline`), PR #12 (`claude/speed-ux-fixes`),
-  `claude/audit-fixes`.
-- Session's assigned branch `claude/state-audit-fzv14x-81bkof` is unused. Carter's rule: use the
-  branch he names; flag any conflict before pushing.
+- All merged: PR #11 (`claude/founder-baseline`), PR #12 (`claude/speed-ux-fixes`), PR #13
+  (`claude/first-screen-fighter`, head `ac9b83d`, all checks green), and
+  `claude/compare-underworld-link` (`b18eb17`), via merge commit `5609b63` on main.
+- No open PRs from this session. The session's assigned branch `claude/state-audit-fzv14x-81bkof`
+  is unused. Carter's rule: use the branch he names; flag any conflict before pushing.
 
 ## The very next step
-1. Check PR #13's lighthouse check on `ac9b83d`
-   (`gh api repos/carterdaniel630-cmd/The-divine-Archives/commits/ac9b83d/check-runs`).
-2. If green: bring `claude/compare-underworld-link` up to date with main, which now carries this
-   handoff commit, so it's no longer a fast-forward. Rebasing is fine, because these are Claude's
-   own branches: `git rebase origin/main`. Then run the 5 builds and 13 verify scripts, push the
-   branch, and fast-forward main to it. That publishes PR #13 and the Compare fix together.
-   Confirm GitHub marks #13 merged and that the Cloudflare deploy succeeds.
-3. If red: diagnose. Earlier noise was handled by the `--confirm` re-runs; a real failure needs
-   a fix. Report to Carter before merging.
+1. Confirm the Cloudflare deploy of the latest main succeeded and that GitHub shows PR #13 as
+   merged
+   (`gh api repos/carterdaniel630-cmd/The-divine-Archives/actions/runs?branch=main&per_page=3`).
+2. Then wait for Carter's next instruction. Candidates are under "Remaining work".
 
 ## Decisions still in effect
 - Batch III cleared; Batch IV (ch75–83), ch45, ch46 and Vault V88 stay "pending review".
