@@ -208,7 +208,7 @@ Average of two runs each. "Min" is the worst one-second stretch.
 | Antithesis (pong) | 89 | 96 | +7 | clean 5-run re-test (the first batch, which overlapped another measurement, showed 96 → 90; that was noise) |
 | The Excavation (minesweeper) | 94 | 96 | +2 | |
 | The Labyrinth (pac-man) | 97 | 97 | 0 | |
-| The Firmament (pinball) | 96 | 91 | −5 | clean 5-run re-test running (its own before-runs ranged 91–100) |
+| The Firmament (pinball) | 96 | 96 | 0 | clean 5-run re-test (the first batch's 91 was noise) |
 | **Dominion of the Ancients (risk)** | **78** | **89** | **+11** | clean 5-run re-test: the page's frozen time while opening fell **623 → 265 ms** (the precomputed map) |
 | The Tomb Robber (treasure) | 84 | 85 | +1 | |
 
