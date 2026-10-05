@@ -1,5 +1,5 @@
 {
-  "autoPass": false,
-  "reason": "no baseline test batch scored yet (review-test/2026-10 planted 2026-10-05, awaiting the reviewer)",
+  "autoPass": true,
+  "reason": "baseline test batch review-test/2026-10 scored 9 of 9 (100%), no missed fake source or sensitivity error; rolling accuracy 100%",
   "updated": "2026-10-05"
 }
