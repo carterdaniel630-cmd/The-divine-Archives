@@ -325,6 +325,10 @@ function loadCleared(baseRaw) {
   return { cleared: { chapters: fresh(head.chapters, base.chapters), vault: fresh(head.vault, base.vault), pantheon: fresh(head.pantheon, base.pantheon) } };
 }
 
+// a change confined to an item's source list (citations replaced, claims untouched) does not send a cleared
+// chapter back to "pending"; it is reported as a warning instead. Anything else still does.
+const noSourcesMd = (t) => String(t || "").replace(/\n## Sources\b[\s\S]*?(?=\n## |$)/, "\n");
+const noSourcesHtml = (h) => String(h || "").replace(/<div class="sources">[\s\S]*$/, "");
 function checkPendingDiff() {
   if (!changed) { record("pending-diff", "New/changed content is pending", "warn", "skipped: " + baseNote); return; }
   const H = headReg();
@@ -347,7 +351,13 @@ function checkPendingDiff() {
     if (!why.length) continue;
     const line = `chapter ${ch.id} "${ch.title}" (${[...new Set(why)].join(", ")})`;
     seen.push(line);
-    if (!ch.pending && !cleared.chapters.has(ch.id)) fails.push(line + ": not pending and not newly cleared in " + CLEARED_FILE);
+    if (!ch.pending && !cleared.chapters.has(ch.id)) {
+      // sources-only: the listing entry is unchanged, and outside the Sources section neither the markdown nor the body changed
+      const mdSame = !ch.source || !changed.has(ch.source) || noSourcesMd(readHead(ch.source)) === noSourcesMd(readAt(mergeBase, ch.source));
+      const bodySame = !hb || !ob || noSourcesHtml(hb.html) === noSourcesHtml(ob.html);
+      if (old && stable(old) === stable(ch) && mdSame && bodySame) warns.push(line + ": sources only, so it stays cleared (re-check the new sources at review)");
+      else fails.push(line + ": not pending and not newly cleared in " + CLEARED_FILE);
+    }
   }
   // Vault
   const bv = byId(B.vault);
