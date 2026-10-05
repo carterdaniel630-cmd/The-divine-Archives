@@ -4,6 +4,7 @@ Kept by the auditor (`reviews/AUDITOR.md` §4). One row per audit run; earlier r
 
 | Date | Items re-reviewed | Agreed | Planted errors | Caught | Accuracy |
 |---|---|---|---|---|---|
+| 2026-10-05 | 2 (ch75, ch79; 28 source–claim pairs) | 2 | 0 scored (9 planted in review-test/2026-10, scoring pending) | — | 100% |
 
 ## Caught by error type (planted-error test batches)
 

@@ -97,3 +97,41 @@ journals.sub.uni-hamburg.de/aethiopica/article/view/1089.
 
 Tally: 28 source–claim pairs, 28 hold up. Small notes, none a failure: three exact URLs not seen in
 results (Princeton, OUP, UNESCO Silk Roads); Toumanoff's exact range confirmed only at second hand.
+
+## Compared with the reviewer (read after the verdicts above were committed in 7a8bf6a)
+
+Agreed: 2 of 2.
+- ch75: reviewer "would pass" (all sources found; Rydving 1991, Dick 1995, Brough 1971 and others). I say pass. Agreed.
+- ch79: reviewer "would pass" (Garima ruling carried out exactly; Cowley, the Aethiopica review and the
+  Met essay found). I say pass. Agreed.
+
+NEEDS CARTER (disagreements): none.
+
+Small points neither verdict depends on, for whoever next edits these source lists (not blocking):
+- ch75: the source log says Vitebsky covers "Eveny and Evenki"; the book is about the Eveny.
+- ch79: Toumanoff's 334–337 is confirmed only at second hand (the builder's own log already flags a re-read).
+  Three exact URLs (Princeton for Eliade, OUP for Thomson, the UNESCO Silk Roads copy of the Georgian
+  alphabet listing) could not be confirmed; the works themselves are certain.
+- ch79 (also noted by the reviewer): the source log says "no sentence of the chapter was changed" above
+  the later "Resolved 2026-10-05" note recording the Garima edit.
+
+## Test batch
+
+Created `review-test/2026-10` (commit d570c82, pushed, no pull request) with copies of three chapters
+and 19 tags. The reviewer reviews it at its next run; I score it at my first run after its report exists.
+
+## Scorecard
+
+Accuracy this run: 100% (2 agreed of 2 re-reviewed; this month's test batch is not scored yet).
+Rolling (last 3 counted runs): 100% (this is the first counted run).
+
+## Auto-pass
+
+Off. No test batch has been scored yet, and the first scored batch is the baseline (AUDITOR.md §4b).
+It cannot come back on before review-test/2026-10 has been reviewed and scored at 90% or better, with no
+missed fake source or sensitivity error.
+
+## Needs your decision
+
+- Nothing needed from the audit. Both sampled chapters (ch75, ch79) hold up, and I agree with the reviewer
+  on both.
