@@ -34,3 +34,4 @@ All eighteen Wikipedia citations were replaced with the translated primary sourc
 
 ## Flags for Carter
 - **Phagpa's title in 1260.** The chapter says Kublai made Phagpa "his Imperial Preceptor (1260)". The Treasury of Lives biography of Pakpa Lodro Gyeltsen (and other sources found in search) says that in 1260 Kublai appointed him **National (or State) Preceptor** (*guoshi*), and that the title **Imperial Preceptor** (*dishi*) came about ten years later, around 1270. The chapter text was not changed. Suggested fix if you agree: "making the Sakya lama Phagpa his National Preceptor (1260) and later Imperial Preceptor (c. 1270)".
+- **Resolved 2026-10-05 (Carter):** the text now says National Preceptor (1260) and Imperial Preceptor (c. 1270).
