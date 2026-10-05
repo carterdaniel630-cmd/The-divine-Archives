@@ -390,7 +390,7 @@ function checkPendingDiff() {
   const status = fails.length || error ? "fail" : warns.length ? "warn" : "pass";
   record("pending-diff", "New/changed content is pending", status,
     fails.length ? `${fails.length} new/changed item(s) not pending` : error ? error
-      : warns.length ? `${warns.length} Pantheon figure(s) changed without a pending marker` : `${seen.length} new/changed item(s), all pending or cleared`,
+      : warns.length ? `${warns.length} item(s) to note (sources-only changes, or Pantheon figures without a pending marker)` : `${seen.length} new/changed item(s), all pending or cleared`,
     details);
 }
 
