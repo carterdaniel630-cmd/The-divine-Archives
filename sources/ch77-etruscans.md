@@ -36,3 +36,4 @@ All thirteen Wikipedia citations were replaced with the scholarly books, article
 
 ## Flags for Carter
 - **Date of the Liber Linteus.** The chapter says the linen book was "written in Etruscan in the third century BCE". Van der Meer's 2007 commentary (Peeters), the fullest study, dates it to the first half of the second century BCE. Datings in the literature vary (palaeography and radiocarbon), so this is a difference of emphasis rather than an error, but the chapter text was not changed. Suggested fix if you agree: "in the third or second century BCE".
+- **Resolved 2026-10-05 (Carter):** the text now gives both datings (third century BCE; first half of the second, van der Meer 2007), without choosing.

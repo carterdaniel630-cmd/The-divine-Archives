@@ -8589,7 +8589,7 @@ window.CHAPTERS = {
 
     <h2>The linen book</h2>
 
-    <p>The longest surviving Etruscan text survived by an extraordinary route. In the nineteenth century a Croatian traveller brought back from Egypt a woman's <strong>mummy</strong>, now in the Archaeological Museum of <strong>Zagreb</strong>. Its wrappings were strips of a linen book, written in Etruscan in the third century BCE, torn up and reused by embalmers in Egypt. The <strong>Liber Linteus</strong>, "Linen Book", with about 1,200 legible words, is the only surviving linen book of antiquity. From the words that can be understood, dates, gods' names and ritual terms such as offerings and libations, it appears to be a <strong>ritual calendar</strong>, prescribing rites to particular gods on particular days. Its detail remains beyond full translation.</p>
+    <p>The longest surviving Etruscan text survived by an extraordinary route. In the nineteenth century a Croatian traveller brought back from Egypt a woman's <strong>mummy</strong>, now in the Archaeological Museum of <strong>Zagreb</strong>. Its wrappings were strips of a linen book, written in Etruscan (dated by some to the third century BCE, and by L. B. van der Meer's 2007 study to the first half of the second), torn up and reused by embalmers in Egypt. The <strong>Liber Linteus</strong>, "Linen Book", with about 1,200 legible words, is the only surviving linen book of antiquity. From the words that can be understood, dates, gods' names and ritual terms such as offerings and libations, it appears to be a <strong>ritual calendar</strong>, prescribing rites to particular gods on particular days. Its detail remains beyond full translation.</p>
 
     <h2>The house of the dead</h2>
 
