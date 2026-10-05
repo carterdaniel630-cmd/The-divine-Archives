@@ -455,7 +455,7 @@ window.ARCHIVE = {
       summary: "Arabia before Islam, from the rocks and from the later books: Allāt, al-ʿUzzā, Manāt and the gods of the north; the Nabataean stone ‘houses of god’ at Petra and Hegra; the nomads’ prayers, sacrifices and laments in fifty thousand Safaitic inscriptions; Almaqah’s great temple at Maʾrib; the Ḥimyarite turn to ‘the Merciful’ two centuries before Muhammad, the Najrān martyrs and Abraha; and Mecca as Islamic tradition remembers it. A symbology of betyls and eye-idols, crescent and disc, the ibex and the sacred months, with the ‘moon god’ claim and the Book of Idols weighed against the inscriptions." },
     { id: "ch71", title: "Korea", kind: "tradition",
       era: "06-early-medieval", eraLabel: "Early Medieval · Korea",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/06-early-medieval/ch71-korea-early-medieval.md",
       summary: "Religion in layers, all still alive: the Bronze Age dolmens and the myth of Dangun, son of heaven and of a bear; the mudang, the women shamans of musok, their spirit illness and their all-night gut for the dead; Buddhism’s arrival in the Three Kingdoms, Ichadon’s martyrdom, Seokguram and the 81,258 woodblocks of the Tripitaka Koreana; Joseon’s Confucian ancestor rites; a Catholic church founded by lay readers and its martyrs; Donghak and the new religions; and a South Korea where most people now claim no religion. A symbology of the taegeuk, Hangul’s heaven–earth–human vowels and the mountain god’s tiger." },
     { id: "ch72", title: "The Cathars & Medieval Heresy", kind: "tradition",
