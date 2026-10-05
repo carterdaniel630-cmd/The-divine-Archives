@@ -18,7 +18,7 @@ In the northern half of the peninsula and its borderlands, the inscriptions name
 - **Manāt**, a goddess of fate and portion, whose shrine lay on the coast between Mecca and Medina; the Book of Idols calls her the most ancient.
 - **Ruḍā** (Ruḍaw), a god known from Assyrian records of the seventh century BCE to late antiquity, in some communities the father of Allāt, in others part of an astral triad.
 - **Dushara** (Dhū Sharā, "he of the Sharā mountains"), the chief god of the **Nabataean** kingdom, whose capital was Petra. The Nabataeans wrote dedications to "Dushara and all the gods".
-- At the oasis of **Taymāʾ** a stele of the sixth century BCE names the god **Ṣalm** of Maḥram with Shingalā and Ashīrā; the Babylonian king **Nabonidus** lived at Taymāʾ for ten years in the same century.
+- At the oasis of **Taymāʾ** a stele names the god **Ṣalm** of Maḥram with Shingalā and Ashīrā; the Babylonian king **Nabonidus** lived at Taymāʾ for ten years in the sixth century BCE. The stele's own date is disputed: it is often placed in Nabonidus's century, but Joseph Naveh's study of its script, followed by Peter Stein (2013), puts it about 380 BCE.
 - **Hubal**, remembered in Islamic tradition as the chief idol inside the Kaʿba, appears in only one pre-Islamic inscription, a Nabataean tomb text at **Hegra** (Madāʾin Ṣāliḥ), beside Dushara and Manāt.
 
 The Nabataeans, whose kingdom stretched from Petra to Hegra until Rome annexed it in 106 CE, very often worshipped their gods in the form of a **betyl**, an upright stone block, sometimes plain and sometimes carved with a stylized pair of eyes and a nose. The stone was not a portrait but a house or presence of the god; the Greek word *baitylos* comes from the Semitic *bēt-ʾel*, "house of god".

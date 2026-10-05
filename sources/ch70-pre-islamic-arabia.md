@@ -34,3 +34,4 @@ Per the project sourcing standard. The chapter sets the late Islamic-era literar
 
 ## Flags for Carter
 - **Date of the Taymāʾ stele (no change made).** The chapter says that "a stele of the sixth century BCE names the god Ṣalm of Maḥram with Shingalā and Ashīrā," in the same paragraph as Nabonidus's stay at Taymāʾ. The stele in question is the Louvre stele (AO 1505, found 1880). Stein (2013, cited above) follows J. Naveh's dating of its script and places it in the late fifth or early fourth century BCE, about 380 BCE. On that dating it is roughly 150–200 years later than Nabonidus, not of the sixth century. A correction would read "a later stele (of about the fifth to fourth century BCE)". (Confirmed via search results; to re-read Stein at review.)
+- **Resolved 2026-10-05 (Carter):** the text now names the dispute, giving both datings and their sources, without choosing.
