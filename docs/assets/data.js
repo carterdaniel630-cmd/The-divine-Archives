@@ -460,7 +460,7 @@ window.ARCHIVE = {
       summary: "Religion in layers, all still alive: the Bronze Age dolmens and the myth of Dangun, son of heaven and of a bear; the mudang, the women shamans of musok, their spirit illness and their all-night gut for the dead; Buddhism’s arrival in the Three Kingdoms, Ichadon’s martyrdom, Seokguram and the 81,258 woodblocks of the Tripitaka Koreana; Joseon’s Confucian ancestor rites; a Catholic church founded by lay readers and its martyrs; Donghak and the new religions; and a South Korea where most people now claim no religion. A symbology of the taegeuk, Hangul’s heaven–earth–human vowels and the mountain god’s tiger." },
     { id: "ch72", title: "The Cathars & Medieval Heresy", kind: "tradition",
       era: "07-high-medieval", eraLabel: "High Medieval · The Cathars & Medieval Heresy",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md",
       summary: "The good men and good women of Languedoc: two principles, souls as fallen angels, the consolamentum with the Gospel of John laid on the head, and the few Cathar texts the inquisitors missed; the Albigensian Crusade, Béziers and the pyre at Montségur; the inquisition and the Montaillou register; and the other dissenters, Waldensians, Marguerite Porete, the Spiritual Franciscans, Wyclif and Hus. With the great historians’ quarrel over whether the Cathar church was real or built by its persecutors, and the Grail legends and ‘Cathar castles’ sorted from the record." },
     { id: "ch73", title: "Sabbateans, Frankists & Hasidim", kind: "tradition",
