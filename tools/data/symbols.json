@@ -1,0 +1,837 @@
+{
+ "note": "The symbol walls of the museum's hallways (plans/museum-visual-pass.md §5). tools/build-symbols.js draws each wall's signs into docs/museum/symbols/<wall>.webp with its index <wall>.json; tools/verify-symbols.js checks every sign against 'held' below. Alphabets and syllabaries stream in their traditional order and number signs in counting order, so a column can never spell a word or a name.",
+ "fonts": {
+  "hiero": "docs/assets/vendor/fonts/NotoSansEgyptianHieroglyphs.woff2",
+  "cuneiform": "art-source/fonts/NotoSansCuneiform.woff2",
+  "linearb": "art-source/fonts/NotoSansLinearB.woff2",
+  "ugaritic": "art-source/fonts/NotoSansUgaritic.woff2"
+ },
+ "walls": {
+  "bronze": {
+   "label": "Wing II, the Bronze Age",
+   "sets": [
+    {
+     "name": "Egyptian hieroglyphs: the one-consonant signs",
+     "font": "hiero",
+     "order": "the conventional Egyptological order, with Gardiner's sign-list numbers",
+     "signs": [
+      {
+       "cp": "1313F",
+       "id": "G1",
+       "value": "ꜣ"
+      },
+      {
+       "cp": "131CB",
+       "id": "M17",
+       "value": "i"
+      },
+      {
+       "cp": "131CC",
+       "id": "M17A",
+       "value": "y"
+      },
+      {
+       "cp": "1309D",
+       "id": "D36",
+       "value": "ꜥ"
+      },
+      {
+       "cp": "13171",
+       "id": "G43",
+       "value": "w"
+      },
+      {
+       "cp": "130C0",
+       "id": "D58",
+       "value": "b"
+      },
+      {
+       "cp": "132AA",
+       "id": "Q3",
+       "value": "p"
+      },
+      {
+       "cp": "13191",
+       "id": "I9",
+       "value": "f"
+      },
+      {
+       "cp": "13153",
+       "id": "G17",
+       "value": "m"
+      },
+      {
+       "cp": "13216",
+       "id": "N35",
+       "value": "n"
+      },
+      {
+       "cp": "1308B",
+       "id": "D21",
+       "value": "r"
+      },
+      {
+       "cp": "13254",
+       "id": "O4",
+       "value": "h"
+      },
+      {
+       "cp": "1339B",
+       "id": "V28",
+       "value": "ḥ"
+      },
+      {
+       "cp": "1340D",
+       "id": "Aa1",
+       "value": "ḫ"
+      },
+      {
+       "cp": "13121",
+       "id": "F32",
+       "value": "ẖ"
+      },
+      {
+       "cp": "13283",
+       "id": "O34",
+       "value": "z"
+      },
+      {
+       "cp": "132F4",
+       "id": "S29",
+       "value": "s"
+      },
+      {
+       "cp": "13219",
+       "id": "N37",
+       "value": "š"
+      },
+      {
+       "cp": "1320E",
+       "id": "N29",
+       "value": "q"
+      },
+      {
+       "cp": "133A1",
+       "id": "V31",
+       "value": "k"
+      },
+      {
+       "cp": "133BC",
+       "id": "W11",
+       "value": "g"
+      },
+      {
+       "cp": "133CF",
+       "id": "X1",
+       "value": "t"
+      },
+      {
+       "cp": "1337F",
+       "id": "V13",
+       "value": "ṯ"
+      },
+      {
+       "cp": "130A7",
+       "id": "D46",
+       "value": "d"
+      },
+      {
+       "cp": "13193",
+       "id": "I10",
+       "value": "ḏ"
+      }
+     ]
+    },
+    {
+     "name": "Cuneiform number signs: 1 to 9, 10 to 50",
+     "font": "cuneiform",
+     "order": "counting order, the digits of the sexagesimal system",
+     "signs": [
+      {
+       "cp": "12079",
+       "id": "Sign Dish",
+       "value": "1"
+      },
+      {
+       "cp": "1222B",
+       "id": "Sign Min",
+       "value": "2"
+      },
+      {
+       "cp": "12408",
+       "id": "Numeric Sign Three Dish",
+       "value": "3"
+      },
+      {
+       "cp": "12409",
+       "id": "Numeric Sign Four Dish",
+       "value": "4"
+      },
+      {
+       "cp": "1240A",
+       "id": "Numeric Sign Five Dish",
+       "value": "5"
+      },
+      {
+       "cp": "1240B",
+       "id": "Numeric Sign Six Dish",
+       "value": "6"
+      },
+      {
+       "cp": "1240C",
+       "id": "Numeric Sign Seven Dish",
+       "value": "7"
+      },
+      {
+       "cp": "1240D",
+       "id": "Numeric Sign Eight Dish",
+       "value": "8"
+      },
+      {
+       "cp": "1240E",
+       "id": "Numeric Sign Nine Dish",
+       "value": "9"
+      },
+      {
+       "cp": "1230B",
+       "id": "Sign U",
+       "value": "10"
+      },
+      {
+       "cp": "12399",
+       "id": "Sign U U",
+       "value": "20"
+      },
+      {
+       "cp": "1230D",
+       "id": "Sign U U U",
+       "value": "30"
+      },
+      {
+       "cp": "1240F",
+       "id": "Numeric Sign Four U",
+       "value": "40"
+      },
+      {
+       "cp": "12410",
+       "id": "Numeric Sign Five U",
+       "value": "50"
+      }
+     ]
+    },
+    {
+     "name": "Linear B: the syllabary",
+     "font": "linearb",
+     "order": "the standard grid order (a e i o u, da de di do du ...), Bennett's sign numbers",
+     "signs": [
+      {
+       "cp": "10000",
+       "id": "B008",
+       "value": "a"
+      },
+      {
+       "cp": "10001",
+       "id": "B038",
+       "value": "e"
+      },
+      {
+       "cp": "10002",
+       "id": "B028",
+       "value": "i"
+      },
+      {
+       "cp": "10003",
+       "id": "B061",
+       "value": "o"
+      },
+      {
+       "cp": "10004",
+       "id": "B010",
+       "value": "u"
+      },
+      {
+       "cp": "10005",
+       "id": "B001",
+       "value": "da"
+      },
+      {
+       "cp": "10006",
+       "id": "B045",
+       "value": "de"
+      },
+      {
+       "cp": "10007",
+       "id": "B007",
+       "value": "di"
+      },
+      {
+       "cp": "10008",
+       "id": "B014",
+       "value": "do"
+      },
+      {
+       "cp": "10009",
+       "id": "B051",
+       "value": "du"
+      },
+      {
+       "cp": "1000A",
+       "id": "B057",
+       "value": "ja"
+      },
+      {
+       "cp": "1000B",
+       "id": "B046",
+       "value": "je"
+      },
+      {
+       "cp": "1000D",
+       "id": "B036",
+       "value": "jo"
+      },
+      {
+       "cp": "1000E",
+       "id": "B065",
+       "value": "ju"
+      },
+      {
+       "cp": "1000F",
+       "id": "B077",
+       "value": "ka"
+      },
+      {
+       "cp": "10010",
+       "id": "B044",
+       "value": "ke"
+      },
+      {
+       "cp": "10011",
+       "id": "B067",
+       "value": "ki"
+      },
+      {
+       "cp": "10012",
+       "id": "B070",
+       "value": "ko"
+      },
+      {
+       "cp": "10013",
+       "id": "B081",
+       "value": "ku"
+      },
+      {
+       "cp": "10014",
+       "id": "B080",
+       "value": "ma"
+      },
+      {
+       "cp": "10015",
+       "id": "B013",
+       "value": "me"
+      },
+      {
+       "cp": "10016",
+       "id": "B073",
+       "value": "mi"
+      },
+      {
+       "cp": "10017",
+       "id": "B015",
+       "value": "mo"
+      },
+      {
+       "cp": "10018",
+       "id": "B023",
+       "value": "mu"
+      },
+      {
+       "cp": "10019",
+       "id": "B006",
+       "value": "na"
+      },
+      {
+       "cp": "1001A",
+       "id": "B024",
+       "value": "ne"
+      },
+      {
+       "cp": "1001B",
+       "id": "B030",
+       "value": "ni"
+      },
+      {
+       "cp": "1001C",
+       "id": "B052",
+       "value": "no"
+      },
+      {
+       "cp": "1001D",
+       "id": "B055",
+       "value": "nu"
+      },
+      {
+       "cp": "1001E",
+       "id": "B003",
+       "value": "pa"
+      },
+      {
+       "cp": "1001F",
+       "id": "B072",
+       "value": "pe"
+      },
+      {
+       "cp": "10020",
+       "id": "B039",
+       "value": "pi"
+      },
+      {
+       "cp": "10021",
+       "id": "B011",
+       "value": "po"
+      },
+      {
+       "cp": "10022",
+       "id": "B050",
+       "value": "pu"
+      },
+      {
+       "cp": "10023",
+       "id": "B016",
+       "value": "qa"
+      },
+      {
+       "cp": "10024",
+       "id": "B078",
+       "value": "qe"
+      },
+      {
+       "cp": "10025",
+       "id": "B021",
+       "value": "qi"
+      },
+      {
+       "cp": "10026",
+       "id": "B032",
+       "value": "qo"
+      },
+      {
+       "cp": "10028",
+       "id": "B060",
+       "value": "ra"
+      },
+      {
+       "cp": "10029",
+       "id": "B027",
+       "value": "re"
+      },
+      {
+       "cp": "1002A",
+       "id": "B053",
+       "value": "ri"
+      },
+      {
+       "cp": "1002B",
+       "id": "B002",
+       "value": "ro"
+      },
+      {
+       "cp": "1002C",
+       "id": "B026",
+       "value": "ru"
+      },
+      {
+       "cp": "1002D",
+       "id": "B031",
+       "value": "sa"
+      },
+      {
+       "cp": "1002E",
+       "id": "B009",
+       "value": "se"
+      },
+      {
+       "cp": "1002F",
+       "id": "B041",
+       "value": "si"
+      },
+      {
+       "cp": "10030",
+       "id": "B012",
+       "value": "so"
+      },
+      {
+       "cp": "10031",
+       "id": "B058",
+       "value": "su"
+      },
+      {
+       "cp": "10032",
+       "id": "B059",
+       "value": "ta"
+      },
+      {
+       "cp": "10033",
+       "id": "B004",
+       "value": "te"
+      },
+      {
+       "cp": "10034",
+       "id": "B037",
+       "value": "ti"
+      },
+      {
+       "cp": "10035",
+       "id": "B005",
+       "value": "to"
+      },
+      {
+       "cp": "10036",
+       "id": "B069",
+       "value": "tu"
+      },
+      {
+       "cp": "10037",
+       "id": "B054",
+       "value": "wa"
+      },
+      {
+       "cp": "10038",
+       "id": "B075",
+       "value": "we"
+      },
+      {
+       "cp": "10039",
+       "id": "B040",
+       "value": "wi"
+      },
+      {
+       "cp": "1003A",
+       "id": "B042",
+       "value": "wo"
+      },
+      {
+       "cp": "1003C",
+       "id": "B017",
+       "value": "za"
+      },
+      {
+       "cp": "1003D",
+       "id": "B074",
+       "value": "ze"
+      },
+      {
+       "cp": "1003F",
+       "id": "B020",
+       "value": "zo"
+      }
+     ]
+    },
+    {
+     "name": "The Ugaritic alphabet",
+     "font": "ugaritic",
+     "order": "its own ancient order, as written out on the abecedary tablets found at Ugarit (the same order as Unicode encodes it)",
+     "signs": [
+      {
+       "cp": "10380",
+       "id": "Alpa",
+       "value": "alpa"
+      },
+      {
+       "cp": "10381",
+       "id": "Beta",
+       "value": "beta"
+      },
+      {
+       "cp": "10382",
+       "id": "Gamla",
+       "value": "gamla"
+      },
+      {
+       "cp": "10383",
+       "id": "Kha",
+       "value": "kha"
+      },
+      {
+       "cp": "10384",
+       "id": "Delta",
+       "value": "delta"
+      },
+      {
+       "cp": "10385",
+       "id": "Ho",
+       "value": "ho"
+      },
+      {
+       "cp": "10386",
+       "id": "Wo",
+       "value": "wo"
+      },
+      {
+       "cp": "10387",
+       "id": "Zeta",
+       "value": "zeta"
+      },
+      {
+       "cp": "10388",
+       "id": "Hota",
+       "value": "hota"
+      },
+      {
+       "cp": "10389",
+       "id": "Tet",
+       "value": "tet"
+      },
+      {
+       "cp": "1038A",
+       "id": "Yod",
+       "value": "yod"
+      },
+      {
+       "cp": "1038B",
+       "id": "Kaf",
+       "value": "kaf"
+      },
+      {
+       "cp": "1038C",
+       "id": "Shin",
+       "value": "shin"
+      },
+      {
+       "cp": "1038D",
+       "id": "Lamda",
+       "value": "lamda"
+      },
+      {
+       "cp": "1038E",
+       "id": "Mem",
+       "value": "mem"
+      },
+      {
+       "cp": "1038F",
+       "id": "Dhal",
+       "value": "dhal"
+      },
+      {
+       "cp": "10390",
+       "id": "Nun",
+       "value": "nun"
+      },
+      {
+       "cp": "10391",
+       "id": "Zu",
+       "value": "zu"
+      },
+      {
+       "cp": "10392",
+       "id": "Samka",
+       "value": "samka"
+      },
+      {
+       "cp": "10393",
+       "id": "Ain",
+       "value": "ain"
+      },
+      {
+       "cp": "10394",
+       "id": "Pu",
+       "value": "pu"
+      },
+      {
+       "cp": "10395",
+       "id": "Sade",
+       "value": "sade"
+      },
+      {
+       "cp": "10396",
+       "id": "Qopa",
+       "value": "qopa"
+      },
+      {
+       "cp": "10397",
+       "id": "Rasha",
+       "value": "rasha"
+      },
+      {
+       "cp": "10398",
+       "id": "Thanna",
+       "value": "thanna"
+      },
+      {
+       "cp": "10399",
+       "id": "Ghain",
+       "value": "ghain"
+      },
+      {
+       "cp": "1039A",
+       "id": "To",
+       "value": "to"
+      },
+      {
+       "cp": "1039B",
+       "id": "I",
+       "value": "i"
+      },
+      {
+       "cp": "1039C",
+       "id": "U",
+       "value": "u"
+      },
+      {
+       "cp": "1039D",
+       "id": "Ssu",
+       "value": "ssu"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "held": {
+  "note": "Held back on sensitivity grounds until Carter decides each one (decision of 2026-10-06). verify-symbols fails if any of these is in a wall.",
+  "codepoints": [
+   {
+    "cp": "1202D",
+    "why": "cuneiform AN/DINGIR, the sign for 'god' written before divine names"
+   },
+   {
+    "cp": "132B9",
+    "why": "hieroglyph R8, netjer, 'god'"
+   },
+   {
+    "range": [
+     "13377",
+     "1337B"
+    ],
+    "why": "hieroglyph cartouches (royal and divine names)"
+   },
+   {
+    "range": [
+     "1305A",
+     "13075"
+    ],
+    "why": "hieroglyphs C1-C24, seated deities"
+   },
+   {
+    "cp": "0950",
+    "why": "Om"
+   },
+   {
+    "cp": "0A74",
+    "why": "Ik Onkar"
+   },
+   {
+    "cp": "262C",
+    "why": "the Khanda"
+   },
+   {
+    "cp": "2627",
+    "why": "Chi-Rho"
+   },
+   {
+    "cp": "2721",
+    "why": "the Star of David"
+   },
+   {
+    "cp": "26E4",
+    "why": "the pentagram"
+   },
+   {
+    "range": [
+     "5350",
+     "5350"
+    ],
+    "why": "the swastika (CJK)"
+   },
+   {
+    "range": [
+     "0FD5",
+     "0FD8"
+    ],
+    "why": "the swastika (Tibetan)"
+   },
+   {
+    "cp": "16DF",
+    "why": "the rune Othala (also in hate-symbol use)"
+   }
+  ],
+  "blocks": [
+   {
+    "range": [
+     "0590",
+     "05FF"
+    ],
+    "why": "Hebrew: random or ordered letters can form a divine name"
+   },
+   {
+    "range": [
+     "FB1D",
+     "FB4F"
+    ],
+    "why": "Hebrew presentation forms"
+   },
+   {
+    "range": [
+     "0600",
+     "06FF"
+    ],
+    "why": "Arabic"
+   },
+   {
+    "range": [
+     "0750",
+     "077F"
+    ],
+    "why": "Arabic"
+   },
+   {
+    "range": [
+     "08A0",
+     "08FF"
+    ],
+    "why": "Arabic"
+   },
+   {
+    "range": [
+     "FB50",
+     "FDFF"
+    ],
+    "why": "Arabic presentation forms"
+   },
+   {
+    "range": [
+     "FE70",
+     "FEFF"
+    ],
+    "why": "Arabic presentation forms"
+   },
+   {
+    "range": [
+     "0A00",
+     "0A7F"
+    ],
+    "why": "Gurmukhi"
+   },
+   {
+    "range": [
+     "0F00",
+     "0FFF"
+    ],
+    "why": "Tibetan"
+   },
+   {
+    "range": [
+     "16A0",
+     "16FF"
+    ],
+    "why": "runes: only an approved abecedary, checked for hate-symbol forms, may be added"
+   },
+   {
+    "range": [
+     "1D2E0",
+     "1D2FF"
+    ],
+    "why": "Maya numerals"
+   }
+  ]
+ }
+}

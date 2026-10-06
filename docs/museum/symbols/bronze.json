@@ -1,0 +1,29 @@
+{
+ "wall": "bronze",
+ "label": "Wing II, the Bronze Age",
+ "cell": 96,
+ "cols": 12,
+ "rows": 11,
+ "sets": [
+  {
+   "name": "Egyptian hieroglyphs: the one-consonant signs",
+   "start": 0,
+   "len": 25
+  },
+  {
+   "name": "Cuneiform number signs: 1 to 9, 10 to 50",
+   "start": 25,
+   "len": 14
+  },
+  {
+   "name": "Linear B: the syllabary",
+   "start": 39,
+   "len": 60
+  },
+  {
+   "name": "The Ugaritic alphabet",
+   "start": 99,
+   "len": 30
+  }
+ ]
+}

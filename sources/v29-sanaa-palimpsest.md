@@ -19,3 +19,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 - A. Hilali, *The Sanaa Palimpsest: The Transmission of the Qur'an in the First Centuries AH* (Oxford University Press / Institute of Ismaili Studies, 2017), https://www.iis.ac.uk/publications-listing/the-sanaa-palimpsest/
 - É. Cellard, "The Ṣanʿāʾ Palimpsest: Materializing the Codices", *Journal of Near Eastern Studies* 80 (2021), https://www.researchgate.net/publication/350885825_The_Sana_Palimpsest_Materializing_the_Codices
 - Institute of Ismaili Studies, "Sana'a Palimpsest and the Early Manuscripts of the Qur'an", https://www.iis.ac.uk/learning-centre/multimedia/sana-a-palimpsest-and-the-early-manuscripts-of-the-qur-an/
+
+## Museum rendition (2026-10-06)
+
+On Carter's decision of 2026-10-06, the rendition in the Virtual Museum shows the leaves **plain and unwritten**, for both the upper and the erased lower text: the archive does not draw imitation Qur'anic script. "Read it in English" in the museum summarises the two layers.

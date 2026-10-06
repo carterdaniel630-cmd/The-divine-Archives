@@ -419,11 +419,11 @@ async function openRelic(info) {
   const r = info.relic;
   // a site's own relic: its builder lives in the site's relics.js; hand it to the museum's inspector catalogue
   if (r.build) {
-    const [own, cat] = await Promise.all([import(`./sites/${S.site.id}/relics.js?v=${S.site.version || 1}`), import("../museum/relics.js?v=1")]);
+    const [own, cat] = await Promise.all([import(`./sites/${S.site.id}/relics.js?v=${S.site.version || 1}`), import("../museum/relics.js?v=2")]);
     if (!cat.CAT[r.id]) cat.CAT[r.id] = () => own[r.build]();
   }
   if (!S.insp) {
-    const m = await import("../museum/inspect.js?v=7");
+    const m = await import("../museum/inspect.js?v=8");
     S.insp = m.createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     const cl = S.insp.el.querySelector('[data-i="close"]'); if (cl) cl.textContent = "Back to the site";
   }

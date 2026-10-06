@@ -21,13 +21,14 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=7";
-import { buildRelic, hasRelic } from "./relics.js?v=1";
+import { createInspector } from "./inspect.js?v=8";
+import { buildRelic, hasRelic } from "./relics.js?v=2";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=4";
-import { makeFauna } from "./fauna.js?v=3";
+import { createWorld } from "./world.js?v=5";
+import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
+import { createStyle, styleOf } from "./style.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -83,7 +84,7 @@ function initRenderer() {
   scene.add(new THREE.HemisphereLight("#8a6a44", "#1a120a", 1.3));
   flashLight = new THREE.HemisphereLight("#c4d2ff", "#262a3a", 0); scene.add(flashLight);   // lightning in the skylights
   scene.add(new THREE.AmbientLight("#40301f", 0.6));
-  lantern = new THREE.PointLight("#ffcf94", 5, 9, 1.6);
+  lantern = new THREE.PointLight("#ffa65a", 2.8, 7, 1.6);   // the visitor's own light: a dim hand-held torch (it flickers, see updateLights)
   camera.add(lantern);
   for (let i = 0; i < 4; i++) { const l = new THREE.PointLight("#ffb46a", 0, 22, 1.6); scene.add(l); pool.push(l); }
   resize();
@@ -316,7 +317,7 @@ function collide(p) {
 // bucket of geometry per "zone" (entrance, rotunda, spine, each wing) merged into a few meshes
 const ZONES = {};
 function zone(id) {
-  if (!ZONES[id]) ZONES[id] = { id, floor: [], wall: [], dado: [], ceil: [], trim: [], segs: [], group: new THREE.Group(), box: new THREE.Box3() };
+  if (!ZONES[id]) ZONES[id] = { id, floor: [], floorBy: {}, wall: [], dado: [], ceil: [], trim: [], segs: [], group: new THREE.Group(), box: new THREE.Box3() };
   return ZONES[id];
 }
 // a straight wall with door gaps; gaps are [start, end] distances along the wall
@@ -340,10 +341,11 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
     z.trim.push(boxAt(Math.hypot(x1 - x0, z1 - z0) + 0.16, 0.16, 0.42, (x0 + x1) / 2, dh, (z0 + z1) / 2, ang));
   }
 }
-function rect(z, x0, x1, z0, z1, h, hole) {
-  if (!hole) z.floor.push(flat(x0, x1, z0, z1, 0, false));
+function rect(z, x0, x1, z0, z1, h, hole, floorKind) {
+  const F = floorKind ? (z.floorBy[floorKind] = z.floorBy[floorKind] || []) : z.floor;   // a period floor (style.js) or the museum's own
+  if (!hole) F.push(flat(x0, x1, z0, z1, 0, false));
   else {                                  // a floor round a glass-covered pit (world.js fills it)
-    z.floor.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
+    F.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
   }
   z.ceil.push(flat(x0, x1, z0, z1, h, true, 3));
   z.box.expandByPoint(new THREE.Vector3(x0, 0, z0)); z.box.expandByPoint(new THREE.Vector3(x1, h, z1));
@@ -355,11 +357,20 @@ function finishZones() {
       if (!z[k].length) continue;
       const m = new THREE.Mesh(merge(z[k]), mat); m.matrixAutoUpdate = false; z.group.add(m); z[k] = [];
     }
+    for (const [kind, list] of Object.entries(z.floorBy)) { if (!list.length) continue; const m = new THREE.Mesh(merge(list), S.style.floorMat(kind)); m.matrixAutoUpdate = false; z.group.add(m); z.floorBy[kind] = []; }
+    for (const d of z.decor || []) z.group.add(d);
     scene.add(z.group);
   }
 }
 function region(id, label, x0, x1, z0, z1, extra) { S.regions.push(Object.assign({ id, label, x0: Math.min(x0, x1), x1: Math.max(x0, x1), z0: Math.min(z0, z1), z1: Math.max(z0, z1) }, extra || {})); }
-function lamp(x, y, z, strength) { S.lampAnchors.push({ p: new THREE.Vector3(x, y, z), s: strength || 1 }); }
+function lamp(x, y, z, strength, flame) { S.lampAnchors.push({ p: new THREE.Vector3(x, y, z), s: strength || 1, flame: !!flame }); }
+// the visual pass (style.js): kerb, fittings, painted light and symbol wall for an area that has one
+function decorate(z, areaId, info) {
+  const d = S.style.decorate(areaId, info); if (!d) return;
+  (z.decor = z.decor || []).push(d.group);
+  d.lamps.forEach((l) => lamp(l.p.x, l.p.y, l.p.z, l.s, true));
+  d.segs.forEach(([x, zz, r]) => addBox(x, zz, r));
+}
 
 // room frames: origin on the entrance wall, F into the room, R to the right
 function frame(ox, oz, fx, fz) { return { ox, oz, fx, fz, rx: -fz, rz: fx }; }
@@ -447,7 +458,8 @@ function build() {
     const zw = zone(e.slug);
     S.eras[e.slug] = Object.assign({}, e, { k, side: s, zk, xa, xb });
     const cx0 = Math.min(xa, xb), cx1 = Math.max(xa, xb), corHole = { x0: cx0 + 1, x1: cx1 - 1, z0: zk - 0.8, z1: zk + 0.8 };
-    rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole);
+    const corStyle = styleOf("cor:" + e.slug);
+    rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole, corStyle && corStyle.floor);
     S.areas.push({ id: "cor:" + e.slug, kind: "corridor", axis: "x", hole: corHole, bounds: { x0: cx0, x1: cx1, z0: zk - COR_W / 2, z1: zk + COR_W / 2 }, sky: { x0: cx0 + 0.6, x1: cx1 - 0.6, z0: zk - 1.4, z1: zk + 1.4, y: COR_H }, lamp: [(cx0 + cx1) / 2, 3.9, zk] });
     region("wing-" + e.slug, "Wing " + e.num + " · " + e.name, xa, xb, zk - COR_W / 2, zk + COR_W / 2, { era: e.slug });
     const gapsN = [], gapsS = [];
@@ -461,7 +473,8 @@ function build() {
       const x0 = cx - ROOM_W / 2, x1 = cx + ROOM_W / 2;
       const dz = north ? -1 : 1, rz0 = Math.min(ez, bz), rz1 = Math.max(ez, bz);
       const roomHole = { x0: cx - 5.3, x1: cx + 5.3, z0: Math.min(ez + dz * 1.2, ez + dz * 12.8), z1: Math.max(ez + dz * 1.2, ez + dz * 12.8) };
-      rect(zw, x0, x1, rz0, rz1, ROOM_H, roomHole);
+      const roomStyle = styleOf(id);
+      rect(zw, x0, x1, rz0, rz1, ROOM_H, roomHole, roomStyle && roomStyle.floor);
       S.areas.push({ id, kind: "room", axis: "z", hole: roomHole, bounds: { x0, x1, z0: rz0, z1: rz1 }, sky: { x0: x0 + 0.9, x1: x1 - 0.9, z0: rz0 + 0.9, z1: rz1 - 0.9, y: ROOM_H }, lamp: [cx, 4.4, (ez + bz) / 2] });
       wall(zw, x0, bz, x1, bz, ROOM_H);
       wall(zw, x0, ez, x0, bz, ROOM_H);
@@ -469,27 +482,33 @@ function build() {
       const r = S.rooms[id];
       Object.assign(r, { frame: f, zone: e.slug, era: e.slug, cx, cz: (ez + bz) / 2 });
       region("room-" + id, r.title, x0, x1, ez, bz, { room: id, era: e.slug });
-      lamp(cx, 4.4, (ez + bz) / 2, 1);
+      if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole });
+      else lamp(cx, 4.4, (ez + bz) / 2, 1);
     });
     // corridor walls; they run outward from the spine, so a door's distance along the wall is its distance from the spine
     wall(zw, xa, zk - COR_W / 2, xb, zk - COR_W / 2, ROOM_H, gapsN);
     wall(zw, xa, zk + COR_W / 2, xb, zk + COR_W / 2, ROOM_H, gapsS);
     wall(zw, xb, zk - COR_W / 2, xb, zk + COR_W / 2, COR_H);
-    for (let a = 4; a < len; a += 8) lamp(s * (SPINE_HALF + a), 3.9, zk, 0.7);
+    if (corStyle && corStyle.fittings) decorate(zw, "cor:" + e.slug, { slug: e.slug, side: s, zk, corW: COR_W, gapsN, gapsS, hole: corHole, len });
+    else for (let a = 4; a < len; a += 8) lamp(s * (SPINE_HALF + a), 3.9, zk, 0.7);
   });
   finishZones();
   // skies and grounds (world.js)
   S.world = createWorld({ scene, quality: touch ? 1 : 2, fauna: (A, q) => makeFauna(A, q, S.world) });
-  S.areas.forEach((a) => S.world.addArea(a));
+  S.areas.forEach((a) => S.world.addArea(Object.assign(a, { detail: (styleOf(a.id) || {}).sky || 0 })));
   // lamp glows (one Points object)
-  const lp = new Float32Array(S.lampAnchors.length * 3);
-  S.lampAnchors.forEach((l, i) => lp.set([l.p.x, l.p.y, l.p.z], i * 3));
-  const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.BufferAttribute(lp, 3));
-  lampPoints = new THREE.Points(lg, new THREE.PointsMaterial({ map: TEX.glow, size: 1.1, sizeAttenuation: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, color: "#ffd9a0" }));
-  scene.add(lampPoints);
-  const bulbs = new THREE.InstancedMesh(new THREE.SphereGeometry(0.09, 8, 6), MAT.flame, S.lampAnchors.length);
+  const glows = (list, size, color) => {
+    const lp = new Float32Array(list.length * 3); list.forEach((l, i) => lp.set([l.p.x, l.p.y, l.p.z], i * 3));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.BufferAttribute(lp, 3));
+    const pts = new THREE.Points(lg, new THREE.PointsMaterial({ map: TEX.glow, size, sizeAttenuation: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, color }));
+    scene.add(pts); return pts;
+  };
+  const bulbList = S.lampAnchors.filter((l) => !l.flame), flameList = S.lampAnchors.filter((l) => l.flame);
+  lampPoints = glows(bulbList, 1.1, "#ffd9a0");
+  if (flameList.length) { S.flameGlow = glows(flameList, 0.75, "#ffb060"); scene.add(S.style.flames()); }
+  const bulbs = new THREE.InstancedMesh(new THREE.SphereGeometry(0.09, 8, 6), MAT.flame, bulbList.length);
   const mtx = new THREE.Matrix4();
-  S.lampAnchors.forEach((l, i) => { mtx.makeTranslation(l.p.x, l.p.y, l.p.z); bulbs.setMatrixAt(i, mtx); });
+  bulbList.forEach((l, i) => { mtx.makeTranslation(l.p.x, l.p.y, l.p.z); bulbs.setMatrixAt(i, mtx); });
   scene.add(bulbs);
   buildStatic();
   // the planetarium
@@ -897,14 +916,24 @@ function manageZones() {
 
 // ---------------------------------------------------------------- lights: pooled onto the nearest lamps
 let flick = 0;
+// objects shown with plain pages instead of illustrative script (Carter's decision, 2026-10-06)
+const PLAIN_PAGES = new Set(["v28", "v29"]);
+const BULB = new THREE.Color("#ffb46a"), FLAME = new THREE.Color("#ffa860");
 function updateLights() {
   const p = S.pos;
   const near = S.lampAnchors.map((l) => [l, l.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
-  near.forEach(([l], i) => {
-    const L = pool[i]; L.position.copy(l.p);
-    const f = S.reduce ? 1 : 0.93 + 0.07 * Math.sin(flick * 7 + i * 2.1) * Math.sin(flick * 3.3 + i);
+  // among flames, only the nearest three are real lights (plans/museum-visual-pass.md §4); the rest are glow and painted light
+  const flames = near.length && near[0][0].flame, n = flames ? 3 : pool.length;
+  pool.forEach((L, i) => {
+    const e = near[i];
+    if (!e || i >= n) { L.intensity = 0; return; }
+    const l = e[0]; L.position.copy(l.p); L.color.copy(l.flame ? FLAME : BULB);
+    const f = S.reduce ? 1 : l.flame
+      ? 0.84 + 0.1 * Math.sin(flick * 9.3 + i * 2.1) * Math.sin(flick * 4.1 + i) + 0.06 * Math.sin(flick * 23 + i * 5)
+      : 0.93 + 0.07 * Math.sin(flick * 7 + i * 2.1) * Math.sin(flick * 3.3 + i);
     L.intensity = 26 * l.s * f;
   });
+  lantern.intensity = 2.8 * (S.reduce ? 1 : 0.9 + 0.07 * Math.sin(flick * 8.7) * Math.sin(flick * 3.1) + 0.03 * Math.sin(flick * 21));
 }
 
 // ---------------------------------------------------------------- where am I
@@ -927,6 +956,8 @@ function locate() {
     sub = "The Rotunda · Comparative themes"; text = bd < 7.5 ? S.rooms[best].title : "The Rotunda";
     reg = Object.assign({}, reg, { room: bd < 7.5 ? best : null });
   } else { text = reg.label; sub = reg.era ? "Corridor" : "The Divine Archives"; }
+  const areaId = reg.room || (reg.era ? "cor:" + reg.era : reg.id);
+  S.styledHere = !!styleOf(areaId);
   const key = sub + "|" + text;
   if (key !== S.where) {
     S.where = key; S.room = reg.room || null;
@@ -1026,6 +1057,7 @@ function openCard(ex) {
       S.cardAt = performance.now(); unlock();
       S.insp.open(v.prop, h, v.rendition
         ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
+        : PLAIN_PAGES.has(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its pages are left plain: the archive does not draw imitation Qur'anic script. Read it in English gives what the real leaves contain."
         : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
         : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.", d.id);
       return;
@@ -1345,7 +1377,8 @@ function tick(now) {
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
   if (S.portalFx) portalTick(dt);
-  if (!S.reduce && idleT > 0.12) { idleT = 0; S.dirty = true; }
+  const styled = S.style.update(dt, S.reduce) && S.styledHere;
+  if (!S.reduce && idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
   camera.position.copy(S.pos);
@@ -1388,6 +1421,7 @@ async function start() {
     S.manifest = m;
     for (const r of m.rooms) S.rooms[r.id] = Object.assign({}, r);
     makeTextures(); makeMaterials();
+    S.style = createStyle({ touch, MAT, merge, onReady: () => { S.dirty = true; } });
     S.insp = createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     build();
   } catch (e) {
@@ -1404,6 +1438,7 @@ async function start() {
     S.pos.set(P.px + ox, EYE, P.pz + oz); S.yaw = Math.atan2(-ox, -oz); S.portalArrived = true; if (S.portalFx) S.portalFx.fired = true;
   }
   else if (hash && S.rooms[hash]) teleport(hash, true);
+  else if (hash && hash[0] === "@" && S.eras[hash.slice(1)]) teleport(hash, true);
   else if (saved && isFinite(saved.x)) { S.pos.set(saved.x, EYE, saved.z); S.yaw = saved.yaw || 0; }
   else { S.pos.set(0, EYE, 11); S.yaw = 0; }
   manageZones(); locate();
@@ -1428,6 +1463,8 @@ window.__MU = {
   bolt: (id) => S.world && S.world.forceBolt(id),
   world: () => S.world ? [S.world.time.toFixed(2), S.paused, S.pos.x.toFixed(1), S.pos.z.toFixed(1)].concat(S.world.areas.filter((a) => a.pit || a.skyG.visible).map((a) => a.id + (a.pit ? ":pit" + (a.pit.visible ? "+" : "-") : "") + (a.skyG.visible ? ":sky" : ""))) : null,
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
+  place: (x, z, yaw, pitch) => { S.pos.set(x, EYE, z); S.yaw = yaw; S.pitch = pitch || 0; S.auto = null; S.dirty = true; manageZones(); locate(); },
+  relicsPending: () => S.relicQ.length,
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),

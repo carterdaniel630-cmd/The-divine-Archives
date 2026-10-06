@@ -16,6 +16,8 @@ on:
       - "tools/verify-*.js"
       - "docs/pilgrimage/**"
       - "docs/assets/pilgrimage-data.js"
+      - "docs/museum/symbols/**"
+      - "tools/data/symbols.json"
       - ".github/workflows/verify.yml"
   pull_request:
     paths:
@@ -26,6 +28,8 @@ on:
       - "tools/verify-*.js"
       - "docs/pilgrimage/**"
       - "docs/assets/pilgrimage-data.js"
+      - "docs/museum/symbols/**"
+      - "tools/data/symbols.json"
       - ".github/workflows/verify.yml"
   workflow_dispatch: {}
 

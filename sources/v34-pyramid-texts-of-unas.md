@@ -22,3 +22,10 @@ Per the project sourcing standard, this citation log records the real, checkable
 *The "Cannibal Hymn"*
 
 - History Skills, "The Cannibalism Hymn of Pharaoh Unas", https://www.historyskills.com/classroom/ancient-history/cannibalism-hymn-of-unas/
+
+## Museum rendition (visual pass, 2026-10-06)
+
+`docs/museum/relics.js`, `CAT.v34`: a section of inscribed wall, not the whole chamber.
+- **The chamber:** about 7.3 × 3.08 m, with a gabled ceiling painted with five-pointed stars; the texts carved in columns and filled with blue pigment (https://madainproject.com/pyramid_of_unas, via search results; to be checked against a scholarly source at review).
+- **The rendition:** columns of signs filled with blue between incised dividers, under a gable of stars. The signs are illustrative marks; no reliable public-domain Unicode transcription of the texts exists to copy.
+- **Not matched to photographs here:** images could not be opened from the build environment.

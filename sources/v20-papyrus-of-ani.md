@@ -12,3 +12,10 @@ Per the project sourcing standard, this citation log records the real, checkable
 - E. A. W. Budge, *The Book of the Dead: The Papyrus of Ani* (British Museum, 1895)
 - R. O. Faulkner (trans.), *The Egyptian Book of the Dead: The Book of Going Forth by Day* (Chronicle, 1994/2008)
 - "Book of the Dead", https://en.wikipedia.org/wiki/Book_of_the_Dead
+
+## Museum rendition (visual pass, 2026-10-06)
+
+`docs/museum/relics.js`, `CAT.v20`:
+- **Height:** 42 cm, the height the British Museum records for each frame of EA 10470 (e.g. frames 1, 8 and 16; https://www.britishmuseum.org/collection/object/Y_EA10470-1, via search results). Total length about 24 m, now cut into 37 frames.
+- **The scene:** the judgment (frame 3): above, a register of gods seated as judges; below, Anubis at the scale, the heart weighed against the feather, Thoth's baboon on the scale's post, Thoth writing, and the Devourer waiting. Drawn in our own hand as a simplified rendition; the columns of writing are illustrative marks (no reliable public-domain Unicode transcription of the text exists to copy).
+- **Not matched to photographs here:** the holder's images could not be opened from the build environment.
