@@ -28,7 +28,7 @@ import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createStyle, styleOf } from "./style.js?v=2";
+import { createStyle, styleOf } from "./style.js?v=3";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;

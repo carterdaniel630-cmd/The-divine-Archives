@@ -483,3 +483,7 @@ Real phone frame rates: Carter's walk, with `?fps=1`.
   merged into one to stay inside it), 202k triangles (budget 220k), 39 textures; Egypt room 86 calls, 117k
   triangles, 55 textures; download to first walk 1.90 MB, unchanged. The clip of the wall is
   `audits/museum-visual-pass/symbol-wall-drips.mp4` (rendered frame by frame; software graphics).
+- **Second revision (Carter, 2026-10-06: "they should be scrolling down the wall").** The signs themselves now stream down the
+  wall, each column at its own speed. Lit runs of uneven length, with uneven gaps, travel with them, the leading sign
+  brightest. The signs still flip as they go. Clip: `audits/museum-visual-pass/symbol-wall-scrolling.mp4`.
+  The wall holds still only when the visitor has "reduce motion" on (the museum's Motion button, or the phone's own setting).

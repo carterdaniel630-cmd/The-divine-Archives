@@ -406,30 +406,22 @@ void main(){
   float L = vDat.x, H = vDat.y;
   float ci = floor(vUv.x / colW), fx = vUv.x - ci * colW;
   float sd = hash(vec2(ci, vDat.z));
-  float rowF = (H - vUv.y) / cellH + sd, ri = floor(rowF), fy = rowF - ri;   // rows counted from the ceiling, staggered by column
-  // the drips: two per column, released at uneven intervals, each falling a little faster as it goes
-  float lum = .08, headNear = 0.;
-  for (int d = 0; d < 2; d++) {
-    float fd = float(d), h1 = hash(vec2(ci + fd * 31.7, vDat.z + fd * 5.));
-    float period = 3. + h1 * 7., tt = uTime + h1 * 41.;
-    float cyc = floor(tt / period), ph = tt - cyc * period;
-    float hc = hash(vec2(cyc + fd * 3.1, ci * 3.3 + vDat.z));
-    float delay = hc * period * .55, speed = 2.4 + hc * 4., trailN = 5. + hash(vec2(cyc + .5, ci + fd)) * 15.;
-    float tl = ph - delay;
-    if (tl > 0.) {
-      float head = tl * speed * (1. + tl * .18) - 1.5, behind = head - ri;
-      if (behind > -1.) {
-        float tr = behind >= 0. ? clamp(1. - behind / trailN, 0., 1.) : 0.;
-        float hd = 1. - smoothstep(0., 1.1, abs(behind));
-        lum = max(lum, tr * tr * .85 + hd * 1.25);
-        headNear = max(headNear, hd);
-      }
-    }
+  // the signs themselves stream down the wall: each column slides from the ceiling toward the floor at its own speed
+  float sd2 = hash(vec2(vDat.z + 1.3, ci * .7)), speed = .9 + sd2 * 2.6;              // rows per second, uneven from column to column
+  float s = (H - vUv.y) / cellH + sd * 40. - uTime * speed, ri = floor(s), fy = s - ri;
+  // the lit runs travel with the signs: runs of uneven length with uneven gaps, the leading (lowest) sign brightest
+  float blk = floor(s / 24.), bh = hash(vec2(blk, ci + vDat.z)), run = 5. + bh * 15.;
+  float st = hash(vec2(blk + .37, ci * 1.9 + vDat.z)) * (24. - run), loc = s - blk * 24. - st;
+  float lum = .07, headNear = 0.;
+  if (bh > .18 && loc >= 0. && loc < run + 1.) {
+    float k = clamp(loc / run, 0., 1.);
+    float hd = 1. - smoothstep(0., 1.2, abs(loc - run));
+    lum = max(lum, k * k * .85 + hd * 1.2); headNear = hd;
   }
-  // each sign flips to another of its script at its own uneven rate; the falling head flips fastest
+  // each sign flips to another of its script at its own uneven rate; the leading sign flips fastest
   float sIdx = mod(ri + floor(sd * 4.), uN);
   vec2 set = setOf(sIdx);
-  float cr = hash(vec2(ci * 7.13 + ri, vDat.z + 3.)), rate = (.18 + cr * 1.4) * (1. + headNear * 6.);
+  float cr = hash(vec2(ci * 7.13 + ri, vDat.z + 3.)), rate = (.2 + cr * 1.3) * (1. + headNear * 7.);
   float tick = floor(uTime * rate + cr * 17.);
   float cell = set.x + floor(hash(vec2(tick + cr * 9., ci * 13. + ri * 1.7 + vDat.z)) * set.y);
   vec2 lc = vec2((fx - (colW - gs) * .5) / gs, (fy * cellH - (cellH - gs) * .5) / gs);   // 0..1 inside the sign, y down
