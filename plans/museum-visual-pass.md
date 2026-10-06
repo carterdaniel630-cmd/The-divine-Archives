@@ -205,7 +205,7 @@ living community may object to seeing used as decoration:
 
 ## 6. Performance budget
 
-**Baseline, measured 2026-10-06** on the current museum (`main` @ 3004790). The browser emulated a 412 × 915 phone
+**Baseline, measured 2026-10-06** (raw numbers: `audits/museum-visual-pass/`, script: `tools/museum-baseline.js`) on the current museum (`main` @ 3004790). The browser emulated a 412 × 915 phone
 screen in headless Chromium. Graphics were software-rendered (SwiftShader) because this environment has no GPU, so
 frame rates here are **relative only, not phone numbers**.
 
