@@ -1,6 +1,6 @@
 # Museum visual pass: plan
 
-Status: **PLAN, awaiting Carter's approval.** Nothing is built yet. Branch `claude/museum-visuals`.
+Status: **Plan approved by Carter 2026-10-06. Sample (§7) built, awaiting Carter's walk-through.** Branch `claude/museum-visuals`; nothing merged.
 Requested 2026-10-06. Order of work once approved: one sample hallway and one sample room (§7). I'll send a
 preview link to walk on a phone. The rest of the museum is done only after Carter approves the sample.
 
@@ -400,3 +400,70 @@ the Vault entry. "Placed in room" is the room whose case holds the object.
 | V86 | The Berlin Gold Hat | Full 3D |  |  | ch42 | ch14 |
 | V87 | The Diwan Abatur | Full 3D |  |  | ch56 | ch17 |
 | V88 | The Skull of “Mary Magdalene” at Saint-Maximin *(pending)* | Full 3D (purpose-built) |  |  | ch16 | ch45 ch31 |
+
+---
+
+## Sample built (2026-10-06)
+
+Carter's decisions of 2026-10-06: plan approved; all held-back symbols stay off the walls; the nine sensitive objects
+left as they are; V28/V29 shown with plain pages; real public-domain text only where a reliable transcription exists
+(cited), never written or reconstructed; sample = Bronze Age corridor + Egypt room; the follow light becomes a dim
+hand-held torch.
+
+**What the sample has:**
+- **Floors.** Baked brick with bitumen joints in the corridor; dressed limestone in the Egypt room. Kerbs at the
+  glass: limestone in the corridor, and in the room the painted "block border" of New Kingdom palace floors.
+- **Light.** Saucer lamps in wall niches and bronze tripod braziers:
+  - corridor: 8 niches and 4 braziers;
+  - room: 8 niches and 4 corner braziers.
+
+  Only the nearest 3 flames are real lights, and they flicker. All flames are one draw call, and their light on
+  floor and wall is painted on. The visitor's light is a dim, flickering hand-held torch everywhere.
+- **The symbol wall.** In the corridor. Four sign lists, each in its traditional order:
+  - the 25 one-consonant hieroglyphs (Gardiner numbers);
+  - the cuneiform number signs 1–9 and 10–50;
+  - the Linear B syllabary (Bennett numbers);
+  - the 30-letter Ugaritic alphabet.
+
+  129 signs in a 76 KB atlas. `tools/verify-symbols.js` passes, with nothing held back.
+- **Sky.** More detailed over both areas: clouds lit on the sun's side, high cirrus, a halo round the sun.
+- **Relics.**
+  - V53 Rosetta Stone: modelled to 112.3 × 75.7 × 28.4 cm, with 14, 32 and 54 lines of marks, a rough back, and its
+    dark grey and pink stone.
+  - V43 Merneptah Stele: modelled to 3.18 × 1.63 m (some sources give 3.10 × 1.60), 28 lines, black granite, and the
+    Amenhotep III inscription on the back.
+  - V20 Papyrus of Ani: the 42 cm sheet height, with the register of seated gods above the weighing.
+  - V34 Pyramid Texts of Unas: a gabled ceiling of five-pointed stars.
+  - V28 and V29: plain pages.
+  - Each object's source log has a "Museum rendition" note.
+- **Tools.** `museum.html?fps=1` shows the frame-rate overlay. `museum.html#@02-bronze-age` and `museum.html#ch02`
+  open straight into the corridor and the room.
+
+**Limits of this environment, stated plainly:**
+- The holders' photographs could not be opened here (British Museum, Wikisource, archive.org and Perseus are
+  blocked), so the relics are matched to published measurements and descriptions, not to photographs. Carter's
+  eye is the photo check.
+- No public-domain transcription could be reached, so all writing is still marks:
+  - The Rosetta Greek has a public-domain edition, Dittenberger, *OGIS* 90 (1903), but no copy of it could be reached.
+  - The hieroglyphic and Demotic texts, and those of V43, V20 and V34, have no reliable public-domain Unicode
+    transcription to copy.
+- The Rosetta Stone's painted edges are left off, because the published wordings differ.
+
+**Numbers, before → after** (same headless phone, same spots; software graphics, so frame rates are relative only;
+raw files in `audits/museum-visual-pass/`):
+
+| Measure | Budget | Hall | Bronze Age corridor | Egypt room |
+|---|---|---|---|---|
+| Draw calls | ≤ 100 | 38 → 40 | 79 → 93 | 65 → 86 |
+| Triangles | ≤ 220k | 31k → 31k | 191k → 166k | 104k → 117k |
+| GPU textures | ≤ 60 | 14 → 14 | 31 → 38 | 43 → 53 |
+| Real lights | ≤ 3 per area | 4 + lantern | 4 + lantern → 3 + torch | 4 + lantern → 3 + torch |
+
+| Load | Budget | Before | After |
+|---|---|---|---|
+| Downloaded to first walk | +300 KB for the whole pass | 1.78 MB | 1.90 MB (+119 KB) |
+| Downloaded after hall, corridor and room | | 2.23 MB | 2.35 MB (+119 KB) |
+| First zone ready, no throttle | ≤ +10% | 11.6 s | 12.5 s (+8%) |
+| First zone ready, 4× CPU throttle | ≤ +10% | 19.2 s | 19.4 s (+1%) |
+
+Real phone frame rates: Carter's walk, with `?fps=1`.

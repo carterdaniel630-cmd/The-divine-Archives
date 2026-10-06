@@ -47,6 +47,9 @@ const GROUND = {
   granite: { base: "#6e6a66", cols: ["#2a2826", "#a8a29a", "#8a6a5a", "#44403c"], n: 9000, rough: 0.8 },
   pinkgranite: { base: "#8a6a60", cols: ["#2a2220", "#c8a898", "#5a4640", "#e0d0c0"], n: 9000, rough: 0.8 },
   granodiorite: { base: "#3a3836", cols: ["#1a1918", "#8a8680", "#5a5854", "#c0bcb4"], n: 7000, rough: 0.55 },
+  // the visual pass: darker stones matched to the published descriptions of V53 (dark grey granodiorite with a pink streak) and V43 (black granite)
+  rosetta: { base: "#2c2a29", cols: ["#141312", "#5a5652", "#3e3a38", "#7a6460"], n: 9000, rough: 0.5 },
+  blackgranite: { base: "#222020", cols: ["#0e0d0d", "#4a4846", "#353331", "#6a6866"], n: 9000, rough: 0.55 },
   basalt: { base: "#2e2c2a", cols: ["#1a1918", "#4a4644", "#3a3634"], n: 5000, rough: 0.75 },
   limestone: { base: "#c9bca0", cols: ["#a89878", "#e0d6c0", "#b8a888", "#8a7a5a"], n: 5000, rough: 0.9, stains: "rgba(120,90,50,.18)" },
   sandstone: { base: "#b89a74", cols: ["#9a7a58", "#d0b890", "#7a5a40"], n: 8000, rough: 0.95 },
@@ -423,7 +426,7 @@ CAT.v53 = (E) => {                                          // the Rosetta Stone
   // the marks are illustrative, never the text (sources/v53-rosetta-stone.md, "Museum rendition")
   const w = 0.757, h = 1.123, pts = outline(w, h, { jag: 0.02, jagT: 0.06 }); pts.forEach((p) => { if (p[1] > 0.79) p[1] -= (p[0] + w / 2) * 0.28 + (R() - 0.5) * 0.04; if (p[0] > 0.2 && p[1] < 0.25) p[0] -= (0.25 - p[1]) * 0.4; });
   const ink = { ink: "rgba(170,166,160,.42)" };
-  const g = slab({ pts, d: 0.284, stone: "granodiorite", env: E.env, relief: 5, px: 1400, paint: (c, hg, W, H) => {
+  const g = slab({ pts, d: 0.284, stone: "rosetta", env: E.env, relief: 5, px: 1400, paint: (c, hg, W, H) => {
     for (let i = 0; i < 5; i++) { c.strokeStyle = `rgba(150,110,105,${0.08 + R() * 0.08})`; c.lineWidth = 6 + R() * 18; c.beginPath(); const y = H * (0.05 + R() * 0.9); c.moveTo(0, y); c.bezierCurveTo(W * 0.3, y + (R() - 0.5) * 80, W * 0.7, y + (R() - 0.5) * 80, W, y + (R() - 0.5) * 60); c.stroke(); }   // the pink in the grey
     rows(c, hg, [W * 0.05, H * 0.04, W * 0.95, H * 0.255], "hiero", 14, Object.assign({ space: 0.04 }, ink));                // 14 lines of hieroglyphs (the top is lost)
     rows(c, hg, [W * 0.04, H * 0.275, W * 0.96, H * 0.595], "demotic", 32, ink);                                         // 32 lines of Demotic
@@ -435,12 +438,12 @@ CAT.v53 = (E) => {                                          // the Rosetta Stone
   return Object.assign({ root: g, note: "Modelled to the British Museum's dimensions (112.3 × 75.7 × 28.4 cm), with the real number of lines in each script: 14, 32 and 54." }, flipper(g));
 };
 CAT.v43 = (E) => {                                          // the Merneptah Stele: arched granite, a lunette scene over 28 lines
-  const w = 1.63, h = 3.18, g = slab({ pts: outline(w, h, { arch: 0.55, jag: 0.015 }), d: 0.3, stone: "granite", env: E.env, relief: 5, px: 1024, paint: (c, hg, W, H) => {
+  const w = 1.63, h = 3.18, g = slab({ pts: outline(w, h, { arch: 0.55, jag: 0.015 }), d: 0.3, stone: "blackgranite", env: E.env, relief: 5, px: 1024, paint: (c, hg, W, H) => {
     const ly = H * 0.8; 
     both(c, hg, (x) => { x.beginPath(); x.ellipse(W / 2, H * 0.08 + 18, 40, 14, 0, 0, TAU); x.fill(); x.fillRect(W / 2 - 170, H * 0.08 + 12, 340, 10); }, "#c8c8c8");   // the winged sun
     const fig = (fx, left, o) => profile(c, fx, H * 0.1 + 34, H * 0.12, Object.assign({ left, col: "#6a6660", cloth: "#9a9690", line: "#2a2826" }, o));
     fig(W * 0.3, false, { crown: "#8a8680" }); fig(W * 0.42, true, { crown: "#8a8680" }); fig(W * 0.58, false, {}); fig(W * 0.7, true, { crown: "#8a8680" });
-    rows(c, hg, [W * 0.06, H * 0.27, W * 0.94, H * 0.965], "hiero", 28, { ink: "rgba(30,28,26,.8)", space: 0.05 });   // 28 lines
+    rows(c, hg, [W * 0.06, H * 0.27, W * 0.94, H * 0.965], "hiero", 28, { ink: "rgba(150,146,140,.45)", space: 0.05 });   // 28 lines
   }, paintBack: (c, hg, W, H) => {                             // the back: the earlier inscription of Amenhotep III, whose stela Merneptah reused (illustrative marks)
     write(c, hg, [W * 0.08, H * 0.2, W * 0.92, H * 0.92], "hiero", { size: 13, ink: "rgba(30,28,26,.55)", lh: 19 });
     blotches(c, W, H, 14, "rgba(20,18,16,.2)", 90);
