@@ -534,3 +534,55 @@ Raw numbers: `audits/museum-visual-pass/wing3-baseline-unthrottled.json`, `wing3
   button only said "MOTION", so this wasn't obvious. It now says **Motion on** or **Motion off**. With motion off,
   a note in a styled area says why things hold still and how to turn motion on. The signs now flip **like a
   Rolodex card**: each change folds the sign shut about its middle and opens the next.
+- **Fourth revision (Carter, 2026-10-06).** The motion should always be there. Now the scene always moves: the
+  symbol walls, flames, water, clouds, plants, animals and lightning, in the museum, in the inspector and at the
+  Pilgrimage. This happens even when a phone asks for less animation. The switch is now called **View motion on/off**.
+  It changes only how the view itself moves:
+  - the glide when you tap to walk;
+  - the fade when you jump to a place;
+  - the pause when you step through a portal;
+  - the slow turn of an object in the inspector.
+
+  The "Motion is off" note is gone, because nothing in the scene stops any more.
+
+## Rollout, step 2: Wing IV, the Axial Age (2026-10-06, on the preview)
+
+Carter said "keep them and continue". That was read as: keep the held-back signs held back, Phoenician included,
+and go on to the next wing.
+
+- **Floors.**
+  - Corridor: marble, with a marble kerb.
+  - Second Temple Judaism: Herodian ashlar.
+  - Buddhism: fired brick, as at the early stupas.
+  - Confucianism & Daoism: grey tile.
+  - Rome: tessellated mosaic, with a marble kerb.
+  - Celtic & Germanic: oak boards.
+  - Classical Greece: pebble mosaic, with a marble kerb.
+  - Jainism: limestone.
+  - The Upanishads, and the Scythians & the Steppe: rammed earth.
+
+  Every room uses the same Axial-Age fittings.
+- **Symbol wall "axial".** It shows:
+  - Greek letters;
+  - Brahmi and Kharoshthi (the scripts of the Ashoka inscriptions);
+  - the eight I Ching trigrams.
+
+  The fonts are Noto Sans Brahmi, Kharoshthi and Symbols 2, all under the SIL OFL and kept in `art-source/fonts/`.
+  Nothing on the held list is used.
+- **Phone budget.** Every spot stays at or under 100 draw calls. Bronze Age corridor triangles are 226k, above the
+  220k guide figure in §6, but the live museum is already at 214k there in this walk order. Textures stay within
+  about 15 of the live museum.
+
+| Measure (no throttle) | Live museum | With the pass |
+|---|---|---|
+| Wing IV corridor: calls / triangles | 84 / 175k | 92 / 192k |
+| Second Temple Judaism | 58 / 81k | 63 / 89k |
+| Rome | 91 / 87k | 96 / 100k |
+| Classical Greece | 52 / 93k | 59 / 106k |
+| Wing III corridor | 85 / 182k | 91 / 191k |
+| Pre-exilic Israel | 94 / 91k | 99 / 97k |
+| Wing II corridor | 84 / 214k | 91 / 226k |
+| Egypt room | 61 / 104k | 70 / 116k |
+| Textures, cumulative over that walk | 34 → 108 | 34 → 117 |
+
+Raw numbers: `audits/museum-visual-pass/wing4-baseline-unthrottled.json`, `wing4-unthrottled.json`.

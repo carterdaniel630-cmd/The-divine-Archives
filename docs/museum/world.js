@@ -15,8 +15,8 @@
    place the choices are made; fauna.js puts animals in them and sound.js
    gives each its sound.
 
-   Motion: with "reduce motion" on, water, clouds and plants hold still and
-   there is no lightning. Lightning is soft and never more than two pulses
+   Motion: water, clouds, plants and lightning always move; the museum's
+   motion switch only changes how the view itself moves. Lightning is soft and never more than two pulses
    every several seconds.
    ========================================================================== */
 import * as THREE from "three";

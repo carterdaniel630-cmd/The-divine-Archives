@@ -8,7 +8,10 @@
   "greek": "art-source/fonts/NotoSansGreek.woff2",
   "olditalic": "art-source/fonts/NotoSansOldItalic.woff2",
   "oldsoutharabian": "art-source/fonts/NotoSansOldSouthArabian.woff2",
-  "oldpersian": "art-source/fonts/NotoSansOldPersian.woff2"
+  "oldpersian": "art-source/fonts/NotoSansOldPersian.woff2",
+  "brahmi": "art-source/fonts/NotoSansBrahmi.woff2",
+  "kharoshthi": "art-source/fonts/NotoSansKharoshthi.woff2",
+  "symbols2": "art-source/fonts/NotoSansSymbols2.woff2"
  },
  "walls": {
   "bronze": {
@@ -1326,6 +1329,619 @@
      ]
     }
    ]
+  },
+  "axial": {
+   "label": "Wing IV, the Axial Age",
+   "sets": [
+    {
+     "name": "The Greek alphabet",
+     "font": "greek",
+     "order": "alphabetical",
+     "signs": [
+      {
+       "cp": "0391",
+       "id": "Alpha",
+       "value": "Α"
+      },
+      {
+       "cp": "0392",
+       "id": "Beta",
+       "value": "Β"
+      },
+      {
+       "cp": "0393",
+       "id": "Gamma",
+       "value": "Γ"
+      },
+      {
+       "cp": "0394",
+       "id": "Delta",
+       "value": "Δ"
+      },
+      {
+       "cp": "0395",
+       "id": "Epsilon",
+       "value": "Ε"
+      },
+      {
+       "cp": "0396",
+       "id": "Zeta",
+       "value": "Ζ"
+      },
+      {
+       "cp": "0397",
+       "id": "Eta",
+       "value": "Η"
+      },
+      {
+       "cp": "0398",
+       "id": "Theta",
+       "value": "Θ"
+      },
+      {
+       "cp": "0399",
+       "id": "Iota",
+       "value": "Ι"
+      },
+      {
+       "cp": "039A",
+       "id": "Kappa",
+       "value": "Κ"
+      },
+      {
+       "cp": "039B",
+       "id": "Lamda",
+       "value": "Λ"
+      },
+      {
+       "cp": "039C",
+       "id": "Mu",
+       "value": "Μ"
+      },
+      {
+       "cp": "039D",
+       "id": "Nu",
+       "value": "Ν"
+      },
+      {
+       "cp": "039E",
+       "id": "Xi",
+       "value": "Ξ"
+      },
+      {
+       "cp": "039F",
+       "id": "Omicron",
+       "value": "Ο"
+      },
+      {
+       "cp": "03A0",
+       "id": "Pi",
+       "value": "Π"
+      },
+      {
+       "cp": "03A1",
+       "id": "Rho",
+       "value": "Ρ"
+      },
+      {
+       "cp": "03A3",
+       "id": "Sigma",
+       "value": "Σ"
+      },
+      {
+       "cp": "03A4",
+       "id": "Tau",
+       "value": "Τ"
+      },
+      {
+       "cp": "03A5",
+       "id": "Upsilon",
+       "value": "Υ"
+      },
+      {
+       "cp": "03A6",
+       "id": "Phi",
+       "value": "Φ"
+      },
+      {
+       "cp": "03A7",
+       "id": "Chi",
+       "value": "Χ"
+      },
+      {
+       "cp": "03A8",
+       "id": "Psi",
+       "value": "Ψ"
+      },
+      {
+       "cp": "03A9",
+       "id": "Omega",
+       "value": "Ω"
+      }
+     ]
+    },
+    {
+     "name": "Brahmi: vowels and consonants (the script of Ashoka's edicts, 3rd century BCE)",
+     "font": "brahmi",
+     "order": "Unicode order (the traditional varnamala order)",
+     "signs": [
+      {
+       "cp": "11005",
+       "id": "A",
+       "value": "a"
+      },
+      {
+       "cp": "11006",
+       "id": "Aa",
+       "value": "aa"
+      },
+      {
+       "cp": "11007",
+       "id": "I",
+       "value": "i"
+      },
+      {
+       "cp": "11008",
+       "id": "Ii",
+       "value": "ii"
+      },
+      {
+       "cp": "11009",
+       "id": "U",
+       "value": "u"
+      },
+      {
+       "cp": "1100A",
+       "id": "Uu",
+       "value": "uu"
+      },
+      {
+       "cp": "1100B",
+       "id": "Vocalic R",
+       "value": "vocalic r"
+      },
+      {
+       "cp": "1100C",
+       "id": "Vocalic Rr",
+       "value": "vocalic rr"
+      },
+      {
+       "cp": "1100D",
+       "id": "Vocalic L",
+       "value": "vocalic l"
+      },
+      {
+       "cp": "1100E",
+       "id": "Vocalic Ll",
+       "value": "vocalic ll"
+      },
+      {
+       "cp": "1100F",
+       "id": "E",
+       "value": "e"
+      },
+      {
+       "cp": "11010",
+       "id": "Ai",
+       "value": "ai"
+      },
+      {
+       "cp": "11011",
+       "id": "O",
+       "value": "o"
+      },
+      {
+       "cp": "11012",
+       "id": "Au",
+       "value": "au"
+      },
+      {
+       "cp": "11013",
+       "id": "Ka",
+       "value": "ka"
+      },
+      {
+       "cp": "11014",
+       "id": "Kha",
+       "value": "kha"
+      },
+      {
+       "cp": "11015",
+       "id": "Ga",
+       "value": "ga"
+      },
+      {
+       "cp": "11016",
+       "id": "Gha",
+       "value": "gha"
+      },
+      {
+       "cp": "11017",
+       "id": "Nga",
+       "value": "nga"
+      },
+      {
+       "cp": "11018",
+       "id": "Ca",
+       "value": "ca"
+      },
+      {
+       "cp": "11019",
+       "id": "Cha",
+       "value": "cha"
+      },
+      {
+       "cp": "1101A",
+       "id": "Ja",
+       "value": "ja"
+      },
+      {
+       "cp": "1101B",
+       "id": "Jha",
+       "value": "jha"
+      },
+      {
+       "cp": "1101C",
+       "id": "Nya",
+       "value": "nya"
+      },
+      {
+       "cp": "1101D",
+       "id": "Tta",
+       "value": "tta"
+      },
+      {
+       "cp": "1101E",
+       "id": "Ttha",
+       "value": "ttha"
+      },
+      {
+       "cp": "1101F",
+       "id": "Dda",
+       "value": "dda"
+      },
+      {
+       "cp": "11020",
+       "id": "Ddha",
+       "value": "ddha"
+      },
+      {
+       "cp": "11021",
+       "id": "Nna",
+       "value": "nna"
+      },
+      {
+       "cp": "11022",
+       "id": "Ta",
+       "value": "ta"
+      },
+      {
+       "cp": "11023",
+       "id": "Tha",
+       "value": "tha"
+      },
+      {
+       "cp": "11024",
+       "id": "Da",
+       "value": "da"
+      },
+      {
+       "cp": "11025",
+       "id": "Dha",
+       "value": "dha"
+      },
+      {
+       "cp": "11026",
+       "id": "Na",
+       "value": "na"
+      },
+      {
+       "cp": "11027",
+       "id": "Pa",
+       "value": "pa"
+      },
+      {
+       "cp": "11028",
+       "id": "Pha",
+       "value": "pha"
+      },
+      {
+       "cp": "11029",
+       "id": "Ba",
+       "value": "ba"
+      },
+      {
+       "cp": "1102A",
+       "id": "Bha",
+       "value": "bha"
+      },
+      {
+       "cp": "1102B",
+       "id": "Ma",
+       "value": "ma"
+      },
+      {
+       "cp": "1102C",
+       "id": "Ya",
+       "value": "ya"
+      },
+      {
+       "cp": "1102D",
+       "id": "Ra",
+       "value": "ra"
+      },
+      {
+       "cp": "1102E",
+       "id": "La",
+       "value": "la"
+      },
+      {
+       "cp": "1102F",
+       "id": "Va",
+       "value": "va"
+      },
+      {
+       "cp": "11030",
+       "id": "Sha",
+       "value": "sha"
+      },
+      {
+       "cp": "11031",
+       "id": "Ssa",
+       "value": "ssa"
+      },
+      {
+       "cp": "11032",
+       "id": "Sa",
+       "value": "sa"
+      },
+      {
+       "cp": "11033",
+       "id": "Ha",
+       "value": "ha"
+      },
+      {
+       "cp": "11034",
+       "id": "Lla",
+       "value": "lla"
+      }
+     ]
+    },
+    {
+     "name": "Kharoshthi consonants (north-west India and Gandhara)",
+     "font": "kharoshthi",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10A10",
+       "id": "Ka",
+       "value": "ka"
+      },
+      {
+       "cp": "10A11",
+       "id": "Kha",
+       "value": "kha"
+      },
+      {
+       "cp": "10A12",
+       "id": "Ga",
+       "value": "ga"
+      },
+      {
+       "cp": "10A13",
+       "id": "Gha",
+       "value": "gha"
+      },
+      {
+       "cp": "10A15",
+       "id": "Ca",
+       "value": "ca"
+      },
+      {
+       "cp": "10A16",
+       "id": "Cha",
+       "value": "cha"
+      },
+      {
+       "cp": "10A17",
+       "id": "Ja",
+       "value": "ja"
+      },
+      {
+       "cp": "10A19",
+       "id": "Nya",
+       "value": "nya"
+      },
+      {
+       "cp": "10A1A",
+       "id": "Tta",
+       "value": "tta"
+      },
+      {
+       "cp": "10A1B",
+       "id": "Ttha",
+       "value": "ttha"
+      },
+      {
+       "cp": "10A1C",
+       "id": "Dda",
+       "value": "dda"
+      },
+      {
+       "cp": "10A1D",
+       "id": "Ddha",
+       "value": "ddha"
+      },
+      {
+       "cp": "10A1E",
+       "id": "Nna",
+       "value": "nna"
+      },
+      {
+       "cp": "10A1F",
+       "id": "Ta",
+       "value": "ta"
+      },
+      {
+       "cp": "10A20",
+       "id": "Tha",
+       "value": "tha"
+      },
+      {
+       "cp": "10A21",
+       "id": "Da",
+       "value": "da"
+      },
+      {
+       "cp": "10A22",
+       "id": "Dha",
+       "value": "dha"
+      },
+      {
+       "cp": "10A23",
+       "id": "Na",
+       "value": "na"
+      },
+      {
+       "cp": "10A24",
+       "id": "Pa",
+       "value": "pa"
+      },
+      {
+       "cp": "10A25",
+       "id": "Pha",
+       "value": "pha"
+      },
+      {
+       "cp": "10A26",
+       "id": "Ba",
+       "value": "ba"
+      },
+      {
+       "cp": "10A27",
+       "id": "Bha",
+       "value": "bha"
+      },
+      {
+       "cp": "10A28",
+       "id": "Ma",
+       "value": "ma"
+      },
+      {
+       "cp": "10A29",
+       "id": "Ya",
+       "value": "ya"
+      },
+      {
+       "cp": "10A2A",
+       "id": "Ra",
+       "value": "ra"
+      },
+      {
+       "cp": "10A2B",
+       "id": "La",
+       "value": "la"
+      },
+      {
+       "cp": "10A2C",
+       "id": "Va",
+       "value": "va"
+      },
+      {
+       "cp": "10A2D",
+       "id": "Sha",
+       "value": "sha"
+      },
+      {
+       "cp": "10A2E",
+       "id": "Ssa",
+       "value": "ssa"
+      },
+      {
+       "cp": "10A2F",
+       "id": "Sa",
+       "value": "sa"
+      },
+      {
+       "cp": "10A30",
+       "id": "Za",
+       "value": "za"
+      },
+      {
+       "cp": "10A31",
+       "id": "Ha",
+       "value": "ha"
+      },
+      {
+       "cp": "10A32",
+       "id": "Kka",
+       "value": "kka"
+      },
+      {
+       "cp": "10A33",
+       "id": "Tttha",
+       "value": "tttha"
+      },
+      {
+       "cp": "10A34",
+       "id": "Ttta",
+       "value": "ttta"
+      },
+      {
+       "cp": "10A35",
+       "id": "Vha",
+       "value": "vha"
+      }
+     ]
+    },
+    {
+     "name": "The eight trigrams of the Yijing (Book of Changes)",
+     "font": "symbols2",
+     "order": "Unicode order (heaven, lake, fire, thunder, wind, water, mountain, earth)",
+     "signs": [
+      {
+       "cp": "2630",
+       "id": "Heaven",
+       "value": "trigram for heaven"
+      },
+      {
+       "cp": "2631",
+       "id": "Lake",
+       "value": "trigram for lake"
+      },
+      {
+       "cp": "2632",
+       "id": "Fire",
+       "value": "trigram for fire"
+      },
+      {
+       "cp": "2633",
+       "id": "Thunder",
+       "value": "trigram for thunder"
+      },
+      {
+       "cp": "2634",
+       "id": "Wind",
+       "value": "trigram for wind"
+      },
+      {
+       "cp": "2635",
+       "id": "Water",
+       "value": "trigram for water"
+      },
+      {
+       "cp": "2636",
+       "id": "Mountain",
+       "value": "trigram for mountain"
+      },
+      {
+       "cp": "2637",
+       "id": "Earth",
+       "value": "trigram for earth"
+      }
+     ]
+    }
+   ]
   }
  },
  "held": {
@@ -1494,6 +2110,20 @@
      "1083F"
     ],
     "why": "Cypriot syllabary: not needed; listed so it is a decision, not an accident"
+   },
+   {
+    "range": [
+     "10840",
+     "1085F"
+    ],
+    "why": "Imperial Aramaic: the direct ancestor of the Hebrew square script; held like Phoenician until Carter decides"
+   },
+   {
+    "range": [
+     "10B00",
+     "10B3F"
+    ],
+    "why": "Avestan: the script of the Zoroastrian scriptures, sacred to a living community"
    }
   ]
  }

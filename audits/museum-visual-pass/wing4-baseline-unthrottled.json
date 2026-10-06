@@ -1,0 +1,87 @@
+{
+ "viewport": "412x915 @1x, 1x CPU throttle, SwiftShader",
+ "tLoadMs": 654,
+ "tFirstZoneMs": 7153,
+ "bytesAtReady": 1780288,
+ "byType": {
+  "html": 35138,
+  "css": 48879,
+  "js": 1385322,
+  "json": 310949
+ },
+ "spots": {
+  "axial corridor": {
+   "fps": 0.6,
+   "calls": 84,
+   "tris": 174852,
+   "textures": 34,
+   "geometries": 119,
+   "where": "Corridor|Wing IV · The Axial Age"
+  },
+  "Second Temple Judaism (ch10)": {
+   "fps": 0.7,
+   "calls": 58,
+   "tris": 80584,
+   "textures": 44,
+   "geometries": 140,
+   "where": "Wing IV · The Axial Age|Second Temple Judaism"
+  },
+  "Rome (ch13)": {
+   "fps": 0.2,
+   "calls": 91,
+   "tris": 86889,
+   "textures": 55,
+   "geometries": 195,
+   "where": "Wing IV · The Axial Age|Rome"
+  },
+  "Classical Greece (ch15)": {
+   "fps": 0.5,
+   "calls": 52,
+   "tris": 93346,
+   "textures": 61,
+   "geometries": 192,
+   "where": "Wing IV · The Axial Age|Classical Greece"
+  },
+  "Wing III corridor": {
+   "fps": 0.3,
+   "calls": 85,
+   "tris": 181600,
+   "textures": 74,
+   "geometries": 222,
+   "where": "Corridor|Wing III · The Early Iron Age"
+  },
+  "Pre-exilic Israel (ch07)": {
+   "fps": 0.4,
+   "calls": 94,
+   "tris": 91145,
+   "textures": 89,
+   "geometries": 239,
+   "where": "Wing III · The Early Iron Age|Pre-exilic Israel"
+  },
+  "Bronze corridor": {
+   "fps": 0.4,
+   "calls": 84,
+   "tris": 214170,
+   "textures": 98,
+   "geometries": 267,
+   "where": "Corridor|Wing II · The Bronze Age"
+  },
+  "Egypt (ch02)": {
+   "fps": 0.4,
+   "calls": 61,
+   "tris": 104271,
+   "textures": 108,
+   "geometries": 278,
+   "where": "Wing II · The Bronze Age|Egypt"
+  }
+ },
+ "bytesTotal": 2476811,
+ "byTypeTotal": {
+  "html": 35138,
+  "css": 48879,
+  "js": 1385322,
+  "json": 1007472
+ },
+ "errors": [],
+ "jsHeap": 81400000
+}

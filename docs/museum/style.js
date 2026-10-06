@@ -35,7 +35,18 @@ export const STYLE = {
   ch09: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },
   ch58: { floor: "cedar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
   ch68: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
-  ch77: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 }
+  ch77: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  // Wing IV, the Axial Age (rollout step 2): marble in the corridor; each room its own floor; Greek and Roman lamps
+  "cor:04-axial-age": { floor: "marble", kerb: "marblekerb", fittings: "axial-corridor", symbols: "axial", sky: 1 },
+  ch10: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },          // Herodian ashlar
+  ch11: { floor: "brick", kerb: "limestone", fittings: "axial-room", sky: 1 },           // fired brick, as at the early stupas
+  ch12: { floor: "greytile", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch13: { floor: "tessellated", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch14: { floor: "oak", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch15: { floor: "pebble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch52: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch69: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch78: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 }
 };
 export const styleOf = (id) => STYLE[id] || null;
 
@@ -183,6 +194,63 @@ Object.assign(FLOORS, {
     return { map: tex(c), normalMap: normalMap(h, 2) };
   }
 });
+// the Axial Age's floors
+Object.assign(FLOORS, {
+  // marble slabs, white to grey, with soft veining
+  marble(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(37), n = 2, sz = px / n;
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const x = i * sz, y = j * sz, L = 78 + R() * 8;
+      g.fillStyle = `hsl(${30 + R() * 20},${4 + R() * 5}%,${L}%)`; g.fillRect(x, y, sz, sz);
+      g.save(); g.beginPath(); g.rect(x, y, sz, sz); g.clip();
+      for (let k = 0; k < 7; k++) { g.strokeStyle = `rgba(${90 + R() * 40},${90 + R() * 40},${100 + R() * 40},${0.12 + R() * 0.22})`; g.lineWidth = 0.6 + R() * 2.4; g.beginPath(); let vx = x + R() * sz, vy = y; g.moveTo(vx, vy); for (let t = 0; t < 14; t++) { vx += (R() - 0.4) * sz * 0.12; vy += sz / 12; g.lineTo(vx, vy); } g.stroke(); }
+      g.restore();
+      g.strokeStyle = "rgba(60,55,50,.55)"; g.lineWidth = 2; g.strokeRect(x + 1, y + 1, sz - 2, sz - 2);
+      hg.fillStyle = "#a0a0a0"; hg.fillRect(x + 2, y + 2, sz - 4, sz - 4);
+    }
+    speckle(g, px, px, px * px / 160, ["rgba(120,110,100,.18)", "rgba(255,255,255,.2)"], px / 600, R);
+    return { map: tex(c), normalMap: normalMap(h, 1.4) };
+  },
+  // grey fired tiles, square, set in lime mortar (Warring States and Han floors)
+  greytile(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(41), n = 6, sz = px / n;
+    g.fillStyle = "#cfc7b6"; g.fillRect(0, 0, px, px); hg.fillStyle = "#505050"; hg.fillRect(0, 0, px, px);
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const x = i * sz + 3, y = j * sz + 3, w = sz - 6, L = 34 + R() * 10;
+      g.fillStyle = `hsl(${200 + R() * 30},${4 + R() * 5}%,${L}%)`; g.fillRect(x, y, w, w);
+      speckle(g, sz, sz, 120, ["rgba(20,20,22,.3)", "rgba(160,160,165,.25)"], px / 400, R);
+      blot(g, x + w / 2, y + w / 2, w * 0.6, "rgba(200,200,205,.07)");
+      hg.fillStyle = `rgb(${150 + R() * 20},${150 + R() * 20},${150 + R() * 20})`; hg.fillRect(x, y, w, w);
+    }
+    return { map: tex(c), normalMap: normalMap(h, 2.2) };
+  },
+  // a Roman tessellated pavement: small black and white tesserae, a field of white with a black meander band
+  tessellated(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(43), t = px / 96;   // tesserae about 2 cm
+    g.fillStyle = "#3a3632"; g.fillRect(0, 0, px, px); hg.fillStyle = "#404040"; hg.fillRect(0, 0, px, px);
+    const N = Math.round(px / t), meander = (i, j) => { const m = (j % 32), k = i % 16; if (m < 2 || m > 13) return false; const y = m - 2; return (y < 2 || y > 9) ? false : ((k < 2) || (y < 4 && k < 12) || (y > 7 && k > 4 && k < 14) || (k > 12 && y > 3)); };
+    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+      const black = meander(i, j), L = black ? 14 + R() * 10 : 82 + R() * 10;
+      g.fillStyle = `hsl(${35 + R() * 15},${black ? 4 : 8}%,${L}%)`; g.fillRect(i * t + 0.6 + (R() - 0.5), j * t + 0.6 + (R() - 0.5), t - 1.2, t - 1.2);
+      hg.fillStyle = `rgb(${150 + R() * 40},${150 + R() * 40},${150 + R() * 40})`; hg.fillRect(i * t + 0.6, j * t + 0.6, t - 1.2, t - 1.2);
+    }
+    for (let i = 0; i < 10; i++) blot(g, R() * px, R() * px, px * (0.05 + R() * 0.1), "rgba(90,70,40,.10)");
+    return { map: tex(c), normalMap: normalMap(h, 2.4) };
+  },
+  // oak boards: long planks, pale brown, straight grain
+  oak(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(47), nb = 7, bw = px / nb;
+    for (let b = 0; b < nb; b++) {
+      const L = 38 + R() * 10, x = b * bw;
+      g.fillStyle = `hsl(${30 + R() * 6},${30 + R() * 10}%,${L}%)`; g.fillRect(x, 0, bw, px);
+      for (let k = 0; k < 30; k++) { g.strokeStyle = `rgba(50,30,12,${0.06 + R() * 0.12})`; g.lineWidth = 1 + R() * 1.5; g.beginPath(); const xx = x + R() * bw; g.moveTo(xx, 0); g.bezierCurveTo(xx + (R() - 0.5) * 6, px * 0.33, xx + (R() - 0.5) * 6, px * 0.66, xx, px); g.stroke(); }
+      const cut = R() * px; g.fillStyle = "rgba(25,14,6,.8)"; g.fillRect(x, cut, bw, 3);
+      g.fillStyle = "rgba(25,14,6,.85)"; g.fillRect(x, 0, 3, px);
+      hg.fillStyle = "#909090"; hg.fillRect(x + 3, 0, bw - 3, px); hg.fillStyle = "#404040"; hg.fillRect(x, 0, 3, px); hg.fillRect(x, cut, bw, 3);
+    }
+    return { map: tex(c), normalMap: normalMap(h, 2) };
+  }
+});
 // kerbs at the glass pit's edge: their texture runs along the strip (u = metres along, v across)
 const KERBS = {
   limestone(px) {
@@ -191,6 +259,14 @@ const KERBS = {
     for (let x = 0; x < w; x += w / 2) { g.fillStyle = `hsl(38,${24 + R() * 10}%,${64 + R() * 8}%)`; g.fillRect(x + 2, 2, w / 2 - 4, hh - 4); }
     speckle(g, w, hh, w * hh / 40, ["rgba(90,70,40,.3)", "rgba(250,240,215,.3)"], w / 500, R);
     g.fillStyle = "rgba(255,248,230,.18)"; g.fillRect(0, hh * 0.78, w, hh * 0.22);         // the arris, rubbed bright
+    return { map: tex(c), repeat: 0.5 };
+  },
+  marblekerb(px) {
+    const c = canvas(px, px / 4), g = c.getContext("2d"), R = rng(53), w = c.width, hh = c.height;
+    g.fillStyle = "#d8d2c8"; g.fillRect(0, 0, w, hh);
+    for (let k = 0; k < 5; k++) { g.strokeStyle = `rgba(110,110,120,${0.12 + R() * 0.15})`; g.lineWidth = 1 + R() * 2; g.beginPath(); g.moveTo(R() * w, 0); g.lineTo(R() * w, hh); g.stroke(); }
+    g.fillStyle = "rgba(60,55,50,.5)"; g.fillRect(w / 2 - 1, 0, 2, hh);
+    g.fillStyle = "rgba(255,255,255,.25)"; g.fillRect(0, hh * 0.8, w, hh * 0.2);
     return { map: tex(c), repeat: 0.5 };
   },
   // the block border of Egyptian painting: rectangles of blue, red, green and yellow between black and white rules,
@@ -217,17 +293,36 @@ export function createStyle(o) {
     if (!FL[kind]) { const t = FLOORS[kind](PX); FL[kind] = touch ? new THREE.MeshLambertMaterial({ map: t.map }) : new THREE.MeshLambertMaterial({ map: t.map, normalMap: t.normalMap, normalScale: new THREE.Vector2(0.9, 0.9) }); if (touch) t.normalMap.dispose(); }   // phones: no relief map (fewer textures)
     return FL[kind];
   }
+  // one material for all of a wing's period floors: their pictures side by side in one texture, each floor's geometry
+  // tagged with its cell (attribute aCell), the shader repeating the picture inside the cell. One draw call, one texture.
+  function floorAtlas(kinds) {
+    const cp = 512, n = kinds.length, cols = Math.ceil(Math.sqrt(n)), rows = Math.ceil(n / cols), c = canvas(cols * cp, rows * cp), g = c.getContext("2d"), cell = {};
+    kinds.forEach((k, i) => {
+      const t = k.startsWith("kerb:") ? KERBS[k.slice(5)](cp) : FLOORS[k](cp), cx = i % cols, cy = Math.floor(i / cols);
+      g.drawImage(t.map.image, cx * cp, cy * cp, cp, cp); t.map.dispose(); if (t.normalMap) t.normalMap.dispose();
+      cell[k] = [cx / cols, 1 - (cy + 1) / rows, 1 / cols, 1 / rows];          // bottom-left corner and size, in texture space
+    });
+    const map = tex(c, true, false), m = new THREE.MeshLambertMaterial({ map });
+    m.onBeforeCompile = (sh) => {
+      sh.vertexShader = "attribute vec4 aCell; varying vec4 vCell; varying vec2 vFloorUv;\n" + sh.vertexShader.replace("#include <uv_vertex>", "#include <uv_vertex>\n  vCell = aCell; vFloorUv = uv;");
+      sh.fragmentShader = "varying vec4 vCell; varying vec2 vFloorUv;\n" + sh.fragmentShader.replace("#include <map_fragment>", `
+  vec2 fu = fract(vFloorUv), au = vCell.xy + (fu * .96 + .02) * vCell.zw;
+  diffuseColor *= textureGrad(map, au, dFdx(vFloorUv) * vCell.zw, dFdy(vFloorUv) * vCell.zw);`);
+    };
+    m.customProgramCacheKey = () => "floor-atlas";
+    return { material: m, cell };
+  }
   function kerbMat(kind) {
     if (!KB[kind]) { const t = KERBS[kind](PX); KB[kind] = new THREE.MeshLambertMaterial({ map: t.map }); KB[kind].userData.repeat = t.repeat; }
     return KB[kind];
   }
   // a flat strip round the pit's rim, u running along each side (metres × repeat)
   function kerb(hole, kind, width) {
-    const w = width || 0.26, m = kerbMat(kind), rep = m.userData.repeat || 1, pos = [], uv = [], idx = [], y = 0.004;
+    const w = width || 0.26, rep = kind === "painted" ? 1 : 0.5, pos = [], uv = [], idx = [], y = 0.006;
     const strip = (ax, az, bx, bz, ox, oz) => {          // a → b along the edge, (ox, oz) outward
       const len = Math.hypot(bx - ax, bz - az), b = pos.length / 3;
       pos.push(ax, y, az, bx, y, bz, bx + ox * w, y, bz + oz * w, ax + ox * w, y, az + oz * w);
-      uv.push(0, 0, len * rep, 0, len * rep, 1, 0, 1);
+      uv.push(0, 0.01, len * rep, 0.01, len * rep, 0.99, 0, 0.99);
       idx.push(b, b + 2, b + 1, b, b + 3, b + 2);
     };
     const { x0, x1, z0, z1 } = hole;
@@ -240,19 +335,19 @@ export function createStyle(o) {
     // winding: make sure every face points up
     const p = geo.attributes.position, ix = geo.index.array, a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3();
     for (let i = 0; i < ix.length; i += 3) { a.fromBufferAttribute(p, ix[i]); b.fromBufferAttribute(p, ix[i + 1]); c.fromBufferAttribute(p, ix[i + 2]); const ny = (b.z - a.z) * (c.x - a.x) - (b.x - a.x) * (c.z - a.z); if (ny < 0) { const t = ix[i + 1]; ix[i + 1] = ix[i + 2]; ix[i + 2] = t; } }
-    m.polygonOffset = true; m.polygonOffsetFactor = -1; m.polygonOffsetUnits = -1; m.userData.ro = 1;
-    return [geo, m];
+    return [geo, "kerb:" + kind];
   }
 
   // ---------------------------------------------------------------- fittings
   // the fittings' plain surfaces (clay, the niche's shadow, the stone sill) share one material: each part's UVs point at
   // its colour in a tiny palette, so a whole wing's lamps and niches are one draw call
-  const PAL = ["#9c6a44", "#1a120c", "#a89270"], palC = canvas(PAL.length, 1), pg = palC.getContext("2d");
+  const PAL = ["#9c6a44", "#1a120c", "#a89270", "#a85a36", "#6a4826"], palC = canvas(PAL.length, 1), pg = palC.getContext("2d");
   PAL.forEach((c, i) => { pg.fillStyle = c; pg.fillRect(i, 0, 1, 1); });
   const palT = tex(palC, true, false); palT.magFilter = palT.minFilter = THREE.NearestFilter; palT.generateMipmaps = false;
   const fit = new THREE.MeshLambertMaterial({ map: palT });
   const swatch = (geo, i) => { const uv = geo.attributes.uv; for (let k = 0; k < uv.count; k++) uv.setXY(k, (i + 0.5) / PAL.length, 0.5); return geo; };
-  const MAT = o.MAT, FM = { clay: 0, niche: 1, sill: 2 };
+  const MAT = o.MAT, FM = { clay: 0, niche: 1, sill: 2, terracotta: 3, bronze: 4 };
+  const bz = (g) => [swatch(g, FM.bronze), fit];   // bronze parts share the palette material too (one draw call for a wing's lamps)
   // a Canaanite-style saucer lamp: a shallow clay bowl with the rim pinched into a spout for the wick (Middle and Late Bronze Age)
   function saucerLamp(L, x, y, z, ry) {
     const bowl = new THREE.LatheGeometry([[0, 0], [0.055, 0.004], [0.07, 0.02], [0.074, 0.032], [0.066, 0.03], [0.05, 0.012], [0, 0.01]].map(([r, h]) => new THREE.Vector2(r, h)), 12);
@@ -264,7 +359,7 @@ export function createStyle(o) {
     return new THREE.Vector3(x + sp.x, y + sp.y, z + sp.z);   // where the wick burns
   }
   // a niche in the wall with a stone sill and surround; (nx, nz) points into the corridor
-  function niche(L, x, y, z, nx, nz) {
+  function niche(L, x, y, z, nx, nz, lamp) {
     const ry = Math.atan2(nx, nz), W = 0.46, Hh = 0.56, d = 0.05, put = (geo, sw, u, v, w) => { geo.rotateY(ry); geo.translate(x + nx * w + Math.cos(ry) * u, y + v, z + nz * w - Math.sin(ry) * u); L.push([swatch(geo, sw), fit]); };
     put(new THREE.PlaneGeometry(W, Hh), FM.niche, 0, Hh / 2, 0.012);                                            // the shadowed back
     put(new THREE.BoxGeometry(0.08, Hh + 0.08, d * 2), FM.sill, -W / 2 - 0.04, Hh / 2, d);
@@ -272,21 +367,41 @@ export function createStyle(o) {
     put(new THREE.BoxGeometry(W + 0.16, 0.08, d * 2.4), FM.sill, 0, Hh + 0.04, d * 1.1);
     put(new THREE.BoxGeometry(W + 0.2, 0.06, 0.22), FM.sill, 0, -0.03, 0.11);                                   // the sill the lamp stands on
     put(new THREE.PlaneGeometry(W * 0.8, Hh * 0.55), FM.niche, 0, Hh * 0.62, 0.014);                              // soot above the flame
-    return saucerLamp(L, x + nx * 0.12, y, z + nz * 0.12, ry + Math.PI / 2 * 0);
+    return (lamp || saucerLamp)(L, x + nx * 0.12, y, z + nz * 0.12, ry);
   }
   // a bronze tripod brazier with a shallow bowl of coals
   function brazier(L, x, z, s) {
     s = s || 1;
     const bowl = new THREE.LatheGeometry([[0, 0], [0.12, 0.01], [0.2, 0.05], [0.24, 0.1], [0.25, 0.12], [0.23, 0.12], [0.2, 0.07], [0.12, 0.04], [0, 0.035]].map(([r, h]) => new THREE.Vector2(r * s, h * s)), 14);
-    bowl.translate(x, 0.78 * s, z); L.push([bowl, MAT.bronze]);
+    bowl.translate(x, 0.78 * s, z); L.push(bz(bowl));
     const coals = new THREE.CylinderGeometry(0.2 * s, 0.2 * s, 0.03, 10); coals.translate(x, 0.88 * s, z); L.push([swatch(coals, FM.niche), fit]);   // the ash bed (the flames stand on it)
     for (let k = 0; k < 3; k++) {
       const a = k / 3 * TAU + 0.5, leg = new THREE.CylinderGeometry(0.014 * s, 0.018 * s, 0.86 * s, 5);
-      leg.translate(0, 0.43 * s, 0); leg.rotateX(0.16); leg.rotateY(-a + Math.PI / 2); leg.translate(x + Math.cos(a) * 0.05 * s, 0, z + Math.sin(a) * 0.05 * s); L.push([leg, MAT.bronze]);
-      const foot = new THREE.SphereGeometry(0.035 * s, 6, 4); foot.translate(x + Math.cos(a) * 0.19 * s, 0.03, z + Math.sin(a) * 0.19 * s); L.push([foot, MAT.bronze]);
+      leg.translate(0, 0.43 * s, 0); leg.rotateX(0.16); leg.rotateY(-a + Math.PI / 2); leg.translate(x + Math.cos(a) * 0.05 * s, 0, z + Math.sin(a) * 0.05 * s); L.push(bz(leg));
+      const foot = new THREE.SphereGeometry(0.035 * s, 6, 4); foot.translate(x + Math.cos(a) * 0.19 * s, 0.03, z + Math.sin(a) * 0.19 * s); L.push(bz(foot));
     }
-    const ring = new THREE.TorusGeometry(0.17 * s, 0.01 * s, 4, 14); ring.rotateX(Math.PI / 2); ring.translate(x, 0.42 * s, z); L.push([ring, MAT.bronze]);
+    const ring = new THREE.TorusGeometry(0.17 * s, 0.01 * s, 4, 14); ring.rotateX(Math.PI / 2); ring.translate(x, 0.42 * s, z); L.push(bz(ring));
     return new THREE.Vector3(x, 0.9 * s, z);
+  }
+
+  // a Greek or Roman mould-made oil lamp: a closed round body with a filling hole on top and a nozzle for the wick
+  function terracottaLamp(L, x, y, z, ry) {
+    const body = new THREE.LatheGeometry([[0, 0], [0.032, 0.001], [0.044, 0.01], [0.045, 0.02], [0.038, 0.028], [0.014, 0.024], [0.01, 0.03], [0, 0.03]].map(([r, h]) => new THREE.Vector2(r, h)), 12);
+    body.translate(x, y, z); L.push([swatch(body, FM.terracotta), fit]);
+    const dx = Math.sin(ry), dz = Math.cos(ry);
+    const noz = new THREE.CylinderGeometry(0.011, 0.015, 0.055, 6); noz.rotateX(Math.PI / 2); noz.rotateY(ry); noz.translate(x + dx * 0.065, y + 0.014, z + dz * 0.065); L.push([swatch(noz, FM.terracotta), fit]);
+    return new THREE.Vector3(x + dx * 0.094, y + 0.022, z + dz * 0.094);
+  }
+  // a bronze lampstand (the Greek and Roman lychnouchos): three feet, a slender shaft, a disc with the lamp on it
+  function lampstand(L, x, z, ry) {
+    for (let k = 0; k < 3; k++) {
+      const a = k / 3 * TAU + 0.3, foot = new THREE.CylinderGeometry(0.008, 0.014, 0.2, 5);
+      foot.translate(0, 0.1, 0); foot.rotateZ(0.9); foot.rotateY(-a); foot.translate(x, 0.02, z); L.push(bz(foot));
+    }
+    const shaft = new THREE.CylinderGeometry(0.011, 0.016, 1.26, 6); shaft.translate(x, 0.7, z); L.push(bz(shaft));
+    const knot = new THREE.SphereGeometry(0.024, 6, 4); knot.translate(x, 0.75, z); L.push(bz(knot));
+    const disc = new THREE.CylinderGeometry(0.075, 0.06, 0.012, 10); disc.translate(x, 1.335, z); L.push(bz(disc));
+    return terracottaLamp(L, x, 1.341, z, ry);
   }
 
   // ---------------------------------------------------------------- flames (one instanced draw call for all of them)
@@ -327,7 +442,13 @@ void main(){
   gl_FragColor = vec4(col * (body * .9 + core * .5) + vec3(1., .62, .3) * halo, 1.);
 }`
   });
-  function addFlame(p, size) { FLAMES.push({ p: p.clone(), size: size || 0.07, seed: Math.random() }); }
+  let curArea = null;                               // the area being decorated: a room's flames hide with its fittings
+  function addFlame(p, size) { FLAMES.push({ p: p.clone(), size: size || 0.07, seed: Math.random(), area: curArea }); }
+  function setAreaVisible(area, vis) {
+    if (!flameMesh) return; const a = flameMesh.geometry.attributes.iData; let hit = false;
+    FLAMES.forEach((f, i) => { if (f.area === area) { a.setX(i, vis ? f.size : 0); hit = true; } });
+    if (hit) a.needsUpdate = true;
+  }
   function flames() {
     if (flameMesh) return flameMesh;
     const base = new THREE.PlaneGeometry(1, 1).translate(0, 0.5, 0), g = new THREE.InstancedBufferGeometry();
@@ -365,17 +486,26 @@ void main(){
   // room: { id, frame (W, f), hole }
   function decorate(area, info) {
     const st = STYLE[area]; if (!st) return null;
+    curArea = info.box ? area : null;
     // parts are [geometry, material]: app.js merges them per wing and per material, so a whole wing costs a few draw calls
-    const out = { group: new THREE.Group(), parts: [], lamps: [], segs: [] }, L = out.parts, P = [];
-    if (st.kerb && info.hole) L.push(kerb(info.hole, st.kerb));
-    if (st.fittings === "bronze-corridor") {
-      const { side: s, zk, corW, len } = info, wallY = 2.3;
+    // kerbs are drawn with the wing's floor atlas, and painted light is one batch for the whole wing (both always shown)
+    const out = { group: new THREE.Group(), parts: [], kerbs: [], shared: [], lamps: [], segs: [] }, L = out.parts, P = [];
+    if (st.kerb && info.hole) out.kerbs.push(kerb(info.hole, st.kerb));
+    if (st.fittings === "bronze-corridor" || st.fittings === "axial-corridor") {
+      const { side: s, zk, corW, len } = info, wallY = 2.3, stands = st.fittings === "axial-corridor";
       for (const [north, gaps] of [[true, info.gapsN], [false, info.gapsS]]) {
         const zw = zk + (north ? -corW / 2 : corW / 2), nz = north ? 1 : -1, segs = wallSegments(gaps, len);
         for (const [a, b] of segs) {
           const n = Math.max(1, Math.round((b - a) / 9));
           for (let k = 0; k < n; k++) {
             const along = a + (b - a) * (k + 0.5) / n, x = s * (4 + along);
+            if (stands) {                                   // a lampstand on the floor by the wall
+              const fl = lampstand(L, x, zw + nz * 0.42, nz > 0 ? 0 : Math.PI);
+              addFlame(fl, 0.05); out.lamps.push({ p: fl.clone().add(new THREE.Vector3(0, 0.14, nz * 0.2)), s: 0.5 });
+              P.push({ x, y: 0, z: zw + nz * 0.7, r: 1.5, ny: 1 }, { x, y: 1.5, z: zw, r: 1.0, nz });
+              out.segs.push([x, zw + nz * 0.42, 0.18]);
+              continue;
+            }
             const fl = niche(L, x, wallY, zw, 0, nz);
             addFlame(fl, 0.055); out.lamps.push({ p: fl.clone().add(new THREE.Vector3(0, 0.12, nz * 0.32)), s: 0.5 });
             P.push({ x, y: 0, z: zw + nz * 0.9, r: 1.5, ny: 1 }, { x, y: wallY + 0.45, z: zw, r: 0.95, nz });
@@ -392,12 +522,13 @@ void main(){
         out.segs.push([x, z, 0.3]);
       }
     }
-    if (st.fittings === "bronze-room") {
+    if (st.fittings === "bronze-room" || st.fittings === "axial-room") {
+      const lampKind = st.fittings === "axial-room" ? terracottaLamp : saucerLamp;
       const { W, f } = info, sill = info.twoRows ? 4.05 : 3.45;   // well above the Pantheon medallions (one row: tops at 2.66 m; two rows: 3.56 m)
       // niche lamps on the side walls, between the Pantheon medallions
       for (const side of [-1, 1]) for (const v of [4.6, 7.0, 9.4, 11.8]) {
         const [x, z] = W(f, side * 6.5, v), nx = -side * f.rx, nz = -side * f.rz;
-        const fl = niche(L, x, sill, z, nx, nz);
+        const fl = niche(L, x, sill, z, nx, nz, lampKind);
         addFlame(fl, 0.055); out.lamps.push({ p: fl.clone().add(new THREE.Vector3(nx * 0.32, 0.12, nz * 0.32)), s: 0.5 });
         P.push({ x, y: sill + 0.45, z, r: 0.95, nx, nz }, { x: x + nx * 0.8, y: 0, z: z + nz * 0.8, r: 1.3, ny: 1 });
       }
@@ -410,7 +541,7 @@ void main(){
         out.segs.push([x, z, 0.3]);
       }
     }
-    if (P.length) L.push(...pools(P));
+    if (P.length) out.shared.push(...pools(P));
     if (st.symbols) { const sw = symbolWall(st.symbols, info); if (sw) out.group.add(sw); }
     return out;
   }
@@ -527,14 +658,13 @@ void main(){
     return mesh;
   }
 
-  // the clock: flames and symbol walls (held still under "reduce motion")
+  // the clock: flames and symbol walls (always running; the motion switch only affects the view)
   let t = 0;
-  function update(dt, reduce) {
-    if (reduce) return false;
+  function update(dt) {
     t += dt; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t;
     return FLAMES.length > 0;
   }
   // for the screenshot tools: set the clock directly
   function setTime(v) { t = v; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t; }
-  return { floorMat, decorate, flames, update, setTime, get time() { return t; }, get flameCount() { return FLAMES.length; } };
+  return { floorMat, floorAtlas, decorate, flames, setAreaVisible, update, setTime, get time() { return t; }, get flameCount() { return FLAMES.length; } };
 }

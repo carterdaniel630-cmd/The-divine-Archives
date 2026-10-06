@@ -423,7 +423,7 @@ async function openRelic(info) {
     if (!cat.CAT[r.id]) cat.CAT[r.id] = () => own[r.build]();
   }
   if (!S.insp) {
-    const m = await import("../museum/inspect.js?v=8");
+    const m = await import("../museum/inspect.js?v=9");
     S.insp = m.createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     const cl = S.insp.el.querySelector('[data-i="close"]'); if (cl) cl.textContent = "Back to the site";
   }
@@ -533,7 +533,7 @@ function tick(now) {
   secT += dt; if (secT > 0.3) { secT = 0; manageSections(); }
   locT += dt; if (locT > 0.25) { locT = 0; locate(); }
   idle += dt;
-  if (S.motes) S.motes.update(S.reduce ? 0 : dt, S.pos, !(S.region && S.region.outside) && !(S.region && S.region.section === "v"));
+  if (S.motes) S.motes.update(dt, S.pos, !(S.region && S.region.outside) && !(S.region && S.region.section === "v"));
   if (S.snd) S.snd.update(dt, { outside: !!(S.region && S.region.outside), fan: (S.region && S.region.fan) || 0 });
   for (const a of S.anims) if (a.p.distanceTo(S.pos) < 25 && a.fx.group.parent && a.fx.group.parent.visible !== false) { if (a.fx.update(S.reduce ? 0 : dt)) S.dirty = true; }
   if (!S.dirty && (S.reduce || idle < 0.12)) return;   // like the museum: a fresh frame at least every 0.12 s

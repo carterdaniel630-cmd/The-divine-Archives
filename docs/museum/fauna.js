@@ -12,7 +12,7 @@
    and limbs, patterned vertex colours) and animated by code: schools and
    flocks by steering, fish and wings by vertex shaders, walkers by a small
    skeleton. They are atmosphere, like the skies and grounds, not natural
-   history exhibits. With "reduce motion" on, they hold still.
+   history exhibits. They always move; the motion switch only affects the view.
    ========================================================================== */
 import * as THREE from "three";
 import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=5";

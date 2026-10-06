@@ -21,14 +21,14 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=8";
+import { createInspector } from "./inspect.js?v=9";
 import { buildRelic, hasRelic } from "./relics.js?v=2";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createStyle, styleOf } from "./style.js?v=7";
+import { createStyle, styleOf } from "./style.js?v=13";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -265,11 +265,13 @@ function merge(list) {
   let nv = 0, ni = 0;
   for (const g of list) { nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; }
   const pos = new Float32Array(nv * 3), nor = new Float32Array(nv * 3), uv = new Float32Array(nv * 2), idx = new Uint32Array(ni);
+  const cellA = list[0] && list[0].attributes.aCell ? new Float32Array(nv * 4) : null;   // the floor atlas's cell (style.js)
   let ov = 0, oi = 0;
   for (const g of list) {
     const c = g.attributes.position.count;
     pos.set(g.attributes.position.array, ov * 3); nor.set(g.attributes.normal.array, ov * 3);
     if (g.attributes.uv) uv.set(g.attributes.uv.array, ov * 2);
+    if (cellA && g.attributes.aCell) cellA.set(g.attributes.aCell.array, ov * 4);
     if (g.index) { const a = g.index.array; for (let i = 0; i < a.length; i++) idx[oi + i] = a[i] + ov; oi += a.length; }
     else { for (let i = 0; i < c; i++) idx[oi + i] = ov + i; oi += c; }
     ov += c; g.dispose();
@@ -278,6 +280,7 @@ function merge(list) {
   m.setAttribute("position", new THREE.BufferAttribute(pos, 3));
   m.setAttribute("normal", new THREE.BufferAttribute(nor, 3));
   m.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+  if (cellA) m.setAttribute("aCell", new THREE.BufferAttribute(cellA, 4));
   m.setIndex(new THREE.BufferAttribute(idx, 1));
   m.computeBoundingSphere(); m.computeBoundingBox();
   return m;
@@ -357,12 +360,27 @@ function finishZones() {
       if (!z[k].length) continue;
       const m = new THREE.Mesh(merge(z[k]), mat); m.matrixAutoUpdate = false; z.group.add(m); z[k] = [];
     }
-    for (const [kind, list] of Object.entries(z.floorBy)) { if (!list.length) continue; const m = new THREE.Mesh(merge(list), S.style.floorMat(kind)); m.matrixAutoUpdate = false; z.group.add(m); z.floorBy[kind] = []; }
-    for (const d of z.decor || []) z.group.add(d);
-    // the visual pass's fittings, kerbs and painted light: one mesh per material for the whole wing
-    const byMat = new Map(); for (const [g, m] of z.decorParts || []) { if (!byMat.has(m)) byMat.set(m, []); byMat.get(m).push(g.index ? g : g.toNonIndexed()); }
-    for (const [m, list] of byMat) { const mesh = new THREE.Mesh(merge(list), m); mesh.matrixAutoUpdate = false; mesh.renderOrder = m.userData.ro || 0; z.group.add(mesh); }
-    z.decorParts = [];
+    // the visual pass's period floors: all of a wing's in one mesh with one atlas material
+    // the visual pass: the wing's floor and corridor lamps go with the wing; the symbol wall, painted light and room fittings
+    // live in one group shown only when the visitor is in that wing or in the Spine by its door (other wings are behind
+    // walls, and would only cost draw calls)
+    const DG = z.decorGroup = new THREE.Group(); DG.name = "decor-" + z.id; z.group.add(DG);
+    const kinds = Object.keys(z.floorBy).filter((k) => z.floorBy[k].length);
+    if (kinds.length) {
+      const A = S.style.floorAtlas(kinds), all = [];
+      for (const k of kinds) for (const g of z.floorBy[k]) { const n = g.attributes.position.count, a = new Float32Array(n * 4); for (let i = 0; i < n; i++) a.set(A.cell[k], i * 4); g.setAttribute("aCell", new THREE.BufferAttribute(a, 4)); all.push(g); }
+      const m = new THREE.Mesh(merge(all), A.material); m.matrixAutoUpdate = false; z.group.add(m); z.floorBy = {};
+    }
+    for (const d of z.decor || []) DG.add(d);
+    // the visual pass's fittings, kerbs and painted light, one mesh per material: the corridor's in the wing,
+    // each room's in its own group, drawn only when the visitor is in or near that room (as its exhibits are)
+    const meshes = (parts, into) => {
+      const byMat = new Map(); for (const [g, m] of parts) { if (!byMat.has(m)) byMat.set(m, []); byMat.get(m).push(g.index ? g : g.toNonIndexed()); }
+      for (const [m, list] of byMat) { const mesh = new THREE.Mesh(merge(list), m); mesh.matrixAutoUpdate = false; mesh.renderOrder = m.userData.ro || 0; (typeof into === "function" ? into(m) : into).add(mesh); }
+    };
+    meshes(z.decorParts || [], (m) => (m.userData.ro === 2 ? DG : z.group)); z.decorParts = [];   // painted light (ro 2) near only
+    z.decorRooms = Object.entries(z.roomParts || {}).map(([id, r]) => { const g = new THREE.Group(); g.name = "decor-" + id; meshes(r.parts, g); DG.add(g); return { id, group: g, box: r.box }; });
+    z.roomParts = {};
     scene.add(z.group);
   }
 }
@@ -372,7 +390,10 @@ function lamp(x, y, z, strength, flame) { S.lampAnchors.push({ p: new THREE.Vect
 function decorate(z, areaId, info) {
   const d = S.style.decorate(areaId, info); if (!d) return;
   (z.decor = z.decor || []).push(d.group);
-  (z.decorParts = z.decorParts || []).push(...d.parts);
+  if (info.box) (z.roomParts = z.roomParts || {})[areaId] = { parts: d.parts, box: info.box };
+  else (z.decorParts = z.decorParts || []).push(...d.parts);
+  (z.decorParts = z.decorParts || []).push(...d.shared);
+  for (const [g, key] of d.kerbs) (z.floorBy[key] = z.floorBy[key] || []).push(g);
   d.lamps.forEach((l) => lamp(l.p.x, l.p.y, l.p.z, l.s, true));
   d.segs.forEach(([x, zz, r]) => addBox(x, zz, r));
 }
@@ -487,7 +508,7 @@ function build() {
       const r = S.rooms[id];
       Object.assign(r, { frame: f, zone: e.slug, era: e.slug, cx, cz: (ez + bz) / 2 });
       region("room-" + id, r.title, x0, x1, ez, bz, { room: id, era: e.slug });
-      if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole, twoRows: Math.ceil((r.homeFigs || []).length / 2) > 6 });
+      if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole, twoRows: Math.ceil((r.homeFigs || []).length / 2) > 6, box: new THREE.Box3(new THREE.Vector3(x0, 0, rz0), new THREE.Vector3(x1, ROOM_H, rz1)) });
       else lamp(cx, 4.4, (ez + bz) / 2, 1);
     });
     // corridor walls; they run outward from the spine, so a door's distance along the wall is its distance from the spine
@@ -910,6 +931,15 @@ function manageZones() {
   for (const z of Object.values(ZONES)) {
     const d = distToBox(z.box, S.pos);
     z.group.visible = d < SHOW_FAR || z.id === "spine";
+    if (z.decorGroup) {
+      const E = S.eras[z.id], here = S.regions.find((r) => r.era === z.id && S.pos.x >= r.x0 - 0.3 && S.pos.x <= r.x1 + 0.3 && S.pos.z >= r.z0 - 0.3 && S.pos.z <= r.z1 + 0.3);
+      const bySpine = E && Math.abs(S.pos.x) < SPINE_HALF + 0.3 && Math.abs(S.pos.z - E.zk) < 14;
+      z.decorGroup.visible = !!(here || bySpine);
+    }
+    for (const r of z.decorRooms || []) {                    // a room's fittings and flames: only in or near it (as its exhibits)
+      const vis = z.group.visible && z.decorGroup.visible && (S.inRoom ? r.id === S.inRoom : distToBox(r.box, S.pos) < 10);
+      if (vis !== r.group.visible || r.flamesShown !== vis) { r.group.visible = vis; r.flamesShown = vis; S.style.setAreaVisible(r.id, vis); S.dirty = true; }
+    }
     if (z.id === "hall" || z.id === "spine") continue;
     if (d < FETCH_NEAR && !S.detail[z.id]) loadDetail(z.id);
     if (d < BUILD_NEAR && !z.built && S.detail[z.id]) buildWingExhibits(z.id);
@@ -933,12 +963,12 @@ function updateLights() {
     const e = near[i];
     if (!e || i >= n) { L.intensity = 0; return; }
     const l = e[0]; L.position.copy(l.p); L.color.copy(l.flame ? FLAME : BULB);
-    const f = S.reduce ? 1 : l.flame
+    const f = l.flame
       ? 0.84 + 0.1 * Math.sin(flick * 9.3 + i * 2.1) * Math.sin(flick * 4.1 + i) + 0.06 * Math.sin(flick * 23 + i * 5)
       : 0.93 + 0.07 * Math.sin(flick * 7 + i * 2.1) * Math.sin(flick * 3.3 + i);
     L.intensity = 26 * l.s * f;
   });
-  lantern.intensity = 2.8 * (S.reduce ? 1 : 0.9 + 0.07 * Math.sin(flick * 8.7) * Math.sin(flick * 3.1) + 0.03 * Math.sin(flick * 21));
+  lantern.intensity = 2.8 * (0.9 + 0.07 * Math.sin(flick * 8.7) * Math.sin(flick * 3.1) + 0.03 * Math.sin(flick * 21));
 }
 
 // ---------------------------------------------------------------- where am I
@@ -963,7 +993,6 @@ function locate() {
   } else { text = reg.label; sub = reg.era ? "Corridor" : "The Divine Archives"; }
   const areaId = reg.room || (reg.era ? "cor:" + reg.era : reg.id);
   S.styledHere = !!styleOf(areaId);
-  motionHint();
   const key = sub + "|" + text;
   if (key !== S.where) {
     S.where = key; S.room = reg.room || null;
@@ -1318,11 +1347,9 @@ function toggleGuide(on) {
 function setReduce(v) {
   S.reduce = v; store.set("mu-rm", v ? "1" : "0");
   const b = $("mu-motion-btn"); b.setAttribute("aria-pressed", String(v));
-  b.querySelectorAll(".mu-l, .mu-s").forEach((el) => { el.textContent = v ? "Motion off" : "Motion on"; });   // say the state, not just the switch
-  motionHint(); S.dirty = true;
+  b.querySelectorAll(".mu-l, .mu-s").forEach((el) => { el.textContent = v ? "View motion off" : "View motion on"; });   // say the state, not just the switch
+  S.dirty = true;
 }
-// with motion off, say so where something would be moving (a symbol wall, flames): it holds still on purpose
-function motionHint() { const h = $("mu-hint"); if (h) h.hidden = !(S.reduce && S.styledHere); }
 function savePos() { if (S.started) store.sset("mu-pos", JSON.stringify({ x: +S.pos.x.toFixed(2), z: +S.pos.z.toFixed(2), yaw: +S.yaw.toFixed(3) })); }
 
 // ---------------------------------------------------------------- directory (fallback)
@@ -1356,7 +1383,7 @@ function enter3d() {
 const pLocal = new THREE.Vector3();
 function portalTick(dt) {
   const P = S.portalFx, d = P.pos.distanceTo(pLocal.set(S.pos.x, 0, S.pos.z));
-  if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(S.reduce ? 0 : dt)) S.dirty = true; }
+  if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(dt)) S.dirty = true; }
   // inside the opening: within its width, and within a hand's breadth of its plane
   pLocal.set(S.pos.x - P.pos.x, 0, S.pos.z - P.pos.z).applyQuaternion(P.inv);
   if (!P.fired && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
@@ -1383,15 +1410,15 @@ function tick(now) {
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
-  if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, S.reduce)) S.dirty = true;
+  if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, false)) S.dirty = true;
   if (S.world) {
-    if (S.world.update(dt, S.pos, S.inRoom, S.reduce)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
+    if (S.world.update(dt, S.pos, S.inRoom, false)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
   if (S.portalFx) portalTick(dt);
-  const styled = S.style.update(dt, S.reduce) && S.styledHere;
-  if (!S.reduce && idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
+  const styled = S.style.update(dt) && S.styledHere;
+  if (idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
   camera.position.copy(S.pos);

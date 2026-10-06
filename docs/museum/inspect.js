@@ -510,7 +510,7 @@ export function createInspector(opt) {
     if (st.spin && !reduce()) st.yaw += dt * 0.25;
     if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); if (st.want.target != null) st.ty = ease(st.ty, st.want.target, k); }
     if (m && m.update(dt) && reflection) syncMirror(m.root, reflection);
-    if (stage) stage.update(dt, reduce());
+    if (stage) stage.update(dt, false);   // the world around the object always moves; only the view's own motion follows the switch
     if (st.ty == null) st.ty = m ? m.target : 0.2;
     const t = new THREE.Vector3(0, st.ty, 0);
     cam.position.set(t.x + Math.sin(st.yaw) * Math.cos(st.pitch) * st.dist, t.y + Math.sin(st.pitch) * st.dist, t.z + Math.cos(st.yaw) * Math.cos(st.pitch) * st.dist);

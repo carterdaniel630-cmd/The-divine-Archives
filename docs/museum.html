@@ -9,7 +9,7 @@
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/archive.css" />
-  <link rel="stylesheet" href="museum/museum.css?v=8" />
+  <link rel="stylesheet" href="museum/museum.css?v=9" />
   <script type="importmap">{ "imports": { "three": "./assets/vendor/three/three.module.min.js" } }</script>
 </head>
 <body class="museum-page">
@@ -23,13 +23,12 @@
     <span>The Divine Archives</span>
   </a>
   <p class="mu-where" id="mu-where" aria-live="polite"></p>
-  <p class="mu-hint" id="mu-hint" hidden>Motion is off, so the walls, flames and water hold still. Tap <b>Motion off</b> to turn it on.</p>
   <nav class="mu-tools" aria-label="Museum tools">
     <button type="button" id="mu-guide-btn" aria-controls="mu-guide" aria-expanded="false"><span class="mu-l">Room guide</span><span class="mu-s">Guide</span></button>
     <button type="button" id="mu-dir-btn">Directory</button>
     <button type="button" id="mu-help-btn">Help</button>
     <button type="button" id="mu-sound-btn" aria-pressed="true"><span class="mu-l">Sound on</span><span class="mu-s">Sound</span></button>
-    <button type="button" id="mu-motion-btn" aria-pressed="false" aria-label="Reduce motion"><span class="mu-l">Motion on</span><span class="mu-s">Motion on</span></button>
+    <button type="button" id="mu-motion-btn" aria-pressed="false" aria-label="Reduce view motion"><span class="mu-l">View motion on</span><span class="mu-s">View motion on</span></button>
   </nav>
 </header>
 
@@ -88,7 +87,7 @@
 </main>
 
 <script src="assets/pilgrimage-data.js?v=1"></script>
-<script type="module" src="museum/app.js?v=24"></script>
+<script type="module" src="museum/app.js?v=32"></script>
 <script src="assets/fps-overlay.js" defer></script>
 <script src="site-config.js" defer></script>
 </body>

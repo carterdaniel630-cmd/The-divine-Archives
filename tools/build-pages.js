@@ -574,7 +574,7 @@ function pilgrimageSitePage(s) {
     <button type="button" id="mu-guide-btn" aria-controls="mu-guide" aria-expanded="false"><span class="mu-l">Guide</span><span class="mu-s">Guide</span></button>
     <button type="button" id="mu-help-btn">Help</button>
     <button type="button" id="mu-sound-btn" aria-pressed="true"><span class="mu-l">Sound on</span><span class="mu-s">Sound</span></button>
-    <button type="button" id="mu-motion-btn" aria-pressed="false"><span class="mu-l">Reduce motion</span><span class="mu-s">Motion</span></button>
+    <button type="button" id="mu-motion-btn" aria-pressed="false"><span class="mu-l">Reduce view motion</span><span class="mu-s">View motion</span></button>
   </nav>
 </header>
 <div class="mu-intro" id="mu-intro" hidden>
@@ -617,7 +617,7 @@ function pilgrimageSitePage(s) {
     <p class="tiny"><a href="../pilgrimage.html">All Pilgrimage sites</a> · <a href="../museum.html">The museum</a></p>
   </div>
 </main>
-<script type="module">import { start } from "./engine.js?v=6"; start(${JSON.stringify(s.id)});</script>
+<script type="module">import { start } from "./engine.js?v=7"; start(${JSON.stringify(s.id)});</script>
 <script src="../site-config.js" defer></script>
 </body>
 </html>
