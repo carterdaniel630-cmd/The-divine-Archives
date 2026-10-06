@@ -1,5 +1,1693 @@
 {
-  "chapters": [],
-  "vault": [],
-  "pantheon": []
+ "chapters": [
+  {
+   "id": "ch21",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch26",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch27",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch28",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch29",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch30",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch31",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch32",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch33",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch34",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch35",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch36",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch37",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch38",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch39",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch40",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch41",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch42",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch43",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch44",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ch45",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch46",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch47",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch48",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch49",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch50",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch51",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch52",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch53",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch54",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch55",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch56",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch57",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch58",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch59",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch60",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch61",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch62",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch63",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch64",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch65",
+   "date": "2026-09-28",
+   "note": "Batch review of ch45–ch65 (backfilled from commit fd829fe)"
+  },
+  {
+   "id": "ch66",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch67",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch68",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch69",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch70",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch71",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch72",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch73",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch74",
+   "date": "2026-09-29",
+   "note": "Batch III review, ch66–ch74 (backfilled from commit c7d8de4)"
+  },
+  {
+   "id": "ch71",
+   "date": "2026-10-06",
+   "note": "Cleared by Carter after the 1993 Dangun tomb source was strengthened (PR #27); page numbers still to confirm"
+  }
+ ],
+ "vault": [
+  {
+   "id": "v01",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v02",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v03",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v04",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v05",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v06",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v07",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v08",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v09",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v10",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v11",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v12",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v13",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v14",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v15",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v16",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v17",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v18",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v19",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v20",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v21",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v22",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v23",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v24",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v25",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v26",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v27",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v28",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v29",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v30",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v31",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v32",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v33",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v34",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v35",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v36",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v37",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v38",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v39",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v40",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v41",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v42",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v43",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v44",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v45",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v46",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v47",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v48",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v49",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v50",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v51",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v52",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v53",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v54",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v55",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v56",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v57",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v58",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v59",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v60",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v61",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v62",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v63",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v64",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v65",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v66",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v67",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v68",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v69",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v70",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v71",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v72",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v73",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v74",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v75",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v76",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v77",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v78",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v79",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v80",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v81",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v82",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v83",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v84",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v85",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v86",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "v87",
+   "date": "2026-09-28",
+   "note": "Batch approval of 20 chapters, 87 Vault entries and the Pantheon (backfilled from commit ba6781e)"
+  }
+ ],
+ "pantheon": [
+  {
+   "id": "ra",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "osiris",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "isis",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "horus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "anubis",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "thoth",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "maat",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hathor",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "set",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "inanna",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "enki",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "marduk",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tiamat",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "gilgamesh",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "shamash",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ereshkigal",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "pazuzu",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tarhunna",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "arinna",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "kumarbi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "baal",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "el",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "asherah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "anat",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ahura-mazda",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "angra-mainyu",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mithra",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "anahita",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "zeus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hera",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "athena",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "poseidon",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hades",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "persephone",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "demeter",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "apollo",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "artemis",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "dionysus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hermes",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "aphrodite",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "gaia",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "prometheus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "heracles",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "orpheus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jupiter",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "janus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "vesta",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mars",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "cybele",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mithras",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "odin",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "thor",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "freyja",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "frigg",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "loki",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tyr",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hel",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "baldr",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "norns",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "cernunnos",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "brigid",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "morrigan",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "lugh",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "perun",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "veles",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mokosh",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "saule",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "indra",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "agni",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "varuna",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "shiva",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "vishnu",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "brahma",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "durga",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "kali",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ganesha",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "krishna",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "lakshmi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "saraswati",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hanuman",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "avalokiteshvara",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "amitabha",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tara",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "maitreya",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "manjushri",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mara",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "padmasambhava",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mahavira",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "parshvanatha",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "shangdi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jade-emperor",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "laozi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "kongzi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "xiwangmu",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "guandi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "amaterasu",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "susanoo",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "izanagi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "izanami",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "inari",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "quetzalcoatl",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "huitzilopochtli",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tlaloc",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tezcatlipoca",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "coatlicue",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "itzamna",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "chaak",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hero-twins",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "maize-god",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "viracocha",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "inti",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "pachamama",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mama-quilla",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "olodumare",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "obatala",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ogun",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "shango",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "oshun",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "eshu",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "yemoja",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "papa-legba",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ezili-freda",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "baron-samedi",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "michael",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "metatron",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "lilith",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "asmodeus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "iblis",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jinn",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "satan",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "sophia",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "yaldabaoth",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "abraxas",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tawus-melek",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "rainbow-serpent",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "maui",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "pele",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "tangaroa",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "coyote",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "raven",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "sky-woman",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "horned-god",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "triple-goddess",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "baphomet",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "yhwh",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "adam",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "eve",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "enoch",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "noah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "abraham",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "sarah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "hagar",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "isaac",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ishmael",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jacob",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "joseph-patriarch",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "moses",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "aaron",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "miriam",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "joshua",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "deborah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "samson",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ruth",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "samuel",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "david",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "solomon",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "queen-of-sheba",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "elijah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jezebel",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "isaiah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jeremiah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ezekiel",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "daniel",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jonah",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "esther",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "job",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "judah-maccabee",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "judith",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "gabriel",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "raphael",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "jesus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mary",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "john-baptist",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "peter",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "paul",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "mary-magdalene",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "john-apostle",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "thomas",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "judas",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "james",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "pilate",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "herod",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "lazarus",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "joseph-arimathea",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "muhammad",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "khadija",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "fatima",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "ali",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  },
+  {
+   "id": "husayn",
+   "date": "2026-09-28",
+   "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
+  }
+ ]
 }

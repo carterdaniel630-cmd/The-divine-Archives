@@ -33,3 +33,4 @@ Per the project sourcing standard. Covers the whole layered history (dolmens to 
 
 ## Flags for Carter
 - None. No stronger source was found that disagrees with the chapter's text.
+- **To confirm (2026-10-06):** exact page numbers within Lee & Kim (2024), pp. 87–132, for the 1993 announcement, Kim Il-sung's order and the "fabrication and forgery" assessment. The article could not be opened from the build environment (checked via search results only); confirm the pages when a session can open https://ijkh.khistory.org/journal/view.php?number=599 and narrow the citation.
