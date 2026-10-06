@@ -46,7 +46,18 @@ export const STYLE = {
   ch15: { floor: "pebble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
   ch52: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },
   ch69: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },
-  ch78: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 }
+  ch78: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  // Wing V, Late Antiquity (rollout step 3): mosaic in the corridor; Roman lamps still lit the late antique world
+  "cor:05-late-antiquity": { floor: "tessellated", kerb: "marblekerb", fittings: "axial-corridor", symbols: "late", sky: 1 },
+  ch16: { floor: "tessellated", kerb: "marblekerb", fittings: "axial-room", sky: 1 },     // house-church and villa mosaics
+  ch17: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },       // Upper Egypt, where Nag Hammadi was found
+  ch18: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },     // a mithraeum's beaten floor
+  ch19: { floor: "tessellated", kerb: "limestone", fittings: "axial-room", sky: 1 },     // synagogue mosaics
+  ch20: { floor: "brick", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch45: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },       // Coptic Egypt
+  ch55: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },     // the oasis towns of the Silk Road
+  ch70: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch79: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 }           // Aksum's dressed granite and basalt
 };
 export const styleOf = (id) => STYLE[id] || null;
 

@@ -11,7 +11,10 @@
   "oldpersian": "art-source/fonts/NotoSansOldPersian.woff2",
   "brahmi": "art-source/fonts/NotoSansBrahmi.woff2",
   "kharoshthi": "art-source/fonts/NotoSansKharoshthi.woff2",
-  "symbols2": "art-source/fonts/NotoSansSymbols2.woff2"
+  "symbols2": "art-source/fonts/NotoSansSymbols2.woff2",
+  "coptic": "art-source/fonts/NotoSansCoptic.woff2",
+  "ogham": "art-source/fonts/NotoSansOgham.woff2",
+  "pahlavi": "art-source/fonts/NotoSansInscriptionalPahlavi.woff2"
  },
  "walls": {
   "bronze": {
@@ -1942,6 +1945,412 @@
      ]
     }
    ]
+  },
+  "late": {
+   "label": "Wing V, Late Antiquity",
+   "sets": [
+    {
+     "name": "The Coptic alphabet: Greek letters and six of the seven taken from Egyptian Demotic (Egypt, from the 3rd century CE)",
+     "font": "coptic",
+     "order": "alphabetical",
+     "signs": [
+      {
+       "cp": "2C80",
+       "id": "Alfa",
+       "value": "alfa"
+      },
+      {
+       "cp": "2C82",
+       "id": "Vida",
+       "value": "vida"
+      },
+      {
+       "cp": "2C84",
+       "id": "Gamma",
+       "value": "gamma"
+      },
+      {
+       "cp": "2C86",
+       "id": "Dalda",
+       "value": "dalda"
+      },
+      {
+       "cp": "2C88",
+       "id": "Eie",
+       "value": "eie"
+      },
+      {
+       "cp": "2C8A",
+       "id": "Sou",
+       "value": "sou"
+      },
+      {
+       "cp": "2C8C",
+       "id": "Zata",
+       "value": "zata"
+      },
+      {
+       "cp": "2C8E",
+       "id": "Hate",
+       "value": "hate"
+      },
+      {
+       "cp": "2C90",
+       "id": "Thethe",
+       "value": "thethe"
+      },
+      {
+       "cp": "2C92",
+       "id": "Iauda",
+       "value": "iauda"
+      },
+      {
+       "cp": "2C94",
+       "id": "Kapa",
+       "value": "kapa"
+      },
+      {
+       "cp": "2C96",
+       "id": "Laula",
+       "value": "laula"
+      },
+      {
+       "cp": "2C98",
+       "id": "Mi",
+       "value": "mi"
+      },
+      {
+       "cp": "2C9A",
+       "id": "Ni",
+       "value": "ni"
+      },
+      {
+       "cp": "2C9C",
+       "id": "Ksi",
+       "value": "ksi"
+      },
+      {
+       "cp": "2C9E",
+       "id": "O",
+       "value": "o"
+      },
+      {
+       "cp": "2CA0",
+       "id": "Pi",
+       "value": "pi"
+      },
+      {
+       "cp": "2CA2",
+       "id": "Ro",
+       "value": "ro"
+      },
+      {
+       "cp": "2CA4",
+       "id": "Sima",
+       "value": "sima"
+      },
+      {
+       "cp": "2CA6",
+       "id": "Tau",
+       "value": "tau"
+      },
+      {
+       "cp": "2CA8",
+       "id": "Ua",
+       "value": "ua"
+      },
+      {
+       "cp": "2CAA",
+       "id": "Fi",
+       "value": "fi"
+      },
+      {
+       "cp": "2CAC",
+       "id": "Khi",
+       "value": "khi"
+      },
+      {
+       "cp": "2CAE",
+       "id": "Psi",
+       "value": "psi"
+      },
+      {
+       "cp": "2CB0",
+       "id": "Oou",
+       "value": "oou"
+      },
+      {
+       "cp": "03E2",
+       "id": "Shei",
+       "value": "shei"
+      },
+      {
+       "cp": "03E4",
+       "id": "Fei",
+       "value": "fei"
+      },
+      {
+       "cp": "03E6",
+       "id": "Khei",
+       "value": "khei"
+      },
+      {
+       "cp": "03E8",
+       "id": "Hori",
+       "value": "hori"
+      },
+      {
+       "cp": "03EA",
+       "id": "Gangia",
+       "value": "gangia"
+      },
+      {
+       "cp": "03EC",
+       "id": "Shima",
+       "value": "shima"
+      }
+     ]
+    },
+    {
+     "name": "Ogham: the four groups of five and the forfeda (Irish memorial stones, from about the 4th century CE)",
+     "font": "ogham",
+     "order": "Unicode order (the traditional aicme order)",
+     "signs": [
+      {
+       "cp": "1681",
+       "id": "Beith",
+       "value": "beith"
+      },
+      {
+       "cp": "1682",
+       "id": "Luis",
+       "value": "luis"
+      },
+      {
+       "cp": "1683",
+       "id": "Fearn",
+       "value": "fearn"
+      },
+      {
+       "cp": "1684",
+       "id": "Sail",
+       "value": "sail"
+      },
+      {
+       "cp": "1685",
+       "id": "Nion",
+       "value": "nion"
+      },
+      {
+       "cp": "1686",
+       "id": "Uath",
+       "value": "uath"
+      },
+      {
+       "cp": "1687",
+       "id": "Dair",
+       "value": "dair"
+      },
+      {
+       "cp": "1688",
+       "id": "Tinne",
+       "value": "tinne"
+      },
+      {
+       "cp": "1689",
+       "id": "Coll",
+       "value": "coll"
+      },
+      {
+       "cp": "168A",
+       "id": "Ceirt",
+       "value": "ceirt"
+      },
+      {
+       "cp": "168B",
+       "id": "Muin",
+       "value": "muin"
+      },
+      {
+       "cp": "168C",
+       "id": "Gort",
+       "value": "gort"
+      },
+      {
+       "cp": "168D",
+       "id": "Ngeadal",
+       "value": "ngeadal"
+      },
+      {
+       "cp": "168E",
+       "id": "Straif",
+       "value": "straif"
+      },
+      {
+       "cp": "168F",
+       "id": "Ruis",
+       "value": "ruis"
+      },
+      {
+       "cp": "1690",
+       "id": "Ailm",
+       "value": "ailm"
+      },
+      {
+       "cp": "1691",
+       "id": "Onn",
+       "value": "onn"
+      },
+      {
+       "cp": "1692",
+       "id": "Ur",
+       "value": "ur"
+      },
+      {
+       "cp": "1693",
+       "id": "Eadhadh",
+       "value": "eadhadh"
+      },
+      {
+       "cp": "1694",
+       "id": "Iodhadh",
+       "value": "iodhadh"
+      },
+      {
+       "cp": "1695",
+       "id": "Eabhadh",
+       "value": "eabhadh"
+      },
+      {
+       "cp": "1696",
+       "id": "Or",
+       "value": "or"
+      },
+      {
+       "cp": "1697",
+       "id": "Uilleann",
+       "value": "uilleann"
+      },
+      {
+       "cp": "1698",
+       "id": "Ifin",
+       "value": "ifin"
+      },
+      {
+       "cp": "1699",
+       "id": "Eamhancholl",
+       "value": "eamhancholl"
+      },
+      {
+       "cp": "169A",
+       "id": "Peith",
+       "value": "peith"
+      }
+     ]
+    },
+    {
+     "name": "Inscriptional Pahlavi: the script of the early Sasanian royal inscriptions (3rd century CE)",
+     "font": "pahlavi",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10B60",
+       "id": "Aleph",
+       "value": "aleph"
+      },
+      {
+       "cp": "10B61",
+       "id": "Beth",
+       "value": "beth"
+      },
+      {
+       "cp": "10B62",
+       "id": "Gimel",
+       "value": "gimel"
+      },
+      {
+       "cp": "10B63",
+       "id": "Daleth",
+       "value": "daleth"
+      },
+      {
+       "cp": "10B64",
+       "id": "He",
+       "value": "he"
+      },
+      {
+       "cp": "10B65",
+       "id": "Waw-Ayin-Resh",
+       "value": "waw-ayin-resh"
+      },
+      {
+       "cp": "10B66",
+       "id": "Zayin",
+       "value": "zayin"
+      },
+      {
+       "cp": "10B67",
+       "id": "Heth",
+       "value": "heth"
+      },
+      {
+       "cp": "10B68",
+       "id": "Teth",
+       "value": "teth"
+      },
+      {
+       "cp": "10B69",
+       "id": "Yodh",
+       "value": "yodh"
+      },
+      {
+       "cp": "10B6A",
+       "id": "Kaph",
+       "value": "kaph"
+      },
+      {
+       "cp": "10B6B",
+       "id": "Lamedh",
+       "value": "lamedh"
+      },
+      {
+       "cp": "10B6C",
+       "id": "Mem-Qoph",
+       "value": "mem-qoph"
+      },
+      {
+       "cp": "10B6D",
+       "id": "Nun",
+       "value": "nun"
+      },
+      {
+       "cp": "10B6E",
+       "id": "Samekh",
+       "value": "samekh"
+      },
+      {
+       "cp": "10B6F",
+       "id": "Pe",
+       "value": "pe"
+      },
+      {
+       "cp": "10B70",
+       "id": "Sadhe",
+       "value": "sadhe"
+      },
+      {
+       "cp": "10B71",
+       "id": "Shin",
+       "value": "shin"
+      },
+      {
+       "cp": "10B72",
+       "id": "Taw",
+       "value": "taw"
+      }
+     ]
+    }
+   ]
   }
  },
  "held": {
@@ -2017,6 +2426,17 @@
      "103CF"
     ],
     "why": "Old Persian word-signs: they include the name of Ahura Mazda, worshipped by Zoroastrians today, and the word for 'god'"
+   },
+   {
+    "range": [
+     "10330",
+     "1034F"
+    ],
+    "why": "Gothic: Wulfila made it to write the Bible, like Avestan for the Zoroastrian scriptures; held until Carter decides"
+   },
+   {
+    "cp": "03EE",
+    "why": "Coptic ti (dei): its letterform reads as a cross"
    }
   ],
   "blocks": [

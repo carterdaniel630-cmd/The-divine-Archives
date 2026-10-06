@@ -21,7 +21,7 @@
    ========================================================================== */
 import * as THREE from "three";
 import { GAMES, R_HALL, R_CAB, R_POOL, cabPos, bestOf } from "./site.js?v=1";
-import { createStyle } from "../../../museum/style.js?v=14";
+import { createStyle } from "../../../museum/style.js?v=15";
 import { sign } from "../../parts.js?v=1";
 
 const TAU = Math.PI * 2, RAD = Math.PI / 180;

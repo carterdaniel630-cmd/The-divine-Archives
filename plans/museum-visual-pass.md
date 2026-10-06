@@ -586,3 +586,42 @@ and go on to the next wing.
 | Textures, cumulative over that walk | 34 → 108 | 34 → 117 |
 
 Raw numbers: `audits/museum-visual-pass/wing4-baseline-unthrottled.json`, `wing4-unthrottled.json`.
+
+## Rollout, step 3: Wing V, Late Antiquity (2026-10-06, on the preview)
+
+Carter said "carry on" (typed "chin rune", read as "continue").
+
+- **Floors.** The fittings are the Roman lamps of Wing IV, which were still in use.
+  - Corridor: mosaic, with a marble kerb.
+  - Early Christianity and Rabbinic Judaism: mosaic, as in house-churches and synagogues.
+  - Gnosticism and Pistis Sophia: limestone (Coptic Egypt).
+  - Roman Mystery Cults and Manichaeism: rammed earth.
+  - Mahayana Buddhism: brick.
+  - Pre-Islamic Arabia and the First Christian Kingdoms: ashlar.
+- **Symbol wall "late".** Three scripts of the period, OFL Noto fonts from the @fontsource packages, kept in
+  `art-source/fonts/`:
+  - **Coptic:** the Greek-derived letters, plus six of the seven taken from Demotic.
+  - **Ogham:** the four groups of five, plus the forfeda.
+  - **Inscriptional Pahlavi**, the early Sasanian royal inscriptions.
+- **Newly held back:**
+  - **Gothic**, which Wulfila created to write the Bible. It is held for the same reason as Avestan.
+  - **The Coptic letter ti (dei)**, because its form reads as a cross.
+
+  Ogham now has its place, as the §5 correction said it would.
+- **Phone budget.** Every spot is within 100 draw calls.
+
+| Measure (no throttle) | Live museum | With the pass |
+|---|---|---|
+| Wing V corridor: calls / triangles | 77 / 146k | 79 / 162k |
+| Early Christianity | 77 / 267k | 81 / 275k |
+| Rabbinic Judaism | 84 / 88k | 92 / 100k |
+| Mahayana Buddhism | 48 / 94k | 53 / 102k |
+| First Christian Kingdoms | 43 / 85k | 48 / 93k |
+| Wing II corridor | 79 / 191k | 89 / 202k |
+| Textures, cumulative over that walk | 30 → 89 | 35 → 97 |
+
+The Early Christianity room is already over the 220k triangle guide in the live museum, because of its relics; the
+pass adds 8k. Raw numbers: `audits/museum-visual-pass/wing5-baseline-unthrottled.json`, `wing5-unthrottled.json`.
+
+**Still to do in the rollout:** Wings VI to IX and I, and the six Bronze Age rooms besides Egypt (the sample covered
+only Egypt).
