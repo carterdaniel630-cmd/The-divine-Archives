@@ -197,7 +197,7 @@ export function createStyle(o) {
     put(new THREE.BoxGeometry(0.08, Hh + 0.08, d * 2), FM.sill, W / 2 + 0.04, Hh / 2, d);
     put(new THREE.BoxGeometry(W + 0.16, 0.08, d * 2.4), FM.sill, 0, Hh + 0.04, d * 1.1);
     put(new THREE.BoxGeometry(W + 0.2, 0.06, 0.22), FM.sill, 0, -0.03, 0.11);                                   // the sill the lamp stands on
-    put(new THREE.PlaneGeometry(W * 0.8, Hh * 0.55), FM.soot, 0, Hh * 0.62, 0.014);                              // soot above the flame
+    put(new THREE.PlaneGeometry(W * 0.8, Hh * 0.55), FM.niche, 0, Hh * 0.62, 0.014);                              // soot above the flame
     return saucerLamp(L, x + nx * 0.12, y, z + nz * 0.12, ry + Math.PI / 2 * 0);
   }
   // a bronze tripod brazier with a shallow bowl of coals
@@ -205,7 +205,7 @@ export function createStyle(o) {
     s = s || 1;
     const bowl = new THREE.LatheGeometry([[0, 0], [0.12, 0.01], [0.2, 0.05], [0.24, 0.1], [0.25, 0.12], [0.23, 0.12], [0.2, 0.07], [0.12, 0.04], [0, 0.035]].map(([r, h]) => new THREE.Vector2(r * s, h * s)), 24);
     bowl.translate(x, 0.78 * s, z); L.push([bowl, MAT.bronze]);
-    const coals = new THREE.CylinderGeometry(0.2 * s, 0.2 * s, 0.03, 18); coals.translate(x, 0.88 * s, z); L.push([coals, FM.ash]);
+    const coals = new THREE.CylinderGeometry(0.2 * s, 0.2 * s, 0.03, 18); coals.translate(x, 0.88 * s, z); L.push([coals, FM.niche]);   // ash: drawn with the niche material (one draw call fewer)
     for (let k = 0; k < 3; k++) {
       const a = k / 3 * TAU + 0.5, leg = new THREE.CylinderGeometry(0.014 * s, 0.018 * s, 0.86 * s, 6);
       leg.translate(0, 0.43 * s, 0); leg.rotateX(0.16); leg.rotateY(-a + Math.PI / 2); leg.translate(x + Math.cos(a) * 0.05 * s, 0, z + Math.sin(a) * 0.05 * s); L.push([leg, MAT.bronze]);

@@ -479,3 +479,7 @@ Real phone frame rates: Carter's walk, with `?fps=1`.
   together and nothing can be spelled. The held-back list and `verify-symbols` are unchanged.
 - **The flames are raised.** The Egypt room's niche lamps now sit at 3.45 m, well clear of the Pantheon medallions
   (whose tops are at 2.66 m). The corridor's sit at 2.3 m.
+- Re-measured after the revision (no throttle): corridor 99 draw calls (budget 100; three dark materials of the fittings
+  merged into one to stay inside it), 202k triangles (budget 220k), 39 textures; Egypt room 86 calls, 117k
+  triangles, 55 textures; download to first walk 1.90 MB, unchanged. The clip of the wall is
+  `audits/museum-visual-pass/symbol-wall-drips.mp4` (rendered frame by frame; software graphics).
