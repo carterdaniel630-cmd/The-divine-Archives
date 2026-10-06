@@ -392,7 +392,7 @@ void main(){
     const g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
     g.setAttribute("aDat", new THREE.Float32BufferAttribute(dat, 3)); g.setIndex(idx);
-    const U = { uTime: { value: 0 }, uAtlas: { value: null }, uGrid: { value: new THREE.Vector2(1, 1) }, uSets: { value: [0, 1, 2, 3].map(() => new THREE.Vector2(0, 1)) }, uN: { value: 1 }, uStrength: { value: 0.72 } };
+    const U = { uTime: { value: 0 }, uAtlas: { value: null }, uGrid: { value: new THREE.Vector2(1, 1) }, uSets: { value: [0, 1, 2, 3].map(() => new THREE.Vector2(0, 1)) }, uN: { value: 1 }, uStrength: { value: 0.85 } };
     const m = new THREE.ShaderMaterial({
       uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
       vertexShader: `attribute vec3 aDat; varying vec2 vUv; varying vec3 vDat; void main(){ vUv = uv; vDat = aDat; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
@@ -408,7 +408,7 @@ void main(){
   float sd = hash(vec2(ci, vDat.z));
   float rowF = (H - vUv.y) / cellH + sd, ri = floor(rowF), fy = rowF - ri;   // rows counted from the ceiling, staggered by column
   // the drips: two per column, released at uneven intervals, each falling a little faster as it goes
-  float lum = .05, headNear = 0.;
+  float lum = .08, headNear = 0.;
   for (int d = 0; d < 2; d++) {
     float fd = float(d), h1 = hash(vec2(ci + fd * 31.7, vDat.z + fd * 5.));
     float period = 3. + h1 * 7., tt = uTime + h1 * 41.;
@@ -440,7 +440,7 @@ void main(){
   // how many signs one pixel covers: far off and at a slant, the halo and fine detail fade rather than sparkle
   float px = max(length(dFdx(vUv)), length(dFdy(vUv))) / gs, far = 1. - smoothstep(.06, .22, px);
   float inside = step(0., lc.x) * step(lc.x, 1.) * step(0., lc.y) * step(lc.y, 1.);
-  float a = textureGrad(uAtlas, auv, gx, gy).a * inside;
+  float a = textureGrad(uAtlas, auv, gx * 1.6, gy * 1.6).a * inside;   // a touch soft: smooth strokes, no sparkle
   float od = length(lc - cl);
   float glow = textureGrad(uAtlas, auv, gx * 4., gy * 4.).a * exp(-od * 7.) * far;   // the soft halo (near only)
   float fade = smoothstep(0., .25, vUv.x) * smoothstep(0., .25, L - vUv.x) * smoothstep(0., .45, vUv.y) * smoothstep(0., .05, H - vUv.y);
