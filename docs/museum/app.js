@@ -28,7 +28,7 @@ import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createStyle, styleOf } from "./style.js?v=3";
+import { createStyle, styleOf } from "./style.js?v=6";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -359,6 +359,10 @@ function finishZones() {
     }
     for (const [kind, list] of Object.entries(z.floorBy)) { if (!list.length) continue; const m = new THREE.Mesh(merge(list), S.style.floorMat(kind)); m.matrixAutoUpdate = false; z.group.add(m); z.floorBy[kind] = []; }
     for (const d of z.decor || []) z.group.add(d);
+    // the visual pass's fittings, kerbs and painted light: one mesh per material for the whole wing
+    const byMat = new Map(); for (const [g, m] of z.decorParts || []) { if (!byMat.has(m)) byMat.set(m, []); byMat.get(m).push(g.index ? g : g.toNonIndexed()); }
+    for (const [m, list] of byMat) { const mesh = new THREE.Mesh(merge(list), m); mesh.matrixAutoUpdate = false; mesh.renderOrder = m.userData.ro || 0; z.group.add(mesh); }
+    z.decorParts = [];
     scene.add(z.group);
   }
 }
@@ -368,6 +372,7 @@ function lamp(x, y, z, strength, flame) { S.lampAnchors.push({ p: new THREE.Vect
 function decorate(z, areaId, info) {
   const d = S.style.decorate(areaId, info); if (!d) return;
   (z.decor = z.decor || []).push(d.group);
+  (z.decorParts = z.decorParts || []).push(...d.parts);
   d.lamps.forEach((l) => lamp(l.p.x, l.p.y, l.p.z, l.s, true));
   d.segs.forEach(([x, zz, r]) => addBox(x, zz, r));
 }
@@ -482,7 +487,7 @@ function build() {
       const r = S.rooms[id];
       Object.assign(r, { frame: f, zone: e.slug, era: e.slug, cx, cz: (ez + bz) / 2 });
       region("room-" + id, r.title, x0, x1, ez, bz, { room: id, era: e.slug });
-      if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole });
+      if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole, twoRows: Math.ceil((r.homeFigs || []).length / 2) > 6 });
       else lamp(cx, 4.4, (ez + bz) / 2, 1);
     });
     // corridor walls; they run outward from the spine, so a door's distance along the wall is its distance from the spine
@@ -505,7 +510,7 @@ function build() {
   };
   const bulbList = S.lampAnchors.filter((l) => !l.flame), flameList = S.lampAnchors.filter((l) => l.flame);
   lampPoints = glows(bulbList, 1.1, "#ffd9a0");
-  if (flameList.length) { S.flameGlow = glows(flameList, 0.75, "#ffb060"); scene.add(S.style.flames()); }
+  if (flameList.length) scene.add(S.style.flames());   // each flame draws its own halo
   const bulbs = new THREE.InstancedMesh(new THREE.SphereGeometry(0.09, 8, 6), MAT.flame, bulbList.length);
   const mtx = new THREE.Matrix4();
   bulbList.forEach((l, i) => { mtx.makeTranslation(l.p.x, l.p.y, l.p.z); bulbs.setMatrixAt(i, mtx); });

@@ -27,9 +27,9 @@ const srv = http.createServer((q, s) => { let p = decodeURIComponent(q.url.split
     const r = await page.evaluate(() => new Promise((ok) => { let n = 0; const t = performance.now(); const f = () => { n++; window.__MU.look(window.__MU.state().yaw + 0.002, 0); if (performance.now() - t < 5000) requestAnimationFrame(f); else ok({ fps: n / ((performance.now() - t) / 1000), ...window.__MU.state() }); }; requestAnimationFrame(f); }));
     res.spots[name] = { fps: +r.fps.toFixed(1), calls: r.calls, tris: r.tris, textures: r.textures, geometries: r.geometries, where: r.where };
   };
-  await measure("hall", "@hall");
-  await measure("bronze-age corridor", "@02-bronze-age");
-  await measure("Egypt room (ch02)", "ch02");
+  // SPOTS='[["name","target"],...]' measures other places (targets as for museum.html#: a room id or @<era>)
+  const spots = process.env.SPOTS ? JSON.parse(process.env.SPOTS) : [["hall", "@hall"], ["bronze-age corridor", "@02-bronze-age"], ["Egypt room (ch02)", "ch02"]];
+  for (const [n, t] of spots) await measure(n, t);
   res.bytesTotal = bytes; res.byTypeTotal = byType; res.errors = errors;
   const hsz = await page.evaluate(() => performance.memory ? performance.memory.usedJSHeapSize : null); res.jsHeap = hsz;
   fs.writeFileSync(OUT, JSON.stringify(res, null, 1)); console.log(JSON.stringify(res, null, 1));

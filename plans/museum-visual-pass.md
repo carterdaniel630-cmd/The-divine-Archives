@@ -487,3 +487,45 @@ Real phone frame rates: Carter's walk, with `?fps=1`.
   wall, each column at its own speed. Lit runs of uneven length, with uneven gaps, travel with them, the leading sign
   brightest. The signs still flip as they go. Clip: `audits/museum-visual-pass/symbol-wall-scrolling.mp4`.
   The wall holds still only when the visitor has "reduce motion" on (the museum's Motion button, or the phone's own setting).
+
+## Rollout, step 1: Wing III, the Early Iron Age (2026-10-06, on the preview)
+
+Carter said "continue" after the sample, so the rollout began, wing by wing, each on the preview first.
+- **Floors.**
+  - Dressed ashlar in the corridor and in Zoroaster, Pre-exilic Israel, Nubia & Kush and the Etruscans.
+  - A pebble floor in Early Greece. The earliest known pebble floors are Phrygian, at Gordion, from about the 8th
+    century BCE; the Greek ones come later.
+  - Rammed earth in Early China.
+  - Cedar boards in the Canaanite & Phoenician room.
+  - Limestone kerbs round the glass throughout.
+- **Light.** Saucer lamps in niches and bronze braziers, as in Wing II. Saucer lamps continued in use in the Iron
+  Age. In rooms with two rows of Pantheon medallions (Pre-exilic Israel), the lamps sit at 4.05 m, clear of both rows.
+- **Symbol wall.** Four sets, alternating row by row:
+  - the Greek alphabet;
+  - Old Italic letters (Etruscan and its neighbours);
+  - Old South Arabian letters;
+  - the Old Persian syllabary.
+
+  Newly held back: the Old Persian word-signs, which include the name of Ahura Mazda and the word "god"; and
+  **Phoenician, which is also the old Hebrew script, until Carter decides**. Correction to §5: Ogham was listed for
+  Wing III, but Ogham dates from about the 4th century CE, so it belongs to a later wing.
+- **Phone budget changes.**
+  - Each wing's fittings, kerbs and painted light are now merged per material, so a whole wing costs a few draw calls.
+  - The clay, niche and sill surfaces share one material through a small palette.
+  - Fittings are built with fewer segments.
+  - Each flame draws its own halo, so there is no separate glow layer.
+  - On phones, floors have no relief map.
+- **Correction to the budget table.** The texture count measured here is everything loaded so far, not one view.
+  The live museum already reaches 71–79 once two wings have been visited. So the "≤ 60" figure in §6 was wrong. The
+  working budget is now **no more than about 15 textures above the live museum in the same walk**.
+
+| Measure (no throttle) | Live museum | With the pass |
+|---|---|---|
+| Wing II corridor: calls / triangles | 82 / 191k | 88 / 198k |
+| Egypt room | 61 / 104k | 72 / 111k |
+| Wing III corridor | 85 / 182k | 94 / 211k |
+| Pre-exilic Israel (24 medallions) | 94 / 91k | 100 / 121k |
+| Early Greece | 49 / 83k | 56 / 113k |
+| Textures, cumulative over that walk | 31 → 79 | 35 → 94 |
+
+Raw numbers: `audits/museum-visual-pass/wing3-baseline-unthrottled.json`, `wing3-unthrottled.json`.

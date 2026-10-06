@@ -1,0 +1,65 @@
+{
+ "viewport": "412x915 @1x, 1x CPU throttle, SwiftShader",
+ "tLoadMs": 635,
+ "tFirstZoneMs": 10484,
+ "bytesAtReady": 1977865,
+ "byType": {
+  "html": 35190,
+  "css": 48879,
+  "js": 1434997,
+  "json": 311909,
+  "webp": 146890
+ },
+ "spots": {
+  "bronze corridor": {
+   "fps": 0.3,
+   "calls": 88,
+   "tris": 197840,
+   "textures": 35,
+   "geometries": 116,
+   "where": "Corridor|Wing II · The Bronze Age"
+  },
+  "Egypt (ch02)": {
+   "fps": 0.3,
+   "calls": 72,
+   "tris": 110941,
+   "textures": 51,
+   "geometries": 139,
+   "where": "Wing II · The Bronze Age|Egypt"
+  },
+  "iron-age corridor": {
+   "fps": 0.9,
+   "calls": 94,
+   "tris": 211022,
+   "textures": 70,
+   "geometries": 188,
+   "where": "Corridor|Wing III · The Early Iron Age"
+  },
+  "Pre-exilic Israel (ch07)": {
+   "fps": 0.5,
+   "calls": 100,
+   "tris": 120543,
+   "textures": 86,
+   "geometries": 235,
+   "where": "Wing III · The Early Iron Age|Pre-exilic Israel"
+  },
+  "Early Greece (ch08)": {
+   "fps": 0.5,
+   "calls": 56,
+   "tris": 112822,
+   "textures": 94,
+   "geometries": 243,
+   "where": "Wing III · The Early Iron Age|Early Greece"
+  }
+ },
+ "bytesTotal": 2540381,
+ "byTypeTotal": {
+  "html": 35190,
+  "css": 48879,
+  "js": 1434997,
+  "json": 874425,
+  "webp": 146890
+ },
+ "errors": [],
+ "jsHeap": 72200000
+}
