@@ -290,7 +290,7 @@ void main(){
     const out = { group: new THREE.Group(), lamps: [], segs: [] }, L = [], P = [];
     if (st.kerb && info.hole) out.group.add(kerb(info.hole, st.kerb));
     if (st.fittings === "bronze-corridor") {
-      const { side: s, zk, corW, len } = info, wallY = 1.95;
+      const { side: s, zk, corW, len } = info, wallY = 2.3;
       for (const [north, gaps] of [[true, info.gapsN], [false, info.gapsS]]) {
         const zw = zk + (north ? -corW / 2 : corW / 2), nz = north ? 1 : -1, segs = wallSegments(gaps, len);
         for (const [a, b] of segs) {
@@ -314,7 +314,7 @@ void main(){
       }
     }
     if (st.fittings === "bronze-room") {
-      const { W, f } = info, sill = 2.9;
+      const { W, f } = info, sill = 3.45;          // well above the Pantheon medallions (their tops are at 2.66 m)
       // niche lamps on the side walls, between the Pantheon medallions
       for (const side of [-1, 1]) for (const v of [4.6, 7.0, 9.4, 11.8]) {
         const [x, z] = W(f, side * 6.5, v), nx = -side * f.rx, nz = -side * f.rz;
@@ -365,18 +365,21 @@ void main(){
     const d = S.data, U = m.uniforms; U.uAtlas.value = S.tex; U.uGrid.value.set(d.cols, d.rows);
     d.sets.slice(0, 4).forEach((s, i) => U.uSets.value[i].set(s.start, s.len)); U.uN.value = Math.min(4, d.sets.length); m.visible = true;
   }
+  // the hallway's symbol wall: drips of glowing signs that fall from the ceiling toward the floor at uneven intervals,
+  // each sign flipping to another as it goes (Carter's reference, 2026-10-06). So that a column can never spell a word
+  // or a name, the scripts alternate row by row: no two signs of one script ever stand together.
   function symbolWall(name, info) {
     const { side: s, zk, corW, len } = info, pos = [], uv = [], dat = [], idx = [];
-    const y0 = 1.12, y1 = 3.55, H = y1 - y0, clear = 0.55;
+    const y0 = 0.98, y1 = (info.ceil || 4.6) - 0.05, H = y1 - y0, clear = 0.5;
     for (const [north, gaps] of [[true, info.gapsN], [false, info.gapsS]]) {
       const zw = zk + (north ? -corW / 2 : corW / 2) + (north ? 0.012 : -0.012), segs = wallSegments(gaps, len);
       for (const [a, b] of segs) {
-        // the niches sit at the centres of n equal parts: panels run between them
-        const n = Math.max(1, Math.round((b - a) / 9)), cuts = [a + 0.35];
+        // the niches sit at the centres of n equal parts: panels run between them (clear of the door signs too)
+        const n = Math.max(1, Math.round((b - a) / 9)), cuts = [a + 0.5];
         for (let k = 0; k < n; k++) { const c = a + (b - a) * (k + 0.5) / n; cuts.push(c - 0.23 - clear, c + 0.23 + clear); }
-        cuts.push(b - 0.35);
+        cuts.push(b - 0.5);
         for (let k = 0; k < cuts.length; k += 2) {
-          const u0 = cuts[k], u1 = cuts[k + 1]; if (u1 - u0 < 0.8) continue;
+          const u0 = cuts[k], u1 = cuts[k + 1]; if (u1 - u0 < 0.6) continue;
           const xa = s * (4 + u0), xb = s * (4 + u1), base = pos.length / 3, L = u1 - u0, seed = Math.random() * 100;
           pos.push(xa, y0, zw, xb, y0, zw, xb, y1, zw, xa, y1, zw);
           uv.push(0, 0, L, 0, L, H, 0, H);
@@ -389,7 +392,7 @@ void main(){
     const g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
     g.setAttribute("aDat", new THREE.Float32BufferAttribute(dat, 3)); g.setIndex(idx);
-    const U = { uTime: { value: 0 }, uAtlas: { value: null }, uGrid: { value: new THREE.Vector2(1, 1) }, uSets: { value: [0, 1, 2, 3].map(() => new THREE.Vector2(0, 1)) }, uN: { value: 1 }, uStrength: { value: touch ? 0.5 : 0.46 } };
+    const U = { uTime: { value: 0 }, uAtlas: { value: null }, uGrid: { value: new THREE.Vector2(1, 1) }, uSets: { value: [0, 1, 2, 3].map(() => new THREE.Vector2(0, 1)) }, uN: { value: 1 }, uStrength: { value: 0.72 } };
     const m = new THREE.ShaderMaterial({
       uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
       vertexShader: `attribute vec3 aDat; varying vec2 vUv; varying vec3 vDat; void main(){ vUv = uv; vDat = aDat; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
@@ -397,32 +400,52 @@ void main(){
 uniform float uTime, uN, uStrength; uniform sampler2D uAtlas; uniform vec2 uGrid; uniform vec2 uSets[4];
 varying vec2 vUv; varying vec3 vDat;
 float hash(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }
+vec2 setOf(float i){ return i < .5 ? uSets[0] : i < 1.5 ? uSets[1] : i < 2.5 ? uSets[2] : uSets[3]; }
 void main(){
-  const float colW = .30, cellH = .27, gs = .21;          // column pitch, row pitch, glyph size (metres)
+  const float colW = .3, cellH = .29, gs = .24;            // column pitch, row pitch, sign size (metres)
   float L = vDat.x, H = vDat.y;
   float ci = floor(vUv.x / colW), fx = vUv.x - ci * colW;
-  float sd = hash(vec2(ci, vDat.z)), sd2 = hash(vec2(vDat.z, ci + 7.));
-  int si = int(min(floor(sd * uN), uN - 1.));
-  vec2 set = uSets[0]; if (si == 1) set = uSets[1]; else if (si == 2) set = uSets[2]; else if (si == 3) set = uSets[3];
-  float rowF = (H - vUv.y) / cellH, ri = floor(rowF), fy = rowF - ri;
-  // the column reads in order, top to bottom; every few seconds it moves on by one sign
-  float adv = floor(uTime / (6. + sd2 * 6.) + sd2 * 11.);
-  float k = mod(ri + floor(sd * 61.) + adv, set.y), cell = set.x + k;
-  vec2 lc = vec2((fx - (colW - gs) * .5) / gs, 1. - (fy * cellH - (cellH - gs) * .5) / gs);
-  if (lc.x < 0. || lc.x > 1. || lc.y < 0. || lc.y > 1.) discard;
-  vec2 cxy = vec2(mod(cell, uGrid.x), floor(cell / uGrid.x));
-  vec2 inCell = vec2(lc.x, 1. - lc.y) * .96 + .02, auv = (cxy + inCell) / uGrid; auv.y = 1. - auv.y;
-  // sample with the derivatives of the position inside the cell, not of the wrapped atlas position (no speckle at cell seams)
+  float sd = hash(vec2(ci, vDat.z));
+  float rowF = (H - vUv.y) / cellH + sd, ri = floor(rowF), fy = rowF - ri;   // rows counted from the ceiling, staggered by column
+  // the drips: two per column, released at uneven intervals, each falling a little faster as it goes
+  float lum = .05, headNear = 0.;
+  for (int d = 0; d < 2; d++) {
+    float fd = float(d), h1 = hash(vec2(ci + fd * 31.7, vDat.z + fd * 5.));
+    float period = 3. + h1 * 7., tt = uTime + h1 * 41.;
+    float cyc = floor(tt / period), ph = tt - cyc * period;
+    float hc = hash(vec2(cyc + fd * 3.1, ci * 3.3 + vDat.z));
+    float delay = hc * period * .55, speed = 2.4 + hc * 4., trailN = 5. + hash(vec2(cyc + .5, ci + fd)) * 15.;
+    float tl = ph - delay;
+    if (tl > 0.) {
+      float head = tl * speed * (1. + tl * .18) - 1.5, behind = head - ri;
+      if (behind > -1.) {
+        float tr = behind >= 0. ? clamp(1. - behind / trailN, 0., 1.) : 0.;
+        float hd = 1. - smoothstep(0., 1.1, abs(behind));
+        lum = max(lum, tr * tr * .85 + hd * 1.25);
+        headNear = max(headNear, hd);
+      }
+    }
+  }
+  // each sign flips to another of its script at its own uneven rate; the falling head flips fastest
+  float sIdx = mod(ri + floor(sd * 4.), uN);
+  vec2 set = setOf(sIdx);
+  float cr = hash(vec2(ci * 7.13 + ri, vDat.z + 3.)), rate = (.18 + cr * 1.4) * (1. + headNear * 6.);
+  float tick = floor(uTime * rate + cr * 17.);
+  float cell = set.x + floor(hash(vec2(tick + cr * 9., ci * 13. + ri * 1.7 + vDat.z)) * set.y);
+  vec2 lc = vec2((fx - (colW - gs) * .5) / gs, (fy * cellH - (cellH - gs) * .5) / gs);   // 0..1 inside the sign, y down
+  vec2 cl = clamp(lc, 0., 1.), cxy = vec2(mod(cell, uGrid.x), floor(cell / uGrid.x));
+  vec2 inCell = vec2(cl.x, 1. - cl.y) * .96 + .02, auv = (cxy + inCell) / uGrid; auv.y = 1. - auv.y;
+  // sample with the derivatives of the position inside the sign, not of the wrapped atlas position
   vec2 gx = dFdx(inCell) / uGrid, gy = dFdy(inCell) / uGrid; gx.y = -gx.y; gy.y = -gy.y;
-  float a = textureGrad(uAtlas, auv, gx, gy).a;
-  // a slow light runs down each column and leaves a fading trail
-  float span = H / cellH + 10.;
-  float head = mod(uTime * (.45 + sd2 * .35) + sd * span, span);
-  float behind = head - ri;
-  float trail = behind > 0. ? exp(-behind * .32) : 0.;
-  float lum = .26 + .5 * trail + .45 * (1. - smoothstep(0., 1.2, abs(behind)));
-  float fade = smoothstep(0., .5, vUv.x) * smoothstep(0., .5, L - vUv.x) * smoothstep(0., .3, vUv.y) * smoothstep(0., .25, H - vUv.y);
-  gl_FragColor = vec4(vec3(.86, .9, .96) * a * lum * fade * uStrength, 1.);
+  // how many signs one pixel covers: far off and at a slant, the halo and fine detail fade rather than sparkle
+  float px = max(length(dFdx(vUv)), length(dFdy(vUv))) / gs, far = 1. - smoothstep(.06, .22, px);
+  float inside = step(0., lc.x) * step(lc.x, 1.) * step(0., lc.y) * step(lc.y, 1.);
+  float a = textureGrad(uAtlas, auv, gx, gy).a * inside;
+  float od = length(lc - cl);
+  float glow = textureGrad(uAtlas, auv, gx * 4., gy * 4.).a * exp(-od * 7.) * far;   // the soft halo (near only)
+  float fade = smoothstep(0., .25, vUv.x) * smoothstep(0., .25, L - vUv.x) * smoothstep(0., .45, vUv.y) * smoothstep(0., .05, H - vUv.y);
+  vec3 c = vec3(.93, .96, 1.) * (a * lum * mix(.35, 1., far) + glow * min(lum, 1.) * .55) * fade * uStrength;
+  gl_FragColor = vec4(c, 1.);
 }`
     });
     m.visible = false;
@@ -439,5 +462,7 @@ void main(){
     t += dt; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t;
     return FLAMES.length > 0;
   }
-  return { floorMat, decorate, flames, update, get flameCount() { return FLAMES.length; } };
+  // for the screenshot tools: set the clock directly
+  function setTime(v) { t = v; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t; }
+  return { floorMat, decorate, flames, update, setTime, get flameCount() { return FLAMES.length; } };
 }

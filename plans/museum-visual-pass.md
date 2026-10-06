@@ -467,3 +467,15 @@ raw files in `audits/museum-visual-pass/`):
 | First zone ready, 4× CPU throttle | ≤ +10% | 19.2 s | 19.4 s (+1%) |
 
 Real phone frame rates: Carter's walk, with `?fps=1`.
+
+**Revision after Carter's walk-through (2026-10-06).**
+- **The symbol wall now behaves like his reference video.** Signs fall from the ceiling toward the floor in drips:
+  - each column releases drips at uneven intervals, each at its own speed and length, falling a little faster as it goes;
+  - every sign keeps flipping to another, fastest at the head of the drip;
+  - the glow is white with a soft halo, and faint ghost signs stay between drips.
+
+  The panels now run from just above the dado to the ceiling. Because signs now change at random, the scripts
+  alternate row by row (hieroglyph, cuneiform number, Linear B, Ugaritic), so no two signs of one script ever stand
+  together and nothing can be spelled. The held-back list and `verify-symbols` are unchanged.
+- **The flames are raised.** The Egypt room's niche lamps now sit at 3.45 m, well clear of the Pantheon medallions
+  (whose tops are at 2.66 m). The corridor's sit at 2.3 m.

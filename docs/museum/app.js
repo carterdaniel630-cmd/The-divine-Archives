@@ -28,7 +28,7 @@ import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createStyle, styleOf } from "./style.js?v=1";
+import { createStyle, styleOf } from "./style.js?v=2";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -489,7 +489,7 @@ function build() {
     wall(zw, xa, zk - COR_W / 2, xb, zk - COR_W / 2, ROOM_H, gapsN);
     wall(zw, xa, zk + COR_W / 2, xb, zk + COR_W / 2, ROOM_H, gapsS);
     wall(zw, xb, zk - COR_W / 2, xb, zk + COR_W / 2, COR_H);
-    if (corStyle && corStyle.fittings) decorate(zw, "cor:" + e.slug, { slug: e.slug, side: s, zk, corW: COR_W, gapsN, gapsS, hole: corHole, len });
+    if (corStyle && corStyle.fittings) decorate(zw, "cor:" + e.slug, { slug: e.slug, side: s, zk, corW: COR_W, gapsN, gapsS, hole: corHole, len, ceil: COR_H });
     else for (let a = 4; a < len; a += 8) lamp(s * (SPINE_HALF + a), 3.9, zk, 0.7);
   });
   finishZones();
@@ -1465,6 +1465,7 @@ window.__MU = {
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
   place: (x, z, yaw, pitch) => { S.pos.set(x, EYE, z); S.yaw = yaw; S.pitch = pitch || 0; S.auto = null; S.dirty = true; manageZones(); locate(); },
   relicsPending: () => S.relicQ.length,
+  styleTime: (t) => { S.style.setTime(t); S.dirty = true; },
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),

@@ -1,5 +1,5 @@
 {
- "note": "The symbol walls of the museum's hallways (plans/museum-visual-pass.md §5). tools/build-symbols.js draws each wall's signs into docs/museum/symbols/<wall>.webp with its index <wall>.json; tools/verify-symbols.js checks every sign against 'held' below. Alphabets and syllabaries stream in their traditional order and number signs in counting order, so a column can never spell a word or a name.",
+ "note": "The symbol walls of the museum's hallways (plans/museum-visual-pass.md §5). tools/build-symbols.js draws each wall's signs into docs/museum/symbols/<wall>.webp with its index <wall>.json; tools/verify-symbols.js checks every sign against 'held' below. On the wall the signs fall in drips and flip from one sign to another (Carter's reference, 2026-10-06); the scripts alternate row by row, so no two signs of one script ever stand together and a column can never spell a word or a name.",
  "fonts": {
   "hiero": "docs/assets/vendor/fonts/NotoSansEgyptianHieroglyphs.woff2",
   "cuneiform": "art-source/fonts/NotoSansCuneiform.woff2",
