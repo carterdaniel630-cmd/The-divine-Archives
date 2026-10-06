@@ -28,7 +28,8 @@ import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createStyle, styleOf } from "./style.js?v=13";
+import { createSecret } from "./secret.js?v=1";
+import { createStyle, styleOf } from "./style.js?v=14";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -1148,6 +1149,8 @@ function renderGuide() {
     }
   } else {
     h += `<p class="mu-trail">You are in ${esc(S.where.split("|")[1] || "the museum")}. Walk into a room, or choose one:</p>`;
+    // the one hint to the secret in this hallway's wall (secret.js)
+    if (S.where === "Corridor|Wing II · The Bronze Age") h += `<p class="mu-trail"><em>Some signs on these walls are not like the others.</em></p>`;
   }
   if (S.sky && S.sky.state.data && S.where.indexOf("The Rotunda") === 0) {
     const L = S.sky.state.data.lore, C = S.sky.state.data.cons;
@@ -1275,8 +1278,9 @@ function bindInput() {
     if (!down) return;
     const tap = !down.moved && performance.now() - down.t < 450; down = null;
     if (!tap) return;
-    if (S.locked) { const ex = pick(0, 0) || skyAt(0, 0); if (ex) openCard(ex); return; }
+    if (S.locked) { if (S.secret && S.secret.tap(0, 0)) return; const ex = pick(0, 0) || skyAt(0, 0); if (ex) openCard(ex); return; }
     const r = c.getBoundingClientRect(), cx = ((e.clientX - r.left) / r.width) * 2 - 1, cy = -((e.clientY - r.top) / r.height) * 2 + 1;
+    if (S.secret && S.secret.tap(cx, cy)) { S.dirty = true; return; }
     const ex = pick(cx, cy) || skyAt(cx, cy);
     if (ex) { openCard(ex); return; }
     if (!touch && e.pointerType === "mouse") { lock(); return; }
@@ -1295,6 +1299,7 @@ function bindInput() {
     if (S.insp && S.insp.active) return;
     if (e.target && /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(e.target.tagName)) return;
     if (e.key === "Escape" && !$("mu-guide").hidden) { toggleGuide(false); return; }
+    if (e.key === "Enter" && S.secret && S.secret.key()) { e.preventDefault(); return; }
     if (e.code === "KeyE" || e.key === "Enter") { const ex = S.hover || pick(0, 0) || skyAt(0, 0); if (ex) { e.preventDefault(); openCard(ex); } return; }
     if (e.code === "KeyG") { toggleGuide(); return; }
     if (["KeyW", "KeyA", "KeyS", "KeyD", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "ShiftLeft", "ShiftRight"].includes(e.code)) {
@@ -1417,6 +1422,7 @@ function tick(now) {
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
   if (S.portalFx) portalTick(dt);
+  if (S.secret && S.secret.update(dt, S.pos)) S.dirty = true;
   const styled = S.style.update(dt) && S.styledHere;
   if (idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
@@ -1464,6 +1470,7 @@ async function start() {
     S.style = createStyle({ touch, MAT, merge, onReady: () => { S.dirty = true; } });
     S.insp = createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     build();
+    S.secret = createSecret({ scene, camera, style: S.style, portal: goldenPortal, store, go: (href) => stepThroughPortal(href) });
   } catch (e) {
     showDirectory("The museum could not be loaded, so here is its directory.");
     return;
@@ -1507,6 +1514,7 @@ window.__MU = {
   relicsPending: () => S.relicQ.length,
   styleTime: (t) => { S.style.setTime(t); S.dirty = true; },
   styleClock: () => S.style.time,
+  secret: () => S.secret && S.secret.debug,
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),

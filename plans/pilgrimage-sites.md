@@ -387,3 +387,34 @@ the live museum.
 4. Notre-Dame: show it as restored, as before the fire, or both.
 5. New Vault candidates for the Great Pyramid (the Khufu statuette, Khufu's boat): yes or no. They would be new
    content and go through the normal review.
+
+---
+
+## Where the portals go (Carter, 2026-10-06: "one main archives portal … or simply put the portal on the corresponding rooms")
+
+**Recommended: both, in two layers.**
+
+1. **Each site's portal stands in its own chapter room.** It is the same golden archway as the Pyramid's, on the
+   room's back wall, so visitors meet each site where they are reading about it.
+2. **The entrance hall's archway becomes the main Pilgrimage gate.** It already opens a card listing every live site.
+   It keeps doing that, now for every site, so the 72 sites never need 72 archways in one place.
+
+**Rules:**
+- **At most one archway per room.** When two sites belong to the same chapter, the archway opens the card with a
+  choice between them.
+- **Back through the archway, you return to that room.** Coming back from a site lands you in the room whose archway
+  you used, or in the entrance hall if you went in through the main gate.
+- **(S) sites get no archway inside a room for that tradition's sanctum.** The archway leads to the exterior site only.
+
+| Site | Room with its archway | Also in the main gate |
+|---|---|---|
+| Great Pyramid (live) | ch02 Egypt (new) | yes, as now |
+| Qumran caves | ch10 Second Temple Judaism | yes |
+| Golgotha and the Tomb, c. 30 CE (proposed, `plans/pilgrimage-jerusalem.md`) | ch16 Early Christianity | yes |
+| Mount of Olives, c. 30 CE (proposed) | ch16 Early Christianity (shares the archway with the Tomb: a choice card) | yes |
+| Göbekli Tepe | ch42 The Neolithic | yes |
+| Mogao Cave 17 | ch20 Mahayana Buddhism | yes |
+| the rest | the first chapter listed for the site in the master list | yes |
+
+The hidden arcade is the one exception. It has no listing in the main gate, and its only way in is the secret in the
+Bronze Age wall (`plans/hidden-arcade-and-easter-eggs.md`).

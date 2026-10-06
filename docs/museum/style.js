@@ -556,6 +556,7 @@ void main(){
   // ---------------------------------------------------------------- the symbol wall
   const SYM = {};             // set name → { tex, data } once loaded
   const symU = [];            // every symbol material's uniforms, for the clock
+  const WALLS = [];           // every symbol wall: { name, mesh, panels (world rectangles, facing nz), U } (for secret.js)
   function loadSymbols(name) {
     if (SYM[name]) return SYM[name];
     const S = SYM[name] = { tex: null, data: null, mats: [] };
@@ -576,7 +577,7 @@ void main(){
   // each sign flipping to another as it goes (Carter's reference, 2026-10-06). So that a column can never spell a word
   // or a name, the scripts alternate row by row: no two signs of one script ever stand together.
   function symbolWall(name, info) {
-    const { side: s, zk, corW, len } = info, pos = [], uv = [], dat = [], idx = [];
+    const { side: s, zk, corW, len } = info, pos = [], uv = [], dat = [], idx = [], panels = [];
     const y0 = 0.98, y1 = (info.ceil || 4.6) - 0.05, H = y1 - y0, clear = 0.5;
     for (const [north, gaps] of [[true, info.gapsN], [false, info.gapsS]]) {
       const zw = zk + (north ? -corW / 2 : corW / 2) + (north ? 0.012 : -0.012), segs = wallSegments(gaps, len);
@@ -589,6 +590,7 @@ void main(){
           const u0 = cuts[k], u1 = cuts[k + 1]; if (u1 - u0 < 0.6) continue;
           const xa = s * (4 + u0), xb = s * (4 + u1), base = pos.length / 3, L = u1 - u0, seed = Math.random() * 100;
           pos.push(xa, y0, zw, xb, y0, zw, xb, y1, zw, xa, y1, zw);
+          panels.push({ x0: Math.min(xa, xb), x1: Math.max(xa, xb), z: zw, y0, y1, nz: north ? 1 : -1 });
           uv.push(0, 0, L, 0, L, H, 0, H);
           for (let i = 0; i < 4; i++) dat.push(L, H, seed);
           idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
@@ -655,16 +657,18 @@ void main(){
     const S = loadSymbols(name); S.mats.push(m); if (S.tex) fill(m, S);
     symU.push(U);
     const mesh = new THREE.Mesh(g, m); mesh.matrixAutoUpdate = false; mesh.renderOrder = 3;
+    WALLS.push({ name, mesh, panels, U });
     return mesh;
   }
 
   // the clock: flames and symbol walls (always running; the motion switch only affects the view)
+  // (a held wall keeps its own clock still: secret.js holds a wall while it reads out its message)
   let t = 0;
   function update(dt) {
-    t += dt; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t;
+    t += dt; flameU.uTime.value = t; for (const U of symU) if (!U.held) U.uTime.value = t;
     return FLAMES.length > 0;
   }
   // for the screenshot tools: set the clock directly
-  function setTime(v) { t = v; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t; }
-  return { floorMat, floorAtlas, decorate, flames, setAreaVisible, update, setTime, get time() { return t; }, get flameCount() { return FLAMES.length; } };
+  function setTime(v) { t = v; flameU.uTime.value = t; for (const U of symU) if (!U.held) U.uTime.value = t; }
+  return { floorMat, floorAtlas, decorate, flames, setAreaVisible, update, setTime, walls: WALLS, symbols: loadSymbols, get time() { return t; }, get flameCount() { return FLAMES.length; } };
 }

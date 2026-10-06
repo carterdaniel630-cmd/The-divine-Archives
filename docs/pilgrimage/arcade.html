@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Archive Arcade</title>
+  <!-- Hand-written, not built by tools/build-pages.js: a hidden room, reached only through the golden
+       portal in the museum's Bronze Age hallway. Not linked from any page, not in the sitemap and not
+       in docs/assets/pilgrimage-data.js (plans/hidden-arcade-and-easter-eggs.md §2). -->
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../assets/archive.css" />
+  <link rel="stylesheet" href="../museum/museum.css?v=7" />
+  <link rel="stylesheet" href="pilgrimage.css?v=1" />
+  <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body class="museum-page pilgrimage-page">
+<a class="skip-link" href="#pg-fallback">Skip to the text version</a>
+<div id="mu-stage" aria-hidden="true"></div>
+<header class="mu-bar" id="mu-bar" hidden>
+  <a class="mu-brand" href="../museum.html#@02-bronze-age" aria-label="Back to the museum">
+    <svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" opacity="0.5"/><path d="M60 24 L64 56 L60 60 L56 56 Z M60 96 L56 64 L60 60 L64 64 Z M24 60 L56 56 L60 60 L56 64 Z M96 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/></svg>
+    <span>The Museum</span>
+  </a>
+  <p class="mu-where" id="mu-where" aria-live="polite"></p>
+  <nav class="mu-tools" aria-label="Room tools">
+    <button type="button" id="mu-guide-btn" aria-controls="mu-guide" aria-expanded="false"><span class="mu-l">Guide</span><span class="mu-s">Guide</span></button>
+    <button type="button" id="mu-help-btn">Help</button>
+    <button type="button" id="mu-sound-btn" aria-pressed="true"><span class="mu-l">Sound on</span><span class="mu-s">Sound</span></button>
+    <button type="button" id="mu-motion-btn" aria-pressed="false"><span class="mu-l">Reduce view motion</span><span class="mu-s">View motion</span></button>
+  </nav>
+</header>
+<div class="mu-intro" id="mu-intro" hidden>
+  <div class="mu-intro-card" role="dialog" aria-modal="true" aria-labelledby="mu-intro-h">
+    <p class="mu-kicker">A hidden room of the archive</p>
+    <h1 id="mu-intro-h">The Archive Arcade</h1>
+    <p>You found it. All twelve of the archive&rsquo;s games, in one round hall: each cabinet stands on a piece of its chapter, under a sky of stars.</p>
+    <p class="mu-note">Tap a cabinet to play its game or read its chapter. The board on the north wall keeps your best scores, <strong>on this device only</strong>. The golden portal in the south takes you back to the museum.</p>
+    <div class="mu-keys" id="mu-keys"></div>
+    <div class="mu-intro-actions">
+      <button type="button" class="mu-enter" id="mu-enter">Enter</button>
+    </div>
+    <p class="mu-small" id="mu-status" aria-live="polite">Preparing the room&hellip;</p>
+  </div>
+</div>
+<div class="mu-reticle" id="mu-reticle" hidden aria-hidden="true"></div>
+<p class="mu-tag" id="mu-tag" hidden aria-hidden="true"></p>
+<div class="mu-fade" id="mu-fade" aria-hidden="true"></div>
+<div class="pg-nav" id="pg-nav" hidden><button type="button" id="pg-back">&lsaquo; Walk back</button><button type="button" id="pg-walk" aria-pressed="false">Walk on &rsaquo;</button></div>
+<p class="pg-busy" id="pg-busy" hidden>Building the room&hellip;</p>
+<aside class="mu-guide" id="mu-guide" hidden aria-label="Guide">
+  <div class="mu-guide-head"><h2 id="mu-guide-h">Guide</h2><button type="button" class="mu-x" id="mu-guide-x" aria-label="Close the guide">&times;</button></div>
+  <div id="mu-guide-body"></div>
+</aside>
+<div class="mu-card-wrap" id="mu-card-wrap" hidden>
+  <div class="mu-card" id="mu-card" role="dialog" aria-modal="true" aria-labelledby="mu-card-h" tabindex="-1">
+    <button type="button" class="mu-x" id="mu-card-x" aria-label="Close">&times;</button>
+    <div id="mu-card-body"></div>
+    <p class="mu-card-foot">The games and their sources live on the Symbols page; each chapter carries the full evidence.</p>
+  </div>
+</div>
+<main class="pg-fallback" id="pg-fallback">
+  <div class="wrap">
+    <p class="eyebrow">A hidden room of the archive</p>
+    <h1>The Archive Arcade</h1>
+    <p class="lede">All twelve of the archive&rsquo;s games in one round hall. The room is a 3D scene and needs a browser with WebGL; every game also plays on the Symbols page:</p>
+    <ul>
+      <li><a href="../symbols.html#play=chess">Archive Chess</a> &middot; <a href="../chapters/ch02.html">Egypt</a></li>
+      <li><a href="../symbols.html#play=ziggurat">Ziggurat Builder</a> &middot; <a href="../chapters/ch03.html">Mesopotamia</a></li>
+      <li><a href="../symbols.html#play=minesweeper">The Excavation</a> &middot; <a href="../chapters/ch04.html">Indus Valley</a></li>
+      <li><a href="../symbols.html#play=pong">Antithesis</a> &middot; <a href="../chapters/ch06.html">Zoroaster</a></li>
+      <li><a href="../symbols.html#play=fighter">Divine Casualties</a> &middot; <a href="../chapters/ch08.html">Early Greece</a></li>
+      <li><a href="../symbols.html#play=risk">Dominion of the Ancients</a> &middot; <a href="../chapters/ch13.html">Rome</a></li>
+      <li><a href="../symbols.html#play=reliquary">The Reliquary</a> &middot; <a href="../chapters/ch22.html">Patristic Christianity</a></li>
+      <li><a href="../symbols.html#play=pacman">The Labyrinth</a> &middot; <a href="../chapters/ch29.html">The Maya</a></li>
+      <li><a href="../symbols.html#play=ouroboros">Ouroboros</a> &middot; <a href="../chapters/ch37.html">Theosophy &amp; the Occult Revival</a></li>
+      <li><a href="../symbols.html#play=seeker">The Seeker&rsquo;s Path</a> &middot; <a href="../chapters/ch40.html">African Diaspora Religions</a></li>
+      <li><a href="../symbols.html#play=treasure">The Tomb Robber</a> &middot; <a href="../chapters/ch43.html">The Aztec</a></li>
+      <li><a href="../symbols.html#play=pinball">The Firmament</a> &middot; <a href="../chapters/ch46.html">Creation &amp; the First Order</a></li>
+    </ul>
+    <p class="tiny"><a href="../museum.html#@02-bronze-age">Back to the museum</a></p>
+  </div>
+</main>
+<script type="module">import { start } from "./engine.js?v=7"; start("arcade");</script>
+<script src="../site-config.js" defer></script>
+</body>
+</html>

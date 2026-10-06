@@ -1,7 +1,10 @@
 # The hidden arcade, more easter eggs, and the next Pilgrimage sites (plan, not built)
 
-**Status (2026-10-06):** this is a plan for Carter's approval. Nothing here is built. The arcade is a new feature
-and a new room, so CLAUDE.md requires approval before building.
+**Status (2026-10-06, later):** Carter said "carry on", so §1 and §2 are being built with the recommended options, on
+the preview first. The message is still a placeholder, "THE ARCHIVE REMEMBERS EVERYTHING" (one word per gold
+sign), until Carter writes his own; it is one line at the top of `docs/museum/secret.js`. The Seeker's Path cabinet
+gets a plain floor. §3 has been replaced by one egg per chapter (`plans/easter-eggs.md`), and the portal layout is in
+`plans/pilgrimage-sites.md`.
 
 **Carter's brief (2026-10-06):**
 - Hide a message in the symbols on the hallway walls. Tapping the right symbols in sequence spells out a message
