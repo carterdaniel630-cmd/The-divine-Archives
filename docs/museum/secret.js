@@ -19,7 +19,7 @@
    ========================================================================== */
 import * as THREE from "three";
 
-export const MESSAGE = "THE ARCHIVE REMEMBERS EVERYTHING";   // Carter's to choose (plan §1); one word per gold sign
+export const MESSAGE = "EVERY TRADITION LEFT A DOOR";   // chosen 2026-10-06 (Carter: "pick a message, you decide"); one word per gold sign
 const WALL = "bronze", HREF = "pilgrimage/arcade.html", KEY = "mu-arcade";
 const NEAR = 11, FALL = 0.32, FIRST = [6, 9], NEXT = [12, 20];   // metres; metres per second; seconds before a gold sign
 const rnd = (a, b) => a + Math.random() * (b - a);

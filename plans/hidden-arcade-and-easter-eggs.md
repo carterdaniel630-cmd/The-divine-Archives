@@ -1,8 +1,7 @@
 # The hidden arcade, more easter eggs, and the next Pilgrimage sites (plan, not built)
 
 **Status (2026-10-06, later):** Carter said "carry on", so §1 and §2 are being built with the recommended options, on
-the preview first. The message is still a placeholder, "THE ARCHIVE REMEMBERS EVERYTHING" (one word per gold
-sign), until Carter writes his own; it is one line at the top of `docs/museum/secret.js`. The Seeker's Path cabinet
+the preview first. The message is "EVERY TRADITION LEFT A DOOR" (one word per gold sign), chosen when Carter said "pick a message, you decide"; it is one line at the top of `docs/museum/secret.js`. The Seeker's Path cabinet
 gets a plain floor. §3 has been replaced by one egg per chapter (`plans/easter-eggs.md`), and the portal layout is in
 `plans/pilgrimage-sites.md`.
 
