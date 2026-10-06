@@ -27,6 +27,13 @@ import * as THREE from "three";
 export const STYLE = {
   "cor:02-bronze-age": { floor: "brick", kerb: "limestone", fittings: "bronze-corridor", symbols: "bronze", sky: 1 },
   ch02: { floor: "limestone", kerb: "painted", fittings: "bronze-room", sky: 1 },
+  // the rest of Wing II (rollout step 4)
+  ch03: { floor: "brick", kerb: "limestone", fittings: "bronze-room", sky: 1 },          // baked brick, as in the temple courts
+  ch04: { floor: "brick", kerb: "limestone", fittings: "bronze-room", sky: 1 },          // the Indus cities' fired brick
+  ch05: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },    // no Vedic buildings survive: the earth of the fire altars
+  ch57: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },         // Hattusa's dressed stone
+  ch67: { floor: "limestone", kerb: "painted", fittings: "bronze-room", sky: 1 },        // Knossos's gypsum slabs and painted walls
+  ch76: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },    // the Olmec clay floors
   // Wing III, the Early Iron Age (rollout step 1): dressed stone, with Greece's pebbles, China's rammed earth and Phoenicia's cedar
   "cor:03-early-iron-age": { floor: "ashlar", kerb: "limestone", fittings: "bronze-corridor", symbols: "iron", sky: 1 },
   ch06: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
@@ -57,7 +64,20 @@ export const STYLE = {
   ch45: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },       // Coptic Egypt
   ch55: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },     // the oasis towns of the Silk Road
   ch70: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },
-  ch79: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 }           // Aksum's dressed granite and basalt
+  ch79: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },          // Aksum's dressed granite and basalt
+  // Wing VI, the Early Medieval (rollout step 4): grey tile in the corridor; marble and mosaic where the Mediterranean
+  // lamps still burned, wood and earth and simple saucer lamps elsewhere
+  "cor:06-early-medieval": { floor: "greytile", kerb: "limestone", fittings: "bronze-corridor", symbols: "medieval", sky: 1 },
+  ch21: { floor: "marble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },         // a mosque courtyard's marble
+  ch22: { floor: "tessellated", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch23: { floor: "oak", kerb: "limestone", fittings: "bronze-room", sky: 1 },            // a hall's boards
+  ch24: { floor: "limestone", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch25: { floor: "cedar", kerb: "limestone", fittings: "bronze-room", sky: 1 },          // a shrine's unpainted wood
+  ch53: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch54: { floor: "greytile", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch60: { floor: "marble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch71: { floor: "greytile", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch80: { floor: "marble", kerb: "marblekerb", fittings: "axial-room", sky: 1 }
 };
 export const styleOf = (id) => STYLE[id] || null;
 

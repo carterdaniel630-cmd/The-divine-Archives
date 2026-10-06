@@ -1,0 +1,95 @@
+{
+ "viewport": "412x915 @1x, 1x CPU throttle, SwiftShader",
+ "tLoadMs": 2014,
+ "tFirstZoneMs": 11412,
+ "bytesAtReady": 1780288,
+ "byType": {
+  "html": 35138,
+  "css": 48879,
+  "js": 1385322,
+  "json": 310949
+ },
+ "spots": {
+  "Bronze corridor": {
+   "fps": 0.2,
+   "calls": 82,
+   "tris": 191176,
+   "textures": 31,
+   "geometries": 110,
+   "where": "Corridor|Wing II · The Bronze Age"
+  },
+  "Mesopotamia (ch03)": {
+   "fps": 0.3,
+   "calls": 89,
+   "tris": 92192,
+   "textures": 37,
+   "geometries": 149,
+   "where": "Wing II · The Bronze Age|Mesopotamia"
+  },
+  "Minoan Crete (ch67)": {
+   "fps": 0.5,
+   "calls": 46,
+   "tris": 79600,
+   "textures": 43,
+   "geometries": 147,
+   "where": "Wing II · The Bronze Age|Minoan Crete"
+  },
+  "Egypt (ch02)": {
+   "fps": 0.6,
+   "calls": 61,
+   "tris": 104271,
+   "textures": 61,
+   "geometries": 170,
+   "where": "Wing II · The Bronze Age|Egypt"
+  },
+  "medieval corridor": {
+   "fps": 0.3,
+   "calls": 73,
+   "tris": 159816,
+   "textures": 68,
+   "geometries": 191,
+   "where": "Corridor|Wing VI · The Early Medieval"
+  },
+  "Islam (ch21)": {
+   "fps": 0.4,
+   "calls": 61,
+   "tris": 89912,
+   "textures": 74,
+   "geometries": 198,
+   "where": "Wing VI · The Early Medieval|Islam"
+  },
+  "Norse (ch23)": {
+   "fps": 0.5,
+   "calls": 50,
+   "tris": 65014,
+   "textures": 79,
+   "geometries": 214,
+   "where": "Wing VI · The Early Medieval|Norse Paganism"
+  },
+  "Orthodoxy (ch60)": {
+   "fps": 0.5,
+   "calls": 55,
+   "tris": 69162,
+   "textures": 91,
+   "geometries": 206,
+   "where": "Wing VI · The Early Medieval|Eastern Orthodoxy & Byzantium"
+  },
+  "Shinto (ch25)": {
+   "fps": 0.5,
+   "calls": 51,
+   "tris": 88599,
+   "textures": 93,
+   "geometries": 221,
+   "where": "Wing VI · The Early Medieval|Shinto"
+  }
+ },
+ "bytesTotal": 2680868,
+ "byTypeTotal": {
+  "html": 35138,
+  "css": 48879,
+  "js": 1385322,
+  "json": 1211529
+ },
+ "errors": [],
+ "jsHeap": 86400000
+}

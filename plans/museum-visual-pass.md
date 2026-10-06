@@ -623,5 +623,46 @@ Carter said "carry on" (typed "chin rune", read as "continue").
 The Early Christianity room is already over the 220k triangle guide in the live museum, because of its relics; the
 pass adds 8k. Raw numbers: `audits/museum-visual-pass/wing5-baseline-unthrottled.json`, `wing5-unthrottled.json`.
 
-**Still to do in the rollout:** Wings VI to IX and I, and the six Bronze Age rooms besides Egypt (the sample covered
-only Egypt).
+Carter approved Wing V and the holds, and it was merged on 2026-10-06.
+
+## Rollout, step 4: the rest of Wing II, and Wing VI, the Early Medieval (2026-10-06, on the preview)
+
+- **Wing II rooms.** The sample covered only Egypt; these six complete the wing.
+  - Mesopotamia and the Indus Valley: brick.
+  - Early Vedic and the Olmec: rammed earth.
+  - Hittite & Anatolian: ashlar.
+  - Minoan Crete: limestone, with the painted kerb.
+- **Wing VI floors.**
+  - Corridor: grey tile.
+  - Islam, Eastern Orthodoxy and Shi'ism: marble.
+  - Patristic Christianity: mosaic.
+  - Norse Paganism: oak boards.
+  - Shinto: cedar.
+  - Tantra: limestone.
+  - Tibetan & Vajrayana Buddhism: rammed earth.
+  - Zen & Pure Land Buddhism and Korea: grey tile.
+- **Wing VI fittings.** Roman lamps where the Mediterranean world still used them; elsewhere, simple saucer lamps.
+- **Symbol wall "medieval".** OFL Noto fonts:
+  - **Old Turkic:** the Orkhon and Yenisei letters.
+  - **Sogdian:** the Silk Road merchants' script.
+- **Newly held back:**
+  - **Eight Old Turkic letters** whose forms look like Germanic runes in hate-symbol use: Tiwaz-like arrows,
+    an Othala-like form, and Algiz or its inverted form.
+  - **Glagolitic**, made to write the Slavonic liturgy and Bible. It is held for the same reason as Gothic.
+  - **Siddham**, whose letters serve as seed syllables standing for Buddhist deities.
+- **Phone budget.** Every spot is within 100 draw calls.
+
+| Measure (no throttle) | Live museum (before Wing V) | With the pass |
+|---|---|---|
+| Wing II corridor: calls / triangles | 82 / 191k | 86 / 205k |
+| Mesopotamia | 89 / 92k | 94 / 96k |
+| Minoan Crete | 46 / 80k | 51 / 84k |
+| Egypt | 61 / 104k | 69 / 115k |
+| Wing VI corridor | 73 / 160k | 93 / 177k |
+| Islam | 61 / 90k | 66 / 95k |
+| Norse Paganism | 50 / 65k | 55 / 69k |
+| Eastern Orthodoxy | 55 / 69k | 61 / 80k |
+| Shinto | 51 / 89k | 56 / 93k |
+| Textures, cumulative over that walk | 31 → 93 | 36 → 99 |
+
+Raw numbers: `audits/museum-visual-pass/wing6-baseline-unthrottled.json`, `wing6-unthrottled.json`.

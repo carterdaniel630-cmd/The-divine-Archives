@@ -14,7 +14,9 @@
   "symbols2": "art-source/fonts/NotoSansSymbols2.woff2",
   "coptic": "art-source/fonts/NotoSansCoptic.woff2",
   "ogham": "art-source/fonts/NotoSansOgham.woff2",
-  "pahlavi": "art-source/fonts/NotoSansInscriptionalPahlavi.woff2"
+  "pahlavi": "art-source/fonts/NotoSansInscriptionalPahlavi.woff2",
+  "oldturkic": "art-source/fonts/NotoSansOldTurkic.woff2",
+  "sogdian": "art-source/fonts/NotoSansSogdian.woff2"
  },
  "walls": {
   "bronze": {
@@ -2351,6 +2353,455 @@
      ]
     }
    ]
+  },
+  "medieval": {
+   "label": "Wing VI, the Early Medieval",
+   "sets": [
+    {
+     "name": "Old Turkic: the runiform letters of the Orkhon and Yenisei inscriptions (8th century CE)",
+     "font": "oldturkic",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10C00",
+       "id": "Old Turkic 10C00",
+       "value": "old turkic 10C00"
+      },
+      {
+       "cp": "10C01",
+       "id": "Old Turkic 10C01",
+       "value": "old turkic 10C01"
+      },
+      {
+       "cp": "10C02",
+       "id": "Old Turkic 10C02",
+       "value": "old turkic 10C02"
+      },
+      {
+       "cp": "10C03",
+       "id": "Old Turkic 10C03",
+       "value": "old turkic 10C03"
+      },
+      {
+       "cp": "10C04",
+       "id": "Old Turkic 10C04",
+       "value": "old turkic 10C04"
+      },
+      {
+       "cp": "10C05",
+       "id": "Old Turkic 10C05",
+       "value": "old turkic 10C05"
+      },
+      {
+       "cp": "10C06",
+       "id": "Old Turkic 10C06",
+       "value": "old turkic 10C06"
+      },
+      {
+       "cp": "10C07",
+       "id": "Old Turkic 10C07",
+       "value": "old turkic 10C07"
+      },
+      {
+       "cp": "10C08",
+       "id": "Old Turkic 10C08",
+       "value": "old turkic 10C08"
+      },
+      {
+       "cp": "10C09",
+       "id": "Old Turkic 10C09",
+       "value": "old turkic 10C09"
+      },
+      {
+       "cp": "10C0A",
+       "id": "Old Turkic 10C0A",
+       "value": "old turkic 10C0A"
+      },
+      {
+       "cp": "10C0C",
+       "id": "Old Turkic 10C0C",
+       "value": "old turkic 10C0C"
+      },
+      {
+       "cp": "10C0D",
+       "id": "Old Turkic 10C0D",
+       "value": "old turkic 10C0D"
+      },
+      {
+       "cp": "10C0E",
+       "id": "Old Turkic 10C0E",
+       "value": "old turkic 10C0E"
+      },
+      {
+       "cp": "10C0F",
+       "id": "Old Turkic 10C0F",
+       "value": "old turkic 10C0F"
+      },
+      {
+       "cp": "10C10",
+       "id": "Old Turkic 10C10",
+       "value": "old turkic 10C10"
+      },
+      {
+       "cp": "10C11",
+       "id": "Old Turkic 10C11",
+       "value": "old turkic 10C11"
+      },
+      {
+       "cp": "10C12",
+       "id": "Old Turkic 10C12",
+       "value": "old turkic 10C12"
+      },
+      {
+       "cp": "10C13",
+       "id": "Old Turkic 10C13",
+       "value": "old turkic 10C13"
+      },
+      {
+       "cp": "10C14",
+       "id": "Old Turkic 10C14",
+       "value": "old turkic 10C14"
+      },
+      {
+       "cp": "10C15",
+       "id": "Old Turkic 10C15",
+       "value": "old turkic 10C15"
+      },
+      {
+       "cp": "10C16",
+       "id": "Old Turkic 10C16",
+       "value": "old turkic 10C16"
+      },
+      {
+       "cp": "10C17",
+       "id": "Old Turkic 10C17",
+       "value": "old turkic 10C17"
+      },
+      {
+       "cp": "10C18",
+       "id": "Old Turkic 10C18",
+       "value": "old turkic 10C18"
+      },
+      {
+       "cp": "10C19",
+       "id": "Old Turkic 10C19",
+       "value": "old turkic 10C19"
+      },
+      {
+       "cp": "10C1A",
+       "id": "Old Turkic 10C1A",
+       "value": "old turkic 10C1A"
+      },
+      {
+       "cp": "10C1C",
+       "id": "Old Turkic 10C1C",
+       "value": "old turkic 10C1C"
+      },
+      {
+       "cp": "10C1D",
+       "id": "Old Turkic 10C1D",
+       "value": "old turkic 10C1D"
+      },
+      {
+       "cp": "10C1E",
+       "id": "Old Turkic 10C1E",
+       "value": "old turkic 10C1E"
+      },
+      {
+       "cp": "10C1F",
+       "id": "Old Turkic 10C1F",
+       "value": "old turkic 10C1F"
+      },
+      {
+       "cp": "10C20",
+       "id": "Old Turkic 10C20",
+       "value": "old turkic 10C20"
+      },
+      {
+       "cp": "10C21",
+       "id": "Old Turkic 10C21",
+       "value": "old turkic 10C21"
+      },
+      {
+       "cp": "10C22",
+       "id": "Old Turkic 10C22",
+       "value": "old turkic 10C22"
+      },
+      {
+       "cp": "10C23",
+       "id": "Old Turkic 10C23",
+       "value": "old turkic 10C23"
+      },
+      {
+       "cp": "10C24",
+       "id": "Old Turkic 10C24",
+       "value": "old turkic 10C24"
+      },
+      {
+       "cp": "10C25",
+       "id": "Old Turkic 10C25",
+       "value": "old turkic 10C25"
+      },
+      {
+       "cp": "10C26",
+       "id": "Old Turkic 10C26",
+       "value": "old turkic 10C26"
+      },
+      {
+       "cp": "10C27",
+       "id": "Old Turkic 10C27",
+       "value": "old turkic 10C27"
+      },
+      {
+       "cp": "10C28",
+       "id": "Old Turkic 10C28",
+       "value": "old turkic 10C28"
+      },
+      {
+       "cp": "10C29",
+       "id": "Old Turkic 10C29",
+       "value": "old turkic 10C29"
+      },
+      {
+       "cp": "10C2A",
+       "id": "Old Turkic 10C2A",
+       "value": "old turkic 10C2A"
+      },
+      {
+       "cp": "10C2B",
+       "id": "Old Turkic 10C2B",
+       "value": "old turkic 10C2B"
+      },
+      {
+       "cp": "10C2C",
+       "id": "Old Turkic 10C2C",
+       "value": "old turkic 10C2C"
+      },
+      {
+       "cp": "10C2D",
+       "id": "Old Turkic 10C2D",
+       "value": "old turkic 10C2D"
+      },
+      {
+       "cp": "10C2E",
+       "id": "Old Turkic 10C2E",
+       "value": "old turkic 10C2E"
+      },
+      {
+       "cp": "10C2F",
+       "id": "Old Turkic 10C2F",
+       "value": "old turkic 10C2F"
+      },
+      {
+       "cp": "10C30",
+       "id": "Old Turkic 10C30",
+       "value": "old turkic 10C30"
+      },
+      {
+       "cp": "10C33",
+       "id": "Old Turkic 10C33",
+       "value": "old turkic 10C33"
+      },
+      {
+       "cp": "10C34",
+       "id": "Old Turkic 10C34",
+       "value": "old turkic 10C34"
+      },
+      {
+       "cp": "10C35",
+       "id": "Old Turkic 10C35",
+       "value": "old turkic 10C35"
+      },
+      {
+       "cp": "10C36",
+       "id": "Old Turkic 10C36",
+       "value": "old turkic 10C36"
+      },
+      {
+       "cp": "10C37",
+       "id": "Old Turkic 10C37",
+       "value": "old turkic 10C37"
+      },
+      {
+       "cp": "10C3A",
+       "id": "Old Turkic 10C3A",
+       "value": "old turkic 10C3A"
+      },
+      {
+       "cp": "10C3B",
+       "id": "Old Turkic 10C3B",
+       "value": "old turkic 10C3B"
+      },
+      {
+       "cp": "10C3D",
+       "id": "Old Turkic 10C3D",
+       "value": "old turkic 10C3D"
+      },
+      {
+       "cp": "10C3E",
+       "id": "Old Turkic 10C3E",
+       "value": "old turkic 10C3E"
+      },
+      {
+       "cp": "10C3F",
+       "id": "Old Turkic 10C3F",
+       "value": "old turkic 10C3F"
+      },
+      {
+       "cp": "10C40",
+       "id": "Old Turkic 10C40",
+       "value": "old turkic 10C40"
+      },
+      {
+       "cp": "10C41",
+       "id": "Old Turkic 10C41",
+       "value": "old turkic 10C41"
+      },
+      {
+       "cp": "10C42",
+       "id": "Old Turkic 10C42",
+       "value": "old turkic 10C42"
+      },
+      {
+       "cp": "10C44",
+       "id": "Old Turkic 10C44",
+       "value": "old turkic 10C44"
+      },
+      {
+       "cp": "10C45",
+       "id": "Old Turkic 10C45",
+       "value": "old turkic 10C45"
+      },
+      {
+       "cp": "10C46",
+       "id": "Old Turkic 10C46",
+       "value": "old turkic 10C46"
+      },
+      {
+       "cp": "10C47",
+       "id": "Old Turkic 10C47",
+       "value": "old turkic 10C47"
+      },
+      {
+       "cp": "10C48",
+       "id": "Old Turkic 10C48",
+       "value": "old turkic 10C48"
+      }
+     ]
+    },
+    {
+     "name": "Sogdian: the script of the Silk Road's merchant people (letters; 7th-10th centuries CE)",
+     "font": "sogdian",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10F30",
+       "id": "Sogdian 10F30",
+       "value": "sogdian 10F30"
+      },
+      {
+       "cp": "10F31",
+       "id": "Sogdian 10F31",
+       "value": "sogdian 10F31"
+      },
+      {
+       "cp": "10F32",
+       "id": "Sogdian 10F32",
+       "value": "sogdian 10F32"
+      },
+      {
+       "cp": "10F33",
+       "id": "Sogdian 10F33",
+       "value": "sogdian 10F33"
+      },
+      {
+       "cp": "10F34",
+       "id": "Sogdian 10F34",
+       "value": "sogdian 10F34"
+      },
+      {
+       "cp": "10F35",
+       "id": "Sogdian 10F35",
+       "value": "sogdian 10F35"
+      },
+      {
+       "cp": "10F36",
+       "id": "Sogdian 10F36",
+       "value": "sogdian 10F36"
+      },
+      {
+       "cp": "10F37",
+       "id": "Sogdian 10F37",
+       "value": "sogdian 10F37"
+      },
+      {
+       "cp": "10F38",
+       "id": "Sogdian 10F38",
+       "value": "sogdian 10F38"
+      },
+      {
+       "cp": "10F39",
+       "id": "Sogdian 10F39",
+       "value": "sogdian 10F39"
+      },
+      {
+       "cp": "10F3A",
+       "id": "Sogdian 10F3A",
+       "value": "sogdian 10F3A"
+      },
+      {
+       "cp": "10F3B",
+       "id": "Sogdian 10F3B",
+       "value": "sogdian 10F3B"
+      },
+      {
+       "cp": "10F3C",
+       "id": "Sogdian 10F3C",
+       "value": "sogdian 10F3C"
+      },
+      {
+       "cp": "10F3D",
+       "id": "Sogdian 10F3D",
+       "value": "sogdian 10F3D"
+      },
+      {
+       "cp": "10F3E",
+       "id": "Sogdian 10F3E",
+       "value": "sogdian 10F3E"
+      },
+      {
+       "cp": "10F3F",
+       "id": "Sogdian 10F3F",
+       "value": "sogdian 10F3F"
+      },
+      {
+       "cp": "10F40",
+       "id": "Sogdian 10F40",
+       "value": "sogdian 10F40"
+      },
+      {
+       "cp": "10F41",
+       "id": "Sogdian 10F41",
+       "value": "sogdian 10F41"
+      },
+      {
+       "cp": "10F42",
+       "id": "Sogdian 10F42",
+       "value": "sogdian 10F42"
+      },
+      {
+       "cp": "10F43",
+       "id": "Sogdian 10F43",
+       "value": "sogdian 10F43"
+      },
+      {
+       "cp": "10F44",
+       "id": "Sogdian 10F44",
+       "value": "sogdian 10F44"
+      }
+     ]
+    }
+   ]
   }
  },
  "held": {
@@ -2437,6 +2888,52 @@
    {
     "cp": "03EE",
     "why": "Coptic ti (dei): its letterform reads as a cross"
+   },
+   {
+    "range": [
+     "2C00",
+     "2C5F"
+    ],
+    "why": "Glagolitic: made by Saints Cyril and Methodius to write the Slavonic liturgy and Bible; held as Gothic is"
+   },
+   {
+    "range": [
+     "11580",
+     "115FF"
+    ],
+    "why": "Siddham: its letters are used as seed syllables standing for Buddhist deities"
+   },
+   {
+    "cp": "10C0B",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C31",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C32",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C38",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C39",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C3C",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C43",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C1B",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Algiz)"
    }
   ],
   "blocks": [
