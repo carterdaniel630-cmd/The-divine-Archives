@@ -28,7 +28,7 @@ import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createStyle, styleOf } from "./style.js?v=6";
+import { createStyle, styleOf } from "./style.js?v=7";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -963,6 +963,7 @@ function locate() {
   } else { text = reg.label; sub = reg.era ? "Corridor" : "The Divine Archives"; }
   const areaId = reg.room || (reg.era ? "cor:" + reg.era : reg.id);
   S.styledHere = !!styleOf(areaId);
+  motionHint();
   const key = sub + "|" + text;
   if (key !== S.where) {
     S.where = key; S.room = reg.room || null;
@@ -1314,7 +1315,14 @@ function toggleGuide(on) {
   g.hidden = !show; $("mu-guide-btn").setAttribute("aria-expanded", String(show));
   if (show) { unlock(); renderGuide(); const first = g.querySelector("button"); if (first) first.focus(); }
 }
-function setReduce(v) { S.reduce = v; store.set("mu-rm", v ? "1" : "0"); $("mu-motion-btn").setAttribute("aria-pressed", String(v)); S.dirty = true; }
+function setReduce(v) {
+  S.reduce = v; store.set("mu-rm", v ? "1" : "0");
+  const b = $("mu-motion-btn"); b.setAttribute("aria-pressed", String(v));
+  b.querySelectorAll(".mu-l, .mu-s").forEach((el) => { el.textContent = v ? "Motion off" : "Motion on"; });   // say the state, not just the switch
+  motionHint(); S.dirty = true;
+}
+// with motion off, say so where something would be moving (a symbol wall, flames): it holds still on purpose
+function motionHint() { const h = $("mu-hint"); if (h) h.hidden = !(S.reduce && S.styledHere); }
 function savePos() { if (S.started) store.sset("mu-pos", JSON.stringify({ x: +S.pos.x.toFixed(2), z: +S.pos.z.toFixed(2), yaw: +S.yaw.toFixed(3) })); }
 
 // ---------------------------------------------------------------- directory (fallback)
@@ -1471,6 +1479,7 @@ window.__MU = {
   place: (x, z, yaw, pitch) => { S.pos.set(x, EYE, z); S.yaw = yaw; S.pitch = pitch || 0; S.auto = null; S.dirty = true; manageZones(); locate(); },
   relicsPending: () => S.relicQ.length,
   styleTime: (t) => { S.style.setTime(t); S.dirty = true; },
+  styleClock: () => S.style.time,
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),

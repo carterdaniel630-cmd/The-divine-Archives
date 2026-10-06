@@ -498,9 +498,12 @@ void main(){
   float sIdx = mod(ri + floor(sd * 4.), uN);
   vec2 set = setOf(sIdx);
   float cr = hash(vec2(ci * 7.13 + ri, vDat.z + 3.)), rate = (.2 + cr * 1.3) * (1. + headNear * 7.);
-  float tick = floor(uTime * rate + cr * 17.);
+  float tp = uTime * rate + cr * 17., tick = floor(tp), ph = tp - tick;
+  // a Rolodex card: each change folds the sign shut and opens the next one
+  float flip = max(smoothstep(0., .14, ph) * (1. - smoothstep(.86, 1., ph)), .04);
   float cell = set.x + floor(hash(vec2(tick + cr * 9., ci * 13. + ri * 1.7 + vDat.z)) * set.y);
   vec2 lc = vec2((fx - (colW - gs) * .5) / gs, (fy * cellH - (cellH - gs) * .5) / gs);   // 0..1 inside the sign, y down
+  lc.y = (lc.y - .5) / flip + .5;                                                        // folded about its middle while it turns
   vec2 cl = clamp(lc, 0., 1.), cxy = vec2(mod(cell, uGrid.x), floor(cell / uGrid.x));
   vec2 inCell = vec2(cl.x, 1. - cl.y) * .96 + .02, auv = (cxy + inCell) / uGrid; auv.y = 1. - auv.y;
   // sample with the derivatives of the position inside the sign, not of the wrapped atlas position
@@ -512,6 +515,7 @@ void main(){
   float od = length(lc - cl);
   float glow = textureGrad(uAtlas, auv, gx * 4., gy * 4.).a * exp(-od * 7.) * far;   // the soft halo (near only)
   float fade = smoothstep(0., .25, vUv.x) * smoothstep(0., .25, L - vUv.x) * smoothstep(0., .45, vUv.y) * smoothstep(0., .05, H - vUv.y);
+  lum *= .55 + .45 * flip;                                                               // a turning card catches less light
   vec3 c = vec3(.93, .96, 1.) * (a * lum * mix(.35, 1., far) + glow * min(lum, 1.) * .55) * fade * uStrength;
   gl_FragColor = vec4(c, 1.);
 }`
@@ -532,5 +536,5 @@ void main(){
   }
   // for the screenshot tools: set the clock directly
   function setTime(v) { t = v; flameU.uTime.value = t; for (const U of symU) U.uTime.value = t; }
-  return { floorMat, decorate, flames, update, setTime, get flameCount() { return FLAMES.length; } };
+  return { floorMat, decorate, flames, update, setTime, get time() { return t; }, get flameCount() { return FLAMES.length; } };
 }

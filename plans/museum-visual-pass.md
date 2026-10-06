@@ -529,3 +529,8 @@ Carter said "continue" after the sample, so the rollout began, wing by wing, eac
 | Textures, cumulative over that walk | 31 → 79 | 35 → 94 |
 
 Raw numbers: `audits/museum-visual-pass/wing3-baseline-unthrottled.json`, `wing3-unthrottled.json`.
+- **Third revision (Carter, 2026-10-06).** On his phone the wall stood still because the museum's "reduce motion" was on. It switches
+  on by itself when the phone asks for less animation, for example Android's "Remove animations" or power saving. The
+  button only said "MOTION", so this wasn't obvious. It now says **Motion on** or **Motion off**. With motion off,
+  a note in a styled area says why things hold still and how to turn motion on. The signs now flip **like a
+  Rolodex card**: each change folds the sign shut about its middle and opens the next.

@@ -189,3 +189,5 @@ body.mu-in-sky .mu-tag { bottom: 6.2rem; }
 .mu-scanning .mu-insp-hint { display:none; }
 .mu-scan { bottom:1rem; }
 @media (max-width: 759px) { .mu-scan { bottom:calc(42vh + 1rem); } }
+/* the visual pass: say when motion is off (the symbol walls, flames and water then hold still) */
+.mu-hint { margin: 4px 0 0; max-width: 21em; font-size: 12.5px; line-height: 1.35; color: #e8cf98; text-shadow: 0 1px 3px #000; }
