@@ -1,6 +1,8 @@
 # Museum visual pass: plan
 
-Status: **Plan approved by Carter 2026-10-06. Sample (§7) built, awaiting Carter's walk-through.** Branch `claude/museum-visuals`; nothing merged.
+Status (updated 2026-10-10 to match main): **Plan approved by Carter 2026-10-06. Sample, Wings III, IV and V approved and merged 2026-10-06. Wing VI and the rest of Wing II are also on main and live (commit 25e8fdb), but no approval for them is recorded below; the 2026-10-10 review asks Carter to confirm.** Signs held back and awaiting his decision: the Old Persian word-signs, Phoenician (the old Hebrew script), Gothic, the Coptic ti, eight rune-like Old Turkic letters, Glagolitic and Siddham (all kept off the walls; `tools/verify-symbols.js`). Branch `claude/museum-visuals` is merged.
+
+Original status: Plan approved by Carter 2026-10-06. Sample (§7) built, awaiting Carter's walk-through. Branch `claude/museum-visuals`; nothing merged.
 Requested 2026-10-06. Order of work once approved: one sample hallway and one sample room (§7). I'll send a
 preview link to walk on a phone. The rest of the museum is done only after Carter approves the sample.
 
