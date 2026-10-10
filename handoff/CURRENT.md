@@ -29,7 +29,7 @@ through the reviewer (`reviews/REVIEWER.md`) before it reaches Carter.
 | #34 | `claude/sourcing-pending` | All 14 pending chapters under 20% Wikipedia (ch45 33%→0%, ch46 50%→0%; two more pointers replaced); `plans/ch70-dating-decision.md` (options A/B for the Taymāʾ stele) |
 | #35 | `claude/content-depth` | `plans/content-gaps.md` (gaps for all 83 chapters) and the top 20 gaps filled in 17 chapters, which go back to pending |
 | #36 | `claude/pilgrimage-qumran-alexandria` | Qumran caves and the Library of Alexandria (reconstruction) as noindex previews, off the menu; new `preview` status; cave builder |
-| this | `claude/docs-sync` | This handoff, the status board (ch68, ch70, ch73 pending; ch71 re-cleared), museum and pyramid plan status lines |
+| #37 | `claude/docs-sync` | This handoff, the status board (ch68, ch70, ch73 pending; ch71 re-cleared), museum and pyramid plan status lines |
 | — | `claude/games-modern` | Games + rituals Phase 1 plan (`plans/games-modern.md`), no PR: waiting for Carter's approval before any build |
 
 ## Needs Carter
