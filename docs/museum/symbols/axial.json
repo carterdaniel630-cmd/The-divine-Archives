@@ -1,0 +1,29 @@
+{
+ "wall": "axial",
+ "label": "Wing IV, the Axial Age",
+ "cell": 96,
+ "cols": 11,
+ "rows": 11,
+ "sets": [
+  {
+   "name": "The Greek alphabet",
+   "start": 0,
+   "len": 24
+  },
+  {
+   "name": "Brahmi: vowels and consonants (the script of Ashoka's edicts, 3rd century BCE)",
+   "start": 24,
+   "len": 48
+  },
+  {
+   "name": "Kharoshthi consonants (north-west India and Gandhara)",
+   "start": 72,
+   "len": 36
+  },
+  {
+   "name": "The eight trigrams of the Yijing (Book of Changes)",
+   "start": 108,
+   "len": 8
+  }
+ ]
+}

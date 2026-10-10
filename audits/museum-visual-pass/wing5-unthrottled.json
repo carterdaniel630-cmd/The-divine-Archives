@@ -1,0 +1,73 @@
+{
+ "viewport": "412x915 @1x, 1x CPU throttle, SwiftShader",
+ "tLoadMs": 657,
+ "tFirstZoneMs": 14815,
+ "bytesAtReady": 2085991,
+ "byType": {
+  "html": 35231,
+  "css": 48978,
+  "js": 1465332,
+  "json": 313002,
+  "webp": 223448
+ },
+ "spots": {
+  "late corridor": {
+   "fps": 0.4,
+   "calls": 79,
+   "tris": 162000,
+   "textures": 35,
+   "geometries": 128,
+   "where": "Corridor|Wing V · Late Antiquity"
+  },
+  "Early Christianity (ch16)": {
+   "fps": 0.5,
+   "calls": 81,
+   "tris": 275052,
+   "textures": 67,
+   "geometries": 160,
+   "where": "Wing V · Late Antiquity|Early Christianity"
+  },
+  "Rabbinic Judaism (ch19)": {
+   "fps": 0.7,
+   "calls": 92,
+   "tris": 100053,
+   "textures": 75,
+   "geometries": 211,
+   "where": "Wing V · Late Antiquity|Rabbinic Judaism"
+  },
+  "Mahayana (ch20)": {
+   "fps": 0.4,
+   "calls": 53,
+   "tris": 101782,
+   "textures": 79,
+   "geometries": 218,
+   "where": "Wing V · Late Antiquity|Mahayana Buddhism"
+  },
+  "First Christian Kingdoms (ch79)": {
+   "fps": 0.2,
+   "calls": 48,
+   "tris": 92996,
+   "textures": 80,
+   "geometries": 207,
+   "where": "Wing V · Late Antiquity|The First Christian Kingdoms"
+  },
+  "Bronze corridor": {
+   "fps": 0.4,
+   "calls": 89,
+   "tris": 202422,
+   "textures": 97,
+   "geometries": 259,
+   "where": "Corridor|Wing II · The Bronze Age"
+  }
+ },
+ "bytesTotal": 2932091,
+ "byTypeTotal": {
+  "html": 35231,
+  "css": 48978,
+  "js": 1465332,
+  "json": 1159102,
+  "webp": 223448
+ },
+ "errors": [],
+ "jsHeap": 91700000
+}

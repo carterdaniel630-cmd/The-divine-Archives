@@ -15,8 +15,8 @@
    place the choices are made; fauna.js puts animals in them and sound.js
    gives each its sound.
 
-   Motion: with "reduce motion" on, water, clouds and plants hold still and
-   there is no lightning. Lightning is soft and never more than two pulses
+   Motion: water, clouds, plants and lightning always move; the museum's
+   motion switch only changes how the view itself moves. Lightning is soft and never more than two pulses
    every several seconds.
    ========================================================================== */
 import * as THREE from "three";
@@ -170,14 +170,14 @@ function skyMaterial(key, q) {
     uCover: { value: P.cover }, uDens: { value: P.dens }, uSpeed: { value: P.speed }, uSun: { value: P.sun || 0 },
     uStars: { value: P.stars || 0 }, uMoon: { value: P.moon || 0 }, uAurora: { value: P.aurora || 0 }, uRain: { value: P.rain || 0 },
     uHaze: { value: P.haze || 0 }, uRays: { value: P.rays || 0 }, uBirds: { value: P.birds || 0 }, uMilky: { value: P.milky || 0 },
-    uEmber: { value: P.ember || 0 }, uRaptor: { value: 0 }, uGulls: { value: 0 }, uCycle: { value: P.cycle || 0 }, uSeed: { value: Math.random() * 50 }
+    uEmber: { value: P.ember || 0 }, uRaptor: { value: 0 }, uGulls: { value: 0 }, uCycle: { value: P.cycle || 0 }, uSeed: { value: Math.random() * 50 }, uDetail: { value: 0 }
   };
   const m = new THREE.ShaderMaterial({
     uniforms: u, depthWrite: true,
     defines: { OCT: q > 1 ? 5 : 3 },
     vertexShader: `varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position, 1.); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
     fragmentShader: `
-uniform float uTime, uFlash, uCover, uDens, uSpeed, uSun, uStars, uMoon, uAurora, uRain, uHaze, uRays, uBirds, uMilky, uEmber, uCycle, uSeed, uRaptor, uGulls;
+uniform float uTime, uFlash, uCover, uDens, uSpeed, uSun, uStars, uMoon, uAurora, uRain, uHaze, uRays, uBirds, uMilky, uEmber, uCycle, uSeed, uRaptor, uGulls, uDetail;
 uniform vec3 uZen, uHor, uCloud, uShade, uSunCol, uSunDir; uniform vec4 uBolt;
 varying vec3 vW;
 ${GLSL_NOISE}
@@ -200,12 +200,24 @@ void main(){
   vec2 p = (cameraPosition.xz + d.xz * (60. / up)) * .018 + uSeed;
   vec2 wv = vec2(uTime * uSpeed * .02, uTime * uSpeed * .008);
   float n = fbm(p + wv), n2 = fbm(p * 2.7 - wv * 1.7 + 11.);
-  float cov = smoothstep(1. - uCover, 1. - uCover + .32, n * .78 + n2 * .32);
+  float cov = smoothstep(1. - uCover, 1. - uCover + .32 + .16 * uDetail, n * .78 + n2 * .32);
   float thick = smoothstep(.35, 1., n + n2 * .2) * uDens;
   vec3 cc = mix(cl, sh, clamp(thick, 0., 1.));
+  if (uDetail > 0.) {                                   // the visual pass: clouds lit from the sun's side, shadowed on the other
+    float ns = fbm(p + wv + uSunDir.xz * .09);
+    cc *= mix(1., .78 + .3 * smoothstep(-.12, .12, n - ns), uDetail);
+    cc += uSunCol * sun * .12 * smoothstep(.0, .2, ns - n) * uDetail;
+  }
   cc *= mix(1., .7 + .6 * smoothstep(.35, .75, n2), step(1., uDens));               // heavy cloud: lighter and darker masses
   cc += uSunCol * sun * .25 * pow(sd, 6.) * (1. - thick);                // silver lining toward the sun
   float fade = smoothstep(.04, .25, up);
+  if (uDetail > 0.) {                                   // high cirrus, slower and finer, above the cloud deck; a halo round the sun
+    vec2 hp = (cameraPosition.xz + d.xz * (220. / up)) * .0045 + uSeed * .3 + wv * .35;
+    float ci = fbm(vec2(hp.x * 3.2, hp.y * .7)) * .7 + vnoise(hp * 9.) * .3;
+    col = mix(col, mix(cl, uSunCol, .25 * sun), smoothstep(.5, .85, ci) * .5 * fade * uDetail);
+    col += uSunCol * sun * (pow(sd, 4.) * .09 + exp(-pow((sd - .927) * 90., 2.)) * .02) * uDetail;
+    col = mix(col, hor * 1.08, pow(1. - up, 3.) * .25 * uDetail);
+  }
   col = mix(col, cc, cov * fade);
   col = mix(col, hor, uHaze * (1. - up) * .8);
   // stars, the moon, the Milky Way
@@ -609,7 +621,7 @@ function localFrame(A) {
 }
 function buildSky(A, q) {
   const r = A.sky, g = new THREE.Group();
-  const mat = skyMaterial(A.env.sky, q); A.skyMat = mat;
+  const mat = skyMaterial(A.env.sky, q); A.skyMat = mat; mat.uniforms.uDetail.value = A.detail || 0;
   const fa = A.env.fauna || []; mat.uniforms.uRaptor.value = fa.includes("condor") ? 1.4 : fa.includes("eagle") ? 1.1 : fa.includes("hawk") ? 0.8 : 0; mat.uniforms.uGulls.value = fa.includes("gulls") ? 1 : 0;
   const p = new THREE.Mesh(new THREE.PlaneGeometry(r.x1 - r.x0, r.z1 - r.z0), mat);
   p.rotation.x = Math.PI / 2; p.position.set((r.x0 + r.x1) / 2, r.y - 0.02, (r.z0 + r.z1) / 2); g.add(p);

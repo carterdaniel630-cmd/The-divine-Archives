@@ -21,13 +21,15 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=7";
-import { buildRelic, hasRelic } from "./relics.js?v=1";
+import { createInspector } from "./inspect.js?v=9";
+import { buildRelic, hasRelic } from "./relics.js?v=2";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=4";
-import { makeFauna } from "./fauna.js?v=3";
+import { createWorld } from "./world.js?v=5";
+import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
+import { createSecret } from "./secret.js?v=2";
+import { createStyle, styleOf } from "./style.js?v=16";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -83,7 +85,7 @@ function initRenderer() {
   scene.add(new THREE.HemisphereLight("#8a6a44", "#1a120a", 1.3));
   flashLight = new THREE.HemisphereLight("#c4d2ff", "#262a3a", 0); scene.add(flashLight);   // lightning in the skylights
   scene.add(new THREE.AmbientLight("#40301f", 0.6));
-  lantern = new THREE.PointLight("#ffcf94", 5, 9, 1.6);
+  lantern = new THREE.PointLight("#ffa65a", 2.8, 7, 1.6);   // the visitor's own light: a dim hand-held torch (it flickers, see updateLights)
   camera.add(lantern);
   for (let i = 0; i < 4; i++) { const l = new THREE.PointLight("#ffb46a", 0, 22, 1.6); scene.add(l); pool.push(l); }
   resize();
@@ -264,11 +266,13 @@ function merge(list) {
   let nv = 0, ni = 0;
   for (const g of list) { nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; }
   const pos = new Float32Array(nv * 3), nor = new Float32Array(nv * 3), uv = new Float32Array(nv * 2), idx = new Uint32Array(ni);
+  const cellA = list[0] && list[0].attributes.aCell ? new Float32Array(nv * 4) : null;   // the floor atlas's cell (style.js)
   let ov = 0, oi = 0;
   for (const g of list) {
     const c = g.attributes.position.count;
     pos.set(g.attributes.position.array, ov * 3); nor.set(g.attributes.normal.array, ov * 3);
     if (g.attributes.uv) uv.set(g.attributes.uv.array, ov * 2);
+    if (cellA && g.attributes.aCell) cellA.set(g.attributes.aCell.array, ov * 4);
     if (g.index) { const a = g.index.array; for (let i = 0; i < a.length; i++) idx[oi + i] = a[i] + ov; oi += a.length; }
     else { for (let i = 0; i < c; i++) idx[oi + i] = ov + i; oi += c; }
     ov += c; g.dispose();
@@ -277,6 +281,7 @@ function merge(list) {
   m.setAttribute("position", new THREE.BufferAttribute(pos, 3));
   m.setAttribute("normal", new THREE.BufferAttribute(nor, 3));
   m.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+  if (cellA) m.setAttribute("aCell", new THREE.BufferAttribute(cellA, 4));
   m.setIndex(new THREE.BufferAttribute(idx, 1));
   m.computeBoundingSphere(); m.computeBoundingBox();
   return m;
@@ -316,7 +321,7 @@ function collide(p) {
 // bucket of geometry per "zone" (entrance, rotunda, spine, each wing) merged into a few meshes
 const ZONES = {};
 function zone(id) {
-  if (!ZONES[id]) ZONES[id] = { id, floor: [], wall: [], dado: [], ceil: [], trim: [], segs: [], group: new THREE.Group(), box: new THREE.Box3() };
+  if (!ZONES[id]) ZONES[id] = { id, floor: [], floorBy: {}, wall: [], dado: [], ceil: [], trim: [], segs: [], group: new THREE.Group(), box: new THREE.Box3() };
   return ZONES[id];
 }
 // a straight wall with door gaps; gaps are [start, end] distances along the wall
@@ -340,10 +345,11 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
     z.trim.push(boxAt(Math.hypot(x1 - x0, z1 - z0) + 0.16, 0.16, 0.42, (x0 + x1) / 2, dh, (z0 + z1) / 2, ang));
   }
 }
-function rect(z, x0, x1, z0, z1, h, hole) {
-  if (!hole) z.floor.push(flat(x0, x1, z0, z1, 0, false));
+function rect(z, x0, x1, z0, z1, h, hole, floorKind) {
+  const F = floorKind ? (z.floorBy[floorKind] = z.floorBy[floorKind] || []) : z.floor;   // a period floor (style.js) or the museum's own
+  if (!hole) F.push(flat(x0, x1, z0, z1, 0, false));
   else {                                  // a floor round a glass-covered pit (world.js fills it)
-    z.floor.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
+    F.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
   }
   z.ceil.push(flat(x0, x1, z0, z1, h, true, 3));
   z.box.expandByPoint(new THREE.Vector3(x0, 0, z0)); z.box.expandByPoint(new THREE.Vector3(x1, h, z1));
@@ -355,11 +361,43 @@ function finishZones() {
       if (!z[k].length) continue;
       const m = new THREE.Mesh(merge(z[k]), mat); m.matrixAutoUpdate = false; z.group.add(m); z[k] = [];
     }
+    // the visual pass's period floors: all of a wing's in one mesh with one atlas material
+    // the visual pass: the wing's floor and corridor lamps go with the wing; the symbol wall, painted light and room fittings
+    // live in one group shown only when the visitor is in that wing or in the Spine by its door (other wings are behind
+    // walls, and would only cost draw calls)
+    const DG = z.decorGroup = new THREE.Group(); DG.name = "decor-" + z.id; z.group.add(DG);
+    const kinds = Object.keys(z.floorBy).filter((k) => z.floorBy[k].length);
+    if (kinds.length) {
+      const A = S.style.floorAtlas(kinds), all = [];
+      for (const k of kinds) for (const g of z.floorBy[k]) { const n = g.attributes.position.count, a = new Float32Array(n * 4); for (let i = 0; i < n; i++) a.set(A.cell[k], i * 4); g.setAttribute("aCell", new THREE.BufferAttribute(a, 4)); all.push(g); }
+      const m = new THREE.Mesh(merge(all), A.material); m.matrixAutoUpdate = false; z.group.add(m); z.floorBy = {};
+    }
+    for (const d of z.decor || []) DG.add(d);
+    // the visual pass's fittings, kerbs and painted light, one mesh per material: the corridor's in the wing,
+    // each room's in its own group, drawn only when the visitor is in or near that room (as its exhibits are)
+    const meshes = (parts, into) => {
+      const byMat = new Map(); for (const [g, m] of parts) { if (!byMat.has(m)) byMat.set(m, []); byMat.get(m).push(g.index ? g : g.toNonIndexed()); }
+      for (const [m, list] of byMat) { const mesh = new THREE.Mesh(merge(list), m); mesh.matrixAutoUpdate = false; mesh.renderOrder = m.userData.ro || 0; (typeof into === "function" ? into(m) : into).add(mesh); }
+    };
+    meshes(z.decorParts || [], (m) => (m.userData.ro === 2 ? DG : z.group)); z.decorParts = [];   // painted light (ro 2) near only
+    z.decorRooms = Object.entries(z.roomParts || {}).map(([id, r]) => { const g = new THREE.Group(); g.name = "decor-" + id; meshes(r.parts, g); DG.add(g); return { id, group: g, box: r.box }; });
+    z.roomParts = {};
     scene.add(z.group);
   }
 }
 function region(id, label, x0, x1, z0, z1, extra) { S.regions.push(Object.assign({ id, label, x0: Math.min(x0, x1), x1: Math.max(x0, x1), z0: Math.min(z0, z1), z1: Math.max(z0, z1) }, extra || {})); }
-function lamp(x, y, z, strength) { S.lampAnchors.push({ p: new THREE.Vector3(x, y, z), s: strength || 1 }); }
+function lamp(x, y, z, strength, flame) { S.lampAnchors.push({ p: new THREE.Vector3(x, y, z), s: strength || 1, flame: !!flame }); }
+// the visual pass (style.js): kerb, fittings, painted light and symbol wall for an area that has one
+function decorate(z, areaId, info) {
+  const d = S.style.decorate(areaId, info); if (!d) return;
+  (z.decor = z.decor || []).push(d.group);
+  if (info.box) (z.roomParts = z.roomParts || {})[areaId] = { parts: d.parts, box: info.box };
+  else (z.decorParts = z.decorParts || []).push(...d.parts);
+  (z.decorParts = z.decorParts || []).push(...d.shared);
+  for (const [g, key] of d.kerbs) (z.floorBy[key] = z.floorBy[key] || []).push(g);
+  d.lamps.forEach((l) => lamp(l.p.x, l.p.y, l.p.z, l.s, true));
+  d.segs.forEach(([x, zz, r]) => addBox(x, zz, r));
+}
 
 // room frames: origin on the entrance wall, F into the room, R to the right
 function frame(ox, oz, fx, fz) { return { ox, oz, fx, fz, rx: -fz, rz: fx }; }
@@ -447,7 +485,8 @@ function build() {
     const zw = zone(e.slug);
     S.eras[e.slug] = Object.assign({}, e, { k, side: s, zk, xa, xb });
     const cx0 = Math.min(xa, xb), cx1 = Math.max(xa, xb), corHole = { x0: cx0 + 1, x1: cx1 - 1, z0: zk - 0.8, z1: zk + 0.8 };
-    rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole);
+    const corStyle = styleOf("cor:" + e.slug);
+    rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole, corStyle && corStyle.floor);
     S.areas.push({ id: "cor:" + e.slug, kind: "corridor", axis: "x", hole: corHole, bounds: { x0: cx0, x1: cx1, z0: zk - COR_W / 2, z1: zk + COR_W / 2 }, sky: { x0: cx0 + 0.6, x1: cx1 - 0.6, z0: zk - 1.4, z1: zk + 1.4, y: COR_H }, lamp: [(cx0 + cx1) / 2, 3.9, zk] });
     region("wing-" + e.slug, "Wing " + e.num + " · " + e.name, xa, xb, zk - COR_W / 2, zk + COR_W / 2, { era: e.slug });
     const gapsN = [], gapsS = [];
@@ -461,7 +500,8 @@ function build() {
       const x0 = cx - ROOM_W / 2, x1 = cx + ROOM_W / 2;
       const dz = north ? -1 : 1, rz0 = Math.min(ez, bz), rz1 = Math.max(ez, bz);
       const roomHole = { x0: cx - 5.3, x1: cx + 5.3, z0: Math.min(ez + dz * 1.2, ez + dz * 12.8), z1: Math.max(ez + dz * 1.2, ez + dz * 12.8) };
-      rect(zw, x0, x1, rz0, rz1, ROOM_H, roomHole);
+      const roomStyle = styleOf(id);
+      rect(zw, x0, x1, rz0, rz1, ROOM_H, roomHole, roomStyle && roomStyle.floor);
       S.areas.push({ id, kind: "room", axis: "z", hole: roomHole, bounds: { x0, x1, z0: rz0, z1: rz1 }, sky: { x0: x0 + 0.9, x1: x1 - 0.9, z0: rz0 + 0.9, z1: rz1 - 0.9, y: ROOM_H }, lamp: [cx, 4.4, (ez + bz) / 2] });
       wall(zw, x0, bz, x1, bz, ROOM_H);
       wall(zw, x0, ez, x0, bz, ROOM_H);
@@ -469,27 +509,33 @@ function build() {
       const r = S.rooms[id];
       Object.assign(r, { frame: f, zone: e.slug, era: e.slug, cx, cz: (ez + bz) / 2 });
       region("room-" + id, r.title, x0, x1, ez, bz, { room: id, era: e.slug });
-      lamp(cx, 4.4, (ez + bz) / 2, 1);
+      if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole, twoRows: Math.ceil((r.homeFigs || []).length / 2) > 6, box: new THREE.Box3(new THREE.Vector3(x0, 0, rz0), new THREE.Vector3(x1, ROOM_H, rz1)) });
+      else lamp(cx, 4.4, (ez + bz) / 2, 1);
     });
     // corridor walls; they run outward from the spine, so a door's distance along the wall is its distance from the spine
     wall(zw, xa, zk - COR_W / 2, xb, zk - COR_W / 2, ROOM_H, gapsN);
     wall(zw, xa, zk + COR_W / 2, xb, zk + COR_W / 2, ROOM_H, gapsS);
     wall(zw, xb, zk - COR_W / 2, xb, zk + COR_W / 2, COR_H);
-    for (let a = 4; a < len; a += 8) lamp(s * (SPINE_HALF + a), 3.9, zk, 0.7);
+    if (corStyle && corStyle.fittings) decorate(zw, "cor:" + e.slug, { slug: e.slug, side: s, zk, corW: COR_W, gapsN, gapsS, hole: corHole, len, ceil: COR_H });
+    else for (let a = 4; a < len; a += 8) lamp(s * (SPINE_HALF + a), 3.9, zk, 0.7);
   });
   finishZones();
   // skies and grounds (world.js)
   S.world = createWorld({ scene, quality: touch ? 1 : 2, fauna: (A, q) => makeFauna(A, q, S.world) });
-  S.areas.forEach((a) => S.world.addArea(a));
+  S.areas.forEach((a) => S.world.addArea(Object.assign(a, { detail: (styleOf(a.id) || {}).sky || 0 })));
   // lamp glows (one Points object)
-  const lp = new Float32Array(S.lampAnchors.length * 3);
-  S.lampAnchors.forEach((l, i) => lp.set([l.p.x, l.p.y, l.p.z], i * 3));
-  const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.BufferAttribute(lp, 3));
-  lampPoints = new THREE.Points(lg, new THREE.PointsMaterial({ map: TEX.glow, size: 1.1, sizeAttenuation: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, color: "#ffd9a0" }));
-  scene.add(lampPoints);
-  const bulbs = new THREE.InstancedMesh(new THREE.SphereGeometry(0.09, 8, 6), MAT.flame, S.lampAnchors.length);
+  const glows = (list, size, color) => {
+    const lp = new Float32Array(list.length * 3); list.forEach((l, i) => lp.set([l.p.x, l.p.y, l.p.z], i * 3));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.BufferAttribute(lp, 3));
+    const pts = new THREE.Points(lg, new THREE.PointsMaterial({ map: TEX.glow, size, sizeAttenuation: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, color }));
+    scene.add(pts); return pts;
+  };
+  const bulbList = S.lampAnchors.filter((l) => !l.flame), flameList = S.lampAnchors.filter((l) => l.flame);
+  lampPoints = glows(bulbList, 1.1, "#ffd9a0");
+  if (flameList.length) scene.add(S.style.flames());   // each flame draws its own halo
+  const bulbs = new THREE.InstancedMesh(new THREE.SphereGeometry(0.09, 8, 6), MAT.flame, bulbList.length);
   const mtx = new THREE.Matrix4();
-  S.lampAnchors.forEach((l, i) => { mtx.makeTranslation(l.p.x, l.p.y, l.p.z); bulbs.setMatrixAt(i, mtx); });
+  bulbList.forEach((l, i) => { mtx.makeTranslation(l.p.x, l.p.y, l.p.z); bulbs.setMatrixAt(i, mtx); });
   scene.add(bulbs);
   buildStatic();
   // the planetarium
@@ -886,6 +932,15 @@ function manageZones() {
   for (const z of Object.values(ZONES)) {
     const d = distToBox(z.box, S.pos);
     z.group.visible = d < SHOW_FAR || z.id === "spine";
+    if (z.decorGroup) {
+      const E = S.eras[z.id], here = S.regions.find((r) => r.era === z.id && S.pos.x >= r.x0 - 0.3 && S.pos.x <= r.x1 + 0.3 && S.pos.z >= r.z0 - 0.3 && S.pos.z <= r.z1 + 0.3);
+      const bySpine = E && Math.abs(S.pos.x) < SPINE_HALF + 0.3 && Math.abs(S.pos.z - E.zk) < 14;
+      z.decorGroup.visible = !!(here || bySpine);
+    }
+    for (const r of z.decorRooms || []) {                    // a room's fittings and flames: only in or near it (as its exhibits)
+      const vis = z.group.visible && z.decorGroup.visible && (S.inRoom ? r.id === S.inRoom : distToBox(r.box, S.pos) < 10);
+      if (vis !== r.group.visible || r.flamesShown !== vis) { r.group.visible = vis; r.flamesShown = vis; S.style.setAreaVisible(r.id, vis); S.dirty = true; }
+    }
     if (z.id === "hall" || z.id === "spine") continue;
     if (d < FETCH_NEAR && !S.detail[z.id]) loadDetail(z.id);
     if (d < BUILD_NEAR && !z.built && S.detail[z.id]) buildWingExhibits(z.id);
@@ -897,14 +952,24 @@ function manageZones() {
 
 // ---------------------------------------------------------------- lights: pooled onto the nearest lamps
 let flick = 0;
+// objects shown with plain pages instead of illustrative script (Carter's decision, 2026-10-06)
+const PLAIN_PAGES = new Set(["v28", "v29"]);
+const BULB = new THREE.Color("#ffb46a"), FLAME = new THREE.Color("#ffa860");
 function updateLights() {
   const p = S.pos;
   const near = S.lampAnchors.map((l) => [l, l.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
-  near.forEach(([l], i) => {
-    const L = pool[i]; L.position.copy(l.p);
-    const f = S.reduce ? 1 : 0.93 + 0.07 * Math.sin(flick * 7 + i * 2.1) * Math.sin(flick * 3.3 + i);
+  // among flames, only the nearest three are real lights (plans/museum-visual-pass.md §4); the rest are glow and painted light
+  const flames = near.length && near[0][0].flame, n = flames ? 3 : pool.length;
+  pool.forEach((L, i) => {
+    const e = near[i];
+    if (!e || i >= n) { L.intensity = 0; return; }
+    const l = e[0]; L.position.copy(l.p); L.color.copy(l.flame ? FLAME : BULB);
+    const f = l.flame
+      ? 0.84 + 0.1 * Math.sin(flick * 9.3 + i * 2.1) * Math.sin(flick * 4.1 + i) + 0.06 * Math.sin(flick * 23 + i * 5)
+      : 0.93 + 0.07 * Math.sin(flick * 7 + i * 2.1) * Math.sin(flick * 3.3 + i);
     L.intensity = 26 * l.s * f;
   });
+  lantern.intensity = 2.8 * (0.9 + 0.07 * Math.sin(flick * 8.7) * Math.sin(flick * 3.1) + 0.03 * Math.sin(flick * 21));
 }
 
 // ---------------------------------------------------------------- where am I
@@ -927,6 +992,8 @@ function locate() {
     sub = "The Rotunda · Comparative themes"; text = bd < 7.5 ? S.rooms[best].title : "The Rotunda";
     reg = Object.assign({}, reg, { room: bd < 7.5 ? best : null });
   } else { text = reg.label; sub = reg.era ? "Corridor" : "The Divine Archives"; }
+  const areaId = reg.room || (reg.era ? "cor:" + reg.era : reg.id);
+  S.styledHere = !!styleOf(areaId);
   const key = sub + "|" + text;
   if (key !== S.where) {
     S.where = key; S.room = reg.room || null;
@@ -1026,6 +1093,7 @@ function openCard(ex) {
       S.cardAt = performance.now(); unlock();
       S.insp.open(v.prop, h, v.rendition
         ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
+        : PLAIN_PAGES.has(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its pages are left plain: the archive does not draw imitation Qur'anic script. Read it in English gives what the real leaves contain."
         : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
         : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.", d.id);
       return;
@@ -1081,6 +1149,8 @@ function renderGuide() {
     }
   } else {
     h += `<p class="mu-trail">You are in ${esc(S.where.split("|")[1] || "the museum")}. Walk into a room, or choose one:</p>`;
+    // the one hint to the secret in this hallway's wall (secret.js)
+    if (S.where === "Corridor|Wing II · The Bronze Age") h += `<p class="mu-trail"><em>Some signs on these walls are not like the others.</em></p>`;
   }
   if (S.sky && S.sky.state.data && S.where.indexOf("The Rotunda") === 0) {
     const L = S.sky.state.data.lore, C = S.sky.state.data.cons;
@@ -1208,8 +1278,9 @@ function bindInput() {
     if (!down) return;
     const tap = !down.moved && performance.now() - down.t < 450; down = null;
     if (!tap) return;
-    if (S.locked) { const ex = pick(0, 0) || skyAt(0, 0); if (ex) openCard(ex); return; }
+    if (S.locked) { if (S.secret && S.secret.tap(0, 0)) return; const ex = pick(0, 0) || skyAt(0, 0); if (ex) openCard(ex); return; }
     const r = c.getBoundingClientRect(), cx = ((e.clientX - r.left) / r.width) * 2 - 1, cy = -((e.clientY - r.top) / r.height) * 2 + 1;
+    if (S.secret && S.secret.tap(cx, cy)) { S.dirty = true; return; }
     const ex = pick(cx, cy) || skyAt(cx, cy);
     if (ex) { openCard(ex); return; }
     if (!touch && e.pointerType === "mouse") { lock(); return; }
@@ -1228,6 +1299,7 @@ function bindInput() {
     if (S.insp && S.insp.active) return;
     if (e.target && /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(e.target.tagName)) return;
     if (e.key === "Escape" && !$("mu-guide").hidden) { toggleGuide(false); return; }
+    if (e.key === "Enter" && S.secret && S.secret.key()) { e.preventDefault(); return; }
     if (e.code === "KeyE" || e.key === "Enter") { const ex = S.hover || pick(0, 0) || skyAt(0, 0); if (ex) { e.preventDefault(); openCard(ex); } return; }
     if (e.code === "KeyG") { toggleGuide(); return; }
     if (["KeyW", "KeyA", "KeyS", "KeyD", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "ShiftLeft", "ShiftRight"].includes(e.code)) {
@@ -1277,7 +1349,12 @@ function toggleGuide(on) {
   g.hidden = !show; $("mu-guide-btn").setAttribute("aria-expanded", String(show));
   if (show) { unlock(); renderGuide(); const first = g.querySelector("button"); if (first) first.focus(); }
 }
-function setReduce(v) { S.reduce = v; store.set("mu-rm", v ? "1" : "0"); $("mu-motion-btn").setAttribute("aria-pressed", String(v)); S.dirty = true; }
+function setReduce(v) {
+  S.reduce = v; store.set("mu-rm", v ? "1" : "0");
+  const b = $("mu-motion-btn"); b.setAttribute("aria-pressed", String(v));
+  b.querySelectorAll(".mu-l, .mu-s").forEach((el) => { el.textContent = v ? "View motion off" : "View motion on"; });   // say the state, not just the switch
+  S.dirty = true;
+}
 function savePos() { if (S.started) store.sset("mu-pos", JSON.stringify({ x: +S.pos.x.toFixed(2), z: +S.pos.z.toFixed(2), yaw: +S.yaw.toFixed(3) })); }
 
 // ---------------------------------------------------------------- directory (fallback)
@@ -1311,7 +1388,7 @@ function enter3d() {
 const pLocal = new THREE.Vector3();
 function portalTick(dt) {
   const P = S.portalFx, d = P.pos.distanceTo(pLocal.set(S.pos.x, 0, S.pos.z));
-  if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(S.reduce ? 0 : dt)) S.dirty = true; }
+  if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(dt)) S.dirty = true; }
   // inside the opening: within its width, and within a hand's breadth of its plane
   pLocal.set(S.pos.x - P.pos.x, 0, S.pos.z - P.pos.z).applyQuaternion(P.inv);
   if (!P.fired && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
@@ -1338,14 +1415,16 @@ function tick(now) {
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
-  if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, S.reduce)) S.dirty = true;
+  if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, false)) S.dirty = true;
   if (S.world) {
-    if (S.world.update(dt, S.pos, S.inRoom, S.reduce)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
+    if (S.world.update(dt, S.pos, S.inRoom, false)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
   if (S.portalFx) portalTick(dt);
-  if (!S.reduce && idleT > 0.12) { idleT = 0; S.dirty = true; }
+  if (S.secret && S.secret.update(dt, S.pos)) S.dirty = true;
+  const styled = S.style.update(dt) && S.styledHere;
+  if (idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
   if (!S.dirty) return;
   S.dirty = false;
   camera.position.copy(S.pos);
@@ -1388,8 +1467,10 @@ async function start() {
     S.manifest = m;
     for (const r of m.rooms) S.rooms[r.id] = Object.assign({}, r);
     makeTextures(); makeMaterials();
+    S.style = createStyle({ touch, MAT, merge, onReady: () => { S.dirty = true; } });
     S.insp = createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     build();
+    S.secret = createSecret({ scene, camera, style: S.style, portal: goldenPortal, store, go: (href) => stepThroughPortal(href) });
   } catch (e) {
     showDirectory("The museum could not be loaded, so here is its directory.");
     return;
@@ -1404,6 +1485,7 @@ async function start() {
     S.pos.set(P.px + ox, EYE, P.pz + oz); S.yaw = Math.atan2(-ox, -oz); S.portalArrived = true; if (S.portalFx) S.portalFx.fired = true;
   }
   else if (hash && S.rooms[hash]) teleport(hash, true);
+  else if (hash && hash[0] === "@" && S.eras[hash.slice(1)]) teleport(hash, true);
   else if (saved && isFinite(saved.x)) { S.pos.set(saved.x, EYE, saved.z); S.yaw = saved.yaw || 0; }
   else { S.pos.set(0, EYE, 11); S.yaw = 0; }
   manageZones(); locate();
@@ -1428,6 +1510,11 @@ window.__MU = {
   bolt: (id) => S.world && S.world.forceBolt(id),
   world: () => S.world ? [S.world.time.toFixed(2), S.paused, S.pos.x.toFixed(1), S.pos.z.toFixed(1)].concat(S.world.areas.filter((a) => a.pit || a.skyG.visible).map((a) => a.id + (a.pit ? ":pit" + (a.pit.visible ? "+" : "-") : "") + (a.skyG.visible ? ":sky" : ""))) : null,
   look: (yaw, pitch) => { S.yaw = yaw; S.pitch = pitch; S.dirty = true; },
+  place: (x, z, yaw, pitch) => { S.pos.set(x, EYE, z); S.yaw = yaw; S.pitch = pitch || 0; S.auto = null; S.dirty = true; manageZones(); locate(); },
+  relicsPending: () => S.relicQ.length,
+  styleTime: (t) => { S.style.setTime(t); S.dirty = true; },
+  styleClock: () => S.style.time,
+  secret: () => S.secret && S.secret.debug,
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),

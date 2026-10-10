@@ -1,0 +1,47 @@
+{
+ "viewport": "412x915 @2x, 4x CPU throttle, SwiftShader (software GL)",
+ "tLoadMs": 3010,
+ "tFirstZoneMs": 19157,
+ "bytesAtReady": 1780099,
+ "byType": {
+  "css": 48879,
+  "js": 1385133,
+  "html": 35138,
+  "json": 310949
+ },
+ "spots": {
+  "hall": {
+   "fps": 2.4,
+   "calls": 38,
+   "tris": 31178,
+   "textures": 14,
+   "geometries": 50,
+   "where": "The Divine Archives|The entrance hall"
+  },
+  "bronze-age corridor": {
+   "fps": 0.1,
+   "calls": 79,
+   "tris": 191170,
+   "textures": 31,
+   "geometries": 110,
+   "where": "Corridor|Wing II · The Bronze Age"
+  },
+  "Egypt room (ch02)": {
+   "fps": 0.1,
+   "calls": 65,
+   "tris": 104459,
+   "textures": 43,
+   "geometries": 131,
+   "where": "Wing II · The Bronze Age|Egypt"
+  }
+ },
+ "bytesTotal": 2227646,
+ "byTypeTotal": {
+  "css": 48879,
+  "js": 1385133,
+  "html": 35138,
+  "json": 758496
+ },
+ "errors": [],
+ "jsHeap": 31200000
+}

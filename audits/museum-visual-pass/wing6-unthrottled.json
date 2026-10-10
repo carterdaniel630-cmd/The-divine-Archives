@@ -1,0 +1,97 @@
+{
+ "viewport": "412x915 @1x, 1x CPU throttle, SwiftShader",
+ "tLoadMs": 972,
+ "tFirstZoneMs": 19567,
+ "bytesAtReady": 2127607,
+ "byType": {
+  "html": 35231,
+  "js": 1467387,
+  "css": 48978,
+  "json": 313399,
+  "webp": 262612
+ },
+ "spots": {
+  "Bronze corridor": {
+   "fps": 0.3,
+   "calls": 86,
+   "tris": 205216,
+   "textures": 36,
+   "geometries": 117,
+   "where": "Corridor|Wing II · The Bronze Age"
+  },
+  "Mesopotamia (ch03)": {
+   "fps": 0.3,
+   "calls": 94,
+   "tris": 96094,
+   "textures": 42,
+   "geometries": 156,
+   "where": "Wing II · The Bronze Age|Mesopotamia"
+  },
+  "Minoan Crete (ch67)": {
+   "fps": 0.7,
+   "calls": 51,
+   "tris": 83502,
+   "textures": 48,
+   "geometries": 155,
+   "where": "Wing II · The Bronze Age|Minoan Crete"
+  },
+  "Egypt (ch02)": {
+   "fps": 0.5,
+   "calls": 69,
+   "tris": 114653,
+   "textures": 69,
+   "geometries": 178,
+   "where": "Wing II · The Bronze Age|Egypt"
+  },
+  "medieval corridor": {
+   "fps": 0.5,
+   "calls": 93,
+   "tris": 176870,
+   "textures": 89,
+   "geometries": 221,
+   "where": "Corridor|Wing VI · The Early Medieval"
+  },
+  "Islam (ch21)": {
+   "fps": 0.4,
+   "calls": 66,
+   "tris": 94752,
+   "textures": 80,
+   "geometries": 210,
+   "where": "Wing VI · The Early Medieval|Islam"
+  },
+  "Norse (ch23)": {
+   "fps": 0.4,
+   "calls": 55,
+   "tris": 69470,
+   "textures": 85,
+   "geometries": 228,
+   "where": "Wing VI · The Early Medieval|Norse Paganism"
+  },
+  "Orthodoxy (ch60)": {
+   "fps": 0.6,
+   "calls": 61,
+   "tris": 80402,
+   "textures": 97,
+   "geometries": 220,
+   "where": "Wing VI · The Early Medieval|Eastern Orthodoxy & Byzantium"
+  },
+  "Shinto (ch25)": {
+   "fps": 0.4,
+   "calls": 56,
+   "tris": 93055,
+   "textures": 99,
+   "geometries": 235,
+   "where": "Wing VI · The Early Medieval|Shinto"
+  }
+ },
+ "bytesTotal": 3028187,
+ "byTypeTotal": {
+  "html": 35231,
+  "js": 1467387,
+  "css": 48978,
+  "json": 1213979,
+  "webp": 262612
+ },
+ "errors": [],
+ "jsHeap": 91700000
+}

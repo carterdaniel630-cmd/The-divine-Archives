@@ -1,0 +1,24 @@
+{
+ "wall": "late",
+ "label": "Wing V, Late Antiquity",
+ "cell": 96,
+ "cols": 9,
+ "rows": 9,
+ "sets": [
+  {
+   "name": "The Coptic alphabet: Greek letters and six of the seven taken from Egyptian Demotic (Egypt, from the 3rd century CE)",
+   "start": 0,
+   "len": 31
+  },
+  {
+   "name": "Ogham: the four groups of five and the forfeda (Irish memorial stones, from about the 4th century CE)",
+   "start": 31,
+   "len": 26
+  },
+  {
+   "name": "Inscriptional Pahlavi: the script of the early Sasanian royal inscriptions (3rd century CE)",
+   "start": 57,
+   "len": 19
+  }
+ ]
+}

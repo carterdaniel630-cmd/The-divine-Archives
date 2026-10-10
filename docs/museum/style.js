@@ -1,0 +1,705 @@
+/* ==========================================================================
+   THE DIVINE ARCHIVES — the Virtual Museum: the visual pass (period floors,
+   flame light and symbol walls), area by area
+
+   plans/museum-visual-pass.md. The table STYLE below says which areas have
+   been given the pass; everything else in the museum is unchanged. Each area
+   can have:
+   - floor: a period floor round its glass pit, painted in the browser (colour
+     and relief), and a kerb at the pit's edge;
+   - fittings: flame lights of the area's era instead of the hanging bulbs:
+     lamps in wall niches, tripod braziers. Only the nearest few flames are
+     real lights (app.js, updateLights); every other flame is a glowing quad,
+     and the light each throws on floor and wall is painted on once ("baked"),
+     so phones stay fast;
+   - symbols: the hallway's symbol wall (symbolWall below): the era's signs in
+     slow columns, a soft white glow that never outshines the flames. The signs
+     come from tools/data/symbols.json via tools/build-symbols.js, which draws
+     them into one small atlas; tools/verify-symbols.js checks that no sign held
+     back on sensitivity grounds is in it;
+   - sky: 1 = the more detailed sky (world.js).
+
+   These are the archive's own furniture, period-appropriate in kind, not
+   reconstructions of any particular building.
+   ========================================================================== */
+import * as THREE from "three";
+
+export const STYLE = {
+  "cor:02-bronze-age": { floor: "brick", kerb: "limestone", fittings: "bronze-corridor", symbols: "bronze", sky: 1 },
+  ch02: { floor: "limestone", kerb: "painted", fittings: "bronze-room", sky: 1 },
+  // the rest of Wing II (rollout step 4)
+  ch03: { floor: "brick", kerb: "limestone", fittings: "bronze-room", sky: 1 },          // baked brick, as in the temple courts
+  ch04: { floor: "brick", kerb: "limestone", fittings: "bronze-room", sky: 1 },          // the Indus cities' fired brick
+  ch05: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },    // no Vedic buildings survive: the earth of the fire altars
+  ch57: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },         // Hattusa's dressed stone
+  ch67: { floor: "limestone", kerb: "painted", fittings: "bronze-room", sky: 1 },        // Knossos's gypsum slabs and painted walls
+  ch76: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },    // the Olmec clay floors
+  // Wing III, the Early Iron Age (rollout step 1): dressed stone, with Greece's pebbles, China's rammed earth and Phoenicia's cedar
+  "cor:03-early-iron-age": { floor: "ashlar", kerb: "limestone", fittings: "bronze-corridor", symbols: "iron", sky: 1 },
+  ch06: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch07: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch08: { floor: "pebble", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch09: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch58: { floor: "cedar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch68: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch77: { floor: "ashlar", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  // Wing IV, the Axial Age (rollout step 2): marble in the corridor; each room its own floor; Greek and Roman lamps
+  "cor:04-axial-age": { floor: "marble", kerb: "marblekerb", fittings: "axial-corridor", symbols: "axial", sky: 1 },
+  ch10: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },          // Herodian ashlar
+  ch11: { floor: "brick", kerb: "limestone", fittings: "axial-room", sky: 1 },           // fired brick, as at the early stupas
+  ch12: { floor: "greytile", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch13: { floor: "tessellated", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch14: { floor: "oak", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch15: { floor: "pebble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch52: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch69: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch78: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  // Wing V, Late Antiquity (rollout step 3): mosaic in the corridor; Roman lamps still lit the late antique world
+  "cor:05-late-antiquity": { floor: "tessellated", kerb: "marblekerb", fittings: "axial-corridor", symbols: "late", sky: 1 },
+  ch16: { floor: "tessellated", kerb: "marblekerb", fittings: "axial-room", sky: 1 },     // house-church and villa mosaics
+  ch17: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },       // Upper Egypt, where Nag Hammadi was found
+  ch18: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },     // a mithraeum's beaten floor
+  ch19: { floor: "tessellated", kerb: "limestone", fittings: "axial-room", sky: 1 },     // synagogue mosaics
+  ch20: { floor: "brick", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch45: { floor: "limestone", kerb: "limestone", fittings: "axial-room", sky: 1 },       // Coptic Egypt
+  ch55: { floor: "rammedearth", kerb: "limestone", fittings: "axial-room", sky: 1 },     // the oasis towns of the Silk Road
+  ch70: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },
+  ch79: { floor: "ashlar", kerb: "limestone", fittings: "axial-room", sky: 1 },          // Aksum's dressed granite and basalt
+  // Wing VI, the Early Medieval (rollout step 4): grey tile in the corridor; marble and mosaic where the Mediterranean
+  // lamps still burned, wood and earth and simple saucer lamps elsewhere
+  "cor:06-early-medieval": { floor: "greytile", kerb: "limestone", fittings: "bronze-corridor", symbols: "medieval", sky: 1 },
+  ch21: { floor: "marble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },         // a mosque courtyard's marble
+  ch22: { floor: "tessellated", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch23: { floor: "oak", kerb: "limestone", fittings: "bronze-room", sky: 1 },            // a hall's boards
+  ch24: { floor: "limestone", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch25: { floor: "cedar", kerb: "limestone", fittings: "bronze-room", sky: 1 },          // a shrine's unpainted wood
+  ch53: { floor: "rammedearth", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch54: { floor: "greytile", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch60: { floor: "marble", kerb: "marblekerb", fittings: "axial-room", sky: 1 },
+  ch71: { floor: "greytile", kerb: "limestone", fittings: "bronze-room", sky: 1 },
+  ch80: { floor: "marble", kerb: "marblekerb", fittings: "axial-room", sky: 1 }
+};
+export const styleOf = (id) => STYLE[id] || null;
+
+const TAU = Math.PI * 2;
+function rng(seed) { let s = (seed | 0) || 1; return () => { s = (s * 16807) % 2147483647; return s / 2147483647; }; }
+function canvas(w, h) { const c = document.createElement("canvas"); c.width = w; c.height = h; return c; }
+function tex(c, srgb, rep) {
+  const t = new THREE.CanvasTexture(c); if (srgb !== false) t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 4; if (rep !== false) t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+}
+// a height canvas (white = high) into a tangent-space normal map
+function normalMap(hc, strength) {
+  const w = hc.width, h = hc.height, src = hc.getContext("2d").getImageData(0, 0, w, h).data, out = canvas(w, h), g = out.getContext("2d"), img = g.createImageData(w, h), d = img.data;
+  const H = (x, y) => src[(((y + h) % h) * w + ((x + w) % w)) * 4] / 255;
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    let nx = (H(x - 1, y) - H(x + 1, y)) * strength, ny = (H(x, y + 1) - H(x, y - 1)) * strength; const l = Math.hypot(nx, ny, 1); nx /= l; ny /= l;
+    const o = (y * w + x) * 4; d[o] = (nx * 0.5 + 0.5) * 255; d[o + 1] = (ny * 0.5 + 0.5) * 255; d[o + 2] = (1 / l * 0.5 + 0.5) * 255; d[o + 3] = 255;
+  }
+  g.putImageData(img, 0, 0); return tex(out, false);
+}
+function speckle(g, w, h, n, cols, size, R) { for (let i = 0; i < n; i++) { g.fillStyle = cols[(R() * cols.length) | 0]; const s = size * (0.4 + R()); g.fillRect(R() * w, R() * h, s, s); } }
+function blot(g, x, y, r, col) { const gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, col); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2); }
+
+// ---------------------------------------------------------------- floors
+// each covers 2 m × 2 m of floor (the museum's floor UVs are metres / 2) and tiles seamlessly
+const FLOORS = {
+  // dressed limestone paving: slabs in courses of varying length, cream to ochre, worn smooth in the middle,
+  // chipped at the corners, thin mortar joints
+  limestone(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(7), m = px / 2;   // px per metre
+    g.fillStyle = "#b9a37c"; g.fillRect(0, 0, px, px); hg.fillStyle = "#6a6a6a"; hg.fillRect(0, 0, px, px);
+    const rows = [0.62, 0.7, 0.68];                      // course widths (m), sum 2.0
+    let y = 0;
+    rows.forEach((rw, ri) => {
+      let x = -R() * 0.8;
+      while (x < 2) {
+        const len = 0.55 + R() * 0.75, x0 = x, x1 = Math.min(x + len, 2 + 0.01);
+        const L = 62 + R() * 14, hue = 36 + R() * 8, sat = 22 + R() * 14;
+        const paint = (xa, xb) => {
+          const X0 = xa * m + 2, X1 = xb * m - 2, Y0 = y * m + 2, Y1 = (y + rw) * m - 2;
+          if (X1 <= X0) return;
+          g.fillStyle = `hsl(${hue},${sat}%,${L}%)`; g.fillRect(X0, Y0, X1 - X0, Y1 - Y0);
+          // worn middle, darker edges
+          blot(g, (X0 + X1) / 2, (Y0 + Y1) / 2, Math.max(X1 - X0, Y1 - Y0) * 0.6, "rgba(255,245,220,.10)");
+          g.strokeStyle = "rgba(80,60,35,.25)"; g.lineWidth = 3; g.strokeRect(X0 + 1.5, Y0 + 1.5, X1 - X0 - 3, Y1 - Y0 - 3);
+          hg.fillStyle = "#9a9a9a"; hg.fillRect(X0, Y0, X1 - X0, Y1 - Y0);
+          hg.fillStyle = "#8a8a8a"; hg.fillRect(X0, Y0, X1 - X0, 3); hg.fillRect(X0, Y0, 3, Y1 - Y0);
+          // chips at corners
+          for (let k = 0; k < 2; k++) { const cx = R() < 0.5 ? X0 : X1, cy = R() < 0.5 ? Y0 : Y1, r = 4 + R() * 10; g.fillStyle = "rgba(90,70,45,.5)"; g.beginPath(); g.arc(cx, cy, r, 0, TAU); g.fill(); hg.fillStyle = "#606060"; hg.beginPath(); hg.arc(cx, cy, r, 0, TAU); hg.fill(); }
+        };
+        paint(x0, x1); if (x0 < 0) paint(x0 + 2, Math.min(x1 + 2, 2.01));   // wrap so the texture tiles
+        x += len;
+      }
+      y += rw;
+    });
+    // grain, fossil specks, stains and scuffs
+    speckle(g, px, px, px * px / 60, ["rgba(90,70,40,.35)", "rgba(240,230,205,.35)", "rgba(120,95,60,.3)"], px / 400, R);
+    for (let i = 0; i < 18; i++) blot(g, R() * px, R() * px, px * (0.04 + R() * 0.1), "rgba(90,65,35,.12)");
+    for (let i = 0; i < 40; i++) { g.strokeStyle = "rgba(70,55,35,.18)"; g.lineWidth = 1; g.beginPath(); const x = R() * px, yy = R() * px; g.moveTo(x, yy); g.lineTo(x + (R() - 0.5) * 40, yy + (R() - 0.5) * 12); g.stroke(); }
+    speckle(hg, px, px, px * px / 90, ["#8a8a8a", "#a4a4a4"], px / 300, R);
+    return { map: tex(c), normalMap: normalMap(h, 2.2) };
+  },
+  // baked brick in a square pavement, bitumen in the joints (Mesopotamian practice); buff and yellow, some reddened in the kiln
+  brick(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(11), n = 6, s = px / n;   // 6 bricks per 2 m: about 33 cm
+    g.fillStyle = "#2a1f18"; g.fillRect(0, 0, px, px); hg.fillStyle = "#404040"; hg.fillRect(0, 0, px, px);
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const x = i * s + 2, y = j * s + 2, w = s - 4, L = 54 + R() * 12, hue = 38 + R() * 8, red = R() < 0.12;
+      g.fillStyle = red ? `hsl(${22 + R() * 6},${18 + R() * 8}%,${L - 8}%)` : `hsl(${hue},${10 + R() * 9}%,${L}%)`; g.fillRect(x, y, w, w);
+      blot(g, x + w / 2, y + w / 2, w * 0.7, "rgba(255,240,210,.08)");
+      speckle(g, s, s, 260, ["rgba(70,50,30,.35)", "rgba(230,210,170,.3)", "rgba(40,30,20,.3)"], px / 300, R);
+      g.strokeStyle = "rgba(40,28,18,.35)"; g.lineWidth = 2; g.strokeRect(x + 1, y + 1, w - 2, w - 2);
+      hg.fillStyle = `rgb(${150 + R() * 20},${150 + R() * 20},${150 + R() * 20})`; hg.fillRect(x, y, w, w);
+      if (R() < 0.35) { g.fillStyle = "rgba(40,28,18,.45)"; const cx = x + (R() < 0.5 ? 0 : w), cy = y + (R() < 0.5 ? 0 : w), r = 3 + R() * 8; g.beginPath(); g.arc(cx, cy, r, 0, TAU); g.fill(); hg.fillStyle = "#505050"; hg.beginPath(); hg.arc(cx, cy, r, 0, TAU); hg.fill(); }
+    }
+    // the bitumen joints: dark, glossy, a little uneven
+    g.fillStyle = "rgba(38,28,20,.85)"; for (let k = 0; k <= n; k++) { g.fillRect(k * s - 2, 0, 4, px); g.fillRect(0, k * s - 2, px, 4); }
+    for (let i = 0; i < 12; i++) blot(g, R() * px, R() * px, px * (0.05 + R() * 0.12), "rgba(30,20,12,.14)");
+    return { map: tex(c), normalMap: normalMap(h, 2.6) };
+  }
+};
+// the Early Iron Age's floors
+Object.assign(FLOORS, {
+  // dressed ashlar: squared blocks in regular courses, grey-buff, tooled faces, fine joints
+  ashlar(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(17), m = px / 2;
+    g.fillStyle = "#2c2620"; g.fillRect(0, 0, px, px); hg.fillStyle = "#505050"; hg.fillRect(0, 0, px, px);
+    const rows = 3, rh = 2 / rows;
+    for (let r = 0; r < rows; r++) {
+      const y0 = r * rh, offs = (r % 2) * 0.33, n = 3;
+      for (let k = -1; k <= n; k++) {
+        const x0 = k * (2 / n) + offs, x1 = x0 + 2 / n;
+        const L = 60 + R() * 10, sat = 4 + R() * 7, hue = 36 + R() * 14;
+        for (const sh of [0, 2]) {
+          const X0 = (x0 + sh) * m + 2, X1 = (x1 + sh) * m - 2, Y0 = y0 * m + 2, Y1 = (y0 + rh) * m - 2;
+          if (X1 < 0 || X0 > px) continue;
+          g.fillStyle = `hsl(${hue},${sat}%,${L}%)`; g.fillRect(X0, Y0, X1 - X0, Y1 - Y0);
+          for (let i = 0; i < 40; i++) { g.strokeStyle = `rgba(60,50,40,${0.06 + R() * 0.08})`; g.lineWidth = 1; g.beginPath(); const yy = Y0 + R() * (Y1 - Y0); g.moveTo(X0, yy); g.lineTo(X1, yy + (R() - 0.5) * 6); g.stroke(); }   // the tooling
+          blot(g, (X0 + X1) / 2, (Y0 + Y1) / 2, (X1 - X0) * 0.5, "rgba(255,248,230,.07)");
+          g.strokeStyle = "rgba(255,250,240,.16)"; g.lineWidth = 3; g.strokeRect(X0 + 3, Y0 + 3, X1 - X0 - 6, Y1 - Y0 - 6);
+          hg.fillStyle = "#9a9a9a"; hg.fillRect(X0, Y0, X1 - X0, Y1 - Y0); hg.strokeStyle = "#7a7a7a"; hg.lineWidth = 4; hg.strokeRect(X0 + 2, Y0 + 2, X1 - X0 - 4, Y1 - Y0 - 4);
+        }
+      }
+    }
+    speckle(g, px, px, px * px / 70, ["rgba(70,60,45,.3)", "rgba(230,220,200,.25)"], px / 450, R);
+    for (let i = 0; i < 14; i++) blot(g, R() * px, R() * px, px * (0.05 + R() * 0.1), "rgba(60,45,30,.10)");
+    return { map: tex(c), normalMap: normalMap(h, 2.2) };
+  },
+  // a pebble floor: river pebbles set close in mortar, dark and light worked into a simple border-and-field pattern
+  pebble(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(23);
+    g.fillStyle = "#6a6052"; g.fillRect(0, 0, px, px); hg.fillStyle = "#404040"; hg.fillRect(0, 0, px, px);
+    const n = Math.round(px * px / 260);
+    for (let i = 0; i < n; i++) {
+      const x = R() * px, y = R() * px, r = px * (0.006 + R() * 0.008), band = Math.floor(y / (px / 8)) % 4 === 0;
+      const L = band ? 20 + R() * 12 : 70 + R() * 16;
+      for (const [dx, dy] of [[0, 0], [px, 0], [-px, 0], [0, px], [0, -px]]) {
+        g.fillStyle = `hsl(${30 + R() * 20},${6 + R() * 10}%,${L}%)`; g.beginPath(); g.ellipse(x + dx, y + dy, r * 1.25, r, R() * 3, 0, TAU); g.fill();
+        const gr = hg.createRadialGradient(x + dx, y + dy, 0, x + dx, y + dy, r * 1.2); gr.addColorStop(0, "#d0d0d0"); gr.addColorStop(1, "#404040"); hg.fillStyle = gr; hg.beginPath(); hg.ellipse(x + dx, y + dy, r * 1.25, r, 0, 0, TAU); hg.fill();
+      }
+    }
+    return { map: tex(c), normalMap: normalMap(h, 3) };
+  },
+  // rammed earth: tamped layers of loess, faint bands and tamper marks
+  rammedearth(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(29);
+    g.fillStyle = "#8a7454"; g.fillRect(0, 0, px, px); hg.fillStyle = "#707070"; hg.fillRect(0, 0, px, px);
+    for (let i = 0; i < 260; i++) { const x = R() * px, y = R() * px, r = px * (0.02 + R() * 0.03); blot(g, x, y, r, `rgba(${R() < 0.5 ? "70,55,35" : "180,160,120"},.18)`); hg.fillStyle = "rgba(255,255,255,.06)"; hg.beginPath(); hg.arc(x, y, r * 0.8, 0, TAU); hg.fill(); }   // tamper marks
+    speckle(g, px, px, px * px / 25, ["rgba(60,45,30,.35)", "rgba(200,180,140,.3)", "rgba(110,90,60,.3)"], px / 500, R);
+    speckle(hg, px, px, px * px / 40, ["#606060", "#8a8a8a"], px / 400, R);
+    return { map: tex(c), normalMap: normalMap(h, 1.6) };
+  },
+  // cedar boards: long planks, warm red-brown, grain and knots
+  cedar(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(31), nb = 8, bw = px / nb;
+    for (let b = 0; b < nb; b++) {
+      const L = 30 + R() * 10, x = b * bw;
+      g.fillStyle = `hsl(${18 + R() * 8},${38 + R() * 12}%,${L}%)`; g.fillRect(x, 0, bw, px);
+      for (let k = 0; k < 26; k++) { g.strokeStyle = `rgba(40,18,8,${0.08 + R() * 0.14})`; g.lineWidth = 1 + R() * 2; g.beginPath(); const xx = x + R() * bw; g.moveTo(xx, 0); g.bezierCurveTo(xx + (R() - 0.5) * 10, px * 0.33, xx + (R() - 0.5) * 10, px * 0.66, xx, px); g.stroke(); }
+      if (R() < 0.6) { const ky = R() * px, kx = x + bw * (0.3 + R() * 0.4); g.fillStyle = "rgba(50,20,8,.6)"; g.beginPath(); g.ellipse(kx, ky, bw * 0.08, bw * 0.12, 0, 0, TAU); g.fill(); }
+      const cut = R() * px; g.fillStyle = "rgba(20,10,4,.8)"; g.fillRect(x, cut, bw, 3);                    // a board end
+      g.fillStyle = "rgba(20,10,4,.85)"; g.fillRect(x, 0, 3, px);
+      hg.fillStyle = "#909090"; hg.fillRect(x + 3, 0, bw - 3, px); hg.fillStyle = "#404040"; hg.fillRect(x, 0, 3, px); hg.fillRect(x, cut, bw, 3);
+    }
+    return { map: tex(c), normalMap: normalMap(h, 2) };
+  }
+});
+// the Axial Age's floors
+Object.assign(FLOORS, {
+  // marble slabs, white to grey, with soft veining
+  marble(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(37), n = 2, sz = px / n;
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const x = i * sz, y = j * sz, L = 78 + R() * 8;
+      g.fillStyle = `hsl(${30 + R() * 20},${4 + R() * 5}%,${L}%)`; g.fillRect(x, y, sz, sz);
+      g.save(); g.beginPath(); g.rect(x, y, sz, sz); g.clip();
+      for (let k = 0; k < 7; k++) { g.strokeStyle = `rgba(${90 + R() * 40},${90 + R() * 40},${100 + R() * 40},${0.12 + R() * 0.22})`; g.lineWidth = 0.6 + R() * 2.4; g.beginPath(); let vx = x + R() * sz, vy = y; g.moveTo(vx, vy); for (let t = 0; t < 14; t++) { vx += (R() - 0.4) * sz * 0.12; vy += sz / 12; g.lineTo(vx, vy); } g.stroke(); }
+      g.restore();
+      g.strokeStyle = "rgba(60,55,50,.55)"; g.lineWidth = 2; g.strokeRect(x + 1, y + 1, sz - 2, sz - 2);
+      hg.fillStyle = "#a0a0a0"; hg.fillRect(x + 2, y + 2, sz - 4, sz - 4);
+    }
+    speckle(g, px, px, px * px / 160, ["rgba(120,110,100,.18)", "rgba(255,255,255,.2)"], px / 600, R);
+    return { map: tex(c), normalMap: normalMap(h, 1.4) };
+  },
+  // grey fired tiles, square, set in lime mortar (Warring States and Han floors)
+  greytile(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(41), n = 6, sz = px / n;
+    g.fillStyle = "#cfc7b6"; g.fillRect(0, 0, px, px); hg.fillStyle = "#505050"; hg.fillRect(0, 0, px, px);
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const x = i * sz + 3, y = j * sz + 3, w = sz - 6, L = 34 + R() * 10;
+      g.fillStyle = `hsl(${200 + R() * 30},${4 + R() * 5}%,${L}%)`; g.fillRect(x, y, w, w);
+      speckle(g, sz, sz, 120, ["rgba(20,20,22,.3)", "rgba(160,160,165,.25)"], px / 400, R);
+      blot(g, x + w / 2, y + w / 2, w * 0.6, "rgba(200,200,205,.07)");
+      hg.fillStyle = `rgb(${150 + R() * 20},${150 + R() * 20},${150 + R() * 20})`; hg.fillRect(x, y, w, w);
+    }
+    return { map: tex(c), normalMap: normalMap(h, 2.2) };
+  },
+  // a Roman tessellated pavement: small black and white tesserae, a field of white with a black meander band
+  tessellated(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(43), t = px / 96;   // tesserae about 2 cm
+    g.fillStyle = "#3a3632"; g.fillRect(0, 0, px, px); hg.fillStyle = "#404040"; hg.fillRect(0, 0, px, px);
+    const N = Math.round(px / t), meander = (i, j) => { const m = (j % 32), k = i % 16; if (m < 2 || m > 13) return false; const y = m - 2; return (y < 2 || y > 9) ? false : ((k < 2) || (y < 4 && k < 12) || (y > 7 && k > 4 && k < 14) || (k > 12 && y > 3)); };
+    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+      const black = meander(i, j), L = black ? 14 + R() * 10 : 82 + R() * 10;
+      g.fillStyle = `hsl(${35 + R() * 15},${black ? 4 : 8}%,${L}%)`; g.fillRect(i * t + 0.6 + (R() - 0.5), j * t + 0.6 + (R() - 0.5), t - 1.2, t - 1.2);
+      hg.fillStyle = `rgb(${150 + R() * 40},${150 + R() * 40},${150 + R() * 40})`; hg.fillRect(i * t + 0.6, j * t + 0.6, t - 1.2, t - 1.2);
+    }
+    for (let i = 0; i < 10; i++) blot(g, R() * px, R() * px, px * (0.05 + R() * 0.1), "rgba(90,70,40,.10)");
+    return { map: tex(c), normalMap: normalMap(h, 2.4) };
+  },
+  // oak boards: long planks, pale brown, straight grain
+  oak(px) {
+    const c = canvas(px, px), h = canvas(px, px), g = c.getContext("2d"), hg = h.getContext("2d"), R = rng(47), nb = 7, bw = px / nb;
+    for (let b = 0; b < nb; b++) {
+      const L = 38 + R() * 10, x = b * bw;
+      g.fillStyle = `hsl(${30 + R() * 6},${30 + R() * 10}%,${L}%)`; g.fillRect(x, 0, bw, px);
+      for (let k = 0; k < 30; k++) { g.strokeStyle = `rgba(50,30,12,${0.06 + R() * 0.12})`; g.lineWidth = 1 + R() * 1.5; g.beginPath(); const xx = x + R() * bw; g.moveTo(xx, 0); g.bezierCurveTo(xx + (R() - 0.5) * 6, px * 0.33, xx + (R() - 0.5) * 6, px * 0.66, xx, px); g.stroke(); }
+      const cut = R() * px; g.fillStyle = "rgba(25,14,6,.8)"; g.fillRect(x, cut, bw, 3);
+      g.fillStyle = "rgba(25,14,6,.85)"; g.fillRect(x, 0, 3, px);
+      hg.fillStyle = "#909090"; hg.fillRect(x + 3, 0, bw - 3, px); hg.fillStyle = "#404040"; hg.fillRect(x, 0, 3, px); hg.fillRect(x, cut, bw, 3);
+    }
+    return { map: tex(c), normalMap: normalMap(h, 2) };
+  }
+});
+// kerbs at the glass pit's edge: their texture runs along the strip (u = metres along, v across)
+const KERBS = {
+  limestone(px) {
+    const c = canvas(px, px / 4), g = c.getContext("2d"), R = rng(5), w = c.width, hh = c.height;
+    g.fillStyle = "#c8b48c"; g.fillRect(0, 0, w, hh);
+    for (let x = 0; x < w; x += w / 2) { g.fillStyle = `hsl(38,${24 + R() * 10}%,${64 + R() * 8}%)`; g.fillRect(x + 2, 2, w / 2 - 4, hh - 4); }
+    speckle(g, w, hh, w * hh / 40, ["rgba(90,70,40,.3)", "rgba(250,240,215,.3)"], w / 500, R);
+    g.fillStyle = "rgba(255,248,230,.18)"; g.fillRect(0, hh * 0.78, w, hh * 0.22);         // the arris, rubbed bright
+    return { map: tex(c), repeat: 0.5 };
+  },
+  marblekerb(px) {
+    const c = canvas(px, px / 4), g = c.getContext("2d"), R = rng(53), w = c.width, hh = c.height;
+    g.fillStyle = "#d8d2c8"; g.fillRect(0, 0, w, hh);
+    for (let k = 0; k < 5; k++) { g.strokeStyle = `rgba(110,110,120,${0.12 + R() * 0.15})`; g.lineWidth = 1 + R() * 2; g.beginPath(); g.moveTo(R() * w, 0); g.lineTo(R() * w, hh); g.stroke(); }
+    g.fillStyle = "rgba(60,55,50,.5)"; g.fillRect(w / 2 - 1, 0, 2, hh);
+    g.fillStyle = "rgba(255,255,255,.25)"; g.fillRect(0, hh * 0.8, w, hh * 0.2);
+    return { map: tex(c), repeat: 0.5 };
+  },
+  // the block border of Egyptian painting: rectangles of blue, red, green and yellow between black and white rules,
+  // as on the painted plaster floors of New Kingdom palaces (the Great Palace at Amarna)
+  painted(px) {
+    const c = canvas(px, px / 4), g = c.getContext("2d"), R = rng(9), w = c.width, hh = c.height;
+    g.fillStyle = "#d8c4a0"; g.fillRect(0, 0, w, hh);
+    const cols = ["#2f5f9a", "#b0402a", "#3f7a4a", "#d8a83a"], n = 8, bw = w / n;
+    g.fillStyle = "#1a1410"; g.fillRect(0, hh * 0.16, w, hh * 0.05); g.fillRect(0, hh * 0.79, w, hh * 0.05);
+    for (let i = 0; i < n; i++) {
+      g.fillStyle = cols[i % 4]; g.fillRect(i * bw + bw * 0.08, hh * 0.25, bw * 0.84, hh * 0.5);
+      g.fillStyle = "#f2ead8"; g.fillRect(i * bw, hh * 0.25, bw * 0.08, hh * 0.5);
+    }
+    // the paint is old: rubbed, flaked and stained
+    for (let i = 0; i < 60; i++) { g.fillStyle = `rgba(216,196,160,${0.25 + R() * 0.45})`; g.beginPath(); g.arc(R() * w, R() * hh, 2 + R() * 9, 0, TAU); g.fill(); }
+    speckle(g, w, hh, w * hh / 30, ["rgba(90,70,40,.25)", "rgba(250,240,215,.25)"], w / 600, R);
+    return { map: tex(c), repeat: 1 };
+  }
+};
+
+export function createStyle(o) {
+  const touch = !!o.touch, PX = touch ? 512 : 1024, FL = {}, KB = {};
+  function floorMat(kind) {
+    if (!FL[kind]) { const t = FLOORS[kind](PX); FL[kind] = touch ? new THREE.MeshLambertMaterial({ map: t.map }) : new THREE.MeshLambertMaterial({ map: t.map, normalMap: t.normalMap, normalScale: new THREE.Vector2(0.9, 0.9) }); if (touch) t.normalMap.dispose(); }   // phones: no relief map (fewer textures)
+    return FL[kind];
+  }
+  // one material for all of a wing's period floors: their pictures side by side in one texture, each floor's geometry
+  // tagged with its cell (attribute aCell), the shader repeating the picture inside the cell. One draw call, one texture.
+  function floorAtlas(kinds) {
+    const cp = 512, n = kinds.length, cols = Math.ceil(Math.sqrt(n)), rows = Math.ceil(n / cols), c = canvas(cols * cp, rows * cp), g = c.getContext("2d"), cell = {};
+    kinds.forEach((k, i) => {
+      const t = k.startsWith("kerb:") ? KERBS[k.slice(5)](cp) : FLOORS[k](cp), cx = i % cols, cy = Math.floor(i / cols);
+      g.drawImage(t.map.image, cx * cp, cy * cp, cp, cp); t.map.dispose(); if (t.normalMap) t.normalMap.dispose();
+      cell[k] = [cx / cols, 1 - (cy + 1) / rows, 1 / cols, 1 / rows];          // bottom-left corner and size, in texture space
+    });
+    const map = tex(c, true, false), m = new THREE.MeshLambertMaterial({ map });
+    m.onBeforeCompile = (sh) => {
+      sh.vertexShader = "attribute vec4 aCell; varying vec4 vCell; varying vec2 vFloorUv;\n" + sh.vertexShader.replace("#include <uv_vertex>", "#include <uv_vertex>\n  vCell = aCell; vFloorUv = uv;");
+      sh.fragmentShader = "varying vec4 vCell; varying vec2 vFloorUv;\n" + sh.fragmentShader.replace("#include <map_fragment>", `
+  vec2 fu = fract(vFloorUv), au = vCell.xy + (fu * .96 + .02) * vCell.zw;
+  diffuseColor *= textureGrad(map, au, dFdx(vFloorUv) * vCell.zw, dFdy(vFloorUv) * vCell.zw);`);
+    };
+    m.customProgramCacheKey = () => "floor-atlas";
+    return { material: m, cell };
+  }
+  function kerbMat(kind) {
+    if (!KB[kind]) { const t = KERBS[kind](PX); KB[kind] = new THREE.MeshLambertMaterial({ map: t.map }); KB[kind].userData.repeat = t.repeat; }
+    return KB[kind];
+  }
+  // a flat strip round the pit's rim, u running along each side (metres × repeat)
+  function kerb(hole, kind, width) {
+    const w = width || 0.26, rep = kind === "painted" ? 1 : 0.5, pos = [], uv = [], idx = [], y = 0.006;
+    const strip = (ax, az, bx, bz, ox, oz) => {          // a → b along the edge, (ox, oz) outward
+      const len = Math.hypot(bx - ax, bz - az), b = pos.length / 3;
+      pos.push(ax, y, az, bx, y, bz, bx + ox * w, y, bz + oz * w, ax + ox * w, y, az + oz * w);
+      uv.push(0, 0.01, len * rep, 0.01, len * rep, 0.99, 0, 0.99);
+      idx.push(b, b + 2, b + 1, b, b + 3, b + 2);
+    };
+    const { x0, x1, z0, z1 } = hole;
+    strip(x0 - w, z0, x1 + w, z0, 0, -1); strip(x1 + w, z1, x0 - w, z1, 0, 1);
+    strip(x0, z1, x0, z0, -1, 0); strip(x1, z0, x1, z1, 1, 0);
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+    geo.setAttribute("normal", new THREE.Float32BufferAttribute(new Array(pos.length).fill(0).map((_, i) => (i % 3 === 1 ? 1 : 0)), 3));
+    geo.setIndex(idx);
+    // winding: make sure every face points up
+    const p = geo.attributes.position, ix = geo.index.array, a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3();
+    for (let i = 0; i < ix.length; i += 3) { a.fromBufferAttribute(p, ix[i]); b.fromBufferAttribute(p, ix[i + 1]); c.fromBufferAttribute(p, ix[i + 2]); const ny = (b.z - a.z) * (c.x - a.x) - (b.x - a.x) * (c.z - a.z); if (ny < 0) { const t = ix[i + 1]; ix[i + 1] = ix[i + 2]; ix[i + 2] = t; } }
+    return [geo, "kerb:" + kind];
+  }
+
+  // ---------------------------------------------------------------- fittings
+  // the fittings' plain surfaces (clay, the niche's shadow, the stone sill) share one material: each part's UVs point at
+  // its colour in a tiny palette, so a whole wing's lamps and niches are one draw call
+  const PAL = ["#9c6a44", "#1a120c", "#a89270", "#a85a36", "#6a4826"], palC = canvas(PAL.length, 1), pg = palC.getContext("2d");
+  PAL.forEach((c, i) => { pg.fillStyle = c; pg.fillRect(i, 0, 1, 1); });
+  const palT = tex(palC, true, false); palT.magFilter = palT.minFilter = THREE.NearestFilter; palT.generateMipmaps = false;
+  const fit = new THREE.MeshLambertMaterial({ map: palT });
+  const swatch = (geo, i) => { const uv = geo.attributes.uv; for (let k = 0; k < uv.count; k++) uv.setXY(k, (i + 0.5) / PAL.length, 0.5); return geo; };
+  const MAT = o.MAT, FM = { clay: 0, niche: 1, sill: 2, terracotta: 3, bronze: 4 };
+  const bz = (g) => [swatch(g, FM.bronze), fit];   // bronze parts share the palette material too (one draw call for a wing's lamps)
+  // a Canaanite-style saucer lamp: a shallow clay bowl with the rim pinched into a spout for the wick (Middle and Late Bronze Age)
+  function saucerLamp(L, x, y, z, ry) {
+    const bowl = new THREE.LatheGeometry([[0, 0], [0.055, 0.004], [0.07, 0.02], [0.074, 0.032], [0.066, 0.03], [0.05, 0.012], [0, 0.01]].map(([r, h]) => new THREE.Vector2(r, h)), 12);
+    // pinch the rim on one side into a spout
+    const p = bowl.attributes.position;
+    for (let i = 0; i < p.count; i++) { const px = p.getX(i), pz = p.getZ(i), r = Math.hypot(px, pz); if (r > 0.04) { const a = Math.atan2(pz, px), k = Math.exp(-a * a * 8); p.setX(i, px * (1 + 0.35 * k)); p.setZ(i, pz * (1 - 0.55 * k)); } }
+    bowl.computeVertexNormals(); bowl.rotateY(ry); bowl.translate(x, y, z); L.push([swatch(bowl, FM.clay), fit]);
+    const sp = new THREE.Vector3(Math.cos(-ry) * 0.085, 0.034, Math.sin(-ry) * 0.085);
+    return new THREE.Vector3(x + sp.x, y + sp.y, z + sp.z);   // where the wick burns
+  }
+  // a niche in the wall with a stone sill and surround; (nx, nz) points into the corridor
+  function niche(L, x, y, z, nx, nz, lamp) {
+    const ry = Math.atan2(nx, nz), W = 0.46, Hh = 0.56, d = 0.05, put = (geo, sw, u, v, w) => { geo.rotateY(ry); geo.translate(x + nx * w + Math.cos(ry) * u, y + v, z + nz * w - Math.sin(ry) * u); L.push([swatch(geo, sw), fit]); };
+    put(new THREE.PlaneGeometry(W, Hh), FM.niche, 0, Hh / 2, 0.012);                                            // the shadowed back
+    put(new THREE.BoxGeometry(0.08, Hh + 0.08, d * 2), FM.sill, -W / 2 - 0.04, Hh / 2, d);
+    put(new THREE.BoxGeometry(0.08, Hh + 0.08, d * 2), FM.sill, W / 2 + 0.04, Hh / 2, d);
+    put(new THREE.BoxGeometry(W + 0.16, 0.08, d * 2.4), FM.sill, 0, Hh + 0.04, d * 1.1);
+    put(new THREE.BoxGeometry(W + 0.2, 0.06, 0.22), FM.sill, 0, -0.03, 0.11);                                   // the sill the lamp stands on
+    put(new THREE.PlaneGeometry(W * 0.8, Hh * 0.55), FM.niche, 0, Hh * 0.62, 0.014);                              // soot above the flame
+    return (lamp || saucerLamp)(L, x + nx * 0.12, y, z + nz * 0.12, ry);
+  }
+  // a bronze tripod brazier with a shallow bowl of coals
+  function brazier(L, x, z, s) {
+    s = s || 1;
+    const bowl = new THREE.LatheGeometry([[0, 0], [0.12, 0.01], [0.2, 0.05], [0.24, 0.1], [0.25, 0.12], [0.23, 0.12], [0.2, 0.07], [0.12, 0.04], [0, 0.035]].map(([r, h]) => new THREE.Vector2(r * s, h * s)), 14);
+    bowl.translate(x, 0.78 * s, z); L.push(bz(bowl));
+    const coals = new THREE.CylinderGeometry(0.2 * s, 0.2 * s, 0.03, 10); coals.translate(x, 0.88 * s, z); L.push([swatch(coals, FM.niche), fit]);   // the ash bed (the flames stand on it)
+    for (let k = 0; k < 3; k++) {
+      const a = k / 3 * TAU + 0.5, leg = new THREE.CylinderGeometry(0.014 * s, 0.018 * s, 0.86 * s, 5);
+      leg.translate(0, 0.43 * s, 0); leg.rotateX(0.16); leg.rotateY(-a + Math.PI / 2); leg.translate(x + Math.cos(a) * 0.05 * s, 0, z + Math.sin(a) * 0.05 * s); L.push(bz(leg));
+      const foot = new THREE.SphereGeometry(0.035 * s, 6, 4); foot.translate(x + Math.cos(a) * 0.19 * s, 0.03, z + Math.sin(a) * 0.19 * s); L.push(bz(foot));
+    }
+    const ring = new THREE.TorusGeometry(0.17 * s, 0.01 * s, 4, 14); ring.rotateX(Math.PI / 2); ring.translate(x, 0.42 * s, z); L.push(bz(ring));
+    return new THREE.Vector3(x, 0.9 * s, z);
+  }
+
+  // a Greek or Roman mould-made oil lamp: a closed round body with a filling hole on top and a nozzle for the wick
+  function terracottaLamp(L, x, y, z, ry) {
+    const body = new THREE.LatheGeometry([[0, 0], [0.032, 0.001], [0.044, 0.01], [0.045, 0.02], [0.038, 0.028], [0.014, 0.024], [0.01, 0.03], [0, 0.03]].map(([r, h]) => new THREE.Vector2(r, h)), 12);
+    body.translate(x, y, z); L.push([swatch(body, FM.terracotta), fit]);
+    const dx = Math.sin(ry), dz = Math.cos(ry);
+    const noz = new THREE.CylinderGeometry(0.011, 0.015, 0.055, 6); noz.rotateX(Math.PI / 2); noz.rotateY(ry); noz.translate(x + dx * 0.065, y + 0.014, z + dz * 0.065); L.push([swatch(noz, FM.terracotta), fit]);
+    return new THREE.Vector3(x + dx * 0.094, y + 0.022, z + dz * 0.094);
+  }
+  // a bronze lampstand (the Greek and Roman lychnouchos): three feet, a slender shaft, a disc with the lamp on it
+  function lampstand(L, x, z, ry) {
+    for (let k = 0; k < 3; k++) {
+      const a = k / 3 * TAU + 0.3, foot = new THREE.CylinderGeometry(0.008, 0.014, 0.2, 5);
+      foot.translate(0, 0.1, 0); foot.rotateZ(0.9); foot.rotateY(-a); foot.translate(x, 0.02, z); L.push(bz(foot));
+    }
+    const shaft = new THREE.CylinderGeometry(0.011, 0.016, 1.26, 6); shaft.translate(x, 0.7, z); L.push(bz(shaft));
+    const knot = new THREE.SphereGeometry(0.024, 6, 4); knot.translate(x, 0.75, z); L.push(bz(knot));
+    const disc = new THREE.CylinderGeometry(0.075, 0.06, 0.012, 10); disc.translate(x, 1.335, z); L.push(bz(disc));
+    return terracottaLamp(L, x, 1.341, z, ry);
+  }
+
+  // ---------------------------------------------------------------- flames (one instanced draw call for all of them)
+  const FLAMES = [];          // { p, size, seed }
+  let flameMesh = null;
+  const flameU = { uTime: { value: 0 } };
+  const flameMat = new THREE.ShaderMaterial({
+    uniforms: flameU, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: `
+attribute vec3 iPos; attribute vec2 iData; uniform float uTime; varying vec2 vUv; varying float vSeed;
+void main(){
+  vUv = uv; vSeed = iData.y;
+  vec3 right = vec3(viewMatrix[0][0], viewMatrix[1][0], viewMatrix[2][0]);
+  float sway = sin(uTime * 2.3 + iData.y * 17.) * .06 + sin(uTime * 5.1 + iData.y * 5.) * .03;
+  // the quad is twelve flames wide: the flame in the middle, its halo round it (one draw call for flames and halos)
+  vec3 p = iPos + right * (position.x * 12. + sway * position.y) * iData.x + vec3(0., 1., 0.) * ((position.y - .5) * 12. + .5) * iData.x * 1.9;
+  gl_Position = projectionMatrix * viewMatrix * vec4(p, 1.);
+}`,
+    fragmentShader: `
+uniform float uTime; varying vec2 vUv; varying float vSeed;
+float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float n2(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f); return mix(mix(h(i), h(i + vec2(1, 0)), f.x), mix(h(i + vec2(0, 1)), h(i + vec2(1, 1)), f.x), f.y); }
+void main(){
+  float t = uTime * 2.6 + vSeed * 31.;
+  vec2 q0 = vec2((vUv.x - .5) * 12., (vUv.y - .5) * 12. + .5);       // the flame's own frame inside the larger quad
+  float hr = length(vec2(q0.x, (q0.y - .4) * 1.9));
+  float halo = (exp(-hr * .55) * .55 + exp(-hr * 2.) * .35) * (1. - smoothstep(3.5, 6., hr)) * (.9 + .1 * sin(t * 1.7));
+  vec2 q = q0;
+  float n = n2(vec2(q.x * 5., q.y * 4. - t)) * .6 + n2(vec2(q.x * 11., q.y * 9. - t * 1.7)) * .4;
+  q.x += (n - .5) * .22 * q.y;
+  float y = q.y * (1.05 + .12 * sin(t * 1.3));
+  float width = .34 * sqrt(max(y, 0.)) * (1. - y) * 1.6;
+  float d = abs(q.x) / max(width, 1e-3);
+  float body = (1. - smoothstep(.55, 1., d)) * step(0., y) * (1. - smoothstep(.8, 1., y));
+  float core = (1. - smoothstep(.0, .55, d)) * (1. - smoothstep(.15, .6, y));
+  vec3 col = mix(vec3(1., .42, .08), vec3(1., .78, .32), smoothstep(.15, .7, 1. - y)) * body + vec3(1., .95, .8) * core * .9;
+  col += vec3(.15, .25, .9) * (1. - smoothstep(.0, .12, y)) * body * .5;       // the blue root of the flame
+  gl_FragColor = vec4(col * (body * .9 + core * .5) + vec3(1., .62, .3) * halo, 1.);
+}`
+  });
+  let curArea = null;                               // the area being decorated: a room's flames hide with its fittings
+  function addFlame(p, size) { FLAMES.push({ p: p.clone(), size: size || 0.07, seed: Math.random(), area: curArea }); }
+  function setAreaVisible(area, vis) {
+    if (!flameMesh) return; const a = flameMesh.geometry.attributes.iData; let hit = false;
+    FLAMES.forEach((f, i) => { if (f.area === area) { a.setX(i, vis ? f.size : 0); hit = true; } });
+    if (hit) a.needsUpdate = true;
+  }
+  function flames() {
+    if (flameMesh) return flameMesh;
+    const base = new THREE.PlaneGeometry(1, 1).translate(0, 0.5, 0), g = new THREE.InstancedBufferGeometry();
+    g.index = base.index; g.setAttribute("position", base.attributes.position); g.setAttribute("uv", base.attributes.uv);
+    g.setAttribute("iPos", new THREE.InstancedBufferAttribute(new Float32Array(FLAMES.flatMap((f) => [f.p.x, f.p.y, f.p.z])), 3));
+    g.setAttribute("iData", new THREE.InstancedBufferAttribute(new Float32Array(FLAMES.flatMap((f) => [f.size, f.seed])), 2));
+    g.instanceCount = FLAMES.length;
+    flameMesh = new THREE.Mesh(g, flameMat); flameMesh.frustumCulled = false; flameMesh.renderOrder = 5;
+    return flameMesh;
+  }
+
+  // ---------------------------------------------------------------- light painted once on floor and wall
+  let glowTex = null;
+  function poolTex() {
+    if (glowTex) return glowTex;
+    const c = canvas(128, 128), g = c.getContext("2d"), r = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    r.addColorStop(0, "rgba(255,205,150,.85)"); r.addColorStop(0.4, "rgba(255,180,120,.3)"); r.addColorStop(1, "rgba(255,150,90,0)");
+    g.fillStyle = r; g.fillRect(0, 0, 128, 128); glowTex = tex(c, true, false); return glowTex;
+  }
+  const poolMat = new THREE.MeshBasicMaterial({ map: null, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.26, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+  // quads: { x, y, z, r, nx, ny, nz } (n = the surface's normal)
+  function pools(list) {
+    poolMat.map = poolTex();
+    const geos = list.map((q) => {
+      const g = new THREE.PlaneGeometry(q.r * 2, q.r * 2);
+      if (q.ny) g.rotateX(-Math.PI / 2); else g.rotateY(Math.atan2(q.nx || 0, q.nz || 0));
+      g.translate(q.x + (q.nx || 0) * 0.015, q.y + (q.ny || 0) * 0.006, q.z + (q.nz || 0) * 0.015); return g;
+    });
+    poolMat.userData.ro = 2;
+    return geos.map((g) => [g, poolMat]);
+  }
+
+  // ---------------------------------------------------------------- per-area decoration
+  // corridor: { slug, side, zk, xa, xb, corW, gapsN, gapsS, hole, len }
+  // room: { id, frame (W, f), hole }
+  function decorate(area, info) {
+    const st = STYLE[area]; if (!st) return null;
+    curArea = info.box ? area : null;
+    // parts are [geometry, material]: app.js merges them per wing and per material, so a whole wing costs a few draw calls
+    // kerbs are drawn with the wing's floor atlas, and painted light is one batch for the whole wing (both always shown)
+    const out = { group: new THREE.Group(), parts: [], kerbs: [], shared: [], lamps: [], segs: [] }, L = out.parts, P = [];
+    if (st.kerb && info.hole) out.kerbs.push(kerb(info.hole, st.kerb));
+    if (st.fittings === "bronze-corridor" || st.fittings === "axial-corridor") {
+      const { side: s, zk, corW, len } = info, wallY = 2.3, stands = st.fittings === "axial-corridor";
+      for (const [north, gaps] of [[true, info.gapsN], [false, info.gapsS]]) {
+        const zw = zk + (north ? -corW / 2 : corW / 2), nz = north ? 1 : -1, segs = wallSegments(gaps, len);
+        for (const [a, b] of segs) {
+          const n = Math.max(1, Math.round((b - a) / 9));
+          for (let k = 0; k < n; k++) {
+            const along = a + (b - a) * (k + 0.5) / n, x = s * (4 + along);
+            if (stands) {                                   // a lampstand on the floor by the wall
+              const fl = lampstand(L, x, zw + nz * 0.42, nz > 0 ? 0 : Math.PI);
+              addFlame(fl, 0.05); out.lamps.push({ p: fl.clone().add(new THREE.Vector3(0, 0.14, nz * 0.2)), s: 0.5 });
+              P.push({ x, y: 0, z: zw + nz * 0.7, r: 1.5, ny: 1 }, { x, y: 1.5, z: zw, r: 1.0, nz });
+              out.segs.push([x, zw + nz * 0.42, 0.18]);
+              continue;
+            }
+            const fl = niche(L, x, wallY, zw, 0, nz);
+            addFlame(fl, 0.055); out.lamps.push({ p: fl.clone().add(new THREE.Vector3(0, 0.12, nz * 0.32)), s: 0.5 });
+            P.push({ x, y: 0, z: zw + nz * 0.9, r: 1.5, ny: 1 }, { x, y: wallY + 0.45, z: zw, r: 0.95, nz });
+          }
+        }
+      }
+      // braziers at the corridor's two ends
+      for (const along of [1.2, len - 1.0]) for (const dz of [-1.35, 1.35]) {
+        if (along < 2 && Math.abs(dz) > 0) { /* by the spine door: keep the doorway clear */ }
+        const x = s * (4 + along), z = zk + dz, fl = brazier(L, x, z, 0.92);
+        addFlame(fl, 0.13); addFlame(fl.clone().add(new THREE.Vector3(0.07, 0, 0.03)), 0.09); addFlame(fl.clone().add(new THREE.Vector3(-0.06, 0, -0.04)), 0.1);
+        out.lamps.push({ p: fl.clone().add(new THREE.Vector3(0, 0.25, 0)), s: 0.85 });
+        P.push({ x, y: 0, z, r: 1.9, ny: 1 });
+        out.segs.push([x, z, 0.3]);
+      }
+    }
+    if (st.fittings === "bronze-room" || st.fittings === "axial-room") {
+      const lampKind = st.fittings === "axial-room" ? terracottaLamp : saucerLamp;
+      const { W, f } = info, sill = info.twoRows ? 4.05 : 3.45;   // well above the Pantheon medallions (one row: tops at 2.66 m; two rows: 3.56 m)
+      // niche lamps on the side walls, between the Pantheon medallions
+      for (const side of [-1, 1]) for (const v of [4.6, 7.0, 9.4, 11.8]) {
+        const [x, z] = W(f, side * 6.5, v), nx = -side * f.rx, nz = -side * f.rz;
+        const fl = niche(L, x, sill, z, nx, nz, lampKind);
+        addFlame(fl, 0.055); out.lamps.push({ p: fl.clone().add(new THREE.Vector3(nx * 0.32, 0.12, nz * 0.32)), s: 0.5 });
+        P.push({ x, y: sill + 0.45, z, r: 0.95, nx, nz }, { x: x + nx * 0.8, y: 0, z: z + nz * 0.8, r: 1.3, ny: 1 });
+      }
+      // a brazier in each corner
+      for (const [u, v] of [[-5.85, 0.75], [5.85, 0.75], [-5.85, 13.25], [5.85, 13.25]]) {
+        const [x, z] = W(f, u, v), fl = brazier(L, x, z, 1);
+        addFlame(fl, 0.14); addFlame(fl.clone().add(new THREE.Vector3(0.08, 0, 0.02)), 0.1); addFlame(fl.clone().add(new THREE.Vector3(-0.06, 0, -0.05)), 0.11);
+        out.lamps.push({ p: fl.clone().add(new THREE.Vector3(0, 0.25, 0)), s: 0.9 });
+        P.push({ x, y: 0, z, r: 2.1, ny: 1 });
+        out.segs.push([x, z, 0.3]);
+      }
+    }
+    if (P.length) out.shared.push(...pools(P));
+    if (st.symbols) { const sw = symbolWall(st.symbols, info); if (sw) out.group.add(sw); }
+    return out;
+  }
+  // the stretches of a corridor wall between its door gaps (distances from the spine wall)
+  function wallSegments(gaps, len) {
+    const out = []; let a = 0.4;
+    for (const [g0, g1] of gaps.slice().sort((p, q) => p[0] - q[0])) { if (g0 - a > 1.2) out.push([a, g0]); a = g1; }
+    if (len - 0.3 - a > 1.2) out.push([a, len - 0.3]);
+    return out;
+  }
+
+  // ---------------------------------------------------------------- the symbol wall
+  const SYM = {};             // set name → { tex, data } once loaded
+  const symU = [];            // every symbol material's uniforms, for the clock
+  const WALLS = [];           // every symbol wall: { name, mesh, panels (world rectangles, facing nz), U } (for secret.js)
+  function loadSymbols(name) {
+    if (SYM[name]) return SYM[name];
+    const S = SYM[name] = { tex: null, data: null, mats: [] };
+    fetch(`museum/symbols/${name}.json?v=1`).then((r) => r.json()).then((d) => {
+      S.data = d;
+      new THREE.TextureLoader().load(`museum/symbols/${name}.webp?v=1`, (t) => {
+        t.colorSpace = THREE.NoColorSpace; t.generateMipmaps = true; t.minFilter = THREE.LinearMipmapLinearFilter; t.anisotropy = 4; S.tex = t;
+        for (const m of S.mats) fill(m, S); if (o.onReady) o.onReady();
+      });
+    }).catch(() => {});
+    return S;
+  }
+  function fill(m, S) {
+    const d = S.data, U = m.uniforms; U.uAtlas.value = S.tex; U.uGrid.value.set(d.cols, d.rows);
+    d.sets.slice(0, 4).forEach((s, i) => U.uSets.value[i].set(s.start, s.len)); U.uN.value = Math.min(4, d.sets.length); m.visible = true;
+  }
+  // the hallway's symbol wall: drips of glowing signs that fall from the ceiling toward the floor at uneven intervals,
+  // each sign flipping to another as it goes (Carter's reference, 2026-10-06). So that a column can never spell a word
+  // or a name, the scripts alternate row by row: no two signs of one script ever stand together.
+  function symbolWall(name, info) {
+    const { side: s, zk, corW, len } = info, pos = [], uv = [], dat = [], idx = [], panels = [];
+    const y0 = 0.98, y1 = (info.ceil || 4.6) - 0.05, H = y1 - y0, clear = 0.5;
+    for (const [north, gaps] of [[true, info.gapsN], [false, info.gapsS]]) {
+      const zw = zk + (north ? -corW / 2 : corW / 2) + (north ? 0.012 : -0.012), segs = wallSegments(gaps, len);
+      for (const [a, b] of segs) {
+        // the niches sit at the centres of n equal parts: panels run between them (clear of the door signs too)
+        const n = Math.max(1, Math.round((b - a) / 9)), cuts = [a + 0.5];
+        for (let k = 0; k < n; k++) { const c = a + (b - a) * (k + 0.5) / n; cuts.push(c - 0.23 - clear, c + 0.23 + clear); }
+        cuts.push(b - 0.5);
+        for (let k = 0; k < cuts.length; k += 2) {
+          const u0 = cuts[k], u1 = cuts[k + 1]; if (u1 - u0 < 0.6) continue;
+          const xa = s * (4 + u0), xb = s * (4 + u1), base = pos.length / 3, L = u1 - u0, seed = Math.random() * 100;
+          pos.push(xa, y0, zw, xb, y0, zw, xb, y1, zw, xa, y1, zw);
+          panels.push({ x0: Math.min(xa, xb), x1: Math.max(xa, xb), z: zw, y0, y1, nz: north ? 1 : -1 });
+          uv.push(0, 0, L, 0, L, H, 0, H);
+          for (let i = 0; i < 4; i++) dat.push(L, H, seed);
+          idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
+        }
+      }
+    }
+    if (!idx.length) return null;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+    g.setAttribute("aDat", new THREE.Float32BufferAttribute(dat, 3)); g.setIndex(idx);
+    const U = { uTime: { value: 0 }, uAtlas: { value: null }, uGrid: { value: new THREE.Vector2(1, 1) }, uSets: { value: [0, 1, 2, 3].map(() => new THREE.Vector2(0, 1)) }, uN: { value: 1 }, uStrength: { value: 0.85 } };
+    const m = new THREE.ShaderMaterial({
+      uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+      vertexShader: `attribute vec3 aDat; varying vec2 vUv; varying vec3 vDat; void main(){ vUv = uv; vDat = aDat; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+      fragmentShader: `
+uniform float uTime, uN, uStrength; uniform sampler2D uAtlas; uniform vec2 uGrid; uniform vec2 uSets[4];
+varying vec2 vUv; varying vec3 vDat;
+float hash(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }
+vec2 setOf(float i){ return i < .5 ? uSets[0] : i < 1.5 ? uSets[1] : i < 2.5 ? uSets[2] : uSets[3]; }
+void main(){
+  const float colW = .3, cellH = .29, gs = .24;            // column pitch, row pitch, sign size (metres)
+  float L = vDat.x, H = vDat.y;
+  float ci = floor(vUv.x / colW), fx = vUv.x - ci * colW;
+  float sd = hash(vec2(ci, vDat.z));
+  // the signs themselves stream down the wall: each column slides from the ceiling toward the floor at its own speed
+  float sd2 = hash(vec2(vDat.z + 1.3, ci * .7)), speed = .9 + sd2 * 2.6;              // rows per second, uneven from column to column
+  float s = (H - vUv.y) / cellH + sd * 40. - uTime * speed, ri = floor(s), fy = s - ri;
+  // the lit runs travel with the signs: runs of uneven length with uneven gaps, the leading (lowest) sign brightest
+  float blk = floor(s / 24.), bh = hash(vec2(blk, ci + vDat.z)), run = 5. + bh * 15.;
+  float st = hash(vec2(blk + .37, ci * 1.9 + vDat.z)) * (24. - run), loc = s - blk * 24. - st;
+  float lum = .07, headNear = 0.;
+  if (bh > .18 && loc >= 0. && loc < run + 1.) {
+    float k = clamp(loc / run, 0., 1.);
+    float hd = 1. - smoothstep(0., 1.2, abs(loc - run));
+    lum = max(lum, k * k * .85 + hd * 1.2); headNear = hd;
+  }
+  // each sign flips to another of its script at its own uneven rate; the leading sign flips fastest
+  float sIdx = mod(ri + floor(sd * 4.), uN);
+  vec2 set = setOf(sIdx);
+  float cr = hash(vec2(ci * 7.13 + ri, vDat.z + 3.)), rate = (.2 + cr * 1.3) * (1. + headNear * 7.);
+  float tp = uTime * rate + cr * 17., tick = floor(tp), ph = tp - tick;
+  // a Rolodex card: each change folds the sign shut and opens the next one
+  float flip = max(smoothstep(0., .14, ph) * (1. - smoothstep(.86, 1., ph)), .04);
+  float cell = set.x + floor(hash(vec2(tick + cr * 9., ci * 13. + ri * 1.7 + vDat.z)) * set.y);
+  vec2 lc = vec2((fx - (colW - gs) * .5) / gs, (fy * cellH - (cellH - gs) * .5) / gs);   // 0..1 inside the sign, y down
+  lc.y = (lc.y - .5) / flip + .5;                                                        // folded about its middle while it turns
+  vec2 cl = clamp(lc, 0., 1.), cxy = vec2(mod(cell, uGrid.x), floor(cell / uGrid.x));
+  vec2 inCell = vec2(cl.x, 1. - cl.y) * .96 + .02, auv = (cxy + inCell) / uGrid; auv.y = 1. - auv.y;
+  // sample with the derivatives of the position inside the sign, not of the wrapped atlas position
+  vec2 gx = dFdx(inCell) / uGrid, gy = dFdy(inCell) / uGrid; gx.y = -gx.y; gy.y = -gy.y;
+  // how many signs one pixel covers: far off and at a slant, the halo and fine detail fade rather than sparkle
+  float px = max(length(dFdx(vUv)), length(dFdy(vUv))) / gs, far = 1. - smoothstep(.06, .22, px);
+  float inside = step(0., lc.x) * step(lc.x, 1.) * step(0., lc.y) * step(lc.y, 1.);
+  float a = textureGrad(uAtlas, auv, gx * 1.6, gy * 1.6).a * inside;   // a touch soft: smooth strokes, no sparkle
+  float od = length(lc - cl);
+  float glow = textureGrad(uAtlas, auv, gx * 4., gy * 4.).a * exp(-od * 7.) * far;   // the soft halo (near only)
+  float fade = smoothstep(0., .25, vUv.x) * smoothstep(0., .25, L - vUv.x) * smoothstep(0., .45, vUv.y) * smoothstep(0., .05, H - vUv.y);
+  lum *= .55 + .45 * flip;                                                               // a turning card catches less light
+  vec3 c = vec3(.93, .96, 1.) * (a * lum * mix(.35, 1., far) + glow * min(lum, 1.) * .55) * fade * uStrength;
+  gl_FragColor = vec4(c, 1.);
+}`
+    });
+    m.visible = false;
+    const S = loadSymbols(name); S.mats.push(m); if (S.tex) fill(m, S);
+    symU.push(U);
+    const mesh = new THREE.Mesh(g, m); mesh.matrixAutoUpdate = false; mesh.renderOrder = 3;
+    WALLS.push({ name, mesh, panels, U });
+    return mesh;
+  }
+
+  // the clock: flames and symbol walls (always running; the motion switch only affects the view)
+  // (a held wall keeps its own clock still: secret.js holds a wall while it reads out its message)
+  let t = 0;
+  function update(dt) {
+    t += dt; flameU.uTime.value = t; for (const U of symU) if (!U.held) U.uTime.value = t;
+    return FLAMES.length > 0;
+  }
+  // for the screenshot tools: set the clock directly
+  function setTime(v) { t = v; flameU.uTime.value = t; for (const U of symU) if (!U.held) U.uTime.value = t; }
+  return { floorMat, floorAtlas, decorate, flames, setAreaVisible, update, setTime, walls: WALLS, symbols: loadSymbols, get time() { return t; }, get flameCount() { return FLAMES.length; } };
+}

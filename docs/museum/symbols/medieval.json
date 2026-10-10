@@ -1,0 +1,19 @@
+{
+ "wall": "medieval",
+ "label": "Wing VI, the Early Medieval",
+ "cell": 96,
+ "cols": 10,
+ "rows": 9,
+ "sets": [
+  {
+   "name": "Old Turkic: the runiform letters of the Orkhon and Yenisei inscriptions (8th century CE)",
+   "start": 0,
+   "len": 65
+  },
+  {
+   "name": "Sogdian: the script of the Silk Road's merchant people (letters; 7th-10th centuries CE)",
+   "start": 65,
+   "len": 21
+  }
+ ]
+}

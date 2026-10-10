@@ -1,0 +1,749 @@
+[
+ {
+  "id": "ch01",
+  "title": "The Flood",
+  "trigger": "In the Rotunda bay, tap the chapter symbol plate (the vessel on the waters) three times, pausing about two seconds between taps — one bird sent out per tap.",
+  "effect": "Each tap sends a small bird silhouette lifting off the plate and drifting up toward the planetarium dome, where it fades. After the third, the plate's water line glows briefly. Uses the existing plate texture plus a 2D sprite; no new model.",
+  "reveal": "The man who first read the Babylonian flood story in 1872, George Smith, was a self-taught former banknote engraver, and by one account he was so overcome that he leapt up and began tearing off his clothes. The chapter itself flags that the detail may be embellished (the witness, Budge, was colourful), though the shock behind it was real.",
+  "quote": "According to the account later handed down by his colleague E. A. Wallis Budge, Smith was so overcome that he jumped up, began to tear off his clothes, and ran about the room.",
+  "sensitivity": "Low. Keep the chapter's caveat on the card ('The detail may be embellished (Budge was a colorful witness), but the shock behind it was real'). Use the plate, not the Noah medallion, as the trigger, since Noah/Nuh is a prophet in Judaism, Christianity and Islam."
+ },
+ {
+  "id": "ch02",
+  "title": "Egypt",
+  "trigger": "Tap three Pantheon medallions in the order the chapter's opening scene sets out: Anubis (steadies the scales), then Ma'at (the feather), then Thoth (records the verdict).",
+  "effect": "As each is tapped its medallion rim warms. After Thoth, a thin balance-beam line of light appears under the ankh plate, wobbles, and settles level.",
+  "reveal": "Egyptians believed hieroglyphs could come alive, so in some burial chambers dangerous creatures were deliberately mutilated: snakes were drawn without heads, or cut in half, so they could not harm the dead.",
+  "quote": "This belief has left startling physical evidence: in some burial chambers, hieroglyphs depicting potentially dangerous creatures were deliberately mutilated — snakes drawn without heads, or cut in half — so that they could not come to life and harm the deceased.",
+  "sensitivity": "Low. Ancient religion; there is a small modern Kemetic revival, so keep the tone admiring, not 'spooky'. Do not animate the Pyramid Texts slab or the Papyrus of Ani (funerary texts)."
+ },
+ {
+  "id": "ch03",
+  "title": "Mesopotamia",
+  "trigger": "Tap three medallions in descending order of their divine numbers, as the chapter lists them: Enki/Ea (40), then Shamash/Utu (20), then Inanna/Ishtar (15).",
+  "effect": "Each medallion briefly shows its number as wedge-shaped cuneiform tally marks drawn in gold on the existing canvas; after Ishtar the eight-pointed star on the plate glints once.",
+  "reveal": "Mesopotamian gods each had a number in the base-60 system: Anu 60, Enlil 50, Ea 40, Sin 30, Shamash 20, and Ishtar 15, exactly half her father Sin's. Modern 'Anunnaki code' systems built on these numbers are recent inventions, not ancient doctrine.",
+  "quote": "Anu, the sky-father, held 60; Enlil 50; Ea/Enki 40; the moon-god Sin 30; the sun-god Shamash 20; and Inanna/Ishtar 15 (exactly half her father Sin’s).",
+  "sensitivity": "Low. Keep the chapter's warning that the modern 'Anunnaki' numerology is not ancient. Do not involve the Pazuzu medallion, so the egg does not lean into demon imagery."
+ },
+ {
+  "id": "ch04",
+  "title": "Indus Valley",
+  "trigger": "Stand still at the river's edge for 5 seconds. The room has no figures or cases; the river and the Great Bath plate are its features.",
+  "effect": "Ripples on the water settle into a faint square outline echoing the Great Bath plan on the plate, then dissolve. Shader or decal only.",
+  "reveal": "The one Indus 'code' we can actually read is not religious at all: a standardized set of cubical stone weights, in a regular binary-then-decimal ratio, uniform across the whole civilization. The script itself is still undeciphered.",
+  "quote": "There is one Indus “code” we can read, and it is not religious: the standardized system of cubical stone weights, in a regular binary-then-decimal ratio, uniform across the whole territory.",
+  "sensitivity": "Low to moderate. The identity and religion of the Indus people is politically contested in modern India; the egg deliberately reveals a non-religious fact and makes no claim about who the Indus people were or what they believed. Avoid the swastika motif in any effect."
+ },
+ {
+  "id": "ch05",
+  "title": "Early Vedic",
+  "trigger": "Tap the Indra medallion three times. Each tap plays one abstract tone: high, low, falling (an echo of the three Vedic pitch accents).",
+  "effect": "Three soft synthesized tones from sound.js, with no words or chant, and the medallion's rim pulses with each. The third tone is deliberately 'off', and the rim flickers once.",
+  "reveal": "In a Vedic cautionary tale, the craftsman-god Tvashtr wanted a son who would be 'the slayer of Indra', misplaced a single pitch accent, and the word came to mean 'one whose slayer is Indra'. His son was killed by Indra: a whole theology of consequence hangs on one syllable's tone.",
+  "quote": "The tradition preserved a chilling cautionary tale: the craftsman-god Tvashtr, meaning to create a son who would be \"the slayer of Indra\" (indra-shatru), misplaced a single pitch accent, so that the compound instead meant \"one whose slayer is Indra\" — and his son was duly killed by Indra.",
+  "sensitivity": "MODERATE. Vedic recitation is living Hindu practice. Never play recorded or synthesized mantra or Vedic chant (especially not the Gayatri Mantra or Om). Use abstract tones only. Indra and Agni are still honoured, so the medallion effect must stay dignified."
+ },
+ {
+  "id": "ch06",
+  "title": "Zoroaster",
+  "trigger": "Stand quietly within about 2 m of one of the room's flame fittings for 6 seconds without moving.",
+  "effect": "Every flame in the room steadies and brightens slightly together for a few seconds, using the existing flame-light and baked glow; nothing flickers out.",
+  "reveal": "In Yazd, Iran, a temple flame behind glass has, by tradition, been fed by hand and never allowed to die since 470 CE. Its priests wear cloth masks so their breath will not defile it.",
+  "quote": "In the desert city of Yazd, in central Iran, a flame burns behind glass in a temple, and it has been burning — fed by hand, never allowed to die — since, by tradition, the year 470 CE.",
+  "sensitivity": "HIGH (living community). Zoroastrians are a small living faith and the sacred fire is their central object of veneration. The egg must never let the visitor dim, blow out or 'feed' a flame, and must not simulate entering a fire-temple sanctum (the chapter notes no stranger may enter). Keep 'by tradition' on the 470 CE date. Do not use the Faravahar."
+ },
+ {
+  "id": "ch07",
+  "title": "Pre-exilic Israel",
+  "trigger": "Tap the Mesha Stele case, then the Tel Dan Stele case: the room's two inscribed stones, written in the early alphabet.",
+  "effect": "A thin line of light runs along the floor between the two cases, and a row of letter-shapes (generic Phoenician-style signs, not a real inscription) glows on the lectern's edge and fades.",
+  "reveal": "The alphabet, one sign per sound, was invented in the Bronze Age Levant and made literacy far easier than hieroglyphs or cuneiform. It is the ancestor of Hebrew, Greek, Latin, Arabic, and the page you are reading.",
+  "quote": "It made literacy vastly easier than Egypt's hundreds of hieroglyphs or Mesopotamia's cuneiform, and it is the ancestor of Hebrew, Greek, Latin, Arabic, and this very page.",
+  "sensitivity": "HIGH. Deliberately avoids the Divine Name (do not show or sound YHWH), the YHWH medallion, the Ark of the Covenant case, the Ketef Hinnom amulets (which carry the priestly blessing) and the menorah plate. The glowing letters must be generic signs and must not spell the Tetragrammaton or any verse."
+ },
+ {
+  "id": "ch08",
+  "title": "Early Greece",
+  "trigger": "Tap Zeus, then Poseidon, then Hera: the order in which the chapter lists their Linear B names (di-we, po-se-da-o, e-ra).",
+  "effect": "Each medallion briefly shows its Linear B spelling in transliteration (di-we, po-se-da-o, e-ra) on a small caption, and the lyre plate sounds one soft plucked note per tap.",
+  "reveal": "Bronze Age clay accounts from about 1200 BCE already name Zeus, Poseidon, Hera, Hermes, and even Dionysus, a god later Greeks believed had arrived late from the East.",
+  "quote": "And scattered through that Bronze Age bookkeeping were names that made the hair stand up: di-we (Zeus), po-se-da-o (Poseidon), a-ta-na po-ti-ni-ja (\"the Lady of Athana,\" Athena), e-ra (Hera), a-re (Ares), e-ma-a (Hermes) — and, astonishingly, di-wo-nu-so (Dionysus), a god later Greeks thought had arrived late from the East.",
+  "sensitivity": "Low. Hellenic polytheism has small living revivals; the egg is purely about the written record. Avoid the Derveni Papyrus and the Orphic material (mystery-rite content)."
+ },
+ {
+  "id": "ch09",
+  "title": "Early China",
+  "trigger": "Stand still at the edge of the turtle pond for 5 seconds.",
+  "effect": "One of the room's turtles surfaces near you, and a fine crack-line glows across the Oracle Bones of Anyang case for a moment (a decal on the case glass).",
+  "reveal": "Oracle bones, the oldest Chinese writing, were rediscovered in 1899 in a medicine prescription. Farmers near Anyang had for years been digging them up as 'dragon bones' and selling them to pharmacies to be ground up.",
+  "quote": "The bones were traced to fields near Anyang, in Henan, where farmers had for years been digging up \"dragon bones\" and selling them to pharmacies.",
+  "sensitivity": "Low. Ancestor veneration is living practice in Chinese religion; keep the effect to the case and the turtle, not the Shangdi medallion. Do not show the Shang human-sacrifice material."
+ },
+ {
+  "id": "ch10",
+  "title": "Second Temple Judaism",
+  "trigger": "Walk to the room's open desert edge and stand looking out for 5 seconds, as if at the Qumran cliffs.",
+  "effect": "A quiet sound cue (a pebble, then a soft clink of pottery) from sound.js; then the room's five manuscript cases glow one after another, in a ripple.",
+  "reveal": "In 1947 a Bedouin shepherd threw a stone into a cave and heard pottery break. Eleven caves eventually yielded some 900 manuscripts, including the oldest copies of the Hebrew Bible by a thousand years.",
+  "quote": "Over the next decade, eleven caves gave up the remains of some 900 manuscripts: the oldest copies of the Hebrew Bible by a thousand years, and, alongside them, the private library of a Jewish community that no one had known existed — with its own rule book, its own calendar, its own hymns, and its own conviction that it alone were the true \"sons of light\" awaiting God's final war against the \"sons of darkness.\"",
+  "sensitivity": "MODERATE. The scrolls and the Aleppo Codex are sacred scripture containing the Divine Name: the cases only glow; no text is displayed or animated, and nothing 'opens'. Do not involve the Satan or Asmodeus medallions. The card may also quote the opening sentence for the stone-and-pottery story: 'In 1947 a Bedouin shepherd, tossing stones into a cave in the cliffs above the Dead Sea at a place called Qumran, heard pottery shatter.'"
+ },
+ {
+  "id": "ch11",
+  "title": "Buddhism",
+  "trigger": "Walk one full clockwise circle around the middle of the room, as pilgrims circle a stupa.",
+  "effect": "The tiered parasols on the stupa plate light one by one, bottom to top, as the circle is completed. An anticlockwise circle does nothing.",
+  "reveal": "The Dharma wheel's eight spokes stand for the Eightfold Path. Ashoka set it on his pillars, and the same wheel turns today on the flag of India.",
+  "quote": "To \"turn the wheel\" is to teach; Ashoka set it atop his pillars as the sign of a realm ruled by Dharma, and it turns, today, on the flag of India.",
+  "sensitivity": "MODERATE. Circumambulation is a living devotional act; the egg mirrors it respectfully and rewards only the traditional clockwise direction. The circle should be round the room's centre, not round the Sacred Tooth Relic or Piprahwa relic cases, which are living objects of veneration and must not be animated."
+ },
+ {
+  "id": "ch12",
+  "title": "Confucianism & Daoism",
+  "trigger": "Tap the bagua symbol plate six times. Each tap adds one line, built from the bottom up as a hexagram is.",
+  "effect": "Six lines (alternately broken and unbroken, in a fixed pattern) stack up beside the plate, then flip to read as 0s and 1s for a second before fading.",
+  "reveal": "The Yijing's broken and unbroken lines form a binary notation so elegant that Leibniz, when he saw it, recognized his own binary arithmetic.",
+  "quote": "The genius of the system is that it encodes the deepest Chinese metaphysical intuition — that reality is not static substance but ceaseless transformation, the interplay of yin and yang — into a binary notation so elegant that Leibniz, seeing it, recognized his own binary arithmetic.",
+  "sensitivity": "Low to moderate. Yijing divination is still practised: the egg must always draw the same fixed figure and must never generate or interpret a 'reading' or fortune."
+ },
+ {
+  "id": "ch13",
+  "title": "Rome",
+  "trigger": "Look straight up at the sky for 4 seconds, as an augur did when marking out the sky.",
+  "effect": "A faint rectangle is drawn on the sky directly overhead (a templum), and the room's swallows fly through it. A simple line overlay.",
+  "reveal": "Before taking the auspices, an augur marked out a templum, a sacred rectangle on the ground and in the sky. Our word 'temple' comes from it, and so does 'contemplate'.",
+  "quote": "Our word temple descends from it, and so, strikingly, does contemplate — \"to mark out a templum in the mind.\"",
+  "sensitivity": "Low. Roman state religion has no large living community. Do not involve the Vesta flame or the Pilate Stone."
+ },
+ {
+  "id": "ch14",
+  "title": "Celtic & Germanic",
+  "trigger": "Stand before the triquetra-and-runes plate for 5 seconds on a Tuesday, Wednesday, Thursday or Friday, using the visitor's own device clock. On other days the plate shows a hint: 'come back midweek'.",
+  "effect": "The rune row on the plate glows, and a small caption names today's god: Tiw, Woden, Thunor or Frig.",
+  "reveal": "Four English weekday names carry Germanic gods: Tuesday is Tiw's (Tyr's), Wednesday Woden's (Odin's), Thursday Thunor's (Thor's), and Friday Frig's.",
+  "quote": "When the Germanic peoples adopted the Roman seven-day planetary week, they translated its gods into their own by interpretatio, and English still carries the result: Tuesday is Tiw's (Tyr's) day, Wednesday Woden's (Odin's) day, Thursday Thunor's (Thor's) day, and Friday the day of the goddess Frig — the war-god, the sky-and-wisdom god, the thunderer, and the love-goddess, each matched to the Roman deity they most resembled (Mars, Mercury, Jupiter, Venus).",
+  "sensitivity": "MODERATE. Modern Heathenry and Celtic paganism are living traditions, and some runes have been appropriated by white-supremacist groups: the rune glow must stay on the existing plate's script sample and must not add the othala rune or other appropriated signs. Avoid the bog bodies and the Book of Kells (a Christian sacred book)."
+ },
+ {
+  "id": "ch15",
+  "title": "Classical Greece",
+  "trigger": "Tap the pentagram plate in the rhythm of the tetractys: 1 tap, pause, 2 taps, pause, 3 taps, pause, 4 taps.",
+  "effect": "Ten points of light appear in a triangle of four rows over the plate, with three soft tones in the ratios 2:1, 3:2 and 4:3 (octave, fifth, fourth) via sound.js.",
+  "reveal": "The Pythagoreans' holiest symbol was the tetractys, ten points in a triangle (1+2+3+4). They swore their oath on it, believing its ratios held both musical harmony and the order of the cosmos.",
+  "quote": "The Pythagoreans swore their oath upon it, revering it as the blueprint of creation — for it contains the whole numerical order and the ratios of musical harmony (2:1 the octave, 3:2 the fifth, 4:3 the fourth), so that the same numbers that make music were thought to make the cosmos: the \"harmony of the spheres.\"",
+  "sensitivity": "Low. Avoid the Eleusinian and Orphic material (secret rites) in this room's egg."
+ },
+ {
+  "id": "ch16",
+  "title": "Early Christianity",
+  "trigger": "Stand still at the lake shore (the Sea of Galilee) for 5 seconds.",
+  "effect": "One of the lake's fish swims close, and a simple two-arc fish outline appears faintly, as if scratched on the nearest wall, then fades.",
+  "reveal": "The cross, now Christianity's universal symbol, was rare in the first centuries. Early Christians more often used the fish, the anchor, the dove, or the Good Shepherd, and the cross rose to dominance only after Constantine abolished crucifixion.",
+  "quote": "Strikingly, the cross itself — later Christianity's universal symbol — was rare in the first centuries.",
+  "sensitivity": "MODERATE. Living faith: no image of Jesus or of any holy figure, and the medallions stay untouched. Keep the egg well away from the relic cases (Holy Lance, the Magdalene skull, the Shroud material) and the forged 'Gospel of Jesus's Wife'. The fish is a devotional sign, so draw it plainly and with respect."
+ },
+ {
+  "id": "ch17",
+  "title": "Gnosticism",
+  "trigger": "Wait for a lightning flash in the storm sky and tap the Abraxas medallion during the flash (within about 1 s).",
+  "effect": "The seven Greek letters ΑΒΡΑΣΑΞ appear in an arc round the medallion, each with its number value, and then sum to 365 in the centre.",
+  "reveal": "The name Abraxas is a number puzzle: in Greek letter-values, ΑΒΡΑΣΑΞ adds up to exactly 365, the number of Basilides's heavens and of the days of the year.",
+  "quote": "The word ΑΒΡΑΣΑΞ (Abrasax/Abraxas), the great Archon of Basilides's 365 heavens, is a masterpiece of Greek isopsephy (letter-number values, the system met in Chapter 15): its letters sum to exactly 365 — the number of the heavens, and of the days of the year.",
+  "sensitivity": "Low. Historical movement; avoid making it look like a modern occult 'activation'. Mandaeans (a living Gnostic community) are not involved here."
+ },
+ {
+  "id": "ch18",
+  "title": "Roman Mystery Cults",
+  "trigger": "In the cave, look down at the floor for 3 seconds, then straight up for 3 seconds (the torch down, then the torch up, of the crossed-torches plate).",
+  "effect": "The plate's two torches glow in turn, one pointing down and one pointing up, and seven faint points (the seven planets) light up one after another on the cave ceiling.",
+  "reveal": "Mithraic initiation had seven grades, from Raven to Father, each linked to one of the seven classical planets. They appear to encode the soul's ascent through the planetary spheres.",
+  "quote": "The seven grades of Mithraic initiation, each linked to one of the seven classical planets, appear to encode the ascent of the soul through the planetary spheres — a ritual ladder from Raven to Father, from earth toward the divine, of a kind the Gnostics (Chapter 17) and later esotericists also mapped.",
+  "sensitivity": "MODERATE (secret rites). The mysteries were deliberately secret, and the chapter stresses how little is known. Keep 'appear to' in the card and never present a reconstructed initiation as fact. No blood or taurobolium imagery, and the egg does not touch the Emerald Tablet case."
+ },
+ {
+  "id": "ch19",
+  "title": "Rabbinic Judaism",
+  "trigger": "Walk up to a side wall of the room and press against it for 3 seconds. In the story, the walls of the study-house leaned in.",
+  "effect": "The wall leans inward by a degree or two, then rights itself (a tiny transform). A nearby tree in the meadow sways at the same moment.",
+  "reveal": "In the Talmud's Oven of Akhnai story, the sages overruled even a heavenly voice, saying the Torah 'is not in heaven'. Asked how God reacted, the prophet Elijah reports that God laughed and said, 'My children have defeated me.'",
+  "quote": "The tale ends with one of the most astonishing lines in all religious literature: the prophet Elijah, asked what God did in that moment, reports that God laughed and said, \"My children have defeated me, my children have defeated me.\"",
+  "sensitivity": "MODERATE. Living tradition. The card quotes the Talmud's own story, so it is respectful, but it must not render God's name or any image of God. Deliberately avoids the Torah-scroll plate (do not tap, spin or animate a Torah image), the Aramaic incantation bowls and the Lilith medallion."
+ },
+ {
+  "id": "ch20",
+  "title": "Mahayana Buddhism",
+  "trigger": "Stand quietly at the lotus pond's edge for 6 seconds. 'She who hears every cry': the frogs fall silent while you wait.",
+  "effect": "The frogs stop croaking, the koi gather, and the rim of the Avalokiteśvara / Guanyin medallion brightens softly. The emblem itself is not changed.",
+  "reveal": "The bodhisattva of compassion entered China as the male Avalokiteshvara. Over the following centuries the figure changed sex, and by the Song dynasty Guanyin was firmly a goddess, the 'Goddess of Mercy'.",
+  "quote": "The bodhisattva of compassion entered China as Avalokiteshvara, an unambiguously male figure (\"the lord who looks down\"). Over the following centuries he changed sex.",
+  "sensitivity": "MODERATE. Living devotion. Do not alter or animate the bodhisattva's emblem (it only brightens), and do not play the Heart Sutra mantra or any chant. The quote is two consecutive sentences."
+ },
+ {
+  "id": "ch21",
+  "title": "Islam",
+  "trigger": "Stand before the eight-fold rosette plate for 8 seconds.",
+  "effect": "The rosette's gold lines extend outward across the wall, repeating into an endless geometric field (compass-and-straightedge lines only), then draw back into the plate.",
+  "reveal": "The crescent moon and star is not an original emblem of Islam. It was a Turkic and Byzantine device adopted widely only under the Ottoman Empire, more than a thousand years after Muhammad. Islam's own sacred art is calligraphy and geometry.",
+  "quote": "A symbol honesty note: the familiar crescent moon and star is not an original emblem of Islam; it was a Turkic and Byzantine device adopted widely only under the Ottoman Empire, more than a millennium after Muhammad — a reminder, as with the Jewish Star of David (Chapter 19), that a tradition's best-known modern symbol may be a late arrival.",
+  "sensitivity": "HIGH. A quieter egg on purpose: non-figural geometry only. Never interact with or animate the medallions of Muhammad, Khadija, Fatima, ʿAlī or Ḥusayn, or the Black Stone or Qur'an manuscript cases. No Qur'anic text in the effect, no recitation audio, and no crescent image (it would contradict the reveal). Phrase the card neutrally so it does not read as debunking the faith."
+ },
+ {
+  "id": "ch22",
+  "title": "Patristic Christianity",
+  "trigger": "Look straight up at the sun in the clear desert sky for 4 seconds.",
+  "effect": "A faint halo ring forms around the sun (a natural sun-halo effect, with no letters or cross drawn in the sky), and the Chi-Rho/Alpha-Omega plate glints once.",
+  "reveal": "What Constantine actually saw and used is genuinely unclear. Eusebius says the Chi-Rho went on his standard, Lactantius describes a different mark, and the Chi-Rho appears on his coins only from about 319–320, some years after the battle.",
+  "quote": "It is the sign Eusebius says Constantine set on the imperial standard, the labarum — though Lactantius describes a different mark (a staurogram, a Tau-Rho resembling a cross), and the Chi-Rho appears on Constantine's coins only from about 319–320, some years after the battle.",
+  "sensitivity": "MODERATE to HIGH. Living faith, and Constantine's vision is a cherished story. Keep the chapter's framing that 'The evidence for exactly what Constantine saw and used is genuinely mixed' and do not imply the vision was a sun-halo. Keep the egg away from the True Cross, Sudarium and Shroud cases and the Reliquary game kiosk."
+ },
+ {
+  "id": "ch23",
+  "title": "Norse Paganism",
+  "trigger": "Press and hold the Freyja medallion for 3 seconds while standing in the snow.",
+  "effect": "A few small golden drops fall from the medallion's rim and vanish into the snow (2D sparkles).",
+  "reveal": "Norse court poets never named things plainly. Gold was 'Freyja's tears' or 'Sif's hair', and poetry was 'Odin's mead', so the poems cannot be read without knowing the myths.",
+  "quote": "Skaldic kennings are a genuine encoded language of the tradition: the court poets named things only by mythic riddle — gold as \"Sif's hair\" or \"Freyja's tears,\" poetry as \"Odin's mead\" or \"the dwarves' drink,\" a ship as \"the horse of the waves,\" battle as \"the storm of Odin\" — so that the verse is unreadable without the myths, and the myths were kept alive because the poetry required them.",
+  "sensitivity": "MODERATE. Heathenry is a living religion, and Norse symbols (the valknut, some runes) are appropriated by white-supremacist groups. The effect uses no runes or knots. Do not use the Rök or Kensington runestone cases (Kensington is a forgery case)."
+ },
+ {
+  "id": "ch24",
+  "title": "Tantra",
+  "trigger": "Walk once around the whole edge of the room, close to the walls, like the ring of shrines at Khajuraho.",
+  "effect": "Sixty-four tiny points of light appear in a ring along the tops of the walls, with one more in the centre above the Śrī Yantra plate; then all but thirty-five fade, as only thirty-five cells survive.",
+  "reveal": "The Chausath Yogini temple at Khajuraho, an open-air ring of shrines to the sixty-four yoginis, is the oldest surviving building at the Chandela capital, dated to about 885 CE.",
+  "quote": "It is the Chausath Yogini temple — \"the sixty-four yoginis\" — and it is the oldest surviving building at the Chandela capital, dated to about 885 CE.",
+  "sensitivity": "HIGH (closed and initiatory rites). The chapter stresses that Tantra's practices pass only from teacher to initiate. The egg must not 'activate' the yantra, play bīja mantras, stage a rite, or use the Kali, Durga or Shiva medallions, and nothing may allude to sexual practice. Lights only, as a nod to the building's plan."
+ },
+ {
+  "id": "ch25",
+  "title": "Shinto",
+  "trigger": "Stand still on the bank of the brook for 20 seconds (one second for each year of the Ise rebuilding cycle).",
+  "effect": "The mist thins, the fireflies gather, and a faint second outline of the torii plate appears beside the original. The old outline fades as the new one settles.",
+  "reveal": "Every twenty years the holiest Shinto shrine, at Ise, is torn down and rebuilt exactly on the neighbouring plot. The ritual has been carried out for roughly 1,300 years and was most recently begun in 2025.",
+  "quote": "Every twenty years the shrine is torn down and built again, exact in every joint, on that neighboring ground, the deity moved to the new hall and the old one dismantled — a ritual called the shikinen sengū, carried out for roughly 1,300 years, most recently begun in 2025.",
+  "sensitivity": "MODERATE to HIGH (living worship). Do not depict the Ise sanctuary itself or the sacred mirror (shintai) or the imperial regalia, which are never shown. Do not use shrine-worship gestures such as bowing or clapping as game mechanics. Leave the Amaterasu medallion alone."
+ },
+ {
+  "id": "ch26",
+  "title": "Kabbalah",
+  "trigger": "Stand at the centre of the room under the starry sky and look up for 10 seconds (one second for each sefirah).",
+  "effect": "Ten stars brighten into the Tree of Life arrangement and twenty-two faint lines join them, then fade. No Hebrew letters or divine names are drawn.",
+  "reveal": "The Kabbalistic Tree of Life has ten sefirot joined by twenty-two paths, one for each Hebrew letter: thirty-two in all, meant to hold the whole architecture of God and cosmos in one figure.",
+  "quote": "And the Tree of Life diagram is itself a symbol-system: ten sefirot joined by twenty-two paths (one per Hebrew letter), thirty-two in all, a single figure meant to hold the whole architecture of God and cosmos.",
+  "sensitivity": "HIGH. Never display the Tetragrammaton or the 42- or 72-letter divine names, and do not present the effect as a meditation or an amulet. The more 'surprising' gematria (Nachash = Mashiach = 358) and the golem were considered and rejected: the first because a serpent-Messiah pairing can be misread, the second because animating letters reads as magic."
+ },
+ {
+  "id": "ch27",
+  "title": "Sufism",
+  "trigger": "Stand quietly in the dusk garden for 10 seconds without moving or tapping anything.",
+  "effect": "The other birds fall quiet and a single songbird (nightingale-like) sings via sound.js, while the light warms slightly.",
+  "reveal": "The wine of Sufi poetry is not about drinking. It is a complete symbolic code: the wine is divine love, drunkenness is the loss of self in God, and the Cupbearer and the Beloved are God.",
+  "quote": "The famous wine imagery of Sufi poetry is a complete symbolic system, not a celebration of drink.",
+  "sensitivity": "HIGH (living worship). A quieter egg on purpose. The obvious trigger, spinning on the spot like the whirling dervish on the plate, was rejected: the sema is a living prayer ceremony of the Mevlevi order and should not be a game move. Do not animate the dervish plate or play dhikr, the Divine Names, or ney and drum ceremony audio."
+ },
+ {
+  "id": "ch28",
+  "title": "Scholasticism",
+  "trigger": "Tap the rose-window plate three times. Each tap turns one concentric ring of the window a step, like a combination wheel.",
+  "effect": "The rings of the rose window rotate independently (three 2D layers of the existing SVG) and click into alignment on the third tap, with a soft chime.",
+  "reveal": "The Majorcan mystic Ramon Llull (1232–1316) built rotating paper wheels lettered with divine attributes to generate combinations of ideas, a 'thinking machine' often reckoned a distant ancestor of symbolic logic and the computer.",
+  "quote": "It is often reckoned a distant ancestor of symbolic logic and the computer.",
+  "sensitivity": "Low to moderate. The card should name Llull's aim neutrally: the chapter says his machine was 'meant to demonstrate the truths of the faith and convert Muslims and Jews by pure logic', and the card must not celebrate that goal. Keep the egg away from the Crown of Thorns case (a venerated relic) and the Codex Gigas 'Devil's Bible'."
+ },
+ {
+  "id": "ch29",
+  "title": "The Maya",
+  "trigger": "Tap the lectern 13 times in a row (one tap for each bakʼtun of the Long Count).",
+  "effect": "The lectern's page shows a small five-place Long Count readout. Each tap rolls a digit like a car odometer; on the thirteenth it clicks over from 12.19.19.17.19 to 13.0.0.0.0, pauses, then carries on to 13.0.0.0.1. One macaw calls. Nothing ends, and that is the joke.",
+  "reveal": "The famous '2012 Maya apocalypse' was never in any Maya text. The close of the thirteenth bakʼtun on 21 December 2012 marked the turning of a great cycle, like an odometer rolling over, and the count simply carries on.",
+  "quote": "The thirteenth bakʼtun of that count closed on 21 December 2012 — which, in no Maya text, ever meant the end of the world. It meant the turning of a great cycle, like an odometer rolling over.",
+  "sensitivity": "Low. Some six million Maya live today, so the egg corrects a modern myth about their ancestors and does not make fun of the calendar itself. It stays clear of the bloodletting and sacrifice imagery, and of the Dresden Codex and Popol Vuh cases."
+ },
+ {
+  "id": "ch30",
+  "title": "Bhakti",
+  "trigger": "Tap the lotus symbol plate three times.",
+  "effect": "The plate's lotus lights petal by petal. A handful of pale petals drift down from the plate onto the river and float away downstream; the kingfisher makes one low pass over them.",
+  "reveal": "The Bhakti poet-saints, singing in their mother tongues and not in Sanskrit, did more than anyone to shape the modern Indian languages: Tulsidas made a scripture of Awadhi, Tukaram of Marathi and Mirabai of Rajasthani.",
+  "quote": "In doing so the movement became the single most powerful force in shaping the modern Indian languages: Tulsidas made a scripture of Awadhi, Surdas of Braj, Tukaram of Marathi, Mirabai of Rajasthani, Chaitanya's followers of Bengali, Narsinh Mehta of Gujarati.",
+  "sensitivity": "Moderate. The room holds medallions of deities who are worshipped today (Vishnu, Krishna, Ganesha, Lakshmi, Hanuman, Brahma). Petals must land only on the river, never on or in front of a deity medallion, so the effect cannot look like an imitation of puja. Do not use the divine-name chanting (nama-japa) as a sound or mechanic."
+ },
+ {
+  "id": "ch31",
+  "title": "The Reformation",
+  "trigger": "Stand directly in front of the See also board and face it for 5 seconds.",
+  "effect": "A small parchment sheet appears on the board with a single soft hammer-tap sound. A moment later a faint question mark fades in beside it, and the rain on the skylight eases.",
+  "reveal": "The image of Luther hammering the 95 Theses to the Wittenberg church door may be a later legend. Some historians think he simply mailed them to his bishop.",
+  "quote": "Whether he actually hammered them to the door is genuinely uncertain; some historians think the dramatic scene a later legend, and that he simply mailed them to his bishop.",
+  "sensitivity": "Low. Keep it even-handed between Catholic and Protestant: no indulgence jingle, coin sounds or anti-papal jokes. The Rohonc Codex case is not involved."
+ },
+ {
+  "id": "ch32",
+  "title": "The Witch Trials",
+  "trigger": "Stand still in front of the unbalanced-scales symbol plate for 10 seconds without moving or tapping.",
+  "effect": "Quiet by design. The storm outside dims a little, and on the plate the tipped scales slowly settle level. There is no sound, or at most one low bell. There are no witch images and no fire.",
+  "reveal": "Not every judge believed it. The Spanish inquisitor Alonso de Salazar Frías examined the Basque witch panic of 1609–14, found no real evidence of witchcraft at all, and effectively stopped the hunts in Spain.",
+  "quote": "But the counter-cases matter as much: the Spanish and Roman Inquisitions, often imagined as the cruelest, were in fact among the most skeptical — the Spanish inquisitor Alonso de Salazar Frías, after investigating the Basque panic at Zugarramurdi (1609–14), concluded there was no real evidence of witchcraft at all and effectively halted the hunts in Spain.",
+  "sensitivity": "HIGH: this chapter is about tens of thousands of real victims, so the egg is deliberately quiet and has no whimsy. Do not use witch iconography (hats, brooms, cauldrons, cats), flames, 'find the witch' or accusation mechanics, or the Malleus Maleficarum case. The scales coming level marks justice, not the victims. The card's tone must stay sober."
+ },
+ {
+  "id": "ch33",
+  "title": "African Traditional Religion",
+  "trigger": "Tap the Ifá-motif symbol plate eight times.",
+  "effect": "With each tap one of the plate's eight mark positions lights up, single stroke or double, exactly as drawn on the plate. The sequence is fixed and never random. On the eighth tap the completed figure glows once and fades.",
+  "reveal": "Ifá divination is a real information system. Each of its 256 figures (odu) is in effect an eight-position binary signature, and each one unlocks a large body of memorized verse. UNESCO lists the Ifá corpus as intangible heritage of humanity.",
+  "quote": "The diviner reads the result of the cast as one of 256 figures (the odu), each a distinct pattern of marks that is, in effect, an eight-position binary signature — and each of which unlocks a vast body of memorized verse.",
+  "sensitivity": "Moderate-high. This is a living tradition (the room carries the 'A living tradition' board), and Ifá is a priestly practice. The egg must not pretend to cast or 'give' the visitor an odu: no random results, no odu names or verses, no fortune text. The card should say it illustrates the encoding and is not a reading. Do not use the orisha medallions. A 'greet Èṣù first' order puzzle was rejected because it would imitate ritual protocol. The Benin Bronzes case is not involved."
+ },
+ {
+  "id": "ch34",
+  "title": "Sikhism",
+  "trigger": "Stand at the edge of the pool (the sarovar) and stay still for 6 seconds.",
+  "effect": "Soft ripples start at the pool's four sides at the same moment, travel inward and meet in the middle. The koi gather there briefly. No music.",
+  "reveal": "The Guru Granth Sahib keeps, alongside the Sikh Gurus' hymns, the verses of some fifteen Hindu and Muslim saints, among them Kabir, Ravidas and Baba Farid. It may be the only major scripture that places the words of other faiths in its own canon.",
+  "quote": "It is perhaps the only major scripture that places the words of other faiths within its own canon.",
+  "sensitivity": "Moderate. Sikhs treat the Guru Granth Sahib as a living Guru, so never animate, open or play with the Kartarpur Bir case, and never show scripture text. No sound that imitates kirtan or raga. Do not make the Khanda plate a tap target. The ripples are an image of many voices meeting and must not suggest bathing in the sarovar."
+ },
+ {
+  "id": "ch35",
+  "title": "New Religious Movements",
+  "trigger": "Tap the symbol plate (the book beneath the rising star), then tap the lectern within 5 seconds.",
+  "effect": "The star on the plate rises a little higher, and a thin beam of dawn light runs from it to settle on the lectern's open page. Songbirds pick up.",
+  "reveal": "Every faith in the archive was once new. Christianity, Islam, Buddhism and Sikhism were each, in their day, what scholars would now call a new religious movement.",
+  "quote": "Christianity, Islam, Buddhism, and Sikhism were each, in their day, precisely what we would now call an NRM: a startling innovation gathered around a founder, viewed with suspicion by the powers of the age.",
+  "sensitivity": "Moderate. The room covers living communities (Latter-day Saints, Bahá'í, Adventists, Jehovah's Witnesses and others) and real tragedies (Jonestown, Waco). The egg is about the category, not any one movement. Keep away from the Golden Plates case, which is sacred to Latter-day Saints, and never show any image of the Báb (archive rule)."
+ },
+ {
+  "id": "ch36",
+  "title": "Spiritualism",
+  "trigger": "Knock twice on the planchette symbol plate (two quick taps).",
+  "effect": "After a short pause your own two knocks come back as a soft, clearly echoing double rap, plainly an echo and not an answer. The fog thins for a moment and the owl hoots once.",
+  "reveal": "In 1888 Margaret Fox, one of the two sisters whose 'spirit rappings' began Spiritualism, said on a New York stage that the raps had been a trick done by cracking her toe and knuckle joints. She later took the confession back.",
+  "quote": "Forty years later, in 1888, Margaret Fox stood on a New York stage and confessed that it had all been a trick: the raps were made by cracking the joints of her toes and knuckles, a childish prank that had grown into a worldwide movement. She later recanted the confession, and died in poverty soon after.",
+  "sensitivity": "Low-moderate. Spiritualist churches are active today, and the chapter says the comfort they gave the grieving was real. The card should keep the recantation and avoid a 'gotcha' tone. The echo must not look like contact with the dead: no ghosts, voices or spelled-out messages."
+ },
+ {
+  "id": "ch37",
+  "title": "Theosophy & the Occult Revival",
+  "trigger": "Walk one complete circle around the Ouroboros game kiosk.",
+  "effect": "When the loop closes, the kiosk screen briefly shows the serpent swallowing its tail. Then the room's lamplight drifts slowly through a few soft colour fields, like the colour plates of 'Thought-Forms', before settling back.",
+  "reveal": "Hilma af Klint, a Swedish painter and member of the Theosophical Society, was painting large, fully abstract canvases from 1906, years before the men usually credited with inventing abstract art.",
+  "quote": "Most striking of all, the Swedish painter Hilma af Klint, a member of the Theosophical Society, was painting large, wholly abstract canvases as early as 1906 — years before the men long credited as abstraction's pioneers — as a deliberately mediumistic, esoteric project.",
+  "sensitivity": "Low. The room holds the Baphomet medallion and The Book of the Law, sacred to living Thelemites. The egg avoids both, uses no sigils, and keeps the plate's withheld swastika out of view."
+ },
+ {
+  "id": "ch38",
+  "title": "Wicca & Modern Paganism",
+  "trigger": "Stand still at the edge of the forest for about 8 seconds, until one of the hares hops close.",
+  "effect": "The fireflies drift into a loose wheel of eight points of light for a few seconds and then scatter. The owl stays quiet.",
+  "reveal": "The eight festivals of the modern Pagan Wheel of the Year are a modern synthesis: no single ancient people kept exactly these eight under these names, and 'Mabon' was only coined in the 1970s. That has not stopped the calendar becoming genuinely sacred to the people who keep it.",
+  "quote": "The eight-fold Wheel of the Year is itself a modern synthesis: no single ancient people kept exactly these eight festivals under these names (Samhain, Yule, Imbolc, Ostara, Beltane, Litha, Lughnasadh, Mabon — the last a name coined only in the 1970s). It is a reconstructed calendar that has become genuinely sacred to those who keep it.",
+  "sensitivity": "Moderate. Wicca is a living religion. The card must end on the 'genuinely sacred' sentence so it does not read as a debunking. Avoid ritual imitation: no circle-casting, no 'drawing down', no pentacle-tapping, and do not touch the Book of Shadows case, which is traditionally passed only between initiates. The eight lights make a wheel, not a cast circle. Keep any link to the witch-trial victims (ch32) out."
+ },
+ {
+  "id": "ch39",
+  "title": "Satanism",
+  "trigger": "Stand at the lectern and stay on its page for 8 seconds.",
+  "effect": "The tempest eases: the lightning stops, the wind drops, and the ravens settle. Nothing on the inverted-pentagram plate changes, and there is no sound.",
+  "reveal": "During the 1980s 'Satanic Panic', the FBI's own investigator, Kenneth Lanning, reviewed a decade of allegations, including claims of thousands of ritual murders, and found essentially no evidence that any of it was real.",
+  "quote": "And when the FBI's own investigator, Kenneth Lanning, examined the claims exhaustively — publishing his report in 1992, after a decade of allegations of thousands of murders — he found essentially no evidence that any of it was real.",
+  "sensitivity": "HIGH: this subject easily slides into shock content. The egg is deliberately quiet: no symbol animation, no 666, no goat or Baphomet, no dark sounds, and no interaction with the plate or The Satanic Bible case. The fact is anti-sensational. The card's tone should remember that the falsely accused were real victims."
+ },
+ {
+  "id": "ch40",
+  "title": "African Diaspora Religions",
+  "trigger": "Tap the See also board twice.",
+  "effect": "The board turns over to show a small two-column card, 'The film image / The religion', and the frogs' chorus rises for a moment. Nothing happens to the vèvè plate, the lwa medallions or the Seeker's Path kiosk.",
+  "reveal": "The 'voodoo doll' is not African at all. It comes from the European poppet, the wax or cloth figure of European folk magic, and outsiders attached it to Vodou.",
+  "quote": "The \"voodoo doll\" itself is not African at all: it descends from the European poppet, the wax-or-cloth image of folk magic (Chapter 32), and was fused onto Vodou by outsiders.",
+  "sensitivity": "HIGH: these are living religions practised by millions and long slandered. Each vèvè summons a specific lwa, so the egg must never let a visitor 'draw' or 'activate' a vèvè. No drumming, because each rhythm calls a particular spirit. No doll, pin, zombie or skull images. No jokes about Baron Samedi or the Gede. The egg corrects the caricature and does not repeat it."
+ },
+ {
+  "id": "ch41",
+  "title": "The Paleolithic",
+  "trigger": "Walk to the deepest, darkest corner of the cave room and stand still there for 5 seconds.",
+  "effect": "Faint ochre hand stencils fade up one at a time on the cave wall near you, and a single soft note of a bone flute sounds. Then they fade back into the rock.",
+  "reveal": "The oldest known figurative art is not in Europe but on Sulawesi in Indonesia: painted scenes at least 45,500 years old (perhaps 51,000 on a 2024 method), including a life-size warty pig and small human-animal figures hunting.",
+  "quote": "On the Indonesian island of Sulawesi, painted scenes have been dated to at least 45,500 years old — and, by a refined technique in 2024, to perhaps 51,000 — including a life-size warty pig (the oldest known figurative painting of an animal) and, at Leang Bulu' Sipong 4, a hunting scene in which small therianthropes — human figures with animal features — confront wild pigs and dwarf buffalo.",
+  "sensitivity": "Low. The stencils are generic, not copies of any panel, and are especially not Aboriginal Australian sacred art. The card should not claim to know what the art meant; the chapter keeps that open. The Lion Man and Venus cases are not involved."
+ },
+ {
+  "id": "ch42",
+  "title": "The Neolithic",
+  "trigger": "Stand in the room's doorway facing in toward the T-pillar plate for 4 seconds.",
+  "effect": "A low, golden 'solstice' beam slides across the floor from the doorway and climbs the T-pillar plate until the carved sun at its top glows, then it withdraws.",
+  "reveal": "Göbekli Tepe's carved T-pillars date to around 9600 BCE, more than six thousand years before Stonehenge, before pottery and writing, and at the very dawn of farming. (Its excavator's idea that the 'temple came first' is influential but debated.)",
+  "quote": "Rings of massive T-shaped limestone pillars, some sixteen feet tall and weighing tons, carved with foxes, snakes, boars, scorpions, and vultures, raised in great enclosures — and dated to around 9600 BCE, more than six thousand years before Stonehenge, before pottery, before writing, and, most astonishingly, at the very dawn of farming.",
+  "sensitivity": "Low. Keep the 'temple before the city' debate marked as debated, as the chapter does. The Göbekli, Nebra Sky Disc and Berlin Gold Hat cases are not involved."
+ },
+ {
+  "id": "ch43",
+  "title": "The Aztec",
+  "trigger": "Spot the eagle and keep it near the centre of your view for 5 seconds as it circles.",
+  "effect": "The eagle drops lower, glides once along the lake's surface and settles on a reed clump at the water's edge for a few seconds before lifting off again. There is no serpent.",
+  "reveal": "Tenochtitlan, founded on a marshy islet in Lake Texcoco around 1325, held perhaps 200,000 people by 1519, making it larger than any city in Europe at the time.",
+  "quote": "They found it on a marshy islet in Lake Texcoco, and there, around 1325, founded Tenochtitlan, which within two centuries became the capital of the greatest empire in Mesoamerica — a city of perhaps 200,000 on its lake, larger than any in contemporary Europe, until the Spanish destroyed it in 1521.",
+  "sensitivity": "Moderate. The eagle on the cactus is on Mexico's national flag, so it is shown with respect: no serpent-eating, no gore. Keep sacrifice entirely out. The Tilma of Guadalupe is a Catholic sacred object and must not be part of the egg. Leave the codex cases and the Tomb Robber kiosk alone."
+ },
+ {
+  "id": "ch44",
+  "title": "The Inca",
+  "trigger": "Tap Inti's medallion, then Mama Quilla's (the sun, then his sister-wife the moon).",
+  "effect": "Inti's medallion warms to a gold glow and Mama Quilla's to a cool silver, and for a moment the Inti plate's rays glint gold over the terraces. The condor wheels once overhead.",
+  "reveal": "To the Inca, gold was 'the sweat of the sun' and silver 'the tears of the moon'. They were not money, because the Inca had no currency, but sacred substance, which is why the stripping of the Coricancha's gold was a desecration and not just a theft.",
+  "quote": "Gold was \"the sweat of the sun,\" silver \"the tears of the moon\" — not currency (the Inca had none) but the encoded substance of the divine, which is why the Coricancha blazed with it and why its loss to Spanish greed was a desecration, not merely a theft.",
+  "sensitivity": "Low-moderate. Andean figures such as Pachamama are still honoured today. The egg lights the medallions without pretending to be an offering. Keep the capacocha child sacrifice and the royal mummies (human remains) completely out. The khipu and Staff God cases are not involved."
+ },
+ {
+  "id": "ch45",
+  "title": "Pistis Sophia",
+  "trigger": "Tap the symbol plate 13 times, once for each of Sophia's thirteen songs of repentance.",
+  "effect": "Each tap lights one more step along the plate's solid line climbing out of the dashed Chaos. On the thirteenth the line reaches the ring of aeons and the storm overhead pales briefly to a pearly light.",
+  "reveal": "In the Pistis Sophia, Mary Magdalene asks most of the roughly 46 questions the disciples put to Jesus, more than all the male disciples together, and Peter complains about it. (It is a 3rd–4th-century text, evidence for its own community's debates, not for the first disciples.)",
+  "quote": "Of the roughly forty-six questions the disciples put to Jesus across the book, Mary Magdalene asks the great majority — more than all the male disciples together.",
+  "sensitivity": "Moderate. The card involves Jesus and Mary Magdalene. Show no figures or likenesses, and keep the chapter's skeptical framing (the text tells us about later debates, not about the historical disciples). Do not voice or display the IAŌ vowel invocations, which are divine-name formulas."
+ },
+ {
+  "id": "ch46",
+  "title": "Creation & the First Order",
+  "trigger": "In the Creation bay of the Rotunda, tap the symbol plate twice.",
+  "effect": "The plate's wavy water line parts, opening a thin band of light between the waters above and below. The planetarium dome dims to black for a heartbeat and the stars come back.",
+  "reveal": "Genesis's word for 'the deep', tehom, is linguistically related to Tiamat, the Babylonian sea-monster whom Marduk splits in two to build the world. Genesis keeps the waters but drops the battle.",
+  "quote": "Tehom is linguistically kin to Tiamat — the name of the salt-sea monster whom the Babylonian god Marduk hacks in two to build the world.",
+  "sensitivity": "Low-moderate. This touches Genesis. The card should state the linguistic kinship as the chapter does and not suggest the Bible was simply 'copied'. Leave the Pinball kiosk and the Adam and Eve listings alone."
+ },
+ {
+  "id": "ch47",
+  "title": "Journeys to the Underworld",
+  "trigger": "Walk at least 4 metres away from the Underworld bay's lectern, then turn round and look back at its symbol plate.",
+  "effect": "As you look back, the little ferryman's boat on the plate slips back across its river and the gate at the top of the stair dims. You looked back.",
+  "reveal": "Orpheus lost Eurydice by looking back. Half a world away, the Japanese creator Izanagi followed his dead wife Izanami into Yomi, was forbidden to look at her, looked, and fled. The parallel is real, but it does not prove the two stories are connected.",
+  "quote": "The Japanese creator Izanagi followed his dead wife Izanami into Yomi, the land of the dead, and — like Orpheus — was forbidden to look at her; he looked, saw her corruption, and fled, sealing the entrance with a boulder as she vowed to kill a thousand of the living each day (and he to give life to fifteen hundred) — a myth that explains both death and birth.",
+  "sensitivity": "Low. Keep the chapter's caveat that the parallel does not prove contact. Izanagi and Izanami belong to Shinto, a living religion, and are summarized as recorded myth. Do not involve the Harrowing of Hell or the Bardo Thödol."
+ },
+ {
+  "id": "ch48",
+  "title": "The Great Goddess",
+  "trigger": "Tap the three moons on the Great Goddess plate in order: waxing, full, waning.",
+  "effect": "Each moon brightens as it is tapped. After the third, the seated figure below is briefly lit as if by moonlight, and the light fades.",
+  "reveal": "In Apuleius's 2nd-century novel, the goddess Isis claims to be the one deity all nations worship under different names: Cybele to the Phrygians, Athena to the Athenians, Queen Isis to the Egyptians. The 'one goddess, many names' idea is ancient.",
+  "quote": "In Apuleius's second-century novel, the goddess Isis announces herself as the single deity whom all nations worship under different names — \"the Phrygians call me Cybele, the Athenians Athena... the Egyptians call me by my true name, Queen Isis.\"",
+  "sensitivity": "Moderate. The modern Goddess movement is a living religion, and the chapter treats Marian devotion with care. The card reports Apuleius's claim and must not present it as proof of a single prehistoric Goddess, which the chapter calls a contested modern reconstruction. Keep Mary, Asherah and the divine name out."
+ },
+ {
+  "id": "ch49",
+  "title": "Sacred Kingship",
+  "trigger": "Stand before the Sacred Kingship plate and look down at the floor (a small bow) for 3 seconds.",
+  "effect": "As you raise your eyes, a single bead of light runs from the horn of oil up into the crown, which glints once.",
+  "reveal": "Until the 18th century, English and French kings were believed to cure the skin disease scrofula, 'the king's evil', by touching the sick, the 'royal touch'.",
+  "quote": "Medieval and early-modern Europe inherited a Christianized sacred kingship: kings were anointed at their coronations like the kings of Israel, claimed to rule by the divine right of kings (answerable to God alone), and were believed to heal the disease scrofula by the royal touch — \"the king's evil,\" cured by the laying-on of the sacred royal hand, a rite performed by English and French monarchs into the 18th century.",
+  "sensitivity": "Low-moderate. Anointing is still part of living Christian and royal ritual. The bow is a gentle courtesy, not mockery. Keep away from the Holy Grail listing and from the Japanese imperial material."
+ },
+ {
+  "id": "ch50",
+  "title": "The End of Days",
+  "trigger": "Stand in the End of Days bay of the Rotunda and look straight up at the planetarium dome for 5 seconds.",
+  "effect": "The dome's stars slowly brighten and a soft dawn glow spreads round the dome's horizon. The burst at the end of the plate's seven-station line lights to match. No fire, no countdown.",
+  "reveal": "The oldest fully worked-out vision of the end of the world is Zoroastrian. Its final renewal is called Frashokereti, 'making wonderful'. How far it shaped Jewish, Christian and Islamic ideas of the end is genuinely debated.",
+  "quote": "This final renovation has a name — Frashokereti, \"making wonderful\" — and it is, so far as we can tell, the earliest appearance in religion of the whole package: cosmic dualism, a linear history, a savior, a bodily resurrection, a universal judgment, and a made-new world at the end.",
+  "sensitivity": "Moderate. The theme covers eschatology that is live for Zoroastrians, Jews, Christians and Muslims. No doom effects, countdowns, 666, Antichrist, Mahdi or Dajjal. The card must keep the Persian influence marked as contested. The effect stays hopeful (renewal) and never predicts anything."
+ },
+ {
+  "id": "ch51",
+  "title": "Sacrifice & the Scapegoat",
+  "trigger": "Stand still in front of the Sacrifice plate for 6 seconds.",
+  "effect": "Quiet by design. Only the plate's thin line of smoke drifts slowly upward and thins away. There is no flame, blood, animal or sound.",
+  "reveal": "The English word 'scapegoat' (the goat that escapes) is William Tyndale's coinage, made when he translated the Day of Atonement rite of Leviticus 16.",
+  "quote": "This is the original scapegoat — the goat that escapes (in Tyndale's coinage), the ʿez ʾōzēl of Leviticus 16 — and it is the sharpest image of a logic found across the ancient world: that the impurity of the community can be gathered onto a single victim and expelled, and that in its going the people are made clean.",
+  "sensitivity": "HIGH. The Day of Atonement is a living Jewish observance, and the chapter also covers the Binding of Isaac, the Christian 'Lamb of God' and human sacrifice. The egg is deliberately minimal: no goats, altar fire, blood, knives or victims. The card must not write the divine name (the chapter's 'for the LORD' lot is left out). It is a fact about a word, not about the rite's meaning."
+ },
+ {
+  "id": "ch52",
+  "title": "Jainism",
+  "trigger": "Stand completely still near the pond for 8 seconds. If you move, it resets.",
+  "effect": "The butterflies and dragonflies, which keep their distance while you walk, drift in and settle close by, and the koi rise. When you move again they lift away unharmed.",
+  "reveal": "The Jain ethic of ahimsa, harming no living thing, reached Gandhi through his Gujarati upbringing and decisively shaped his non-violence.",
+  "quote": "It was this tradition, transmitted through his Gujarati upbringing, that decisively shaped Mahatma Gandhi's ahimsa and his politics of nonviolence.",
+  "sensitivity": "Moderate. The stillness must not be framed as a parody of the Tirthankaras' meditative posture (kāyotsarga). No creature may ever be harmed or squashed. Do not animate the Mahāvīra or Pārśvanātha medallions or the Kalpa Sutra case. Never draw the emblem's swastika, which the plate already withholds. Keep sallekhana (the fast unto death) out."
+ },
+ {
+  "id": "ch53",
+  "title": "Tibetan & Vajrayana Buddhism",
+  "trigger": "Stand in the snow and turn on the spot one full turn (360°).",
+  "effect": "A gust lifts a fine veil of powder snow, carries it once round the room in the wind and lets it fall and vanish: things carried off on the wind and gone.",
+  "reveal": "In Tibetan practice, a prayer wheel packed with printed mantras is held to 'recite' them with every turn, and prayer flags release their printed prayers on the wind, so the landscape itself prays.",
+  "quote": "The prayer wheel, a cylinder packed with printed mantras, is held to \"recite\" them with every turn; the prayer flags loose their printed prayers on the wind.",
+  "sensitivity": "Moderate-high. Living tradition. Do not build or sweep away a sand-mandala replica, show or voice Oṃ maṇi padme hūṃ, or turn anything into a toy prayer wheel. The visitor turns on the spot and does not walk a circuit (kora), so the egg does not imitate devotion. Keep out tulku and succession politics, sky burial, and the Bardo Thödol, Tārā and Padmasambhava exhibits."
+ },
+ {
+  "id": "ch54",
+  "title": "Zen & Pure Land Buddhism",
+  "trigger": "Face a bare stretch of the room's wall and stay perfectly still for 9 seconds (nine seconds, not nine years).",
+  "effect": "On the symbol plate the ensō draws itself in one unbroken brushstroke, left slightly open, and the koi turn under the mist.",
+  "reveal": "Shinran's Pure Land teaching, salvation by faith alone as a gift of Amida Buddha's compassion and not by one's own effort, parallels the Protestant 'justification by faith, not works', and the two were reached entirely independently.",
+  "quote": "The parallel with the Protestant \"justification by faith, not works\" (ch31), reached entirely independently, is one of the most remarkable convergences in the history of religion.",
+  "sensitivity": "Low. The wall-facing trigger nods to the Bodhidharma story, which the chapter calls semi-legendary; the card should not present it as history. Do not voice or display the nembutsu (Namu Amida Butsu)."
+ },
+ {
+  "id": "ch55",
+  "title": "Manichaeism",
+  "trigger": "Tap the sun on the Manichaean symbol plate, then its moon.",
+  "effect": "Tiny motes of light rise from the ground all over the room, drift upward and gather into the plate's moon, which fills, then empties toward the sun.",
+  "reveal": "One of the main surviving Manichaean sources, the Cologne Mani-Codex, is the smallest ancient book ever found: a parchment less than two inches tall that tells of Mani's early life.",
+  "quote": "What we have is fragments, recovered in the modern era from the sands of Central Asia (the Turfan texts, in many languages), from Egypt (the Coptic Kephalaia and Psalm-Book of Medinet Madi — the Kephalaia being a detailed secondary account of Mani's teaching), and the astonishing Cologne Mani-Codex, the smallest ancient book ever found, a parchment less than two inches tall recounting Mani's early life.",
+  "sensitivity": "Low. Manichaeism has no living community. The egg avoids the Elect's food and digestion rules, which could easily become a joke at the tradition's expense."
+ },
+ {
+  "id": "ch56",
+  "title": "Mandaeans, Yazidis & Druze",
+  "trigger": "Walk along the river bank in the direction the water flows for about 5 metres, without stopping.",
+  "effect": "The flowing water brightens to a clear, light-filled shimmer that runs ahead of you downstream, and the doves settle on the bank. Nothing is depicted on the visitor or in the water.",
+  "reveal": "Mandaean baptism (masbuta) is not done once but repeated throughout life, always in flowing 'living water', to purify the soul and keep it aligned with the World of Light.",
+  "quote": "The center of Mandaean life is baptism (masbuta): not a once-in-a-lifetime rite of repentance as John's was, but a repeated, lifelong immersion in flowing \"living water\" (a yardna, a \"Jordan\"), performed by white-robed priests (tarmida) to purify the soul and keep it aligned with the world of Light.",
+  "sensitivity": "HIGH. Three small, endangered, persecuted and deliberately closed communities (Mandaeans, Yazidis, Druze), including survivors of the 2014 genocide of the Yazidis. The egg uses only a public, documented Mandaean fact. It must not imitate baptism, touch the Peacock Angel (Tawûsê Melek) medallion or the Diwan Abatur case, or reveal or imply anything of the secret Druze and Yazidi teachings. No 'devil' associations anywhere."
+ },
+ {
+  "id": "ch57",
+  "title": "Hittite & Anatolian",
+  "trigger": "Leave the room by its door and step back in within 10 seconds (the god who vanishes and comes home).",
+  "effect": "On re-entry the thunder sky eases for a few seconds: lightning pauses, the light warms, and the lizards under the glass floor stir. No new models.",
+  "reveal": "When the Hittite god Telipinu stormed off in anger, the myth says he put his boots on the wrong feet, and the land withered until a bee found him.",
+  "quote": "Offended, Telipinu storms off in such a rage that \"he put his right boot on his left foot and his left boot on his right,\" and with his departure the world dies: \"trees withered, fields and springs dried up, oxen and sheep and women ceased to bear young, and famine crept over the world.\" The gods search frantically; at last a bee is sent to find and sting him awake, and through ritual appeasement he is soothed and brought home, and life returns.",
+  "sensitivity": "Low. No living community. Frame it as myth (\"the myth says\"). Do not involve the Storm-god, Sun-goddess or Kumarbi medallions."
+ },
+ {
+  "id": "ch58",
+  "title": "Canaanite & Phoenician",
+  "trigger": "Stand at the water's edge of the shore under the glass floor for 5 seconds.",
+  "effect": "Three letter-shapes (ox-head aleph, house bet, wavy water mem) shimmer briefly on the water surface as a light decal, then fade.",
+  "reveal": "Our alphabet began as pictures: in Phoenician, the letter for 'water' (mem) was drawn as water.",
+  "quote": "The Phoenician letters were themselves born from pictures (the ox-head aleph, the house bet, the water mem), a acrophonic system in which the drawn thing named the sound — the deepest root of the sacred power of letters explored throughout this archive.",
+  "sensitivity": "Low. Keep well away from the tophet and child-sacrifice material, and do not animate the Baal, El, Asherah or Anat medallions. The source sentence has a typo ('a acrophonic'); fix it in the chapter or paraphrase on the card."
+ },
+ {
+  "id": "ch59",
+  "title": "Slavic & Baltic Paganism",
+  "trigger": "Face each of the room's four walls in turn within 15 seconds (north, east, south, west, in any order).",
+  "effect": "The six-petalled thunder-mark on the symbol plate lights one petal-pair for each direction faced, then one soft roll of thunder sounds in the skylight.",
+  "reveal": "The last great pagan Slavic temple held a god with four heads, one for each direction of the world.",
+  "quote": "The Svetovid of Arkona, carved with four heads facing the four directions, encoded a god who sees all quarters of the world at once — a striking image of divine omniscience in wood.",
+  "sensitivity": "Low to moderate. There are modern revival movements (Rodnovery, Romuva, Dievturība), so keep the tone respectful. Say the thunder-mark meaning is partly reconstructed, as the plate caption already does. Do not animate the Perun, Veles, Mokosh or Saulė medallions."
+ },
+ {
+  "id": "ch60",
+  "title": "Eastern Orthodoxy & Byzantium",
+  "trigger": "Stand completely still in the middle of the room for 10 seconds (hesychia, 'stillness').",
+  "effect": "The light from the heavenly skylight slowly deepens to gold on the floor. Ambient sound fades a little. Nothing else moves.",
+  "reveal": "Icons use 'reverse' perspective, so the vanishing point lies in the viewer, not in the picture.",
+  "quote": "The icon is Orthodoxy's supreme symbol and its theology in paint: not a naturalistic portrait but a window into heaven, using inverse (\"reverse\") perspective so that the vanishing point lies in the viewer, drawing the beholder into the sacred rather than the eye into the picture.",
+  "sensitivity": "Moderate: this is a living church and the room holds relic cases (Holy Mandylion, Veil of Veronica). The egg must not touch, light up or animate any relic or icon case. No Jesus Prayer audio, no imitation chant. Present the icon theology as Orthodox belief."
+ },
+ {
+  "id": "ch61",
+  "title": "Aboriginal Australian Dreaming",
+  "trigger": "Quiet egg only. Stand still for 20 seconds anywhere in the room except next to the tjurunga case.",
+  "effect": "No animation of any object. The card fades in, with nothing else.",
+  "reveal": "One songline can cross many peoples' lands, each people singing its own stretch.",
+  "quote": "The songline is simultaneously a myth, a navigational map, a property register, and a liturgy; songlines cross the boundaries of many languages, each people singing its own stretch, so that a single track may run for a thousand miles through a dozen tongues.",
+  "sensitivity": "HIGH. Living tradition with restricted secret-sacred knowledge. The room holds the Tjurunga case (V68): never use it as a trigger, never light or animate it, and keep the trigger away from it. No songline 'path-following' game, no didgeridoo, bullroarer, clapsticks or song audio, no dot-art or Rainbow Serpent animation. The fact quoted is public, general and already on the page. Recommend Carter choose between this quiet version and 'none'; 'none' is a reasonable default."
+ },
+ {
+  "id": "ch62",
+  "title": "Native North American",
+  "trigger": "Stand in the exact centre of the room, facing the symbol plate, for 4 seconds (like the observer at the centre of Cahokia's timber circle).",
+  "effect": "On the plate, the drawn sun rises a little above the mound and the post circle while the clear skylight warms. Only the plate art and the light move.",
+  "reveal": "Monks Mound at Cahokia was built up in fourteen stages, and its base is larger than the Great Pyramid's.",
+  "quote": "At its heart rose Monks Mound — a flat-topped earthen pyramid built up over centuries in fourteen stages, its base larger than that of the Great Pyramid of Giza, crowned by a great temple and the house of a paramount chief.",
+  "sensitivity": "HIGH. Living Indigenous traditions. Use only the archaeological monument, which the plate itself does. Do not touch the Coyote, Raven or Sky Woman medallions (living sacred stories, not toys). No pipe, drum, Sun Dance, vision-quest or 'medicine wheel' mechanics. Optionally add the chapter's line that the 'Mound Builder myth' is false, so the egg credits Native builders."
+ },
+ {
+  "id": "ch63",
+  "title": "Oceania",
+  "trigger": "On the shore, turn your back to the sea and face inland for 5 seconds, as the moai do.",
+  "effect": "The star-path on the symbol plate twinkles once across its length. Waves under the glass keep moving as normal.",
+  "reveal": "Two everyday English words, 'taboo' and 'tattoo', come from Polynesian.",
+  "quote": "Tapu (the source, via Captain Cook, of the English word taboo) is the sacred-forbidden: the state of being so charged with the sacred that contact is dangerous and restricted. | Polynesian tattoo (tatau — the origin of the English word) is sacred encoding written on the body: its motifs record genealogy, rank, milestones, and protection, so that a person's history and mana are inscribed in their skin.",
+  "sensitivity": "HIGH. Living Indigenous traditions. Do not animate the Kumulipo scroll case (V69) or the Māui, Pele or Tangaroa medallions. No jokes about breaking tapu. Imitating the moai's stance is a mild act of homage, so keep the wording respectful ('as the moai do'), never playful."
+ },
+ {
+  "id": "ch64",
+  "title": "Pentecostalism & Global Christianity",
+  "trigger": "Stay in the room for 3 minutes in total (time spent across visits adds up).",
+  "effect": "The skylight passes once, quickly, from day through night to morning (about 8 seconds), then returns to its 'rays' sky.",
+  "reveal": "The Azusa Street revival of 1906 ran day and night for three years.",
+  "quote": "The revival ran day and night for three years and sent missionaries around the globe.",
+  "sensitivity": "Moderate. Living movement. No tongues or glossolalia sounds, no imitation worship audio, no 'raise your hands' mechanic, nothing about healing claims or the prosperity gospel."
+ },
+ {
+  "id": "ch65",
+  "title": "Bahá'í & New Faiths",
+  "trigger": "Press and hold the nine-pointed star plate for 3 seconds.",
+  "effect": "The star's nine points light one after another around the circle, then glow together for a moment.",
+  "reveal": "Nine is the faith's master number: in the Arabic letter-number system the word Bahá ('glory') adds up to nine.",
+  "quote": "The number nine — the highest single digit, a symbol of completeness and unity, and the numerical value of the word Bahá (\"glory\") in the Arabic abjad (ch10, ch21) — is the master-symbol of the faith: the nine-pointed star, the nine sides of every House of Worship, the nine members of the Universal House of Justice.",
+  "sensitivity": "HIGH. Religious-sensitivity rules apply: no image of the Báb anywhere, and the Báb's Star Tablet case (V76) must not be lit, moved or used as a trigger. Use the nine-pointed star (the plate), not the Greatest Name calligraphy or the ringstone symbol. Nothing about the execution story. The community is persecuted today, so keep the tone gentle. Needs Carter's sign-off under the 'sacred objects / sensitivity' rule."
+ },
+ {
+  "id": "ch66",
+  "title": "The San & Southern African Rock Art",
+  "trigger": "Look straight up at the Milky Way in the starry skylight for 5 seconds.",
+  "effect": "The Milky Way band in the skylight brightens slightly, as if freshly scattered, then settles back.",
+  "reveal": "The |Xam told how a girl threw ashes into the sky to make the Milky Way.",
+  "quote": "Stories place the dead among the stars; the |Xam narrators described how a girl threw ashes into the sky to make the Milky Way.",
+  "sensitivity": "HIGH. San heritage, and living San communities with their own research-ethics code (2017). Frame it as what the |Xam narrators told (Bleek and Lloyd archive). Do not animate the eland plate or any rock-art figure. No trance-dance clapping, music or 'healer' mechanics. No 'living fossil' framing."
+ },
+ {
+  "id": "ch67",
+  "title": "Minoan Crete",
+  "trigger": "Tap the symbol plate (double axe and horns) three times.",
+  "effect": "The plate's drawing splits into a few fragments that drift apart, then fit back together with faint visible 'restoration' seams.",
+  "reveal": "The most famous 'Snake Goddess' figurine's head, left arm and cat were supplied by Arthur Evans's restorers.",
+  "quote": "They are also a good place to begin, because the missing head, the left arm and the cat of the best-known figure were supplied by Evans's restorers.",
+  "sensitivity": "Low. No living community, though there are small modern goddess-spirituality and Minoan-revival groups, so the egg should not sneer at their devotion. The point is how evidence gets rebuilt, which is the chapter's own theme."
+ },
+ {
+  "id": "ch68",
+  "title": "Nubia & Kush",
+  "trigger": "Tap the symbol plate once for each Kushite pyramid drawn on it.",
+  "effect": "Each tap lights one pyramid on the plate. When all are lit, the golden skylight brightens briefly over the Nile under the floor.",
+  "reveal": "Nubia, not Egypt, has more pyramids.",
+  "quote": "Nubia today has more pyramids than Egypt, built over about a thousand years.",
+  "sensitivity": "Low. Many Sudanese, Nubians and people of the African diaspora treat the Kushite past as a source of pride, so present the fact plainly. Do not add the 'Egypt came from Nubia' claims the chapter rejects."
+ },
+ {
+  "id": "ch69",
+  "title": "The Upanishads & the Hindu Synthesis",
+  "trigger": "Visit three points along the brook under the glass floor (upstream end, middle, downstream end) and pause 2 seconds at each, like tasting the water at top, middle and bottom.",
+  "effect": "At each point the brook water shows a faint sparkle, as of dissolved salt. After the third, the whole stream glints once.",
+  "reveal": "The famous saying tat tvam asi, 'that you are', is taught with a lesson about salt dissolved in water.",
+  "quote": "In the Chāndogya, the teacher Uddālaka Āruṇi instructs his son Śvetaketu: he has him dissolve salt in water overnight, then taste the water from the top, the middle and the bottom. The salt cannot be seen, but it is everywhere. So it is with the subtle essence of all things: \"that is the self, that you are\" (tat tvam asi, 6.8.7), repeated nine times.",
+  "sensitivity": "Moderate. Living tradition, and the passage is scripture (śruti) for many Hindus. Quote it with respect, never as a gag. No Om chanting audio or Om plate animation."
+ },
+ {
+  "id": "ch70",
+  "title": "Pre-Islamic Arabia",
+  "trigger": "Stand beside a side wall of the room, facing it, for 6 seconds (like a nomad stopping at a boulder).",
+  "effect": "Faint scratched strokes appear on the wall stone and fade after a few seconds. Draw them as abstract scratches, not real Safaitic text, so no inscription is invented.",
+  "reveal": "Desert nomads two thousand years ago scratched their names, news and prayers onto rocks: more than fifty thousand such inscriptions are known.",
+  "quote": "Some two thousand years ago the nomads who grazed their herds there scratched their names and their fathers' names into the boulders in a script now called Safaitic, and often added a line about their lives: that they had camped here in the spring, that they were watching for rain, that they grieved for a brother killed in a raid. | More than fifty thousand such inscriptions are known.",
+  "sensitivity": "Moderate to high. This chapter is the prehistory of Islam, a living faith. Keep the egg away from the Kaʿba, the Black Stone and any divine name, do not animate the betyl's eyes on the plate (it could read as mocking idols or as idol-reverence), and avoid the 'moon god' claim the chapter rejects."
+ },
+ {
+  "id": "ch71",
+  "title": "Korea",
+  "trigger": "Tap the symbol plate three times.",
+  "effect": "Each tap lights one of the three Hangul vowel strokes on the plate in turn: the dot (heaven), the horizontal line (earth), the vertical line (humanity).",
+  "reveal": "Korea's alphabet was designed with a theory of the universe: its basic vowels stand for heaven, earth and humanity.",
+  "quote": "The Hunminjeongeum Haerye (1446), the commentary to the new alphabet, explains its three basic vowel strokes as images of heaven (a dot), earth (a horizontal line) and humanity (a vertical line), and relates the consonants to the organs of speech and the five phases. It is documented, not a later legend: an alphabet designed with a theory of the universe.",
+  "sensitivity": "Low. Use the alphabet only. Keep away from musok and the mudang (a living, often stigmatized practice), so no costume, drum or possession mechanics."
+ },
+ {
+  "id": "ch72",
+  "title": "The Cathars & Medieval Heresy",
+  "trigger": "From the far end of the room, look at the symbol plate for 5 seconds.",
+  "effect": "The open book on the plate glows softly and the overcast skylight lightens a little. No fire, no flames, nothing at the Montségur peak.",
+  "reveal": "Almost no Cathar books survive. One of the few, the Book of the Two Principles, turned up in a Florence library in 1939.",
+  "quote": "Almost nothing written by the Cathars survives, because the inquisitors destroyed their books. | the Book of the Two Principles, an Italian Cathar treatise of the mid-thirteenth century arguing for dualism from scripture and philosophy, discovered in a Florence library in 1939.",
+  "sensitivity": "Moderate. The chapter is about persecution and mass burnings. No fire, ember or pyre effects, and no Grail or 'secret treasure' teasing (the chapter rejects it). The second quote is a list item that begins in lower case, so quote it as given or paraphrase."
+ },
+ {
+  "id": "ch73",
+  "title": "Sabbateans, Frankists & Hasidim",
+  "trigger": "Stand on the room's threshold, in the doorway, for 5 seconds, as if ready to leave.",
+  "effect": "The sparks on the symbol plate drift gently upward and the twilight sky gains a faint green tint for a moment (green was the colour adopted for the Messiah in 1665–66).",
+  "reveal": "When news of a 'Messiah' reached Germany in 1666, one merchant packed two casks for the journey to the Holy Land and kept them packed for years.",
+  "quote": "Her father-in-law in Hameln packed two great casks with linen and provisions, dried peas and beans and preserved meat, ready to set off for the Holy Land at a moment's notice, and kept them packed for years, waiting.",
+  "sensitivity": "HIGH. Living Jewish communities, including Hasidic ones. Keep the card's tone tender, not mocking: this is about hope and disappointment. Nothing on the Frankist rites or the blood libel. No divine names, no imitation niggun, no Hasidic dress. The green tint is optional; drop it if it seems to celebrate Sabbatai."
+ },
+ {
+  "id": "ch74",
+  "title": "Secularism & the Nones",
+  "trigger": "Walk the full perimeter of the room once, keeping close to the walls (one round of the year).",
+  "effect": "Butterflies and meadow flowers under the glass rise briefly, and the symbol plate's Happy Human figure brightens.",
+  "reveal": "Revolutionary France abolished the Christian calendar and replaced the saints' days with plants, animals and tools.",
+  "quote": "In 1793 France abolished the Christian calendar, dating years from the founding of the Republic and replacing saints' days with plants, animals and tools.",
+  "sensitivity": "Low. Avoid the parody religions (Flying Spaghetti Monster, Darwin fish) as the reveal: they would make the egg read as mocking believers. The fact is historical, not anti-religious."
+ },
+ {
+  "id": "ch75",
+  "title": "Siberian & Arctic Shamanism",
+  "trigger": "Walk across the room from its east side to its west side without stopping (the way the word travelled, from Siberia to Europe).",
+  "effect": "The owl turns its head to follow you and the aurora in the skylight ripples once.",
+  "reveal": "The English word 'shaman' comes from the Evenki people of Siberia, through Russian. Where the Evenki word itself comes from is uncertain.",
+  "quote": "The English word shaman comes through Russian from the Evenki šaman. | Where the Evenki word itself comes from is uncertain:",
+  "sensitivity": "HIGH. Living Indigenous peoples, and Sami drums are being repatriated as living objects. No drumming audio, no drum or costume animation (the plate shows a drum, so leave it still), no 'become a shaman' mechanic, nothing neo-shamanic. Keep the stated uncertainty about the word's origin on the card."
+ },
+ {
+  "id": "ch76",
+  "title": "The Olmec",
+  "trigger": "Look straight down through the glass floor for 5 seconds.",
+  "effect": "The jungle diorama under the glass dims, then a small pool of light opens on one spot, as if someone had dug down to look, and closes again.",
+  "reveal": "At La Venta, someone later dug a hole straight down to the heads of buried figurines, looked, and filled it in again.",
+  "quote": "Offering 4: sixteen small human figurines of jade, serpentine and granite, standing in a group before six upright jade celts (polished axe-blades), as if at a gathering or rite, buried around 600 BCE. At some later point someone dug a hole down exactly to the heads of the figurines, looked, and filled it in again.",
+  "sensitivity": "Low. Olmec heritage matters to many Mexicans. Do not use the infant remains at El Manatí, and do not use the 'African/Atlantean/alien origin' claims the chapter rejects."
+ },
+ {
+  "id": "ch77",
+  "title": "The Etruscans",
+  "trigger": "Stand in the north-west corner of the room for 4 seconds.",
+  "effect": "The existing skylight lightning flash fires once, soft (a single pulse, within the museum's lightning limit), and the bolt on the liver plate glints.",
+  "reveal": "Etruscan priests divided the sky into sixteen regions: the east was lucky, the west ill-omened, and the north-west the most feared.",
+  "quote": "The outer ring corresponds to the sixteen regions into which, Pliny tells us, the Etruscans divided the sky. Gods of favourable powers lived in the east, those of ill omen in the west; the northwest was the most feared.",
+  "sensitivity": "Low. No living community (only small revivals). Add the chapter's caution that divination does not work as prediction, so the egg does not seem to endorse it. Keep the flash gentle (motion and photosensitivity)."
+ },
+ {
+  "id": "ch78",
+  "title": "The Scythians & the Steppe",
+  "trigger": "Walk one full circle round the middle of the room.",
+  "effect": "The gold stag on the symbol plate catches the light and glints along its antlers. The eagle overhead banks once.",
+  "reveal": "Herodotus said the Scythians threw hemp seeds on hot stones in felt tents. Archaeologists later found exactly that kit in the frozen tombs of Pazyryk.",
+  "quote": "Archaeology has confirmed, with remarkable precision, one of Herodotus's strangest reports. At Pazyryk, the Soviet archaeologist Sergei Rudenko found in the 1940s the frames of small tents, copper cauldrons filled with stones and charred hemp seeds, and a leather pouch of hemp seeds tied to a tent pole, just as Herodotus described.",
+  "sensitivity": "Low to moderate. This is a drug reference (cannabis), so Carter should decide whether it suits all ages. A milder option is the chapter's line that 'One study found archaeological support for eleven of the seventeen elements in Herodotus's description', but that one is about the royal funeral, with strangled servants. Do not use the Ice Maiden (human remains)."
+ },
+ {
+  "id": "ch79",
+  "title": "The First Christian Kingdoms",
+  "trigger": "Tap the symbol plate twice.",
+  "effect": "The two coins on the plate turn over once, and the light picks out the cross on the later coin.",
+  "reveal": "King Ezana of Aksum's coins record his conversion: the crescent and disc above his head became a cross, one of the earliest crosses on any coin in the world.",
+  "quote": "On his early coins, the symbol is a crescent and disc, the emblem of the old gods of South Arabia and Aksum. | In their place is a cross, one of the earliest appearances of the Christian cross on any coin in the world.",
+  "sensitivity": "Moderate. The Armenian, Georgian and Ethiopian churches are living. Do not involve the tabot or the Ark (only priests may see them) or any relic. A coin turning over is neutral and not triumphalist; keep the wording factual."
+ },
+ {
+  "id": "ch80",
+  "title": "Shi'ism",
+  "trigger": "Quiet egg. Stand still facing the symbol plate for 8 seconds at dusk.",
+  "effect": "No animation of the plate. The doves settle on the floor, and the card fades in.",
+  "reveal": "Cairo was founded by a Shi'i dynasty, the Isma'ili Fatimids, in 969, along with the mosque-university of al-Azhar.",
+  "quote": "The Isma'ili Fatimid caliphs ruled North Africa and Egypt, founding Cairo in 969 and the mosque-university of al-Azhar.",
+  "sensitivity": "HIGH. Living faith, and the room's mood is Karbala and mourning. No whimsy: nothing with water or thirst, no Muharram or Ashura mechanics, no animation of the open hand (panjetan) or of Zulfiqar, no images of the Prophet's family or the Imams, no sound. Recommend Carter choose between this quiet version and 'none'."
+ },
+ {
+  "id": "ch81",
+  "title": "Tengri & the Mongols",
+  "trigger": "Look straight up into the clear skylight (the Eternal Blue Sky) for 5 seconds.",
+  "effect": "The sky slowly deepens to a richer blue and the eagle circles once overhead.",
+  "reveal": "Asked about religion, the Great Khan Möngke compared the faiths to the fingers of one hand.",
+  "quote": "A few days later Möngke summoned him and explained his own faith: \"We Mongols believe that there is only one God, by whom we live and by whom we die, and for whom we have an upright heart. But as God gave the hand several fingers, so he has given men several ways.\"",
+  "sensitivity": "Moderate. Living Mongolian shamanic and Tengrist practice. Do not make a game of circling the ovoo or adding stones, a living ritual. Say that the quote is Möngke's words as William of Rubruck recorded them, and that the chapter calls Mongol 'tolerance' political."
+ },
+ {
+  "id": "ch82",
+  "title": "Akbar & the Mughal Synthesis",
+  "trigger": "Walk from the room's door straight to the far wall without stopping ('pass over it').",
+  "effect": "A faint line of light runs across the floor behind you like a bridge, then fades. The sun in the plate's arch brightens.",
+  "reveal": "The great gate at Fatehpur Sikri quotes a saying of Jesus that comes from Islamic tradition, not the Bible: 'The world is a bridge, pass over it, but build no houses upon it.'",
+  "quote": "The gate of the great mosque at Fatehpur Sikri, the Buland Darwaza, carries a Persian inscription quoting a saying attributed in Islamic tradition to Jesus (Isa, son of Mary): \"The world is a bridge, pass over it, but build no houses upon it.\" | The saying is attested in Islamic sources, not in the New Testament.",
+  "sensitivity": "Moderate. It is on a mosque gate, and Hindu–Muslim history here is a live political issue. Avoid the 'Allahu akbar / Akbar is God' coin pun (a name of God, and contested), Aurangzeb and the temple debates, and any darshan imitation of the emperor."
+ },
+ {
+  "id": "ch83",
+  "title": "Global Hinduism & the Guru Movements",
+  "trigger": "Stand still on the glass over the river, facing downstream, for 7 seconds.",
+  "effect": "The dawn light runs along the river surface and a kingfisher darts past.",
+  "reveal": "Indian indentured workers carried their faith to the Caribbean in a 'jahaji bundle' holding worn copies of the Ramayana and the Hanuman Chalisa.",
+  "quote": "The migrants carried their religion in what Trinidadians call the jahaji bundle, the ship-bundle of belongings, which held tattered copies of Tulsidas's Ramayana (the Ramcharitmanas) and the Hanuman Chalisa.",
+  "sensitivity": "Moderate to high. Living tradition, and the chapter covers Hindutva, Ayodhya, abuse cases and the Kumbh crush. Keep the egg away from all of these and from the swastika section. No Om or mantra audio, no plate animation of the Om. Treat the indenture story with care (hardship, not adventure)."
+ }
+]

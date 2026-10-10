@@ -18,3 +18,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 - Digital Mushaf (University of Oxford), "The Birmingham Qur'an: Too Many Options" (2015), https://digitalmushaf.bodleian.ox.ac.uk/2015/12/04/the-birmingham-quran-too-many-options/
 - "Codex Parisino-petropolitanus", https://en.wikipedia.org/wiki/Codex_Parisino-petropolitanus
 - University of Birmingham, *History of the Mingana Collection*, https://www.birmingham.ac.uk/facilities/cadbury/birmingham-quran-mingana-collection/mingana-collection/history
+
+## Museum rendition (2026-10-06)
+
+On Carter's decision of 2026-10-06, the rendition in the Virtual Museum shows the leaves **plain and unwritten**: the archive does not draw imitation Qur'anic script. "Read it in English" in the museum gives what the leaves contain (Pickthall's 1930 translation, public domain).

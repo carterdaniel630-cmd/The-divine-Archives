@@ -1,0 +1,3047 @@
+{
+ "note": "The symbol walls of the museum's hallways (plans/museum-visual-pass.md §5). tools/build-symbols.js draws each wall's signs into docs/museum/symbols/<wall>.webp with its index <wall>.json; tools/verify-symbols.js checks every sign against 'held' below. On the wall the signs fall in drips and flip from one sign to another (Carter's reference, 2026-10-06); the scripts alternate row by row, so no two signs of one script ever stand together and a column can never spell a word or a name.",
+ "fonts": {
+  "hiero": "docs/assets/vendor/fonts/NotoSansEgyptianHieroglyphs.woff2",
+  "cuneiform": "art-source/fonts/NotoSansCuneiform.woff2",
+  "linearb": "art-source/fonts/NotoSansLinearB.woff2",
+  "ugaritic": "art-source/fonts/NotoSansUgaritic.woff2",
+  "greek": "art-source/fonts/NotoSansGreek.woff2",
+  "olditalic": "art-source/fonts/NotoSansOldItalic.woff2",
+  "oldsoutharabian": "art-source/fonts/NotoSansOldSouthArabian.woff2",
+  "oldpersian": "art-source/fonts/NotoSansOldPersian.woff2",
+  "brahmi": "art-source/fonts/NotoSansBrahmi.woff2",
+  "kharoshthi": "art-source/fonts/NotoSansKharoshthi.woff2",
+  "symbols2": "art-source/fonts/NotoSansSymbols2.woff2",
+  "coptic": "art-source/fonts/NotoSansCoptic.woff2",
+  "ogham": "art-source/fonts/NotoSansOgham.woff2",
+  "pahlavi": "art-source/fonts/NotoSansInscriptionalPahlavi.woff2",
+  "oldturkic": "art-source/fonts/NotoSansOldTurkic.woff2",
+  "sogdian": "art-source/fonts/NotoSansSogdian.woff2"
+ },
+ "walls": {
+  "bronze": {
+   "label": "Wing II, the Bronze Age",
+   "sets": [
+    {
+     "name": "Egyptian hieroglyphs: the one-consonant signs",
+     "font": "hiero",
+     "order": "the conventional Egyptological order, with Gardiner's sign-list numbers",
+     "signs": [
+      {
+       "cp": "1313F",
+       "id": "G1",
+       "value": "ꜣ"
+      },
+      {
+       "cp": "131CB",
+       "id": "M17",
+       "value": "i"
+      },
+      {
+       "cp": "131CC",
+       "id": "M17A",
+       "value": "y"
+      },
+      {
+       "cp": "1309D",
+       "id": "D36",
+       "value": "ꜥ"
+      },
+      {
+       "cp": "13171",
+       "id": "G43",
+       "value": "w"
+      },
+      {
+       "cp": "130C0",
+       "id": "D58",
+       "value": "b"
+      },
+      {
+       "cp": "132AA",
+       "id": "Q3",
+       "value": "p"
+      },
+      {
+       "cp": "13191",
+       "id": "I9",
+       "value": "f"
+      },
+      {
+       "cp": "13153",
+       "id": "G17",
+       "value": "m"
+      },
+      {
+       "cp": "13216",
+       "id": "N35",
+       "value": "n"
+      },
+      {
+       "cp": "1308B",
+       "id": "D21",
+       "value": "r"
+      },
+      {
+       "cp": "13254",
+       "id": "O4",
+       "value": "h"
+      },
+      {
+       "cp": "1339B",
+       "id": "V28",
+       "value": "ḥ"
+      },
+      {
+       "cp": "1340D",
+       "id": "Aa1",
+       "value": "ḫ"
+      },
+      {
+       "cp": "13121",
+       "id": "F32",
+       "value": "ẖ"
+      },
+      {
+       "cp": "13283",
+       "id": "O34",
+       "value": "z"
+      },
+      {
+       "cp": "132F4",
+       "id": "S29",
+       "value": "s"
+      },
+      {
+       "cp": "13219",
+       "id": "N37",
+       "value": "š"
+      },
+      {
+       "cp": "1320E",
+       "id": "N29",
+       "value": "q"
+      },
+      {
+       "cp": "133A1",
+       "id": "V31",
+       "value": "k"
+      },
+      {
+       "cp": "133BC",
+       "id": "W11",
+       "value": "g"
+      },
+      {
+       "cp": "133CF",
+       "id": "X1",
+       "value": "t"
+      },
+      {
+       "cp": "1337F",
+       "id": "V13",
+       "value": "ṯ"
+      },
+      {
+       "cp": "130A7",
+       "id": "D46",
+       "value": "d"
+      },
+      {
+       "cp": "13193",
+       "id": "I10",
+       "value": "ḏ"
+      }
+     ]
+    },
+    {
+     "name": "Cuneiform number signs: 1 to 9, 10 to 50",
+     "font": "cuneiform",
+     "order": "counting order, the digits of the sexagesimal system",
+     "signs": [
+      {
+       "cp": "12079",
+       "id": "Sign Dish",
+       "value": "1"
+      },
+      {
+       "cp": "1222B",
+       "id": "Sign Min",
+       "value": "2"
+      },
+      {
+       "cp": "12408",
+       "id": "Numeric Sign Three Dish",
+       "value": "3"
+      },
+      {
+       "cp": "12409",
+       "id": "Numeric Sign Four Dish",
+       "value": "4"
+      },
+      {
+       "cp": "1240A",
+       "id": "Numeric Sign Five Dish",
+       "value": "5"
+      },
+      {
+       "cp": "1240B",
+       "id": "Numeric Sign Six Dish",
+       "value": "6"
+      },
+      {
+       "cp": "1240C",
+       "id": "Numeric Sign Seven Dish",
+       "value": "7"
+      },
+      {
+       "cp": "1240D",
+       "id": "Numeric Sign Eight Dish",
+       "value": "8"
+      },
+      {
+       "cp": "1240E",
+       "id": "Numeric Sign Nine Dish",
+       "value": "9"
+      },
+      {
+       "cp": "1230B",
+       "id": "Sign U",
+       "value": "10"
+      },
+      {
+       "cp": "12399",
+       "id": "Sign U U",
+       "value": "20"
+      },
+      {
+       "cp": "1230D",
+       "id": "Sign U U U",
+       "value": "30"
+      },
+      {
+       "cp": "1240F",
+       "id": "Numeric Sign Four U",
+       "value": "40"
+      },
+      {
+       "cp": "12410",
+       "id": "Numeric Sign Five U",
+       "value": "50"
+      }
+     ]
+    },
+    {
+     "name": "Linear B: the syllabary",
+     "font": "linearb",
+     "order": "the standard grid order (a e i o u, da de di do du ...), Bennett's sign numbers",
+     "signs": [
+      {
+       "cp": "10000",
+       "id": "B008",
+       "value": "a"
+      },
+      {
+       "cp": "10001",
+       "id": "B038",
+       "value": "e"
+      },
+      {
+       "cp": "10002",
+       "id": "B028",
+       "value": "i"
+      },
+      {
+       "cp": "10003",
+       "id": "B061",
+       "value": "o"
+      },
+      {
+       "cp": "10004",
+       "id": "B010",
+       "value": "u"
+      },
+      {
+       "cp": "10005",
+       "id": "B001",
+       "value": "da"
+      },
+      {
+       "cp": "10006",
+       "id": "B045",
+       "value": "de"
+      },
+      {
+       "cp": "10007",
+       "id": "B007",
+       "value": "di"
+      },
+      {
+       "cp": "10008",
+       "id": "B014",
+       "value": "do"
+      },
+      {
+       "cp": "10009",
+       "id": "B051",
+       "value": "du"
+      },
+      {
+       "cp": "1000A",
+       "id": "B057",
+       "value": "ja"
+      },
+      {
+       "cp": "1000B",
+       "id": "B046",
+       "value": "je"
+      },
+      {
+       "cp": "1000D",
+       "id": "B036",
+       "value": "jo"
+      },
+      {
+       "cp": "1000E",
+       "id": "B065",
+       "value": "ju"
+      },
+      {
+       "cp": "1000F",
+       "id": "B077",
+       "value": "ka"
+      },
+      {
+       "cp": "10010",
+       "id": "B044",
+       "value": "ke"
+      },
+      {
+       "cp": "10011",
+       "id": "B067",
+       "value": "ki"
+      },
+      {
+       "cp": "10012",
+       "id": "B070",
+       "value": "ko"
+      },
+      {
+       "cp": "10013",
+       "id": "B081",
+       "value": "ku"
+      },
+      {
+       "cp": "10014",
+       "id": "B080",
+       "value": "ma"
+      },
+      {
+       "cp": "10015",
+       "id": "B013",
+       "value": "me"
+      },
+      {
+       "cp": "10016",
+       "id": "B073",
+       "value": "mi"
+      },
+      {
+       "cp": "10017",
+       "id": "B015",
+       "value": "mo"
+      },
+      {
+       "cp": "10018",
+       "id": "B023",
+       "value": "mu"
+      },
+      {
+       "cp": "10019",
+       "id": "B006",
+       "value": "na"
+      },
+      {
+       "cp": "1001A",
+       "id": "B024",
+       "value": "ne"
+      },
+      {
+       "cp": "1001B",
+       "id": "B030",
+       "value": "ni"
+      },
+      {
+       "cp": "1001C",
+       "id": "B052",
+       "value": "no"
+      },
+      {
+       "cp": "1001D",
+       "id": "B055",
+       "value": "nu"
+      },
+      {
+       "cp": "1001E",
+       "id": "B003",
+       "value": "pa"
+      },
+      {
+       "cp": "1001F",
+       "id": "B072",
+       "value": "pe"
+      },
+      {
+       "cp": "10020",
+       "id": "B039",
+       "value": "pi"
+      },
+      {
+       "cp": "10021",
+       "id": "B011",
+       "value": "po"
+      },
+      {
+       "cp": "10022",
+       "id": "B050",
+       "value": "pu"
+      },
+      {
+       "cp": "10023",
+       "id": "B016",
+       "value": "qa"
+      },
+      {
+       "cp": "10024",
+       "id": "B078",
+       "value": "qe"
+      },
+      {
+       "cp": "10025",
+       "id": "B021",
+       "value": "qi"
+      },
+      {
+       "cp": "10026",
+       "id": "B032",
+       "value": "qo"
+      },
+      {
+       "cp": "10028",
+       "id": "B060",
+       "value": "ra"
+      },
+      {
+       "cp": "10029",
+       "id": "B027",
+       "value": "re"
+      },
+      {
+       "cp": "1002A",
+       "id": "B053",
+       "value": "ri"
+      },
+      {
+       "cp": "1002B",
+       "id": "B002",
+       "value": "ro"
+      },
+      {
+       "cp": "1002C",
+       "id": "B026",
+       "value": "ru"
+      },
+      {
+       "cp": "1002D",
+       "id": "B031",
+       "value": "sa"
+      },
+      {
+       "cp": "1002E",
+       "id": "B009",
+       "value": "se"
+      },
+      {
+       "cp": "1002F",
+       "id": "B041",
+       "value": "si"
+      },
+      {
+       "cp": "10030",
+       "id": "B012",
+       "value": "so"
+      },
+      {
+       "cp": "10031",
+       "id": "B058",
+       "value": "su"
+      },
+      {
+       "cp": "10032",
+       "id": "B059",
+       "value": "ta"
+      },
+      {
+       "cp": "10033",
+       "id": "B004",
+       "value": "te"
+      },
+      {
+       "cp": "10034",
+       "id": "B037",
+       "value": "ti"
+      },
+      {
+       "cp": "10035",
+       "id": "B005",
+       "value": "to"
+      },
+      {
+       "cp": "10036",
+       "id": "B069",
+       "value": "tu"
+      },
+      {
+       "cp": "10037",
+       "id": "B054",
+       "value": "wa"
+      },
+      {
+       "cp": "10038",
+       "id": "B075",
+       "value": "we"
+      },
+      {
+       "cp": "10039",
+       "id": "B040",
+       "value": "wi"
+      },
+      {
+       "cp": "1003A",
+       "id": "B042",
+       "value": "wo"
+      },
+      {
+       "cp": "1003C",
+       "id": "B017",
+       "value": "za"
+      },
+      {
+       "cp": "1003D",
+       "id": "B074",
+       "value": "ze"
+      },
+      {
+       "cp": "1003F",
+       "id": "B020",
+       "value": "zo"
+      }
+     ]
+    },
+    {
+     "name": "The Ugaritic alphabet",
+     "font": "ugaritic",
+     "order": "its own ancient order, as written out on the abecedary tablets found at Ugarit (the same order as Unicode encodes it)",
+     "signs": [
+      {
+       "cp": "10380",
+       "id": "Alpa",
+       "value": "alpa"
+      },
+      {
+       "cp": "10381",
+       "id": "Beta",
+       "value": "beta"
+      },
+      {
+       "cp": "10382",
+       "id": "Gamla",
+       "value": "gamla"
+      },
+      {
+       "cp": "10383",
+       "id": "Kha",
+       "value": "kha"
+      },
+      {
+       "cp": "10384",
+       "id": "Delta",
+       "value": "delta"
+      },
+      {
+       "cp": "10385",
+       "id": "Ho",
+       "value": "ho"
+      },
+      {
+       "cp": "10386",
+       "id": "Wo",
+       "value": "wo"
+      },
+      {
+       "cp": "10387",
+       "id": "Zeta",
+       "value": "zeta"
+      },
+      {
+       "cp": "10388",
+       "id": "Hota",
+       "value": "hota"
+      },
+      {
+       "cp": "10389",
+       "id": "Tet",
+       "value": "tet"
+      },
+      {
+       "cp": "1038A",
+       "id": "Yod",
+       "value": "yod"
+      },
+      {
+       "cp": "1038B",
+       "id": "Kaf",
+       "value": "kaf"
+      },
+      {
+       "cp": "1038C",
+       "id": "Shin",
+       "value": "shin"
+      },
+      {
+       "cp": "1038D",
+       "id": "Lamda",
+       "value": "lamda"
+      },
+      {
+       "cp": "1038E",
+       "id": "Mem",
+       "value": "mem"
+      },
+      {
+       "cp": "1038F",
+       "id": "Dhal",
+       "value": "dhal"
+      },
+      {
+       "cp": "10390",
+       "id": "Nun",
+       "value": "nun"
+      },
+      {
+       "cp": "10391",
+       "id": "Zu",
+       "value": "zu"
+      },
+      {
+       "cp": "10392",
+       "id": "Samka",
+       "value": "samka"
+      },
+      {
+       "cp": "10393",
+       "id": "Ain",
+       "value": "ain"
+      },
+      {
+       "cp": "10394",
+       "id": "Pu",
+       "value": "pu"
+      },
+      {
+       "cp": "10395",
+       "id": "Sade",
+       "value": "sade"
+      },
+      {
+       "cp": "10396",
+       "id": "Qopa",
+       "value": "qopa"
+      },
+      {
+       "cp": "10397",
+       "id": "Rasha",
+       "value": "rasha"
+      },
+      {
+       "cp": "10398",
+       "id": "Thanna",
+       "value": "thanna"
+      },
+      {
+       "cp": "10399",
+       "id": "Ghain",
+       "value": "ghain"
+      },
+      {
+       "cp": "1039A",
+       "id": "To",
+       "value": "to"
+      },
+      {
+       "cp": "1039B",
+       "id": "I",
+       "value": "i"
+      },
+      {
+       "cp": "1039C",
+       "id": "U",
+       "value": "u"
+      },
+      {
+       "cp": "1039D",
+       "id": "Ssu",
+       "value": "ssu"
+      }
+     ]
+    }
+   ]
+  },
+  "iron": {
+   "label": "Wing III, the Early Iron Age",
+   "sets": [
+    {
+     "name": "The Greek alphabet",
+     "font": "greek",
+     "order": "alphabetical (the classical letter forms; the earliest Greek inscriptions date from the 8th century BCE)",
+     "signs": [
+      {
+       "cp": "0391",
+       "id": "Alpha",
+       "value": "Α"
+      },
+      {
+       "cp": "0392",
+       "id": "Beta",
+       "value": "Β"
+      },
+      {
+       "cp": "0393",
+       "id": "Gamma",
+       "value": "Γ"
+      },
+      {
+       "cp": "0394",
+       "id": "Delta",
+       "value": "Δ"
+      },
+      {
+       "cp": "0395",
+       "id": "Epsilon",
+       "value": "Ε"
+      },
+      {
+       "cp": "0396",
+       "id": "Zeta",
+       "value": "Ζ"
+      },
+      {
+       "cp": "0397",
+       "id": "Eta",
+       "value": "Η"
+      },
+      {
+       "cp": "0398",
+       "id": "Theta",
+       "value": "Θ"
+      },
+      {
+       "cp": "0399",
+       "id": "Iota",
+       "value": "Ι"
+      },
+      {
+       "cp": "039A",
+       "id": "Kappa",
+       "value": "Κ"
+      },
+      {
+       "cp": "039B",
+       "id": "Lamda",
+       "value": "Λ"
+      },
+      {
+       "cp": "039C",
+       "id": "Mu",
+       "value": "Μ"
+      },
+      {
+       "cp": "039D",
+       "id": "Nu",
+       "value": "Ν"
+      },
+      {
+       "cp": "039E",
+       "id": "Xi",
+       "value": "Ξ"
+      },
+      {
+       "cp": "039F",
+       "id": "Omicron",
+       "value": "Ο"
+      },
+      {
+       "cp": "03A0",
+       "id": "Pi",
+       "value": "Π"
+      },
+      {
+       "cp": "03A1",
+       "id": "Rho",
+       "value": "Ρ"
+      },
+      {
+       "cp": "03A3",
+       "id": "Sigma",
+       "value": "Σ"
+      },
+      {
+       "cp": "03A4",
+       "id": "Tau",
+       "value": "Τ"
+      },
+      {
+       "cp": "03A5",
+       "id": "Upsilon",
+       "value": "Υ"
+      },
+      {
+       "cp": "03A6",
+       "id": "Phi",
+       "value": "Φ"
+      },
+      {
+       "cp": "03A7",
+       "id": "Chi",
+       "value": "Χ"
+      },
+      {
+       "cp": "03A8",
+       "id": "Psi",
+       "value": "Ψ"
+      },
+      {
+       "cp": "03A9",
+       "id": "Omega",
+       "value": "Ω"
+      }
+     ]
+    },
+    {
+     "name": "Old Italic letters (Etruscan and its neighbours)",
+     "font": "olditalic",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10300",
+       "id": "A",
+       "value": "a"
+      },
+      {
+       "cp": "10301",
+       "id": "Be",
+       "value": "be"
+      },
+      {
+       "cp": "10302",
+       "id": "Ke",
+       "value": "ke"
+      },
+      {
+       "cp": "10303",
+       "id": "De",
+       "value": "de"
+      },
+      {
+       "cp": "10304",
+       "id": "E",
+       "value": "e"
+      },
+      {
+       "cp": "10305",
+       "id": "Ve",
+       "value": "ve"
+      },
+      {
+       "cp": "10306",
+       "id": "Ze",
+       "value": "ze"
+      },
+      {
+       "cp": "10307",
+       "id": "He",
+       "value": "he"
+      },
+      {
+       "cp": "10308",
+       "id": "The",
+       "value": "the"
+      },
+      {
+       "cp": "10309",
+       "id": "I",
+       "value": "i"
+      },
+      {
+       "cp": "1030A",
+       "id": "Ka",
+       "value": "ka"
+      },
+      {
+       "cp": "1030B",
+       "id": "El",
+       "value": "el"
+      },
+      {
+       "cp": "1030C",
+       "id": "Em",
+       "value": "em"
+      },
+      {
+       "cp": "1030D",
+       "id": "En",
+       "value": "en"
+      },
+      {
+       "cp": "1030E",
+       "id": "Esh",
+       "value": "esh"
+      },
+      {
+       "cp": "1030F",
+       "id": "O",
+       "value": "o"
+      },
+      {
+       "cp": "10310",
+       "id": "Pe",
+       "value": "pe"
+      },
+      {
+       "cp": "10311",
+       "id": "She",
+       "value": "she"
+      },
+      {
+       "cp": "10312",
+       "id": "Ku",
+       "value": "ku"
+      },
+      {
+       "cp": "10313",
+       "id": "Er",
+       "value": "er"
+      },
+      {
+       "cp": "10314",
+       "id": "Es",
+       "value": "es"
+      },
+      {
+       "cp": "10315",
+       "id": "Te",
+       "value": "te"
+      },
+      {
+       "cp": "10316",
+       "id": "U",
+       "value": "u"
+      },
+      {
+       "cp": "10317",
+       "id": "Eks",
+       "value": "eks"
+      },
+      {
+       "cp": "10318",
+       "id": "Phe",
+       "value": "phe"
+      },
+      {
+       "cp": "10319",
+       "id": "Khe",
+       "value": "khe"
+      },
+      {
+       "cp": "1031A",
+       "id": "Ef",
+       "value": "ef"
+      },
+      {
+       "cp": "1031B",
+       "id": "Ers",
+       "value": "ers"
+      },
+      {
+       "cp": "1031C",
+       "id": "Che",
+       "value": "che"
+      },
+      {
+       "cp": "1031D",
+       "id": "Ii",
+       "value": "ii"
+      },
+      {
+       "cp": "1031E",
+       "id": "Uu",
+       "value": "uu"
+      },
+      {
+       "cp": "1031F",
+       "id": "Ess",
+       "value": "ess"
+      }
+     ]
+    },
+    {
+     "name": "Old South Arabian letters (Sabaean and its neighbours)",
+     "font": "oldsoutharabian",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10A60",
+       "id": "He",
+       "value": "he"
+      },
+      {
+       "cp": "10A61",
+       "id": "Lamedh",
+       "value": "lamedh"
+      },
+      {
+       "cp": "10A62",
+       "id": "Heth",
+       "value": "heth"
+      },
+      {
+       "cp": "10A63",
+       "id": "Mem",
+       "value": "mem"
+      },
+      {
+       "cp": "10A64",
+       "id": "Qoph",
+       "value": "qoph"
+      },
+      {
+       "cp": "10A65",
+       "id": "Waw",
+       "value": "waw"
+      },
+      {
+       "cp": "10A66",
+       "id": "Shin",
+       "value": "shin"
+      },
+      {
+       "cp": "10A67",
+       "id": "Resh",
+       "value": "resh"
+      },
+      {
+       "cp": "10A68",
+       "id": "Beth",
+       "value": "beth"
+      },
+      {
+       "cp": "10A69",
+       "id": "Taw",
+       "value": "taw"
+      },
+      {
+       "cp": "10A6A",
+       "id": "Sat",
+       "value": "sat"
+      },
+      {
+       "cp": "10A6B",
+       "id": "Kaph",
+       "value": "kaph"
+      },
+      {
+       "cp": "10A6C",
+       "id": "Nun",
+       "value": "nun"
+      },
+      {
+       "cp": "10A6D",
+       "id": "Kheth",
+       "value": "kheth"
+      },
+      {
+       "cp": "10A6E",
+       "id": "Sadhe",
+       "value": "sadhe"
+      },
+      {
+       "cp": "10A6F",
+       "id": "Samekh",
+       "value": "samekh"
+      },
+      {
+       "cp": "10A70",
+       "id": "Fe",
+       "value": "fe"
+      },
+      {
+       "cp": "10A71",
+       "id": "Alef",
+       "value": "alef"
+      },
+      {
+       "cp": "10A72",
+       "id": "Ayn",
+       "value": "ayn"
+      },
+      {
+       "cp": "10A73",
+       "id": "Dhadhe",
+       "value": "dhadhe"
+      },
+      {
+       "cp": "10A74",
+       "id": "Gimel",
+       "value": "gimel"
+      },
+      {
+       "cp": "10A75",
+       "id": "Daleth",
+       "value": "daleth"
+      },
+      {
+       "cp": "10A76",
+       "id": "Ghayn",
+       "value": "ghayn"
+      },
+      {
+       "cp": "10A77",
+       "id": "Teth",
+       "value": "teth"
+      },
+      {
+       "cp": "10A78",
+       "id": "Zayn",
+       "value": "zayn"
+      },
+      {
+       "cp": "10A79",
+       "id": "Dhaleth",
+       "value": "dhaleth"
+      },
+      {
+       "cp": "10A7A",
+       "id": "Yodh",
+       "value": "yodh"
+      },
+      {
+       "cp": "10A7B",
+       "id": "Thaw",
+       "value": "thaw"
+      },
+      {
+       "cp": "10A7C",
+       "id": "Theth",
+       "value": "theth"
+      }
+     ]
+    },
+    {
+     "name": "The Old Persian syllabary (signs only, without the word-signs)",
+     "font": "oldpersian",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "103A0",
+       "id": "A",
+       "value": "a"
+      },
+      {
+       "cp": "103A1",
+       "id": "I",
+       "value": "i"
+      },
+      {
+       "cp": "103A2",
+       "id": "U",
+       "value": "u"
+      },
+      {
+       "cp": "103A3",
+       "id": "Ka",
+       "value": "ka"
+      },
+      {
+       "cp": "103A4",
+       "id": "Ku",
+       "value": "ku"
+      },
+      {
+       "cp": "103A5",
+       "id": "Ga",
+       "value": "ga"
+      },
+      {
+       "cp": "103A6",
+       "id": "Gu",
+       "value": "gu"
+      },
+      {
+       "cp": "103A7",
+       "id": "Xa",
+       "value": "xa"
+      },
+      {
+       "cp": "103A8",
+       "id": "Ca",
+       "value": "ca"
+      },
+      {
+       "cp": "103A9",
+       "id": "Ja",
+       "value": "ja"
+      },
+      {
+       "cp": "103AA",
+       "id": "Ji",
+       "value": "ji"
+      },
+      {
+       "cp": "103AB",
+       "id": "Ta",
+       "value": "ta"
+      },
+      {
+       "cp": "103AC",
+       "id": "Tu",
+       "value": "tu"
+      },
+      {
+       "cp": "103AD",
+       "id": "Da",
+       "value": "da"
+      },
+      {
+       "cp": "103AE",
+       "id": "Di",
+       "value": "di"
+      },
+      {
+       "cp": "103AF",
+       "id": "Du",
+       "value": "du"
+      },
+      {
+       "cp": "103B0",
+       "id": "Tha",
+       "value": "tha"
+      },
+      {
+       "cp": "103B1",
+       "id": "Pa",
+       "value": "pa"
+      },
+      {
+       "cp": "103B2",
+       "id": "Ba",
+       "value": "ba"
+      },
+      {
+       "cp": "103B3",
+       "id": "Fa",
+       "value": "fa"
+      },
+      {
+       "cp": "103B4",
+       "id": "Na",
+       "value": "na"
+      },
+      {
+       "cp": "103B5",
+       "id": "Nu",
+       "value": "nu"
+      },
+      {
+       "cp": "103B6",
+       "id": "Ma",
+       "value": "ma"
+      },
+      {
+       "cp": "103B7",
+       "id": "Mi",
+       "value": "mi"
+      },
+      {
+       "cp": "103B8",
+       "id": "Mu",
+       "value": "mu"
+      },
+      {
+       "cp": "103B9",
+       "id": "Ya",
+       "value": "ya"
+      },
+      {
+       "cp": "103BA",
+       "id": "Va",
+       "value": "va"
+      },
+      {
+       "cp": "103BB",
+       "id": "Vi",
+       "value": "vi"
+      },
+      {
+       "cp": "103BC",
+       "id": "Ra",
+       "value": "ra"
+      },
+      {
+       "cp": "103BD",
+       "id": "Ru",
+       "value": "ru"
+      },
+      {
+       "cp": "103BE",
+       "id": "La",
+       "value": "la"
+      },
+      {
+       "cp": "103BF",
+       "id": "Sa",
+       "value": "sa"
+      },
+      {
+       "cp": "103C0",
+       "id": "Za",
+       "value": "za"
+      },
+      {
+       "cp": "103C1",
+       "id": "Sha",
+       "value": "sha"
+      },
+      {
+       "cp": "103C2",
+       "id": "Ssa",
+       "value": "ssa"
+      },
+      {
+       "cp": "103C3",
+       "id": "Ha",
+       "value": "ha"
+      }
+     ]
+    }
+   ]
+  },
+  "axial": {
+   "label": "Wing IV, the Axial Age",
+   "sets": [
+    {
+     "name": "The Greek alphabet",
+     "font": "greek",
+     "order": "alphabetical",
+     "signs": [
+      {
+       "cp": "0391",
+       "id": "Alpha",
+       "value": "Α"
+      },
+      {
+       "cp": "0392",
+       "id": "Beta",
+       "value": "Β"
+      },
+      {
+       "cp": "0393",
+       "id": "Gamma",
+       "value": "Γ"
+      },
+      {
+       "cp": "0394",
+       "id": "Delta",
+       "value": "Δ"
+      },
+      {
+       "cp": "0395",
+       "id": "Epsilon",
+       "value": "Ε"
+      },
+      {
+       "cp": "0396",
+       "id": "Zeta",
+       "value": "Ζ"
+      },
+      {
+       "cp": "0397",
+       "id": "Eta",
+       "value": "Η"
+      },
+      {
+       "cp": "0398",
+       "id": "Theta",
+       "value": "Θ"
+      },
+      {
+       "cp": "0399",
+       "id": "Iota",
+       "value": "Ι"
+      },
+      {
+       "cp": "039A",
+       "id": "Kappa",
+       "value": "Κ"
+      },
+      {
+       "cp": "039B",
+       "id": "Lamda",
+       "value": "Λ"
+      },
+      {
+       "cp": "039C",
+       "id": "Mu",
+       "value": "Μ"
+      },
+      {
+       "cp": "039D",
+       "id": "Nu",
+       "value": "Ν"
+      },
+      {
+       "cp": "039E",
+       "id": "Xi",
+       "value": "Ξ"
+      },
+      {
+       "cp": "039F",
+       "id": "Omicron",
+       "value": "Ο"
+      },
+      {
+       "cp": "03A0",
+       "id": "Pi",
+       "value": "Π"
+      },
+      {
+       "cp": "03A1",
+       "id": "Rho",
+       "value": "Ρ"
+      },
+      {
+       "cp": "03A3",
+       "id": "Sigma",
+       "value": "Σ"
+      },
+      {
+       "cp": "03A4",
+       "id": "Tau",
+       "value": "Τ"
+      },
+      {
+       "cp": "03A5",
+       "id": "Upsilon",
+       "value": "Υ"
+      },
+      {
+       "cp": "03A6",
+       "id": "Phi",
+       "value": "Φ"
+      },
+      {
+       "cp": "03A7",
+       "id": "Chi",
+       "value": "Χ"
+      },
+      {
+       "cp": "03A8",
+       "id": "Psi",
+       "value": "Ψ"
+      },
+      {
+       "cp": "03A9",
+       "id": "Omega",
+       "value": "Ω"
+      }
+     ]
+    },
+    {
+     "name": "Brahmi: vowels and consonants (the script of Ashoka's edicts, 3rd century BCE)",
+     "font": "brahmi",
+     "order": "Unicode order (the traditional varnamala order)",
+     "signs": [
+      {
+       "cp": "11005",
+       "id": "A",
+       "value": "a"
+      },
+      {
+       "cp": "11006",
+       "id": "Aa",
+       "value": "aa"
+      },
+      {
+       "cp": "11007",
+       "id": "I",
+       "value": "i"
+      },
+      {
+       "cp": "11008",
+       "id": "Ii",
+       "value": "ii"
+      },
+      {
+       "cp": "11009",
+       "id": "U",
+       "value": "u"
+      },
+      {
+       "cp": "1100A",
+       "id": "Uu",
+       "value": "uu"
+      },
+      {
+       "cp": "1100B",
+       "id": "Vocalic R",
+       "value": "vocalic r"
+      },
+      {
+       "cp": "1100C",
+       "id": "Vocalic Rr",
+       "value": "vocalic rr"
+      },
+      {
+       "cp": "1100D",
+       "id": "Vocalic L",
+       "value": "vocalic l"
+      },
+      {
+       "cp": "1100E",
+       "id": "Vocalic Ll",
+       "value": "vocalic ll"
+      },
+      {
+       "cp": "1100F",
+       "id": "E",
+       "value": "e"
+      },
+      {
+       "cp": "11010",
+       "id": "Ai",
+       "value": "ai"
+      },
+      {
+       "cp": "11011",
+       "id": "O",
+       "value": "o"
+      },
+      {
+       "cp": "11012",
+       "id": "Au",
+       "value": "au"
+      },
+      {
+       "cp": "11013",
+       "id": "Ka",
+       "value": "ka"
+      },
+      {
+       "cp": "11014",
+       "id": "Kha",
+       "value": "kha"
+      },
+      {
+       "cp": "11015",
+       "id": "Ga",
+       "value": "ga"
+      },
+      {
+       "cp": "11016",
+       "id": "Gha",
+       "value": "gha"
+      },
+      {
+       "cp": "11017",
+       "id": "Nga",
+       "value": "nga"
+      },
+      {
+       "cp": "11018",
+       "id": "Ca",
+       "value": "ca"
+      },
+      {
+       "cp": "11019",
+       "id": "Cha",
+       "value": "cha"
+      },
+      {
+       "cp": "1101A",
+       "id": "Ja",
+       "value": "ja"
+      },
+      {
+       "cp": "1101B",
+       "id": "Jha",
+       "value": "jha"
+      },
+      {
+       "cp": "1101C",
+       "id": "Nya",
+       "value": "nya"
+      },
+      {
+       "cp": "1101D",
+       "id": "Tta",
+       "value": "tta"
+      },
+      {
+       "cp": "1101E",
+       "id": "Ttha",
+       "value": "ttha"
+      },
+      {
+       "cp": "1101F",
+       "id": "Dda",
+       "value": "dda"
+      },
+      {
+       "cp": "11020",
+       "id": "Ddha",
+       "value": "ddha"
+      },
+      {
+       "cp": "11021",
+       "id": "Nna",
+       "value": "nna"
+      },
+      {
+       "cp": "11022",
+       "id": "Ta",
+       "value": "ta"
+      },
+      {
+       "cp": "11023",
+       "id": "Tha",
+       "value": "tha"
+      },
+      {
+       "cp": "11024",
+       "id": "Da",
+       "value": "da"
+      },
+      {
+       "cp": "11025",
+       "id": "Dha",
+       "value": "dha"
+      },
+      {
+       "cp": "11026",
+       "id": "Na",
+       "value": "na"
+      },
+      {
+       "cp": "11027",
+       "id": "Pa",
+       "value": "pa"
+      },
+      {
+       "cp": "11028",
+       "id": "Pha",
+       "value": "pha"
+      },
+      {
+       "cp": "11029",
+       "id": "Ba",
+       "value": "ba"
+      },
+      {
+       "cp": "1102A",
+       "id": "Bha",
+       "value": "bha"
+      },
+      {
+       "cp": "1102B",
+       "id": "Ma",
+       "value": "ma"
+      },
+      {
+       "cp": "1102C",
+       "id": "Ya",
+       "value": "ya"
+      },
+      {
+       "cp": "1102D",
+       "id": "Ra",
+       "value": "ra"
+      },
+      {
+       "cp": "1102E",
+       "id": "La",
+       "value": "la"
+      },
+      {
+       "cp": "1102F",
+       "id": "Va",
+       "value": "va"
+      },
+      {
+       "cp": "11030",
+       "id": "Sha",
+       "value": "sha"
+      },
+      {
+       "cp": "11031",
+       "id": "Ssa",
+       "value": "ssa"
+      },
+      {
+       "cp": "11032",
+       "id": "Sa",
+       "value": "sa"
+      },
+      {
+       "cp": "11033",
+       "id": "Ha",
+       "value": "ha"
+      },
+      {
+       "cp": "11034",
+       "id": "Lla",
+       "value": "lla"
+      }
+     ]
+    },
+    {
+     "name": "Kharoshthi consonants (north-west India and Gandhara)",
+     "font": "kharoshthi",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10A10",
+       "id": "Ka",
+       "value": "ka"
+      },
+      {
+       "cp": "10A11",
+       "id": "Kha",
+       "value": "kha"
+      },
+      {
+       "cp": "10A12",
+       "id": "Ga",
+       "value": "ga"
+      },
+      {
+       "cp": "10A13",
+       "id": "Gha",
+       "value": "gha"
+      },
+      {
+       "cp": "10A15",
+       "id": "Ca",
+       "value": "ca"
+      },
+      {
+       "cp": "10A16",
+       "id": "Cha",
+       "value": "cha"
+      },
+      {
+       "cp": "10A17",
+       "id": "Ja",
+       "value": "ja"
+      },
+      {
+       "cp": "10A19",
+       "id": "Nya",
+       "value": "nya"
+      },
+      {
+       "cp": "10A1A",
+       "id": "Tta",
+       "value": "tta"
+      },
+      {
+       "cp": "10A1B",
+       "id": "Ttha",
+       "value": "ttha"
+      },
+      {
+       "cp": "10A1C",
+       "id": "Dda",
+       "value": "dda"
+      },
+      {
+       "cp": "10A1D",
+       "id": "Ddha",
+       "value": "ddha"
+      },
+      {
+       "cp": "10A1E",
+       "id": "Nna",
+       "value": "nna"
+      },
+      {
+       "cp": "10A1F",
+       "id": "Ta",
+       "value": "ta"
+      },
+      {
+       "cp": "10A20",
+       "id": "Tha",
+       "value": "tha"
+      },
+      {
+       "cp": "10A21",
+       "id": "Da",
+       "value": "da"
+      },
+      {
+       "cp": "10A22",
+       "id": "Dha",
+       "value": "dha"
+      },
+      {
+       "cp": "10A23",
+       "id": "Na",
+       "value": "na"
+      },
+      {
+       "cp": "10A24",
+       "id": "Pa",
+       "value": "pa"
+      },
+      {
+       "cp": "10A25",
+       "id": "Pha",
+       "value": "pha"
+      },
+      {
+       "cp": "10A26",
+       "id": "Ba",
+       "value": "ba"
+      },
+      {
+       "cp": "10A27",
+       "id": "Bha",
+       "value": "bha"
+      },
+      {
+       "cp": "10A28",
+       "id": "Ma",
+       "value": "ma"
+      },
+      {
+       "cp": "10A29",
+       "id": "Ya",
+       "value": "ya"
+      },
+      {
+       "cp": "10A2A",
+       "id": "Ra",
+       "value": "ra"
+      },
+      {
+       "cp": "10A2B",
+       "id": "La",
+       "value": "la"
+      },
+      {
+       "cp": "10A2C",
+       "id": "Va",
+       "value": "va"
+      },
+      {
+       "cp": "10A2D",
+       "id": "Sha",
+       "value": "sha"
+      },
+      {
+       "cp": "10A2E",
+       "id": "Ssa",
+       "value": "ssa"
+      },
+      {
+       "cp": "10A2F",
+       "id": "Sa",
+       "value": "sa"
+      },
+      {
+       "cp": "10A30",
+       "id": "Za",
+       "value": "za"
+      },
+      {
+       "cp": "10A31",
+       "id": "Ha",
+       "value": "ha"
+      },
+      {
+       "cp": "10A32",
+       "id": "Kka",
+       "value": "kka"
+      },
+      {
+       "cp": "10A33",
+       "id": "Tttha",
+       "value": "tttha"
+      },
+      {
+       "cp": "10A34",
+       "id": "Ttta",
+       "value": "ttta"
+      },
+      {
+       "cp": "10A35",
+       "id": "Vha",
+       "value": "vha"
+      }
+     ]
+    },
+    {
+     "name": "The eight trigrams of the Yijing (Book of Changes)",
+     "font": "symbols2",
+     "order": "Unicode order (heaven, lake, fire, thunder, wind, water, mountain, earth)",
+     "signs": [
+      {
+       "cp": "2630",
+       "id": "Heaven",
+       "value": "trigram for heaven"
+      },
+      {
+       "cp": "2631",
+       "id": "Lake",
+       "value": "trigram for lake"
+      },
+      {
+       "cp": "2632",
+       "id": "Fire",
+       "value": "trigram for fire"
+      },
+      {
+       "cp": "2633",
+       "id": "Thunder",
+       "value": "trigram for thunder"
+      },
+      {
+       "cp": "2634",
+       "id": "Wind",
+       "value": "trigram for wind"
+      },
+      {
+       "cp": "2635",
+       "id": "Water",
+       "value": "trigram for water"
+      },
+      {
+       "cp": "2636",
+       "id": "Mountain",
+       "value": "trigram for mountain"
+      },
+      {
+       "cp": "2637",
+       "id": "Earth",
+       "value": "trigram for earth"
+      }
+     ]
+    }
+   ]
+  },
+  "late": {
+   "label": "Wing V, Late Antiquity",
+   "sets": [
+    {
+     "name": "The Coptic alphabet: Greek letters and six of the seven taken from Egyptian Demotic (Egypt, from the 3rd century CE)",
+     "font": "coptic",
+     "order": "alphabetical",
+     "signs": [
+      {
+       "cp": "2C80",
+       "id": "Alfa",
+       "value": "alfa"
+      },
+      {
+       "cp": "2C82",
+       "id": "Vida",
+       "value": "vida"
+      },
+      {
+       "cp": "2C84",
+       "id": "Gamma",
+       "value": "gamma"
+      },
+      {
+       "cp": "2C86",
+       "id": "Dalda",
+       "value": "dalda"
+      },
+      {
+       "cp": "2C88",
+       "id": "Eie",
+       "value": "eie"
+      },
+      {
+       "cp": "2C8A",
+       "id": "Sou",
+       "value": "sou"
+      },
+      {
+       "cp": "2C8C",
+       "id": "Zata",
+       "value": "zata"
+      },
+      {
+       "cp": "2C8E",
+       "id": "Hate",
+       "value": "hate"
+      },
+      {
+       "cp": "2C90",
+       "id": "Thethe",
+       "value": "thethe"
+      },
+      {
+       "cp": "2C92",
+       "id": "Iauda",
+       "value": "iauda"
+      },
+      {
+       "cp": "2C94",
+       "id": "Kapa",
+       "value": "kapa"
+      },
+      {
+       "cp": "2C96",
+       "id": "Laula",
+       "value": "laula"
+      },
+      {
+       "cp": "2C98",
+       "id": "Mi",
+       "value": "mi"
+      },
+      {
+       "cp": "2C9A",
+       "id": "Ni",
+       "value": "ni"
+      },
+      {
+       "cp": "2C9C",
+       "id": "Ksi",
+       "value": "ksi"
+      },
+      {
+       "cp": "2C9E",
+       "id": "O",
+       "value": "o"
+      },
+      {
+       "cp": "2CA0",
+       "id": "Pi",
+       "value": "pi"
+      },
+      {
+       "cp": "2CA2",
+       "id": "Ro",
+       "value": "ro"
+      },
+      {
+       "cp": "2CA4",
+       "id": "Sima",
+       "value": "sima"
+      },
+      {
+       "cp": "2CA6",
+       "id": "Tau",
+       "value": "tau"
+      },
+      {
+       "cp": "2CA8",
+       "id": "Ua",
+       "value": "ua"
+      },
+      {
+       "cp": "2CAA",
+       "id": "Fi",
+       "value": "fi"
+      },
+      {
+       "cp": "2CAC",
+       "id": "Khi",
+       "value": "khi"
+      },
+      {
+       "cp": "2CAE",
+       "id": "Psi",
+       "value": "psi"
+      },
+      {
+       "cp": "2CB0",
+       "id": "Oou",
+       "value": "oou"
+      },
+      {
+       "cp": "03E2",
+       "id": "Shei",
+       "value": "shei"
+      },
+      {
+       "cp": "03E4",
+       "id": "Fei",
+       "value": "fei"
+      },
+      {
+       "cp": "03E6",
+       "id": "Khei",
+       "value": "khei"
+      },
+      {
+       "cp": "03E8",
+       "id": "Hori",
+       "value": "hori"
+      },
+      {
+       "cp": "03EA",
+       "id": "Gangia",
+       "value": "gangia"
+      },
+      {
+       "cp": "03EC",
+       "id": "Shima",
+       "value": "shima"
+      }
+     ]
+    },
+    {
+     "name": "Ogham: the four groups of five and the forfeda (Irish memorial stones, from about the 4th century CE)",
+     "font": "ogham",
+     "order": "Unicode order (the traditional aicme order)",
+     "signs": [
+      {
+       "cp": "1681",
+       "id": "Beith",
+       "value": "beith"
+      },
+      {
+       "cp": "1682",
+       "id": "Luis",
+       "value": "luis"
+      },
+      {
+       "cp": "1683",
+       "id": "Fearn",
+       "value": "fearn"
+      },
+      {
+       "cp": "1684",
+       "id": "Sail",
+       "value": "sail"
+      },
+      {
+       "cp": "1685",
+       "id": "Nion",
+       "value": "nion"
+      },
+      {
+       "cp": "1686",
+       "id": "Uath",
+       "value": "uath"
+      },
+      {
+       "cp": "1687",
+       "id": "Dair",
+       "value": "dair"
+      },
+      {
+       "cp": "1688",
+       "id": "Tinne",
+       "value": "tinne"
+      },
+      {
+       "cp": "1689",
+       "id": "Coll",
+       "value": "coll"
+      },
+      {
+       "cp": "168A",
+       "id": "Ceirt",
+       "value": "ceirt"
+      },
+      {
+       "cp": "168B",
+       "id": "Muin",
+       "value": "muin"
+      },
+      {
+       "cp": "168C",
+       "id": "Gort",
+       "value": "gort"
+      },
+      {
+       "cp": "168D",
+       "id": "Ngeadal",
+       "value": "ngeadal"
+      },
+      {
+       "cp": "168E",
+       "id": "Straif",
+       "value": "straif"
+      },
+      {
+       "cp": "168F",
+       "id": "Ruis",
+       "value": "ruis"
+      },
+      {
+       "cp": "1690",
+       "id": "Ailm",
+       "value": "ailm"
+      },
+      {
+       "cp": "1691",
+       "id": "Onn",
+       "value": "onn"
+      },
+      {
+       "cp": "1692",
+       "id": "Ur",
+       "value": "ur"
+      },
+      {
+       "cp": "1693",
+       "id": "Eadhadh",
+       "value": "eadhadh"
+      },
+      {
+       "cp": "1694",
+       "id": "Iodhadh",
+       "value": "iodhadh"
+      },
+      {
+       "cp": "1695",
+       "id": "Eabhadh",
+       "value": "eabhadh"
+      },
+      {
+       "cp": "1696",
+       "id": "Or",
+       "value": "or"
+      },
+      {
+       "cp": "1697",
+       "id": "Uilleann",
+       "value": "uilleann"
+      },
+      {
+       "cp": "1698",
+       "id": "Ifin",
+       "value": "ifin"
+      },
+      {
+       "cp": "1699",
+       "id": "Eamhancholl",
+       "value": "eamhancholl"
+      },
+      {
+       "cp": "169A",
+       "id": "Peith",
+       "value": "peith"
+      }
+     ]
+    },
+    {
+     "name": "Inscriptional Pahlavi: the script of the early Sasanian royal inscriptions (3rd century CE)",
+     "font": "pahlavi",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10B60",
+       "id": "Aleph",
+       "value": "aleph"
+      },
+      {
+       "cp": "10B61",
+       "id": "Beth",
+       "value": "beth"
+      },
+      {
+       "cp": "10B62",
+       "id": "Gimel",
+       "value": "gimel"
+      },
+      {
+       "cp": "10B63",
+       "id": "Daleth",
+       "value": "daleth"
+      },
+      {
+       "cp": "10B64",
+       "id": "He",
+       "value": "he"
+      },
+      {
+       "cp": "10B65",
+       "id": "Waw-Ayin-Resh",
+       "value": "waw-ayin-resh"
+      },
+      {
+       "cp": "10B66",
+       "id": "Zayin",
+       "value": "zayin"
+      },
+      {
+       "cp": "10B67",
+       "id": "Heth",
+       "value": "heth"
+      },
+      {
+       "cp": "10B68",
+       "id": "Teth",
+       "value": "teth"
+      },
+      {
+       "cp": "10B69",
+       "id": "Yodh",
+       "value": "yodh"
+      },
+      {
+       "cp": "10B6A",
+       "id": "Kaph",
+       "value": "kaph"
+      },
+      {
+       "cp": "10B6B",
+       "id": "Lamedh",
+       "value": "lamedh"
+      },
+      {
+       "cp": "10B6C",
+       "id": "Mem-Qoph",
+       "value": "mem-qoph"
+      },
+      {
+       "cp": "10B6D",
+       "id": "Nun",
+       "value": "nun"
+      },
+      {
+       "cp": "10B6E",
+       "id": "Samekh",
+       "value": "samekh"
+      },
+      {
+       "cp": "10B6F",
+       "id": "Pe",
+       "value": "pe"
+      },
+      {
+       "cp": "10B70",
+       "id": "Sadhe",
+       "value": "sadhe"
+      },
+      {
+       "cp": "10B71",
+       "id": "Shin",
+       "value": "shin"
+      },
+      {
+       "cp": "10B72",
+       "id": "Taw",
+       "value": "taw"
+      }
+     ]
+    }
+   ]
+  },
+  "medieval": {
+   "label": "Wing VI, the Early Medieval",
+   "sets": [
+    {
+     "name": "Old Turkic: the runiform letters of the Orkhon and Yenisei inscriptions (8th century CE)",
+     "font": "oldturkic",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10C00",
+       "id": "Old Turkic 10C00",
+       "value": "old turkic 10C00"
+      },
+      {
+       "cp": "10C01",
+       "id": "Old Turkic 10C01",
+       "value": "old turkic 10C01"
+      },
+      {
+       "cp": "10C02",
+       "id": "Old Turkic 10C02",
+       "value": "old turkic 10C02"
+      },
+      {
+       "cp": "10C03",
+       "id": "Old Turkic 10C03",
+       "value": "old turkic 10C03"
+      },
+      {
+       "cp": "10C04",
+       "id": "Old Turkic 10C04",
+       "value": "old turkic 10C04"
+      },
+      {
+       "cp": "10C05",
+       "id": "Old Turkic 10C05",
+       "value": "old turkic 10C05"
+      },
+      {
+       "cp": "10C06",
+       "id": "Old Turkic 10C06",
+       "value": "old turkic 10C06"
+      },
+      {
+       "cp": "10C07",
+       "id": "Old Turkic 10C07",
+       "value": "old turkic 10C07"
+      },
+      {
+       "cp": "10C08",
+       "id": "Old Turkic 10C08",
+       "value": "old turkic 10C08"
+      },
+      {
+       "cp": "10C09",
+       "id": "Old Turkic 10C09",
+       "value": "old turkic 10C09"
+      },
+      {
+       "cp": "10C0A",
+       "id": "Old Turkic 10C0A",
+       "value": "old turkic 10C0A"
+      },
+      {
+       "cp": "10C0C",
+       "id": "Old Turkic 10C0C",
+       "value": "old turkic 10C0C"
+      },
+      {
+       "cp": "10C0D",
+       "id": "Old Turkic 10C0D",
+       "value": "old turkic 10C0D"
+      },
+      {
+       "cp": "10C0E",
+       "id": "Old Turkic 10C0E",
+       "value": "old turkic 10C0E"
+      },
+      {
+       "cp": "10C0F",
+       "id": "Old Turkic 10C0F",
+       "value": "old turkic 10C0F"
+      },
+      {
+       "cp": "10C10",
+       "id": "Old Turkic 10C10",
+       "value": "old turkic 10C10"
+      },
+      {
+       "cp": "10C11",
+       "id": "Old Turkic 10C11",
+       "value": "old turkic 10C11"
+      },
+      {
+       "cp": "10C12",
+       "id": "Old Turkic 10C12",
+       "value": "old turkic 10C12"
+      },
+      {
+       "cp": "10C13",
+       "id": "Old Turkic 10C13",
+       "value": "old turkic 10C13"
+      },
+      {
+       "cp": "10C14",
+       "id": "Old Turkic 10C14",
+       "value": "old turkic 10C14"
+      },
+      {
+       "cp": "10C15",
+       "id": "Old Turkic 10C15",
+       "value": "old turkic 10C15"
+      },
+      {
+       "cp": "10C16",
+       "id": "Old Turkic 10C16",
+       "value": "old turkic 10C16"
+      },
+      {
+       "cp": "10C17",
+       "id": "Old Turkic 10C17",
+       "value": "old turkic 10C17"
+      },
+      {
+       "cp": "10C18",
+       "id": "Old Turkic 10C18",
+       "value": "old turkic 10C18"
+      },
+      {
+       "cp": "10C19",
+       "id": "Old Turkic 10C19",
+       "value": "old turkic 10C19"
+      },
+      {
+       "cp": "10C1A",
+       "id": "Old Turkic 10C1A",
+       "value": "old turkic 10C1A"
+      },
+      {
+       "cp": "10C1C",
+       "id": "Old Turkic 10C1C",
+       "value": "old turkic 10C1C"
+      },
+      {
+       "cp": "10C1D",
+       "id": "Old Turkic 10C1D",
+       "value": "old turkic 10C1D"
+      },
+      {
+       "cp": "10C1E",
+       "id": "Old Turkic 10C1E",
+       "value": "old turkic 10C1E"
+      },
+      {
+       "cp": "10C1F",
+       "id": "Old Turkic 10C1F",
+       "value": "old turkic 10C1F"
+      },
+      {
+       "cp": "10C20",
+       "id": "Old Turkic 10C20",
+       "value": "old turkic 10C20"
+      },
+      {
+       "cp": "10C21",
+       "id": "Old Turkic 10C21",
+       "value": "old turkic 10C21"
+      },
+      {
+       "cp": "10C22",
+       "id": "Old Turkic 10C22",
+       "value": "old turkic 10C22"
+      },
+      {
+       "cp": "10C23",
+       "id": "Old Turkic 10C23",
+       "value": "old turkic 10C23"
+      },
+      {
+       "cp": "10C24",
+       "id": "Old Turkic 10C24",
+       "value": "old turkic 10C24"
+      },
+      {
+       "cp": "10C25",
+       "id": "Old Turkic 10C25",
+       "value": "old turkic 10C25"
+      },
+      {
+       "cp": "10C26",
+       "id": "Old Turkic 10C26",
+       "value": "old turkic 10C26"
+      },
+      {
+       "cp": "10C27",
+       "id": "Old Turkic 10C27",
+       "value": "old turkic 10C27"
+      },
+      {
+       "cp": "10C28",
+       "id": "Old Turkic 10C28",
+       "value": "old turkic 10C28"
+      },
+      {
+       "cp": "10C29",
+       "id": "Old Turkic 10C29",
+       "value": "old turkic 10C29"
+      },
+      {
+       "cp": "10C2A",
+       "id": "Old Turkic 10C2A",
+       "value": "old turkic 10C2A"
+      },
+      {
+       "cp": "10C2B",
+       "id": "Old Turkic 10C2B",
+       "value": "old turkic 10C2B"
+      },
+      {
+       "cp": "10C2C",
+       "id": "Old Turkic 10C2C",
+       "value": "old turkic 10C2C"
+      },
+      {
+       "cp": "10C2D",
+       "id": "Old Turkic 10C2D",
+       "value": "old turkic 10C2D"
+      },
+      {
+       "cp": "10C2E",
+       "id": "Old Turkic 10C2E",
+       "value": "old turkic 10C2E"
+      },
+      {
+       "cp": "10C2F",
+       "id": "Old Turkic 10C2F",
+       "value": "old turkic 10C2F"
+      },
+      {
+       "cp": "10C30",
+       "id": "Old Turkic 10C30",
+       "value": "old turkic 10C30"
+      },
+      {
+       "cp": "10C33",
+       "id": "Old Turkic 10C33",
+       "value": "old turkic 10C33"
+      },
+      {
+       "cp": "10C34",
+       "id": "Old Turkic 10C34",
+       "value": "old turkic 10C34"
+      },
+      {
+       "cp": "10C35",
+       "id": "Old Turkic 10C35",
+       "value": "old turkic 10C35"
+      },
+      {
+       "cp": "10C36",
+       "id": "Old Turkic 10C36",
+       "value": "old turkic 10C36"
+      },
+      {
+       "cp": "10C37",
+       "id": "Old Turkic 10C37",
+       "value": "old turkic 10C37"
+      },
+      {
+       "cp": "10C3A",
+       "id": "Old Turkic 10C3A",
+       "value": "old turkic 10C3A"
+      },
+      {
+       "cp": "10C3B",
+       "id": "Old Turkic 10C3B",
+       "value": "old turkic 10C3B"
+      },
+      {
+       "cp": "10C3D",
+       "id": "Old Turkic 10C3D",
+       "value": "old turkic 10C3D"
+      },
+      {
+       "cp": "10C3E",
+       "id": "Old Turkic 10C3E",
+       "value": "old turkic 10C3E"
+      },
+      {
+       "cp": "10C3F",
+       "id": "Old Turkic 10C3F",
+       "value": "old turkic 10C3F"
+      },
+      {
+       "cp": "10C40",
+       "id": "Old Turkic 10C40",
+       "value": "old turkic 10C40"
+      },
+      {
+       "cp": "10C41",
+       "id": "Old Turkic 10C41",
+       "value": "old turkic 10C41"
+      },
+      {
+       "cp": "10C42",
+       "id": "Old Turkic 10C42",
+       "value": "old turkic 10C42"
+      },
+      {
+       "cp": "10C44",
+       "id": "Old Turkic 10C44",
+       "value": "old turkic 10C44"
+      },
+      {
+       "cp": "10C45",
+       "id": "Old Turkic 10C45",
+       "value": "old turkic 10C45"
+      },
+      {
+       "cp": "10C46",
+       "id": "Old Turkic 10C46",
+       "value": "old turkic 10C46"
+      },
+      {
+       "cp": "10C47",
+       "id": "Old Turkic 10C47",
+       "value": "old turkic 10C47"
+      },
+      {
+       "cp": "10C48",
+       "id": "Old Turkic 10C48",
+       "value": "old turkic 10C48"
+      }
+     ]
+    },
+    {
+     "name": "Sogdian: the script of the Silk Road's merchant people (letters; 7th-10th centuries CE)",
+     "font": "sogdian",
+     "order": "Unicode order",
+     "signs": [
+      {
+       "cp": "10F30",
+       "id": "Sogdian 10F30",
+       "value": "sogdian 10F30"
+      },
+      {
+       "cp": "10F31",
+       "id": "Sogdian 10F31",
+       "value": "sogdian 10F31"
+      },
+      {
+       "cp": "10F32",
+       "id": "Sogdian 10F32",
+       "value": "sogdian 10F32"
+      },
+      {
+       "cp": "10F33",
+       "id": "Sogdian 10F33",
+       "value": "sogdian 10F33"
+      },
+      {
+       "cp": "10F34",
+       "id": "Sogdian 10F34",
+       "value": "sogdian 10F34"
+      },
+      {
+       "cp": "10F35",
+       "id": "Sogdian 10F35",
+       "value": "sogdian 10F35"
+      },
+      {
+       "cp": "10F36",
+       "id": "Sogdian 10F36",
+       "value": "sogdian 10F36"
+      },
+      {
+       "cp": "10F37",
+       "id": "Sogdian 10F37",
+       "value": "sogdian 10F37"
+      },
+      {
+       "cp": "10F38",
+       "id": "Sogdian 10F38",
+       "value": "sogdian 10F38"
+      },
+      {
+       "cp": "10F39",
+       "id": "Sogdian 10F39",
+       "value": "sogdian 10F39"
+      },
+      {
+       "cp": "10F3A",
+       "id": "Sogdian 10F3A",
+       "value": "sogdian 10F3A"
+      },
+      {
+       "cp": "10F3B",
+       "id": "Sogdian 10F3B",
+       "value": "sogdian 10F3B"
+      },
+      {
+       "cp": "10F3C",
+       "id": "Sogdian 10F3C",
+       "value": "sogdian 10F3C"
+      },
+      {
+       "cp": "10F3D",
+       "id": "Sogdian 10F3D",
+       "value": "sogdian 10F3D"
+      },
+      {
+       "cp": "10F3E",
+       "id": "Sogdian 10F3E",
+       "value": "sogdian 10F3E"
+      },
+      {
+       "cp": "10F3F",
+       "id": "Sogdian 10F3F",
+       "value": "sogdian 10F3F"
+      },
+      {
+       "cp": "10F40",
+       "id": "Sogdian 10F40",
+       "value": "sogdian 10F40"
+      },
+      {
+       "cp": "10F41",
+       "id": "Sogdian 10F41",
+       "value": "sogdian 10F41"
+      },
+      {
+       "cp": "10F42",
+       "id": "Sogdian 10F42",
+       "value": "sogdian 10F42"
+      },
+      {
+       "cp": "10F43",
+       "id": "Sogdian 10F43",
+       "value": "sogdian 10F43"
+      },
+      {
+       "cp": "10F44",
+       "id": "Sogdian 10F44",
+       "value": "sogdian 10F44"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "held": {
+  "note": "Held back on sensitivity grounds until Carter decides each one (decision of 2026-10-06). verify-symbols fails if any of these is in a wall.",
+  "codepoints": [
+   {
+    "cp": "1202D",
+    "why": "cuneiform AN/DINGIR, the sign for 'god' written before divine names"
+   },
+   {
+    "cp": "132B9",
+    "why": "hieroglyph R8, netjer, 'god'"
+   },
+   {
+    "range": [
+     "13377",
+     "1337B"
+    ],
+    "why": "hieroglyph cartouches (royal and divine names)"
+   },
+   {
+    "range": [
+     "1305A",
+     "13075"
+    ],
+    "why": "hieroglyphs C1-C24, seated deities"
+   },
+   {
+    "cp": "0950",
+    "why": "Om"
+   },
+   {
+    "cp": "0A74",
+    "why": "Ik Onkar"
+   },
+   {
+    "cp": "262C",
+    "why": "the Khanda"
+   },
+   {
+    "cp": "2627",
+    "why": "Chi-Rho"
+   },
+   {
+    "cp": "2721",
+    "why": "the Star of David"
+   },
+   {
+    "cp": "26E4",
+    "why": "the pentagram"
+   },
+   {
+    "range": [
+     "5350",
+     "5350"
+    ],
+    "why": "the swastika (CJK)"
+   },
+   {
+    "range": [
+     "0FD5",
+     "0FD8"
+    ],
+    "why": "the swastika (Tibetan)"
+   },
+   {
+    "cp": "16DF",
+    "why": "the rune Othala (also in hate-symbol use)"
+   },
+   {
+    "range": [
+     "103C8",
+     "103CF"
+    ],
+    "why": "Old Persian word-signs: they include the name of Ahura Mazda, worshipped by Zoroastrians today, and the word for 'god'"
+   },
+   {
+    "range": [
+     "10330",
+     "1034F"
+    ],
+    "why": "Gothic: Wulfila made it to write the Bible, like Avestan for the Zoroastrian scriptures; held until Carter decides"
+   },
+   {
+    "cp": "03EE",
+    "why": "Coptic ti (dei): its letterform reads as a cross"
+   },
+   {
+    "range": [
+     "2C00",
+     "2C5F"
+    ],
+    "why": "Glagolitic: made by Saints Cyril and Methodius to write the Slavonic liturgy and Bible; held as Gothic is"
+   },
+   {
+    "range": [
+     "11580",
+     "115FF"
+    ],
+    "why": "Siddham: its letters are used as seed syllables standing for Buddhist deities"
+   },
+   {
+    "cp": "10C0B",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C31",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C32",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C38",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C39",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C3C",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C43",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Tiwaz arrow, Othala, Algiz or its inverted form)"
+   },
+   {
+    "cp": "10C1B",
+    "why": "Old Turkic letter whose form resembles a Germanic rune in hate-symbol use (Algiz)"
+   }
+  ],
+  "blocks": [
+   {
+    "range": [
+     "0590",
+     "05FF"
+    ],
+    "why": "Hebrew: random or ordered letters can form a divine name"
+   },
+   {
+    "range": [
+     "FB1D",
+     "FB4F"
+    ],
+    "why": "Hebrew presentation forms"
+   },
+   {
+    "range": [
+     "0600",
+     "06FF"
+    ],
+    "why": "Arabic"
+   },
+   {
+    "range": [
+     "0750",
+     "077F"
+    ],
+    "why": "Arabic"
+   },
+   {
+    "range": [
+     "08A0",
+     "08FF"
+    ],
+    "why": "Arabic"
+   },
+   {
+    "range": [
+     "FB50",
+     "FDFF"
+    ],
+    "why": "Arabic presentation forms"
+   },
+   {
+    "range": [
+     "FE70",
+     "FEFF"
+    ],
+    "why": "Arabic presentation forms"
+   },
+   {
+    "range": [
+     "0A00",
+     "0A7F"
+    ],
+    "why": "Gurmukhi"
+   },
+   {
+    "range": [
+     "0F00",
+     "0FFF"
+    ],
+    "why": "Tibetan"
+   },
+   {
+    "range": [
+     "16A0",
+     "16FF"
+    ],
+    "why": "runes: only an approved abecedary, checked for hate-symbol forms, may be added"
+   },
+   {
+    "range": [
+     "1D2E0",
+     "1D2FF"
+    ],
+    "why": "Maya numerals"
+   },
+   {
+    "range": [
+     "10900",
+     "1091F"
+    ],
+    "why": "Phoenician: the same letters are the old Hebrew script (Paleo-Hebrew); held until Carter decides"
+   },
+   {
+    "range": [
+     "10800",
+     "1083F"
+    ],
+    "why": "Cypriot syllabary: not needed; listed so it is a decision, not an accident"
+   },
+   {
+    "range": [
+     "10840",
+     "1085F"
+    ],
+    "why": "Imperial Aramaic: the direct ancestor of the Hebrew square script; held like Phoenician until Carter decides"
+   },
+   {
+    "range": [
+     "10B00",
+     "10B3F"
+    ],
+    "why": "Avestan: the script of the Zoroastrian scriptures, sacred to a living community"
+   }
+  ]
+ }
+}

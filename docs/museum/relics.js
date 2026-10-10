@@ -47,6 +47,9 @@ const GROUND = {
   granite: { base: "#6e6a66", cols: ["#2a2826", "#a8a29a", "#8a6a5a", "#44403c"], n: 9000, rough: 0.8 },
   pinkgranite: { base: "#8a6a60", cols: ["#2a2220", "#c8a898", "#5a4640", "#e0d0c0"], n: 9000, rough: 0.8 },
   granodiorite: { base: "#3a3836", cols: ["#1a1918", "#8a8680", "#5a5854", "#c0bcb4"], n: 7000, rough: 0.55 },
+  // the visual pass: darker stones matched to the published descriptions of V53 (dark grey granodiorite with a pink streak) and V43 (black granite)
+  rosetta: { base: "#2c2a29", cols: ["#141312", "#5a5652", "#3e3a38", "#7a6460"], n: 9000, rough: 0.5 },
+  blackgranite: { base: "#222020", cols: ["#0e0d0d", "#4a4846", "#353331", "#6a6866"], n: 9000, rough: 0.55 },
   basalt: { base: "#2e2c2a", cols: ["#1a1918", "#4a4644", "#3a3634"], n: 5000, rough: 0.75 },
   limestone: { base: "#c9bca0", cols: ["#a89878", "#e0d6c0", "#b8a888", "#8a7a5a"], n: 5000, rough: 0.9, stains: "rgba(120,90,50,.18)" },
   sandstone: { base: "#b89a74", cols: ["#9a7a58", "#d0b890", "#7a5a40"], n: 8000, rough: 0.95 },
@@ -148,6 +151,24 @@ function write(g, hg, box, style, o) {
   const one = (x, y) => { const seed = R(); let t = seed; const rr = () => { t = (t * 16807 + 0.1234) % 1; t = (t * 9301 + 0.4927) % 1; return t; }; glyph(style, g, x, y, s, rr); if (hg) { t = seed; glyph(style, hg, x, y, s, rr); } };
   if (o.cols) { for (let x = x1 - s; x > x0; x -= s + gap * 2) for (let y = y0; y < y1 - s; y += s + gap) { if (R() < (o.gapChance || 0.04)) continue; one(x, y); } }
   else for (let y = y0; y < y1 - s; y += lh) { let x = x0; while (x < x1 - s) { if (R() < (o.space || 0.12)) x += s * 0.6; one(x, y); x += s + gap; } }
+}
+// exactly n lines of marks across a box (the layout of a real inscription: its number of lines, never its words)
+function rows(g, hg, box, style, n, o) {
+  const [x0, y0, x1, y1] = box, lh = (y1 - y0) / n, sz = o.size || lh * 0.72;
+  for (let i = 0; i < n; i++) write(g, hg, [x0, y0 + i * lh, x1, y0 + i * lh + sz + 0.5], style, Object.assign({}, o, { size: sz, lh: lh * 4 }));
+}
+// a seated figure in profile on a block throne (registers of gods in Egyptian painting)
+function seated(g, x, y, h, o) {
+  o = o || {}; const s = h / 10, dir = o.left ? -1 : 1, col = o.col || "#8a4a2a", cloth = o.cloth || "#f0e8d8", line = o.line || "#1a1008";
+  g.save(); g.translate(x, y); g.scale(dir, 1);
+  g.beginPath(); g.rect(-1.6 * s, 5.4 * s, 2.4 * s, 4.6 * s); fillStroke(g, o.throne || "#c8a050", line, s * 0.12);          // the throne
+  g.beginPath(); g.moveTo(-0.9 * s, 5.6 * s); g.lineTo(1.6 * s, 5.6 * s); g.lineTo(1.7 * s, 10 * s); g.lineTo(1.1 * s, 10 * s); g.lineTo(1.0 * s, 6.6 * s); g.lineTo(-0.9 * s, 6.6 * s); g.closePath(); fillStroke(g, cloth, line, s * 0.12);   // lap and shins
+  g.beginPath(); g.moveTo(-0.9 * s, 5.8 * s); g.lineTo(0.8 * s, 5.8 * s); g.lineTo(1.0 * s, 3 * s); g.lineTo(-1.0 * s, 3 * s); g.closePath(); fillStroke(g, col, line, s * 0.12);    // torso
+  g.beginPath(); g.moveTo(0.8 * s, 3.4 * s); g.lineTo(1.9 * s, 4.6 * s); fillStroke(g, null, col, s * 0.45);
+  g.beginPath(); g.arc(0, 2 * s, 0.8 * s, 0, TAU); fillStroke(g, col, line, s * 0.1);
+  g.beginPath(); g.moveTo(-0.9 * s, 1.4 * s); g.lineTo(0.3 * s, 1.2 * s); g.lineTo(-0.1 * s, 3.2 * s); g.lineTo(-0.95 * s, 3.2 * s); fillStroke(g, o.wig || "#1a1a28");
+  g.beginPath(); g.moveTo(1.6 * s, 4.4 * s); g.lineTo(1.9 * s, 0.4 * s); fillStroke(g, null, line, s * 0.18);                 // the staff (was sceptre)
+  g.restore();
 }
 // a spiral of writing (incantation bowls, the Phaistos disc)
 function spiral(g, hg, cx, cy, r0, r1, style, o) {
@@ -321,6 +342,7 @@ function disc(r, t, faceMat, backMat, edgeMat) {
 export { slab, slabGeo, outline, flipper, still, book, screenfold, scroll, lathe, disc, mesh, put, planarUV, V2 };
 
 // ---------------------------------------------------------------- drawing kit for scenes (illustrative, simplified)
+function star5(g, x, y, r, col) { g.beginPath(); for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.42 : r; g.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); } g.closePath(); g.fillStyle = col; g.fill(); }
 function fillStroke(g, fill, stroke, w) { if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.lineWidth = w || 2; g.stroke(); } }
 // a standing figure in profile, Egyptian manner: head (human or animal), kilt, stride
 function profile(g, x, y, h, o) {
@@ -399,24 +421,34 @@ const cam = (id, label, c) => ({ id, label, camera: c });
 const regions = (H, list) => list.map(([a, b]) => [a * H, b * H]);
 
 // ---- stones, stelae and slabs
-CAT.v53 = (E) => {                                          // the Rosetta Stone: granodiorite, broken top, three scripts
-  const w = 0.72, h = 1.14, pts = outline(w, h, { jag: 0.02, jagT: 0.06 }); pts.forEach((p) => { if (p[1] > 0.8) p[1] -= (p[0] + w / 2) * 0.28 + (R() - 0.5) * 0.04; if (p[0] > 0.2 && p[1] < 0.25) p[0] -= (0.25 - p[1]) * 0.4; });
-  const g = slab({ pts, d: 0.28, stone: "granodiorite", env: E.env, relief: 5, paint: (c, hg, W, H) => {
-    const band = (y0, y1, style, size) => write(c, hg, [W * 0.06, H * y0, W * 0.94, H * y1], style, { size, ink: "rgba(225,220,210,.7)", lh: size * 1.25 });
-    band(0.08, 0.3, "hiero", 15); band(0.34, 0.64, "demotic", 11); band(0.68, 0.95, "greek", 9); c.globalAlpha = 1;   // hieroglyphs above (broken), Demotic, Greek below
+CAT.v53 = (E) => {                                          // the Rosetta Stone (BM EA 24): 112.3 × 75.7 × 28.4 cm, grey and pink granodiorite, broken top
+  // the visual pass: the British Museum's published dimensions and the real number of lines in each script (14, 32, 54);
+  // the marks are illustrative, never the text (sources/v53-rosetta-stone.md, "Museum rendition")
+  const w = 0.757, h = 1.123, pts = outline(w, h, { jag: 0.02, jagT: 0.06 }); pts.forEach((p) => { if (p[1] > 0.79) p[1] -= (p[0] + w / 2) * 0.28 + (R() - 0.5) * 0.04; if (p[0] > 0.2 && p[1] < 0.25) p[0] -= (0.25 - p[1]) * 0.4; });
+  const ink = { ink: "rgba(170,166,160,.42)" };
+  const g = slab({ pts, d: 0.284, stone: "rosetta", env: E.env, relief: 5, px: 1400, paint: (c, hg, W, H) => {
+    for (let i = 0; i < 5; i++) { c.strokeStyle = `rgba(150,110,105,${0.08 + R() * 0.08})`; c.lineWidth = 6 + R() * 18; c.beginPath(); const y = H * (0.05 + R() * 0.9); c.moveTo(0, y); c.bezierCurveTo(W * 0.3, y + (R() - 0.5) * 80, W * 0.7, y + (R() - 0.5) * 80, W, y + (R() - 0.5) * 60); c.stroke(); }   // the pink in the grey
+    rows(c, hg, [W * 0.05, H * 0.04, W * 0.95, H * 0.255], "hiero", 14, Object.assign({ space: 0.04 }, ink));                // 14 lines of hieroglyphs (the top is lost)
+    rows(c, hg, [W * 0.04, H * 0.275, W * 0.96, H * 0.595], "demotic", 32, ink);                                         // 32 lines of Demotic
+    rows(c, hg, [W * 0.035, H * 0.615, W * 0.965, H * 0.975], "greek", 54, Object.assign({ space: 0.08 }, ink));          // 54 lines of Greek
+    c.globalAlpha = 1;
+  }, paintBack: (c, hg) => {                                   // the back was left rough, never dressed for display
+    blotches(c, c.canvas.width, c.canvas.height, 30, "rgba(20,18,16,.25)", 60); blotches(hg, hg.canvas.width, hg.canvas.height, 60, "rgba(40,40,40,.5)", 40); blotches(hg, hg.canvas.width, hg.canvas.height, 50, "rgba(220,220,220,.35)", 30);
   } });
-  return Object.assign({ root: g }, flipper(g));
+  return Object.assign({ root: g, note: "Modelled to the British Museum's dimensions (112.3 × 75.7 × 28.4 cm), with the real number of lines in each script: 14, 32 and 54." }, flipper(g));
 };
 CAT.v43 = (E) => {                                          // the Merneptah Stele: arched granite, a lunette scene over 28 lines
-  const w = 1.63, h = 3.18, g = slab({ pts: outline(w, h, { arch: 0.55, jag: 0.015 }), d: 0.3, stone: "granite", env: E.env, relief: 5, px: 1024, paint: (c, hg, W, H) => {
+  const w = 1.63, h = 3.18, g = slab({ pts: outline(w, h, { arch: 0.55, jag: 0.015 }), d: 0.3, stone: "blackgranite", env: E.env, relief: 5, px: 1024, paint: (c, hg, W, H) => {
     const ly = H * 0.8; 
     both(c, hg, (x) => { x.beginPath(); x.ellipse(W / 2, H * 0.08 + 18, 40, 14, 0, 0, TAU); x.fill(); x.fillRect(W / 2 - 170, H * 0.08 + 12, 340, 10); }, "#c8c8c8");   // the winged sun
     const fig = (fx, left, o) => profile(c, fx, H * 0.1 + 34, H * 0.12, Object.assign({ left, col: "#6a6660", cloth: "#9a9690", line: "#2a2826" }, o));
     fig(W * 0.3, false, { crown: "#8a8680" }); fig(W * 0.42, true, { crown: "#8a8680" }); fig(W * 0.58, false, {}); fig(W * 0.7, true, { crown: "#8a8680" });
-    write(c, hg, [W * 0.06, H * 0.26, W * 0.94, H * 0.96], "hiero", { size: 22, ink: "rgba(30,28,26,.8)", lh: 28 });
-    
+    rows(c, hg, [W * 0.06, H * 0.27, W * 0.94, H * 0.965], "hiero", 28, { ink: "rgba(150,146,140,.45)", space: 0.05 });   // 28 lines
+  }, paintBack: (c, hg, W, H) => {                             // the back: the earlier inscription of Amenhotep III, whose stela Merneptah reused (illustrative marks)
+    write(c, hg, [W * 0.08, H * 0.2, W * 0.92, H * 0.92], "hiero", { size: 13, ink: "rgba(30,28,26,.55)", lh: 19 });
+    blotches(c, W, H, 14, "rgba(20,18,16,.2)", 90);
   } });
-  return Object.assign({ root: g }, flipper(g));
+  return Object.assign({ root: g, note: "Modelled at 3.18 × 1.63 m (some sources give 3.10 × 1.60 m), with its 28 lines; the back carries the older inscription of Amenhotep III." }, flipper(g));
 };
 CAT.v22 = (E) => {                                          // the Mesha Stele: arched basalt, rebuilt from fragments with plaster between
   const w = 0.6, h = 1.15, g = slab({ pts: outline(w, h, { arch: 0.9, jag: 0.01 }), d: 0.3, stone: "basalt", env: E.env, relief: 5, paint: (c, hg, W, H) => {
@@ -461,15 +493,18 @@ CAT.v54 = (E) => {                                          // the Behistun reli
   } });
   return Object.assign({ root: g }, still([cam("king", "The king and the captives", { yaw: 0, pitch: 0.05, dist: 0.9 })]));
 };
-CAT.v34 = (E) => {                                          // the Pyramid Texts of Unas: columns of hieroglyphs filled with blue, under a ceiling of stars
+CAT.v34 = (E) => {                                          // the Pyramid Texts of Unas: columns of hieroglyphs filled with blue, under a gabled ceiling of stars (the burial chamber, 7.3 × 3.08 m)
   const root = new THREE.Group();
   const wall = slab({ pts: outline(1.4, 1.1, { jag: 0.004 }), d: 0.12, stone: "limestone", env: E.env, relief: 4, px: 1400, paint: (c, hg, W, H) => {
     for (let x = W * 0.03; x < W * 0.97; x += 46) { c.fillStyle = "rgba(60,40,20,.35)"; c.fillRect(x, 0, 2, H); }
     write(c, hg, [W * 0.03, H * 0.03, W * 0.97, H * 0.97], "hiero", { size: 26, gap: 5, cols: true, ink: "#2f6fa0", weight: 3.5 });
   } });
   root.add(wall);
-  const ceil = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.08, 0.7), [plain("limestone"), plain("limestone"), plain("limestone"), surface("limestone", 1024, 512, (c) => { c.fillStyle = "#1c2c5a"; c.fillRect(0, 0, 1024, 512); c.fillStyle = "#e8c860"; for (let y = 30; y < 512; y += 58) for (let x = 20 + ((y / 58) % 2) * 29; x < 1024; x += 58) { c.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? 7 : 18; c.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r); } c.fill(); } }), plain("limestone"), plain("limestone")]);
-  ceil.position.set(0, 1.14, 0.3); root.add(ceil);
+  const starMat = surface("limestone", 1024, 512, (c) => { c.fillStyle = "#1c2c5a"; c.fillRect(0, 0, 1024, 512); for (let y = 28; y < 512; y += 56) for (let x = 22 + ((y / 56) % 2) * 28; x < 1024; x += 56) star5(c, x, y, 13, "#e0c060"); }, { relief: 2 });
+  starMat.side = THREE.DoubleSide;
+  for (const [th, z] of [[1.142, 0.125], [1.998, 0.475]]) { const pl = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 0.385), starMat); pl.rotation.x = th; pl.position.set(0, 1.22, z); root.add(pl); }   // the gabled ceiling, painted with five-pointed stars
+  const ceil = new THREE.Mesh(new THREE.BoxGeometry(1.42, 0.05, 0.12), plain("limestone"));   // the cornice where wall meets gable
+  ceil.position.set(0, 1.135, 0.02); root.add(ceil);
   return Object.assign({ root }, still([cam("stars", "Look up at the stars", { pitch: -0.6, dist: 1.4 })]));
 };
 CAT.v52 = (E) => {                                          // the Ishtar Gate: glazed blue brick, a dragon of Marduk and rosettes, in relief
@@ -1010,8 +1045,9 @@ CAT.v21 = (E) => bookEntry(E, { w: 0.25, h: 0.33, t: 0.09, cover: leather(), pap
       for (let k = 0; k < 40; k++) { g.fillStyle = ["#d83a2a", "#3a6ab0", "#e0b040", "#3a8a5a"][k % 4]; g.beginPath(); g.arc(W * (0.15 + R() * 0.7), H * (0.15 + R() * 0.7), 3 + R() * 6, 0, TAU); g.fill(); }
       g.fillStyle = "#2a1a10"; g.beginPath(); g.ellipse(W * 0.3, H * 0.84, 18, 8, 0, 0, TAU); g.fill(); g.beginPath(); g.ellipse(W * 0.4, H * 0.86, 10, 5, 0, 0, TAU); g.fill();   // cats and mice at the foot
     }, pics: (k) => k === 0 || k % 3 === 0, picOnly: true }), page({ style: "latin", size: 14, lh: 22, initial: "#8a2a4a", ink: "rgba(30,20,10,.9)" })] });
-CAT.v28 = (E) => leaves(E, { w: 0.25, h: 0.33, ground: "parchment", list: [[-0.14, 0], [0.14, 0]], paint: (c, hg, W, H) => { write(c, null, [W * 0.08, H * 0.08, W * 0.92, H * 0.92], "arabic", { size: 22, lh: 34, ink: "rgba(40,20,10,.85)" }); for (let k = 0; k < 6; k++) { c.fillStyle = "#b02a1a"; c.beginPath(); c.arc(W * (0.2 + R() * 0.6), H * (0.1 + k * 0.15), 5, 0, TAU); c.fill(); } }, back: (c, hg, W, H) => write(c, null, [W * 0.08, H * 0.08, W * 0.92, H * 0.92], "arabic", { size: 22, lh: 34, ink: "rgba(40,20,10,.85)" }) });
-CAT.v29 = (E) => leaves(E, { w: 0.28, h: 0.36, ground: "parchment", list: [[-0.15, 0], [0.15, 0.02]], paint: (c, hg, W, H) => { c.globalAlpha = 0.35; write(c, null, [W * 0.1, H * 0.08, W * 0.9, H * 0.92], "arabic", { size: 20, lh: 30, ink: "rgba(110,70,40,.8)" }); c.globalAlpha = 1; write(c, null, [W * 0.08, H * 0.1, W * 0.92, H * 0.9], "arabic", { size: 22, lh: 36, ink: "rgba(30,15,5,.9)" }); }, note: "The fainter lines stand for the erased lower text beneath the upper one." });
+// V28, V29: the leaves are shown plain, unwritten. The archive does not draw imitation Qur'anic script (Carter's decision, 2026-10-06); "Read it in English" gives what the leaves contain.
+CAT.v28 = (E) => leaves(E, { w: 0.25, h: 0.33, ground: "parchment", list: [[-0.14, 0], [0.14, 0]], paint: (c, hg, W, H) => { blotches(c, W, H, 6, "rgba(120,90,50,.10)", W / 4); }, back: (c, hg, W, H) => { blotches(c, W, H, 6, "rgba(120,90,50,.10)", W / 4); }, note: "The pages are shown plain: the archive does not draw imitation Qur'anic script." });
+CAT.v29 = (E) => leaves(E, { w: 0.28, h: 0.36, ground: "parchment", list: [[-0.15, 0], [0.15, 0.02]], paint: (c, hg, W, H) => { blotches(c, W, H, 9, "rgba(110,80,45,.12)", W / 4); }, note: "The pages are shown plain: the archive does not draw imitation Qur'anic script, in either the upper or the erased lower text." });
 CAT.v32 = (E) => bookEntry(E, { w: 0.2, h: 0.3, t: 0.04, cover: plain("parchment"), paper: "paper", startOpen: true, pages: [page({ style: "latin", cols: 2, size: 10, lh: 15, ink: "rgba(40,25,12,.85)" })] });
 CAT.v38 = (E) => bookEntry(E, { w: 0.26, h: 0.33, t: 0.1, cover: leather(), paper: "parchment", startOpen: true, pages: [page({ style: "hebrew", cols: 3, size: 9, lh: 13, burn: 1, marg: "rgba(60,35,20,.6)" })] });
 CAT.v40 = (E) => bookEntry(E, { w: 0.16, h: 0.3, t: 0.03, cover: plain("papyrus"), paper: "papyrus", startOpen: true, note: "The papyrus is shown fragmentary, as it survives.",
@@ -1090,19 +1126,21 @@ CAT.v12 = (E) => {                                          // the Ketef Hinnom 
   const flat = mesh(new THREE.PlaneGeometry(0.097, 0.027, 24, 1), ag, 0, 0.002, 0.02); flat.rotation.x = -Math.PI / 2; const P = flat.geometry.attributes.position; for (let i = 0; i < P.count; i++) P.setZ(i, Math.sin(P.getX(i) * 90) * 0.0008); root.add(flat);
   return Object.assign({ root, note: "Shown greatly enlarged: the larger amulet is under 10 cm long when unrolled." }, still());
 };
-CAT.v20 = (E) => { const s = scroll({ len: 1.2, h: 0.4, ground: "papyrus", r: 0.05, start: 1, paint: (g, hg, W, H) => {   // the judgment: Anubis at the scales, the heart against the feather, Thoth writing, the Devourer waiting
-  write(g, null, [W * 0.02, H * 0.05, W * 0.98, H * 0.25], "hiero", { size: 18, cols: true, ink: "rgba(30,20,10,.85)" });
+CAT.v20 = (E) => { const s = scroll({ len: 1.2, h: 0.42, ground: "papyrus", r: 0.05, start: 1, paint: (g, hg, W, H) => {   // the judgment (sheet 3, BM EA 10470/3): the gods seated as judges above; Anubis at the scales, the heart against the feather, Thoth writing, the Devourer waiting
+  write(g, null, [W * 0.02, H * 0.03, W * 0.98, H * 0.12], "hiero", { size: 14, cols: true, ink: "rgba(30,20,10,.85)" });
+  for (let k = 0; k < 12; k++) seated(g, W * (0.28 + k * 0.052), H * 0.14, H * 0.17, { left: true, col: ["#3a5aa0", "#c07040", "#3a7a4a", "#b0704a"][k % 4], cloth: "#f4ecd8", throne: "#d8b070" });   // twelve gods seated as judges
+  g.fillStyle = "#2a1a10"; g.fillRect(W * 0.26, H * 0.32, W * 0.65, 3);
   const base = H * 0.88, fh = H * 0.55;
   profile(g, W * 0.1, base - fh, fh, { col: "#b0704a", cloth: "#f4ecd8" }); profile(g, W * 0.18, base - fh, fh, { col: "#d8a080", cloth: "#f4ecd8" });
   g.strokeStyle = "#2a1a10"; g.lineWidth = 5; g.beginPath(); g.moveTo(W * 0.4, base); g.lineTo(W * 0.4, base - fh * 0.9); g.moveTo(W * 0.3, base - fh * 0.8); g.lineTo(W * 0.5, base - fh * 0.8); g.stroke();
   g.beginPath(); g.moveTo(W * 0.3, base - fh * 0.8); g.lineTo(W * 0.3, base - fh * 0.45); g.moveTo(W * 0.5, base - fh * 0.8); g.lineTo(W * 0.5, base - fh * 0.45); g.stroke();
   g.fillStyle = "#b02a1a"; g.beginPath(); g.ellipse(W * 0.3, base - fh * 0.42, 14, 18, 0, 0, TAU); g.fill(); g.fillStyle = "#f4ecd8"; g.beginPath(); g.ellipse(W * 0.5, base - fh * 0.48, 5, 22, 0.2, 0, TAU); g.fill(); g.strokeStyle = "#2a1a10"; g.lineWidth = 2; g.stroke();
   profile(g, W * 0.45, base - fh * 0.8, fh * 0.8, { head: "jackal", col: "#2a1a10", cloth: "#f4ecd8" });
+  g.fillStyle = "#2a1a10"; g.beginPath(); g.ellipse(W * 0.4, base - fh * 0.98, 14, 18, 0, 0, TAU); g.fill();                   // Thoth's baboon on the post of the scale
   profile(g, W * 0.62, base - fh, fh, { head: "ibis", col: "#3a6a3a", cloth: "#f4ecd8" });
-  beast(g, W * 0.78, base - fh * 0.3, fh * 0.6, { col: "#6a8a3a", line: "#2a1a10", mane: true, left: true });
-  profile(g, W * 0.92, base - fh * 1.05, fh * 1.05, { left: true, head: "falcon", col: "#3a5aa0", cloth: "#f4ecd8" });
+  beast(g, W * 0.8, base - fh * 0.3, fh * 0.6, { col: "#6a8a3a", line: "#2a1a10", mane: true });
   g.fillStyle = "#2a1a10"; g.fillRect(0, base + 4, W, 4);
-} }); return Object.assign({ root: s.root, note: "One scene of a scroll 24 metres long, now cut into sheets." }, s); };
+} }); return Object.assign({ root: s.root, note: "One scene of a scroll about 24 metres long, now cut into 37 sheets; the sheets are 42 cm high (the British Museum's records)." }, s); };
 CAT.v30 = (E) => { const s = scroll({ len: 1.5, h: 0.27, ground: "paper", r: 0.04, rods: true, start: 1, paint: (g, hg, W, H) => {   // the frontispiece: the Buddha preaching under a canopy, then columns of printed text
   const fw = W * 0.3; g.strokeStyle = "rgba(20,15,10,.9)"; g.lineWidth = 2;
   g.strokeRect(W - fw, H * 0.06, fw - 10, H * 0.88);
