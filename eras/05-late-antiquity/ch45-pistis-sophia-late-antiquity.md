@@ -287,9 +287,10 @@ late-antique Egypt and one on the séance-era bookshelf, and that the two must n
 ## Sources
 
 *Manuscript, date, and structure*
-- [Wikipedia: Askew Codex](https://en.wikipedia.org/wiki/Askew_Codex) and
-  [Wikipedia: Pistis Sophia](https://en.wikipedia.org/wiki/Pistis_Sophia) (Coptic Sahidic parchment,
-  ~4th-century codex, British Museum purchase 1785, four books, Greek original).
+- Carl Schmidt (ed.) and Violet MacDermot (trans.), *Pistis Sophia*, Nag Hammadi Studies 9 (Leiden:
+  Brill, 1978) — the standard Coptic text and English translation, with the codex description
+  (Coptic Sahidic parchment, ~4th-century codex, British Museum purchase 1785, four books, Greek
+  original). [Catalogue record](https://catalogo-teologia-granada.uloyola.es/Record/146643?lng=en).
 - [British Library Archives & Manuscripts: Add MS 5114](https://searcharchives.bl.uk/catalog/032-002738266)
   (the manuscript record).
 - [NASSCAL, e-Clavis Christian Apocrypha: Pistis Sophia](https://www.nasscal.com/e-clavis-christian-apocrypha/pistis-sophia/)
@@ -301,17 +302,20 @@ late-antique Egypt and one on the séance-era bookshelf, and that the two must n
   — the full English text (the thirteen repentances, the mysteries, the cup of forgetfulness, the
   fire-offering of Book 4, the Peter–Mary exchange).
 - [The Gnostic Society Library: Pistis Sophia (Mead), Introduction and text](http://www.gnosis.org/library/pistis-sophia/pistis-sophia.htm).
-- On the Books of Jeu / Bruce Codex and their relation to the Pistis Sophia,
-  [Wikipedia: Books of Jeu](https://en.wikipedia.org/wiki/Books_of_Jeu).
+- On the Books of Jeu / Bruce Codex and their relation to the Pistis Sophia: Carl Schmidt (ed.) and
+  Violet MacDermot (trans.), *The Books of Jeu and the Untitled Text in the Bruce Codex*, Nag Hammadi
+  Studies 13 (Leiden: Brill, 1978); and Erin Evans, *The Books of Jeu and the Pistis Sophia as
+  Handbooks to Eternity: Exploring the Gnostic Mysteries of the Ineffable*, Nag Hammadi and Manichaean
+  Studies 89 (Leiden: Brill, 2015). [Publisher](https://www.degruyterbrill.com/document/isbn/9789004301191/html).
 
 *Editorial and reception history*
 - G. R. S. Mead's Theosophical translation history and the 1851 Schwartze–Petermann Latin editio
-  princeps and Carl Schmidt's later work, as summarized in the Wikipedia and NASSCAL overviews above,
+  princeps and Carl Schmidt's later work, as summarized in the NASSCAL overview and the foreword to Schmidt and MacDermot (1978) above,
   and [The Theosophical Society in America: The Pistis Sophia — An Introduction](https://www.theosophical.org/publications/quest-magazine/the-pistis-sophia-an-introduction).
 
 *Note on sourcing:* Researched by web search against reference scholarship (the British Library
 manuscript record, the NASSCAL *e-Clavis* apocrypha database, the Lexham Bible Dictionary, and the
-sourced Wikipedia overviews) alongside the primary text itself in Mead's public-domain translation,
+Brill critical editions and Evans's 2015 study) alongside the primary text itself in Mead's public-domain translation,
 per the project standard, rather than from memory. The chapter keeps the **documented manuscript
 and its datable features** separate from **later esoteric readings** of it; corrects the widespread
 error that conflates the Askew Codex with the Bruce Codex or with Nag Hammadi; flags the community's
