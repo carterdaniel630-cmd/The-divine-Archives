@@ -5,11 +5,13 @@ Per the project sourcing standard, this citation log records the real, checkable
 ## Sources cited
 
 *Manuscript, date, and structure*
-- [Wikipedia: Askew Codex](https://en.wikipedia.org/wiki/Askew_Codex) and
-  [Wikipedia: Pistis Sophia](https://en.wikipedia.org/wiki/Pistis_Sophia) — Coptic Sahidic parchment
-  codex (~4th century), ~350 leaves, purchased by the British Museum in 1785 from Dr. Anthony Askew's
-  heirs; four books; a Coptic translation of a lost Greek original; the running title "Books of the
-  Saviour."
+- Carl Schmidt (ed.) and Violet MacDermot (trans.), *Pistis Sophia*, Nag Hammadi Studies 9 (Leiden:
+  Brill, 1978; ISBN 90-04-05635-1), the standard Coptic text and English translation (Coptic
+  Gnostic Library). It covers the codex: a Coptic Sahidic parchment codex (~4th century) bought by
+  the British Museum in 1785 from Dr. Anthony Askew's heirs; four books; a Coptic translation of a
+  lost Greek original. The foreword reviews Schmidt's earlier edition and German translation
+  (re-edited by W. Till). Catalogue record:
+  https://catalogo-teologia-granada.uloyola.es/Record/146643?lng=en
 - [British Library Archives & Manuscripts Catalogue: Add MS 5114](https://searcharchives.bl.uk/catalog/032-002738266)
   — the primary manuscript record for the Askew Codex.
 - [NASSCAL, e-Clavis Christian Apocrypha: Pistis Sophia](https://www.nasscal.com/e-clavis-christian-apocrypha/pistis-sophia/)
@@ -27,9 +29,15 @@ Per the project sourcing standard, this citation log records the real, checkable
 - [The Gnostic Society Library: Pistis Sophia (Mead), introduction and text](http://www.gnosis.org/library/pistis-sophia/pistis-sophia.htm).
 
 *Relation to the Books of Jeu / Bruce Codex*
-- [Wikipedia: Books of Jeu](https://en.wikipedia.org/wiki/Books_of_Jeu) — the Bruce Codex, the dating
-  of the Books of Jeu ahead of the Pistis Sophia, and the "handbooks to eternity" / ascent-ritual
-  character shared with Book 4.
+- Carl Schmidt (ed.) and Violet MacDermot (trans.), *The Books of Jeu and the Untitled Text in the
+  Bruce Codex*, Nag Hammadi Studies 13 (Leiden: Brill, 1978; ISBN 90-04-05754-4). The title "Books
+  of Jeu" comes from the Pistis Sophia's own reference to "the two Books of Jeu". Catalogue record:
+  https://search.worldcat.org/oclc/5833292
+- Erin Evans, *The Books of Jeu and the Pistis Sophia as Handbooks to Eternity: Exploring the Gnostic
+  Mysteries of the Ineffable*, Nag Hammadi and Manichaean Studies 89 (Leiden: Brill, 2015). Argues
+  the two works come from one distinct religious group with a consistent theology, cosmology and
+  ritual (baptisms and ascent procedures), the "handbooks to eternity" character shared with Book 4.
+  https://www.degruyterbrill.com/document/isbn/9789004301191/html
 
 *Editorial and reception history*
 - The 1851 Schwartze–Petermann Latin editio princeps, Carl Schmidt's later German edition, Woide's
@@ -39,10 +47,18 @@ Per the project sourcing standard, this citation log records the real, checkable
 
 *Note on sourcing:* Researched by web search against reference scholarship (the British Library
 manuscript record, the NASSCAL *e-Clavis* apocrypha database, the Lexham Bible Dictionary, and the
-sourced Wikipedia overviews) alongside the primary text in Mead's public-domain translation, per the
+Brill critical editions and Evans 2015) alongside the primary text in Mead's public-domain translation, per the
 project standard, rather than from memory. During research, several AI-generated and popular summaries
 were found to wrongly place the Pistis Sophia in the Bruce Codex or at Nag Hammadi; the chapter
 corrects that conflation explicitly. The chapter keeps the documented, datable manuscript separate
 from later esoteric "unveilings," flags the community's sect, date, and compositional layers as
 genuinely open, and treats the work as a witness to later Gnostic belief rather than a record of the
 events it narrates.
+
+## Change log
+
+- 2026-10-10: Wikipedia replacement (3 of 9 links were Wikipedia, 33% → 0%). "Askew Codex" and
+  "Pistis Sophia" (Wikipedia) → Schmidt & MacDermot, *Pistis Sophia* (NHS 9, 1978); "Books of Jeu"
+  (Wikipedia) → Schmidt & MacDermot, NHS 13 (1978), and Evans (2015). No chapter sentence changed.
+  All three books were confirmed via library catalogue and publisher records in search results;
+  the books' own pages could not be opened from this session. ch45 stays pending.
