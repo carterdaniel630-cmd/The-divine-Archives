@@ -4,7 +4,7 @@
 
    For every site in docs/assets/pilgrimage-data.js:
      - its chapter and Vault ids exist in the archive;
-   and for every "live" site:
+   and for every "live" or "preview" site (a preview has its page but is off the menu):
      - its page docs/pilgrimage/<id>.html and its module folder exist, with every
        section module the site lists;
      - every chapter / Vault link in its info points resolves to a real page;
@@ -30,7 +30,7 @@ for (const s of P.sites) {
   for (const c of s.chapters || []) if (!chapters.has(c)) errors.push(`${s.id}: unknown chapter ${c}`);
   for (const v of s.vault || []) if (!vault.has(v)) errors.push(`${s.id}: unknown Vault id ${v}`);
   if (!["R", "C", "S", ""].includes(s.label)) errors.push(`${s.id}: bad label "${s.label}"`);
-  if (s.status !== "live") continue;
+  if (s.status !== "live" && s.status !== "preview") continue;
   const page = path.join(DOCS, "pilgrimage", s.id + ".html"), dir = path.join(DOCS, "pilgrimage", "sites", s.id), siteFile = path.join(dir, "site.js");
   if (!fs.existsSync(page)) errors.push(`${s.id}: no page ${path.relative(ROOT, page)} (run node tools/build-pages.js)`);
   if (!fs.existsSync(siteFile)) { errors.push(`${s.id}: no module ${path.relative(ROOT, siteFile)}`); continue; }
@@ -56,4 +56,4 @@ for (const s of P.sites) {
   }
 }
 if (errors.length) { console.error("verify-pilgrimage: " + errors.length + " problem(s)\n  " + errors.join("\n  ")); process.exit(1); }
-console.log(`verify-pilgrimage: ${P.sites.length} sites, ${P.sites.filter((s) => s.status === "live").length} live; ${checked} links, relics and info points checked: OK`);
+console.log(`verify-pilgrimage: ${P.sites.length} sites, ${P.sites.filter((s) => s.status === "live").length} live, ${P.sites.filter((s) => s.status === "preview").length} preview; ${checked} links, relics and info points checked: OK`);
