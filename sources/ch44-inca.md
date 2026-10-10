@@ -18,3 +18,10 @@ Per the project sourcing standard. New standalone chapter split 2026-09 from the
 - Heavily-filtered: no Inca writing → narrative comes via Spanish/mestizo chroniclers (Cieza, Betanzos, Garcilaso, Guaman Poma); the supreme-creator elevation of Viracocha may be partly missionary construction.
 - Genuinely open: the quipu is largely unread; the antiquity of the chakana "Andean cross" is uncertain.
 - Cross-links: Maya (ch29), Aztec (ch43); ancestor cult from Neolithic (ch42), Egypt (ch2), African traditions (ch33).
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Huarochirí Manuscript"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Huarochirí Manuscript — Frank Salomon and George L. Urioste (trans.), *The Huarochirí Manuscript: A Testament of Ancient and Colonial Andean Religion* (Austin: University of Texas Press, 1991). https://www.fulcrum.org/concern/monographs/df65v810t ; F. Salomon, article on the manuscript (c. 1608), *Íconos* (FLACSO Ecuador). https://repositorio.flacsoandes.edu.ec/bitstream/10469/9520/1/REXTN-ED93-03-Salomon.pdf ; Wellcome Collection catalogue record (compiled c. 1598). https://wellcomecollection.org/works/g2ybjsjn
+
+The chapter goes back to pending review because of these additions.

@@ -30,3 +30,11 @@ Per the project sourcing standard. Dates for this literature are uncertain by ce
 
 ## Flags for Carter
 - **Heliodorus pillar date (minor, no change made).** The chapter gives "about 113 BCE". That is the usual date, tied to the reign of King Antialcidas. The MAP Academy entry cited above dates the pillar more loosely, to "the early second century BCE", and some other references give about 150 BCE. These are not stronger sources than the standard date, but the date is approximate. If you want a hedge, "about 120–110 BCE" or "late second century BCE" would cover the range.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Tīrtha: Varanasi, the Ganges and the Kumbh Mela"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- Tīrtha and Kāśī — Diana L. Eck, *Banaras: City of Light* (New York: Knopf, 1982; repr. Columbia University Press, 1999), reviewed in *Kirkus Reviews* (the five-tīrtha circuit of the *Matsya Purāṇa*). https://www.kirkusreviews.com/book-reviews/diana-l-eck-2/banaras-city-of-light/
+- The Kumbh Mela and its UNESCO inscription (2017) — District Administration Prayagraj, Government of Uttar Pradesh, "Inscription of Kumbh Mela on the Representative List of the Intangible Cultural Heritage of Humanity." https://prayagraj.nic.in/inscription-of-kumbh-mela-on-the-representative-list-of-intangible-cultural-heritage-of-humanity/ ; UNESCO Intergovernmental Committee for the Safeguarding of the Intangible Cultural Heritage, Decision 12.COM 11.B.12 (Kumbh Mela, No. 01258). https://ich.unesco.org/en/decisions/12.COM/11.B.12
+
+The chapter goes back to pending review because of these additions.

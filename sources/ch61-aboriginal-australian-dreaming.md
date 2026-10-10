@@ -16,3 +16,14 @@ Per the project sourcing standard. A tradition chapter on a living, diverse, and
 - Deliberately closed: much deep content is restricted sacred knowledge, not to be published — the archive reports only public material and respects that boundary; the oldest rock art's dating/authorship is debated.
 - Placement: era 01 (Prehistory), positioned as a living window on the deep past while insisting it is a present, living faith.
 - Connects to ch41–ch42 (deep prehistory), ch46 (Rainbow Serpent/creation), ch50 (everywhen vs line/wheel), ch05/ch59 (oral transmission), ch62/ch63 (other living oral traditions).
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Stolen Generations and the return of Uluṟu"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Stolen Generations and *Bringing Them Home* (1997) — National Indigenous Australians Agency, "20 years: road to reconciliation continues." https://indigenous.gov.au/stories/20-years-road-to-reconciliation-continues ; NSW Health, "National Sorry Day." https://www.health.nsw.gov.au/aboriginal/Pages/national-sorry-day.aspx
+- The National Apology, 13 February 2008 — National Museum of Australia, Digital Classroom, "Copy of the text of the National Apology to the Stolen Generations, 2008." https://digital-classroom.nma.gov.au/images/copy-text-national-apology-stolen-generations-2008
+- Uluṟu handback (1985) and the end of the climb (2019) — Parks Australia, "Uluṟu climb closure." https://parksaustralia.gov.au/uluru/discover/culture/uluru-climb ; National Museum of Australia, Defining Moments, "Uluru handback." https://nma.gov.au/defining-moments/resources/uluru-handback-anangu
+
+The chapter goes back to pending review because of these additions.
+
+- **2026-10-10, review correction:** the figures "at least 100,000" and "Robert Manne estimated 20,000–25,000" were removed; neither could be confirmed from a source that could be opened or named (the reviewer found no source for Manne's figure). The section now says only that the findings and the number of children are disputed, citing Manne, *In Denial* (Quarterly Essay 1, 2001), confirmed via catalogue and review records.

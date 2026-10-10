@@ -77,7 +77,7 @@ window.ARCHIVE = {
 
     { id: "ch02", title: "Egypt", kind: "tradition",
       era: "02-bronze-age", eraLabel: "Bronze Age · Egypt",
-      status: "published", source: "eras/02-bronze-age/ch02-egypt-bronze-age.md",
+      status: "published", pending: true, source: "eras/02-bronze-age/ch02-egypt-bronze-age.md",
       summary: "A civilization built on an annual flood and organized around the afterlife: Ma'at and the weighing of the heart, the Osiris myth, mummification and the scribes, and the Amarna experiment in one god." },
 
     { id: "ch03", title: "Mesopotamia", kind: "tradition",
@@ -112,7 +112,7 @@ window.ARCHIVE = {
 
     { id: "ch08", title: "Early Greece", kind: "tradition",
       era: "03-early-iron-age", eraLabel: "Early Iron Age · Early Greece",
-      status: "published",
+      status: "published", pending: true,
       source: "eras/03-early-iron-age/ch08-early-greece-early-iron-age.md",
       summary: "The gods before the philosophers: Zeus and the Olympians already named on Bronze Age Linear B tablets, a religion with no scripture but with Homer and Hesiod as its canon, the succession myth borrowed from the Near East, sacrifice and oracles and the grim house of Hades — and the mystery cults of Eleusis and Orpheus that first promised the soul something better." },
 
@@ -130,13 +130,13 @@ window.ARCHIVE = {
 
     { id: "ch11", title: "Buddhism", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Buddhism",
-      status: "published",
+      status: "published", pending: true,
       source: "eras/04-axial-age/ch11-buddhism-axial-age.md",
       summary: "The religion of no-self: the historical Buddha and the renunciant ferment that rejected Vedic sacrifice, the Four Noble Truths and the Eightfold Path, the radical doctrine of anatta that denies the very Self the Upanishads sought, karma and rebirth without a soul, a path to liberation with no creator god — and the emperor Ashoka, who made it a world religion." },
 
     { id: "ch12", title: "Confucianism & Daoism", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Confucianism & Daoism",
-      status: "published",
+      status: "published", pending: true,
       source: "eras/04-axial-age/ch12-confucianism-daoism-axial-age.md",
       summary: "Two answers to the same broken world of the Warring States: Confucius and the cultivation of virtue through ren, li, and ritual, completed by Mencius and Xunzi; and the Daoism of the Daodejing and Zhuangzi — wu-wei, ziran, and the uncarved block — with the archaeology (Guodian, Mawangdui) that rewrote their dating, the crucial split between philosophical and religious Daoism, and the Yijing's cosmos of yin and yang." },
 
@@ -178,19 +178,19 @@ window.ARCHIVE = {
 
     { id: "ch19", title: "Rabbinic Judaism", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Rabbinic Judaism",
-      status: "published",
+      status: "published", pending: true,
       source: "eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md",
       summary: "The portable homeland: how, after the Temple burned in 70 CE, the rabbis rebuilt Judaism around Torah study, prayer, and law so it could live anywhere. The Oral Torah and the chain from Sinai, the Mishnah and the two Talmuds, the culture of preserved argument (Hillel and Shammai), the Shekhinah in exile and prayer replacing sacrifice, the Babylonian academies — with the letters that made the world (Sefer Yetzirah), the scribe's crowned letters, and the chariot-and-palaces mysticism, told alongside the honest history of a legend and a slowly-rising elite." },
 
     { id: "ch20", title: "Mahayana Buddhism", kind: "tradition",
       era: "05-late-antiquity", eraLabel: "Late Antiquity · Mahayana Buddhism",
-      status: "published",
+      status: "published", pending: true,
       source: "eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md",
       summary: "The Great Vehicle and the vow to save all beings: the bodhisattva who refuses nirvana until every creature is free, the radical philosophy of emptiness (Nagarjuna's Madhyamaka, the Heart Sutra), the cosmic Buddha of the three bodies, the heaven of celestial saviors and Amitabha's Pure Land of grace, and skillful means — with Indra's Net of infinite mutual reflection, the mudras and the Heart Sutra's mantra, and an honest reckoning with sutras held as the Buddha's word but composed centuries later, and origins now known to be monastic, not lay. Closes the Late Antiquity era." },
 
     { id: "ch21", title: "Islam", kind: "tradition",
       era: "06-early-medieval", eraLabel: "Early Medieval · Islam",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/06-early-medieval/ch21-islam-early-medieval.md",
       summary: "The recitation and the oneness of God: from the cave of Hira and the command to 'Recite!' to a faith that spanned Spain to the Indus in a century. The historical Muhammad that scholarship can establish and the revelation only faith can affirm — kept distinct — the Qur'an and the manuscript evidence for its early codification, tawhid and the Five Pillars, the Abrahamic inheritance and the Muslim Jesus, Sharia and the schools of law, the Sunni–Shia split sealed at Karbala, and the sacred encoding of a faith that made the written word its supreme art: calligraphy, geometric infinity, the abjad, and the unexplained letters that open the suras." },
     { id: "ch22", title: "Patristic Christianity", kind: "tradition",
@@ -242,7 +242,7 @@ window.ARCHIVE = {
 
     { id: "ch44", title: "The Inca", kind: "tradition",
       era: "07-high-medieval", eraLabel: "High Medieval · The Inca",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/07-high-medieval/ch44-inca-high-medieval.md",
       summary: "The religion of the largest empire the Americas ever knew: the divine sun-emperor descended from Inti, the Coricancha and the ceque-wired sacred landscape, the royal mummies who still ruled, the capacocha children of the frozen peaks, and the knotted quipu — reconstructed from stone, cord, and the chronicles of the conquerors, with a steady eye on how much we can actually read." },
     { id: "ch45", title: "Pistis Sophia", kind: "tradition",
@@ -322,7 +322,7 @@ window.ARCHIVE = {
 
     { id: "ch47", title: "Journeys to the Underworld", kind: "theme",
       era: null, eraLabel: "Comparative theme · cross-era",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "themes/ch47-underworld.md",
       summary: "The descent to the land of the dead — one of the oldest and most widespread of all sacred stories — and what a civilization reveals when it weighs its dead. Inanna stripped at the seven gates; the Greek katabasis (Odysseus, Orpheus, Aeneas, Persephone); Egypt’s Duat and the Weighing of the Heart against the feather of Maat; the judged afterlives (Zoroastrian Chinvat bridge, the Tibetan bardo, Chinese Diyu) set against the un-judged pits of Sheol and Norse Hel; the god who goes down (Izanagi, Baldr, the Harrowing of Hell); and a symbology of the gate, the ferryman, the scale, and the guidebook written for the dead." },
 
@@ -340,25 +340,25 @@ window.ARCHIVE = {
 
     { id: "ch50", title: "The End of Days", kind: "theme",
       era: null, eraLabel: "Comparative theme · cross-era",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "themes/ch50-apocalypse.md",
       summary: "How the world ends — and the deep divide between the line and the wheel. The Qumran War Scroll and the apocalyptic mind; the Persian blueprint (Zoroastrian dualism, the Saoshyant, resurrection, and Frashokereti, the ‘making wonderful’); the apocalyptic turn in Second Temple Judaism (Daniel, Enoch) and the contested question of Zoroastrian influence; the Book of Revelation, the Antichrist, and the millennium; the Islamic Day of Resurrection, the Mahdi, and the Dajjal; and the cyclical counter-vision — Norse Ragnarök, the Hindu Kali Yuga and Kalki, Buddhist Maitreya, the Aztec Fifth Sun — where destruction is one turn of an eternal wheel. A symbology of 666, Armageddon, and the world made new." },
 
     { id: "ch51", title: "Sacrifice & the Scapegoat", kind: "theme",
       era: null, eraLabel: "Comparative theme · cross-era",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "themes/ch51-sacrifice.md",
       summary: "The gift of blood — one of the most universal and most troubling of religious acts. What sacrifice was (korban, ‘drawing near’; yajna into fire; thysia, ‘making smoke’; do ut des) and the gift/communion/feeding theories; blood on the altar; the substitution of animal for human (the Aqedah, the Passover lamb); human sacrifice reported honestly (Aztec, the contested Carthaginian tophet, Shang retainers); the scapegoat of Leviticus and the Greek pharmakos; Girard’s mimetic scapegoat mechanism and Burkert’s Homo Necans (flagged as contested); and the sacrifice that ends sacrifice — the Lamb of God and the Eucharist, the bloodless turns of Judaism, Hinduism, Jainism, and Buddhism. A symbology of altar, smoke, substitute, and shared meal." },
 
     { id: "ch52", title: "Jainism", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · Jainism",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/04-axial-age/ch52-jainism-axial-age.md",
       summary: "The religion of harmlessness — an axial-age faith that took a single idea, do no harm to any living thing, further than any other. Mahavira and the 24 Tirthankara ‘ford-makers’ within the shramana movement beside the Buddha; a universe with no creator and countless souls (jiva) weighed down by karma imagined as physical matter; the five vows and a radical ahimsa (the monk’s broom and mouth-cloth) that shaped Gandhi; the many-sidedness of truth (anekantavada, syadvada, the blind men and the elephant); the Digambara/Svetambara split; sallekhana, the serene fast to death; the Gommateshwara colossus and Dilwara temples; and a symbology of the raised hand of ahimsa, the swastika of the four rebirths, and the three jewels." },
 
     { id: "ch53", title: "Tibetan & Vajrayana Buddhism", kind: "tradition",
       era: "06-early-medieval", eraLabel: "Early Medieval · Tibetan & Vajrayana Buddhism",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md",
       summary: "The Diamond Vehicle — the tantric third turning of Buddhism, promising Buddhahood in a single lifetime. The sand mandala built and swept away; Padmasambhava, King Trisong Detsen, and Buddhism’s 8th-century arrival in Tibet over the older Bon; the four schools (Nyingma, Kagyu, Sakya, Gelug) and Tsongkhapa’s reform; the tantric method of deity yoga, mandala, and mantra (Om mani padme hum), and the union of wisdom and method in bell and vajra; the tulku system of reincarnate lamas and the Dalai Lama; the Bardo Thodol and the after-death bardo; and sky burial. A symbology of the mandala, the prayer wheel and flag, and the eight auspicious symbols — with hagiography and terma flagged honestly against documented history." },
 
@@ -400,13 +400,13 @@ window.ARCHIVE = {
 
     { id: "ch60", title: "Eastern Orthodoxy & Byzantium", kind: "tradition",
       era: "06-early-medieval", eraLabel: "Early Medieval · Eastern Orthodoxy & Byzantium",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md",
       summary: "Heaven on earth — the Christianity of the Byzantine empire, which argues first from beauty. The seven Ecumenical Councils (Nicaea to Nicaea II) that defined the Trinity and Christ for all Christianity; theosis, the distinctive teaching that ‘God became man so that man might become god’; the Iconoclastic Controversy and the incarnational defense of icons; the Great Schism of 1054 (the filioque, papal authority) that split Christendom into Catholic West and Orthodox East; Hesychasm, the Jesus Prayer, and Gregory Palamas’s uncreated Light and essence/energies distinction; the Divine Liturgy, Mount Athos, Cyril and Methodius and the spread to the Slavs, and the ‘Third Rome’; and the ancient Oriental Orthodox churches of the Chalcedonian split. A symbology of the icon as window into heaven, the dome, and the iconostasis." },
 
     { id: "ch61", title: "Aboriginal Australian Dreaming", kind: "tradition",
       era: "01-prehistory", eraLabel: "Prehistory · Aboriginal Australian Dreaming",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md",
       summary: "The oldest continuous living religious tradition on earth — more than 65,000 years, and not one religion but hundreds of peoples sharing a grammar. The Dreaming (Tjukurpa/Altjira), the ‘everywhen’ in which Ancestral Beings shaped the land and remain present in it, laying down the Law; songlines that are at once song, map, and title-deed; totemism and the sacred bond of belonging to Country; the Rainbow Serpent and the mouthless Wandjina; ceremony, initiation, and restricted sacred knowledge; and the oldest continuous painting tradition (Gwion Gwion, Wandjina, X-ray art), still ritually repainted. A symbology of the songline, the aerial concentric-circle map, and the X-ray image — placed at the archive’s root as a living window on the deep past, with its diversity, the imperfect word ‘Dreamtime,’ appropriations, and rightly-restricted knowledge all handled honestly." },
 
@@ -445,7 +445,7 @@ window.ARCHIVE = {
       summary: "Egypt’s southern twin: the great mounds and retainer burials of Kerma; Amun in the ‘Pure Mountain’ of Jebel Barkal; the Kushite pharaohs of the Twenty-fifth Dynasty, Piye’s Victory Stela and the revival of the pyramid; Meroë’s own gods, the lion-headed Apedemak above all, and its ruling queens, the Kandake of Acts 8; the Nubian pilgrims who kept Isis’s temple at Philae open until the sixth century; and Christian Nubia and the paintings of Faras. A symbology of the uraeus mountain, the ram and the lion, and the Meroitic script, whose signs can be read but whose language still cannot." },
     { id: "ch69", title: "The Upanishads & the Hindu Synthesis", kind: "tradition",
       era: "04-axial-age", eraLabel: "Axial Age · The Upanishads & the Hindu Synthesis",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md",
       summary: "From fire altar to temple: the Upanishads and their debates at Janaka’s court, the self (ātman) and the absolute (Brahman) and ‘that you are’; the first teachings of karma, rebirth and liberation; the Mahābhārata, the Rāmāyaṇa and the Bhagavad Gītā; the Laws of Manu, varṇa and the stages and aims of life; the six philosophical ‘viewpoints’; and the Greek ambassador’s Garuḍa pillar, the Purāṇas and the first Gupta temples. A symbology of Om and the four states, the great sayings and the temple as cosmos, with epic chronologies, Rāma’s bridge and ‘Vedic science’ sorted from the evidence." },
     { id: "ch70", title: "Pre-Islamic Arabia", kind: "tradition",
@@ -470,7 +470,7 @@ window.ARCHIVE = {
       summary: "Messiahs and mystics in the Jewish early modern world: Luria’s shattered vessels and the catastrophe of 1648; Sabbatai Zevi, his prophet Nathan and the frenzy of 1665–66 that Glückel of Hameln remembered, ending in the Messiah’s conversion to Islam; the secret believers, the Dönme of Salonika and the amulet controversy; Jacob Frank, the burned Talmud and the mass baptisms; and, in the same borderlands, the Baal Shem Tov, the Maggid, the rebbes and their dynasties, and the fierce opposition of the Vilna Gaon. A symbology of sparks and husks, the niggun and the rebbe’s table, with hagiography and hostile sources marked as such." },
     { id: "ch74", title: "Secularism & the Nones", kind: "tradition",
       era: "09-modern", eraLabel: "Modern · Secularism & the Nones",
-      status: "published", pending: false,
+      status: "published", pending: true,
       source: "eras/09-modern/ch74-secularism-nonreligion-modern.md",
       summary: "The modern age’s fastest-growing ‘tradition’ is no religion: 1.9 billion people in 2020, 29% of American adults. Doubt in the ancient world, from the Cārvākas and Diagoras to Epicurus and Xunzi; the Enlightenment critics and the Festival of Reason in Notre-Dame; Comte’s Religion of Humanity, Darwin, Huxley and ‘God is dead’; the freethinkers; the grim record of state atheism in the Soviet Union, Albania and China; humanist rituals and the Sunday Assembly; and the great debate over whether modernity ends religion. A symbology of secular cults, calendars and emblems, with the question of God reported, not decided." },
     { id: "ch66", title: "The San & Southern African Rock Art", kind: "tradition",

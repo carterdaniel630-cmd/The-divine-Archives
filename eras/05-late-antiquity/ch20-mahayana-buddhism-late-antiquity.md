@@ -183,6 +183,12 @@ to **Korea**, **Japan**, and **Vietnam**; and northward it seeded the Buddhism o
 it fused with the tantric currents that this archive treats in a later chapter on **Vajrayana** and
 **Tantra**. The Great Vehicle became the Buddhism of half of Asia.
 
+## Dunhuang and the Mogao caves
+
+At the oasis of **Dunhuang**, where the Silk Road's northern and southern routes met at the edge of the Gobi, monks and patrons cut shrines into a cliff face from the fourth century to the fourteenth. The **Mogao caves**, about 492 decorated shrines in all, hold painted walls and clay sculptures that show the Mahāyāna in practice: Pure Land paradises spread across whole walls, Guanyin in many forms, scenes from the *Lotus Sūtra*, and the donors who paid for them, painted in their own clothes. UNESCO inscribed the site in 1987.
+
+In 1900 a Daoist priest who had taken charge of the caves, **Wang Yuanlu**, found a walled-up chamber, now called the **Library Cave** (Cave 17). It held tens of thousands of manuscripts and paintings, sealed around the year 1000, in Chinese, Tibetan, Sanskrit, Sogdian, Uyghur and other languages. Most were Buddhist, but some were Daoist, Manichaean (ch55) and Christian. In 1907 the archaeologist **Aurel Stein** obtained thousands of them from Wang in exchange for a donation; expeditions from France, Japan and Russia followed, and much of the cache is now in London, Paris, St Petersburg and Beijing. Among Stein's acquisitions was a printed copy of the *Diamond Sūtra* dated to the year 868, now in the British Library: the world's oldest dated printed book. Its colophon says it was made to be given away freely, as an act of merit. Whether the removal of the manuscripts was rescue or plunder is still argued, and since 1994 the International Dunhuang Project has put the scattered collections online together.
+
 ## The believer's lens
 
 The Mahayana, the "Great Vehicle," recasts the Buddhist path around **universal compassion**. Its ideal is no longer the *arhat* who wins his own liberation but the **bodhisattva**, who vows to postpone final nirvana until *all* beings are freed — a breathtaking enlargement of the goal from personal release to the salvation of the whole cosmos. Its deepest philosophy is **śūnyatā**, emptiness: nothing has fixed, independent existence, so that *saṃsāra* and *nirvāṇa* are not two, and liberation is available here and now to the awakened eye. And it opens a vast, grace-filled cosmos of **celestial buddhas and bodhisattvas** — Amitābha, whose Pure Land the devotee may reach by faith and the calling of his name; Avalokiteśvara, the embodiment of compassion who hears every cry (and who becomes, in East Asia, the beloved goddess **Guanyin**) — so that even those who cannot master meditation may be saved by devotion. Through **skillful means** (*upāya*), the Buddha meets each being where they are. From inside, the Mahayana is Buddhism grown boundless in compassion and open, at last, to everyone.
@@ -295,6 +301,8 @@ Himalayas, **Chan/Zen**, **Pure Land**, and the whole vast flowering of **East A
 - The feminization of Avalokiteshvara into Guanyin and the Miaoshan legend — [Embodied Philosophy: From
   Bodhisattva to Goddess](https://www.embodiedphilosophy.com/from-bodhisattva-to-goddess-guanyin-and-chinese-buddhism-2/).
 - The Mahayana "cult of the book" (Schopen) and sutra-copying merit — [Wikipedia: Sutra copying](https://en.wikipedia.org/wiki/Sutra_copying).
+- The Mogao caves (492 shrines; UNESCO 1987), the Library Cave and Stein (1907) — UNESCO World Heritage Centre, "Mogao Caves." https://whc.unesco.org/en/list/440/ ; Getty Conservation Institute Newsletter 14.2, on the Mogao conservation programme. https://www.getty.edu/conservation/publications_resources/newsletters/pdf/v14n2.pdf
+- The *Diamond Sūtra* of 868 — Linda Hall Library, "The Diamond Sutra" (11 May 868; British Library). https://www.lindahall.org/about/news/scientist-of-the-day/the-diamond-sutra/ ; International Dunhuang Programme. https://idp.bl.uk/
 
 *Note on sourcing:* Researched from standard reference scholarship (Britannica, sourced overviews) and the
 mainstream Buddhist-studies scholarship of Williams, Schopen, and Nattier rather than memory alone, per the
