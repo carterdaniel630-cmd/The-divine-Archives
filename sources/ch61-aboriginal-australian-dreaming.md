@@ -25,3 +25,5 @@ New section **"The Stolen Generations and the return of Uluṟu"** (see `plans/c
 - Uluṟu handback (1985) and the end of the climb (2019) — Parks Australia, "Uluṟu climb closure." https://parksaustralia.gov.au/uluru/discover/culture/uluru-climb ; National Museum of Australia, Defining Moments, "Uluru handback." https://nma.gov.au/defining-moments/resources/uluru-handback-anangu
 
 The chapter goes back to pending review because of these additions.
+
+- **2026-10-10, review correction:** the figures "at least 100,000" and "Robert Manne estimated 20,000–25,000" were removed; neither could be confirmed from a source that could be opened or named (the reviewer found no source for Manne's figure). The section now says only that the findings and the number of children are disputed, citing Manne, *In Denial* (Quarterly Essay 1, 2001), confirmed via catalogue and review records.
