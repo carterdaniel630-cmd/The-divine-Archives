@@ -28,6 +28,22 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - New features, games, or museum rooms
 - Anything touching religious-sensitivity rules (e.g. images of the Báb, sacred objects)
 
+### Quality bar (standing, set by Carter 2026-10-10)
+Everything is built and maintained to the highest standard. In practice:
+- **Nothing merges with a red or unfinished check.** Every CI check is green on the PR's
+  current head, including slow ones (Lighthouse), before a merge is proposed or carried out.
+  If a check looks flaky, re-run it and wait for the result; never merge on the assumption.
+- **Every output goes through the reviewer** (`reviews/REVIEWER.md`) before it reaches Carter,
+  and its NEEDS CARTER items are resolved or put to him.
+- **Verify, don't assume:** run the full build, `node tools/review-checks.js --build` and every
+  `tools/verify-*.js` before pushing; open anything visual (pages, museum, Pilgrimage, games)
+  in a headless browser and check for script errors and the performance budget.
+- **Sources:** every citation is real and checked; anything that could not be opened is said so in
+  the source log; estimates and conjecture are labelled as such on the page, never presented as fact.
+- **Own your PRs to the end:** keep them conflict-free and green after other merges, and leave
+  docs (handoff, status board, plans) matching main.
+- **No shortcuts to look finished:** a smaller, correct piece of work beats a larger, unverified one.
+
 ### Reporting
 - Write reports for a non-technical reader: say what changed, what it means, and what you need
   from him.
