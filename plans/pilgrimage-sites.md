@@ -89,10 +89,10 @@ Chapter ids are the archive's own (`docs/assets/data.js`). Vault ids are the Vau
 
 | Site | Chapters | Vault | Label | Suggested / notes |
 |---|---|---|---|---|
-| Library of Alexandria | ch15, ch17 | none (V53 Rosetta Stone related: Ptolemaic) | **(R)** | Almost nothing of its plan is known. The reconstruction is mostly conjecture and must say so loudly. The "single great fire" story is itself a myth to correct. |
+| **Library of Alexandria** · PREVIEW (built 2026-10-10 as a labelled reconstruction, noindex, off the menu, pending review) | ch15, ch17 | none (V53 Rosetta Stone related: Ptolemaic) | **(R)** | Almost nothing of its plan is known. The reconstruction is mostly conjecture and must say so loudly. The "single great fire" story is itself a myth to correct. |
 | Parthenon | ch15 | none | — | Show it as it stands, with an optional colour reconstruction (traces of paint are documented), labelled (R). |
 | Herod's Temple | ch10, ch16, ch19 | none (V44 Pilate Stone related) | **(R)** | Sources: Josephus, Mishnah Middot, and excavation around the Temple Mount. Where they conflict, say so. |
-| **Qumran caves** · QUEUED (next) | ch10, ch16, ch17, ch19, ch50 | **V02** Dead Sea Scrolls, **V48** Great Isaiah Scroll (Cave 1), **V10** Copper Scroll (Cave 3), **V49** Book of Enoch (Aramaic fragments, Cave 4), all direct | — | **Pilot site.** See plan below. Note: the site is in the West Bank. Wording stays neutral (see below). |
+| **Qumran caves** · PREVIEW (built 2026-10-10, noindex, off the menu, pending review) | ch10, ch16, ch17, ch19, ch50 | **V02** Dead Sea Scrolls, **V48** Great Isaiah Scroll (Cave 1), **V10** Copper Scroll (Cave 3), **V49** Book of Enoch (Aramaic fragments, Cave 4), all direct | — | **Pilot site.** See plan below. Note: the site is in the West Bank. Wording stays neutral (see below). |
 | Persepolis | ch06, ch49 | none (V35 Cyrus Cylinder, V54 Behistun related) | — | — |
 | Bodh Gaya (Mahabodhi) | ch11, ch20 | none (V46 Piprahwa, V27 Tooth Relic related) | — | An active temple. **Suggested:** sanctum exterior only, pending your call. |
 | Great Stupa at Sanchi | ch11, ch20 | none (V46 related) | — | — |
@@ -299,6 +299,8 @@ records it in `great-pyramid.json`, and cross-checks it against the later survey
 
 ### Pilot B: the Qumran caves
 
+**Built 2026-10-10 as a preview** (branch `claude/pilgrimage-qumran-alexandria`): `docs/pilgrimage/qumran-caves.html`, module `docs/pilgrimage/sites/qumran-caves/`, shared cave builder `docs/pilgrimage/cave.js`, sources `sources/pilgrimage-qumran-caves.md`. Status `preview` in `pilgrimage-data.js`: the page exists (noindex) but the Pilgrimage list shows it as coming and the museum has no portal to it until Carter approves. The DJD plans could not be opened, so every cave size is an estimate (dims.js says APPROX); the planned `qumran.json` became `dims.js` + section modules, as for the Great Pyramid.
+
 **Label:** none of R/C/S. The caves are real and are seen from visitor paths. Two notes go on site:
 
 - **Contested, shown on site:**
@@ -372,6 +374,10 @@ the later cave sites reuse.
 Qumran first (it is simpler, has four direct Vault links, and builds the reusable cave builder), then the Great
 Pyramid. Each goes to you as a branch with screenshots and the performance numbers before anything is linked from
 the live museum.
+
+## The Library of Alexandria (built 2026-10-10 as a preview)
+
+A labelled reconstruction (R) in the Great Pyramid's style: the archive's vestibule, then Strabo's "public walk" and "exedra with seats" (a colonnaded court, outdoors) and his "large house" with the scholars' common table, plus a book room of wall niches after later Roman libraries. Every card says what is attested and what is conjecture. Module `docs/pilgrimage/sites/library-of-alexandria/`, sources `sources/pilgrimage-library-of-alexandria.md`. Status `preview`, noindex, off the menu, pending review.
 
 ## Needs Carter's decision before any build
 
