@@ -49,7 +49,16 @@ in advance which work is a test.
    - `"autoPass": false` → **no item may be PASSED or FIXED-and-done.** Do the whole review as normal, but put
      every item under NEEDS CARTER, with your would-be verdict shown ("would pass: …"). Say at the top of the
      report that auto-pass is suspended and quote the `reason`.
-3. **Find the last report.** List `reviews/` on `review-log`. Your reports are named
+3. **Check whether the previous scheduled run failed.** Look up the scheduled task "Divine Archives —
+   reviewer (nightly)" with the scheduled-task tools you have (`list_triggers` / `get_trigger`) and read its
+   `last_run`. If that is this run itself (still running), or the tools are missing, use `reviews/runs.md`
+   on `review-log` instead: every run adds one line there (see §9). The scheduled run is daily, so if the
+   newest line is more than 26 hours old, the run in between did not happen or failed. If a previous run
+   failed or is missing, **the first line of this run's report must say so**, with the date and the reason if
+   known (for example "PREVIOUS SCHEDULED RUN FAILED: 2026-10-10, usage limit reached"). If you write no
+   report because there is nothing new, put that line in your end-of-run reply instead. If you could not
+   check, say that in the first line too.
+4. **Find the last report.** List `reviews/` on `review-log`. Your reports are named
    `reviews/YYYY-MM-DD-<batch>.md` (the auditor's end in `-audit.md`; ignore those for this step). The newest
    one's date is the **last report date**, and its `Covers:` lines say which branch heads were reviewed.
 
@@ -200,6 +209,7 @@ short lowercase slug (`wikipedia-replacement-ch66-74`, `review-test-2026-11`). W
 technical and reads on a phone: plain words, short lines, no jargon.
 
 ```
+<only if §1 found a failed or missing previous run: PREVIOUS SCHEDULED RUN FAILED: <date>, <reason>>
 Batch: <what the batch is> (<PR numbers or branch names>)
 Reviewed: YYYY-MM-DD
 Auto-pass: on | SUSPENDED (<reason from reviews/status.json>)
@@ -253,6 +263,9 @@ PR: no approval, no request for changes, no labels.
 ## 9. End of run
 
 - Check that every batch you reviewed has a report, and every report is pushed to `review-log`.
+- Add one line to `reviews/runs.md` on `review-log`, even when there was nothing new:
+  `YYYY-MM-DD HH:MM UTC reviewer <n> batches, <n> passed, <n> fixed, <n> need Carter` (or `nothing new`).
+  Commit it (`review: run log`) and push `review-log`. This is how the next run spots a failed run (§1).
 - Restore any working-tree changes you did not commit (`git checkout -- .`).
 - Reply with a short plain-language summary: batches reviewed, totals, and the "Needs your decision" lines.
   If you found nothing to review, say so and write no report.
