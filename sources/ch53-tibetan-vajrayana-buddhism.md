@@ -18,3 +18,11 @@ Per the project sourcing standard. A tradition chapter: the emphasis is on the d
 - Genuinely open: the pre-Buddhist content of Bön and the extent of its absorption; the historical kernel of the Padmasambhava traditions; inner efficacy claims are documented, not adjudicated; the current succession disputes are ongoing.
 - Placed in era 06 (Early Medieval), when Vajrayana entered and took root in Tibet.
 - Connects to ch20 (Mahayana), ch24 (Tantra), ch47 (the bardo/underworld), ch25 (taming local gods).
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Lhasa: the Jokhang, the Potala and the pilgrim's circuit"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Potala (begun 1645, White Palace 1648, Red Palace 1694) and Songtsen Gampo's palace — Britannica, "Potala Palace." https://www.britannica.com/topic/Potala-Palace
+- The World Heritage listing (Potala 1994; Jokhang 2000; Norbulingka 2001) — UNESCO World Heritage Centre, "Historic Ensemble of the Potala Palace, Lhasa." https://whc.unesco.org/en/list/707/
+
+The chapter goes back to pending review because of these additions.

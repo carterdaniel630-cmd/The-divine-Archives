@@ -16,3 +16,10 @@ Per the project sourcing standard. A tradition chapter: the emphasis is on the d
 - Genuinely open: earliest Jain–Buddhist mutual influence; how much of the Agamas preserves Mahavira's actual words; the tradition's deep prehistory before Parshvanatha.
 - Placed in era 04 (Axial Age) as a shramana tradition contemporary with Buddhism.
 - Connects to ch11 (Buddhism), ch05 (Vedic sacrifice rejected), ch51 (ahimsa/sacrifice), ch30 (Bhakti/pluralism).
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Paryuṣaṇa and the day of forgiveness"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- Paryuṣaṇa and Daśa Lakṣaṇa; the *Kalpa Sūtra* and *Tattvārtha Sūtra* readings; Saṃvatsarī and *micchāmi dukkaḍaṃ* — JAINA (Federation of Jain Associations in North America), "Paryushan Parv & Das Lakshan." https://www.jaina.org/page/ParyushanParv1 ; Y. K. Malaiya (Colorado State University), "The Paryushana Parva." https://www.cs.colostate.edu/~malaiya/paryushan.html ; Jain eLibrary, *Paryushan and Das Lakshana Parva*. https://www.jainfoundation.in/JAINLIBRARY/books/Paryushan_and_Das_Lakshana_Parva_200016_data.pdf
+
+The chapter goes back to pending review because of these additions.

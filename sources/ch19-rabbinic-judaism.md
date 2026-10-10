@@ -29,3 +29,14 @@ chapter while covering its Late-Antique seeds (**Sefer Yetzirah**, **Merkabah/He
 references Second Temple Judaism (Chapter 10), Christianity (Chapter 16), and the Zoroastrian Persian
 world (Chapter 6). Written to be educational, and to honor both the tradition's self-understanding and the
 historical record.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Passover Seder and the prayer book"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Seder, Mishnah Pesaḥim 10 and the symposium question — Baruch M. Bokser, *The Origins of the Seder: The Passover Rite and Early Rabbinic Judaism* (Berkeley: University of California Press, 1984; repr. JTS Press, 2002). https://www.degruyterbrill.com/document/doi/10.1525/9780520317376/html ; Schechter Institute, "The Origins of the Seder" (on Stein 1957 and the scholars who followed him). https://schechter.edu/the-origins-of-the-seder/ ; Mishnah Pesaḥim 10, at Sefaria. https://www.sefaria.org/Mishnah_Pesachim.10
+- The *Seder Rav Amram Gaon* — Jewish Virtual Library, "Amram Gaon." https://www.jewishvirtuallibrary.org/amram-gaon
+
+New section **"The Karaites: scripture without the Oral Torah"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Karaites, Anan ben David and the origins debate — Daniel J. Lasker, *Karaism: An Introduction to the Oldest Surviving Alternative Judaism* (London: Littman Library, 2022), reviewed in *The Jerusalem Post*. https://www.jpost.com/judaism/article-707768 ; TheTorah.com, "Biblical Exegesis as a Source of Jewish Pluralism: The Case of the Karaites." https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites
+
+The chapter goes back to pending review because of these additions.

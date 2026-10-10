@@ -15,3 +15,11 @@ Per the project sourcing standard. A comparative theme chapter: the emphasis is 
 - Contested (flagged, not resolved): single-origin vs. independent invention for the parallels (esp. Orpheus/Izanagi); and how much the judged afterlife of Judaism/Christianity/Islam owes to Zoroastrian Persia.
 - Genuinely open: why the descent-and-return story is so universal. No afterlife map is treated as a verified account of death.
 - Connects to ch01 (flood/renewal), ch02 (Egypt/Duat), ch06 (Zoroaster), ch07/ch10/ch16/ch21 (Sheol → judged afterlife), ch50 (apocalypse/last judgment), ch53 (Tibetan bardo).
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Xibalba and Mictlan: the Mesoamerican underworlds"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- Xibalba and the Hero Twins — Dennis Tedlock (trans.), *Popol Vuh: The Definitive Edition of the Mayan Book of the Dawn of Life and the Glories of Gods and Kings* (New York: Simon & Schuster, 1985; rev. Touchstone, 1996), reviewed by World History Encyclopedia. https://www.worldhistory.org/review/14/ ; American Historical Association, "Popol Vuh." https://www.historians.org/resource/popol-vuh/ ; Encyclopedia.com, "Popol Vuh." https://www.encyclopedia.com/history/latin-america-and-caribbean/mesoamerican-indigenous-peoples/popol-vuh
+- Mictlan, the four-year journey, the dog, and the nine-level scheme from Codex Vaticanus A — Bernardino de Sahagún, *Florentine Codex*, Book 3, appendix, trans. A. J. O. Anderson and C. E. Dibble (Santa Fe: School of American Research and University of Utah, 1952) ; Gods and Monsters, "Mictlan" (on the Vaticanus A diagram and its disagreement with the Florentine Codex). https://godsandmonsters.info/mictlan/
+
+The chapter goes back to pending review because of these additions.

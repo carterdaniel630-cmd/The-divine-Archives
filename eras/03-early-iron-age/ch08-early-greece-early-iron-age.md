@@ -226,6 +226,12 @@ religious *continuity* bridged the Dark Age gap between Mycenaean and Archaic
 religion is genuinely uncertain — the gods' names carried across, but much else may
 have been remade.
 
+## The Homeric Hymns
+
+Besides the epics, the Greeks attributed to "Homer" a set of hexameter hymns to the gods, composed by many poets between about the seventh and the fifth century BCE and later. Rhapsodes performed them as preludes before reciting epic. The short hymns are invocations of a few lines. The long ones tell a god's story. The *Hymn to Hermes* shows the newborn god stealing Apollo's cattle and inventing the lyre. The *Hymn to Apollo* tells of his birth on Delos and the founding of his oracle at Delphi. The *Hymn to Aphrodite* tells of her love for the mortal Anchises.
+
+The most important for the history of religion is the ***Hymn to Demeter***. Hades carries off Persephone. Her mother Demeter searches the earth and, disguised as an old woman, nurses a prince at **Eleusis**; she withholds the grain until the gods give way. Persephone returns, but having eaten a pomegranate seed she must spend part of every year below. Demeter then teaches the lords of Eleusis her secret rites: "Blessed is he among men on earth who has seen these things; but he who is uninitiated ... never has a share of such things once he is dead." That is the founding myth and promise of the **Eleusinian Mysteries** (ch15, ch18). The poem survives in a single manuscript, written in the fifteenth century. It was lost to scholarship until 1777, when the philologist Christian Friedrich Matthaei found it in a barn outside Moscow. Its rediscovery revived European interest in the hymns.
+
 ## The believer's lens
 
 To the Greek, the gods were not loving or just in any comforting sense — they were **powerful, deathless, and present**, a vast quarrelsome family whose favor and anger shaped every harvest, voyage, battle, and birth. Religion was therefore not belief but **practice and reciprocity**: sacrifice rightly, honor the god of the place and the moment, keep the festivals, respect the oath and the guest — and the god might grant good fortune; neglect or offend, and disaster followed. There was no scripture, no creed, no church, and little hope of a happy afterlife for most (the dead went as gasping shades to Hades) — but the **mysteries**, above all Eleusis, offered the initiate a better lot beyond death. Over even the gods stood **fate** (*moira*). To be pious was to know one's place in this order — mortal, not divine — and to give the gods their due; hubris, forgetting that place, was the deepest sin, and the tragedians made it the engine of ruin.
@@ -361,6 +367,8 @@ will adopt wholesale.
 *The alphabet*
 - [Wikipedia: History of the Greek alphabet](https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet)
   (the adoption of Phoenician letters and the innovation of vowels).
+- The Homeric Hymns and the *Hymn to Demeter* — M. L. West (ed. and trans.), *Homeric Hymns, Homeric Apocrypha, Lives of Homer*, Loeb Classical Library 496 (Cambridge, MA: Harvard University Press, 2003). https://bmcr.brynmawr.edu/?p=23371 (review, *Bryn Mawr Classical Review* 2003.07.36) ; H. G. Evelyn-White (trans.), *Hesiod, the Homeric Hymns and Homerica* (Loeb, 1914), public domain, at Project Gutenberg. https://www.gutenberg.org/ebooks/348
+- The Moscow manuscript and its discovery in 1777 — LibreTexts, *Temples of the Gods: An Introduction to Classical Mythology*, "The Homeric Hymn to Demeter." https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter
 
 *Note on sourcing:* Researched from standard reference works and current scholarship
 (Burkert, West) rather than memory alone, per the project standard. The live debates —

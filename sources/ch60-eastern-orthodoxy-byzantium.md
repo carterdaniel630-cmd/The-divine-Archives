@@ -16,3 +16,11 @@ Per the project sourcing standard. A tradition chapter on well-documented histor
 - Genuinely open / nuanced: "1054" is symbolic — the schism was a gradual process, the mutual excommunications narrow and personal; historians debate when the churches truly separated.
 - Placed in era 06 (Early Medieval): the iconoclastic age and the mature Byzantine synthesis (with the later Schism and Palamas noted within the Byzantine arc).
 - Connects to ch16/ch22 (early/patristic Christianity), ch31 (Reformation/iconoclasm), ch21 (Islamic aniconism), ch27/ch26/ch54 (mysticism), ch59/ch58 (Slavs / alphabets).
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Ukrainian schism (2018–19)"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The tomos, the Minsk synod (15 October 2018) and the unification council (15 December 2018) — International Centre for Defence and Security, "A Tomos for Ukraine's Orthodox Church: The Final Schism?" (10 January 2019). https://icds.ee/en/a-tomos-for-ukraines-orthodox-church-the-final-schism/ ; Catholic News Agency, "Will Pope Francis have an impact on Orthodoxy's Ukraine dispute?" https://www.catholicnewsagency.com/news/will-pope-francis-have-an-impact-on-orthodoxys-ukraine-dispute-55140 ; PONARS Eurasia, "Church and Geopolitics: The Battle over Ukrainian Autocephaly." https://ponarseurasia.org/church-and-geopolitics-the-battle-over-ukrainian-autocephaly
+- The 2024 law — JURIST, "Ukraine parliament approves ban on religious organisations tied to Russia" (20 August 2024). https://www.jurist.org/news/2024/08/ukraine-parliament-approves-ban-on-religious-organisations-tied-to-russia/
+
+The chapter goes back to pending review because of these additions.

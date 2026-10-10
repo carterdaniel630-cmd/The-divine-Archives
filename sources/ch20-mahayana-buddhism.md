@@ -28,3 +28,11 @@ pejorative not to be applied to Theravada, corrects the overturned "lay movement
 cross-era resonance with the era's other savior religions **without** asserting influence, and reserves the
 **Vajrayana/Tantra** and the East Asian schools (Chan/Zen, Pure Land) for their own later chapters. Written
 to be educational, and closes the Late Antiquity era of this archive.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Dunhuang and the Mogao caves"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Mogao caves (492 shrines; UNESCO 1987), the Library Cave and Stein (1907) — UNESCO World Heritage Centre, "Mogao Caves." https://whc.unesco.org/en/list/440/ ; Getty Conservation Institute Newsletter 14.2, on the Mogao conservation programme. https://www.getty.edu/conservation/publications_resources/newsletters/pdf/v14n2.pdf
+- The *Diamond Sūtra* of 868 — Linda Hall Library, "The Diamond Sutra" (11 May 868; British Library). https://www.lindahall.org/about/news/scientist-of-the-day/the-diamond-sutra/ ; International Dunhuang Programme. https://idp.bl.uk/
+
+The chapter goes back to pending review because of these additions.
