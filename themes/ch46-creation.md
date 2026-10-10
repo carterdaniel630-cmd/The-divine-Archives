@@ -246,23 +246,43 @@ against the **Gnostic** cosmogonies of Chapters 17 and 45.
 ## Sources
 
 *Chaoskampf and the combat myth*
-- [Wikipedia: Chaoskampf](https://en.wikipedia.org/wiki/Chaoskampf) (Marduk/Tiamat, Baal/Yamm,
-  Yahweh/Leviathan/Rahab, Zeus/Typhon; the **tehom**/**Tiamat** cognate and Genesis's
-  demythologizing).
+- Hermann Gunkel, *Creation and Chaos in the Primeval Era and the Eschaton: A Religio-Historical Study
+  of Genesis 1 and Revelation 12*, trans. K. William Whitney Jr. (Grand Rapids: Eerdmans, 2006; German
+  original 1895) — the founding statement of the combat-myth (Chaoskampf) reading of Genesis 1 against
+  *Enuma Elish* (Marduk/Tiamat), with the tehom/Tiamat link.
+  [Catalogue record](https://opac.tangaza.ac.ke/bib/163609).
+- John Day, *God's Conflict with the Dragon and the Sea: Echoes of a Canaanite Myth in the Old
+  Testament* (Cambridge: Cambridge University Press, 1985) — Baal/Yamm and Yahweh/Leviathan/Rahab; the
+  case that the biblical allusions draw on Canaanite rather than Babylonian myth.
+  [Catalogue record](https://search.worldcat.org/oclc/10071909).
+- David Toshio Tsumura, *Creation and Destruction: A Reappraisal of the Chaoskampf Theory in the Old
+  Testament* (Winona Lake: Eisenbrauns, 2005) — the opposing view: tehom derives from a common
+  Proto-Semitic word for "ocean," not from Tiamat, and Genesis 1 shows no combat at all.
+  [Publisher](https://eisenbrauns.org/books/titles/978-1-57506-106-1.html).
 
 *The ex nihilo / Genesis 1:1 translation debate*
 - On "In the beginning God created" vs. "When God began to create," Rashi, and the later emergence
   of **creatio ex nihilo**:
   [Steven DiMattei, "Genesis 1:1–2 — not a creatio ex nihilo"](https://stevendimattei.com/genesis-11-2-creation-ex-nihilo/)
-  and standard reference discussions of the JPS/NRSV rendering.
+  and standard reference discussions of the JPS/NRSV rendering; Gerhard May, *Creatio ex Nihilo: The
+  Doctrine of "Creation out of Nothing" in Early Christian Thought*, trans. A. S. Worrall (Edinburgh:
+  T&T Clark, 1994), on the doctrine's formation by second-century Christian thinkers.
+  [Catalogue record](https://findingaugustine.org/Record/34293).
 
 *The cosmic-giant cosmogony*
 - On Ymir and Purusha and the reconstructed Indo-European myth (Bruce Lincoln), and the wider
-  distribution of the motif: [academia.edu: "Is the Cosmic Giant an Indo-European myth?"](https://www.academia.edu/472488/Is_the_Cosmic_Giant_an_Indo_European_myth).
+  distribution of the motif: [academia.edu: "Is the Cosmic Giant an Indo-European myth?"](https://www.academia.edu/472488/Is_the_Cosmic_Giant_an_Indo_European_myth) ;
+  Bruce Lincoln, *Myth, Cosmos, and Society: Indo-European Themes of Creation and Destruction*
+  (Cambridge, MA: Harvard University Press, 1986). [Catalogue record](https://www.oeaw.ac.at/resources/Record/9780674864290?lng=de).
 
 *The skeptical hymn*
-- [Wikipedia: Nasadiya Sukta](https://en.wikipedia.org/wiki/Nasadiya_Sukta) (Rigveda 10.129, the
-  "who really knows?" close, and Carl Sagan's use of it).
+- Rigveda 10.129 — Stephanie W. Jamison and Joel P. Brereton (trans.), *The Rigveda: The Earliest
+  Religious Poetry of India* (New York: Oxford University Press, 2014), 3 vols.
+  [Catalogue record](https://catalog.nypl.org/search/i9780199370184) ; the "who really knows?" close
+  as rendered in Wendy Doniger O'Flaherty (trans.), *The Rig Veda: An Anthology* (Harmondsworth:
+  Penguin, 1981).
+- Carl Sagan's use of it — Carl Sagan, *Cosmos* (New York: Random House, 1980), ch. 10, "The Edge of
+  Forever," and the television episode of the same name (PBS, 1980).
 
 *The traditions' own accounts* are sourced in their chapters: Mesopotamia (Ch. 3), Egypt (Ch. 2),
 Early Vedic (Ch. 5), Early Greece (Ch. 8), pre-exilic Israel (Ch. 7), Norse paganism (Ch. 23).
