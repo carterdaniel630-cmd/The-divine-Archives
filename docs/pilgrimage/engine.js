@@ -123,6 +123,8 @@ async function loadSection(sec) {
     const group = new THREE.Group(); group.name = sec.id;
     const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s) => { const a = { p: new THREE.Vector3(x, y, z), s: s || 1, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
       // a golden portal (portal.js), animated by the engine while the visitor is near
+      // a section's own animation: fx = { group, update(dt) → true if it changed }, run while the visitor is within 25 m of (x,y,z)
+      anim: (fx, x, y, z) => { S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y, z), fx }); return fx; },
       portal: (o, x, y, z, yaw) => { const fx = portal(o); fx.group.position.set(x, y, z); fx.group.rotation.y = yaw || 0; group.add(fx.group); S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y + 1.4, z), fx }); return fx; } };
     const out = (await mod.build(ctx)) || {};
     group.traverse((o) => { if (o.isMesh && o.userData.floor) S.floors.push(o); });
@@ -360,10 +362,11 @@ function locate() {
   const t = sec ? sec.name : "";
   if (t !== S.where) { S.where = t; $("mu-where").textContent = t; }
   // daylight only near the outside
-  const out = r && r.outside ? 1 : 0;
-  sun.intensity = out * 1.5;
-  hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? "#dfe6ee" : "#8a7356"); hemi.groundColor.set(out ? "#b08a5a" : "#1a120a");
-  scene.fog.color.set(out ? "#cdb995" : "#050302"); scene.background.set(out ? "#d9c7a3" : "#050302");
+  const out = r && r.outside ? 1 : 0, sky = (S.site && S.site.sky) || {};   // a site may give its own outdoor sky (default: desert)
+  sun.intensity = out * (sky.sun || 1.5);
+  if (sky.sunPos) sun.position.set(sky.sunPos[0], sky.sunPos[1], sky.sunPos[2]);
+  hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? (sky.hemi || "#dfe6ee") : "#8a7356"); hemi.groundColor.set(out ? (sky.ground || "#b08a5a") : "#1a120a");
+  scene.fog.color.set(out ? (sky.fog || "#cdb995") : "#050302"); scene.background.set(out ? (sky.bg || "#d9c7a3") : "#050302");
   scene.fog.near = out ? 60 : 8; scene.fog.far = out ? 700 : 46;
 }
 

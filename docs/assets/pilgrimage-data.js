@@ -26,7 +26,7 @@
   "use strict";
   window.PILGRIMAGE = { sites: [
     {"id":"mount-ararat-the-ark-tradition","name":"Mount Ararat & the Ark tradition","era":null,"label":"C","chapters":["ch01"],"vault":[],"status":"queued"},
-    {"id":"gobekli-tepe","name":"Göbekli Tepe","era":"01-prehistory","label":"","chapters":["ch42","ch41"],"vault":["v60"],"status":"queued"},
+    {"id":"gobekli-tepe","name":"Göbekli Tepe","era":"01-prehistory","label":"","chapters":["ch42","ch41"],"vault":["v60"],"status":"preview","pending":true,"place":"Şanlıurfa Province, south-eastern Turkey","built":"c. 9500–8000 BCE","blurb":"Look down into the main excavation from the rim, then walk among the T-pillars of Enclosures D and C, the oldest known megaliths, carved with arms, belts, foxes, snakes and a vulture, and end at the quarry where a seven-metre pillar still lies unfinished.","note":"The main sizes come from the excavators’ published figures; the layout of the enclosures and the place of each pillar are approximate, and the carvings are our own simplified renderings;"},
     {"id":"lascaux","name":"Lascaux","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"chauvet","name":"Chauvet","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"catalhoyuk","name":"Çatalhöyük","era":"01-prehistory","label":"","chapters":["ch42","ch48"],"vault":["v59"],"status":"queued"},
