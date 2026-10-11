@@ -1,5 +1,5 @@
 {
   "autoPass": true,
-  "reason": "baseline test batch review-test/2026-10 scored 9 of 9 (100%), no missed fake source or sensitivity error; rolling accuracy 100%",
-  "updated": "2026-10-05"
+  "reason": "audit 2026-10-11: 6 of 6 re-reviewed items agreed; rolling accuracy over the last 3 counted runs 17/17 (100%); latest scored batch review-test/2026-10 missed no fake source or sensitivity error",
+  "updated": "2026-10-11"
 }
