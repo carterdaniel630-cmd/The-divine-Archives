@@ -23,7 +23,10 @@
      opts.onDown(id), opts.onUp(id)   edge callbacks (ids: up down left right a b x y l r select start)
      opts.gamepadIndex which connected controller drives this pad (default 0)
      opts.ui          false: no on-screen controller (a second player's gamepad only)
+     opts.swipe       { y: true }: a finger that lands on that face button stays on it, and a
+                      sideways swipe of it calls opts.onSwipe(id, -1 | +1) once (screen left / right)
    pad.el, pad.held, pad.poll() (call once per frame), pad.lit(id, on), pad.rumble(ms, strength), pad.destroy()
+   pad.lastTouch is the face button being pressed by touch during its onDown call (else null)
    ========================================================================== */
 (function () {
   "use strict";
@@ -130,9 +133,24 @@
         var on = {}; Object.keys(fingers).forEach(function (p) { if (fingers[p]) on[fingers[p]] = true; });
         ["a", "b", "x", "y"].forEach(function (id) { var v = !!on[id]; if (touchHeld[id] !== v) { touchHeld[id] = v; sync(id); } });
       }
-      zone.addEventListener("pointerdown", function (e) { e.preventDefault(); try { zone.setPointerCapture(e.pointerId); } catch (x) { /* ok */ } fingers[e.pointerId] = nearest(e); buzz(); recount(); });
-      zone.addEventListener("pointermove", function (e) { if (!(e.pointerId in fingers)) return; var n = nearest(e); if (n !== fingers[e.pointerId]) { fingers[e.pointerId] = n; if (n) buzz(); recount(); } });
-      var end = function (e) { if (!(e.pointerId in fingers)) return; delete fingers[e.pointerId]; recount(); };
+      var swipes = {}, SWIPE_PX = 20;
+      zone.addEventListener("pointerdown", function (e) {
+        e.preventDefault(); try { zone.setPointerCapture(e.pointerId); } catch (x) { /* ok */ }
+        var n = nearest(e); fingers[e.pointerId] = n; buzz();
+        if (n && opts.swipe && opts.swipe[n]) swipes[e.pointerId] = { id: n, x: e.clientX, y: e.clientY, done: false };
+        api.lastTouch = n; recount(); api.lastTouch = null;
+      });
+      zone.addEventListener("pointermove", function (e) {
+        if (!(e.pointerId in fingers)) return;
+        var sw = swipes[e.pointerId];
+        if (sw) {   // a swipe button keeps its finger; a sideways flick is reported once
+          var dx = e.clientX - sw.x;
+          if (!sw.done && Math.abs(dx) >= SWIPE_PX && Math.abs(dx) > Math.abs(e.clientY - sw.y)) { sw.done = true; if (opts.onSwipe) opts.onSwipe(sw.id, dx > 0 ? 1 : -1); }
+          return;
+        }
+        var n = nearest(e); if (n !== fingers[e.pointerId]) { fingers[e.pointerId] = n; if (n) buzz(); recount(); }
+      });
+      var end = function (e) { if (!(e.pointerId in fingers)) return; delete fingers[e.pointerId]; delete swipes[e.pointerId]; recount(); };
       zone.addEventListener("pointerup", end); zone.addEventListener("pointercancel", end); zone.addEventListener("lostpointercapture", end);
     }
     function bindSingles() {
@@ -189,9 +207,10 @@
     window.addEventListener("gamepadconnected", onConnect);
     window.addEventListener("gamepaddisconnected", onConnect);
 
-    return {
+    var api = {
       el: el,
       held: held,
+      lastTouch: null,
       poll: poll,
       // light a button while its keyboard key is down (the pad doubles as the key map)
       lit: function (id, on) { if (keyLit[id] === on) return; keyLit[id] = on; paint(id); },
@@ -204,6 +223,7 @@
         if (el && el.parentNode) el.parentNode.removeChild(el);
       }
     };
+    return api;
   }
 
   // For games that read the keyboard only: a physical controller "types" the game's own
