@@ -5,6 +5,17 @@ A comparative reference work covering every documented spiritual/religious tradi
 organized chronologically by era (not by region). Each chapter covers one culture/tradition
 within its era, or one cross-cutting comparative theme (e.g. flood myths, creation cosmogonies).
 
+## Start here (every session)
+1. `git fetch origin` and work from `origin/main`. The GitHub default branch is not `main`, so a fresh
+   checkout may land on an old branch; never build on it.
+2. Read `handoff/CURRENT.md` (state of main, open PRs, what needs Carter), then the rules below.
+3. Check the open PRs before starting: if your task touches a file an open PR changes (this file
+   included), build on that PR's branch or say why not.
+4. Before ending: update `handoff/CURRENT.md` and the status board if main or the PR list changed, and
+   end the report with "Needs your decision" or "Nothing needed."
+
+If two rules here seem to conflict, the stricter one wins and you flag the conflict to Carter.
+
 ## Operating rules (standing, set by Carter 2026-10-01)
 
 ### Roles
@@ -49,6 +60,12 @@ Everything is built and maintained to the highest standard. In practice:
   from him.
 - If something only Carter can do, give phone-only steps, or ask permission to do it yourself.
 - End every report with a short "Needs your decision" list, or "Nothing needed."
+- Keep it phone-sized: lead with the answer, plain sentences, no jargon (say "the live site", not
+  "deploy to Pages"); a decision is one question with short labelled options and your recommendation.
+  Anything longer than a screen goes in a file or PR with a one-line pointer to it.
+- Say how you know: link the PR, file or source behind a claim, or say it is inferred.
+- Carter works in large batches (2026-10-11): group decisions and merges into one batch for him
+  rather than asking one item at a time. Batching never lowers the quality bar above.
 
 ## File structure
 ```
@@ -64,7 +81,8 @@ Everything is built and maintained to the highest standard. In practice:
   09-modern/                <- NRMs, Spiritualism, Wicca/modern Paganism, Theosophy, diaspora syntheses
 /themes/                    <- comparative-theme chapters (cross-era), incl. the ch01-the-flood.md template
 /outline/
-  master-outline.md         <- full framework + chapter status board (the chat-provided version was never pasted in; this file is maintained as the live framework)
+  master-outline.md         <- full framework + chapter status board (the live framework)
+/handoff/CURRENT.md         <- current state of main, open PRs, decisions pending; read first, update last
 /sources/
   (per-chapter citation logs; also per-Vault-entry logs and pantheon.md)
 /vault/                     <- Vault entries (V01…), one markdown file per sacred object or text
@@ -118,11 +136,11 @@ Everything is built and maintained to the highest standard. In practice:
 4. End with an evidence-honesty section: what's supported, what isn't, what's still debated
 5. Save to the correct era folder, log sources used in /sources/
 
-## How to run this as background work
-- Give Claude Code one chapter at a time as a task (e.g. "draft the Egypt chapter for era 02-bronze-age")
-- Press Ctrl+B (or type /bg) to background it once it starts, and keep working on other things
-- Review each chapter before starting the next — this is a quality-over-speed project, not a word-count race
-- Do not let it fabricate sources or invent citations to fill gaps in the historical record; flag gaps instead of papering over them
+## Pacing
+- One chapter (or one clearly bounded piece of work) per task; this is a quality-over-speed project, not a word-count race
+- Never fabricate sources or invent citations to fill gaps in the historical record; flag gaps instead of papering over them
+- Publisher, museum and archive sites are often blocked from build sessions: when a source could only be
+  confirmed through search results, say so in the source log so the reviewer re-reads it
 
 ## Depth Standard (expanded)
 "Comprehensive" means: for every tradition covered, pull in every distinct textual source, sect,
@@ -155,8 +173,9 @@ should go deeper than ch01 where the source material supports it, but should fol
 evidence-honesty format, not a different one.
 
 ## Publishing Policy (updated — replaces the old pre-publish review gate)
-- Auto-publish is ON: chapters go live on the website as soon as drafted. No per-chapter approval
-  is required before publishing.
+- Auto-publish is ON for content review: a chapter does not need Carter's line-by-line approval
+  before it goes live. It still reaches the live site only through a merge to `main`, which
+  needs his go-ahead (Operating rules), after the reviewer has passed it.
 - Every newly published chapter MUST carry a visible "Recently added — pending full review" tag
   on its live page until Carter clears it in a batch review pass. This tag is mandatory, not
   optional — it's what replaces the old approval gate.
