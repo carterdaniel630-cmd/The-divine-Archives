@@ -25,7 +25,7 @@
 (function () {
   "use strict";
   window.PILGRIMAGE = { sites: [
-    {"id":"mount-ararat-the-ark-tradition","name":"Mount Ararat & the Ark tradition","era":null,"label":"C","chapters":["ch01"],"vault":[],"status":"queued"},
+    {"id":"mount-ararat-the-ark-tradition","name":"Mount Ararat & the Ark tradition","era":null,"label":"C","chapters":["ch01"],"vault":[],"status":"preview","pending":true,"place":"Ağrı Dağı / Masis, eastern Turkey","built":"a volcano; the tradition medieval and modern","blurb":"The mountain long identified as the Ark's landing place: look up at its two cones from the plain, walk round the boat-shaped Durupınar formation and compare it with the size Genesis gives, and stand on the summit ice, with the traditions, the searches and the geology set side by side.","note":"The mountain is a scale model whose heights are published and whose shape is our own, and the formation's width and height are estimates;"},
     {"id":"gobekli-tepe","name":"Göbekli Tepe","era":"01-prehistory","label":"","chapters":["ch42","ch41"],"vault":["v60"],"status":"queued"},
     {"id":"lascaux","name":"Lascaux","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"chauvet","name":"Chauvet","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
