@@ -470,7 +470,7 @@
     function gameOver() {
       st.alive = false; if (raf) { cancelAnimationFrame(raf); raf = null; }
       var newBest = false; if (st.score > best) { best = st.score; newBest = true; }
-      AG.addHighScore("ziggurat", { score: st.score, lines: st.lines });
+      AG.addHighScore("ziggurat", { score: st.score, lines: st.lines }); AG.finish("ziggurat");
       var list = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";

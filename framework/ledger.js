@@ -1,0 +1,183 @@
+/* ==========================================================================
+   THE DIVINE ARCHIVES — the visitor's event ledger (framework, Phase 1)
+
+   One append-only list of what a visitor has done across the whole site:
+   viewed a chapter, started a game, completed a walkthrough, unlocked a door,
+   scored in a game. Every event follows framework/schema/event.schema.json:
+
+     { id, ts, entity, verb, payload }   verb: viewed | started | completed | unlocked | scored
+
+   Rules this file keeps:
+   - Append only. There is no edit and no delete; past events are frozen.
+   - Derived state (what was seen, finished, unlocked; best scores) is never
+     stored. It is computed by replaying the events through reducers.
+   - Standalone: no imports, no build step. In a page, load it with a plain
+     <script> and use window.ArchiveLedger.create(); in Node (tests, tools),
+     require() it and pass a storage object.
+   - It stores nothing until a page calls append(); nothing leaves the browser.
+
+   Nothing on the site uses this yet. Phase 2 wires the game adapters
+   (plans/framework-sandbox.md).
+   ========================================================================== */
+
+(function (root, factory) {
+  var api = factory();
+  if (typeof module === "object" && module.exports) module.exports = api;
+  else root.ArchiveLedger = api;
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+
+  var KEY = "da.ledger.v1";
+  var VERBS = ["viewed", "started", "completed", "unlocked", "scored"];
+  var ENTITY = /^[a-z][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$/;
+  var MAX_PAYLOAD = 2048; // characters of JSON; payloads are small by design
+
+  function check(ev) {
+    if (!ev || typeof ev !== "object") return "event must be an object";
+    if (typeof ev.entity !== "string" || !ENTITY.test(ev.entity)) return "entity must be <type>:<slug>";
+    if (VERBS.indexOf(ev.verb) < 0) return "verb must be one of " + VERBS.join(", ");
+    if (ev.payload !== undefined && (ev.payload === null || typeof ev.payload !== "object" || Array.isArray(ev.payload))) return "payload must be an object";
+    if (ev.verb === "scored" && !(ev.payload && typeof ev.payload.value === "number" && isFinite(ev.payload.value))) return "scored needs payload.value (a number)";
+    if (ev.payload && JSON.stringify(ev.payload).length > MAX_PAYLOAD) return "payload too large";
+    return null;
+  }
+
+  function deepFreeze(o) {
+    if (o && typeof o === "object" && !Object.isFrozen(o)) {
+      Object.freeze(o);
+      Object.keys(o).forEach(function (k) { deepFreeze(o[k]); });
+    }
+    return o;
+  }
+
+  // The built-in derived state. Pages may add their own reducers with derive().
+  var REDUCERS = {
+    viewed: function (s, e) { if (e.verb === "viewed") s[e.entity] = (s[e.entity] || 0) + 1; return s; },
+    started: function (s, e) { if (e.verb === "started") s[e.entity] = (s[e.entity] || 0) + 1; return s; },
+    completed: function (s, e) { if (e.verb === "completed" && !(e.entity in s)) s[e.entity] = e.ts; return s; },
+    unlocked: function (s, e) { if (e.verb === "unlocked" && !(e.entity in s)) s[e.entity] = e.ts; return s; },
+    best: function (s, e) {
+      if (e.verb === "scored" && (!(e.entity in s) || e.payload.value > s[e.entity])) s[e.entity] = e.payload.value;
+      return s;
+    }
+  };
+
+  function memoryStorage() {
+    var m = {};
+    return {
+      getItem: function (k) { return Object.prototype.hasOwnProperty.call(m, k) ? m[k] : null; },
+      setItem: function (k, v) { m[k] = String(v); }
+    };
+  }
+
+  function create(opts) {
+    opts = opts || {};
+    var store = opts.storage;
+    if (!store) {
+      try { store = (typeof localStorage !== "undefined") ? localStorage : null; } catch (e) { store = null; }
+    }
+    if (!store) store = memoryStorage();
+    var key = opts.key || KEY;
+    var now = opts.now || function () { return Date.now(); };
+    var rand = opts.random || Math.random;
+    var subs = [];
+    var counter = 0;
+    var unsaved = []; // events kept in memory when storage refused them (quota, private mode)
+    var lastError = null;
+    var known = {}; // ids already announced to subscribers in this tab
+
+    function readAll() {
+      var raw = null;
+      try { raw = store.getItem(key); } catch (e) { lastError = e; }
+      var list = [];
+      if (raw) {
+        try { list = JSON.parse(raw); } catch (e) { lastError = e; list = []; }
+        if (!Array.isArray(list)) list = [];
+      }
+      // Events this tab could not save stay visible to this tab.
+      return unsaved.length ? list.concat(unsaved) : list;
+    }
+
+    function events() { return deepFreeze(readAll().slice()); }
+
+    function append(input) {
+      var err = check(input);
+      if (err) throw new TypeError("ArchiveLedger.append: " + err);
+      var ts = Math.floor(now());
+      var ev = {
+        id: ts.toString(36) + "-" + (counter++).toString(36) + "-" + Math.floor(rand() * 1679616).toString(36),
+        ts: ts,
+        entity: input.entity,
+        verb: input.verb
+      };
+      if (input.payload) ev.payload = JSON.parse(JSON.stringify(input.payload));
+      deepFreeze(ev);
+      // Re-read just before writing, so another tab's events are kept, never overwritten.
+      var stored = [];
+      try { var raw = store.getItem(key); stored = raw ? JSON.parse(raw) : []; if (!Array.isArray(stored)) stored = []; } catch (e) { lastError = e; stored = []; }
+      try {
+        store.setItem(key, JSON.stringify(stored.concat(unsaved, [ev])));
+        unsaved = [];
+      } catch (e) {
+        lastError = e;
+        unsaved.push(ev);
+      }
+      known[ev.id] = 1;
+      publish(ev);
+      return ev;
+    }
+
+    function publish(ev) {
+      subs.slice().forEach(function (s) {
+        if (s.filter && !s.filter(ev)) return;
+        try { s.fn(ev); } catch (e) { lastError = e; }
+      });
+    }
+
+    function subscribe(fn, filter) {
+      if (typeof fn !== "function") throw new TypeError("ArchiveLedger.subscribe needs a function");
+      var s = { fn: fn, filter: typeof filter === "function" ? filter : filter ? matcher(filter) : null };
+      subs.push(s);
+      return function unsubscribe() { var i = subs.indexOf(s); if (i >= 0) subs.splice(i, 1); };
+    }
+
+    function matcher(f) {
+      return function (ev) {
+        if (f.verb && f.verb !== ev.verb) return false;
+        if (f.entity && f.entity !== ev.entity) return false;
+        if (f.type && ev.entity.indexOf(f.type + ":") !== 0) return false;
+        return true;
+      };
+    }
+
+    // Replay every event through reducers; returns a fresh object each call.
+    function derive(extra) {
+      var reducers = {}, k;
+      for (k in REDUCERS) reducers[k] = REDUCERS[k];
+      if (extra) for (k in extra) reducers[k] = extra[k];
+      var state = {};
+      for (k in reducers) state[k] = {};
+      readAll().forEach(function (e) { for (var r in reducers) state[r] = reducers[r](state[r], e); });
+      return state;
+    }
+
+    // Other tabs: the browser's storage event announces their appends.
+    if (typeof window !== "undefined" && window.addEventListener && store === (function () { try { return localStorage; } catch (e) { return null; } })()) {
+      readAll().forEach(function (e) { known[e.id] = 1; });
+      window.addEventListener("storage", function (e) {
+        if (e.key !== key) return;
+        readAll().forEach(function (ev) { if (!known[ev.id]) { known[ev.id] = 1; publish(ev); } });
+      });
+    }
+
+    return {
+      append: append,
+      events: events,
+      subscribe: subscribe,
+      derive: derive,
+      status: function () { return { key: key, unsaved: unsaved.length, lastError: lastError ? String(lastError.message || lastError) : null }; }
+    };
+  }
+
+  return { create: create, check: check, VERBS: VERBS.slice(), KEY: KEY };
+});

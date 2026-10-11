@@ -138,6 +138,9 @@
     if (!dlg.open) { if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); }
     dlg.querySelector(".pn-d-x").focus();
     if (push && location.hash !== "#" + f.id) history.replaceState(null, "", "#" + f.id);
+    // the visitor's ledger (framework/adapters/track.js): kept in this browser only
+    var ev = { entity: "figure:" + String(f.id).toLowerCase(), verb: "viewed" };
+    if (window.__archiveTrack) window.__archiveTrack.record(ev); else (window.__archiveQ = window.__archiveQ || []).push(ev);
   }
   function close() {
     if (dlg.open) { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }

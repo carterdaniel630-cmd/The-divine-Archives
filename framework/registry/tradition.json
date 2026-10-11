@@ -1,0 +1,186 @@
+{
+ "type": "tradition",
+ "count": 30,
+ "entities": [
+  {
+   "id": "tradition:aboriginal",
+   "type": "tradition",
+   "label": "Aboriginal Australian",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:abrahamic",
+   "type": "tradition",
+   "label": "Jewish, Christian & Islamic",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:anatolia",
+   "type": "tradition",
+   "label": "Hittite & Anatolian",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:andean",
+   "type": "tradition",
+   "label": "Andean",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:aztec",
+   "type": "tradition",
+   "label": "Aztec",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:balto",
+   "type": "tradition",
+   "label": "Slavic & Baltic",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:buddhist",
+   "type": "tradition",
+   "label": "Buddhist",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:canaan",
+   "type": "tradition",
+   "label": "Canaanite",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:celtic",
+   "type": "tradition",
+   "label": "Celtic",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:chinese",
+   "type": "tradition",
+   "label": "Chinese",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:diaspora",
+   "type": "tradition",
+   "label": "African Diaspora",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:egypt",
+   "type": "tradition",
+   "label": "Egyptian",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:gnostic",
+   "type": "tradition",
+   "label": "Gnostic",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:greek",
+   "type": "tradition",
+   "label": "Greek",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:hebrew",
+   "type": "tradition",
+   "label": "Hebrew Bible",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:hindu",
+   "type": "tradition",
+   "label": "Hindu",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:iran",
+   "type": "tradition",
+   "label": "Iranian",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:islam",
+   "type": "tradition",
+   "label": "Islamic",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:jain",
+   "type": "tradition",
+   "label": "Jain",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:japanese",
+   "type": "tradition",
+   "label": "Japanese",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:maya",
+   "type": "tradition",
+   "label": "Maya",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:meso",
+   "type": "tradition",
+   "label": "Mesopotamian",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:modern",
+   "type": "tradition",
+   "label": "Modern Pagan & Occult",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:nativena",
+   "type": "tradition",
+   "label": "Native North American",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:norse",
+   "type": "tradition",
+   "label": "Norse",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:nt",
+   "type": "tradition",
+   "label": "New Testament",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:oceania",
+   "type": "tradition",
+   "label": "Polynesian",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:roman",
+   "type": "tradition",
+   "label": "Roman",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:yazidi",
+   "type": "tradition",
+   "label": "Yazidi",
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "tradition:yoruba",
+   "type": "tradition",
+   "label": "Yoruba",
+   "from": "docs/assets/pantheon-data.js"
+  }
+ ]
+}
