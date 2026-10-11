@@ -24,13 +24,13 @@ All new files, plus one edit to `.github/workflows/lighthouse.yml` (Law 4). No f
 
 ## Law 1: the entity map and the real count
 
-**4,130 entities. The target is 10,000+, so the registry is short by 5,870.** These are counted
+**4,223 entities. The target is 10,000+, so the registry is short by 5,777.** These are counted
 from the repo, not estimated.
 
 | Type | Count | Read from | ID pattern |
 |---|---:|---|---|
-| source | 1,719 | every distinct URL in `sources/*.md`, linked to the chapters, Vault entries and sites that cite it | `source:<host>/<hash>` |
-| section | 939 | the `<h2 id>` anchors in the prerendered chapter pages (the chapter text a ritual step can point to) | `section:ch02/<anchor>` |
+| source | 1,792 | every distinct URL in `sources/*.md`, linked to the chapters, Vault entries and sites that cite it | `source:<host>/<hash>` |
+| section | 959 | the `<h2 id>` anchors in the prerendered chapter pages (the chapter text a ritual step can point to) | `section:ch02/<anchor>` |
 | symbol | 504 | distinct signs (by Unicode code point) on the museum's five symbol walls; 528 placements | `symbol:u-<codepoint>` |
 | figure | 199 | Pantheon figures | `figure:<id>` |
 | star | 177 | named stars in the planetarium (not the 4,867 unnamed catalogue stars) | `star:<name>` |
@@ -55,10 +55,10 @@ check every entry against the schema.
 
 **Not counted, on purpose:**
 - The 4,867 unnamed stars in the planetarium catalogue (5,044 stars in all; `sky.json` stores
-  4 numbers per star, 20,176 numbers). Even with them the count would be 8,997, still under
+  4 numbers per star, 20,176 numbers). Even with them the count would be 9,090, still under
   10,000, and they are catalogue rows, not things a visitor meets or the archive writes about.
-- The 74 URLs that appear only in a chapter's own Sources section and not in its log in
-  `sources/`. The originality baseline uses them (1,793 URLs in all); the registry reads the
+- The 75 URLs that appear only in a chapter's own Sources section and not in its log in
+  `sources/`. The originality baseline uses them (1,867 URLs in all); the registry reads the
   logs only. Easy to add if Carter wants them counted.
 
 **What would honestly close the gap** (none of it is built; each needs a change to the site's
@@ -149,7 +149,7 @@ The votive candle is tier 1 (Carter, 2026-10-11).
 
 ## Law 3: the originality check, and what could not be fetched
 
-- **This sandbox could fetch none of the cited pages (1,777 at the time; 1,793 after #36 and #39 merged).** Every request was refused by the
+- **This sandbox could fetch none of the cited pages (1,777 at the time; 1,867 after #35, #36 and #39 merged).** Every request was refused by the
   sandbox's network, so locally every piece reports UNVERIFIED. That is the designed behaviour,
   not a pass.
 - The Originality workflow fetches the pages on GitHub's runners, where the web is open, and
@@ -176,7 +176,7 @@ a viewport check, and is unchanged.
 
 ## What is missing or held
 
-- **10,000 entities:** 4,130 today; see the list above for honest ways to grow it.
+- **10,000 entities:** 4,223 today; see the list above for honest ways to grow it.
 - **REVIEWER.md pointer:** added to `reviews/REVIEWER.md` §3 on Carter's approval (2026-10-11).
 - **Ritual sources:** confirmed through search results only, because the pages are blocked
   here. They must be re-read at review.

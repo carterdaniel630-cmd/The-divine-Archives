@@ -1,6 +1,6 @@
 {
  "type": "section",
- "count": 939,
+ "count": 959,
  "entities": [
   {
    "id": "section:ch01/a-clerk-undresses-in-the-british",
@@ -136,6 +136,15 @@
    "from": "docs/chapters/ch02.html"
   },
   {
+   "id": "section:ch02/sacred-animals-the-apis-bull-and",
+   "type": "section",
+   "label": "Sacred animals: the Apis bull and the animal mummies",
+   "parent": "chapter:ch02",
+   "era": "02-bronze-age",
+   "href": "chapters/ch02.html#sacred-animals-the-apis-bull-and",
+   "from": "docs/chapters/ch02.html"
+  },
+  {
    "id": "section:ch02/symbology",
    "type": "section",
    "label": "Symbology and sacred encoding",
@@ -160,6 +169,15 @@
    "parent": "chapter:ch02",
    "era": "02-bronze-age",
    "href": "chapters/ch02.html#the-believers-lens",
+   "from": "docs/chapters/ch02.html"
+  },
+  {
+   "id": "section:ch02/the-opening-of-the-mouth-and",
+   "type": "section",
+   "label": "The Opening of the Mouth and the festivals of Thebes",
+   "parent": "chapter:ch02",
+   "era": "02-bronze-age",
+   "href": "chapters/ch02.html#the-opening-of-the-mouth-and",
    "from": "docs/chapters/ch02.html"
   },
   {
@@ -811,6 +829,15 @@
    "from": "docs/chapters/ch08.html"
   },
   {
+   "id": "section:ch08/the-homeric-hymns",
+   "type": "section",
+   "label": "The Homeric Hymns",
+   "parent": "chapter:ch08",
+   "era": "03-early-iron-age",
+   "href": "chapters/ch08.html#the-homeric-hymns",
+   "from": "docs/chapters/ch08.html"
+  },
+  {
    "id": "section:ch08/the-skeptical-lens",
    "type": "section",
    "label": "The skeptical lens",
@@ -1117,6 +1144,15 @@
    "from": "docs/chapters/ch11.html"
   },
   {
+   "id": "section:ch11/the-councils-and-the-first-schism",
+   "type": "section",
+   "label": "The councils and the first schism",
+   "parent": "chapter:ch11",
+   "era": "04-axial-age",
+   "href": "chapters/ch11.html#the-councils-and-the-first-schism",
+   "from": "docs/chapters/ch11.html"
+  },
+  {
    "id": "section:ch11/the-man-and-the-limits-of",
    "type": "section",
    "label": "The man, and the limits of his story",
@@ -1204,6 +1240,15 @@
    "parent": "chapter:ch12",
    "era": "04-axial-age",
    "href": "chapters/ch12.html#laozi-and-the-daodejing-the-way",
+   "from": "docs/chapters/ch12.html"
+  },
+  {
+   "id": "section:ch12/neo-confucianism-zhu-xi-and-wang",
+   "type": "section",
+   "label": "Neo-Confucianism: Zhu Xi and Wang Yangming",
+   "parent": "chapter:ch12",
+   "era": "04-axial-age",
+   "href": "chapters/ch12.html#neo-confucianism-zhu-xi-and-wang",
    "from": "docs/chapters/ch12.html"
   },
   {
@@ -2107,6 +2152,15 @@
    "from": "docs/chapters/ch19.html"
   },
   {
+   "id": "section:ch19/the-karaites-scripture-without-the-oral",
+   "type": "section",
+   "label": "The Karaites: scripture without the Oral Torah",
+   "parent": "chapter:ch19",
+   "era": "05-late-antiquity",
+   "href": "chapters/ch19.html#the-karaites-scripture-without-the-oral",
+   "from": "docs/chapters/ch19.html"
+  },
+  {
    "id": "section:ch19/the-move-to-babylonia",
    "type": "section",
    "label": "The move to Babylonia",
@@ -2122,6 +2176,15 @@
    "parent": "chapter:ch19",
    "era": "05-late-antiquity",
    "href": "chapters/ch19.html#the-oral-torah-the-revolution-that",
+   "from": "docs/chapters/ch19.html"
+  },
+  {
+   "id": "section:ch19/the-passover-seder-and-the-prayer",
+   "type": "section",
+   "label": "The Passover Seder and the prayer book",
+   "parent": "chapter:ch19",
+   "era": "05-late-antiquity",
+   "href": "chapters/ch19.html#the-passover-seder-and-the-prayer",
    "from": "docs/chapters/ch19.html"
   },
   {
@@ -2158,6 +2221,15 @@
    "parent": "chapter:ch20",
    "era": "05-late-antiquity",
    "href": "chapters/ch20.html#connections",
+   "from": "docs/chapters/ch20.html"
+  },
+  {
+   "id": "section:ch20/dunhuang-and-the-mogao-caves",
+   "type": "section",
+   "label": "Dunhuang and the Mogao caves",
+   "parent": "chapter:ch20",
+   "era": "05-late-antiquity",
+   "href": "chapters/ch20.html#dunhuang-and-the-mogao-caves",
    "from": "docs/chapters/ch20.html"
   },
   {
@@ -2383,6 +2455,24 @@
    "parent": "chapter:ch21",
    "era": "06-early-medieval",
    "href": "chapters/ch21.html#the-great-schism-sunni-and-shia",
+   "from": "docs/chapters/ch21.html"
+  },
+  {
+   "id": "section:ch21/the-hajj-ramadan-and-the-two",
+   "type": "section",
+   "label": "The Hajj, Ramadan and the two Eids",
+   "parent": "chapter:ch21",
+   "era": "06-early-medieval",
+   "href": "chapters/ch21.html#the-hajj-ramadan-and-the-two",
+   "from": "docs/chapters/ch21.html"
+  },
+  {
+   "id": "section:ch21/the-mosque-qibla-mihrab-minbar-minaret",
+   "type": "section",
+   "label": "The mosque: qibla, mihrab, minbar, minaret",
+   "parent": "chapter:ch21",
+   "era": "06-early-medieval",
+   "href": "chapters/ch21.html#the-mosque-qibla-mihrab-minbar-minaret",
    "from": "docs/chapters/ch21.html"
   },
   {
@@ -4843,6 +4933,15 @@
    "from": "docs/chapters/ch44.html"
   },
   {
+   "id": "section:ch44/the-huarochiri-manuscript",
+   "type": "section",
+   "label": "The Huarochirí Manuscript",
+   "parent": "chapter:ch44",
+   "era": "07-high-medieval",
+   "href": "chapters/ch44.html#the-huarochiri-manuscript",
+   "from": "docs/chapters/ch44.html"
+  },
+  {
    "id": "section:ch44/the-skeptical-lens",
    "type": "section",
    "label": "The skeptical lens",
@@ -5111,6 +5210,14 @@
    "from": "docs/chapters/ch47.html"
   },
   {
+   "id": "section:ch47/xibalba-and-mictlan-the-mesoamerican-underworlds",
+   "type": "section",
+   "label": "Xibalba and Mictlan: the Mesoamerican underworlds",
+   "parent": "chapter:ch47",
+   "href": "chapters/ch47.html#xibalba-and-mictlan-the-mesoamerican-underworlds",
+   "from": "docs/chapters/ch47.html"
+  },
+  {
    "id": "section:ch48/a-woman-giving-birth-between-two",
    "type": "section",
    "label": "A woman giving birth between two leopards",
@@ -5319,6 +5426,14 @@
    "from": "docs/chapters/ch50.html"
   },
   {
+   "id": "section:ch50/the-ghost-dance-and-wounded-knee",
+   "type": "section",
+   "label": "The Ghost Dance and Wounded Knee (1890)",
+   "parent": "chapter:ch50",
+   "href": "chapters/ch50.html#the-ghost-dance-and-wounded-knee",
+   "from": "docs/chapters/ch50.html"
+  },
+  {
    "id": "section:ch50/the-hour-the-mahdi-and-the",
    "type": "section",
    "label": "The Hour, the Mahdi, and the Deceiver",
@@ -5356,6 +5471,14 @@
    "label": "Connections",
    "parent": "chapter:ch51",
    "href": "chapters/ch51.html#connections",
+   "from": "docs/chapters/ch51.html"
+  },
+  {
+   "id": "section:ch51/eid-al-adha-the-largest-sacrifice",
+   "type": "section",
+   "label": "Eid al-Adha: the largest sacrifice on earth",
+   "parent": "chapter:ch51",
+   "href": "chapters/ch51.html#eid-al-adha-the-largest-sacrifice",
    "from": "docs/chapters/ch51.html"
   },
   {
@@ -5466,6 +5589,15 @@
    "from": "docs/chapters/ch52.html"
   },
   {
+   "id": "section:ch52/paryusana-and-the-day-of-forgiveness",
+   "type": "section",
+   "label": "Paryuṣaṇa and the day of forgiveness",
+   "parent": "chapter:ch52",
+   "era": "04-axial-age",
+   "href": "chapters/ch52.html#paryusana-and-the-day-of-forgiveness",
+   "from": "docs/chapters/ch52.html"
+  },
+  {
    "id": "section:ch52/scripture-worship-and-the-fast-unto",
    "type": "section",
    "label": "Scripture, worship, and the fast unto death",
@@ -5553,6 +5685,15 @@
    "parent": "chapter:ch53",
    "era": "06-early-medieval",
    "href": "chapters/ch53.html#death-the-bardo-and-the-sky",
+   "from": "docs/chapters/ch53.html"
+  },
+  {
+   "id": "section:ch53/lhasa-the-jokhang-the-potala-and",
+   "type": "section",
+   "label": "Lhasa: the Jokhang, the Potala and the pilgrim's circuit",
+   "parent": "chapter:ch53",
+   "era": "06-early-medieval",
+   "href": "chapters/ch53.html#lhasa-the-jokhang-the-potala-and",
    "from": "docs/chapters/ch53.html"
   },
   {
@@ -6222,6 +6363,15 @@
    "from": "docs/chapters/ch60.html"
   },
   {
+   "id": "section:ch60/the-ukrainian-schism-2018-19",
+   "type": "section",
+   "label": "The Ukrainian schism (2018–19)",
+   "parent": "chapter:ch60",
+   "era": "06-early-medieval",
+   "href": "chapters/ch60.html#the-ukrainian-schism-2018-19",
+   "from": "docs/chapters/ch60.html"
+  },
+  {
    "id": "section:ch60/the-war-over-the-image",
    "type": "section",
    "label": "The war over the image",
@@ -6327,6 +6477,15 @@
    "parent": "chapter:ch61",
    "era": "01-prehistory",
    "href": "chapters/ch61.html#the-skeptical-lens",
+   "from": "docs/chapters/ch61.html"
+  },
+  {
+   "id": "section:ch61/the-stolen-generations-and-the-return",
+   "type": "section",
+   "label": "The Stolen Generations and the return of Uluṟu",
+   "parent": "chapter:ch61",
+   "era": "01-prehistory",
+   "href": "chapters/ch61.html#the-stolen-generations-and-the-return",
    "from": "docs/chapters/ch61.html"
   },
   {
@@ -7113,6 +7272,15 @@
    "from": "docs/chapters/ch69.html"
   },
   {
+   "id": "section:ch69/tirtha-varanasi-the-ganges-and-the",
+   "type": "section",
+   "label": "Tīrtha: Varanasi, the Ganges and the Kumbh Mela",
+   "parent": "chapter:ch69",
+   "era": "04-axial-age",
+   "href": "chapters/ch69.html#tirtha-varanasi-the-ganges-and-the",
+   "from": "docs/chapters/ch69.html"
+  },
+  {
    "id": "section:ch70/connections",
    "type": "section",
    "label": "Connections",
@@ -7560,6 +7728,15 @@
    "parent": "chapter:ch74",
    "era": "09-modern",
    "href": "chapters/ch74.html#the-largest-new-tradition",
+   "from": "docs/chapters/ch74.html"
+  },
+  {
+   "id": "section:ch74/the-new-atheists",
+   "type": "section",
+   "label": "The New Atheists",
+   "parent": "chapter:ch74",
+   "era": "09-modern",
+   "href": "chapters/ch74.html#the-new-atheists",
    "from": "docs/chapters/ch74.html"
   },
   {

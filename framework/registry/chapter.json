@@ -15,7 +15,7 @@
    "type": "chapter",
    "label": "Egypt",
    "era": "02-bronze-age",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch02.html",
    "from": "docs/assets/data.js"
   },
@@ -69,7 +69,7 @@
    "type": "chapter",
    "label": "Early Greece",
    "era": "03-early-iron-age",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch08.html",
    "from": "docs/assets/data.js"
   },
@@ -96,7 +96,7 @@
    "type": "chapter",
    "label": "Buddhism",
    "era": "04-axial-age",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch11.html",
    "from": "docs/assets/data.js"
   },
@@ -105,7 +105,7 @@
    "type": "chapter",
    "label": "Confucianism & Daoism",
    "era": "04-axial-age",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch12.html",
    "from": "docs/assets/data.js"
   },
@@ -168,7 +168,7 @@
    "type": "chapter",
    "label": "Rabbinic Judaism",
    "era": "05-late-antiquity",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch19.html",
    "from": "docs/assets/data.js"
   },
@@ -177,7 +177,7 @@
    "type": "chapter",
    "label": "Mahayana Buddhism",
    "era": "05-late-antiquity",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch20.html",
    "from": "docs/assets/data.js"
   },
@@ -186,7 +186,7 @@
    "type": "chapter",
    "label": "Islam",
    "era": "06-early-medieval",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch21.html",
    "from": "docs/assets/data.js"
   },
@@ -393,7 +393,7 @@
    "type": "chapter",
    "label": "The Inca",
    "era": "07-high-medieval",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch44.html",
    "from": "docs/assets/data.js"
   },
@@ -418,7 +418,7 @@
    "id": "chapter:ch47",
    "type": "chapter",
    "label": "Journeys to the Underworld",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch47.html",
    "from": "docs/assets/data.js"
   },
@@ -442,7 +442,7 @@
    "id": "chapter:ch50",
    "type": "chapter",
    "label": "The End of Days",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch50.html",
    "from": "docs/assets/data.js"
   },
@@ -450,7 +450,7 @@
    "id": "chapter:ch51",
    "type": "chapter",
    "label": "Sacrifice & the Scapegoat",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch51.html",
    "from": "docs/assets/data.js"
   },
@@ -459,7 +459,7 @@
    "type": "chapter",
    "label": "Jainism",
    "era": "04-axial-age",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch52.html",
    "from": "docs/assets/data.js"
   },
@@ -468,7 +468,7 @@
    "type": "chapter",
    "label": "Tibetan & Vajrayana Buddhism",
    "era": "06-early-medieval",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch53.html",
    "from": "docs/assets/data.js"
   },
@@ -531,7 +531,7 @@
    "type": "chapter",
    "label": "Eastern Orthodoxy & Byzantium",
    "era": "06-early-medieval",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch60.html",
    "from": "docs/assets/data.js"
   },
@@ -540,7 +540,7 @@
    "type": "chapter",
    "label": "Aboriginal Australian Dreaming",
    "era": "01-prehistory",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch61.html",
    "from": "docs/assets/data.js"
   },
@@ -612,7 +612,7 @@
    "type": "chapter",
    "label": "The Upanishads & the Hindu Synthesis",
    "era": "04-axial-age",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch69.html",
    "from": "docs/assets/data.js"
   },
@@ -657,7 +657,7 @@
    "type": "chapter",
    "label": "Secularism & the Nones",
    "era": "09-modern",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch74.html",
    "from": "docs/assets/data.js"
   },

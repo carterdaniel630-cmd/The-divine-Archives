@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1719,
+ "count": 1792,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -388,6 +388,15 @@
     "relic:v55"
    ],
    "from": "sources/v55-oracle-bones-of-anyang.md"
+  },
+  {
+   "id": "source:ancient-buddhist-texts-net/956be919a2",
+   "type": "source",
+   "label": "https://ancient-buddhist-texts.net/English-Texts/Chronicle-of-the-Island/07-Third-Council.htm",
+   "links": [
+    "chapter:ch11"
+   ],
+   "from": "sources/ch11-buddhism.md"
   },
   {
    "id": "source:ancient-origins-net/9de8f1d520",
@@ -848,6 +857,15 @@
     "relic:v36"
    ],
    "from": "sources/v36-rok-runestone.md"
+  },
+  {
+   "id": "source:aucegypt-edu/c837e4bf55",
+   "type": "source",
+   "label": "https://www.aucegypt.edu/news/egyptology-best-sellers-auc-press",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:auswaertiges-amt-de/4c3d23ef7e",
@@ -1317,6 +1335,15 @@
     "relic:v39"
    ],
    "from": "sources/v39-derveni-papyrus.md"
+  },
+  {
+   "id": "source:bmcr-brynmawr-edu/4f00ff13fd",
+   "type": "source",
+   "label": "https://bmcr.brynmawr.edu/?p=23371",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "sources/ch08-early-greece.md"
   },
   {
    "id": "source:bmcr-brynmawr-edu/55ac083e8b",
@@ -2049,6 +2076,15 @@
    "from": "sources/ch62-native-north-american.md"
   },
   {
+   "id": "source:britannica-com/6d3cf82e08",
+   "type": "source",
+   "label": "https://www.britannica.com/topic/Serapeum",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:britannica-com/6d6b3398a9",
    "type": "source",
    "label": "https://www.britannica.com/topic/Scholasticism",
@@ -2227,6 +2263,15 @@
     "chapter:ch06"
    ],
    "from": "sources/ch06-zoroaster.md"
+  },
+  {
+   "id": "source:britannica-com/90ec458a58",
+   "type": "source",
+   "label": "https://www.britannica.com/topic/Prophets-Mosque",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "sources/ch21-islam.md"
   },
   {
    "id": "source:britannica-com/9370f85fa5",
@@ -2623,6 +2668,15 @@
     "chapter:ch59"
    ],
    "from": "sources/ch59-slavic-baltic-paganism.md"
+  },
+  {
+   "id": "source:britannica-com/e9cc370cab",
+   "type": "source",
+   "label": "https://www.britannica.com/topic/Potala-Palace",
+   "links": [
+    "chapter:ch53"
+   ],
+   "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
   },
   {
    "id": "source:britannica-com/e9fae87703",
@@ -3219,6 +3273,15 @@
    "from": "sources/ch45-pistis-sophia.md"
   },
   {
+   "id": "source:catholicnewsagency-com/2024e8ec1a",
+   "type": "source",
+   "label": "https://www.catholicnewsagency.com/news/will-pope-francis-have-an-impact-on-orthodoxys-ukraine-dispute-55140",
+   "links": [
+    "chapter:ch60"
+   ],
+   "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
+  },
+  {
    "id": "source:catholicnewsagency-com/569a8769f0",
    "type": "source",
    "label": "https://catholicnewsagency.com/news/34317/an-encounter-with-the-manoppello-image-of-the-face-of-christ",
@@ -3651,6 +3714,15 @@
    "from": "sources/ch62-native-north-american.md"
   },
   {
+   "id": "source:cs-colostate-edu/4dac17138f",
+   "type": "source",
+   "label": "https://www.cs.colostate.edu/~malaiya/paryushan.html",
+   "links": [
+    "chapter:ch52"
+   ],
+   "from": "sources/ch52-jainism.md"
+  },
+  {
    "id": "source:csmc-uni-hamburg-de/0b4c4fa3eb",
    "type": "source",
    "label": "https://www.csmc.uni-hamburg.de/publications/aom/mom/39-en.html",
@@ -3732,6 +3804,15 @@
    "from": "sources/ch27-sufism.md"
   },
   {
+   "id": "source:dar-alifta-org/2bf65a2c68",
+   "type": "source",
+   "label": "https://www.dar-alifta.org/images/Languages/OnlineBooks/Hajj%20booklet%20pdf.pdf",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "sources/ch21-islam.md"
+  },
+  {
    "id": "source:dasi-cnr-it/53eec66932",
    "type": "source",
    "label": "https://dasi.cnr.it/index.php?id=83",
@@ -3785,6 +3866,15 @@
     "chapter:ch70"
    ],
    "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:degruyterbrill-com/33c90c8576",
+   "type": "source",
+   "label": "https://www.degruyterbrill.com/document/doi/10.1525/9780520317376/html",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
    "id": "source:degruyterbrill-com/3edf0a46b6",
@@ -3940,6 +4030,15 @@
    "from": "sources/v51-codex-mendoza.md"
   },
   {
+   "id": "source:digital-classroom-nma-gov-au/917e58fc96",
+   "type": "source",
+   "label": "https://digital-classroom.nma.gov.au/images/copy-text-national-apology-stolen-generations-2008",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
+  },
+  {
    "id": "source:digital-sciencehistory-org/9fc9a78368",
    "type": "source",
    "label": "https://digital.sciencehistory.org/works/dodh36q",
@@ -4073,6 +4172,15 @@
     "chapter:ch81"
    ],
    "from": "sources/ch81-tengri-mongols.md"
+  },
+  {
+   "id": "source:doi-org/807ac8d22e",
+   "type": "source",
+   "label": "https://doi.org/10.1163/1568525X-12341719",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "sources/ch08-early-greece.md"
   },
   {
    "id": "source:doi-org/9f065b8553",
@@ -4245,6 +4353,24 @@
     "chapter:ch65"
    ],
    "from": "sources/ch65-bahai-new-faiths.md"
+  },
+  {
+   "id": "source:ebsco-com/c1326a58f4",
+   "type": "source",
+   "label": "https://www.ebsco.com/research-starters/history/third-buddhist-council",
+   "links": [
+    "chapter:ch11"
+   ],
+   "from": "sources/ch11-buddhism.md"
+  },
+  {
+   "id": "source:ebsco-com/d9ed59f063",
+   "type": "source",
+   "label": "https://www.ebsco.com/research-starters/history/wounded-knee-massacre",
+   "links": [
+    "chapter:ch50"
+   ],
+   "from": "sources/ch50-apocalypse.md"
   },
   {
    "id": "source:ebsco-com/f67126b1a3",
@@ -8030,6 +8156,15 @@
    "from": "sources/ch47-underworld.md"
   },
   {
+   "id": "source:encyclopedia-com/4ba150661f",
+   "type": "source",
+   "label": "https://www.encyclopedia.com/history/latin-america-and-caribbean/mesoamerican-indigenous-peoples/popol-vuh",
+   "links": [
+    "chapter:ch47"
+   ],
+   "from": "sources/ch47-underworld.md"
+  },
+  {
    "id": "source:encyclopedia-com/5421808baf",
    "type": "source",
    "label": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/sedna",
@@ -8408,6 +8543,15 @@
    "from": "sources/ch82-akbar-mughal-synthesis.md"
   },
   {
+   "id": "source:fulcrum-org/b250ec9bc9",
+   "type": "source",
+   "label": "https://www.fulcrum.org/concern/monographs/df65v810t",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "sources/ch44-inca.md"
+  },
+  {
    "id": "source:futhark-journal-com/852698f1b4",
    "type": "source",
    "label": "https://futhark-journal.com/rok/",
@@ -8426,6 +8570,15 @@
    "from": "sources/ch32-witch-trials.md"
   },
   {
+   "id": "source:getty-edu/31d3b8518c",
+   "type": "source",
+   "label": "https://www.getty.edu/conservation/publications_resources/newsletters/pdf/v14n2.pdf",
+   "links": [
+    "chapter:ch20"
+   ],
+   "from": "sources/ch20-mahayana-buddhism.md"
+  },
+  {
    "id": "source:gis-reseau-asie-org/d66333f182",
    "type": "source",
    "label": "https://www.gis-reseau-asie.org/en/article/mongolias-moving-religious-landscape",
@@ -8442,6 +8595,24 @@
     "site:great-pyramid"
    ],
    "from": "sources/pilgrimage-great-pyramid.md"
+  },
+  {
+   "id": "source:gizamedia-rc-fas-harvard-edu/523e6da64c",
+   "type": "source",
+   "label": "https://gizamedia.rc.fas.harvard.edu/images/MFA-images/Giza/GizaImage/full/library/roth_jea_78_1992.pdf",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
+   "id": "source:gizamedia-rc-fas-harvard-edu/dc3a19643a",
+   "type": "source",
+   "label": "https://gizamedia.rc.fas.harvard.edu/images/MFA-images/Giza/GizaImage/full/library/roth_jea_79_1993.pdf",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:gizapyramids-org/06532cddbe",
@@ -8523,6 +8694,15 @@
     "relic:v83"
    ],
    "from": "sources/v83-codex-boturini.md"
+  },
+  {
+   "id": "source:godsandmonsters-info/d77dfdeac8",
+   "type": "source",
+   "label": "https://godsandmonsters.info/mictlan/",
+   "links": [
+    "chapter:ch47"
+   ],
+   "from": "sources/ch47-underworld.md"
   },
   {
    "id": "source:goldentempleamritsar-org/b158cf86bb",
@@ -8633,6 +8813,24 @@
    "from": "sources/ch01-the-flood.md"
   },
   {
+   "id": "source:gutenberg-org/7233057196",
+   "type": "source",
+   "label": "https://www.gutenberg.org/ebooks/348",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "sources/ch08-early-greece.md"
+  },
+  {
+   "id": "source:gutenberg-org/a8032c71e3",
+   "type": "source",
+   "label": "https://gutenberg.org/cache/epub/74335/pg74335-images.html",
+   "links": [
+    "chapter:ch50"
+   ],
+   "from": "sources/ch50-apocalypse.md"
+  },
+  {
    "id": "source:gutenberg-org/de94bdae4c",
    "type": "source",
    "label": "https://gutenberg.org/files/76266/76266-h/76266-h.htm",
@@ -8694,6 +8892,15 @@
     "relic:v37"
    ],
    "from": "sources/v37-gundestrup-cauldron.md"
+  },
+  {
+   "id": "source:health-nsw-gov-au/958ab9dc4b",
+   "type": "source",
+   "label": "https://www.health.nsw.gov.au/aboriginal/Pages/national-sorry-day.aspx",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
   },
   {
    "id": "source:hellenicfaith-com/7f1e63c812",
@@ -8793,6 +9000,15 @@
     "chapter:ch35"
    ],
    "from": "sources/ch35-new-religious-movements.md"
+  },
+  {
+   "id": "source:historians-org/ad08a0ca3b",
+   "type": "source",
+   "label": "https://www.historians.org/resource/popol-vuh/",
+   "links": [
+    "chapter:ch47"
+   ],
+   "from": "sources/ch47-underworld.md"
   },
   {
    "id": "source:historicenvironment-scot/7b8a662d52",
@@ -9020,6 +9236,15 @@
    "from": "sources/ch64-pentecostalism-global-christianity.md"
   },
   {
+   "id": "source:human-libretexts-org/900e5ff55d",
+   "type": "source",
+   "label": "https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "sources/ch08-early-greece.md"
+  },
+  {
    "id": "source:humanists-international/2e200f14bf",
    "type": "source",
    "label": "https://humanists.international/leading-indian-rationalist-assassinated-by-gunmen/",
@@ -9155,6 +9380,15 @@
    "from": "sources/ch27-sufism.md"
   },
   {
+   "id": "source:icds-ee/16aeb5de87",
+   "type": "source",
+   "label": "https://icds.ee/en/a-tomos-for-ukraines-orthodox-church-the-final-schism/",
+   "links": [
+    "chapter:ch60"
+   ],
+   "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
+  },
+  {
    "id": "source:ich-unesco-org/32e2ca24a7",
    "type": "source",
    "label": "https://ich.unesco.org/en/RL/jeju-chilmeoridang-yeongdeunggut-00187",
@@ -9191,6 +9425,15 @@
    "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
+   "id": "source:ich-unesco-org/8909944048",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/decisions/12.COM/11.B.12",
+   "links": [
+    "chapter:ch69"
+   ],
+   "from": "sources/ch69-upanishads-hindu-synthesis.md"
+  },
+  {
    "id": "source:ich-unesco-org/9c3ca607b9",
    "type": "source",
    "label": "https://ich.unesco.org/en/decisions/5.COM/6.21",
@@ -9207,6 +9450,15 @@
     "relic:v30"
    ],
    "from": "sources/v30-diamond-sutra.md"
+  },
+  {
+   "id": "source:idp-bl-uk/e9c65dbc83",
+   "type": "source",
+   "label": "https://idp.bl.uk/",
+   "links": [
+    "chapter:ch20"
+   ],
+   "from": "sources/ch20-mahayana-buddhism.md"
   },
   {
    "id": "source:iep-utm-edu/23ef7a73cb",
@@ -9369,6 +9621,15 @@
     "relic:v38"
    ],
    "from": "sources/v38-aleppo-codex.md"
+  },
+  {
+   "id": "source:indigenous-gov-au/a8108178d7",
+   "type": "source",
+   "label": "https://indigenous.gov.au/stories/20-years-road-to-reconciliation-continues",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
   },
   {
    "id": "source:infidels-org/b2a66a5639",
@@ -9665,6 +9926,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:islamic-awareness-org/b457f52a64",
+   "type": "source",
+   "label": "https://www.islamic-awareness.org/quran/contrad/mustrad/sacrifice",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "sources/ch51-sacrifice.md"
+  },
+  {
    "id": "source:italianacademy-columbia-edu/e21be6c1a2",
    "type": "source",
    "label": "https://italianacademy.columbia.edu/events/disciplina-etrusca-religion-identity-and-fate-etruscans-context-roman-italy",
@@ -9692,6 +9962,24 @@
    "from": "sources/ch82-akbar-mughal-synthesis.md"
   },
   {
+   "id": "source:jaina-org/42e304f3b5",
+   "type": "source",
+   "label": "https://www.jaina.org/page/ParyushanParv1",
+   "links": [
+    "chapter:ch52"
+   ],
+   "from": "sources/ch52-jainism.md"
+  },
+  {
+   "id": "source:jainfoundation-in/9493d2fe62",
+   "type": "source",
+   "label": "https://www.jainfoundation.in/JAINLIBRARY/books/Paryushan_and_Das_Lakshana_Parva_200016_data.pdf",
+   "links": [
+    "chapter:ch52"
+   ],
+   "from": "sources/ch52-jainism.md"
+  },
+  {
    "id": "source:jainpedia-org/4e56fb8066",
    "type": "source",
    "label": "https://jainpedia.org/themes/places/jainism-and-islam/jains-and-the-mughals",
@@ -9708,6 +9996,15 @@
     "chapter:ch52"
    ],
    "from": "sources/ch52-jainism.md"
+  },
+  {
+   "id": "source:jamiat-org-za/45dc9d99fe",
+   "type": "source",
+   "label": "https://jamiat.org.za/how-should-a-person-divide-his-her-qurbani-meat/",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "sources/ch51-sacrifice.md"
   },
   {
    "id": "source:japan-travel/3c6540c86f",
@@ -9807,6 +10104,15 @@
     "relic:v79"
    ],
    "from": "sources/v79-zohar-mantua.md"
+  },
+  {
+   "id": "source:jewishvirtuallibrary-org/ed576c071b",
+   "type": "source",
+   "label": "https://www.jewishvirtuallibrary.org/amram-gaon",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
    "id": "source:johnwoodruff-com/66dd79091c",
@@ -9981,6 +10287,15 @@
    "from": "sources/v05-holy-lance.md"
   },
   {
+   "id": "source:jpost-com/ea304a156a",
+   "type": "source",
+   "label": "https://www.jpost.com/judaism/article-707768",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
+  },
+  {
    "id": "source:jstor-org/3b729df588",
    "type": "source",
    "label": "https://www.jstor.org/stable/j.ctvc7774n",
@@ -10033,6 +10348,15 @@
     "chapter:ch73"
    ],
    "from": "sources/ch73-sabbateans-hasidism.md"
+  },
+  {
+   "id": "source:jurist-org/d76ba2ea85",
+   "type": "source",
+   "label": "https://www.jurist.org/news/2024/08/ukraine-parliament-approves-ban-on-religious-organisations-tied-to-russia/",
+   "links": [
+    "chapter:ch60"
+   ],
+   "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
   },
   {
    "id": "source:jwa-org/4952e1afcb",
@@ -10125,6 +10449,15 @@
    "from": "sources/ch68-nubia-kush.md"
   },
   {
+   "id": "source:kirkusreviews-com/a5ebeaea35",
+   "type": "source",
+   "label": "https://www.kirkusreviews.com/book-reviews/diana-l-eck-2/banaras-city-of-light/",
+   "links": [
+    "chapter:ch69"
+   ],
+   "from": "sources/ch69-upanishads-hindu-synthesis.md"
+  },
+  {
    "id": "source:kofc-org/8d1ac281dd",
    "type": "source",
    "label": "https://www.kofc.org/en/news-room/our-lady-of-guadalupe/truths/9bomb.html",
@@ -10132,6 +10465,15 @@
     "relic:v13"
    ],
    "from": "sources/v13-tilma-of-guadalupe.md"
+  },
+  {
+   "id": "source:kooriweb-org/1793a77f60",
+   "type": "source",
+   "label": "https://www.kooriweb.org/foley/resources/pdfs/90.pdf",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
   },
   {
    "id": "source:korea-fas-harvard-edu/6d4b93d9c3",
@@ -10168,6 +10510,15 @@
     "chapter:ch71"
    ],
    "from": "sources/ch71-korea.md"
+  },
+  {
+   "id": "source:kottke-org/a349e5485d",
+   "type": "source",
+   "label": "https://kottke.org/06/10/gary-wolf-talks-to-three-prominent-atheists-",
+   "links": [
+    "chapter:ch74"
+   ],
+   "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
    "id": "source:larryhurtado-wordpress-com/c1ab9874b9",
@@ -10381,9 +10732,10 @@
    "type": "source",
    "label": "https://www.lindahall.org/about/news/scientist-of-the-day/the-diamond-sutra/",
    "links": [
+    "chapter:ch20",
     "relic:v30"
    ],
-   "from": "sources/v30-diamond-sutra.md"
+   "from": "sources/ch20-mahayana-buddhism.md"
   },
   {
    "id": "source:lindahall-org/8cd54dd97b",
@@ -11250,6 +11602,15 @@
    "from": "sources/ch45-pistis-sophia.md"
   },
   {
+   "id": "source:nationalgeographic-com/220eb932a6",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/history-magazine/article/ancient-egypt-royal-feast",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:nationalgeographic-com/282e272c1a",
    "type": "source",
    "label": "https://www.nationalgeographic.com/history/history-magazine/article/what-was-the-mystery-message-written-on-the-mummys-wrappings",
@@ -11457,6 +11818,15 @@
    "from": "sources/ch01-the-flood.md"
   },
   {
+   "id": "source:nelc-yale-edu/d3cceeb79f",
+   "type": "source",
+   "label": "https://nelc.yale.edu/publications/reliefs-and-inscriptions-luxor-temple-vol-1",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:neonvagabond-xyz/c45f756a1f",
    "type": "source",
    "label": "https://neonvagabond.xyz/mirrors/sacred-texts/sha/sis/sis08.htm",
@@ -11574,6 +11944,15 @@
    "from": "sources/ch25-shinto.md"
   },
   {
+   "id": "source:newworldencyclopedia-org/c7d81c16c6",
+   "type": "source",
+   "label": "https://www.newworldencyclopedia.org/entry/Four_Books",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "sources/ch12-confucianism-daoism.md"
+  },
+  {
    "id": "source:newworldencyclopedia-org/cef1bb469c",
    "type": "source",
    "label": "https://www.newworldencyclopedia.org/entry/Poetic_Edda",
@@ -11619,6 +11998,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:next-archnet-org/dc52aa7244",
+   "type": "source",
+   "label": "https://next.archnet.org/sites/3789",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "sources/ch21-islam.md"
+  },
+  {
    "id": "source:nhm-wien-ac-at/05d96e583c",
    "type": "source",
    "label": "https://www.nhm-wien.ac.at/en/venus_of_willendorf",
@@ -11655,6 +12043,15 @@
    "from": "sources/ch73-sabbateans-hasidism.md"
   },
   {
+   "id": "source:nma-gov-au/dfcd1568ac",
+   "type": "source",
+   "label": "https://nma.gov.au/defining-moments/resources/uluru-handback-anangu",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
+  },
+  {
    "id": "source:nms-ac-uk/eab5513454",
    "type": "source",
    "label": "https://www.nms.ac.uk/explore-our-collections/stories/world-cultures/ancient-egyptian-collection/ancient-egyptian-collection/pyramid-casing-stone/",
@@ -11673,6 +12070,15 @@
    "from": "sources/ch23-norse-paganism.md"
   },
   {
+   "id": "source:nottingham-repository-worktribe-com/08ea3e6fb4",
+   "type": "source",
+   "label": "https://nottingham-repository.worktribe.com/OutputFile/750986",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "sources/ch08-early-greece.md"
+  },
+  {
    "id": "source:novaonline-nvcc-edu/4223693fb1",
    "type": "source",
    "label": "https://novaonline.nvcc.edu/eli/evans/HIS111/Documents/Mongols/rubruck.html",
@@ -11680,6 +12086,15 @@
     "chapter:ch81"
    ],
    "from": "sources/ch81-tengri-mongols.md"
+  },
+  {
+   "id": "source:nps-gov/37a17c67a8",
+   "type": "source",
+   "label": "https://www.nps.gov/parkhistory/online_books/soldier/siteb30.htm",
+   "links": [
+    "chapter:ch50"
+   ],
+   "from": "sources/ch50-apocalypse.md"
   },
   {
    "id": "source:nt-gov-au/e133b409fd",
@@ -11734,6 +12149,15 @@
     "chapter:ch70"
    ],
    "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:ocw-mit-edu/88b959e91d",
+   "type": "source",
+   "label": "https://ocw.mit.edu/courses/4-614-religious-architecture-and-islamic-cultures-fall-2002/pages/lecture-notes/umayyad/",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "sources/ch21-islam.md"
   },
   {
    "id": "source:oeaw-ac-at/0782f0b1e7",
@@ -11889,6 +12313,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:orca-cardiff-ac-uk/a6e7b77e93",
+   "type": "source",
+   "label": "https://orca.cardiff.ac.uk/id/eprint/74282/",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:orion-bibliography-huji-ac-il/8c57c41284",
    "type": "source",
    "label": "https://orion-bibliography.huji.ac.il/orion_editor/node/104819",
@@ -12013,6 +12446,15 @@
     "relic:v05"
    ],
    "from": "sources/v05-holy-lance.md"
+  },
+  {
+   "id": "source:parksaustralia-gov-au/65be2ac353",
+   "type": "source",
+   "label": "https://parksaustralia.gov.au/uluru/discover/culture/uluru-climb",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
   },
   {
    "id": "source:paulinemontagna-medium-com/f492b7848b",
@@ -12285,6 +12727,15 @@
    "from": "sources/ch12-confucianism-daoism.md"
   },
   {
+   "id": "source:plato-stanford-edu/216a5c40c0",
+   "type": "source",
+   "label": "https://plato.stanford.edu/entries/zhu-xi/",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "sources/ch12-confucianism-daoism.md"
+  },
+  {
    "id": "source:plato-stanford-edu/2a07755275",
    "type": "source",
    "label": "https://plato.stanford.edu/entries/xenophanes/",
@@ -12310,6 +12761,15 @@
     "chapter:ch28"
    ],
    "from": "sources/ch28-scholasticism.md"
+  },
+  {
+   "id": "source:plato-stanford-edu/3847e16261",
+   "type": "source",
+   "label": "https://plato.stanford.edu/entries/wang-yangming/",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "sources/ch12-confucianism-daoism.md"
   },
   {
    "id": "source:plato-stanford-edu/7a05f91ff3",
@@ -12364,6 +12824,15 @@
     "chapter:ch83"
    ],
    "from": "sources/ch83-global-hinduism-guru-movements.md"
+  },
+  {
+   "id": "source:pluralism-org/12f1cd9ab0",
+   "type": "source",
+   "label": "https://pluralism.org/news/nonbelievers",
+   "links": [
+    "chapter:ch74"
+   ],
+   "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
    "id": "source:pluralism-org/3257cd6904",
@@ -12438,6 +12907,24 @@
    "from": "sources/ch67-minoan-crete.md"
   },
   {
+   "id": "source:ponarseurasia-org/fa3c14243f",
+   "type": "source",
+   "label": "https://ponarseurasia.org/church-and-geopolitics-the-battle-over-ukrainian-autocephaly",
+   "links": [
+    "chapter:ch60"
+   ],
+   "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
+  },
+  {
+   "id": "source:prayagraj-nic-in/d4828463bc",
+   "type": "source",
+   "label": "https://prayagraj.nic.in/inscription-of-kumbh-mela-on-the-representative-list-of-intangible-cultural-heritage-of-humanity/",
+   "links": [
+    "chapter:ch69"
+   ],
+   "from": "sources/ch69-upanishads-hindu-synthesis.md"
+  },
+  {
    "id": "source:pre1600ms-beinecke-library-yale-edu/02563d9c9b",
    "type": "source",
    "label": "https://pre1600ms.beinecke.library.yale.edu/docs/pre1600.ms408.HTM",
@@ -12445,6 +12932,15 @@
     "relic:v01"
    ],
    "from": "sources/v01-voynich-manuscript.md"
+  },
+  {
+   "id": "source:press-anu-edu-au/6bb7ccc940",
+   "type": "source",
+   "label": "https://press.anu.edu.au/publications/journals/aboriginal-history-journal/aboriginal-history-journal-volume-25",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "sources/ch61-aboriginal-australian-dreaming.md"
   },
   {
    "id": "source:press-jhu-edu/fe36233d6a",
@@ -12478,9 +12974,10 @@
    "type": "source",
    "label": "https://press.princeton.edu/isbn/9780691026190",
    "links": [
+    "chapter:ch21",
     "chapter:ch70"
    ],
-   "from": "sources/ch70-pre-islamic-arabia.md"
+   "from": "sources/ch21-islam.md"
   },
   {
    "id": "source:princetoninfo-com/563bad003a",
@@ -12582,6 +13079,33 @@
    "from": "sources/ch30-bhakti.md"
   },
   {
+   "id": "source:quran-com/ba05212d1f",
+   "type": "source",
+   "label": "https://quran.com/22/37",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "sources/ch51-sacrifice.md"
+  },
+  {
+   "id": "source:quran-com/d23a22855a",
+   "type": "source",
+   "label": "https://quran.com/as-saaffat/102",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "sources/ch51-sacrifice.md"
+  },
+  {
+   "id": "source:quran-com/d994e2ca69",
+   "type": "source",
+   "label": "https://quran.com/2/144",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "sources/ch21-islam.md"
+  },
+  {
    "id": "source:quran-mto-org/24f71c1bcb",
    "type": "source",
    "label": "https://quran.mto.org/stages-of-the-nafs/",
@@ -12643,6 +13167,15 @@
     "chapter:ch75"
    ],
    "from": "sources/ch75-siberian-arctic-shamanism.md"
+  },
+  {
+   "id": "source:repositorio-flacsoandes-edu-ec/e7cf60b0a9",
+   "type": "source",
+   "label": "https://repositorio.flacsoandes.edu.ec/bitstream/10469/9520/1/REXTN-ED93-03-Salomon.pdf",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "sources/ch44-inca.md"
   },
   {
    "id": "source:repository-si-edu/2d2ce0a69f",
@@ -13059,6 +13592,15 @@
    "from": "sources/ch82-akbar-mughal-synthesis.md"
   },
   {
+   "id": "source:schechter-edu/cf5bce915a",
+   "type": "source",
+   "label": "https://schechter.edu/the-origins-of-the-seder/",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
+  },
+  {
    "id": "source:scholarlypublications-universiteitleiden-nl/74e3868fa5",
    "type": "source",
    "label": "https://scholarlypublications.universiteitleiden.nl/access/item:2721246/download",
@@ -13165,6 +13707,15 @@
     "chapter:ch78"
    ],
    "from": "sources/ch78-scythians-steppe.md"
+  },
+  {
+   "id": "source:scienceblogs-com/5abfcf4365",
+   "type": "source",
+   "label": "https://scienceblogs.com/islandofdoubt/2006/11/14/wired-on-the-god-debate",
+   "links": [
+    "chapter:ch74"
+   ],
+   "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
    "id": "source:sciencedaily-com/a34aa18485",
@@ -13291,6 +13842,15 @@
     "relic:v80"
    ],
    "from": "sources/v80-sefer-yetzirah.md"
+  },
+  {
+   "id": "source:sefaria-org/4361653fa0",
+   "type": "source",
+   "label": "https://www.sefaria.org/Mishnah_Pesachim.10",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
    "id": "source:semanticscholar-org/258a9fcee3",
@@ -13806,6 +14366,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:stats-gov-sa/169054eab6",
+   "type": "source",
+   "label": "https://www.stats.gov.sa/documents/20117/2067030/Hajj+Statistics+Publication+2024EN.pdf/ee9e1b69-731b-9976-b394-e24ec4bf6f72",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "sources/ch21-islam.md"
+  },
+  {
    "id": "source:stecciwh-org/d01b54e3e2",
    "type": "source",
    "label": "https://www.stecciwh.org/about/",
@@ -13885,6 +14454,15 @@
     "relic:v18"
    ],
    "from": "sources/v18-codex-sinaiticus.md"
+  },
+  {
+   "id": "source:surahquran-com/9853c0777f",
+   "type": "source",
+   "label": "https://surahquran.com/tafsir-english-aya-107-sora-37.html",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "sources/ch51-sacrifice.md"
   },
   {
    "id": "source:surrealist-org/0e011bee89",
@@ -13968,6 +14546,15 @@
    "from": "sources/v21-book-of-kells.md"
   },
   {
+   "id": "source:teachingamericanhistory-org/a6258a4ca3",
+   "type": "source",
+   "label": "https://teachingamericanhistory.org/document/letter-regarding-the-ghost-dance-doctrine/",
+   "links": [
+    "chapter:ch50"
+   ],
+   "from": "sources/ch50-apocalypse.md"
+  },
+  {
    "id": "source:tertullian-org/6bd83d22b0",
    "type": "source",
    "label": "https://tertullian.org/rpearse/manuscripts/nag_hammadi.htm",
@@ -14020,6 +14607,15 @@
     "chapter:ch18"
    ],
    "from": "sources/ch18-roman-mystery-cults.md"
+  },
+  {
+   "id": "source:the-past-com/b11c9dd4e3",
+   "type": "source",
+   "label": "https://the-past.com/shorts/the-picture-desk/the-discovery-of-the-serapeum-of-saqqara/",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:the-past-com/d60bceaa61",
@@ -14293,6 +14889,15 @@
    "from": "sources/ch51-sacrifice.md"
   },
   {
+   "id": "source:thetorah-com/89cc14ed79",
+   "type": "source",
+   "label": "https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
+  },
+  {
    "id": "source:thetorah-com/c193da283b",
    "type": "source",
    "label": "https://www.thetorah.com/article/the-ketef-hinnom-amulets-wearing-the-priestly-blessing-for-protection",
@@ -14489,6 +15094,15 @@
     "site:library-of-alexandria"
    ],
    "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
+   "id": "source:ucl-ac-uk/adf78596ec",
+   "type": "source",
+   "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/religion/wpr.html",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:ucpress-edu/78ed98f408",
@@ -14752,6 +15366,15 @@
    "from": "sources/v50-vienna-dioscurides.md"
   },
   {
+   "id": "source:wellcomecollection-org/6fcd4f5203",
+   "type": "source",
+   "label": "https://wellcomecollection.org/works/g2ybjsjn",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "sources/ch44-inca.md"
+  },
+  {
    "id": "source:wellcomecollection-org/9762e63827",
    "type": "source",
    "label": "https://wellcomecollection.org/works/dfekft9y",
@@ -14813,6 +15436,15 @@
     "chapter:ch81"
    ],
    "from": "sources/ch81-tengri-mongols.md"
+  },
+  {
+   "id": "source:whc-unesco-org/3bb365b266",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/707/",
+   "links": [
+    "chapter:ch53"
+   ],
+   "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
   },
   {
    "id": "source:whc-unesco-org/4f37a2f3b1",
@@ -14909,6 +15541,15 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:whc-unesco-org/deb7ff64a0",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/440/",
+   "links": [
+    "chapter:ch20"
+   ],
+   "from": "sources/ch20-mahayana-buddhism.md"
   },
   {
    "id": "source:whc-unesco-org/e57fc479e6",
@@ -15064,6 +15705,15 @@
    "from": "sources/ch69-upanishads-hindu-synthesis.md"
   },
   {
+   "id": "source:worldhistory-org/34c5d0fb22",
+   "type": "source",
+   "label": "https://www.worldhistory.org/review/14/",
+   "links": [
+    "chapter:ch47"
+   ],
+   "from": "sources/ch47-underworld.md"
+  },
+  {
    "id": "source:worldhistory-org/374a02128d",
    "type": "source",
    "label": "https://www.worldhistory.org/Oracle_Bones/",
@@ -15125,6 +15775,15 @@
     "chapter:ch06"
    ],
    "from": "sources/ch06-zoroaster.md"
+  },
+  {
+   "id": "source:worldhistory-org/63f33f2acd",
+   "type": "source",
+   "label": "https://www.worldhistory.org/Mahasanghika/",
+   "links": [
+    "chapter:ch11"
+   ],
+   "from": "sources/ch11-buddhism.md"
   },
   {
    "id": "source:worldhistory-org/6f0c4635eb",

@@ -19,6 +19,7 @@
    "type": "room",
    "label": "Egypt",
    "parent": "wing:02-bronze-age",
+   "status": "pending",
    "href": "museum.html#ch02",
    "links": [
     "chapter:ch02",
@@ -149,6 +150,7 @@
    "type": "room",
    "label": "Early Greece",
    "parent": "wing:03-early-iron-age",
+   "status": "pending",
    "href": "museum.html#ch08",
    "links": [
     "chapter:ch08",
@@ -208,6 +210,7 @@
    "type": "room",
    "label": "Buddhism",
    "parent": "wing:04-axial-age",
+   "status": "pending",
    "href": "museum.html#ch11",
    "links": [
     "chapter:ch11",
@@ -224,6 +227,7 @@
    "type": "room",
    "label": "Confucianism & Daoism",
    "parent": "wing:04-axial-age",
+   "status": "pending",
    "href": "museum.html#ch12",
    "links": [
     "chapter:ch12",
@@ -361,6 +365,7 @@
    "type": "room",
    "label": "Rabbinic Judaism",
    "parent": "wing:05-late-antiquity",
+   "status": "pending",
    "href": "museum.html#ch19",
    "links": [
     "chapter:ch19",
@@ -374,6 +379,7 @@
    "type": "room",
    "label": "Mahayana Buddhism",
    "parent": "wing:05-late-antiquity",
+   "status": "pending",
    "href": "museum.html#ch20",
    "links": [
     "chapter:ch20",
@@ -388,6 +394,7 @@
    "type": "room",
    "label": "Islam",
    "parent": "wing:06-early-medieval",
+   "status": "pending",
    "href": "museum.html#ch21",
    "links": [
     "chapter:ch21",
@@ -735,6 +742,7 @@
    "type": "room",
    "label": "The Inca",
    "parent": "wing:07-high-medieval",
+   "status": "pending",
    "href": "museum.html#ch44",
    "links": [
     "chapter:ch44",
@@ -779,6 +787,7 @@
    "type": "room",
    "label": "Journeys to the Underworld",
    "parent": "wing:rotunda",
+   "status": "pending",
    "href": "museum.html#ch47",
    "links": [
     "chapter:ch47"
@@ -813,6 +822,7 @@
    "type": "room",
    "label": "The End of Days",
    "parent": "wing:rotunda",
+   "status": "pending",
    "href": "museum.html#ch50",
    "links": [
     "chapter:ch50"
@@ -824,6 +834,7 @@
    "type": "room",
    "label": "Sacrifice & the Scapegoat",
    "parent": "wing:rotunda",
+   "status": "pending",
    "href": "museum.html#ch51",
    "links": [
     "chapter:ch51"
@@ -835,6 +846,7 @@
    "type": "room",
    "label": "Jainism",
    "parent": "wing:04-axial-age",
+   "status": "pending",
    "href": "museum.html#ch52",
    "links": [
     "chapter:ch52",
@@ -849,6 +861,7 @@
    "type": "room",
    "label": "Tibetan & Vajrayana Buddhism",
    "parent": "wing:06-early-medieval",
+   "status": "pending",
    "href": "museum.html#ch53",
    "links": [
     "chapter:ch53",
@@ -942,6 +955,7 @@
    "type": "room",
    "label": "Eastern Orthodoxy & Byzantium",
    "parent": "wing:06-early-medieval",
+   "status": "pending",
    "href": "museum.html#ch60",
    "links": [
     "chapter:ch60",
@@ -958,6 +972,7 @@
    "type": "room",
    "label": "Aboriginal Australian Dreaming",
    "parent": "wing:01-prehistory",
+   "status": "pending",
    "href": "museum.html#ch61",
    "links": [
     "chapter:ch61",
@@ -1057,6 +1072,7 @@
    "type": "room",
    "label": "The Upanishads & the Hindu Synthesis",
    "parent": "wing:04-axial-age",
+   "status": "pending",
    "href": "museum.html#ch69",
    "links": [
     "chapter:ch69"
@@ -1114,6 +1130,7 @@
    "type": "room",
    "label": "Secularism & the Nones",
    "parent": "wing:09-modern",
+   "status": "pending",
    "href": "museum.html#ch74",
    "links": [
     "chapter:ch74"
