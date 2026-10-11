@@ -21,7 +21,7 @@ or win states", and the engine has no scoring surface).
 | Ritual | File | Notes |
 |---|---|---|
 | Mindfulness of breathing, first four steps (Ānāpānasati Sutta, MN 118) | `data/rituals/meditation-breath-cycle.json` | Anchored to ch11's section on the Four Truths and the Path. ch11 does not yet discuss breath meditation directly (a content gap) |
-| Lighting a votive candle (Catholic devotional practice) | `data/rituals/votive-candle.json` | Tier 1 as the framework brief lists it. **But `plans/games-modern.md` placed it at tier 2.** Carter to confirm. No chapter covers votive candles yet, so its anchors are empty and say so |
+| Lighting a votive candle (Catholic devotional practice) | `data/rituals/votive-candle.json` | **Tier 1, confirmed by Carter 2026-10-11** (`plans/games-modern.md` had tier 2; this list governs). No chapter covers votive candles yet, so its anchors are empty and say so |
 
 Both are `review.status: "draft"`. Their sources were confirmed through search results
 (the pages are blocked from the build sandbox) and must be re-read at review.

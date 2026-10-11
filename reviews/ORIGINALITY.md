@@ -39,8 +39,4 @@ compare the flagged piece. Rewriting in the archive's own words, or quoting with
 fixes it. When it shows UNVERIFIED or PARTIAL, check the missing pages by hand where a passage
 reads as if lifted.
 
-Proposed line for `reviews/REVIEWER.md` (held: Phase 1 adds new files only, so the line goes
-in when Carter approves):
-
-> The Originality check (`reviews/ORIGINALITY.md`) catches copying only, not inaccuracy. A pass
-> is not a sourcing or accuracy pass, and UNVERIFIED or PARTIAL means "not checked".
+`reviews/REVIEWER.md` §3 carries the same rule (added 2026-10-11, approved by Carter).

@@ -139,7 +139,7 @@ way. That is also a `docs/` change, so Phase 2 or later.
   - diaspora initiations
   - restricted Indigenous ceremonies (should never be built)
 
-Open question: the votive candle is tier 1 in this brief but tier 2 in `plans/games-modern.md`.
+The votive candle is tier 1 (Carter, 2026-10-11).
 
 ## Law 3: the originality check, and what could not be fetched
 
@@ -171,9 +171,7 @@ a viewport check, and is unchanged.
 ## What is missing or held
 
 - **10,000 entities:** 4,129 today; see the list above for honest ways to grow it.
-- **REVIEWER.md pointer:** the line saying the originality check catches copying only is
-  drafted in `reviews/ORIGINALITY.md`. It goes into `REVIEWER.md` on approval (Phase 1 adds new
-  files only).
+- **REVIEWER.md pointer:** added to `reviews/REVIEWER.md` §3 on Carter's approval (2026-10-11).
 - **Ritual sources:** confirmed through search results only, because the pages are blocked
   here. They must be re-read at review.
 - **Content gaps:** the archive has no chapter text on votive candles, and none on breath
