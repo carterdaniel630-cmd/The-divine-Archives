@@ -21,7 +21,7 @@ export function build(ctx) {
   sign(ctx, ["Back to the Museum", "Classical Greece"], V0.x, 3.9, z1 - 0.03, Math.PI, 2.6, 0.62);
   sign(ctx, ["RECONSTRUCTION", "the plan is lost · this is conjecture"], x1 - 0.03, 2.4, V0.z - 1.5, -Math.PI / 2, 2.6, 0.66, { size: 66 });
   sign(ctx, ["What is attested", "a walk · an exedra · a large house (Strabo)"], x1 - 0.03, 1.6, V0.z - 1.5, -Math.PI / 2, 2.6, 0.48, { size: 50 });
-  sign(ctx, ["Preview", "built for review · not yet on the menu"], x1 - 0.03, 3.3, V0.z + 2.4, -Math.PI / 2, 2.0, 0.48, { size: 54 });
+  sign(ctx, ["Recently added", "pending full review"], x1 - 0.03, 3.3, V0.z + 2.4, -Math.PI / 2, 2.0, 0.48, { size: 54 });
   const rel = buildRelic("v53", null, 2, [0.5, 0.6, 0.3]);
   glassCase(ctx, V0.x - 2.6, V0.z - 1.0, rel ? rel.root : null, ctx.infoById("v-v53"));
   sign(ctx, ["For comparison", "a Vault object · not from the Library"], x0 + 0.03, 2.5, V0.z - 1.0, Math.PI / 2, 2.2, 0.52, { size: 54 });
