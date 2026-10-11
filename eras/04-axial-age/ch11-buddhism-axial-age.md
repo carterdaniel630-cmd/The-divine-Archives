@@ -223,6 +223,12 @@ their wavy hair and toga-like robes, show the unmistakable influence of **Greek*
 art, carried east in the wake of Alexander (Chapter 8): one of history's most
 beautiful cross-cultural fusions, Greco-Buddhist sculpture.
 
+## The councils and the first schism
+
+Buddhist tradition remembers a series of **councils** (*saṅgīti*, "communal recitations"). At the **first**, held at Rājagṛha just after the Buddha's death, the monks are said to have recited his discourses and the monastic code from memory. At the **second**, at Vaiśālī about a century later, they condemned ten relaxations of the monastic rule, among them carrying salt in a horn and eating after midday. Some time after that the community split for the first time, into the **Sthaviras** ("elders") and the **Mahāsāṅghikas** ("the great community"). The causes are disputed. Theravāda accounts link the split to the Vaiśālī dispute over discipline; other sources speak of five controversial theses about the nature of an *arhat*; and some scholars, following Étienne Lamotte, date the first real schism later, to the time of Aśoka. The two groups later divided further, into the "eighteen schools" of tradition.
+
+Theravāda chronicles add a **third council** at Pāṭaliputra under Aśoka, about 250 BCE, presided over by the elder **Moggaliputta Tissa**. The *Kathāvatthu* ("Points of Controversy"), which refutes the views of other schools, is attributed to him. Only the Theravāda tradition knows of this council. The same chronicles, the *Dīpavaṃsa* and *Mahāvaṃsa*, tell how Aśoka's son **Mahinda** brought the teaching to Sri Lanka in the reign of King Devānaṃpiya Tissa, and how the canon was first written down there in the first century BCE. Historians treat both stories as foundation legends, and the chronicles' dates do not agree with one another. But the school that kept them, the **Theravāda** ("teaching of the elders"), became the Buddhism of Sri Lanka, Myanmar, Thailand, Laos and Cambodia, and its Pali canon is the only early canon that survives complete in an Indian language.
+
 ## The believer's lens
 
 To the Buddhist, the Buddha is not a god to be worshipped but a **physician and awakened teacher** who diagnosed the deepest human sickness and prescribed its cure. The diagnosis is the **Four Noble Truths**: life as we grasp at it is shot through with *dukkha* (unsatisfactoriness); its cause is craving; craving can cease; and the way to its cessation is the **Eightfold Path** of ethical, meditative, and wisdom practice. Behind it lies the radical insight of **anattā** — that there is no fixed, permanent self at all, only a flow of conditioned processes — and of **dependent origination**, the web of causes by which craving spins the wheel of **rebirth**. To follow the path is to loosen the grip of craving and ignorance until, at last, the fire goes out: **nirvāṇa**, the unconditioned peace beyond birth and death. From inside, this is not pessimism but the most practical hope imaginable — that suffering has a cause, and the cause can be removed, by anyone willing to walk the path.
@@ -351,6 +357,8 @@ of this archive.
 - [Wikipedia: Dharmachakra](https://en.wikipedia.org/wiki/Dharmacakra);
   [Wikipedia: Aniconism in Buddhism](https://en.wikipedia.org/wiki/Aniconism_in_Buddhism);
   on the stupa and Gandharan (Greco-Buddhist) art.
+- The councils, the Sthavira–Mahāsāṅghika schism and its disputed causes — É. Lamotte, *History of Indian Buddhism: From the Origins to the Śaka Era*, trans. S. Webb-Boin (Louvain-la-Neuve: Institut Orientaliste, 1988) ; World History Encyclopedia, "Mahasanghika." https://www.worldhistory.org/Mahasanghika/
+- The third council, Moggaliputta Tissa, the *Kathāvatthu* and Mahinda's mission — *Dīpavaṃsa*, ch. 7 "The Third Council" (trans. H. Oldenberg, 1879), at Ancient Buddhist Texts. https://ancient-buddhist-texts.net/English-Texts/Chronicle-of-the-Island/07-Third-Council.htm ; EBSCO Research Starters, "Third Buddhist Council." https://www.ebsco.com/research-starters/history/third-buddhist-council
 
 *Note on sourcing:* Researched from standard scholarship (Gombrich and reference works)
 and summaries of the early texts rather than memory alone, per the project standard.

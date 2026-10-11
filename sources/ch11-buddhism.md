@@ -30,3 +30,11 @@ disputed dates and the debated meaning of nirvana/anatta, and reserves the later
 Mahayana developments and the Asian spread for subsequent chapters. Written to be
 educational, with particular attention to the contrast with the Vedic/Upanishadic
 world of Chapter 5.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The councils and the first schism"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The councils, the Sthavira–Mahāsāṅghika schism and its disputed causes — É. Lamotte, *History of Indian Buddhism: From the Origins to the Śaka Era*, trans. S. Webb-Boin (Louvain-la-Neuve: Institut Orientaliste, 1988) ; World History Encyclopedia, "Mahasanghika." https://www.worldhistory.org/Mahasanghika/
+- The third council, Moggaliputta Tissa, the *Kathāvatthu* and Mahinda's mission — *Dīpavaṃsa*, ch. 7 "The Third Council" (trans. H. Oldenberg, 1879), at Ancient Buddhist Texts. https://ancient-buddhist-texts.net/English-Texts/Chronicle-of-the-Island/07-Third-Council.htm ; EBSCO Research Starters, "Third Buddhist Council." https://www.ebsco.com/research-starters/history/third-buddhist-council
+
+The chapter goes back to pending review because of these additions.
