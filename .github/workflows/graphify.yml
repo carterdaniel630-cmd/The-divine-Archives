@@ -61,9 +61,15 @@ jobs:
           cd graphify-out
           rm -f .graphify_python
           # Paths must be repo-relative so the graph works in any session's checkout.
-          ws="${GITHUB_WORKSPACE%/}/"
-          grep -rlF "$ws" . | while read -r f; do sed -i "s#${ws}##g" "$f"; done
-          if grep -rqF "/home/runner" .; then echo "::error::runner paths left in the graph"; grep -rlF "/home/runner" .; exit 1; fi
+          ws="${GITHUB_WORKSPACE%/}"
+          grep -rlF "$ws/" . | while read -r f; do sed -i "s#${ws}/##g" "$f"; done
+          grep -rlF "$ws" . | while read -r f; do sed -i "s#${ws}#.#g" "$f"; done
+          if grep -rqF "/home/runner" .; then
+            echo "::error::runner paths left in the graph"
+            grep -rcF "/home/runner" . | grep -v ':0$' | head -10 | while read -r l; do echo "::error::file $l"; done
+            grep -rohE '.{0,40}/home/runner[^"]{0,60}' . | sort | uniq -c | sort -rn | head -8 | while read -r l; do echo "::error::seen $l"; done
+            exit 1
+          fi
           # The answer keys must never be indexed.
           if grep -rq 'KEY\.md' graph.json; then echo "::error::a KEY.md file reached the graph"; exit 1; fi
           # Stay well under GitHub's 100 MB file limit.
