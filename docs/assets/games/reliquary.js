@@ -197,7 +197,7 @@
       setKeys(null);
       var newBest = false;
       if (st.score > st.best) { st.best = st.score; newBest = true; }
-      AG.addHighScore("reliquary", { score: st.score, correct: st.correct, total: st.order.length, mode: st.mode });
+      AG.addHighScore("reliquary", { score: st.score, correct: st.correct, total: st.order.length, mode: st.mode }); AG.finish("reliquary");
       var wonLine = "";
       if (st.mode === "bot") {
         wonLine = st.score > st.botScore ? "You beat the Archivist." : (st.score < st.botScore ? "The Archivist won this round." : "A dead heat with the Archivist.");

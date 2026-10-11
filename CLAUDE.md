@@ -5,6 +5,17 @@ A comparative reference work covering every documented spiritual/religious tradi
 organized chronologically by era (not by region). Each chapter covers one culture/tradition
 within its era, or one cross-cutting comparative theme (e.g. flood myths, creation cosmogonies).
 
+## Start here (every session)
+1. `git fetch origin` and work from `origin/main`. The GitHub default branch is not `main`, so a fresh
+   checkout may land on an old branch; never build on it.
+2. Read `handoff/CURRENT.md` (state of main, open PRs, what needs Carter), then the rules below.
+3. Check the open PRs before starting: if your task touches a file an open PR changes (this file
+   included), build on that PR's branch or say why not.
+4. Before ending: update `handoff/CURRENT.md` and the status board if main or the PR list changed, and
+   end the report with "Needs your decision" or "Nothing needed."
+
+If two rules here seem to conflict, the stricter one wins and you flag the conflict to Carter.
+
 ## Operating rules (standing, set by Carter 2026-10-01)
 
 ### Roles
@@ -28,11 +39,49 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 - New features, games, or museum rooms
 - Anything touching religious-sensitivity rules (e.g. images of the Báb, sacred objects)
 
+### How work runs
+- One branch and one PR per workstream; use the branch Carter names, and flag a conflict with
+  another open branch before pushing.
+- Multi-phase plans stop for Carter's approval at the end of each phase; don't skip ahead.
+- Within an approved task, keep going until it is done or truly blocked; run long builds and
+  measurements in the background rather than stopping to wait.
+- When Carter explicitly grants more for a task ("run straight through", "deploy it"), that grant
+  covers that task only, not later ones.
+- Never open any file named `KEY.md` (the auditor's answer key for test batches).
+- Don't write model names in files, commits or comments.
+
+### Quality bar (standing, set by Carter 2026-10-10)
+Everything is built and maintained to the highest standard. In practice:
+- **Nothing merges with a red or unfinished check.** Every CI check is green on the PR's
+  current head, including slow ones (Lighthouse), before a merge is proposed or carried out.
+  If a check looks flaky, re-run it and wait for the result; never merge on the assumption.
+- **Every output goes through the reviewer** (`reviews/REVIEWER.md`) before it reaches Carter,
+  and its NEEDS CARTER items are resolved or put to him.
+- **Verify, don't assume:** run the full build, `node tools/review-checks.js --build` and every
+  `tools/verify-*.js` before pushing; open anything visual (pages, museum, Pilgrimage, games)
+  in a headless browser and check for script errors and the performance budget. Prior chat
+  claims don't count: if it isn't in a file or commit, report it as NOT FOUND.
+- **Sources:** every citation is real and checked; anything that could not be opened is said so in
+  the source log; estimates and conjecture are labelled as such on the page, never presented as fact.
+- **Own your PRs to the end:** keep them conflict-free and green after other merges, and leave
+  docs (handoff, status board, plans) matching main.
+- **No shortcuts to look finished:** a smaller, correct piece of work beats a larger, unverified one.
+  Fix the real cause; don't mask a problem cosmetically (e.g. slowing an animation or adding
+  particles to hide bad motion).
+
 ### Reporting
 - Write reports for a non-technical reader: say what changed, what it means, and what you need
   from him.
 - If something only Carter can do, give phone-only steps, or ask permission to do it yourself.
 - End every report with a short "Needs your decision" list, or "Nothing needed."
+- Keep it phone-sized: lead with the answer, plain sentences, no jargon (say "the live site", not
+  "deploy to Pages"); a decision is one question with short labelled options and your recommendation.
+  Anything longer than a screen goes in a file or PR with a one-line pointer to it.
+- Say how you know: link the PR, file or source behind a claim, or say it is inferred.
+- Show visual work directly in the reply (screenshot, image or preview link); don't make Carter dig
+  through GitHub to see it.
+- Carter works in large batches (2026-10-11): group decisions and merges into one batch for him
+  rather than asking one item at a time. Batching never lowers the quality bar above.
 
 ## File structure
 ```
@@ -48,7 +97,8 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   09-modern/                <- NRMs, Spiritualism, Wicca/modern Paganism, Theosophy, diaspora syntheses
 /themes/                    <- comparative-theme chapters (cross-era), incl. the ch01-the-flood.md template
 /outline/
-  master-outline.md         <- full framework + chapter status board (the chat-provided version was never pasted in; this file is maintained as the live framework)
+  master-outline.md         <- full framework + chapter status board (the live framework)
+/handoff/CURRENT.md         <- current state of main, open PRs, decisions pending; read first, update last
 /sources/
   (per-chapter citation logs; also per-Vault-entry logs and pantheon.md)
 /vault/                     <- Vault entries (V01…), one markdown file per sacred object or text
@@ -71,6 +121,10 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   `docs/assets/og/`; renders only changed cards, needs Playwright),
   `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`,
   `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
+  Then `node tools/build-framework.js` (publishes the visitor ledger, the ritual engine and player, and the
+  walkthroughs under review into `docs/assets/framework/`; sources in `framework/` and `data/rituals/`) and
+  `node tools/build-entity-registry.js` (the entity registry in `framework/registry/`; see
+  `plans/framework-sandbox.md`). `node --test framework/test/*.test.js` checks both.
   The museum's planetarium has its own step, `node tools/build-sky.js` (star catalogue in
   `tools/data/d3-celestial/`, lore in `museum/sky-lore.json`, checked by `tools/verify-sky.js`).
   The museum's skies and grounds (`docs/museum/world.js`, table `ENV`), animals (`fauna.js`), sound
@@ -91,6 +145,12 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 ## Sourcing standard (non-negotiable)
 - Every specific factual/archaeological claim needs a real, checkable source (web search during drafting, not memory-only)
 - Contested claims flagged explicitly as contested — do not resolve scholarly debates by picking a side
+- Scholarly or primary sources first; Wikipedia only as a labelled pointer. Flag any chapter where
+  Wikipedia is over 20% of its sources
+- When upgrading a source, never change what the claim says: if the stronger source disagrees, flag it
+  for Carter instead of rewriting
+- Keep the believer's lens (with genuine respect, no editorializing) and the skeptical/evidence lens
+  (not debunking, not apologetics) both present and of comparable weight
 - Separate "well-supported by evidence" / "not supported" / "genuinely open" for any chapter making empirical claims (follow the pattern in ch01-the-flood.md as the template)
 - No claim of "proof" for anything that is actually disputed or unfalsifiable
 - One comparative theme chapter per era where useful, alongside culture-by-culture chapters
@@ -102,11 +162,11 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
 4. End with an evidence-honesty section: what's supported, what isn't, what's still debated
 5. Save to the correct era folder, log sources used in /sources/
 
-## How to run this as background work
-- Give Claude Code one chapter at a time as a task (e.g. "draft the Egypt chapter for era 02-bronze-age")
-- Press Ctrl+B (or type /bg) to background it once it starts, and keep working on other things
-- Review each chapter before starting the next — this is a quality-over-speed project, not a word-count race
-- Do not let it fabricate sources or invent citations to fill gaps in the historical record; flag gaps instead of papering over them
+## Pacing
+- One chapter (or one clearly bounded piece of work) per task; this is a quality-over-speed project, not a word-count race
+- Never fabricate sources or invent citations to fill gaps in the historical record; flag gaps instead of papering over them
+- Publisher, museum and archive sites are often blocked from build sessions: when a source could only be
+  confirmed through search results, say so in the source log so the reviewer re-reads it
 
 ## Depth Standard (expanded)
 "Comprehensive" means: for every tradition covered, pull in every distinct textual source, sect,
@@ -139,8 +199,9 @@ should go deeper than ch01 where the source material supports it, but should fol
 evidence-honesty format, not a different one.
 
 ## Publishing Policy (updated — replaces the old pre-publish review gate)
-- Auto-publish is ON: chapters go live on the website as soon as drafted. No per-chapter approval
-  is required before publishing.
+- Auto-publish is ON for content review: a chapter does not need Carter's line-by-line approval
+  before it goes live. It still reaches the live site only through a merge to `main`, which
+  needs his go-ahead (Operating rules), after the reviewer has passed it.
 - Every newly published chapter MUST carry a visible "Recently added — pending full review" tag
   on its live page until Carter clears it in a batch review pass. This tag is mandatory, not
   optional — it's what replaces the old approval gate.

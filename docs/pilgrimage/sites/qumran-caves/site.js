@@ -4,8 +4,8 @@
    (s0-vestibule.js … s4-cave3.js), measurements in dims.js, the cave builder
    in ../../cave.js.
 
-   Status: "preview" in docs/assets/pilgrimage-data.js. The page exists
-   (noindex) but the site is off the menu until Carter approves it going live.
+   Status: "live" in docs/assets/pilgrimage-data.js (Carter approved listing it,
+   2026-10-11), still pending full review.
    Plan: plans/pilgrimage-sites.md, "Pilot B: the Qumran caves".
    Sources: sources/pilgrimage-qumran-caves.md.
 

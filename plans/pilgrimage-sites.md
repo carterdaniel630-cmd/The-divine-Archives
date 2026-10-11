@@ -1,5 +1,7 @@
 # The Pilgrimage: walkable sacred sites (plan, not built)
 
+**Status (updated 2026-10-10 to match main):** the Great Pyramid is the one live site (pending review); the hidden Archive Arcade (`docs/pilgrimage/arcade.html`) runs on the same engine but is not a Pilgrimage site and is not in this list. Qumran and the Library of Alexandria are built as previews on branch `claude/pilgrimage-qumran-alexandria` (PR #36), not yet on main.
+
 **Status (2026-10-04):** the **Great Pyramid is LIVE** (approved by Carter 2026-10-04 and merged; it carries the pending-review tag until he clears it). Its portal stands in the museum's entrance hall, and Pilgrimage is in the site's top menu. Every other site is **QUEUED**; sites are added one or two at a time later, each as one entry in `docs/assets/pilgrimage-data.js` plus its module folder. The Qumran caves stay the recommended next site.
 **Track rule:** one or two sites at a time, alongside other work. This track never blocks existing work.
 

@@ -13,11 +13,14 @@ How the ordered world came to be — the same raw materials of water and darknes
 Open the Hebrew Bible at its first sentence and, in the second verse, you meet a strange
 old word: **tehom** — "the deep," the dark formless water over which the wind of God
 hovers before anything is made. It is one of the most familiar images in world literature,
-and almost no one notices that the word is a fossil. **Tehom** is linguistically kin to
+and almost no one notices that the word may be a fossil. **Tehom** is linguistically kin to
 **Tiamat** — the name of the salt-sea monster whom the Babylonian god Marduk hacks in two to
 build the world. The Genesis author kept the ancient watery chaos but drained it of its
 menace: *tehom* is not a goddess, not a dragon, not an enemy to be fought. It is simply the
-deep, and God does not battle it — he speaks, and it obeys. In that one demythologized word
+deep, and God does not battle it — he speaks, and it obeys. (How much of the monster survives
+in the word is debated: Hermann Gunkel read Genesis 1 against the Babylonian combat myth, while
+David Tsumura argues that *tehom* simply continues a common Semitic word for "ocean" and that
+Genesis 1 shows no trace of combat.) In that one demythologized word
 lies the whole drama of this chapter: nearly every people who tried to say how the world
 began started from the same raw materials — water, darkness, a formless first state — and
 then made very different things of them.
@@ -129,14 +132,14 @@ archive keeps them apart.
 
 Against all this confident world-building stands one of the most remarkable religious poems ever
 composed: the **Nasadiya Sukta**, the "Hymn of Creation," **Rigveda 10.129**. It opens by
-refusing every category the other cosmogonies assume: *"Then there was neither non-existence nor
-existence; there was no realm of air, no sky beyond it… There was neither death nor immortality
-then; no sign of night or day."* Something breathed, windless, by its own power; darkness lay
+refusing every category the other cosmogonies assume: *"Then was not non-existent nor
+existent: there was no realm of air, no sky beyond it… Death was not then, nor was there aught
+immortal: no sign was there, the day's and night's divider."* Something breathed, windless, by its own power; darkness lay
 wrapped in darkness. And then, having gestured at a first stirring of desire, the hymn does
 something no other ancient creation text dares to do — it **admits it does not know**, and
 wonders whether anyone or anything can:
 
-> *"Who really knows? Who here will proclaim it? Whence was it produced? Whence is this
+> *"Who really knows? Who will here proclaim it? Whence was it produced? Whence is this
 > creation? The gods came afterwards, with the creation of this universe. Who then knows whence
 > it has arisen?"*
 
@@ -246,23 +249,44 @@ against the **Gnostic** cosmogonies of Chapters 17 and 45.
 ## Sources
 
 *Chaoskampf and the combat myth*
-- [Wikipedia: Chaoskampf](https://en.wikipedia.org/wiki/Chaoskampf) (Marduk/Tiamat, Baal/Yamm,
-  Yahweh/Leviathan/Rahab, Zeus/Typhon; the **tehom**/**Tiamat** cognate and Genesis's
-  demythologizing).
+- Hermann Gunkel, *Creation and Chaos in the Primeval Era and the Eschaton: A Religio-Historical Study
+  of Genesis 1 and Revelation 12*, trans. K. William Whitney Jr. (Grand Rapids: Eerdmans, 2006; German
+  original 1895) — the founding statement of the combat-myth (Chaoskampf) reading of Genesis 1 against
+  *Enuma Elish* (Marduk/Tiamat), with the tehom/Tiamat link.
+  [Catalogue record](https://opac.tangaza.ac.ke/bib/163609).
+- John Day, *God's Conflict with the Dragon and the Sea: Echoes of a Canaanite Myth in the Old
+  Testament* (Cambridge: Cambridge University Press, 1985) — Baal/Yamm and Yahweh/Leviathan/Rahab; the
+  case that the biblical allusions draw on Canaanite rather than Babylonian myth.
+  [Catalogue record](https://search.worldcat.org/oclc/10071909).
+- David Toshio Tsumura, *Creation and Destruction: A Reappraisal of the Chaoskampf Theory in the Old
+  Testament* (Winona Lake: Eisenbrauns, 2005) — the opposing view: tehom derives from a common
+  Proto-Semitic word for "ocean," not from Tiamat, and Genesis 1 shows no combat at all.
+  [Publisher](https://eisenbrauns.org/books/titles/978-1-57506-106-1.html).
 
 *The ex nihilo / Genesis 1:1 translation debate*
 - On "In the beginning God created" vs. "When God began to create," Rashi, and the later emergence
   of **creatio ex nihilo**:
   [Steven DiMattei, "Genesis 1:1–2 — not a creatio ex nihilo"](https://stevendimattei.com/genesis-11-2-creation-ex-nihilo/)
-  and standard reference discussions of the JPS/NRSV rendering.
+  and standard reference discussions of the JPS/NRSV rendering; Gerhard May, *Creatio ex Nihilo: The
+  Doctrine of "Creation out of Nothing" in Early Christian Thought*, trans. A. S. Worrall (Edinburgh:
+  T&T Clark, 1994), on the doctrine's formation by second-century Christian thinkers.
+  [Catalogue record](https://findingaugustine.org/Record/34293).
 
 *The cosmic-giant cosmogony*
 - On Ymir and Purusha and the reconstructed Indo-European myth (Bruce Lincoln), and the wider
-  distribution of the motif: [academia.edu: "Is the Cosmic Giant an Indo-European myth?"](https://www.academia.edu/472488/Is_the_Cosmic_Giant_an_Indo_European_myth).
+  distribution of the motif: [academia.edu: "Is the Cosmic Giant an Indo-European myth?"](https://www.academia.edu/472488/Is_the_Cosmic_Giant_an_Indo_European_myth) ;
+  Bruce Lincoln, *Myth, Cosmos, and Society: Indo-European Themes of Creation and Destruction*
+  (Cambridge, MA: Harvard University Press, 1986). [Catalogue record](https://www.oeaw.ac.at/resources/Record/9780674864290?lng=de).
 
 *The skeptical hymn*
-- [Wikipedia: Nasadiya Sukta](https://en.wikipedia.org/wiki/Nasadiya_Sukta) (Rigveda 10.129, the
-  "who really knows?" close, and Carl Sagan's use of it).
+- Rigveda 10.129 — Stephanie W. Jamison and Joel P. Brereton (trans.), *The Rigveda: The Earliest
+  Religious Poetry of India* (New York: Oxford University Press, 2014), 3 vols.
+  [Catalogue record](https://catalog.nypl.org/search/i9780199370184) ; the "who really knows?" close
+  as rendered in Wendy Doniger O'Flaherty (trans.), *The Rig Veda: An Anthology* (Harmondsworth:
+  Penguin, 1981); the opening lines as translated by R. T. H. Griffith, *The Hymns of the Rigveda*
+  (1896), RV 10.129. https://sacred-texts.com/hin/rigveda/rv10129.htm
+- Carl Sagan's use of it — Carl Sagan, *Cosmos* (New York: Random House, 1980), ch. 10, "The Edge of
+  Forever," and the television episode of the same name (PBS, 1980).
 
 *The traditions' own accounts* are sourced in their chapters: Mesopotamia (Ch. 3), Egypt (Ch. 2),
 Early Vedic (Ch. 5), Early Greece (Ch. 8), pre-exilic Israel (Ch. 7), Norse paganism (Ch. 23).

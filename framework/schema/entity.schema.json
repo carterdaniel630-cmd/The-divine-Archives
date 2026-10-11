@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://getconexto.com/framework/schema/entity.schema.json",
+  "title": "Archive entity",
+  "description": "One thing in the archive that can be pointed at: a chapter, a chapter section, a Pantheon figure, a Vault object, a symbol, a Pilgrimage site, a museum room, a game, a ritual, a source and so on. IDs are stable: <type>:<slug>. An ID, once published in framework/registry/, is never reused for something else; if the thing is withdrawn the ID is retired, not reassigned.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "label"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "<type>:<slug>. The slug may contain '/' to nest under a parent (e.g. section:ch02/the-negative-confession).",
+      "pattern": "^[a-z][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "type": {
+      "type": "string",
+      "description": "Must equal the part of id before the colon.",
+      "enum": ["era", "theme", "chapter", "section", "figure", "tradition", "relic", "symbol", "symbolset", "site", "waypoint", "room", "wing", "trail", "game", "star", "constellation", "skylore", "ritual", "source"]
+    },
+    "label": { "type": "string", "minLength": 1, "description": "Name as shown to a reader." },
+    "parent": { "type": "string", "description": "ID of the containing entity, if any (a section's chapter, a waypoint's site)." },
+    "era": { "type": "string", "description": "Era slug, e.g. 04-axial-age, where the thing belongs to one era." },
+    "status": { "type": "string", "description": "Publication state copied from the source data (published, pending, queued, live, preview…). The registry records it; it never changes it." },
+    "href": { "type": "string", "description": "Path on the site relative to docs/, where one exists." },
+    "links": {
+      "type": "array",
+      "description": "IDs of related entities (a figure's home chapters, a relic's chapters).",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "from": { "type": "string", "description": "The repo file this entry was read from." }
+  }
+}

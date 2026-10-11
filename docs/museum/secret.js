@@ -86,6 +86,10 @@ void main(){
     st.arch = { fx, hit, at, grow: fresh ? 0 : 1, fired: false };
     fx.group.scale.setScalar(fresh ? 0.001 : 1);
     try { store.set(KEY, JSON.stringify({ x: +at.x.toFixed(2), z: +at.z.toFixed(2), nz: at.nz })); } catch (e) { /* storage blocked */ }
+    if (fresh) { // the visitor's ledger (framework/adapters/track.js), kept in this browser only
+      const ev = { entity: "site:arcade", verb: "unlocked" };
+      if (window.__archiveTrack) window.__archiveTrack.record(ev); else (window.__archiveQ = window.__archiveQ || []).push(ev);
+    }
   }
   try { const saved = JSON.parse(store.get(KEY) || "null"); if (saved && isFinite(saved.x)) openArch(saved, false); } catch (e) { /* ignore */ }
 

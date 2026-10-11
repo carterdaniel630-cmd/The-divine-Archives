@@ -383,7 +383,7 @@
     function endScreen() {
       running = false; if (raf) cancelAnimationFrame(raf);
       var nb = st.score > best; if (nb) best = st.score;
-      AG.addHighScore("pacman", { score: st.score });
+      AG.addHighScore("pacman", { score: st.score }); AG.finish("pacman");
       var recap = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";

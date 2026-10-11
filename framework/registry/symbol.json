@@ -1,0 +1,4566 @@
+{
+ "type": "symbol",
+ "count": 504,
+ "entities": [
+  {
+   "id": "symbol:u-0391",
+   "type": "symbol",
+   "label": "Alpha (U+0391)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0392",
+   "type": "symbol",
+   "label": "Beta (U+0392)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0393",
+   "type": "symbol",
+   "label": "Gamma (U+0393)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0394",
+   "type": "symbol",
+   "label": "Delta (U+0394)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0395",
+   "type": "symbol",
+   "label": "Epsilon (U+0395)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0396",
+   "type": "symbol",
+   "label": "Zeta (U+0396)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0397",
+   "type": "symbol",
+   "label": "Eta (U+0397)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0398",
+   "type": "symbol",
+   "label": "Theta (U+0398)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-0399",
+   "type": "symbol",
+   "label": "Iota (U+0399)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-039a",
+   "type": "symbol",
+   "label": "Kappa (U+039A)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-039b",
+   "type": "symbol",
+   "label": "Lamda (U+039B)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-039c",
+   "type": "symbol",
+   "label": "Mu (U+039C)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-039d",
+   "type": "symbol",
+   "label": "Nu (U+039D)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-039e",
+   "type": "symbol",
+   "label": "Xi (U+039E)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-039f",
+   "type": "symbol",
+   "label": "Omicron (U+039F)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a0",
+   "type": "symbol",
+   "label": "Pi (U+03A0)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a1",
+   "type": "symbol",
+   "label": "Rho (U+03A1)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a3",
+   "type": "symbol",
+   "label": "Sigma (U+03A3)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a4",
+   "type": "symbol",
+   "label": "Tau (U+03A4)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a5",
+   "type": "symbol",
+   "label": "Upsilon (U+03A5)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a6",
+   "type": "symbol",
+   "label": "Phi (U+03A6)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a7",
+   "type": "symbol",
+   "label": "Chi (U+03A7)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a8",
+   "type": "symbol",
+   "label": "Psi (U+03A8)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03a9",
+   "type": "symbol",
+   "label": "Omega (U+03A9)",
+   "links": [
+    "symbolset:axial/1",
+    "symbolset:iron/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03e2",
+   "type": "symbol",
+   "label": "Shei (U+03E2)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03e4",
+   "type": "symbol",
+   "label": "Fei (U+03E4)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03e6",
+   "type": "symbol",
+   "label": "Khei (U+03E6)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03e8",
+   "type": "symbol",
+   "label": "Hori (U+03E8)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03ea",
+   "type": "symbol",
+   "label": "Gangia (U+03EA)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-03ec",
+   "type": "symbol",
+   "label": "Shima (U+03EC)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10000",
+   "type": "symbol",
+   "label": "B008 (U+10000)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10001",
+   "type": "symbol",
+   "label": "B038 (U+10001)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10002",
+   "type": "symbol",
+   "label": "B028 (U+10002)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10003",
+   "type": "symbol",
+   "label": "B061 (U+10003)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10004",
+   "type": "symbol",
+   "label": "B010 (U+10004)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10005",
+   "type": "symbol",
+   "label": "B001 (U+10005)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10006",
+   "type": "symbol",
+   "label": "B045 (U+10006)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10007",
+   "type": "symbol",
+   "label": "B007 (U+10007)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10008",
+   "type": "symbol",
+   "label": "B014 (U+10008)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10009",
+   "type": "symbol",
+   "label": "B051 (U+10009)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1000a",
+   "type": "symbol",
+   "label": "B057 (U+1000A)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1000b",
+   "type": "symbol",
+   "label": "B046 (U+1000B)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1000d",
+   "type": "symbol",
+   "label": "B036 (U+1000D)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1000e",
+   "type": "symbol",
+   "label": "B065 (U+1000E)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1000f",
+   "type": "symbol",
+   "label": "B077 (U+1000F)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10010",
+   "type": "symbol",
+   "label": "B044 (U+10010)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10011",
+   "type": "symbol",
+   "label": "B067 (U+10011)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10012",
+   "type": "symbol",
+   "label": "B070 (U+10012)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10013",
+   "type": "symbol",
+   "label": "B081 (U+10013)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10014",
+   "type": "symbol",
+   "label": "B080 (U+10014)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10015",
+   "type": "symbol",
+   "label": "B013 (U+10015)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10016",
+   "type": "symbol",
+   "label": "B073 (U+10016)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10017",
+   "type": "symbol",
+   "label": "B015 (U+10017)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10018",
+   "type": "symbol",
+   "label": "B023 (U+10018)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10019",
+   "type": "symbol",
+   "label": "B006 (U+10019)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1001a",
+   "type": "symbol",
+   "label": "B024 (U+1001A)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1001b",
+   "type": "symbol",
+   "label": "B030 (U+1001B)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1001c",
+   "type": "symbol",
+   "label": "B052 (U+1001C)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1001d",
+   "type": "symbol",
+   "label": "B055 (U+1001D)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1001e",
+   "type": "symbol",
+   "label": "B003 (U+1001E)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1001f",
+   "type": "symbol",
+   "label": "B072 (U+1001F)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10020",
+   "type": "symbol",
+   "label": "B039 (U+10020)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10021",
+   "type": "symbol",
+   "label": "B011 (U+10021)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10022",
+   "type": "symbol",
+   "label": "B050 (U+10022)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10023",
+   "type": "symbol",
+   "label": "B016 (U+10023)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10024",
+   "type": "symbol",
+   "label": "B078 (U+10024)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10025",
+   "type": "symbol",
+   "label": "B021 (U+10025)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10026",
+   "type": "symbol",
+   "label": "B032 (U+10026)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10028",
+   "type": "symbol",
+   "label": "B060 (U+10028)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10029",
+   "type": "symbol",
+   "label": "B027 (U+10029)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1002a",
+   "type": "symbol",
+   "label": "B053 (U+1002A)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1002b",
+   "type": "symbol",
+   "label": "B002 (U+1002B)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1002c",
+   "type": "symbol",
+   "label": "B026 (U+1002C)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1002d",
+   "type": "symbol",
+   "label": "B031 (U+1002D)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1002e",
+   "type": "symbol",
+   "label": "B009 (U+1002E)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1002f",
+   "type": "symbol",
+   "label": "B041 (U+1002F)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10030",
+   "type": "symbol",
+   "label": "B012 (U+10030)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10031",
+   "type": "symbol",
+   "label": "B058 (U+10031)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10032",
+   "type": "symbol",
+   "label": "B059 (U+10032)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10033",
+   "type": "symbol",
+   "label": "B004 (U+10033)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10034",
+   "type": "symbol",
+   "label": "B037 (U+10034)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10035",
+   "type": "symbol",
+   "label": "B005 (U+10035)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10036",
+   "type": "symbol",
+   "label": "B069 (U+10036)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10037",
+   "type": "symbol",
+   "label": "B054 (U+10037)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10038",
+   "type": "symbol",
+   "label": "B075 (U+10038)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10039",
+   "type": "symbol",
+   "label": "B040 (U+10039)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1003a",
+   "type": "symbol",
+   "label": "B042 (U+1003A)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1003c",
+   "type": "symbol",
+   "label": "B017 (U+1003C)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1003d",
+   "type": "symbol",
+   "label": "B074 (U+1003D)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1003f",
+   "type": "symbol",
+   "label": "B020 (U+1003F)",
+   "links": [
+    "symbolset:bronze/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10300",
+   "type": "symbol",
+   "label": "A (U+10300)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10301",
+   "type": "symbol",
+   "label": "Be (U+10301)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10302",
+   "type": "symbol",
+   "label": "Ke (U+10302)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10303",
+   "type": "symbol",
+   "label": "De (U+10303)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10304",
+   "type": "symbol",
+   "label": "E (U+10304)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10305",
+   "type": "symbol",
+   "label": "Ve (U+10305)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10306",
+   "type": "symbol",
+   "label": "Ze (U+10306)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10307",
+   "type": "symbol",
+   "label": "He (U+10307)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10308",
+   "type": "symbol",
+   "label": "The (U+10308)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10309",
+   "type": "symbol",
+   "label": "I (U+10309)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1030a",
+   "type": "symbol",
+   "label": "Ka (U+1030A)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1030b",
+   "type": "symbol",
+   "label": "El (U+1030B)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1030c",
+   "type": "symbol",
+   "label": "Em (U+1030C)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1030d",
+   "type": "symbol",
+   "label": "En (U+1030D)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1030e",
+   "type": "symbol",
+   "label": "Esh (U+1030E)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1030f",
+   "type": "symbol",
+   "label": "O (U+1030F)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10310",
+   "type": "symbol",
+   "label": "Pe (U+10310)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10311",
+   "type": "symbol",
+   "label": "She (U+10311)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10312",
+   "type": "symbol",
+   "label": "Ku (U+10312)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10313",
+   "type": "symbol",
+   "label": "Er (U+10313)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10314",
+   "type": "symbol",
+   "label": "Es (U+10314)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10315",
+   "type": "symbol",
+   "label": "Te (U+10315)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10316",
+   "type": "symbol",
+   "label": "U (U+10316)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10317",
+   "type": "symbol",
+   "label": "Eks (U+10317)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10318",
+   "type": "symbol",
+   "label": "Phe (U+10318)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10319",
+   "type": "symbol",
+   "label": "Khe (U+10319)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1031a",
+   "type": "symbol",
+   "label": "Ef (U+1031A)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1031b",
+   "type": "symbol",
+   "label": "Ers (U+1031B)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1031c",
+   "type": "symbol",
+   "label": "Che (U+1031C)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1031d",
+   "type": "symbol",
+   "label": "Ii (U+1031D)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1031e",
+   "type": "symbol",
+   "label": "Uu (U+1031E)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1031f",
+   "type": "symbol",
+   "label": "Ess (U+1031F)",
+   "links": [
+    "symbolset:iron/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10380",
+   "type": "symbol",
+   "label": "Alpa (U+10380)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10381",
+   "type": "symbol",
+   "label": "Beta (U+10381)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10382",
+   "type": "symbol",
+   "label": "Gamla (U+10382)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10383",
+   "type": "symbol",
+   "label": "Kha (U+10383)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10384",
+   "type": "symbol",
+   "label": "Delta (U+10384)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10385",
+   "type": "symbol",
+   "label": "Ho (U+10385)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10386",
+   "type": "symbol",
+   "label": "Wo (U+10386)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10387",
+   "type": "symbol",
+   "label": "Zeta (U+10387)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10388",
+   "type": "symbol",
+   "label": "Hota (U+10388)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10389",
+   "type": "symbol",
+   "label": "Tet (U+10389)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1038a",
+   "type": "symbol",
+   "label": "Yod (U+1038A)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1038b",
+   "type": "symbol",
+   "label": "Kaf (U+1038B)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1038c",
+   "type": "symbol",
+   "label": "Shin (U+1038C)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1038d",
+   "type": "symbol",
+   "label": "Lamda (U+1038D)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1038e",
+   "type": "symbol",
+   "label": "Mem (U+1038E)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1038f",
+   "type": "symbol",
+   "label": "Dhal (U+1038F)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10390",
+   "type": "symbol",
+   "label": "Nun (U+10390)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10391",
+   "type": "symbol",
+   "label": "Zu (U+10391)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10392",
+   "type": "symbol",
+   "label": "Samka (U+10392)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10393",
+   "type": "symbol",
+   "label": "Ain (U+10393)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10394",
+   "type": "symbol",
+   "label": "Pu (U+10394)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10395",
+   "type": "symbol",
+   "label": "Sade (U+10395)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10396",
+   "type": "symbol",
+   "label": "Qopa (U+10396)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10397",
+   "type": "symbol",
+   "label": "Rasha (U+10397)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10398",
+   "type": "symbol",
+   "label": "Thanna (U+10398)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10399",
+   "type": "symbol",
+   "label": "Ghain (U+10399)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1039a",
+   "type": "symbol",
+   "label": "To (U+1039A)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1039b",
+   "type": "symbol",
+   "label": "I (U+1039B)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1039c",
+   "type": "symbol",
+   "label": "U (U+1039C)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1039d",
+   "type": "symbol",
+   "label": "Ssu (U+1039D)",
+   "links": [
+    "symbolset:bronze/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a0",
+   "type": "symbol",
+   "label": "A (U+103A0)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a1",
+   "type": "symbol",
+   "label": "I (U+103A1)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a2",
+   "type": "symbol",
+   "label": "U (U+103A2)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a3",
+   "type": "symbol",
+   "label": "Ka (U+103A3)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a4",
+   "type": "symbol",
+   "label": "Ku (U+103A4)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a5",
+   "type": "symbol",
+   "label": "Ga (U+103A5)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a6",
+   "type": "symbol",
+   "label": "Gu (U+103A6)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a7",
+   "type": "symbol",
+   "label": "Xa (U+103A7)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a8",
+   "type": "symbol",
+   "label": "Ca (U+103A8)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103a9",
+   "type": "symbol",
+   "label": "Ja (U+103A9)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103aa",
+   "type": "symbol",
+   "label": "Ji (U+103AA)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103ab",
+   "type": "symbol",
+   "label": "Ta (U+103AB)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103ac",
+   "type": "symbol",
+   "label": "Tu (U+103AC)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103ad",
+   "type": "symbol",
+   "label": "Da (U+103AD)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103ae",
+   "type": "symbol",
+   "label": "Di (U+103AE)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103af",
+   "type": "symbol",
+   "label": "Du (U+103AF)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b0",
+   "type": "symbol",
+   "label": "Tha (U+103B0)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b1",
+   "type": "symbol",
+   "label": "Pa (U+103B1)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b2",
+   "type": "symbol",
+   "label": "Ba (U+103B2)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b3",
+   "type": "symbol",
+   "label": "Fa (U+103B3)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b4",
+   "type": "symbol",
+   "label": "Na (U+103B4)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b5",
+   "type": "symbol",
+   "label": "Nu (U+103B5)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b6",
+   "type": "symbol",
+   "label": "Ma (U+103B6)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b7",
+   "type": "symbol",
+   "label": "Mi (U+103B7)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b8",
+   "type": "symbol",
+   "label": "Mu (U+103B8)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103b9",
+   "type": "symbol",
+   "label": "Ya (U+103B9)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103ba",
+   "type": "symbol",
+   "label": "Va (U+103BA)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103bb",
+   "type": "symbol",
+   "label": "Vi (U+103BB)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103bc",
+   "type": "symbol",
+   "label": "Ra (U+103BC)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103bd",
+   "type": "symbol",
+   "label": "Ru (U+103BD)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103be",
+   "type": "symbol",
+   "label": "La (U+103BE)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103bf",
+   "type": "symbol",
+   "label": "Sa (U+103BF)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103c0",
+   "type": "symbol",
+   "label": "Za (U+103C0)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103c1",
+   "type": "symbol",
+   "label": "Sha (U+103C1)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103c2",
+   "type": "symbol",
+   "label": "Ssa (U+103C2)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-103c3",
+   "type": "symbol",
+   "label": "Ha (U+103C3)",
+   "links": [
+    "symbolset:iron/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a10",
+   "type": "symbol",
+   "label": "Ka (U+10A10)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a11",
+   "type": "symbol",
+   "label": "Kha (U+10A11)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a12",
+   "type": "symbol",
+   "label": "Ga (U+10A12)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a13",
+   "type": "symbol",
+   "label": "Gha (U+10A13)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a15",
+   "type": "symbol",
+   "label": "Ca (U+10A15)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a16",
+   "type": "symbol",
+   "label": "Cha (U+10A16)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a17",
+   "type": "symbol",
+   "label": "Ja (U+10A17)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a19",
+   "type": "symbol",
+   "label": "Nya (U+10A19)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a1a",
+   "type": "symbol",
+   "label": "Tta (U+10A1A)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a1b",
+   "type": "symbol",
+   "label": "Ttha (U+10A1B)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a1c",
+   "type": "symbol",
+   "label": "Dda (U+10A1C)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a1d",
+   "type": "symbol",
+   "label": "Ddha (U+10A1D)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a1e",
+   "type": "symbol",
+   "label": "Nna (U+10A1E)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a1f",
+   "type": "symbol",
+   "label": "Ta (U+10A1F)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a20",
+   "type": "symbol",
+   "label": "Tha (U+10A20)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a21",
+   "type": "symbol",
+   "label": "Da (U+10A21)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a22",
+   "type": "symbol",
+   "label": "Dha (U+10A22)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a23",
+   "type": "symbol",
+   "label": "Na (U+10A23)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a24",
+   "type": "symbol",
+   "label": "Pa (U+10A24)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a25",
+   "type": "symbol",
+   "label": "Pha (U+10A25)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a26",
+   "type": "symbol",
+   "label": "Ba (U+10A26)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a27",
+   "type": "symbol",
+   "label": "Bha (U+10A27)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a28",
+   "type": "symbol",
+   "label": "Ma (U+10A28)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a29",
+   "type": "symbol",
+   "label": "Ya (U+10A29)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a2a",
+   "type": "symbol",
+   "label": "Ra (U+10A2A)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a2b",
+   "type": "symbol",
+   "label": "La (U+10A2B)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a2c",
+   "type": "symbol",
+   "label": "Va (U+10A2C)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a2d",
+   "type": "symbol",
+   "label": "Sha (U+10A2D)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a2e",
+   "type": "symbol",
+   "label": "Ssa (U+10A2E)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a2f",
+   "type": "symbol",
+   "label": "Sa (U+10A2F)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a30",
+   "type": "symbol",
+   "label": "Za (U+10A30)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a31",
+   "type": "symbol",
+   "label": "Ha (U+10A31)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a32",
+   "type": "symbol",
+   "label": "Kka (U+10A32)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a33",
+   "type": "symbol",
+   "label": "Tttha (U+10A33)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a34",
+   "type": "symbol",
+   "label": "Ttta (U+10A34)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a35",
+   "type": "symbol",
+   "label": "Vha (U+10A35)",
+   "links": [
+    "symbolset:axial/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a60",
+   "type": "symbol",
+   "label": "He (U+10A60)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a61",
+   "type": "symbol",
+   "label": "Lamedh (U+10A61)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a62",
+   "type": "symbol",
+   "label": "Heth (U+10A62)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a63",
+   "type": "symbol",
+   "label": "Mem (U+10A63)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a64",
+   "type": "symbol",
+   "label": "Qoph (U+10A64)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a65",
+   "type": "symbol",
+   "label": "Waw (U+10A65)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a66",
+   "type": "symbol",
+   "label": "Shin (U+10A66)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a67",
+   "type": "symbol",
+   "label": "Resh (U+10A67)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a68",
+   "type": "symbol",
+   "label": "Beth (U+10A68)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a69",
+   "type": "symbol",
+   "label": "Taw (U+10A69)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a6a",
+   "type": "symbol",
+   "label": "Sat (U+10A6A)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a6b",
+   "type": "symbol",
+   "label": "Kaph (U+10A6B)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a6c",
+   "type": "symbol",
+   "label": "Nun (U+10A6C)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a6d",
+   "type": "symbol",
+   "label": "Kheth (U+10A6D)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a6e",
+   "type": "symbol",
+   "label": "Sadhe (U+10A6E)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a6f",
+   "type": "symbol",
+   "label": "Samekh (U+10A6F)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a70",
+   "type": "symbol",
+   "label": "Fe (U+10A70)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a71",
+   "type": "symbol",
+   "label": "Alef (U+10A71)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a72",
+   "type": "symbol",
+   "label": "Ayn (U+10A72)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a73",
+   "type": "symbol",
+   "label": "Dhadhe (U+10A73)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a74",
+   "type": "symbol",
+   "label": "Gimel (U+10A74)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a75",
+   "type": "symbol",
+   "label": "Daleth (U+10A75)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a76",
+   "type": "symbol",
+   "label": "Ghayn (U+10A76)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a77",
+   "type": "symbol",
+   "label": "Teth (U+10A77)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a78",
+   "type": "symbol",
+   "label": "Zayn (U+10A78)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a79",
+   "type": "symbol",
+   "label": "Dhaleth (U+10A79)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a7a",
+   "type": "symbol",
+   "label": "Yodh (U+10A7A)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a7b",
+   "type": "symbol",
+   "label": "Thaw (U+10A7B)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10a7c",
+   "type": "symbol",
+   "label": "Theth (U+10A7C)",
+   "links": [
+    "symbolset:iron/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b60",
+   "type": "symbol",
+   "label": "Aleph (U+10B60)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b61",
+   "type": "symbol",
+   "label": "Beth (U+10B61)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b62",
+   "type": "symbol",
+   "label": "Gimel (U+10B62)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b63",
+   "type": "symbol",
+   "label": "Daleth (U+10B63)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b64",
+   "type": "symbol",
+   "label": "He (U+10B64)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b65",
+   "type": "symbol",
+   "label": "Waw-Ayin-Resh (U+10B65)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b66",
+   "type": "symbol",
+   "label": "Zayin (U+10B66)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b67",
+   "type": "symbol",
+   "label": "Heth (U+10B67)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b68",
+   "type": "symbol",
+   "label": "Teth (U+10B68)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b69",
+   "type": "symbol",
+   "label": "Yodh (U+10B69)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b6a",
+   "type": "symbol",
+   "label": "Kaph (U+10B6A)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b6b",
+   "type": "symbol",
+   "label": "Lamedh (U+10B6B)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b6c",
+   "type": "symbol",
+   "label": "Mem-Qoph (U+10B6C)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b6d",
+   "type": "symbol",
+   "label": "Nun (U+10B6D)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b6e",
+   "type": "symbol",
+   "label": "Samekh (U+10B6E)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b6f",
+   "type": "symbol",
+   "label": "Pe (U+10B6F)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b70",
+   "type": "symbol",
+   "label": "Sadhe (U+10B70)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b71",
+   "type": "symbol",
+   "label": "Shin (U+10B71)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10b72",
+   "type": "symbol",
+   "label": "Taw (U+10B72)",
+   "links": [
+    "symbolset:late/3"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c00",
+   "type": "symbol",
+   "label": "Old Turkic 10C00 (U+10C00)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c01",
+   "type": "symbol",
+   "label": "Old Turkic 10C01 (U+10C01)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c02",
+   "type": "symbol",
+   "label": "Old Turkic 10C02 (U+10C02)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c03",
+   "type": "symbol",
+   "label": "Old Turkic 10C03 (U+10C03)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c04",
+   "type": "symbol",
+   "label": "Old Turkic 10C04 (U+10C04)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c05",
+   "type": "symbol",
+   "label": "Old Turkic 10C05 (U+10C05)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c06",
+   "type": "symbol",
+   "label": "Old Turkic 10C06 (U+10C06)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c07",
+   "type": "symbol",
+   "label": "Old Turkic 10C07 (U+10C07)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c08",
+   "type": "symbol",
+   "label": "Old Turkic 10C08 (U+10C08)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c09",
+   "type": "symbol",
+   "label": "Old Turkic 10C09 (U+10C09)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c0a",
+   "type": "symbol",
+   "label": "Old Turkic 10C0A (U+10C0A)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c0c",
+   "type": "symbol",
+   "label": "Old Turkic 10C0C (U+10C0C)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c0d",
+   "type": "symbol",
+   "label": "Old Turkic 10C0D (U+10C0D)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c0e",
+   "type": "symbol",
+   "label": "Old Turkic 10C0E (U+10C0E)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c0f",
+   "type": "symbol",
+   "label": "Old Turkic 10C0F (U+10C0F)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c10",
+   "type": "symbol",
+   "label": "Old Turkic 10C10 (U+10C10)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c11",
+   "type": "symbol",
+   "label": "Old Turkic 10C11 (U+10C11)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c12",
+   "type": "symbol",
+   "label": "Old Turkic 10C12 (U+10C12)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c13",
+   "type": "symbol",
+   "label": "Old Turkic 10C13 (U+10C13)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c14",
+   "type": "symbol",
+   "label": "Old Turkic 10C14 (U+10C14)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c15",
+   "type": "symbol",
+   "label": "Old Turkic 10C15 (U+10C15)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c16",
+   "type": "symbol",
+   "label": "Old Turkic 10C16 (U+10C16)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c17",
+   "type": "symbol",
+   "label": "Old Turkic 10C17 (U+10C17)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c18",
+   "type": "symbol",
+   "label": "Old Turkic 10C18 (U+10C18)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c19",
+   "type": "symbol",
+   "label": "Old Turkic 10C19 (U+10C19)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c1a",
+   "type": "symbol",
+   "label": "Old Turkic 10C1A (U+10C1A)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c1c",
+   "type": "symbol",
+   "label": "Old Turkic 10C1C (U+10C1C)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c1d",
+   "type": "symbol",
+   "label": "Old Turkic 10C1D (U+10C1D)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c1e",
+   "type": "symbol",
+   "label": "Old Turkic 10C1E (U+10C1E)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c1f",
+   "type": "symbol",
+   "label": "Old Turkic 10C1F (U+10C1F)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c20",
+   "type": "symbol",
+   "label": "Old Turkic 10C20 (U+10C20)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c21",
+   "type": "symbol",
+   "label": "Old Turkic 10C21 (U+10C21)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c22",
+   "type": "symbol",
+   "label": "Old Turkic 10C22 (U+10C22)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c23",
+   "type": "symbol",
+   "label": "Old Turkic 10C23 (U+10C23)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c24",
+   "type": "symbol",
+   "label": "Old Turkic 10C24 (U+10C24)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c25",
+   "type": "symbol",
+   "label": "Old Turkic 10C25 (U+10C25)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c26",
+   "type": "symbol",
+   "label": "Old Turkic 10C26 (U+10C26)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c27",
+   "type": "symbol",
+   "label": "Old Turkic 10C27 (U+10C27)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c28",
+   "type": "symbol",
+   "label": "Old Turkic 10C28 (U+10C28)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c29",
+   "type": "symbol",
+   "label": "Old Turkic 10C29 (U+10C29)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c2a",
+   "type": "symbol",
+   "label": "Old Turkic 10C2A (U+10C2A)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c2b",
+   "type": "symbol",
+   "label": "Old Turkic 10C2B (U+10C2B)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c2c",
+   "type": "symbol",
+   "label": "Old Turkic 10C2C (U+10C2C)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c2d",
+   "type": "symbol",
+   "label": "Old Turkic 10C2D (U+10C2D)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c2e",
+   "type": "symbol",
+   "label": "Old Turkic 10C2E (U+10C2E)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c2f",
+   "type": "symbol",
+   "label": "Old Turkic 10C2F (U+10C2F)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c30",
+   "type": "symbol",
+   "label": "Old Turkic 10C30 (U+10C30)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c33",
+   "type": "symbol",
+   "label": "Old Turkic 10C33 (U+10C33)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c34",
+   "type": "symbol",
+   "label": "Old Turkic 10C34 (U+10C34)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c35",
+   "type": "symbol",
+   "label": "Old Turkic 10C35 (U+10C35)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c36",
+   "type": "symbol",
+   "label": "Old Turkic 10C36 (U+10C36)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c37",
+   "type": "symbol",
+   "label": "Old Turkic 10C37 (U+10C37)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c3a",
+   "type": "symbol",
+   "label": "Old Turkic 10C3A (U+10C3A)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c3b",
+   "type": "symbol",
+   "label": "Old Turkic 10C3B (U+10C3B)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c3d",
+   "type": "symbol",
+   "label": "Old Turkic 10C3D (U+10C3D)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c3e",
+   "type": "symbol",
+   "label": "Old Turkic 10C3E (U+10C3E)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c3f",
+   "type": "symbol",
+   "label": "Old Turkic 10C3F (U+10C3F)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c40",
+   "type": "symbol",
+   "label": "Old Turkic 10C40 (U+10C40)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c41",
+   "type": "symbol",
+   "label": "Old Turkic 10C41 (U+10C41)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c42",
+   "type": "symbol",
+   "label": "Old Turkic 10C42 (U+10C42)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c44",
+   "type": "symbol",
+   "label": "Old Turkic 10C44 (U+10C44)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c45",
+   "type": "symbol",
+   "label": "Old Turkic 10C45 (U+10C45)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c46",
+   "type": "symbol",
+   "label": "Old Turkic 10C46 (U+10C46)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c47",
+   "type": "symbol",
+   "label": "Old Turkic 10C47 (U+10C47)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10c48",
+   "type": "symbol",
+   "label": "Old Turkic 10C48 (U+10C48)",
+   "links": [
+    "symbolset:medieval/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f30",
+   "type": "symbol",
+   "label": "Sogdian 10F30 (U+10F30)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f31",
+   "type": "symbol",
+   "label": "Sogdian 10F31 (U+10F31)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f32",
+   "type": "symbol",
+   "label": "Sogdian 10F32 (U+10F32)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f33",
+   "type": "symbol",
+   "label": "Sogdian 10F33 (U+10F33)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f34",
+   "type": "symbol",
+   "label": "Sogdian 10F34 (U+10F34)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f35",
+   "type": "symbol",
+   "label": "Sogdian 10F35 (U+10F35)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f36",
+   "type": "symbol",
+   "label": "Sogdian 10F36 (U+10F36)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f37",
+   "type": "symbol",
+   "label": "Sogdian 10F37 (U+10F37)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f38",
+   "type": "symbol",
+   "label": "Sogdian 10F38 (U+10F38)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f39",
+   "type": "symbol",
+   "label": "Sogdian 10F39 (U+10F39)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f3a",
+   "type": "symbol",
+   "label": "Sogdian 10F3A (U+10F3A)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f3b",
+   "type": "symbol",
+   "label": "Sogdian 10F3B (U+10F3B)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f3c",
+   "type": "symbol",
+   "label": "Sogdian 10F3C (U+10F3C)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f3d",
+   "type": "symbol",
+   "label": "Sogdian 10F3D (U+10F3D)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f3e",
+   "type": "symbol",
+   "label": "Sogdian 10F3E (U+10F3E)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f3f",
+   "type": "symbol",
+   "label": "Sogdian 10F3F (U+10F3F)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f40",
+   "type": "symbol",
+   "label": "Sogdian 10F40 (U+10F40)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f41",
+   "type": "symbol",
+   "label": "Sogdian 10F41 (U+10F41)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f42",
+   "type": "symbol",
+   "label": "Sogdian 10F42 (U+10F42)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f43",
+   "type": "symbol",
+   "label": "Sogdian 10F43 (U+10F43)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-10f44",
+   "type": "symbol",
+   "label": "Sogdian 10F44 (U+10F44)",
+   "links": [
+    "symbolset:medieval/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11005",
+   "type": "symbol",
+   "label": "A (U+11005)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11006",
+   "type": "symbol",
+   "label": "Aa (U+11006)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11007",
+   "type": "symbol",
+   "label": "I (U+11007)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11008",
+   "type": "symbol",
+   "label": "Ii (U+11008)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11009",
+   "type": "symbol",
+   "label": "U (U+11009)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1100a",
+   "type": "symbol",
+   "label": "Uu (U+1100A)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1100b",
+   "type": "symbol",
+   "label": "Vocalic R (U+1100B)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1100c",
+   "type": "symbol",
+   "label": "Vocalic Rr (U+1100C)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1100d",
+   "type": "symbol",
+   "label": "Vocalic L (U+1100D)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1100e",
+   "type": "symbol",
+   "label": "Vocalic Ll (U+1100E)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1100f",
+   "type": "symbol",
+   "label": "E (U+1100F)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11010",
+   "type": "symbol",
+   "label": "Ai (U+11010)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11011",
+   "type": "symbol",
+   "label": "O (U+11011)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11012",
+   "type": "symbol",
+   "label": "Au (U+11012)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11013",
+   "type": "symbol",
+   "label": "Ka (U+11013)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11014",
+   "type": "symbol",
+   "label": "Kha (U+11014)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11015",
+   "type": "symbol",
+   "label": "Ga (U+11015)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11016",
+   "type": "symbol",
+   "label": "Gha (U+11016)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11017",
+   "type": "symbol",
+   "label": "Nga (U+11017)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11018",
+   "type": "symbol",
+   "label": "Ca (U+11018)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11019",
+   "type": "symbol",
+   "label": "Cha (U+11019)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1101a",
+   "type": "symbol",
+   "label": "Ja (U+1101A)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1101b",
+   "type": "symbol",
+   "label": "Jha (U+1101B)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1101c",
+   "type": "symbol",
+   "label": "Nya (U+1101C)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1101d",
+   "type": "symbol",
+   "label": "Tta (U+1101D)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1101e",
+   "type": "symbol",
+   "label": "Ttha (U+1101E)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1101f",
+   "type": "symbol",
+   "label": "Dda (U+1101F)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11020",
+   "type": "symbol",
+   "label": "Ddha (U+11020)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11021",
+   "type": "symbol",
+   "label": "Nna (U+11021)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11022",
+   "type": "symbol",
+   "label": "Ta (U+11022)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11023",
+   "type": "symbol",
+   "label": "Tha (U+11023)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11024",
+   "type": "symbol",
+   "label": "Da (U+11024)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11025",
+   "type": "symbol",
+   "label": "Dha (U+11025)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11026",
+   "type": "symbol",
+   "label": "Na (U+11026)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11027",
+   "type": "symbol",
+   "label": "Pa (U+11027)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11028",
+   "type": "symbol",
+   "label": "Pha (U+11028)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11029",
+   "type": "symbol",
+   "label": "Ba (U+11029)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1102a",
+   "type": "symbol",
+   "label": "Bha (U+1102A)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1102b",
+   "type": "symbol",
+   "label": "Ma (U+1102B)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1102c",
+   "type": "symbol",
+   "label": "Ya (U+1102C)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1102d",
+   "type": "symbol",
+   "label": "Ra (U+1102D)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1102e",
+   "type": "symbol",
+   "label": "La (U+1102E)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1102f",
+   "type": "symbol",
+   "label": "Va (U+1102F)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11030",
+   "type": "symbol",
+   "label": "Sha (U+11030)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11031",
+   "type": "symbol",
+   "label": "Ssa (U+11031)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11032",
+   "type": "symbol",
+   "label": "Sa (U+11032)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11033",
+   "type": "symbol",
+   "label": "Ha (U+11033)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-11034",
+   "type": "symbol",
+   "label": "Lla (U+11034)",
+   "links": [
+    "symbolset:axial/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-12079",
+   "type": "symbol",
+   "label": "Sign Dish (U+12079)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1222b",
+   "type": "symbol",
+   "label": "Sign Min (U+1222B)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1230b",
+   "type": "symbol",
+   "label": "Sign U (U+1230B)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1230d",
+   "type": "symbol",
+   "label": "Sign U U U (U+1230D)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-12399",
+   "type": "symbol",
+   "label": "Sign U U (U+12399)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-12408",
+   "type": "symbol",
+   "label": "Numeric Sign Three Dish (U+12408)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-12409",
+   "type": "symbol",
+   "label": "Numeric Sign Four Dish (U+12409)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1240a",
+   "type": "symbol",
+   "label": "Numeric Sign Five Dish (U+1240A)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1240b",
+   "type": "symbol",
+   "label": "Numeric Sign Six Dish (U+1240B)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1240c",
+   "type": "symbol",
+   "label": "Numeric Sign Seven Dish (U+1240C)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1240d",
+   "type": "symbol",
+   "label": "Numeric Sign Eight Dish (U+1240D)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1240e",
+   "type": "symbol",
+   "label": "Numeric Sign Nine Dish (U+1240E)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1240f",
+   "type": "symbol",
+   "label": "Numeric Sign Four U (U+1240F)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-12410",
+   "type": "symbol",
+   "label": "Numeric Sign Five U (U+12410)",
+   "links": [
+    "symbolset:bronze/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1308b",
+   "type": "symbol",
+   "label": "D21 (U+1308B)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1309d",
+   "type": "symbol",
+   "label": "D36 (U+1309D)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-130a7",
+   "type": "symbol",
+   "label": "D46 (U+130A7)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-130c0",
+   "type": "symbol",
+   "label": "D58 (U+130C0)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13121",
+   "type": "symbol",
+   "label": "F32 (U+13121)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1313f",
+   "type": "symbol",
+   "label": "G1 (U+1313F)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13153",
+   "type": "symbol",
+   "label": "G17 (U+13153)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13171",
+   "type": "symbol",
+   "label": "G43 (U+13171)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13191",
+   "type": "symbol",
+   "label": "I9 (U+13191)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13193",
+   "type": "symbol",
+   "label": "I10 (U+13193)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-131cb",
+   "type": "symbol",
+   "label": "M17 (U+131CB)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-131cc",
+   "type": "symbol",
+   "label": "M17A (U+131CC)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1320e",
+   "type": "symbol",
+   "label": "N29 (U+1320E)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13216",
+   "type": "symbol",
+   "label": "N35 (U+13216)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13219",
+   "type": "symbol",
+   "label": "N37 (U+13219)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13254",
+   "type": "symbol",
+   "label": "O4 (U+13254)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-13283",
+   "type": "symbol",
+   "label": "O34 (U+13283)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-132aa",
+   "type": "symbol",
+   "label": "Q3 (U+132AA)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-132f4",
+   "type": "symbol",
+   "label": "S29 (U+132F4)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1337f",
+   "type": "symbol",
+   "label": "V13 (U+1337F)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1339b",
+   "type": "symbol",
+   "label": "V28 (U+1339B)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-133a1",
+   "type": "symbol",
+   "label": "V31 (U+133A1)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-133bc",
+   "type": "symbol",
+   "label": "W11 (U+133BC)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-133cf",
+   "type": "symbol",
+   "label": "X1 (U+133CF)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1340d",
+   "type": "symbol",
+   "label": "Aa1 (U+1340D)",
+   "links": [
+    "symbolset:bronze/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1681",
+   "type": "symbol",
+   "label": "Beith (U+1681)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1682",
+   "type": "symbol",
+   "label": "Luis (U+1682)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1683",
+   "type": "symbol",
+   "label": "Fearn (U+1683)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1684",
+   "type": "symbol",
+   "label": "Sail (U+1684)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1685",
+   "type": "symbol",
+   "label": "Nion (U+1685)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1686",
+   "type": "symbol",
+   "label": "Uath (U+1686)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1687",
+   "type": "symbol",
+   "label": "Dair (U+1687)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1688",
+   "type": "symbol",
+   "label": "Tinne (U+1688)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1689",
+   "type": "symbol",
+   "label": "Coll (U+1689)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-168a",
+   "type": "symbol",
+   "label": "Ceirt (U+168A)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-168b",
+   "type": "symbol",
+   "label": "Muin (U+168B)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-168c",
+   "type": "symbol",
+   "label": "Gort (U+168C)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-168d",
+   "type": "symbol",
+   "label": "Ngeadal (U+168D)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-168e",
+   "type": "symbol",
+   "label": "Straif (U+168E)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-168f",
+   "type": "symbol",
+   "label": "Ruis (U+168F)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1690",
+   "type": "symbol",
+   "label": "Ailm (U+1690)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1691",
+   "type": "symbol",
+   "label": "Onn (U+1691)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1692",
+   "type": "symbol",
+   "label": "Ur (U+1692)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1693",
+   "type": "symbol",
+   "label": "Eadhadh (U+1693)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1694",
+   "type": "symbol",
+   "label": "Iodhadh (U+1694)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1695",
+   "type": "symbol",
+   "label": "Eabhadh (U+1695)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1696",
+   "type": "symbol",
+   "label": "Or (U+1696)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1697",
+   "type": "symbol",
+   "label": "Uilleann (U+1697)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1698",
+   "type": "symbol",
+   "label": "Ifin (U+1698)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-1699",
+   "type": "symbol",
+   "label": "Eamhancholl (U+1699)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-169a",
+   "type": "symbol",
+   "label": "Peith (U+169A)",
+   "links": [
+    "symbolset:late/2"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2630",
+   "type": "symbol",
+   "label": "Heaven (U+2630)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2631",
+   "type": "symbol",
+   "label": "Lake (U+2631)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2632",
+   "type": "symbol",
+   "label": "Fire (U+2632)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2633",
+   "type": "symbol",
+   "label": "Thunder (U+2633)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2634",
+   "type": "symbol",
+   "label": "Wind (U+2634)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2635",
+   "type": "symbol",
+   "label": "Water (U+2635)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2636",
+   "type": "symbol",
+   "label": "Mountain (U+2636)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2637",
+   "type": "symbol",
+   "label": "Earth (U+2637)",
+   "links": [
+    "symbolset:axial/4"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c80",
+   "type": "symbol",
+   "label": "Alfa (U+2C80)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c82",
+   "type": "symbol",
+   "label": "Vida (U+2C82)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c84",
+   "type": "symbol",
+   "label": "Gamma (U+2C84)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c86",
+   "type": "symbol",
+   "label": "Dalda (U+2C86)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c88",
+   "type": "symbol",
+   "label": "Eie (U+2C88)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c8a",
+   "type": "symbol",
+   "label": "Sou (U+2C8A)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c8c",
+   "type": "symbol",
+   "label": "Zata (U+2C8C)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c8e",
+   "type": "symbol",
+   "label": "Hate (U+2C8E)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c90",
+   "type": "symbol",
+   "label": "Thethe (U+2C90)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c92",
+   "type": "symbol",
+   "label": "Iauda (U+2C92)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c94",
+   "type": "symbol",
+   "label": "Kapa (U+2C94)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c96",
+   "type": "symbol",
+   "label": "Laula (U+2C96)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c98",
+   "type": "symbol",
+   "label": "Mi (U+2C98)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c9a",
+   "type": "symbol",
+   "label": "Ni (U+2C9A)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c9c",
+   "type": "symbol",
+   "label": "Ksi (U+2C9C)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2c9e",
+   "type": "symbol",
+   "label": "O (U+2C9E)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2ca0",
+   "type": "symbol",
+   "label": "Pi (U+2CA0)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2ca2",
+   "type": "symbol",
+   "label": "Ro (U+2CA2)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2ca4",
+   "type": "symbol",
+   "label": "Sima (U+2CA4)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2ca6",
+   "type": "symbol",
+   "label": "Tau (U+2CA6)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2ca8",
+   "type": "symbol",
+   "label": "Ua (U+2CA8)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2caa",
+   "type": "symbol",
+   "label": "Fi (U+2CAA)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2cac",
+   "type": "symbol",
+   "label": "Khi (U+2CAC)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2cae",
+   "type": "symbol",
+   "label": "Psi (U+2CAE)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbol:u-2cb0",
+   "type": "symbol",
+   "label": "Oou (U+2CB0)",
+   "links": [
+    "symbolset:late/1"
+   ],
+   "from": "tools/data/symbols.json"
+  }
+ ]
+}
