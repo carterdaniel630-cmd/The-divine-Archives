@@ -44,7 +44,7 @@
     {"id":"hattusa","name":"Hattusa","era":"02-bronze-age","label":"","chapters":["ch57"],"vault":[],"status":"queued"},
     {"id":"la-venta","name":"La Venta","era":"02-bronze-age","label":"","chapters":["ch76"],"vault":[],"status":"queued"},
     {"id":"solomon-s-temple","name":"Solomon's Temple","era":"03-early-iron-age","label":"R","chapters":["ch07","ch10","ch19"],"vault":["v07","v12","v23"],"status":"queued"},
-    {"id":"delphi","name":"Delphi","era":"03-early-iron-age","label":"","chapters":["ch08","ch15"],"vault":["v39"],"status":"queued"},
+    {"id":"delphi","name":"Delphi","era":"03-early-iron-age","label":"","chapters":["ch08","ch15"],"vault":["v39"],"status":"preview","pending":true,"place":"Phocis, central Greece, on the slope of Mount Parnassus","built":"temple rebuilt c. 330 BCE; shown as about 170 CE","blurb":"Climb the Sacred Way past the treasuries and the offerings of the cities, enter the Temple of Apollo to the room where the Pythia sat, and go up to the theatre and the stadium.","note":"The sizes of the temple, two treasuries, the theatre and the stadium come from published figures; where each building stands, the line of the Sacred Way (straightened here) and the inner rooms of the temple are approximate, and the statues and inscriptions are stand-ins;"},
     {"id":"mount-olympus","name":"Mount Olympus","era":"03-early-iron-age","label":"","chapters":["ch08","ch15"],"vault":[],"status":"queued"},
     {"id":"yinxu-at-anyang","name":"Yinxu at Anyang","era":"03-early-iron-age","label":"","chapters":["ch09","ch49"],"vault":["v55"],"status":"queued"},
     {"id":"meroe-pyramids","name":"Meroë pyramids","era":"03-early-iron-age","label":"","chapters":["ch68"],"vault":[],"status":"queued"},
