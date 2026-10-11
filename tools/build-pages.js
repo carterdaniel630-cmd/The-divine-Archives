@@ -466,6 +466,8 @@ ${FOOTER_ROOT}
 // ---------- 2c. the Pilgrimage: the list of sites, and one page per live site ----------
 // Data: docs/assets/pilgrimage-data.js. A "live" site gets docs/pilgrimage/<id>.html, a shell that
 // loads docs/pilgrimage/engine.js with the site's module (docs/pilgrimage/sites/<id>/site.js).
+// A "preview" site gets the same page (noindex) but stays off the menu: the list below shows it as
+// coming, unlinked, and the museum's gate (docs/museum/app.js) lists only "live" sites.
 const PILG = sandbox.window.PILGRIMAGE || { sites: [] };
 const LABELS = { R: ["Reconstruction", "Lost or destroyed: what you walk is a labelled reconstruction."], C: ["Claimed site", "A claimed or traditional site: the dispute over it is shown on site."], S: ["Exterior only", "Religiously restricted or sensitive: shown from outside only."] };
 function pilgrimageListPage() {
@@ -480,7 +482,7 @@ function pilgrimageListPage() {
     const chs = (s.chapters || []).map((id) => `<a href="chapters/${esc(id)}.html">${esc(chTitle(id))}</a>`).join(", ");
     const vs = (s.vault || []).map((id) => { const v = (VAULT.items || []).find((x) => x.id === id); return v ? `<a href="vault/${esc(v.slug)}.html">${esc(v.title)}</a>` : ""; }).filter(Boolean).join(", ");
     return `        <li class="pg-site${live ? " is-live" : ""}">${tags}<h3>${live ? `<a href="pilgrimage/${esc(s.id)}.html">${esc(s.name)}</a>` : esc(s.name)}</h3>` +
-      (s.blurb ? `<p>${esc(s.blurb)}</p>` : "") +
+      (s.blurb && live ? `<p>${esc(s.blurb)}</p>` : "") +
       (chs ? `<p class="pg-meta">Chapters: ${chs}</p>` : "") + (vs ? `<p class="pg-meta">Vault: ${vs}</p>` : "") +
       (live ? `<a class="pg-go" href="pilgrimage/${esc(s.id)}.html">Enter the site</a>` : "") + "</li>";
   };
@@ -741,7 +743,7 @@ const spChanged = writeIfChanged(path.join(DOCS, "search.html"), searchPage());
 // the Pilgrimage
 const pgChanged = writeIfChanged(path.join(DOCS, "pilgrimage.html"), pilgrimageListPage());
 let pgN = 0;
-for (const s of PILG.sites.filter((x) => x.status === "live")) { if (writeIfChanged(path.join(DOCS, "pilgrimage", s.id + ".html"), pilgrimageSitePage(s))) pgN++; }
+for (const s of PILG.sites.filter((x) => x.status === "live" || x.status === "preview")) { if (writeIfChanged(path.join(DOCS, "pilgrimage", s.id + ".html"), pilgrimageSitePage(s))) pgN++; }
 if (pgChanged || pgN) changed.push("pilgrimage (" + PILG.sites.filter((x) => x.status === "live").length + " live)");
 
 // sitemap
