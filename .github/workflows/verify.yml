@@ -18,6 +18,9 @@ on:
       - "docs/assets/pilgrimage-data.js"
       - "docs/museum/symbols/**"
       - "tools/data/symbols.json"
+      - "docs/museum/rituals.js"
+      - "sources/ritual-*.md"
+      - "reviews/cleared.json"
       - ".github/workflows/verify.yml"
   pull_request:
     paths:
@@ -30,6 +33,9 @@ on:
       - "docs/assets/pilgrimage-data.js"
       - "docs/museum/symbols/**"
       - "tools/data/symbols.json"
+      - "docs/museum/rituals.js"
+      - "sources/ritual-*.md"
+      - "reviews/cleared.json"
       - ".github/workflows/verify.yml"
   workflow_dispatch: {}
 
