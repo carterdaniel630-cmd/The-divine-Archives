@@ -30,7 +30,7 @@
     {"id":"lascaux","name":"Lascaux","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"chauvet","name":"Chauvet","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"catalhoyuk","name":"Çatalhöyük","era":"01-prehistory","label":"","chapters":["ch42","ch48"],"vault":["v59"],"status":"queued"},
-    {"id":"stonehenge","name":"Stonehenge","era":"01-prehistory","label":"","chapters":["ch42"],"vault":["v45"],"status":"queued"},
+    {"id":"stonehenge","name":"Stonehenge","era":"01-prehistory","label":"","chapters":["ch42"],"vault":["v45"],"status":"preview","pending":true,"place":"Salisbury Plain, Wiltshire, England","built":"c. 3000 – 1500 BCE, in stages","blurb":"Walk up the Avenue past the Heel Stone, cross the ditch of the henge, and go in among the stones: the sarsen circle and its lintels, the trilithon horseshoe, the bluestones and the Altar Stone, shown as the monument stands today.","note":"The layout and the main sizes come from published plans and figures; the place of each stone and the state of the ruin are simplified;"},
     {"id":"newgrange","name":"Newgrange","era":"01-prehistory","label":"","chapters":["ch42"],"vault":[],"status":"queued"},
     {"id":"drakensberg-rock-art","name":"Drakensberg rock art","era":"01-prehistory","label":"","chapters":["ch66"],"vault":[],"status":"queued"},
     {"id":"uluru","name":"Uluru","era":"01-prehistory","label":"S","chapters":["ch61"],"vault":[],"status":"queued"},
