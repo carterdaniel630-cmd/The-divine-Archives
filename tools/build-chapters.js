@@ -239,7 +239,7 @@ function pageFor(ch) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="canonical" href="${url}" />
+${SEO.fontTags()}  <link rel="canonical" href="${url}" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Divine Archives" />
   <meta property="og:title" content="${esc(fullTitle)}" />

@@ -23,6 +23,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs
+- Speed pass (branch `claude/project-thread-sn268z`): fonts linked from each page instead of an @import in
+  archive.css, Pantheon script fonts cut to the letters it uses, unused data files dropped from home/eras/themes,
+  new `fonts` review check. Waits for Carter's batch go-ahead.
 - None besides this docs sync. `claude/games-modern` (games + rituals Phase 1 plan) has no PR and waits
   for Carter's approval before any build.
 
