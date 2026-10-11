@@ -3,7 +3,9 @@
    A committed dark aesthetic: warm stone, parchment, antique gold.
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap");
+/* Web fonts (Cinzel, Cormorant Garamond, EB Garamond) are linked from each page's <head>, not
+   @imported here: an @import makes the browser wait for this file before it can even ask for them.
+   The link tags come from fontTags() in tools/seo.js. */
 
 :root {
   --ground:      #140d07;  /* warm candle-dark */

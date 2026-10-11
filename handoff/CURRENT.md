@@ -28,6 +28,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   - #40: framework Phases 1 and 2
   - #43: the Qumran and Alexandria walks are listed
   - #48: a distinct moveset for each god in Divine Casualties
+  - #46: speed pass (fonts load in parallel, lighter Pantheon and home; new `fonts` review check)
 
   #40 brought in:
   - the visitor ledger, kept in the browser only
@@ -46,12 +47,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
   and the reviewer passes it.
 - #44: one catalog for the twelve games (another thread).
-- #46: speed pass, with faster fonts and Pantheon (another thread).
 - #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
   needs Carter).
 - #50: clears the 14 reviewed chapters (another thread; Carter approved).
 - **Overlaps:**
-  - #46 and #49 both rebuild every chapter and Vault page.
   - #44 and #49 edit `symbols.html` script versions.
   - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
 

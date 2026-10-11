@@ -213,7 +213,7 @@ function head(title, desc, url, rel, type, extra, ogKey) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
-  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
+${SEO.fontTags()}  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
   <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=19" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />

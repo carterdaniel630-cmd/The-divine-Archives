@@ -8,6 +8,8 @@
                      when that card doesn't exist yet.
    - twitterCard(key): "summary_large_image" when the card exists, else "summary".
    - imageUrl(key):  the card's absolute URL, or null.
+   - fontTags():     the <head> tags that load the site's web fonts (Cinzel,
+                     Cormorant Garamond, EB Garamond), right after archive.css.
    ========================================================================== */
 "use strict";
 const fs = require("fs");
@@ -46,4 +48,17 @@ function shareTags(key, alt) {
   );
 }
 
-module.exports = { SITE, dates, shareTags, twitterCard, imageUrl };
+// The fonts used to be pulled in by an @import at the top of archive.css, which
+// made the browser fetch archive.css, then the font stylesheet, before it could
+// paint anything. Linking it from the page instead lets both start at once.
+const FONT_CSS = "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap";
+// The stylesheet stays render-blocking on purpose: loading it asynchronously was measured
+// (Lighthouse, mobile) and made long chapters lay out twice when the fonts swapped in.
+function fontTags() {
+  return (
+    `  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n` +
+    `  <link rel="stylesheet" href="${FONT_CSS}" />\n`
+  );
+}
+
+module.exports = { SITE, dates, shareTags, twitterCard, imageUrl, fontTags, FONT_CSS };
