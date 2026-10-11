@@ -1128,7 +1128,7 @@ function offerRituals(roomId) {
   });
 }
 function openRitual(slug) {
-  if (!ritualCode) ritualCode = Promise.all([loadScript("assets/framework/sequence-engine.js?v=1"), loadScript("assets/framework/ritual-player.js?v=1")]);
+  if (!ritualCode) ritualCode = Promise.all([loadScript("assets/framework/sequence-engine.js?v=1"), loadScript("assets/framework/ritual-player.js?v=2")]);
   Promise.all([ritualCode, fetch("assets/framework/rituals/" + slug + ".json", { cache: "no-cache" }).then((r) => r.json())])
     .then(([, ritual]) => {
       if ($("mu-card-wrap").hidden) return;

@@ -52,7 +52,7 @@
         (pending ? '<span class="mu-flag soft">Recently added · pending full review</span>' : "");
     }
     function sourcesLine(ids) {
-      return '<p class="rp-src">Source: ' + ids.map(function (id) { var s = srcById[id]; return s ? '<a href="' + esc(s.url) + '" rel="noopener" target="_blank">' + esc(s.cite) + "</a>" : ""; }).join("; ") + "</p>";
+      return '<p class="rp-src">Source: ' + ids.map(function (id) { var s = srcById[id]; return s ? '<a href="' + esc(s.url) + '" rel="noopener" target="_blank">' + esc(s.cite.replace(/[.\s]+$/, "")) + "</a>" : ""; }).filter(Boolean).join("; ") + ".</p>";
     }
 
     function intro() {
