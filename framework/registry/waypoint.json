@@ -1,6 +1,6 @@
 {
  "type": "waypoint",
- "count": 36,
+ "count": 65,
  "entities": [
   {
    "id": "waypoint:great-pyramid/ante",
@@ -289,6 +289,238 @@
    "parent": "site:great-pyramid",
    "href": "pilgrimage/great-pyramid.html",
    "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/aristeas",
+   "type": "waypoint",
+   "label": "The legend of the Seventy-Two",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/books",
+   "type": "waypoint",
+   "label": "What a book was, and how many there were",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/end",
+   "type": "waypoint",
+   "label": "How it ended: four stories",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/exedra",
+   "type": "waypoint",
+   "label": "The exedra with seats",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/house",
+   "type": "waypoint",
+   "label": "The large house and the common table",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/muses",
+   "type": "waypoint",
+   "label": "A shrine of the Muses, with a priest",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/strabo",
+   "type": "waypoint",
+   "label": "The one description: Strabo",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/v-board",
+   "type": "waypoint",
+   "label": "A library we cannot see",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/v-door",
+   "type": "waypoint",
+   "label": "To the Museum (reconstruction)",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/v-v53",
+   "type": "waypoint",
+   "label": "The Rosetta Stone",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:library-of-alexandria/where",
+   "type": "waypoint",
+   "label": "Where was it?",
+   "parent": "site:library-of-alexandria",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/c1-isaiah",
+   "type": "waypoint",
+   "label": "The Great Isaiah Scroll",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/c1-jar",
+   "type": "waypoint",
+   "label": "The Dead Sea Scrolls",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/c3-copper",
+   "type": "waypoint",
+   "label": "The Copper Scroll",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/c4-enoch",
+   "type": "waypoint",
+   "label": "Aramaic fragments of the Book of Enoch",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/c4b",
+   "type": "waypoint",
+   "label": "Chamber 4b",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/cave1",
+   "type": "waypoint",
+   "label": "Cave 1: where it began",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/cave3",
+   "type": "waypoint",
+   "label": "Cave 3",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/cave4",
+   "type": "waypoint",
+   "label": "Cave 4",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/holes",
+   "type": "waypoint",
+   "label": "The holes in the walls",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/khirbet",
+   "type": "waypoint",
+   "label": "Khirbet Qumran: who lived here?",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/looted",
+   "type": "waypoint",
+   "label": "The paths to Caves 1 and 3, and a twelfth cave",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/terrace",
+   "type": "waypoint",
+   "label": "The caves in the marl",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/v-board",
+   "type": "waypoint",
+   "label": "The Qumran caves",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/v-door",
+   "type": "waypoint",
+   "label": "To the terrace above Wadi Qumran",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/v-v49",
+   "type": "waypoint",
+   "label": "The Book of Enoch",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:qumran-caves/where",
+   "type": "waypoint",
+   "label": "Where the scrolls are now",
+   "parent": "site:qumran-caves",
+   "href": "pilgrimage/qumran-caves.html",
+   "from": "docs/pilgrimage/sites/qumran-caves/site.js"
   }
  ]
 }

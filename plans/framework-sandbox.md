@@ -23,22 +23,22 @@ All new files, plus one edit to `.github/workflows/lighthouse.yml` (Law 4). No f
 
 ## Law 1: the entity map and the real count
 
-**4,084 entities. The target is 10,000+, so the registry is short by 5,916.** These are counted
+**4,129 entities. The target is 10,000+, so the registry is short by 5,871.** These are counted
 from the repo, not estimated.
 
 | Type | Count | Read from | ID pattern |
 |---|---:|---|---|
-| source | 1,703 | every distinct URL in `sources/*.md`, linked to the chapters, Vault entries and sites that cite it | `source:<host>/<hash>` |
+| source | 1,719 | every distinct URL in `sources/*.md`, linked to the chapters, Vault entries and sites that cite it | `source:<host>/<hash>` |
 | section | 939 | the `<h2 id>` anchors in the prerendered chapter pages (the chapter text a ritual step can point to) | `section:ch02/<anchor>` |
 | symbol | 504 | distinct signs (by Unicode code point) on the museum's five symbol walls; 528 placements | `symbol:u-<codepoint>` |
 | figure | 199 | Pantheon figures | `figure:<id>` |
-| star | 176 | named stars in the planetarium (not the 20,176 unnamed catalogue stars) | `star:<name>` |
+| star | 177 | named stars in the planetarium (not the 20,176 unnamed catalogue stars) | `star:<name>` |
 | constellation | 88 | IAU constellations in the planetarium | `constellation:<abbr>` |
 | relic | 88 | Vault objects | `relic:v01` |
 | chapter | 83 | `docs/assets/data.js` | `chapter:ch01` |
 | room | 83 | museum rooms | `room:ch01` |
-| site | 72 | Pilgrimage sites (1 live, 71 queued; the arcade has its own page) | `site:<id>` |
-| waypoint | 36 | the Great Pyramid's info points (every one, checked against the file) | `waypoint:great-pyramid/<id>` |
+| site | 72 | Pilgrimage sites (1 live, 2 noindex previews, 69 queued; the hidden arcade is not in the list) | `site:<id>` |
+| waypoint | 65 | info points of the sites that have a module: Great Pyramid 36, Qumran 17, Library of Alexandria 12 (each checked against its file) | `waypoint:<site>/<id>` |
 | tradition | 30 | Pantheon traditions | `tradition:<key>` |
 | skylore | 18 | planetarium lore cards | `skylore:<id>` |
 | symbolset | 17 | sign sets on the symbol walls | `symbolset:<wall>/<n>` |
@@ -56,7 +56,7 @@ check every entry against the schema.
 - The 20,176 unnamed stars in the planetarium catalogue. They would put the count over 10,000,
   but they are catalogue rows, not things a visitor meets or the archive writes about.
 - The 74 URLs that appear only in a chapter's own Sources section and not in its log in
-  `sources/`. The originality baseline uses them (1,777 URLs in all); the registry reads the
+  `sources/`. The originality baseline uses them (1,793 URLs in all); the registry reads the
   logs only. Easy to add if Carter wants them counted.
 
 **What would honestly close the gap** (none of it is built; each needs a change to the site's
@@ -65,7 +65,7 @@ build, so Phase 2 or later, with approval):
    sections as its own entity. From the evidence section to the end of each chapter page there
    are 7,831 list items, which include the source lists, so the claims alone are fewer, likely
    in the low thousands. They need stable claim anchors written by `build-chapters.js` first.
-2. **Waypoints for the 71 queued Pilgrimage sites**, as each is built (the pyramid has 36).
+2. **Waypoints for the 69 queued Pilgrimage sites**, as each is built (the three built so far have 12–36 each).
 3. **Vault study pages** (IIIF canvases) and **museum objects** (`relics.js` renditions,
    symbol-wall placements).
 4. **Named people, places and texts** mentioned in chapters. This needs an index the archive
@@ -143,7 +143,7 @@ Open question: the votive candle is tier 1 in this brief but tier 2 in `plans/ga
 
 ## Law 3: the originality check, and what could not be fetched
 
-- **This sandbox could fetch none of the 1,777 cited pages.** Every request was refused by the
+- **This sandbox could fetch none of the cited pages (1,777 at the time; 1,793 after #36 and #39 merged).** Every request was refused by the
   sandbox's network, so locally every piece reports UNVERIFIED. That is the designed behaviour,
   not a pass.
 - The Originality workflow fetches the pages on GitHub's runners, where the web is open, and
@@ -170,7 +170,7 @@ a viewport check, and is unchanged.
 
 ## What is missing or held
 
-- **10,000 entities:** 4,084 today; see the list above for honest ways to grow it.
+- **10,000 entities:** 4,129 today; see the list above for honest ways to grow it.
 - **REVIEWER.md pointer:** the line saying the originality check catches copying only is
   drafted in `reviews/ORIGINALITY.md`. It goes into `REVIEWER.md` on approval (Phase 1 adds new
   files only).

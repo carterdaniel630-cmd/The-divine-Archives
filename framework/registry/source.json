@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1703,
+ "count": 1719,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -607,6 +607,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:archive-nyu-edu/75b1a0c8b7",
+   "type": "source",
+   "label": "https://archive.nyu.edu/handle/2451/28263",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:archive-org/0a186647de",
    "type": "source",
    "label": "https://archive.org/details/ecclesiasticalhi00johnuoft",
@@ -614,6 +623,15 @@
     "chapter:ch68"
    ],
    "from": "sources/ch68-nubia-kush.md"
+  },
+  {
+   "id": "source:archive-org/1ed9b5f6e6",
+   "type": "source",
+   "label": "https://archive.org/details/MILIKEnochInAramaicQumranCave4",
+   "links": [
+    "site:qumran-caves"
+   ],
+   "from": "sources/pilgrimage-qumran-caves.md"
   },
   {
    "id": "source:archive-org/481aaa6c83",
@@ -949,6 +967,15 @@
    "from": "sources/v79-zohar-mantua.md"
   },
   {
+   "id": "source:bibalex-org/12bfbeb0de",
+   "type": "source",
+   "label": "https://www.bibalex.org/libraries/Presentation/Static/15612.aspx",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:bible-usccb-org/b2e05fba02",
    "type": "source",
    "label": "https://bible.usccb.org/bible/2maccabees/2",
@@ -1031,6 +1058,15 @@
    "from": "sources/ch17-gnosticism.md"
   },
   {
+   "id": "source:biblicalarchaeology-org/367e7695d0",
+   "type": "source",
+   "label": "https://www.biblicalarchaeology.org/daily/news/new-dead-sea-scroll-cave/",
+   "links": [
+    "site:qumran-caves"
+   ],
+   "from": "sources/pilgrimage-qumran-caves.md"
+  },
+  {
    "id": "source:biblicalarchaeology-org/3cf53fcfcb",
    "type": "source",
    "label": "https://www.biblicalarchaeology.org/daily/biblical-topics/hebrew-bible/the-aleppo-codex/",
@@ -1083,6 +1119,15 @@
     "relic:v17"
    ],
    "from": "sources/v17-gospel-of-jesus-wife.md"
+  },
+  {
+   "id": "source:biblicalarchaeology-org/dc42480c85",
+   "type": "source",
+   "label": "https://www.biblicalarchaeology.org/daily/biblical-artifacts/dead-sea-scrolls/caves-and-contents-cave-4/",
+   "links": [
+    "site:qumran-caves"
+   ],
+   "from": "sources/pilgrimage-qumran-caves.md"
   },
   {
    "id": "source:biblicalarchaeology-org/e84df11b27",
@@ -1164,6 +1209,15 @@
     "relic:v76"
    ],
    "from": "sources/v76-bab-star-tablet.md"
+  },
+  {
+   "id": "source:bl-uk/040d4d79d7",
+   "type": "source",
+   "label": "http://www.bl.uk/onlinegallery/onlineex/apac/addorimss/b/019addor0001785u00000000.html",
+   "links": [
+    "chapter:ch82"
+   ],
+   "from": "sources/ch82-akbar-mughal-synthesis.md"
   },
   {
    "id": "source:bl-uk/36f4d5e2a3",
@@ -3471,6 +3525,15 @@
    "from": "sources/ch01-the-flood.md"
   },
   {
+   "id": "source:cojs-org/57c36bebcb",
+   "type": "source",
+   "label": "https://cojs.org/the_isaiah_scroll/",
+   "links": [
+    "site:qumran-caves"
+   ],
+   "from": "sources/pilgrimage-qumran-caves.md"
+  },
+  {
    "id": "source:colectivo-uloyola-es/707d066e3f",
    "type": "source",
    "label": "https://colectivo.uloyola.es/Record/T245088",
@@ -3691,9 +3754,10 @@
    "type": "source",
    "label": "https://www.deadseascrolls.org.il/",
    "links": [
-    "relic:v02"
+    "relic:v02",
+    "site:qumran-caves"
    ],
-   "from": "sources/v02-dead-sea-scrolls.md"
+   "from": "sources/pilgrimage-qumran-caves.md"
   },
   {
    "id": "source:deadseascrolls-org-il/1975e3159f",
@@ -8488,6 +8552,15 @@
    "from": "sources/ch28-scholasticism.md"
   },
   {
+   "id": "source:gospelstudies-org-uk/a91892f410",
+   "type": "source",
+   "label": "https://www.gospelstudies.org.uk/earlychurch/pdf/e-books/thackeray_h-st-j/letter-of-aristeas.pdf",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:gov-za/d73fe3dc0d",
    "type": "source",
    "label": "https://www.gov.za/about-sa/national-coat-arms",
@@ -9280,6 +9353,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:ils-unc-edu/db90f9048d",
+   "type": "source",
+   "label": "https://ils.unc.edu/dpr/path/alexandria/geography.htm",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:imj-org-il/ec0798af0a",
    "type": "source",
    "label": "https://www.imj.org.il/en/collections/226966-0",
@@ -9680,6 +9762,15 @@
     "chapter:ch73"
    ],
    "from": "sources/ch73-sabbateans-hasidism.md"
+  },
+  {
+   "id": "source:jewishencyclopedia-com/afd673765e",
+   "type": "source",
+   "label": "https://www.jewishencyclopedia.com/articles/1765-aristeas-letter-of",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
   },
   {
    "id": "source:jewishreviewofbooks-com/951df501e3",
@@ -10230,6 +10321,15 @@
     "relic:v49"
    ],
    "from": "sources/v49-book-of-enoch.md"
+  },
+  {
+   "id": "source:library-biblicalarchaeology-org/ca21f0a4ab",
+   "type": "source",
+   "label": "https://library.biblicalarchaeology.org/article/the-mysterious-copper-scroll",
+   "links": [
+    "site:qumran-caves"
+   ],
+   "from": "sources/pilgrimage-qumran-caves.md"
   },
   {
    "id": "source:library-britishmuseum-org/8841e56d38",
@@ -11204,6 +11304,15 @@
    "from": "sources/v40-gospel-of-judas.md"
   },
   {
+   "id": "source:nationalgeographic-com/988e8462ed",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/article/who-burned-library-of-alexandria-egypt",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:nationalgeographic-com/ab23d80769",
    "type": "source",
    "label": "https://www.nationalgeographic.com/culture/article/in-polynesia-tattoos-are-more-than-skin-deep",
@@ -11717,6 +11826,15 @@
    "from": "sources/ch46-creation.md"
   },
   {
+   "id": "source:open-edu/548c5270f7",
+   "type": "source",
+   "label": "https://www.open.edu/openlearn/history-the-arts/library-alexandria/content-section-2.1",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:open-foundation-org/418571296f",
    "type": "source",
    "label": "https://open-foundation.org/revisiting-wassons-soma-exploring-the-effects-of-preparation-on-the-chemistry-of-amanita-muscaria-2/",
@@ -11769,6 +11887,15 @@
     "chapter:ch71"
    ],
    "from": "sources/ch71-korea.md"
+  },
+  {
+   "id": "source:orion-bibliography-huji-ac-il/8c57c41284",
+   "type": "source",
+   "label": "https://orion-bibliography.huji.ac.il/orion_editor/node/104819",
+   "links": [
+    "site:qumran-caves"
+   ],
+   "from": "sources/pilgrimage-qumran-caves.md"
   },
   {
    "id": "source:orion-huji-ac-il/71ec071a33",
@@ -13157,15 +13284,6 @@
    "from": "sources/ch45-pistis-sophia.md"
   },
   {
-   "id": "source:searcharchives-bl-uk/ef0737c44d",
-   "type": "source",
-   "label": "https://searcharchives.bl.uk/catalog/040-003047547",
-   "links": [
-    "chapter:ch82"
-   ],
-   "from": "sources/ch82-akbar-mughal-synthesis.md"
-  },
-  {
    "id": "source:sefaria-org/3ac62de917",
    "type": "source",
    "label": "https://www.sefaria.org/Sefer_Yetzirah",
@@ -14364,6 +14482,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:ucl-ac-uk/345be077e9",
+   "type": "source",
+   "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/museum/museum3.html",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
    "id": "source:ucpress-edu/78ed98f408",
    "type": "source",
    "label": "https://www.ucpress.edu/books/ancient-egyptian-literature/paper",
@@ -14596,6 +14723,15 @@
     "chapter:ch81"
    ],
    "from": "sources/ch81-tengri-mongols.md"
+  },
+  {
+   "id": "source:websites-uta-edu/9a33221883",
+   "type": "source",
+   "label": "https://websites.uta.edu/hunnicut/reading-list/readings-western-civilization/strabo-description-of-alexandria",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
   },
   {
    "id": "source:weekly-israelbiblecenter-com/0efaffa4c4",
@@ -15151,6 +15287,15 @@
     "chapter:ch79"
    ],
    "from": "sources/ch79-first-christian-kingdoms.md"
+  },
+  {
+   "id": "source:worldhistory-org/d9a0506d49",
+   "type": "source",
+   "label": "https://www.worldhistory.org/Callimachus_of_Cyrene/",
+   "links": [
+    "site:library-of-alexandria"
+   ],
+   "from": "sources/pilgrimage-library-of-alexandria.md"
   },
   {
    "id": "source:worldhistory-org/dcd6a07e74",
