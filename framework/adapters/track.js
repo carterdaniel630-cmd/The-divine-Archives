@@ -12,8 +12,9 @@
    - <script ... data-entity="chapter:ch02"> records one "viewed" for that page.
    - The Pantheon's own script reports each figure it opens (figure:<id>).
    - Once per browser, the games' old high-score lists (da.games.score.<id>) are
-     copied in as "scored" events marked {via: "import"}. The old lists are left
-     as they are; the games still read them.
+     copied in as "scored" events marked {via: "import"}: only scores set before the
+     tracker first ran here (da.ledger.since), since later ones were recorded live.
+     The old lists are left as they are; the games still read them.
 
    Everything stays in this browser's localStorage. Nothing is sent anywhere.
    ========================================================================== */
@@ -37,8 +38,12 @@
   window.__archiveQ = [];
   if (q && q.length) q.forEach(record);
 
-  // Old high scores, copied once per game.
+  // Old high scores, copied once per game. Only scores set before this browser first ran the
+  // tracker count as old: later ones were already recorded live (as "scored"), so copying them
+  // again would count them twice.
   try {
+    var since = parseInt(localStorage.getItem("da.ledger.since") || "", 10);
+    if (!(since > 0)) { since = Date.now(); localStorage.setItem("da.ledger.since", String(since)); }
     var imported = {};
     L.events().forEach(function (e) { if (e.payload && e.payload.via === "import") imported[e.entity] = 1; });
     var keys = []; // snapshot first: adding events to storage would shift the key order mid-loop
@@ -49,7 +54,7 @@
       var list = JSON.parse(localStorage.getItem(k) || "[]");
       if (!Array.isArray(list)) return;
       list.forEach(function (s) {
-        if (s && typeof s.score === "number" && isFinite(s.score)) {
+        if (s && typeof s.score === "number" && isFinite(s.score) && !(typeof s.at === "number" && s.at >= since)) {
           record({ entity: "game:" + m[1], verb: "scored", payload: { value: s.score, via: "import", at: typeof s.at === "number" ? s.at : undefined } });
         }
       });

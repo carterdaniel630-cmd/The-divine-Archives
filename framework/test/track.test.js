@@ -67,3 +67,17 @@ test("loads once: a second copy on the page does nothing", () => {
   b.run(); b.run();
   assert.strictEqual(b.ledger().length, 1);
 });
+
+test("a score set after the tracker arrived is not copied again as an old score", () => {
+  const b = browser();
+  b.run(); // first page load: nothing to import, the start time is stored
+  const since = Number(b.store.get("da.ledger.since"));
+  assert.ok(since > 0);
+  // a game is played: the score is recorded live and the game saves its own list, as archive-games.js does
+  b.window.__archiveTrack.record({ entity: "game:pong", verb: "scored", payload: { value: 9 } });
+  b.store.set("da.games.score.pong", JSON.stringify([{ score: 9, at: since + 1000 }]));
+  const again = browser(Object.fromEntries(b.store));
+  again.run(); // next page load
+  const pong = again.ledger().filter((e) => e.entity === "game:pong" && e.verb === "scored");
+  assert.strictEqual(pong.length, 1, "the live score only, no imported copy");
+});

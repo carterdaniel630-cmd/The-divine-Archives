@@ -86,3 +86,14 @@ test("a reference that names the source does exempt the quote", () => {
     assert.strictEqual(r.status, "PASS", ref);
   }
 });
+
+test("pages that were rate-limited before are retried, even when the old report has no transient flag", () => {
+  const report = path.join(tmp, "_report.json"); // the builder keeps its report next to the shingles folder
+  const url = "http://127.0.0.1:9/rate-limited-page";
+  fs.writeFileSync(report, JSON.stringify({ failed: { [url]: { reason: "HTTP 429", tries: 2 } } }));
+  const f = path.join(tmp, "cites.md");
+  fs.writeFileSync(f, "# A piece\n\n## Sources\n- [Somewhere](" + url + ")\n");
+  spawnSync(process.execPath, [path.join(ROOT, "tools", "build-originality-baseline.js"), f, "--timeout", "2000"], { env: Object.assign({}, process.env, { GITHUB_ACTIONS: "" }), encoding: "utf8" });
+  const after = JSON.parse(fs.readFileSync(report, "utf8"));
+  assert.strictEqual(after.failed[url].tries, 3, "the page was tried again");
+});
