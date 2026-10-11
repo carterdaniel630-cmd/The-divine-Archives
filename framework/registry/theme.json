@@ -1,0 +1,76 @@
+{
+ "type": "theme",
+ "count": 8,
+ "entities": [
+  {
+   "id": "theme:creation",
+   "type": "theme",
+   "label": "Creation & the First Order",
+   "links": [
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:sacred-kingship",
+   "type": "theme",
+   "label": "Sacred Kingship",
+   "links": [
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:sacrifice",
+   "type": "theme",
+   "label": "Sacrifice & the Scapegoat",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:the-apocalypse",
+   "type": "theme",
+   "label": "The End of Days",
+   "links": [
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:the-flood",
+   "type": "theme",
+   "label": "The Flood",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:the-great-goddess",
+   "type": "theme",
+   "label": "The Great Goddess",
+   "links": [
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:the-returning-god",
+   "type": "theme",
+   "label": "The Dying & Returning God",
+   "status": "planned",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "theme:the-underworld",
+   "type": "theme",
+   "label": "The Underworld",
+   "links": [
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/data.js"
+  }
+ ]
+}

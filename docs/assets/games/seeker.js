@@ -85,6 +85,7 @@
       var hit = cl.answers.some(function (a) { a = norm(a); return g === a || g.indexOf(a) >= 0; });
       if (hit) {
         cur += 1; save(cur);
+        AG.record("unlocked", "seeker", { step: cur });
         fb.className = "sk-feedback ok"; fb.textContent = "The gate opens.";
         var stage2 = root.querySelector(".sk-clue"); if (stage2) stage2.classList.add("sk-open");
         setTimeout(function () { if (cur >= clues.length) finish(); else stage(); }, 750);
@@ -98,6 +99,7 @@
 
     function finish() {
       save(clues.length);
+      AG.finish("seeker", { steps: clues.length });
       root.innerHTML =
         head("The Path is Walked") +
         '<div class="game-rule" role="presentation"></div>' +

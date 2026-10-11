@@ -1,0 +1,1599 @@
+{
+ "type": "star",
+ "count": 177,
+ "entities": [
+  {
+   "id": "star:acamar",
+   "type": "star",
+   "label": "Acamar",
+   "links": [
+    "constellation:eri"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:achernar",
+   "type": "star",
+   "label": "Achernar",
+   "links": [
+    "constellation:eri"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:acrab",
+   "type": "star",
+   "label": "Acrab",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:acrux",
+   "type": "star",
+   "label": "Acrux",
+   "links": [
+    "constellation:cru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:adhara",
+   "type": "star",
+   "label": "Adhara",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:al-zara",
+   "type": "star",
+   "label": "Al Zara",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:albaldah",
+   "type": "star",
+   "label": "Albaldah",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:albireo",
+   "type": "star",
+   "label": "Albireo",
+   "links": [
+    "constellation:cyg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alcyone",
+   "type": "star",
+   "label": "Alcyone",
+   "links": [
+    "constellation:tau"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:aldebaran",
+   "type": "star",
+   "label": "Aldebaran",
+   "links": [
+    "constellation:tau"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alderamin",
+   "type": "star",
+   "label": "Alderamin",
+   "links": [
+    "constellation:cep"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:aldhanab",
+   "type": "star",
+   "label": "Aldhanab",
+   "links": [
+    "constellation:gru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:aldhibah",
+   "type": "star",
+   "label": "Aldhibah",
+   "links": [
+    "constellation:dra"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:algenib",
+   "type": "star",
+   "label": "Algenib",
+   "links": [
+    "constellation:peg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:algenubi",
+   "type": "star",
+   "label": "Algenubi",
+   "links": [
+    "constellation:leo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:algieba",
+   "type": "star",
+   "label": "Algieba",
+   "links": [
+    "constellation:leo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:algol",
+   "type": "star",
+   "label": "Algol",
+   "links": [
+    "constellation:per"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:algorab",
+   "type": "star",
+   "label": "Algorab",
+   "links": [
+    "constellation:crv"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alhena",
+   "type": "star",
+   "label": "Alhena",
+   "links": [
+    "constellation:gem"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alioth",
+   "type": "star",
+   "label": "Alioth",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:aljanah",
+   "type": "star",
+   "label": "Aljanah",
+   "links": [
+    "constellation:cyg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alkaid",
+   "type": "star",
+   "label": "Alkaid",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:almaaz",
+   "type": "star",
+   "label": "Almaaz",
+   "links": [
+    "constellation:aur"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:almach",
+   "type": "star",
+   "label": "Almach",
+   "links": [
+    "constellation:and"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alnair-cen",
+   "type": "star",
+   "label": "Alnair",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alnair-gru",
+   "type": "star",
+   "label": "Alnair",
+   "links": [
+    "constellation:gru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alnasl",
+   "type": "star",
+   "label": "Alnasl",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alnilam",
+   "type": "star",
+   "label": "Alnilam",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alnitak",
+   "type": "star",
+   "label": "Alnitak",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alniyat",
+   "type": "star",
+   "label": "Alniyat",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alphard",
+   "type": "star",
+   "label": "Alphard",
+   "links": [
+    "constellation:hya"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alphecca",
+   "type": "star",
+   "label": "Alphecca",
+   "links": [
+    "constellation:crb"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alpheratz",
+   "type": "star",
+   "label": "Alpheratz",
+   "links": [
+    "constellation:and"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:alsephina",
+   "type": "star",
+   "label": "Alsephina",
+   "links": [
+    "constellation:vel"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:altair",
+   "type": "star",
+   "label": "Altair",
+   "links": [
+    "constellation:aql"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:altais",
+   "type": "star",
+   "label": "Altais",
+   "links": [
+    "constellation:dra"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:aludra",
+   "type": "star",
+   "label": "Aludra",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:ankaa",
+   "type": "star",
+   "label": "Ankaa",
+   "links": [
+    "constellation:phe"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:antares",
+   "type": "star",
+   "label": "Antares",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:arcturus",
+   "type": "star",
+   "label": "Arcturus",
+   "links": [
+    "constellation:boo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:arneb",
+   "type": "star",
+   "label": "Arneb",
+   "links": [
+    "constellation:lep"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:ascella",
+   "type": "star",
+   "label": "Ascella",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:aspidiske",
+   "type": "star",
+   "label": "Aspidiske",
+   "links": [
+    "constellation:car"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:athebyne",
+   "type": "star",
+   "label": "Athebyne",
+   "links": [
+    "constellation:dra"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:atik",
+   "type": "star",
+   "label": "Atik",
+   "links": [
+    "constellation:per"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:atria",
+   "type": "star",
+   "label": "Atria",
+   "links": [
+    "constellation:tra"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:avior",
+   "type": "star",
+   "label": "Avior",
+   "links": [
+    "constellation:car"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:bellatrix",
+   "type": "star",
+   "label": "Bellatrix",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:betelgeuse",
+   "type": "star",
+   "label": "Betelgeuse",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:canopus",
+   "type": "star",
+   "label": "Canopus",
+   "links": [
+    "constellation:car"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:capella",
+   "type": "star",
+   "label": "Capella",
+   "links": [
+    "constellation:aur"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:caph",
+   "type": "star",
+   "label": "Caph",
+   "links": [
+    "constellation:cas"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:castor",
+   "type": "star",
+   "label": "Castor",
+   "links": [
+    "constellation:gem"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:cebalrai",
+   "type": "star",
+   "label": "Cebalrai",
+   "links": [
+    "constellation:oph"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:choo",
+   "type": "star",
+   "label": "Choo",
+   "links": [
+    "constellation:ara"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:cor-caroli",
+   "type": "star",
+   "label": "Cor Caroli",
+   "links": [
+    "constellation:cvn"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:cursa",
+   "type": "star",
+   "label": "Cursa",
+   "links": [
+    "constellation:eri"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:dabih",
+   "type": "star",
+   "label": "Dabih",
+   "links": [
+    "constellation:cap"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:deneb",
+   "type": "star",
+   "label": "Deneb",
+   "links": [
+    "constellation:cyg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:deneb-algedi",
+   "type": "star",
+   "label": "Deneb Algedi",
+   "links": [
+    "constellation:cap"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:denebola",
+   "type": "star",
+   "label": "Denebola",
+   "links": [
+    "constellation:leo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:diphda",
+   "type": "star",
+   "label": "Diphda",
+   "links": [
+    "constellation:cet"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:dschubba",
+   "type": "star",
+   "label": "Dschubba",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:dubhe",
+   "type": "star",
+   "label": "Dubhe",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:elnath",
+   "type": "star",
+   "label": "Elnath",
+   "links": [
+    "constellation:tau"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:eltanin",
+   "type": "star",
+   "label": "Eltanin",
+   "links": [
+    "constellation:dra"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:enif",
+   "type": "star",
+   "label": "Enif",
+   "links": [
+    "constellation:peg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:fang",
+   "type": "star",
+   "label": "Fang",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:fawaris",
+   "type": "star",
+   "label": "Fawaris",
+   "links": [
+    "constellation:cyg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:fomalhaut",
+   "type": "star",
+   "label": "Fomalhaut",
+   "links": [
+    "constellation:psa"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:furud",
+   "type": "star",
+   "label": "Furud",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:fuyue",
+   "type": "star",
+   "label": "Fuyue",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:gacrux",
+   "type": "star",
+   "label": "Gacrux",
+   "links": [
+    "constellation:cru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:gienah",
+   "type": "star",
+   "label": "Gienah",
+   "links": [
+    "constellation:crv"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:girtab",
+   "type": "star",
+   "label": "Girtab",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:gomeisa",
+   "type": "star",
+   "label": "Gomeisa",
+   "links": [
+    "constellation:cmi"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:hadar",
+   "type": "star",
+   "label": "Hadar",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:haedus",
+   "type": "star",
+   "label": "Haedus",
+   "links": [
+    "constellation:aur"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:hamal",
+   "type": "star",
+   "label": "Hamal",
+   "links": [
+    "constellation:ari"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:hamalwarid",
+   "type": "star",
+   "label": "Hamalwarid",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:hassaleh",
+   "type": "star",
+   "label": "Hassaleh",
+   "links": [
+    "constellation:aur"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:hatysa",
+   "type": "star",
+   "label": "Hatysa",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:imai",
+   "type": "star",
+   "label": "Imai",
+   "links": [
+    "constellation:cru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:izar",
+   "type": "star",
+   "label": "Izar",
+   "links": [
+    "constellation:boo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kaus-australis",
+   "type": "star",
+   "label": "Kaus Australis",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kaus-borealis",
+   "type": "star",
+   "label": "Kaus Borealis",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kaus-media",
+   "type": "star",
+   "label": "Kaus Media",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:ke-kwan",
+   "type": "star",
+   "label": "Ke Kwan",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kekouan",
+   "type": "star",
+   "label": "KeKouan",
+   "links": [
+    "constellation:lup"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kochab",
+   "type": "star",
+   "label": "Kochab",
+   "links": [
+    "constellation:umi"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kornephoros",
+   "type": "star",
+   "label": "Kornephoros",
+   "links": [
+    "constellation:her"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:kraz",
+   "type": "star",
+   "label": "Kraz",
+   "links": [
+    "constellation:crv"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:larawag",
+   "type": "star",
+   "label": "Larawag",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:lesath",
+   "type": "star",
+   "label": "Lesath",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mahasim",
+   "type": "star",
+   "label": "Mahasim",
+   "links": [
+    "constellation:aur"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:markab",
+   "type": "star",
+   "label": "Markab",
+   "links": [
+    "constellation:peg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:markeb",
+   "type": "star",
+   "label": "Markeb",
+   "links": [
+    "constellation:vel"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:matar",
+   "type": "star",
+   "label": "Matar",
+   "links": [
+    "constellation:peg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mebsuta",
+   "type": "star",
+   "label": "Mebsuta",
+   "links": [
+    "constellation:gem"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:men",
+   "type": "star",
+   "label": "Men",
+   "links": [
+    "constellation:lup"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:menkalinan",
+   "type": "star",
+   "label": "Menkalinan",
+   "links": [
+    "constellation:aur"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:menkar",
+   "type": "star",
+   "label": "Menkar",
+   "links": [
+    "constellation:cet"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:menkent",
+   "type": "star",
+   "label": "Menkent",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:merak",
+   "type": "star",
+   "label": "Merak",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:miaplacidus",
+   "type": "star",
+   "label": "Miaplacidus",
+   "links": [
+    "constellation:car"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mimosa",
+   "type": "star",
+   "label": "Mimosa",
+   "links": [
+    "constellation:cru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:minkar",
+   "type": "star",
+   "label": "Minkar",
+   "links": [
+    "constellation:crv"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mintaka",
+   "type": "star",
+   "label": "Mintaka",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mirach",
+   "type": "star",
+   "label": "Mirach",
+   "links": [
+    "constellation:and"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mirfak",
+   "type": "star",
+   "label": "Mirfak",
+   "links": [
+    "constellation:per"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mirzam",
+   "type": "star",
+   "label": "Mirzam",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mizan",
+   "type": "star",
+   "label": "Mizan",
+   "links": [
+    "constellation:tri"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mizar",
+   "type": "star",
+   "label": "Mizar",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:muhlifain",
+   "type": "star",
+   "label": "Muhlifain",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:mula",
+   "type": "star",
+   "label": "Mula",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:muphrid",
+   "type": "star",
+   "label": "Muphrid",
+   "links": [
+    "constellation:boo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:namalsadirah",
+   "type": "star",
+   "label": "Namalsadirah",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:naos",
+   "type": "star",
+   "label": "Naos",
+   "links": [
+    "constellation:pup"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:navi",
+   "type": "star",
+   "label": "Navi",
+   "links": [
+    "constellation:cas"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:nihal",
+   "type": "star",
+   "label": "Nihal",
+   "links": [
+    "constellation:lep"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:nunki",
+   "type": "star",
+   "label": "Nunki",
+   "links": [
+    "constellation:sgr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:okab",
+   "type": "star",
+   "label": "Okab",
+   "links": [
+    "constellation:aql"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:paikauhale",
+   "type": "star",
+   "label": "Paikauhale",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:peacock",
+   "type": "star",
+   "label": "Peacock",
+   "links": [
+    "constellation:pav"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:persian",
+   "type": "star",
+   "label": "Persian",
+   "links": [
+    "constellation:ind"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:phact",
+   "type": "star",
+   "label": "Phact",
+   "links": [
+    "constellation:col"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:phecda",
+   "type": "star",
+   "label": "Phecda",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:pherkad",
+   "type": "star",
+   "label": "Pherkad",
+   "links": [
+    "constellation:umi"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:polaris",
+   "type": "star",
+   "label": "Polaris",
+   "links": [
+    "constellation:umi"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:pollux",
+   "type": "star",
+   "label": "Pollux",
+   "links": [
+    "constellation:gem"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:porrima",
+   "type": "star",
+   "label": "Porrima",
+   "links": [
+    "constellation:vir"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:procyon",
+   "type": "star",
+   "label": "Procyon",
+   "links": [
+    "constellation:cmi"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:rasalgethi",
+   "type": "star",
+   "label": "Rasalgethi",
+   "links": [
+    "constellation:her"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:rasalhague",
+   "type": "star",
+   "label": "Rasalhague",
+   "links": [
+    "constellation:oph"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:rastaban",
+   "type": "star",
+   "label": "Rastaban",
+   "links": [
+    "constellation:dra"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:regor",
+   "type": "star",
+   "label": "Regor",
+   "links": [
+    "constellation:vel"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:regulus",
+   "type": "star",
+   "label": "Regulus",
+   "links": [
+    "constellation:leo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:rigel",
+   "type": "star",
+   "label": "Rigel",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:rigil-kentaurus",
+   "type": "star",
+   "label": "Rigil Kentaurus",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:ruchbah",
+   "type": "star",
+   "label": "Ruchbah",
+   "links": [
+    "constellation:cas"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:rutilicus",
+   "type": "star",
+   "label": "Rutilicus",
+   "links": [
+    "constellation:her"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sabik",
+   "type": "star",
+   "label": "Sabik",
+   "links": [
+    "constellation:oph"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sadalmelik",
+   "type": "star",
+   "label": "Sadalmelik",
+   "links": [
+    "constellation:aqr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sadalsuud",
+   "type": "star",
+   "label": "Sadalsuud",
+   "links": [
+    "constellation:aqr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sadr",
+   "type": "star",
+   "label": "Sadr",
+   "links": [
+    "constellation:cyg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:saik",
+   "type": "star",
+   "label": "Saik",
+   "links": [
+    "constellation:oph"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:saiph",
+   "type": "star",
+   "label": "Saiph",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sargas",
+   "type": "star",
+   "label": "Sargas",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sarin",
+   "type": "star",
+   "label": "Sarin",
+   "links": [
+    "constellation:her"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:scheat",
+   "type": "star",
+   "label": "Scheat",
+   "links": [
+    "constellation:peg"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:seginus",
+   "type": "star",
+   "label": "Seginus",
+   "links": [
+    "constellation:boo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:shaula",
+   "type": "star",
+   "label": "Shaula",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:shedar",
+   "type": "star",
+   "label": "Shedar",
+   "links": [
+    "constellation:cas"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sheratan",
+   "type": "star",
+   "label": "Sheratan",
+   "links": [
+    "constellation:ari"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:sirius",
+   "type": "star",
+   "label": "Sirius",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:spica",
+   "type": "star",
+   "label": "Spica",
+   "links": [
+    "constellation:vir"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:suhail",
+   "type": "star",
+   "label": "Suhail",
+   "links": [
+    "constellation:vel"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tabit",
+   "type": "star",
+   "label": "Tabit",
+   "links": [
+    "constellation:ori"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:talitha",
+   "type": "star",
+   "label": "Talitha",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tania-australis",
+   "type": "star",
+   "label": "Tania Australis",
+   "links": [
+    "constellation:uma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tarazed",
+   "type": "star",
+   "label": "Tarazed",
+   "links": [
+    "constellation:aql"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tejat",
+   "type": "star",
+   "label": "Tejat",
+   "links": [
+    "constellation:gem"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tiaki",
+   "type": "star",
+   "label": "Tiaki",
+   "links": [
+    "constellation:gru"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tianguan",
+   "type": "star",
+   "label": "Tianguan",
+   "links": [
+    "constellation:tau"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:toliman",
+   "type": "star",
+   "label": "Toliman",
+   "links": [
+    "constellation:cen"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:tureis",
+   "type": "star",
+   "label": "Tureis",
+   "links": [
+    "constellation:pup"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:unukalhai",
+   "type": "star",
+   "label": "Unukalhai",
+   "links": [
+    "constellation:ser"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:vega",
+   "type": "star",
+   "label": "Vega",
+   "links": [
+    "constellation:lyr"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:vindemiatrix",
+   "type": "star",
+   "label": "Vindemiatrix",
+   "links": [
+    "constellation:vir"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:wazn",
+   "type": "star",
+   "label": "Wazn",
+   "links": [
+    "constellation:col"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:wezen",
+   "type": "star",
+   "label": "Wezen",
+   "links": [
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:xamidimura",
+   "type": "star",
+   "label": "Xamidimura",
+   "links": [
+    "constellation:sco"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:yed-prior",
+   "type": "star",
+   "label": "Yed Prior",
+   "links": [
+    "constellation:oph"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:zaurak",
+   "type": "star",
+   "label": "Zaurak",
+   "links": [
+    "constellation:eri"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:zosma",
+   "type": "star",
+   "label": "Zosma",
+   "links": [
+    "constellation:leo"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:zubenelgenubi",
+   "type": "star",
+   "label": "Zubenelgenubi",
+   "links": [
+    "constellation:lib"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "star:zubeneschamali",
+   "type": "star",
+   "label": "Zubeneschamali",
+   "links": [
+    "constellation:lib"
+   ],
+   "from": "docs/museum/sky.json"
+  }
+ ]
+}
