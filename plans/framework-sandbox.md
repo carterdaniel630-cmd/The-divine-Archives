@@ -32,7 +32,7 @@ from the repo, not estimated.
 | section | 939 | the `<h2 id>` anchors in the prerendered chapter pages (the chapter text a ritual step can point to) | `section:ch02/<anchor>` |
 | symbol | 504 | distinct signs (by Unicode code point) on the museum's five symbol walls; 528 placements | `symbol:u-<codepoint>` |
 | figure | 199 | Pantheon figures | `figure:<id>` |
-| star | 177 | named stars in the planetarium (not the 20,176 unnamed catalogue stars) | `star:<name>` |
+| star | 177 | named stars in the planetarium (not the 4,867 unnamed catalogue stars) | `star:<name>` |
 | constellation | 88 | IAU constellations in the planetarium | `constellation:<abbr>` |
 | relic | 88 | Vault objects | `relic:v01` |
 | chapter | 83 | `docs/assets/data.js` | `chapter:ch01` |
@@ -53,8 +53,9 @@ Every link and parent in the registry points to an entity that exists (0 danglin
 check every entry against the schema.
 
 **Not counted, on purpose:**
-- The 20,176 unnamed stars in the planetarium catalogue. They would put the count over 10,000,
-  but they are catalogue rows, not things a visitor meets or the archive writes about.
+- The 4,867 unnamed stars in the planetarium catalogue (5,044 stars in all; `sky.json` stores
+  4 numbers per star, 20,176 numbers). Even with them the count would be 8,996, still under
+  10,000, and they are catalogue rows, not things a visitor meets or the archive writes about.
 - The 74 URLs that appear only in a chapter's own Sources section and not in its log in
   `sources/`. The originality baseline uses them (1,793 URLs in all); the registry reads the
   logs only. Easy to add if Carter wants them counted.
