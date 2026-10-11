@@ -22,7 +22,7 @@ export function build(ctx) {
   sign(ctx, ["Back to the Museum", "Second Temple Judaism"], V0.x, 3.9, z1 - 0.03, Math.PI, 2.6, 0.62);
   sign(ctx, ["The Qumran caves", "where the Dead Sea Scrolls were found"], x1 - 0.03, 2.3, V0.z - 1.5, -Math.PI / 2, 2.4, 0.6);
   sign(ctx, ["Before you go out", "sizes approximate · rock drawn in code"], x1 - 0.03, 1.6, V0.z - 1.5, -Math.PI / 2, 2.4, 0.45, { size: 52 });
-  sign(ctx, ["Preview", "built for review · not yet on the menu"], x1 - 0.03, 3.2, V0.z + 2.4, -Math.PI / 2, 2.0, 0.48, { size: 54 });
+  sign(ctx, ["Recently added", "pending full review"], x1 - 0.03, 3.2, V0.z + 2.4, -Math.PI / 2, 2.0, 0.48, { size: 54 });
   // the Vault object for comparison: the Book of Enoch in Ge'ez
   const rel = buildRelic("v49", null, 2, [0.5, 0.4, 0.5]);
   glassCase(ctx, V0.x - 2.6, V0.z - 1.0, rel ? rel.root : null, ctx.infoById("v-v49"));

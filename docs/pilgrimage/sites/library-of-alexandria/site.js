@@ -7,8 +7,8 @@
    site says loudly, on every card, what is attested (by ancient writers) and
    what is guesswork (plans/pilgrimage-sites.md, master list).
 
-   Status: "preview" in docs/assets/pilgrimage-data.js. The page exists
-   (noindex) but the site is off the menu until Carter approves it going live.
+   Status: "live" in docs/assets/pilgrimage-data.js (Carter approved listing it,
+   2026-10-11), still pending full review.
    Sources: sources/pilgrimage-library-of-alexandria.md.
    ========================================================================== */
 import { region } from "../../kit.js?v=1";
