@@ -22,11 +22,12 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
-## Open PRs and branches in flight (updated 2026-10-11 15:40 UTC by the framework session)
+## Open PRs and branches in flight (updated 2026-10-11 20:10 UTC by the framework session)
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
   - #43: the Qumran and Alexandria walks are listed
+  - #48: a distinct moveset for each god in Divine Casualties
 
   #40 brought in:
   - the visitor ledger, kept in the browser only
@@ -37,21 +38,21 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
   The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
   Framework workflow fails any content PR that leaves the registry stale.
-- #45 `claude/post-merge-rebuild`: registry rebuild after #40 and #42 (no change to the live site).
-  #44 and #49 carry the same rebuild, so whichever lands first makes the others' copy a no-op.
+- #45 (registry rebuild) was closed; #49 and #44 carry the same rebuild.
 - #49 `claude/framework-followup`: the reviewer's two small framework bugs:
   - rate-limited pages that had failed twice were never retried
   - a first new score could be copied again as an "old" score
 
-  It also bumps the tracker script to v=2 on every page.
+  It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
+  and the reviewer passes it.
 - #44: one catalog for the twelve games (another thread).
 - #46: speed pass, with faster fonts and Pantheon (another thread).
 - #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
   needs Carter).
-- #48: a distinct moveset for each god in Divine Casualties (another thread).
+- #50: clears the 14 reviewed chapters (another thread; Carter approved).
 - **Overlaps:**
   - #46 and #49 both rebuild every chapter and Vault page.
-  - #44, #48 and #49 all edit `symbols.html` script versions.
+  - #44 and #49 edit `symbols.html` script versions.
   - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
 
   Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
@@ -61,6 +62,8 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
   `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
+- **Carter's try-it list:** `handoff/CARTER-TO-TRY.md` lists what to try on his phone and the
+  decisions waiting on him. Keep it current: tick items off as he answers, and add new ones.
 
 ## Needs Carter
 - Clearing the 31 pending chapters (a separate thread, "Clear the pending chapters batch", owns this).
