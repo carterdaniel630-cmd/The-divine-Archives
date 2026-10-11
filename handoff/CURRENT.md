@@ -38,7 +38,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   Framework workflow fails any content PR that leaves the registry stale. Plan:
   `plans/framework-sandbox.md`.
 - #45 `claude/post-merge-rebuild`: rebuilds the registry after #40 and #42 (no change to the live site).
-- #46 `claude/framework-followup` (stacked on #45's commit): the reviewer's two small framework bugs:
+- #49 `claude/framework-followup` (stacked on #45's commit): the reviewer's two small framework bugs:
   - rate-limited pages that had already failed twice were never retried
   - a visitor's first new score could be copied once more as an "old" score
 
