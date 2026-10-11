@@ -55,7 +55,7 @@ check every entry against the schema.
 
 **Not counted, on purpose:**
 - The 4,867 unnamed stars in the planetarium catalogue (5,044 stars in all; `sky.json` stores
-  4 numbers per star, 20,176 numbers). Even with them the count would be 8,996, still under
+  4 numbers per star, 20,176 numbers). Even with them the count would be 8,997, still under
   10,000, and they are catalogue rows, not things a visitor meets or the archive writes about.
 - The 74 URLs that appear only in a chapter's own Sources section and not in its log in
   `sources/`. The originality baseline uses them (1,793 URLs in all); the registry reads the

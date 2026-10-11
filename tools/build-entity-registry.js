@@ -136,7 +136,7 @@ for (const m of arcade.matchAll(/\{\s*id:\s*"([a-z]+)",\s*ch:\s*"(ch\d+)",[^\n]*
   add({ id: "game:" + m[1], type: "game", label: decode(m[3]), href: "symbols.html#play=" + m[1], links: [ch(m[2])], from: "docs/pilgrimage/sites/arcade/site.js" });
 }
 
-// ---- planetarium: named stars, constellations, sky lore (not the 20,000 unnamed catalogue stars)
+// ---- planetarium: named stars, constellations, sky lore (not the 4,867 unnamed catalogue stars)
 // Two stars can share a traditional name (Alnair in Grus and in Centaurus): those get the constellation added.
 const starNames = {};
 for (const [, name] of sky.names) starNames[slug(name)] = (starNames[slug(name)] || 0) + 1;
