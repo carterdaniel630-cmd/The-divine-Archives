@@ -1,0 +1,107 @@
+name: Knowledge graph (graphify)
+
+# Builds graphify's map of the repository's code (the build tools, games, museum, framework and
+# Pages Functions) and publishes it to the `graph` branch, where every Claude Code session picks it
+# up at start (tools/graphify-session.sh). Nothing here touches main or the live site.
+#
+#   push to main      build the graph and replace the `graph` branch with it (one commit, no history)
+#   pull_request      build the graph as a check and upload it as an artifact; publishes nothing
+#   workflow_dispatch build and publish by hand
+#
+# Code only: the code is parsed locally with tree-sitter, so no AI runs and no API key is used.
+# Chapters, Vault entries and other prose are not in this graph (they need a separate, approved pass).
+# Files left out are listed in .graphifyignore (KEY.md answer keys among them).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - ".github/workflows/graphify.yml"
+      - ".graphifyignore"
+      - ".claude/**"
+      - "tools/graphify-session.sh"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: graphify-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GRAPHIFY_VERSION: "0.9.85"
+
+jobs:
+  graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install graphify (pinned to the skill's version)
+        run: python -m pip install --disable-pip-version-check "graphifyy==${GRAPHIFY_VERSION}"
+
+      - name: Build the code graph
+        run: |
+          set -o pipefail
+          graphify extract . --code-only 2>&1 | tail -60
+          test -s graphify-out/graph.json || { echo "::error::graphify produced no graph.json"; exit 1; }
+
+      - name: Check the output
+        run: |
+          set -eu
+          cd graphify-out
+          rm -f .graphify_python
+          # Paths must be repo-relative so the graph works in any session's checkout.
+          ws="${GITHUB_WORKSPACE%/}/"
+          grep -rlF "$ws" . | while read -r f; do sed -i "s#${ws}##g" "$f"; done
+          if grep -rqF "/home/runner" .; then echo "::error::runner paths left in the graph"; grep -rlF "/home/runner" .; exit 1; fi
+          # The answer keys must never be indexed.
+          if grep -rq 'KEY\.md' graph.json; then echo "::error::a KEY.md file reached the graph"; exit 1; fi
+          # Stay well under GitHub's 100 MB file limit.
+          find . -type f -size +50M | grep . && { echo "::error::graph file over 50 MB"; exit 1; } || true
+          ls -la
+          python - <<'PY'
+          import json
+          g = json.load(open("graph.json"))
+          n = len(g.get("nodes", [])); e = len(g.get("links", g.get("edges", [])))
+          print(f"graph: {n} nodes, {e} edges")
+          assert n > 0, "empty graph"
+          PY
+          head -40 GRAPH_REPORT.md || true
+
+      - name: Upload the graph (pull requests)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: graphify-out
+          path: graphify-out/
+          include-hidden-files: true
+          retention-days: 7
+
+      - name: Publish to the graph branch
+        if: github.event_name != 'pull_request'
+        env:
+          SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          printf 'main @ %s\n' "$(git rev-parse --short "$SHA")" > graphify-out/SOURCE
+          tmp="$(mktemp -d)"
+          mv graphify-out "$tmp/"
+          cd "$tmp"
+          git init -q -b graph
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          printf '# Knowledge graph\n\nBuilt by .github/workflows/graphify.yml from main @ %s. Generated: do not edit.\nSessions pull graphify-out/ from here at start (tools/graphify-session.sh).\n' "$SHA" > README.md
+          git add -A
+          git commit -q -m "Knowledge graph of main @ ${SHA:0:7}"
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" graph:graph
+          echo "published graph for main @ ${SHA:0:7}"

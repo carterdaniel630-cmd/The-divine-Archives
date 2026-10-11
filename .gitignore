@@ -2,3 +2,7 @@ node_modules
 *.log
 .DS_Store
 link-report.md
+
+# graphify knowledge graph: built by .github/workflows/graphify.yml onto branch `graph`, pulled at session start
+graphify-out/
+graphify-out.tmp/
