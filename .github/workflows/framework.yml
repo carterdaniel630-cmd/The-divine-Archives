@@ -5,8 +5,9 @@ name: Framework
 # framework/engine/), the ritual and entity schemas, the originality check, that every game
 # reports its end, that docs/assets/framework/ matches its sources (tools/build-framework.js),
 # and that the committed entity registry matches a fresh build of tools/build-entity-registry.js.
-# If a pull request changes the site's data, rebuild the registry with
-# `node tools/build-entity-registry.js` and commit it.
+# It also runs on any pull request that changes the files the registry is read from (chapters,
+# Pantheon, Vault, Pilgrimage, museum, symbols, source logs), so the registry never goes stale
+# silently: rebuild it with `node tools/build-entity-registry.js` and commit it.
 
 on:
   pull_request:
@@ -23,6 +24,17 @@ on:
       - "docs/museum.html"
       - "docs/museum/app.js"
       - "docs/museum/secret.js"
+      # the registry is built from these; a content PR must rebuild it (node tools/build-entity-registry.js)
+      - "docs/assets/data.js"
+      - "docs/assets/pantheon-data.js"
+      - "docs/assets/vault-data.js"
+      - "docs/assets/pilgrimage-data.js"
+      - "docs/chapters/**"
+      - "docs/museum/manifest.json"
+      - "docs/museum/sky.json"
+      - "docs/pilgrimage/**"
+      - "tools/data/symbols.json"
+      - "sources/**"
       - "tools/originality-*.js"
       - "tools/build-originality-baseline.js"
       - ".github/workflows/framework.yml"
