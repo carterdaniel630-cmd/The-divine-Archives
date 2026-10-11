@@ -1,6 +1,5 @@
 # Chapter 78 — The Scythians & the Steppe: Gold, Horses and the Sword in the Brushwood
 
-*Recently added — pending full review.*
 
 In the summer of **1993**, on the high, windswept **Ukok plateau** of the Altai mountains, where Russia meets Kazakhstan, Mongolia and China, the Russian archaeologist **Natalia Polosmak** and her team opened a burial mound. Under the stones, water had seeped into the log chamber more than two thousand years earlier and frozen solid, and the ice had preserved what it held. Inside a larch-wood coffin lay a young woman of the **Pazyryk** culture, dressed in a silk blouse and a woollen skirt, wearing a tall felt headdress decorated with carved and gilded animals. Her left shoulder and arm were **tattooed** with fantastic animals: a deer with a griffin's beak and antlers ending in flowers. Six horses, saddled and harnessed, had been killed and buried beside her. The "**Ice Maiden**", as the press named her, was one of the peoples of the great Iron Age steppe whom the Greeks called **Scythians**. Their world stretched from the Danube to Mongolia, and its religion is known to us through two very different witnesses: the ground, and **Herodotus**.
 

@@ -124,8 +124,8 @@ every remaining chapter and added the lens structure throughout.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | published, **pending review** (2026-09-30: the full markdown text replaced the condensed live version; was CLEARED 2026-09-28) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
-| ch46 — Creation & the First Order | Comparative theme | cross-era | published, **pending review** (2026-09-30: the full markdown text replaced the condensed live version; was CLEARED 2026-09-28) | `themes/ch46-creation.md` |
+| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
+| ch46 — Creation & the First Order | Comparative theme | cross-era | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `themes/ch46-creation.md` |
 | ch47 — Journeys to the Underworld | Comparative theme | cross-era | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `themes/ch47-underworld.md` |
 | ch48 — The Great Goddess | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch48-great-goddess.md` |
 | ch49 — Sacred Kingship | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch49-sacred-kingship.md` |
@@ -152,27 +152,27 @@ every remaining chapter and added the lens structure throughout.
 |---|---|---|---|---|
 | ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | **CLEARED** (2026-09-29) | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
 | ch67 — Minoan Crete | Tradition | 02-bronze-age | **CLEARED** (2026-09-29) | `eras/02-bronze-age/ch67-minoan-crete-bronze-age.md` |
-| ch68 — Nubia & Kush | Tradition | 03-early-iron-age | published, **pending review** (back to pending 2026-10-05, Carter's ruling on the Wikipedia-replacement sources; was CLEARED 2026-09-29) | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
+| ch68 — Nubia & Kush | Tradition | 03-early-iron-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
 | ch69 — The Upanishads & the Hindu Synthesis | Tradition | 04-axial-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-29)) | `eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md` |
-| ch70 — Pre-Islamic Arabia | Tradition | 05-late-antiquity | published, **pending review** (back to pending 2026-10-05, Carter's ruling; the Taymāʾ stele dating is still open; was CLEARED 2026-09-29) | `eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md` |
+| ch70 — Pre-Islamic Arabia | Tradition | 05-late-antiquity | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md` |
 | ch71 — Korea | Tradition | 06-early-medieval | **CLEARED** (2026-10-06, after the 1993 Dangun-tomb source was strengthened; first cleared 2026-09-29) | `eras/06-early-medieval/ch71-korea-early-medieval.md` |
 | ch72 — The Cathars & Medieval Heresy | Tradition | 07-high-medieval | **CLEARED** (2026-09-29) | `eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md` |
-| ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | published, **pending review** (back to pending 2026-10-05 after the Glückel correction; was CLEARED 2026-09-29) | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
+| ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
 | ch74 — Secularism & the Nones | Tradition | 09-modern | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-29)) | `eras/09-modern/ch74-secularism-nonreligion-modern.md` |
 
 **Batch IV (2026-09-29): a second new tradition per era**, auto-published with the pending-review tag, bringing the archive to **83 chapters** (76 traditions + 7 themes).
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch75 — Siberian & Arctic Shamanism | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch75-siberian-arctic-shamanism-prehistory.md` |
-| ch76 — The Olmec | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
-| ch77 — The Etruscans | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
-| ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
-| ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
-| ch80 — Shi'ism | Tradition | 06-early-medieval | published, **pending review** | `eras/06-early-medieval/ch80-shiism-early-medieval.md` |
-| ch81 — Tengri & the Mongols | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md` |
-| ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
-| ch83 — Global Hinduism & the Guru Movements | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch83-global-hinduism-guru-movements-modern.md` |
+| ch75 — Siberian & Arctic Shamanism | Tradition | 01-prehistory | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/01-prehistory/ch75-siberian-arctic-shamanism-prehistory.md` |
+| ch76 — The Olmec | Tradition | 02-bronze-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
+| ch77 — The Etruscans | Tradition | 03-early-iron-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
+| ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
+| ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
+| ch80 — Shi'ism | Tradition | 06-early-medieval | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/06-early-medieval/ch80-shiism-early-medieval.md` |
+| ch81 — Tengri & the Mongols | Tradition | 07-high-medieval | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md` |
+| ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
+| ch83 — Global Hinduism & the Guru Movements | Tradition | 09-modern | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/09-modern/ch83-global-hinduism-guru-movements-modern.md` |
 
 Status values: `not started` · `researching` · `drafting` · `published, pending review` · `revising` · `CLEARED`.
 

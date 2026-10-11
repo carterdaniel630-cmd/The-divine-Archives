@@ -760,7 +760,6 @@
    "type": "room",
    "label": "Pistis Sophia",
    "parent": "wing:05-late-antiquity",
-   "status": "pending",
    "href": "museum.html#ch45",
    "links": [
     "chapter:ch45"
@@ -772,7 +771,6 @@
    "type": "room",
    "label": "Creation & the First Order",
    "parent": "wing:rotunda",
-   "status": "pending",
    "href": "museum.html#ch46",
    "links": [
     "chapter:ch46",
@@ -1060,7 +1058,6 @@
    "type": "room",
    "label": "Nubia & Kush",
    "parent": "wing:03-early-iron-age",
-   "status": "pending",
    "href": "museum.html#ch68",
    "links": [
     "chapter:ch68"
@@ -1084,7 +1081,6 @@
    "type": "room",
    "label": "Pre-Islamic Arabia",
    "parent": "wing:05-late-antiquity",
-   "status": "pending",
    "href": "museum.html#ch70",
    "links": [
     "chapter:ch70"
@@ -1118,7 +1114,6 @@
    "type": "room",
    "label": "Sabbateans, Frankists & Hasidim",
    "parent": "wing:08-early-modern",
-   "status": "pending",
    "href": "museum.html#ch73",
    "links": [
     "chapter:ch73"
@@ -1142,7 +1137,6 @@
    "type": "room",
    "label": "Siberian & Arctic Shamanism",
    "parent": "wing:01-prehistory",
-   "status": "pending",
    "href": "museum.html#ch75",
    "links": [
     "chapter:ch75"
@@ -1154,7 +1148,6 @@
    "type": "room",
    "label": "The Olmec",
    "parent": "wing:02-bronze-age",
-   "status": "pending",
    "href": "museum.html#ch76",
    "links": [
     "chapter:ch76"
@@ -1166,7 +1159,6 @@
    "type": "room",
    "label": "The Etruscans",
    "parent": "wing:03-early-iron-age",
-   "status": "pending",
    "href": "museum.html#ch77",
    "links": [
     "chapter:ch77"
@@ -1178,7 +1170,6 @@
    "type": "room",
    "label": "The Scythians & the Steppe",
    "parent": "wing:04-axial-age",
-   "status": "pending",
    "href": "museum.html#ch78",
    "links": [
     "chapter:ch78"
@@ -1190,7 +1181,6 @@
    "type": "room",
    "label": "The First Christian Kingdoms",
    "parent": "wing:05-late-antiquity",
-   "status": "pending",
    "href": "museum.html#ch79",
    "links": [
     "chapter:ch79"
@@ -1202,7 +1192,6 @@
    "type": "room",
    "label": "Shi'ism",
    "parent": "wing:06-early-medieval",
-   "status": "pending",
    "href": "museum.html#ch80",
    "links": [
     "chapter:ch80"
@@ -1214,7 +1203,6 @@
    "type": "room",
    "label": "Tengri & the Mongols",
    "parent": "wing:07-high-medieval",
-   "status": "pending",
    "href": "museum.html#ch81",
    "links": [
     "chapter:ch81"
@@ -1226,7 +1214,6 @@
    "type": "room",
    "label": "Akbar & the Mughal Synthesis",
    "parent": "wing:08-early-modern",
-   "status": "pending",
    "href": "museum.html#ch82",
    "links": [
     "chapter:ch82"
@@ -1238,7 +1225,6 @@
    "type": "room",
    "label": "Global Hinduism & the Guru Movements",
    "parent": "wing:09-modern",
-   "status": "pending",
    "href": "museum.html#ch83",
    "links": [
     "chapter:ch83"

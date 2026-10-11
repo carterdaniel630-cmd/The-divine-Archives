@@ -1,6 +1,5 @@
 # Chapter 76 — The Olmec: Jaguars, Jade and the First Sacred Landscapes of Mesoamerica
 
-*Recently added — pending full review.*
 
 In 1987, villagers digging a fish pond at the foot of a small hill called **El Manatí**, in the swampy lowlands of southern Veracruz, found strange things in the mud. When archaeologists from Mexico's national institute excavated the spring there over the following years, they found that people had been throwing offerings into its water for centuries, beginning about **1700 BCE**: polished stone axes set in careful clusters, jade beads, and the oldest **rubber balls** known anywhere in the world, some of them dated to about 1600 BCE. Later came wooden busts of people with shaven, elongated heads, wrapped in reed mats and laid in the mud with care, bones of newborn children, and more axes. Thanks to the waterlogged earth, wood and rubber survived three and a half thousand years. El Manatí is a window onto the religion of the people archaeologists call the **Olmec**, the makers of the earliest great art style of Mesoamerica.
 
