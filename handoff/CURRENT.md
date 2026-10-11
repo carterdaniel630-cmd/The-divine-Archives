@@ -40,8 +40,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   registry, because both rebuild chapter pages.
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
-  `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 built and awaiting
+  Carter's go-ahead to merge: PR #48 (`claude/games-movesets`, distinct movesets, 2D) and PR #47
+  (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 
 ## Needs Carter
