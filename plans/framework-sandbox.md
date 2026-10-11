@@ -1,8 +1,9 @@
 # Sandboxed framework extension: Phase 1 (schemas and tools only)
 
-Status: **Phase 1 built on branch `claude/framework-sandbox`, draft PR, not merged. Nothing on
-the live site changes.** Phase 2 (wiring the game adapters, a tier-1 ritual prototype in the
-museum) waits for Carter's approval. Written 2026-10-11.
+Status: **Phases 1 and 2 built on branch `claude/framework-sandbox` (draft PR #40), not merged.**
+Phase 1 (schemas and tools) changed nothing on the site. Phase 2 (approved by Carter 2026-10-11) wires
+the ledger into the site and adds one opt-in walkthrough to the museum; it reaches the live site only
+when Carter approves the merge. Written 2026-10-11.
 
 ## What Phase 1 adds
 
@@ -23,7 +24,7 @@ All new files, plus one edit to `.github/workflows/lighthouse.yml` (Law 4). No f
 
 ## Law 1: the entity map and the real count
 
-**4,129 entities. The target is 10,000+, so the registry is short by 5,871.** These are counted
+**4,130 entities. The target is 10,000+, so the registry is short by 5,870.** These are counted
 from the repo, not estimated.
 
 | Type | Count | Read from | ID pattern |
@@ -37,7 +38,7 @@ from the repo, not estimated.
 | relic | 88 | Vault objects | `relic:v01` |
 | chapter | 83 | `docs/assets/data.js` | `chapter:ch01` |
 | room | 83 | museum rooms | `room:ch01` |
-| site | 72 | Pilgrimage sites (1 live, 2 noindex previews, 69 queued; the hidden arcade is not in the list) | `site:<id>` |
+| site | 73 | Pilgrimage sites (1 live, 2 noindex previews, 69 queued) and the hidden Archive Arcade | `site:<id>` |
 | waypoint | 65 | info points of the sites that have a module: Great Pyramid 36, Qumran 17, Library of Alexandria 12 (each checked against its file) | `waypoint:<site>/<id>` |
 | tradition | 30 | Pantheon traditions | `tradition:<key>` |
 | skylore | 18 | planetarium lore cards | `skylore:<id>` |
@@ -79,6 +80,10 @@ Today every game saves on its own: high scores under `da.games.score.<game>`, vi
 `window.ArchiveGames.addHighScore`; the Seeker's progress under `da.games.seeker`; the museum's
 arcade door under `mu-arcade`. Nothing records "started" or "completed".
 
+*As built in Phase 2:* rather than a separate wrapper file, the games' shared code
+(`archive-games.js`) reports to the ledger's tracker, and each game makes one `finish` call at its
+end screen. The plan as first written:
+
 **One adapter file, no game code changes.** `framework/adapters/games.js` loads after
 `archive-games.js` on `symbols.html` (a one-line `docs/` change, so it is Phase 2) and wraps
 the shared API:
@@ -103,7 +108,7 @@ the shared API:
 | The Firmament (pinball) | open | score | game over | none | |
 | Dominion of the Ancients (risk) | open | none | conquest / defeat | none | needs a `finish` call |
 | The Tomb Robber (treasure) | open | run score | run end | none | |
-| (museum) the arcade door | none | none | none | `unlocked` on an arcade entity when `mu-arcade` is set | in `docs/museum/secret.js`. The hidden arcade is not in the registry yet (it is not in the Pilgrimage list); adding it is part of Phase 2 |
+| (museum) the arcade door | none | none | none | `unlocked` `site:arcade` when the door first opens | in `docs/museum/secret.js` |
 
 **Old saves.** On first load, the adapter would add one `scored` event per existing high score,
 marked `{via: "import"}`. That is append-only, and it does not change the old keys, which the
@@ -170,7 +175,7 @@ a viewport check, and is unchanged.
 
 ## What is missing or held
 
-- **10,000 entities:** 4,129 today; see the list above for honest ways to grow it.
+- **10,000 entities:** 4,130 today; see the list above for honest ways to grow it.
 - **REVIEWER.md pointer:** added to `reviews/REVIEWER.md` §3 on Carter's approval (2026-10-11).
 - **Ritual sources:** confirmed through search results only, because the pages are blocked
   here. They must be re-read at review.
@@ -179,15 +184,31 @@ a viewport check, and is unchanged.
 - **Registry freshness:** the registry is a snapshot of the site's data. The Framework workflow
   runs only when framework files change. A PR that changes the site's data without touching the
   framework does not rebuild it, and the next framework PR will need
-  `node tools/build-entity-registry.js` re-run. Phase 2 could add the rebuild to the build
-  order in `CLAUDE.md`.
+  `node tools/build-entity-registry.js` re-run. Phase 2 added the rebuild to the build order in
+  `CLAUDE.md`.
 
-## Phase 2 (for approval, not started)
+## Phase 2: built (approved by Carter 2026-10-11)
 
-1. `framework/adapters/games.js` and the one-line script tag on `symbols.html`, plus the
-   small `finish` calls in chess, fighter and risk. Lighthouse and the game-runtime test must
-   stay green.
-2. A tier-1 ritual prototype in the museum: one opt-in walkthrough, after Carter clears its
-   text and tier.
-3. `viewed` events from chapter, Vault and Pantheon pages.
-4. The REVIEWER.md line, and the registry rebuild in the build order.
+What changed on the site (all in draft PR #40; nothing is live until the merge is approved):
+
+| Part | Files | What it does |
+|---|---|---|
+| Ledger in the site | `docs/assets/framework/archive-ledger.js`, built by `tools/build-framework.js` from `framework/ledger.js` and `framework/adapters/track.js` | One small deferred script. Pages and games report events to it; it keeps them in this browser only. Events raised before it loads wait in a queue |
+| Games | `docs/assets/games/archive-games.js` and all 12 games | `started` when a game opens, `scored` with each score, `completed` at every end screen (`ArchiveGames.finish`), and `unlocked` for each Seeker stage. The games' own saves are unchanged. Old high scores are copied in once, marked `{via: "import"}` |
+| Page views | `tools/build-chapters.js`, `tools/build-vault.js` (all 83 chapter and 88 Vault pages rebuilt), `docs/assets/pantheon.js` | `viewed` for each chapter, Vault entry and Pantheon figure opened |
+| Museum walkthrough | `framework/ui/ritual-player.js`, `docs/museum/app.js`, `data/rituals/meditation-breath-cycle.json` | The Buddhism room's lectern card offers "Guided walkthrough: Mindfulness of breathing". It is opt-in, has no score, and can be left at any step. It carries the "pending full review" tag. The engine and player load only when asked for |
+| Arcade door | `docs/museum/secret.js` | `unlocked` `site:arcade` the first time the door opens |
+| About page | `docs/about.html` | A short note on what the site remembers, and that it stays in the visitor's browser |
+| Docs and tests | `CLAUDE.md` build order, `reviews/REVIEWER.md` §3, `framework/test/track.test.js`, `framework/test/publish.test.js` | 34 tests in all |
+
+Found and fixed while building:
+- `finish` was first attached to the object handed to each game rather than to
+  `window.ArchiveGames`, so every game would have crashed at its end screen. The browser test caught
+  it, and `publish.test.js` now guards it.
+- The old-score import ran twice, because writing to storage shifted the key order mid-loop.
+  `track.test.js` guards it.
+
+Not in Phase 2:
+- The votive candle stays a draft: no chapter covers it, so it has no room.
+- No `viewed` events from museum rooms or Pilgrimage sites.
+- No visible use of the ledger yet, such as a "your progress" page.

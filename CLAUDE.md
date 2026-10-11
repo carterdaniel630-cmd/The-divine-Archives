@@ -71,6 +71,10 @@ within its era, or one cross-cutting comparative theme (e.g. flood myths, creati
   `docs/assets/og/`; renders only changed cards, needs Playwright),
   `node tools/build-vault.js`, `node tools/build-chapters.js`, `node tools/build-pages.js`,
   `node tools/build-museum.js` (the Virtual Museum's manifest, wing files and fallback directory).
+  Then `node tools/build-framework.js` (publishes the visitor ledger, the ritual engine and player, and the
+  walkthroughs under review into `docs/assets/framework/`; sources in `framework/` and `data/rituals/`) and
+  `node tools/build-entity-registry.js` (the entity registry in `framework/registry/`; see
+  `plans/framework-sandbox.md`). `node --test framework/test/*.test.js` checks both.
   The museum's planetarium has its own step, `node tools/build-sky.js` (star catalogue in
   `tools/data/d3-celestial/`, lore in `museum/sky-lore.json`, checked by `tools/verify-sky.js`).
   The museum's skies and grounds (`docs/museum/world.js`, table `ENV`), animals (`fauna.js`), sound

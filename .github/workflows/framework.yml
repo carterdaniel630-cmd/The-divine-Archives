@@ -1,11 +1,12 @@
 name: Framework
 
-# Tests for the sandboxed framework (plans/framework-sandbox.md): the event ledger, the
+# Tests for the framework (plans/framework-sandbox.md): the event ledger and page tracker, the
 # neutral sequence engine (including the check that no tradition name appears in
-# framework/engine/), the ritual and entity schemas, the originality check, and that the
-# committed entity registry matches a fresh build of tools/build-entity-registry.js.
-# Nothing here touches the live site. If a pull request changes the site's data, rebuild
-# the registry with `node tools/build-entity-registry.js` and commit it.
+# framework/engine/), the ritual and entity schemas, the originality check, that every game
+# reports its end, that docs/assets/framework/ matches its sources (tools/build-framework.js),
+# and that the committed entity registry matches a fresh build of tools/build-entity-registry.js.
+# If a pull request changes the site's data, rebuild the registry with
+# `node tools/build-entity-registry.js` and commit it.
 
 on:
   pull_request:
@@ -13,6 +14,15 @@ on:
       - "framework/**"
       - "data/rituals/**"
       - "tools/build-entity-registry.js"
+      - "tools/build-framework.js"
+      - "docs/assets/framework/**"
+      - "docs/assets/games/**"
+      - "docs/assets/pantheon.js"
+      - "docs/symbols.html"
+      - "docs/pantheon.html"
+      - "docs/museum.html"
+      - "docs/museum/app.js"
+      - "docs/museum/secret.js"
       - "tools/originality-*.js"
       - "tools/build-originality-baseline.js"
       - ".github/workflows/framework.yml"

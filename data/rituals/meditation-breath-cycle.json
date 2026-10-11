@@ -6,7 +6,7 @@
   "sensitivity_tier": 1,
   "framing": "guided, explanatory, no scores or win states",
   "opt_in": true,
-  "intro": "The Ānāpānasati Sutta (Majjhima Nikāya 118) describes mindfulness of breathing in sixteen steps, grouped in four sets of four. This walkthrough follows the first set, as the text lays it out. It explains a practice; you may follow along or simply read. Nothing is scored.",
+  "intro": "The Ānāpānasati Sutta (Majjhima Nikāya 118) describes mindfulness of breathing in sixteen steps, grouped in four sets of four. This walkthrough follows the first set, as the text lays it out. You may follow along or simply read.",
   "sources": [
     {
       "id": "mn118-ati",
@@ -69,7 +69,7 @@
     }
   ],
   "review": {
-    "status": "draft",
-    "notes": "Step wording paraphrases the Thanissaro translation and must be checked against the page at review (blocked from the build sandbox). The anchor is the chapter section on the Four Truths and the Path; ch11 does not yet discuss mindfulness of breathing directly (a gap for plans/content-gaps.md)."
+    "status": "pending",
+    "notes": "Published 2026-10-11 as the museum's tier-1 prototype (Phase 2, approved by Carter), carrying the pending-review tag until Carter clears it. Step wording paraphrases the Thanissaro translation and must be checked against the page at review (blocked from the build sandbox). The anchor is the chapter section on the Four Truths and the Path; ch11 does not yet discuss mindfulness of breathing directly (a gap for plans/content-gaps.md)."
   }
 }

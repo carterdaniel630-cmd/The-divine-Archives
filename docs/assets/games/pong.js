@@ -282,7 +282,7 @@
       var youWon = st.pl.score > st.pr.score;
       var newBest = false, tally = st.pl.score;
       if (tally > best) { best = tally; newBest = true; }
-      AG.addHighScore("pong", { score: tally });
+      AG.addHighScore("pong", { score: tally }); AG.finish("pong", { won: youWon });
       var recap = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";

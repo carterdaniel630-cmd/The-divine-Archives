@@ -105,6 +105,10 @@ for (const s of G.sites) {
     href: s.status === "queued" ? undefined : "pilgrimage/" + s.id + ".html",
     links: [...(s.chapters || []).map(ch), ...(s.vault || []).map((v) => "relic:" + v)], from: "docs/assets/pilgrimage-data.js" });
 }
+// The hidden Archive Arcade has a page but is deliberately not in the Pilgrimage list.
+if (fs.existsSync(path.join(ROOT, "docs", "pilgrimage", "arcade.html"))) {
+  add({ id: "site:arcade", type: "site", label: "The Archive Arcade", status: "hidden", href: "pilgrimage/arcade.html", from: "docs/pilgrimage/arcade.html" });
+}
 const sitesDir = path.join(ROOT, "docs", "pilgrimage", "sites");
 for (const dir of fs.readdirSync(sitesDir).sort()) {
   const f = path.join(sitesDir, dir, "site.js");

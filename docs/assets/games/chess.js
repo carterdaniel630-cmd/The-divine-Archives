@@ -263,7 +263,7 @@
       st.turn = opp(st.turn);
       // end conditions
       var lm = legalMoves(st.board, st.turn, st.cast, st.ep);
-      if (!lm.length) { st.over = true; if (inCheck(st.board, st.turn)) { var winPan = st.turn === "w" ? st.bPan : st.wPan; st.result = "Checkmate — " + DATA.pantheons[winPan].name + " triumph."; } else st.result = "Stalemate — the board is still."; }
+      if (!lm.length) { st.over = true; if (inCheck(st.board, st.turn)) { var winPan = st.turn === "w" ? st.bPan : st.wPan; st.result = "Checkmate — " + DATA.pantheons[winPan].name + " triumph."; } else st.result = "Stalemate — the board is still."; AG.finish("chess", { result: /^Checkmate/.test(st.result) ? "checkmate" : "stalemate" }); }
       draw(); setStatus();
       if (!st.over && st.turn === "b" && !st.twoP) { st.thinking = true; setStatus(); setTimeout(aiMove, 320); }
     }
@@ -334,7 +334,7 @@
       statusEl = root.querySelector(".ch-status"); factEl = root.querySelector(".ch-fact"); trayW = root.querySelector(".ch-tray-w"); trayB = root.querySelector(".ch-tray-b");
       canvas.addEventListener("click", onClick);
       root.querySelector('[data-a="new"]').addEventListener("click", selectScreen);
-      root.querySelector('[data-a="resign"]').addEventListener("click", function () { if (st.over) return; st.over = true; st.result = "Resigned — " + DATA.pantheons[st.turn === "w" ? st.bPan : st.wPan].name + " take the field."; setStatus(); });
+      root.querySelector('[data-a="resign"]').addEventListener("click", function () { if (st.over) return; st.over = true; AG.finish("chess", { result: "resigned" }); st.result = "Resigned — " + DATA.pantheons[st.turn === "w" ? st.bPan : st.wPan].name + " take the field."; setStatus(); });
     }
     function startGame() { shell(); st = newState(cfg.you, cfg.foe, cfg.twoP); draw(); setStatus(); }
 

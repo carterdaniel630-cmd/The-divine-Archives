@@ -323,7 +323,7 @@
       st.alive = false; if (timer) { clearTimeout(timer); timer = null; }
       var newBest = false;
       if (st.score > best) { best = st.score; newBest = true; }
-      AG.addHighScore("ouroboros", { score: st.score });
+      AG.addHighScore("ouroboros", { score: st.score }); AG.finish("ouroboros");
       var facts = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";
