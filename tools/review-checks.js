@@ -13,6 +13,8 @@
                       skipped; links to the site's own domain are resolved locally)
      garbled-links    no href="<…" and no <a> nested inside another <a> (finding B, 2026-09-29)
      file-size        no file in docs/ over 2 MB (the largest 10 are always printed)
+     fonts            every page that uses archive.css also links the site's web fonts
+                      (archive.css no longer @imports them; see fontTags in tools/seo.js)
      sitemap          every indexable docs/<every>.html is in sitemap.xml, nothing in the
                       sitemap is noindex or missing; the base URL comes from the sitemap
      pending-banner   every published chapter / Vault entry marked `pending: true` shows the
@@ -244,6 +246,24 @@ function checkSizes() {
     details, { largest });
 }
 
+// ---- web fonts -------------------------------------------------------------
+// archive.css used to @import the fonts; now each page links them itself, so a page
+// that forgets to would quietly fall back to the browser's default serif.
+function checkFonts() {
+  const { FONT_CSS } = require("./seo");
+  const files = CHANGED_ONLY ? changedDocs.filter((f) => f.endsWith(".html")).map((f) => path.join(ROOT, f)) : htmlFiles();
+  const bad = [];
+  let n = 0;
+  for (const f of files) {
+    const html = fs.readFileSync(f, "utf8");
+    if (!/href="[^"]*assets\/archive\.css"/.test(html)) continue;
+    n++;
+    if (!html.includes('href="' + FONT_CSS + '"')) bad.push(`${rel(f)}  uses archive.css but does not link the web fonts (add SEO.fontTags() to its <head>)`);
+  }
+  record("fonts", "Pages link the web fonts", bad.length ? "fail" : "pass",
+    bad.length ? `${bad.length} page(s) without the web fonts` : `${n} pages link the web fonts`, bad);
+}
+
 // ---- sitemap ---------------------------------------------------------------
 const NOINDEX_RE = /<meta\b(?=[^>]*\bname\s*=\s*["']robots["'])(?=[^>]*\bcontent\s*=\s*["'][^"']*noindex)[^>]*>/i;
 // Pages that are deliberately neither in the sitemap nor marked noindex.
@@ -450,7 +470,7 @@ function checkBuild() {
 // ================================================================ run
 const CHECKS = [
   ["internal-links", checkInternalLinks], ["garbled-links", checkGarbled], ["file-size", checkSizes],
-  ["sitemap", checkSitemap], ["pending-banner", checkPendingBanner], ["pending-diff", checkPendingDiff],
+  ["fonts", checkFonts], ["sitemap", checkSitemap], ["pending-banner", checkPendingBanner], ["pending-diff", checkPendingDiff],
   ["wikipedia-share", checkWikipedia]
 ];
 const wanted = (id) => !ONLY || ONLY.has(id);

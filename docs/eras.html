@@ -7,6 +7,8 @@
   <meta name="description" content="Browse the archive chronologically, across nine ages from prehistory to the present." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/archive.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
   <style>
     .ages { display: flex; flex-direction: column; gap: 1.2rem; max-width: 54rem; margin: 1rem auto 0; }
     .age {
@@ -119,27 +121,6 @@
   </footer>
 </div>
 
-<script src="assets/data.js"></script>
-<script src="assets/emblems.js"></script>
-<script>
-  (function () {
-    var mount = document.getElementById("ages");
-    if (!mount || mount.firstElementChild || !window.ARCHIVE) return; // skip if prerendered
-    var EM = window.EMBLEMS || {};
-    window.ARCHIVE.eras.forEach(function (e) {
-      var a = document.createElement("a");
-      a.className = "age";
-      a.href = "eras/" + encodeURIComponent(e.slug) + ".html";
-      var tags = e.traditions.map(function (t) { return '<span class="tag">' + t + "</span>"; }).join("");
-      a.innerHTML =
-        '<div class="num">' + (EM[e.slug] || '') + '<span class="numeral">' + e.num + "</span></div>" +
-        "<div><h2>" + e.name + ' <span class="dates">' + e.dates + "</span></h2>" +
-        '<p class="blurb">' + e.blurb + "</p>" +
-        '<div class="tags">' + tags + "</div></div>";
-      mount.appendChild(a);
-    });
-  })();
-</script>
 <script src="assets/ambient.js?v=2" defer></script>
 <script src="site-config.js" defer></script>
 </body>
