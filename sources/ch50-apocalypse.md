@@ -16,3 +16,11 @@ Per the project sourcing standard. A comparative theme chapter: the emphasis is 
 - No prophecy is treated as a prediction that will or did come true; the chapter documents expectation, not forecast.
 - Genuinely open: the historical origin of the apocalyptic worldview; why the imagination divides between the line and the wheel.
 - Connects to ch47, ch06, ch07, ch10, ch16, ch21, ch31, ch35, ch23, ch05, ch30, ch11, ch20, ch29.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Ghost Dance and Wounded Knee (1890)"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Ghost Dance, Wovoka and the 1889 eclipse — James Mooney, *The Ghost-Dance Religion and the Sioux Outbreak of 1890*, Fourteenth Annual Report of the Bureau of Ethnology, part 2 (Washington, 1896), Project Gutenberg. https://gutenberg.org/cache/epub/74335/pg74335-images.html ; Teaching American History, "Letter Regarding the Ghost Dance Doctrine" (Wovoka's message). https://teachingamericanhistory.org/document/letter-regarding-the-ghost-dance-doctrine/
+- Wounded Knee, 29 December 1890 — National Park Service, *Soldier and Brave* (National Survey of Historic Sites), "Wounded Knee Battlefield." https://www.nps.gov/parkhistory/online_books/soldier/siteb30.htm ; EBSCO Research Starters, "Wounded Knee Massacre" (146 dead including 44 women and 18 children; 25 soldiers). https://www.ebsco.com/research-starters/history/wounded-knee-massacre
+
+The chapter goes back to pending review because of these additions.
