@@ -282,7 +282,7 @@ function pageForEra(era) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="canonical" href="${url}" />
+${SEO.fontTags()}  <link rel="canonical" href="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
   <meta property="og:title" content="${esc(fullTitle)}" />
@@ -383,7 +383,7 @@ function searchPage() {
   <meta name="description" content="Search the full text of every chapter in The Divine Archives." />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="assets/archive.css" />
-</head>
+${SEO.fontTags()}</head>
 <body>
 <a class="skip-link" href="#search-mount">Skip to content</a>
 <div class="page">
@@ -503,7 +503,7 @@ function pilgrimageListPage() {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="assets/archive.css" />
-  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
+${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -559,7 +559,7 @@ function pilgrimageSitePage(s) {
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="stylesheet" href="../museum/museum.css?v=7" />
+${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
   <link rel="stylesheet" href="pilgrimage.css?v=1" />
   <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
 </head>
@@ -664,6 +664,18 @@ function pantheonFragment() {
   const empty = '      <p class="pn-empty" hidden="">No figure matches that search. Try another name, a tradition, or a word such as <em>sun</em> or <em>underworld</em>.</p>';
   return bar + "\n" + count + "\n      <ul class=\"pn-grid\">\n" + cards + "\n      </ul>\n" + empty;
 }
+// The emblems write a few names in Arabic, Hebrew and Chinese (the "glyph" head). Ask Google
+// Fonts for just those characters (text=) rather than the whole scripts: the full Noto Serif TC
+// stylesheet alone is ~35 KB of @font-face rules and Amiri is ~100 KB, for about a dozen letters.
+// Loaded without blocking the first paint: only the emblem SVGs use them, so a late swap moves no text.
+function pantheonFonts() {
+  const chars = new Set();
+  for (const m of pantheonFragment().matchAll(/<text class="pt-g"[^>]*>([^<]*)<\/text>/g)) for (const ch of m[1]) chars.add(ch);
+  if (!chars.size) return "";
+  const url = "https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Serif+Hebrew:wght@500&family=Noto+Serif+TC:wght@500&text=" +
+    encodeURIComponent([...chars].sort().join("")) + "&display=swap";
+  return `  <link rel="stylesheet" href="${esc(url)}" media="print" onload="this.media='all'" />`;
+}
 function pantheonJsonLd() {
   const P = PANTHEON;
   const ld = {
@@ -720,7 +732,8 @@ const injections = [
   ["themes.html", "themes", themesFragment()],
   ["traditions.html", "traditions", traditionsFragment()],
   ["pantheon.html", "pantheon", pantheonFragment()],
-  ["pantheon.html", "pantheon-ld", pantheonJsonLd()]
+  ["pantheon.html", "pantheon-ld", pantheonJsonLd()],
+  ["pantheon.html", "pantheon-fonts", pantheonFonts()]
 ];
 for (const [file, name, frag] of injections) {
   const p = path.join(DOCS, file);
