@@ -157,7 +157,19 @@ The votive candle is tier 1 (Carter, 2026-10-11).
 - This PR changes the check's own files, so its run checks every chapter, theme and Vault entry.
   It also lists every page that could not be fetched, with the reason, in the run summary and
   the `originality` artifact.
-- The PR report gives the numbers from that run.
+- **First run on GitHub (2026-10-11, 1,793 cited pages):** 1,072 read, 721 not. Of the 721:
+  - 390 refused automated requests (403)
+  - 189 asked to slow down (429)
+  - 32 were PDFs
+  - 31 showed almost no text
+  - 26 were gone (404)
+  - 53 failed for other reasons
+
+  The rate-limited ones were being dropped after two runs; since the reviewer's note they are
+  retried on every run, at no more than two requests per site at a time.
+- **Citation rule tightened after review:** bold, italics or a bare date in brackets no longer
+  exempt a quote. Across the archive the exempt quotes fell from about 1,640 to 127, each with a
+  real reference.
 - Expect some pages never to be readable by a script: PDFs, paywalls, script-rendered pages,
   and sites that block automated requests. Pieces citing only those stay UNVERIFIED.
 

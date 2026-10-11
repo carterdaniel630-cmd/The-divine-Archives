@@ -9,9 +9,12 @@ pages it cites.
   baseline of its cited pages. The baseline holds hashes of the pages' 8-grams, never their
   text (`sources/baseline/README.md`).
 - **Fails:** when more than 20% of the piece's 8-grams occur in its cited pages.
-- **Exempt:** the Sources section; blockquotes carrying a citation (a link, a reference in
-  brackets, an italic title, or a closing "— attribution" line); inline quotations whose
-  sentence carries a citation.
+- **Exempt:** the Sources section; blockquotes carrying a citation; inline quotations whose
+  sentence carries a citation. A citation must name where the words come from: a link, a
+  footnote, a reference in brackets ("(Smith 1872)", "(trans. Faulkner, p. 12)", "(Genesis 1:1)"),
+  an italic title with a reference number ("*Iliad* 6.146"), or, for a blockquote, a closing
+  "— attribution" line. Bold or italic emphasis and a bare date in brackets ("(c. 500 BCE)") are
+  not citations (tightened 2026-10-11 after the reviewer found them letting quotes through).
 - **Never a silent pass:** a piece whose cited pages could not be fetched is reported
   **UNVERIFIED** (none fetched) or **PARTIAL** (some missing), with the list of missing pages.
   The run summary lists every page that could not be fetched and the reason.
@@ -31,6 +34,9 @@ that are not quoted and cited.
 - **Loose paraphrase** that changes every few words, or translated copying.
 - **Pages it could not read:** paywalled, script-rendered and PDF sources, and sites that
   block automated requests. Treat UNVERIFIED and PARTIAL as "not checked", not as "clean".
+  A green tick means "nothing copied among the pages that could be read". Rate-limited and
+  timed-out pages are retried on every run; pages that refuse (403), are gone (404), are PDFs or
+  show no text are tried twice and then listed as not fetched.
 
 ## For the reviewer
 

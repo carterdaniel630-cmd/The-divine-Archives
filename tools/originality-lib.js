@@ -53,10 +53,24 @@ function citedUrls(file) {
   return [...urls].sort();
 }
 
-// A citation near a quotation: a link, a footnote, a parenthesis holding a number
-// or a reference word, or an italic title. (A blockquote may also end with an
-// attribution line starting with a dash; see ATTRIBUTION.)
-const CITATION = /\[[^\]]+\]\([^)]+\)|https?:\/\/|\[\^[^\]]+\]|\((?=[^()]*(\d|trans\.|tr\.|ed\.|p\.|pp\.|line|verse|spell|book|chapter|ch\.))[^()]*\)|\*[^*\s][^*]*\*|_[^_\s][^_]*_/i;
+// A citation near a quotation, i.e. something that names where the words come from:
+// - a link or a bare URL, or a footnote marker [^n]
+// - a parenthesis holding a reference: a page, line, verse, book, chapter, spell, tablet, folio or
+//   translator/editor marker ("p. 12", "trans. Faulkner"), a chapter-and-verse number ("Genesis 1:1",
+//   "Odyssey 11.489"), or a name followed by a number ("Smith 1872", "MN 118", "Spell 125")
+// - an italic title followed by a reference number ("*Iliad* 6.146")
+// Emphasis alone (bold or italics) and a bare date in brackets ("(c. 500 BCE)", "(1872)") are not citations.
+// (A blockquote may also end with an attribution line starting with a dash; see ATTRIBUTION.)
+const CITATION_PARTS = [
+  /\[[^\]]+\]\([^)]+\)/,                       // [text](link)
+  /https?:\/\//,                                // bare URL
+  /\[\^[^\]]+\]/,                               // footnote
+  /\((?=[^()]*(\b(p|pp|l|ll|v|vv|fol|ch|trans|tr|ed|eds)\.|\b(page|line|lines|verse|verses|book|chapter|spell|tablet|sura|surah)\s*\d))[^()]*\)/i,
+  /\([^()]*\d+[:.]\d+[^()]*\)/,                  // (Genesis 1:1), (Odyssey 11.489)
+  /\([^()]*\b(?!(?:CE|BCE|AD|BC|AH|BP|c)\b)[A-Z][A-Za-z'’-]+\.?\s+\d+[^()]*\)/, // (Smith 1872), (MN 118); case-sensitive
+  /[*_][^*_\s][^*_]*[*_],?\s+(book\s+)?\d+/i        // *Iliad* 6.146
+];
+const CITATION = { test: (text) => CITATION_PARTS.some((re) => re.test(text)) };
 const ATTRIBUTION = /^\s*(—|–|--)\s*\S/;
 
 // The prose that is checked, with exempt material removed:
@@ -99,7 +113,7 @@ function prose(md) {
     .replace(/!\[[^\]]*\]\([^)]*\)/g, " ");
   // inline quotations, judged by the sentence they sit in (link targets still present, so links count as citations)
   text = text.split(/\n\s*\n/).map((para) =>
-    para.split(/(?<=[.!?])\s+(?=[A-Z“"*_(\[])/).map((sentence) => {
+    para.split(/(?<=[.!?])(?<!\b(?:trans|tr|ed|eds|p|pp|l|ll|v|vv|c|ca|cf|vol|no|fol|ch|St|Dr|Mr|Mrs|Ms|e\.g|i\.e)\.)\s+(?=[A-Z“"*_(\[])/).map((sentence) => {
       if (!CITATION.test(sentence)) return sentence;
       return sentence.replace(/“[^”]{3,}”|"[^"\n]{3,}"/g, () => { exempt.quotes++; return " "; });
     }).join(" ")

@@ -11,7 +11,8 @@
    Usage:
      node tools/build-originality-baseline.js --all                 every URL in the citation logs and chapters
      node tools/build-originality-baseline.js <file.md> [...]       only the URLs these pieces cite
-   Options: --concurrency 12  --timeout 15000  --retry-failed */
+   Options: --concurrency 12  --timeout 15000  --retry-failed (also retry pages that failed permanently twice)
+   Rate-limited, timed-out and server-error pages are always retried, in-run after a pause and on later runs. */
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -50,12 +51,29 @@ const prev = fs.existsSync(reportPath) ? JSON.parse(fs.readFileSync(reportPath, 
 const failed = Object.assign({}, prev.failed || {});
 const retryFailed = args.includes("--retry-failed");
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Rate limits (429), server errors (5xx), timeouts and dropped connections are transient: they are
+// retried in this run after a pause (honouring Retry-After, up to 60 s) and again on every later run.
+// Only permanent failures (403, 404, PDFs, pages with no text) stop after two runs.
+const isTransient = (reason) => /^HTTP (429|5\d\d)$|timed out|ECONNRESET|ETIMEDOUT|EAI_AGAIN|UND_ERR|socket|fetch failed/i.test(reason || "");
+
 async function fetchOne(url) {
+  for (let attempt = 0; ; attempt++) {
+    const r = await fetchOnce(url);
+    if (!r.error || !isTransient(r.error) || attempt >= 2) return r;
+    await sleep(Math.min(60000, r.retryAfter || 5000 * (attempt + 1)));
+  }
+}
+
+async function fetchOnce(url) {
   const ctl = new AbortController();
   const t = setTimeout(() => ctl.abort(), TIMEOUT);
   try {
     const res = await fetch(url, { signal: ctl.signal, redirect: "follow", headers: { "user-agent": "DivineArchives-originality-check/1 (+https://getconexto.com/about.html)", accept: "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.5" } });
-    if (!res.ok) return { error: "HTTP " + res.status };
+    if (!res.ok) {
+      const ra = parseFloat(res.headers.get("retry-after") || "");
+      return { error: "HTTP " + res.status, retryAfter: isFinite(ra) ? ra * 1000 : 0 };
+    }
     const type = res.headers.get("content-type") || "";
     if (/pdf|image|audio|video|zip|octet-stream/i.test(type)) return { error: "not a web page (" + type.split(";")[0] + ")" };
     const buf = Buffer.from(await res.arrayBuffer());
@@ -70,19 +88,30 @@ async function fetchOne(url) {
 }
 
 (async () => {
-  const todo = urls.filter((u) => !fs.existsSync(path.join(L.SHINGLES, L.urlKey(u) + ".txt")) && (retryFailed || !failed[u] || failed[u].tries < 2));
+  const todo = urls.filter((u) => !fs.existsSync(path.join(L.SHINGLES, L.urlKey(u) + ".txt")) && (retryFailed || !failed[u] || failed[u].transient || failed[u].tries < 2));
   let done = 0, ok = 0;
   const queue = todo.slice();
+  // at most two requests at a time to any one host, so busy sites are not hammered into rate limits
+  const busy = {};
+  const hostOf = (u) => { try { return new URL(u).hostname; } catch (e) { return u; } };
+  function take() {
+    const i = queue.findIndex((u) => (busy[hostOf(u)] || 0) < 2);
+    return i < 0 ? null : queue.splice(i, 1)[0];
+  }
   async function worker() {
     while (queue.length) {
-      const url = queue.shift();
+      const url = take();
+      if (!url) { await sleep(200); continue; }
+      const host = hostOf(url);
+      busy[host] = (busy[host] || 0) + 1;
       const r = await fetchOne(url);
       if (r.shingles) {
         fs.writeFileSync(path.join(L.SHINGLES, L.urlKey(url) + ".txt"), "# " + url + "\n" + [...r.shingles].sort().join("\n") + "\n");
         delete failed[url]; ok++;
       } else {
-        failed[url] = { reason: r.error, tries: ((failed[url] && failed[url].tries) || 0) + 1 };
+        failed[url] = { reason: r.error, tries: ((failed[url] && failed[url].tries) || 0) + 1, transient: isTransient(r.error) };
       }
+      busy[host]--;
       if (++done % 100 === 0) console.log("  " + done + " / " + todo.length);
     }
   }

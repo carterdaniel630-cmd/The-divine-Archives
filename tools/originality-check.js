@@ -5,8 +5,9 @@
    A piece fails when more than 20% of its 8-grams are found there.
 
    Exempt: the Sources / References section, blockquotes that carry a citation, and
-   inline quotations whose sentence carries a citation (see prose() in
-   tools/originality-lib.js). Quoting with a citation is the right way to use a source.
+   inline quotations whose sentence carries a citation: a link, footnote, bracketed reference
+   or titled reference, never mere emphasis or a bare date (CITATION in tools/originality-lib.js).
+   Quoting with a citation is the right way to use a source.
 
    It never passes silently: a piece whose cited pages are missing from the baseline
    is reported UNVERIFIED (all missing) or PARTIAL (some missing), with the list.

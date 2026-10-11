@@ -72,3 +72,17 @@ test("some sources missing is PARTIAL, and lists them", () => {
   assert.strictEqual(r.status, "PARTIAL");
   assert.deepStrictEqual(r.missing, ["https://example.org/not-fetched"]);
 });
+
+test("emphasis or a bare date is not a citation, so the quote still counts", () => {
+  for (const wrap of ["**One account** says “" + SOURCE + ".”", "One account (c. 500 BCE) says “" + SOURCE + ".”", "In *the old story* it says “" + SOURCE + ".”"]) {
+    const { r } = run("# A piece\n\n" + ORIGINAL + "\n\n" + wrap + "\n" + sources);
+    assert.strictEqual(r.status, "FAIL", wrap.slice(0, 30));
+  }
+});
+
+test("a reference that names the source does exempt the quote", () => {
+  for (const ref of ["(Smith 1872)", "(trans. Faulkner, p. 12)", "(Genesis 1:1)", "*Iliad* 6.146"]) {
+    const { r } = run("# A piece\n\n" + ORIGINAL + "\n\nOne account says “" + SOURCE + "” " + ref + ".\n" + sources);
+    assert.strictEqual(r.status, "PASS", ref);
+  }
+});

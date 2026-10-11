@@ -27,7 +27,7 @@
       "input_trigger_type": "tap",
       "historical_text_anchor_id": null,
       "source_ids": ["ce-candles", "cd-votive"],
-      "text": "Votive candles stand in racks before a statue, image or shrine of Christ, Mary or a saint.",
+      "text": "Votive candles are burned before a statue or shrine, to honour Christ, Mary or a saint.",
       "anchor_gap": "No chapter section discusses votive candles yet."
     },
     {
@@ -45,7 +45,7 @@
       "input_trigger_type": "auto",
       "historical_text_anchor_id": null,
       "source_ids": ["ce-candles"],
-      "text": "The candle is left to burn down before the image. In Catholic understanding it stands for the person's prayer and sacrifice, continuing after they have gone.",
+      "text": "The candle burns before the image. The Catholic Encyclopedia describes a candle burning before a statue as a symbol of prayer and sacrifice.",
       "anchor_gap": "No chapter section discusses votive candles yet."
     }
   ],
