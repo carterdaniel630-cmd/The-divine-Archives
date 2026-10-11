@@ -29,10 +29,6 @@
   }
 
   AG.register("fighter", {
-    title: "Divine Casualties",
-    subtitle: "War of the Gods — a duel of the Olympians, drawn from real myth.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch08) || "",
-    sourceHref: "chapters/ch08.html", sourceLabel: "Read “Early Greece”",
     mount: mountGame
   });
 
@@ -89,7 +85,7 @@
     function factLine(id) {
       var fx2 = FIGHTER_FACTS[id]; if (!fx2) return "";
       return '<p class="fg-fact rq-note" style="margin-top:.5rem"><span class="ch-sym">✦</span> ' + esc2(fx2) +
-        ' <a class="game-source" href="chapters/' + FACTS_CHAPTER + '.html">› Read “Early Greece”</a></p>';
+        " " + AG.content.readLink(FACTS_CHAPTER) + "</p>";
     }
     function esc2(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
     function loadHeroes() {
@@ -1934,7 +1930,7 @@
         factLine(w === p1 ? curG1 : curG2) +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="rematch" autofocus>Rematch</button>' +
           '<button class="rq-btn" data-a="choose">Choose fighters</button>' +
-          '<a class="game-source" href="chapters/ch08.html">› Read “Early Greece”</a></div>';
+          AG.content.readLink(AG.catalog("fighter").chapter) + '</div>';
       root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
       root.querySelector('[data-a="rematch"]').addEventListener("click", function () { startFight(curG1, curG2, curTwoP); });
       root.querySelector('[data-a="choose"]').addEventListener("click", selectScreen);

@@ -59,9 +59,45 @@
   }
   function finish(gameId, payload) { record("completed", gameId, payload); }
 
+  /* ---------------- content: the catalog and the chapter index ----------------
+     The shell holds no titles or chapter ids. A game's title, subtitle and
+     chapters come from the catalog (window.ARCHIVE_GAMES, catalog.js); chapter
+     titles and symbol art come from the site's index (window.ARCHIVE,
+     window.PLATE_ART). Games ask through ArchiveGames.content. */
+  function catalog(gameId) {
+    var list = window.ARCHIVE_GAMES || [];
+    if (gameId === undefined) return list;
+    for (var i = 0; i < list.length; i++) if (list[i].id === gameId) return list[i];
+    return null;
+  }
+  function chapterTitle(id) {
+    var a = (window.ARCHIVE || {}).chapters || [];
+    for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title;
+    return id;
+  }
+  function chapterHref(id) { return "chapters/" + id + ".html"; }
+  function symbol(id) { return (window.PLATE_ART && window.PLATE_ART[id]) || ""; }
+  function escText(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  // the end-screen link to a chapter: › Read “Title” (or a custom label)
+  function readLink(id, label) {
+    return '<a class="game-source" href="' + chapterHref(id) + '">› ' + (label || "Read “" + escText(chapterTitle(id)) + "”") + "</a>";
+  }
+  var content = { chapterTitle: chapterTitle, chapterHref: chapterHref, symbol: symbol, readLink: readLink };
+
   /* ---------------- game registry ---------------- */
-  // def: { title, subtitle?, mount(container, ctx) -> cleanupFn|void, symbolSVG?, sourceHref?, sourceLabel? }
-  function register(gameId, def) { games[gameId] = def || {}; }
+  // def: { mount(container, ctx) -> cleanupFn|void, title?, subtitle?, symbolSVG?, sourceHref?, sourceLabel? }
+  // Anything the def leaves out is filled from the game's catalog entry.
+  function register(gameId, def) {
+    def = def || {};
+    var c = catalog(gameId);
+    if (c) {
+      if (def.title == null) def.title = c.title;
+      if (def.subtitle == null) def.subtitle = c.subtitle;
+      if (def.symbolSVG == null) def.symbolSVG = symbol(c.chapter);
+      if (def.sourceHref == null) { def.sourceHref = chapterHref(c.chapter); def.sourceLabel = "Read “" + chapterTitle(c.chapter) + "”"; }
+    }
+    games[gameId] = def;
+  }
   function isRegistered(gameId) { return !!games[gameId] && typeof games[gameId].mount === "function"; }
 
   /* ---------------- accessible symbol trigger ---------------- */
@@ -347,6 +383,7 @@
     lsGet: lsGet, lsSet: lsSet,
     getHighScores: getHighScores, addHighScore: addHighScore, bestScore: bestScore,
     record: record, finish: finish,
+    catalog: catalog, content: content,
     sourceLink: sourceLink, seedEasterEggs: seedEasterEggs, maybeShowHint: maybeShowHint
   };
 
