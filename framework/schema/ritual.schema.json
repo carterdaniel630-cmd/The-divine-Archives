@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://getconexto.com/framework/schema/ritual.schema.json",
+  "title": "Ritual walkthrough",
+  "description": "A guided, explanatory walkthrough of a documented practice, played by framework/engine/sequence-engine.js. It shows what a practice involves and what its tradition says it means; it is not a game and never scores the visitor. The engine reads only the five step fields marked ENGINE; everything else is for people (display, review, sourcing).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "tradition", "sensitivity_tier", "framing", "opt_in", "sources", "steps", "review"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^ritual:[a-z0-9][a-z0-9-]*$", "description": "Registry ID, ritual:<slug>; the file is data/rituals/<slug>.json." },
+    "title": { "type": "string", "minLength": 1 },
+    "tradition": { "type": "string", "minLength": 1, "description": "The tradition whose practice this is, in plain words. Data only: the engine never sees it." },
+    "chapter": { "type": "string", "pattern": "^chapter:ch[0-9]{2}$", "description": "The chapter the practice belongs to." },
+    "sensitivity_tier": {
+      "type": "integer", "enum": [1, 2, 3],
+      "description": "1 = may be drafted and built without asking (widely shared, explanatory, nothing sacramental). 2 = historical or contested practice; drafted only with framing reviewed by Carter. 3 = sacramental or obligatory worship (Mass, communion, baptism, salat…); never drafted without Carter's explicit approval, listed in plans/rituals-tiers.md."
+    },
+    "framing": { "const": "guided, explanatory, no scores or win states", "description": "Fixed wording. A file with any other framing fails validation." },
+    "opt_in": { "const": true, "description": "A walkthrough only ever starts when the visitor chooses it." },
+    "intro": { "type": "string", "description": "Shown before step 1: what this is, and that it is an explanation, not an act of worship by the visitor." },
+    "sources": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "cite", "url", "checked"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "cite": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "pattern": "^https://" },
+          "checked": { "type": "string", "description": "How and when the source was confirmed (e.g. 'search result 2026-10-11; page blocked from the build sandbox, re-read at review')." }
+        }
+      }
+    },
+    "steps": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["sequence_order", "pacing_duration_ms", "input_trigger_type", "historical_text_anchor_id", "source_ids", "text"],
+        "properties": {
+          "sequence_order": { "type": "integer", "minimum": 1, "description": "ENGINE. 1, 2, 3… with no gaps or repeats." },
+          "pacing_duration_ms": { "type": "integer", "minimum": 0, "maximum": 600000, "description": "ENGINE. How long the step holds before it may move on. A display choice unless a source gives a timing; say which in 'pacing_note'." },
+          "input_trigger_type": { "type": "string", "enum": ["auto", "tap", "hold"], "description": "ENGINE. auto: advance when the time runs out. tap: wait for the visitor (time is the minimum). hold: advance once the visitor has held for the duration." },
+          "historical_text_anchor_id": { "type": ["string", "null"], "pattern": "^section:ch[0-9]{2}/[a-z0-9-]+$", "description": "ENGINE. The chapter section that discusses this step, or null when no chapter covers it yet (a content gap, recorded in 'anchor_gap')." },
+          "source_ids": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "ENGINE. IDs from this file's sources[] that support the step." },
+          "text": { "type": "string", "minLength": 1, "description": "What the visitor reads. Descriptive voice ('In the sutta, the practitioner…'), never an instruction to worship." },
+          "pacing_note": { "type": "string" },
+          "anchor_gap": { "type": "string" }
+        }
+      }
+    },
+    "review": {
+      "type": "object", "additionalProperties": false, "required": ["status"],
+      "properties": {
+        "status": { "enum": ["draft", "pending", "cleared"], "description": "Drafts are not shown anywhere. Only Carter moves a ritual to cleared." },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

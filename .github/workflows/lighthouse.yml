@@ -4,11 +4,23 @@ name: Lighthouse (mobile performance)
 # on the pages in tools/perf-pages.json: the home page, an era page, three chapters, the
 # museum and the twelve games. It serves the base branch and the pull request side by side
 # on the same runner, alternates runs between them (3 per page, median kept) so both see the
-# same machine, and fails if any page's mobile performance score drops by more than 5 points.
+# same machine, and compares each page's mobile performance score.
 # The comparison table is in the run summary and in the `lighthouse` artifact.
+#
+# When a drop of more than 5 points fails the run, and when it only warns:
+#   - Ready-for-review pull requests into main: HARD GATE. The job fails on a drop of more
+#     than 5 points on any page.
+#   - Draft pull requests, and pull requests into any branch other than main: ADVISORY. The
+#     same measurement runs and a drop shows as a warning on the run and in its summary,
+#     but the job exits 0, so work in progress is not blocked.
+#   - Manual runs (workflow_dispatch) are advisory too.
+# Marking a draft "Ready for review" re-runs the workflow (ready_for_review below), so the
+# hard gate always applies before anything reaches main. This is the archive's only
+# mobile/viewport check; any later one should follow the same rule.
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "docs/**"
       - "tools/serve.js"
@@ -59,12 +71,24 @@ jobs:
 
       - name: Run Lighthouse and compare
         working-directory: pr
-        run: >
-          node tools/lighthouse-pages.js
-          --target base=http://localhost:8081
-          --target pr=http://localhost:8082
-          --runs 3 --max-drop 5 --confirm 6
-          --out lh-results.json --md lh-report.md
+        env:
+          # Hard gate only for a ready-for-review pull request into main; otherwise advisory.
+          GATE: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false && github.base_ref == 'main' && 'hard' || 'advisory' }}
+        run: |
+          set +e
+          node tools/lighthouse-pages.js \
+            --target base=http://localhost:8081 \
+            --target pr=http://localhost:8082 \
+            --runs 3 --max-drop 5 --confirm 6 \
+            --out lh-results.json --md lh-report.md
+          code=$?
+          if [ "$code" -ne 0 ] && [ "$GATE" = "advisory" ]; then
+            echo "::warning title=Lighthouse (advisory)::Mobile performance dropped by more than 5 points on at least one page, or the run failed (exit $code). Advisory only on draft pull requests and pull requests not into main; it becomes a hard gate when this is a ready-for-review pull request into main."
+            echo "> **Advisory run** (draft, or not into main): the result above would fail the hard gate (exit $code)." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "Gate: $GATE"
+          exit $code
 
       - name: Upload the results
         if: always()

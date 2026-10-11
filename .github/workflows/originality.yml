@@ -1,0 +1,118 @@
+name: Originality
+
+# Checks that new or changed chapter, theme and Vault markdown is written in the archive's
+# own words: tools/originality-check.js fails a piece when more than 20% of its word 8-grams
+# repeat the pages it cites. Quoted text with a citation and the Sources section are exempt.
+#
+# The baseline (hashed 8-grams of each cited page, never the text) is fetched here, where
+# the web is reachable, and cached between runs so each URL is fetched once. Pages that
+# cannot be fetched are listed in the run summary and the `originality` artifact; a piece
+# whose sources are missing is reported PARTIAL or UNVERIFIED, never as a pass.
+#
+# On a pull request only the changed pieces are checked (and only their sources fetched).
+# When the check's own files change, on a push to main (which also warms the cache that pull
+# requests restore from) or on a manual run, every piece is checked.
+# This catches copying only. It is not a check of accuracy (reviews/ORIGINALITY.md).
+
+on:
+  pull_request:
+    paths:
+      - "eras/**"
+      - "themes/**"
+      - "vault/**"
+      - "sources/**"
+      - "tools/originality-check.js"
+      - "tools/originality-lib.js"
+      - "tools/build-originality-baseline.js"
+      - ".github/workflows/originality.yml"
+  push:
+    branches: [main]
+    paths:
+      - "sources/**"
+      - "eras/**"
+      - "themes/**"
+      - "vault/**"
+      - "tools/originality-*.js"
+      - "tools/build-originality-baseline.js"
+      - ".github/workflows/originality.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: originality-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  originality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Restore the baseline
+        uses: actions/cache@v4
+        with:
+          path: sources/baseline
+          key: originality-baseline-${{ hashFiles('sources/**/*.md', 'eras/**/*.md', 'themes/**/*.md', 'vault/**/*.md') }}
+          restore-keys: originality-baseline-
+
+      - name: Decide what to check
+        id: scope
+        run: |
+          if [ "${{ github.event_name }}" != "pull_request" ]; then echo "mode=all" >> "$GITHUB_OUTPUT"; exit 0; fi
+          base="origin/${{ github.base_ref }}"
+          if git diff --name-only "$base...HEAD" | grep -qE '^(tools/originality-check\.js|tools/originality-lib\.js|tools/build-originality-baseline\.js|\.github/workflows/originality\.yml)$'; then
+            echo "mode=all" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=changed" >> "$GITHUB_OUTPUT"
+            git diff --name-only --diff-filter=AMR "$base...HEAD" | grep -E '^(eras|themes|vault)/.+\.md$' > changed.txt || true
+            echo "count=$(wc -l < changed.txt)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build the baseline
+        run: |
+          if [ "${{ steps.scope.outputs.mode }}" = "all" ]; then
+            node tools/build-originality-baseline.js --all
+          elif [ "${{ steps.scope.outputs.count }}" != "0" ]; then
+            node tools/build-originality-baseline.js $(cat changed.txt)
+          else
+            echo "No chapter, theme or Vault markdown changed."
+          fi
+
+      - name: Report pages that could not be fetched
+        if: always()
+        run: |
+          [ -f sources/baseline/_report.json ] || exit 0
+          node -e '
+            const r = require("./sources/baseline/_report.json");
+            const lines = ["## Originality baseline", "", r.in_baseline + " of " + r.urls + " cited pages are in the baseline; " + r.not_fetched + " could not be fetched.", ""];
+            const f = Object.entries(r.failed || {});
+            if (f.length) { lines.push("<details><summary>Pages not fetched (" + f.length + ")</summary>", "", "| URL | Reason |", "|---|---|"); for (const [u, x] of f) lines.push("| " + u + " | " + x.reason + " |"); lines.push("", "</details>", ""); }
+            require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
+          '
+
+      - name: Check
+        run: |
+          if [ "${{ steps.scope.outputs.mode }}" = "all" ]; then
+            node tools/originality-check.js --all --json originality.json
+          else
+            node tools/originality-check.js --changed --base "origin/${{ github.base_ref }}" --json originality.json
+          fi
+
+      - name: Upload the results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: originality
+          path: |
+            originality.json
+            sources/baseline/_report.json
+          if-no-files-found: ignore

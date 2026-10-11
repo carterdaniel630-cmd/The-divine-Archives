@@ -1,0 +1,294 @@
+{
+ "type": "waypoint",
+ "count": 36,
+ "entities": [
+  {
+   "id": "waypoint:great-pyramid/ante",
+   "type": "waypoint",
+   "label": "The antechamber",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/asc",
+   "type": "waypoint",
+   "label": "The ascending passage",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/bigvoid",
+   "type": "waypoint",
+   "label": "The Big Void",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/coffer",
+   "type": "waypoint",
+   "label": "The granite sarcophagus",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/davison",
+   "type": "waypoint",
+   "label": "Davison's way up (1765)",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/desc",
+   "type": "waypoint",
+   "label": "The descending passage",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/dixon",
+   "type": "waypoint",
+   "label": "The Dixon relics: three objects from the northern shaft",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/entrance",
+   "type": "waypoint",
+   "label": "The original entrance and its gable stones",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/foot",
+   "type": "waypoint",
+   "label": "Where the ways divide",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/gg",
+   "type": "waypoint",
+   "label": "The Grand Gallery",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/grille",
+   "type": "waypoint",
+   "label": "Down into the rock",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/groove",
+   "type": "waypoint",
+   "label": "The groove along the walls",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/hp",
+   "type": "waypoint",
+   "label": "The horizontal passage",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/kc",
+   "type": "waypoint",
+   "label": "The King's Chamber",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/leaf",
+   "type": "waypoint",
+   "label": "The granite leaf",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/lepsius",
+   "type": "waypoint",
+   "label": "A Prussian birthday in hieroglyphs (1842)",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/nfc",
+   "type": "waypoint",
+   "label": "The North Face Corridor",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/niche",
+   "type": "waypoint",
+   "label": "The niche",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/plugs",
+   "type": "waypoint",
+   "label": "The granite plugs",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/qc",
+   "type": "waypoint",
+   "label": "The Queen's Chamber",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/qcshafts",
+   "type": "waypoint",
+   "label": "The shafts and the little door",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/relieving",
+   "type": "waypoint",
+   "label": "Look up: five chambers above",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/shafts",
+   "type": "waypoint",
+   "label": "The two shafts",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/slots",
+   "type": "waypoint",
+   "label": "The slots in the ramps",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/step",
+   "type": "waypoint",
+   "label": "The Great Step",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/tunnel",
+   "type": "waypoint",
+   "label": "The robbers' tunnel",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-board",
+   "type": "waypoint",
+   "label": "The Great Pyramid of Khufu",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-casing",
+   "type": "waypoint",
+   "label": "A casing stone from the Great Pyramid",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-door",
+   "type": "waypoint",
+   "label": "To the north face of the pyramid",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-merer",
+   "type": "waypoint",
+   "label": "The logbook of Merer",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-names",
+   "type": "waypoint",
+   "label": "How Khufu's name was written",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-ship",
+   "type": "waypoint",
+   "label": "Khufu's ship, at 1:60",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-statuette",
+   "type": "waypoint",
+   "label": "The ivory statuette of Khufu",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-v20",
+   "type": "waypoint",
+   "label": "The Papyrus of Ani",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  },
+  {
+   "id": "waypoint:great-pyramid/v-v34",
+   "type": "waypoint",
+   "label": "The Pyramid Texts of Unas",
+   "parent": "site:great-pyramid",
+   "href": "pilgrimage/great-pyramid.html",
+   "from": "docs/pilgrimage/sites/great-pyramid/site.js"
+  }
+ ]
+}

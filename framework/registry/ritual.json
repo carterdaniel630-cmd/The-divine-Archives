@@ -1,0 +1,24 @@
+{
+ "type": "ritual",
+ "count": 2,
+ "entities": [
+  {
+   "id": "ritual:meditation-breath-cycle",
+   "type": "ritual",
+   "label": "Mindfulness of breathing: the first four steps",
+   "status": "draft",
+   "links": [
+    "chapter:ch11",
+    "section:ch11/the-teaching-four-truths-and-a"
+   ],
+   "from": "data/rituals/meditation-breath-cycle.json"
+  },
+  {
+   "id": "ritual:votive-candle",
+   "type": "ritual",
+   "label": "Lighting a votive candle",
+   "status": "draft",
+   "from": "data/rituals/votive-candle.json"
+  }
+ ]
+}

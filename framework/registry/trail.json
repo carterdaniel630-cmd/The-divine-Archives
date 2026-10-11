@@ -1,0 +1,78 @@
+{
+ "type": "trail",
+ "count": 6,
+ "entities": [
+  {
+   "id": "trail:buddhism",
+   "type": "trail",
+   "label": "Buddhism",
+   "links": [
+    "room:ch11",
+    "room:ch20",
+    "room:ch53",
+    "room:ch54"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "trail:christianity",
+   "type": "trail",
+   "label": "Christianity",
+   "links": [
+    "room:ch16",
+    "room:ch22",
+    "room:ch28",
+    "room:ch31",
+    "room:ch60",
+    "room:ch64"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "trail:esoteric",
+   "type": "trail",
+   "label": "Western esotericism",
+   "links": [
+    "room:ch26",
+    "room:ch37",
+    "room:ch38",
+    "room:ch39"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "trail:gnosis",
+   "type": "trail",
+   "label": "Gnosis and dualism",
+   "links": [
+    "room:ch17",
+    "room:ch45",
+    "room:ch55",
+    "room:ch56"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "trail:islam",
+   "type": "trail",
+   "label": "Islam",
+   "links": [
+    "room:ch21",
+    "room:ch27"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "trail:judaism",
+   "type": "trail",
+   "label": "Judaism",
+   "links": [
+    "room:ch07",
+    "room:ch10",
+    "room:ch19",
+    "room:ch26"
+   ],
+   "from": "docs/museum/manifest.json"
+  }
+ ]
+}
