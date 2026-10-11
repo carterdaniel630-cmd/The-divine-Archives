@@ -1,0 +1,125 @@
+{
+ "type": "symbolset",
+ "count": 17,
+ "entities": [
+  {
+   "id": "symbolset:axial/1",
+   "type": "symbolset",
+   "label": "The Greek alphabet",
+   "href": "museum/symbols/axial.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:axial/2",
+   "type": "symbolset",
+   "label": "Brahmi: vowels and consonants (the script of Ashoka's edicts, 3rd century BCE)",
+   "href": "museum/symbols/axial.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:axial/3",
+   "type": "symbolset",
+   "label": "Kharoshthi consonants (north-west India and Gandhara)",
+   "href": "museum/symbols/axial.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:axial/4",
+   "type": "symbolset",
+   "label": "The eight trigrams of the Yijing (Book of Changes)",
+   "href": "museum/symbols/axial.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:bronze/1",
+   "type": "symbolset",
+   "label": "Egyptian hieroglyphs: the one-consonant signs",
+   "href": "museum/symbols/bronze.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:bronze/2",
+   "type": "symbolset",
+   "label": "Cuneiform number signs: 1 to 9, 10 to 50",
+   "href": "museum/symbols/bronze.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:bronze/3",
+   "type": "symbolset",
+   "label": "Linear B: the syllabary",
+   "href": "museum/symbols/bronze.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:bronze/4",
+   "type": "symbolset",
+   "label": "The Ugaritic alphabet",
+   "href": "museum/symbols/bronze.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:iron/1",
+   "type": "symbolset",
+   "label": "The Greek alphabet",
+   "href": "museum/symbols/iron.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:iron/2",
+   "type": "symbolset",
+   "label": "Old Italic letters (Etruscan and its neighbours)",
+   "href": "museum/symbols/iron.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:iron/3",
+   "type": "symbolset",
+   "label": "Old South Arabian letters (Sabaean and its neighbours)",
+   "href": "museum/symbols/iron.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:iron/4",
+   "type": "symbolset",
+   "label": "The Old Persian syllabary (signs only, without the word-signs)",
+   "href": "museum/symbols/iron.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:late/1",
+   "type": "symbolset",
+   "label": "The Coptic alphabet: Greek letters and six of the seven taken from Egyptian Demotic (Egypt, from the 3rd century CE)",
+   "href": "museum/symbols/late.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:late/2",
+   "type": "symbolset",
+   "label": "Ogham: the four groups of five and the forfeda (Irish memorial stones, from about the 4th century CE)",
+   "href": "museum/symbols/late.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:late/3",
+   "type": "symbolset",
+   "label": "Inscriptional Pahlavi: the script of the early Sasanian royal inscriptions (3rd century CE)",
+   "href": "museum/symbols/late.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:medieval/1",
+   "type": "symbolset",
+   "label": "Old Turkic: the runiform letters of the Orkhon and Yenisei inscriptions (8th century CE)",
+   "href": "museum/symbols/medieval.webp",
+   "from": "tools/data/symbols.json"
+  },
+  {
+   "id": "symbolset:medieval/2",
+   "type": "symbolset",
+   "label": "Sogdian: the script of the Silk Road's merchant people (letters; 7th-10th centuries CE)",
+   "href": "museum/symbols/medieval.webp",
+   "from": "tools/data/symbols.json"
+  }
+ ]
+}

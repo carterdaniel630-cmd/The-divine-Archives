@@ -737,6 +737,7 @@
     function finish() {
       if (raf) cancelAnimationFrame(raf);
       var won = st.winner === "you";
+      AG.finish("risk", { won: won });
       var recap = st.collected.map(function (f) { return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) + ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>"; }).join("");
       root.innerHTML =
         '<div class="game-head"><p class="eyebrow">Dominion · the campaign ends</p>' +

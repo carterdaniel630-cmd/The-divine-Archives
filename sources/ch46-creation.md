@@ -39,6 +39,10 @@ Per the project sourcing standard, this citation log records the real, checkable
   University Press, 2014), 3 vols: Rigveda 10.129. https://catalog.nypl.org/search/i9780199370184
 - W. Doniger O'Flaherty (trans.), *The Rig Veda: An Anthology* (Penguin, 1981): the "Who really
   knows? Who will here proclaim it?" rendering of verses 6–7.
+- R. T. H. Griffith (trans.), *The Hymns of the Rigveda* (1896), RV 10.129: the opening lines quoted
+  in the chapter (exact wording restored at review, 2026-10-11). https://sacred-texts.com/hin/rigveda/rv10129.htm
+- Tehom/Tiamat: the chapter now names the dispute (Gunkel vs. Tsumura) in the opening (review,
+  2026-10-11); Tsumura's argument checked at https://eisenbrauns.org/books/titles/978-1-57506-106-1.html
 - Carl Sagan, *Cosmos* (Random House, 1980), ch. 10 "The Edge of Forever", and the PBS episode: Sagan
   quotes the hymn for India's "tradition of skeptical questioning". Confirmed via search results
   quoting the episode; the book's page could not be opened here.

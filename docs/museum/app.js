@@ -29,7 +29,7 @@ import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=1";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createSecret } from "./secret.js?v=2";
+import { createSecret } from "./secret.js?v=3";
 import { createStyle, styleOf } from "./style.js?v=16";
 
 // ---------------------------------------------------------------- constants
@@ -1038,7 +1038,8 @@ function openCard(ex) {
     h = `<p class="mu-cat">${esc(R.eraLabel)}</p><h2 id="mu-card-h">${esc(R.title)}</h2>` +
       (R.pending ? `<span class="mu-flag soft">Recently added · pending review</span>` : "") +
       `<p>${esc(R.summary)}</p><div class="mu-actions">${btn("chapters/" + d.id + ".html", "Read the chapter")}` +
-      `${btn("chapters/" + d.id + ".html#evidence", "The evidence, honestly", true)}${btn("chapters/" + d.id + ".html#symbology", "Symbology", true)}</div>`;
+      `${btn("chapters/" + d.id + ".html#evidence", "The evidence, honestly", true)}${btn("chapters/" + d.id + ".html#symbology", "Symbology", true)}</div>` +
+      `<div class="mu-actions" data-rituals-for="${esc(d.id)}" hidden></div>`;
   } else if (d.type === "plate") {
     const R = detailFor(d.id).rooms[d.id];
     h = `<div class="mu-art" aria-hidden="true">${R.plate}</div><p class="mu-cat">Chapter symbol</p><h2 id="mu-card-h">${esc(R.title)}</h2><p>${esc(R.plateCaption)}</p>` +
@@ -1100,13 +1101,43 @@ function openCard(ex) {
       return;
     }
   }
+  if (S.ritual) { S.ritual.close(); S.ritual = null; }
   b.innerHTML = h;
   S.card = ex; S.cardAt = performance.now();
   unlock();
   $("mu-card-wrap").hidden = false;
   $("mu-card").focus();
+  if (d.type === "room") offerRituals(d.id);
 }
-function closeCard() { $("mu-card-wrap").hidden = true; S.card = null; S.dirty = true; if (S.sky) S.sky.highlight(null); S.skyHover = null; $("mu-stage").querySelector("canvas").focus(); }
+
+// ---------------------------------------------------------------- guided walkthroughs (opt-in; framework Phase 2)
+// A room whose chapter has a published walkthrough (docs/assets/framework/rituals/index.json, written by
+// tools/build-framework.js) offers it on its lectern card. Nothing loads until the card opens, and the player
+// and engine load only when the visitor asks for the walkthrough. No scores; the visitor can leave at any point.
+let ritualIndex = null;
+const loadScript = (src) => new Promise((ok, fail) => { const el = document.createElement("script"); el.src = src; el.onload = ok; el.onerror = fail; document.head.appendChild(el); });
+let ritualCode = null;
+function offerRituals(roomId) {
+  if (!ritualIndex) ritualIndex = fetch("assets/framework/rituals/index.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  ritualIndex.then((idx) => {
+    const slot = $("mu-card-body").querySelector(`[data-rituals-for="${roomId}"]`);
+    const list = idx && idx.rooms && idx.rooms[roomId];
+    if (!slot || !list || !list.length) return;
+    slot.innerHTML = list.map((slug) => `<button type="button" class="ghost" data-ritual="${esc(slug)}">Guided walkthrough: ${esc(idx.rituals[slug].title)}</button>`).join("");
+    slot.hidden = false;
+    slot.querySelectorAll("[data-ritual]").forEach((el) => el.addEventListener("click", () => openRitual(el.getAttribute("data-ritual"))));
+  });
+}
+function openRitual(slug) {
+  if (!ritualCode) ritualCode = Promise.all([loadScript("assets/framework/sequence-engine.js?v=1"), loadScript("assets/framework/ritual-player.js?v=2")]);
+  Promise.all([ritualCode, fetch("assets/framework/rituals/" + slug + ".json", { cache: "no-cache" }).then((r) => r.json())])
+    .then(([, ritual]) => {
+      if ($("mu-card-wrap").hidden) return;
+      S.ritual = window.RitualPlayer.open($("mu-card-body"), ritual, { chapterBase: "chapters/", onClose: () => { S.ritual = null; closeCard(); } });
+    })
+    .catch(() => { const slot = $("mu-card-body").querySelector("[data-ritual]"); if (slot) slot.textContent = "The walkthrough could not be loaded."; });
+}
+function closeCard() { if (S.ritual) { S.ritual.close(); S.ritual = null; } $("mu-card-wrap").hidden = true; S.card = null; S.dirty = true; if (S.sky) S.sky.highlight(null); S.skyHover = null; $("mu-stage").querySelector("canvas").focus(); }
 function findFig(id) { let any = null; for (const D of Object.values(S.detail)) { const f = D.figs[id]; if (f && f.svg) return f; if (f) any = f; } return any; }
 function findVault(id) { return Object.values(S.detail).find((D) => D.vault[id]); }
 function findVaultItem(id) { const D = findVault(id); return D ? D.vault[id] : null; }

@@ -40,9 +40,24 @@
     a.sort(function (x, y) { return (y.score || 0) - (x.score || 0); });
     a = a.slice(0, 10);
     lsSet("score." + gameId, a);
+    if (entry && typeof entry.score === "number") record("scored", gameId, { value: entry.score });
     return a;
   }
   function bestScore(gameId) { var a = getHighScores(gameId); return a.length ? (a[0].score || 0) : 0; }
+
+  /* ---------------- the visitor's ledger (framework/adapters/track.js) ----------------
+     The games never touch the ledger: they report here, and the tracker records it
+     (started on open, scored with each score, completed via finish(), unlocked via record()).
+     Before the tracker has loaded, events wait in window.__archiveQ. */
+  function record(verb, gameId, payload) {
+    var d = { entity: "game:" + gameId, verb: verb };
+    if (payload) d.payload = payload;
+    try {
+      if (window.__archiveTrack) window.__archiveTrack.record(d);
+      else (window.__archiveQ = window.__archiveQ || []).push(d);
+    } catch (e) { /* recording never breaks a game */ }
+  }
+  function finish(gameId, payload) { record("completed", gameId, payload); }
 
   /* ---------------- game registry ---------------- */
   // def: { title, subtitle?, mount(container, ctx) -> cleanupFn|void, symbolSVG?, sourceHref?, sourceLabel? }
@@ -85,6 +100,7 @@
   function open(gameId, ctx) {
     close(); // only one at a time
     ctx = ctx || {};
+    if (gameId) record("started", gameId);
     var def = games[gameId] || {};
     lastFocus = ctx.trigger || document.activeElement;
 
@@ -330,6 +346,7 @@
     open: open, close: close,
     lsGet: lsGet, lsSet: lsSet,
     getHighScores: getHighScores, addHighScore: addHighScore, bestScore: bestScore,
+    record: record, finish: finish,
     sourceLink: sourceLink, seedEasterEggs: seedEasterEggs, maybeShowHint: maybeShowHint
   };
 
