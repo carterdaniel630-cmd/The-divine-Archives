@@ -22,16 +22,37 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
-## Open PRs
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11; Phase 1 in build.
+## Open PRs and branches in flight (updated 2026-10-11 by the framework session)
+- #40 `claude/framework-sandbox`: framework Phases 1 and 2. Carter approved Phase 2 and "merge when
+  green". It brings in:
+  - the visitor ledger, kept in the browser only
+  - game and page events
+  - the opt-in breath walkthrough in the museum's Buddhism room (pending review)
+  - the originality check
+  - the entity registry (`framework/registry/`, rebuilt by `node tools/build-entity-registry.js`)
+  - Lighthouse advisory on drafts
+
+  After it merges, the build order in `CLAUDE.md` includes `build-framework.js` and
+  `build-entity-registry.js`. The Framework workflow fails any content PR that leaves the registry
+  stale. Plan: `plans/framework-sandbox.md`.
+- #42 `claude/project-thread-evq985`: full source review of the 14 pending chapters (another thread).
+  Whichever of #40 and #42 merges second must merge main, re-run the build order and rebuild the
+  registry, because both rebuild chapter pages.
+- `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
+  based on an older main.
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
+  `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
+- `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 
 ## Needs Carter
 - Clearing the 31 pending chapters (a separate thread, "Clear the pending chapters batch", owns this).
-- The ch70 dating question (`plans/ch70-dating-decision.md`): option A or B.
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
 - Held-back symbol-wall signs (list in `plans/museum-visual-pass.md`).
 - Whether the Qumran and Alexandria sites get museum portals.
+- The scheduled reviewer and auditor routines still have no repository attached, so their pushes fail.
+  Carter adds the repository to both routines in the app's routine settings; until then the reviews
+  run as manual sessions.
 
 ## Decisions still in effect
 - Sourcing rule: scholarly or primary sources first, Wikipedia only as a labelled pointer; flag any chapter

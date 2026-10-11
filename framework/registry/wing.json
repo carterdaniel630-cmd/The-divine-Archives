@@ -1,0 +1,169 @@
+{
+ "type": "wing",
+ "count": 10,
+ "entities": [
+  {
+   "id": "wing:01-prehistory",
+   "type": "wing",
+   "label": "Prehistory",
+   "links": [
+    "room:ch41",
+    "room:ch42",
+    "room:ch61",
+    "room:ch66",
+    "room:ch75"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:02-bronze-age",
+   "type": "wing",
+   "label": "The Bronze Age",
+   "links": [
+    "room:ch02",
+    "room:ch03",
+    "room:ch04",
+    "room:ch05",
+    "room:ch57",
+    "room:ch67",
+    "room:ch76"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:03-early-iron-age",
+   "type": "wing",
+   "label": "The Early Iron Age",
+   "links": [
+    "room:ch06",
+    "room:ch07",
+    "room:ch08",
+    "room:ch09",
+    "room:ch58",
+    "room:ch68",
+    "room:ch77"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:04-axial-age",
+   "type": "wing",
+   "label": "The Axial Age",
+   "links": [
+    "room:ch10",
+    "room:ch11",
+    "room:ch12",
+    "room:ch13",
+    "room:ch14",
+    "room:ch15",
+    "room:ch52",
+    "room:ch69",
+    "room:ch78"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:05-late-antiquity",
+   "type": "wing",
+   "label": "Late Antiquity",
+   "links": [
+    "room:ch16",
+    "room:ch17",
+    "room:ch18",
+    "room:ch19",
+    "room:ch20",
+    "room:ch45",
+    "room:ch55",
+    "room:ch70",
+    "room:ch79"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:06-early-medieval",
+   "type": "wing",
+   "label": "The Early Medieval",
+   "links": [
+    "room:ch21",
+    "room:ch22",
+    "room:ch23",
+    "room:ch24",
+    "room:ch25",
+    "room:ch53",
+    "room:ch54",
+    "room:ch60",
+    "room:ch71",
+    "room:ch80"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:07-high-medieval",
+   "type": "wing",
+   "label": "The High Medieval",
+   "links": [
+    "room:ch26",
+    "room:ch27",
+    "room:ch28",
+    "room:ch29",
+    "room:ch30",
+    "room:ch43",
+    "room:ch44",
+    "room:ch56",
+    "room:ch59",
+    "room:ch62",
+    "room:ch72",
+    "room:ch81"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:08-early-modern",
+   "type": "wing",
+   "label": "The Early Modern",
+   "links": [
+    "room:ch31",
+    "room:ch32",
+    "room:ch33",
+    "room:ch34",
+    "room:ch63",
+    "room:ch73",
+    "room:ch82"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:09-modern",
+   "type": "wing",
+   "label": "The Modern Age",
+   "links": [
+    "room:ch35",
+    "room:ch36",
+    "room:ch37",
+    "room:ch38",
+    "room:ch39",
+    "room:ch40",
+    "room:ch64",
+    "room:ch65",
+    "room:ch74",
+    "room:ch83"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "wing:rotunda",
+   "type": "wing",
+   "label": "The Rotunda",
+   "links": [
+    "room:ch01",
+    "room:ch46",
+    "room:ch47",
+    "room:ch48",
+    "room:ch49",
+    "room:ch50",
+    "room:ch51"
+   ],
+   "from": "docs/museum/manifest.json"
+  }
+ ]
+}

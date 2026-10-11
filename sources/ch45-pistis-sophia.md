@@ -16,11 +16,12 @@ Per the project sourcing standard, this citation log records the real, checkable
   — the primary manuscript record for the Askew Codex.
 - [NASSCAL, e-Clavis Christian Apocrypha: Pistis Sophia](https://www.nasscal.com/e-clavis-christian-apocrypha/pistis-sophia/)
   — scholarly reference overview: the text as a non-homogeneous compilation, the four books, the
-  3rd–4th-century dating with Book 4 as the older layer, and the relationship to the Books of Jeu.
+  proposed 2nd–3rd-century composition and a manuscript of ca. 250–300, Book 4's different setting, Mary as the main questioner, and the relationship to the Books of Jeu.
 - [Lexham Bible Dictionary: Askew Codex](https://biblia.com/books/lbd/word/Askew_Codex).
 
 *Contents — the Sophia myth, the mysteries, Mary Magdalene, the fire-rite*
-- [Pistis Sophia (G. R. S. Mead translation), Project Gutenberg](https://gutenberg.org/files/76266/76266-h/76266-h.htm)
+- [Pistis Sophia, trans. G. Horner, intro. F. Legge (London: SPCK, 1924), Project Gutenberg](https://gutenberg.org/files/76266/76266-h/76266-h.htm)
+- [Pistis Sophia, trans. G. R. S. Mead (rev. ed. 1921), sacred-texts.com](https://sacred-texts.com/chr/ps/) — the translation the quotations follow (chs. 36 and 72: https://sacred-texts.com/chr/ps/ps040.htm , https://sacred-texts.com/chr/ps/ps077.htm ); Mead's introduction for the codex's 178 leaves and Schmidt's view of Book 4 as the older stratum (https://sacred-texts.com/chr/ps/ps003.htm ).
   — the full public-domain English text: the eleven-years frame and garment of light, Authadēs and
   the thirteen repentances of Pistis Sophia, the interwoven Psalms and Odes of Solomon, the doctrine
   of saving mysteries, reincarnation and the cup of forgetfulness (Yaluham), the punishments and the
@@ -42,7 +43,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 *Editorial and reception history*
 - The 1851 Schwartze–Petermann Latin editio princeps, Carl Schmidt's later German edition, Woide's
   early transcript, and G. R. S. Mead's Theosophical English translation (1896, rev. 1921) — as
-  summarized in the Wikipedia and NASSCAL overviews above and
+  summarized in the NASSCAL overview above, the foreword to Schmidt and MacDermot (1978), and
   [The Theosophical Society in America: The Pistis Sophia — An Introduction](https://www.theosophical.org/publications/quest-magazine/the-pistis-sophia-an-introduction).
 
 *Note on sourcing:* Researched by web search against reference scholarship (the British Library
@@ -62,3 +63,4 @@ events it narrates.
   (Wikipedia) → Schmidt & MacDermot, NHS 13 (1978), and Evans (2015). No chapter sentence changed.
   All three books were confirmed via library catalogue and publisher records in search results;
   the books' own pages could not be opened from this session. ch45 stays pending.
+- 2026-10-11 (review): leaf count corrected to 178 leaves / 356 pages (British Library Add MS 5114, https://searcharchives.bl.uk/catalog/032-002738266 ; Mead); the date is now given as debated (2nd–4th c.), since NASSCAL gives 2nd–3rd and the British Library catalogue is broader; the unsourced "forty-six questions" replaced by NASSCAL's "most of the questions"; two quotations corrected to Mead; the Gutenberg item relabelled as Horner's 1924 translation.

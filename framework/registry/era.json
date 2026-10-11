@@ -1,0 +1,69 @@
+{
+ "type": "era",
+ "count": 9,
+ "entities": [
+  {
+   "id": "era:01-prehistory",
+   "type": "era",
+   "label": "Prehistory",
+   "href": "eras/01-prehistory.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:02-bronze-age",
+   "type": "era",
+   "label": "The Bronze Age",
+   "href": "eras/02-bronze-age.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:03-early-iron-age",
+   "type": "era",
+   "label": "The Early Iron Age",
+   "href": "eras/03-early-iron-age.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:04-axial-age",
+   "type": "era",
+   "label": "The Axial Age",
+   "href": "eras/04-axial-age.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:05-late-antiquity",
+   "type": "era",
+   "label": "Late Antiquity",
+   "href": "eras/05-late-antiquity.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:06-early-medieval",
+   "type": "era",
+   "label": "The Early Medieval",
+   "href": "eras/06-early-medieval.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:07-high-medieval",
+   "type": "era",
+   "label": "The High Medieval",
+   "href": "eras/07-high-medieval.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:08-early-modern",
+   "type": "era",
+   "label": "The Early Modern",
+   "href": "eras/08-early-modern.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "era:09-modern",
+   "type": "era",
+   "label": "The Modern Age",
+   "href": "eras/09-modern.html",
+   "from": "docs/assets/data.js"
+  }
+ ]
+}

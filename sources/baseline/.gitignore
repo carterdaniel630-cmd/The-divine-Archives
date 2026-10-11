@@ -1,0 +1,4 @@
+# The baseline is hashed 8-grams of other people's pages, rebuilt by
+# tools/build-originality-baseline.js and cached by CI. It is not committed.
+shingles/
+_report.json

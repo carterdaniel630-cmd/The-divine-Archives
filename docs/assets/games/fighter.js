@@ -1924,6 +1924,7 @@
     function showResult() {
       running = false; if (raf) cancelAnimationFrame(raf);
       var w = winner, l = (w === p1) ? p2 : p1;
+      AG.finish("fighter", { winner: w === p1 ? curG1 : curG2, loser: w === p1 ? curG2 : curG1, twoPlayer: !!curTwoP });
       root.innerHTML =
         '<div class="game-head"><p class="eyebrow">Divine Casualties · the dust settles</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.35rem">' + w.skin.name + ' is victorious</h2></div>' +
