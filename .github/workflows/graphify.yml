@@ -79,7 +79,10 @@ jobs:
           import json
           g = json.load(open("graph.json"))
           n = len(g.get("nodes", [])); e = len(g.get("links", g.get("edges", [])))
-          print(f"graph: {n} nodes, {e} edges")
+          files = sorted({x.get("source_file","") for x in g.get("nodes", []) if x.get("source_file")})
+          print(f"::notice::graph: {n} nodes, {e} edges from {len(files)} files")
+          tops = sorted({f.split("/")[0] for f in files})
+          print("::notice::top-level folders mapped: " + ", ".join(tops))
           assert n > 0, "empty graph"
           PY
           head -40 GRAPH_REPORT.md || true
