@@ -39,3 +39,5 @@ Seventeen of the eighteen Wikipedia citations were replaced with scholarly books
 - Zulfiqar → Calmard, "Ḏu'l-Faqār," *Encyclopaedia Iranica*.
 
 No stronger source found disagreed with the chapter's text.
+
+- 2026-10-11 (review): "his infant son" now gives both the Shi'i tradition (the infant ʿAli al-Asghar) and Madelung's view that the son ʿAbd-Allāh "was probably not a baby" (Encyclopaedia Iranica, "Ḥosayn b. ʿAli i", https://www.iranicaonline.org/articles/hosayn-b-ali-i ).
