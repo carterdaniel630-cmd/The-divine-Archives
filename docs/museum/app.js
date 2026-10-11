@@ -22,7 +22,6 @@
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=10";
-import { ritualsInRoom, PENDING_LABEL } from "./rituals.js?v=1";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=5";
@@ -1117,9 +1116,17 @@ function openCard(ex) {
 let ritualIndex = null;
 const loadScript = (src) => new Promise((ok, fail) => { const el = document.createElement("script"); el.src = src; el.onload = ok; el.onerror = fail; document.head.appendChild(el); });
 let ritualCode = null;
+const ritualJSON = {};
+const getRitualIndex = () => (ritualIndex = ritualIndex || fetch("assets/framework/rituals/index.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null));
+const getRitual = (slug) => (ritualJSON[slug] = ritualJSON[slug] || fetch("assets/framework/rituals/" + slug + ".json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error("ritual " + slug); return r.json(); }));
+const getRitualCode = () => (ritualCode = ritualCode || Promise.all([loadScript("assets/framework/sequence-engine.js?v=1"), loadScript("assets/framework/ritual-player.js?v=3")]));
+// for the inspector: a walkthrough tied to a Vault object is launched from its case (data/rituals/*.json, museum_object)
+const RITUALS_FOR_INSPECTOR = {
+  forObject: (id) => getRitualIndex().then((idx) => (idx && idx.objects && idx.objects[id]) || null),
+  load: (slug) => Promise.all([getRitualCode(), getRitual(slug)]).then(([, r]) => r)
+};
 function offerRituals(roomId) {
-  if (!ritualIndex) ritualIndex = fetch("assets/framework/rituals/index.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-  ritualIndex.then((idx) => {
+  getRitualIndex().then((idx) => {
     const slot = $("mu-card-body").querySelector(`[data-rituals-for="${roomId}"]`);
     const list = idx && idx.rooms && idx.rooms[roomId];
     if (!slot || !list || !list.length) return;
@@ -1129,8 +1136,7 @@ function offerRituals(roomId) {
   });
 }
 function openRitual(slug) {
-  if (!ritualCode) ritualCode = Promise.all([loadScript("assets/framework/sequence-engine.js?v=1"), loadScript("assets/framework/ritual-player.js?v=2")]);
-  Promise.all([ritualCode, fetch("assets/framework/rituals/" + slug + ".json", { cache: "no-cache" }).then((r) => r.json())])
+  Promise.all([getRitualCode(), getRitual(slug)])
     .then(([, ritual]) => {
       if ($("mu-card-wrap").hidden) return;
       S.ritual = window.RitualPlayer.open($("mu-card-body"), ritual, { chapterBase: "chapters/", onClose: () => { S.ritual = null; closeCard(); } });
@@ -1172,13 +1178,8 @@ function renderGuide() {
     const r = S.rooms[S.room];
     h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") + `</ul>`;
     if (!here.length) h += `<p class="mu-trail">Loading this room's exhibits…</p>`;
-    // a guided walk-through of a scene in this room (rituals.js), every step as plain text
-    for (const r of ritualsInRoom(S.room)) {
-      h += `<h3>Walk through the scene: ${esc(r.title)}</h3>` + (r.pending ? `<p class="mu-trail"><strong>${esc(PENDING_LABEL)}</strong></p>` : "") +
-        `<p class="mu-trail">${esc(r.intro)}</p><ul><li><button type="button" data-ritual="${esc(r.object)}">Open it at the case<small>the same steps, with the camera turning to each part of the scene</small></button></li></ul><ol class="mu-rit-guide">` +
-        r.steps.map((s) => `<li><strong>${esc(s.title)}.</strong> ${esc(s.lens)}` + (s.quotes ? `<blockquote>${s.quotes.map((q) => `<p>${esc(q)}</p>`).join("")}</blockquote>` + (s.quoteBy ? `<p class="mu-rit-src">${esc(s.quoteBy)}</p>` : "") : "") +
-          `<p class="mu-rit-src"><strong>Source:</strong> ${esc(s.source)}</p>` + (s.links ? `<p class="mu-rit-src">${s.links.map((l) => `<a href="${esc(l[1])}">${esc(l[0])}</a>`).join(" · ")}</p>` : "") + `</li>`).join("") + `</ol>`;
-    }
+    // a walkthrough launched from a case in this room: every step as plain text, with its sources (filled in below)
+    h += `<div data-guide-rituals="${esc(S.room)}"></div>`;
     const trail = S.manifest.trails.find((t) => t.rooms.indexOf(S.room) !== -1);
     if (trail) {
       const i = trail.rooms.indexOf(S.room), next = trail.rooms[i + 1], prev = trail.rooms[i - 1];
@@ -1206,6 +1207,24 @@ function renderGuide() {
   h += `<h3>Go to a room</h3><ul><li><button type="button" data-go="@hall">The entrance hall</button></li><li><button type="button" data-go="@rotunda">The Rotunda · themes</button></li>` +
     S.manifest.eras.map((e) => `<li><button type="button" data-go="@${e.slug}">Wing ${esc(e.num)} · ${esc(e.name)}</button></li>`).join("") + `</ul>`;
   body.innerHTML = h;
+  if (S.room) guideRituals(S.room);
+}
+function guideRituals(room) {
+  getRitualIndex().then((idx) => {
+    if (!idx || !idx.objects) return;
+    const slugs = Object.values(idx.objects).filter((slug) => idx.rituals[slug] && idx.rituals[slug].chapter === "chapter:" + room);
+    return Promise.all(slugs.map(getRitual)).then((list) => {
+      const slot = $("mu-guide-body").querySelector(`[data-guide-rituals="${room}"]`); if (!slot) return;
+      slot.innerHTML = list.map((r) => {
+        const src = {}; r.sources.forEach((x) => { src[x.id] = x; });
+        const obj = idx.rituals[r.id.replace(/^ritual:/, "")].object;
+        return `<h3>Walk through the scene: ${esc(r.title)}</h3>` + (r.review.status !== "cleared" ? `<p class="mu-trail"><strong>Recently added · pending full review</strong></p>` : "") +
+          `<p class="mu-trail">${esc(r.intro || "")}</p><ul><li><button type="button" data-ritual-at="${esc(obj)}">Open it at the case<small>the same steps, with the camera turning to each part of the scene</small></button></li></ul><ol class="mu-rit-guide">` +
+          r.steps.slice().sort((p, q) => p.sequence_order - q.sequence_order).map((st) => `<li>` + st.text.split("\n").map((line) => /^[\u201c"]/.test(line) ? `<blockquote>${esc(line)}</blockquote>` : `<p>${esc(line)}</p>`).join("") +
+            `<p class="mu-rit-src"><strong>Source:</strong> ${st.source_ids.map((id) => src[id] ? `<a href="${esc(src[id].url)}" rel="noopener" target="_blank">${esc(src[id].cite)}</a>` : "").filter(Boolean).join("; ")}</p></li>`).join("") + `</ol>`;
+      }).join("");
+    });
+  }).catch(() => {});
 }
 function roomOfExhibit(e) {
   // exhibits are built per room; find the room whose area contains the exhibit
@@ -1370,7 +1389,7 @@ function bindInput() {
     const b = e.target.closest("button"); if (!b) return;
     if (b.hasAttribute("data-go")) { teleport(b.getAttribute("data-go")); return; }
     if (b.hasAttribute("data-skyopen")) { const [what, id] = b.getAttribute("data-skyopen").split(":"); openCard({ data: { type: "sky", what, id } }); return; }
-    if (b.hasAttribute("data-ritual")) { const vx = S.exhibits.find((e) => e.data.type === "vault" && e.data.id === b.getAttribute("data-ritual")); if (vx) { toggleGuide(false); lookAt(vx.center); openCard(vx); if (S.insp && S.insp.active) S.insp.ritual(); } return; }
+    if (b.hasAttribute("data-ritual-at")) { const vx = S.exhibits.find((e) => e.data.type === "vault" && e.data.id === b.getAttribute("data-ritual-at")); if (vx) { toggleGuide(false); lookAt(vx.center); openCard(vx); if (S.insp && S.insp.active) { const t0 = performance.now(), go = () => { if (!S.insp.active) return; if (S.insp.ritualOffered) S.insp.ritual(); else if (performance.now() - t0 < 5000) setTimeout(go, 100); }; go(); } } return; }
     const ex = S.exhibits[+b.getAttribute("data-ex")]; if (ex) { lookAt(ex.center); openCard(ex); }
   });
   $("mu-dir-btn").addEventListener("click", showDirectory);
@@ -1508,7 +1527,7 @@ async function start() {
     for (const r of m.rooms) S.rooms[r.id] = Object.assign({}, r);
     makeTextures(); makeMaterials();
     S.style = createStyle({ touch, MAT, merge, onReady: () => { S.dirty = true; } });
-    S.insp = createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
+    S.insp = createInspector({ renderer, reduce: () => S.reduce, rituals: RITUALS_FOR_INSPECTOR, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     build();
     S.secret = createSecret({ scene, camera, style: S.style, portal: goldenPortal, store, go: (href) => stepThroughPortal(href) });
   } catch (e) {
@@ -1558,7 +1577,7 @@ window.__MU = {
   sky: () => S.sky ? { loaded: !!S.sky.state.data, site: S.sky.state.site && S.sky.state.site.id, lst: S.sky.state.lst, bodies: S.sky.state.bodies, visible: S.sky.root.visible, hover: S.skyHover } : null,
   skyAt: (cx, cy) => { const r = skyAt(cx, cy); return r ? r.data : null; },
   inspect: (kind) => S.insp.open(kind, "<h2 id=mu-card-h>Test</h2>", "test"),
-  insp: () => ({ active: S.insp.active, yaw: S.insp.state.yaw, dist: S.insp.state.dist, tx: S.insp.state.tx, step: S.insp.ritualStep, built: !!S.insp.state.model, settled: !S.insp.state.want || Math.abs((S.insp.state.want.tx || 0) - S.insp.state.tx) < 0.004 }),
+  insp: () => ({ active: S.insp.active, yaw: S.insp.state.yaw, dist: S.insp.state.dist, tx: S.insp.state.tx, step: S.insp.ritualStep, offered: S.insp.ritualOffered, built: !!S.insp.state.model, settled: !S.insp.state.want || Math.abs((S.insp.state.want.tx || 0) - S.insp.state.tx) < 0.004 }),
   inspView: (yaw, pitch, dist, ty) => Object.assign(S.insp.state, { yaw, pitch, dist, spin: false, want: null }, ty != null ? { ty } : {}),
   open: (i) => openCard(S.exhibits[i]),
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),

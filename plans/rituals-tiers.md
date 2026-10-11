@@ -35,6 +35,12 @@ Proposed for tier 1 when a chapter covers them. Carter to agree or move them.
 - Purification at a Shinto shrine's water basin (temizu). This may belong in tier 2 because
   it is living shrine practice
 
+## Tier 2: drafted after Carter approved the framing
+
+| Ritual | File | Approval | Notes |
+|---|---|---|---|
+| The Weighing of the Heart (Book of the Dead, Spell 125; the Papyrus of Ani) | `data/rituals/weighing-of-the-heart.json` | Carter, 2026-10-11: approved `plans/games-modern.md` §5, the prototype (recorded in the file's `framing_approval`) | Historical rite with no continuous living community. Launched from the V20 case in the museum's Egypt room; the camera turns to each part of the museum's rendition of the scene. The judgment is narrated as the papyrus shows Ani's, never the visitor's; nothing is shown happening to a heart that fails. Review status `pending` (new content, shown with the pending tag). Quotations from Budge (1895), logged in `sources/ritual-weighing-of-the-heart.md` |
+
 ## Tier 2: listed, not drafted (framing needs Carter)
 
 | Practice | Why tier 2 |
@@ -73,7 +79,8 @@ one practice. Several should probably never be built.
 
 ## What a ritual file must have (enforced by `framework/test/schemas.test.js`)
 
-- `sensitivity_tier` of 1. The test refuses tier 2 or 3 files in Phase 1.
+- `sensitivity_tier` of 1; or 2 with `framing_approval` (Carter's recorded approval) and a row in the
+  tier-2 table above. The test refuses tier 3 files, and tier 2 files without both.
 - At least one real source per step, each with a note of how and when it was checked.
 - An anchor to a chapter section that exists in the registry, or an `anchor_gap` note saying
   none does yet.

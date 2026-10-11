@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1792,
+ "count": 1826,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -96,6 +96,15 @@
    "id": "source:academia-edu/3de2d32d67",
    "type": "source",
    "label": "https://www.academia.edu/145725998/",
+   "links": [
+    "chapter:ch70"
+   ],
+   "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:academia-edu/5962946b9e",
+   "type": "source",
+   "label": "https://www.academia.edu/110122928/Babel_around_Tayma%CA%BE_and_Dumat_2023",
    "links": [
     "chapter:ch70"
    ],
@@ -321,6 +330,15 @@
    "id": "source:al-islam-org/9818c38d81",
    "type": "source",
    "label": "https://al-islam.org/ask/is-there-any-significance-of-the-hamsa-hand-in-shia-islam-i-have-heard-that-it-is-called-the-hand-of-fatima-is-this-true-and-if-so-why",
+   "links": [
+    "chapter:ch80"
+   ],
+   "from": "sources/ch80-shiism.md"
+  },
+  {
+   "id": "source:al-monitor-com/6c8a89c340",
+   "type": "source",
+   "label": "https://www.al-monitor.com/originals/2023/09/millions-shiite-pilgrims-flock-iraqs-karbala",
    "links": [
     "chapter:ch80"
    ],
@@ -758,6 +776,15 @@
     "relic:v84"
    ],
    "from": "sources/v84-hinton-st-mary-mosaic.md"
+  },
+  {
+   "id": "source:arxiv-org/0a51bce0cc",
+   "type": "source",
+   "label": "https://arxiv.org/abs/1102.3381",
+   "links": [
+    "chapter:ch79"
+   ],
+   "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
    "id": "source:arxiv-org/8d7df5bedd",
@@ -2784,7 +2811,7 @@
    "links": [
     "relic:v20"
    ],
-   "from": "sources/v20-papyrus-of-ani.md"
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:britishmuseum-org/46d20f6c7b",
@@ -2839,6 +2866,12 @@
     "relic:v53"
    ],
    "from": "sources/v53-rosetta-stone.md"
+  },
+  {
+   "id": "source:britishmuseum-org/d33bd72b71",
+   "type": "source",
+   "label": "https://www.britishmuseum.org/collection/object/Y_EA10470-4",
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:britishmuseum-org/efe1639882",
@@ -3534,6 +3567,15 @@
    "from": "sources/v63-kalpa-sutra-manuscripts.md"
   },
   {
+   "id": "source:cngcoins-com/5f9bc89853",
+   "type": "source",
+   "label": "https://cngcoins.com/Article.aspx?ArticleID=201",
+   "links": [
+    "chapter:ch82"
+   ],
+   "from": "sources/ch82-akbar-mughal-synthesis.md"
+  },
+  {
    "id": "source:cnn-com/49a96881c2",
    "type": "source",
    "label": "https://www.cnn.com/holy-grail-leon-spain-valencia-genoa",
@@ -3642,6 +3684,15 @@
    "from": "sources/ch70-pre-islamic-arabia.md"
   },
   {
+   "id": "source:collections-vam-ac-uk/82dcc520e0",
+   "type": "source",
+   "label": "https://collections.vam.ac.uk/item/O9612",
+   "links": [
+    "chapter:ch82"
+   ],
+   "from": "sources/ch82-akbar-mughal-synthesis.md"
+  },
+  {
    "id": "source:collections-vam-ac-uk/d302fad337",
    "type": "source",
    "label": "https://collections.vam.ac.uk/search/?q=kalpasutra",
@@ -3730,6 +3781,15 @@
     "relic:v11"
    ],
    "from": "sources/v11-rohonc-codex.md"
+  },
+  {
+   "id": "source:csmonitor-com/3c77d24c6b",
+   "type": "source",
+   "label": "https://www.csmonitor.com/World/Asia-South-Central/2013/0826/Indian-state-outlaws-profiting-on-miracles-summoning-ghosts",
+   "links": [
+    "chapter:ch83"
+   ],
+   "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
    "id": "source:cswr-hds-harvard-edu/277dc8255e",
@@ -4147,6 +4207,15 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:doi-org/26160de2be",
+   "type": "source",
+   "label": "https://doi.org/10.1080/13530194.2022.2057279",
+   "links": [
+    "chapter:ch80"
+   ],
+   "from": "sources/ch80-shiism.md"
+  },
+  {
    "id": "source:doi-org/2c62bb952e",
    "type": "source",
    "label": "https://doi.org/10.1215/1089201x-1264388",
@@ -4371,6 +4440,15 @@
     "chapter:ch50"
    ],
    "from": "sources/ch50-apocalypse.md"
+  },
+  {
+   "id": "source:ebsco-com/e095c29937",
+   "type": "source",
+   "label": "https://www.ebsco.com/research-starters/history/first-dalai-lama-becomes-buddhist-spiritual-leader",
+   "links": [
+    "chapter:ch81"
+   ],
+   "from": "sources/ch81-tengri-mongols.md"
   },
   {
    "id": "source:ebsco-com/f67126b1a3",
@@ -6889,15 +6967,6 @@
    "from": "sources/ch09-early-china.md"
   },
   {
-   "id": "source:en-wikipedia-org/b05c91cdcf",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Tatbir",
-   "links": [
-    "chapter:ch80"
-   ],
-   "from": "sources/ch80-shiism.md"
-  },
-  {
    "id": "source:en-wikipedia-org/b09a6a0b4a",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Gospel_of_Judas",
@@ -8300,6 +8369,15 @@
    "from": "sources/ch78-scythians-steppe.md"
   },
   {
+   "id": "source:endangeredalphabets-net/19cef281b1",
+   "type": "source",
+   "label": "https://www.endangeredalphabets.net/?p=399",
+   "links": [
+    "chapter:ch81"
+   ],
+   "from": "sources/ch81-tengri-mongols.md"
+  },
+  {
    "id": "source:enfilade18thc-com/0e9b0a867f",
    "type": "source",
    "label": "https://enfilade18thc.com/2012/12/20/the-popol-vuh-an-eighteenth-century-manuscript-copy/",
@@ -8451,6 +8529,24 @@
     "chapter:ch76"
    ],
    "from": "sources/ch76-olmec.md"
+  },
+  {
+   "id": "source:fgh-perseids-org/ad23512aaa",
+   "type": "source",
+   "label": "https://fgh.perseids.org/read/latinLit/phi0914/phi001/perseus-eng3/5.1.5-5.2.1",
+   "links": [
+    "chapter:ch77"
+   ],
+   "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:fijitimes-com-fj/2208fe87ef",
+   "type": "source",
+   "label": "https://www.fijitimes.com.fj/the-arrival-of-girmitiyas-in-fiji/",
+   "links": [
+    "chapter:ch83"
+   ],
+   "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
    "id": "source:find-library-upenn-edu/32ceb3658f",
@@ -10810,6 +10906,15 @@
    "from": "sources/ch76-olmec.md"
   },
   {
+   "id": "source:livius-org/39d3061efc",
+   "type": "source",
+   "label": "https://www.livius.org/sources/content/zosimus/zosimus-new-history-5/zosimus-new-history-5.41/",
+   "links": [
+    "chapter:ch77"
+   ],
+   "from": "sources/ch77-etruscans.md"
+  },
+  {
    "id": "source:livius-org/767401cc44",
    "type": "source",
    "label": "https://www.livius.org/articles/misc/great-flood/flood2/",
@@ -11116,6 +11221,15 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:meduza-io/257122e42c",
+   "type": "source",
+   "label": "https://meduza.io/en/news/2020/06/25/human-rights-group-memorial-declares-yakut-shaman-a-political-prisoner",
+   "links": [
+    "chapter:ch75"
+   ],
+   "from": "sources/ch75-siberian-arctic-shamanism.md"
+  },
+  {
    "id": "source:memorients-com/b09e81860c",
    "type": "source",
    "label": "https://memorients.com/articles/the-radiant-kingship-abul-fazls-mughal-theory-of-sovereignty",
@@ -11294,6 +11408,15 @@
     "chapter:ch22"
    ],
    "from": "sources/ch22-patristic-christianity.md"
+  },
+  {
+   "id": "source:middleeasteye-net/dde1994f5c",
+   "type": "source",
+   "label": "https://www.middleeasteye.net/news/ashura-lebanon-donating-blood-rather-spilling-it",
+   "links": [
+    "chapter:ch80"
+   ],
+   "from": "sources/ch80-shiism.md"
   },
   {
    "id": "source:ministrymagazine-org/060e57f893",
@@ -12322,6 +12445,15 @@
    "from": "sources/ch02-egypt.md"
   },
   {
+   "id": "source:orient-mediterranee-com/0444f954e4",
+   "type": "source",
+   "label": "https://www.orient-mediterranee.com/wp-content/uploads/2025/01/GAJDA-Liste-des-publications-jan2025.pdf",
+   "links": [
+    "chapter:ch70"
+   ],
+   "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
    "id": "source:orion-bibliography-huji-ac-il/8c57c41284",
    "type": "source",
    "label": "https://orion-bibliography.huji.ac.il/orion_editor/node/104819",
@@ -12338,6 +12470,15 @@
     "relic:v02"
    ],
    "from": "sources/v02-dead-sea-scrolls.md"
+  },
+  {
+   "id": "source:orthodoxwiki-org/158694e6d3",
+   "type": "source",
+   "label": "https://orthodoxwiki.org/Svetitskhoveli_Cathedral_(Mtskheta,_Georgia",
+   "links": [
+    "chapter:ch79"
+   ],
+   "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
    "id": "source:orthodoxwiki-org/5c20fc0885",
@@ -12511,6 +12652,24 @@
    "from": "sources/ch77-etruscans.md"
   },
   {
+   "id": "source:penelope-uchicago-edu/5a31d86b01",
+   "type": "source",
+   "label": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/11A*.html",
+   "links": [
+    "chapter:ch77"
+   ],
+   "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:penelope-uchicago-edu/e2c9e558ee",
+   "type": "source",
+   "label": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Haruspices.html",
+   "links": [
+    "chapter:ch77"
+   ],
+   "from": "sources/ch77-etruscans.md"
+  },
+  {
    "id": "source:penelope-uchicago-edu/e79b4a22c5",
    "type": "source",
    "label": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3%2A.html",
@@ -12590,6 +12749,15 @@
     "chapter:ch53"
    ],
    "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
+  },
+  {
+   "id": "source:pepysdiary-com/3239c07e3f",
+   "type": "source",
+   "label": "https://www.pepysdiary.com/diary/1666/02/19/",
+   "links": [
+    "chapter:ch73"
+   ],
+   "from": "sources/ch73-sabbateans-hasidism.md"
   },
   {
    "id": "source:pepysdiary-com/67070bf099",
@@ -12838,6 +13006,15 @@
    "id": "source:pluralism-org/3257cd6904",
    "type": "source",
    "label": "https://pluralism.org/news/iskcon-files-bankruptcy",
+   "links": [
+    "chapter:ch83"
+   ],
+   "from": "sources/ch83-global-hinduism-guru-movements.md"
+  },
+  {
+   "id": "source:pluralism-org/77cecb6a0a",
+   "type": "source",
+   "label": "https://pluralism.org/news/iskcon-abuse-cases-settled-usd-95-million",
    "links": [
     "chapter:ch83"
    ],
@@ -13475,6 +13652,21 @@
    "from": "sources/ch16-early-christianity.md"
   },
   {
+   "id": "source:rug-nl/79935083d6",
+   "type": "source",
+   "label": "https://www.rug.nl/research/centre-for-religious-studies/research-centres/crasis/news-events/events/2022/aws/ancient-world-seminar-ahmad-al-jallad-groningen-university-landscape-memory-and-ritual-in",
+   "links": [
+    "chapter:ch70"
+   ],
+   "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:sacred-texts-com/057bacd422",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxix-and-xxx",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
    "id": "source:sacred-texts-com/2a4e0f40a7",
    "type": "source",
    "label": "https://sacred-texts.com/jai/sbe22/index.htm",
@@ -13493,6 +13685,21 @@
    "from": "sources/v03-emerald-tablet.md"
   },
   {
+   "id": "source:sacred-texts-com/2f60aa5d2f",
+   "type": "source",
+   "label": "https://sacred-texts.com/chr/ps/",
+   "links": [
+    "chapter:ch45"
+   ],
+   "from": "sources/ch45-pistis-sophia.md"
+  },
+  {
+   "id": "source:sacred-texts-com/37003df229",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plate-iii",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
    "id": "source:sacred-texts-com/4f38d1e9df",
    "type": "source",
    "label": "https://sacred-texts.com/hin/sbe15/",
@@ -13500,6 +13707,39 @@
     "chapter:ch69"
    ],
    "from": "sources/ch69-upanishads-hindu-synthesis.md"
+  },
+  {
+   "id": "source:sacred-texts-com/6541fd4d36",
+   "type": "source",
+   "label": "https://sacred-texts.com/chr/ps/ps077.htm",
+   "links": [
+    "chapter:ch45"
+   ],
+   "from": "sources/ch45-pistis-sophia.md"
+  },
+  {
+   "id": "source:sacred-texts-com/84482b7a2c",
+   "type": "source",
+   "label": "https://sacred-texts.com/chr/ps/ps003.htm",
+   "links": [
+    "chapter:ch45"
+   ],
+   "from": "sources/ch45-pistis-sophia.md"
+  },
+  {
+   "id": "source:sacred-texts-com/932f568717",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxxi-and-xxxii",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
+   "id": "source:sacred-texts-com/94b57087ab",
+   "type": "source",
+   "label": "https://sacred-texts.com/hin/rigveda/rv10129.htm",
+   "links": [
+    "chapter:ch46"
+   ],
+   "from": "sources/ch46-creation.md"
   },
   {
    "id": "source:sacred-texts-com/c451e1b44c",
@@ -13511,6 +13751,21 @@
    "from": "sources/v66-kebra-nagast.md"
   },
   {
+   "id": "source:sacred-texts-com/ca61f0032a",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plate-iv",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
+   "id": "source:sacred-texts-com/d2cb74c4b0",
+   "type": "source",
+   "label": "https://sacred-texts.com/chr/ps/ps040.htm",
+   "links": [
+    "chapter:ch45"
+   ],
+   "from": "sources/ch45-pistis-sophia.md"
+  },
+  {
    "id": "source:sacred-texts-com/d837339815",
    "type": "source",
    "label": "https://sacred-texts.com/cla/plu/rgq/index.htm",
@@ -13518,6 +13773,12 @@
     "chapter:ch67"
    ],
    "from": "sources/ch67-minoan-crete.md"
+  },
+  {
+   "id": "source:sacred-texts-com/f1cce14878",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/title-page",
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:sacred-texts-com/f2c0c3ac17",
@@ -13865,6 +14126,15 @@
    "id": "source:shamanism-org/8a4918d977",
    "type": "source",
    "label": "https://shamanism.org/articles/article08.html",
+   "links": [
+    "chapter:ch75"
+   ],
+   "from": "sources/ch75-siberian-arctic-shamanism.md"
+  },
+  {
+   "id": "source:shamanism-org/8c0d7fa23b",
+   "type": "source",
+   "label": "https://shamanism.org/in-memoriam-1925-2022-mongush-b-kenin-lopsan-living-treasure-of-shamanism",
    "links": [
     "chapter:ch75"
    ],
@@ -14355,6 +14625,15 @@
     "relic:v27"
    ],
    "from": "sources/v27-sacred-tooth-relic.md"
+  },
+  {
+   "id": "source:stabroeknews-com/3c50ac138e",
+   "type": "source",
+   "label": "https://stabroeknews.com/?p=239515",
+   "links": [
+    "chapter:ch83"
+   ],
+   "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
    "id": "source:state-gov/36ea756dbf",
@@ -15058,6 +15337,15 @@
     "chapter:ch66"
    ],
    "from": "sources/ch66-san-rock-art.md"
+  },
+  {
+   "id": "source:truthabouttm-org/a31d133879",
+   "type": "source",
+   "label": "https://www.truthabouttm.org/SocietalEffects/Critics-Rebuttals/",
+   "links": [
+    "chapter:ch83"
+   ],
+   "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
    "id": "source:tsunagujapan-com/134c5bdd8d",

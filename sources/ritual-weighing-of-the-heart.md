@@ -1,9 +1,12 @@
 # Sources — Museum ritual: the Weighing of the Heart (Egypt room, V20)
 
 The guided walk-through "Walk through the scene" on the case of the Papyrus of Ani (Vault V20) in the museum's
-Egypt room (ch02). Data: `docs/museum/rituals.js` (id `weighing-of-the-heart`, tier 1, pending review); the
-rendition it turns the camera to: `docs/museum/relics.js`, `CAT.v20`. Plan: `plans/games-modern.md` §4–§5
-(on branch `claude/games-modern`), approved by Carter on 2026-10-11. Logged 2026-10-11.
+Egypt room (ch02). Data: `data/rituals/weighing-of-the-heart.json` (framework ritual file, `ritual:weighing-of-the-heart`,
+sensitivity tier 2 with Carter's framing approval of 2026-10-11 recorded, review status `pending`), played by the
+framework's ritual player; the camera views: `docs/museum/ritual-views.js`; the rendition it turns to:
+`docs/museum/relics.js`, `CAT.v20`. Plan: `plans/games-modern.md` §4–§5 (on branch `claude/games-modern`), approved by
+Carter on 2026-10-11; tier entry in `plans/rituals-tiers.md`. Logged 2026-10-11. `tools/verify-rituals.js` checks that
+every quotation the walkthrough shows appears in this log word for word.
 
 **How the sources were checked.** This build session could not download the pages directly (the sandbox's
 network policy refused direct connections to sacred-texts.com, gutenberg.org, archive.org and wikisource.org).
@@ -20,8 +23,8 @@ E. A. Wallis Budge, *The Book of the Dead: The Papyrus of Ani in the British Mus
 
 ### Step 1 — the Hall of the Two Truths
 - Plates XXIX and XXX, https://sacred-texts.com/book/the-book-of-the-dead/plates-xxix-and-xxx — the opening of
-  Chapter CXXV (Spell 125), its title quoted on the step: "THE CHAPTER OF ENTERING INTO THE HALL OF DOUBLE RIGHT
-  AND TRUTH: A HYMN OF PRAISE TO OSIRIS, THE DWELLER IN AMENTET." (shown in sentence case on the step).
+  Chapter CXXV (Spell 125), its title: "THE CHAPTER OF ENTERING INTO THE HALL OF DOUBLE RIGHT AND TRUTH: A HYMN OF
+  PRAISE TO OSIRIS, THE DWELLER IN AMENTET." (the step refers to it without quotation marks, in ordinary case).
 - Plate III, https://sacred-texts.com/book/the-book-of-the-dead/plate-iii — the vignette: "Ani and his wife enter
   the Hall of Double Law or Truth"; "Above, twelve gods, each holding a sceptre are seated upon thrones before a
   table of offerings."
