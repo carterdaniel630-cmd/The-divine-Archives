@@ -1,7 +1,7 @@
-Summary: 10 passed, 0 fixed, 4 need you. PR #40 now has Phase 2 (which you confirmed) and the builder's fixes for my earlier findings. It works: the games, page views and the museum's breath walkthrough all record correctly, in the visitor's browser only. The phone-speed check (Lighthouse) was still running when I filed this; I'll add its result. Two small bugs are left for the builder.
+Summary: 10 passed, 0 fixed, 4 need you. PR #40 now has Phase 2 (which you confirmed) and the builder's fixes for my earlier findings. It works: the games, page views and the museum's breath walkthrough all record correctly, in the visitor's browser only. The phone-speed check (Lighthouse) passed under the strict rule for ready PRs: no page got slower by more than 5 points. Two small bugs are left for the builder.
 
 NEEDS CARTER (4)
-  - site:fw-merge: PR #40 is now marked ready for review, so merging it is your call. Wait for the Lighthouse result first: it now blocks the merge if any page's phone speed score drops by more than 5 points. Everything else on the current head passes.
+  - site:fw-merge: PR #40 is now marked ready for review, so merging it is your call. Lighthouse passed under the hard gate (no page dropped more than 5 points). Everything else on the current head passes.
   - ritual:meditation-breath-cycle: this walkthrough would go live in the museum's Buddhism room with the "pending full review" tag, as you approved. Its content matches MN 118. The exact wording against the Thanissaro translation is still unchecked, because the page is blocked for me as well as for the builder. The tag stays until you clear it.
   - site:fw-retry: the fix for pages that asked us to slow down only half works. Pages that had already failed twice before the fix are still skipped forever. 62 such pages are still unchecked, and the latest run fetched none of them. The builder's fix is one line: decide from the stored failure reason, not a new flag. (tools/build-originality-baseline.js line 91)
   - site:fw2-import: a small counting bug. For a visitor whose first game score comes after this update, that score is copied a second time as an "imported old score" on their next page load (once per game, then never again). Best scores are not affected; only the count of scoring events is off by one. The builder can fix it.
@@ -26,7 +26,7 @@ Automatic checks (on 4aaf77a and again on 4f8271a)
   - review-checks.js --base origin/main --build: 8 pass, build output current, nothing left over.
     32 pending chapter/Vault pages all show the banner.
   - All tools/verify-*.js pass.
-  - CI on 4f8271a: Framework, Review checks, Originality pass. Game runtime and Link guard pass. Lighthouse: still running at filing (run 38116595185, started 05:59 UTC).
+  - CI on 4f8271a: Framework, Review checks, Originality pass. Game runtime and Link guard pass. Lighthouse passed (run 38116595185, hard gate).
 
 PASSED   (10)
   - site:fw2-games (a): all 12 games call ArchiveGames.finish exactly at their end screen. Chess: checkmate,
@@ -83,8 +83,14 @@ Originality run on 4f8271a (run 38116261759)
   - The per-page list is in the run's artifact; this session cannot download artifacts.
 
 Lighthouse
-  - Not yet finished on any head. Every earlier run was cancelled by a newer push. This report will be updated
-    with the result of run 38116595185 (head 1ac8e9f), the first run under the hard gate.
+  - Run 38116595185 on 1ac8e9f, "Gate: hard" (PR ready for review into main): success. Median mobile score,
+    main vs PR: Home 87/87, Era 79/79, ch07 76/75, ch45 70/70, ch80 74/73, Museum 36/36, Pantheon 72/73,
+    fighter 81/82, chess 87/83, ouroboros 87/86, ziggurat 83/85, reliquary 86/86, seeker 86/82, pong 86/86,
+    minesweeper 82/86, pac-man 86/82, pinball 86/81, risk 82/82, treasure 77/76.
+  - No page dropped more than 5. Largest drops: pinball 5 (exactly at the limit), chess, seeker and pac-man 4
+    each. All four have run-to-run spreads of 5 to 6 points (e.g. pinball PR runs 81, 81, 86), so these
+    are within noise but worth watching on the next game change.
+  - Every earlier Lighthouse run on this PR was cancelled by a newer push.
 
 Head history during this review: 4aaf77a → 0828543 (my findings) → 33f37ca (main, #41) → 4f8271a → 1ac8e9f
 (walkthrough source line punctuation only; checked). Two earlier
