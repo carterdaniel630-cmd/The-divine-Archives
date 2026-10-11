@@ -39,6 +39,17 @@ If two rules here seem to conflict, the stricter one wins and you flag the confl
 - New features, games, or museum rooms
 - Anything touching religious-sensitivity rules (e.g. images of the Báb, sacred objects)
 
+### How work runs
+- One branch and one PR per workstream; use the branch Carter names, and flag a conflict with
+  another open branch before pushing.
+- Multi-phase plans stop for Carter's approval at the end of each phase; don't skip ahead.
+- Within an approved task, keep going until it is done or truly blocked; run long builds and
+  measurements in the background rather than stopping to wait.
+- When Carter explicitly grants more for a task ("run straight through", "deploy it"), that grant
+  covers that task only, not later ones.
+- Never open any file named `KEY.md` (the auditor's answer key for test batches).
+- Don't write model names in files, commits or comments.
+
 ### Quality bar (standing, set by Carter 2026-10-10)
 Everything is built and maintained to the highest standard. In practice:
 - **Nothing merges with a red or unfinished check.** Every CI check is green on the PR's
@@ -48,12 +59,15 @@ Everything is built and maintained to the highest standard. In practice:
   and its NEEDS CARTER items are resolved or put to him.
 - **Verify, don't assume:** run the full build, `node tools/review-checks.js --build` and every
   `tools/verify-*.js` before pushing; open anything visual (pages, museum, Pilgrimage, games)
-  in a headless browser and check for script errors and the performance budget.
+  in a headless browser and check for script errors and the performance budget. Prior chat
+  claims don't count: if it isn't in a file or commit, report it as NOT FOUND.
 - **Sources:** every citation is real and checked; anything that could not be opened is said so in
   the source log; estimates and conjecture are labelled as such on the page, never presented as fact.
 - **Own your PRs to the end:** keep them conflict-free and green after other merges, and leave
   docs (handoff, status board, plans) matching main.
 - **No shortcuts to look finished:** a smaller, correct piece of work beats a larger, unverified one.
+  Fix the real cause; don't mask a problem cosmetically (e.g. slowing an animation or adding
+  particles to hide bad motion).
 
 ### Reporting
 - Write reports for a non-technical reader: say what changed, what it means, and what you need
@@ -64,6 +78,8 @@ Everything is built and maintained to the highest standard. In practice:
   "deploy to Pages"); a decision is one question with short labelled options and your recommendation.
   Anything longer than a screen goes in a file or PR with a one-line pointer to it.
 - Say how you know: link the PR, file or source behind a claim, or say it is inferred.
+- Show visual work directly in the reply (screenshot, image or preview link); don't make Carter dig
+  through GitHub to see it.
 - Carter works in large batches (2026-10-11): group decisions and merges into one batch for him
   rather than asking one item at a time. Batching never lowers the quality bar above.
 
@@ -125,6 +141,12 @@ Everything is built and maintained to the highest standard. In practice:
 ## Sourcing standard (non-negotiable)
 - Every specific factual/archaeological claim needs a real, checkable source (web search during drafting, not memory-only)
 - Contested claims flagged explicitly as contested — do not resolve scholarly debates by picking a side
+- Scholarly or primary sources first; Wikipedia only as a labelled pointer. Flag any chapter where
+  Wikipedia is over 20% of its sources
+- When upgrading a source, never change what the claim says: if the stronger source disagrees, flag it
+  for Carter instead of rewriting
+- Keep the believer's lens (with genuine respect, no editorializing) and the skeptical/evidence lens
+  (not debunking, not apologetics) both present and of comparable weight
 - Separate "well-supported by evidence" / "not supported" / "genuinely open" for any chapter making empirical claims (follow the pattern in ch01-the-flood.md as the template)
 - No claim of "proof" for anything that is actually disputed or unfalsifiable
 - One comparative theme chapter per era where useful, alongside culture-by-culture chapters
