@@ -52,6 +52,11 @@ It is a running log; entries are only ever added. The automatic check lets a cha
 pending tag only in the change that adds its clearance, so one clearance never covers later edits. Only you
 decide what goes in it.
 
+A clearance stays in the log even when the item later goes back to pending. Each time that happens, the
+change that sets `pending: true` again also adds the item to `reopened` (same entry format, with the date
+and the reason), so an item is cleared only if its latest entry is a clearance. The automatic check reads
+only the clearance lists, not `reopened`.
+
 ## Test batches
 
 Test batches live only on branches named `review-test/YYYY-MM`, inside a `review-test/` folder, with each

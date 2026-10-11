@@ -485,7 +485,7 @@
    "type": "site",
    "label": "Library of Alexandria",
    "era": "04-axial-age",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/library-of-alexandria.html",
    "links": [
     "chapter:ch15",
@@ -674,7 +674,7 @@
    "type": "site",
    "label": "Qumran caves",
    "era": "04-axial-age",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/qumran-caves.html",
    "links": [
     "chapter:ch10",
