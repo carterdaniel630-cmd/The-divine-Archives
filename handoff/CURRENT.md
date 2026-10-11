@@ -9,7 +9,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - Merged 2026-10-10/11 with Carter's go-ahead: #34 (pending chapters under 20% Wikipedia; ch70 dating
   plan), #36 (Qumran and Alexandria Pilgrimage previews, noindex, off the menu), #37 (docs sync),
   #39 (ch82 British Library citation), #38 (CLAUDE.md: start-here steps, quality bar, standing
-  preferences), #35 (content-gaps list `plans/content-gaps.md` and the top 20 gaps filled in 17 chapters).
+  preferences), #35 (content-gaps list `plans/content-gaps.md` and the top 20 gaps filled in 17 chapters),
+  #48 (distinct movesets for the four gods in the fighting game, games plan Phase 1) and #46 (speed
+  pass: fonts linked from each page, new `fonts` review check).
 - 83 chapters. **Pending review (31):** ch02, ch08, ch11, ch12, ch19, ch20, ch21, ch44, ch45, ch46, ch47,
   ch50, ch51, ch52, ch53, ch60, ch61, ch68, ch69, ch70, ch73, ch74, ch75–ch83. The 17 from #35 went back
   to pending for their new sections. The status board in `outline/master-outline.md` matches
@@ -40,9 +42,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   registry, because both rebuild chapter pages.
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 built and awaiting
-  Carter's go-ahead to merge: PR #48 (`claude/games-movesets`, distinct movesets, 2D) and PR #47
-  (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum).
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1: movesets merged
+  (#48); PR #47 (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum) is
+  green and awaits Carter's go-ahead.
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 
 ## Needs Carter
