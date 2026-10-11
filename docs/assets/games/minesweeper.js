@@ -203,6 +203,7 @@
     }
 
     function endScreen() {
+      AG.finish("minesweeper", { won: !!st.won });
       var recap = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";

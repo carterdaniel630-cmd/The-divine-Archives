@@ -1,0 +1,534 @@
+{
+ "type": "constellation",
+ "count": 88,
+ "entities": [
+  {
+   "id": "constellation:and",
+   "type": "constellation",
+   "label": "Andromeda",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ant",
+   "type": "constellation",
+   "label": "Antlia",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:aps",
+   "type": "constellation",
+   "label": "Apus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:aql",
+   "type": "constellation",
+   "label": "Aquila",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:aqr",
+   "type": "constellation",
+   "label": "Aquarius",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ara",
+   "type": "constellation",
+   "label": "Ara",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ari",
+   "type": "constellation",
+   "label": "Aries",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:aur",
+   "type": "constellation",
+   "label": "Auriga",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:boo",
+   "type": "constellation",
+   "label": "Boötes",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cae",
+   "type": "constellation",
+   "label": "Caelum",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cam",
+   "type": "constellation",
+   "label": "Camelopardalis",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cap",
+   "type": "constellation",
+   "label": "Capricornus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:car",
+   "type": "constellation",
+   "label": "Carina",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cas",
+   "type": "constellation",
+   "label": "Cassiopeia",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cen",
+   "type": "constellation",
+   "label": "Centaurus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cep",
+   "type": "constellation",
+   "label": "Cepheus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cet",
+   "type": "constellation",
+   "label": "Cetus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cha",
+   "type": "constellation",
+   "label": "Chamaeleon",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cir",
+   "type": "constellation",
+   "label": "Circinus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cma",
+   "type": "constellation",
+   "label": "Canis Major",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cmi",
+   "type": "constellation",
+   "label": "Canis Minor",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cnc",
+   "type": "constellation",
+   "label": "Cancer",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:col",
+   "type": "constellation",
+   "label": "Columba",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:com",
+   "type": "constellation",
+   "label": "Coma Berenices",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cra",
+   "type": "constellation",
+   "label": "Corona Austrina",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:crb",
+   "type": "constellation",
+   "label": "Corona Borealis",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:crt",
+   "type": "constellation",
+   "label": "Crater",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cru",
+   "type": "constellation",
+   "label": "Crux",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:crv",
+   "type": "constellation",
+   "label": "Corvus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cvn",
+   "type": "constellation",
+   "label": "Canes Venatici",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:cyg",
+   "type": "constellation",
+   "label": "Cygnus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:del",
+   "type": "constellation",
+   "label": "Delphinus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:dor",
+   "type": "constellation",
+   "label": "Dorado",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:dra",
+   "type": "constellation",
+   "label": "Draco",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:equ",
+   "type": "constellation",
+   "label": "Equuleus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:eri",
+   "type": "constellation",
+   "label": "Eridanus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:for",
+   "type": "constellation",
+   "label": "Fornax",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:gem",
+   "type": "constellation",
+   "label": "Gemini",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:gru",
+   "type": "constellation",
+   "label": "Grus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:her",
+   "type": "constellation",
+   "label": "Hercules",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:hor",
+   "type": "constellation",
+   "label": "Horologium",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:hya",
+   "type": "constellation",
+   "label": "Hydra",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:hyi",
+   "type": "constellation",
+   "label": "Hydrus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ind",
+   "type": "constellation",
+   "label": "Indus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lac",
+   "type": "constellation",
+   "label": "Lacerta",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:leo",
+   "type": "constellation",
+   "label": "Leo",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lep",
+   "type": "constellation",
+   "label": "Lepus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lib",
+   "type": "constellation",
+   "label": "Libra",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lmi",
+   "type": "constellation",
+   "label": "Leo Minor",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lup",
+   "type": "constellation",
+   "label": "Lupus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lyn",
+   "type": "constellation",
+   "label": "Lynx",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:lyr",
+   "type": "constellation",
+   "label": "Lyra",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:men",
+   "type": "constellation",
+   "label": "Mensa",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:mic",
+   "type": "constellation",
+   "label": "Microscopium",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:mon",
+   "type": "constellation",
+   "label": "Monoceros",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:mus",
+   "type": "constellation",
+   "label": "Musca",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:nor",
+   "type": "constellation",
+   "label": "Norma",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:oct",
+   "type": "constellation",
+   "label": "Octans",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:oph",
+   "type": "constellation",
+   "label": "Ophiuchus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ori",
+   "type": "constellation",
+   "label": "Orion",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:pav",
+   "type": "constellation",
+   "label": "Pavo",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:peg",
+   "type": "constellation",
+   "label": "Pegasus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:per",
+   "type": "constellation",
+   "label": "Perseus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:phe",
+   "type": "constellation",
+   "label": "Phoenix",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:pic",
+   "type": "constellation",
+   "label": "Pictor",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:psa",
+   "type": "constellation",
+   "label": "Piscis Austrinus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:psc",
+   "type": "constellation",
+   "label": "Pisces",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:pup",
+   "type": "constellation",
+   "label": "Puppis",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:pyx",
+   "type": "constellation",
+   "label": "Pyxis",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ret",
+   "type": "constellation",
+   "label": "Reticulum",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:scl",
+   "type": "constellation",
+   "label": "Sculptor",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:sco",
+   "type": "constellation",
+   "label": "Scorpius",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:sct",
+   "type": "constellation",
+   "label": "Scutum",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:ser",
+   "type": "constellation",
+   "label": "Serpens",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:sex",
+   "type": "constellation",
+   "label": "Sextans",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:sge",
+   "type": "constellation",
+   "label": "Sagitta",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:sgr",
+   "type": "constellation",
+   "label": "Sagittarius",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:tau",
+   "type": "constellation",
+   "label": "Taurus",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:tel",
+   "type": "constellation",
+   "label": "Telescopium",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:tra",
+   "type": "constellation",
+   "label": "Triangulum Australe",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:tri",
+   "type": "constellation",
+   "label": "Triangulum",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:tuc",
+   "type": "constellation",
+   "label": "Tucana",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:uma",
+   "type": "constellation",
+   "label": "Ursa Major",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:umi",
+   "type": "constellation",
+   "label": "Ursa Minor",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:vel",
+   "type": "constellation",
+   "label": "Vela",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:vir",
+   "type": "constellation",
+   "label": "Virgo",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:vol",
+   "type": "constellation",
+   "label": "Volans",
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "constellation:vul",
+   "type": "constellation",
+   "label": "Vulpecula",
+   "from": "docs/museum/sky.json"
+  }
+ ]
+}

@@ -1679,7 +1679,7 @@
       stopLoop();
       var story = DATA.story || {};
       var nb = run.score > best; if (nb) best = run.score;
-      AG.addHighScore("treasure", { score: run.score });
+      AG.addHighScore("treasure", { score: run.score }); AG.finish("treasure", { won: !!won });
       root.innerHTML =
         '<div class="game-head"><p class="eyebrow">The Tomb Robber · ' + (won ? "the journal is full" : "the ruin claims you") + '</p>' +
           '<h2 id="' + ctx.titleId + '">' + (won ? "The expedition, finished" : "Lost on the " + LEVELS[st.li].place + " road") + '</h2>' +

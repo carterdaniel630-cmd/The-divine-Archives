@@ -1,0 +1,75 @@
+{
+  "id": "ritual:meditation-breath-cycle",
+  "title": "Mindfulness of breathing: the first four steps",
+  "tradition": "Buddhism (Theravāda Pali canon)",
+  "chapter": "chapter:ch11",
+  "sensitivity_tier": 1,
+  "framing": "guided, explanatory, no scores or win states",
+  "opt_in": true,
+  "intro": "The Ānāpānasati Sutta (Majjhima Nikāya 118) describes mindfulness of breathing in sixteen steps, grouped in four sets of four. This walkthrough follows the first set, as the text lays it out. You may follow along or simply read.",
+  "sources": [
+    {
+      "id": "mn118-ati",
+      "cite": "Ānāpānasati Sutta: Mindfulness of Breathing (MN 118, PTS M iii 78), translated from the Pali by Thanissaro Bhikkhu. Access to Insight.",
+      "url": "https://accesstoinsight.org/tipitaka/mn/mn.118.than.html",
+      "checked": "search result 2026-10-11 (title, number and translator); page blocked from the build sandbox; step wording to be re-read against the page at review"
+    },
+    {
+      "id": "mn118-abhayagiri",
+      "cite": "Majjhima Nikāya 118, text used for the 2005 Ānāpānasati retreat, Abhayagiri Buddhist Monastery.",
+      "url": "https://www.abhayagiri.org/media/discs/APasannoRetreats/2005%20Anapanasati/sutta.html",
+      "checked": "search result 2026-10-11; page blocked from the build sandbox; re-read at review"
+    }
+  ],
+  "steps": [
+    {
+      "sequence_order": 1,
+      "pacing_duration_ms": 8000,
+      "input_trigger_type": "tap",
+      "historical_text_anchor_id": "section:ch11/the-teaching-four-truths-and-a",
+      "source_ids": ["mn118-ati", "mn118-abhayagiri"],
+      "text": "The sutta sets the scene: a monk goes to a quiet place (the wilderness, the shade of a tree, an empty building), sits with legs crossed and body upright, and sets mindfulness to the fore.",
+      "pacing_note": "Display choice; the text gives no timing."
+    },
+    {
+      "sequence_order": 2,
+      "pacing_duration_ms": 12000,
+      "input_trigger_type": "auto",
+      "historical_text_anchor_id": "section:ch11/the-teaching-four-truths-and-a",
+      "source_ids": ["mn118-ati"],
+      "text": "Step one: breathing in long, he knows he is breathing in long; breathing out long, he knows he is breathing out long.",
+      "pacing_note": "Display choice (one slow breath cycle); the text gives no timing."
+    },
+    {
+      "sequence_order": 3,
+      "pacing_duration_ms": 8000,
+      "input_trigger_type": "auto",
+      "historical_text_anchor_id": "section:ch11/the-teaching-four-truths-and-a",
+      "source_ids": ["mn118-ati"],
+      "text": "Step two: breathing in short, he knows he is breathing in short; breathing out short, he knows he is breathing out short.",
+      "pacing_note": "Display choice; the text gives no timing."
+    },
+    {
+      "sequence_order": 4,
+      "pacing_duration_ms": 12000,
+      "input_trigger_type": "auto",
+      "historical_text_anchor_id": "section:ch11/the-teaching-four-truths-and-a",
+      "source_ids": ["mn118-ati"],
+      "text": "Step three: he trains himself to breathe in and out sensitive to the entire body.",
+      "pacing_note": "Display choice; the text gives no timing."
+    },
+    {
+      "sequence_order": 5,
+      "pacing_duration_ms": 12000,
+      "input_trigger_type": "tap",
+      "historical_text_anchor_id": "section:ch11/the-teaching-four-truths-and-a",
+      "source_ids": ["mn118-ati"],
+      "text": "Step four: he trains himself to breathe in and out calming the bodily processes. The sutta goes on to twelve more steps, on feeling, mind and mental qualities; the archive's Buddhism chapter places this practice within the path's training in meditation.",
+      "pacing_note": "Display choice; the text gives no timing."
+    }
+  ],
+  "review": {
+    "status": "pending",
+    "notes": "Published 2026-10-11 as the museum's tier-1 prototype (Phase 2, approved by Carter), carrying the pending-review tag until Carter clears it. Step wording paraphrases the Thanissaro translation and must be checked against the page at review (blocked from the build sandbox). The anchor is the chapter section on the Four Truths and the Path; ch11 does not yet discuss mindfulness of breathing directly (a gap for plans/content-gaps.md)."
+  }
+}

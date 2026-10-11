@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://getconexto.com/framework/schema/event.schema.json",
+  "title": "Ledger event",
+  "description": "One line in the visitor's append-only ledger (framework/ledger.js). Events are never edited or deleted; derived state (what was seen, finished, unlocked, best scores) is computed by replaying them.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "ts", "entity", "verb"],
+  "properties": {
+    "id": { "type": "string", "description": "Unique within the ledger: <ts in base 36>-<counter>-<random>.", "pattern": "^[a-z0-9]+-[a-z0-9]+-[a-z0-9]+$" },
+    "ts": { "type": "integer", "minimum": 0, "description": "Milliseconds since 1970-01-01 UTC, from the visitor's clock." },
+    "entity": { "type": "string", "description": "An entity ID from the registry (<type>:<slug>).", "pattern": "^[a-z][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$" },
+    "verb": { "type": "string", "enum": ["viewed", "started", "completed", "unlocked", "scored"] },
+    "payload": {
+      "type": "object",
+      "description": "Small, verb-specific data. 'scored' needs a numeric value. Rituals never emit 'scored' (see ritual.schema.json framing).",
+      "properties": {
+        "value": { "type": "number" },
+        "step": { "type": "integer", "minimum": 0 },
+        "via": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "verb": { "const": "scored" } } },
+      "then": { "required": ["payload"], "properties": { "payload": { "required": ["value"] } } }
+    }
+  ]
+}

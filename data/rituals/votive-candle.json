@@ -1,0 +1,56 @@
+{
+  "id": "ritual:votive-candle",
+  "title": "Lighting a votive candle",
+  "tradition": "Christianity (Roman Catholic devotional practice)",
+  "sensitivity_tier": 1,
+  "framing": "guided, explanatory, no scores or win states",
+  "opt_in": true,
+  "intro": "A votive candle is lit before a statue, image or shrine as a private devotion. This walkthrough explains what happens and what the practice is understood to mean, from Catholic reference works. It is an explanation, not a prayer made on your behalf.",
+  "sources": [
+    {
+      "id": "ce-candles",
+      "cite": "\"Candles\", The Catholic Encyclopedia, vol. 3 (New York: Robert Appleton, 1908). New Advent.",
+      "url": "https://www.newadvent.org/cathen/03246a.htm",
+      "checked": "search result 2026-10-11 (excerpt: burning candles before shrines common among devotees; a candle burning before a statue as a symbol of prayer and sacrifice); page blocked from the build sandbox; re-read at review"
+    },
+    {
+      "id": "cd-votive",
+      "cite": "\"Votive candles\", Modern Catholic Dictionary (John A. Hardon). Catholic Culture.",
+      "url": "https://www.catholicculture.org/culture/library/dictionary/index.cfm?id=37142",
+      "checked": "search result 2026-10-11 (definition: candles burned before a statue or shrine to honour Christ, Mary or a saint; 'votive' from the custom of lighting candles to fulfil a private vow, votum); dictionary author to confirm at review"
+    }
+  ],
+  "steps": [
+    {
+      "sequence_order": 1,
+      "pacing_duration_ms": 6000,
+      "input_trigger_type": "tap",
+      "historical_text_anchor_id": null,
+      "source_ids": ["ce-candles", "cd-votive"],
+      "text": "Votive candles are burned before a statue or shrine, to honour Christ, Mary or a saint.",
+      "anchor_gap": "No chapter section discusses votive candles yet."
+    },
+    {
+      "sequence_order": 2,
+      "pacing_duration_ms": 4000,
+      "input_trigger_type": "hold",
+      "historical_text_anchor_id": null,
+      "source_ids": ["cd-votive"],
+      "text": "A candle is lit. The word \"votive\" comes from the Latin votum, a vow: the custom began as lighting a candle to fulfil a private vow.",
+      "anchor_gap": "No chapter section discusses votive candles yet."
+    },
+    {
+      "sequence_order": 3,
+      "pacing_duration_ms": 10000,
+      "input_trigger_type": "auto",
+      "historical_text_anchor_id": null,
+      "source_ids": ["ce-candles"],
+      "text": "The candle burns before the image. The Catholic Encyclopedia describes a candle burning before a statue as a symbol of prayer and sacrifice.",
+      "anchor_gap": "No chapter section discusses votive candles yet."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "notes": "Tier 1, confirmed by Carter 2026-10-11 (plans/games-modern.md had placed it at tier 2; plans/rituals-tiers.md now governs). No chapter covers the practice yet, so every anchor is null until one does."
+  }
+}
