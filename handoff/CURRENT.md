@@ -14,7 +14,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   ch50, ch51, ch52, ch53, ch60, ch61, ch68, ch69, ch70, ch73, ch74, ch75–ch83. The 17 from #35 went back
   to pending for their new sections. The status board in `outline/master-outline.md` matches
   `docs/assets/data.js`.
-- Pilgrimage: the Great Pyramid is the one live site (pending review); Qumran and Alexandria are previews.
+- Pilgrimage: three live sites, all pending review: the Great Pyramid, and (listed 2026-10-11, Carter's go-ahead) the Qumran caves and the Library of Alexandria. No museum portals to the two new sites yet.
 
 ## Review desk
 - Reviewer and auditor run as scheduled tasks; reports live on the `review-log` branch. Latest: the
@@ -43,18 +43,16 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   registry, because both rebuild chapter pages.
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern` (games + rituals Phase 1 plan) has no PR and waits for Carter's approval
-  before any build.
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
+  `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 
 ## Needs Carter
 - Clearing the 31 pending chapters (a separate thread, "Clear the pending chapters batch", owns this).
-- The ch70 dating question (`plans/ch70-dating-decision.md`): option A or B.
-- The clearance log lists ch45, ch46, ch68, ch70 and ch73 as cleared although they are pending; Wing VI
-  and the arcade went live with no recorded approval (from the 2026-10-10 review).
+- Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
+  log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
 - Held-back symbol-wall signs (list in `plans/museum-visual-pass.md`).
-- Whether the two Pilgrimage previews go live (and get museum portals).
-- The games plan: approve, change or reject before any build.
+- Whether the Qumran and Alexandria sites get museum portals.
 - The scheduled reviewer and auditor routines still have no repository attached, so their pushes fail.
   Carter adds the repository to both routines in the app's routine settings; until then the reviews
   run as manual sessions.
