@@ -23,3 +23,15 @@ Per the project sourcing standard. Keeps the historically attested (Muhammad's p
 
 - The founding women: Khadija, the Mothers of the Believers (Qur'an 33:6), Aisha and the Battle of the Camel (656), Zaynab bint Jahsh, and Fatima and the Fatimid claim of descent — "Battle of the Camel" and "Zaynab bint Jahsh," Wikipedia; "Fatimid dynasty," Britannica. https://en.wikipedia.org/wiki/Battle_of_the_Camel · https://en.wikipedia.org/wiki/Zaynab_bint_Jahsh · https://www.britannica.com/topic/Fatimid-dynasty
 - The Kharijites (Siffin, Nahrawan, Ibn Muljam, the Azariqa) and the Ibadis of Oman — "Kharijites" and "Battle of Nahrawan," Wikipedia; "Ibadiyyah," Britannica. https://en.wikipedia.org/wiki/Kharijites · https://en.wikipedia.org/wiki/Battle_of_Nahrawan · https://www.britannica.com/topic/Ibadiyyah
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Hajj, Ramadan and the two Eids"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Hajj rites (ihram, tawaf, sa'y, Arafat, Muzdalifa, Mina, the stoning, the sacrifice) — F. E. Peters, *The Hajj: The Muslim Pilgrimage to Mecca and the Holy Places* (Princeton: Princeton University Press, 1994). https://press.princeton.edu/isbn/9780691026190 ; Dar al-Ifta al-Misriyya (Egypt's official fatwa authority), *Hajj* booklet (English). https://www.dar-alifta.org/images/Languages/OnlineBooks/Hajj%20booklet%20pdf.pdf
+- Hajj 2024 pilgrim numbers — General Authority for Statistics, Kingdom of Saudi Arabia, *Hajj Statistics Publication 2024* (1,833,164 pilgrims; 1,611,310 from abroad). https://www.stats.gov.sa/documents/20117/2067030/Hajj+Statistics+Publication+2024EN.pdf/ee9e1b69-731b-9976-b394-e24ec4bf6f72
+
+New section **"The mosque: qibla, mihrab, minbar, minaret"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- Mosque plan; the concave mihrab under al-Walid I at Medina — Britannica, "Prophet's Mosque" (rebuilt by al-Walid I, 706). https://www.britannica.com/topic/Prophets-Mosque ; Archnet, "Masjid al-Nabawi" (the 707 rebuilding and its mihrab). https://next.archnet.org/sites/3789 ; MIT OpenCourseWare 4.614, *Religious Architecture and Islamic Cultures*, lecture notes "Umayyad" (the concave mihrab "reportedly first introduced" at Medina in 707). https://ocw.mit.edu/courses/4-614-religious-architecture-and-islamic-cultures-fall-2002/pages/lecture-notes/umayyad/
+- The change of qibla — Qur'an 2:142–144. https://quran.com/2/144
+
+The chapter goes back to pending review because of these additions.

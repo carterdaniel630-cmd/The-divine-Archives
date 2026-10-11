@@ -281,6 +281,12 @@ the **Spring and Autumn Annals** (*Chunqiu*). Later the **Four Books** — the
 foundational pair, the *Daodejing* and *Zhuangzi*, were later joined by the sprawling
 *Daozang*, the Daoist canon, running to well over a thousand texts.
 
+## Neo-Confucianism: Zhu Xi and Wang Yangming
+
+Confucianism's great revival came more than a thousand years after Confucius, as a reply to Buddhism and Daoism. Song-dynasty thinkers built a metaphysics that could match theirs. The system was completed by **Zhu Xi** (1130–1200). It holds that everything is made of **qi** (vital stuff) shaped by **li** (pattern or principle), and that human nature is that principle, inherently good but clouded by turbid qi. The way to clear it is the "investigation of things" and reverent study, joined with quiet sitting, a form of meditation he adapted and kept distinct from the Buddhist kind. Zhu Xi grouped the *Analects*, the *Mencius*, the *Great Learning* and the *Doctrine of the Mean* as the **Four Books** and wrote commentaries on them. Under the Yuan dynasty his edition, with his commentaries, became the basis of the imperial examinations, from 1313 until the examinations ended in the last years of the Qing (1905). For six centuries, that was the Confucianism every official had to know.
+
+The strongest challenge came from within. **Wang Yangming** (1472–1529), a statesman and general, held that principle is not out in things to be investigated but present in the mind itself, as an inborn moral knowing (*liangzhi*). His slogan was the **unity of knowing and acting**: to know the good and fail to do it is not yet to know it. Wang's school spread across Ming China and to Japan, where it was known as Yōmeigaku. Neo-Confucianism also took over the ancestral and state rites (above) and became the official orthodoxy of Joseon Korea (ch71) and Tokugawa Japan.
+
 ## The believer's lens
 
 The two great Chinese ways offer two answers to a broken world, and adherents have long held them not as rivals but as complements — "**Confucian in office, Daoist in retirement**." To the Confucian, the way to heal the world is **cultivation**: to become a fully humane person (*ren*) through ritual propriety (*li*), learning, and filial devotion, so that a rightly-ordered self radiates outward into a rightly-ordered family, state, and cosmos, all under the moral order of **Heaven** (*Tian*). Virtue is not private; it is how the world is mended. To the Daoist, the way is the opposite gesture — to stop striving and **return to the Way** (*Dao*), the nameless source and pattern of all things, through *wu-wei* (effortless action), simplicity, and harmony with nature; the sage does not conquer the world but flows with it, like water, and so accomplishes everything by forcing nothing. Later religious Daoism added gods, immortals, alchemy, and the quest for eternal life. From inside, both are less "belief" than **cultivation of a way of being** — the tuning of a life to the moral or the natural order.
@@ -435,6 +441,8 @@ the great medieval **Neo-Confucian** synthesis, all of which belong to later cha
 *The Yijing and symbolism*
 - [Britannica: Yijing](https://www.britannica.com/topic/Yijing); on the trigrams, yin/yang,
   and the traditional (legendary) attributions to Fuxi and Confucius.
+- Zhu Xi, the Four Books and the examinations — Stanford Encyclopedia of Philosophy, "Zhu Xi." https://plato.stanford.edu/entries/zhu-xi/ ; New World Encyclopedia, "Four Books" (certified 1313). https://www.newworldencyclopedia.org/entry/Four_Books
+- Wang Yangming — Stanford Encyclopedia of Philosophy, "Wang Yangming" (B. W. Van Norden). https://plato.stanford.edu/entries/wang-yangming/
 
 *Note on sourcing:* Researched from standard reference scholarship (Stanford Encyclopedia
 of Philosophy, Britannica) and recent peer-reviewed work on the manuscript evidence

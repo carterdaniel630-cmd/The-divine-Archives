@@ -44,3 +44,11 @@ Yijing's Ten Wings; Fuxi's trigrams), draws the crucial **daojia / daojiao** dis
 explicitly, and flags the genuinely unresolved questions (the existence of Laozi, the
 recoverability of Confucius's own words). Written to be educational, with attention to the
 contrast between the two traditions and to their shared roots in the world of Chapter 9.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Neo-Confucianism: Zhu Xi and Wang Yangming"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- Zhu Xi, the Four Books and the examinations — Stanford Encyclopedia of Philosophy, "Zhu Xi." https://plato.stanford.edu/entries/zhu-xi/ ; New World Encyclopedia, "Four Books" (certified 1313). https://www.newworldencyclopedia.org/entry/Four_Books
+- Wang Yangming — Stanford Encyclopedia of Philosophy, "Wang Yangming" (B. W. Van Norden). https://plato.stanford.edu/entries/wang-yangming/
+
+The chapter goes back to pending review because of these additions.
