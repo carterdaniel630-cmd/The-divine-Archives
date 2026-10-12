@@ -585,7 +585,7 @@ ${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
     ${s.pending ? '<p class="pg-pending">Recently added · pending full review</p>' : ""}
     <h1 id="mu-intro-h">${esc(s.name)}</h1>
     <p>${esc(s.blurb || "")}</p>
-    <p class="mu-note">Sizes, slopes and proportions come from published survey measurements; the stone is drawn in code, not photographed. Gold markers open notes on what you see, including <strong>what is measured, what is approximate and what is unknown</strong>. Objects in the cases are renditions, not replicas.</p>
+    <p class="mu-note">${s.note ? esc(s.note) + " " : "Sizes, slopes and proportions come from published survey measurements; "}the stone is drawn in code, not photographed. Gold markers open notes on what you see, including <strong>what is measured, what is approximate and what is unknown</strong>. Objects in the cases are renditions, not replicas.</p>
     <div class="mu-keys" id="mu-keys"></div>
     <div class="mu-intro-actions">
       <button type="button" class="mu-enter" id="mu-enter">Enter</button>
