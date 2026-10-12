@@ -15,9 +15,10 @@
    ========================================================================== */
 import * as THREE from "three";
 import { buildReliquary, reliquaryStage } from "./reliquary.js?v=1";
-import { buildRelic, hasRelic } from "./relics.js?v=2";
+import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { englishHTML, hasEnglish } from "./english.js?v=2";
 import { scanEmbed } from "./scans.js?v=1";
+import { RITUAL_VIEWS } from "./ritual-views.js?v=1";
 
 const TAU = Math.PI * 2;
 const ease = (a, b, k) => a + (b - a) * k;
@@ -368,12 +369,12 @@ export function createInspector(opt) {
   const plinth = mesh(new THREE.CylinderGeometry(1.1, 1.15, 0.08, 64), M.pedestal, 0, -0.04); scene.add(plinth);
   const glow = mesh(new THREE.PlaneGeometry(2.2, 2.2), new THREE.MeshBasicMaterial({ map: pool, transparent: true, depthWrite: false })); glow.rotation.x = -Math.PI / 2; glow.position.y = 0.002; scene.add(glow);
 
-  const st = { active: false, model: null, yaw: 0.6, pitch: 0.35, dist: 1.5, want: null, spin: true, idle: 0, panel: 0, panelDir: "right" };
+  const st = { active: false, model: null, yaw: 0.6, pitch: 0.35, dist: 1.5, tx: 0, want: null, rit: null, ritSlug: null, ritStep: -1, label: "", id: null, spin: true, idle: 0, panel: 0, panelDir: "right" };
   const el = document.createElement("div"); el.className = "mu-insp"; el.hidden = true;
   el.innerHTML =
     '<div class="mu-insp-view" aria-hidden="true"></div>' +
     '<div class="mu-insp-bar" role="toolbar" aria-label="Examine the object"><span class="mu-insp-acts"></span>' +
-      '<button type="button" data-i="scan" hidden aria-pressed="false">View the real scan</button><button type="button" data-i="en" hidden>Read it in English</button><button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
+      '<button type="button" data-i="ritual" hidden aria-pressed="false">Walk through the scene</button><button type="button" data-i="scan" hidden aria-pressed="false">View the real scan</button><button type="button" data-i="en" hidden>Read it in English</button><button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
     '<p class="mu-insp-hint">Drag to turn it · scroll or pinch to zoom</p>' +
     '<div class="mu-scan" hidden><div class="mu-scan-frame"></div><p class="mu-scan-cap"></p></div>' +
     '<aside class="mu-insp-panel" role="dialog" aria-modal="true" aria-labelledby="mu-card-h" tabindex="-1"><div class="mu-insp-body"></div>' +
@@ -383,7 +384,7 @@ export function createInspector(opt) {
 
   function frame() {
     const m = st.model; if (!m) return;
-    st.yaw = 0.6; st.pitch = 0.35; st.dist = m.fit; st.want = null; st.ty = m.target;
+    st.yaw = 0.6; st.pitch = 0.35; st.dist = m.fit; st.want = null; st.ty = m.target; st.tx = 0;
   }
   function paintActs() {
     const m = st.model; if (!m) return;
@@ -401,6 +402,8 @@ export function createInspector(opt) {
     body.innerHTML = html + (id ? englishHTML(id) : ""); note.textContent = noteText; acts.innerHTML = "";
     el.querySelector('[data-i="en"]').hidden = !(id && hasEnglish(id));
     hideScan(); st.scanId = id && scanEmbed(id) ? id : null; el.querySelector('[data-i="scan"]').hidden = !st.scanId;
+    if (st.rit) { const p = st.rit; st.rit = null; p.close(); }
+    st.id = id || null; st.label = body.innerHTML; el.classList.remove("mu-ritual"); offerRitual(st.id);
     st.active = true; st.spin = !reduce(); st.idle = 0;
     el.hidden = false; document.body.classList.add("mu-inspecting");
     resize();
@@ -428,6 +431,7 @@ export function createInspector(opt) {
   function close() {
     if (!st.active) return;
     st.active = false; el.hidden = true; document.body.classList.remove("mu-inspecting"); hideScan();
+    if (st.rit) { const p = st.rit; st.rit = null; p.close(); } el.classList.remove("mu-ritual");
     cam.clearViewOffset();
     unstage(); drop(st.model); st.model = null;
     if (opt.onClose) opt.onClose();
@@ -468,6 +472,7 @@ export function createInspector(opt) {
     if (b.dataset.i === "close") { close(); return; }
     if (b.dataset.i === "reset") { hideScan(); frame(); return; }
     if (b.dataset.i === "scan") { if (st.scanOn) hideScan(); else showScan(); return; }
+    if (b.dataset.i === "ritual") { if (st.rit) endRitual(); else startRitual(); return; }
     if (b.dataset.i === "en") { const d = body.querySelector(".mu-en"); if (d) { d.open = true; d.scrollIntoView({ block: "start", behavior: reduce() ? "auto" : "smooth" }); d.querySelector("summary").focus({ preventScroll: true }); } return; }
     if (b.dataset.act && st.model) {
       const a = st.model.actions.find((x) => x.id === b.dataset.act);
@@ -508,14 +513,64 @@ export function createInspector(opt) {
     if (st.scanOn) return;
     const m = st.model;
     if (st.spin && !reduce()) st.yaw += dt * 0.25;
-    if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); if (st.want.target != null) st.ty = ease(st.ty, st.want.target, k); }
+    if (st.want) { const k = Math.min(1, dt * 3); st.yaw = ease(st.yaw, st.want.yaw, k); st.pitch = ease(st.pitch, st.want.pitch, k); st.dist = ease(st.dist, st.want.dist, k); if (st.want.target != null) st.ty = ease(st.ty, st.want.target, k); if (st.want.tx != null) st.tx = ease(st.tx, st.want.tx, k); }
     if (m && m.update(dt) && reflection) syncMirror(m.root, reflection);
     if (stage) stage.update(dt, false);   // the world around the object always moves; only the view's own motion follows the switch
     if (st.ty == null) st.ty = m ? m.target : 0.2;
-    const t = new THREE.Vector3(0, st.ty, 0);
+    const t = new THREE.Vector3(st.tx || 0, st.ty, 0);
     cam.position.set(t.x + Math.sin(st.yaw) * Math.cos(st.pitch) * st.dist, t.y + Math.sin(st.pitch) * st.dist, t.z + Math.cos(st.yaw) * Math.cos(st.pitch) * st.dist);
     cam.lookAt(t);
     renderer.render(scene, cam);
   }
-  return { open, close, render, resize, get active() { return st.active; }, el, materials: M, state: st };
+  // ---------------------------------------------------------------- "Walk through the scene"
+  // A walkthrough tied to this object (data/rituals/<slug>.json with a museum_object, published by
+  // tools/build-framework.js) is played by the framework's ritual player in the label panel, while the camera
+  // turns to the part of the rendition each step describes (ritual-views.js). Opt-in; no score, timer, choice
+  // or outcome; the visitor can leave at any step. The app supplies the loader (opt.rituals).
+  const R8 = opt.rituals || null;
+  function ritBtn(on) {
+    const b = el.querySelector('[data-i="ritual"]');
+    b.hidden = !st.ritSlug; b.textContent = on ? "Leave the walkthrough" : "Walk through the scene"; b.setAttribute("aria-pressed", String(!!on));
+  }
+  function offerRitual(id) {
+    st.ritSlug = null; ritBtn(false);
+    if (!R8 || !id || !RITUAL_VIEWS) return;
+    R8.forObject(id).then((slug) => { if (slug && RITUAL_VIEWS[slug] && st.active && st.id === id) { st.ritSlug = slug; ritBtn(!!st.rit); } });
+  }
+  function startRitual() {
+    const slug = st.ritSlug; if (!slug || st.rit) return;
+    if (!st.model) { setTimeout(() => { if (st.active && !st.rit) startRitual(); }, 60); return; }   // the object is still being made
+    const id = st.id;
+    R8.load(slug).then((ritual) => {
+      if (!st.active || st.id !== id || st.rit) return;
+      hideScan(); el.classList.add("mu-ritual"); ritBtn(true); st.ritStep = -1;
+      if (st.model && st.model.show) st.model.show();                                                    // unroll the scroll if it was rolled up
+      const V = RITUAL_VIEWS[slug];
+      st.rit = window.RitualPlayer.open(body, ritual, {
+        chapterBase: "chapters/", endLinks: V.endLinks,
+        onStep: (i, step) => { st.ritStep = i; resize(); ritView(V.views[step.sequence_order]); const p = el.querySelector(".mu-insp-panel"); p.scrollTop = 0; setTimeout(() => { p.scrollTop = 0; }, 40); },   // the step's text first (the player focuses its Continue button, which can scroll the panel)
+        onClose: () => { st.rit = null; endRitual(); }
+      });
+      resize();
+    }).catch(() => { const b = el.querySelector('[data-i="ritual"]'); b.textContent = "The walkthrough could not be loaded"; b.disabled = true; });
+  }
+  function endRitual() {
+    if (st.rit) { const p = st.rit; st.rit = null; p.close(); }
+    el.classList.remove("mu-ritual"); ritBtn(false); st.ritStep = -1;
+    body.innerHTML = st.label; resize(); frame();
+    el.querySelector('[data-i="ritual"]').focus({ preventScroll: true });
+  }
+  function ritView(at) {
+    const m = st.model; if (!m || !at) return;
+    // the views are framed for a landscape area; on a narrow screen (the label then sits below) stand back so the same part of the scene fits across
+    const W = window.innerWidth, H = window.innerHeight, r = el.querySelector(".mu-insp-panel").getBoundingClientRect();
+    const vis = st.panelDir === "bottom" ? W / Math.max(1, H - r.height) : Math.max(1, W - r.width) / H;
+    const back = Math.max(1, Math.min(2.2, 1.25 / vis));
+    const v = { yaw: at.yaw, pitch: at.pitch, dist: at.dist * back, target: m.target, tx: (at.u - 0.5) * (m.len || 0) * (m.scale || 1) };
+    st.spin = false;
+    if (reduce()) { st.want = null; st.yaw = v.yaw; st.pitch = v.pitch; st.dist = v.dist; st.ty = v.target; st.tx = v.tx; }   // reduced motion: a cut, not a camera move
+    else st.want = v;
+  }
+
+  return { open, close, render, resize, ritual: () => (st.ritSlug ? startRitual() : null), get active() { return st.active; }, get ritualOffered() { return !!st.ritSlug; }, get ritualStep() { return st.rit ? st.ritStep : -1; }, el, materials: M, state: st };
 }

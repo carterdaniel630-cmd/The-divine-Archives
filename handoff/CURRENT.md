@@ -59,8 +59,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   branch `claude/project-thread-evq985`) merged 2026-10-12 with Carter's "clear".
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
-  `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1: movesets merged
+  (#48); PR #47 (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum) is
+  green and awaits Carter's go-ahead.
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 - **Carter's try-it list:** `handoff/CARTER-TO-TRY.md` lists what to try on his phone and the
   decisions waiting on him. Keep it current: tick items off as he answers, and add new ones.

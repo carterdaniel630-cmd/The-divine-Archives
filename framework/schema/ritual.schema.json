@@ -15,6 +15,17 @@
       "type": "integer", "enum": [1, 2, 3],
       "description": "1 = may be drafted and built without asking (widely shared, explanatory, nothing sacramental). 2 = historical or contested practice; drafted only with framing reviewed by Carter. 3 = sacramental or obligatory worship (Mass, communion, baptism, salat…); never drafted without Carter's explicit approval, listed in plans/rituals-tiers.md."
     },
+    "framing_approval": {
+      "type": "object", "additionalProperties": false,
+      "required": ["by", "date", "record"],
+      "properties": {
+        "by": { "const": "Carter" },
+        "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "record": { "type": "string", "minLength": 1, "description": "Where the approval is recorded (a plan, a PR, plans/rituals-tiers.md)." }
+      },
+      "description": "Tier 2 only: Carter's approval of the framing. A tier-2 file without it is never published (tools/build-framework.js) and fails the tests; the ritual must also be listed in plans/rituals-tiers.md."
+    },
+    "museum_object": { "type": "string", "pattern": "^relic:v[0-9]{2}$", "description": "The Vault object whose museum case launches the walkthrough, beside the object (the inspector turns to each step's part of the scene, docs/museum/ritual-views.js). Without it, the walkthrough is offered on the room's lectern card." },
     "framing": { "const": "guided, explanatory, no scores or win states", "description": "Fixed wording. A file with any other framing fails validation." },
     "opt_in": { "const": true, "description": "A walkthrough only ever starts when the visitor chooses it." },
     "intro": { "type": "string", "description": "Shown before step 1: what this is, and that it is an explanation, not an act of worship by the visitor." },
