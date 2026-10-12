@@ -28,13 +28,9 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   AG.register("pacman", {
-    title: "The Labyrinth",
-    subtitle: "Thread the maze of the dead — gather the offerings, outrun the shades.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch47) || (window.PLATE_ART && window.PLATE_ART.ch02) || "",
-    sourceHref: "chapters/ch47.html", sourceLabel: "Read “Journeys to the Underworld”",
     mount: mountGame
   });
 
@@ -395,7 +391,7 @@
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">What the lamps revealed:</p><ul class="ouro-facts">' + recap + "</ul>"
                : '<p class="rq-note" style="text-align:center">Light a sacred lamp to reveal the beliefs of the dead.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>Descend again</button>' +
-          '<a class="game-source" href="chapters/ch47.html">› Read “Journeys to the Underworld”</a></div>';
+          AG.content.readLink(AG.catalog("pacman").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

@@ -27,13 +27,9 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   AG.register("ouroboros", {
-    title: "Ouroboros",
-    subtitle: "The serpent that devours its own tail. Swallow the symbols; uncover the archive.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch37) || "",
-    sourceHref: "chapters/ch37.html", sourceLabel: "Read “Theosophy & the Occult Revival”",
     mount: mountGame
   });
 
