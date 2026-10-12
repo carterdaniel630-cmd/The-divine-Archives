@@ -47,6 +47,11 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 
+- #52 `claude/graphify-setup` merged 2026-10-11 (Carter: "merge, A" = code map only): graphify knowledge graph
+  for build sessions. `.github/workflows/graphify.yml` builds the code map from main onto the generated `graph`
+  branch; `tools/graphify-session.sh` pulls it at session start; rules in `CLAUDE.md`, "Knowledge graph".
+  The `graph` branch is force-replaced on each merge: never archive or build on it. Chapters stay out of the map.
+
 ## Needs Carter
 - Clearing the 31 pending chapters (a separate thread, "Clear the pending chapters batch", owns this).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance

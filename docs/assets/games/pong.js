@@ -27,16 +27,12 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function rnd(a, b) { return a + Math.random() * (b - a); }
   var ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
 
   AG.register("pong", {
-    title: "Antithesis",
-    subtitle: "The Eternal Contest — two cosmic principles volley the sacred orb.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch06) || "",
-    sourceHref: "chapters/ch06.html", sourceLabel: "Read “Zoroaster”",
     mount: mountGame
   });
 
@@ -293,7 +289,7 @@
           '<p>' + (ROMAN[st.pl.score] || st.pl.score) + " — " + (ROMAN[st.pr.score] || st.pr.score) + (newBest ? ' · <span style="color:var(--gold-bright)">a new best</span>' : "") + "</p></div>" +
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">The dualisms you uncovered:</p><ul class="ouro-facts">' + recap + "</ul>" : "") +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>Contest again</button>' +
-          '<a class="game-source" href="chapters/ch06.html">› Read “Zoroaster”</a></div>';
+          AG.content.readLink(AG.catalog("pong").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 
