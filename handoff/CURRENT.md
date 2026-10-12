@@ -30,6 +30,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   - #48: a distinct moveset for each god in Divine Casualties
   - #46: speed pass (fonts load in parallel, lighter Pantheon and home; new `fonts` review check)
   - #51: three Pilgrimage previews (Stonehenge, Golgotha and the Tomb, Mount Ararat)
+  - #44: one catalog for the twelve games
 
   #40 brought in:
   - the visitor ledger, kept in the browser only
@@ -40,19 +41,17 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
   The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
   Framework workflow fails any content PR that leaves the registry stale.
-- #45 (registry rebuild) was closed; #49 and #44 carry the same rebuild.
+- #45 (registry rebuild) was closed; #49 carries the same rebuild.
 - #49 `claude/framework-followup`: the reviewer's two small framework bugs:
   - rate-limited pages that had failed twice were never retried
   - a first new score could be copied again as an "old" score
 
   It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
   and the reviewer passes it.
-- #44: one catalog for the twelve games (another thread).
 - #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
   needs Carter).
 - #50: clears the 14 reviewed chapters (another thread; Carter approved).
 - **Overlaps:**
-  - #44 and #49 edit `symbols.html` script versions.
   - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
 
   Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
