@@ -72,7 +72,10 @@ const KINDS = {
   core:      { tile: [6, 3.0], course: 0.75, len: [0.8, 1.7], joint: 0.05, base: [196, 172, 134], vary: 22, grain: 0.18, pits: 0.02, soot: 0, rough: 0.95, bump: 5, weathered: true },
   rock:      { tile: [3, 3], course: 0, base: [176, 160, 132], vary: 0, grain: 0.3, pits: 0.025, soot: 0.25, rough: 0.97, bump: 6, hewn: true },
   qc:        { tile: [4, 2.6], course: 0.65, len: [1.0, 2.2], joint: 0.006, base: [200, 186, 160], vary: 12, grain: 0.1, pits: 0.012, soot: 0.12, rough: 0.85, bump: 2, salt: true },
-  wood:      { tile: [1.2, 2.4], base: [104, 76, 48], wood: true, rough: 0.75, bump: 1.4 }
+  wood:      { tile: [1.2, 2.4], base: [104, 76, 48], wood: true, rough: 0.75, bump: 1.4 },
+  sarsen:    { tile: [3, 3], course: 0, base: [150, 146, 134], vary: 0, grain: 0.22, pits: 0.02, soot: 0.12, rough: 0.95, bump: 4, lichen: true },
+  turf:      { tile: [4, 4], course: 0, base: [92, 118, 58], vary: 0, grain: 0.5, soot: 0, rough: 1, bump: 1.2, turf: true },
+  quartz:    { tile: [3, 2], course: 0, base: [226, 224, 216], vary: 0, grain: 0.08, pits: 0.01, soot: 0.05, rough: 0.6, bump: 1.6, cobbles: true }
 };
 
 const clamp = (x, a, b) => (x < a ? a : x > b ? b : x);
@@ -123,6 +126,9 @@ function draw(kind, px) {
           const gouge = Math.sin(mx * 22 + my * 9 + big * 12) * Math.sin(my * 3 + mid * 6);
           h += gouge * 0.12; const s = 1 + gouge * 0.06; r *= s; g *= s; b *= s;
         }
+        if (K.lichen) { const sp = n2(u * 1.3 + 0.2, v * 1.1); if (sp > 0.62) { const k = Math.min(1, (sp - 0.62) * 3); r += (178 - r) * k * 0.6; g += (184 - g) * k * 0.6; b += (128 - b) * k * 0.6; } if (fine > 0.7) { r *= 0.86; g *= 0.86; b *= 0.86; } }
+        if (K.turf) { const blade = Math.sin(mx * 90 + fine * 20) * Math.sin(my * 70 + mid * 14); const k = 0.85 + blade * 0.1 + (mid - 0.5) * 0.3; r *= k; g *= k; b *= k; h = 0.5 + blade * 0.08; if (big > 0.66) { r += 18; g += 10; } }
+        if (K.cobbles) { const cb = nf(u * 0.5, v * 0.5); if (cb > 0.78) { const k = 0.38 + (1 - cb) * 0.6; r = 92 * k + 40; g = 90 * k + 38; b = 88 * k + 40; h -= 0.1; } }
         if (K.salt) { const sp = n2(u * 0.7 + 0.5, v * 0.7); if (sp > 0.6) { const k = (sp - 0.6) * 2.4; r += (238 - r) * k; g += (232 - g) * k; b += (220 - b) * k; h += k * 0.15; } }
       }
       if (blocks) {
