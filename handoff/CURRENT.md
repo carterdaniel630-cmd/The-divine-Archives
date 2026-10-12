@@ -22,13 +22,14 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
-## Open PRs and branches in flight (updated 2026-10-11 20:10 UTC by the framework session)
+## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
   - #43: the Qumran and Alexandria walks are listed
   - #48: a distinct moveset for each god in Divine Casualties
   - #46: speed pass (fonts load in parallel, lighter Pantheon and home; new `fonts` review check)
+  - #51: three Pilgrimage previews (Stonehenge, Golgotha and the Tomb, Mount Ararat)
 
   #40 brought in:
   - the visitor ledger, kept in the browser only
@@ -56,8 +57,6 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
   Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
   and the Framework test catch a missed rebuild.
-- `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
-  based on an older main.
 - `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
   `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
