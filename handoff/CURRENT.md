@@ -22,22 +22,39 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
-## Open PRs and branches in flight (updated 2026-10-11 by the framework session)
-- #46 `claude/project-thread-sn268z`: speed pass (fonts linked from each page instead of an @import in
-  archive.css, Pantheon script fonts cut to the letters it uses, unused data files dropped from home/eras/themes,
-  new `fonts` review check). Waits for Carter's batch go-ahead.
-- #40 `claude/framework-sandbox`: framework Phases 1 and 2. Carter approved Phase 2 and "merge when
-  green". It brings in:
+## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
+- Merged 2026-10-11 with Carter's go-ahead, all deployed:
+  - #42: source review of the pending chapters
+  - #40: framework Phases 1 and 2
+  - #43: the Qumran and Alexandria walks are listed
+  - #48: a distinct moveset for each god in Divine Casualties
+  - #46: speed pass (fonts load in parallel, lighter Pantheon and home; new `fonts` review check)
+  - #51: three Pilgrimage previews (Stonehenge, Golgotha and the Tomb, Mount Ararat)
+  - #44: one catalog for the twelve games
+
+  #40 brought in:
   - the visitor ledger, kept in the browser only
   - game and page events
   - the opt-in breath walkthrough in the museum's Buddhism room (pending review)
   - the originality check
-  - the entity registry (`framework/registry/`, rebuilt by `node tools/build-entity-registry.js`)
-  - Lighthouse advisory on drafts
+  - the entity registry
 
-  After it merges, the build order in `CLAUDE.md` includes `build-framework.js` and
-  `build-entity-registry.js`. The Framework workflow fails any content PR that leaves the registry
-  stale. Plan: `plans/framework-sandbox.md`.
+  The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
+  Framework workflow fails any content PR that leaves the registry stale.
+- #45 (registry rebuild) was closed; #49 carries the same rebuild.
+- #49 `claude/framework-followup`: the reviewer's two small framework bugs:
+  - rate-limited pages that had failed twice were never retried
+  - a first new score could be copied again as an "old" score
+
+  It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
+  and the reviewer passes it.
+- #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
+  needs Carter).
+- **Overlaps:**
+  - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
+
+  Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
+  and the Framework test catch a missed rebuild.
 - #42 (source review and corrections of 14 pending chapters) merged; #50 (clearing those 14, same
   branch `claude/project-thread-evq985`) merged 2026-10-12 with Carter's "clear".
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
@@ -46,6 +63,8 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   (#48); PR #47 (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum) is
   green and awaits Carter's go-ahead.
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
+- **Carter's try-it list:** `handoff/CARTER-TO-TRY.md` lists what to try on his phone and the
+  decisions waiting on him. Keep it current: tick items off as he answers, and add new ones.
 
 - #52 `claude/graphify-setup` merged 2026-10-11 (Carter: "merge, A" = code map only): graphify knowledge graph
   for build sessions. `.github/workflows/graphify.yml` builds the code map from main onto the generated `graph`
