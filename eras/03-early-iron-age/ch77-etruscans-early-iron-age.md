@@ -1,6 +1,5 @@
 # Chapter 77 — The Etruscans: Reading the Will of the Gods
 
-*Recently added — pending full review.*
 
 On 26 September 1877 a farmer ploughing a field near Gossolengo, south of Piacenza in northern Italy, turned up a flat piece of bronze about the size of a hand. It was a model of a **sheep's liver**, cast in the second or early first century BCE, its upper surface divided by incised lines into compartments, each inscribed with a name in Etruscan letters: **Tin**, **Uni**, **Fufluns**, **Cilens**, **Tluscv** and many more. It was a map of the heavens laid out on an organ. An Etruscan priest, the **haruspex**, would sacrifice a sheep, lift out its liver, and read the will of the gods from its shape, colour and marks, region by region, each region belonging to a deity. The **Liver of Piacenza** is the most famous object of a people whom the Romans themselves called "more devoted than any other to religious rites", and whose priests Rome went on consulting for centuries after the Etruscans had lost their independence.
 

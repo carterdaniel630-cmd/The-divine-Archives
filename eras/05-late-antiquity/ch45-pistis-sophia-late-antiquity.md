@@ -2,7 +2,6 @@
 
 *Tradition chapter · Era 05 — Late Antiquity · revised 2026-09-30 (full text published), pending review*
 
-*Recently added — pending full review.*
 
 ---
 

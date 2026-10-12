@@ -402,7 +402,7 @@
    "type": "chapter",
    "label": "Pistis Sophia",
    "era": "05-late-antiquity",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch45.html",
    "from": "docs/assets/data.js"
   },
@@ -410,7 +410,7 @@
    "id": "chapter:ch46",
    "type": "chapter",
    "label": "Creation & the First Order",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch46.html",
    "from": "docs/assets/data.js"
   },
@@ -603,7 +603,7 @@
    "type": "chapter",
    "label": "Nubia & Kush",
    "era": "03-early-iron-age",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch68.html",
    "from": "docs/assets/data.js"
   },
@@ -621,7 +621,7 @@
    "type": "chapter",
    "label": "Pre-Islamic Arabia",
    "era": "05-late-antiquity",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch70.html",
    "from": "docs/assets/data.js"
   },
@@ -648,7 +648,7 @@
    "type": "chapter",
    "label": "Sabbateans, Frankists & Hasidim",
    "era": "08-early-modern",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch73.html",
    "from": "docs/assets/data.js"
   },
@@ -666,7 +666,7 @@
    "type": "chapter",
    "label": "Siberian & Arctic Shamanism",
    "era": "01-prehistory",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch75.html",
    "from": "docs/assets/data.js"
   },
@@ -675,7 +675,7 @@
    "type": "chapter",
    "label": "The Olmec",
    "era": "02-bronze-age",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch76.html",
    "from": "docs/assets/data.js"
   },
@@ -684,7 +684,7 @@
    "type": "chapter",
    "label": "The Etruscans",
    "era": "03-early-iron-age",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch77.html",
    "from": "docs/assets/data.js"
   },
@@ -693,7 +693,7 @@
    "type": "chapter",
    "label": "The Scythians & the Steppe",
    "era": "04-axial-age",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch78.html",
    "from": "docs/assets/data.js"
   },
@@ -702,7 +702,7 @@
    "type": "chapter",
    "label": "The First Christian Kingdoms",
    "era": "05-late-antiquity",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch79.html",
    "from": "docs/assets/data.js"
   },
@@ -711,7 +711,7 @@
    "type": "chapter",
    "label": "Shi'ism",
    "era": "06-early-medieval",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch80.html",
    "from": "docs/assets/data.js"
   },
@@ -720,7 +720,7 @@
    "type": "chapter",
    "label": "Tengri & the Mongols",
    "era": "07-high-medieval",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch81.html",
    "from": "docs/assets/data.js"
   },
@@ -729,7 +729,7 @@
    "type": "chapter",
    "label": "Akbar & the Mughal Synthesis",
    "era": "08-early-modern",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch82.html",
    "from": "docs/assets/data.js"
   },
@@ -738,7 +738,7 @@
    "type": "chapter",
    "label": "Global Hinduism & the Guru Movements",
    "era": "09-modern",
-   "status": "pending",
+   "status": "published",
    "href": "chapters/ch83.html",
    "from": "docs/assets/data.js"
   }

@@ -1,6 +1,5 @@
 # Chapter 81 — Tengri & the Mongols: The Eternal Blue Sky and the World Empire
 
-*Recently added — pending full review.*
 
 On 30 May 1254, at the camp of the Great Khan **Möngke** at **Karakorum** in Mongolia, a Flemish Franciscan friar, **William of Rubruck**, took part in a public debate. The khan had ordered the representatives of the religions at his court to argue their faiths before three of his secretaries, a Christian, a Muslim and a Buddhist. William, with the Nestorian Christians on his side, argued first against a Buddhist monk about whether there is one God, then against the Muslims, who, he says, agreed that there is one God and declined to argue further. At the end, nobody was converted. When it was over, William wrote, the Nestorians and the Muslims sang loudly, the Buddhists kept silent, and everyone drank heavily. The next day, Pentecost, Möngke summoned him and explained his own faith: "We Mongols believe that there is only one God, by whom we live and by whom we die, and for whom we have an upright heart. But as God gave the hand several fingers, so he has given men several ways." The God he meant was **Tengri**, the Eternal Heaven, in whose name the Mongols had conquered the largest land empire the world had ever seen.
 

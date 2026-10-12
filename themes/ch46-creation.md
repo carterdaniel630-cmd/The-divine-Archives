@@ -2,7 +2,6 @@
 
 *Comparative theme · cross-era · revised 2026-09-30 (full text published), pending review*
 
-*Recently added — pending full review.*
 
 ---
 

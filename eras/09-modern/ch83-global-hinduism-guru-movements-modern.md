@@ -1,6 +1,5 @@
 # Chapter 83 — Global Hinduism & the Guru Movements: From Chicago 1893 to the Maha Kumbh
 
-*Recently added — pending full review.*
 
 On **11 September 1893** the World's Parliament of Religions opened in the hall of the new Art Institute building in Chicago, part of the World's Columbian Exposition. Late in the day a thirty-year-old Bengali monk in an ochre robe and turban, almost unknown in America, rose to speak for India and for Hinduism. His name was **Swami Vivekananda**. He began with five words: "Sisters and brothers of America". The audience, reported at some seven thousand, gave him a standing ovation that lasted, by the accounts, two minutes. The short speech that followed, a plea against sectarianism and fanaticism drawn from the Bhagavad Gita and the idea that all religions were paths to one truth, made him famous overnight. A year later, in November 1894, he founded the first **Vedanta Society** in two rented rooms on West 33rd Street in Manhattan. It was the first organized Hindu institution in the West, and Vivekananda's version of Hinduism, universal, philosophical and experiential, became for many outsiders what Hinduism simply was.
 
