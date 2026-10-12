@@ -1,6 +1,5 @@
 # Chapter 75 — Siberian & Arctic Shamanism: The Drum, the Word and the Question of the First Religion
 
-*Recently added — pending full review.*
 
 In 1692 the Amsterdam burgomaster and scholar **Nicolaes Witsen** published a great book on the peoples of northern and eastern Asia, *Noord en Oost Tartarye*. Among its pictures is an illustration, much reproduced since, of a figure among the **Tungus** (Evenki) of Siberia: a man in a fringed fur costume, with an antlered headdress, beating a frame drum. The caption calls him a **"Priest of the Devil"**. It is one of the first European images of a **shaman**. The word itself came from the same people. About forty years earlier the dissident Russian archpriest **Avvakum**, exiled to the lands of the reindeer-herding Evenki, had met these practitioners and written about them. Through Russian travellers and scholars the Evenki word *šaman* entered the languages of Europe.
 

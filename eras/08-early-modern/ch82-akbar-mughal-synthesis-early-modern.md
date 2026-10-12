@@ -1,6 +1,5 @@
 # Chapter 82 — Akbar & the Mughal Synthesis: The House of Worship, the Divine Faith and the Confluence of Two Seas
 
-*Recently added — pending full review.*
 
 On **28 February 1580** three Jesuit priests from Goa rode into **Fatehpur Sikri**, the red sandstone city the Mughal emperor **Akbar** had raised on a ridge west of Agra. They were **Rudolf Acquaviva**, **Antonio de Monserrate** and the interpreter **Francisco Henriques**, and they had been invited by the emperor himself. Among their gifts was a new **Royal Polyglot Bible**, printed at Antwerp by Christophe Plantin in Hebrew, Greek, Latin, Aramaic and Syriac; Akbar received it with reverence and had it kept in a gold casket in his private rooms. Within weeks the priests were debating Muslim scholars before the emperor in his **Ibadat Khana**, the "House of Worship", on the long Thursday nights he gave to argument about God. They went home convinced he was about to be baptized. He was not. Akbar, who could not read, had built something else: an imperial court in which Sunni and Shi'i scholars, Brahmin pandits, Jain monks, Zoroastrian priests and Catholic missionaries were all summoned to speak, and in which the final word on religion belonged, more and more, to the emperor.
 

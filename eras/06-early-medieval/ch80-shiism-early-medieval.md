@@ -1,6 +1,5 @@
 # Chapter 80 — Shi'ism: The Party of Ali, Karbala and the Hidden Imam
 
-*Recently added — pending full review.*
 
 On the tenth day of the month of Muharram in the year 61 of the Islamic calendar, **10 October 680**, on the plain of **Karbala** by the Euphrates in Iraq, a small company of perhaps seventy men, with their women and children, faced an army of thousands. For days they had been cut off from the river. Their leader was **Husayn ibn Ali**, grandson of the Prophet Muhammad, who had refused to swear allegiance to the Umayyad caliph **Yazid** and had set out for Kufa at the invitation of its people, who did not come to his aid. By evening Husayn and nearly all the men with him were dead, among them his half-brother **Abbas**, killed trying to bring water, and a young son, remembered in Shi'i tradition as the infant ʿAli al-Asghar (the historian Wilferd Madelung thinks he was probably older). His head was carried to Damascus; his sister **Zaynab** and the surviving women and children were led as captives. Every year since, on the first ten days of Muharram, Shi'i Muslims across the world have mourned him: in processions and passion plays, in sermons and laments, in tears. Karbala made **Shi'ism**, the "party of Ali", into a tradition whose heart is the memory of a just man betrayed and martyred, and the hope of his descendants' vindication.
 
