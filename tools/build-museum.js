@@ -49,10 +49,13 @@ const PANTHEON = sandbox.window.PANTHEON;
 const PANTHEON_ART = sandbox.window.PANTHEON_ART;
 
 // ---- curated inputs (the only hand-written museum data) ------------------
-// the chapter-to-game map lives inline in symbols.html; read it from there so it is not copied
-const symbolsHtml = fs.readFileSync(path.join(DOCS, "symbols.html"), "utf8");
+// the chapter-to-game map comes from the games catalog (docs/assets/games/catalog.js), the one list of the games
 const GAME = {};
-for (const m of symbolsHtml.matchAll(/(\w+):\s*\{\s*gameId:"(\w+)",\s*ch:"(ch\d+)",\s*title:"([^"]+)"/g)) GAME[m[3]] = { id: m[2], title: m[4] };
+{
+  const gctx = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(DOCS, "assets", "games", "catalog.js"), "utf8"), gctx);
+  for (const g of gctx.window.ARCHIVE_GAMES) GAME[g.hiddenIn] = { id: g.id, title: g.fullTitle || g.title };
+}
 // Vault entries that deliberately show no image (see their own entries)
 const NO_IMAGE = { v68: "The Vault shows no image of the tjurunga: they are secret-sacred objects.", v76: "The Vault shows no image connected with the Báb, out of respect for Bahá'í practice." };
 // living traditions that data.js files in an early wing (PLAN §4 flags; §13 decision 7)

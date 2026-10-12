@@ -1,6 +1,6 @@
 {
  "type": "site",
- "count": 73,
+ "count": 74,
  "entities": [
   {
    "id": "site:aksum",
@@ -139,7 +139,8 @@
    "type": "site",
    "label": "Chichén Itzá",
    "era": "07-high-medieval",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/chichen-itza.html",
    "links": [
     "chapter:ch29",
     "relic:v31"
@@ -177,7 +178,8 @@
    "type": "site",
    "label": "Delphi",
    "era": "03-early-iron-age",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/delphi.html",
    "links": [
     "chapter:ch08",
     "chapter:ch15",
@@ -248,7 +250,8 @@
    "type": "site",
    "label": "Göbekli Tepe",
    "era": "01-prehistory",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/gobekli-tepe.html",
    "links": [
     "chapter:ch41",
     "chapter:ch42",
@@ -265,6 +268,20 @@
    "links": [
     "chapter:ch34",
     "relic:v33"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:golgotha-and-the-tomb",
+   "type": "site",
+   "label": "Golgotha and the Tomb, c. 30 CE",
+   "era": "05-late-antiquity",
+   "status": "preview",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "relic:v15"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -485,7 +502,7 @@
    "type": "site",
    "label": "Library of Alexandria",
    "era": "04-axial-age",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/library-of-alexandria.html",
    "links": [
     "chapter:ch15",
@@ -557,7 +574,8 @@
    "type": "site",
    "label": "Mogao Caves",
    "era": "05-late-antiquity",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/mogao-caves.html",
    "links": [
     "chapter:ch20",
     "chapter:ch53",
@@ -581,7 +599,8 @@
    "id": "site:mount-ararat-the-ark-tradition",
    "type": "site",
    "label": "Mount Ararat & the Ark tradition",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
    "links": [
     "chapter:ch01"
    ],
@@ -674,7 +693,7 @@
    "type": "site",
    "label": "Qumran caves",
    "era": "04-axial-age",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/qumran-caves.html",
    "links": [
     "chapter:ch10",
@@ -764,7 +783,8 @@
    "type": "site",
    "label": "Stonehenge",
    "era": "01-prehistory",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/stonehenge.html",
    "links": [
     "chapter:ch42",
     "relic:v45"

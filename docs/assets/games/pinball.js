@@ -28,15 +28,11 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function rnd(a, b) { return a + Math.random() * (b - a); }
 
   AG.register("pinball", {
-    title: "The Firmament",
-    subtitle: "Launch the soul-spark through the ordered heavens; ring the celestial bumpers.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch46) || "",
-    sourceHref: "chapters/ch46.html", sourceLabel: "Read “Creation & the First Order”",
     mount: mountGame
   });
 
@@ -340,7 +336,7 @@
           (nb ? '<p style="color:var(--gold-bright)">✦ A new best.</p>' : "") + "</div>" +
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">The cosmogonies you kindled:</p><ul class="ouro-facts">' + recap + "</ul>" : '<p class="rq-note" style="text-align:center">Ring a bumper three times to light a heaven and reveal its creation.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>Cast again</button>' +
-          '<a class="game-source" href="chapters/ch46.html">› Read “Creation & the First Order”</a></div>';
+          AG.content.readLink(AG.catalog("pinball").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

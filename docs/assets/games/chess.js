@@ -18,10 +18,6 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   AG.register("chess", {
-    title: "Archive Chess",
-    subtitle: "A board of gods — Olympian, Egyptian, or Aesir. Facts fall with every capture.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch02) || "",
-    sourceHref: "chapters/ch02.html", sourceLabel: "Read “Egypt”",
     mount: mountGame
   });
 
@@ -278,7 +274,7 @@
       factEl.innerHTML = '<span class="ch-sym">✦</span> <strong>' + esc(info.god) + " taken.</strong> " + esc(info.fact) +
         ' <a class="game-source" href="chapters/' + ch + '.html">› Read “' + esc(chapterTitle(ch)) + "”</a>";
     }
-    function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+    var chapterTitle = AG.content.chapterTitle;
 
     /* ---- select + shell + flow ---- */
     var PANS = ["greek", "egyptian", "norse"];
@@ -327,7 +323,7 @@
         '<p class="ouro-toast ch-fact" aria-live="polite"></p>' +
         '<div class="rq-actions" style="gap:.5rem;margin-top:.3rem"><button class="rq-btn" data-a="new">New match</button>' +
           '<button class="rq-btn" data-a="resign">Resign</button>' +
-          '<a class="game-source" href="chapters/ch02.html">› The pantheons</a></div>';
+          AG.content.readLink(AG.catalog("chess").chapter, "The pantheons") + '</div>';
       canvas = root.querySelector(".ch-board"); cx = canvas.getContext("2d");
       DPR = Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || TOT) / TOT); canvas.width = Math.round(TOT * DPR); canvas.height = Math.round(TOT * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, TOT); canvas.width = Math.round(TOT * DPR); canvas.height = Math.round(TOT * DPR); cx.setTransform(DPR, 0, 0, DPR, 0, 0); draw(); });

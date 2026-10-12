@@ -83,6 +83,21 @@ Everything is built and maintained to the highest standard. In practice:
 - Carter works in large batches (2026-10-11): group decisions and merges into one batch for him
   rather than asking one item at a time. Batching never lowers the quality bar above.
 
+## Knowledge graph (graphify)
+A map of the repo's code (build tools, games, museum, framework, Pages Functions) is built from `main` by
+`.github/workflows/graphify.yml` and published to the `graph` branch. At session start
+`tools/graphify-session.sh` installs the graphify CLI and puts that map in `graphify-out/` (git-ignored).
+- For code and architecture questions, when `graphify-out/graph.json` exists, first run
+  `graphify query "<question>"`; use `graphify path "<A>" "<B>"` for how two things connect and
+  `graphify explain "<name>"` for one thing. Read `graphify-out/GRAPH_REPORT.md` only for a broad overview.
+- If the session line says the CLI is missing, read `graphify-out/GRAPH_REPORT.md` and search as usual.
+- After changing code, `graphify update .` refreshes your local copy (no AI, no cost); then
+  `touch graphify-out/.local` so a restart keeps it. The published map refreshes itself on every merge to main.
+- The map is code only. Chapters, Vault entries and other prose are not in it; never run `/graphify` over
+  them (it sends files to a model and uses the plan's allowance) without Carter's go-ahead.
+- `.graphifyignore` keeps `KEY.md` answer keys, generated output and media out of the map.
+- It is a navigation aid, not a source: a claim about the code still needs the file or commit behind it.
+
 ## File structure
 ```
 /eras/

@@ -28,7 +28,7 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   // tetromino matrices + palette index
   var SHAPES = {
@@ -43,10 +43,6 @@
   var BAG = ["I","O","T","S","Z","J","L"];
 
   AG.register("ziggurat", {
-    title: "Ziggurat Builder",
-    subtitle: "Lay the courses of a temple-mountain. Every course you raise uncovers the archive.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch03) || "",
-    sourceHref: "chapters/ch03.html", sourceLabel: "Read “Mesopotamia”",
     mount: mountGame
   });
 

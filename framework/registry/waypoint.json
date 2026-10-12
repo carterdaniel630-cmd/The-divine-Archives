@@ -1,7 +1,623 @@
 {
  "type": "waypoint",
- "count": 65,
+ "count": 183,
  "entities": [
+  {
+   "id": "waypoint:chichen-itza/ballcourt",
+   "type": "waypoint",
+   "label": "The largest ball court",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/caracol",
+   "type": "waypoint",
+   "label": "El Caracol",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/castillo",
+   "type": "waypoint",
+   "label": "The pyramid of Kukulkan",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/cenote",
+   "type": "waypoint",
+   "label": "The Sacred Cenote",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/dredge",
+   "type": "waypoint",
+   "label": "The dredging",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/inner",
+   "type": "waypoint",
+   "label": "The pyramid inside",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/relief",
+   "type": "waypoint",
+   "label": "The carved benches",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/rings",
+   "type": "waypoint",
+   "label": "The game and the gods",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/sacbe",
+   "type": "waypoint",
+   "label": "The white road",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/serpent",
+   "type": "waypoint",
+   "label": "The serpent of light",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/tzompantli",
+   "type": "waypoint",
+   "label": "The platform of skulls",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/v-board",
+   "type": "waypoint",
+   "label": "Chichén Itzá",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/v-door",
+   "type": "waypoint",
+   "label": "To the plaza",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/v-v31",
+   "type": "waypoint",
+   "label": "The Dresden Codex",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/venus",
+   "type": "waypoint",
+   "label": "Watching Venus?",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/victims",
+   "type": "waypoint",
+   "label": "Those given to the well",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:chichen-itza/warriors",
+   "type": "waypoint",
+   "label": "The Temple of the Warriors",
+   "parent": "site:chichen-itza",
+   "href": "pilgrimage/chichen-itza.html",
+   "from": "docs/pilgrimage/sites/chichen-itza/site.js"
+  },
+  {
+   "id": "waypoint:delphi/adyton",
+   "type": "waypoint",
+   "label": "The inner room",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/altar",
+   "type": "waypoint",
+   "label": "The Altar of the Chians",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/athenian",
+   "type": "waypoint",
+   "label": "The Treasury of the Athenians",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/decline",
+   "type": "waypoint",
+   "label": "The end of the oracle",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/e",
+   "type": "waypoint",
+   "label": "The E at Delphi",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/games",
+   "type": "waypoint",
+   "label": "The Pythian Games",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/gate",
+   "type": "waypoint",
+   "label": "The sanctuary of Apollo",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/hall",
+   "type": "waypoint",
+   "label": "The hall",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/hymns",
+   "type": "waypoint",
+   "label": "Music written on the wall",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/maxims",
+   "type": "waypoint",
+   "label": "Know thyself",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/offerings",
+   "type": "waypoint",
+   "label": "The offerings of the cities",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/omphalos",
+   "type": "waypoint",
+   "label": "The navel of the earth",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/serpent",
+   "type": "waypoint",
+   "label": "The Serpent Column",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/sibyl",
+   "type": "waypoint",
+   "label": "The Rock of the Sibyl",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/siphnian",
+   "type": "waypoint",
+   "label": "The Treasury of the Siphnians",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/sky",
+   "type": "waypoint",
+   "label": "When the god came back",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/stadium",
+   "type": "waypoint",
+   "label": "The stadium",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/stoa",
+   "type": "waypoint",
+   "label": "The Polygonal Wall and the Stoa of the Athenians",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/temple",
+   "type": "waypoint",
+   "label": "Six temples, one place",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/theatre",
+   "type": "waypoint",
+   "label": "The theatre",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/v-board",
+   "type": "waypoint",
+   "label": "Delphi",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/v-door",
+   "type": "waypoint",
+   "label": "To the sanctuary",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/v-v39",
+   "type": "waypoint",
+   "label": "The Derveni Papyrus",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:delphi/vapours",
+   "type": "waypoint",
+   "label": "Vapours from the earth?",
+   "parent": "site:delphi",
+   "href": "pilgrimage/delphi.html",
+   "from": "docs/pilgrimage/sites/delphi/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/ab",
+   "type": "waypoint",
+   "label": "Enclosures A and B",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/backfill",
+   "type": "waypoint",
+   "label": "Buried on purpose?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/dating",
+   "type": "waypoint",
+   "label": "How old?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/geometry",
+   "type": "waypoint",
+   "label": "Planned as one?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/hill",
+   "type": "waypoint",
+   "label": "A hill full of stones",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/moving",
+   "type": "waypoint",
+   "label": "How were they moved?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/p18",
+   "type": "waypoint",
+   "label": "The central pair: Pillars 18 and 31",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/p43",
+   "type": "waypoint",
+   "label": "The Vulture Stone (Pillar 43)",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/quarry",
+   "type": "waypoint",
+   "label": "Where the pillars came from",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/roof",
+   "type": "waypoint",
+   "label": "Open to the sky, or roofed?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/stars",
+   "type": "waypoint",
+   "label": "Were the enclosures aimed at the stars?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/temple",
+   "type": "waypoint",
+   "label": "Temple, or houses?",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/v-board",
+   "type": "waypoint",
+   "label": "Göbekli Tepe",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/v-door",
+   "type": "waypoint",
+   "label": "To the hill",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/v-v60",
+   "type": "waypoint",
+   "label": "Göbekli Tepe's Pillars",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:gobekli-tepe/walk",
+   "type": "waypoint",
+   "label": "A ramp the real site does not have",
+   "parent": "site:gobekli-tepe",
+   "href": "pilgrimage/gobekli-tepe.html",
+   "from": "docs/pilgrimage/sites/gobekli-tepe/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/bench",
+   "type": "waypoint",
+   "label": "The empty bench",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/chamber",
+   "type": "waypoint",
+   "label": "Inside the tomb",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/crosses",
+   "type": "waypoint",
+   "label": "Three empty crosses",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/fore",
+   "type": "waypoint",
+   "label": "The tomb, and its stone",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/garden",
+   "type": "waypoint",
+   "label": "A garden",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/gate",
+   "type": "waypoint",
+   "label": "Outside the Second Wall",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/quarry",
+   "type": "waypoint",
+   "label": "An old quarry",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/rock",
+   "type": "waypoint",
+   "label": "The rock",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/temple",
+   "type": "waypoint",
+   "label": "The Temple, to the east",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/tomb2",
+   "type": "waypoint",
+   "label": "A family tomb",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/towers",
+   "type": "waypoint",
+   "label": "Herod's towers",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/v-board",
+   "type": "waypoint",
+   "label": "Golgotha and the Tomb, c. 30 CE",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/v-door",
+   "type": "waypoint",
+   "label": "To the road by the gate",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/v-garden",
+   "type": "waypoint",
+   "label": "The other site: the Garden Tomb",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/v-today",
+   "type": "waypoint",
+   "label": "The site today",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
+  {
+   "id": "waypoint:golgotha-and-the-tomb/v-v15",
+   "type": "waypoint",
+   "label": "The True Cross",
+   "parent": "site:golgotha-and-the-tomb",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "from": "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js"
+  },
   {
    "id": "waypoint:great-pyramid/ante",
    "type": "waypoint",
@@ -387,6 +1003,214 @@
    "from": "docs/pilgrimage/sites/library-of-alexandria/site.js"
   },
   {
+   "id": "waypoint:mogao-caves/c16",
+   "type": "waypoint",
+   "label": "The corridor of Cave 16",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/c16hall",
+   "type": "waypoint",
+   "label": "The hall of Cave 16",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/c17",
+   "type": "waypoint",
+   "label": "Cave 17: the Library Cave",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/c254",
+   "type": "waypoint",
+   "label": "Cave 254",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/c96",
+   "type": "waypoint",
+   "label": "The Northern Great Image",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/cliff",
+   "type": "waypoint",
+   "label": "The face of the cliff",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/dispersal",
+   "type": "waypoint",
+   "label": "Where the manuscripts went",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/maitreya",
+   "type": "waypoint",
+   "label": "The Buddha who is to come",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/mogao",
+   "type": "waypoint",
+   "label": "A thousand years of caves",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/pavilion",
+   "type": "waypoint",
+   "label": "The nine-storey building",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/seal",
+   "type": "waypoint",
+   "label": "Why was it sealed?",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/tigress",
+   "type": "waypoint",
+   "label": "The prince and the tigress",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/v-board",
+   "type": "waypoint",
+   "label": "The Mogao Caves",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/v-door",
+   "type": "waypoint",
+   "label": "To the cliff",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mogao-caves/v-v30",
+   "type": "waypoint",
+   "label": "The Diamond Sutra of Dunhuang",
+   "parent": "site:mogao-caves",
+   "href": "pilgrimage/mogao-caves.html",
+   "from": "docs/pilgrimage/sites/mogao-caves/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/ararat",
+   "type": "waypoint",
+   "label": "Two volcanoes",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/claims",
+   "type": "waypoint",
+   "label": "Searches and claims",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/durupinar",
+   "type": "waypoint",
+   "label": "The Durupınar formation",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/masis",
+   "type": "waypoint",
+   "label": "Masis",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/summit",
+   "type": "waypoint",
+   "label": "On the ice cap",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/v-board",
+   "type": "waypoint",
+   "label": "Mount Ararat & the Ark tradition",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/v-door",
+   "type": "waypoint",
+   "label": "To the plain below Ararat",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/v-judi",
+   "type": "waypoint",
+   "label": "Other mountains of the ark",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:mount-ararat-the-ark-tradition/view",
+   "type": "waypoint",
+   "label": "What you see from here",
+   "parent": "site:mount-ararat-the-ark-tradition",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
    "id": "waypoint:qumran-caves/c1-isaiah",
    "type": "waypoint",
    "label": "The Great Isaiah Scroll",
@@ -521,6 +1345,126 @@
    "parent": "site:qumran-caves",
    "href": "pilgrimage/qumran-caves.html",
    "from": "docs/pilgrimage/sites/qumran-caves/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/altar",
+   "type": "waypoint",
+   "label": "The Altar Stone",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/aubrey",
+   "type": "waypoint",
+   "label": "The Aubrey Holes",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/avenue",
+   "type": "waypoint",
+   "label": "The Avenue",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/axis",
+   "type": "waypoint",
+   "label": "The solstice axis",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/bluestones",
+   "type": "waypoint",
+   "label": "The bluestones",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/entrance",
+   "type": "waypoint",
+   "label": "The ditch, the bank and the Slaughter Stone",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/heel",
+   "type": "waypoint",
+   "label": "The Heel Stone",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/sarsen-source",
+   "type": "waypoint",
+   "label": "Where the sarsens came from",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/sarsens",
+   "type": "waypoint",
+   "label": "The sarsen circle",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/station",
+   "type": "waypoint",
+   "label": "The Station Stones",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/trilithons",
+   "type": "waypoint",
+   "label": "The trilithon horseshoe",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/v-board",
+   "type": "waypoint",
+   "label": "Stonehenge",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/v-door",
+   "type": "waypoint",
+   "label": "To the Avenue",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
+  },
+  {
+   "id": "waypoint:stonehenge/v-v45",
+   "type": "waypoint",
+   "label": "The Nebra Sky Disc",
+   "parent": "site:stonehenge",
+   "href": "pilgrimage/stonehenge.html",
+   "from": "docs/pilgrimage/sites/stonehenge/site.js"
   }
  ]
 }

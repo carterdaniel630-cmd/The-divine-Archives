@@ -29,10 +29,6 @@
   }
 
   AG.register("fighter", {
-    title: "Divine Casualties",
-    subtitle: "War of the Gods — a duel of the Olympians, drawn from real myth.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch08) || "",
-    sourceHref: "chapters/ch08.html", sourceLabel: "Read “Early Greece”",
     mount: mountGame
   });
 
@@ -41,7 +37,12 @@
     // DMG scales every hit so a match is a war of attrition, not a 3-hit blowout —
     // longer fights give the neutral/defense game room to matter.
     var DMG = 0.5;
-    var ATTACK_STATES = { light: 1, kick: 1, headbutt: 1, special: 1, throw: 1, aerial: 1 };
+    var ATTACK_STATES = { light: 1, kick: 1, headbutt: 1, special: 1, throw: 1, aerial: 1, fspecial: 1, bspecial: 1, super: 1, grab: 1 };
+    // the states driven by a god's own move record (games-modern §2): their timeline,
+    // hits and poses all come from the move data, counted in whole ticks
+    var MOVE_STATES = { fspecial: 1, bspecial: 1, super: 1, grab: 1 };
+    var DIR_TICKS = 8;                        // a direction counts for a special up to 8 ticks before the button
+    var SWIPE_TICKS = 9;                      // phones: how long a special press waits for its swipe (150 ms)
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var UI = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680"), ember: v("--ember", "#b26a34"), ink: v("--ink", "#cdbb96") };
@@ -54,6 +55,10 @@
     // interpolates between the last two sim states by `acc/FIXED`.
     var FIXED = 1 / 60, acc = 0, MAXSTEPS = 5, curReal = 1 / 60;
     var shots = [], debris = [], rain = [], groundItem = null, weather = null, debrisT = 0, itemT = 0, boltFlash = 0;
+    // games-modern §2 effects: the house of Hades (a timed field), Poseidon's wall of water,
+    // and short-lived drawn effects of the specials (sky bolts, lightning column, quake ring,
+    // the shades' hands, the aegis flash), each { t: kind, x, y, life, max, ... }
+    var darkness = null, tide = null, mfx = [];
     var winner = null, resultShown = false, curG1 = "zeus", curG2 = "hades", curTwoP = false;
     var KM1 = { left: "a", right: "d", block: "s", jump: "w", light: "j", heavy: "k", special: "l", grab: "u" };
     var KM2 = { left: "arrowleft", right: "arrowright", block: "arrowdown", jump: "arrowup", light: ",", heavy: ".", special: "/", grab: "m" };
@@ -89,7 +94,13 @@
     function factLine(id) {
       var fx2 = FIGHTER_FACTS[id]; if (!fx2) return "";
       return '<p class="fg-fact rq-note" style="margin-top:.5rem"><span class="ch-sym">✦</span> ' + esc2(fx2) +
-        ' <a class="game-source" href="chapters/' + FACTS_CHAPTER + '.html">› Read “Early Greece”</a></p>';
+        " " + AG.content.readLink(FACTS_CHAPTER) + "</p>";
+    }
+    // the chosen god's specials and super, named, with the chapter words each is drawn from
+    function movesNote(id) {
+      var rows = [["special", "Special"], ["fspecial", "Toward + special"], ["bspecial", "Away + special"], ["super", "Super (full meter)"]];
+      var items = rows.map(function (r) { var m = moveFor({ godId: id }, r[0]); return m && m.name ? "<b>" + r[1] + ":</b> " + esc2(m.name) : ""; }).filter(Boolean);
+      return items.length ? '<p class="rq-note fg-moves">' + items.join(' <span aria-hidden="true">·</span> ') + "</p>" : "";
     }
     function esc2(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
     function loadHeroes() {
@@ -327,15 +338,15 @@
        table falls back to the shared base moves. ---- */
     var CHARS = window.FIGHTER_CHARACTERS || {};
     function charOf(f) { return (f && f.godId && CHARS[f.godId]) || {}; }
-    function mergeMove(base, ov) {
-      if (!ov) return base; if (!base) return ov;
-      var m = {}; for (var k in base) m[k] = base[k]; for (var k2 in ov) m[k2] = ov[k2];
-      if (base.onHit || ov.onHit) { m.onHit = {}; var bo = base.onHit || {}, oo = ov.onHit || {}; for (var a in bo) m.onHit[a] = bo[a]; for (var b in oo) m.onHit[b] = oo[b]; if (bo.knockback || oo.knockback) { m.onHit.knockback = Object.assign({}, bo.knockback, oo.knockback); } }
-      if (base.hitbox || ov.hitbox) { m.hitbox = Object.assign({}, base.hitbox, ov.hitbox); }
-      return m;
-    }
     // resolve a move for a specific fighter: base move with that god's override merged in
-    function moveFor(f, id) { var base = MOVES[id], ov = (charOf(f).moves || {})[id]; return ov ? mergeMove(base, ov) : base; }
+    // (FIGHTER_RESOLVE in fighter-moves.js, shared with the frame-data test). Cached per god,
+    // since poses look moves up every frame.
+    var MOVE_CACHE = {};
+    function moveFor(f, id) {
+      var g = (f && f.godId) || "", key = g + "|" + id;
+      if (!(key in MOVE_CACHE)) MOVE_CACHE[key] = window.FIGHTER_RESOLVE ? (window.FIGHTER_RESOLVE(g, id) || null) : (MOVES[id] || null);
+      return MOVE_CACHE[key];
+    }
     // interpolate a move's poseKeys at normalized progress pr -> additive joint offsets
     function moveOffsets(move, pr) {
       var ks = move && move.poseKeys; if (!ks || !ks.length) return {};
@@ -378,11 +389,16 @@
       if (f.cooldown <= 0) return true;
       var m = f.curMove;
       if (m && m.cancelInto && m.cancelInto.indexOf(newId) >= 0) {
-        var fr = Math.round(f.stTime * 60);
+        var fr = f.stTick != null ? f.stTick : Math.round(f.stTime * 60);
+        // a jab that chains into itself does so at most chainMax times in a row
+        if (newId === m.id && m.chainMax != null && (f.chainN || 0) >= m.chainMax) return false;
         if (m.cancelWindow && fr >= m.cancelWindow[0] && fr <= m.cancelWindow[1]) return true;
       }
       return false;
     }
+    // is the current move's live window open on this tick? (the hits, parries and
+    // invulnerability of every data move are gated by this one test)
+    function inWin(w, t) { return !!w && t >= w[0] && t <= w[1]; }
 
     function poseFor(f, t) {
       var p = clonePose(BASE);
@@ -402,7 +418,10 @@
         // the ground and the god steps instead of moon-walking. The swing foot lifts, the
         // arms counter-swing to the legs, and the hips drop at each footfall for weight;
         // the IK then bends the knees/elbows to match, keeping the limbs natural.
-        var ph = f.x * 0.16 + f.phase, w = Math.sin(ph) * 15;
+        // each god's gait: Poseidon's planted walk takes shorter, flatter strides;
+        // Hades's heavy, unhurried walk takes long slow strides that sink at each step
+        var wst = (charOf(f).style || {}).walk, wf = wst === "heavy" ? 0.11 : wst === "planted" ? 0.14 : 0.16;
+        var ph = f.x * wf + f.phase, w = Math.sin(ph) * (wst === "planted" ? 11 : wst === "heavy" ? 17 : 15);
         add(p, "footF", w, -Math.max(0, w) * 1.05); add(p, "kneeF", w * 0.5, -Math.max(0, w) * 0.5);
         add(p, "footB", -w, -Math.max(0, -w) * 1.05); add(p, "kneeB", -w * 0.5, -Math.max(0, -w) * 0.5);
         add(p, "hnF", -w * 0.55, 0); add(p, "elF", -w * 0.32, 0); add(p, "hnB", w * 0.55, 0); add(p, "elB", w * 0.32, 0);
@@ -411,7 +430,7 @@
         var lean = clamp((f.mvx || 0) * f.facing, -4.5, 5) * (f.mvx * f.facing > 0 ? 0.95 : 0.55);
         add(p, "chest", lean * 0.55, 0); add(p, "neck", lean * 0.85, 0); add(p, "head", lean * 1.05, 0);
         add(p, "shF", lean * 0.7, 0); add(p, "shB", lean * 0.6, 0); add(p, "hnF", lean * 0.6, 0); add(p, "hnB", lean * 0.5, 0);
-        var bob = -Math.abs(Math.cos(ph)) * 2.4;  // body dips at each footfall (twice a stride)
+        var bob = -Math.abs(Math.cos(ph)) * (wst === "heavy" ? 4.2 : wst === "planted" ? 1.4 : 2.4);  // body dips at each footfall (twice a stride)
         add(p, "hip", w * 0.10, bob); add(p, "chest", w * 0.08, bob * 0.6); add(p, "neck", w * 0.09, bob * 0.3); add(p, "head", w * 0.10, bob * 0.2);
       } else if (st === "jump") {
         add(p, "footF", 4, 10); add(p, "footB", -6, 8); add(p, "kneeF", 2, 8); add(p, "kneeB", -2, 8); add(p, "hnF", 6, -14);
@@ -431,6 +450,15 @@
         var mvS = moveFor(f, "special");
         if (mvS) { var oS = moveOffsets(mvS, pr); for (var kS in oS) add(p, kS, oS[kS][0], oS[kS][1]); }
         else { var up = ease(clamp(pr * 1.5, 0, 1)); add(p, "hnF", 2 * up, -54 * up); add(p, "elF", 0, -40 * up); add(p, "shF", 0, -10 * up); add(p, "hnB", -8 * up, -34 * up); add(p, "elB", -5, -24 * up); add(p, "head", 0, -4 * up); add(p, "chest", 0, -3 * up); }
+      } else if (MOVE_STATES[st] && f.curMove) {
+        // games-modern §2: the god's own special / super / throw, posed from its move data
+        var oM = moveOffsets(f.curMove, pr); for (var kM in oM) add(p, kM, oM[kM][0], oM[kM][1]);
+        if (f._mv && f._mv.riposte != null) {
+          // Athena's riposte after a parried blow: a spear thrust out of the raised aegis
+          var rp = strikeCurve(clamp((f.stTick - f._mv.riposte) / 10, 0, 1));
+          add(p, "hnF", 44 * rp, -16 * rp); add(p, "elF", 26 * rp, -6 * rp); add(p, "chest", 8 * rp, 0); add(p, "head", 6 * rp, 0);
+        }
+        if (f.curMove.kind === "rush" || f.curMove.kind === "step") driveBody(p, bodyDrive(pr), 0.7);
       } else if (st === "aerial") {
         var mvA = moveFor(f, f.aerialKind === "dive" ? "aerialDive" : "aerialPunch");
         if (mvA) { var oA = moveOffsets(mvA, pr); for (var kA in oA) add(p, kA, oA[kA][0], oA[kA][1]); }
@@ -439,6 +467,10 @@
           if (dive) { add(p, "footF", 46 * ak, 30 * ak); add(p, "kneeF", 26 * ak, 12 * ak); add(p, "footB", -20 * ak, -26 * ak); add(p, "kneeB", -12 * ak, -18 * ak); add(p, "hnF", 10 * ak, -16 * ak); add(p, "hnB", -24 * ak, -14 * ak); add(p, "chest", 6 * ak, 3 * ak); add(p, "head", 5 * ak, 1 * ak); add(p, "hip", 3 * ak, 2 * ak); }
           else { add(p, "hnF", 36 * ak, -6 * ak); add(p, "elF", 24 * ak, -3 * ak); add(p, "footF", 10 * ak, 16 * ak); add(p, "kneeF", 6 * ak, 10 * ak); add(p, "footB", -14 * ak, -22 * ak); add(p, "kneeB", -8 * ak, -14 * ak); add(p, "hnB", -18 * ak, -6 * ak); add(p, "chest", 5 * ak, 0); add(p, "head", 4 * ak, 0); }
         }
+      } else if (st === "hit" && f.knockdown) {
+        // knocked off the feet (Poseidon's earthquake): fall back to the floor, then rise
+        var kd = Math.sin(clamp(pr, 0, 1) * Math.PI), kan = -1.25 * kd;
+        for (var jd in p) { var pd = p[jd], xd = pd[0], yd = pd[1]; p[jd] = [xd * Math.cos(kan) - yd * Math.sin(kan) - 36 * kd, xd * Math.sin(kan) + yd * Math.cos(kan)]; }
       } else if (st === "hit") {
         // a real flinch: snap back hard on impact, then recover — the head/torso whip
         // away from the blow, the arms fly, and the feet stagger, so a clean hit READS.
@@ -471,8 +503,43 @@
         add(p, "hnF", sway * 0.7 + br2 * 1.8, br2 * 0.8); add(p, "hnB", -sway * 0.6, -br2 * 0.6);
         add(p, "shF", sway * 0.5, -br2 * 0.5); add(p, "shB", sway * 0.35, -br2 * 0.4);
         add(p, "kneeF", sway * 0.25, 0); add(p, "kneeB", -sway * 0.25, 0);
+        idleStyle(f, p, t);
       }
+      if (winner && winner === f && f.onGround && (st === "idle" || st === "walk")) victoryPose(f, p, t);
       return p;
+    }
+    // games-modern §2: each god's own idle (the shared guard above, then reshaped)
+    function idleStyle(f, p, t) {
+      var sty = (charOf(f).style || {}).idle;
+      if (sty === "regal") {
+        // Zeus: upright, the sceptre hand lowered and planted forward, the other at the hip
+        add(p, "hnF", 10, 36); add(p, "elF", 6, 10); add(p, "hnB", -30, 26); add(p, "elB", -10, 4);
+        add(p, "chest", -2, -2); add(p, "neck", -2, -3); add(p, "head", -2, -4);
+      } else if (sty === "twirl") {
+        // Poseidon: the trident hand turns a slow circle round the wrist
+        var tw = t * 2.4 + f.phase;
+        add(p, "hnF", Math.cos(tw) * 13, Math.sin(tw) * 13); add(p, "elF", Math.cos(tw) * 4, Math.sin(tw) * 4);
+      } else if (sty === "guard") {
+        // Athena: spear-and-shield stance, shield held high in front, spear levelled
+        add(p, "hnB", 18, -12); add(p, "elB", 10, -6); add(p, "hnF", 8, 4); add(p, "hip", 0, 3); add(p, "chest", 2, 3);
+      } else if (sty === "brood") {
+        // Hades: hands low, shoulders hunched forward over the foe
+        add(p, "hnF", -2, 24); add(p, "hnB", -20, 30); add(p, "chest", 4, 3); add(p, "neck", 5, 4); add(p, "head", 6, 5);
+      }
+    }
+    function victoryPose(f, p, t) {
+      var sty = (charOf(f).style || {}).victory;
+      if (sty === "throne") {
+        // Zeus: seated, enthroned (the throne is drawn behind him in drawThrone)
+        for (var k in p) if (k !== "footF" && k !== "footB") p[k][1] += 30;
+        add(p, "hip", -8, 0); add(p, "footF", 8, 0); add(p, "hnF", -14, -6); add(p, "hnB", 26, -4);
+      } else if (sty === "raise") {
+        add(p, "hnF", -24, -96); add(p, "elF", -16, -50); add(p, "head", -2, -4);
+      } else if (sty === "olive") {
+        add(p, "hnB", 56, -100); add(p, "elB", 30, -52); add(p, "hnF", -6, 14);
+      } else if (sty === "cloak") {
+        add(p, "hnF", -24, -20); add(p, "hnB", 40, -24); add(p, "chest", -2, -2); add(p, "head", -3, -4);
+      }
     }
 
     /* ===================== cel-shaded primitives ===================== */
@@ -897,7 +964,7 @@
       // flare the attacker in their accent colour through the front of a strike, so
       // in a fast exchange you can always see WHO just threw the blow.
       var striking = (f.state === "light" || f.state === "kick" || f.state === "headbutt") && f.stTime < f.stDur * 0.55;
-      var lvl = clamp(f.aura, 0, 1) * 0.7 + (f.state === "special" ? 0.5 : 0) + (striking ? 0.42 : 0) + clamp(f.energy / 100, 0, 1) * 0.25;
+      var lvl = clamp(f.aura, 0, 1) * 0.7 + (f.state === "special" || f.state === "super" ? 0.5 : 0) + (striking ? 0.42 : 0) + clamp(f.energy / 100, 0, 1) * 0.25;
       if (lvl < 0.12) return;
       c.save(); c.globalCompositeOperation = "lighter";
       var cxp = 0, cyp = -70, R = 46 + lvl * 20;
@@ -1056,9 +1123,13 @@
     function Fighter(skin, x, facing, isAI, km, godId) {
       return { skin: skin, godId: godId || null, x: x, facing: facing, face: facing, isAI: isAI, km: km || null, vx: 0, mvx: 0, vy: 0, y: 0, onGround: true,
         hp: 100, energy: 0, guard: 100, state: "idle", stTime: 0, stDur: 1, phase: Math.random() * 6, dpose: null,
-        aura: 0, cooldown: 0, hitLock: 0, stun: 0, dashT: 0, iframe: 0, combo: 0, curMove: null, wounds: makeWounds() };
+        aura: 0, cooldown: 0, hitLock: 0, stun: 0, dashT: 0, iframe: 0, combo: 0, curMove: null, wounds: makeWounds(),
+        stTick: 0, tick: 0, dirTick: { "-1": -99, "1": -99 }, chainN: 0, slowT: 0, knockdown: false, _mv: null };
     }
-    function setState(f, st, dur) { if (f.state === st) return; f.state = st; f.stTime = 0; f.stDur = dur || 0.4; }
+    function setState(f, st, dur) { if (f.state === st) return; f.state = st; f.stTime = 0; f.stTick = 0; f.stDur = dur || 0.4; if (st !== "hit") f.knockdown = false; }
+    // start a move even when the fighter is already in that state (a jab chained into a jab
+    // must restart its own timeline; setState alone kept the old clock running)
+    function forceState(f, st, dur) { if (f._mv && f._mv.id !== st) dropMove(f); f.state = st; f.stTime = 0; f.stTick = 0; f.stDur = dur || 0.4; f.knockdown = false; }
 
     /* ===================== stage ===================== */
     function drawStage(c, t) {
@@ -1136,9 +1207,12 @@
 
     /* ===================== combat + FX ===================== */
     // MELEE: light = punch; heavy = kick, but a headbutt at grappling range.
-    function tryAttack(f, other, kind) {
+    function tryAttack(f, other, kind, dir) {
       if (f.state === "hit" || f.state === "ko") return;
-      if (kind === "special") { if (f.cooldown > 0 && !canAct(f, "special")) return; return trySpecial(f, other); }
+      // block-stun locks attacks too (the buffer holds the press until it ends), so a
+      // move's frame advantage on block is real, not something the defender can mash through
+      if (f.stun > 0) return;
+      if (kind === "special") { if (f.cooldown > 0 && !canAct(f, "special")) return; return trySpecial(f, other, dir); }
       // holding a relic? a strike hurls it instead of swinging.
       if (f.holding && (kind === "light" || kind === "heavy")) { if (f.cooldown > 0) return; throwItem(f, other); return; }
       // AIRBORNE: a committed aerial strike — light = a flying punch, heavy = a diving
@@ -1150,10 +1224,13 @@
         f.aerialKind = dive ? "dive" : "punch";
         var am = moveFor(f, dive ? "aerialDive" : "aerialPunch");
         if (am) {
-          setState(f, "aerial", am.total / 60); f.cooldown = (am.cooldownTicks || am.total) / 60; f.curMove = null;
+          setState(f, "aerial", am.total / 60); f.cooldown = (am.cooldownTicks || am.total) / 60; f.curMove = am.active ? am : null;
           f.vx = f.facing * (am.driveVx != null ? am.driveVx : (dive ? 3.6 : 2.6));
           if (dive && am.driveVy != null && f.vy > -2) f.vy = am.driveVy;
-          f._hit = { kind: "aerial", at: am.hitAt != null ? am.hitAt : 0.22, until: (am.hitAt != null ? am.hitAt : 0.22) + 0.2, done: false, fin: false, dive: dive };
+          // a god's air move runs on its frame data (startup / active ticks); the shared
+          // fallback keeps the old fraction-of-the-move timing
+          if (am.active) f._hit = { kind: "aerial", done: false, fin: false, dive: dive, move: am };
+          else f._hit = { kind: "aerial", at: am.hitAt != null ? am.hitAt : 0.22, until: (am.hitAt != null ? am.hitAt : 0.22) + 0.2, done: false, fin: false, dive: dive };
         } else { // fallback
           setState(f, "aerial", dive ? 0.5 : 0.42); f.cooldown = dive ? 0.5 : 0.4; f.curMove = null;
           f.vx = f.facing * (dive ? 3.6 : 2.6);
@@ -1167,7 +1244,9 @@
       if (!canAct(f, id)) return;
       var m = moveFor(f, id);
       if (m) {
-        setState(f, id, m.total / 60); f.cooldown = m.total / 60; f.curMove = m;
+        // count a jab chained into a jab (see chainMax); any other start resets the count
+        var prev = f.curMove; f.chainN = (f.cooldown > 0 && prev && prev.id === id) ? (f.chainN || 0) + 1 : 0;
+        forceState(f, id, m.total / 60); f.cooldown = m.total / 60; f.curMove = m;
         // the hitbox is live for the move's whole active window, not just its first tick
         f._hit = { kind: id, at: m.active[0] / m.total, until: (m.active[1] + 1) / m.total, done: false, fin: false, move: m };
       } else { // fallback if move data failed to load — keep the game playable
@@ -1181,13 +1260,36 @@
     // a Super that lands on a weakened foe becomes the cinematic FINISH. Because the
     // ground normals cancel into `special`, a combo string naturally ends in a Super
     // when the meter is full.
-    function trySpecial(f, other) {
+    // games-modern §2: direction + special gives three specials. `dir` is +1 (toward the
+    // foe), -1 (away) or 0 (neutral); see specialDir for how it is read from the input.
+    // Neutral costs 40 meter (at 100 it becomes the god's super); the two command
+    // specials cost nothing but carry long recovery when they whiff.
+    function trySpecial(f, other, dir) {
+      if (f.stun > 0 || f.state === "hit" || f.state === "ko") return;
+      if (dir && moveFor(f, dir > 0 ? "fspecial" : "bspecial")) {
+        if (!f.onGround) return;
+        startMove(f, other, dir > 0 ? "fspecial" : "bspecial"); return;
+      }
       if (f.energy < 40) return;
       var sup = f.energy >= 100 && other.state !== "ko";
+      if (sup && moveFor(f, "super") && f.onGround) {
+        startMove(f, other, "super"); f.energy -= 100; f.aura = 1.9; flash = 0.6;
+        hitStop = Math.max(hitStop, 0.25);    // the super's freeze-frame at the start
+        return;
+      }
       var sm = moveFor(f, "special");
-      if (sm) { setState(f, "special", sm.total / 60); f.cooldown = (sm.cooldownTicks || sm.total) / 60; f._cast = { done: false, at: (sm.cast || 25) / sm.total, sup: sup }; }
+      if (sm) { forceState(f, "special", sm.total / 60); f.cooldown = (sm.cooldownTicks || sm.total) / 60; f.curMove = sm.startup != null ? sm : null; f._cast = { done: false, at: (sm.cast || 25) / sm.total, tick: sm.cast, sup: sup }; }
       else { setState(f, "special", 0.9); f.cooldown = 1.0; f._cast = { done: false, at: 0.42, sup: sup }; }
       f.energy -= sup ? 100 : 40; f.aura = sup ? 1.9 : 1.2; flash = sup ? 0.6 : 0.35;
+    }
+    // start a god's own data move (command specials, super, throw)
+    function startMove(f, other, id) {
+      var m = moveFor(f, id); if (!m) return false;
+      forceState(f, id, m.total / 60); f.cooldown = m.total / 60; f.curMove = m; f.chainN = 0;
+      f._hit = null; f._cast = null; f.vx = 0; f.mvx = 0;
+      f._mv = { id: id, hits: 0, done: false, tx: other ? other.x : f.x, riposte: null, connected: false };
+      if (id !== "grab") callout = { txt: m.name.toUpperCase() + (id === "super" ? " — SUPER" : ""), t: 0.6, col: f.skin.eye };
+      return true;
     }
     function spawnShot(f, sup) {
       var y = GROUND - 92 - (f.y || 0);
@@ -1198,9 +1300,14 @@
       // each god's special is its own lore-weapon (Zeus bolt, Poseidon wave, Athena owl,
       // Hades soul); the record carries the kind + colours so drawShots renders it.
       var sp = charOf(f).special || { kind: "orb", col: f.skin.eye, col2: f.skin.eye, r: 12, speed: 6.4 };
+      var sm = moveFor(f, "special") || {}, ground = !!sm.ground && !sup;
       var spd = sp.speed * (sup ? 1.24 : 1), rr = sp.r * (fin ? 1.7 : sup ? 1.5 : 1);
+      // Seismos rolls along the floor (jump it); Glaux curves toward the foe's height;
+      // Psyche is slow and lingers on the field
+      if (ground) y = GROUND - rr * 1.1;
       shots.push({ x: f.x + f.facing * 34, y: y, vx: f.facing * spd, dir: f.facing, owner: f, other: other,
-        r: rr, dmg: fin ? 100 : (sup ? 50 : 20), fin: !!fin, sup: !!sup, kind: sp.kind, col: sp.col, col2: sp.col2 || sp.col, life: 1.7, t: 0 });
+        r: rr, dmg: fin ? 100 : (sup ? 50 : (sm.onHit ? sm.onHit.damage : 20)), fin: !!fin, sup: !!sup, kind: sp.kind, col: sp.col, col2: sp.col2 || sp.col,
+        life: sm.life || 1.7, t: 0, ground: ground, homing: sm.homing || 0, move: sup ? null : (sm.onHit ? sm : null) });
       burst(f.x + f.facing * 22, y, "heavy"); shake = Math.max(shake, sup ? 11 : 5);
       if (sp.name) callout = { txt: sp.name + (fin ? " — FINISH" : sup ? " — SUPER" : ""), t: 0.6, col: sp.col };
     }
@@ -1219,29 +1326,38 @@
     // turtle) which the victim can escape by grabbing back (throw-tech). Otherwise
     // it picks up / sets down a relic as before.
     var BUF_TICKS = 8;                        // ~133 ms input buffer
-    function doAction(f, other, kind) { if (kind === "grab") tryGrab(f); else tryAttack(f, other, kind); }
+    function doAction(f, other, kind, dir) { if (kind === "grab") tryGrab(f); else tryAttack(f, other, kind, dir); }
     function tryGrab(f) {
       if (f.state === "hit" || f.state === "ko" || !f.onGround || f.stun > 0 || f.cooldown > 0) return;
       var other = f === p1 ? p2 : p1;
-      if (other && other.state !== "ko" && Math.abs(other.x - f.x) < 58 && !f.holding) { doThrow(f, other); return; }
+      if (other && other.state !== "ko" && Math.abs(other.x - f.x) < 58 && !f.holding) {
+        // a god's throw has startup: it connects on its active ticks if the foe is still there
+        if (moveFor(f, "grab")) { f.facing = other.x > f.x ? 1 : -1; startMove(f, other, "grab"); }
+        else doThrow(f, other);
+        return;
+      }
       if (f.holding) { groundItem = { kind: f.holding, x: clamp(f.x, 40, VW - 40), y: GROUND }; f.holding = null; return; }
       if (groundItem && Math.abs(groundItem.x - f.x) < 34) { f.holding = groundItem.kind; groundItem = null; }
     }
-    function doThrow(f, other) {
+    function doThrow(f, other, move) {
       f.facing = other.x > f.x ? 1 : -1;
-      setState(f, "throw", 0.42); f.cooldown = 0.5;
+      if (!move) { setState(f, "throw", 0.42); f.cooldown = 0.5; }
       // throw-tech: the victim escapes if they grab back in time (or, for the AI, on a read)
       var teching = other.state !== "hit" && other.state !== "ko" && other.stun <= 0 &&
         (other.isAI ? (Math.abs(other.x - f.x) < 60 && Math.random() < 0.22) : (other.km && !!keys[other.km.grab]));
       if (teching) {
-        var d = f.facing; f.vx = 0; f.mvx = -d * 3; other.mvx = d * 3; f.cooldown = 0.3;
+        var d = f.facing; f.vx = 0; f.mvx = -d * 3; other.mvx = d * 3; f.cooldown = move ? Math.min(f.cooldown, 0.3) : 0.3;
+        if (move && f._mv) { f._mv.endAt = Math.min(move.total, f.stTick + 18); f.cooldown = (f._mv.endAt - f.stTick) / 60; }   // broken: a short reset, not the whole whiff
         burst((f.x + other.x) / 2, GROUND - 70, "block"); hitStop = Math.max(hitStop, 0.06);
         callout = { txt: "THROW BREAK", t: 0.6, col: "#e7c680" }; return;
       }
       other.facing = -f.facing;
-      applyDamage(f, other, 16, "grab", false, (f.x + other.x) / 2, GROUND - 70);
+      // inside the house of Hades, Hades's next grab does the super's damage
+      var dmg = move && move.onHit ? move.onHit.damage : 16;
+      if (f.darkGrab && darkness && darkness.owner === f) { dmg = f.darkGrab; f.darkGrab = 0; callout = { txt: "THE HOUSE OF HADES", t: 0.8, col: f.skin.eye }; }
+      else callout = { txt: "THROW", t: 0.5, col: f.skin.eye };
+      applyDamage(f, other, dmg, "grab", false, (f.x + other.x) / 2, GROUND - 70, move);
       if (other.state !== "ko") { other.vy = 6.5; other.onGround = false; }   // toss up and away
-      callout = { txt: "THROW", t: 0.5, col: f.skin.eye };
     }
     function updateShots(dt) {
       for (var i = shots.length - 1; i >= 0; i--) {
@@ -1249,8 +1365,10 @@
         sh.x += sh.vx; if (sh.grav != null) { sh.vy = (sh.vy || 0) + sh.grav; sh.y += sh.vy; }
         if (sh.spin != null) sh.spin += 0.4 * (sh.vx > 0 ? 1 : -1);
         var o = sh.other, hit = false;
-        if (o && o.state !== "ko" && Math.abs(sh.x - o.x) < 26 && Math.abs(sh.y - (GROUND - 72 - (o.y || 0))) < 60) {
-          applyDamage(sh.owner, o, sh.dmg, sh.item ? "heavy" : (sh.fin || sh.sup ? "special" : "heavy"), sh.fin, sh.x, sh.y);
+        if (sh.homing && o) { var ty = GROUND - 92 - (o.y || 0); sh.y += clamp(ty - sh.y, -2, 2) * sh.homing * 8; }
+        var airborneDodge = sh.ground && o && (o.y || 0) > 14;   // a floor wave is jumped, not blocked high
+        if (o && o.state !== "ko" && !airborneDodge && Math.abs(sh.x - o.x) < 26 && Math.abs(sh.y - (GROUND - 72 - (o.y || 0))) < 60) {
+          applyDamage(sh.owner, o, sh.dmg, sh.item ? "heavy" : (sh.fin || sh.sup ? "special" : "heavy"), sh.fin, sh.x, sh.y, sh.move || undefined);
           hit = true;
         }
         if (hit || sh.life <= 0 || sh.x < -30 || sh.x > VW + 30 || (sh.grav != null && sh.y > GROUND + 6)) {
@@ -1259,14 +1377,130 @@
         }
       }
     }
+    /* ---- games-modern §2: the god's own moves, run tick by tick from their data ----
+       Every live window (hits, the aegis parry, Riptide's armour, the shade step's
+       fade) is tested against f.stTick with inWin, the same numbers the frame-data
+       test reads, so what the table says is what the game does. */
+    function travelStep(f, m, mv, t) {
+      if (!m.travel || !m.travelTicks || mv.stopTravel) return;
+      var a = m.travelTicks[0], b = m.travelTicks[1];
+      if (t >= a && t <= b) f.x = clamp(f.x + f.facing * m.travel / (b - a + 1), 40, VW - 40);
+    }
+    function finFor(other) { return other.hp <= 34 && other.state !== "ko"; }   // a super that would finish a weakened foe lands as a FINISH
+    var FLURRY_HIT = { onHit: { hitstop: 0.08, knockback: { x: 0.6 } } };
+    function runMove(f, other) {
+      var m = f.curMove, mv = f._mv, t = f.stTick; if (!m || !mv) return;
+      var canHit = !f.probe && other && other.state !== "ko";
+      var live = inWin(m.active, t);
+      f.liveTick = live ? t : null;
+      travelStep(f, m, mv, t);
+      f.armorLive = inWin(m.armor, t) && !mv.armorUsed;
+      f.intang = inWin(m.invuln, t);
+      f.parryLive = m.kind === "parry" && live && mv.riposte == null;
+      var dx = other ? (other.x - f.x) * f.facing : 999, oy = other ? (other.y || 0) : 0;
+      switch (m.kind) {
+        case "rush":
+          if (m.hop && t === m.travelTicks[0] && f.onGround) { f.vy = m.hop; f.onGround = false; }
+          if (live && canHit && !mv.hitDone && dx > -10 && dx < m.hitbox.ox + m.hitbox.r + 18 && Math.abs((f.y || 0) - oy) < m.hitbox.h) {
+            mv.hitDone = true; mv.stopTravel = true;
+            applyDamage(f, other, m.onHit.damage, "heavy", false, f.x + f.facing * 30, GROUND - 72 - Math.min(f.y || 0, oy), m);
+          }
+          break;
+        case "column":
+          if (t === m.active[0]) mfx.push({ t: "column", x: f.x + f.facing * (m.column.x0 + m.column.x1) / 2, w: m.column.x1 - m.column.x0, life: 1, max: 0.4 });
+          if (live && canHit && !mv.hitDone && dx >= m.column.x0 - 18 && dx <= m.column.x1 + 18 && oy < m.column.h) {
+            mv.hitDone = true; applyDamage(f, other, m.onHit.damage, "heavy", false, other.x, GROUND - 80 - oy, m);
+          }
+          break;
+        case "quake":
+          if (t === m.active[0]) { mfx.push({ t: "quake", x: f.x, r: m.radius, life: 1, max: 0.45 }); shake = Math.max(shake, 8); }
+          if (live && canHit && !mv.hitDone && Math.abs(other.x - f.x) < m.radius && oy < 8) {
+            mv.hitDone = true; applyDamage(f, other, m.onHit.damage, "heavy", false, other.x, GROUND - 30, m);
+          }
+          break;
+        case "parry":
+          if (mv.riposte != null) {
+            var rt = t - mv.riposte, tg = mv.ripTarget;
+            if (rt === 4 && tg && tg.state !== "ko" && Math.abs(tg.x - f.x) < m.riposte.reach && !f.probe) {
+              applyDamage(f, tg, m.riposte.damage, "heavy", false, (f.x + tg.x) / 2, GROUND - 80, { onHit: { damage: m.riposte.damage, hitstop: m.riposte.hitstop, knockback: m.riposte.knockback } });
+            }
+          }
+          break;
+        case "cmdgrab":
+          if (t === m.startup) mfx.push({ t: "hands", x: f.x + f.facing * (m.reach + m.bodyHalf * 2 - 10), life: 1, max: 0.5, col: f.skin.eye });
+          if (live && canHit && !mv.hitDone && Math.abs(other.x - f.x) < m.reach + m.bodyHalf * 2 && oy < 10 && !other.intang) {
+            mv.hitDone = true; other.facing = -f.facing;
+            var cd = m.onHit.damage;
+            if (f.darkGrab && darkness && darkness.owner === f) { cd = f.darkGrab; f.darkGrab = 0; callout = { txt: "THE HOUSE OF HADES", t: 0.8, col: f.skin.eye }; }
+            applyDamage(f, other, cd, "grab", false, other.x, GROUND - 60, m);
+            if (other.state !== "ko") { other.vy = 4; other.onGround = false; }
+          }
+          break;
+        case "grab":
+          if (live && canHit && !mv.hitDone && Math.abs(other.x - f.x) < 66 && other.onGround && !other.intang) { mv.hitDone = true; doThrow(f, other, m); }
+          break;
+        case "skybolts":
+          if (t === m.cast && other) mv.tx = other.x;          // the bolts track where the foe stood at the cast
+          var si = m.strikes.indexOf(t);
+          if (si >= 0) {
+            mfx.push({ t: "skybolt", x: mv.tx, life: 1, max: 0.3 }); flash = Math.max(flash, 0.35); shake = Math.max(shake, 7);
+            if (canHit && Math.abs(other.x - mv.tx) < m.strikeR + 18) {
+              var last = si === m.strikes.length - 1;
+              applyDamage(f, other, m.damages[si], "special", finFor(other), other.x, GROUND - 90 - oy, last ? m : FLURRY_HIT);
+            }
+          }
+          break;
+        case "tide":
+          if (t === m.cast) tide = { owner: f, dir: f.facing, x: f.x - f.facing * 90, hit: false, carry: null };
+          if (tide && tide.owner === f) {
+            if (live) {
+              tide.x += tide.dir * 17;
+              if (canHit && !tide.hit && (other.x - tide.x) * tide.dir <= 0) {
+                tide.hit = true; applyDamage(f, other, m.onHit.damage, "special", finFor(other), other.x, GROUND - 90, m);
+                if (other.state === "hit") tide.carry = other;      // a struck foe is carried to the wall
+              }
+              if (tide.carry && tide.carry.state !== "ko") tide.carry.x = clamp(tide.x + tide.dir * 16, 40, VW - 40);
+            } else if (t > m.active[1]) tide = null;
+          }
+          break;
+        case "flurry":
+          if (t === m.cast) {
+            mfx.push({ t: "aegis", x: f.x + f.facing * 40, y: GROUND - 100, life: 1, max: 0.45 }); flash = Math.max(flash, 0.7);
+            var guarded = other && other.state === "block" && other.facing !== f.facing;
+            if (canHit && dx > 0 && dx < m.flashReach && Math.abs(oy - (f.y || 0)) < 100 && !other.intang && !guarded) {
+              mv.connected = true; forceState(other, "hit", m.stun); other.stun = m.stun; other.hitLock = m.stun; other.vx = 0;
+              hitStop = Math.max(hitStop, 0.1); callout = { txt: "AEGIS", t: 0.6, col: f.skin.eye };
+            }
+          }
+          var fi = m.strikes.indexOf(t);
+          if (fi >= 0 && mv.connected && canHit) {
+            if (fi === 0) f.x = clamp(other.x - f.facing * 78, 40, VW - 40);   // she closes in behind the flash
+            other.stun = Math.max(other.stun, 0.3);
+            var lastF = fi === m.strikes.length - 1;
+            applyDamage(f, other, m.damages[fi], "heavy", finFor(other), (f.x + other.x) / 2, GROUND - 82, lastF ? m : FLURRY_HIT);
+          }
+          if (t === m.active[1] + 8) mfx.push({ t: "olive", owner: f, life: 1, max: 0.6 });
+          break;
+        case "darkness":
+          if (t === m.cast && other) {
+            darkness = { owner: f, victim: other, age: 0, dur: m.active[1] - m.active[0], slow: m.slow };
+            f.darkGrab = m.grabDamage; shake = Math.max(shake, 6);
+          }
+          break;
+      }
+    }
+    // the timed fields outlive the move that made them; aged once per sim step
+    function runFields() {
+      if (darkness) { darkness.age++; if (darkness.age > darkness.dur || darkness.owner.state === "ko") { darkness.owner.darkGrab = 0; darkness = null; } }
+    }
     function resolveHit(f, other, kind, fin) {
       // aerial strike: a fat hitbox around the god that reaches DOWN, so a leap onto a
       // grounded foe connects (no strict horizontal-only gate like the ground strikes).
       if (kind === "aerial") {
         var axd = Math.abs(other.x - f.x), ayd = Math.abs((f.y || 0) - (other.y || 0));
         if (axd > 78 || ayd > 130 || other.state === "ko") return;
-        var hy = GROUND - 72 - Math.min(f.y || 0, other.y || 0) * 0.5;
-        applyDamage(f, other, 15, "aerial", fin, (f.x + other.x) / 2, hy);
+        var hy = GROUND - 72 - Math.min(f.y || 0, other.y || 0) * 0.5, am = f._hit && f._hit.move;
+        applyDamage(f, other, am && am.onHit ? am.onHit.damage : 15, "aerial", fin, (f.x + other.x) / 2, hy, am || undefined);
         return true;
       }
       var m = f._hit && f._hit.move;
@@ -1296,8 +1530,23 @@
       pads.forEach(function (pd) { if (pd.f === other) pd.pad.rumble(fin ? 320 : 140, fin ? 1 : 0.75); else if (pd.f === f) pd.pad.rumble(70, 0.35); });
       if (other.state === "ko") return;
       var heavy = kind === "kick" || kind === "heavy" || kind === "headbutt" || kind === "special" || kind === "aerial" || kind === "grab";
+      // Hades's shade step: fully invulnerable while he fades (beats throws and supers too)
+      if (other.intang) { burst(hx, hy, "block"); return; }
       // i-frames from a dodge/back-dash beat the hit entirely (a throw still grabs)
       if (other.iframe > 0 && !fin && kind !== "debris" && kind !== "grab") { burst(hx, hy, "block"); return; }
+      // Athena's aegis: a blow (not a throw) caught in the parry window does nothing, and
+      // she answers it with a spear riposte if the striker is in reach
+      if (other.parryLive && f && kind !== "grab" && kind !== "debris" && other._mv) {
+        other._mv.riposte = other.stTick; other._mv.ripTarget = f; other.parryLive = false;
+        var rm = other.curMove; if (rm && rm.riposte) { other._mv.endAt = other.stTick + rm.riposte.ticks + 6; other.cooldown = (other._mv.endAt - other.stTick) / 60; }
+        mfx.push({ t: "aegis", x: other.x + other.facing * 30, y: GROUND - 100, life: 1, max: 0.4 });
+        burst(hx, hy, "block"); flash = Math.max(flash, 0.35); hitStop = Math.max(hitStop, 0.1);
+        callout = { txt: "AEGIS", t: 0.7, col: other.skin.eye };
+        return;
+      }
+      // Riptide's armour takes one blow without flinching (the damage still lands)
+      var armored = !!other.armorLive && !fin && kind !== "grab";
+      if (armored && other._mv) { other._mv.armorUsed = true; other.armorLive = false; }
       // a command throw is unblockable — holding block does not stop it
       var blocked = other.state === "block" && other.facing !== (f ? f.facing : other.facing) && kind !== "debris" && kind !== "grab";
       // just-block / guard impact: tap block right as the blow lands (block held < 0.14s)
@@ -1323,12 +1572,21 @@
         burst(hx, hy, "block"); flash = Math.max(flash, 0.3); shake = Math.max(shake, 6); hitStop = Math.max(hitStop, 0.09);
         if (f) { f.cooldown += 0.26; f.stun = Math.max(f.stun, 0.24); f.vx = -(f.facing || 1) * 2.0; }
         other.vx = 0; callout = { txt: "PARRY", t: 0.7, col: other.skin.eye };
+      } else if (armored) {
+        burst(hx, hy, "block"); shake = Math.max(shake, 5); hitStop = Math.max(hitStop, 0.06);
+        callout = { txt: "ARMOUR", t: 0.5, col: other.skin.eye };
       } else if (!blocked) {
         var hstun = (kind === "headbutt" ? 0.42 : heavy ? 0.36 : 0.28) * (counter ? 1.45 : 1);
-        setState(other, "hit", hstun); other.hitLock = hstun; other.stun = hstun; other.combo = 0;
+        if (move && move.knockdown) { hstun = 0.65; forceState(other, "hit", hstun); other.knockdown = true; }
+        else setState(other, "hit", hstun);
+        other.hitLock = hstun; other.stun = hstun; other.combo = 0;
+        // being struck interrupts whatever the foe was winding up: its pending hit or cast is lost
+        other._hit = null; other._cast = null; other.curMove = null;
         var dir = f ? f.facing : (other.x > VW / 2 ? -1 : 1);
-        var kb = move && move.onHit && move.onHit.knockback ? move.onHit.knockback.x : (kind === "grab" ? 5.5 : kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
+        var kb = move && move.onHit && move.onHit.knockback && move.onHit.knockback.x != null ? move.onHit.knockback.x : (kind === "grab" ? 5.5 : kind === "kick" || kind === "headbutt" || kind === "aerial" ? 4.2 : kind === "special" ? 5 : 2);
         other.vx = dir * (fin ? 6 : kb) * (counter ? 1.2 : 1) / (charOf(other).weight || 1);
+        // an up-launch (Zeus's sky-split) throws the foe into the air
+        if (move && move.onHit && move.onHit.knockback && move.onHit.knockback.y) { other.vy = move.onHit.knockback.y; other.onGround = false; }
         // corner relief: if the defender is pinned against the wall behind them,
         // shove the ATTACKER back instead of burying them deeper in the corner.
         if (f && f.onGround) { var wall = dir > 0 ? VW - 40 : 40; if (Math.abs(other.x - wall) < 52) f.vx -= dir * kb * 0.8; }
@@ -1342,9 +1600,13 @@
         for (var pj = 0; pj < pools; pj++) blood.push({ x: other.x + rnd(-18, 18), y: GROUND + rnd(0, 8), r: rnd(3, 9), col: other.skin.blood, life: 1 });
       } else {
         other.vx = (f ? f.facing : 1) * 1.2; burst(hx, hy, "block"); shake = Math.max(shake, 2); hitStop = Math.max(hitStop, 0.04);
-        other.stun = Math.max(other.stun, kind === "special" ? 0.18 : heavy ? 0.15 : 0.12);   // block-stun
+        // block-stun: a god's move sets it from its frame advantage on block (block + the
+        // ticks the attacker has left after its first active tick); others keep the old values
+        var bs = (move && move.block != null && move.total && move.startup != null) ? Math.max(3, move.block + move.total - move.startup) / 60 : (kind === "special" ? 0.18 : heavy ? 0.15 : 0.12);
+        other.stun = Math.max(other.stun, bs);
         // guard absorbs the blow but the meter erodes; empty it and the guard breaks
-        other.guard = clamp(other.guard - (base0 * 1.8 + 6), 0, 100);
+        // (Athena's aegis bash also breaks a third of the guard meter)
+        other.guard = clamp(other.guard - (base0 * 1.8 + 6) - (move && move.guardBreak ? move.guardBreak : 0), 0, 100);
         if (other.guard <= 0) {
           setState(other, "hit", 0.5); other.hitLock = 0.5; other.stun = 0.5; other.combo = 0;
           other.vx = (f ? f.facing : 1) * 3.4; other.guard = 45;
@@ -1547,12 +1809,124 @@
       }
     }
 
+    /* ===================== games-modern §2: drawn effects of the specials ===================== */
+    function jag(c, x, y0, y1, amp, seed) {
+      var n = 9, seg = (y1 - y0) / n; c.beginPath(); c.moveTo(x, y0);
+      for (var j = 1; j <= n; j++) { var r = Math.sin((seed + j) * 12.9898) * 43758.5; r = r - Math.floor(r); c.lineTo(x + (j === n ? 0 : (r - 0.5) * amp), y0 + seg * j); }
+    }
+    // the house of Hades: the stage goes dark round the two gods, and Cerberus, the hound
+    // of ch47, is drawn guarding the gate behind Hades
+    function drawDarkness(c, t) {
+      if (!darkness) return;
+      var a = Math.min(1, darkness.age / 12, (darkness.dur - darkness.age) / 12), o = darkness.owner;
+      c.save(); c.globalAlpha = 0.86 * a;
+      var g = c.createRadialGradient(o.x, GROUND - 80, 40, o.x, GROUND - 80, VW * 0.8);
+      g.addColorStop(0, "rgba(30,14,48,.25)"); g.addColorStop(0.4, "rgba(14,6,24,.85)"); g.addColorStop(1, "rgba(4,2,8,1)");
+      c.fillStyle = g; c.fillRect(0, 0, VW, VH); c.restore();
+      // Cerberus at the gate: three heads on one body, a silhouette behind Hades
+      var gx = clamp(o.x - o.facing * 96, 80, VW - 80), s = o.facing;
+      c.save(); c.globalAlpha = 0.85 * a; c.translate(gx, GROUND); c.scale(-s * 1.5, 1.5); c.shadowColor = o.skin.eye; c.shadowBlur = 10;
+      c.fillStyle = "#2a1840"; c.strokeStyle = hexA(o.skin.eye, 0.9); c.lineWidth = 1.5;
+      c.beginPath(); c.moveTo(-34, 0); c.lineTo(-30, -26); c.quadraticCurveTo(-10, -44, 18, -38); c.lineTo(30, -26); c.lineTo(32, 0); c.lineTo(24, 0); c.lineTo(20, -16); c.lineTo(-18, -16); c.lineTo(-24, 0); c.closePath(); c.fill(); c.stroke();
+      [[-8, -52, -0.3], [8, -58, 0], [22, -50, 0.3]].forEach(function (h, i) {
+        var bob = Math.sin(t * 3 + i * 2) * 2;
+        c.beginPath(); c.ellipse(h[0], h[1] + bob, 9, 7, h[2], 0, 7); c.fill(); c.stroke();
+        c.beginPath(); c.moveTo(h[0] + 4, h[1] - 4 + bob); c.lineTo(h[0] + 16, h[1] + bob); c.lineTo(h[0] + 4, h[1] + 4 + bob); c.closePath(); c.fill(); c.stroke();
+        c.fillStyle = o.skin.eye; c.beginPath(); c.arc(h[0] + 5, h[1] - 2 + bob, 1.6, 0, 7); c.fill(); c.fillStyle = "#2a1840";
+      });
+      c.restore();
+    }
+    // the sea rises: a wall of water sweeping across from behind Poseidon
+    function drawTide(c, t) {
+      if (!tide) return;
+      var d = tide.dir, x = tide.x, top = GROUND - 210;
+      c.save();
+      var g = c.createLinearGradient(0, top, 0, GROUND); g.addColorStop(0, "rgba(160,240,235,.7)"); g.addColorStop(0.35, "rgba(60,170,190,.5)"); g.addColorStop(1, "rgba(20,70,110,.6)");
+      c.fillStyle = g; c.beginPath();
+      var back = d > 0 ? -40 : VW + 40;
+      c.moveTo(back, GROUND); c.lineTo(back, top + 30);
+      for (var i = 0; i <= 8; i++) { var px = back + (x - back) * (i / 8); c.lineTo(px, top + 30 + Math.sin(t * 6 + i) * 6); }
+      c.quadraticCurveTo(x + d * 36, top - 10, x + d * 24, top + 60); c.quadraticCurveTo(x + d * 6, top + 120, x, GROUND); c.closePath(); c.fill();
+      c.strokeStyle = "rgba(235,255,255,.85)"; c.lineWidth = 3; c.beginPath(); c.moveTo(x - d * 30, top + 26); c.quadraticCurveTo(x + d * 36, top - 10, x + d * 24, top + 60); c.stroke();
+      c.restore();
+    }
+    function drawMoveFx(c, t) {
+      for (var i = 0; i < mfx.length; i++) {
+        var e = mfx[i], a = clamp(e.life, 0, 1);
+        c.save();
+        if (e.t === "skybolt" || e.t === "column") {
+          // Titanomachy's bolts fall from the top of the sky; the sky-split is a column at arm's length
+          c.globalCompositeOperation = "lighter";
+          var w = e.t === "column" ? e.w : 30, y0 = e.t === "column" ? GROUND - 240 : 0;
+          var g = c.createLinearGradient(e.x - w / 2, 0, e.x + w / 2, 0); g.addColorStop(0, "rgba(127,184,255,0)"); g.addColorStop(0.5, hexA("#bfe3ff", 0.5 * a)); g.addColorStop(1, "rgba(127,184,255,0)");
+          c.fillStyle = g; c.fillRect(e.x - w / 2, y0, w, GROUND - y0);
+          c.shadowColor = "#7fb8ff"; c.shadowBlur = 16; c.lineJoin = "round";
+          jag(c, e.x, y0, GROUND, w * 0.6, (e.seed = e.seed || (Math.random() * 99) | 0)); c.strokeStyle = hexA("#7fb8ff", a); c.lineWidth = 7; c.stroke();
+          jag(c, e.x, y0, GROUND, w * 0.6, e.seed); c.strokeStyle = hexA("#ffffff", a); c.lineWidth = 2.6; c.stroke();
+        } else if (e.t === "quake") {
+          c.strokeStyle = hexA("#c9a24a", a); c.lineWidth = 3 * a + 1; c.beginPath(); c.ellipse(e.x, GROUND, e.r * (1.1 - a * 0.6), 9 * (1.2 - a * 0.5), 0, 0, 7); c.stroke();
+          c.fillStyle = hexA("#6a5a42", a); for (var k = 0; k < 10; k++) { var rx = e.x + Math.cos(k * 2.4) * e.r * (1.05 - a * 0.6); c.fillRect(rx - 2, GROUND - 6 - (1 - a) * 18 * ((k % 3) + 1) / 3, 4, 4); }
+        } else if (e.t === "hands") {
+          // Charon's toll: the shades' hands rising from the ground
+          c.globalAlpha = a; c.fillStyle = hexA(e.col, 0.7); c.strokeStyle = "#1a0f2e"; c.lineWidth = 1.2;
+          for (var h = 0; h < 3; h++) {
+            var hx = e.x + (h - 1) * 14, rise = (1 - a) * 34 + 10;
+            c.beginPath(); c.moveTo(hx - 4, GROUND); c.lineTo(hx - 3, GROUND - rise); c.lineTo(hx - 6, GROUND - rise - 8); c.lineTo(hx - 1, GROUND - rise - 3); c.lineTo(hx, GROUND - rise - 11); c.lineTo(hx + 2, GROUND - rise - 3); c.lineTo(hx + 6, GROUND - rise - 8); c.lineTo(hx + 4, GROUND - rise); c.lineTo(hx + 4, GROUND); c.closePath(); c.fill(); c.stroke();
+          }
+        } else if (e.t === "aegis") {
+          // the aegis flash: a gold burst on the raised shield
+          c.globalCompositeOperation = "lighter";
+          var R = 20 + (1 - a) * 40, ga = c.createRadialGradient(e.x, e.y, 2, e.x, e.y, R);
+          ga.addColorStop(0, hexA("#fff4c8", a)); ga.addColorStop(0.5, hexA("#e7c680", 0.6 * a)); ga.addColorStop(1, "rgba(0,0,0,0)");
+          c.fillStyle = ga; c.beginPath(); c.arc(e.x, e.y, R, 0, 7); c.fill();
+        } else if (e.t === "olive" && e.owner && e.owner.dpose) {
+          // the olive branch drawn in Athena's ending pose (in her raised back hand)
+          var f = e.owner, hp = f.dpose.hnB, ox = (f.rx != null ? f.rx : f.x) + f.facing * hp[0], oy = GROUND - (f.ry || 0) + hp[1];
+          c.globalAlpha = Math.min(1, a * 1.6); c.strokeStyle = "#6b5a2a"; c.lineWidth = 2; c.beginPath(); c.moveTo(ox, oy); c.lineTo(ox + f.facing * 6, oy - 26); c.stroke();
+          c.fillStyle = "#8fae5a"; c.strokeStyle = "#3e4a1e"; c.lineWidth = 0.8;
+          for (var l = 0; l < 6; l++) { var ly = oy - 5 - l * 4, side = l % 2 ? 1 : -1; c.beginPath(); c.ellipse(ox + f.facing * (l * 1) + side * 5, ly, 4.2, 1.7, side * 0.6, 0, 7); c.fill(); c.stroke(); }
+        }
+        c.restore();
+      }
+    }
+    // Zeus's victory: the throne he is seated on
+    function drawThrone(c, f) {
+      if (!(winner && winner === f && f.onGround && (charOf(f).style || {}).victory === "throne" && (f.state === "idle" || f.state === "walk"))) return;
+      var x = f.rx != null ? f.rx : f.x, s = f.facing;
+      c.save(); c.translate(x, GROUND); c.scale(s, 1);
+      c.fillStyle = "#3a2c15"; c.strokeStyle = "#c79a54"; c.lineWidth = 1.5;
+      c.fillRect(-36, -128, 12, 128); c.strokeRect(-36, -128, 12, 128);   // backrest
+      c.fillRect(-36, -46, 50, 10); c.strokeRect(-36, -46, 50, 10);       // seat
+      c.fillRect(6, -36, 8, 36); c.strokeRect(6, -36, 8, 36);             // front leg
+      c.beginPath(); c.arc(-30, -134, 6, 0, 7); c.fill(); c.stroke();
+      c.restore();
+    }
+
     /* ===================== AI ===================== */
+    // each god's AI reaches for its own command specials in the situations they are for,
+    // throttled so they read as choices, not reflexes
+    function aiSpecials(f, other, adx, dt) {
+      f.aiSpT = (f.aiSpT || 1.2) - dt;
+      if (!f.onGround || f.cooldown > 0 || f.aiSpT > 0 || !f.godId) return false;
+      var g = f.godId, oAtk = !!ATTACK_STATES[other.state], oProg = other.stDur > 0 ? other.stTime / other.stDur : 1;
+      var air = !other.onGround && (other.y || 0) > 20, r = Math.random(), use = 0;
+      if (g === "zeus") { if (air && adx < 120 && r < 0.5) use = -1; else if (adx > 150 && adx < 260 && r < 0.18) use = 1; }
+      else if (g === "poseidon") { if (!air && adx < 110 && r < 0.22) use = -1; else if (adx > 110 && adx < 200 && r < 0.14) use = 1; }
+      else if (g === "athena") { if (oAtk && oProg < 0.4 && adx < 110 && r < 0.3) use = -1; else if (adx > 110 && adx < 190 && r < 0.18) use = 1; }
+      else if (g === "hades") { if (f.darkGrab && !air && adx < 96) use = 1; else if (!air && adx < 96 && r < 0.24) use = 1; else if (oAtk && oProg < 0.4 && adx < 100 && r < 0.2) use = -1; }
+      f.aiSpT = use ? 1.4 + Math.random() * 1.2 : 0.25;
+      if (!use) return false;
+      trySpecial(f, other, use);
+      if (g === "athena" && use === 1) f.buf = { kind: "light", t: BUF_TICKS, tick: f.tick };   // the step feints into a jab
+      return MOVE_STATES[f.state] === 1;
+    }
     function think(f, other, dt) {
       if (window.__FIGHT_TEST__ && window.__FOE_FROZEN) return;   // test-only: a still opponent for capture
       if (f.state === "hit" || f.state === "ko") return;
       if (f.stun > 0) return;
+      if (MOVE_STATES[f.state]) { f.vx = 0; return; }
       var dx = other.x - f.x, adx = Math.abs(dx), dir = dx > 0 ? 1 : -1; f.facing = dir; f.aiT = (f.aiT || 0) - dt;
+      if (aiSpecials(f, other, adx, dt)) return;
       // airborne: drift toward the foe and sometimes throw an aerial strike
       if (!f.onGround) { f.vx = dir * 2.2; if (f.cooldown <= 0 && adx < 90 && Math.random() < 0.08) tryAttack(f, other, Math.random() < 0.5 ? "heavy" : "light"); return; }
       // ---- reactive neutral: anti-air, block-on-reaction, whiff-punish ----
@@ -1593,7 +1967,7 @@
       if (wantItem) { var gd = groundItem.x > f.x ? 1 : -1; f.facing = gd; f.vx = gd * 1.7; if (f.onGround && f.state !== "walk") setState(f, "walk", 1); if (Math.abs(groundItem.x - f.x) < 30) tryGrab(f); return; }
       if (adx > 74) {
         // at range, sometimes throw an energy blast instead of closing
-        if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < (f.energy >= 100 ? 0.72 : 0.5)) { tryAttack(f, other, "special"); f.aiT = 1.0 + Math.random(); return; }
+        if (adx > 150 && f.energy >= 40 && f.aiT <= 0 && Math.random() < (f.energy >= 100 ? 0.72 : 0.5)) { tryAttack(f, other, "special", 0); f.aiT = 1.0 + Math.random(); return; }
         f.intent = "advance";
       }
       else if (f.aiT <= 0) {
@@ -1628,6 +2002,7 @@
     function stepSim(dt) {
       if (hitStop > 0) { hitStop -= dt; return; }
       gameT += dt;
+      runFields();
       // remember pre-step positions for render interpolation
       p1.px = p1.x; p1.py = (p1.y || 0); p2.px = p2.x; p2.py = (p2.y || 0);
       [p1, p2].forEach(function (f) { update(f, f === p1 ? p2 : p1, dt); });
@@ -1663,6 +2038,7 @@
       flash = Math.max(0, flash - real * 2); shake = Math.max(0, shake - real * 32);
       updateWeather(real, t);
       for (var s = fx.length - 1; s >= 0; s--) { var e = fx[s]; if (e.t === "blood") { e.x += e.vx; e.y += e.vy; e.vy += 0.4; } e.life -= real * (e.t === "flash" ? 3.2 : e.t === "line" ? 4 : e.t === "ring" ? 3.4 : 1.6); if (e.life <= 0) fx.splice(s, 1); }
+      for (var mq = mfx.length - 1; mq >= 0; mq--) { mfx[mq].life -= real / (mfx[mq].max || 0.4); if (mfx[mq].life <= 0) mfx.splice(mq, 1); }
       for (var b = blood.length - 1; b >= 0; b--) { blood[b].life -= real * 0.045; if (blood[b].life <= 0) blood.splice(b, 1); }
       if (blood.length > 60) blood.splice(0, blood.length - 60);
       // --- fixed-step simulation ---
@@ -1681,10 +2057,19 @@
       drawStage(cx, t);
       drawGroundItem(cx, t);
       drawDebris(cx);
+      drawDarkness(cx, t);
       var order = p1.x < p2.x ? [p1, p2] : [p2, p1];
-      drawFighter(cx, order[0], gameT); drawHeld(cx, order[0]);
-      drawFighter(cx, order[1], gameT); drawHeld(cx, order[1]);
+      for (var oi = 0; oi < 2; oi++) {
+        var of = order[oi];
+        drawThrone(cx, of);
+        // Hades's shade step: he fades while he is invulnerable
+        if (of.intang) { cx.save(); cx.globalAlpha = 0.32; drawFighter(cx, of, gameT); cx.restore(); }
+        else drawFighter(cx, of, gameT);
+        drawHeld(cx, of);
+      }
+      drawTide(cx, t);
       drawShots(cx);
+      drawMoveFx(cx, t);
       drawWeather(cx);
       drawFX(cx);
       if (p1.combo > 1 && p1.state !== "ko") comboText(cx, p1.combo);
@@ -1700,40 +2085,73 @@
       if (winner && !banner && !resultShown) { resultShown = true; showResult(); return; }
       raf = requestAnimationFrame(frame);
     }
+    // which way is this fighter's stick held, on screen? (-1 left, +1 right, 0 neither)
+    function heldDir(f) {
+      if (f.isAI || !f.km) return 0;
+      var L = !!keys[f.km.left], R = !!keys[f.km.right];
+      return L && !R ? -1 : R && !L ? 1 : 0;
+    }
+    // the direction of a special press: a phone swipe if there was one, else the stick
+    // held now or within DIR_TICKS ticks before the button; +1 toward the foe, -1 away
+    function specialDir(f, b) {
+      var sd = b.dir;
+      if (!sd) {
+        var tl = f.dirTick["-1"], tr = f.dirTick["1"], since = b.tick - DIR_TICKS;
+        var okL = tl >= since, okR = tr >= since;
+        sd = okL && okR ? (tl > tr ? -1 : 1) : okL ? -1 : okR ? 1 : 0;
+      }
+      return sd ? sd * f.facing : 0;
+    }
     function update(f, other, dt) {
-      f.stTime += dt; f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
+      f.stTime += dt; f.stTick = (f.stTick || 0) + 1; f.tick = (f.tick || 0) + 1;
+      var hd = heldDir(f); if (hd) f.dirTick[String(hd)] = f.tick;
+      f.cooldown = Math.max(0, f.cooldown - dt); f.hitLock = Math.max(0, f.hitLock - dt); f.aura = Math.max(0, f.aura - dt * 0.8);
       f.stun = Math.max(0, (f.stun || 0) - dt); f.dashT = Math.max(0, (f.dashT || 0) - dt); f.iframe = Math.max(0, (f.iframe || 0) - dt); f.tapT = Math.max(0, (f.tapT || 0) - dt);
       f.energy = clamp(f.energy + dt * 3, 0, 100);
       // guard meter: erodes while you hold block, recovers while you don't; hold too long and it breaks
       if (f.state === "block") { f.guard = clamp(f.guard - dt * 7, 0, 100); if (f.guard <= 0) { setState(f, "hit", 0.4); f.hitLock = 0.4; f.guard = 45; shake = Math.max(shake, 6); } }
       else if (f.guard < 100) { f.guard = clamp(f.guard + dt * 16, 0, 100); }
-      if (f._hit && !f._hit.done && f.stTime >= f._hit.at * f.stDur) {
+      // a move with frame data opens its hitbox on its active ticks (counted in whole ticks);
+      // the shared fallback moves keep the old fraction-of-the-move timing
+      var hm = f._hit && f._hit.move && f._hit.move.active ? f._hit.move : null;
+      if (f._hit && !f._hit.done && (hm ? f.stTick >= hm.active[0] : f.stTime >= f._hit.at * f.stDur)) {
         // F2 root motion: step the whole body forward into the strike at contact
         if (!f._hit.lunged) { f._hit.lunged = true; if (f._hit.move && f._hit.move.lunge && f.onGround) f.x = clamp(f.x + f.facing * f._hit.move.lunge, 40, VW - 40); }
+        f.liveTick = f.stTick;
         // checked on every active tick until it connects (hit or block) or the window closes
-        var landed = resolveHit(f, other, f._hit.kind, f._hit.fin);
-        if (landed || f._hit.until == null || f.stTime >= f._hit.until * f.stDur) f._hit.done = true;
-      }
+        var landed = f.probe ? false : resolveHit(f, other, f._hit.kind, f._hit.fin);
+        if (landed || (hm ? f.stTick >= hm.active[1] : (f._hit.until == null || f.stTime >= f._hit.until * f.stDur))) f._hit.done = true;
+      } else if (!MOVE_STATES[f.state]) f.liveTick = null;
       // input buffer: a press is held for a few ticks and fires on the first tick the
-      // fighter can act, so a button pressed a hair early in recovery isn't swallowed
+      // fighter can act, so a button pressed a hair early in recovery isn't swallowed.
+      // A special pressed on the touch pad first waits a few ticks for its swipe.
       if (f.buf) {
-        var sig0 = f.state + "|" + f.stTime + "|" + !!f.holding + "|" + !!groundItem + "|" + f.cooldown;
-        doAction(f, other, f.buf.kind);
-        var sig1 = f.state + "|" + f.stTime + "|" + !!f.holding + "|" + !!groundItem + "|" + f.cooldown;
-        if (sig1 !== sig0 || --f.buf.t <= 0) f.buf = null;
+        if (f.buf.hold > 0) f.buf.hold--;
+        else {
+          var bdir = f.buf.kind === "special" ? specialDir(f, f.buf) : 0;
+          var sig0 = f.state + "|" + f.stTime + "|" + !!f.holding + "|" + !!groundItem + "|" + f.cooldown;
+          doAction(f, other, f.buf.kind, bdir);
+          var sig1 = f.state + "|" + f.stTime + "|" + !!f.holding + "|" + !!groundItem + "|" + f.cooldown;
+          if (sig1 !== sig0 || --f.buf.t <= 0) f.buf = null;
+        }
       }
-      if (f._cast && !f._cast.done && f.stTime >= f._cast.at * f.stDur) { f._cast.done = true; spawnShot(f, f._cast.sup); }
+      if (f._cast && !f._cast.done && (f._cast.tick != null ? f.stTick >= f._cast.tick : f.stTime >= f._cast.at * f.stDur)) {
+        f._cast.done = true; f.liveTick = f.stTick; if (!f.probe) spawnShot(f, f._cast.sup);
+      }
+      if (MOVE_STATES[f.state]) runMove(f, other);
       if (f.isAI) think(f, other, dt); else humanControl(f, other);
       // weighty locomotion: ease the ACTUAL velocity toward the control's desired
       // velocity so starts and stops carry momentum instead of snapping. Knockback
       // (hit/ko) keeps its own impulse and just decays.
-      if (f.dashT > 0 && f.state !== "hit" && f.state !== "ko") { f.x += f.mvx; f.mvx *= 0.86; f.vx = 0; } // dash burst decays
+      // inside the house of Hades his foe moves 30% slower
+      var slowMul = (darkness && darkness.victim === f) ? darkness.slow : 1;
+      if (f.dashT > 0 && f.state !== "hit" && f.state !== "ko") { f.x += f.mvx * slowMul; f.mvx *= 0.86; f.vx = 0; } // dash burst decays
       else if (f.state === "hit" || f.state === "ko") { f.x += f.vx; f.vx *= 0.82; f.mvx = f.vx; }
       else {
         var accel = f.vx !== 0 ? 0.24 : 0.32;
         f.mvx += (f.vx - f.mvx) * accel;
         if (Math.abs(f.mvx) < 0.04) f.mvx = 0;
-        f.x += f.mvx;
+        f.x += f.mvx * slowMul;
       }
       f.x = clamp(f.x, 40, VW - 40);
       // vertical: jump arc + gravity (f.y is height above the ground)
@@ -1742,15 +2160,27 @@
         if (f.y <= 0) { f.y = 0; f.vy = 0; if (!f.onGround) { f.onGround = true; f.landAt = gameT; landDust(f); if (f.state === "jump") setState(f, "idle", 1); } }
         else f.onGround = false;
       }
-      var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1 };
-      if (acting[f.state] && f.stTime >= f.stDur) { var was = f.state; setState(f, f.onGround ? "idle" : "jump", 1); f._hit = null; f._cast = null; f.curMove = null; if (was !== "hit") f.combo = 0; }
+      var acting = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, hit: 1, aerial: 1, fspecial: 1, bspecial: 1, super: 1, grab: 1 };
+      // a move with frame data ends after exactly `total` ticks (or earlier, at _mv.endAt,
+      // after a parry's riposte or a broken throw); other states keep their timer
+      var cm = f.state !== "hit" && f.curMove && f.curMove.total ? f.curMove : null;
+      var ended = cm ? f.stTick >= ((f._mv && f._mv.endAt != null && MOVE_STATES[f.state]) ? f._mv.endAt : cm.total) : f.stTime >= f.stDur;
+      if (acting[f.state] && ended) { var was = f.state; endMove(f); setState(f, f.onGround ? "idle" : "jump", 1); if (was !== "hit") f.combo = 0; }
+      // interrupted out of a move (hit, KO, or cancelled into a normal): its effects stop with it
+      if (f._mv && f._mv.id !== f.state) dropMove(f);
       if (f.state === "walk" && Math.abs(f.vx) < 0.1 && f.onGround) setState(f, "idle", 1);
       // Always turn to face the opponent unless mid-committed-move — so crossing to the
       // other side (dash-through, jump-over) turns the WHOLE body, and walking away is a
       // backpedal (you keep facing the foe) rather than mooning them.
-      var committed = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, aerial: 1, hit: 1, ko: 1 };
+      var committed = { light: 1, kick: 1, headbutt: 1, throw: 1, special: 1, aerial: 1, hit: 1, ko: 1, fspecial: 1, bspecial: 1, super: 1, grab: 1 };
       if (!f.isAI && !committed[f.state] && f.dashT <= 0) f.facing = (other.x > f.x) ? 1 : -1;
     }
+    // leave a data move's live state (armour, fade, parry, Poseidon's wave) behind
+    function dropMove(f) {
+      f._mv = null; f.armorLive = false; f.intang = false; f.parryLive = false;
+      if (tide && tide.owner === f) tide = null;
+    }
+    function endMove(f) { dropMove(f); f._hit = null; f._cast = null; f.curMove = null; f.liveTick = null; }
     // a committed burst step. Toward the foe = dash-in (close range / whiff-punish);
     // away = back-dash with brief invincibility (the evade/bait tool). Momentum
     // carries then settles, so it reads as a real dash, not a teleport.
@@ -1767,6 +2197,7 @@
     function humanControl(f, other) {
       var km = f.km || {};
       if (f.state === "hit" || f.state === "ko") { if (f.onGround) f.vx = 0; return; }
+      if (MOVE_STATES[f.state]) { f.vx = 0; return; }   // a special, super or throw carries its own motion
       // block-stun / recovery: locked out of acting for a beat (this is what makes an
       // unsafe move punishable — you can't just mash out of a blocked heavy).
       if (f.stun > 0) { if (f.onGround && f.dashT <= 0) f.vx = 0; return; }
@@ -1848,9 +2279,11 @@
           '<div class="fg-sel-mode"><button class="rq-btn" data-a="mode">Opponent: ' + (sel.twoP ? "Player 2 (human)" : "the AI") + "</button></div>" +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 2" : "Opponent") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p2", id, sel.p2 === id); }).join("") + "</div>" +
           '<div class="rq-actions"><button class="rq-btn rq-primary" data-a="fight" autofocus>To the arena ⚔</button></div>' +
-          '<p class="rq-note"><b>Controls</b> follow a fighting-pad layout: D-pad to move, ↑ jump, ↓ or <b>R</b> guard; <b>X</b> punch, <b>A</b> kick (headbutt up close), <b>Y</b> energy blast, <b>B</b> grab; <b>L</b> dash; <b>Start</b> pause. Keyboard: A/D move · W jump · S guard · J punch · K kick · L blast · U grab · I dash · P pause.' + (sel.twoP ? " P2: ←/→ · ↑ jump · ↓ guard · , punch · . kick · / blast · M grab (or a second game controller)." : " On touch, use the on-screen controller; a game controller works too.") +
-            " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game. <b>Combos:</b> chain jabs and cancel a jab or kick into the blast (e.g. punch → punch → kick → blast); <b>jump over</b> a foe to switch sides (cross-up)." +
-            " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Chain a jab into a kick into a blast for a combo; fill the meter for a SUPER (a maxed blast, any time) — land it on a weakened foe for a FINISH.</p>";
+          movesNote(sel.p1) +
+          '<p class="rq-note"><b>Controls</b> follow a fighting-pad layout: D-pad to move, ↑ jump, ↓ or <b>R</b> guard; <b>X</b> punch, <b>A</b> kick (headbutt up close), <b>Y</b> special, <b>B</b> grab; <b>L</b> dash; <b>Start</b> pause. Keyboard: A/D move · W jump · S guard · J punch · K kick · L special · U grab · I dash · P pause.' + (sel.twoP ? " P2: ←/→ · ↑ jump · ↓ guard · , punch · . kick · / special · M grab (or a second game controller)." : " On touch, use the on-screen controller; a game controller works too.") +
+            " <b>Three specials per god:</b> special alone (40 meter), toward + special and away + special (no meter, but slow to recover if they miss); on touch, swipe the special button toward or away from your foe. At full meter, special alone is the god's <b>super</b>." +
+            " <b>Skill moves:</b> double-tap A/D to <b>dash</b> (back-dash dodges with i-frames); <b>tap guard the instant a blow lands to PARRY</b> it and punish; a blocked heavy is unsafe — <b>punish</b> it; catch a foe mid-move for a <b>COUNTER</b>; grab up close for an unblockable <b>throw</b> (beats turtling). Strike / throw / parry is the guessing game. <b>Combos:</b> chain jabs and cancel a jab or kick into a special (e.g. punch → punch → kick → special); <b>jump over</b> a foe to switch sides (cross-up)." +
+            " The stage turns: rain, storms with falling debris, ashfall. Snatch a fallen amphora, boulder or spear and hurl it. Fill the meter for the god’s SUPER — land it on a weakened foe for a FINISH.</p>";
         root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
         root.querySelectorAll(".fg-card").forEach(function (b) {
           b.addEventListener("click", function () { sel[b.getAttribute("data-role")] = b.getAttribute("data-god"); loadParts([sel.p1, sel.p2]); render(); });
@@ -1895,17 +2328,29 @@
         }
         rec.pad = window.ArchivePad.create({
           layout: "four", ui: ui, gamepadIndex: index, dpadKeys: "W A S D",
-          buttons: ui ? { x: { cap: "Punch", key: "J" }, a: { cap: "Kick", key: "K" }, y: { cap: "Blast", key: "L" }, b: { cap: "Grab", key: "U" },
+          buttons: ui ? { x: { cap: "Punch", key: "J" }, a: { cap: "Kick", key: "K" }, y: { cap: "Special", key: "L" }, b: { cap: "Grab", key: "U" },
             l: { cap: "Dash", key: "I" }, r: { cap: "Guard", key: "S" }, start: { cap: "Pause", key: "P" } } : {},
+          // phones: swipe the special button toward or away from the foe for the command specials
+          swipe: { y: true },
           onDown: function (id) {
             var f = getF(); if (!f) return;
             if (id === "start") { togglePause(); return; }
             if (paused) return;
-            if (PAD_ATK[id]) f.buf = { kind: PAD_ATK[id], t: BUF_TICKS };
+            if (id === "left") f.dirTick["-1"] = f.tick; else if (id === "right") f.dirTick["1"] = f.tick;
+            if (PAD_ATK[id]) {
+              f.buf = { kind: PAD_ATK[id], t: BUF_TICKS, tick: f.tick };
+              // a touch press of special waits a few ticks for a swipe (a D-pad direction still counts)
+              if (id === "y" && rec.pad.lastTouch === "y") f.buf.hold = SWIPE_TICKS;
+            }
             if (id === "l") { var h = rec.pad.held; f.wantDash = h.left ? -1 : h.right ? 1 : -f.facing; }
             sync();
           },
-          onUp: function () { sync(); }
+          onSwipe: function (id, sx) {
+            var f = getF(); if (!f || paused || id !== "y") return;
+            // only a press still waiting for its swipe takes the direction (a late swipe is ignored)
+            if (f.buf && f.buf.kind === "special" && f.buf.hold > 0) { f.buf.dir = sx; f.buf.hold = 0; }
+          },
+          onUp: function (id) { var f = getF(); if (id === "y" && f && f.buf && f.buf.kind === "special") f.buf.hold = 0; sync(); }
         });
         Object.defineProperty(rec, "f", { get: getF });
         pads.push(rec);
@@ -1934,7 +2379,7 @@
         factLine(w === p1 ? curG1 : curG2) +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="rematch" autofocus>Rematch</button>' +
           '<button class="rq-btn" data-a="choose">Choose fighters</button>' +
-          '<a class="game-source" href="chapters/ch08.html">› Read “Early Greece”</a></div>';
+          AG.content.readLink(AG.catalog("fighter").chapter) + '</div>';
       root.querySelectorAll(".fg-portrait").forEach(function (cv) { drawFace(cv, cv.getAttribute("data-god")); });
       root.querySelector('[data-a="rematch"]').addEventListener("click", function () { startFight(curG1, curG2, curTwoP); });
       root.querySelector('[data-a="choose"]').addEventListener("click", selectScreen);
@@ -1946,6 +2391,7 @@
       p1 = Fighter(ROSTER[g1] || ZEUS, VW * 0.30, 1, false, KM1, g1);
       p2 = Fighter(ROSTER[g2] || HADES, VW * 0.70, -1, !twoP, twoP ? KM2 : null, g2);
       motes = []; for (var i = 0; i < 26; i++) motes.push({ x: Math.random() * VW, y: Math.random() * VH, r: Math.random() * 1.6 + 0.4, a: Math.random() * 0.4 + 0.1, v: Math.random() * 0.6 + 0.2 });
+      darkness = null; tide = null; mfx = [];
       fx = []; blood = []; shots = []; debris = []; groundItem = null; banner = null; callout = null; flash = 0; shake = 0; hitStop = 0; gameT = 0; winner = null; resultShown = false; acc = 0;
       debrisT = rnd(2, 4); itemT = rnd(4, 7); boltFlash = 0;
       initWeather(WEATHERS[(Math.random() * WEATHERS.length) | 0]);
@@ -2002,9 +2448,12 @@
         // fixed sim step (not here on the key event); OS key-repeat never re-fires them
         [p1, p2].forEach(function (f) {
           if (!f || !f.km) return;
+          // a direction press counts for a special from the moment it happens, even if no
+          // sim tick runs before the button (a slow frame)
+          if (k === f.km.left) f.dirTick["-1"] = f.tick; else if (k === f.km.right) f.dirTick["1"] = f.tick;
           var kind = k === f.km.light ? "light" : k === f.km.heavy ? "heavy" : k === f.km.special ? "special" : k === f.km.grab ? "grab" : null;
           if (!kind) return; e.preventDefault(); if (e.repeat) return;
-          f.buf = { kind: kind, t: BUF_TICKS };
+          f.buf = { kind: kind, t: BUF_TICKS, tick: f.tick };
         });
       };
       keyup = function (e) {
@@ -2033,6 +2482,47 @@
       window.__startFight = function (g1, g2) { startFight(g1, g2, false); return { g1: g1, g2: g2 }; };
       // grant full energy and fire the special, for deterministic capture of each god's move
       window.__special = function (which) { var f = which === "p2" ? p2 : p1; if (f) { f.energy = 100; f.cooldown = 0; trySpecial(f, f === p1 ? p2 : p1); return f.state; } return null; };
+      // fire a god's special by direction (+1 toward, -1 away, 0 neutral); energy as given
+      window.__specialDir = function (which, dir, energy) {
+        var f = which === "p2" ? p2 : p1; if (!f) return null;
+        f.energy = energy == null ? 50 : energy; f.cooldown = 0; f.stun = 0; f.buf = null;
+        trySpecial(f, f === p1 ? p2 : p1, dir || 0); return { state: f.state, move: f.curMove && f.curMove.name };
+      };
+      /* games-modern §2.3 frame-data probe: run one god's move on its own, tick by tick,
+         through the same update the match uses (hitstop freeze included), with its hits
+         switched off so every window runs its full length. Reports the first and last
+         live tick and the move's total length in ticks (for the house of Hades, the
+         darkness field's first and last tick, counted from the move's start). */
+      window.__frameProbe = function (g, id) {
+        // synchronous: no animation frame can run while it works, so the match just resumes after it
+        var s1 = p1, s2 = p2, sHit = hitStop, sDark = darkness, sTide = tide, sShots = shots, sMfx = mfx;
+        var f = Fighter(ROSTER[g] || ZEUS, 200, 1, false, null, g), o = Fighter(HADES, VW - 40, -1, false, null, "hades");
+        p1 = f; p2 = o; hitStop = 0; darkness = null; tide = null; shots = []; mfx = [];
+        f.probe = true; f.energy = 50;
+        var st = id;
+        if (id === "kick") o.x = f.x + 300; else if (id === "headbutt" || id === "grab") o.x = f.x + 50;
+        if (id === "light" || id === "kick" || id === "headbutt") tryAttack(f, o, id === "light" ? "light" : "heavy");
+        else if (id === "aerialPunch" || id === "aerialDive") { f.y = 2000; f.onGround = false; f.vy = 0; tryAttack(f, o, id === "aerialPunch" ? "light" : "heavy"); st = "aerial"; }
+        else if (id === "special") trySpecial(f, o, 0);
+        else if (id === "fspecial" || id === "bspecial") trySpecial(f, o, id === "fspecial" ? 1 : -1);
+        else if (id === "super") { f.energy = 100; trySpecial(f, o, 0); }
+        else if (id === "grab") tryGrab(f);
+        var res = { god: g, id: id, started: f.state === st, first: null, last: null, total: null, field: null };
+        var n = 0, guard = 0;
+        while (guard++ < 600) {
+          if (hitStop > 0) { hitStop -= FIXED; continue; }
+          runFields(); update(f, o, FIXED); n++;
+          if (res.total == null) {
+            if (f.state !== st) res.total = n;
+            else if (f.liveTick === f.stTick) { if (res.first == null) res.first = f.stTick; res.last = f.stTick; }
+          }
+          if (darkness) { if (!res.field) res.field = [n, n]; res.field[1] = n; }
+          if (res.total != null && !darkness) break;
+        }
+        p1 = s1; p2 = s2; hitStop = sHit; darkness = sDark; tide = sTide; shots = sShots; mfx = sMfx;
+        return res;
+      };
+      window.__energy = function (which, v) { var f = which === "p2" ? p2 : p1; if (f) { f.energy = v; f.cooldown = 0; } return !!f; };
       window.__shots = function () { return shots.map(function (s) { return { kind: s.kind, col: s.col, x: Math.round(s.x), r: s.r }; }); };
       // force a state on a fighter, for deterministic capture of head reactions
       window.__setState = function (which, stt, dur) { var f = which === "p2" ? p2 : p1; if (f) { setState(f, stt, dur || 0.6); return f.state; } return null; };

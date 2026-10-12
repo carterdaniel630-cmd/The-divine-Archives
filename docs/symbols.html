@@ -7,6 +7,8 @@
   <meta name="description" content="Every sacred symbol in the archive, gathered in one place. Some of them respond to a touch — a game is hidden inside." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/archive.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
   <link rel="stylesheet" href="assets/games/games.css?v=18" />
   <link rel="canonical" href="https://getconexto.com/symbols.html" />
   <meta property="og:type" content="website" />
@@ -80,22 +82,23 @@
 <script src="assets/data.js"></script>
 <script src="assets/plates.js"></script>
 <script src="assets/emblems.js"></script>
-<script src="assets/games/archive-games.js?v=6"></script>
-<script src="assets/games/pad.js?v=3"></script>
-<script src="assets/games/reliquary.js?v=3"></script>
-<script src="assets/games/ouroboros.js?v=7"></script>
-<script src="assets/games/ziggurat.js?v=7"></script>
-<script src="assets/games/fighter-moves.js?v=7"></script>
-<script src="assets/games/fighter.js?v=43"></script>
+<script src="assets/games/catalog.js?v=1"></script>
+<script src="assets/games/archive-games.js?v=7"></script>
+<script src="assets/games/pad.js?v=4"></script>
+<script src="assets/games/reliquary.js?v=4"></script>
+<script src="assets/games/ouroboros.js?v=8"></script>
+<script src="assets/games/ziggurat.js?v=8"></script>
+<script src="assets/games/fighter-moves.js?v=8"></script>
+<script src="assets/games/fighter.js?v=45"></script>
 <script src="assets/games/chess-art.js?v=1"></script>
-<script src="assets/games/chess.js?v=9"></script>
-<script src="assets/games/seeker.js?v=3"></script>
-<script src="assets/games/pong.js?v=8"></script>
-<script src="assets/games/minesweeper.js?v=4"></script>
-<script src="assets/games/pacman.js?v=7"></script>
-<script src="assets/games/pinball.js?v=10"></script>
-<script src="assets/games/risk.js?v=10"></script>
-<script src="assets/games/treasure.js?v=12"></script>
+<script src="assets/games/chess.js?v=10"></script>
+<script src="assets/games/seeker.js?v=4"></script>
+<script src="assets/games/pong.js?v=9"></script>
+<script src="assets/games/minesweeper.js?v=5"></script>
+<script src="assets/games/pacman.js?v=8"></script>
+<script src="assets/games/pinball.js?v=11"></script>
+<script src="assets/games/risk.js?v=11"></script>
+<script src="assets/games/treasure.js?v=13"></script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -110,39 +113,13 @@
       return m[1].replace(/<span class="tag">[\s\S]*?<\/span>/,"").replace(/<[^>]+>/g," ").replace(/&mdash;/g,"—").replace(/&[a-z]+;/g," ").replace(/\s+/g," ").trim();
     }
 
-    /* --- the five games, mapped to real on-site symbols (Phase 1: placeholders) --- */
-    var GAMES = {
-      reliquary: { gameId:"reliquary", ch:"ch22", title:"The Reliquary", subtitle:"A trivia game drawn entirely from the archive's own chapters.",
-        phaseNote:"Trivia — questions pulled from real chapter content, filterable by era, tradition, and theme, each answer linking back to its source." },
-      ouroboros: { gameId:"ouroboros", ch:"ch37", title:"Ouroboros", subtitle:"The serpent that devours its own tail — a game of Snake.",
-        phaseNote:"Snake, reskinned: the serpent grows into the ouroboros, and the symbols it swallows unlock facts." },
-      ziggurat:  { gameId:"ziggurat", ch:"ch03", title:"Ziggurat Builder", subtitle:"Raise the temple-mountain, course by course.",
-        phaseNote:"Tetris, reskinned: falling stone and mudbrick courses build a ziggurat; cleared rows unlock the mythology of the temple-mountain." },
-      chess:     { gameId:"chess", ch:"ch02", title:"Archive Chess", subtitle:"A board of gods — Egyptian, Greek, or Norse.",
-        phaseNote:"Chess, reskinned to a pantheon (all three, with pieces designed to reflect each figure), against an AI opponent or a friend; facts appear as pieces are captured." },
-      seeker:    { gameId:"seeker", ch:"ch40", title:"The Seeker's Path", subtitle:"The gatekeeper opens the way — follow the clues into the chapters.",
-        phaseNote:"A chain of riddle-clues built from real facts; each answer is found by reading the chapter it points to, unlocking the next. Built last, in Phase 6." },
-      fighter:   { gameId:"fighter", ch:"ch08", title:"Divine Casualties — War of the Gods", subtitle:"A 1v1 duel of the Olympians, drawn from real myth.",
-        phaseNote:"A fighting game: the gods of Greece face off with their own weapons and powers — every fighter's arms and epithet grounded in the Early Greece chapter." },
-      pong:      { gameId:"pong", ch:"ch06", title:"Antithesis — The Eternal Contest", subtitle:"Two cosmic principles volley the sacred orb.",
-        phaseNote:"Pong, reskinned to cosmic dualism — order and the Lie, yang and yin, Ma'at and Isfet — each point won uncovering a sourced fact about that opposition." },
-      minesweeper:{ gameId:"minesweeper", ch:"ch04", title:"The Excavation", subtitle:"Clear the buried dig without striking a hazard.",
-        phaseNote:"Minesweeper, reskinned as an archaeological dig — clear the site without striking a collapse or curse; every hazard you mark correctly turns up a real find." },
-      pacman:    { gameId:"pacman", ch:"ch29", title:"The Labyrinth", subtitle:"Thread the maze of the dead; outrun the shades.",
-        phaseNote:"Pac-Man, reskinned as the soul's passage through the maze of the dead — gather the offerings, light the sacred lamps to scatter the shades, and each lamp reveals a real underworld belief." },
-      pinball:   { gameId:"pinball", ch:"ch46", title:"The Firmament", subtitle:"Launch the spark through the ordered heavens.",
-        phaseNote:"Pinball, reskinned to cosmogony — fire the soul-spark up through the heavens and ring the celestial bumpers; light each one to draw the cosmos out of the primordial chaos, revealing a real creation myth." },
-      risk:      { gameId:"risk", ch:"ch13", title:"Dominion of the Ancients", subtitle:"A conquest campaign of the ancient world.",
-        phaseNote:"A Risk-style campaign for the ancient world — reinforce, attack with dice, and fortify across the kingdoms of the Bronze and Iron Ages; every land you take reveals the gods of the people who held it." },
-      treasure:  { gameId:"treasure", ch:"ch43", title:"The Tomb Robber", subtitle:"Four ancient sites; carry out the relics.",
-        phaseNote:"An Indiana-Jones-style expedition across Egypt, Sumer, the Indus and the road east — outrun a rolling boulder and a tiger, crack the whip to swing over pits and throw levers, solve hieroglyph and oracle-bone floor puzzles, and recover the relics; each one you lift reveals what it meant to the people who made it." }
-    };
+    /* --- the games, from the one catalog (assets/games/catalog.js) ---
+       g.ch is the chapter whose symbol is the game's "Playable" trigger. */
+    var GAMES = {};
+    (AG.catalog() || []).forEach(function (c) { GAMES[c.id] = { gameId: c.id, ch: c.hiddenIn, title: c.title, eggs: c.eggs || [] }; });
     var TRIGGER_FOR = {}; // chId -> game meta
     Object.keys(GAMES).forEach(function (k) {
       var g = GAMES[k]; TRIGGER_FOR[g.ch] = g;
-      // only register a Phase-1 placeholder if a real game module hasn't already registered
-      if (!AG.isRegistered(g.gameId)) AG.register(g.gameId, { title:g.title, subtitle:g.subtitle, phaseNote:g.phaseNote,
-        symbolSVG: ART[g.ch] || "", sourceHref:"chapters/"+g.ch+".html", sourceLabel:"Read “"+(chById(g.ch)||{}).title+"”" });
     });
 
     function cell(id, name, eraLabel, art, isTheme) {
@@ -201,16 +178,8 @@
       });
       return cellEl && cellEl.querySelector(".art");
     }
-    var EGG_POOL = {
-      reliquary:   ["ch16", "ch30", "ch19"],
-      ouroboros:   ["ch20", "ch09", "ch17"],
-      ziggurat:    ["ch23", "ch42", "ch05"],
-      chess:       ["ch12", "ch18", "ch13"],
-      seeker:      ["ch11", "ch34", "ch27"],
-      fighter:     ["ch24", "ch14", "ch43"],
-      pong:        ["ch44", "ch25", "ch10"],
-      minesweeper: ["ch29", "ch41", "ch07"]
-    };
+    var EGG_POOL = {};
+    Object.keys(GAMES).forEach(function (k) { if (GAMES[k].eggs.length) EGG_POOL[k] = GAMES[k].eggs; });
     Object.keys(EGG_POOL).forEach(function (game) {
       if (!AG.isRegistered(game)) return;
       var pool = EGG_POOL[game].filter(function (id) { return !TRIGGER_FOR[id] && findArt(id) && !findArt(id).__daGame; });

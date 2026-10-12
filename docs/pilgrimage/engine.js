@@ -367,7 +367,8 @@ function locate() {
   if (sky.sunPos) sun.position.set(sky.sunPos[0], sky.sunPos[1], sky.sunPos[2]);
   hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? (sky.hemi || "#dfe6ee") : "#8a7356"); hemi.groundColor.set(out ? (sky.ground || "#b08a5a") : "#1a120a");
   scene.fog.color.set(out ? (sky.fog || "#cdb995") : "#050302"); scene.background.set(out ? (sky.bg || "#d9c7a3") : "#050302");
-  scene.fog.near = out ? 60 : 8; scene.fog.far = out ? 700 : 46;
+  scene.fog.near = out ? (sky.fogNear || 60) : 8; scene.fog.far = out ? (sky.fogFar || 700) : 46;
+  const far = out && sky.far ? sky.far : 900; if (camera.far !== far) { camera.far = far; camera.updateProjectionMatrix(); }
 }
 
 // ---------------------------------------------------------------- lights: the nearest few lamps get the light pool
