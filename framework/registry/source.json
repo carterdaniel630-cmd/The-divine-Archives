@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1826,
+ "count": 1835,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -596,6 +596,15 @@
     "site:great-pyramid"
    ],
    "from": "sources/pilgrimage-great-pyramid.md"
+  },
+  {
+   "id": "source:archaeologymag-com/466735a0ba",
+   "type": "source",
+   "label": "https://archaeologymag.com/2025/04/ancient-garden-found-at-jesus-burial-site",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
   },
   {
    "id": "source:archiv-ub-uni-heidelberg-de/4021dca75f",
@@ -3790,6 +3799,15 @@
     "chapter:ch83"
    ],
    "from": "sources/ch83-global-hinduism-guru-movements.md"
+  },
+  {
+   "id": "source:csun-edu/f4eff78620",
+   "type": "source",
+   "label": "https://www.csun.edu/~vcgeo005/bogus.html",
+   "links": [
+    "site:mount-ararat-the-ark-tradition"
+   ],
+   "from": "sources/pilgrimage-mount-ararat-the-ark-tradition.md"
   },
   {
    "id": "source:cswr-hds-harvard-edu/277dc8255e",
@@ -8387,6 +8405,33 @@
    "from": "sources/v32-popol-vuh-manuscript.md"
   },
   {
+   "id": "source:english-heritage-org-uk/448fae0d3b",
+   "type": "source",
+   "label": "https://www.english-heritage.org.uk/about/search-news/research-reveals-origin-of-stonehenge-stones/",
+   "links": [
+    "site:stonehenge"
+   ],
+   "from": "sources/pilgrimage-stonehenge.md"
+  },
+  {
+   "id": "source:english-heritage-org-uk/c206356586",
+   "type": "source",
+   "label": "https://www.english-heritage.org.uk/visit/places/stonehenge/things-to-do/stone-circle/stones-of-stonehenge/",
+   "links": [
+    "site:stonehenge"
+   ],
+   "from": "sources/pilgrimage-stonehenge.md"
+  },
+  {
+   "id": "source:eprints-bournemouth-ac-uk/18a4548508",
+   "type": "source",
+   "label": "https://eprints.bournemouth.ac.uk/25584",
+   "links": [
+    "site:stonehenge"
+   ],
+   "from": "sources/pilgrimage-stonehenge.md"
+  },
+  {
    "id": "source:eprints-kingston-ac-uk/61382bca06",
    "type": "source",
    "label": "https://eprints.kingston.ac.uk/41775",
@@ -10707,6 +10752,15 @@
    "from": "sources/v24-sudarium-of-oviedo.md"
   },
   {
+   "id": "source:lexundria-com/c85253ff2c",
+   "type": "source",
+   "label": "https://lexundria.com/j_bj/5.136-5.183/wst",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
+  },
+  {
    "id": "source:lib-uidaho-edu/3b8db2ae2f",
    "type": "source",
    "label": "https://www.lib.uidaho.edu/digital/turning/PDF/Sedna%20and%20the%20Inuit.pdf",
@@ -11500,6 +11554,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:mta-gov-tr/e3ef7abffc",
+   "type": "source",
+   "label": "https://www.mta.gov.tr/turkvolc/en/agri",
+   "links": [
+    "site:mount-ararat-the-ark-tradition"
+   ],
+   "from": "sources/pilgrimage-mount-ararat-the-ark-tradition.md"
+  },
+  {
    "id": "source:musawwarat-com/4a4a333b87",
    "type": "source",
    "label": "https://www.musawwarat.com/about-musawwarat/the-lion-temple/",
@@ -11741,6 +11804,15 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:nationalgeographic-com/2b8e3d9791",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/article/jesus-tomb-archaeology-jerusalem-christianity-rome",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
   },
   {
    "id": "source:nationalgeographic-com/596fe196e8",
@@ -13650,6 +13722,15 @@
     "chapter:ch16"
    ],
    "from": "sources/ch16-early-christianity.md"
+  },
+  {
+   "id": "source:rsc-byu-edu/fd69e20e4f",
+   "type": "source",
+   "label": "https://rsc.byu.edu/vol-4-no-1-2003/revisiting-golgotha-garden-tomb",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
   },
   {
    "id": "source:rug-nl/79935083d6",

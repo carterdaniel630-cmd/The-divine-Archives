@@ -1,6 +1,6 @@
 {
  "type": "site",
- "count": 73,
+ "count": 74,
  "entities": [
   {
    "id": "site:aksum",
@@ -265,6 +265,20 @@
    "links": [
     "chapter:ch34",
     "relic:v33"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:golgotha-and-the-tomb",
+   "type": "site",
+   "label": "Golgotha and the Tomb, c. 30 CE",
+   "era": "05-late-antiquity",
+   "status": "preview",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "relic:v15"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -581,7 +595,8 @@
    "id": "site:mount-ararat-the-ark-tradition",
    "type": "site",
    "label": "Mount Ararat & the Ark tradition",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
    "links": [
     "chapter:ch01"
    ],
@@ -764,7 +779,8 @@
    "type": "site",
    "label": "Stonehenge",
    "era": "01-prehistory",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/stonehenge.html",
    "links": [
     "chapter:ch42",
     "relic:v45"
