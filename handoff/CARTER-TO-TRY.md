@@ -33,6 +33,15 @@ or missing?
 
 **Your answer:** "Qumran cleared", "Alexandria cleared", or notes.
 
+## 2b. Three new Pilgrimage previews (hidden from the menu until you say so)
+- Stonehenge: **getconexto.com/pilgrimage/stonehenge.html**
+- Golgotha and the Tomb, c. 30 CE: **getconexto.com/pilgrimage/golgotha-and-the-tomb.html**
+- Mount Ararat & the Ark tradition: **getconexto.com/pilgrimage/mount-ararat-the-ark-tradition.html**
+
+These are previews: they work, but they are not listed on the Pilgrimage page.
+
+**Your answer:** "list <site>" to put one on the menu, or notes.
+
 ## 3. The fighting game's new moves (Divine Casualties)
 Open **getconexto.com/symbols.html#play=fighter**. Each god now fights differently:
 - Zeus throws bolts.
