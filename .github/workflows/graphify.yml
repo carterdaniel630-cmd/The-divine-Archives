@@ -54,6 +54,10 @@ jobs:
           set -o pipefail
           graphify extract . --code-only 2>&1 | tail -60
           test -s graphify-out/graph.json || { echo "::error::graphify produced no graph.json"; exit 1; }
+          # extract stops at graph.json; cluster-only writes GRAPH_REPORT.md and graph.html.
+          # --no-label: community names would need an AI backend, so they stay numbered.
+          graphify cluster-only . --no-label 2>&1 | tail -20
+          test -s graphify-out/GRAPH_REPORT.md || { echo "::error::graphify produced no GRAPH_REPORT.md"; exit 1; }
 
       - name: Check the output
         run: |
@@ -85,7 +89,7 @@ jobs:
           print("::notice::top-level folders mapped: " + ", ".join(tops))
           assert n > 0, "empty graph"
           PY
-          head -40 GRAPH_REPORT.md || true
+          echo "::notice::report: $(wc -l < GRAPH_REPORT.md) lines; files: $(ls | tr '\n' ' ')"
 
       - name: Upload the graph (pull requests)
         if: github.event_name == 'pull_request'
