@@ -1,0 +1,112 @@
+name: Review heartbeat
+
+# The scheduled reviewer runs outside this repository (a scheduled task in Carter's Claude account).
+# When it cannot reach the repository it writes nothing, so a failure looks the same as a quiet night.
+# This check turns that silence into a finding: every morning, after the reviewer is due (04:47
+# New York time), it reads reviews/runs.md on the review-log branch. If no reviewer run has been
+# logged in 26 hours, or the scheduled reviewer has not logged at all, it
+#   1. appends a "heartbeat MISSED" line to reviews/runs.md on review-log (once per day),
+#   2. opens an issue labelled reviewer-missed (or comments on the open one), which emails Carter,
+#   3. fails the run.
+# It never touches main, never merges, and changes nothing but that one log file.
+
+on:
+  schedule:
+    - cron: "23 10 * * *"   # 10:23 UTC daily, about 90 minutes after the reviewer is due
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: review-heartbeat
+  cancel-in-progress: false
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Read the reviewer's run log
+        id: check
+        run: |
+          set -eu
+          git fetch --depth 1 origin review-log
+          git show origin/review-log:reviews/runs.md > "$RUNNER_TEMP/runs.md"
+          node tools/review-heartbeat.js "$RUNNER_TEMP/runs.md" > "$RUNNER_TEMP/result.json"
+          cat "$RUNNER_TEMP/result.json"
+          echo "ok=$(node -p "require('$RUNNER_TEMP/result.json').ok")" >> "$GITHUB_OUTPUT"
+
+      - name: Log the missed run in reviews/runs.md
+        if: steps.check.outputs.ok == 'false'
+        run: |
+          set -eu
+          line=$(node -p "require('$RUNNER_TEMP/result.json').logLine || ''")
+          if [ -z "$line" ]; then echo "Already logged today."; exit 0; fi
+          git config user.name "review-heartbeat"
+          git config user.email "review-heartbeat@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch --depth 1 origin review-log
+            git checkout -B review-log origin/review-log
+            if grep -qF "$line" reviews/runs.md; then echo "Line already present."; exit 0; fi
+            printf '%s\n' "$line" >> reviews/runs.md
+            git add reviews/runs.md
+            git commit -m "heartbeat: reviewer run missed"
+            if git push origin review-log; then echo "Logged."; exit 0; fi
+            echo "Push raced another writer; retrying ($attempt)."
+            sleep 10
+          done
+          echo "::error::Could not write the missed-run line to review-log after 3 tries."
+          exit 1
+
+      - name: Open or update the reviewer-missed issue
+        if: steps.check.outputs.ok == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          body=$(node -e '
+            const r = require(process.argv[1]);
+            const lines = [
+              "The scheduled reviewer did not log a run when expected.",
+              "",
+              ...r.problems.map(p => "- " + p),
+              "",
+              "Newest reviewer line: " + (r.newestAny || "none"),
+              "Newest scheduled line: " + (r.newestScheduled || "none"),
+              "",
+              "Most likely cause: the reviewer scheduled task has no repository attached.",
+              "Fix (phone): Claude app, scheduled tasks, Divine Archives reviewer, add the repository",
+              "carterdaniel630-cmd/The-divine-Archives. Do the same for the auditor.",
+              "",
+              "This issue closes itself after a day with a normal reviewer run."
+            ];
+            process.stdout.write(lines.join("\n"));
+          ' "$RUNNER_TEMP/result.json")
+          gh label create reviewer-missed --color B60205 --description "Scheduled reviewer missed a run" 2>/dev/null || true
+          num=$(gh issue list --label reviewer-missed --state open --json number --jq '.[0].number // empty')
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body "$body"
+          else
+            gh issue create --title "Reviewer missed a run" --label reviewer-missed --body "$body"
+          fi
+
+      - name: Close the issue when the reviewer is back
+        if: steps.check.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          for num in $(gh issue list --label reviewer-missed --state open --json number --jq '.[].number'); do
+            gh issue close "$num" --comment "The scheduled reviewer logged a run again. Closing."
+          done
+
+      - name: Fail when a run was missed
+        if: steps.check.outputs.ok == 'false'
+        run: |
+          echo "::error::The scheduled reviewer missed a run. See the reviewer-missed issue."
+          exit 1
