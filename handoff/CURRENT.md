@@ -23,6 +23,11 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-11 by the framework session)
+- #53 `claude/project-thread-s3qxre`: Pilgrimage batch 1, four noindex previews (Göbekli Tepe, Delphi,
+  the Mogao Caves, Chichén Itzá), pending tag on, source logs in `sources/pilgrimage-*.md`. Reviewer pass
+  2026-10-12 (`reviews/2026-10-12-pilgrimage-batch1-pr53.md` on review-log); its slips are fixed. Carter said
+  "merge" (2026-10-12); the sensitivity cards were put to him before merging. The source logs propose chapter
+  corrections to ch08, ch29 and ch42 (not made in this PR).
 - #46 `claude/project-thread-sn268z`: speed pass (fonts linked from each page instead of an @import in
   archive.css, Pantheon script fonts cut to the letters it uses, unused data files dropped from home/eras/themes,
   new `fonts` review check). Waits for Carter's batch go-ahead.
@@ -53,6 +58,8 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   The `graph` branch is force-replaced on each merge: never archive or build on it. Chapters stay out of the map.
 
 ## Needs Carter
+- Pilgrimage batch 1 (#53): the Mogao manuscripts-dispersal card and the three Chichén Itzá cards on sacrifice
+  and remains (wording only; nothing is shown); the ch08, ch29 and ch42 corrections the source logs propose.
 - Clearing the 31 pending chapters (a separate thread, "Clear the pending chapters batch", owns this).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
