@@ -87,6 +87,9 @@ Everything is built and maintained to the highest standard. In practice:
 A map of the repo's code (build tools, games, museum, framework, Pages Functions) is built from `main` by
 `.github/workflows/graphify.yml` and published to the `graph` branch. At session start
 `tools/graphify-session.sh` installs the graphify CLI and puts that map in `graphify-out/` (git-ignored).
+When the package index is blocked, it installs the CLI from the generated `graph-tools` branch instead
+(ready-built packages, published by the same workflow). `graph` and `graph-tools` are generated: never edit,
+archive or build on them.
 - For code and architecture questions, when `graphify-out/graph.json` exists, first run
   `graphify query "<question>"`; use `graphify path "<A>" "<B>"` for how two things connect and
   `graphify explain "<name>"` for one thing. Read `graphify-out/GRAPH_REPORT.md` only for a broad overview.

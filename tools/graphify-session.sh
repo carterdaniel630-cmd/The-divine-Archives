@@ -16,6 +16,20 @@ else
      || timeout 150 python3 -m pip install -q --disable-pip-version-check --user "graphifyy==$GRAPHIFY_VERSION" >/dev/null 2>&1; then
     hash -r; command -v graphify >/dev/null 2>&1 && cli="installed"
   fi
+  # Package index unreachable: install from the packages published on the `graph-tools` branch.
+  if [ "$cli" = "missing" ] \
+     && timeout 120 git fetch -q --depth 1 origin '+refs/heads/graph-tools:refs/remotes/origin/graph-tools' >/dev/null 2>&1 \
+     && [ "$(git show origin/graph-tools:VERSION 2>/dev/null)" = "$GRAPHIFY_VERSION" ]; then
+    wh="$(mktemp -d)"
+    if git archive origin/graph-tools wheelhouse | tar -x -C "$wh" \
+       && (cd "$wh/wheelhouse" && sha256sum -c --quiet SHA256SUMS >/dev/null 2>&1); then
+      for flag in --break-system-packages --user; do
+        timeout 150 python3 -m pip install -q --disable-pip-version-check --no-index --find-links "$wh/wheelhouse" $flag "graphifyy==$GRAPHIFY_VERSION" >/dev/null 2>&1 && break
+      done
+      hash -r; command -v graphify >/dev/null 2>&1 && cli="installed from graph-tools"
+    fi
+    rm -rf "$wh"
+  fi
 fi
 
 graph="none"
