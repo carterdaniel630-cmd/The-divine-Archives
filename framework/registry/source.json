@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1886,
+ "count": 1887,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -3926,6 +3926,15 @@
    "label": "https://www.dainst.blog/the-tepe-telegrams/",
    "links": [
     "relic:v60",
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/410be6d84a",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/?p=347",
+   "links": [
     "site:gobekli-tepe"
    ],
    "from": "sources/pilgrimage-gobekli-tepe.md"
