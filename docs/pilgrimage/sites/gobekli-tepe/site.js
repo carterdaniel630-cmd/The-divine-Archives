@@ -27,7 +27,7 @@ const Y = D.surfY;
 // ---------------------------------------------------------------- short references (full list: sources/pilgrimage-gobekli-tepe.md)
 const REF = {
   tt: "German Archaeological Institute (DAI), Göbekli Tepe project, <em>The Tepe Telegrams</em> (dainst.blog)",
-  ttMove: "J. Notroff and others, &ldquo;How did they do it? Making and moving monoliths at Göbekli Tepe&rdquo;, <em>The Tepe Telegrams</em> (3 May 2016)",
+  ttMove: "O. Dietrich, &ldquo;How did they do it? Making and moving monoliths at Göbekli Tepe&rdquo;, <em>The Tepe Telegrams</em> (3 May 2016)",
   ttHouse: "J. Notroff, &ldquo;A Sanctuary &hellip; or so fair a House?&rdquo;, <em>The Tepe Telegrams</em> (24 January 2017)",
   ttFox: "J. Notroff, &ldquo;Archaeoastronomy, meteor showers, mass extinction: What does the fox say?&rdquo;, <em>The Tepe Telegrams</em> (21 April 2017)",
   notroff: "J. Notroff, O. Dietrich, L. Clare and others, &ldquo;More than a vulture: a response to Sweatman and Tsikritsis&rdquo;, <em>Mediterranean Archaeology and Archaeometry</em> 17.2 (2017), 57&ndash;63",

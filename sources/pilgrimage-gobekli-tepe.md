@@ -16,9 +16,10 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
   (dates c. 9500–8000 BCE; dwellings, grinding tools, cistern and channels; revision of the "temple" reading;
   the fill as slope slide rather than deliberate backfill; the modern shelter and walkways).
 - German Archaeological Institute (DAI), *The Tepe Telegrams* (the project blog): https://www.dainst.blog/the-tepe-telegrams/
-  - J. Notroff and others, "How did they do it? Making and moving monoliths at Göbekli Tepe" (May 2016); posts
+  - O. Dietrich, "How did they do it? Making and moving monoliths at Göbekli Tepe" (3 May 2016),
+    https://www.dainst.blog/the-tepe-telegrams/?p=347 ; posts
     tagged "quarries": https://www.dainst.blog/the-tepe-telegrams/tag/quarries (unfinished pillar, about 7 m;
-    flint tools; weights of the central pillars). **Re-check:** the exact post URL and the 50-tonne figure.
+    flint tools; weights of the central pillars). Checked at review (2026-10-12): the post confirms 7 m long, 1.5 m thick, about 50 t.
   - J. Notroff, "Archaeoastronomy, meteor showers, mass extinction: What does the fox say?" (21 April 2017):
     https://www.dainst.blog/the-tepe-telegrams/2017/04/21/archaeoastronomy-meteor-showers-mass-extinction-what-does-the-fox-say-and-what-the-crane-the-aurochs/
     (reply to Sweatman and Tsikritsis; the roofing argument against sky-watching).

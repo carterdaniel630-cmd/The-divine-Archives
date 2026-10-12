@@ -35,7 +35,7 @@ const REF = {
   tzo: "&ldquo;Tzompantli&rdquo;, Wikipedia",
   tt: "J. K. Kowalski and C. Kristan-Graham (eds.), <em>Twin Tollans: Chich&eacute;n Itz&aacute;, Tula, and the Epiclassic to Early Postclassic Mesoamerican World</em> (Dumbarton Oaks, 2007)",
   cen: "&ldquo;Sacred Cenote&rdquo;, Wikipedia (after Cano 2002, Sabloff 1994, Landa)",
-  doyle: "J. Doyle, &ldquo;Golden Kingdoms: the Sacred Cenote of Chich&eacute;n Itz&aacute;&rdquo;, The Metropolitan Museum of Art (2018)",
+  doyle: "J. Doyle, &ldquo;Into the Centipede&rsquo;s Jaws: Sumptuous Offerings from the Sacred Cenote at Chich&eacute;n Itz&aacute;&rdquo;, The Metropolitan Museum of Art (2018)",
   wa: "&ldquo;New thinking on Mayan child sacrifice&rdquo;, <em>World Archaeology</em> 28 (2008), on G. de Anda&rsquo;s study",
   ng: "<em>National Geographic</em>, 12 June 2024, on R. Barquera and others, <em>Nature</em> (2024)",
   hm: "&ldquo;El dragado del cenote sagrado de Chich&eacute;n Itz&aacute;, 1904&ndash;c.1914&rdquo;, <em>Historia Mexicana</em> 67.2",

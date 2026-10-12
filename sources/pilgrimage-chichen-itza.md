@@ -57,7 +57,8 @@ remains and no offerings are shown anywhere in the model.
 - "Sacred Cenote", Wikipedia, https://en.wikipedia.org/wiki/Sacred_Cenote : about 60 m across and 27 m to the water
   (Cano 2002); Landa's account of 1566; Thompson from 1904, diving in 1909 (Sabloff 1994); the 1961 and 1967–68
   expeditions; the causeway of about 300 m (Adams 1991).
-- J. Doyle, "Golden Kingdoms: the Sacred Cenote of Chichén Itzá", The Metropolitan Museum of Art (2018),
+- J. Doyle, "Into the Centipede's Jaws: Sumptuous Offerings from the Sacred Cenote at Chichén Itzá", The Metropolitan
+  Museum of Art (21 May 2018),
   https://www.metmuseum.org/perspectives/golden-kingdoms-sacred-cenote-chichen-itza : the collapsed cave; jade (some
   burned), gold and copper from Costa Rica and Panama, copal, wood and cloth; dates 700–1450; dredging 1904–1910.
 - "New thinking on Mayan child sacrifice", *World Archaeology* 28 (2008),
