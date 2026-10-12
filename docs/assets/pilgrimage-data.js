@@ -79,7 +79,7 @@
     {"id":"chartres-cathedral","name":"Chartres Cathedral","era":"07-high-medieval","label":"","chapters":["ch28","ch48"],"vault":[],"status":"queued"},
     {"id":"notre-dame-de-paris","name":"Notre-Dame de Paris","era":"07-high-medieval","label":"","chapters":["ch28"],"vault":["v06"],"status":"queued"},
     {"id":"angkor-wat","name":"Angkor Wat","era":"07-high-medieval","label":"","chapters":["ch69","ch30","ch20"],"vault":[],"status":"queued"},
-    {"id":"chichen-itza","name":"Chichén Itzá","era":"07-high-medieval","label":"","chapters":["ch29"],"vault":["v31"],"status":"queued"},
+    {"id":"chichen-itza","name":"Chichén Itzá","era":"07-high-medieval","label":"","chapters":["ch29"],"vault":["v31"],"status":"preview","pending":true,"place":"Yucatán, Mexico","built":"a Maya city from about the 6th century; shown as today","blurb":"Cross the plaza to the pyramid of Kukulkan and switch on the serpent of light, walk the largest ball court of ancient Mesoamerica, follow the white road to the Sacred Cenote, and end at the round tower of El Caracol.","note":"The size of the pyramid and its stairways, the ball court, the causeway and the cenote come from published figures; where each building stands, the distances between them and the other buildings are approximate, and the carvings are our own simple renderings;"},
     {"id":"templo-mayor","name":"Templo Mayor","era":"07-high-medieval","label":"R","chapters":["ch43"],"vault":["v41","v51","v83"],"status":"queued"},
     {"id":"machu-picchu","name":"Machu Picchu","era":"07-high-medieval","label":"","chapters":["ch44"],"vault":["v62"],"status":"queued"},
     {"id":"coricancha-cusco","name":"Coricancha, Cusco","era":"07-high-medieval","label":"","chapters":["ch44"],"vault":[],"status":"queued"},
