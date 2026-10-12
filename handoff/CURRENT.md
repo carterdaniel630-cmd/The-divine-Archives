@@ -50,6 +50,8 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   for build sessions. `.github/workflows/graphify.yml` builds the code map from main onto the generated `graph`
   branch; `tools/graphify-session.sh` pulls it at session start; rules in `CLAUDE.md`, "Knowledge graph".
   The `graph` branch is force-replaced on each merge: never archive or build on it. Chapters stay out of the map.
+- `claude/graphify-offline-cli`: packages the graphify command on a generated `graph-tools` branch so sessions
+  with the package index blocked can still use `graphify query`. Waits for Carter's go-ahead to merge.
 
 ## Needs Carter
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
