@@ -35,7 +35,27 @@ try{
     cok++;
   });
   console.log("Per-god characters: "+cn+" | factRef grounded: "+cok+" | failures so far: "+fails);
+
+  // games-modern §2.3: every special and super carries a `basis` that appears verbatim in
+  // ch08 or ch47; any other move that names a basis is held to the same test.
+  const REQUIRED=["special","fspecial","bspecial","super"], ALLOWED=["ch08","ch47"];
+  let mok=0,mn=0;
+  Object.keys(chars).forEach(g=>{
+    const mv=chars[g].moves||{};
+    const ids=Array.from(new Set(REQUIRED.concat(Object.keys(mv).filter(id=>mv[id]&&mv[id].basis))));
+    ids.forEach(id=>{
+      mn++;
+      const m=mv[id], b=m&&m.basis;
+      if(!m){console.log("  FAIL ["+g+"."+id+"] move missing");fails++;return;}
+      if(!b||!b.chapter||!b.text){console.log("  FAIL ["+g+"."+id+"] no basis");fails++;return;}
+      if(ALLOWED.indexOf(b.chapter)<0){console.log("  FAIL ["+g+"."+id+"] basis chapter "+b.chapter+" is not ch08 or ch47");fails++;return;}
+      const t=strip((C[b.chapter]||{}).html||"");
+      if(t.indexOf(String(b.text).toLowerCase())===-1){console.log("  FAIL ["+g+"."+id+"] basis not in "+b.chapter+': "'+b.text+'"');fails++;return;}
+      mok++;
+    });
+  });
+  console.log("Per-move bases (specials + supers): "+mn+" | grounded in ch08/ch47: "+mok+" | failures so far: "+fails);
 }catch(e){console.log("  FAIL reading FIGHTER_CHARACTERS: "+e.message);fails++;}
 
 if(fails){process.exit(1);}
-console.log("VERIFY OK — fighters + per-god factRefs are grounded in real chapter text.");
+console.log("VERIFY OK — fighters, per-god factRefs and every special and super basis are grounded in real chapter text.");

@@ -23,6 +23,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-11 by the framework session)
+- #46 `claude/project-thread-sn268z`: speed pass (fonts linked from each page instead of an @import in
+  archive.css, Pantheon script fonts cut to the letters it uses, unused data files dropped from home/eras/themes,
+  new `fonts` review check). Waits for Carter's batch go-ahead.
 - #40 `claude/framework-sandbox`: framework Phases 1 and 2. Carter approved Phase 2 and "merge when
   green". It brings in:
   - the visitor ledger, kept in the browser only
