@@ -32,3 +32,23 @@ claude/pantheon-static
 claude/compare-underworld-link
 claude/first-screen-fighter
 claude/pilgrimage
+# Added 2026-10-12 (Carter: delete the merged wiki-ch66 to wiki-ch83 branches). All 18 were checked fully
+# merged into main (nothing ahead of main) and none had an open PR.
+claude/wiki-ch66
+claude/wiki-ch67
+claude/wiki-ch68
+claude/wiki-ch69
+claude/wiki-ch70
+claude/wiki-ch71
+claude/wiki-ch72
+claude/wiki-ch73
+claude/wiki-ch74
+claude/wiki-ch75
+claude/wiki-ch76
+claude/wiki-ch77
+claude/wiki-ch78
+claude/wiki-ch79
+claude/wiki-ch80
+claude/wiki-ch81
+claude/wiki-ch82
+claude/wiki-ch83
