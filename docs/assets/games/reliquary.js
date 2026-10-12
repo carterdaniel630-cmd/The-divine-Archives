@@ -36,13 +36,9 @@
 
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   AG.register("reliquary", {
-    title: "The Reliquary",
-    subtitle: "Trivia drawn entirely from the archive's own chapters.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch22) || "",
-    sourceHref: "chapters/ch22.html", sourceLabel: "Read “Patristic Christianity”",
     mount: mountGame
   });
 
