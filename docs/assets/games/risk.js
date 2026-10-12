@@ -28,7 +28,7 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
   function rint(n) { return (Math.random() * n) | 0; }
   function roll() { return 1 + rint(6); }
   // deterministic per-territory PRNG so each land keeps the same organic outline
@@ -85,10 +85,6 @@
   var CARD_TYPES = ["inf", "cav", "art"], CARD_GLYPH = { inf: "⚔", cav: "⚑", art: "☉" };
 
   AG.register("risk", {
-    title: "Dominion of the Ancients",
-    subtitle: "A three-way war for the ancient world — outlast two empires, uncover their gods.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch03) || "",
-    sourceHref: "chapters/ch03.html", sourceLabel: "Read “Mesopotamia”",
     mount: mountGame
   });
 
@@ -745,7 +741,7 @@
           '<p>' + st.collected.length + ' land' + (st.collected.length === 1 ? "" : "s") + ' and their gods uncovered.</p></div>' +
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">The dominions you took:</p><ul class="ouro-facts">' + recap + "</ul>" : '<p class="rq-note" style="text-align:center">You took no land this campaign — try holding a region for its bonus.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>New campaign</button>' +
-          '<a class="game-source" href="chapters/ch03.html">› Read “Mesopotamia”</a></div>';
+          AG.content.readLink(AG.catalog("risk").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

@@ -28,7 +28,7 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   var LEVELS = {
     novice: { cols: 9, rows: 9, mines: 10, name: "Novice dig" },
@@ -37,10 +37,6 @@
   };
 
   AG.register("minesweeper", {
-    title: "The Excavation",
-    subtitle: "Clear the buried grid without striking a hazard — each mark you deduce turns up a find.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch03) || "",
-    sourceHref: "chapters/ch03.html", sourceLabel: "Read “Mesopotamia”",
     mount: mountGame
   });
 
@@ -224,7 +220,7 @@
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">What you unearthed:</p><ul class="ouro-facts">' + recap + "</ul>"
                : '<p class="rq-note" style="text-align:center">No finds logged this dig — mark a hazard correctly to turn one up.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>New dig</button>' +
-          '<a class="game-source" href="chapters/ch03.html">› Read “Mesopotamia”</a></div>';
+          AG.content.readLink(AG.catalog("minesweeper").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

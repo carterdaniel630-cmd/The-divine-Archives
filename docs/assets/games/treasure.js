@@ -54,16 +54,12 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function lerp(a, b, t) { return a + (b - a) * t; }
   function rng(seed) { var s = seed >>> 0; return function () { s += 0x6D2B79F5; var t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 
   AG.register("treasure", {
-    title: "The Tomb Robber",
-    subtitle: "An expedition across the ancient world — outrun the traps and the tigers, solve the old doors, finish the journal.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch02) || "",
-    sourceHref: "chapters/ch02.html", sourceLabel: "Read “Egypt”",
     mount: mountGame
   });
 
@@ -1691,7 +1687,7 @@
         '<div class="rq-actions" style="gap:.5rem">' +
           (won ? "" : '<button class="rq-btn rq-primary" data-a="retry" autofocus>Retry ' + esc(LEVELS[st.li].place) + '</button>') +
           '<button class="rq-btn' + (won ? " rq-primary" : "") + '" data-a="again"' + (won ? " autofocus" : "") + '>' + (won ? "Run it again" : "Start over") + '</button>' +
-          '<a class="game-source" href="chapters/ch02.html">› Read “Egypt”</a></div>';
+          AG.content.readLink(AG.catalog("treasure").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", startRun);
       var rt = root.querySelector('[data-a="retry"]');
       if (rt) rt.addEventListener("click", function () { var li = st.li; run.collected = run.collected.filter(function (f) { return (f.level | 0) !== li; }); enterSite(li); });
