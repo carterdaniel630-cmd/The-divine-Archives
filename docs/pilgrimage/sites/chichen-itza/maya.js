@@ -90,7 +90,9 @@ export function lightTex(n) {
   const t = tex(c); return t;
 }
 // weathered limestone blocks for the pyramid's faces
+const MEMO = {};                                   // materials are kept when a section is dropped, so make each once
 export function blocksMat(col, seed) {
+  const key = col + (seed || 7); if (MEMO[key]) return MEMO[key];
   const [c, g] = can(256, 256); g.fillStyle = col; g.fillRect(0, 0, 256, 256); const R = rng(seed || 7);
   for (let y = 0; y < 256; y += 32) for (let x = (y / 32) % 2 ? -24 : 0; x < 256; x += 48) {
     g.fillStyle = `rgba(70,64,52,${0.05 + R() * 0.1})`; g.fillRect(x + 2, y + 2, 44, 28);
@@ -98,5 +100,5 @@ export function blocksMat(col, seed) {
   }
   for (let i = 0; i < 400; i++) { g.fillStyle = `rgba(40,50,30,${R() * 0.12})`; g.fillRect(R() * 256, R() * 256, 2 + R() * 8, 2 + R() * 5); }
   const t = tex(c, true); t.repeat.set(0.5, 0.5);
-  return new THREE.MeshStandardMaterial({ map: t, roughness: 0.95, side: THREE.DoubleSide });
+  return (MEMO[key] = new THREE.MeshStandardMaterial({ map: t, roughness: 0.95, side: THREE.DoubleSide }));
 }

@@ -57,13 +57,13 @@ const SENS = { t: "Still argued today", soft: false };
 const REMAINS = { t: "Human remains: described, not shown", soft: true };
 
 // ---------------------------------------------------------------- sections
-const BIG = [-260, -40, -460, 180, 60, 600];          // the city's open ground: every part shares one box
+const BIG = [-260, -40, -460, 180, 60, 600];          // the plaza and everything seen across it; the cenote and El Caracol load only as you near them
 const sections = [
   { id: "v", name: "The Pilgrim's Vestibule", short: "the Vestibule", module: "s0-vestibule.js", box: [V0.x - 6, -1, V0.z - 7, V0.x + 6, 6, V0.z + 7], start: { x: V0.x, z: V0.z + 3.2, yaw: 0, y: 0 }, blurb: "The archive's own room: the portal back to the museum, a Maya book from the Vault for comparison, and the way out." },
   { id: "s1", name: "I · The Great Platform", short: "the pyramid", module: "s1-platform.js", box: BIG, start: { x: -45, z: -75, yaw: -2.45, y: 0 }, blurb: "The pyramid of Kukulkan on its plaza, the platform of skulls and the Temple of the Warriors." },
   { id: "s2", name: "II · The Great Ball Court", short: "the ball court", module: "s2-ballcourt.js", box: BIG, start: { x: BC.x, z: BC.z + BC.alleyL / 2 - 3, yaw: 0, y: 0 }, blurb: "The largest known ball court of ancient Mesoamerica, with its stone rings and carved benches." },
-  { id: "s3", name: "III · The Sacred Cenote", short: "the Sacred Cenote", module: "s3-cenote.js", box: BIG, start: { x: 0, z: -200, yaw: 0, y: 0 }, blurb: "The causeway north to the great natural well where offerings, and people, were given to the rain god." },
-  { id: "s4", name: "IV · El Caracol", short: "El Caracol", module: "s4-caracol.js", box: BIG, start: { x: CR.x, z: D.carG.z0 + 6, yaw: PI, y: 0 }, blurb: "The round tower on its platforms whose windows may have followed Venus." }
+  { id: "s3", name: "III · The Sacred Cenote", short: "the Sacred Cenote", module: "s3-cenote.js", box: [D.rim.x0, -30, D.rim.z0, D.rim.x1, 20, SB.z1], start: { x: 0, z: -200, yaw: 0, y: 0 }, blurb: "The causeway north to the great natural well where offerings, and people, were given to the rain god." },
+  { id: "s4", name: "IV · El Caracol", short: "El Caracol", module: "s4-caracol.js", box: [D.carG.x0, -1, D.path.z0, D.carG.x1, 30, D.carG.z1], start: { x: CR.x, z: D.carG.z0 + 6, yaw: PI, y: 0 }, blurb: "The round tower on its platforms whose windows may have followed Venus." }
 ];
 
 // ---------------------------------------------------------------- walkable regions

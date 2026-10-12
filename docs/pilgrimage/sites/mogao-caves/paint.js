@@ -85,7 +85,9 @@ export function standing(B, keys, x, y, z, H, b) {
 const tex = (c, rep) => { const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = rep ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping; t.anisotropy = 4; return t; };
 const can = (w, h) => { const c = document.createElement("canvas"); c.width = w; c.height = h; return [c, c.getContext("2d")]; };
 // rows of small seated Buddhas, each with a halo, in alternating colours: one metre square per tile
+const MEMO = {};                                   // painted materials are shared between the caves, made once
 export function thousandMat(dim) {
+  const key = "k" + !!dim; if (MEMO[key]) return MEMO[key];
   const [c, g] = can(512, 512), cols = ["#3f6b5c", "#8a3a2a", "#3d4f7a", "#b0793a"];
   g.fillStyle = dim ? "#a68d6c" : "#c9b08a"; g.fillRect(0, 0, 512, 512);
   for (let r = 0; r < 4; r++) for (let k = 0; k < 4; k++) {
@@ -97,13 +99,14 @@ export function thousandMat(dim) {
     g.fillStyle = "#3a2a1e"; g.fillRect(x - 52, y + 46, 104, 4);
   }
   const t = tex(c, true); t.repeat.set(2.5, 2.5);
-  return new THREE.MeshStandardMaterial({ map: t, roughness: 0.95 });
+  return (MEMO[key] = new THREE.MeshStandardMaterial({ map: t, roughness: 0.95 }));
 }
 export function plasterMat(col) {
+  const key = "p" + col; if (MEMO[key]) return MEMO[key];
   const [c, g] = can(256, 256); g.fillStyle = col || "#c8b28c"; g.fillRect(0, 0, 256, 256);
   let s = 3; const R = () => ((s = (s * 16807) % 2147483647) / 2147483647);
   for (let i = 0; i < 900; i++) { g.fillStyle = `rgba(90,70,50,${0.04 + R() * 0.06})`; g.fillRect(R() * 256, R() * 256, 2 + R() * 6, 2 + R() * 6); }
-  return new THREE.MeshStandardMaterial({ map: tex(c, true), roughness: 0.95 });
+  return (MEMO[key] = new THREE.MeshStandardMaterial({ map: tex(c, true), roughness: 0.95 }));
 }
 // painted rafters for a gabled ceiling
 export function raftersMat() {

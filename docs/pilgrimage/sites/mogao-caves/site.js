@@ -47,13 +47,13 @@ const BELIEF = { t: "What is believed, not a finding", soft: true };
 const SENS = { t: "Still argued today", soft: false };
 
 // ---------------------------------------------------------------- sections
-const BIG = [-60, -5, -280, 120, 80, 280];          // the cliff and the caves cut into it share one box
+const BIG = [-60, -5, -280, 120, 80, 280];          // the cliff and the ground in front of it; each cave loads only when you are near it
 const sections = [
   { id: "v", name: "The Pilgrim's Vestibule", short: "the Vestibule", module: "s0-vestibule.js", box: [V0.x - 6, -1, V0.z - 7, V0.x + 6, 6, V0.z + 7], start: { x: V0.x, z: V0.z + 3.2, yaw: 0, y: 0 }, blurb: "The archive's own room: the portal back to the museum, the Vault's Diamond Sutra, found in this cliff, and the way out." },
   { id: "s1", name: "I · The cliff", short: "the cliff", module: "s1-cliff.js", box: BIG, start: { x: 30, z: -62, yaw: 2.77, y: 0 }, blurb: "The face of the cliff, honeycombed with caves on four tiers, and the nine-storey building over the great Buddha." },
-  { id: "s2", name: "II · The Library Cave", short: "Caves 16 and 17", module: "s2-cave17.js", box: BIG, start: { x: 7, z: C16.z, yaw: PI / 2, y: 0 }, blurb: "The corridor of Cave 16, the small room off it where some 50,000 manuscripts lay sealed for nine centuries, and Cave 16 itself." },
-  { id: "s3", name: "III · The great Buddha", short: "Cave 96", module: "s3-cave96.js", box: BIG, start: { x: 7, z: 0, yaw: PI / 2, y: 0 }, blurb: "Inside the nine-storey building: the seated Maitreya of 695, more than thirty metres high." },
-  { id: "s4", name: "IV · Cave 254", short: "Cave 254", module: "s4-cave254.js", box: BIG, start: { x: 1.9, z: 112, yaw: PI / 2, y: C254.y }, blurb: "A cave of the Northern Wei on the middle tier: a central pillar to walk round, and the story of the prince and the tigress." }
+  { id: "s2", name: "II · The Library Cave", short: "Caves 16 and 17", module: "s2-cave17.js", box: [C16.x0 - 1, -1, C16.z0 - 1, 2, C16.h + 2, C16.z1 + 1], start: { x: 7, z: C16.z, yaw: PI / 2, y: 0 }, blurb: "The corridor of Cave 16, the small room off it where some 50,000 manuscripts lay sealed for nine centuries, and Cave 16 itself." },
+  { id: "s3", name: "III · The great Buddha", short: "Cave 96", module: "s3-cave96.js", box: [C96.x0 - 1, -1, P96.z0 - 1, P96.x1 + 2, P96.h + 2, P96.z1 + 1], start: { x: 7, z: 0, yaw: PI / 2, y: 0 }, blurb: "Inside the nine-storey building: the seated Maitreya of 695, more than thirty metres high." },
+  { id: "s4", name: "IV · Cave 254", short: "Cave 254", module: "s4-cave254.js", box: [C254.x0 - 1, C254.y - 1, C254.z0 - 1, D.walk2.x1 + 1, C254.y + C254.h + 2, C254.z1 + 1], start: { x: 1.9, z: 112, yaw: PI / 2, y: C254.y }, blurb: "A cave of the Northern Wei on the middle tier: a central pillar to walk round, and the story of the prince and the tigress." }
 ];
 
 // ---------------------------------------------------------------- walkable regions
