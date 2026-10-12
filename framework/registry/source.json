@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1887,
+ "count": 1889,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -3919,6 +3919,15 @@
     "chapter:ch79"
    ],
    "from": "sources/ch79-first-christian-kingdoms.md"
+  },
+  {
+   "id": "source:dainst-blog/03b95139d0",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/?p=861",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
    "id": "source:dainst-blog/3817c1b5f4",
@@ -11998,6 +12007,15 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:museum-classics-cam-ac-uk/e51a84c377",
+   "type": "source",
+   "label": "https://museum.classics.cam.ac.uk/node/3539",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:museum-imj-org-il/aa759cfdeb",

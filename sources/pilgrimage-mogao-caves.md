@@ -57,3 +57,4 @@ the subjects, not copies; the stele's marks stand for its text and are not a tra
   hands and robes are simplified. The Maitreya in Cave 254's great niche is a generic seated stand-in; its actual
   posture was not confirmed from a source and the card does not describe it.
 - Not shown: the second great Buddha, the other caves, the visitor centre and the river.
+- **Review fixes (2026-10-12):** the dispersal card now puts the Japanese and Russian purchases after the 1910 removal, from what Wang kept back (IDP page above); "clearing sand" and Pelliot's "three weeks" were dropped as not on the cited page.

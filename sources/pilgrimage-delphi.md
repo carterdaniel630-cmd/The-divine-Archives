@@ -22,7 +22,7 @@ Athenian Treasury and the porch imitates the look of inscriptions; only the two 
 - Herodotus 2.180 and 5.62 (rebuilding of the temple after 548 BCE; the Alcmaeonids), 3.57 (Siphnian wealth), 9.81
   (the Plataean tripod). Thucydides 1.132 (Pausanias the Spartan's inscription erased).
 - Plutarch, *On the E at Delphi* (the E; 389c, Dionysus in the winter months); *On the Obsolescence of Oracles*
-  (the vapour; the trembling goat); *On the Pythia's Oracles*; *Greek Questions* 9 (consultation on the seventh).
+  (the vapour; the trembling goat); *On the Pythia's Oracles*; *Greek Questions* 9 (monthly consultation; that it fell on the seventh is a modern inference, per the review of 2026-10-12).
 - Plato, *Protagoras* 343a–b (the Seven Sages and the maxims); *Charmides* 165a (the third maxim).
 
 ## Modern sources
@@ -67,3 +67,4 @@ Athenian Treasury and the porch imitates the look of inscriptions; only the two 
 - The plans of the hall and the inner room are not known; the model's are illustrative, and the cards say so.
 - Not yet confirmed from a source: the height of the temple's columns (APPROX after comparable Doric temples) and the
   ramp at its east front (shown on published plans, not measured here).
+- **Review fixes (2026-10-12):** the hall card no longer says the hearth fire was fed with pine wood (Pausanias names the hearth, not its fuel); the vapours card names Etiope and Papatheodorou together rather than saying who led the 2006 team; the Athenian Treasury's disputed date (about 510–480 BCE) now cites the Museum of Classical Archaeology, Cambridge, https://museum.classics.cam.ac.uk/node/3539 (opened).
