@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#100b08">
+  <link rel="icon" href="data:,">
+  <title>Senet — The Passage Beyond</title>
+  <style>
+    :root {
+      color-scheme: dark light;
+      --night:#090604; --chamber:#130d09; --limestone:#cdbd95; --papyrus:#e8d8aa;
+      --ink:#23170e; --muted:#a99777; --gold:#c9a24b; --gold-hi:#f5dda0;
+      --faience:#2a8ba1; --faience-hi:#73d7dd; --ember:#d76b24; --red:#8c352a;
+      --ebony:#140d09; --deep:#070504; --panel:rgba(22,15,10,.95);
+      --line:rgba(215,184,115,.28); --shadow:rgba(0,0,0,.72);
+      --ivory:#e7dcc5; --dark-piece:#27170f;
+      --ease:cubic-bezier(.16,1,.3,1);
+    }
+    @media (prefers-color-scheme:light) {
+      :root { --night:#17100b; --chamber:#21150d; --panel:rgba(35,23,14,.96); --muted:#b9a785; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--night);color:var(--papyrus);font-family:Georgia,"Times New Roman",serif}
+    body{min-height:100svh;overflow-x:hidden;touch-action:manipulation}
+    button,select{font:inherit}
+    button{color:inherit}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    #dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;opacity:.7}
+    .chamber{position:relative;min-height:100svh;overflow:hidden;background:
+      radial-gradient(circle at 16% 22%,rgba(217,91,27,.16),transparent 23%),
+      radial-gradient(circle at 84% 20%,rgba(217,91,27,.12),transparent 21%),
+      linear-gradient(90deg,rgba(0,0,0,.64) 0 6%,transparent 13% 87%,rgba(0,0,0,.64) 94% 100%),
+      repeating-linear-gradient(90deg,transparent 0 97px,rgba(215,177,102,.018) 98px,transparent 101px),
+      linear-gradient(180deg,#080503,#171009 43%,#0b0805)}
+    .chamber:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;background:
+      repeating-radial-gradient(ellipse at 50% 120%,transparent 0 74px,rgba(205,169,98,.065) 75px,transparent 78px),
+      linear-gradient(180deg,rgba(0,0,0,.3),transparent 28%,rgba(0,0,0,.44));mix-blend-mode:screen}
+    .lintel{height:34px;border-bottom:1px solid rgba(214,179,100,.19);background:linear-gradient(#080503,#1f150d,#0b0704);box-shadow:0 13px 24px rgba(0,0,0,.7);position:relative;z-index:2}
+    .lintel:after{content:"𓋹  𓊽  𓂀  𓋹  𓊽  𓂀  𓋹";position:absolute;inset:5px 0;text-align:center;color:rgba(206,165,73,.26);font-size:17px;letter-spacing:1.15rem;white-space:nowrap;overflow:hidden}
+    .torch{position:fixed;top:82px;width:55px;height:150px;z-index:1;pointer-events:none;filter:drop-shadow(0 18px 13px #000)}
+    .torch.left{left:2.5%}.torch.right{right:2.5%}
+    .flame{position:absolute;left:14px;top:0;width:27px;height:62px;border-radius:52% 48% 58% 42%;transform-origin:50% 100%;background:radial-gradient(ellipse at 50% 68%,#fff4ba 0 12%,#ffb13b 27%,#e55a1d 53%,transparent 72%);filter:drop-shadow(0 0 9px #ff7d2e) drop-shadow(0 0 30px #b94318);animation:flicker 2.2s ease-in-out infinite alternate}
+    .torch.right .flame{animation-delay:-1.1s}
+    .sconce{position:absolute;top:57px;left:18px;width:20px;height:84px;background:linear-gradient(90deg,#24150b,#9b6b2e 38%,#3c250f 62%,#160d07);clip-path:polygon(30% 0,70% 0,86% 14%,62% 21%,58% 100%,42% 100%,38% 21%,14% 14%);box-shadow:inset 4px 0 6px #c09245,inset -5px 0 7px #080402}
+    @keyframes flicker{0%{transform:rotate(-3deg) scale(.96,1.03)}32%{transform:rotate(2deg) scale(1.05,.96)}70%{transform:rotate(-1deg) scale(.92,1.07)}100%{transform:rotate(4deg) scale(1.02,.98)}}
+    .app{position:relative;z-index:4;width:min(1180px,100%);margin:auto;padding:clamp(14px,3vw,34px) clamp(10px,3vw,28px) 42px}
+    .command{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 auto 22px;max-width:1060px}
+    .chapter{display:flex;align-items:center;gap:12px;min-width:0}
+    .chapter svg{width:30px;height:46px;color:var(--gold);filter:drop-shadow(0 0 8px rgba(219,172,61,.34));flex:0 0 auto}
+    .chapter-copy{min-width:0}
+    .chapter-copy h1{font-size:clamp(1.1rem,2.5vw,1.55rem);font-weight:500;letter-spacing:.08em;margin:0;color:var(--gold-hi)}
+    .chapter-copy p{margin:3px 0 0;color:var(--muted);font-size:.74rem;letter-spacing:.13em;text-transform:uppercase}
+    .tools{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+    .tool{border:1px solid rgba(211,173,92,.28);background:linear-gradient(180deg,rgba(66,43,23,.75),rgba(21,13,8,.9));padding:8px 10px;min-height:38px;border-radius:3px;cursor:pointer;color:#d9c89d;box-shadow:inset 0 1px rgba(255,226,154,.08),0 6px 13px rgba(0,0,0,.25);transition:border-color .25s,color .25s,transform .25s var(--ease)}
+    .tool:hover,.tool:focus-visible{border-color:var(--gold);color:#fff1c5;outline:none;transform:translateY(-1px)}
+    .game-shell{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:24px;align-items:start}
+    .board-stage{position:relative;perspective:1200px;padding:24px 8px 36px}
+    .board-stage:after{content:"";position:absolute;left:7%;right:7%;bottom:5px;height:40px;border-radius:50%;background:rgba(0,0,0,.73);filter:blur(14px);z-index:-1}
+    .board-frame{position:relative;margin:auto;width:min(100%,860px);padding:clamp(13px,2.1vw,25px);border:1px solid #6b4a20;border-radius:5px;transform:rotateX(5deg);transform-style:preserve-3d;background:
+      linear-gradient(98deg,transparent 0 26%,rgba(219,184,104,.05) 27%,transparent 29% 66%,rgba(255,223,150,.035) 67%,transparent 70%),
+      repeating-linear-gradient(4deg,#160e09 0 4px,#21130b 5px 7px,#100905 8px 12px);
+      box-shadow:inset 0 0 0 4px #0b0704,inset 0 0 0 7px #7d5928,inset 0 0 30px #000,0 30px 45px #000,0 8px 0 #080402,0 11px 0 #4a3016}
+    .board-frame:before{content:"";position:absolute;inset:6px;border:1px solid rgba(239,201,110,.43);pointer-events:none;background:linear-gradient(90deg,transparent,rgba(241,196,94,.07),transparent);box-shadow:inset 0 0 16px #000}
+    .board{position:relative;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:repeat(3,clamp(58px,8.2vw,84px));border:1px solid #86652e;isolation:isolate;background:#0d0805;box-shadow:inset 0 0 24px #000,0 3px 0 #b58b42;transform:translateZ(6px)}
+    .cell{position:relative;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(202,166,87,.5);border-bottom:1px solid rgba(202,166,87,.5);overflow:visible;background:
+      radial-gradient(circle at 30% 20%,rgba(255,255,255,.035),transparent 32%),
+      repeating-linear-gradient(7deg,transparent 0 7px,rgba(129,91,48,.055) 8px,transparent 10px),#15100c;
+      cursor:default;min-width:0}
+    .cell:nth-child(10n){border-right:0}.cell:nth-child(n+21){border-bottom:0}
+    .cell:after{content:"";position:absolute;inset:2px;border:1px solid rgba(255,225,153,.04);pointer-events:none}
+    .cell-num{position:absolute;top:3px;left:5px;font:600 9px/1 ui-monospace,monospace;color:rgba(229,207,155,.35)}
+    .cell.path-turn{background:radial-gradient(circle at center,rgba(57,139,148,.11),transparent 70%),#15100c}
+    .cell.special{background:
+      radial-gradient(circle at 50% 50%,rgba(48,172,187,.18),transparent 58%),
+      repeating-linear-gradient(45deg,rgba(34,119,132,.09) 0 4px,transparent 4px 8px),#11100c}
+    .cell.special .house-mark{color:var(--faience-hi);filter:drop-shadow(0 0 5px rgba(54,204,219,.5))}
+    .cell.danger{background:radial-gradient(circle,rgba(118,27,22,.3),transparent 64%),#160d0a}.cell.danger .house-mark{color:#d89562}
+    .house-mark{width:62%;height:62%;color:rgba(213,173,78,.8);pointer-events:none}
+    .house-name{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);font-size:7px;line-height:1;text-transform:uppercase;letter-spacing:.05em;color:rgba(230,215,177,.7);white-space:nowrap;pointer-events:none}
+    .cell.legal{cursor:pointer;background:radial-gradient(circle,rgba(103,221,221,.28),transparent 61%),#15100c;box-shadow:inset 0 0 0 2px var(--faience-hi),inset 0 0 18px rgba(75,220,229,.25);animation:legalPulse 1.55s ease-in-out infinite}
+    .cell.legal:before{content:"";position:absolute;width:15px;height:15px;border:1px solid #bcffff;border-radius:50%;box-shadow:0 0 11px #70e1e7;z-index:3}
+    @keyframes legalPulse{50%{box-shadow:inset 0 0 0 2px #b5ffff,inset 0 0 26px rgba(75,220,229,.42)}}
+    .piece{position:absolute;z-index:5;width:clamp(28px,5vw,48px);height:clamp(37px,6.6vw,61px);border:0;background:none;padding:0;cursor:pointer;transform-style:preserve-3d;transition:transform .5s var(--ease),filter .3s}
+    .piece:before{content:"";position:absolute;left:17%;right:17%;bottom:2%;height:18%;border-radius:50%;background:rgba(0,0,0,.56);filter:blur(4px);transform:translateZ(-5px)}
+    .piece-core{position:absolute;inset:0;clip-path:polygon(35% 1%,65% 1%,73% 12%,70% 22%,82% 80%,72% 94%,50% 100%,28% 94%,18% 80%,30% 22%,27% 12%);box-shadow:inset 7px 2px 8px rgba(255,255,255,.22),inset -8px -2px 10px rgba(0,0,0,.7),0 8px 8px rgba(0,0,0,.5);transform:translateZ(12px)}
+    .piece.light .piece-core{background:radial-gradient(circle at 38% 18%,#fffbe7,#d9c89f 32%,#8e7b5b 76%,#3d2e1f)}
+    .piece.dark .piece-core{background:radial-gradient(circle at 38% 18%,#7b4a2c,#2a190f 34%,#0b0604 78%,#000)}
+    .piece-core:after{content:"";position:absolute;left:31%;top:17%;width:38%;height:48%;border-radius:50%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:rotate(8deg)}
+    .piece.selected{filter:drop-shadow(0 0 8px #73f2f2) drop-shadow(0 0 16px #33899a);transform:translateY(-8px) rotateY(8deg) scale(1.07)}
+    .piece.moving{animation:pieceMove .58s var(--ease)}
+    @keyframes pieceMove{0%{transform:translateY(0) rotateY(0)}42%{transform:translateY(-24px) rotateY(14deg) scale(1.08)}100%{transform:translateY(0) rotateY(0)}}
+    .passage{position:absolute;right:5px;bottom:-31px;display:flex;align-items:center;gap:6px;font-size:.65rem;color:#bfa974;letter-spacing:.08em;text-transform:uppercase}
+    .passage-line{width:55px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+    .side{display:grid;gap:14px;padding-top:18px}
+    .turn-plaque,.cast-plaque,.score-plaque{position:relative;background:linear-gradient(145deg,rgba(57,37,20,.94),rgba(14,9,6,.96));border:1px solid rgba(199,157,71,.34);box-shadow:inset 0 1px rgba(255,233,170,.07),inset 0 0 24px #070403,0 14px 28px rgba(0,0,0,.35);padding:14px}
+    .turn-plaque:before,.cast-plaque:before,.score-plaque:before{content:"";position:absolute;inset:4px;border:1px solid rgba(217,178,89,.1);pointer-events:none}
+    .label{margin:0 0 7px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#a99263}
+    .turn-name{display:flex;align-items:center;gap:8px;font-size:1.12rem;color:#f2ddb0}
+    .turn-dot{width:12px;height:16px;clip-path:polygon(30% 0,70% 0,85% 80%,50% 100%,15% 80%);background:var(--ivory);box-shadow:inset -3px -2px 4px #6e5b3f,0 0 7px rgba(255,230,170,.3)}
+    .turn-dot.dark{background:#28170f;box-shadow:inset 3px 1px 3px #724129,0 0 7px rgba(255,126,66,.2)}
+    .status{min-height:36px;margin:8px 0 0;color:#b7a47e;font-size:.78rem;line-height:1.45}
+    .sticks{display:flex;height:73px;align-items:center;justify-content:center;gap:8px;perspective:500px}
+    .stick{width:24px;height:59px;border-radius:9px 7px 8px 9px;position:relative;background:linear-gradient(90deg,#4b2813,#d9b168 26%,#6b3f1d 60%,#2b160b);box-shadow:inset 4px 0 7px rgba(255,236,183,.25),inset -5px 0 6px #1b0b05,0 7px 8px #000;transform:rotate(var(--r,0deg)) rotateY(0deg);transition:transform .8s var(--ease),background .25s}
+    .stick.light{background:linear-gradient(90deg,#74522e,#f3ddb0 28%,#c79c57 61%,#563618)}
+    .sticks.casting .stick:nth-child(1){animation:tumble1 .82s var(--ease)}.sticks.casting .stick:nth-child(2){animation:tumble2 .82s var(--ease)}.sticks.casting .stick:nth-child(3){animation:tumble1 .82s .06s var(--ease)}.sticks.casting .stick:nth-child(4){animation:tumble2 .82s .04s var(--ease)}
+    @keyframes tumble1{0%{transform:translateY(0) rotate(2deg) rotateY(0)}45%{transform:translateY(-32px) rotate(82deg) rotateY(190deg)}100%{transform:translateY(0) rotate(var(--r)) rotateY(360deg)}}
+    @keyframes tumble2{0%{transform:translateY(0) rotate(-3deg) rotateX(0)}48%{transform:translateY(-26px) rotate(-75deg) rotateX(220deg)}100%{transform:translateY(0) rotate(var(--r)) rotateX(360deg)}}
+    .cast-result{text-align:center;height:23px;color:var(--gold-hi);font-size:.84rem}
+    .cast-btn{width:100%;border:1px solid #a8782e;background:linear-gradient(180deg,#8d5f25,#3b2411 48%,#251407);padding:11px 12px;color:#fff0bd;letter-spacing:.09em;text-transform:uppercase;font-size:.76rem;cursor:pointer;box-shadow:inset 0 1px #f4ce77,0 5px 0 #160c06,0 9px 16px #000;border-radius:2px;transition:transform .2s,filter .2s}
+    .cast-btn:hover,.cast-btn:focus-visible{filter:brightness(1.16);outline:1px solid var(--gold-hi)}.cast-btn:active{transform:translateY(3px);box-shadow:inset 0 1px #f4ce77,0 2px 0 #160c06}
+    .cast-btn:disabled{cursor:not-allowed;filter:grayscale(.7);opacity:.48;transform:none}
+    .scores{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .score{padding:8px;border-top:1px solid rgba(208,167,77,.25);font-size:.78rem;color:#b8a580}.score b{display:block;font-size:1.35rem;color:#f0d99e;font-weight:500;margin-top:2px}.score.light-score{border-top-color:#d8c89d}.score.dark-score{border-top-color:#743e26}
+    .mode-line{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    .mode-line select{min-width:0;border:1px solid rgba(200,161,81,.3);background:#170e08;color:#dac89b;padding:8px 7px;border-radius:2px;font-size:.72rem}
+    .modal-wrap{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:14px;background:radial-gradient(circle at center,rgba(24,15,8,.72),rgba(0,0,0,.94));backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity .45s var(--ease)}.modal-wrap[hidden]{display:none}
+    .modal-wrap.open{opacity:1;pointer-events:auto}
+    .modal{width:min(610px,100%);max-height:min(86svh,760px);overflow:auto;position:relative;padding:clamp(22px,5vw,45px);background:
+      linear-gradient(rgba(29,18,10,.94),rgba(12,8,5,.98)),
+      repeating-linear-gradient(6deg,#2d1d10 0 2px,#160e08 3px 7px);border:1px solid #84612f;box-shadow:inset 0 0 0 5px #0b0704,inset 0 0 0 7px rgba(187,139,54,.48),inset 0 0 45px #000,0 32px 80px #000;transform:translateY(20px) scale(.98);transition:transform .55s var(--ease)}
+    .modal-wrap.open .modal{transform:none}
+    .modal h2{margin:0;color:#efd795;font-weight:500;font-size:clamp(1.55rem,5vw,2.4rem);letter-spacing:.05em}
+    .modal .subtitle{color:#70c9ce;font-size:.75rem;text-transform:uppercase;letter-spacing:.17em;margin:8px 0 22px}
+    .modal p,.modal li{color:#c7b693;line-height:1.65;font-size:.94rem}
+    .modal strong{color:#f0d9a4;font-weight:500}.modal em{color:#83cdd1}
+    .modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .primary,.secondary{border:1px solid #9d7534;padding:11px 16px;cursor:pointer;text-transform:uppercase;letter-spacing:.09em;font-size:.74rem;border-radius:2px}
+    .primary{background:linear-gradient(#8c6028,#3f2712);color:#ffebba;box-shadow:inset 0 1px #eac36d,0 5px 0 #160c06}.secondary{background:#15100c;color:#c6b48b}
+    .close{position:absolute;right:16px;top:14px;width:38px;height:38px;border:1px solid rgba(206,166,80,.28);background:#160e08;color:#ccb783;font-size:1.25rem;cursor:pointer;border-radius:50%}
+    .tutorial-step{display:none}.tutorial-step.active{display:block;animation:stepIn .55s var(--ease)}
+    @keyframes stepIn{from{opacity:0;transform:translateX(15px)}to{opacity:1;transform:none}}
+    .step-count{display:flex;gap:6px;margin:0 0 18px}.step-count i{width:22px;height:3px;background:#4b3922}.step-count i.on{background:var(--faience-hi);box-shadow:0 0 8px #3ca8b5}
+    .rule-figure{height:94px;display:flex;align-items:center;justify-content:center;gap:10px;margin:13px 0;background:radial-gradient(circle,rgba(39,149,160,.12),transparent 65%);color:#70d5da}
+    .mini-stick{width:12px;height:56px;border-radius:5px;background:linear-gradient(90deg,#f0dcb1,#9b6b34,#513015);box-shadow:3px 5px 7px #000}.mini-piece{width:32px;height:57px;clip-path:polygon(35% 0,65% 0,74% 16%,69% 28%,83% 82%,50% 100%,17% 82%,31% 28%,26% 16%);background:radial-gradient(circle at 35% 20%,#fff7d8,#b19a68 50%,#4b3825)}
+    .history-block{border-top:1px solid rgba(201,160,76,.28);padding-top:16px;margin-top:16px}.source-note{font-size:.74rem!important;color:#998866!important}
+    .toast{position:fixed;z-index:50;left:50%;bottom:26px;transform:translate(-50%,25px);padding:10px 16px;border:1px solid #987335;background:rgba(18,11,7,.96);color:#eddaa8;box-shadow:0 12px 30px #000;opacity:0;pointer-events:none;transition:.35s var(--ease);font-size:.8rem;text-align:center;max-width:calc(100vw - 24px)}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .game-over-mark{width:74px;height:74px;margin:0 auto 18px;color:var(--gold);filter:drop-shadow(0 0 13px rgba(225,177,65,.35))}
+    @media(max-width:820px){
+      .torch{opacity:.56}.game-shell{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr;padding-top:0}.turn-plaque{grid-column:1/-1}.score-plaque{grid-column:1/-1}.board-stage{padding-top:8px}.board-frame{transform:rotateX(3deg)}
+    }
+    @media(max-width:560px){
+      .app{padding-left:8px;padding-right:8px}.command{align-items:flex-start}.chapter svg{width:24px;height:38px}.chapter-copy h1{font-size:1.02rem}.chapter-copy p{font-size:.59rem;letter-spacing:.08em}.tool{font-size:.7rem;padding:7px 8px}.tool .wide{display:none}.board-frame{padding:11px 8px}.board{grid-template-rows:repeat(3,55px)}.piece{width:27px;height:38px}.cell-num{font-size:7px;top:2px;left:3px}.house-name{font-size:5.5px}.side{gap:9px}.turn-plaque,.cast-plaque,.score-plaque{padding:11px}.sticks{height:62px}.stick{height:48px;width:19px}.modal{padding:25px 20px}.modal p,.modal li{font-size:.87rem}.lintel:after{letter-spacing:.5rem}}
+    @media(max-width:380px){.chapter-copy p{display:none}.tools{gap:4px}.tool{padding:6px}.board{grid-template-rows:repeat(3,49px)}.piece{width:23px;height:34px}.house-mark{width:52%;height:52%}.side{grid-template-columns:1fr}.cast-plaque,.score-plaque{grid-column:1/-1}.sticks{height:57px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}#dust{display:none}}
+  </style>
+</head>
+<body>
+<div class="chamber">
+  <div class="lintel" aria-hidden="true"></div>
+  <div class="torch left" aria-hidden="true"><div class="flame"></div><div class="sconce"></div></div>
+  <div class="torch right" aria-hidden="true"><div class="flame"></div><div class="sconce"></div></div>
+  <canvas id="dust" aria-hidden="true"></canvas>
+
+  <main class="app">
+    <header class="command">
+      <div class="chapter">
+        <svg viewBox="0 0 64 100" aria-hidden="true"><path d="M32 4C18 4 10 14 10 29c0 15 10 25 22 25s22-10 22-25C54 14 46 4 32 4Zm0 10c7 0 11 5 11 15s-4 15-11 15-11-5-11-15 4-15 11-15Z" fill="currentColor"/><path d="M27 50h10v46H27zM5 62h54v10H5z" fill="currentColor"/></svg>
+        <div class="chapter-copy"><h1>Pass through the thirty houses</h1><p>Senet · Egypt, from c. 3100 BCE</p></div>
+      </div>
+      <nav class="tools" aria-label="Game options">
+        <button class="tool" id="soundBtn" type="button" aria-pressed="false">Sound <span id="soundState">off</span></button>
+        <button class="tool" id="rulesBtn" type="button">Rules</button>
+        <button class="tool" id="historyBtn" type="button"><span class="wide">The </span>record</button>
+        <button class="tool" id="newBtn" type="button">New rite</button>
+      </nav>
+    </header>
+
+    <section class="game-shell" aria-label="Senet game">
+      <div class="board-stage">
+        <div class="board-frame">
+          <div class="board" id="board" aria-label="Senet board, thirty houses"></div>
+          <div class="passage" aria-hidden="true"><span>Pass beyond</span><span class="passage-line"></span></div>
+        </div>
+      </div>
+      <aside class="side" aria-label="Game controls and status">
+        <div class="turn-plaque">
+          <p class="label">The living turn</p>
+          <div class="turn-name"><span class="turn-dot" id="turnDot"></span><span id="turnName">Light</span></div>
+          <p class="status" id="status" aria-live="polite">Cast the four sticks.</p>
+        </div>
+        <div class="cast-plaque">
+          <p class="label">Casting sticks</p>
+          <div class="sticks" id="sticks" aria-label="Four casting sticks">
+            <i class="stick" style="--r:-3deg"></i><i class="stick" style="--r:2deg"></i><i class="stick" style="--r:-2deg"></i><i class="stick" style="--r:4deg"></i>
+          </div>
+          <div class="cast-result" id="castResult">—</div>
+          <button class="cast-btn" id="castBtn" type="button">Cast the sticks</button>
+        </div>
+        <div class="score-plaque">
+          <p class="label">Souls passed beyond</p>
+          <div class="scores"><div class="score light-score">Light<b id="lightScore">0 / 5</b></div><div class="score dark-score">Dark<b id="darkScore">0 / 5</b></div></div>
+          <div class="mode-line">
+            <select id="modeSelect" aria-label="Game mode"><option value="ai">Against the keeper</option><option value="local">Two at the board</option></select>
+            <select id="difficultySelect" aria-label="Keeper difficulty"><option value="easy">Pilgrim</option><option value="medium" selected>Scribe</option><option value="hard">Vizier</option></select>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</div>
+
+<div class="modal-wrap" id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" hidden>
+  <article class="modal">
+    <svg class="game-over-mark" viewBox="0 0 120 120" aria-hidden="true"><path d="M61 13c-25 0-41 17-41 47 0 25 13 43 41 47 28-4 41-22 41-47 0-30-16-47-41-47Zm0 12c14 0 25 12 27 31-8-8-17-12-27-12s-19 4-27 12c2-19 13-31 27-31Zm0 70c-13-2-22-9-26-21 8 5 17 7 26 7s18-2 26-7c-4 12-13 19-26 21Z" fill="currentColor"/><path d="M8 62c15-14 33-21 53-21s38 7 51 21c-15 14-32 21-51 21S23 76 8 62Zm18 0c11 8 22 12 35 12s25-4 34-12c-9-8-21-12-34-12s-24 4-35 12Z" fill="currentColor"/><circle cx="61" cy="62" r="9" fill="currentColor"/></svg>
+    <h2 id="welcomeTitle">The game of passage</h2>
+    <p class="subtitle">Senet · the afterlife board</p>
+    <p>Five pieces begin among the living. Cast the sticks, cross the thirty houses, and pass every soul beyond the board.</p>
+    <p><em>The ancient rules did not survive intact.</em> This playable version uses Timothy Kendall’s widely used scholarly reconstruction and marks its uncertainty plainly.</p>
+    <div class="modal-actions"><button class="primary" id="learnBtn" type="button">Learn the passage</button><button class="secondary" id="enterBtn" type="button">Enter the tomb</button></div>
+  </article>
+</div>
+
+<div class="modal-wrap" id="tutorialModal" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle" hidden>
+  <article class="modal">
+    <button class="close" id="tutorialClose" type="button" aria-label="Close rules">×</button>
+    <p class="subtitle">Kendall reconstruction</p>
+    <h2 id="tutorialTitle">How to pass beyond</h2>
+    <div class="step-count" id="stepCount" aria-hidden="true"></div>
+    <section class="tutorial-step active" data-step="0"><div class="rule-figure"><span class="mini-stick"></span><span class="mini-stick"></span><span class="mini-stick"></span><span class="mini-stick"></span></div><p><strong>Cast four sticks.</strong> Count the light faces. No light faces count as five. Throws of <strong>1, 4, or 5</strong> grant another turn.</p></section>
+    <section class="tutorial-step" data-step="1"><div class="rule-figure"><span class="mini-piece"></span><span style="font-size:2rem">⇄</span><span class="mini-piece" style="filter:brightness(.35) sepia(1)"></span></div><p><strong>Move one pawn along the S-shaped path.</strong> Landing on an unprotected opponent swaps your places. Two adjacent allies protect one another; three make a wall that cannot be crossed.</p></section>
+    <section class="tutorial-step" data-step="2"><div class="rule-figure" style="font-size:2rem"><span>𓋹</span><span>≋</span><span>𓂀</span></div><p><strong>The final houses change fate.</strong> House 26 is Rebirth. House 27 is the Waters: a pawn landing there is sent back to House 15. Houses 28, 29, and 30 require exact throws of 3, 2, and 1 to pass beyond.</p></section>
+    <section class="tutorial-step" data-step="3"><div class="rule-figure"><span class="mini-piece"></span><span class="mini-piece" style="filter:brightness(.35) sepia(1)"></span><span style="font-size:2rem">→</span><span style="font-size:2rem;color:#e7c36c">☼</span></div><p><strong>First to bear off all five pawns wins.</strong> Select a glowing pawn after each cast. If no legal move exists, the turn passes.</p></section>
+    <div class="modal-actions"><button class="secondary" id="prevStep" type="button">Previous</button><button class="primary" id="nextStep" type="button">Next</button></div>
+  </article>
+</div>
+
+<div class="modal-wrap" id="historyModal" role="dialog" aria-modal="true" aria-labelledby="historyTitle" hidden>
+  <article class="modal"><button class="close" id="historyClose" type="button" aria-label="Close historical record">×</button><p class="subtitle">The archaeological record</p><h2 id="historyTitle">What survives</h2>
+    <div class="history-block"><p><strong>The board is ancient.</strong> Senet appears in Egypt by the late fourth millennium BCE. Four game boxes were placed in Tutankhamun’s tomb, including a finely worked ebony-and-ivory example.</p></div>
+    <div class="history-block"><p><strong>Its meaning changed.</strong> By the New Kingdom, tomb scenes and the vignette accompanying Spell 17 of the Book of the Dead connect play with the deceased person’s successful passage through the afterlife.</p></div>
+    <div class="history-block"><p><strong>The rules are reconstructed.</strong> No complete ancient rulebook survives. The movement, protected groups, special houses, and bearing-off system used here follow Egyptologist Timothy Kendall’s influential reconstruction. It is a serious scholarly model, not a certainty.</p></div>
+    <p class="source-note">Primary record: senet boards from the tomb of Tutankhamun; New Kingdom Book of the Dead, Spell 17 vignettes. Reconstruction: Timothy Kendall, <i>Passing Through the Netherworld</i>.</p>
+  </article>
+</div>
+
+<div class="modal-wrap" id="gameOverModal" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle" hidden>
+  <article class="modal"><svg class="game-over-mark" viewBox="0 0 80 100" aria-hidden="true"><path d="M40 3C23 3 14 16 14 34c0 19 12 31 26 31s26-12 26-31C66 16 57 3 40 3Zm0 12c8 0 14 7 14 19s-6 19-14 19-14-7-14-19 6-19 14-19ZM34 60h12v38H34zM4 72h72v12H4z" fill="currentColor"/></svg><p class="subtitle">The passage is complete</p><h2 id="gameOverTitle">Light passes beyond</h2><p id="gameOverText">All five souls have crossed the final house.</p><div class="modal-actions"><button class="primary" id="againBtn" type="button">Begin another rite</button><button class="secondary" id="recordFromWin" type="button">Read the record</button></div></article>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var ui={board:document.getElementById('board'),castBtn:document.getElementById('castBtn'),sticks:document.getElementById('sticks'),castResult:document.getElementById('castResult'),status:document.getElementById('status'),turnName:document.getElementById('turnName'),turnDot:document.getElementById('turnDot'),lightScore:document.getElementById('lightScore'),darkScore:document.getElementById('darkScore'),mode:document.getElementById('modeSelect'),difficulty:document.getElementById('difficultySelect'),toast:document.getElementById('toast')};
+  var state=null, cells={}, selected=null, timers=[], listeners=[], audio=null, toastTimer=null, tutorialStep=0, disposed=false;
+  var SPECIAL={26:'REBIRTH',27:'WATERS',28:'HORUS',29:'ISIS',30:'NEPHTHYS'};
+  var visualOrder=[1,2,3,4,5,6,7,8,9,10,20,19,18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28,29,30];
+  function on(el,type,fn,opts){el.addEventListener(type,fn,opts);listeners.push({el:el,type:type,fn:fn,opts:opts});}
+  function later(fn,ms){var id=setTimeout(fn,ms);timers.push(id);return id}
+  function showToast(text){ui.toast.textContent=text;ui.toast.classList.add('show');clearTimeout(toastTimer);toastTimer=later(function(){ui.toast.classList.remove('show')},2100)}
+  function svgMark(pos){
+    if(pos===26)return '<svg class="house-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4C21 4 15 12 15 23s7 19 17 19 17-8 17-19S43 4 32 4Zm0 8c6 0 9 4 9 11s-3 11-9 11-9-4-9-11 3-11 9-11Z" fill="currentColor"/><path d="M28 38h8v23h-8zM9 46h46v8H9z" fill="currentColor"/></svg>';
+    if(pos===27)return '<svg class="house-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 18c7-8 14-8 21 0s14 8 21 0 11-8 15-4v9c-5-4-9-2-15 4-7 8-14 8-21 0s-14-8-21 0V18Zm0 20c7-8 14-8 21 0s14 8 21 0 11-8 15-4v9c-5-4-9-2-15 4-7 8-14 8-21 0s-14-8-21 0V38Z" fill="currentColor"/></svg>';
+    if(pos===28)return '<svg class="house-mark" viewBox="0 0 80 54" aria-hidden="true"><path d="M5 28C15 15 27 9 40 9s25 6 35 19c-10 13-22 19-35 19S15 41 5 28Zm14 0c7 7 14 10 21 10s15-3 21-10c-6-7-14-10-21-10s-14 3-21 10Z" fill="currentColor"/><circle cx="40" cy="28" r="7" fill="currentColor"/><path d="m11 16 9-12 2 16M58 20 66 4l4 14" fill="none" stroke="currentColor" stroke-width="4"/></svg>';
+    if(pos===29)return '<svg class="house-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 55V18h30v37M12 55h40M20 18l12-11 12 11M23 31h18M23 41h18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if(pos===30)return '<svg class="house-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 53h38M18 53V22h28v31M22 22 32 8l10 14" fill="none" stroke="currentColor" stroke-width="5"/><path d="M26 31h12v22H26z" fill="currentColor"/></svg>';
+    if(pos===15)return '<svg class="house-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 50h38M18 49V19h28v30M22 19 32 9l10 10" fill="none" stroke="currentColor" stroke-width="4"/></svg>';
+    return '';
+  }
+  function buildBoard(){
+    ui.board.innerHTML='';cells={};
+    visualOrder.forEach(function(pos,i){var cell=document.createElement('div');cell.className='cell'+(pos===10||pos===20?' path-turn':'')+(SPECIAL[pos]?' special':'')+(pos===27?' danger':'');cell.dataset.pos=String(pos);cell.setAttribute('aria-label','House '+pos+(SPECIAL[pos]?', '+SPECIAL[pos].toLowerCase():''));cell.innerHTML='<span class="cell-num">'+pos+'</span>'+svgMark(pos)+(SPECIAL[pos]?'<span class="house-name">'+SPECIAL[pos]+'</span>':'');ui.board.appendChild(cell);cells[pos]=cell;on(cell,'click',function(){handleCell(pos)});});
+  }
+  function initialPieces(){var pieces=[];for(var i=0;i<10;i++){pieces.push({id:(i%2===0?'L':'D')+Math.floor(i/2),player:i%2===0?'light':'dark',pos:i+1,off:false});}return pieces}
+  function newGame(){
+    timers.forEach(clearTimeout);timers=[];selected=null;
+    state={pieces:initialPieces(),turn:'light',roll:null,phase:'cast',extra:false,winner:null};
+    closeAll();render();ui.status.textContent='Cast the four sticks.';ui.castResult.textContent='—';ui.castBtn.disabled=false;
+  }
+  function playerPieces(player){return state.pieces.filter(function(p){return p.player===player&&!p.off})}
+  function at(pos){return state.pieces.find(function(p){return !p.off&&p.pos===pos})||null}
+  function alliedRunAt(player,pos){var start=pos,end=pos;while(at(start-1)&&at(start-1).player===player)start--;while(at(end+1)&&at(end+1).player===player)end++;return {start:start,end:end,len:end-start+1}}
+  function wallBlocks(player,from,to){var opponent=other(player);for(var p=from+1;p<to;p++){var piece=at(p);if(piece&&piece.player===opponent){var run=alliedRunAt(opponent,p);if(run.len>=3&&from<run.start&&to>run.end)return true;}}return false}
+  function legalFor(piece,roll){
+    if(!piece||piece.off||piece.player!==state.turn)return null;
+    var target=piece.pos+roll;
+    if(target>31)return null;
+    if(wallBlocks(piece.player,piece.pos,target))return null;
+    if(target===31){var need=31-piece.pos;if(roll!==need||piece.pos<26)return null;return {type:'off',to:31,piece:piece};}
+    var occupant=at(target);
+    if(occupant&&occupant.player===piece.player)return null;
+    if(occupant&&occupant.player!==piece.player&&alliedRunAt(occupant.player,target).len>=2)return null;
+    return {type:occupant?'swap':'move',to:target,piece:piece,occupant:occupant};
+  }
+  function legalMoves(player,roll){return state.pieces.filter(function(p){return p.player===player&&!p.off}).map(function(p){return legalFor(p,roll)}).filter(Boolean)}
+  function render(){
+    Object.keys(cells).forEach(function(k){cells[k].classList.remove('legal')});
+    ui.board.querySelectorAll('.piece').forEach(function(n){n.remove()});
+    state.pieces.forEach(function(p){if(p.off)return;var b=document.createElement('button');b.type='button';b.className='piece '+p.player+(selected===p.id?' selected':'');b.dataset.id=p.id;b.setAttribute('aria-label',(p.player==='light'?'Light':'Dark')+' pawn on house '+p.pos);b.innerHTML='<span class="piece-core"></span>';cells[p.pos].appendChild(b);on(b,'click',function(e){e.stopPropagation();selectPiece(p.id)});});
+    var lightOff=state.pieces.filter(function(p){return p.player==='light'&&p.off}).length,darkOff=state.pieces.filter(function(p){return p.player==='dark'&&p.off}).length;
+    ui.lightScore.textContent=lightOff+' / 5';ui.darkScore.textContent=darkOff+' / 5';ui.turnName.textContent=state.turn==='light'?'Light':'Dark';ui.turnDot.className='turn-dot'+(state.turn==='dark'?' dark':'');
+    ui.castBtn.disabled=state.phase!=='cast'||isAI();
+    if(state.phase==='move'&&!isAI()){legalMoves(state.turn,state.roll).forEach(function(m){cells[m.piece.pos].classList.add('legal')})}
+  }
+  function selectPiece(id){
+    if(state.phase!=='move'||isAI())return;var p=state.pieces.find(function(x){return x.id===id});var move=legalFor(p,state.roll);if(!move){showToast('That pawn has no lawful path for this throw.');return}selected=id;render();ui.status.textContent='Chosen: house '+p.pos+'. Tap it again to move '+state.roll+' house'+(state.roll===1?'':'s')+'.';
+    var btn=ui.board.querySelector('[data-id="'+id+'"]');if(btn)on(btn,'click',function(e){e.stopPropagation();performMove(move)});
+  }
+  function handleCell(pos){if(state.phase!=='move'||isAI())return;var moves=legalMoves(state.turn,state.roll);var m=moves.find(function(x){return x.piece.pos===pos});if(m)performMove(m)}
+  function performMove(move){
+    if(state.phase!=='move')return;state.phase='animating';selected=null;var from=move.piece.pos;
+    if(move.type==='swap'&&move.occupant){move.occupant.pos=from}
+    if(move.type==='off'){move.piece.off=true;move.piece.pos=31}else{move.piece.pos=move.to}
+    if(move.to===27&&!move.piece.off){var fallback=15;while(at(fallback)&&at(fallback)!==move.piece&&fallback>1)fallback--;move.piece.pos=fallback;showToast('The Waters return the pawn to House '+fallback+'.');soundTone(128,.35,'sine')}
+    soundTone(220,.08,'triangle');render();var movedBtn=ui.board.querySelector('[data-id="'+move.piece.id+'"]');if(movedBtn)movedBtn.classList.add('moving');
+    later(function(){checkEndOrAdvance(move.piece)},620);
+  }
+  function checkEndOrAdvance(piece){
+    var off=state.pieces.filter(function(p){return p.player===piece.player&&p.off}).length;
+    if(off===5){state.winner=piece.player;state.phase='over';render();openGameOver(piece.player);soundVictory();return}
+    var keep=state.extra;state.roll=null;ui.castResult.textContent='—';if(!keep)state.turn=other(state.turn);state.extra=false;state.phase='cast';render();ui.status.textContent=keep?'The favored throw grants another cast.':'The turn passes to '+cap(state.turn)+'.';if(isAI())later(aiCast,700)
+  }
+  function cast(){
+    if(state.phase!=='cast'||state.winner)return;state.phase='casting';ui.castBtn.disabled=true;ui.sticks.classList.remove('casting');void ui.sticks.offsetWidth;ui.sticks.classList.add('casting');soundCast();
+    var lights=0,faces=[];for(var i=0;i<4;i++){var light=Math.random()<.5;faces.push(light);if(light)lights++}var roll=lights===0?5:lights;
+    later(function(){var els=ui.sticks.children;faces.forEach(function(light,i){els[i].classList.toggle('light',light)});ui.sticks.classList.remove('casting');state.roll=roll;state.extra=roll===1||roll===4||roll===5;ui.castResult.textContent=roll+' · '+lights+' light face'+(lights===1?'':'s')+(state.extra?' · cast again':'');var moves=legalMoves(state.turn,roll);if(!moves.length){state.phase='move';render();ui.status.textContent='No lawful move. '+(state.extra?'The favored throw still grants another cast.':'The turn passes.');later(function(){state.phase='animating';checkEndOrAdvance({player:state.turn})},900);return}state.phase='move';ui.status.textContent='Move one pawn '+roll+' house'+(roll===1?'':'s')+'.';render();if(isAI())later(aiMove,680)},830);
+  }
+  function aiCast(){if(!isAI()||state.phase!=='cast')return;cast()}
+  function moveScore(m){
+    var score=m.to+(m.type==='off'?120:0)+(m.type==='swap'?22:0);
+    if(m.to===26)score+=26;if(m.to===27)score-=80;if(m.to===28||m.to===29||m.to===30)score+=18;
+    var old=m.piece.pos;m.piece.pos=m.to;var run=m.to<=30?alliedRunAt(m.piece.player,m.to).len:0;m.piece.pos=old;if(run===2)score+=13;if(run>=3)score+=25;
+    if(m.occupant)score+=(30-m.occupant.pos)*.35;
+    return score;
+  }
+  function aiMove(){
+    if(!isAI()||state.phase!=='move')return;var moves=legalMoves('dark',state.roll);if(!moves.length)return;var diff=ui.difficulty.value,m;
+    if(diff==='easy')m=moves[Math.floor(Math.random()*moves.length)];else{moves.sort(function(a,b){return moveScore(b)-moveScore(a)});if(diff==='medium'&&moves.length>1&&Math.random()<.25)m=moves[1];else m=moves[0]}
+    ui.status.textContent='The keeper chooses a path…';later(function(){performMove(m)},420)
+  }
+  function other(p){return p==='light'?'dark':'light'}function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}function isAI(){return ui.mode.value==='ai'&&state.turn==='dark'}
+  function openModal(el){el.hidden=false;requestAnimationFrame(function(){el.classList.add('open')});var f=el.querySelector('button');if(f)later(function(){f.focus()},80)}function closeModal(el){el.classList.remove('open');el.hidden=true}
+  function closeAll(){document.querySelectorAll('.modal-wrap').forEach(function(m){m.classList.remove('open');m.hidden=true})}
+  function openRules(){tutorialStep=0;updateTutorial();openModal(document.getElementById('tutorialModal'))}
+  function updateTutorial(){var steps=document.querySelectorAll('.tutorial-step');steps.forEach(function(s,i){s.classList.toggle('active',i===tutorialStep)});var c=document.getElementById('stepCount');c.innerHTML='';steps.forEach(function(_,i){var dot=document.createElement('i');if(i<=tutorialStep)dot.className='on';c.appendChild(dot)});document.getElementById('prevStep').disabled=tutorialStep===0;document.getElementById('nextStep').textContent=tutorialStep===steps.length-1?'Begin':'Next'}
+  function openGameOver(winner){document.getElementById('gameOverTitle').textContent=cap(winner)+' passes beyond';document.getElementById('gameOverText').textContent=(winner==='light'?'All five light souls have crossed the final house.':'The keeper has borne all five dark souls beyond the board.');openModal(document.getElementById('gameOverModal'))}
+  function setupAudio(){if(audio)return;var Ctx=window.AudioContext||window.webkitAudioContext;if(Ctx)audio=new Ctx()}
+  function soundTone(freq,dur,type){if(!audio||document.getElementById('soundBtn').getAttribute('aria-pressed')!=='true')return;if(audio.state==='suspended')audio.resume();var o=audio.createOscillator(),g=audio.createGain();o.type=type||'sine';o.frequency.value=freq;g.gain.setValueAtTime(.0001,audio.currentTime);g.gain.exponentialRampToValueAtTime(.035,audio.currentTime+.015);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+dur);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+dur+.03)}
+  function soundCast(){soundTone(172,.18,'triangle');later(function(){soundTone(230,.14,'triangle')},110)}function soundVictory(){[196,247,294,392].forEach(function(n,i){later(function(){soundTone(n,.65,'sine')},i*160)})}
+  function initDust(){
+    var canvas=document.getElementById('dust'),ctx=canvas.getContext('2d'),pts=[],raf=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function resize(){var dpr=innerWidth<768?1:Math.min(devicePixelRatio||1,1.35);canvas.width=Math.floor(innerWidth*dpr);canvas.height=Math.floor(innerHeight*dpr);canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(dpr,0,0,dpr,0,0);pts=[];var count=Math.min(85,Math.floor(innerWidth*innerHeight/16000));for(var i=0;i<count;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:.3+Math.random()*1.15,v:.03+Math.random()*.14,w:(Math.random()-.5)*.08,a:.1+Math.random()*.35})}
+    function frame(){if(disposed||reduced)return;ctx.clearRect(0,0,innerWidth,innerHeight);for(var i=0;i<pts.length;i++){var p=pts[i];p.y-=p.v;p.x+=p.w+Math.sin(p.y*.01)*.015;if(p.y<-4){p.y=innerHeight+4;p.x=Math.random()*innerWidth}ctx.beginPath();ctx.fillStyle='rgba(242,190,104,'+p.a+')';ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}raf=requestAnimationFrame(frame)}
+    resize();on(window,'resize',resize,{passive:true});if(!reduced)raf=requestAnimationFrame(frame);return function(){cancelAnimationFrame(raf);pts=[];ctx.clearRect(0,0,canvas.width,canvas.height)}
+  }
+  var stopDust=null;
+  function bind(){
+    on(ui.castBtn,'click',cast);on(document.getElementById('rulesBtn'),'click',openRules);on(document.getElementById('historyBtn'),'click',function(){openModal(document.getElementById('historyModal'))});on(document.getElementById('newBtn'),'click',newGame);
+    on(document.getElementById('enterBtn'),'click',function(){closeModal(document.getElementById('welcomeModal'))});on(document.getElementById('learnBtn'),'click',function(){closeModal(document.getElementById('welcomeModal'));openRules()});
+    on(document.getElementById('tutorialClose'),'click',function(){closeModal(document.getElementById('tutorialModal'))});on(document.getElementById('historyClose'),'click',function(){closeModal(document.getElementById('historyModal'))});
+    on(document.getElementById('nextStep'),'click',function(){if(tutorialStep<3){tutorialStep++;updateTutorial()}else closeModal(document.getElementById('tutorialModal'))});on(document.getElementById('prevStep'),'click',function(){if(tutorialStep>0){tutorialStep--;updateTutorial()}});
+    on(document.getElementById('againBtn'),'click',function(){newGame()});on(document.getElementById('recordFromWin'),'click',function(){closeModal(document.getElementById('gameOverModal'));openModal(document.getElementById('historyModal'))});
+    on(document.getElementById('soundBtn'),'click',function(){setupAudio();var pressed=this.getAttribute('aria-pressed')==='true';this.setAttribute('aria-pressed',String(!pressed));document.getElementById('soundState').textContent=!pressed?'on':'off';if(!pressed){soundTone(196,.22,'sine');showToast('Ambient ritual tones enabled.')}else showToast('Sound muted.')});
+    on(ui.mode,'change',function(){ui.difficulty.disabled=this.value==='local';newGame()});on(ui.difficulty,'change',newGame);
+    on(document,'keydown',function(e){if(e.key==='Escape'){var open=document.querySelector('.modal-wrap.open');if(open&&open.id!=='welcomeModal')closeModal(open)}if((e.key===' '||e.key==='Enter')&&document.activeElement===document.body&&state&&state.phase==='cast'){e.preventDefault();cast()}});
+  }
+  function dispose(){if(disposed)return;disposed=true;timers.forEach(clearTimeout);timers=[];listeners.forEach(function(l){l.el.removeEventListener(l.type,l.fn,l.opts)});listeners=[];if(stopDust)stopDust();if(audio){try{audio.close()}catch(e){}audio=null}Object.keys(cells).forEach(function(k){cells[k]=null});cells={};state=null}
+  window.Senet={dispose:dispose,newGame:newGame};
+  buildBoard();bind();newGame();stopDust=initDust();later(function(){openModal(document.getElementById('welcomeModal'))},320);on(window,'pagehide',dispose,{once:true});
+})();
+</script>
+</body>
+</html>
