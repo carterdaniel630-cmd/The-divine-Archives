@@ -40,7 +40,55 @@ Explicit-main read-only audit: is the graphify codebase map (6,122 nodes,
 12,534 edges) wired into the working branch/session or not? Next step was
 defined 2026-10-12; still open.
 
-## 6. VR museum program — PARKED
+## 6. Gematria tool — IN BUILD (Muse-side)
+Interactive calculator: Hebrew gematria + Greek isopsephy + Arabic abjad,
+letter-by-letter breakdown, shared-numbers cross-reference. Prototype building
+now at workspace/your_files/gematria/gematria.html; Claude reworks it for
+production after. (Checked 2026-10-13: no standalone gematria tool found in the
+shipped site — only possible chapter mentions.)
+
+## 7. Wave 3 — fifteen new game candidates (Carter: line these up)
+Long-term vision: a game for every belief structure. Candidates mapped to
+traditions (prototypes to be built Muse-side, then Claude reworks):
+1. Pachisi — India (Hindu)
+2. Mancala — Africa / Middle East (folk)
+3. Nine Men's Morris — ancient Mediterranean / Rome
+4. Patolli — Mesoamerica (Aztec)
+5. Game of the Goose — early modern Europe
+6. Go — China (Daoist / Confucian)
+7. Chaturanga — India (Hindu / Buddhist; ancestor of chess)
+8. Liubo — Han China (divination board)
+9. Alquerque — Egypt / Levant (ancestor of draughts)
+10. Fanorona — Madagascar (Austronesian)
+11. Bagh-chal — Nepal (Himalayan Hindu / Buddhist)
+12. Yut — Korea (folk / shamanic)
+13. Konane — Hawai'i (Polynesian)
+14. Rithmomachia — medieval Europe (Christian scholastic)
+15. Makruk — Siam (Theravada Buddhist)
+
+SHIP STATUS 2026-10-13: all 15 built and verified. 8 pushed to
+staging/ready-line under handoff/exhibits/wave3/ (pachisi, mancala,
+nine-mens-morris, patolli, game-of-the-goose, go, chaturanga, liubo).
+Remaining 7 zipped at workspace/your_files/ship-review/wave3-remaining-7-games.zip
+(alquerque, fanorona, bagh-chal, yut, konane, rithmomachia, makruk) — Carter
+halted the push loop 21:06 over approval-prompt fatigue; push or courier when
+he says. Also staged: handoff/gematria.html, handoff/games-differentiation-brief.md,
+handoff/urantia-room-spec.md. All in PR #59.
+
+## 8. Arcade placement & form — PARKED (Carter: up in the air)
+The games are heading for a massive arcade hall (the hidden-room arcade
+concept). Open: games presented in their own historical form vs. arcade
+cabinet form. Do not lock this until Carter decides.
+
+## 9. Games differentiation brief — READY for Claude's rework
+Carter played the set: good, but too similar-looking. All 25 verified
+distinct (no duplicates). Brief at
+workspace/your_files/games-differentiation-brief.md gives each game a material
+identity + mechanical signature, grouped by the 4 mechanical families (race,
+ancient track, chess variants, jump-capture). Hard rule: if two games in one
+family feel interchangeable after rework, the rework failed that pair.
+
+## 10. VR museum program — PARKED
 Carter: "we can look at the whole VR thing later." Specs complete and filed:
 workspace/goals/divine-archives-vr-museum/hidden_files/ (architecture, pilot,
 roadmap with Phase 2B WebGPU tier, artistry addendum, comfort/audio/benchmark
