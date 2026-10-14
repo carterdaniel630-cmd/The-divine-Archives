@@ -123,7 +123,8 @@ template. This is now a standing build program, not a one-off.
 Solo mode: visitor debates the AI philosopher itself — back-and-forth against
 the philosopher's actual positions, in their own words (from the research).
 Social mode (visitors debating each other as pilgrim-lights) comes with the
-Living Archive phase. Design spec in progress.
+Living Archive phase. Spec: handoff/debate-hall-spec.md (soul-flame avatars —
+no 3D figures; text bubble floats over a flickering flame, Carter 2026-10-13).
 
 ## 12. Blurred symbols defect — FIX REQUIRED
 handoff/defects/blurred-symbols-rolodex.md. Gray blur splotches on the symbol
