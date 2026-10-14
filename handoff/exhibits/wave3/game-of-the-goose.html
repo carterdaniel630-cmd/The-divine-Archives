@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Game of the Goose — An Interactive Exhibit</title>
+<style>
+/* ============ THE GAME OF THE GOOSE — scoped styles ============ */
+.game-of-the-goose-page{
+  --goose-ink:#2b1d10; --goose-ink-soft:#4a3420;
+  --goose-paper:#e6c892; --goose-paper-deep:#d9b478;
+  --goose-madder:#9e2f26; --goose-verdigris:#2e7d6b;
+  --goose-gold:#b9862f; --goose-bg:#14100b; --goose-bg2:#1e1710;
+  margin:0; min-height:100vh; color:var(--goose-paper);
+  font-family:Georgia,'Palatino Linotype','Book Antiqua',serif;
+  background:
+    radial-gradient(1200px 700px at 50% -8%, #2a2115 0%, var(--goose-bg2) 45%, var(--goose-bg) 100%);
+}
+.game-of-the-goose-shell{max-width:1180px;margin:0 auto;padding:28px 18px 60px;}
+.game-of-the-goose-masthead{text-align:center;margin:6px 0 22px;}
+.game-of-the-goose-kicker{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--goose-gold);margin:0 0 10px;}
+.game-of-the-goose-title{font-size:clamp(30px,5vw,52px);margin:0;font-weight:400;letter-spacing:.06em;color:#f0dcae;text-shadow:0 2px 18px rgba(0,0,0,.7);}
+.game-of-the-goose-sub{font-style:italic;color:#c9ab7c;margin:10px 0 0;font-size:15px;}
+.game-of-the-goose-ruleline{display:flex;align-items:center;gap:12px;margin:18px auto 0;max-width:520px;color:var(--goose-gold);}
+.game-of-the-goose-ruleline::before,.game-of-the-goose-ruleline::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--goose-gold),transparent);}
+.game-of-the-goose-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.9fr);gap:26px;align-items:start;}
+@media(max-width:920px){.game-of-the-goose-layout{grid-template-columns:1fr;}}
+.game-of-the-goose-board-frame{
+  position:relative;border-radius:6px;padding:14px;
+  background:linear-gradient(160deg,#241b10,#171008 70%);
+  border:1px solid #3a2b18;
+  box-shadow:0 24px 70px rgba(0,0,0,.65), inset 0 1px 0 rgba(233,200,146,.12);
+}
+.game-of-the-goose-board-wrap{position:relative;line-height:0;}
+.game-of-the-goose-board{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 6px 30px rgba(0,0,0,.55);}
+.game-of-the-goose-caption{line-height:1.5;font-size:13px;font-style:italic;color:#b89a6d;margin:12px 4px 0;text-align:center;}
+.game-of-the-goose-side{display:flex;flex-direction:column;gap:16px;min-width:0;}
+.game-of-the-goose-panel{
+  background:linear-gradient(165deg,rgba(36,27,16,.92),rgba(20,14,8,.94));
+  border:1px solid #3a2b18;border-radius:6px;padding:16px 18px;
+  box-shadow:0 10px 34px rgba(0,0,0,.5), inset 0 1px 0 rgba(233,200,146,.08);
+  line-height:1.55;
+}
+.game-of-the-goose-turn{font-size:17px;letter-spacing:.04em;color:#f0dcae;margin:0 0 4px;min-height:1.6em;}
+.game-of-the-goose-turn .game-of-the-goose-dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:9px;vertical-align:baseline;box-shadow:0 0 8px rgba(0,0,0,.6);}
+.game-of-the-goose-status{font-size:13.5px;color:#c9ab7c;font-style:italic;margin:0;min-height:2.6em;}
+.game-of-the-goose-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.game-of-the-goose-btn{
+  font-family:inherit;font-size:15px;letter-spacing:.08em;cursor:pointer;
+  color:#f4e3ba;background:linear-gradient(180deg,#6b4a22,#4a3013);
+  border:1px solid #8a6a35;border-radius:4px;padding:11px 20px;
+  box-shadow:0 4px 14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,235,190,.25);
+  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.game-of-the-goose-btn:hover:not(:disabled){filter:brightness(1.12);box-shadow:0 6px 20px rgba(185,134,47,.35);}
+.game-of-the-goose-btn:active:not(:disabled){transform:translateY(1px);}
+.game-of-the-goose-btn:disabled{opacity:.42;cursor:not-allowed;}
+.game-of-the-goose-btn.game-of-the-goose-ghost{background:transparent;border-color:#5a4426;color:#d9bd8a;}
+.game-of-the-goose-btn:focus-visible{outline:2px solid var(--goose-gold);outline-offset:3px;}
+.game-of-the-goose-dice-row{display:flex;align-items:center;gap:12px;margin-top:12px;}
+.game-of-the-goose-die{
+  width:52px;height:52px;border-radius:9px;position:relative;
+  background:linear-gradient(145deg,#f2ddab 0%,#dcbb7e 55%,#c49a58 100%);
+  border:1px solid #7a5a2e;box-shadow:0 5px 12px rgba(0,0,0,.55), inset 0 2px 3px rgba(255,255,255,.5), inset 0 -3px 6px rgba(90,60,20,.35);
+  display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:8px;box-sizing:border-box;
+}
+.game-of-the-goose-die.game-of-the-goose-rolling{animation:game-of-the-goose-shake .12s infinite;}
+@keyframes game-of-the-goose-shake{0%{transform:translate(0,0) rotate(-7deg)}50%{transform:translate(2px,-3px) rotate(6deg)}100%{transform:translate(-2px,2px) rotate(-4deg)}}
+.game-of-the-goose-pip{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#5a3a1c,#241407);place-self:center;box-shadow:inset 0 1px 2px rgba(0,0,0,.7);}
+.game-of-the-goose-dice-total{font-size:15px;color:#e8cf9e;}
+.game-of-the-goose-log{list-style:none;margin:0;padding:0;max-height:220px;overflow-y:auto;font-size:13.5px;}
+.game-of-the-goose-log li{padding:5px 2px;border-bottom:1px dotted #3a2b18;color:#d3b586;}
+.game-of-the-goose-log li:first-child{color:#f4e3ba;}
+.game-of-the-goose-log .game-of-the-goose-turnno{color:var(--goose-gold);margin-right:6px;}
+.game-of-the-goose-panel h2{font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--goose-gold);margin:0 0 10px;font-weight:400;}
+.game-of-the-goose-rules details{border-top:1px dotted #3a2b18;padding:9px 0;}
+.game-of-the-goose-rules details:last-child{border-bottom:1px dotted #3a2b18;}
+.game-of-the-goose-rules summary{cursor:pointer;font-size:14.5px;color:#ecd3a0;list-style:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.game-of-the-goose-rules summary::-webkit-details-marker{display:none;}
+.game-of-the-goose-rules summary::before{content:"❧";color:var(--goose-gold);font-size:13px;}
+.game-of-the-goose-rules summary:focus-visible{outline:2px solid var(--goose-gold);outline-offset:2px;}
+.game-of-the-goose-rules .game-of-the-goose-body{font-size:13.5px;color:#c9ab7c;margin:8px 0 2px;padding-left:22px;}
+.game-of-the-goose-rules .game-of-the-goose-body b{color:#ecd3a0;font-weight:400;}
+.game-of-the-goose-badge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;border:1px solid;border-radius:3px;padding:2px 7px;white-space:nowrap;}
+.game-of-the-goose-badge-attested{color:#9fd8c6;border-color:var(--goose-verdigris);background:rgba(46,125,107,.12);}
+.game-of-the-goose-badge-recon{color:#e8a49b;border-color:var(--goose-madder);background:rgba(158,47,38,.12);}
+.game-of-the-goose-legend{font-size:12.5px;color:#a98f63;margin:10px 0 0;display:flex;gap:14px;flex-wrap:wrap;}
+.game-of-the-goose-overlay{
+  position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:rgba(12,8,4,.82);backdrop-filter:blur(2px);border-radius:3px;line-height:1.5;
+  opacity:0;pointer-events:none;transition:opacity .6s ease;
+}
+.game-of-the-goose-overlay.game-of-the-goose-show{opacity:1;pointer-events:auto;}
+.game-of-the-goose-overlay-inner{max-width:78%;}
+.game-of-the-goose-overlay h3{font-size:clamp(24px,4vw,38px);font-weight:400;color:#f0dcae;margin:0 0 8px;letter-spacing:.05em;}
+.game-of-the-goose-overlay p{color:#c9ab7c;font-style:italic;margin:0 0 18px;}
+.game-of-the-goose-kbd{font-size:12px;color:#a98f63;margin-top:12px;}
+.game-of-the-goose-kbd kbd{border:1px solid #5a4426;border-radius:3px;padding:1px 6px;font-family:inherit;background:#241b10;color:#d9bd8a;}
+.game-of-the-goose-foot{margin-top:26px;text-align:center;font-size:12.5px;color:#8a6f4b;font-style:italic;line-height:1.6;}
+@media(prefers-reduced-motion:reduce){
+  .game-of-the-goose-page *,.game-of-the-goose-page *::before,.game-of-the-goose-page *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  .game-of-the-goose-die.game-of-the-goose-rolling{animation:none;}
+}
+</style>
+</head>
+<body class="game-of-the-goose-page">
+<div class="game-of-the-goose-shell" id="game-of-the-goose-root">
+  <header class="game-of-the-goose-masthead">
+    <p class="game-of-the-goose-kicker">The Divine Archives · An Interactive Exhibit</p>
+    <h1 class="game-of-the-goose-title">The Game of the Goose</h1>
+    <p class="game-of-the-goose-sub">Jeu de l'Oie — the spiral race of early modern Europe, after the printed boards of the late sixteenth century</p>
+    <div class="game-of-the-goose-ruleline" aria-hidden="true">❧</div>
+  </header>
+  <div class="game-of-the-goose-layout">
+    <div class="game-of-the-goose-board-frame">
+      <div class="game-of-the-goose-board-wrap">
+        <canvas class="game-of-the-goose-board" id="game-of-the-goose-canvas" width="960" height="960" role="img"
+          aria-label="Engraved spiral board of the Game of the Goose: sixty-three numbered squares winding inward to the central garden."></canvas>
+        <div class="game-of-the-goose-overlay" id="game-of-the-goose-overlay">
+          <div class="game-of-the-goose-overlay-inner">
+            <h3 id="game-of-the-goose-win-title">The Garden is reached.</h3>
+            <p id="game-of-the-goose-win-text"></p>
+            <button class="game-of-the-goose-btn" id="game-of-the-goose-again">Play again</button>
+          </div>
+        </div>
+      </div>
+      <p class="game-of-the-goose-caption">Sixty-three squares in a spiral, after the classic boards. Geese carry you onward; the hazards — bridge, inn, well, maze, prison, death — try to keep you. Land on the 63rd square by an exact throw to win.</p>
+    </div>
+    <div class="game-of-the-goose-side">
+      <section class="game-of-the-goose-panel" aria-label="Game controls">
+        <p class="game-of-the-goose-turn" id="game-of-the-goose-turn"><span class="game-of-the-goose-dot" id="game-of-the-goose-dot"></span><span id="game-of-the-goose-turn-text">Preparing the board…</span></p>
+        <p class="game-of-the-goose-status" id="game-of-the-goose-status"></p>
+        <div class="game-of-the-goose-dice-row">
+          <div class="game-of-the-goose-die" id="game-of-the-goose-die1" aria-hidden="true"></div>
+          <div class="game-of-the-goose-die" id="game-of-the-goose-die2" aria-hidden="true"></div>
+          <span class="game-of-the-goose-dice-total" id="game-of-the-goose-total"></span>
+        </div>
+        <div class="game-of-the-goose-controls">
+          <button class="game-of-the-goose-btn" id="game-of-the-goose-roll" disabled>Cast the dice</button>
+          <button class="game-of-the-goose-btn game-of-the-goose-ghost" id="game-of-the-goose-restart">Begin anew</button>
+        </div>
+        <p class="game-of-the-goose-kbd"><kbd>Space</kbd> cast · <kbd>R</kbd> begin anew · <kbd>H</kbd> rules</p>
+      </section>
+      <section class="game-of-the-goose-panel" aria-label="Chronicle">
+        <h2>Chronicle of the game</h2>
+        <ul class="game-of-the-goose-log" id="game-of-the-goose-log"></ul>
+      </section>
+      <section class="game-of-the-goose-panel game-of-the-goose-rules" id="game-of-the-goose-rules" aria-label="Rules">
+        <h2>The rules, honestly told</h2>
+        <details open>
+          <summary>The course <span class="game-of-the-goose-badge game-of-the-goose-badge-attested">Attested</span></summary>
+          <div class="game-of-the-goose-body">Two travellers race along a spiral of <b>63 squares</b>, casting <b>two dice</b> each turn. The first to land on square 63 <b>by an exact throw</b> wins. If your throw would carry you past 63, you go in to 63 and <b>bounce back the excess</b>.</div>
+        </details>
+        <details>
+          <summary>The geese <span class="game-of-the-goose-badge game-of-the-goose-badge-attested">Attested</span></summary>
+          <div class="game-of-the-goose-body">Squares <b>5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59</b> bear the goose — the classic scheme of the standard boards, and 63 itself is shown as a goose in the garden. Land on one and you <b>advance again by the same throw</b>; a second goose carries you yet again. Should you meet a goose while bouncing back from 63, it drives you <b>further back</b> by the excess instead.</div>
+        </details>
+        <details>
+          <summary>The hazards <span class="game-of-the-goose-badge game-of-the-goose-badge-attested">Attested</span></summary>
+          <div class="game-of-the-goose-body"><b>6 · The Bridge</b> — cross at once to 12. <b>19 · The Inn</b> — tarry and rest. <b>31 · The Well</b> — climb out slowly. <b>42 · The Maze</b> — lose the path, return to 30. <b>52 · The Prison</b> — wait behind bars. <b>58 · Death</b> — begin the whole journey over.</div>
+        </details>
+        <details>
+          <summary>The rests <span class="game-of-the-goose-badge game-of-the-goose-badge-recon">Reconstructed</span></summary>
+          <div class="game-of-the-goose-body">Early editions disagree on the penalties — some keep you in the Well or Prison until another player arrives. For a two-player table we use fixed rests: the Inn costs <b>1 turn</b>, the Well <b>2 turns</b>, the Prison <b>3 turns</b>. The Maze returns you to <b>30</b> (some editions say 39).</div>
+        </details>
+        <details>
+          <summary>The first cast <span class="game-of-the-goose-badge game-of-the-goose-badge-attested">Attested</span></summary>
+          <div class="game-of-the-goose-body">On the very first cast of the game, a throw of nine is a famous opening: <b>6 + 3 flies to 26</b>, <b>5 + 4 flies to 53</b>. A roll-off of single dice decides who casts first.</div>
+        </details>
+        <details>
+          <summary>What we simplified <span class="game-of-the-goose-badge game-of-the-goose-badge-recon">Reconstructed</span></summary>
+          <div class="game-of-the-goose-body">No stakes or pot; two players only (the old game welcomed more); landing on an occupied square does not swap the travellers, as some editions have it. Nothing here is presented as fact beyond what the badges claim.</div>
+        </details>
+        <p class="game-of-the-goose-legend"><span><span class="game-of-the-goose-badge game-of-the-goose-badge-attested">Attested</span> — the classic scheme of surviving boards &amp; rule sets</span><span><span class="game-of-the-goose-badge game-of-the-goose-badge-recon">Reconstructed</span> — our editorial choice where sources vary</span></p>
+      </section>
+    </div>
+  </div>
+  <p class="game-of-the-goose-foot">Boards of this game survive from the late 1500s; the scheme above follows the standard 63-square form. The Divine Archives.</p>
+</div>
+<script>
+'use strict';
+/* =====================================================================
+   THE GAME OF THE GOOSE — engine, renderer, and table.
+   Vanilla ES6. No external assets, no network calls.
+   ===================================================================== */
+(function(){
+const ROOT_ID='game-of-the-goose-root';
+const root=document.getElementById(ROOT_ID);
+if(!root) return;
+
+/* ---------- utilities ---------- */
+const clamp=(v,a,b)=>v<a?a:v>b?b:v;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const easeInOutCubic=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const easeOutCubic=t=>1-Math.pow(1-t,3);
+const REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const MOBILE=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'')||window.innerWidth<720;
+const DPR=MOBILE?1:Math.min(window.devicePixelRatio||1,2);
+
+/* ---------- the classic scheme (attested) ---------- */
+const GOOSE_SQUARES=new Set([5,9,14,18,23,27,32,36,41,45,50,54,59]);
+const HAZARDS={
+  6 :{key:'bridge', name:'The Bridge', to:12, note:'must cross the bridge to square 12'},
+  19:{key:'inn',    name:'The Inn',    skip:1, note:'must tarry at the inn — rests 1 turn'},
+  31:{key:'well',   name:'The Well',   skip:2, note:'must be drawn dripping from the well — rests 2 turns'},
+  42:{key:'maze',   name:'The Maze',   to:30, note:'must find the way out of the maze — back to 30'},
+  52:{key:'prison', name:'The Prison', skip:3, note:'must wait behind bars — rests 3 turns'},
+  58:{key:'death',  name:'Death',      to:0,  note:'must begin the whole journey over'}
+};
+
+/* ---------- board geometry: 63 squares on an Archimedean spiral ---------- */
+const BOARD=960, CX=480, CY=480;
+const TURNS=3.4, DTHETA=TURNS*Math.PI*2/63;
+const THETA0=Math.PI*0.83;               // square 1 sits outer, lower-left
+const R_OUT=418, R_IN=172;
+function spiralPoint(i){ // i: 0..62
+  const th=THETA0+i*DTHETA, r=R_OUT-(R_OUT-R_IN)*(i/62);
+  return {x:CX+r*Math.cos(th), y:CY+r*Math.sin(th), theta:th, r:r};
+}
+function cellGeom(n){ // n: 1..63
+  const i=n-1, p=spiralPoint(i), q=spiralPoint(Math.min(i+1,62));
+  const rot=Math.atan2(q.y-p.y,q.x-p.x);
+  const size=58-14*(i/62);
+  return {x:p.x, y:p.y, rot:rot, size:size, theta:p.theta};
+}
+function posPoint(pos){ // pos 0 = the threshold before square 1
+  if(pos>=1){const g=cellGeom(Math.min(pos,63));return {x:g.x,y:g.y};}
+  const g=cellGeom(1);
+  const dx=g.x-CX, dy=g.y-CY, d=Math.hypot(dx,dy)||1;
+  return {x:g.x+dx/d*(g.size*1.15), y:g.y+dy/d*(g.size*1.15)};
+}
+function tokenPoint(pos,slot,sizeHint){
+  const p=posPoint(pos);
+  const off=(sizeHint||52)*0.17*(slot===0?-1:1);
+  return {x:p.x+off*0.9, y:p.y-off*0.55};
+}
+
+/* ---------- move resolution (pure) ----------
+   A "leg" is one atomic motion with an explicit inverse (clause 8):
+   leg.forward() applies the destination, leg.reverse() restores origin. */
+function makeLeg(from,to,kind,note){
+  return {from:from,to:to,kind:kind,note:note||'',
+    forward:function(st,pl){pl.pos=to;}, reverse:function(st,pl){pl.pos=from;}};
+}
+function advanceWithBounce(from,steps){
+  // returns {legs, to} — exact-63, plain move, or bounce-back with the
+  // attested goose-on-the-backward-path rule.
+  const raw=from+steps;
+  if(raw===63) return {legs:[makeLeg(from,63,'move')], to:63};
+  if(raw<63)   return {legs:[makeLeg(from,raw,'move')], to:raw};
+  const excess=raw-63;
+  let to=63-excess;
+  const legs=[makeLeg(from,63,'move'),makeLeg(63,to,'bounce','overshoots — falls back '+excess)];
+  let guard=0;
+  while(GOOSE_SQUARES.has(to)&&guard++<8){
+    const nt=to-excess;
+    legs.push(makeLeg(to,nt,'goose-back','a goose on the backward path drives it back '+excess+' more'));
+    to=nt;
+  }
+  return {legs:legs,to:to};
+}
+function resolveCast(pos,d1,d2,firstCast){
+  // Returns {legs, finalPos, skipTurns, won}. Never mutates.
+  const total=d1+d2, legs=[];
+  if(firstCast&&total===9){
+    const dest=(d1===6||d2===6)?26:53;
+    legs.push(makeLeg(pos,dest,'first-nine','a famous opening — 9 on the first cast flies to '+dest));
+    return {legs:legs,finalPos:dest,skipTurns:0,won:false};
+  }
+  let r=advanceWithBounce(pos,total);
+  for(const l of r.legs) legs.push(l);
+  let to=r.to, guard=0, skipTurns=0;
+  while(guard++<16){
+    if(to===63){legs.push(makeLeg(to,63,'win'));to=63;break;}
+    if(GOOSE_SQUARES.has(to)){
+      const g=advanceWithBounce(to,total);
+      legs.push(makeLeg(to,g.legs[0].to,'goose','a goose! onward again by '+total));
+      for(let k=1;k<g.legs.length;k++) legs.push(g.legs[k]);
+      to=g.to; continue;
+    }
+    const hz=HAZARDS[to];
+    if(!hz) break;
+    if(hz.to!==undefined){legs.push(makeLeg(to,hz.to,hz.key,hz.note));to=hz.to;break;}
+    legs.push(makeLeg(to,to,hz.key,hz.note));skipTurns=hz.skip;break;
+  }
+  const won=legs.some(l=>l.kind==='win');
+  return {legs:legs,finalPos:won?63:to,skipTurns:skipTurns,won:won};
+}
+
+/* ---------- neutral validator + append-only ledger (clauses 6 & 7) ---------- */
+function validLeg(leg,player,turnIdx,players){
+  if(!leg||typeof leg.from!=='number'||typeof leg.to!=='number') return 'malformed leg';
+  if(leg.to<0||leg.to>63) return 'square out of range';
+  if(player.pos!==leg.from) return 'leg origin disagrees with table state';
+  return null;
+}
+
+/* ================= procedural engraving textures ================= */
+const INK='#33220f', INK_SOFT='#5a4023';
+function makePaperTile(size,base,blotch){
+  const c=document.createElement('canvas');c.width=c.height=size;
+  const x=c.getContext('2d');
+  x.fillStyle=base;x.fillRect(0,0,size,size);
+  // fibre grain
+  for(let i=0;i<size*size/38;i++){
+    const v=Math.random();
+    x.fillStyle=v<.5?'rgba(120,85,40,0.05)':'rgba(255,240,205,0.06)';
+    x.fillRect(Math.random()*size,Math.random()*size,1.4,1.4);
+  }
+  // age blotches
+  for(let i=0;i<7;i++){
+    const bx=Math.random()*size,by=Math.random()*size,br=14+Math.random()*36;
+    const g=x.createRadialGradient(bx,by,2,bx,by,br);
+    g.addColorStop(0,blotch);g.addColorStop(1,'rgba(150,105,50,0)');
+    x.fillStyle=g;x.beginPath();x.arc(bx,by,br,0,7);x.fill();
+  }
+  // faint chain lines of laid paper
+  x.strokeStyle='rgba(110,78,36,0.10)';x.lineWidth=1;
+  for(let yy=8;yy<size;yy+=22){x.beginPath();x.moveTo(0,yy);x.lineTo(size,yy);x.stroke();}
+  return c;
+}
+function makeBoardCanvas(scale){
+  scale=scale||1;
+  const c=document.createElement('canvas');c.width=c.height=BOARD*scale;
+  const x=c.getContext('2d');x.setTransform(scale,0,0,scale,0,0);
+  // parchment ground
+  const g=x.createRadialGradient(CX,CY-140,120,CX,CY,620);
+  g.addColorStop(0,'#ecd096');g.addColorStop(.55,'#dfb878');g.addColorStop(1,'#b98d4e');
+  x.fillStyle=g;x.fillRect(0,0,BOARD,BOARD);
+  const tile=makePaperTile(256,'rgba(0,0,0,0)','rgba(146,100,48,0.16)');
+  x.globalAlpha=.5;x.fillStyle=x.createPattern(tile,'repeat');x.fillRect(0,0,BOARD,BOARD);x.globalAlpha=1;
+  // stains
+  for(let i=0;i<9;i++){
+    const sx=Math.random()*BOARD,sy=Math.random()*BOARD,sr=40+Math.random()*110;
+    const sg=x.createRadialGradient(sx,sy,4,sx,sy,sr);
+    sg.addColorStop(0,'rgba(140,95,40,0.10)');sg.addColorStop(1,'rgba(140,95,40,0)');
+    x.fillStyle=sg;x.beginPath();x.arc(sx,sy,sr,0,7);x.fill();
+  }
+  // vignette (chiaroscuro)
+  const v=x.createRadialGradient(CX,CY,300,CX,CY,640);
+  v.addColorStop(0,'rgba(30,18,8,0)');v.addColorStop(1,'rgba(28,17,7,0.55)');
+  x.fillStyle=v;x.fillRect(0,0,BOARD,BOARD);
+  // engraved frame
+  x.strokeStyle=INK;x.lineWidth=5;x.strokeRect(26,26,BOARD-52,BOARD-52);
+  x.lineWidth=1.4;x.strokeRect(38,38,BOARD-76,BOARD-76);
+  // corner flourishes
+  x.lineWidth=2;
+  for(const [fx,fy,sx,sy] of [[38,38,1,1],[BOARD-38,38,-1,1],[38,BOARD-38,1,-1],[BOARD-38,BOARD-38,-1,-1]]){
+    x.beginPath();x.moveTo(fx+34*sx,fy);x.quadraticCurveTo(fx,fy,fx,fy+34*sy);x.stroke();
+    x.beginPath();x.arc(fx+10*sx,fy+10*sy,5,0,7);x.stroke();
+  }
+  // the track line under the cells
+  x.strokeStyle='rgba(70,48,22,0.55)';x.lineWidth=2.5;x.setLineDash([2,7]);x.lineCap='round';
+  x.beginPath();
+  for(let i=0;i<=62;i++){const p=spiralPoint(i);i?x.lineTo(p.x,p.y):x.moveTo(p.x,p.y);}
+  x.stroke();x.setLineDash([]);
+  return {canvas:c,ctx:x};
+}
+
+/* ================= engraved icons ================= */
+function ink(x,w){x.strokeStyle=INK;x.lineWidth=w||2;x.lineCap='round';x.lineJoin='round';}
+function wash(x,path,color,alpha){
+  x.save();path(x);x.fillStyle=color;x.globalAlpha=alpha;x.fill();x.restore();
+}
+function goosePath(x,u){
+  x.beginPath();
+  x.moveTo(-26*u,8*u);
+  x.bezierCurveTo(-30*u,-10*u,-10*u,-20*u,6*u,-16*u);
+  x.bezierCurveTo(18*u,-12*u,24*u,-4*u,21*u,6*u);
+  x.bezierCurveTo(18*u,14*u,0*u,18*u,-12*u,15*u);
+  x.bezierCurveTo(-22*u,13*u,-26*u,12*u,-26*u,8*u);
+  x.closePath();
+}
+function drawGoose(x,s,tint){
+  const u=s/100;ink(x,2.4*u);
+  wash(x,function(xx){goosePath(xx,u);},tint||'#2e7d6b',0.22);
+  goosePath(x,u);x.stroke();
+  // neck + head
+  x.beginPath();x.moveTo(12*u,-13*u);
+  x.bezierCurveTo(20*u,-25*u,22*u,-33*u,28*u,-38*u);x.stroke();
+  x.beginPath();x.ellipse(30*u,-40*u,6.5*u,5*u,0.15,0,Math.PI*2);x.stroke();
+  x.beginPath();x.moveTo(35.5*u,-41.5*u);x.lineTo(44*u,-38.5*u);x.lineTo(35.5*u,-36.5*u);x.stroke();
+  x.fillStyle=INK;x.beginPath();x.arc(31*u,-41*u,1.3*u,0,7);x.fill();
+  // wing + tail + legs
+  x.beginPath();x.moveTo(-13*u,-3*u);x.quadraticCurveTo(2*u,-9*u,13*u,-2*u);x.stroke();
+  x.beginPath();x.moveTo(-26*u,4*u);x.lineTo(-36*u,-4*u);x.moveTo(-26*u,8*u);x.lineTo(-36*u,6*u);x.stroke();
+  x.beginPath();x.moveTo(-6*u,16*u);x.lineTo(-6*u,28*u);x.moveTo(5*u,16*u);x.lineTo(5*u,28*u);x.stroke();
+  x.beginPath();x.moveTo(-10*u,28*u);x.lineTo(-2*u,28*u);x.moveTo(1*u,28*u);x.lineTo(9*u,28*u);x.stroke();
+}
+function drawBridge(x,s){
+  const u=s/100;ink(x,2.4*u);
+  x.strokeRect(-30*u,-8*u,60*u,16*u);
+  x.beginPath();x.arc(0*u,8*u,14*u,Math.PI,0);x.stroke();
+  x.lineWidth=1.4*u;
+  for(let i=-2;i<=2;i++){x.beginPath();x.moveTo((i*12)*u,20*u);x.lineTo((i*12+6)*u,20*u);x.stroke();}
+  x.beginPath();x.moveTo(-30*u,-8*u);x.lineTo(-30*u,-16*u);x.moveTo(30*u,-8*u);x.lineTo(30*u,-16*u);x.stroke();
+}
+function drawInn(x,s){
+  const u=s/100;ink(x,2.4*u);
+  x.strokeRect(-24*u,-6*u,48*u,32*u);
+  x.beginPath();x.moveTo(-30*u,-6*u);x.lineTo(0,-26*u);x.lineTo(30*u,-6*u);x.stroke();
+  x.strokeRect(-8*u,6*u,16*u,20*u);
+  x.strokeRect(12*u,-0*u,10*u,10*u);
+  x.lineWidth=1.4*u;x.beginPath();x.moveTo(0,-26*u);x.lineTo(0,-32*u);x.stroke();
+}
+function drawWell(x,s){
+  const u=s/100;ink(x,2.4*u);
+  x.beginPath();x.moveTo(-22*u,10*u);x.lineTo(-18*u,28*u);x.lineTo(18*u,28*u);x.lineTo(22*u,10*u);x.closePath();x.stroke();
+  x.beginPath();x.ellipse(0,10*u,22*u,7*u,0,0,Math.PI*2);x.stroke();
+  x.beginPath();x.moveTo(-22*u,-2*u);x.lineTo(-22*u,-22*u);x.moveTo(22*u,-2*u);x.lineTo(22*u,-22*u);x.stroke();
+  x.beginPath();x.moveTo(-28*u,-20*u);x.lineTo(0,-34*u);x.lineTo(28*u,-20*u);x.stroke();
+  x.lineWidth=1.4*u;x.beginPath();x.moveTo(0,-32*u);x.lineTo(0,4*u);x.stroke();
+}
+function drawMaze(x,s){
+  const u=s/100;ink(x,2.2*u);let r=30*u;
+  x.beginPath();
+  for(let k=0;k<4;k++){
+    const o=r;
+    x.moveTo(-o,-o);x.lineTo(o,-o);x.lineTo(o,o);x.lineTo(-o+8*u,o);x.lineTo(-o+8*u,-o+8*u);
+    r-=9*u;
+  }
+  x.stroke();
+  x.fillStyle=INK;x.beginPath();x.arc(0,0,2.4*u,0,7);x.fill();
+}
+function drawPrison(x,s){
+  const u=s/100;ink(x,2.4*u);
+  x.strokeRect(-26*u,-26*u,52*u,52*u);
+  x.lineWidth=2*u;
+  for(let i=-1;i<=1;i++){x.beginPath();x.moveTo((i*15)*u,-26*u);x.lineTo((i*15)*u,26*u);x.stroke();}
+  x.fillStyle=INK;x.beginPath();x.arc(20*u,0,2.6*u,0,7);x.fill();
+}
+function drawDeath(x,s){
+  const u=s/100;ink(x,2.4*u);
+  wash(x,function(xx){xx.beginPath();xx.arc(0,-4*u,20*u,0,Math.PI*2);},'#9e2f26',0.14);
+  x.beginPath();x.arc(0,-4*u,20*u,0,Math.PI*2);x.stroke();
+  x.beginPath();x.moveTo(-14*u,10*u);x.lineTo(-14*u,24*u);x.lineTo(14*u,24*u);x.lineTo(14*u,10*u);x.stroke();
+  x.fillStyle=INK;
+  x.beginPath();x.arc(-7.5*u,-6*u,5*u,0,7);x.fill();
+  x.beginPath();x.arc(7.5*u,-6*u,5*u,0,7);x.fill();
+  x.beginPath();x.moveTo(0,-1*u);x.lineTo(-3.4*u,7*u);x.lineTo(3.4*u,7*u);x.closePath();x.fill();
+  for(let i=-1;i<=1;i++){x.beginPath();x.moveTo((i*8)*u,24*u);x.lineTo((i*8)*u,17*u);x.stroke();}
+}
+function drawLaurel(x,cx,cy,r){
+  ink(x,2);
+  for(const dir of [-1,1]){
+    x.save();x.translate(cx,cy);x.scale(dir,1);
+    for(let i=0;i<=10;i++){
+      const a=Math.PI*(0.15+0.7*i/10);
+      const lx=Math.cos(a)*r, ly=Math.sin(a)*r*0.92;
+      x.save();x.translate(lx,ly);x.rotate(a+ (i%2?0.5:-0.5));
+      x.beginPath();x.ellipse(0,0,11,4.4,0,0,Math.PI*2);x.stroke();x.restore();
+    }
+    x.restore();
+  }
+}
+
+/* ================= the exhibit ================= */
+class GooseExhibit{
+  constructor(root){
+    this.root=root;
+    this._listeners=[];this._timers=new Set();this._tweens=new Set();
+    this._ledger=[];this._seq=0;this._retryAt=0;this._destroyed=false;
+    this._raf=0;this._needsDraw=true;
+    this.canvas=root.querySelector('#game-of-the-goose-canvas');
+    this.canvas.width=BOARD*DPR;this.canvas.height=BOARD*DPR;
+    this.ctx=this.canvas.getContext('2d');
+    this.el={
+      turn:root.querySelector('#game-of-the-goose-turn-text'),
+      dot:root.querySelector('#game-of-the-goose-dot'),
+      status:root.querySelector('#game-of-the-goose-status'),
+      roll:root.querySelector('#game-of-the-goose-roll'),
+      restart:root.querySelector('#game-of-the-goose-restart'),
+      again:root.querySelector('#game-of-the-goose-again'),
+      overlay:root.querySelector('#game-of-the-goose-overlay'),
+      winText:root.querySelector('#game-of-the-goose-win-text'),
+      log:root.querySelector('#game-of-the-goose-log'),
+      die1:root.querySelector('#game-of-the-goose-die1'),
+      die2:root.querySelector('#game-of-the-goose-die2'),
+      total:root.querySelector('#game-of-the-goose-total'),
+      rules:root.querySelector('#game-of-the-goose-rules')
+    };
+    this.board=makeBoardCanvas(DPR);
+    this.paintCells();
+    this.resetTable();
+    this.wire();
+    this.fitCanvas();
+    this.loop();
+    this.beginGame();
+  }
+  /* ----- housekeeping (clause 3) ----- */
+  listen(t,e,fn,o){if(!t)return;t.addEventListener(e,fn,o);this._listeners.push(()=>t.removeEventListener(e,fn,o));}
+  later(fn,ms){const id=setTimeout(()=>{this._timers.delete(id);if(!this._destroyed)fn();},ms);this._timers.add(id);return id;}
+  logEvent(type,payload){this._ledger.push({seq:++this._seq,type:type,payload:payload||{}});if(this._ledger.length>400)this._ledger.splice(0,200);}
+  destroy(){
+    if(this._destroyed)return;this._destroyed=true;
+    cancelAnimationFrame(this._raf);
+    this._listeners.splice(0).forEach(off=>{try{off();}catch(e){}});
+    for(const t of this._timers)clearTimeout(t);this._timers.clear();
+    for(const tw of this._tweens)tw.dead=true;this._tweens.clear();
+    this._ledger.length=0;
+    const x=this.ctx;x.clearRect(0,0,BOARD,BOARD);
+    this.board=null;this.players=null;
+  }
+
+  /* ----- table state ----- */
+  resetTable(){
+    this.players=[
+      {name:'You',      pos:0,skip:0,slot:0,color:'#9e2f26',hi:'#d4695c',first:true},
+      {name:'The Rival',pos:0,skip:0,slot:1,color:'#2e7d6b',hi:'#5cb8a4',first:true}
+    ];
+    this.turnIdx=0;this.turnNo=0;this.phase='rolloff';this.busy=false;this.winner=null;
+    this.tokAnim=[null,null];
+    this.tokXY=[tokenPoint(0,0,52),tokenPoint(0,1,52)];
+    this.el.log.innerHTML='';
+    this.el.overlay.classList.remove('game-of-the-goose-show');
+    this.setDice(6,6);this.el.total.textContent='';
+    this._needsDraw=true;
+  }
+  current(){return this.players[this.turnIdx];}
+
+  /* ----- events ----- */
+  wire(){
+    this.listen(this.el.roll,'click',()=>this.humanRoll());
+    this.listen(this.el.restart,'click',()=>this.beginGame());
+    this.listen(this.el.again,'click',()=>this.beginGame());
+    this._onKey=(e)=>{
+      if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'))return;
+      if(e.code==='Space'||e.key===' '){e.preventDefault();this.humanRoll();}
+      else if(e.key==='r'||e.key==='R'){this.beginGame();}
+      else if(e.key==='h'||e.key==='H'){
+        const d=this.el.rules.querySelector('details');
+        if(d)d.open=!d.open;
+        this.el.rules.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'nearest'});
+      }
+    };
+    this.listen(window,'keydown',this._onKey);
+    this._onResize=()=>this.fitCanvas();
+    this.listen(window,'resize',this._onResize);
+    this.listen(document,'visibilitychange',()=>{this._needsDraw=true;});
+  }
+  fitCanvas(){
+    // internal resolution stays 960; CSS scales. DPR cap already applied at draw.
+    this._needsDraw=true;
+  }
+
+  /* ----- chronicle ----- */
+  chronicle(html){
+    const li=document.createElement('li');
+    li.innerHTML='<span class="game-of-the-goose-turnno">❧</span>'+html;
+    this.el.log.prepend(li);
+    while(this.el.log.children.length>60)this.el.log.lastChild.remove();
+  }
+  setTurn(text,color){
+    this.el.turn.textContent=text;
+    this.el.dot.style.background=color||'transparent';
+    this.el.dot.style.boxShadow=color?('0 0 10px '+color):'none';
+  }
+  setStatus(t){this.el.status.textContent=t;}
+
+  /* ----- dice (DOM) ----- */
+  static pips(v){
+    const P={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+    return P[v]||[];
+  }
+  setDice(a,b){
+    for(const [elm,v] of [[this.el.die1,a],[this.el.die2,b]]){
+      elm.innerHTML='';
+      const on=GooseExhibit.pips(v);
+      for(let i=0;i<9;i++){
+        const s=document.createElement('span');
+        if(on.includes(i))s.className='game-of-the-goose-pip';
+        elm.appendChild(s);
+      }
+    }
+  }
+  rollDiceVisual(done){
+    const faces=()=>[1+Math.floor(Math.random()*6),1+Math.floor(Math.random()*6)];
+    if(REDUCED){const f=faces();this.setDice(f[0],f[1]);done(f[0],f[1]);return;}
+    this.el.die1.classList.add('game-of-the-goose-rolling');
+    this.el.die2.classList.add('game-of-the-goose-rolling');
+    const iv=setInterval(()=>{const f=faces();this.setDice(f[0],f[1]);},80);
+    this._timers.add(iv);
+    this.later(()=>{
+      clearInterval(iv);this._timers.delete(iv);
+      this.el.die1.classList.remove('game-of-the-goose-rolling');
+      this.el.die2.classList.remove('game-of-the-goose-rolling');
+      const f=faces();this.setDice(f[0],f[1]);done(f[0],f[1]);
+    },720);
+  }
+
+  /* ----- game flow ----- */
+  beginGame(){
+    if(this._destroyed)return;
+    for(const t of [...this._timers]){clearTimeout(t);clearInterval(t);}this._timers.clear();
+    for(const tw of this._tweens)tw.dead=true;this._tweens.clear();
+    this.resetTable();
+    this.logEvent('game_begin',{});
+    this.chronicle('A new game begins. Two travellers, one spiral, sixty-three squares.');
+    this.setTurn('Casting for the lead…');this.setStatus('Each traveller casts a single die; the higher begins.');
+    this.el.roll.disabled=true;
+    this.busy=true;
+    this.later(()=>{
+      this.rollDiceVisual((a)=>{
+        const hb=a;
+        this.later(()=>{
+          this.rollDiceVisual((c)=>{
+            const rb=c;
+            this.chronicle('You cast <b>'+hb+'</b>; the Rival casts <b>'+rb+'</b>.');
+            this.logEvent('rolloff',{human:hb,rival:rb});
+            if(hb===rb){this.chronicle('A tie — the dice are cast again.');this.later(()=>this.beginGame(),900);return;}
+            this.turnIdx=hb>rb?0:1;
+            this.phase='play';this.busy=false;
+            const s=this.current();
+            this.chronicle('<b>'+s.name+'</b> '+(this.turnIdx===0?'take':'takes')+' the first cast.');
+            this.nextTurn();
+          });
+        },650);
+      });
+    },700);
+  }
+  nextTurn(){
+    if(this._destroyed||this.phase!=='play')return;
+    const p=this.current();
+    this.turnNo++;
+    this.setTurn((this.turnIdx===0?'Your cast':'The Rival\u2019s cast'),p.color);
+    if(p.skip>0){
+      p.skip--;
+      this.logEvent('rest',{player:p.name,left:p.skip});
+      this.chronicle('<b>'+p.name+'</b> rest'+(this.turnIdx===0?'':'s')+' — '+p.skip+' turn'+(p.skip===1?'':'s')+' still owed.');
+      this.setStatus(p.name+(this.turnIdx===0?' rest':' rests')+' this turn.');
+      this._needsDraw=true;
+      this.advance();
+      return;
+    }
+    if(this.turnIdx===0){
+      this.setStatus('Cast the dice when you are ready.');
+      this.el.roll.disabled=false;
+      this.busy=false;
+    }else{
+      this.setStatus('The Rival considers the board…');
+      this.el.roll.disabled=true;
+      this.busy=true;
+      // heuristic "personality": unhurried, slightly variable pacing
+      this.later(()=>this.castFor(p),1050+Math.random()*750);
+    }
+    this._needsDraw=true;
+  }
+  humanRoll(){
+    if(this._destroyed||this.busy||this.phase!=='play'||this.turnIdx!==0)return;
+    this.busy=true;this.el.roll.disabled=true;
+    this.castFor(this.current());
+  }
+  castFor(p){
+    if(this._destroyed)return;
+    this.setStatus(p.name+(this.turnIdx===0?' cast':' casts')+' the dice…');
+    this.rollDiceVisual((d1,d2)=>{
+      if(this._destroyed)return;
+      const total=d1+d2;
+      this.el.total.textContent=d1+' + '+d2+' = '+total;
+      this.logEvent('cast',{player:p.name,d1:d1,d2:d2});
+      this.chronicle('<b>'+p.name+'</b> cast'+(this.turnIdx===0?'':'s')+' <b>'+d1+'</b> and <b>'+d2+'</b> — '+total+'.');
+      let res;
+      try{res=resolveCast(p.pos,d1,d2,p.first);}
+      catch(err){this.chronicle('The dice scatter off the table — the cast is void.');this.busy=false;this.advance();return;}
+      p.first=false;
+      // clause 7: validate the whole leg chain before anything touches the table.
+      // A leg is legal only if it starts where the previous leg ended, on 0..63.
+      const now=Date.now();
+      let expect=p.pos, chainBad=null;
+      for(const leg of res.legs){
+        if(!leg||leg.from!==expect||leg.to<0||leg.to>63){chainBad='leg chain broken at '+(leg&&leg.kind);break;}
+        expect=leg.to;
+      }
+      if(chainBad||now<this._retryAt){
+        this.chronicle('A false move is caught and set aside.');
+        this.logEvent('rejected_chain',{problem:chainBad||'rate-limited'});
+        this._retryAt=now+1500;this.busy=false;this.advance();return;
+      }
+      this.executeLegs(p,res,()=>{
+        if(res.skipTurns>0){
+          p.skip=res.skipTurns;
+          this.chronicle('<b>'+p.name+'</b> must rest '+res.skipTurns+' turn'+(res.skipTurns===1?'':'s')+'.');
+        }
+        if(res.won){this.crown(p);return;}
+        this.advance();
+      });
+    });
+  }
+  advance(){
+    if(this._destroyed||this.phase!=='play')return;
+    this.turnIdx=1-this.turnIdx;
+    this.later(()=>this.nextTurn(),REDUCED?60:560);
+  }
+  crown(p){
+    this.phase='over';this.winner=p;this.busy=false;
+    this.el.roll.disabled=true;
+    this.logEvent('win',{player:p.name});
+    this.setTurn(p.name+(this.turnIdx===0?' reach':' reaches')+' the Garden');
+    this.setStatus('');
+    this.el.winText.textContent=p.name+(this.turnIdx===0?' have':' has')+' landed on the 63rd square by an exact throw. The spiral is complete.';
+    this.chronicle('❧ <b>'+p.name+' win'+(this.turnIdx===0?'':'s')+' the game.</b>');
+    this.later(()=>{this.el.overlay.classList.add('game-of-the-goose-show');},REDUCED?0:900);
+    this._needsDraw=true;
+  }
+
+  /* ----- tween engine ----- */
+  tween(dur,update,done,ease){
+    if(REDUCED){try{update(1);}catch(e){} if(done)done(); return null;}
+    const tw={t0:performance.now(),dur:Math.max(1,dur),update:update,done:done||null,ease:ease||easeInOutCubic,dead:false};
+    this._tweens.add(tw);return tw;
+  }
+  hopTo(slot,tx,ty,dur,done){
+    const cur=this.tokXY[slot],sx=cur.x,sy=cur.y;
+    this.tween(dur||140,(t)=>{
+      cur.x=lerp(sx,tx,t);
+      cur.y=lerp(sy,ty,t)-Math.sin(Math.PI*t)*15;
+      this._needsDraw=true;
+    },done);
+  }
+  glideTo(slot,tx,ty,dur,done){
+    const cur=this.tokXY[slot],sx=cur.x,sy=cur.y;
+    const mx=(sx+tx)/2,my=Math.min(sy,ty)-230;
+    this.tween(dur||780,(t)=>{
+      const a=lerp(sx,mx,t),b=lerp(mx,tx,t);
+      const c=lerp(sy,my,t),d=lerp(my,ty,t);
+      cur.x=lerp(a,b,t);cur.y=lerp(c,d,t);
+      this._needsDraw=true;
+    },done);
+  }
+
+  /* ----- leg narration + animation ----- */
+  describeLeg(p,leg){
+    const noisy={move:1};
+    if(noisy[leg.kind])return;
+    let msg='';
+    if(leg.kind==='goose')msg='❧ A goose! <b>'+p.name+'</b> advance'+(p.slot===0?'':'s')+' again.';
+    else if(leg.kind==='goose-back')msg='❧ A goose on the backward path drives <b>'+p.name+'</b> further back.';
+    else if(leg.kind==='bounce')msg='❧ Too far — <b>'+p.name+'</b> bounce'+(p.slot===0?'':'s')+' back from the Garden.';
+    else if(leg.kind==='first-nine')msg='❧ The famous opening! Nine on the first cast — <b>'+p.name+'</b> '+(p.slot===0?'fly':'flies')+' to '+leg.to+'.';
+    else if(leg.kind==='win')msg='❧ <b>'+p.name+'</b> '+(p.slot===0?'enter':'enters')+' the Garden — square 63, by an exact throw.';
+    else{const hz=HAZARDS[leg.from];if(hz)msg='❧ <b>'+hz.name+'</b> — <b>'+p.name+'</b> '+hz.note+'.';}
+    if(msg){this.chronicle(msg);this.setStatus(msg.replace(/<[^>]+>/g,''));}
+    this.logEvent('leg',{player:p.name,kind:leg.kind,from:leg.from,to:leg.to});
+  }
+  animateLeg(p,leg,done){
+    const slot=p.slot, self=this;
+    const STEP={move:1,goose:1,bounce:1,'goose-back':1,win:1};
+    const FLY={bridge:1,maze:1,death:1,'first-nine':1};
+    const finish=()=>{if(!self._destroyed)done();};
+    if(STEP[leg.kind]){
+      if(leg.from===leg.to){ // a rest: the token bows where it stands
+        const cur=this.tokXY[slot],sy=cur.y;
+        this.tween(320,(t)=>{cur.y=sy-Math.sin(Math.PI*t)*10;this._needsDraw=true;},finish,easeOutCubic);
+        return;
+      }
+      const dir=leg.to>leg.from?1:-1;let s=leg.from;
+      const hop=()=>{
+        if(self._destroyed)return;
+        s+=dir;
+        const tp=tokenPoint(s,slot,cellGeom(clamp(s,1,63)).size);
+        self.hopTo(slot,tp.x,tp.y,120,()=>{s===leg.to?finish():hop();});
+      };
+      hop();return;
+    }
+    if(FLY[leg.kind]){
+      const tp=tokenPoint(leg.to,slot,leg.to>=1?cellGeom(clamp(leg.to,1,63)).size:52);
+      this.glideTo(slot,tp.x,tp.y,820,finish);return;
+    }
+    finish();
+  }
+  executeLegs(p,res,done){
+    const self=this;let i=0;
+    const step=()=>{
+      if(self._destroyed)return;
+      if(i>=res.legs.length){done();return;}
+      const leg=res.legs[i++];
+      self.describeLeg(p,leg);
+      self.animateLeg(p,leg,()=>{
+        const problem=validLeg(leg,p,self.turnIdx,self.players); // re-check at commit time
+        if(problem){self.logEvent('rejected_leg',{problem:problem});self.busy=false;self.advance();return;}
+        leg.forward(null,p);       // state commits after the eye has seen it
+        self._needsDraw=true;
+        self.later(step,REDUCED?0:130);
+      });
+    };
+    step();
+  }
+
+  /* ----- board painting ----- */
+  rr(x,px,py,w,h,r){
+    x.beginPath();
+    x.moveTo(px+r,py);x.arcTo(px+w,py,px+w,py+h,r);x.arcTo(px+w,py+h,px,py+h,r);
+    x.arcTo(px,py+h,px,py,r);x.arcTo(px,py,px+w,py,r);x.closePath();
+  }
+  paintCells(){
+    const x=this.board.ctx, self=this;
+    const cellPattern=x.createPattern(makePaperTile(220,'#e8cd94','rgba(146,100,48,0.14)'),'repeat');
+    const HAZ_LABEL={6:'BRIDGE',19:'INN',31:'WELL',42:'MAZE',52:'PRISON',58:'DEATH'};
+    for(let n=1;n<=63;n++){
+      const g=cellGeom(n),s=g.size;
+      x.save();x.translate(g.x,g.y);x.rotate(g.rot);
+      x.fillStyle='rgba(30,18,8,0.35)';self.rr(x,-s/2+2,-s/2+3.5,s,s,6);x.fill();
+      x.fillStyle=cellPattern;self.rr(x,-s/2,-s/2,s,s,6);x.fill();
+      // hand-tinted wash: geese verdigris, hazards madder
+      if(GOOSE_SQUARES.has(n)){x.fillStyle='rgba(46,125,107,0.13)';self.rr(x,-s/2,-s/2,s,s,6);x.fill();}
+      else if(HAZARDS[n]){x.fillStyle='rgba(158,47,38,0.13)';self.rr(x,-s/2,-s/2,s,s,6);x.fill();}
+      x.strokeStyle=INK;x.lineWidth=2.2;self.rr(x,-s/2,-s/2,s,s,6);x.stroke();
+      x.strokeStyle=INK_SOFT;x.lineWidth=0.9;self.rr(x,-s/2+4.5,-s/2+4.5,s-9,s-9,4);x.stroke();
+      // number
+      x.fillStyle=INK;x.textAlign='left';x.textBaseline='alphabetic';
+      x.font=Math.max(10,s*0.235)+'px Georgia,serif';
+      x.fillText(String(n),-s/2+6,-s/2+Math.max(13,s*0.26));
+      // icon
+      x.save();x.translate(0,s*0.10);
+      const is=s*0.60;
+      if(GOOSE_SQUARES.has(n))drawGoose(x,is,'#2e7d6b');
+      else if(n===6)drawBridge(x,is);
+      else if(n===19)drawInn(x,is);
+      else if(n===31)drawWell(x,is);
+      else if(n===42)drawMaze(x,is);
+      else if(n===52)drawPrison(x,is);
+      else if(n===58)drawDeath(x,is);
+      else{
+        // quiet ornament for plain squares: a small engraved sprig
+        x.strokeStyle='rgba(90,64,35,0.7)';x.lineWidth=1.3;
+        x.beginPath();x.moveTo(-is*0.28,0);x.quadraticCurveTo(0,-is*0.22,is*0.28,0);x.stroke();
+        x.beginPath();x.arc(0,-is*0.06,is*0.055,0,7);x.stroke();
+      }
+      x.restore();
+      if(HAZ_LABEL[n]){
+        x.fillStyle='#6e1f18';x.textAlign='center';
+        x.font='700 '+Math.max(7.5,s*0.148)+'px Georgia,serif';
+        x.fillText(HAZ_LABEL[n],0,s/2-Math.max(5,s*0.09));
+      }
+      x.restore();
+    }
+    // the threshold: where every journey starts
+    const st=posPoint(0);
+    x.save();x.strokeStyle=INK;x.lineWidth=2;x.setLineDash([5,5]);
+    x.beginPath();x.arc(st.x,st.y,26,0,7);x.stroke();x.setLineDash([]);
+    x.fillStyle=INK;x.textAlign='center';x.font='italic 13px Georgia,serif';
+    x.fillText('begin',st.x,st.y+46);x.restore();
+    // the Garden: square 63, heart of the spiral
+    x.save();x.translate(CX,CY);
+    const gr=x.createRadialGradient(0,-20,10,0,0,118);
+    gr.addColorStop(0,'#f2dda6');gr.addColorStop(1,'#d9b478');
+    x.fillStyle=gr;x.beginPath();x.arc(0,0,112,0,7);x.fill();
+    x.strokeStyle=INK;x.lineWidth=3.4;x.beginPath();x.arc(0,0,112,0,7);x.stroke();
+    x.lineWidth=1.1;x.beginPath();x.arc(0,0,103,0,7);x.stroke();
+    drawLaurel(x,0,0,88);
+    // crowned goose of the garden
+    x.save();x.translate(0,6);drawGoose(x,120,'#9e2f26');
+    x.strokeStyle='#8a6a1f';x.lineWidth=2.4;x.fillStyle='rgba(185,134,47,0.25)';
+    x.beginPath();x.moveTo(14,-58);x.lineTo(18,-70);x.lineTo(24,-60);x.lineTo(30,-72);x.lineTo(36,-60);x.lineTo(42,-70);x.lineTo(46,-58);x.closePath();x.fill();x.stroke();
+    x.restore();
+    x.fillStyle=INK;x.textAlign='center';
+    x.font='700 30px Georgia,serif';x.fillText('63',0,-72);
+    x.font='11px Georgia,serif';
+    x.fillText('T H E   G A R D E N',0,96);
+    x.restore();
+  }
+
+  /* ----- tokens & frame ----- */
+  drawToken(x,p,active){
+    const r=15;
+    x.save();x.translate(p.x,p.y);
+    x.fillStyle='rgba(20,10,4,0.45)';
+    x.beginPath();x.ellipse(3,7,r*0.95,r*0.5,0,0,7);x.fill();
+    const g=x.createRadialGradient(-r*0.35,-r*0.4,r*0.15,0,0,r*1.15);
+    g.addColorStop(0,p.hi);g.addColorStop(0.55,p.color);g.addColorStop(1,'#1c0f08');
+    x.fillStyle=g;x.beginPath();x.arc(0,0,r,0,7);x.fill();
+    x.strokeStyle='#241407';x.lineWidth=2;x.beginPath();x.arc(0,0,r,0,7);x.stroke();
+    x.strokeStyle='rgba(240,220,170,0.5)';x.lineWidth=1.2;
+    x.beginPath();x.arc(0,0,r-3.4,0,7);x.stroke();
+    x.fillStyle='rgba(255,244,214,0.85)';
+    x.beginPath();x.arc(-r*0.34,-r*0.42,r*0.20,0,7);x.fill();
+    x.restore();
+  }
+  draw(){
+    if(!this.board||this._destroyed)return;
+    const x=this.ctx;
+    x.setTransform(DPR,0,0,DPR,0,0);
+    x.clearRect(0,0,BOARD,BOARD);
+    x.drawImage(this.board.canvas,0,0,BOARD,BOARD);
+    // chiaroscuro: a breath of light follows the player whose turn it is
+    if(this.phase==='play'&&!this.winner){
+      const p=this.current(),tp=this.tokXY[p.slot];
+      const sg=x.createRadialGradient(tp.x,tp.y,8,tp.x,tp.y,150);
+      sg.addColorStop(0,'rgba(255,232,175,0.16)');sg.addColorStop(1,'rgba(255,232,175,0)');
+      x.fillStyle=sg;x.fillRect(tp.x-150,tp.y-150,300,300);
+    }
+    for(const p of this.players)this.drawToken(x,Object.assign({x:this.tokXY[p.slot].x,y:this.tokXY[p.slot].y},p),p.slot===this.turnIdx);
+    this._needsDraw=false;
+  }
+  loop(){
+    if(this._destroyed)return;
+    const now=performance.now();
+    if(this._tweens.size){
+      for(const tw of [...this._tweens]){
+        if(tw.dead){this._tweens.delete(tw);continue;}
+        let t=(now-tw.t0)/tw.dur;if(t>=1)t=1;
+        try{tw.update(tw.ease(t));}catch(e){}
+        if(t===1){this._tweens.delete(tw);if(tw.done){try{tw.done();}catch(e){}}}
+      }
+      this._needsDraw=true;
+    }
+    if(this._needsDraw&&!document.hidden)this.draw();
+    this._raf=requestAnimationFrame(()=>this.loop());
+  }
+}
+
+/* ================= raise the table ================= */
+function boot(){
+  root._exhibit=new GooseExhibit(root);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);
+else boot();
+})();
+</script>
+</body>
+</html>
