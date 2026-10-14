@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patolli — The Game of Macuilxochitl | The Divine Archives</title>
+<meta name="description" content="A museum exhibit of patolli, the sacred Aztec race game of beans and stones, played under the patronage of Macuilxochitl. Rules partly reconstructed — labeled throughout.">
+<style>
+/* ============ PATOLLI EXHIBIT — all selectors scoped with patolli- prefix ============ */
+#patolli-root{
+  --patolli-amate:#d9b98a; --patolli-amate-deep:#b98d5f; --patolli-parchment:#e9dcc3;
+  --patolli-cochineal:#c1121f; --patolli-cochineal-deep:#7a0c14;
+  --patolli-turquoise:#2fb3a3; --patolli-turquoise-deep:#0f5f57;
+  --patolli-obsidian:#14100d; --patolli-ink:#2a1f14; --patolli-gold:#c9a227;
+  margin:-8px; padding:30px 18px 80px; min-height:100vh; box-sizing:border-box;
+  background:
+    radial-gradient(1100px 700px at 50% -8%, rgba(122,84,44,.35) 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(900px 900px at 85% 110%, rgba(193,18,31,.10) 0%, rgba(0,0,0,0) 55%),
+    linear-gradient(180deg, #241a12 0%, #171008 55%, #0d0906 100%);
+  color:var(--patolli-parchment);
+  font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  line-height:1.55;
+}
+#patolli-root .patolli-inner{max-width:1140px;margin:0 auto;}
+#patolli-root .patolli-header{text-align:center;margin:0 0 6px;}
+#patolli-root .patolli-kicker{letter-spacing:.42em;text-transform:uppercase;font-size:12px;color:var(--patolli-gold);margin:0 0 10px;}
+#patolli-root .patolli-title{font-size:clamp(38px,6vw,64px);margin:0;letter-spacing:.14em;color:var(--patolli-amate);text-shadow:0 3px 18px rgba(0,0,0,.8), 0 0 60px rgba(201,162,39,.18);font-weight:600;}
+#patolli-root .patolli-subtitle{font-style:italic;color:#cbb894;margin:8px 0 0;font-size:17px;}
+/* reconstruction banner */
+#patolli-root .patolli-recon{border:2px solid var(--patolli-cochineal);border-radius:10px;background:rgba(193,18,31,.10);padding:14px 20px;margin:20px auto 28px;max-width:920px;box-shadow:0 0 0 1px rgba(0,0,0,.5),0 8px 30px rgba(0,0,0,.5);}
+#patolli-root .patolli-recon-title{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.18em;color:#ff9d8a;font-size:14px;margin:0 0 8px;text-transform:uppercase;}
+#patolli-root .patolli-recontext{margin:7px 0;font-size:15px;color:#f0e2c4;}
+#patolli-root .patolli-reconstrong{color:#ffd9a8;}
+/* layout */
+#patolli-root .patolli-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.85fr);gap:28px;align-items:start;}
+@media (max-width:920px){#patolli-root .patolli-layout{grid-template-columns:1fr;}}
+/* board scene */
+#patolli-root .patolli-scene{position:relative;perspective:1600px;padding:30px 12px 10px;}
+#patolli-root .patolli-mat{position:absolute;inset:0;border-radius:18px;background-color:#8a6844;background-size:340px 340px;box-shadow:inset 0 0 130px rgba(0,0,0,.78),0 18px 60px rgba(0,0,0,.6);border:1px solid rgba(0,0,0,.6);}
+#patolli-root .patolli-board3d{position:relative;width:100%;max-width:600px;margin:0 auto;aspect-ratio:1/1;transform:rotateX(50deg);transform-style:preserve-3d;}
+#patolli-root .patolli-boardlight{position:absolute;inset:0;pointer-events:none;transform:translateZ(3px);background:linear-gradient(135deg,rgba(255,238,200,.17) 0%,rgba(255,238,200,0) 55%);border-radius:6px;}
+#patolli-root .patolli-cell{position:absolute;width:7.142857%;height:7.142857%;box-sizing:border-box;border-radius:12%;background-image:var(--patolli-plaster),linear-gradient(160deg,rgba(255,246,220,.10),rgba(60,30,10,.14));background-size:120px 120px,cover;border:1px solid rgba(122,12,20,.55);box-shadow:inset 0 2px 3px rgba(255,250,230,.35),inset 0 -3px 6px rgba(70,40,15,.35),0 1px 2px rgba(0,0,0,.5);}
+#patolli-root .patolli-cell.patolli-safe{background-image:var(--patolli-plaster),linear-gradient(160deg,rgba(47,179,163,.38),rgba(15,95,87,.32));border-color:var(--patolli-turquoise-deep);}
+#patolli-root .patolli-cell.patolli-entry::after{content:"";position:absolute;left:50%;top:50%;width:26%;height:26%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8d7c,var(--patolli-cochineal) 65%,var(--patolli-cochineal-deep));box-shadow:0 0 9px rgba(193,18,31,.85);}
+#patolli-root .patolli-tri{position:absolute;left:14%;top:14%;width:72%;height:72%;opacity:.92;}
+#patolli-root .patolli-boardcap{text-align:center;font-size:13.5px;color:#b89b6d;font-style:italic;margin:16px 8px 0;}
+/* pieces */
+#patolli-root .patolli-piecelayer{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none;}
+#patolli-root .patolli-piece{position:absolute;width:7.142857%;aspect-ratio:1/1;pointer-events:auto;transition:left .26s cubic-bezier(.55,.06,.35,1),top .26s cubic-bezier(.55,.06,.35,1);}
+#patolli-root .patolli-piece::before{content:"";position:absolute;left:14%;right:14%;top:14%;bottom:14%;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),rgba(0,0,0,0) 72%);transform:translateZ(2px);}
+#patolli-root .patolli-disc{position:absolute;left:13%;right:13%;top:13%;bottom:13%;border-radius:50%;transform:translateZ(16px);border:2px solid rgba(0,0,0,.4);}
+#patolli-root .patolli-disc.patolli-you{background:radial-gradient(circle at 34% 28%,#b8f4e9 0%,var(--patolli-turquoise) 42%,#147a6f 72%,#07332d 100%);box-shadow:0 4px 10px rgba(0,0,0,.6),inset 0 -4px 8px rgba(0,0,0,.45),inset 0 3px 6px rgba(255,255,255,.35);}
+#patolli-root .patolli-disc.patolli-rival{background:radial-gradient(circle at 34% 28%,#ffa194 0%,var(--patolli-cochineal) 42%,#8a0e16 72%,#42060b 100%);box-shadow:0 4px 10px rgba(0,0,0,.6),inset 0 -4px 8px rgba(0,0,0,.45),inset 0 3px 6px rgba(255,255,255,.3);}
+#patolli-root .patolli-disc::after{content:"";position:absolute;left:24%;top:15%;width:22%;height:15%;border-radius:50%;background:rgba(255,255,255,.72);transform:rotate(-24deg);}
+#patolli-root .patolli-disc.patolli-movable{cursor:pointer;animation:patolli-pulse 1.5s ease-in-out infinite;}
+@keyframes patolli-pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,162,39,0),0 4px 10px rgba(0,0,0,.6);}50%{box-shadow:0 0 0 6px rgba(201,162,39,.55),0 4px 10px rgba(0,0,0,.6);}}
+#patolli-root .patolli-pip{position:absolute;right:0;top:0;min-width:1.5em;height:1.5em;border-radius:1em;background:var(--patolli-gold);color:#241a12;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 .3em;transform:translateZ(26px);box-shadow:0 2px 5px rgba(0,0,0,.6);}
+/* side panel */
+#patolli-root .patolli-side{display:flex;flex-direction:column;gap:16px;min-width:0;}
+#patolli-root .patolli-card{background:linear-gradient(170deg,rgba(58,42,28,.93),rgba(30,21,13,.95));border:1px solid rgba(201,162,39,.28);border-radius:12px;padding:16px 18px;box-shadow:0 10px 34px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,240,210,.08);}
+#patolli-root .patolli-cardtitle{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--patolli-gold);margin:0 0 10px;font-weight:600;}
+#patolli-root .patolli-tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid currentColor;border-radius:20px;padding:2px 9px;vertical-align:middle;white-space:nowrap;}
+#patolli-root .patolli-tag.patolli-red{color:#ff9d8a;}
+#patolli-root .patolli-turn{display:flex;align-items:center;gap:12px;font-size:19px;}
+#patolli-root .patolli-turndot{width:18px;height:18px;border-radius:50%;flex:none;}
+#patolli-root .patolli-turndot.patolli-you{background:var(--patolli-turquoise);box-shadow:0 0 14px var(--patolli-turquoise);}
+#patolli-root .patolli-turndot.patolli-rival{background:var(--patolli-cochineal);box-shadow:0 0 14px var(--patolli-cochineal);}
+#patolli-root .patolli-beans{display:flex;gap:12px;justify-content:center;margin:8px 0 10px;min-height:76px;align-items:center;}
+#patolli-root .patolli-bean{position:relative;width:44px;height:58px;flex:none;border-radius:46% 54% 52% 48%/60% 62% 38% 40%;background:radial-gradient(circle at 34% 26%,#5a4030 0%,#33241a 48%,#150e09 100%);border:1px solid #000;box-shadow:inset 0 3px 6px rgba(255,220,170,.22),inset 0 -5px 9px rgba(0,0,0,.6),0 5px 12px rgba(0,0,0,.55);}
+#patolli-root .patolli-bean.patolli-marked::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:16px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff8e6,#e8d5a8 70%,#b89b5e);box-shadow:0 0 8px rgba(255,248,230,.75);}
+#patolli-root .patolli-result{min-height:28px;text-align:center;font-size:16px;color:#ffe1a8;margin:2px 0 8px;}
+#patolli-root .patolli-btn{font-family:inherit;font-size:16px;letter-spacing:.05em;padding:11px 24px;border-radius:9px;border:1px solid #5e0a10;background:linear-gradient(180deg,#d21f2c,#8f1019);color:#ffe9c9;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.25);transition:transform .15s ease,box-shadow .15s ease;}
+#patolli-root .patolli-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.55),0 0 18px rgba(193,18,31,.45);}
+#patolli-root .patolli-btn:disabled{opacity:.42;cursor:not-allowed;transform:none;box-shadow:0 4px 14px rgba(0,0,0,.5);}
+#patolli-root .patolli-btn.patolli-ghost{background:linear-gradient(180deg,rgba(120,90,55,.35),rgba(70,50,30,.35));border-color:rgba(201,162,39,.45);}
+#patolli-root .patolli-btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+#patolli-root .patolli-btn:focus-visible,#patolli-root .patolli-move:focus-visible{outline:3px solid var(--patolli-gold);outline-offset:2px;}
+#patolli-root .patolli-movelist{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+#patolli-root .patolli-move{text-align:left;font-family:inherit;font-size:14.5px;padding:9px 12px;border-radius:8px;background:rgba(47,179,163,.10);border:1px solid rgba(47,179,163,.5);color:#eaf7f4;cursor:pointer;transition:background .15s ease;}
+#patolli-root .patolli-move:hover{background:rgba(47,179,163,.24);}
+#patolli-root .patolli-movetag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;border-radius:20px;padding:1px 8px;margin-left:8px;opacity:.85;}
+#patolli-root .patolli-hint{font-size:13.5px;color:#b89b6d;font-style:italic;margin:10px 0 0;}
+#patolli-root .patolli-kbd{display:inline-block;background:rgba(0,0,0,.5);border:1px solid rgba(201,162,39,.4);border-radius:5px;padding:1px 7px;color:var(--patolli-amate);font-size:12px;font-style:normal;}
+/* stakes + trays */
+#patolli-root .patolli-stakerow{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:15px;}
+#patolli-root .patolli-stakename{width:118px;flex:none;color:var(--patolli-amate);}
+#patolli-root .patolli-beandots{display:flex;gap:4px;flex-wrap:wrap;}
+#patolli-root .patolli-beandot{width:11px;height:14px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 30%,#e8c98f,#a37c3e 70%,#6e5228);box-shadow:0 1px 2px rgba(0,0,0,.6);}
+#patolli-root .patolli-stakenum{color:#8f744f;font-size:13px;}
+#patolli-root .patolli-trays{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+#patolli-root .patolli-tray{background:rgba(0,0,0,.32);border:1px dashed rgba(201,162,39,.35);border-radius:9px;padding:8px 10px;min-height:66px;}
+#patolli-root .patolli-traytitle{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#a8895c;margin:0 0 6px;font-weight:600;}
+#patolli-root .patolli-traydiscs{display:flex;gap:6px;flex-wrap:wrap;}
+#patolli-root .patolli-minidisc{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.5);box-shadow:0 2px 5px rgba(0,0,0,.6),inset 0 2px 3px rgba(255,255,255,.3);position:relative;}
+#patolli-root .patolli-minidisc.patolli-you{background:radial-gradient(circle at 35% 30%,#7fe0d1,var(--patolli-turquoise) 55%,#0a443d);}
+#patolli-root .patolli-minidisc.patolli-rival{background:radial-gradient(circle at 35% 30%,#ff8d7c,var(--patolli-cochineal) 55%,#4d070c);}
+#patolli-root .patolli-minidisc.patolli-movable{cursor:pointer;animation:patolli-pulse 1.5s ease-in-out infinite;}
+#patolli-root .patolli-minidisc .patolli-pip{font-size:9px;min-width:1.4em;height:1.4em;right:-3px;top:-5px;}
+#patolli-root .patolli-empty{font-size:12.5px;color:#7d6547;font-style:italic;}
+/* log */
+#patolli-root .patolli-log{max-height:190px;overflow-y:auto;font-size:14px;display:flex;flex-direction:column;gap:6px;padding-right:4px;}
+#patolli-root .patolli-logentry{border-left:3px solid rgba(201,162,39,.4);padding:2px 0 2px 10px;color:#d9c8a4;}
+#patolli-root .patolli-logentry.patolli-you{border-color:var(--patolli-turquoise);}
+#patolli-root .patolli-logentry.patolli-rival{border-color:var(--patolli-cochineal);}
+#patolli-root .patolli-logentry.patolli-fate{border-color:var(--patolli-gold);color:#ffe1a8;font-style:italic;}
+/* victory */
+#patolli-root .patolli-victory{border:2px solid var(--patolli-gold);background:rgba(201,162,39,.12);border-radius:10px;padding:14px 16px;text-align:center;font-size:18px;color:#ffe1a8;}
+/* rules */
+#patolli-root .patolli-rules{margin:36px auto 0;max-width:920px;background:linear-gradient(170deg,rgba(52,38,24,.94),rgba(26,18,11,.96));border:1px solid rgba(201,162,39,.35);border-radius:12px;padding:4px 24px 18px;box-shadow:0 10px 34px rgba(0,0,0,.5);}
+#patolli-root .patolli-rulessummary{cursor:pointer;font-size:20px;letter-spacing:.05em;color:var(--patolli-amate);padding:14px 0;list-style:none;font-weight:600;}
+#patolli-root .patolli-rulessummary::-webkit-details-marker{display:none;}
+#patolli-root .patolli-rulessummary::before{content:"+  ";color:var(--patolli-gold);}
+#patolli-root .patolli-rules[open] .patolli-rulessummary::before{content:"–  ";}
+#patolli-root .patolli-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media (max-width:700px){#patolli-root .patolli-cols{grid-template-columns:1fr;}}
+#patolli-root .patolli-attested{border:1px solid rgba(47,179,163,.45);border-radius:9px;padding:12px 18px;background:rgba(47,179,163,.06);}
+#patolli-root .patolli-reconstructed{border:1px solid rgba(193,18,31,.55);border-radius:9px;padding:12px 18px;background:rgba(193,18,31,.07);}
+#patolli-root .patolli-coltitle{margin:4px 0 8px;font-size:14px;letter-spacing:.22em;text-transform:uppercase;}
+#patolli-root .patolli-coltitle.patolli-teal{color:#8fe3d6;}
+#patolli-root .patolli-coltitle.patolli-coral{color:#ff9d8a;}
+#patolli-root .patolli-list{margin:8px 0;padding-left:20px;font-size:14.5px;color:#e2d3ae;}
+#patolli-root .patolli-listitem{margin:7px 0;}
+#patolli-root .patolli-howto{margin-top:18px;}
+#patolli-root .patolli-howtotitle{color:var(--patolli-gold);font-size:14px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 6px;}
+#patolli-root .patolli-reverent{margin-top:18px;border-top:1px solid rgba(201,162,39,.3);padding-top:16px;font-style:italic;color:#d9bd85;font-size:15.5px;}
+#patolli-root .patolli-footer{max-width:920px;margin:38px auto 0;text-align:center;color:#8f744f;font-size:13.5px;}
+#patolli-root .patolli-foottext{margin:7px 0;}
+@media (prefers-reduced-motion:reduce){
+  #patolli-root .patolli-disc.patolli-movable,#patolli-root .patolli-minidisc.patolli-movable{animation:none;}
+  #patolli-root .patolli-piece{transition:none;}
+  #patolli-root .patolli-btn,#patolli-root .patolli-move{transition:none;}
+}
+</style>
+</head>
+<body>
+<div id="patolli-root">
+  <div class="patolli-inner">
+    <header class="patolli-header">
+      <p class="patolli-kicker">The Divine Archives &middot; Mesoamerica</p>
+      <h1 class="patolli-title">PATOLLI</h1>
+      <p class="patolli-subtitle">The sacred race-game of beans and stones, played under the eyes of Macuilxochitl, Five Flower, patron of games</p>
+    </header>
+
+    <div class="patolli-recon" role="note" aria-label="Reconstruction notice">
+      <p class="patolli-recon-title"><span aria-hidden="true">&#9888;</span> Reconstructed rules &mdash; read before playing</p>
+      <p class="patolli-recontext"><strong class="patolli-reconstrong">No complete set of patolli rules survives the conquest.</strong> The cross-shaped board on a woven mat, the five one-side-marked beans, the red and blue stones, the gambling rites, and the patronage of <strong class="patolli-reconstrong">Macuilxochitl</strong> are attested in codices and Spanish chronicles.</p>
+      <p class="patolli-recontext">The <strong class="patolli-reconstrong">52-square circuit</strong>, the entries, the captures, the safe houses, the &ldquo;ten&rdquo; throw, and the tribute in counters are <strong class="patolli-reconstrong">modern scholarly reconstructions</strong> &mdash; honest best guesses, not the original game. Play this as an homage, never as a recovered original.</p>
+    </div>
+
+    <main class="patolli-layout">
+      <section class="patolli-boardzone" aria-label="Patolli board">
+        <div class="patolli-scene">
+          <div class="patolli-mat" id="patolli-mat"></div>
+          <div class="patolli-board3d" id="patolli-board3d">
+            <div class="patolli-boardlight"></div>
+            <div class="patolli-piecelayer" id="patolli-piecelayer"></div>
+          </div>
+        </div>
+        <p class="patolli-boardcap">A cross of 52 houses on a woven mat, after the board painted in the Codex Borgia. The triangular marks are attested; reading them as &ldquo;safe&rdquo; houses is reconstructed.</p>
+      </section>
+
+      <aside class="patolli-side">
+        <div class="patolli-card">
+          <h2 class="patolli-cardtitle">The Cast</h2>
+          <div class="patolli-turn"><span class="patolli-turndot patolli-you" id="patolli-turndot"></span><span id="patolli-turntext">Your cast &mdash; the beans await your hand.</span></div>
+          <div class="patolli-beans" id="patolli-beans" aria-hidden="true"></div>
+          <p class="patolli-result" id="patolli-result" aria-live="polite"></p>
+          <div class="patolli-btnrow">
+            <button class="patolli-btn" id="patolli-throw" type="button">Cast the beans</button>
+          </div>
+          <div class="patolli-movelist" id="patolli-movelist"></div>
+          <p class="patolli-hint" id="patolli-hint"></p>
+        </div>
+
+        <div class="patolli-card">
+          <h2 class="patolli-cardtitle">Stakes &amp; Tribute <span class="patolli-tag patolli-red">reconstructed</span></h2>
+          <div id="patolli-stakes"></div>
+          <div class="patolli-trays">
+            <div class="patolli-tray"><h3 class="patolli-traytitle">Your stones &mdash; at rest</h3><div class="patolli-traydiscs" id="patolli-rest-you"></div></div>
+            <div class="patolli-tray"><h3 class="patolli-traytitle">Rival stones &mdash; at rest</h3><div class="patolli-traydiscs" id="patolli-rest-rival"></div></div>
+            <div class="patolli-tray"><h3 class="patolli-traytitle">Your stones &mdash; borne off</h3><div class="patolli-traydiscs" id="patolli-off-you"></div></div>
+            <div class="patolli-tray"><h3 class="patolli-traytitle">Rival stones &mdash; borne off</h3><div class="patolli-traydiscs" id="patolli-off-rival"></div></div>
+          </div>
+          <div class="patolli-btnrow" style="margin-top:14px;">
+            <button class="patolli-btn patolli-ghost" id="patolli-undo" type="button">Undo turn</button>
+            <button class="patolli-btn patolli-ghost" id="patolli-restart" type="button">Restart</button>
+          </div>
+        </div>
+
+        <div class="patolli-card">
+          <h2 class="patolli-cardtitle">Record of the Game</h2>
+          <div class="patolli-log" id="patolli-log" aria-live="polite"></div>
+        </div>
+
+        <div class="patolli-card patolli-victory" id="patolli-victory" hidden></div>
+      </aside>
+    </main>
+
+    <details class="patolli-rules">
+      <summary class="patolli-rulessummary">The rules &mdash; what is attested, what is reconstructed</summary>
+      <div class="patolli-cols">
+        <div class="patolli-attested">
+          <h3 class="patolli-coltitle patolli-teal">Attested</h3>
+          <ul class="patolli-list">
+            <li class="patolli-listitem">A cross-shaped track painted on a woven reed mat &mdash; described by Sahag&uacute;n and Dur&aacute;n, and painted in the Codex Borgia.</li>
+            <li class="patolli-listitem">Dice of beans &mdash; commonly five &mdash; each marked on one side with a drilled hole showing the bean&rsquo;s pale heart. Chroniclers mention anywhere from three to ten.</li>
+            <li class="patolli-listitem">Twelve small stone pieces, six red and six blue, divided between two players (Dur&aacute;n).</li>
+            <li class="patolli-listitem">High gambling: cloaks, gold beads, turquoises, precious stones. Players roamed with their rolled mats under their arms, seeking opponents (Dur&aacute;n, Sahag&uacute;n).</li>
+            <li class="patolli-listitem">Played under <strong>Macuilxochitl</strong>, &ldquo;Five Flower,&rdquo; god of games &mdash; invoked by the players, his favor courted, gaming gear kept on shrines.</li>
+            <li class="patolli-listitem">After the conquest the Spanish suppressed the game as idolatrous gambling; its gear was burned. <strong>No complete rule set survives.</strong></li>
+          </ul>
+        </div>
+        <div class="patolli-reconstructed">
+          <h3 class="patolli-coltitle patolli-coral">Reconstructed</h3>
+          <ul class="patolli-list">
+            <li class="patolli-listitem">A <strong>52-square circuit</strong> &mdash; the count echoes the 52-year Calendar Round. R.&nbsp;C.&nbsp;Bell&rsquo;s 1960 reconstruction used 60 instead. The true count is lost.</li>
+            <li class="patolli-listitem">Six stones per side on one shared loop, entering at opposite houses.</li>
+            <li class="patolli-listitem">A cast showing <strong>no marked faces counts ten</strong> and grants another cast.</li>
+            <li class="patolli-listitem"><strong>Exact count</strong> to bear a stone off; landing on a rival&rsquo;s stone captures it back to rest.</li>
+            <li class="patolli-listitem">The four triangular-marked houses at the arm tips are <strong>safe</strong> &mdash; the marks are attested, their meaning is our guess.</li>
+            <li class="patolli-listitem">Entry and capture <strong>tributes</strong> paid in bean counters to the bowl and the captor.</li>
+            <li class="patolli-listitem">The rival is a heuristic opponent; the pacing and presentation are modern.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="patolli-howto">
+        <h3 class="patolli-howtotitle">How a turn works in this exhibit</h3>
+        <ol class="patolli-list">
+          <li class="patolli-listitem"><strong>Cast</strong> the five beans &mdash; marked faces count 1&ndash;5. No marked faces counts <strong>ten</strong>, and you cast again.</li>
+          <li class="patolli-listitem"><strong>Move</strong> one stone forward that many houses. A stone entering the board runs straight on.</li>
+          <li class="patolli-listitem"><strong>Capture:</strong> landing on a rival&rsquo;s stone (outside a marked house) sends it back to rest, and a counter changes hands.</li>
+          <li class="patolli-listitem"><strong>Bear off</strong> with an exact count. First to bear off all six stones takes the offering bowl.</li>
+        </ol>
+      </div>
+      <p class="patolli-reverent">For its players, patolli was not a pastime but a rite of chance. Every cast was made under the eyes of Macuilxochitl, Five Flower &mdash; patron of games, music, and dance &mdash; and the stakes were laid the way offerings are laid. Loss was borne with gravity, not shrugged off. This exhibit keeps that gravity: there are no jackpots here, only stones, beans, and the god&rsquo;s attention. Play it the way they did &mdash; with respect.</p>
+    </details>
+
+    <footer class="patolli-footer">
+      <p class="patolli-foottext">An homage built by The Divine Archives. The board&rsquo;s cross form, the beans, the stones, and the rites are attested; the circuit, the penalties, and the tribute are reconstructed &mdash; see the notice above.</p>
+      <p class="patolli-foottext">No complete rules survive; nothing here claims to be the original game.</p>
+    </footer>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+/* =====================================================================
+   PATOLLI — a museum homage. Vanilla ES6, zero external requests.
+   Honesty contract: everything not attested in codices/chronicles is
+   labeled RECONSTRUCTED in the banner, the rules panel, and the log.
+   ===================================================================== */
+var reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+/* Mobile texture budget: canvases are painted at fixed low resolution —
+   effectively a 1.0 DPR cap; no render loop, no WebGL context to lose. */
+var TEXCAP = 1;
+
+var CELLS = [
+[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],
+[1,7],
+[1,6],[1,5],[1,4],[1,3],[1,2],[1,1],
+[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],
+[7,0],
+[6,0],[5,0],[4,0],[3,0],[2,0],[1,0],
+[1,-1],[1,-2],[1,-3],[1,-4],[1,-5],[1,-6],
+[0,-6],
+[0,-5],[0,-4],[0,-3],[0,-2],[0,-1],[0,0],
+[-1,0],[-2,0],[-3,0],[-4,0],[-5,0],[-6,0],
+[-6,1],
+[-5,1],[-4,1],[-3,1],[-2,1],[-1,1]
+];
+var SAFE = {7:true, 20:true, 33:true, 46:true}; /* reconstructed: arm-tip marked houses */
+var ENTRY = {you:0, rival:26};                  /* reconstructed: opposite entries */
+var NAMES = {you:'You', rival:'The rival'};
+function other(side){ return side==='you' ? 'rival' : 'you'; }
+
+/* ---------- module state ---------- */
+var S = null, history = [], LOG = [];
+var EPOCH = 0;              /* guards async chains across restart/destroy */
+var timers = new Set();
+var ac = null;              /* AbortController for every listener */
+var TEX = {weave:null, plaster:null};
+var beanEls = [];
+var pieceEls = {you:[], rival:[]};
+var boardEl = null, layerEl = null;
+
+function freshState(){
+  var st = {turn:'you', phase:'throw', lastThrow:null, moves:[], over:false, winner:null,
+            turnDirty:false, turnNo:1, destroyed:false,
+            stakes:{you:12, rival:12, pot:0},
+            pieces:{you:[], rival:[]}};
+  for(var i=0;i<6;i++){ st.pieces.you.push({p:-1}); st.pieces.rival.push({p:-1}); }
+  return st;
+}
+/* ---------- procedural canvas textures (painted once, no external art) ---------- */
+function canvas2d(w,h){ var c=document.createElement('canvas'); c.width=w; c.height=h; return [c, c.getContext('2d')]; }
+function paintWeave(){
+  var t=canvas2d(384,384), c=t[0], g=t[1], i, x, y;
+  g.fillStyle='#8f6c42'; g.fillRect(0,0,384,384);
+  for(y=0;y<384;y+=7){ g.fillStyle='rgba(60,40,20,'+(0.05+0.06*Math.random()).toFixed(3)+')'; g.fillRect(0,y,384,3); }
+  for(y=3;y<384;y+=14){ g.fillStyle='rgba(255,225,170,'+(0.04+0.05*Math.random()).toFixed(3)+')'; g.fillRect(0,y,384,2); }
+  for(x=0;x<384;x+=7){ g.fillStyle='rgba(50,32,16,'+(0.05+0.05*Math.random()).toFixed(3)+')'; g.fillRect(x,0,3,384); }
+  for(i=0;i<2400;i++){
+    g.fillStyle = Math.random()<0.5
+      ? 'rgba(30,18,8,'+(0.05+Math.random()*0.08).toFixed(3)+')'
+      : 'rgba(235,200,140,'+(0.05+Math.random()*0.08).toFixed(3)+')';
+    g.fillRect(Math.random()*384, Math.random()*384, 1.6, 1.6);
+  }
+  return c.toDataURL('image/png');
+}
+function paintPlaster(){
+  var t=canvas2d(192,192), c=t[0], g=t[1], i;
+  g.fillStyle='#e6d6b0'; g.fillRect(0,0,192,192);
+  for(i=0;i<26;i++){
+    var r=12+Math.random()*36, px=Math.random()*192, py=Math.random()*192;
+    var gr=g.createRadialGradient(px,py,0,px,py,r);
+    gr.addColorStop(0,'rgba(150,110,60,0.07)'); gr.addColorStop(1,'rgba(150,110,60,0)');
+    g.fillStyle=gr; g.fillRect(px-r,py-r,r*2,r*2);
+  }
+  for(i=0;i<900;i++){ g.fillStyle='rgba(90,60,30,'+(0.04+Math.random()*0.06).toFixed(3)+')'; g.fillRect(Math.random()*192,Math.random()*192,1.3,1.3); }
+  g.strokeStyle='rgba(120,85,45,0.10)';
+  for(i=0;i<40;i++){ g.beginPath(); var sx=Math.random()*192, sy=Math.random()*192; g.moveTo(sx,sy); g.lineTo(sx+8-Math.random()*16, sy+8-Math.random()*16); g.stroke(); }
+  return c.toDataURL('image/png');
+}
+
+/* ---------- board construction ---------- */
+function cellPos(idx){ var x=CELLS[idx][0], y=CELLS[idx][1]; return {l:(x+6)/14*100, t:(7-y)/14*100}; }
+function buildBoard(){
+  boardEl=document.getElementById('patolli-board3d');
+  layerEl=document.getElementById('patolli-piecelayer');
+  for(var i=0;i<52;i++){
+    var p=cellPos(i), d=document.createElement('div');
+    d.className='patolli-cell'+(SAFE[i]?' patolli-safe':'')+((i===ENTRY.you||i===ENTRY.rival)?' patolli-entry':'');
+    d.style.left=p.l+'%'; d.style.top=p.t+'%';
+    d.setAttribute('data-idx', i);
+    if(SAFE[i]) d.innerHTML='<svg class="patolli-tri" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5 L17 16 L3 16 Z" fill="none" stroke="#0f5f57" stroke-width="2.2" stroke-linejoin="round"/></svg>';
+    boardEl.insertBefore(d, layerEl);
+  }
+  var tray=document.getElementById('patolli-beans'), b;
+  for(b=0;b<5;b++){ var bean=document.createElement('div'); bean.className='patolli-bean'; tray.appendChild(bean); beanEls.push(bean); }
+  TEX.weave=paintWeave(); TEX.plaster=paintPlaster();
+  document.getElementById('patolli-mat').style.backgroundImage='url("'+TEX.weave+'")';
+  boardEl.style.setProperty('--patolli-plaster','url("'+TEX.plaster+'")');
+}
+
+/* ---------- snapshots: forward() owns reverse() (Modular Framework cl.8) ---------- */
+function snap(){
+  return JSON.parse(JSON.stringify({pieces:S.pieces, stakes:S.stakes, turn:S.turn, phase:S.phase,
+    turnDirty:S.turnDirty, turnNo:S.turnNo, over:S.over, winner:S.winner, log:LOG}));
+}
+function restore(s){
+  S.pieces=s.pieces; S.stakes=s.stakes; S.turn=s.turn; S.phase=s.phase;
+  S.turnDirty=s.turnDirty; S.turnNo=s.turnNo; S.over=s.over; S.winner=s.winner;
+  S.moves=[]; S.lastThrow=null; LOG=s.log||[];
+  renderLog();
+}
+function pushHistory(){ history.push(snap()); if(history.length>60) history.shift(); }
+
+/* ---------- rules engine (standard reconstruction — see banner) ---------- */
+function resolveLanding(side, sq){
+  var foe=other(side), victims=[], i, pc, psq;
+  for(i=0;i<6;i++){
+    pc=S.pieces[foe][i];
+    if(pc.p<0||pc.p>51) continue;
+    psq=(ENTRY[foe]+pc.p)%52;
+    if(psq===sq) victims.push(i);
+  }
+  return {capture: SAFE[sq]?[]:victims, safe:!!SAFE[sq]};
+}
+function legalMoves(side, n){
+  var P=S.pieces[side], moves=[], i, pc, prog, sq, land;
+  for(i=0;i<6;i++){
+    pc=P[i];
+    if(pc.p===52) continue;
+    if(pc.p===-1){
+      prog=n; sq=(ENTRY[side]+prog)%52; land=resolveLanding(side,sq);
+      moves.push({piece:i, type:'enter', prog:prog, sq:sq, capture:land.capture, safe:land.safe});
+    }else{
+      prog=pc.p+n;
+      if(prog>52) continue; /* exact count to bear off */
+      if(prog===52){ moves.push({piece:i, type:'bear', prog:52, sq:-1, capture:[], safe:false}); continue; }
+      sq=(ENTRY[side]+prog)%52; land=resolveLanding(side,sq);
+      moves.push({piece:i, type:'move', prog:prog, sq:sq, capture:land.capture, safe:land.safe});
+    }
+  }
+  return moves;
+}
+function borneCount(side){ var n=0,i; for(i=0;i<6;i++) if(S.pieces[side][i].p===52) n++; return n; }
+function commitMove(side, mv){
+  var foe=other(side), i;
+  if(mv.type==='enter' && S.stakes[side]>0){
+    S.stakes[side]--; S.stakes.pot++;
+    addLog('fate', NAMES[side]+' laid a counter in the offering bowl to enter a stone. (reconstructed tribute)');
+  }
+  S.pieces[side][mv.piece].p=mv.prog;
+  if(mv.capture && mv.capture.length){
+    for(i=0;i<mv.capture.length;i++) S.pieces[foe][mv.capture[i]].p=-1;
+    if(S.stakes[foe]>0){ S.stakes[foe]--; S.stakes[side]++; }
+    addLog(side, NAMES[side]+' captured '+mv.capture.length+' rival stone'+(mv.capture.length>1?'s':'')+' on house '+(mv.sq+1)+' — a counter changes hands. (reconstructed)');
+  }
+  if(mv.type==='bear') addLog(side, NAMES[side]+' bore stone '+(mv.piece+1)+' off the board ('+borneCount(side)+' of 6).');
+  else if(mv.type==='enter') addLog(side, NAMES[side]+' entered stone '+(mv.piece+1)+' at house '+(mv.sq+1)+'.');
+  else addLog(side, NAMES[side]+' moved stone '+(mv.piece+1)+' to house '+(mv.sq+1)+(mv.safe?' — a marked, safe house.':'.'));
+  if(side==='you') S.turnDirty=true;
+}
+
+/* ---------- heuristic rival (phone-safe: no search tree) ---------- */
+function chooseAiMove(moves, n){
+  var side='rival', foe='you', best=null, bs=-1e9, k, mv, s, i, pc, fp, fsq, d, curSq;
+  for(k=0;k<moves.length;k++){
+    mv=moves[k]; s=Math.random()*5;
+    pc=S.pieces[side][mv.piece];
+    if(mv.capture && mv.capture.length) s+=120+25*mv.capture.length;
+    if(mv.type==='bear') s+=160;
+    if(mv.type==='enter') s+=16;
+    if(mv.safe) s+=38;
+    if(mv.capture && mv.capture.length && S.stakes[foe]>0) s+=12;
+    if(mv.type==='enter' && S.stakes[side]>0) s-=5;
+    s+=(mv.prog||0)*0.55;
+    curSq = pc.p>=0 ? (ENTRY[side]+pc.p)%52 : -1;
+    if(mv.sq>=0 && !mv.safe){
+      for(i=0;i<6;i++){
+        fp=S.pieces[foe][i];
+        if(fp.p<0||fp.p>51) continue;
+        fsq=(ENTRY[foe]+fp.p)%52;
+        d=(mv.sq-fsq+52)%52; /* the cast the foe would need to land here */
+        if(d>=1 && d<=5) s-=(6-d)*9;
+        else if(d===10) s-=5;
+      }
+      if(SAFE[curSq]) s-=16; /* abandoning sanctuary */
+    }
+    if(s>bs){ bs=s; best=mv; }
+  }
+  return best;
+}
+/* ---------- turn flow ---------- */
+function delay(ms){
+  return new Promise(function(res){
+    if(!S || S.destroyed){ res(); return; }
+    var id=setTimeout(function(){ timers.delete(id); res(); }, ms);
+    timers.add(id);
+  });
+}
+function setResult(t){ var r=document.getElementById('patolli-result'); if(r) r.textContent=t; }
+
+function tumbleBeans(){
+  return new Promise(function(resolve){
+    var marked=Math.floor(Math.random()*6); /* 0..5 marked faces */
+    var order=[0,1,2,3,4].sort(function(){ return Math.random()-0.5; });
+    var markedSet={}, i;
+    for(i=0;i<marked;i++) markedSet[order[i]]=true;
+    var done=0;
+    beanEls.forEach(function(bean, bi){
+      var show=!!markedSet[bi];
+      bean.style.transform='';
+      if(reduced){
+        bean.classList.toggle('patolli-marked', show);
+        if(++done===5) resolve(marked);
+        return;
+      }
+      var rot=(Math.random()*720-360), dx=(Math.random()*70-35), dy=-(20+Math.random()*46);
+      var anim=bean.animate([
+        {transform:'translate(0px,0px) rotate(0deg)'},
+        {transform:'translate('+(dx*0.6).toFixed(1)+'px,'+dy.toFixed(1)+'px) rotate('+(rot*0.6).toFixed(1)+'deg)', offset:0.45},
+        {transform:'translate('+dx.toFixed(1)+'px,0px) rotate('+rot.toFixed(1)+'deg)'}
+      ], {duration:420+Math.random()*260, easing:'cubic-bezier(.2,.7,.3,1)'});
+      anim.onfinish=function(){
+        bean.classList.toggle('patolli-marked', show);
+        bean.style.transform='translate('+dx.toFixed(1)+'px,0px) rotate('+rot.toFixed(1)+'deg)';
+        if(++done===5) setTimeout(function(){ resolve(marked); }, 200);
+      };
+    });
+  });
+}
+
+async function doThrow(side){
+  if(!S || S.destroyed || S.over) return;
+  var epoch=EPOCH;
+  S.phase='anim'; renderAll();
+  setResult(side==='you' ? 'The beans are cast…' : 'The rival casts the beans…');
+  var marked=await tumbleBeans();
+  if(!S || S.destroyed || epoch!==EPOCH) return;
+  var n = marked===0 ? 10 : marked; /* reconstructed: the void counts ten */
+  S.lastThrow={marked:marked, value:n};
+  if(marked===0){
+    setResult('No marked faces — the count is TEN, and the beans grant another cast. (reconstructed)');
+    addLog('fate','A cast of nothing: counted ten, with another cast to follow. (reconstructed)');
+  }else{
+    setResult(NAMES[side]+(side==='you'?' cast':' casts')+': '+marked+' marked face'+(marked>1?'s':'')+' — move '+marked+'.');
+  }
+  var moves=legalMoves(side, n);
+  await delay(reduced?60:420);
+  if(!S || S.destroyed || epoch!==EPOCH) return;
+  if(!moves.length){
+    addLog('fate','No stone can move '+n+' — the cast is lost.');
+    setResult('No stone can move '+n+'. The cast is lost.');
+    endTurn(side); return;
+  }
+  if(side==='you'){ S.phase='move'; S.moves=moves; renderAll(); }
+  else{
+    await delay(reduced?200:650);
+    if(!S || S.destroyed || epoch!==EPOCH) return;
+    await performMove('rival', chooseAiMove(moves, n), n);
+  }
+}
+
+async function animateMove(side, mv, n){
+  if(reduced) return;
+  var el=pieceEls[side] && pieceEls[side][mv.piece];
+  if(mv.type==='bear'){
+    if(el){ el.style.transition='opacity .4s ease'; el.style.opacity='0'; }
+    await delay(380); return;
+  }
+  if(mv.type==='enter'){ await delay(220); return; }
+  if(!el) return;
+  var startP=S.pieces[side][mv.piece].p, s, sq, pos;
+  for(s=1;s<=n;s++){
+    sq=(ENTRY[side]+startP+s)%52; pos=cellPos(sq);
+    el.style.left=pos.l+'%'; el.style.top=pos.t+'%';
+    await delay(150);
+    if(!S || S.destroyed) return;
+  }
+}
+
+async function performMove(side, mv, n){
+  var epoch=EPOCH;
+  S.phase='anim'; renderAll();
+  await animateMove(side, mv, n);
+  if(!S || S.destroyed || epoch!==EPOCH) return;
+  commitMove(side, mv);
+  renderAll();
+  await delay(reduced?40:300);
+  if(!S || S.destroyed || epoch!==EPOCH) return;
+  afterMove(side, n);
+}
+
+function afterMove(side, n){
+  if(checkWin()) return;
+  if(n===10){
+    addLog('fate', NAMES[side]+' casts again, granted by the beans.');
+    S.phase='throw'; renderAll();
+    if(side==='rival') aiTurn();
+    return;
+  }
+  endTurn(side);
+}
+
+function endTurn(side){
+  if(checkWin()) return;
+  S.turn=other(side); S.phase='throw'; S.moves=[]; S.lastThrow=null; S.turnDirty=false;
+  if(S.turn==='you'){ S.turnNo++; pushHistory(); }
+  setResult(''); renderAll();
+  if(S.turn==='rival') aiTurn();
+}
+
+async function aiTurn(){
+  var epoch=EPOCH;
+  while(S && !S.destroyed && !S.over && S.turn==='rival' && epoch===EPOCH){
+    await doThrow('rival');
+  }
+}
+
+async function humanThrow(){
+  if(!S || S.destroyed || S.over || S.turn!=='you' || S.phase!=='throw') return;
+  await doThrow('you');
+}
+async function humanMove(pieceIdx){
+  if(!S || S.destroyed || S.over || S.turn!=='you' || S.phase!=='move') return;
+  var mv=null, i;
+  for(i=0;i<S.moves.length;i++) if(S.moves[i].piece===pieceIdx){ mv=S.moves[i]; break; }
+  if(!mv){ setResult('Stone '+(pieceIdx+1)+' cannot move '+(S.lastThrow?S.lastThrow.value:'')+'.'); return; }
+  await performMove('you', mv, S.lastThrow.value);
+}
+
+function checkWin(){
+  var y=borneCount('you'), r=borneCount('rival');
+  if(y===6 || r===6){
+    S.over=true; S.winner = y===6 ? 'you' : 'rival'; S.phase='over';
+    addLog('fate', NAMES[S.winner]+' has borne all six stones from the board. The offering bowl is theirs, by the grace of Macuilxochitl.');
+    renderAll(); return true;
+  }
+  return false;
+}
+
+/* ---------- rendering ---------- */
+function renderAll(){
+  if(!S || S.destroyed) return;
+  renderTurn(); renderMoves(); renderStakes(); renderTrays(); renderPieces(); renderVictory();
+}
+function renderTurn(){
+  var dot=document.getElementById('patolli-turndot'), txt=document.getElementById('patolli-turntext');
+  dot.className='patolli-turndot patolli-'+S.turn;
+  txt.textContent = S.over ? (NAMES[S.winner]+' takes the game.')
+    : (S.turn==='you' ? 'Your cast — the beans await your hand.' : 'The rival casts the beans.');
+  document.getElementById('patolli-throw').disabled=!(S.turn==='you' && S.phase==='throw' && !S.over);
+  document.getElementById('patolli-undo').disabled=!(history.length>1 && S.turnDirty && S.turn==='you' && (S.phase==='throw'||S.phase==='move') && !S.over);
+}
+function moveDesc(mv){
+  var text, tags=[];
+  if(mv.type==='enter'){ text='Stone '+(mv.piece+1)+' — enter the board at house '+(mv.sq+1); tags.push('tribute 1'); }
+  else if(mv.type==='bear'){ text='Stone '+(mv.piece+1)+' — bear off the board'; }
+  else{ text='Stone '+(mv.piece+1)+' — advance to house '+(mv.sq+1); }
+  if(mv.capture && mv.capture.length) tags.push('capture ×'+mv.capture.length);
+  if(mv.safe && mv.type!=='bear') tags.push('safe house');
+  return {text:text, tags:tags};
+}
+function renderMoves(){
+  var box=document.getElementById('patolli-movelist'), hint=document.getElementById('patolli-hint');
+  box.innerHTML='';
+  if(S.phase==='move' && S.turn==='you' && !S.over){
+    S.moves.forEach(function(mv){
+      var b=document.createElement('button'); b.className='patolli-move'; b.type='button';
+      var d=moveDesc(mv);
+      b.appendChild(document.createTextNode(d.text+' '));
+      d.tags.forEach(function(t){
+        var tg=document.createElement('span'); tg.className='patolli-movetag'; tg.textContent=t; b.appendChild(tg);
+      });
+      b.addEventListener('click', function(){ humanMove(mv.piece); });
+      box.appendChild(b);
+    });
+    hint.innerHTML='';
+    hint.appendChild(document.createTextNode('Choose a stone — tap it, tap a move below, or press '));
+    hint.appendChild(kbdEl('1')); hint.appendChild(document.createTextNode('–'));
+    hint.appendChild(kbdEl('6')); hint.appendChild(document.createTextNode('.'));
+  }else if(S.phase==='throw' && S.turn==='you' && !S.over){
+    hint.innerHTML='';
+    hint.appendChild(document.createTextNode('Cast the beans — press '));
+    hint.appendChild(kbdEl('Space')); hint.appendChild(document.createTextNode(' or the button. '));
+    hint.appendChild(kbdEl('U')); hint.appendChild(document.createTextNode(' undo turn · '));
+    hint.appendChild(kbdEl('R')); hint.appendChild(document.createTextNode(' restart.'));
+  }else if(S.turn==='rival' && !S.over){
+    hint.textContent='The rival is playing…';
+  }else if(S.over){
+    hint.textContent='The game is decided. Restart to lay a new game.';
+  }
+}
+function kbdEl(t){ var k=document.createElement('span'); k.className='patolli-kbd'; k.textContent=t; return k; }
+function renderStakes(){
+  var box=document.getElementById('patolli-stakes'); box.innerHTML='';
+  [['you','Your counters'],['rival','Rival counters'],['pot','Offering bowl']].forEach(function(row){
+    var key=row[0], n=S.stakes[key], i;
+    var div=document.createElement('div'); div.className='patolli-stakerow';
+    var nm=document.createElement('span'); nm.className='patolli-stakename'; nm.textContent=row[1];
+    var dots=document.createElement('span'); dots.className='patolli-beandots';
+    for(i=0;i<Math.min(n,14);i++){ var dt=document.createElement('span'); dt.className='patolli-beandot'; dots.appendChild(dt); }
+    var num=document.createElement('span'); num.className='patolli-stakenum'; num.textContent='× '+n;
+    div.appendChild(nm); div.appendChild(dots); div.appendChild(num); box.appendChild(div);
+  });
+}
+function trayFill(id, side, wantRest){
+  var box=document.getElementById(id); box.innerHTML='';
+  var list=[], i, pc;
+  for(i=0;i<6;i++){ pc=S.pieces[side][i]; if(wantRest ? pc.p===-1 : pc.p===52) list.push(i); }
+  if(!list.length){ var e=document.createElement('span'); e.className='patolli-empty'; e.textContent='—'; box.appendChild(e); return; }
+  list.forEach(function(pi){
+    var d=document.createElement('span'); d.className='patolli-minidisc patolli-'+side;
+    var movable = wantRest && S.phase==='move' && S.turn==='you' && side==='you' &&
+      S.moves.some(function(m){ return m.piece===pi; });
+    if(movable){
+      d.classList.add('patolli-movable');
+      var pip=document.createElement('span'); pip.className='patolli-pip'; pip.textContent=(pi+1); d.appendChild(pip);
+      d.addEventListener('click', function(){ humanMove(pi); });
+    }
+    box.appendChild(d);
+  });
+}
+function renderTrays(){
+  trayFill('patolli-rest-you','you',true); trayFill('patolli-rest-rival','rival',true);
+  trayFill('patolli-off-you','you',false); trayFill('patolli-off-rival','rival',false);
+}
+function renderPieces(){
+  layerEl.innerHTML=''; pieceEls={you:[], rival:[]};
+  ['you','rival'].forEach(function(side){
+    var occ={}, i, pc, sq;
+    for(i=0;i<6;i++){
+      pc=S.pieces[side][i];
+      if(pc.p<0||pc.p>51) continue;
+      sq=(ENTRY[side]+pc.p)%52;
+      (occ[sq]=occ[sq]||[]).push(i);
+    }
+    for(i=0;i<6;i++){
+      pc=S.pieces[side][i];
+      if(pc.p<0||pc.p>51) continue;
+      sq=(ENTRY[side]+pc.p)%52;
+      var k=occ[sq].indexOf(i), pos=cellPos(sq);
+      var w=document.createElement('div');
+      w.className='patolli-piece';
+      w.style.left='calc('+pos.l+'% + '+(k*5)+'px)';
+      w.style.top='calc('+pos.t+'% + '+(-k*5)+'px)';
+      var d=document.createElement('div');
+      d.className='patolli-disc patolli-'+side;
+      d.style.transform='translateZ('+(16+k*9)+'px)';
+      var movable = S.phase==='move' && S.turn==='you' && side==='you' &&
+        S.moves.some(function(m){ return m.piece===i; });
+      if(movable){
+        d.classList.add('patolli-movable');
+        var pip=document.createElement('span'); pip.className='patolli-pip'; pip.textContent=(i+1); d.appendChild(pip);
+        w.style.cursor='pointer';
+        w.addEventListener('click', (function(pi){ return function(){ humanMove(pi); }; })(i));
+      }
+      w.appendChild(d); layerEl.appendChild(w);
+      pieceEls[side][i]=w;
+    }
+  });
+}
+function renderVictory(){
+  var v=document.getElementById('patolli-victory');
+  if(S.over){
+    v.hidden=false;
+    v.innerHTML='';
+    var s=document.createElement('strong');
+    s.textContent=(S.winner==='you'?'You':'The rival')+(S.winner==='you'?' win':' wins')+' the game.';
+    var br=document.createElement('br'), sub=document.createElement('span');
+    sub.style.fontSize='14px';
+    sub.textContent='All six stones have completed the circuit. The offering bowl — '+S.stakes.pot+' counters laid to Macuilxochitl — goes to the victor.';
+    v.appendChild(s); v.appendChild(br); v.appendChild(sub);
+  }else{ v.hidden=true; v.innerHTML=''; }
+}
+function addLog(kind, text){
+  LOG.push({kind:kind, text:text});
+  if(LOG.length>80) LOG.shift();
+  var box=document.getElementById('patolli-log');
+  if(!box) return;
+  var e=document.createElement('div');
+  e.className='patolli-logentry patolli-'+kind;
+  e.textContent=text;
+  box.appendChild(e);
+  while(box.children.length>80) box.removeChild(box.firstChild);
+  box.scrollTop=box.scrollHeight;
+}
+function renderLog(){
+  var box=document.getElementById('patolli-log');
+  box.innerHTML='';
+  LOG.forEach(function(entry){
+    var e=document.createElement('div');
+    e.className='patolli-logentry patolli-'+entry.kind;
+    e.textContent=entry.text;
+    box.appendChild(e);
+  });
+  box.scrollTop=box.scrollHeight;
+}
+
+/* ---------- input ---------- */
+function onKey(e){
+  if(!S || S.destroyed) return;
+  var tag=document.activeElement && document.activeElement.tagName;
+  if(e.key===' ' || e.key==='Enter'){
+    if(tag==='BUTTON' || tag==='SUMMARY' || tag==='A') return;
+    e.preventDefault(); humanThrow();
+  }else if(e.key>='1' && e.key<='6'){ humanMove(parseInt(e.key,10)-1); }
+  else if(e.key==='u' || e.key==='U'){ doUndo(); }
+  else if(e.key==='r' || e.key==='R'){ newGame(); }
+}
+function doUndo(){
+  if(!S || S.destroyed || S.over || S.turn!=='you') return;
+  if(S.phase!=='throw' && S.phase!=='move') return;
+  if(!S.turnDirty || history.length<=1){ setResult('Nothing to unwind yet this turn.'); return; }
+  EPOCH++;
+  var s=history.pop();
+  restore(s);
+  beanEls.forEach(function(b){ b.classList.remove('patolli-marked'); b.style.transform=''; });
+  setResult('The turn is unwound — the stones return to where they stood.');
+  addLog('fate','The players agree to unwind the turn; the stones return.');
+  renderAll();
+}
+function newGame(){
+  if(S && S.destroyed) return;
+  EPOCH++;
+  S=freshState(); history=[]; LOG=[];
+  beanEls.forEach(function(b){ b.classList.remove('patolli-marked'); b.style.transform=''; });
+  pushHistory();
+  addLog('fate','A new game is laid on the mat. Six stones each, twelve counters each. Macuilxochitl is invoked — play with respect. (Setup reconstructed; invocation attested.)');
+  setResult('');
+  renderAll();
+}
+
+/* ---------- lifecycle ---------- */
+function init(){
+  buildBoard();
+  S=freshState();
+  ac=new AbortController();
+  var sig={signal:ac.signal};
+  document.getElementById('patolli-throw').addEventListener('click', humanThrow, sig);
+  document.getElementById('patolli-undo').addEventListener('click', doUndo, sig);
+  document.getElementById('patolli-restart').addEventListener('click', newGame, sig);
+  document.addEventListener('keydown', onKey, sig);
+  if(reduced) document.getElementById('patolli-root').classList.add('patolli-reduced');
+  pushHistory();
+  addLog('fate','The mat is unrolled: a cross of 52 houses, five beans, six stones each. (Board form attested; circuit reconstructed.)');
+  renderAll();
+}
+function destroy(){
+  EPOCH++;
+  if(S) S.destroyed=true;
+  try{ if(ac) ac.abort(); }catch(e){}
+  timers.forEach(function(id){ clearTimeout(id); });
+  timers.clear();
+  beanEls.forEach(function(b){ try{ b.getAnimations().forEach(function(a){ a.cancel(); }); }catch(e){} });
+  if(layerEl) layerEl.innerHTML='';
+  TEX.weave=null; TEX.plaster=null;
+  beanEls=[]; pieceEls={you:[], rival:[]}; history=[]; LOG=[];
+}
+
+init();
+window.PatolliExhibit={
+  destroy:destroy,
+  restart:function(){ newGame(); },
+  state:function(){ return (S && !S.destroyed) ? snap() : null; }
+};
+
+
+})();
+</script>
+</body>
+</html>
+
