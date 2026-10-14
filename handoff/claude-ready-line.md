@@ -101,6 +101,24 @@ workspace/goals/divine-archives-vr-museum/hidden_files/ (architecture, pilot,
 roadmap with Phase 2B WebGPU tier, artistry addendum, comfort/audio/benchmark
 briefs). Do not start until Carter reopens.
 
+## 11. Content Truth Policy — BINDING (Carter 2026-10-13)
+handoff/content-truth-policy.md. Present what was actually said/believed/made,
+accurately and completely, down to the letter. Not about political
+correctness — about history. No blurring, no backing off, no silent omissions.
+Philosophers' words preserved verbatim; same ethics as religions/faiths.
+Creator's expression rights stand alongside respect. Only exception: content
+that explicitly violates a religion's own tenets inside its own sacred space.
+
+## 12. Blurred symbols defect — FIX REQUIRED
+handoff/defects/blurred-symbols-rolodex.md. Gray blur splotches on the symbol
+rolodex wall — unblur or replace with real symbols; no gray blobs. Blur is
+baked into the webp sprites (not code); regenerate affected cells.
+
+## 13. Rotunda zodiac floor — REDESIGN
+handoff/rotunda-zodiac-floor-spec.md. Move the 12 sign lights from under the
+planetarium to a zodiac wheel set in the Rotunda floor. Planets above, wheel
+below.
+
 ## Staging rule
 Nothing here merges to main without Carter's explicit go-ahead. Staging area:
 the PR #58 sandbox route (protected directory outside docs/). Carter couriers
