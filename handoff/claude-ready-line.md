@@ -66,14 +66,15 @@ traditions (prototypes to be built Muse-side, then Claude reworks):
 14. Rithmomachia — medieval Europe (Christian scholastic)
 15. Makruk — Siam (Theravada Buddhist)
 
-SHIP STATUS 2026-10-13: all 15 built and verified. 8 pushed to
+SHIP STATUS 2026-10-13 21:25: ALL 15 BUILT, VERIFIED, AND PUSHED to
 staging/ready-line under handoff/exhibits/wave3/ (pachisi, mancala,
-nine-mens-morris, patolli, game-of-the-goose, go, chaturanga, liubo).
-Remaining 7 zipped at workspace/your_files/ship-review/wave3-remaining-7-games.zip
-(alquerque, fanorona, bagh-chal, yut, konane, rithmomachia, makruk) — Carter
-halted the push loop 21:06 over approval-prompt fatigue; push or courier when
-he says. Also staged: handoff/gematria.html, handoff/games-differentiation-brief.md,
-handoff/urantia-room-spec.md. All in PR #59.
+nine-mens-morris, patolli, game-of-the-goose, go, chaturanga, liubo,
+alquerque, fanorona, bagh-chal, yut, konane, rithmomachia, makruk).
+Also staged: handoff/gematria.html, handoff/games-differentiation-brief.md,
+handoff/urantia-room-spec.md, handoff/standards/ (5 build standards),
+handoff/audits/, handoff/integration/ (8 docs), handoff/research/
+(urantia report), handoff/games-handoff-brief.md, updated claude-ready-line.
+Everything in PR #59. Slate clear.
 
 ## 8. Arcade placement & form — PARKED (Carter: up in the air)
 The games are heading for a massive arcade hall (the hidden-room arcade
