@@ -147,10 +147,25 @@ phase can aggregate without migration.
 
 ---
 
-## 3. The atlas table
+## 3. The atlas table (Carter 2026-10-13: "super interactive")
 
-The central table is the room's shared evidence surface — "the facts in the
-room."
+The visitor STANDS ABOVE the table and looks down at a living map. This is
+the room's shared evidence surface — "the facts in the room" — and the
+debate control surface. Everything below must work mid-debate, whether the
+visitor is facing the AI philosopher (solo) or another visitor (social).
+
+**The map:**
+- A hand-drawn world map (same gothic/parchment direction as the grand
+  directory) spread across the table surface.
+- **Timeline scrub:** a timeline rail along the table's edge — drag/scroll in
+  EITHER direction through time. The map's markers, belief notes, and
+  philosopher flames kindle and dim as their eras enter and leave the window.
+- **Tappable everything:** every location pin, belief note, and philosopher
+  flame opens its fact card right there on the table — no navigation away,
+  no leaving the debate. Facts surface in place.
+- **Debate mode:** while a debate is live, the table shows the active
+  debate's positions and figures; pulling a source from the shelf drops its
+  passage onto the table as a citable card either side can invoke.
 
 **What it shows:**
 - **Debate view:** the active debate's positions, figures, and the
@@ -169,6 +184,17 @@ room."
 - **Honesty flags:** the era reports' flags (doubtful quotes, disputed
   dates, entanglements) appear ON the cards and stations, not in footnotes
   — per `debate-topics.md` operating notes.
+
+**Gizmos and gadgets (build what makes sense):**
+- Timeline scrub rail (both directions) with era labels that light as you pass.
+- A "compare" well: drag two figures' cards into it to see their positions
+  side by side.
+- A quote-catcher: tap any verbatim passage to pin it to the debate rail as
+  ammunition for your current turn.
+- Debate timer / turn indicator (gentle — a slowly filling ring, never a buzzer).
+- The living histogram (§2.4) rendered as candle-flames on the table's far edge.
+- Session bookmark: save the debate state (topic, side, pinned quotes) to
+  revisit — per-device in the pilot (static site, localStorage).
 
 **Interaction:** tap-first (Carter reviews on Galaxy S22), keyboard
 navigable, works at 1.0 DPR. The table is also the debate control surface:

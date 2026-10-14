@@ -136,6 +136,35 @@ handoff/rotunda-zodiac-floor-spec.md. Move the 12 sign lights from under the
 planetarium to a zodiac wheel set in the Rotunda floor. Planets above, wheel
 below.
 
+## 17. Code hallway hiss — REMOVAL ORDERED (Carter 2026-10-13)
+handoff/defects/hallway-hiss-babble.md. Remove the `babble` soundscape from
+the code hallway in docs/museum/sound.js — Carter doesn't want to hear it and
+doesn't want users hearing it. Near-silence (faint stone resonance at most);
+the absence of the hiss IS the fix.
+
+## 18. Debate Hall table — INTERACTIVE SPEC UPDATE (Carter 2026-10-13)
+handoff/debate-hall-spec.md §3 updated: the atlas table is a carved
+black-marble 3D relic the visitor walks up to (soul-flame behind it) —
+timeline scrub both directions, tappable flames/markers, fact pull-up,
+wax-tablet notes, compare well, quote-catcher, turn ring, histogram candles,
+session bookmark. Reference preview:
+handoff/previews/debate-table-3d.html (Carter-approved 2026-10-13).
+
+## 19. Grand Directory — APPROVED (Carter 2026-10-13)
+handoff/grand-directory-spec.md. Mall-map/bus-station wayfinding for the
+Rotunda: true floor plan (central spine, 9 wings alternating west/east, 76
+real rooms), "you are here" beacon, key/legend of interactive sites, journey
+plotting, wing zoom, Easter eggs as "whispers" (hinted, never revealed).
+Reference preview: handoff/previews/grand-directory-preview.html
+(Carter-approved 2026-10-13).
+
+## 20. Code-theft protection — REQUIRED (Carter 2026-10-13)
+handoff/protection-code-theft.md. Anti-reverse-engineering measures for the
+Protection Program: obfuscation pipeline, no public source maps,
+watermarking/fingerprinting, copyright headers, no client-side secrets,
+tamper-evidence. Honest baseline: client-side code can't be made truly
+unhackable — make theft expensive, detectable, legally actionable.
+
 ## Staging rule
 Nothing here merges to main without Carter's explicit go-ahead. Staging area:
 the PR #58 sandbox route (protected directory outside docs/). Carter couriers
