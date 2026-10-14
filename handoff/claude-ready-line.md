@@ -8,11 +8,17 @@ Charter being drafted. Security / legal / platform-compliance audit whose
 constraints every build below must satisfy. Recommend this runs FIRST —
 retrofitting protections into finished exhibits is expensive; building inside
 known constraints is cheap.
+NAMING & IP POLICY (binding, Carter 2026-10-13): generic names for everything
+— no trademarked names, no "X-style" references ("Pac-Man style", "Indiana
+Jones style" banned — "-style" still trades on the mark), no copyrighted
+characters/plots. Public domain and original creations are the safe ground.
+Full policy: handoff/naming-and-ip-policy.md. Enforced by the High Council
+consistency auditor on every review.
 
 ## 2. The Royal Game of Ur — feature/ur-exhibit
 - Prototype: workspace/your_files/the-royal-game-of-ur/the-royal-game-of-ur.html
 - Defect list + acceptance criteria: workspace/goals/divine-archives-games-relics-and-interactives/hidden_files/detail-run-2026-10-12.md (section 1)
-- Build method: friend's agent systems (all five approved 2026-10-13), work order in
+- Build method: the approved agent systems (all five approved 2026-10-13), work order in
   workspace/your_files/divine-archives-agent-systems-configured/agent-systems-config.md
 - Status: first build, establishes true per-exhibit cost before the rest.
 
