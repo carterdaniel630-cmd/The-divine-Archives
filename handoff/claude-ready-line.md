@@ -109,6 +109,22 @@ Philosophers' words preserved verbatim; same ethics as religions/faiths.
 Creator's expression rights stand alongside respect. Only exception: content
 that explicitly violates a religion's own tenets inside its own sacred space.
 
+## 14. Library Rescue renderer — DECIDED (Carter 2026-10-13)
+Hybrid ACCEPTED (WebGL room + 2D-composited actors), but UPSCALE it: bigger,
+more detailed, fills the screen — current build feels small and far away.
+No full-WebGL rebuild.
+
+## 15. Easter eggs — APPROVED (Carter 2026-10-13)
+One hidden Easter egg per chapter (83 chapters), ONGOING as new chapters are
+added. The Bronze Age gold-sign hunt ("EVERY TRADITION LEFT A DOOR") is the
+template. This is now a standing build program, not a one-off.
+
+## 16. Debate Hall — SOLO FIRST, social later (Carter 2026-10-13)
+Solo mode: visitor debates the AI philosopher itself — back-and-forth against
+the philosopher's actual positions, in their own words (from the research).
+Social mode (visitors debating each other as pilgrim-lights) comes with the
+Living Archive phase. Design spec in progress.
+
 ## 12. Blurred symbols defect — FIX REQUIRED
 handoff/defects/blurred-symbols-rolodex.md. Gray blur splotches on the symbol
 rolodex wall — unblur or replace with real symbols; no gray blobs. Blur is

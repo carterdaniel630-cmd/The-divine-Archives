@@ -16,6 +16,7 @@
 - Proposed position: adjacent to the ch35–ch39 revelatory-text cluster, so the visitor encounters the 19th–20th century American revelatory sequence as one walk: Golden Plates → Book of the Law → Book of Shadows → **Urantia Book** → Satanic Bible. Chronologically it sits between the Book of Shadows (1940s–50s) and the Satanic Bible (1969).
 
 **Open decision for Carter:** museum rooms correspond to chapters, and the Urantia Book has no chapter yet (83 chapters exist; none covers it). Either (a) create a new chapter (ch84) for the Urantia movement, or (b) attach the room to the nearest existing chapter. Do not invent the chapter — flag it and wait.
+**DECIDED 2026-10-13 (Carter): (a) — new chapter 84, placed in the modern section of the timeline. The Urantia Book is a modern revelatory text and sits with the modern belief systems.**
 
 **Proposed vault entry** (new, v89 — vault currently runs v01–v88):
 - Title: *The Urantia Book*
@@ -173,4 +174,4 @@ The names **"Urantia"** and **"Urantian"** and the **three-concentric-circles sy
 - [ ] All panel copy above is draft — run through the archive's editorial lens before finalizing
 - [ ] Legal review of §4 (trademark) before shipping — do not skip
 - [ ] Verify no panel asserts the book's doctrines as the archive's own; grep panels for unframed doctrinal claims
-- [ ] Open decision: chapter mapping (new ch84 vs. attach) — needs Carter
+- [x] Open decision: chapter mapping — DECIDED 2026-10-13: new ch84, modern timeline
