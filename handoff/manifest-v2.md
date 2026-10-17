@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -140,6 +140,22 @@ items as they finish, one by one. This item does not itself approve any merge.
 - **Everything adds to the one live site and the one repo.** There is no separate build. The staging branch is a workbench, not a second site.
 
 **900 Theses is still blocked on Gates A–D + the intake ruling. Item 25 does not unblock it.**
+
+## Item 26 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–25)
+
+| 26 | Carter's decision: Protection charter D1–D3 PARKED | NEW | `handoff/decisions-2026-10-17-charter-parked.md` |
+
+**This item is the controlling record for D1–D3. It supersedes Item 23 on D1, D2, and D3.**
+
+- **D1 — Make the GitHub repo private? — PARKED.** Carter: "Not worried about flipping the repo setting to private right now, so it's fine." Do NOT flip the repo to private now. Leave it public for now. Revisit later, when Carter says so.
+- **D2 — Copyright line name? — DECIDED BUT PARKED.** On the site, the copyright line reads **The Divine Archives**. The legal name, if ever registering, is **DANIEL CARTER** — first name Daniel, last name Carter.
+  - **CORRECTION:** Earlier files said "Carter Daniel." That is WRONG. The correct legal name is **Daniel Carter** (first name Daniel, last name Carter). Use Daniel Carter everywhere from now on. Do NOT use "Carter Daniel" as the legal name.
+  - Do NOT apply the copyright line yet. D2 is parked with D1 and D3 — put off to the side until Carter says to revisit.
+- **D3 — Register copyright? — DO NOT REGISTER.** US registration has a filing fee, so the loop will not register.
+- **D1, D2, and D3 are ALL PARKED / PUT OFF TO THE SIDE for now.** Carter: "We're not prepared for that." Do NOT act on D1, D2, or D3 yet. Do NOT flip the repo, do NOT apply the copyright line, do NOT register. Revisit only when Carter says so.
+- **D4 (approve the charter if up to standard) is UNCHANGED.** Carter did not address D4 in this ruling. Item 23's D4 condition still stands.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 26 does not unblock it.**
 
 ## Already in the repo — DO NOT re-send
 
