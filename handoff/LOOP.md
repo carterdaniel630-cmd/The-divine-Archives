@@ -44,8 +44,37 @@ with no memory of the last one: the repo is the memory.
 - The same item fails verification in two runs in a row. Stop, describe it in STATUS, and notify.
 - `handoff/HALT` exists.
 
+## The one merge Carter has approved (Item 21, conditional)
+`handoff/decisions-2026-10-17-claude-reply-answers.md` §3 approves merging PR #59 (`staging/ready-line` → `main`)
+**if and only if it is complete and meets the standard, including Claude's own.** A run may do this merge only
+when ALL of these hold for one exact commit (the "candidate"):
+1. **Independent review.** The run doing the review wrote none of the candidate's changes to `docs/`, `tools/` or
+   `framework/`. It reviews the whole site diff `origin/main...candidate` against `reviews/REVIEWER.md` §3–§4 and
+   writes the report to `handoff/replies/` with zero open findings and zero NEEDS CARTER items. Anything it finds
+   is fixed in a later run and then reviewed again by a different run.
+2. **Every GitHub check on the candidate is completed and green**, Lighthouse included. A cancelled or flaky check
+   is re-run and waited for; it is never assumed green.
+3. **The local checks pass**:
+   - full build order;
+   - `review-checks.js --base origin/main --build`;
+   - every verify script and test;
+   - a headless phone-size check of every changed page and game.
+4. **Nothing in the site diff needs a separate approval**: no new chapter, room, game or feature; no cleared
+   pending tag; nothing religiously sensitive.
+5. **Commits after the candidate touch only `handoff/`.** Anything else means a new candidate and a new review.
+
+Then:
+- merge by fast-forward;
+- watch the deploy finish;
+- open the changed live pages on getconexto.com to confirm;
+- update `handoff/CURRENT.md`;
+- notify Carter in plain words.
+
+If any condition fails, do not merge: say in STATUS what is still missing and keep working.
+This is the only merge any run may do. Every later merge needs a new go-ahead from Carter.
+
 ## Never, in any run
-- Merge, push to `main`, or change the live site.
+- Merge (except the single Item 21 merge above), push to `main`, or change the live site.
 - Delete files, branches or data without Carter's go-ahead (moving into `_to_delete/` is fine).
 - Publish or clear content, or add new features, games or rooms without approval.
 - Touch money, accounts, credentials, DNS, the domain or Cloudflare.
