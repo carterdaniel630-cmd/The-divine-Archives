@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -62,6 +62,19 @@ What Item 19 adds beyond Item 18: the source identification (the breakpoint TikT
 | 20 | Note for Claude — use the chief of staff skill for this pickup | NEW | `handoff/note-2026-10-17-chief-of-staff.md` |
 
 Carter's instruction: use the chief of staff skill when picking up this handoff. If the skill is available in Claude Code's environment, load and follow it. If it is not available, operate as chief of staff for this pickup: coordinate the work, keep the pickup order (finish → audit → fold → rebuild better), track what is done / in progress / blocked, surface disagreements instead of resolving silently, and report back in plain words. This note sits alongside Items 1–19 and does not change them.
+
+## Item 21 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–20)
+
+| 21 | Carter's decisions on Claude's blocked items (rename code IDs, reword Hades, conditional PR #59 merge, Claude's own standards) | NEW | `handoff/decisions-2026-10-17-claude-reply-answers.md` |
+
+**Answers to Claude's reply (`handoff/replies/2026-10-17-pickup-and-overclaim-fix.md` + `handoff/replies/STATUS.md`, "Blocked / needs Carter"). This item is the controlling record for these four decisions:**
+
+1. **RENAME code IDs — YES.** Rename the code IDs that still carry marks (`pacman`, `pong`, `minesweeper`) to generic names, as part of the Protection work. Carter accepts that this changes game URLs and saved best scores. The rename still goes ahead.
+2. **REWORD Hades — YES.** Reword in-game: Hades is NOT one of the Twelve Olympians. Do not call him an Olympian anywhere. Name the four gods instead. Do not invent a replacement title for Hades.
+3. **MERGE PR #59 to main — ONLY IF completed and to standard.** Conditional approval: merge PR #59 to main **if and only if** it is completed AND meets the standard (including Claude's own standards — item 4). If it is not completed or not to standard, do NOT merge. This is the only merge approval in Item 21. Nothing else merges on its strength.
+4. **CLAUDE'S OWN STANDARDS — ALL work held to Claude's own standards as well.** Not just Carter's bar — Claude's own standards apply to everything too. If Claude's own standards say something is not good enough, it is not good enough — fix it first.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 21 does not unblock it.**
 
 ## Already in the repo — DO NOT re-send
 
