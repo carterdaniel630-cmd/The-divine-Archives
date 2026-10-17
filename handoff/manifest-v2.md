@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -35,6 +35,12 @@
 
 **Where the addendum and an older v2 file disagree, THE ADDENDUM WINS.** In particular: the final video end tag is "The past is still speaking. Follow and share — The Divine Archives." (with the call to action) — not the plain Option 2 tag recorded in Decisions 2026-10-17 and in the older manifest line. Daily production is 3 full animations + 3 stills-with-motion (6 total). All videos go to Carter for approval before shipping to Facebook (auto-post is OFF for these videos). Storyline videos are a new kind; Anansi is the first storyline demo. The "DRAFT / v2 is NOT live" headers inside Decisions 2026-10-17 and other v2 files refer to their pre-approval state; v2 was approved and written after those headers were drafted — this manifest (LIVE) is the controlling record.
 
+## Item 17 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–16)
+
+| 17 | Addendum 2026-10-17: new format is LIVE, 5 re-tags posted | NEW | `handoff/addendum-2026-10-17-format-live.md` |
+
+**Where this addendum and an older v2 file disagree, THIS ADDENDUM WINS.** In particular: the new format IS live — Carter approved the Mithras CTA demo as the format reference on 2026-10-17. That supersedes the "new format is NOT live until Carter approves a demo" lines in v2 / Item 16. The Mithras demo itself did NOT ship — it stays in pending/demo as the format reference only. All 5 re-tags (Valhalla, Krampus, Tower of Babel, Excalibur, Baba Yaga) are POSTED to Facebook with the final end tag "The past is still speaking. Follow and share — The Divine Archives." and captions verified (post IDs in Item 17). The ship-approval flow stands: each video goes to Carter as it finishes, and ships to Facebook only after he clicks approve. Next batch of 6 (3 animations + 3 stills) + the Anansi storyline demo are still building.
+
 ## Already in the repo — DO NOT re-send
 
 Debate Hall spec + preview, Grand Directory spec + preview, Urantia room spec + research, Wave 3 games, games differentiation brief, games handoff brief, Naming & IP Policy, Content Truth Policy, blurred-symbols defect, Rotunda zodiac spec, agent-systems config, build standards, integration docs. All on PR #59.
@@ -56,9 +62,9 @@ Video pipeline docs (craft-notes, D9 canonical-copy rule, D12 gate), video files
 - Chapters: **83 in the corpus + Urantia chapter 84 approved.** 900 Theses collection intake (Vault? chapter? Pantheon? none?) is OPEN — do not assign it a number.
 - Debate Hall stations: **15 question stations + 1 disputation station = 16.**
 - Pantheon: **199 figures.** Vault: **88 manuscripts.** Arcade: **12 live + 25 historical = 37** (keep both, historical forms, cabinets replaced).
-- Videos: final end tag on all new and re-tagged videos is **"The past is still speaking. Follow and share — The Divine Archives."** Old videos already posted keep their old sign-offs. New format is NOT live until Carter approves a demo carrying the final tag.
+- Videos: final end tag on all new and re-tagged videos is **"The past is still speaking. Follow and share — The Divine Archives."** Old videos already posted keep their old sign-offs. New format is NOT live until Carter approves a demo carrying the final tag. — SUPERSEDED by Item 17: Carter approved the Mithras demo 2026-10-17; the format IS live; all 5 re-tags posted.
 
-## Standing rules carried into v2 (unchanged, except where Addendum Item 16 supersedes)
+## Standing rules carried into v2 (unchanged, except where Addenda Items 16–17 supersede)
 
 - Two tiers: light version for the phone, rich version for the computer (headset rides the rich tier). Rich math wins. The Archives guide the builds (research + reference photos + pixel counting + fit-loop).
 - Fix over-claiming pages FIRST. Pages say only what the code does.
