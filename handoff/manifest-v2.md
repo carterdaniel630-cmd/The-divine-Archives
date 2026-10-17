@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -92,6 +92,22 @@ specific merge. Merge approval is per-item, not blanket. This list is how Carter
 items as they finish, one by one. This item does not itself approve any merge.
 
 **900 Theses is still blocked on Gates A–D + the intake ruling. Item 22 does not unblock it.**
+
+## Item 23 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–22)
+
+| 23 | Carter's decisions: Protection charter (D1–D4) + PR #59 merge | NEW | `handoff/decisions-2026-10-17-charter-and-pr59.md` |
+
+**This item is the controlling record for these decisions:**
+
+- **D1 — Make the GitHub repo private? — YES.** Make the repo private.
+- **D2 — Copyright line name? — PENDING.** Carter asked "what would you suggest." No D2 decision recorded yet. Do NOT record one until Carter picks.
+- **D3 — Register copyright? — IF FREE AND POSSIBLE.** Register only if free and possible. If it costs anything or is not possible, do NOT register — report back why.
+- **D4 — Approve the charter? — IF IT'S UP TO STANDARD.** Approve only if up to standard (including Claude's own standards). If not up to standard, fix it first. Do NOT treat as approved until it meets the standard.
+- **PR #59 merge — IF UP TO STANDARD.** Merge only if completed AND up to standard (including Claude's own standards, all checks green, no site file changed since the review). If not completed or not to standard, do NOT merge. Restates the Item 21 conditional approval with the review conditions spelled out. Approves no other merge.
+
+**Still OPEN (Carter has NOT answered):** old save note (leave / rewrite), "The Tomb Robber" (keep / reword blurb / rename + reword), hidden old-name table (delete 90 days after live? Yes / No). Do NOT record answers for these.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 23 does not unblock it.**
 
 ## Already in the repo — DO NOT re-send
 
