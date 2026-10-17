@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reckoning Instrument — Gematria | The Divine Archives</title>
+<style>
+/* ============ THE RECKONING INSTRUMENT — scoped styles (.gematria-) ============ */
+.gematria-page{background:#0b0906;color:#e8dcc0;font-family:Georgia,'Times New Roman',serif;max-width:600px;margin:0 auto;padding:22px 16px 56px;min-height:100vh;box-sizing:border-box;}
+.gematria-page *{box-sizing:border-box;}
+.gematria-head{text-align:center;margin-bottom:6px;}
+.gematria-head h1{font-size:30px;letter-spacing:3px;color:#f0d488;margin:0 0 4px;font-weight:normal;}
+.gematria-sub{color:#b39b62;font-size:14px;letter-spacing:2px;margin:0 0 12px;}
+.gematria-lineage{font-style:italic;color:#c9b586;font-size:13.5px;line-height:1.6;border-top:1px solid #4a3a20;border-bottom:1px solid #4a3a20;padding:10px 6px;margin:0 0 18px;}
+.gematria-lineage strong{color:#f0d488;font-style:normal;}
+
+.gematria-device{position:relative;max-width:430px;margin:0 auto;opacity:0;transform:translateY(16px);animation:gemrise 1s ease .1s forwards;}
+@keyframes gemrise{to{opacity:1;transform:none;}}
+.gematria-platter{position:absolute;inset:0;border-radius:50%;background-color:#3a2a18;box-shadow:0 18px 50px rgba(0,0,0,.75),inset 0 2px 10px rgba(255,220,150,.12),inset 0 -8px 22px rgba(0,0,0,.6);}
+.gematria-svg{position:relative;display:block;width:100%;height:auto;}
+.gematria-glyph{fill:#f2e2b0;font-family:Georgia,'Times New Roman',serif;}
+.gematria-val{fill:#c9a959;font-family:Georgia,serif;}
+.gematria-band{fill:none;stroke:#8a6a2f;stroke-width:2.5;opacity:.85;transition:stroke .25s;}
+.gematria-band.on{stroke:#ffe9a8;}
+.gematria-ring{cursor:default;}
+.gematria-ring:focus{outline:none;}
+.gematria-slot{cursor:pointer;}
+.gematria-slot:hover .gematria-glyph{fill:#fff3cf;}
+.gematria-gear-rotor{transition:transform .32s cubic-bezier(.25,1.5,.35,1);transform-box:fill-box;transform-origin:center;}
+.gematria-letters{transition:transform .28s ease-out;transform-box:fill-box;transform-origin:center;}
+.gematria-marker{fill:#e8c86a;stroke:#5a4416;stroke-width:1;}
+
+.gematria-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38%;text-align:center;pointer-events:none;}
+.gematria-word{font-size:21px;line-height:1.5;color:#ffe9a8;min-height:1.5em;word-break:break-all;}
+.gematria-word span{margin:0 1px;}
+.gematria-hubcap{font-size:9.5px;letter-spacing:2.5px;color:#8a744a;margin-top:2px;}
+.gematria-readout{min-height:1.4em;text-align:center;font-size:13px;font-style:italic;color:#b39b62;margin-top:10px;}
+.gematria-fly{position:absolute;z-index:6;pointer-events:none;font-size:22px;color:#ffe9a8;text-shadow:0 0 12px rgba(255,210,120,.8);transition:transform .45s cubic-bezier(.3,.7,.3,1),opacity .45s ease;}
+
+.gematria-panel{margin:18px auto 0;max-width:430px;text-align:center;}
+.gematria-odometer{display:inline-flex;gap:7px;background:#14100a;border:2px solid #8a6a2f;border-radius:10px;padding:12px 16px;box-shadow:inset 0 3px 12px rgba(0,0,0,.85),0 2px 8px rgba(0,0,0,.5);}
+.gematria-drum{width:1.05em;height:1.5em;overflow:hidden;background:#050403;border-radius:4px;box-shadow:inset 0 2px 6px #000;font-size:32px;line-height:1.5;color:#f0d488;font-family:Georgia,serif;}
+.gematria-strip{transition:transform .5s cubic-bezier(.3,.85,.3,1);}
+.gematria-strip span{display:block;height:1.5em;}
+.gematria-odocap{font-size:10px;letter-spacing:3px;color:#8a744a;margin-top:6px;}
+.gematria-controls{margin-top:12px;display:flex;gap:10px;justify-content:center;}
+.gematria-btn{font-family:Georgia,serif;font-size:15px;color:#2a1f0e;background:linear-gradient(180deg,#e8c86a,#a8834a);border:1px solid #5a4416;border-radius:8px;padding:9px 20px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.5);}
+.gematria-btn:active{transform:translateY(1px);}
+.gematria-btn:disabled{opacity:.45;cursor:default;}
+.gematria-hint{font-size:13px;color:#8a7a58;font-style:italic;margin:12px 4px 0;line-height:1.6;}
+
+.gematria-drawer{max-height:0;overflow:hidden;transition:max-height .6s ease;max-width:430px;margin:0 auto;}
+.gematria-drawer.open{max-height:520px;}
+.gematria-drawer-inner{margin-top:14px;background:linear-gradient(180deg,#4a3a20,#2c2110);border:2px solid #8a6a2f;border-radius:10px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.6);}
+.gematria-drawer-inner h2{font-size:16px;color:#f0d488;margin:0 0 10px;font-weight:normal;letter-spacing:1px;text-align:center;}
+.gematria-drawer-entry{margin-bottom:12px;text-align:center;}
+.gematria-drawer-entry:last-child{margin-bottom:0;}
+.gematria-drawer-word{font-size:26px;color:#ffe9a8;}
+.gematria-drawer-meta{font-size:13.5px;color:#c9b586;font-style:italic;}
+.gematria-drawer-val{font-size:13.5px;color:#f0d488;font-weight:bold;}
+.gematria-drawer-note{font-size:12.5px;color:#a08a5e;font-style:italic;text-align:center;margin-top:8px;}
+
+.gematria-presets{max-width:430px;margin:22px auto 0;text-align:center;}
+.gematria-presets h2{font-size:14px;letter-spacing:2px;color:#b39b62;font-weight:normal;margin:0 0 10px;}
+.gematria-preset{font-family:Georgia,serif;font-size:17px;color:#e8dcc0;background:#1c150b;border:1px solid #8a6a2f;border-radius:8px;padding:8px 14px;margin:4px;cursor:pointer;}
+.gematria-preset:active{transform:translateY(1px);}
+
+.gematria-fallback{max-width:430px;margin:22px auto 0;border:1px solid #4a3a20;border-radius:8px;padding:4px 12px;}
+.gematria-fallback summary{cursor:pointer;color:#b39b62;font-size:14px;padding:8px 0;}
+.gematria-fallback input{width:100%;font-size:17px;padding:9px;background:#14100a;color:#e8dcc0;border:1px solid #8a6a2f;border-radius:6px;font-family:Georgia,serif;margin:6px 0;}
+.gematria-fallback .gematria-btn{margin:4px 0 10px;}
+.gematria-fallback p{font-size:12.5px;color:#8a7a58;font-style:italic;}
+.gematria-ignored{font-size:12.5px;color:#a08a5e;font-style:italic;}
+
+.gematria-method{max-width:430px;margin:14px auto 0;border:1px solid #4a3a20;border-radius:8px;padding:4px 14px;}
+.gematria-method summary{cursor:pointer;color:#b39b62;font-size:14px;padding:8px 0;}
+.gematria-method p,.gematria-method li{font-size:13.5px;line-height:1.7;color:#c9b586;}
+.gematria-method ul{padding-left:20px;margin:8px 0;}
+.gematria-tables{max-width:430px;margin:14px auto 0;border:1px solid #4a3a20;border-radius:8px;padding:4px 14px;}
+.gematria-tables summary{cursor:pointer;color:#b39b62;font-size:14px;padding:8px 0;}
+.gematria-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 10px;font-size:13px;margin:8px 0 14px;}
+.gematria-tgrid div{color:#c9b586;white-space:nowrap;}
+.gematria-tgrid b{color:#f0d488;font-weight:normal;}
+.gematria-tables h3{font-size:13px;letter-spacing:2px;color:#b39b62;font-weight:normal;margin:12px 0 4px;}
+@media (prefers-reduced-motion: reduce){
+  .gematria-device{animation:none;opacity:1;transform:none;}
+  .gematria-drawer{transition:none;}
+  .gematria-gear-rotor,.gematria-letters,.gematria-strip,.gematria-fly{transition:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="gematria-page" id="gematria-page">
+  <header class="gematria-head">
+    <h1>THE RECKONING INSTRUMENT</h1>
+    <p class="gematria-sub">GEMATRIA &middot; ISOPSEPHY &middot; &#7716;IS&#256;B AL-JUMMAL</p>
+    <p class="gematria-lineage"><strong>A modern devotional instrument</strong> in the lineage of medieval volvelles and counting boards. It is <strong>not</strong> a replica of any historical artifact &mdash; no gematria calculating machine is known to have existed. Turn the rings, reckon the letters, and read what the numbers remember.</p>
+  </header>
+
+  <div class="gematria-device" id="gematria-device">
+    <div class="gematria-platter" id="gematria-platter"></div>
+    <svg class="gematria-svg" id="gematria-svg" viewBox="0 0 400 400" role="img" aria-label="Brass reckoning instrument with three rotating letter rings"></svg>
+    <div class="gematria-hub" aria-hidden="true">
+      <div class="gematria-word" id="gematria-word"></div>
+      <div class="gematria-hubcap">RECKONING CHAMBER</div>
+    </div>
+  </div>
+  <p class="gematria-readout" id="gematria-readout" aria-live="polite">Tap a letter upon the rings to reckon it.</p>
+
+  <section class="gematria-panel" aria-label="Reckoned total and controls">
+    <div class="gematria-odometer" id="gematria-odometer" role="img" aria-label="Reckoned total"></div>
+    <div class="gematria-odocap">THE RECKONED SUM</div>
+    <div class="gematria-controls">
+      <button class="gematria-btn" id="gematria-unwind" type="button">&#10227; Unwind</button>
+      <button class="gematria-btn" id="gematria-clear" type="button">Clear</button>
+    </div>
+    <p class="gematria-hint">Tap a letter on any ring and it flies to the chamber while the gears turn. For the keyboard: Tab to a ring, arrow keys to turn it, Enter to reckon the letter at the brass pointer, Backspace to unwind.</p>
+  </section>
+
+  <section class="gematria-drawer" id="gematria-drawer" aria-live="polite">
+    <div class="gematria-drawer-inner">
+      <h2>THE DRAWER OPENS &mdash; IT SHARES ITS NUMBER WITH</h2>
+      <div id="gematria-drawer-list"></div>
+      <p class="gematria-drawer-note" id="gematria-drawer-note" hidden>A mixed reckoning across traditions &mdash; read with care.</p>
+    </div>
+  </section>
+
+  <section class="gematria-presets" aria-label="Remembered words">
+    <h2>REMEMBERED WORDS</h2>
+    <div id="gematria-presets"></div>
+  </section>
+
+  <details class="gematria-fallback">
+    <summary>Prefer to type? &mdash; a discreet fallback</summary>
+    <input id="gematria-text" type="text" placeholder="Type a word in Hebrew, Greek, Arabic, or Latin&hellip;" aria-label="Type a word to reckon">
+    <button class="gematria-btn" id="gematria-reckon" type="button">Reckon it</button>
+    <p>Latin letters are transliterated into Hebrew by a fixed table &mdash; an approximation. For exact values, enter the word in its native script.</p>
+    <p class="gematria-ignored" id="gematria-ignored" hidden></p>
+  </details>
+
+  <details class="gematria-method">
+    <summary>Method, conventions &amp; honesty</summary>
+    <p>Gematria is an <em>interpretive</em> tradition &mdash; a way of listening for resonance between words &mdash; not a method of prediction. What this instrument reckons, it reckons openly:</p>
+    <ul>
+      <li><strong>Hebrew</strong> follows <strong>Mispar Hechrechi</strong> (Aleph&nbsp;=&nbsp;1 through Tav&nbsp;=&nbsp;400); final (sofit) forms take their standard values. Some schools instead value finals 500&ndash;900.</li>
+      <li><strong>Greek</strong> follows the <strong>Milesian</strong> system (Alpha&nbsp;=&nbsp;1 through Sampi&nbsp;=&nbsp;900), including digamma, koppa, and sampi.</li>
+      <li><strong>Arabic</strong> follows the standard <strong>abjad</strong> order (Alif&nbsp;=&nbsp;1 through Ghayn&nbsp;=&nbsp;1000).</li>
+      <li>Judgment calls, flagged not hidden: &#1577; (t&#257;&#702; marb&#363;&#7789;a) is counted 400 &mdash; some schools count 5; &#1609; (alif maq&#7779;&#363;ra) is counted 10 &mdash; some count 1; standalone hamza &#1569; is set aside; Latin &ldquo;ch&rdquo; renders as &#1495; (Chet&nbsp;=&nbsp;8), though in words like <em>baruch</em> the &#1499; (Kaf&nbsp;=&nbsp;20) some would expect is a different letter.</li>
+      <li>The Arabic ring carries the 28 base letters; orthographic variants remain available in the typed fallback.</li>
+    </ul>
+    <p>This instrument is a <strong>modern devotional imagining</strong> in the lineage of volvelles and counting boards. It claims no ancient provenance: no historical gematria calculating machine is known to have existed.</p>
+  </details>
+
+  <details class="gematria-tables">
+    <summary>Letter values</summary>
+    <div id="gematria-tables"></div>
+  </details>
+</div>
+<script>
+(function(){
+'use strict';
+/* ================= 0. UTILITIES ================= */
+var SVGNS='http://www.w3.org/2000/svg';
+function $(id){return document.getElementById(id);}
+var listeners=[], timers=[];
+function on(el,ev,fn){el.addEventListener(ev,fn);listeners.push([el,ev,fn]);}
+function later(fn,ms){var t=setTimeout(fn,ms);timers.push(t);return t;}
+function svgEl(tag,attrs,parent){var e=document.createElementNS(SVGNS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+var REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ================= 1. LETTER TABLES (hand-verified in v1; reused) ================= */
+/* HEBREW — Mispar Hechrechi. Sofit (final) forms take standard values. */
+var HEBREW = {
+  'א':['Aleph',1],  'ב':['Bet',2],   'ג':['Gimel',3],  'ד':['Dalet',4],
+  'ה':['He',5],     'ו':['Vav',6],   'ז':['Zayin',7],  'ח':['Chet',8],
+  'ט':['Tet',9],    'י':['Yod',10],  'כ':['Kaf',20],   'ך':['Kaf · final',20],
+  'ל':['Lamed',30], 'מ':['Mem',40],  'ם':['Mem · final',40],
+  'נ':['Nun',50],   'ן':['Nun · final',50], 'ס':['Samekh',60],
+  'ע':['Ayin',70],  'פ':['Pe',80],   'ף':['Pe · final',80],
+  'צ':['Tsadi',90], 'ץ':['Tsadi · final',90],
+  'ק':['Qof',100],  'ר':['Resh',200],'ש':['Shin',300], 'ת':['Tav',400]
+};
+/* GREEK — Milesian isopsephy. ϛ digamma/stigma=6, ϟ koppa=90, ϡ sampi=900. */
+var GREEK = {
+  'α':['Alpha',1],   'β':['Beta',2],   'γ':['Gamma',3],  'δ':['Delta',4],
+  'ε':['Epsilon',5], 'ϛ':['Digamma',6],'ζ':['Zeta',7],   'η':['Eta',8],
+  'θ':['Theta',9],   'ι':['Iota',10],  'κ':['Kappa',20], 'λ':['Lambda',30],
+  'μ':['Mu',40],     'ν':['Nu',50],    'ξ':['Xi',60],    'ο':['Omicron',70],
+  'π':['Pi',80],     'ϟ':['Koppa',90], 'ρ':['Rho',100],
+  'σ':['Sigma',200], 'ς':['Sigma · final',200],
+  'τ':['Tau',300],   'υ':['Upsilon',400],'φ':['Phi',500],
+  'χ':['Chi',600],   'ψ':['Psi',700],  'ω':['Omega',800],'ϡ':['Sampi',900]
+};
+/* ARABIC — standard abjad (ḥisāb al-jummal), Mashreq order. */
+var ARABIC = {
+  'ا':['Alif',1],  'ب':['Bāʾ',2],  'ج':['Jīm',3],  'د':['Dāl',4],
+  'ه':['Hāʾ',5],   'و':['Wāw',6],  'ز':['Zāy',7],  'ح':['Ḥāʾ',8],
+  'ط':['Ṭāʾ',9],   'ي':['Yāʾ',10], 'ك':['Kāf',20], 'ل':['Lām',30],
+  'م':['Mīm',40],  'ن':['Nūn',50], 'س':['Sīn',60], 'ع':['ʿAyn',70],
+  'ف':['Fāʾ',80],  'ص':['Ṣād',90], 'ق':['Qāf',100],'ر':['Rāʾ',200],
+  'ش':['Shīn',300],'ت':['Tāʾ',400],'ث':['Thāʾ',500],'خ':['Khāʾ',600],
+  'ذ':['Dhāl',700],'ض':['Ḍād',800],'ظ':['Ẓāʾ',900],'غ':['Ghayn',1000],
+  'أ':['Alif · hamza',1], 'إ':['Alif · hamza',1], 'آ':['Alif · madda',1],
+  'ؤ':['Wāw · hamza',6],  'ئ':['Yāʾ · hamza',10],
+  'ة':['Tāʾ marbūṭa',400], /* some schools count 5 — flagged in method note */
+  'ى':['Alif maqṣūra',10]  /* some schools count 1 — flagged in method note */
+};
+/* LATIN → Hebrew transliteration (approximate; documented, longest-match). */
+var LATIN_DIGRAPHS = {
+  'sh':['ש','Shin · via “sh”',300], 'ch':['ח','Chet · via “ch”',8],
+  'th':['ת','Tav · via “th”',400],  'tz':['צ','Tsadi · via “tz”',90],
+  'ts':['צ','Tsadi · via “ts”',90],  'ph':['פ','Pe · via “ph”',80],
+  'kh':['ח','Chet · via “kh”',8]
+};
+var LATIN_SINGLES = {
+  'a':['א','Aleph · via “a”',1],   'b':['ב','Bet · via “b”',2],
+  'c':['כ','Kaf · via “c”',20],    'd':['ד','Dalet · via “d”',4],
+  'e':['ה','He · via “e”',5],      'f':['פ','Pe · via “f”',80],
+  'g':['ג','Gimel · via “g”',3],    'h':['ה','He · via “h”',5],
+  'i':['י','Yod · via “i”',10],    'j':['י','Yod · via “j”',10],
+  'k':['כ','Kaf · via “k”',20],    'l':['ל','Lamed · via “l”',30],
+  'm':['מ','Mem · via “m”',40],    'n':['נ','Nun · via “n”',50],
+  'o':['ו','Vav · via “o”',6],     'p':['פ','Pe · via “p”',80],
+  'q':['ק','Qof · via “q”',100],   'r':['ר','Resh · via “r”',200],
+  's':['ס','Samekh · via “s”',60], 't':['ט','Tet · via “t”',9],
+  'u':['ו','Vav · via “u”',6],     'v':['ו','Vav · via “v”',6],
+  'w':['ו','Vav · via “w”',6],     'y':['י','Yod · via “y”',10],
+  'z':['ז','Zayin · via “z”',7]
+};
+
+/* ================= 2. REMEMBERED WORDS (hand-verified in v1; reused) ================= */
+var REMEMBERED = [
+  {s:'hebrew', word:'חי', tr:'chai', gloss:'“life”', value:18},
+  {s:'hebrew', word:'אחד', tr:'echad', gloss:'“one”', value:13},
+  {s:'hebrew', word:'אהבה', tr:'ahava', gloss:'“love”', value:13},
+  {s:'hebrew', word:'יהוה', tr:'YHWH', gloss:'the Name', value:26},
+  {s:'hebrew', word:'שבת', tr:'Shabbat', gloss:'“Sabbath”', value:702},
+  {s:'hebrew', word:'אמת', tr:'emet', gloss:'“truth”', value:441},
+  {s:'hebrew', word:'שלום', tr:'shalom', gloss:'“peace, wholeness”', value:376},
+  {s:'hebrew', word:'תורה', tr:'Torah', gloss:'“instruction”', value:611},
+  {s:'hebrew', word:'אדם', tr:'adam', gloss:'“human, earthling”', value:45},
+  {s:'hebrew', word:'חכמה', tr:'chochmah', gloss:'“wisdom”', value:73},
+  {s:'hebrew', word:'בראשית', tr:'bereshit', gloss:'“in the beginning”', value:913},
+  {s:'hebrew', word:'שמים', tr:'shamayim', gloss:'“heavens”', value:390},
+  {s:'greek', word:'Ἰησοῦς', tr:'Iēsous', gloss:'“Jesus”', value:888},
+  {s:'greek', word:'Χριστός', tr:'Christos', gloss:'“Anointed”', value:1480},
+  {s:'greek', word:'θεός', tr:'theos', gloss:'“god”', value:284},
+  {s:'greek', word:'ἀγάπη', tr:'agapē', gloss:'“love”', value:93},
+  {s:'greek', word:'λόγος', tr:'logos', gloss:'“word, reason”', value:373},
+  {s:'greek', word:'πνεῦμα', tr:'pneuma', gloss:'“spirit, breath”', value:576},
+  {s:'greek', word:'Ἀμήν', tr:'amēn', gloss:'“amen”', value:99},
+  {s:'arabic', word:'الله', tr:'Allāh', gloss:'“God”', value:66},
+  {s:'arabic', word:'محمد', tr:'Muḥammad', gloss:'the Prophet', value:92},
+  {s:'arabic', word:'نور', tr:'nūr', gloss:'“light”', value:256},
+  {s:'arabic', word:'سلام', tr:'salām', gloss:'“peace”', value:131},
+  {s:'arabic', word:'حكيم', tr:'ḥakīm', gloss:'“wise”', value:78},
+  {s:'arabic', word:'قرآن', tr:'Qurʾān', gloss:'“recitation”', value:351}
+];
+var SYS_LABEL={hebrew:'Hebrew',greek:'Greek',arabic:'Arabic'};
+
+/* ================= 3. TEXTURES (canvas-generated data URIs; 256px fixed) ================= */
+function makeWoodURL(){
+  var c=document.createElement('canvas');c.width=c.height=256;var x=c.getContext('2d');
+  x.fillStyle='#3d2a18';x.fillRect(0,0,256,256);
+  for(var gLine=0;gLine<46;gLine++){
+    x.strokeStyle='rgba('+(20+Math.random()*30|0)+','+(12+Math.random()*18|0)+',8,'+(0.25+Math.random()*0.3)+')';
+    x.lineWidth=0.8+Math.random()*1.8;x.beginPath();
+    var y0=Math.random()*256;x.moveTo(0,y0);
+    for(var px=0;px<=256;px+=32)x.lineTo(px,y0+Math.sin(px/40+gLine)*6+(Math.random()*6-3));
+    x.stroke();
+  }
+  for(var i=0;i<900;i++){var v=Math.random();x.fillStyle=v>0.5?'rgba(255,220,160,0.05)':'rgba(0,0,0,0.10)';x.fillRect(Math.random()*256,Math.random()*256,1.6,1.6);}
+  return c.toDataURL('image/png');
+}
+function makeBrassURL(){
+  var c=document.createElement('canvas');c.width=c.height=256;var x=c.getContext('2d');
+  x.fillStyle='#8a6a2f';x.fillRect(0,0,256,256);
+  for(var i=0;i<2400;i++){var warm=Math.random()>0.42;
+    x.fillStyle=warm?'rgba(232,200,106,'+(0.04+Math.random()*0.10)+')':'rgba(40,60,44,'+(0.03+Math.random()*0.07)+')';
+    var r=1+Math.random()*6;x.beginPath();x.arc(Math.random()*256,Math.random()*256,r,0,7);x.fill();}
+  var g=x.createLinearGradient(0,0,256,256);
+  g.addColorStop(0,'rgba(255,240,190,0.16)');g.addColorStop(0.5,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(30,20,8,0.22)');
+  x.fillStyle=g;x.fillRect(0,0,256,256);
+  return c.toDataURL('image/png');
+}
+
+/* ================= 4. DEVICE BUILD ================= */
+var RINGS=[
+  {key:'hebrew',sys:'hebrew',label:'Hebrew',table:HEBREW,
+   order:['א','ב','ג','ד','ה','ו','ז','ח','ט','י','כ','ך','ל','מ','ם','נ','ן','ס','ע','פ','ף','צ','ץ','ק','ר','ש','ת'],
+   radius:168,glyph:19,val:9.5,rot:0},
+  {key:'greek',sys:'greek',label:'Greek',table:GREEK,
+   order:['α','β','γ','δ','ε','ϛ','ζ','η','θ','ι','κ','λ','μ','ν','ξ','ο','π','ϟ','ρ','σ','ς','τ','υ','φ','χ','ψ','ω','ϡ'],
+   radius:126,glyph:16,val:8.5,rot:0},
+  {key:'arabic',sys:'arabic',label:'Arabic',table:ARABIC,
+   order:['ا','ب','ج','د','ه','و','ز','ح','ط','ي','ك','ل','م','ن','س','ع','ف','ص','ق','ر','ش','ت','ث','خ','ذ','ض','ظ','غ'],
+   radius:86,glyph:13,val:7.5,rot:0}
+];
+var state={letters:[],total:0,busy:false};
+var gears=[];
+var svg=$('gematria-svg'), device=$('gematria-device'), readout=$('gematria-readout');
+
+function buildDevice(){
+  $('gematria-platter').style.backgroundImage='url('+makeWoodURL()+')';
+  var defs=svgEl('defs',{},svg);
+  var bg=svgEl('radialGradient',{id:'gem-brass',cx:'35%',cy:'30%',r:'80%'},defs);
+  svgEl('stop',{offset:'0%','stop-color':'#e8c86a'},bg);
+  svgEl('stop',{offset:'55%','stop-color':'#a8834a'},bg);
+  svgEl('stop',{offset:'100%','stop-color':'#5a4416'},bg);
+  var staticG=svgEl('g',{class:'gematria-static'},svg);
+  /* ring bands (static; highlight on focus) */
+  RINGS.forEach(function(rg){
+    rg.band=svgEl('circle',{cx:200,cy:200,r:rg.radius,class:'gematria-band'},staticG);
+    rg.step=360/rg.order.length;
+    var g=svgEl('g',{class:'gematria-ring',tabindex:'0',role:'group',
+      'aria-label':rg.label+' ring. Arrow keys turn it. Enter reckons the letter at the brass pointer.'},svg);
+    rg.group=g;
+    rg.lettersG=svgEl('g',{class:'gematria-letters'},g);
+    rg.order.forEach(function(ch,i){
+      var a=(i*rg.step-90)*Math.PI/180;
+      var x=200+rg.radius*Math.cos(a), y=200+rg.radius*Math.sin(a);
+      var slot=svgEl('g',{class:'gematria-slot',
+        transform:'translate('+x.toFixed(1)+' '+y.toFixed(1)+') rotate('+(i*rg.step).toFixed(1)+')'},rg.lettersG);
+      var t=svgEl('text',{x:0,y:0,'text-anchor':'middle','dominant-baseline':'central',
+        class:'gematria-glyph','font-size':rg.glyph},slot);
+      t.textContent=ch;
+      var v=svgEl('text',{x:0,y:(rg.glyph*0.9).toFixed(1),'text-anchor':'middle','dominant-baseline':'central',
+        class:'gematria-val','font-size':rg.val},slot);
+      v.textContent=rg.table[ch][1];
+      (function(ch2){
+        on(slot,'click',function(ev){ev.stopPropagation();addLetter(ch2,rg,slot.getBoundingClientRect());});
+      })(ch);
+    });
+    on(g,'focus',function(){rg.band.classList.add('on');announceRing(rg);});
+    on(g,'blur',function(){rg.band.classList.remove('on');});
+    on(g,'keydown',function(ev){ringKey(ev,rg);});
+  });
+  /* brass pointer at the crown */
+  svgEl('path',{d:'M200 4 L191 22 L209 22 Z',class:'gematria-marker'},staticG);
+  /* gears at the edges */
+  [[64,336,30,23,12],[336,336,30,23,12],[336,64,22,17,10],[64,64,22,17,10]].forEach(function(gd){
+    gears.push(makeGear(gd[0],gd[1],gd[2],gd[3],gd[4],svg));
+  });
+  /* hub ring */
+  svgEl('circle',{cx:200,cy:200,r:64,fill:'none',stroke:'#8a6a2f','stroke-width':3,opacity:.9},staticG);
+}
+
+function gearPathD(teeth,rO,rI){
+  var d='',n=teeth*4;
+  for(var i=0;i<=n;i++){
+    var a=(i/n)*Math.PI*2, r=(i%4===1||i%4===2)?rO:rI;
+    d+=(i===0?'M':'L')+(r*Math.cos(a)).toFixed(1)+' '+(r*Math.sin(a)).toFixed(1);
+  }
+  return d+'Z';
+}
+function makeGear(cx,cy,rO,rI,teeth,parent){
+  var g=svgEl('g',{transform:'translate('+cx+' '+cy+')'},parent);
+  var rotor=svgEl('g',{class:'gematria-gear-rotor'},g);
+  svgEl('path',{d:gearPathD(teeth,rO,rI),fill:'url(#gem-brass)',stroke:'#3a2c10','stroke-width':1.5},rotor);
+  svgEl('circle',{r:rI*0.45,fill:'#2c2110',stroke:'#e8c86a','stroke-width':1},rotor);
+  return {rotor:rotor,rot:0};
+}
+function tickGears(dir){
+  gears.forEach(function(g,i){
+    g.rot+=dir*(i%2? -14:14);
+    if(REDUCED){g.rotor.style.transition='none';}
+    g.rotor.style.transform='rotate('+g.rot%360+'deg)';
+  });
+}
+
+/* ---- ring keyboard ---- */
+function activeLetter(rg){
+  var n=rg.order.length;
+  var idx=((Math.round(-rg.rot/rg.step))%n+n)%n;
+  var ch=rg.order[idx], d=rg.table[ch];
+  return {ch:ch,name:d[0],value:d[1]};
+}
+function announceRing(rg){
+  var L=activeLetter(rg);
+  readout.textContent=rg.label+' ring — at the pointer: '+L.name+', '+L.value+'.';
+}
+function rotateRing(rg,dir){
+  rg.rot+=dir*rg.step;
+  rg.lettersG.style.transform='rotate('+rg.rot+'deg)';
+  announceRing(rg);
+}
+function ringKey(ev,rg){
+  if(ev.key==='ArrowRight'||ev.key==='ArrowDown'){rotateRing(rg,1);ev.preventDefault();}
+  else if(ev.key==='ArrowLeft'||ev.key==='ArrowUp'){rotateRing(rg,-1);ev.preventDefault();}
+  else if(ev.key==='Enter'||ev.key===' '){var L=activeLetter(rg);addLetter(L.ch,rg,null);ev.preventDefault();}
+}
+
+/* ================= 5. RECKONING ================= */
+function announce(msg){readout.textContent=msg;}
+function renderWord(){
+  var w=$('gematria-word');w.innerHTML='';
+  state.letters.forEach(function(L){
+    var s=document.createElement('span');s.textContent=L.glyph;s.title=L.name+' · '+L.value;w.appendChild(s);
+  });
+}
+/* odometer: five rolling drums */
+var drums=[];
+function buildOdometer(){
+  var odo=$('gematria-odometer');odo.innerHTML='';
+  for(var i=0;i<5;i++){
+    var drum=document.createElement('div');drum.className='gematria-drum';
+    var strip=document.createElement('div');strip.className='gematria-strip';
+    for(var d=0;d<10;d++){var sp=document.createElement('span');sp.textContent=d;strip.appendChild(sp);}
+    if(!REDUCED)strip.style.transitionDelay=((4-i)*45)+'ms';
+    drum.appendChild(strip);odo.appendChild(drum);
+    drums.push(strip);
+  }
+  setOdometer(0,true);
+}
+function setOdometer(n,instant){
+  var str=String(Math.max(0,n)).padStart(5,'0').slice(-5);
+  drums.forEach(function(strip,i){
+    var dig=+str[i];
+    if(REDUCED||instant){strip.style.transition='none';}
+    strip.style.transform='translateY('+(-dig*1.5)+'em)';
+    if(!(REDUCED||instant)){strip.style.transition='';}
+  });
+}
+function flyGlyph(fromRect,glyph){
+  if(!fromRect||REDUCED)return;
+  var devR=device.getBoundingClientRect();
+  var hub=$('gematria-word').getBoundingClientRect();
+  var s=document.createElement('span');
+  s.className='gematria-fly';s.textContent=glyph;
+  var sx=fromRect.left+fromRect.width/2-devR.left, sy=fromRect.top+fromRect.height/2-devR.top;
+  var tx=hub.left+hub.width/2-devR.left, ty=hub.top+hub.height/2-devR.top;
+  s.style.left=(sx-11)+'px';s.style.top=(sy-14)+'px';
+  device.appendChild(s);
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    s.style.transform='translate('+(tx-sx)+'px,'+(ty-sy)+'px) scale(.45)';s.style.opacity='0';
+  });});
+  later(function(){if(s.parentNode)s.parentNode.removeChild(s);},520);
+}
+function addLetter(ch,rg,fromRect){
+  var d=rg.table[ch];if(!d||state.busy)return;
+  var L={glyph:ch,name:d[0],value:d[1],sys:rg.sys};
+  state.letters.push(L);state.total+=L.value;
+  flyGlyph(fromRect,ch);
+  renderWord();setOdometer(state.total);tickGears(1);checkDrawer();
+  announce(L.name+' reckoned — '+L.value+'. The sum stands at '+state.total+'.');
+}
+function unwind(){
+  var L=state.letters.pop();if(!L||state.busy)return;
+  state.total-=L.value;
+  renderWord();setOdometer(state.total);tickGears(-1);checkDrawer();
+  announce('Unwound '+L.name+'. The sum stands at '+state.total+'.');
+}
+function clearAll(silent){
+  state.letters=[];state.total=0;
+  renderWord();setOdometer(state.total);checkDrawer();
+  if(!silent)announce('The chamber is cleared. Tap a letter upon the rings to reckon it.');
+}
+function checkDrawer(){
+  var drawer=$('gematria-drawer'),list=$('gematria-drawer-list'),note=$('gematria-drawer-note');
+  var sysSet={};state.letters.forEach(function(l){sysSet[l.sys]=1;});
+  var keys=Object.keys(sysSet);
+  var matches=REMEMBERED.filter(function(e){
+    if(e.value!==state.total||state.letters.length===0)return false;
+    if(keys.length===1)return e.s===keys[0];
+    return true;
+  });
+  list.innerHTML='';
+  if(matches.length){
+    matches.forEach(function(e){
+      var div=document.createElement('div');div.className='gematria-drawer-entry';
+      var w=document.createElement('div');w.className='gematria-drawer-word';w.textContent=e.word;
+      var m=document.createElement('div');m.className='gematria-drawer-meta';m.textContent=e.tr+' · '+e.gloss+' · '+SYS_LABEL[e.s];
+      var v=document.createElement('div');v.className='gematria-drawer-val';v.textContent=e.value;
+      div.appendChild(w);div.appendChild(m);div.appendChild(v);list.appendChild(div);
+    });
+    note.hidden=!(keys.length>1);
+    drawer.classList.add('open');
+  }else{
+    drawer.classList.remove('open');
+  }
+}
+
+/* ================= 6. PRESETS, FALLBACK, TABLES ================= */
+var PRESETS=[
+  {word:'חי'},{word:'Ἰησοῦς'},{word:'نور'},{word:'שלום'},{word:'אהבה'}
+];
+function parseFallback(raw){
+  var he='',gr='',ar='',la='';
+  for(var i=0;i<raw.length;){
+    var cp=raw.codePointAt(i),ch=String.fromCodePoint(cp);i+=ch.length;
+    if(/[\u0590-\u05FF]/.test(ch))he+=ch;
+    else if(/[\u0370-\u03FF\u1F00-\u1FFF]/.test(ch))gr+=ch;
+    else if(/[\u0600-\u06FF\u0750-\u077F]/.test(ch))ar+=ch;
+    else if(/[A-Za-z]/.test(ch))la+=ch;
+  }
+  var out=[],ignored=0;
+  function pushL(glyph,name,value,sys){out.push({glyph:glyph,name:name,value:value,sys:sys});}
+  var clean=he.replace(/[\u0591-\u05C7]/g,'');
+  for(var a=0;a<clean.length;a++){var hc=clean[a];
+    if(HEBREW[hc])pushL(hc,HEBREW[hc][0],HEBREW[hc][1],'hebrew');
+    else if(!/\s/.test(hc))ignored++;}
+  var g2=gr.normalize('NFD').replace(/[\u0300-\u036F]/g,'').toLowerCase();
+  for(var b=0;b<g2.length;b++){var gc=g2[b];
+    if(GREEK[gc])pushL(gc,GREEK[gc][0],GREEK[gc][1],'greek');
+    else if(!/\s/.test(gc))ignored++;}
+  var a2=ar.replace(/[\u064B-\u065F\u0670]/g,'').replace(/ـ/g,'');
+  for(var c=0;c<a2.length;c++){var ac=a2[c];
+    if(ARABIC[ac])pushL(ac,ARABIC[ac][0],ARABIC[ac][1],'arabic');
+    else if(!/\s/.test(ac))ignored++;}
+  var low=la.toLowerCase(),k=0;
+  while(k<low.length){
+    var two=low.slice(k,k+2),one=low[k];
+    if(LATIN_DIGRAPHS[two]){var dd=LATIN_DIGRAPHS[two];pushL(dd[0],dd[1],dd[2],'hebrew');k+=2;}
+    else if(LATIN_SINGLES[one]){var ss=LATIN_SINGLES[one];pushL(ss[0],ss[1],ss[2],'hebrew');k+=1;}
+    else if(/\s/.test(one))k++;
+    else{ignored++;k++;}
+  }
+  return {letters:out,ignored:ignored};
+}
+function dialLetters(letters,done){
+  if(REDUCED||!letters.length){
+    letters.forEach(function(L){state.letters.push(L);state.total+=L.value;});
+    renderWord();setOdometer(state.total);checkDrawer();
+    if(done)done();return;
+  }
+  state.busy=true;
+  var i=0;
+  (function step(){
+    if(i>=letters.length){state.busy=false;renderWord();setOdometer(state.total);checkDrawer();if(done)done();return;}
+    var L=letters[i++];
+    state.letters.push(L);state.total+=L.value;
+    renderWord();setOdometer(state.total);tickGears(1);checkDrawer();
+    later(step,230);
+  })();
+}
+function buildPresets(){
+  var box=$('gematria-presets');box.innerHTML='';
+  PRESETS.forEach(function(p){
+    var b=document.createElement('button');b.type='button';b.className='gematria-preset';b.textContent=p.word;
+    on(b,'click',function(){
+      if(state.busy)return;
+      clearAll(true);
+      var parsed=parseFallback(p.word);
+      announce('Reckoning '+p.word+'…');
+      dialLetters(parsed.letters,function(){
+        announce(p.word+' reckoned. The sum stands at '+state.total+'.');
+      });
+    });
+    box.appendChild(b);
+  });
+}
+function buildTables(){
+  var host=$('gematria-tables');host.innerHTML='';
+  [['Hebrew · Mispar Hechrechi',HEBREW],['Greek · Milesian',GREEK],['Arabic · abjad',ARABIC]].forEach(function(pair){
+    var h=document.createElement('h3');h.textContent=pair[0];host.appendChild(h);
+    var grid=document.createElement('div');grid.className='gematria-tgrid';
+    Object.keys(pair[1]).forEach(function(ch){
+      var cell=document.createElement('div');
+      var b=document.createElement('b');b.textContent=ch+' ';
+      cell.appendChild(b);
+      cell.appendChild(document.createTextNode(pair[1][ch][0]+' · '+pair[1][ch][1]));
+      grid.appendChild(cell);
+    });
+    host.appendChild(grid);
+  });
+}
+
+/* ================= 7. WIRE-UP & LIFECYCLE ================= */
+function init(){
+  buildDevice();buildOdometer();buildPresets();buildTables();checkDrawer();
+  on($('gematria-unwind'),'click',unwind);
+  on($('gematria-clear'),'click',function(){clearAll(false);});
+  on(device,'keydown',function(ev){
+    if((ev.key==='Backspace'||ev.key==='Delete')&&ev.target===device){unwind();ev.preventDefault();}
+  });
+  device.setAttribute('tabindex','0');
+  on($('gematria-reckon'),'click',function(){
+    if(state.busy)return;
+    var parsed=parseFallback($('gematria-text').value);
+    var ign=$('gematria-ignored');
+    if(parsed.ignored>0){ign.hidden=false;ign.textContent=parsed.ignored+' character(s) set aside — outside the three reckonings.';}
+    else ign.hidden=true;
+    clearAll(true);
+    dialLetters(parsed.letters,function(){
+      announce('Reckoned. The sum stands at '+state.total+'.');
+    });
+  });
+  on($('gematria-text'),'keydown',function(ev){if(ev.key==='Enter'){$('gematria-reckon').click();ev.preventDefault();}});
+}
+function destroy(){
+  listeners.forEach(function(l){try{l[0].removeEventListener(l[1],l[2]);}catch(e){}});
+  timers.forEach(function(t){clearTimeout(t);});
+  listeners=[];timers=[];
+  var p=$('gematria-page');if(p&&p.parentNode)p.parentNode.removeChild(p);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+else init();
+window.GematriaRelic={destroy:destroy};
+})();
+</script>
+</body>
+</html>

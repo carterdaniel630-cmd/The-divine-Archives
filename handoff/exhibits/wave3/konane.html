@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kōnane — Hawaiian Capture Game · The Divine Archives</title>
+<style>
+/* ============ KŌNANE — scoped styles (all selectors carry the konane- prefix) ============ */
+.konane-app{
+  --konane-bg:#06070b;
+  --konane-bg2:#0b0d14;
+  --konane-ink:#ece4cf;
+  --konane-ink-dim:#a9a28b;
+  --konane-teal:#5fd3b8;
+  --konane-teal-dim:rgba(95,211,184,.35);
+  --konane-ember:#ff9a4d;
+  --konane-panel:#0d0f16;
+  --konane-line:rgba(236,228,207,.12);
+  --konane-serif:Georgia,'Times New Roman',serif;
+  --konane-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  background:radial-gradient(120% 90% at 50% 0%, #0d1017 0%, var(--konane-bg) 55%, #030407 100%);
+  color:var(--konane-ink);
+  font-family:var(--konane-sans);
+  min-height:100vh;
+  margin:0;
+  padding:clamp(12px,3vw,40px);
+  box-sizing:border-box;
+}
+.konane-app *{box-sizing:border-box;}
+.konane-head{max-width:1120px;margin:0 auto 18px;text-align:center;}
+.konane-kicker{
+  margin:0 0 6px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--konane-teal);
+}
+.konane-title{
+  font-family:var(--konane-serif);font-weight:400;
+  font-size:clamp(38px,7vw,64px);margin:0 0 8px;letter-spacing:.04em;
+  text-shadow:0 0 26px rgba(95,211,184,.18), 0 2px 18px rgba(0,0,0,.8);
+}
+.konane-sub{
+  margin:0 auto;max-width:640px;color:var(--konane-ink-dim);
+  font-size:clamp(13px,2.4vw,15px);line-height:1.6;font-style:italic;
+  font-family:var(--konane-serif);
+}
+.konane-main{
+  max-width:1120px;margin:0 auto;display:flex;gap:22px;
+  align-items:flex-start;justify-content:center;flex-wrap:wrap;
+}
+.konane-boardwrap{
+  position:relative;flex:1 1 520px;max-width:660px;min-width:300px;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.konane-canvas{
+  width:100%;max-width:640px;aspect-ratio:1/1;height:auto;
+  border-radius:14px;display:block;cursor:pointer;outline:none;
+  box-shadow:0 30px 80px rgba(0,0,0,.75), 0 0 0 1px var(--konane-line);
+  touch-action:manipulation;
+}
+.konane-canvas:focus-visible{box-shadow:0 30px 80px rgba(0,0,0,.75),0 0 0 2px var(--konane-teal);}
+.konane-statusbar{
+  width:100%;max-width:640px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:rgba(13,15,22,.85);border:1px solid var(--konane-line);
+  border-radius:12px;padding:10px 14px;backdrop-filter:blur(6px);
+}
+.konane-turn{
+  font-family:var(--konane-serif);font-size:15px;letter-spacing:.03em;flex:1 1 auto;min-width:150px;
+}
+.konane-turn .konane-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:1px;}
+.konane-dot-black{background:radial-gradient(circle at 35% 30%,#5a6172,#14161c 70%);box-shadow:0 0 6px rgba(0,0,0,.9);}
+.konane-dot-white{background:radial-gradient(circle at 35% 30%,#fffdf4,#cfc3a4 70%);box-shadow:0 0 6px rgba(255,255,255,.25);}
+.konane-score{font-size:12px;color:var(--konane-ink-dim);letter-spacing:.05em;}
+.konane-score b{color:var(--konane-ink);}
+.konane-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.konane-btn{
+  font-family:var(--konane-sans);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--konane-ink);background:rgba(95,211,184,.08);
+  border:1px solid var(--konane-teal-dim);border-radius:9px;
+  padding:9px 14px;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .12s ease;
+}
+.konane-btn:hover:not(:disabled){background:rgba(95,211,184,.18);border-color:var(--konane-teal);}
+.konane-btn:active:not(:disabled){transform:translateY(1px);}
+.konane-btn:disabled{opacity:.32;cursor:default;}
+.konane-btn.konane-btn-end{border-color:rgba(255,154,77,.5);background:rgba(255,154,77,.08);}
+.konane-btn.konane-btn-end:hover:not(:disabled){background:rgba(255,154,77,.2);border-color:var(--konane-ember);}
+.konane-panel{
+  flex:1 1 300px;max-width:380px;min-width:280px;
+  background:var(--konane-panel);border:1px solid var(--konane-line);
+  border-radius:14px;padding:20px 20px 16px;
+  box-shadow:0 18px 50px rgba(0,0,0,.5);
+}
+.konane-panel h2{
+  font-family:var(--konane-serif);font-weight:400;font-size:19px;margin:0 0 10px;
+  letter-spacing:.05em;color:var(--konane-ink);
+  border-bottom:1px solid var(--konane-line);padding-bottom:8px;
+}
+.konane-panel h2:not(:first-child){margin-top:20px;}
+.konane-rules{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+.konane-rules li{font-size:13px;line-height:1.55;color:var(--konane-ink-dim);padding-left:2px;}
+.konane-rules li b{color:var(--konane-ink);font-weight:600;}
+.konane-chip{
+  display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  border-radius:20px;padding:2px 9px;margin-right:7px;vertical-align:1px;font-style:normal;
+}
+.konane-chip-attested{color:var(--konane-teal);border:1px solid var(--konane-teal-dim);background:rgba(95,211,184,.07);}
+.konane-chip-recon{color:var(--konane-ember);border:1px solid rgba(255,154,77,.4);background:rgba(255,154,77,.07);}
+.konane-log{
+  list-style:none;margin:0;padding:0;max-height:150px;overflow-y:auto;
+  font-size:12.5px;line-height:1.7;color:var(--konane-ink-dim);
+  font-variant-numeric:tabular-nums;
+}
+.konane-log li{border-bottom:1px dotted rgba(236,228,207,.08);padding:2px 0;}
+.konane-log .konane-log-black{color:#cfd4de;}
+.konane-log .konane-log-white{color:#f2e9d2;}
+.konane-log-empty{font-style:italic;}
+.konane-sources{font-size:11.5px;line-height:1.6;color:#7d7663;margin:0;}
+.konane-hint{font-size:12px;color:var(--konane-ink-dim);line-height:1.6;margin:8px 0 0;}
+.konane-hint kbd{
+  font-family:var(--konane-sans);font-size:11px;border:1px solid var(--konane-line);
+  border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:rgba(255,255,255,.04);
+}
+.konane-overlay{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(4,5,8,.72);backdrop-filter:blur(4px);border-radius:14px;
+  opacity:0;pointer-events:none;transition:opacity .5s ease;z-index:5;text-align:center;padding:20px;
+}
+.konane-overlay.konane-show{opacity:1;pointer-events:auto;}
+.konane-overlay-card{max-width:380px;}
+.konane-overlay-card h2{font-family:var(--konane-serif);font-weight:400;font-size:30px;margin:0 0 10px;letter-spacing:.04em;}
+.konane-overlay-card p{color:var(--konane-ink-dim);font-size:14px;line-height:1.65;margin:0 0 18px;font-family:var(--konane-serif);font-style:italic;}
+.konane-foot{
+  max-width:1120px;margin:26px auto 0;text-align:center;
+  color:#6b6455;font-size:11.5px;letter-spacing:.06em;line-height:1.7;
+}
+@media (max-width:760px){
+  .konane-panel{max-width:640px;flex-basis:100%;}
+  .konane-turn{font-size:14px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .konane-btn{transition:none;}
+  .konane-overlay{transition:none;}
+}
+</style>
+</head>
+<body>
+<div class="konane-app" id="konane-root">
+  <header class="konane-head">
+    <p class="konane-kicker">Hawai&#699;i &middot; The Divine Archives</p>
+    <h1 class="konane-title">K&#333;nane</h1>
+    <p class="konane-sub">The old Hawaiian game of capture &mdash; black lava stone against white coral, on a papa dark as a tide pool at night. Every move must take. The player who cannot take, loses.</p>
+  </header>
+
+  <div class="konane-main">
+    <div class="konane-boardwrap" id="konane-boardwrap">
+      <canvas class="konane-canvas" id="konane-canvas" tabindex="0" role="application"
+        aria-label="K&#333;nane board. Arrow keys move the cursor, Enter selects a stone or a landing square, E ends a capture chain, U undoes, R restarts."></canvas>
+      <div class="konane-statusbar">
+        <div class="konane-turn" id="konane-turn"><span class="konane-dot konane-dot-black"></span><span id="konane-turntext">Black to move &mdash; you</span></div>
+        <div class="konane-score" id="konane-score">taken <b>0</b> &middot; <b>0</b></div>
+        <div class="konane-controls">
+          <button class="konane-btn konane-btn-end" id="konane-endturn" disabled>End turn</button>
+          <button class="konane-btn" id="konane-undo">Undo</button>
+          <button class="konane-btn" id="konane-restart">Restart</button>
+        </div>
+      </div>
+      <div class="konane-overlay" id="konane-overlay">
+        <div class="konane-overlay-card">
+          <h2 id="konane-wintitle">Black prevails</h2>
+          <p id="konane-wintext"></p>
+          <button class="konane-btn" id="konane-again">Play again</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="konane-panel" aria-label="Rules and game record">
+      <h2>How to play</h2>
+      <ul class="konane-rules">
+        <li><span class="konane-chip konane-chip-attested">Attested</span><b>The papa</b> is filled in an alternating pattern of black and white stones. (Boards of many sizes are recorded; 8&times;8 is used here.)</li>
+        <li><span class="konane-chip konane-chip-attested">Attested</span><b>Opening.</b> Black lifts one black stone from the center (or a corner); White lifts a white stone orthogonally adjacent to that hole. Black then moves first, by capturing.</li>
+        <li><span class="konane-chip konane-chip-attested">Attested</span><b>Every move is a capture.</b> Jump orthogonally over an adjacent enemy stone into the empty point immediately beyond; the jumped stone is removed. No diagonal jumps. There are no non-capturing moves in the traditional game.</li>
+        <li><span class="konane-chip konane-chip-attested">Attested</span><b>Chains.</b> A turn may continue jumping with the same stone, but only in the same direction &mdash; you may stop after any capture. At least one capture per turn.</li>
+        <li><span class="konane-chip konane-chip-attested">Attested</span><b>Winning.</b> The player who has no capture on their turn loses. The count of taken stones does not decide the winner.</li>
+        <li><span class="konane-chip konane-chip-recon">Our choice</span><b>Opening used here:</b> the black stone on <b>c6</b> and the adjacent white stone on <b>d6</b> &mdash; one black, one white, from the central 2&times;2. You play Black (first move).</li>
+        <li><span class="konane-chip konane-chip-recon">Our choice</span><b>The opponent</b> is a heuristic engine (2-ply, prefers long chains). Its skill is an approximation &mdash; not tradition.</li>
+      </ul>
+
+      <h2>Record</h2>
+      <ul class="konane-log" id="konane-log"><li class="konane-log-empty">No moves yet.</li></ul>
+
+      <h2>Keys</h2>
+      <p class="konane-hint"><kbd>&larr;&uarr;&darr;&rarr;</kbd> move cursor &middot; <kbd>Enter</kbd> select stone / landing &middot; <kbd>Esc</kbd> release stone &middot; <kbd>E</kbd> end chain &middot; <kbd>U</kbd> undo &middot; <kbd>R</kbd> restart</p>
+
+      <h2>Sources</h2>
+      <p class="konane-sources">Rules after Kamehameha Schools, <i>K&#333;nane: Hawaiian Checkers</i> (1974); Cyningstan, &ldquo;Konane&rdquo;; and the Konane rules summary on Wikipedia. The tide-pool-night presentation is our artistry, not history.</p>
+    </aside>
+  </div>
+
+  <footer class="konane-foot">Built for the Museum of The Divine Archives &middot; a reverent interactive study, not a claim of authority over living tradition.</footer>
+</div>
+
+<script>
+'use strict';
+/* =====================================================================
+   K&#332;NANE — Hawaiian capture game. Single-file exhibit, vanilla ES6,
+   zero external requests. Human (Black) vs heuristic AI (White).
+   ===================================================================== */
+
+/* ---------------- game logic ---------------- */
+const KONANE_N = 8;
+const KONANE_BLACK = 1, KONANE_WHITE = 2;
+const KONANE_DIRS = [[1,0],[-1,0],[0,1],[0,-1]];
+const konaneInB = (r,c) => r>=0 && r<KONANE_N && c>=0 && c<KONANE_N;
+const konaneOpp = s => s===KONANE_BLACK ? KONANE_WHITE : KONANE_BLACK;
+const konaneSq = (r,c) => 'abcdefgh'[c] + (KONANE_N - r); // a1 bottom-left
+
+/* Fresh board: alternating stones; opening removes black c6 (r2,c2) and white d6 (r2,c3). */
+function konaneNewGrid(){
+  const g = new Array(64);
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++) g[r*8+c] = ((r+c)%2===0) ? KONANE_BLACK : KONANE_WHITE;
+  g[2*8+2] = 0; // black stone, c6
+  g[2*8+3] = 0; // white stone, d6 (orthogonally adjacent)
+  return g;
+}
+
+/* All capture chains for the stone at (r,c). Each move: {from,dr,dc,steps,path,caps}.
+   Same-direction rule is attested: chains continue in one orthogonal direction. */
+function konaneChainMoves(grid, r, c){
+  const me = grid[r*8+c];
+  const out = [];
+  for(const [dr,dc] of KONANE_DIRS){
+    const g = grid.slice();
+    g[r*8+c] = 0; // vacate start while chaining
+    let cr=r, cc=c;
+    const path=[], caps=[];
+    for(;;){
+      const mr=cr+dr, mc=cc+dc, lr=cr+2*dr, lc=cc+2*dc;
+      if(!konaneInB(lr,lc)) break;
+      const mid=g[mr*8+mc], land=g[lr*8+lc];
+      if(mid!==0 && mid!==me && land===0){
+        g[cr*8+cc]=0; g[mr*8+mc]=0; g[lr*8+lc]=me;
+        path.push({r:lr,c:lc}); caps.push({r:mr,c:mc});
+        out.push({from:{r,c}, dr, dc, steps:path.length,
+                  path:path.map(p=>({...p})), caps:caps.map(p=>({...p}))});
+        cr=lr; cc=lc;
+      } else break;
+    }
+  }
+  return out;
+}
+
+function konaneAllMoves(grid, side){
+  const out=[];
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++)
+    if(grid[r*8+c]===side) out.push(...konaneChainMoves(grid,r,c));
+  return out;
+}
+
+/* Single forward jumps from (r,c) — used for continuing a human chain. */
+function konaneNextJumps(grid, r, c, dr, dc){
+  const me = grid[r*8+c];
+  const out=[];
+  const mr=r+dr, mc=c+dc, lr=r+2*dr, lc=c+2*dc;
+  if(!konaneInB(lr,lc)) return out;
+  const mid=grid[mr*8+mc], land=grid[lr*8+lc];
+  if(mid!==0 && mid!==me && land===0)
+    out.push({from:{r,c}, to:{r:lr,c:lc}, cap:{r:mr,c:mc}, dr, dc});
+  return out;
+}
+
+function konaneApplyMove(grid, move){ // move = full chain from konaneChainMoves
+  const g = grid.slice();
+  const me = g[move.from.r*8+move.from.c];
+  const last = move.path[move.steps-1];
+  g[move.from.r*8+move.from.c]=0;
+  for(const cp of move.caps) g[cp.r*8+cp.c]=0;
+  g[last.r*8+last.c]=me;
+  return g;
+}
+
+function konaneCount(grid, side){
+  let n=0; for(let i=0;i<64;i++) if(grid[i]===side) n++;
+  return n;
+}
+function konaneCentrality(r,c){ // 0..~6, center-favoring
+  return 6 - (Math.abs(r-3.5)+Math.abs(c-3.5));
+}
+
+/* ---------------- heuristic AI (2-ply, phone-safe) ---------------- */
+function konaneEvaluate(grid, me){
+  const op = konaneOpp(me);
+  let ms=0, os=0, cen=0;
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const v=grid[r*8+c];
+    if(v===me){ ms++; cen+=konaneCentrality(r,c); }
+    else if(v===op){ os++; cen-=konaneCentrality(r,c); }
+  }
+  const mm = Math.min(konaneAllMoves(grid,me).length, 90);
+  const om = Math.min(konaneAllMoves(grid,op).length, 90);
+  return 14*(ms-os) + 2.2*(mm-om) + 0.35*cen;
+}
+
+function konaneAiChoose(grid, me){
+  const moves = konaneAllMoves(grid, me);
+  if(!moves.length) return null;
+  const op = konaneOpp(me);
+  // order candidates: long chains first, then central landings; cap breadth for phones
+  const ordered = moves.map(m=>{
+    const last=m.path[m.steps-1];
+    return {m, q: m.steps*3 + konaneCentrality(last.r,last.c)*0.4 + Math.random()*0.6};
+  }).sort((a,b)=>b.q-a.q).slice(0,40).map(x=>x.m);
+  let best=null, bestScore=-Infinity;
+  for(const m of ordered){
+    const g2 = konaneApplyMove(grid, m);
+    const replies = konaneAllMoves(g2, op);
+    let score;
+    if(!replies.length){
+      score = 1e6; // opponent has no reply: we win
+    } else {
+      let worst = -Infinity;
+      const rc = replies.length>24
+        ? replies.map(rm=>({rm, q: rm.steps})).sort((a,b)=>b.q-a.q).slice(0,24).map(x=>x.rm)
+        : replies;
+      for(const rm of rc){
+        const g3 = konaneApplyMove(g2, rm);
+        const v = konaneEvaluate(g3, me) - rm.steps*2;
+        if(v>worst) worst=v;
+      }
+      score = konaneEvaluate(g2, me) - 0.85*worst;
+    }
+    if(score>bestScore){ bestScore=score; best=m; }
+  }
+  return best;
+}
+
+/* ---------------- procedural textures (all drawn, nothing fetched) ---------------- */
+function konaneMakeTile(size, base, blotchColors, speckleColors, blotches, speckles){
+  const cv=document.createElement('canvas'); cv.width=cv.height=size;
+  const x=cv.getContext('2d');
+  x.fillStyle=base; x.fillRect(0,0,size,size);
+  for(let i=0;i<blotches;i++){
+    const r=size*(0.06+Math.random()*0.16);
+    x.fillStyle=blotchColors[i%blotchColors.length];
+    x.globalAlpha=0.10+Math.random()*0.12;
+    x.beginPath();
+    x.ellipse(Math.random()*size,Math.random()*size,r,r*(0.6+Math.random()*0.7),Math.random()*Math.PI,0,Math.PI*2);
+    x.fill();
+  }
+  x.globalAlpha=1;
+  for(let i=0;i<speckles;i++){
+    x.fillStyle=speckleColors[i%speckleColors.length];
+    x.globalAlpha=0.08+Math.random()*0.22;
+    const s=1+Math.random()*2.2;
+    x.fillRect(Math.random()*size,Math.random()*size,s,s);
+  }
+  x.globalAlpha=1;
+  return cv;
+}
+
+function konaneStoneSprite(diameter, kind, variant){
+  const pad=Math.ceil(diameter*0.28), S=diameter+pad*2;
+  const cv=document.createElement('canvas'); cv.width=cv.height=S;
+  const x=cv.getContext('2d');
+  const cx=S/2, cy=S/2, r=diameter/2;
+  // material grain
+  const grain=konaneMakeTile(Math.max(64,Math.ceil(diameter)),
+    kind==='black' ? '#22252d' : '#ece1c9',
+    kind==='black'
+      ? ['#2e3340','#1a1d24','#3a4152','#14161c']
+      : ['#f7efdc','#e2d3b2','#dfc9a8','#efe6d2'],
+    kind==='black' ? ['#4a5266','#0d0f14'] : ['#c9a37e','#ffffff'],
+    26, kind==='black'?130:90);
+  x.save();
+  x.beginPath(); x.arc(cx,cy,r,0,Math.PI*2); x.clip();
+  x.drawImage(grain,0,0,S,S);
+  // spherical shading: moonlit from upper-left, warm core shadow lower-right
+  let g=x.createRadialGradient(cx-r*0.38,cy-r*0.42,r*0.08, cx,cy,r*1.05);
+  if(kind==='black'){
+    g.addColorStop(0,'rgba(210,220,235,0.34)');
+    g.addColorStop(0.35,'rgba(120,130,150,0.10)');
+    g.addColorStop(0.72,'rgba(0,0,0,0.28)');
+    g.addColorStop(1,'rgba(0,0,0,0.72)');
+  } else {
+    g.addColorStop(0,'rgba(255,255,250,0.75)');
+    g.addColorStop(0.35,'rgba(255,250,235,0.12)');
+    g.addColorStop(0.72,'rgba(120,80,40,0.16)');
+    g.addColorStop(1,'rgba(70,45,25,0.42)');
+  }
+  x.fillStyle=g; x.fillRect(0,0,S,S);
+  // faint tide-teal rim on the shadow side — the tide pool at night
+  x.strokeStyle = kind==='black' ? 'rgba(95,211,184,0.20)' : 'rgba(95,211,184,0.12)';
+  x.lineWidth=Math.max(1.5,r*0.06);
+  x.beginPath(); x.arc(cx,cy,r-x.lineWidth/2,Math.PI*0.15,Math.PI*0.85); x.stroke();
+  // specular kiss of moonlight
+  x.fillStyle = kind==='black' ? 'rgba(235,242,250,0.50)' : 'rgba(255,255,255,0.65)';
+  x.beginPath(); x.ellipse(cx-r*0.36,cy-r*0.42,r*0.16,r*0.10,-0.6,0,Math.PI*2); x.fill();
+  x.restore();
+  // slight per-stone rotation variety is applied by the caller via drawImage rotation
+  cv._konane={pad, variant};
+  return cv;
+}
+
+/* ---------------- tiny tween engine ---------------- */
+const konaneEaseInOut = k => k<.5 ? 4*k*k*k : 1-Math.pow(-2*k+2,3)/2;
+const konaneEaseOut = k => 1-Math.pow(1-k,3);
+
+/* =====================================================================
+   KonaneExhibit — mounts into a root element, owns canvas + UI.
+   ===================================================================== */
+function KonaneExhibit(root){
+  const self=this;
+  self._disposed=false;
+  const canvas=root.querySelector('#konane-canvas');
+  const wrap=root.querySelector('#konane-boardwrap');
+  const turnText=root.querySelector('#konane-turntext');
+  const turnDot=root.querySelector('.konane-dot');
+  const scoreEl=root.querySelector('#konane-score');
+  const logEl=root.querySelector('#konane-log');
+  const btnEnd=root.querySelector('#konane-endturn');
+  const btnUndo=root.querySelector('#konane-undo');
+  const btnRestart=root.querySelector('#konane-restart');
+  const btnAgain=root.querySelector('#konane-again');
+  const overlay=root.querySelector('#konane-overlay');
+  const winTitle=root.querySelector('#konane-wintitle');
+  const winText=root.querySelector('#konane-wintext');
+  const ctx=canvas.getContext('2d');
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+  const isMobile = coarse || Math.min(window.innerWidth,window.innerHeight)<700;
+
+  /* ----- state ----- */
+  const S = {
+    grid: konaneNewGrid(),
+    toMove: KONANE_BLACK,          // human = black, moves first (attested)
+    human: KONANE_BLACK,
+    phase: 'opening',              // 'opening' | 'play' | 'over'
+    sel: null,                     // {r,c}
+    chainDir: null,                // locked direction during a chain
+    chainCount: 0,                 // captures made this turn
+    jumps: [],                     // legal next landings for current selection
+    history: [],                   // snapshots at human-turn starts
+    log: [],
+    moving: false,                 // an animation / AI turn is in flight
+    aiThinking: false,
+    cursor: {r:3, c:3},
+    takenBlack: 0,                 // black stones taken by white
+    takenWhite: 0,                 // white stones taken by black
+    tweens: [],
+    particles: [],
+    staticLayer: null,
+    sprites: null,
+    tiles: null,
+    geom: null,
+    dirty: true,
+    raf: 0,
+    aiTimer: 0,
+    openingShown: false,
+    dying: [],                    // captured stones mid-fade: {r,c,v,variant}
+  };
+
+  /* ----- sizing ----- */
+  function sizeCanvas(){
+    const w = canvas.clientWidth || 320;
+    const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio||1, 2); // mobile DPR cap 1.0
+    canvas.width = Math.round(w*dpr); canvas.height = Math.round(w*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    const frame = Math.round(w*0.055);
+    const board = w - frame*2;
+    S.geom = { w, frame, sq: board/8, boardX: frame, boardY: frame };
+    buildStatic();
+    S.dirty = true;
+  }
+
+  /* ----- static scene: volcanic night, carved basalt papa ----- */
+  function buildStatic(){
+    const {w, frame, sq, boardX, boardY} = S.geom;
+    const cv=document.createElement('canvas'); cv.width=canvas.width; cv.height=canvas.height;
+    const x=cv.getContext('2d');
+    const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio||1, 2);
+    x.setTransform(dpr,0,0,dpr,0,0);
+
+    // abyssal backdrop
+    let bg=x.createRadialGradient(w/2,w*0.42,w*0.05, w/2,w/2,w*0.75);
+    bg.addColorStop(0,'#141821'); bg.addColorStop(0.55,'#0a0c12'); bg.addColorStop(1,'#040507');
+    x.fillStyle=bg; x.fillRect(0,0,w,w);
+    // faint volcanic grain
+    for(let i=0;i<420;i++){
+      x.fillStyle = Math.random()<.5 ? 'rgba(255,154,77,0.03)' : 'rgba(95,211,184,0.028)';
+      const s=1+Math.random()*2;
+      x.fillRect(Math.random()*w, Math.random()*w, s, s);
+    }
+
+    // basalt frame with carved wave inlay
+    const fr = frame*0.92;
+    x.fillStyle='#10131a';
+    roundRect(x, frame-fr*0.5, frame-fr*0.5, w-frame*2+fr, w-frame*2+fr, 18); x.fill();
+    let fg=x.createLinearGradient(0,0,w,w);
+    fg.addColorStop(0,'rgba(120,135,160,0.14)'); fg.addColorStop(0.5,'rgba(0,0,0,0.25)'); fg.addColorStop(1,'rgba(120,135,160,0.08)');
+    x.fillStyle=fg; roundRect(x, frame-fr*0.5, frame-fr*0.5, w-frame*2+fr, w-frame*2+fr, 18); x.fill();
+    // wave-carve inlay: two thin arcs, tide-teal, very restrained
+    x.strokeStyle='rgba(95,211,184,0.22)'; x.lineWidth=1.4;
+    for(let k=0;k<2;k++){
+      x.beginPath();
+      const inset=frame-fr*0.5+6+k*7;
+      roundRectPath(x, inset, inset, w-inset*2, w-inset*2, 12);
+      x.stroke();
+    }
+
+    // the papa: 8x8 alternating stone — pale coral sand vs black basalt
+    if(!S.tiles){
+      const t=Math.max(96,Math.ceil(sq*2));
+      S.tiles={
+        light: konaneMakeTile(t,'#dccfae',['#e8dcc0','#cdbb92','#d5c4a0','#c4b28c'],['#a98f66','#f4ead2'],22,70),
+        dark:  konaneMakeTile(t,'#181b22',['#222633','#12141b','#262b38','#0e1015'],['#3d4658','#05070a'],26,110)
+      };
+    }
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const px=boardX+c*sq, py=boardY+r*sq;
+      const light=((r+c)%2===1);
+      const tile= light? S.tiles.light : S.tiles.dark;
+      // hand-cut jitter: tiny brightness variation per square
+      const j = (((r*7+c*13)%5)-2)*0.012;
+      x.save();
+      x.beginPath(); x.rect(px,py,sq,sq); x.clip();
+      x.drawImage(tile, px,py,sq,sq);
+      x.fillStyle = j>0?`rgba(255,250,235,${j})`:`rgba(0,0,0,${-j*2})`;
+      x.fillRect(px,py,sq,sq);
+      // carved cell bevel
+      x.strokeStyle='rgba(255,255,255,0.055)'; x.lineWidth=1;
+      x.beginPath(); x.moveTo(px+1,py+sq-1); x.lineTo(px+1,py+1); x.lineTo(px+sq-1,py+1); x.stroke();
+      x.strokeStyle='rgba(0,0,0,0.42)';
+      x.beginPath(); x.moveTo(px+sq-1,py+1); x.lineTo(px+sq-1,py+sq-1); x.lineTo(px+1,py+sq-1); x.stroke();
+      x.restore();
+    }
+    // vignette over the board — chiaroscuro
+    let vg=x.createRadialGradient(w/2,w/2,w*0.28, w/2,w/2,w*0.72);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,0.42)');
+    x.fillStyle=vg; x.fillRect(0,0,w,w);
+    S.staticLayer=cv;
+  }
+
+  function roundRect(x,px,py,rw,rh,rad){
+    x.beginPath();
+    x.moveTo(px+rad,py); x.arcTo(px+rw,py,px+rw,py+rh,rad); x.arcTo(px+rw,py+rh,px,py+rh,rad);
+    x.arcTo(px,py+rh,px,py,rad); x.arcTo(px,py,px+rw,py,rad); x.closePath();
+  }
+  function roundRectPath(x,px,py,rw,rh,rad){
+    x.moveTo(px+rad,py); x.arcTo(px+rw,py,px+rw,py+rh,rad); x.arcTo(px+rw,py+rh,px,py+rh,rad);
+    x.arcTo(px,py+rh,px,py,rad); x.arcTo(px,py,px+rw,py,rad); x.closePath();
+  }
+  const sqXY=(r,c)=>({x:S.geom.boardX+(c+0.5)*S.geom.sq, y:S.geom.boardY+(r+0.5)*S.geom.sq});
+
+  /* ----- stones as sprite instances ----- */
+  function buildSprites(){
+    const d=Math.ceil(S.geom.sq*0.84);
+    S.sprites={
+      black:[konaneStoneSprite(d,'black',0), konaneStoneSprite(d,'black',1)],
+      white:[konaneStoneSprite(d,'white',0), konaneStoneSprite(d,'white',1)]
+    };
+  }
+  function stoneVariant(r,c){ return (r*8+c)%2; }
+
+  /* ----- embers: slow volcanic drift ----- */
+  function seedParticles(){
+    S.particles=[];
+    if(reduceMotion) return;
+    const n = isMobile? 26 : 46;
+    for(let i=0;i<n;i++) S.particles.push({
+      x:Math.random(), y:Math.random(),
+      s:0.6+Math.random()*1.8, v:0.008+Math.random()*0.03,
+      ph:Math.random()*Math.PI*2, teal:Math.random()<0.25
+    });
+  }
+
+  /* ----- tween plumbing ----- */
+  function addTween(dur, update, done, ease){
+    if(reduceMotion){ update(1); if(done) done(); return; }
+    S.tweens.push({t:0, dur, update, done, ease:ease||konaneEaseInOut});
+  }
+  function stepTweens(dt){
+    const live=[];
+    for(const tw of S.tweens){
+      tw.t+=dt;
+      const k=Math.min(1, tw.t/tw.dur);
+      tw.update(tw.ease(k));
+      if(k>=1){ if(tw.done) tw.done(); } else live.push(tw);
+    }
+    S.tweens=live;
+  }
+
+  /* ----- frame rendering ----- */
+  const stoneAnim = new Map(); // key r*8+c -> {dx,dy,scale,alpha,lift}
+  function animOf(r,c){ return stoneAnim.get(r*8+c); }
+
+  function drawFrame(now){
+    const {w, sq, boardX, boardY} = S.geom;
+    ctx.clearRect(0,0,w,w);
+    ctx.drawImage(S.staticLayer, 0,0,w,w);
+
+    // opening holes: hollow insets where c6/d6 stones were lifted
+    for(const [hr,hc] of [[2,2],[2,3]]){
+      if(S.grid[hr*8+hc]!==0) continue;
+      const {x:px,y:py}=sqXY(hr,hc), r=sq*0.30;
+      ctx.fillStyle='rgba(0,0,0,0.55)';
+      ctx.beginPath(); ctx.ellipse(px,py+r*0.12,r*0.95,r*0.8,0,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='rgba(95,211,184,0.16)'; ctx.lineWidth=1.2;
+      ctx.beginPath(); ctx.ellipse(px,py+r*0.12,r*0.95,r*0.8,0,Math.PI*1.05,Math.PI*1.95); ctx.stroke();
+    }
+
+    // legal landing markers for the current selection
+    if(S.sel && !S.moving){
+      for(const j of S.jumps){
+        const {x:px,y:py}=sqXY(j.to.r,j.to.c);
+        const pulse = reduceMotion?0:Math.sin(now/380)*0.5+0.5;
+        ctx.strokeStyle=`rgba(95,211,184,${0.55+pulse*0.3})`;
+        ctx.lineWidth=2;
+        ctx.beginPath(); ctx.arc(px,py,sq*0.30,0,Math.PI*2); ctx.stroke();
+        ctx.fillStyle=`rgba(95,211,184,${0.10+pulse*0.06})`;
+        ctx.beginPath(); ctx.arc(px,py,sq*0.30,0,Math.PI*2); ctx.fill();
+      }
+    }
+
+    // stones
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const v=S.grid[r*8+c];
+      if(v===0) continue;
+      const a=animOf(r,c);
+      let alpha=1, scale=1, dx=0, dy=0, lift=0;
+      if(a){ alpha=a.alpha; scale=a.scale; dx=a.dx; dy=a.dy; lift=a.lift||0; }
+      const {x:px,y:py}=sqXY(r,c);
+      const spr=S.sprites[v===KONANE_BLACK?'black':'white'][stoneVariant(r,c)];
+      const Ssize=spr.width, pad=spr._konane.pad;
+      const stoneD=(Ssize-pad*2)*scale; // true rendered diameter of the stone
+      const selected = S.sel && S.sel.r===r && S.sel.c===c;
+      ctx.save();
+      ctx.globalAlpha=alpha;
+      // grounding shadow
+      const shR=stoneD*0.5*(selected?1.06:1);
+      ctx.fillStyle=`rgba(0,0,0,${selected?0.55:0.45})`;
+      ctx.beginPath();
+      ctx.ellipse(px+dx, py+dy+stoneD*0.34-lift*0.5, shR*0.92, shR*0.30, 0, 0, Math.PI*2);
+      ctx.fill();
+      if(selected && !S.moving){
+        // selection aura
+        const pulse = reduceMotion?0:Math.sin(now/420)*0.5+0.5;
+        ctx.strokeStyle=`rgba(95,211,184,${0.45+pulse*0.35})`;
+        ctx.lineWidth=2.4;
+        ctx.beginPath(); ctx.arc(px+dx,py+dy-lift,stoneD*0.56+pulse*3,0,Math.PI*2); ctx.stroke();
+      }
+      const dw=Ssize*scale;
+      ctx.drawImage(spr, px+dx-dw/2, py+dy-lift-dw/2, dw, dw);
+      ctx.restore();
+    }
+
+    // stones breathing their last — captured, sinking into the papa
+    for(const d of S.dying){
+      const a=animOf(d.r,d.c);
+      let alpha=1, scale=1, dx=0, dy=0;
+      if(a){ alpha=a.alpha; scale=a.scale; dx=a.dx; dy=a.dy; }
+      const {x:px,y:py}=sqXY(d.r,d.c);
+      const spr=S.sprites[d.v===KONANE_BLACK?'black':'white'][d.variant];
+      const Ssize=spr.width, dw=Ssize*Math.max(0.001,scale);
+      ctx.save();
+      ctx.globalAlpha=Math.max(0,Math.min(1,alpha));
+      ctx.drawImage(spr, px+dx-dw/2, py+dy-dw/2, dw, dw);
+      ctx.restore();
+    }
+
+    // keyboard cursor
+    if(document.activeElement===canvas && !S.moving && S.phase==='play' && S.toMove===S.human){
+      const {x:px,y:py}=sqXY(S.cursor.r,S.cursor.c);
+      ctx.strokeStyle='rgba(95,211,184,0.85)'; ctx.lineWidth=2;
+      ctx.setLineDash([6,5]);
+      const h=sq*0.46;
+      roundRectPath(ctx, px-h, py-h, h*2, h*2, 7);
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+
+    // embers
+    if(!reduceMotion){
+      for(const p of S.particles){
+        p.y-=p.v/60; p.ph+=0.02;
+        if(p.y<-0.05){ p.y=1.05; p.x=Math.random(); }
+        const tw=0.35+0.65*Math.abs(Math.sin(p.ph));
+        ctx.fillStyle = p.teal? `rgba(95,211,184,${0.25*tw})` : `rgba(255,${120+Math.floor(60*Math.sin(p.ph))},60,${0.30*tw})`;
+        ctx.beginPath(); ctx.arc(p.x*w, p.y*w, p.s, 0, Math.PI*2); ctx.fill();
+      }
+    }
+    S.dirty=false;
+  }
+
+  function loop(now){
+    if(self._disposed) return;
+    stepTweens(1/60);
+    if(S.dirty || S.tweens.length || (!reduceMotion && S.particles.length)) drawFrame(now||0);
+    S.raf=requestAnimationFrame(loop);
+  }
+
+  /* ----- UI text ----- */
+  function stoneName(s){ return s===KONANE_BLACK?'Black':'White'; }
+  function refreshStatus(){
+    if(S.phase==='over') return;
+    const who = S.toMove===S.human ? 'you' : 'the spirit of the papa';
+    let msg;
+    if(S.phase==='opening') msg='The opening lifts — two stones leave the papa…';
+    else if(S.aiThinking) msg='White to move — the spirit of the papa considers…';
+    else if(S.chainCount>0) msg=`Black to move — chain ×${S.chainCount}: continue or end your turn`;
+    else msg=`${stoneName(S.toMove)} to move — ${who}`;
+    turnText.textContent=msg;
+    turnDot.className='konane-dot '+(S.toMove===KONANE_BLACK?'konane-dot-black':'konane-dot-white');
+    scoreEl.innerHTML=`taken <b>${S.takenWhite}</b> white · <b>${S.takenBlack}</b> black`;
+    btnEnd.disabled = !(S.chainCount>0 && !S.moving && !S.aiThinking && S.toMove===S.human);
+    btnUndo.disabled = S.moving || S.aiThinking || S.history.length===0;
+    S.dirty=true;
+  }
+  function addLog(cls, text){
+    if(!S.log.length) logEl.innerHTML='';
+    S.log.push({cls,text});
+    const li=document.createElement('li');
+    li.className=cls; li.textContent=text;
+    logEl.appendChild(li);
+    logEl.scrollTop=logEl.scrollHeight;
+  }
+
+  /* ----- snapshots / undo ----- */
+  function snapshot(){
+    return { grid:S.grid.slice(), toMove:S.toMove, takenBlack:S.takenBlack,
+             takenWhite:S.takenWhite, logLen:S.log.length };
+  }
+  function restore(snap){
+    S.grid=snap.grid.slice(); S.toMove=snap.toMove;
+    S.takenBlack=snap.takenBlack; S.takenWhite=snap.takenWhite;
+    S.phase='play';
+    overlay.classList.remove('konane-show');
+    S.log=S.log.slice(0,snap.logLen);
+    logEl.innerHTML='';
+    if(!S.log.length) logEl.innerHTML='<li class="konane-log-empty">No moves yet.</li>';
+    for(const e of S.log){ const li=document.createElement('li'); li.className=e.cls; li.textContent=e.text; logEl.appendChild(li); }
+    S.sel=null; S.chainDir=null; S.chainCount=0; S.jumps=[];
+    stoneAnim.clear(); S.dying.length=0; S.tweens.length=0; S.moving=false; S.aiThinking=false;
+    refreshStatus();
+  }
+
+  /* ----- selection & human moves ----- */
+  function humanMovesFrom(r,c){
+    if(S.chainDir){ // mid-chain: single forward jump only (same-direction rule)
+      return konaneNextJumps(S.grid,r,c,S.chainDir[0],S.chainDir[1]).map(j=>({...j, to:j.to}));
+    }
+    return konaneChainMoves(S.grid,r,c).map(m=>({to:m.path[0], cap:m.caps[0], firstMove:m}));
+  }
+  function movableStones(){
+    const out=[];
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++)
+      if(S.grid[r*8+c]===S.human && konaneChainMoves(S.grid,r,c).length) out.push({r,c});
+    return out;
+  }
+  function select(r,c){
+    if(S.grid[r*8+c]!==S.human) return false;
+    const opts=humanMovesFrom(r,c);
+    if(!opts.length) return false;
+    S.sel={r,c};
+    S.jumps=opts.map(o=>({to:o.to, cap:o.cap, firstMove:o.firstMove}));
+    S.cursor={r,c};
+    S.dirty=true; refreshStatus();
+    return true;
+  }
+  function deselect(){
+    if(S.chainCount>0) return; // cannot abandon a stone mid-chain
+    S.sel=null; S.jumps=[]; S.dirty=true; refreshStatus();
+  }
+
+  function animateStoneTravel(from, to, done){
+    const a=sqXY(from.r,from.c), b=sqXY(to.r,to.c);
+    const key=from.r*8+from.c;
+    addTween(340, k=>{
+      stoneAnim.set(to.r*8+to.c, {dx:a.x-b.x+(b.x-a.x)*k, dy:a.y-b.y+(b.y-a.y)*k, scale:1+Math.sin(k*Math.PI)*0.12, alpha:1, lift:Math.sin(k*Math.PI)*S.geom.sq*0.28});
+      stoneAnim.delete(key);
+      S.dirty=true;
+    }, ()=>{
+      stoneAnim.delete(to.r*8+to.c);
+      if(done) done();
+    });
+  }
+  function animateCapture(cap, v){
+    const key=cap.r*8+cap.c;
+    S.dying.push({r:cap.r, c:cap.c, v, variant:stoneVariant(cap.r,cap.c)});
+    addTween(300, k=>{
+      stoneAnim.set(key,{dx:0,dy:S.geom.sq*0.28*k,scale:1-k*0.85,alpha:1-k,lift:0});
+      S.dirty=true;
+    }, ()=>{
+      stoneAnim.delete(key);
+      const i=S.dying.findIndex(d=>d.r===cap.r&&d.c===cap.c);
+      if(i>=0) S.dying.splice(i,1);
+      S.dirty=true;
+    });
+  }
+
+  function humanJump(choice){
+    // choice: {to, cap, firstMove?}
+    const from={...S.sel};
+    if(S.chainCount===0){ S._turnFrom={...from}; S._turnPath=[]; }
+    S.moving=true; refreshStatus();
+    // remove captured stone from logic immediately so chains read correctly
+    const capV=S.grid[choice.cap.r*8+choice.cap.c];
+    S.grid[choice.cap.r*8+choice.cap.c]=0;
+    animateCapture(choice.cap, capV);
+    const me=S.grid[from.r*8+from.c];
+    S.grid[from.r*8+from.c]=0;
+    if(me===KONANE_BLACK) S.takenWhite++; else S.takenBlack++;
+    if(!S.chainDir && choice.firstMove){ S.chainDir=[choice.firstMove.dr, choice.firstMove.dc]; }
+    animateStoneTravel(from, choice.to, ()=>{
+      S.grid[choice.to.r*8+choice.to.c]=me;
+      S._turnPath.push({...choice.to});
+      S.chainCount++;
+      S.moving=false;
+      // continue?
+      const more=konaneNextJumps(S.grid, choice.to.r, choice.to.c, S.chainDir[0], S.chainDir[1]);
+      S.sel={r:choice.to.r, c:choice.to.c};
+      if(more.length){
+        S.jumps=more.map(j=>({to:j.to, cap:j.cap}));
+        S.cursor={r:choice.to.r, c:choice.to.c};
+      } else {
+        endHumanTurn(true); // forced end, no choice
+        return;
+      }
+      refreshStatus();
+    });
+  }
+
+  function moveNotation(from, path){
+    let s=konaneSq(from.r,from.c);
+    for(const p of path) s+='×'+konaneSq(p.r,p.c);
+    return s;
+  }
+
+  function endHumanTurn(forced){
+    const from=S._turnFrom, path=S._turnPath||[];
+    if(S.chainCount===0 && !forced) return;
+    if(path.length) addLog('konane-log-black', `Black ${moveNotation(from,path)} — takes ${S.chainCount}`);
+    S.sel=null; S.jumps=[]; S.chainDir=null; S.chainCount=0;
+    S._turnFrom=null; S._turnPath=null;
+    S.toMove=KONANE_WHITE;
+    refreshStatus();
+    checkEndOrContinue();
+  }
+
+  function checkEndOrContinue(){
+    const moves=konaneAllMoves(S.grid, S.toMove);
+    if(!moves.length){ gameOver(konaneOpp(S.toMove)); return; }
+    if(S.toMove===S.human){
+      S.history.push(snapshot());
+      if(S.history.length>60) S.history.shift();
+      refreshStatus();
+    } else {
+      aiTurn();
+    }
+  }
+
+  function aiTurn(){
+    S.aiThinking=true; refreshStatus();
+    S.aiTimer=setTimeout(()=>{
+      if(self._disposed) return;
+      const mv=konaneAiChoose(S.grid, KONANE_WHITE);
+      if(!mv){ gameOver(KONANE_BLACK); return; }
+      S.moving=true; refreshStatus();
+      const me=KONANE_WHITE;
+      const from={...mv.from};
+      const path=mv.path.slice(0, mv.steps);
+      const caps=mv.caps.slice(0, mv.steps);
+      S.grid[from.r*8+from.c]=0;
+      // remove captures logically up-front; animate each step
+      const capVs=caps.map(cp=>S.grid[cp.r*8+cp.c]);
+      for(const cp of caps) S.grid[cp.r*8+cp.c]=0;
+      S.takenBlack+=caps.length;
+      let i=0;
+      const step=()=>{
+        if(self._disposed) return;
+        if(i>=path.length){
+          S.grid[path[path.length-1].r*8+path[path.length-1].c]=me;
+          stoneAnim.delete(path[path.length-1].r*8+path[path.length-1].c);
+          S.moving=false; S.aiThinking=false;
+          addLog('konane-log-white', `White ${moveNotation(from,path)} — takes ${caps.length}`);
+          S.toMove=KONANE_BLACK;
+          refreshStatus();
+          checkEndOrContinue();
+          return;
+        }
+        const prev = i===0? from : path[i-1];
+        animateCapture(caps[i], capVs[i]);
+        animateStoneTravel(prev, path[i], ()=>{ i++; step(); });
+      };
+      step();
+    }, reduceMotion?60:420);
+  }
+
+  function gameOver(winner){
+    S.phase='over';
+    const humanWon = winner===S.human;
+    winTitle.textContent = humanWon? 'Black prevails — you cannot be moved' : 'White prevails';
+    winText.textContent = humanWon
+      ? 'The spirit of the papa has no capture left. In kōnane, the player who cannot take has lost — and the count of the taken does not matter.'
+      : 'You have no capture left, so the game is ended. In kōnane the blocked player loses — the count of the taken does not matter. The papa waits for your return.';
+    overlay.classList.add('konane-show');
+    refreshStatus();
+    S.dirty=true;
+  }
+
+  function newGame(){
+    clearTimeout(S.aiTimer);
+    overlay.classList.remove('konane-show');
+    S.grid=konaneNewGrid();
+    S.toMove=KONANE_BLACK; S.phase='opening';
+    S.sel=null; S.chainDir=null; S.chainCount=0; S.jumps=[];
+    S.history=[]; S.log=[]; S.takenBlack=0; S.takenWhite=0;
+    S.moving=false; S.aiThinking=false;
+    stoneAnim.clear(); S.dying.length=0; S.tweens.length=0;
+    S._turnFrom=null; S._turnPath=null;
+    logEl.innerHTML='<li class="konane-log-empty">No moves yet.</li>';
+    refreshStatus();
+    // the traditional opening lifts, visibly: black c6, then white d6 beside it
+    const seq=[{r:2,c:2},{r:2,c:3}];
+    S.openingShown=true;
+    if(reduceMotion){
+      S.phase='play'; S.history.push(snapshot()); refreshStatus();
+      return;
+    }
+    S.moving=true; refreshStatus();
+    let i=0;
+    const liftNext=()=>{
+      if(self._disposed) return;
+      if(i>=seq.length){
+        S.phase='play'; S.moving=false;
+        S.history.push(snapshot());
+        refreshStatus(); return;
+      }
+      const sq0=seq[i];
+      addTween(600, k=>{
+        stoneAnim.set(sq0.r*8+sq0.c,{dx:0,dy:-S.geom.sq*0.5*k,scale:1,alpha:1-k*0.9,lift:S.geom.sq*0.6*k});
+        S.dirty=true;
+      }, ()=>{ stoneAnim.delete(sq0.r*8+sq0.c); i++; liftNext(); }, konaneEaseOut);
+    };
+    liftNext();
+  }
+
+  /* ----- pointer input ----- */
+  function eventSquare(e){
+    const rect=canvas.getBoundingClientRect();
+    const px=(e.clientX-rect.left), py=(e.clientY-rect.top);
+    const {sq, boardX, boardY}=S.geom;
+    const c=Math.floor((px-boardX)/sq), r=Math.floor((py-boardY)/sq);
+    if(!konaneInB(r,c)) return null;
+    return {r,c};
+  }
+  function humanActAt(r,c){
+    if(S.phase!=='play' || S.moving || S.aiThinking || S.toMove!==S.human) return;
+    S.cursor={r,c};
+    // is it a legal landing for the current selection?
+    if(S.sel){
+      const choice=S.jumps.find(j=>j.to.r===r && j.to.c===c);
+      if(choice){ humanJump(choice); return; }
+    }
+    if(S.grid[r*8+c]===S.human){
+      if(S.chainCount>0) return; // locked to the chaining stone
+      if(S.sel && S.sel.r===r && S.sel.c===c){ deselect(); return; }
+      if(!select(r,c)){
+        // stone has no captures — gentle refusal pulse
+        const key=r*8+c;
+        addTween(260, k=>{
+          stoneAnim.set(key,{dx:Math.sin(k*Math.PI*2)*4,dy:0,scale:1,alpha:1,lift:0});
+          S.dirty=true;
+        }, ()=>{ stoneAnim.delete(key); S.dirty=true; });
+      }
+      return;
+    }
+    deselect();
+  }
+  function onPointer(e){
+    e.preventDefault();
+    const s=eventSquare(e);
+    if(s) humanActAt(s.r,s.c);
+    canvas.focus({preventScroll:true});
+  }
+
+  /* ----- keyboard play ----- */
+  function onKey(e){
+    const k=e.key;
+    const active = document.activeElement===canvas || e.target===document.body;
+    if(k==='r'||k==='R'){ if(active){ newGame(); e.preventDefault(); } return; }
+    if(k==='u'||k==='U'){ if(active){ doUndo(); e.preventDefault(); } return; }
+    if(document.activeElement!==canvas) return;
+    if(k==='ArrowUp'||k==='ArrowDown'||k==='ArrowLeft'||k==='ArrowRight'){
+      const d={ArrowUp:[-1,0],ArrowDown:[1,0],ArrowLeft:[0,-1],ArrowRight:[0,1]}[k];
+      S.cursor.r=Math.min(7,Math.max(0,S.cursor.r+d[0]));
+      S.cursor.c=Math.min(7,Math.max(0,S.cursor.c+d[1]));
+      S.dirty=true; e.preventDefault();
+    } else if(k==='Enter'||k===' '){
+      humanActAt(S.cursor.r,S.cursor.c); e.preventDefault();
+    } else if(k==='Escape'){
+      deselect(); e.preventDefault();
+    } else if(k==='e'||k==='E'){
+      if(S.chainCount>0 && !S.moving) endHumanTurn(false);
+      e.preventDefault();
+    }
+  }
+
+  /* ----- buttons ----- */
+  function doUndo(){
+    if(S.moving || S.aiThinking || !S.history.length) return;
+    S.history.pop(); // discard the snapshot of the turn in progress / just finished
+    const snap=S.history[S.history.length-1];
+    if(snap) restore(snap);
+    else newGame();
+  }
+  const onEndTurn=()=>{ if(S.chainCount>0 && !S.moving) endHumanTurn(false); };
+  function onResize(){ S.tiles=null; sizeCanvas(); buildSprites(); seedParticles(); S.dirty=true; }
+
+  canvas.addEventListener('pointerdown', onPointer);
+  window.addEventListener('keydown', onKey);
+  window.addEventListener('resize', onResize);
+  btnEnd.addEventListener('click', onEndTurn);
+  btnUndo.addEventListener('click', doUndo);
+  btnRestart.addEventListener('click', newGame);
+  btnAgain.addEventListener('click', newGame);
+
+  /* ----- boot ----- */
+  sizeCanvas();
+  buildSprites();
+  seedParticles();
+  newGame();
+  S.raf=requestAnimationFrame(loop);
+
+  /* ----- teardown: dispose everything ----- */
+  self.destroy=function(){
+    if(self._disposed) return;
+    self._disposed=true;
+    cancelAnimationFrame(S.raf);
+    clearTimeout(S.aiTimer);
+    canvas.removeEventListener('pointerdown', onPointer);
+    window.removeEventListener('keydown', onKey);
+    window.removeEventListener('resize', onResize);
+    btnEnd.removeEventListener('click', onEndTurn);
+    btnUndo.removeEventListener('click', doUndo);
+    btnRestart.removeEventListener('click', newGame);
+    btnAgain.removeEventListener('click', newGame);
+    S.tweens.length=0; stoneAnim.clear(); S.dying.length=0; S.particles.length=0;
+    S.staticLayer=null; S.sprites=null; S.tiles=null; S.geom=null;
+    S.grid=null; S.history.length=0; S.log.length=0; S.jumps.length=0;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+  };
+  return self;
+}
+
+/* auto-mount when opened directly */
+(function(){
+  const root=document.getElementById('konane-root');
+  if(!root) return;
+  window.konaneExhibit = new KonaneExhibit(root); // .destroy() available
+})();
+</script>
+</body>
+</html>

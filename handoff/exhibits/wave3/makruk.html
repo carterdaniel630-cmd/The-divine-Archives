@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Makruk — Thai Chess | The Divine Archives</title>
+<style>
+/* ============ MAKRUK EXHIBIT — all selectors scoped with makruk- prefix ============ */
+.makruk-page{margin:0;padding:0;background:#0d0906;color:#e9dcc0;font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,"Noto Serif Thai",serif;min-height:100vh;}
+.makruk-stage{max-width:1180px;margin:0 auto;padding:18px 16px 60px;}
+.makruk-head{text-align:center;padding:14px 8px 6px;border-bottom:1px solid #4a3517;margin-bottom:18px;}
+.makruk-thai-title{font-size:clamp(30px,5vw,46px);color:#e8b93c;letter-spacing:2px;margin:0;text-shadow:0 0 24px rgba(232,185,60,.25);}
+.makruk-sub{font-size:clamp(13px,2vw,17px);letter-spacing:4px;text-transform:uppercase;color:#b99a5e;margin:6px 0 0;}
+.makruk-tag{font-style:italic;color:#8f7648;font-size:13px;margin:8px 0 4px;}
+.makruk-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;align-items:start;}
+@media (max-width:900px){.makruk-layout{grid-template-columns:1fr;}}
+.makruk-board-wrap{position:relative;background:radial-gradient(ellipse at 50% 30%,#241a0e 0%,#120c06 70%);border:1px solid #4a3517;border-radius:10px;padding:clamp(10px,2.5vw,26px);box-shadow:0 30px 80px rgba(0,0,0,.7),inset 0 0 120px rgba(0,0,0,.55);outline:none;}
+.makruk-board-wrap:focus-visible{box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 3px #e8b93c;}
+.makruk-board-holder{position:relative;width:100%;aspect-ratio:1/1;max-width:640px;margin:0 auto;}
+.makruk-board{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:4px;touch-action:manipulation;}
+.makruk-caption{text-align:center;color:#8f7648;font-size:12px;letter-spacing:1px;margin-top:10px;font-style:italic;}
+.makruk-panel{background:linear-gradient(180deg,#1a120a,#100b06);border:1px solid #4a3517;border-radius:10px;padding:18px 16px;box-shadow:0 20px 50px rgba(0,0,0,.6);}
+.makruk-panel h2{margin:0 0 10px;font-size:15px;letter-spacing:3px;color:#e8b93c;text-transform:uppercase;border-bottom:1px solid #3a2a12;padding-bottom:8px;}
+.makruk-status{min-height:64px;background:#0a0704;border:1px solid #33230f;border-radius:6px;padding:10px 12px;margin-bottom:14px;font-size:14px;line-height:1.5;}
+.makruk-status-turn{font-weight:bold;color:#e8b93c;}
+.makruk-status-check{color:#ff9d5c;font-weight:bold;}
+.makruk-status-end{color:#9fe08a;font-weight:bold;}
+.makruk-count{background:#1c130a;border:1px dashed #a97c2c;border-radius:6px;padding:8px 10px;margin-top:8px;font-size:13px;color:#e3c87e;}
+.makruk-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.makruk-btn{background:linear-gradient(180deg,#3a2a12,#241708);border:1px solid #a97c2c;color:#e9dcc0;padding:9px 14px;border-radius:6px;font-family:inherit;font-size:13px;letter-spacing:1px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;}
+.makruk-btn:hover{box-shadow:0 0 14px rgba(232,185,60,.35);transform:translateY(-1px);}
+.makruk-btn:active{transform:translateY(1px);}
+.makruk-btn[aria-pressed="true"]{background:linear-gradient(180deg,#6b4d1c,#3d2a0e);color:#ffe9ad;}
+.makruk-kbd-hint{font-size:12px;color:#8f7648;margin:0 0 14px;line-height:1.7;}
+.makruk-kbd-hint kbd{background:#241708;border:1px solid #4a3517;border-radius:4px;padding:1px 6px;font-family:inherit;font-size:11px;color:#e3c87e;}
+.makruk-rules{font-size:13px;line-height:1.65;color:#cdbb92;}
+.makruk-rules details{border:1px solid #33230f;border-radius:6px;margin-bottom:8px;background:#0d0804;}
+.makruk-rules summary{cursor:pointer;padding:9px 12px;color:#e3c87e;font-size:13px;letter-spacing:1px;}
+.makruk-rules summary::-webkit-details-marker{color:#a97c2c;}
+.makruk-rules .makruk-rule-body{padding:0 12px 12px;}
+.makruk-rules table{width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0;}
+.makruk-rules td,.makruk-rules th{border:1px solid #33230f;padding:5px 7px;text-align:left;}
+.makruk-rules th{color:#e8b93c;font-weight:normal;letter-spacing:1px;}
+.makruk-badge{display:inline-block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border-radius:3px;padding:2px 7px;margin-right:6px;vertical-align:middle;}
+.makruk-badge-att{background:#1d3a1d;color:#9fe08a;border:1px solid #3f7a3f;}
+.makruk-badge-rec{background:#3a2a10;color:#e3a85c;border:1px solid #8a6420;}
+.makruk-moves{max-height:150px;overflow-y:auto;font-size:12.5px;background:#0a0704;border:1px solid #33230f;border-radius:6px;padding:8px 10px;margin-top:4px;line-height:1.8;color:#b99a5e;}
+.makruk-moves .makruk-mv-w{color:#e9dcc0;}
+.makruk-foot{margin-top:26px;text-align:center;color:#6d5732;font-size:12px;font-style:italic;line-height:1.8;}
+.makruk-toast{position:absolute;left:50%;top:14px;transform:translateX(-50%) translateY(-8px);background:rgba(20,12,5,.94);border:1px solid #e8b93c;color:#ffe9ad;padding:9px 18px;border-radius:6px;font-size:13px;letter-spacing:1px;opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease;z-index:5;white-space:nowrap;max-width:92%;}
+.makruk-toast.makruk-show{opacity:1;transform:translateX(-50%) translateY(0);}
+.makruk-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:#8f7648;margin-top:10px;justify-content:center;}
+@media (prefers-reduced-motion:reduce){.makruk-btn,.makruk-toast{transition:none;}}
+</style>
+</head>
+<body class="makruk-page">
+<div class="makruk-stage">
+  <header class="makruk-head">
+    <h1 class="makruk-thai-title">หมากรุก</h1>
+    <p class="makruk-sub">Makruk &middot; Thai Chess</p>
+    <p class="makruk-tag">Siam &mdash; a living heir of chaturanga, played in the Theravada Buddhist world</p>
+  </header>
+
+  <div class="makruk-layout">
+    <div>
+      <div class="makruk-board-wrap" id="makruk-wrap" tabindex="0" role="application"
+           aria-label="Makruk board. Use arrow keys to move the cursor, Enter to select or move a piece, U to undo, N for a new game.">
+        <div class="makruk-toast" id="makruk-toast" aria-live="polite"></div>
+        <div class="makruk-board-holder"><canvas class="makruk-board" id="makruk-canvas"></canvas></div>
+        <div class="makruk-legend">
+          <span>&#9679; ivory &mdash; you (South)</span><span>&#9679; dark teak &mdash; the house (North)</span>
+        </div>
+        <p class="makruk-caption">The board is uncheckered &mdash; the Thai convention. Pawns open from the third rank.</p>
+      </div>
+    </div>
+
+    <aside class="makruk-panel">
+      <h2>The Rite of Play</h2>
+      <div class="makruk-status" id="makruk-status" aria-live="polite"></div>
+      <div class="makruk-controls">
+        <button class="makruk-btn" id="makruk-new">New Game</button>
+        <button class="makruk-btn" id="makruk-undo">Undo</button>
+        <button class="makruk-btn" id="makruk-flip" aria-pressed="false">Flip Board</button>
+        <button class="makruk-btn" id="makruk-side" aria-pressed="false">Play as Dark</button>
+      </div>
+      <p class="makruk-kbd-hint"><kbd>&larr;&uarr;&darr;&rarr;</kbd> move cursor &middot; <kbd>Enter</kbd> select / move &middot; <kbd>Esc</kbd> release &middot; <kbd>U</kbd> undo &middot; <kbd>N</kbd> new game</p>
+
+      <h2>The Pieces</h2>
+      <div class="makruk-rules" id="makruk-rules"></div>
+
+      <h2 style="margin-top:16px;">Chronicle of Moves</h2>
+      <div class="makruk-moves" id="makruk-moves"><span style="color:#6d5732">No moves yet &mdash; the board awaits.</span></div>
+    </aside>
+  </div>
+
+  <footer class="makruk-foot">
+    Rules drawn from the living Thai game as documented by Thai players, the XBoard project,<br>
+    and the Encyclopaedia of Chess Variants tradition. This exhibit is a reverent study, not a tournament arbiter.
+  </footer>
+</div>
+
+<script>
+"use strict";
+/* =====================================================================
+   MAKRUK — Thai Chess exhibit. Vanilla ES6, zero external requests.
+   Game engine + heuristic AI + canvas temple-carving renderer.
+   ===================================================================== */
+const MakrukExhibit = (() => {
+  /* ---------------- constants ---------------- */
+  const T = { KING:'k', MET:'m', KHON:'s', HORSE:'n', ROOK:'r', BIA:'p' };
+  const NAMES = { k:['Khun','ขุน','lord'], m:['Met','เม็ด','seed'], s:['Khon','โคน','nobleman'],
+                  n:['Ma','ม้า','horse'], r:['Rua','เรือ','boat'], p:['Bia','เบี้ย','cowrie'] };
+  const VAL = { r:5, n:3, s:2.5, m:1.5, p:1 };
+  const PROMO_RANK_W = 2;  // row index of rank 6 (White promotes here)
+  const PROMO_RANK_B = 5;  // row index of rank 3 (Black promotes here)
+  const COUNT_TABLE = [ ['2 boats',8], ['1 boat',16], ['2 noblemen',22], ['2 horses',32],
+                        ['1 nobleman',44], ['1 horse',64], ['seeds only',64] ];
+  const DIRS_K = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+  const DIRS_D = [[-1,-1],[-1,1],[1,-1],[1,1]];
+  const DIRS_R = [[-1,0],[1,0],[0,-1],[0,1]];
+  const KNIGHT = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+  const REDUCED = (typeof matchMedia === 'function') && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const inB = (r,c) => r>=0 && r<8 && c>=0 && c<8;
+  const opp = c => c==='w' ? 'b' : 'w';
+  const sqName = (r,c) => 'abcdefgh'[c] + (8-r);
+
+  /* ---------------- state ---------------- */
+  let canvas, wrap, statusEl, movesEl, toastEl, rulesEl, newBtn, undoBtn, flipBtn, sideBtn;
+  let S = null;              // game state
+  let rafId = 0, aiTimer = 0, toastTimer = 0;
+  let dirty = true;
+  let boardTex = null;       // cached board texture canvas
+  let sqSize = 0, boardPx = 0, boardOX = 0, boardOY = 0;
+  let listeners = [];
+  let destroyed = false;
+
+  function freshState(){
+    const b = Array.from({length:8}, () => Array(8).fill(null));
+    const back = [T.ROOK,T.HORSE,T.KHON,T.KING,T.MET,T.KHON,T.HORSE,T.ROOK];
+    for(let c=0;c<8;c++){
+      b[7][c] = { t:back[c], c:'w', pr:false };
+      b[5][c] = { t:T.BIA,   c:'w', pr:false };
+      b[0][c] = { t:back[c], c:'b', pr:false };
+      b[2][c] = { t:T.BIA,   c:'b', pr:false };
+    }
+    // Black's Met sits at d8 (mirror): swap black king/met
+    const tmp = b[0][3]; b[0][3] = b[0][4]; b[0][4] = tmp;
+    return {
+      board:b, turn:'w', history:[], over:null,
+      selected:null, selMoves:[], cursor:{r:5,c:4}, flipped:false,
+      human:'w', lastMove:null, anims:[],
+      count:null,   // {limit, used, weakSide}
+      moveNo:1
+    };
+  }
+
+  /* ---------------- move generation ---------------- */
+  function pieceMoves(bd, r, c, attacksOnly){
+    const p = bd[r][c]; if(!p) return [];
+    const fwd = p.c==='w' ? -1 : 1;
+    const out = [];
+    const push = (tr,tc,cap) => { if(inB(tr,tc)) out.push({fr:r,fc:c,tr,tc,piece:p.t,color:p.c,cap:!!cap}); };
+    const step = (dr,dc,capOnly) => {
+      const tr=r+dr, tc=c+dc; if(!inB(tr,tc)) return;
+      const q = bd[tr][tc];
+      if(attacksOnly){ push(tr,tc,true); return; }
+      if(!q) { if(!capOnly) push(tr,tc,false); }
+      else if(q.c!==p.c) push(tr,tc,true);
+    };
+    const slide = (dr,dc) => {
+      let tr=r+dr, tc=c+dc;
+      while(inB(tr,tc)){
+        const q = bd[tr][tc];
+        if(attacksOnly){ push(tr,tc,true); if(q) break; }
+        else if(!q) push(tr,tc,false);
+        else { if(q.c!==p.c) push(tr,tc,true); break; }
+        tr+=dr; tc+=dc;
+      }
+    };
+    const t = (p.t===T.BIA && p.pr) ? T.MET : p.t;   // promoted bia moves as Met
+    if(t===T.KING) DIRS_K.forEach(d=>step(d[0],d[1]));
+    else if(t===T.MET) DIRS_D.forEach(d=>step(d[0],d[1]));
+    else if(t===T.KHON){ DIRS_D.forEach(d=>step(d[0],d[1])); step(fwd,0); }
+    else if(t===T.HORSE) KNIGHT.forEach(d=>step(d[0],d[1]));
+    else if(t===T.ROOK) DIRS_R.forEach(d=>slide(d[0],d[1]));
+    else if(t===T.BIA){
+      if(attacksOnly){ push(r+fwd,c-1,true); push(r+fwd,c+1,true); }
+      else{
+        const tr=r+fwd;
+        if(inB(tr,c) && !bd[tr][c]) push(tr,c,false);          // one step forward, never two
+        if(inB(tr,c-1) && bd[tr][c-1] && bd[tr][c-1].c!==p.c) push(tr,c-1,true);
+        if(inB(tr,c+1) && bd[tr][c+1] && bd[tr][c+1].c!==p.c) push(tr,c+1,true);
+      }
+    }
+    return out;
+  }
+  function allMoves(bd, color, attacksOnly){
+    const out=[];
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const p=bd[r][c];
+      if(p && p.c===color) out.push(...pieceMoves(bd,r,c,attacksOnly));
+    }
+    return out;
+  }
+  function findKing(bd,color){
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const p=bd[r][c];
+      if(p && p.c===color && p.t===T.KING) return [r,c];
+    }
+    return null;
+  }
+  function inCheck(bd,color){
+    const k=findKing(bd,color); if(!k) return false;
+    return allMoves(bd,opp(color),true).some(m=>m.tr===k[0]&&m.tc===k[1]);
+  }
+  function legalMoves(bd,color){
+    const out=[];
+    for(const m of allMoves(bd,color,false)){
+      const bd2=cloneBoard(bd);
+      applyRaw(bd2,m);
+      if(!inCheck(bd2,color)) out.push(m);
+    }
+    return out;
+  }
+  function cloneBoard(bd){ return bd.map(row=>row.map(p=>p?{t:p.t,c:p.c,pr:p.pr}:null)); }
+  function applyRaw(bd,m){
+    const p=bd[m.fr][m.fc];
+    const captured = bd[m.tr][m.tc];
+    bd[m.tr][m.tc]=p; bd[m.fr][m.fc]=null;
+    let promo=false;
+    if(p.t===T.BIA && !p.pr){
+      if((p.c==='w'&&m.tr===PROMO_RANK_W)||(p.c==='b'&&m.tr===PROMO_RANK_B)){ p.pr=true; promo=true; }
+    }
+    return {captured,promo};
+  }
+  function bareKing(bd,color){
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const p=bd[r][c];
+      if(p&&p.c===color&&p.t!==T.KING) return false;
+    }
+    return true;
+  }
+  function countLimit(bd,strong){
+    let r=0,n=0,s=0,m=0;
+    for(let rr=0;rr<8;rr++) for(let cc=0;cc<8;cc++){
+      const p=bd[rr][cc];
+      if(p&&p.c===strong&&p.t!==T.KING){
+        if(p.t===T.ROOK)r++; else if(p.t===T.HORSE)n++;
+        else if(p.t===T.KHON)s++; else m++;
+      }
+    }
+    if(r>=2)return 8; if(r===1)return 16; if(s>=2)return 22;
+    if(n>=2)return 32; if(s===1)return 44; if(n===1)return 64; return 64;
+  }
+
+  /* ---------------- game flow ---------------- */
+  function doMove(m){
+    const bd=S.board;
+    const p=bd[m.fr][m.fc];
+    const {captured,promo}=applyRaw(bd,m);
+    S.history.push({m,captured: captured?{...captured}:null, promo});
+    S.lastMove={fr:m.fr,fc:m.fc,tr:m.tr,tc:m.tc};
+    S.selected=null; S.selMoves=[];
+    spawnMoveAnim(m,p,captured);
+    // counting rule (simplified, traditional spirit)
+    const weak=opp(m.color);
+    if(!S.count && bareKing(bd,weak)){
+      S.count={limit:countLimit(bd,m.color),used:0,weak};
+      toast('The lone Khun flees — the count begins: mate within '+S.count.limit+' moves.');
+    }
+    if(S.count){ S.count.used++; }
+    S.turn=opp(S.turn);
+    if(S.turn==='w') S.moveNo++;
+    updateOutcome();
+    if(S.count && !S.over && S.count.used>=S.count.limit){
+      S.over={type:'draw',reason:'The count expired — the lone Khun survived. Draw.'};
+    }
+    dirty=true; renderStatus(); renderMoves();
+    if(!S.over && S.turn!==S.human) scheduleAI();
+  }
+  function undoMove(){
+    const h=S.history.pop(); if(!h) return;
+    const m=h.m, bd=S.board;
+    const p=bd[m.tr][m.tc];
+    if(h.promo) p.pr=false;
+    bd[m.fr][m.fc]=p; bd[m.tr][m.tc]=h.captured||null;
+    S.lastMove = S.history.length ? (()=>{const l=S.history[S.history.length-1].m;
+      return {fr:l.fr,fc:l.fc,tr:l.tr,tc:l.tc};})() : null;
+    S.turn=opp(S.turn); if(S.turn==='b') S.moveNo--;
+    S.over=null; S.anims.length=0;
+    if(S.count){ S.count.used=Math.max(0,S.count.used-1);
+      if(S.count.used===0 && !bareKing(bd,S.count.weak)) S.count=null; }
+    S.selected=null; S.selMoves=[];
+    dirty=true; renderStatus(); renderMoves();
+  }
+  function updateOutcome(){
+    const mv=legalMoves(S.board,S.turn);
+    const chk=inCheck(S.board,S.turn);
+    if(mv.length===0){
+      S.over = chk ? {type:'mate',winner:opp(S.turn),reason:'Checkmate.'}
+                   : {type:'draw',reason:'Stalemate — in makruk this is a draw, not a defeat.'};
+    }
+  }
+  function scheduleAI(){
+    clearTimeout(aiTimer);
+    aiTimer=setTimeout(()=>{ if(destroyed||S.over) return; const m=aiChooseMove();
+      if(m) doMove(m); }, REDUCED?60:420);
+  }
+
+  /* ---------------- AI: 2-ply alpha-beta, phone-safe ---------------- */
+  function evaluate(bd,color){
+    let s=0;
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const p=bd[r][c]; if(!p) continue;
+      const t=(p.t===T.BIA&&p.pr)?T.MET:p.t;
+      let v=VAL[t]||0;
+      const dc=Math.abs(c-3.5), dr=Math.abs(r-3.5);
+      v += (7-(dc+dr))*0.04;                        // centre gravity
+      if(t===T.BIA){                                 // promotion-seeking
+        const adv = p.c==='w' ? (5-r) : (r-2);
+        v += Math.max(0,adv)*0.12;
+        if((p.c==='w'&&r===PROMO_RANK_W+1)||(p.c==='b'&&r===PROMO_RANK_B-1)) v+=0.5;
+      }
+      s += p.c===color ? v : -v;
+    }
+    // king safety
+    const k=findKing(bd,color), ek=findKing(bd,opp(color));
+    if(k){
+      if(inCheck(bd,color)) s-=1.2;
+      let danger=0;
+      for(const d of DIRS_K){ const q=inB(k[0]+d[0],k[1]+d[1])?bd[k[0]+d[0]][k[1]+d[1]]:null;
+        if(q&&q.c!==color) danger+=0.12; }
+      s-=danger;
+    }
+    if(ek&&inCheck(bd,opp(color))) s+=0.6;
+    return s;
+  }
+  function orderMoves(mvs,bd){
+    for(const m of mvs){
+      const q=bd[m.tr][m.tc];
+      m._o=(q?(VAL[(q.t===T.BIA&&q.pr)?T.MET:q.t]||0)*10:0)
+        +(((m.piece===T.BIA)&&((m.color==='w'&&m.tr===PROMO_RANK_W)||(m.color==='b'&&m.tr===PROMO_RANK_B)))?25:0);
+    }
+    mvs.sort((a,b)=>b._o-a._o);
+    return mvs;
+  }
+  function search(bd,color,depth,alpha,beta,rootColor){
+    if(depth===0) return evaluate(bd,rootColor);
+    const mvs=orderMoves(legalMoves(bd,color),bd);
+    if(mvs.length===0){
+      if(inCheck(bd,color)) return color===rootColor?-1000-depth:1000+depth;
+      return 0;   // stalemate = draw
+    }
+    const maximizing = color===rootColor;
+    if(maximizing){
+      let best=-Infinity;
+      for(const m of mvs){
+        const b2=cloneBoard(bd); applyRaw(b2,m);
+        best=Math.max(best,search(b2,opp(color),depth-1,alpha,beta,rootColor));
+        alpha=Math.max(alpha,best); if(beta<=alpha)break;
+      }
+      return best;
+    }else{
+      let best=Infinity;
+      for(const m of mvs){
+        const b2=cloneBoard(bd); applyRaw(b2,m);
+        best=Math.min(best,search(b2,opp(color),depth-1,alpha,beta,rootColor));
+        beta=Math.min(beta,best); if(beta<=alpha)break;
+      }
+      return best;
+    }
+  }
+  function aiChooseMove(){
+    const color=S.turn;
+    const mvs=orderMoves(legalMoves(S.board,color),S.board);
+    if(!mvs.length) return null;
+    let best=null,bestV=-Infinity;
+    const jitter=()=> (Math.random()-0.5)*0.06;
+    for(const m of mvs){
+      const b2=cloneBoard(S.board); applyRaw(b2,m);
+      const v=search(b2,opp(color),1,-Infinity,Infinity,color)+jitter();
+      if(v>bestV){bestV=v;best=m;}
+    }
+    return best;
+  }
+
+  /* ---------------- rendering ---------------- */
+  function ctx2d(){ return canvas.getContext('2d'); }
+  function resize(){
+    const holder=canvas.parentElement;
+    const w=holder.clientWidth, h=holder.clientHeight;
+    const dpr=1; // mobile DPR capped at 1.0 — also on desktop for the hand-painted look
+    canvas.width=w*dpr; canvas.height=h*dpr;
+    boardPx=w; sqSize=w/8; boardOX=0; boardOY=0;
+    buildBoardTexture();
+    dirty=true;
+  }
+  function seededRand(seed){ let s=seed; return ()=>{ s=(s*1664525+1013904223)>>>0; return s/4294967296; }; }
+  function buildBoardTexture(){
+    boardTex=document.createElement('canvas');
+    const s=Math.max(2,Math.round(sqSize));
+    boardTex.width=s*8; boardTex.height=s*8;
+    const g=boardTex.getContext('2d');
+    const rnd=seededRand(20261013);
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const x=c*s,y=r*s;
+      const tone=0.94+rnd()*0.12;                    // uncheckered: one teak field, whisper of variance
+      const base=[186*tone,141*tone,92*tone];
+      g.fillStyle=`rgb(${base[0]|0},${base[1]|0},${base[2]|0})`;
+      g.fillRect(x,y,s,s);
+      // grain streaks
+      g.strokeStyle='rgba(90,55,25,0.10)';
+      for(let i=0;i<7;i++){
+        g.lineWidth=0.6+rnd()*1.1; g.beginPath();
+        const gy=y+rnd()*s; g.moveTo(x,gy);
+        g.bezierCurveTo(x+s*0.3,gy+(rnd()-0.5)*s*0.12, x+s*0.6,gy+(rnd()-0.5)*s*0.12, x+s,gy+(rnd()-0.5)*s*0.08);
+        g.stroke();
+      }
+      // faint border line — Thai convention reads the grid, not the checker
+      g.strokeStyle='rgba(70,42,18,0.55)'; g.lineWidth=Math.max(1,s*0.012);
+      g.strokeRect(x+0.5,y+0.5,s-1,s-1);
+    }
+    // frame: dark temple wood + gold inlay
+    const fw=Math.round(s*0.28);
+    g.strokeStyle='#2a1a0c'; g.lineWidth=fw;
+    g.strokeRect(fw/2,fw/2,boardTex.width-fw,boardTex.height-fw);
+    g.strokeStyle='#c9962e'; g.lineWidth=Math.max(1,s*0.02);
+    g.strokeRect(fw+2,fw+2,boardTex.width-2*fw-4,boardTex.height-2*fw-4);
+    g.strokeStyle='rgba(201,150,46,0.35)'; g.lineWidth=1;
+    g.strokeRect(3,3,boardTex.width-6,boardTex.height-6);
+  }
+  function sqXY(r,c){
+    let dr=r, dc=c;
+    if(S.flipped){ dr=7-r; dc=7-c; }
+    return {x:boardOX+dc*sqSize, y:boardOY+dr*sqSize};
+  }
+  function xySq(x,y){
+    let c=Math.floor((x-boardOX)/sqSize), r=Math.floor((y-boardOY)/sqSize);
+    if(S.flipped){ r=7-r; c=7-c; }
+    return inB(r,c)?{r,c}:null;
+  }
+  // wood gradients
+  function woodGrad(g,x0,x1,pal){
+    const gr=g.createLinearGradient(x0,0,x1,0);
+    gr.addColorStop(0,pal[2]); gr.addColorStop(0.28,pal[1]);
+    gr.addColorStop(0.5,pal[0]); gr.addColorStop(0.72,pal[1]); gr.addColorStop(1,pal[2]);
+    return gr;
+  }
+  const PAL_W=['#f4e7c2','#d9b981','#9a743d'];
+  const PAL_B=['#8a5427','#54300f','#241204'];
+  const GOLD=['#f7d774','#d9a83c','#7d5c17'];
+  const LACQ=['#b03232','#7e1d1d','#3f0d0d'];
+  function lathe(g,cx,yb,w,prof,pal){
+    // prof: [[t01, halfW01],...] bottom->top
+    g.beginPath();
+    const n=prof.length;
+    g.moveTo(cx-prof[0][1]*w, yb-prof[0][0]*w);
+    for(let i=1;i<n;i++){
+      const px=cx-prof[i][1]*w, py=yb-prof[i][0]*w;
+      const qx=cx-prof[i-1][1]*w, qy=yb-prof[i-1][0]*w;
+      g.quadraticCurveTo(qx,(qy+py)/2,px,py);
+    }
+    for(let i=n-1;i>=1;i--){
+      const px=cx+prof[i][1]*w, py=yb-prof[i][0]*w;
+      const qx=cx+prof[i-1][1]*w, qy=yb-prof[i-1][0]*w;
+      g.quadraticCurveTo(qx,(qy+py)/2,px,py);
+    }
+    g.closePath();
+    g.fillStyle=woodGrad(g,cx-w/2,cx+w/2,pal);
+    g.fill();
+  }
+  function ringBand(g,cx,yc,rw,pal){
+    g.beginPath(); g.ellipse(cx,yc,rw,rw*0.30,0,0,Math.PI*2);
+    g.fillStyle=woodGrad(g,cx-rw,cx+rw,pal); g.fill();
+    g.strokeStyle='rgba(0,0,0,0.35)'; g.lineWidth=1; g.stroke();
+  }
+  function shadow(g,cx,cy,rx){
+    g.beginPath(); g.ellipse(cx,cy,rx,rx*0.28,0,0,Math.PI*2);
+    const gr=g.createRadialGradient(cx,cy,0,cx,cy,rx);
+    gr.addColorStop(0,'rgba(0,0,0,0.45)'); gr.addColorStop(1,'rgba(0,0,0,0)');
+    g.fillStyle=gr; g.fill();
+  }
+  function drawPiece(g,t,color,x,y,s,scale,alpha,promoted){
+    const cx=x+s/2, yb=y+s*0.94, u=s/100;
+    const pal=color==='w'?PAL_W:PAL_B;
+    g.save(); g.globalAlpha=alpha==null?1:alpha;
+    if(scale&&scale!==1){ g.translate(cx,yb); g.scale(scale,scale); g.translate(-cx,-yb); }
+    shadow(g,cx,yb+u*1.5,s*0.30);
+    // lacquered base plinth for both armies
+    ringBand(g,cx,yb-u*1.2,s*0.26,LACQ);
+    const body=(prof,h)=>lathe(g,cx,yb-u*2.5,s*0.46,prof.map(p=>[p[0]*h/100,p[1]]),pal);
+    const bands=(list)=>list.forEach(b=>ringBand(g,cx,yb-u*2.5-b[0]*u,b[1]*s*0.46,GOLD));
+    if(t==='k'){ // Khun — tallest, stupa finial
+      body([[0,0.42],[0.06,0.46],[0.12,0.30],[0.22,0.40],[0.34,0.44],[0.42,0.30],[0.50,0.26],[0.58,0.30],[0.66,0.26],[0.74,0.28],[0.82,0.22],[0.90,0.13],[0.97,0.05]],88);
+      bands([[44,0.30],[52,0.26],[60,0.30],[68,0.26]]);
+      g.beginPath(); g.arc(cx,yb-u*2.5-88*u,s*0.045,0,Math.PI*2);
+      g.fillStyle=woodGrad(g,cx-s*0.05,cx+s*0.05,GOLD); g.fill();
+    }else if(t==='m'){ // Met — the seed; same carving, humbler stature
+      body([[0,0.40],[0.07,0.44],[0.14,0.28],[0.26,0.38],[0.38,0.42],[0.48,0.28],[0.58,0.24],[0.68,0.27],[0.78,0.22],[0.88,0.14],[0.96,0.06]],62);
+      bands([[40,0.28],[50,0.24],[60,0.27]]);
+      g.beginPath(); g.arc(cx,yb-u*2.5-62*u,s*0.04,0,Math.PI*2);
+      g.fillStyle=woodGrad(g,cx-s*0.04,cx+s*0.04,GOLD); g.fill();
+    }else if(t==='s'){ // Khon — nobleman, bulbous
+      body([[0,0.42],[0.08,0.46],[0.18,0.34],[0.30,0.44],[0.44,0.47],[0.56,0.34],[0.66,0.26],[0.76,0.28],[0.86,0.20],[0.95,0.10]],70);
+      bands([[56,0.26],[66,0.28]]);
+      g.beginPath(); g.ellipse(cx,yb-u*2.5-72*u,s*0.055,s*0.075,0,0,Math.PI*2);
+      g.fillStyle=woodGrad(g,cx-s*0.05,cx+s*0.05,pal); g.fill();
+    }else if(t==='n'){ // Ma — horse, the tallest of the host
+      lathe(g,cx,yb-u*2.5,s*0.40,[[0,0.44],[0.10,0.46],[0.20,0.26],[0.38,0.24],[0.55,0.28],[0.66,0.24]],66,pal);
+      // carved horse head in profile
+      const hy=yb-u*2.5-66*u;
+      g.beginPath();
+      g.moveTo(cx-s*0.10,hy+u*2);
+      g.bezierCurveTo(cx-s*0.16,hy-u*8, cx-s*0.10,hy-u*16, cx+s*0.02,hy-u*18); // crest
+      g.lineTo(cx+s*0.045,hy-u*24); g.lineTo(cx+s*0.075,hy-u*18);             // ears
+      g.bezierCurveTo(cx+s*0.16,hy-u*14, cx+s*0.17,hy-u*6, cx+s*0.12,hy-u*1);  // face
+      g.bezierCurveTo(cx+s*0.08,hy+u*3, cx-s*0.02,hy+u*4, cx-s*0.10,hy+u*2);   // muzzle/chin
+      g.closePath();
+      g.fillStyle=woodGrad(g,cx-s*0.16,cx+s*0.17,pal); g.fill();
+      g.strokeStyle='rgba(0,0,0,0.3)'; g.lineWidth=1; g.stroke();
+      // mane ridges
+      g.strokeStyle='rgba(60,30,10,0.5)';
+      for(let i=0;i<3;i++){ g.beginPath();
+        g.moveTo(cx-s*0.10+i*u*1.2,hy-u*15+i*u*2.5);
+        g.quadraticCurveTo(cx-s*0.05,hy-u*12+i*u*2.5,cx+s*0.01,hy-u*13+i*u*2.5); g.stroke(); }
+      bands([[8,0.26],[58,0.28]]);
+    }else if(t==='r'){ // Rua — the boat, squat and wide
+      const by=yb-u*2.5;
+      g.beginPath();
+      g.moveTo(cx-s*0.34,by-u*6);
+      g.quadraticCurveTo(cx-s*0.30,by-u*22, cx-s*0.22,by-u*26);
+      g.lineTo(cx+s*0.22,by-u*26);
+      g.quadraticCurveTo(cx+s*0.30,by-u*22, cx+s*0.34,by-u*6);
+      g.quadraticCurveTo(cx+s*0.20,by+u*4, cx,by+u*4);
+      g.quadraticCurveTo(cx-s*0.20,by+u*4, cx-s*0.34,by-u*6);
+      g.closePath();
+      g.fillStyle=woodGrad(g,cx-s*0.34,cx+s*0.34,pal); g.fill();
+      g.strokeStyle='rgba(0,0,0,0.35)'; g.lineWidth=1; g.stroke();
+      // prow tips
+      [[-1],[1]].forEach(sg=>{
+        g.beginPath(); g.arc(cx+sg[0]*s*0.235,by-u*27,s*0.032,0,Math.PI*2);
+        g.fillStyle=woodGrad(g,cx-s*0.27,cx-s*0.2,GOLD); g.fill();
+      });
+      ringBand(g,cx,by-u*6,s*0.30,LACQ);
+      // hull ribs
+      g.strokeStyle='rgba(0,0,0,0.25)';
+      for(let i=-2;i<=2;i++){ g.beginPath(); g.moveTo(cx+i*s*0.09,by-u*20);
+        g.quadraticCurveTo(cx+i*s*0.10,by-u*10,cx+i*s*0.11,by-u*2); g.stroke(); }
+    }else{ // Bia — cowrie disc
+      const by=yb-u*4;
+      const isNgai = !!promoted;
+      g.beginPath(); g.ellipse(cx,by,s*0.24,s*0.13,0,0,Math.PI*2);
+      g.fillStyle=woodGrad(g,cx-s*0.24,cx+s*0.24,pal); g.fill();
+      g.strokeStyle='rgba(0,0,0,0.4)'; g.lineWidth=1.2; g.stroke();
+      if(isNgai){ // bia-ngai: the flipped shell, seed-side up
+        g.beginPath(); g.ellipse(cx,by,s*0.13,s*0.07,0,0,Math.PI*2);
+        g.fillStyle=woodGrad(g,cx-s*0.13,cx+s*0.13,GOLD); g.fill();
+        g.beginPath(); g.arc(cx,by,s*0.025,0,Math.PI*2); g.fillStyle='#5d1212'; g.fill();
+      }else{
+        g.beginPath(); g.moveTo(cx-s*0.13,by); g.lineTo(cx+s*0.13,by);
+        g.strokeStyle='rgba(40,20,8,0.65)'; g.lineWidth=Math.max(1.2,s*0.02); g.stroke();
+      }
+    }
+    g.restore();
+  }
+  /* ---------------- animation ---------------- */
+  function spawnMoveAnim(m,piece,captured){
+    if(REDUCED) return;
+    const a=sqXY(m.fr,m.fc), b=sqXY(m.tr,m.tc);
+    S.anims.push({kind:'move',t:piece,c:piece.c,pr:piece.pr,
+      x0:a.x,y0:a.y,x1:b.x,y1:b.y,start:performance.now(),dur:220,from:m});
+    if(captured){
+      const p=sqXY(m.tr,m.tc);
+      S.anims.push({kind:'fade',t:captured.t,c:captured.c,pr:captured.pr,
+        x:p.x,y:p.y,start:performance.now(),dur:200});
+    }
+    S.anims.push({kind:'ripple',x:b.x+sqSize/2,y:b.y+sqSize/2,start:performance.now(),dur:380});
+    requestFrame();
+  }
+  const easeOC=t=>1-Math.pow(1-t,3);
+
+  /* ---------------- frame rendering ---------------- */
+  function requestFrame(){ dirty=true; if(!rafId) rafId=requestAnimationFrame(frame); }
+  function frame(now){
+    rafId=0;
+    if(destroyed) return;
+    if(!dirty && S.anims.length===0) return;
+    draw(now||performance.now());
+    dirty=false;
+    if(S.anims.length>0 || dirty) rafId=requestAnimationFrame(frame);
+  }
+  function draw(now){
+    const g=ctx2d(), W=canvas.width, H=canvas.height;
+    g.clearRect(0,0,W,H);
+    // chiaroscuro: deep dark ground, warm pool of light over the board
+    const bg=g.createRadialGradient(W/2,H*0.42,10,W/2,H/2,Math.max(W,H)*0.75);
+    bg.addColorStop(0,'#1d130a'); bg.addColorStop(0.6,'#100b06'); bg.addColorStop(1,'#060402');
+    g.fillStyle=bg; g.fillRect(0,0,W,H);
+    if(boardTex) g.drawImage(boardTex,boardOX,boardOY,boardPx,boardPx);
+    // square highlights: last move, selection, legal targets, cursor
+    const hl=(r,c,fill)=>{ const p=sqXY(r,c); g.fillStyle=fill; g.fillRect(p.x+1,p.y+1,sqSize-2,sqSize-2); };
+    if(S.lastMove){
+      hl(S.lastMove.fr,S.lastMove.fc,'rgba(232,185,60,0.20)');
+      hl(S.lastMove.tr,S.lastMove.tc,'rgba(232,185,60,0.30)');
+    }
+    if(S.selected){
+      const p=sqXY(S.selected.r,S.selected.c);
+      g.strokeStyle='#f7d774'; g.lineWidth=Math.max(2,sqSize*0.03);
+      g.strokeRect(p.x+2,p.y+2,sqSize-4,sqSize-4);
+      for(const m of S.selMoves){
+        const q=sqXY(m.tr,m.tc);
+        g.beginPath(); g.arc(q.x+sqSize/2,q.y+sqSize/2,sqSize*0.13,0,Math.PI*2);
+        g.fillStyle=m.cap?'rgba(200,60,40,0.75)':'rgba(247,215,116,0.55)';
+        g.fill();
+        if(m.cap){ g.strokeStyle='#f7d774'; g.lineWidth=2;
+          g.strokeRect(q.x+3,q.y+3,sqSize-6,sqSize-6); }
+      }
+    }
+    { // keyboard cursor
+      const p=sqXY(S.cursor.r,S.cursor.c);
+      g.setLineDash([5,4]); g.strokeStyle='rgba(247,215,116,0.6)'; g.lineWidth=2;
+      g.strokeRect(p.x+4,p.y+4,sqSize-8,sqSize-8); g.setLineDash([]);
+    }
+    // check glow on the king
+    const chk=inCheck(S.board,S.turn);
+    if(chk && !S.over){
+      const k=findKing(S.board,S.turn);
+      if(k){ const p=sqXY(k[0],k[1]);
+        const pulse=REDUCED?0.55:0.45+0.2*Math.sin(now/280);
+        const gr=g.createRadialGradient(p.x+sqSize/2,p.y+sqSize/2,4,p.x+sqSize/2,p.y+sqSize/2,sqSize*0.7);
+        gr.addColorStop(0,`rgba(255,120,50,${pulse})`); gr.addColorStop(1,'rgba(255,120,50,0)');
+        g.fillStyle=gr; g.fillRect(p.x,p.y,sqSize,sqSize);
+      }
+    }
+    // pieces (skip the one mid-flight; it is drawn by its anim)
+    const flying=new Set();
+    for(const a of S.anims) if(a.kind==='move'&&(now-a.start)<a.dur){
+      flying.add(a.from.fr+','+a.from.fc); flying.add(a.from.tr+','+a.from.tc);
+    }
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      if(flying.has(r+','+c)) continue;
+      const p=S.board[r][c]; if(!p) continue;
+      const q=sqXY(r,c);
+      drawPiece(g,(p.t===T.BIA&&p.pr)?'p':p.t,p.c,q.x,q.y,sqSize,1,1,p.pr);
+    }
+    // anims
+    S.anims=S.anims.filter(a=>{
+      const t=(now-a.start)/a.dur;
+      if(t>=1) { dirty = S.anims.length>1; return false; }
+      if(a.kind==='move'){
+        const e=easeOC(t);
+        drawPiece(g,(a.t===T.BIA&&a.pr)?'p':a.t,a.c,a.x0+(a.x1-a.x0)*e,a.y0+(a.y1-a.y0)*e,sqSize,1,1,a.pr);
+      }else if(a.kind==='fade'){
+        drawPiece(g,(a.t===T.BIA&&a.pr)?'p':a.t,a.c,a.x,a.y,sqSize,1+(1-t)*0.25,t,a.pr);
+      }else if(a.kind==='ripple'){
+        g.beginPath(); g.arc(a.x,a.y,sqSize*(0.1+0.4*t),0,Math.PI*2);
+        g.strokeStyle=`rgba(247,215,116,${0.6*(1-t)})`; g.lineWidth=2; g.stroke();
+      }
+      return true;
+    });
+    if(S.anims.length) dirty=true;
+    // vignette
+    const vg=g.createRadialGradient(W/2,H/2,Math.min(W,H)*0.35,W/2,H/2,Math.max(W,H)*0.72);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,0.55)');
+    g.fillStyle=vg; g.fillRect(0,0,W,H);
+  }
+
+  /* ---------------- UI text ---------------- */
+  function toast(msg){
+    toastEl.textContent=msg; toastEl.classList.add('makruk-show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(()=>toastEl.classList.remove('makruk-show'),2600);
+  }
+  function renderStatus(){
+    const chk=inCheck(S.board,S.turn);
+    let h='';
+    if(S.over){
+      if(S.over.type==='mate'){
+        h=`<span class="makruk-status-end">${S.over.winner==='w'?'Ivory':'Dark teak'} triumphs.</span><br>${S.over.reason}`;
+      }else h=`<span class="makruk-status-end">Draw.</span><br>${S.over.reason}`;
+    }else{
+      h=`<span class="makruk-status-turn">${S.turn==='w'?'Ivory':'Dark teak'} to move</span> &middot; move ${S.moveNo}`;
+      if(chk) h+=`<br><span class="makruk-status-check">&#2352;&#3640;&#3585;! The Khun is under attack.</span>`;
+      else if(S.turn!==S.human) h+=`<br><span style="color:#8f7648">The house is considering&hellip;</span>`;
+      if(S.count){
+        h+=`<div class="makruk-count">&#2748;&#3634;&#3619;&#3609;&#3633;&#3610; The count: <b>${S.count.used} / ${S.count.limit}</b> mating moves used.<br><span style="color:#b99a5e">Simplified telling of the traditional counting rule &mdash; see the Rites panel.</span></div>`;
+      }
+    }
+    statusEl.innerHTML=h;
+  }
+  const PIECE_ROWS=[
+    ['k','Khun','ขุน','the lord','One square in any direction. No castling ever existed in makruk.','att'],
+    ['m','Met','เม็ด','the seed','One square <b>diagonally only</b> — the slowest queen in chess.','att'],
+    ['s','Khon','โคน','the nobleman','One square diagonally, <b>or</b> one square straight forward.','att'],
+    ['n','Ma','ม้า','the horse','The knight&rsquo;s leap; the tallest carving on the board.','att'],
+    ['r','Rua','เรือ','the boat','Slides any distance orthogonally.','att'],
+    ['p','Bia','เบี้ย','the cowrie','One square straight forward; captures one square diagonally forward. No double step, no en passant. On the <b>6th rank</b> it is flipped — <i>bia-ngai</i> — and moves as a Met. Never anything else.','att']
+  ];
+  function renderRules(){
+    let h=`<details open><summary><span class="makruk-badge makruk-badge-att">Attested</span>The pieces</summary><div class="makruk-rule-body"><table>`;
+    for(const [t,en,th,mean,mv] of PIECE_ROWS)
+      h+=`<tr><td><b>${en}</b> <span style="color:#8f7648">${th} · ${mean}</span></td><td>${mv}</td></tr>`;
+    h+=`</table></div></details>`;
+    h+=`<details><summary><span class="makruk-badge makruk-badge-att">Attested</span>The old laws</summary><div class="makruk-rule-body"><ul style="margin:6px 0;padding-left:18px">`
+      +`<li>Board uncheckered; pawns begin on the <b>3rd rank</b> — the Thai convention.</li>`
+      +`<li>Win by <b>checkmate</b>. <b>Stalemate is a draw</b> — this differs from chaturanga.</li>`
+      +`<li><b>Baring the king</b> (leaving him alone) does <b>not</b> win, unlike shatranj.</li>`
+      +`<li><b>Counting:</b> when a lone Khun flees, the stronger side must mate within a set number of moves — 8 with two boats, 16 with one, 22 with two noblemen, 32 with two horses, 44 with one nobleman, 64 with one horse or seeds only. When neither side holds a cowrie at all, 64 moves.</li>`
+      +`</ul></div></details>`;
+    h+=`<details><summary><span class="makruk-badge makruk-badge-rec">Reconstructed</span>What this exhibit simplifies</summary><div class="makruk-rule-body"><ul style="margin:6px 0;padding-left:18px">`
+      +`<li>The count is tallied automatically here; traditionally the disadvantaged player counts aloud and may pause or restart the count.</li>`
+      +`<li>Only the bare-king count is enforced; the 64-move no-cowrie rule is noted, not enforced.</li>`
+      +`<li>The opponent is a modern 2-ply heuristic — no historical claim is made for its play.</li>`
+      +`<li>Carvings are stylised after Thai lathe-turned sets; regional carving traditions vary.</li>`
+      +`</ul></div></details>`;
+    rulesEl.innerHTML=h;
+  }
+  function renderMoves(){
+    if(!S.history.length){ movesEl.innerHTML='<span style="color:#6d5732">No moves yet — the board awaits.</span>'; return; }
+    let h='';
+    S.history.forEach((hh,i)=>{
+      const m=hh.m, nm=NAMES[m.piece][0];
+      const cap=hh.captured?'×':'–';
+      const promo=hh.promo?' → bia-ngai':'+';
+      const txt=`${sqName(m.fr,m.fc)}${cap}${sqName(m.tr,m.tc)}${hh.promo?promo:''}`;
+      if(i%2===0) h+=`<span style="color:#6d5732">${(i/2)+1}.</span> <span class="makruk-mv-w">${nm} ${txt}</span> `;
+      else h+=`<span>${nm} ${txt}</span> `;
+    });
+    movesEl.innerHTML=h; movesEl.scrollTop=movesEl.scrollHeight;
+  }
+
+  /* ---------------- input ---------------- */
+  function trySelect(r,c){
+    if(S.over||S.turn!==S.human) return;
+    const p=S.board[r][c];
+    if(S.selected && S.selMoves.some(m=>m.tr===r&&m.tc===c)){
+      const m=S.selMoves.find(m=>m.tr===r&&m.tc===c);
+      doMove({fr:m.fr,fc:m.fc,tr:m.tr,tc:m.tc,piece:m.piece,color:m.color});
+      return;
+    }
+    if(p&&p.c===S.human){
+      S.selected={r,c};
+      S.selMoves=legalMoves(S.board,S.human).filter(m=>m.fr===r&&m.fc===c);
+      S.cursor={r,c};
+    }else{ S.selected=null; S.selMoves=[]; }
+    dirty=true; requestFrame();
+  }
+  function onPointer(e){
+    if(wrap && document.activeElement!==wrap){ try{ wrap.focus({preventScroll:true}); }catch(_){} }
+    const rect=canvas.getBoundingClientRect();
+    const x=(e.clientX-rect.left), y=(e.clientY-rect.top);
+    const s=xySq(x,y); if(s) trySelect(s.r,s.c);
+  }
+  function onKey(e){
+    if(e.key==='n'||e.key==='N'){ newGame(); e.preventDefault(); return; }
+    if(e.key==='u'||e.key==='U'){ undoPair(); e.preventDefault(); return; }
+    if(e.key==='Escape'){ S.selected=null; S.selMoves=[]; dirty=true; requestFrame(); return; }
+    const d={ArrowUp:[-1,0],ArrowDown:[1,0],ArrowLeft:[0,-1],ArrowRight:[0,1]}[e.key];
+    if(d){ S.cursor={r:Math.min(7,Math.max(0,S.cursor.r+d[0])),c:Math.min(7,Math.max(0,S.cursor.c+d[1]))};
+      dirty=true; requestFrame(); e.preventDefault(); return; }
+    if(e.key==='Enter'||e.key===' '){ trySelect(S.cursor.r,S.cursor.c); e.preventDefault(); }
+  }
+  function newGame(){
+    clearTimeout(aiTimer);
+    S=freshState(); S.human=sideBtn.getAttribute('aria-pressed')==='true'?'b':'w';
+    S.flipped = S.human==='b';
+    flipBtn.setAttribute('aria-pressed', S.flipped?'true':'false');
+    S.anims.length=0;
+    renderStatus(); renderMoves(); requestFrame();
+    toast(S.human==='w'?'Ivory moves first — รุกหมาก.':'You hold the dark teak. Ivory opens.');
+    if(S.turn!==S.human) scheduleAI();
+  }
+  function undoPair(){
+    if(S.over) S.over=null;
+    clearTimeout(aiTimer);
+    undoMove();
+    if(S.turn!==S.human && S.history.length) undoMove();  // take back the house's reply too
+    else if(S.turn!==S.human){ /* AI to move after single undo at start */ }
+    renderStatus(); renderMoves(); requestFrame();
+    if(!S.over && S.turn!==S.human) scheduleAI();
+  }
+
+  /* ---------------- lifecycle ---------------- */
+  function on(ev,el,fn,opts){ el.addEventListener(ev,fn,opts); listeners.push([ev,el,fn,opts]); }
+  function init(){
+    if(destroyed) return;
+    canvas=document.getElementById('makruk-canvas');
+    wrap=document.getElementById('makruk-wrap');
+    statusEl=document.getElementById('makruk-status');
+    movesEl=document.getElementById('makruk-moves');
+    toastEl=document.getElementById('makruk-toast');
+    rulesEl=document.getElementById('makruk-rules');
+    newBtn=document.getElementById('makruk-new');
+    undoBtn=document.getElementById('makruk-undo');
+    flipBtn=document.getElementById('makruk-flip');
+    sideBtn=document.getElementById('makruk-side');
+    S=freshState();
+    renderRules(); renderStatus(); renderMoves();
+    resize();
+    on('resize',window,resize);
+    on('pointerdown',canvas,onPointer);
+    on('keydown',wrap,onKey);
+    on('click',newBtn,()=>newGame());
+    on('click',undoBtn,()=>undoPair());
+    on('click',flipBtn,()=>{ S.flipped=!S.flipped;
+      flipBtn.setAttribute('aria-pressed',S.flipped?'true':'false'); requestFrame(); });
+    on('click',sideBtn,()=>{ const v=sideBtn.getAttribute('aria-pressed')==='true';
+      sideBtn.setAttribute('aria-pressed',v?'false':'true');
+      sideBtn.textContent=v?'Play as Dark':'Play as Ivory'; newGame(); });
+    requestFrame();
+  }
+  function destroy(){
+    destroyed=true;
+    clearTimeout(aiTimer); clearTimeout(toastTimer);
+    if(rafId) cancelAnimationFrame(rafId); rafId=0;
+    for(const [ev,el,fn,opts] of listeners) el.removeEventListener(ev,fn,opts);
+    listeners.length=0;
+    if(boardTex){ boardTex.width=0; boardTex.height=0; boardTex=null; }
+    S=null;
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+  window.__makrukDestroy=destroy;
+  return { destroy, newGame:()=>S&&newGame() };
+})();
+</script>
+</body>
+</html>

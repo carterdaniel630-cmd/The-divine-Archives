@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fanorona — Madagascar · The Divine Archives</title>
+<!--
+  FANORONA — a self-contained interactive exhibit.
+  Rules source: the published games literature — H. J. R. Murray, A History of Board-Games other than Chess (1952);
+  R. C. Bell, The Boardgame Book (1983); and the Wikipedia "Fanorona" article (CC BY-SA), which cites W. Montgomery's
+  1886 Antananarivo Annual account and the 2007 weak-solution paper (Schadd et al.).
+  Simplified / reconstructed here: (1) free choice among available captures (some traditions demand the longest capture);
+  (2) the AI opponent is a hand-built heuristic, not a solver; (3) draws: only win-by-capture and a simple deadlock-draw
+  are implemented — the living game's elaborate draw conventions are not; (4) undo takes back a full round.
+  Uncertainty flagged: the middle-rank split is shown as White's four stones on files f–i (the f2-e3A / d3-e3A opening
+  lines from the 2007 solution paper support this orientation); mirrored diagrams exist in some sources, but the mirror
+  is play-equivalent. Continuation of a capture chain is optional, as attested.
+  No external requests: vanilla ES6 + Canvas 2D only. All CSS scoped under .fanorona- / #fanorona-.
+-->
+<style>
+  .fanorona-app{
+    --fanorona-bg:#0d0a07; --fanorona-ink:#ece1c9; --fanorona-ink-dim:#b9a888;
+    --fanorona-gold:#c9a25e; --fanorona-gold-dim:#8a6f3f; --fanorona-panel:#14100a;
+    --fanorona-madder:#8e2f2f; --fanorona-ochre:#c98a2b;
+    max-width:1180px; margin:0 auto; padding:clamp(16px,3vw,40px);
+    color:var(--fanorona-ink); background:var(--fanorona-bg);
+    font-family:Georgia,'Palatino Linotype','Times New Roman',serif; line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+  .fanorona-app *{ box-sizing:border-box; }
+  .fanorona-head{ text-align:center; margin:0 0 10px; }
+  .fanorona-kicker{
+    margin:0 0 6px; font-size:12px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--fanorona-ink-dim);
+  }
+  .fanorona-title{
+    margin:0; font-size:clamp(34px,6vw,58px); font-weight:400; letter-spacing:.14em;
+    color:var(--fanorona-gold); text-transform:uppercase;
+    text-shadow:0 2px 18px rgba(201,162,94,.18);
+  }
+  .fanorona-sub{ max-width:640px; margin:10px auto 0; font-style:italic; color:var(--fanorona-ink-dim); font-size:15px; }
+  .fanorona-lamba{
+    height:12px; margin:18px 0 22px; border-radius:2px;
+    background:repeating-linear-gradient(90deg,
+      #7e2a24 0 22px, #c68a2e 22px 34px, #211a12 34px 42px, #cbb58a 42px 60px, #211a12 60px 66px);
+    box-shadow:0 1px 0 rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.12);
+  }
+  .fanorona-layout{ display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:26px; align-items:start; }
+  @media (max-width:920px){ .fanorona-layout{ grid-template-columns:1fr; } }
+  .fanorona-boardwrap{
+    position:relative; border-radius:10px; outline:none; cursor:pointer;
+    box-shadow:0 30px 80px rgba(0,0,0,.65), 0 4px 18px rgba(0,0,0,.5);
+  }
+  .fanorona-boardwrap:focus-visible{ box-shadow:0 30px 80px rgba(0,0,0,.65), 0 0 0 2px var(--fanorona-gold); }
+  .fanorona-boardwrap canvas{ display:block; width:100%; height:auto; border-radius:10px; touch-action:manipulation; }
+  .fanorona-choice{
+    margin-top:14px; padding:14px 16px; border:1px solid var(--fanorona-gold-dim);
+    border-radius:8px; background:rgba(201,162,94,.06); text-align:center;
+  }
+  .fanorona-choice p{ margin:0 0 10px; font-style:italic; }
+  .fanorona-choice .fanorona-btn{ margin:0 6px 6px; }
+  .fanorona-hint{ font-size:13px; color:var(--fanorona-ink-dim); font-style:italic; margin:12px 2px 0; }
+  .fanorona-side{ display:flex; flex-direction:column; gap:14px; }
+  .fanorona-status{
+    min-height:64px; padding:12px 14px; border-left:3px solid var(--fanorona-gold);
+    background:var(--fanorona-panel); border-radius:0 8px 8px 0; font-style:italic; font-size:15px;
+  }
+  .fanorona-status strong{ color:var(--fanorona-gold); font-style:normal; }
+  .fanorona-counts{ display:flex; gap:10px; }
+  .fanorona-count{
+    flex:1; padding:10px 12px; background:var(--fanorona-panel); border-radius:8px;
+    border:1px solid rgba(201,162,94,.22); font-size:14px;
+  }
+  .fanorona-count b{ display:block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--fanorona-ink-dim); font-weight:400; }
+  .fanorona-count span{ font-size:20px; color:var(--fanorona-gold); }
+  .fanorona-controls{ display:flex; gap:10px; flex-wrap:wrap; }
+  .fanorona-btn{
+    font-family:inherit; font-size:14px; letter-spacing:.06em; cursor:pointer;
+    color:var(--fanorona-gold); background:transparent; border:1px solid var(--fanorona-gold-dim);
+    border-radius:6px; padding:9px 16px; transition:background .18s ease, color .18s ease, opacity .18s ease;
+  }
+  .fanorona-btn:hover:not(:disabled){ background:rgba(201,162,94,.14); color:#e8cd8f; }
+  .fanorona-btn:disabled{ opacity:.35; cursor:default; }
+  .fanorona-btn:focus-visible{ outline:2px solid var(--fanorona-gold); outline-offset:2px; }
+  .fanorona-rules{
+    background:var(--fanorona-panel); border:1px solid rgba(201,162,94,.22); border-radius:8px;
+    padding:4px 14px 12px; font-size:14px;
+  }
+  .fanorona-rules summary{
+    cursor:pointer; padding:10px 0; font-size:15px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--fanorona-gold);
+  }
+  .fanorona-rules h3{ font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--fanorona-ink-dim); margin:14px 0 4px; font-weight:400; }
+  .fanorona-rules p, .fanorona-rules li{ margin:4px 0; color:#d8c9a8; }
+  .fanorona-rules ul{ padding-left:18px; margin:4px 0; }
+  .fanorona-tag{
+    display:inline-block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-style:normal;
+    border:1px solid var(--fanorona-gold-dim); border-radius:4px; padding:1px 7px; margin-right:6px; color:var(--fanorona-gold);
+  }
+  .fanorona-tag.fanorona-recon{ border-color:var(--fanorona-madder); color:#d98a7f; }
+  .fanorona-logwrap{ background:var(--fanorona-panel); border:1px solid rgba(201,162,94,.22); border-radius:8px; padding:10px 14px; }
+  .fanorona-logwrap h2{ font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--fanorona-ink-dim); font-weight:400; margin:2px 0 8px; }
+  .fanorona-log{ list-style:none; margin:0; padding:0; max-height:170px; overflow:auto; font-size:14px; }
+  .fanorona-log li{ padding:3px 0; border-bottom:1px dotted rgba(201,162,94,.18); color:#d8c9a8; }
+  .fanorona-log li b{ color:var(--fanorona-gold); font-weight:400; }
+  .fanorona-foot{ margin-top:26px; padding-top:14px; border-top:1px solid rgba(201,162,94,.25); font-size:13px; color:var(--fanorona-ink-dim); font-style:italic; text-align:center; }
+  @media (prefers-reduced-motion: reduce){
+    .fanorona-app *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="fanorona-app" id="fanorona-app">
+  <header class="fanorona-head">
+    <p class="fanorona-kicker">Madagascar &middot; the Austronesian game of wits</p>
+    <h1 class="fanorona-title">Fanorona</h1>
+    <p class="fanorona-sub">Forty-five points. Two armies of twenty-two. One empty heart at the center &mdash; and two ways to take: by approach, and by withdrawal.</p>
+  </header>
+  <div class="fanorona-lamba" aria-hidden="true"></div>
+  <div class="fanorona-layout">
+    <section class="fanorona-boardcol">
+      <div class="fanorona-boardwrap" id="fanorona-boardwrap" tabindex="0" role="application"
+           aria-label="Fanorona board. Arrow keys move the cursor. Enter selects a piece or a destination. U undoes your last move. N starts a new game.">
+        <canvas id="fanorona-canvas"></canvas>
+      </div>
+      <div class="fanorona-choice" id="fanorona-choice" hidden>
+        <p id="fanorona-choice-text"></p>
+        <button class="fanorona-btn" id="fanorona-choice-approach" type="button"></button>
+        <button class="fanorona-btn" id="fanorona-choice-withdrawal" type="button"></button>
+      </div>
+      <p class="fanorona-hint">Touch or click a bone piece, then a glowing point. Keyboard: arrows move the cursor, Enter selects, Esc releases, U undoes, N begins anew.</p>
+    </section>
+    <aside class="fanorona-side">
+      <div class="fanorona-status" id="fanorona-status" aria-live="polite"></div>
+      <div class="fanorona-counts">
+        <div class="fanorona-count"><b>Bone &middot; you</b><span id="fanorona-bonecount">22</span></div>
+        <div class="fanorona-count"><b>Ebony &middot; the house</b><span id="fanorona-ebonycount">22</span></div>
+      </div>
+      <div class="fanorona-controls">
+        <button class="fanorona-btn" id="fanorona-new" type="button">New game</button>
+        <button class="fanorona-btn" id="fanorona-undo" type="button">Undo</button>
+        <button class="fanorona-btn" id="fanorona-endturn" type="button" disabled>End turn</button>
+      </div>
+      <details class="fanorona-rules">
+        <summary>Rules &amp; sources</summary>
+        <h3><span class="fanorona-tag">Attested</span>The board &amp; the armies</h3>
+        <p>A lattice of 9 &times; 5 points &mdash; 45 in all &mdash; with diagonals drawn through alternating squares. Points where diagonals meet are <i>strong</i>; the rest are <i>weak</i>, and pieces travel only along the lines. Each side fields 22 stones; every point is occupied except the center. Bone (white) moves first.</p>
+        <h3><span class="fanorona-tag">Attested</span>The two captures</h3>
+        <ul>
+          <li><b>Approach:</b> step toward the enemy so you land beside them &mdash; every unbroken line of enemy stones beyond your landing point is taken.</li>
+          <li><b>Withdrawal:</b> step <i>away</i> from adjacent enemy stones along the same line &mdash; every unbroken line of them behind your starting point is taken.</li>
+          <li>If one move offers both, you choose &mdash; you may never take both at once.</li>
+        </ul>
+        <h3><span class="fanorona-tag">Attested</span>Compulsion &amp; the chain</h3>
+        <ul>
+          <li>A capture, when open, <b>must</b> be taken &mdash; the quiet <i>paika</i> step is only for turns with no capture.</li>
+          <li>After a capture, the same stone <i>may</i> keep capturing, but it may not revisit a point it has already touched this turn, nor capture twice in a row in the same direction.</li>
+          <li>The game is won by capturing every enemy stone.</li>
+        </ul>
+        <h3><span class="fanorona-tag fanorona-recon">Our choices</span>What this exhibit reconstructs</h3>
+        <ul>
+          <li><b>Free choice among captures.</b> Some traditions demand the longest capture; here you choose freely, as the literature permits.</li>
+          <li><b>Ebony, the house player,</b> is a hand-built heuristic &mdash; greedy capture chains weighed against your reply &mdash; honest, but built to be beaten.</li>
+          <li><b>Draws.</b> The living game has elaborate draw conventions; here only a true deadlock is called a draw.</li>
+          <li><b>Undo</b> takes back your whole last round (your move and the house reply).</li>
+        </ul>
+        <h3><span class="fanorona-tag fanorona-recon">Flagged</span>One honest uncertainty</h3>
+        <p>The four extra middle-rank stones are shown on White&rsquo;s right-hand half (files f&ndash;i), matching the f2&ndash;e3A / d3&ndash;e3A opening lines of the 2007 solution paper. Mirrored diagrams appear in some sources; the mirror is play-equivalent.</p>
+      </details>
+      <div class="fanorona-logwrap">
+        <h2>Moves</h2>
+        <ol class="fanorona-log" id="fanorona-log"></ol>
+      </div>
+    </aside>
+  </div>
+  <footer class="fanorona-foot">After the published literature &mdash; Murray (1952), Bell (1983), Montgomery (1886), and the 2007 weak-solution study, which found the perfect game a draw. Played here with reverence, in rosewood, bone, and ebony.</footer>
+</div>
+<script>
+(() => {
+'use strict';
+
+/* ================= 1. Utilities ================= */
+function mulberry32(a){
+  return function(){
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const clamp = (v, lo, hi) => v < lo ? lo : v > hi ? hi : v;
+const easeInOutCubic = t => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+const REDUCED = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const COARSE = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+
+/* ================= 2. Rules engine (pure; no DOM) ================= */
+const COLS = 9, ROWS = 5, NPTS = COLS * ROWS;
+const BONE = 1, EBONY = 2;      // Bone = human (white, moves first); Ebony = house AI
+const HUMAN = BONE, MACHINE = EBONY;
+const FILES = 'abcdefghi';
+
+const idx = (x, y) => y * COLS + x;
+const inB = (x, y) => x >= 0 && x < COLS && y >= 0 && y < ROWS;
+const sqName = i => FILES[i % COLS] + (ROWS - ((i / COLS) | 0)); // rank 1 = human home rank
+
+const DIRS = [
+  {dx: 1, dy: 0}, {dx:-1, dy: 0}, {dx: 0, dy: 1}, {dx: 0, dy:-1},
+  {dx: 1, dy: 1}, {dx: 1, dy:-1}, {dx:-1, dy: 1}, {dx:-1, dy:-1}
+];
+// Diagonal steps exist only from "strong" intersections: (x+y) even. (Attested board geometry.)
+const diagOK = (x, y, dx, dy) => (dx === 0 || dy === 0) ? true : (((x + y) & 1) === 0);
+
+// Count contiguous enemy stones starting one step away from (sx,sy) along (dx,dy).
+function lineCount(pieces, sx, sy, dx, dy, enemy){
+  let n = 0, x = sx + dx, y = sy + dy;
+  while (inB(x, y) && pieces[idx(x, y)] === enemy){ n++; x += dx; y += dy; }
+  return n;
+}
+
+/*
+ * Moves for the piece on point i.
+ * opts: { visited:Set|null, lastDir:{dx,dy}|null, capturesOnly:boolean }
+ * Each move: { from, to, dx, dy, kind:'approach'|'withdrawal'|'none', count }
+ * Both-capture case yields TWO move objects (player chooses — attested rule).
+ */
+function pieceMoves(pieces, i, player, opts){
+  opts = opts || {};
+  const x = i % COLS, y = (i / COLS) | 0;
+  const enemy = player === BONE ? EBONY : BONE;
+  const out = [];
+  for (const d of DIRS){
+    if (!diagOK(x, y, d.dx, d.dy)) continue;
+    if (opts.lastDir && d.dx === opts.lastDir.dx && d.dy === opts.lastDir.dy) continue;
+    const nx = x + d.dx, ny = y + d.dy;
+    if (!inB(nx, ny)) continue;
+    const j = idx(nx, ny);
+    if (pieces[j] !== 0) continue;
+    if (opts.visited && opts.visited.has(j)) continue;
+    const app = lineCount(pieces, nx, ny, d.dx, d.dy, enemy);   // beyond the landing point
+    const wit = lineCount(pieces, x, y, -d.dx, -d.dy, enemy);   // behind the starting point
+    if (opts.capturesOnly && app === 0 && wit === 0) continue;
+    if (app > 0) out.push({from:i, to:j, dx:d.dx, dy:d.dy, kind:'approach', count:app});
+    if (wit > 0) out.push({from:i, to:j, dx:d.dx, dy:d.dy, kind:'withdrawal', count:wit});
+    if (!opts.capturesOnly && app === 0 && wit === 0)
+      out.push({from:i, to:j, dx:d.dx, dy:d.dy, kind:'none', count:0});
+  }
+  return out;
+}
+
+// All legal FIRST moves of a turn. Captures are compulsory: if any exist, only they are returned.
+function allFirstMoves(pieces, player){
+  let moves = [];
+  for (let i = 0; i < NPTS; i++)
+    if (pieces[i] === player) moves.push(...pieceMoves(pieces, i, player, null));
+  const caps = moves.filter(m => m.count > 0);
+  return caps.length ? {moves:caps, compulsory:true} : {moves, compulsory:false};
+}
+
+// Pure application of a move: returns { pieces } with captures removed.
+function applyStepPieces(pieces, m, player){
+  const p = pieces.slice();
+  const enemy = player === BONE ? EBONY : BONE;
+  p[m.from] = 0; p[m.to] = player;
+  if (m.kind === 'approach'){
+    let x = (m.to % COLS) + m.dx, y = ((m.to / COLS) | 0) + m.dy;
+    while (inB(x, y) && p[idx(x, y)] === enemy){ p[idx(x, y)] = 0; x += m.dx; y += m.dy; }
+  } else if (m.kind === 'withdrawal'){
+    let x = (m.from % COLS) - m.dx, y = ((m.from / COLS) | 0) - m.dy;
+    while (inB(x, y) && p[idx(x, y)] === enemy){ p[idx(x, y)] = 0; x -= m.dx; y -= m.dy; }
+  }
+  return {pieces:p};
+}
+
+function countPieces(pieces, player){
+  let n = 0;
+  for (let i = 0; i < NPTS; i++) if (pieces[i] === player) n++;
+  return n;
+}
+
+// Attested setup: two full home ranks per side + four stones on the middle rank;
+// all points filled except the center. White (Bone) on ranks 1–2, i.e. files f–i of rank 3.
+function initialPieces(){
+  const p = new Array(NPTS).fill(0);
+  for (let y = 3; y <= 4; y++) for (let x = 0; x < COLS; x++) p[idx(x, y)] = BONE;
+  for (let x = 5; x < COLS; x++) p[idx(x, 2)] = BONE;   // f3–i3
+  for (let y = 0; y <= 1; y++) for (let x = 0; x < COLS; x++) p[idx(x, y)] = EBONY;
+  for (let x = 0; x < 4; x++) p[idx(x, 2)] = EBONY;     // a3–d3
+  return p; // idx(4,2) — the center — stays empty
+}
+
+/* ================= 3. The house player (heuristic AI) =================
+ * Honest and beatable by design: for every legal first move it plays out the
+ * richest greedy capture chain, then weighs the resulting position by material
+ * and mobility against your best immediate reply. No deep search — a phone-safe
+ * 2-ply with capture-count evaluation.
+ */
+function bestChain(pieces, pos, visited, lastDir, player, total){
+  const moves = pieceMoves(pieces, pos, player, {visited, lastDir, capturesOnly:true});
+  if (!moves.length || total > 44) return {total, pieces, path:[]};
+  let best = {total, pieces, path:[]};
+  for (const m of moves){
+    const r = applyStepPieces(pieces, m, player);
+    const v = new Set(visited); v.add(m.to);
+    const sub = bestChain(r.pieces, m.to, v, {dx:m.dx, dy:m.dy}, player, total + m.count);
+    if (sub.total > best.total) best = {total:sub.total, pieces:sub.pieces, path:[m, ...sub.path]};
+  }
+  return best;
+}
+function evaluate(pieces){ // from the machine's point of view
+  const mine = countPieces(pieces, MACHINE), opp = countPieces(pieces, HUMAN);
+  const myMob = allFirstMoves(pieces, MACHINE).moves.length;
+  const opMob = allFirstMoves(pieces, HUMAN).moves.length;
+  return (mine - opp) * 100 + (myMob - opMob) * 4;
+}
+function foeBestCapture(pieces, foe){
+  const r = allFirstMoves(pieces, foe);
+  if (!r.compulsory) return 0;
+  let m = 0;
+  for (const mv of r.moves) if (mv.count > m) m = mv.count;
+  return m;
+}
+function aiPlan(pieces){
+  const {moves} = allFirstMoves(pieces, MACHINE);
+  let best = null;
+  for (const m of moves){
+    const r1 = applyStepPieces(pieces, m, MACHINE);
+    const visited = new Set([m.from, m.to]);
+    const ch = bestChain(r1.pieces, m.to, visited, {dx:m.dx, dy:m.dy}, MACHINE, m.count);
+    const score = ch.total * 140
+                + evaluate(ch.pieces)
+                - foeBestCapture(ch.pieces, HUMAN) * 110
+                + Math.random() * 2; // slight variety between equal-looking moves
+    if (!best || score > best.score) best = {score, first:m, path:ch.path};
+  }
+  return best;
+}
+
+/* ================= 4. Procedural textures (canvas-baked; no external art) ================= */
+const TEX = {};
+function bakeTextures(){
+  // --- dark rosewood ---
+  {
+    const c = document.createElement('canvas'); c.width = 512; c.height = 320;
+    const g = c.getContext('2d'), rnd = mulberry32(71);
+    const base = g.createLinearGradient(0, 0, 0, 320);
+    base.addColorStop(0, '#4a2c1a'); base.addColorStop(0.5, '#3a2113'); base.addColorStop(1, '#2c190d');
+    g.fillStyle = base; g.fillRect(0, 0, 512, 320);
+    for (let i = 0; i < 150; i++){
+      const y0 = rnd() * 320, amp = 2 + rnd() * 7, per = 60 + rnd() * 170, ph = rnd() * 6.28;
+      const dark = rnd() < 0.62;
+      g.strokeStyle = dark ? `rgba(18,9,4,${0.05 + rnd() * 0.13})` : `rgba(196,128,74,${0.04 + rnd() * 0.08})`;
+      g.lineWidth = 0.6 + rnd() * 2.4;
+      g.beginPath();
+      for (let x = 0; x <= 512; x += 8){
+        const y = y0 + Math.sin((x / per) * 6.28 + ph) * amp;
+        x === 0 ? g.moveTo(x, y) : g.lineTo(x, y);
+      }
+      g.stroke();
+    }
+    for (let i = 0; i < 900; i++){
+      g.fillStyle = `rgba(0,0,0,${rnd() * 0.08})`;
+      g.fillRect(rnd() * 512, rnd() * 320, 1.4, 1.4);
+    }
+    TEX.rosewood = c;
+  }
+  // --- bone ---
+  {
+    const c = document.createElement('canvas'); c.width = c.height = 128;
+    const g = c.getContext('2d'), rnd = mulberry32(12);
+    const base = g.createRadialGradient(64, 56, 8, 64, 64, 92);
+    base.addColorStop(0, '#f2e8cf'); base.addColorStop(0.7, '#e6d6b2'); base.addColorStop(1, '#d3bd93');
+    g.fillStyle = base; g.fillRect(0, 0, 128, 128);
+    g.strokeStyle = 'rgba(150,120,80,0.16)';
+    for (let i = 0; i < 26; i++){
+      g.lineWidth = 0.5 + rnd();
+      g.beginPath();
+      const y0 = rnd() * 128;
+      g.moveTo(0, y0);
+      g.bezierCurveTo(40, y0 + rnd() * 10 - 5, 90, y0 + rnd() * 10 - 5, 128, y0 + rnd() * 8 - 4);
+      g.stroke();
+    }
+    for (let i = 0; i < 120; i++){
+      g.fillStyle = `rgba(120,95,60,${rnd() * 0.10})`;
+      g.fillRect(rnd() * 128, rnd() * 128, 1.2, 1.2);
+    }
+    TEX.bone = c;
+  }
+  // --- ebony ---
+  {
+    const c = document.createElement('canvas'); c.width = c.height = 128;
+    const g = c.getContext('2d'), rnd = mulberry32(34);
+    const base = g.createRadialGradient(64, 56, 8, 64, 64, 92);
+    base.addColorStop(0, '#241b13'); base.addColorStop(0.7, '#171009'); base.addColorStop(1, '#0b0705');
+    g.fillStyle = base; g.fillRect(0, 0, 128, 128);
+    for (let i = 0; i < 40; i++){
+      g.strokeStyle = rnd() < 0.5 ? `rgba(90,70,50,${0.05 + rnd() * 0.07})` : `rgba(0,0,0,${0.10 + rnd() * 0.12})`;
+      g.lineWidth = 0.5 + rnd() * 1.6;
+      g.beginPath();
+      const x0 = rnd() * 128;
+      g.moveTo(x0, 0);
+      g.bezierCurveTo(x0 + rnd() * 8 - 4, 40, x0 + rnd() * 8 - 4, 90, x0 + rnd() * 6 - 3, 128);
+      g.stroke();
+    }
+    TEX.ebony = c;
+  }
+  // --- lamba textile band (madder, ochre, black on natural) ---
+  {
+    const c = document.createElement('canvas'); c.width = 256; c.height = 40;
+    const g = c.getContext('2d'), rnd = mulberry32(99);
+    g.fillStyle = '#c9b183'; g.fillRect(0, 0, 256, 40);
+    const bands = ['#7e2a24', '#c68a2e', '#211a12', '#7e2a24', '#c9b183', '#211a12', '#c68a2e'];
+    let x = 0, bi = 0;
+    while (x < 256){
+      const w = 6 + rnd() * 16;
+      g.fillStyle = bands[bi++ % bands.length];
+      g.fillRect(x, 0, w, 40);
+      x += w;
+    }
+    for (let i = 0; i < 700; i++){ // weave
+      g.fillStyle = `rgba(30,20,10,${rnd() * 0.14})`;
+      g.fillRect(rnd() * 256, rnd() * 40, 2, 1);
+    }
+    g.fillStyle = 'rgba(255,240,210,0.10)'; g.fillRect(0, 0, 256, 5);
+    TEX.lamba = c;
+  }
+}
+
+/* ================= 5. Renderer ================= */
+let app, wrap, canvas, ctx;
+let W = 0, H = 0, cell = 40, ox = 0, oy = 0, DPR = 1;
+let rafId = null;
+
+function layout(){
+  const w = wrap.clientWidth || 300;
+  const pad = Math.max(30, w * 0.062);
+  cell = (w - pad * 2) / (COLS - 1);
+  ox = pad; oy = pad;
+  W = w; H = pad * 2 + cell * (ROWS - 1);
+  DPR = Math.min(window.devicePixelRatio || 1, COARSE ? 1 : 2); // mobile DPR capped at 1.0
+  canvas.style.height = H + 'px';
+  canvas.width = Math.round(W * DPR);
+  canvas.height = Math.round(H * DPR);
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+const PX = x => ox + x * cell;
+const PY = y => oy + y * cell;
+
+function roundRectPath(g, x, y, w, h, r){
+  g.beginPath();
+  g.moveTo(x + r, y);
+  g.arcTo(x + w, y, x + w, y + h, r);
+  g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r);
+  g.arcTo(x, y, x + w, y, r);
+  g.closePath();
+}
+
+function drawBackground(){
+  const g = ctx;
+  g.fillStyle = '#0b0806'; g.fillRect(0, 0, W, H);
+  const cx = W / 2, cy = H / 2;
+  const glow = g.createRadialGradient(cx, cy, 10, cx, cy, Math.max(W, H) * 0.62);
+  glow.addColorStop(0, 'rgba(120,84,40,0.20)');
+  glow.addColorStop(0.55, 'rgba(60,40,22,0.08)');
+  glow.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = glow; g.fillRect(0, 0, W, H);
+}
+
+function drawSlab(){
+  const g = ctx;
+  const m = cell * 0.82;
+  const x = ox - m, y = oy - m, w = cell * (COLS - 1) + m * 2, h = cell * (ROWS - 1) + m * 2;
+  g.save();
+  g.shadowColor = 'rgba(0,0,0,0.7)'; g.shadowBlur = 34; g.shadowOffsetY = 10;
+  roundRectPath(g, x, y, w, h, 14);
+  g.fillStyle = g.createPattern(TEX.rosewood, 'repeat');
+  g.fill();
+  g.restore();
+  // carved edge: dark outer, gold inner hairline
+  roundRectPath(g, x, y, w, h, 14);
+  g.strokeStyle = 'rgba(0,0,0,0.65)'; g.lineWidth = 3; g.stroke();
+  roundRectPath(g, x + 7, y + 7, w - 14, h - 14, 10);
+  g.strokeStyle = 'rgba(201,162,94,0.35)'; g.lineWidth = 1.2; g.stroke();
+  // lamba inlay bands, top and bottom
+  const bandH = Math.max(10, cell * 0.30);
+  const bw = w - 26;
+  g.save();
+  g.beginPath(); g.rect(x + 13, y + 12, bw, bandH); g.clip();
+  g.drawImage(TEX.lamba, x + 13, y + 12, bw, bandH);
+  g.restore();
+  g.save();
+  g.beginPath(); g.rect(x + 13, y + h - 12 - bandH, bw, bandH); g.clip();
+  g.drawImage(TEX.lamba, x + 13, y + h - 12 - bandH, bw, bandH);
+  g.restore();
+  g.strokeStyle = 'rgba(0,0,0,0.5)'; g.lineWidth = 1;
+  g.strokeRect(x + 13, y + 12, bw, bandH);
+  g.strokeRect(x + 13, y + h - 12 - bandH, bw, bandH);
+}
+
+function strokeLine(x1, y1, x2, y2, width, color){
+  ctx.strokeStyle = 'rgba(0,0,0,0.55)'; ctx.lineWidth = width + 1.6;
+  ctx.beginPath(); ctx.moveTo(x1 + 1.2, y1 + 1.8); ctx.lineTo(x2 + 1.2, y2 + 1.8); ctx.stroke();
+  ctx.strokeStyle = color; ctx.lineWidth = width;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+}
+
+function drawLines(){
+  const gold = 'rgba(216,182,116,0.85)';
+  const wLine = Math.max(1.4, cell * 0.028);
+  // horizontal + vertical
+  for (let y = 0; y < ROWS; y++) strokeLine(PX(0), PY(y), PX(COLS - 1), PY(y), wLine, gold);
+  for (let x = 0; x < COLS; x++) strokeLine(PX(x), PY(0), PX(x), PY(ROWS - 1), wLine, gold);
+  // diagonals in alternating squares — the fanorona-telo pattern (attested)
+  const wDiag = Math.max(1, cell * 0.02);
+  for (let sy = 0; sy < ROWS - 1; sy++){
+    for (let sx = 0; sx < COLS - 1; sx++){
+      if (((sx + sy) & 1) === 0) strokeLine(PX(sx), PY(sy), PX(sx + 1), PY(sy + 1), wDiag, gold);
+      else strokeLine(PX(sx), PY(sy + 1), PX(sx + 1), PY(sy), wDiag, gold);
+    }
+  }
+  // intersections: small carved sockets
+  for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++){
+    const cx = PX(x), cy = PY(y), r = Math.max(1.6, cell * 0.045);
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
+    ctx.strokeStyle = 'rgba(216,182,116,0.5)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke();
+  }
+}
+
+function drawPiece(cx, cy, r, player, alpha, scale){
+  const g = ctx;
+  g.save();
+  g.globalAlpha = alpha == null ? 1 : alpha;
+  g.translate(cx, cy); g.scale(scale == null ? 1 : scale, scale == null ? 1 : scale);
+  // cast shadow
+  g.fillStyle = 'rgba(0,0,0,0.5)';
+  g.beginPath(); g.ellipse(r * 0.14, r * 0.30, r * 0.96, r * 0.55, 0, 0, 7); g.fill();
+  // body: baked bone/ebony texture — never flat shading
+  g.beginPath(); g.arc(0, 0, r, 0, 7);
+  g.fillStyle = g.createPattern(player === BONE ? TEX.bone : TEX.ebony, 'repeat');
+  g.fill();
+  // spherical modelling: rim darkening + top light
+  let rim = g.createRadialGradient(0, 0, r * 0.45, 0, 0, r);
+  rim.addColorStop(0, 'rgba(0,0,0,0)');
+  rim.addColorStop(1, 'rgba(0,0,0,0.42)');
+  g.fillStyle = rim; g.beginPath(); g.arc(0, 0, r, 0, 7); g.fill();
+  let hi = g.createRadialGradient(-r * 0.34, -r * 0.40, r * 0.04, -r * 0.34, -r * 0.40, r * 0.95);
+  hi.addColorStop(0, player === BONE ? 'rgba(255,252,240,0.55)' : 'rgba(210,180,140,0.30)');
+  hi.addColorStop(0.45, 'rgba(255,250,235,0.08)');
+  hi.addColorStop(1, 'rgba(255,250,235,0)');
+  g.fillStyle = hi; g.beginPath(); g.arc(0, 0, r, 0, 7); g.fill();
+  // carved ring on bone, fine gold hairline on ebony
+  g.strokeStyle = player === BONE ? 'rgba(120,90,55,0.55)' : 'rgba(201,162,94,0.40)';
+  g.lineWidth = Math.max(1, r * 0.06);
+  g.beginPath(); g.arc(0, 0, r * 0.68, 0, 7); g.stroke();
+  g.restore();
+}
+
+function drawHighlights(now){
+  const g = ctx;
+  const pr = cell * 0.30;
+  // last move wash
+  if (S.lastMove.from >= 0){
+    for (const k of ['from', 'to']){
+      const i = S.lastMove[k];
+      g.fillStyle = k === 'to' ? 'rgba(201,162,94,0.20)' : 'rgba(201,162,94,0.10)';
+      g.beginPath(); g.arc(PX(i % COLS), PY((i / COLS) | 0), pr * 1.5, 0, 7); g.fill();
+    }
+  }
+  // selectable pieces breathe (human turn, select phase)
+  if (S.phase === 'select' && S.turn === HUMAN){
+    const pulse = REDUCED ? 0.5 : 0.5 + 0.5 * Math.sin(now / 480);
+    for (const i of S.selectable){
+      g.strokeStyle = `rgba(201,162,94,${0.25 + pulse * 0.35})`;
+      g.lineWidth = 2;
+      g.beginPath(); g.arc(PX(i % COLS), PY((i / COLS) | 0), pr * 1.45, 0, 7); g.stroke();
+    }
+  }
+  // selected piece
+  if (S.selected >= 0){
+    const i = S.selected;
+    g.strokeStyle = '#e8cd8f'; g.lineWidth = 2.6;
+    g.beginPath(); g.arc(PX(i % COLS), PY((i / COLS) | 0), pr * 1.55, 0, 7); g.stroke();
+    // destinations
+    const byDest = new Map();
+    for (const m of S.legalForSelected){
+      if (!byDest.has(m.to)) byDest.set(m.to, []);
+      byDest.get(m.to).push(m);
+    }
+    for (const [to, ms] of byDest){
+      const x = PX(to % COLS), y = PY((to / COLS) | 0);
+      const cap = ms.some(m => m.count > 0);
+      const dual = ms.length > 1;
+      if (cap){
+        g.fillStyle = 'rgba(201,162,94,0.9)';
+        g.beginPath(); g.arc(x, y, pr * 0.62, 0, 7); g.fill();
+        g.fillStyle = '#14100a';
+        g.font = `700 ${Math.max(10, pr * 0.72)}px Georgia, serif`;
+        g.textAlign = 'center'; g.textBaseline = 'middle';
+        g.fillText(String(Math.max(...ms.map(m => m.count))), x, y + 1);
+        if (dual){
+          g.strokeStyle = '#e8cd8f'; g.lineWidth = 2;
+          g.beginPath(); g.arc(x, y, pr * 0.95, 0, 7); g.stroke();
+        }
+      } else {
+        g.fillStyle = 'rgba(232,205,143,0.55)';
+        g.beginPath(); g.arc(x, y, pr * 0.34, 0, 7); g.fill();
+      }
+    }
+  }
+  // keyboard cursor
+  const focused = document.activeElement === wrap;
+  const c = S.cursor;
+  g.setLineDash([6, 5]);
+  g.strokeStyle = focused ? 'rgba(232,205,143,0.95)' : 'rgba(232,205,143,0.35)';
+  g.lineWidth = focused ? 2.4 : 1.4;
+  g.beginPath(); g.arc(PX(c.x), PY(c.y), pr * 1.75, 0, 7); g.stroke();
+  g.setLineDash([]);
+}
+
+function draw(now){
+  if (!ctx || destroyed) return;
+  drawBackground();
+  drawSlab();
+  drawLines();
+  const pr = cell * 0.30;
+  // captured pieces fading out
+  let moving = null;
+  if (S.anim){
+    for (const t of S.anim.taken){
+      const p = fadeProgress(now);
+      drawPiece(PX(t.x), PY(t.y), pr, t.player, 1 - p, 1 - p * 0.45);
+    }
+    moving = S.anim;
+  }
+  // standing pieces
+  for (let i = 0; i < NPTS; i++){
+    const pl = S.pieces[i];
+    if (!pl) continue;
+    if (moving && i === moving.from) continue;                 // drawn in flight
+    if (moving && moving.taken.some(t => t.i === i)) continue; // drawn fading
+    drawPiece(PX(i % COLS), PY((i / COLS) | 0), pr, pl, 1, 1);
+  }
+  // the travelling piece
+  if (moving){
+    const sp = slideProgress(now);
+    const e = easeInOutCubic(clamp(sp, 0, 1));
+    const cx = moving.fx + (moving.tx - moving.fx) * e;
+    const cy = moving.fy + (moving.ty - moving.fy) * e - Math.sin(e * Math.PI) * cell * 0.10;
+    drawPiece(cx, cy, pr, moving.player, 1, 1);
+  }
+  drawHighlights(now);
+}
+
+/* ---- animation driver: rAF only while a step is in flight ---- */
+function slideProgress(now){
+  const a = S.anim;
+  return clamp((now - a.t0) / (a.dur * 0.62), 0, 1);
+}
+function fadeProgress(now){
+  const a = S.anim;
+  return clamp(((now - a.t0) / a.dur - 0.45) / 0.55, 0, 1);
+}
+function tick(now){
+  rafId = null;
+  if (destroyed) return;
+  const a = S.anim;
+  if (!a) return;
+  draw(now);
+  if (now - a.t0 >= a.dur){
+    S.anim = null;
+    draw(performance.now());
+    const done = a.done;
+    if (done) done();
+  } else {
+    rafId = requestAnimationFrame(tick);
+  }
+}
+function ensureLoop(){
+  if (rafId == null && !destroyed) rafId = requestAnimationFrame(tick);
+}
+
+/* ================= 6. Game state & controller ================= */
+const S = {
+  pieces: [], turn: HUMAN, phase: 'select', // select|choose|chain|ai|over
+  selected: -1, legalForSelected: [], selectable: new Set(),
+  turnMoves: [], compulsory: false,
+  chainCtx: null,            // { visited:Set, lastDir:{dx,dy}, pos }
+  pendingChoice: null,       // [moveA, moveB] awaiting approach/withdrawal choice
+  lastMove: {from:-1, to:-1},
+  cursor: {x:4, y:3},
+  anim: null,
+  undoStack: [],
+  logEntries: [],            // completed turn strings
+  turnLog: '',               // string being built for the current turn
+  aiTimer: null,
+  turnId: 0,                 // bumped every turn; stale AI callbacks check it
+};
+let destroyed = false;
+
+/* ---- DOM handles ---- */
+let statusEl, boneCountEl, ebonyCountEl, logEl, choiceBox, choiceText, choiceA, choiceB,
+    newBtn, undoBtn, endBtn, ro = null;
+
+function setStatus(html){ statusEl.innerHTML = html; }
+function updateCounts(){
+  boneCountEl.textContent = countPieces(S.pieces, BONE);
+  ebonyCountEl.textContent = countPieces(S.pieces, EBONY);
+}
+function renderLog(){
+  logEl.innerHTML = '';
+  for (const e of S.logEntries){
+    const li = document.createElement('li');
+    li.innerHTML = e;
+    logEl.appendChild(li);
+  }
+  logEl.scrollTop = logEl.scrollHeight;
+}
+function kindGlyph(m){
+  return m.kind === 'approach' ? '⤢' : m.kind === 'withdrawal' ? '⤡' : '·';
+}
+function appendLogStep(m, first){
+  const bit = (first ? '' : ' → ') + sqName(m.from) + '→' + sqName(m.to) +
+              (m.count > 0 ? ' <b>×' + m.count + '</b>' + kindGlyph(m) : '');
+  S.turnLog += first ? bit.replace(/^ /, '') : bit;
+}
+function pushTurnLog(){
+  if (!S.turnLog) return;
+  const n = S.logEntries.length + 1;
+  const who = S.turn === HUMAN ? 'Bone' : 'Ebony';
+  S.logEntries.push('<b>' + n + '. ' + who + '</b> ' + S.turnLog);
+  S.turnLog = '';
+  renderLog();
+}
+
+function showChoice(moves){
+  S.pendingChoice = moves;
+  S.phase = 'choose';
+  const [a, b] = moves;
+  const ap = a.kind === 'approach' ? a : b;
+  const wd = a.kind === 'withdrawal' ? a : b;
+  choiceText.textContent = 'Both captures are open on ' + sqName(a.to) + ' — the law says you must choose one.';
+  choiceA.textContent = 'Approach ×' + ap.count + '  (1)';
+  choiceB.textContent = 'Withdrawal ×' + wd.count + '  (2)';
+  choiceBox.hidden = false;
+  draw(performance.now());
+}
+function hideChoice(){
+  S.pendingChoice = null;
+  choiceBox.hidden = true;
+}
+
+/* ---- move execution ---- */
+function takenFor(m, player){
+  const enemy = player === BONE ? EBONY : BONE;
+  const out = [];
+  const walk = (sx, sy, dx, dy) => {
+    let x = sx + dx, y = sy + dy;
+    while (inB(x, y) && S.pieces[idx(x, y)] === enemy){ out.push({i:idx(x, y), x, y, player:enemy}); x += dx; y += dy; }
+  };
+  if (m.kind === 'approach') walk(m.to % COLS, (m.to / COLS) | 0, m.dx, m.dy);
+  else if (m.kind === 'withdrawal') walk(m.from % COLS, (m.from / COLS) | 0, -m.dx, -m.dy);
+  return out;
+}
+function playStep(step, done){
+  // commit logically at once; the animation only re-presents it
+  S.pieces[step.from] = 0;
+  S.pieces[step.to] = step.player;
+  for (const t of step.taken) S.pieces[t.i] = 0;
+  S.lastMove = {from:step.from, to:step.to};
+  updateCounts();
+  if (REDUCED || destroyed){ draw(performance.now()); if (done) done(); return; }
+  S.anim = {
+    fx: PX(step.from % COLS), fy: PY((step.from / COLS) | 0),
+    tx: PX(step.to % COLS),   ty: PY((step.to / COLS) | 0),
+    from: step.from, player: step.player, taken: step.taken,
+    t0: performance.now(), dur: 320, done,
+  };
+  ensureLoop();
+}
+
+// After any step: offer/force the chain, else close the turn.
+function afterStep(m, player, chainCtx){
+  appendLogStep(m, !chainCtx);
+  S.selected = -1; S.legalForSelected = [];
+  hideChoice();
+  if (m.count > 0){
+    const visited = chainCtx ? new Set(chainCtx.visited) : new Set();
+    visited.add(m.from); visited.add(m.to);
+    const cont = pieceMoves(S.pieces, m.to, player, {
+      visited, lastDir:{dx:m.dx, dy:m.dy}, capturesOnly:true,
+    });
+    if (cont.length){
+      S.phase = 'chain';
+      S.chainCtx = {visited, lastDir:{dx:m.dx, dy:m.dy}, pos:m.to};
+      S.selected = m.to;
+      S.legalForSelected = cont;
+      endBtn.disabled = false;
+      setStatus('<strong>' + (player === HUMAN ? 'Bone' : 'Ebony') + '</strong> takes ×' + m.count +
+        ' by ' + m.kind + '. ' + cont.length + ' further capture' + (cont.length > 1 ? 's are' : ' is') +
+        ' open — continue the chain, or end the turn.');
+      draw(performance.now());
+      return;
+    }
+  }
+  endTurn();
+}
+
+function humanCommit(m){
+  const wasFresh = S.phase === 'select';
+  const ctx = wasFresh ? null : S.chainCtx;
+  hideChoice();
+  endBtn.disabled = true;
+  S.phase = 'busy';
+  const step = {from:m.from, to:m.to, player:HUMAN, taken:takenFor(m, HUMAN)};
+  playStep(step, () => afterStep(m, HUMAN, ctx));
+}
+
+function runAI(){
+  if (destroyed || S.phase !== 'ai') return;
+  const plan = aiPlan(S.pieces);
+  if (!plan){ endTurn(); return; }
+  const moves = [plan.first, ...plan.path];
+  const tid = S.turnId; // undo/new-game during the reply invalidates this whole sequence
+  let i = 0;
+  const next = () => {
+    if (destroyed || tid !== S.turnId) return;
+    if (i >= moves.length){ endTurn(); return; }
+    const m = moves[i++];
+    const step = {from:m.from, to:m.to, player:MACHINE, taken:takenFor(m, MACHINE)};
+    S.phase = 'busy';
+    playStep(step, () => {
+      appendLogStep(m, i === 1);
+      S.aiTimer = setTimeout(next, REDUCED ? 60 : 190);
+    });
+  };
+  next();
+}
+
+function endTurn(){
+  const mover = S.turn;
+  pushTurnLog();
+  endBtn.disabled = true;
+  const foe = mover === BONE ? EBONY : BONE;
+  if (countPieces(S.pieces, foe) === 0){ gameOver(mover); return; }
+  beginTurn(foe, true);
+}
+
+function beginTurn(player, pushUndo){
+  if (destroyed) return;
+  S.turnId++;
+  if (pushUndo) S.undoStack.push({pieces:S.pieces.slice(), logLen:S.logEntries.length});
+  S.turn = player;
+  S.selected = -1; S.legalForSelected = []; S.selectable = new Set();
+  S.chainCtx = null; S.turnLog = '';
+  hideChoice(); endBtn.disabled = true;
+  updateCounts();
+  const bc = countPieces(S.pieces, BONE), ec = countPieces(S.pieces, EBONY);
+  if (bc === 0 || ec === 0){ gameOver(bc === 0 ? EBONY : BONE); return; }
+  const {moves, compulsory} = allFirstMoves(S.pieces, player);
+  S.turnMoves = moves; S.compulsory = compulsory;
+  if (!moves.length){ // no legal move at all — our table rule calls it a draw
+    S.phase = 'over';
+    setStatus('No legal move remains — the board holds its breath. <strong>A draw by deadlock</strong> (our table rule; the living game&rsquo;s draw customs run deeper).');
+    draw(performance.now());
+    return;
+  }
+  if (player === MACHINE){
+    S.phase = 'ai';
+    setStatus('<strong>Ebony</strong> is considering&hellip;');
+    S.aiTimer = setTimeout(runAI, REDUCED ? 250 : 700);
+  } else {
+    S.phase = 'select';
+    for (const m of moves) S.selectable.add(m.from);
+    setStatus(compulsory
+      ? '<strong>Bone</strong> to move — a capture is <strong>compulsory</strong>. Choose your capture; the number shows how many stones fall.'
+      : '<strong>Bone</strong> to move — no capture is open. Step one stone along a line (<i>paika</i>).');
+  }
+  draw(performance.now());
+}
+
+function gameOver(winner){
+  S.phase = 'over';
+  hideChoice(); endBtn.disabled = true;
+  const won = winner === HUMAN;
+  setStatus(won
+    ? '<strong>Bone takes the board.</strong> Every ebony stone is gathered — a clean victory, as the old game demands.'
+    : '<strong>Ebony takes the board.</strong> The house gathers every bone stone. Study the log, and challenge it again.');
+  draw(performance.now());
+}
+
+function newGame(){
+  if (S.aiTimer){ clearTimeout(S.aiTimer); S.aiTimer = null; }
+  S.anim = null;
+  S.pieces = initialPieces();
+  S.undoStack = []; S.logEntries = []; S.turnLog = '';
+  S.lastMove = {from:-1, to:-1};
+  S.cursor = {x:4, y:3};
+  renderLog();
+  beginTurn(HUMAN, true);
+  setStatus('<strong>Bone</strong> to move — a capture is <strong>compulsory</strong>. Choose your capture; the number shows how many stones fall.');
+}
+
+function undo(){
+  if (S.phase === 'over') return;
+  if (S.aiTimer){ clearTimeout(S.aiTimer); S.aiTimer = null; }
+  S.anim = null;
+  hideChoice();
+  if (!S.undoStack.length){ setStatus('Nothing to take back yet.'); return; }
+  // Undo takes back the whole round: your move AND the house reply.
+  // The stack holds a snapshot before every turn, so: discard the snapshot of
+  // the turn now in progress, then (on your turn) also discard the house-reply
+  // snapshot, and restore the snapshot from before your last move began.
+  const houseToMove = (S.turn === MACHINE);
+  S.undoStack.pop();                       // the turn now in progress — discard
+  if (!houseToMove) S.undoStack.pop();     // the house reply — discard
+  const snap = S.undoStack.pop() || {pieces:initialPieces(), logLen:0};
+  S.pieces = snap.pieces.slice();
+  S.logEntries.length = snap.logLen;
+  S.turnLog = '';
+  S.lastMove = {from:-1, to:-1};
+  renderLog();
+  beginTurn(HUMAN, false);
+  setStatus('The last round is unwound. <strong>Bone</strong> to move anew.');
+}
+
+/* ---- input: pointer ---- */
+function pointFromEvent(e){
+  const r = canvas.getBoundingClientRect();
+  const cx = e.clientX - r.left, cy = e.clientY - r.top;
+  let best = -1, bd = Infinity;
+  for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++){
+    const dx = PX(x) - cx, dy = PY(y) - cy;
+    const d = dx * dx + dy * dy;
+    if (d < bd){ bd = d; best = idx(x, y); }
+  }
+  return bd <= (cell * 0.5) * (cell * 0.5) ? best : -1;
+}
+function onPointer(e){
+  if (destroyed) return;
+  if (S.phase !== 'select' && S.phase !== 'chain') return;
+  const i = pointFromEvent(e);
+  if (i < 0){ return; }
+  S.cursor = {x:i % COLS, y:(i / COLS) | 0};
+  tapPoint(i);
+}
+function tapPoint(i){
+  if (S.phase !== 'select' && S.phase !== 'chain') return;
+  if (S.phase === 'chain'){
+    // A chain belongs to one stone: only its highlighted destinations answer.
+    if (S.selected >= 0){
+      const opts = S.legalForSelected.filter(m => m.to === i);
+      if (opts.length === 2){ showChoice(opts); return; }
+      if (opts.length === 1){ humanCommit(opts[0]); return; }
+    }
+    return;
+  }
+  // a highlighted destination?
+  if (S.selected >= 0){
+    const opts = S.legalForSelected.filter(m => m.to === i);
+    if (opts.length === 2){ showChoice(opts); return; }
+    if (opts.length === 1){ humanCommit(opts[0]); return; }
+    if (i === S.selected){ // release
+      S.selected = -1; S.legalForSelected = [];
+      draw(performance.now());
+      return;
+    }
+  }
+  if (S.pieces[i] === HUMAN && S.turn === HUMAN){
+    const mine = S.turnMoves.filter(m => m.from === i);
+    if (!mine.length){
+      setStatus(S.compulsory
+        ? 'That stone has no capture — and a capture is <strong>compulsory</strong> this turn.'
+        : 'That stone cannot move. Choose a stone with a glowing ring.');
+      draw(performance.now());
+      return;
+    }
+    S.selected = i;
+    S.legalForSelected = mine;
+    draw(performance.now());
+  }
+}
+
+/* ---- input: keyboard ---- */
+function onKey(e){
+  if (destroyed) return;
+  const k = e.key;
+  const c = S.cursor;
+  if (k === 'ArrowUp' || k === 'ArrowDown' || k === 'ArrowLeft' || k === 'ArrowRight'){
+    e.preventDefault();
+    if (k === 'ArrowUp') c.y = clamp(c.y - 1, 0, ROWS - 1);
+    if (k === 'ArrowDown') c.y = clamp(c.y + 1, 0, ROWS - 1);
+    if (k === 'ArrowLeft') c.x = clamp(c.x - 1, 0, COLS - 1);
+    if (k === 'ArrowRight') c.x = clamp(c.x + 1, 0, COLS - 1);
+    draw(performance.now());
+    return;
+  }
+  if (k === 'Enter' || k === ' '){
+    e.preventDefault();
+    tapPoint(idx(c.x, c.y));
+    return;
+  }
+  if (k === 'Escape'){
+    S.selected = -1; S.legalForSelected = []; hideChoice();
+    if (S.phase === 'choose') S.phase = S.chainCtx ? 'chain' : 'select';
+    draw(performance.now());
+    return;
+  }
+  if ((k === '1' || k === '2') && S.phase === 'choose' && S.pendingChoice){
+    const [a, b] = S.pendingChoice;
+    const pick = k === '1'
+      ? (a.kind === 'approach' ? a : b)
+      : (a.kind === 'withdrawal' ? a : b);
+    humanCommit(pick);
+    return;
+  }
+  if (k === 'u' || k === 'U'){ undo(); return; }
+  if (k === 'n' || k === 'N'){ newGame(); return; }
+  if ((k === 'e' || k === 'E') && S.phase === 'chain'){ endTurn(); }
+}
+
+function onResize(){ layout(); draw(performance.now()); }
+
+/* ================= 7. Init & teardown ================= */
+function init(){
+  app = document.getElementById('fanorona-app');
+  wrap = document.getElementById('fanorona-boardwrap');
+  canvas = document.getElementById('fanorona-canvas');
+  ctx = canvas.getContext('2d');
+  statusEl = document.getElementById('fanorona-status');
+  boneCountEl = document.getElementById('fanorona-bonecount');
+  ebonyCountEl = document.getElementById('fanorona-ebonycount');
+  logEl = document.getElementById('fanorona-log');
+  choiceBox = document.getElementById('fanorona-choice');
+  choiceText = document.getElementById('fanorona-choice-text');
+  choiceA = document.getElementById('fanorona-choice-approach');
+  choiceB = document.getElementById('fanorona-choice-withdrawal');
+  newBtn = document.getElementById('fanorona-new');
+  undoBtn = document.getElementById('fanorona-undo');
+  endBtn = document.getElementById('fanorona-endturn');
+
+  bakeTextures();
+  layout();
+
+  wrap.addEventListener('pointerdown', onPointer);
+  wrap.addEventListener('keydown', onKey);
+  newBtn.addEventListener('click', newGame);
+  undoBtn.addEventListener('click', undo);
+  endBtn.addEventListener('click', () => { if (S.phase === 'chain') endTurn(); });
+  choiceA.addEventListener('click', () => {
+    if (S.phase !== 'choose' || !S.pendingChoice) return;
+    const [a, b] = S.pendingChoice;
+    humanCommit(a.kind === 'approach' ? a : b);
+  });
+  choiceB.addEventListener('click', () => {
+    if (S.phase !== 'choose' || !S.pendingChoice) return;
+    const [a, b] = S.pendingChoice;
+    humanCommit(a.kind === 'withdrawal' ? a : b);
+  });
+  window.addEventListener('resize', onResize);
+  if (typeof ResizeObserver === 'function'){
+    ro = new ResizeObserver(onResize);
+    ro.observe(wrap);
+  }
+
+  newGame();
+}
+
+/*
+ * destroy(): full teardown — cancels the frame loop and pending AI timer,
+ * removes every listener, disconnects the ResizeObserver, releases baked
+ * textures, and removes the exhibit node from the DOM.
+ */
+function destroy(){
+  if (destroyed) return;
+  destroyed = true;
+  if (rafId != null){ cancelAnimationFrame(rafId); rafId = null; }
+  if (S.aiTimer){ clearTimeout(S.aiTimer); S.aiTimer = null; }
+  S.anim = null;
+  try { wrap.removeEventListener('pointerdown', onPointer); } catch(_){}
+  try { wrap.removeEventListener('keydown', onKey); } catch(_){}
+  try { window.removeEventListener('resize', onResize); } catch(_){}
+  try { if (ro){ ro.disconnect(); ro = null; } } catch(_){}
+  for (const k of Object.keys(TEX)){ try { TEX[k].width = 0; TEX[k].height = 0; } catch(_){} delete TEX[k]; }
+  ctx = null; canvas = null; wrap = null;
+  try { if (app && app.parentNode) app.parentNode.removeChild(app); } catch(_){}
+  app = null;
+  if (window.Fanorona) window.Fanorona = null;
+}
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
+
+window.Fanorona = {destroy};
+
+})();
+</script>
+</body>
+</html>
