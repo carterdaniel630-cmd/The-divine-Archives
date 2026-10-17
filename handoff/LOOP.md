@@ -20,7 +20,9 @@ with no memory of the last one: the repo is the memory.
    - `STATUS.md` → Next;
    - `handoff/claude-ready-line.md` order.
    Newest Carter ruling wins. Pickup order every time: finish anything in progress → audit → fold → rebuild better.
-5. **Do ONE bounded item**: the first item in Next that needs no Carter approval to do. Bounded means about one
+5. **Do ONE bounded item**: the highest-value item in Next that needs no Carter approval to do, ranked by
+   `handoff/decisions-2026-10-17-priority-by-value.md` (Carter: "priority … most high value outcomes"), not by
+   list order. Keep STATUS → Next sorted by that value. Bounded means about one
    PR's worth of work, correct and verified. A smaller correct piece beats a larger unverified one. Gated items
    (below) can still be prepared: research, drafts, specs. Only the gated action itself waits.
 6. **Verify** exactly as `CLAUDE.md` "Quality bar" says:
