@@ -148,7 +148,7 @@ Because the default branch is stale (below), this is also the README visitors se
 
 | Where | Text | Reality |
 |---|---|---|
-| `docs/index.html:369` | "More games are on the way — a treasure-hunt adventure, pinball, excavation and others" | All three are live (Tomb Robber, Firmament, Excavation). |
+| `docs/index.html:369` | "More games are on the way — a treasure-hunt adventure, pinball, excavation and others" | All three are live (Unfinished Journal, Firmament, Excavation). |
 | `docs/symbols.html:~105-135` | Per-game `phaseNote` placeholders ("Built in Phase 2…", "In development"). | Not user-visible today (shown only if a game module fails to register), but the fighter note still calls it "In development". |
 
 ### Stage 2 summary
@@ -175,7 +175,7 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 | **The Labyrinth** `labyrinth.js` | the Labyrinth | rAF, variable `dt` clamped to 50 ms (`:358`); movement `prog += speed·dt·60` (`:152`) | `keydown`, swipe, pad; **pre-turn buffer** `player.want` (`:129, 143-144`) | Ghost/fright timers in seconds | Yes (dt-scaled) |
 | **Antithesis** `antithesis.js` | Antithesis | rAF, `dt` clamped to 50 ms (`:248`), but **physics is per frame**: `b.x += b.vx`, paddles `±6.4` per frame (`:136-140`) | keys, mouse drag, touch drag, pads | — | **No**: about 2.4× faster at 144 Hz |
 | **The Firmament** `pinball.js` | Pinball | rAF, `dt` ≤ 33 ms (`:301`); 5 substeps per frame (`:44, 173-176`), but **per-frame gravity and velocity** | keys, mouse, touch | — | **No**: substeps prevent tunnelling but speed scales with refresh |
-| **The Tomb Robber** `treasure.js` | Platformer | rAF, `dt` ≤ 33 ms (`:252`), but **per-frame physics**: `vx += 0.6`, `vy += 0.5`, `x += vx` (`:152-158`) | keys, mouse, touch | — | **No** |
+| **The Unfinished Journal** `treasure.js` | Platformer | rAF, `dt` ≤ 33 ms (`:252`), but **per-frame physics**: `vx += 0.6`, `vy += 0.5`, `x += vx` (`:152-158`) | keys, mouse, touch | — | **No** |
 | **The Excavation** `excavation.js` | the Excavation | Event-driven; 1 s `setInterval` clock (`:175`) | click, right-click/`contextmenu`, long-press (`:117`), flag mode | — | n/a |
 | **Archive Chess** `chess.js` | Chess | Turn-based; AI via `setTimeout(aiMove, 220)` (`:237`) | click/tap | — | n/a |
 | **Dominion of the Ancients** `dominion.js` | Territorial conquest | Turn-based; AI sequenced by `setTimeout` 420 ms (`:232`); rAF for rendering | click | — | n/a |
@@ -222,7 +222,7 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 - **Frame-rate dependence (bug):** `antithesis.js:136-140`, `treasure.js:152-158` and `pinball.js:173-176` advance positions and velocities **per rendered frame** even though `dt` is computed. On 120/144 Hz displays these games run 2–2.4× faster; on a throttled tab, slower. `labyrinth.js:152` and `fighter.js` scale correctly.
 - **Ouroboros:** the single-slot `nextDir` latch (`ouroboros.js:118, 148`) means two quick turns inside one step collapse to the last one, so a tight U-turn needs two ticks. The standard fix is a 2–3 entry input queue.
 - **Labyrinth:** ghosts all chase the player's tile with 18% random moves and random choices when frightened (`labyrinth.js:165-176`). There are no per-ghost targeting personalities and no scatter/chase mode cycle. Buffered turning is present.
-- **Tomb Robber:** jump only while `onGround` (`treasure.js:155`), with no coyote time and no jump buffering; no variable jump height (release doesn't cut `vy`).
+- **Unfinished Journal:** jump only while `onGround` (`treasure.js:155`), with no coyote time and no jump buffering; no variable jump height (release doesn't cut `vy`).
 - **Excavation:** first click is safe (mines exclude the clicked cell and its neighbours, `excavation.js:63-65`). Chording (clicking a satisfied number) isn't implemented.
 - **Chess:** full legal rules (castling, en passant, promotion, check/mate/stalemate) and alpha-beta negamax at **fixed depth 3** (`chess.js:113-132, 240`), with capture-first ordering. No quiescence search, so it can blunder at the horizon.
 - **Dominion:** classic attacker/defender dice (`dominion.js:33, 153-154`).
@@ -233,7 +233,7 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 
 - **Fighter:** solid core. It has a fixed step, real frame data, cancels, hitstop, per-god tuning and a throw tech. The gaps that matter most for feel are: no input buffer, attacks read outside the sim tick, OS key-repeat mashing, hits checked only on the first active frame, and no hurtboxes or hitstun data. All four gods share one move list.
 - **Ziggurat:** 7-bag ✅, but no SRS, **no lock delay**, **no DAS/ARR** (OS key repeat), no hold, a single-piece preview and a short well.
-- **Bug across three games:** Antithesis, Firmament and Tomb Robber run faster on high-refresh displays because their physics is per frame.
+- **Bug across three games:** Antithesis, Firmament and Unfinished Journal run faster on high-refresh displays because their physics is per frame.
 
 ---
 

@@ -15,7 +15,8 @@ with no memory of the last one: the repo is the memory.
    push is rejected because someone pushed first, pull and re-check the lock.
 4. **Read the queue, newest first:**
    - `handoff/manifest-v2.md` and any Items added since `handoff/replies/STATUS.md` was last written;
-   - Carter's rulings;
+   - Carter's rulings: every `handoff/decisions-*.md`, and especially any committed after STATUS was last written.
+     Fold their actions into STATUS → Next so the ruling is never lost when STATUS is overwritten;
    - `STATUS.md` → Next;
    - `handoff/claude-ready-line.md` order.
    Newest Carter ruling wins. Pickup order every time: finish anything in progress → audit → fold → rebuild better.

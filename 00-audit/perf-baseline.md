@@ -5,8 +5,8 @@ compared against it. Nothing in this report has been fixed yet.*
 
 **The short version:** the reading side of the site is fast. The home page, era pages and
 chapters score 99–100 out of 100. The museum and most game pages score 90–96. Two games stand
-out as slow to *open*: **Dominion of the Ancients (71)** and **the Tomb Robber (82)**. Once
-running, four games are **slow to *play*** on a mid-range phone: the Tomb Robber, the fighter,
+out as slow to *open*: **Dominion of the Ancients (71)** and **the Unfinished Journal (82)**. Once
+running, four games are **slow to *play*** on a mid-range phone: the Unfinished Journal, the fighter,
 the Labyrinth and the Firmament. The biggest cause is cheap to fix: on phones, the games draw
 more pixels than the screen shows.
 
@@ -55,7 +55,7 @@ taps while loading (under 200 ms is good). Weight = data downloaded, without fon
 | Game: The Labyrinth | **95** | 2.2 s | 0 | 154 ms | 282 KB | 33 |
 | Game: The Firmament (pinball) | **94** | 2.2 s | 0 | 160 ms | 282 KB | 33 |
 | Game: Dominion of the Ancients | **71** | 2.1 s | 0 | **1,585 ms** | 282 KB | 33 |
-| Game: The Tomb Robber (treasure) | **82** | **4.1 s** | 0 | 56 ms | 543 KB | 38 |
+| Game: The Unfinished Journal (treasure) | **82** | **4.1 s** | 0 | 56 ms | 543 KB | 38 |
 
 What stands out:
 
@@ -68,7 +68,7 @@ What stands out:
   by pixel from random noise every time (`dominion.js`, around lines 277–390). Lighthouse's
   breakdown puts 3.8 s of script time (on the slowed CPU) in `dominion.js`, including one unbroken
   1-second block.
-- **The Tomb Robber's main content appears late (4.1 s).** It loads about 260 KB of character
+- **The Unfinished Journal's main content appears late (4.1 s).** It loads about 260 KB of character
   art up front (body.png 106 KB, portrait.png 87 KB, and others).
 
 ## Frame rate while playing (mid-range phone: CPU slowed 4×)
@@ -89,7 +89,7 @@ worst one-second stretch.
 | The Firmament (pinball) | 16.1 | 15.0 | 33.2 | **slow** |
 | The Labyrinth | 15.6 | 14.3 | 34.7 | **slow** |
 | Divine Casualties (fighter) | 8.8 | 5.8 | 32.8 | **very slow** |
-| The Tomb Robber (treasure) | 5.8 | 5.2 | 28.3 | **very slow** |
+| The Unfinished Journal (treasure) | 5.8 | 5.2 | 28.3 | **very slow** |
 
 Raw data: [`fps-cpu4x.json`](perf-baseline/fps-cpu4x.json), [`fps-cpu1x.json`](perf-baseline/fps-cpu1x.json).
 
@@ -100,7 +100,7 @@ Why the games are slow (the diagnosis behind the fixes below):
    in each game) never lets a canvas drop below the game's full internal size. Measured on the
    phone screen, compared with what a typical 2×-density phone needs:
    - the fighter draws 1320×660 pixels for a 323×162 display, about **4× too many**;
-   - the Tomb Robber draws 960×576 for 323×194, about **2×**;
+   - the Unfinished Journal draws 960×576 for 323×194, about **2×**;
    - the Labyrinth about **1.4×**;
    - pinball is sized correctly.
 
@@ -108,7 +108,7 @@ Why the games are slow (the diagnosis behind the fixes below):
    1% to the games' own code.
 2. **Costly drawing effects every frame:**
    - the fighter uses 21 soft-shadow effects (`shadowBlur`);
-   - the Tomb Robber applies a brightness filter while drawing its character, and redraws a
+   - the Unfinished Journal applies a brightness filter while drawing its character, and redraws a
      full-size lighting layer every frame;
    - labyrinth, pinball and ouroboros use soft shadows too.
 3. **The blurred glass behind the game window** (`games.css`, line 90: `backdrop-filter: blur(2px)`)
@@ -121,14 +121,14 @@ Why the games are slow (the diagnosis behind the fixes below):
 
 | # | Fix | What it helps | Impact | Effort |
 |---|---|---|---|---|
-| 1 | **Let game canvases match the screen**: in `scaleFor` and the per-game copies, drop the `Math.max(1, …)` floor so a canvas shrinks to its on-screen size × the phone's pixel density | frame rate of the fighter, the Tomb Robber, the Labyrinth and others; battery | **High** | **Low**: one helper plus about 10 matching lines |
+| 1 | **Let game canvases match the screen**: in `scaleFor` and the per-game copies, drop the `Math.max(1, …)` floor so a canvas shrinks to its on-screen size × the phone's pixel density | frame rate of the fighter, the Unfinished Journal, the Labyrinth and others; battery | **High** | **Low**: one helper plus about 10 matching lines |
 | 2 | **Fighter: load only the two chosen gods' art**, and convert the PNG parts to WebP | the 6.2 MB download, so the fighter page's score and first load | **High** | Medium |
 | 3 | **Dominion of the Ancients: stop drawing the map from noise on every open.** Ship the finished map as an image (or build it once and keep it) | the 1.6 s freeze; score 71, likely to the 90s | **High** for that game | Medium |
-| 4 | **Tomb Robber: remove the per-frame brightness filter** (use a pre-darkened leg image) and **draw the lighting layer at half size** | the slowest game's frame rate | **High** for that game | Low–Medium |
+| 4 | **Unfinished Journal: remove the per-frame brightness filter** (use a pre-darkened leg image) and **draw the lighting layer at half size** | the slowest game's frame rate | **High** for that game | Low–Medium |
 | 5 | **Fighter: replace the 21 per-frame soft shadows** with glows drawn once and reused | the fighter's frame rate | Medium–High | Medium |
 | 6 | **Load each game's code only when that game opens**, instead of all twelve on the Symbols page | start time of every game page (about 2.5 s → closer to 1.7 s) and the Symbols page | Medium | Medium |
 | 7 | **Drop the blur behind the game window on phones** (a darker see-through tint instead) | frame rate of every game, especially the calmer ones | Medium (uncertain on real phones) | **Very low**: one CSS line |
-| 8 | **Tomb Robber: load the character art after the first screen**, and compress it (WebP) | its 4.1 s main-content time and score 82 | Medium | Low |
+| 8 | **Unfinished Journal: load the character art after the first screen**, and compress it (WebP) | its 4.1 s main-content time and score 82 | Medium | Low |
 | 9 | **Fonts: host the site's fonts on the site** instead of Google Fonts, and preload the two main ones | first paint on every page. Not measurable here, so the CI should confirm it | Medium (unmeasured) | Low–Medium |
 | 10 | **Fewer soft shadows in the Labyrinth, pinball and ouroboros** (pre-drawn glows) | the frame rate of those three | Low–Medium | Low |
 
@@ -169,7 +169,7 @@ Average of two runs each. "Min" is the worst one-second stretch.
 | Game | Before: avg (min) | After: avg (min) | Change |
 |---|---|---|---|
 | Divine Casualties (fighter) | 25.4 (22.3) | **47.9 (37.0)** | **+89%**: nearly twice as smooth |
-| The Tomb Robber (treasure) | 12.8 (11.6) | **20.2 (17.4)** | **+58%**: still the slowest game (see below) |
+| The Unfinished Journal (treasure) | 12.8 (11.6) | **20.2 (17.4)** | **+58%**: still the slowest game (see below) |
 | The Labyrinth | 39.3 (28.6) | **51.1 (41.0)** | **+30%** |
 | The Firmament (pinball) | 43.1 (35.0) | 43.5 (38.0) | none: its canvas was already the right size |
 | Dominion of the Ancients | 56.6 (50.2) | 56.0 (50.3) | none in play (it opens much faster, see below) |
@@ -189,7 +189,7 @@ Average of two runs each. "Min" is the worst one-second stretch.
 - **Opening Dominion of the Ancients** (CPU profile, full speed): set-up time **574 → 228 ms**,
   and the map step **342 → 46 ms**. On a mid-range phone that is roughly 2.3 s → 0.9 s of
   frozen screen.
-- **The Tomb Robber** is still the slowest game. Its remaining cost is fixes #4 and #8 on the
+- **The Unfinished Journal** is still the slowest game. Its remaining cost is fixes #4 and #8 on the
   list: the per-frame brightness filter, the full-size lighting layer, and its large character
   art.
 
@@ -210,7 +210,7 @@ Average of two runs each. "Min" is the worst one-second stretch.
 | The Labyrinth | 97 | 97 | 0 | |
 | The Firmament (pinball) | 96 | 96 | 0 | clean 5-run re-test (the first batch's 91 was noise) |
 | **Dominion of the Ancients** | **78** | **89** | **+11** | clean 5-run re-test: the page's frozen time while opening fell **623 → 265 ms** (the precomputed map) |
-| The Tomb Robber (treasure) | 84 | 85 | +1 | |
+| The Unfinished Journal (treasure) | 84 | 85 | +1 | |
 
 The load score mostly measures how fast a page *opens*, so the drawing-size fix (#1) barely
 moves it. That fix shows up in the frame rates above. The precomputed map (#3) shows up here,

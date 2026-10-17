@@ -37,7 +37,7 @@ export const GAMES = [
   { id: "labyrinth", ch: "ch29", chName: "The Maya", title: "The Labyrinth", sub: "Thread the maze of the dead; outrun the shades.", deg: 303, setting: "limestone", prop: "jungle", note: "Pale limestone with a screen of green behind it." },
   { id: "ouroboros", ch: "ch37", chName: "Theosophy & the Occult Revival", title: "Ouroboros", sub: "The serpent that devours its own tail: a game of Snake.", deg: 281, setting: "oak", prop: "brass", note: "Oak boards and a plain brass ring on a post." },
   { id: "seeker", ch: "ch40", chName: "African Diaspora Religions", title: "The Seeker's Path", sub: "Follow the clues into the chapters.", deg: 259, setting: "plain", note: "A plain floor: the ritual drawings of this tradition are not arcade decoration." },
-  { id: "treasure", ch: "ch43", chName: "The Aztec", title: "The Tomb Robber", sub: "Four ancient sites; carry out the relics.", deg: 237, setting: "basalt", note: "A low plinth of dark basalt." },
+  { id: "treasure", ch: "ch43", chName: "The Aztec", title: "The Unfinished Journal", sub: "Four ancient sites; carry out the relics.", deg: 237, setting: "basalt", note: "A low plinth of dark basalt." },
   { id: "pinball", ch: "ch46", chName: "Creation & the First Order", title: "The Firmament", sub: "Launch the spark through the ordered heavens.", deg: 215, setting: "night", note: "Night-blue tiles under the dome's stars." }
 ];
 const RAD = Math.PI / 180;

@@ -105,7 +105,7 @@ Each game gets a **cabinet**: an upright arcade machine with the game's own titl
 | The Labyrinth | ch29 Maya | stone, with a jungle wall |
 | Ouroboros | ch37 Theosophy | a brass fitting with the serpent seal |
 | The Seeker's Path | ch40 African Diaspora Religions | a vèvè-patterned floor; vèvè are ritual symbols, so this needs a sensitivity check, see below |
-| The Tomb Robber | ch43 Aztec | a basalt plinth |
+| The Unfinished Journal | ch43 Aztec | a basalt plinth |
 | The Firmament | ch46 Creation & the First Order | under the planetarium dome |
 
 Tapping a cabinet opens the game, just as the kiosks do now.

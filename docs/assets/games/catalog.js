@@ -57,7 +57,7 @@ window.ARCHIVE_GAMES = [
   { id: "dominion", title: "Dominion of the Ancients",
     subtitle: "A three-way war for the ancient world — outlast two empires, uncover their gods.",
     chapter: "ch03", hiddenIn: "ch13", eggs: [] },
-  { id: "treasure", title: "The Tomb Robber",
+  { id: "treasure", title: "The Unfinished Journal",
     subtitle: "An expedition across the ancient world — outrun the traps and the tigers, solve the old doors, finish the journal.",
     chapter: "ch02", hiddenIn: "ch43", eggs: [] }
 ];

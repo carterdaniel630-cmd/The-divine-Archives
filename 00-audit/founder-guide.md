@@ -221,7 +221,7 @@ as a comparison between the games, not as exact phone speeds.
 | **The Labyrinth** | Maze-chase through the underworld | casual | working, **slow on phones** |
 | **The Firmament** | Pinball in the heavens | casual | working, **slow on phones** |
 | **Dominion of the Ancients** | Territorial conquest of the ancient world | strategy players | working; the page freezes for about 1.5 s while it loads |
-| **The Tomb Robber** | Platformer across four ancient sites | action gamers | working, **slowest on phones** |
+| **The Unfinished Journal** | Platformer across four ancient sites | action gamers | working, **slowest on phones** |
 
 Screenshots of each game's first screen:
 
@@ -317,11 +317,11 @@ know there's a 3D museum and twelve games unless they kept scrolling.
    corner, and it isn't labelled. On a phone it covers words in the chapters and the games'
    instructions. *Fixed in PR #12 (awaiting review): smaller on phones, tucks away while you
    scroll down, hidden during games.*
-4. **The games are slow on mid-range phones,** most of all the Tomb Robber, the fighter, the Labyrinth
+4. **The games are slow on mid-range phones,** most of all the Unfinished Journal, the fighter, the Labyrinth
    and pinball. The fighter is also a 6 MB download, and Dominion freezes the page for
    about 1.5 s while it opens. The cause and the cheapest fixes are in
    [`perf-baseline.md`](perf-baseline.md). *Partly fixed in PR #12 (awaiting review): the fighter
-   is about twice as smooth, the Tomb Robber +58%, the Labyrinth +30%, and Dominion opens about 60%
+   is about twice as smooth, the Unfinished Journal +58%, the Labyrinth +30%, and Dominion opens about 60%
    faster. The fighter's download drops from about 6 MB to about 0.4 MB on the
    `claude/first-screen-fighter` branch.*
 5. **Small rough edges that read as unfinished:**

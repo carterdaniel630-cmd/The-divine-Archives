@@ -161,12 +161,12 @@ All 13 `tools/verify-*.js` pass: chess 18/18, fighters 4/4, excavation 8/8, ouro
 
 | Earlier finding | Now |
 |---|---|
-| Antithesis, Pinball and Tomb Robber ran faster on high-refresh screens | **Fixed.** All three use a fixed 1/60 s accumulator step. |
+| Antithesis, Pinball and Unfinished Journal ran faster on high-refresh screens | **Fixed.** All three use a fixed 1/60 s accumulator step. |
 | Fighter: no input buffer, key-repeat mashing | **Fixed.** 8-tick buffer (`fighter.js:1217`) and an `e.repeat` filter. |
 | Fighter: 5.4 MB sprite download, dead head rig | **Fixed.** The sprites and `USE_HEAD_RIG` are gone. |
 | Ziggurat: no lock delay, hold, DAS or counter-clockwise rotation | **Fixed.** Rotation both ways, hold, a 3-piece preview and a 0.5 s lock delay. |
 | Ouroboros single-slot turn latch | **Fixed.** Input queue. |
-| the Excavation chording; Tomb Robber coyote time and jump buffer; chess quiescence | **Fixed.** |
+| the Excavation chording; Unfinished Journal coyote time and jump buffer; chess quiescence | **Fixed.** |
 | Fighter hurtboxes, and hits checked only on the first active frame | Not confirmed fixed (no hurtbox code found). A feel issue, not a correctness one. |
 | **Dominion: the `nubia` tile has no fact** ("until a Nubia/Kush chapter exists") | **Now unblocked.** ch68 Nubia & Kush exists. The `arabia` fact could also move from ch21 to ch70 Pre-Islamic Arabia. Both would need to pass `verify-dominion.js`. |
 

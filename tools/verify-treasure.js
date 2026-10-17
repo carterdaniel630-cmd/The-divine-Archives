@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Verify every The Tomb Robber (treasure hunt) fact is grounded in real chapter text:
+/* Verify every The Unfinished Journal (treasure hunt) fact is grounded in real chapter text:
    its `basis` must appear in the source chapter's rendered body. */
 "use strict";
 const fs=require("fs"),vm=require("vm"),path=require("path");
@@ -18,6 +18,6 @@ bank.facts.forEach(f=>{
   if(!f.basis||text[f.chapter].indexOf(String(f.basis).toLowerCase())===-1){console.log("  FAIL ["+f.label+"] basis not in "+f.chapter+': "'+f.basis+'"');fails++;return;}
   ok++;
 });
-console.log("The Tomb Robber (treasure hunt) facts: "+bank.facts.length+" | verified: "+ok+" | failures: "+fails);
+console.log("The Unfinished Journal (treasure hunt) facts: "+bank.facts.length+" | verified: "+ok+" | failures: "+fails);
 if(fails){process.exit(1);}
 console.log("VERIFY OK — every relic-fact is grounded in real chapter text.");

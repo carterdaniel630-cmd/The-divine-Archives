@@ -60,7 +60,7 @@ const GAMES = {
     await cdp.send("Emulation.setCPUThrottlingRate", { rate: CPU });
     const click = async (re) => { const b = page.locator(".game-dialog button:visible").filter({ hasText: re }).first(); if (await b.count()) { await b.click({ timeout: 3000 }).catch(() => {}); return true; } return false; };
     if (g.start) await click(g.start);
-    if (g.then) { await page.waitForTimeout(800); await click(g.then); }          // a second screen, e.g. the Tomb Robber's "Enter Egypt"
+    if (g.then) { await page.waitForTimeout(800); await click(g.then); }          // a second screen, e.g. the Unfinished Journal's "Enter Egypt"
     await page.waitForTimeout(1000);
     const box = async () => (await page.locator(".game-dialog canvas:visible").first().boundingBox().catch(() => null));
     await page.evaluate(() => window.__fpsReset && window.__fpsReset());

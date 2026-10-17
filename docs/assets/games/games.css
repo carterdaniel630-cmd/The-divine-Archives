@@ -481,7 +481,7 @@
 .rk-controls { display:flex; justify-content:center; margin:.2rem auto; }
 .rk-next { white-space:nowrap; }
 
-/* ---- The Tomb Robber (treasure-hunt platformer) ---- */
+/* ---- The Unfinished Journal (treasure-hunt platformer) ---- */
 .tr-hudrow { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
 .tr-snd { background:none; border:1px solid var(--line); border-radius:999px; color:var(--ink-faint, #a89878); font:inherit; font-size:.72rem; padding:.2rem .7rem; cursor:pointer; }
 .tr-snd[aria-pressed="true"] { color:var(--gold-bright); border-color:var(--gold); }

@@ -108,7 +108,7 @@ the shared API:
 | The Labyrinth | open | score | game over | none | |
 | The Firmament (pinball) | open | score | game over | none | |
 | Dominion of the Ancients | open | none | conquest / defeat | none | needs a `finish` call |
-| The Tomb Robber (treasure) | open | run score | run end | none | |
+| The Unfinished Journal (treasure) | open | run score | run end | none | |
 | (museum) the arcade door | none | none | none | `unlocked` `site:arcade` when the door first opens | in `docs/museum/secret.js` |
 
 **Old saves.** On first load, the adapter would add one `scored` event per existing high score,
