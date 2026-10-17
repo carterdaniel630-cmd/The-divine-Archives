@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -108,6 +108,24 @@ items as they finish, one by one. This item does not itself approve any merge.
 **Still OPEN (Carter has NOT answered):** old save note (leave / rewrite), "The Tomb Robber" (keep / reword blurb / rename + reword), hidden old-name table (delete 90 days after live? Yes / No). Do NOT record answers for these.
 
 **900 Theses is still blocked on Gates A–D + the intake ruling. Item 23 does not unblock it.**
+
+## Item 24 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–23)
+
+| 24 | Carter's order: MERGE PR #59 | NEW | `handoff/order-2026-10-17-merge-pr59.md` |
+
+**This item is the controlling record for the merge order:**
+
+- **Carter orders: MERGE PR #59.** Carter said "merge" on Sat 2026-10-17 ~17:10 EDT.
+- **Safeguards — before merging:**
+  1. Correct PR #59's description — it still says "all files under handoff/, no deploy impact" but it now changes the live site. Fix the description to say what it actually merges.
+  2. Re-check ALL GitHub checks including Lighthouse (which was still running at review time) — merge ONLY if every check is green.
+  3. Verify no site file changed since the review commit 2ab371d — if anything changed, re-review before merging.
+  4. If any check fails or anything changed, do NOT merge — report back to Carter what failed.
+- **Tomb Robber does NOT block this merge.** Carter did NOT answer the Tomb Robber question. Leave the card as-is for this merge. The Tomb Robber rename/reword question stays OPEN for after the merge.
+- **This order approves ONLY PR #59.** No other merge is approved.
+- **After merging, report back in plain words:** what merged, what checks passed, what's live.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 24 does not unblock it.**
 
 ## Already in the repo — DO NOT re-send
 
