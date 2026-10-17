@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -46,6 +46,16 @@
 | 18 | Performance spec — LOOPS-FIRST (loops that expand information; SCALE: why loops let ~30,000 updates ship without bogging down) | NEW | `handoff/addendum-2026-10-17-loops-spec.md` |
 
 **Where this spec and an older v2 file disagree, THIS SPEC WINS on performance method.** Headline: every loop is **thread → benchmark → PR → flag → field → ratchet → NEXT loop**, and every loop writes down what it learned so the next loop starts smarter and expands on it. The id-map / "1 lookup per id" trick is ONE example of what a loop can produce — not the headline. SCALE: ~30,000 updates shipped without bogging down because (1) 1 lookup per id = constant-time lookups, cost does NOT grow as history piles up; (2) ratchets = regressions cannot pile up, each loop locks in its gain; (3) flags = fast rollback, one bad change never bogs the whole system; (4) benchmarks = slowdowns caught BEFORE they ship. Three loops named: video pipeline loop, site loop, council loop — each feeding the others. Guardrails: no behavior/visual changes in a performance PR, measure before AND after, phone-class budgets stay (Galaxy S22 is the verdict), no public source maps, no client-side secrets, staging only, nothing live without Carter's go-ahead. This spec does NOT authorize repo code edits by itself — code edits still need the loop process + Carter's go-ahead.
+
+## Item 19 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–18)
+
+| 19 | Claude loops / speed research — the TikTok's source found, claims verified, scale corrected | NEW | `handoff/research-2026-10-17-claude-loops-speed.md` |
+
+**Where this research and Item 18 disagree, THIS RESEARCH WINS.** Two corrections, both binding:
+1. **Item 18's "~30,000 updates" is STRUCK.** No source says 30,000. Anthropic says **>3,000 changes in two weeks** (>150 concurrent threads, >200 changes on busiest days). Do not use 30,000 anywhere. Item 18's loop framing stands; only its scale number is corrected.
+2. **"id map / 1 lookup per id" is the TikTok creator's gloss, NOT Anthropic's wording.** Anthropic's text says only: a quarter of the message-tree path's instructions were megamorphic dictionary lookups resolving the same message ID 3 times. Treat "build one map, look up once" as a plausible inference, not a quoted claim.
+
+What Item 19 adds beyond Item 18: the source identification (the breakpoint TikTok is a short explainer of Anthropic's post "How we made claude.ai 3x faster in two weeks", https://claude.dev/blog/how-we-made-claude-ai-faster/, published 2026-09-23 — the TikTok itself could not be retrieved: no URL, ID, date, or transcript found); the full lessons (4 journeys = 95% of activity / 13 measurements; deterministic counts, not wall-clock, to gate code; "measuring something makes it tractable"; self-expanding loop — threads that don't close, Claude opening its own threads, ~1/3 of PRs adding telemetry/guardrails that spawn more threads; steering — ambition, taste, direction, named human owner, human approval on every PR; guardrails — ~200 short-lived flags, >half removed, employees → 1% → everyone; 120 Hz / 8.33 ms frame-budget rig; em-dash / UTF-16 20-line fix); a claim-by-claim verification table (loop, −48%/−78%, 3,000+ verified against the Anthropic post; aggregate numbers are Anthropic self-report with no independent verification; only the em-dash mechanism has a partial independent reproduction); and what is still missing (TikTok URL/transcript/narration, exact message-tree fix code, independent verification of aggregates). Full breakdown page (Muse side): artifact page slug `how-claude-stays-fast-at-scale`. This file does NOT by itself authorize repo code edits — code edits still need the loop process + Carter's go-ahead.
 
 ## Already in the repo — DO NOT re-send
 
