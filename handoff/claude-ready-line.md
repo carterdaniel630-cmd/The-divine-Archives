@@ -1,171 +1,125 @@
-# Claude Ready Line — ordered work queue for the Divine Archives repo
+# Ready-Line v2 — Ordered Work Queue (DRAFT, 2026-10-17)
 
-Carter's order, 2026-10-13: everything Muse-side staged in line so Claude Code
-can start checking things off when tokens renew. Highest leverage first.
+**Status: DRAFT. v2 is NOT live. Replaces the v1 ready-line only after Carter approves v2.**
+**Version:** v2-draft-2026-10-17. **Supersedes:** v1 ready-line (2026-10-16).
+**How to use this queue:** work it in order, except where an item is marked PARKED, ON HOLD, or OPEN. Where any older doc contradicts this queue, the newest Carter ruling wins. Where a Muse-side spec contradicts the repo, the repo is the truth — flag the conflict, do not silently pick one.
+**Counts in this queue are canonical:** 83 museum rooms existing, 84 with the 900 Theses room; 15 + 1 = 16 Debate Hall stations; 199 Pantheon figures; 88 Vault manuscripts; 37 arcade games (12 + 25).
 
-## 1. Protection program (NEW — gates everything below)
-Charter being drafted. Security / legal / platform-compliance audit whose
-constraints every build below must satisfy. Recommend this runs FIRST —
-retrofitting protections into finished exhibits is expensive; building inside
-known constraints is cheap.
-NAMING & IP POLICY (binding, Carter 2026-10-13): generic names for everything
-— no trademarked names, no "X-style" references ("Pac-Man style", "Indiana
-Jones style" banned — "-style" still trades on the mark), no copyrighted
-characters/plots. Public domain and original creations are the safe ground.
-Full policy: handoff/naming-and-ip-policy.md. Enforced by the High Council
-consistency auditor on every review.
+## Pickup order (applies to every pickup)
 
-## 2. The Royal Game of Ur — feature/ur-exhibit
-- Prototype: workspace/your_files/the-royal-game-of-ur/the-royal-game-of-ur.html
-- Defect list + acceptance criteria: workspace/goals/divine-archives-games-relics-and-interactives/hidden_files/detail-run-2026-10-12.md (section 1)
-- Build method: the approved agent systems (all five approved 2026-10-13), work order in
-  workspace/your_files/divine-archives-agent-systems-configured/agent-systems-config.md
-- Status: first build, establishes true per-exhibit cost before the rest.
+1. Finish whatever was in progress when work stopped. Do not drop in-progress work to start something new.
+2. Audit the system: what is built, what is staged, what is broken, what contradicts what. Verify the audit briefs against the repo — do not just trust them.
+3. Fold ALL instructions together (this queue + both audit briefs + decisions + corrections + standing policies). Newest Carter ruling wins on conflict.
+4. Rebuild Muse-side work better — expand, add detail, compare, push every game and relic further. Do not do the work twice.
 
-## 3. Remaining nine exhibits (after Ur proves the cost)
-Prototypes under workspace/your_files/<slug>/; defects + acceptance criteria in
-the same detail-run report. Suggested order by audit severity:
-1. Senet (scrambled special-house iconography)
-2. Astrolabe ('Asr sign error — one-character fix, but geometry needs expert review)
-3. I Ching (hexagrams 25/26 swapped)
-4. Antikythera (eclipse math mislabeled; invented inscription)
-5. Hnefatafl (variant/capture/stalemate issues)
-6. Oracle Bones (verdict independent of crack; pseudo-script)
-7. Alchemist (innerHTML focus destruction; decorative meters)
-8. Mehen (restart-during-animation turn corruption; no undo)
-9. Library Rescue (hybrid verdict stands, but RENDERER DECISION STILL OPEN — Carter owns this call before anyone builds it)
+## 1. Protection program — FIRST, gates everything below
 
-## 4. Agent systems rollout (friend executing, Claude reviews)
-- Friend's pack: five systems, all approved.
-- Config: workspace/your_files/divine-archives-agent-systems-configured/agent-systems-config.md
-- Claude's job when back: review the filled config against the actual repo
-  (verify every "confirm in repo" note), then bless or amend.
+Protection charter still to be drafted (not delivered in this package). Security / legal / platform-compliance audit whose constraints every build below must satisfy. Building inside known constraints is cheap; retrofitting is expensive.
+Binding policies: Naming & IP Policy (generic names everywhere — no trademarked names, no "-style" phrasing, no copyrighted characters/plots) and Content Truth Policy (present what was actually said/believed/made, accurately and completely, down to the letter). Code-theft measures required: obfuscation pipeline, no public source maps, watermarking/fingerprinting, copyright headers, no client-side secrets, tamper-evidence. Honest baseline: client-side code cannot be made truly unhackable — make theft expensive, detectable, legally actionable.
+Owner: build side (draft); Carter (approve).
 
-## 5. Graphify wiring verification (authorized, unfinished)
-Explicit-main read-only audit: is the graphify codebase map (6,122 nodes,
-12,534 edges) wired into the working branch/session or not? Next step was
-defined 2026-10-12; still open.
+## 2. Fix over-claiming pages FIRST (free, Carter 2026-10-16)
 
-## 6. Gematria tool — IN BUILD (Muse-side)
-Interactive calculator: Hebrew gematria + Greek isopsephy + Arabic abjad,
-letter-by-letter breakdown, shared-numbers cross-reference. Prototype building
-now at workspace/your_files/gematria/gematria.html; Claude reworks it for
-production after. (Checked 2026-10-13: no standalone gematria tool found in the
-shipped site — only possible chapter mentions.)
+Pages must say only what the code does. Fixes: the two pilgrimage pages claiming survey measurements that do not exist (Library of Alexandria, Qumran); "tap to play" on cabinets that open a card; finishers that do not exist; game renames (maze game + trademarked homepage descriptions). Homepage arcade blurbs: remove all trademarked / "-style" phrasing; fix the "Twelve games in all" line (false against 37 under keep-both).
+Owner: build side.
 
-## 7. Wave 3 — fifteen new game candidates (Carter: line these up)
-Long-term vision: a game for every belief structure. Candidates mapped to
-traditions (prototypes to be built Muse-side, then Claude reworks):
-1. Pachisi — India (Hindu)
-2. Mancala — Africa / Middle East (folk)
-3. Nine Men's Morris — ancient Mediterranean / Rome
-4. Patolli — Mesoamerica (Aztec)
-5. Game of the Goose — early modern Europe
-6. Go — China (Daoist / Confucian)
-7. Chaturanga — India (Hindu / Buddhist; ancestor of chess)
-8. Liubo — Han China (divination board)
-9. Alquerque — Egypt / Levant (ancestor of draughts)
-10. Fanorona — Madagascar (Austronesian)
-11. Bagh-chal — Nepal (Himalayan Hindu / Buddhist)
-12. Yut — Korea (folk / shamanic)
-13. Konane — Hawai'i (Polynesian)
-14. Rithmomachia — medieval Europe (Christian scholastic)
-15. Makruk — Siam (Theravada Buddhist)
+## 3. 900 Theses room — TOP PRIORITY (Carter 2026-10-16, reaffirmed 2026-10-17)
 
-SHIP STATUS 2026-10-13 21:25: ALL 15 BUILT, VERIFIED, AND PUSHED to
-staging/ready-line under handoff/exhibits/wave3/ (pachisi, mancala,
-nine-mens-morris, patolli, game-of-the-goose, go, chaturanga, liubo,
-alquerque, fanorona, bagh-chal, yut, konane, rithmomachia, makruk).
-Also staged: handoff/gematria.html, handoff/games-differentiation-brief.md,
-handoff/urantia-room-spec.md, handoff/standards/ (5 build standards),
-handoff/audits/, handoff/integration/ (8 docs), handoff/research/
-(urantia report), handoff/games-handoff-brief.md, updated claude-ready-line.
-Everything in PR #59. Slate clear.
+Own museum room for Pico della Mirandola, Conclusiones nongentae (900 Theses, 1486) + offered at the Debate Hall table as Station 16. Utmost care; protected and accurate through and through. Specs: `handoff/nine-hundred-theses/` (research report, room spec, debate-table integration). Decided: Arezzo included (one factual paragraph); Oration TEXT-ONLY (no voice); Waite (1929) yes if gates pass, labeled + caveated. Hard gates: Gate A Farmer/Copenhaver extraction; Gate B translation-licensing; Gate C manifest/Directory/Atlas confirmation; Gate D capture-verified build check with a named verifier. Threshold / bridge room on the High Medieval / Early Modern boundary. Room count becomes 84 with this room.
+OPEN: collection intake — Vault entry? chapter assignment? Pantheon entry? Some combination? None? The room floats outside all three collections until Carter rules. Do not assign it a number.
+Owner: build side.
 
-## 8. Arcade placement & form — PARKED (Carter: up in the air)
-The games are heading for a massive arcade hall (the hidden-room arcade
-concept). Open: games presented in their own historical form vs. arcade
-cabinet form. Do not lock this until Carter decides.
+## 4. Fit-loop system (Carter 2026-10-16)
 
-## 9. Games differentiation brief — READY for Claude's rework
-Carter played the set: good, but too similar-looking. All 25 verified
-distinct (no duplicates). Brief at
-workspace/your_files/games-differentiation-brief.md gives each game a material
-identity + mechanical signature, grouped by the 4 mechanical families (race,
-ancient track, chess variants, jump-capture). Hard rule: if two games in one
-family feel interchangeable after rework, the rework failed that pair.
+The build method from now on for relics and rooms: pull reference photos → count pixels for proportions → render → compare → push the math until it matches. This is how relics and rooms get built from now on.
+Owner: build side.
 
-## 10. VR museum program — PARKED
-Carter: "we can look at the whole VR thing later." Specs complete and filed:
-workspace/goals/divine-archives-vr-museum/hidden_files/ (architecture, pilot,
-roadmap with Phase 2B WebGPU tier, artistry addendum, comfort/audio/benchmark
-briefs). Do not start until Carter reopens.
+## 5. Engine evaluation (Carter 2026-10-16)
 
-## 11. Content Truth Policy — BINDING (Carter 2026-10-13)
-handoff/content-truth-policy.md. Present what was actually said/believed/made,
-accurately and completely, down to the letter. Not about political
-correctness — about history. No blurring, no backing off, no silent omissions.
-Philosophers' words preserved verbatim; same ethics as religions/faiths.
-Creator's expression rights stand alongside respect. Only exception: content
-that explicitly violates a religion's own tenets inside its own sacred space.
+Engine direction approved. Next step is EVALUATION ONLY: which engine, what it costs, what breaks, what happens to the no-packages rule. NO rewrite until the evaluation lands and Carter confirms it.
+Owner: build side (evaluate); Carter (confirm).
 
-## 14. Library Rescue renderer — DECIDED (Carter 2026-10-13)
-Hybrid ACCEPTED (WebGL room + 2D-composited actors), but UPSCALE it: bigger,
-more detailed, fills the screen — current build feels small and far away.
-No full-WebGL rebuild.
+## 6. Endless-tree museum (Carter 2026-10-16)
 
-## 15. Easter eggs — APPROVED (Carter 2026-10-13)
-One hidden Easter egg per chapter (83 chapters), ONGOING as new chapters are
-added. The Bronze Age gold-sign hunt ("EVERY TRADITION LEFT A DOOR") is the
-template. This is now a standing build program, not a one-off.
+Approved: branches instead of a fixed hallway — every room ends in a choice, every choice branches, no two visits the same.
+Owner: build side.
 
-## 16. Debate Hall — SOLO FIRST, social later (Carter 2026-10-13)
-Solo mode: visitor debates the AI philosopher itself — back-and-forth against
-the philosopher's actual positions, in their own words (from the research).
-Social mode (visitors debating each other as pilgrim-lights) comes with the
-Living Archive phase. Spec: handoff/debate-hall-spec.md (soul-flame avatars —
-no 3D figures; text bubble floats over a flickering flame, Carter 2026-10-13).
+## 7. Relic + game fixes (fix package)
 
-## 12. Blurred symbols defect — FIX REQUIRED
-handoff/defects/blurred-symbols-rolodex.md. Gray blur splotches on the symbol
-rolodex wall — unblur or replace with real symbols; no gray blobs. Blur is
-baked into the webp sprites (not code); regenerate affected cells.
+Specs: `handoff/fix-package/` (relic fixes for 19 audited relics + museum photo audit; game fixes for Divine Casualties + Tomb Robber + all-games bar; weekly detail-pass program). Crown of Thorns is ONE revamp job (see §8). Bagh-chal gameplay error: diagonals only through alternating points; correct the "standard board" claim. Museum photo audit: generic-book problem, birds belong in the air / fish in water / land animals on the ground above the glass (no animal under the floor unless the story says it is buried), plus the per-relic fixes.
+Balance rule: creative renditions stay engaging — label departures, do not strip capabilities for pure accuracy.
+Owner: build side.
 
-## 13. Rotunda zodiac floor — REDESIGN
-handoff/rotunda-zodiac-floor-spec.md. Move the 12 sign lights from under the
-planetarium to a zodiac wheel set in the Rotunda floor. Planets above, wheel
-below.
+## 8. Build program — 11 builds + Crown of Thorns revamp (Carter 2026-10-16)
 
-## 17. Code hallway hiss — REMOVAL ORDERED (Carter 2026-10-13)
-handoff/defects/hallway-hiss-babble.md. Remove the `babble` soundscape from
-the code hallway in docs/museum/sound.js — Carter doesn't want to hear it and
-doesn't want users hearing it. Near-silence (faint stone resonance at most);
-the absence of the hiss IS the fix.
+Briefs: `handoff/build-program/build-program-approved.md`. The 4 relics from the 2026-10-16 decisions travel as briefs here: Treaty of Kadesh tablet, Crown of the Kandake, Etruscan bronze mirror, Crown of Thorns revamp. Plus: Scythian gold stag, Tabula, Awithlaknannai, Sort the Seals, Mithraeum, Fire Temple, Langar, Cave painting wall. Mesoamerican ballgame EXCLUDED — still parked, do not spec it. Top-tier standard on every item: detail, palettes, tones, lighting, shading — all top tier, all based on Divine Archives information.
+Owner: build side.
 
-## 18. Debate Hall table — INTERACTIVE SPEC UPDATE (Carter 2026-10-13)
-handoff/debate-hall-spec.md §3 updated: the atlas table is a carved
-black-marble 3D relic the visitor walks up to (soul-flame behind it) —
-timeline scrub both directions, tappable flames/markers, fact pull-up,
-wax-tablet notes, compare well, quote-catcher, turn ring, histogram candles,
-session bookmark. Reference preview:
-handoff/previews/debate-table-3d.html (Carter-approved 2026-10-13).
+## 9. The Royal Game of Ur + remaining nine exhibits
 
-## 19. Grand Directory — APPROVED (Carter 2026-10-13)
-handoff/grand-directory-spec.md. Mall-map/bus-station wayfinding for the
-Rotunda: true floor plan (central spine, 9 wings alternating west/east, 76
-real rooms), "you are here" beacon, key/legend of interactive sites, journey
-plotting, wing zoom, Easter eggs as "whispers" (hinted, never revealed).
-Reference preview: handoff/previews/grand-directory-preview.html
-(Carter-approved 2026-10-13).
+Ur first — establishes true per-exhibit cost before the rest. Then, by audit severity: Senet, Astrolabe, I Ching, Antikythera, Hnefatafl, Oracle Bones, Alchemist, Mehen, Library Rescue (hybrid ACCEPTED + UPSCALE — bigger, more detailed, fills the screen; no full-WebGL rebuild).
+Owner: build side.
 
-## 20. Code-theft protection — REQUIRED (Carter 2026-10-13)
-handoff/protection-code-theft.md. Anti-reverse-engineering measures for the
-Protection Program: obfuscation pipeline, no public source maps,
-watermarking/fingerprinting, copyright headers, no client-side secrets,
-tamper-evidence. Honest baseline: client-side code can't be made truly
-unhackable — make theft expensive, detectable, legally actionable.
+## 10. Agent systems rollout
+
+The pack: five systems, all approved 2026-10-13. Config: `handoff/agent-systems-config.md` (already in repo). On pickup: review the filled config against the actual repo, then bless or amend.
+Owner: build side.
+
+## 11. Arcade — KEEP BOTH (Carter 2026-10-15)
+
+The 12 live reskins STAY, and the 25 historical games get ADDED IN, with distinct labels and separate spaces. Refresh the arcade section; arcade UI changes from individual boxes to a dropdown menu; EXPAND (not just rearrange) the secret hidden arcade room; ALL 37 games go in the hidden room; kiosks in every room OR games embedded in room info (either works); retro cabinets REPLACED with historical forms. Implement the differentiation brief in files. Playability floor: difficulty selector, undo, tutorial, readable tap targets.
+Owner: build side.
+
+## 12. Debate Hall — solo first, social later
+
+Solo mode: visitor debates the philosopher itself, back-and-forth against its actual positions, in its own words. Soul-flame avatars — no 3D figures; text bubble floats over a flickering flame. Utterance tiers: VERBATIM (exact quote, cited), PARAPHRASE (labeled, never in quotes), HALL (room narrating, never attributed). Stations: 15 question stations + 1 disputation station (900 Theses) = 16. Safety fixes first: bookmark raw-HTML round-trip (self-injection hole) + compare-well quotation-marks violation. Then: corpora for remaining figures, source shelf, quote-catcher, plaque-map remap to the real 83-room Nine Wings (84 with 900), pantheon link targets, translation-licensing review.
+Social mode (pilgrim-lights) comes with the Living Archive phase — architect for it, do not build it now.
+Owner: build side.
+
+## 13. Grand Directory + Atlas reconciliation
+
+Grand Directory: true floor plan (central spine, 9 wings alternating west/east), "you are here" beacon, key/legend, journey plotting, wing zoom, Easter eggs as "whispers" (hinted, never revealed). Counts: Directory data comes from the museum manifest — 83 rooms, 84 with the 900 room. Never hard-code. One canonical room registry (room IDs, date bands, practice/plaque fields, interactive sites) reconciling Directory vs. Atlas vs. live museum text. Reconcile wing date bands with one canonical table + one owner. Whispers: per-wing verified counts or a clearly-labeled generic form — not identical boilerplate on every wing.
+OPEN: deploy truth (Cloudflare vs. GitHub Pages) — one canonical deploy path, confirmed by the build side. Errata/corrections location (D10) — single location that Methodology links to; until chosen, corrections live on the card + corpus errata array.
+Owner: build side.
+
+## 14. Content Truth + Naming & IP — binding, always on
+
+Already in the repo. Apply on every review. No blurring, backing off, or silent omissions. Philosophers' words preserved verbatim. Only exception: content explicitly violating a religion's own tenets inside its own sacred space.
+Owner: build side (apply).
+
+## 15. Easter eggs — standing program
+
+One hidden Easter egg per chapter, ongoing as chapters are added. Bronze Age gold-sign hunt ("EVERY TRADITION LEFT A DOOR") is the template.
+Owner: build side.
+
+## 16. Remaining defects + open items
+
+- Blurred symbols: unblur or replace; no gray blobs. Blur is baked into the sprite sheets; regenerate affected cells.
+- Rotunda zodiac floor: 12 sign lights as a floor-set wheel. BLOCKED on audited zodiac glyphs — commission a primary-source audit before any Rotunda/Ouija use; fix glyph dispose to clear host only. Do not ship the unaudited registry as the fix.
+- Hallway hiss: REMOVAL, not replacement. Technique lives in `brook()`. Near-silence (faint stone resonance at most).
+- Delphic Oracle / Pythia Pantheon entry: institution-and-person, Apollo cross-linked, NOT invented as a goddess. Completes 3-of-3 oracle spirits.
+- "199 figures" + one-line Pantheon grouping rule (singular figures + groups) on the page; meta/OG descriptions fixed; stale "199 deities" strings fixed.
+- V72 ONLY: replace/demote the 4 Wikipedia citations. No full 88-entry sweep.
+- Symbols provenance registry: symbol, tradition, attested date range, source, evidence badge.
+- 900 Theses intake ruling (see §3) — needs Carter.
+- D10 errata location + D11 deploy truth (see §13) — need confirmation.
+- Ra-Horakhty correction propagation to Pantheon/Museum.
+- One disclaimer standard everywhere (Grimoire "not an instruction" above the circle rite; Ouija archive-invention + simulation + grief framing + in-session answer-engine disclosure).
+- Practice renditions: per-tradition rulings + variant lists still pending. Exorcism observational only. Sensitivity matrix / Show-Veil-Withhold protocol still to be built. Insider-review rule for living-belief content still needs Carter's ruling.
+- Translation-licensing legal review before any verbatim translated display ships.
+- "Ouija" title consistency ruling still open.
+- Music stays PARKED. No Round 6 without reference track / owner / reopen trigger.
+Owner: build side; Carter (open rulings).
+
+## 17. PARKED / ON HOLD — do not build
+
+- VR museum: PARKED (reaffirmed 2026-10-17). Specs on file. Do not start until Carter reopens.
+- Family-court case file: PARKED (2026-10-17). Not repo-bound. No work.
+- Multilingual program: PARKED / ON HOLD (reaffirmed 2026-10-17). English only. Plan on file only.
+- Facebook Page cleanup: CANCELLED. Do not restart. Carter handles Facebook manually.
+- Mesoamerican ballgame: PARKED. Do not spec it.
+- Divine Casualties rebuild: completed / scratched per prior rulings — do not revive without Carter's say-so.
 
 ## Staging rule
-Nothing here merges to main without Carter's explicit go-ahead. Staging area:
-the PR #58 sandbox route (protected directory outside docs/). Carter couriers
-files; the friend builds on feature branches.
+
+Nothing merges to main without Carter's explicit go-ahead. Staging area: PR #59. Muse writes handoff files directly to the staging branch (staging only — authorization confirmed 2026-10-17, recorded in PROTOCOL-two-way-channel.md), but ONLY after Carter approves v2. No writes happen in this draft. The build side works on feature branches and writes replies/status back on the staging branch.
