@@ -38,17 +38,17 @@ test("has no edit or delete, and past events are frozen", () => {
 
 test("derives state by replay; scored keeps the best; completed keeps the first time", () => {
   let t = 0; const L = Ledger.create({ storage: mem(), now: () => (t += 10) });
-  L.append({ entity: "game:pong", verb: "started" });
-  L.append({ entity: "game:pong", verb: "scored", payload: { value: 3 } });
-  L.append({ entity: "game:pong", verb: "scored", payload: { value: 9 } });
-  L.append({ entity: "game:pong", verb: "scored", payload: { value: 4 } });
+  L.append({ entity: "game:antithesis", verb: "started" });
+  L.append({ entity: "game:antithesis", verb: "scored", payload: { value: 3 } });
+  L.append({ entity: "game:antithesis", verb: "scored", payload: { value: 9 } });
+  L.append({ entity: "game:antithesis", verb: "scored", payload: { value: 4 } });
   L.append({ entity: "ritual:votive-candle", verb: "completed" });
   L.append({ entity: "ritual:votive-candle", verb: "completed" });
   L.append({ entity: "chapter:ch02", verb: "viewed" });
   L.append({ entity: "chapter:ch02", verb: "viewed" });
   const d = L.derive();
-  assert.strictEqual(d.best["game:pong"], 9);
-  assert.strictEqual(d.started["game:pong"], 1);
+  assert.strictEqual(d.best["game:antithesis"], 9);
+  assert.strictEqual(d.started["game:antithesis"], 1);
   assert.strictEqual(d.completed["ritual:votive-candle"], 50);
   assert.strictEqual(d.viewed["chapter:ch02"], 2);
   const custom = L.derive({ chapters: (s, e) => { if (e.entity.startsWith("chapter:")) s[e.entity] = true; return s; } });
@@ -60,12 +60,12 @@ test("subscribers hear appends, filters work, unsubscribe stops them", () => {
   const all = [], games = [];
   const off = L.subscribe((e) => all.push(e.entity));
   L.subscribe((e) => games.push(e.entity), { type: "game" });
-  L.append({ entity: "game:risk", verb: "started" });
+  L.append({ entity: "game:dominion", verb: "started" });
   L.append({ entity: "chapter:ch03", verb: "viewed" });
   off();
-  L.append({ entity: "game:risk", verb: "completed" });
-  assert.deepStrictEqual(all, ["game:risk", "chapter:ch03"]);
-  assert.deepStrictEqual(games, ["game:risk", "game:risk"]);
+  L.append({ entity: "game:dominion", verb: "completed" });
+  assert.deepStrictEqual(all, ["game:dominion", "chapter:ch03"]);
+  assert.deepStrictEqual(games, ["game:dominion", "game:dominion"]);
 });
 
 test("a second ledger on the same storage keeps both writers' events", () => {

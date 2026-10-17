@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Verify every The Excavation (Minesweeper) fact is grounded in real chapter text:
+/* Verify every The Excavation (grid-deduction puzzle) fact is grounded in real chapter text:
    its `basis` must appear in the source chapter's rendered body. */
 "use strict";
 const fs=require("fs"),vm=require("vm"),path=require("path");
@@ -11,13 +11,13 @@ vm.runInContext(fs.readFileSync(path.join(ROOT,"content/chapters.js"),"utf8"),ct
 const C=ctx.window.CHAPTERS;
 function strip(h){return h.replace(/<[^>]+>/g," ").replace(/&mdash;/g,"—").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&amp;/g,"&").replace(/&[a-z]+;/g," ").replace(/&#\d+;/g," ").replace(/\s+/g," ").trim().toLowerCase();}
 const text={};Object.keys(C).forEach(id=>text[id]=strip((C[id]||{}).html||""));
-const bank=JSON.parse(fs.readFileSync(path.join(ROOT,"docs/assets/games/data/minesweeper.json"),"utf8"));
+const bank=JSON.parse(fs.readFileSync(path.join(ROOT,"docs/assets/games/data/excavation.json"),"utf8"));
 let fails=0,ok=0;
 bank.facts.forEach(f=>{
   if(!C[f.chapter]){console.log("  FAIL ["+f.label+"] unknown chapter "+f.chapter);fails++;return;}
   if(!f.basis||text[f.chapter].indexOf(String(f.basis).toLowerCase())===-1){console.log("  FAIL ["+f.label+"] basis not in "+f.chapter+': "'+f.basis+'"');fails++;return;}
   ok++;
 });
-console.log("The Excavation (Minesweeper) facts: "+bank.facts.length+" | verified: "+ok+" | failures: "+fails);
+console.log("The Excavation (grid-deduction puzzle) facts: "+bank.facts.length+" | verified: "+ok+" | failures: "+fails);
 if(fails){process.exit(1);}
 console.log("VERIFY OK — every find-fact is grounded in real chapter text.");

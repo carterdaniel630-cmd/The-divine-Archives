@@ -1,5 +1,5 @@
 {
-  "note": "Facts for 'The Excavation' (Minesweeper). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-minesweeper.js). Theme: uncovering a buried site while avoiding its hazards; safely cleared ground yields a real find.",
+  "note": "Facts for 'The Excavation' (grid-deduction puzzle). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-excavation.js). Theme: uncovering a buried site while avoiding its hazards; safely cleared ground yields a real find.",
   "facts": [
     {
       "label": "Tutankhamun's tomb",

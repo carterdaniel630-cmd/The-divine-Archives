@@ -189,7 +189,7 @@
           92
         ]
       },
-      "Game: Antithesis (pong)": {
+      "Game: Antithesis": {
         "median": {
           "score": 95,
           "lcpMs": 2384,
@@ -204,7 +204,7 @@
           97
         ]
       },
-      "Game: The Excavation (minesweeper)": {
+      "Game: The Excavation": {
         "median": {
           "score": 92,
           "lcpMs": 2714,
@@ -219,7 +219,7 @@
           89
         ]
       },
-      "Game: The Labyrinth (pac-man)": {
+      "Game: The Labyrinth": {
         "median": {
           "score": 95,
           "lcpMs": 2192,
@@ -249,7 +249,7 @@
           94
         ]
       },
-      "Game: Dominion of the Ancients (risk)": {
+      "Game: Dominion of the Ancients": {
         "median": {
           "score": 71,
           "lcpMs": 2107,

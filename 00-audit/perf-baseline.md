@@ -20,7 +20,7 @@ more pixels than the screen shows.
 - **Google Fonts were blocked** (unreachable from here), so **page weights below leave out the
   site's fonts** and are a little better than real. The real-world first paint will be slightly
   slower too.
-- **Noise:** the same page varied by up to 7 points between runs (worst: pong at 90–97, the
+- **Noise:** the same page varied by up to 7 points between runs (worst: antithesis at 90–97, the
   museum at 92–99). Keep that in mind for the 5-point rule in the new Lighthouse check.
 - **Frame rate (FPS)** came from the hidden `?fps=1` overlay (`docs/assets/fps-overlay.js`).
   `tools/fps-games.js` opened each game on a 390-pixel phone screen, started it, played it with
@@ -50,11 +50,11 @@ taps while loading (under 200 ms is good). Weight = data downloaded, without fon
 | Game: Ziggurat Builder | **94** | 2.5 s | 0 | 68 ms | 282 KB | 33 |
 | Game: The Reliquary | **96** | 2.2 s | 0 | 104 ms | 286 KB | 33 |
 | Game: The Seeker's Path | **92** | 2.7 s | 0 | 5 ms | 282 KB | 33 |
-| Game: Antithesis (pong) | **95** | 2.4 s | 0 | 68 ms | 282 KB | 33 |
-| Game: The Excavation (minesweeper) | **92** | 2.7 s | 0 | 2 ms | 282 KB | 34 |
-| Game: The Labyrinth (pac-man) | **95** | 2.2 s | 0 | 154 ms | 282 KB | 33 |
+| Game: Antithesis | **95** | 2.4 s | 0 | 68 ms | 282 KB | 33 |
+| Game: The Excavation | **92** | 2.7 s | 0 | 2 ms | 282 KB | 34 |
+| Game: The Labyrinth | **95** | 2.2 s | 0 | 154 ms | 282 KB | 33 |
 | Game: The Firmament (pinball) | **94** | 2.2 s | 0 | 160 ms | 282 KB | 33 |
-| Game: Dominion of the Ancients (risk) | **71** | 2.1 s | 0 | **1,585 ms** | 282 KB | 33 |
+| Game: Dominion of the Ancients | **71** | 2.1 s | 0 | **1,585 ms** | 282 KB | 33 |
 | Game: The Tomb Robber (treasure) | **82** | **4.1 s** | 0 | 56 ms | 543 KB | 38 |
 
 What stands out:
@@ -65,8 +65,8 @@ What stands out:
 - **The fighter downloads 6.2 MB:** the cut-out body parts for all four gods (47 image files),
   even though a match uses only two.
 - **Dominion of the Ancients freezes the page for about 1.6 s on open.** It draws its map pixel
-  by pixel from random noise every time (`risk.js`, around lines 277–390). Lighthouse's
-  breakdown puts 3.8 s of script time (on the slowed CPU) in `risk.js`, including one unbroken
+  by pixel from random noise every time (`dominion.js`, around lines 277–390). Lighthouse's
+  breakdown puts 3.8 s of script time (on the slowed CPU) in `dominion.js`, including one unbroken
   1-second block.
 - **The Tomb Robber's main content appears late (4.1 s).** It loads about 260 KB of character
   art up front (body.png 106 KB, portrait.png 87 KB, and others).
@@ -78,16 +78,16 @@ worst one-second stretch.
 
 | Game | Avg FPS (CPU 4× slower) | Min FPS | Avg FPS (full speed) | Verdict |
 |---|---|---|---|---|
-| The Excavation (minesweeper) | 40.1 | 36.1 | 38.7 | fine |
+| The Excavation | 40.1 | 36.1 | 38.7 | fine |
 | The Seeker's Path | 37.8 | 35.0 | 36.4 | fine |
 | The Reliquary | 36.8 | 34.0 | 37.2 | fine |
 | Ouroboros | 33.5 | 30.5 | 35.5 | fine |
 | Archive Chess | 33.2 | 31.0 | 33.5 | fine |
 | Ziggurat Builder | 32.7 | 29.0 | 36.5 | fine |
-| Dominion of the Ancients (risk) | 25.2 | 22.9 | 32.7 | a little choppy |
-| Antithesis (pong) | 22.7 | 20.9 | 32.9 | choppy for a fast ball game |
+| Dominion of the Ancients | 25.2 | 22.9 | 32.7 | a little choppy |
+| Antithesis | 22.7 | 20.9 | 32.9 | choppy for a fast ball game |
 | The Firmament (pinball) | 16.1 | 15.0 | 33.2 | **slow** |
-| The Labyrinth (pac-man) | 15.6 | 14.3 | 34.7 | **slow** |
+| The Labyrinth | 15.6 | 14.3 | 34.7 | **slow** |
 | Divine Casualties (fighter) | 8.8 | 5.8 | 32.8 | **very slow** |
 | The Tomb Robber (treasure) | 5.8 | 5.2 | 28.3 | **very slow** |
 
@@ -110,7 +110,7 @@ Why the games are slow (the diagnosis behind the fixes below):
    - the fighter uses 21 soft-shadow effects (`shadowBlur`);
    - the Tomb Robber applies a brightness filter while drawing its character, and redraws a
      full-size lighting layer every frame;
-   - pac-man, pinball and ouroboros use soft shadows too.
+   - labyrinth, pinball and ouroboros use soft shadows too.
 3. **The blurred glass behind the game window** (`games.css`, line 90: `backdrop-filter: blur(2px)`)
    holds even still games to about 37–40 FPS in this test. With it switched off, the Seeker's
    Path went from 39.6 to 60.3 FPS. On the heavy games it is a small part of the cost: 1–2 FPS.
@@ -130,7 +130,7 @@ Why the games are slow (the diagnosis behind the fixes below):
 | 7 | **Drop the blur behind the game window on phones** (a darker see-through tint instead) | frame rate of every game, especially the calmer ones | Medium (uncertain on real phones) | **Very low**: one CSS line |
 | 8 | **Tomb Robber: load the character art after the first screen**, and compress it (WebP) | its 4.1 s main-content time and score 82 | Medium | Low |
 | 9 | **Fonts: host the site's fonts on the site** instead of Google Fonts, and preload the two main ones | first paint on every page. Not measurable here, so the CI should confirm it | Medium (unmeasured) | Low–Medium |
-| 10 | **Fewer soft shadows in Pac-Man, pinball and ouroboros** (pre-drawn glows) | the frame rate of those three | Low–Medium | Low |
+| 10 | **Fewer soft shadows in the Labyrinth, pinball and ouroboros** (pre-drawn glows) | the frame rate of those three | Low–Medium | Low |
 
 Not on the list, because it isn't a speed problem: the random-chapter bug, now fixed on this
 branch (see the founder guide).
@@ -170,21 +170,21 @@ Average of two runs each. "Min" is the worst one-second stretch.
 |---|---|---|---|
 | Divine Casualties (fighter) | 25.4 (22.3) | **47.9 (37.0)** | **+89%**: nearly twice as smooth |
 | The Tomb Robber (treasure) | 12.8 (11.6) | **20.2 (17.4)** | **+58%**: still the slowest game (see below) |
-| The Labyrinth (pac-man) | 39.3 (28.6) | **51.1 (41.0)** | **+30%** |
+| The Labyrinth | 39.3 (28.6) | **51.1 (41.0)** | **+30%** |
 | The Firmament (pinball) | 43.1 (35.0) | 43.5 (38.0) | none: its canvas was already the right size |
-| Dominion of the Ancients (risk) | 56.6 (50.2) | 56.0 (50.3) | none in play (it opens much faster, see below) |
+| Dominion of the Ancients | 56.6 (50.2) | 56.0 (50.3) | none in play (it opens much faster, see below) |
 | Archive Chess | 59.3 | 59.6 | at the ceiling |
 | Ouroboros | 59.3 | 59.4 | at the ceiling |
 | Ziggurat Builder | 59.1 | 58.4 | at the ceiling |
 | The Reliquary | 59.8 | 59.9 | at the ceiling |
 | The Seeker's Path | 60.0 | 59.8 | at the ceiling |
-| Antithesis (pong) | 59.9 | 59.9 | at the ceiling |
-| The Excavation (minesweeper) | 59.9 | 59.9 | at the ceiling |
+| Antithesis | 59.9 | 59.9 | at the ceiling |
+| The Excavation | 59.9 | 59.9 | at the ceiling |
 
-- **Caught and fixed during measurement:** the first "after" run showed Risk *slower* in play
+- **Caught and fixed during measurement:** the first "after" run showed Dominion *slower* in play
   (57.9 → 52.0). Its map layers are drawn at exactly twice its size, and the new fractional
-  scale forced the browser to resample them every frame. Risk was barely oversized to begin
-  with, so it keeps its old sizing rule and only gets the map fix. The Risk row shows the
+  scale forced the browser to resample them every frame. Dominion was barely oversized to begin
+  with, so it keeps its old sizing rule and only gets the map fix. The Dominion row shows the
   re-measurement after that correction.
 - **Opening Dominion of the Ancients** (CPU profile, full speed): set-up time **574 → 228 ms**,
   and the map step **342 → 46 ms**. On a mid-range phone that is roughly 2.3 s → 0.9 s of
@@ -205,16 +205,16 @@ Average of two runs each. "Min" is the worst one-second stretch.
 | Ziggurat Builder | 90 | 97 | +7 | |
 | The Reliquary | 91 | 91 | 0 | |
 | The Seeker's Path | 94 | 96 | +2 | |
-| Antithesis (pong) | 89 | 96 | +7 | clean 5-run re-test (the first batch, which overlapped another measurement, showed 96 → 90; that was noise) |
-| The Excavation (minesweeper) | 94 | 96 | +2 | |
-| The Labyrinth (pac-man) | 97 | 97 | 0 | |
+| Antithesis | 89 | 96 | +7 | clean 5-run re-test (the first batch, which overlapped another measurement, showed 96 → 90; that was noise) |
+| The Excavation | 94 | 96 | +2 | |
+| The Labyrinth | 97 | 97 | 0 | |
 | The Firmament (pinball) | 96 | 96 | 0 | clean 5-run re-test (the first batch's 91 was noise) |
-| **Dominion of the Ancients (risk)** | **78** | **89** | **+11** | clean 5-run re-test: the page's frozen time while opening fell **623 → 265 ms** (the precomputed map) |
+| **Dominion of the Ancients** | **78** | **89** | **+11** | clean 5-run re-test: the page's frozen time while opening fell **623 → 265 ms** (the precomputed map) |
 | The Tomb Robber (treasure) | 84 | 85 | +1 | |
 
 The load score mostly measures how fast a page *opens*, so the drawing-size fix (#1) barely
 moves it. That fix shows up in the frame rates above. The precomputed map (#3) shows up here,
-in Risk's score.
+in Dominion's score.
 
 ---
 

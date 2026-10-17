@@ -1,11 +1,11 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "The Labyrinth" (Pac-Man)
+   THE DIVINE ARCHIVES — Mini-Games: "The Labyrinth" (maze-chase game)
 
    The soul's passage through the maze of the dead: thread the labyrinth
    gathering the offerings scattered along it while the shades of the dead
    pursue you. Light one of the four sacred lamps and the shades flee — catch
    them then and they scatter back to the dark. Each lamp lit uncovers a real
-   underworld belief (data/pacman.json, checked by tools/verify-pacman.js).
+   underworld belief (data/labyrinth.json, checked by tools/verify-labyrinth.js).
    The maze is generated fresh each game (always fully solvable), with a
    centre spine and a side tunnel. Arrows / WASD / swipe / on-screen pad.
    ========================================================================== */
@@ -16,8 +16,8 @@
 
   var DATA_URL = (function () {
     var s = document.currentScript;
-    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/pacman.json";
-    return "assets/games/data/pacman.json";
+    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/labyrinth.json";
+    return "assets/games/data/labyrinth.json";
   })();
   var facts = null, loadingPromise = null;
   function loadFacts() {
@@ -30,7 +30,7 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   var chapterTitle = AG.content.chapterTitle;
 
-  AG.register("pacman", {
+  AG.register("labyrinth", {
     mount: mountGame
   });
 
@@ -44,7 +44,7 @@
     var SHADE_COLS = ["#b98cff", "#7fe3ff", "#e58ab0", "#8ad0a0"];
 
     var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1;
-    var st = null, best = AG.bestScore("pacman"), touch = null;
+    var st = null, best = AG.bestScore("labyrinth"), touch = null;
 
     /* ---------------- maze generation (recursive backtracker + braid) ---------------- */
     function genMaze() {
@@ -379,7 +379,7 @@
     function endScreen() {
       running = false; if (raf) cancelAnimationFrame(raf);
       var nb = st.score > best; if (nb) best = st.score;
-      AG.addHighScore("pacman", { score: st.score }); AG.finish("pacman");
+      AG.addHighScore("labyrinth", { score: st.score }); AG.finish("labyrinth");
       var recap = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";
@@ -391,7 +391,7 @@
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">What the lamps revealed:</p><ul class="ouro-facts">' + recap + "</ul>"
                : '<p class="rq-note" style="text-align:center">Light a sacred lamp to reveal the beliefs of the dead.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>Descend again</button>' +
-          AG.content.readLink(AG.catalog("pacman").chapter) + '</div>';
+          AG.content.readLink(AG.catalog("labyrinth").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

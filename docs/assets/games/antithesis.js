@@ -1,11 +1,11 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "Antithesis — The Eternal Contest" (Pong)
+   THE DIVINE ARCHIVES — Mini-Games: "Antithesis — The Eternal Contest" (two-paddle volley game)
 
    The oldest religious pattern set to the oldest video game: two paired
    cosmic principles — order and the Lie, yang and yin, Ma'at and Isfet —
    volley a blazing orb between them. Every point won uncovers a fact about
-   that dualism, drawn from a real chapter (data/pong.json, checked by
-   tools/verify-pong.js). Keyboard + touch-drag + on-screen pads; vs an AI
+   that dualism, drawn from a real chapter (data/antithesis.json, checked by
+   tools/verify-antithesis.js). Keyboard + touch-drag + on-screen pads; vs an AI
    of three tempers, or a friend across the same keyboard.
    ========================================================================== */
 (function () {
@@ -15,8 +15,8 @@
 
   var DATA_URL = (function () {
     var s = document.currentScript;
-    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/pong.json";
-    return "assets/games/data/pong.json";
+    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/antithesis.json";
+    return "assets/games/data/antithesis.json";
   })();
   var facts = null, loadingPromise = null;
   function loadFacts() {
@@ -32,7 +32,7 @@
   function rnd(a, b) { return a + Math.random() * (b - a); }
   var ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
 
-  AG.register("pong", {
+  AG.register("antithesis", {
     mount: mountGame
   });
 
@@ -48,7 +48,7 @@
 
     var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1, acc = 0, STEP = 1 / 60;
     var keys = {}, st = null, twoP = false, temper = 1; // 0 mild, 1 even, 2 fierce
-    var best = AG.bestScore("pong");
+    var best = AG.bestScore("antithesis");
 
     function newRally(dir) {
       st.ball = { x: VW / 2, y: VH / 2, vx: (dir || (Math.random() < 0.5 ? -1 : 1)) * 4.4, vy: rnd(-2.4, 2.4), r: 8, spin: 0 };
@@ -71,7 +71,7 @@
           "<p>Order and its opposite volley the sacred orb. Win a point to uncover the dualism behind it.</p></div>" +
         '<div class="game-rule" role="presentation"></div>' +
         '<div class="pg-hud"></div>' +
-        '<div class="pg-stage"><canvas class="pg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Antithesis pong board"></canvas></div>' +
+        '<div class="pg-stage"><canvas class="pg-canvas" width="' + VW + '" height="' + VH + '" role="img" aria-label="Antithesis volley board"></canvas></div>' +
         '<p class="ouro-toast pg-toast" aria-live="polite"></p>' +
         '<div class="pg-controls">' +
           '<div class="pg-pad"><button class="ouro-key" data-k="up1" aria-label="Move up">▲</button>' +
@@ -278,7 +278,7 @@
       var youWon = st.pl.score > st.pr.score;
       var newBest = false, tally = st.pl.score;
       if (tally > best) { best = tally; newBest = true; }
-      AG.addHighScore("pong", { score: tally }); AG.finish("pong", { won: youWon });
+      AG.addHighScore("antithesis", { score: tally }); AG.finish("antithesis", { won: youWon });
       var recap = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";
@@ -289,7 +289,7 @@
           '<p>' + (ROMAN[st.pl.score] || st.pl.score) + " — " + (ROMAN[st.pr.score] || st.pr.score) + (newBest ? ' · <span style="color:var(--gold-bright)">a new best</span>' : "") + "</p></div>" +
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">The dualisms you uncovered:</p><ul class="ouro-facts">' + recap + "</ul>" : "") +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>Contest again</button>' +
-          AG.content.readLink(AG.catalog("pong").chapter) + '</div>';
+          AG.content.readLink(AG.catalog("antithesis").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

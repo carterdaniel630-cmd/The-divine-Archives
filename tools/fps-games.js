@@ -9,7 +9,7 @@
    one-second window, longest single frame.
 
    Usage: node tools/fps-games.js [--base http://localhost:8080] [--cpu 4] [--seconds 10] [--out fps.json]
-                                  [--only fighter,pong] [--shots <folder>]
+                                  [--only fighter,antithesis] [--shots <folder>]
    Needs Playwright (CHROME_PATH optional). Numbers come from a headless browser
    drawing in software, so read them as relative, not as a real phone's.
    ========================================================================== */
@@ -35,11 +35,11 @@ const GAMES = {
   ziggurat:    { keys: ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"], every: 250 },
   reliquary:   { start: /^begin$/i, keys: [], every: 1000 },
   seeker:      { start: /begin the path/i, keys: [], every: 1000 },
-  pong:        { keys: ["ArrowUp", "ArrowDown"], every: 200 },
-  minesweeper: { tapCells: true, keys: [], every: 1000 },
-  pacman:      { keys: ARROWS, every: 300 },
+  antithesis:        { keys: ["ArrowUp", "ArrowDown"], every: 200 },
+  excavation: { tapCells: true, keys: [], every: 1000 },
+  labyrinth:      { keys: ARROWS, every: 300 },
   pinball:     { start: /launch/i, keys: ["ArrowLeft", "ArrowRight", " "], every: 220 },
-  risk:        { tapCanvas: true, keys: [], every: 1000 },
+  dominion:        { tapCanvas: true, keys: [], every: 1000 },
   treasure:    { start: /begin the expedition/i, then: /^enter /i, keys: ["ArrowRight", "ArrowLeft", "ArrowUp", " "], every: 220 },
 };
 

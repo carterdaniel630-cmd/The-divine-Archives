@@ -67,7 +67,7 @@ Scripted scan of every class selector against all HTML and JS (generated pages e
 | `.grid-2` | `archive.css:240` | Not used by any page or builder. |
 | `.game-rule--scorch` | `docs/assets/games/games.css:161` | Unused modifier. |
 | `.zig-controls` | `games.css:327` | Ziggurat uses `.ouro-controls` / `.zig-pad`. |
-| `.rk-you`, `.rk-empire`, `.rk-horde` | `games.css:446` | The Risk HUD no longer emits these. |
+| `.rk-you`, `.rk-empire`, `.rk-horde` | `games.css:446` | The Dominion HUD no longer emits these. |
 | `.s-en` | `docs/assets/vault/relic.css:524` | No scroll column uses `kind: "en"`. |
 | `.is-empty` | `docs/assets/vault/vault.css:46` | `study.js` never sets it. |
 
@@ -148,7 +148,7 @@ Because the default branch is stale (below), this is also the README visitors se
 
 | Where | Text | Reality |
 |---|---|---|
-| `docs/index.html:369` | "More games are on the way — a treasure-hunt adventure, pinball, minesweeper and others" | All three are live (Tomb Robber, Firmament, Excavation). |
+| `docs/index.html:369` | "More games are on the way — a treasure-hunt adventure, pinball, excavation and others" | All three are live (Tomb Robber, Firmament, Excavation). |
 | `docs/symbols.html:~105-135` | Per-game `phaseNote` placeholders ("Built in Phase 2…", "In development"). | Not user-visible today (shown only if a game module fails to register), but the fighter note still calls it "In development". |
 
 ### Stage 2 summary
@@ -172,13 +172,13 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 | **Divine Casualties** `fighter.js` | 2D fighter | **Fixed 60 Hz step** with accumulator, `MAXSTEPS = 5`, render interpolation (`fighter.js:51-54`, `stepSim` `:1798`) | `keydown`/`keyup` into a `keys{}` map for movement; **attacks fire directly from `keydown`** (`:2111-2123`); touch pad (`:2042`) | **Yes**: per-move `startup/active/recovery/total` in ticks, `onHit {damage, hitstop, knockback}`, `cancelInto/cancelWindow` (`fighter-moves.js:5-120`); per-god overrides and stats (`fighter-moves.js:133-196`) | Yes (fixed step) |
 | **Ziggurat Builder** `ziggurat.js` | Tetris-like | `setTimeout` gravity at `dropMs() = max(120, 820 − 70·(level−1))` ms (`:376-386`); redraws only on events | `keydown` → one action per event (`:351-360`); swipe/tap | Gravity table only | Yes (timer-based) |
 | **Ouroboros** `ouroboros.js` | Snake | `setTimeout` step at `speedFor(level)` = 240 → 120 ms (`:56-58, 309-312`) + rAF for ambient art (`:339`) | `keydown`, swipe, pad; **one-slot direction latch** `nextDir` (`:112-118, 148`) | Speed table | Yes |
-| **The Labyrinth** `pacman.js` | Pac-Man | rAF, variable `dt` clamped to 50 ms (`:358`); movement `prog += speed·dt·60` (`:152`) | `keydown`, swipe, pad; **pre-turn buffer** `player.want` (`:129, 143-144`) | Ghost/fright timers in seconds | Yes (dt-scaled) |
-| **Antithesis** `pong.js` | Pong | rAF, `dt` clamped to 50 ms (`:248`), but **physics is per frame**: `b.x += b.vx`, paddles `±6.4` per frame (`:136-140`) | keys, mouse drag, touch drag, pads | — | **No**: about 2.4× faster at 144 Hz |
+| **The Labyrinth** `labyrinth.js` | the Labyrinth | rAF, variable `dt` clamped to 50 ms (`:358`); movement `prog += speed·dt·60` (`:152`) | `keydown`, swipe, pad; **pre-turn buffer** `player.want` (`:129, 143-144`) | Ghost/fright timers in seconds | Yes (dt-scaled) |
+| **Antithesis** `antithesis.js` | Antithesis | rAF, `dt` clamped to 50 ms (`:248`), but **physics is per frame**: `b.x += b.vx`, paddles `±6.4` per frame (`:136-140`) | keys, mouse drag, touch drag, pads | — | **No**: about 2.4× faster at 144 Hz |
 | **The Firmament** `pinball.js` | Pinball | rAF, `dt` ≤ 33 ms (`:301`); 5 substeps per frame (`:44, 173-176`), but **per-frame gravity and velocity** | keys, mouse, touch | — | **No**: substeps prevent tunnelling but speed scales with refresh |
 | **The Tomb Robber** `treasure.js` | Platformer | rAF, `dt` ≤ 33 ms (`:252`), but **per-frame physics**: `vx += 0.6`, `vy += 0.5`, `x += vx` (`:152-158`) | keys, mouse, touch | — | **No** |
-| **The Excavation** `minesweeper.js` | Minesweeper | Event-driven; 1 s `setInterval` clock (`:175`) | click, right-click/`contextmenu`, long-press (`:117`), flag mode | — | n/a |
+| **The Excavation** `excavation.js` | the Excavation | Event-driven; 1 s `setInterval` clock (`:175`) | click, right-click/`contextmenu`, long-press (`:117`), flag mode | — | n/a |
 | **Archive Chess** `chess.js` | Chess | Turn-based; AI via `setTimeout(aiMove, 220)` (`:237`) | click/tap | — | n/a |
-| **Dominion of the Ancients** `risk.js` | Risk-like | Turn-based; AI sequenced by `setTimeout` 420 ms (`:232`); rAF for rendering | click | — | n/a |
+| **Dominion of the Ancients** `dominion.js` | Territorial conquest | Turn-based; AI sequenced by `setTimeout` 420 ms (`:232`); rAF for rendering | click | — | n/a |
 | **The Reliquary** `reliquary.js` | Trivia | Event-driven DOM | click, keys 1–4 | — | n/a |
 | **The Seeker's Path** `seeker.js` | Riddle chain | Event-driven DOM | form submit | — | n/a |
 
@@ -219,13 +219,13 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 
 ### 3.4 Other games: notable gaps
 
-- **Frame-rate dependence (bug):** `pong.js:136-140`, `treasure.js:152-158` and `pinball.js:173-176` advance positions and velocities **per rendered frame** even though `dt` is computed. On 120/144 Hz displays these games run 2–2.4× faster; on a throttled tab, slower. `pacman.js:152` and `fighter.js` scale correctly.
+- **Frame-rate dependence (bug):** `antithesis.js:136-140`, `treasure.js:152-158` and `pinball.js:173-176` advance positions and velocities **per rendered frame** even though `dt` is computed. On 120/144 Hz displays these games run 2–2.4× faster; on a throttled tab, slower. `labyrinth.js:152` and `fighter.js` scale correctly.
 - **Ouroboros:** the single-slot `nextDir` latch (`ouroboros.js:118, 148`) means two quick turns inside one step collapse to the last one, so a tight U-turn needs two ticks. The standard fix is a 2–3 entry input queue.
-- **Labyrinth:** ghosts all chase the player's tile with 18% random moves and random choices when frightened (`pacman.js:165-176`). There are no per-ghost targeting personalities and no scatter/chase mode cycle. Buffered turning is present.
+- **Labyrinth:** ghosts all chase the player's tile with 18% random moves and random choices when frightened (`labyrinth.js:165-176`). There are no per-ghost targeting personalities and no scatter/chase mode cycle. Buffered turning is present.
 - **Tomb Robber:** jump only while `onGround` (`treasure.js:155`), with no coyote time and no jump buffering; no variable jump height (release doesn't cut `vy`).
-- **Excavation:** first click is safe (mines exclude the clicked cell and its neighbours, `minesweeper.js:63-65`). Chording (clicking a satisfied number) isn't implemented.
+- **Excavation:** first click is safe (mines exclude the clicked cell and its neighbours, `excavation.js:63-65`). Chording (clicking a satisfied number) isn't implemented.
 - **Chess:** full legal rules (castling, en passant, promotion, check/mate/stalemate) and alpha-beta negamax at **fixed depth 3** (`chess.js:113-132, 240`), with capture-first ordering. No quiescence search, so it can blunder at the horizon.
-- **Dominion:** classic attacker/defender dice (`risk.js:33, 153-154`).
+- **Dominion:** classic attacker/defender dice (`dominion.js:33, 153-154`).
 - **Reliquary / Seeker:** event-driven DOM quizzes; no timing concerns.
 - **Verification:** every game except the fighter has a data-grounding verifier (`tools/verify-*.js`) run by `.github/workflows/verify.yml`. Only the fighter has a runtime play test (`tools/ci-play-fighter.js`). None tests input feel or timing.
 
@@ -233,7 +233,7 @@ Paths are under `docs/assets/games/`. Twelve games are registered on `docs/symbo
 
 - **Fighter:** solid core. It has a fixed step, real frame data, cancels, hitstop, per-god tuning and a throw tech. The gaps that matter most for feel are: no input buffer, attacks read outside the sim tick, OS key-repeat mashing, hits checked only on the first active frame, and no hurtboxes or hitstun data. All four gods share one move list.
 - **Ziggurat:** 7-bag ✅, but no SRS, **no lock delay**, **no DAS/ARR** (OS key repeat), no hold, a single-piece preview and a short well.
-- **Bug across three games:** Pong, Firmament and Tomb Robber run faster on high-refresh displays because their physics is per frame.
+- **Bug across three games:** Antithesis, Firmament and Tomb Robber run faster on high-refresh displays because their physics is per frame.
 
 ---
 
@@ -268,7 +268,7 @@ Remote branches as of 2026-09-27, compared with `origin/main` (`bf89a0f`). "Uniq
 | `claude/pistis-sophia-research-8ytkke` | 2026-09-11 `834164f` | 3 | Adds Pistis Sophia as **ch43** plus a Stage 0 audit. The chapter was later ported to main as **ch45** (`b76fcec`, "port of the reviewed chapter, renumbered"), untagged there as approved; the audit is `stages/00-audit/CONTEXT.md`'s predecessor. | Delete (superseded). |
 | `claude/pose-based-fighter-sprites-ot2nig` | 2026-09-21 `f341bd0` | 2 | A 1,300-line "pose-based sprite" pilot for the fighter (Zeus vs placeholder Hades). Superseded by the skeletal cut-out rig on main. | Delete (superseded). |
 | `claude/state-audit` | 2026-09-23 `b60455f` | 1 | A read-only state audit (`00-audit/state-audit-2026-09-23.md`). Superseded by this report. | Delete, or keep for the record. |
-| `claude/games-audit` | 2026-09-19 `2399c5f` | 6 | A games audit in `audit/01-05*.md` plus frame captures. Written before the rename (uses "Theomachy"); its fighter findings overlap Stage 3. One live item: `audit/04-content-needs.md:48`, Risk territories `nubia` and `arabia` have no fact. | Don't merge (stale); carry the Risk-facts item forward. |
+| `claude/games-audit` | 2026-09-19 `2399c5f` | 6 | A games audit in `audit/01-05*.md` plus frame captures. Written before the rename (uses "Theomachy"); its fighter findings overlap Stage 3. One live item: `audit/04-content-needs.md:48`, Dominion territories `nubia` and `arabia` have no fact. | Don't merge (stale); carry the Dominion-facts item forward. |
 | `claude/divine-archives-audit-nr3mln` | 2026-08-25 `10edf1f` | 1 | "Phase 1: competitive & structural audit for comprehensive expansion" (`icm/stage-5…`). A planning document, since overtaken by the expansion to 65 chapters. | Delete, or keep for the record. |
 
 ### 4.3 Not merged: real work that main lacks

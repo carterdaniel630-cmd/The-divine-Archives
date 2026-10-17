@@ -230,10 +230,10 @@ placement that needs Carter's decision or a content gap.
 | Wing I · Prehistory | ch61 Aboriginal Australian Dreaming | 1 + 0 | 1 + 0 | — | — | Living tradition placed in the Prehistory wing by data.js; signage must not imply it is extinct. Its Vault object (V68 tjurunga) is secret-sacred: no model, no image. |
 | Wing II · The Bronze Age | ch02 Egypt | 4 + 0 | 9 + 0 | yes | chess |  |
 | Wing II · The Bronze Age | ch03 Mesopotamia | 2 + 0 | 8 + 0 | yes | ziggurat |  |
-| Wing II · The Bronze Age | ch04 Indus Valley | 0 + 0 | 0 + 0 | yes | minesweeper | No Vault, no Pantheon: the room holds only its plate and a game kiosk. |
+| Wing II · The Bronze Age | ch04 Indus Valley | 0 + 0 | 0 + 0 | yes | excavation | No Vault, no Pantheon: the room holds only its plate and a game kiosk. |
 | Wing II · The Bronze Age | ch05 Early Vedic | 0 + 0 | 4 + 0 | yes | — | No Vault objects. |
 | Wing II · The Bronze Age | ch57 Hittite & Anatolian | 0 + 0 | 3 + 1 | — | — | No plate, no Vault. |
-| Wing III · The Early Iron Age | ch06 Zoroaster | 1 + 1 | 4 + 0 | yes | pong |  |
+| Wing III · The Early Iron Age | ch06 Zoroaster | 1 + 1 | 4 + 0 | yes | antithesis |  |
 | Wing III · The Early Iron Age | ch07 Pre-exilic Israel | 4 + 2 | 24 + 7 | yes | — |  |
 | Wing III · The Early Iron Age | ch08 Early Greece | 2 + 0 | 3 + 0 | yes | fighter |  |
 | Wing III · The Early Iron Age | ch09 Early China | 1 + 1 | 1 + 0 | yes | — |  |
@@ -263,7 +263,7 @@ placement that needs Carter's decision or a content gap.
 | Wing VII · The High Medieval | ch26 Kabbalah | 3 + 0 | 1 + 2 | yes | — |  |
 | Wing VII · The High Medieval | ch27 Sufism | 0 + 1 | 0 + 2 | yes | — |  |
 | Wing VII · The High Medieval | ch28 Scholasticism | 3 + 2 | 0 + 0 | yes | — |  |
-| Wing VII · The High Medieval | ch29 The Maya | 2 + 2 | 4 + 1 | yes | pacman |  |
+| Wing VII · The High Medieval | ch29 The Maya | 2 + 2 | 4 + 1 | yes | labyrinth |  |
 | Wing VII · The High Medieval | ch30 Bhakti | 0 + 1 | 6 + 2 | yes | — |  |
 | Wing VII · The High Medieval | ch43 The Aztec | 4 + 1 | 5 + 0 | yes | treasure | The Aztec and the Inca (ch44) belong to the High Medieval wing by data.js but run to 1521 / 1532. |
 | Wing VII · The High Medieval | ch44 The Inca | 2 + 0 | 4 + 0 | yes | — | See ch43. |

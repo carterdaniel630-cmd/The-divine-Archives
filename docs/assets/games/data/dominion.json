@@ -1,5 +1,5 @@
 {
-  "note": "Facts for 'Dominion of the Ancients' (Risk). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-risk.js). `territory` ties the fact to the land you conquer. Nubia is sourced to ch68 (Nubia & Kush) and Arabia to ch70 (Pre-Islamic Arabia), each to its own chapter.",
+  "note": "Facts for 'Dominion of the Ancients' (Dominion). Each fact's `basis` substring must appear in the source chapter's rendered text (tools/verify-dominion.js). `territory` ties the fact to the land you conquer. Nubia is sourced to ch68 (Nubia & Kush) and Arabia to ch70 (Pre-Islamic Arabia), each to its own chapter.",
   "facts": [
     { "territory": "egypt", "label": "Egypt", "fact": "In the Egyptian judgment the jackal-headed Anubis steadies the scales as the heart is weighed against truth.", "basis": "jackal-headed Anubis", "chapter": "ch02" },
     { "territory": "babylon", "label": "Babylon & Sumer", "fact": "The inlaid Standard of Ur gives a vivid picture of Early Dynastic kingship and its beliefs about the beyond.", "basis": "Standard of Ur", "chapter": "ch03" },

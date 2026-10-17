@@ -29,12 +29,12 @@ export const EXIT_HREF = "../museum.html#@02-bronze-age";
 export const GAMES = [
   { id: "chess", ch: "ch02", chName: "Egypt", title: "Archive Chess", sub: "A board of gods: Egyptian, Greek, or Norse.", deg: 145, setting: "limestone", prop: "saucer", note: "Limestone paving and a clay saucer lamp, after the Egypt room." },
   { id: "ziggurat", ch: "ch03", chName: "Mesopotamia", title: "Ziggurat Builder", sub: "Raise the temple-mountain, course by course.", deg: 123, setting: "mudbrick", prop: "bricks", note: "Mud brick, the building stuff of Mesopotamia." },
-  { id: "minesweeper", ch: "ch04", chName: "Indus Valley", title: "The Excavation", sub: "Clear the buried dig without striking a hazard.", deg: 101, setting: "brick", note: "Fired brick, as in the Indus cities." },
-  { id: "pong", ch: "ch06", chName: "Zoroaster", title: "Antithesis", sub: "Two cosmic principles volley the sacred orb.", deg: 79, setting: "ashlar", prop: "glow", note: "Dressed stone and a warm glow on the floor: a fire's light, without the altar." },
+  { id: "excavation", ch: "ch04", chName: "Indus Valley", title: "The Excavation", sub: "Clear the buried dig without striking a hazard.", deg: 101, setting: "brick", note: "Fired brick, as in the Indus cities." },
+  { id: "antithesis", ch: "ch06", chName: "Zoroaster", title: "Antithesis", sub: "Two cosmic principles volley the sacred orb.", deg: 79, setting: "ashlar", prop: "glow", note: "Dressed stone and a warm glow on the floor: a fire's light, without the altar." },
   { id: "fighter", ch: "ch08", chName: "Early Greece", title: "Divine Casualties", sub: "A duel of the Olympians, drawn from myth.", deg: 57, setting: "ashlar", prop: "brazier", note: "Dressed ashlar and a bronze tripod brazier." },
-  { id: "risk", ch: "ch13", chName: "Rome", title: "Dominion of the Ancients", sub: "A conquest campaign of the ancient world.", deg: 35, setting: "tessellated", note: "A Roman tessellated pavement." },
+  { id: "dominion", ch: "ch13", chName: "Rome", title: "Dominion of the Ancients", sub: "A conquest campaign of the ancient world.", deg: 35, setting: "tessellated", note: "A Roman tessellated pavement." },
   { id: "reliquary", ch: "ch22", chName: "Patristic Christianity", title: "The Reliquary", sub: "A trivia game drawn from the archive's own chapters.", deg: 325, setting: "marble", prop: "terracotta", note: "Marble and a terracotta oil lamp, candlelight of late antiquity." },
-  { id: "pacman", ch: "ch29", chName: "The Maya", title: "The Labyrinth", sub: "Thread the maze of the dead; outrun the shades.", deg: 303, setting: "limestone", prop: "jungle", note: "Pale limestone with a screen of green behind it." },
+  { id: "labyrinth", ch: "ch29", chName: "The Maya", title: "The Labyrinth", sub: "Thread the maze of the dead; outrun the shades.", deg: 303, setting: "limestone", prop: "jungle", note: "Pale limestone with a screen of green behind it." },
   { id: "ouroboros", ch: "ch37", chName: "Theosophy & the Occult Revival", title: "Ouroboros", sub: "The serpent that devours its own tail: a game of Snake.", deg: 281, setting: "oak", prop: "brass", note: "Oak boards and a plain brass ring on a post." },
   { id: "seeker", ch: "ch40", chName: "African Diaspora Religions", title: "The Seeker's Path", sub: "Follow the clues into the chapters.", deg: 259, setting: "plain", note: "A plain floor: the ritual drawings of this tradition are not arcade decoration." },
   { id: "treasure", ch: "ch43", chName: "The Aztec", title: "The Tomb Robber", sub: "Four ancient sites; carry out the relics.", deg: 237, setting: "basalt", note: "A low plinth of dark basalt." },
@@ -45,11 +45,17 @@ export const cabPos = (g, r) => { const a = g.deg * RAD, rr = r == null ? R_CAB 
 
 // ---------------------------------------------------------------- best scores, read from this browser only (no network)
 // The games keep a top-ten list per game under "da.games.score.<id>"; the Seeker keeps how many clues are reached.
+// Four ids were renamed (Naming & IP Policy, 2026-10-17). Scores move to the new id when the visitor next opens
+// the games or any tracked page; until then the board also reads a list still saved under the old id.
+// Same table as docs/assets/games/archive-games.js; framework/test/renamed.test.js keeps them equal.
+export const RENAMED = { pacman: "labyrinth", pong: "antithesis", minesweeper: "excavation", risk: "dominion" };
+const topOf = (k) => { const a = JSON.parse(window.localStorage.getItem(k) || "[]"); return Array.isArray(a) && a.length && a[0] && a[0].score != null ? a[0].score : null; };
 export function bestOf(id) {
   try {
     if (id === "seeker") { const n = parseInt(window.localStorage.getItem("da.games.seeker") || "0", 10) || 0; return n > 0 ? n + (n === 1 ? " clue" : " clues") : null; }
-    const a = JSON.parse(window.localStorage.getItem("da.games.score." + id) || "[]");
-    return Array.isArray(a) && a.length && a[0] && a[0].score != null ? String(a[0].score) : null;
+    let best = topOf("da.games.score." + id);
+    for (const old in RENAMED) if (RENAMED[old] === id) { const o = topOf("da.games.score." + old); if (o != null && (best == null || o > best)) best = o; }
+    return best == null ? null : String(best);
   } catch (e) { return null; }
 }
 
@@ -77,7 +83,7 @@ const ring = (deg, r) => { const a = deg * RAD; return [Math.sin(a) * r, -Math.c
 const route = [P(0, 4.6, true, 0)];
 for (const g of GAMES) {
   route.push(P(...ring(g.deg, 4.95), true, -g.deg * RAD));
-  if (g.id === "risk") route.push(P(...ring(0, 4.95), true, 0));                   // the board, between the two arcs
+  if (g.id === "dominion") route.push(P(...ring(0, 4.95), true, 0));                   // the board, between the two arcs
 }
 route.push(P(0, 5.4, true, Math.PI));
 
@@ -111,4 +117,4 @@ const about = { id: "about", cat: "About this room", title: "What is this place?
     "<p>The games themselves, and their sources, live on the Symbols page; each card links to its chapter.</p>",
   links: [{ href: "../symbols.html", label: "All the games" }, { href: EXIT_HREF, label: "Back to the museum", ghost: true }] };
 
-export default { title: "The Archive Arcade", version: 1, stones: ["gallery"], sections, regions, route, info, about };
+export default { title: "The Archive Arcade", version: 2, stones: ["gallery"], sections, regions, route, info, about };

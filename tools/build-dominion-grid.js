@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /* ==========================================================================
-   build-risk-grid.js — precompute the Risk game's territory grid.
+   build-dominion-grid.js — precompute Dominion's territory grid.
 
    Dominion of the Ancients assigns every cell of its map to a province through
-   noisy borders (risk.js, computeGrid). That takes about 0.4 s on a laptop and
+   noisy borders (dominion.js, computeGrid). That takes about 0.4 s on a laptop and
    over a second on a phone, every time the game opens, and the answer never
    changes. This tool runs the game's own code once in a headless browser,
-   reads the finished grid, and saves it as docs/assets/games/data/risk-grid.png
+   reads the finished grid, and saves it as docs/assets/games/data/dominion-grid.png
    (red channel = (province index + 2) × 8; -1 sea, -2 unclaimed land).
    The game reads that image instead, and computes the grid itself if the image
    is missing or no longer matches the provinces.
 
-   Re-run after changing the provinces (TERR), seas (SEAS) or border weights in risk.js:
-     node tools/serve.js 8080 &   then   node tools/build-risk-grid.js [--base http://localhost:8080]
+   Re-run after changing the provinces (TERR), seas (SEAS) or border weights in dominion.js:
+     node tools/serve.js 8080 &   then   node tools/build-dominion-grid.js [--base http://localhost:8080]
    Needs Playwright.
    ========================================================================== */
 "use strict";
@@ -21,12 +21,12 @@ const path = require("path");
 const args = process.argv.slice(2);
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
 const BASE = opt("--base", "http://localhost:8080").replace(/\/$/, "");
-const OUT = path.join(__dirname, "..", "docs", "assets", "games", "data", "risk-grid.png");
+const OUT = path.join(__dirname, "..", "docs", "assets", "games", "data", "dominion-grid.png");
 const { chromium } = require("playwright");
 
 async function grab(page, fresh) {
-  await page.addInitScript((f) => { window.__ARCHIVE_TEST__ = true; if (f) window.__RISK_GRID_FRESH = true; }, fresh);
-  await page.goto(BASE + "/symbols.html#play=risk", { waitUntil: "load" });
+  await page.addInitScript((f) => { window.__ARCHIVE_TEST__ = true; if (f) window.__DOMINION_GRID_FRESH = true; }, fresh);
+  await page.goto(BASE + "/symbols.html#play=dominion", { waitUntil: "load" });
   await page.waitForFunction(() => window.__riskGrid && window.__riskGrid(), null, { timeout: 30000 });
   return page.evaluate(() => window.__riskGrid());
 }

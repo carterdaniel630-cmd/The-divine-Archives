@@ -1,11 +1,11 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "The Excavation" (Minesweeper)
+   THE DIVINE ARCHIVES — Mini-Games: "The Excavation" (grid-deduction puzzle)
 
    A dig, not a minefield: clear the buried grid without striking a hazard
    (a collapse, a curse, a flooded chamber). Numbers count the dangers that
    border a square; flag each one you deduce, and every hazard correctly
    marked turns up a real archaeological find — each grounded in a chapter
-   (data/minesweeper.json, checked by tools/verify-minesweeper.js).
+   (data/excavation.json, checked by tools/verify-excavation.js).
    DOM grid: tap to dig, flag-mode or right-click / long-press to mark. It
    scales to the screen and zooms cleanly on mobile.
    ========================================================================== */
@@ -16,8 +16,8 @@
 
   var DATA_URL = (function () {
     var s = document.currentScript;
-    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/minesweeper.json";
-    return "assets/games/data/minesweeper.json";
+    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/excavation.json";
+    return "assets/games/data/excavation.json";
   })();
   var facts = null, loadingPromise = null;
   function loadFacts() {
@@ -36,13 +36,13 @@
     master: { cols: 14, rows: 14, mines: 40, name: "Master dig" }
   };
 
-  AG.register("minesweeper", {
+  AG.register("excavation", {
     mount: mountGame
   });
 
   function mountGame(root, ctx) {
     var level = "novice", st = null, gridEl, hudEl, live, flagBtn, timerEl, mineEl;
-    var flagMode = false, timer = null, seconds = 0, best = AG.bestScore("minesweeper");
+    var flagMode = false, timer = null, seconds = 0, best = AG.bestScore("excavation");
 
     function conf() { return LEVELS[level]; }
     function newGame() {
@@ -199,7 +199,7 @@
     }
 
     function endScreen() {
-      AG.finish("minesweeper", { won: !!st.won });
+      AG.finish("excavation", { won: !!st.won });
       var recap = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";
@@ -208,7 +208,7 @@
       if (st.won) {
         var score = Math.max(1, st.mines * 100 - seconds);
         var nb = score > best; if (nb) { best = score; }
-        AG.addHighScore("minesweeper", { score: score });
+        AG.addHighScore("excavation", { score: score });
         head = '<p class="eyebrow">The Excavation · the site is cleared</p><h2 id="' + ctx.titleId + '">Site fully excavated</h2>' +
           '<p>' + conf().name + ' · ' + seconds + 's · ' + st.collected.length + ' find' + (st.collected.length === 1 ? "" : "s") + (nb ? ' · <span style="color:var(--gold-bright)">a new best</span>' : "") + "</p>";
       } else {
@@ -220,7 +220,7 @@
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">What you unearthed:</p><ul class="ouro-facts">' + recap + "</ul>"
                : '<p class="rq-note" style="text-align:center">No finds logged this dig — mark a hazard correctly to turn one up.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>New dig</button>' +
-          AG.content.readLink(AG.catalog("minesweeper").chapter) + '</div>';
+          AG.content.readLink(AG.catalog("excavation").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 

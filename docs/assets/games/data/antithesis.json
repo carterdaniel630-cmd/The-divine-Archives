@@ -1,5 +1,5 @@
 {
-  "note": "Facts for 'Antithesis' (Pong). Each is grounded: its `basis` substring must appear in the source chapter's rendered text (tools/verify-pong.js). Theme: the eternal contest of paired cosmic principles.",
+  "note": "Facts for 'Antithesis' (two-paddle volley game). Each is grounded: its `basis` substring must appear in the source chapter's rendered text (tools/verify-antithesis.js). Theme: the eternal contest of paired cosmic principles.",
   "facts": [
     {
       "label": "The Two Spirits",

@@ -1,5 +1,5 @@
 {
-  "note": "Facts for 'The Labyrinth' (Pac-Man): the soul's passage through the maze of the dead. Re-sourced (D1) to ch47 'Journeys to the Underworld', the comparative chapter the game is themed on. Each fact's `basis` substring must appear in ch47's rendered text (tools/verify-pacman.js).",
+  "note": "Facts for 'The Labyrinth' (maze-chase game): the soul's passage through the maze of the dead. Re-sourced (D1) to ch47 'Journeys to the Underworld', the comparative chapter the game is themed on. Each fact's `basis` substring must appear in ch47's rendered text (tools/verify-labyrinth.js).",
   "facts": [
     {
       "label": "The seven gates",

@@ -14,11 +14,11 @@
     { "name": "Game: Ziggurat Builder", "path": "/symbols.html#play=ziggurat" },
     { "name": "Game: The Reliquary", "path": "/symbols.html#play=reliquary" },
     { "name": "Game: The Seeker's Path", "path": "/symbols.html#play=seeker" },
-    { "name": "Game: Antithesis (pong)", "path": "/symbols.html#play=pong" },
-    { "name": "Game: The Excavation (minesweeper)", "path": "/symbols.html#play=minesweeper" },
-    { "name": "Game: The Labyrinth (pac-man)", "path": "/symbols.html#play=pacman" },
+    { "name": "Game: Antithesis", "path": "/symbols.html#play=antithesis" },
+    { "name": "Game: The Excavation", "path": "/symbols.html#play=excavation" },
+    { "name": "Game: The Labyrinth", "path": "/symbols.html#play=labyrinth" },
     { "name": "Game: The Firmament (pinball)", "path": "/symbols.html#play=pinball" },
-    { "name": "Game: Dominion of the Ancients (risk)", "path": "/symbols.html#play=risk" },
+    { "name": "Game: Dominion of the Ancients", "path": "/symbols.html#play=dominion" },
     { "name": "Game: The Tomb Robber (treasure)", "path": "/symbols.html#play=treasure" }
   ]
 }

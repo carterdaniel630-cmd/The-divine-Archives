@@ -1,12 +1,12 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "Dominion of the Ancients" (Risk)
+   THE DIVINE ARCHIVES — Mini-Games: "Dominion of the Ancients" (Dominion)
 
    A three-way campaign for the ancient world: you against TWO rival powers —
    the Bronze Empire and the Iron Horde — on a drawn map of landmasses and
    causeways. Classic phases (reinforce, attack with dice, fortify), regional
    bonuses, capital cities, and conquest CARDS you trade in sets for fresh
    hosts. Every land you take reveals a real belief of the people who held it
-   (data/risk.json, checked by tools/verify-risk.js). A battle log records the
+   (data/dominion.json, checked by tools/verify-dominion.js). A battle log records the
    clashes. Tap to play; mobile-fit.
    ========================================================================== */
 (function () {
@@ -16,8 +16,8 @@
 
   var DATA_URL = (function () {
     var s = document.currentScript;
-    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/risk.json";
-    return "assets/games/data/risk.json";
+    if (s && s.src) return s.src.replace(/[^/]*$/, "") + "data/dominion.json";
+    return "assets/games/data/dominion.json";
   })();
   var facts = null, loadingPromise = null;
   function loadFacts() {
@@ -84,7 +84,7 @@
   var SIDE_NAME = { you: "You", empire: "the Bronze Empire", horde: "the Iron Horde" };
   var CARD_TYPES = ["inf", "cav", "art"], CARD_GLYPH = { inf: "⚔", cav: "⚑", art: "☉" };
 
-  AG.register("risk", {
+  AG.register("dominion", {
     mount: mountGame
   });
 
@@ -268,9 +268,9 @@
        sea-lanes, shield tokens, walled capitals, pip dice and an attack arrow. */
     var G = 2, GW = VW * G, GH = VH * G;       // territory grid: two cells per map unit
     var IDG = null, BOX = [], mapBg = null, polLines = null, routesCv = null, fillCv = null, fillSig = "", TINT = {};
-    var PREGRID = null;                         // the territory grid read from data/risk-grid.png, when it fits
+    var PREGRID = null;                         // the territory grid read from data/dominion-grid.png, when it fits
     function loadGrid() {
-      if (window.__RISK_GRID_FRESH) return Promise.resolve(null);       // tools/build-risk-grid.js: compute it
+      if (window.__DOMINION_GRID_FRESH) return Promise.resolve(null);       // tools/build-dominion-grid.js: compute it
       return new Promise(function (done) {
         var im = new Image();
         im.onload = function () {
@@ -285,7 +285,7 @@
           } catch (e) { done(null); }
         };
         im.onerror = function () { done(null); };
-        im.src = DATA_URL.replace(/[^/]*$/, "risk-grid.png");
+        im.src = DATA_URL.replace(/[^/]*$/, "dominion-grid.png");
       });
     }
     var ROUTE = [], last = 0, frameN = 0;
@@ -308,7 +308,7 @@
     }
     // the slow part (about 0.4 s on a laptop, over a second on a phone): every cell of the map
     // finds its nearest province through noisy borders. The result never changes, so
-    // tools/build-risk-grid.js saves it as data/risk-grid.png and the game reads that instead.
+    // tools/build-dominion-grid.js saves it as data/dominion-grid.png and the game reads that instead.
     function computeGrid() {
       var sc = mk(GW, GH), sm = sc.getContext("2d"); sm.scale(G, G); sm.fillStyle = "#000";
       SEAS.forEach(function (p) { polyOn(sm, p); sm.fill(); });
@@ -717,7 +717,7 @@
         '<div class="rk-controls"><button class="rq-btn rk-next" data-a="next"></button></div>' +
         '<p class="rq-note">Tap a land, then a neighbour to attack — the higher dice win. Lands border each other only along the drawn roads and sea-lanes. Hold a whole region or a walled capital for extra armies. Trade a set of three cards for a host. Be the last power standing.</p>';
       canvas = root.querySelector(".rk-canvas"); cx = canvas.getContext("2d");
-      // Risk keeps a floor of 1 (unlike the other games): its map layers are pre-drawn at 2x its
+      // Dominion keeps a floor of 1 (unlike the other games): its map layers are pre-drawn at 2x its
       // logical size, and copying them at exactly 2x is cheaper than resampling them every frame
       // at a fractional scale; on phones it is shown at ~0.94 of its logical width, so little is saved.
       var riskScale = function () { return Math.min(window.devicePixelRatio || 1, 2) * Math.max(1, (canvas.getBoundingClientRect().width || VW) / VW); };
@@ -733,7 +733,7 @@
     function finish() {
       if (raf) cancelAnimationFrame(raf);
       var won = st.winner === "you";
-      AG.finish("risk", { won: won });
+      AG.finish("dominion", { won: won });
       var recap = st.collected.map(function (f) { return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) + ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>"; }).join("");
       root.innerHTML =
         '<div class="game-head"><p class="eyebrow">Dominion · the campaign ends</p>' +
@@ -741,7 +741,7 @@
           '<p>' + st.collected.length + ' land' + (st.collected.length === 1 ? "" : "s") + ' and their gods uncovered.</p></div>' +
         (recap ? '<p class="rq-note" style="text-align:center;margin-bottom:.4rem">The dominions you took:</p><ul class="ouro-facts">' + recap + "</ul>" : '<p class="rq-note" style="text-align:center">You took no land this campaign — try holding a region for its bonus.</p>') +
         '<div class="rq-actions" style="gap:.5rem"><button class="rq-btn rq-primary" data-a="again" autofocus>New campaign</button>' +
-          AG.content.readLink(AG.catalog("risk").chapter) + '</div>';
+          AG.content.readLink(AG.catalog("dominion").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 
