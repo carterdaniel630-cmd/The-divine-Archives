@@ -4297,9 +4297,9 @@
    "from": "sources/ch69-upanishads-hindu-synthesis.md"
   },
   {
-   "id": "source:doreenvaliente-org/b4b134200f",
+   "id": "source:doreenvaliente-org/e21ecca97d",
    "type": "source",
-   "label": "https://www.doreenvaliente.org/",
+   "label": "https://doreenvaliente.org/about-us",
    "links": [
     "relic:v72"
    ],
@@ -5239,15 +5239,6 @@
    "from": "sources/ch13-rome.md"
   },
   {
-   "id": "source:en-wikipedia-org/2c5666bc7b",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Book_of_Shadows",
-   "links": [
-    "relic:v72"
-   ],
-   "from": "sources/v72-book-of-shadows.md"
-  },
-  {
    "id": "source:en-wikipedia-org/2d28bbadc6",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Bamberg_witch_trials",
@@ -5382,15 +5373,6 @@
     "chapter:ch03"
    ],
    "from": "sources/ch03-mesopotamia.md"
-  },
-  {
-   "id": "source:en-wikipedia-org/37538f1dd6",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Wiccan_Rede",
-   "links": [
-    "relic:v72"
-   ],
-   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:en-wikipedia-org/396465e28d",
@@ -5679,8 +5661,7 @@
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Doreen_Valiente",
    "links": [
-    "chapter:ch38",
-    "relic:v72"
+    "chapter:ch38"
    ],
    "from": "sources/ch38-wicca-modern-paganism.md"
   },
@@ -7145,15 +7126,6 @@
     "chapter:ch26"
    ],
    "from": "sources/ch26-kabbalah.md"
-  },
-  {
-   "id": "source:en-wikipedia-org/bd5ef89438",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Charge_of_the_Goddess",
-   "links": [
-    "relic:v72"
-   ],
-   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:en-wikipedia-org/beff1deb61",
@@ -11608,6 +11580,15 @@
    "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
+   "id": "source:muse-jhu-edu/cc39380b99",
+   "type": "source",
+   "label": "https://muse.jhu.edu/article/609097",
+   "links": [
+    "relic:v72"
+   ],
+   "from": "sources/v72-book-of-shadows.md"
+  },
+  {
    "id": "source:muse-jhu-edu/da855b5584",
    "type": "source",
    "label": "https://muse.jhu.edu/book/12956",
@@ -12443,6 +12424,15 @@
     "chapter:ch46"
    ],
    "from": "sources/ch46-creation.md"
+  },
+  {
+   "id": "source:open-edu/4b29543ec1",
+   "type": "source",
+   "label": "https://www.open.edu/openlearn/history-the-arts/a-spiritual-revolution-wicca-and-religious-change-the-1960s/content-section-3.1",
+   "links": [
+    "relic:v72"
+   ],
+   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:open-edu/548c5270f7",
@@ -16405,6 +16395,15 @@
     "relic:v11"
    ],
    "from": "sources/v11-rohonc-codex.md"
+  },
+  {
+   "id": "source:wrldrels-org/ec0d4facac",
+   "type": "source",
+   "label": "https://wrldrels.org/?p=14714",
+   "links": [
+    "relic:v72"
+   ],
+   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:www-current-chs-harvard-edu/6cbfeb8169",
