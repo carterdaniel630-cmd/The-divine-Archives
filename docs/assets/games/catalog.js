@@ -40,7 +40,7 @@ window.ARCHIVE_GAMES = [
     subtitle: "The gatekeeper opens the way — follow the clues into the chapters.",
     chapter: "ch40", hiddenIn: "ch40", eggs: ["ch11", "ch34", "ch27"] },
   { id: "fighter", title: "Divine Casualties", fullTitle: "Divine Casualties — War of the Gods",
-    subtitle: "War of the Gods — a duel of the Olympians, drawn from real myth.",
+    subtitle: "War of the Gods — Zeus, Poseidon, Athena and Hades duel, drawn from real myth.",
     chapter: "ch08", hiddenIn: "ch08", eggs: ["ch24", "ch14", "ch43"] },
   { id: "pong", title: "Antithesis", fullTitle: "Antithesis — The Eternal Contest",
     subtitle: "The Eternal Contest — two cosmic principles volley the sacred orb.",

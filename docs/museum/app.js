@@ -1064,7 +1064,7 @@ function openCard(ex) {
   } else if (d.type === "pilgrimage") {
     const P = (window.PILGRIMAGE && window.PILGRIMAGE.sites) || [], live = P.filter((x) => x.status === "live");
     h = `<p class="mu-cat">A portal</p><h2 id="mu-card-h">The Pilgrimage</h2>` +
-      `<p>Step through to walk inside the sacred sites themselves, modelled from published surveys, with copies of their relics linked to the Vault. Sites open one or two at a time; ${P.length - live.length} more are in preparation.</p>` +
+      `<p>Step through to walk inside the sacred sites themselves, each modelled from the best record that survives and saying on site what is measured, what is estimated and what is reconstructed, with renditions of objects linked to the Vault. Sites open one or two at a time; ${P.length - live.length} more are in preparation.</p>` +
       (live.length ? `<ul class="mu-list">${live.map((x) => `<li><a href="pilgrimage/${esc(x.id)}.html">${esc(x.name)}</a><small>${esc(x.place || "")}${x.pending ? " · recently added, pending review" : ""}</small></li>`).join("")}</ul>` : "") +
       `<div class="mu-actions">${live.length ? btn("pilgrimage/" + live[0].id + ".html", "Walk the " + live[0].name.replace(/^The /, "")) : ""}${btn("pilgrimage.html", "All sites", true)}</div>`;
   } else if (d.type === "about") {
