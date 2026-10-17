@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26) + Journal hero selfie correction (Item 27).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -156,6 +156,19 @@ items as they finish, one by one. This item does not itself approve any merge.
 - **D4 (approve the charter if up to standard) is UNCHANGED.** Carter did not address D4 in this ruling. Item 23's D4 condition still stands.
 
 **900 Theses is still blocked on Gates A–D + the intake ruling. Item 26 does not unblock it.**
+
+## Item 27 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–26)
+
+| 27 | CORRECTION: The Unfinished Journal hero is based on Carter's selfie | NEW | `handoff/correction-2026-10-17-journal-hero-selfie.md` |
+
+**This item is the controlling record for the Journal hero character. It applies to PR #60 and any future work on that character.**
+
+- **The hero character is based on CARTER'S ORIGINAL SELFIE.** The character IS based on Carter himself. The face is Carter's face.
+- **Do NOT treat the hero as an entirely different character.** Do NOT redesign it into a generic explorer. The hero MUST remain based on Carter's selfie image.
+- **The redesign must fit the parameters AND keep the selfie base.** Remove the famous-film-explorer look — fedora, leather jacket, whip swing, boulder set pieces. Change the costume, the props, and the setting — NOT the face, NOT the person. The face stays Carter's.
+- **If the selfie image is not in the repo, STOP and ask Carter for it.** Do NOT invent a new face. Do NOT substitute a generic face. Wait for Carter to supply the selfie image.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 27 does not unblock it.**
 
 ## Already in the repo — DO NOT re-send
 
