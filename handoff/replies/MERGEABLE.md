@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-17, 17:05 New York. **Live site (`main`):** `c455bfe`, unchanged.
+**As of:** 2026-10-17, evening New York (build loop). **Live site (`main`):** `c455bfe`, unchanged.
 
 ## Mergeable now
 None yet.
@@ -16,6 +16,9 @@ None yet.
 | CI fix: Lighthouse runs finish instead of being cancelled | `staging/ready-line` `ac6d5fa` | Yes | Ships with site batch A (same branch). No separate merge. |
 
 ## Not ready (in progress or waiting on a ruling)
+- Site batch B, small defects (hallway hiss removed; "199 figures"; V72 sources, back to pending): branch
+  `loop/small-defects-2026-10-17` `ce31f9f`, built on batch A. Part 1 done and all local checks green; part 2 (Bagh-chal,
+  zodiac `dispose()`, Oracle Bones, fonts, Grimoire) still to do; then it needs its own independent review, and batch A merged first.
 - Protection charter: draft only, waiting on Carter D1–D4 (`handoff/protection-charter-DRAFT.md`).
 - Hero portrait and the whip/boulder set pieces in The Unfinished Journal: waiting on Carter.
 - 900 Theses room: blocked on Gates A–D and the intake ruling.
