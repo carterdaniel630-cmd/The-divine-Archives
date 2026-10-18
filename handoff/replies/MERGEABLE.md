@@ -4,18 +4,23 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-17, 17:05 New York. **Live site (`main`):** `c455bfe`, unchanged.
+**As of:** 2026-10-17, evening New York (build loop). **Live site (`main`):** `c455bfe`, unchanged.
 
 ## Mergeable now
-None yet.
+| Item | Where | Review | Carter's approval | Still to hold before merging |
+|---|---|---|---|---|
+| Site batch A (PR #59): over-claims fixed; trademark ids renamed with old links and scores carried over; Hades reworded; "The Unfinished Journal"; Lighthouse workflow fix | `staging/ready-line`, site content of `ac6d5fa` (everything after touches `handoff/` only) | `2026-10-17-batch-a-independent-review.md`: 0 findings | Item 24 merge order + Tomb Robber confirmation ("a") | Every GitHub check green on the merge commit, Lighthouse included (waiting for a run to finish) |
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
-| Site batch A: over-claiming pages fixed; trademark ids renamed with old links and scores carried over; Hades reworded; "The Tomb Robber" → "The Unfinished Journal" | `staging/ready-line`, site changes up to `6b419fd` (later commits touch `handoff/` and the Lighthouse workflow only) | Yes | 1) A fresh independent review: the last one covered `2ab371d`, before the game rename. 2) Lighthouse green: no run has finished yet, because each push cancelled it; fixed in `ac6d5fa`. 3) Carter's explicit yes, since reviewer auto-pass is off. |
-| CI fix: Lighthouse runs finish instead of being cancelled | `staging/ready-line` `ac6d5fa` | Yes | Ships with site batch A (same branch). No separate merge. |
 
 ## Not ready (in progress or waiting on a ruling)
+- Site batch B, small defects (hallway hiss removed; "199 figures"; V72 sources, back to pending): branch
+  `loop/small-defects-2026-10-17` `ce31f9f`, built on batch A. Part 1 done and all local checks green; part 2 (Bagh-chal,
+  zodiac `dispose()`, Oracle Bones, fonts, Grimoire) still to do; then it needs its own independent review, and batch A merged first.
 - Protection charter: draft only, waiting on Carter D1–D4 (`handoff/protection-charter-DRAFT.md`).
-- Hero portrait and the whip/boulder set pieces in The Unfinished Journal: waiting on Carter.
+- The Unfinished Journal hero redesign (original surveyor, plumb-line, sand torrent and scree, zoom, spike pit): PR #60,
+  branch `loop/journal-hero-redesign` `6862dee`, stacked on batch A. Done and all local checks green; needs its own
+  independent review and green GitHub checks, and batch A merged first.
 - 900 Theses room: blocked on Gates A–D and the intake ruling.

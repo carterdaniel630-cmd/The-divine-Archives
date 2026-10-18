@@ -1,56 +1,58 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-17, evening (New York). **Answers:** manifest-v2 through Item 21 (last loop run: audit + fold), plus Carter's rulings of 2026-10-17 16:30.
-**Branch:** `staging/ready-line`. Nothing merged. Nothing live.
-**Loop:** ON (rules in `handoff/LOOP.md`): one item per run, each run starts the next.
+**As of:** 2026-10-17, evening (New York). **Answers:** manifest-v2 through Item 22, Carter's rulings of 2026-10-17 16:30,
+`decisions-2026-10-17-carter-answers-2.md` (16:53), `decisions-2026-10-17-priority-by-value.md` (17:06) and
+`decisions-2026-10-17-charter-and-pr59.md` (Item 23).
+**Branches:** `staging/ready-line` = site batch A (site changes up to `6b419fd`, Lighthouse fix `ac6d5fa`; later commits
+touch `handoff/` only). `loop/small-defects-2026-10-17` = batch B in progress (built on batch A). Nothing merged. Nothing live.
+**Loop:** ON (rules in `handoff/LOOP.md`): one item per run, highest value first, each run starts the next.
+**Rule while batch A waits:** new site work goes on `loop/*` side branches built from the batch A head, never on
+`staging/ready-line`, so batch A stays a clean merge candidate (LOOP.md Item 21 condition 5). Only `handoff/` lands on staging.
 
 ## Done
-- Audit + fold: both audit briefs, the atlas audit, the specialist briefs and the fix package were checked against the
-  repo and folded into one de-duplicated list (`handoff/audits/folded-worklist-2026-10-17.md`). Found: most findings
-  are still open; D11 deploy truth is already consistent; the atlas audit's "zero external requests" claim is false.
-- Ready-line §1: Protection charter DRAFTED (`handoff/protection-charter-DRAFT.md`, reply
-  `2026-10-17-protection-charter-draft.md`). Found: the GitHub repo is public; no LICENSE/copyright notices; no asset
-  ledger; no CSP. No secrets or source maps shipped. Awaiting Carter (D1–D4 below); its build PRs wait on approval.
-- Item 21 merge check for PR #59: independent review done (`2026-10-17-item21-merge-check-pr59.md`). Everything works and
-  every check ran green locally; NOT merged, because two reviewer holds need Carter (below).
-- Ready-line §2, over-claiming pages: fixed and verified (`2026-10-17-pickup-and-overclaim-fix.md`).
-- Trademark game ids removed (pacman, pong, minesweeper, risk → labyrinth, antithesis, excavation, dominion). Old links and
-  scores carry over (`2026-10-17-trademark-ids-and-hades.md`).
-- Hades no longer called an Olympian in the fighter.
-- Channel: `PROTOCOL-two-way-channel.md`, `handoff/replies/`, `handoff/LOOP.md`.
+- Small defects, part 1 (reply `2026-10-17-small-defects-hiss-199-v72.md`, branch `loop/small-defects-2026-10-17`
+  `ce31f9f`): hallway hiss removed (corridors now faint wind only); "199 gods" → "199 figures" (Pantheon meta/OG,
+  founder guide); V72's 4 Wikipedia citations replaced with checked sources. V72 carries the pending-review tag again
+  because its text changed. All checks green.
+- Carter batch 2: Tomb Robber renamed **The Unfinished Journal**; old commit note left; old-id table removed 90 days after go-live.
+- Mergeable list started (`replies/MERGEABLE.md`, Item 22).
+- Audit + fold (`handoff/audits/folded-worklist-2026-10-17.md`); Protection charter DRAFTED; Item 21 merge check of
+  `2ab371d`; over-claiming pages fixed; trademark game ids removed; Hades reworded.
 
 ## In progress
-- (none: the next loop run picks up the first item below)
+- (none: the next loop run picks up item 1 below)
 
-## Next (the loop works these in order; the full folded list is `handoff/audits/folded-worklist-2026-10-17.md` §B)
-1. Small defects that need no ruling: remove the hallway hiss (`brook()` in the corridors and fountain); change
-   "199 gods" to "199 figures" in the Pantheon meta/OG and founder-guide; replace V72's 4 Wikipedia citations with real ones.
-2. Debate Hall preview safety: the bookmark raw-HTML round-trip and the compare-well quotation marks.
-3. Small fixes: zodiac `dispose()` should clear only its own host; Bagh-chal diagonals and the "standard board" claim;
-   Oracle Bones wording and Google Fonts removed from 2 exhibits; amendment line in the Debate Hall spec ("fifteen" → 16);
-   Grimoire disclaimers and lore flags.
-4. Museum phone pixel-ratio cap (1.5 → 1.0), with a performance before/after.
-5. `relics.js` GPU-memory trace; blurred symbol sprites and the missing symbol walls.
-6. Fix package (§7), relic by relic in the package's order (folded list §B row 13).
-7. Larger items (folded list §B rows 14–24): teardowns and math reviews, glyph audit, symbols registry, room registry
-   and Directory 83/84, Arcade D2, playability floor, audio standard, debate engine, all-games audit.
-- Waiting on Carter (not worked by the loop): PR #59 merge. When Carter answers, the next run re-checks GitHub checks
-  and merges only if all are green and no site file changed since 2ab371d.
-- Small, not blocking: PR #59's description still says "all files under handoff/, no deploy impact". Correct it before any merge.
+## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; full list in the folded worklist §B)
+1. **Fresh independent review of site batch A** (`origin/main...` the staging head; site changes up to `6b419fd` plus
+   `ac6d5fa`) against `reviews/REVIEWER.md` §3–§4, by a run that wrote none of it (this run wrote none of it: its own
+   site work is on the side branch). Plus a completed green Lighthouse run on GitHub. Correct PR #59's description
+   ("no deploy impact") first. Item 23 approves the PR #59 merge IF up to standard, which answers the auto-pass hold:
+   if the review has zero open findings and zero NEEDS CARTER, every GitHub check on the candidate is green and all
+   LOOP.md Item 21 conditions hold, list batch A in `MERGEABLE.md` and the reviewing run may do that one merge.
+2. Museum phone performance: pixel-ratio cap 1.5 → 1.0, measured before and after on the phone budget.
+3. Arcade playability floor: difficulty selector, undo where it fits, short tutorial, readable tap targets; most-played first.
+4. Fix package (§7), relic by relic, most visible rooms first.
+5. Small defects, part 2 (add to `loop/small-defects-2026-10-17`): Bagh-chal diagonals and the "standard board" claim
+   (live-text accuracy, first); zodiac `dispose()` clears only its own host; Oracle Bones wording; Google Fonts out of 2
+   exhibits; Grimoire disclaimers and lore flags.
+6. Debate Hall preview safety: bookmark raw-HTML round-trip; compare-well quotation marks. Spec amendment "fifteen" → 16.
+7. Larger items (folded list §B rows 14–24), each ranked by the same rule when reached.
+- Scheduled (Carter batch 2 §3): 90 days after the merge carrying `2ab371d` lands on `main`, remove the old-id table
+  (`archive-games.js`, `framework/adapters/track.js`, arcade `site.js`, `framework/test/renamed.test.js`) on staging.
+  The merging run records the go-live and due dates in `handoff/CURRENT.md`.
 
 ## Needs Carter
-- **Protection charter** (`handoff/protection-charter-DRAFT.md` §5):
-  D1 Make the GitHub repo private? A) Yes (recommended) B) Keep public.
-  D2 Copyright line name? A) Carter Daniel B) A business name C) The Divine Archives.
-  D3 Register copyright? A) Ask a lawyer B) Not now.
-  D4 Approve the charter? A) Yes B) With changes C) Not yet.
-- **Merge PR #59?** Reviewed: nothing broken, all local checks green. Held because the reviewer's auto-pass is off
-  (`reviews/status.json`), which makes every item need you, and because of the Tomb Robber question below.
-  Options: A) Yes, merge as reviewed. B) Wait.
-- **"The Tomb Robber"** card (boulder, tiger, whip): rename as a possible film-franchise lookalike?
-  Options: A) Keep. B) Reword the blurb only. C) Rename and reword.
-- **New rulings surfaced by the audit fold** (folded list §C): Pythia Pantheon entry? Errata page location? Ouija title?
-  Scope of hit-feel sets while the fighter is parked? Override the phone's reduced-motion setting (recommend no)?
-  The Ra-Horakhty correction text is missing from the repo: please have Muse send it.
-- Remove the old-id compatibility table 90 days after this goes live? (Removing it breaks old links.)
+- **Unfinished Journal hero** (still reads as the famous film explorer: fedora, leather jacket, whip swing, boulder):
+  A) Redesign hero + rework those two set pieces (recommended). B) Hero only. C) Keep.
+- **Re-clear V72 (Book of Shadows)** in your next batch review: only its sources list changed (Wikipedia out).
+- **Protection charter** (Item 23 answers): D1 private = YES, but changing repo settings is an account action the loop
+  may not do: **you flip it** (GitHub app → repo → Settings → Change visibility → Private), or tell a session to.
+  D2 copyright name: still yours to pick. D3 register only if free: US registration has a filing fee, so the loop will
+  not register (to be confirmed in the charter pass). D4 approve if up to standard: a later loop run checks the draft
+  against the standard and fixes it first.
+- **Note:** Item 23 lists Tomb Robber, old commit note and the old-id table as still open, but you answered them at 16:53
+  (`decisions-2026-10-17-carter-answers-2.md`). The loop follows the 16:53 answers unless you say otherwise.
+- **Email-list account** so the home-page sign-up can be switched on (founder lane, value 4).
+- **Rulings from the audit fold** (folded list §C): Pythia Pantheon entry? Errata page location? Ouija title? Hit-feel
+  scope while the fighter is parked? Override reduced-motion (recommend no)? Ra-Horakhty correction text: please have Muse send it.
 - 900 Theses intake ruling (Vault? chapter? Pantheon? none?), plus Gates A–D.

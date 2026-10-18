@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26) + Journal hero selfie correction (Item 27) + loop restart ping (Item 28) + tie-it-all-in Graphify order (Item 29).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -92,6 +92,111 @@ specific merge. Merge approval is per-item, not blanket. This list is how Carter
 items as they finish, one by one. This item does not itself approve any merge.
 
 **900 Theses is still blocked on Gates A–D + the intake ruling. Item 22 does not unblock it.**
+
+## Item 23 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–22)
+
+| 23 | Carter's decisions: Protection charter (D1–D4) + PR #59 merge | NEW | `handoff/decisions-2026-10-17-charter-and-pr59.md` |
+
+**This item is the controlling record for these decisions:**
+
+- **D1 — Make the GitHub repo private? — YES.** Make the repo private.
+- **D2 — Copyright line name? — PENDING.** Carter asked "what would you suggest." No D2 decision recorded yet. Do NOT record one until Carter picks.
+- **D3 — Register copyright? — IF FREE AND POSSIBLE.** Register only if free and possible. If it costs anything or is not possible, do NOT register — report back why.
+- **D4 — Approve the charter? — IF IT'S UP TO STANDARD.** Approve only if up to standard (including Claude's own standards). If not up to standard, fix it first. Do NOT treat as approved until it meets the standard.
+- **PR #59 merge — IF UP TO STANDARD.** Merge only if completed AND up to standard (including Claude's own standards, all checks green, no site file changed since the review). If not completed or not to standard, do NOT merge. Restates the Item 21 conditional approval with the review conditions spelled out. Approves no other merge.
+
+**Still OPEN (Carter has NOT answered):** old save note (leave / rewrite), "The Tomb Robber" (keep / reword blurb / rename + reword), hidden old-name table (delete 90 days after live? Yes / No). Do NOT record answers for these.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 23 does not unblock it.**
+
+## Item 24 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–23)
+
+| 24 | Carter's order: MERGE PR #59 | NEW | `handoff/order-2026-10-17-merge-pr59.md` |
+
+**This item is the controlling record for the merge order:**
+
+- **Carter orders: MERGE PR #59.** Carter said "merge" on Sat 2026-10-17 ~17:10 EDT.
+- **Safeguards — before merging:**
+  1. Correct PR #59's description — it still says "all files under handoff/, no deploy impact" but it now changes the live site. Fix the description to say what it actually merges.
+  2. Re-check ALL GitHub checks including Lighthouse (which was still running at review time) — merge ONLY if every check is green.
+  3. Verify no site file changed since the review commit 2ab371d — if anything changed, re-review before merging.
+  4. If any check fails or anything changed, do NOT merge — report back to Carter what failed.
+- **Tomb Robber does NOT block this merge.** Carter did NOT answer the Tomb Robber question. Leave the card as-is for this merge. The Tomb Robber rename/reword question stays OPEN for after the merge.
+- **This order approves ONLY PR #59.** No other merge is approved.
+- **After merging, report back in plain words:** what merged, what checks passed, what's live.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 24 does not unblock it.**
+
+## Item 25 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–24)
+
+| 25 | Carter's standing cycle rule: pickup → rework → standard → merge | NEW | `handoff/cycle-rule-pickup-rework-standard-merge.md` |
+
+**This item is the controlling record for the standing cycle rule:**
+
+- **THE CYCLE, for every item, in order:** (1) PICK IT UP — read it, understand what it is. (2) REWORK IT — rebuild it even better, do not just copy it. (3) BRING IT TO STANDARD — hold it to Carter's bar AND Claude's own standards; if it does not meet the bar, fix it first, do not ship it. (4) MERGE IT — only when it is completed AND up to standard AND Carter approved that specific merge. Then immediately pick up the NEXT item and run the same cycle. Keep the cycle moving — pickup → rework → standard → merge → next item, no waiting in between.
+- **This rule applies to ALL items going forward**, not just PR #59.
+- **After the merge, the next thing up gets run through the same cycle** — keep the cycle moving.
+- **Nothing merges unless it is on the running mergeable list (Item 22) AND Carter approved that specific merge** (per-item approval, not blanket).
+- **Everything adds to the one live site and the one repo.** There is no separate build. The staging branch is a workbench, not a second site.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 25 does not unblock it.**
+
+## Item 26 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–25)
+
+| 26 | Carter's decision: Protection charter D1–D3 PARKED | NEW | `handoff/decisions-2026-10-17-charter-parked.md` |
+
+**This item is the controlling record for D1–D3. It supersedes Item 23 on D1, D2, and D3.**
+
+- **D1 — Make the GitHub repo private? — PARKED.** Carter: "Not worried about flipping the repo setting to private right now, so it's fine." Do NOT flip the repo to private now. Leave it public for now. Revisit later, when Carter says so.
+- **D2 — Copyright line name? — DECIDED BUT PARKED.** On the site, the copyright line reads **The Divine Archives**. The legal name, if ever registering, is **DANIEL CARTER** — first name Daniel, last name Carter.
+  - **CORRECTION:** Earlier files said "Carter Daniel." That is WRONG. The correct legal name is **Daniel Carter** (first name Daniel, last name Carter). Use Daniel Carter everywhere from now on. Do NOT use "Carter Daniel" as the legal name.
+  - Do NOT apply the copyright line yet. D2 is parked with D1 and D3 — put off to the side until Carter says to revisit.
+- **D3 — Register copyright? — DO NOT REGISTER.** US registration has a filing fee, so the loop will not register.
+- **D1, D2, and D3 are ALL PARKED / PUT OFF TO THE SIDE for now.** Carter: "We're not prepared for that." Do NOT act on D1, D2, or D3 yet. Do NOT flip the repo, do NOT apply the copyright line, do NOT register. Revisit only when Carter says so.
+- **D4 (approve the charter if up to standard) is UNCHANGED.** Carter did not address D4 in this ruling. Item 23's D4 condition still stands.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 26 does not unblock it.**
+
+## Item 27 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–26)
+
+| 27 | CORRECTION: The Unfinished Journal hero is based on Carter's selfie | NEW | `handoff/correction-2026-10-17-journal-hero-selfie.md` |
+
+**This item is the controlling record for the Journal hero character. It applies to PR #60 and any future work on that character.**
+
+- **The hero character is based on CARTER'S ORIGINAL SELFIE.** The character IS based on Carter himself. The face is Carter's face.
+- **Do NOT treat the hero as an entirely different character.** Do NOT redesign it into a generic explorer. The hero MUST remain based on Carter's selfie image.
+- **The redesign must fit the parameters AND keep the selfie base.** Remove the famous-film-explorer look — fedora, leather jacket, whip swing, boulder set pieces. Change the costume, the props, and the setting — NOT the face, NOT the person. The face stays Carter's.
+- **If the selfie image is not in the repo, STOP and ask Carter for it.** Do NOT invent a new face. Do NOT substitute a generic face. Wait for Carter to supply the selfie image.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 27 does not unblock it.**
+
+## Item 28 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–27)
+
+| 28 | PING: Restart the loop now | NEW | `handoff/ping-2026-10-17-restart-loop.md` |
+
+**PING — RESTART THE LOOP NOW.** Carter says the loop has gone quiet (about 25 minutes, no new commit since the Journal hero reply). Nudge it now. Restart the loop. Keep the cycle moving.
+
+- **Pick up Items 26 and 27 — they have NOT been picked up yet.** Item 26: charter D1–D3 parked. Item 27: Journal hero based on Carter's selfie.
+- **Report back in STATUS:** Are you running? What is the next item? What is blocking you — Lighthouse? Tokens? Something else?
+- **If paused, say why and restart.** If waiting on Lighthouse, say so — and keep working the next items that do not need the merge.
+- **Keep the cycle moving:** pickup → rework → standard → merge → next item.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 28 does not unblock it.**
+
+## Item 29 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–28)
+
+| 29 | ORDER: Tie it all in — Graphify + standards + everything as one system | NEW | `handoff/order-2026-10-17-tie-it-all-in-graphify.md` |
+
+**TIE IT ALL IN.** Graphify + the standards check + all Muse-side work + all Claude-side work must work as ONE single high-tier, high-value system — not separate pieces. Everything operating at its peak, across the board.
+
+- **(1) WIRE GRAPHIFY IN.** Graphify is built but not wired into the active branch. Wire it in so Claude can actually use it (pickup → rework → bring to standard → merge, per Item 25). Graphify's codebase map (nodes / edges / communities) becomes the backbone for understanding what is built.
+- **(2) GRAPHIFY HELD TO THE SAME STANDARDS.** Graphify itself must meet Carter's bar AND Claude's own standards — same as everything else. If it does not meet the bar, fix it first. No exceptions, no lower bar for tooling.
+- **(3) STANDARDS VISUALIZATION ON TOP.** Build a single visual dashboard showing EVERYTHING (Muse-side work + Claude-side work) and whether each item is up to standard — UP TO STANDARD / NEEDS WORK / BLOCKED / PARKED / NOT YET BUILT. Use Graphify's map to power it. Plain words, color-coded, one view.
+- **(4) ONE SYSTEM.** After wiring, Graphify + the dashboard + the loop + the mergeable list (Item 22) + the cycle rule (Item 25) all work as one system. No separate builds, no side branches that never merge.
+
+**This order does NOT itself approve any merge.** Each merge still needs Carter's per-item approval.
+
+**900 Theses is still blocked on Gates A–D + the intake ruling. Item 29 does not unblock it.**
 
 ## Already in the repo — DO NOT re-send
 
