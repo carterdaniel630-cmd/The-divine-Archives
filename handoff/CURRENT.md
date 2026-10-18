@@ -76,6 +76,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   run as manual sessions.
 
 ## Decisions still in effect
+- Carter, 2026-10-11 tie-ins: visual passes use the frontend-design skill (CLAUDE.md, quality bar); the reviewer
+  and auditor are project skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, wrapping `reviews/`); OmniRoute is
+  not used.
 - Sourcing rule: scholarly or primary sources first, Wikipedia only as a labelled pointer; flag any chapter
   over 20%.
 - No images of the Báb; tjurunga never shown; restricted sites exterior only; Kaaba courtyard without figures.
