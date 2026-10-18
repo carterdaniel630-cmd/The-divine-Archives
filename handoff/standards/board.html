@@ -48,28 +48,35 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
 <main class="wrap">
 <header><h1>Standards Board</h1>
 <p class="lede">Every item, Claude side and Muse side, and whether it meets the bar. As of 2026-10-18. Worst first.</p></header>
-<nav class="tallies" aria-label="Status counts"><a class="tally s-needs-work" href="#g-needs-work"><span class="n">3</span><span class="l">Needs work</span></a><a class="tally s-not-built" href="#g-not-built"><span class="n">8</span><span class="l">Not yet built</span></a><a class="tally s-blocked" href="#g-blocked"><span class="n">8</span><span class="l">Blocked</span></a><a class="tally s-up" href="#g-up"><span class="n">1</span><span class="l">Up to standard</span></a><a class="tally s-parked" href="#g-parked"><span class="n">2</span><span class="l">Parked</span></a></nav>
-<section class="group" id="g-needs-work"><h2><span class="dot s-needs-work"></span>Needs work <span class="c">3</span></h2><p class="gd">Built, not yet up to standard. Fix first.</p>
+<nav class="tallies" aria-label="Status counts"><a class="tally s-needs-work" href="#g-needs-work"><span class="n">4</span><span class="l">Needs work</span></a><a class="tally s-not-built" href="#g-not-built"><span class="n">8</span><span class="l">Not yet built</span></a><a class="tally s-blocked" href="#g-blocked"><span class="n">5</span><span class="l">Blocked</span></a><a class="tally s-up" href="#g-up"><span class="n">1</span><span class="l">Up to standard</span></a><a class="tally s-parked" href="#g-parked"><span class="n">4</span><span class="l">Parked</span></a></nav>
+<section class="group" id="g-needs-work"><h2><span class="dot s-needs-work"></span>Needs work <span class="c">4</span></h2><p class="gd">Built, not yet up to standard. Fix first.</p>
 <div class="list"><article class="item s-needs-work" id="batch-b">
   <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Site</span></div>
-  <h3>Small defects batch B: hiss, 199 figures, V72 sources</h3>
-  <p>Part 1 done and green; part 2 (Bagh-chal, zodiac dispose, Oracle Bones, fonts, Grimoire) not done; no independent review yet.</p>
+  <h3>Small defects batch B: hiss, 199 figures, V72 sources, Ra-Horakhty</h3>
+  <p>Part 1 and the Ra-Horakhty correction done and green (aeda5d4); part 2 (Bagh-chal, zodiac dispose, Oracle Bones, fonts, Grimoire) not done; then an independent review.</p>
   <p class="where">loop/small-defects-2026-10-17</p>
-  <p class="map"><span class="tag">Map</span> <b>71</b> code symbols in the map · used by <code>docs/museum/inspect.js</code>, <code>docs/museum/sky.js</code></p>
+  
 </article>
 <article class="item s-needs-work" id="graphify">
   <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Tooling</span></div>
   <h3>Graphify code map</h3>
   <p>Installs and stays current with main. Fixed on this branch: vendored three.js/OpenSeadragon were 47% of the map (6,142 nodes, now 3,313). Still open: community names are numbers, not plain words (the board names them by their main file instead).</p>
   <p class="where">.graphifyignore, tools/graphify-session.sh, .github/workflows/graphify.yml</p>
-  <p class="map"><span class="tag">Map</span> <b>2</b> code symbols in the map</p>
+  
 </article>
 <article class="item s-needs-work" id="board">
   <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Tooling</span></div>
   <h3>Standards board (this page)</h3>
   <p>First version. Needs Carter's look and the loop to keep statuses current at every checkpoint.</p>
   <p class="where">handoff/standards/board.html; phone view https://claude.ai/artifact/8xFoiVPYGWFd7Xax8q5NLt</p>
-  <p class="map"><span class="tag">Map</span> <b>0</b> code symbols in the map · not in the map: <code>tools/build-standards-board.js</code></p>
+  
+</article>
+<article class="item s-needs-work" id="muse-ra">
+  <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Site</span></div>
+  <h3>Ra-Horakhty name correction</h3>
+  <p>Text received (Item 30). Applied to the Pantheon entry on batch B (aeda5d4), sourced; goes live with batch B after review and Carter's yes.</p>
+  <p class="where">loop/small-defects-2026-10-17</p>
+  
 </article></div></section>
 <section class="group" id="g-not-built"><h2><span class="dot s-not-built"></span>Not yet built <span class="c">8</span></h2><p class="gd">In the queue.</p>
 <div class="list"><article class="item s-not-built" id="museum-dpr">
@@ -77,28 +84,28 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <h3>Museum phone performance: pixel ratio 1.5 to 1.0</h3>
   <p>Needs a before/after measurement on the phone budget.</p>
   <p class="where">docs/museum/app.js:72</p>
-  <p class="map"><span class="tag">Map</span> <b>117</b> code symbols in the map · used by <code>docs/assets/games/ouroboros.js</code>, <code>docs/assets/games/ziggurat.js</code>, <code>tools/build-og.js</code> · shares an area with <code>docs/assets/games/ziggurat.js</code></p>
+  
 </article>
 <article class="item s-not-built" id="arcade-floor">
   <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Games</span></div>
   <h3>Arcade playability floor: difficulty, undo, tutorial, tap targets</h3>
   <p>Difficulty in 2 of 15 games, tutorial in 3 of 15.</p>
   <p class="where">docs/assets/games</p>
-  <p class="map"><span class="tag">Map</span> <b>37</b> code symbols in the map</p>
+  
 </article>
 <article class="item s-not-built" id="fix-package">
   <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Museum</span></div>
   <h3>Fix package: relics RF-6 to RF-16, M1 to M16</h3>
   <p>Relic by relic, most visible rooms first.</p>
   <p class="where">docs/museum/relics.js</p>
-  <p class="map"><span class="tag">Map</span> <b>147</b> code symbols in the map · used by <code>docs/pilgrimage/engine.js</code>, <code>docs/museum/inspect.js</code></p>
+  
 </article>
 <article class="item s-not-built" id="relics-gpu">
   <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Museum</span></div>
   <h3>relics.js never frees GPU memory</h3>
   <p>Trace whether it leaks; fix if so.</p>
   <p class="where">docs/museum/relics.js</p>
-  <p class="map"><span class="tag">Map</span> <b>147</b> code symbols in the map · used by <code>docs/pilgrimage/engine.js</code>, <code>docs/museum/inspect.js</code></p>
+  
 </article>
 <article class="item s-not-built" id="debate-safety">
   <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Previews</span></div>
@@ -112,7 +119,7 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <h3>Blurred symbol sprites; missing symbol walls (Wings I, VII-IX)</h3>
   <p>Sheets last changed 10-06.</p>
   <p class="where">docs/museum/symbols/</p>
-  <p class="map"><span class="tag">Map</span> <b>7</b> code symbols in the map · shares an area with <code>tools/founder-shots.js</code></p>
+  
 </article>
 <article class="item s-not-built" id="glyph-audit">
   <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Sources</span></div>
@@ -126,15 +133,15 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <h3>Audio standard: volume control, per-room levels, text equivalents</h3>
   <p>No audio lines in the standards; no volume control in sound.js.</p>
   <p class="where">docs/museum/sound.js</p>
-  <p class="map"><span class="tag">Map</span> <b>24</b> code symbols in the map · used by <code>docs/museum/inspect.js</code></p>
+  
 </article></div></section>
-<section class="group" id="g-blocked"><h2><span class="dot s-blocked"></span>Blocked <span class="c">8</span></h2><p class="gd">Waiting on a ruling, Muse, or something outside the loop.</p>
+<section class="group" id="g-blocked"><h2><span class="dot s-blocked"></span>Blocked <span class="c">5</span></h2><p class="gd">Waiting on a ruling, Muse, or something outside the loop.</p>
 <div class="list"><article class="item s-blocked" id="journal-hero">
   <div class="row"><span class="pill">Blocked</span><span class="meta">Claude · Games</span></div>
   <h3>Unfinished Journal hero redesign (PR #60)</h3>
   <p>Item 27: the hero must be based on Carter's selfie. If the image is not in the repo, the loop must ask Carter.</p>
   <p class="where">loop/journal-hero-redesign</p>
-  <p class="map"><span class="tag">Map</span> <b>137</b> code symbols in the map</p>
+  
 </article>
 <article class="item s-blocked" id="pending-chapters">
   <div class="row"><span class="pill">Blocked</span><span class="meta">Claude · Chapters</span></div>
@@ -150,20 +157,6 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <p class="where">Cloudflare</p>
   
 </article>
-<article class="item s-blocked" id="theses">
-  <div class="row"><span class="pill">Blocked</span><span class="meta">Claude · Rooms</span></div>
-  <h3>900 Theses room</h3>
-  <p>Gates A-D and the intake ruling. Item 29 does not unblock it.</p>
-  <p class="where">handoff/nine-hundred-theses</p>
-  
-</article>
-<article class="item s-blocked" id="email-list">
-  <div class="row"><span class="pill">Blocked</span><span class="meta">Claude · Site</span></div>
-  <h3>Home-page email sign-up</h3>
-  <p>Needs Carter's email-list account.</p>
-  <p class="where">functions/api/subscribe.js</p>
-  <p class="map"><span class="tag">Map</span> <b>3</b> code symbols in the map</p>
-</article>
 <article class="item s-blocked" id="muse-video">
   <div class="row"><span class="pill">Blocked</span><span class="meta">Muse · Video</span></div>
   <h3>Video/audio pipeline (captions, cadence, outro cues, Shamanism video)</h3>
@@ -177,13 +170,6 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <p>Muse-side; not stored in this repo.</p>
   <p class="where">Muse</p>
   
-</article>
-<article class="item s-blocked" id="muse-ra">
-  <div class="row"><span class="pill">Blocked</span><span class="meta">Muse · Corrections</span></div>
-  <h3>Ra-Horakhty correction text</h3>
-  <p>The text is not in the repo; Muse or Carter to send it.</p>
-  <p class="where">Muse</p>
-  
 </article></div></section>
 <section class="group" id="g-up"><h2><span class="dot s-up"></span>Up to standard <span class="c">1</span></h2><p class="gd">Done, verified, meets the bar.</p>
 <div class="list"><article class="item s-up" id="batch-a">
@@ -193,12 +179,26 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <p class="where">main</p>
   
 </article></div></section>
-<section class="group" id="g-parked"><h2><span class="dot s-parked"></span>Parked <span class="c">2</span></h2><p class="gd">Carter parked it. Do not build.</p>
+<section class="group" id="g-parked"><h2><span class="dot s-parked"></span>Parked <span class="c">4</span></h2><p class="gd">Carter parked it. Do not build.</p>
 <div class="list"><article class="item s-parked" id="charter">
   <div class="row"><span class="pill">Parked</span><span class="meta">Claude · Governance</span></div>
   <h3>Protection charter</h3>
   <p>Item 26: D1-D3 parked by Carter.</p>
   <p class="where">handoff/protection-charter-DRAFT.md</p>
+  
+</article>
+<article class="item s-parked" id="theses">
+  <div class="row"><span class="pill">Parked</span><span class="meta">Claude · Rooms</span></div>
+  <h3>900 Theses room</h3>
+  <p>Carter 2026-10-17 (Item 31 #9): on hold. Prep only when he reopens it.</p>
+  <p class="where">handoff/nine-hundred-theses</p>
+  
+</article>
+<article class="item s-parked" id="email-list">
+  <div class="row"><span class="pill">Parked</span><span class="meta">Claude · Site</span></div>
+  <h3>Home-page email sign-up</h3>
+  <p>Carter 2026-10-17 (Item 31 #7): skip for now; the sign-up stays off.</p>
+  <p class="where">functions/api/subscribe.js</p>
   
 </article>
 <article class="item s-parked" id="vr">
@@ -208,7 +208,7 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   
   
 </article></div></section>
-<p class="foot">Graphify map: 3,313 code symbols, 6,466 links, built from <code>ae8091d</code> (current). Statuses come from <code>handoff/standards/board.json</code>; the loop updates it at every checkpoint. Muse-side items can't be checked from the repo, so they stay Blocked until Muse reports.</p>
+<p class="foot">No Graphify map in this checkout, so the board shows no map facts. Run tools/graphify-session.sh first. Statuses come from <code>handoff/standards/board.json</code>; the loop updates it at every checkpoint. Muse-side items can't be checked from the repo, so they stay Blocked until Muse reports.</p>
 </main>
 </body>
 </html>
