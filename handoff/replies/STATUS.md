@@ -1,13 +1,18 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-18 ~21:55 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
-`correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`,
+**As of:** 2026-10-18 ~23:05 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+`correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
 `briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`. **Deployed (`main`):** `77f6444` = batch A + museum
 phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
-**Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `staging/ready-line` carries `handoff/`.
+**Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `loop/graphify-labels` = PR #69 (named map). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-18 ~23:05: **Graphify map** (Carter nudge 18:35): the map already existed on the `graph` branch (built when #65
+  merged; all three outputs) but every group was "Community N". Added plain-word names (`tools/graphify-label.js`, wired
+  into the workflow) as **PR #69**; named snapshot to open now in `handoff/previews/graphify-map/` (link in reply
+  `2026-10-18-graphify-map-named.md`). All local checks green; drawing itself not testable here (library host blocked).
+  Items per run (Item 32): 1 whole item this run, in one work push with the lock folded in.
 - 2026-10-18 22:07: **PR #65 (Item 29) merged by Carter** (`77f6444`), deploy run 194 green. CURRENT and MERGEABLE updated.
 - 2026-10-18 ~21:55: **PR #65 (Item 29) independently reviewed**: 0 findings; same files as the approved `cfb1204`; clean
   build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, board page headless at phone size clean; 7/7 GitHub
@@ -55,6 +60,9 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 - (none)
 
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
+0. **Independent review of PR #69** (Graphify names; small, Carter is waiting on the map): a run that wrote none of it
+   reviews `origin/main...loop/graphify-labels`, confirms GitHub checks green (the graphify check uploads the named map
+   as an artifact), and lists it in MERGEABLE for Carter's yes. Then Item 29 rest (Next 8).
 1. **Hit-feel on the other games now** (Item 31 #5; value 3): impact and game feel on the existing games, most played
    first; respect reduced motion. Build on a `loop/*` branch; merging needs Carter's yes on the item.
 2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
@@ -78,6 +86,8 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
+0. **Open the Graphify map on your phone** (link in `2026-10-18-graphify-map-named.md`) and say if it is readable.
+   Optional: add chapters and Vault prose to the map (needs an AI reading pass) — **yes / not now**.
 1. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
    Options: **A** (recommended) the loop also saves each independent review to the review log and runs the weekly audit
    steps; **B** you attach the repository to the two scheduled tasks in the Claude app; **C** also merge PR #58.
