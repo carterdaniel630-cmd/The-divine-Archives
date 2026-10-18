@@ -49,11 +49,10 @@ Wicca & Modern Paganism (ch38), with The Witch Trials (ch32) for the history Gar
 
 *The book and its makers*
 
-- "Book of Shadows", https://en.wikipedia.org/wiki/Book_of_Shadows
-- "Doreen Valiente", https://en.wikipedia.org/wiki/Doreen_Valiente
-- "Charge of the Goddess", https://en.wikipedia.org/wiki/Charge_of_the_Goddess
-- "Wiccan Rede", https://en.wikipedia.org/wiki/Wiccan_Rede
-- The Doreen Valiente Foundation, https://www.doreenvaliente.org/
+- V. Crowley, "Doreen Valiente", World Religions and Spirituality Project (2018), https://wrldrels.org/?p=14714 (her 1953 initiation by Gardner; her revision of the coven's texts, which reduced the reliance on Crowley; her rewrite of the Charge)
+- The Open University, *A spiritual revolution? Wicca and religious change in the 1960s*, §3.1 "Gardner's coven", OpenLearn, https://www.open.edu/openlearn/history-the-arts/a-spiritual-revolution-wicca-and-religious-change-the-1960s/content-section-3.1 (Gardner's coven; Valiente's development of the rituals; the Charge of the Goddess)
+- The Doreen Valiente Foundation, "About", https://doreenvaliente.org/about-us (1953 initiation; the Charge of the Goddess incorporated into the early Gardnerian Books of Shadows)
+- E. Doyle White, "'An' it Harm None, Do What Ye Will': A Historical Analysis of the Wiccan Rede", Project MUSE, https://muse.jhu.edu/article/609097 (the Rede's history; see the source log)
 
 *Studies*
 

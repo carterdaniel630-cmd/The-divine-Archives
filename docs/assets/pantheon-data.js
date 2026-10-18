@@ -66,8 +66,8 @@
 
   var F = [
     // ---------------------------------------------------------------- Egypt (ch02)
-    { id: "ra", n: "Ra", t: "egypt", k: "deity", ch: ["ch02"], e: "The sun god",
-      d: "Creator and sun god, who sails the sky by day and the underworld by night in his barque. He was often merged with other gods, as Amun-Ra or Ra-Horakhty.",
+    { id: "ra", n: "Ra-Horakhty", t: "egypt", k: "deity", ch: ["ch02"], e: "The sun god",
+      d: "Creator and sun god, who sails the sky by day and the underworld by night in his barque. Shown falcon-headed and crowned with the sun disk, he is Ra-Horakhty, Ra who is Horus of the Two Horizons: two gods joined in one form, the sun at its rising and its setting. Ra is the shorthand everyone uses. He was also merged with Amun, as Amun-Ra.",
       p: "falcon disk ankh sun -", v: ["v34"] },
     { id: "osiris", n: "Osiris", t: "egypt", k: "deity", ch: ["ch02", "ch47"], e: "Lord of the dead",
       d: "Murdered by his brother Set and restored by the magic of Isis, Osiris became king of the underworld and the model for every Egyptian's hope of new life.",

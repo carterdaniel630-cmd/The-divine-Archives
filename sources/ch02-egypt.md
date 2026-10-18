@@ -46,3 +46,13 @@ New section **"Sacred animals: the Apis bull and the animal mummies"** (see `pla
 The chapter goes back to pending review because of these additions.
 
 - **2026-10-10, review correction:** the figure "64 Apis bulls" was removed. It rested on one search snippet and the reviewer could not confirm it; other accounts give different counts (about sixty burials; 24 sarcophagi in the Greater Vaults). The section now gives no single number and says the counts differ. "Thousands of" stelae was also dropped as unconfirmed.
+
+## 2026-10-18 Ra-Horakhty name correction (Pantheon entry `ra`)
+
+Carter approved the correction on 2026-10-17 (`handoff/correction-2026-10-17-ra-horakhty.md`). The Pantheon entry whose
+emblem is the falcon head with the sun disk is now named **Ra-Horakhty**, with "Ra" kept as the common shorthand; the
+entry id `ra` and its links are unchanged. Source, opened from this session:
+- Michael C. Carlos Museum, Emory University, *Life and the Afterlife*, catalogue no. 32, "Re-Horakhty Inlay Plaque":
+  the name means "Re, who is Horus of the Two Horizons," was "the actual name of the Re of Heliopolis," and the god is
+  "depicted as a falcon-headed man … crowned with a sun disk and a uraeus."
+  https://carlos.emory.edu/publications/LifeAndTheAfterlife/catalog/sacred-life/32/
