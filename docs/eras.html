@@ -36,6 +36,10 @@
       font-size: 0.58rem; color: var(--ink-dim); border: 1px solid var(--line);
       padding: 0.25rem 0.55rem; border-radius: 2px;
     }
+    /* the era emblems (inline SVG from build-pages.js): sized here since the page no longer loads emblems.js */
+    .era-emblem { display: block; color: var(--gold, #b98f4e); transition: color 0.3s ease; }
+    .age .num .era-emblem { width: 46px; height: 46px; margin: 0 auto 0.3rem; }
+    .age:hover .era-emblem { color: var(--gold-bright, #d9b06a); }
     @media (max-width: 560px) {
       .age { grid-template-columns: 1fr; gap: 0.6rem; }
       .age .num { border-right: 0; text-align: left; }
