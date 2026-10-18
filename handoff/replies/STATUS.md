@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-18 ~12:15 UTC (build loop). **Answers:** manifest-v2 through Item 31 and every `decisions-*.md` /
+**As of:** 2026-10-18 ~12:30 UTC (build loop). **Answers:** manifest-v2 through Item 31 and every `decisions-*.md` /
 `correction-*.md` to date. **Deployed (`main`):** `7b281cb` = site batch A (PR #59, merged 2026-10-17 21:08 EDT,
 deploy green) plus two handoff-only commits (games Phase 1 record), at the-divine-archives.pages.dev. getconexto.com is not pointed yet (`decisions-2026-10-17-domain-not-pointed.md`).
 **Branches:** `loop/small-defects-2026-10-17` = batch B (`aeda5d4`; behind `main` by two handoff-only files, no site
@@ -9,6 +9,10 @@ change). `loop/museum-phone-dpr` = museum phone speed (`0585c80`, independently 
 **Loop:** RUNNING. One item per run, highest value first, each run starts the next.
 
 ## Done
+- 2026-10-18: **Bagh-chal board fixed** (preview, `handoff/` only): diagonals only through alternating points (the
+  alquerque-pattern board), move rules follow the lines, "standard board" claim and rules text corrected, sources
+  opened (Exeter Abstract Games, RulesPal). **Museum `?fps=1` overlay found already live** since 2026-10-06; checked
+  at phone size, works. All checks green (reply `2026-10-18-bagh-chal-board-and-fps-overlay.md`).
 - 2026-10-18: **Carter's go on both items; PRs opened**: #62 museum phone speed (`0585c80`) and #63 batch B
   (`aeda5d4`). All checks green except Lighthouse, still running on both. Local checks green on both; headless
   phone check clean (reply `2026-10-18-prs-62-63-opened.md`). Nothing merged yet.
@@ -39,25 +43,23 @@ change). `loop/museum-phone-dpr` = museum phone speed (`0585c80`, independently 
 2. **Batch B #63 to live** (value 1; Carter approved): after #62 lands, bring the branch up to `main`; confirm its
    site diff is identical to the reviewed one (a run that did not do the update records this); every check green on
    the new head (Lighthouse included); then merge. See reply `2026-10-18-prs-62-63-opened.md`.
-3. **Museum `?fps=1` frame-rate overlay** (value 3, small): promised in `plans/museum-visual-pass.md` §6 so Carter can
-   measure on his phone. Check the plan's approval covers it before building; if it counts as a new feature, prepare only.
-4. **Small defects, part 2** (handoff drafts and previews, not live; value 5–6, small and sure): Bagh-chal diagonals
-   and the "standard board" claim; zodiac `dispose()` clears only its own host; Oracle Bones wording; Google Fonts out
-   of the Oracle Bones and Library Rescue exhibits; Grimoire "not an instruction" note, Gardnerian label and lore flags.
-   Commit on `staging/ready-line` (handoff only), not batch B.
-5. **Hit-feel on the other games now** (Carter, Item 31 #5; value 3): impact and game feel on the existing games,
+3. **Hit-feel on the other games now** (Carter, Item 31 #5; value 3): impact and game feel on the existing games,
    without waiting for the fighter to unpark. Most-played first; respect reduced motion.
-6. **Reduced motion respected everywhere** (Item 31 #6; value 3): check every game, museum room and exhibit honours
+4. **Reduced motion respected everywhere** (Item 31 #6; value 3): check every game, museum room and exhibit honours
    the phone's setting; fix any that override it. Never override.
+5. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
+6. **Small defects, part 2, the rest** (handoff drafts and previews, not live; value 5–6, small and sure): zodiac
+   `dispose()` clears only its own host; Oracle Bones wording; Google Fonts out of the Oracle Bones and Library Rescue
+   exhibits; Grimoire "not an instruction" note, Gardnerian label and lore flags. (Bagh-chal done 2026-10-18.)
+   Commit on `staging/ready-line` (handoff only), not batch B.
 7. **Item 29, Graphify tie-in, rest:** wire the map into the loop (query before touching code); keep the standards
    board current at each checkpoint. Its merge needs Carter's yes.
-8. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
-9. **Fix package (§7)**, relic by relic, most visible rooms first.
-10. **Spirit Board rename** (Item 31 #4): the Ouija preview (`handoff/previews/ouija-board.html`) and every title or
+8. **Fix package (§7)**, relic by relic, most visible rooms first.
+9. **Spirit Board rename** (Item 31 #4): the Ouija preview (`handoff/previews/ouija-board.html`) and every title or
    label take a generic name like "Spirit Board"; chapter text that mentions the historical Ouija board as a product
    stays factual (value 6 while a preview).
-11. **Errata page in the Vault** (Item 31 #3): prepare it (draft, layout); publishing it needs Carter.
-12. **Protection charter D4** check; **Debate Hall preview safety**; larger items (folded list §B rows 14–24).
+10. **Errata page in the Vault** (Item 31 #3): prepare it (draft, layout); publishing it needs Carter.
+11. **Protection charter D4** check; **Debate Hall preview safety**; larger items (folded list §B rows 14–24).
 - Scheduled: on or after **2027-01-15**, remove the old-id table on a side branch.
 
 ## Parked / on hold (do not build)
@@ -70,4 +72,5 @@ change). `loop/museum-phone-dpr` = museum phone speed (`0585c80`, independently 
   Claude and say "add it to the repo for the Journal hero"; PR #60 waits until then.
 - **Batch review:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry (name and
   text changed) when batch B is live.
-- After museum phone speed is live: open the museum on your phone and say if it feels smoother or blurrier.
+- After museum phone speed is live: open the museum on your phone and say if it feels smoother or blurrier. To see
+  the frame rate, open `the-divine-archives.pages.dev/museum.html?fps=1#ch02`.

@@ -403,7 +403,7 @@
     <div class="bagh-chal-rules-body">
       <h3>Attested rules</h3>
       <ul>
-        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>The board is a 5×5 grid of 25 points, every square crossed by diagonals; pieces stand on the intersections and move along the drawn lines.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>The board is a 5×5 grid of 25 points, the same pattern as the alquerque board: each of the four large squares is crossed corner to corner, and a diamond joins the midpoints of the sides. Diagonals therefore pass only through alternating points, so some points have eight neighbours and others four. Pieces stand on the intersections and move only along the drawn lines.</li>
         <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>Four tigers begin on the four corner points. All twenty goats begin off the board.</li>
         <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>The goat player moves first, placing one goat per turn on any empty point. The tigers move on their own turns throughout this placement phase.</li>
         <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>A tiger steps to an adjacent empty point along a line, or captures by jumping over an adjacent goat to the empty point immediately beyond — as in draughts. <strong>Capturing is not obligatory.</strong></li>
@@ -415,10 +415,10 @@
       <ul>
         <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>A capture may chain several jumps within one turn while further jumps are available. Some versions permit only one capture per turn; the chained form is the common house rule used here.</li>
         <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>Draws by threefold repetition, or after 100 quiet half-moves, are a modern safeguard against endless play — not a traditional rule.</li>
-        <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>A few folk boards omit some of the diagonals; this exhibit uses the standard full-diagonal board.</li>
+        <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>Hand-drawn boards vary in small details; this exhibit draws the alquerque-pattern board described above.</li>
         <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>The computer opponent's heuristics are modern inventions, tuned for a lively game rather than perfect play.</li>
       </ul>
-      <p class="bagh-chal-rules-sources">Rules follow the documented overviews of Bagh-chal (Wikipedia), cyningstan.com's rule list, and ludoteka's game notes — summarized here, never presented beyond what the sources attest. बाघ चाल · धुँ कासा — "the tiger game."</p>
+      <p class="bagh-chal-rules-sources">Rules follow the documented overviews of Bagh-chal (Wikipedia), cyningstan.com's rule list, ludoteka's game notes, and the Exeter Abstract Games board notes (which give the alquerque-pattern board) — summarized here, never presented beyond what the sources attest. बाघ चाल · धुँ कासा — "the tiger game."</p>
     </div>
   </details>
 
@@ -460,7 +460,11 @@ function row(i) { return (i / N) | 0; }
 function col(i) { return i % N; }
 function inB(r, c) { return r >= 0 && r < N && c >= 0 && c < N; }
 
-/* adjacency: every square carries both diagonals (the standard board) */
+/* adjacency: orthogonal lines everywhere; diagonals only through alternating points,
+   the points where row + column is even (the four corners, the centre, the midpoints of
+   the sides, and the four points halfway from the centre to the corners). This is the alquerque-pattern board Bagh-chal is played on: each of the four
+   large squares is crossed corner to corner, and a diamond joins the midpoints of the sides.
+   So a point like B2 has eight neighbours and C2 only four. */
 var NB = [];
 (function () {
   for (var i = 0; i < PTS; i++) {
@@ -468,6 +472,7 @@ var NB = [];
     for (var dr = -1; dr <= 1; dr++) {
       for (var dc = -1; dc <= 1; dc++) {
         if (!dr && !dc) continue;
+        if (dr && dc && (r + c) % 2) continue;   /* no diagonal through odd points */
         if (inB(r + dr, c + dc)) list.push(idx(r + dr, c + dc));
       }
     }
@@ -921,7 +926,7 @@ function drawBoard(g, t) {
   drawLotus(g, o, o, lr); drawLotus(g, s - o, o, lr);
   drawLotus(g, o, s - o, lr); drawLotus(g, s - o, s - o, lr);
 
-  /* grid: orthogonals + both diagonals in every square */
+  /* grid: orthogonals + one diagonal per small square, through the even points */
   g.strokeStyle = 'rgba(216,178,105,0.62)';
   g.lineWidth = Math.max(1.6, view.cell * 0.016);
   g.lineCap = 'round';
@@ -933,9 +938,8 @@ function drawBoard(g, t) {
     g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
   }
   for (r = 0; r < N - 1; r++) for (c = 0; c < N - 1; c++) {
-    p = ptXY(idx(r, c)); q = ptXY(idx(r + 1, c + 1));
-    g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
-    p = ptXY(idx(r, c + 1)); q = ptXY(idx(r + 1, c));
+    if ((r + c) % 2 === 0) { p = ptXY(idx(r, c)); q = ptXY(idx(r + 1, c + 1)); }
+    else { p = ptXY(idx(r, c + 1)); q = ptXY(idx(r + 1, c)); }
     g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
   }
 

@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 ~12:15 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `7b281cb` (site as of `218c51b`; two handoff-only commits since) (site batch A merged 2026-10-17 21:08 EDT, deployed).
+**As of:** 2026-10-18 ~12:30 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `7b281cb` (site as of `218c51b`; two handoff-only commits since) (site batch A merged 2026-10-17 21:08 EDT, deployed).
 
 ## Mergeable now
 (none)
@@ -19,7 +19,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
 
 ## Not ready (in progress or waiting on a ruling)
-- Small defects part 2 (Bagh-chal, zodiac `dispose()`, Oracle Bones, exhibit fonts, Grimoire): all in `handoff/`
+- Small defects part 2 (Bagh-chal board fixed 2026-10-18; zodiac `dispose()`, Oracle Bones, exhibit fonts, Grimoire remain): all in `handoff/`
   drafts and previews, not on the live site, so not part of batch B. Next loop item.
 - Protection charter: D1–D3 PARKED by Carter (Item 26); D4 is approved only once it is up to standard (Item 23). The draft is `handoff/protection-charter-DRAFT.md`.
 - The Unfinished Journal hero redesign (PR #60, `loop/journal-hero-redesign` `6862dee`): **ON HOLD, does not merge.**
