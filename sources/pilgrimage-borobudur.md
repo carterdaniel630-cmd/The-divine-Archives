@@ -35,21 +35,21 @@ No Wikipedia source is used. Two pages found in searching were set aside because
    1973–1983; inscribed 1991.
 3. J. Wiener, "Borobudur", *World History Encyclopedia* (21 September 2018), https://www.worldhistory.org/Borobudur/
    (*opened*): Mahayana; Sailendra; about 1.6 million andesite blocks without mortar; reliefs about 2,520 m²;
-   72 stupas each with a Buddha; abandoned in the 1400s as the Javanese turned to Islam, the reasons unknown and
-   debated; Raffles permitted Hermann Cornelius's expedition in 1814; first restoration 1907–1911; the straight
+   72 stupas each with a Buddha; abandoned in the 1400s as the Javanese turned to Islam, the reasons debated; Raffles permitted Hermann Cornelius to organise the 1814 expedition that located it; first restoration 1907–1911; the straight
    line of Borobudur, Pawon and Mendut, its meaning debated.
 4. H. Gunarto, *Preserving Borobudur's Narrative Relief Wall of UNESCO Cultural World Heritage*, RCAPS Occasional
    Paper 07-5 (Ritsumeikan Asia Pacific University, October 2007),
    https://en.apu.ac.jp/rcaps/uploads/fckeditor/publications/workingPapers/RCAPS_Occasional_Paper_07-5.pdf
-   (*opened*): base 123 × 123 m (after Krom 1927); height 42 m; 1,460 narrative panels (Karmavibhangga 160,
+   (*opened*): base 123 × 123 m and height 42 m (in a paragraph citing Krom 1927; the figures
+   themselves are not attributed); about 55,000 m³ of stone (Britannica gives 56,600; the card gives both); 1,460 narrative panels (Karmavibhangga 160,
    Lalitavistara 120, Jatakas and Avadanas 720, Gandavyuha 388, Bhadracari 72) and 1,212 decorative; 368 Buddha
    statues in open niches (originally 432) and 72 on the top terraces; the hidden reliefs found by J. W. IJzerman
-   in 1885 and photographed by Kassian Cephas in 1890; panels 19–22 left exposed for visitors; restorations by
+   in 1885 and photographed by Kassian Cephas in 1890 (Santiko: 1890–91; the card gives Santiko's years); panels 19–22 left exposed for visitors; restorations by
    Van Erp 1907–1911 and by UNESCO and Indonesia 1975–1983. The figures list carries no inline citation; the paper
    cites Krom, Soekmono, Miksic, Dumarçay, Parmono and others. Its "six rectangular levels" against "five square
    platforms" is inconsistent; the model follows Britannica and UNESCO (a base and five square terraces). Its 42 m
    height is set beside Britannica's 35 m on the "How tall?" card.
-5. H. Santiko, "Identification of Karmawibhangga Reliefs at Candi Borobudur", *AMERTA* 34.2 (2016), 129–138,
+5. H. Santiko, "Identification of Karmawibhangga Reliefs at Candi Borobudur", *AMERTA* 34.2 (2016; published online 19 January 2024), 129–138,
    https://ejournal.brin.go.id/amerta/article/view/3400 (*abstract opened*; the article itself was not read):
    IJzerman 1885; 160 panels; photographed by Cephas 1890–91 and covered again; the law of cause and effect, set in
    Javanese life of the 9th–10th centuries; the scenes closer to the Chinese translation T 80 than T 81.

@@ -15,7 +15,7 @@
    ========================================================================== */
 export const D = {};
 
-// ---- the base: 123 m square (Gunarto, after Krom); the foot (which encases the hidden reliefs) and its open walkway
+// ---- the base: 123 m square (Gunarto 2007); the foot (which encases the hidden reliefs) and its open walkway
 D.F = { hw: 61.5, y: 4 };                       // half-width SURVEY; height APPROX
 D.B0 = 57.5;                                    // the first balustrade's line: the walkway on the foot is 4 m wide. APPROX
 // ---- the five square galleries: floor heights and main-wall lines, each gallery 3.5 m deep with its walls

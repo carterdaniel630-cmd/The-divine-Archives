@@ -10,7 +10,7 @@ Great Circle stone is in `layout.js`; the carved panels are drawn in `art.js`; t
 review. M. J. O'Kelly's excavation report, *Newgrange: Archaeology, Art and Legend* (1982), and its plans could
 not be opened, so the chamber's plan, the passage's width and the place of every stone are APPROX.
 
-Wikipedia ("Newgrange") is used as a labelled pointer only, for five facts the opened sources do not give
+Wikipedia ("Newgrange") is used as a labelled pointer only, for six facts the opened sources do not give
 (listed under "From Wikipedia only" below). It is 1 source in 14 (about 7%), under the 20% limit.
 
 ## Sources
@@ -32,8 +32,8 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for five facts the o
    finds (pendants, stone balls, beads) in the National Museum; the Brug, the Dagda, Aengus and Boann. **Says the
    light strikes the triple spiral today** (see "Where sources differ").
 5. WorldHistory.org, "Newgrange", https://www.worldhistory.org/Newgrange/ (*opened*): 76 m across, 12 m high,
-   about 4,500 m²; O'Kelly's 97 kerbstones, none under a tonne; O'Kelly called the arrangement of the facade
-   stones speculation; Brú na Bóinne, the Tuatha Dé Danann, the Dagda, Oengus; cremated remains in the chamber.
+   about 4,500 m²; O'Kelly's 97 kerbstones, none under a tonne; O'Kelly called his account of how the mound and
+   its facing were built "pure speculation" and "a guess"; Brú na Bóinne, the Tuatha Dé Danann, the Dagda, Oengus; cremated remains in the chamber.
 6. E. Burke-Kennedy, "Shedding light on winter solstice at Newgrange", *The Irish Times*, 19 December 2013,
    https://irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602 (*opened*): the light
    begins at 8.58 am and lasts 17 minutes; the chamber floor 2 m higher than the entrance; the roof-box about
@@ -41,7 +41,8 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for five facts the o
    the back of the chamber, and the alignment perfect again in 5–6,000 years.
 7. T. P. Ray, "The winter solstice phenomenon at Newgrange, Ireland: accident or design?", *Nature* 337 (1989),
    343–345 (*opened*, as reproduced at https://www.newgrange.com/stonelight20.htm; the journal's own page was not
-   opened): the alignment is deliberate; when built the beam entered the back recess and lit the triple spiral
+   opened): the evidence "supports the theory" that the orientation was deliberate, though it "still remains
+   weak"; when built the beam entered the back recess and lit the triple spiral
    indirectly.
 8. knowth.com, "Newgrange: the chamber", https://knowth.com/newgrange-chamber.htm (*opened*): corbelled roof closed
    by a slab "nearly six metres" up; a basin in each recess; the triple spiral on stone C10 of the back recess,

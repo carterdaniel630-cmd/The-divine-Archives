@@ -38,7 +38,8 @@ No Wikipedia source is used.
    truncated; the "two-storey thirty metre high substructure" with stairs of about 70°; the quincunx 60 m at its
    base; the central tower 42 m high, 62 m above the main causeway; the sanctuary about 5 m wide; the towers
    "like coned tiaras due to their multiple redents" with rows of lotus petals; Thomson (1866) seeing Mount Meru
-   in the temple, and the seven circles of the central tower matched to Meru's seven mountain chains; the west
+   in the temple and matching the seven circles of the central tower to Meru's seven mountain chains (Glaize
+   reports this as Thomson's, after G. de Coral-Rémusat; the source gives no first name); the west
    orientation and its explanations (funerary: Finot, Cœdès, Przyluski, Bosch; Vishnu and the west; stone
    brought by water, which Glaize finds insufficient); first half of the 12th century, Suryavarman II,
    posthumous name Paramavishnuloka, Vishnuite; cleared by Commaille 1908–11; the temple "has always sheltered
@@ -68,8 +69,8 @@ No Wikipedia source is used.
    found after converting a 1960s survey into cubits; the temple as solar and lunar calendar; numbers such as 54
    and 108. The review is favourable and does not test the claims.
 5. S. Kak, "Time, Space and Astronomy in Angkor Wat" (Louisiana State University, 6 August 2001),
-   https://www.ece.lsu.edu/kak/ang3.pdf (*opened*): a Khmer cubit (*hat*) of 0.43545 m; distances read as yuga
-   periods; small mismatches put down to error or settling; disagreements with Mannikka. It cites no critics.
+   https://www.ece.lsu.edu/kak/ang3.pdf (*opened*): a Khmer cubit (*hat*) of 0.43545 m; distances along the axis
+   read as yuga periods (Kak's own analysis; the Heywood review of Mannikka does not mention yugas); small mismatches put down to error or settling; disagreements with Mannikka. It cites no critics.
    The card treats Mannikka's and Kak's readings as single-author proposals; no independent test was found.
 6. UNESCO World Heritage Centre, "Angkor", site 668, https://whc.unesco.org/en/list/668 (*opened*): the capitals of
    the Khmer empire from the 9th to the 15th century; inscribed 1992; on the List in Danger 1992–2004; the park
@@ -85,7 +86,8 @@ No Wikipedia source is used.
 
 ## Sensitivity notes (for Carter)
 - Angkor Wat is a living Buddhist shrine. The model shows no images of the
-  Buddha or of Vishnu, no monks and no worshippers; the cards say it is still a place of worship.
+  Buddha or of Vishnu, no monks and no worshippers. The cards say only what Glaize (1944) records, that Buddhist pagodas always
+  stood within it: no current source on worship there today was found at review, so the cards do not claim it.
 - The reliefs are our own outline renderings, not tracings; the hells are drawn only as falling figures.
 - The equinox card reports the alignment as observed and APSARA's view that it was deliberate, and says the
   builders left no statement; the calendar readings (Mannikka, Kak, Im Sokrithy's day counts) are labelled as

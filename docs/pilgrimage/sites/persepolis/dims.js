@@ -15,7 +15,7 @@ export const D = {};
 
 // ---- the terrace: about 125,000 m², roughly 300 × 455 m; its west and north walls about 12 m above the plain
 D.T = 12;                                   // SURVEY (Shahbazi: "about 12 m")
-D.terr = { x0: -115, x1: 160, z0: -230, z1: 225 };   // 275 × 455 m. Size SURVEY (as quoted); placing APPROX
+D.terr = { x0: -115, x1: 160, z0: -230, z1: 225 };   // 275 × 455 m. Length SURVEY (455 m); width APPROX (published about 300 m); placing APPROX
 
 // ---- the Great Stairway at the north-west: double reversed, flights of 63 and 48 steps, each step 6.70 m long,
 //      about 10 cm high and 38 cm deep

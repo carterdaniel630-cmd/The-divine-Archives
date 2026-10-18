@@ -18,7 +18,7 @@ export const D = {};
 
 // ---- the mound: about 80 m across (sources give 76–85 m), about 12 m high, over about an acre
 D.R = 40;               // kerb radius. SURVEY (World Heritage Ireland: "approximately 80m in diameter")
-D.H = 12;               // SURVEY (12 m as quoted; heights of 11–13.5 m are also given)
+D.H = 12;               // SURVEY (12 m: WorldHistory.org, Wikipedia)
 D.wallH = 3.0;          // the reconstructed revetment wall above the kerb. APPROX
 D.facadeArc = 42;       // degrees either side of the entrance faced with white quartz (the reconstruction). APPROX
 D.face = D.R - 1.0;     // the revetment wall stands a little behind the kerb. APPROX

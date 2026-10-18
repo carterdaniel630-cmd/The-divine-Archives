@@ -49,7 +49,8 @@ No Wikipedia source is used.
 6. Institute for the Study of Ancient Cultures (formerly the Oriental Institute), University of Chicago,
    "Persepolis Fortification Archive", https://isac.uchicago.edu/node/2474 (*opened*): found in 1933 in two small
    rooms of a bastion in the fortification wall; tens of thousands of tablets and fragments, about 15,000–18,000
-   with Elamite texts and 5,000–6,000 with seal impressions only, a few in Greek, Phrygian and Old Persian; around
+   with Elamite texts and 5,000–6,000 with seal impressions only, more than six hundred Aramaic tablets imaged by the project (re-opened at review), a few in Greek, Phrygian
+   and Old Persian; around
    500 BC; food storage and outlays, from workers to the king's family; most came to Chicago on loan in 1936.
 7. W. F. M. Henkelman, *The Other Gods Who Are: Studies in Elamite-Iranian Acculturation Based on the Persepolis
    Fortification Texts*, Achaemenid History 14 (Leuven: Peeters, 2008) (*publisher's page opened*,
@@ -58,21 +59,25 @@ No Wikipedia source is used.
 8. M. Lufkin, "Terror victims cannot seize Iranian antiquities, US Supreme Court rules", *The Art Newspaper*,
    22 February 2018 (*opened*): Rubin v. Islamic Republic of Iran, decided 21 February 2018; the Persepolis
    collection in Chicago immune from seizure; the loan dated 1937.
-9. Smithsonian Freer|Sackler Archives blog, "A Colorful Past", 10 July 2012, https://asia-archive.si.edu/a-colorful-past
+9. R. A. Smith (intern, Freer|Sackler Archives), "A Colorful Past", Smithsonian Freer|Sackler Archives blog, 10 July 2012, https://asia-archive.si.edu/a-colorful-past
    (*opened*): pigment traces at Persepolis, blue from a copper compound and red from ochre; Alexander Nagel's
    work there; glass covers over the best patches.
-10. A. Nagel, *Color and Meaning in the Art of Achaemenid Persia* (Cambridge University Press) (*search only*, via
-    the Fashion Institute of Technology news page, 12 February 2024; year not confirmed).
+10. A. Nagel, *Color and Meaning in the Art of Achaemenid Persia* (Cambridge University Press, 2023),
+    doi:10.1017/9781009361309 (*search only*; not read). Further reading only: no card cites it.
 11. The archive's chapter on Zoroastrianism (ch06): the winged figure as the best-known Zoroastrian emblem and its
     modern ethical reading; whether the early Achaemenids were Zoroastrians debated.
 
 ## Where sources differ
 - **The year of the loan to Chicago:** 1936 (ISAC) or 1937 (*The Art Newspaper*). The card says "in the 1930s"
   and flags the difference.
+- **The roof and the slender columns:** UNESCO ties the slender columns to light timber roofs; Shahbazi describes
+  the roof as resting on large, heavy cedar beams. The Apadana card attributes the explanation to UNESCO.
+- **Horses on the Great Stairway:** Mark says royalty could ride up it; Shahbazi rejects this as a popular
+  belief. The stairway card gives both and flags the difference.
 - **Column height:** about 19.5 m (Shahbazi), about 20 m (UNESCO), 19 m (Mark). The model uses 19.5 m.
 
 ## Figures used in the model (dims.js)
-- SURVEY: terrace height 12 m and size; the stairway's step counts and step size (the model's risers are 10.8 cm
+- SURVEY: terrace height 12 m and length 455 m (its width in the model, 275 m, is APPROX: published about 300 m); the stairway's step counts and step size (the model's risers are 10.8 cm
   so that 111 of them reach 12 m: published "10 cm"); the Gate's area and column height; the Apadana's hall,
   column count, height and thickness, podium height and stair length; the Hall of a Hundred Columns; the Tachara;
   the Treasury.
