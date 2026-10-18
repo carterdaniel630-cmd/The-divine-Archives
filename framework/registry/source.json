@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1835,
+ "count": 1836,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -3241,6 +3241,15 @@
     "chapter:ch83"
    ],
    "from": "sources/ch83-global-hinduism-guru-movements.md"
+  },
+  {
+   "id": "source:carlos-emory-edu/69c791caed",
+   "type": "source",
+   "label": "https://carlos.emory.edu/publications/LifeAndTheAfterlife/catalog/sacred-life/32/",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:catalhoyuk-com/d4fbd16108",
