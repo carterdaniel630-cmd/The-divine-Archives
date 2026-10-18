@@ -41,27 +41,19 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
   The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
   Framework workflow fails any content PR that leaves the registry stale.
-- #45 (registry rebuild) was closed; #49 carries the same rebuild.
-- #49 `claude/framework-followup`: the reviewer's two small framework bugs:
-  - rate-limited pages that had failed twice were never retried
-  - a first new score could be copied again as an "old" score
-
-  It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
-  and the reviewer passes it.
-- #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
-  needs Carter).
-- **Overlaps:**
-  - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
-
-  Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
-  and the Framework test catch a missed rebuild.
+- #49 `claude/framework-followup` merged 2026-10-12 with Carter's go-ahead, deployed: the reviewer's two
+  framework bugs fixed (rate-limited pages are retried; a first new score is no longer copied again as an
+  "old" one); tracker script v=2 on every page. Reviewer passed it
+  (`reviews/2026-10-12-framework-followup-pr49.md` on review-log). #45 was closed; #49 carried its rebuild.
 - #42 (source review and corrections of 14 pending chapters) merged; #50 (clearing those 14, same
   branch `claude/project-thread-evq985`) merged 2026-10-12 with Carter's "clear".
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1: movesets merged
-  (#48); PR #47 (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum) is
-  green and awaits Carter's go-ahead.
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 merged: movesets
+  (#48) and the Weighing of the Heart walkthrough in the museum (#47, merged 2026-10-12, pending
+  review). Open follow-ups: the inspector panel covers the room's top buttons (phone and desktop,
+  predates #47); the V20 english.js quote seems to come from a different Budge translation (flagged
+  in its source log).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 - **Carter's try-it list:** `handoff/CARTER-TO-TRY.md` lists what to try on his phone and the
   decisions waiting on him. Keep it current: tick items off as he answers, and add new ones.

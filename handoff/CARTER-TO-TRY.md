@@ -66,8 +66,8 @@ About page says so (getconexto.com/about.html, "What the site remembers").
   **The-divine-Archives**. Then do the same for "Divine Archives — auditor (weekly)".
 - **Museum button size:** the buttons are 36 px tall. Android recommends 48. Every museum button
   matches, so changing them means restyling the whole museum. Keep as is, or restyle?
-- **Weighing of the Heart (PR #47):** a walkthrough at the Book of the Dead case, tier 2. It needs your
-  OK on the framing, the new rule for tier-2 walkthroughs, and whether Anubis is shown kneeling.
+- **Weighing of the Heart (PR #47):** live since 2026-10-12 with your go-ahead. Anubis stays standing
+  as the default; say "kneeling" if you want him shown kneeling, as the British Museum describes him.
 - **Games plan, later phases** (3D and more): waiting until you've tried Phase 1 (item 3 above).
 
 ---
