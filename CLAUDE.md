@@ -55,8 +55,12 @@ Everything is built and maintained to the highest standard. In practice:
 - **Nothing merges with a red or unfinished check.** Every CI check is green on the PR's
   current head, including slow ones (Lighthouse), before a merge is proposed or carried out.
   If a check looks flaky, re-run it and wait for the result; never merge on the assumption.
-- **Every output goes through the reviewer** (`reviews/REVIEWER.md`) before it reaches Carter,
-  and its NEEDS CARTER items are resolved or put to him.
+- **Every output goes through the reviewer** (`reviews/REVIEWER.md`, loaded as the `reviewer` project skill;
+  the auditor is the `auditor` skill) before it reaches Carter, and its NEEDS CARTER items are resolved or put
+  to him.
+- **Visual passes use the frontend-design skill** (Carter, 2026-10-11): every visual pass (museum wings,
+  Pilgrimage sites, game screens) uses it, and keeps the site's cathedral-archive look consistent. If the
+  skill is not installed in the session, say so in the report.
 - **Verify, don't assume:** run the full build, `node tools/review-checks.js --build` and every
   `tools/verify-*.js` before pushing; open anything visual (pages, museum, Pilgrimage, games)
   in a headless browser and check for script errors and the performance budget. Prior chat
