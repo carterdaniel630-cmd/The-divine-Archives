@@ -23,6 +23,11 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
+- Open: #53 `claude/project-thread-s3qxre`: Pilgrimage batch 1, four noindex previews (Göbekli Tepe, Delphi,
+  the Mogao Caves, Chichén Itzá), pending tag on, source logs in `sources/pilgrimage-*.md`. Reviewer pass
+  2026-10-12 (`reviews/2026-10-12-pilgrimage-batch1-pr53.md` on review-log); its slips are fixed. Carter said
+  "merge" (2026-10-12); the sensitivity cards are put to him before merging. The source logs propose chapter
+  corrections to ch08, ch29 and ch42 (not made in this PR).
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
@@ -69,6 +74,8 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   generated `graph-tools` branch, so sessions with the package index blocked still get `graphify query`.
 
 ## Needs Carter
+- Pilgrimage batch 1 (#53): the Mogao manuscripts-dispersal card and the three Chichén Itzá cards on sacrifice
+  and remains (wording only; nothing is shown); the ch08, ch29 and ch42 corrections the source logs propose.
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).

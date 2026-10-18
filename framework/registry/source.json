@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1835,
+ "count": 1895,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -408,6 +408,15 @@
    "from": "sources/v55-oracle-bones-of-anyang.md"
   },
   {
+   "id": "source:anasynthesis-co-uk/951e96dcb5",
+   "type": "source",
+   "label": "https://anasynthesis.co.uk/delphi/temple-of-apollo",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:ancient-buddhist-texts-net/956be919a2",
    "type": "source",
    "label": "https://ancient-buddhist-texts.net/English-Texts/Chronicle-of-the-Island/07-Third-Council.htm",
@@ -415,6 +424,15 @@
     "chapter:ch11"
    ],
    "from": "sources/ch11-buddhism.md"
+  },
+  {
+   "id": "source:ancient-history-sites-com/3b91648f3d",
+   "type": "source",
+   "label": "https://www.ancient-history-sites.com/?p=133357",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:ancient-origins-net/9de8f1d520",
@@ -443,6 +461,24 @@
     "relic:v20"
    ],
    "from": "sources/ch02-egypt.md"
+  },
+  {
+   "id": "source:ancientmusicoxford-site-ox-ac-uk/9f6b6ddf8a",
+   "type": "source",
+   "label": "https://ancientmusicoxford.site.ox.ac.uk/programme-notes",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:annex-exploratorium-edu/02cfff0813",
+   "type": "source",
+   "label": "https://annex.exploratorium.edu/ancientobs/chichen/HTML/caracol2.html",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:annualreviews-org/df73dd51ef",
@@ -803,6 +839,15 @@
     "site:great-pyramid"
    ],
    "from": "sources/pilgrimage-great-pyramid.md"
+  },
+  {
+   "id": "source:arxiv-org/afd71b2899",
+   "type": "source",
+   "label": "https://arxiv.org/abs/1307.8397",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
    "id": "source:arxiv-org/cb516c1b42",
@@ -2202,6 +2247,15 @@
    "from": "sources/ch72-cathars-medieval-heresy.md"
   },
   {
+   "id": "source:britannica-com/778adab385",
+   "type": "source",
+   "label": "https://www.britannica.com/place/Chichen-Itza",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:britannica-com/78dbbe933c",
    "type": "source",
    "label": "https://www.britannica.com/topic/Scientology",
@@ -3396,6 +3450,15 @@
    "from": "sources/ch35-new-religious-movements.md"
   },
   {
+   "id": "source:chinadaily-com-cn/43eef4c0e4",
+   "type": "source",
+   "label": "https://www.chinadaily.com.cn/a/202504/29/WS680ff708a310a04af22bcae0.html",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
    "id": "source:chrisbennett420-substack-com/1b793fc15a",
    "type": "source",
    "label": "https://chrisbennett420.substack.com/p/the-zoroastrian-influences-on-the",
@@ -3738,6 +3801,15 @@
    "from": "sources/ch67-minoan-crete.md"
   },
   {
+   "id": "source:core-ac-uk/7774d657d8",
+   "type": "source",
+   "label": "https://core.ac.uk/works/9003344",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:core-tdar-org/d77d39f75b",
    "type": "source",
    "label": "https://core.tdar.org/document/395106/la-ventas-offering-4-representation-of-olmec-ritual-practices",
@@ -3855,13 +3927,50 @@
    "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
+   "id": "source:dainst-blog/03b95139d0",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/?p=861",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:dainst-blog/3817c1b5f4",
    "type": "source",
    "label": "https://www.dainst.blog/the-tepe-telegrams/",
    "links": [
-    "relic:v60"
+    "relic:v60",
+    "site:gobekli-tepe"
    ],
-   "from": "sources/v60-gobekli-tepe.md"
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/410be6d84a",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/?p=347",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/76f6db21fe",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2017/04/21/archaeoastronomy-meteor-showers-mass-extinction-what-does-the-fox-say-and-what-the-crane-the-aurochs/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/80b52fa4d8",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/tag/quarries",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
    "id": "source:dainst-org/be96f6bfcf",
@@ -4036,6 +4145,42 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:delphi-culture-gr/c4f238d158",
+   "type": "source",
+   "label": "https://delphi.culture.gr/archaelogical-site/excavations/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:delphi-culture-gr/d523420860",
+   "type": "source",
+   "label": "https://delphi.culture.gr/the-treasure-of-the-sifnians/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:delphi-culture-gr/ef62a19a1f",
+   "type": "source",
+   "label": "https://delphi.culture.gr/athenians-treasure/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:delphimuseum-gr/fe243d747e",
+   "type": "source",
+   "label": "https://www.delphimuseum.gr/2025/03/the-delphic-hymns-to-apollo.html",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:deseret-com/88129fe2a6",
    "type": "source",
    "label": "https://www.deseret.com/2017/9/20/20619977/lds-church-buys-printer-s-manuscript-of-book-of-mormon-for-record-35-million/",
@@ -4180,6 +4325,15 @@
    "from": "sources/ch68-nubia-kush.md"
   },
   {
+   "id": "source:dmdhist-sitehost-iu-edu/48ba5a5017",
+   "type": "source",
+   "label": "https://dmdhist.sitehost.iu.edu/Pausaniasdelphi.htm",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:doaj-org/4c4f024d92",
    "type": "source",
    "label": "https://doaj.org/article/e66f8c98ed7e459ca848a366b07c735d",
@@ -4187,6 +4341,15 @@
     "site:great-pyramid"
    ],
    "from": "sources/pilgrimage-great-pyramid.md"
+  },
+  {
+   "id": "source:doaks-org/4fd406f590",
+   "type": "source",
+   "label": "https://doaks.org/research/publications/books/twin-tollans-chicha-c-n-itza-tula-and-the",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:doaks-org/76c0395ae0",
@@ -4279,6 +4442,15 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:doi-org/be409d6a40",
+   "type": "source",
+   "label": "https://doi.org/10.1017/S0956536121000419",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:doi-org/e388daa16e",
    "type": "source",
    "label": "https://doi.org/10.1080/14631361003779489",
@@ -4352,6 +4524,24 @@
    "from": "sources/v02-dead-sea-scrolls.md"
   },
   {
+   "id": "source:e-dunhuang-com/07c1fe3d31",
+   "type": "source",
+   "label": "https://e-dunhuang.com/cave/10.0001/0001.0001.0254",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
+   "id": "source:e-dunhuang-com/28c1e30c5a",
+   "type": "source",
+   "label": "https://www.e-dunhuang.com/cave/10.0001/0001.0001.0017",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
    "id": "source:earlychurch-org-uk/52ccba0440",
    "type": "source",
    "label": "https://www.earlychurch.org.uk/article_didache.html",
@@ -4359,6 +4549,24 @@
     "chapter:ch22"
    ],
    "from": "sources/ch22-patristic-christianity.md"
+  },
+  {
+   "id": "source:earlytibet-com/b530c56c92",
+   "type": "source",
+   "label": "https://earlytibet.com/2011/03/11/secrets-of-the-cave-ii/",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
+   "id": "source:earth-prints-org/e3754058f0",
+   "type": "source",
+   "label": "https://www.earth-prints.org/handle/2122/2674",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:ebsco-com/0a92efbf8e",
@@ -4862,7 +5070,8 @@
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Sacred_Cenote",
    "links": [
-    "chapter:ch29"
+    "chapter:ch29",
+    "site:chichen-itza"
    ],
    "from": "sources/ch29-maya.md"
   },
@@ -5002,6 +5211,15 @@
     "relic:v42"
    ],
    "from": "sources/v42-lindisfarne-gospels.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/1cac0e4298",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/El_Castillo,_Chichen_Itza",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:en-wikipedia-org/1d700775d0",
@@ -5656,6 +5874,15 @@
    "from": "sources/v87-diwan-abatur.md"
   },
   {
+   "id": "source:en-wikipedia-org/4e2c373d84",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Omphalos_of_Delphi",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:en-wikipedia-org/4f44182615",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Vestal_Virgin",
@@ -6089,6 +6316,15 @@
     "chapter:ch51"
    ],
    "from": "sources/ch51-sacrifice.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/718e713e2c",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Manumission_inscriptions_at_Delphi",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:en-wikipedia-org/71aa46f2dc",
@@ -7138,6 +7374,15 @@
    "from": "sources/v04-shroud-of-turin.md"
   },
   {
+   "id": "source:en-wikipedia-org/bc033cc0dd",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/List_of_ancient_Greek_temples",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:en-wikipedia-org/bcc8db8cab",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Christian_Kabbalah",
@@ -7163,6 +7408,15 @@
     "relic:v53"
    ],
    "from": "sources/v53-rosetta-stone.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/bf00729314",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Stadium_of_Delphi",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:en-wikipedia-org/bf15d1a1a3",
@@ -7497,6 +7751,15 @@
    "from": "sources/ch72-cathars-medieval-heresy.md"
   },
   {
+   "id": "source:en-wikipedia-org/d32bc1770d",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Tzompantli",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:en-wikipedia-org/d3fde9c9f0",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Human_sacrifice_in_ancient_Chinese_culture",
@@ -7767,6 +8030,15 @@
     "relic:v07"
    ],
    "from": "sources/v07-ark-of-the-covenant.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/e92bd5c90b",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/El_Caracol,_Chichen_Itza",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:en-wikipedia-org/e9b7acb7f1",
@@ -8567,6 +8839,15 @@
    "from": "sources/v25-veil-of-veronica.md"
   },
   {
+   "id": "source:famsf-org/c80294e8bc",
+   "type": "source",
+   "label": "https://www.famsf.org/artworks/rubbing-from-the-great-ballcourt-at-chichen-itza",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:famsi-org/5c58923431",
    "type": "source",
    "label": "https://www.famsi.org/research/grove/chalcatzingo/index.html",
@@ -8936,6 +9217,15 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:guinnessworldrecords-com/61e01a6fe9",
+   "type": "source",
+   "label": "https://www.guinnessworldrecords.com/world-records/88083-largest-ball-court-in-ancient-mesoamerica",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:gutenberg-org/476b196faa",
    "type": "source",
    "label": "https://gutenberg.org/cache/epub/8909/pg8909-images.html",
@@ -9141,6 +9431,15 @@
     "chapter:ch35"
    ],
    "from": "sources/ch35-new-religious-movements.md"
+  },
+  {
+   "id": "source:historiamexicana-colmex-mx/f5f1ea6f80",
+   "type": "source",
+   "label": "https://historiamexicana.colmex.mx/index.php/RHM/en/article/view/3475",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:historians-org/ad08a0ca3b",
@@ -9476,6 +9775,15 @@
    "from": "sources/ch82-akbar-mughal-synthesis.md"
   },
   {
+   "id": "source:iaps-zrc-sazu-si/0405b72270",
+   "type": "source",
+   "label": "https://iaps.zrc-sazu.si/sites/default/files/sprajcsol_chichen_dzibilchaltun_am149.pdf",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:ias-edu/9de619214c",
    "type": "source",
    "label": "https://www.ias.edu/ideas/2013/bowersock-throne-of-adulis",
@@ -9591,6 +9899,24 @@
     "relic:v30"
    ],
    "from": "sources/v30-diamond-sutra.md"
+  },
+  {
+   "id": "source:idp-bl-uk/7bb135547f",
+   "type": "source",
+   "label": "https://idp.bl.uk/?p=23132",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
+   "id": "source:idp-bl-uk/d60f3669a4",
+   "type": "source",
+   "label": "https://idp.bl.uk/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/discovering-cave-17/",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:idp-bl-uk/e9c65dbc83",
@@ -10509,6 +10835,15 @@
    "from": "sources/ch73-sabbateans-hasidism.md"
   },
   {
+   "id": "source:kar-kent-ac-uk/13bc9c8f82",
+   "type": "source",
+   "label": "https://kar.kent.ac.uk/41878",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:katv-com/469e0b10d1",
    "type": "source",
    "label": "https://katv.com/news/nation-world/baba-ram-dass-spiritual-guru-and-lsd-pioneer-dies-at-88",
@@ -10987,6 +11322,15 @@
    "from": "sources/v54-behistun-inscription.md"
   },
   {
+   "id": "source:livius-org/d73aedcbe7",
+   "type": "source",
+   "label": "https://www.livius.org/articles/place/constantinople-istanbul/constantinople-photos/constantinople-hippodrome/constantinople-hippodrome-serpent-column/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:livius-org/ed664016a7",
    "type": "source",
    "label": "https://www.livius.org/articles/place/tayma-oasis/",
@@ -11156,6 +11500,15 @@
     "chapter:ch29"
    ],
    "from": "sources/ch29-maya.md"
+  },
+  {
+   "id": "source:mayaruins-com/e843896898",
+   "type": "source",
+   "label": "https://mayaruins.com/chichen/ElCaracol.html",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:mccrone-com/efb3c59472",
@@ -11356,6 +11709,15 @@
    "from": "sources/v65-gateway-of-the-sun.md"
   },
   {
+   "id": "source:metmuseum-org/3671c60e66",
+   "type": "source",
+   "label": "https://www.metmuseum.org/perspectives/golden-kingdoms-sacred-cenote-chichen-itza",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:metmuseum-org/472a15a8fa",
    "type": "source",
    "label": "https://www.metmuseum.org/essays/etruscan-language-and-inscriptions",
@@ -11426,6 +11788,15 @@
     "chapter:ch66"
    ],
    "from": "sources/ch66-san-rock-art.md"
+  },
+  {
+   "id": "source:metmuseum-org/f8a6906778",
+   "type": "source",
+   "label": "https://www.metmuseum.org/essays/the-mesoamerican-ballgame",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:mexicolore-co-uk/00b8e4f7c2",
@@ -11642,6 +12013,15 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:museum-classics-cam-ac-uk/e51a84c377",
+   "type": "source",
+   "label": "https://museum.classics.cam.ac.uk/node/3539",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:museum-imj-org-il/aa759cfdeb",
@@ -11867,6 +12247,15 @@
     "site:library-of-alexandria"
    ],
    "from": "sources/pilgrimage-library-of-alexandria.md"
+  },
+  {
+   "id": "source:nationalgeographic-com/a9c2e379be",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/article/maya-sacrifice-dna-chichen-itza-boys",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:nationalgeographic-com/ab23d80769",
@@ -12337,6 +12726,15 @@
    "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
   },
   {
+   "id": "source:oceanus-lab-upatras-gr/b22aa21137",
+   "type": "source",
+   "label": "https://oceanus-lab.upatras.gr/press/50-press-releases/100-delphic-oracle-mystery",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:ociana-osu-edu/14ee57fb3c",
    "type": "source",
    "label": "https://ociana.osu.edu/",
@@ -12353,6 +12751,15 @@
     "chapter:ch21"
    ],
    "from": "sources/ch21-islam.md"
+  },
+  {
+   "id": "source:odysseyadventures-ca/2900838e34",
+   "type": "source",
+   "label": "https://www.odysseyadventures.ca/articles/delphi/articleDelphi02c.html",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:oeaw-ac-at/0782f0b1e7",
@@ -12823,6 +13230,15 @@
    "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
   },
   {
+   "id": "source:people-hsc-edu/bfe506c600",
+   "type": "source",
+   "label": "https://people.hsc.edu/drjclassics/sites/delphi/temple.shtm",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:pepysdiary-com/3239c07e3f",
    "type": "source",
    "label": "https://www.pepysdiary.com/diary/1666/02/19/",
@@ -13247,6 +13663,15 @@
    "from": "sources/v49-book-of-enoch.md"
   },
   {
+   "id": "source:publications-dainst-org/2925843ff2",
+   "type": "source",
+   "label": "https://publications.dainst.org/journals/efb/article/view/2596",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:publications-dainst-org/f9c9f41fc3",
    "type": "source",
    "label": "https://publications.dainst.org/books/dai/catalog/book/2176",
@@ -13643,6 +14068,15 @@
    "from": "sources/ch72-cathars-medieval-heresy.md"
   },
   {
+   "id": "source:revistas-filologicas-unam-mx/64a762ff7b",
+   "type": "source",
+   "label": "https://revistas-filologicas.unam.mx/estudios-cultura-maya/index.php/ecm/article/view/760",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:rezavisblastfromthepast-co-in/16adb86302",
    "type": "source",
    "label": "https://rezavisblastfromthepast.co.in/2026/05/23/akbar-and-the-politics-of-inclusion-revisiting-a-mughal-legacy-in-the-age-of-historical-polemics/",
@@ -13659,6 +14093,15 @@
     "relic:v82"
    ],
    "from": "sources/v82-bardo-thodol.md"
+  },
+  {
+   "id": "source:roger-pearse-com/e586e6bfcb",
+   "type": "source",
+   "label": "https://roger-pearse.com/weblog/2018/09/11/the-last-oracle-of-delphi",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:rom-on-ca/6db32d0afd",
@@ -13713,6 +14156,15 @@
     "relic:v70"
    ],
    "from": "sources/v70-pictish-stones.md"
+  },
+  {
+   "id": "source:rsaa-org-uk/c7325b4b63",
+   "type": "source",
+   "label": "https://rsaa.org.uk/blog/looting-the-silk-road-the-re-discovery-of-dunhuang/",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:rsc-byu-edu/8a042f7d14",
@@ -14060,6 +14512,15 @@
    "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
+   "id": "source:sciencedaily-com/74c2dfefc3",
+   "type": "source",
+   "label": "https://www.sciencedaily.com/releases/2001/08/010807075959.htm",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:sciencedaily-com/a34aa18485",
    "type": "source",
    "label": "https://sciencedaily.com/releases/2013/11/131120143631.htm",
@@ -14121,6 +14582,15 @@
     "chapter:ch82"
    ],
    "from": "sources/ch82-akbar-mughal-synthesis.md"
+  },
+  {
+   "id": "source:search-worldcat-org/3dc3fb53d0",
+   "type": "source",
+   "label": "https://search.worldcat.org/oclc/71243931",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:search-worldcat-org/4b9effc219",
@@ -14472,6 +14942,15 @@
     "chapter:ch63"
    ],
    "from": "sources/ch63-oceania.md"
+  },
+  {
+   "id": "source:smarthistory-org/caa0623e58",
+   "type": "source",
+   "label": "https://smarthistory.org/?p=57609",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:smarthistory-org/d135d7e74a",
@@ -15195,6 +15674,15 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:theoi-com/8fe9a463e5",
+   "type": "source",
+   "label": "https://www.theoi.com/Text/Pausanias10A.html",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:theopedia-com/498f957a4b",
    "type": "source",
    "label": "https://theopedia.com/eastern-orthodox-church",
@@ -15319,6 +15807,15 @@
     "relic:v16"
    ],
    "from": "sources/v16-james-ossuary.md"
+  },
+  {
+   "id": "source:tobunken-go-jp/d843412f67",
+   "type": "source",
+   "label": "https://www.tobunken.go.jp/info/event/2002/sympo02/abstract/abstract31_e.html",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:topostext-org/95667a70c9",
@@ -15780,6 +16277,24 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:whc-unesco-org/1e84c47942",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/393",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:whc-unesco-org/28eda76c80",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/440",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
    "id": "source:whc-unesco-org/2f203bd583",
    "type": "source",
    "label": "https://whc.unesco.org/en/list/1504/",
@@ -15867,6 +16382,15 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:whc-unesco-org/9413887c56",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/483",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:whc-unesco-org/9a3434f288",
    "type": "source",
    "label": "https://whc.unesco.org/en/list/1527/",
@@ -15892,6 +16416,15 @@
     "chapter:ch79"
    ],
    "from": "sources/ch79-first-christian-kingdoms.md"
+  },
+  {
+   "id": "source:whc-unesco-org/ba548b2b56",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/1572",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
    "id": "source:whc-unesco-org/c6854ef2f7",
@@ -16000,6 +16533,15 @@
     "chapter:ch78"
    ],
    "from": "sources/ch78-scythians-steppe.md"
+  },
+  {
+   "id": "source:world-archaeology-com/f8769d2672",
+   "type": "source",
+   "label": "https://www.world-archaeology.com/more/new-thinking-on-mayan-child-sacrifice.htm",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:worldhistory-org/062e284616",
