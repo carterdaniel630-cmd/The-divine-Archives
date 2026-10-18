@@ -23,6 +23,30 @@
   "use strict";
   if (typeof window === "undefined" || !window.ArchiveLedger || window.__archiveTrack) return;
 
+  // Renamed game ids (Naming & IP Policy, Carter 2026-10-17). Before anything reads them: move scores
+  // saved under an old id onto the new one, and rename the old id in this browser's ledger, once.
+  // Same table as docs/assets/games/archive-games.js; framework/test/renamed.test.js keeps them equal.
+  var RENAMED = { pacman: "labyrinth", pong: "antithesis", minesweeper: "excavation", risk: "dominion" };
+  try {
+    Object.keys(RENAMED).forEach(function (old) {
+      var ok = "da.games.score." + old, nk = "da.games.score." + RENAMED[old], raw = localStorage.getItem(ok);
+      if (raw == null) return;
+      var a = JSON.parse(raw), b = JSON.parse(localStorage.getItem(nk) || "[]");
+      var all = (Array.isArray(a) ? a : []).concat(Array.isArray(b) ? b : []);
+      all.sort(function (x, y) { return (y.score || 0) - (x.score || 0); });
+      localStorage.setItem(nk, JSON.stringify(all.slice(0, 10)));
+      localStorage.removeItem(ok);
+    });
+    var LK = window.ArchiveLedger.KEY, lraw = localStorage.getItem(LK);
+    if (lraw && /"game:(pacman|pong|minesweeper|risk)"/.test(lraw)) {
+      var evs = JSON.parse(lraw);
+      if (Array.isArray(evs)) {
+        evs.forEach(function (e) { var m = e && /^game:(.+)$/.exec(e.entity || ""); if (m && RENAMED[m[1]]) e.entity = "game:" + RENAMED[m[1]]; });
+        localStorage.setItem(LK, JSON.stringify(evs));
+      }
+    }
+  } catch (e) { /* storage blocked or malformed: leave it as it is */ }
+
   var L = window.ArchiveLedger.create();
   var script = document.currentScript;
 

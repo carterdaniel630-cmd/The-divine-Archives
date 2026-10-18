@@ -70,7 +70,7 @@
    "href": "museum.html#ch04",
    "links": [
     "chapter:ch04",
-    "game:minesweeper"
+    "game:excavation"
    ],
    "from": "docs/museum/manifest.json"
   },
@@ -101,7 +101,7 @@
     "figure:anahita",
     "figure:angra-mainyu",
     "figure:mithra",
-    "game:pong",
+    "game:antithesis",
     "relic:v54"
    ],
    "from": "docs/museum/manifest.json"
@@ -252,7 +252,7 @@
     "figure:jupiter",
     "figure:mars",
     "figure:vesta",
-    "game:risk",
+    "game:dominion",
     "relic:v44"
    ],
    "from": "docs/museum/manifest.json"
@@ -532,7 +532,7 @@
     "figure:hero-twins",
     "figure:itzamna",
     "figure:maize-god",
-    "game:pacman",
+    "game:labyrinth",
     "relic:v31",
     "relic:v32"
    ],

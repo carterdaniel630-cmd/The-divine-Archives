@@ -273,7 +273,7 @@
 - **Do:** Spot the eagle and keep it near the centre of your view for 5 seconds as it circles.
 - **See:** The eagle drops lower, glides once along the lake's surface and settles on a reed clump at the water's edge for a few seconds before lifting off again. There is no serpent.
 - **Learn:** Tenochtitlan, founded on a marshy islet in Lake Texcoco around 1325, held perhaps 200,000 people by 1519, making it larger than any city in Europe at the time.
-- **Care:** Moderate. The eagle on the cactus is on Mexico's national flag, so it is shown with respect: no serpent-eating, no gore. Keep sacrifice entirely out. The Tilma of Guadalupe is a Catholic sacred object and must not be part of the egg. Leave the codex cases and the Tomb Robber kiosk alone.
+- **Care:** Moderate. The eagle on the cactus is on Mexico's national flag, so it is shown with respect: no serpent-eating, no gore. Keep sacrifice entirely out. The Tilma of Guadalupe is a Catholic sacred object and must not be part of the egg. Leave the codex cases and the Unfinished Journal kiosk alone.
 
 ### ch44 · The Inca
 - **Do:** Tap Inti's medallion, then Mama Quilla's (the sun, then his sister-wife the moon).

@@ -119,9 +119,9 @@ Two pieces of game art are generated, not edited by hand:
   `node tools/build-fighter-art.js` writes the half-size WebP parts and the portrait sheet
   into `docs/assets/games/art/`. Re-run it after changing the art, and bump `PARTS_VER` in
   `fighter.js`.
-- **The Risk map's territory grid** (`docs/assets/games/data/risk-grid.png`):
-  `node tools/build-risk-grid.js` writes it with the game's own code. Re-run it after moving
-  provinces or seas in `risk.js`; until then the game falls back to computing the grid.
+- **The Dominion map's territory grid** (`docs/assets/games/data/dominion-grid.png`):
+  `node tools/build-dominion-grid.js` writes it with the game's own code. Re-run it after moving
+  provinces or seas in `dominion.js`; until then the game falls back to computing the grid.
 
 ## Deploy
 

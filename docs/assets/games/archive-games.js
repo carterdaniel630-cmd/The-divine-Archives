@@ -32,6 +32,28 @@
     catch (e) { return false; }
   }
 
+  /* ---------------- renamed game ids (Naming & IP Policy, Carter 2026-10-17) ----------------
+     Four games used to carry ids borrowed from commercial game names. This table exists ONLY so
+     old links (symbols.html#play=<old>) still open the right game and scores saved under the old
+     ids carry over. It is never shown to visitors. The same table is in framework/adapters/track.js
+     and docs/pilgrimage/sites/arcade/site.js; framework/test/renamed.test.js keeps all three equal. */
+  var RENAMED = { pacman: "labyrinth", pong: "antithesis", minesweeper: "excavation", risk: "dominion" };
+  function canonicalId(id) { return Object.prototype.hasOwnProperty.call(RENAMED, id) ? RENAMED[id] : id; }
+  // Move each old top-ten list onto the new id (merged with any new scores, best ten kept), once.
+  function migrateScores() {
+    Object.keys(RENAMED).forEach(function (old) {
+      try {
+        var raw = localStorage.getItem(NS + "score." + old);
+        if (raw == null) return;
+        var a = JSON.parse(raw), b = lsGet("score." + RENAMED[old], []);
+        var all = (Array.isArray(a) ? a : []).concat(Array.isArray(b) ? b : []);
+        all.sort(function (x, y) { return (y.score || 0) - (x.score || 0); });
+        if (lsSet("score." + RENAMED[old], all.slice(0, 10))) localStorage.removeItem(NS + "score." + old);
+      } catch (e) { /* storage blocked or malformed: leave it as it is */ }
+    });
+  }
+  migrateScores();
+
   /* ---------------- high scores (per game, local only) ---------------- */
   function getHighScores(gameId) { var a = lsGet("score." + gameId, []); return Array.isArray(a) ? a : []; }
   function addHighScore(gameId, entry) {
@@ -194,9 +216,9 @@
     // physical game controllers for the keyboard-only arcade games (the action games read them directly)
     var PADKEYS = {
       ouroboros: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight", start: "p" },
-      pacman: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight" },
+      labyrinth: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight" },
       ziggurat: { left: "ArrowLeft", right: "ArrowRight", down: "ArrowDown", up: "ArrowUp", a: " ", b: "x", x: "z", y: "c", l: "c", r: "c", start: "p" },
-      pong: { up: "w", down: "s" },
+      antithesis: { up: "w", down: "s" },
       pinball: { left: "ArrowLeft", right: "ArrowRight", l: "ArrowLeft", r: "ArrowRight", a: " ", b: " " }
     };
     var stopBridge = (window.ArchivePad && PADKEYS[gameId]) ? window.ArchivePad.bridge(PADKEYS[gameId]) : null;
@@ -208,7 +230,7 @@
     return openState;
   }
 
-  var LANDSCAPE = { treasure: 1, fighter: 1, pong: 1 };
+  var LANDSCAPE = { treasure: 1, fighter: 1, antithesis: 1 };
   function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
   function setFullClass(on) {
     if (!openState) return;
@@ -378,7 +400,7 @@
 
   window.ArchiveGames = {
     onFit: onFit, scaleFor: scaleFor,
-    register: register, registerSymbol: registerSymbol, isRegistered: isRegistered,
+    register: register, registerSymbol: registerSymbol, isRegistered: isRegistered, canonicalId: canonicalId,
     open: open, close: close,
     lsGet: lsGet, lsSet: lsSet,
     getHighScores: getHighScores, addHighScore: addHighScore, bestScore: bestScore,

@@ -493,7 +493,7 @@ function pilgrimageListPage() {
   }).join("\n");
   const nLive = PILG.sites.filter((s) => s.status === "live").length;
   const url = SITE + "/pilgrimage.html", title = "The Pilgrimage — The Divine Archives";
-  const desc = "Walk inside the world's sacred sites, modelled from published surveys and linked to the archive's chapters and Vault objects. " + nLive + " open, " + (PILG.sites.length - nLive) + " in preparation.";
+  const desc = "Walk inside the world's sacred sites, each modelled from the best record that survives (published surveys where they exist, labelled estimates or reconstructions where they do not) and linked to the archive's chapters and Vault objects. " + nLive + " open, " + (PILG.sites.length - nLive) + " in preparation.";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -522,7 +522,7 @@ ${HEADER_ROOT.replace('<a href="pilgrimage.html">', '<a href="pilgrimage.html" a
       <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><span>The Pilgrimage</span></p>
       <p class="eyebrow">Walkable sacred sites</p>
       <h1>The Pilgrimage</h1>
-      <p class="lede">Step through the golden portal in the museumStep through a portal from the museum&rsquo;s Rotunda and walkrsquo;s entrance hall and walk inside the places themselves, modelled from published surveys. Each holds copies of its relics, linked to the Vault and to the chapters. Sites open one or two at a time.</p>
+      <p class="lede">Step through the golden portal in the museum&rsquo;s entrance hall and walk inside the places themselves. Each site says how it was sized: from published surveys where they exist, and from labelled estimates or reconstructions where they do not. Each holds renditions of objects linked to the Vault and to the chapters, some found at the site and some shown for comparison and labelled so. Sites open one or two at a time.</p>
     </div>
     <section class="wrap" style="max-width:64rem;padding-block:1rem 2rem">
       <p class="tiny center" style="margin:0 auto;max-width:44rem">Every site is our own model. No one else&rsquo;s photographs or 3D scans are used; published plans and measurements are references only. What is measured, what is approximate and what is unknown is said on site, by the same evidence standard as the chapters.</p>

@@ -34,7 +34,7 @@ const SETTINGS = {
   plain: { pal: "plain" }, basalt: { pal: "basalt", h: 0.1 }
 };
 // how each cabinet's attract screen moves: 0 board, 1 stack, 2 grid, 3 volley, 4 trail, 5 maze, 6 stars, 7 quiz
-const SCREEN = { chess: 0, ziggurat: 1, minesweeper: 2, pong: 3, fighter: 3, risk: 2, reliquary: 7, pacman: 5, ouroboros: 4, seeker: 4, treasure: 5, pinball: 6 };
+const SCREEN = { chess: 0, ziggurat: 1, excavation: 2, antithesis: 3, fighter: 3, dominion: 2, reliquary: 7, labyrinth: 5, ouroboros: 4, seeker: 4, treasure: 5, pinball: 6 };
 
 // ---------------------------------------------------------------- the palette: one material for every plain surface
 const PAL = { body: "#24170f", trim: "#c79a54", panel: "#121010", red: "#b0402a", blue: "#2f5f9a", clay: "#9c6a44", bronze: "#6a4826", terracotta: "#a85a36",

@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<!--
+  NINE MEN'S MORRIS — interactive museum exhibit (The Divine Archives)
+  --------------------------------------------------------------------------------
+  5-LINE EXHIBIT NOTE
+  1. Rules source: the standard Nine Men's Morris rules, first fully written down
+     in Alfonso X's "Libro de los juegos" (1283); the board diagram itself is
+     attested on ancient stone (Egyptian temple masonry, Roman-era building
+     stone, Abhayagiri monastery, Sri Lanka, 3rd c.).
+  2. Simplified: the opponent is a 1-ply heuristic with a shallow 2-ply threat
+     check (mill completion/blocking, potential, mobility) — no deep search, so
+     it stays phone-safe; no draw-by-repetition detection (standard casual play).
+  3. Uncertainty flagged: NO Roman rulebook survives. Flight-at-three, mill
+     protection, and loss at two/blockade are medieval/modern attestations —
+     their Roman-era form is unknown, and the panel below says so.
+  4. Allowed by the rules implemented: opening and re-closing a mill
+     ("shuttling") to capture repeatedly is legal standard play.
+  5. Artistic license: bronze-vs-basalt pieces are this exhibit's artistry, not
+     an attested Roman pairing; "LVDVS" carved on the slab is decoration.
+  --------------------------------------------------------------------------------
+  Vanilla ES6. Zero npm/CDN. No external requests of any kind.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nine Men&rsquo;s Morris &mdash; The Divine Archives</title>
+<style>
+/* ============ NINE MEN'S MORRIS — scoped styles (nine-mens-morris- prefix) ============ */
+.nine-mens-morris-root {
+  --nine-mens-morris-parchment: #e9dcc0;
+  --nine-mens-morris-muted: #a5946f;
+  --nine-mens-morris-bronze: #c9a227;
+  --nine-mens-morris-bronze-dim: #7a5f1c;
+  --nine-mens-morris-card: rgba(22, 16, 9, 0.72);
+  --nine-mens-morris-rule: #4a3a22;
+  box-sizing: border-box;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 3rem);
+  color: var(--nine-mens-morris-parchment);
+  background:
+    radial-gradient(1100px 620px at 50% 6%, rgba(120, 88, 40, 0.28) 0%, rgba(20, 14, 8, 0) 60%),
+    radial-gradient(900px 900px at 50% 110%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 70%),
+    #0e0b07;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+}
+.nine-mens-morris-root *,
+.nine-mens-morris-root *::before,
+.nine-mens-morris-root *::after { box-sizing: inherit; }
+
+.nine-mens-morris-header { text-align: center; margin-bottom: clamp(1.2rem, 3vw, 2.2rem); }
+.nine-mens-morris-eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase;
+  color: var(--nine-mens-morris-muted); margin-bottom: 0.6rem;
+}
+.nine-mens-morris-title {
+  font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 400; margin: 0 0 0.3rem;
+  letter-spacing: 0.06em; color: var(--nine-mens-morris-parchment);
+  text-shadow: 0 2px 18px rgba(201, 162, 39, 0.25);
+}
+.nine-mens-morris-subtitle {
+  font-style: italic; color: var(--nine-mens-morris-muted);
+  font-size: clamp(0.95rem, 2.6vw, 1.15rem); margin: 0 0 0.9rem;
+}
+.nine-mens-morris-placard {
+  display: inline-block; max-width: 46rem; margin: 0 auto;
+  border-top: 1px solid var(--nine-mens-morris-rule);
+  border-bottom: 1px solid var(--nine-mens-morris-rule);
+  padding: 0.55rem 1.2rem; font-size: 0.86rem; color: var(--nine-mens-morris-muted);
+}
+.nine-mens-morris-placard strong { color: var(--nine-mens-morris-bronze); font-weight: 600; }
+
+.nine-mens-morris-layout {
+  display: flex; flex-wrap: wrap; gap: clamp(1.2rem, 3vw, 2.4rem);
+  align-items: flex-start; justify-content: center;
+}
+.nine-mens-morris-board-wrap { flex: 1 1 430px; min-width: min(100%, 320px); max-width: 620px; }
+.nine-mens-morris-board {
+  display: block; width: 100%; aspect-ratio: 1 / 1; height: auto;
+  border-radius: 6px; cursor: pointer; touch-action: manipulation;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.75),
+    0 4px 18px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(201, 162, 39, 0.18);
+}
+.nine-mens-morris-board:focus-visible {
+  outline: 2px solid var(--nine-mens-morris-bronze); outline-offset: 6px;
+}
+.nine-mens-morris-kbd-hint {
+  text-align: center; font-size: 0.78rem; color: var(--nine-mens-morris-muted);
+  margin: 0.7rem 0 0; letter-spacing: 0.04em;
+}
+.nine-mens-morris-kbd-hint kbd {
+  border: 1px solid var(--nine-mens-morris-rule); border-bottom-width: 2px; border-radius: 3px;
+  padding: 0 0.35em; font-family: inherit; font-size: 0.85em; color: var(--nine-mens-morris-parchment);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nine-mens-morris-side { flex: 1 1 280px; min-width: min(100%, 260px); max-width: 380px; display: grid; gap: 1rem; }
+.nine-mens-morris-status {
+  background: var(--nine-mens-morris-card);
+  border: 1px solid var(--nine-mens-morris-rule);
+  border-left: 3px solid var(--nine-mens-morris-bronze);
+  padding: 0.9rem 1rem; min-height: 4.4rem; font-size: 1.02rem;
+}
+.nine-mens-morris-status .nine-mens-morris-turn {
+  display: block; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--nine-mens-morris-bronze); margin-bottom: 0.35rem;
+}
+.nine-mens-morris-tallies { display: grid; gap: 0.6rem; }
+.nine-mens-morris-card {
+  background: var(--nine-mens-morris-card); border: 1px solid var(--nine-mens-morris-rule);
+  padding: 0.7rem 0.9rem; display: grid; gap: 0.3rem;
+}
+.nine-mens-morris-card-head { display: flex; align-items: center; gap: 0.6rem; }
+.nine-mens-morris-dot { width: 0.95rem; height: 0.95rem; border-radius: 50%; flex: none; }
+.nine-mens-morris-dot-bronze {
+  background: radial-gradient(circle at 35% 30%, #ffe9b0, #d9a94f 45%, #7a4d16 90%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(46,26,6,0.7);
+}
+.nine-mens-morris-dot-basalt {
+  background: radial-gradient(circle at 35% 30%, #8a8a90, #4a4a52 55%, #1c1c20 95%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(0,0,0,0.8);
+}
+.nine-mens-morris-card-name { letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.78rem; }
+.nine-mens-morris-card-stats { font-size: 0.88rem; color: var(--nine-mens-morris-muted); }
+.nine-mens-morris-card-stats b { color: var(--nine-mens-morris-parchment); font-weight: 600; }
+.nine-mens-morris-phase {
+  justify-self: start; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--nine-mens-morris-bronze); border: 1px solid var(--nine-mens-morris-bronze-dim);
+  padding: 0.15rem 0.55rem; border-radius: 2px;
+}
+.nine-mens-morris-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.nine-mens-morris-btn {
+  font-family: inherit; font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--nine-mens-morris-parchment); cursor: pointer; border-radius: 2px;
+  background: linear-gradient(180deg, #2b2113, #191207);
+  border: 1px solid #6b5326; padding: 0.65rem 1.05rem;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+.nine-mens-morris-btn:hover:not(:disabled) {
+  border-color: var(--nine-mens-morris-bronze);
+  box-shadow: 0 0 14px rgba(201, 162, 39, 0.25);
+}
+.nine-mens-morris-btn:active:not(:disabled) { transform: translateY(1px); }
+.nine-mens-morris-btn:disabled { opacity: 0.38; cursor: default; }
+.nine-mens-morris-btn:focus-visible { outline: 2px solid var(--nine-mens-morris-bronze); outline-offset: 2px; }
+
+.nine-mens-morris-howto {
+  background: var(--nine-mens-morris-card); border: 1px solid var(--nine-mens-morris-rule);
+  padding: 1rem 1.1rem; font-size: 0.92rem;
+}
+.nine-mens-morris-howto h3 {
+  margin: 0 0 0.6rem; font-size: 0.8rem; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--nine-mens-morris-bronze); font-weight: 600;
+}
+.nine-mens-morris-howto ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.5rem; }
+.nine-mens-morris-howto .nine-mens-morris-tag {
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--nine-mens-morris-muted);
+  border: 1px solid var(--nine-mens-morris-rule); padding: 0 0.4em; border-radius: 2px; white-space: nowrap;
+}
+
+.nine-mens-morris-rules { margin-top: clamp(1.6rem, 4vw, 2.8rem); }
+.nine-mens-morris-rules h2 {
+  text-align: center; font-weight: 400; letter-spacing: 0.1em; font-size: clamp(1.2rem, 3.4vw, 1.7rem);
+  margin: 0 0 1.1rem;
+}
+.nine-mens-morris-rules-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1rem;
+}
+.nine-mens-morris-attested, .nine-mens-morris-reconstructed {
+  border: 1px solid var(--nine-mens-morris-rule); padding: 1.1rem 1.2rem; font-size: 0.92rem;
+  background: var(--nine-mens-morris-card);
+}
+.nine-mens-morris-attested { border-top: 3px solid #7ba05b; }
+.nine-mens-morris-reconstructed { border-top: 3px solid var(--nine-mens-morris-bronze); }
+.nine-mens-morris-attested h3, .nine-mens-morris-reconstructed h3 {
+  margin: 0 0 0.5rem; font-size: 0.78rem; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600;
+}
+.nine-mens-morris-attested h3 { color: #a8c68f; }
+.nine-mens-morris-reconstructed h3 { color: var(--nine-mens-morris-bronze); }
+.nine-mens-morris-attested p, .nine-mens-morris-reconstructed p { margin: 0 0 0.6rem; }
+.nine-mens-morris-attested p:last-child, .nine-mens-morris-reconstructed p:last-child { margin-bottom: 0; }
+
+.nine-mens-morris-footer {
+  margin-top: clamp(1.6rem, 4vw, 2.6rem); border-top: 1px solid var(--nine-mens-morris-rule);
+  padding-top: 1rem; font-size: 0.82rem; color: var(--nine-mens-morris-muted);
+}
+.nine-mens-morris-footer h2 {
+  font-size: 0.75rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600;
+  color: var(--nine-mens-morris-muted); margin: 0 0 0.5rem;
+}
+.nine-mens-morris-footer ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.3rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nine-mens-morris-btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="nine-mens-morris-root" id="nine-mens-morris-root">
+  <header class="nine-mens-morris-header">
+    <div class="nine-mens-morris-eyebrow">The Divine Archives &middot; Interactive Exhibit</div>
+    <h1 class="nine-mens-morris-title">Nine Men&rsquo;s Morris</h1>
+    <div class="nine-mens-morris-subtitle">A Roman board, played by the medieval book</div>
+    <p class="nine-mens-morris-placard">
+      Board pattern <strong>attested</strong> on ancient stone &middot;
+      Rules after the standard game first written down in 1283 &mdash;
+      a <strong>reconstruction</strong>, labeled as such below.
+    </p>
+  </header>
+
+  <main class="nine-mens-morris-layout">
+    <section class="nine-mens-morris-board-wrap" aria-label="Game board">
+      <canvas class="nine-mens-morris-board" id="nine-mens-morris-board" role="application" tabindex="0"
+        aria-label="Nine men's morris board. Your pieces are bronze; the opponent's are basalt. Arrow keys move the marker, Enter places, selects, or moves a piece. U undoes, R starts a new game."></canvas>
+      <p class="nine-mens-morris-kbd-hint">
+        <kbd>&larr;</kbd><kbd>&uarr;</kbd><kbd>&darr;</kbd><kbd>&rarr;</kbd> move marker &middot;
+        <kbd>Enter</kbd> place / select / move &middot; <kbd>U</kbd> undo &middot; <kbd>R</kbd> new game &middot;
+        <kbd>Esc</kbd> deselect
+      </p>
+    </section>
+
+    <aside class="nine-mens-morris-side">
+      <div class="nine-mens-morris-status" id="nine-mens-morris-status" aria-live="polite"></div>
+
+      <div class="nine-mens-morris-tallies">
+        <div class="nine-mens-morris-card">
+          <div class="nine-mens-morris-card-head">
+            <span class="nine-mens-morris-dot nine-mens-morris-dot-bronze" aria-hidden="true"></span>
+            <span class="nine-mens-morris-card-name">Bronze &mdash; You</span>
+          </div>
+          <div class="nine-mens-morris-card-stats">
+            In hand <b id="nine-mens-morris-bronze-hand">9</b> &middot;
+            On the board <b id="nine-mens-morris-bronze-board">0</b>
+          </div>
+          <span class="nine-mens-morris-phase" id="nine-mens-morris-bronze-phase">Placement</span>
+        </div>
+        <div class="nine-mens-morris-card">
+          <div class="nine-mens-morris-card-head">
+            <span class="nine-mens-morris-dot nine-mens-morris-dot-basalt" aria-hidden="true"></span>
+            <span class="nine-mens-morris-card-name">Basalt &mdash; The House</span>
+          </div>
+          <div class="nine-mens-morris-card-stats">
+            In hand <b id="nine-mens-morris-basalt-hand">9</b> &middot;
+            On the board <b id="nine-mens-morris-basalt-board">0</b>
+          </div>
+          <span class="nine-mens-morris-phase" id="nine-mens-morris-basalt-phase">Placement</span>
+        </div>
+      </div>
+
+      <div class="nine-mens-morris-controls">
+        <button class="nine-mens-morris-btn" id="nine-mens-morris-new" type="button">New game</button>
+        <button class="nine-mens-morris-btn" id="nine-mens-morris-undo" type="button">Undo</button>
+        <button class="nine-mens-morris-btn" id="nine-mens-morris-rules-btn" type="button" aria-expanded="false" aria-controls="nine-mens-morris-howto">How to play</button>
+      </div>
+
+      <div class="nine-mens-morris-howto" id="nine-mens-morris-howto" hidden>
+        <h3>The Play</h3>
+        <ol>
+          <li><span class="nine-mens-morris-tag">Placement</span> Take turns setting your nine pieces on empty points.</li>
+          <li>Close a <b>mill</b> &mdash; three of yours in a row along a line &mdash; and remove one enemy piece. Pieces inside mills are safe, unless the enemy holds <i>only</i> mills.</li>
+          <li><span class="nine-mens-morris-tag">Movement</span> Slide one piece per turn along a line to an empty neighboring point. Mills still capture.</li>
+          <li><span class="nine-mens-morris-tag">Flight</span> Reduced to exactly three pieces, your stones may leap to <i>any</i> empty point.</li>
+          <li>Win by leaving the enemy with two pieces &mdash; or with no legal move. Opening and re-closing a mill is lawful play.</li>
+        </ol>
+      </div>
+    </aside>
+  </main>
+
+  <section class="nine-mens-morris-rules" aria-label="Historical honesty">
+    <h2>What Is Attested &middot; What Is Reconstructed</h2>
+    <div class="nine-mens-morris-rules-grid">
+      <div class="nine-mens-morris-attested">
+        <h3>Attested</h3>
+        <p>The board itself &mdash; three concentric squares joined at their midpoints, twenty-four points &mdash; is carved into stone across the ancient world: Egyptian temple masonry, Roman-era building stone, and the 3rd-century Abhayagiri monastery in Sri Lanka. (The exact dates of individual carvings are often uncertain; the pattern&rsquo;s antiquity is not.)</p>
+        <p>Ovid&rsquo;s <i>Ars Amatoria</i> describes a Roman board game some scholars link to this family, and Shakespeare names &ldquo;nine men&rsquo;s morris&rdquo; outright. The board is ancient beyond doubt.</p>
+      </div>
+      <div class="nine-mens-morris-reconstructed">
+        <h3>Reconstructed</h3>
+        <p><b>No Roman rulebook survives.</b> The rules you play here are the standard game first written down in full in the Middle Ages &mdash; Alfonso X&rsquo;s <i>Libro de los juegos</i> (1283) &mdash; and still played today: nine placements, mill-capture, mill protection, flight at exactly three, defeat at two pieces or blockade.</p>
+        <p>We play Rome&rsquo;s board by the medieval book. That continuity is our reconstruction, stated plainly. Bronze against basalt is this exhibit&rsquo;s artistry &mdash; not an attested Roman pairing.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="nine-mens-morris-footer">
+    <h2>Curator&rsquo;s Note</h2>
+    <ol>
+      <li>Rules source: the standard game first fully documented in Alfonso X&rsquo;s <i>Libro de los juegos</i> (1283); the board diagram is attested on ancient stone.</li>
+      <li>Simplified: the house plays a 1-ply heuristic with a shallow threat check (mill completion, blocking, potential, mobility) &mdash; no deep search, phone-safe. No draw-by-repetition rule, as in standard casual play.</li>
+      <li>Uncertainty: no Roman rulebook survives &mdash; flight at three, mill protection, and the defeat conditions are medieval/modern attestations; their Roman-era form is unknown.</li>
+      <li>Opening and re-closing a mill (&ldquo;shuttling&rdquo;) to capture repeatedly is lawful in the rules implemented.</li>
+      <li>Bronze-vs-basalt pieces are exhibit artistry, not an attested Roman pairing.</li>
+    </ol>
+  </footer>
+</div>
+
+<script>
+(function () {
+'use strict';
+/* ================================================================
+   PART 1 — PURE GAME LOGIC (no DOM). Exposed for testing.
+   ================================================================ */
+
+/* 24 points on a 7x7 lattice: three concentric squares, midpoints joined. */
+var PTS = [
+  [0,0],[3,0],[6,0],
+  [1,1],[3,1],[5,1],
+  [2,2],[3,2],[4,2],
+  [0,3],[1,3],[2,3],[4,3],[5,3],[6,3],
+  [2,4],[3,4],[4,4],
+  [1,5],[3,5],[5,5],
+  [0,6],[3,6],[6,6]
+];
+
+/* The 16 mills: 8 along square edges, 8 radial through the midpoints. */
+var MILLS = [
+  [0,1,2],[3,4,5],[6,7,8],[9,10,11],[12,13,14],[15,16,17],[18,19,20],[21,22,23],
+  [0,9,21],[3,10,18],[6,11,15],[1,4,7],[16,19,22],[8,12,17],[5,13,20],[2,14,23]
+];
+
+/* Adjacency along engraved lines. */
+var ADJ = [
+  [1,9],[0,2,4],[1,14],[4,10],[1,3,5,7],[4,13],[7,11],[4,6,8],[7,12],
+  [0,10,21],[3,9,11,18],[6,10,15],[8,13,17],[5,12,14,20],[2,13,23],
+  [11,16],[15,17,19],[12,16],[10,19],[16,18,20,22],[13,19],[9,22],[19,21,23],[14,22]
+];
+
+var MILLS_OF = PTS.map(function (_, i) {
+  var r = [];
+  MILLS.forEach(function (m, mi) { if (m.indexOf(i) !== -1) r.push(mi); });
+  return r;
+});
+
+var HUMAN = 1, AI = 2;
+
+function newState() {
+  return {
+    board: new Array(24).fill(0),
+    toPlace: { 1: 9, 2: 9 },
+    turn: HUMAN,
+    closedMills: [],   /* mill indices currently closed, by either side */
+    selected: -1,
+    capturePending: false,
+    over: false,
+    winner: 0,
+    cursor: 0,
+    lastMillPts: []    /* points of the most recently closed mill, for highlight */
+  };
+}
+
+function countOnBoard(st, p) {
+  var n = 0;
+  for (var i = 0; i < 24; i++) if (st.board[i] === p) n++;
+  return n;
+}
+
+function phaseOf(st, p) {
+  if (st.toPlace[p] > 0) return 'place';
+  return countOnBoard(st, p) === 3 ? 'fly' : 'move';
+}
+
+function millOwner(st, mi) {
+  var m = MILLS[mi], a = st.board[m[0]];
+  return (a !== 0 && st.board[m[1]] === a && st.board[m[2]] === a) ? a : 0;
+}
+
+function refreshClosedMills(st) {
+  var out = [];
+  for (var mi = 0; mi < MILLS.length; mi++) if (millOwner(st, mi) !== 0) out.push(mi);
+  st.closedMills = out;
+}
+
+/* Place a piece; returns indices of newly closed mills. */
+function doPlace(st, p, pt) {
+  st.board[pt] = p;
+  st.toPlace[p]--;
+  var fresh = [];
+  MILLS_OF[pt].forEach(function (mi) {
+    /* pt was empty, so this mill cannot have been closed before. */
+    if (millOwner(st, mi) === p) fresh.push(mi);
+  });
+  refreshClosedMills(st);
+  return fresh;
+}
+
+/* Slide (or fly) a piece; returns indices of newly closed mills. */
+function doMove(st, p, from, to) {
+  var affected = {};
+  MILLS_OF[from].concat(MILLS_OF[to]).forEach(function (mi) { affected[mi] = millOwner(st, mi); });
+  st.board[from] = 0;
+  st.board[to] = p;
+  var fresh = [];
+  MILLS_OF[to].forEach(function (mi) {
+    if (affected[mi] === 0 && millOwner(st, mi) === p) fresh.push(mi);
+  });
+  refreshClosedMills(st);
+  return fresh;
+}
+
+function doCapture(st, at) {
+  st.board[at] = 0;
+  refreshClosedMills(st);
+}
+
+/* Pieces of `victim` that may be removed: those outside mills, unless all are in mills. */
+function removableTargets(st, victim) {
+  var all = [];
+  for (var i = 0; i < 24; i++) if (st.board[i] === victim) all.push(i);
+  var inMill = {};
+  st.closedMills.forEach(function (mi) {
+    var m = MILLS[mi];
+    if (st.board[m[0]] === victim) m.forEach(function (i) { inMill[i] = true; });
+  });
+  var free = all.filter(function (i) { return !inMill[i]; });
+  return free.length ? free : all;
+}
+
+function legalTargetsFor(st, p, from) {
+  var out = [], i;
+  if (phaseOf(st, p) === 'fly') {
+    for (i = 0; i < 24; i++) if (st.board[i] === 0) out.push(i);
+  } else {
+    var ns = ADJ[from];
+    for (i = 0; i < ns.length; i++) if (st.board[ns[i]] === 0) out.push(ns[i]);
+  }
+  return out;
+}
+
+function hasAnyMove(st, p) {
+  if (st.toPlace[p] > 0) {
+    for (var i = 0; i < 24; i++) if (st.board[i] === 0) return true;
+    return false;
+  }
+  for (var s = 0; s < 24; s++) {
+    if (st.board[s] === p && legalTargetsFor(st, p, s).length) return true;
+  }
+  return false;
+}
+
+/* After `mover` completes a turn: does the opponent lose? */
+function checkWin(st, mover) {
+  var opp = 3 - mover;
+  if (st.toPlace[opp] !== 0) return 0;
+  if (countOnBoard(st, opp) <= 2) return mover;
+  if (!hasAnyMove(st, opp)) return mover;
+  return 0;
+}
+
+/* Would placing p on empty pt complete a mill? */
+function completesMillAt(board, p, pt) {
+  var ms = MILLS_OF[pt];
+  for (var k = 0; k < ms.length; k++) {
+    var m = MILLS[ms[k]];
+    if (m.every(function (i) { return i === pt || board[i] === p; })) return true;
+  }
+  return false;
+}
+
+/* Can `opp` complete a mill on the very next action? (1-ply threat lookahead) */
+function opponentHasImmediateMill(st, opp) {
+  if (st.toPlace[opp] > 0) {
+    for (var pt = 0; pt < 24; pt++) {
+      if (st.board[pt] === 0 && completesMillAt(st.board, opp, pt)) return true;
+    }
+    return false;
+  }
+  for (var s = 0; s < 24; s++) {
+    if (st.board[s] !== opp) continue;
+    var tg = legalTargetsFor(st, opp, s);
+    for (var t = 0; t < tg.length; t++) {
+      var b = st.board.slice();
+      b[s] = 0; b[tg[t]] = opp;
+      /* millOwner needs a state-like; emulate via completesMillAt on the scratch board */
+      if (completesMillAt(b, opp, tg[t])) return true;
+    }
+  }
+  return false;
+}
+
+/* Count mills through pt where p holds exactly one of the other two points (open potential). */
+function openPotentials(board, p, pt) {
+  var n = 0, dbl = 0;
+  MILLS_OF[pt].forEach(function (mi) {
+    var m = MILLS[mi], own = 0, empty = 0;
+    m.forEach(function (i) {
+      if (i === pt) return;
+      if (board[i] === p) own++;
+      else if (board[i] === 0) empty++;
+    });
+    if (own === 1 && empty === 1) n++;
+  });
+  if (n >= 2) dbl = 1;
+  return { n: n, dbl: dbl };
+}
+
+function centrality(pt) {
+  var x = PTS[pt][0], y = PTS[pt][1];
+  return 6 - (Math.abs(x - 3) + Math.abs(y - 3));
+}
+
+function mobility(board, pt) {
+  var n = 0, ns = ADJ[pt];
+  for (var i = 0; i < ns.length; i++) if (board[ns[i]] === 0) n++;
+  return n;
+}
+
+/* ================================================================
+   PART 2 — HEURISTIC AI (1-ply + shallow threat check; phone-safe)
+   ================================================================ */
+
+function aiScorePlace(st, pt) {
+  var score = Math.random() * 6;
+  var completes = completesMillAt(st.board, AI, pt);
+  if (completes) score += 1000;
+
+  /* Block the opponent's imminent mill (two in a row, third empty = pt). */
+  var ms = MILLS_OF[pt], k, m;
+  for (k = 0; k < ms.length; k++) {
+    m = MILLS[ms[k]];
+    var others = m.filter(function (i) { return i !== pt; });
+    if (others.every(function (i) { return st.board[i] === HUMAN; })) score += 800;
+  }
+
+  var pot = openPotentials(st.board, AI, pt);
+  score += pot.n * 60;
+  if (pot.dbl) score += 150;
+
+  /* Mild denial of the opponent's own potentials. */
+  for (k = 0; k < ms.length; k++) {
+    m = MILLS[ms[k]];
+    var oh = m.filter(function (i) { return i !== pt; });
+    if (oh.some(function (i) { return st.board[i] === HUMAN; }) &&
+        oh.every(function (i) { return st.board[i] !== AI; })) score += 12;
+  }
+
+  score += mobility(st.board, pt) * 8;
+  score += centrality(pt) * 2;
+
+  /* Shallow 2-ply: don't hand the opponent an immediate mill. */
+  if (!completes) {
+    var scratch = newState();
+    scratch.board = st.board.slice();
+    scratch.toPlace = { 1: st.toPlace[1], 2: st.toPlace[2] };
+    doPlace(scratch, AI, pt);
+    if (opponentHasImmediateMill(scratch, HUMAN)) score -= 350;
+  }
+  return score;
+}
+
+function aiChoosePlace(st) {
+  var best = -1, bestScore = -Infinity;
+  for (var pt = 0; pt < 24; pt++) {
+    if (st.board[pt] !== 0) continue;
+    var s = aiScorePlace(st, pt);
+    if (s > bestScore) { bestScore = s; best = pt; }
+  }
+  return best;
+}
+
+function aiScoreMove(st, s, d) {
+  var score = Math.random() * 6;
+  var completes = completesMillAt(st.board, AI, d);
+
+  /* Sliding onto d where the opponent already holds the other two blocks them. */
+  var ms = MILLS_OF[d], k, m;
+  for (k = 0; k < ms.length; k++) {
+    m = MILLS[ms[k]];
+    var others = m.filter(function (i) { return i !== d; });
+    if (others.every(function (i) { return st.board[i] === HUMAN; })) score += 850;
+  }
+
+  /* Don't abandon a square that is currently blocking the opponent. */
+  var sms = MILLS_OF[s];
+  for (k = 0; k < sms.length; k++) {
+    m = MILLS[sms[k]];
+    var so = m.filter(function (i) { return i !== s; });
+    if (so.every(function (i) { return st.board[i] === HUMAN; })) score -= 600;
+  }
+
+  /* Don't open our own closed mill for nothing. */
+  var wasClosed = st.closedMills.some(function (mi) {
+    return MILLS[mi].indexOf(s) !== -1 && millOwner(st, mi) === AI;
+  });
+  if (wasClosed && !completes) score -= 60;
+
+  var pot = openPotentials(st.board, AI, d);
+  score += pot.n * 90;
+  if (pot.dbl) score += 200;
+
+  score += mobility(st.board, d) * 10;
+  score += centrality(d) * 2;
+
+  if (!completes) {
+    var scratch = newState();
+    scratch.board = st.board.slice();
+    scratch.toPlace = { 1: st.toPlace[1], 2: st.toPlace[2] };
+    doMove(scratch, AI, s, d);
+    if (opponentHasImmediateMill(scratch, HUMAN)) score -= 400;
+  }
+  return score;
+}
+
+function aiChooseMove(st) {
+  var best = null, bestScore = -Infinity;
+  for (var s = 0; s < 24; s++) {
+    if (st.board[s] !== AI) continue;
+    var tg = legalTargetsFor(st, AI, s);
+    for (var t = 0; t < tg.length; t++) {
+      var sc = aiScoreMove(st, s, tg[t]);
+      if (sc > bestScore) { bestScore = sc; best = { from: s, to: tg[t] }; }
+    }
+  }
+  return best;
+}
+
+function aiChooseCapture(st) {
+  var targets = removableTargets(st, HUMAN);
+  var best = targets[0], bestScore = -Infinity;
+  targets.forEach(function (t) {
+    var score = Math.random() * 8;
+    /* Take the stone that threatens a mill first (open two). */
+    MILLS_OF[t].forEach(function (mi) {
+      var m = MILLS[mi];
+      var others = m.filter(function (i) { return i !== t; });
+      if (others.every(function (i) { return st.board[i] === HUMAN; })) score += 300;
+    });
+    /* Otherwise deny mobility. */
+    score += mobility(st.board, t) * 12;
+    if (score > bestScore) { bestScore = score; best = t; }
+  });
+  return best;
+}
+
+var NMM_LOGIC = {
+  PTS: PTS, MILLS: MILLS, ADJ: ADJ, MILLS_OF: MILLS_OF,
+  HUMAN: HUMAN, AI: AI,
+  newState: newState, countOnBoard: countOnBoard, phaseOf: phaseOf,
+  millOwner: millOwner, refreshClosedMills: refreshClosedMills,
+  doPlace: doPlace, doMove: doMove, doCapture: doCapture,
+  removableTargets: removableTargets, legalTargetsFor: legalTargetsFor,
+  hasAnyMove: hasAnyMove, checkWin: checkWin,
+  aiChoosePlace: aiChoosePlace, aiChooseMove: aiChooseMove, aiChooseCapture: aiChooseCapture
+};
+/* ================================================================
+   PART 3 — PRESENTATION (DOM + canvas). destroy() tears it all down.
+   ================================================================ */
+
+var REDUCED = (typeof matchMedia === 'function') &&
+  matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+function Exhibit() {
+  /* DOM handles */
+  this.root = null; this.canvas = null; this.ctx = null;
+  this.statusEl = null;
+  this.bronzeHand = null; this.bronzeBoard = null; this.bronzePhase = null;
+  this.basaltHand = null; this.basaltBoard = null; this.basaltPhase = null;
+  this.btnNew = null; this.btnUndo = null; this.btnRules = null; this.howto = null;
+
+  /* Runtime */
+  this.st = null;
+  this.history = [];
+  this.anims = [];
+  this.aiTimer = 0;
+  this.aiToken = 0;
+  this.destroyed = false;
+  this.rafId = 0;
+  this.needsDraw = true;
+  this.hover = -1;
+  this.usingKeyboard = false;
+  this.dpr = 1;
+  this.cssSize = 0;
+  this.margin = 0;
+  this.cell = 0;
+
+  /* Cached artwork */
+  this.stoneCache = null;
+  this.spriteBronze = null;
+  this.spriteBasalt = null;
+  this.spriteShadow = null;
+
+  this._onResize = null; this._onKey = null; this._onPointerMove = null;
+  this._onPointerDown = null; this._onPointerLeave = null;
+  this._onNew = null; this._onUndo = null; this._onRules = null;
+  this._ro = null;
+}
+
+Exhibit.prototype.pointXY = function (i) {
+  return [this.margin + PTS[i][0] * this.cell, this.margin + PTS[i][1] * this.cell];
+};
+
+/* ---------- procedural artwork ---------- */
+
+Exhibit.prototype.makeStone = function (px) {
+  var c = document.createElement('canvas');
+  c.width = c.height = Math.max(2, Math.round(px));
+  var g = c.getContext('2d');
+  var S = c.width;
+
+  var bg = g.createLinearGradient(0, 0, S, S);
+  bg.addColorStop(0, '#ded2b6'); bg.addColorStop(0.5, '#d2c5a8'); bg.addColorStop(1, '#bfae8d');
+  g.fillStyle = bg; g.fillRect(0, 0, S, S);
+
+  /* sedimentary banding */
+  var i, y, h;
+  for (i = 0; i < 80; i++) {
+    y = Math.random() * S; h = 2 + Math.random() * 16;
+    g.fillStyle = 'rgba(' + (115 + Math.random() * 45 | 0) + ',' +
+      (95 + Math.random() * 35 | 0) + ',' + (65 + Math.random() * 28 | 0) + ',' +
+      (0.04 + Math.random() * 0.08).toFixed(3) + ')';
+    g.fillRect(0, y, S, h);
+  }
+  /* mineral speckle */
+  var n = Math.round(S * S / 420);
+  for (i = 0; i < n; i++) {
+    var x = Math.random() * S, yy = Math.random() * S, r = 0.3 + Math.random() * 1.5;
+    g.fillStyle = Math.random() < 0.55 ? 'rgba(88,72,50,0.16)' : 'rgba(255,250,235,0.14)';
+    g.beginPath(); g.arc(x, yy, r, 0, 6.2832); g.fill();
+  }
+  /* weather pits */
+  for (i = 0; i < S / 5; i++) {
+    var px2 = Math.random() * S, py2 = Math.random() * S, pr = 2 + Math.random() * 5;
+    var rg = g.createRadialGradient(px2, py2, 0, px2, py2, pr);
+    rg.addColorStop(0, 'rgba(70,58,40,0.22)'); rg.addColorStop(1, 'rgba(70,58,40,0)');
+    g.fillStyle = rg; g.beginPath(); g.arc(px2, py2, pr, 0, 6.2832); g.fill();
+  }
+  /* hairline cracks */
+  g.strokeStyle = 'rgba(60,48,32,0.28)'; g.lineWidth = Math.max(1, S * 0.0012);
+  for (i = 0; i < 5; i++) {
+    g.beginPath();
+    var cx0 = Math.random() * S, cy0 = Math.random() * S;
+    g.moveTo(cx0, cy0);
+    for (var s2 = 0; s2 < 5; s2++) {
+      cx0 += (Math.random() - 0.5) * S * 0.16; cy0 += (Math.random() - 0.5) * S * 0.16;
+      g.lineTo(cx0, cy0);
+    }
+    g.stroke();
+  }
+
+  /* chiseled slab edge */
+  var edge = S * 0.022;
+  g.strokeStyle = 'rgba(52,40,24,0.85)'; g.lineWidth = edge;
+  g.strokeRect(edge / 2, edge / 2, S - edge, S - edge);
+  g.strokeStyle = 'rgba(255,246,224,0.30)'; g.lineWidth = Math.max(1, S * 0.002);
+  g.strokeRect(edge * 1.4, edge * 1.4, S - edge * 2.8, S - edge * 2.8);
+
+  /* engraved game lines: each mill drawn as one incised stroke */
+  var self = this;
+  function path(pts, off) {
+    g.beginPath();
+    pts.forEach(function (i, k) {
+      var p = self.pointXY(i);
+      var qx = (p[0] / self.cssSize) * S + off, qy = (p[1] / self.cssSize) * S + off;
+      if (k === 0) g.moveTo(qx, qy); else g.lineTo(qx, qy);
+    });
+  }
+  MILLS.forEach(function (m) {
+    path(m, 0);
+    g.strokeStyle = 'rgba(56,44,28,0.88)'; g.lineCap = 'round'; g.lineJoin = 'round';
+    g.lineWidth = Math.max(1.5, S * 0.006); g.stroke();
+    path(m, Math.max(1, S * 0.0022));
+    g.strokeStyle = 'rgba(255,248,230,0.32)'; g.lineWidth = Math.max(1, S * 0.002); g.stroke();
+  });
+
+  /* carved sockets at the 24 points */
+  for (i = 0; i < 24; i++) {
+    var p = self.pointXY(i);
+    var sx = (p[0] / self.cssSize) * S, sy = (p[1] / self.cssSize) * S;
+    var sr = Math.max(2, S * 0.011);
+    var sg = g.createRadialGradient(sx - sr * 0.3, sy - sr * 0.3, sr * 0.1, sx, sy, sr);
+    sg.addColorStop(0, 'rgba(40,30,18,0.95)');
+    sg.addColorStop(0.7, 'rgba(52,42,28,0.75)');
+    sg.addColorStop(1, 'rgba(255,248,230,0.25)');
+    g.fillStyle = sg;
+    g.beginPath(); g.arc(sx, sy, sr, 0, 6.2832); g.fill();
+  }
+
+  /* carved inscription along the foot of the slab */
+  g.save();
+  g.fillStyle = 'rgba(56,44,28,0.55)';
+  g.font = '600 ' + Math.round(S * 0.028) + 'px Georgia, serif';
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  var label = 'L V D V S';
+  g.fillText(label.split('').join('  '), S / 2, S - edge * 2.6);
+  g.restore();
+
+  /* vignette over the slab */
+  var vg = g.createRadialGradient(S / 2, S / 2, S * 0.32, S / 2, S / 2, S * 0.75);
+  vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(20,12,4,0.34)');
+  g.fillStyle = vg; g.fillRect(0, 0, S, S);
+  return c;
+};
+
+Exhibit.prototype.makePiece = function (kind) {
+  var R = 64, S = R * 4;
+  var c = document.createElement('canvas');
+  c.width = c.height = S;
+  var g = c.getContext('2d');
+  var cx = S / 2, cy = S / 2, i;
+
+  var grad;
+  if (kind === 'bronze') {
+    grad = g.createRadialGradient(cx - R * 0.9, cy - R * 1.1, R * 0.2, cx, cy, R * 1.06);
+    grad.addColorStop(0, '#ffecb4'); grad.addColorStop(0.32, '#dca94f');
+    grad.addColorStop(0.68, '#8f5c1c'); grad.addColorStop(1, '#472a08');
+  } else {
+    grad = g.createRadialGradient(cx - R * 0.8, cy - R, R * 0.2, cx, cy, R * 1.06);
+    grad.addColorStop(0, '#8f8f96'); grad.addColorStop(0.38, '#55555c');
+    grad.addColorStop(0.78, '#2b2b30'); grad.addColorStop(1, '#131316');
+  }
+  g.fillStyle = grad;
+  g.beginPath(); g.arc(cx, cy, R, 0, 6.2832); g.fill();
+
+  if (kind === 'bronze') {
+    /* brushed-metal arcs */
+    g.save();
+    g.beginPath(); g.arc(cx, cy, R, 0, 6.2832); g.clip();
+    for (i = 0; i < 46; i++) {
+      g.strokeStyle = 'rgba(255,240,200,' + (0.03 + Math.random() * 0.06).toFixed(3) + ')';
+      g.lineWidth = 1 + Math.random() * 2;
+      var a0 = Math.random() * 6.2832, rr = R * (0.25 + Math.random() * 0.7);
+      g.beginPath(); g.arc(cx, cy, rr, a0, a0 + 0.5 + Math.random() * 1.4); g.stroke();
+    }
+    g.restore();
+  } else {
+    /* basalt mineral speckle */
+    g.save();
+    g.beginPath(); g.arc(cx, cy, R, 0, 6.2832); g.clip();
+    for (i = 0; i < 130; i++) {
+      var sx = cx + (Math.random() - 0.5) * 2 * R, sy = cy + (Math.random() - 0.5) * 2 * R;
+      if ((sx - cx) * (sx - cx) + (sy - cy) * (sy - cy) > R * R) continue;
+      g.fillStyle = Math.random() < 0.5 ? 'rgba(210,210,220,0.20)' : 'rgba(0,0,0,0.30)';
+      g.beginPath(); g.arc(sx, sy, 0.8 + Math.random() * 2.2, 0, 6.2832); g.fill();
+    }
+    g.restore();
+  }
+
+  /* lathe ring */
+  g.strokeStyle = kind === 'bronze' ? 'rgba(255,236,180,0.45)' : 'rgba(205,205,215,0.26)';
+  g.lineWidth = R * 0.05;
+  g.beginPath(); g.arc(cx, cy, R * 0.64, 0, 6.2832); g.stroke();
+  /* rim */
+  g.strokeStyle = kind === 'bronze' ? 'rgba(46,26,6,0.9)' : 'rgba(6,6,8,0.9)';
+  g.lineWidth = R * 0.13;
+  g.beginPath(); g.arc(cx, cy, R * 0.94, 0, 6.2832); g.stroke();
+  /* specular */
+  var sp = g.createRadialGradient(cx - R * 0.42, cy - R * 0.5, 0, cx - R * 0.42, cy - R * 0.5, R * 0.5);
+  sp.addColorStop(0, 'rgba(255,255,255,0.34)'); sp.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = sp;
+  g.beginPath(); g.arc(cx, cy, R, 0, 6.2832); g.fill();
+  return c;
+};
+
+Exhibit.prototype.makeShadow = function () {
+  var S = 128, c = document.createElement('canvas');
+  c.width = c.height = S;
+  var g = c.getContext('2d');
+  var rg = g.createRadialGradient(S / 2, S / 2, 0, S / 2, S / 2, S / 2);
+  rg.addColorStop(0, 'rgba(0,0,0,0.55)'); rg.addColorStop(0.7, 'rgba(0,0,0,0.28)');
+  rg.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = rg; g.fillRect(0, 0, S, S);
+  return c;
+};
+
+/* ---------- geometry / sizing ---------- */
+
+Exhibit.prototype.resize = function () {
+  if (this.destroyed || !this.canvas) return;
+  var w = this.canvas.parentElement.clientWidth;
+  if (!w) return;
+  var coarse = (typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches) ||
+    ('ontouchstart' in (typeof window !== 'undefined' ? window : {}));
+  this.dpr = coarse ? 1 : Math.min((typeof window !== 'undefined' && window.devicePixelRatio) || 1, 2);
+  this.cssSize = w;
+  this.canvas.width = Math.round(w * this.dpr);
+  this.canvas.height = Math.round(w * this.dpr);
+  this.margin = w * 0.095;
+  this.cell = (w - 2 * this.margin) / 6;
+  this.stoneCache = this.makeStone(w * this.dpr);
+  this.needsDraw = true;
+};
+
+/* ---------- drawing ---------- */
+
+Exhibit.prototype.drawPieceAt = function (x, y, kind, scale, alpha) {
+  var g = this.ctx;
+  var R = this.cell * 0.30 * scale;
+  /* ground shadow */
+  g.save();
+  g.globalAlpha = 0.5 * alpha;
+  g.drawImage(this.spriteShadow, x - R * 1.25, y + R * 0.42, R * 2.5, R * 1.05);
+  g.restore();
+  var spr = kind === HUMAN ? this.spriteBronze : this.spriteBasalt;
+  g.save();
+  g.globalAlpha = alpha;
+  g.drawImage(spr, x - R, y - R, R * 2, R * 2);
+  g.restore();
+};
+
+Exhibit.prototype.hiddenByAnim = function (i) {
+  for (var k = 0; k < this.anims.length; k++) {
+    var a = this.anims[k];
+    if (a.kind === 'place' && a.pt === i) return true;
+    if (a.kind === 'move' && (a.from === i || a.to === i)) return true;
+    if (a.kind === 'capture' && a.pt === i) return true;
+  }
+  return false;
+};
+
+Exhibit.prototype.draw = function (now) {
+  var g = this.ctx, w = this.cssSize, st = this.st;
+  g.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+  g.clearRect(0, 0, w, w);
+  if (this.stoneCache) g.drawImage(this.stoneCache, 0, 0, w, w);
+
+  var i, p, r;
+  var cell = this.cell;
+
+  /* last closed mill: ember-gold echo */
+  if (st.lastMillPts.length) {
+    g.save();
+    g.strokeStyle = 'rgba(255, 196, 90, 0.75)';
+    g.lineWidth = Math.max(1.5, cell * 0.03);
+    st.lastMillPts.forEach(function (mi2) {
+      p = this.pointXY(mi2);
+      g.beginPath(); g.arc(p[0], p[1], cell * 0.40, 0, 6.2832); g.stroke();
+    }, this);
+    g.restore();
+  }
+
+  /* legal targets */
+  if (st.selected !== -1 && !st.over) {
+    var tg = legalTargetsFor(st, st.turn, st.selected);
+    g.save();
+    g.fillStyle = 'rgba(255, 220, 140, 0.85)';
+    tg.forEach(function (t) {
+      p = this.pointXY(t);
+      g.beginPath(); g.arc(p[0], p[1], Math.max(2, cell * 0.055), 0, 6.2832); g.fill();
+    }, this);
+    g.restore();
+  }
+
+  /* hover */
+  if (this.hover !== -1 && !this.usingKeyboard && !st.over) {
+    p = this.pointXY(this.hover);
+    g.save();
+    g.strokeStyle = 'rgba(255, 230, 170, 0.55)';
+    g.lineWidth = Math.max(1.5, cell * 0.025);
+    g.beginPath(); g.arc(p[0], p[1], cell * 0.40, 0, 6.2832); g.stroke();
+    g.restore();
+  }
+
+  /* pieces */
+  for (i = 0; i < 24; i++) {
+    var v = st.board[i];
+    if (!v || this.hiddenByAnim(i)) continue;
+    p = this.pointXY(i);
+    this.drawPieceAt(p[0], p[1], v, 1, 1);
+  }
+
+  /* selection ring */
+  if (st.selected !== -1 && !st.over) {
+    p = this.pointXY(st.selected);
+    var pulse = REDUCED ? 0 : Math.sin(now / 380) * cell * 0.02;
+    g.save();
+    g.strokeStyle = 'rgba(255, 205, 110, 0.95)';
+    g.lineWidth = Math.max(2, cell * 0.035);
+    g.beginPath(); g.arc(p[0], p[1], cell * 0.44 + pulse, 0, 6.2832); g.stroke();
+    g.restore();
+  }
+
+  /* keyboard cursor */
+  if (this.usingKeyboard && !st.over) {
+    p = this.pointXY(st.cursor);
+    g.save();
+    g.strokeStyle = 'rgba(240, 235, 220, 0.9)';
+    g.lineWidth = Math.max(1.5, cell * 0.022);
+    g.setLineDash([cell * 0.09, cell * 0.07]);
+    g.beginPath(); g.arc(p[0], p[1], cell * 0.47, 0, 6.2832); g.stroke();
+    g.restore();
+  }
+
+  /* animations */
+  for (i = 0; i < this.anims.length; i++) {
+    var a = this.anims[i];
+    var t = a.dur === 0 ? 1 : Math.min(1, Math.max(0, (now - a.t0) / a.dur));
+    if (a.kind === 'place') {
+      var e = easeOutCubic(t);
+      p = this.pointXY(a.pt);
+      this.drawPieceAt(p[0], p[1], a.piece, Math.max(0.01, e), e);
+    } else if (a.kind === 'move') {
+      var e2 = easeInOutCubic(t);
+      var f = this.pointXY(a.from), q = this.pointXY(a.to);
+      var mx = f[0] + (q[0] - f[0]) * e2, my = f[1] + (q[1] - f[1]) * e2;
+      if (a.fly) {
+        var dist = Math.hypot(q[0] - f[0], q[1] - f[1]);
+        my -= Math.sin(t * Math.PI) * dist * 0.22;
+      }
+      var lift = a.fly ? Math.sin(t * Math.PI) * 0.25 : 0;
+      this.drawPieceAt(mx, my, a.piece, 1 + lift, 1);
+    } else if (a.kind === 'capture') {
+      var e3 = 1 - easeInOutCubic(t);
+      p = this.pointXY(a.pt);
+      this.drawPieceAt(p[0], p[1], a.piece, Math.max(0.01, e3), Math.max(0, e3));
+    }
+  }
+};
+
+Exhibit.prototype.loop = function () {
+  if (this.destroyed) return;
+  var self = this;
+  this.rafId = requestAnimationFrame(function () { self.loop(); });
+  var now = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+  var active = false;
+  for (var k = 0; k < this.anims.length; k++) {
+    if (now < this.anims[k].t0 + this.anims[k].dur) { active = true; break; }
+  }
+  if (active || this.needsDraw) {
+    this.draw(now);
+    this.needsDraw = false;
+  }
+  if (this.anims.length && !active) this.anims.length = 0;
+};
+
+Exhibit.prototype.afterAnims = function (cb) {
+  if (this.destroyed) return;
+  if (REDUCED || !this.anims.length) { cb(); return; }
+  var self = this;
+  var iv = setInterval(function () {
+    if (self.destroyed) { clearInterval(iv); return; }
+    var now = performance.now(), active = false;
+    for (var k = 0; k < self.anims.length; k++) {
+      if (now < self.anims[k].t0 + self.anims[k].dur) { active = true; break; }
+    }
+    if (!active) { clearInterval(iv); self.anims.length = 0; cb(); }
+  }, 40);
+};
+
+Exhibit.prototype.nowMs = function () {
+  return (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+};
+/* ---------- status / UI ---------- */
+
+Exhibit.prototype.phaseName = function (ph) {
+  return ph === 'place' ? 'Placement' : ph === 'move' ? 'Movement' : 'Flight';
+};
+
+Exhibit.prototype.updatePanels = function () {
+  var st = this.st;
+  this.bronzeHand.textContent = String(st.toPlace[HUMAN]);
+  this.bronzeBoard.textContent = String(countOnBoard(st, HUMAN));
+  this.bronzePhase.textContent = this.phaseName(phaseOf(st, HUMAN));
+  this.basaltHand.textContent = String(st.toPlace[AI]);
+  this.basaltBoard.textContent = String(countOnBoard(st, AI));
+  this.basaltPhase.textContent = this.phaseName(phaseOf(st, AI));
+  this.btnUndo.disabled = this.history.length <= 1 || st.over && this.history.length <= 1;
+};
+
+Exhibit.prototype.setStatus = function (turnLabel, message) {
+  while (this.statusEl.firstChild) this.statusEl.removeChild(this.statusEl.firstChild);
+  var lab = document.createElement('span');
+  lab.className = 'nine-mens-morris-turn';
+  lab.textContent = turnLabel;
+  var msg = document.createElement('div');
+  msg.textContent = message;
+  this.statusEl.appendChild(lab);
+  this.statusEl.appendChild(msg);
+};
+
+Exhibit.prototype.describeTurn = function () {
+  var st = this.st;
+  if (st.over) {
+    this.setStatus('The game is decided',
+      st.winner === HUMAN ? 'Bronze prevails. The house bows to a worthy strategist.'
+                          : 'Basalt prevails. The stones keep their counsel — try again.');
+    return;
+  }
+  var ph = phaseOf(st, st.turn);
+  if (st.capturePending) {
+    this.setStatus(st.turn === HUMAN ? 'Mill closed — your tribute' : 'Mill closed — the house takes',
+      st.turn === HUMAN ? 'Choose one basalt stone to remove from the board.'
+                        : 'The house removes one of your stones.');
+    return;
+  }
+  if (st.turn === HUMAN) {
+    var m = ph === 'place' ? 'Set a bronze stone upon an empty point.'
+      : ph === 'move' ? 'Choose a bronze stone, then an empty neighbor along the lines.'
+      : 'You fly — choose a bronze stone, then any empty point on the board.';
+    this.setStatus('Your move — bronze', m);
+  } else {
+    this.setStatus('The house plays — basalt', 'Basalt considers the board…');
+  }
+};
+
+/* ---------- history / undo ---------- */
+
+Exhibit.prototype.snapshot = function () {
+  var st = this.st;
+  return {
+    board: st.board.slice(),
+    toPlace: { 1: st.toPlace[1], 2: st.toPlace[2] },
+    turn: st.turn,
+    closedMills: st.closedMills.slice()
+  };
+};
+
+Exhibit.prototype.restore = function (snap) {
+  var st = this.st;
+  st.board = snap.board.slice();
+  st.toPlace = { 1: snap.toPlace[1], 2: snap.toPlace[2] };
+  st.turn = snap.turn;
+  refreshClosedMills(st);
+  st.selected = -1;
+  st.capturePending = false;
+  st.over = false;
+  st.winner = 0;
+  st.lastMillPts = [];
+  this.anims.length = 0;
+};
+
+Exhibit.prototype.pushHistory = function () {
+  this.history.push(this.snapshot());
+  if (this.history.length > 60) this.history.shift();
+};
+
+Exhibit.prototype.undo = function () {
+  if (this.destroyed) return;
+  this.aiToken++;
+  if (this.aiTimer) { clearTimeout(this.aiTimer); this.aiTimer = 0; }
+  this.anims.length = 0;
+  if (this.history.length <= 1) return; /* nothing to take back */
+  this.history.pop(); /* discard the in-progress turn's snapshot */
+  var h = this.history[this.history.length - 1];
+  while (this.history.length > 1 && h.turn !== HUMAN) {
+    this.history.pop();
+    h = this.history[this.history.length - 1];
+  }
+  this.restore(h);
+  this.describeTurn();
+  this.updatePanels();
+  this.needsDraw = true;
+};
+
+Exhibit.prototype.newGame = function () {
+  if (this.destroyed) return;
+  this.aiToken++;
+  if (this.aiTimer) { clearTimeout(this.aiTimer); this.aiTimer = 0; }
+  this.anims.length = 0;
+  this.st = newState();
+  refreshClosedMills(this.st);
+  this.history = [];
+  this.hover = -1;
+  this.pushHistory();
+  this.describeTurn();
+  this.updatePanels();
+  this.needsDraw = true;
+};
+
+/* ---------- turn flow ---------- */
+
+Exhibit.prototype.endTurn = function () {
+  var st = this.st;
+  var w = checkWin(st, st.turn);
+  st.lastMillPts = [];
+  if (w) {
+    st.over = true; st.winner = w;
+    st.selected = -1; st.capturePending = false;
+    this.describeTurn(); this.updatePanels(); this.needsDraw = true;
+    return;
+  }
+  st.turn = 3 - st.turn;
+  st.selected = -1;
+  st.capturePending = false;
+  this.pushHistory();
+  this.describeTurn();
+  this.updatePanels();
+  this.needsDraw = true;
+  if (st.turn === AI && !st.over) this.aiTakeTurn();
+};
+
+Exhibit.prototype.noteMill = function (fresh) {
+  var pts = [];
+  fresh.forEach(function (mi) {
+    MILLS[mi].forEach(function (i) { if (pts.indexOf(i) === -1) pts.push(i); });
+  });
+  this.st.lastMillPts = pts;
+};
+
+Exhibit.prototype.handleCaptureDone = function () {
+  this.describeTurn();
+  this.updatePanels();
+  this.needsDraw = true;
+  this.endTurn();
+};
+
+/* Human action at point pt (pointer or keyboard). */
+Exhibit.prototype.act = function (pt) {
+  var st = this.st;
+  if (this.destroyed || st.over || st.turn !== HUMAN) return;
+  if (this.anims.length) return; /* let the stones settle */
+  this.usingKeyboard = false;
+
+  if (st.capturePending) {
+    var targets = removableTargets(st, AI);
+    if (st.board[pt] === AI && targets.indexOf(pt) !== -1) {
+      doCapture(st, pt);
+      this.anims.push({ kind: 'capture', pt: pt, piece: AI, t0: this.nowMs(), dur: REDUCED ? 0 : 320 });
+      var self = this;
+      this.afterAnims(function () { self.handleCaptureDone(); });
+      this.needsDraw = true;
+    }
+    return;
+  }
+
+  var ph = phaseOf(st, HUMAN);
+  if (ph === 'place') {
+    if (st.board[pt] !== 0) return;
+    var fresh = doPlace(st, HUMAN, pt);
+    this.anims.push({ kind: 'place', pt: pt, piece: HUMAN, t0: this.nowMs(), dur: REDUCED ? 0 : 300 });
+    this.noteMill(fresh);
+    var self2 = this;
+    this.afterAnims(function () {
+      if (fresh.length) {
+        st.capturePending = true;
+        self2.describeTurn(); self2.updatePanels(); self2.needsDraw = true;
+      } else {
+        self2.endTurn();
+      }
+    });
+    this.describeTurn(); this.updatePanels(); this.needsDraw = true;
+    return;
+  }
+
+  /* movement / flight */
+  if (st.selected === -1) {
+    if (st.board[pt] === HUMAN) {
+      st.selected = pt;
+      this.describeTurn(); this.needsDraw = true;
+    }
+    return;
+  }
+  if (pt === st.selected) { st.selected = -1; this.needsDraw = true; return; }
+  var tg = legalTargetsFor(st, HUMAN, st.selected);
+  if (tg.indexOf(pt) !== -1) {
+    var from = st.selected;
+    st.selected = -1;
+    var fresh2 = doMove(st, HUMAN, from, pt);
+    this.anims.push({
+      kind: 'move', from: from, to: pt, piece: HUMAN,
+      fly: ph === 'fly', t0: this.nowMs(), dur: REDUCED ? 0 : (ph === 'fly' ? 520 : 380)
+    });
+    this.noteMill(fresh2);
+    var self3 = this;
+    this.afterAnims(function () {
+      if (fresh2.length) {
+        st.capturePending = true;
+        self3.describeTurn(); self3.updatePanels(); self3.needsDraw = true;
+      } else {
+        self3.endTurn();
+      }
+    });
+    this.describeTurn(); this.updatePanels(); this.needsDraw = true;
+  } else if (st.board[pt] === HUMAN) {
+    st.selected = pt; /* re-select */
+    this.needsDraw = true;
+  } else {
+    st.selected = -1; this.needsDraw = true;
+  }
+};
+
+Exhibit.prototype.aiTakeTurn = function () {
+  var self = this;
+  this.aiToken++;
+  var tk = this.aiToken;
+  if (this.aiTimer) { clearTimeout(this.aiTimer); this.aiTimer = 0; }
+  var delay = REDUCED ? 80 : 550 + Math.random() * 350;
+  this.aiTimer = setTimeout(function () {
+    self.aiTimer = 0;
+    if (tk !== self.aiToken || self.destroyed) return;
+    var st = self.st;
+    if (st.over || st.turn !== AI) return;
+
+    function afterMove(fresh, mover) {
+      if (tk !== self.aiToken || self.destroyed) return;
+      if (fresh.length) {
+        var cap = aiChooseCapture(st);
+        doCapture(st, cap);
+        self.noteMill(fresh);
+        self.anims.push({ kind: 'capture', pt: cap, piece: HUMAN, t0: self.nowMs(), dur: REDUCED ? 0 : 320 });
+        self.describeTurn(); self.updatePanels(); self.needsDraw = true;
+        self.afterAnims(function () {
+          if (tk !== self.aiToken || self.destroyed) return;
+          self.endTurn();
+        });
+      } else {
+        self.endTurn();
+      }
+    }
+
+    var ph = phaseOf(st, AI);
+    if (ph === 'place') {
+      var pt = aiChoosePlace(st);
+      if (pt < 0) { self.endTurn(); return; }
+      var fresh = doPlace(st, AI, pt);
+      self.anims.push({ kind: 'place', pt: pt, piece: AI, t0: self.nowMs(), dur: REDUCED ? 0 : 300 });
+      self.describeTurn(); self.updatePanels(); self.needsDraw = true;
+      self.afterAnims(function () { afterMove(fresh); });
+    } else {
+      var mv = aiChooseMove(st);
+      if (!mv) { self.endTurn(); return; } /* checkWin will decide */
+      var fresh2 = doMove(st, AI, mv.from, mv.to);
+      self.anims.push({
+        kind: 'move', from: mv.from, to: mv.to, piece: AI,
+        fly: ph === 'fly', t0: self.nowMs(), dur: REDUCED ? 0 : (ph === 'fly' ? 520 : 380)
+      });
+      self.describeTurn(); self.updatePanels(); self.needsDraw = true;
+      self.afterAnims(function () { afterMove(fresh2); });
+    }
+  }, delay);
+};
+
+/* ---------- input ---------- */
+
+Exhibit.prototype.hitPoint = function (ev) {
+  var rect = this.canvas.getBoundingClientRect();
+  var x = ev.clientX - rect.left, y = ev.clientY - rect.top;
+  var best = -1, bestD = Infinity;
+  for (var i = 0; i < 24; i++) {
+    var p = this.pointXY(i);
+    var d = Math.hypot(p[0] - x, p[1] - y);
+    if (d < bestD) { bestD = d; best = i; }
+  }
+  return bestD <= this.cell * 0.44 ? best : -1;
+};
+
+Exhibit.prototype.moveCursor = function (dx, dy) {
+  var st = this.st;
+  var c = PTS[st.cursor];
+  var best = -1, bestScore = -Infinity;
+  for (var i = 0; i < 24; i++) {
+    if (i === st.cursor) continue;
+    var vx = PTS[i][0] - c[0], vy = PTS[i][1] - c[1];
+    var dot = vx * dx + vy * dy;
+    if (dot <= 0) continue;
+    var dist = Math.hypot(vx, vy);
+    var score = dot / dist - dist * 0.04;
+    if (score > bestScore) { bestScore = score; best = i; }
+  }
+  if (best >= 0) {
+    st.cursor = best;
+    this.usingKeyboard = true;
+    this.needsDraw = true;
+  }
+};
+
+/* ---------- init / destroy ---------- */
+
+Exhibit.prototype.init = function (rootId) {
+  var root = document.getElementById(rootId || 'nine-mens-morris-root');
+  if (!root || this.root) return false;
+  this.root = root;
+  this.canvas = root.querySelector('#nine-mens-morris-board');
+  this.ctx = this.canvas.getContext('2d');
+  this.statusEl = root.querySelector('#nine-mens-morris-status');
+  this.bronzeHand = root.querySelector('#nine-mens-morris-bronze-hand');
+  this.bronzeBoard = root.querySelector('#nine-mens-morris-bronze-board');
+  this.bronzePhase = root.querySelector('#nine-mens-morris-bronze-phase');
+  this.basaltHand = root.querySelector('#nine-mens-morris-basalt-hand');
+  this.basaltBoard = root.querySelector('#nine-mens-morris-basalt-board');
+  this.basaltPhase = root.querySelector('#nine-mens-morris-basalt-phase');
+  this.btnNew = root.querySelector('#nine-mens-morris-new');
+  this.btnUndo = root.querySelector('#nine-mens-morris-undo');
+  this.btnRules = root.querySelector('#nine-mens-morris-rules-btn');
+  this.howto = root.querySelector('#nine-mens-morris-howto');
+
+  this.spriteBronze = this.makePiece('bronze');
+  this.spriteBasalt = this.makePiece('basalt');
+  this.spriteShadow = this.makeShadow();
+
+  var self = this;
+
+  this._onResize = function () { self.resize(); };
+  if (typeof ResizeObserver !== 'undefined') {
+    this._ro = new ResizeObserver(this._onResize);
+    this._ro.observe(this.canvas.parentElement);
+  } else if (typeof window !== 'undefined') {
+    window.addEventListener('resize', this._onResize);
+  }
+
+  this._onPointerMove = function (ev) {
+    var h = self.hitPoint(ev);
+    if (h !== self.hover) { self.hover = h; self.needsDraw = true; }
+  };
+  this._onPointerLeave = function () {
+    if (self.hover !== -1) { self.hover = -1; self.needsDraw = true; }
+  };
+  this._onPointerDown = function (ev) {
+    self.usingKeyboard = false;
+    var h = self.hitPoint(ev);
+    if (h !== -1) { self.st.cursor = h; self.act(h); }
+  };
+  this.canvas.addEventListener('pointermove', this._onPointerMove);
+  this.canvas.addEventListener('pointerleave', this._onPointerLeave);
+  this.canvas.addEventListener('pointerdown', this._onPointerDown);
+
+  this._onKey = function (ev) {
+    var st = self.st;
+    switch (ev.key) {
+      case 'ArrowLeft': self.moveCursor(-1, 0); ev.preventDefault(); break;
+      case 'ArrowRight': self.moveCursor(1, 0); ev.preventDefault(); break;
+      case 'ArrowUp': self.moveCursor(0, -1); ev.preventDefault(); break;
+      case 'ArrowDown': self.moveCursor(0, 1); ev.preventDefault(); break;
+      case 'Enter':
+      case ' ':
+        self.usingKeyboard = true;
+        self.act(st.cursor);
+        ev.preventDefault();
+        break;
+      case 'u': case 'U': self.undo(); ev.preventDefault(); break;
+      case 'r': case 'R': self.newGame(); ev.preventDefault(); break;
+      case 'Escape':
+        if (st.selected !== -1) { st.selected = -1; self.needsDraw = true; }
+        ev.preventDefault();
+        break;
+    }
+  };
+  this.canvas.addEventListener('keydown', this._onKey);
+
+  this._onNew = function () { self.newGame(); };
+  this._onUndo = function () { self.undo(); };
+  this._onRules = function () {
+    var open = self.howto.hasAttribute('hidden');
+    if (open) {
+      self.howto.removeAttribute('hidden');
+      self.btnRules.setAttribute('aria-expanded', 'true');
+    } else {
+      self.howto.setAttribute('hidden', '');
+      self.btnRules.setAttribute('aria-expanded', 'false');
+    }
+  };
+  this.btnNew.addEventListener('click', this._onNew);
+  this.btnUndo.addEventListener('click', this._onUndo);
+  this.btnRules.addEventListener('click', this._onRules);
+
+  this.newGame();
+  this.resize();
+  this.loop();
+  return true;
+};
+
+Exhibit.prototype.destroy = function () {
+  if (this.destroyed) return;
+  this.destroyed = true;
+  this.aiToken++;
+  if (this.aiTimer) { clearTimeout(this.aiTimer); this.aiTimer = 0; }
+  if (this.rafId) cancelAnimationFrame(this.rafId);
+  this.rafId = 0;
+  if (this._ro) { this._ro.disconnect(); this._ro = null; }
+  if (typeof window !== 'undefined' && this._onResize) window.removeEventListener('resize', this._onResize);
+  if (this.canvas) {
+    this.canvas.removeEventListener('pointermove', this._onPointerMove);
+    this.canvas.removeEventListener('pointerleave', this._onPointerLeave);
+    this.canvas.removeEventListener('pointerdown', this._onPointerDown);
+    this.canvas.removeEventListener('keydown', this._onKey);
+  }
+  if (this.btnNew) this.btnNew.removeEventListener('click', this._onNew);
+  if (this.btnUndo) this.btnUndo.removeEventListener('click', this._onUndo);
+  if (this.btnRules) this.btnRules.removeEventListener('click', this._onRules);
+  this.anims.length = 0;
+  this.history.length = 0;
+  this.stoneCache = null;
+  this.spriteBronze = null;
+  this.spriteBasalt = null;
+  this.spriteShadow = null;
+  this.st = null;
+  this.ctx = null;
+  this.canvas = null;
+  this.root = null;
+};
+
+/* ---------- public API ---------- */
+
+var api = {
+  _exhibit: null,
+  _logic: NMM_LOGIC,
+  init: function (rootId) {
+    if (api._exhibit) api._exhibit.destroy();
+    api._exhibit = new Exhibit();
+    return api._exhibit.init(rootId);
+  },
+  destroy: function () {
+    if (api._exhibit) { api._exhibit.destroy(); api._exhibit = null; }
+  }
+};
+
+var _global = (typeof window !== 'undefined') ? window :
+  (typeof globalThis !== 'undefined' ? globalThis : this);
+_global.NineMensMorris = api;
+
+/* auto-init when the exhibit markup is present */
+function _autoInit() {
+  if (typeof document === 'undefined') return;
+  if (document.getElementById('nine-mens-morris-root')) api.init();
+}
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', _autoInit);
+  } else {
+    _autoInit();
+  }
+}
+
+})();
+</script>
+</body>
+</html>

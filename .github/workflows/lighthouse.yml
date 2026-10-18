@@ -32,9 +32,12 @@ on:
 permissions:
   contents: read
 
+# A run in progress is never cancelled: the build loop pushes small handoff-only commits every
+# few minutes, and cancelling on each push meant no run ever finished. GitHub keeps at most one
+# waiting run per group (a newer push replaces the waiting one), so runs cannot pile up.
 concurrency:
   group: lighthouse-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   lighthouse:

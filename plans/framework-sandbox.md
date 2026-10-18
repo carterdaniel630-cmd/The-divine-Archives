@@ -103,12 +103,12 @@ the shared API:
 | Ziggurat Builder | open | high score (+ lines) | game over | none | |
 | The Reliquary | open | high score (+ correct) | end of round | none | |
 | The Seeker's Path | open | none | the last stage | each stage, from `da.games.seeker` | stages become `unlocked` events |
-| Antithesis (pong) | open | tally | match end | none | |
-| The Excavation (minesweeper) | open | score | cleared / struck | none | |
-| The Labyrinth (pac-man) | open | score | game over | none | |
+| Antithesis | open | tally | match end | none | |
+| The Excavation | open | score | cleared / struck | none | |
+| The Labyrinth | open | score | game over | none | |
 | The Firmament (pinball) | open | score | game over | none | |
-| Dominion of the Ancients (risk) | open | none | conquest / defeat | none | needs a `finish` call |
-| The Tomb Robber (treasure) | open | run score | run end | none | |
+| Dominion of the Ancients | open | none | conquest / defeat | none | needs a `finish` call |
+| The Unfinished Journal (treasure) | open | run score | run end | none | |
 | (museum) the arcade door | none | none | none | `unlocked` `site:arcade` when the door first opens | in `docs/museum/secret.js` |
 
 **Old saves.** On first load, the adapter would add one `scored` event per existing high score,
