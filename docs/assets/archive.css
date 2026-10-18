@@ -356,7 +356,7 @@ img { max-width: 100%; }
   margin: 1.1rem 0 0.4rem; font-weight: 400;
 }
 .sources ul { list-style: none; padding: 0; margin: 0; }
-.sources li { color: var(--ink-dim); margin-bottom: 0.5rem; line-height: 1.5; }
+.sources li { color: var(--ink-dim); margin-bottom: 0.5rem; line-height: 1.5; overflow-wrap: anywhere; }   /* long web addresses wrap on phones */
 .source-note {
   margin-top: 1.6rem; font-size: 0.85rem; color: var(--ink-faint);
   font-style: italic; border-left: 2px solid var(--line); padding-left: 1rem;
