@@ -4,23 +4,22 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `218c51b` (site batch A merged 2026-10-17 21:08 EDT, deployed).
+**As of:** 2026-10-18 ~07:30 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `218c51b` (site batch A merged 2026-10-17 21:08 EDT, deployed).
 
 ## Mergeable now
-| Item | Where | Review | Carter's approval | Still to hold before merging |
-|---|---|---|---|---|
-
-## Merged
-- Site batch A (PR #59) → `main` `218c51b`, 2026-10-17 21:08 EDT. All checks green, deploy success.
+(none)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
+| Site batch B: hallway hiss removed; "199 figures"; V72 sources (back to pending); Pantheon Ra-Horakhty | `loop/small-defects-2026-10-17` @ `aeda5d4` | Yes. Independent review 2026-10-18: 0 open findings (`2026-10-18-batch-b-independent-review.md`); all local checks green | (1) a pull request so GitHub's PR checks run (review, verify, originality, Lighthouse), all green on `aeda5d4`; (2) Carter's yes for batch B itself; (3) Carter re-clears V72 and Ra-Horakhty in his batch pass (they stay pending-flagged until then, which does not block the merge) |
+
+## Merged
+- Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
 
 ## Not ready (in progress or waiting on a ruling)
-- Site batch B, small defects (hallway hiss removed; "199 figures"; V72 sources, back to pending; Ra-Horakhty name
-  correction, Item 30): branch `loop/small-defects-2026-10-17` `aeda5d4` (current with main). Part 1 and Ra-Horakhty done and all local checks green; part 2 (Bagh-chal,
-  zodiac `dispose()`, Oracle Bones, fonts, Grimoire) still to do; then it needs its own independent review.
+- Small defects part 2 (Bagh-chal, zodiac `dispose()`, Oracle Bones, exhibit fonts, Grimoire): all in `handoff/`
+  drafts and previews, not on the live site, so not part of batch B. Next loop item.
 - Protection charter: D1–D3 PARKED by Carter (Item 26); D4 is approved only once it is up to standard (Item 23). The draft is `handoff/protection-charter-DRAFT.md`.
 - The Unfinished Journal hero redesign (PR #60, `loop/journal-hero-redesign` `6862dee`): **ON HOLD, does not merge.**
   Item 27 (Carter): the hero is based on Carter's own selfie, and the face stays his. PR #60 drew a new, invented face.
