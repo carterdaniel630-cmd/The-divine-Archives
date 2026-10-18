@@ -1,6 +1,6 @@
 {
  "type": "waypoint",
- "count": 183,
+ "count": 203,
  "entities": [
   {
    "id": "waypoint:chichen-itza/ballcourt",
@@ -1209,6 +1209,166 @@
    "parent": "site:mount-ararat-the-ark-tradition",
    "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
    "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/chamber",
+   "type": "waypoint",
+   "label": "The chamber and its roof",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/circle",
+   "type": "waypoint",
+   "label": "The Great Circle",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/dead",
+   "type": "waypoint",
+   "label": "The dead",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/facade",
+   "type": "waypoint",
+   "label": "The white wall",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/genome",
+   "type": "waypoint",
+   "label": "A king of Newgrange?",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/kerb",
+   "type": "waypoint",
+   "label": "The kerb and the Entrance Stone",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/later",
+   "type": "waypoint",
+   "label": "After the builders",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/mound",
+   "type": "waypoint",
+   "label": "The mound",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/myth",
+   "type": "waypoint",
+   "label": "The house of the Dagda",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/passage",
+   "type": "waypoint",
+   "label": "The passage",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/reach",
+   "type": "waypoint",
+   "label": "Where the light falls",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/recesses",
+   "type": "waypoint",
+   "label": "Basins and carvings",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/roofbox",
+   "type": "waypoint",
+   "label": "The roof-box",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/solstice",
+   "type": "waypoint",
+   "label": "The midwinter sunrise",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/spiral",
+   "type": "waypoint",
+   "label": "The triple spiral",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-board",
+   "type": "waypoint",
+   "label": "Newgrange",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-door",
+   "type": "waypoint",
+   "label": "To the mound",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-v86",
+   "type": "waypoint",
+   "label": "The Berlin Gold Hat",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/valley",
+   "type": "waypoint",
+   "label": "Brú na Bóinne",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
   },
   {
    "id": "waypoint:qumran-caves/c1-isaiah",
