@@ -41,13 +41,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
   The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
   Framework workflow fails any content PR that leaves the registry stale.
-- #45 (registry rebuild) was closed; #49 carries the same rebuild.
-- #49 `claude/framework-followup`: the reviewer's two small framework bugs:
-  - rate-limited pages that had failed twice were never retried
-  - a first new score could be copied again as an "old" score
-
-  It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
-  and the reviewer passes it.
+- #49 `claude/framework-followup` merged 2026-10-12 with Carter's go-ahead, deployed: the reviewer's two
+  framework bugs fixed (rate-limited pages are retried; a first new score is no longer copied again as an
+  "old" one); tracker script v=2 on every page. Reviewer passed it
+  (`reviews/2026-10-12-framework-followup-pr49.md` on review-log). #45 was closed; #49 carried its rebuild.
 - #42 (source review and corrections of 14 pending chapters) merged; #50 (clearing those 14, same
   branch `claude/project-thread-evq985`) merged 2026-10-12 with Carter's "clear".
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
