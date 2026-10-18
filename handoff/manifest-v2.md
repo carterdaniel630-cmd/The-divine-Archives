@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26) + Journal hero selfie correction (Item 27) + loop restart ping (Item 28) + tie-it-all-in Graphify order (Item 29) + Ra-Horakhty correction (Item 30) + evening decisions batch (Item 31).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26) + Journal hero selfie correction (Item 27) + loop restart ping (Item 28) + tie-it-all-in Graphify order (Item 29) + Ra-Horakhty correction (Item 30) + evening decisions batch (Item 31) + loop token efficiency fix (Item 32).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -263,3 +263,24 @@ Carter answered nine items one by one on the evening of Sat 2026-10-17. File: .
 9. **900 Theses — ON HOLD.** Just on hold, no ruling needed. Do NOT treat as blocked-waiting-for-ruling.
 
 This file approves no merge. Each merge still needs Carter's per-item approval.
+
+
+## Item 32 — Loop token efficiency fix (Carter order, Sun 2026-10-18)
+
+Carter: "It hits message limit again. It just started. We need to stop running into
+this issue. It goes down way too fast and nothing gets done."
+
+The loop was burning messaging tokens on overhead — one tiny fragment per run,
+separate "take lock"/"release lock" commits, and full STATUS.md + manifest reads
+every run. File: `handoff/order-2026-10-18-loop-token-efficiency.md`.
+
+Five rules, effective immediately:
+1. **Do more per run** — finish a whole item in one run (build + review + merge if approved). Fewer runs, fewer startup costs.
+2. **Cut lock churn** — no more separate "take lock"/"release lock" commits; fold the lock into the work commit.
+3. **Read less per run** — targeted reads only for the current item; no full re-reads every run.
+4. **Check budget before each run** — if messaging tokens are low, finish clean and PAUSE. A clean pause beats a dead stall.
+5. **Keep the cycle rule** (Item 25) — each run does the whole cycle for one item instead of a fragment.
+
+Report back in STATUS.md how many items get done per run, so Carter can see the difference.
+
+This item approves no merge. Each merge still needs Carter's per-item approval (Item 22).
