@@ -34,11 +34,14 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for five facts the o
 5. WorldHistory.org, "Newgrange", https://www.worldhistory.org/Newgrange/ (*opened*): 76 m across, 12 m high,
    about 4,500 m²; O'Kelly's 97 kerbstones, none under a tonne; O'Kelly called the arrangement of the facade
    stones speculation; Brú na Bóinne, the Tuatha Dé Danann, the Dagda, Oengus; cremated remains in the chamber.
-6. E. Burke-Kennedy, "Shedding light on winter solstice at Newgrange", *The Irish Times*, 19 December 2013,
+6. "Shedding light on winter solstice at Newgrange", *The Irish Times*, 19 December 2013 (the byline given at
+   build, E. Burke-Kennedy, was not re-confirmed at review on 2026-10-18, so the card gives none),
    https://irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602 (*opened*): the light
    begins at 8.58 am and lasts 17 minutes; the chamber floor 2 m higher than the entrance; the roof-box about
    2.5 m from the entrance; quoting Prof. Tom Ray: the beam today 1–2 m shorter than when built, barely reaching
-   the back of the chamber, and the alignment perfect again in 5–6,000 years.
+   the back of the chamber. (The article was also logged as saying the old alignment returns in 5–6,000 years; the
+   review of 2026-10-18 could not find that quote, and it does not fit the slow cycle of the earth's tilt, so the
+   card no longer says it.)
 7. T. P. Ray, "The winter solstice phenomenon at Newgrange, Ireland: accident or design?", *Nature* 337 (1989),
    343–345 (*opened*, as reproduced at https://www.newgrange.com/stonelight20.htm; the journal's own page was not
    opened): the alignment is deliberate; when built the beam entered the back recess and lit the triple spiral
@@ -77,8 +80,11 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for five facts the o
 - The Great Circle: 12 surviving stones of perhaps 38; usually dated to the Early Bronze Age, the date debated.
 - 1699: Charles Campbell's workmen found the entrance; Edward Lhwyd described it. Roman coins of about 320–337 CE
   and gold jewellery, now in the National Museum of Ireland and the British Museum.
-- The 2016 claim (Gibbons) that the roof-box was fabricated, and the reply (O'Brien and Lynch) citing photographs
-  from the early 1900s. The card names neither writer.
+- The 2016 claim (Michael Gibbons, in *Emania*) that the roof-box was fabricated in the 1960s, and the reply: the
+  Office of Public Works called it "entirely untrue" and cited photographs from 1935 and 1954 showing the roof-box
+  in place before the excavation; Robert Hensey, from the O'Kelly archive, agreed. Through search results only
+  (CBS News; IrishCentral; Stone Pages; shadowsandstone.com). Corrected 2026-10-18: the log had named the wrong
+  people and "photographs from the early 1900s". The card names nobody.
 - The solstice lottery (the card does not give the number chosen).
 
 ## Where sources differ
