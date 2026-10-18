@@ -1,7 +1,7 @@
 # Handoff v2 — Manifest (LIVE, 2026-10-17)
 
 **Status: LIVE. v2 was approved by Carter 2026-10-17 and written to the staging branch.**
-**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26) + Journal hero selfie correction (Item 27) + loop restart ping (Item 28) + tie-it-all-in Graphify order (Item 29).
+**Version:** v2 + explainer add-on (Item 15) + video-and-flow addendum (Item 16) + format-live addendum (Item 17) + loops spec (Item 18) + Claude loops research (Item 19) + chief-of-staff note (Item 20) + Carter answers to Claude blocked items (Item 21) + mergeable-list instruction (Item 22) + charter + PR #59 decisions (Item 23) + merge order for PR #59 (Item 24) + standing cycle rule (Item 25) + charter D1-D3 parked (Item 26) + Journal hero selfie correction (Item 27) + loop restart ping (Item 28) + tie-it-all-in Graphify order (Item 29) + Ra-Horakhty correction (Item 30).
 **Channel:** Muse writes handoff files DIRECTLY to the GitHub staging branch → build side reads them, reworks, and writes replies/status back on the same branch → Muse reads back. No Carter courier. Carter only sends TikTok himself; Facebook is automatic after Carter's click (see Addendum §4). Carter approves anything merging to main.
 **Authorization:** Carter confirmed 2026-10-17: "Yes, Muse can write to staging branch only." Hard limits: staging only, never main, never merge, nothing live without Carter's explicit go-ahead.
 **How to read status:** NEW = not in the repo yet (at send time). REPLACES = overwrites the whole old copy. OVERWRITES = replaces the old copy with the corrected copy. CARRIED = already in the repo (PR #59), do not re-send. ON HOLD = travels on file only, do not build. ADD-ON = added after the main send; does not renumber items 1–14.
@@ -197,6 +197,18 @@ items as they finish, one by one. This item does not itself approve any merge.
 **This order does NOT itself approve any merge.** Each merge still needs Carter's per-item approval.
 
 **900 Theses is still blocked on Gates A–D + the intake ruling. Item 29 does not unblock it.**
+
+## Item 30 (ADD-ON, Carter 2026-10-17 — does NOT renumber items 1–29)
+
+| 30 | CORRECTION: Ra-Horakhty — the falcon-headed sun-disk uraeus figure is Ra-Horakhty, not Ra alone | NEW | `handoff/correction-2026-10-17-ra-horakhty.md` |
+
+**CORRECTION — apply everywhere the site calls the figure "Ra" alone.** The falcon-headed, sun-disk, uraeus-cobra figure is precisely **Ra-Horakhty** — Ra as Horus of the Two Horizons, two gods joined in one form, the sun at its rising and its setting. "Ra" is the shorthand everyone uses; "Ra-Horakhty" is the precise name. Getting the name right is how we honor what people actually believed. Full correction text (verbatim) + apply-everywhere instruction: `handoff/correction-2026-10-17-ra-horakhty.md`. Correct the name only — do not invent new claims.
+
+**Carter approved sending this correction (Sat 2026-10-17): "yes."**
+
+**This correction does NOT itself approve any merge.** Each merge still needs Carter's per-item approval.
+
+**900 Theses is ON HOLD (Carter 2026-10-17) — just on hold, no ruling needed. Item 30 does not change that.**
 
 ## Already in the repo — DO NOT re-send
 
