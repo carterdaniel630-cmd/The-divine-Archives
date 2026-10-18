@@ -1,4 +1,18 @@
-# Handoff — updated 2026-10-17 (evening)
+# Handoff — updated 2026-10-18 (afternoon, build loop)
+
+## Latest: museum phone speed and site batch B are on main (2026-10-18)
+- **PR #62 museum phone speed** merged 12:35 UTC by fast-forward to `0585c80` (Carter's per-item yes,
+  `decisions-2026-10-18-go-museum-and-batch-b.md`); deploy green. Then #57 (handoff-only, `58af188`), deploy green.
+- **PR #63 site batch B** merged 16:51 UTC by fast-forward to `c205f4c` (same approval). Independent review of the
+  updated head: `handoff/replies/2026-10-18-batch-b-update-review-and-merge.md` (0 findings; site diff identical to the
+  reviewed `aeda5d4`; every check green incl. Lighthouse). Deploy run 193 green. Shipped: hallway hiss removed,
+  "199 figures", V72 sources (back to pending), Pantheon "Ra-Horakhty".
+- **Open PRs now:** #65 (Item 29 Graphify fix + standards board on current main; supersedes #61), #64 (reviewer and
+  auditor as project skills), #61 (superseded), #60 (Journal hero, on hold for the selfie), #58 (reviewer heartbeat,
+  unmerged), #53 (Pilgrimage batch 1 preview).
+- **Deploy target:** the-divine-archives.pages.dev; getconexto.com not pointed.
+
+## Earlier: 2026-10-17 (evening)
 
 ## Latest: site batch A is on main (2026-10-17)
 - **PR #59 merged** by fast-forward, `c455bfe` → `218c51b`, with Carter's order (Item 24, `handoff/order-2026-10-17-merge-pr59.md`).

@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 ~12:30 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `7b281cb` (site as of `218c51b`; two handoff-only commits since) (site batch A merged 2026-10-17 21:08 EDT, deployed).
+**As of:** 2026-10-18 ~17:00 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `c205f4c` (batch B merged 16:51 UTC, deploy green).
 
 ## Mergeable now
 (none)
@@ -12,11 +12,11 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Waiting to qualify (not mergeable, and what is still missing)
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
-| Site batch B: hallway hiss removed; "199 figures"; V72 sources (back to pending); Pantheon Ra-Horakhty | `loop/small-defects-2026-10-17` @ `aeda5d4` | Yes. Independent review 2026-10-18: 0 open findings (`2026-10-18-batch-b-independent-review.md`); all local checks green | Carter's yes: given (`decisions-2026-10-18-go-museum-and-batch-b.md`). PR #63 open: all checks green except Lighthouse (running). Branch is behind `main` by two handoff-only commits, so it cannot fast-forward: after #62 lands it must be brought up to `main`, its site diff confirmed identical to the reviewed one by a run that did not update it, and every check green on the new head; (3) Carter re-clears V72 and Ra-Horakhty in his batch pass (they stay pending-flagged until then, which does not block the merge) |
-| Museum phone speed: pixel ratio 1.5 → 1.0 on phones | `loop/museum-phone-dpr` @ `0585c80` | Yes. Measured before/after (`2026-10-18-museum-phone-pixel-ratio.md`). Independent review 2026-10-18: 0 open findings, all local checks green (`2026-10-18-museum-phone-speed-independent-review.md`) | Carter's yes: given (`decisions-2026-10-18-go-museum-and-batch-b.md`). PR #62 open, fast-forwardable: all checks green except Lighthouse (running at 12:15 UTC). Merges as soon as Lighthouse is green |
-| Graphify fix (no vendor code in the map) + standards board, first version (Item 29) | commit `cfb1204` on `staging/ready-line` (not yet on its own branch) | Built 2026-10-18 (`2026-10-18-item-29-graphify-and-standards-board.md`) | Carter's yes: given (`approval-2026-10-18-graphify-merge.md`). Still missing: its own branch off `main`; independent review by a run that wrote none of it; a PR with every check green (Lighthouse included); local checks. Goes after #62 and #63 |
+| Graphify fix (no vendor code in the map) + standards board, first version (Item 29) | `loop/graphify-board` @ `b0896a6`, PR #65 (supersedes #61) | Yes: same files as `cfb1204`, compared line for line; local checks green (review-checks 9/9, 0 warnings; 17 verify; 42/42 tests) | Carter's yes: given (`approval-2026-10-18-graphify-merge.md`). Still missing: independent review by a run that did not make the branch (the 2026-10-18 ~17:00 run made it); every GitHub check green on `b0896a6`, Lighthouse included |
 
 ## Merged
+- Site batch B (PR #63): merged 2026-10-18 16:51 UTC by fast-forward to `c205f4c`, deploy green (`2026-10-18-batch-b-update-review-and-merge.md`).
+- Museum phone speed (PR #62): merged 2026-10-18 12:35 UTC by fast-forward to `0585c80`, deploy green.
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
 
 ## Not ready (in progress or waiting on a ruling)
