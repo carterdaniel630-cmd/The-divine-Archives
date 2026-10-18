@@ -47,9 +47,9 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
 </style>
 <main class="wrap">
 <header><h1>Standards Board</h1>
-<p class="lede">Every item, Claude side and Muse side, and whether it meets the bar. As of 2026-10-18. Worst first.</p></header>
-<nav class="tallies" aria-label="Status counts"><a class="tally s-needs-work" href="#g-needs-work"><span class="n">4</span><span class="l">Needs work</span></a><a class="tally s-not-built" href="#g-not-built"><span class="n">8</span><span class="l">Not yet built</span></a><a class="tally s-blocked" href="#g-blocked"><span class="n">5</span><span class="l">Blocked</span></a><a class="tally s-up" href="#g-up"><span class="n">1</span><span class="l">Up to standard</span></a><a class="tally s-parked" href="#g-parked"><span class="n">4</span><span class="l">Parked</span></a></nav>
-<section class="group" id="g-needs-work"><h2><span class="dot s-needs-work"></span>Needs work <span class="c">4</span></h2><p class="gd">Built, not yet up to standard. Fix first.</p>
+<p class="lede">Every item, Claude side and Muse side, and whether it meets the bar. As of 2026-10-18 ~07:50 UTC. Worst first.</p></header>
+<nav class="tallies" aria-label="Status counts"><a class="tally s-needs-work" href="#g-needs-work"><span class="n">5</span><span class="l">Needs work</span></a><a class="tally s-not-built" href="#g-not-built"><span class="n">7</span><span class="l">Not yet built</span></a><a class="tally s-blocked" href="#g-blocked"><span class="n">5</span><span class="l">Blocked</span></a><a class="tally s-up" href="#g-up"><span class="n">1</span><span class="l">Up to standard</span></a><a class="tally s-parked" href="#g-parked"><span class="n">4</span><span class="l">Parked</span></a></nav>
+<section class="group" id="g-needs-work"><h2><span class="dot s-needs-work"></span>Needs work <span class="c">5</span></h2><p class="gd">Built, not yet up to standard. Fix first.</p>
 <div class="list"><article class="item s-needs-work" id="batch-b">
   <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Site</span></div>
   <h3>Small defects batch B: hiss, 199 figures, V72 sources, Ra-Horakhty</h3>
@@ -71,6 +71,13 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <p class="where">handoff/standards/board.html; phone view https://claude.ai/artifact/8xFoiVPYGWFd7Xax8q5NLt</p>
   
 </article>
+<article class="item s-needs-work" id="museum-dpr">
+  <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Museum</span></div>
+  <h3>Museum phone performance: pixel ratio 1.5 to 1.0</h3>
+  <p>Built on loop/museum-phone-dpr (0585c80), measured before and after, all local checks green. Still needs: independent review, a pull request with green checks, a real-phone check, Carter's yes.</p>
+  <p class="where">docs/museum/app.js:72</p>
+  
+</article>
 <article class="item s-needs-work" id="muse-ra">
   <div class="row"><span class="pill">Needs work</span><span class="meta">Claude · Site</span></div>
   <h3>Ra-Horakhty name correction</h3>
@@ -78,15 +85,8 @@ code{font:.8em var(--mono);overflow-wrap:anywhere}
   <p class="where">loop/small-defects-2026-10-17</p>
   
 </article></div></section>
-<section class="group" id="g-not-built"><h2><span class="dot s-not-built"></span>Not yet built <span class="c">8</span></h2><p class="gd">In the queue.</p>
-<div class="list"><article class="item s-not-built" id="museum-dpr">
-  <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Museum</span></div>
-  <h3>Museum phone performance: pixel ratio 1.5 to 1.0</h3>
-  <p>Needs a before/after measurement on the phone budget.</p>
-  <p class="where">docs/museum/app.js:72</p>
-  
-</article>
-<article class="item s-not-built" id="arcade-floor">
+<section class="group" id="g-not-built"><h2><span class="dot s-not-built"></span>Not yet built <span class="c">7</span></h2><p class="gd">In the queue.</p>
+<div class="list"><article class="item s-not-built" id="arcade-floor">
   <div class="row"><span class="pill">Not yet built</span><span class="meta">Claude · Games</span></div>
   <h3>Arcade playability floor: difficulty, undo, tutorial, tap targets</h3>
   <p>Difficulty in 2 of 15 games, tutorial in 3 of 15.</p>

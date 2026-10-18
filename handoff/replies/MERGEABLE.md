@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 ~07:30 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `218c51b` (site batch A merged 2026-10-17 21:08 EDT, deployed).
+**As of:** 2026-10-18 ~07:50 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `7b281cb` (site as of `218c51b`; two handoff-only commits since) (site batch A merged 2026-10-17 21:08 EDT, deployed).
 
 ## Mergeable now
 (none)
@@ -13,6 +13,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
 | Site batch B: hallway hiss removed; "199 figures"; V72 sources (back to pending); Pantheon Ra-Horakhty | `loop/small-defects-2026-10-17` @ `aeda5d4` | Yes. Independent review 2026-10-18: 0 open findings (`2026-10-18-batch-b-independent-review.md`); all local checks green | (1) a pull request so GitHub's PR checks run (review, verify, originality, Lighthouse), all green on `aeda5d4`; (2) Carter's yes for batch B itself; (3) Carter re-clears V72 and Ra-Horakhty in his batch pass (they stay pending-flagged until then, which does not block the merge) |
+| Museum phone speed: pixel ratio 1.5 → 1.0 on phones | `loop/museum-phone-dpr` @ `0585c80` | Yes. Measured before/after; all local checks green (`2026-10-18-museum-phone-pixel-ratio.md`) | (1) independent review by a run that wrote none of it; (2) a pull request with every GitHub check green, Lighthouse included; (3) Carter's yes for this item |
 
 ## Merged
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
