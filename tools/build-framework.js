@@ -6,7 +6,7 @@
      docs/assets/framework/ritual-player.js    framework/ui/ritual-player.js
      docs/assets/framework/rituals/<slug>.json every ritual in data/rituals/ whose review status is
                                                "pending" or "cleared" (drafts are never published)
-     docs/assets/framework/rituals/index.json  which museum room offers which walkthrough
+     docs/assets/framework/rituals/index.json  which museum room (lectern) or object (case) offers which walkthrough
 
    The framework/ files are the source; never edit the copies.
    Usage: node tools/build-framework.js [--check] */
@@ -30,11 +30,17 @@ for (const f of fs.readdirSync(ritDir).filter((f) => f.endsWith(".json")).sort()
   const r = JSON.parse(fs.readFileSync(path.join(ritDir, f), "utf8"));
   const status = r.review && r.review.status;
   if (status !== "pending" && status !== "cleared") continue;
-  if (r.sensitivity_tier !== 1) throw new Error(f + ": only tier-1 walkthroughs may be published without a recorded decision");
+  // tier 1, or tier 2 with Carter's recorded approval of the framing (framing_approval); tier 3 never
+  if (!(r.sensitivity_tier === 1 || (r.sensitivity_tier === 2 && r.framing_approval && r.framing_approval.by === "Carter"))) throw new Error(f + ": only tier-1 walkthroughs, or tier-2 ones with Carter's recorded framing approval, may be published");
   const slug = f.slice(0, -5);
   out["rituals/" + f] = JSON.stringify(r) + "\n";
   index.rituals[slug] = { title: r.title, status, chapter: r.chapter || null };
-  if (r.chapter) {
+  // a walkthrough tied to a museum object is launched from that object's case, not the lectern
+  if (r.museum_object) {
+    const obj = r.museum_object.replace(/^relic:/, "");
+    index.rituals[slug].object = obj;
+    (index.objects = index.objects || {})[obj] = slug;
+  } else if (r.chapter) {
     const room = r.chapter.replace(/^chapter:/, "");
     (index.rooms[room] = index.rooms[room] || []).push(slug);
   }

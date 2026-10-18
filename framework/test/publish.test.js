@@ -13,20 +13,20 @@ test("docs/assets/framework is up to date with framework/", () => {
   execFileSync(process.execPath, [path.join(ROOT, "tools", "build-framework.js"), "--check"], { stdio: "pipe" });
 });
 
-test("only tier-1 rituals under review or cleared are published; drafts never are", () => {
+test("only tier-1 rituals (or tier-2 with Carter's recorded framing approval) under review or cleared are published; drafts never are", () => {
   const idx = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/assets/framework/rituals/index.json"), "utf8"));
   for (const f of fs.readdirSync(path.join(ROOT, "data/rituals"))) {
     const r = JSON.parse(fs.readFileSync(path.join(ROOT, "data/rituals", f), "utf8"));
     const slug = f.slice(0, -5);
     const published = fs.existsSync(path.join(ROOT, "docs/assets/framework/rituals", f));
     if (r.review.status === "draft") { assert.ok(!published && !idx.rituals[slug], slug + " is a draft but published"); }
-    else { assert.ok(published && idx.rituals[slug], slug + " should be published"); assert.strictEqual(r.sensitivity_tier, 1); }
+    else { assert.ok(published && idx.rituals[slug], slug + " should be published"); assert.ok(r.sensitivity_tier === 1 || (r.sensitivity_tier === 2 && r.framing_approval && r.framing_approval.by === "Carter"), slug + ": tier " + r.sensitivity_tier + " published without a recorded approval"); }
   }
 });
 
 test("every one of the 12 games reports its end, and none of them talks to the ledger directly", () => {
   const dir = path.join(ROOT, "docs/assets/games");
-  const games = ["chess", "fighter", "minesweeper", "ouroboros", "pacman", "pinball", "pong", "reliquary", "risk", "seeker", "treasure", "ziggurat"];
+  const games = ["chess", "fighter", "excavation", "ouroboros", "labyrinth", "pinball", "antithesis", "reliquary", "dominion", "seeker", "treasure", "ziggurat"];
   for (const g of games) {
     const src = fs.readFileSync(path.join(dir, g + ".js"), "utf8");
     assert.match(src, new RegExp('AG\\.finish\\("' + g + '"'), g + " never calls AG.finish");

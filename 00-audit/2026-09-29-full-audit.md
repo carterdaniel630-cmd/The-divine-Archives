@@ -122,7 +122,7 @@ CLAUDE.md itself gives **no** build order; see 3.5.
 
 ### 3.2 Verifiers
 
-All 13 `tools/verify-*.js` pass: chess 18/18, fighters 4/4, minesweeper 8/8, ouroboros 14/14, pacman 10/10, pinball 8/8, pong 6/6, reliquary (25 chapters), risk 12/12, seeker 10/10, sky 43 basis strings, treasure 17/17, ziggurat 12/12. GitHub Actions on `fb3e43b` are all green.
+All 13 `tools/verify-*.js` pass: chess 18/18, fighters 4/4, excavation 8/8, ouroboros 14/14, labyrinth 10/10, pinball 8/8, antithesis 6/6, reliquary (25 chapters), risk 12/12, seeker 10/10, sky 43 basis strings, treasure 17/17, ziggurat 12/12. GitHub Actions on `fb3e43b` are all green.
 
 **Gap:** `verify.yml` does not check `docs/museum/english.js` sources, `scans.js` or chapter HTML well-formedness, which is how finding B got through.
 
@@ -161,14 +161,14 @@ All 13 `tools/verify-*.js` pass: chess 18/18, fighters 4/4, minesweeper 8/8, our
 
 | Earlier finding | Now |
 |---|---|
-| Pong, Pinball and Tomb Robber ran faster on high-refresh screens | **Fixed.** All three use a fixed 1/60 s accumulator step. |
+| Antithesis, Pinball and Unfinished Journal ran faster on high-refresh screens | **Fixed.** All three use a fixed 1/60 s accumulator step. |
 | Fighter: no input buffer, key-repeat mashing | **Fixed.** 8-tick buffer (`fighter.js:1217`) and an `e.repeat` filter. |
 | Fighter: 5.4 MB sprite download, dead head rig | **Fixed.** The sprites and `USE_HEAD_RIG` are gone. |
 | Ziggurat: no lock delay, hold, DAS or counter-clockwise rotation | **Fixed.** Rotation both ways, hold, a 3-piece preview and a 0.5 s lock delay. |
 | Ouroboros single-slot turn latch | **Fixed.** Input queue. |
-| Minesweeper chording; Tomb Robber coyote time and jump buffer; chess quiescence | **Fixed.** |
+| the Excavation chording; Unfinished Journal coyote time and jump buffer; chess quiescence | **Fixed.** |
 | Fighter hurtboxes, and hits checked only on the first active frame | Not confirmed fixed (no hurtbox code found). A feel issue, not a correctness one. |
-| **Risk: the `nubia` tile has no fact** ("until a Nubia/Kush chapter exists") | **Now unblocked.** ch68 Nubia & Kush exists. The `arabia` fact could also move from ch21 to ch70 Pre-Islamic Arabia. Both would need to pass `verify-risk.js`. |
+| **Dominion: the `nubia` tile has no fact** ("until a Nubia/Kush chapter exists") | **Now unblocked.** ch68 Nubia & Kush exists. The `arabia` fact could also move from ch21 to ch70 Pre-Islamic Arabia. Both would need to pass `verify-dominion.js`. |
 
 ### 4.2 Museum: open items
 
@@ -194,7 +194,7 @@ Effort: **S** is under an hour, **M** is a session, **L** is several sessions.
 | 6 | **Link-rot CI:** a weekly workflow that checks every external URL and reports (it does not auto-fix) | The sandbox can't check liveness, but GitHub Actions can | S–M |
 | 7 | **Batch V chapters** (below) | Closes the depth-standard gaps in §1.3 | L (9 chapters ≈ Batch III/IV size) |
 | 8 | **Pantheon and Vault for the new chapters:** about 2–4 figures per new chapter, plus Vault objects for the 26 chapters without one (candidates: Sámi drum, Kul Tigin stele, Ezana's inscriptions at Aksum, Olmec Offering 4, the Liber Linteus, a Jebel Barkal stela, the Baal Shem Tov's letter (Iggeret ha-Kodesh), Akbar's Ibadat Khana paintings) | Brings the new chapters to parity | M |
-| 9 | **Risk: Nubia and Arabia facts** from ch68 and ch70 | Closes a gap the games have carried since launch | S |
+| 9 | **Dominion: Nubia and Arabia facts** from ch68 and ch70 | Closes a gap the games have carried since launch | S |
 | 10 | **Museum:** English for V68 (and V76 if you agree), re-measure performance at 83 rooms, and do the real-phone check (**you**, on your phone; I can give you a 5-minute checklist) | The open museum items | S + your phone |
 | 11 | **Source-quality pass** on ch66–ch83: replace Wikipedia with primary or peer-reviewed sources for contested claims, and turn ResearchGate IDs into DOIs | Raises the evidence bar | M |
 | 12 | Branch clean-up (you delete them in the GitHub UI; the push path here refuses deletions) | Housekeeping | S (you) |

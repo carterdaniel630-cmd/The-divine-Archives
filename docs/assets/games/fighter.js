@@ -1,7 +1,8 @@
 /* ==========================================================================
    THE DIVINE ARCHIVES — Mini-Games: "Divine Casualties — War of the Gods" (1v1 fighter)
 
-   A duel of the Olympians, each god fought with the weapon myth actually gives
+   A duel of the gods: three Olympians and Hades, lord of the underworld (not one
+   of the Twelve Olympians), each fought with the weapon myth actually gives
    them — every fighter's arms and epithet grounded in the Early Greece chapter
    (ch08). Anime/DBZ-flavoured: cel-shaded heroic gods, energy auras, battle
    damage (bruises, blood, torn cloth), and heavy hit effects (impact bursts,
@@ -1032,7 +1033,7 @@
       eye: "#9c7ad0", blood: "#3a1a4a", weapon: shadeBlade, crown: noCrown
     };
 
-    /* ---- the other three Olympians ---- */
+    /* ---- the other three gods: Poseidon and Athena of Olympus, Hades of the underworld ---- */
     function haft(c, x0, y0, x1, y1, s) { c.strokeStyle = s.metal; c.lineWidth = 3; c.beginPath(); c.moveTo(x0, y0); c.lineTo(x1, y1); c.stroke(); c.strokeStyle = s.outline; c.lineWidth = 1; c.stroke(); }
     function poseidonTrident(c, p, t, f, s) {
       var hx = p.hnF[0], hy = p.hnF[1], ch = (f.state === "special");
@@ -2272,7 +2273,7 @@
         root.innerHTML =
           '<div class="game-head" style="margin-bottom:.3rem"><p class="eyebrow">The Divine Archives · Games</p>' +
             '<h2 id="' + ctx.titleId + '" style="font-size:1.3rem">Divine Casualties — War of the Gods</h2>' +
-            "<p>Choose your Olympian. Each god fights with the weapon myth gives them.</p></div>" +
+            "<p>Choose your god: Zeus, Poseidon and Athena of Olympus, or Hades of the underworld. Each fights with the weapon myth gives them.</p></div>" +
           '<div class="game-rule" role="presentation"></div>' +
           '<p class="fg-sel-row-label">' + (sel.twoP ? "Player 1" : "You") + '</p><div class="fg-cards">' + ROSTER_IDS.map(function (id) { return godCard("p1", id, sel.p1 === id); }).join("") + "</div>" +
           factLine(sel.p1) +

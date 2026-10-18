@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:,">
+<title>Mehen</title>
+<style>
+:root{
+  color-scheme:dark light;--ink:#e9dfc8;--muted:#aa9d84;--sand:#cba967;--gold:#d5a84a;
+  --lapis:#176b7d;--night:#080806;--stone:#15130f;--panel:#18150f;--line:#5b4826;
+  --red:#a64e32;--blue:#36a2ad;--shadow:#000;--focus:#f3c866;
+}
+@media(prefers-color-scheme:light){:root{--ink:#251d12;--muted:#685b48;--night:#d8c6a2;--stone:#efe4ca;--panel:#f8efd9;--line:#9e7d3e;--shadow:#6f5834}}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--night);color:var(--ink);font-family:Georgia,'Times New Roman',serif}button,select{font:inherit}
+body{overflow-x:hidden;background:
+ radial-gradient(circle at 50% 9%,rgba(221,158,61,.12),transparent 34rem),
+ linear-gradient(120deg,rgba(255,255,255,.018),transparent 30%),var(--night)}
+#dust{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.dust{position:absolute;width:2px;height:2px;border-radius:50%;background:#eacb8a;opacity:.13;animation:drift var(--d) linear infinite;animation-delay:var(--delay)}
+@keyframes drift{0%{transform:translate3d(0,105vh,0)}100%{transform:translate3d(var(--x),-8vh,0)}}
+.shell{position:relative;z-index:1;width:min(1180px,100%);margin:auto;padding:clamp(12px,2vw,24px)}
+.statusbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-bottom:12px}
+.player{position:relative;min-width:0;padding:9px 12px;border:1px solid color-mix(in srgb,var(--line) 70%,transparent);background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 92%,white 2%),color-mix(in srgb,var(--panel) 94%,black 6%));box-shadow:inset 0 1px rgba(255,255,255,.07),0 9px 25px rgba(0,0,0,.3)}
+.player:last-child{text-align:right}.player.active{border-color:var(--gold);box-shadow:inset 0 1px rgba(255,255,255,.12),0 0 24px rgba(209,155,60,.15)}
+.player strong{display:block;font-size:clamp(.9rem,2.6vw,1.06rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player small{color:var(--muted)}
+.turn-seal{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:.72rem;line-height:1.1;color:#171006;background:radial-gradient(circle at 37% 30%,#ffe4a1 0 7%,#c69737 35%,#785018 72%,#2f1b09);border:2px solid #d5ad5e;box-shadow:0 7px 20px #0009,inset 0 0 0 4px #53330e,inset 0 0 16px #fff5;transform:perspective(100px) rotateX(10deg)}
+.game-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:16px;align-items:start}
+.stage{position:relative;isolation:isolate;min-width:0;aspect-ratio:1/1;background:radial-gradient(circle at 52% 42%,#413119 0,#17130c 48%,#050504 85%);border:1px solid #473619;box-shadow:inset 0 0 90px #000,0 24px 65px #000a;overflow:hidden;touch-action:manipulation}
+.stage:before{content:"";position:absolute;inset:2.4%;border:1px solid rgba(205,160,74,.18);box-shadow:inset 0 0 20px #000;pointer-events:none;z-index:2}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#board{z-index:1;cursor:pointer}#fx{z-index:2;pointer-events:none}
+.board-caption{position:absolute;left:50%;bottom:2.5%;transform:translateX(-50%);z-index:3;pointer-events:none;color:#a89169;font-size:.72rem;letter-spacing:.08em;text-align:center;white-space:nowrap;text-shadow:0 2px 4px #000}
+.rail{display:flex;flex-direction:column;gap:12px}
+.panel{background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 95%,white 2%),color-mix(in srgb,var(--panel) 96%,black 5%));border:1px solid color-mix(in srgb,var(--line) 72%,transparent);box-shadow:inset 0 1px rgba(255,255,255,.05),0 14px 35px rgba(0,0,0,.27);padding:14px}
+.cast-zone{text-align:center}.sticks{height:78px;display:flex;align-items:center;justify-content:center;gap:8px;perspective:500px;margin:3px 0 11px}
+.stick{width:13px;height:68px;border-radius:8px;background:linear-gradient(90deg,#2c160a,#d3a85e 16%,#f3d18a 47%,#7a4a20 77%,#1a0d06);box-shadow:3px 7px 10px #000b,inset 0 0 2px #fff8;transform:rotate(var(--r)) rotateY(var(--face));transition:transform .85s cubic-bezier(.2,.8,.2,1)}
+.sticks.casting .stick{animation:toss .72s cubic-bezier(.15,.8,.25,1)}
+@keyframes toss{0%{transform:translateY(0) rotate(var(--r)) rotateY(0)}45%{transform:translateY(-24px) rotate(calc(var(--r) + 160deg)) rotateY(230deg)}100%{transform:translateY(0) rotate(calc(var(--r) + 360deg)) rotateY(var(--face))}}
+.result{min-height:1.25rem;color:var(--sand);font-weight:bold}.action{width:100%;border:1px solid #9d752f;color:#1b1205;background:linear-gradient(#e4bf69,#a57426);padding:12px 14px;cursor:pointer;box-shadow:inset 0 1px #fff8,0 5px 12px #0008;transition:filter .2s,transform .2s}.action:hover{filter:brightness(1.08)}.action:active{transform:translateY(1px)}.action:disabled{filter:grayscale(.75) brightness(.55);cursor:not-allowed}
+.subactions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.quiet{border:1px solid var(--line);background:linear-gradient(#302718,#15110b);color:var(--ink);padding:9px;cursor:pointer}.quiet[aria-pressed="true"]{border-color:var(--gold);color:#f3c866}
+legend{padding:0 5px;color:var(--sand)}fieldset{border:1px solid var(--line);margin:0;padding:10px}select{width:100%;padding:8px;background:var(--stone);color:var(--ink);border:1px solid var(--line);margin-top:6px}
+.log{font-size:.83rem;line-height:1.45;color:var(--muted);min-height:76px}.log b{color:var(--ink)}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.bottom h2{font-size:1.05rem;color:var(--sand);margin:0 0 8px;font-weight:normal;letter-spacing:.04em}.bottom p,.bottom li{font-size:.88rem;line-height:1.55;color:var(--muted)}.bottom p:last-child{margin-bottom:0}.bottom ul{padding-left:18px;margin-bottom:0}
+.overlay{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:18px;background:rgba(4,3,2,.8);backdrop-filter:blur(7px);opacity:0;pointer-events:none;transition:opacity .35s}.overlay.open{opacity:1;pointer-events:auto}.tablet{width:min(590px,100%);max-height:min(690px,90vh);overflow:auto;background:linear-gradient(145deg,#2a2114,#100d09);border:1px solid #8b6c34;color:#eee0c4;box-shadow:0 30px 100px #000,inset 0 0 50px #0006;padding:clamp(20px,5vw,38px);position:relative}.tablet:before{content:"";position:absolute;inset:7px;border:1px solid #5e4622;pointer-events:none}.tablet h1{font-weight:normal;font-size:clamp(1.8rem,7vw,3rem);margin:0 0 4px;color:#dfb45e;letter-spacing:.08em}.tablet .era{color:#a8926d;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}.tablet h2{font-weight:normal;color:#e2bc71}.tablet p,.tablet li{line-height:1.58;color:#cabc9f}.tablet nav{display:flex;gap:7px;margin:16px 0}.dot{width:28px;min-width:0!important;height:4px;border:0;background:#584526}.dot.on{background:#d4a54b}.tablet footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:20px}.tablet footer .action{width:auto;flex:1}.tablet footer .quiet{color:#ead8b5}.tablet button{min-width:110px}
+.lore-drawer{position:fixed;inset:0;z-index:25;background:rgba(0,0,0,.72);display:none;place-items:center;padding:16px}.lore-drawer.open{display:grid}.lore-sheet{position:relative;width:min(720px,100%);max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);padding:clamp(20px,4vw,38px);box-shadow:0 30px 80px #000}.lore-sheet h2{font-weight:normal;color:var(--sand);font-size:1.5rem}.close{position:absolute;right:12px;top:12px;width:38px;height:38px;border:1px solid var(--line);background:var(--stone);color:var(--ink);cursor:pointer}.fact{border-top:1px solid var(--line);padding-top:14px;margin-top:16px}.fact strong{color:var(--sand)}
+.toast{position:fixed;z-index:30;left:50%;bottom:24px;transform:translate(-50%,20px);background:#120f09;border:1px solid #9b7434;color:#ead8b5;padding:11px 16px;opacity:0;pointer-events:none;transition:.28s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:820px){.game-grid{grid-template-columns:1fr}.rail{display:grid;grid-template-columns:1fr 1fr}.bottom{grid-template-columns:1fr}.stage{aspect-ratio:1/1}.board-caption{font-size:.62rem}}
+@media(max-width:560px){.shell{padding:8px}.statusbar{gap:6px}.turn-seal{width:54px;height:54px;font-size:.63rem}.player{padding:7px 8px}.player strong{font-size:.78rem}.player small{font-size:.66rem}.rail{grid-template-columns:1fr}.stage{margin-inline:-1px}.bottom{gap:8px;margin-top:8px}.sticks{height:62px}.stick{height:54px}.overlay{padding:8px}.tablet{max-height:96vh}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.dust{display:none}}
+</style>
+</head>
+<body>
+<div id="dust" aria-hidden="true"></div>
+<main class="shell">
+  <section class="statusbar" aria-label="Game status">
+    <div class="player active" id="p0"><strong>Gold Lions</strong><small><span id="p0home">3</span> waiting · <span id="p0head">0</span> at head</small></div>
+    <div class="turn-seal" id="turnSeal">GOLD<br>TO CAST</div>
+    <div class="player" id="p1"><strong id="p1name">Blue Lionesses</strong><small><span id="p1home">3</span> waiting · <span id="p1head">0</span> at head</small></div>
+  </section>
+
+  <div class="game-grid">
+    <section class="stage" aria-label="Mehen spiral game board">
+      <canvas id="board"></canvas><canvas id="fx"></canvas>
+      <div class="board-caption">THE COILS OF MEHEN · SELECT A LIT LION AFTER CASTING</div>
+    </section>
+    <aside class="rail">
+      <section class="panel cast-zone">
+        <div class="sticks" id="sticks" aria-hidden="true">
+          <i class="stick" style="--r:-7deg;--face:0deg"></i><i class="stick" style="--r:4deg;--face:180deg"></i><i class="stick" style="--r:-2deg;--face:0deg"></i><i class="stick" style="--r:8deg;--face:180deg"></i>
+        </div>
+        <div class="result" id="result" aria-live="polite">Cast the four throwing sticks.</div>
+        <button class="action" id="cast">CAST THE STICKS</button>
+        <div class="subactions"><button class="quiet" id="sound" aria-pressed="false">Sound off</button><button class="quiet" id="restart">New game</button></div>
+      </section>
+      <section class="panel">
+        <fieldset><legend>Keeper of the coils</legend>
+          <label for="mode">Opponent</label><select id="mode"><option value="ai">The Keeper (AI)</option><option value="local">Local two-player</option></select>
+          <label for="difficulty">Keeper strength</label><select id="difficulty"><option value="1">Initiate</option><option value="2" selected>Scribe</option><option value="3">High Priest</option></select>
+        </fieldset>
+      </section>
+      <section class="panel log" id="log"><b>The board waits.</b><br>Gold begins outside the serpent's tail.</section>
+      <button class="quiet" id="how">How to play</button>
+      <button class="quiet" id="history">History & evidence</button>
+    </aside>
+  </div>
+
+  <section class="bottom">
+    <article class="panel"><h2>Reading the coil</h2><p>The illuminated rings are legal destinations. Land on an opposing piece to return it beyond the tail. A lion must reach the serpent's head by an exact cast; the first player to bring all three there wins.</p></article>
+    <article class="panel"><h2>Reconstruction, not recovered law</h2><p>No ancient rulebook survives. This playable ruleset is a modern, transparent race-game reconstruction inspired by Timothy Kendall's study of Egyptian serpent games—not a claim about exactly how Mehen was played.</p></article>
+  </section>
+</main>
+
+<div class="overlay open" id="tutorial" role="dialog" aria-modal="true" aria-labelledby="tutTitle">
+ <div class="tablet">
+  <div class="era">Egypt · Early Dynastic period</div><h1 id="tutTitle">Enter the coils</h1>
+  <nav aria-label="Tutorial progress"><button class="dot on" data-page="0" aria-label="Page 1"></button><button class="dot" data-page="1" aria-label="Page 2"></button><button class="dot" data-page="2" aria-label="Page 3"></button><button class="dot" data-page="3" aria-label="Page 4"></button></nav>
+  <div id="tutBody"></div>
+  <footer><button class="quiet" id="skip">Skip</button><button class="action" id="next">Continue</button></footer>
+ </div>
+</div>
+<div class="lore-drawer" id="lore" role="dialog" aria-modal="true" aria-labelledby="loreTitle"><div class="lore-sheet"><button class="close" id="closeLore" aria-label="Close history">×</button><h2 id="loreTitle">Mehen: record and reconstruction</h2><div class="fact"><strong>What survives</strong><p>Stone boards shaped as a coiled serpent, small spherical counters, and lion or lioness pieces survive from Egypt's Predynastic and Early Dynastic periods. Images in Old Kingdom tombs also show people beside coiled-serpent boards.</p></div><div class="fact"><strong>What the serpent meant</strong><p>Mehen—“the Coiled One”—appears in Egyptian religious texts as a protective serpent surrounding the solar god Ra during his nocturnal journey. The relation between the deity and every rule of the board game cannot be proven.</p></div><div class="fact"><strong>What is lost</strong><p>No Egyptian instructions are known. Scholars including Timothy Kendall have proposed playable reconstructions from boards, piece sets, and comparative game structures. This version simplifies that scholarship into an inward race with captures and an exact finish. Its certainty ends where the evidence ends.</p></div><div class="fact"><strong>Chronology</strong><p>Mehen is attested by the late fourth and third millennia BCE. It flourished before disappearing from the archaeological record around the end of the Old Kingdom.</p></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){'use strict';
+const TAU=Math.PI*2, TRACK=49, PIECES=3;
+const board=document.getElementById('board'), fx=document.getElementById('fx');
+const ctx=board.getContext('2d',{alpha:false}), fctx=fx.getContext('2d');
+const stage=board.parentElement, castBtn=document.getElementById('cast'), sticksEl=document.getElementById('sticks');
+const resultEl=document.getElementById('result'), logEl=document.getElementById('log'), turnSeal=document.getElementById('turnSeal');
+const modeEl=document.getElementById('mode'), diffEl=document.getElementById('difficulty'), soundBtn=document.getElementById('sound');
+let dpr=1,w=0,h=0,raf=0,last=0,alive=true,turn=0,roll=null,busy=false,winner=null,hover=-1;
+let pieces=[],spaces=[],embers=[],audio=null,soundOn=false;
+const colors=[{name:'Gold',light:'#f2cf74',mid:'#b67620',dark:'#4b2608'},{name:'Blue',light:'#72d4d2',mid:'#187e91',dark:'#07323d'}];
+const tutorials=[
+ '<h2>The serpent board</h2><p>Mehen is among the earliest known Egyptian board games. Its path is the body of a coiled serpent: tail at the rim, protected head at the center.</p><p>This board is an original procedural study, not a copy of an artifact.</p>',
+ '<h2>Cast and enter</h2><p>Four two-sided sticks give a cast of 1–4 light faces; four dark faces count as 5. A waiting lion may enter on the first segment, or a lion already in play may advance inward.</p>',
+ '<h2>Capture on the coil</h2><p>Land exactly on an opposing lioness or lion to send it back beyond the tail. Lit destinations show every legal move. Your own pieces cannot share a segment.</p>',
+ '<h2>Reach the head exactly</h2><p>An exact cast is required to enter the serpent’s head. Bring all three of your pieces to the head first.</p><p><b>Evidence note:</b> the ancient rules are lost. These rules are a modern race-game reconstruction inspired by published scholarship.</p>'
+];
+let tutPage=0;
+function initDust(){const host=document.getElementById('dust');for(let i=0;i<34;i++){const p=document.createElement('i');p.className='dust';p.style.left=Math.random()*100+'%';p.style.setProperty('--d',(12+Math.random()*24)+'s');p.style.setProperty('--delay',(-Math.random()*30)+'s');p.style.setProperty('--x',(-90+Math.random()*180)+'px');host.appendChild(p)}}
+function reset(){turn=0;roll=null;busy=false;winner=null;pieces=[];for(let p=0;p<2;p++)for(let i=0;i<PIECES;i++)pieces.push({player:p,id:i,pos:-1,drawX:0,drawY:0,fromX:0,fromY:0,toX:0,toY:0,t:1});resultEl.textContent='Cast the four throwing sticks.';logEl.innerHTML='<b>The board waits.</b><br>Gold begins outside the serpent’s tail.';castBtn.disabled=false;updateUI();if(w>0&&h>0)draw(performance.now())}
+function resize(){const r=stage.getBoundingClientRect();dpr=innerWidth<=760?1:Math.min(devicePixelRatio||1,1.6);w=Math.max(320,Math.round(r.width));h=Math.max(320,Math.round(r.height));for(const c of[board,fx]){c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);c.style.width=w+'px';c.style.height=h+'px'}ctx.setTransform(dpr,0,0,dpr,0,0);fctx.setTransform(dpr,0,0,dpr,0,0);buildTrack();draw(performance.now())}
+function buildTrack(){spaces=[];const cx=w*.5,cy=h*.485;for(let i=0;i<TRACK;i++){const u=i/(TRACK-1),ang=-.25+u*TAU*3.05,r=(Math.min(w,h)*.43)*(1-u*.86);spaces.push({x:cx+Math.cos(ang)*r,y:cy+Math.sin(ang)*r,ang:ang+Math.PI/2,r:Math.max(7,Math.min(w,h)*(.026-u*.006))})}}
+function roundedSegment(c,x,y,r,ang,index,time){c.save();c.translate(x,y);c.rotate(ang);const pulse=.5+.5*Math.sin(time*.0017+index*.47);const g=c.createRadialGradient(-r*.35,-r*.45,r*.08,0,0,r*1.25);g.addColorStop(0,index%7===0?'#aee8df':'#3aa5aa');g.addColorStop(.34,index%7===0?'#2c8b94':'#196b7c');g.addColorStop(.72,'#0d3f4b');g.addColorStop(1,'#061e25');c.shadowColor=index%7===0?`rgba(99,225,213,${.08+pulse*.08})`:'#000';c.shadowBlur=index%7===0?13:5;c.beginPath();c.ellipse(0,0,r*1.38,r*.8,0,0,TAU);c.fillStyle=g;c.fill();c.lineWidth=Math.max(1,r*.12);c.strokeStyle=index%7===0?'#d5aa50':'#1e8992';c.stroke();c.beginPath();c.arc(-r*.32,-r*.18,r*.11,0,TAU);c.fillStyle='rgba(255,255,255,.32)';c.fill();c.restore()}
+function drawBoardBase(time){ctx.clearRect(0,0,w,h);const bg=ctx.createRadialGradient(w*.48,h*.35,5,w*.5,h*.5,w*.68);bg.addColorStop(0,'#4a361b');bg.addColorStop(.34,'#21190f');bg.addColorStop(1,'#050504');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
+ // carved limestone dais with beveled depth
+ ctx.save();ctx.translate(w*.5,h*.505);const R=Math.min(w,h)*.47;for(let z=11;z>=0;z--){ctx.beginPath();ctx.arc(0,z*.34,R-z*.42,0,TAU);ctx.fillStyle=z>7?'#090805':z>3?'#2a2114':'#49371e';ctx.fill()}ctx.beginPath();ctx.arc(0,0,R*.97,0,TAU);ctx.strokeStyle='#806130';ctx.lineWidth=1;ctx.stroke();ctx.restore();
+ // body shadow ribbon
+ ctx.save();ctx.beginPath();spaces.forEach((s,i)=>i?ctx.lineTo(s.x,s.y):ctx.moveTo(s.x,s.y));ctx.lineWidth=Math.min(w,h)*.073;ctx.lineCap='round';ctx.strokeStyle='rgba(0,0,0,.72)';ctx.shadowColor='#000';ctx.shadowBlur=22;ctx.stroke();ctx.restore();
+ spaces.forEach((s,i)=>roundedSegment(ctx,s.x,s.y,s.r,s.ang,i,time));drawHead(time);drawTail();}
+function drawHead(time){const s=spaces[TRACK-1],r=Math.min(w,h)*.057;ctx.save();ctx.translate(s.x,s.y);ctx.rotate(spaces[TRACK-2].ang+.25);ctx.shadowColor='rgba(230,171,66,.45)';ctx.shadowBlur=18+Math.sin(time*.002)*4;const g=ctx.createRadialGradient(-r*.3,-r*.45,2,0,0,r*1.2);g.addColorStop(0,'#ffe19b');g.addColorStop(.25,'#c59235');g.addColorStop(.72,'#73501b');g.addColorStop(1,'#241406');ctx.beginPath();ctx.moveTo(r*.95,0);ctx.bezierCurveTo(r*.7,-r*.72,-r*.62,-r*.8,-r*.92,-r*.25);ctx.bezierCurveTo(-r*1.04,r*.36,r*.68,r*.8,r*.95,0);ctx.fillStyle=g;ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#efc467';ctx.stroke();for(const y of[-.23,.23]){ctx.beginPath();ctx.arc(r*.33,r*y,r*.08,0,TAU);ctx.fillStyle='#161008';ctx.fill();ctx.beginPath();ctx.arc(r*.35,r*y,r*.026,0,TAU);ctx.fillStyle='#f5dd75';ctx.fill()}ctx.restore()}
+function drawTail(){const s=spaces[0],r=s.r;ctx.save();ctx.translate(s.x,s.y);ctx.rotate(s.ang);ctx.beginPath();ctx.moveTo(-r*1.8,-r*.45);ctx.lineTo(r*.4,-r*.74);ctx.lineTo(r*.4,r*.74);ctx.closePath();ctx.fillStyle='#176171';ctx.fill();ctx.strokeStyle='#b28a3b';ctx.stroke();ctx.restore()}
+function homePoint(p,i){const a=(p===0?2.18:-.18)+(i-1)*.13,R=Math.min(w,h)*.445;return{x:w*.5+Math.cos(a)*R,y:h*.5+Math.sin(a)*R}}
+function piecePoint(pc){if(pc.pos<0)return homePoint(pc.player,pc.id);if(pc.pos>=TRACK)return{x:w*.5+(pc.player?15:-15),y:h*.485+(pc.id-1)*12};return spaces[pc.pos]}
+function drawLion(c,pc,x,y,scale,highlight,time){const col=colors[pc.player],r=Math.min(w,h)*.022*scale;c.save();c.translate(x,y);c.shadowColor=highlight?col.light:'#000';c.shadowBlur=highlight?16:9;c.shadowOffsetY=4;
+ // oval plinth, modeled body, chest, head, legs and tail silhouette
+ const base=c.createRadialGradient(-r*.2,-r*.4,1,0,0,r*1.5);base.addColorStop(0,col.light);base.addColorStop(.42,col.mid);base.addColorStop(1,col.dark);c.fillStyle=base;c.strokeStyle=pc.player?'#8ce0d7':'#f3d17b';c.lineWidth=Math.max(1,r*.07);
+ c.beginPath();c.ellipse(0,r*.64,r*1.05,r*.33,0,0,TAU);c.fill();c.stroke();
+ c.beginPath();c.ellipse(-r*.12,-r*.05,r*.76,r*.43,-.15,0,TAU);c.fill();
+ c.beginPath();c.arc(r*.56,-r*.3,r*.36,0,TAU);c.fill();
+ c.beginPath();c.moveTo(r*.4,-r*.56);c.lineTo(r*.52,-r*.9);c.lineTo(r*.68,-r*.58);c.closePath();c.fill();c.beginPath();c.moveTo(r*.7,-r*.53);c.lineTo(r*.87,-r*.82);c.lineTo(r*.91,-r*.42);c.closePath();c.fill();
+ for(const lx of[-.52,-.18,.24,.54]){c.fillRect(r*lx,r*.2,r*.14,r*.55)}
+ c.beginPath();c.moveTo(-r*.74,-r*.05);c.bezierCurveTo(-r*1.3,-r*.68,-r*1.45,r*.3,-r*1.08,r*.45);c.strokeStyle=col.mid;c.lineWidth=r*.14;c.lineCap='round';c.stroke();
+ c.beginPath();c.arc(r*.69,-r*.36,r*.035,0,TAU);c.fillStyle='#111';c.fill();c.restore()}
+function legalMoves(player=turn,value=roll){if(value==null)return[];const out=[];pieces.filter(p=>p.player===player&&p.pos<TRACK).forEach(pc=>{const dest=pc.pos<0?0:pc.pos+value;if(dest>TRACK)return;const own=pieces.some(q=>q!==pc&&q.player===player&&q.pos===dest&&dest<TRACK);if(!own)out.push({pc,dest,capture:pieces.find(q=>q.player!==player&&q.pos===dest&&dest<TRACK)})});return out}
+function drawPieces(time){const legal=new Set(legalMoves().map(m=>m.pc));pieces.forEach(pc=>{const t=Math.min(1,pc.t);let pt=piecePoint(pc),x=pt.x,y=pt.y;if(t<1){const e=1-Math.pow(1-t,3);x=pc.fromX+(pc.toX-pc.fromX)*e;y=pc.fromY+(pc.toY-pc.fromY)*e-ripple(t)*Math.min(w,h)*.035}pc.drawX=x;pc.drawY=y;drawLion(ctx,pc,x,y,1,legal.has(pc),time)});if(roll!=null&&!busy){legalMoves().forEach(m=>{const p=m.dest===TRACK?spaces[TRACK-1]:spaces[m.dest];ctx.save();ctx.beginPath();ctx.arc(p.x,p.y,p.r*1.25,0,TAU);ctx.strokeStyle=m.capture?'#e57646':'#f0d47a';ctx.globalAlpha=.65+.25*Math.sin(time*.006);ctx.lineWidth=2;ctx.stroke();ctx.restore()})}}
+function ripple(t){return Math.sin(Math.PI*t)}
+function draw(time){if(!alive)return;drawBoardBase(time);drawPieces(time);fctx.clearRect(0,0,w,h);embers.forEach((e,i)=>{e.y-=e.v;e.x+=Math.sin(time*.001+i)*.08;e.life-=.009;if(e.life<=0){e.x=Math.random()*w;e.y=h;e.life=1}fctx.globalAlpha=e.life*.24;fctx.fillStyle='#e3b158';fctx.beginPath();fctx.arc(e.x,e.y,e.s,0,TAU);fctx.fill()});fctx.globalAlpha=1;}
+function loop(t){if(!alive)return;if(t-last>33){draw(t);last=t;pieces.forEach(p=>{if(p.t<1)p.t=Math.min(1,p.t+.052)})}raf=requestAnimationFrame(loop)}
+function cast(){if(busy||roll!=null||winner)return;busy=true;castBtn.disabled=true;play('cast');sticksEl.classList.remove('casting');void sticksEl.offsetWidth;sticksEl.classList.add('casting');let lights=0;[...sticksEl.children].forEach((s,i)=>{const light=Math.random()>.5;if(light)lights++;s.style.setProperty('--face',light?'0deg':'180deg');s.style.setProperty('--r',(-9+Math.random()*18)+'deg')});roll=lights||5;resultEl.textContent='The sticks turn…';setTimeout(()=>{busy=false;sticksEl.classList.remove('casting');const lm=legalMoves();resultEl.textContent=`Cast: ${roll} · ${lm.length?'Choose a lit lion.':'No legal move.'}`;logEl.innerHTML=`<b>${colors[turn].name} casts ${roll}.</b><br>${lm.length?'The open path glows.':'The coil is closed; turn passes.'}`;if(!lm.length)setTimeout(endTurn,650);else if(turn===1&&modeEl.value==='ai')setTimeout(aiMove,480);},760)}
+function chooseAt(x,y){if(busy||roll==null||winner||(turn===1&&modeEl.value==='ai'))return;const move=legalMoves().map(m=>({m,d:Math.hypot(m.pc.drawX-x,m.pc.drawY-y)})).sort((a,b)=>a.d-b.d)[0];if(move&&move.d<Math.max(28,w*.055))execute(move.m)}
+function execute(m){busy=true;const start={x:m.pc.drawX,y:m.pc.drawY};if(m.capture){m.capture.pos=-1;const hp=homePoint(m.capture.player,m.capture.id);m.capture.fromX=m.capture.drawX;m.capture.fromY=m.capture.drawY;m.capture.toX=hp.x;m.capture.toY=hp.y;m.capture.t=0;play('capture')}
+ m.pc.pos=m.dest;const dp=piecePoint(m.pc);m.pc.fromX=start.x;m.pc.fromY=start.y;m.pc.toX=dp.x;m.pc.toY=dp.y;m.pc.t=0;play('move');logEl.innerHTML=`<b>${colors[turn].name} prowls ${roll} segment${roll===1?'':'s'}.</b><br>${m.capture?'An opposing piece is driven beyond the tail.':m.dest===TRACK?'The serpent’s head receives a lion.':'The inward path narrows.'}`;roll=null;resultEl.textContent=m.dest===TRACK?'A lion reaches the head.':'The coil turns onward.';setTimeout(()=>{busy=false;const finished=pieces.filter(p=>p.player===turn&&p.pos>=TRACK).length;if(finished===PIECES){winner=turn;castBtn.disabled=true;resultEl.textContent=`${colors[turn].name} has mastered the coil.`;turnSeal.innerHTML=`${colors[turn].name.toUpperCase()}<br>VICTORIOUS`;toast(`${colors[turn].name} brings all three lions to Mehen’s head.`);play('win');updateUI()}else endTurn()},720)}
+function aiMove(){const moves=legalMoves(1,roll);if(!moves.length)return endTurn();const level=+diffEl.value;const scored=moves.map(m=>{let s=m.dest+(m.capture?level*28:0)+(m.dest===TRACK?100:0);if(level>1){const danger=pieces.some(q=>q.player===0&&q.pos>=0&&q.pos<m.dest&&m.dest-q.pos<=5);if(danger)s-=7;const block=pieces.some(q=>q.player===0&&q.pos>=0&&Math.abs(q.pos-m.dest)<=2);if(block)s+=6}if(level===1)s+=Math.random()*45;else if(level===2)s+=Math.random()*12;else s+=m.pc.pos<0?4:0;return{m,s}}).sort((a,b)=>b.s-a.s);execute(scored[0].m)}
+function endTurn(){roll=null;turn=1-turn;busy=false;castBtn.disabled=false;resultEl.textContent=`${colors[turn].name} to cast.`;updateUI();if(turn===1&&modeEl.value==='ai')setTimeout(cast,620)}
+function updateUI(){for(let p=0;p<2;p++){const mine=pieces.filter(q=>q.player===p);document.getElementById('p'+p+'home').textContent=mine.filter(q=>q.pos<0).length;document.getElementById('p'+p+'head').textContent=mine.filter(q=>q.pos>=TRACK).length;document.getElementById('p'+p).classList.toggle('active',turn===p&&!winner)}document.getElementById('p1name').textContent=modeEl.value==='ai'?'Blue Lionesses · Keeper':'Blue Lionesses';if(!winner)turnSeal.innerHTML=`${colors[turn].name.toUpperCase()}<br>${roll==null?'TO CAST':'TO MOVE'}`;diffEl.disabled=modeEl.value==='local'}
+function audioInit(){if(audio)return;audio=new (window.AudioContext||window.webkitAudioContext)()}
+function play(type){if(!soundOn)return;audioInit();if(audio.state==='suspended')audio.resume();const now=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();o.connect(g);g.connect(audio.destination);if(type==='cast'){o.type='triangle';o.frequency.setValueAtTime(150,now);o.frequency.exponentialRampToValueAtTime(70,now+.18);g.gain.setValueAtTime(.035,now);g.gain.exponentialRampToValueAtTime(.001,now+.2)}else if(type==='capture'){o.type='sawtooth';o.frequency.setValueAtTime(95,now);g.gain.setValueAtTime(.03,now);g.gain.exponentialRampToValueAtTime(.001,now+.3)}else if(type==='win'){o.type='sine';o.frequency.setValueAtTime(220,now);o.frequency.exponentialRampToValueAtTime(440,now+.6);g.gain.setValueAtTime(.04,now);g.gain.exponentialRampToValueAtTime(.001,now+.8)}else{o.type='sine';o.frequency.setValueAtTime(120,now);o.frequency.exponentialRampToValueAtTime(165,now+.16);g.gain.setValueAtTime(.024,now);g.gain.exponentialRampToValueAtTime(.001,now+.2)}o.start(now);o.stop(now+.85)}
+function toggleSound(){soundOn=!soundOn;soundBtn.setAttribute('aria-pressed',soundOn);soundBtn.textContent=soundOn?'Sound on':'Sound off';if(soundOn){audioInit();audio.resume();play('move')}}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200)}
+function showTutorial(page=0){tutPage=page;document.getElementById('tutorial').classList.add('open');renderTut()}
+function renderTut(){document.getElementById('tutBody').innerHTML=tutorials[tutPage];document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===tutPage));document.getElementById('next').textContent=tutPage===tutorials.length-1?'Begin the game':'Continue'}
+function nextTut(){if(tutPage<tutorials.length-1){tutPage++;renderTut()}else document.getElementById('tutorial').classList.remove('open')}
+function closeTut(){document.getElementById('tutorial').classList.remove('open')}
+function openLore(){document.getElementById('lore').classList.add('open');document.getElementById('closeLore').focus()}
+function closeLore(){document.getElementById('lore').classList.remove('open');document.getElementById('history').focus()}
+function onPointer(e){const r=board.getBoundingClientRect();chooseAt((e.clientX-r.left)*w/r.width,(e.clientY-r.top)*h/r.height)}
+function keyBoard(e){if(e.key==='Enter'||e.key===' '){const lm=legalMoves();if(lm.length){e.preventDefault();execute(lm[0])}}}
+function dispose(){alive=false;cancelAnimationFrame(raf);removeEventListener('resize',resize);board.removeEventListener('pointerup',onPointer);board.removeEventListener('keydown',keyBoard);if(audio){audio.close();audio=null}ctx.clearRect(0,0,board.width,board.height);fctx.clearRect(0,0,fx.width,fx.height);pieces=[];spaces=[];embers=[]}
+castBtn.addEventListener('click',cast);board.tabIndex=0;board.addEventListener('pointerup',onPointer);board.addEventListener('keydown',keyBoard);soundBtn.addEventListener('click',toggleSound);document.getElementById('restart').addEventListener('click',()=>{reset();toast('A new passage through the coils begins.')});modeEl.addEventListener('change',()=>{reset();updateUI()});diffEl.addEventListener('change',()=>toast('The Keeper changes its counsel.'));document.getElementById('how').addEventListener('click',()=>showTutorial(0));document.getElementById('history').addEventListener('click',openLore);document.getElementById('closeLore').addEventListener('click',closeLore);document.getElementById('lore').addEventListener('click',e=>{if(e.target.id==='lore')closeLore()});document.getElementById('next').addEventListener('click',nextTut);document.getElementById('skip').addEventListener('click',closeTut);document.querySelectorAll('.dot').forEach(d=>d.addEventListener('click',()=>{tutPage=+d.dataset.page;renderTut()}));addEventListener('resize',resize,{passive:true});addEventListener('pagehide',dispose,{once:true});
+initDust();for(let i=0;i<22;i++)embers.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,v:.08+Math.random()*.19,s:.4+Math.random()*1.2,life:Math.random()});reset();resize();renderTut();raf=requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

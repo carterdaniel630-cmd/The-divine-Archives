@@ -45,21 +45,21 @@
       "seconds": 10,
       "errors": []
     },
-    "pong": {
+    "antithesis": {
       "avg": 22.7,
       "min": 20.9,
       "worstFrameMs": 100,
       "seconds": 10.2,
       "errors": []
     },
-    "minesweeper": {
+    "excavation": {
       "avg": 40.1,
       "min": 36.1,
       "worstFrameMs": 83,
       "seconds": 10.7,
       "errors": []
     },
-    "pacman": {
+    "labyrinth": {
       "avg": 15.6,
       "min": 14.3,
       "worstFrameMs": 100,
@@ -73,7 +73,7 @@
       "seconds": 10.1,
       "errors": []
     },
-    "risk": {
+    "dominion": {
       "avg": 25.2,
       "min": 22.9,
       "worstFrameMs": 117,

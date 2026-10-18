@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1889,
+ "count": 1895,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -2874,7 +2874,7 @@
    "links": [
     "relic:v20"
    ],
-   "from": "sources/v20-papyrus-of-ani.md"
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:britishmuseum-org/46d20f6c7b",
@@ -2929,6 +2929,12 @@
     "relic:v53"
    ],
    "from": "sources/v53-rosetta-stone.md"
+  },
+  {
+   "id": "source:britishmuseum-org/d33bd72b71",
+   "type": "source",
+   "label": "https://www.britishmuseum.org/collection/object/Y_EA10470-4",
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:britishmuseum-org/efe1639882",
@@ -14188,6 +14194,12 @@
    "from": "sources/ch70-pre-islamic-arabia.md"
   },
   {
+   "id": "source:sacred-texts-com/057bacd422",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxix-and-xxx",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
    "id": "source:sacred-texts-com/2a4e0f40a7",
    "type": "source",
    "label": "https://sacred-texts.com/jai/sbe22/index.htm",
@@ -14213,6 +14225,12 @@
     "chapter:ch45"
    ],
    "from": "sources/ch45-pistis-sophia.md"
+  },
+  {
+   "id": "source:sacred-texts-com/37003df229",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plate-iii",
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:sacred-texts-com/4f38d1e9df",
@@ -14242,6 +14260,12 @@
    "from": "sources/ch45-pistis-sophia.md"
   },
   {
+   "id": "source:sacred-texts-com/932f568717",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxxi-and-xxxii",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
    "id": "source:sacred-texts-com/94b57087ab",
    "type": "source",
    "label": "https://sacred-texts.com/hin/rigveda/rv10129.htm",
@@ -14260,6 +14284,12 @@
    "from": "sources/v66-kebra-nagast.md"
   },
   {
+   "id": "source:sacred-texts-com/ca61f0032a",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/plate-iv",
+   "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
    "id": "source:sacred-texts-com/d2cb74c4b0",
    "type": "source",
    "label": "https://sacred-texts.com/chr/ps/ps040.htm",
@@ -14276,6 +14306,12 @@
     "chapter:ch67"
    ],
    "from": "sources/ch67-minoan-crete.md"
+  },
+  {
+   "id": "source:sacred-texts-com/f1cce14878",
+   "type": "source",
+   "label": "https://sacred-texts.com/book/the-book-of-the-dead/title-page",
+   "from": "sources/ritual-weighing-of-the-heart.md"
   },
   {
    "id": "source:sacred-texts-com/f2c0c3ac17",

@@ -1,5 +1,5 @@
 {
-  "note": "Facts + storyline for 'The Tomb Robber' (treasure-hunt expedition). Each relic's `basis` substring must appear in the source chapter's rendered text (tools/verify-treasure.js). Recover the relic, learn what it meant. `level` groups relics into the four sites of the expedition; the verifier ignores every key except the facts themselves.",
+  "note": "Facts + storyline for 'The Unfinished Journal' (treasure-hunt expedition). Each relic's `basis` substring must appear in the source chapter's rendered text (tools/verify-treasure.js). Recover the relic, learn what it meant. `level` groups relics into the four sites of the expedition; the verifier ignores every key except the facts themselves.",
   "story": {
     "title": "The Expedition",
     "intro": "You are holding the field journal of an expedition that never came home. Four ancient sites are ringed in its margins, each a place its author chased relics into and did not walk out of. You go where they could not return from — across Egypt, Sumer, the Indus, and the long road east. Bring back what you can carry. And read, on the way, what each thing actually meant to the people who made it.",

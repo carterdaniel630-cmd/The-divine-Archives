@@ -46,7 +46,7 @@ if (args.includes("--all")) {
 urls = [...urls].sort();
 
 fs.mkdirSync(L.SHINGLES, { recursive: true });
-const reportPath = path.join(L.BASE, "_report.json");
+const reportPath = path.join(path.dirname(L.SHINGLES), "_report.json"); // sources/baseline/_report.json
 const prev = fs.existsSync(reportPath) ? JSON.parse(fs.readFileSync(reportPath, "utf8")) : { failed: {} };
 const failed = Object.assign({}, prev.failed || {});
 const retryFailed = args.includes("--retry-failed");
@@ -88,7 +88,7 @@ async function fetchOnce(url) {
 }
 
 (async () => {
-  const todo = urls.filter((u) => !fs.existsSync(path.join(L.SHINGLES, L.urlKey(u) + ".txt")) && (retryFailed || !failed[u] || failed[u].transient || failed[u].tries < 2));
+  const todo = urls.filter((u) => !fs.existsSync(path.join(L.SHINGLES, L.urlKey(u) + ".txt")) && (retryFailed || !failed[u] || isTransient(failed[u].reason) || failed[u].tries < 2));
   let done = 0, ok = 0;
   const queue = todo.slice();
   // at most two requests at a time to any one host, so busy sites are not hammered into rate limits
@@ -109,7 +109,7 @@ async function fetchOnce(url) {
         fs.writeFileSync(path.join(L.SHINGLES, L.urlKey(url) + ".txt"), "# " + url + "\n" + [...r.shingles].sort().join("\n") + "\n");
         delete failed[url]; ok++;
       } else {
-        failed[url] = { reason: r.error, tries: ((failed[url] && failed[url].tries) || 0) + 1, transient: isTransient(r.error) };
+        failed[url] = { reason: r.error, tries: ((failed[url] && failed[url].tries) || 0) + 1 };
       }
       busy[host]--;
       if (++done % 100 === 0) console.log("  " + done + " / " + todo.length);

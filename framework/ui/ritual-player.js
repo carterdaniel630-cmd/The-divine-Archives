@@ -7,7 +7,11 @@
    nothing is scored, timed against the visitor, won or lost, and the visitor can
    leave at any moment. It records only "started" and "completed" in the ledger.
 
-   Use: RitualPlayer.open(container, ritual, { chapterBase: "chapters/", onClose })
+   Use: RitualPlayer.open(container, ritual, { chapterBase: "chapters/", onClose, onStep, endLinks })
+     onStep(index, step)  optional: called as each step shows (the museum turns its camera to it)
+     endLinks             optional: [[label, href], ...] offered on the closing screen
+   A step's text may hold several paragraphs, one per line; a line that opens with a quotation
+   mark is shown as a quotation.
    Needs window.SequenceEngine (docs/assets/framework/sequence-engine.js).
    ========================================================================== */
 
@@ -16,6 +20,7 @@
 
   var CSS = ".rp{display:flex;flex-direction:column;gap:.7rem}" +
     ".rp-step{font-size:1.02rem;line-height:1.55;min-height:4.5em}" +
+    ".rp-step p{margin:0 0 .55em}.rp-step .rp-quote{margin:.3em 0;padding-left:.7rem;border-left:2px solid currentColor;font-style:italic;opacity:.92}" +
     ".rp-count{font-size:.8rem;opacity:.75;letter-spacing:.04em;text-transform:uppercase}" +
     ".rp-bar{height:4px;border-radius:2px;background:rgba(127,127,127,.25);overflow:hidden}" +
     ".rp-bar>i{display:block;height:100%;width:0;background:currentColor;opacity:.6}" +
@@ -100,7 +105,7 @@
       else control = '<span class="rp-note">Moves on by itself' + (reduced() ? " in about " + secs + " seconds" : "") + ".</span>";
       container.innerHTML = '<div class="rp">' + head() +
         '<p class="rp-count">Step ' + (index + 1) + " of " + ritual.steps.length + "</p>" +
-        '<p class="rp-step" aria-live="polite">' + esc(data.text) + "</p>" +
+        '<div class="rp-step" aria-live="polite">' + String(data.text).split("\n").map(function (line) { return "<p" + (/^[\u201c"]/.test(line) ? ' class="rp-quote"' : "") + ">" + esc(line) + "</p>"; }).join("") + "</div>" +
         '<div class="rp-bar" aria-hidden="true"><i></i></div>' +
         sourcesLine(s.source_ids) +
         (href ? '<p class="rp-src"><a href="' + esc(href) + '">Read the chapter section this step draws on</a></p>' : '<p class="rp-src">No chapter covers this step yet.</p>') +
@@ -112,6 +117,7 @@
         clearTimeout(uiTimer);
         uiTimer = setTimeout(function () { var b = container.querySelector('[data-rp="tap"]'); if (b) { b.disabled = false; b.focus(); } }, s.pacing_duration_ms);
       } else { var h = container.querySelector('[data-rp="hold"]'); if (h) h.focus(); }
+      if (opts.onStep) opts.onStep(index, data);
     }
 
     function end() {
@@ -120,7 +126,9 @@
       container.innerHTML = '<div class="rp">' + head() +
         "<p>That is the end of the walkthrough.</p>" +
         '<p class="rp-note">It followed the text step by step; the timings are a display choice, not part of the practice.</p>' +
-        '<div class="mu-actions">' + (ch ? '<a href="' + esc(chapterBase + ch + ".html") + '">Read the chapter</a>' : "") + '<button type="button" class="ghost" data-rp="leave">Close</button></div></div>';
+        '<div class="mu-actions">' + (ch ? '<a href="' + esc(chapterBase + ch + ".html") + '">Read the chapter</a>' : "") +
+        (opts.endLinks || []).map(function (l) { return '<a class="ghost" href="' + esc(l[1]) + '">' + esc(l[0]) + "</a>"; }).join("") +
+        '<button type="button" class="ghost" data-rp="leave">Close</button></div></div>';
       bind();
     }
 

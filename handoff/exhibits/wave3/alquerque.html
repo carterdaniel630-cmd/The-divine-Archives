@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alquerque — The Divine Archives</title>
+<style>
+/* ============ ALQUERQUE exhibit styles (all selectors prefixed) ============ */
+.alquerque-app{
+  --alquerque-bg:#0d0a06; --alquerque-panel:#151009; --alquerque-panel2:#1b1409;
+  --alquerque-gold:#c9a227; --alquerque-gold-dim:#8a6f1c;
+  --alquerque-ink:#e9dec2; --alquerque-muted:#9c8d68; --alquerque-faint:#6b6046;
+  --alquerque-line:rgba(201,162,39,.28);
+  --alquerque-faience:#2ea3d8; --alquerque-carnelian:#d0552a;
+  box-sizing:border-box; margin:0 auto; max-width:1120px; padding:20px 16px 40px;
+  background:radial-gradient(1200px 700px at 50% -10%, #1d1509 0%, var(--alquerque-bg) 60%);
+  color:var(--alquerque-ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  min-height:100vh;
+}
+.alquerque-app *{box-sizing:border-box}
+.alquerque-head{text-align:center; margin:6px 0 18px}
+.alquerque-kicker{font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--alquerque-muted); margin-bottom:10px}
+.alquerque-title{
+  font-family:Georgia,"Palatino Linotype","Times New Roman",serif;
+  font-size:clamp(34px,6vw,54px); font-weight:400; letter-spacing:.14em; margin:0 0 8px;
+  color:var(--alquerque-ink); text-transform:uppercase;
+}
+.alquerque-title::after{content:""; display:block; width:120px; height:1px; margin:12px auto 0;
+  background:linear-gradient(90deg,transparent,var(--alquerque-gold),transparent)}
+.alquerque-sub{font-family:Georgia,serif; font-style:italic; color:var(--alquerque-muted); font-size:15px; margin:0}
+.alquerque-main{display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:18px; align-items:start}
+@media (max-width:860px){ .alquerque-main{grid-template-columns:1fr} }
+.alquerque-boardwrap{
+  position:relative; border:1px solid var(--alquerque-line); border-radius:10px; overflow:hidden;
+  background:#060402; aspect-ratio:1/1; max-height:76vh; margin:0 auto; width:100%;
+  outline:none;
+}
+.alquerque-boardwrap:focus-visible{box-shadow:0 0 0 2px var(--alquerque-gold)}
+.alquerque-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; touch-action:none; cursor:pointer}
+.alquerque-vignette{position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 42%, transparent 52%, rgba(0,0,0,.55) 100%)}
+.alquerque-turn{
+  position:absolute; top:10px; left:50%; transform:translateX(-50%);
+  font-family:Georgia,serif; font-size:13px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--alquerque-ink); background:rgba(10,7,3,.72); border:1px solid var(--alquerque-line);
+  padding:7px 18px; border-radius:999px; white-space:nowrap; pointer-events:none;
+  backdrop-filter:blur(4px);
+}
+.alquerque-turn .alquerque-dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:8px; vertical-align:1px}
+.alquerque-side{display:flex; flex-direction:column; gap:12px; min-width:0}
+.alquerque-card{
+  background:linear-gradient(180deg,var(--alquerque-panel2),var(--alquerque-panel));
+  border:1px solid var(--alquerque-line); border-radius:10px; padding:14px 16px;
+}
+.alquerque-msg{font-family:Georgia,serif; font-size:15.5px; line-height:1.55; min-height:52px; color:var(--alquerque-ink)}
+.alquerque-msg .alquerque-small{font-size:12.5px; color:var(--alquerque-muted); font-family:system-ui,sans-serif}
+.alquerque-score{display:flex; justify-content:space-between; gap:10px; font-size:13px}
+.alquerque-score .alquerque-pip{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:0}
+.alquerque-score b{font-size:16px}
+.alquerque-score span{color:var(--alquerque-muted)}
+.alquerque-controls{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+.alquerque-btn{
+  font-family:Georgia,serif; font-size:13.5px; letter-spacing:.08em;
+  background:transparent; color:var(--alquerque-ink); border:1px solid var(--alquerque-gold-dim);
+  border-radius:8px; padding:10px 8px; cursor:pointer; transition:border-color .2s, background .2s;
+}
+.alquerque-btn:hover:not(:disabled){border-color:var(--alquerque-gold); background:rgba(201,162,39,.08)}
+.alquerque-btn:disabled{opacity:.38; cursor:default}
+.alquerque-btn.alquerque-wide{grid-column:1/-1}
+.alquerque-keys{font-size:12px; color:var(--alquerque-faint); line-height:1.7}
+.alquerque-keys kbd{border:1px solid var(--alquerque-faint); border-radius:4px; padding:0 5px; font-size:11px; color:var(--alquerque-muted)}
+.alquerque-rules{font-size:13.5px; line-height:1.65}
+.alquerque-rules h3{font-family:Georgia,serif; font-weight:400; letter-spacing:.18em; text-transform:uppercase;
+  font-size:13px; color:var(--alquerque-gold); margin:14px 0 6px}
+.alquerque-rules h3:first-child{margin-top:0}
+.alquerque-rules ul{margin:6px 0; padding-left:18px}
+.alquerque-rules li{margin:5px 0}
+.alquerque-badge{display:inline-block; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  border:1px solid; border-radius:999px; padding:2px 9px; margin-left:8px; vertical-align:2px; white-space:nowrap}
+.alquerque-badge.alquerque-attested{color:var(--alquerque-gold); border-color:var(--alquerque-gold-dim)}
+.alquerque-badge.alquerque-recon{color:var(--alquerque-muted); border-color:var(--alquerque-faint)}
+.alquerque-badge.alquerque-uncertain{color:#d08a6a; border-color:#8a4a2c}
+.alquerque-prov{font-size:12px; color:var(--alquerque-faint); line-height:1.7; font-style:italic; font-family:Georgia,serif}
+.alquerque-fallback{padding:40px 20px; text-align:center; color:var(--alquerque-muted); font-family:Georgia,serif}
+@media (prefers-reduced-motion: reduce){
+  .alquerque-app *{transition:none !important; animation:none !important}
+}
+</style>
+</head>
+<body style="margin:0;background:#0d0a06">
+<div class="alquerque-app" id="alquerque-app">
+  <header class="alquerque-head">
+    <div class="alquerque-kicker">The Divine Archives &middot; Games of the Ancient World</div>
+    <h1 class="alquerque-title">Alquerque</h1>
+    <p class="alquerque-sub">The ancestor of draughts &mdash; after the <em>Libro de los juegos</em> of Alfonso X, 1283</p>
+  </header>
+
+  <div class="alquerque-main">
+    <div class="alquerque-boardwrap" id="alquerque-boardwrap" tabindex="0"
+         aria-label="Alquerque board. Use arrow keys to move the cursor, Enter to select a piece or destination.">
+      <canvas class="alquerque-canvas" id="alquerque-canvas"></canvas>
+      <div class="alquerque-vignette"></div>
+      <div class="alquerque-turn" id="alquerque-turn"><span class="alquerque-dot" id="alquerque-turndot"></span><span id="alquerque-turntext">Faience to move</span></div>
+    </div>
+
+    <aside class="alquerque-side">
+      <div class="alquerque-card">
+        <div class="alquerque-msg" id="alquerque-msg" aria-live="polite"></div>
+      </div>
+      <div class="alquerque-card">
+        <div class="alquerque-score">
+          <div><span class="alquerque-pip" style="background:#2ea3d8"></span><span>Faience (you)</span><br><b id="alquerque-youcount">12</b></div>
+          <div style="text-align:center"><span>Move</span><br><b id="alquerque-movenum">1</b></div>
+          <div style="text-align:right"><span class="alquerque-pip" style="background:#d0552a"></span><span>Carnelian</span><br><b id="alquerque-aicount">12</b></div>
+        </div>
+      </div>
+      <div class="alquerque-card">
+        <div class="alquerque-controls">
+          <button class="alquerque-btn" id="alquerque-new">New game</button>
+          <button class="alquerque-btn" id="alquerque-undo">Undo</button>
+          <button class="alquerque-btn alquerque-wide" id="alquerque-rulesbtn">Rules of play</button>
+          <button class="alquerque-btn alquerque-wide" id="alquerque-sound">Sound: on</button>
+        </div>
+      </div>
+      <div class="alquerque-card alquerque-rules" id="alquerque-rules" hidden>
+        <h3>The board <span class="alquerque-badge alquerque-attested">attested &middot; 1283</span></h3>
+        <ul>
+          <li>Twenty-five points in a five-by-five lattice, joined by horizontal, vertical and diagonal lines. Pieces rest on the intersections, never in the squares.</li>
+        </ul>
+        <h3>Setting out <span class="alquerque-badge alquerque-attested">attested &middot; 1283</span></h3>
+        <ul>
+          <li>Twelve pieces a side. Each player fills the two ranks nearest them, plus the <em>two rightmost points of the middle rank</em> as seen from their own seat. The centre point begins empty.</li>
+        </ul>
+        <h3>Moving &amp; taking <span class="alquerque-badge alquerque-attested">attested &middot; 1283</span></h3>
+        <ul>
+          <li>A piece steps one point along any marked line to an empty point.</li>
+          <li>A piece captures by <em>leaping</em> over an adjacent enemy piece onto the empty point immediately beyond; the leapt piece is lifted from the board.</li>
+          <li><b>If a capture is open, it must be taken.</b> Further leaps in the same turn are compulsory, and the piece may turn at each landing.</li>
+          <li>The game is won by taking every enemy piece, or by leaving the enemy with no legal move.</li>
+        </ul>
+        <h3>Reconstructed detail <span class="alquerque-badge alquerque-recon">interpretation</span></h3>
+        <ul>
+          <li>The diagonals follow the standard modern reconstruction of the manuscript diagram: one diagonal per square, alternating direction.</li>
+          <li>Where several captures are open, the player may choose freely among them; each chosen chain must still be played to its end. Alfonso&rsquo;s text is ambiguous here &mdash; this follows the reading of the Cyningstan reconstruction.</li>
+          <li>Not used: huffing, forced longest-capture, promotion, or forward-only movement &mdash; later additions, absent from the 1283 account.</li>
+        </ul>
+        <h3>What is not certain <span class="alquerque-badge alquerque-uncertain">unverified</span></h3>
+        <ul>
+          <li>Popular sources claim the game was played in Egypt as early as 1400 BC. No excavated board securely identified as alquerque supports this. The firm record begins with <em>qirkat</em>, named without rules in a 10th-century Arabic work, and the complete rules of 1283.</li>
+          <li>Simplified in this exhibit: no draw adjudication, and the carnelian opponent reasons only two moves deep.</li>
+        </ul>
+      </div>
+      <div class="alquerque-card alquerque-keys">
+        <kbd>&larr;</kbd><kbd>&uarr;</kbd><kbd>&darr;</kbd><kbd>&rarr;</kbd> move the cursor &nbsp;&middot;&nbsp;
+        <kbd>Enter</kbd> choose &nbsp;&middot;&nbsp; <kbd>Esc</kbd> release &nbsp;&middot;&nbsp;
+        <kbd>U</kbd> undo &nbsp;&middot;&nbsp; <kbd>N</kbd> new game &nbsp;&middot;&nbsp; drag to look about
+      </div>
+      <div class="alquerque-card alquerque-prov">
+        Board and rules after the <em>Libro de los juegos</em>, commissioned by Alfonso X of Castile at Seville in 1283 &mdash; the earliest complete account to survive. The name descends from Arabic <em>al-qirkat</em>. Presented as a study piece by The Divine Archives.
+      </div>
+    </aside>
+  </div>
+</div>
+<noscript><div class="alquerque-fallback">Alquerque needs JavaScript to play.</div></noscript>
+<script>
+"use strict";
+/* ================================================================
+   ALQUERQUE — game logic (pure, no DOM). Sides: 1 = faience (human,
+   south), 2 = carnelian (AI, north). Points indexed r*5+c, r,c in 0..4.
+   ================================================================ */
+//__LOGIC_START__
+const ALQ_N = 5;
+function alqId(r, c) { return r * ALQ_N + c; }
+function alqRC(i) { return [(i / ALQ_N) | 0, i % ALQ_N]; }
+
+/* Adjacency: orthogonal lines everywhere; one diagonal per 2x2 square,
+   alternating direction — the standard reconstruction of the Alfonso
+   manuscript diagram. */
+const ALQ_ADJ = (function buildAdj() {
+  const adj = Array.from({ length: 25 }, () => []);
+  const add = (a, b) => { adj[a].push(b); adj[b].push(a); };
+  for (let r = 0; r < 5; r++) for (let c = 0; c < 5; c++) {
+    if (c < 4) add(alqId(r, c), alqId(r, c + 1));
+    if (r < 4) add(alqId(r, c), alqId(r + 1, c));
+  }
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) {
+    if ((r + c) % 2 === 0) add(alqId(r, c), alqId(r + 1, c + 1));   /* \ */
+    else add(alqId(r, c + 1), alqId(r + 1, c));                     /* / */
+  }
+  return adj;
+})();
+
+/* Attested setup: each side the two nearest ranks, plus the two
+   rightmost points of the middle rank from their own seat. Centre empty. */
+function alqSetup() {
+  const b = new Array(25).fill(0);
+  for (let c = 0; c < 5; c++) { b[alqId(0, c)] = 2; b[alqId(1, c)] = 2; }
+  for (let c = 0; c < 5; c++) { b[alqId(3, c)] = 1; b[alqId(4, c)] = 1; }
+  b[alqId(2, 0)] = 2; b[alqId(2, 1)] = 2;   /* north's two rightmost */
+  b[alqId(2, 3)] = 1; b[alqId(2, 4)] = 1;   /* south's two rightmost */
+  return b;                                 /* (2,2) stays empty */
+}
+
+function alqCount(board, side) {
+  let n = 0;
+  for (let i = 0; i < 25; i++) if (board[i] === side) n++;
+  return n;
+}
+
+/* Maximal capture chains from a piece. Chains must be played to their
+   end (compulsory continuation), so only maximal paths are legal turns. */
+function alqCapturesFrom(board, side, from) {
+  const foe = 3 - side, res = [];
+  const path = [from], taken = [];
+  /* No visited-set: every jump removes an enemy piece, so chains always
+     terminate, and a piece may re-enter a vacated point (Bell's ban on
+     revisits is a later addition, not used here). */
+  (function dfs(pos) {
+    const r = (pos / 5) | 0, c = pos % 5;
+    let extended = false;
+    for (const q of ALQ_ADJ[pos]) {
+      if (board[q] !== foe) continue;
+      const qr = (q / 5) | 0, qc = q % 5;
+      const lr = 2 * qr - r, lc = 2 * qc - c;
+      if (lr < 0 || lr > 4 || lc < 0 || lc > 4) continue;
+      const l = alqId(lr, lc);
+      if (board[l] !== 0) continue;
+      if (ALQ_ADJ[q].indexOf(l) < 0) continue; /* line must run straight on */
+      extended = true;
+      board[pos] = 0; board[q] = 0; board[l] = side;
+      path.push(l); taken.push(q);
+      dfs(l);
+      path.pop(); taken.pop();
+      board[pos] = side; board[q] = foe; board[l] = 0;
+    }
+    if (!extended && taken.length > 0) {
+      res.push({ from: from, to: path[path.length - 1], path: path.slice(), taken: taken.slice() });
+    }
+  })(from);
+  return res;
+}
+
+function alqGenMoves(board, side) {
+  const caps = [], quiet = [];
+  for (let i = 0; i < 25; i++) {
+    if (board[i] !== side) continue;
+    const cs = alqCapturesFrom(board, side, i);
+    for (const c of cs) caps.push(c);
+    if (cs.length === 0) {
+      for (const t of ALQ_ADJ[i]) {
+        if (board[t] === 0) quiet.push({ from: i, to: t, path: [i, t], taken: [] });
+      }
+    }
+  }
+  return { caps: caps, quiet: quiet };
+}
+
+function alqApply(board, mv) {
+  board[mv.from] = 0;
+  for (const q of mv.taken) board[q] = 0;
+  board[mv.to] = mv.side;
+}
+
+/* side is attached to the move by the caller before applying */
+function alqWinner(board, toMove) {
+  const foe = 3 - toMove;
+  if (alqCount(board, foe) === 0) return toMove;
+  const m = alqGenMoves(board, foe);
+  if (m.caps.length === 0 && m.quiet.length === 0) return toMove; /* blockaded */
+  return 0;
+}
+
+/* ---- Heuristic AI: 2-ply, compulsory captures first (longest preferred) ---- */
+function alqEvaluate(board, me) {
+  const foe = 3 - me;
+  let my = 0, op = 0, myC = 0, opC = 0, myMob = 0, opMob = 0, myThreat = 0;
+  for (let i = 0; i < 25; i++) {
+    const p = board[i];
+    if (!p) continue;
+    const r = (i / 5) | 0, c = i % 5;
+    const cen = 4 - (Math.abs(r - 2) + Math.abs(c - 2));
+    if (p === me) { my++; myC += cen; }
+    else { op++; opC += cen; }
+  }
+  const gm = alqGenMoves(board, me), go = alqGenMoves(board, foe);
+  myMob = gm.caps.length + gm.quiet.length;
+  opMob = go.caps.length + go.quiet.length;
+  for (let i = 0; i < 25; i++) {
+    if (board[i] !== me) continue;
+    const r = (i / 5) | 0, c = i % 5;
+    for (const q of ALQ_ADJ[i]) {
+      if (board[q] !== foe) continue;
+      const qr = (q / 5) | 0, qc = q % 5;
+      const lr = 2 * qr - r, lc = 2 * qc - c;
+      if (lr < 0 || lr > 4 || lc < 0 || lc > 4) continue;
+      const l = alqId(lr, lc);
+      if (board[l] === 0 && ALQ_ADJ[q].indexOf(l) >= 0) { myThreat++; break; }
+    }
+  }
+  return (my - op) * 120 + (myMob - opMob) * 2 + (myC - opC) * 2 - myThreat * 9;
+}
+
+function alqAiChoose(board, me) {
+  const g = alqGenMoves(board, me);
+  const moves = g.caps.length ? g.caps.slice() : g.quiet.slice();
+  if (!moves.length) return null;
+  moves.sort((a, b) => (b.taken.length - a.taken.length) || (a.from - b.from));
+  const foe = 3 - me;
+  let best = -Infinity, bestM = moves[0];
+  for (const m of moves) {
+    const b2 = board.slice();
+    const mv = Object.assign({}, m, { side: me });
+    alqApply(b2, mv);
+    let v;
+    if (alqCount(b2, foe) === 0) v = 1e6;
+    else {
+      const r2 = alqGenMoves(b2, foe);
+      const replies = r2.caps.length ? r2.caps : r2.quiet;
+      if (!replies.length) v = 9e5;
+      else {
+        v = Infinity;
+        for (const rm of replies) {
+          const b3 = b2.slice();
+          alqApply(b3, Object.assign({}, rm, { side: foe }));
+          const e = alqEvaluate(b3, me);
+          if (e < v) v = e;
+        }
+      }
+    }
+    v += Math.random() * 0.5; /* break ties without a pattern */
+    if (v > best) { best = v; bestM = m; }
+  }
+  return Object.assign({}, bestM, { side: me });
+}
+//__LOGIC_END__
+
+/* ================================================================
+   WebGL renderer — vanilla, no libraries. One Phong-ish program,
+   procedural canvas textures, minimal matrix math.
+   ================================================================ */
+const ALQ_REDUCED = (typeof matchMedia === 'function') &&
+  matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function alqMul44(a, b) {
+  const o = new Float32Array(16);
+  for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++)
+    o[c * 4 + r] = a[r] * b[c * 4] + a[4 + r] * b[c * 4 + 1] + a[8 + r] * b[c * 4 + 2] + a[12 + r] * b[c * 4 + 3];
+  return o;
+}
+function alqPerspective(fov, aspect, n, f) {
+  const t = 1 / Math.tan(fov / 2), o = new Float32Array(16);
+  o[0] = t / aspect; o[5] = t; o[10] = (f + n) / (n - f); o[11] = -1; o[14] = 2 * f * n / (n - f);
+  return o;
+}
+function alqLookAt(e, t, up) {
+  let zx = e[0] - t[0], zy = e[1] - t[1], zz = e[2] - t[2];
+  let l = Math.hypot(zx, zy, zz) || 1; zx /= l; zy /= l; zz /= l;
+  let xx = up[1] * zz - up[2] * zy, xy = up[2] * zx - up[0] * zz, xz = up[0] * zy - up[1] * zx;
+  l = Math.hypot(xx, xy, xz) || 1; xx /= l; xy /= l; xz /= l;
+  const yx = zy * xz - zz * xy, yy = zz * xx - zx * xz, yz = zx * xy - zy * xx;
+  return new Float32Array([
+    xx, yx, zx, 0,  xy, yy, zy, 0,  xz, yz, zz, 0,
+    -(xx * e[0] + xy * e[1] + xz * e[2]),
+    -(yx * e[0] + yy * e[1] + yz * e[2]),
+    -(zx * e[0] + zy * e[1] + zz * e[2]), 1]);
+}
+function alqModel(tx, ty, tz, s) {
+  return new Float32Array([s, 0, 0, 0, 0, s, 0, 0, 0, 0, s, 0, tx, ty, tz, 1]);
+}
+
+function alqComputeNormals(P, I) {
+  const N = new Float32Array(P.length);
+  for (let t = 0; t < I.length; t += 3) {
+    const a = I[t] * 3, b = I[t + 1] * 3, c = I[t + 2] * 3;
+    const abx = P[b] - P[a], aby = P[b + 1] - P[a + 1], abz = P[b + 2] - P[a + 2];
+    const acx = P[c] - P[a], acy = P[c + 1] - P[a + 1], acz = P[c + 2] - P[a + 2];
+    const nx = aby * acz - abz * acy, ny = abz * acx - abx * acz, nz = abx * acy - aby * acx;
+    N[a] += nx; N[a + 1] += ny; N[a + 2] += nz;
+    N[b] += nx; N[b + 1] += ny; N[b + 2] += nz;
+    N[c] += nx; N[c + 1] += ny; N[c + 2] += nz;
+  }
+  for (let i = 0; i < N.length; i += 3) {
+    const l = Math.hypot(N[i], N[i + 1], N[i + 2]) || 1;
+    N[i] /= l; N[i + 1] /= l; N[i + 2] /= l;
+  }
+  return N;
+}
+
+function alqGeoBox(w, h, d) {
+  const x = w / 2, y = h / 2, z = d / 2;
+  const quads = [
+    { n: [0, 1, 0],  v: [[-x, y, -z], [x, y, -z], [x, y, z], [-x, y, z]], o: [0, 3, 2, 0, 2, 1] },   /* top */
+    { n: [0, -1, 0], v: [[-x, -y, -z], [x, -y, -z], [x, -y, z], [-x, -y, z]], o: [0, 1, 2, 0, 2, 3] }, /* bottom */
+    { n: [1, 0, 0],  v: [[x, y, -z], [x, y, z], [x, -y, z], [x, -y, -z]], o: [0, 1, 2, 0, 2, 3] },    /* +x */
+    { n: [-1, 0, 0], v: [[-x, y, z], [-x, y, -z], [-x, -y, -z], [-x, -y, z]], o: [0, 1, 2, 0, 2, 3] }, /* -x */
+    { n: [0, 0, 1],  v: [[x, y, z], [-x, y, z], [-x, -y, z], [x, -y, z]], o: [0, 1, 2, 0, 2, 3] },    /* +z */
+    { n: [0, 0, -1], v: [[-x, y, -z], [x, y, -z], [x, -y, -z], [-x, -y, -z]], o: [0, 1, 2, 0, 2, 3] }  /* -z */
+  ];
+  const P = [], Nr = [], U = [], I = [];
+  quads.forEach((q, qi) => {
+    const base = qi * 4;
+    q.v.forEach((v, k) => { P.push(v[0], v[1], v[2]); Nr.push(q.n[0], q.n[1], q.n[2]); U.push(k === 1 || k === 2 ? 1 : 0, k >= 2 ? 1 : 0); });
+    q.o.forEach(k => I.push(base + k));
+  });
+  return { pos: new Float32Array(P), nor: new Float32Array(Nr), uv: new Float32Array(U), idx: new Uint16Array(I) };
+}
+
+function alqGeoPlane(w, d) {
+  const x = w / 2, z = d / 2;
+  return {
+    pos: new Float32Array([-x, 0, -z, x, 0, -z, x, 0, z, -x, 0, z]),
+    nor: new Float32Array([0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0]),
+    uv: new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]),
+    idx: new Uint16Array([0, 3, 2, 0, 2, 1])
+  };
+}
+
+function alqGeoLathe(profile, seg) {
+  const P = [], U = [], I = [], np = profile.length;
+  for (let j = 0; j < np; j++) for (let i = 0; i <= seg; i++) {
+    const a = i / seg * Math.PI * 2, r = profile[j][0];
+    P.push(r * Math.cos(a), profile[j][1], r * Math.sin(a));
+    U.push(i / seg, j / (np - 1));
+  }
+  for (let j = 0; j < np - 1; j++) for (let i = 0; i < seg; i++) {
+    const a = j * (seg + 1) + i, b = a + seg + 1;
+    I.push(a, b, a + 1, b, b + 1, a + 1);
+  }
+  const Nr = alqComputeNormals(P, I);
+  return { pos: new Float32Array(P), nor: Nr, uv: new Float32Array(U), idx: new Uint16Array(I) };
+}
+
+function alqGeoRing(r1, r2, seg) {
+  const P = [], Nr = [], U = [], I = [];
+  for (let i = 0; i <= seg; i++) {
+    const a = i / seg * Math.PI * 2, ca = Math.cos(a), sa = Math.sin(a);
+    P.push(r2 * ca, 0, r2 * sa, r1 * ca, 0, r1 * sa);
+    Nr.push(0, 1, 0, 0, 1, 0); U.push(0, 0, 0, 0);
+  }
+  for (let i = 0; i < seg; i++) {
+    const o0 = i * 2, i0 = i * 2 + 1, o1 = i * 2 + 2, i1 = i * 2 + 3;
+    I.push(o0, i0, o1, i0, i1, o1);
+  }
+  return { pos: new Float32Array(P), nor: new Float32Array(Nr), uv: new Float32Array(U), idx: new Uint16Array(I) };
+}
+
+function alqGeoDisc(r, seg) {
+  const P = [0, 0, 0], Nr = [0, 1, 0], U = [0.5, 0.5], I = [];
+  for (let i = 0; i <= seg; i++) {
+    const a = i / seg * Math.PI * 2;
+    P.push(r * Math.cos(a), 0, r * Math.sin(a)); Nr.push(0, 1, 0); U.push(0.5, 0.5);
+  }
+  for (let i = 0; i < seg; i++) I.push(0, i + 2, i + 1);
+  return { pos: new Float32Array(P), nor: new Float32Array(Nr), uv: new Float32Array(U), idx: new Uint16Array(I) };
+}
+
+/* ---------------- procedural textures (canvas, no network) ---------------- */
+function alqMakeCv(s) { const c = document.createElement('canvas'); c.width = c.height = s; return [c, c.getContext('2d')]; }
+function alqSpeckle(g, s, n, cols, aMax, rMax) {
+  for (let i = 0; i < n; i++) {
+    g.fillStyle = cols[(Math.random() * cols.length) | 0];
+    g.globalAlpha = Math.random() * aMax;
+    const r = 0.5 + Math.random() * rMax;
+    g.beginPath(); g.arc(Math.random() * s, Math.random() * s, r, 0, 7); g.fill();
+  }
+  g.globalAlpha = 1;
+}
+
+function alqBoardTexture() {
+  const S = 1024, [cv, g] = alqMakeCv(S);
+  g.fillStyle = '#d9cdaa'; g.fillRect(0, 0, S, S);
+  for (let i = 0; i < 260; i++) { /* limestone mottling */
+    g.fillStyle = ['#cfc29c', '#e4d8b6', '#d3c69e'][(Math.random() * 3) | 0];
+    g.globalAlpha = 0.22;
+    g.beginPath();
+    g.ellipse(Math.random() * S, Math.random() * S, 20 + Math.random() * 90, 14 + Math.random() * 60, Math.random() * 3, 0, 7);
+    g.fill();
+  }
+  g.globalAlpha = 1;
+  alqSpeckle(g, S, 3200, ['#5a4c33', '#f2ead2'], 0.07, 1.6);
+  const m = 0.3 / 4.6 * S, cell = (S - 2 * m) / 4;
+  const X = c => m + c * cell, Y = r => m + r * cell;
+  function incise(x1, y1, x2, y2) {
+    g.lineCap = 'round';
+    g.strokeStyle = 'rgba(56,44,26,0.88)'; g.lineWidth = 7;
+    g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke();
+    g.strokeStyle = 'rgba(247,239,215,0.5)'; g.lineWidth = 2;
+    g.beginPath(); g.moveTo(x1 + 2.5, y1 + 2.5); g.lineTo(x2 + 2.5, y2 + 2.5); g.stroke();
+  }
+  for (let k = 0; k < 5; k++) {
+    incise(X(0), Y(k), X(4), Y(k));
+    incise(X(k), Y(0), X(k), Y(4));
+  }
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) {
+    if ((r + c) % 2 === 0) incise(X(c), Y(r), X(c + 1), Y(r + 1));
+    else incise(X(c + 1), Y(r), X(c), Y(r + 1));
+  }
+  for (let r = 0; r < 5; r++) for (let c = 0; c < 5; c++) { /* point beds */
+    g.fillStyle = 'rgba(48,38,22,0.85)';
+    g.beginPath(); g.arc(X(c), Y(r), 9, 0, 7); g.fill();
+    g.fillStyle = 'rgba(240,230,200,0.35)';
+    g.beginPath(); g.arc(X(c) - 3, Y(r) - 3, 3, 0, 7); g.fill();
+  }
+  incise(34, 34, S - 34, 34); incise(S - 34, 34, S - 34, S - 34);
+  incise(S - 34, S - 34, 34, S - 34); incise(34, S - 34, 34, 34);
+  incise(48, 48, S - 48, 48); incise(S - 48, 48, S - 48, S - 48);
+  incise(S - 48, S - 48, 48, S - 48); incise(48, S - 48, 48, 48);
+  for (const [cx, cy] of [[88, 88], [S - 88, 88], [88, S - 88], [S - 88, S - 88]]) {
+    g.strokeStyle = 'rgba(56,44,26,0.7)'; g.lineWidth = 4;
+    g.beginPath(); g.arc(cx, cy, 16, 0, 7); g.stroke();
+    g.beginPath(); g.arc(cx, cy, 7, 0, 7); g.stroke();
+  }
+  return cv;
+}
+
+function alqFaienceTexture() {
+  const S = 256, [cv, g] = alqMakeCv(S);
+  g.fillStyle = '#187aa8'; g.fillRect(0, 0, S, S);
+  for (let i = 0; i < 130; i++) {
+    g.fillStyle = ['#2ea3d8', '#0f5a7d', '#7fd0ee'][(Math.random() * 3) | 0];
+    g.globalAlpha = 0.3;
+    g.beginPath();
+    g.ellipse(Math.random() * S, Math.random() * S, 6 + Math.random() * 26, 4 + Math.random() * 16, Math.random() * 3, 0, 7);
+    g.fill();
+  }
+  g.globalAlpha = 1;
+  alqSpeckle(g, S, 260, ['#eaf7fd', '#0b3d55'], 0.16, 1.4);
+  return cv;
+}
+
+function alqCarnelianTexture() {
+  const S = 256, [cv, g] = alqMakeCv(S);
+  g.fillStyle = '#a83618'; g.fillRect(0, 0, S, S);
+  for (let b = 0; b < 16; b++) { /* agate-like banding */
+    g.strokeStyle = b % 2 ? 'rgba(198,90,36,0.35)' : 'rgba(126,36,16,0.35)';
+    g.lineWidth = 4 + Math.random() * 8;
+    g.beginPath();
+    const y0 = (b / 16) * S;
+    for (let x = 0; x <= S; x += 8) g.lineTo(x, y0 + Math.sin(x / 34 + b) * 7);
+    g.stroke();
+  }
+  alqSpeckle(g, S, 300, ['#e08a4a', '#5e1c0c'], 0.14, 1.6);
+  return cv;
+}
+
+function alqGroundTexture() {
+  const S = 512, [cv, g] = alqMakeCv(S);
+  const rg = g.createRadialGradient(S / 2, S / 2, 20, S / 2, S / 2, S / 2);
+  rg.addColorStop(0, '#1e160c'); rg.addColorStop(0.55, '#120d07'); rg.addColorStop(1, '#070503');
+  g.fillStyle = rg; g.fillRect(0, 0, S, S);
+  alqSpeckle(g, S, 900, ['#2c2314', '#000000'], 0.08, 2);
+  return cv;
+}
+
+function alqBlobTexture() {
+  const S = 128, [cv, g] = alqMakeCv(S);
+  const rg = g.createRadialGradient(S / 2, S / 2, 4, S / 2, S / 2, S / 2);
+  rg.addColorStop(0, 'rgba(0,0,0,0.52)'); rg.addColorStop(0.7, 'rgba(0,0,0,0.22)'); rg.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = rg; g.fillRect(0, 0, S, S);
+  return cv;
+}
+
+/* ---------------- GL setup ---------------- */
+const ALQ_VS = [
+  'attribute vec3 aPos; attribute vec3 aNorm; attribute vec2 aUV;',
+  'uniform mat4 uMVP; uniform mat4 uModel; uniform vec3 uNScl;',
+  'varying vec3 vN; varying vec3 vW; varying vec2 vUV;',
+  'void main(){',
+  '  vec4 w = uModel * vec4(aPos,1.0);',
+  '  vW = w.xyz; vN = aNorm * uNScl; vUV = aUV;',
+  '  gl_Position = uMVP * vec4(aPos,1.0);',
+  '}'
+].join('\n');
+const ALQ_FS = [
+  'precision mediump float;',
+  'varying vec3 vN; varying vec3 vW; varying vec2 vUV;',
+  'uniform sampler2D uTex; uniform float uUseTex; uniform float uUseAlpha;',
+  'uniform vec3 uColor; uniform vec3 uEmis;',
+  'uniform vec3 uLightDir; uniform vec3 uLightCol; uniform vec3 uAmb;',
+  'uniform vec3 uCam; uniform float uGloss; uniform float uShine;',
+  'uniform vec3 uFogCol; uniform vec2 uFog;',
+  'void main(){',
+  '  vec3 N = normalize(vN);',
+  '  vec3 V = normalize(uCam - vW);',
+  '  vec3 L = normalize(uLightDir);',
+  '  vec3 tex = texture2D(uTex, vUV).rgb;',
+  '  float ta = texture2D(uTex, vUV).a;',
+  '  vec3 base = uColor;',
+  '  if(uUseTex > 0.5) base = tex * uColor;',
+  '  float dif = max(dot(N,L), 0.0);',
+  '  vec3 H = normalize(L + V);',
+  '  float spec = pow(max(dot(N,H),0.0), uShine) * uGloss * step(0.001, dif);',
+  '  vec3 L2 = normalize(vec3(0.55, 0.3, -0.6));',
+  '  float dif2 = max(dot(N,L2), 0.0);',
+  '  vec3 col = base * (uAmb + dif*uLightCol + dif2*vec3(0.10,0.12,0.16))',
+  '           + spec * uLightCol + uEmis;',
+  '  float f = clamp((distance(uCam,vW)-uFog.x)/(uFog.y-uFog.x), 0.0, 1.0);',
+  '  col = mix(col, uFogCol, f);',
+  '  float alpha = 1.0;',
+  '  if(uUseAlpha > 0.5) alpha = ta;',
+  '  gl_FragColor = vec4(col, alpha);',
+  '}'
+].join('\n');
+
+function alqCompile(gl, type, src) {
+  const s = gl.createShader(type);
+  gl.shaderSource(s, src); gl.compileShader(s);
+  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+    const log = gl.getShaderInfoLog(s); gl.deleteShader(s);
+    throw new Error('shader: ' + log);
+  }
+  return s;
+}
+
+/* ================================================================
+   Scene, game controller, input, UI
+   ================================================================ */
+const ALQ_FOV = 40 * Math.PI / 180;
+const ALQ_TGT = [0, -0.25, 0.15];
+
+const alqWrap = document.getElementById('alquerque-boardwrap');
+const alqCanvas = document.getElementById('alquerque-canvas');
+const alqElMsg = document.getElementById('alquerque-msg');
+const alqElTurnText = document.getElementById('alquerque-turntext');
+const alqElTurnDot = document.getElementById('alquerque-turndot');
+const alqElYou = document.getElementById('alquerque-youcount');
+const alqElAi = document.getElementById('alquerque-aicount');
+const alqElMove = document.getElementById('alquerque-movenum');
+const alqBtnNew = document.getElementById('alquerque-new');
+const alqBtnUndo = document.getElementById('alquerque-undo');
+const alqBtnRules = document.getElementById('alquerque-rulesbtn');
+const alqBtnSound = document.getElementById('alquerque-sound');
+const alqRulesPanel = document.getElementById('alquerque-rules');
+
+let alqDestroyed = false, alqRaf = 0, alqAspect = 1, alqProj = null, alqPV = null;
+let alqCamPos = [0, 5.5, 7.2];
+let alqUserAz = 0, alqUserEl = 0, alqLastInteract = 0;
+let alqGLR = null;
+const alqMeshes = [], alqTextures = [];
+const alqTweens = [];
+const ALQ_NS1 = [1, 1, 1];
+
+function alqPtXZ(i) { return [(i % 5) - 2, ((i / 5) | 0) - 2]; }
+function alqClamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+function alqNorm3(v) { const l = Math.hypot(v[0], v[1], v[2]) || 1; return [v[0] / l, v[1] / l, v[2] / l]; }
+function alqCross3(a, b) {
+  return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+}
+
+/* ---------------- tiny sound (WebAudio, generated, no files) ---------------- */
+let alqAC = null;
+function alqBlip(f, d, g) {
+  if (!S.sound || alqDestroyed) return;
+  try {
+    alqAC = alqAC || new (window.AudioContext || window.webkitAudioContext)();
+    if (alqAC.state === 'suspended') alqAC.resume();
+    const o = alqAC.createOscillator(), gn = alqAC.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    gn.gain.setValueAtTime(g || 0.04, alqAC.currentTime);
+    gn.gain.exponentialRampToValueAtTime(0.0001, alqAC.currentTime + (d || 0.06));
+    o.connect(gn); gn.connect(alqAC.destination);
+    o.start(); o.stop(alqAC.currentTime + (d || 0.06));
+  } catch (e) { /* silent */ }
+}
+function alqFanfare(up) {
+  const seq = up ? [392, 494, 587, 784] : [330, 262, 196, 131];
+  seq.forEach((f, i) => setTimeout(() => alqBlip(f, 0.14, 0.05), i * 120));
+}
+
+/* ---------------- game state ---------------- */
+const S = {
+  board: alqSetup(), turn: 1, history: [], phase: 'idle',
+  selected: -1, destMap: new Map(), allowedFrom: new Set(), allChains: [],
+  mustCapture: false, prompt: '', cursor: 12, hover: -1,
+  pieces: [], moveNum: 1, aiTimer: 0, sound: true, over: 0
+};
+
+function alqSetMsg(html) { alqElMsg.innerHTML = html; }
+function alqSetTurn(t) {
+  if (t === 1) { alqElTurnText.textContent = 'Faience to move'; alqElTurnDot.style.background = '#2ea3d8'; }
+  else if (t === 2) { alqElTurnText.textContent = 'Carnelian to move'; alqElTurnDot.style.background = '#d0552a'; }
+  else { alqElTurnText.textContent = 'The game is decided'; alqElTurnDot.style.background = '#c9a227'; }
+}
+function alqUpdateCounts() {
+  alqElYou.textContent = alqCount(S.board, 1);
+  alqElAi.textContent = alqCount(S.board, 2);
+  alqElMove.textContent = S.moveNum;
+}
+function alqSyncUI() {
+  const busy = S.phase === 'busy' || !!S.aiTimer;
+  alqBtnUndo.disabled = !S.history.length || busy || !!S.over;
+  alqBtnNew.disabled = busy;
+  alqUpdateCounts();
+}
+
+/* ---------------- GL init ---------------- */
+function alqInitGL() {
+  const gl = alqCanvas.getContext('webgl', { antialias: true, alpha: false });
+  if (!gl) return null;
+  gl.enable(gl.DEPTH_TEST);
+  gl.enable(gl.CULL_FACE); gl.cullFace(gl.BACK);
+  const prog = gl.createProgram();
+  gl.attachShader(prog, alqCompile(gl, gl.VERTEX_SHADER, ALQ_VS));
+  gl.attachShader(prog, alqCompile(gl, gl.FRAGMENT_SHADER, ALQ_FS));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error('link: ' + gl.getProgramInfoLog(prog));
+  const L = {};
+  ['aPos', 'aNorm', 'aUV'].forEach(n => L[n] = gl.getAttribLocation(prog, n));
+  ['uMVP', 'uModel', 'uNScl', 'uTex', 'uUseTex', 'uUseAlpha', 'uColor', 'uEmis',
+   'uLightDir', 'uLightCol', 'uAmb', 'uCam', 'uGloss', 'uShine', 'uFogCol', 'uFog'
+  ].forEach(n => L[n] = gl.getUniformLocation(prog, n));
+  return { gl: gl, prog: prog, loc: L };
+}
+function alqMakeMesh(geo) {
+  const gl = alqGLR.gl;
+  const mk = (t, d) => { const b = gl.createBuffer(); gl.bindBuffer(t, b); gl.bufferData(t, d, gl.STATIC_DRAW); return b; };
+  const m = {
+    p: mk(gl.ARRAY_BUFFER, geo.pos), n: mk(gl.ARRAY_BUFFER, geo.nor),
+    u: mk(gl.ARRAY_BUFFER, geo.uv), i: mk(gl.ELEMENT_ARRAY_BUFFER, geo.idx),
+    count: geo.idx.length
+  };
+  alqMeshes.push(m); return m;
+}
+function alqUploadTex(cv) {
+  const gl = alqGLR.gl;
+  const t = gl.createTexture();
+  gl.bindTexture(gl.TEXTURE_2D, t);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cv);
+  gl.generateMipmap(gl.TEXTURE_2D);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  alqTextures.push(t); return t;
+}
+function alqBindArr(buf, loc, size) {
+  const gl = alqGLR.gl;
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, size, gl.FLOAT, false, 0, 0);
+}
+function alqDrawObj(mesh, model, ns, mat) {
+  const gl = alqGLR.gl, L = alqGLR.loc;
+  gl.uniformMatrix4fv(L.uMVP, false, alqMul44(alqPV, model));
+  gl.uniformMatrix4fv(L.uModel, false, model);
+  gl.uniform3fv(L.uNScl, ns);
+  alqBindArr(mesh.p, L.aPos, 3); alqBindArr(mesh.n, L.aNorm, 3); alqBindArr(mesh.u, L.aUV, 2);
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, mesh.i);
+  if (mat.tex) { gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, mat.tex); gl.uniform1i(L.uTex, 0); }
+  gl.uniform1f(L.uUseTex, mat.tex ? 1 : 0);
+  gl.uniform1f(L.uUseAlpha, mat.useAlpha ? 1 : 0);
+  gl.uniform3fv(L.uColor, mat.color);
+  gl.uniform3fv(L.uEmis, mat.emis || [0, 0, 0]);
+  gl.uniform1f(L.uGloss, mat.gloss); gl.uniform1f(L.uShine, mat.shine);
+  gl.drawElements(gl.TRIANGLES, mesh.count, gl.UNSIGNED_SHORT, 0);
+}
+
+/* scene objects (filled on init) */
+let alqGroundMesh, alqSlabMesh, alqTopMesh, alqPieceMesh, alqBlobMesh, alqBlobBigMesh;
+let alqRingMesh, alqRingSelMesh, alqRingHovMesh, alqRingCurMesh, alqDiscMesh;
+let alqMAT = null;
+
+function alqBuildScene() {
+  alqGroundMesh = alqMakeMesh(alqGeoPlane(46, 46));
+  alqSlabMesh = alqMakeMesh(alqGeoBox(4.6, 0.35, 4.6));
+  alqTopMesh = alqMakeMesh(alqGeoPlane(4.6, 4.6));
+  alqPieceMesh = alqMakeMesh(alqGeoLathe(
+    [[0, 0], [0.24, 0], [0.295, 0.015], [0.305, 0.05], [0.29, 0.09], [0.25, 0.12],
+     [0.19, 0.145], [0.12, 0.16], [0.05, 0.168], [0, 0.17]], 30));
+  alqBlobMesh = alqMakeMesh(alqGeoPlane(0.85, 0.85));
+  alqBlobBigMesh = alqMakeMesh(alqGeoPlane(7.6, 7.6));
+  alqRingMesh = alqMakeMesh(alqGeoRing(0.26, 0.32, 40));
+  alqRingSelMesh = alqMakeMesh(alqGeoRing(0.30, 0.40, 40));
+  alqRingHovMesh = alqMakeMesh(alqGeoRing(0.24, 0.30, 40));
+  alqRingCurMesh = alqMakeMesh(alqGeoRing(0.345, 0.375, 40));
+  alqDiscMesh = alqMakeMesh(alqGeoDisc(0.10, 24));
+  alqMAT = {
+    ground:   { tex: alqUploadTex(alqGroundTexture()), color: [1, 1, 1], gloss: 0, shine: 8 },
+    slab:     { color: [0.50, 0.44, 0.32], gloss: 0.03, shine: 8 },
+    boardTop: { tex: alqUploadTex(alqBoardTexture()), color: [1, 1, 1], gloss: 0.08, shine: 12 },
+    faience:  { tex: alqUploadTex(alqFaienceTexture()), color: [1, 1, 1], gloss: 0.9, shine: 70 },
+    carnelian:{ tex: alqUploadTex(alqCarnelianTexture()), color: [1, 1, 1], gloss: 0.55, shine: 36 },
+    gold:     { color: [0.85, 0.66, 0.22], emis: [0.50, 0.34, 0.07], gloss: 0.4, shine: 24 },
+    goldFaint:{ color: [0.85, 0.66, 0.22], emis: [0.16, 0.11, 0.02], gloss: 0.2, shine: 16 },
+    blob:     { tex: alqUploadTex(alqBlobTexture()), useAlpha: 1, color: [1, 1, 1], gloss: 0, shine: 8 }
+  };
+}
+
+/* ---------------- tweens ---------------- */
+function alqAddTween(durMs, fn, done) {
+  if (ALQ_REDUCED || durMs <= 0) { fn(1); if (done) done(); return; }
+  alqTweens.push({ t: 0, dur: durMs / 1000, fn: fn, done: done });
+}
+function alqStepTweens(dt) {
+  for (let i = alqTweens.length - 1; i >= 0; i--) {
+    const tw = alqTweens[i]; tw.t += dt;
+    const k = Math.min(1, tw.t / tw.dur);
+    const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+    tw.fn(e);
+    if (k >= 1) { alqTweens.splice(i, 1); if (tw.done) tw.done(); }
+  }
+}
+
+/* ---------------- pieces ---------------- */
+function alqRebuildPieces() {
+  S.pieces = [];
+  for (let i = 0; i < 25; i++) {
+    const s = S.board[i]; if (!s) continue;
+    const xz = alqPtXZ(i);
+    S.pieces.push({ side: s, point: i, x: xz[0], z: xz[1], y: 0, s: 1, visible: true });
+  }
+}
+function alqPieceAt(point) {
+  for (const p of S.pieces) if (p.point === point && p.visible) return p;
+  return null;
+}
+
+/* ---------------- turn flow ---------------- */
+function alqBeginHumanTurn(prefix) {
+  S.phase = 'idle'; S.selected = -1; S.destMap = new Map();
+  const g = alqGenMoves(S.board, 1);
+  S.mustCapture = g.caps.length > 0;
+  S.allChains = g.caps;
+  const froms = new Set();
+  const src = S.mustCapture ? g.caps : g.quiet;
+  for (const m of src) froms.add(m.from);
+  S.allowedFrom = froms;
+  S.prompt = S.mustCapture
+    ? 'A capture is open &mdash; <b>it must be taken</b>. Choose a leaping piece.'
+    : 'Faience to move. Choose a piece.';
+  alqSetMsg((prefix || '') + S.prompt);
+  alqSetTurn(1);
+  alqSyncUI();
+}
+function alqSelectPiece(p) {
+  S.selected = p; S.phase = 'target'; S.destMap = new Map();
+  if (S.mustCapture) {
+    for (const c of S.allChains) {
+      if (c.from !== p) continue;
+      const cur = S.destMap.get(c.to);
+      if (!cur || c.taken.length > cur.taken.length)
+        S.destMap.set(c.to, { from: c.from, to: c.to, path: c.path, taken: c.taken, side: 1 });
+    }
+    alqSetMsg('Choose where the leap lands &mdash; the chain must be played to its end.');
+  } else {
+    for (const t of ALQ_ADJ[p]) if (S.board[t] === 0)
+      S.destMap.set(t, { from: p, to: t, path: [p, t], taken: [], side: 1 });
+    alqSetMsg('Choose a neighbouring empty point.');
+  }
+  alqBlip(520, 0.05, 0.035);
+  alqSyncUI();
+}
+function alqDeselect() {
+  S.selected = -1; S.phase = 'idle'; S.destMap = new Map();
+  alqSetMsg(S.prompt);
+  alqSyncUI();
+}
+function alqOnPick(p) {
+  if (alqDestroyed || S.turn !== 1 || S.phase === 'busy' || S.phase === 'over' || p < 0) return;
+  if (S.phase === 'idle') {
+    if (S.board[p] === 1 && S.allowedFrom.has(p)) alqSelectPiece(p);
+    return;
+  }
+  if (S.phase === 'target') {
+    if (p === S.selected) { alqDeselect(); return; }
+    if (S.destMap.has(p)) { const mv = S.destMap.get(p); S.destMap = new Map(); alqPlayMove(mv); return; }
+    if (S.board[p] === 1 && S.allowedFrom.has(p)) { alqSelectPiece(p); return; }
+    alqDeselect();
+  }
+}
+function alqPlayMove(mv) {
+  S.history.push({ board: S.board.slice(), turn: S.turn, moveNum: S.moveNum });
+  if (S.history.length > 240) S.history.shift();
+  alqApply(S.board, mv);
+  S.phase = 'busy'; S.selected = -1;
+  alqSetTurn(0); alqElTurnText.textContent = mv.side === 1 ? 'Faience moves' : 'Carnelian moves';
+  alqElTurnDot.style.background = '#c9a227';
+  alqSyncUI();
+  alqAnimateMove(mv, () => alqAfterMove(mv.side));
+}
+function alqAnimateMove(mv, done) {
+  const piece = alqPieceAt(mv.from);
+  if (!piece) { done(); return; }
+  const isCap = mv.taken.length > 0;
+  const victims = mv.taken.map(q => alqPieceAt(q)).filter(Boolean);
+  let i = 0;
+  (function hop() {
+    if (i >= mv.path.length - 1) { piece.point = mv.to; done(); return; }
+    const a = mv.path[i], b = mv.path[i + 1];
+    const pa = alqPtXZ(a), pb = alqPtXZ(b);
+    const victim = victims[i];
+    const dur = ALQ_REDUCED ? 0 : (isCap ? 300 : 220);
+    const arc = isCap ? 0.55 : 0.14;
+    if (dur === 0) {
+      piece.x = pb[0]; piece.z = pb[1]; piece.y = 0; piece.point = b;
+      if (victim) victim.visible = false;
+      i++; hop(); return;
+    }
+    if (victim) alqAddTween(340,
+      k => { victim.s = 1 - k * 0.99; victim.y = -0.22 * k; },
+      () => { victim.visible = false; });
+    alqBlip(isCap ? 300 : 380, 0.05, 0.035);
+    alqAddTween(dur, k => {
+      piece.x = pa[0] + (pb[0] - pa[0]) * k;
+      piece.z = pa[1] + (pb[1] - pa[1]) * k;
+      piece.y = Math.sin(k * Math.PI) * arc;
+    }, () => { piece.x = pb[0]; piece.z = pb[1]; piece.y = 0; piece.point = b; i++; hop(); });
+  })();
+}
+function alqAfterMove(side) {
+  const foe = 3 - side;
+  alqUpdateCounts();
+  /* alqWinner(board, toMove) crowns toMove when its opponent is spent;
+     the opponent to test is foe, so the "toMove" argument is side. */
+  const w = alqWinner(S.board, side);
+  if (w) { alqGameOver(w, foe); return; }
+  S.turn = foe;
+  if (foe === 2) {
+    S.moveNum++;
+    alqSetTurn(2);
+    alqSetMsg('Carnelian contemplates the lines&hellip;');
+    alqSyncUI();
+    S.aiTimer = setTimeout(() => {
+      S.aiTimer = 0;
+      if (alqDestroyed) return;
+      const m = alqAiChoose(S.board.slice(), 2);
+      if (!m) { alqGameOver(1, 2); return; }
+      alqSetMsg(m.taken.length ? 'Carnelian takes ' + m.taken.length + '.' : 'Carnelian advances a piece.');
+      alqPlayMove(m);
+    }, ALQ_REDUCED ? 80 : 520);
+  } else {
+    alqBeginHumanTurn();
+  }
+  alqSyncUI();
+}
+function alqGameOver(w, foe) {
+  S.over = w; S.phase = 'over'; S.turn = 0;
+  const blocked = alqCount(S.board, foe) > 0;
+  alqSetTurn(0);
+  if (w === 1) {
+    alqSetMsg(blocked
+      ? 'Victory &mdash; the carnelian line is broken, with no legal move remaining.'
+      : 'Victory &mdash; the carnelian host is taken from the board.');
+    alqFanfare(true);
+  } else {
+    alqSetMsg(blocked
+      ? 'Defeat &mdash; the faience line is broken, with no legal move remaining.'
+      : 'Defeat &mdash; the faience host is taken from the board.');
+    alqFanfare(false);
+  }
+  alqSyncUI();
+}
+function alqUndo() {
+  if (alqDestroyed || S.phase === 'busy' || S.aiTimer || !S.history.length) return;
+  let e = S.history.pop();
+  while (e.turn !== 1 && S.history.length) e = S.history.pop();
+  S.board = e.board.slice(); S.turn = e.turn; S.moveNum = e.moveNum; S.over = 0;
+  S.selected = -1; S.destMap = new Map();
+  alqRebuildPieces();
+  alqBlip(440, 0.05, 0.03);
+  if (S.turn === 1) {
+    alqBeginHumanTurn('The move is taken back. ');
+  } else {
+    S.phase = 'busy'; alqSetTurn(2);
+    alqSetMsg('The move is taken back. Carnelian reconsiders&hellip;');
+    S.aiTimer = setTimeout(() => {
+      S.aiTimer = 0;
+      if (alqDestroyed) return;
+      const m = alqAiChoose(S.board.slice(), 2);
+      if (!m) { alqGameOver(1, 2); return; }
+      alqPlayMove(m);
+    }, ALQ_REDUCED ? 80 : 500);
+  }
+  alqSyncUI();
+}
+function alqNewGame() {
+  if (alqDestroyed || S.phase === 'busy' || S.aiTimer) return;
+  alqTweens.length = 0;
+  S.board = alqSetup(); S.history = []; S.moveNum = 1; S.over = 0;
+  S.selected = -1; S.destMap = new Map(); S.cursor = 12; S.hover = -1;
+  S.turn = Math.random() < 0.5 ? 1 : 2;
+  alqRebuildPieces();
+  alqBlip(392, 0.08, 0.04);
+  if (S.turn === 1) {
+    alqBeginHumanTurn('The lots fall to faience. ');
+  } else {
+    S.phase = 'busy'; alqSetTurn(2);
+    alqSetMsg('Carnelian takes the first move &mdash; the old books grant the second player the advantage.');
+    alqSyncUI();
+    S.aiTimer = setTimeout(() => {
+      S.aiTimer = 0;
+      if (alqDestroyed) return;
+      const m = alqAiChoose(S.board.slice(), 2);
+      if (!m) { alqGameOver(1, 2); return; }
+      alqPlayMove(m);
+    }, ALQ_REDUCED ? 80 : 700);
+  }
+  alqSyncUI();
+}
+
+/* ---------------- camera, picking, render ---------------- */
+function alqUpdateCamera(t) {
+  let sway = 0;
+  if (!ALQ_REDUCED && performance.now() - alqLastInteract > 5000) sway = Math.sin(t * 0.35) * 0.035;
+  const az = alqUserAz + sway, el = 0.62 + alqUserEl, R = 9.8;
+  alqCamPos = [Math.sin(az) * Math.cos(el) * R, Math.sin(el) * R + 0.4, Math.cos(az) * Math.cos(el) * R];
+  alqPV = alqMul44(alqProj, alqLookAt(alqCamPos, ALQ_TGT, [0, 1, 0]));
+}
+function alqPickPoint(cx, cy) {
+  const r = alqCanvas.getBoundingClientRect();
+  const nx = ((cx - r.left) / r.width) * 2 - 1;
+  const ny = -(((cy - r.top) / r.height) * 2 - 1);
+  const tanF = Math.tan(ALQ_FOV / 2);
+  const fwd = alqNorm3([ALQ_TGT[0] - alqCamPos[0], ALQ_TGT[1] - alqCamPos[1], ALQ_TGT[2] - alqCamPos[2]]);
+  const right = alqNorm3(alqCross3(fwd, [0, 1, 0]));
+  const upv = alqCross3(right, fwd);
+  const d = alqNorm3([
+    fwd[0] + right[0] * nx * tanF * alqAspect + upv[0] * ny * tanF,
+    fwd[1] + right[1] * nx * tanF * alqAspect + upv[1] * ny * tanF,
+    fwd[2] + right[2] * nx * tanF * alqAspect + upv[2] * ny * tanF]);
+  if (d[1] > -1e-6) return -1;
+  const t = -alqCamPos[1] / d[1];
+  const hx = alqCamPos[0] + d[0] * t, hz = alqCamPos[2] + d[2] * t;
+  let best = -1, bd = 0.45;
+  for (let i = 0; i < 25; i++) {
+    const xz = alqPtXZ(i), dd = Math.hypot(xz[0] - hx, xz[1] - hz);
+    if (dd < bd) { bd = dd; best = i; }
+  }
+  return best;
+}
+function alqRender() {
+  const gl = alqGLR.gl, L = alqGLR.loc;
+  gl.clearColor(0.03, 0.022, 0.014, 1);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  gl.useProgram(alqGLR.prog);
+  gl.uniform3f(L.uLightDir, -0.45, 0.8, 0.5);
+  gl.uniform3f(L.uLightCol, 1.0, 0.93, 0.80);
+  gl.uniform3f(L.uAmb, 0.30, 0.27, 0.24);
+  gl.uniform3fv(L.uCam, alqCamPos);
+  gl.uniform3f(L.uFogCol, 0.03, 0.022, 0.014);
+  gl.uniform2f(L.uFog, 15, 34);
+  alqDrawObj(alqGroundMesh, alqModel(0, -0.36, 0, 1), ALQ_NS1, alqMAT.ground);
+  alqDrawObj(alqSlabMesh, alqModel(0, -0.175, 0, 1), ALQ_NS1, alqMAT.slab);
+  alqDrawObj(alqTopMesh, alqModel(0, 0.004, 0, 1), ALQ_NS1, alqMAT.boardTop);
+  gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); gl.depthMask(false);
+  alqDrawObj(alqBlobBigMesh, alqModel(0, -0.345, 0, 1), ALQ_NS1, alqMAT.blob);
+  for (const p of S.pieces) {
+    if (!p.visible) continue;
+    alqDrawObj(alqBlobMesh, alqModel(p.x, 0.012, p.z, p.s), ALQ_NS1, alqMAT.blob);
+  }
+  gl.depthMask(true); gl.disable(gl.BLEND);
+  for (const p of S.pieces) {
+    if (!p.visible) continue;
+    const s = Math.max(0.01, p.s);
+    alqDrawObj(alqPieceMesh, alqModel(p.x, p.y, p.z, s), [1 / s, 1 / s, 1 / s],
+      p.side === 1 ? alqMAT.faience : alqMAT.carnelian);
+  }
+  if (S.turn === 1 && (S.phase === 'idle' || S.phase === 'target') && !S.over) {
+    for (const f of S.allowedFrom) {
+      const xz = alqPtXZ(f);
+      alqDrawObj(alqRingMesh, alqModel(xz[0], 0.016, xz[1], 1), ALQ_NS1, alqMAT.goldFaint);
+    }
+    if (S.phase === 'target' && S.selected >= 0) {
+      const xz = alqPtXZ(S.selected);
+      alqDrawObj(alqRingSelMesh, alqModel(xz[0], 0.02, xz[1], 1), ALQ_NS1, alqMAT.gold);
+      let di = 0;
+      const t = performance.now() / 1000;
+      for (const to of S.destMap.keys()) {
+        const d = alqPtXZ(to);
+        const bob = ALQ_REDUCED ? 0 : Math.sin(t * 3 + di * 1.7) * 0.02;
+        alqDrawObj(alqDiscMesh, alqModel(d[0], 0.02 + bob, d[1], 1), ALQ_NS1, alqMAT.gold);
+        di++;
+      }
+    }
+    if (S.hover >= 0) {
+      const xz = alqPtXZ(S.hover);
+      alqDrawObj(alqRingHovMesh, alqModel(xz[0], 0.018, xz[1], 1), ALQ_NS1, alqMAT.goldFaint);
+    }
+    const cc = alqPtXZ(S.cursor);
+    alqDrawObj(alqRingCurMesh, alqModel(cc[0], 0.022, cc[1], 1), ALQ_NS1, alqMAT.gold);
+  }
+}
+
+/* ---------------- input ---------------- */
+let alqPDown = null, alqPDrag = false;
+function alqOnPointerDown(e) {
+  if (alqDestroyed) return;
+  try { alqCanvas.setPointerCapture(e.pointerId); } catch (err) {}
+  alqPDown = { x: e.clientX, y: e.clientY }; alqPDrag = false;
+}
+function alqOnPointerMove(e) {
+  if (alqDestroyed) return;
+  if (alqPDown) {
+    const dx = e.clientX - alqPDown.x, dy = e.clientY - alqPDown.y;
+    if (!alqPDrag && Math.hypot(dx, dy) > 8) alqPDrag = true;
+    if (alqPDrag) {
+      alqUserAz = alqClamp(alqUserAz + dx * 0.005, -0.7, 0.7);
+      alqUserEl = alqClamp(alqUserEl - dy * 0.004, -0.25, 0.2);
+      alqLastInteract = performance.now();
+      alqPDown = { x: e.clientX, y: e.clientY };
+      return;
+    }
+  }
+  S.hover = alqPickPoint(e.clientX, e.clientY);
+}
+function alqOnPointerUp(e) {
+  if (alqDestroyed) return;
+  const wasDrag = alqPDrag;
+  alqPDown = null; alqPDrag = false;
+  if (!wasDrag) {
+    try { alqWrap.focus({ preventScroll: true }); } catch (err) { alqWrap.focus(); }
+    const p = alqPickPoint(e.clientX, e.clientY);
+    if (p >= 0) alqOnPick(p);
+  }
+}
+function alqOnPointerLeave() { S.hover = -1; }
+function alqOnKey(e) {
+  if (alqDestroyed) return;
+  const k = e.key;
+  if (k === 'ArrowUp' || k === 'ArrowDown' || k === 'ArrowLeft' || k === 'ArrowRight') {
+    e.preventDefault();
+    const r = (S.cursor / 5) | 0, c = S.cursor % 5;
+    const nr = alqClamp(r + (k === 'ArrowDown' ? 1 : k === 'ArrowUp' ? -1 : 0), 0, 4);
+    const nc = alqClamp(c + (k === 'ArrowRight' ? 1 : k === 'ArrowLeft' ? -1 : 0), 0, 4);
+    if (nr * 5 + nc !== S.cursor) { S.cursor = nr * 5 + nc; alqBlip(660, 0.03, 0.02); }
+  } else if (k === 'Enter' || k === ' ') { e.preventDefault(); alqOnPick(S.cursor); }
+  else if (k === 'Escape') { if (S.phase === 'target') alqDeselect(); }
+  else if (k === 'u' || k === 'U') { alqUndo(); }
+  else if (k === 'n' || k === 'N') { alqNewGame(); }
+}
+function alqOnResize() {
+  if (!alqGLR || alqDestroyed) return;
+  const r = alqWrap.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio || 1, 1); /* mobile DPR capped at 1.0 */
+  const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+  if (alqCanvas.width !== w || alqCanvas.height !== h) { alqCanvas.width = w; alqCanvas.height = h; }
+  alqGLR.gl.viewport(0, 0, alqCanvas.width, alqCanvas.height);
+  alqAspect = alqCanvas.width / alqCanvas.height;
+  alqProj = alqPerspective(ALQ_FOV, alqAspect, 0.1, 60);
+}
+function alqOnBtnNew() { alqNewGame(); }
+function alqOnBtnUndo() { alqUndo(); }
+function alqOnBtnRules() {
+  alqRulesPanel.hidden = !alqRulesPanel.hidden;
+  alqBtnRules.textContent = alqRulesPanel.hidden ? 'Rules of play' : 'Hide the rules';
+}
+function alqOnBtnSound() {
+  S.sound = !S.sound;
+  alqBtnSound.textContent = 'Sound: ' + (S.sound ? 'on' : 'off');
+  if (S.sound) alqBlip(520, 0.05, 0.035);
+}
+
+/* ---------------- main loop ---------------- */
+let alqLastT = 0;
+function alqFrame(t) {
+  if (alqDestroyed) return;
+  alqRaf = requestAnimationFrame(alqFrame);
+  const dt = Math.min(0.05, (t - alqLastT) / 1000 || 0);
+  alqLastT = t;
+  alqStepTweens(dt);
+  alqUpdateCamera(t / 1000);
+  alqRender();
+}
+
+/* ---------------- teardown ---------------- */
+function alqDestroy() {
+  if (alqDestroyed) return;
+  alqDestroyed = true;
+  cancelAnimationFrame(alqRaf);
+  clearTimeout(S.aiTimer);
+  alqTweens.length = 0;
+  window.removeEventListener('resize', alqOnResize);
+  if (alqRO) alqRO.disconnect();
+  alqCanvas.removeEventListener('pointerdown', alqOnPointerDown);
+  alqCanvas.removeEventListener('pointermove', alqOnPointerMove);
+  alqCanvas.removeEventListener('pointerup', alqOnPointerUp);
+  alqCanvas.removeEventListener('pointerleave', alqOnPointerLeave);
+  alqWrap.removeEventListener('keydown', alqOnKey);
+  alqBtnNew.removeEventListener('click', alqOnBtnNew);
+  alqBtnUndo.removeEventListener('click', alqOnBtnUndo);
+  alqBtnRules.removeEventListener('click', alqOnBtnRules);
+  alqBtnSound.removeEventListener('click', alqOnBtnSound);
+  if (alqGLR) {
+    const gl = alqGLR.gl;
+    for (const m of alqMeshes) { gl.deleteBuffer(m.p); gl.deleteBuffer(m.n); gl.deleteBuffer(m.u); gl.deleteBuffer(m.i); }
+    for (const t of alqTextures) gl.deleteTexture(t);
+    gl.deleteProgram(alqGLR.prog);
+    const ext = gl.getExtension('WEBGL_lose_context');
+    if (ext) ext.loseContext();
+    alqGLR = null;
+  }
+  if (alqAC) { try { alqAC.close(); } catch (e) {} alqAC = null; }
+}
+
+/* ---------------- init ---------------- */
+let alqRO = null;
+function alqBoot() {
+  try { alqGLR = alqInitGL(); } catch (e) { alqGLR = null; }
+  if (!alqGLR) {
+    alqWrap.innerHTML = '<div class="alquerque-fallback">This exhibit needs WebGL, which this browser could not provide &mdash; the board cannot be raised.</div>';
+    window.Alquerque = { destroy: function () {}, newGame: function () {} };
+    return;
+  }
+  alqBuildScene();
+  alqCanvas.addEventListener('pointerdown', alqOnPointerDown);
+  alqCanvas.addEventListener('pointermove', alqOnPointerMove);
+  alqCanvas.addEventListener('pointerup', alqOnPointerUp);
+  alqCanvas.addEventListener('pointerleave', alqOnPointerLeave);
+  alqWrap.addEventListener('keydown', alqOnKey);
+  alqBtnNew.addEventListener('click', alqOnBtnNew);
+  alqBtnUndo.addEventListener('click', alqOnBtnUndo);
+  alqBtnRules.addEventListener('click', alqOnBtnRules);
+  alqBtnSound.addEventListener('click', alqOnBtnSound);
+  window.addEventListener('resize', alqOnResize);
+  if (typeof ResizeObserver === 'function') {
+    alqRO = new ResizeObserver(alqOnResize);
+    alqRO.observe(alqWrap);
+  }
+  alqOnResize();
+  alqNewGame();
+  alqRaf = requestAnimationFrame(alqFrame);
+}
+window.Alquerque = { destroy: alqDestroy, newGame: function () { if (!alqDestroyed && alqGLR) alqNewGame(); } };
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', alqBoot);
+else alqBoot();
+</script>
+</body>
+</html>

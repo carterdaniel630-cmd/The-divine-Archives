@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "The Tomb Robber" (treasure-hunt expedition)
+   THE DIVINE ARCHIVES — Mini-Games: "The Unfinished Journal" (treasure-hunt expedition)
 
    A four-site run across the ancient world, framed by the field journal of an
    expedition that never came home: Egypt → Sumer → the Indus → the road east
@@ -1623,7 +1623,7 @@
     function storyCard(opts) {
       stopLoop();
       root.innerHTML =
-        '<div class="game-head" style="margin-bottom:.4rem"><p class="eyebrow">The Tomb Robber · ' + esc(opts.eyebrow) + '</p>' +
+        '<div class="game-head" style="margin-bottom:.4rem"><p class="eyebrow">The Unfinished Journal · ' + esc(opts.eyebrow) + '</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.25rem">' + esc(opts.title) + '</h2></div>' +
         '<div class="game-rule" role="presentation"></div>' +
         '<div class="tr-card">' + portrait(opts.smile) + opts.body + '</div>' +
@@ -1637,7 +1637,7 @@
       run = { score: 0, hearts: MAXHEARTS, collected: [] };
       var story = DATA.story || {};
       storyCard({
-        eyebrow: "the field journal", title: (story.title || "The Expedition"),
+        eyebrow: "the first page", title: (story.title || "The Expedition"),
         body: '<p>' + esc(story.intro || "") + '</p>' +
           '<p class="tr-route">Egypt&nbsp;→&nbsp;Sumer&nbsp;→&nbsp;the Indus&nbsp;→&nbsp;the road east. Four sites. Bring back what you can.</p>' +
           '<p class="rq-note" style="text-align:center">Run, leap and crack the whip — it drops snakes, staggers big cats, throws levers and swings you from bronze rings.</p>',
@@ -1677,7 +1677,7 @@
       var nb = run.score > best; if (nb) best = run.score;
       AG.addHighScore("treasure", { score: run.score }); AG.finish("treasure", { won: !!won });
       root.innerHTML =
-        '<div class="game-head"><p class="eyebrow">The Tomb Robber · ' + (won ? "the journal is full" : "the ruin claims you") + '</p>' +
+        '<div class="game-head"><p class="eyebrow">The Unfinished Journal · ' + (won ? "the journal is full" : "the ruin claims you") + '</p>' +
           '<h2 id="' + ctx.titleId + '">' + (won ? "The expedition, finished" : "Lost on the " + LEVELS[st.li].place + " road") + '</h2>' +
           '<p>' + run.collected.length + ' relic' + (run.collected.length === 1 ? "" : "s") + ' · ' + run.score + ' in plunder' + (nb ? ' · <span style="color:var(--gold-bright)">a new best</span>' : "") + "</p></div>" +
         '<div class="game-rule" role="presentation"></div>' +
@@ -1698,7 +1698,7 @@
     function shell() {
       root.innerHTML =
         '<div class="game-head" style="margin-bottom:.35rem"><p class="eyebrow">The Divine Archives · Games</p>' +
-          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Tomb Robber</h2></div>' +
+          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Unfinished Journal</h2></div>' +
         '<div class="tr-hudrow"><div class="pm-hud tr-hud"></div><button class="tr-snd" type="button" aria-pressed="' + (SFX.isOn() ? "true" : "false") + '" title="Sound (M)">' + (SFX.isOn() ? "♪ Sound on" : "♪ Sound off") + '</button></div>' +
         '<div class="ap-host"><div class="tr-stage ap-stage"><canvas class="tr-canvas" tabindex="0" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div></div>' +
         '<p class="ouro-toast tr-toast" aria-live="polite"></p>' +

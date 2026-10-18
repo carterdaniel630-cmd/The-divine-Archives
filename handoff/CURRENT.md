@@ -1,4 +1,4 @@
-# Handoff — 2026-10-11
+# Handoff — 2026-10-12
 
 Repo: carterdaniel630-cmd/The-divine-Archives. Site: getconexto.com (Cloudflare Pages deploys
 `docs/` on every push to `main`). Read `CLAUDE.md` first ("Start here", "Operating rules", "Quality
@@ -10,10 +10,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   plan), #36 (Qumran and Alexandria Pilgrimage previews, noindex, off the menu), #37 (docs sync),
   #39 (ch82 British Library citation), #38 (CLAUDE.md: start-here steps, quality bar, standing
   preferences), #35 (content-gaps list `plans/content-gaps.md` and the top 20 gaps filled in 17 chapters).
-- 83 chapters. **Pending review (31):** ch02, ch08, ch11, ch12, ch19, ch20, ch21, ch44, ch45, ch46, ch47,
-  ch50, ch51, ch52, ch53, ch60, ch61, ch68, ch69, ch70, ch73, ch74, ch75–ch83. The 17 from #35 went back
-  to pending for their new sections. The status board in `outline/master-outline.md` matches
-  `docs/assets/data.js`.
+- 83 chapters. **Pending review (17):** ch02, ch08, ch11, ch12, ch19, ch20, ch21, ch44, ch47, ch50,
+  ch51, ch52, ch53, ch60, ch61, ch69, ch74. Cleared 2026-10-12 (#50, Carter: "clear"): ch45, ch46, ch68,
+  ch70, ch73, ch75–ch83, after the source review and corrections of #42 (merged). The status board in
+  `outline/master-outline.md` matches `docs/assets/data.js`.
 - Pilgrimage: three live sites, all pending review: the Great Pyramid, and (listed 2026-10-11, Carter's go-ahead) the Qumran caves and the Library of Alexandria. No museum portals to the two new sites yet.
 
 ## Review desk
@@ -22,45 +22,66 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
-## Open PRs and branches in flight (updated 2026-10-11 by the framework session)
-- #53 `claude/project-thread-s3qxre`: Pilgrimage batch 1, four noindex previews (Göbekli Tepe, Delphi,
+## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
+- Open: #53 `claude/project-thread-s3qxre`: Pilgrimage batch 1, four noindex previews (Göbekli Tepe, Delphi,
   the Mogao Caves, Chichén Itzá), pending tag on, source logs in `sources/pilgrimage-*.md`. Reviewer pass
   2026-10-12 (`reviews/2026-10-12-pilgrimage-batch1-pr53.md` on review-log); its slips are fixed. Carter said
-  "merge" (2026-10-12); the sensitivity cards were put to him before merging. The source logs propose chapter
+  "merge" (2026-10-12); the sensitivity cards are put to him before merging. The source logs propose chapter
   corrections to ch08, ch29 and ch42 (not made in this PR).
-- #46 `claude/project-thread-sn268z`: speed pass (fonts linked from each page instead of an @import in
-  archive.css, Pantheon script fonts cut to the letters it uses, unused data files dropped from home/eras/themes,
-  new `fonts` review check). Waits for Carter's batch go-ahead.
-- #40 `claude/framework-sandbox`: framework Phases 1 and 2. Carter approved Phase 2 and "merge when
-  green". It brings in:
+- Merged 2026-10-11 with Carter's go-ahead, all deployed:
+  - #42: source review of the pending chapters
+  - #40: framework Phases 1 and 2
+  - #43: the Qumran and Alexandria walks are listed
+  - #48: a distinct moveset for each god in Divine Casualties
+  - #46: speed pass (fonts load in parallel, lighter Pantheon and home; new `fonts` review check)
+  - #51: three Pilgrimage previews (Stonehenge, Golgotha and the Tomb, Mount Ararat)
+  - #44: one catalog for the twelve games
+
+  #40 brought in:
   - the visitor ledger, kept in the browser only
   - game and page events
   - the opt-in breath walkthrough in the museum's Buddhism room (pending review)
   - the originality check
-  - the entity registry (`framework/registry/`, rebuilt by `node tools/build-entity-registry.js`)
-  - Lighthouse advisory on drafts
+  - the entity registry
 
-  After it merges, the build order in `CLAUDE.md` includes `build-framework.js` and
-  `build-entity-registry.js`. The Framework workflow fails any content PR that leaves the registry
-  stale. Plan: `plans/framework-sandbox.md`.
-- #42 `claude/project-thread-evq985`: full source review of the 14 pending chapters (another thread).
-  Whichever of #40 and #42 merges second must merge main, re-run the build order and rebuild the
-  registry, because both rebuild chapter pages.
+  The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
+  Framework workflow fails any content PR that leaves the registry stale.
+- #45 (registry rebuild) was closed; #49 carries the same rebuild.
+- #49 `claude/framework-followup`: the reviewer's two small framework bugs:
+  - rate-limited pages that had failed twice were never retried
+  - a first new score could be copied again as an "old" score
+
+  It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
+  and the reviewer passes it.
+- #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
+  needs Carter).
+- **Overlaps:**
+  - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
+
+  Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
+  and the Framework test catch a missed rebuild.
+- #42 (source review and corrections of 14 pending chapters) merged; #50 (clearing those 14, same
+  branch `claude/project-thread-evq985`) merged 2026-10-12 with Carter's "clear".
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 in build on
-  `claude/games-movesets` (distinct movesets, 2D) and `claude/ritual-weighing` (Weighing of the Heart).
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1: movesets merged
+  (#48); PR #47 (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum) is
+  green and awaits Carter's go-ahead.
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
+- **Carter's try-it list:** `handoff/CARTER-TO-TRY.md` lists what to try on his phone and the
+  decisions waiting on him. Keep it current: tick items off as he answers, and add new ones.
 
 - #52 `claude/graphify-setup` merged 2026-10-11 (Carter: "merge, A" = code map only): graphify knowledge graph
   for build sessions. `.github/workflows/graphify.yml` builds the code map from main onto the generated `graph`
   branch; `tools/graphify-session.sh` pulls it at session start; rules in `CLAUDE.md`, "Knowledge graph".
   The `graph` branch is force-replaced on each merge: never archive or build on it. Chapters stay out of the map.
+- #55 `claude/graphify-offline-cli` merged 2026-10-12 (Carter: "yes"): the graphify command is packaged on the
+  generated `graph-tools` branch, so sessions with the package index blocked still get `graphify query`.
 
 ## Needs Carter
 - Pilgrimage batch 1 (#53): the Mogao manuscripts-dispersal card and the three Chichén Itzá cards on sacrifice
   and remains (wording only; nothing is shown); the ch08, ch29 and ch42 corrections the source logs propose.
-- Clearing the 31 pending chapters (a separate thread, "Clear the pending chapters batch", owns this).
+- Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
 - Held-back symbol-wall signs (list in `plans/museum-visual-pass.md`).

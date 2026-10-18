@@ -1,6 +1,5 @@
 # Chapter 79 — The First Christian Kingdoms: Armenia, Georgia & Aksum
 
-*Recently added — pending full review.*
 
 The gold coins of **Ezana**, king of **Aksum** in the highlands of what is now Ethiopia and Eritrea, in the mid-fourth century, show the king's crowned bust, and above it a small symbol. On his early coins, the symbol is a **crescent and disc**, the emblem of the old gods of South Arabia and Aksum. On his later coins, the crescent and disc are gone. In their place is a **cross**, one of the earliest appearances of the Christian cross on any coin in the world. Ezana's inscriptions change in the same way: the early ones thank the war god **Mahrem**, the later ones "the Lord of Heaven" and, in a Greek version, the Father, Son and Holy Spirit. Here, in metal and stone, is the moment a kingdom changed its religion. Around the same decades, at the other end of the Christian world, in the mountains of the Caucasus, the kings of **Armenia** and **Georgia** did the same. These three kingdoms, none of them within the Roman Empire, adopted Christianity as the religion of the state before Rome itself did, and each created a Christian culture of its own that has survived for sixteen centuries.
 

@@ -16,7 +16,7 @@ const BASE = opt("--base", "http://localhost:8080").replace(/\/$/, "");
 const OUT = opt("--out", path.join(__dirname, "..", "00-audit", "founder-guide"));
 const { chromium } = require("playwright");
 
-const GAMES = ["fighter", "chess", "ouroboros", "ziggurat", "reliquary", "seeker", "pong", "minesweeper", "pacman", "pinball", "risk", "treasure"];
+const GAMES = ["fighter", "chess", "ouroboros", "ziggurat", "reliquary", "seeker", "antithesis", "excavation", "labyrinth", "pinball", "dominion", "treasure"];
 const SHOTS = [
   { key: "home", url: "/index.html" },
   { key: "home-explore", url: "/index.html", scrollTo: ".explore" },

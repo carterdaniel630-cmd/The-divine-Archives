@@ -87,6 +87,9 @@ Everything is built and maintained to the highest standard. In practice:
 A map of the repo's code (build tools, games, museum, framework, Pages Functions) is built from `main` by
 `.github/workflows/graphify.yml` and published to the `graph` branch. At session start
 `tools/graphify-session.sh` installs the graphify CLI and puts that map in `graphify-out/` (git-ignored).
+When the package index is blocked, it installs the CLI from the generated `graph-tools` branch instead
+(ready-built packages, published by the same workflow). `graph` and `graph-tools` are generated: never edit,
+archive or build on them.
 - For code and architecture questions, when `graphify-out/graph.json` exists, first run
   `graphify query "<question>"`; use `graphify path "<A>" "<B>"` for how two things connect and
   `graphify explain "<name>"` for one thing. Read `graphify-out/GRAPH_REPORT.md` only for a broad overview.
@@ -145,7 +148,7 @@ A map of the repo's code (build tools, games, museum, framework, Pages Functions
   The museum's skies and grounds (`docs/museum/world.js`, table `ENV`), animals (`fauna.js`), sound
   (`sound.js`) and the Vault objects' renditions (`relics.js`, one `CAT` entry per object) are code, with no build step. `english.js` gives each object's writing in English for the inspector's "Read it in English" panel: public-domain translations quoted exactly, literal renderings of short inscriptions, summaries where the translations are in copyright, and a stated reason where there is no text or it is undeciphered. `scans.js` lists published 3D scans of the real objects (Sketchfab model ids, maker, museum or independent); the inspector's "View the real scan" shows them in Sketchfab's own viewer, loaded in the visitor's browser only on request, never copied into the site.
 - The museum's visual pass (plans/museum-visual-pass.md): `docs/museum/style.js`, table `STYLE`, says which areas have period floors, flame fittings (only the nearest 3 flames are real lights; the rest glow and their light is painted on) and a symbol wall. The symbol walls' signs live in `tools/data/symbols.json` (with the list of signs held back on sensitivity grounds); `node tools/build-symbols.js` draws them into `docs/museum/symbols/<wall>.webp` (needs Playwright; fonts in `art-source/fonts/`, SIL OFL), and `tools/verify-symbols.js` checks nothing held back gets in. `tools/museum-baseline.js` measures the museum's phone budget.
-- Generated game art: the fighter's web art comes from `art-source/fighter/` via `node tools/build-fighter-art.js` (half-size WebP; the manifests keep the original sizes, so bump `PARTS_VER` in `fighter.js` after a change). The Risk territory grid `docs/assets/games/data/risk-grid.png` comes from `node tools/build-risk-grid.js`; re-run it after changing provinces or seas.
+- Generated game art: the fighter's web art comes from `art-source/fighter/` via `node tools/build-fighter-art.js` (half-size WebP; the manifests keep the original sizes, so bump `PARTS_VER` in `fighter.js` after a change). The Dominion territory grid `docs/assets/games/data/dominion-grid.png` comes from `node tools/build-dominion-grid.js`; re-run it after changing provinces or seas.
 - A chapter's body goes into `content/chapters.js` via `node tools/md-to-chapter.js <id> <file.md>`;
   its listing entry (title, era, `status`, `pending`) lives in `docs/assets/data.js`.
 - `verify.yml` re-checks every game's facts against chapter text (`tools/verify-*.js`); keep them passing.

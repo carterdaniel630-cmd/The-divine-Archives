@@ -263,33 +263,33 @@
     "errors": [],
     "failed": []
   },
-  "game-pong": {
-    "url": "/symbols.html#play=pong",
+  "game-antithesis": {
+    "url": "/symbols.html#play=antithesis",
     "status": 200,
     "title": "The Symbols — The Divine Archives",
-    "finalUrl": "/symbols.html#play=pong",
+    "finalUrl": "/symbols.html#play=antithesis",
     "hscroll": false,
     "words": 752,
     "pageHeight": 12701,
     "errors": [],
     "failed": []
   },
-  "game-minesweeper": {
-    "url": "/symbols.html#play=minesweeper",
+  "game-excavation": {
+    "url": "/symbols.html#play=excavation",
     "status": 200,
     "title": "The Symbols — The Divine Archives",
-    "finalUrl": "/symbols.html#play=minesweeper",
+    "finalUrl": "/symbols.html#play=excavation",
     "hscroll": false,
     "words": 754,
     "pageHeight": 12701,
     "errors": [],
     "failed": []
   },
-  "game-pacman": {
-    "url": "/symbols.html#play=pacman",
+  "game-labyrinth": {
+    "url": "/symbols.html#play=labyrinth",
     "status": 200,
     "title": "The Symbols — The Divine Archives",
-    "finalUrl": "/symbols.html#play=pacman",
+    "finalUrl": "/symbols.html#play=labyrinth",
     "hscroll": false,
     "words": 748,
     "pageHeight": 12701,
@@ -308,10 +308,10 @@
     "failed": []
   },
   "game-risk": {
-    "url": "/symbols.html#play=risk",
+    "url": "/symbols.html#play=dominion",
     "status": 200,
     "title": "The Symbols — The Divine Archives",
-    "finalUrl": "/symbols.html#play=risk",
+    "finalUrl": "/symbols.html#play=dominion",
     "hscroll": false,
     "words": 804,
     "pageHeight": 12701,

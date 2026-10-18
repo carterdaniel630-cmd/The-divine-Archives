@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>The Astrolabe</title>
+  <style>
+    :root {
+      --page:#e7dece; --page-deep:#cec0a9; --ink:#241a10; --muted:#675844;
+      --panel:rgba(246,239,224,.88); --panel-line:rgba(91,66,32,.28);
+      --night:#050914; --night-2:#0b1630; --brass:#b99048; --brass-pale:#edd08a;
+      --brass-dark:#4a2f14; --silver:#cfd3ce; --blue:#75a7cc; --ok:#557b5e;
+      --shadow:rgba(31,20,8,.24); --focus:#e5bd68;
+      color-scheme:light dark;
+    }
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --page:#090b10; --page-deep:#10131a; --ink:#eee6d6; --muted:#b6aa96;
+        --panel:rgba(19,20,23,.88); --panel-line:rgba(220,183,105,.2);
+        --shadow:rgba(0,0,0,.55); --ok:#9fc09f;
+      }
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;background:
+      radial-gradient(circle at 18% -10%,rgba(180,131,48,.12),transparent 28rem),
+      linear-gradient(160deg,var(--page),var(--page-deep));color:var(--ink);font-family:"Segoe UI","Trebuchet MS",sans-serif;overflow-x:hidden}
+    button,input{font:inherit}
+    button{color:inherit}
+    .page{max-width:1420px;margin:auto;padding:clamp(18px,3vw,42px)}
+    .opening{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin:4px 0 26px}
+    .opening h1{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:clamp(2.15rem,5.5vw,5.2rem);line-height:.9;font-weight:500;letter-spacing:-.035em;margin:0;max-width:760px;text-wrap:balance}
+    .opening p{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.4;color:var(--muted);max-width:610px;margin:14px 0 0}
+    .opening-note{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding-bottom:7px;white-space:nowrap}
+    .exhibit{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(340px,.72fr);gap:clamp(16px,2.5vw,30px);align-items:start}
+    .stage{position:relative;min-height:clamp(580px,72vh,820px);border-radius:44px 44px 14px 14px;overflow:hidden;background:
+      radial-gradient(circle at 50% 38%,rgba(73,102,155,.3) 0,rgba(13,25,52,.18) 25%,transparent 54%),
+      linear-gradient(150deg,#03050a,#071127 50%,#02040b);box-shadow:0 34px 90px rgba(0,0,0,.5),inset 0 0 0 1px rgba(240,205,130,.12),inset 0 -40px 80px rgba(0,0,0,.42);isolation:isolate}
+    .stage:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,222,160,.055) 48%,transparent 65%);pointer-events:none;z-index:2}
+    #ambientCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+    .stage-tools{position:absolute;z-index:12;left:16px;right:16px;top:16px;display:flex;gap:8px;justify-content:space-between;align-items:center}
+    .tool-group{display:flex;gap:8px;flex-wrap:wrap}
+    .metal-button{border:1px solid rgba(233,202,135,.26);border-bottom-color:rgba(60,35,8,.7);background:linear-gradient(180deg,rgba(45,41,36,.92),rgba(16,16,19,.94));color:#eadfca;padding:9px 13px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.08);cursor:pointer;min-height:42px;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s}
+    .metal-button:hover{border-color:rgba(233,202,135,.52)}
+    .metal-button:active{transform:translateY(1px)}
+    .metal-button[aria-pressed="true"]{background:linear-gradient(180deg,#9d793d,#59401e);color:#fff3d4}
+    .stage-caption{position:absolute;z-index:12;bottom:14px;left:18px;right:18px;display:flex;justify-content:space-between;gap:14px;color:#d9ccb5;font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:.92rem;text-shadow:0 1px 5px #000}
+    .stage-caption span:last-child{color:#a9b8ca;text-align:right}
+    .instrument-wrap{position:absolute;z-index:5;inset:68px 20px 54px;display:grid;place-items:center;perspective:1000px;touch-action:none}
+    .instrument{width:min(86%,690px);aspect-ratio:1;position:relative;transform-style:preserve-3d;filter:drop-shadow(0 32px 28px rgba(0,0,0,.62));animation:reveal 1.45s cubic-bezier(.16,1,.3,1) both}
+    @keyframes reveal{from{opacity:0;transform:translateY(26px) rotateX(11deg) scale(.93)}to{opacity:1;transform:translateY(0) rotateX(0) scale(1)}}
+    .instrument:before,.instrument:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .instrument:before{inset:1.5%;background:linear-gradient(140deg,#3a2411,#b0833e 34%,#503015 65%,#d4ad63);transform:translateZ(-18px);box-shadow:0 22px 35px #000}
+    .instrument:after{inset:5%;box-shadow:inset 18px 18px 35px rgba(255,225,157,.14),inset -24px -26px 42px rgba(18,8,0,.65)}
+    #astrolabeSvg{width:100%;height:100%;overflow:visible;display:block;transform:translateZ(3px)}
+    #rete{transform-origin:500px 500px;cursor:grab}
+    #rete.dragging{cursor:grabbing}
+    #reteDragSurface,#alidadeHit{pointer-events:none}
+    .engraved{paint-order:stroke fill;stroke:#37210f;stroke-width:2px}
+    .plate-line{fill:none;stroke:url(#silverLine);stroke-width:1.15;opacity:.52;vector-effect:non-scaling-stroke}
+    .fine-line{fill:none;stroke:#e4c477;stroke-width:.85;opacity:.38;vector-effect:non-scaling-stroke}
+    .star-pointer{cursor:pointer;outline:none;filter:url(#insetGlow)}
+    .star-pointer:hover .pointer-shape,.star-pointer:focus .pointer-shape{stroke:#fff0b7;stroke-width:3.5}
+    .star-dot{animation:twinkle 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes twinkle{0%,100%{opacity:.55;transform:scale(.82)}48%{opacity:1;transform:scale(1.28)}}
+    #backFace{opacity:0;pointer-events:none;transition:opacity .8s cubic-bezier(.16,1,.3,1)}
+    #frontFace{opacity:1;transition:opacity .8s cubic-bezier(.16,1,.3,1)}
+    .show-back #frontFace{opacity:0;pointer-events:none}.show-back #backFace{opacity:1;pointer-events:auto}
+    .show-back .instrument{animation:none;transform:rotateY(0)}
+    #alidade{transform-origin:500px 500px;cursor:grab}
+    .console{background:var(--panel);border:1px solid var(--panel-line);box-shadow:0 24px 70px var(--shadow),inset 0 1px rgba(255,255,255,.12);border-radius:14px 14px 34px 14px;overflow:hidden;backdrop-filter:blur(18px);position:sticky;top:16px}
+    .tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--panel-line);background:rgba(0,0,0,.05)}
+    .tab{border:0;border-right:1px solid var(--panel-line);background:transparent;padding:15px 8px;cursor:pointer;color:var(--muted);font-weight:700;letter-spacing:.04em}
+    .tab:last-child{border-right:0}.tab[aria-selected="true"]{color:var(--ink);background:linear-gradient(180deg,rgba(210,164,80,.18),transparent);box-shadow:inset 0 -2px var(--brass)}
+    .pane{display:none;padding:20px}.pane.active{display:block}
+    .section-title{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:1.45rem;margin:0 0 5px;font-weight:600}
+    .section-lede{margin:0 0 18px;color:var(--muted);line-height:1.45}
+    .field{margin:17px 0}.field label,.field-label{display:flex;justify-content:space-between;gap:10px;font-weight:700;margin-bottom:8px;font-size:.92rem}
+    .field output{font-weight:500;color:var(--muted)}
+    input[type="date"]{width:100%;padding:11px 12px;border:1px solid var(--panel-line);background:rgba(255,255,255,.06);color:var(--ink);border-radius:5px}
+    input[type="range"]{width:100%;accent-color:var(--brass);cursor:pointer}
+    .city-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .city-button{border:1px solid var(--panel-line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.035));padding:10px 8px;border-radius:7px;cursor:pointer;text-align:left;box-shadow:inset 0 1px rgba(255,255,255,.08);transition:.3s cubic-bezier(.16,1,.3,1)}
+    .city-button:hover{border-color:var(--brass)}.city-button.active{border-color:var(--brass);background:linear-gradient(180deg,rgba(190,139,58,.25),rgba(190,139,58,.07))}
+    .city-button b{display:block}.city-button small{color:var(--muted)}
+    .custom-fields{display:none;padding:10px 12px;margin-top:9px;background:rgba(0,0,0,.05);border-radius:8px}.custom-fields.show{display:block}
+    .readouts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--panel-line);border:1px solid var(--panel-line);margin-top:20px}
+    .readout{background:var(--panel);padding:12px}.readout small{display:block;color:var(--muted);margin-bottom:4px}.readout strong{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:1.22rem;font-weight:600}
+    .sky-card{margin-top:18px;background:linear-gradient(180deg,#071328,#02050b);border-radius:12px 12px 24px 12px;overflow:hidden;position:relative;border:1px solid rgba(140,181,220,.2)}
+    #skyCanvas{display:block;width:100%;height:220px}
+    .sky-caption{display:flex;justify-content:space-between;gap:8px;padding:9px 12px;color:#b9c8d7;font-size:.78rem;border-top:1px solid rgba(140,181,220,.14)}
+    .prayer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:18px 0}
+    .prayer{border-bottom:1px solid var(--panel-line);padding:9px 2px;display:flex;justify-content:space-between;gap:8px}.prayer b{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:1.05rem}.prayer time{color:var(--muted)}
+    .qibla-panel{padding:16px;background:linear-gradient(145deg,rgba(178,129,50,.2),transparent);border:1px solid var(--panel-line);border-radius:4px 20px 4px 4px}
+    .qibla-bearing{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:2.4rem;line-height:1;margin:5px 0}.qibla-panel p{margin:8px 0 0;color:var(--muted);line-height:1.4}
+    .method-note{font-size:.82rem;color:var(--muted);line-height:1.45;padding-top:14px}
+    .tasks{display:grid;gap:11px}.task{position:relative;border:1px solid var(--panel-line);padding:15px 15px 15px 44px;border-radius:7px 20px 7px 7px;background:linear-gradient(145deg,rgba(255,255,255,.05),transparent)}
+    .task-num{position:absolute;left:13px;top:13px;width:22px;height:22px;border:1px solid var(--brass);border-radius:50%;display:grid;place-items:center;font-family:Palatino,"Palatino Linotype",Georgia,serif;color:var(--brass)}
+    .task h3{font-family:Palatino,"Palatino Linotype",Georgia,serif;margin:0;font-size:1.15rem}.task p{margin:5px 0 11px;color:var(--muted);line-height:1.4;font-size:.9rem}.task button{border:0;background:transparent;color:var(--ink);font-weight:700;padding:0;cursor:pointer;border-bottom:1px solid var(--brass)}
+    .task.done{border-color:var(--ok)}.task.done .task-num{background:var(--ok);border-color:var(--ok);color:#fff}.task.done button{color:var(--ok);border-color:var(--ok)}
+    .task-guide{display:none;margin:12px 0 0;padding:10px;border-left:2px solid var(--brass);background:rgba(185,144,72,.08);font-size:.88rem;line-height:1.45}.task-guide.show{display:block}
+    .history{margin-top:clamp(28px,5vw,70px);display:grid;grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);gap:clamp(24px,6vw,82px);padding:clamp(24px,4vw,48px) 0;border-top:1px solid var(--panel-line)}
+    .history h2{font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:clamp(1.8rem,3.6vw,3.2rem);line-height:1;margin:0}.history .kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:10px}
+    .history-copy{columns:2;column-gap:34px;line-height:1.6;font-family:Palatino,"Palatino Linotype",Georgia,serif;font-size:1.08rem}.history-copy p{margin:0 0 1em;break-inside:avoid}.history-copy strong{color:var(--ink)}
+    .sources{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;margin-top:-8px}.sources a{color:var(--muted);text-underline-offset:3px}.sources a:hover{color:var(--ink)}
+    .status-toast{position:fixed;z-index:50;left:50%;bottom:18px;transform:translate(-50%,20px);opacity:0;background:#17191f;color:#f2e7d0;border:1px solid rgba(225,185,100,.4);padding:11px 16px;border-radius:999px;box-shadow:0 12px 40px #000;pointer-events:none;transition:.45s cubic-bezier(.16,1,.3,1);max-width:min(90vw,560px);text-align:center}.status-toast.show{opacity:1;transform:translate(-50%,0)}
+    :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+    @media(max-width:980px){.exhibit{grid-template-columns:1fr}.console{position:relative;top:auto}.stage{min-height:min(760px,78vh)}.instrument{width:min(90%,620px)}}
+    @media(max-width:680px){.page{padding:14px}.opening{grid-template-columns:1fr;margin-top:10px}.opening-note{display:none}.opening h1{font-size:3.15rem}.stage{min-height:590px;border-radius:26px 26px 9px 9px}.instrument-wrap{inset:70px 6px 64px}.instrument{width:100%}.stage-caption{font-size:.78rem}.stage-tools{left:10px;right:10px;top:10px}.metal-button{padding:8px 11px;font-size:.82rem}.console{border-radius:10px 10px 26px 10px}.pane{padding:17px}.history{grid-template-columns:1fr}.history-copy{columns:1}.sources{grid-column:1}.city-grid{grid-template-columns:1fr 1fr}.sky-caption{display:block}.sky-caption span{display:block;margin-top:3px}}
+    @media(max-width:390px){.city-grid{grid-template-columns:1fr}.stage{min-height:530px}.instrument-wrap{inset:72px 2px 62px}.stage-caption span:last-child{display:none}.readouts{grid-template-columns:1fr 1fr}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="opening" aria-labelledby="main-heading">
+      <div>
+        <h1 id="main-heading">Hold the sky in brass.</h1>
+        <p>Turn the rete across a latitude plate. The bright stars, horizon and hours answer one another—as they did in observatories from Baghdad to Córdoba.</p>
+      </div>
+      <div class="opening-note">Planispheric instrument · working reconstruction</div>
+    </section>
+
+    <section class="exhibit" aria-label="Interactive astrolabe exhibit">
+      <div class="stage" id="stage">
+        <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+        <div class="stage-tools">
+          <div class="tool-group" role="group" aria-label="Instrument face">
+            <button class="metal-button" id="frontBtn" aria-pressed="true">Rete &amp; plate</button>
+            <button class="metal-button" id="backBtn" aria-pressed="false">Alidade &amp; scales</button>
+          </div>
+          <button class="metal-button" id="soundBtn" aria-pressed="false" aria-label="Turn ambience on">Sound off</button>
+        </div>
+        <div class="instrument-wrap" id="instrumentWrap">
+          <div class="instrument" id="instrument">
+            <svg id="astrolabeSvg" viewBox="0 0 1000 1000" role="img" aria-labelledby="svgTitle svgDesc">
+              <title id="svgTitle">Interactive brass planispheric astrolabe</title>
+              <desc id="svgDesc">A movable star map over a latitude plate. Drag the rete to change apparent solar time. Switch to the back to align the alidade.</desc>
+              <defs>
+                <radialGradient id="brassFace" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#f3d994"/><stop offset=".18" stop-color="#bd9147"/><stop offset=".5" stop-color="#725021"/><stop offset=".72" stop-color="#c49a53"/><stop offset="1" stop-color="#3d250f"/></radialGradient>
+                <linearGradient id="brassEdge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0b7"/><stop offset=".18" stop-color="#9c7134"/><stop offset=".46" stop-color="#3b220d"/><stop offset=".7" stop-color="#d2a957"/><stop offset="1" stop-color="#503116"/></linearGradient>
+                <linearGradient id="silverLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfff8"/><stop offset=".4" stop-color="#87919b"/><stop offset=".7" stop-color="#dbe3df"/><stop offset="1" stop-color="#59616a"/></linearGradient>
+                <radialGradient id="plateFace" cx="42%" cy="34%" r="68%"><stop stop-color="#7b6336"/><stop offset=".46" stop-color="#4a361b"/><stop offset="1" stop-color="#1c140b"/></radialGradient>
+                <filter id="agedMetal" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" seed="9" result="noise"/><feColorMatrix in="noise" type="matrix" values=".25 0 0 0 0 .12 0 0 0 0 .04 0 0 0 0 0 0 0 .22 0" result="patina"/><feBlend in="SourceGraphic" in2="patina" mode="multiply"/><feSpecularLighting surfaceScale="2.5" specularConstant=".5" specularExponent="22" lighting-color="#ffe5a0"><fePointLight x="280" y="180" z="260"/></feSpecularLighting><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="screen"/></filter>
+                <filter id="engrave" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="1.5" dy="1.8" stdDeviation=".8" flood-color="#160a02" flood-opacity=".9"/><feDropShadow dx="-1" dy="-1" stdDeviation=".6" flood-color="#ffe5a0" flood-opacity=".38"/></filter>
+                <filter id="insetGlow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#ffdf8b" flood-opacity=".28"/><feDropShadow dx="1.5" dy="2" stdDeviation="1" flood-color="#1b0d03" flood-opacity=".8"/></filter>
+                <filter id="starGlow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <pattern id="patinaSpeck" width="37" height="41" patternUnits="userSpaceOnUse"><circle cx="8" cy="11" r="2.6" fill="#426453" opacity=".34"/><circle cx="28" cy="31" r="1.8" fill="#2e4a3d" opacity=".3"/><path d="M2 32c9-8 15-3 22-11" fill="none" stroke="#28483b" stroke-width="1" opacity=".24"/></pattern>
+                <clipPath id="innerClip"><circle cx="500" cy="500" r="374"/></clipPath>
+              </defs>
+              <g id="bodyShell">
+                <path d="M430 80C430 32 462 10 500 10s70 22 70 70l38 36H392z" fill="url(#brassEdge)" stroke="#2e1909" stroke-width="9" filter="url(#agedMetal)"/>
+                <circle cx="500" cy="47" r="18" fill="#120b06" stroke="#e2bd70" stroke-width="7"/>
+                <circle cx="500" cy="500" r="459" fill="url(#brassEdge)" stroke="#271507" stroke-width="12"/>
+                <circle cx="500" cy="500" r="435" fill="url(#brassFace)" stroke="#f0cd80" stroke-width="3" filter="url(#agedMetal)"/>
+                <circle cx="500" cy="500" r="422" fill="url(#patinaSpeck)" opacity=".7"/>
+              </g>
+              <g id="frontFace">
+                <circle cx="500" cy="500" r="395" fill="url(#plateFace)" stroke="#2b1708" stroke-width="9"/>
+                <circle cx="500" cy="500" r="375" fill="#101520" opacity=".55"/>
+                <g id="plateGrid" clip-path="url(#innerClip)" filter="url(#engrave)"></g>
+                <g id="rimTicks" filter="url(#engrave)"></g>
+                <g id="rete" aria-label="Drag the rete to rotate the star map">
+                  <circle cx="500" cy="500" r="326" fill="none" stroke="url(#brassEdge)" stroke-width="20"/>
+                  <circle cx="500" cy="500" r="305" fill="none" stroke="#d8b566" stroke-width="2" opacity=".75"/>
+                  <ellipse cx="500" cy="500" rx="300" ry="176" transform="rotate(-23.4 500 500)" fill="none" stroke="url(#brassEdge)" stroke-width="21" filter="url(#engrave)"/>
+                  <ellipse cx="500" cy="500" rx="282" ry="160" transform="rotate(-23.4 500 500)" fill="none" stroke="#35200f" stroke-width="2" opacity=".85"/>
+                  <path d="M500 176C562 255 588 373 580 500S552 742 500 824C448 742 420 627 420 500S438 255 500 176Z" fill="none" stroke="url(#brassEdge)" stroke-width="13" opacity=".9"/>
+                  <g id="stars"></g>
+                  <circle cx="500" cy="500" r="22" fill="url(#brassEdge)" stroke="#2a1607" stroke-width="6"/>
+                </g>
+                <circle id="reteDragSurface" cx="500" cy="500" r="374" fill="transparent" tabindex="0" aria-label="Movable rete; use left and right arrow keys or drag"/>
+                <text id="plateLabel" x="500" y="838" text-anchor="middle" fill="#e7cf91" font-family="Palatino,Georgia,serif" font-size="25" letter-spacing="3" filter="url(#engrave)">BAGHDAD · 33° N</text>
+                <text x="500" y="872" text-anchor="middle" fill="#ae9b72" font-family="Geeza Pro,Traditional Arabic,serif" font-size="24">صفيحة الأفق والسمت</text>
+                <circle cx="500" cy="500" r="10" fill="#d5c3a1" stroke="#4b2d11" stroke-width="4"/>
+              </g>
+              <g id="backFace">
+                <circle cx="500" cy="500" r="395" fill="url(#brassFace)" stroke="#2b1708" stroke-width="9" filter="url(#agedMetal)"/>
+                <g id="backTicks" filter="url(#engrave)"></g>
+                <circle cx="500" cy="500" r="312" fill="none" stroke="#3b2612" stroke-width="3"/>
+                <circle cx="500" cy="500" r="236" fill="none" stroke="#6e4c22" stroke-width="2"/>
+                <path d="M310 660H500V470M690 660H500" fill="none" stroke="#4a2d12" stroke-width="4"/>
+                <g class="fine-line" id="shadowSquare"></g>
+                <text x="500" y="215" text-anchor="middle" fill="#3a220e" font-family="Palatino,Georgia,serif" font-size="30" font-weight="600" letter-spacing="6" filter="url(#engrave)">ALTITUDE · HOUR · SHADOW</text>
+                <text x="500" y="255" text-anchor="middle" fill="#4c2f13" font-family="Geeza Pro,Traditional Arabic,serif" font-size="28" filter="url(#engrave)">الارتفاع والساعة والظل</text>
+                <g id="qiblaNotch" transform-origin="500 500"><path d="M500 118l-13 26h26z" fill="#d8d6c5" stroke="#3b250f" stroke-width="3"/><text x="500" y="102" text-anchor="middle" fill="#efe6c4" font-family="Geeza Pro,Traditional Arabic,serif" font-size="24">القبلة</text></g>
+                <g id="alidade">
+                  <path d="M154 488H846l18 12-18 12H154l-18-12z" fill="url(#brassEdge)" stroke="#2a1708" stroke-width="6" filter="url(#engrave)"/>
+                  <path d="M180 472v56h30v-56zm610 0v56h30v-56z" fill="#c4a057" stroke="#2b1909" stroke-width="5"/>
+                  <circle cx="500" cy="500" r="28" fill="url(#brassEdge)" stroke="#2a1708" stroke-width="6"/>
+                  <circle cx="500" cy="500" r="8" fill="#d8d6c5"/>
+                </g>
+                <circle id="alidadeHit" cx="500" cy="500" r="380" fill="transparent" tabindex="0" aria-label="Movable alidade; use left and right arrow keys or drag"/>
+                <text x="500" y="820" text-anchor="middle" fill="#38210d" font-family="Palatino,Georgia,serif" font-size="22" letter-spacing="4" filter="url(#engrave)">CALENDAR · DEGREE · SHADOW SCALES</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="stage-caption"><span id="dragHint">Drag the rete · arrows for fine movement</span><span id="faceCaption">Front: rete over Baghdad latitude plate</span></div>
+      </div>
+
+      <aside class="console" aria-label="Instrument controls and readings">
+        <div class="tabs" role="tablist" aria-label="Astrolabe controls">
+          <button class="tab" role="tab" id="tab-observe" aria-selected="true" aria-controls="pane-observe">Observe</button>
+          <button class="tab" role="tab" id="tab-prayer" aria-selected="false" aria-controls="pane-prayer">Prayer &amp; qibla</button>
+          <button class="tab" role="tab" id="tab-tasks" aria-selected="false" aria-controls="pane-tasks">Guided tasks</button>
+        </div>
+        <section class="pane active" id="pane-observe" role="tabpanel" aria-labelledby="tab-observe">
+          <h2 class="section-title">Set the plate. Turn the heavens.</h2>
+          <p class="section-lede">Each tympan is engraved for one latitude. The rete carries the fixed stars above it.</p>
+          <div class="field"><label for="dateInput">Selected date <output id="dateLabel">12 October 2026</output></label><input id="dateInput" type="date" value="2026-10-12"></div>
+          <div class="field"><div class="field-label">Climate plate <output id="coordsOut">33.32° N · 44.37° E</output></div><div class="city-grid" id="cityGrid">
+            <button class="city-button active" data-city="baghdad"><b>Baghdad</b><small>33.32° N</small></button>
+            <button class="city-button" data-city="cordoba"><b>Córdoba</b><small>37.89° N</small></button>
+            <button class="city-button" data-city="cairo"><b>Cairo</b><small>30.04° N</small></button>
+            <button class="city-button" data-city="samarkand"><b>Samarkand</b><small>39.65° N</small></button>
+            <button class="city-button" data-city="custom"><b>Custom plate</b><small>Set latitude &amp; longitude</small></button>
+          </div><div class="custom-fields" id="customFields">
+            <label for="latRange">Latitude <output id="latOut">33.3°</output></label><input id="latRange" type="range" min="-55" max="65" step="0.1" value="33.3">
+            <label for="lonRange">Longitude <output id="lonOut">44.4°</output></label><input id="lonRange" type="range" min="-180" max="180" step="0.1" value="44.4">
+          </div></div>
+          <div class="field"><label for="timeRange">Apparent solar time <output id="timeOut">21:00</output></label><input id="timeRange" type="range" min="0" max="23.9833" step="0.0167" value="21"></div>
+          <div class="readouts">
+            <div class="readout"><small>Sidereal time</small><strong id="siderealOut">—</strong></div>
+            <div class="readout"><small>Vega altitude</small><strong id="vegaOut">—</strong></div>
+            <div class="readout"><small>Rete rotation</small><strong id="rotationOut">315°</strong></div>
+            <div class="readout"><small>Plate latitude</small><strong id="plateOut">33° N</strong></div>
+          </div>
+          <div class="sky-card"><canvas id="skyCanvas" aria-label="Night sky matching the astrolabe setting"></canvas><div class="sky-caption"><b>Horizon mirror</b><span>East at left · west at right · visible stars shown above the horizon</span></div></div>
+        </section>
+
+        <section class="pane" id="pane-prayer" role="tabpanel" aria-labelledby="tab-prayer">
+          <h2 class="section-title">The day measured by the sun.</h2>
+          <p class="section-lede">Geometric estimates in apparent solar time for the selected date and plate.</p>
+          <div class="prayer-grid">
+            <div class="prayer"><b>Fajr</b><time id="fajrOut">—</time></div><div class="prayer"><b>Sunrise</b><time id="sunriseOut">—</time></div>
+            <div class="prayer"><b>Dhuhr</b><time id="dhuhrOut">12:00</time></div><div class="prayer"><b>ʿAsr</b><time id="asrOut">—</time></div>
+            <div class="prayer"><b>Maghrib</b><time id="maghribOut">—</time></div><div class="prayer"><b>ʿIshāʾ</b><time id="ishaOut">—</time></div>
+          </div>
+          <div class="qibla-panel"><small>Initial great-circle bearing to the Kaaba</small><div class="qibla-bearing" id="qiblaOut">—</div><strong id="qiblaDir">—</strong><p>Switch to the back and align the alidade with the silver qibla index.</p></div>
+          <p class="method-note">These are educational astronomical estimates, not authoritative religious timetables. Twilight conventions, terrain, elevation and local practice change observed prayer times.</p>
+        </section>
+
+        <section class="pane" id="pane-tasks" role="tabpanel" aria-labelledby="tab-tasks">
+          <h2 class="section-title">Three readings.</h2>
+          <p class="section-lede">Learn the instrument by completing the gestures its makers intended.</p>
+          <div class="tasks">
+            <article class="task" id="task-qibla"><span class="task-num">1</span><h3>Find the qibla from Córdoba</h3><p>Use the back of the instrument and its sighting rule.</p><button data-task="qibla">Begin reading</button><div class="task-guide" id="guide-qibla">Córdoba's plate is set. Drag the alidade until it meets the silver qibla index.</div></article>
+            <article class="task" id="task-time"><span class="task-num">2</span><h3>Tell time by Altair</h3><p>Bring the eagle star to the meridian on the front.</p><button data-task="time">Begin reading</button><div class="task-guide" id="guide-time">Turn the rete until Altair crosses the north–south meridian. The time dial will reveal the reading.</div></article>
+            <article class="task" id="task-vega"><span class="task-num">3</span><h3>Locate Vega</h3><p>Find al‑nasr al‑wāqiʿ among the flame pointers.</p><button data-task="vega">Begin reading</button><div class="task-guide" id="guide-vega">On the front, touch the pointer labelled النسر الواقع · Vega.</div></article>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="history" aria-labelledby="history-heading">
+      <div><div class="kicker">The record</div><h2 id="history-heading">A sky-map shaped by many hands.</h2></div>
+      <div class="history-copy">
+        <p><strong>Origins.</strong> The planispheric astrolabe grew from Hellenistic work in stereographic projection. Scholars writing in Arabic inherited, tested and greatly extended that mathematical tradition from the eighth century onward.</p>
+        <p><strong>In the Islamicate world.</strong> Makers cut a different plate for each latitude, fitted a rotating star map above it, and engraved calendars, degree scales and shadow squares on the back. Surviving instruments carry Arabic, Persian, Hebrew and Latin additions—evidence of use across languages and faiths.</p>
+        <p><strong>What it solved.</strong> Properly set, the instrument could relate star altitude, date and time; estimate sunrise and sunset; support the determination of prayer times; survey heights; and help establish the qibla. Some instruments carried dedicated qibla tables or maps.</p>
+        <p><strong>What you are holding here.</strong> This is a computational teaching reconstruction, not a facsimile of one surviving object. Its star coordinates and geometric readings are modern calculations presented through the operating logic of a historical astrolabe.</p>
+      </div>
+      <div class="sources" aria-label="Sources"><a href="https://collection.sciencemuseumgroup.org.uk/objects/co56137" target="_blank" rel="noreferrer">Science Museum Group · Islamic astrolabe</a><a href="http://hsm.ox.ac.uk/discover-the-astrolabe" target="_blank" rel="noreferrer">Oxford History of Science Museum · instrument teaching</a><a href="https://blogs.mhs.ox.ac.uk/insidemhs/favourite-object-islamic-astrolabe/" target="_blank" rel="noreferrer">Oxford HSM · Islamic astrolabe</a></div>
+    </section>
+  </main>
+  <div class="status-toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+  (function(){
+    "use strict";
+    var TAU=Math.PI*2, DEG=Math.PI/180;
+    var cities={
+      baghdad:{name:"Baghdad",lat:33.3152,lon:44.3661},
+      cordoba:{name:"Córdoba",lat:37.8882,lon:-4.7794},
+      cairo:{name:"Cairo",lat:30.0444,lon:31.2357},
+      samarkand:{name:"Samarkand",lat:39.6542,lon:66.9597},
+      custom:{name:"Custom",lat:33.3,lon:44.4}
+    };
+    var stars=[
+      {id:"vega",name:"Vega",arabic:"النسر الواقع",ra:18.6156,dec:38.7837,mag:.03},
+      {id:"altair",name:"Altair",arabic:"النسر الطائر",ra:19.8464,dec:8.8683,mag:.77},
+      {id:"regulus",name:"Regulus",arabic:"قلب الأسد",ra:10.1395,dec:11.9672,mag:1.35},
+      {id:"aldebaran",name:"Aldebaran",arabic:"الدبران",ra:4.5987,dec:16.5093,mag:.85},
+      {id:"deneb",name:"Deneb",arabic:"ذنب الدجاجة",ra:20.6905,dec:45.2803,mag:1.25},
+      {id:"betelgeuse",name:"Betelgeuse",arabic:"يد الجوزاء",ra:5.9195,dec:7.4071,mag:.5},
+      {id:"sirius",name:"Sirius",arabic:"الشعرى اليمانية",ra:6.7525,dec:-16.7161,mag:-1.46},
+      {id:"arcturus",name:"Arcturus",arabic:"السماك الرامح",ra:14.261,dec:19.1824,mag:-.05},
+      {id:"spica",name:"Spica",arabic:"السماك الأعزل",ra:13.4199,dec:-11.1614,mag:.97}
+    ];
+
+    function el(id){return document.getElementById(id)}
+    function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+    function mod(v,n){return ((v%n)+n)%n}
+    function pad(n){return String(n).padStart(2,"0")}
+    function fmtTime(hours){if(!isFinite(hours))return "—";hours=mod(hours,24);var h=Math.floor(hours),m=Math.round((hours-h)*60);if(m===60){h=(h+1)%24;m=0}return pad(h)+":"+pad(m)}
+    function fmtAngle(v){return Math.round(mod(v,360))+"°"}
+    function julian(dateString,hour,lon){var p=dateString.split("-").map(Number);var ms=Date.UTC(p[0],p[1]-1,p[2],0,0,0)+(hour-lon/15)*3600000;return ms/86400000+2440587.5}
+    function lst(dateString,hour,lon){var jd=julian(dateString,hour,lon);return mod(18.697374558+24.06570982441908*(jd-2451545)+lon/15,24)}
+    function starAltAz(star,dateString,hour,lat,lon){var H=(lst(dateString,hour,lon)-star.ra)*15*DEG,phi=lat*DEG,dec=star.dec*DEG;var sinAlt=Math.sin(phi)*Math.sin(dec)+Math.cos(phi)*Math.cos(dec)*Math.cos(H);var alt=Math.asin(clamp(sinAlt,-1,1));var az=Math.atan2(-Math.sin(H)*Math.cos(dec),Math.sin(dec)*Math.cos(phi)-Math.cos(dec)*Math.sin(phi)*Math.cos(H));return{alt:alt/DEG,az:mod(az/DEG,360),hourAngle:mod(H/DEG+180,360)-180}}
+    function qiblaBearing(lat,lon){var lat1=lat*DEG,lat2=21.4225*DEG,dl=(39.8262-lon)*DEG;return mod(Math.atan2(Math.sin(dl),Math.cos(lat1)*Math.tan(lat2)-Math.sin(lat1)*Math.cos(dl))/DEG,360)}
+    function dayOfYear(dateString){var d=new Date(dateString+"T12:00:00Z"),s=new Date(Date.UTC(d.getUTCFullYear(),0,0));return Math.floor((d-s)/86400000)}
+    function solarDecl(dateString){var n=dayOfYear(dateString);return 23.44*Math.sin(TAU*(284+n)/365)}
+    function solarHour(lat,decl,alt){var p=lat*DEG,d=decl*DEG,a=alt*DEG;var c=(Math.sin(a)-Math.sin(p)*Math.sin(d))/(Math.cos(p)*Math.cos(d));if(c<-1||c>1)return NaN;return Math.acos(c)/DEG/15}
+    function prayerTimes(dateString,lat){var d=solarDecl(dateString),sun=solarHour(lat,d,-.833),tw=solarHour(lat,d,-18);var asrAlt=-Math.atan(1/(1+Math.tan(Math.abs(lat-d)*DEG)))/DEG;var asr=solarHour(lat,d,asrAlt);return{fajr:12-tw,sunrise:12-sun,dhuhr:12,asr:12+asr,maghrib:12+sun,isha:12+tw}}
+    function cardinal(b){var dirs=["north","north-east","east","south-east","south","south-west","west","north-west"];return dirs[Math.round(b/45)%8]}
+
+    function AstrolabeApp(){
+      this.state={city:"baghdad",lat:cities.baghdad.lat,lon:cities.baghdad.lon,date:"2026-10-12",time:21,rotation:315,face:"front",alidade:0,sound:false,activeTask:null,completed:{}};
+      this.listeners=[];this.rafs=[];this.audio=null;this.audioNodes=[];this.lastFrame=0;this.reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+      this.canvas=el("ambientCanvas");this.ctx=this.canvas.getContext("2d");this.sky=el("skyCanvas");this.skyCtx=this.sky.getContext("2d");
+      this.buildEngravings();this.bind();this.resize();this.selectCity("baghdad",false);this.setDate(this.state.date);this.setTime(21,false);this.renderAll();
+      if(!this.reduced)this.loop(performance.now());
+    }
+    AstrolabeApp.prototype.on=function(node,type,fn,opts){node.addEventListener(type,fn,opts);this.listeners.push({node:node,type:type,fn:fn,opts:opts})};
+    AstrolabeApp.prototype.buildEngravings=function(){
+      var ns="http://www.w3.org/2000/svg",plate=el("plateGrid"),rim=el("rimTicks"),back=el("backTicks"),shadow=el("shadowSquare");
+      function path(d,cls){var p=document.createElementNS(ns,"path");p.setAttribute("d",d);p.setAttribute("class",cls||"fine-line");return p}
+      for(var a=0;a<360;a+=10){var r1=a%30===0?382:389,r2=404,rad=a*DEG;rim.appendChild(path("M"+(500+Math.sin(rad)*r1).toFixed(2)+" "+(500-Math.cos(rad)*r1).toFixed(2)+"L"+(500+Math.sin(rad)*r2).toFixed(2)+" "+(500-Math.cos(rad)*r2).toFixed(2),"fine-line"))}
+      for(var i=1;i<=5;i++){var c=document.createElementNS(ns,"ellipse");c.setAttribute("cx","500");c.setAttribute("cy",String(500+i*8));c.setAttribute("rx",String(330-i*36));c.setAttribute("ry",String(70+i*42));c.setAttribute("class","plate-line");plate.appendChild(c)}
+      for(var z=0;z<12;z++){var ang=z*15*DEG,x1=500+Math.sin(ang)*70,y1=500-Math.cos(ang)*70,x2=500+Math.sin(ang)*370,y2=500-Math.cos(ang)*370;plate.appendChild(path("M"+x1+" "+y1+"Q500 500 "+x2+" "+y2,"plate-line"))}
+      plate.appendChild(path("M126 500H874M500 126V874","plate-line"));plate.appendChild(path("M170 620Q500 170 830 620M188 680Q500 270 812 680","plate-line"));
+      for(var b=0;b<360;b+=5){var br=b%30===0?350:365,bo=388,rr=b*DEG;back.appendChild(path("M"+(500+Math.sin(rr)*br).toFixed(2)+" "+(500-Math.cos(rr)*br).toFixed(2)+"L"+(500+Math.sin(rr)*bo).toFixed(2)+" "+(500-Math.cos(rr)*bo).toFixed(2),"fine-line"))}
+      for(var s=1;s<6;s++){shadow.appendChild(path("M"+(310+s*31.66)+" 660V"+(470+s*31.66)+"M500 "+(470+s*31.66)+"H"+(690-s*31.66),"fine-line"))}
+      var sg=el("stars");stars.forEach(function(star,index){var theta=-star.ra/24*TAU-Math.PI/2;var rad=86+(90-star.dec)*1.82;rad=clamp(rad,100,300);var x=500+Math.cos(theta)*rad,y=500+Math.sin(theta)*rad;var g=document.createElementNS(ns,"g");g.setAttribute("class","star-pointer");g.setAttribute("data-star",star.id);g.setAttribute("tabindex","0");g.setAttribute("role","button");g.setAttribute("aria-label",star.name+", "+star.arabic);var dir=x<500?-1:1;var tipX=x,tipY=y,baseX=x-dir*44,baseY=y+(index%2?16:-16);var d="M"+tipX.toFixed(1)+" "+tipY.toFixed(1)+" Q"+(baseX+dir*10).toFixed(1)+" "+(baseY-13).toFixed(1)+" "+baseX.toFixed(1)+" "+baseY.toFixed(1)+" Q"+(baseX+dir*8).toFixed(1)+" "+(baseY+14).toFixed(1)+" "+tipX.toFixed(1)+" "+tipY.toFixed(1)+"Z";g.innerHTML='<path class="pointer-shape" d="'+d+'" fill="url(#brassEdge)" stroke="#3a210d" stroke-width="2.5"/><circle class="star-dot" cx="'+tipX.toFixed(1)+'" cy="'+tipY.toFixed(1)+'" r="'+(6.5-star.mag*.9).toFixed(1)+'" fill="#f7efd2" filter="url(#starGlow)" style="animation-delay:'+((index*.41)%2.8).toFixed(2)+'s"/><text x="'+(baseX+dir*8).toFixed(1)+'" y="'+(baseY-4).toFixed(1)+'" text-anchor="'+(dir<0?'end':'start')+'" fill="#f0d48b" font-family="Palatino,Georgia,serif" font-size="17" filter="url(#engrave)">'+star.name+'</text><text x="'+(baseX+dir*8).toFixed(1)+'" y="'+(baseY+16).toFixed(1)+'" text-anchor="'+(dir<0?'end':'start')+'" fill="#d2c29a" font-family="Geeza Pro,Traditional Arabic,serif" font-size="16">'+star.arabic+'</text>';sg.appendChild(g)});
+    };
+    AstrolabeApp.prototype.bind=function(){var self=this;
+      this.on(window,"resize",function(){self.resize()},{passive:true});
+      this.on(el("dateInput"),"change",function(e){self.setDate(e.target.value)});
+      this.on(el("timeRange"),"input",function(e){self.setTime(parseFloat(e.target.value),true)});
+      this.on(el("latRange"),"input",function(e){self.state.lat=parseFloat(e.target.value);cities.custom.lat=self.state.lat;self.updateCustom()});
+      this.on(el("lonRange"),"input",function(e){self.state.lon=parseFloat(e.target.value);cities.custom.lon=self.state.lon;self.updateCustom()});
+      el("cityGrid").querySelectorAll("button").forEach(function(btn){self.on(btn,"click",function(){self.selectCity(btn.dataset.city,true)})});
+      document.querySelectorAll(".tab").forEach(function(tab){self.on(tab,"click",function(){self.showPane(tab.id.replace("tab-",""))})});
+      this.on(el("frontBtn"),"click",function(){self.setFace("front")});this.on(el("backBtn"),"click",function(){self.setFace("back")});
+      this.on(el("soundBtn"),"click",function(){self.toggleSound()});
+      document.querySelectorAll("[data-task]").forEach(function(btn){self.on(btn,"click",function(){self.startTask(btn.dataset.task)})});
+      document.querySelectorAll(".star-pointer").forEach(function(g){self.on(g,"click",function(){self.starSelected(g.dataset.star)});self.on(g,"keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();self.starSelected(g.dataset.star)}})});
+      this.setupDrag(el("reteDragSurface"),"rete");this.setupDrag(el("alidadeHit"),"alidade");
+      this.on(window,"pagehide",function(){self.destroy()},{once:true});
+    };
+    AstrolabeApp.prototype.setupDrag=function(surface,type){var self=this,drag=false,last=0,face=type==="rete"?el("frontFace"):el("backFace");
+      function angle(e){var svg=el("astrolabeSvg"),rect=svg.getBoundingClientRect();return Math.atan2(e.clientY-(rect.top+rect.height/2),e.clientX-(rect.left+rect.width/2))/DEG+90}
+      this.on(face,"pointerdown",function(e){if(e.target.closest&&e.target.closest(".star-pointer"))return;drag=true;last=angle(e);face.setPointerCapture(e.pointerId);if(type==="rete")el("rete").classList.add("dragging");self.clickSound(.5)});
+      this.on(face,"pointermove",function(e){if(!drag)return;var a=angle(e),delta=mod(a-last+180,360)-180;last=a;if(type==="rete"){self.setTime(mod(self.state.time+delta/15,24),true)}else{self.state.alidade=mod(self.state.alidade+delta,360);self.applyAlidade();self.checkTasks()}});
+      this.on(face,"pointerup",function(e){drag=false;try{face.releasePointerCapture(e.pointerId)}catch(_e){}el("rete").classList.remove("dragging");self.clickSound(.7)});
+      this.on(face,"pointercancel",function(){drag=false;el("rete").classList.remove("dragging")});
+      this.on(surface,"keydown",function(e){var step=e.shiftKey?5:1;if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;e.preventDefault();step*=e.key==="ArrowLeft"?-1:1;if(type==="rete")self.setTime(mod(self.state.time+step/15,24),true);else{self.state.alidade=mod(self.state.alidade+step,360);self.applyAlidade();self.checkTasks()}self.clickSound(.35)});
+    };
+    AstrolabeApp.prototype.setDate=function(v){if(!v)return;this.state.date=v;var d=new Date(v+"T12:00:00Z");el("dateLabel").textContent=new Intl.DateTimeFormat("en",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(d);this.renderAll()};
+    AstrolabeApp.prototype.setTime=function(v,fromUser){this.state.time=mod(v,24);this.state.rotation=mod(lst(this.state.date,this.state.time,this.state.lon)*15,360);el("timeRange").value=this.state.time;el("timeOut").textContent=fmtTime(this.state.time);el("rotationOut").textContent=fmtAngle(this.state.rotation);el("rete").style.transform="rotate("+this.state.rotation+"deg)";if(fromUser)this.clickSound(.16);this.renderReadings();this.drawSky();this.checkTasks()};
+    AstrolabeApp.prototype.selectCity=function(id,announce){var c=cities[id]||cities.baghdad;this.state.city=id;this.state.lat=c.lat;this.state.lon=c.lon;document.querySelectorAll(".city-button").forEach(function(b){b.classList.toggle("active",b.dataset.city===id)});el("customFields").classList.toggle("show",id==="custom");el("latRange").value=c.lat;el("lonRange").value=c.lon;this.updateCustom(announce);var stage=el("instrument");stage.animate([{transform:"scale(1) rotateZ(0deg)"},{transform:"scale(.965) rotateZ(-.45deg)"},{transform:"scale(1) rotateZ(0deg)"}],{duration:720,easing:"cubic-bezier(.16,1,.3,1)"})};
+    AstrolabeApp.prototype.updateCustom=function(announce){var lat=this.state.lat,lon=this.state.lon,name=this.state.city==="custom"?"CUSTOM":cities[this.state.city].name.toUpperCase();el("latOut").textContent=lat.toFixed(1)+"°";el("lonOut").textContent=lon.toFixed(1)+"°";el("coordsOut").textContent=Math.abs(lat).toFixed(2)+"° "+(lat>=0?"N":"S")+" · "+Math.abs(lon).toFixed(2)+"° "+(lon>=0?"E":"W");el("plateOut").textContent=Math.abs(lat).toFixed(0)+"° "+(lat>=0?"N":"S");el("plateLabel").textContent=name+" · "+Math.abs(lat).toFixed(0)+"° "+(lat>=0?"N":"S");el("faceCaption").textContent=(this.state.face==="front"?"Front: rete over "+name.toLowerCase()+" latitude plate":"Back: alidade, calendar and shadow scales");this.renderAll();if(announce)this.toast("Climate plate changed: "+name.toLowerCase()+", "+Math.abs(lat).toFixed(1)+" degrees "+(lat>=0?"north":"south"))};
+    AstrolabeApp.prototype.setFace=function(face){this.state.face=face;el("astrolabeSvg").classList.toggle("show-back",face==="back");el("frontBtn").setAttribute("aria-pressed",String(face==="front"));el("backBtn").setAttribute("aria-pressed",String(face==="back"));el("dragHint").textContent=face==="front"?"Drag the rete · arrows for fine movement":"Drag the alidade · arrows for fine movement";el("faceCaption").textContent=face==="front"?"Front: rete over "+(this.state.city==="custom"?"custom":cities[this.state.city].name)+" latitude plate":"Back: alidade, calendar and shadow scales";this.clickSound(.8)};
+    AstrolabeApp.prototype.showPane=function(name){document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",String(t.id==="tab-"+name))});document.querySelectorAll(".pane").forEach(function(p){p.classList.toggle("active",p.id==="pane-"+name)})};
+    AstrolabeApp.prototype.renderAll=function(){this.renderReadings();this.renderPrayer();this.applyAlidade();this.drawSky()};
+    AstrolabeApp.prototype.renderReadings=function(){var s=lst(this.state.date,this.state.time,this.state.lon),vega=starAltAz(stars[0],this.state.date,this.state.time,this.state.lat,this.state.lon);this.state.rotation=mod(s*15,360);el("rete").style.transform="rotate("+this.state.rotation+"deg)";el("rotationOut").textContent=fmtAngle(this.state.rotation);el("siderealOut").textContent=fmtTime(s);el("vegaOut").textContent=(vega.alt>=0?vega.alt.toFixed(1)+"°":"below horizon")};
+    AstrolabeApp.prototype.renderPrayer=function(){var p=prayerTimes(this.state.date,this.state.lat),q=qiblaBearing(this.state.lat,this.state.lon);["fajr","sunrise","dhuhr","asr","maghrib","isha"].forEach(function(k){el(k+"Out").textContent=fmtTime(p[k])});el("qiblaOut").textContent=q.toFixed(1)+"°";el("qiblaDir").textContent=cardinal(q)+" from true north";el("qiblaNotch").style.transform="rotate("+q+"deg)"};
+    AstrolabeApp.prototype.applyAlidade=function(){el("alidade").style.transform="rotate("+this.state.alidade+"deg)"};
+    AstrolabeApp.prototype.resize=function(){var mobile=innerWidth<700,dpr=mobile?1:Math.min(1.5,window.devicePixelRatio||1);this.dpr=dpr;[[this.canvas,el("stage")],[this.sky,this.sky.parentElement]].forEach(function(pair){var c=pair[0],r=pair[1].getBoundingClientRect();c.width=Math.max(1,Math.floor(r.width*dpr));c.height=Math.max(1,Math.floor((c.id==="skyCanvas"?220:r.height)*dpr));c.style.width=r.width+"px";c.style.height=(c.id==="skyCanvas"?220:r.height)+"px"});this.initDust();this.drawSky()};
+    AstrolabeApp.prototype.initDust=function(){var count=innerWidth<700?46:90;this.dust=[];for(var i=0;i<count;i++)this.dust.push({x:Math.random(),y:Math.random(),r:.4+Math.random()*1.5,v:.00003+Math.random()*.00008,p:Math.random()*TAU})};
+    AstrolabeApp.prototype.drawAmbient=function(t){var c=this.canvas,ctx=this.ctx,dpr=this.dpr;ctx.clearRect(0,0,c.width,c.height);var w=c.width,h=c.height;ctx.save();ctx.globalCompositeOperation="screen";this.dust.forEach(function(p,i){p.y-=p.v*(this.reduced?0:t-this.lastFrame);if(p.y<-.02)p.y=1.02;var x=(p.x+.018*Math.sin(t*.00017+p.p))*w,y=p.y*h,a=.1+.24*(.5+.5*Math.sin(t*.001+p.p));ctx.fillStyle="rgba(239,214,165,"+a+")";ctx.beginPath();ctx.arc(x,y,p.r*dpr,0,TAU);ctx.fill()}.bind(this));ctx.restore()};
+    AstrolabeApp.prototype.drawSky=function(){if(!this.skyCtx||!this.sky.width)return;var ctx=this.skyCtx,c=this.sky,w=c.width,h=c.height,dpr=this.dpr;ctx.clearRect(0,0,w,h);var g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,"#061025");g.addColorStop(.74,"#0b2034");g.addColorStop(1,"#442d1b");ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.strokeStyle="rgba(191,212,225,.25)";ctx.lineWidth=dpr;ctx.beginPath();ctx.moveTo(0,h-26*dpr);ctx.quadraticCurveTo(w/2,h-36*dpr,w,h-26*dpr);ctx.stroke();var self=this;stars.forEach(function(star){var pos=starAltAz(star,self.state.date,self.state.time,self.state.lat,self.state.lon);if(pos.alt<0)return;var x=(pos.az/360)*w,y=(1-clamp(pos.alt/90,0,1))*(h-44*dpr)+9*dpr;var r=clamp((2.2-star.mag*.5)*dpr,1.4*dpr,3.2*dpr);ctx.shadowBlur=9*dpr;ctx.shadowColor="#dcecff";ctx.fillStyle="#f4f1dc";ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fill();ctx.shadowBlur=0;ctx.fillStyle="rgba(221,231,235,.82)";ctx.font=(11*dpr)+"px 'Segoe UI'";ctx.textAlign=x>w*.75?"right":"left";ctx.fillText(star.name,x+(x>w*.75?-6:6)*dpr,y-5*dpr)});ctx.fillStyle="rgba(205,220,229,.6)";ctx.font=(10*dpr)+"px 'Segoe UI'";ctx.textAlign="left";ctx.fillText("E",8*dpr,h-10*dpr);ctx.textAlign="center";ctx.fillText("S",w/2,h-10*dpr);ctx.textAlign="right";ctx.fillText("W",w-8*dpr,h-10*dpr)};
+    AstrolabeApp.prototype.loop=function(t){if(document.hidden){this.rafs[0]=requestAnimationFrame(this.loop.bind(this));return}if(t-this.lastFrame>40){this.drawAmbient(t);this.lastFrame=t}this.rafs[0]=requestAnimationFrame(this.loop.bind(this))};
+    AstrolabeApp.prototype.startTask=function(task){this.state.activeTask=task;document.querySelectorAll(".task-guide").forEach(function(g){g.classList.remove("show")});el("guide-"+task).classList.add("show");if(task==="qibla"){this.selectCity("cordoba",false);this.setFace("back");this.showPane("tasks");this.toast("Córdoba plate set. Align the alidade with the silver qibla index.")}else if(task==="time"){this.setFace("front");this.toast("Turn the rete until Altair reaches the meridian.")}else{this.setFace("front");this.toast("Find and touch the Vega pointer.")}this.checkTasks()};
+    AstrolabeApp.prototype.checkTasks=function(){var task=this.state.activeTask;if(!task)return;if(task==="qibla"){var q=qiblaBearing(this.state.lat,this.state.lon),dif=Math.abs(mod(this.state.alidade-q+180,360)-180);if(this.state.city==="cordoba"&&this.state.face==="back"&&dif<4)this.completeTask("qibla","Qibla bearing read: "+q.toFixed(1)+" degrees from true north.")}else if(task==="time"){var altair=stars[1],pos=starAltAz(altair,this.state.date,this.state.time,this.state.lat,this.state.lon);if(Math.abs(pos.hourAngle)<4)this.completeTask("time","Altair is on the meridian. The dial reads "+fmtTime(this.state.time)+" apparent solar time.")}};
+    AstrolabeApp.prototype.starSelected=function(id){var star=stars.find(function(s){return s.id===id}),pos=starAltAz(star,this.state.date,this.state.time,this.state.lat,this.state.lon);this.toast(star.name+" · "+star.arabic+" · "+(pos.alt>=0?pos.alt.toFixed(1)+" degrees above the horizon":"below the horizon"));if(this.state.activeTask==="vega"&&id==="vega")this.completeTask("vega","Vega found: al‑nasr al‑wāqiʿ, the descending eagle.")};
+    AstrolabeApp.prototype.completeTask=function(task,msg){if(this.state.completed[task])return;this.state.completed[task]=true;this.state.activeTask=null;el("task-"+task).classList.add("done");el("task-"+task).querySelector(".task-num").textContent="✓";el("task-"+task).querySelector("button").textContent="Reading complete";this.toast(msg);this.clickSound(1.4)};
+    AstrolabeApp.prototype.toast=function(msg){var t=el("toast");t.textContent=msg;t.classList.add("show");clearTimeout(this.toastTimer);this.toastTimer=setTimeout(function(){t.classList.remove("show")},3800)};
+    AstrolabeApp.prototype.ensureAudio=function(){if(this.audio)return;var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;this.audio=new AC();var osc=this.audio.createOscillator(),gain=this.audio.createGain(),filter=this.audio.createBiquadFilter();osc.type="sine";osc.frequency.value=68;filter.type="lowpass";filter.frequency.value=180;gain.gain.value=.0001;osc.connect(filter).connect(gain).connect(this.audio.destination);osc.start();this.ambienceGain=gain;this.audioNodes.push(osc,filter,gain)};
+    AstrolabeApp.prototype.toggleSound=function(){this.ensureAudio();if(!this.audio){this.toast("Audio is unavailable in this browser.");return}var self=this;this.audio.resume().then(function(){self.state.sound=!self.state.sound;var t=self.audio.currentTime;self.ambienceGain.gain.cancelScheduledValues(t);self.ambienceGain.gain.linearRampToValueAtTime(self.state.sound?.018:.0001,t+.8);el("soundBtn").textContent=self.state.sound?"Sound on":"Sound off";el("soundBtn").setAttribute("aria-pressed",String(self.state.sound));el("soundBtn").setAttribute("aria-label",self.state.sound?"Turn ambience off":"Turn ambience on");self.clickSound(.8)})};
+    AstrolabeApp.prototype.clickSound=function(strength){if(!this.audio||!this.state.sound)return;var o=this.audio.createOscillator(),g=this.audio.createGain(),t=this.audio.currentTime;o.type="triangle";o.frequency.setValueAtTime(240+strength*80,t);o.frequency.exponentialRampToValueAtTime(90,t+.045);g.gain.setValueAtTime(.028*strength,t);g.gain.exponentialRampToValueAtTime(.0001,t+.055);o.connect(g).connect(this.audio.destination);o.start(t);o.stop(t+.06);this.audioNodes.push(o,g);setTimeout(function(){try{o.disconnect();g.disconnect()}catch(_e){}},120)};
+    AstrolabeApp.prototype.destroy=function(){this.listeners.forEach(function(l){l.node.removeEventListener(l.type,l.fn,l.opts)});this.listeners=[];this.rafs.forEach(cancelAnimationFrame);this.rafs=[];clearTimeout(this.toastTimer);this.audioNodes.forEach(function(n){try{if(n.stop)n.stop();n.disconnect()}catch(_e){}});this.audioNodes=[];if(this.audio){try{this.audio.close()}catch(_e){}this.audio=null}this.ctx=this.skyCtx=null;this.dust=null};
+
+    window.__astrolabe=new AstrolabeApp();
+  })();
+  </script>
+</body>
+</html>
