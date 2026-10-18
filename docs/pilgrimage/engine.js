@@ -122,9 +122,9 @@ async function loadSection(sec) {
     await new Promise((r) => requestAnimationFrame(r));
     const group = new THREE.Group(); group.name = sec.id;
     const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s, c) => { const a = { p: new THREE.Vector3(x, y, z), s: s == null ? 1 : s, c: c || null, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
-      // a golden portal (portal.js), animated by the engine while the visitor is near
       // a section's own animation: fx = { group, update(dt) → true if it changed }, run while the visitor is within 25 m of (x,y,z)
       anim: (fx, x, y, z) => { S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y, z), fx }); return fx; },
+      // a golden portal (portal.js), animated by the engine while the visitor is near
       portal: (o, x, y, z, yaw) => { const fx = portal(o); fx.group.position.set(x, y, z); fx.group.rotation.y = yaw || 0; group.add(fx.group); S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y + 1.4, z), fx }); return fx; } };
     const out = (await mod.build(ctx)) || {};
     group.traverse((o) => { if (o.isMesh && o.userData.floor) S.floors.push(o); });
