@@ -115,6 +115,11 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   Sutra of 868 CE, the oldest dated printed book).
 - **Group-4 checkpoint (Late Antiquity):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
+- **ch21 Islam — expanded (2026-10-18).** The Dome of the Rock (691–692; the dated
+  anti-Trinitarian Qur'anic inscription; the contested founding motive); Islam as lived
+  (the jinn, the evil eye and *ruqya*, the *khamsa*, *ziyara* to saints' and Imams' tombs,
+  and Ibn Taymiyya's critique); and the *mihna* — the trial over the created Qur'an
+  (833–c. 851), Ibn Hanbal, and the caliph's failed bid for doctrinal authority.
 
 ## Gate
 Originally grouped as **Batch II**, a single review point separate from Batch I.
