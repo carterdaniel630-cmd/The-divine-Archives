@@ -20,6 +20,21 @@ Per the project sourcing standard, this citation log records the real, checkable
   [Wikipedia: Islamic ornament](https://en.wikipedia.org/wiki/Islamic_ornament); on the Kaaba and (late)
   crescent symbolism, standard reference overviews.
 
+*Batch II deepening (2026-10-18)*
+
+*The Dome of the Rock, the mihna, and lived Islam*
+- [Britannica: Dome of the Rock](https://www.britannica.com/topic/Dome-of-the-Rock);
+  [Smarthistory: The Dome of the Rock](https://smarthistory.org/?p=95121);
+  M. Milwright, *The Dome of the Rock and its Umayyad Mosaic Inscriptions* (Edinburgh, 2016); O. Grabar,
+  *The Shape of the Holy* (1996).
+- [Wikipedia: Mihna](https://en.wikipedia.org/wiki/Mihna);
+  [Encyclopedia.com: Mihna](https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/mihna);
+  P. Crone & M. Hinds, *God's Caliph* (1986).
+- Jinn: Qur'an 55:15, 18:50, 68:2, Sura 72. Evil eye and ruqya:
+  the hadith *al-'ayn haqq* in al-Bukhari and Muslim, as cited in [M. Akram Nadwi, "The evil eye"](https://akramnadwi.com/?p=2514); [Sahih Muslim, Book of Salutations (ruqya)](https://sunnah.com/muslim:2195a).
+  Ziyara and its critics: [Brandeis Crown Center paper on ziyara](https://www.brandeis.edu/crown/publications/papers/pdfs/cp2.pdf);
+  ["Historiography in the service of the mufti: Ibn Taymiyya on the origins and fallacies of ziyarat," *Islamic Law and Society* (2019)](https://cris.iucc.ac.il/en/publications/historiography-in-the-service-of-the-mufti-ibn-taymiyya-on-the-or-2/).
+
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica-level overviews,
 The Met, sourced encyclopedic entries, and the mainstream historical-critical scholarship they summarize)
 rather than memory alone, per the project standard. Following the archive's evidence-honesty rule and the

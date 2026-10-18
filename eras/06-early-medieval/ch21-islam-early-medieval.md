@@ -84,6 +84,37 @@ much later, gradual crystallization of the Qur'an and of Islam itself; the early
 have tempered the most radical versions of that thesis, though lively scholarly debate about the
 details continues.
 
+## The first stone testament: the Dome of the Rock
+
+The earliest great monument of Islam still stands. On the rocky summit of the Temple Mount in
+Jerusalem — the site of the vanished Jewish Temple (Chapter 10) — the Umayyad caliph **Abd al-Malik**
+raised the **Dome of the Rock**, whose own dedicatory inscription gives its completion as **72 AH
+(691–692 CE)**. It is generally reckoned the **oldest surviving Islamic monument**, and it is not a
+mosque but a shrine: an **octagon** wrapped around a bare outcrop of rock, crowned by a gilded dome,
+built in the form of a **Byzantine martyrium** (a Christian shrine-church for a holy place or relic)
+and clad in mosaics by craftsmen of the Byzantine tradition. A new faith, in other words, announced
+itself in the visual language of the empire it had just defeated.
+
+What it announced is written on its walls. A long band of gold-on-green **mosaic inscription** runs
+around the inner arcade, and it is among the **earliest dated Islamic religious texts** we possess —
+passages now found in the Qur'an, woven with invocations of God and the Prophet. Much of it is addressed
+pointedly to **Christians**: *"O People of the Book, do not go to extremes in your religion... The
+Messiah, Jesus son of Mary, was only a messenger of God... Do not say 'Three'"* (Qur'an 4:171), together
+with the declaration that God *"neither begets nor is begotten"* (Sura 112). Set in a city of churches,
+the building is a public, dated statement of **tawhid** against the Trinity — physical evidence of what
+the young faith was saying about itself only some sixty years after Muhammad. (One later detail is a
+small lesson in reading inscriptions: the Abbasid caliph **al-Ma'mun** had Abd al-Malik's name replaced
+with his own, but his workmen left the original **date** untouched, which betrays the substitution.)
+
+*A contested point:* **why** Abd al-Malik built it is debated. Later Muslim tradition tied the rock to
+Muhammad's **Night Journey** (*isra* and *mi'raj*, Qur'an 17:1) — the miraculous journey to "the
+farthest mosque" and ascent through the heavens — and that association is now central to its meaning.
+Art historians such as Oleg Grabar read the building chiefly as a triumphant statement aimed at
+Jerusalem's Christians; the ninth-century historian al-Ya'qubi claimed it was meant to draw pilgrims
+away from Mecca, then held by the rival caliph Ibn al-Zubayr — a claim other scholars (notably
+S. D. Goitein) dismiss as later anti-Umayyad polemic. The building is secure; its founder's intent
+remains open.
+
 ## The oneness of God, and the six beliefs
 
 The heart of Islam is **tawhid** — the absolute, uncompromising **oneness of God**. God is one,
@@ -117,6 +148,42 @@ Islamic practice rests on the **Five Pillars**, the acts that structure a Muslim
 
 The very word **Islam** means "submission" (to God), and a **Muslim** is "one who submits."
 
+## Islam as lived: jinn, the eye, and the saints
+
+The Pillars describe the faith as the law prescribes it; ordinary Muslims also lived in a world thick
+with unseen beings and powers, much of it inherited from pre-Islamic Arabia and sanctioned, in part, by
+scripture itself.
+
+**The jinn.** Arabia before Islam believed in the **jinn**, spirits of the desert and the waste places;
+poets were said to be inspired by them, and Muhammad's opponents called him *majnun*, "jinn-possessed"
+— a charge the Qur'an expressly denies (68:2). Islam did not abolish the jinn; it **converted** them. The
+Qur'an says they were created from **"smokeless fire"** (55:15), as humans were from clay; that, like
+humans, they have free will and will be judged; and an entire sura (72, *al-Jinn*) recounts a band of
+jinn who overheard the Qur'an and believed. **Iblis**, the devil who refused to bow to Adam, is himself
+described as one of the jinn (18:50). Belief in jinn — and in possession, and its cure by Qur'anic
+recitation — has remained a living part of Muslim religious life from Morocco to Indonesia.
+
+**The evil eye.** A hadith found in both of the great Sunni collections states plainly that **"the evil
+eye is real"** (*al-'ayn haqq*). The remedy taught in the same literature is not a charm but recitation:
+**ruqya**, protective prayer, above all the last two suras of the Qur'an, the *mu'awwidhatayn* ("the two
+seeking refuge"), which ask refuge "from the evil of the envier when he envies" (113:5). Alongside this
+scriptural remedy ran a vast **material** culture of protection — written amulets bearing Qur'anic verses,
+blue beads, and the hand-shaped *khamsa* (popularly the "Hand of Fatima"), a device with roots in the
+pre-Islamic Mediterranean world that Muslim, Jewish, and Christian communities of North Africa and the
+Levant all used. Whether such objects are legitimate has itself been argued among Muslim scholars for
+centuries.
+
+**The saints and their tombs.** Visiting graves to pray for the dead was sanctioned early; out of it grew
+**ziyara**, the "visit" to the tombs of holy men and women, of the Prophet's family, and — for the Shia —
+of the **Imams**, above all Husayn at Karbala. Pilgrims asked the saint's blessing (*baraka*) and
+intercession. The practice became, in later centuries, one of the most widespread forms of Muslim piety
+(and is taken up with Sufism in Chapter 27); it also drew sharp critics, most famously the Hanbali jurist
+**Ibn Taymiyya** (d. 1328), who condemned seeking intercession at tombs — a position that many Sunni
+scholars of his own day rejected, and that reformist movements revived much later. *An honesty note:* the
+line scholars once drew between a "high," textual Islam and a "low," popular one is now itself contested;
+jinn, the eye, and ruqya all have warrant in the canonical texts, and most Muslims through history have
+not experienced these as two separate religions.
+
 ## The children of Abraham
 
 Islam understands itself not as a new religion but as the **restoration of the original,
@@ -143,6 +210,28 @@ discipline of **fiqh** (jurisprudence). Several great **schools of law** (*madhh
 in Sunni Islam the **Hanafi, Maliki, Shafi'i, and Hanbali** — each a valid tradition of
 interpretation. Islam thus became, like Rabbinic Judaism (Chapter 19), a profoundly **legal and
 textual** civilization, in which knowing how to live rightly was itself the central religious science.
+
+## The trial of the created Qur'an
+
+Was the Qur'an **created** by God, or is it, like God's own attributes, **eternal and uncreated**? The
+question sounds abstract; in the ninth century it put scholars in chains. A rationalist school of
+theology, the **Mu'tazila**, insisted on God's absolute unity and justice and on human free will, and
+argued that an eternal Qur'an beside God would compromise *tawhid*: the Book must therefore be
+**created**. The Abbasid caliph **al-Ma'mun** — patron of the great translation movement — adopted the
+doctrine and, in **833**, ordered his judges and the scholars of hadith to be **examined** on it. This
+was the ***mihna*** (the "trial," often called the Islamic inquisition). Most of those questioned
+conformed. The most famous refuser was the Baghdad traditionist **Ahmad ibn Hanbal**, founder of the
+Hanbali school, who by Sunni tradition endured imprisonment and **flogging** rather than affirm a created
+Qur'an. The policy outlived al-Ma'mun under two successors and was abandoned under **al-Mutawakkil**
+(c. 848–851).
+
+The outcome shaped Islam permanently. The **uncreated** Qur'an became the Sunni orthodox position (the
+belief the chapter states above is, historically, the winning side of this fight); the Mu'tazila
+declined, though their rationalism lived on in Shia (especially Zaydi and Twelver) theology; and — the
+point historians stress — the caliph's bid to define doctrine **failed**. Religious authority passed
+durably to the scholars (*'ulama*) rather than the ruler, a division between caliph and clergy that
+historians such as Patricia Crone and Martin Hinds have traced to this very contest, though how much the
+*mihna* *caused* that division, rather than revealed it, is still debated.
 
 ## The great schism: Sunni and Shia
 
@@ -236,6 +325,15 @@ of the faith across Africa, Asia, and eventually the world.
 - The core structures of the faith — **tawhid**, the **Five Pillars**, the **six articles**, the
   development of **hadith**, **Sharia**, and the schools of law, and the **Sunni–Shia** split rooted in
   the succession dispute and sealed at **Karbala** (680).
+- The **Dome of the Rock** (completed 691–692 by Abd al-Malik), the oldest surviving Islamic monument,
+  whose dated mosaic inscription quotes Qur'anic passages (e.g. 4:171, Sura 112) aimed at Christian
+  doctrine — early physical evidence of the faith's self-presentation.
+- The ***mihna*** (from 833): al-Ma'mun's examination of scholars on the **created Qur'an**, Ahmad ibn
+  Hanbal's refusal, and its abandonment under al-Mutawakkil (c. 848–851), after which the uncreated
+  Qur'an became Sunni orthodoxy.
+- The scriptural warrant for **jinn** (55:15; Sura 72), the hadith "the evil eye is real," protective
+  recitation (*ruqya*, the *mu'awwidhatayn*), and the long history of **ziyara** to saints' and Imams'
+  tombs, together with learned criticism of it (Ibn Taymiyya).
 
 **What's not supported by the evidence (as history)**
 
@@ -254,6 +352,11 @@ of the faith across Africa, Asia, and eventually the world.
 - The **historical reliability** of specific episodes in the *sira* and specific hadith.
 - The original meaning of the Qur'an's **disconnected letters** (*muqatta'at*) — unknown to scholarship
   and to much of the tradition alike.
+- **Why** Abd al-Malik built the Dome of the Rock (a statement to Christians; a rival to Zubayrid Mecca,
+  per al-Ya'qubi; or a Night Journey shrine from the start) — and how far the *mihna* caused, rather than
+  revealed, the split between caliphal and scholarly authority.
+- Whether jinn, the evil eye, or saintly intercession are **real** is a matter of faith, not history;
+  where the line between "scriptural" and "popular" Islam should be drawn is itself a scholarly debate.
 
 ---
 
@@ -274,6 +377,19 @@ of the faith across Africa, Asia, and eventually the world.
 - [The Met: Geometric Patterns in Islamic Art](https://www.metmuseum.org/essays/geometric-patterns-in-islamic-art);
   [Wikipedia: Islamic ornament](https://en.wikipedia.org/wiki/Islamic_ornament); on the Kaaba and (late)
   crescent symbolism, standard reference overviews.
+
+*The Dome of the Rock, the mihna, and lived Islam*
+- [Britannica: Dome of the Rock](https://www.britannica.com/topic/Dome-of-the-Rock);
+  [Smarthistory: The Dome of the Rock](https://smarthistory.org/?p=95121);
+  M. Milwright, *The Dome of the Rock and its Umayyad Mosaic Inscriptions* (Edinburgh, 2016); O. Grabar,
+  *The Shape of the Holy* (1996).
+- [Wikipedia: Mihna](https://en.wikipedia.org/wiki/Mihna);
+  [Encyclopedia.com: Mihna](https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/mihna);
+  P. Crone & M. Hinds, *God's Caliph* (1986).
+- Jinn: Qur'an 55:15, 18:50, 68:2, Sura 72. Evil eye and ruqya:
+  the hadith *al-'ayn haqq* in al-Bukhari and Muslim, as cited in [M. Akram Nadwi, "The evil eye"](https://akramnadwi.com/?p=2514); [Sahih Muslim, Book of Salutations (ruqya)](https://sunnah.com/muslim:2195a).
+  Ziyara and its critics: [Brandeis Crown Center paper on ziyara](https://www.brandeis.edu/crown/publications/papers/pdfs/cp2.pdf);
+  ["Historiography in the service of the mufti: Ibn Taymiyya on the origins and fallacies of ziyarat," *Islamic Law and Society* (2019)](https://cris.iucc.ac.il/en/publications/historiography-in-the-service-of-the-mufti-ibn-taymiyya-on-the-or-2/).
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica-level overviews,
 The Met, sourced encyclopedic entries, and the mainstream historical-critical scholarship they summarize)
