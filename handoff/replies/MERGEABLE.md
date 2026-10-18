@@ -12,7 +12,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Waiting to qualify (not mergeable, and what is still missing)
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
-| Graphify fix (no vendor code in the map) + standards board, first version (Item 29) | `loop/graphify-board` @ `b0896a6`, PR #65 (supersedes #61) | Yes: same files as `cfb1204`, compared line for line; local checks green (review-checks 9/9, 0 warnings; 17 verify; 42/42 tests) | Carter's yes: given (`approval-2026-10-18-graphify-merge.md`). Still missing: independent review by a run that did not make the branch (the 2026-10-18 ~17:00 run made it); every GitHub check green on `b0896a6`, Lighthouse included |
+| Graphify fix (no vendor code in the map) + standards board, first version (Item 29) | `loop/graphify-board` @ `b0896a6`, PR #65 (supersedes #61) | Yes: same files as `cfb1204`, compared line for line; local checks green (review-checks 9/9, 0 warnings; 17 verify; 42/42 tests) | Carter's yes: given (`approval-2026-10-18-graphify-merge.md`). Still missing: independent review by a run that did not make the branch (the 2026-10-18 ~17:00 run made it); (GitHub checks on `b0896a6`: all 7 completed green at 17:00 UTC. Lighthouse does not run on this PR by design: `lighthouse.yml` only triggers on `docs/**` and its own tools, and this PR changes none, so there is no Lighthouse result to wait for) |
 
 ## Merged
 - Site batch B (PR #63): merged 2026-10-18 16:51 UTC by fast-forward to `c205f4c`, deploy green (`2026-10-18-batch-b-update-review-and-merge.md`).
