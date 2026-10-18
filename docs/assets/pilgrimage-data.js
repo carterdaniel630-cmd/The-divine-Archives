@@ -74,7 +74,7 @@
     {"id":"dome-of-the-rock","name":"Dome of the Rock","era":"05-late-antiquity","label":"S","chapters":["ch21"],"vault":[],"status":"queued"},
     {"id":"kaaba","name":"Kaaba","era":"05-late-antiquity","label":"S","chapters":["ch21","ch70"],"vault":["v26"],"status":"queued"},
     {"id":"great-mosque-of-cordoba","name":"Great Mosque of Córdoba","era":"06-early-medieval","label":"","chapters":["ch21"],"vault":[],"status":"queued"},
-    {"id":"borobudur","name":"Borobudur","era":"06-early-medieval","label":"","chapters":["ch20","ch53"],"vault":[],"status":"queued"},
+    {"id":"borobudur","name":"Borobudur","era":"06-early-medieval","label":"","chapters":["ch20","ch53"],"vault":["v46"],"status":"preview","pending":true,"place":"Central Java, Indonesia","built":"late 8th to mid 9th century CE","blurb":"Climb the east stairs where the pilgrim’s way begins, walk the first gallery clockwise between carved panels, rise through the galleries to the round terraces of perforated stupas, and switch on the line to Pawon and Mendut.","note":"The base, the three parts of the monument and the number of stupas come from published figures; the heights of the levels, the terraces’ sizes and the stairs are approximate, the reliefs are our own simple outlines and the statues plain stand-ins;"},
     {"id":"kailasa-temple-ellora","name":"Kailasa Temple, Ellora","era":"06-early-medieval","label":"","chapters":["ch24","ch30","ch69"],"vault":[],"status":"queued"},
     {"id":"jokhang-temple","name":"Jokhang Temple","era":"06-early-medieval","label":"","chapters":["ch53"],"vault":[],"status":"queued"},
     {"id":"lindisfarne","name":"Lindisfarne","era":"06-early-medieval","label":"","chapters":["ch22","ch14"],"vault":["v42"],"status":"queued"},

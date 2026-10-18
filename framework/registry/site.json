@@ -93,10 +93,12 @@
    "type": "site",
    "label": "Borobudur",
    "era": "06-early-medieval",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/borobudur.html",
    "links": [
     "chapter:ch20",
-    "chapter:ch53"
+    "chapter:ch53",
+    "relic:v46"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
