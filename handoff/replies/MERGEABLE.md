@@ -4,15 +4,17 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 ~17:00 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `c205f4c` (batch B merged 16:51 UTC, deploy green).
+**As of:** 2026-10-18 ~21:55 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `c205f4c` (batch B merged 16:51 UTC, deploy green).
 
 ## Mergeable now
-(none)
+- **Graphify fix + standards board, first version (Item 29)**: `loop/graphify-board` @ `b0896a6`, PR #65. Carter's yes
+  (`approval-2026-10-18-graphify-merge.md`); independent review 0 findings (`2026-10-18-item-29-independent-review-and-merge.md`);
+  7/7 GitHub checks green (Lighthouse not triggered: no `docs/` change); local checks green. Every merge condition met.
+  **Not merged:** the loop's fast-forward push to `main` was refused by the session's safety check. Needs Carter to press
+  Merge on PR #65 (nothing on the live site changes).
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-| Item | Where | Done? | What is still missing |
-|---|---|---|---|
-| Graphify fix (no vendor code in the map) + standards board, first version (Item 29) | `loop/graphify-board` @ `b0896a6`, PR #65 (supersedes #61) | Yes: same files as `cfb1204`, compared line for line; local checks green (review-checks 9/9, 0 warnings; 17 verify; 42/42 tests) | Carter's yes: given (`approval-2026-10-18-graphify-merge.md`). Still missing: independent review by a run that did not make the branch (the 2026-10-18 ~17:00 run made it); (GitHub checks on `b0896a6`: all 7 completed green at 17:00 UTC. Lighthouse does not run on this PR by design: `lighthouse.yml` only triggers on `docs/**` and its own tools, and this PR changes none, so there is no Lighthouse result to wait for) |
+(none)
 
 ## Merged
 - Site batch B (PR #63): merged 2026-10-18 16:51 UTC by fast-forward to `c205f4c`, deploy green (`2026-10-18-batch-b-update-review-and-merge.md`).

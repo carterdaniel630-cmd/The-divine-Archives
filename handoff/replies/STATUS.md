@@ -1,14 +1,19 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-18 ~17:00 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
-`correction-*.md` / `order-*.md` to date, `nudge-2026-10-18-0832.md`. **Deployed (`main`):** `c205f4c` = batch A + museum
+**As of:** 2026-10-18 ~21:55 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+`correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`,
+`briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`. **Deployed (`main`):** `c205f4c` = batch A + museum
 phone speed (#62) + batch B (#63), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
-**Branches:** `loop/graphify-board` = PR #65 (Item 29, `b0896a6`). `loop/journal-hero-redesign` = PR #60 (on hold for
-Carter's selfie). `staging/ready-line` carries `handoff/`.
-**Loop:** RUNNING. **Items per run (Item 32):** this run finished 3 — batch B reviewed and merged, Item 29 put on its own
-branch with PR #65, auditor/verifier health check reported — in one run, with the lock folded into the work commit.
+**Branches:** `loop/graphify-board` = PR #65 (Item 29, `b0896a6`, reviewed, every merge condition met, not merged).
+`loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `staging/ready-line` carries `handoff/`.
+**Loop:** RUNNING.
 
 ## Done
+- 2026-10-18 ~21:55: **PR #65 (Item 29) independently reviewed**: 0 findings; same files as the approved `cfb1204`; clean
+  build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, board page headless at phone size clean; 7/7 GitHub
+  checks green (Lighthouse not triggered by design). **Merge refused** by this session's safety check on the push to
+  `main`; not retried another way. `main` unchanged. Carter can press Merge on PR #65 (reply
+  `2026-10-18-item-29-independent-review-and-merge.md`).
 - 2026-10-18 ~17:00: **Batch B merged** (PR #63, fast-forward to `c205f4c`, deploy run 193 green). Independent review
   of the updated head by a run that made neither the site changes nor the update: site diff identical to the reviewed
   `aeda5d4`; build reproduces byte for byte; review-checks 9/9 (1 known warning: Pantheon `ra` not pending, for Carter's
@@ -49,23 +54,24 @@ branch with PR #65, auditor/verifier health check reported — in one run, with 
 ## In progress
 - (none)
 
-## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`)
-1. **Merge PR #65, Item 29** (Carter approved): a run that did not make the branch (not the ~17:00 run) reviews
-   `origin/main...b0896a6` against `reviews/REVIEWER.md` and confirms it matches `cfb1204`; waits (without the lock) for every
-   GitHub check incl. Lighthouse; local checks; fast-forward; confirm deploy; update CURRENT and MERGEABLE.
-2. **Hit-feel on the other games now** (Carter, Item 31 #5; value 3): impact and game feel on the existing games, most
-   played first; respect reduced motion.
-3. **Reduced motion respected everywhere** (Item 31 #6; value 3): every game, museum room and exhibit honours the phone's
-   setting; fix any that override it.
-4. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
-5. **Small defects, part 2, the rest** (handoff previews, not live): zodiac `dispose()` clears only its own host; Oracle Bones
-   wording; Google Fonts out of the Oracle Bones and Library Rescue exhibits; Grimoire note, Gardnerian label, lore flags.
-   Commit on `staging/ready-line` (handoff only).
-6. **Item 29, Graphify tie-in, rest:** query the map before touching code; keep the standards board current.
-7. **Fix package (§7)**, relic by relic, most visible rooms first.
-8. **Spirit Board rename** (Item 31 #4) of the Ouija preview; chapter text about the historical product stays factual.
-9. **Errata page in the Vault** (Item 31 #3): prepare only; publishing needs Carter.
-10. **Protection charter D4** check; **Debate Hall preview safety**; larger items (folded list §B rows 14–24).
+## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
+1. **Hit-feel on the other games now** (Item 31 #5; value 3): impact and game feel on the existing games, most played
+   first; respect reduced motion. Build on a `loop/*` branch; merging needs Carter's yes on the item.
+2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
+   tablet, Crown of the Kandake, Etruscan mirror, staged in `handoff/previews/`. Analyze and rebuild better to the Relic
+   Standard, one per run. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
+3. **Find Carter's selfie in the repo** (13:30 nudge, Item 27): a real search (images in every branch and `handoff/`).
+   Found → Option A Journal hero (face stays his). Not found → STOP and ask Carter; never invent a face.
+4. **Reduced motion respected everywhere** (Item 31 #6; value 3).
+5. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
+6. **Fix package (§7)**, relic by relic, most visible rooms first.
+7. **Small defects, part 2, the rest** (handoff previews): zodiac `dispose()`; Oracle Bones wording; Google Fonts out of
+   two exhibits; Grimoire note, Gardnerian label, lore flags.
+8. **Item 29, rest:** update `handoff/standards/board.json` statuses (batch B, museum speed now merged); query the map
+   before touching code.
+9. **Spirit Board rename** (Item 31 #4); **Errata page** (Item 31 #3, prepare only); **Protection charter D4** check;
+   **Debate Hall preview safety**; larger items (folded list §B rows 14–24).
+- Waiting on Carter: **merge PR #65** (see Needs Carter 1).
 - Scheduled: on or after **2027-01-15**, remove the old-id table on a side branch.
 
 ## Parked / on hold (do not build)
@@ -73,11 +79,13 @@ branch with PR #65, auditor/verifier health check reported — in one run, with 
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
-1. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; details in `2026-10-18-auditor-verifier-health.md`).
+1. **PR #65 (Graphify fix + standards board) is ready but the loop could not merge it.** Every check passed and you
+   already said yes; the session blocked the final push. Options: **A** (recommended) open PR #65 on GitHub and tap
+   "Merge"; **B** tell a Claude chat "merge PR #65"; **C** leave it. Nothing on the live site changes either way.
+2. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
    Options: **A** (recommended) the loop also saves each independent review to the review log and runs the weekly audit
-   steps; **B** you attach the repository to the two scheduled tasks in the Claude app; **C** also merge PR #58, the alarm
-   that emails you when a review run saves nothing (after review and green checks).
-2. **Your selfie for the Journal hero** (Item 27). Send it in a chat with Claude: "add it to the repo for the Journal hero".
-3. **Batch review, now live:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry.
-4. Museum speed is live: open the museum on your phone and say if it feels smoother or blurrier
+   steps; **B** you attach the repository to the two scheduled tasks in the Claude app; **C** also merge PR #58.
+3. **Your selfie for the Journal hero** (Item 27), if the repo search (Next 3) does not find it.
+4. **Batch review, now live:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry.
+5. Museum speed is live: open the museum on your phone and say if it feels smoother or blurrier
    (`the-divine-archives.pages.dev/museum.html?fps=1#ch02` shows the frame rate).
