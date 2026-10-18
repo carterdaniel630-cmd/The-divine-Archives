@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The Scythian Gold Stag — Relic Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0; font-family: Georgia, 'Times New Roman', serif; }
+  #page { max-width: 900px; margin: 0 auto; padding: 16px 14px 40px; }
+  h1 { font-size: 26px; font-weight: normal; letter-spacing: .04em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 14px; font-size: 15px; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #050403; border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #stage.grabbing { cursor: grabbing; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 2; }
+  #veil.hidden { display: none; }
+  #fail { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9; background: #1a0808; border-radius: 6px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px; padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13px; font-style: italic; margin: 4px 0 14px; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px; line-height: 1.6; margin-bottom: 12px; }
+  .card h2 { font-size: 19px; font-weight: normal; color: #f3d58c; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: #e8d9b0; margin-bottom: 8px; }
+  .card .label { color: #b98f4e; font-style: italic; font-size: 14px; }
+  .honesty { border-left: 3px solid #c9a24b; padding: 10px 14px; background: #171106; border-radius: 0 8px 8px 0; font-style: italic; color: #e6c27a; font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>The Scythian Gold Stag</h1>
+  <p class="sub">After the Kostromskaya stag plaque tradition (Kuban, 6th c. BCE) &middot; a modelled rendition, not a replica</p>
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Raising the stag&hellip;</div>
+  </div>
+  <div class="bar" id="viewBar">
+    <button id="btnFull" class="active">Full view</button>
+    <button id="btnAntler">Zoom: antler curls</button>
+    <button id="btnLegs">Zoom: folded legs</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn it &middot; scroll or pinch to zoom</p>
+  <div class="honesty">&ldquo;After the Kostromskaya stag plaque tradition. Animal style is stylized by design &mdash; the curls are the art, not a photograph of a deer.&rdquo;</div>
+  <div class="bar" id="infoBar">
+    <button id="btnStyle">How the animal style works</button>
+    <button id="btnMeaning">What the stag meant</button>
+    <button id="btnAbout">About this piece</button>
+  </div>
+  <div class="card" id="infoCard"></div>
+  <div id="fail"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+  function showFail(msg) {
+    fail.style.display = 'block';
+    fail.textContent = msg;
+    veil.classList.add('hidden');
+  }
+  if (typeof THREE === 'undefined') { showFail('The 3D engine did not load. Reload the page to try again.'); return; }
+
+  var canvas = document.getElementById('stage');
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+  } catch (e) { showFail('This device could not start 3D. The description below still tells the full story.'); return; }
+  var isPhone = Math.min(window.innerWidth, window.innerHeight) < 700;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isPhone ? 1.5 : 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050403);
+
+  var camera = new THREE.PerspectiveCamera(38, 4 / 3, 0.1, 60);
+
+  // ---- candlelit archive lighting (gold needs warm direct light) ----
+  scene.add(new THREE.AmbientLight(0x2a1c0e, 1.0));
+  var key = new THREE.DirectionalLight(0xffd9a0, 1.25);
+  key.position.set(3, 4, 5);
+  key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  key.shadow.camera.left = -4; key.shadow.camera.right = 4;
+  key.shadow.camera.top = 4; key.shadow.camera.bottom = -2;
+  scene.add(key);
+  var candleL = new THREE.PointLight(0xff9a3c, 1.5, 12); candleL.position.set(-3, 1.8, 2.2); scene.add(candleL);
+  var candleR = new THREE.PointLight(0xffb060, 1.1, 12); candleR.position.set(3, 1.2, -1.5); scene.add(candleR);
+  var rim = new THREE.DirectionalLight(0x9fb0da, 0.35); rim.position.set(-2, 3, -4); scene.add(rim);
+  var under = new THREE.PointLight(0xffd9a0, 0.35, 8); under.position.set(0, -1.5, 2.5); scene.add(under);
+
+  // ---- materials ----
+  var goldMat   = new THREE.MeshStandardMaterial({ color: 0xd4af5a, roughness: 0.3,  metalness: 0.9 });
+  var goldDeep  = new THREE.MeshStandardMaterial({ color: 0xbd8c33, roughness: 0.38, metalness: 0.85 });
+  var goldBright= new THREE.MeshStandardMaterial({ color: 0xe8c268, roughness: 0.26, metalness: 0.92 });
+  var inciseMat = new THREE.MeshStandardMaterial({ color: 0x2a1a0c, roughness: 0.9,  metalness: 0.05 });
+  var eyeMat    = new THREE.MeshStandardMaterial({ color: 0x1a0e04, roughness: 0.4,  metalness: 0.2 });
+  var greenMat  = new THREE.MeshStandardMaterial({ color: 0x14301f, roughness: 0.85, metalness: 0.1 });
+  var boneMat   = new THREE.MeshStandardMaterial({ color: 0xd9c9a3, roughness: 0.7,  metalness: 0.05 });
+
+  var disposables = [];
+  function track(x) { disposables.push(x); return x; }
+  function extrude(shape, depth, mat) {
+    var g = track(new THREE.ExtrudeGeometry(shape, {
+      depth: depth, bevelEnabled: true, bevelThickness: 0.045, bevelSize: 0.045,
+      bevelSegments: 2, curveSegments: 24
+    }));
+    var m = new THREE.Mesh(g, mat);
+    m.castShadow = true; m.receiveShadow = true;
+    return m;
+  }
+  function tube(points, radius, mat, segs) {
+    var curve = track(new THREE.CatmullRomCurve3(points));
+    var g = track(new THREE.TubeGeometry(curve, segs || 64, radius, 8, false));
+    var m = new THREE.Mesh(g, mat);
+    m.castShadow = true;
+    return m;
+  }
+
+  var stag = new THREE.Group();
+  scene.add(stag);
+
+  // ---- backing plaque: deep steppe green with a bone inlay rim ----
+  function roundedRect(path, x, y, w, h, r) {
+    path.moveTo(x + r, y);
+    path.lineTo(x + w - r, y); path.quadraticCurveTo(x + w, y, x + w, y + r);
+    path.lineTo(x + w, y + h - r); path.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    path.lineTo(x + r, y + h); path.quadraticCurveTo(x, y + h, x, y + h - r);
+    path.lineTo(x, y + r); path.quadraticCurveTo(x, y, x + r, y);
+    return path;
+  }
+  var backShape = roundedRect(new THREE.Shape(), -2.35, -0.55, 4.2, 3.05, 0.28);
+  var backing = extrude(backShape, 0.10, greenMat);
+  backing.position.z = -0.16;
+  stag.add(backing);
+  var rimShape = roundedRect(new THREE.Shape(), -2.35, -0.55, 4.2, 3.05, 0.28);
+  rimShape.holes.push(roundedRect(new THREE.Path(), -2.24, -0.44, 3.98, 2.83, 0.22));
+  var boneRim = extrude(rimShape, 0.12, boneMat);
+  boneRim.position.z = -0.16;
+  stag.add(boneRim);
+
+  // ---- torso: reclining body, back arched, chest at left ----
+  var torso = new THREE.Shape();
+  torso.moveTo(-0.95, 0.40);
+  torso.quadraticCurveTo(-0.55, 0.88, 0.10, 0.90);
+  torso.quadraticCurveTo(0.75, 0.88, 1.05, 0.55);
+  torso.quadraticCurveTo(1.22, 0.30, 1.02, 0.12);
+  torso.quadraticCurveTo(0.60, -0.02, 0.05, 0.04);
+  torso.quadraticCurveTo(-0.55, 0.08, -0.95, 0.28);
+  torso.quadraticCurveTo(-1.02, 0.34, -0.95, 0.40);
+  stag.add(extrude(torso, 0.26, goldMat));
+
+  // ---- neck and head, held alert, muzzle to the left ----
+  var neck = new THREE.Shape();
+  neck.moveTo(-0.72, 0.42);
+  neck.quadraticCurveTo(-1.05, 0.85, -1.30, 1.25);
+  neck.quadraticCurveTo(-1.38, 1.42, -1.55, 1.48);
+  neck.quadraticCurveTo(-1.78, 1.52, -1.82, 1.40);
+  neck.quadraticCurveTo(-1.84, 1.30, -1.68, 1.26);
+  neck.quadraticCurveTo(-1.50, 1.22, -1.42, 1.10);
+  neck.quadraticCurveTo(-1.20, 0.80, -0.95, 0.50);
+  neck.quadraticCurveTo(-0.85, 0.42, -0.72, 0.42);
+  stag.add(extrude(neck, 0.30, goldMat));
+
+  // ---- ear ----
+  var ear = new THREE.Shape();
+  ear.moveTo(-1.32, 1.48);
+  ear.lineTo(-1.24, 1.72);
+  ear.lineTo(-1.12, 1.50);
+  ear.closePath();
+  var earMesh = extrude(ear, 0.12, goldDeep);
+  earMesh.position.z = 0.20;
+  stag.add(earMesh);
+
+  // ---- eye: dark inset ----
+  var eye = new THREE.Mesh(track(new THREE.SphereGeometry(0.038, 16, 12)), eyeMat);
+  eye.position.set(-1.585, 1.375, 0.33);
+  stag.add(eye);
+
+  // ---- folded legs (capsules layered beneath the torso) ----
+  function capsule(x1, y1, x2, y2, r) {
+    var pts = [];
+    var dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
+    var ux = dx / len, uy = dy / len, nx = -uy, ny = ux;
+    var N = 10, i, a;
+    for (i = 0; i <= N; i++) { // front cap bulging along +u
+      a = -Math.PI / 2 + (i / N) * Math.PI;
+      pts.push([x2 + r * (Math.cos(a) * ux + Math.sin(a) * nx),
+                y2 + r * (Math.cos(a) * uy + Math.sin(a) * ny)]);
+    }
+    for (i = 0; i <= N; i++) { // back cap bulging along -u
+      a = Math.PI / 2 + (i / N) * Math.PI;
+      pts.push([x1 + r * (Math.cos(a) * ux + Math.sin(a) * nx),
+                y1 + r * (Math.cos(a) * uy + Math.sin(a) * ny)]);
+    }
+    var s = new THREE.Shape();
+    s.moveTo(pts[0][0], pts[0][1]);
+    for (i = 1; i < pts.length; i++) s.lineTo(pts[i][0], pts[i][1]);
+    s.closePath();
+    return s;
+  }
+  stag.add(extrude(capsule(-0.80, 0.30, -0.28, 0.10, 0.11), 0.20, goldDeep));
+  stag.add(extrude(capsule(-0.02, 0.28,  0.44, 0.10, 0.11), 0.20, goldDeep));
+  stag.add(extrude(capsule( 0.48, 0.30,  0.96, 0.10, 0.12), 0.20, goldDeep));
+
+  // ---- antlers: beam sweeping back, tines ending in animal-style spirals ----
+  function spiral(cx, cy, z, r0, turns, dir) {
+    var pts = [], steps = 44, i;
+    for (i = 0; i <= steps; i++) {
+      var f = i / steps;
+      var t = f * turns * Math.PI * 2;
+      var r = r0 * (1 - 0.72 * f);
+      pts.push(new THREE.Vector3(cx + dir * r * Math.cos(t), cy + r * Math.sin(t), z));
+    }
+    return pts;
+  }
+  var AZ = 0.36; // antler relief height
+  var beamPts = [
+    new THREE.Vector3(-1.44, 1.60, AZ),
+    new THREE.Vector3(-1.02, 1.96, AZ),
+    new THREE.Vector3(-0.34, 2.06, AZ),
+    new THREE.Vector3( 0.42, 1.92, AZ),
+    new THREE.Vector3( 0.98, 1.62, AZ)
+  ];
+  stag.add(tube(beamPts, 0.038, goldBright, 80));
+
+  function tine(bx, by, tx, ty, spiralR, dir) {
+    var start = new THREE.Vector3(bx, by, AZ);
+    var mid = new THREE.Vector3((bx + tx) / 2 + 0.06 * dir, (by + ty) / 2 + 0.10, AZ);
+    var tip = new THREE.Vector3(tx, ty, AZ);
+    var curve = track(new THREE.QuadraticBezierCurve3(start, mid, tip));
+    var g = track(new THREE.TubeGeometry(curve, 32, 0.030, 8, false));
+    var m = new THREE.Mesh(g, goldBright); m.castShadow = true;
+    stag.add(m);
+    // spiral curl growing out of the tip
+    var cx = tx - dir * spiralR, cy = ty;
+    var sp = tube(spiral(cx, cy, AZ, spiralR, 1.6, dir), 0.026, goldBright, 48);
+    stag.add(sp);
+  }
+  tine(-0.88, 1.99, -1.30, 2.30, 0.13, -1);  // front tine curls back
+  tine(-0.10, 2.05, -0.12, 2.42, 0.15,  1);  // middle tine curls forward
+  tine( 0.58, 1.86,  0.92, 2.16, 0.13,  1);  // rear tine curls forward
+  // small brow tine near the head
+  tine(-1.30, 1.70, -1.62, 1.98, 0.10, -1);
+
+  // ---- incised lines: dark inlay tracing the worked forms ----
+  function incise(pts, z) {
+    var v = pts.map(function (p) { return new THREE.Vector3(p[0], p[1], z === undefined ? 0.325 : z); });
+    stag.add(tube(v, 0.012, inciseMat, 40));
+  }
+  incise([[-0.88, 0.44], [-0.4, 0.80], [0.2, 0.84], [0.8, 0.62]]);   // back line
+  incise([[-0.88, 0.28], [-0.3, 0.12], [0.4, 0.10], [0.95, 0.16]]);   // belly line
+  incise([[-1.02, 0.88], [-1.24, 1.14], [-1.36, 1.34]], 0.36);        // neck line (neck stands proud of torso)
+  incise([[-0.62, 0.34], [-0.44, 0.20], [-0.30, 0.12]]);              // front leg separation
+  incise([[0.30, 0.32], [0.44, 0.18], [0.52, 0.10]]);                 // mid leg separation
+  incise([[0.72, 0.34], [0.86, 0.20], [0.94, 0.10]]);                 // hind leg separation
+  // shoulder spiral — the animal style loves a curl
+  var shSp = spiral(0.05, 0.55, 0.325, 0.09, 1.4, 1);
+  stag.add(tube(shSp, 0.011, inciseMat, 40));
+
+  // ================= controls: drag rotate, wheel/pinch zoom =================
+  var target = new THREE.Vector3(-0.25, 1.0, 0.1);
+  var sph = { r: 5.8, theta: 0.0, phi: 1.18 }; // theta azimuth, phi polar
+  var camAnim = null;
+  function applyCam() {
+    var sp = Math.sin(sph.phi), x = sph.r * sp * Math.sin(sph.theta),
+        y = sph.r * Math.cos(sph.phi), z = sph.r * sp * Math.cos(sph.theta);
+    camera.position.set(target.x + x, target.y + y, target.z + z);
+    camera.lookAt(target);
+  }
+  function flyTo(t, r, theta, phi) {
+    camAnim = {
+      t0: performance.now(), dur: 900,
+      from: { tx: target.x, ty: target.y, tz: target.z, r: sph.r, th: sph.theta, ph: sph.phi },
+      to: { tx: t[0], ty: t[1], tz: t[2], r: r, th: theta, ph: phi }
+    };
+  }
+  var dragging = false, lastX = 0, lastY = 0, lastPinch = 0, idleTimer = null, autoSpin = true;
+  function poke() {
+    autoSpin = false;
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(function () { autoSpin = true; }, 8000);
+  }
+  canvas.addEventListener('pointerdown', function (e) {
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    canvas.classList.add('grabbing');
+    canvas.setPointerCapture(e.pointerId);
+    camAnim = null; poke();
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    sph.theta -= dx * 0.006;
+    sph.phi = Math.max(0.35, Math.min(1.45, sph.phi - dy * 0.005));
+    poke();
+  });
+  function endDrag(e) {
+    dragging = false;
+    canvas.classList.remove('grabbing');
+    try { canvas.releasePointerCapture(e.pointerId); } catch (err) {}
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    sph.r = Math.max(2.0, Math.min(11, sph.r * (1 + e.deltaY * 0.001)));
+    poke();
+  }, { passive: false });
+  canvas.addEventListener('touchmove', function (e) {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX,
+                         e.touches[0].clientY - e.touches[1].clientY);
+      if (lastPinch > 0) sph.r = Math.max(2.0, Math.min(11, sph.r * (lastPinch / d)));
+      lastPinch = d; poke();
+    }
+  }, { passive: false });
+  canvas.addEventListener('touchend', function () { lastPinch = 0; });
+
+  function setActive(id) {
+    ['btnFull', 'btnAntler', 'btnLegs'].forEach(function (b) {
+      document.getElementById(b).classList.toggle('active', b === id);
+    });
+  }
+  document.getElementById('btnFull').addEventListener('click', function () {
+    setActive('btnFull'); flyTo([-0.25, 1.0, 0.1], 5.8, 0.0, 1.18);
+  });
+  document.getElementById('btnAntler').addEventListener('click', function () {
+    setActive('btnAntler'); flyTo([-0.30, 1.95, 0.15], 2.7, -0.25, 1.25);
+  });
+  document.getElementById('btnLegs').addEventListener('click', function () {
+    setActive('btnLegs'); flyTo([0.10, 0.18, 0.1], 2.7, 0.15, 1.30);
+  });
+  document.getElementById('btnReset').addEventListener('click', function () {
+    setActive('btnFull'); flyTo([-0.25, 1.0, 0.1], 5.8, 0.0, 1.18);
+  });
+
+  // ================= info cards =================
+  var card = document.getElementById('infoCard');
+  var texts = {
+    about:
+      '<h2>About this piece</h2>' +
+      '<p>A golden stag plaque in the steppe animal style &mdash; the signature art of the Scythians, the nomadic peoples of the Eurasian steppe. The stag reclines with folded legs, head alert, antlers sweeping back into the curling spirals that define the style. Pieces like this were made as shield or harness ornaments, worked in bright gold.</p>' +
+      '<p class="label">Archive chapter: Scythians &amp; the Steppe. Modelled rendition after the Kostromskaya stag plaque tradition (Kuban, 6th c. BCE, Hermitage).</p>',
+    style:
+      '<h2>How the animal style works</h2>' +
+      '<p>Steppe animal style does not copy nature &mdash; it <span class="hyp">turns the animal into flowing pattern</span>. Look at the antlers: each tine dissolves into a spiral curl. The shoulder carries its own small curl. Legs fold into smooth, rounded forms with no wasted line. The curls are the art: rhythm and movement matter more than anatomy, and a trained eye could read the maker&rsquo;s hand in how the spirals turn.</p>' +
+      '<p class="label">Zoom into the antler curls above to see it up close.</p>',
+    meaning:
+      '<h2>What the stag meant</h2>' +
+      '<p>The stag recurs across Scythian goldwork &mdash; on plaques, harness fittings, and weapons &mdash; a signature of steppe art. In the world of the steppe nomads, the deer belonged to the hunt and the open grassland, to speed and vitality; wearing the stag in gold carried that power on the body, on the shield, on the horse&rsquo;s harness. We read the meaning from where the plaques are found and how often the stag returns &mdash; the art itself is the clearest statement they left.</p>'
+  };
+  function showInfo(k) {
+    card.innerHTML = texts[k];
+    ['btnStyle', 'btnMeaning', 'btnAbout'].forEach(function (b) {
+      document.getElementById(b).classList.remove('active');
+    });
+    document.getElementById(k === 'style' ? 'btnStyle' : k === 'meaning' ? 'btnMeaning' : 'btnAbout').classList.add('active');
+  }
+  document.getElementById('btnStyle').addEventListener('click', function () { showInfo('style'); });
+  document.getElementById('btnMeaning').addEventListener('click', function () { showInfo('meaning'); });
+  document.getElementById('btnAbout').addEventListener('click', function () { showInfo('about'); });
+  showInfo('about');
+
+  // ================= resize / loop / dispose =================
+  function resize() {
+    var w = canvas.clientWidth || canvas.parentNode.clientWidth;
+    var h = canvas.clientHeight || canvas.parentNode.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  applyCam();
+  veil.classList.add('hidden');
+
+  var running = true, lastT = performance.now();
+  document.addEventListener('visibilitychange', function () {
+    running = !document.hidden;
+    if (running) lastT = performance.now();
+  });
+  function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (!running) return;
+    var dt = Math.min(0.05, (now - lastT) / 1000); lastT = now;
+    if (camAnim) {
+      var f = Math.min(1, (now - camAnim.t0) / camAnim.dur), e = ease(f);
+      target.x = camAnim.from.tx + (camAnim.to.tx - camAnim.from.tx) * e;
+      target.y = camAnim.from.ty + (camAnim.to.ty - camAnim.from.ty) * e;
+      target.z = camAnim.from.tz + (camAnim.to.tz - camAnim.from.tz) * e;
+      sph.r = camAnim.from.r + (camAnim.to.r - camAnim.from.r) * e;
+      sph.theta = camAnim.from.th + (camAnim.to.th - camAnim.from.th) * e;
+      sph.phi = camAnim.from.ph + (camAnim.to.ph - camAnim.from.ph) * e;
+      if (f >= 1) camAnim = null;
+    } else if (autoSpin && !dragging) {
+      sph.theta += dt * 0.12;
+    }
+    applyCam();
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(loop);
+
+  window.addEventListener('pagehide', function () {
+    running = false;
+    stag.traverse(function (o) {
+      if (o.geometry) o.geometry.dispose();
+      if (o.material) {
+        (Array.isArray(o.material) ? o.material : [o.material]).forEach(function (m) { m.dispose(); });
+      }
+    });
+    renderer.dispose();
+  });
+})();
+</script>
+</body>
+</html>
