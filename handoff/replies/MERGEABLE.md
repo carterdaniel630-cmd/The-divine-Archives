@@ -11,8 +11,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 - Graphify plain-word names (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`): local checks
-  green. Missing: independent review by a run that wrote none of it; all GitHub checks green on `09f48b3`; Carter's yes
-  for this item.
+  green; all 6 GitHub checks green on `09f48b3` (incl. `graph`, which ran the namer in CI; 22:55 UTC). Missing:
+  independent review by a run that wrote none of it; Carter's yes for this item.
 
 ## Merged
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).
