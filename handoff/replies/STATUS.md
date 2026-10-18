@@ -4,7 +4,7 @@
 `decisions-2026-10-17-carter-answers-2.md` (16:53), `decisions-2026-10-17-priority-by-value.md` (17:06) and
 `decisions-2026-10-17-charter-and-pr59.md` (Item 23).
 **Branches:** `staging/ready-line` = site batch A (site changes up to `6b419fd`, Lighthouse fix `ac6d5fa`; later commits
-touch `handoff/` only). `loop/small-defects-2026-10-17` = batch B in progress (built on batch A). Nothing merged. Nothing live.
+touch `handoff/` only). `loop/small-defects-2026-10-17` = batch B in progress (built on batch A). **Batch A MERGED and live** (`main` = `218c51b`, 2026-10-17 21:08 EDT, deploy green).
 **Loop:** ON (rules in `handoff/LOOP.md`): one item per run, highest value first, each run starts the next.
 **Rule while batch A waits:** new site work goes on `loop/*` side branches built from the batch A head, never on
 `staging/ready-line`, so batch A stays a clean merge candidate (LOOP.md Item 21 condition 5). Only `handoff/` lands on staging.
@@ -23,12 +23,9 @@ touch `handoff/` only). `loop/small-defects-2026-10-17` = batch B in progress (b
 - (none: the next loop run picks up item 1 below)
 
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; full list in the folded worklist §B)
-1. **Fresh independent review of site batch A** (`origin/main...` the staging head; site changes up to `6b419fd` plus
-   `ac6d5fa`) against `reviews/REVIEWER.md` §3–§4, by a run that wrote none of it (this run wrote none of it: its own
-   site work is on the side branch). Plus a completed green Lighthouse run on GitHub. Correct PR #59's description
-   ("no deploy impact") first. Item 23 approves the PR #59 merge IF up to standard, which answers the auto-pass hold:
-   if the review has zero open findings and zero NEEDS CARTER, every GitHub check on the candidate is green and all
-   LOOP.md Item 21 conditions hold, list batch A in `MERGEABLE.md` and the reviewing run may do that one merge.
+1. ~~Batch A review + merge~~ DONE: merged `218c51b`, deploy green. Next run: rebase `loop/*` branches (batch B, PR #60) onto `main`.
+   PR #60 must start from Carter's selfie (Item 27): if the selfie image is not in the repo, stop and ask Carter.
+   Items 26 (charter D1–D3 parked), 28 (restart) and 29 (Graphify tie-in + standards dashboard) to be folded into Next.
 2. Museum phone performance: pixel-ratio cap 1.5 → 1.0, measured before and after on the phone budget.
 3. Arcade playability floor: difficulty selector, undo where it fits, short tutorial, readable tap targets; most-played first.
 4. Fix package (§7), relic by relic, most visible rooms first.

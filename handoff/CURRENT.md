@@ -5,6 +5,20 @@ Repo: carterdaniel630-cmd/The-divine-Archives. Site: getconexto.com (Cloudflare 
 bar"): Carter works from a phone, prefers large batches, and merging to main needs his go-ahead.
 Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches Carter.
 
+## Go-live 2026-10-17 (PR #59, site batch A)
+- **Merged:** PR #59 (`staging/ready-line` → `main`), fast-forward to `218c51b`, 2026-10-17 21:08 EDT (01:08Z), on Carter's
+  "merge" order (`order-2026-10-17-merge-pr59.md`) and "go … both" (2026-10-17 21:07).
+- **Checks on `218c51b` before merge:** all green, Lighthouse included (completed 23:02Z). Independent review:
+  `replies/2026-10-17-batch-a-independent-review.md`, 0 findings.
+- **Deploy:** Cloudflare Pages run on `main` completed, success. Link guard, game sourcing, graphify: success.
+- **What is live:** over-claims fixed (Qumran, Alexandria, Pilgrimage list, museum portal card, 3D arcade tap = card);
+  trademark game ids renamed (pacman→labyrinth, minesweeper→excavation, risk→dominion, pong renamed) with old links
+  and scores carried over; homepage and symbols blurbs reworded; Hades reworded; Tomb Robber → The Unfinished Journal.
+- **Live-page check:** this session could not open getconexto.com (network allowlist; fetch tool blocked by robots).
+  Carter's phone check is the verdict.
+- **Scheduled removal (Carter batch 2 §3):** old-id table (`archive-games.js`, `framework/adapters/track.js`, arcade
+  `site.js`, `framework/test/renamed.test.js`) is due for removal on staging on or after **2027-01-15** (90 days).
+
 ## State of main
 - Merged 2026-10-10/11 with Carter's go-ahead: #34 (pending chapters under 20% Wikipedia; ch70 dating
   plan), #36 (Qumran and Alexandria Pilgrimage previews, noindex, off the menu), #37 (docs sync),
