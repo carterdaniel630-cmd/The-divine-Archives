@@ -121,7 +121,7 @@ async function loadSection(sec) {
     // build on the next frame so the page keeps responding
     await new Promise((r) => requestAnimationFrame(r));
     const group = new THREE.Group(); group.name = sec.id;
-    const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s) => { const a = { p: new THREE.Vector3(x, y, z), s: s || 1, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
+    const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s, c) => { const a = { p: new THREE.Vector3(x, y, z), s: s == null ? 1 : s, c: c || null, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
       // a golden portal (portal.js), animated by the engine while the visitor is near
       // a section's own animation: fx = { group, update(dt) → true if it changed }, run while the visitor is within 25 m of (x,y,z)
       anim: (fx, x, y, z) => { S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y, z), fx }); return fx; },
@@ -365,7 +365,7 @@ function locate() {
   const out = r && r.outside ? 1 : 0, sky = (S.site && S.site.sky) || {};   // a site may give its own outdoor sky (default: desert)
   sun.intensity = out * (sky.sun || 1.5);
   if (sky.sunPos) sun.position.set(sky.sunPos[0], sky.sunPos[1], sky.sunPos[2]);
-  hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? (sky.hemi || "#dfe6ee") : "#8a7356"); hemi.groundColor.set(out ? (sky.ground || "#b08a5a") : "#1a120a");
+  hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? (sky.hemi || "#dfe6ee") : (sky.inHemi || "#8a7356")); lamp.color.set(sky.lamp || "#ffd7a0"); hemi.groundColor.set(out ? (sky.ground || "#b08a5a") : "#1a120a");
   scene.fog.color.set(out ? (sky.fog || "#cdb995") : "#050302"); scene.background.set(out ? (sky.bg || "#d9c7a3") : "#050302");
   scene.fog.near = out ? (sky.fogNear || 60) : 8; scene.fog.far = out ? (sky.fogFar || 700) : 46;
   const far = out && sky.far ? sky.far : 900; if (camera.far !== far) { camera.far = far; camera.updateProjectionMatrix(); }
@@ -374,8 +374,9 @@ function locate() {
 // ---------------------------------------------------------------- lights: the nearest few lamps get the light pool
 function updateLights() {
   const p = S.pos;
-  const near = S.lightAnchors.map((a) => [a, a.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
-  pool.forEach((l, i) => { const a = near[i]; if (a && a[1] < 26 * 26) { l.position.copy(a[0].p); l.intensity = 12 * a[0].s; l.distance = 16 * Math.max(0.8, a[0].s); } else l.intensity = 0; });
+  const near = S.lightAnchors.filter((a) => a.s > 0).map((a) => [a, a.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
+  const tint = (S.site && S.site.sky && S.site.sky.pool) || "#ffc488";   // a site may give its working lights a colour; an anchor may give its own
+  pool.forEach((l, i) => { const a = near[i]; if (a && a[1] < 26 * 26 && a[0].s > 0) { l.position.copy(a[0].p); l.intensity = 12 * a[0].s; l.distance = 16 * Math.max(0.8, a[0].s); l.color.set(a[0].c || tint); } else l.intensity = 0; });
 }
 
 // ---------------------------------------------------------------- info points and cards

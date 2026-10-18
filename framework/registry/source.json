@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1835,
+ "count": 1849,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -5656,6 +5656,15 @@
    "from": "sources/v87-diwan-abatur.md"
   },
   {
+   "id": "source:en-wikipedia-org/4eb0efdd93",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Newgrange",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:en-wikipedia-org/4f44182615",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Vestal_Virgin",
@@ -9080,6 +9089,15 @@
    "from": "sources/v84-hinton-st-mary-mosaic.md"
   },
   {
+   "id": "source:heritageireland-ie/d76a9a382b",
+   "type": "source",
+   "label": "https://heritageireland.ie/places-to-visit/bru-na-boinne-visitor-centre-newgrange-and-knowth/",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:hermetic-com/7524fcbc14",
    "type": "source",
    "label": "https://hermetic.com/legis/index",
@@ -10013,6 +10031,15 @@
    "from": "sources/ch80-shiism.md"
   },
   {
+   "id": "source:irishtimes-com/73efb24a54",
+   "type": "source",
+   "label": "https://irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:isac-uchicago-edu/10fa3d305b",
    "type": "source",
    "label": "https://isac.uchicago.edu/research/individual-scholarship/qumran-essene-theory-and-recent-strategies-employed-its-defense",
@@ -10597,6 +10624,24 @@
     "chapter:ch69"
    ],
    "from": "sources/ch69-upanishads-hindu-synthesis.md"
+  },
+  {
+   "id": "source:knowth-com/0d2c602103",
+   "type": "source",
+   "label": "https://www.knowth.com/excavation.htm",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
+   "id": "source:knowth-com/649b0b620f",
+   "type": "source",
+   "label": "https://knowth.com/newgrange-chamber.htm",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
   },
   {
    "id": "source:kofc-org/8d1ac281dd",
@@ -11644,6 +11689,15 @@
    "from": "sources/ch77-etruscans.md"
   },
   {
+   "id": "source:museum-ie/a230a09d18",
+   "type": "source",
+   "label": "https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:museum-imj-org-il/aa759cfdeb",
    "type": "source",
    "label": "https://museum.imj.org.il/shrine_center/merkz_meida/en/aleppo/",
@@ -12074,6 +12128,15 @@
     "relic:v32"
    ],
    "from": "sources/v32-popol-vuh-manuscript.md"
+  },
+  {
+   "id": "source:newgrange-com/bca612ab66",
+   "type": "source",
+   "label": "https://www.newgrange.com/stonelight20.htm",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
   },
   {
    "id": "source:news-artnet-com/3ae01e3cf7",
@@ -13328,6 +13391,15 @@
    "from": "sources/ch30-bhakti.md"
   },
   {
+   "id": "source:qub-ac-uk/8712fdd088",
+   "type": "source",
+   "label": "https://www.qub.ac.uk/News/Allnews/2020/SEOFriendlyURL974912en.html",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:quran-com/ba05212d1f",
    "type": "source",
    "label": "https://quran.com/22/37",
@@ -13443,6 +13515,15 @@
     "chapter:ch76"
    ],
    "from": "sources/ch76-olmec.md"
+  },
+  {
+   "id": "source:research-ie/b4a2285ad5",
+   "type": "source",
+   "label": "https://www.research.ie/what-we-do/loveirishresearch/blog/first-degree-incest-in-early-ireland-ancient-genomes-uncover-a-dynastic-elite-in-irish-passage-tomb-societies/",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
   },
   {
    "id": "source:research-lib-buffalo-edu/858fea80ed",
@@ -14564,6 +14645,15 @@
    "from": "sources/v30-diamond-sutra.md"
   },
   {
+   "id": "source:smithsonianmag-com/784a0140a8",
+   "type": "source",
+   "label": "https://www.smithsonianmag.com/smart-news/drought-reveals-giant-4500-year-old-irish-henge-180969650/",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:smithsonianmag-com/a6a856ac51",
    "type": "source",
    "label": "https://www.smithsonianmag.com/travel/rishikesh-india-beatles-white-album-meditation-smithsonian-journeys-travel-quarterly-180958447/",
@@ -15456,6 +15546,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:ucd-ie/01457a2bfd",
+   "type": "source",
+   "label": "https://www.ucd.ie/newsandopinion/news/2025/june/24/doubtscastoversuggestionsincestuousgod-kingsruledduringneolithicireland",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:ucl-ac-uk/345be077e9",
    "type": "source",
    "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/museum/museum3.html",
@@ -15858,6 +15957,15 @@
    "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
+   "id": "source:whc-unesco-org/82a0826ad3",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/659",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
+  },
+  {
    "id": "source:whc-unesco-org/84d353d17c",
    "type": "source",
    "label": "https://whc.unesco.org/en/list/1021/documents",
@@ -16000,6 +16108,15 @@
     "chapter:ch78"
    ],
    "from": "sources/ch78-scythians-steppe.md"
+  },
+  {
+   "id": "source:worldheritageireland-ie/2546e23826",
+   "type": "source",
+   "label": "https://www.worldheritageireland.ie/bru-na-boinne/built-heritage/newgrange/",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
   },
   {
    "id": "source:worldhistory-org/062e284616",
@@ -16225,6 +16342,15 @@
     "chapter:ch76"
    ],
    "from": "sources/ch76-olmec.md"
+  },
+  {
+   "id": "source:worldhistory-org/90439a7ecc",
+   "type": "source",
+   "label": "https://www.worldhistory.org/Newgrange/",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
   },
   {
    "id": "source:worldhistory-org/99546c12b5",
