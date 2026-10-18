@@ -4,19 +4,16 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 ~21:55 UTC (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `c205f4c` (batch B merged 16:51 UTC, deploy green).
+**As of:** 2026-10-18 ~22:15 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
 
 ## Mergeable now
-- **Graphify fix + standards board, first version (Item 29)**: `loop/graphify-board` @ `b0896a6`, PR #65. Carter's yes
-  (`approval-2026-10-18-graphify-merge.md`); independent review 0 findings (`2026-10-18-item-29-independent-review-and-merge.md`);
-  7/7 GitHub checks green (Lighthouse not triggered: no `docs/` change); local checks green. Every merge condition met.
-  **Not merged:** the loop's fast-forward push to `main` was refused by the session's safety check. Needs Carter to press
-  Merge on PR #65 (nothing on the live site changes).
+(none)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 (none)
 
 ## Merged
+- Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).
 - Site batch B (PR #63): merged 2026-10-18 16:51 UTC by fast-forward to `c205f4c`, deploy green (`2026-10-18-batch-b-update-review-and-merge.md`).
 - Museum phone speed (PR #62): merged 2026-10-18 12:35 UTC by fast-forward to `0585c80`, deploy green.
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.

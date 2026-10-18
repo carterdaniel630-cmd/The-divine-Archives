@@ -1,13 +1,21 @@
-# Handoff — updated 2026-10-18 (afternoon, build loop)
+# Handoff — updated 2026-10-18 (evening)
 
-## Latest: museum phone speed and site batch B are on main (2026-10-18)
+## Latest: PR #65 (Item 29) is on main (2026-10-18 evening)
+- **PR #65 Graphify fix + standards board** merged by Carter 22:07 UTC as merge commit `77f6444` (on `b0896a6`).
+  Approval `approval-2026-10-18-graphify-merge.md`; independent review 0 findings
+  (`replies/2026-10-18-item-29-independent-review-and-merge.md`); 7/7 checks green. Deploy run 194 green. No live-site
+  page changed (`.graphifyignore`, one tool, `handoff/` only); the published map is now project code only.
+- **Open PRs now:** #64 (reviewer and auditor as project skills), #61 (superseded by #65, can be closed), #60 (Journal
+  hero, on hold for the selfie), #58 (reviewer heartbeat, unmerged), #53 (Pilgrimage batch 1 preview).
+
+## Earlier: museum phone speed and site batch B are on main (2026-10-18)
 - **PR #62 museum phone speed** merged 12:35 UTC by fast-forward to `0585c80` (Carter's per-item yes,
   `decisions-2026-10-18-go-museum-and-batch-b.md`); deploy green. Then #57 (handoff-only, `58af188`), deploy green.
 - **PR #63 site batch B** merged 16:51 UTC by fast-forward to `c205f4c` (same approval). Independent review of the
   updated head: `handoff/replies/2026-10-18-batch-b-update-review-and-merge.md` (0 findings; site diff identical to the
   reviewed `aeda5d4`; every check green incl. Lighthouse). Deploy run 193 green. Shipped: hallway hiss removed,
   "199 figures", V72 sources (back to pending), Pantheon "Ra-Horakhty".
-- **Open PRs now:** #65 (Item 29 Graphify fix + standards board on current main; supersedes #61), #64 (reviewer and
+- **Open PRs then:** #65 (Item 29 Graphify fix + standards board on current main; supersedes #61), #64 (reviewer and
   auditor as project skills), #61 (superseded), #60 (Journal hero, on hold for the selfie), #58 (reviewer heartbeat,
   unmerged), #53 (Pilgrimage batch 1 preview).
 - **Deploy target:** the-divine-archives.pages.dev; getconexto.com not pointed.

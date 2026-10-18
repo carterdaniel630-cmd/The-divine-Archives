@@ -2,13 +2,13 @@
 
 **As of:** 2026-10-18 ~21:55 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`,
-`briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`. **Deployed (`main`):** `c205f4c` = batch A + museum
-phone speed (#62) + batch B (#63), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
-**Branches:** `loop/graphify-board` = PR #65 (Item 29, `b0896a6`, reviewed, every merge condition met, not merged).
-`loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `staging/ready-line` carries `handoff/`.
+`briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`. **Deployed (`main`):** `77f6444` = batch A + museum
+phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
+**Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-18 22:07: **PR #65 (Item 29) merged by Carter** (`77f6444`), deploy run 194 green. CURRENT and MERGEABLE updated.
 - 2026-10-18 ~21:55: **PR #65 (Item 29) independently reviewed**: 0 findings; same files as the approved `cfb1204`; clean
   build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, board page headless at phone size clean; 7/7 GitHub
   checks green (Lighthouse not triggered by design). **Merge refused** by this session's safety check on the push to
@@ -71,7 +71,6 @@ phone speed (#62) + batch B (#63), deploy green, at the-divine-archives.pages.de
    before touching code.
 9. **Spirit Board rename** (Item 31 #4); **Errata page** (Item 31 #3, prepare only); **Protection charter D4** check;
    **Debate Hall preview safety**; larger items (folded list §B rows 14–24).
-- Waiting on Carter: **merge PR #65** (see Needs Carter 1).
 - Scheduled: on or after **2027-01-15**, remove the old-id table on a side branch.
 
 ## Parked / on hold (do not build)
@@ -79,13 +78,10 @@ phone speed (#62) + batch B (#63), deploy green, at the-divine-archives.pages.de
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
-1. **PR #65 (Graphify fix + standards board) is ready but the loop could not merge it.** Every check passed and you
-   already said yes; the session blocked the final push. Options: **A** (recommended) open PR #65 on GitHub and tap
-   "Merge"; **B** tell a Claude chat "merge PR #65"; **C** leave it. Nothing on the live site changes either way.
-2. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
+1. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
    Options: **A** (recommended) the loop also saves each independent review to the review log and runs the weekly audit
    steps; **B** you attach the repository to the two scheduled tasks in the Claude app; **C** also merge PR #58.
-3. **Your selfie for the Journal hero** (Item 27), if the repo search (Next 3) does not find it.
-4. **Batch review, now live:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry.
-5. Museum speed is live: open the museum on your phone and say if it feels smoother or blurrier
+2. **Your selfie for the Journal hero** (Item 27), if the repo search (Next 3) does not find it.
+3. **Batch review, now live:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry.
+4. Museum speed is live: open the museum on your phone and say if it feels smoother or blurrier
    (`the-divine-archives.pages.dev/museum.html?fps=1#ch02` shows the frame rate).
