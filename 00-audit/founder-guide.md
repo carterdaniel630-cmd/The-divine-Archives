@@ -153,7 +153,7 @@ lettering (Google Fonts) was also blocked here, so the screenshots use a stand-i
 
 ![Pantheon](founder-guide/pantheon.jpg)
 
-- **What it is:** 199 gods, spirits, heroes and prophets from 30 traditions, with a search box
+- **What it is:** 199 figures (gods, spirits, heroes and prophets) from 30 traditions, with a search box
   and filters. Each figure links back to its chapters.
 - **Who it's for:** myth fans, gamers, students looking up one name.
 - **Taps:** 1, after a scroll.
