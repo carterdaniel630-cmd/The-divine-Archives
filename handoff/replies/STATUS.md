@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-18 ~07:45 UTC (build loop). **Answers:** manifest-v2 through Item 31 and every `decisions-*.md` /
+**As of:** 2026-10-18 ~12:15 UTC (build loop). **Answers:** manifest-v2 through Item 31 and every `decisions-*.md` /
 `correction-*.md` to date. **Deployed (`main`):** `7b281cb` = site batch A (PR #59, merged 2026-10-17 21:08 EDT,
 deploy green) plus two handoff-only commits (games Phase 1 record), at the-divine-archives.pages.dev. getconexto.com is not pointed yet (`decisions-2026-10-17-domain-not-pointed.md`).
 **Branches:** `loop/small-defects-2026-10-17` = batch B (`aeda5d4`; behind `main` by two handoff-only files, no site
@@ -9,6 +9,9 @@ change). `loop/museum-phone-dpr` = museum phone speed (`0585c80`, independently 
 **Loop:** RUNNING. One item per run, highest value first, each run starts the next.
 
 ## Done
+- 2026-10-18: **Carter's go on both items; PRs opened**: #62 museum phone speed (`0585c80`) and #63 batch B
+  (`aeda5d4`). All checks green except Lighthouse, still running on both. Local checks green on both; headless
+  phone check clean (reply `2026-10-18-prs-62-63-opened.md`). Nothing merged yet.
 - 2026-10-18: **Museum phone speed, independent review** (`0585c80`) by a run that wrote none of it: 0 open
   findings; full build, review-checks (9/9), 17 verify scripts, 42/42 tests green; headless phone draws at 1.0, desktop
   at 2, no script errors (reply `2026-10-18-museum-phone-speed-independent-review.md`). MERGEABLE and board updated.
@@ -31,10 +34,11 @@ change). `loop/museum-phone-dpr` = museum phone speed (`0585c80`, independently 
 - (none: the next loop run picks up the top item below that needs no Carter approval)
 
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`)
-1. **Batch B to live** (value 1): waits on Carter's yes to open its pull request (see Needs Carter). Once a PR exists:
-   wait for every check to finish green (without holding the lock), then it is mergeable on Carter's per-item yes.
-2. **Museum phone speed to live** (value 3): review passed. Waits on Carter's yes to open its pull request (see
-   Needs Carter); then every check green (without holding the lock), then mergeable on his per-item yes.
+1. **Merge #62 museum phone speed** (value 3; Carter approved): once Lighthouse on `0585c80` is completed and
+   green, fast-forward `main`, confirm the deploy, update CURRENT and MERGEABLE, notify Carter. If red, root-cause.
+2. **Batch B #63 to live** (value 1; Carter approved): after #62 lands, bring the branch up to `main`; confirm its
+   site diff is identical to the reviewed one (a run that did not do the update records this); every check green on
+   the new head (Lighthouse included); then merge. See reply `2026-10-18-prs-62-63-opened.md`.
 3. **Museum `?fps=1` frame-rate overlay** (value 3, small): promised in `plans/museum-visual-pass.md` §6 so Carter can
    measure on his phone. Check the plan's approval covers it before building; if it counts as a new feature, prepare only.
 4. **Small defects, part 2** (handoff drafts and previews, not live; value 5–6, small and sure): Bagh-chal diagonals
@@ -62,12 +66,8 @@ change). `loop/museum-phone-dpr` = museum phone speed (`0585c80`, independently 
   ballgame, music reopen.
 
 ## Needs Carter
-- **Museum phone speed.** Built, checked and independently reviewed (0 findings), not live. OK for the loop to open a
-  pull request and, when every check is green, send it live? A: yes. B: not yet. Recommend A. If you can,
-  open the museum on your phone after it is live and say whether it feels smoother or blurrier.
-- **Batch B pull request.** OK for the loop to open a pull request for batch B (hiss gone, "199 figures", V72 sources,
-  Ra-Horakhty) so GitHub's checks run? A: yes. B: not yet. Recommend A. Then, once green: send it live? (yes / wait)
 - **Your selfie for the Journal hero (Item 27; option A, Item 31 #1).** Not in the repo. Send it in a chat with
   Claude and say "add it to the repo for the Journal hero"; PR #60 waits until then.
 - **Batch review:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry (name and
-  text changed) when batch B comes to you.
+  text changed) when batch B is live.
+- After museum phone speed is live: open the museum on your phone and say if it feels smoother or blurrier.
