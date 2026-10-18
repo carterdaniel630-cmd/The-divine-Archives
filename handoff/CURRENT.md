@@ -1,4 +1,24 @@
-# Handoff — 2026-10-12
+# Handoff — updated 2026-10-17 (evening)
+
+## Latest: site batch A is on main (2026-10-17)
+- **PR #59 merged** by fast-forward, `c455bfe` → `218c51b`, with Carter's order (Item 24, `handoff/order-2026-10-17-merge-pr59.md`).
+- **Checks:** the independent review (`handoff/replies/2026-10-17-batch-a-independent-review.md`) found 0 issues, and every GitHub
+  check was green on `218c51b`, Lighthouse included. The deploy workflow finished with success.
+- **What it shipped:**
+  - Pilgrimage pages no longer over-claim survey measurements;
+  - trademark game ids renamed (pacman, pong, minesweeper, risk → labyrinth, antithesis, excavation, dominion), with old
+    links and saved scores carried over;
+  - Hades no longer called an Olympian;
+  - "The Tomb Robber" → "The Unfinished Journal";
+  - the Lighthouse run is no longer cancelled by later pushes.
+- **Go-live date for the rename: 2026-10-17.** The old-id compatibility table is due for removal on **2027-01-15**
+  (Carter: delete it 90 days after go-live; `handoff/decisions-2026-10-17-carter-answers-2.md` §3).
+- **Deploy target:** `main` deploys to the-divine-archives.pages.dev. getconexto.com is not yet pointed (per the loop's note in
+  `ae8091d`; this conflicts with corrections-v2 C2, "the site is live", so Carter should confirm).
+- **Open PRs now:** #60 (Journal hero redesign; on hold: Item 27 says the hero keeps Carter's face, and the selfie is not in
+  the repo), plus the older #53, #56, #57, #58.
+
+## Earlier state (2026-10-12)
 
 Repo: carterdaniel630-cmd/The-divine-Archives. Site: Cloudflare Pages deploys
 `docs/` on every push to `main` to **the-divine-archives.pages.dev** (branch previews: preview.the-divine-archives.pages.dev). The domain

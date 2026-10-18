@@ -10,9 +10,15 @@ with no memory of the last one: the repo is the memory.
 1. **Attach and clone** `carterdaniel630-cmd/the-divine-archives` (push access), branch `staging/ready-line`.
    Read `CLAUDE.md`, then this file.
 2. **Halt check.** If `handoff/HALT` exists, stop at once: no writes, no next run.
-3. **Lock check.** If `handoff/loop/LOCK` exists and its timestamp is under 3 hours old, another run is working:
-   stop, with no next run. Otherwise write `handoff/loop/LOCK` (current time, one line), commit and push it. If the
-   push is rejected because someone pushed first, pull and re-check the lock.
+3. **Lock check.** If `handoff/loop/LOCK` exists and its timestamp is under 90 minutes old, another run is working:
+   stop, with no next run. Older than that is stale: overwrite it. Otherwise write `handoff/loop/LOCK` (current
+   time, one line), commit and push it. If the push is rejected because someone pushed first, pull and re-check.
+   **Never hold the lock while waiting** (for CI, Lighthouse, Carter or anything else). The 2026-10-17 stall came
+   from a run that waited holding the lock and then ended, so later runs stood down for hours. If your item has to wait:
+   - write what it is waiting for in STATUS;
+   - release the lock;
+   - go on to the next highest-value item, or chain.
+   A later run picks the waiting item back up once its condition is met.
 4. **Read the queue, newest first:**
    - `handoff/manifest-v2.md` and any Items added since `handoff/replies/STATUS.md` was last written;
    - Carter's rulings: every `handoff/decisions-*.md`, and especially any committed after STATUS was last written.
@@ -47,16 +53,16 @@ with no memory of the last one: the repo is the memory.
 - The same item fails verification in two runs in a row. Stop, describe it in STATUS, and notify.
 - `handoff/HALT` exists.
 
-## The one merge Carter has approved (Item 21, conditional)
-`handoff/decisions-2026-10-17-claude-reply-answers.md` §3 approves merging PR #59 (`staging/ready-line` → `main`)
-**if and only if it is complete and meets the standard, including Claude's own.** A run may do this merge only
-when ALL of these hold for one exact commit (the "candidate"):
-1. **Independent review.** The run doing the review wrote none of the candidate's changes to `docs/`, `tools/` or
-   `framework/`. It reviews the whole site diff `origin/main...candidate` against `reviews/REVIEWER.md` §3–§4 and
-   writes the report to `handoff/replies/` with zero open findings and zero NEEDS CARTER items. Anything it finds
-   is fixed in a later run and then reviewed again by a different run.
+## Merging (Items 22 and 25: per item, Carter approves each one)
+PR #59 (site batch A) was merged on 2026-10-17 under Items 21/24. From now on a run may merge an item only when
+ALL of these hold for one exact commit (the "candidate"):
+0. The item is listed as mergeable in `handoff/replies/MERGEABLE.md`, AND a Carter approval for **that specific
+   item** is recorded in a `handoff/` decisions or order file. A general "merge as we go" is not per-item approval.
+1. **Independent review.** The run doing the review wrote none of the candidate's site changes (`docs/`,
+   `tools/`, `framework/`, `.github/`). It reviews `origin/main...candidate` against `reviews/REVIEWER.md` §3–§4,
+   with zero open findings, and writes the report to `handoff/replies/`.
 2. **Every GitHub check on the candidate is completed and green**, Lighthouse included. A cancelled or flaky check
-   is re-run and waited for; it is never assumed green.
+   is re-run and waited for; it is never assumed green. Wait without holding the lock (step 3).
 3. **The local checks pass**:
    - full build order;
    - `review-checks.js --base origin/main --build`;
@@ -64,20 +70,19 @@ when ALL of these hold for one exact commit (the "candidate"):
    - a headless phone-size check of every changed page and game.
 4. **Nothing in the site diff needs a separate approval**: no new chapter, room, game or feature; no cleared
    pending tag; nothing religiously sensitive.
-5. **Commits after the candidate touch only `handoff/`.** Anything else means a new candidate and a new review.
+5. **Commits after the candidate touch only `handoff/`.**
 
 Then:
-- merge by fast-forward;
+- merge by fast-forward (rebase the item's branch onto `main` first if needed, and re-run checks 2–3 after a rebase);
 - watch the deploy finish;
-- open the changed pages on the-divine-archives.pages.dev to confirm (getconexto.com is not pointed yet; see `decisions-2026-10-17-domain-not-pointed.md`);
 - update `handoff/CURRENT.md`;
+- move the item to "Merged" in MERGEABLE;
 - notify Carter in plain words.
 
-If any condition fails, do not merge: say in STATUS what is still missing and keep working.
-This is the only merge any run may do. Every later merge needs a new go-ahead from Carter.
+If any condition fails, do not merge: write in MERGEABLE what is still missing and keep working other items.
 
 ## Never, in any run
-- Merge (except the single Item 21 merge above), push to `main`, or change the live site.
+- Merge anything except as "Merging" above allows; push to `main` other than that fast-forward; or change the live site any other way.
 - Delete files, branches or data without Carter's go-ahead (moving into `_to_delete/` is fine).
 - Publish or clear content, or add new features, games or rooms without approval.
 - Touch money, accounts, credentials, DNS, the domain or Cloudflare.

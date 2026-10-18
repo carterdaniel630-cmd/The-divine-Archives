@@ -21,8 +21,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Site batch B, small defects (hallway hiss removed; "199 figures"; V72 sources, back to pending): branch
   `loop/small-defects-2026-10-17` `ce31f9f`, built on batch A. Part 1 done and all local checks green; part 2 (Bagh-chal,
   zodiac `dispose()`, Oracle Bones, fonts, Grimoire) still to do; then it needs its own independent review, (batch A is now merged).
-- Protection charter: draft only, waiting on Carter D1–D4 (`handoff/protection-charter-DRAFT.md`).
-- The Unfinished Journal hero redesign (original surveyor, plumb-line, sand torrent and scree, zoom, spike pit): PR #60,
-  branch `loop/journal-hero-redesign` `6862dee`, stacked on batch A. Done and all local checks green; needs its own
-  independent review and green GitHub checks, (batch A is now merged).
+- Protection charter: D1–D3 PARKED by Carter (Item 26); D4 is approved only once it is up to standard (Item 23). The draft is `handoff/protection-charter-DRAFT.md`.
+- The Unfinished Journal hero redesign (PR #60, `loop/journal-hero-redesign` `6862dee`): **ON HOLD, does not merge.**
+  Item 27 (Carter): the hero is based on Carter's own selfie, and the face stays his. PR #60 drew a new, invented face.
+  The selfie image is not in the repo, so per Item 27 the work stops until Carter supplies it. The costume and set-piece
+  changes (no fedora, leather jacket, whip-swing or boulder) still stand.
 - 900 Theses room: blocked on Gates A–D and the intake ruling.
