@@ -115,6 +115,13 @@ Deepen — not merely re-touch — the earlier chapters: add sourced detail (mor
   Sutra of 868 CE, the oldest dated printed book).
 - **Group-4 checkpoint (Late Antiquity):** integrity 42/42/42/42; every deepened
   page retains plate + evidence + sources.
+- **ch21 Islam — expanded (2026-10-18).** Pre-Islamic Arabia (Hubal, al-Lat,
+  al-'Uzza, Manat; the hanifs, flagged contested; the "Satanic verses" report, its
+  rejection, and the open historians' debate); the jinn and lived religion (ruqya,
+  the evil eye, the divided learned verdict on amulets); the first sects (Kharijites
+  after Siffin, the surviving Ibadis, the Mu'tazila and al-Ma'mun's mihna); and in
+  the symbology section the Dome of the Rock inscriptions (691–92) and the aniconic
+  coinage reform (696–97).
 
 ## Gate
 Originally grouped as **Batch II**, a single review point separate from Batch I.

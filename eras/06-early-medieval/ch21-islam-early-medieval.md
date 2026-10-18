@@ -37,6 +37,44 @@ in this archive: it arose in the **full light of recorded history**, only some s
 after Christianity and in a literate, documented world, so its historical outline is
 unusually secure even where its sacred claims lie, as always, beyond history's reach.
 
+## Before the Prophet: the gods of Arabia
+
+Islam defined itself against what came before it, and what came before was a rich, local,
+many-godded religion. Arabian **polytheism** centered on sacred stones, groves, and shrines, the
+greatest of them the **Kaaba** at Mecca, a sanctuary and pilgrimage site long before Islam. Its chief
+idol was **Hubal**; and three goddesses were honored across the Hijaz — **al-Lat** ("the Goddess"),
+**al-'Uzza** ("the Mighty," whose shrine stood at Nakhla near Mecca), and **Manat** (goddess of fate,
+whose shrine lay toward Medina). The Qur'an itself names the three (53:19–20) and rejects the
+Meccans' notion that they were **daughters of Allah**. The Meccans also knew a high god, **Allah**;
+the Qur'an portrays them as acknowledging him as creator while worshipping lesser powers alongside
+him — which is precisely why its demand was not "believe in God" but "believe in God *alone*."
+Ritual included **pilgrimage**, circumambulation, **sacrifice**, and divination by arrows before
+Hubal; inspired **soothsayers** (*kahins*) uttered rhymed oracles. The tradition reports that the
+Quraysh went into battle at Uhud (625) crying the names of **al-'Uzza and Hubal**, and that in 630
+Khalid ibn al-Walid was sent to destroy al-'Uzza's shrine.
+
+*A sourcing note:* much of our detail comes from Muslim writers looking back on the pagan past — above
+all Ibn al-Kalbi's *Book of Idols* (early 9th century) — and so is retrospective, but it is not the
+only witness. Al-Lat is independently attested centuries earlier in **Nabataean and Palmyrene
+inscriptions**, and Herodotus (5th century BCE) already names an Arabian goddess "**Alilat**." The
+tradition also tells of **hanifs** — a few Meccan seekers such as **Zayd ibn 'Amr** who rejected the
+idols for the pure faith of Abraham before Muhammad's call. The Qur'an uses *hanif* above all of
+**Abraham** (e.g. 3:67), but how far a real pre-Islamic hanif movement existed is **contested**: many
+modern scholars treat the reports with considerable skepticism, as a later projection of Qur'anic ideas
+onto the past.
+
+One episode tied to the three goddesses is famously controversial: the so-called **"Satanic verses."**
+Several early Muslim historians and commentators (among them **Ibn Sa'd** and **al-Tabari**) report that
+Muhammad once recited lines conceding the intercession of al-Lat, al-'Uzza, and Manat — "the exalted
+cranes" — which were then withdrawn as an insertion of Satan, and replaced by the Qur'an's rejection of
+them. Later Muslim scholarship came overwhelmingly to **reject the story** as a fabrication, and it is
+rejected in mainstream Muslim belief today. Among historians the question is **open**: some (W. Montgomery
+Watt among them) judged it likely to be genuine precisely because no believer would invent so awkward a
+report; others point to weaknesses in its chains of transmission; and Shahab Ahmed's study *Before
+Orthodoxy* (2017) argued that it was widely accepted in the earliest generations and rejected only as
+orthodoxy hardened. The archive records the report, its rejection, and the debate, and settles none of
+them.
+
 ## The prophet and his message
 
 The historical core is firm. **Muhammad** (c. 570–632 CE) was a member of the Quraysh, the
@@ -130,6 +168,29 @@ account) **not truly crucified**, but taken up by God. Here Islam, Judaism, and 
 the three Abrahamic faiths of this archive — share a family of figures and stories while dividing
 sharply on their meaning.
 
+## The unseen: jinn, the evil eye, and lived religion
+
+Between God and humankind, the Qur'an places a third order of rational beings: the **jinn**. Humans,
+it says, were made of clay, but the jinn "from a smokeless flame of fire" (55:15; cf. 15:26–27). They
+are not mere demons: like humans they have free will, can believe or disbelieve, and will be judged;
+an entire sura (72, *al-Jinn*) tells of a band of jinn who overheard the Qur'an and believed. **Iblis**,
+who refused to bow to Adam, is said to be "of the jinn" (18:50). Islam here took up a figure of
+pre-Islamic Arabian belief — the jinn who haunted the desert and inspired poets and soothsayers — and
+folded it into a monotheist cosmos, subject to the one God.
+
+This is where official and **everyday religion** meet. Alongside the Pillars, ordinary Muslims across
+the centuries guarded themselves against the unseen: against the jinn, against **sorcery**, and against
+the **evil eye** (*'ayn*) — the harm worked by an envious glance, which a widely transmitted hadith
+declares to be "real." The approved remedy is **ruqya**, healing and protection by recitation of the
+Qur'an, above all its last two suras, the "two refuges" (113–114), which seek refuge in God "from the
+evil of the envier when he envies." Folk practice went further — written **amulets** containing Qur'anic
+verses or divine names, protective hand and eye charms, and later the visiting of holy men's tombs — and
+here learned opinion has always been **divided**: some jurists permitted Qur'anic amulets, others
+condemned any amulet as a lapse toward *shirk*. The archive records both the practice and the argument,
+as it does in every tradition: what scholars codified and what people actually did were never quite the
+same thing. (The cult of saints and their tombs belongs chiefly to the story of **Sufism**, in its own
+chapter.)
+
 ## Sunna, hadith, and the law
 
 Second only to the Qur'an is the **Sunna** — the example of Muhammad, his words and deeds, held
@@ -158,6 +219,38 @@ caliph — a martyrdom that remains the emotional heart of Shia devotion, mourne
 **Ashura**. Sunni and Shia Islam share the Qur'an, the Pillars, and the core of the faith, but
 diverge in authority, law, and sacred history; today Sunnis are the great majority, with Shia
 Islam predominant in Iran, Iraq, and beyond.
+
+## The first sects: "Judgment belongs to God alone"
+
+Sunni and Shia were not the only answers to the crisis of the first civil war. In **657**, at the battle
+of **Siffin** between Ali and the Syrian governor Mu'awiya, Mu'awiya's soldiers are said to have raised
+pages of the Qur'an on their spears and called for **arbitration**. When Ali agreed, a body of his own
+followers rejected the very idea that men could arbitrate what God had decided, crying ***la hukm illa
+li-llah*** — "**judgment belongs to God alone**" — and walked out. They became the **Kharijites** ("those
+who went out"). Their principles were stark and, in their way, radically egalitarian: leadership belonged
+to the most pious Muslim, whatever his tribe or birth — not necessarily a Qurayshite or a kinsman of the
+Prophet — and a Muslim who committed a grave sin ceased to be a Muslim at all. Ali crushed them at
+**Nahrawan** (658); in **661** a Kharijite, **Ibn Muljam**, struck him down with a poisoned sword in the
+mosque of Kufa in revenge. Militant Kharijite factions (the Azariqa and Najdat) fought the Umayyads for
+decades before their defeat in the 690s. One moderate current survives to this day: the **Ibadis**,
+the majority tradition of **Oman**, with communities in North Africa (the Mzab in Algeria, Djerba in
+Tunisia, the Nafusa mountains of Libya) and East Africa. *A terminology note:* Ibadis themselves
+**reject** the label "Kharijite," distinguishing their quietist tradition from the militants, and the
+archive follows that distinction.
+
+A second great argument was **theological** rather than political, and it reached into the nature of the
+Book itself. In eighth- and ninth-century Basra and Baghdad, the **Mu'tazila** — theologians who prized
+reason, divine **justice**, and human **free will** — argued that God's absolute oneness required that
+the Qur'an be **created** in time, not co-eternal with God, lest something besides God be eternal. The
+Abbasid caliph **al-Ma'mun** adopted the doctrine (827) and, in **833**, imposed it on scholars and judges
+by an inquisition, the ***mihna*** ("trial"). Its most famous resister was the traditionist **Ahmad ibn
+Hanbal**, who refused to affirm a created Qur'an despite imprisonment and flogging; under the caliph
+**al-Mutawakkil** (from c. 848–851) the mihna was abandoned. The outcome shaped Sunni Islam permanently:
+the **uncreated** Qur'an became orthodoxy (later systematized by the theology of al-Ash'ari, d. 936), and
+the religious scholars (*'ulama*), not the caliph, emerged as the guardians of doctrine. Ibn Hanbal is
+also the founder of the **Hanbali** school of law named above. The doctrine of the Qur'an as God's
+"uncreated" word, stated at the opening of this chapter, was thus itself the product of a documented
+historical struggle — a point of history, not a judgment on the doctrine.
 
 ## The conquests and the caliphate
 
@@ -199,6 +292,23 @@ unknown**. Muslim tradition has proposed many interpretations and often simply r
 mystery; they remain an authentic piece of **encoded, unexplained** text at the very threshold of the
 Book.
 
+**Stone and gold: the Umayyad statements.** Two of the earliest surviving Islamic monuments are acts of
+public theology. The **Dome of the Rock** in Jerusalem, completed in **72 AH (691–92 CE)** by the caliph
+**'Abd al-Malik**, raises an **octagonal** shrine — a form borrowed from Byzantine Christian martyria —
+over the rock of the Temple Mount, in sight of the Church of the Holy Sepulchre. Around its arcade runs a
+mosaic band of Arabic text: Qur'anic verses and invocations that proclaim God's oneness (sura 112, "He
+begets not, nor is He begotten") and address Christians directly — "the Messiah, Jesus son of Mary, was
+only a messenger of God and His word… do not say 'Three'" (cf. 4:171). These are among the **earliest
+dated Islamic religious inscriptions** to survive (the exact dating of the earliest Qur'an manuscripts
+being debated). A later Abbasid caliph, al-Ma'mun, had 'Abd al-Malik's name replaced with his own but
+left the original date — a forgery that betrays itself. Why the Dome was built is debated: later
+tradition associates the rock with Muhammad's **Night Journey** and ascent, while one ninth-century
+report that 'Abd al-Malik meant it to rival Mecca is widely doubted by historians. Soon after, in **77
+AH (696–97)**, the same caliph's **coinage reform** replaced the Byzantine- and Persian-style coins
+(including a brief "standing caliph" type showing the ruler himself) with purely **aniconic** gold
+dinars bearing only words: the profession that there is no god but God, sura 112, and the date. Money
+itself became a vehicle of *tawhid* — the same theology of the word that fills the mosque.
+
 **The house and the direction.** The **Kaaba** at Mecca — the cube "House of God," with its sacred
 **Black Stone** — is the symbolic center of the Muslim world: the direction (*qibla*) every Muslim
 faces in prayer, so that the daily prostrations of the whole earth are oriented, like spokes, toward a
@@ -236,6 +346,17 @@ of the faith across Africa, Asia, and eventually the world.
 - The core structures of the faith — **tawhid**, the **Five Pillars**, the **six articles**, the
   development of **hadith**, **Sharia**, and the schools of law, and the **Sunni–Shia** split rooted in
   the succession dispute and sealed at **Karbala** (680).
+- **Pre-Islamic Arabian polytheism** — Hubal, al-Lat, al-'Uzza, and Manat, the Kaaba as a pre-Islamic
+  sanctuary — named in the Qur'an itself (53:19–20), described in later Muslim sources (Ibn al-Kalbi), and
+  independently attested for al-Lat in Nabataean and Palmyrene inscriptions and in Herodotus ("Alilat").
+- The **first sects**: the Kharijite secession after **Siffin** (657), Ali's assassination by the Kharijite
+  Ibn Muljam (661), the survival of the **Ibadis** (Oman, North Africa, East Africa); and the
+  **Mu'tazila**, al-Ma'mun's **mihna** (from 833) over the createdness of the Qur'an, Ahmad ibn Hanbal's
+  resistance, and the mihna's abandonment under al-Mutawakkil.
+- The **Dome of the Rock** (72 AH / 691–92), its anti-Trinitarian Qur'anic inscriptions, and
+  'Abd al-Malik's **aniconic coinage reform** (77 AH / 696–97) — standing monuments and coins.
+- The Qur'anic doctrine of the **jinn** (55:15; sura 72) and the long-documented folk practice of
+  protection against jinn, sorcery, and the evil eye (ruqya, the "two refuges," amulets).
 
 **What's not supported by the evidence (as history)**
 
@@ -245,6 +366,10 @@ of the faith across Africa, Asia, and eventually the world.
 - The **detailed traditional biography** (*sira*) and much **hadith** as straightforward eyewitness
   fact — these were compiled generations later and are read critically by historians.
 - The **crescent-and-star** as an ancient symbol of Islam (it is a late, Ottoman-era adoption).
+- The existence of jinn, or the efficacy of the evil eye or of amulets, as established fact — these are
+  beliefs and practices the chapter documents, not claims history or science can confirm.
+- The claim that 'Abd al-Malik built the Dome of the Rock to **replace the hajj** to Mecca — resting on a
+  single later report, and widely doubted by historians.
 
 **What's genuinely open**
 
@@ -254,6 +379,11 @@ of the faith across Africa, Asia, and eventually the world.
 - The **historical reliability** of specific episodes in the *sira* and specific hadith.
 - The original meaning of the Qur'an's **disconnected letters** (*muqatta'at*) — unknown to scholarship
   and to much of the tradition alike.
+- The historicity of the **"Satanic verses"** episode — reported by early historians (Ibn Sa'd, al-Tabari),
+  rejected by later Muslim scholarship and by mainstream Muslim belief today, and still debated among
+  historians (Watt; Shahab Ahmed's *Before Orthodoxy*).
+- Whether a real pre-Islamic **hanif** movement existed, or the reports project Qur'anic ideas onto the past.
+- The original **purpose** of the Dome of the Rock and the intended audience of its inscriptions.
 
 ---
 
@@ -274,6 +404,34 @@ of the faith across Africa, Asia, and eventually the world.
 - [The Met: Geometric Patterns in Islamic Art](https://www.metmuseum.org/essays/geometric-patterns-in-islamic-art);
   [Wikipedia: Islamic ornament](https://en.wikipedia.org/wiki/Islamic_ornament); on the Kaaba and (late)
   crescent symbolism, standard reference overviews.
+
+*Pre-Islamic Arabia, the hanifs, and the "Satanic verses"*
+- [Wikipedia: Religion in pre-Islamic Arabia](https://en.wikipedia.org/wiki/Religion_in_pre-Islamic_Arabia);
+  [Wikipedia: Al-Uzza](https://en.wikipedia.org/wiki/Al-Uzza);
+  [Wikipedia: Manat (goddess)](https://en.wikipedia.org/wiki/Manat_(goddess));
+  [Wikipedia: Hanif](https://en.wikipedia.org/wiki/Hanif) (incl. Uri Rubin and W. M. Watt on scholarly skepticism);
+  [Wikipedia: Satanic Verses](https://en.wikipedia.org/wiki/Satanic_Verses) (Ibn Sa'd, al-Tabari; Watt;
+  Shahab Ahmed, *Before Orthodoxy: The Satanic Verses in Early Islam*, Harvard, 2017).
+
+*The jinn and lived religion*
+- The Qur'anic jinn (55:15, 15:26–27, sura 72, 18:50) — [Wikipedia: Jinn](https://en.wikipedia.org/wiki/Jinn);
+  [Parallel Qur'an 55:15](https://parallelquran.com/parallel/55/15/); on protective recitation and the
+  evil eye, [Wikipedia: Ruqyah](https://en.wikipedia.org/wiki/Ruqyah) and
+  [Wikipedia: Evil eye](https://en.wikipedia.org/wiki/Evil_eye).
+
+*The Kharijites, the Ibadis, the Mu'tazila, and the mihna*
+- [Wikipedia: Kharijites](https://en.wikipedia.org/wiki/Kharijites);
+  [Wikipedia: Assassination of Ali](https://en.wikipedia.org/wiki/Assassination_of_Ali);
+  [Wikipedia: Ibadism](https://en.wikipedia.org/wiki/Ibadism);
+  [Wikipedia: Mihna](https://en.wikipedia.org/wiki/Mihna);
+  [Wikipedia: Quranic createdness](https://en.wikipedia.org/wiki/Quranic_createdness).
+
+*The Dome of the Rock and the reformed coinage*
+- [Wikipedia: Dome of the Rock](https://en.wikipedia.org/wiki/Dome_of_the_Rock); Jon Hoover and Gordon
+  Nickel on the inscriptions' anti-Trinitarian program and their status among the earliest dated Islamic
+  religious writings ([Nickel, "Say not as to Allah but the truth!"](https://gordonnickel.substack.com/p/say-not-as-to-allah-but-the-truth));
+  the reformed dinar of 77 AH — [The Met: Anonymous Aniconic Dinar](https://www.metmuseum.org/art/collection/search/479469);
+  [Qatar Museums: Umayyad dinar](https://collections.qm.org.qa/en/objects/umayyad-dinar-g1).
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica-level overviews,
 The Met, sourced encyclopedic entries, and the mainstream historical-critical scholarship they summarize)
