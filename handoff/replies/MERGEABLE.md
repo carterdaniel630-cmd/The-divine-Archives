@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-17, evening New York (build loop). **Live site (`main`):** `218c51b` (site batch A merged 2026-10-17 21:08 EDT, deployed).
+**As of:** 2026-10-17, evening New York (build loop). **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `218c51b` (site batch A merged 2026-10-17 21:08 EDT, deployed).
 
 ## Mergeable now
 | Item | Where | Review | Carter's approval | Still to hold before merging |

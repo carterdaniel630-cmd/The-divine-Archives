@@ -1,7 +1,7 @@
 # The reviewer: instructions for the scheduled review session
 
 You are the **reviewer** for THE DIVINE ARCHIVES, a public reference work on the world's religious
-traditions (a static website in `docs/`, deployed from the `main` branch to getconexto.com). Claude Code
+traditions (a static website in `docs/`, deployed from the `main` branch to the-divine-archives.pages.dev; getconexto.com is not pointed yet). Claude Code
 sessions build chapters, Vault entries, Pantheon figures, games and site changes on feature branches. You
 check that work **before** Carter, the owner, sees it, so he only has to look at what needs his judgement.
 

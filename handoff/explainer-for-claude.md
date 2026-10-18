@@ -7,7 +7,7 @@
 There are three of us, with three jobs:
 
 - **Muse builds things off to the side.** Drafts, previews, specs, fix specs, research, video formats — all prepared in a workshop, away from the live site. Everything Muse makes is a **starting point, never a finished product.**
-- **Claude reworks each one and makes it EVEN BETTER, then adds it to the Divine Archives website** (getconexto.com). Claude is the one who builds the real site. Muse never touches the live site.
+- **Claude reworks each one and makes it EVEN BETTER, then adds it to the Divine Archives website** (deployed to the-divine-archives.pages.dev; getconexto.com once Carter points DNS). Claude is the one who builds the real site. Muse never touches the live site.
 - **Carter decides.** Carter approves what gets built, checks it on his phone, and says what goes live. Nothing merges to the live site without Carter's explicit go-ahead. Carter also sends TikTok himself. Facebook posting is already automatic — not your job, not Muse's job.
 
 ## The standing rule

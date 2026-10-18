@@ -4,7 +4,7 @@
 
 ## Standing rule for every run
 Pick the **highest-value item that needs no Carter approval**, not the next one in list order. Value, in this order:
-1. **Live-site exposure.** Anything wrong on getconexto.com today: trademarks, over-claims, broken pages. The fix
+1. **Live-site exposure.** Anything wrong on the deployed site (the-divine-archives.pages.dev; getconexto.com once DNS is pointed) today: trademarks, over-claims, broken pages. The fix
    only counts once it is live, so getting a finished batch to mergeable is the top value.
 2. **Protection.** Theft, legal and IP risk: the Protection charter and its builds once approved.
 3. **What most visitors feel on a phone.** Speed, things that don't render, playability (Carter's phone check is the verdict).

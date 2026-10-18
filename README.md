@@ -5,7 +5,7 @@ honesty. It is organized **chronologically by era**, not by region: each chapter
 covers one tradition within its era, or one theme that runs across eras (flood
 myths, creation, the underworld, sacred kingship and so on).
 
-**Live at [getconexto.com](https://getconexto.com).**
+**Deployed to [the-divine-archives.pages.dev](https://the-divine-archives.pages.dev).** The domain getconexto.com is not pointed yet; it goes public when Carter points DNS.
 
 Every factual and archaeological claim is sourced from real primary texts and
 current scholarship. Contested points are flagged as contested rather than

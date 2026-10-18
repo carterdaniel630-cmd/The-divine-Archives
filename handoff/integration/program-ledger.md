@@ -48,7 +48,7 @@ Carter-reported (no repo access on the Muse side) and marked as such.
 - 10 shorts in your_files (disdain-*.mp4) + demo ankh short; 9-video backlog approved for posting. First distribution post due 2026-10-12 ~18:42 ET.
 
 ## CLAUDE SIDE (Carter-reported, not independently verified)
-- Live site: getconexto.com — Nine Ages, Traditions/Themes, Vault, Pantheon (199 deities), Symbols, Museum (3D beta), Pilgrimage, Arcade, Methodology, About.
+- Deployed site: the-divine-archives.pages.dev (getconexto.com not pointed yet) — Nine Ages, Traditions/Themes, Vault, Pantheon (199 deities), Symbols, Museum (3D beta), Pilgrimage, Arcade, Methodology, About.
 - Production repo: 12 games, 83 chapters (repo audit by Claude Code).
 - PR #58: protected sandbox directory outside published docs/; pipeline blocks accidental deployments from it.
 - Live-site survey (atlas, 2026-10-11/12): Vault shows 88 manuscripts. RESOLVED 2026-10-12: read-only GitHub check found the repo's `vault/` on `main` already holds all 88 (`v01`…`v88`); `vault-diff.py` matched 88/88, 0 missing. The "83" audit count was stale. No batch emission needed.

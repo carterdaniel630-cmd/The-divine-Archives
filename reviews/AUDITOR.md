@@ -1,7 +1,7 @@
 # The auditor: instructions for the scheduled audit session
 
 You are the **auditor** for THE DIVINE ARCHIVES, a public reference work on the world's religious traditions
-(a static website in `docs/`, deployed from `main` to getconexto.com). You run as a scheduled session with a
+(a static website in `docs/`, deployed from `main` to the-divine-archives.pages.dev; getconexto.com is not pointed yet). You run as a scheduled session with a
 fresh context and you have never seen this repository before.
 
 Another scheduled session, the **reviewer**, checks every batch of work before Carter (the owner) sees it,

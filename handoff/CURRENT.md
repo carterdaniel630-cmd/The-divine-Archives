@@ -1,7 +1,8 @@
 # Handoff — 2026-10-12
 
-Repo: carterdaniel630-cmd/The-divine-Archives. Site: getconexto.com (Cloudflare Pages deploys
-`docs/` on every push to `main`). Read `CLAUDE.md` first ("Start here", "Operating rules", "Quality
+Repo: carterdaniel630-cmd/The-divine-Archives. Site: Cloudflare Pages deploys
+`docs/` on every push to `main` to **the-divine-archives.pages.dev** (branch previews: preview.the-divine-archives.pages.dev). The domain
+getconexto.com is NOT pointed yet (Carter, 2026-10-17): nothing is public there until Carter points DNS. Read `CLAUDE.md` first ("Start here", "Operating rules", "Quality
 bar"): Carter works from a phone, prefers large batches, and merging to main needs his go-ahead.
 Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches Carter.
 
@@ -11,11 +12,11 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - **Checks on `218c51b` before merge:** all green, Lighthouse included (completed 23:02Z). Independent review:
   `replies/2026-10-17-batch-a-independent-review.md`, 0 findings.
 - **Deploy:** Cloudflare Pages run on `main` completed, success. Link guard, game sourcing, graphify: success.
-- **What is live:** over-claims fixed (Qumran, Alexandria, Pilgrimage list, museum portal card, 3D arcade tap = card);
+- **What is deployed (on the-divine-archives.pages.dev; not public, DNS not pointed):** over-claims fixed (Qumran, Alexandria, Pilgrimage list, museum portal card, 3D arcade tap = card);
   trademark game ids renamed (pacman→labyrinth, minesweeper→excavation, risk→dominion, pong renamed) with old links
   and scores carried over; homepage and symbols blurbs reworded; Hades reworded; Tomb Robber → The Unfinished Journal.
-- **Live-page check:** this session could not open getconexto.com (network allowlist; fetch tool blocked by robots).
-  Carter's phone check is the verdict.
+- **Deployed-page check:** this session could not open the-divine-archives.pages.dev (network allowlist). Carter's phone check on
+  the-divine-archives.pages.dev is the verdict.
 - **Scheduled removal (Carter batch 2 §3):** old-id table (`archive-games.js`, `framework/adapters/track.js`, arcade
   `site.js`, `framework/test/renamed.test.js`) is due for removal on staging on or after **2027-01-15** (90 days).
 

@@ -1,6 +1,6 @@
 # Things to try on your phone, whenever you have time
 
-Written 2026-10-11. Nothing here is urgent. Everything below is already live on getconexto.com, and
+Written 2026-10-11. Nothing here is urgent. Everything below is already deployed to the-divine-archives.pages.dev (getconexto.com is not pointed yet), and
 anything new stays tagged "Recently added · pending full review" until you clear it. Take as many weeks
 as you like. When you're ready, tell any Claude chat on this project "notes on <item>: …" or
 "<item> is cleared", and it will pick up from this list.
@@ -8,7 +8,7 @@ as you like. When you're ready, tell any Claude chat on this project "notes on <
 ---
 
 ## 1. The breath walkthrough (museum, Buddhism room)
-1. Open **getconexto.com/museum.html#ch11**. You arrive in the Buddhism room.
+1. Open **the-divine-archives.pages.dev/museum.html#ch11**. You arrive in the Buddhism room.
 2. Tap **Enter** if the welcome screen shows.
 3. Tap the **reading stand** labelled "Buddhism".
 4. On the card, tap **"Guided walkthrough: Mindfulness of breathing"**, then **Begin the walkthrough**.
@@ -25,8 +25,8 @@ Claude's sessions, so a person needs to compare it once:
 **Your answer:** "breath walkthrough cleared", or your notes.
 
 ## 2. The two new Pilgrimage walks
-- Qumran caves: **getconexto.com/pilgrimage/qumran-caves.html**
-- Library of Alexandria (a labelled reconstruction): **getconexto.com/pilgrimage/library-of-alexandria.html**
+- Qumran caves: **the-divine-archives.pages.dev/pilgrimage/qumran-caves.html**
+- Library of Alexandria (a labelled reconstruction): **the-divine-archives.pages.dev/pilgrimage/library-of-alexandria.html**
 
 Drag to look around and tap the glowing points for info cards. Do they feel right? Is anything wrong
 or missing?
@@ -34,16 +34,16 @@ or missing?
 **Your answer:** "Qumran cleared", "Alexandria cleared", or notes.
 
 ## 2b. Three new Pilgrimage previews (hidden from the menu until you say so)
-- Stonehenge: **getconexto.com/pilgrimage/stonehenge.html**
-- Golgotha and the Tomb, c. 30 CE: **getconexto.com/pilgrimage/golgotha-and-the-tomb.html**
-- Mount Ararat & the Ark tradition: **getconexto.com/pilgrimage/mount-ararat-the-ark-tradition.html**
+- Stonehenge: **the-divine-archives.pages.dev/pilgrimage/stonehenge.html**
+- Golgotha and the Tomb, c. 30 CE: **the-divine-archives.pages.dev/pilgrimage/golgotha-and-the-tomb.html**
+- Mount Ararat & the Ark tradition: **the-divine-archives.pages.dev/pilgrimage/mount-ararat-the-ark-tradition.html**
 
 These are previews: they work, but they are not listed on the Pilgrimage page.
 
 **Your answer:** "list <site>" to put one on the menu, or notes.
 
 ## 3. The fighting game's new moves (Divine Casualties)
-Open **getconexto.com/symbols.html#play=fighter**. Each god now fights differently:
+Open **the-divine-archives.pages.dev/symbols.html#play=fighter**. Each god now fights differently:
 - Zeus throws bolts.
 - Poseidon sends waves.
 - Athena has a parry.
@@ -56,7 +56,7 @@ On a phone, swipe the Special button left or right to choose the direction.
 ## 4. What the site remembers (no action needed, just so you know)
 The site now quietly remembers, in each visitor's own browser only, which chapters, Vault objects
 and Pantheon figures they opened and which games they played. Nothing is sent anywhere, and the
-About page says so (getconexto.com/about.html, "What the site remembers").
+About page says so (the-divine-archives.pages.dev/about.html, "What the site remembers").
 
 ---
 

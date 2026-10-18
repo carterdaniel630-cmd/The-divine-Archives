@@ -69,7 +69,7 @@ when ALL of these hold for one exact commit (the "candidate"):
 Then:
 - merge by fast-forward;
 - watch the deploy finish;
-- open the changed live pages on getconexto.com to confirm;
+- open the changed pages on the-divine-archives.pages.dev to confirm (getconexto.com is not pointed yet; see `decisions-2026-10-17-domain-not-pointed.md`);
 - update `handoff/CURRENT.md`;
 - notify Carter in plain words.
 
