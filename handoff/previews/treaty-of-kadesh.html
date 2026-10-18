@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Treaty of Kadesh Tablet — The Divine Archives</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a0603;color:#e8dcc0;font-family:Georgia,'Times New Roman',serif;min-height:100vh;padding:18px 14px 40px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-weight:400;letter-spacing:.14em;text-transform:uppercase;font-size:22px;text-align:center;color:#f2c46a;margin:6px 0 4px}
+  .sub{text-align:center;font-style:italic;color:#c9a24b;font-size:15px;margin-bottom:14px}
+  .stage{position:relative;width:100%;height:62vh;min-height:380px;background:radial-gradient(ellipse at 50% 30%,#241809 0%,#120b05 55%,#070402 100%);border:1px solid #4a3418;border-radius:10px;overflow:hidden;touch-action:none}
+  .stage canvas{display:block;width:100%;height:100%}
+  .veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#0a0603;color:#c9a24b;font-style:italic;font-size:16px;z-index:5}
+  .veil.hidden{display:none}
+  .fail{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:24px;color:#e8dcc0;background:#0a0603;z-index:6;font-size:15px;line-height:1.6}
+  .fail.show{display:flex}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 6px}
+  .controls button{background:#1a1008;color:#f2c46a;border:1px solid #8a6a34;border-radius:6px;padding:10px 16px;font-family:inherit;font-size:15px;cursor:pointer}
+  .controls button:active{background:#2c1c0c}
+  .hint{text-align:center;color:#a98d5a;font-style:italic;font-size:13.5px;margin:2px 0 12px}
+  .clauses{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px}
+  .clauses button{background:#221608;color:#e8dcc0;border:1px solid #5a4226;border-radius:20px;padding:7px 12px;font-family:inherit;font-size:13px;cursor:pointer}
+  .clauses button.on{background:#4a3418;color:#f2c46a;border-color:#c9a24b}
+  .clause-card{background:#17100a;border:1px solid #4a3418;border-radius:10px;padding:16px 18px;margin-bottom:16px}
+  .clause-card h2{font-weight:400;color:#f2c46a;font-size:17px;letter-spacing:.06em;margin-bottom:6px}
+  .clause-card p{font-size:15.5px;line-height:1.65;color:#e8dcc0}
+  .clause-card .plain{font-style:italic;color:#c9a24b}
+  .card{background:#17100a;border:1px solid #4a3418;border-radius:10px;padding:18px;margin-bottom:14px}
+  .card h2{font-weight:400;color:#f2c46a;font-size:18px;letter-spacing:.06em;margin-bottom:8px}
+  .card p,.card li{font-size:15px;line-height:1.7;color:#e8dcc0}
+  .card ul{padding-left:20px;margin-top:6px}
+  .card li{margin-bottom:4px}
+  .truth{border-color:#8a6a34}
+  .truth p{font-size:14.5px}
+  .truth b{color:#f2c46a;font-weight:400}
+  .companion{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+  .companion canvas{border:1px solid #4a3418;border-radius:6px;max-width:100%;background:#241c10}
+  .companion .txt{flex:1;min-width:240px}
+  .cap{font-size:12.5px;font-style:italic;color:#a98d5a;margin-top:6px}
+  .foot{text-align:center;color:#a98d5a;font-size:13px;font-style:italic;margin-top:18px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The Treaty of Kadesh</h1>
+  <p class="sub">A clay tablet of the oldest surviving peace treaty &mdash; about 1259 BCE</p>
+
+  <div class="stage" id="stage">
+    <div class="veil" id="veil">Preparing the tablet&hellip;</div>
+    <div class="fail" id="fail">This relic could not be shown in this browser. The tablet is a clay record of the peace between Egypt and Hatti, about 1259 BCE &mdash; the original silver tablet is lost, and the text survives in cuneiform copies and Egyptian temple-wall carvings.</div>
+  </div>
+
+  <div class="controls">
+    <button id="btnFront">Front</button>
+    <button id="btnTurn">Turn it over</button>
+    <button id="btnBack">Back</button>
+    <button id="btnZoomIn">Zoom in +</button>
+    <button id="btnZoomOut">Zoom out &minus;</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn the tablet in your hand &mdash; pinch or scroll to zoom. Tap a line of script to read what that part of the treaty says, in plain words.</p>
+
+  <div class="clauses" id="clauseChips"></div>
+
+  <div class="clause-card">
+    <h2 id="clauseTitle">The treaty, in plain words</h2>
+    <p id="clauseText">Pick a clause above, or tap a line of script on the tablet. The treaty is written in Akkadian cuneiform &mdash; the diplomatic language of its day. What follows is the substance of each clause, in plain words, not a word-for-word translation of the marks on this tablet.</p>
+    <p class="plain" id="clausePlain"></p>
+  </div>
+
+  <div class="card truth">
+    <h2>What this is &mdash; honestly</h2>
+    <p><b>The original treaty was written on a SILVER tablet.</b> That silver tablet is lost &mdash; it has never been found. What you are holding here is the <b>Hittite record form</b>: a clay tablet in Akkadian cuneiform, the kind of copy kept in the Hittite capital&rsquo;s archives at Hattusa (found there in 1906).</p>
+    <p style="margin-top:8px"><b>The inscription on this tablet is representative cuneiform</b> &mdash; wedge-shaped marks in the style of the real tablets, pressed into clay. It is <b>not</b> a verbatim copy of the treaty&rsquo;s real text. The clause readings above give the treaty&rsquo;s substance in plain words.</p>
+    <p style="margin-top:8px"><b>What survives:</b> the Hittite copies on clay tablets &mdash; two in Istanbul (Museum of the Ancient Orient), one in Berlin, smaller fragments in Ankara and St Petersburg, and a new fragment found at Hattusa in 2026. The Egyptian version survives carved in hieroglyphs on temple walls (see below). A copper replica hangs at the United Nations in New York.</p>
+    <p style="margin-top:8px"><b>Dates:</b> about 1259 BCE (scholars differ by a few years). The Battle of Kadesh was about 1274 BCE; the treaty came roughly fifteen years later, in the 21st year of Ramesses II. Note: the city of Kadesh itself is not mentioned in the treaty&rsquo;s text.</p>
+  </div>
+
+  <div class="card">
+    <h2>Who made this peace</h2>
+    <p><b>Ramesses II</b>, pharaoh of Egypt, and <b>Hattusili III</b>, Great King of the Hittites. Egypt and Hatti had fought for more than two centuries over the lands between them, and the Battle of Kadesh ended in a bloody stalemate. Both kings had new enemies to worry about &mdash; Egypt the Sea Peoples, Hatti the rising Assyrians &mdash; so they made peace instead. The two kings never met in person; go-betweens carried the terms.</p>
+  </div>
+
+  <div class="card">
+    <h2>The Egyptian version &mdash; the temple-wall companion</h2>
+    <div class="companion">
+      <div>
+        <canvas id="wallCanvas" width="340" height="220"></canvas>
+        <p class="cap">Representative temple-wall carving &mdash; not a copy of the real Karnak or Ramesseum walls.</p>
+      </div>
+      <div class="txt">
+        <p>The same treaty was carved in hieroglyphs on the walls of two of Ramesses II&rsquo;s temples in Thebes: the <b>Ramesseum</b> and the <b>Temple of Karnak</b>. The Egyptian carving tells the story with Egypt in the grander role &mdash; the Hittite version on clay is closer to the text the two sides actually agreed on. Two versions of one peace: the clay tablet you hold, and the temple wall.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">The Divine Archives &mdash; built from the Hittite &amp; Anatolian chapter.<br>Original silver tablet lost. Text survives in Hittite cuneiform copies and Egyptian temple-wall versions.</p>
+</div>
+
+<script src="three.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var stage = document.getElementById('stage');
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+
+  var CLAUSES = [
+    {side:'front', title:'Clause 1 — Peace, forever', text:'The treaty opens with the heart of it: Egypt and Hatti will be at peace and in brotherhood, forever.', plain:'“We are brothers now. The war is over — for good.”'},
+    {side:'front', title:'Clause 2 — No attacking', text:'Neither side will invade the other’s land, and neither will help any other enemy attack the other.', plain:'“Your land is yours. My land is mine. Neither of us raises a hand against the other.”'},
+    {side:'front', title:'Clause 3 — Help each other', text:'If an enemy from abroad attacks one of them, the other will send troops to help.', plain:'“If anyone comes against you, I come with you.”'},
+    {side:'back', title:'Clause 4 — Fugitives go home unharmed', text:'People who flee from one land to the other will be sent back — but they will not be punished for fleeing. No revenge for running.', plain:'“Send them home — and let them live.”'},
+    {side:'back', title:'Clause 5 — The heir is protected', text:'Egypt will stand behind the heir Hattusili chooses, so no rival can seize the Hittite throne after him.', plain:'“Your chosen heir keeps the throne. I will see to it.”'},
+    {side:'back', title:'Clause 6 — The gods witness it', text:'The gods of both lands stand witness to the treaty. To break it is to answer to them.', plain:'“The gods heard this. So did we.”'}
+  ];
+
+  var clauseTitle = document.getElementById('clauseTitle');
+  var clauseText = document.getElementById('clauseText');
+  var clausePlain = document.getElementById('clausePlain');
+  var chipsEl = document.getElementById('clauseChips');
+  var activeClause = -1;
+
+  function showClause(i, rotate){
+    activeClause = i;
+    clauseTitle.textContent = CLAUSES[i].title;
+    clauseText.textContent = CLAUSES[i].text;
+    clausePlain.textContent = CLAUSES[i].plain;
+    var chips = chipsEl.children;
+    for (var k = 0; k < chips.length; k++) chips[k].classList.toggle('on', k === i);
+    if (rotate) faceSide(CLAUSES[i].side);
+  }
+  CLAUSES.forEach(function(c, i){
+    var b = document.createElement('button');
+    b.textContent = 'Clause ' + (i + 1);
+    b.addEventListener('click', function(){ showClause(i, true); });
+    chipsEl.appendChild(b);
+  });
+
+  /* ---------- cuneiform textures ---------- */
+  function hash(x, y){ var s = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return s - Math.floor(s); }
+
+  function drawFace(canvas, bumpCanvas, seed, bandCount){
+    var ctx = canvas.getContext('2d');
+    var btx = bumpCanvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    // clay base
+    var g = ctx.createLinearGradient(0, 0, W, H);
+    g.addColorStop(0, '#c49a68'); g.addColorStop(0.5, '#b98a5a'); g.addColorStop(1, '#a87c4e');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    btx.fillStyle = '#8a8a8a'; btx.fillRect(0, 0, W, H);
+    // mottling
+    for (var i = 0; i < 900; i++){
+      var x = hash(i, seed) * W, y = hash(i + 500, seed) * H;
+      var r = 6 + hash(i + 9, seed) * 30;
+      ctx.fillStyle = 'rgba(' + (150 + Math.floor(hash(i+1, seed)*60)) + ',' + (105 + Math.floor(hash(i+2, seed)*45)) + ',' + (60 + Math.floor(hash(i+3, seed)*30)) + ',' + (0.05 + hash(i+4, seed) * 0.08) + ')';
+      ctx.beginPath(); ctx.ellipse(x, y, r, r * (0.4 + hash(i+5, seed) * 0.6), hash(i+6, seed) * 3.14, 0, 6.29); ctx.fill();
+    }
+    // darker worn edges
+    var eg = ctx.createRadialGradient(W/2, H/2, Math.min(W,H)*0.35, W/2, H/2, Math.max(W,H)*0.72);
+    eg.addColorStop(0, 'rgba(0,0,0,0)'); eg.addColorStop(1, 'rgba(70,40,15,0.35)');
+    ctx.fillStyle = eg; ctx.fillRect(0, 0, W, H);
+    var eg2 = btx.createRadialGradient(W/2, H/2, Math.min(W,H)*0.35, W/2, H/2, Math.max(W,H)*0.72);
+    eg2.addColorStop(0, 'rgba(0,0,0,0)'); eg2.addColorStop(1, 'rgba(0,0,0,0.25)');
+    btx.fillStyle = eg2; btx.fillRect(0, 0, W, H);
+
+    // clause bands with cuneiform rows
+    var bandH = H / bandCount;
+    for (var b = 0; b < bandCount; b++){
+      var y0 = b * bandH;
+      // faint rule line at band top
+      ctx.strokeStyle = 'rgba(70,40,15,0.35)'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(30, y0 + 14); ctx.lineTo(W - 30, y0 + 14); ctx.stroke();
+      var rows = 9;
+      for (var r = 0; r < rows; r++){
+        var ry = y0 + 40 + r * ((bandH - 70) / rows);
+        var x = 44;
+        while (x < W - 70){
+          var s = 9 + hash(x, ry + seed * 13) * 9;
+          var a = (hash(ry, x) - 0.5) * 0.7;
+          // wedge impression: dark triangle + light rim
+          ctx.save(); ctx.translate(x, ry); ctx.rotate(a);
+          ctx.fillStyle = 'rgba(52,30,10,0.6)';
+          ctx.beginPath(); ctx.moveTo(0, -s * 0.45); ctx.lineTo(s, 0); ctx.lineTo(0, s * 0.45); ctx.closePath(); ctx.fill();
+          ctx.strokeStyle = 'rgba(255,225,170,0.35)'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(0, -s * 0.45); ctx.lineTo(s, 0); ctx.stroke();
+          ctx.restore();
+          btx.save(); btx.translate(x, ry); btx.rotate(a);
+          btx.fillStyle = 'rgba(20,20,20,0.85)';
+          btx.beginPath(); btx.moveTo(0, -s * 0.45); btx.lineTo(s, 0); btx.lineTo(0, s * 0.45); btx.closePath(); btx.fill();
+          btx.restore();
+          x += s + 8 + hash(x, seed) * 14;
+        }
+      }
+    }
+    // a few cracks / chips
+    for (var c = 0; c < 7; c++){
+      var cx = hash(c, seed + 77) * W, cy = hash(c + 3, seed + 77) * H;
+      ctx.strokeStyle = 'rgba(60,35,12,0.4)'; ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + (hash(c, seed) - 0.5) * 90, cy + (hash(c + 1, seed) - 0.5) * 90);
+      ctx.stroke();
+    }
+  }
+
+  function makeFaceTextures(seed, bands){
+    var c = document.createElement('canvas'); c.width = 1024; c.height = 1408;
+    var b = document.createElement('canvas'); b.width = 1024; b.height = 1408;
+    drawFace(c, b, seed, bands);
+    var map = new THREE.CanvasTexture(c);
+    map.encoding = THREE.sRGBEncoding;
+    var bump = new THREE.CanvasTexture(b);
+    return {map: map, bump: bump};
+  }
+
+  /* ---------- scene ---------- */
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+  } catch (e) {
+    veil.classList.add('hidden');
+    fail.classList.add('show');
+    return;
+  }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setSize(stage.clientWidth, stage.clientHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  stage.appendChild(renderer.domElement);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(38, stage.clientWidth / stage.clientHeight, 0.1, 100);
+  var DEFAULT_Z = 7.2;
+  camera.position.set(0, 0.4, DEFAULT_Z);
+
+  scene.add(new THREE.AmbientLight(0xffe0b0, 0.35));
+  var key = new THREE.DirectionalLight(0xffd9a0, 1.15);
+  key.position.set(-4.5, 3.5, 4.5); // raking light so wedges cast shadows
+  key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  scene.add(key);
+  var fill = new THREE.DirectionalLight(0x9fb0da, 0.28);
+  fill.position.set(3.5, 1.5, 3.5);
+  scene.add(fill);
+  var candle = new THREE.PointLight(0xff9a3c, 0.7, 20);
+  candle.position.set(2.5, -2.5, 3.5);
+  scene.add(candle);
+
+  // pedestal
+  var pedestal = new THREE.Group();
+  var stoneMat = new THREE.MeshStandardMaterial({color: 0x1a140e, roughness: 0.95, metalness: 0});
+  var plinth = new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.35, 3.0), stoneMat);
+  plinth.position.y = -2.45; plinth.receiveShadow = true;
+  pedestal.add(plinth);
+  var step = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.3, 2.4), stoneMat);
+  step.position.y = -2.12; step.receiveShadow = true;
+  pedestal.add(step);
+  var standMat = new THREE.MeshStandardMaterial({color: 0x2c2016, roughness: 0.7, metalness: 0.25});
+  var stand = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.22, 0.9), standMat);
+  stand.position.y = -1.86; stand.castShadow = true; stand.receiveShadow = true;
+  pedestal.add(stand);
+  scene.add(pedestal);
+
+  // tablet
+  var tabletGroup = new THREE.Group();
+  var W2 = 2.3, H2 = 3.1, D2 = 0.34;
+  var geo = new THREE.BoxGeometry(W2, H2, D2, 26, 34, 4);
+  var pos = geo.attributes.position;
+  for (var vi = 0; vi < pos.count; vi++){
+    var x = pos.getX(vi), y = pos.getY(vi), z = pos.getZ(vi);
+    // pillow bulge on front/back faces
+    var bulge = 0.035 * (1 - Math.pow(x / (W2/2), 2)) * (1 - Math.pow(y / (H2/2), 2));
+    if (Math.abs(z) > D2 * 0.4) z += Math.sign(z) * bulge;
+    // handmade unevenness (deterministic, crack-free)
+    var n = Math.sin(x * 12.9898 + y * 78.233 + z * 37.719) * 43758.5453;
+    n = n - Math.floor(n);
+    var jit = (n - 0.5) * 0.028;
+    // slight taper toward the top
+    var taper = 1 - 0.03 * ((y + H2/2) / H2);
+    x *= taper;
+    pos.setXYZ(vi, x + jit * 0.5, y + jit * 0.4, z + jit * 0.5);
+  }
+  geo.computeVertexNormals();
+
+  var frontTex = makeFaceTextures(11, 3);
+  var backTex = makeFaceTextures(47, 3);
+  var frontMat = new THREE.MeshStandardMaterial({map: frontTex.map, bumpMap: frontTex.bump, bumpScale: 0.6, roughness: 0.88, metalness: 0});
+  var backMat = new THREE.MeshStandardMaterial({map: backTex.map, bumpMap: backTex.bump, bumpScale: 0.6, roughness: 0.88, metalness: 0});
+  var edgeCanvas = document.createElement('canvas'); edgeCanvas.width = 256; edgeCanvas.height = 256;
+  var ectx = edgeCanvas.getContext('2d');
+  ectx.fillStyle = '#a87c4e'; ectx.fillRect(0, 0, 256, 256);
+  for (var ei = 0; ei < 500; ei++){
+    ectx.fillStyle = 'rgba(' + (120 + Math.floor(hash(ei, 3) * 70)) + ',' + (85 + Math.floor(hash(ei, 4) * 40)) + ',50,' + (0.06 + hash(ei, 5) * 0.1) + ')';
+    ectx.beginPath(); ectx.ellipse(hash(ei, 6) * 256, hash(ei, 7) * 256, 4 + hash(ei, 8) * 16, 3 + hash(ei, 9) * 10, hash(ei, 10) * 3, 0, 6.29); ectx.fill();
+  }
+  var edgeTex = new THREE.CanvasTexture(edgeCanvas);
+  edgeTex.encoding = THREE.sRGBEncoding;
+  var edgeMat = new THREE.MeshStandardMaterial({map: edgeTex, roughness: 0.92, metalness: 0});
+
+  var tablet = new THREE.Mesh(geo, [edgeMat, edgeMat, edgeMat, edgeMat, frontMat, backMat]);
+  tablet.castShadow = true; tablet.receiveShadow = true;
+  tabletGroup.add(tablet);
+  tabletGroup.rotation.x = -0.08;
+  tabletGroup.position.y = -0.15;
+  scene.add(tabletGroup);
+
+  /* ---------- interaction ---------- */
+  var targetRotY = 0, targetRotX = -0.08;
+  var curRotY = 0, curRotX = -0.08;
+  var targetZ = DEFAULT_Z;
+  var dragging = false, lastX = 0, lastY = 0, downX = 0, downY = 0, moved = 0;
+  var el = renderer.domElement;
+
+  function onDown(e){
+    dragging = true; moved = 0;
+    var p = pointOf(e); lastX = downX = p.x; lastY = downY = p.y;
+  }
+  function onMove(e){
+    if (!dragging) return;
+    var p = pointOf(e);
+    var dx = p.x - lastX, dy = p.y - lastY;
+    moved += Math.abs(dx) + Math.abs(dy);
+    targetRotY += dx * 0.009;
+    targetRotX = Math.max(-0.9, Math.min(0.9, targetRotX + dy * 0.006));
+    lastX = p.x; lastY = p.y;
+  }
+  function onUp(e){
+    if (!dragging) return;
+    dragging = false;
+    if (moved < 6) handleTap(e);
+  }
+  function pointOf(e){
+    if (e.touches && e.touches.length) return {x: e.touches[0].clientX, y: e.touches[0].clientY};
+    return {x: e.clientX, y: e.clientY};
+  }
+  el.addEventListener('pointerdown', onDown);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onUp);
+
+  // pinch zoom
+  var pinchD = 0;
+  el.addEventListener('touchstart', function(e){
+    if (e.touches.length === 2) pinchD = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+  }, {passive: true});
+  el.addEventListener('touchmove', function(e){
+    if (e.touches.length === 2 && pinchD > 0){
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      targetZ = Math.max(4.2, Math.min(10.5, targetZ - (d - pinchD) * 0.012));
+      pinchD = d;
+    }
+  }, {passive: true});
+  el.addEventListener('wheel', function(e){
+    e.preventDefault();
+    targetZ = Math.max(4.2, Math.min(10.5, targetZ + e.deltaY * 0.005));
+  }, {passive: false});
+
+  var ray = new THREE.Raycaster();
+  var ndc = new THREE.Vector2();
+  function handleTap(e){
+    var r = el.getBoundingClientRect();
+    var cx = (e.clientX !== undefined ? e.clientX : (e.changedTouches && e.changedTouches[0].clientX));
+    var cy = (e.clientY !== undefined ? e.clientY : (e.changedTouches && e.changedTouches[0].clientY));
+    if (cx === undefined) return;
+    ndc.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    var hits = ray.intersectObject(tablet);
+    if (!hits.length) return;
+    var uv = hits[0].uv;
+    if (!uv) return;
+    // which side is facing? use tablet world normal via face
+    var normal = hits[0].face ? hits[0].face.normal.clone().transformDirection(tablet.matrixWorld) : null;
+    var facingFront = true;
+    if (normal) facingFront = normal.z > 0;
+    // band from v: 3 bands per face
+    var band = Math.min(2, Math.max(0, Math.floor((1 - uv.y) * 3)));
+    var idx = facingFront ? band : 3 + band;
+    showClause(idx, false);
+    var card = document.querySelector('.clause-card');
+    if (card) card.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+  }
+
+  function faceSide(side){
+    var twoPi = Math.PI * 2;
+    // normalize targetRotY to [0, 2PI)
+    var cur = ((targetRotY % twoPi) + twoPi) % twoPi;
+    if (side === 'front'){
+      targetRotY += (cur < Math.PI ? -cur : twoPi - cur);
+    } else {
+      targetRotY += (cur < Math.PI ? Math.PI - cur : Math.PI - cur + twoPi);
+    }
+  }
+
+  document.getElementById('btnFront').addEventListener('click', function(){ faceSide('front'); });
+  document.getElementById('btnBack').addEventListener('click', function(){ faceSide('back'); });
+  document.getElementById('btnTurn').addEventListener('click', function(){ targetRotY += Math.PI; });
+  document.getElementById('btnZoomIn').addEventListener('click', function(){ targetZ = Math.max(4.2, targetZ - 0.8); });
+  document.getElementById('btnZoomOut').addEventListener('click', function(){ targetZ = Math.min(10.5, targetZ + 0.8); });
+  document.getElementById('btnReset').addEventListener('click', function(){ targetRotY = 0; targetRotX = -0.08; targetZ = DEFAULT_Z; });
+
+  /* ---------- temple wall illustration ---------- */
+  (function(){
+    var c = document.getElementById('wallCanvas');
+    var x2 = c.getContext('2d');
+    x2.fillStyle = '#3a2c18'; x2.fillRect(0, 0, 340, 220);
+    for (var i = 0; i < 260; i++){
+      x2.fillStyle = 'rgba(' + (90 + Math.floor(hash(i, 21) * 60)) + ',' + (70 + Math.floor(hash(i, 22) * 40)) + ',40,' + (0.05 + hash(i, 23) * 0.08) + ')';
+      x2.beginPath(); x2.ellipse(hash(i, 24) * 340, hash(i, 25) * 220, 4 + hash(i, 26) * 18, 3 + hash(i, 27) * 10, 0, 0, 6.29); x2.fill();
+    }
+    // rows of simple glyph-like marks
+    var glyphs = ['ankh', 'eye', 'sun', 'owl', 'snake', 'star', 'water', 'reed'];
+    for (var row = 0; row < 4; row++){
+      var gy = 34 + row * 48;
+      for (var col = 0; col < 9; col++){
+        var gx = 22 + col * 35;
+        var gk = glyphs[Math.floor(hash(row * 10 + col, 31) * glyphs.length)];
+        x2.strokeStyle = 'rgba(240,210,140,0.85)'; x2.fillStyle = 'rgba(240,210,140,0.85)'; x2.lineWidth = 2;
+        if (gk === 'ankh'){ x2.beginPath(); x2.ellipse(gx, gy - 4, 5, 6, 0, 0, 6.29); x2.stroke(); x2.beginPath(); x2.moveTo(gx, gy + 2); x2.lineTo(gx, gy + 16); x2.moveTo(gx - 7, gy + 7); x2.lineTo(gx + 7, gy + 7); x2.stroke(); }
+        else if (gk === 'eye'){ x2.beginPath(); x2.ellipse(gx, gy + 4, 11, 5, 0, 0, 6.29); x2.stroke(); x2.beginPath(); x2.arc(gx, gy + 4, 2.4, 0, 6.29); x2.fill(); }
+        else if (gk === 'sun'){ x2.beginPath(); x2.arc(gx, gy + 4, 8, 0, 6.29); x2.stroke(); x2.beginPath(); x2.arc(gx, gy + 4, 2.5, 0, 6.29); x2.fill(); }
+        else if (gk === 'owl'){ x2.beginPath(); x2.ellipse(gx, gy + 6, 7, 9, 0, 0, 6.29); x2.stroke(); x2.beginPath(); x2.arc(gx, gy - 5, 4.5, 0, 6.29); x2.stroke(); }
+        else if (gk === 'snake'){ x2.beginPath(); x2.moveTo(gx - 10, gy + 12); x2.bezierCurveTo(gx - 4, gy - 2, gx + 4, gy + 16, gx + 10, gy + 2); x2.stroke(); }
+        else if (gk === 'star'){ for (var s = 0; s < 5; s++){ var a = -Math.PI / 2 + s * 1.256; x2.beginPath(); x2.moveTo(gx, gy + 4); x2.lineTo(gx + Math.cos(a) * 9, gy + 4 + Math.sin(a) * 9); x2.stroke(); } }
+        else if (gk === 'water'){ x2.beginPath(); x2.moveTo(gx - 10, gy + 4); for (var w = 0; w < 4; w++){ x2.lineTo(gx - 10 + w * 5 + 2.5, gy - 1); x2.lineTo(gx - 10 + (w + 1) * 5, gy + 4); } x2.stroke(); }
+        else { x2.beginPath(); x2.moveTo(gx, gy - 6); x2.lineTo(gx, gy + 14); x2.moveTo(gx - 4, gy - 2); x2.lineTo(gx + 4, gy - 2); x2.stroke(); }
+      }
+    }
+  })();
+
+  /* ---------- loop ---------- */
+  function resize(){
+    var w = stage.clientWidth, h = stage.clientHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+
+  var clock = new THREE.Clock();
+  var idle = 0;
+  function animate(){
+    requestAnimationFrame(animate);
+    var dt = Math.min(clock.getDelta(), 0.05);
+    curRotY += (targetRotY - curRotY) * Math.min(1, dt * 6);
+    curRotX += (targetRotX - curRotX) * Math.min(1, dt * 6);
+    tabletGroup.rotation.y = curRotY;
+    tabletGroup.rotation.x = curRotX;
+    camera.position.z += (targetZ - camera.position.z) * Math.min(1, dt * 5);
+    // slow idle drift when untouched
+    idle += dt;
+    if (!dragging && idle > 6){
+      tabletGroup.rotation.y = curRotY + Math.sin(idle * 0.25) * 0.03;
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+  veil.classList.add('hidden');
+})();
+</script>
+</body>
+</html>

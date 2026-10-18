@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Etruscan Bronze Mirror — Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0; font-family: Georgia, 'Times New Roman', serif; }
+  #page { max-width: 900px; margin: 0 auto; padding: 16px 14px 40px; }
+  h1 { font-size: 26px; font-weight: normal; letter-spacing: .04em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 14px; font-size: 15px; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #050403; border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #stage.grabbing { cursor: grabbing; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 2; }
+  #veil.hidden { display: none; }
+  #fail { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9; background: #1a0808; border-radius: 6px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px; padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13px; font-style: italic; margin: 4px 0 14px; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px; line-height: 1.6; }
+  .card h2 { font-size: 19px; font-weight: normal; color: #f3d58c; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: #e8d9b0; margin-bottom: 8px; }
+  .card .label { color: #b98f4e; font-style: italic; font-size: 14px; }
+  .card .hyp { color: #c9a24b; }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>Etruscan Bronze Mirror</h1>
+  <p class="sub">A modelled rendition of a type, not a replica of one museum piece &middot; Etruscans chapter</p>
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Polishing the mirror&hellip;</div>
+  </div>
+  <div class="bar" id="viewBar">
+    <button id="btnFace" class="active">Polished face</button>
+    <button id="btnBack">Engraved back</button>
+    <button id="btnTinia">Tinia</button>
+    <button id="btnUni">Uni</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn it &middot; scroll or pinch to zoom &middot; tap a figure on the back for its name and story</p>
+  <div class="card" id="infoCard"></div>
+  <div id="fail"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+  function showFail(msg) {
+    fail.style.display = 'block';
+    fail.textContent = msg;
+    veil.classList.add('hidden');
+  }
+  if (typeof THREE === 'undefined') { showFail('The 3D engine did not load. Check your connection and reload the page.'); return; }
+
+  var canvas = document.getElementById('stage');
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+  } catch (e) { showFail('This device could not start 3D. The description below still tells the full story.'); return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.35;
+  renderer.outputEncoding = THREE.sRGBEncoding;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050403);
+  scene.fog = new THREE.Fog(0x050403, 9, 16);
+
+  var camera = new THREE.PerspectiveCamera(40, 4 / 3, 0.1, 100);
+  var HOME_POS = new THREE.Vector3(0, 3.0, 5.8);
+  var HOME_TGT = new THREE.Vector3(0, 1.55, 0);
+  camera.position.copy(HOME_POS);
+
+  // ---- Lights: candlelight, warm — bright enough to actually see the bronze ----
+  // Carter: the mirror was too dark, the light didn't hit it. The old rig lit
+  // the polished face from the front but left the engraved back in shadow,
+  // and bare metal with no environment map reads near-black. Fix: brighter
+  // key + a dedicated back key for the engraving, stronger fill, lighter bronze.
+  scene.add(new THREE.AmbientLight(0x6b4f2a, 1.3));
+  var key = new THREE.DirectionalLight(0xffd9a0, 1.9);
+  key.position.set(3, 6, 4); key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  scene.add(key);
+  var backKey = new THREE.DirectionalLight(0xffd9a0, 1.5);
+  backKey.position.set(-2, 4, -5); scene.add(backKey);
+  var candleL = new THREE.PointLight(0xff9a3c, 1.8, 12); candleL.position.set(-2.6, 1.6, 1.8); scene.add(candleL);
+  var candleR = new THREE.PointLight(0xffb060, 1.5, 12); candleR.position.set(2.6, 1.3, -1.2); scene.add(candleR);
+  var rim = new THREE.DirectionalLight(0x9fb0da, 0.8); rim.position.set(-2, 3, -4); scene.add(rim);
+
+  // deterministic pseudo-random
+  function hash01(n) { var x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); }
+
+  // ---- Materials ----
+  var bronzeSide = new THREE.MeshStandardMaterial({ color: 0x8a6528, roughness: 0.5, metalness: 0.7 });
+  var bronzeRim = new THREE.MeshStandardMaterial({ color: 0x77551f, roughness: 0.55, metalness: 0.7 });
+  var handleMat = new THREE.MeshStandardMaterial({ color: 0x64461c, roughness: 0.62, metalness: 0.65 });
+  var goldMat = new THREE.MeshStandardMaterial({ color: 0xc9a24b, roughness: 0.35, metalness: 0.85 });
+  var velvetMat = new THREE.MeshStandardMaterial({ color: 0x4a0f16, roughness: 0.95 });
+  var stoneMat = new THREE.MeshStandardMaterial({ color: 0x1a1008, roughness: 0.6, metalness: 0.1 });
+  var glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.08, roughness: 0.05, metalness: 0 });
+  var standMat = new THREE.MeshStandardMaterial({ color: 0x241a0c, roughness: 0.5, metalness: 0.7 });
+
+  // ---- Pedestal + cushion + case (shared house presentation) ----
+  var pedestal = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.4, 0.35, 48), stoneMat);
+  pedestal.position.y = 0.175; pedestal.receiveShadow = true; scene.add(pedestal);
+  var cushion = new THREE.Mesh(new THREE.BoxGeometry(3.0, 0.42, 3.0), velvetMat);
+  cushion.position.y = 0.56; cushion.castShadow = true; cushion.receiveShadow = true; scene.add(cushion);
+  var cushionTop = new THREE.Mesh(new THREE.BoxGeometry(2.7, 0.1, 2.7), new THREE.MeshStandardMaterial({ color: 0x5c1420, roughness: 0.9 }));
+  cushionTop.position.y = 0.8; cushionTop.receiveShadow = true; scene.add(cushionTop);
+  var glassCase = new THREE.Mesh(new THREE.BoxGeometry(4.4, 4.4, 4.4), glassMat);
+  glassCase.position.y = 2.4; scene.add(glassCase);
+  var caseBase = new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.08, 4.6), goldMat);
+  caseBase.position.y = 0.38; scene.add(caseBase);
+
+  // ================================================================
+  //  ENGRAVED BACK — canvas texture: fine incised line-work.
+  //  Scene: Tinia (left, sceptre) and Uni (right) facing each other,
+  //  a palmette between them, name labels incised beside the figures.
+  //  The scene is a TYPE-COMPOSITE after real Etruscan mirrors
+  //  (Vatican, British Museum, Met) — it copies no single surviving
+  //  mirror. Names are attested Etruscan deity names. Labels are
+  //  drawn in modern letterforms for legibility; real mirrors incise
+  //  the names in Etruscan script, often right-to-left.
+  // ================================================================
+  function backTexture() {
+    var S = 1024, c = document.createElement('canvas'); c.width = S; c.height = S;
+    var x = c.getContext('2d');
+    var cx = S / 2, cy = S / 2;
+    // bronze base: warm gold-brown with soft mottling (lightened so the back reads)
+    var g = x.createRadialGradient(cx, cy, 60, cx, cy, 520);
+    g.addColorStop(0, '#c49a4a'); g.addColorStop(0.55, '#a37c3c'); g.addColorStop(1, '#7a5a24');
+    x.fillStyle = g; x.fillRect(0, 0, S, S);
+    for (var i = 0; i < 900; i++) {
+      var px = hash01(i * 3 + 1) * S, py = hash01(i * 7 + 2) * S, r = 2 + hash01(i * 11) * 14;
+      x.fillStyle = hash01(i * 13) > 0.5 ? 'rgba(60,40,10,0.10)' : 'rgba(220,190,110,0.08)';
+      x.beginPath(); x.arc(px, py, r, 0, Math.PI * 2); x.fill();
+    }
+    // verdigris in the recesses — small green-blue flecks, denser near the rim
+    for (var v = 0; v < 260; v++) {
+      var a = hash01(v * 17) * Math.PI * 2, d = 380 + hash01(v * 19) * 130;
+      var vx = cx + Math.cos(a) * d, vy = cy + Math.sin(a) * d;
+      x.fillStyle = 'rgba(46,110,86,' + (0.10 + hash01(v * 23) * 0.22) + ')';
+      x.beginPath(); x.arc(vx, vy, 1 + hash01(v * 29) * 2.6, 0, Math.PI * 2); x.fill();
+    }
+    var ink = '#241505'; // incised line colour
+    x.strokeStyle = ink; x.fillStyle = ink; x.lineCap = 'round'; x.lineJoin = 'round';
+    // outer border: two engraved rings + a ring of dots
+    x.lineWidth = 5; x.beginPath(); x.arc(cx, cy, 478, 0, Math.PI * 2); x.stroke();
+    x.lineWidth = 2.5; x.beginPath(); x.arc(cx, cy, 448, 0, Math.PI * 2); x.stroke();
+    for (var d2 = 0; d2 < 120; d2++) {
+      var a2 = (d2 / 120) * Math.PI * 2;
+      x.beginPath(); x.arc(cx + Math.cos(a2) * 463, cy + Math.sin(a2) * 463, 3.2, 0, Math.PI * 2); x.fill();
+    }
+    x.lineWidth = 2; x.beginPath(); x.arc(cx, cy, 418, 0, Math.PI * 2); x.stroke();
+    // ground line
+    x.lineWidth = 3; x.beginPath(); x.moveTo(cx - 330, cy + 250); x.lineTo(cx + 330, cy + 250); x.stroke();
+
+    // ---- figures: fine line-work, draped standing figures ----
+    function figure(fx, sceptre) {
+      var f = 1.0; // figure height scale
+      x.lineWidth = 4;
+      // head
+      x.beginPath(); x.arc(fx, cy - 150, 34, 0, Math.PI * 2); x.stroke();
+      // hair bun
+      x.beginPath(); x.arc(fx + (sceptre ? -26 : 26), cy - 168, 12, 0, Math.PI * 2); x.stroke();
+      // neck + shoulders
+      x.beginPath(); x.moveTo(fx, cy - 116); x.lineTo(fx, cy - 96); x.stroke();
+      // draped body: two long curves from shoulders to feet
+      x.beginPath(); x.moveTo(fx - 42, cy - 96);
+      x.bezierCurveTo(fx - 62, cy - 10, fx - 48, cy + 150, fx - 34, cy + 248); x.stroke();
+      x.beginPath(); x.moveTo(fx + 42, cy - 96);
+      x.bezierCurveTo(fx + 62, cy - 10, fx + 48, cy + 150, fx + 34, cy + 248); x.stroke();
+      // drape folds
+      x.lineWidth = 2;
+      for (var k = 0; k < 4; k++) {
+        var oy = cy - 40 + k * 62;
+        x.beginPath(); x.moveTo(fx - 40, oy);
+        x.bezierCurveTo(fx - 20, oy + 18, fx + 20, oy - 18, fx + 40, oy); x.stroke();
+      }
+      x.lineWidth = 4;
+      // near arm: raised toward the other figure
+      var dir = sceptre ? 1 : -1;
+      x.beginPath(); x.moveTo(fx + dir * 38, cy - 70);
+      x.bezierCurveTo(fx + dir * 80, cy - 60, fx + dir * 95, cy - 20, fx + dir * 92, cy + 6); x.stroke();
+      // far arm: down along the body
+      x.beginPath(); x.moveTo(fx - dir * 38, cy - 70);
+      x.bezierCurveTo(fx - dir * 55, cy - 10, fx - dir * 45, cy + 90, fx - dir * 40, cy + 130); x.stroke();
+      // feet
+      x.beginPath(); x.moveTo(fx - 30, cy + 248); x.lineTo(fx - 16, cy + 248); x.stroke();
+      x.beginPath(); x.moveTo(fx + 16, cy + 248); x.lineTo(fx + 30, cy + 248); x.stroke();
+      // sceptre for Tinia
+      if (sceptre) {
+        x.lineWidth = 4;
+        x.beginPath(); x.moveTo(fx - 92, cy - 210); x.lineTo(fx - 92, cy + 248); x.stroke();
+        // small star / thunderbolt head
+        x.lineWidth = 3;
+        x.beginPath(); x.moveTo(fx - 92, cy - 238); x.lineTo(fx - 80, cy - 214);
+        x.moveTo(fx - 92, cy - 238); x.lineTo(fx - 104, cy - 214);
+        x.moveTo(fx - 92, cy - 238); x.lineTo(fx - 92, cy - 210); x.stroke();
+      } else {
+        // Uni: small sprig in the raised hand
+        x.lineWidth = 3;
+        var hx = fx - 92, hy = cy + 6;
+        x.beginPath(); x.moveTo(hx, hy); x.lineTo(hx, hy - 46); x.stroke();
+        for (var l = 0; l < 3; l++) {
+          x.beginPath(); x.moveTo(hx, hy - 12 - l * 14);
+          x.quadraticCurveTo(hx - 16, hy - 22 - l * 14, hx - 26, hy - 18 - l * 14); x.stroke();
+          x.beginPath(); x.moveTo(hx, hy - 12 - l * 14);
+          x.quadraticCurveTo(hx + 16, hy - 22 - l * 14, hx + 26, hy - 18 - l * 14); x.stroke();
+        }
+      }
+    }
+    figure(cx - 190, true);   // Tinia, left, sceptre
+    figure(cx + 190, false);  // Uni, right, sprig
+
+    // palmette between the figures
+    x.lineWidth = 3;
+    x.beginPath(); x.moveTo(cx, cy + 248); x.lineTo(cx, cy + 60); x.stroke();
+    for (var p = -2; p <= 2; p++) {
+      x.beginPath(); x.moveTo(cx, cy + 80);
+      x.quadraticCurveTo(cx + p * 34, cy + 10, cx + p * 52, cy - 34); x.stroke();
+      x.beginPath(); x.arc(cx + p * 52, cy - 40, 7, 0, Math.PI * 2); x.stroke();
+    }
+    // incised name labels — modern letterforms for legibility
+    x.font = '700 52px Georgia, serif';
+    x.textAlign = 'center';
+    x.fillStyle = ink;
+    x.fillText('TINIA', cx - 190, cy - 235);
+    x.fillText('VNI', cx + 190, cy - 235);
+    // thin incised underline under each label
+    x.lineWidth = 2;
+    x.beginPath(); x.moveTo(cx - 262, cy - 218); x.lineTo(cx - 118, cy - 218); x.stroke();
+    x.beginPath(); x.moveTo(cx + 118, cy - 218); x.lineTo(cx + 262, cy - 218); x.stroke();
+
+    var tex = new THREE.CanvasTexture(c);
+    tex.encoding = THREE.sRGBEncoding;
+    tex.anisotropy = 4;
+    return tex;
+  }
+
+  // ---- Polished face — painted soft reflection (candle glow, dark room) ----
+  function faceTexture() {
+    var S = 512, c = document.createElement('canvas'); c.width = S; c.height = S;
+    var x = c.getContext('2d');
+    var cx = S / 2, cy = S / 2;
+    var g = x.createRadialGradient(cx - 60, cy - 80, 20, cx, cy, 280);
+    g.addColorStop(0, '#ffe9b0'); g.addColorStop(0.35, '#d9ac55'); g.addColorStop(0.7, '#8a6a30'); g.addColorStop(1, '#4d3410');
+    x.fillStyle = g; x.fillRect(0, 0, S, S);
+    // soft candle reflections
+    function blob(bx, by, br, alpha) {
+      var bg = x.createRadialGradient(bx, by, 2, bx, by, br);
+      bg.addColorStop(0, 'rgba(255,240,200,' + alpha + ')');
+      bg.addColorStop(1, 'rgba(255,240,200,0)');
+      x.fillStyle = bg; x.beginPath(); x.arc(bx, by, br, 0, Math.PI * 2); x.fill();
+    }
+    blob(cx - 90, cy - 110, 70, 0.55); blob(cx + 110, cy - 60, 46, 0.4); blob(cx + 20, cy + 130, 80, 0.25);
+    // faint concentric polishing marks
+    x.strokeStyle = 'rgba(255,240,200,0.10)';
+    for (var r = 40; r < 260; r += 22) {
+      x.lineWidth = 1.5; x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.stroke();
+    }
+    // darkened rim
+    x.strokeStyle = 'rgba(40,26,6,0.55)'; x.lineWidth = 14;
+    x.beginPath(); x.arc(cx, cy, 248, 0, Math.PI * 2); x.stroke();
+    var tex = new THREE.CanvasTexture(c);
+    tex.encoding = THREE.sRGBEncoding;
+    tex.anisotropy = 4;
+    return tex;
+  }
+
+  // ---- The mirror ----
+  var mirror = new THREE.Group();
+  var DISC_R = 1.25, DISC_T = 0.09;
+  // NOTE: high metalness with no environment map reads near-black except for
+  // specular highlights — that was a big part of "too dark". Lower metalness
+  // lets the painted bronze actually show, while keeping a polished sheen.
+  var faceMat = new THREE.MeshStandardMaterial({ map: faceTexture(), color: 0xffffff, roughness: 0.18, metalness: 0.55 });
+  var backMat = new THREE.MeshStandardMaterial({ map: backTexture(), color: 0xffffff, roughness: 0.45, metalness: 0.35 });
+  var disc = new THREE.Mesh(new THREE.CylinderGeometry(DISC_R, DISC_R, DISC_T, 72), bronzeSide);
+  disc.rotation.x = Math.PI / 2; // cylinder axis along Z
+  disc.castShadow = true; disc.receiveShadow = true;
+  mirror.add(disc);
+  // Faces as separate circles: cylinder cap UVs transpose textures, so the
+  // polished face and the engraving each get their own CircleGeometry,
+  // oriented so the artwork reads upright. Back circle is Y-rotated to
+  // face -Z; the rotation and the behind-viewpoint cancel, so the
+  // engraving reads correctly (not mirrored).
+  var faceDisc = new THREE.Mesh(new THREE.CircleGeometry(DISC_R, 72), faceMat);
+  faceDisc.position.z = DISC_T / 2 + 0.002;
+  mirror.add(faceDisc);
+  var backDisc = new THREE.Mesh(new THREE.CircleGeometry(DISC_R, 72), backMat);
+  backDisc.rotation.y = Math.PI;
+  backDisc.position.z = -DISC_T / 2 - 0.002;
+  mirror.add(backDisc);
+  // raised rim ring
+  var rimRing = new THREE.Mesh(new THREE.TorusGeometry(DISC_R, 0.055, 12, 80), bronzeRim);
+  rimRing.castShadow = true;
+  mirror.add(rimRing);
+  // handle: collar + tapered grip + rounded knob
+  var collar = new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.045, 10, 32), goldMat);
+  collar.position.y = -DISC_R - 0.02; collar.rotation.x = Math.PI / 2;
+  mirror.add(collar);
+  var grip = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.125, 1.05, 24), handleMat);
+  grip.position.y = -DISC_R - 0.55; grip.castShadow = true;
+  mirror.add(grip);
+  var knob = new THREE.Mesh(new THREE.SphereGeometry(0.14, 24, 16), goldMat);
+  knob.scale.set(1, 0.8, 1); knob.position.y = -DISC_R - 1.12; knob.castShadow = true;
+  mirror.add(knob);
+  // small palmette finial where handle meets the disc
+  var finial = new THREE.Mesh(new THREE.SphereGeometry(0.09, 16, 12), goldMat);
+  finial.scale.set(1.4, 0.7, 0.5); finial.position.y = -DISC_R + 0.06;
+  mirror.add(finial);
+
+  // tap hotspots on the back, over the two figures
+  var hotMat = new THREE.MeshBasicMaterial({ visible: false });
+  function hotspot(x, y, z, name) {
+    var h = new THREE.Mesh(new THREE.SphereGeometry(0.55, 8, 8), hotMat);
+    h.position.set(x, y, z); h.userData.figure = name;
+    mirror.add(h); return h;
+  }
+  var hotTinia = hotspot(-0.62, 0.15, -0.12, 'tinia');
+  var hotUni = hotspot(0.62, 0.15, -0.12, 'uni');
+  var hotspots = [hotTinia, hotUni];
+
+  // display stand: low cradle — the disc's bottom rim sits in the base,
+  // flanked by two low bookend blocks on the cushion. The old two-prong
+  // stand read on Carter's phone as two sticks pushing through the
+  // mirror: the prongs stood in FRONT of the disc face and rose up it.
+  // Every stand part now stays below the disc's bottom rim curve, so
+  // from the front (polished face) and the back (engraved back) no
+  // stand part crosses or pierces the disc. The mirror itself is untouched.
+  var stand = new THREE.Group();
+  var standBase = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.05, 0.12, 40), standMat);
+  standBase.position.y = 0.06; standBase.receiveShadow = true;
+  stand.add(standBase);
+  // cradle bookends: low blocks flanking the lower rim, tops kept below
+  // the rim curve (rim at x=1.00 is y≈1.30 display; blocks top at 1.20)
+  var cradleGeo = new THREE.BoxGeometry(0.20, 0.35, 0.26);
+  var cradleL = new THREE.Mesh(cradleGeo, standMat);
+  cradleL.position.set(-1.10, 0.175, 0.08); cradleL.castShadow = true; cradleL.receiveShadow = true;
+  stand.add(cradleL);
+  var cradleR = new THREE.Mesh(cradleGeo, standMat);
+  cradleR.position.set(1.10, 0.175, 0.08); cradleR.castShadow = true; cradleR.receiveShadow = true;
+  stand.add(cradleR);
+
+  var display = new THREE.Group();
+  mirror.position.y = 2.05;
+  mirror.rotation.x = -0.10; // slight lean back
+  display.add(mirror);
+  stand.position.y = 0.85; // on the cushion top
+  display.add(stand);
+  scene.add(display);
+
+  // ---- Info cards ----
+  var infoCard = document.getElementById('infoCard');
+  var OVERVIEW_HTML = '<h2>An Etruscan bronze mirror</h2>'
+    + '<p>Hand mirrors like this were everyday objects in Etruria (c. 5th&ndash;3rd c. BCE) &mdash; polished on the face, engraved on the back, carried as personal possessions and often placed in graves. The back is where the art lives: mythological figures engraved in fine line-work, with their names incised beside them.</p>'
+    + '<p>Here Tinia and Uni face each other across a palmette &mdash; the chief god and chief goddess of the Etruscan pantheon, the Etruscan kin of Zeus and Hera. Tap a figure, or use the buttons below, for its name and story.</p>'
+    + '<p class="label">Honesty: this is a type-composite after real Etruscan mirrors (Vatican, British Museum, Met). It copies no single surviving mirror. The names Tinia and Uni are attested Etruscan deity names; the scene arrangement is representative. Labels are drawn in modern letterforms for legibility &mdash; real mirrors incise the names in Etruscan script, often right-to-left. The face&rsquo;s soft glow stands in for a true mirror reflection.</p>'
+    + '<p class="label">Etruscans chapter &middot; c. 5th&ndash;3rd c. BCE &middot; bronze, engraved</p>';
+  var TINIA_HTML = '<h2>Tinia &mdash; chief of the gods</h2>'
+    + '<p>Tinia is the Etruscan chief god, kin to Zeus and Jupiter. On mirrors he is shown with his sceptre, the sign of his rule, and sometimes with the thunderbolt. His name is incised on surviving mirrors and inscriptions, and the great temple at Tarquinia was his.</p>'
+    + '<p class="label">Name: attested Etruscan deity name. Scene: representative engraving, after the mirror type.</p>';
+  var UNI_HTML = '<h2>Uni &mdash; chief goddess</h2>'
+    + '<p>Uni is the Etruscan chief goddess, kin to Hera and Juno &mdash; protector of cities, of marriage, of women. Perugia was especially hers. On mirrors she is often shown beside Tinia, the divine pair at the head of the pantheon.</p>'
+    + '<p class="label">Name: attested Etruscan deity name. Scene: representative engraving, after the mirror type.</p>';
+  var FACE_HTML = '<h2>The polished face</h2>'
+    + '<p>Bronze mirrors were polished until they shone &mdash; the face was a true working mirror. The soft glow here stands in for a real reflection. Turn the mirror over to read the engraving on the back.</p>';
+  var BACK_HTML = '<h2>The engraved back</h2>'
+    + '<p>The back carries the art: Tinia and Uni in fine incised line-work, their names engraved beside them, a palmette between them. Tap a figure for its name and story.</p>';
+
+  var btnFace = document.getElementById('btnFace');
+  var btnBack = document.getElementById('btnBack');
+  var btnTinia = document.getElementById('btnTinia');
+  var btnUni = document.getElementById('btnUni');
+  function setActive(btn) {
+    [btnFace, btnBack, btnTinia, btnUni].forEach(function (b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+  }
+  var yawTarget = null, pitchTarget = null;
+  function showOverview() { infoCard.innerHTML = OVERVIEW_HTML; }
+  btnFace.addEventListener('click', function () {
+    setActive(btnFace); infoCard.innerHTML = FACE_HTML; yawTarget = 0.35; pitchTarget = 0.32;
+  });
+  btnBack.addEventListener('click', function () {
+    setActive(btnBack); infoCard.innerHTML = BACK_HTML; yawTarget = Math.PI + 0.35; pitchTarget = 0.32;
+  });
+  btnTinia.addEventListener('click', function () {
+    setActive(btnTinia); infoCard.innerHTML = TINIA_HTML; yawTarget = Math.PI + 0.35; pitchTarget = 0.32;
+  });
+  btnUni.addEventListener('click', function () {
+    setActive(btnUni); infoCard.innerHTML = UNI_HTML; yawTarget = Math.PI + 0.35; pitchTarget = 0.32;
+  });
+  showOverview();
+
+  // ---- Orbit controls: drag with weight, wheel/pinch zoom ----
+  var yaw = 0.35, pitch = 0.32, dist = 5.6;
+  var vYaw = 0, vPitch = 0, dragging = false, lastX = 0, lastY = 0;
+  var pointers = new Map(); var pinchDist = 0;
+  function applyCam() {
+    var y = HOME_TGT.y + Math.sin(pitch) * dist;
+    var h = Math.cos(pitch) * dist;
+    camera.position.set(HOME_TGT.x + Math.sin(yaw) * h, y, HOME_TGT.z + Math.cos(yaw) * h);
+    camera.lookAt(HOME_TGT);
+  }
+  function onDown(e) {
+    yawTarget = null; pitchTarget = null;
+    canvas.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 1) { dragging = true; lastX = e.clientX; lastY = e.clientY; vYaw = 0; vPitch = 0; canvas.classList.add('grabbing'); }
+    if (pointers.size === 2) {
+      var p = Array.from(pointers.values());
+      pinchDist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+      dragging = false;
+    }
+  }
+  function onMove(e) {
+    if (!pointers.has(e.pointerId)) return;
+    var prev = pointers.get(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 2) {
+      var p = Array.from(pointers.values());
+      var d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+      if (pinchDist > 0) { dist = Math.max(2.6, Math.min(9, dist - (d - pinchDist) * 0.012)); }
+      pinchDist = d; return;
+    }
+    if (dragging) {
+      var dx = e.clientX - lastX, dy = e.clientY - lastY;
+      lastX = e.clientX; lastY = e.clientY;
+      yaw -= dx * 0.008; pitch = Math.max(0.05, Math.min(1.1, pitch + dy * 0.006));
+      vYaw = -dx * 0.008; vPitch = dy * 0.006;
+    }
+  }
+  function onUp(e) {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinchDist = 0;
+    if (pointers.size === 0) { dragging = false; canvas.classList.remove('grabbing'); }
+  }
+  canvas.addEventListener('pointerdown', onDown);
+  canvas.addEventListener('pointermove', onMove);
+  canvas.addEventListener('pointerup', onUp);
+  canvas.addEventListener('pointercancel', onUp);
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    dist = Math.max(2.6, Math.min(9, dist + e.deltaY * 0.004));
+  }, { passive: false });
+  document.getElementById('btnReset').addEventListener('click', function () {
+    yaw = 0.35; pitch = 0.32; dist = 5.6; vYaw = 0; vPitch = 0; yawTarget = null; pitchTarget = null;
+    setActive(btnFace); showOverview();
+  });
+
+  // ---- Tap a figure: raycast against the back-face hotspots ----
+  var raycaster = new THREE.Raycaster();
+  var tapX = 0, tapY = 0, downX = 0, downY = 0;
+  canvas.addEventListener('pointerdown', function (e) { downX = e.clientX; downY = e.clientY; });
+  canvas.addEventListener('pointerup', function (e) {
+    if (Math.hypot(e.clientX - downX, e.clientY - downY) > 8) return; // it was a drag, not a tap
+    var rect = canvas.getBoundingClientRect();
+    tapX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    tapY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera({ x: tapX, y: tapY }, camera);
+    var hits = raycaster.intersectObjects(hotspots, false);
+    if (hits.length > 0) {
+      var fig = hits[0].object.userData.figure;
+      if (fig === 'tinia') { setActive(btnTinia); infoCard.innerHTML = TINIA_HTML; }
+      else { setActive(btnUni); infoCard.innerHTML = UNI_HTML; }
+    }
+  });
+
+  // ---- Resize + render loop ----
+  function resize() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (canvas.width !== Math.floor(w * renderer.getPixelRatio()) || canvas.height !== Math.floor(h * renderer.getPixelRatio())) {
+      renderer.setSize(w, h, false);
+    }
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  var lastT = performance.now(); var frames = 0; var idleT = 0;
+  function loop(now) {
+    requestAnimationFrame(loop);
+    var dt = Math.min(50, now - lastT); lastT = now;
+    // ease toward a view-button target
+    if (yawTarget !== null) {
+      var dyaw = yawTarget - yaw;
+      // shortest-arc wrap
+      while (dyaw > Math.PI) dyaw -= Math.PI * 2;
+      while (dyaw < -Math.PI) dyaw += Math.PI * 2;
+      yaw += dyaw * 0.08;
+      if (Math.abs(dyaw) < 0.005) yawTarget = null;
+    }
+    if (pitchTarget !== null) {
+      pitch += (pitchTarget - pitch) * 0.08;
+      if (Math.abs(pitchTarget - pitch) < 0.005) pitchTarget = null;
+    }
+    if (!dragging && pointers.size === 0 && yawTarget === null) {
+      if (Math.abs(vYaw) > 0.0001 || Math.abs(vPitch) > 0.0001) {
+        yaw += vYaw; pitch = Math.max(0.05, Math.min(1.1, pitch + vPitch));
+        vYaw *= 0.94; vPitch *= 0.94;
+      } else {
+        idleT += dt;
+        if (idleT > 4000) yaw += dt * 0.00004; // slow drift when idle
+      }
+    } else { idleT = 0; }
+    // candle flicker
+    var t = now * 0.001;
+    candleL.intensity = 1.8 + Math.sin(t * 11) * 0.12 + Math.sin(t * 23) * 0.06;
+    candleR.intensity = 1.5 + Math.sin(t * 9 + 2) * 0.1 + Math.sin(t * 19 + 1) * 0.05;
+    resize(); applyCam(); renderer.render(scene, camera);
+    frames++;
+    if (frames === 3) veil.classList.add('hidden');
+  }
+  requestAnimationFrame(loop);
+  setTimeout(function () { if (frames === 0) showFail('The 3D view did not start. The description below still tells the full story.'); }, 12000);
+})();
+</script>
+</body>
+</html>

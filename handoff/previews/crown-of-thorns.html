@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The Crown of Thorns — Revamp Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0; font-family: Georgia, 'Times New Roman', serif; }
+  #page { max-width: 900px; margin: 0 auto; padding: 16px 14px 40px; }
+  h1 { font-size: 26px; font-weight: normal; letter-spacing: .04em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 14px; font-size: 15px; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #050403; border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #stage.grabbing { cursor: grabbing; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 2; }
+  #veil.hidden { display: none; }
+  #fail { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9; background: #1a0808; border-radius: 6px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px; padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13px; font-style: italic; margin: 4px 0 14px; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px; line-height: 1.6; }
+  .card h2 { font-size: 19px; font-weight: normal; color: #f3d58c; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: #e8d9b0; margin-bottom: 8px; }
+  .card .label { color: #b98f4e; font-style: italic; font-size: 14px; }
+  .card .hyp { color: #c9a24b; }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>The Crown of Thorns</h1>
+  <p class="sub">A modelled rendition, not a replica &middot; Vault V06</p>
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Opening the crown&hellip;</div>
+  </div>
+  <div class="bar" id="viewBar">
+    <button id="btnGospel" class="active">The Gospel Crown &mdash; woven thorns</button>
+    <button id="btnParis">The Paris Relic &mdash; bundled rushes</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn it &middot; scroll or pinch to zoom</p>
+  <div class="card" id="infoCard"></div>
+  <div id="fail"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+  function showFail(msg) {
+    fail.style.display = 'block';
+    fail.textContent = msg;
+    veil.classList.add('hidden');
+  }
+  if (typeof THREE === 'undefined') { showFail('The 3D engine did not load. Check your connection and reload the page.'); return; }
+
+  var canvas = document.getElementById('stage');
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+  } catch (e) { showFail('This device could not start 3D. The description below still tells the full story.'); return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  renderer.outputEncoding = THREE.sRGBEncoding;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050403);
+  scene.fog = new THREE.Fog(0x050403, 9, 16);
+
+  var camera = new THREE.PerspectiveCamera(40, 4 / 3, 0.1, 100);
+  var HOME_POS = new THREE.Vector3(0, 3.0, 5.8);
+  var HOME_TGT = new THREE.Vector3(0, 1.4, 0);
+  camera.position.copy(HOME_POS);
+
+  // ---- Lights: candlelight, warm, hushed ----
+  scene.add(new THREE.AmbientLight(0x2a1c0e, 1.0));
+  var key = new THREE.DirectionalLight(0xffd9a0, 1.1);
+  key.position.set(3, 6, 4); key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  scene.add(key);
+  var candleL = new THREE.PointLight(0xff9a3c, 1.4, 9); candleL.position.set(-2.6, 1.6, 1.8); scene.add(candleL);
+  var candleR = new THREE.PointLight(0xffb060, 1.1, 9); candleR.position.set(2.6, 1.3, -1.2); scene.add(candleR);
+  var rim = new THREE.DirectionalLight(0x9fb0da, 0.35); rim.position.set(-2, 3, -4); scene.add(rim);
+
+  // ---- Materials ----
+  function woodMat(hex, rough) {
+    return new THREE.MeshStandardMaterial({ color: hex, roughness: rough, metalness: 0.05 });
+  }
+  var branchMats = [woodMat(0x6b4423, 0.82), woodMat(0x7a4f2a, 0.78), woodMat(0x54341a, 0.86)];
+  var thornMat = new THREE.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, roughness: 0.6, metalness: 0.05 }); // thick woody spikes; vertex colors carry a faint blood tint at the tips only (restrained, Carter's explicit order)
+  var rushMats = [new THREE.MeshStandardMaterial({ color: 0xd9c07a, roughness: 0.9 }), new THREE.MeshStandardMaterial({ color: 0xc9ad5e, roughness: 0.92 }), new THREE.MeshStandardMaterial({ color: 0xe6d194, roughness: 0.88 })];
+  var goldMat = new THREE.MeshStandardMaterial({ color: 0xc9a24b, roughness: 0.35, metalness: 0.85 });
+  var velvetMat = new THREE.MeshStandardMaterial({ color: 0x4a0f16, roughness: 0.95 });
+  var stoneMat = new THREE.MeshStandardMaterial({ color: 0x1a1008, roughness: 0.6, metalness: 0.1 });
+  var glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.08, roughness: 0.05, metalness: 0 });
+
+  // ---- Pedestal + cushion + case (shared) ----
+  var pedestal = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.4, 0.35, 48), stoneMat);
+  pedestal.position.y = 0.175; pedestal.receiveShadow = true; scene.add(pedestal);
+  var cushion = new THREE.Mesh(new THREE.BoxGeometry(3.0, 0.42, 3.0), velvetMat);
+  cushion.position.y = 0.56; cushion.castShadow = true; cushion.receiveShadow = true; scene.add(cushion);
+  var cushionTop = new THREE.Mesh(new THREE.BoxGeometry(2.7, 0.1, 2.7), new THREE.MeshStandardMaterial({ color: 0x5c1420, roughness: 0.9 }));
+  cushionTop.position.y = 0.8; cushionTop.receiveShadow = true; scene.add(cushionTop);
+  var glassCase = new THREE.Mesh(new THREE.BoxGeometry(4.4, 4.0, 4.4), glassMat);
+  glassCase.position.y = 2.2; scene.add(glassCase);
+  var caseBase = new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.08, 4.6), goldMat);
+  caseBase.position.y = 0.38; scene.add(caseBase);
+
+  // ---- GOSPEL CROWN: headband circlet of WOVEN branches ----
+  // A headband/circlet — the form in the classical renditions (Titian,
+  // Guido Reni, Caravaggio, Bosch): a woven circlet on the brow, NOT a
+  // helmet cap, NOT a beanie, NOT twisted barbed wire. Three woody
+  // strands weave over and under each other around the band, studded
+  // with stout rose-prickle-like SPIKES — fat-based, curved, sharp,
+  // medium length, a medium-high count (80) spread across ALL FOUR
+  // surfaces: outside, inside, top, and below — the whole ring
+  // bristles in every direction.
+  // Ziziphus spina-christi (Levant), other candidate Paliurus
+  // spina-christi; nobody knows for certain which plant was used.
+  // Both carry PAIRED spines, one straight, one curved — the pattern
+  // followed here. Rose "thorns" are botanically prickles, but their
+  // broad-based curved shape is the visual model. A faint blood tint
+  // at the spike tips only, restrained — Carter's explicit order.
+  var gospel = new THREE.Group();
+  var R = 1.25, CROWN_Y = 1.15, BASE_Y = 0.98;
+
+  // deterministic pseudo-random for thorn length variation
+  function hash01(n) { var x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); }
+
+  // 1) Woven strands: each strand undulates up and down as it travels
+  // around the circlet; phase offsets make the strands cross over and
+  // under each other — a woven plait, NOT a helical twist.
+  var WEAVE_FREQ = 12, WEAVE_AMP = 0.13, PTS = 420;
+  function weavePoint(theta, phase) {
+    var w = Math.sin(theta * WEAVE_FREQ + phase);
+    var radial = R + 0.04 * Math.cos(theta * WEAVE_FREQ + phase);
+    return new THREE.Vector3(
+      radial * Math.cos(theta),
+      BASE_Y + WEAVE_AMP * w,
+      radial * Math.sin(theta)
+    );
+  }
+  function weaveCurve(phase, radius, mat) {
+    var pts = [];
+    for (var i = 0; i <= PTS; i++) {
+      pts.push(weavePoint((i / PTS) * Math.PI * 2, phase));
+    }
+    var curve = new THREE.CatmullRomCurve3(pts, true);
+    var tube = new THREE.Mesh(new THREE.TubeGeometry(curve, 480, radius, 10, true), mat);
+    tube.castShadow = true; tube.receiveShadow = true;
+    gospel.add(tube);
+    return curve;
+  }
+  weaveCurve(0, 0.09, branchMats[0]); // strand A
+  weaveCurve(Math.PI * 2 / 3, 0.09, branchMats[1]); // strand B, woven over/under A
+  weaveCurve(Math.PI * 4 / 3, 0.085, branchMats[2]); // strand C, woven over/under both
+
+
+
+  // 2) SPIKES — rose-prickle-like, in the MIDDLE: not zero, not a forest.
+  // Each spike is a curved, tapered, fat-based prickle: rings along a
+  // quadratic bezier, so it hooks like a rose prickle — broad base,
+  // curved taper, sharp point. Coverage is the WHOLE ring in EVERY
+  // direction: at every station there is one spike pointing OUTSIDE,
+  // one pointing INSIDE (toward where the head would be), one pointing
+  // UP (top), and one pointing DOWN (below). A slight tangential tilt
+  // alternates station to station so half the spikes hook like the
+  // curved half of the Ziziphus pair.
+  function spikeGeometry() {
+    var segs = 8, rings = 10, geo = new THREE.BufferGeometry();
+    var pos = [], norm = [], col = [], idx = [];
+    var p0 = new THREE.Vector3(0, 0, 0);
+    var p1 = new THREE.Vector3(0.16, 0.35, 0); // control: bend toward +X
+    var p2 = new THREE.Vector3(0.30, 0.55, 0); // tip
+    var curve = new THREE.QuadraticBezierCurve3(p0, p1, p2);
+    var baseR = 0.11;
+    for (var r = 0; r <= rings; r++) {
+      var t = r / rings;
+      var c = curve.getPoint(t);
+      var tan = curve.getTangent(t).normalize();
+      var side = new THREE.Vector3(1, 0, 0).cross(tan).normalize();
+      if (side.lengthSq() < 0.5) side.set(0, 0, 1);
+      var side2 = new THREE.Vector3().crossVectors(tan, side).normalize();
+      var rad = baseR * (1 - t) * (1 - t * 0.15);
+      for (var s = 0; s < segs; s++) {
+        var a = (s / segs) * Math.PI * 2;
+        var vx = Math.cos(a) * rad, vy = Math.sin(a) * rad;
+        var v = c.clone().addScaledVector(side, vx).addScaledVector(side2, vy);
+        pos.push(v.x, v.y, v.z);
+        var n = new THREE.Vector3().addScaledVector(side, vx).addScaledVector(side2, vy).normalize();
+        norm.push(n.x, n.y, n.z);
+        // tip tint: woody brown at the base, ramping to a faint dried-blood
+        // red at the very tip only (restrained, Carter's order).
+        var tip = Math.max(0, (t - 0.7) / 0.3); tip = tip * tip * (3 - 2 * tip);
+        col.push(0.29 + (0.42 - 0.29) * tip, 0.17 + (0.06 - 0.17) * tip, 0.08 + (0.05 - 0.08) * tip);
+      }
+    }
+    for (var r2 = 0; r2 < rings; r2++) {
+      for (var s2 = 0; s2 < segs; s2++) {
+        var a0 = r2 * segs + s2, b0 = r2 * segs + (s2 + 1) % segs;
+        var a1 = (r2 + 1) * segs + s2, b1 = (r2 + 1) * segs + (s2 + 1) % segs;
+        idx.push(a0, b0, a1, b0, b1, a1);
+      }
+    }
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('normal', new THREE.Float32BufferAttribute(norm, 3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    geo.setIndex(idx);
+    return geo;
+  }
+  var spikeGeo = spikeGeometry();
+  var dummy = new THREE.Object3D();
+  var upVec = new THREE.Vector3(0, 1, 0);
+  var SPIKE_STATIONS = 20, spikeXf = [];
+  for (var st = 0; st < SPIKE_STATIONS; st++) {
+    var th = (st / SPIKE_STATIONS) * Math.PI * 2 + (st % 2) * 0.11;
+    var c = weavePoint(th, 0); // point on strand A
+    var N2 = new THREE.Vector3(Math.cos(th), 0, Math.sin(th));
+    var T2 = new THREE.Vector3(-Math.sin(th), 0, Math.cos(th));
+    var tilt = (st % 2 === 0) ? 1 : -1; // alternate hook direction
+    function pushSpike(dir, s) {
+      var d = dir.clone().addScaledVector(T2, 0.25 * tilt);
+      d.normalize();
+      spikeXf.push({ p: c, dir: d, spin: hash01(spikeXf.length * 2) * Math.PI * 2, s: s });
+    }
+    // OUTSIDE — radially outward, slight lift
+    pushSpike(N2.clone().add(new THREE.Vector3(0, 0.2, 0)), 0.9 + 0.2 * hash01(st * 4 + 1));
+    // INSIDE — radially inward, toward where the head would be
+    pushSpike(N2.clone().multiplyScalar(-1).add(new THREE.Vector3(0, 0.2, 0)), 0.85 + 0.2 * hash01(st * 4 + 2));
+    // TOP — straight up, slight outward lean
+    pushSpike(new THREE.Vector3(0, 1, 0).addScaledVector(N2, 0.25), 0.9 + 0.2 * hash01(st * 4 + 3));
+    // BELOW — down, tilted outward and shorter, so it rests on the
+    // cushion rather than punching through it
+    pushSpike(new THREE.Vector3(0, -1, 0).addScaledVector(N2, 0.55), 0.6 + 0.15 * hash01(st * 4 + 4));
+  }
+  var spikeMesh = new THREE.InstancedMesh(spikeGeo, thornMat, spikeXf.length);
+  for (var q = 0; q < spikeXf.length; q++) {
+    var sp = spikeXf[q];
+    dummy.position.copy(sp.p);
+    dummy.quaternion.setFromUnitVectors(upVec, sp.dir);
+    dummy.rotateY(sp.spin);
+    dummy.scale.set(sp.s, sp.s, sp.s);
+    dummy.updateMatrix();
+    spikeMesh.setMatrixAt(q, dummy.matrix);
+  }
+  spikeMesh.castShadow = true;
+  spikeMesh.instanceMatrix.needsUpdate = true;
+  gospel.add(spikeMesh);
+
+  gospel.position.y = 0;
+  scene.add(gospel);
+
+  // ---- PARIS RELIC: bundled rushes bound with gold thread, NO thorns ----
+  // Same build treatment as the Gospel Crown — same finish, same
+  // presentation, same resting height — but the form stays honest:
+  // a circlet of bundled RUSHES, bound with gold thread. NO thorns,
+  // NO red tips, NO blood. One slender bundle ring: twenty-four
+  // individual rush stems twisted together like rope around a solid
+  // core, gathered into a thinner, refined band and cinched at
+  // intervals with gold thread bindings. Each stem is its own thin
+  // tube in its own shade of straw/gold, so the bundle reads as
+  // many stems, not one solid ring.
+  var paris = new THREE.Group();
+  var PARIS_Y = BASE_Y; // same resting height as the Gospel Crown
+  var PARIS_RUSHES = 24;
+  var PARIS_TWISTS = 9; // full twists of the bundle around the circlet
+  var PARIS_BUNDLE_R = 0.085; // bundle cross-section radius — thinner, refined band
+  var parisRushMats = [
+    new THREE.MeshStandardMaterial({ color: 0xd9c07a, roughness: 0.88 }),
+    new THREE.MeshStandardMaterial({ color: 0xc9ad5e, roughness: 0.9 }),
+    new THREE.MeshStandardMaterial({ color: 0xe6d194, roughness: 0.86 }),
+    new THREE.MeshStandardMaterial({ color: 0xbfa052, roughness: 0.91 }),
+    new THREE.MeshStandardMaterial({ color: 0xdfc983, roughness: 0.87 })
+  ];
+  var parisGoldMat = new THREE.MeshStandardMaterial({ color: 0xd4af5a, roughness: 0.3, metalness: 0.9 });
+  var PARIS_PTS = 280;
+  // Solid core stem along the bundle centreline, so the bundle
+  // reads as a full gathered ring rather than a hollow tube.
+  (function () {
+    var corePts = [];
+    for (var cj = 0; cj <= PARIS_PTS; cj++) {
+      var ct0 = (cj / PARIS_PTS) * Math.PI * 2;
+      var coreR = R + 0.02 * Math.sin(ct0 * 3 + 1.2);
+      corePts.push(new THREE.Vector3(
+        coreR * Math.cos(ct0),
+        PARIS_Y + 0.02 * Math.cos(ct0 * 2 + 0.6),
+        coreR * Math.sin(ct0)
+      ));
+    }
+    var coreCurve = new THREE.CatmullRomCurve3(corePts, true);
+    var core = new THREE.Mesh(new THREE.TubeGeometry(coreCurve, 260, 0.05, 8, true), parisRushMats[1]);
+    core.castShadow = true; core.receiveShadow = true;
+    paris.add(core);
+  })();
+  // Twenty-four slender rush stems spiralling around the centreline.
+  for (var pr = 0; pr < PARIS_RUSHES; pr++) {
+    var phi = (pr / PARIS_RUSHES) * Math.PI * 2;
+    var rho = 0.045 + 0.04 * hash01(pr * 7 + 3); // distance from bundle centre
+    var rushR = 0.026 + 0.010 * hash01(pr * 13 + 5); // slender stem thickness
+    var ptsP = [];
+    for (var pj = 0; pj <= PARIS_PTS; pj++) {
+      var tp = (pj / PARIS_PTS) * Math.PI * 2;
+      // gentle organic undulation of the bundle centreline
+      var centreR = R + 0.02 * Math.sin(tp * 3 + 1.2);
+      var centreY = PARIS_Y + 0.02 * Math.cos(tp * 2 + 0.6);
+      // this stem spirals around the bundle centre as it travels
+      var spin = tp * PARIS_TWISTS + phi;
+      var offR = Math.cos(spin) * rho;
+      var offY = Math.sin(spin) * rho;
+      var rrP = centreR + offR;
+      ptsP.push(new THREE.Vector3(
+        rrP * Math.cos(tp),
+        centreY + offY,
+        rrP * Math.sin(tp)
+      ));
+    }
+    var curveP = new THREE.CatmullRomCurve3(ptsP, true);
+    var tubeP = new THREE.Mesh(
+      new THREE.TubeGeometry(curveP, 260, rushR, 6, true),
+      parisRushMats[pr % parisRushMats.length]
+    );
+    tubeP.castShadow = true; tubeP.receiveShadow = true;
+    paris.add(tubeP);
+  }
+  // Gold thread bindings — cinch the bundle at sixteen stations.
+  // Each binding is a slim gold band (ring plane square to the
+  // bundle, so it truly cinches it) plus a fine gold thread coil
+  // wound twice around the bundle, so the thread reads as thread.
+  var PARIS_BINDINGS = 16;
+  for (var pg = 0; pg < PARIS_BINDINGS; pg++) {
+    var ag = (pg / PARIS_BINDINGS) * Math.PI * 2 + 0.1;
+    var radialG = new THREE.Vector3(Math.cos(ag), 0, Math.sin(ag));
+    var tangentG = new THREE.Vector3(-Math.sin(ag), 0, Math.cos(ag));
+    var centreG = new THREE.Vector3(R * Math.cos(ag), PARIS_Y, R * Math.sin(ag));
+    var bandG = new THREE.Mesh(new THREE.TorusGeometry(PARIS_BUNDLE_R + 0.045, 0.018, 8, 32), parisGoldMat);
+    bandG.position.copy(centreG);
+    bandG.rotation.set(0, -ag, 0); // torus normal along the bundle, ring cinches it
+    bandG.castShadow = true;
+    paris.add(bandG);
+    // fine thread coil: two turns around the bundle at this station
+    var coilPts = [];
+    var COIL_TURNS = 2, COIL_PTS = 48;
+    for (var cp = 0; cp <= COIL_PTS; cp++) {
+      var ct = cp / COIL_PTS;
+      var ca = ct * COIL_TURNS * Math.PI * 2;
+      var coilR = 0.125; // sits just proud of the outer rushes
+      coilPts.push(new THREE.Vector3().copy(centreG)
+        .addScaledVector(radialG, Math.cos(ca) * coilR)
+        .addScaledVector(new THREE.Vector3(0, 1, 0), Math.sin(ca) * coilR)
+        .addScaledVector(tangentG, (ct - 0.5) * 0.07));
+    }
+    var coilCurve = new THREE.CatmullRomCurve3(coilPts);
+    var coil = new THREE.Mesh(new THREE.TubeGeometry(coilCurve, 64, 0.008, 5, false), parisGoldMat);
+    coil.castShadow = true;
+    paris.add(coil);
+  }
+  paris.visible = false;
+  scene.add(paris);
+
+  // ---- Info cards ----
+  var GOSPEL_HTML = '<h2>The Gospel Crown &mdash; woven thorns</h2>'
+    + '<p>The soldiers &ldquo;wove&rdquo; a crown of thorns and set it on his head &mdash; Mark 15:17, Matthew 27:29, John 19:2. Thorny branches weave into a circlet headband that sits on the brow &mdash; the form in the classical renditions (Titian, Guido Reni, Caravaggio, Bosch). Three slim woody strands weave over and under each other, studded all the way around with stout spikes like rose prickles &mdash; fat-based, curved, sharp, a medium-high count &mdash; on every surface: outside, inside, top, and below, so the whole ring bristles. A faint blood tint at the spike tips only. A parody of royal insignia, an act of mockery.</p>'
+    + '<p class="label">A modelled rendition, not a replica. The Gospels name no plant. The leading identification is <em>Ziziphus spina-christi</em> (Christ&rsquo;s-thorn jujube), native to the Levant; <em>Paliurus spina-christi</em> (Jerusalem thorn) is the other candidate. Both carry paired spines, one straight, one curved &mdash; the pattern followed here. Rose &ldquo;thorns&rdquo; are botanically prickles, but their broad-based curved shape is the model for these spikes.</p>';
+  var PARIS_HTML = '<h2>The Paris Relic &mdash; bundled rushes</h2>'
+    + '<p>This is what Paris actually holds: a circlet of bundled rushes bound with gold thread &mdash; <strong>no thorns</strong>. Slender rush stems twisted together into one slim, refined band, cinched at intervals with gold thread bindings. Documented from 1238 (Paris); earlier history by tradition; never dated. Kept at Notre-Dame de Paris, in the reliquary of 2024.</p>'
+    + '<p class="hyp">The idea that this rush ring once held thorny branches is a <strong>hypothesis</strong>, not a fact. The ring has not been radiocarbon-dated; its age before the 13th century is unknown.</p>'
+    + '<p class="label">The two forms are never the same object: the Gospel crown is what the soldiers wove; the Paris relic is what survives.</p>';
+  var infoCard = document.getElementById('infoCard');
+  var btnGospel = document.getElementById('btnGospel');
+  var btnParis = document.getElementById('btnParis');
+  function showGospel() {
+    gospel.visible = true; paris.visible = false;
+    btnGospel.classList.add('active'); btnParis.classList.remove('active');
+    infoCard.innerHTML = GOSPEL_HTML;
+  }
+  function showParis() {
+    gospel.visible = false; paris.visible = true;
+    btnParis.classList.add('active'); btnGospel.classList.remove('active');
+    infoCard.innerHTML = PARIS_HTML;
+  }
+  btnGospel.addEventListener('click', showGospel);
+  btnParis.addEventListener('click', showParis);
+  showGospel();
+
+  // ---- Orbit controls: drag with weight, wheel/pinch zoom ----
+  var rig = new THREE.Group(); scene.add(rig);
+  var yaw = 0.35, pitch = 0.32, dist = 5.6;
+  var vYaw = 0, vPitch = 0, dragging = false, lastX = 0, lastY = 0;
+  var pointers = new Map(); var pinchDist = 0;
+  function applyCam() {
+    var y = HOME_TGT.y + Math.sin(pitch) * dist;
+    var h = Math.cos(pitch) * dist;
+    camera.position.set(HOME_TGT.x + Math.sin(yaw) * h, y, HOME_TGT.z + Math.cos(yaw) * h);
+    camera.lookAt(HOME_TGT);
+  }
+  function onDown(e) {
+    canvas.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 1) { dragging = true; lastX = e.clientX; lastY = e.clientY; vYaw = 0; vPitch = 0; canvas.classList.add('grabbing'); }
+    if (pointers.size === 2) {
+      var p = Array.from(pointers.values());
+      pinchDist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+      dragging = false;
+    }
+  }
+  function onMove(e) {
+    if (!pointers.has(e.pointerId)) return;
+    var prev = pointers.get(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 2) {
+      var p = Array.from(pointers.values());
+      var d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+      if (pinchDist > 0) { dist = Math.max(2.6, Math.min(9, dist - (d - pinchDist) * 0.012)); }
+      pinchDist = d; return;
+    }
+    if (dragging) {
+      var dx = e.clientX - lastX, dy = e.clientY - lastY;
+      lastX = e.clientX; lastY = e.clientY;
+      yaw -= dx * 0.008; pitch = Math.max(0.05, Math.min(1.1, pitch + dy * 0.006));
+      vYaw = -dx * 0.008; vPitch = dy * 0.006;
+    }
+  }
+  function onUp(e) {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinchDist = 0;
+    if (pointers.size === 0) { dragging = false; canvas.classList.remove('grabbing'); }
+  }
+  canvas.addEventListener('pointerdown', onDown);
+  canvas.addEventListener('pointermove', onMove);
+  canvas.addEventListener('pointerup', onUp);
+  canvas.addEventListener('pointercancel', onUp);
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    dist = Math.max(2.6, Math.min(9, dist + e.deltaY * 0.004));
+  }, { passive: false });
+  document.getElementById('btnReset').addEventListener('click', function () {
+    yaw = 0.35; pitch = 0.32; dist = 5.6; vYaw = 0; vPitch = 0;
+  });
+
+  // ---- Resize + render loop ----
+  function resize() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (canvas.width !== Math.floor(w * renderer.getPixelRatio()) || canvas.height !== Math.floor(h * renderer.getPixelRatio())) {
+      renderer.setSize(w, h, false);
+    }
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  var lastT = performance.now(); var frames = 0; var idleT = 0;
+  function loop(now) {
+    requestAnimationFrame(loop);
+    var dt = Math.min(50, now - lastT); lastT = now;
+    if (!dragging && pointers.size === 0) {
+      if (Math.abs(vYaw) > 0.0001 || Math.abs(vPitch) > 0.0001) {
+        yaw += vYaw; pitch = Math.max(0.05, Math.min(1.1, pitch + vPitch));
+        vYaw *= 0.94; vPitch *= 0.94;
+      } else {
+        idleT += dt;
+        if (idleT > 4000) yaw += dt * 0.00004; // slow drift when idle
+      }
+    } else { idleT = 0; }
+    // candle flicker
+    var t = now * 0.001;
+    candleL.intensity = 1.4 + Math.sin(t * 11) * 0.12 + Math.sin(t * 23) * 0.06;
+    candleR.intensity = 1.1 + Math.sin(t * 9 + 2) * 0.1 + Math.sin(t * 19 + 1) * 0.05;
+    resize(); applyCam(); renderer.render(scene, camera);
+    frames++;
+    if (frames === 3) veil.classList.add('hidden');
+  }
+  requestAnimationFrame(loop);
+  setTimeout(function () { if (frames === 0) showFail('The 3D view did not start. The description below still tells the full story.'); }, 12000);
+})();
+</script>
+</body>
+</html>

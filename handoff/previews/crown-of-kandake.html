@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The Crown of the Kandake — Relic Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0; font-family: Georgia, 'Times New Roman', serif; }
+  #page { max-width: 900px; margin: 0 auto; padding: 16px 14px 40px; }
+  h1 { font-size: 26px; font-weight: normal; letter-spacing: .04em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 14px; font-size: 15px; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #050403; border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #stage.grabbing { cursor: grabbing; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 2; }
+  #veil.hidden { display: none; }
+  #fail { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9; background: #1a0808; border-radius: 6px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px; padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13px; font-style: italic; margin: 4px 0 14px; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px; line-height: 1.6; }
+  .card h2 { font-size: 19px; font-weight: normal; color: #f3d58c; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: #e8d9b0; margin-bottom: 8px; }
+  .card .label { color: #b98f4e; font-style: italic; font-size: 14px; }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>The Crown of the Kandake</h1>
+  <p class="sub">A reconstruction, not a recovered object &middot; Nubia &amp; Kush</p>
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Opening the crown&hellip;</div>
+  </div>
+  <div class="bar" id="detailBar">
+    <button id="btnFull" class="active">Full crown</button>
+    <button id="btnUraeus">Uraeus pair</button>
+    <button id="btnVulture">Vulture</button>
+    <button id="btnHorns">Horns &amp; sun disc</button>
+    <button id="btnDiadem">Diadem &amp; inlays</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn it &middot; scroll or pinch to zoom &middot; tap a detail to study it</p>
+  <div class="card" id="infoCard"></div>
+  <div id="fail"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+  function showFail(msg) {
+    fail.style.display = 'block';
+    fail.textContent = msg;
+    veil.classList.add('hidden');
+  }
+  if (typeof THREE === 'undefined') { showFail('The 3D engine did not load. Check your connection and reload the page.'); return; }
+
+  var canvas = document.getElementById('stage');
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+  } catch (e) { showFail('This device could not start the 3D view.'); return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050403);
+  scene.fog = new THREE.Fog(0x050403, 9, 16);
+
+  var camera = new THREE.PerspectiveCamera(40, 4 / 3, 0.1, 100);
+  var HOME_POS = new THREE.Vector3(0, 2.6, 4.6);
+  var HOME_TGT = new THREE.Vector3(0, 1.9, 0);
+  camera.position.copy(HOME_POS);
+
+  // Lights — warm candlelight.
+  var ambient = new THREE.AmbientLight(0x40300f, 1.1);
+  scene.add(ambient);
+  var key = new THREE.DirectionalLight(0xffe2a0, 1.6);
+  key.position.set(3, 6, 4);
+  key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  scene.add(key);
+  var rim = new THREE.DirectionalLight(0x9fb0da, 0.5);
+  rim.position.set(-4, 3, -3);
+  scene.add(rim);
+  var candle = new THREE.PointLight(0xff9a3c, 0.7, 9);
+  candle.position.set(1.8, 1.2, 2.2);
+  scene.add(candle);
+
+  // Materials.
+  var GOLD = new THREE.MeshStandardMaterial({ color: 0xd9a950, metalness: 1.0, roughness: 0.32 });
+  var GOLD_DARK = new THREE.MeshStandardMaterial({ color: 0xa67c2e, metalness: 1.0, roughness: 0.45 });
+  var LAPIS = new THREE.MeshStandardMaterial({ color: 0x1b2f8a, metalness: 0.15, roughness: 0.18 });
+  var CARNELIAN = new THREE.MeshStandardMaterial({ color: 0xb3311a, metalness: 0.1, roughness: 0.25 });
+  var IVORY = new THREE.MeshStandardMaterial({ color: 0xf2ead0, metalness: 0.05, roughness: 0.5 });
+  var REDCROWN = new THREE.MeshStandardMaterial({ color: 0x8a1f1f, metalness: 0.1, roughness: 0.5 });
+  var DARK = new THREE.MeshStandardMaterial({ color: 0x1a1008, metalness: 0.0, roughness: 0.9 });
+  var STONE = new THREE.MeshStandardMaterial({ color: 0x2a2018, metalness: 0.0, roughness: 0.95 });
+  var VELVET = new THREE.MeshStandardMaterial({ color: 0x4a0f0f, metalness: 0.0, roughness: 1.0 });
+
+  // Pedestal + cushion.
+  var plinth = new THREE.Mesh(new THREE.BoxGeometry(3.4, 0.5, 3.4), STONE);
+  plinth.position.set(0, 0.25, 0);
+  plinth.receiveShadow = true;
+  scene.add(plinth);
+  var cushion = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.35, 2.6), VELVET);
+  cushion.position.set(0, 0.675, 0);
+  cushion.receiveShadow = true;
+  scene.add(cushion);
+
+  // Crown group — base ring sits on the cushion top (y = 0.85).
+  var crown = new THREE.Group();
+  crown.position.set(0, 0.85, 0);
+  scene.add(crown);
+
+  function mesh(geo, mat, x, y, z) {
+    var m = new THREE.Mesh(geo, mat);
+    m.position.set(x, y, z);
+    m.castShadow = true;
+    return m;
+  }
+
+  // --- Skullcap ---
+  var cap = mesh(new THREE.SphereGeometry(1.0, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.52), GOLD, 0, 0.32, 0);
+  cap.scale.set(1, 0.92, 1);
+  crown.add(cap);
+  // Inner dark disc closes the open bottom.
+  var capInner = mesh(new THREE.CircleGeometry(0.99, 48), DARK, 0, 0.28, 0);
+  capInner.rotation.x = Math.PI / 2;
+  capInner.castShadow = false;
+  crown.add(capInner);
+  // Engraved ridge rings on the cap.
+  [0.55, 0.85, 1.05].forEach(function (y) {
+    var r = Math.sqrt(Math.max(0, 1 - Math.pow((y - 0.32) / 0.92, 2)));
+    var ring = mesh(new THREE.TorusGeometry(r, 0.018, 8, 48), GOLD_DARK, 0, y, 0);
+    ring.rotation.x = Math.PI / 2;
+    crown.add(ring);
+  });
+
+  // --- Diadem band ---
+  var band = mesh(new THREE.CylinderGeometry(1.04, 1.07, 0.34, 48, 1, true), GOLD, 0, 0.17, 0);
+  crown.add(band);
+  var rimTop = mesh(new THREE.TorusGeometry(1.04, 0.03, 8, 48), GOLD_DARK, 0, 0.34, 0);
+  rimTop.rotation.x = Math.PI / 2;
+  crown.add(rimTop);
+  var rimBottom = mesh(new THREE.TorusGeometry(1.07, 0.03, 8, 48), GOLD_DARK, 0, 0.0, 0);
+  rimBottom.rotation.x = Math.PI / 2;
+  crown.add(rimBottom);
+
+  // --- Inlays: alternating lapis / carnelian cabochons around the band ---
+  for (var i = 0; i < 16; i++) {
+    var a = (i / 16) * Math.PI * 2;
+    var x = Math.cos(a) * 1.06, z = Math.sin(a) * 1.06;
+    var cab = mesh(new THREE.SphereGeometry(0.09, 20, 14), (i % 2 === 0) ? LAPIS : CARNELIAN, x, 0.17, z);
+    cab.scale.set(0.45, 0.8, 1);
+    cab.lookAt(x * 2, 0.17, z * 2);
+    crown.add(cab);
+    var bezel = mesh(new THREE.TorusGeometry(0.1, 0.015, 8, 24), GOLD_DARK, x, 0.17, z);
+    bezel.lookAt(x * 2, 0.17, z * 2);
+    crown.add(bezel);
+  }
+
+  // --- Uraeus pair (front, +Z): one wearing the red crown, one the white crown ---
+  function uraeus(side) {
+    var g = new THREE.Group();
+    // S-curved body.
+    var curve = new THREE.CatmullRomCurve3([
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(side * 0.06, 0.18, 0.05),
+      new THREE.Vector3(-side * 0.05, 0.36, 0.10),
+      new THREE.Vector3(0, 0.52, 0.14)
+    ]);
+    var body = mesh(new THREE.TubeGeometry(curve, 20, 0.065, 10, false), GOLD, 0, 0, 0);
+    g.add(body);
+    // Hood.
+    var hood = mesh(new THREE.SphereGeometry(0.16, 20, 14), GOLD, 0, 0.56, 0.15);
+    hood.scale.set(1, 1.25, 0.45);
+    hood.rotation.x = 0.35;
+    g.add(hood);
+    // Head.
+    var head = mesh(new THREE.SphereGeometry(0.09, 16, 12), GOLD, 0, 0.72, 0.20);
+    g.add(head);
+    // Crown cone: red on the left (side -1), white on the right (side +1).
+    var cone = mesh(new THREE.ConeGeometry(0.075, 0.30, 16), (side < 0) ? REDCROWN : IVORY, 0, 0.92, 0.20);
+    g.add(cone);
+    return g;
+  }
+  var uLeft = uraeus(-1);
+  uLeft.position.set(-0.42, 0.30, 0.92);
+  crown.add(uLeft);
+  var uRight = uraeus(1);
+  uRight.position.set(0.42, 0.30, 0.92);
+  crown.add(uRight);
+
+  // --- Vulture head, centre front above the diadem ---
+  // GOLD ORNAMENT, not a white bird: the vulture is a gold head shaped
+  // like a vulture, as in real Kushite/Egyptian regalia. It reads as a
+  // vulture through its SHAPE: a real vulture's head is small and
+  // ELONGATED — not a round ball — with a sloping forehead, a long beak
+  // that curves down to a sharp hook, a long thin bare neck, and a
+  // feather ruff at the neck's base. Small dark inlaid eyes, as real
+  // gold ornaments use. Size is the middle ground: bigger than the
+  // first invisible version, smaller than the oversized white one.
+  var vulture = new THREE.Group();
+  // Long thin bare neck — reaches down to the diadem band so the bird is anchored.
+  var vNeck = mesh(new THREE.CylinderGeometry(0.055, 0.075, 0.55, 16), GOLD, 0, 0.28, 0);
+  vulture.add(vNeck);
+  // Feather ruff at the neck's base: two layered collars in darker gold.
+  var vRuff1 = mesh(new THREE.TorusGeometry(0.15, 0.04, 10, 24), GOLD_DARK, 0, 0.03, 0);
+  vRuff1.rotation.x = Math.PI / 2;
+  vRuff1.scale.set(1, 1, 0.6);
+  vulture.add(vRuff1);
+  var vRuff2 = mesh(new THREE.TorusGeometry(0.11, 0.035, 10, 24), GOLD_DARK, 0, 0.09, 0);
+  vRuff2.rotation.x = Math.PI / 2;
+  vRuff2.scale.set(1, 1, 0.6);
+  vulture.add(vRuff2);
+  // Head — ELONGATED, not a ball: small bald skull stretched forward,
+  // sloping forehead into the beak.
+  var vHead = mesh(new THREE.SphereGeometry(0.13, 24, 18), GOLD, 0, 0.60, 0.10);
+  vHead.scale.set(0.78, 0.82, 1.7);
+  vulture.add(vHead);
+  // Beak in three segments along a downward curve: base (wide, forward),
+  // mid (narrowing, curving down), hook tip (sharp, pointing down).
+  var vBeakBase = mesh(new THREE.ConeGeometry(0.05, 0.20, 14), GOLD_DARK, 0, 0.59, 0.39);
+  vBeakBase.rotation.x = Math.PI / 2 + 0.12;
+  vulture.add(vBeakBase);
+  var vBeakMid = mesh(new THREE.ConeGeometry(0.035, 0.16, 14), GOLD_DARK, 0, 0.535, 0.515);
+  vBeakMid.rotation.x = Math.PI * 0.75;
+  vulture.add(vBeakMid);
+  var vBeakHook = mesh(new THREE.ConeGeometry(0.022, 0.10, 12), GOLD_DARK, 0, 0.455, 0.54);
+  vBeakHook.rotation.x = Math.PI + 0.25;
+  vulture.add(vBeakHook);
+  // Eyes — small dark inlay, set high and back on the elongated head.
+  var vEyeL = mesh(new THREE.SphereGeometry(0.024, 12, 10), DARK, -0.085, 0.64, 0.20);
+  vulture.add(vEyeL);
+  var vEyeR = mesh(new THREE.SphereGeometry(0.024, 12, 10), DARK, 0.085, 0.64, 0.20);
+  vulture.add(vEyeR);
+  // Base at the diadem band, leaning forward so the head clears the cobras.
+  vulture.position.set(0, 0.35, 1.10);
+  vulture.rotation.x = 0.18;
+  crown.add(vulture);
+
+  // --- Cow's horns + sun disc (Isis superstructure) ---
+  var hornL = mesh(new THREE.TorusGeometry(0.55, 0.055, 10, 32, Math.PI * 0.95), IVORY, -0.42, 1.85, 0);
+  hornL.rotation.z = Math.PI * 0.55;
+  hornL.rotation.y = 0.25;
+  crown.add(hornL);
+  var hornR = mesh(new THREE.TorusGeometry(0.55, 0.055, 10, 32, Math.PI * 0.95), IVORY, 0.42, 1.85, 0);
+  hornR.rotation.z = Math.PI * 0.55 + Math.PI * 0.95;
+  hornR.rotation.y = -0.25;
+  crown.add(hornR);
+  var stem = mesh(new THREE.CylinderGeometry(0.05, 0.07, 0.5, 10), GOLD_DARK, 0, 1.95, 0);
+  crown.add(stem);
+  var disc = mesh(new THREE.CylinderGeometry(0.38, 0.38, 0.07, 32), GOLD, 0, 2.32, 0);
+  crown.add(disc);
+  var discCore = mesh(new THREE.CylinderGeometry(0.20, 0.20, 0.09, 24), CARNELIAN, 0, 2.32, 0);
+  crown.add(discCore);
+
+  // Floor shadow catcher.
+  var floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshStandardMaterial({ color: 0x0a0603, roughness: 1 }));
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = 0;
+  floor.receiveShadow = true;
+  scene.add(floor);
+
+  // --- Camera focus presets ---
+  var views = {
+    full:    { pos: new THREE.Vector3(0, 2.6, 4.6),  tgt: new THREE.Vector3(0, 1.9, 0) },
+    uraeus:  { pos: new THREE.Vector3(0, 2.1, 3.0),  tgt: new THREE.Vector3(0, 1.55, 0.9) },
+    vulture: { pos: new THREE.Vector3(0, 2.8, 3.4),  tgt: new THREE.Vector3(0, 1.85, 1.35) },
+    horns:   { pos: new THREE.Vector3(0, 3.6, 3.2),  tgt: new THREE.Vector3(0, 3.0, 0) },
+    diadem:  { pos: new THREE.Vector3(2.0, 1.7, 2.9), tgt: new THREE.Vector3(0, 1.15, 0) }
+  };
+  var desiredPos = HOME_POS.clone();
+  var desiredTgt = HOME_TGT.clone();
+  var orbit = { theta: 0, phi: 1.05, radius: 4.6, target: HOME_TGT.clone() };
+  var desiredOrbit = { theta: 0, phi: 1.05, radius: 4.6, target: HOME_TGT.clone() };
+
+  function applyOrbit() {
+    var x = orbit.target.x + orbit.radius * Math.sin(orbit.phi) * Math.sin(orbit.theta);
+    var y = orbit.target.y + orbit.radius * Math.cos(orbit.phi);
+    var z = orbit.target.z + orbit.radius * Math.sin(orbit.phi) * Math.cos(orbit.theta);
+    camera.position.set(x, y, z);
+    camera.lookAt(orbit.target);
+  }
+  function syncDesired() {
+    desiredOrbit.theta = orbit.theta;
+    desiredOrbit.phi = orbit.phi;
+    desiredOrbit.radius = orbit.radius;
+    desiredOrbit.target.copy(orbit.target);
+  }
+  function goTo(view) {
+    var off = view.pos.clone().sub(view.tgt);
+    desiredOrbit.radius = off.length();
+    desiredOrbit.phi = Math.acos(THREE.MathUtils.clamp(off.y / desiredOrbit.radius, -1, 1));
+    desiredOrbit.theta = Math.atan2(off.x, off.z);
+    desiredOrbit.target.copy(view.tgt);
+    desiredPos.copy(view.pos);
+    desiredTgt.copy(view.tgt);
+  }
+
+  // --- Info card texts ---
+  var info = {
+    full: '<h2>The Crown of the Kandake</h2>'
+      + '<p><span class="label">Reconstruction from Meroitic temple reliefs and surviving Kushite gold jewelry. No single original crown survives.</span></p>'
+      + '<p><i>Kandake</i> was the title of the queens of Kush — a kingdom on the Nile in what is now Sudan, centred at Mero&euml;. Some kandakes ruled as kings in their own right. Amanirenas (about 40&ndash;10 BCE) held both the ruler&rsquo;s title <i>qore</i> and <i>kandake</i>, led Kush against Rome in the war of 25&ndash;22 BCE, and kept Kush independent. Amanitore later co-ruled with her son Natakamani, shown in temple reliefs wearing the full regalia of a king.</p>'
+      + '<p>The crown follows the Naqa temple depictions: a skullcap crown, a diadem with a double uraeus and a vulture, and a superstructure of cow&rsquo;s horns cradling the sun disc of Isis. Tap a detail above to study each element.</p>',
+    uraeus: '<h2>The Uraeus Pair</h2>'
+      + '<p>Two cobras rear at the brow — one wearing the red crown, one the white. In Kushite kingship the paired uraei carried the weight of ruling both lands, the same paired-crown language Egypt used for Upper and Lower Egypt, taken up by Kush&rsquo;s own kings and queens.</p>',
+    vulture: '<h2>The Vulture</h2>'
+      + '<p>A vulture head stands at the centre of the diadem. The vulture was a protector of kingship — the bird whose wings shelter the ruler — and a marker of the queen&rsquo;s own authority in Kushite regalia.</p>',
+    horns: '<h2>Horns &amp; Sun Disc</h2>'
+      + '<p>Cow&rsquo;s horns cradle the sun disc of Isis above the cap. The pairing ties the ruler to Isis, mother and protector, and in the Naqa reliefs it is the queen, Amanitore, who wears this superstructure — a sign of her standing as co-ruler, not consort.</p>',
+    diadem: '<h2>Diadem &amp; Inlays</h2>'
+      + '<p>The gold diadem band carries alternating lapis and carnelian — the deep blue and red of Kushite royal jewellery, as found in the Mero&euml; pyramid treasures. The palette is attested in surviving Kushite goldwork; the arrangement here is the reconstruction&rsquo;s own.</p>'
+  };
+  var card = document.getElementById('infoCard');
+  function setInfo(key) { card.innerHTML = info[key]; }
+  setInfo('full');
+
+  var buttons = {
+    full: document.getElementById('btnFull'),
+    uraeus: document.getElementById('btnUraeus'),
+    vulture: document.getElementById('btnVulture'),
+    horns: document.getElementById('btnHorns'),
+    diadem: document.getElementById('btnDiadem')
+  };
+  function setActive(key) {
+    Object.keys(buttons).forEach(function (k) { buttons[k].classList.toggle('active', k === key); });
+  }
+  function pick(key) { goTo(views[key]); setInfo(key); setActive(key); }
+  buttons.full.addEventListener('click', function () { pick('full'); });
+  buttons.uraeus.addEventListener('click', function () { pick('uraeus'); });
+  buttons.vulture.addEventListener('click', function () { pick('vulture'); });
+  buttons.horns.addEventListener('click', function () { pick('horns'); });
+  buttons.diadem.addEventListener('click', function () { pick('diadem'); });
+  document.getElementById('btnReset').addEventListener('click', function () { pick('full'); });
+
+  // --- Drag to turn (with weight), scroll/pinch to zoom ---
+  var dragging = false, lastX = 0, lastY = 0, velTheta = 0, velPhi = 0;
+  var pinchDist = 0;
+  canvas.addEventListener('pointerdown', function (e) {
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    velTheta = 0; velPhi = 0;
+    syncDesired();
+    canvas.classList.add('grabbing');
+    canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    orbit.theta -= dx * 0.008;
+    orbit.phi = THREE.MathUtils.clamp(orbit.phi - dy * 0.006, 0.15, 1.45);
+    velTheta = -dx * 0.008; velPhi = -dy * 0.006;
+    syncDesired();
+  });
+  function endDrag(e) {
+    dragging = false;
+    canvas.classList.remove('grabbing');
+    try { canvas.releasePointerCapture(e.pointerId); } catch (err) {}
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    orbit.radius = THREE.MathUtils.clamp(orbit.radius + e.deltaY * 0.004, 2.2, 8);
+    syncDesired();
+  }, { passive: false });
+  canvas.addEventListener('touchstart', function (e) {
+    if (e.touches.length === 2) {
+      pinchDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    }
+  }, { passive: true });
+  canvas.addEventListener('touchmove', function (e) {
+    if (e.touches.length === 2 && pinchDist > 0) {
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      orbit.radius = THREE.MathUtils.clamp(orbit.radius - (d - pinchDist) * 0.01, 2.2, 8);
+      pinchDist = d;
+      syncDesired();
+    }
+  }, { passive: true });
+
+  // --- Resize ---
+  function resize() {
+    var w = canvas.clientWidth || 800, h = canvas.clientHeight || 600;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  applyOrbit();
+  veil.classList.add('hidden');
+
+  // --- Render loop ---
+  var clock = new THREE.Clock();
+  var t = 0;
+  var idleDrift = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    var dt = Math.min(clock.getDelta(), 0.05);
+    t += dt;
+    // Candlelight flicker.
+    candle.intensity = 0.65 + Math.sin(t * 7.3) * 0.08 + Math.sin(t * 13.1) * 0.05;
+    // Carry a flick, then settle into a slow idle drift — applied to the
+    // desired orbit so the easing carries the camera smoothly.
+    if (!dragging) {
+      desiredOrbit.theta += velTheta;
+      desiredOrbit.phi = THREE.MathUtils.clamp(desiredOrbit.phi + velPhi, 0.15, 1.45);
+      velTheta *= 0.94; velPhi *= 0.94;
+      idleDrift += dt;
+      if (Math.abs(velTheta) < 0.0004 && Math.abs(velPhi) < 0.0004) {
+        desiredOrbit.theta += dt * 0.02;
+      }
+    } else { idleDrift = 0; }
+    // Ease orbit toward the chosen detail view, then place the camera.
+    orbit.theta += (desiredOrbit.theta - orbit.theta) * 0.08;
+    orbit.phi += (desiredOrbit.phi - orbit.phi) * 0.08;
+    orbit.radius += (desiredOrbit.radius - orbit.radius) * 0.08;
+    orbit.target.lerp(desiredOrbit.target, 0.08);
+    applyOrbit();
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>
