@@ -670,7 +670,8 @@
    "type": "site",
    "label": "Persepolis",
    "era": "04-axial-age",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/persepolis.html",
    "links": [
     "chapter:ch06",
     "chapter:ch49",
