@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Tabula — Playable Game</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0; font-family: Georgia, 'Times New Roman', serif; }
+  #page { max-width: 900px; margin: 0 auto; padding: 16px 14px 40px; }
+  h1 { font-size: 26px; font-weight: normal; letter-spacing: .04em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 14px; font-size: 15px; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #050403; border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #stage.grabbing { cursor: grabbing; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 2; }
+  #veil.hidden { display: none; }
+  #fail { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9; background: #1a0808; border-radius: 6px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px; padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .bar button:disabled { opacity: .45; cursor: default; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13px; font-style: italic; margin: 4px 0 14px; }
+  /* ---- game HUD ---- */
+  #hud { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 12px 0 4px; flex-wrap: wrap; }
+  #turnTag { font-size: 17px; color: #f3d58c; letter-spacing: .03em; min-width: 150px; text-align: center; }
+  #turnTag.opp { color: #c9a24b; }
+  #diceChips { display: flex; gap: 8px; }
+  .chip { width: 44px; height: 44px; border: 1px solid #c9a24b; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #f3d58c; background: #1a1008; transition: opacity .3s; }
+  .chip.used { opacity: .22; }
+  #status { text-align: center; color: #e6c27a; font-size: 15px; font-style: italic; min-height: 22px; margin: 2px 0 8px; }
+  #logWrap { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; max-height: 132px; overflow-y: auto; }
+  #log { list-style: none; font-size: 14px; line-height: 1.55; color: #d9c9a0; }
+  #log li:first-child { color: #f3d58c; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px; line-height: 1.6; margin-bottom: 12px; }
+  .card h2 { font-size: 19px; font-weight: normal; color: #f3d58c; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: #e8d9b0; margin-bottom: 8px; }
+  .card .label { color: #b98f4e; font-style: italic; font-size: 14px; }
+  .honesty { border-left: 3px solid #c9a24b; padding: 10px 14px; background: #171106; border-radius: 0 8px 8px 0; font-style: italic; color: #e6c27a; font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+  /* ---- win overlay ---- */
+  #overlay { display: none; position: fixed; inset: 0; background: rgba(5,4,3,.88); z-index: 10; align-items: center; justify-content: center; }
+  #overlay.show { display: flex; }
+  #overlayBox { background: #14100a; border: 1px solid #c9a24b; border-radius: 12px; padding: 30px 36px; text-align: center; max-width: 86%; }
+  #overlayBox h2 { color: #f3d58c; font-weight: normal; font-size: 26px; margin-bottom: 10px; }
+  #overlayBox p { color: #e8d9b0; font-style: italic; margin-bottom: 18px; font-size: 16px; }
+  #overlayBox button { background: #b98f4e; color: #1a1008; border: none; border-radius: 24px; padding: 12px 30px; font-family: inherit; font-size: 17px; cursor: pointer; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>Tabula</h1>
+  <p class="sub">The Roman race game &mdash; you are the ivory pieces, the opponent is the dark horn</p>
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Setting the board&hellip;</div>
+  </div>
+  <div class="bar" id="viewBar">
+    <button id="btnFull" class="active">Full view</button>
+    <button id="btnPoints">Zoom: the points</button>
+    <button id="btnDice">Zoom: the dice</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn it &middot; scroll or pinch to zoom &middot; tap your pieces to move</p>
+  <div id="hud">
+    <div id="turnTag">Your move</div>
+    <div id="diceChips">
+      <div class="chip" id="chip0">&ndash;</div>
+      <div class="chip" id="chip1">&ndash;</div>
+      <div class="chip" id="chip2">&ndash;</div>
+    </div>
+  </div>
+  <p id="status"></p>
+  <div id="logWrap"><ul id="log"></ul></div>
+  <div class="honesty">&ldquo;Board of 24 points, 12 a side &mdash; the 19th-century reconstruction of Tabula from Agathias&rsquo;s epigram on Emperor Zeno&rsquo;s game (played c. 480 AD, recorded c. 530). The three-row board belongs to its ancestor, Ludus Duodecim Scriptorum; Tabula drops the middle row. Three dice, fifteen pieces a side entering from off the board, lone pieces vulnerable &mdash; all from the same reconstruction; details such as bearing off are not certain. Point shapes are stylized. No complete Roman tabula board survives; the Gloucester set (found 1983, in an 11th-century pit) is the only complete tables set ever found.&rdquo;</div>
+  <div class="bar" id="infoBar">
+    <button id="btnHow">How to play</button>
+    <button id="btnAbout">About this piece</button>
+    <button id="btnZeno">Zeno&rsquo;s unlucky throw</button>
+    <button id="btnRecon">Known vs. reconstructed</button>
+  </div>
+  <div class="card" id="infoCard"></div>
+  <div id="fail"></div>
+</div>
+<div id="overlay">
+  <div id="overlayBox">
+    <h2 id="ovTitle"></h2>
+    <p id="ovText"></p>
+    <button id="btnAgain">Play again</button>
+  </div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+  function showFail(msg) {
+    fail.style.display = 'block';
+    fail.textContent = msg;
+    veil.classList.add('hidden');
+  }
+  if (typeof THREE === 'undefined') { showFail('The 3D engine did not load. Reload the page to try again.'); return; }
+
+  var canvas = document.getElementById('stage');
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+  } catch (e) { showFail('This device could not start 3D. The description below still tells the full story.'); return; }
+  var isPhone = Math.min(window.innerWidth, window.innerHeight) < 700;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isPhone ? 1.5 : 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050403);
+  scene.fog = new THREE.Fog(0x050403, 16, 30);
+
+  var camera = new THREE.PerspectiveCamera(38, 4 / 3, 0.1, 60);
+
+  // ---- candlelit archive lighting (identical to the relic preview) ----
+  scene.add(new THREE.AmbientLight(0x2a1c0e, 1.0));
+  var key = new THREE.DirectionalLight(0xffd9a0, 1.25);
+  key.position.set(3, 5, 4);
+  key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  key.shadow.camera.left = -7; key.shadow.camera.right = 7;
+  key.shadow.camera.top = 6; key.shadow.camera.bottom = -4;
+  scene.add(key);
+  var candleL = new THREE.PointLight(0xff9a3c, 1.5, 16); candleL.position.set(-4.5, 2.2, 2.6); scene.add(candleL);
+  var candleR = new THREE.PointLight(0xffb060, 1.1, 16); candleR.position.set(4.5, 1.6, -2.0); scene.add(candleR);
+  var rim = new THREE.DirectionalLight(0x9fb0da, 0.3); rim.position.set(-3, 4, -5); scene.add(rim);
+  var under = new THREE.PointLight(0xffd9a0, 0.3, 10); under.position.set(0, -1.5, 3); scene.add(under);
+
+  // ---- materials (Roman palette, identical to the relic preview) ----
+  var tableMat  = new THREE.MeshStandardMaterial({ color: 0x1c1108, roughness: 0.92, metalness: 0.02 });
+  var frameMat  = new THREE.MeshStandardMaterial({ color: 0x4a2a12, roughness: 0.62, metalness: 0.08 });
+  var bedMat    = new THREE.MeshStandardMaterial({ color: 0x5c3a1a, roughness: 0.7,  metalness: 0.05 });
+  var ivoryMat  = new THREE.MeshStandardMaterial({ color: 0xe8dcc0, roughness: 0.55, metalness: 0.05, side: THREE.DoubleSide });
+  var darkInlay = new THREE.MeshStandardMaterial({ color: 0x2e1a0c, roughness: 0.6,  metalness: 0.08, side: THREE.DoubleSide });
+  var boneMat   = new THREE.MeshStandardMaterial({ color: 0xe6d7b5, roughness: 0.5,  metalness: 0.05 });
+  var hornMat   = new THREE.MeshStandardMaterial({ color: 0x3a2412, roughness: 0.45, metalness: 0.1 });
+  var bronzeMat = new THREE.MeshStandardMaterial({ color: 0x8a6a2a, roughness: 0.35, metalness: 0.9 });
+  var pipMat    = new THREE.MeshStandardMaterial({ color: 0x1a0e04, roughness: 0.8,  metalness: 0.0 });
+  // highlight materials for legal destinations (candlelit gold, pulsing)
+  var glowMatIvory = new THREE.MeshStandardMaterial({ color: 0xe8dcc0, roughness: 0.5, metalness: 0.1, side: THREE.DoubleSide, emissive: 0xc9a24b, emissiveIntensity: 0.85, transparent: true, opacity: 0.95 });
+  var glowMatDark  = new THREE.MeshStandardMaterial({ color: 0x2e1a0c, roughness: 0.55, metalness: 0.1, side: THREE.DoubleSide, emissive: 0xc9a24b, emissiveIntensity: 0.85, transparent: true, opacity: 0.95 });
+  var ringMat = new THREE.MeshStandardMaterial({ color: 0xc9a24b, roughness: 0.35, metalness: 0.85, emissive: 0xc9a24b, emissiveIntensity: 0.7, transparent: true, opacity: 0.9 });
+
+  var disposables = [];
+  function track(x) { disposables.push(x); return x; }
+  function solid(geo, mat, x, y, z) {
+    var m = new THREE.Mesh(track(geo), mat);
+    m.position.set(x, y, z);
+    m.castShadow = true; m.receiveShadow = true;
+    return m;
+  }
+
+  // ---- table ----
+  var table = solid(new THREE.PlaneGeometry(44, 44), tableMat, 0, 0, 0);
+  table.rotation.x = -Math.PI / 2;
+  table.castShadow = false;
+  scene.add(table);
+
+  // ================= the board (identical to the relic preview) =================
+  var board = new THREE.Group();
+  scene.add(board);
+
+  var BED_W = 7.8, BED_D = 4.6, BED_TOP = 0.42;
+  var FRAME_W = 0.5, FRAME_H = 0.62, FRAME_TOP = 0.56;
+
+  board.add(solid(new THREE.BoxGeometry(BED_W, 0.34, BED_D), bedMat, 0, BED_TOP - 0.17, 0));
+  var railX = BED_W / 2 + FRAME_W / 2, railZ = BED_D / 2 + FRAME_W / 2;
+  board.add(solid(new THREE.BoxGeometry(BED_W + FRAME_W * 2, FRAME_H, FRAME_W), frameMat, 0, FRAME_TOP - FRAME_H / 2, railZ));
+  board.add(solid(new THREE.BoxGeometry(BED_W + FRAME_W * 2, FRAME_H, FRAME_W), frameMat, 0, FRAME_TOP - FRAME_H / 2, -railZ));
+  board.add(solid(new THREE.BoxGeometry(FRAME_W, FRAME_H, BED_D), frameMat, railX, FRAME_TOP - FRAME_H / 2, 0));
+  board.add(solid(new THREE.BoxGeometry(FRAME_W, FRAME_H, BED_D), frameMat, -railX, FRAME_TOP - FRAME_H / 2, 0));
+  board.add(solid(new THREE.BoxGeometry(0.56, FRAME_H, BED_D), frameMat, 0, FRAME_TOP - FRAME_H / 2, 0));
+  [[railX, railZ], [-railX, railZ], [railX, -railZ], [-railX, -railZ]].forEach(function (c) {
+    board.add(solid(new THREE.SphereGeometry(0.14, 20, 14), bronzeMat, c[0], FRAME_TOP + 0.02, c[1]));
+  });
+
+  // ---- the 24 points ----
+  var PT_W = 0.603, PT_LEN = 1.85, PT_Z0 = 2.28;
+  var triShape = new THREE.Shape();
+  triShape.moveTo(-PT_W / 2 + 0.03, 0);
+  triShape.lineTo(PT_W / 2 - 0.03, 0);
+  triShape.lineTo(0, PT_LEN);
+  triShape.closePath();
+  var geoPointBottom = track(new THREE.ShapeGeometry(triShape, 4));
+  geoPointBottom.rotateX(-Math.PI / 2);
+  var geoPointTop = track(new THREE.ShapeGeometry(triShape, 4));
+  geoPointTop.rotateX(Math.PI / 2);
+  var pointMeshes = []; // visual index 0..23 -> mesh
+  function pointMesh(qx, topRow, i, dark) {
+    var halfW = BED_W / 2, barHalf = 0.28;
+    var x0 = qx < 0 ? -halfW : barHalf;
+    var cx = x0 + PT_W * (i + 0.5);
+    var m = new THREE.Mesh(topRow ? geoPointTop : geoPointBottom, dark ? darkInlay : ivoryMat);
+    m.position.set(cx, BED_TOP + 0.004, topRow ? -PT_Z0 : PT_Z0);
+    m.receiveShadow = true;
+    m.userData.dark = dark;
+    return m;
+  }
+  var qi, pi, dark;
+  for (qi = 0; qi < 4; qi++) {
+    var qx = (qi === 0 || qi === 2) ? -1 : 1;
+    var topRow = (qi < 2);
+    for (pi = 0; pi < 6; pi++) {
+      dark = ((qi * 6 + pi) % 2) === 1;
+      var pm = pointMesh(qx, topRow, pi, dark);
+      pm.userData.visual = qi * 6 + pi;
+      board.add(pm);
+      pointMeshes[qi * 6 + pi] = pm;
+    }
+  }
+  function pointCenter(n) {
+    var qi2 = Math.floor(n / 6), pi2 = n % 6;
+    var qx = (qi2 === 0 || qi2 === 2) ? -1 : 1;
+    var topRow = (qi2 < 2);
+    var halfW = BED_W / 2, barHalf = 0.28;
+    var x0 = qx < 0 ? -halfW : barHalf;
+    var cx = x0 + PT_W * (pi2 + 0.5);
+    var cz = topRow ? -(PT_Z0 - 0.62) : (PT_Z0 - 0.62);
+    return [cx, cz];
+  }
+
+  // ---- logical track (anticlockwise, as the reconstruction has both sides racing the same way) ----
+  // Logical point L 0..23. You enter at L=0 and race 0->23; the opponent enters at L=12 and races 12->23->0->11.
+  function logicToVisual(L) {
+    var q, p;
+    if (L < 6) { q = 3; p = 5 - L; }
+    else if (L < 12) { q = 1; p = L - 6; }
+    else if (L < 18) { q = 0; p = 17 - L; }
+    else { q = 2; p = L - 18; }
+    return q * 6 + p;
+  }
+  var visualToLogical = [];
+  for (var _L = 0; _L < 24; _L++) visualToLogical[logicToVisual(_L)] = _L;
+
+  // ---- pieces ----
+  var pieceProfile = [
+    new THREE.Vector2(0.001, 0), new THREE.Vector2(0.20, 0),
+    new THREE.Vector2(0.235, 0.03), new THREE.Vector2(0.235, 0.10),
+    new THREE.Vector2(0.20, 0.145), new THREE.Vector2(0.12, 0.16),
+    new THREE.Vector2(0.001, 0.165)
+  ];
+  var pieceGeo = track(new THREE.LatheGeometry(pieceProfile, 30));
+  var PIECE_H = 0.165;
+  var pieces = { you: [], ai: [] };
+  for (var pk = 0; pk < 15; pk++) {
+    var my = solid(pieceGeo, boneMat, 0, -5, 0);
+    my.userData = { side: 'you', idx: pk };
+    board.add(my); pieces.you.push(my);
+    var mo = solid(pieceGeo, hornMat, 0, -5, 0);
+    mo.userData = { side: 'ai', idx: pk };
+    board.add(mo); pieces.ai.push(mo);
+  }
+
+  // ---- off-board and borne-off trays (bronze-rimmed, house style) ----
+  function trayBase(x, z) {
+    var g = new THREE.Group();
+    var slab = solid(new THREE.BoxGeometry(3.1, 0.1, 2.0), bedMat, 0, 0.05, 0);
+    slab.castShadow = false;
+    g.add(slab);
+    var rimT = solid(new THREE.BoxGeometry(3.3, 0.16, 0.12), bronzeMat, 0, 0.08, 1.0);
+    var rimB = solid(new THREE.BoxGeometry(3.3, 0.16, 0.12), bronzeMat, 0, 0.08, -1.0);
+    var rimL = solid(new THREE.BoxGeometry(0.12, 0.16, 2.0), bronzeMat, -1.6, 0.08, 0);
+    var rimR = solid(new THREE.BoxGeometry(0.12, 0.16, 2.0), bronzeMat, 1.6, 0.08, 0);
+    g.add(rimT); g.add(rimB); g.add(rimL); g.add(rimR);
+    g.position.set(x, 0, z);
+    scene.add(g);
+    return g;
+  }
+  var trayYouOff = trayBase(-6.1, 2.2), trayAIOff = trayBase(6.1, -2.2);
+  var trayYouBorne = trayBase(6.1, 2.2), trayAIBorne = trayBase(-6.1, -2.2);
+  function traySlot(tray, i) {
+    var gx = tray.position.x, gz = tray.position.z;
+    return [gx - 1.05 + (i % 5) * 0.525, 0.10 + Math.floor(i / 5) * 0.02, gz - 0.5 + Math.floor(i / 5) * 0.55];
+  }
+  // golden rings mark the borne-off trays when bearing off is possible
+  function borneRing(tray) {
+    var r = new THREE.Mesh(track(new THREE.TorusGeometry(0.85, 0.07, 12, 40)), ringMat);
+    r.rotation.x = Math.PI / 2;
+    r.position.set(tray.position.x, 0.35, tray.position.z);
+    r.visible = false;
+    r.userData.borneRing = true;
+    scene.add(r);
+    return r;
+  }
+  var ringYou = borneRing(trayYouBorne), ringAI = borneRing(trayAIBorne);
+  ringYou.userData.side = 'you'; ringAI.userData.side = 'ai';
+
+  // ================= the three dice (identical to the relic preview) =================
+  var DIE = 0.44, HALF = DIE / 2 + 0.004;
+  var PIPS = {
+    1: [[0, 0]],
+    2: [[-1, -1], [1, 1]],
+    3: [[-1, -1], [0, 0], [1, 1]],
+    4: [[-1, -1], [1, -1], [-1, 1], [1, 1]],
+    5: [[-1, -1], [1, -1], [0, 0], [-1, 1], [1, 1]],
+    6: [[-1, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [1, 1]]
+  };
+  function makeDie() {
+    var die = new THREE.Group();
+    var cube = new THREE.Mesh(track(new THREE.BoxGeometry(DIE, DIE, DIE)), boneMat);
+    cube.castShadow = true; cube.receiveShadow = true;
+    die.add(cube);
+    var faces = [
+      { v: 1, rx: -Math.PI / 2, ry: 0 },
+      { v: 6, rx: Math.PI / 2, ry: 0 },
+      { v: 2, rx: 0, ry: 0 },
+      { v: 5, rx: 0, ry: Math.PI },
+      { v: 3, rx: 0, ry: Math.PI / 2 },
+      { v: 4, rx: 0, ry: -Math.PI / 2 }
+    ];
+    faces.forEach(function (f) {
+      var fg = new THREE.Group();
+      PIPS[f.v].forEach(function (p) {
+        var pip = new THREE.Mesh(track(new THREE.CylinderGeometry(0.042, 0.042, 0.014, 12)), pipMat);
+        pip.rotation.x = Math.PI / 2;
+        pip.position.set(p[0] * 0.105, p[1] * 0.105, HALF);
+        fg.add(pip);
+      });
+      fg.rotation.order = 'YXZ';
+      fg.rotation.y = f.ry; fg.rotation.x = f.rx;
+      die.add(fg);
+    });
+    return die;
+  }
+  var dice = [], diceRest = [];
+  [[-0.9, 3.7], [0, 3.9], [0.9, 3.7]].forEach(function (pos) {
+    var d = makeDie();
+    d.position.set(pos[0], HALF, pos[1]);
+    d.quaternion.copy(faceQuat(1));
+    scene.add(d);
+    dice.push(d);
+    diceRest.push(new THREE.Vector3(pos[0], HALF, pos[1]));
+  });
+  function faceQuat(v) {
+    var q = new THREE.Quaternion();
+    var X = new THREE.Vector3(1, 0, 0), Y = new THREE.Vector3(0, 1, 0), Z = new THREE.Vector3(0, 0, 1);
+    if (v === 1) q.identity();
+    else if (v === 6) q.setFromAxisAngle(X, Math.PI);
+    else if (v === 2) q.setFromAxisAngle(X, -Math.PI / 2);
+    else if (v === 5) q.setFromAxisAngle(X, Math.PI / 2);
+    else if (v === 3) q.setFromAxisAngle(Z, Math.PI / 2);
+    else if (v === 4) q.setFromAxisAngle(Z, -Math.PI / 2);
+    var spin = new THREE.Quaternion().setFromAxisAngle(Y, Math.random() * Math.PI * 2);
+    return spin.multiply(q);
+  }
+
+  // ---- drifting dust motes (identical to the relic preview) ----
+  var MOTES = 70, moteGeo = track(new THREE.BufferGeometry()), motePos = new Float32Array(MOTES * 3);
+  for (var mi = 0; mi < MOTES; mi++) {
+    motePos[mi * 3] = (Math.random() - 0.5) * 14;
+    motePos[mi * 3 + 1] = 0.3 + Math.random() * 3.4;
+    motePos[mi * 3 + 2] = (Math.random() - 0.5) * 10;
+  }
+  moteGeo.setAttribute('position', new THREE.BufferAttribute(motePos, 3));
+  var motes = new THREE.Points(moteGeo, new THREE.PointsMaterial({
+    color: 0xd9a950, size: 0.045, transparent: true, opacity: 0.5,
+    blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
+  }));
+  scene.add(motes);
+
+  // ---- golden hit bursts (house hit-feel: soft golden burst, never gory) ----
+  var bursts = [];
+  function burst(x, y, z) {
+    var n = 26;
+    var pos = new Float32Array(n * 3), vel = [];
+    for (var i = 0; i < n; i++) {
+      pos[i * 3] = x; pos[i * 3 + 1] = y; pos[i * 3 + 2] = z;
+      var a = Math.random() * Math.PI * 2, e = Math.random() * Math.PI - Math.PI / 2;
+      var sp = 1.2 + Math.random() * 2.2;
+      vel.push([Math.cos(a) * Math.cos(e) * sp, Math.abs(Math.sin(e)) * sp + 1.2, Math.sin(a) * Math.cos(e) * sp]);
+    }
+    var g = track(new THREE.BufferGeometry());
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    var m = new THREE.PointsMaterial({ color: 0xf2c46a, size: 0.09, transparent: true, opacity: 1, blending: THREE.AdditiveBlending, depthWrite: false });
+    var pts = new THREE.Points(g, m);
+    scene.add(pts);
+    bursts.push({ pts: pts, vel: vel, t0: performance.now(), dur: 750 });
+  }
+  function updateBursts(now) {
+    for (var i = bursts.length - 1; i >= 0; i--) {
+      var b = bursts[i], t = (now - b.t0) / b.dur;
+      if (t >= 1) {
+        scene.remove(b.pts);
+        b.pts.geometry.dispose(); b.pts.material.dispose();
+        bursts.splice(i, 1);
+        continue;
+      }
+      var p = b.pts.geometry.attributes.position.array;
+      for (var j = 0; j < b.vel.length; j++) {
+        p[j * 3] += b.vel[j][0] * 0.016;
+        p[j * 3 + 1] += b.vel[j][1] * 0.016;
+        p[j * 3 + 2] += b.vel[j][2] * 0.016;
+        b.vel[j][1] -= 0.05;
+      }
+      b.pts.geometry.attributes.position.needsUpdate = true;
+      b.pts.material.opacity = 1 - t;
+    }
+  }
+  var shakeAmp = 0; // gentle camera shake on hits
+
+  // ================= game state =================
+  // points[L] = {you: n, ai: n} on logical points 0..23 (anticlockwise track)
+  var S;
+  function freshState() {
+    var pts = [];
+    for (var i = 0; i < 24; i++) pts.push({ you: 0, ai: 0 });
+    return { points: pts, offYou: 15, offAI: 15, borneYou: 0, borneAI: 0,
+             dice: [], diceUsed: [], turn: 'you', over: false };
+  }
+  function trackPos(side, L) { return side === 'you' ? L : (L - 12 + 24) % 24; }
+  function untrack(side, t) { return side === 'you' ? t : (12 + t) % 24; }
+  function onBoard(side) {
+    var n = 0;
+    for (var i = 0; i < 24; i++) n += S.points[i][side];
+    return n;
+  }
+  function inHome(side) {
+    var n = S[side === 'you' ? 'borneYou' : 'borneAI'];
+    for (var i = 0; i < 24; i++) if (trackPos(side, i) >= 18) n += S.points[i][side];
+    return n;
+  }
+  function allInHome(side) {
+    var off = side === 'you' ? S.offYou : S.offAI;
+    return off === 0 && inHome(side) === 15;
+  }
+  function entryPoint(side, v) { return side === 'you' ? v - 1 : 12 + v - 1; }
+
+  // legal moves for one die. Move: {type:'enter'|'move'|'off', from:'off'|L, to:'off'|L, die:v, hits:bool}
+  function legalMoves(side, v) {
+    var moves = [];
+    var off = side === 'you' ? S.offYou : S.offAI;
+    var foe = side === 'you' ? 'ai' : 'you';
+    var mustEnter = off > 0 && onBoard(side) > 0;
+    function destOpen(L) { return S.points[L][foe] < 2; }
+    if (off > 0 && !mustEnter || mustEnter) {
+      if (off > 0) {
+        var E = entryPoint(side, v);
+        if (destOpen(E)) moves.push({ type: 'enter', from: 'off', to: E, die: v, hits: S.points[E][foe] === 1 });
+      }
+      if (mustEnter) return moves;
+    }
+    var home = allInHome(side);
+    var exactT = 24 - v; // track pos bearing off exactly with this die
+    var highest = -1, hi;
+    for (hi = 0; hi < 24; hi++) {
+      var L0 = untrack(side, hi);
+      if (S.points[L0][side] > 0) highest = hi;
+    }
+    if (home) {
+      var Le = untrack(side, exactT);
+      if (exactT >= 0 && exactT < 24 && S.points[Le][side] > 0) {
+        moves.push({ type: 'off', from: Le, to: 'off', die: v, hits: false });
+      } else if (highest >= 0 && v > 24 - highest) {
+        moves.push({ type: 'off', from: untrack(side, highest), to: 'off', die: v, hits: false });
+      }
+    }
+    for (var L = 0; L < 24; L++) {
+      if (S.points[L][side] === 0) continue;
+      var t = trackPos(side, L), dt = t + v;
+      if (dt >= 24) continue; // bearing off handled above
+      var D = untrack(side, dt);
+      if (destOpen(D)) moves.push({ type: 'move', from: L, to: D, die: v, hits: S.points[D][foe] === 1 });
+    }
+    return moves;
+  }
+  function anyMoves(side) {
+    for (var i = 0; i < S.dice.length; i++) {
+      if (!S.diceUsed[i] && legalMoves(side, S.dice[i]).length > 0) return true;
+    }
+    return false;
+  }
+
+  // apply a move to the state; returns animation info
+  function applyMove(side, m) {
+    var foe = side === 'you' ? 'ai' : 'you';
+    var offKey = side === 'you' ? 'offYou' : 'offAI';
+    var borneKey = side === 'you' ? 'borneYou' : 'borneAI';
+    var foeOffKey = foe === 'you' ? 'offYou' : 'offAI';
+    var info = { moverFrom: m.from, moverTo: m.to, hit: null };
+    if (m.from === 'off') S[offKey]--; else S.points[m.from][side]--;
+    if (m.to === 'off') { S[borneKey]++; }
+    else {
+      if (S.points[m.to][foe] === 1) {
+        S.points[m.to][foe] = 0; S[foeOffKey]++;
+        info.hit = m.to;
+      }
+      S.points[m.to][side]++;
+    }
+    var di = S.dice.indexOf(m.die);
+    // consume one matching unused die (largest index match is fine; values may repeat)
+    for (var i = 0; i < S.dice.length; i++) {
+      if (!S.diceUsed[i] && S.dice[i] === m.die) { S.diceUsed[i] = true; break; }
+    }
+    return info;
+  }
+
+  // ================= AI (competent, not perfect) =================
+  function scoreMove(m) {
+    var s = 0;
+    var side = 'ai';
+    if (m.type === 'off') s += 60;
+    if (m.hits) s += 35;
+    if (m.type === 'enter') s += 14;
+    if (m.type !== 'off') {
+      var after = S.points[m.to][side] + 1;
+      if (after >= 2) s += 7; else s -= 12; // landing safe vs leaving a blot
+      var tD = trackPos(side, m.to);
+      if (tD >= 18) s += 6; // into the home stretch
+    }
+    if (m.type === 'move') {
+      var fc = S.points[m.from][side];
+      if (fc === 2) s -= 14; // leaves a blot behind
+      else if (fc === 1) s += 5; // clears a blot
+    }
+    s += m.die * 0.4;
+    return s + Math.random() * 2;
+  }
+  function aiChooseMove(v) {
+    var moves = legalMoves('ai', v);
+    if (!moves.length) return null;
+    var best = moves[0], bs = -1e9;
+    for (var i = 0; i < moves.length; i++) {
+      var sc = scoreMove(moves[i]);
+      if (sc > bs) { bs = sc; best = moves[i]; }
+    }
+    return best;
+  }
+
+  // ================= piece layout =================
+  function slotPos(side, kind, i) {
+    var tray = kind === 'off'
+      ? (side === 'you' ? trayYouOff : trayAIOff)
+      : (side === 'you' ? trayYouBorne : trayAIBorne);
+    return traySlot(tray, i);
+  }
+  function relayout() {
+    ['you', 'ai'].forEach(function (side) {
+      var meshes = pieces[side], mi = 0;
+      var offN = side === 'you' ? S.offYou : S.offAI;
+      var borneN = side === 'you' ? S.borneYou : S.borneAI;
+      var i, p;
+      for (i = 0; i < offN; i++, mi++) {
+        p = slotPos(side, 'off', i);
+        meshes[mi].position.set(p[0], p[1], p[2]);
+        meshes[mi].userData.loc = 'off';
+      }
+      for (var L = 0; L < 24; L++) {
+        var c = pointCenter(logicToVisual(L));
+        for (var k = 0; k < S.points[L][side]; k++, mi++) {
+          meshes[mi].position.set(c[0], BED_TOP + 0.005 + k * PIECE_H, c[1]);
+          meshes[mi].userData.loc = L;
+        }
+      }
+      for (i = 0; i < borneN; i++, mi++) {
+        p = slotPos(side, 'borne', i);
+        meshes[mi].position.set(p[0], p[1], p[2]);
+        meshes[mi].userData.loc = 'borne';
+      }
+    });
+  }
+  function meshAt(side, loc) {
+    var arr = pieces[side];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].userData.loc === loc) return arr[i];
+    }
+    return null;
+  }
+  function topMeshAt(side, L) {
+    // the topmost piece of side on logical point L
+    var arr = pieces[side], best = null, bestY = -1;
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].userData.loc === L && arr[i].position.y > bestY) { bestY = arr[i].position.y; best = arr[i]; }
+    }
+    return best;
+  }
+
+  // ================= selection & destinations =================
+  var raycaster = new THREE.Raycaster();
+  var mouseV = new THREE.Vector2();
+  var selection = null; // {mesh, loc, moves:[{move}], destMeshes:[...]}
+  var inputEnabled = false;
+  function clearGlow() {
+    for (var i = 0; i < 24; i++) {
+      var m = pointMeshes[i];
+      m.material = m.userData.dark ? darkInlay : ivoryMat;
+    }
+    ringYou.visible = false;
+  }
+  function glowDestinations(moves) {
+    clearGlow();
+    var seen = {};
+    moves.forEach(function (mv) {
+      if (mv.to === 'off') { ringYou.visible = true; return; }
+      var vn = logicToVisual(mv.to);
+      if (seen[vn]) return; seen[vn] = true;
+      var pm = pointMeshes[vn];
+      pm.material = pm.userData.dark ? glowMatDark : glowMatIvory;
+    });
+  }
+  function selectPiece(mesh) {
+    deselect();
+    var loc = mesh.userData.loc;
+    if (loc !== 'off' && typeof loc !== 'number') return;
+    // gather this piece's legal moves (all unused dice)
+    var moves = [];
+    for (var i = 0; i < S.dice.length; i++) {
+      if (S.diceUsed[i]) continue;
+      var all = legalMoves('you', S.dice[i]);
+      for (var j = 0; j < all.length; j++) {
+        var mv = all[j];
+        var fromOK = (mv.from === 'off' && loc === 'off') || (mv.from === loc);
+        if (fromOK) moves.push(mv);
+      }
+    }
+    if (!moves.length) { setStatus('That piece has no moves with these dice.'); return; }
+    // dedupe destinations: keep the largest die per destination
+    var byDest = {};
+    moves.forEach(function (mv) {
+      var k = mv.to === 'off' ? 'off' : ('p' + mv.to);
+      if (!byDest[k] || mv.die > byDest[k].die) byDest[k] = mv;
+    });
+    var uniq = Object.keys(byDest).map(function (k) { return byDest[k]; });
+    selection = { mesh: mesh, loc: loc, moves: uniq };
+    mesh.position.y += 0.28;
+    glowDestinations(uniq);
+    var off = uniq.some(function (mv) { return mv.to === 'off'; });
+    setStatus('Tap a glowing point to move' + (off ? ', or the gold ring to bear off.' : '.'));
+  }
+  function deselect() {
+    if (selection) { selection.mesh.position.y -= 0.28; selection = null; }
+    clearGlow();
+  }
+  function pickAt(cx, cy, objects) {
+    var r = canvas.getBoundingClientRect();
+    mouseV.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+    raycaster.setFromCamera(mouseV, camera);
+    var hits = raycaster.intersectObjects(objects, false);
+    return hits.length ? hits[0].object : null;
+  }
+  function handleTap(cx, cy) {
+    if (!inputEnabled || S.over) return;
+    if (selection) {
+      var targets = pointMeshes.slice();
+      if (ringYou.visible) targets.push(ringYou);
+      var hitP = pickAt(cx, cy, targets);
+      if (hitP) {
+        var isRing = hitP === ringYou;
+        var mv = null;
+        for (var i = 0; i < selection.moves.length; i++) {
+          var cand = selection.moves[i];
+          if (isRing && cand.to === 'off') { mv = cand; break; }
+          if (!isRing && cand.to !== 'off' && pointMeshes[logicToVisual(cand.to)] === hitP) { mv = cand; break; }
+        }
+        if (mv) { doPlayerMove(mv); return; }
+      }
+      // tap another of your pieces to switch, else deselect
+      var hitM = pickAt(cx, cy, pieces.you);
+      if (hitM && (hitM.userData.loc === 'off' || typeof hitM.userData.loc === 'number')) { selectPiece(hitM); return; }
+      deselect();
+      setStatus('Tap one of your ivory pieces.');
+      return;
+    }
+    var hit = pickAt(cx, cy, pieces.you);
+    if (hit && (hit.userData.loc === 'off' || typeof hit.userData.loc === 'number')) selectPiece(hit);
+  }
+
+  // ================= animations =================
+  var anims = [];
+  function animateMesh(mesh, to, dur, arc, onDone) {
+    anims.push({ mesh: mesh, from: mesh.position.clone(), to: to.clone(), t0: performance.now(), dur: dur || 550, arc: arc || 0.9, onDone: onDone });
+  }
+  function updateAnims(now) {
+    for (var i = anims.length - 1; i >= 0; i--) {
+      var a = anims[i], t = Math.min(1, (now - a.t0) / a.dur);
+      var e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      a.mesh.position.lerpVectors(a.from, a.to, e);
+      a.mesh.position.y += Math.sin(e * Math.PI) * a.arc;
+      if (t >= 1) { a.mesh.position.copy(a.to); anims.splice(i, 1); if (a.onDone) a.onDone(); }
+    }
+  }
+
+  // ================= HUD / log / status =================
+  var turnTag = document.getElementById('turnTag');
+  var statusEl = document.getElementById('status');
+  var logEl = document.getElementById('log');
+  var chips = [document.getElementById('chip0'), document.getElementById('chip1'), document.getElementById('chip2')];
+  function setStatus(t) { statusEl.textContent = t; }
+  function log(t) {
+    var li = document.createElement('li');
+    li.textContent = t;
+    logEl.insertBefore(li, logEl.firstChild);
+    while (logEl.children.length > 25) logEl.removeChild(logEl.lastChild);
+  }
+  function updateChips() {
+    for (var i = 0; i < 3; i++) {
+      if (i < S.dice.length) {
+        chips[i].textContent = S.dice[i];
+        chips[i].classList.toggle('used', !!S.diceUsed[i]);
+      } else { chips[i].textContent = '\u2013'; chips[i].classList.remove('used'); }
+    }
+  }
+  function diceStr() { return S.dice[0] + ' \u00B7 ' + S.dice[1] + ' \u00B7 ' + S.dice[2]; }
+  function moveWord(side, m) {
+    var who = side === 'you' ? 'You' : 'The opponent';
+    var w2 = side === 'you' ? 'you' : 'it';
+    if (m.type === 'enter') return who + ' bring' + (side === 'you' ? '' : 's') + ' a piece onto the board.';
+    if (m.type === 'off') return who + ' bear' + (side === 'you' ? '' : 's') + ' a piece off.';
+    return who + ' move' + (side === 'you' ? '' : 's') + ' a piece ' + m.die + ' point' + (m.die === 1 ? '' : 's') + '.';
+  }
+
+  // ================= dice roll (animated, with callback) =================
+  var rollAnim = null;
+  var _tmpQ = new THREE.Quaternion(), _spinQ = new THREE.Quaternion();
+  function rollDiceAnimated(cb) {
+    var vals = [1 + Math.floor(Math.random() * 6), 1 + Math.floor(Math.random() * 6), 1 + Math.floor(Math.random() * 6)];
+    rollAnim = {
+      t0: performance.now(), dur: 1300,
+      from: dice.map(function (d) { return d.quaternion.clone(); }),
+      to: vals.map(faceQuat), vals: vals, cb: cb,
+      spinAxis: dice.map(function () {
+        var ax = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5);
+        if (ax.lengthSq() < 0.001) ax.set(0.3, 0.8, 0.2);
+        return ax.normalize();
+      })
+    };
+    setStatus('The dice tumble\u2026');
+  }
+  function updateRoll(now) {
+    if (!rollAnim) return;
+    var t = Math.min(1, (now - rollAnim.t0) / rollAnim.dur);
+    var e = 1 - Math.pow(1 - t, 3);
+    for (var i = 0; i < 3; i++) {
+      var d = dice[i];
+      _tmpQ.slerpQuaternions(rollAnim.from[i], rollAnim.to[i], e);
+      _spinQ.setFromAxisAngle(rollAnim.spinAxis[i], (1 - e) * 14);
+      d.quaternion.copy(_spinQ.multiply(_tmpQ));
+      d.position.y = diceRest[i].y + Math.sin(t * Math.PI) * 1.35;
+      d.position.x = diceRest[i].x + Math.sin(t * Math.PI * 2 + i) * 0.14;
+      d.position.z = diceRest[i].z + Math.cos(t * Math.PI * 2 + i * 2) * 0.14;
+      if (t >= 1) { d.position.copy(diceRest[i]); d.quaternion.copy(rollAnim.to[i]); }
+    }
+    if (t >= 1) { var cb = rollAnim.cb, vals = rollAnim.vals; rollAnim = null; cb(vals); }
+  }
+
+  // ================= turn flow =================
+  var turnToken = 0;
+  function checkWin() {
+    if (S.borneYou === 15) { endGame('you'); return true; }
+    if (S.borneAI === 15) { endGame('ai'); return true; }
+    return false;
+  }
+  function endGame(winner) {
+    S.over = true; inputEnabled = false; deselect();
+    document.getElementById('ovTitle').textContent = winner === 'you' ? 'You win' : 'The opponent wins';
+    document.getElementById('ovText').textContent = winner === 'you'
+      ? 'All fifteen ivory pieces borne off \u2014 a victory worthy of the emperor\u2019s table.'
+      : 'The dark horn bore off all fifteen first. The dice were cruel today.';
+    document.getElementById('overlay').classList.add('show');
+    log(winner === 'you' ? 'You win the game!' : 'The opponent wins the game.');
+  }
+  document.getElementById('btnAgain').addEventListener('click', function () {
+    document.getElementById('overlay').classList.remove('show');
+    startGame();
+  });
+  function startGame() {
+    turnToken++;
+    S = freshState();
+    deselect(); relayout(); updateChips();
+    logEl.innerHTML = '';
+    turnTag.textContent = 'Your move'; turnTag.classList.remove('opp');
+    log('A new game of tabula begins. You are ivory.');
+    var tk = turnToken;
+    setTimeout(function () { if (tk === turnToken) startYourTurn(); }, 700);
+  }
+  function mustEnterMsg() {
+    return (S.offYou > 0 && onBoard('you') > 0)
+      ? 'Your hit piece must re-enter \u2014 tap it in the bronze tray.'
+      : 'Tap one of your ivory pieces.';
+  }
+  function startYourTurn() {
+    if (S.over) return;
+    var tk = turnToken;
+    S.turn = 'you';
+    turnTag.textContent = 'Your move'; turnTag.classList.remove('opp');
+    inputEnabled = false;
+    rollDiceAnimated(function (vals) {
+      if (tk !== turnToken || S.over) return;
+      S.dice = vals; S.diceUsed = [false, false, false];
+      updateChips();
+      log('You roll ' + diceStr() + '.');
+      if (!anyMoves('you')) {
+        setStatus('No moves \u2014 the turn passes.');
+        log('You have no moves \u2014 the turn passes.');
+        setTimeout(function () { if (tk === turnToken && !S.over) startAITurn(); }, 1400);
+      } else {
+        inputEnabled = true;
+        setStatus(mustEnterMsg());
+      }
+    });
+  }
+  function doPlayerMove(mv) {
+    inputEnabled = false;
+    var tk = turnToken;
+    var mover = selection.mesh;
+    var hitMesh = null, hitPos = null;
+    // capture the blot mesh before mutation
+    if (mv.hits && mv.to !== 'off') {
+      hitMesh = topMeshAt('ai', mv.to);
+      var hc = pointCenter(logicToVisual(mv.to));
+      hitPos = new THREE.Vector3(hc[0], BED_TOP + 0.3, hc[1]);
+    }
+    deselect();
+    var fromPos = mover.position.clone();
+    var info = applyMove('you', mv);
+    relayout();
+    var toPos = mover.position.clone();
+    mover.position.copy(fromPos);
+    updateChips();
+    log(moveWord('you', mv) + (info.hit !== null ? ' You hit the opponent\u2019s lone piece!' : ''));
+    if (info.hit !== null) {
+      burst(hitPos.x, hitPos.y, hitPos.z);
+      shakeAmp = 0.4;
+    }
+    animateMesh(mover, toPos, 550, 0.9, function () {
+      if (tk !== turnToken || S.over) return;
+      if (checkWin()) return;
+      if (anyMoves('you')) { inputEnabled = true; setStatus(mustEnterMsg()); }
+      else {
+        setStatus('No moves left \u2014 the turn passes.');
+        log('You have no more moves \u2014 the turn passes.');
+        setTimeout(function () { if (tk === turnToken && !S.over) startAITurn(); }, 1200);
+      }
+    });
+    if (hitMesh) {
+      var hp = slotPos('ai', 'off', S.offAI - 1);
+      hitMesh.position.copy(hitPos);
+      animateMesh(hitMesh, new THREE.Vector3(hp[0], hp[1], hp[2]), 700, 1.2, null);
+    }
+  }
+  function startAITurn() {
+    if (S.over) return;
+    var tk = turnToken;
+    S.turn = 'ai';
+    turnTag.textContent = 'Opponent\u2019s move'; turnTag.classList.add('opp');
+    inputEnabled = false;
+    deselect();
+    setStatus('The opponent considers the board\u2026');
+    rollDiceAnimated(function (vals) {
+      if (tk !== turnToken || S.over) return;
+      S.dice = vals; S.diceUsed = [false, false, false];
+      updateChips();
+      log('The opponent rolls ' + diceStr() + '.');
+      if (!anyMoves('ai')) {
+        setStatus('The opponent has no moves.');
+        log('The opponent has no moves \u2014 the turn passes.');
+        setTimeout(function () { if (tk === turnToken && !S.over) startYourTurn(); }, 1400);
+        return;
+      }
+      var order = [0, 1, 2].sort(function (a, b) { return vals[b] - vals[a]; });
+      aiPlayNext(order, 0, tk);
+    });
+  }
+  function aiPlayNext(order, oi, tk) {
+    if (tk !== turnToken || S.over) return;
+    if (oi >= order.length) { setTimeout(function () { if (tk === turnToken && !S.over) startYourTurn(); }, 600); return; }
+    var v = S.dice[order[oi]];
+    if (S.diceUsed[order[oi]]) { aiPlayNext(order, oi + 1, tk); return; }
+    var mv = aiChooseMove(v);
+    if (!mv) { aiPlayNext(order, oi + 1, tk); return; }
+    var mover = mv.from === 'off' ? meshAt('ai', 'off') : topMeshAt('ai', mv.from);
+    var fromPos = mover.position.clone();
+    var hitMesh = null, hitPos = null;
+    if (mv.hits && mv.to !== 'off') {
+      hitMesh = topMeshAt('you', mv.to);
+      var hc = pointCenter(logicToVisual(mv.to));
+      hitPos = new THREE.Vector3(hc[0], BED_TOP + 0.3, hc[1]);
+    }
+    var info = applyMove('ai', mv);
+    relayout();
+    var toPos = mover.position.clone();
+    mover.position.copy(fromPos);
+    updateChips();
+    setStatus('The opponent moves\u2026');
+    log(moveWord('ai', mv) + (info.hit !== null ? ' The opponent hits your lone piece!' : ''));
+    if (info.hit !== null) { burst(hitPos.x, hitPos.y, hitPos.z); shakeAmp = 0.4; }
+    animateMesh(mover, toPos, 550, 0.9, function () {
+      if (tk !== turnToken || S.over) return;
+      if (checkWin()) return;
+      setTimeout(function () { aiPlayNext(order, oi + 1, tk); }, 550);
+    });
+    if (hitMesh) {
+      var hp = slotPos('you', 'off', S.offYou - 1);
+      hitMesh.position.copy(hitPos);
+      animateMesh(hitMesh, new THREE.Vector3(hp[0], hp[1], hp[2]), 700, 1.2, null);
+    }
+  }
+
+  // ================= controls: drag rotate, wheel/pinch zoom, tap select =================
+  var target = new THREE.Vector3(0.2, 0.4, 0.5);
+  var sph = { r: 10.2, theta: 0.3, phi: 1.0 };
+  var camAnim = null;
+  function applyCam() {
+    var sp = Math.sin(sph.phi), x = sph.r * sp * Math.sin(sph.theta),
+        y = sph.r * Math.cos(sph.phi), z = sph.r * sp * Math.cos(sph.theta);
+    camera.position.set(target.x + x, target.y + y, target.z + z);
+    camera.lookAt(target);
+    if (shakeAmp > 0.004) {
+      camera.position.x += (Math.random() - 0.5) * shakeAmp;
+      camera.position.y += (Math.random() - 0.5) * shakeAmp * 0.6;
+      camera.position.z += (Math.random() - 0.5) * shakeAmp;
+    }
+  }
+  function flyTo(t, r, theta, phi) {
+    camAnim = {
+      t0: performance.now(), dur: 900,
+      from: { tx: target.x, ty: target.y, tz: target.z, r: sph.r, th: sph.theta, ph: sph.phi },
+      to: { tx: t[0], ty: t[1], tz: t[2], r: r, th: theta, ph: phi }
+    };
+  }
+  var dragging = false, lastX = 0, lastY = 0, lastPinch = 0, idleTimer = null, autoSpin = true;
+  var downX = 0, downY = 0, downT = 0;
+  function poke() {
+    autoSpin = false;
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(function () { autoSpin = true; }, 8000);
+  }
+  canvas.addEventListener('pointerdown', function (e) {
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    downX = e.clientX; downY = e.clientY; downT = performance.now();
+    canvas.classList.add('grabbing');
+    try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    camAnim = null; poke();
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    sph.theta -= dx * 0.006;
+    sph.phi = Math.max(0.3, Math.min(1.45, sph.phi - dy * 0.005));
+    poke();
+  });
+  function endDrag(e) {
+    var wasTap = dragging &&
+      Math.hypot(e.clientX - downX, e.clientY - downY) < 10 &&
+      (performance.now() - downT) < 600;
+    dragging = false;
+    canvas.classList.remove('grabbing');
+    try { canvas.releasePointerCapture(e.pointerId); } catch (err) {}
+    if (wasTap) handleTap(e.clientX, e.clientY);
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    sph.r = Math.max(1.8, Math.min(14, sph.r * (1 + e.deltaY * 0.001)));
+    poke();
+  }, { passive: false });
+  canvas.addEventListener('touchmove', function (e) {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX,
+                         e.touches[0].clientY - e.touches[1].clientY);
+      if (lastPinch > 0) sph.r = Math.max(1.8, Math.min(14, sph.r * (lastPinch / d)));
+      lastPinch = d; poke();
+    }
+  }, { passive: false });
+  canvas.addEventListener('touchend', function () { lastPinch = 0; });
+
+  function setActive(id) {
+    ['btnFull', 'btnPoints', 'btnDice'].forEach(function (b) {
+      document.getElementById(b).classList.toggle('active', b === id);
+    });
+  }
+  document.getElementById('btnFull').addEventListener('click', function () {
+    setActive('btnFull'); flyTo([0.2, 0.4, 0.5], 10.2, 0.3, 1.0);
+  });
+  document.getElementById('btnPoints').addEventListener('click', function () {
+    setActive('btnPoints'); flyTo([-1.6, 0.5, -1.1], 3.4, 0.25, 1.12);
+  });
+  document.getElementById('btnDice').addEventListener('click', function () {
+    setActive('btnDice'); flyTo([0, 0.25, 3.8], 2.8, 0.0, 1.15);
+  });
+  document.getElementById('btnReset').addEventListener('click', function () {
+    setActive('btnFull'); flyTo([0.2, 0.4, 0.5], 10.2, 0.3, 1.0);
+  });
+
+  // ================= info cards =================
+  var card = document.getElementById('infoCard');
+  var texts = {
+    how:
+      '<h2>How to play</h2>' +
+      '<p>You are the ivory pieces; the opponent plays the dark horn. All fifteen pieces on each side start off the board, waiting in the bronze trays.</p>' +
+      '<p>Each turn rolls three dice. Every die lets you do one thing: bring a new piece onto the board (a roll of 4 enters on the fourth point in), or move a piece already on the board that many points forward. Both sides race the same way round the board &mdash; follow the points from the near-right corner.</p>' +
+      '<p>Tap one of your pieces and the points it can reach glow gold &mdash; tap a glowing point to move. Used dice dim in the row above. You cannot land on a point held by two or more enemy pieces, but a lone enemy piece can be hit and sent back off the board &mdash; and a hit piece of yours must re-enter before your other pieces can move.</p>' +
+      '<p>Once all fifteen of your pieces stand in your last six points, you may start bearing them off &mdash; tap a piece, then the gold ring by your tray. First to bear off all fifteen wins.</p>' +
+      '<p class="label">Where the ancient rules are uncertain, this game follows the standard 19th-century reading &mdash; see &ldquo;Known vs. reconstructed&rdquo;.</p>',
+    about:
+      '<h2>About this piece</h2>' +
+      '<p>Tabula &mdash; &ldquo;the board&rdquo; &mdash; is the oldest tables game whose rules we can name: the direct ancestor of backgammon, played across the Roman and Byzantine worlds. Two players race fifteen pieces each around twenty-four points on the roll of three dice, hitting lone enemy pieces and bearing their own men off first. The board here is wood with bone-and-dark inlay, the pieces turned bone and horn, the dice bone &mdash; the materials of a Roman gaming table.</p>' +
+      '<p class="label">Archive chapter: Rome. Board reconstruction after the Agathias epigram (19th-c. scholarly reconstruction).</p>',
+    zeno:
+      '<h2>Zeno&rsquo;s unlucky throw</h2>' +
+      '<p>In 480 AD the Byzantine emperor Zeno sat down to a game of tabula. The poet Agathias, writing about fifty years later, recorded what happened: Zeno held a strong position &mdash; a stack of seven men, three stacks of two, and two lone pieces &mdash; and then threw 2, 5 and 6. The rules forced him to use every die, and the only legal way to do it broke his three pairs into lone, capturable pieces. One throw turned a winning game into a lost one. It is the oldest detailed account of a tables game ever written &mdash; and a very human story: an emperor, ruined by dice.</p>' +
+      '<p class="label">Agathias of Myrine, epigram on Zeno&rsquo;s game, c. 530 AD.</p>',
+    recon:
+      '<h2>What we know vs. what is reconstructed</h2>' +
+      '<p><strong>Documented:</strong> the game existed and was called tabula/tavl&iacute;; Agathias&rsquo;s epigram describes Zeno&rsquo;s position and his 2-5-6 throw; Isidore of Seville credits its invention to a Greek soldier of the Trojan War named Alea (legend, not history); the word tavli is still Greek for backgammon.</p>' +
+      '<p><strong>Reconstructed:</strong> the rules &mdash; 24 points, three dice, fifteen pieces a side starting off the board, both players moving the same way round, lone pieces (&ldquo;blots&rdquo;) vulnerable to capture &mdash; were worked out in the 19th century by Becq de Fouqui&egrave;res from the epigram. Whether players had to re-enter hit pieces first, or gather all men before bearing off, is <em>not</em> known.</p>' +
+      '<p><strong>Chosen for this game (standard reading):</strong> a hit piece must re-enter before other pieces move; bearing off needs all fifteen in the home six points, exact die bears off from its point, and an oversized die bears off the highest piece when no exact point is occupied. Point shapes, the dice pip layout, and the trays are illustrative. Tabula drops the middle row of its ancestor, Ludus Duodecim Scriptorum.</p>'
+  };
+  function showInfo(k) {
+    card.innerHTML = texts[k];
+    ['btnHow', 'btnAbout', 'btnZeno', 'btnRecon'].forEach(function (b) {
+      document.getElementById(b).classList.remove('active');
+    });
+    document.getElementById(k === 'how' ? 'btnHow' : k === 'about' ? 'btnAbout' : k === 'zeno' ? 'btnZeno' : 'btnRecon').classList.add('active');
+  }
+  document.getElementById('btnHow').addEventListener('click', function () { showInfo('how'); });
+  document.getElementById('btnAbout').addEventListener('click', function () { showInfo('about'); });
+  document.getElementById('btnZeno').addEventListener('click', function () { showInfo('zeno'); });
+  document.getElementById('btnRecon').addEventListener('click', function () { showInfo('recon'); });
+
+  // ================= resize / loop / dispose =================
+  function resize() {
+    var w = canvas.clientWidth || canvas.parentNode.clientWidth;
+    var h = canvas.clientHeight || canvas.parentNode.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  applyCam();
+
+  S = freshState();
+  relayout();
+  updateChips();
+  showInfo('how');
+  veil.classList.add('hidden');
+  startGame();
+
+  var running = true, lastT = performance.now();
+  document.addEventListener('visibilitychange', function () {
+    running = !document.hidden;
+    if (running) lastT = performance.now();
+  });
+  function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (!running) return;
+    var dt = Math.min(0.05, (now - lastT) / 1000);
+    lastT = now;
+    if (shakeAmp > 0.004) shakeAmp *= Math.exp(-dt * 5); else shakeAmp = 0;
+    if (camAnim) {
+      var t = Math.min(1, (now - camAnim.t0) / camAnim.dur), e = easeInOut(t);
+      var f = camAnim.from, o = camAnim.to;
+      target.set(f.tx + (o.tx - f.tx) * e, f.ty + (o.ty - f.ty) * e, f.tz + (o.tz - f.tz) * e);
+      sph.r = f.r + (o.r - f.r) * e;
+      sph.theta = f.th + (o.th - f.th) * e;
+      sph.phi = f.ph + (o.ph - f.ph) * e;
+      if (t >= 1) camAnim = null;
+    } else if (autoSpin && !dragging) {
+      sph.theta += dt * 0.12;
+    }
+    // destination glow pulse
+    if (selection) {
+      var pu = 0.65 + 0.35 * Math.sin(now * 0.008);
+      glowMatIvory.emissiveIntensity = pu;
+      glowMatDark.emissiveIntensity = pu;
+      ringMat.emissiveIntensity = pu;
+    }
+    // dust motes drift
+    var pos = moteGeo.attributes.position.array;
+    for (var i = 0; i < MOTES; i++) {
+      pos[i * 3 + 1] += dt * 0.06;
+      pos[i * 3] += Math.sin(now * 0.0004 + i) * dt * 0.05;
+      if (pos[i * 3 + 1] > 3.9) pos[i * 3 + 1] = 0.25;
+    }
+    moteGeo.attributes.position.needsUpdate = true;
+    updateRoll(now);
+    updateAnims(now);
+    updateBursts(now);
+    applyCam();
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(loop);
+
+  window.addEventListener('beforeunload', function () {
+    for (var i = 0; i < disposables.length; i++) {
+      var d = disposables[i];
+      if (d && d.dispose) d.dispose();
+    }
+    if (renderer) renderer.dispose();
+  });
+})();
+</script>
+</body>
+</html>
