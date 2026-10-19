@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Tabula — Relic Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0; font-family: Georgia, 'Times New Roman', serif; }
+  #page { max-width: 900px; margin: 0 auto; padding: 16px 14px 40px; }
+  h1 { font-size: 26px; font-weight: normal; letter-spacing: .04em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 14px; font-size: 15px; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #050403; border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #stage.grabbing { cursor: grabbing; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 2; }
+  #veil.hidden { display: none; }
+  #fail { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9; background: #1a0808; border-radius: 6px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px; padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .bar button:disabled { opacity: .45; cursor: default; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13px; font-style: italic; margin: 4px 0 14px; }
+  #rollRead { color: #e6c27a; font-size: 15px; min-height: 20px; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px; line-height: 1.6; margin-bottom: 12px; }
+  .card h2 { font-size: 19px; font-weight: normal; color: #f3d58c; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: #e8d9b0; margin-bottom: 8px; }
+  .card .label { color: #b98f4e; font-style: italic; font-size: 14px; }
+  .honesty { border-left: 3px solid #c9a24b; padding: 10px 14px; background: #171106; border-radius: 0 8px 8px 0; font-style: italic; color: #e6c27a; font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>Tabula</h1>
+  <p class="sub">The Roman race game &mdash; ancestor of backgammon &middot; board after the Agathias epigram</p>
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Setting the board&hellip;</div>
+  </div>
+  <div class="bar" id="viewBar">
+    <button id="btnFull" class="active">Full view</button>
+    <button id="btnPoints">Zoom: the points</button>
+    <button id="btnDice">Zoom: the dice</button>
+    <button id="btnRoll">Roll the dice</button>
+    <button id="btnReset">Reset view</button>
+  </div>
+  <p class="hint">Drag to turn it &middot; scroll or pinch to zoom</p>
+  <p class="hint" id="rollRead"></p>
+  <div class="honesty">&ldquo;Board of 24 points, 12 a side &mdash; the 19th-century reconstruction of Tabula from Agathias&rsquo;s epigram on Emperor Zeno&rsquo;s game (played c. 480 AD, recorded c. 530). The three-row board belongs to its ancestor, Ludus Duodecim Scriptorum; Tabula drops the middle row. Three dice, fifteen pieces a side entering from off the board, lone pieces vulnerable &mdash; all from the same reconstruction; details such as bearing off are not certain. Point shapes are stylized. No complete Roman tabula board survives; the Gloucester set (found 1983, in an 11th-century pit) is the only complete tables set ever found.&rdquo;</div>
+  <div class="bar" id="infoBar">
+    <button id="btnAbout">About this piece</button>
+    <button id="btnZeno">Zeno&rsquo;s unlucky throw</button>
+    <button id="btnRecon">Known vs. reconstructed</button>
+  </div>
+  <div class="card" id="infoCard"></div>
+  <div id="fail"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var veil = document.getElementById('veil');
+  var fail = document.getElementById('fail');
+  function showFail(msg) {
+    fail.style.display = 'block';
+    fail.textContent = msg;
+    veil.classList.add('hidden');
+  }
+  if (typeof THREE === 'undefined') { showFail('The 3D engine did not load. Reload the page to try again.'); return; }
+
+  var canvas = document.getElementById('stage');
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+  } catch (e) { showFail('This device could not start 3D. The description below still tells the full story.'); return; }
+  var isPhone = Math.min(window.innerWidth, window.innerHeight) < 700;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isPhone ? 1.5 : 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050403);
+  scene.fog = new THREE.Fog(0x050403, 16, 30);
+
+  var camera = new THREE.PerspectiveCamera(38, 4 / 3, 0.1, 60);
+
+  // ---- candlelit archive lighting (warm lamp light, like a Roman oil lamp) ----
+  scene.add(new THREE.AmbientLight(0x2a1c0e, 1.0));
+  var key = new THREE.DirectionalLight(0xffd9a0, 1.25);
+  key.position.set(3, 5, 4);
+  key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  key.shadow.camera.left = -7; key.shadow.camera.right = 7;
+  key.shadow.camera.top = 6; key.shadow.camera.bottom = -4;
+  scene.add(key);
+  var candleL = new THREE.PointLight(0xff9a3c, 1.5, 16); candleL.position.set(-4.5, 2.2, 2.6); scene.add(candleL);
+  var candleR = new THREE.PointLight(0xffb060, 1.1, 16); candleR.position.set(4.5, 1.6, -2.0); scene.add(candleR);
+  var rim = new THREE.DirectionalLight(0x9fb0da, 0.3); rim.position.set(-3, 4, -5); scene.add(rim);
+  var under = new THREE.PointLight(0xffd9a0, 0.3, 10); under.position.set(0, -1.5, 3); scene.add(under);
+
+  // ---- materials (Roman palette: wood, bone, ivory, bronze) ----
+  var tableMat  = new THREE.MeshStandardMaterial({ color: 0x1c1108, roughness: 0.92, metalness: 0.02 });
+  var frameMat  = new THREE.MeshStandardMaterial({ color: 0x4a2a12, roughness: 0.62, metalness: 0.08 });
+  var bedMat    = new THREE.MeshStandardMaterial({ color: 0x5c3a1a, roughness: 0.7,  metalness: 0.05 });
+  var ivoryMat  = new THREE.MeshStandardMaterial({ color: 0xe8dcc0, roughness: 0.55, metalness: 0.05, side: THREE.DoubleSide });
+  var darkInlay = new THREE.MeshStandardMaterial({ color: 0x2e1a0c, roughness: 0.6,  metalness: 0.08, side: THREE.DoubleSide });
+  var boneMat   = new THREE.MeshStandardMaterial({ color: 0xe6d7b5, roughness: 0.5,  metalness: 0.05 });
+  var hornMat   = new THREE.MeshStandardMaterial({ color: 0x3a2412, roughness: 0.45, metalness: 0.1 });
+  var bronzeMat = new THREE.MeshStandardMaterial({ color: 0x8a6a2a, roughness: 0.35, metalness: 0.9 });
+  var pipMat    = new THREE.MeshStandardMaterial({ color: 0x1a0e04, roughness: 0.8,  metalness: 0.0 });
+
+  var disposables = [];
+  function track(x) { disposables.push(x); return x; }
+  function solid(geo, mat, x, y, z) {
+    var m = new THREE.Mesh(track(geo), mat);
+    m.position.set(x, y, z);
+    m.castShadow = true; m.receiveShadow = true;
+    return m;
+  }
+
+  // ---- table ----
+  var table = solid(new THREE.PlaneGeometry(44, 44), tableMat, 0, 0, 0);
+  table.rotation.x = -Math.PI / 2;
+  table.castShadow = false;
+  scene.add(table);
+
+  // ================= the board =================
+  // 24 points, 12 a side — the Becq de Fouquières reconstruction from the Agathias epigram.
+  var board = new THREE.Group();
+  scene.add(board);
+
+  var BED_W = 7.8, BED_D = 4.6, BED_TOP = 0.42;
+  var FRAME_W = 0.5, FRAME_H = 0.62, FRAME_TOP = 0.56;
+
+  // bed panel
+  board.add(solid(new THREE.BoxGeometry(BED_W, 0.34, BED_D), bedMat, 0, BED_TOP - 0.17, 0));
+  // frame rails (a raised lip, like a Roman game box)
+  var railX = BED_W / 2 + FRAME_W / 2, railZ = BED_D / 2 + FRAME_W / 2;
+  board.add(solid(new THREE.BoxGeometry(BED_W + FRAME_W * 2, FRAME_H, FRAME_W), frameMat, 0, FRAME_TOP - FRAME_H / 2, railZ));
+  board.add(solid(new THREE.BoxGeometry(BED_W + FRAME_W * 2, FRAME_H, FRAME_W), frameMat, 0, FRAME_TOP - FRAME_H / 2, -railZ));
+  board.add(solid(new THREE.BoxGeometry(FRAME_W, FRAME_H, BED_D), frameMat, railX, FRAME_TOP - FRAME_H / 2, 0));
+  board.add(solid(new THREE.BoxGeometry(FRAME_W, FRAME_H, BED_D), frameMat, -railX, FRAME_TOP - FRAME_H / 2, 0));
+  // center bar
+  board.add(solid(new THREE.BoxGeometry(0.56, FRAME_H, BED_D), frameMat, 0, FRAME_TOP - FRAME_H / 2, 0));
+  // bronze corner studs
+  [[railX, railZ], [-railX, railZ], [railX, -railZ], [-railX, -railZ]].forEach(function (c) {
+    board.add(solid(new THREE.SphereGeometry(0.14, 20, 14), bronzeMat, c[0], FRAME_TOP + 0.02, c[1]));
+  });
+
+  // ---- the 24 points: 4 quadrants of 6, alternating ivory / dark inlay ----
+  // Geometry is laid flat at build time (no Euler-order ambiguity):
+  // base triangle lives in XY (base at y=0, tip at +Y); bottom-row points tip toward -Z,
+  // top-row points tip toward +Z.
+  var PT_W = 0.603, PT_LEN = 1.85, PT_Z0 = 2.28;
+  var triShape = new THREE.Shape();
+  triShape.moveTo(-PT_W / 2 + 0.03, 0);
+  triShape.lineTo(PT_W / 2 - 0.03, 0);
+  triShape.lineTo(0, PT_LEN);
+  triShape.closePath();
+  var geoPointBottom = track(new THREE.ShapeGeometry(triShape, 4));
+  geoPointBottom.rotateX(-Math.PI / 2); // tip -> -Z (for the bottom row, base at +Z edge)
+  var geoPointTop = track(new THREE.ShapeGeometry(triShape, 4));
+  geoPointTop.rotateX(Math.PI / 2);    // tip -> +Z (for the top row, base at -Z edge)
+  function pointMesh(qx, topRow, i, dark) {
+    // qx: -1 left field, +1 right field; i: 0..5 across the field, measured from the outer edge inward
+    var halfW = BED_W / 2, barHalf = 0.28;
+    var x0 = qx < 0 ? -halfW : barHalf;
+    var cx = x0 + PT_W * (i + 0.5);
+    var m = new THREE.Mesh(topRow ? geoPointTop : geoPointBottom, dark ? darkInlay : ivoryMat);
+    m.position.set(cx, BED_TOP + 0.004, topRow ? -PT_Z0 : PT_Z0);
+    m.receiveShadow = true;
+    return m;
+  }
+  var qi, pi, dark;
+  for (qi = 0; qi < 4; qi++) {
+    var qx = (qi === 0 || qi === 2) ? -1 : 1;
+    var topRow = (qi < 2);
+    for (pi = 0; pi < 6; pi++) {
+      dark = ((qi * 6 + pi) % 2) === 1;
+      board.add(pointMesh(qx, topRow, pi, dark));
+    }
+  }
+  // point index -> world position of its middle (for placing pieces)
+  function pointCenter(n) {
+    var qi2 = Math.floor(n / 6), pi2 = n % 6;
+    var qx = (qi2 === 0 || qi2 === 2) ? -1 : 1;
+    var topRow = (qi2 < 2);
+    var halfW = BED_W / 2, barHalf = 0.28;
+    var x0 = qx < 0 ? -halfW : barHalf;
+    var cx = x0 + PT_W * (pi2 + 0.5);
+    var cz = topRow ? -(PT_Z0 - 0.62) : (PT_Z0 - 0.62);
+    return [cx, cz];
+  }
+
+  // ---- pieces: 15 a side, turned bone discs; an illustrative mid-game ----
+  var pieceProfile = [
+    new THREE.Vector2(0.001, 0), new THREE.Vector2(0.20, 0),
+    new THREE.Vector2(0.235, 0.03), new THREE.Vector2(0.235, 0.10),
+    new THREE.Vector2(0.20, 0.145), new THREE.Vector2(0.12, 0.16),
+    new THREE.Vector2(0.001, 0.165)
+  ];
+  var pieceGeo = track(new THREE.LatheGeometry(pieceProfile, 30));
+  function addPiece(mat, n, level) {
+    var c = pointCenter(n);
+    var p = solid(pieceGeo, mat, c[0], BED_TOP + 0.005 + level * 0.165, c[1]);
+    board.add(p);
+  }
+  // white (bone): point -> stack height — 2+1+3+2+1+2+1+3 = 15
+  [[0, 2], [2, 1], [4, 3], [7, 2], [9, 1], [12, 2], [16, 1], [20, 3]].forEach(function (s) {
+    for (var k = 0; k < s[1]; k++) addPiece(boneMat, s[0], k);
+  });
+  // black (horn): 1+2+3+2+1+2+1+3 = 15
+  [[1, 1], [5, 2], [6, 3], [10, 2], [13, 1], [15, 2], [18, 1], [22, 3]].forEach(function (s) {
+    for (var k = 0; k < s[1]; k++) addPiece(hornMat, s[0], k);
+  });
+
+  // ================= the three dice =================
+  // Bone cubes, standard 7-sum pip layout (Roman arrangements varied; noted below).
+  var DIE = 0.44, HALF = DIE / 2 + 0.004;
+  var PIPS = {
+    1: [[0, 0]],
+    2: [[-1, -1], [1, 1]],
+    3: [[-1, -1], [0, 0], [1, 1]],
+    4: [[-1, -1], [1, -1], [-1, 1], [1, 1]],
+    5: [[-1, -1], [1, -1], [0, 0], [-1, 1], [1, 1]],
+    6: [[-1, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [1, 1]]
+  };
+  function makeDie() {
+    var die = new THREE.Group();
+    var cube = new THREE.Mesh(track(new THREE.BoxGeometry(DIE, DIE, DIE)), boneMat);
+    cube.castShadow = true; cube.receiveShadow = true;
+    die.add(cube);
+    // face values: top 1, bottom 6, front 2, back 5, right 3, left 4 (opposites sum to 7)
+    var faces = [
+      { v: 1, rx: -Math.PI / 2, ry: 0 },
+      { v: 6, rx: Math.PI / 2, ry: 0 },
+      { v: 2, rx: 0, ry: 0 },
+      { v: 5, rx: 0, ry: Math.PI },
+      { v: 3, rx: 0, ry: Math.PI / 2 },
+      { v: 4, rx: 0, ry: -Math.PI / 2 }
+    ];
+    faces.forEach(function (f) {
+      var fg = new THREE.Group();
+      PIPS[f.v].forEach(function (p) {
+        var pip = new THREE.Mesh(track(new THREE.CylinderGeometry(0.042, 0.042, 0.014, 12)), pipMat);
+        pip.rotation.x = Math.PI / 2;
+        pip.position.set(p[0] * 0.105, p[1] * 0.105, HALF);
+        fg.add(pip);
+      });
+      fg.rotation.order = 'YXZ';
+      fg.rotation.y = f.ry; fg.rotation.x = f.rx;
+      die.add(fg);
+    });
+    return die;
+  }
+  var dice = [], diceRest = [];
+  [[-0.9, 3.7], [0, 3.9], [0.9, 3.7]].forEach(function (pos, i) {
+    var d = makeDie();
+    d.position.set(pos[0], HALF, pos[1]);
+    // start showing 6, 3, 1
+    var startVals = [6, 3, 1];
+    d.quaternion.copy(faceQuat(startVals[i]));
+    scene.add(d);
+    dice.push(d);
+    diceRest.push(new THREE.Vector3(pos[0], HALF, pos[1]));
+  });
+  function faceQuat(v) {
+    // quaternion that puts value v on top (+Y), then a random spin about Y
+    var q = new THREE.Quaternion();
+    var X = new THREE.Vector3(1, 0, 0), Y = new THREE.Vector3(0, 1, 0), Z = new THREE.Vector3(0, 0, 1);
+    if (v === 1) q.identity();
+    else if (v === 6) q.setFromAxisAngle(X, Math.PI);
+    else if (v === 2) q.setFromAxisAngle(X, -Math.PI / 2);
+    else if (v === 5) q.setFromAxisAngle(X, Math.PI / 2);
+    else if (v === 3) q.setFromAxisAngle(Z, Math.PI / 2);
+    else if (v === 4) q.setFromAxisAngle(Z, -Math.PI / 2);
+    var spin = new THREE.Quaternion().setFromAxisAngle(Y, Math.random() * Math.PI * 2);
+    return spin.multiply(q);
+  }
+
+  // ---- roll animation ----
+  var rollRead = document.getElementById('rollRead');
+  var btnRoll = document.getElementById('btnRoll');
+  var rollAnim = null;
+  function rollDice() {
+    if (rollAnim) return;
+    btnRoll.disabled = true;
+    var vals = [1 + Math.floor(Math.random() * 6), 1 + Math.floor(Math.random() * 6), 1 + Math.floor(Math.random() * 6)];
+    rollAnim = {
+      t0: performance.now(), dur: 1500,
+      from: dice.map(function (d) { return d.quaternion.clone(); }),
+      to: vals.map(faceQuat),
+      spinAxis: dice.map(function () {
+        var ax = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5);
+        if (ax.lengthSq() < 0.001) ax.set(0.3, 0.8, 0.2);
+        return ax.normalize();
+      })
+    };
+    rollRead.textContent = 'The dice tumble\u2026';
+    setTimeout(function () {
+      rollRead.textContent = 'The dice show ' + vals[0] + ' \u00B7 ' + vals[1] + ' \u00B7 ' + vals[2] +
+        ' — in Zeno\u2019s game, a throw like this could ruin an emperor.';
+    }, 1550);
+  }
+  btnRoll.addEventListener('click', rollDice);
+  var _tmpQ = new THREE.Quaternion(), _spinQ = new THREE.Quaternion();
+  function updateRoll(now) {
+    if (!rollAnim) return;
+    var t = Math.min(1, (now - rollAnim.t0) / rollAnim.dur);
+    var e = 1 - Math.pow(1 - t, 3); // easeOutCubic
+    for (var i = 0; i < 3; i++) {
+      var d = dice[i];
+      _tmpQ.slerpQuaternions(rollAnim.from[i], rollAnim.to[i], e);
+      _spinQ.setFromAxisAngle(rollAnim.spinAxis[i], (1 - e) * 14);
+      d.quaternion.copy(_spinQ.multiply(_tmpQ));
+      // hop: up and back down onto the table
+      d.position.y = diceRest[i].y + Math.sin(t * Math.PI) * 1.35;
+      d.position.x = diceRest[i].x + Math.sin(t * Math.PI * 2 + i) * 0.14;
+      d.position.z = diceRest[i].z + Math.cos(t * Math.PI * 2 + i * 2) * 0.14;
+      if (t >= 1) { d.position.copy(diceRest[i]); d.quaternion.copy(rollAnim.to[i]); }
+    }
+    if (t >= 1) { rollAnim = null; btnRoll.disabled = false; }
+  }
+
+  // ---- drifting dust motes (the lamp-lit air; subtle) ----
+  var MOTES = 70, moteGeo = track(new THREE.BufferGeometry()), motePos = new Float32Array(MOTES * 3);
+  for (var mi = 0; mi < MOTES; mi++) {
+    motePos[mi * 3] = (Math.random() - 0.5) * 14;
+    motePos[mi * 3 + 1] = 0.3 + Math.random() * 3.4;
+    motePos[mi * 3 + 2] = (Math.random() - 0.5) * 10;
+  }
+  moteGeo.setAttribute('position', new THREE.BufferAttribute(motePos, 3));
+  var motes = new THREE.Points(moteGeo, new THREE.PointsMaterial({
+    color: 0xd9a950, size: 0.045, transparent: true, opacity: 0.5,
+    blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
+  }));
+  scene.add(motes);
+
+  // ================= controls: drag rotate, wheel/pinch zoom =================
+  var target = new THREE.Vector3(0.2, 0.4, 0.5);
+  var sph = { r: 10.2, theta: 0.3, phi: 1.0 }; // theta azimuth, phi polar
+  var camAnim = null;
+  function applyCam() {
+    var sp = Math.sin(sph.phi), x = sph.r * sp * Math.sin(sph.theta),
+        y = sph.r * Math.cos(sph.phi), z = sph.r * sp * Math.cos(sph.theta);
+    camera.position.set(target.x + x, target.y + y, target.z + z);
+    camera.lookAt(target);
+  }
+  function flyTo(t, r, theta, phi) {
+    camAnim = {
+      t0: performance.now(), dur: 900,
+      from: { tx: target.x, ty: target.y, tz: target.z, r: sph.r, th: sph.theta, ph: sph.phi },
+      to: { tx: t[0], ty: t[1], tz: t[2], r: r, th: theta, ph: phi }
+    };
+  }
+  var dragging = false, lastX = 0, lastY = 0, lastPinch = 0, idleTimer = null, autoSpin = true;
+  function poke() {
+    autoSpin = false;
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(function () { autoSpin = true; }, 8000);
+  }
+  canvas.addEventListener('pointerdown', function (e) {
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    canvas.classList.add('grabbing');
+    try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    camAnim = null; poke();
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    sph.theta -= dx * 0.006;
+    sph.phi = Math.max(0.3, Math.min(1.45, sph.phi - dy * 0.005));
+    poke();
+  });
+  function endDrag(e) {
+    dragging = false;
+    canvas.classList.remove('grabbing');
+    try { canvas.releasePointerCapture(e.pointerId); } catch (err) {}
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    sph.r = Math.max(1.8, Math.min(14, sph.r * (1 + e.deltaY * 0.001)));
+    poke();
+  }, { passive: false });
+  canvas.addEventListener('touchmove', function (e) {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX,
+                         e.touches[0].clientY - e.touches[1].clientY);
+      if (lastPinch > 0) sph.r = Math.max(1.8, Math.min(14, sph.r * (lastPinch / d)));
+      lastPinch = d; poke();
+    }
+  }, { passive: false });
+  canvas.addEventListener('touchend', function () { lastPinch = 0; });
+
+  function setActive(id) {
+    ['btnFull', 'btnPoints', 'btnDice'].forEach(function (b) {
+      document.getElementById(b).classList.toggle('active', b === id);
+    });
+  }
+  document.getElementById('btnFull').addEventListener('click', function () {
+    setActive('btnFull'); flyTo([0.2, 0.4, 0.5], 10.2, 0.3, 1.0);
+  });
+  document.getElementById('btnPoints').addEventListener('click', function () {
+    setActive('btnPoints'); flyTo([-1.6, 0.5, -1.1], 3.4, 0.25, 1.12);
+  });
+  document.getElementById('btnDice').addEventListener('click', function () {
+    setActive('btnDice'); flyTo([0, 0.25, 3.8], 2.8, 0.0, 1.15);
+  });
+  document.getElementById('btnReset').addEventListener('click', function () {
+    setActive('btnFull'); flyTo([0.2, 0.4, 0.5], 10.2, 0.3, 1.0);
+  });
+
+  // ================= info cards =================
+  var card = document.getElementById('infoCard');
+  var texts = {
+    about:
+      '<h2>About this piece</h2>' +
+      '<p>Tabula &mdash; &ldquo;the board&rdquo; &mdash; is the oldest tables game whose rules we can name: the direct ancestor of backgammon, played across the Roman and Byzantine worlds. Two players race fifteen pieces each around twenty-four points on the roll of three dice, hitting lone enemy pieces and bearing their own men off first. The board here is wood with bone-and-dark inlay, the pieces turned bone and horn, the dice bone &mdash; the materials of a Roman gaming table.</p>' +
+      '<p class="label">Archive chapter: Rome. Board reconstruction after the Agathias epigram (19th-c. scholarly reconstruction).</p>',
+    zeno:
+      '<h2>Zeno&rsquo;s unlucky throw</h2>' +
+      '<p>In 480 AD the Byzantine emperor Zeno sat down to a game of tabula. The poet Agathias, writing about fifty years later, recorded what happened: Zeno held a strong position &mdash; a stack of seven men, three stacks of two, and two lone pieces &mdash; and then threw 2, 5 and 6. The rules forced him to use every die, and the only legal way to do it broke his three pairs into lone, capturable pieces. One throw turned a winning game into a lost one. It is the oldest detailed account of a tables game ever written &mdash; and a very human story: an emperor, ruined by dice.</p>' +
+      '<p class="label">Agathias of Myrine, epigram on Zeno&rsquo;s game, c. 530 AD. Press &ldquo;Roll the dice&rdquo; above and try your own luck.</p>',
+    recon:
+      '<h2>What we know vs. what is reconstructed</h2>' +
+      '<p><strong>Documented:</strong> the game existed and was called tabula/tavl&iacute;; Agathias&rsquo;s epigram describes Zeno&rsquo;s position and his 2-5-6 throw; Isidore of Seville credits its invention to a Greek soldier of the Trojan War named Alea (legend, not history); the word tavli is still Greek for backgammon.</p>' +
+      '<p><strong>Reconstructed:</strong> the rules &mdash; 24 points, three dice, fifteen pieces a side starting off the board, both players moving the same way round, lone pieces (&ldquo;blots&rdquo;) vulnerable to capture &mdash; were worked out in the 19th century by Becq de Fouqui&egrave;res from the epigram. Whether players had to re-enter hit pieces first, or gather all men before bearing off, is <em>not</em> known.</p>' +
+      '<p><strong>Stylized here:</strong> the point shapes, the dice pip layout, and the mid-game arrangement on the board are illustrative. The brief&rsquo;s &ldquo;three rows&rdquo; describes Tabula&rsquo;s ancestor, Ludus Duodecim Scriptorum; Tabula itself drops the middle row.</p>'
+  };
+  function showInfo(k) {
+    card.innerHTML = texts[k];
+    ['btnAbout', 'btnZeno', 'btnRecon'].forEach(function (b) {
+      document.getElementById(b).classList.remove('active');
+    });
+    document.getElementById(k === 'about' ? 'btnAbout' : k === 'zeno' ? 'btnZeno' : 'btnRecon').classList.add('active');
+  }
+  document.getElementById('btnAbout').addEventListener('click', function () { showInfo('about'); });
+  document.getElementById('btnZeno').addEventListener('click', function () { showInfo('zeno'); });
+  document.getElementById('btnRecon').addEventListener('click', function () { showInfo('recon'); });
+  showInfo('about');
+
+  // ================= resize / loop / dispose =================
+  function resize() {
+    var w = canvas.clientWidth || canvas.parentNode.clientWidth;
+    var h = canvas.clientHeight || canvas.parentNode.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  applyCam();
+  veil.classList.add('hidden');
+
+  var running = true, lastT = performance.now();
+  document.addEventListener('visibilitychange', function () {
+    running = !document.hidden;
+    if (running) lastT = performance.now();
+  });
+  function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (!running) return;
+    var dt = Math.min(0.05, (now - lastT) / 1000);
+    lastT = now;
+    if (camAnim) {
+      var t = Math.min(1, (now - camAnim.t0) / camAnim.dur), e = easeInOut(t);
+      var f = camAnim.from, o = camAnim.to;
+      target.set(f.tx + (o.tx - f.tx) * e, f.ty + (o.ty - f.ty) * e, f.tz + (o.tz - f.tz) * e);
+      sph.r = f.r + (o.r - f.r) * e;
+      sph.theta = f.th + (o.th - f.th) * e;
+      sph.phi = f.ph + (o.ph - f.ph) * e;
+      if (t >= 1) camAnim = null;
+    } else if (autoSpin && !dragging) {
+      sph.theta += dt * 0.12;
+    }
+    // dust motes drift
+    var pos = moteGeo.attributes.position.array;
+    for (var i = 0; i < MOTES; i++) {
+      pos[i * 3 + 1] += dt * 0.06;
+      pos[i * 3] += Math.sin(now * 0.0004 + i) * dt * 0.05;
+      if (pos[i * 3 + 1] > 3.9) pos[i * 3 + 1] = 0.25;
+    }
+    moteGeo.attributes.position.needsUpdate = true;
+    updateRoll(now);
+    applyCam();
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(loop);
+
+  window.addEventListener('beforeunload', function () {
+    for (var i = 0; i < disposables.length; i++) {
+      var d = disposables[i];
+      if (d && d.dispose) d.dispose();
+    }
+    if (renderer) renderer.dispose();
+  });
+})();
+</script>
+</body>
+</html>
