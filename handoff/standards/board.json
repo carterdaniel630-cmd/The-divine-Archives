@@ -1,6 +1,6 @@
 {
   "_about": "Item 29 standards board: one list of every Claude-side and Muse-side item and whether it is up to standard. Hand-kept; tools/build-standards-board.js turns it into board.html and adds what the Graphify code map knows about each item's files. Status is one of: up, needs-work, blocked, parked, not-built. Update an item's status in the same commit as the work that changes it.",
-  "asOf": "2026-10-19 06:05 UTC",
+  "asOf": "2026-10-19 06:30 UTC",
   "items": [
     {
       "id": "batch-a",
@@ -249,6 +249,16 @@
       ]
     },
     {
+      "id": "relics-four-1018",
+      "side": "muse",
+      "area": "Museum",
+      "title": "Four approved relics: Treaty of Kadesh, Crown of Thorns, Crown of the Kandake, Etruscan mirror",
+      "status": "needs-work",
+      "why": "Treaty of Kadesh rebuilt 2026-10-19 in handoff/previews/treaty-of-kadesh/ (loads the repo's three.js, pressed-wedge cuneiform with raking light, cushion-shaped clay, flip top-over-bottom, tap a section for its clause, facts re-sourced incl. the 2026 Hattusa fragment). Going on the site needs Carter's yes. Crown of the Kandake and Etruscan mirror next, one per run; Crown of Thorns placement goes to Carter (sensitivity rule).",
+      "where": "handoff/previews/",
+      "paths": []
+    },
+    {
       "id": "muse-batch-1018",
       "side": "muse",
       "area": "Games",
@@ -293,7 +303,7 @@
       "area": "Games",
       "title": "Hit-feel, part 3: Chess + Dominion (PR #72, Item 31 #5)",
       "status": "needs-work",
-      "why": "Built on loop/hit-feel-3 @ d4b52cf (stacked on #71). Independent review 2026-10-19: 0 findings, all local checks green, headless phone play clean in both motion modes. Needs Lighthouse green, #70 and #71 merged first, then Carter's yes.",
+      "why": "Built on loop/hit-feel-3 @ d4b52cf (stacked on #71). Independent review 2026-10-19: 0 findings, all local checks green, headless phone play clean in both motion modes. All 7 GitHub checks green incl. Lighthouse (06:19 UTC). Needs #70 and #71 merged first, then Carter's yes.",
       "where": "loop/hit-feel-3",
       "paths": [
         "docs/assets/games/feel.js",

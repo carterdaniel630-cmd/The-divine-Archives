@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treaty of Kadesh Tablet — Relic Preview</title>
+<meta name="description" content="A clay cuneiform tablet of the Egyptian–Hittite peace treaty (about 1259 BCE), to turn over in the hand. The original silver tablets are lost.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#0a0603;color:#ecdfc2;font-family:Georgia,'Times New Roman',serif;min-height:100vh;padding:16px 16px 40px}
+  .wrap{max-width:880px;margin:0 auto}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0a0603;background:#d9b46a;border-radius:4px;padding:3px 8px;margin-bottom:8px}
+  .top{text-align:center}
+  h1{font-weight:400;letter-spacing:.14em;text-transform:uppercase;font-size:22px;color:#f2c46a;margin:2px 0 4px}
+  .sub{font-style:italic;color:#cfaa58;font-size:15px;margin-bottom:12px}
+  .stage{position:relative;width:100%;height:60vh;min-height:360px;max-height:640px;background:radial-gradient(ellipse at 50% 28%,#2a1c0c 0%,#140c05 55%,#070402 100%);border:1px solid #4a3418;border-radius:10px;overflow:hidden;touch-action:none}
+  .stage canvas{display:block;width:100%;height:100%}
+  .veil,.fail{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:#0a0603;z-index:5;font-size:15px;line-height:1.6}
+  .veil{color:#cfaa58;font-style:italic}
+  .veil.hidden{display:none}
+  .fail{display:none;color:#ecdfc2;z-index:6}
+  .fail.show{display:flex}
+  .side{position:absolute;left:10px;top:10px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#d9b46a;background:rgba(10,6,3,.72);border:1px solid #4a3418;border-radius:4px;padding:4px 8px;z-index:3;pointer-events:none}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 6px}
+  .controls button,.clauses button{min-height:44px;font-family:inherit;cursor:pointer}
+  .controls button{background:#1a1008;color:#f2c46a;border:1px solid #8a6a34;border-radius:6px;padding:10px 14px;font-size:15px}
+  .controls button:active{background:#2c1c0c}
+  .hint{text-align:center;color:#b39563;font-style:italic;font-size:13.5px;margin:2px 0 12px;line-height:1.5}
+  .clauses{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px}
+  .clauses button{background:#221608;color:#ecdfc2;border:1px solid #5a4226;border-radius:22px;padding:8px 14px;font-size:14px}
+  .clauses button.on{background:#4a3418;color:#f2c46a;border-color:#cfaa58}
+  .card{background:#17100a;border:1px solid #4a3418;border-radius:10px;padding:16px 18px;margin-bottom:14px}
+  .card h2{font-weight:400;color:#f2c46a;font-size:18px;letter-spacing:.05em;margin-bottom:8px}
+  .card h3{font-weight:400;color:#e2bd6e;font-size:15.5px;margin:12px 0 4px}
+  .card p,.card li{font-size:15px;line-height:1.7}
+  .card p+p{margin-top:8px}
+  .card ul{padding-left:20px;margin-top:4px}
+  .card li{margin-bottom:5px}
+  .card b{color:#f2c46a;font-weight:400}
+  .short{font-style:italic;color:#cfaa58;margin-top:8px}
+  .short:empty{display:none}
+  .where{font-size:13px;color:#a98d5a;margin-top:8px}
+  .truth{border-color:#8a6a34}
+  .companion{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+  .companion canvas{border:1px solid #4a3418;border-radius:6px;width:340px;max-width:100%;height:auto;background:#3a2c18}
+  .companion .txt{flex:1;min-width:220px}
+  .cap{font-size:12.5px;font-style:italic;color:#a98d5a;margin-top:6px}
+  .src li{font-size:13.5px;line-height:1.55;word-break:break-word}
+  .src a{color:#d9b46a}
+  .foot{text-align:center;color:#a98d5a;font-size:13px;font-style:italic;margin-top:18px;line-height:1.6}
+</style>
+<script type="importmap">{ "imports": { "three": "../../../docs/assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="tag">Relic preview &middot; not on the site</span>
+    <h1>The Treaty of Kadesh</h1>
+    <p class="sub">The Egyptian&ndash;Hittite peace, on a clay tablet &mdash; about 1259 BCE</p>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="side" id="sideLabel">Front (obverse)</div>
+    <div class="veil" id="veil">Preparing the tablet&hellip;</div>
+    <div class="fail" id="fail">This relic could not be shown in this browser. It is a clay record of the peace between Egypt and Hatti, about 1259 BCE. The original silver tablets are lost; the text survives in clay cuneiform copies and Egyptian temple-wall carvings.</div>
+  </div>
+
+  <div class="controls">
+    <button id="btnFront" type="button">Front</button>
+    <button id="btnTurn" type="button">Turn it over</button>
+    <button id="btnBack" type="button">Back</button>
+    <button id="btnIn" type="button" aria-label="Zoom in">Zoom +</button>
+    <button id="btnOut" type="button" aria-label="Zoom out">Zoom &minus;</button>
+    <button id="btnReset" type="button">Reset</button>
+  </div>
+  <p class="hint">Drag to turn the tablet in your hand; pinch or scroll to zoom. Tap a section of script to read what that part of the treaty says, in plain words. &ldquo;Turn it over&rdquo; flips it top over bottom, the way a scribe turned a tablet to keep writing.</p>
+
+  <div class="clauses" id="chips" role="group" aria-label="Treaty clauses"></div>
+
+  <div class="card" aria-live="polite">
+    <h2 id="cTitle">The treaty, in plain words</h2>
+    <p id="cText">Pick a clause above, or tap a section of script on the tablet. These are the treaty&rsquo;s terms in plain words, following the Hittite version (the one written in cuneiform on clay). They are not a word-for-word translation, and the marks on this tablet are not readable text.</p>
+    <p class="short" id="cShort"></p>
+    <p class="where" id="cWhere"></p>
+  </div>
+
+  <div class="card truth">
+    <h2>What you are holding &mdash; honestly</h2>
+    <p><b>Original silver tablets lost. Text survives in Hittite cuneiform copies and Egyptian temple-wall versions.</b> Each king sent the other his version engraved on a silver tablet. Neither silver tablet has ever been found.</p>
+    <p>This is the <b>Hittite record form</b>: a clay tablet in Akkadian cuneiform, the diplomatic language of the day, like the copies kept in the archives of the Hittite capital, Hattusa. Three such tablets were found there in 1906: two are in Istanbul, one in Berlin.</p>
+    <p><b>The script on this model is representative, not readable.</b> The wedges are pressed the way real cuneiform is (a triangular head and a tapering tail, in horizontal, vertical, slanting and corner shapes), laid out in ruled lines with a line between sections. It does not spell out the treaty. The tablet&rsquo;s shape and size are a reconstruction too, not a scan of any one copy.</p>
+  </div>
+
+  <div class="card">
+    <h2>What the evidence shows</h2>
+    <h3>Well supported</h3>
+    <ul>
+      <li>Ramesses II of Egypt and Hattusili III of Hatti made a formal, sworn treaty; the Egyptian copies date it to Ramesses&rsquo;s 21st regnal year.</li>
+      <li>It survives in two independent forms: Akkadian cuneiform tablets from Hattusa, and hieroglyphic versions carved at Karnak and the Ramesseum.</li>
+      <li>Its terms: lasting peace and brotherhood, no attacks, help against enemies, the return of fugitives with a promise of mercy, and the gods of both lands as witnesses. The Hittite version adds Egypt&rsquo;s backing for Hattusili&rsquo;s chosen heir.</li>
+      <li>The city of Kadesh is never named in the treaty. &ldquo;Treaty of Kadesh&rdquo; is a modern name taken from the battle about fifteen years before.</li>
+      <li>A new clay fragment from Hattusa (B&uuml;y&uuml;kkale) was announced in September 2026, with lines from the fugitive articles, including a warning not to destroy refugees&rsquo; homes.</li>
+    </ul>
+    <h3>Not supported</h3>
+    <ul>
+      <li>That any surviving tablet is the original. Every known copy is clay or stone; the silver originals are lost.</li>
+      <li>That the two kings met to sign it. The treaty is thought to have been settled through envoys.</li>
+    </ul>
+    <h3>Still debated</h3>
+    <ul>
+      <li><b>The exact year.</b> About 1259 BCE on the chronology most historians now use; the UN and Turkish museum labels give 1269 BCE, from an older dating of Ramesses&rsquo;s reign.</li>
+      <li><b>Who asked for peace.</b> The Egyptian walls show the Hittites asking, as if in submission. Many historians think Hattusili did open the talks, needing security at home (his deposed nephew had fled to Egypt) and against a rising Assyria, but both sides gained, and the Egyptian framing is royal display, not a neutral record.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Who made this peace</h2>
+    <p><b>Ramesses II</b>, pharaoh of Egypt, and <b>Hattusili III</b>, Great King of the Hittites. Egypt and Hatti had fought for generations over the lands of Syria between them, and the Battle of Kadesh (about 1274 BCE) ended without a clear winner. About fifteen years later the two kings swore this peace. It held until the Hittite kingdom fell, roughly eighty years on, and around Ramesses&rsquo;s 34th year a Hittite princess married him.</p>
+  </div>
+
+  <div class="card">
+    <h2>The Egyptian version &mdash; the temple-wall companion</h2>
+    <div class="companion">
+      <div>
+        <canvas id="wall" width="680" height="440" aria-label="Representative hieroglyphic relief"></canvas>
+        <p class="cap">Representative carving in sunk relief. Not a copy of the real Karnak or Ramesseum text.</p>
+      </div>
+      <div class="txt">
+        <p>Ramesses had his version carved in hieroglyphs at <b>Karnak</b> (a long text on a wall south of the Great Hypostyle Hall) and at the <b>Ramesseum</b> (a shorter one). The Egyptian telling puts Egypt in the grander role; the Hittite clay copies are thought to be closer to the agreed wording. A copper relief replica, a gift from T&uuml;rkiye in 1970, hangs near the Security Council at the United Nations in New York.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card src">
+    <h2>Sources (opened 2026-10-19)</h2>
+    <ul>
+      <li>&ldquo;Egyptian&ndash;Hittite peace treaty&rdquo;, Wikipedia: <a href="https://en.wikipedia.org/wiki/Egyptian%E2%80%93Hittite_peace_treaty">en.wikipedia.org/wiki/Egyptian–Hittite_peace_treaty</a> (date, copies in Istanbul and Berlin, Karnak and Ramesseum versions, clauses, Kadesh not named, envoys, debate on who sought peace).</li>
+      <li>&ldquo;The &lsquo;Eternal Treaty&rsquo; between the Egyptians and Hittites (c. 1259 B.C.E.)&rdquo;, Hittite version in translation, Hunt et al. reader (Macmillan): <a href="https://digfir-published.macmillanusa.com/hunt4e/hunt4e_ch01_6.html">digfir-published.macmillanusa.com/hunt4e/hunt4e_ch01_6.html</a> (silver tablet; fugitives not to be punished; the heir clause).</li>
+      <li>Smithsonian Magazine, 23 Sept 2026, on the new Hattusa fragment: <a href="https://www.smithsonianmag.com/smart-news/researchers-in-turkey-have-unearthed-an-ancient-fragment-inscribed-with-the-worlds-oldest-peace-treaty-180989554/">smithsonianmag.com</a> (B&uuml;y&uuml;kkale; articles 12&ndash;20; homes of refugees).</li>
+      <li>United Nations Gifts, &ldquo;Replica of Peace Treaty between Hattusilis and Ramses II&rdquo;: <a href="https://www.un.org/ungifts/node/615">un.org/ungifts/node/615</a> (copper bas-relief, 1970; gives 1269 BC).</li>
+    </ul>
+  </div>
+
+  <p class="foot">The Divine Archives &mdash; from the Hittite &amp; Anatolian chapter.<br>Original silver tablets lost. Text survives in Hittite cuneiform copies and Egyptian temple-wall versions.</p>
+</div>
+
+<script>
+  // If the 3D module never starts (old browser, blocked file), say so instead of hanging.
+  window.__kadeshTimer = setTimeout(function(){
+    if (!window.__kadeshReady){
+      document.getElementById('veil').classList.add('hidden');
+      document.getElementById('fail').classList.add('show');
+    }
+  }, 12000);
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const stage = document.getElementById('stage');
+const veil = document.getElementById('veil');
+const fail = document.getElementById('fail');
+const sideLabel = document.getElementById('sideLabel');
+const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------------- clauses (plain words, Hittite version) ---------------- */
+const CLAUSES = [
+  { face: 0, title: 'Peace and brotherhood, forever',
+    text: 'The two kings declare good peace and good brotherhood between Egypt and Hatti for all time, binding their children and grandchildren too.',
+    short: 'In short: the war is over, and the peace passes down to their heirs.' },
+  { face: 0, title: 'No attacks',
+    text: 'Neither king will ever invade the other’s land or take anything from it.',
+    short: 'In short: your land is yours and mine is mine.' },
+  { face: 0, title: 'Help against enemies',
+    text: 'If a foreign enemy attacks one land, or its own subjects rebel, the other king will send troops and chariots to help when asked.',
+    short: 'In short: an attack on one is answered by both.' },
+  { face: 1, title: 'Fugitives sent home, with mercy',
+    text: 'People who flee from one land to the other, great or humble, are to be sent back. But they are not to be punished for it: no maiming, no revenge on them or their wives and children. The fragment found at Hattusa in 2026 adds that their homes are not to be destroyed.',
+    short: 'In short: send them back, and let them live in peace.' },
+  { face: 1, title: 'The heir is backed (Hittite version)',
+    text: 'Hattusili’s son is to be king of Hatti after him. If the Hittites resist the heir, Egypt will help put things right. This clause is in the Hittite version; Hattusili had taken the throne from his nephew, so the succession mattered to him.',
+    short: 'In short: Egypt stands behind the chosen heir.' },
+  { face: 1, title: 'The gods as witnesses',
+    text: 'The oath is sworn before a thousand gods of Hatti and of Egypt, and before the mountains, rivers, sky, earth, great sea, winds and clouds. Whoever breaks it is cursed, house and land and servants; whoever keeps it is blessed with health and long life.',
+    short: 'In short: break it and answer to the gods; keep it and be blessed.' }
+];
+const chips = document.getElementById('chips');
+const cTitle = document.getElementById('cTitle');
+const cText = document.getElementById('cText');
+const cShort = document.getElementById('cShort');
+const cWhere = document.getElementById('cWhere');
+CLAUSES.forEach((c, i) => {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.textContent = (i + 1) + '. ' + c.title.replace(/ \(.*\)$/, '').split(',')[0];
+  b.addEventListener('click', () => select(i, true));
+  chips.appendChild(b);
+});
+
+/* ---------------- deterministic noise ---------------- */
+function rng(seed){ let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function vnoise(w, h, cell, r){ // value-noise field (Float32Array, 0..1)
+  const gw = Math.ceil(w / cell) + 2, gh = Math.ceil(h / cell) + 2;
+  const g = new Float32Array(gw * gh); for (let i = 0; i < g.length; i++) g[i] = r();
+  const out = new Float32Array(w * h);
+  for (let y = 0; y < h; y++){
+    const fy = y / cell, iy = Math.floor(fy), ty = fy - iy, sy = ty * ty * (3 - 2 * ty);
+    for (let x = 0; x < w; x++){
+      const fx = x / cell, ix = Math.floor(fx), tx = fx - ix, sx = tx * tx * (3 - 2 * tx);
+      const a = g[iy * gw + ix], b = g[iy * gw + ix + 1], c = g[(iy + 1) * gw + ix], d = g[(iy + 1) * gw + ix + 1];
+      out[y * w + x] = (a + (b - a) * sx) + ((c + (d - c) * sx) - (a + (b - a) * sx)) * sy;
+    }
+  }
+  return out;
+}
+
+/* ---------------- cuneiform face: height field -> colour + normal maps ---------------- */
+const TW = 1024, TH = 1344;           // texture size (tablet aspect ~ 0.76)
+const FACE_SECTIONS = [[], []];       // per face: [{y0,y1}] in canvas px, top->bottom
+
+// One wedge, pressed into the height canvas. Head at (0,0), pointing along +x, length L, head width w.
+function wedge(h, L, w){
+  // tail: thin tapering groove
+  let g = h.createLinearGradient(0, 0, L, 0);
+  g.addColorStop(0, 'rgba(0,0,0,0.55)'); g.addColorStop(1, 'rgba(0,0,0,0.05)');
+  h.fillStyle = g;
+  h.beginPath(); h.moveTo(w * 0.55, -w * 0.13); h.lineTo(L, -0.6); h.lineTo(L, 0.6); h.lineTo(w * 0.55, w * 0.13); h.closePath(); h.fill();
+  // head: triangular, deepest at the point where the stylus corner went in
+  g = h.createLinearGradient(0, 0, w * 0.95, 0);
+  g.addColorStop(0, 'rgba(0,0,0,0.30)'); g.addColorStop(0.62, 'rgba(0,0,0,0.92)'); g.addColorStop(1, 'rgba(0,0,0,0.35)');
+  h.fillStyle = g;
+  h.beginPath(); h.moveTo(0, -w * 0.5); h.lineTo(w * 0.95, 0); h.lineTo(0, w * 0.5); h.closePath(); h.fill();
+}
+// Winkelhaken: the corner of the stylus only (a chevron-shaped head, no tail)
+function hook(h, w){
+  const g = h.createRadialGradient(w * 0.55, 0, 0, w * 0.55, 0, w * 0.75);
+  g.addColorStop(0, 'rgba(0,0,0,0.9)'); g.addColorStop(1, 'rgba(0,0,0,0.25)');
+  h.fillStyle = g;
+  h.beginPath(); h.moveTo(0, -w * 0.55); h.lineTo(w * 0.85, 0); h.lineTo(0, w * 0.55); h.lineTo(w * 0.28, 0); h.closePath(); h.fill();
+}
+// Sign = list of strokes in a unit cell (x 0..1 across, y -0.5..0.5). type: H,V,D (down-right), U (up-right), W (hook)
+function makeSigns(r){
+  const signs = [];
+  const add = s => signs.push(s);
+  // a vocabulary of plausible stroke groupings (representative, not real sign values)
+  add([['H',0,-0.25,1],['H',0,0.2,1],['V',0.75,-0.5,1]]);
+  add([['H',0,0,0.9],['V',0.35,-0.5,1],['V',0.6,-0.5,1]]);
+  add([['W',0,0,0.5],['W',0.35,0,0.5]]);
+  add([['H',0,0,1],['D',0.05,-0.42,0.55],['U',0.05,0.42,0.55],['V',0.55,-0.5,1]]);
+  add([['V',0.1,-0.5,1],['V',0.35,-0.5,1],['V',0.6,-0.5,1]]);
+  add([['H',0,-0.3,0.7],['H',0,0,0.7],['H',0,0.3,0.7],['V',0.8,-0.5,1]]);
+  add([['W',0,-0.22,0.45],['W',0,0.22,0.45],['V',0.5,-0.5,1]]);
+  add([['H',0,0,1]]);
+  add([['H',0,0,0.6],['W',0.65,0,0.4]]);
+  add([['D',0,-0.45,0.9],['H',0.1,0.15,0.8]]);
+  add([['V',0.15,-0.5,1],['H',0.25,-0.1,0.75],['H',0.25,0.25,0.75]]);
+  add([['W',0,-0.25,0.45],['W',0.3,0.1,0.45],['W',0,0.3,0.45]]);
+  add([['H',0,-0.2,1],['V',0.3,-0.5,1],['H',0.4,0.25,0.6]]);
+  add([['U',0,0.4,0.8],['V',0.6,-0.5,1]]);
+  // and some random but well-formed groupings
+  for (let k = 0; k < 14; k++){
+    const n = 2 + Math.floor(r() * 3), s = [];
+    for (let j = 0; j < n; j++){
+      const t = ['H','H','V','V','W','D','U'][Math.floor(r() * 7)];
+      const x = Math.min(0.75, j * (0.8 / n) + r() * 0.1);
+      const y = t === 'V' ? -0.5 : (r() - 0.5) * 0.7;
+      s.push([t, x, y, t === 'W' ? 0.45 : 0.6 + r() * 0.4]);
+    }
+    add(s);
+  }
+  return signs;
+}
+
+function buildFace(faceIndex, seed){
+  const r = rng(seed);
+  const hc = document.createElement('canvas'); hc.width = TW; hc.height = TH;
+  const h = hc.getContext('2d');
+  h.fillStyle = 'rgb(160,160,160)'; h.fillRect(0, 0, TW, TH);
+  h.globalCompositeOperation = 'multiply';
+
+  const signs = makeSigns(r);
+  const lineGap = 44, marginX = 70, top = 76, bottom = TH - 70;
+  const sections = FACE_SECTIONS[faceIndex];
+  const linesPerSection = [9, 8, 9];
+  let y = top, sec = 0;
+  const unit = 30; // sign height in px
+  for (sec = 0; sec < 3; sec++){
+    const y0 = y - lineGap * 0.55;
+    for (let ln = 0; ln < linesPerSection[sec] && y < bottom - 10; ln++){
+      // faint ruling the scribe drew with the stylus edge, under the line
+      h.fillStyle = 'rgba(0,0,0,0.18)'; h.fillRect(marginX - 20, y + unit * 0.62, TW - 2 * marginX + 40, 1.6);
+      let x = marginX + (ln === 0 && sec === 0 ? 0 : r() * 8);
+      const lineEnd = (ln === linesPerSection[sec] - 1) ? TW - marginX - r() * 380 : TW - marginX;
+      while (x < lineEnd - unit){
+        const s = signs[Math.floor(r() * signs.length)];
+        const sw = unit * (0.8 + s.length * 0.22);
+        const tilt = (r() - 0.5) * 0.06;
+        for (const st of s){
+          const [t, sx, sy, len] = st;
+          const px = x + sx * sw, py = y + sy * unit;
+          h.save(); h.translate(px, py); h.rotate(tilt);
+          const head = unit * (0.34 + r() * 0.05);
+          if (t === 'H'){ wedge(h, len * sw * 0.9, head); }
+          else if (t === 'V'){ h.rotate(Math.PI / 2); wedge(h, len * unit * 0.95, head); }
+          else if (t === 'D'){ h.rotate(0.62); wedge(h, len * unit * 1.1, head); }
+          else if (t === 'U'){ h.rotate(-0.62); wedge(h, len * unit * 1.1, head); }
+          else { hook(h, head * 1.15); }
+          h.restore();
+        }
+        x += sw + unit * (0.25 + r() * 0.2) + (r() < 0.16 ? unit * 0.7 : 0); // word gap now and then
+      }
+      y += lineGap;
+    }
+    const y1 = y - lineGap * 0.45;
+    sections.push({ y0: Math.max(0, y0), y1 });
+    // section ruling: a firm double line between paragraphs
+    if (sec < 2){
+      h.fillStyle = 'rgba(0,0,0,0.5)';
+      h.fillRect(marginX - 34, y - lineGap * 0.42, TW - 2 * marginX + 68, 3);
+      h.fillRect(marginX - 34, y - lineGap * 0.42 + 7, TW - 2 * marginX + 68, 3);
+      y += 14;
+    }
+  }
+  h.globalCompositeOperation = 'source-over';
+
+  // read heights back, add clay relief noise and edge wear
+  const hd = h.getImageData(0, 0, TW, TH).data;
+  const n1 = vnoise(TW, TH, 90, r), n2 = vnoise(TW, TH, 18, r), n3 = vnoise(TW, TH, 4, r);
+  const H = new Float32Array(TW * TH);
+  for (let i = 0, p = 0; i < H.length; i++, p += 4){
+    const carved = hd[p] / 160;             // 1 = untouched clay, <1 = pressed in
+    H[i] = carved * 0.85 + n1[i] * 0.07 + n2[i] * 0.05 + n3[i] * 0.025;
+  }
+  // a few surface cracks and chips (shallow)
+  for (let c = 0; c < 6; c++){
+    let cx = r() * TW, cy = r() * TH, a = r() * 6.28;
+    for (let s = 0; s < 140; s++){
+      a += (r() - 0.5) * 0.5; cx += Math.cos(a) * 2; cy += Math.sin(a) * 2;
+      const ix = cx | 0, iy = cy | 0;
+      if (ix < 1 || iy < 1 || ix >= TW - 1 || iy >= TH - 1) break;
+      H[iy * TW + ix] -= 0.18; H[iy * TW + ix + 1] -= 0.09;
+    }
+  }
+
+  // colour map: sun-dried clay; grooves hold pale dust, worn high spots polished darker
+  const col = document.createElement('canvas'); col.width = TW; col.height = TH;
+  const cctx = col.getContext('2d');
+  const img = cctx.createImageData(TW, TH); const d = img.data;
+  const blotch = vnoise(TW, TH, 160, r);
+  for (let yy = 0; yy < TH; yy++){
+    const ey = Math.min(yy, TH - 1 - yy) / TH;
+    for (let xx = 0; xx < TW; xx++){
+      const i = yy * TW + xx, p = i * 4;
+      const ex = Math.min(xx, TW - 1 - xx) / TW;
+      const edge = Math.max(0, 1 - Math.min(ex, ey) * 9);        // darker, handled edges
+      const depth = Math.max(0, 0.86 - H[i]);                     // >0 inside a wedge
+      const b = blotch[i];
+      let R = 186 + b * 26 - n2[i] * 14, G = 140 + b * 20 - n2[i] * 12, B = 92 + b * 12 - n2[i] * 10;
+      R -= edge * 34; G -= edge * 28; B -= edge * 20;
+      const dust = Math.min(1, depth * 2.4);                      // dust settles in the grooves
+      R += (226 - R) * dust * 0.55; G += (200 - G) * dust * 0.55; B += (152 - B) * dust * 0.55;
+      d[p] = R; d[p + 1] = G; d[p + 2] = B; d[p + 3] = 255;
+    }
+  }
+  cctx.putImageData(img, 0, 0);
+
+  // normal map from the height field (Sobel)
+  const nc = document.createElement('canvas'); nc.width = TW; nc.height = TH;
+  const nctx = nc.getContext('2d');
+  const nimg = nctx.createImageData(TW, TH); const nd = nimg.data;
+  const strength = 5.5;
+  for (let yy = 0; yy < TH; yy++){
+    const ym = Math.max(0, yy - 1) * TW, y0 = yy * TW, yp = Math.min(TH - 1, yy + 1) * TW;
+    for (let xx = 0; xx < TW; xx++){
+      const xm = Math.max(0, xx - 1), xp = Math.min(TW - 1, xx + 1);
+      const dx = (H[ym + xp] + 2 * H[y0 + xp] + H[yp + xp]) - (H[ym + xm] + 2 * H[y0 + xm] + H[yp + xm]);
+      const dy = (H[yp + xm] + 2 * H[yp + xx] + H[yp + xp]) - (H[ym + xm] + 2 * H[ym + xx] + H[ym + xp]);
+      let nx = -dx * strength, ny = dy * strength, nz = 1;
+      const l = Math.hypot(nx, ny, nz); nx /= l; ny /= l; nz /= l;
+      const p = (y0 + xx) * 4;
+      nd[p] = (nx * 0.5 + 0.5) * 255; nd[p + 1] = (ny * 0.5 + 0.5) * 255; nd[p + 2] = (nz * 0.5 + 0.5) * 255; nd[p + 3] = 255;
+    }
+  }
+  nctx.putImageData(nimg, 0, 0);
+
+  // emissive canvas used to light up the selected section
+  const ec = document.createElement('canvas'); ec.width = 256; ec.height = 336;
+  const ectx = ec.getContext('2d'); ectx.fillStyle = '#000'; ectx.fillRect(0, 0, 256, 336);
+
+  const map = new THREE.CanvasTexture(col); map.colorSpace = THREE.SRGBColorSpace;
+  const normalMap = new THREE.CanvasTexture(nc);
+  const emissiveMap = new THREE.CanvasTexture(ec); emissiveMap.colorSpace = THREE.SRGBColorSpace;
+  return { map, normalMap, emissiveMap, ectx };
+}
+
+/* ---------------- renderer ---------------- */
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+} catch (e) {
+  veil.classList.add('hidden'); fail.classList.add('show'); throw e;
+}
+const phone = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 820;
+renderer.setPixelRatio(phone ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+renderer.setSize(stage.clientWidth, stage.clientHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(36, stage.clientWidth / stage.clientHeight, 0.1, 100);
+const DEFAULT_Z = 7.0;
+camera.position.set(0, 0.1, DEFAULT_Z);
+camera.lookAt(0, -0.38, 0);
+
+scene.add(new THREE.HemisphereLight(0xffe2b8, 0x24160a, 0.55));
+const key = new THREE.DirectionalLight(0xffd6a0, 3.0);   // low raking light so every wedge throws a shadow
+key.position.set(-5.5, 2.6, 3.6);
+key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024);
+Object.assign(key.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 1, far: 20 });
+key.shadow.bias = -0.0008;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0x9fb2dc, 0.45); fill.position.set(4, 1.2, 3.5); scene.add(fill);
+const lamp = new THREE.PointLight(0xff9a3c, 14, 14, 2); lamp.position.set(2.6, -1.8, 3.4); scene.add(lamp);
+
+// museum-case plinth
+const stone = new THREE.MeshStandardMaterial({ color: 0x1b140d, roughness: 0.95 });
+const plinth = new THREE.Mesh(new THREE.BoxGeometry(4.8, 0.35, 3.0), stone); plinth.position.y = -2.5; plinth.receiveShadow = true; scene.add(plinth);
+const step = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.28, 2.3), stone); step.position.y = -2.18; step.receiveShadow = true; scene.add(step);
+const cradle = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.18, 0.8), new THREE.MeshStandardMaterial({ color: 0x2e2117, roughness: 0.6, metalness: 0.2 }));
+cradle.position.y = -1.95; cradle.castShadow = cradle.receiveShadow = true; scene.add(cradle);
+
+/* ---------------- the tablet: rounded, cushion-shaped clay ---------------- */
+const TWW = 2.36, THH = 3.1, TDD = 0.5, RAD = 0.2;
+const geo = new THREE.BoxGeometry(TWW, THH, TDD, 48, 64, 10);
+{
+  const pos = geo.attributes.position, nrm = new THREE.Vector3(), v = new THREE.Vector3(), inner = new THREE.Vector3();
+  const hx = TWW / 2 - RAD, hy = THH / 2 - RAD, hz = TDD / 2 - RAD * 0.9;
+  const wob = rng(7);
+  const jitter = new Float32Array(97 * 97); for (let i = 0; i < jitter.length; i++) jitter[i] = wob();
+  for (let i = 0; i < pos.count; i++){
+    v.fromBufferAttribute(pos, i);
+    inner.set(Math.max(-hx, Math.min(hx, v.x)), Math.max(-hy, Math.min(hy, v.y)), Math.max(-hz, Math.min(hz, v.z)));
+    nrm.copy(v).sub(inner);
+    const len = nrm.length();
+    if (len > 1e-6){ nrm.divideScalar(len); v.copy(inner).addScaledVector(nrm, RAD * (0.9 + 0.1 * Math.abs(nrm.z))); }
+    // cushion: faces swell toward the middle
+    const fx = v.x / (TWW / 2), fy = v.y / (THH / 2);
+    const swell = 0.07 * Math.max(0, 1 - fx * fx) * Math.max(0, 1 - fy * fy);
+    v.z += Math.sign(v.z) * swell;
+    // hand-made unevenness, smooth so faces stay crack-free
+    const gx = Math.floor((v.x / TWW + 0.5) * 8), gy = Math.floor((v.y / THH + 0.5) * 8);
+    const j = (jitter[(gy * 97 + gx) % jitter.length] - 0.5) * 0.02;
+    v.x *= 1 - 0.025 * (v.y / THH + 0.5); // slight taper to the top, as hand-formed tablets often have
+    v.z += Math.sign(v.z) * j;
+    pos.setXYZ(i, v.x, v.y, v.z);
+  }
+  // back face (group 5): turn its UVs 180 degrees so it reads upright after a top-over-bottom flip
+  const uv = geo.attributes.uv, g5 = geo.groups[5];
+  for (let k = g5.start; k < g5.start + g5.count; k++){
+    const idx = geo.index.getX(k);
+    if (!uv.__flipped) uv.__flipped = new Uint8Array(uv.count);
+    if (uv.__flipped[idx]) continue; uv.__flipped[idx] = 1;
+    uv.setXY(idx, 1 - uv.getX(idx), 1 - uv.getY(idx));
+  }
+  geo.computeVertexNormals();
+}
+
+const front = buildFace(0, 1259);
+const back = buildFace(1, 1274);
+function faceMat(f){
+  return new THREE.MeshStandardMaterial({ map: f.map, normalMap: f.normalMap, normalScale: new THREE.Vector2(1.15, 1.15),
+    emissiveMap: f.emissiveMap, emissive: new THREE.Color(0xffb44d), emissiveIntensity: 0.0, roughness: 0.9, metalness: 0 });
+}
+const frontMat = faceMat(front), backMat = faceMat(back);
+// edges: same clay, plainer
+const edgeCanvas = document.createElement('canvas'); edgeCanvas.width = 256; edgeCanvas.height = 256;
+{
+  const e = edgeCanvas.getContext('2d'), r = rng(31), n = vnoise(256, 256, 20, r), im = e.createImageData(256, 256);
+  for (let i = 0; i < n.length; i++){ const p = i * 4; im.data[p] = 168 + n[i] * 30; im.data[p + 1] = 124 + n[i] * 24; im.data[p + 2] = 80 + n[i] * 14; im.data[p + 3] = 255; }
+  e.putImageData(im, 0, 0);
+}
+const edgeTex = new THREE.CanvasTexture(edgeCanvas); edgeTex.colorSpace = THREE.SRGBColorSpace;
+const edgeMat = new THREE.MeshStandardMaterial({ map: edgeTex, roughness: 0.93 });
+const tablet = new THREE.Mesh(geo, [edgeMat, edgeMat, edgeMat, edgeMat, frontMat, backMat]);
+tablet.castShadow = tablet.receiveShadow = true;
+const holder = new THREE.Group(); holder.position.y = -0.26; holder.add(tablet); scene.add(holder);
+
+/* ---------------- selection ---------------- */
+let active = -1;
+function paintHighlight(){
+  for (const [fi, f, m] of [[0, front, frontMat], [1, back, backMat]]){
+    const e = f.ectx; e.fillStyle = '#000'; e.fillRect(0, 0, 256, 336);
+    let lit = false;
+    if (active >= 0 && CLAUSES[active].face === fi){
+      const secIdx = active - (fi === 0 ? 0 : 3), s = FACE_SECTIONS[fi][secIdx];
+      const y0 = s.y0 / TH * 336, y1 = s.y1 / TH * 336;
+      const g = e.createLinearGradient(0, y0, 0, y1);
+      g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(0.12, 'rgba(255,255,255,0.9)'); g.addColorStop(0.88, 'rgba(255,255,255,0.9)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      e.fillStyle = g; e.fillRect(10, y0, 236, y1 - y0); lit = true;
+    }
+    f.emissiveMap.needsUpdate = true;
+    m.emissiveIntensity = lit ? 0.22 : 0.0;
+  }
+}
+function select(i, turnTo){
+  active = i;
+  const c = CLAUSES[i];
+  cTitle.textContent = 'Clause ' + (i + 1) + ' — ' + c.title;
+  cText.textContent = c.text;
+  cShort.textContent = c.short;
+  cWhere.textContent = 'On this model: ' + (c.face === 0 ? 'front' : 'back') + ', section ' + (c.face === 0 ? i + 1 : i - 2) + ' of 3.';
+  [...chips.children].forEach((b, k) => b.classList.toggle('on', k === i));
+  paintHighlight();
+  if (turnTo) showSide(c.face);
+}
+
+/* ---------------- holding and turning (quaternion trackball) ---------------- */
+const qTarget = new THREE.Quaternion(), qTmp = new THREE.Quaternion();
+const AX = new THREE.Vector3(1, 0, 0), AY = new THREE.Vector3(0, 1, 0);
+const REST = new THREE.Quaternion().setFromAxisAngle(AX, -0.1);
+qTarget.copy(REST); holder.quaternion.copy(REST);
+let targetZ = DEFAULT_Z;
+function showSide(face){
+  qTarget.copy(REST);
+  if (face === 1) qTarget.premultiply(qTmp.setFromAxisAngle(AX, Math.PI));
+}
+function facing(){ // which face points at the camera
+  const n = new THREE.Vector3(0, 0, 1).applyQuaternion(holder.quaternion);
+  return n.z >= 0 ? 0 : 1;
+}
+document.getElementById('btnFront').onclick = () => showSide(0);
+document.getElementById('btnBack').onclick = () => showSide(1);
+document.getElementById('btnTurn').onclick = () => qTarget.premultiply(qTmp.setFromAxisAngle(AX, Math.PI));
+document.getElementById('btnIn').onclick = () => { targetZ = Math.max(3.2, targetZ - 1.0); };
+document.getElementById('btnOut').onclick = () => { targetZ = Math.min(10.5, targetZ + 1.0); };
+document.getElementById('btnReset').onclick = () => { qTarget.copy(REST); targetZ = DEFAULT_Z; };
+
+const el = renderer.domElement;
+const pointers = new Map();
+let moved = 0, pinch0 = 0, lastTouch = 0;
+el.addEventListener('pointerdown', e => {
+  el.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) moved = 0;
+  if (pointers.size === 2){ const [a, b] = [...pointers.values()]; pinch0 = Math.hypot(a.x - b.x, a.y - b.y); }
+  lastTouch = performance.now();
+});
+el.addEventListener('pointermove', e => {
+  const p = pointers.get(e.pointerId); if (!p) return;
+  const dx = e.clientX - p.x, dy = e.clientY - p.y;
+  p.x = e.clientX; p.y = e.clientY;
+  if (pointers.size === 1){
+    moved += Math.abs(dx) + Math.abs(dy);
+    qTarget.premultiply(qTmp.setFromAxisAngle(AY, dx * 0.009));
+    qTarget.premultiply(qTmp.setFromAxisAngle(AX, dy * 0.009));
+  } else if (pointers.size === 2){
+    const [a, b] = [...pointers.values()], d = Math.hypot(a.x - b.x, a.y - b.y);
+    targetZ = Math.max(3.2, Math.min(10.5, targetZ - (d - pinch0) * 0.012)); pinch0 = d; moved = 99;
+  }
+  lastTouch = performance.now();
+});
+function up(e){
+  const had = pointers.has(e.pointerId);
+  pointers.delete(e.pointerId);
+  if (had && pointers.size === 0 && moved < 7) tap(e.clientX, e.clientY);
+}
+el.addEventListener('pointerup', up);
+el.addEventListener('pointercancel', e => pointers.delete(e.pointerId));
+el.addEventListener('wheel', e => { e.preventDefault(); targetZ = Math.max(3.2, Math.min(10.5, targetZ + e.deltaY * 0.004)); }, { passive: false });
+
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+function tap(cx, cy){
+  const r = el.getBoundingClientRect();
+  ndc.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const hit = ray.intersectObject(tablet)[0];
+  if (!hit || !hit.uv || !hit.face) return;
+  const mi = hit.face.materialIndex;
+  if (mi !== 4 && mi !== 5) return;
+  const fi = mi === 4 ? 0 : 1, py = (1 - hit.uv.y) * TH;
+  const secs = FACE_SECTIONS[fi];
+  for (let s = 0; s < secs.length; s++){
+    if (py >= secs[s].y0 - 14 && py <= secs[s].y1 + 14){ select(fi * 3 + s, false); return; }
+  }
+}
+
+/* ---------------- temple-wall companion (representative sunk relief) ---------------- */
+{
+  const c = document.getElementById('wall'), x = c.getContext('2d'), r = rng(21);
+  const n = vnoise(680, 440, 40, r), im = x.createImageData(680, 440);
+  for (let i = 0; i < n.length; i++){ const p = i * 4, v = n[i]; im.data[p] = 150 + v * 40; im.data[p + 1] = 118 + v * 32; im.data[p + 2] = 78 + v * 22; im.data[p + 3] = 255; }
+  x.putImageData(im, 0, 0);
+  x.fillStyle = 'rgba(40,24,10,0.35)'; for (let row = 0; row < 5; row++) x.fillRect(24, 34 + row * 82 + 70, 632, 2);
+  const glyphs = ['reed','water','loaf','arm','eye','sun','mouth','owl','snake','ankh','basket','legs'];
+  function draw(g, gx, gy, s){
+    x.beginPath();
+    if (g === 'reed'){ x.moveTo(gx, gy + s); x.lineTo(gx, gy - s); x.moveTo(gx, gy - s * 0.5); x.quadraticCurveTo(gx + s * 0.6, gy - s * 0.9, gx + s * 0.25, gy - s * 0.2); }
+    else if (g === 'water'){ x.moveTo(gx - s, gy); for (let w = 0; w < 6; w++) x.lineTo(gx - s + (w + 0.5) * s / 3, gy + (w % 2 ? s * 0.25 : -s * 0.25)); }
+    else if (g === 'loaf'){ x.moveTo(gx - s * 0.6, gy + s * 0.4); x.arc(gx, gy + s * 0.4, s * 0.6, Math.PI, 0); x.closePath(); }
+    else if (g === 'arm'){ x.moveTo(gx - s, gy); x.lineTo(gx + s * 0.6, gy); x.lineTo(gx + s, gy - s * 0.4); }
+    else if (g === 'eye'){ x.ellipse(gx, gy, s, s * 0.42, 0, 0, 6.29); x.moveTo(gx + s * 0.25, gy); x.arc(gx, gy, s * 0.25, 0, 6.29); }
+    else if (g === 'sun'){ x.arc(gx, gy, s * 0.6, 0, 6.29); x.moveTo(gx + s * 0.12, gy); x.arc(gx, gy, s * 0.12, 0, 6.29); }
+    else if (g === 'mouth'){ x.ellipse(gx, gy, s, s * 0.3, 0, 0, 6.29); }
+    else if (g === 'owl'){ x.ellipse(gx, gy + s * 0.2, s * 0.45, s * 0.7, 0, 0, 6.29); x.moveTo(gx + s * 0.35, gy - s * 0.65); x.arc(gx, gy - s * 0.65, s * 0.35, 0, 6.29); }
+    else if (g === 'snake'){ x.moveTo(gx - s, gy + s * 0.5); x.bezierCurveTo(gx - s * 0.3, gy - s * 0.6, gx + s * 0.3, gy + s, gx + s, gy - s * 0.2); }
+    else if (g === 'ankh'){ x.ellipse(gx, gy - s * 0.5, s * 0.3, s * 0.4, 0, 0, 6.29); x.moveTo(gx, gy - s * 0.1); x.lineTo(gx, gy + s); x.moveTo(gx - s * 0.5, gy + s * 0.05); x.lineTo(gx + s * 0.5, gy + s * 0.05); }
+    else if (g === 'basket'){ x.moveTo(gx - s * 0.8, gy); x.arc(gx, gy, s * 0.8, Math.PI, 0, true); x.closePath(); }
+    else { x.moveTo(gx - s * 0.6, gy + s); x.lineTo(gx - s * 0.2, gy - s * 0.4); x.lineTo(gx + s * 0.6, gy - s * 0.4); x.lineTo(gx + s * 0.4, gy + s); }
+  }
+  for (let row = 0; row < 5; row++){
+    const gy = 70 + row * 82;
+    let gx = 50;
+    while (gx < 640){
+      const g = glyphs[Math.floor(r() * glyphs.length)], s = 15 + r() * 6;
+      // sunk relief: dark cut edge offset down-right, pale lit edge up-left
+      x.lineWidth = 5; x.lineCap = x.lineJoin = 'round';
+      x.save(); x.translate(2, 2); x.strokeStyle = 'rgba(48,28,10,0.75)'; draw(g, gx, gy, s); x.stroke(); x.restore();
+      x.save(); x.translate(-1, -1); x.strokeStyle = 'rgba(255,232,180,0.5)'; x.lineWidth = 2.5; draw(g, gx, gy, s); x.stroke(); x.restore();
+      gx += s * 2 + 10 + r() * 8;
+    }
+  }
+}
+
+/* ---------------- loop ---------------- */
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+
+const clock = new THREE.Clock();
+let shownFace = 0, t = 0;
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), 0.05);
+  t += dt;
+  const k = reduceMotion ? 1 : Math.min(1, dt * 6);
+  holder.quaternion.slerp(qTarget, k);
+  camera.position.z += (targetZ - camera.position.z) * (reduceMotion ? 1 : Math.min(1, dt * 5));
+  // a gentle sway after a while untouched, never under reduced motion
+  const idle = !reduceMotion && pointers.size === 0 && performance.now() - lastTouch > 6000;
+  const swayTo = idle ? Math.sin(t * 0.3) * 0.05 : 0;
+  tablet.rotation.y += (swayTo - tablet.rotation.y) * Math.min(1, dt * 2);
+  const f = facing();
+  if (f !== shownFace){ shownFace = f; sideLabel.textContent = f === 0 ? 'Front (obverse)' : 'Back (reverse)'; }
+  renderer.render(scene, camera);
+});
+window.__kadeshReady = true;
+clearTimeout(window.__kadeshTimer);
+veil.classList.add('hidden');
+</script>
+</body>
+</html>
