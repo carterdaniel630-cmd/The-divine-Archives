@@ -1,6 +1,6 @@
 {
   "_about": "Item 29 standards board: one list of every Claude-side and Muse-side item and whether it is up to standard. Hand-kept; tools/build-standards-board.js turns it into board.html and adds what the Graphify code map knows about each item's files. Status is one of: up, needs-work, blocked, parked, not-built. Update an item's status in the same commit as the work that changes it.",
-  "asOf": "2026-10-19 ~05:10 UTC",
+  "asOf": "2026-10-19 ~05:30 UTC",
   "items": [
     {
       "id": "batch-a",
@@ -264,12 +264,27 @@
       "area": "Games",
       "title": "Hit-feel, part 1: The Firmament + Antithesis (PR #70, Item 31 #5)",
       "status": "needs-work",
-      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; independent review passed 2026-10-19 (0 blocking findings). Waiting on Lighthouse, then Carter's yes. Other games are later parts.",
+      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; independent review passed 2026-10-19 (0 blocking findings). Lighthouse still running at 05:25 UTC, then Carter's yes. Part 2 (PR #71) is stacked on it.",
       "where": "loop/hit-feel",
       "paths": [
         "docs/assets/games/feel.js",
         "docs/assets/games/pinball.js",
         "docs/assets/games/antithesis.js"
+      ]
+    },
+    {
+      "id": "hit-feel-2",
+      "side": "claude",
+      "area": "Games",
+      "title": "Hit-feel, part 2: Ouroboros, Labyrinth, Ziggurat (PR #71, Item 31 #5)",
+      "status": "needs-work",
+      "why": "Built on loop/hit-feel-2 @ 6c4efbc (stacked on #70), all local checks green, headless phone play clean, 0 shake under reduced motion; includes the #70 review's audio-resume fix. Needs an independent review, green GitHub checks, #70 merged first, then Carter's yes. Chess and Dominion captures are part 3.",
+      "where": "loop/hit-feel-2",
+      "paths": [
+        "docs/assets/games/feel.js",
+        "docs/assets/games/ouroboros.js",
+        "docs/assets/games/labyrinth.js",
+        "docs/assets/games/ziggurat.js"
       ]
     }
   ]

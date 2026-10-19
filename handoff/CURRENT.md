@@ -1,4 +1,9 @@
-# Handoff — updated 2026-10-18 (evening)
+# Handoff — updated 2026-10-19 (~05:30 UTC)
+
+## Latest: hit-feel parts 1 and 2 open (2026-10-19); `main` unchanged at `77f6444`
+- **Open PRs added since 2026-10-18 evening:** #69 (Graphify plain-word names; reviewed, mergeable on Carter's yes),
+  #70 (hit-feel part 1; reviewed, Lighthouse pending), #71 (hit-feel part 2, stacked on #70; needs independent review).
+  Details in `replies/STATUS.md` and `replies/MERGEABLE.md`.
 
 ## Latest: PR #65 (Item 29) is on main (2026-10-18 evening)
 - **PR #65 Graphify fix + standards board** merged by Carter 22:07 UTC as merge commit `77f6444` (on `b0896a6`).

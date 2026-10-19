@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-19 ~05:15 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
+**As of:** 2026-10-19 ~05:30 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
 
 ## Mergeable now
 - **Graphify plain-word names** (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`, nothing on
@@ -16,7 +16,10 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Hit-feel part 1** (PR #70, `loop/hit-feel` @ `ea70b77`; games only): local checks green (`2026-10-19-hit-feel-part-1.md`);
   **independent review passed 2026-10-19, 0 blocking findings** (`2026-10-19-pr70-independent-review.md`); 6/7 GitHub
   checks green; fast-forwards onto `main` `77f6444`. Missing: **Lighthouse** still running at 05:05 UTC (next run
-  re-checks); Carter's yes for this item.
+  re-checks); still running at 05:25 UTC. Carter's yes for this item.
+- **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
+  (`2026-10-19-hit-feel-part-2.md`). Missing: independent review; GitHub checks green incl. Lighthouse; #70 merged first;
+  Carter's yes for this item.
 
 ## Merged
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).
