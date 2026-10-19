@@ -1,6 +1,6 @@
 {
   "_about": "Item 29 standards board: one list of every Claude-side and Muse-side item and whether it is up to standard. Hand-kept; tools/build-standards-board.js turns it into board.html and adds what the Graphify code map knows about each item's files. Status is one of: up, needs-work, blocked, parked, not-built. Update an item's status in the same commit as the work that changes it.",
-  "asOf": "2026-10-19 ~05:30 UTC",
+  "asOf": "2026-10-19 06:05 UTC",
   "items": [
     {
       "id": "batch-a",
@@ -278,13 +278,27 @@
       "area": "Games",
       "title": "Hit-feel, part 2: Ouroboros, Labyrinth, Ziggurat (PR #71, Item 31 #5)",
       "status": "needs-work",
-      "why": "Built on loop/hit-feel-2 @ 6c4efbc (stacked on #70), all local checks green, headless phone play clean, 0 shake under reduced motion; includes the #70 review's audio-resume fix. Independent review passed 2026-10-19 (0 findings). Needs Lighthouse green (running at 05:23 UTC), #70 merged first, then Carter's yes. Chess and Dominion captures are part 3.",
+      "why": "Built on loop/hit-feel-2 @ 6c4efbc (stacked on #70), all local checks green, headless phone play clean, 0 shake under reduced motion; includes the #70 review's audio-resume fix. Independent review passed 2026-10-19 (0 findings); all 7 GitHub checks green incl. Lighthouse (05:32 UTC). Needs #70 merged first, a fast-forward re-check, then Carter's yes.",
       "where": "loop/hit-feel-2",
       "paths": [
         "docs/assets/games/feel.js",
         "docs/assets/games/ouroboros.js",
         "docs/assets/games/labyrinth.js",
         "docs/assets/games/ziggurat.js"
+      ]
+    },
+    {
+      "id": "hit-feel-3",
+      "side": "claude",
+      "area": "Games",
+      "title": "Hit-feel, part 3: Chess + Dominion (PR #72, Item 31 #5)",
+      "status": "needs-work",
+      "why": "Built on loop/hit-feel-3 @ d4b52cf (stacked on #71), all local checks green; headless phone play: every new impact fired, 0 shake under reduced motion, 0 script errors. Needs an independent review, all GitHub checks green, #70 and #71 merged first, then Carter's yes.",
+      "where": "loop/hit-feel-3",
+      "paths": [
+        "docs/assets/games/feel.js",
+        "docs/assets/games/chess.js",
+        "docs/assets/games/dominion.js"
       ]
     }
   ]

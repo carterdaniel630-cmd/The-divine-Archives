@@ -1,13 +1,20 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-19 05:25 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-19 06:05 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
 `briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`, Muse's 2026-10-18 evening previews (7). **Deployed (`main`):** `77f6444` = batch A + museum
 phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
-**Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `loop/graphify-labels` = PR #69 (named map). `loop/hit-feel` = PR #70 (hit-feel part 1). `loop/hit-feel-2` = PR #71 (hit-feel part 2, stacked on #70). `staging/ready-line` carries `handoff/`.
+**Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `loop/graphify-labels` = PR #69 (named map). `loop/hit-feel` = PR #70 (hit-feel part 1). `loop/hit-feel-2` = PR #71 (hit-feel part 2, stacked on #70). `loop/hit-feel-3` = PR #72 (hit-feel part 3, stacked on #71). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-19 ~05:42–06:05: **Hit-feel, part 3** (Item 31 #5) on `loop/hit-feel-3` @ `d4b52cf`, **PR #72** (stacked on #71):
+  Chess (move knock, capture knock-and-ring scaled by the god taken, check warning, checkmate chime) and Dominion
+  (army placed, battle dice, land taken, land lost, campaign end); six new impacts in `feel.js`. Clean build,
+  review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, lint clean; headless phone play in both motion modes: every
+  new impact fired, **0 shaken frames under reduced motion**, 0 script errors (reply `2026-10-19-hit-feel-part-3.md`).
+  Same run: **PR #71 Lighthouse finished green** (05:32): #71 now 7/7 green, waits on #70 then Carter's yes.
+  Items per run (Item 32): 1 item.
 - 2026-10-19 05:16–05:25: **PR #71 independently reviewed** (hit-feel part 2, `6c4efbc`) by a run that wrote none of it:
   **0 findings**. Clean build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone play of all three
   games in both motion modes, 0 script errors, **0 shaken frames under reduced motion**; Ziggurat's new redraw rule draws
@@ -91,9 +98,9 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
 0. **PR #69 merge** once Carter says yes for it (Needs Carter 0). A run then re-checks it still fast-forwards and is green.
 0b. **PR #70 merge** once Carter says yes for it (Needs Carter 00). A run then re-checks it still fast-forwards and is green.
-1. **PR #71 Lighthouse re-check** (quick): still running at 05:23 UTC (started 05:14). If green, #71 waits only on #70
-   merging, a fast-forward re-check, and Carter's yes. If red, root-cause it; re-run once only if cancelled.
-1b. **Hit-feel part 3** (Item 31 #5): captures in Chess and Dominion, on top of `loop/hit-feel-2`.
+0c. **PR #71 merge** after #70, once Carter says yes for it (Needs Carter 000): re-check it fast-forwards and is green.
+1. **PR #72 independent review** (hit-feel part 3, `d4b52cf`) by a run that wrote none of it, against `reviews/REVIEWER.md`
+   §3–§4, plus its GitHub checks (Lighthouse included; re-check, don't wait holding the lock).
 2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
    tablet, Crown of the Kandake, Etruscan mirror, staged in `handoff/previews/`. Analyze and rebuild better to the Relic
    Standard, one per run. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
@@ -119,8 +126,8 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
-000. **Hit-feel part 2 (PR #71)** passed its independent review (0 findings); its last check (Lighthouse) is still
-   running. It comes to you right after #70. Nothing to do yet.
+000. **Hit-feel part 2 (PR #71) is ready too** (review passed, all 7 checks green). It merges right after #70:
+   **yes / not now**. Part 3 (Chess + Dominion, PR #72) is built and goes to its independent review next.
 00. **Hit-feel part 1 (PR #70) is ready**: review passed, every check green incl. Lighthouse. Merge it: **yes / not now**.
    Then play The Firmament and Antithesis on your phone and say if hits feel right, too strong, or too weak.
 0. **PR #69 (plain-word names on the code map) passed its independent review.** Merge it: **yes / not now**. Also open
