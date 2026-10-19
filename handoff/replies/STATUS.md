@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-19 06:20 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-19 06:35 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
 `briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`, Muse's 2026-10-18 evening previews (7). **Deployed (`main`):** `77f6444` = batch A + museum
 phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
@@ -8,6 +8,13 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-19 ~06:15–06:35: **Treaty of Kadesh tablet rebuilt** (relic 1 of 4, Next 2), preview only in
+  `handoff/previews/treaty-of-kadesh/` (Muse's file left in place). Now loads the repo's three.js (the Muse file could not
+  show anything), pressed-wedge cuneiform with raking light and dust in the grooves, cushion-shaped clay, flips top over
+  bottom, tap a section for its clause; invented quotations removed; two unsourced facts removed; evidence-honesty
+  section and sources added (2026 Hattusa fragment confirmed). Headless phone check in both motion modes: 0 errors.
+  Clean build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests (reply `2026-10-19-treaty-of-kadesh-rebuilt.md`).
+  Same run: **PR #72 Lighthouse finished green** (06:19): #72 now 7/7. Items per run (Item 32): 1 item.
 - 2026-10-19 ~05:59–06:20: **PR #72 independently reviewed** (hit-feel part 3, `d4b52cf`) by a run that wrote none of it:
   **0 findings**. Clean build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, lint clean; headless phone play in both
   motion modes: Chess (Scholar's Mate + a check game) gave one cue per move incl. capture, check and mate; Dominion gave
@@ -105,11 +112,10 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 0. **PR #69 merge** once Carter says yes for it (Needs Carter 0). A run then re-checks it still fast-forwards and is green.
 0b. **PR #70 merge** once Carter says yes for it (Needs Carter 00). A run then re-checks it still fast-forwards and is green.
 0c. **PR #71 merge** after #70, once Carter says yes for it (Needs Carter 000): re-check it fast-forwards and is green.
-1. **PR #72 Lighthouse re-check** (started 05:57 on `d4b52cf`): once green, #72 waits only on #70 and #71 merging and
-   Carter's yes. Quick check; do it alongside the next item, never waiting holding the lock.
-2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
-   tablet, Crown of the Kandake, Etruscan mirror, staged in `handoff/previews/`. Analyze and rebuild better to the Relic
-   Standard, one per run. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
+0d. **PR #72 merge** after #71, once Carter says yes for it (Needs Carter 000): re-check it fast-forwards and is green.
+2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Treaty of Kadesh DONE 2026-10-19 (preview). Next:
+   Crown of the Kandake, then Etruscan mirror, then Crown of Thorns (two versions), staged in `handoff/previews/`.
+   Analyze and rebuild better to the Relic Standard, one per run, in `handoff/previews/<name>/`. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
 3. **Muse's 2026-10-18 previews** (Carter-approved Muse-side): Tabula (relic + game), Awithlaknannai, Sort the Seals,
    Mithraeum, Fire Temple, Langar, Cave Wall, in `handoff/previews/`. All load `three.min.js`, which Muse could not push:
    use the repo's vendored three.js. Rebuild to the Relic Standard one per run on `loop/*`; site placement needs Carter's
@@ -132,8 +138,11 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
+0000. **Treaty of Kadesh tablet preview** (link in `2026-10-19-treaty-of-kadesh-rebuilt.md`): open it on your phone and
+   say **looks right / change something**. Putting it in the museum is a separate yes later.
 000. **Hit-feel part 2 (PR #71) is ready too** (review passed, all 7 checks green). It merges right after #70:
-   **yes / not now**. Part 3 (Chess + Dominion, PR #72) passed its independent review too (0 findings); Lighthouse still running.
+   **yes / not now**. **Part 3 (Chess + Dominion, PR #72) is ready too** (review passed, all 7 checks green); it merges
+   right after #71: **yes / not now**.
 00. **Hit-feel part 1 (PR #70) is ready**: review passed, every check green incl. Lighthouse. Merge it: **yes / not now**.
    Then play The Firmament and Antithesis on your phone and say if hits feel right, too strong, or too weak.
 0. **PR #69 (plain-word names on the code map) passed its independent review.** Merge it: **yes / not now**. Also open
@@ -142,7 +151,7 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 1. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
    Options: **A** (recommended) the loop also saves each independent review to the review log and runs the weekly audit
    steps; **B** you attach the repository to the two scheduled tasks in the Claude app; **C** also merge PR #58.
-2. **Your selfie for the Journal hero** (Item 27), if the repo search (Next 3) does not find it.
+2. **Your selfie for the Journal hero** (Item 27), if the repo search (Next 4) does not find it.
 3. **Batch review, now live:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry.
 4. Museum speed is live: open the museum on your phone and say if it feels smoother or blurrier
    (`the-divine-archives.pages.dev/museum.html?fps=1#ch02` shows the frame rate).

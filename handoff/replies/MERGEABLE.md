@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-19 06:20 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
+**As of:** 2026-10-19 06:35 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
 
 ## Mergeable now
 - **Graphify plain-word names** (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`, nothing on
@@ -22,8 +22,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   Missing: #70 merged first, then a re-check that #71 fast-forwards and stays green; Carter's yes for this item.
 - **Hit-feel part 3** (PR #72, `loop/hit-feel-3` @ `d4b52cf`, stacked on #71; games only): local checks green
   (`2026-10-19-hit-feel-part-3.md`); **independent review passed 2026-10-19, 0 findings**
-  (`2026-10-19-pr72-independent-review.md`); 6/7 GitHub checks green. Missing: Lighthouse green (running since 05:57 UTC);
-  #70 and #71 merged first, then a re-check that #72 fast-forwards and stays green; Carter's yes for this item.
+  (`2026-10-19-pr72-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 06:19 UTC).
+  Missing: #70 and #71 merged first, then a re-check that #72 fast-forwards and stays green; Carter's yes for this item.
 
 ## Merged
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).
@@ -32,6 +32,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
 
 ## Not ready (in progress or waiting on a ruling)
+- Treaty of Kadesh tablet (relic 1 of 4): rebuilt 2026-10-19 as a preview in `handoff/previews/treaty-of-kadesh/`
+  (`2026-10-19-treaty-of-kadesh-rebuilt.md`). Not a site change yet; a museum placement is a new exhibit and needs
+  Carter's yes, then a `loop/*` branch, independent review and checks.
 - Small defects part 2 (Bagh-chal board fixed 2026-10-18; zodiac `dispose()`, Oracle Bones, exhibit fonts, Grimoire remain): all in `handoff/`
   drafts and previews, not on the live site, so not part of batch B. Next loop item.
 - Protection charter: D1–D3 PARKED by Carter (Item 26); D4 is approved only once it is up to standard (Item 23). The draft is `handoff/protection-charter-DRAFT.md`.
