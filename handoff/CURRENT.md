@@ -1,10 +1,10 @@
-# Handoff — updated 2026-10-19 (06:05 UTC)
+# Handoff — updated 2026-10-19 (06:20 UTC)
 
 ## Latest: hit-feel parts 1–3 open (2026-10-19); `main` unchanged at `77f6444`
 - **Open PRs added since 2026-10-18 evening:** #69 (Graphify plain-word names; reviewed, mergeable on Carter's yes),
   #70 (hit-feel part 1; reviewed, all checks green, mergeable on Carter's yes), #71 (hit-feel part 2, stacked on #70;
-  reviewed, 0 findings, all checks green), #72 (hit-feel part 3: Chess and Dominion, stacked on #71; built, awaiting
-  independent review).
+  reviewed, 0 findings, all checks green), #72 (hit-feel part 3: Chess and Dominion, stacked on #71; independently
+  reviewed, 0 findings, Lighthouse running).
   Details in `replies/STATUS.md` and `replies/MERGEABLE.md`.
 
 ## Latest: PR #65 (Item 29) is on main (2026-10-18 evening)
