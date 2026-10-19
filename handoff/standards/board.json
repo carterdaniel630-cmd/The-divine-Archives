@@ -1,6 +1,6 @@
 {
   "_about": "Item 29 standards board: one list of every Claude-side and Muse-side item and whether it is up to standard. Hand-kept; tools/build-standards-board.js turns it into board.html and adds what the Graphify code map knows about each item's files. Status is one of: up, needs-work, blocked, parked, not-built. Update an item's status in the same commit as the work that changes it.",
-  "asOf": "2026-10-19 ~04:00 UTC",
+  "asOf": "2026-10-19 ~05:10 UTC",
   "items": [
     {
       "id": "batch-a",
@@ -257,6 +257,20 @@
       "why": "Received in handoff/previews/ (Carter-approved on Muse's side). Five arrived base64-encoded; decoded in place 2026-10-19 so they open. Rebuild to the Relic Standard one per run; going on the site needs Carter's yes per item. Fire Temple, Langar and Awithlaknannai are living traditions: sensitivity review before any placement.",
       "where": "handoff/previews/",
       "paths": []
+    },
+    {
+      "id": "hit-feel-1",
+      "side": "claude",
+      "area": "Games",
+      "title": "Hit-feel, part 1: The Firmament + Antithesis (PR #70, Item 31 #5)",
+      "status": "needs-work",
+      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; waiting on independent review, GitHub checks, then Carter's yes. Other games are later parts.",
+      "where": "loop/hit-feel",
+      "paths": [
+        "docs/assets/games/feel.js",
+        "docs/assets/games/pinball.js",
+        "docs/assets/games/antithesis.js"
+      ]
     }
   ]
 }

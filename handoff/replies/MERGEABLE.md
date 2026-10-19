@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-19 ~04:00 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
+**As of:** 2026-10-19 ~05:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
 
 ## Mergeable now
 - **Graphify plain-word names** (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`, nothing on
@@ -13,7 +13,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   **Waiting only on Carter's yes for this item.**
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-(none)
+- **Hit-feel part 1** (PR #70, `loop/hit-feel` @ `ea70b77`; games only): local checks green (`2026-10-19-hit-feel-part-1.md`).
+  Missing: independent review by a run that wrote none of it; GitHub checks completed green; Carter's yes for this item.
 
 ## Merged
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).
