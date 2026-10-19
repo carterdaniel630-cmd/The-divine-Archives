@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Awithlaknannai — Fighting Serpents</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a0603; color: #e8d9b0;
+    font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif; }
+  #page { max-width: 980px; margin: 0 auto; padding: 16px 14px 48px; }
+  h1 { font-family: 'Cinzel', Georgia, serif; font-size: 30px; font-weight: normal;
+    letter-spacing: .10em; color: #f3d58c; text-align: center; }
+  .sub { text-align: center; color: #b98f4e; font-style: italic; margin: 6px 0 4px; font-size: 16px; }
+  .respect { text-align: center; color: #9a8a6a; font-style: italic; font-size: 13.5px;
+    max-width: 640px; margin: 0 auto 12px; line-height: 1.5; }
+  #stage-wrap { position: relative; width: 100%; aspect-ratio: 16 / 10; background: #050403;
+    border: 1px solid #3a2a12; border-radius: 8px; overflow: hidden; }
+  #stage { width: 100%; height: 100%; display: block; touch-action: none; cursor: pointer; }
+  #veil { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: #050403; color: #c9a24b; font-style: italic; font-size: 17px; z-index: 3; text-align: center; padding: 20px; }
+  #veil.hidden { display: none; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 6px; }
+  .bar button { background: #1a1008; color: #f3d58c; border: 1px solid #b98f4e; border-radius: 20px;
+    padding: 10px 18px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  .bar button.active { background: #b98f4e; color: #1a1008; font-weight: bold; }
+  .bar button:active { opacity: .8; }
+  .bar button:disabled { opacity: .45; cursor: default; }
+  .hint { text-align: center; color: #9a8a6a; font-size: 13.5px; font-style: italic; margin: 4px 0 12px; }
+  #hud { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 12px 0 4px; flex-wrap: wrap; }
+  #turnTag { font-size: 18px; color: #f3d58c; letter-spacing: .03em; min-width: 190px; text-align: center; }
+  .cap { display: flex; align-items: center; gap: 7px; font-size: 15px; color: #d9c9a0; }
+  .dot { width: 15px; height: 15px; border-radius: 50%; display: inline-block; border: 1px solid #00000055; }
+  .dot.tq { background: #3fa8a0; } .dot.cl { background: #b5533c; }
+  #status { text-align: center; color: #e6c27a; font-size: 15.5px; font-style: italic; min-height: 24px; margin: 2px 0 8px; }
+  #logWrap { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 10px 14px;
+    margin-bottom: 12px; max-height: 120px; overflow-y: auto; }
+  #log { list-style: none; font-size: 14.5px; line-height: 1.55; color: #d9c9a0; }
+  #log li:first-child { color: #f3d58c; }
+  .card { background: #14100a; border: 1px solid #3a2a12; border-radius: 8px; padding: 16px 18px;
+    line-height: 1.65; margin: 12px 0; font-size: 15.5px; color: #d9c9a0; }
+  .card h2 { font-family: 'Cinzel', Georgia, serif; font-weight: normal; color: #e6c27a; font-size: 19px;
+    letter-spacing: .06em; margin-bottom: 8px; }
+  .card ul { margin: 6px 0 6px 20px; }
+  .card li { margin-bottom: 4px; }
+  .src { color: #9a8a6a; font-size: 14px; font-style: italic; }
+  #tutOverlay { position: fixed; inset: 0; background: rgba(5,3,2,.92); z-index: 50; display: none;
+    align-items: center; justify-content: center; padding: 18px; }
+  #tutOverlay.open { display: flex; }
+  #tutBox { background: #14100a; border: 1px solid #b98f4e; border-radius: 10px; max-width: 640px;
+    max-height: 86vh; overflow-y: auto; padding: 26px 28px; line-height: 1.7; color: #d9c9a0; font-size: 15.5px; }
+  #tutBox h2 { font-family: 'Cinzel', Georgia, serif; font-weight: normal; color: #f3d58c; font-size: 21px;
+    letter-spacing: .06em; margin-bottom: 10px; text-align: center; }
+  #tutBox h3 { color: #e6c27a; font-weight: normal; font-size: 17px; margin: 14px 0 6px; letter-spacing: .04em; }
+  #tutBox ul { margin: 4px 0 8px 20px; } #tutBox li { margin-bottom: 5px; }
+  #tutBox .close { display: block; margin: 18px auto 0; background: #b98f4e; color: #1a1008; font-weight: bold;
+    border: none; border-radius: 20px; padding: 10px 26px; font-family: inherit; font-size: 15px; cursor: pointer; }
+  #err { display: none; margin-top: 10px; padding: 12px; border: 1px solid #7a2a2a; color: #e8c9c9;
+    background: #1a0808; border-radius: 6px; }
+  @media (max-width: 600px) { h1 { font-size: 23px; } #stage-wrap { aspect-ratio: 4 / 3.4; } }
+</style>
+</head>
+<body>
+<div id="page">
+  <h1>AWITHLAKNANNAI</h1>
+  <div class="sub">Fighting Serpents — a board game of the Zuni (A:shiwi) people</div>
+  <div class="respect">The Zuni are a living people of New Mexico. This is a playable reconstruction from 1907
+    ethnographic sources — a game, not a sacred object. Sources are named below.</div>
+
+  <div id="stage-wrap">
+    <canvas id="stage"></canvas>
+    <div id="veil">Lighting the lamps…</div>
+  </div>
+  <div id="err"></div>
+
+  <div id="hud">
+    <div class="cap"><span class="dot tq"></span><span id="capTq">Turquoise · 0 taken</span></div>
+    <div id="turnTag">Turquoise to move</div>
+    <div class="cap"><span class="dot cl"></span><span id="capCl">Clay · 0 taken</span></div>
+  </div>
+  <div id="status"></div>
+
+  <div class="bar">
+    <button id="btnNew">New game</button>
+    <button id="btnUndo">Undo</button>
+    <button id="btnMode" title="Toggle opponent">Opponent: Computer</button>
+    <button id="btnSize" title="Toggle pieces per side">Pieces: 6 each</button>
+    <button id="btnHow">How to play</button>
+  </div>
+  <div class="hint">Drag to look around · tap a stone to see its moves · gold rings mark where it can go</div>
+
+  <div id="logWrap"><ul id="log"><li>Welcome. Turquoise moves first.</li></ul></div>
+
+  <div class="card">
+    <h2>About this reconstruction</h2>
+    <ul>
+      <li><b>Board.</b> The short board drawn for Stewart Culin by Zuni consultant Nick Graham (1907):
+        three rows — 8, 9 and 8 points — joined by leaning diagonals, the outer rows joined by lines
+        (so three lines meet at each point), with a curve joining the ends.</li>
+      <li><b>Pieces.</b> Culin's game used 12 small pottery discs per side, plain or with a pierced top to tell
+        sides apart. Here: turquoise (pierced) against clay red (plain). The simpler 6-a-side set is a modern
+        teaching setup — both are offered above.</li>
+      <li><b>Rules as documented.</b> Move one stone along a line to a free neighbouring point; or leap over an
+        adjacent enemy stone to the free point just beyond it, following the board's lines. Captures are
+        compulsory, and a stone that can keep leaping must keep leaping. The first move must take the empty
+        centre point — and is captured at once, so the first player starts at a disadvantage.</li>
+      <li><b>What the sources leave open.</b> Culin never fully wrote down the win condition; following the
+        standard reconstruction, you win by taking all the enemy stones, or by leaving your opponent with no
+        legal move. "Fighting serpents" is R.&nbsp;C.&nbsp;Bell's English name (1969), not a Zuni phrase.</li>
+    </ul>
+    <div class="src">Sources: Stewart Culin, <i>Games of the North American Indians</i>, vol. 2: <i>Games of Skill</i>
+      (1907); R.&nbsp;C. Bell, <i>Board and Table Games from Many Civilizations</i> (1969) and <i>The Boardgame
+      Book</i> (1983); board-shape analysis after Culin's diagram and the Cyningstan reconstruction notes (2014).
+      Archive: <i>Native North American</i> chapter, The Divine Archives.</div>
+  </div>
+</div>
+
+<div id="tutOverlay">
+  <div id="tutBox">
+    <h2>How to play</h2>
+    <h3>The board</h3>
+    <ul>
+      <li>Three rows of points — 8 on each outer row, 9 in the middle — 25 points in all, joined by leaning
+        diagonal lines, with the outer rows joined end to end and a curve closing each end of the board.</li>
+      <li>Stones sit <i>on the points</i> and travel <i>along the lines</i>, never across empty space.</li>
+    </ul>
+    <h3>Moving</h3>
+    <ul>
+      <li><b>Step:</b> move one of your stones along a line to an empty neighbouring point.</li>
+      <li><b>Leap (capture):</b> jump one of your stones over an <i>adjacent</i> enemy stone onto the empty point
+        immediately beyond it, following the board's lines. The jumped stone is removed.</li>
+      <li><b>Captures are compulsory.</b> If any leap is available, you must take one — you may choose which.</li>
+      <li><b>Keep leaping.</b> A stone that can leap again after landing must keep leaping until it cannot.</li>
+      <li>Leaps may change direction from one jump to the next, always following the lines.</li>
+    </ul>
+    <h3>Winning</h3>
+    <ul>
+      <li>Take every enemy stone, or leave your opponent with no legal move — a player who cannot move loses.</li>
+      <li>Note the opening trap: the only empty point is the centre, so the first move walks into a capture.
+        The second player is favoured — Culin's sources say so too.</li>
+    </ul>
+    <h3>A note of respect</h3>
+    <p>The Zuni (A:shiwi) people live in New Mexico today, and their traditions are their own. This page
+      reconstructs a <i>game</i> described by outside observers in 1907; where the record is silent, the gaps
+      are labelled as such above. Nothing here claims sacred meaning the game was never given.</p>
+    <button class="close" id="btnCloseTut">Begin</button>
+  </div>
+</div>
+<script src="three.min.js"></script>
+<script>
+/* =========================================================================
+   AWITHLAKNANNAI — Fighting Serpents
+   Playable 3D reconstruction of the Zuni board game described by
+   Stewart Culin (Games of the North American Indians, 1907).
+
+   Board: the short board drawn for Culin by Zuni consultant Nick Graham —
+   three rows (8 / 9 / 8 points), leaning diagonals, outer rows joined so
+   three lines meet at each point, a curve closing each end. 25 points total.
+
+   This file is structured so the rules engine (top section) is pure logic
+   with no DOM/THREE dependencies; the scene and UI below are only built
+   when a browser document is present.
+   ========================================================================= */
+'use strict';
+
+/* ------------------------------ board model ------------------------------ */
+// Point indices: top row 0..7 (z=-1.2), middle row 8..16 (z=0), bottom 17..24 (z=+1.2)
+var AW_PTS = [];   // {x, z}
+var AW_NBR = [];   // adjacency lists
+(function buildBoard() {
+  var i, x;
+  for (i = 0; i < 8; i++) { x = -3.5 + i; AW_PTS.push({ x: x, z: -1.2 }); }
+  for (i = 0; i < 9; i++) { x = -4 + i;   AW_PTS.push({ x: x, z: 0 }); }
+  for (i = 0; i < 8; i++) { x = -3.5 + i; AW_PTS.push({ x: x, z: 1.2 }); }
+  function link(a, b) {
+    if (AW_NBR[a].indexOf(b) < 0) AW_NBR[a].push(b);
+    if (AW_NBR[b].indexOf(a) < 0) AW_NBR[b].push(a);
+  }
+  for (i = 0; i < 25; i++) AW_NBR.push([]);
+  var T = function (i) { return i; }, M = function (i) { return 8 + i; }, B = function (i) { return 17 + i; };
+  for (i = 0; i < 7; i++) { link(T(i), T(i + 1)); link(B(i), B(i + 1)); }
+  for (i = 0; i < 8; i++) { link(M(i), M(i + 1)); }
+  for (i = 0; i < 8; i++) {
+    link(T(i), M(i)); link(T(i), M(i + 1));      // leaning diagonals, top
+    link(B(i), M(i)); link(B(i), M(i + 1));      // leaning diagonals, bottom
+  }
+})();
+
+function awSetup(size) {
+  // returns array of 25: 0 empty, 1 turquoise (near, +z), 2 clay (far, -z)
+  var b = new Array(25).fill(0);
+  if (size === 12) {
+    // Culin's documented count: home row + right half of middle row (player's view)
+    for (var i = 17; i <= 24; i++) b[i] = 1;
+    b[13] = b[14] = b[15] = b[16] = 1;
+    for (var j = 0; j <= 7; j++) b[j] = 2;
+    b[8] = b[9] = b[10] = b[11] = 2;
+  } else {
+    // modern teaching set: 4 on home row (right side from player's view) + 2 mid
+    b[21] = b[22] = b[23] = b[24] = 1; b[15] = b[16] = 1;
+    b[0] = b[1] = b[2] = b[3] = 2;     b[8] = b[9] = 2;
+  }
+  return b;
+}
+
+function awCollinear(a, b, c) {
+  var A = AW_PTS[a], B = AW_PTS[b], C = AW_PTS[c];
+  var v1x = B.x - A.x, v1z = B.z - A.z, v2x = C.x - B.x, v2z = C.z - B.z;
+  var cross = v1x * v2z - v1z * v2x;
+  var dot = v1x * v2x + v1z * v2z;
+  return Math.abs(cross) < 1e-6 && dot > 0;
+}
+
+// All captures for player; each: {from, over, to}
+function awCaptures(board, player) {
+  var enemy = player === 1 ? 2 : 1, out = [];
+  for (var a = 0; a < 25; a++) {
+    if (board[a] !== player) continue;
+    var nb = AW_NBR[a];
+    for (var bi = 0; bi < nb.length; bi++) {
+      var b = nb[bi];
+      if (board[b] !== enemy) continue;
+      var nc = AW_NBR[b];
+      for (var ci = 0; ci < nc.length; ci++) {
+        var c = nc[ci];
+        if (c === a || board[c] !== 0) continue;
+        if (awCollinear(a, b, c)) out.push({ from: a, over: b, to: c });
+      }
+    }
+  }
+  return out;
+}
+
+// All quiet steps for player; each: {from, to, over:-1}
+function awSlides(board, player) {
+  var out = [];
+  for (var a = 0; a < 25; a++) {
+    if (board[a] !== player) continue;
+    var nb = AW_NBR[a];
+    for (var bi = 0; bi < nb.length; bi++) {
+      if (board[nb[bi]] === 0) out.push({ from: a, to: nb[bi], over: -1 });
+    }
+  }
+  return out;
+}
+
+// Captures are compulsory: if any capture exists, only captures are legal.
+function awLegalMoves(board, player, onlyFrom) {
+  var caps = awCaptures(board, player);
+  if (onlyFrom !== undefined && onlyFrom >= 0) {
+    caps = caps.filter(function (m) { return m.from === onlyFrom; });
+    return caps; // mid-chain: must keep leaping with the same stone
+  }
+  if (caps.length) return caps;
+  return awSlides(board, player);
+}
+
+function awApply(board, mv) {
+  var nb = board.slice();
+  nb[mv.to] = nb[mv.from]; nb[mv.from] = 0;
+  if (mv.over >= 0) nb[mv.over] = 0;
+  return nb;
+}
+
+function awCount(board, player) {
+  var n = 0;
+  for (var i = 0; i < 25; i++) if (board[i] === player) n++;
+  return n;
+}
+
+function awPieceName(p) { return p === 1 ? 'Turquoise' : 'Clay'; }
+
+/* ------------------------------ simple AI ------------------------------ */
+function awEvaluate(board, me) {
+  var enemy = me === 1 ? 2 : 1;
+  var mine = awCount(board, me), theirs = awCount(board, enemy);
+  var mobMine = awLegalMoves(board, me).length, mobTheirs = awLegalMoves(board, enemy).length;
+  var centre = 0;
+  for (var i = 10; i <= 14; i++) {
+    if (board[i] === me) centre += 1; else if (board[i] === enemy) centre -= 1;
+  }
+  return (mine - theirs) * 100 + (mobMine - mobTheirs) * 2 + centre * 3;
+}
+
+function awBestMove(board, me, depth) {
+  var moves = awLegalMoves(board, me);
+  if (!moves.length) return null;
+  // order captures first (already first), then quiet moves
+  var best = null, bestScore = -Infinity, enemy = me === 1 ? 2 : 1;
+  for (var i = 0; i < moves.length; i++) {
+    var nb = awApply(board, moves[i]);
+    // after a capture, the same stone may have to keep leaping: resolve greedily
+    var score;
+    if (moves[i].over >= 0) {
+      var cont = awLegalMoves(nb, me, moves[i].to);
+      if (cont.length) {
+        // continue the chain with the best immediate follow-up (greedy)
+        var sub = awBestContinuation(nb, me, moves[i].to, depth);
+        score = sub.score;
+        moves[i].chain = sub.chain;
+        nb = sub.board;
+      } else {
+        score = -awSearch(nb, enemy, depth - 1, -Infinity, Infinity);
+      }
+    } else {
+      score = -awSearch(nb, enemy, depth - 1, -Infinity, Infinity);
+    }
+    score += Math.random() * 4; // tie-break variety
+    if (score > bestScore) { bestScore = score; best = moves[i]; }
+  }
+  return best;
+}
+
+function awBestContinuation(board, me, from, depth) {
+  // greedy: pick the continuation jump leading to the best eventual score
+  var cont = awLegalMoves(board, me, from), enemy = me === 1 ? 2 : 1;
+  var bestM = cont[0], bestS = -Infinity, bestB = board, chain = [];
+  for (var i = 0; i < cont.length; i++) {
+    var nb = awApply(board, cont[i]);
+    var more = awLegalMoves(nb, me, cont[i].to), s, b2 = nb, ch = [cont[i]];
+    if (more.length) {
+      var sub = awBestContinuation(nb, me, cont[i].to, depth);
+      s = sub.score; b2 = sub.board; ch = [cont[i]].concat(sub.chain);
+    } else {
+      s = -awSearch(nb, enemy, depth - 1, -Infinity, Infinity);
+    }
+    if (s > bestS) { bestS = s; bestM = cont[i]; bestB = b2; chain = ch; }
+  }
+  return { score: bestS, board: bestB, chain: chain };
+}
+
+function awSearch(board, me, depth, alpha, beta) {
+  var moves = awLegalMoves(board, me), enemy = me === 1 ? 2 : 1;
+  if (!moves.length) return -100000 - depth; // no move: loss
+  if (depth <= 0) return awEvaluate(board, me);
+  for (var i = 0; i < moves.length; i++) {
+    var nb = awApply(board, moves[i]);
+    var s;
+    if (moves[i].over >= 0) {
+      var cont = awLegalMoves(nb, me, moves[i].to);
+      if (cont.length) {
+        var sub = awBestContinuation(nb, me, moves[i].to, depth);
+        s = sub.score;
+      } else s = -awSearch(nb, enemy, depth - 1, -beta, -alpha);
+    } else s = -awSearch(nb, enemy, depth - 1, -beta, -alpha);
+    if (s > alpha) alpha = s;
+    if (alpha >= beta) break;
+  }
+  return alpha;
+}
+
+/* ============================ browser scene ============================ */
+if (typeof document !== 'undefined' && typeof THREE !== 'undefined' && document.getElementById('stage')) {
+(function () {
+  'use strict';
+  var canvas = document.getElementById('stage');
+  var veil = document.getElementById('veil');
+  var errBox = document.getElementById('err');
+
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+  } catch (e) {
+    veil.textContent = 'WebGL is not available in this browser.';
+    return;
+  }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  if (THREE.SRGBColorSpace !== undefined) renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0a0603);
+  scene.fog = new THREE.Fog(0x0a0603, 22, 46);
+
+  var camera = new THREE.PerspectiveCamera(42, 1, 0.1, 120);
+  var camYaw = 0, camPitch = 0.94, camDist = 13.5, camTarget = new THREE.Vector3(0, 0, 0.2);
+
+  function placeCamera() {
+    var cp = Math.cos(camPitch), sp = Math.sin(camPitch);
+    camera.position.set(
+      camTarget.x + camDist * cp * Math.sin(camYaw),
+      camTarget.y + camDist * sp,
+      camTarget.z + camDist * cp * Math.cos(camYaw)
+    );
+    camera.lookAt(camTarget);
+  }
+
+  function resize() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    placeCamera();
+  }
+  window.addEventListener('resize', resize);
+
+  /* ---------------- lighting: warm lamp + candle ---------------- */
+  scene.add(new THREE.AmbientLight(0x8a5f36, 0.55));
+  var hemi = new THREE.HemisphereLight(0x3a2c1c, 0x0c0704, 0.35);
+  scene.add(hemi);
+  var lamp = new THREE.SpotLight(0xffdfae, 1.9, 60, 0.62, 0.55, 1.2);
+  lamp.position.set(-8, 13, 7);
+  lamp.castShadow = true;
+  lamp.shadow.mapSize.set(1024, 1024);
+  lamp.shadow.bias = -0.002;
+  scene.add(lamp);
+  var candle = new THREE.PointLight(0xff9a3c, 0.85, 26, 1.6);
+  candle.position.set(7.5, 3.2, 4.5);
+  scene.add(candle);
+  var rim = new THREE.DirectionalLight(0x4a6a8a, 0.28);
+  rim.position.set(4, 6, -9);
+  scene.add(rim);
+
+  /* ---------------- procedural textures ---------------- */
+  function makeWoodTexture() {
+    var c = document.createElement('canvas'); c.width = c.height = 512;
+    var g = c.getContext('2d');
+    g.fillStyle = '#241408'; g.fillRect(0, 0, 512, 512);
+    for (var i = 0; i < 90; i++) {
+      var y = Math.random() * 512;
+      g.strokeStyle = 'rgba(' + (60 + Math.random() * 40 | 0) + ',' + (34 + Math.random() * 22 | 0) + ',16,' + (0.12 + Math.random() * 0.2) + ')';
+      g.lineWidth = 1 + Math.random() * 3;
+      g.beginPath();
+      g.moveTo(0, y);
+      for (var x = 0; x <= 512; x += 32) g.lineTo(x, y + Math.sin(x * 0.02 + i) * 6);
+      g.stroke();
+    }
+    var t = new THREE.CanvasTexture(c);
+    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(4, 4);
+    if (THREE.SRGBColorSpace !== undefined) t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }
+
+  // Sandstone slab top with the board engraved: maps board coords to canvas.
+  var SLAB_W = 11.6, SLAB_D = 4.9;
+  function boardToCanvas(bx, bz, cw, ch) {
+    return [ (bx + SLAB_W / 2) / SLAB_W * cw, (bz + SLAB_D / 2) / SLAB_D * ch ];
+  }
+  function makeBoardTexture() {
+    var cw = 1856, ch = 784;
+    var c = document.createElement('canvas'); c.width = cw; c.height = ch;
+    var g = c.getContext('2d');
+    // sandstone base
+    var grad = g.createRadialGradient(cw / 2, ch / 2, 80, cw / 2, ch / 2, cw / 2);
+    grad.addColorStop(0, '#cfa96f'); grad.addColorStop(0.7, '#bd9358'); grad.addColorStop(1, '#a37c46');
+    g.fillStyle = grad; g.fillRect(0, 0, cw, ch);
+    // stone speckle
+    for (var i = 0; i < 5200; i++) {
+      var sx = Math.random() * cw, sy = Math.random() * ch, r = Math.random() * 2.2;
+      g.fillStyle = Math.random() < 0.5 ? 'rgba(120,84,44,0.10)' : 'rgba(240,214,160,0.10)';
+      g.beginPath(); g.arc(sx, sy, r, 0, 7); g.fill();
+    }
+    // faint strata bands
+    for (var b = 0; b < 7; b++) {
+      var by = Math.random() * ch;
+      g.fillStyle = 'rgba(110,76,40,0.06)';
+      g.fillRect(0, by, cw, 3 + Math.random() * 8);
+    }
+    function line2(a, b) {
+      var p1 = boardToCanvas(AW_PTS[a].x, AW_PTS[a].z, cw, ch);
+      var p2 = boardToCanvas(AW_PTS[b].x, AW_PTS[b].z, cw, ch);
+      // carved groove: light ridge then dark cut
+      g.lineCap = 'round';
+      g.strokeStyle = 'rgba(238,208,150,0.55)'; g.lineWidth = 9;
+      g.beginPath(); g.moveTo(p1[0], p1[1] + 2); g.lineTo(p2[0], p2[1] + 2); g.stroke();
+      g.strokeStyle = '#4a2f18'; g.lineWidth = 5.5;
+      g.beginPath(); g.moveTo(p1[0], p1[1]); g.lineTo(p2[0], p2[1]); g.stroke();
+    }
+    // all graph edges
+    var seen = {};
+    for (var a = 0; a < 25; a++) {
+      for (var k = 0; k < AW_NBR[a].length; k++) {
+        var b = AW_NBR[a][k], key = a < b ? a + '-' + b : b + '-' + a;
+        if (!seen[key]) { seen[key] = 1; line2(a, b); }
+      }
+    }
+    // end curves: top end -> mid end -> bottom end, bowed outward
+    function endCurve(side) {
+      var te = side < 0 ? 0 : 7, me = side < 0 ? 8 : 16, be = side < 0 ? 17 : 24;
+      var pT = boardToCanvas(AW_PTS[te].x, AW_PTS[te].z, cw, ch);
+      var pM = boardToCanvas(AW_PTS[me].x, AW_PTS[me].z, cw, ch);
+      var pB = boardToCanvas(AW_PTS[be].x, AW_PTS[be].z, cw, ch);
+      var out = side * 46;
+      g.lineCap = 'round';
+      g.strokeStyle = 'rgba(238,208,150,0.55)'; g.lineWidth = 9;
+      g.beginPath(); g.moveTo(pT[0], pT[1] + 2);
+      g.quadraticCurveTo(pM[0] + out, pM[1] + 2, pB[0], pB[1] + 2); g.stroke();
+      g.strokeStyle = '#4a2f18'; g.lineWidth = 5.5;
+      g.beginPath(); g.moveTo(pT[0], pT[1]);
+      g.quadraticCurveTo(pM[0] + out, pM[1], pB[0], pB[1]); g.stroke();
+    }
+    endCurve(-1); endCurve(1);
+    // carved sockets at the 25 points
+    for (var p = 0; p < 25; p++) {
+      var q = boardToCanvas(AW_PTS[p].x, AW_PTS[p].z, cw, ch);
+      g.fillStyle = 'rgba(238,208,150,0.5)';
+      g.beginPath(); g.arc(q[0], q[1] + 2, 11, 0, 7); g.fill();
+      g.fillStyle = '#3c2413';
+      g.beginPath(); g.arc(q[0], q[1], 9, 0, 7); g.fill();
+      g.fillStyle = 'rgba(20,10,4,0.85)';
+      g.beginPath(); g.arc(q[0], q[1], 5.5, 0, 7); g.fill();
+    }
+    // border
+    g.strokeStyle = 'rgba(74,47,24,0.8)'; g.lineWidth = 6;
+    g.strokeRect(26, 26, cw - 52, ch - 52);
+    g.strokeStyle = 'rgba(238,208,150,0.35)'; g.lineWidth = 2;
+    g.strokeRect(38, 38, cw - 76, ch - 76);
+    var t = new THREE.CanvasTexture(c);
+    t.anisotropy = 4;
+    if (THREE.SRGBColorSpace !== undefined) t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }
+
+  /* ---------------- table, slab ---------------- */
+  var table = new THREE.Mesh(
+    new THREE.PlaneGeometry(70, 70),
+    new THREE.MeshStandardMaterial({ map: makeWoodTexture(), roughness: 0.85, metalness: 0.05 })
+  );
+  table.rotation.x = -Math.PI / 2; table.position.y = -1.65; table.receiveShadow = true;
+  scene.add(table);
+
+  var slabSide = new THREE.MeshStandardMaterial({ color: 0x6e5232, roughness: 0.9 });
+  var slabTop = new THREE.MeshStandardMaterial({ map: makeBoardTexture(), roughness: 0.72, metalness: 0.04 });
+  var slab = new THREE.Mesh(
+    new THREE.BoxGeometry(SLAB_W, 0.6, SLAB_D),
+    [slabSide, slabSide, slabTop, slabSide, slabSide, slabSide]
+  );
+  slab.position.y = -0.3; slab.castShadow = true; slab.receiveShadow = true;
+  scene.add(slab);
+  // dark plinth under the slab
+  var plinth = new THREE.Mesh(
+    new THREE.BoxGeometry(SLAB_W + 0.5, 0.22, SLAB_D + 0.5),
+    new THREE.MeshStandardMaterial({ color: 0x2a1a0c, roughness: 0.9 })
+  );
+  plinth.position.y = -0.71; plinth.castShadow = true; plinth.receiveShadow = true;
+  scene.add(plinth);
+
+  // candle prop: small clay dish + flame sprite glow
+  var dish = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.55, 0.7, 0.22, 24),
+    new THREE.MeshStandardMaterial({ color: 0x8a4a2e, roughness: 0.8 })
+  );
+  dish.position.set(7.5, -1.54, 4.5); dish.castShadow = true;
+  scene.add(dish);
+  var flameTex = (function () {
+    var c = document.createElement('canvas'); c.width = c.height = 64;
+    var g = c.getContext('2d');
+    var gr = g.createRadialGradient(32, 36, 2, 32, 32, 30);
+    gr.addColorStop(0, 'rgba(255,240,200,1)'); gr.addColorStop(0.35, 'rgba(255,180,90,0.85)');
+    gr.addColorStop(1, 'rgba(255,120,30,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(c);
+  })();
+  var flame = new THREE.Sprite(new THREE.SpriteMaterial({ map: flameTex, transparent: true, depthWrite: false }));
+  flame.scale.set(1.1, 1.5, 1); flame.position.set(7.5, -1.1, 4.5);
+  scene.add(flame);
+
+  /* ---------------- pieces ---------------- */
+  var TQ = 0x35a79e, CLAY = 0xb5533c;
+  var pieceMeshes = new Array(25).fill(null); // point -> mesh
+  var trayT = [], trayC = [];                 // captured meshes
+  function makePiece(player) {
+    var grp = new THREE.Group();
+    var col = player === 1 ? TQ : CLAY;
+    var body = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.30, 0.345, 0.16, 40),
+      new THREE.MeshStandardMaterial({ color: col, roughness: 0.45, metalness: 0.12 })
+    );
+    body.castShadow = true; body.receiveShadow = true;
+    grp.add(body);
+    if (player === 1) {
+      // pierced top, after Culin's pottery discs
+      var hole = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.085, 0.085, 0.03, 20),
+        new THREE.MeshStandardMaterial({ color: 0x0d1a18, roughness: 0.9 })
+      );
+      hole.position.y = 0.075;
+      grp.add(hole);
+      var rim = new THREE.Mesh(
+        new THREE.TorusGeometry(0.21, 0.018, 10, 40),
+        new THREE.MeshStandardMaterial({ color: 0x1e6a64, roughness: 0.5 })
+      );
+      rim.rotation.x = Math.PI / 2; rim.position.y = 0.081;
+      grp.add(rim);
+    } else {
+      var ring = new THREE.Mesh(
+        new THREE.TorusGeometry(0.21, 0.016, 10, 40),
+        new THREE.MeshStandardMaterial({ color: 0x7e3524, roughness: 0.6 })
+      );
+      ring.rotation.x = Math.PI / 2; ring.position.y = 0.081;
+      grp.add(ring);
+    }
+    return grp;
+  }
+  function pointPos(i, lift) {
+    return new THREE.Vector3(AW_PTS[i].x, 0.081 + (lift || 0), AW_PTS[i].z);
+  }
+  // invisible hit discs
+  var hitDiscs = [];
+  var hitMat = new THREE.MeshBasicMaterial({ visible: false });
+  for (var hi = 0; hi < 25; hi++) {
+    var hd = new THREE.Mesh(new THREE.CircleGeometry(0.52, 12), hitMat);
+    hd.rotation.x = -Math.PI / 2; hd.position.set(AW_PTS[hi].x, 0.02, AW_PTS[hi].z);
+    hd.userData.index = hi;
+    scene.add(hd); hitDiscs.push(hd);
+  }
+  // move markers
+  var markerMat = new THREE.MeshBasicMaterial({ color: 0xe6c27a, transparent: true, opacity: 0.8, depthWrite: false });
+  var markers = [];
+  for (var mi = 0; mi < 25; mi++) {
+    var mk = new THREE.Mesh(new THREE.RingGeometry(0.30, 0.44, 32), markerMat.clone());
+    mk.rotation.x = -Math.PI / 2; mk.position.set(AW_PTS[mi].x, 0.03, AW_PTS[mi].z);
+    mk.visible = false; scene.add(mk); markers.push(mk);
+  }
+  var selRing = new THREE.Mesh(
+    new THREE.RingGeometry(0.40, 0.52, 40),
+    new THREE.MeshBasicMaterial({ color: 0xe6c27a, transparent: true, opacity: 0.9, depthWrite: false })
+  );
+  selRing.rotation.x = -Math.PI / 2; selRing.visible = false; scene.add(selRing);
+
+  /* ---------------- tiny tween engine ---------------- */
+  var tweens = [];
+  function tween(obj, to, dur, opts) {
+    opts = opts || {};
+    tweens.push({
+      obj: obj, from: obj.position.clone(), to: to.clone(),
+      t: 0, dur: dur, arc: opts.arc || 0,
+      onDone: opts.onDone || null, delay: opts.delay || 0
+    });
+  }
+  function stepTweens(dt) {
+    for (var i = tweens.length - 1; i >= 0; i--) {
+      var tw = tweens[i];
+      if (tw.delay > 0) { tw.delay -= dt; continue; }
+      tw.t += dt / tw.dur;
+      var k = Math.min(tw.t, 1), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      tw.obj.position.lerpVectors(tw.from, tw.to, e);
+      if (tw.arc) tw.obj.position.y += Math.sin(k * Math.PI) * tw.arc;
+      if (k >= 1) { tweens.splice(i, 1); if (tw.onDone) tw.onDone(); }
+    }
+  }
+
+  /* ---------------- sound (tiny synth) ---------------- */
+  var AC = null, soundOn = true;
+  function beep(freq, dur, type, gain) {
+    if (!soundOn) return;
+    try {
+      if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
+      var o = AC.createOscillator(), g = AC.createGain();
+      o.type = type || 'triangle'; o.frequency.value = freq;
+      g.gain.setValueAtTime(gain || 0.06, AC.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, AC.currentTime + dur);
+      o.connect(g); g.connect(AC.destination);
+      o.start(); o.stop(AC.currentTime + dur);
+    } catch (e) { /* silent */ }
+  }
+  var sTick = function () { beep(660, 0.07, 'sine', 0.045); };
+  var sStep = function () { beep(196, 0.10, 'triangle', 0.07); beep(392, 0.06, 'sine', 0.03); };
+  var sLeap = function () { beep(147, 0.16, 'triangle', 0.09); beep(587, 0.10, 'sine', 0.05); };
+  var sWin = function () { beep(392, 0.14, 'sine', 0.06); setTimeout(function () { beep(523, 0.14, 'sine', 0.06); }, 140); setTimeout(function () { beep(659, 0.22, 'sine', 0.06); }, 280); };
+
+  /* ---------------- game state ---------------- */
+  var G = {
+    board: awSetup(6), turn: 1, mode: 'ai', size: 6,
+    history: [], selected: -1, contFrom: -1,
+    over: false, busy: false, quietMoves: 0, aiTimer: 0
+  };
+
+  var turnTag = document.getElementById('turnTag');
+  var statusEl = document.getElementById('status');
+  var logEl = document.getElementById('log');
+  var capTq = document.getElementById('capTq'), capCl = document.getElementById('capCl');
+  var btnMode = document.getElementById('btnMode'), btnSize = document.getElementById('btnSize');
+
+  function log(msg) {
+    var li = document.createElement('li'); li.textContent = msg;
+    logEl.insertBefore(li, logEl.firstChild);
+    while (logEl.children.length > 40) logEl.removeChild(logEl.lastChild);
+  }
+  function ptLabel(i) {
+    var p = AW_PTS[i];
+    var row = i < 8 ? 'far row' : (i < 17 ? 'middle row' : 'near row');
+    return row + ' ' + (p.x > 0 ? '+' : '') + p.x.toFixed(1);
+  }
+  function setStatus(s) { statusEl.textContent = s || ''; }
+  function refreshHud() {
+    var t = awCount(G.board, 1), c = awCount(G.board, 2);
+    var start = G.size;
+    capTq.textContent = 'Turquoise · ' + (start - t) + ' taken';
+    capCl.textContent = 'Clay · ' + (start - c) + ' taken';
+    if (!G.over) {
+      turnTag.textContent = awPieceName(G.turn) + ' to move';
+      turnTag.style.color = G.turn === 1 ? '#7fd4cc' : '#e08a6a';
+    }
+  }
+  function snapshot() {
+    return { board: G.board.slice(), turn: G.turn, quiet: G.quietMoves,
+             cont: G.contFrom, sel: G.selected, logLen: logEl.children.length };
+  }
+  function pushHistory() { G.history.push(snapshot()); if (G.history.length > 300) G.history.shift(); }
+
+  function clearPieces() {
+    for (var i = 0; i < 25; i++) {
+      if (pieceMeshes[i]) { scene.remove(pieceMeshes[i]); pieceMeshes[i] = null; }
+    }
+    var all = trayT.concat(trayC);
+    for (var j = 0; j < all.length; j++) scene.remove(all[j]);
+    trayT = []; trayC = [];
+    tweens.length = 0;
+  }
+  function layoutPieces(animate) {
+    for (var i = 0; i < 25; i++) {
+      var v = G.board[i];
+      if (v && !pieceMeshes[i]) {
+        var m = makePiece(v);
+        m.position.copy(pointPos(i, animate ? 3 : 0));
+        scene.add(m); pieceMeshes[i] = m;
+        if (animate) tween(m, pointPos(i), 0.5, {});
+      } else if (!v && pieceMeshes[i]) {
+        scene.remove(pieceMeshes[i]); pieceMeshes[i] = null;
+      } else if (v && pieceMeshes[i] && pieceMeshes[i].userData.player !== v) {
+        scene.remove(pieceMeshes[i]);
+        var m2 = makePiece(v); m2.position.copy(pointPos(i)); scene.add(m2); pieceMeshes[i] = m2;
+      }
+      if (pieceMeshes[i]) pieceMeshes[i].userData.player = v;
+    }
+  }
+  function hideMarkers() {
+    for (var i = 0; i < 25; i++) markers[i].visible = false;
+    selRing.visible = false;
+  }
+  function showMovesFor(sel) {
+    hideMarkers();
+    if (sel < 0 || G.over || G.busy) return;
+    var moves = awLegalMoves(G.board, G.turn, G.contFrom >= 0 ? G.contFrom : undefined)
+      .filter(function (m) { return m.from === sel; });
+    if (!moves.length) return;
+    selRing.position.set(AW_PTS[sel].x, 0.03, AW_PTS[sel].z);
+    selRing.visible = true;
+    for (var i = 0; i < moves.length; i++) markers[moves[i].to].visible = true;
+  }
+
+  function checkEnd() {
+    var enemy = G.turn === 1 ? 2 : 1;
+    var foeMoves = awLegalMoves(G.board, enemy);
+    if (!foeMoves.length) {
+      G.over = true;
+      var w = awPieceName(G.turn);
+      turnTag.textContent = w + ' wins';
+      turnTag.style.color = '#e6c27a';
+      setStatus(awPieceName(enemy) + ' has no legal move. ' + w + ' takes the game.');
+      log(w + ' wins — ' + awPieceName(enemy).toLowerCase() + ' cannot move.');
+      sWin(); hideMarkers();
+      return true;
+    }
+    if (G.quietMoves >= 80) {
+      var t = awCount(G.board, 1), c = awCount(G.board, 2);
+      G.over = true;
+      var msg = t === c ? 'The game is drawn.' :
+        (t > c ? 'Turquoise' : 'Clay') + ' holds more stones and takes the game.';
+      turnTag.textContent = t === c ? 'Draw' : (t > c ? 'Turquoise wins' : 'Clay wins');
+      setStatus('No capture in 80 moves. ' + msg);
+      log('Stalemate — ' + msg);
+      hideMarkers();
+      return true;
+    }
+    return false;
+  }
+
+  function afterMove(mv, mover) {
+    // mv already applied to G.board
+    var captured = mv.over >= 0;
+    if (captured) {
+      G.quietMoves = 0;
+      var mesh = pieceMeshes[mv.over];
+      pieceMeshes[mv.over] = null;
+      if (mesh) {
+        var victim = mover === 1 ? 2 : 1;
+        var tarr = victim === 1 ? trayT : trayC;
+        tarr.push(mesh);
+        var idx = tarr.length - 1, x = victim === 1 ? -6.9 : 6.9;
+        tween(mesh, new THREE.Vector3(x, -1.34, -1.9 + idx * 0.42), 0.55, { arc: 1.6 });
+      }
+      sLeap();
+      log(awPieceName(mover) + ' leaps ' + ptLabel(mv.from) + ' → ' + ptLabel(mv.to) + ', taking a ' +
+          awPieceName(mover === 1 ? 2 : 1).toLowerCase() + ' stone.');
+    } else {
+      G.quietMoves++;
+      sStep();
+    }
+    // must the same stone keep leaping?
+    if (captured) {
+      var cont = awLegalMoves(G.board, mover, mv.to);
+      if (cont.length) {
+        G.contFrom = mv.to; G.selected = mv.to;
+        setStatus(awPieceName(mover) + ' must keep leaping with the same stone.');
+        showMovesFor(mv.to);
+        refreshHud();
+        return; // turn continues
+      }
+    }
+    G.contFrom = -1; G.selected = -1;
+    hideMarkers();
+    G.turn = mover === 1 ? 2 : 1;
+    refreshHud();
+    if (checkEnd()) return;
+    var mustCap = awCaptures(G.board, G.turn).length > 0;
+    setStatus(awPieceName(G.turn) + ' to move.' + (mustCap ? ' A leap is available — it must be taken.' : ''));
+    if (G.mode === 'ai' && G.turn === 2 && !G.over) {
+      G.busy = true;
+      setStatus('Clay (the computer) is thinking…');
+      G.aiTimer = setTimeout(doAiMove, 650);
+    } else {
+      G.busy = false;
+    }
+  }
+
+  function doPlayerMove(mv) {
+    var mover = G.turn;
+    if (G.contFrom < 0) pushHistory(); // one history entry per full turn, not per leap
+    G.busy = true;
+    var mesh = pieceMeshes[mv.from];
+    pieceMeshes[mv.from] = null; pieceMeshes[mv.to] = mesh;
+    hideMarkers();
+    var arc = mv.over >= 0 ? 1.1 : 0.35;
+    tween(mesh, pointPos(mv.to), mv.over >= 0 ? 0.5 : 0.38, {
+      arc: arc,
+      onDone: function () {
+        G.board = awApply(G.board, mv);
+        G.busy = false;
+        afterMove(mv, mover);
+      }
+    });
+  }
+
+  function doAiMove() {
+    G.aiTimer = 0;
+    if (G.over) { G.busy = false; return; }
+    var mv = awBestMove(G.board, 2, 3);
+    if (!mv) { checkEnd(); G.busy = false; return; }
+    var mover = 2;
+    pushHistory();
+    G.busy = true;
+    // AI chain: execute the full multi-leap as one animated sequence
+    var seq = [mv];
+    if (mv.over >= 0 && mv.chain && mv.chain.length) seq = [mv].concat(mv.chain);
+    // rebuild full sequence from board states instead (robust)
+    seq = expandAiSequence(G.board, 2);
+    runAiSeq(seq, 0);
+  }
+
+  function expandAiSequence(board, me) {
+    // greedy best-first chain expansion mirroring awBestMove's choice
+    var seq = [], b = board.slice();
+    var first = awBestMove(b, me, 3);
+    if (!first) return seq;
+    seq.push(first); b = awApply(b, first);
+    var from = first.to;
+    while (first.over >= 0) {
+      var cont = awLegalMoves(b, me, from);
+      if (!cont.length) break;
+      var sub = awBestContinuation(b, me, from, 3);
+      var nxt = sub.chain[0];
+      seq.push(nxt); b = awApply(b, nxt); from = nxt.to;
+    }
+    return seq;
+  }
+
+  function runAiSeq(seq, k) {
+    if (k >= seq.length || G.over) { G.busy = false; return; }
+    var mv = seq[k], mover = 2;
+    var mesh = pieceMeshes[mv.from];
+    pieceMeshes[mv.from] = null; pieceMeshes[mv.to] = mesh;
+    tween(mesh, pointPos(mv.to), mv.over >= 0 ? 0.5 : 0.38, {
+      arc: mv.over >= 0 ? 1.1 : 0.35,
+      onDone: function () {
+        G.board = awApply(G.board, mv);
+        // animate any capture immediately
+        if (mv.over >= 0) {
+          var victim = pieceMeshes[mv.over];
+          pieceMeshes[mv.over] = null;
+          if (victim) {
+            var tarr = victim.userData.player === 1 ? trayT : trayC;
+            tarr.push(victim);
+            var idx = tarr.length - 1, x = victim.userData.player === 1 ? -6.9 : 6.9;
+            tween(victim, new THREE.Vector3(x, -1.34, -1.9 + idx * 0.42), 0.55, { arc: 1.6 });
+          }
+          G.quietMoves = 0; sLeap();
+          log('Clay leaps ' + ptLabel(mv.from) + ' → ' + ptLabel(mv.to) + ', taking a turquoise stone.');
+        } else { G.quietMoves++; sStep(); }
+        refreshHud();
+        var more = mv.over >= 0 ? awLegalMoves(G.board, 2, mv.to) : [];
+        if (more.length && k + 1 < seq.length) {
+          runAiSeq(seq, k + 1);
+        } else {
+          G.turn = 1; G.contFrom = -1; G.selected = -1;
+          G.busy = false;
+          refreshHud();
+          if (checkEnd()) return;
+          var mustCap = awCaptures(G.board, 1).length > 0;
+          setStatus('Turquoise to move.' + (mustCap ? ' A leap is available — it must be taken.' : ''));
+        }
+      }
+    });
+  }
+
+  /* ---------------- input: tap vs drag ---------------- */
+  var ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
+  var downX = 0, downY = 0, dragging = false, lastX = 0, lastY = 0;
+  canvas.addEventListener('pointerdown', function (e) {
+    downX = e.clientX; downY = e.clientY; lastX = e.clientX; lastY = e.clientY;
+    dragging = false;
+    canvas.setPointerCapture && canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    if (e.buttons === 0 && e.pointerType === 'mouse') return;
+    if (typeof e.buttons !== 'undefined' && e.buttons === 0) return;
+    var dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > 6) dragging = true;
+    if (dragging) {
+      camYaw -= dx * 0.005;
+      camPitch += dy * 0.004;
+      camPitch = Math.max(0.35, Math.min(1.30, camPitch));
+      placeCamera();
+    }
+  });
+  canvas.addEventListener('pointerup', function (e) {
+    if (!dragging && Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) <= 6) handleTap(e);
+    dragging = false;
+  });
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    camDist = Math.max(8, Math.min(20, camDist + e.deltaY * 0.01));
+    placeCamera();
+  }, { passive: false });
+
+  function handleTap(e) {
+    if (G.over || G.busy) return;
+    if (G.mode === 'ai' && G.turn === 2) return;
+    var r = canvas.getBoundingClientRect();
+    ptr.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+    ptr.y = -((e.clientY - r.top) / r.height) * 2 + 1;
+    ray.setFromCamera(ptr, camera);
+    var hits = ray.intersectObjects(hitDiscs);
+    if (!hits.length) { G.selected = -1; hideMarkers(); return; }
+    var idx = hits[0].object.userData.index;
+    if (G.contFrom >= 0) {
+      // must continue with the leaping stone: only a target tap counts
+      var cont = awLegalMoves(G.board, G.turn, G.contFrom);
+      for (var i = 0; i < cont.length; i++) {
+        if (cont[i].to === idx) { doPlayerMove(cont[i]); return; }
+      }
+      sTick();
+      return;
+    }
+    if (G.selected >= 0) {
+      var moves = awLegalMoves(G.board, G.turn).filter(function (m) { return m.from === G.selected; });
+      for (var j = 0; j < moves.length; j++) {
+        if (moves[j].to === idx) { doPlayerMove(moves[j]); return; }
+      }
+    }
+    if (G.board[idx] === G.turn) {
+      G.selected = idx; sTick();
+      showMovesFor(idx);
+      var any = awLegalMoves(G.board, G.turn).some(function (m) { return m.from === idx; });
+      if (!any) setStatus('That stone has no move. ' + (awCaptures(G.board, G.turn).length ? 'A leap elsewhere is compulsory.' : ''));
+    } else {
+      G.selected = -1; hideMarkers();
+    }
+  }
+
+  /* ---------------- controls ---------------- */
+  document.getElementById('btnNew').addEventListener('click', function () { newGame(); });
+  document.getElementById('btnUndo').addEventListener('click', function () {
+    if (G.busy) return;
+    if (G.aiTimer) { clearTimeout(G.aiTimer); G.aiTimer = 0; }
+    if (!G.history.length) { setStatus('Nothing to undo.'); return; }
+    var s = G.history.pop();
+    // in AI mode, also pop the AI's reply so it is the human's turn again
+    if (G.mode === 'ai' && s.turn === 2 && G.history.length) s = G.history.pop();
+    G.board = s.board; G.turn = s.turn; G.quietMoves = s.quiet;
+    G.contFrom = s.cont; G.selected = s.sel; G.over = false; G.busy = false;
+    clearPieces(); layoutPieces(false);
+    while (logEl.children.length > s.logLen) logEl.removeChild(logEl.lastChild);
+    hideMarkers(); refreshHud();
+    if (G.contFrom >= 0) {
+      setStatus(awPieceName(G.turn) + ' must keep leaping with the same stone.');
+      showMovesFor(G.contFrom);
+    } else {
+      setStatus(awPieceName(G.turn) + ' to move.');
+    }
+    log('Undone.');
+    sTick();
+  });
+  btnMode.addEventListener('click', function () {
+    G.mode = G.mode === 'ai' ? '2p' : 'ai';
+    btnMode.textContent = 'Opponent: ' + (G.mode === 'ai' ? 'Computer' : 'Second player');
+    btnMode.classList.toggle('active', G.mode === '2p');
+    newGame();
+  });
+  btnSize.addEventListener('click', function () {
+    G.size = G.size === 6 ? 12 : 6;
+    btnSize.textContent = 'Pieces: ' + G.size + ' each';
+    newGame();
+  });
+  var sndBtn = document.createElement('button');
+  sndBtn.textContent = 'Sound: on';
+  sndBtn.addEventListener('click', function () {
+    soundOn = !soundOn;
+    sndBtn.textContent = 'Sound: ' + (soundOn ? 'on' : 'off');
+  });
+  document.querySelector('.bar').appendChild(sndBtn);
+  document.getElementById('btnHow').addEventListener('click', function () {
+    document.getElementById('tutOverlay').classList.add('open');
+  });
+  document.getElementById('btnCloseTut').addEventListener('click', function () {
+    document.getElementById('tutOverlay').classList.remove('open');
+  });
+
+  function newGame() {
+    if (G.aiTimer) { clearTimeout(G.aiTimer); G.aiTimer = 0; }
+    G.board = awSetup(G.size); G.turn = 1; G.history = [];
+    G.selected = -1; G.contFrom = -1; G.over = false; G.busy = false; G.quietMoves = 0;
+    clearPieces(); layoutPieces(true);
+    logEl.innerHTML = '<li>New game — ' + G.size + ' stones each. Turquoise moves first.</li>';
+    hideMarkers(); refreshHud();
+    setStatus('Turquoise to move. The only empty point is the centre — the first move walks into a capture.');
+    turnTag.style.color = '#7fd4cc';
+  }
+
+  /* ---------------- main loop ---------------- */
+  var clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    var dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime;
+    stepTweens(dt);
+    candle.intensity = 0.85 + Math.sin(t * 13) * 0.07 + Math.sin(t * 7.3 + 1) * 0.06;
+    flame.material.opacity = 0.85 + Math.sin(t * 11) * 0.1;
+    flame.scale.set(1.05 + Math.sin(t * 9) * 0.06, 1.45 + Math.sin(t * 12) * 0.08, 1);
+    for (var i = 0; i < 25; i++) {
+      if (markers[i].visible) markers[i].material.opacity = 0.55 + 0.35 * Math.sin(t * 4 + i);
+    }
+    if (selRing.visible) {
+      var s = 1 + 0.06 * Math.sin(t * 4);
+      selRing.scale.set(s, s, 1);
+    }
+    renderer.render(scene, camera);
+  }
+
+  resize(); placeCamera();
+  layoutPieces(false);
+  refreshHud();
+  animate();
+  veil.classList.add('hidden');
+})();
+}
+
+</script>
+</body>
+</html>
