@@ -264,7 +264,7 @@
       "area": "Games",
       "title": "Hit-feel, part 1: The Firmament + Antithesis (PR #70, Item 31 #5)",
       "status": "needs-work",
-      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; waiting on independent review, GitHub checks, then Carter's yes. Other games are later parts.",
+      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; independent review passed 2026-10-19 (0 blocking findings). Waiting on Lighthouse, then Carter's yes. Other games are later parts.",
       "where": "loop/hit-feel",
       "paths": [
         "docs/assets/games/feel.js",

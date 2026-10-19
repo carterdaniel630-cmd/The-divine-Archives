@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-19 ~05:10 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-19 ~05:15 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
 `briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`, Muse's 2026-10-18 evening previews (7). **Deployed (`main`):** `77f6444` = batch A + museum
 phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
@@ -8,6 +8,12 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-19 ~05:15: **PR #70 independently reviewed** (hit-feel part 1, `ea70b77`) by a run that wrote none of it:
+  0 blocking findings, 1 optional note (iPhone sound stays off after re-enabling it mid-visit; fix can ride part 2).
+  Clean build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone play of both games in both motion
+  modes, 0 script errors, 0 shaken frames under reduced motion. 6/7 GitHub checks green, Lighthouse still running, so not
+  yet "mergeable now" (reply `2026-10-19-pr70-independent-review.md`). Items per run (Item 32): 1 item. Note: this run's
+  lock commit `19d006b` carries a model name in its trailer; history not rewritten.
 - 2026-10-19 ~05:10: **Hit-feel, part 1** (Item 31 #5) on `loop/hit-feel` @ `ea70b77`, **PR #70**: shared kit
   `docs/assets/games/feel.js` (freeze on impact, shake, soft flash, synthesized sound, phone buzz) on The Firmament and
   Antithesis; reduced motion respected (no shake/swell/recoil). Clean build, review-checks 9/9 (0 warnings), 17 verify,
@@ -72,10 +78,11 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
 0. **PR #69 merge** once Carter says yes for it (Needs Carter 0). A run then re-checks it still fast-forwards and is green.
-1. **Independent review of PR #70** (hit-feel part 1, `ea70b77`) by a run that wrote none of it; wait for its GitHub
-   checks (Lighthouse included if triggered) without holding the lock. Pass → list mergeable, waiting on Carter's yes.
+1. **PR #70 Lighthouse re-check** (quick): review passed; if Lighthouse on `ea70b77` is green, move #70 to "Mergeable
+   now" in MERGEABLE (waiting on Carter's yes). If red, root-cause it. Then go straight on to 1b in the same run.
 1b. **Hit-feel part 2** (Item 31 #5): add `feel.js` to Ouroboros, Labyrinth, Ziggurat, then the board games' captures
-   (Chess, Dominion). Build on top of `loop/hit-feel` or after #70 merges.
+   (Chess, Dominion). Build on top of `loop/hit-feel` or after #70 merges. Include the review's optional note: resume
+   audio on every tap, not only the first (`2026-10-19-pr70-independent-review.md`).
 2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
    tablet, Crown of the Kandake, Etruscan mirror, staged in `handoff/previews/`. Analyze and rebuild better to the Relic
    Standard, one per run. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
@@ -101,7 +108,8 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
-00. **Hit-feel part 1 (PR #70)**: once its review passes, merge it: **yes / not now**. Then play The Firmament and
+00. **Hit-feel part 1 (PR #70)**: review passed (0 blocking findings); once its last check (Lighthouse) is green, merge
+   it: **yes / not now**. Then play The Firmament and
    Antithesis on your phone and say if hits feel right, too strong, or too weak.
 0. **PR #69 (plain-word names on the code map) passed its independent review.** Merge it: **yes / not now**. Also open
    the map on your phone (link in `2026-10-18-graphify-map-named.md`) and say if it is readable.
