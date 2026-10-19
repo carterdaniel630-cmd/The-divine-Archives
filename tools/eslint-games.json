@@ -4,6 +4,7 @@
   "parserOptions": { "ecmaVersion": 2021, "sourceType": "script" },
   "globals": {
     "ArchiveGames": "writable",
+    "ArchiveFeel": "readonly",
     "ARCHIVE": "readonly",
     "PLATE_ART": "readonly",
     "PLATES": "readonly",
