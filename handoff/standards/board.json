@@ -264,7 +264,7 @@
       "area": "Games",
       "title": "Hit-feel, part 1: The Firmament + Antithesis (PR #70, Item 31 #5)",
       "status": "needs-work",
-      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; independent review passed 2026-10-19 (0 blocking findings). Lighthouse still running at 05:25 UTC, then Carter's yes. Part 2 (PR #71) is stacked on it.",
+      "why": "Built on loop/hit-feel @ ea70b77, all local checks green; independent review passed 2026-10-19 (0 blocking findings); all 7 GitHub checks green incl. Lighthouse (05:16 UTC). Mergeable now, waiting only on Carter's yes. Part 2 (PR #71) is stacked on it.",
       "where": "loop/hit-feel",
       "paths": [
         "docs/assets/games/feel.js",
@@ -278,7 +278,7 @@
       "area": "Games",
       "title": "Hit-feel, part 2: Ouroboros, Labyrinth, Ziggurat (PR #71, Item 31 #5)",
       "status": "needs-work",
-      "why": "Built on loop/hit-feel-2 @ 6c4efbc (stacked on #70), all local checks green, headless phone play clean, 0 shake under reduced motion; includes the #70 review's audio-resume fix. Needs an independent review, green GitHub checks, #70 merged first, then Carter's yes. Chess and Dominion captures are part 3.",
+      "why": "Built on loop/hit-feel-2 @ 6c4efbc (stacked on #70), all local checks green, headless phone play clean, 0 shake under reduced motion; includes the #70 review's audio-resume fix. Independent review passed 2026-10-19 (0 findings). Needs Lighthouse green (running at 05:23 UTC), #70 merged first, then Carter's yes. Chess and Dominion captures are part 3.",
       "where": "loop/hit-feel-2",
       "paths": [
         "docs/assets/games/feel.js",

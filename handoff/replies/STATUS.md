@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-19 ~05:30 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-19 05:25 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
 `briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`, Muse's 2026-10-18 evening previews (7). **Deployed (`main`):** `77f6444` = batch A + museum
 phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
@@ -8,6 +8,12 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-19 05:16–05:25: **PR #71 independently reviewed** (hit-feel part 2, `6c4efbc`) by a run that wrote none of it:
+  **0 findings**. Clean build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone play of all three
+  games in both motion modes, 0 script errors, **0 shaken frames under reduced motion**; Ziggurat's new redraw rule draws
+  while a hit shows and then stops; the iPhone sound fix reproduced independently (0 → 1). 6/7 GitHub checks green,
+  Lighthouse still running at 05:23 (reply `2026-10-19-pr71-independent-review.md`). Same run: **PR #70 Lighthouse
+  finished green** (05:16): #70 now 7/7 green and listed **mergeable now**. Items per run (Item 32): 1 item.
 - 2026-10-19 ~05:30: **Hit-feel, part 2** (Item 31 #5) on `loop/hit-feel-2` @ `6c4efbc`, **PR #71** (stacked on #70):
   Ouroboros, Labyrinth, Ziggurat get swallow / offering / lamp / shade-caught / landing / course / lose impacts; the #70
   review's audio note fixed (audio resumes on every tap; reproduced 0 → fixed 1). Clean build, review-checks 9/9
@@ -84,10 +90,9 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
 0. **PR #69 merge** once Carter says yes for it (Needs Carter 0). A run then re-checks it still fast-forwards and is green.
-1. **PR #70 Lighthouse re-check** (quick): still running at 05:25 UTC after 30 min. If green, move #70 to "Mergeable
-   now" (waiting on Carter's yes). If red, or still running after another run, root-cause it (re-run once if cancelled).
-1a. **Independent review of PR #71** (hit-feel part 2, `6c4efbc`) by a run that wrote none of it, against
-   `reviews/REVIEWER.md` §3–§4, then wait (without the lock) for its GitHub checks. Then 1b.
+0b. **PR #70 merge** once Carter says yes for it (Needs Carter 00). A run then re-checks it still fast-forwards and is green.
+1. **PR #71 Lighthouse re-check** (quick): still running at 05:23 UTC (started 05:14). If green, #71 waits only on #70
+   merging, a fast-forward re-check, and Carter's yes. If red, root-cause it; re-run once only if cancelled.
 1b. **Hit-feel part 3** (Item 31 #5): captures in Chess and Dominion, on top of `loop/hit-feel-2`.
 2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
    tablet, Crown of the Kandake, Etruscan mirror, staged in `handoff/previews/`. Analyze and rebuild better to the Relic
@@ -114,11 +119,10 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
-000. **Hit-feel part 2 (PR #71)** is built and locally green; it will come to you for a yes after its independent
-   review and checks, and after #70. Nothing to do yet; when it reaches you, play Ouroboros, the Labyrinth and Ziggurat.
-00. **Hit-feel part 1 (PR #70)**: review passed (0 blocking findings); once its last check (Lighthouse) is green, merge
-   it: **yes / not now**. Then play The Firmament and
-   Antithesis on your phone and say if hits feel right, too strong, or too weak.
+000. **Hit-feel part 2 (PR #71)** passed its independent review (0 findings); its last check (Lighthouse) is still
+   running. It comes to you right after #70. Nothing to do yet.
+00. **Hit-feel part 1 (PR #70) is ready**: review passed, every check green incl. Lighthouse. Merge it: **yes / not now**.
+   Then play The Firmament and Antithesis on your phone and say if hits feel right, too strong, or too weak.
 0. **PR #69 (plain-word names on the code map) passed its independent review.** Merge it: **yes / not now**. Also open
    the map on your phone (link in `2026-10-18-graphify-map-named.md`) and say if it is readable.
    Optional: add chapters and Vault prose to the map (needs an AI reading pass) — **yes / not now**.
