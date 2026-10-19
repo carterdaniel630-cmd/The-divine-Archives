@@ -18,6 +18,7 @@
      if (feel.tick(dt)) { ...frozen: skip the physics step, still draw... }
      feel.begin(cx); ...draw the moving scene...; feel.end(cx, W, H);
      feel.reduced                         // true when reduced motion is asked
+     feel.active                          // true while a shake/flash/freeze is showing
    ========================================================================== */
 (function () {
   "use strict";
@@ -42,11 +43,11 @@
     } catch (e) { return false; }
     return true;
   }
-  // phones only start audio inside a tap: open it on the first one
+  // phones only start audio inside a tap: open (or resume) it on every tap, so turning
+  // sound back on mid-visit works without a reload (iPhones also suspend it when idle)
   function unlock() {
-    if (unlocked) return; unlocked = true;
-    ["pointerdown", "touchstart", "keydown"].forEach(function (t) { document.removeEventListener(t, unlock, true); });
-    ensure();
+    unlocked = true;
+    if (!ac || ac.state === "suspended") ensure();
   }
   ["pointerdown", "touchstart", "keydown"].forEach(function (t) { document.addEventListener(t, unlock, true); });
 
@@ -73,6 +74,14 @@
     tick: function (p) { noise(0.02, 0.08, 2600 * p, 2); },
     // two rising notes: a light lit, a point won
     chime: function (p) { tone(660 * p, 0.22, "sine", 0.16); tone(990 * p, 0.32, "sine", 0.14, null, 0.09); },
+    // a soft swallow: the serpent takes a symbol
+    gulp: function (p) { tone(260 * p, 0.14, "sine", 0.2, 520 * p); noise(0.03, 0.06, 1400 * p, 1.4); },
+    // a tiny clink: an offering gathered (quiet: it fires on almost every step)
+    coin: function (p) { tone(1320 * p, 0.05, "triangle", 0.035); },
+    // clay settling: a block lands
+    thud: function (p) { tone(110 * p, 0.1, "sine", 0.24, 60 * p); noise(0.04, 0.1, 500 * p, 1); },
+    // a course laid: a low knock under a rising note
+    course: function (p) { noise(0.12, 0.14, 700 * p, 0.9); tone(392 * p, 0.2, "triangle", 0.12, null, 0.03); tone(587 * p, 0.3, "sine", 0.12, null, 0.11); },
     // a falling tone: the ball lost
     lose: function (p) { tone(300 * p, 0.45, "sawtooth", 0.07, 70 * p); noise(0.2, 0.08, 400, 0.8); }
   };
@@ -89,6 +98,10 @@
     sling:  { stop: 0.03,  shake: 2.5, flash: 0.06, sound: "sling",  gap: 0.08 },
     bumper: { stop: 0.045, shake: 3.5, flash: 0.1,  sound: "bumper", gap: 0.05 },
     paddle: { stop: 0.04,  shake: 3,   flash: 0.08, sound: "paddle", gap: 0.08 },
+    coin:   { stop: 0,     shake: 0,   flash: 0,    sound: "coin",   gap: 0.05 },
+    eat:    { stop: 0,     shake: 1.8, flash: 0.07, sound: "gulp",   gap: 0.05 },
+    land:   { stop: 0,     shake: 1.5, flash: 0,    sound: "thud",   gap: 0.05 },
+    course: { stop: 0.06,  shake: 3.5, flash: 0.12, sound: "course", gap: 0.1 },
     big:    { stop: 0.09,  shake: 6,   flash: 0.22, sound: "chime",  gap: 0.2, buzz: 18 },
     lose:   { stop: 0.14,  shake: 8,   flash: 0.26, sound: "lose",   gap: 0.3, buzz: 40 }
   };
@@ -97,6 +110,8 @@
     var shake = 0, stop = 0, flash = 0, flashCol = "255,236,196", lastAt = {}, clock = 0, lastStop = -1, dx = 0, dy = 0;
     var api = {
       get reduced() { return reduced(); },
+      // true while a shake or flash is still showing (games that redraw only on change keep drawing)
+      get active() { return shake > 0 || flash > 0.005 || stop > 0; },
       // an impact. opts: { pitch, scale (0..2, how hard), color: "r,g,b" for the flash }
       hit: function (kind, opts) {
         var k = KINDS[kind]; if (!k) return; opts = opts || {};
