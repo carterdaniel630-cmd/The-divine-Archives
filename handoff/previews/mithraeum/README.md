@@ -1,1 +1,17 @@
-IyBUaGUgTWl0aHJhZXVtIOKAlCBNdXNlLXNpZGUgYnVpbGQgZm9yIENsYXVkZQoKKipTdGF0dXM6KiogQ2FydGVyIEFQUFJPVkVEIDIwMjYtMTAtMTguIFN0YXJ0aW5nIHBvaW50IGZvciBDbGF1ZGUgdG8gc3VycGFzcy4KCioqV2hhdCBpdCBpczoqKiBGaXJzdC1wZXJzb24gd2Fsa3Rocm91Z2ggb2YgYSBNaXRocmFpYyBjYXZlLXRlbXBsZS4gRGVzY2VuZCBzdGFpcnMgaW50byBhIGJhcnJlbC12YXVsdGVkIHVuZGVyZ3JvdW5kIGhhbGwsIHdhbGsgdGhlIGNlbnRyYWwgYWlzbGUgYmV0d2VlbiByYWlzZWQgZGluaW5nIGJlbmNoZXMgKHBvZGlhKSwgYXBwcm9hY2ggdGhlIHRhdXJvY3RvbnkgcmVsaWVmIGluIGl0cyBhcmNoZWQgY3VsdCBuaWNoZS4gVG9yY2hsaWdodCBmbGlja2VyLCBkcmlmdGluZyBkdXN0LCBicmF6aWVycy4KCioqQmFzZWQgb246KiogU2FuIENsZW1lbnRlIFJvbWUsIENhcnJhd2J1cmdoIChIYWRyaWFuJ3MgV2FsbCksIE9zdGlhIE1pdGhyYWV1bSBvZiBGZWxpY2lzc2ltdXMuIFNldmVuIGdyYWRlcyBmcm9tIFN0LiBKZXJvbWUncyBsaXN0OyBncmFkZSBzeW1ib2xzIGZyb20gdGhlIEZlbGljaXNzaW11cyBtb3NhaWMuCgoqKlNldmVuIGdyYWRlcyAob2JzZXJ2YXRpb25hbCwgbm90IGluaXRpYXRpb24pOioqIENvcmF4IOKGkiBOeW1waHVzIOKGkiBNaWxlcyDihpIgTGVvIOKGkiBQZXJzZXMg4oaSIEhlbGlvZHJvbXVzIOKGkiBQYXRlci4KCioqQmluZGluZyBob25lc3R5OioqIE5vIE1pdGhyYWljIHNjcmlwdHVyZSBzdXJ2aXZlcyDigJQgc3RhdGVkIG9uIGVudHJ5IHNjcmVlbiBhbmQgZXZlcnkgZ3JhZGUgcGFuZWwuIEFsbCByaXRlIGNvbnRlbnQgbWFya2VkICJSZWNvbnN0cnVjdGlvbi4iIFZpc2l0b3Igd2l0bmVzc2VzLCBuZXZlciBwZXJmb3Jtcy4KCioqQ29udHJvbHM6KiogV0FTRC9hcnJvd3MgKyBtb3VzZSBsb29rIChwb2ludGVyLWxvY2spLCB0b3VjaCBwYWQgKyBkcmFnIG9uIHBob25lcy4gQ2xpY2sgZ3JhZGUgc3RvbmVzIGZvciBkZXRhaWwgcGFuZWxzLgoKKipUZWNoOioqIGBtaXRocmFldW0uaHRtbGAgcmVmZXJlbmNlcyBgdGhyZWUubWluLmpzYCB2aWEgYDxzY3JpcHQgc3JjPSJ0aHJlZS5taW4uanMiPmAg4oCUICoqc291cmNlIHRocmVlLmpzIFVNRCByMTUwKyBhbmQgcGxhY2UgaXQgYWxvbmdzaWRlIGFzIGB0aHJlZS5taW4uanNgKiogKHRoZSA2NTVLQiBsaWJyYXJ5IHdhcyBub3QgcHVzaGVkIOKAlCBleGNlZWRzIHRvb2wgc2l6ZSBsaW1pdHMpLiBaZXJvIENETiBvdGhlcndpc2UuIFByb2NlZHVyYWwgY2FudmFzIHRleHR1cmVzLiBEUFIgY2FwcGVkIDEuNSBkZXNrdG9wIC8gMS4wIG1vYmlsZS4KCioqRm9yIENsYXVkZSdzIHJlYnVpbGQ6KiogRG8gdGhlIHNlZS1maXJzdCBjYXB0dXJlIHBhc3MuIEtlZXAgZXZlcnkgaG9uZXN0eSBsYWJlbC4gV2l0bmVzcy1vbmx5IGZyYW1pbmcgaXMgbm9uLW5lZ290aWFibGUuCg==
+# The Mithraeum — Muse-side build for Claude
+
+**Status:** Carter APPROVED 2026-10-18. Starting point for Claude to surpass.
+
+**What it is:** First-person walkthrough of a Mithraic cave-temple. Descend stairs into a barrel-vaulted underground hall, walk the central aisle between raised dining benches (podia), approach the tauroctony relief in its arched cult niche. Torchlight flicker, drifting dust, braziers.
+
+**Based on:** San Clemente Rome, Carrawburgh (Hadrian's Wall), Ostia Mithraeum of Felicissimus. Seven grades from St. Jerome's list; grade symbols from the Felicissimus mosaic.
+
+**Seven grades (observational, not initiation):** Corax → Nymphus → Miles → Leo → Perses → Heliodromus → Pater.
+
+**Binding honesty:** No Mithraic scripture survives — stated on entry screen and every grade panel. All rite content marked "Reconstruction." Visitor witnesses, never performs.
+
+**Controls:** WASD/arrows + mouse look (pointer-lock), touch pad + drag on phones. Click grade stones for detail panels.
+
+**Tech:** `mithraeum.html` references `three.min.js` via `<script src="three.min.js">` — **source three.js UMD r150+ and place it alongside as `three.min.js`** (the 655KB library was not pushed — exceeds tool size limits). Zero CDN otherwise. Procedural canvas textures. DPR capped 1.5 desktop / 1.0 mobile.
+
+**For Claude's rebuild:** Do the see-first capture pass. Keep every honesty label. Witness-only framing is non-negotiable.

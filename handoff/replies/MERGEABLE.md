@@ -4,15 +4,16 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-18 ~23:05 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
+**As of:** 2026-10-19 ~04:00 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
 
 ## Mergeable now
-(none)
+- **Graphify plain-word names** (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`, nothing on
+  the live site): independent review 2026-10-19, 0 findings (`2026-10-19-pr69-independent-review.md`); local checks green;
+  6/6 GitHub checks green (Lighthouse not triggered by design); fast-forwards onto `main` `77f6444`.
+  **Waiting only on Carter's yes for this item.**
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- Graphify plain-word names (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`): local checks
-  green; all 6 GitHub checks green on `09f48b3` (incl. `graph`, which ran the namer in CI; 22:55 UTC). Missing:
-  independent review by a run that wrote none of it; Carter's yes for this item.
+(none)
 
 ## Merged
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).

@@ -1,1 +1,19 @@
-IyBUaGUgQ2F2ZSBXYWxsIOKAlCBDbGF1ZGUgcmVidWlsZCBwYWNrYWdlCgoqKlN0YXR1czoqKiBDYXJ0ZXItYXBwcm92ZWQgMjAyNi0xMC0xOC4gTXVzZS1zaWRlIHN0YXJ0aW5nIHBvaW50IGZvciBDbGF1ZGUgdG8gc3VycGFzcy4KCiMjIEZpbGVzCi0gYGNhdmUtcGFpbnRpbmctd2FsbC5odG1sYCDigJQgdGhlIGNvbXBsZXRlIGhhbmRzLW9uIGV4cGVyaWVuY2UgKDI5IEtCKQotIGBhcm1vcnktZW50cnkubWRgIOKAlCBmdWxsIHJ1bmRvd246IHdoYXQgaXQgaXMsIHNvdXJjZXMsIHBhaW50aW5nIHRvb2xzLCBob25lc3R5IGxhYmVscywgcmVidWlsZCBub3RlcwoKIyMgdGhyZWUuanMg4oCUIE5PVCBpbmNsdWRlZApgdGhyZWUubWluLmpzYCAoNjU1IEtCKSBleGNlZWRzIHRoZSBzdGFnaW5nIGZpbGUtc2l6ZSBsaW1pdCBhbmQgaXMgKipub3QqKiBwdXNoZWQuCioqQ2xhdWRlOiBzb3VyY2UgVGhyZWUuanMgVU1EIHIxNTArIGFuZCBwbGFjZSBpdCBhbG9uZ3NpZGUgYGNhdmUtcGFpbnRpbmctd2FsbC5odG1sYCBhcyBgdGhyZWUubWluLmpzYC4qKgpUaGUgSFRNTCBsb2FkcyBpdCB2aWEgYDxzY3JpcHQgc3JjPSJ0aHJlZS5taW4uanMiPjwvc2NyaXB0PmAg4oCUIGEgcGxhaW4gcmVsYXRpdmUgcGF0aCwgbm8gQ0ROLgoKIyMgV2hhdCBpdCBpcwpBIDNEIGNhdmUgY2hhbWJlciB3aGVyZSB0aGUgdmlzaXRvciBwYWludHMgb24gYW4gdW5ldmVuIHJvY2sgd2FsbCBieSBmaXJlbGlnaHQg4oCUIGZpbmdlcgpkYXVicywgaGFuZCBzdGVuY2lscyAoYmxvdy1hcm91bmQgbmVnYXRpdmUgLyBwcmVzcyBwb3NpdGl2ZSksIGJsb3duIHBpZ21lbnQgbWlzdC4gUmVkL3llbGxvdwpvY2hyZSArIGNoYXJjb2FsLiBXYWxsIGtlZXBzIG1hcmtzIGZvciB0aGUgc2Vzc2lvbjsgd2FzaCByZXN0b3JlcyBzZWVkZWQgYW5jaWVudCBtYXJrcy4KQmluZGluZyBob25lc3R5OiBzdHlsZSBvZiB0aGUgdHJhZGl0aW9uLCBtZWFuaW5ncyB1bmtub3duICgidGhlIGNhdmVzIGtlZXAgdGhlaXIgc2VjcmV0IikuClNlZSBgYXJtb3J5LWVudHJ5Lm1kYCBmb3IgdGhlIGZ1bGwgYnJpZWYuCg==
+# The Cave Wall — Claude rebuild package
+
+**Status:** Carter-approved 2026-10-18. Muse-side starting point for Claude to surpass.
+
+## Files
+- `cave-painting-wall.html` — the complete hands-on experience (29 KB)
+- `armory-entry.md` — full rundown: what it is, sources, painting tools, honesty labels, rebuild notes
+
+## three.js — NOT included
+`three.min.js` (655 KB) exceeds the staging file-size limit and is **not** pushed.
+**Claude: source Three.js UMD r150+ and place it alongside `cave-painting-wall.html` as `three.min.js`.**
+The HTML loads it via `<script src="three.min.js"></script>` — a plain relative path, no CDN.
+
+## What it is
+A 3D cave chamber where the visitor paints on an uneven rock wall by firelight — finger
+daubs, hand stencils (blow-around negative / press positive), blown pigment mist. Red/yellow
+ochre + charcoal. Wall keeps marks for the session; wash restores seeded ancient marks.
+Binding honesty: style of the tradition, meanings unknown ("the caves keep their secret").
+See `armory-entry.md` for the full brief.

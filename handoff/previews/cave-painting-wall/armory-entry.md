@@ -1,1 +1,40 @@
-IyBBcm1vcnkgRW50cnkg4oCUIFRoZSBDYXZlIFdhbGwKCioqV2hhdCBpdCBpczoqKiBIYW5kcy1vbiBleHBlcmllbmNlICMxMSBmb3IgdGhlIERpdmluZSBBcmNoaXZlcy4gQSAzRCBjYXZlIGNoYW1iZXIgd2hlcmUgdGhlCnZpc2l0b3IgcGFpbnRzIG9uIGFuIHVuZXZlbiByb2NrIHdhbGwgYnkgZmlyZWxpZ2h0LCB1c2luZyB0aGUgc2FtZSBmYW1pbGllcyBvZiB0ZWNobmlxdWUgYXMgdGhlClBhbGVvbGl0aGljIHBhaW50ZXJzOiBmaW5nZXJ0aXAgZGF1YnMsIGhhbmQgc3RlbmNpbHMsIGFuZCBwaWdtZW50IGJsb3duIGFzIGEgc3ByYXkuIFRoZSB3YWxsCmtlZXBzIHRoZSB2aXNpdG9yJ3Mgd29yayBmb3IgdGhlIHNlc3Npb247IGEgIndhc2giIHJlc3RvcmVzIHRoZSB3YWxsIHRvIGl0cyBzZWVkZWQgYW5jaWVudApzdGF0ZS4gUXVpZXQsIGF3ZWQgcGFjaW5nIOKAlCBhIHNsb3cgaW50cm8sIGZsaWNrZXJpbmcgZmlyZSwgcmlzaW5nIGVtYmVycywgaWRsZSBjYW1lcmEgYnJlYXRoLgoKKipXaGF0IGl0J3MgYmFzZWQgb246KiogVGhlIERpdmluZSBBcmNoaXZlcyBQYWxlb2xpdGhpYyBjaGFwdGVyIChjaDQxKSArIENoYXV2ZXQgLyBMYXNjYXV4IC8KQWx0YW1pcmEgcGFpbnRpbmcgdHJhZGl0aW9ucyAod2ViIHJlc2VhcmNoIDIwMjYtMTAtMTgpOiBpcm9uLW94aWRlIG9jaHJlIChyZWQveWVsbG93KSBhbmQKY2hhcmNvYWwgcGlnbWVudHM7IGZpbmdlcnMsIGhhaXIgYnJ1c2hlcywgYW5kIHBpZ21lbnQgYmxvd24gdGhyb3VnaCBob2xsb3cgYm9uZTsgbmVnYXRpdmUKaGFuZCBzdGVuY2lscyBtYWRlIGJ5IHNwcmF5aW5nIGFyb3VuZCBhIHByZXNzZWQgcGFsbTsgbmF0dXJhbCByb2NrIGNvbnRvdXJzIGluY29ycG9yYXRlZAppbnRvIHRoZSBhcnQ7IHdvcmsgZG9uZSBieSBmaXJlbGlnaHQgZGVlcCB1bmRlcmdyb3VuZC4gQmxvbWJvcyBjcm9zcy1oYXRjaCBhbmQgU3VsYXdlc2kKY29udGV4dCBmcm9tIHRoZSBjaGFwdGVyIGluZm9ybSB0aGUgaG9uZXN0eSBmcmFtaW5nLgoKKipUaGUgcGFpbnRpbmcgdG9vbHM6KioKLSAqKkZJTkdFUioqIOKAlCBncmFpbnkgb2NocmUgYnJ1c2ggc3Ryb2tlIChsYXllcmVkIGppdHRlcmVkIGRhYnMsIG5vIGZsYXQgZmlsbHMpLCBzaXplIHNsaWRlci4KLSAqKkhBTkQqKiDigJQgdG9nZ2xlcyBCTE9XIChuZWdhdGl2ZSBzdGVuY2lsOiBwaWdtZW50IHNwcmF5ZWQgYXJvdW5kIGEgaGFuZCBtYXNrLCB0aGUgaGFuZAogIHNoaWVsZHMgdGhlIHJvY2spIC8gUFJFU1MgKHBvc2l0aXZlIHBpZ21lbnQgcHJpbnQgd2l0aCBncmFpbikuIFNpemVkIGJ5IHRoZSBzYW1lIHNsaWRlci4KLSAqKkJMT1cqKiDigJQgZmluZSBwaWdtZW50IG1pc3QgYXMgaWYgdGhyb3VnaCBhIGhvbGxvdyBib25lLgotIFBpZ21lbnRzOiByZWQgb2NocmUsIHllbGxvdyBvY2hyZSwgY2hhcmNvYWwuIExPT0svUEFJTlQgbW9kZSB0b2dnbGUgZm9yIG9yYml0aW5nIHRoZQogIGNoYW1iZXIuIExPUkUgcGFuZWwgd2l0aCB0ZWNobmlxdWUgbm90ZXMuIFdBU0ggY2xlYXJzIG9ubHkgdGhlIHZpc2l0b3IncyBtYXJrcy4KCioqSG9uZXN0eSBsYWJlbHMgKGJpbmRpbmcsIGRpc3BsYXllZCBpbi1leHBlcmllbmNlKToqKgotICJQYWludGVkIGluIHRoZSAqc3R5bGUqIG9mIFBhbGVvbGl0aGljIGNhdmUgYXJ0IOKAlCBhbiBvcmlnaW5hbCByZW5kZXJpbmcsIG5vdCBhIGNvcHkgb2YKICBhbnkgZmFtb3VzIHBhbmVsLiIKLSAiV2hhdCB0aGVzZSBwYWludGluZ3MgbWVhbnQgdG8gdGhlIHBlb3BsZSB3aG8gbWFkZSB0aGVtIGlzIHVua25vd24uIFRoZSBjYXZlcyBrZWVwCiAgdGhlaXIgc2VjcmV0LiIgKG1hdGNoZXMgdGhlIGNoYXB0ZXI6ICJ3ZSBwb3NzZXNzIHRoZSBhcnRpZmFjdHM7IHdlIGRvIG5vdCBwb3NzZXNzIGl0cwogIG1lYW5pbmciKQotIFRoZSBzZWVkZWQgImFuY2llbnQiIG1hcmtzIChkb3Qgcm93LCBmYWRlZCBoYW5kIHN0ZW5jaWwsIG9yaWdpbmFsIGJpc29uLWZvcm0gb3V0bGluZSkKICBhcmUgZmFpbnQgYW5kIG9yaWdpbmFsLWluLXRoZS1pZGlvbSwgbm90IGNvcGllczsgbm8gaW50ZXJwcmV0YXRpb24gb3IgaW52ZW50ZWQgbWVhbmluZwogIGlzIGF0dGFjaGVkIHRvIGFueSBtYXJrLgoKKipCdWlsZCBub3RlcyBmb3IgQ2xhdWRlOioqIFNlbGYtY29udGFpbmVkIEhUTUwsIFRocmVlLmpzIHZlbmRvcmVkIGxvY2FsbHkgKGB0aHJlZS5taW4uanNgLAp6ZXJvIENETikuIFBhaW50IGxpdmVzIG9uIGEgMjA0OMOXMTAyNCBjYW52YXMgdGV4dHVyZSBvdmVyIGEgbm9pc2UtZGlzcGxhY2VkIGNvbmNhdmUgd2FsbAptZXNoOyBmaXJlbGlnaHQgaXMgYW4gYW5pbWF0ZWQgZmxpY2tlcmluZyBwb2ludCBsaWdodCArIGVtYmVyIHBhcnRpY2xlcy4gRm9udHMgZmFsbCBiYWNrCmdyYWNlZnVsbHkgaWYgR29vZ2xlIEZvbnRzIGlzIHVucmVhY2hhYmxlLiBgbm9kZSAtLWNoZWNrYCBjbGVhbjsgZnVsbCBydW50aW1lIHNtb2tlLXRlc3RlZAp3aXRoIHN0dWJiZWQgRE9NL1RIUkVFIChzY2VuZSBidWlsZCwgcGFpbnRpbmcsIGFuaW1hdGlvbiBmcmFtZXMg4oCUIG5vIGV4Y2VwdGlvbnMpLgoKKipGaWxlczoqKiBgY2F2ZS1wYWludGluZy13YWxsLmh0bWxgLCBgdGhyZWUubWluLmpzYCAodmVuZG9yZWQpLCB0aGlzIGVudHJ5Lgo=
+# Armory Entry — The Cave Wall
+
+**What it is:** Hands-on experience #11 for the Divine Archives. A 3D cave chamber where the
+visitor paints on an uneven rock wall by firelight, using the same families of technique as the
+Paleolithic painters: fingertip daubs, hand stencils, and pigment blown as a spray. The wall
+keeps the visitor's work for the session; a "wash" restores the wall to its seeded ancient
+state. Quiet, awed pacing — a slow intro, flickering fire, rising embers, idle camera breath.
+
+**What it's based on:** The Divine Archives Paleolithic chapter (ch41) + Chauvet / Lascaux /
+Altamira painting traditions (web research 2026-10-18): iron-oxide ochre (red/yellow) and
+charcoal pigments; fingers, hair brushes, and pigment blown through hollow bone; negative
+hand stencils made by spraying around a pressed palm; natural rock contours incorporated
+into the art; work done by firelight deep underground. Blombos cross-hatch and Sulawesi
+context from the chapter inform the honesty framing.
+
+**The painting tools:**
+- **FINGER** — grainy ochre brush stroke (layered jittered dabs, no flat fills), size slider.
+- **HAND** — toggles BLOW (negative stencil: pigment sprayed around a hand mask, the hand
+  shields the rock) / PRESS (positive pigment print with grain). Sized by the same slider.
+- **BLOW** — fine pigment mist as if through a hollow bone.
+- Pigments: red ochre, yellow ochre, charcoal. LOOK/PAINT mode toggle for orbiting the
+  chamber. LORE panel with technique notes. WASH clears only the visitor's marks.
+
+**Honesty labels (binding, displayed in-experience):**
+- "Painted in the *style* of Paleolithic cave art — an original rendering, not a copy of
+  any famous panel."
+- "What these paintings meant to the people who made them is unknown. The caves keep
+  their secret." (matches the chapter: "we possess the artifacts; we do not possess its
+  meaning")
+- The seeded "ancient" marks (dot row, faded hand stencil, original bison-form outline)
+  are faint and original-in-the-idiom, not copies; no interpretation or invented meaning
+  is attached to any mark.
+
+**Build notes for Claude:** Self-contained HTML, Three.js vendored locally (`three.min.js`,
+zero CDN). Paint lives on a 2048×1024 canvas texture over a noise-displaced concave wall
+mesh; firelight is an animated flickering point light + ember particles. Fonts fall back
+gracefully if Google Fonts is unreachable. `node --check` clean; full runtime smoke-tested
+with stubbed DOM/THREE (scene build, painting, animation frames — no exceptions).
+
+**Files:** `cave-painting-wall.html`, `three.min.js` (vendored), this entry.

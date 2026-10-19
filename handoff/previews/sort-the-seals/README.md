@@ -1,1 +1,15 @@
-IyBTb3J0IHRoZSBTZWFscyDigJQgTXVzZS1zaWRlIGJ1aWxkIGZvciBDbGF1ZGUKCioqU3RhdHVzOioqIENhcnRlciBBUFBST1ZFRCAyMDI2LTEwLTE4LiBTdGFydGluZyBwb2ludCBmb3IgQ2xhdWRlIHRvIHN1cnBhc3MuCgoqKldoYXQgaXQgaXM6KiogQSBib2FyZC90YWJsZSBzb3J0aW5nIGdhbWUuIFNtYWxsIHN0ZWF0aXRlIHN0YW1wIHNlYWxzIHNpdCBpbiBhbiB1bnNvcnRlZCB0cmF5IG9uIGEgY2FuZGxlbGl0IGFyY2hpdmlzdCdzIHRhYmxlOyB0aGUgcGxheWVyIGRyYWdzIGVhY2ggc2VhbCBpbnRvIG9uZSBvZiBmaXZlIGxhYmVsZWQgdHJheXMgYnkgaXRzIGNhcnZlZCBhbmltYWwgKHVuaWNvcm4sIGh1bXBlZCBidWxsLCBlbGVwaGFudCwgcmhpbm9jZXJvcywgdGlnZXIpLiBTY29yaW5nOiArMTAgcGVyIGNvcnJlY3Qgc29ydCwgc3RyZWFrIGJvbnVzZXMgZXZlcnkgNSwgcGVuYWx0aWVzIGZvciB3cm9uZyBkcm9wcy4gVGFwIGFueSBzZWFsIHRvIHN0dWR5IGl0IChzaXRlLCBhbmltYWwsIG1hdGVyaWFsLCBzaXplKS4KCioqQmluZGluZyBob25lc3R5IHJ1bGU6KiogVGhlIEluZHVzIHNjcmlwdCBpcyB1bmRlY2lwaGVyZWQg4oCUIHN0YXRlZCBpbiB0aGUgaGVhZGVyIHBsYXF1ZSwgaW50cm8gY2FyZCwgZXZlcnkgc3R1ZHkgY2FyZCwgYW5kIHRoZSBlbmQgc2NyZWVuOiAiU2NyaXB0IHVuZGVjaXBoZXJlZC4gV2Ugc29ydCBieSBhbmltYWwsIG5vdCBieSBtZWFuaW5nLiIgTm8gZGVjb2RlIG1lY2hhbmljIGFueXdoZXJlLgoKKipUZWNoOioqIGBzb3J0LXRoZS1zZWFscy5odG1sYCDigJQgc2VsZi1jb250YWluZWQgc2luZ2xlIGZpbGUsIHZhbmlsbGEgSlMgKyBjYW52YXMgMkQsIHplcm8gQ0ROLCB6ZXJvIGRlcGVuZGVuY2llcy4gUG9pbnRlci1ldmVudCBkcmFnIChtb3VzZSArIHRvdWNoKSwgV2ViQXVkaW8gYmxpcHMsIGdvbGQtYnVyc3QgcGFydGljbGVzLiBObyBUaHJlZS5qcyBuZWVkZWQuCgoqKkRpZmZpY3VsdHkgbGV2ZWxzOioqIEFwcHJlbnRpY2UgKDEyIHNlYWxzLCB1bnRpbWVkKSDihpIgS2VlcGVyICgxOCBzZWFscywgMTUwcykg4oaSIEtlZXBlciBvZiBTZWFscyAoMjQgc2VhbHMsIDEwMHMsIOKIkjEwL21pc3MpLgoKKipWZXJpZmllZDoqKiBOb2RlIHN5bnRheC1jaGVja2VkLCBydW50aW1lIHNtb2tlLXRlc3RlZCAoYWxsIGZpdmUgYW5pbWFsIGNhcnZpbmdzLCBnbHlwaCBzdHJpcCwgZnVsbCByb3VuZCBsaWZlY3ljbGU6IHNjb3JpbmcsIHN0cmVha3MsIHBlbmFsdGllcywgdGltZXIsIGdyYWRlcyBTL0EvQi9DKS4KCioqRm9yIENsYXVkZSdzIHJlYnVpbGQ6KiogRG8gdGhlIHNlZS1maXJzdCBjYXB0dXJlIHBhc3MuIEtlZXAgdGhlIGhvbmVzdHkgcnVsZSBldmVyeXdoZXJlLiBVbmljb3JuIHdlaWdodGVkIDU1JSBwZXIgdGhlIHJlYWwgcmVjb3JkICh+NjAlIG9mIGFjdHVhbCBzZWFscykuCg==
+# Sort the Seals — Muse-side build for Claude
+
+**Status:** Carter APPROVED 2026-10-18. Starting point for Claude to surpass.
+
+**What it is:** A board/table sorting game. Small steatite stamp seals sit in an unsorted tray on a candlelit archivist's table; the player drags each seal into one of five labeled trays by its carved animal (unicorn, humped bull, elephant, rhinoceros, tiger). Scoring: +10 per correct sort, streak bonuses every 5, penalties for wrong drops. Tap any seal to study it (site, animal, material, size).
+
+**Binding honesty rule:** The Indus script is undeciphered — stated in the header plaque, intro card, every study card, and the end screen: "Script undeciphered. We sort by animal, not by meaning." No decode mechanic anywhere.
+
+**Tech:** `sort-the-seals.html` — self-contained single file, vanilla JS + canvas 2D, zero CDN, zero dependencies. Pointer-event drag (mouse + touch), WebAudio blips, gold-burst particles. No Three.js needed.
+
+**Difficulty levels:** Apprentice (12 seals, untimed) → Keeper (18 seals, 150s) → Keeper of Seals (24 seals, 100s, −10/miss).
+
+**Verified:** Node syntax-checked, runtime smoke-tested (all five animal carvings, glyph strip, full round lifecycle: scoring, streaks, penalties, timer, grades S/A/B/C).
+
+**For Claude's rebuild:** Do the see-first capture pass. Keep the honesty rule everywhere. Unicorn weighted 55% per the real record (~60% of actual seals).

@@ -1,1 +1,19 @@
-IyBMYW5nYXIsIHRoZSBGcmVlIEtpdGNoZW4g4oCUIENsYXVkZSByZWJ1aWxkIHBhY2thZ2UKCioqU3RhdHVzOioqIENhcnRlci1hcHByb3ZlZCAyMDI2LTEwLTE4LiBNdXNlLXNpZGUgc3RhcnRpbmcgcG9pbnQgZm9yIENsYXVkZSB0byBzdXJwYXNzLgoKIyMgRmlsZXMKLSBgbGFuZ2FyLmh0bWxgIOKAlCB0aGUgY29tcGxldGUgd2Fsa3Rocm91Z2ggKDQyIEtCKQotIGBhcm1vcnktZW50cnkubWRgIOKAlCBmdWxsIHJ1bmRvd246IHdoYXQgaXQgaXMsIGFyY2hpdmUgc291cmNlcywgbWVjaGFuaWNzLCByZWJ1aWxkIG5vdGVzCgojIyB0aHJlZS5qcyDigJQgTk9UIGluY2x1ZGVkCmB0aHJlZS5taW4uanNgICg2NTUgS0IpIGV4Y2VlZHMgdGhlIHN0YWdpbmcgZmlsZS1zaXplIGxpbWl0IGFuZCBpcyAqKm5vdCoqIHB1c2hlZC4KKipDbGF1ZGU6IHNvdXJjZSBUaHJlZS5qcyBVTUQgcjE1MCsgYW5kIHBsYWNlIGl0IGFsb25nc2lkZSBgbGFuZ2FyLmh0bWxgIGFzIGB0aHJlZS5taW4uanNgLioqClRoZSBIVE1MIGxvYWRzIGl0IHZpYSBgPHNjcmlwdCBzcmM9InRocmVlLm1pbi5qcyI+PC9zY3JpcHQ+YCDigJQgYSBwbGFpbiByZWxhdGl2ZSBwYXRoLCBubyBDRE4uCgojIyBXaGF0IGl0IGlzCkEgM0Qgd2Fsa3Rocm91Z2ggb2YgYSBndXJkd2FyYSBsYW5nYXIgaGFsbCDigJQgZml2ZSBwaGFzZXM6IGVudHJhbmNlIHZlaWwgKGNvdmVyIGhlYWQsCnJlbW92ZSBzaG9lcywgd2FzaCBoYW5kcykg4oaSIGpvaW4gdGhlIGxpbmUg4oaSIHRha2UgeW91ciBzZWF0IChjYW1lcmEgZHJvcHMgdG8gZmxvb3IgbGV2ZWwsCiJvbmUgbGV2ZWwgZm9yIGFsbCIpIOKGkiBzZXJ2ZS9zZXZhIChjbGljay10by1zZXJ2ZSwgY291bnRlcikg4oaSIGVhdCB0b2dldGhlci4gS2l0Y2hlbiB3aXRoCnN0ZWFtaW5nIGRlZ3MsIHJvdGkgZ3JpZGRsZS4gRnJhbWVkIGFzIGEgTElWSU5HIHByYWN0aWNlIGhhcHBlbmluZyB0b2RheSDigJQgcmVzcGVjdGZ1bAp3aXRuZXNzLCBuZXZlciBleG90aWNpemVkLiBTZWUgYGFybW9yeS1lbnRyeS5tZGAgZm9yIHRoZSBmdWxsIGJyaWVmLgo=
+# Langar, the Free Kitchen — Claude rebuild package
+
+**Status:** Carter-approved 2026-10-18. Muse-side starting point for Claude to surpass.
+
+## Files
+- `langar.html` — the complete walkthrough (42 KB)
+- `armory-entry.md` — full rundown: what it is, archive sources, mechanics, rebuild notes
+
+## three.js — NOT included
+`three.min.js` (655 KB) exceeds the staging file-size limit and is **not** pushed.
+**Claude: source Three.js UMD r150+ and place it alongside `langar.html` as `three.min.js`.**
+The HTML loads it via `<script src="three.min.js"></script>` — a plain relative path, no CDN.
+
+## What it is
+A 3D walkthrough of a gurdwara langar hall — five phases: entrance veil (cover head,
+remove shoes, wash hands) → join the line → take your seat (camera drops to floor level,
+"one level for all") → serve/seva (click-to-serve, counter) → eat together. Kitchen with
+steaming degs, roti griddle. Framed as a LIVING practice happening today — respectful
+witness, never exoticized. See `armory-entry.md` for the full brief.

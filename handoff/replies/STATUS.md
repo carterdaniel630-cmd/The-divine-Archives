@@ -1,13 +1,19 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-18 ~23:05 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-19 ~04:00 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
-`briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`. **Deployed (`main`):** `77f6444` = batch A + museum
+`briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`, Muse's 2026-10-18 evening previews (7). **Deployed (`main`):** `77f6444` = batch A + museum
 phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
 **Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `loop/graphify-labels` = PR #69 (named map). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING.
 
 ## Done
+- 2026-10-19 ~04:00: **PR #69 independently reviewed** (Graphify names) by a run that wrote none of it: 0 findings; clean
+  build, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; namer run on the real map names all 184 groups and is
+  repeatable; 6/6 GitHub checks green. Listed **mergeable now**, waiting on Carter's yes (reply
+  `2026-10-19-pr69-independent-review.md`). Same run: standards board statuses brought current (Item 29 rest) and five
+  of Muse's new previews, pushed as base64 text, decoded so they open. Items per run (Item 32): 2 items, one work commit
+  plus the lock.
 - 2026-10-18 ~23:05: **Graphify map** (Carter nudge 18:35): the map already existed on the `graph` branch (built when #65
   merged; all three outputs) but every group was "Community N". Added plain-word names (`tools/graphify-label.js`, wired
   into the workflow) as **PR #69**; named snapshot to open now in `handoff/previews/graphify-map/` (link in reply
@@ -60,25 +66,27 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 - (none)
 
 ## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
-0. **Independent review of PR #69** (Graphify names; small, Carter is waiting on the map): a run that wrote none of it
-   reviews `origin/main...loop/graphify-labels`, confirms GitHub checks green (the graphify check uploads the named map
-   as an artifact), and lists it in MERGEABLE for Carter's yes. Then Item 29 rest (Next 8).
+0. **PR #69 merge** once Carter says yes for it (Needs Carter 0). A run then re-checks it still fast-forwards and is green.
 1. **Hit-feel on the other games now** (Item 31 #5; value 3): impact and game feel on the existing games, most played
    first; respect reduced motion. Build on a `loop/*` branch; merging needs Carter's yes on the item.
 2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Crown of Thorns (two versions), Treaty of Kadesh
    tablet, Crown of the Kandake, Etruscan mirror, staged in `handoff/previews/`. Analyze and rebuild better to the Relic
    Standard, one per run. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
-3. **Find Carter's selfie in the repo** (13:30 nudge, Item 27): a real search (images in every branch and `handoff/`).
+3. **Muse's 2026-10-18 previews** (Carter-approved Muse-side): Tabula (relic + game), Awithlaknannai, Sort the Seals,
+   Mithraeum, Fire Temple, Langar, Cave Wall, in `handoff/previews/`. All load `three.min.js`, which Muse could not push:
+   use the repo's vendored three.js. Rebuild to the Relic Standard one per run on `loop/*`; site placement needs Carter's
+   yes per item. Fire Temple (Zoroastrian), Langar (Sikh) and Awithlaknannai (Zuni) are living traditions: sensitivity
+   review (REVIEWER §4.6) before any placement.
+4. **Find Carter's selfie in the repo** (13:30 nudge, Item 27): a real search (images in every branch and `handoff/`).
    Found → Option A Journal hero (face stays his). Not found → STOP and ask Carter; never invent a face.
-4. **Reduced motion respected everywhere** (Item 31 #6; value 3).
-5. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
-6. **Fix package (§7)**, relic by relic, most visible rooms first.
-7. **Small defects, part 2, the rest** (handoff previews): zodiac `dispose()`; Oracle Bones wording; Google Fonts out of
+5. **Reduced motion respected everywhere** (Item 31 #6; value 3).
+6. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
+7. **Fix package (§7)**, relic by relic, most visible rooms first.
+8. **Small defects, part 2, the rest** (handoff previews): zodiac `dispose()`; Oracle Bones wording; Google Fonts out of
    two exhibits; Grimoire note, Gardnerian label, lore flags.
-8. **Item 29, rest:** update `handoff/standards/board.json` statuses (batch B, museum speed now merged); query the map
-   before touching code.
 9. **Spirit Board rename** (Item 31 #4); **Errata page** (Item 31 #3, prepare only); **Protection charter D4** check;
-   **Debate Hall preview safety**; larger items (folded list §B rows 14–24).
+   **Debate Hall preview safety**; larger items (folded list §B rows 14–24). Keep `handoff/standards/board.json` current
+   in the same commit as each item.
 - Scheduled: on or after **2027-01-15**, remove the old-id table on a side branch.
 
 ## Parked / on hold (do not build)
@@ -86,7 +94,8 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
   Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
 
 ## Needs Carter
-0. **Open the Graphify map on your phone** (link in `2026-10-18-graphify-map-named.md`) and say if it is readable.
+0. **PR #69 (plain-word names on the code map) passed its independent review.** Merge it: **yes / not now**. Also open
+   the map on your phone (link in `2026-10-18-graphify-map-named.md`) and say if it is readable.
    Optional: add chapters and Vault prose to the map (needs an AI reading pass) — **yes / not now**.
 1. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
    Options: **A** (recommended) the loop also saves each independent review to the review log and runs the weekly audit

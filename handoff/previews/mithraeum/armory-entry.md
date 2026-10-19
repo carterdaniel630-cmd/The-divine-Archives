@@ -1,1 +1,35 @@
-IyBBUk1PUlkgRU5UUlkg4oCUIFRoZSBNaXRocmFldW0gKHdhbGt0aHJvdWdoIHNwYWNlKQoKKipXaGF0IGl0IGlzOioqIEEgZmlyc3QtcGVyc29uIHdhbGt0aHJvdWdoIG9mIGEgTWl0aHJhaWMgY2F2ZS10ZW1wbGU6IGRlc2NlbmQgc3RhaXJzIGludG8gYQpiYXJyZWwtdmF1bHRlZCB1bmRlcmdyb3VuZCBoYWxsLCB3YWxrIHRoZSBjZW50cmFsIGFpc2xlIGJldHdlZW4gdGhlIHJhaXNlZCBkaW5pbmcgYmVuY2hlcwoocG9kaWEpLCBhbmQgYXBwcm9hY2ggdGhlIHRhdXJvY3RvbnkgcmVsaWVmIGluIGl0cyBhcmNoZWQgY3VsdCBuaWNoZSBhdCB0aGUgZmFyIGVuZC4KVG9yY2hsaWdodCB3aXRoIGZsaWNrZXIsIGRyaWZ0aW5nIGR1c3QsIGJyYXppZXJzIGZsYW5raW5nIHRoZSBuaWNoZS4KCioqV2hhdCBpdCdzIGJhc2VkIG9uOioqIFRoZSBzdGFuZGFyZCBtaXRocmFldW0gcGxhbiByZXBlYXRlZCBhY3Jvc3MgdGhlIGVtcGlyZSDigJQgU2FuIENsZW1lbnRlCmluIFJvbWUgKHN1YnRlcnJhbmVhbiBoYWxsLCBjZW50cmFsIGFpc2xlLCByYWlzZWQgYmVuY2hlcywgdGF1cm9jdG9ueSBhdCB0aGUgZmFyIGVuZCksCkNhcnJhd2J1cmdoIG9uIEhhZHJpYW4ncyBXYWxsIChuYXZlLCBzaWRlIGJlbmNoZXMsIHNhbmN0dWFyeSArIG5hcnRoZXgpLCBhbmQgdGhlIE9zdGlhCk1pdGhyYWV1bSBvZiBGZWxpY2lzc2ltdXMgKHNldmVuLWdyYWRlIGVtYmxlbSBtb3NhaWMpLiBTZXZlbi1ncmFkZSBsaXN0IGZyb20gU3QuIEplcm9tZTsKZ3JhZGUgc3ltYm9scyBmcm9tIHRoZSBGZWxpY2lzc2ltdXMgbW9zYWljIHZpYSB0aGUgc3RhbmRhcmQgc2Nob2xhcmx5IHRhYmxlIChDbGF1c3MpLgoKKipUaGUgc2V2ZW4gZ3JhZGVzIChvYnNlcnZhdGlvbmFsIHByb2dyZXNzaW9uLCBub3QgaW5pdGlhdGlvbik6KioKSS4gQ29yYXggKFJhdmVuKSDigJQgTWVyY3VyeSDCtyByYXZlbiwgYmVha2VyLCBjYWR1Y2V1cwpJSS4gTnltcGh1cyAoQnJpZGVncm9vbSkg4oCUIFZlbnVzIMK3IGxhbXAsIGJlbGwsIHZlaWwsIGRpYWRlbQpJSUkuIE1pbGVzIChTb2xkaWVyKSDigJQgTWFycyDCtyBoZWxtZXQsIGxhbmNlLCBwb3VjaCwgYnJlYXN0cGxhdGUsIGRydW0sIGJlbHQKSVYuIExlbyAoTGlvbikg4oCUIEp1cGl0ZXIgwrcgZmlyZSBzaG92ZWwsIHNpc3RydW0sIGxhdXJlbCB3cmVhdGgsIHRodW5kZXJib2x0ClYuIFBlcnNlcyAoUGVyc2lhbikg4oCUIEx1bmEgwrcgUGhyeWdpYW4gY2FwLCBjdXJ2ZWQgc3dvcmQsIHNpY2tsZSwgY3Jlc2NlbnQsIHN0YXJzLCBzbGluZwpWSS4gSGVsaW9kcm9tdXMgKFN1bi1SdW5uZXIpIOKAlCBTb2wgwrcgdG9yY2gsIHJhZGlhdGUgY3Jvd24sIHdoaXAKVklJLiBQYXRlciAoRmF0aGVyKSDigJQgU2F0dXJuIMK3IGxpYmF0aW9uIGJvd2wsIHN0YWZmLCBtaXRyZSwgcmluZywgamV3ZWxsZWQgcm9iZXMKCioqSW50ZXJhY3Rpb25zOioqIFdBU0QvYXJyb3dzICsgbW91c2UgbG9vayAocG9pbnRlci1sb2NrKSwgdG91Y2ggcGFkICsgZHJhZy10by1sb29rIG9uIHBob25lcy4KQ2xpY2sgdGhlIHNldmVuIGdyYWRlIHN0b25lcyBmb3IgZGV0YWlsIHBhbmVsczsgY2xpY2sgYmVuY2hlcyB0byBzaXQgZmFjaW5nIHRoZSBuaWNoZTsgY2xpY2sKdGhlIHRhdXJvY3RvbnkgZm9yIGl0cyBwYW5lbC4gTGVmdCByYWlsIGp1bXBzIGJldHdlZW4gZ3JhZGVzLgoKKipIb25lc3R5IGxhYmVscyAoYmluZGluZyk6KiogTm8gTWl0aHJhaWMgc2NyaXB0dXJlIHN1cnZpdmVzIOKAlCBzdGF0ZWQgb24gdGhlIGVudHJ5IHNjcmVlbiBhbmQKaW4gZXZlcnkgZ3JhZGUgcGFuZWwuIEFsbCByaXRlIGNvbnRlbnQgaXMgbWFya2VkICJSZWNvbnN0cnVjdGlvbiIgKGZsb2F0aW5nIHBsYXF1ZXMgaW4tc2NlbmUKKyBwZXItZ3JhZGUgaG9uZXN0eSBub3Rlcyk7IHNvdXJjZXMgbmFtZWQgKFN0LiBKZXJvbWUncyBsaXN0LCBPc3RpYSBlbWJsZW1zLCBhcmNoYWVvbG9neSkuClRoZSB0YXVyb2N0b255IGlzIHByZXNlbnRlZCBhcyBpY29ub2dyYXBoeSwgbm90IGRvY3RyaW5lLiBPYnNlcnZhdGlvbmFsIG1vZGU6IHRoZSB2aXNpdG9yCndpdG5lc3NlcywgbmV2ZXIgcGVyZm9ybXMuCgoqKlRlY2g6KiogU2VsZi1jb250YWluZWQgYG1pdGhyYWV1bS5odG1sYCArIHZlbmRvcmVkIGB0aHJlZS5taW4uanNgICh6ZXJvIENETikuIFByb2NlZHVyYWwKY2FudmFzIHRleHR1cmVzIChjYXZlIHN0b25lLCBzbGFiIGZsb29yLCBwYWludGVkICsgZGVwdGgtbWFwcGVkIHRhdXJvY3RvbnkgcmVsaWVmLCBncmFkZQptZWRhbGxpb25zKS4gRFBSIGNhcHBlZCAxLjUgZGVza3RvcCAvIDEuMCBtb2JpbGU7IGRpc3Bvc2UgbGlmZWN5Y2xlIG9uIHVubG9hZC4K
+# ARMORY ENTRY — The Mithraeum (walkthrough space)
+
+**What it is:** A first-person walkthrough of a Mithraic cave-temple: descend stairs into a
+barrel-vaulted underground hall, walk the central aisle between the raised dining benches
+(podia), and approach the tauroctony relief in its arched cult niche at the far end.
+Torchlight with flicker, drifting dust, braziers flanking the niche.
+
+**What it's based on:** The standard mithraeum plan repeated across the empire — San Clemente
+in Rome (subterranean hall, central aisle, raised benches, tauroctony at the far end),
+Carrawburgh on Hadrian's Wall (nave, side benches, sanctuary + narthex), and the Ostia
+Mithraeum of Felicissimus (seven-grade emblem mosaic). Seven-grade list from St. Jerome;
+grade symbols from the Felicissimus mosaic via the standard scholarly table (Clauss).
+
+**The seven grades (observational progression, not initiation):**
+I. Corax (Raven) — Mercury · raven, beaker, caduceus
+II. Nymphus (Bridegroom) — Venus · lamp, bell, veil, diadem
+III. Miles (Soldier) — Mars · helmet, lance, pouch, breastplate, drum, belt
+IV. Leo (Lion) — Jupiter · fire shovel, sistrum, laurel wreath, thunderbolt
+V. Perses (Persian) — Luna · Phrygian cap, curved sword, sickle, crescent, stars, sling
+VI. Heliodromus (Sun-Runner) — Sol · torch, radiate crown, whip
+VII. Pater (Father) — Saturn · libation bowl, staff, mitre, ring, jewelled robes
+
+**Interactions:** WASD/arrows + mouse look (pointer-lock), touch pad + drag-to-look on phones.
+Click the seven grade stones for detail panels; click benches to sit facing the niche; click
+the tauroctony for its panel. Left rail jumps between grades.
+
+**Honesty labels (binding):** No Mithraic scripture survives — stated on the entry screen and
+in every grade panel. All rite content is marked "Reconstruction" (floating plaques in-scene
++ per-grade honesty notes); sources named (St. Jerome's list, Ostia emblems, archaeology).
+The tauroctony is presented as iconography, not doctrine. Observational mode: the visitor
+witnesses, never performs.
+
+**Tech:** Self-contained `mithraeum.html` + vendored `three.min.js` (zero CDN). Procedural
+canvas textures (cave stone, slab floor, painted + depth-mapped tauroctony relief, grade
+medallions). DPR capped 1.5 desktop / 1.0 mobile; dispose lifecycle on unload.
