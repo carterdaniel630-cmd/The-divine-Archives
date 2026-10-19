@@ -157,6 +157,20 @@
 
     var canvas, cx, factEl, statusEl, trayW, trayB, raf = null, DPR = 1, N = 8, SZ = 44, BW = N * SZ, M = 32, TOT = BW + 2 * M;
     var ART = window.ChessArt;
+    // hit-feel (feel.js): a move sets the god down with a soft knock; a capture lands with a
+    // stone-on-stone knock and a low ring, a small jolt and a flash in the taker's tone (harder
+    // for a greater god); check sounds a two-note warning; checkmate chimes and, on phones,
+    // buzzes. All of it fires when the sliding piece lands. Reduced motion turns the jolts off.
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null, lastT = 0;
+    var CAPSCALE = { P: 0.6, N: 0.85, B: 0.85, R: 1.05, Q: 1.4, K: 1.4 };
+    function land(a) {
+      if (!FEEL || !a.fx) return; var fx = a.fx; a.fx = null;
+      if (fx.cap) FEEL.hit("capture", { scale: CAPSCALE[fx.cap.t] || 1, pitch: 1.12 - (CAPSCALE[fx.cap.t] || 1) * 0.12, color: fx.by === "w" ? "255,236,196" : "196,214,255" });
+      else FEEL.hit("place", { pitch: 0.92 + Math.random() * 0.16 });
+      if (fx.end === "mate") FEEL.hit("big", { color: "231,198,128" });
+      else if (fx.end === "check") FEEL.hit("check");
+    }
+    function frame(ts) { raf = null; draw(ts); }
     var st, cfg = { you: "greek", foe: "egyptian", twoP: false }, keyfn = null;
 
     function newState(youPan, foePan, twoP) {
@@ -174,8 +188,11 @@
       cx.fillStyle = "rgba(0,0,0," + (lift ? 0.25 : 0.45) + ")"; cx.beginPath(); cx.ellipse(x + SZ / 2, y + SZ * 0.9, SZ * 0.3, SZ * 0.075, 0, 0, 7); cx.fill();
       cx.drawImage(img, x + SZ * 0.01, y - (lift || 0), SZ * 0.98, SZ * 0.98);
     }
-    function draw() {
+    function draw(ts) {
+      var tnow = typeof ts === "number" ? ts : performance.now(), dt = lastT ? Math.min(0.05, Math.max(0, (tnow - lastT) / 1000)) : 0.016; lastT = tnow;
+      if (FEEL) FEEL.tick(dt);
       cx.clearRect(0, 0, TOT, TOT);
+      if (FEEL) FEEL.begin(cx);
       var kInChk = null;
       if (inCheck(st.board, st.turn)) kInChk = findKing(st.board, st.turn);
       if (!boardBg || boardBg.dpr !== DPR) { boardBg = ART.board(BW, DPR, M); boardBg.dpr = DPR; }
@@ -208,8 +225,10 @@
         var e = k2 < 0.5 ? 2 * k2 * k2 : 1 - Math.pow(-2 * k2 + 2, 2) / 2, f = sq(a.from), t2 = sq(a.to);
         if (a.cap) { cx.globalAlpha = 1 - k2; drawPiece(a.cap, t2.x, t2.y); cx.globalAlpha = 1; }
         drawPiece(a.p, f.x + (t2.x - f.x) * e, f.y + (t2.y - f.y) * e, Math.sin(k2 * Math.PI) * SZ * 0.18);
-        raf = requestAnimationFrame(draw);
-      } else if (a) { st.anim = null; }
+      } else if (a) { st.anim = null; land(a); }
+      if (FEEL) FEEL.end(cx, TOT, TOT);
+      // keep drawing while a piece slides or a hit is still showing (one frame chain only)
+      if (((st.anim) || (FEEL && FEEL.active)) && !raf) raf = requestAnimationFrame(frame);
     }
     function drawTrays() {
       function tray(el, color) {
@@ -251,14 +270,17 @@
     }
 
     function doMove(m) {
+      if (st.anim) land(st.anim);   // a move made before the last one landed still gets its sound
       var piece = st.board[m.from], res = apply(st.board, m);
       st.anim = { p: piece.t === "P" && m.promo ? { t: "Q", c: piece.c } : piece, from: m.from, to: m.to, cap: st.board[m.to], t0: performance.now(), dur: 230 };
       st.board = res.board; st.cast = nextCastle(st.cast, m, piece); st.ep = epAfter(m, piece); st.last = { from: m.from, to: m.to };
       st.sel = null; st.legal = [];
       if (res.captured) { showCapture(res.captured, piece.c); drawTrays(); }
+      st.anim.fx = { cap: res.captured || null, by: piece.c, end: null };
       st.turn = opp(st.turn);
       // end conditions
       var lm = legalMoves(st.board, st.turn, st.cast, st.ep);
+      if (inCheck(st.board, st.turn)) st.anim.fx.end = lm.length ? "check" : "mate";
       if (!lm.length) { st.over = true; if (inCheck(st.board, st.turn)) { var winPan = st.turn === "w" ? st.bPan : st.wPan; st.result = "Checkmate — " + DATA.pantheons[winPan].name + " triumph."; } else st.result = "Stalemate — the board is still."; AG.finish("chess", { result: /^Checkmate/.test(st.result) ? "checkmate" : "stalemate" }); }
       draw(); setStatus();
       if (!st.over && st.turn === "b" && !st.twoP) { st.thinking = true; setStatus(); setTimeout(aiMove, 320); }
@@ -280,7 +302,7 @@
     var PANS = ["greek", "egyptian", "norse"];
     function panLabel(k) { return { greek: "Olympian", egyptian: "Egyptian", norse: "Aesir" }[k]; }
     function selectScreen() {
-      if (raf) cancelAnimationFrame(raf);
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
       var sel = { you: cfg.you, foe: cfg.foe, twoP: cfg.twoP };
       function pantheonRow(role, cur) {
         return '<div class="ch-cards">' + PANS.map(function (k) {
@@ -332,7 +354,7 @@
       root.querySelector('[data-a="new"]').addEventListener("click", selectScreen);
       root.querySelector('[data-a="resign"]').addEventListener("click", function () { if (st.over) return; st.over = true; AG.finish("chess", { result: "resigned" }); st.result = "Resigned — " + DATA.pantheons[st.turn === "w" ? st.bPan : st.wPan].name + " take the field."; setStatus(); });
     }
-    function startGame() { shell(); st = newState(cfg.you, cfg.foe, cfg.twoP); draw(); setStatus(); }
+    function startGame() { if (FEEL) FEEL.reset(); shell(); st = newState(cfg.you, cfg.foe, cfg.twoP); draw(); setStatus(); }
 
     root.innerHTML = '<div class="rq-loading">Setting the board…</div>';
     loadData().then(selectScreen).catch(function () { root.innerHTML = '<p class="game-placeholder">The board could not be loaded. Please reload.</p>'; });

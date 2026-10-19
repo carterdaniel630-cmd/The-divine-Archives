@@ -82,6 +82,18 @@
     thud: function (p) { tone(110 * p, 0.1, "sine", 0.24, 60 * p); noise(0.04, 0.1, 500 * p, 1); },
     // a course laid: a low knock under a rising note
     course: function (p) { noise(0.12, 0.14, 700 * p, 0.9); tone(392 * p, 0.2, "triangle", 0.12, null, 0.03); tone(587 * p, 0.3, "sine", 0.12, null, 0.11); },
+    // a piece set down on wood: a chess move, an army placed
+    place: function (p) { tone(210 * p, 0.06, "sine", 0.16, 150 * p); noise(0.018, 0.1, 1700 * p, 1.6); },
+    // stone on stone, then a low ring: a chess piece taken
+    capture: function (p) { noise(0.05, 0.2, 1100 * p, 1.1); tone(180 * p, 0.12, "sine", 0.24, 90 * p); tone(523 * p, 0.38, "sine", 0.1, null, 0.04); },
+    // two low notes, a warning: check
+    check: function (p) { tone(440 * p, 0.14, "triangle", 0.12); tone(415 * p, 0.24, "triangle", 0.12, null, 0.12); },
+    // dice and bronze: a battle fought
+    clash: function (p) { noise(0.04, 0.16, 2200 * p, 1.3); noise(0.03, 0.12, 3400 * p, 2, 0.05); tone(880 * p, 0.12, "square", 0.025, 620 * p); },
+    // a horn-like rise: a land taken
+    conquer: function (p) { tone(294 * p, 0.2, "sawtooth", 0.05); tone(440 * p, 0.34, "triangle", 0.13, null, 0.08); noise(0.08, 0.1, 600 * p, 0.9); },
+    // a short low drop: one of your lands lost
+    fall: function (p) { tone(220 * p, 0.26, "triangle", 0.12, 110 * p); noise(0.06, 0.08, 500, 0.9); },
     // a falling tone: the ball lost
     lose: function (p) { tone(300 * p, 0.45, "sawtooth", 0.07, 70 * p); noise(0.2, 0.08, 400, 0.8); }
   };
@@ -102,6 +114,12 @@
     eat:    { stop: 0,     shake: 1.8, flash: 0.07, sound: "gulp",   gap: 0.05 },
     land:   { stop: 0,     shake: 1.5, flash: 0,    sound: "thud",   gap: 0.05 },
     course: { stop: 0.06,  shake: 3.5, flash: 0.12, sound: "course", gap: 0.1 },
+    place:  { stop: 0,     shake: 0,   flash: 0,    sound: "place",  gap: 0.05 },
+    capture:{ stop: 0,     shake: 3,   flash: 0.1,  sound: "capture", gap: 0.1 },
+    check:  { stop: 0,     shake: 1,   flash: 0.06, sound: "check",  gap: 0.2 },
+    clash:  { stop: 0,     shake: 2,   flash: 0,    sound: "clash",  gap: 0.08 },
+    conquer:{ stop: 0,     shake: 3,   flash: 0.12, sound: "conquer", gap: 0.12 },
+    fall:   { stop: 0,     shake: 2.5, flash: 0.1,  sound: "fall",   gap: 0.25 },
     big:    { stop: 0.09,  shake: 6,   flash: 0.22, sound: "chime",  gap: 0.2, buzz: 18 },
     lose:   { stop: 0.14,  shake: 8,   flash: 0.26, sound: "lose",   gap: 0.3, buzz: 40 }
   };
