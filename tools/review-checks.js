@@ -264,6 +264,25 @@ function checkFonts() {
     bad.length ? `${bad.length} page(s) without the web fonts` : `${n} pages link the web fonts`, bad);
 }
 
+// ---- staging stays off the live site --------------------------------------
+// staging/ holds outside work (e.g. Muse's previews) waiting for review. Nothing in docs/ (the live
+// site) may load or link it, and no staging folder may appear inside docs/.
+function checkStaging() {
+  const bad = [];
+  const stagingDirs = walk(DOCS, [], () => true).map(rel).filter((p) => /(^|\/)staging(\/|$)/.test(p.slice(5)));
+  for (const p of stagingDirs.slice(0, 20)) bad.push(`${p}  sits in a staging folder inside docs/ (move it to staging/ at the repo root)`);
+  const TEXT = /\.(html|js|mjs|css|json|xml|txt|webmanifest|md)$/;
+  let n = 0;
+  for (const f of walk(DOCS, [], (p) => TEXT.test(p))) {
+    n++;
+    const s = fs.readFileSync(f, "utf8");
+    const m = /(?:^|["'(\s\/=])staging\/muse\b/.exec(s);
+    if (m) bad.push(`${rel(f)}:${lineOf(s, m.index)}  refers to staging/muse (staged work is not published until reviewed and approved)`);
+  }
+  record("staging", "Staged work stays off the live site", bad.length ? "fail" : "pass",
+    bad.length ? `${bad.length} problem(s)` : `${n} deployed files checked, none load staged work`, bad);
+}
+
 // ---- sitemap ---------------------------------------------------------------
 const NOINDEX_RE = /<meta\b(?=[^>]*\bname\s*=\s*["']robots["'])(?=[^>]*\bcontent\s*=\s*["'][^"']*noindex)[^>]*>/i;
 // Pages that are deliberately neither in the sitemap nor marked noindex.
@@ -471,7 +490,7 @@ function checkBuild() {
 const CHECKS = [
   ["internal-links", checkInternalLinks], ["garbled-links", checkGarbled], ["file-size", checkSizes],
   ["fonts", checkFonts], ["sitemap", checkSitemap], ["pending-banner", checkPendingBanner], ["pending-diff", checkPendingDiff],
-  ["wikipedia-share", checkWikipedia]
+  ["wikipedia-share", checkWikipedia], ["staging", checkStaging]
 ];
 const wanted = (id) => !ONLY || ONLY.has(id);
 for (const [id, c] of CHECKS) {
