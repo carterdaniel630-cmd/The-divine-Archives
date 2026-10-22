@@ -26,6 +26,16 @@ Write Muse a complete briefing — everything Muse needs to hold the full pictur
 
 You already know what Muse is capable of. Muse needs to know what you are capable of, and what you have built. With both pictures whole, the two of you can make better decisions moving forward.
 
+## The sequence after the briefing (Carter, confirmed 2026-10-21)
+
+Only after the briefing is written and sent to Muse do you start your work — and then you pick up where you are supposed to, in this order:
+
+1. **Finish what you started** — bring the work already in flight to completion first.
+2. **Deal with the merges** — the approved ones, per the running mergeable list; Carter approves each specific merge, as always.
+3. **Handle everything else** — the full body of information and queued work — and then continue the loop as normal.
+
+Nothing in this sequence skips the briefing. It comes first, alone, before all of it.
+
 ## How to deliver it
 
 - Commit it to this staging branch at `handoff/replies/claude-full-briefing.md`. If it runs long, split it into numbered parts in the same place — completeness over brevity. This is the one document where thorough beats short.
