@@ -6,13 +6,14 @@
    (Persia & China). Each site is a hand-built level with its own landscape,
    wildlife, traps and puzzles:
 
-     Egypt      desert valley → torch-lit tomb, a rolling-boulder chase, falling
-                spears, a hieroglyph floor puzzle, a whip-swing over a spike pit
+     Egypt      desert valley → torch-lit tomb, a sand torrent pouring from the
+                ceiling, falling spears, a hieroglyph floor puzzle, a swing on the
+                plumb-line over a spike pit
      Sumer      reed marsh and rafts, a lion on the bank, a lever + crate gate,
                 the climb up the ziggurat
      The Indus  monsoon jungle, a TIGER CHASE, gharials in the streams, a crate
                 puzzle in the fired-brick city, a swing across the Great Bath
-     Road East  a crumbling Persian mountain pass, a leopard, a rockfall; then
+     Road East  a crumbling Persian mountain pass, a leopard, a scree slide; then
                 a Shang oracle chamber whose floor answers in oracle-bone script
 
    Every relic you lift tells you what it meant to the people who made it, drawn
@@ -21,8 +22,12 @@
    and gharials on Indus seals, lions in Mesopotamian art, the Shang court's
    rammed-earth halls and bronze cauldrons); the puzzles themselves are game.
 
-   Controls: ←/→ or A/D run · ↑/W/Space jump (hold for height) · J/X/K whip.
-   The whip kills snakes/scorpions/bats, staggers big cats, throws levers (it
+   The player is an original figure: a field surveyor (long teal coat, saffron head-wrap, satchel holding the
+   journal) whose tool is a surveyor's plumb-line, a braided cord with a brass bob. (Internally the cast is still
+   called `whip`: same reach, same hit test, same ring swing as before the 2026-10-17 redesign.)
+
+   Controls: ←/→ or A/D run · ↑/W/Space jump (hold for height) · J/X/K cast the line.
+   The line's bob drops snakes/scorpions/bats, staggers big cats, throws levers (it
    aims upward by itself at a lever overhead) and latches onto bronze rings to
    swing — jump to let go, ↓ to drop.
    ========================================================================== */
@@ -33,18 +38,6 @@
 
   var SCRIPT_DIR = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "assets/games/";
   var DATA_URL = SCRIPT_DIR + "data/treasure.json";
-  // the explorer: painted cut-out parts sliced from the character turnaround sheet
-  // (art-source/tomb-robber/), hinged at hip and knee so the legs actually run and tuck.
-  var ART_BASE = SCRIPT_DIR + "art/treasure/";
-  var ART = { ready: false, man: null, img: {} };
-  function loadArt() {
-    if (ART.man) return;
-    ART.man = {};
-    fetch(ART_BASE + "manifest.json?v=1").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
-      if (!m) return; var names = ["body", "thigh", "shin"], left = names.length;
-      names.forEach(function (n) { var im = new Image(); im.onload = function () { ART.img[n] = im; if (--left === 0) { ART.man = m; ART.ready = true; } }; im.src = ART_BASE + n + ".png?v=1"; });
-    }).catch(function () {});
-  }
   var DATA = null, loadingPromise = null;
   function loadData() {
     if (DATA) return Promise.resolve(DATA);
@@ -101,12 +94,12 @@
         B.ledge(8, 16, 18); B.ledge(6, 19, 22);
         B.block(60, 60, 9, 9); B.spikes(66, 67); B.block(72, 73, 9, 9);
         B.pit(78, 80);
-        B.pit(101, 107); B.spikes(101, 107, 11);
+        B.pit(102, 106); B.spikes(102, 106, 11);       // five tiles: the ring makes it easy, a full-speed leap still clears it (fix package: no impossible jumps)
         B.ledge(8, 111, 113);
         B.gate(98, 4, 9); B.gate(119, 4, 9);
         // --- things
         B.start(2);
-        B.hint(2, "← → run · ↑ or Space jumps (hold for height) · J or X cracks the whip.");
+        B.hint(2, "← → run · ↑ or Space jumps (hold for height) · J or X casts the plumb-line.");
         B.tree(1, 1.05); B.tree(8, 0.9); B.tree(15, 1.1); B.tree(24, 0.95); B.plant(5); B.plant(11); B.plant(21); B.plant(27);
         B.statue(26, "obelisk");
         B.gems(6, 8, 8); B.foe("cobra", 10); B.relic(21, 5); B.foe("scorpion", 24, { range: [23, 28] });
@@ -117,14 +110,14 @@
         B.foe("bat", 45, { r: 4 }); B.ledge(8, 44, 46); B.relic(45, 7); B.foe("scorpion", 48, { range: [46, 52] });
         B.check(51);
         B.boulder(55);
-        B.hint(55, "A rumble behind you — RUN!");
+        B.hint(55, "Sand hisses through the ceiling behind you — RUN!");
         B.gems(62, 64, 8); B.gems(69, 71, 7);
         B.check(83); B.canteen(84);
         B.mural(86, 5, "egypt"); B.glyphs([88, 90, 92, 94], [1, 3, 0, 2], [0, 1, 2, 3], "egypt");
         B.hint(86, "A painted wall. Step on the floor signs in the order it shows.");
         B.relic(91, 6);
         B.check(99); B.ring(104, 4);
-        B.hint(99, "A bronze ring over the pit — face it and crack the whip to swing. Jump to let go.");
+        B.hint(99, "A bronze ring over the pit — face it and cast the line to swing. Jump to let go.");
         B.gems(103, 105, 8);
         B.crate(109); B.plate(116); B.relic(112, 7);
         B.hint(108, "Push the crate onto the plate to lift the last door.");
@@ -147,12 +140,12 @@
         B.mover(22, 3, 10, 10, "x");
         B.check(37); B.foe("cobra", 40);
         B.foe("lion", 47, { range: [40, 51], r: 9 });
-        B.hint(40, "A lion on the bank. Crack the whip to stagger it, or go over it on the ledge.");
+        B.hint(40, "A lion on the bank. Strike it with the plumb-bob to stagger it, or go over it on the ledge.");
         B.relic(46, 7);
         B.ring(55, 4);
         B.check(59); B.tree(60, 1.05); B.statue(62, "reedbundle"); B.statue(68, "stilts");
         B.crate(61); B.plate(71); B.lever(67, 6);
-        B.hint(63, "This gate wants the plate weighted and the lever on the pier thrown — crack the whip at it.");
+        B.hint(63, "This gate wants the plate weighted and the lever on the pier thrown — cast the line at it.");
         B.check(76); B.foe("cobra", 83);
         B.relic(88, 5); B.foe("lion", 96, { range: [87, 104], r: 5 });
         B.gems(93, 99, 2);
@@ -181,7 +174,7 @@
         B.foe("gharial", 26);
         B.check(30);
         B.chase(35, 80);
-        B.hint(35, "A TIGER! Run for the city walls — crack the whip if it gets close.");
+        B.hint(35, "A TIGER! Run for the city walls — strike with the line if it gets close.");
         B.gems(42, 44, 7); B.foe("gharial", 47); B.gems(59, 63, 7); B.ring(69, 5);
         B.hint(80, "Inside the walls. The tiger won't follow you here.");
         B.check(81); B.foe("peacock", 83, { deco: true }); B.statue(86, "piers");
@@ -207,13 +200,13 @@
         B.hint(2, "The Persian road. The pass ahead is failing — keep moving.");
         B.tree(4, 1.1); B.tree(9, 0.9); B.tree(33, 1.0); B.tree(38, 1.2); B.plant(12); B.plant(18); B.plant(36); B.plant(62); B.plant(70);
         B.check(17); B.ring(26, 3); B.gems(24, 28, 5);
-        B.hint(20, "A chasm. Crack the whip at the ring and swing.");
+        B.hint(20, "A chasm. Cast the line at the ring and swing.");
         B.relic(45, 6);
         B.check(50);
         B.foe("leopard", 56, { range: [50, 62], r: 7 });
         B.relic(57, 3);
         B.statue(60, "firealtar"); B.check(66);
-        B.boulder(68); B.hint(68, "Rockfall — run!");
+        B.boulder(68); B.hint(68, "The scree above the pass gives way — run!");
         B.gems(78, 82, 8);
         B.check(89); B.tree(90, 1.1); B.tree(95, 1.0); B.statue(93, "ding"); B.plant(91); B.foe("crane", 92, { deco: true });
         B.hint(89, "The Shang court at Anyang: rammed-earth walls and bronze cauldrons. The oracle chamber lies ahead.");
@@ -295,7 +288,10 @@
   function trigOk(o) { return o.forced ? true : o.solved != null ? o.solved : o.on != null ? o.on : o.down; }
 
   function mountGame(root, ctx) {
-    var VIEWW = 480, VIEWH = ROWS * TILE, LH = VIEWH, MAXHEARTS = 3, STEP = 1 / 60;
+    // The screen is SCREENW x SCREENH world units at zoom 1. The camera zooms in (ZOOM > 1) so the explorer reads at a
+    // glance on a phone: VIEWW x VIEWH is the part of the world on screen, and the camera follows the explorer up and
+    // down as well as along. DPR folds the zoom in, so every screen-space drawing below still works in VIEWW x VIEWH.
+    var SCREENW = 480, SCREENH = ROWS * TILE, LH = SCREENH, ZOOM = 1, VIEWW = SCREENW, VIEWH = SCREENH, MAXHEARTS = 3, STEP = 1 / 60;
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var COL = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680") };
@@ -336,7 +332,7 @@
       var P = {
         jump: function () { tone(260, 0.14, "triangle", 0.09, 520); },
         land: function () { noise(0.09, 0.12, "lowpass", 500, 150); },
-        whip: function () { noise(0.05, 0.05, "bandpass", 900, 3000, 2); noise(0.07, 0.3, "highpass", 2400, 6000, 0.8, 0.09); tone(1800, 0.04, "square", 0.05, 900, 0.09); },
+        whip: function () { noise(0.08, 0.05, "bandpass", 700, 2200, 1.2); tone(1320, 0.22, "triangle", 0.07, null, 0.08); tone(1980, 0.16, "sine", 0.035, null, 0.085); },   // a swish, then the bob's brass chime
         latch: function () { tone(700, 0.08, "triangle", 0.1, 1100); noise(0.25, 0.06, "bandpass", 500, 1400, 1.5, 0.05); },
         release: function () { noise(0.22, 0.07, "bandpass", 1200, 400, 1.2); },
         gem: function () { tone(1320, 0.12, "sine", 0.1); tone(1980, 0.18, "sine", 0.07, null, 0.05); },
@@ -412,14 +408,14 @@
       st.movers = E.movers.map(function (o) { return { x: o.c * TILE, y: o.r * TILE, w: o.w * TILE, h: 9, axis: o.axis, x0: o.c * TILE, y0: o.r * TILE, range: o.range * TILE, ph: 0, dx: 0, dy: 0, speed: 0.9 }; });
       st.rings = E.rings.map(function (o) { return { x: o.c * TILE + TILE / 2, y: o.r * TILE + TILE / 2 }; });
       st.foes = E.foes.map(spawnFoe);
-      st.boulders = E.boulders.map(function (o) { return { trig: o.trig * TILE, state: "idle", x: 0, y: 0, R: 26, vx: 0, vy: 0, rot: 0 }; });
+      st.boulders = E.boulders.map(function (o) { return { trig: o.trig * TILE, state: "idle", x: 0, y: 0, R: 26, vx: 0, vy: 0, rot: 0, fade: 0, kind: biomeNameAt(def, o.trig) === "egypt" ? "sand" : "scree" }; });
       st.chases = E.chases.map(function (o) { return { trig: o.trig * TILE, end: o.end * TILE, state: "idle", x: 0, y: 0, hw: 22, hh: 13, vx: 0, vy: 0, onGround: false, stun: 0, pause: 0, gait: 0, dir: 1, pounce: 0 }; });
       st.checks = E.checks.map(function (o) { return { x: o.c * TILE + TILE / 2, y: (o.r + 1) * TILE, on: false }; });
       st.exit = E.exit ? { x: E.exit.c * TILE + TILE / 2, y: (E.exit.r + 1) * TILE } : { x: st.LW - 3 * TILE, y: 10 * TILE };
       var sy = standRowAt(E.start);
       st.spawn = { x: E.start * TILE + TILE / 2, y: (sy + 1) * TILE - 12.01 };
       st.p = { x: st.spawn.x, y: st.spawn.y, vx: 0, vy: 0, hw: 7, hh: 12, onGround: false, face: 1, run: 0, inv: 0, coyote: 0, buffer: 0, whip: null, swing: null, mover: null, push: 0, land: 0, onTile: -1, knock: 0, hand: null };
-      st.cam = clamp(st.p.x - VIEWW * 0.4, 0, st.LW - VIEWW);
+      st.cam = clamp(st.p.x - VIEWW * 0.4, 0, st.LW - VIEWW); st.camT = camTopFor(st.p);
       buildScenery();
       prerenderTiles();
     }
@@ -511,11 +507,11 @@
       var cp = null; st.checks.forEach(function (k) { if (k.on) cp = k; });
       var sx = cp ? cp.x : st.spawn.x, sy = cp ? cp.y - 12.01 : st.spawn.y;
       p.x = sx; p.y = sy; p.vx = 0; p.vy = 0; p.inv = 1.6; p.swing = null; p.whip = null; p.knock = 0;
-      st.cam = clamp(p.x - VIEWW * 0.45, 0, st.LW - VIEWW);
+      st.cam = clamp(p.x - VIEWW * 0.45, 0, st.LW - VIEWW); st.camT = camTopFor(p);
       // set-pieces the player is now behind get re-armed
-      st.boulders.forEach(function (b) { if (b.state === "roll") b.state = "idle"; });
+      st.boulders.forEach(function (b) { if (b.state === "roll") b.state = "idle"; b.fade = 0; });
       st.chases.forEach(function (ch) { if (ch.state !== "done" && ch.trig > sx - TILE) ch.state = "idle"; });
-      toast("<strong>Back to the last camp.</strong> " + (why === "water" ? "The water nearly had you." : why === "boulder" ? "Flattened — go again, faster." : why === "spikes" ? "The pit was lined with bronze." : "That was a long way down."));
+      toast("<strong>Back to the last camp.</strong> " + (why === "water" ? "The water nearly had you." : why === "boulder" ? "Swept under — go again, faster." : why === "spikes" ? "The pit was lined with bronze." : "That was a long way down."));
     }
 
     /* ================= update ================= */
@@ -533,6 +529,7 @@
       var look = p.swing ? p.vx * 14 : p.face * 46 + p.vx * 6;
       var tx = clamp(p.x - VIEWW * 0.45 + look, 0, st.LW - VIEWW);
       st.cam += (tx - st.cam) * 0.09;
+      st.camT += (camTopFor(p) - st.camT) * 0.1;
       if (st.shake > 0) st.shake = Math.max(0, st.shake - dt * 22);
       if (st.flashT > 0) st.flashT -= dt;
       if (p.y > LH + 30) respawn("fall");
@@ -594,7 +591,7 @@
       }
     }
 
-    /* ---------------- the whip ---------------- */
+    /* ---------------- the plumb-line (internally `whip`) ---------------- */
     function whipOrigin() { var p = st.p; return { x: p.x + p.face * 5, y: p.y - 7 }; }
     function updateWhip(dt) {
       var p = st.p;
@@ -734,7 +731,7 @@
       st.foes.forEach(function (f) {
         f.t += dt;
         if (f.deco) { if (f.type === "peacock") { f.x = f.home + Math.sin(f.t * 0.3) * 20; f.dir = Math.cos(f.t * 0.3) > 0 ? 1 : -1; f.fan = Math.max(0, Math.sin(f.t * 0.5)); } else f.x = f.home + Math.sin(f.t * 0.2) * 10; return; }
-        if (!f.alive || Math.abs(f.x - p.x) > VIEWW * 1.2) return;
+        if (!f.alive || Math.abs(f.x - p.x) > SCREENW * 1.2) return;
         if (f.type === "cobra" || f.type === "scorpion") {
           var sp = f.type === "cobra" ? 0.45 : 0.7;
           if (f.type === "cobra" && Math.abs(p.x - f.x) < 60 && Math.abs(p.y - f.y) < 40) { f.dir = p.x < f.x ? -1 : 1; f.rear = Math.min(1, (f.rear || 0) + dt * 4); sp = 0; } else f.rear = Math.max(0, (f.rear || 0) - dt * 3);
@@ -774,18 +771,22 @@
           var c0 = Math.max(2, Math.floor(b.trig / TILE) - 13);
           b.state = "roll"; b.x = c0 * TILE; b.y = (standRowAt(c0) + 1) * TILE - b.R; b.vx = 1.5; b.vy = 0; st.shake = 8; SFX.rumble(true);
         }
+        if (b.state === "done" && b.fade > 0) b.fade -= 1 / 50;   // a spent torrent settles rather than vanishing
         if (b.state !== "roll") return;
         b.vx = Math.min(3.05, b.vx + 0.05); b.x += b.vx; b.rot += b.vx / b.R;
         st.shake = Math.max(st.shake, 2.4);
         var lead = Math.floor((b.x + b.R * 0.75) / TILE), bottomRow = Math.floor((b.y + b.R - 2) / TILE), wall = false;
         for (var r = Math.floor((b.y - b.R * 0.6) / TILE); r < bottomRow; r++) if (solidAt(lead, r)) wall = true;
-        if (wall) { b.state = "done"; debris(b.x + b.R * 0.5, b.y); st.shake = 12; SFX.rumble(false); SFX.play("crash"); return; }
+        if (wall) { b.state = "done"; b.fade = 1; debris(b.x + b.R * 0.5, b.y); st.shake = 12; SFX.rumble(false); SFX.play("crash"); return; }
         var cc = Math.floor(b.x / TILE), rr = Math.floor(b.y / TILE), topY = null;
         for (var r2 = Math.max(0, rr); r2 < ROWS; r2++) if (solidAt(cc, r2)) { topY = r2 * TILE; break; }
-        if (topY == null) { b.vy += 0.5; b.y += b.vy; if (b.y > LH + b.R * 2) { b.state = "done"; st.shake = 10; debris(b.x, LH - 10); SFX.rumble(false); SFX.play("crash"); } }
+        if (topY == null) { b.vy += 0.5; b.y += b.vy; if (b.y > LH + b.R * 2) { b.state = "done"; b.fade = 0; st.shake = 10; debris(b.x, LH - 10); SFX.rumble(false); SFX.play("crash"); } }
         else { var want = topY - b.R; if (b.y < want) { b.vy += 0.5; b.y = Math.min(want, b.y + b.vy); if (b.y === want) b.vy = 0; } else if (b.y - want < TILE + 2) b.y = want; }
-        if (Math.hypot(clamp(b.x, p.x - p.hw, p.x + p.hw) - b.x, clamp(b.y, p.y - p.hh, p.y + p.hh) - b.y) < b.R - 3) { b.state = "idle"; SFX.rumble(false); respawn("boulder"); return; }
-        if (Math.random() < 0.4) st.parts.push({ k: "dust", x: b.x - b.R * 0.6, y: b.y + b.R - 2, vx: -Math.random(), vy: -Math.random() * 0.8, life: 0.8, col: "rgba(200,170,120,.5)" });
+        var caught = b.kind === "sand" ? (p.x - p.hw < b.x + b.R - 3 && p.y + p.hh > sandTop(b) + 4 && p.y - p.hh < b.y + b.R)
+          : Math.hypot(clamp(b.x, p.x - p.hw, p.x + p.hw) - b.x, clamp(b.y, p.y - p.hh, p.y + p.hh) - b.y) < b.R - 3;
+        if (caught) { b.state = "idle"; SFX.rumble(false); respawn("boulder"); return; }
+        if (Math.random() < 0.4) st.parts.push(b.kind === "sand" ? { k: "dust", x: b.x + b.R, y: b.y + b.R - 3, vx: 1 + Math.random() * 1.6, vy: -Math.random() * 1.2, life: 0.7, col: "rgba(232,200,140,.6)" }
+          : { k: "dust", x: b.x - b.R * 0.6, y: b.y + b.R - 2, vx: -Math.random(), vy: -Math.random() * 0.8, life: 0.8, col: "rgba(200,170,120,.5)" });
       });
     }
     function updateChases(dt) {
@@ -820,10 +821,10 @@
       var p = st.p;
       st.lv.E.traps.forEach(function (tr) {
         var ph = ((st.t + tr.phase) % tr.period) / tr.period, x = tr.c * TILE + TILE / 2;
-        if (Math.abs(x - p.x) > VIEWW) return;
+        if (Math.abs(x - p.x) > SCREENW) return;
         tr.warn = ph > 0.62 && ph < 0.8;
         if (tr.warn && Math.random() < 0.3) st.parts.push({ k: "dust", x: x + (Math.random() - 0.5) * 10, y: 4 * TILE + 2, vx: 0, vy: 0.8, life: 0.7, col: "rgba(210,190,150,.6)" });
-        if (ph >= 0.8 && !tr.fired) { tr.fired = true; st.spears.push({ x: x, y: 4 * TILE - 30, vy: 0 }); if (Math.abs(x - p.x) < VIEWW * 0.6) SFX.play("spear"); }
+        if (ph >= 0.8 && !tr.fired) { tr.fired = true; st.spears.push({ x: x, y: 4 * TILE - 30, vy: 0 }); if (Math.abs(x - p.x) < SCREENW * 0.6) SFX.play("spear"); }
         if (ph < 0.8) tr.fired = false;
       });
       for (var i = st.spears.length - 1; i >= 0; i--) {
@@ -938,12 +939,19 @@
       for (var w = 0; w < 70; w++) st.weather.push({ x: Math.random() * VIEWW, y: Math.random() * VIEWH, s: Math.random() });
     }
 
+    // the vertical camera: keep the explorer a little below the middle, never showing past the top or bottom of the world
+    function camTopFor(p) { return clamp(p.y - VIEWH * 0.56, 0, LH - VIEWH); }
     function draw() {
-      var cam = Math.round((st.cam + (st.shake ? (Math.random() - 0.5) * st.shake : 0)) * 2) / 2, camY = st.shake ? (Math.random() - 0.5) * st.shake * 0.6 : 0;
+      st.cam = clamp(st.cam, 0, st.LW - VIEWW); st.camT = clamp(st.camT || 0, 0, LH - VIEWH);   // the zoom can change with the screen
+      var cam = Math.round((st.cam + (st.shake ? (Math.random() - 0.5) * st.shake : 0)) * 2) / 2, camTop = Math.round(st.camT * 2) / 2;
+      var camY = (st.shake ? (Math.random() - 0.5) * st.shake * 0.6 : 0) - camTop;
       var cMid = Math.floor((cam + VIEWW / 2) / TILE), B = biomeAt(st.def, cMid), bname = biomeNameAt(st.def, cMid);
-      st.drawCam = cam; st.drawCamY = camY;
+      st.drawCam = cam; st.drawCamY = camY; st.drawTop = camTop;
       cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      // the sky and far landscape keep their wide, unzoomed composition behind the zoomed-in world
+      var vw = VIEWW, vh = VIEWH; VIEWW = SCREENW; VIEWH = SCREENH; cx.setTransform(DPR / ZOOM, 0, 0, DPR / ZOOM, 0, 0);
       drawSky(B, bname, cam);
+      VIEWW = vw; VIEWH = vh; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
       cx.save(); cx.translate(-cam, camY);
       st.lv.E.trees.forEach(function (tr) { var x = tr.c * TILE + 12; if (x > cam - 120 && x < cam + VIEWW + 120) drawTree(tr, biomeNameAt(st.def, tr.c)); });
       st.lv.E.statues.forEach(function (s) { var x = s.c * TILE; if (x > cam - 100 && x < cam + VIEWW + 100) drawStatue(s); });
@@ -968,7 +976,7 @@
       st.foes.forEach(function (f) { if (f.alive && f.x > cam - 80 && f.x < cam + VIEWW + 80) drawFoe(f); });
       st.spears.forEach(drawSpear);
       st.lv.E.traps.forEach(function (tr) { if (tr.warn) { cx.fillStyle = "rgba(255,200,120,.55)"; cx.fillRect(tr.c * TILE + 8, 4 * TILE - 3, 8, 3); } });
-      st.boulders.forEach(function (b) { if (b.state === "roll") drawBoulder(b); });
+      st.boulders.forEach(function (b) { if (b.state === "roll" || b.fade > 0) drawBoulder(b); });
       st.chases.forEach(function (ch) { if (ch.state === "run" || ch.state === "leave") drawBigCat(ch.x, ch.y + ch.hh, ch.dir, ch.gait, "tiger", ch.stun > 0, !ch.onGround); });
       drawPlayer(st.p);
       if (st.p.swing) drawRope();
@@ -1341,13 +1349,59 @@
       cx.fillStyle = "#d8d0b8"; cx.beginPath(); cx.moveTo(-3, 8); cx.lineTo(0, 17); cx.lineTo(3, 8); cx.fill();
       cx.restore();
     }
+    /* ---------- the chase hazards ----------
+       Egypt: the tomb's sand-trap gives way and a torrent of sand pours from the ceiling and rolls down the corridor.
+       The Persian pass: a scree slide, a tumbling mass of broken rock. Both move exactly as the old set piece did
+       (same speed, same terrain-following, same stop at a wall), so the timing of the run is unchanged. */
+    function sandTop(b) {
+      var c = Math.floor((b.x + b.R) / TILE), r = Math.floor((b.y - b.R) / TILE);
+      for (; r >= 0; r--) if (solidAt(c, r)) return (r + 1) * TILE;
+      return Math.max(0, b.y - b.R * 4);
+    }
     function drawBoulder(b) {
-      cx.save(); cx.translate(b.x, b.y);
-      cx.fillStyle = "rgba(0,0,0,.35)"; cx.beginPath(); cx.ellipse(0, b.R - 1, b.R * 0.9, 4, 0, 0, 7); cx.fill();
-      cx.rotate(b.rot);
-      var g = cx.createRadialGradient(-b.R * 0.35, -b.R * 0.4, 2, 0, 0, b.R); g.addColorStop(0, "#c8b090"); g.addColorStop(0.6, "#8a7458"); g.addColorStop(1, "#4a3c2c");
-      cx.fillStyle = g; cx.beginPath(); for (var i = 0; i < 14; i++) { var a = i / 14 * 6.28, rr = b.R * (0.94 + ((i * 7) % 5) * 0.015); if (i) cx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); else cx.moveTo(Math.cos(a) * rr, Math.sin(a) * rr); } cx.closePath(); cx.fill();
-      cx.strokeStyle = "rgba(40,30,20,.5)"; cx.lineWidth = 1.5; cx.beginPath(); cx.moveTo(-b.R * 0.5, -b.R * 0.2); cx.lineTo(b.R * 0.1, b.R * 0.1); cx.lineTo(b.R * 0.4, -b.R * 0.4); cx.moveTo(-b.R * 0.2, b.R * 0.5); cx.lineTo(0, b.R * 0.2); cx.stroke();
+      var t = st.t, a = b.state === "roll" ? 1 : clamp(b.fade || 0, 0, 1);
+      if (a <= 0) return;
+      cx.save(); cx.globalAlpha = a;
+      if (b.kind === "sand") {
+        var fx = b.x + b.R, gy = b.y + b.R, ty = sandTop(b), Hh = gy - ty, back = fx - 260, N = 22, i, u, x;
+        // the body of the torrent: a front edge that leans back at the top and bulges into a rolling lip at the floor
+        function edge(u) { return fx - 14 * (1 - u) * (1 - u) + Math.sin(u * 13 + t * 9) * 1.6 + 7 * Math.exp(-Math.pow((u - 0.9) / 0.09, 2)); }
+        var g = cx.createLinearGradient(0, ty, 0, gy); g.addColorStop(0, "#f2cf8a"); g.addColorStop(0.55, "#d9a75c"); g.addColorStop(1, "#9c6a2c");
+        cx.fillStyle = g; cx.beginPath(); cx.moveTo(back, ty);
+        for (i = 0; i <= N; i++) { u = i / N; cx.lineTo(edge(u), ty + u * Hh); }
+        cx.lineTo(back, gy); cx.closePath(); cx.fill();
+        // flow lines: sand streaming down and forward, scrolling with time
+        cx.save(); cx.beginPath(); cx.moveTo(back, ty); for (i = 0; i <= N; i++) { u = i / N; cx.lineTo(edge(u), ty + u * Hh); } cx.lineTo(back, gy); cx.closePath(); cx.clip();
+        cx.strokeStyle = "rgba(255,236,190,.35)"; cx.lineWidth = 1;
+        for (var k = 0; k < 14; k++) {
+          var off = ((t * 70 + k * 37) % Hh), x0 = fx - 8 - k * 15;
+          cx.beginPath(); cx.moveTo(x0, ty + off - 30); cx.quadraticCurveTo(x0 + 4, ty + off - 10, x0 + 9, ty + off + 12); cx.stroke();
+        }
+        cx.strokeStyle = "rgba(120,80,30,.35)";
+        for (var k2 = 0; k2 < 10; k2++) { var o2 = ((t * 55 + k2 * 53) % Hh), x2 = fx - 14 - k2 * 21; cx.beginPath(); cx.moveTo(x2, ty + o2 - 20); cx.lineTo(x2 + 6, ty + o2 + 8); cx.stroke(); }
+        cx.restore();
+        // the pour itself from the broken ceiling: thin falling ribbons just ahead of the front
+        cx.fillStyle = "rgba(232,196,128,.75)";
+        for (var s = 0; s < 4; s++) { var sx = fx - 4 + s * 5 + Math.sin(t * 3 + s) * 2, len = Hh * (0.35 + 0.25 * Math.sin(t * 5 + s * 2) * Math.sin(t * 5 + s * 2)); cx.fillRect(sx, ty, 1.4, len); }
+        // grains thrown off the lip
+        cx.fillStyle = "rgba(240,214,160,.9)";
+        for (var q = 0; q < 12; q++) { var ph = (t * 2.2 + q * 0.37) % 1, gx = fx + 2 + ph * 16 + (q % 3) * 2, gy2 = gy - 10 - Math.sin(ph * Math.PI) * 14 - (q % 4) * 2; cx.fillRect(gx, gy2, 1.3, 1.3); }
+      } else {
+        // scree: five rocks of different sizes, each tumbling and bouncing on its own rhythm (|sin| hops), the lead one in front
+        var rocks = [[16, 0, 0, 7.1, 0.0], [11, -18, -4, 8.3, 1.3], [13, -30, 2, 6.2, 2.1], [8, -10, -22, 9.4, 0.7], [10, -40, -14, 7.7, 2.9]];
+        cx.fillStyle = "rgba(0,0,0,.35)"; cx.beginPath(); cx.ellipse(b.x, b.y + b.R - 1, b.R * 1.4, 4, 0, 0, 7); cx.fill();
+        for (var j = rocks.length - 1; j >= 0; j--) {
+          var rk = rocks[j], rr = rk[0], hop = Math.abs(Math.sin(t * rk[3] + rk[4])) * (j ? 7 : 3);
+          var rx = b.x + b.R - rr + rk[1], ry = b.y + b.R - rr + rk[2] - hop;
+          cx.save(); cx.translate(rx, ry); cx.rotate(b.rot * (1.6 - j * 0.15) + rk[4]);
+          var rg = cx.createRadialGradient(-rr * 0.35, -rr * 0.4, 1, 0, 0, rr); rg.addColorStop(0, "#c2b6a2"); rg.addColorStop(0.6, "#857868"); rg.addColorStop(1, "#4a4038");
+          cx.fillStyle = rg; cx.beginPath();
+          for (var v = 0; v < 7; v++) { var ang = v / 7 * 6.283, rad = rr * (0.82 + 0.18 * Math.abs(Math.sin(v * 2.3 + j))); if (v) cx.lineTo(Math.cos(ang) * rad, Math.sin(ang) * rad); else cx.moveTo(Math.cos(ang) * rad, Math.sin(ang) * rad); }
+          cx.closePath(); cx.fill();
+          cx.strokeStyle = "rgba(40,32,26,.55)"; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(-rr * 0.4, -rr * 0.1); cx.lineTo(rr * 0.2, rr * 0.2); cx.stroke();
+          cx.restore();
+        }
+      }
       cx.restore();
     }
 
@@ -1446,80 +1500,187 @@
     }
 
     /* ---------- the explorer ---------- */
+    /* ---------- the surveyor (the player) ----------
+       An original figure drawn from geometry, not a sprite: a field surveyor in a long teal coat, a saffron head-wrap
+       whose tails stream behind, a satchel holding the journal, and a plumb-line for a tool. 40 world units tall.
+       Legs: two-bone inverse kinematics (law of cosines) from a gait cycle, so the feet plant and lift.
+       Head-wrap tails: a short Verlet chain pulled by gravity and the run. Coat hem: a damped spring. */
+    var HERO = {
+      coat: "#1f5160", coatHi: "#2f7180", coatDk: "#123540", shirt: "#e8dfc6", trou: "#3a3e4b", trouDk: "#2a2d38",
+      boot: "#6a4226", bootHi: "#8f5c34", skin: "#a9714b", skinDk: "#8a5636", hair: "#18110c", wrap: "#df9b2c", wrapDk: "#b06f17",
+      bag: "#7a2f22", bagDk: "#5a2018", page: "#efe5ca", brass: "#d6aa4c", line: 9.6
+    };
+    // knee position for a hip and foot, bending towards +x (the way the surveyor faces)
+    function ik(hx, hy, fx, fy, L1, L2) {
+      var dx = fx - hx, dy = fy - hy, d = Math.min(Math.hypot(dx, dy), L1 + L2 - 0.01), a = Math.atan2(dy, dx);
+      var c = clamp((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d || 1), -1, 1), al = Math.acos(c);
+      var k1 = { x: hx + Math.cos(a - al) * L1, y: hy + Math.sin(a - al) * L1 }, k2 = { x: hx + Math.cos(a + al) * L1, y: hy + Math.sin(a + al) * L1 };
+      return k1.x > k2.x ? k1 : k2;
+    }
+    function toWorld(x, y) { var q = new DOMPoint(x, y).matrixTransform(cx.getTransform()); return { x: q.x / DPR + st.drawCam, y: q.y / DPR - st.drawCamY }; }
+    function seg(x0, y0, x1, y1, w, col) { cx.strokeStyle = col; cx.lineWidth = w; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(x0, y0); cx.lineTo(x1, y1); cx.stroke(); }
     function drawPlayer(p) {
-      if (!ART.ready) return drawPlayerSimple(p);
-      var M = ART.man, I = ART.img, H = 36, sc = H / M.figH;
-      var moving = p.onGround && Math.abs(p.vx) > 0.4, ph = p.run, air = !p.onGround && !p.swing;
-      var tF = 0, kF = 0.08, tB = 0, kB = 0.08, bob = 0, lean = 0;
-      if (p.swing) { tF = -0.35 + Math.sin(st.t * 3) * 0.1; kF = 0.5; tB = 0.1; kB = 0.7; }
-      else if (moving) {
-        var sp = Math.min(1, Math.abs(p.vx) / 3.3);
-        tF = -Math.sin(ph) * 0.62 * sp; tB = Math.sin(ph) * 0.62 * sp;
-        kF = 0.1 + Math.max(0, Math.cos(ph)) * 0.95 * sp; kB = 0.1 + Math.max(0, -Math.cos(ph)) * 0.95 * sp;
-        bob = -Math.abs(Math.cos(ph)) * 1.3 * sp; lean = 0.09 * sp + (p.push ? 0.22 : 0);
-      } else if (air) {
-        var up = clamp(-p.vy / 8.8, -1, 1);
-        tF = -0.55 - 0.25 * up; kF = 0.95 + 0.35 * up; tB = 0.25; kB = 0.7 + 0.3 * up; lean = 0.06;
-      } else bob = Math.sin(st.t * 2.4) * 0.35;
-      if (p.land > 0) { bob += p.land * 12; kF += 0.5; kB += 0.5; tF -= 0.2; }
+      var L = HERO.line, moving = p.onGround && Math.abs(p.vx) > 0.4, ph = p.run, air = !p.onGround && !p.swing;
+      var sp = Math.min(1, Math.abs(p.vx) / 3.3), bob = 0, lean = 0;
+      // foot targets in the hip's frame (y down, +x forward): an elliptical gait, plant flat, lift on the way through
+      var hipY = -19, fF, fB;
+      function gait(q) { var s = Math.sin(q), c = Math.cos(q); return { x: s * 7 * sp, y: -Math.max(0, c) * 5.5 * sp }; }
+      if (p.swing) { fF = { x: 4, y: -4 }; fB = { x: -2, y: -1 }; }
+      else if (moving) { fF = gait(ph); fB = gait(ph + Math.PI); bob = -Math.abs(Math.cos(ph)) * 1.1 * sp; lean = 0.1 * sp + (p.push ? 0.24 : 0); }
+      else if (air) { var up = clamp(-p.vy / 8.8, -1, 1); fF = { x: 5, y: -7 - 2 * up }; fB = { x: -3.5, y: -3 + up }; lean = 0.08; }
+      else { fF = { x: 1.6, y: 0 }; fB = { x: -1.8, y: 0 }; bob = Math.sin(st.t * 2.2) * 0.3; }
+      if (p.land > 0) { bob += p.land * 10; }
       if (p.inv > 1.1) lean = -0.3;
-      var hipY = p.y + p.hh - M.footFromHip * sc + bob;
-      cx.save(); cx.translate(p.x, hipY); cx.scale(p.face, 1);
+      // coat hem spring: trails the motion, flares in the air
+      var want = clamp(-p.vx * p.face * 0.9 - (air ? 2.2 : 0) + (p.swing ? -1.5 : 0), -4, 1.5);
+      p.hem = (p.hem || 0) + (want - (p.hem || 0)) * 0.16;
+      var hem = p.hem + Math.sin(st.t * 9 + ph) * 0.35 * sp;
+      cx.save(); cx.translate(p.x, p.y + p.hh + bob); cx.scale(p.face, 1);
       if (p.inv > 0 && Math.floor(p.inv * 12) % 2) cx.globalAlpha = 0.45;
-      if (p.onGround) { cx.fillStyle = "rgba(0,0,0,.25)"; cx.beginPath(); cx.ellipse(0, M.footFromHip * sc - bob, 9, 2, 0, 0, 7); cx.fill(); }
-      // hanging from the rope: the body tilts with it (rotate about the hands, not the hips)
-      if (p.swing) { cx.translate(0, -24); cx.rotate(-p.swing.th * p.face * 0.9); cx.translate(0, 24); }
-      cx.rotate(lean); cx.scale(sc, sc);
-      function leg(t, k, dark) {
-        cx.save(); cx.rotate(t);
-        cx.save(); cx.scale(0.8, 1); cx.drawImage(dark ? darker(I.thigh) : I.thigh, -M.thigh.pivotX, -M.thigh.pivotY); cx.restore();
-        cx.translate(M.kneeFromHip[0] * 0.8, M.kneeFromHip[1]); cx.rotate(k);
-        cx.save(); cx.scale(0.8, 1); cx.drawImage(dark ? darker(I.shin) : I.shin, -M.shin.pivotX, -M.shin.pivotY); cx.restore();
-        cx.restore();
+      if (p.onGround) { cx.fillStyle = "rgba(0,0,0,.28)"; cx.beginPath(); cx.ellipse(0, -bob, 9, 2, 0, 0, 7); cx.fill(); }
+      if (p.swing) { cx.translate(0, -36); cx.rotate(-p.swing.th * p.face * 0.9); cx.translate(0, 36); }
+      cx.rotate(lean);
+      // the head-wrap tails hang from the knot (found through this frame's transform) and are drawn behind the body
+      p.wrapAt = toWorld(-3, -38.6);
+      cx.save(); cx.setTransform(DPR, 0, 0, DPR, -st.drawCam * DPR, st.drawCamY * DPR); drawWrapTails(p); cx.restore();
+      var hip = { x: 0, y: hipY }, knB = ik(-1, hipY, -1 + fB.x, fB.y, L, L), knF = ik(1, hipY, 1 + fF.x, fF.y, L, L);
+      function leg(kn, ft, hx, dark) {
+        seg(hx, hipY, kn.x, kn.y, 4.2, dark ? HERO.trouDk : HERO.trou);
+        seg(kn.x, kn.y, ft.x, ft.y - 2.4, 3.6, dark ? HERO.trouDk : HERO.trou);
+        // the boot: a shaft to mid-shin, then a sole that stays level with the ground (heel to toe)
+        var bx = lerp(kn.x, ft.x, 0.55), by = lerp(kn.y, ft.y - 2.4, 0.55);
+        seg(bx, by, ft.x, ft.y - 2.2, 3.9, dark ? "#4e3018" : HERO.boot);
+        cx.fillStyle = dark ? "#3e2612" : HERO.boot; cx.beginPath(); cx.moveTo(ft.x - 2.2, ft.y - 3.6); cx.lineTo(ft.x + 2.4, ft.y - 3.2); cx.quadraticCurveTo(ft.x + 4.8, ft.y - 2.4, ft.x + 4.6, ft.y); cx.lineTo(ft.x - 2.4, ft.y); cx.closePath(); cx.fill();
+        cx.fillStyle = "#1e140c"; cx.fillRect(ft.x - 2.4, ft.y - 0.7, 7, 0.9);                              // sole
+        if (!dark) { cx.fillStyle = HERO.bootHi; cx.fillRect(bx - 1.6, by - 0.4, 3.2, 0.8); }                 // boot cuff
       }
-      leg(tB, kB, true);   // back leg recedes: a darkened copy made once (speed fix #4; a per-frame filter was costly)
-      leg(tF, kF);
-      cx.drawImage(I.body, -M.body.pivotX, -M.body.pivotY);
-      // the whip arm: a raised sleeve and fist while lashing or holding the rope
-      var hand = null;
+      var ftB = { x: -1 + fB.x, y: fB.y }, ftF = { x: 1 + fF.x, y: fF.y };
+      leg(knB, ftB, -1, true);
+      // back arm swings against the front leg
+      var sw = moving ? Math.sin(ph) * 0.7 * sp : air ? -0.6 : 0.1, sh = { x: -0.5, y: -31 };
+      if (!p.swing) { var ea = 1.45 + sw, el = { x: sh.x + Math.cos(ea) * 5.4, y: sh.y + Math.sin(ea) * 5.4 }, ha = ea - 0.35;
+        seg(sh.x, sh.y, el.x, el.y, 3.4, HERO.coatDk); seg(el.x, el.y, el.x + Math.cos(ha) * 5, el.y + Math.sin(ha) * 5, 3, HERO.coatDk);
+        cx.fillStyle = HERO.skinDk; cx.beginPath(); cx.arc(el.x + Math.cos(ha) * 6, el.y + Math.sin(ha) * 6, 1.4, 0, 7); cx.fill(); }
+      // coat: shoulders to knee, cut away at the front, the hem trailing on its spring
+      cx.fillStyle = HERO.coatDk;
+      cx.beginPath(); cx.moveTo(-3.6, -31); cx.quadraticCurveTo(-5.2, -20, -4.6 + hem, -9.5); cx.lineTo(-1 + hem * 0.6, -10.5); cx.lineTo(0.5, -20); cx.closePath(); cx.fill();   // back tail
+      leg(knF, ftF, 1, false);
+      var g = cx.createLinearGradient(-4, 0, 4, 0); g.addColorStop(0, HERO.coatDk); g.addColorStop(0.45, HERO.coat); g.addColorStop(1, HERO.coatHi);
+      cx.fillStyle = g;
+      cx.beginPath(); cx.moveTo(-3.8, -32.2); cx.quadraticCurveTo(0, -33.6, 3.6, -32);
+      cx.quadraticCurveTo(4.6, -26, 3.4, -21.5); cx.lineTo(4.2 + hem * 0.25, -12.5); cx.quadraticCurveTo(1, -11, -1.6 + hem * 0.5, -11.6);
+      cx.lineTo(-3.4, -20.5); cx.quadraticCurveTo(-4.8, -26, -3.8, -32.2); cx.closePath(); cx.fill();
+      cx.fillStyle = HERO.shirt; cx.beginPath(); cx.moveTo(1.4, -32.4); cx.lineTo(3.3, -31.6); cx.lineTo(3.1, -24.5); cx.lineTo(1.9, -25.6); cx.closePath(); cx.fill();   // shirt at the open collar
+      cx.strokeStyle = HERO.coatHi; cx.lineWidth = 0.7; cx.beginPath(); cx.moveTo(1.5, -32.2); cx.lineTo(2.2, -22); cx.stroke();                                       // lapel edge
+      cx.fillStyle = HERO.brass; [-28.5, -25.5].forEach(function (yy) { cx.beginPath(); cx.arc(3.2, yy, 0.55, 0, 7); cx.fill(); });                                  // brass buttons
+      cx.fillStyle = "#2a1a10"; cx.fillRect(-3.6, -21.6, 7.6, 1.6); cx.fillStyle = HERO.brass; cx.fillRect(1.6, -21.5, 1.4, 1.4);                                       // belt + buckle
+      // satchel strap across the chest and the satchel on the back hip, the journal's pages showing
+      cx.strokeStyle = HERO.bagDk; cx.lineWidth = 1.1; cx.beginPath(); cx.moveTo(2.6, -32); cx.lineTo(-3.4, -19.5); cx.stroke();
+      cx.fillStyle = HERO.bag; cx.beginPath(); cx.moveTo(-6.6, -20.5); cx.lineTo(-2, -20.5); cx.lineTo(-2.2, -14.6); cx.quadraticCurveTo(-4.4, -13.8, -6.6, -14.6); cx.closePath(); cx.fill();
+      cx.fillStyle = HERO.page; cx.fillRect(-6.1, -21.6, 3.6, 1.1); cx.fillStyle = "#b8342a"; cx.fillRect(-4.2, -21.6, 0.5, 2.6);                                         // pages + ribbon
+      cx.fillStyle = HERO.bagDk; cx.fillRect(-6.6, -20.5, 4.6, 1.6); cx.fillStyle = HERO.brass; cx.fillRect(-4.6, -19.2, 0.9, 1);                                          // flap + clasp
+      // neck and head (profile, facing +x): skin, hair gathered at the back, the saffron wrap over the crown
+      cx.fillStyle = HERO.skinDk; cx.fillRect(-0.8, -34.6, 2.4, 2.6);
+      cx.fillStyle = HERO.hair; cx.beginPath(); cx.arc(-3.3, -36.6, 1.7, 0, 7); cx.fill();                                                                              // the knot of hair
+      cx.fillStyle = HERO.skin; cx.beginPath(); cx.ellipse(0.4, -37, 3.2, 3.7, 0, 0, 7); cx.fill();
+      cx.beginPath(); cx.moveTo(3.2, -37.6); cx.lineTo(4.4, -36.2); cx.lineTo(3.3, -35.8); cx.fill();                                                                  // nose
+      cx.fillStyle = HERO.skinDk; cx.beginPath(); cx.arc(-0.6, -36.8, 0.8, 0, 7); cx.fill();                                                                          // ear
+      cx.fillStyle = "#1a120c"; cx.beginPath(); cx.arc(2.1, -37.3, 0.45, 0, 7); cx.fill();                                                                             // eye
+      cx.strokeStyle = "#1a120c"; cx.lineWidth = 0.45; cx.beginPath(); cx.moveTo(1.4, -38.3); cx.lineTo(2.8, -38.4); cx.stroke();                                    // brow
+      cx.strokeStyle = HERO.skinDk; cx.lineWidth = 0.4; cx.beginPath(); cx.moveTo(2.3, -34.9); cx.lineTo(3.2, -35); cx.stroke();                                       // mouth
+      var wg = cx.createLinearGradient(0, -41, 0, -37.5); wg.addColorStop(0, HERO.wrap); wg.addColorStop(1, HERO.wrapDk);
+      cx.fillStyle = wg; cx.beginPath(); cx.moveTo(-3.2, -37.8); cx.quadraticCurveTo(-2.6, -41.6, 0.8, -41.2); cx.quadraticCurveTo(3.8, -40.8, 3.6, -38.2); cx.quadraticCurveTo(0.4, -39.2, -3.2, -37.8); cx.closePath(); cx.fill();
+      cx.strokeStyle = HERO.wrapDk; cx.lineWidth = 0.5; cx.beginPath(); cx.moveTo(-2.4, -39.6); cx.quadraticCurveTo(0.6, -40.6, 3.2, -39.4); cx.stroke();                     // the fold
+      // the front arm: swings with the run, or lifts to cast the plumb-line / hold it while swinging
+      var hand = null, fsh = { x: 1.2, y: -31 };
       if (p.whip || p.swing) {
-        var sh = { x: 12, y: -228 }, a = p.swing ? -1.75 : (p.whip.up ? -1.35 : -0.25 - (p.whip.t < 0.1 ? 1.1 * (1 - p.whip.t / 0.1) : 0));
-        var hx = sh.x + Math.cos(a) * 150, hy = sh.y + Math.sin(a) * 150;
-        cx.strokeStyle = "#3e2616"; cx.lineWidth = 50; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(sh.x, sh.y); cx.lineTo(hx, hy); cx.stroke();
-        cx.strokeStyle = "#6a4428"; cx.lineWidth = 32; cx.beginPath(); cx.moveTo(sh.x, sh.y - 8); cx.lineTo(hx, hy - 8); cx.stroke();
-        cx.fillStyle = "#d9a57c"; cx.beginPath(); cx.arc(hx + Math.cos(a) * 20, hy + Math.sin(a) * 20, 24, 0, 7); cx.fill();
-        var m = cx.getTransform(), hp = new DOMPoint(hx + Math.cos(a) * 24, hy + Math.sin(a) * 24).matrixTransform(m);
-        hand = { x: hp.x / DPR + st.drawCam, y: hp.y / DPR - st.drawCamY };
+        var a = p.swing ? -1.75 : (p.whip.up ? -1.35 : -0.25 - (p.whip.t < 0.1 ? 1.1 * (1 - p.whip.t / 0.1) : 0));
+        var e = { x: fsh.x + Math.cos(a + 0.25) * 5.6, y: fsh.y + Math.sin(a + 0.25) * 5.6 }, hx = e.x + Math.cos(a - 0.1) * 5.4, hy = e.y + Math.sin(a - 0.1) * 5.4;
+        seg(fsh.x, fsh.y, e.x, e.y, 3.6, HERO.coat); seg(e.x, e.y, hx, hy, 3.1, HERO.coat);
+        seg(lerp(e.x, hx, 0.7), lerp(e.y, hy, 0.7), hx, hy, 3.2, HERO.shirt);                                                                                       // rolled cuff
+        cx.fillStyle = HERO.skin; cx.beginPath(); cx.arc(hx + Math.cos(a) * 1.2, hy + Math.sin(a) * 1.2, 1.6, 0, 7); cx.fill();
+        hand = toWorld(hx + Math.cos(a) * 1.6, hy + Math.sin(a) * 1.6);
+      } else {
+        var fa = 1.45 - sw, fe = { x: fsh.x + Math.cos(fa) * 5.4, y: fsh.y + Math.sin(fa) * 5.4 }, fha = fa - 0.45 - (moving ? 0.3 * sp : 0);
+        var fh = { x: fe.x + Math.cos(fha) * 5.2, y: fe.y + Math.sin(fha) * 5.2 };
+        seg(fsh.x, fsh.y, fe.x, fe.y, 3.6, HERO.coat); seg(fe.x, fe.y, fh.x, fh.y, 3.1, HERO.coat);
+        seg(lerp(fe.x, fh.x, 0.72), lerp(fe.y, fh.y, 0.72), fh.x, fh.y, 3.2, HERO.shirt);
+        cx.fillStyle = HERO.skin; cx.beginPath(); cx.arc(fh.x + Math.cos(fha) * 1.3, fh.y + Math.sin(fha) * 1.3, 1.5, 0, 7); cx.fill();
+        // the coiled plumb-line on the belt
+        cx.strokeStyle = "#c9b48a"; cx.lineWidth = 0.6; cx.beginPath(); cx.ellipse(3.6, -18.8, 1.3, 1.8, 0, 0, 7); cx.stroke();
+        cx.fillStyle = HERO.brass; cx.beginPath(); cx.moveTo(3.4, -17.2); cx.lineTo(4.4, -17.2); cx.lineTo(3.9, -15.2); cx.closePath(); cx.fill();
       }
       p.hand = hand;
       cx.globalAlpha = 1; cx.restore();
     }
-    function drawPlayerSimple(p) {
-      cx.save(); cx.translate(p.x, p.y); cx.scale(p.face, 1);
-      var leg = p.onGround && Math.abs(p.vx) > 0.4 ? Math.sin(p.run) * 4 : 0;
-      cx.strokeStyle = "#2a1c10"; cx.lineWidth = 4; cx.lineCap = "round";
-      cx.beginPath(); cx.moveTo(-1, 4); cx.lineTo(-3, 11 + leg); cx.moveTo(1, 4); cx.lineTo(3, 11 - leg); cx.stroke();
-      cx.fillStyle = "#6a4428"; cx.fillRect(-6, -6, 12, 12);
-      cx.fillStyle = "#d8ab6e"; cx.beginPath(); cx.arc(0, -11, 5, 0, 7); cx.fill();
-      cx.fillStyle = "#5a3a1a"; cx.beginPath(); cx.ellipse(0, -14, 8, 3, 0, 0, 7); cx.fill(); cx.fillRect(-4, -16, 8, 3);
-      cx.restore(); p.hand = null;
+    // two saffron tails from the knot of the head-wrap: Verlet points with gravity, a pull from the run, and a little flutter
+    function drawWrapTails(p) {
+      var a = p.wrapAt; if (!a) return;
+      if (!p.tails || Math.hypot(p.tails[0][0].x - a.x, p.tails[0][0].y - a.y) > 30) {
+        p.tails = [0, 1].map(function () { var pts = []; for (var i = 0; i < 6; i++) pts.push({ x: a.x - p.face * i * 2, y: a.y + i, ox: a.x - p.face * i * 2, oy: a.y + i }); return pts; });
+      }
+      var wind = -p.vx * 0.05 - p.face * 0.012;
+      p.tails.forEach(function (pts, k) {
+        var segL = k ? 2.1 : 2.6;
+        pts[0].x = a.x; pts[0].y = a.y + k * 0.8;
+        for (var i = 1; i < pts.length; i++) {
+          var q = pts[i], vx = (q.x - q.ox) * 0.72, vy = (q.y - q.oy) * 0.72;
+          q.ox = q.x; q.oy = q.y; q.x += vx + wind + Math.sin(st.t * 11 + i * 1.7 + k * 2) * 0.06 * i; q.y += vy + 0.22;
+          if (q.y < a.y - 1.5) q.y = a.y - 1.5;                                        // cloth this short never flies above the knot
+        }
+        // inextensible cloth: walk out from the knot and put every point exactly one link from the one before it
+        for (var j = 1; j < pts.length; j++) {
+          var A = pts[j - 1], B = pts[j], dx = B.x - A.x, dy = B.y - A.y, d = Math.hypot(dx, dy) || 1;
+          B.x = A.x + dx / d * segL; B.y = A.y + dy / d * segL;
+        }
+        // a ribbon that narrows to the end
+        cx.fillStyle = k ? HERO.wrapDk : HERO.wrap; cx.beginPath();
+        var left = [], right = [];
+        for (var n = 0; n < pts.length; n++) {
+          var P = pts[n], Q = pts[Math.min(pts.length - 1, n + 1)], R = pts[Math.max(0, n - 1)], tx = Q.x - R.x, ty = Q.y - R.y, tl = Math.hypot(tx, ty) || 1, w = 1.1 * (1 - n / pts.length) + 0.25;
+          left.push([P.x - ty / tl * w, P.y + tx / tl * w]); right.push([P.x + ty / tl * w, P.y - tx / tl * w]);
+        }
+        left.forEach(function (q, i) { if (i) cx.lineTo(q[0], q[1]); else cx.moveTo(q[0], q[1]); });
+        for (var m = right.length - 1; m >= 0; m--) cx.lineTo(right[m][0], right[m][1]);
+        cx.closePath(); cx.fill();
+      });
+    }
+    /* the plumb-line: a braided surveyor's cord with a brass plumb-bob at its end. Cast, it snaps out along the same path
+       the old lash took (so every hit, lever and ring works exactly as before) and the bob rings when it strikes. */
+    function drawBob(x, y, ang, s) {
+      cx.save(); cx.translate(x, y); cx.rotate(ang); cx.scale(s, s);
+      var g = cx.createLinearGradient(0, -2.6, 0, 2.6); g.addColorStop(0, "#f4d98a"); g.addColorStop(0.5, HERO.brass); g.addColorStop(1, "#7a5a1c");
+      cx.fillStyle = g; cx.beginPath(); cx.moveTo(-1.6, 0); cx.quadraticCurveTo(-1, -2.6, 1.6, -2.2); cx.quadraticCurveTo(4.6, -1.2, 6.2, 0); cx.quadraticCurveTo(4.6, 1.2, 1.6, 2.2); cx.quadraticCurveTo(-1, 2.6, -1.6, 0); cx.fill();
+      cx.fillStyle = "rgba(255,250,220,.75)"; cx.beginPath(); cx.ellipse(1.4, -1, 1.5, 0.6, -0.2, 0, 7); cx.fill();   // the glint
+      cx.strokeStyle = "#6a4c18"; cx.lineWidth = 0.5; cx.beginPath(); cx.moveTo(0.4, -2.3); cx.lineTo(0.4, 2.3); cx.stroke();   // the collar
+      cx.restore();
+    }
+    function cord(pts) {
+      cx.lineCap = "round"; cx.lineJoin = "round";
+      cx.strokeStyle = "#3a2c1a"; cx.lineWidth = 1.9; cx.beginPath(); pts.forEach(function (q, i) { if (i) cx.lineTo(q.x, q.y); else cx.moveTo(q.x, q.y); }); cx.stroke();
+      cx.strokeStyle = "#cdb88c"; cx.lineWidth = 0.9; cx.setLineDash([1.6, 1.4]); cx.beginPath(); pts.forEach(function (q, i) { if (i) cx.lineTo(q.x, q.y); else cx.moveTo(q.x, q.y); }); cx.stroke(); cx.setLineDash([]);
     }
     function drawWhip() {
       var p = st.p; if (!p.whip || p.swing) return;
       var t = p.whip.t, ext = t < 0.1 ? t / 0.1 : t < 0.18 ? 1 : Math.max(0, 1 - (t - 0.18) / 0.12), pts = [];
-      for (var k = 0; k <= 12; k++) { var q = whipPoint(k / 12, ext, true); q.y += Math.sin(k / 12 * Math.PI) * 7 * (1 - ext); pts.push(q); }   // slack while it unrolls
-      [["#2a1a0c", 2.6], ["#8a5c34", 1.1]].forEach(function (sty) { cx.strokeStyle = sty[0]; cx.lineWidth = sty[1]; cx.lineCap = "round"; cx.lineJoin = "round"; cx.beginPath(); pts.forEach(function (q, i) { if (i) cx.lineTo(q.x, q.y); else cx.moveTo(q.x, q.y); }); cx.stroke(); });
-      var tp = pts[pts.length - 1];
-      if (t > 0.08 && t < 0.2) {                                                     // the crack: a bright star at the tip and a ring of air
+      for (var k = 0; k <= 12; k++) { var q = whipPoint(k / 12, ext, true); q.y += Math.sin(k / 12 * Math.PI) * 6 * (1 - ext); pts.push(q); }   // slack as it pays out
+      cord(pts);
+      var tp = pts[pts.length - 1], pv = pts[pts.length - 2];
+      drawBob(tp.x, tp.y, Math.atan2(tp.y - pv.y, tp.x - pv.x), 1);
+      if (t > 0.08 && t < 0.2) {                                                      // the strike: a brass glint and a ring of sound
         var f = 1 - Math.abs(t - 0.12) / 0.08;
-        cx.fillStyle = "rgba(255,245,200," + (0.95 * f).toFixed(2) + ")"; cx.beginPath(); for (var i = 0; i < 10; i++) { var a = i / 10 * 6.28, r = i % 2 ? 4 : 12; cx.lineTo(tp.x + Math.cos(a) * r, tp.y + Math.sin(a) * r); } cx.fill();
-        cx.strokeStyle = "rgba(255,240,200," + (0.6 * f).toFixed(2) + ")"; cx.lineWidth = 1.2; cx.beginPath(); cx.arc(tp.x, tp.y, 6 + (t - 0.08) * 160, 0, 7); cx.stroke();
+        cx.strokeStyle = "rgba(255,236,170," + (0.9 * f).toFixed(2) + ")"; cx.lineWidth = 1.2;
+        cx.beginPath(); for (var i = 0; i < 4; i++) { var aa = i * Math.PI / 2 + 0.4; cx.moveTo(tp.x + Math.cos(aa) * 2, tp.y + Math.sin(aa) * 2); cx.lineTo(tp.x + Math.cos(aa) * 9 * f, tp.y + Math.sin(aa) * 9 * f); } cx.stroke();
+        cx.strokeStyle = "rgba(255,230,170," + (0.5 * f).toFixed(2) + ")"; cx.lineWidth = 0.8; cx.beginPath(); cx.arc(tp.x, tp.y, 5 + (t - 0.08) * 140, 0, 7); cx.stroke();
       }
     }
     function drawRope() {
-      var p = st.p, s = p.swing, h = p.hand || { x: p.x, y: p.y - 12 };
-      cx.strokeStyle = "#3a2412"; cx.lineWidth = 2; cx.beginPath(); cx.moveTo(s.ax, s.ay); cx.lineTo(h.x, h.y); cx.stroke();
-      cx.strokeStyle = "rgba(150,110,70,.8)"; cx.lineWidth = 0.8; cx.beginPath(); cx.moveTo(s.ax, s.ay); cx.lineTo(h.x, h.y); cx.stroke();
+      // hanging from a ring: the cord sags a touch under load (a shallow catenary-like curve), the bob wrapped round the ring
+      var p = st.p, s = p.swing, h = p.hand || { x: p.x, y: p.y - 12 }, pts = [];
+      var mx = (s.ax + h.x) / 2, my = (s.ay + h.y) / 2, nx = -(h.y - s.ay), ny = h.x - s.ax, nl = Math.hypot(nx, ny) || 1, sag = 1.6;
+      for (var i = 0; i <= 10; i++) { var t = i / 10, b = 4 * t * (1 - t) * sag; pts.push({ x: lerp(s.ax, h.x, t) + nx / nl * b * p.face, y: lerp(s.ay, h.y, t) + ny / nl * b * p.face }); }
+      cord(pts);
+      drawBob(s.ax + 2, s.ay + 3, Math.PI / 2 + 0.3, 0.8);
     }
     function drawParts() {
       st.parts.forEach(function (q) {
@@ -1532,15 +1693,6 @@
       cx.globalAlpha = 1;
     }
 
-    // a copy of a sprite at 62% brightness, made once and kept (replaces a per-frame brightness filter)
-    var DARK = new Map();
-    function darker(img) {
-      var d = DARK.get(img); if (d) return d;
-      if (!img || !img.width) return img;
-      d = document.createElement("canvas"); d.width = img.width; d.height = img.height;
-      var g = d.getContext("2d"); g.drawImage(img, 0, 0); g.globalCompositeOperation = "source-atop"; g.fillStyle = "rgba(0,0,0,.38)"; g.fillRect(0, 0, d.width, d.height);
-      DARK.set(img, d); return d;
-    }
     /* ---------- light: dark tomb zones with torch and lantern light cut out ---------- */
     // drawn at half resolution and scaled up: the layer is all soft gradients (speed fix #4)
     var lightCv = null, lx = null, LQ = 0.5;
@@ -1548,17 +1700,18 @@
       var zones = st.lv.E.dark; if (!zones.length) return;
       if (!zones.some(function (z) { return (z[1] + 1) * TILE > cam && z[0] * TILE < cam + VIEWW; })) return;
       if (!lightCv || lightCv.width !== Math.round(VIEWW * DPR * LQ)) { lightCv = document.createElement("canvas"); lightCv.width = Math.round(VIEWW * DPR * LQ); lightCv.height = Math.round(VIEWH * DPR * LQ); lx = lightCv.getContext("2d"); }
-      lx.setTransform(DPR * LQ, 0, 0, DPR * LQ, 0, 0); lx.globalCompositeOperation = "source-over"; lx.clearRect(0, 0, VIEWW, VIEWH);
+      var top = st.drawTop || 0;   // light holes sit in the world, so they move with the vertical camera
+      lx.setTransform(DPR * LQ, 0, 0, DPR * LQ, 0, -top * DPR * LQ); lx.globalCompositeOperation = "source-over"; lx.clearRect(0, 0, VIEWW, LH);
       zones.forEach(function (z) {
         var x0 = z[0] * TILE - cam, x1 = (z[1] + 1) * TILE - cam, ramp = 72;
-        var g = lx.createLinearGradient(x0 - ramp * 0.3, 0, x0 + ramp, 0); g.addColorStop(0, "rgba(6,4,3,0)"); g.addColorStop(1, "rgba(6,4,3,.9)");
-        lx.fillStyle = g; lx.fillRect(x0 - ramp * 0.3, 0, ramp * 1.3, VIEWH);
-        lx.fillStyle = "rgba(6,4,3,.9)"; lx.fillRect(x0 + ramp, 0, Math.max(0, x1 - x0 - ramp), VIEWH);
+        var g = lx.createLinearGradient(x0 - ramp * 0.3, 0, x0 + ramp, 0); g.addColorStop(0, "rgba(6,4,3,0)"); g.addColorStop(1, "rgba(6,4,3,.8)");
+        lx.fillStyle = g; lx.fillRect(x0 - ramp * 0.3, 0, ramp * 1.3, LH);
+        lx.fillStyle = "rgba(6,4,3,.8)"; lx.fillRect(x0 + ramp, 0, Math.max(0, x1 - x0 - ramp), LH);
       });
       lx.globalCompositeOperation = "destination-out";
       function hole(x, y, r, a) { var g = lx.createRadialGradient(x, y, r * 0.15, x, y, r); g.addColorStop(0, "rgba(0,0,0," + a + ")"); g.addColorStop(1, "rgba(0,0,0,0)"); lx.fillStyle = g; lx.beginPath(); lx.arc(x, y, r, 0, 7); lx.fill(); }
       st.lv.E.torches.forEach(function (tc) { var x = tc.c * TILE + 12 - cam, fl = 1 + Math.sin(st.t * 13 + tc.c) * 0.05 + Math.sin(st.t * 7.3 + tc.c * 2) * 0.04; if (x > -120 && x < VIEWW + 120) hole(x, tc.r * TILE + 6, 92 * fl, 0.95); });
-      hole(st.p.x - cam, st.p.y - 4, 66, 0.82);
+      hole(st.p.x - cam, st.p.y - 8, 84, 0.9);   // the surveyor's own lamp-glow: wide enough to read the floor ahead on a phone
       st.boulders.forEach(function (b) { if (b.state === "roll") hole(b.x - cam, b.y, 58, 0.7); });
       st.spears.forEach(function (sp) { hole(sp.x - cam, sp.y, 22, 0.5); });
       st.relics.forEach(function (rl) { if (!rl.got) hole(rl.x - cam, rl.y, 30, 0.6); });
@@ -1566,9 +1719,9 @@
       st.checks.forEach(function (k) { if (k.on) hole(k.x - cam, k.y - 8, 60, 0.8); });
       hole(st.exit.x - cam, st.exit.y - 22, 60, 0.7);
       cx.setTransform(1, 0, 0, 1, 0, 0); cx.drawImage(lightCv, 0, 0, Math.round(VIEWW * DPR), Math.round(VIEWH * DPR)); cx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      cx.globalCompositeOperation = "lighter";
+      cx.globalCompositeOperation = "lighter"; cx.translate(0, -top);
       st.lv.E.torches.forEach(function (tc) { var x = tc.c * TILE + 12 - cam; if (x < -80 || x > VIEWW + 80) return; var g = cx.createRadialGradient(x, tc.r * TILE + 6, 2, x, tc.r * TILE + 6, 70); g.addColorStop(0, "rgba(255,150,60,.22)"); g.addColorStop(1, "rgba(255,120,40,0)"); cx.fillStyle = g; cx.fillRect(x - 70, tc.r * TILE - 64, 140, 140); });
-      cx.globalCompositeOperation = "source-over";
+      cx.globalCompositeOperation = "source-over"; cx.setTransform(DPR, 0, 0, DPR, 0, 0);
     }
     function drawWeather(B, cam) {
       var m = cam + VIEWW / 2, inDark = st.lv.E.dark.some(function (z) { return m > z[0] * TILE && m < (z[1] + 1) * TILE; });
@@ -1617,8 +1770,58 @@
       var items = run.collected.map(function (f) { return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) + ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>"; }).join("");
       return '<ul class="ouro-facts">' + items + "</ul>";
     }
+    // the surveyor's portrait for the journal cards: drawn once per expression from curves (no image files), kept as a data URL
+    var PORTRAIT = {};
     function portrait(smile) {
-      return '<img class="tr-portrait" src="' + ART_BASE + (smile ? "portrait-smile" : "portrait") + '.png?v=1" alt="" width="220" height="273">';
+      var key = smile ? "s" : "n";
+      if (!PORTRAIT[key]) {
+        var c = document.createElement("canvas"); c.width = 220; c.height = 273; var g = c.getContext("2d"), H = HERO, ink = "#24160d";
+        g.lineJoin = "round"; g.lineCap = "round";
+        function path(pts, close) { g.beginPath(); g.moveTo(pts[0][0], pts[0][1]); for (var i = 1; i < pts.length; i++) { var q = pts[i]; if (q.length === 4) g.quadraticCurveTo(q[0], q[1], q[2], q[3]); else g.lineTo(q[0], q[1]); } if (close) g.closePath(); }
+        function fillInk(fill, w) { g.fillStyle = fill; g.fill(); g.strokeStyle = ink; g.lineWidth = w || 2.4; g.stroke(); }
+        // wrap tails behind the left shoulder
+        path([[62, 92], [30, 140, 40, 200], [52, 196], [50, 150, 76, 104]], true); fillInk(H.wrapDk);
+        path([[70, 98], [52, 150, 66, 214], [78, 208], [70, 160, 84, 106]], true); fillInk(H.wrap);
+        // coat and shoulders
+        var cg = g.createLinearGradient(0, 190, 220, 273); cg.addColorStop(0, H.coatDk); cg.addColorStop(0.5, H.coat); cg.addColorStop(1, H.coatHi);
+        path([[18, 273], [22, 222, 70, 204], [110, 214], [150, 204], [198, 222, 204, 273]], true); fillInk(cg);
+        path([[88, 206], [110, 262], [132, 206], [110, 214]], true); fillInk(H.shirt, 2);                                                      // shirt in the open collar
+        path([[70, 204], [92, 246], [102, 240], [88, 206]], true); fillInk(H.coatHi, 2); path([[150, 204], [128, 246], [118, 240], [132, 206]], true); fillInk(H.coatHi, 2);   // lapels
+        g.strokeStyle = H.bagDk; g.lineWidth = 9; g.beginPath(); g.moveTo(150, 206); g.lineTo(70, 273); g.stroke();                              // satchel strap
+        g.fillStyle = H.brass; g.strokeStyle = ink; g.lineWidth = 1.5; g.fillRect(100, 236, 13, 11); g.strokeRect(100, 236, 13, 11);           // buckle
+        // neck
+        path([[92, 166], [92, 204], [110, 212, 128, 204], [128, 166]], true); fillInk(H.skinDk, 2);
+        // the hair knot at the back of the head, then the face
+        g.beginPath(); g.arc(158, 92, 18, 0, 7); fillInk(H.hair);
+        var sk = g.createRadialGradient(98, 108, 10, 110, 122, 70); sk.addColorStop(0, "#c08458"); sk.addColorStop(0.7, H.skin); sk.addColorStop(1, H.skinDk);
+        path([[64, 112], [62, 60, 110, 58], [158, 60, 156, 112], [154, 160, 128, 178], [110, 186, 92, 178], [66, 160, 64, 112]], true); fillInk(sk);
+        // hair at the temples under the wrap
+        path([[66, 100], [70, 78, 92, 72], [76, 92, 72, 118]], true); fillInk(H.hair, 1.5); path([[154, 100], [150, 78, 128, 72], [144, 92, 148, 118]], true); fillInk(H.hair, 1.5);
+        // the head-wrap: a crown of saffron cloth with folds, knotted on the side
+        var wg = g.createLinearGradient(0, 36, 0, 96); wg.addColorStop(0, "#efb447"); wg.addColorStop(1, H.wrapDk);
+        path([[60, 96], [54, 40, 112, 34], [170, 38, 162, 96], [112, 80, 60, 96]], true); fillInk(wg);
+        g.strokeStyle = "rgba(120,70,10,.75)"; g.lineWidth = 2;
+        [[66, 84, 112, 62, 158, 82], [72, 66, 112, 46, 152, 64], [86, 50, 118, 40, 144, 50]].forEach(function (f) { g.beginPath(); g.moveTo(f[0], f[1]); g.quadraticCurveTo(f[2], f[3], f[4], f[5]); g.stroke(); });
+        path([[58, 90], [44, 84, 50, 100], [62, 106, 70, 96]], true); fillInk(H.wrap, 2);                                                     // the knot
+        // ears
+        g.beginPath(); g.ellipse(63, 122, 7, 12, 0, 0, 7); fillInk(H.skinDk, 2); g.beginPath(); g.ellipse(157, 122, 7, 12, 0, 0, 7); fillInk(H.skinDk, 2);
+        // brows, eyes (almond, with a catchlight), nose, mouth
+        g.strokeStyle = H.hair; g.lineWidth = 4;
+        g.beginPath(); g.moveTo(80, 104); g.quadraticCurveTo(92, smile ? 96 : 98, 102, 103); g.stroke(); g.beginPath(); g.moveTo(118, 103); g.quadraticCurveTo(128, smile ? 96 : 98, 140, 104); g.stroke();
+        [[91, 117], [129, 117]].forEach(function (e) {
+          g.beginPath(); g.moveTo(e[0] - 11, e[1]); g.quadraticCurveTo(e[0], e[1] - (smile ? 6 : 7.5), e[0] + 11, e[1]); g.quadraticCurveTo(e[0], e[1] + (smile ? 4 : 6), e[0] - 11, e[1]); g.closePath();
+          g.fillStyle = "#f4ead6"; g.fill(); g.save(); g.clip(); g.fillStyle = "#3b2414"; g.beginPath(); g.arc(e[0] + 1, e[1], 5, 0, 7); g.fill(); g.fillStyle = "#120a05"; g.beginPath(); g.arc(e[0] + 1, e[1], 2.4, 0, 7); g.fill();
+          g.fillStyle = "#fff"; g.beginPath(); g.arc(e[0] + 2.6, e[1] - 1.8, 1.3, 0, 7); g.fill(); g.restore();
+          g.strokeStyle = ink; g.lineWidth = 2; g.beginPath(); g.moveTo(e[0] - 11, e[1]); g.quadraticCurveTo(e[0], e[1] - (smile ? 6 : 7.5), e[0] + 11, e[1]); g.stroke();
+        });
+        g.strokeStyle = "rgba(60,30,14,.8)"; g.lineWidth = 2.2; g.beginPath(); g.moveTo(112, 118); g.quadraticCurveTo(108, 136, 114, 142); g.quadraticCurveTo(110, 147, 102, 144); g.stroke();
+        g.strokeStyle = "#5a2a1a"; g.lineWidth = 2.6; g.beginPath();
+        if (smile) { g.moveTo(94, 156); g.quadraticCurveTo(110, 168, 128, 155); } else { g.moveTo(97, 158); g.quadraticCurveTo(110, 161, 124, 157); }
+        g.stroke();
+        if (smile) { g.fillStyle = "rgba(200,90,70,.18)"; g.beginPath(); g.arc(82, 142, 9, 0, 7); g.arc(140, 142, 9, 0, 7); g.fill(); }
+        PORTRAIT[key] = c.toDataURL("image/png");
+      }
+      return '<img class="tr-portrait" src="' + PORTRAIT[key] + '" alt="" width="220" height="273">';
     }
     function storyCard(opts) {
       stopLoop();
@@ -1640,7 +1843,7 @@
         eyebrow: "the first page", title: (story.title || "The Expedition"),
         body: '<p>' + esc(story.intro || "") + '</p>' +
           '<p class="tr-route">Egypt&nbsp;→&nbsp;Sumer&nbsp;→&nbsp;the Indus&nbsp;→&nbsp;the road east. Four sites. Bring back what you can.</p>' +
-          '<p class="rq-note" style="text-align:center">Run, leap and crack the whip — it drops snakes, staggers big cats, throws levers and swings you from bronze rings.</p>',
+          '<p class="rq-note" style="text-align:center">Run, leap and cast the surveyor’s plumb-line — its brass bob drops snakes, staggers big cats, throws levers, and the line swings you from bronze rings.</p>',
         cta: "Begin the expedition", onGo: function () { enterSite(0); }
       });
     }
@@ -1695,25 +1898,33 @@
 
     /* ---------------- shell / input ---------------- */
     function setKey(k, on) { setSrc(kbKeys, k, on); }
+    // backing store at the screen's real resolution; the zoom is bigger when the game is shown small (a phone held
+    // upright) so the explorer is never a speck, and a little less on a wide screen where there is room to see ahead
+    function fitCanvas() {
+      var w = canvas.getBoundingClientRect().width || SCREENW, d0 = AG.scaleFor(canvas, SCREENW, 2.5);
+      ZOOM = w < 560 ? 1.6 : w < 900 ? 1.4 : 1.25;
+      VIEWW = SCREENW / ZOOM; VIEWH = SCREENH / ZOOM; DPR = d0 * ZOOM;
+      canvas.width = Math.round(SCREENW * d0); canvas.height = Math.round(SCREENH * d0);
+      if (st && st.scene) buildScenery();
+    }
     function shell() {
       root.innerHTML =
         '<div class="game-head" style="margin-bottom:.35rem"><p class="eyebrow">The Divine Archives · Games</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Unfinished Journal</h2></div>' +
         '<div class="tr-hudrow"><div class="pm-hud tr-hud"></div><button class="tr-snd" type="button" aria-pressed="' + (SFX.isOn() ? "true" : "false") + '" title="Sound (M)">' + (SFX.isOn() ? "♪ Sound on" : "♪ Sound off") + '</button></div>' +
-        '<div class="ap-host"><div class="tr-stage ap-stage"><canvas class="tr-canvas" tabindex="0" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div></div>' +
+        '<div class="ap-host"><div class="tr-stage ap-stage"><canvas class="tr-canvas" tabindex="0" width="' + SCREENW + '" height="' + SCREENH + '" role="img" aria-label="Expedition platformer"></canvas></div></div>' +
         '<p class="ouro-toast tr-toast" aria-live="polite"></p>' +
-        '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), crack the whip with <b>B</b> (J or X). Whip a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
+        '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), cast the plumb-line with <b>B</b> (J or X). Cast at a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
-      DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
-      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR); });
+      fitCanvas(); AG.onFit(canvas, fitCanvas);
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);
       try { canvas.focus({ preventScroll: true }); } catch (e) { }   // keep keyboard focus inside the dialog (Esc still closes it)
-      // the controller: two-button console layout (D-pad, B whip, A jump, Select, Start)
+      // the controller: two-button console layout (D-pad, B line, A jump, Select, Start)
       if (pad) pad.destroy();
       pad = window.ArchivePad ? window.ArchivePad.create({
         layout: "two", dpadKeys: "← → ↑ ↓",
-        buttons: { a: { cap: "Jump", key: "Space" }, b: { cap: "Whip", key: "J" }, select: { cap: "Sound", key: "M" }, start: { cap: "Pause", key: "P" } },
+        buttons: { a: { cap: "Jump", key: "Space" }, b: { cap: "Line", key: "J" }, select: { cap: "Sound", key: "M" }, start: { cap: "Pause", key: "P" } },
         onDown: function (id) { SFX.wake(); if (id === "start") togglePause(); else if (id === "select") toggleSound(); else padSync(); },
         onUp: function () { padSync(); }
       }) : null;
@@ -1762,15 +1973,14 @@
     if (window.__TR_TEST) {
       window.__trLevels = function () { return LEVELS.map(function (d) { var lv = makeLevel(d); return { w: lv.W, grid: lv.grid, E: lv.E }; }); };
       window.__tr = {
-        state: function () { return st && { li: st.li, x: st.p.x, y: st.p.y, vx: st.p.vx, onGround: st.p.onGround, hearts: st.hearts, got: st.got, total: st.relics.length, over: st.over, won: !!st.won, gates: st.lv.E.gates.map(function (g) { return +g.open.toFixed(2); }), swing: !!st.p.swing, cam: st.cam, vy: st.p.vy, movers: st.movers.map(function (m) { return +(m.x / TILE).toFixed(1); }), trig: st.lv.E.gates.map(function (g) { return g.trig.map(trigOk); }), t: +st.t.toFixed(2), face: st.p.face, whip: !!st.p.whip, foes: st.foes.filter(function (f) { return f.alive && !f.deco; }).map(function (f) { return [f.type, +(f.x / TILE).toFixed(1)]; }), crates: st.crates.map(function (k) { return [+(k.x / TILE).toFixed(1), +(k.y / TILE).toFixed(1), !!k.locked]; }) }; },
-        warp: function (c, r) { st.p.x = c * TILE + 12; st.p.y = (r == null ? standRowAt(c) + 1 : r + 1) * TILE - 12.01; st.p.vx = st.p.vy = 0; st.p.swing = null; st.cam = clamp(st.p.x - VIEWW * 0.45, 0, st.LW - VIEWW); },
+        state: function () { return st && { li: st.li, x: st.p.x, y: st.p.y, vx: st.p.vx, onGround: st.p.onGround, hearts: st.hearts, got: st.got, total: st.relics.length, over: st.over, won: !!st.won, gates: st.lv.E.gates.map(function (g) { return +g.open.toFixed(2); }), swing: !!st.p.swing, cam: st.cam, camT: st.camT, zoom: ZOOM, view: [VIEWW, VIEWH], vy: st.p.vy, movers: st.movers.map(function (m) { return +(m.x / TILE).toFixed(1); }), trig: st.lv.E.gates.map(function (g) { return g.trig.map(trigOk); }), t: +st.t.toFixed(2), face: st.p.face, whip: !!st.p.whip, foes: st.foes.filter(function (f) { return f.alive && !f.deco; }).map(function (f) { return [f.type, +(f.x / TILE).toFixed(1)]; }), crates: st.crates.map(function (k) { return [+(k.x / TILE).toFixed(1), +(k.y / TILE).toFixed(1), !!k.locked]; }) }; },
+        warp: function (c, r) { st.p.x = c * TILE + 12; st.p.y = (r == null ? standRowAt(c) + 1 : r + 1) * TILE - 12.01; st.p.vx = st.p.vy = 0; st.p.swing = null; st.cam = clamp(st.p.x - VIEWW * 0.45, 0, st.LW - VIEWW); st.camT = camTopFor(st.p); },
         play: function (i) { if (!run) run = { score: 0, hearts: MAXHEARTS, collected: [] }; if (!DATA) return false; playSite(i); return true; },
         god: function () { st.hearts = 99; run.hearts = 99; },
         solve: function () { st.lv.E.gates.forEach(function (g) { g.trig.forEach(function (o) { if (o.solved != null) o.solved = true; else if (o.on != null) o.on = true; else o.forced = true; }); }); }
       };
     }
 
-    loadArt();
     root.innerHTML = '<div class="rq-loading">Lighting the torches…</div>';
     loadData().then(startRun).catch(function () { root.innerHTML = '<p class="game-placeholder">The expedition could not be loaded. Please reload the page.</p>'; });
 
