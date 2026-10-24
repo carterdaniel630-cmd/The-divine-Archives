@@ -194,6 +194,7 @@
    - **Reviewer and auditor, option A:** the loop does their saving. Fold this into the loop procedure. PR #58 is not merged.
    - **PR #61:** closed (done).
    - **Journal hero images:** reminder sent to Muse (`request-2026-10-24-muse-journal-hero-images.md`). Still blocked until the images arrive.
+     Carter, 2026-10-24 ~23:55: Muse is out of usage until tomorrow (2026-10-25), so expect nothing before then. Don't re-ask Muse tonight.
 1. **Merge PR #73** (Tjurunga takedown; Carter's yes and "soften" recorded; re-review 0 findings). **Waiting on:**
    Lighthouse on `efba79c`. Once green, a run that wrote none of #73 fast-forwards `main` `6c81a84` → `efba79c`, watches
    the deploy, updates CURRENT and MERGEABLE.
