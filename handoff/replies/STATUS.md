@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:35 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 22:12 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -11,6 +11,12 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~21:55–22:12: **PR #73 independently reviewed** (Tjurunga takedown, `529b1eb`) by a run that wrote none
+  of it: every point of the order met; build repeatable, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests;
+  headless phone check of seven pages, 0 script errors, 0 images on the absence page; share card shows no object.
+  One wording point for Carter ("the largest collection" not supported by the sources opened). GitHub: 7/8 green,
+  Lighthouse running. **PR #70:** Lighthouse still running at 22:08 (started 21:45), so not merged; not waited on.
+  Reply `2026-10-24-pr73-independent-review.md`. Items per run: 1.
 - 2026-10-24 ~21:47–22:35: **Tjurunga takedown built** (Next 2) on `loop/tjurunga-absence` @ `529b1eb`, **PR #73**:
   V68 withdrawn from the Vault index (87 shown), era page, museum and search; absence page at the same URL with the
   verbatim wording; museum room note; ch61 link relabelled, prose untouched; sitemap URL kept; `random.html`
@@ -131,9 +137,8 @@
 1. **Merge PR #70** (Carter approved, `merge-approval-2026-10-19.md`): waiting on every GitHub check on `361ba21`
    completed and green, Lighthouse included. When green and `main` is still `09f48b3`, fast-forward `main` to `361ba21`,
    watch the deploy, update CURRENT and MERGEABLE. If a check fails, root-cause it. Meanwhile, work item 2.
-2. **Independent review of PR #73** (Tjurunga takedown, `529b1eb`) by a run that wrote none of it, against
-   `reviews/REVIEWER.md` §3–§4 and the order §2–§3; check its GitHub checks (Lighthouse included). Then it waits on
-   Carter's yes (Needs Carter 7).
+2. **PR #73** (Tjurunga takedown): review done, 0 defects. Check Lighthouse on `529b1eb`; then it waits on Carter
+   (Needs Carter 7 and 8). If Carter picks "Soften", change the one phrase on the branch and re-review.
 3. **Journal hero rebuild** (PR #60, Option A) from `handoff/journal-hero/` (Carter's selfie face, hooded Archivist
    costume). Face stays his; nothing trademarked.
 4. **Site speed finding** (value 3): diagnose from the repo (page weight, `docs/_headers` caching, Codex Mendoza);
@@ -169,4 +174,6 @@
 5. **Batch review, live:** re-clear V72 (Book of Shadows) and the Pantheon's Ra-Horakhty entry. **Clear / Not yet.**
 6. **PR #61** is superseded by #65 (already live). **Close it / Leave it.**
 7. **Tjurunga takedown (PR #73):** built to your ruling; after its independent review it needs your yes to go live.
-   **Yes, once reviewed / Not now.**
+   Reviewed 2026-10-24: does what you ruled, nothing shown. **Yes, put it live / Not now.**
+8. **Tjurunga wording:** the absence text calls Strehlow's "the largest" collection; the sources checked say only
+   "one of the most significant". **Keep as is / Soften to "one of the most significant collections".**

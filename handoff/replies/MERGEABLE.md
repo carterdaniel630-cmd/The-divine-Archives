@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 22:35 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `09f48b3` (PR #69 merged 2026-10-24 21:43 UTC, deploy run 195 green).
+**As of:** 2026-10-24 22:12 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `09f48b3` (PR #69 merged 2026-10-24 21:43 UTC, deploy run 195 green).
 
 ## Mergeable now
 - **Hit-feel part 1** (PR #70; games only): independent review passed 2026-10-19, 0 blocking findings
@@ -13,12 +13,14 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   reviewed `ea70b77`; the rebase route was refused by this session's safety check, so no history was rewritten). Local
   checks green on that tree (build clean, review-checks 9/9, 17 verify, 42/42 tests, headless phone load of the games page
   in both motion modes, 0 errors). **Still missing:** every GitHub check completed and green on `361ba21`, Lighthouse
-  included. Next run checks and, if green, fast-forwards `main` to `361ba21`.
+  included (still running at 22:08 UTC, started 21:45). Next run checks and, if green, fast-forwards `main` to `361ba21`.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Tjurunga takedown** (PR #73, `loop/tjurunga-absence` @ `529b1eb`; Carter's ruling 2026-10-20): built 2026-10-24,
-  local checks green (`2026-10-24-tjurunga-takedown-built.md`). Missing: independent review by a run that wrote none of
-  it; every GitHub check green, Lighthouse included; Carter's yes for this PR.
+  local checks green (`2026-10-24-tjurunga-takedown-built.md`). **Independent review done 2026-10-24, 0 defects**
+  (`2026-10-24-pr73-independent-review.md`); one wording question for Carter ("the largest collection").
+  Missing: Lighthouse green on `529b1eb` (7/8 green, Lighthouse running at 22:05); Carter's answer on the wording;
+  Carter's yes for this PR (sensitivity item: never merged without it).
 - **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
   (`2026-10-19-hit-feel-part-2.md`); **independent review passed 2026-10-19, 0 findings**
   (`2026-10-19-pr71-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 05:32 UTC).
