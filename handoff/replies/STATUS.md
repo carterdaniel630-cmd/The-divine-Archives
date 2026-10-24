@@ -7,10 +7,18 @@
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, and `decisions-2026-10-24-merge-71-72-73.md`. **Deployed (`main`):** `6c81a84` (PR #74, merged
 2026-10-24 23:30 UTC, deploy run 199 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
 **Branches:** `loop/hit-feel` = #70 (merged), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
-`loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74. `staging/ready-line` carries `handoff/`.
+`loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74, `loop/speed-fix-a` = #76. `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~23:50–00:05: **Site speed fix A built** (Carter's yes, batch-six 2) on `loop/speed-fix-a` @ `10b075c`,
+  **PR #76**. Codex Mendoza, Codex Borgia and the Voynich Manuscript now ask the holding library for their scans only
+  when the reader nears the viewer, taps "Open the manuscript", or arrives by a `#folio=`/`#study` link. Measured
+  headless at phone size: outside requests as the page opens 1 → 0 on all three; scroll / button / deep link each give
+  exactly 1; other Vault pages unchanged; 0 script errors. Build matches committed, review-checks 9/9 (0 warnings),
+  17 verify, 42/42 tests. PR #73 Lighthouse still running (not waited on). A parallel session worked at the same time
+  (#67 brought up, #75 opened, #61 closed); no overlap with this item. Reply `2026-10-24-speed-fix-a-built.md`.
+  Items per run: 1.
 - 2026-10-24 ~23:43–23:50: **PR #73 independently re-reviewed** (Tjurunga takedown, `efba79c`, softened wording) by a
   run that wrote none of it: **0 findings**. Only change since the reviewed `529b1eb` is the softened sentence; it is
   supported by the NT Government Strehlow Research Centre page ("one of Australia's most important collections").
@@ -189,8 +197,9 @@
      make it). If #67 merges first, bring #73 up to the new `main` again.
    - **#75 (clear V72 and Ra-Horakhty), approved by Carter's "clear":** built `4409b86`. **Needs an independent review**
      by a run that didn't make it, then checks, then merge.
-   - **Site speed fix A, approved through to going live:** build it on `loop/*` (load outside manuscripts only when
-     reached), then independent review, checks and merge. Fixes B–E still need their own yes.
+   - **Site speed fix A, approved through to going live:** **built 2026-10-24 ~23:55 as PR #76** (`loop/speed-fix-a`
+     @ `10b075c`). **Needs an independent review** by a run that didn't make it, then all GitHub checks green, then
+     fast-forward (bring up to `main` first if #73/#67/#75 merge before it). Fixes B–E still need their own yes.
    - **Reviewer and auditor, option A:** the loop does their saving. Fold this into the loop procedure. PR #58 is not merged.
    - **PR #61:** closed (done).
    - **Journal hero images:** reminder sent to Muse (`request-2026-10-24-muse-journal-hero-images.md`). Still blocked until the images arrive.
@@ -200,9 +209,8 @@
    the deploy, updates CURRENT and MERGEABLE.
 1a. **PR #67** (live phone fixes): **Carter's yes 2026-10-24** (`decisions-2026-10-24-batch-six.md` 1). Bring it up to
    `main` after #73 (merge commit), confirm the site diff unchanged from the reviewed `1681050`, checks green, merge.
-1b. **Site speed fix A** (Carter's yes, batch-six 2): build on a `loop/*` branch: load the outside manuscript viewers
-   (Codex Mendoza, Borgia, Voynich) only when the reader reaches them; then independent review and checks; going live
-   is covered by this yes. B–E still need their own yes.
+1b. **Site speed fix A** (Carter's yes, batch-six 2): **built, PR #76** (`10b075c`). Next: independent review (a run
+   that wrote none of it), GitHub checks incl. Lighthouse, then merge; going live is covered by this yes. B–E still need their own yes.
 1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): record in `reviews/cleared.json`,
    remove pending state, on a branch with checks and independent review.
 1d. **Close PR #61** with a note (batch-six 5; branch kept). **Reviewer/auditor option A** (batch-six 4): the loop saves

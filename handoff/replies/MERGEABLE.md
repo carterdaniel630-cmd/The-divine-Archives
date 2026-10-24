@@ -19,6 +19,10 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   Local checks green; fast-forwards from `main` `6c81a84`. Missing: Lighthouse on `efba79c` (7/8 green; started
   23:42). Merges as soon as it is green.
 
+- **Site speed fix A** (PR #76, `loop/speed-fix-a` @ `10b075c`; Carter's yes `decisions-2026-10-24-batch-six.md` 2,
+  covers going live). Local checks green (`2026-10-24-speed-fix-a-built.md`). Missing: independent review by a run
+  that wrote none of it; every GitHub check green incl. Lighthouse.
+
 ## Merged
 - Reduced motion, part 1 (PR #74): merged 2026-10-24 23:30 UTC by fast-forward to `6c81a84`, deploy run 199 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-24-pr74-independent-review.md`; 7/7 checks incl. Lighthouse on `6c81a84`).
 - Hit-feel part 3 (PR #72): merged 2026-10-24 23:12 UTC by fast-forward to `0d16e84`, deploy run 198 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-19-pr72-independent-review.md`; `2026-10-24-pr71-72-merged.md`).
