@@ -176,8 +176,8 @@
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-1. **Domain:** is getconexto.com showing the site now? Muse's Tjurunga order read live pages there on 2026-10-20; the
-   build records say it is not pointed. **Yes, it's live / No, not yet.**
+1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
+   2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
 2. **Hit-feel part 2 (PR #71) and part 3 (PR #72):** both reviewed, all checks green; they merge right after #70.
    **Yes / Not now.**
 3. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
