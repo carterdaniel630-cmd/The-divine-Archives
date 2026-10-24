@@ -97,6 +97,12 @@
 
     var canvas, cx, hudEl, msgEl, btnEl, tradeEl, logEl, live, raf = null, DPR = 1, st = null;
     var factByTerr = {};
+    // hit-feel (feel.js): placing an army knocks softly; each battle you fight clacks dice and
+    // bronze with a jolt (harder the more armies fell); a land you take sounds a rising horn with
+    // a gold flash; when a rival takes one of yours, a short low drop and a dark flash. The end of
+    // the campaign chimes or falls. Reduced motion turns the jolts off.
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null;
+    function feel(kind, o) { if (FEEL) FEEL.hit(kind, o); }
 
     function ownedBy(who) { return TERR.filter(function (t) { return st.own[t.id] === who; }); }
     function alive(who) { return ownedBy(who).length > 0; }
@@ -122,7 +128,7 @@
     function tradeCards() {
       if (st.phase !== "reinforce" || st.aiThinking) return;
       var set = findSet(st.cards.you); if (!set) return;
-      removeSet(st.cards.you, set); var b = tradeBonus(); st.trades++; st.pool += b;
+      removeSet(st.cards.you, set); var b = tradeBonus(); st.trades++; st.pool += b; feel("big", { scale: 0.7, color: "231,198,128" });
       st.msg = "Traded a set for " + b + " armies — place " + st.pool + " in all.";
       render();
     }
@@ -151,9 +157,12 @@
       for (var p = 0; p < pairs; p++) { if (ar[p] > dr[p]) dl++; else al++; }
       st.arm[from] -= al; st.arm[to] -= dl;
       var fell = st.arm[to] <= 0;
-      if (!silent) st.dice = { from: from, to: to, ar: ar, dr: dr, t: 1.6, atkCol: colOf(from), defCol: colOf(to) };
+      if (!silent) { st.dice = { from: from, to: to, ar: ar, dr: dr, t: 1.6, atkCol: colOf(from), defCol: colOf(to) }; feel("clash", { scale: 0.6 + 0.3 * (al + dl), pitch: 0.92 + Math.random() * 0.16 }); }
       logLine(TMAP[to].name + " ⚔ " + TMAP[from].name + ": " + ar.join(",") + " v " + dr.join(",") + (fell ? " — it falls" : " (−" + al + "/−" + dl + ")"));
+      var lostYours = fell && st.own[to] === "you";
       if (fell) capture(from, to);
+      if (fell && st.own[to] === "you") feel("conquer", { scale: TMAP[to].cap ? 1.4 : 1, color: "231,198,128" });
+      else if (lostYours) feel("fall", { scale: TMAP[to].cap ? 1.3 : 1, color: "90,30,24" });
     }
     function capture(from, to) {
       var mover = Math.max(1, Math.min(3, st.arm[from] - 1));
@@ -187,7 +196,7 @@
       if (!id || st.over || st.aiThinking) return;
       st.turnSide = "you";
       if (st.phase === "reinforce") {
-        if (st.own[id] === "you" && st.pool > 0) { st.arm[id]++; st.pool--; st.msg = st.pool ? "Reinforce: " + st.pool + " armies to place." : "Reinforced. Tap “To attack”."; }
+        if (st.own[id] === "you" && st.pool > 0) { st.arm[id]++; st.pool--; feel("place", { pitch: 0.9 + Math.random() * 0.2 }); st.msg = st.pool ? "Reinforce: " + st.pool + " armies to place." : "Reinforced. Tap “To attack”."; }
       } else if (st.phase === "attack") {
         if (st.own[id] === "you" && st.arm[id] > 1) { st.sel = id; st.msg = "Attack from " + TMAP[id].name + " — tap an enemy neighbour."; }
         else if (st.sel && st.own[id] !== "you" && ADJ[st.sel].indexOf(id) >= 0) { battle(st.sel, id); if (st.arm[st.sel] <= 1) st.sel = null; if (settleIfOver()) return finish(); }
@@ -622,6 +631,7 @@
       if (sig !== fillSig) { buildFill(); fillSig = sig; }
       var now = performance.now() / 1000, pulse = 0.5 + 0.5 * Math.sin(now * 5);
       cx.clearRect(0, 0, VW, VH);
+      if (FEEL) FEEL.begin(cx);
       cx.drawImage(mapBg, 0, 0, VW, VH);
       cx.imageSmoothingEnabled = true;
       cx.drawImage(fillCv, 0, 0, VW, VH);
@@ -669,6 +679,7 @@
         d.dr.forEach(function (v2, i) { die(x0 + 11 + wA + i * (s + gap), my + 6, s, v2, d.defCol, i < pairs && d.ar[i] > v2); });
         cx.restore();
       }
+      if (FEEL) FEEL.end(cx, VW, VH);
       updateHUD();
     }
     function roundRect(x, y, w, h, r) { cx.beginPath(); cx.moveTo(x + r, y); cx.arcTo(x + w, y, x + w, y + h, r); cx.arcTo(x + w, y + h, x, y + h, r); cx.arcTo(x, y + h, x, y, r); cx.arcTo(x, y, x + w, y, r); cx.closePath(); }
@@ -694,6 +705,7 @@
       if (!st || st.over) return;
       var dt = last ? Math.min(0.05, (ts - last) / 1000) : 0.016; last = ts; frameN++;
       var need = false;
+      if (FEEL) { FEEL.tick(dt); if (FEEL.active) need = true; }
       if (st.dice && st.dice.t > 0) { st.dice.t -= dt; if (st.dice.t <= 0) st.dice = null; need = true; }
       if (st.flash) Object.keys(st.flash).forEach(function (k) { st.flash[k] -= dt / 1.1; if (st.flash[k] <= 0) delete st.flash[k]; need = true; });
       if (!need && (st.sel || (st.phase === "reinforce" && st.pool > 0 && !st.aiThinking)) && frameN % 2 === 0) need = true;
@@ -733,6 +745,7 @@
     function finish() {
       if (raf) cancelAnimationFrame(raf);
       var won = st.winner === "you";
+      feel(won ? "big" : "lose", { color: won ? "231,198,128" : "120,40,30" });
       AG.finish("dominion", { won: won });
       var recap = st.collected.map(function (f) { return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) + ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>"; }).join("");
       root.innerHTML =
@@ -747,6 +760,7 @@
 
     function boot() {
       if (raf) { cancelAnimationFrame(raf); raf = null; }
+      if (FEEL) FEEL.reset();
       shell(); newGame(); render();
       live.textContent = "Three powers, one ancient world — place your first armies.";
       raf = requestAnimationFrame(loop);

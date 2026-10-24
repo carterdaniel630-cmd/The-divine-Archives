@@ -46,6 +46,12 @@
     var canvas, cxr, live, scoreEl, bestEl, levelEl, factToast;
     var st, timer = null, keyfn = null, touch = null, running = false, DPR = 1, bgCache = null, raf = 0;
     var best = AG.bestScore("ouroboros");
+    // hit-feel (feel.js): swallowing a symbol gives a soft swallow, a small jolt and a gold
+    // flash; a new level chimes. The coil biting itself drops a tone and, on phones, buzzes.
+    // Reduced motion on the phone turns the jolt off. The serpent moves in steps, so there
+    // is no freeze here: it would read as a stutter.
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null, lastFrame = 0;
+    function feel(kind, o) { if (FEEL) FEEL.hit(kind, o); }
 
     // level-paced tempo: starts unhurried, quickens one step per level, never
     // punishingly fast. Level rises every PER_LEVEL symbols swallowed.
@@ -154,7 +160,7 @@
       var nx = (head.x + st.dir.x + GRID) % GRID;   // wrap around
       var ny = (head.y + st.dir.y + GRID) % GRID;
       // self collision
-      if (st.snake.some(function (s, i) { return i < st.snake.length - 1 && s.x === nx && s.y === ny; })) { return gameOver(); }
+      if (st.snake.some(function (s, i) { return i < st.snake.length - 1 && s.x === nx && s.y === ny; })) { feel("lose", { color: "120,40,30" }); return gameOver(); }
       st.snake.unshift({ x: nx, y: ny });
       if (st.food && nx === st.food.x && ny === st.food.y) {
         st.score += 1;
@@ -167,6 +173,9 @@
         scoreEl.textContent = st.score;
         if (levelEl) levelEl.textContent = st.level;
         showFact(f, leveledUp);
+        // the swallow rises in pitch as the coil grows
+        if (leveledUp) feel("big", { color: "231,198,128" });
+        else feel("eat", { pitch: 0.9 + Math.min(0.5, st.score * 0.015), color: "231,198,128" });
         placeFood();
       } else {
         st.snake.pop();
@@ -183,9 +192,11 @@
     function draw() {
       var now = (window.performance ? performance.now() : Date.now()) / 1000;
       cxr.clearRect(0, 0, W, W);
+      if (FEEL) FEEL.begin(cxr);
       drawBoard();
       if (st.food) drawFood(st.food, now);
       drawSerpent(now);
+      if (FEEL) FEEL.end(cxr, W, W);
     }
 
     // the board: a carved stone disc, cached once. Engraved coil with a mouth-gap, twelve
@@ -307,6 +318,9 @@
     function animate() {
       raf = 0;
       if (!st || !canvas || !canvas.isConnected) return;
+      var t = window.performance ? performance.now() : Date.now();
+      if (FEEL) FEEL.tick(Math.min(0.1, (t - lastFrame) / 1000 || 0));
+      lastFrame = t;
       draw(); raf = requestAnimationFrame(animate);
     }
 
@@ -337,6 +351,7 @@
     /* ---------------- boot ---------------- */
     function boot() {
       if (timer) { clearTimeout(timer); timer = null; }
+      if (FEEL) FEEL.reset();
       shell();
       newGame();
       draw();
