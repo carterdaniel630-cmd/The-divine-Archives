@@ -1,16 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:30 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 22:40 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`. **Deployed (`main`):** `09f48b3` (PR #69, merged
 2026-10-24 21:43 UTC, deploy green), at the-divine-archives.pages.dev. Domain: records disagree (see briefing §2; Needs Carter 1).
 **Branches:** `loop/hit-feel` = #70 (@ `361ba21`), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
-`loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73. `staging/ready-line` carries `handoff/`.
+`loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74. `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~22:15–22:40: **Reduced motion, part 1** (Next 5) on `loop/reduced-motion` @ `7ec8244`, **PR #74**:
+  site-wide audit with reduced motion on (25 pages, nothing moves on its own). Divine Casualties and The Unfinished
+  Journal still shook and flashed for those visitors. Now 0 shaken frames and flashes ≤ 0.06 (was 95 / 0.25 and
+  85 / 0.157, measured by playing). Build clean, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, CI fight test
+  to KO, phone load 0 errors. **PR #70: Lighthouse green 22:28, now 6/6 green**; **PR #73: 8/8 green**.
+  Reply `2026-10-24-reduced-motion-part-1.md`. Items per run: 1.
 - 2026-10-24 ~22:10–22:30: **Site speed diagnosed** (Next 4, prepare only): `handoff/research/site-speed-diagnosis-2026-10-24.md`.
   The slowest page waits on an outside library's server as it opens (Codex Mendoza, also Borgia and Voynich); Vault
   pages carry the viewer and all-88 data; most pages wait on Google Fonts. Fixes A–E proposed, nothing built.
@@ -139,21 +145,23 @@
 - (none)
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-1. **Merge PR #70** (Carter approved, `merge-approval-2026-10-19.md`): waiting on every GitHub check on `361ba21`
-   completed and green, Lighthouse included. When green and `main` is still `09f48b3`, fast-forward `main` to `361ba21`,
-   watch the deploy, update CURRENT and MERGEABLE. If a check fails, root-cause it. Meanwhile, work item 2.
-2. **PR #73** (Tjurunga takedown): review done, 0 defects. Check Lighthouse on `529b1eb`; then it waits on Carter
+1. **Merge PR #70 NOW** (Carter approved, `merge-approval-2026-10-19.md`): **all 6/6 GitHub checks green on `361ba21`**
+   (Lighthouse finished 22:28 UTC). Re-run the local checks on `361ba21`; if `main` is still `09f48b3`, fast-forward
+   `main` to `361ba21`, watch the deploy, update CURRENT and MERGEABLE. Then bring #71 up to the new `main` (merge commit) for its re-check.
+2. **PR #73** (Tjurunga takedown): review done, 0 defects, **8/8 checks green**; it waits on Carter
    (Needs Carter 7 and 8). If Carter picks "Soften", change the one phrase on the branch and re-review.
 3. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
    `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
 4. **Site speed:** diagnosis done; fix A (open outside manuscripts only when reached) waits on Carter's go (Needs Carter 10).
-5. **Reduced motion everywhere**; **arcade playability floor** (value 3).
+5. **Independent review of PR #74** (reduced motion, part 1, `7ec8244`) by a run that wrote none of it; check its
+   GitHub checks. Then **arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs
+   handle seven games, #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
 8. **Independent review of #64, #66, #67, #68** so they can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
-10. Fix package; small defects part 2; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+10. Fix package; small defects part 2 (+ Journal "Sound" button sits under the close ✕ at phone width, live); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
@@ -185,3 +193,5 @@
    reached the repo. **Ask Muse to commit them to `handoff/journal-hero/` / Send them to me in a chat.**
 10. **Site speed fix A:** the slowest page (Codex Mendoza) waits on Oxford's server as it opens. Load the outside
    manuscript only when the reader reaches it. **Yes, build A / Not now.** (B–E in the diagnosis file, later.)
+11. **Reduced motion, part 1 (PR #74):** two games stop shaking and flashing for people whose phone asks for reduced
+   motion. After its independent review: **Yes, put it live / Not now.**
