@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:12 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 22:30 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -11,6 +11,11 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~22:10–22:30: **Site speed diagnosed** (Next 4, prepare only): `handoff/research/site-speed-diagnosis-2026-10-24.md`.
+  The slowest page waits on an outside library's server as it opens (Codex Mendoza, also Borgia and Voynich); Vault
+  pages carry the viewer and all-88 data; most pages wait on Google Fonts. Fixes A–E proposed, nothing built.
+  **Journal hero: blocked** — the three reference images in the README were never committed. **PR #70:** Lighthouse
+  still running at 22:11, not merged. Reply `2026-10-24-pr70-wait-hero-blocked-speed-diagnosis.md`. Items per run: 1.
 - 2026-10-24 ~21:55–22:12: **PR #73 independently reviewed** (Tjurunga takedown, `529b1eb`) by a run that wrote none
   of it: every point of the order met; build repeatable, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests;
   headless phone check of seven pages, 0 script errors, 0 images on the absence page; share card shows no object.
@@ -139,10 +144,9 @@
    watch the deploy, update CURRENT and MERGEABLE. If a check fails, root-cause it. Meanwhile, work item 2.
 2. **PR #73** (Tjurunga takedown): review done, 0 defects. Check Lighthouse on `529b1eb`; then it waits on Carter
    (Needs Carter 7 and 8). If Carter picks "Soften", change the one phrase on the branch and re-review.
-3. **Journal hero rebuild** (PR #60, Option A) from `handoff/journal-hero/` (Carter's selfie face, hooded Archivist
-   costume). Face stays his; nothing trademarked.
-4. **Site speed finding** (value 3): diagnose from the repo (page weight, `docs/_headers` caching, Codex Mendoza);
-   Cloudflare-side changes are Carter-only.
+3. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
+   `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
+4. **Site speed:** diagnosis done; fix A (open outside manuscripts only when reached) waits on Carter's go (Needs Carter 10).
 5. **Reduced motion everywhere**; **arcade playability floor** (value 3).
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
@@ -177,3 +181,7 @@
    Reviewed 2026-10-24: does what you ruled, nothing shown. **Yes, put it live / Not now.**
 8. **Tjurunga wording:** the absence text calls Strehlow's "the largest" collection; the sources checked say only
    "one of the most significant". **Keep as is / Soften to "one of the most significant collections".**
+9. **Journal hero pictures missing:** the README lists your selfie and both character sheets, but the files never
+   reached the repo. **Ask Muse to commit them to `handoff/journal-hero/` / Send them to me in a chat.**
+10. **Site speed fix A:** the slowest page (Codex Mendoza) waits on Oxford's server as it opens. Load the outside
+   manuscript only when the reader reaches it. **Yes, build A / Not now.** (B–E in the diagnosis file, later.)
