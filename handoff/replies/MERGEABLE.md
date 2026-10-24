@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 22:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `09f48b3` (PR #69 merged 2026-10-24 21:43 UTC, deploy run 195 green).
+**As of:** 2026-10-24 22:35 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `09f48b3` (PR #69 merged 2026-10-24 21:43 UTC, deploy run 195 green).
 
 ## Mergeable now
 - **Hit-feel part 1** (PR #70; games only): independent review passed 2026-10-19, 0 blocking findings
@@ -16,6 +16,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   included. Next run checks and, if green, fast-forwards `main` to `361ba21`.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Tjurunga takedown** (PR #73, `loop/tjurunga-absence` @ `529b1eb`; Carter's ruling 2026-10-20): built 2026-10-24,
+  local checks green (`2026-10-24-tjurunga-takedown-built.md`). Missing: independent review by a run that wrote none of
+  it; every GitHub check green, Lighthouse included; Carter's yes for this PR.
 - **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
   (`2026-10-19-hit-feel-part-2.md`); **independent review passed 2026-10-19, 0 findings**
   (`2026-10-19-pr71-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 05:32 UTC).

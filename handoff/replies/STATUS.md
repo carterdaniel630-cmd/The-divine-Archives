@@ -1,16 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:10 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 22:35 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`. **Deployed (`main`):** `09f48b3` (PR #69, merged
 2026-10-24 21:43 UTC, deploy green), at the-divine-archives.pages.dev. Domain: records disagree (see briefing §2; Needs Carter 1).
 **Branches:** `loop/hit-feel` = #70 (@ `361ba21`), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
-`loop/journal-hero-redesign` = #60. `staging/ready-line` carries `handoff/`.
+`loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73. `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~21:47–22:35: **Tjurunga takedown built** (Next 2) on `loop/tjurunga-absence` @ `529b1eb`, **PR #73**:
+  V68 withdrawn from the Vault index (87 shown), era page, museum and search; absence page at the same URL with the
+  verbatim wording; museum room note; ch61 link relabelled, prose untouched; sitemap URL kept; `random.html`
+  description added. Nothing deleted. Full build (idempotent), review-checks 9/9 (0 warnings), 17 verify, 42/42 tests,
+  headless phone check of six pages, 0 errors. PR #70 Lighthouse still running at 22:30, not waited on.
+  Reply `2026-10-24-tjurunga-takedown-built.md`. Items per run: 1.
 - 2026-10-24 ~21:42–22:10: **PR #69 merged** (Graphify plain-word names) by fast-forward to `09f48b3`, Carter's per-item
   yes; local checks re-run green, 6/6 GitHub checks green; deploy run 195 green. **PR #70 brought up to `main`** with a
   merge commit (`361ba21`, change identical to the reviewed one; the rebase force-push was refused by the session's
@@ -125,11 +131,9 @@
 1. **Merge PR #70** (Carter approved, `merge-approval-2026-10-19.md`): waiting on every GitHub check on `361ba21`
    completed and green, Lighthouse included. When green and `main` is still `09f48b3`, fast-forward `main` to `361ba21`,
    watch the deploy, update CURRENT and MERGEABLE. If a check fails, root-cause it. Meanwhile, work item 2.
-2. **Tjurunga takedown** (Carter ruling 2026-10-20; value 1, live-site exposure, sacred restriction): on its own
-   `loop/tjurunga-absence` branch, exactly per `tjurunga-takedown-order-2026-10-20.md` §2–§3 (absence page at the same
-   URL with the verbatim wording, V68 card removed without renumbering, count made true, museum room note, era link
-   removed, chapter prose untouched, sitemap URL kept). Fold in the one-line `random.html` meta description
-   (`fix-random-meta-description.md`). Full checks, independent review by another run, then Carter's yes for that PR.
+2. **Independent review of PR #73** (Tjurunga takedown, `529b1eb`) by a run that wrote none of it, against
+   `reviews/REVIEWER.md` §3–§4 and the order §2–§3; check its GitHub checks (Lighthouse included). Then it waits on
+   Carter's yes (Needs Carter 7).
 3. **Journal hero rebuild** (PR #60, Option A) from `handoff/journal-hero/` (Carter's selfie face, hooded Archivist
    costume). Face stays his; nothing trademarked.
 4. **Site speed finding** (value 3): diagnose from the repo (page weight, `docs/_headers` caching, Codex Mendoza);
@@ -164,3 +168,5 @@
    loop does their saving; **B** attach the repo to both tasks in the Claude app; **C** also merge PR #58.
 5. **Batch review, live:** re-clear V72 (Book of Shadows) and the Pantheon's Ra-Horakhty entry. **Clear / Not yet.**
 6. **PR #61** is superseded by #65 (already live). **Close it / Leave it.**
+7. **Tjurunga takedown (PR #73):** built to your ruling; after its independent review it needs your yes to go live.
+   **Yes, once reviewed / Not now.**
