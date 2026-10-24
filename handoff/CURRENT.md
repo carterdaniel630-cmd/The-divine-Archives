@@ -1,4 +1,10 @@
-# Handoff — updated 2026-10-24 (23:15 UTC)
+# Handoff — updated 2026-10-24 (23:35 UTC)
+
+## Latest: reduced motion part 1 is live (2026-10-24)
+- **PR #74** merged 23:30 UTC by fast-forward `0d16e84` → `6c81a84` (deploy run 199 green). Carter's yes
+  `decisions-2026-10-24-merge-71-72-73.md`; independent review 0 findings; 7/7 checks green incl. Lighthouse.
+  Divine Casualties and The Unfinished Journal no longer shake or flash brightly under reduced motion.
+- **Last approved item:** #73 (Tjurunga takedown, `efba79c`, softened wording): needs its re-review and checks green.
 
 ## Latest: hit-feel parts 2 and 3 are live (2026-10-24)
 - **PR #71** merged 23:09 UTC by fast-forward to `99a3625` (deploy run 197 green), then **PR #72** 23:12 UTC to `0d16e84`
