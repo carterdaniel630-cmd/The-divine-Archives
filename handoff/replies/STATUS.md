@@ -4,13 +4,15 @@
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
-`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, and `decisions-2026-10-24-merge-71-72-73.md`. **Deployed (`main`):** `361ba21` (PR #70, merged
-2026-10-24 22:37 UTC, deploy run 196 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
+`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, and `decisions-2026-10-24-merge-71-72-73.md`. **Deployed (`main`):** `0d16e84` (PR #72, merged
+2026-10-24 23:12 UTC, deploy run 198 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
 **Branches:** `loop/hit-feel` = #70 (merged), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
 `loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74. `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 23:09–23:13: **PRs #71 and #72 merged** (hit-feel parts 2 and 3, Carter's yes): fast-forward to `99a3625`
+  (deploy 197 green), then `0d16e84` (deploy 198 green). Reply `2026-10-24-pr71-72-merged.md`.
 - 2026-10-24 ~22:55–23:10: **PR #67 independently reviewed** (site fixes, `1681050`) by a run that wrote none of it:
   **0 findings**. Measured at phone size, live vs #67 on `361ba21`: eras page 8,084 → 5,944 px (emblem 282 → 46 px);
   chapter pages wider than the phone 45/83 → 0/83; arcade line names the four gods (Carter's Hades ruling). Build clean,

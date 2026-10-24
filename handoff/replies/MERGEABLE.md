@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 23:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `361ba21` (PR #70 merged 2026-10-24 22:37 UTC, deploy run 196 green).
+**As of:** 2026-10-24 23:15 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `0d16e84` (PR #72 merged 2026-10-24 23:12 UTC, deploy run 198 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -20,18 +20,10 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (`2026-10-24-pr73-independent-review.md`); one wording question for Carter ("the largest collection").
   **8/8 GitHub checks green** (Lighthouse finished 22:12). Missing: Carter's answer on the wording;
   Carter's yes for this PR (sensitivity item: never merged without it).
-- **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
-  (`2026-10-19-hit-feel-part-2.md`); **independent review passed 2026-10-19, 0 findings**
-  (`2026-10-19-pr71-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 05:32 UTC).
-  **Carter's yes recorded** (`decisions-2026-10-24-merge-71-72-73.md`); brought up to `main` as `99a3625` (site diff
-  identical). Missing: every GitHub check green on `99a3625`, then the merge by a run that wrote none of it.
-- **Hit-feel part 3** (PR #72, `loop/hit-feel-3` @ `d4b52cf`, stacked on #71; games only): local checks green
-  (`2026-10-19-hit-feel-part-3.md`); **independent review passed 2026-10-19, 0 findings**
-  (`2026-10-19-pr72-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 06:19 UTC).
-  **Carter's yes recorded**; brought up as `0d16e84` on top of #71. Missing: every GitHub check green on `0d16e84`;
-  #71 merged first.
 
 ## Merged
+- Hit-feel part 3 (PR #72): merged 2026-10-24 23:12 UTC by fast-forward to `0d16e84`, deploy run 198 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-19-pr72-independent-review.md`; `2026-10-24-pr71-72-merged.md`).
+- Hit-feel part 2 (PR #71): merged 2026-10-24 23:09 UTC by fast-forward to `99a3625`, deploy run 197 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-19-pr71-independent-review.md`).
 - Hit-feel part 1 (PR #70): merged 2026-10-24 22:37 UTC by fast-forward to `361ba21`, deploy run 196 green (`2026-10-24-pr70-merged.md`).
 - Graphify plain-word names (PR #69): merged 2026-10-24 21:43 UTC by fast-forward to `09f48b3`, deploy run 195 green (`2026-10-24-pr69-merged-pr70-updated.md`).
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).

@@ -1,4 +1,11 @@
-# Handoff — updated 2026-10-24 (22:45 UTC)
+# Handoff — updated 2026-10-24 (23:15 UTC)
+
+## Latest: hit-feel parts 2 and 3 are live (2026-10-24)
+- **PR #71** merged 23:09 UTC by fast-forward to `99a3625` (deploy run 197 green), then **PR #72** 23:12 UTC to `0d16e84`
+  (deploy run 198 green). Carter's per-item yes `decisions-2026-10-24-merge-71-72-73.md`. Each site diff byte-identical
+  to its independently reviewed change; 6/6 GitHub checks green on each head; local checks green.
+- **Next to go live:** #74 (`loop/reduced-motion` @ `6c81a84`, approved, stacked on #72) once its checks are green;
+  then #73 (`loop/tjurunga-absence` @ `efba79c`, approved, softened wording) after its re-review and checks.
 
 ## Latest: PR #70 (hit-feel part 1) is live (2026-10-24)
 - **PR #70** merged by the build loop 22:37 UTC by fast-forward `09f48b3` → `361ba21` (Carter's per-item yes,
