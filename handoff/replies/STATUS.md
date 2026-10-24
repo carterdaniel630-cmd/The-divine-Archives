@@ -180,6 +180,20 @@
   upload options are in `handoff/request-2026-10-24-muse-journal-hero-images.md`.
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
+0. **Carter's six answers, 2026-10-24 ~23:50** (`decisions-2026-10-24-batch-six.md`), in order:
+   - **#67 (live phone fixes), approved:** brought up to `main` as `24563f9`; site diff byte-identical to the reviewed
+     `1681050`; local checks green; eras page 8,084 → 5,944 px; pages wider than a phone 45 → 0 of 83. **Waiting on**
+     GitHub checks, then fast-forward.
+   - **#73 (Tjurunga), approved:** waiting on its Lighthouse re-run (run 166 failed on The Excavation, a page #73
+     doesn't touch; re-run once) and on the **independent re-review of the softened wording** (needs a run that didn't
+     make it). If #67 merges first, bring #73 up to the new `main` again.
+   - **#75 (clear V72 and Ra-Horakhty), approved by Carter's "clear":** built `4409b86`. **Needs an independent review**
+     by a run that didn't make it, then checks, then merge.
+   - **Site speed fix A, approved through to going live:** build it on `loop/*` (load outside manuscripts only when
+     reached), then independent review, checks and merge. Fixes B–E still need their own yes.
+   - **Reviewer and auditor, option A:** the loop does their saving. Fold this into the loop procedure. PR #58 is not merged.
+   - **PR #61:** closed (done).
+   - **Journal hero images:** reminder sent to Muse (`request-2026-10-24-muse-journal-hero-images.md`). Still blocked until the images arrive.
 1. **Merge PR #73** (Tjurunga takedown; Carter's yes and "soften" recorded; re-review 0 findings). **Waiting on:**
    Lighthouse on `efba79c`. Once green, a run that wrote none of #73 fast-forwards `main` `6c81a84` → `efba79c`, watches
    the deploy, updates CURRENT and MERGEABLE.
