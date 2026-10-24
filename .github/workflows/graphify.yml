@@ -21,6 +21,7 @@ on:
       - ".graphifyignore"
       - ".claude/**"
       - "tools/graphify-session.sh"
+      - "tools/graphify-label.js"
   workflow_dispatch: {}
 
 permissions:
@@ -55,9 +56,11 @@ jobs:
           graphify extract . --code-only 2>&1 | tail -60
           test -s graphify-out/graph.json || { echo "::error::graphify produced no graph.json"; exit 1; }
           # extract stops at graph.json; cluster-only writes GRAPH_REPORT.md and graph.html.
-          # --no-label: community names would need an AI backend, so they stay numbered.
+          # --no-label: graphify would need an AI backend to name communities; tools/graphify-label.js names them below.
           graphify cluster-only . --no-label 2>&1 | tail -20
           test -s graphify-out/GRAPH_REPORT.md || { echo "::error::graphify produced no GRAPH_REPORT.md"; exit 1; }
+          # Plain-word community names from the files each one is made of (fixed rule, no AI).
+          node tools/graphify-label.js graphify-out
 
       - name: Check the output
         run: |
