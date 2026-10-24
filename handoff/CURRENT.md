@@ -1,4 +1,12 @@
-# Handoff — updated 2026-10-19 (06:35 UTC)
+# Handoff — updated 2026-10-24 (22:10 UTC)
+
+## Latest: PR #69 (Graphify plain-word names) is on main (2026-10-24)
+- **PR #69** merged by the build loop 21:43 UTC by fast-forward to `09f48b3` (Carter's per-item yes,
+  `merge-approval-2026-10-19.md`). Local checks re-run on `09f48b3`; 6/6 GitHub checks green. Deploy run 195 green,
+  graphify run 28 green. No live-site page changed (tools + workflow only).
+- **PR #70** (hit-feel part 1, approved): brought up to the new `main` with a merge commit (`loop/hit-feel` @ `361ba21`,
+  files identical to the reviewed `ea70b77` plus #69). Waits on its GitHub checks re-running on that head, then merges.
+  Reply `replies/2026-10-24-pr69-merged-pr70-updated.md`.
 
 ## Latest: hit-feel parts 1–3 open (2026-10-19); `main` unchanged at `77f6444`
 - **Open PRs added since 2026-10-18 evening:** #69 (Graphify plain-word names; reviewed, mergeable on Carter's yes),
