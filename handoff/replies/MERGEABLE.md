@@ -4,12 +4,15 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 22:55 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `361ba21` (PR #70 merged 2026-10-24 22:37 UTC, deploy run 196 green).
+**As of:** 2026-10-24 23:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `361ba21` (PR #70 merged 2026-10-24 22:37 UTC, deploy run 196 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Site fixes 2026-10-18** (PR #67, `claude/site-fixes-2026-10-18` @ `1681050`): **independent review done 2026-10-24,
+  0 findings** (`2026-10-24-pr67-independent-review.md`); 9/9 GitHub checks green on `1681050`; local checks green on
+  it merged onto `361ba21`. Missing: Carter's yes; then brought up to `main` (merge commit), site diff unchanged, checks green.
 - **Reduced motion, part 1** (PR #74, `loop/reduced-motion` @ `7ec8244`; games only): built 2026-10-24, local checks
   green (`2026-10-24-reduced-motion-part-1.md`). Missing: independent review; every GitHub check green; Carter's yes.
 - **Tjurunga takedown** (PR #73, `loop/tjurunga-absence` @ `529b1eb`; Carter's ruling 2026-10-20): built 2026-10-24,

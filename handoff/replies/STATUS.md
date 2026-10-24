@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:55 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 23:10 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -11,6 +11,12 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~22:55–23:10: **PR #67 independently reviewed** (site fixes, `1681050`) by a run that wrote none of it:
+  **0 findings**. Measured at phone size, live vs #67 on `361ba21`: eras page 8,084 → 5,944 px (emblem 282 → 46 px);
+  chapter pages wider than the phone 45/83 → 0/83; arcade line names the four gods (Carter's Hades ruling). Build clean,
+  review-checks 9/9 (0 warnings), 17 verify, 42/42 tests, 0 script errors; 9/9 GitHub checks green on `1681050`.
+  #71/#72 Lighthouse still running (started 22:44), not waited on. Reply `2026-10-24-pr67-independent-review.md`.
+  Items per run: 1.
 - 2026-10-24 ~22:40–22:55: **PR #74 independently reviewed** (reduced motion part 1, `7ec8244`) by a run that wrote
   none of it: **0 findings**. Measured by playing at phone size with its own script: reduced motion on gives 0 shaken
   frames and flash ≤ 0.06 in both games (off: 441 / 271 shaken frames). Build clean, review-checks 9/9 (0 warnings),
@@ -168,13 +174,15 @@
    picks "Soften", change the one phrase on the branch, re-review and re-check, then merge after #72.
 4. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
    `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
+4a. **PR #67** (live phone fixes): reviewed, 0 findings, 9/9 green on its old base. Waiting on Carter's yes
+   (Needs Carter 12); then bring it up to `main` after #71/#72, re-check, merge.
 4b. **Site speed:** diagnosis done; fix A waits on Carter's go (Needs Carter 10).
 5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
-8. **Independent review of #64, #66, #67, #68** so they can reach MERGEABLE (#66 is new content: Carter's yes too).
+8. **Independent review of #68, #64, #66** (#67 done 2026-10-24; #68 next: live Pilgrimage wording) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
 10. Fix package; small defects part 2 (+ Journal "Sound" button sits under the close ✕ at phone width, live); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
@@ -208,3 +216,5 @@
    manuscript only when the reader reaches it. **Yes, build A / Not now.** (B–E in the diagnosis file, later.)
 11. **Reduced motion, part 1 (PR #74):** two games stop shaking and flashing for people whose phone asks for reduced
    motion. Independent review done 2026-10-24: 0 findings. **Yes, put it live / Not now.**
+12. **PR #67:** fixes three things wrong on the live site today: the eras page's oversized emblems on phones, 45 chapter
+   pages wider than a phone screen, and the arcade calling Hades an Olympian. Reviewed: 0 findings. **Yes, put it live / Not now.**
