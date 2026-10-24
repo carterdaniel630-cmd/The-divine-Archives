@@ -1,13 +1,21 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-19 06:35 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
-`correction-*.md` / `order-*.md` / `approval-*.md` to date, `nudge-2026-10-18-0832.md`, `nudge-2026-10-18-1330.md`, `nudge-2026-10-18-graphify-map.md`,
-`briefing-2026-10-18-relic-catchup.md`, `council-operating-model.md`, Muse's 2026-10-18 evening previews (7). **Deployed (`main`):** `77f6444` = batch A + museum
-phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), deploy green, at the-divine-archives.pages.dev. getconexto.com not pointed.
-**Branches:** `loop/journal-hero-redesign` = PR #60 (on hold for Carter's selfie). `loop/graphify-labels` = PR #69 (named map). `loop/hit-feel` = PR #70 (hit-feel part 1). `loop/hit-feel-2` = PR #71 (hit-feel part 2, stacked on #70). `loop/hit-feel-3` = PR #72 (hit-feel part 3, stacked on #71). `staging/ready-line` carries `handoff/`.
-**Loop:** RUNNING.
+**As of:** 2026-10-24 21:30 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+`correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
+`merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
+`council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
+`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`. **Deployed (`main`):** `77f6444` (unchanged since
+2026-10-18), at the-divine-archives.pages.dev. Domain: records disagree (see briefing §2; Needs Carter 1).
+**Branches:** `loop/graphify-labels` = PR #69, `loop/hit-feel` = #70, `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
+`loop/journal-hero-redesign` = #60. `staging/ready-line` carries `handoff/`.
+**Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~20:43–21:30: **Full briefing to Muse** (`FIRST-ORDER-claude-briefing.md`), committed at
+  `handoff/replies/claude-full-briefing.md`: setup, site, everything built and its state, capabilities and limits,
+  current state, known problems, decisions. Done first and alone, as ordered; nothing else built or merged this run.
+  Found: the 2026-10-19 06:25 lock was never removed and no run worked from then until now (usage limits on the
+  scheduled tasks this week, inferred); overwritten as stale. Reply `2026-10-24-briefing-delivered.md`. Items per run: 1.
 - 2026-10-19 ~06:15–06:35: **Treaty of Kadesh tablet rebuilt** (relic 1 of 4, Next 2), preview only in
   `handoff/previews/treaty-of-kadesh/` (Muse's file left in place). Now loads the repo's three.js (the Muse file could not
   show anything), pressed-wedge cuneiform with raking light and dust in the grooves, cushion-shaped clay, flips top over
@@ -108,50 +116,47 @@ phone speed (#62) + batch B (#63) + Item 29 (#65, merged by Carter 22:07 UTC), d
 ## In progress
 - (none)
 
-## Next (ranked by value per `decisions-2026-10-17-priority-by-value.md`; Carter 13:30 nudge: feel-it-first)
-0. **PR #69 merge** once Carter says yes for it (Needs Carter 0). A run then re-checks it still fast-forwards and is green.
-0b. **PR #70 merge** once Carter says yes for it (Needs Carter 00). A run then re-checks it still fast-forwards and is green.
-0c. **PR #71 merge** after #70, once Carter says yes for it (Needs Carter 000): re-check it fast-forwards and is green.
-0d. **PR #72 merge** after #71, once Carter says yes for it (Needs Carter 000): re-check it fast-forwards and is green.
-2. **Four approved relics** (`briefing-2026-10-18-relic-catchup.md`): Treaty of Kadesh DONE 2026-10-19 (preview). Next:
-   Crown of the Kandake, then Etruscan mirror, then Crown of Thorns (two versions), staged in `handoff/previews/`.
-   Analyze and rebuild better to the Relic Standard, one per run, in `handoff/previews/<name>/`. Crown of Thorns is a Christian relic: the museum placement goes to Carter (sensitivity rule).
-3. **Muse's 2026-10-18 previews** (Carter-approved Muse-side): Tabula (relic + game), Awithlaknannai, Sort the Seals,
-   Mithraeum, Fire Temple, Langar, Cave Wall, in `handoff/previews/`. All load `three.min.js`, which Muse could not push:
-   use the repo's vendored three.js. Rebuild to the Relic Standard one per run on `loop/*`; site placement needs Carter's
-   yes per item. Fire Temple (Zoroastrian), Langar (Sikh) and Awithlaknannai (Zuni) are living traditions: sensitivity
-   review (REVIEWER §4.6) before any placement.
-4. **Find Carter's selfie in the repo** (13:30 nudge, Item 27): a real search (images in every branch and `handoff/`).
-   Found → Option A Journal hero (face stays his). Not found → STOP and ask Carter; never invent a face.
-5. **Reduced motion respected everywhere** (Item 31 #6; value 3).
-6. **Arcade playability floor:** difficulty selector, undo where it fits, short tutorial, readable tap targets.
-7. **Fix package (§7)**, relic by relic, most visible rooms first.
-8. **Small defects, part 2, the rest** (handoff previews): zodiac `dispose()`; Oracle Bones wording; Google Fonts out of
-   two exhibits; Grimoire note, Gardnerian label, lore flags.
-9. **Spirit Board rename** (Item 31 #4); **Errata page** (Item 31 #3, prepare only); **Protection charter D4** check;
-   **Debate Hall preview safety**; larger items (folded list §B rows 14–24). Keep `handoff/standards/board.json` current
-   in the same commit as each item.
+## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
+1. **Merge PR #69 then PR #70** — Carter approved both (`merge-approval-2026-10-19.md`). Re-check each still
+   fast-forwards onto `main` `77f6444` and every check is green on the same head, then fast-forward, watch the deploy,
+   update CURRENT and MERGEABLE. If the session refuses the push to `main`, do not retry another way: ask Carter to
+   press Merge.
+2. **Tjurunga takedown** (Carter ruling 2026-10-20; value 1, live-site exposure, sacred restriction): on its own
+   `loop/tjurunga-absence` branch, exactly per `tjurunga-takedown-order-2026-10-20.md` §2–§3 (absence page at the same
+   URL with the verbatim wording, V68 card removed without renumbering, count made true, museum room note, era link
+   removed, chapter prose untouched, sitemap URL kept). Fold in the one-line `random.html` meta description
+   (`fix-random-meta-description.md`). Full checks, independent review by another run, then Carter's yes for that PR.
+3. **Journal hero rebuild** (PR #60, Option A) from `handoff/journal-hero/` (Carter's selfie face, hooded Archivist
+   costume). Face stays his; nothing trademarked.
+4. **Site speed finding** (value 3): diagnose from the repo (page weight, `docs/_headers` caching, Codex Mendoza);
+   Cloudflare-side changes are Carter-only.
+5. **Reduced motion everywhere**; **arcade playability floor** (value 3).
+6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
+   (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
+7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
+8. **Independent review of #64, #66, #67, #68** so they can reach MERGEABLE (#66 is new content: Carter's yes too).
+9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
+10. Fix package; small defects part 2; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+    standards board current with each item.
+- **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
+  played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
+  philosophers never in religious rooms; Perform/Witness/Learn with Withheld Lists, watch-only default; no scores or
+  streaks on practices; no new room without a full chapter; directory scorecard + "Not Yet Housed" register).
+  What reaches Carter: finished pieces, yes/no only.
 - Scheduled: on or after **2027-01-15**, remove the old-id table on a side branch.
 
 ## Parked / on hold (do not build)
-- Protection charter D1–D3 (Item 26). 900 Theses: ON HOLD (Item 31 #9). Email list: skipped (Item 31 #7). Pythia gets no
-  Pantheon entry (Item 31 #2). VR, multilingual, Divine Casualties rebuild, ballgame, music reopen.
+- Protection charter D1–D3. Email list. Pythia Pantheon entry. VR, multilingual, Divine Casualties rebuild, ballgame,
+  music (Council 7a). Room eggs (Council 3). Early China pilot (Yes/No addendum: parked until the training approach is
+  set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-0000. **Treaty of Kadesh tablet preview** (link in `2026-10-19-treaty-of-kadesh-rebuilt.md`): open it on your phone and
-   say **looks right / change something**. Putting it in the museum is a separate yes later.
-000. **Hit-feel part 2 (PR #71) is ready too** (review passed, all 7 checks green). It merges right after #70:
-   **yes / not now**. **Part 3 (Chess + Dominion, PR #72) is ready too** (review passed, all 7 checks green); it merges
-   right after #71: **yes / not now**.
-00. **Hit-feel part 1 (PR #70) is ready**: review passed, every check green incl. Lighthouse. Merge it: **yes / not now**.
-   Then play The Firmament and Antithesis on your phone and say if hits feel right, too strong, or too weak.
-0. **PR #69 (plain-word names on the code map) passed its independent review.** Merge it: **yes / not now**. Also open
-   the map on your phone (link in `2026-10-18-graphify-map-named.md`) and say if it is readable.
-   Optional: add chapters and Vault prose to the map (needs an AI reading pass) — **yes / not now**.
-1. **Scheduled reviewer and auditor save nothing** (since 2026-10-12; `2026-10-18-auditor-verifier-health.md`).
-   Options: **A** (recommended) the loop also saves each independent review to the review log and runs the weekly audit
-   steps; **B** you attach the repository to the two scheduled tasks in the Claude app; **C** also merge PR #58.
-2. **Your selfie for the Journal hero** (Item 27), if the repo search (Next 4) does not find it.
-3. **Batch review, now live:** re-clear V72 (Book of Shadows, sources only) and the Pantheon's Ra-Horakhty entry.
-4. Museum speed is live: open the museum on your phone and say if it feels smoother or blurrier
-   (`the-divine-archives.pages.dev/museum.html?fps=1#ch02` shows the frame rate).
+1. **Domain:** is getconexto.com showing the site now? Muse's Tjurunga order read live pages there on 2026-10-20; the
+   build records say it is not pointed. **Yes, it's live / No, not yet.**
+2. **Hit-feel part 2 (PR #71) and part 3 (PR #72):** both reviewed, all checks green; they merge right after #70.
+   **Yes / Not now.**
+3. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
+4. **Reviewer and auditor tasks save nothing** (no repo attached; hit usage limits this week). **A** (recommended) the
+   loop does their saving; **B** attach the repo to both tasks in the Claude app; **C** also merge PR #58.
+5. **Batch review, live:** re-clear V72 (Book of Shadows) and the Pantheon's Ra-Horakhty entry. **Clear / Not yet.**
+6. **PR #61** is superseded by #65 (already live). **Close it / Leave it.**

@@ -4,16 +4,16 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-19 06:35 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
+**As of:** 2026-10-24 21:30 UTC. **Deployed (`main`, on the-divine-archives.pages.dev; DNS not pointed):** `77f6444` (PR #65 merged 22:07 UTC, deploy green).
 
 ## Mergeable now
 - **Graphify plain-word names** (PR #69, `loop/graphify-labels` @ `09f48b3`; tools + workflow only, no `docs/`, nothing on
   the live site): independent review 2026-10-19, 0 findings (`2026-10-19-pr69-independent-review.md`); local checks green;
   6/6 GitHub checks green (Lighthouse not triggered by design); fast-forwards onto `main` `77f6444`.
-  **Waiting only on Carter's yes for this item.**
+  **Carter said yes 2026-10-19 (`merge-approval-2026-10-19.md`).** Next run re-checks fast-forward + green, then merges.
 - **Hit-feel part 1** (PR #70, `loop/hit-feel` @ `ea70b77`; games only): independent review passed 2026-10-19, 0 blocking
   findings (`2026-10-19-pr70-independent-review.md`); local checks green; **7/7 GitHub checks green, Lighthouse included**
-  (finished 05:16 UTC); fast-forwards onto `main` `77f6444`. **Waiting only on Carter's yes for this item.**
+  (finished 05:16 UTC); fast-forwards onto `main` `77f6444`. **Carter said yes 2026-10-19 (`merge-approval-2026-10-19.md`).** Merges right after #69.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
@@ -40,6 +40,6 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Protection charter: D1–D3 PARKED by Carter (Item 26); D4 is approved only once it is up to standard (Item 23). The draft is `handoff/protection-charter-DRAFT.md`.
 - The Unfinished Journal hero redesign (PR #60, `loop/journal-hero-redesign` `6862dee`): **ON HOLD, does not merge.**
   Item 27 (Carter): the hero is based on Carter's own selfie, and the face stays his. PR #60 drew a new, invented face.
-  The selfie image is not in the repo, so per Item 27 the work stops until Carter supplies it. The costume and set-piece
+  **Unblocked 2026-10-21:** Muse staged the selfie and the approved hooded Archivist sheet in `handoff/journal-hero/`; rebuild queued. The costume and set-piece
   changes (no fedora, leather jacket, whip-swing or boulder) still stand.
-- 900 Theses room: ON HOLD (Carter, Item 31).
+- 900 Theses room: hold LIFTED (Council 14b, 2026-10-20); spec work queued, nothing built yet.
