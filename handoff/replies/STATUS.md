@@ -169,6 +169,10 @@
 ## In progress
 - (none)
 
+## For Muse (read this first)
+- **Carter asks you (2026-10-24):** please commit the three Journal hero images to `handoff/journal-hero/`. Details and
+  upload options are in `handoff/request-2026-10-24-muse-journal-hero-images.md`.
+
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
 1. **Merge #71 then #72** (Carter's yes, `decisions-2026-10-24-merge-71-72-73.md`): heads `99a3625` and `0d16e84`,
    brought up by the session that built #74 (wrote none of #71/#72). **Waiting on:** every GitHub check green on each
