@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 22:45 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `361ba21` (PR #70 merged 2026-10-24 22:37 UTC, deploy run 196 green).
+**As of:** 2026-10-24 22:55 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `361ba21` (PR #70 merged 2026-10-24 22:37 UTC, deploy run 196 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -20,11 +20,13 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
   (`2026-10-19-hit-feel-part-2.md`); **independent review passed 2026-10-19, 0 findings**
   (`2026-10-19-pr71-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 05:32 UTC).
-  #70 is merged; missing: #71 brought up to the new `main` `361ba21` (merge commit) and a re-check that it stays green; Carter's yes for this item.
+  **Carter's yes recorded** (`decisions-2026-10-24-merge-71-72-73.md`); brought up to `main` as `99a3625` (site diff
+  identical). Missing: every GitHub check green on `99a3625`, then the merge by a run that wrote none of it.
 - **Hit-feel part 3** (PR #72, `loop/hit-feel-3` @ `d4b52cf`, stacked on #71; games only): local checks green
   (`2026-10-19-hit-feel-part-3.md`); **independent review passed 2026-10-19, 0 findings**
   (`2026-10-19-pr72-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 06:19 UTC).
-  Missing: #70 and #71 merged first, then a re-check that #72 fast-forwards and stays green; Carter's yes for this item.
+  **Carter's yes recorded**; brought up as `0d16e84` on top of #71. Missing: every GitHub check green on `0d16e84`;
+  #71 merged first.
 
 ## Merged
 - Hit-feel part 1 (PR #70): merged 2026-10-24 22:37 UTC by fast-forward to `361ba21`, deploy run 196 green (`2026-10-24-pr70-merged.md`).

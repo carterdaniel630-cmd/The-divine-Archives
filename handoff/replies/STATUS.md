@@ -1,16 +1,23 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:45 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 22:55 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
-`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`. **Deployed (`main`):** `361ba21` (PR #70, merged
+`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, and `decisions-2026-10-24-merge-71-72-73.md`. **Deployed (`main`):** `361ba21` (PR #70, merged
 2026-10-24 22:37 UTC, deploy run 196 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
 **Branches:** `loop/hit-feel` = #70 (merged), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
 `loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74. `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~22:40–22:55: **PR #74 independently reviewed** (reduced motion part 1, `7ec8244`) by a run that wrote
+  none of it: **0 findings**. Measured by playing at phone size with its own script: reduced motion on gives 0 shaken
+  frames and flash ≤ 0.06 in both games (off: 441 / 271 shaken frames). Build clean, review-checks 9/9 (0 warnings),
+  17 verify, 42/42 tests, fight test to KO, 0 script errors; merges onto `361ba21` with no conflict. GitHub 6/7 green,
+  Lighthouse running (not waited on). Found a parallel session had already brought #71 → `99a3625` and #72 → `0d16e84`
+  up to `main` under Carter's new yes; this run's identical #71 merge was not pushed. Reply
+  `2026-10-24-pr74-independent-review.md`. Items per run: 1.
 - 2026-10-24 ~22:33–22:45: **PR #70 merged** (hit-feel part 1, Carter's per-item yes `merge-approval-2026-10-19.md`) by
   fast-forward `09f48b3` → `361ba21`; **deploy run 196 green**. Every LOOP.md condition checked by a run that wrote none
   of #70: site diff byte-identical to the independently reviewed `ea70b77`; 6/6 GitHub checks green incl. Lighthouse;
@@ -151,15 +158,17 @@
 - (none)
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-1. **Independent review of PR #74** (reduced motion, part 1, `7ec8244`) by a run that wrote none of it (the 22:15
-   run built it; the 22:33 run that merged #70 also ran in the same session, so it does not count), and check its
-   GitHub checks. Then it waits on Carter (Needs Carter 11).
-   Also: **bring #71 up to the new `main`** (`361ba21`) with a merge commit so its checks re-run; it then waits on Carter's yes (Needs Carter 2).
-2. **PR #73** (Tjurunga takedown): review done, 0 defects, **8/8 checks green**; it waits on Carter
-   (Needs Carter 7 and 8). If Carter picks "Soften", change the one phrase on the branch and re-review.
-3. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
+1. **Merge #71 then #72** (Carter's yes, `decisions-2026-10-24-merge-71-72-73.md`): heads `99a3625` and `0d16e84`,
+   brought up by the session that built #74 (wrote none of #71/#72). **Waiting on:** every GitHub check green on each
+   head, Lighthouse included. Then a run that wrote none of their site changes re-runs local checks and fast-forwards
+   `main` to `99a3625`, then `0d16e84`, watching each deploy.
+2. **PR #74:** reviewed, 0 findings. **Waiting on:** Lighthouse on `7ec8244`, and Carter's yes (Needs Carter 11). After
+   his yes: bring it up to `main` (merge commit), confirm the site diff unchanged, checks green, then merge.
+3. **PR #73** (Tjurunga takedown): Carter's yes recorded; **waiting on his wording answer** (Needs Carter 8). If he
+   picks "Soften", change the one phrase on the branch, re-review and re-check, then merge after #72.
+4. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
    `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
-4. **Site speed:** diagnosis done; fix A (open outside manuscripts only when reached) waits on Carter's go (Needs Carter 10).
+4b. **Site speed:** diagnosis done; fix A waits on Carter's go (Needs Carter 10).
 5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
@@ -184,15 +193,13 @@
 ## Needs Carter
 1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
    2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
-2. **Hit-feel part 2 (PR #71) and part 3 (PR #72):** part 1 is now live; both are reviewed and all checks green; they go
-   live next once you say so. **Yes / Not now.**
+2. ~~Hit-feel parts 2 and 3~~: answered "d" 2026-10-24 (yes); merging once their re-run checks are green.
 3. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
 4. **Reviewer and auditor tasks save nothing** (no repo attached; hit usage limits this week). **A** (recommended) the
    loop does their saving; **B** attach the repo to both tasks in the Claude app; **C** also merge PR #58.
 5. **Batch review, live:** re-clear V72 (Book of Shadows) and the Pantheon's Ra-Horakhty entry. **Clear / Not yet.**
 6. **PR #61** is superseded by #65 (already live). **Close it / Leave it.**
-7. **Tjurunga takedown (PR #73):** built to your ruling; after its independent review it needs your yes to go live.
-   Reviewed 2026-10-24: does what you ruled, nothing shown. **Yes, put it live / Not now.**
+7. ~~Tjurunga takedown yes~~: answered "d" 2026-10-24; only the wording (8) is open.
 8. **Tjurunga wording:** the absence text calls Strehlow's "the largest" collection; the sources checked say only
    "one of the most significant". **Keep as is / Soften to "one of the most significant collections".**
 9. **Journal hero pictures missing:** the README lists your selfie and both character sheets, but the files never
@@ -200,4 +207,4 @@
 10. **Site speed fix A:** the slowest page (Codex Mendoza) waits on Oxford's server as it opens. Load the outside
    manuscript only when the reader reaches it. **Yes, build A / Not now.** (B–E in the diagnosis file, later.)
 11. **Reduced motion, part 1 (PR #74):** two games stop shaking and flashing for people whose phone asks for reduced
-   motion. After its independent review: **Yes, put it live / Not now.**
+   motion. Independent review done 2026-10-24: 0 findings. **Yes, put it live / Not now.**
