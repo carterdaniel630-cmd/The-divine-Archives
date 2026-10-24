@@ -1,16 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 22:40 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 22:45 UTC (build loop; earlier entries' clock times were estimates). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
-`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`. **Deployed (`main`):** `09f48b3` (PR #69, merged
-2026-10-24 21:43 UTC, deploy green), at the-divine-archives.pages.dev. Domain: records disagree (see briefing §2; Needs Carter 1).
-**Branches:** `loop/hit-feel` = #70 (@ `361ba21`), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
+`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`. **Deployed (`main`):** `361ba21` (PR #70, merged
+2026-10-24 22:37 UTC, deploy run 196 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
+**Branches:** `loop/hit-feel` = #70 (merged), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
 `loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74. `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~22:33–22:45: **PR #70 merged** (hit-feel part 1, Carter's per-item yes `merge-approval-2026-10-19.md`) by
+  fast-forward `09f48b3` → `361ba21`; **deploy run 196 green**. Every LOOP.md condition checked by a run that wrote none
+  of #70: site diff byte-identical to the independently reviewed `ea70b77`; 6/6 GitHub checks green incl. Lighthouse;
+  build clean and repeatable, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone play of The
+  Firmament and Antithesis in both motion modes, 0 script errors, shake under normal motion and **none under reduced
+  motion**. PR #74 still merges cleanly onto the new `main`. Reply `2026-10-24-pr70-merged.md`. Items per run: 1.
 - 2026-10-24 ~22:15–22:40: **Reduced motion, part 1** (Next 5) on `loop/reduced-motion` @ `7ec8244`, **PR #74**:
   site-wide audit with reduced motion on (25 pages, nothing moves on its own). Divine Casualties and The Unfinished
   Journal still shook and flashed for those visitors. Now 0 shaken frames and flashes ≤ 0.06 (was 95 / 0.25 and
@@ -145,17 +151,17 @@
 - (none)
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-1. **Merge PR #70 NOW** (Carter approved, `merge-approval-2026-10-19.md`): **all 6/6 GitHub checks green on `361ba21`**
-   (Lighthouse finished 22:28 UTC). Re-run the local checks on `361ba21`; if `main` is still `09f48b3`, fast-forward
-   `main` to `361ba21`, watch the deploy, update CURRENT and MERGEABLE. Then bring #71 up to the new `main` (merge commit) for its re-check.
+1. **Independent review of PR #74** (reduced motion, part 1, `7ec8244`) by a run that wrote none of it (the 22:15
+   run built it; the 22:33 run that merged #70 also ran in the same session, so it does not count), and check its
+   GitHub checks. Then it waits on Carter (Needs Carter 11).
+   Also: **bring #71 up to the new `main`** (`361ba21`) with a merge commit so its checks re-run; it then waits on Carter's yes (Needs Carter 2).
 2. **PR #73** (Tjurunga takedown): review done, 0 defects, **8/8 checks green**; it waits on Carter
    (Needs Carter 7 and 8). If Carter picks "Soften", change the one phrase on the branch and re-review.
 3. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
    `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
 4. **Site speed:** diagnosis done; fix A (open outside manuscripts only when reached) waits on Carter's go (Needs Carter 10).
-5. **Independent review of PR #74** (reduced motion, part 1, `7ec8244`) by a run that wrote none of it; check its
-   GitHub checks. Then **arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs
-   handle seven games, #74 the other two, and every page stayed still in the audit.
+5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
+   #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
@@ -178,8 +184,8 @@
 ## Needs Carter
 1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
    2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
-2. **Hit-feel part 2 (PR #71) and part 3 (PR #72):** both reviewed, all checks green; they merge right after #70.
-   **Yes / Not now.**
+2. **Hit-feel part 2 (PR #71) and part 3 (PR #72):** part 1 is now live; both are reviewed and all checks green; they go
+   live next once you say so. **Yes / Not now.**
 3. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
 4. **Reviewer and auditor tasks save nothing** (no repo attached; hit usage limits this week). **A** (recommended) the
    loop does their saving; **B** attach the repo to both tasks in the Claude app; **C** also merge PR #58.

@@ -1,4 +1,12 @@
-# Handoff — updated 2026-10-24 (22:10 UTC)
+# Handoff — updated 2026-10-24 (22:45 UTC)
+
+## Latest: PR #70 (hit-feel part 1) is live (2026-10-24)
+- **PR #70** merged by the build loop 22:37 UTC by fast-forward `09f48b3` → `361ba21` (Carter's per-item yes,
+  `merge-approval-2026-10-19.md`). Site diff identical to the independently reviewed `ea70b77`; 6/6 GitHub checks green;
+  local checks re-run green. Deploy run 196 green. The Firmament and Antithesis now freeze, shake, flash and ring on a hit
+  (no shake under reduced motion). Reply `replies/2026-10-24-pr70-merged.md`.
+- **Open next:** #71, #72 (hit-feel 2–3, Carter's yes), #73 (Tjurunga, Carter's yes), #74 (reduced motion part 1,
+  needs independent review then Carter's yes).
 
 ## Latest: PR #69 (Graphify plain-word names) is on main (2026-10-24)
 - **PR #69** merged by the build loop 21:43 UTC by fast-forward to `09f48b3` (Carter's per-item yes,

@@ -4,16 +4,10 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 22:40 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `09f48b3` (PR #69 merged 2026-10-24 21:43 UTC, deploy run 195 green).
+**As of:** 2026-10-24 22:45 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `361ba21` (PR #70 merged 2026-10-24 22:37 UTC, deploy run 196 green).
 
 ## Mergeable now
-- **Hit-feel part 1** (PR #70; games only): independent review passed 2026-10-19, 0 blocking findings
-  (`2026-10-19-pr70-independent-review.md`); **Carter said yes 2026-10-19 (`merge-approval-2026-10-19.md`).**
-  2026-10-24: brought up to `main` `09f48b3` with a merge commit, `loop/hit-feel` @ `361ba21` (site files identical to the
-  reviewed `ea70b77`; the rebase route was refused by this session's safety check, so no history was rewritten). Local
-  checks green on that tree (build clean, review-checks 9/9, 17 verify, 42/42 tests, headless phone load of the games page
-  in both motion modes, 0 errors). **All 6/6 GitHub checks green on `361ba21`, Lighthouse included (finished 22:28 UTC).**
-  Every condition met; the next run (which wrote none of it) re-runs the local checks and fast-forwards `main` to `361ba21`.
+- (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Reduced motion, part 1** (PR #74, `loop/reduced-motion` @ `7ec8244`; games only): built 2026-10-24, local checks
@@ -26,13 +20,14 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Hit-feel part 2** (PR #71, `loop/hit-feel-2` @ `6c4efbc`, stacked on #70; games only): local checks green
   (`2026-10-19-hit-feel-part-2.md`); **independent review passed 2026-10-19, 0 findings**
   (`2026-10-19-pr71-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 05:32 UTC).
-  Missing: #70 merged first, then #71 brought up to the new `main` (merge commit) and a re-check that it stays green; Carter's yes for this item.
+  #70 is merged; missing: #71 brought up to the new `main` `361ba21` (merge commit) and a re-check that it stays green; Carter's yes for this item.
 - **Hit-feel part 3** (PR #72, `loop/hit-feel-3` @ `d4b52cf`, stacked on #71; games only): local checks green
   (`2026-10-19-hit-feel-part-3.md`); **independent review passed 2026-10-19, 0 findings**
   (`2026-10-19-pr72-independent-review.md`); **7/7 GitHub checks green, Lighthouse included** (finished 06:19 UTC).
   Missing: #70 and #71 merged first, then a re-check that #72 fast-forwards and stays green; Carter's yes for this item.
 
 ## Merged
+- Hit-feel part 1 (PR #70): merged 2026-10-24 22:37 UTC by fast-forward to `361ba21`, deploy run 196 green (`2026-10-24-pr70-merged.md`).
 - Graphify plain-word names (PR #69): merged 2026-10-24 21:43 UTC by fast-forward to `09f48b3`, deploy run 195 green (`2026-10-24-pr69-merged-pr70-updated.md`).
 - Graphify fix + standards board (Item 29, PR #65): merged by Carter 2026-10-18 22:07 UTC as `77f6444`, deploy run 194 green (`2026-10-18-item-29-independent-review-and-merge.md`).
 - Site batch B (PR #63): merged 2026-10-18 16:51 UTC by fast-forward to `c205f4c`, deploy green (`2026-10-18-batch-b-update-review-and-merge.md`).
