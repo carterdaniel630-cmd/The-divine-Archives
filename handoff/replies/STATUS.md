@@ -183,11 +183,17 @@
 1. **Merge PR #73** (Tjurunga takedown; Carter's yes and "soften" recorded; re-review 0 findings). **Waiting on:**
    Lighthouse on `efba79c`. Once green, a run that wrote none of #73 fast-forwards `main` `6c81a84` → `efba79c`, watches
    the deploy, updates CURRENT and MERGEABLE.
+1a. **PR #67** (live phone fixes): **Carter's yes 2026-10-24** (`decisions-2026-10-24-batch-six.md` 1). Bring it up to
+   `main` after #73 (merge commit), confirm the site diff unchanged from the reviewed `1681050`, checks green, merge.
+1b. **Site speed fix A** (Carter's yes, batch-six 2): build on a `loop/*` branch: load the outside manuscript viewers
+   (Codex Mendoza, Borgia, Voynich) only when the reader reaches them; then independent review and checks; going live
+   is covered by this yes. B–E still need their own yes.
+1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): record in `reviews/cleared.json`,
+   remove pending state, on a branch with checks and independent review.
+1d. **Close PR #61** with a note (batch-six 5; branch kept). **Reviewer/auditor option A** (batch-six 4): the loop saves
+   their reports; fold into the procedure.
 4. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
    `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
-4a. **PR #67** (live phone fixes): reviewed, 0 findings, 9/9 green on its old base. Waiting on Carter's yes
-   (Needs Carter 12); then bring it up to `main` after #71/#72, re-check, merge.
-4b. **Site speed:** diagnosis done; fix A waits on Carter's go (Needs Carter 10).
 5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
@@ -210,19 +216,10 @@
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
+Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`, folded into Next): PR #67 yes, speed fix A yes, V72 and
+Ra-Horakhty cleared, reviewer/auditor option A, PR #61 close, Journal hero images requested from Muse. Hit-feel 2–3,
+reduced motion and the Tjurunga takedown/wording also answered.
 1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
    2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
-2. ~~Hit-feel parts 2 and 3~~: answered "d"; merged 23:09 and 23:12 UTC.
-3. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
-4. **Reviewer and auditor tasks save nothing** (no repo attached; hit usage limits this week). **A** (recommended) the
-   loop does their saving; **B** attach the repo to both tasks in the Claude app; **C** also merge PR #58.
-5. **Batch review, live:** re-clear V72 (Book of Shadows) and the Pantheon's Ra-Horakhty entry. **Clear / Not yet.**
-6. **PR #61** is superseded by #65 (already live). **Close it / Leave it.**
-7. ~~Tjurunga takedown yes~~ / 8. ~~wording~~: answered "d" and "soften" 2026-10-24; done, re-reviewed.
-9. **Journal hero pictures missing:** the README lists your selfie and both character sheets, but the files never
-   reached the repo. **Ask Muse to commit them to `handoff/journal-hero/` / Send them to me in a chat.**
-10. **Site speed fix A:** the slowest page (Codex Mendoza) waits on Oxford's server as it opens. Load the outside
-   manuscript only when the reader reaches it. **Yes, build A / Not now.** (B–E in the diagnosis file, later.)
-11. ~~Reduced motion (PR #74)~~: answered yes; merged 23:30 UTC.
-12. **PR #67:** fixes three things wrong on the live site today: the eras page's oversized emblems on phones, 45 chapter
-   pages wider than a phone screen, and the arcade calling Hades an Olympian. Reviewed: 0 findings. **Yes, put it live / Not now.**
+2. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
+3. **Journal hero pictures:** waiting on Muse (reminder sent); nothing for Carter unless she can't.
