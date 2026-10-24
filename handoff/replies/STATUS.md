@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 23:10 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-24 23:50 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -11,6 +11,12 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-24 ~23:43–23:50: **PR #73 independently re-reviewed** (Tjurunga takedown, `efba79c`, softened wording) by a
+  run that wrote none of it: **0 findings**. Only change since the reviewed `529b1eb` is the softened sentence; it is
+  supported by the NT Government Strehlow Research Centre page ("one of Australia's most important collections").
+  Build clean and repeatable, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone check of six pages,
+  0 script errors, 0 images on the absence page. GitHub 7/8 green, Lighthouse running (started 23:42), not waited on
+  with the lock held. Reply `2026-10-24-pr73-re-review.md`. Items per run: 1.
 - 2026-10-24 ~23:30: **PR #74 merged** (reduced motion part 1, Carter's yes) by fast-forward to `6c81a84`, deploy 199
   green; 7/7 checks on `6c81a84` (Lighthouse: fighter 87→86, treasure 78→77, inside the 5-point gate). The lock commit
   for this merge failed to write (its folder was gone), so the merge ran with no lock file; no other run held the lock
@@ -174,14 +180,9 @@
   upload options are in `handoff/request-2026-10-24-muse-journal-hero-images.md`.
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-1. **Merge #71 then #72** (Carter's yes, `decisions-2026-10-24-merge-71-72-73.md`): heads `99a3625` and `0d16e84`,
-   brought up by the session that built #74 (wrote none of #71/#72). **Waiting on:** every GitHub check green on each
-   head, Lighthouse included. Then a run that wrote none of their site changes re-runs local checks and fast-forwards
-   `main` to `99a3625`, then `0d16e84`, watching each deploy.
-2. **PR #74:** reviewed, 0 findings. **Waiting on:** Lighthouse on `7ec8244`, and Carter's yes (Needs Carter 11). After
-   his yes: bring it up to `main` (merge commit), confirm the site diff unchanged, checks green, then merge.
-3. **PR #73** (Tjurunga takedown): Carter's yes recorded; **waiting on his wording answer** (Needs Carter 8). If he
-   picks "Soften", change the one phrase on the branch, re-review and re-check, then merge after #72.
+1. **Merge PR #73** (Tjurunga takedown; Carter's yes and "soften" recorded; re-review 0 findings). **Waiting on:**
+   Lighthouse on `efba79c`. Once green, a run that wrote none of #73 fast-forwards `main` `6c81a84` → `efba79c`, watches
+   the deploy, updates CURRENT and MERGEABLE.
 4. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
    `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
 4a. **PR #67** (live phone fixes): reviewed, 0 findings, 9/9 green on its old base. Waiting on Carter's yes
@@ -211,20 +212,17 @@
 ## Needs Carter
 1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
    2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
-2. ~~Hit-feel parts 2 and 3~~: answered "d" 2026-10-24 (yes); merging once their re-run checks are green.
+2. ~~Hit-feel parts 2 and 3~~: answered "d"; merged 23:09 and 23:12 UTC.
 3. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
 4. **Reviewer and auditor tasks save nothing** (no repo attached; hit usage limits this week). **A** (recommended) the
    loop does their saving; **B** attach the repo to both tasks in the Claude app; **C** also merge PR #58.
 5. **Batch review, live:** re-clear V72 (Book of Shadows) and the Pantheon's Ra-Horakhty entry. **Clear / Not yet.**
 6. **PR #61** is superseded by #65 (already live). **Close it / Leave it.**
-7. ~~Tjurunga takedown yes~~: answered "d" 2026-10-24; only the wording (8) is open.
-8. **Tjurunga wording:** the absence text calls Strehlow's "the largest" collection; the sources checked say only
-   "one of the most significant". **Keep as is / Soften to "one of the most significant collections".**
+7. ~~Tjurunga takedown yes~~ / 8. ~~wording~~: answered "d" and "soften" 2026-10-24; done, re-reviewed.
 9. **Journal hero pictures missing:** the README lists your selfie and both character sheets, but the files never
    reached the repo. **Ask Muse to commit them to `handoff/journal-hero/` / Send them to me in a chat.**
 10. **Site speed fix A:** the slowest page (Codex Mendoza) waits on Oxford's server as it opens. Load the outside
    manuscript only when the reader reaches it. **Yes, build A / Not now.** (B–E in the diagnosis file, later.)
-11. **Reduced motion, part 1 (PR #74):** two games stop shaking and flashing for people whose phone asks for reduced
-   motion. Independent review done 2026-10-24: 0 findings. **Yes, put it live / Not now.**
+11. ~~Reduced motion (PR #74)~~: answered yes; merged 23:30 UTC.
 12. **PR #67:** fixes three things wrong on the live site today: the eras page's oversized emblems on phones, 45 chapter
    pages wider than a phone screen, and the arcade calling Hades an Olympian. Reviewed: 0 findings. **Yes, put it live / Not now.**

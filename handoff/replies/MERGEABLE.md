@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-24 23:35 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `6c81a84` (PR #74 merged 2026-10-24 23:30 UTC, deploy run 199 green).
+**As of:** 2026-10-24 23:50 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `6c81a84` (PR #74 merged 2026-10-24 23:30 UTC, deploy run 199 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -13,11 +13,11 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Site fixes 2026-10-18** (PR #67, `claude/site-fixes-2026-10-18` @ `1681050`): **independent review done 2026-10-24,
   0 findings** (`2026-10-24-pr67-independent-review.md`); 9/9 GitHub checks green on `1681050`; local checks green on
   it merged onto `361ba21`. Missing: Carter's yes; then brought up to `main` (merge commit), site diff unchanged, checks green.
-- **Tjurunga takedown** (PR #73, `loop/tjurunga-absence` @ `529b1eb`; Carter's ruling 2026-10-20): built 2026-10-24,
-  local checks green (`2026-10-24-tjurunga-takedown-built.md`). **Independent review done 2026-10-24, 0 defects**
-  (`2026-10-24-pr73-independent-review.md`); one wording question for Carter ("the largest collection").
-  **8/8 GitHub checks green** (Lighthouse finished 22:12). Missing: Carter's answer on the wording;
-  Carter's yes for this PR (sensitivity item: never merged without it).
+- **Tjurunga takedown** (PR #73, `loop/tjurunga-absence` @ `efba79c`, stacked on #74; Carter's yes and his "soften"
+  answer in `decisions-2026-10-24-merge-71-72-73.md`). **Independent re-review of `efba79c` done 2026-10-24 23:50,
+  0 findings** (`2026-10-24-pr73-re-review.md`). The only change since the reviewed `529b1eb` is the softened sentence.
+  Local checks green; fast-forwards from `main` `6c81a84`. Missing: Lighthouse on `efba79c` (7/8 green; started
+  23:42). Merges as soon as it is green.
 
 ## Merged
 - Reduced motion, part 1 (PR #74): merged 2026-10-24 23:30 UTC by fast-forward to `6c81a84`, deploy run 199 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-24-pr74-independent-review.md`; 7/7 checks incl. Lighthouse on `6c81a84`).
