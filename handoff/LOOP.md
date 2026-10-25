@@ -44,11 +44,20 @@ with no memory of the last one: the repo is the memory.
    - remove `handoff/loop/LOCK`.
    Then commit and push to `staging/ready-line`.
    **Reviewer and auditor saving (Carter's option A, `decisions-2026-10-24-batch-six.md` 4):** the scheduled reviewer
-   and auditor save nothing themselves, so the loop does it. When a run writes an independent review, it also copies
-   that report to the `review-log` branch as `reviews/YYYY-MM-DD-<topic>.md` and adds one line to `reviews/runs.md`
-   there (`YYYY-MM-DD HH:MM UTC reviewer loop <PR> <passed/fixed/need Carter>`). The first run on or after each
-   Wednesday also does `reviews/AUDITOR.md`'s weekly steps (10% re-review of saved reports, coverage of PRs merged
-   since the last audit) and saves the audit the same way. Push `review-log` and confirm with `git ls-remote`.
+   and auditor save nothing themselves, so the loop does it.
+   - **Every independent review** a run writes is also filed on the `review-log` branch: the report copied unchanged
+     into `reviews/loop/`, its verdict line (id `site:pr<N>`, branch@sha, findings, path of the copy) under PASSED /
+     FIXED / NEEDS CARTER in a dated index `reviews/YYYY-MM-DD-loop-<topic>.md` with `Batch:`, `Reviewed:`, `Covers:`
+     and `Summary:` lines (the shape of `reviews/REVIEWER.md` §7, so the auditor's sampler reads it), and one line
+     at the end of `reviews/runs.md` (`YYYY-MM-DD HH:MM UTC reviewer loop <PR> <passed/fixed/need Carter>`). Push
+     `review-log` (never `main`) and confirm with `git ls-remote`. Back-filled 2026-10-25:
+     `reviews/2026-10-25-loop-reviews-catchup.md` (16 loop reviews, 2026-10-17 → 2026-10-25).
+   - **The weekly audit:** the first run on or after each Wednesday (or any run, if no `reviews/*-audit.md` is dated in
+     the last 7 days) does `reviews/AUDITOR.md`'s weekly steps, by a run that wrote none of the sampled items: the
+     blind re-review of §2 (sample drawn before reading verdicts), coverage of PRs merged since the last audit, and the
+     scorecard and report of §4, saved the same way. It counts as that run's one item (value 6, after live-site
+     merges). The monthly planted-error test (§3) is **not** done by the loop: scoring it means opening `KEY.md`, which
+     no run ever opens. While no test batch is scored, say so in the report; change `reviews/status.json` only as §4b allows.
    **Claims:** a chat session working beside the loop writes `handoff/loop/CLAIM-<what>.md` (time, what, which
    branches to leave alone). It is not a lock: runs keep working, but skip that item and don't push to the branches it
    names until the file is gone. A claim over 3 hours old is stale.

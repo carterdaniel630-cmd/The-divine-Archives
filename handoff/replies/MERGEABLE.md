@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 02:20 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
+**As of:** 2026-10-25 02:18 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -14,13 +14,14 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   2026-10-24, 0 findings** (`2026-10-24-pr67-independent-review.md`) on `1681050`. Carter's yes 2026-10-24
   (`decisions-2026-10-24-batch-six.md` 1). **Brought up to `main` `efba79c` on 2026-10-25 ~01:50** with a merge commit
   (no conflict); site diff byte-identical to the reviewed `1681050`; local checks green (`2026-10-25-pr67-brought-up.md`).
-  Missing: every GitHub check green on `c957af5` (incl. Lighthouse), then a run that wrote none of #67 fast-forwards.
+  **All 8 GitHub checks green on `c957af5`** (Lighthouse finished 02:10 UTC 2026-10-25). Missing only: the merging run's
+  own local re-check (LOOP.md Merging 3) by a run that wrote none of #67, then the fast-forward.
 
 - **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `71206ee`, stacked on #76; Carter's "clear", batch-six 3).
   **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
   (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub
-  check green on `71206ee` incl. Lighthouse (checks restarted after stacking; site diff = reviewed `223600f` + #67 + #76). **Not a loop merge:** it
-  clears two pending tags (LOOP.md Merging 4), so Carter presses Merge himself or says the loop may.
+  check green on `71206ee` incl. Lighthouse (checks restarted after stacking; site diff = reviewed `223600f` + #67 + #76). **Carter 2026-10-25: "loop may merge"** (`decisions-2026-10-25-hero-show-me-and-75.md` 2): per-item approval,
+  clearances included. Goes after #67 and #76.
 
 - **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `be51670`, stacked on #67; Carter's yes `decisions-2026-10-24-batch-six.md`
   2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
@@ -30,7 +31,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist` @ `dbf5d16`, 2026-10-25). Built by the
   loop; local checks green (`2026-10-25-journal-hero-part-1.md`). **Independent review 2026-10-25: 0 findings**
-  (`2026-10-25-pr77-independent-review.md`). Missing: Lighthouse green on `dbf5d16` (5/6 green); Carter's yes for #77
+  (`2026-10-25-pr77-independent-review.md`). Missing: Lighthouse green on `dbf5d16` (5/6 green); Carter's yes for #77 (2026-10-25 he asked to see it first; picture sent in chat)
   (his PR #60 approval named #60).
 
 ## Merged
