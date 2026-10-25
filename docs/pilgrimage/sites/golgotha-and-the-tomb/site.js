@@ -30,6 +30,7 @@ const R5 = D.rim;
 
 // ---------------------------------------------------------------- short references (full list: sources/pilgrimage-golgotha-and-the-tomb.md)
 const REF = {
+  cyril: "Cyril of Jerusalem, <em>Letter to Constantius</em> (about 351), as summarised by E. Monaci Castagno (Universit&agrave; di Torino repository) and the Greek Orthodox Patriarchate of Jerusalem",
   gibson: "S. Gibson and J. E. Taylor, <em>Beneath the Church of the Holy Sepulchre, Jerusalem</em>, PEF Monograph Series Maior 1 (London, 1994)",
   taylor: "J. E. Taylor, &ldquo;Golgotha: A Reconsideration of the Evidence for the Sites of Jesus&rsquo; Crucifixion and Burial&rdquo;, <em>New Testament Studies</em> 44 (1998), 180&ndash;203",
   gibson09: "S. Gibson, <em>The Final Days of Jesus: The Archaeological Evidence</em> (HarperOne, 2009)",
@@ -130,7 +131,7 @@ const info = [
     html: "<p>North of the Damascus Gate is the <strong>Garden Tomb</strong>, identified in 1883 by General Charles Gordon, who saw the shape of a skull in a nearby cliff. It is a peaceful garden and a place of prayer for many Christians, especially Protestants. The archaeologist Gabriel Barkay dated the tomb itself to the Iron Age, the 8th to 7th centuries BCE, centuries before the time of Jesus, and most archaeologists accept that date. The Church of the Holy Sepulchre site has the older tradition and the stronger archaeological case; neither can be proven.</p>",
     flags: [CONTESTED], sources: REF.barkay + "; " + REF.chadwick + "." },
   { id: "v-v15", section: "v", pos: [V0.x - 2.6, 1.35, V0.z - 1.0], relic: { id: "v15", slug: "true-cross", title: "The True Cross", category: "Relics & Sacred Objects", held: "Fragments worldwide: Rome, Jerusalem, Mount Athos, Paris and others", dated: "Venerated in Jerusalem by the 380s (Egeria)", kind: "tablet" }, title: "The True Cross (for comparison)",
-    html: "<p><strong>Not part of the reconstruction.</strong> Christian tradition from the late 4th century says the cross was found at this site in Constantine&rsquo;s time, and fragments venerated as pieces of it are kept in churches across the world. No fragment has been shown to come from 1st-century Jerusalem.</p>" },
+    html: "<p><strong>Not part of the reconstruction.</strong> Christian tradition says the cross was found here in Constantine&rsquo;s time: Cyril, bishop of Jerusalem, already says so in a letter to the emperor Constantius in about 351, and the story that the empress Helena found it is told from the end of the century. Fragments venerated as pieces of it are kept in churches across the world. No fragment has been shown to come from 1st-century Jerusalem.</p>", sources: REF.cyril + "." },
   { id: "v-door", section: "v", pos: [V0.x, 3.45, V0.z - 4.4], cat: "The way out", title: "To the road by the gate",
     html: "<p>Walk into the golden portal to step out onto the road outside the city wall.</p>" },
   { id: "v-back", section: "v", pos: [V0.x, 3.45, V0.z + 4.4], cat: "The Pilgrimage", title: "Back to the museum",

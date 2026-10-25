@@ -248,9 +248,10 @@
 
 /* ---------- The Reliquary (trivia) ---------- */
 .rq-loading { text-align:center; color:var(--ink-dim); font-family:var(--font-body); padding:2rem 0; }
-.rq-form { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:.4rem 0 .8rem; }
+.rq-form { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.7rem; margin:.4rem 0 .8rem; }
 .rq-form label { display:flex; flex-direction:column; gap:.25rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.12em; font-size:.58rem; color:var(--ink-faint); }
-.rq-form select { font-family:var(--font-body); font-size:.95rem; color:var(--ink); background:var(--panel-2); border:1px solid var(--line); border-radius:8px; padding:.5rem .6rem; }
+.rq-form label { min-width:0; }
+.rq-form select { min-width:0; max-width:100%; font-family:var(--font-body); font-size:.95rem; color:var(--ink); background:var(--panel-2); border:1px solid var(--line); border-radius:8px; padding:.5rem .6rem; }
 .rq-form select:focus-visible { outline:2px solid var(--gold-bright); outline-offset:1px; }
 .rq-avail { text-align:center; color:var(--ink-dim); font-family:var(--font-body); font-size:.9rem; margin:.2rem 0 .6rem; }
 .rq-actions { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:.5rem; margin-top:.4rem; }
@@ -280,7 +281,7 @@
 .rq-verdict { font-family:var(--font-display); letter-spacing:.06em; }
 .rq-verdict.ok { color:var(--good); } .rq-verdict.no { color:var(--ember); }
 .rq-bot { color:var(--ink-dim); }
-@media (max-width:460px){ .rq-form { grid-template-columns:1fr; } }
+@media (max-width:460px){ .rq-form { grid-template-columns:minmax(0,1fr); } }
 
 /* ---------- Ouroboros (snake) ---------- */
 .ouro-stage { position:relative; display:flex; justify-content:center; margin:.5rem auto .6rem; width:min(460px,86vw); padding:10px; }
@@ -497,6 +498,12 @@
 .tr-lost { color:rgba(224,88,74,.25); }
 .tr-keys { text-align:center; }
 @media (max-width:520px){ .tr-keys { display:none; } }
+/* narrow upright phones: the four stats and the controller fit inside the dialog (at 320 wide the hearts,
+   "Plunder" and the A button were cut off at its edges, and at 421–470 the A button); buttons stay above the
+   44px tap minimum */
+@media (max-width:420px){ .tr-hud { gap:.5rem; } .tr-hud .pm-stat { min-width:3.4rem; } }
+@media (min-width:421px) and (max-width:520px){ .ap-host:has(> .tr-stage) .ap-pad { --dp:124px; --btn:58px; } .ap-host:has(> .tr-stage) .ap-mid { flex-direction:column; gap:.9rem; } }
+@media (max-width:340px){ .ap-host:has(> .tr-stage) .ap-pad { --dp:100px; --btn:46px; } .ap-host:has(> .tr-stage) .ap-body { gap:.3rem; } }
 /* narrative story cards between the four expedition sites */
 .tr-card { max-width:38rem; margin:.2rem auto; padding:.7rem .9rem; border:1px solid var(--line); border-radius:10px;
   background:linear-gradient(180deg, rgba(199,154,84,.06), rgba(0,0,0,.14)); font-size:.96rem; line-height:1.6; color:var(--ink, #cdbb96); }
@@ -737,6 +744,11 @@
   .ap-host .ap-status, .ap-host .ap-legend { display:none; }
   .ap-host .ap-mid { align-self:start; padding:0; }
   .game-dialog:has(.ap-host) .game-head { display:none; }
+  /* with the title hidden, the HUD sits at the top: the full-screen button shrinks to its icon (as on upright phones)
+     and the Journal's HUD row keeps its hearts and Sound pill clear of the two corner buttons */
+  .game-dialog:has(.ap-host) .tr-hudrow { padding-inline:2.75rem; }
+  .game-dialog:has(.ap-host) .game-fs .game-fs-l { display:none; }
+  .game-dialog:has(.ap-host) .game-fs { padding:0 .55rem; }
   .game-dialog:has(.ap-host) { padding:.5rem .7rem; }
   .ap-host .ap-shoulders .ap-btn { width:100%; }
 }

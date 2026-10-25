@@ -1683,7 +1683,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stones belong to their photographers.", external: [ { label: "UNESCO — Stećci Medieval Tombstone Graveyards", href: "https://whc.unesco.org/en/list/1504/" } ] }
     },
     {
-      id: "v72", slug: "book-of-shadows", status: "published", pending: true,
+      id: "v72", slug: "book-of-shadows", status: "published", pending: false,
       era: "09-modern", year: 1949, chapters: ["ch38"],
       title: "The Book of Shadows", category: "manuscripts",
       source: "vault/v72-book-of-shadows.md",
