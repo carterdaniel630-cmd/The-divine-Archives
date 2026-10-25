@@ -8,7 +8,7 @@ Why this file exists: Carter's ruling 2026-10-24 (`handoff/decisions-2026-10-24-
 `staging/ready-line`): "Reviewer and auditor: option A. The build loop does their saving." The scheduled reviewer and
 auditor had saved nothing since 2026-10-12 (`handoff/replies/2026-10-18-auditor-verifier-health.md`). The loop's
 reviews were kept only in `handoff/replies/` on `staging/ready-line`; each is now copied verbatim, unchanged, into
-`reviews/loop/` on this branch, and future loop reviews are saved here as they are written (`handoff/LOOP.md` step 6b).
+`reviews/loop/` on this branch, and future loop reviews are saved here as they are written (`handoff/LOOP.md` step 7).
 The copies are the record; the verdict lines below are an index to them, for the auditor's sampler.
 
 Item ids are `site:pr<N>` (one pull request's whole site diff). Each line names its full report in `reviews/loop/`.
@@ -38,4 +38,4 @@ NEEDS CARTER
 - site:pr63: Pantheon `ra` (Ra-Horakhty) re-clear, from the batch B review. Answered 2026-10-24 ("clear"), carried by PR #75. Same report as site:pr63 above.
 
 Not covered here: the reviewer's own scheduled runs (none saved since 2026-10-12), and the auditor's planted-error
-test batches (the loop never opens any file named KEY.md, so it cannot score one; see `handoff/LOOP.md` step 6b).
+test batches (the loop never opens any file named KEY.md, so it cannot score one; see `handoff/LOOP.md` step 7).
