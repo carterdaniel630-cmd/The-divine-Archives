@@ -309,6 +309,15 @@
    "from": "sources/ch40-diaspora-religions.md"
   },
   {
+   "id": "source:air-unimi-it/f7281ce110",
+   "type": "source",
+   "label": "https://air.unimi.it/handle/2434/625867",
+   "links": [
+    "site:mount-ararat-the-ark-tradition"
+   ],
+   "from": "sources/pilgrimage-mount-ararat-the-ark-tradition.md"
+  },
+  {
    "id": "source:aisg-cise-unipi-it/8245d41425",
    "type": "source",
    "label": "http://aisg.cise.unipi.it/Materia-giudaica-2020/041_Campanini%20pp%20511-524.pdf",
@@ -9992,6 +10001,15 @@
     "chapter:ch80"
    ],
    "from": "sources/ch80-shiism.md"
+  },
+  {
+   "id": "source:iris-unito-it/9241b79998",
+   "type": "source",
+   "label": "https://iris.unito.it/handle/2318/1715890",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
   },
   {
    "id": "source:isac-uchicago-edu/10fa3d305b",
