@@ -1,17 +1,25 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~17:50 UTC (build loop: #86 approved, waiting on its Lighthouse check; PR #53 brought up to main `befb607` with the Göbekli Tepe wording fixed, awaiting independent review). Earlier: PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~18:25 UTC (build loop: PR #53 independently reviewed, NOT passed, returned for fixes; #86 approved, Lighthouse run 194 running). Earlier: PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`. **Deployed (`main`):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/arcade-tap-targets` = #86 (`3785b2b`, on top of `main` `45d4a95`; reviewed, 0 findings; GitHub checks started 17:38; needs Carter's yes), `loop/journal-touch-polish` = #83 (merged, branch kept),
+**Open loop branches:** `loop/arcade-tap-targets` = #86 (`3785b2b`, on top of `main` `45d4a95`; reviewed, 0 findings; approved; Lighthouse running), `loop/journal-touch-polish` = #83 (merged, branch kept),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~17:48–18:25: **PR #53 independently reviewed at `befb607`: NOT passed** (Next 1e) by a run that wrote none
+  of it. Automatic checks green on a clean copy (build 0 changes, review-checks 9/9 0 warnings, 17/17 verify, 42/42 tests,
+  headless phone 4 pages × 360/390: 0 errors, no sideways scroll, pending tag shown). Claim check with sources opened,
+  ~75 claims: no fake source shown, tone and belief/evidence separation good, but **about 30 fixable findings** (unsourced
+  or mis-cited lines, a misspelled real Delphic Hymn panel labelled as not-the-hymn, Mogao "four tiers" vs UNESCO five,
+  Chichén sacrifice and serpent cards resolving debates) and **3 source points for Carter** if the fix run cannot settle
+  them. The Göbekli wording fix itself checks out. #86: Lighthouse run 194 started ~17:48, not waited on. Filed on
+  `review-log` (`f7d0b09`). Reply `2026-10-25-pr53-independent-review.md`. Items per run: 1.
 - 2026-10-25 ~17:10–17:40: **PR #83 merged** (Next 1c): Lighthouse on `45d4a95` green 17:18 (6/6); every Merging
   condition held; local checks re-run green; `main` fast-forwarded `3762691` → `45d4a95` 17:32; deploy 213 green.
   **PR #86 independently reviewed, 0 open findings** (Next 1d; own headless script: 12 games × 4 phone sizes × 2
@@ -371,13 +379,16 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
    unchanged; 8/8 GitHub checks green incl. Lighthouse; local checks green; deploy 212 green). Reply `2026-10-25-pr77-merged.md`.
 1c. ~~**PR #83**~~ **merged 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95` (deploy 213 green).
 1d. **PR #86 (arcade tap targets part 1): APPROVED by Carter (`decisions-2026-10-25-pr86-go.md`, head `3785b2b`).**
-   17:50: 5/6 checks green on `3785b2b`; **Lighthouse run 194 still queued** behind the old run 193 on superseded `cbf6f1e`.
+   18:20: 5/6 checks green on `3785b2b`; **Lighthouse run 194 running since ~17:48** (old run 193 finished green).
    Next run first: if Lighthouse on `3785b2b` is green, re-run local checks and fast-forward `main` to `3785b2b`, watch
    the deploy, update CURRENT/MERGEABLE. Never merge on an unfinished check.
-1e. **PR #53 (Pilgrimage batch 1): brought up to `main` and Göbekli Tepe wording fixed, head `befb607`** (reply
-   `2026-10-25-pr53-brought-up-gobekli-wording.md`; local checks green). **Next: independent review of `origin/main...befb607`
-   by a run that did not write it** (REVIEWER.md §3–§4; also file it on `review-log`), GitHub checks green, then one yes/no
-   in Needs Carter. Preview/pending tags stay.
+1e. **PR #53 (Pilgrimage batch 1), head `befb607`: review 18:20 NOT passed** (`2026-10-25-pr53-independent-review.md`).
+   **Next: fix run** on `claude/project-thread-s3qxre` (merge commits only, no force-push): every fixable finding in the
+   report, site by site (a smaller correct piece is fine: e.g. one or two sites per run, say which); try to settle the
+   three source points by sources (Göbekli "ttHouse" blog post, Göbekli C/D sizes, Chichén decline date: state both
+   views); rebuild, full checks, headless phone. **Then** a fresh independent review by a run that did not make the fixes,
+   GitHub checks green, then one yes/no to Carter (new content + §4.6 holy-site pages). Preview/pending tags stay.
+   Outside the PR, own pass later: `ch29` line 47 asserts equinox design intent.
 1f. Branch clean-up (same file A): approved for Carter, but **not the loop's** (the loop never deletes branches); nightly
    reviewer paused (B): missing heartbeats from 2026-10-26 are not a finding.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
@@ -416,6 +427,6 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing new. #86 is already approved and merges as soon as its Lighthouse check is green. #53 comes to you for one
-  yes/no after its independent review.
+- Nothing new. #86 is already approved and merges as soon as its Lighthouse check is green. #53 went back for fixes after
+  its review; it comes to you for one yes/no once fixed and re-reviewed.
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.

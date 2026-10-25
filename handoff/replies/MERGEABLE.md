@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~17:50 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-25 ~18:25 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -15,10 +15,13 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   **Brought up 17:38 to `3785b2b`** (merge of `main` `45d4a95`, no conflict; site diff = the reviewed diff, `games.css`
   +8). Local checks green on `3785b2b` (build 0 changes, 9/9 review-checks, 17/17 verify, 42/42 tests, headless 12
   games × 4 phone sizes × 2 motion: short tap areas 0, 0 errors). **Carter's yes recorded** (`decisions-2026-10-25-pr86-go.md`).
-  **Missing:** Lighthouse on `3785b2b` (run 194 queued at 17:50; the other 5 checks green).
+  **Missing:** Lighthouse on `3785b2b` (run 194 running since ~17:48; the other 5 checks green).
 - **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`, draft): brought up to `main` 2026-10-25 17:46 as `befb607`;
   Göbekli Tepe "oldest known megaliths" replaced by the sourced "among the earliest known monumental architecture"; local
-  checks green. **Missing:** independent review by another run; GitHub checks on `befb607`; Carter's yes (new content).
+  checks green. **Independent review 18:20: NOT passed** (`2026-10-25-pr53-independent-review.md`): automatic checks green,
+  but about 30 fixable source/wording findings across all four sites and 3 source points for Carter (Göbekli blog source
+  not found, Göbekli C/D sizes, Chichén decline date). **Missing:** the fixes, a fresh independent review by a run that
+  did not make them, GitHub checks green, Carter's yes (new content, holy-site pages).
 
 ## Merged
 - Journal touch polish (PR #83): **merged by the loop 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95`
