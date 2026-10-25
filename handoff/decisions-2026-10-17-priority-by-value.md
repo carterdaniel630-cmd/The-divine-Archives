@@ -38,3 +38,6 @@ Ties go to the item that is smaller and surer. The quality bar never drops to go
 2. Make the GitHub repository private (value 2).
 3. Set up the email-list account so the home-page sign-up can be switched on. It is hidden until then (value 4,
    and the main growth lever of the Connected Income System).
+
+> **Note 2026-10-25 (loop, wording only):** "the deployed site" in value 1 is now www.getconexto.com, the live site
+> (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1); the ranking itself is unchanged.

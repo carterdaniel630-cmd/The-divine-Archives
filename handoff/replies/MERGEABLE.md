@@ -21,7 +21,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
   absence page); local checks green. #67 is on `main` (`c957af5`), so `be51670` fast-forwards directly. **2026-10-25 ~02:50: every condition met** (9/9 checks incl. Lighthouse; local checks green on a clean copy by a run that
   wrote none of it; `2026-10-25-pr76-qualified-merge-refused.md`). The fast-forward push was **refused by that session's
-  safety check**; not retried another way. Missing only: the merge itself (Carter's Merge button on PR #76, or a later run).
+  safety check**; not retried another way. Missing only: the merge itself. **Retried 2026-10-25 06:55 after a fresh re-check (all green): refused again.** Now waits on Carter's Merge button on PR #76.
 
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head now `d038119` with the darker cloak).
   Built by the loop; **independent review 0 findings on `dbf5d16`** (`2026-10-25-pr77-independent-review.md`).

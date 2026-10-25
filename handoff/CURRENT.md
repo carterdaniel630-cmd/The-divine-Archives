@@ -1,11 +1,17 @@
-# Handoff — updated 2026-10-25 (02:25 UTC)
+# Handoff — updated 2026-10-25 (06:55 UTC)
+
+**Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
+(`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
+the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
+time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
 ## Latest: the live phone fixes are on the site (2026-10-25)
 - **PR #67** merged 02:17 UTC by fast-forward `efba79c` → `c957af5` (deploy run 201 green). Carter's yes
   `decisions-2026-10-24-batch-six.md` 1; independent review 0 findings; 8/8 checks green incl. Lighthouse.
   Eras page shorter on phones, no chapter page wider than the phone, arcade line names the four gods.
   Reply `replies/2026-10-25-pr67-merged.md`.
-- **Next to go live (approved):** #76 `be51670` (speed fix A) once its Lighthouse is green, then #75 `71206ee`
+- **Next to go live (approved):** #76 `be51670` (speed fix A; 9/9 green, every condition met, the loop's push refused
+  twice by its safety check, so it waits on Carter's Merge button), then #75 `71206ee`
   (clear V72 / Ra-Horakhty), then #77 (Journal hero, darker cloak `d038119`, needs a re-review first).
 
 ## Latest: the Tjurunga takedown is live (2026-10-25)

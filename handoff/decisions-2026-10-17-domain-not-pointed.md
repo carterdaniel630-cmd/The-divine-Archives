@@ -1,3 +1,6 @@
+> **Superseded 2026-10-24** by `decisions-2026-10-25-domain-and-kadesh.md` 1: www.getconexto.com is the live site.
+> Kept below as written (dated record).
+
 # Carter's correction: getconexto.com is NOT pointed yet (2026-10-17)
 
 **Carter, Sat 2026-10-17 21:12 EDT:** "we have not pointed at the dns yet because we are still building."
