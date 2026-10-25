@@ -12,8 +12,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Journal touch polish** (PR #83, `loop/journal-touch-polish` @ `39eeef8`, off `main` `c957af5`): Select/Start tap
   areas reach 44 px on touch screens (shared controller: Journal and Fighter); the first tip names the on-screen
-  buttons on touch phones. Built 2026-10-25; local checks green; trial merges with #78/#79/#80 clean. Missing:
-  independent review by a run that wrote none of it; all GitHub checks green incl. Lighthouse; Carter's yes.
+  buttons on touch phones. Built 2026-10-25; local checks green; trial merges with #78/#79/#80 clean. **6/6 GitHub checks green incl.
+  Lighthouse (12:09 UTC).** Missing: independent review by a run that wrote none of it; Carter's yes.
 - **ch02 "second death" wording** (PR #82, `loop/ch02-second-death` @ `82441ce`, off `main` `c957af5`): live chapter
   wording now framed as Egyptian belief and sourced (Roberson, *Expedition* 57:2; UCL BD 44). Local checks green.
   **Independent review 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`); 9/10 GitHub

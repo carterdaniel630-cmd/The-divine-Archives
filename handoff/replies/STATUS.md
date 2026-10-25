@@ -397,8 +397,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    reviewed 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`; both sources re-opened).
    GitHub 9/10 green; **next run: confirm Lighthouse finished green on `82441ce`.** Then missing only Carter's yes.
 4j. **PR #83 (Journal touch polish: Select/Start tap areas 44 px, first tip names on-screen buttons; live, value 3):**
-   built 2026-10-25 (`39eeef8`, off `main` `c957af5`). **Next run: independent review** (a run that wrote none of it)
-   and confirm all GitHub checks green incl. Lighthouse. Then missing only Carter's yes.
+   built 2026-10-25 (`39eeef8`, off `main` `c957af5`). **6/6 GitHub checks green incl. Lighthouse (12:09).** **Next run: independent review** (a run that
+   wrote none of it). Then missing only Carter's yes.
 4h. **PR #81 (Qumran guided walk stops in Cave 4; live defect, value 3):** built 2026-10-25 (`2c099a0`), **stacked on
    #68**. **Independently reviewed 2026-10-25 ~10:55: 0 open findings; 10/10 GitHub green incl. Lighthouse.** Goes live
    after #68, with Carter's yes for #81 (asked now).
