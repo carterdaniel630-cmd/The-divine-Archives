@@ -9,3 +9,4 @@
 2026-10-18 22:55 UTC reviewer 1 batch (PR #66 Newgrange), 5 passed, 0 fixed, 3 need Carter; manual run; the builder fixed the two log slips and the reach line afterwards
 2026-10-25 02:10 UTC build loop (option A, Carter 2026-10-24): filed 16 loop independent reviews 2026-10-17 → 2026-10-25 (copies in reviews/loop/, index reviews/2026-10-25-loop-reviews-catchup.md), 15 passed, 0 fixed, 2 need Carter (both answered); no new review done this run
 2026-10-25 02:30 UTC reviewer loop #77 passed (re-review of d038119, darker cloak)
+2026-10-25 08:10 UTC reviewer loop #78 passed
