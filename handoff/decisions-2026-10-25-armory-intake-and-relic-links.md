@@ -37,7 +37,7 @@ Conditions (Carter: "as long as free, protected along with our guidelines"):
   (`docs/assets/vendor/three/three.module.min.js`); an `armory-entry.md` like the six already in `handoff/previews/`.
 - **Pantheon characters:** each attaches to its existing Pantheon entry (199 figures today) and its sources; a figure
   not yet in the Pantheon is new content and needs Carter's yes.
-- **Loop handling:** one piece per run under the Rework Standard (floor in hand, side-by-side proof, no-backwards
+- **Loop handling (see section 4: a batch of 10 is the unit):** each piece under the Rework Standard (floor in hand, side-by-side proof, no-backwards
   checklist, auditor signs, Carter merges) and the Council constitution (no new room without a full chapter; games
   live in rooms). A piece that fails its checks is kept, never deleted (game preservation). Nothing goes live without
   Carter's yes for that piece or batch.
@@ -45,4 +45,10 @@ Conditions (Carter: "as long as free, protected along with our guidelines"):
 ## 3. Number of loops: ONE (Carter, 2026-10-25 ~03:00 UTC)
 Carter's words: "keep 1 loop". Asked A (1 now, add an Armory lane when batch 1 arrives) / B (2 now) / C (stay at 1);
 he chose to stay at one. No second loop or lane is created, including when Armory batches arrive, unless Carter says
-otherwise. Armory, Pantheon and Pilgrimage batches all go through the single build loop, one piece per run.
+otherwise. Armory, Pantheon and Pilgrimage batches all go through the single build loop.
+
+## 4. Batches are 10 pieces (Carter, 2026-10-25: "it's 10 pieces remember")
+The unit of work is the batch of 10, not a single piece. The loop takes a whole batch and works it as one item:
+as many pieces per run as the quality bar allows (Item 32: do more per run), every piece still checked, reworked and
+verified on its own. The batch is finished when all 10 are done or set aside (kept, never deleted), and then goes to
+Carter as one yes/no batch. Muse sends the next 10 after that. This replaces "one piece per run" in section 2.
