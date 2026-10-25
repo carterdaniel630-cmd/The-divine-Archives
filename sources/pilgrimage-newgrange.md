@@ -84,10 +84,9 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for six facts the op
 
 ## Where sources differ
 - **How far the beam reaches today.** Ray (1989, and quoted in *The Irish Times*, 2013) says the beam is now 1–2 m
-  shorter than when built and barely reaches the back of the chamber; the National Museum of Ireland's article and
-  the archive's chapter ch42 ("floods the burial chamber") describe it reaching the triple spiral or the chamber
-  today. The card "Where the light falls" reports both and follows Ray in the model. **Possible correction note for
-  ch42, for Carter.**
+  shorter than when built and barely reaches the back of the chamber; the National Museum of Ireland's article describes it
+  reaching the triple spiral today. The card "Where the light falls" reports both and follows Ray in the model.
+  ch42 was corrected to follow Ray on main (#85, approved by Carter 2026-10-25), and the card now says so.
 - **Size of the mound:** 76 m (WorldHistory.org), about 80 m (World Heritage Ireland), 85 m (Wikipedia). The card
   gives about 80 m and the range.
 
