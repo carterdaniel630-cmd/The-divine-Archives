@@ -12,6 +12,7 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~12:00: Carter's yes to each recorded; #82 Lighthouse green (11:51); #76 local checks re-run green; merge to the live site refused by the safety system (see Needs Carter).
 - 2026-10-25 ~11:42–12:15: **PR #83 built: Journal on touch phones** (Next 10, two pre-existing phone defects, value 3;
   everything higher waits on Carter or Muse). (1) Select/Start pills: tap height through the centre was 24–25 px; now
   44–48 px on touch screens via an invisible centred layer (pills look the same; stacked pills 1.4rem apart so areas
@@ -416,22 +417,13 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **Three small phone fixes for the games, each yes/no to go live** (all passed independent review, 0 findings; each
-  touches only the game styling; recommendation: yes to all three):
-  - **PR #78** Journal, phone held sideways: the Sound button no longer sits under the ✕. All checks green.
-  - **PR #79** Journal, narrow upright phones: stats and controls fit; the full-screen button keeps its spoken name. All checks green.
-  - **PR #80** Reliquary: on phones 461–484 px wide the setup dropdowns no longer stick out past the box. All checks green.
-  A yes for any of them lets the loop put it live (after its checks are all green).
-- **PR #83, Journal touch polish, yes/no to go live** (after its independent review): the Sound/Pause pills are easier
-  to tap on phones (same look), and the first tip names the on-screen buttons instead of keyboard keys.
-- **PR #68, Pilgrimage wording fixes, yes/no to go live** (Stonehenge heights, Golgotha date, Ararat 1840 shown as
-  disputed; guided walks on Ararat and Alexandria now reach the end). Independent review 0 open findings. Recommendation: yes.
-- **PR #81, Qumran guided walk fix, yes/no to go live** (goes right after #68): "Walk on" no longer gets stuck in Cave 4;
-  it now reaches Cave 3. Independent review 0 open findings, all checks green. Recommendation: yes.
-- **PR #82, Egypt chapter wording, yes/no to go live** (independent review done, 0 findings; Lighthouse finishing): the opening no longer states the
-  "second death, annihilation" as fact; it says this was Egyptian belief and cites a Penn Museum article and UCL.
-- **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
-  file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
-  buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).
+- **Carter said yes to each, 2026-10-25 ~11:55** (`decisions-2026-10-25-yes-to-each.md`): #76, #78, #79, #80, #68, #81, #82.
+  All seven passed independent review; GitHub checks green on each head (#82 Lighthouse green 11:51); local checks
+  re-run green on #76 `be51670` at ~11:58. **The push to the live site was refused again by the session's safety
+  system ("production deploy"), even with Carter's live yes.** So the loop cannot put anything live itself. Carter's
+  Merge buttons are the way through, in this order (each one: open the PR on GitHub → Merge → Confirm):
+  **#76 → #75 → #78 → #79 → #80 → #82 → #68 → #81**, then #77 once the loop has brought it up to `main`.
+  If GitHub says a PR "can't be merged" or has conflicts, skip it; the next run brings it up and re-checks it.
+  After the buttons, the next run re-runs every check on `main` and reports.
 Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`) and 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`,
 `decisions-2026-10-25-hero-show-me-and-75.md`, `decisions-2026-10-25-hero-yes-darker-cloak.md`), all folded into Next.
