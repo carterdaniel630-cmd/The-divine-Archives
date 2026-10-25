@@ -1,17 +1,23 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 02:05 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 02:20 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), and `decisions-2026-10-25-domain-and-kadesh.md`. **Deployed (`main`):** `efba79c` (PR #73, merged
 2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
-**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75 (head `223600f`),
-`loop/speed-fix-a` = #76 (head `7100802`), `loop/journal-hero-archivist` = #77 (head `dbf5d16`) (#70–#74 merged). `staging/ready-line` carries `handoff/`.
+**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75 (head `053fc97`, stacked on #67),
+`loop/speed-fix-a` = #76 (head `a2b0952`, stacked on #75), `loop/journal-hero-archivist` = #77 (head `dbf5d16`) (#70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~02:05–02:20: **PR #77 independently reviewed** (Journal hero part 1, `dbf5d16`) by a run that wrote none
+  of it: **0 findings**. Sheet in the PR byte-identical to Carter's approved sheet; `cut.py` re-run gives identical files;
+  no face drawn, no smile invented (the two portraits are the same file); no fedora or jacket. Build current, review-checks
+  9/9 (0 warnings), 17 verify, 42/42 tests; headless phone in both motion modes: all art loads, stand/run/jump/cast,
+  0 script errors. GitHub 5/6 green, Lighthouse running. #67 Lighthouse still running; #75/#76 restacked by the chat
+  session's claim (checks restart). Not waited on. Reply `2026-10-25-pr77-independent-review.md`. Items per run: 1.
 - 2026-10-25 ~01:57–02:05: **Journal hero part 1 built: The Archivist** (Next 4) on `loop/journal-hero-archivist` @
   `dbf5d16`, **PR #77**. The live fedora/leather-jacket explorer is replaced by parts cut from Carter's approved hooded
   sheet (face = the sheet's own pixels, never redrawn; no smile invented); portraits from the front view; coat-sleeve
@@ -222,18 +228,18 @@
    on 2026-10-25 → head `c957af5`**, site diff identical to the reviewed `1681050`, local checks green. Next: confirm
    every GitHub check green on `c957af5` (incl. Lighthouse; re-run a cancelled one), re-run local checks, then a run
    that wrote none of #67 fast-forwards `main` to `c957af5`. If checks are still running, do 1b or 1c instead.
-1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)
-   and brought up to `main` → `7100802`**. Next: every GitHub check green on `7100802` incl. Lighthouse, then a run that
+1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**;
+   a chat session (claim `handoff/loop/CLAIM-stack-67-75-76.md`) stacked it on #75 → `a2b0952` (was `7100802`); confirm the site diff is
+   still the reviewed one. Next: every GitHub check green on `7100802` incl. Lighthouse, then a run that
    wrote none of #76 fast-forwards; going live is covered by this yes. B–E still need their own yes.
 1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
-   2026-10-25 (0 findings), brought up to `main` → `223600f`**. 7/7 checks completed green at 02:00, but no Lighthouse
-   run appeared although it changes `docs/`: check whether it is queued. **The loop does not merge #75** (LOOP.md
+   2026-10-25 (0 findings), brought up to `main` → `223600f`**, then stacked on #67 by the chat session → `053fc97`; checks restart. **The loop does not merge #75** (LOOP.md
    Merging 4: no cleared pending tag; standing limit: never clear content). Carter presses Merge once it is green.
 **Merge order note:** #67, #75 and #76 each sit on `efba79c`. After the first fast-forwards, the other two must be
 brought up to the new `main` again (merge commit) and their checks re-run before they can fast-forward.
 4. **Journal hero rebuild** (value 1–5: the live hero still wears the film-explorer kit until #77 is live).
-   **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist). Next: independent review of #77 by a run
-   that wrote none of it, then GitHub checks; merge needs Carter's yes for #77 (Needs Carter). **Part 2:** port the
+   **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist), **independently reviewed 2026-10-25: 0 findings**.
+   Waits on Lighthouse and Carter's yes for #77 (Needs Carter A). **Part 2:** port the
    Option A set pieces (whip → other tool, boulder → other hazard) onto current `main` (PR #60 has one version on an
    old base). Never invent a face.
 4b. **Name the live site in docs** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the

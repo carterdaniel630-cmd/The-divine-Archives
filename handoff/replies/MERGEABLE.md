@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 02:05 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
+**As of:** 2026-10-25 02:20 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -29,8 +29,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   wrote none of #76 fast-forwards.
 
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist` @ `dbf5d16`, 2026-10-25). Built by the
-  loop; local checks green (`2026-10-25-journal-hero-part-1.md`). Missing: independent review by a run that wrote none
-  of it; every GitHub check green incl. Lighthouse; Carter's yes for #77 (his PR #60 approval named #60).
+  loop; local checks green (`2026-10-25-journal-hero-part-1.md`). **Independent review 2026-10-25: 0 findings**
+  (`2026-10-25-pr77-independent-review.md`). Missing: Lighthouse green on `dbf5d16` (5/6 green); Carter's yes for #77
+  (his PR #60 approval named #60).
 
 ## Merged
 - Tjurunga takedown (PR #73): merged 2026-10-25 01:43 UTC by fast-forward `6c81a84` → `efba79c`, deploy run 200 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; reviews `2026-10-24-pr73-independent-review.md`, `2026-10-24-pr73-re-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr73-merged.md`).
