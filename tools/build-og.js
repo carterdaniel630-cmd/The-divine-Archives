@@ -94,14 +94,15 @@ for (const ch of A.chapters.filter((c) => c.status === "published")) {
     sub: ""
   });
 }
-for (const v of VAULT.items.filter((x) => x.status === "published")) {
+for (const v of VAULT.items.filter((x) => x.status === "published" || x.status === "withdrawn")) {
   const era = eraBySlug(v.era);
+  const gone = v.status === "withdrawn"; // an absence page: the card says so, and shows no object
   cards.push({
     key: v.id,
     art: (era && EMBLEMS[era.slug]) || siteEmblem(),
     eyebrow: "The Vault" + (era ? " · " + era.name : ""),
-    title: v.title,
-    sub: v.dated || ""
+    title: v.title + (gone ? " — Not Shown" : ""),
+    sub: gone ? "An absence, kept on purpose" : v.dated || ""
   });
 }
 
