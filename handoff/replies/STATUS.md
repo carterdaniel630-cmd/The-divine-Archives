@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~11:30 UTC (build loop, PR #82 build run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~11:30 UTC (build loop, PR #82 independent-review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,9 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25: **Independent review of PR #82** (ch02 second death) by a run that wrote none of it: 0 open findings;
+  Roberson (Penn *Expedition* 57:2) and UCL BD 44 re-opened and support the new wording; local checks green; headless
+  phone/desktop clean; Lighthouse still running (reply `2026-10-25-pr82-independent-review.md`).
 - 2026-10-25 ~10:56–11:30: **PR #82 built: ch02 "second death" framed as belief and sourced** (Next 10 audit note,
   live chapter wording, value 1). Opening said the condemned "simply ceases — the second death, annihilation" unhedged.
   Now: an ending, not eternal torment, in Egyptian belief; "non-existence"; BD 44 "formula for not dying again". Sources
@@ -379,8 +382,9 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`;
    defect reproduced on `main` at 461–480 px, gone on #80). GitHub 4/6 green; **next run: confirm Lighthouse and the second
    runtime run finished green on `c9408a0`** — **done 10:54: 6/6 green incl. Lighthouse.** Missing only: Carter's yes (asked with #78/#79).
-4i. **PR #82 (ch02 "second death" wording; live, value 1):** built 2026-10-25 (`82441ce`, off `main`). **Next run:
-   independent review** (a run that wrote none of it), then confirm GitHub checks incl. Lighthouse; then Carter's yes.
+4i. **PR #82 (ch02 "second death" wording; live, value 1):** built 2026-10-25 (`82441ce`, off `main`). **Independently
+   reviewed 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`; both sources re-opened).
+   GitHub 9/10 green; **next run: confirm Lighthouse finished green on `82441ce`.** Then missing only Carter's yes.
 4h. **PR #81 (Qumran guided walk stops in Cave 4; live defect, value 3):** built 2026-10-25 (`2c099a0`), **stacked on
    #68**. **Independently reviewed 2026-10-25 ~10:55: 0 open findings; 10/10 GitHub green incl. Lighthouse.** Goes live
    after #68, with Carter's yes for #81 (asked now).
@@ -409,7 +413,7 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   disputed; guided walks on Ararat and Alexandria now reach the end). Independent review 0 open findings. Recommendation: yes.
 - **PR #81, Qumran guided walk fix, yes/no to go live** (goes right after #68): "Walk on" no longer gets stuck in Cave 4;
   it now reaches Cave 3. Independent review 0 open findings, all checks green. Recommendation: yes.
-- **PR #82, Egypt chapter wording, yes/no to go live** (after its independent review): the opening no longer states the
+- **PR #82, Egypt chapter wording, yes/no to go live** (independent review done, 0 findings; Lighthouse finishing): the opening no longer states the
   "second death, annihilation" as fact; it says this was Egyptian belief and cites a Penn Museum article and UCL.
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
