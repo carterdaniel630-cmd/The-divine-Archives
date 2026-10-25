@@ -730,6 +730,11 @@
   .ap-host .ap-status, .ap-host .ap-legend { display:none; }
   .ap-host .ap-mid { align-self:start; padding:0; }
   .game-dialog:has(.ap-host) .game-head { display:none; }
+  /* with the title hidden, the HUD sits at the top: the full-screen button shrinks to its icon (as on upright phones)
+     and the Journal's HUD row keeps its hearts and Sound pill clear of the two corner buttons */
+  .game-dialog:has(.ap-host) .tr-hudrow { padding-inline:2.75rem; }
+  .game-dialog:has(.ap-host) .game-fs .game-fs-l { display:none; }
+  .game-dialog:has(.ap-host) .game-fs { padding:0 .55rem; }
   .game-dialog:has(.ap-host) { padding:.5rem .7rem; }
   .ap-host .ap-shoulders .ap-btn { width:100%; }
 }
