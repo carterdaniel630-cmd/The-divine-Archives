@@ -4,12 +4,18 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 10:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
+**As of:** 2026-10-25 10:50 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Pilgrimage wording fixes and guided walks** (PR #68, `claude/pilgrimage-51-fixes` @ `c4e5141`, base an older `main`).
+  **Independent review 2026-10-25: 0 open findings** (`2026-10-25-pr68-independent-review.md`, by a loop run that wrote
+  none of it); merges cleanly with `main` `c957af5`, local checks green on that merge; 9/9 GitHub green on the old base.
+  Missing: Carter's yes for #68 (asked); then bring up to `main`, every check green on the new head incl. Lighthouse,
+  local checks again.
+
 - **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `71206ee`, stacked on #76; Carter's "clear", batch-six 3).
   **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
   (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub

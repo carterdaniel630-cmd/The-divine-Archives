@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~10:10 UTC (build loop, PR #80 independent-review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~10:50 UTC (build loop, PR #68 independent-review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,14 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~10:03–10:50: **PR #68 independently reviewed: 0 open findings** (Next 8a, live Pilgrimage wording, value 1;
+  this run wrote none of it). 8 changed claims checked against opened sources (Ararat 1840 study, Britannica 40 km,
+  Cyril's 351 letter, English Heritage Stone 56, Stetson Heel Stone 4.5 m). Local merge with `main` clean; build 0
+  changes, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings). Own headless "Walk on" test, 6 sites, phone,
+  reduced motion: Ararat and Alexandria stuck on `main`, reach the end on #68; others unchanged. **Found (pre-existing,
+  live): Qumran's guided walk stops in Cave 4's Chamber 4b** on `main` and #68 (added to Next 4h). #80 Lighthouse
+  still running at 10:05 (not waited on). Report `2026-10-25-pr68-independent-review.md`; filed on `review-log` @
+  `e8caf4a`. Items per run: 1.
 - 2026-10-25 ~10:10: PR #80 independently reviewed, 0 open findings (`2026-10-25-pr80-independent-review.md`); #79 Lighthouse confirmed green (all 6 checks).
 - 2026-10-25 ~09:51–10:20: **PR #80 built: Reliquary start-screen dropdowns no longer run past the dialog on upright
   phones 461–484 px wide** (Next 10, live defect, value 3). First checked #79's Lighthouse (Next 4f): still running
@@ -336,7 +344,7 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
 8. **Göbekli Tepe preview (PR #53):** change "the oldest known megaliths" (site.js line 123) to wording its sources support (audit 2026-10-25); rides #53, preview only. **PR #43** has no review of its own (audit coverage gap): review it.
-8a. **Independent review of #68, #64, #66** (#67 done 2026-10-24; #68 next: live Pilgrimage wording) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
+8a. **Independent review of #64, #66** (#67 done 2026-10-24; **#68 done 2026-10-25, 0 open findings**, waits on Carter's yes, then bring up to `main` + fresh checks) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
 4e. **PR #78 (Journal Sound pill, phone sideways; live defect, value 1/3):** **independently reviewed 2026-10-25
    08:10, 0 open findings.** All 6 GitHub checks green incl. Lighthouse (08:10). Missing only: Carter's yes (asked now,
@@ -349,7 +357,11 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 4g. **PR #80 (Reliquary dropdowns past the dialog at 461–484 px; live defect, value 3):** built 2026-10-25 (`c9408a0`,
    off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`;
    defect reproduced on `main` at 461–480 px, gone on #80). GitHub 4/6 green; **next run: confirm Lighthouse and the second
-   runtime run finished green on `c9408a0`** (re-run once if cancelled/failed before tests). Carter's yes asked now with #78/#79.
+   runtime run finished green on `c9408a0`** (re-run once if cancelled/failed before tests). 10:05: 5/6 green, Lighthouse still running. Carter's yes asked now with #78/#79.
+4h. **Qumran guided walk stops in Cave 4's Chamber 4b** (live defect found 2026-10-25 by the #68 review; value 3/5):
+   "Walk on" from 4b can't reach the next route point (in the `c4-out` portal; straight line through rock). Fix: route
+   points back through `c4-through`. Own `loop/*` branch off `main`, small; re-run the 6-site walk test (script idea in
+   the #68 report). Touches `qumran-caves/site.js` only, no file of #68.
 10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
@@ -371,6 +383,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   - **PR #79** Journal, narrow upright phones: stats and controls fit; the full-screen button keeps its spoken name. All checks green.
   - **PR #80** Reliquary: on phones 461–484 px wide the setup dropdowns no longer stick out past the box. Last speed check still running.
   A yes for any of them lets the loop put it live (after its checks are all green).
+- **PR #68, Pilgrimage wording fixes, yes/no to go live** (Stonehenge heights, Golgotha date, Ararat 1840 shown as
+  disputed; guided walks on Ararat and Alexandria now reach the end). Independent review 0 open findings. Recommendation: yes.
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
   buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).
