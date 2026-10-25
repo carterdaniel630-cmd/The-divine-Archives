@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 01:56 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 02:05 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -8,10 +8,17 @@
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), and `decisions-2026-10-25-domain-and-kadesh.md`. **Deployed (`main`):** `efba79c` (PR #73, merged
 2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75 (head `223600f`),
-`loop/speed-fix-a` = #76 (head `7100802`) (#70–#74 merged). `staging/ready-line` carries `handoff/`.
+`loop/speed-fix-a` = #76 (head `7100802`), `loop/journal-hero-archivist` = #77 (head `dbf5d16`) (#70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~01:57–02:05: **Journal hero part 1 built: The Archivist** (Next 4) on `loop/journal-hero-archivist` @
+  `dbf5d16`, **PR #77**. The live fedora/leather-jacket explorer is replaced by parts cut from Carter's approved hooded
+  sheet (face = the sheet's own pixels, never redrawn; no smile invented); portraits from the front view; coat-sleeve
+  arm; `art-source/archivist/cut.py` repeatable. Build unchanged elsewhere, review-checks 9/9 (0 warnings), 17 verify,
+  42/42 tests; headless phone in both motion modes: all art loads, stand/run/jump/cast, 0 script errors. Set pieces
+  (whip, boulder) are part 2. #67 and #76 Lighthouse still running (not waited on). Reply `2026-10-25-journal-hero-part-1.md`.
+  Items per run: 1.
 - 2026-10-25 ~01:53–02:05 (chat session, parallel): **PR #75 independently reviewed: 0 findings**, brought up to `main`
   → `223600f`; local checks green. Reply `2026-10-25-pr75-independent-review.md`.
 - 2026-10-25 ~01:51–01:56: **PR #76 (speed fix A) independently reviewed: 0 findings**, by a run that wrote none of it,
@@ -219,14 +226,16 @@
    and brought up to `main` → `7100802`**. Next: every GitHub check green on `7100802` incl. Lighthouse, then a run that
    wrote none of #76 fast-forwards; going live is covered by this yes. B–E still need their own yes.
 1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
-   2026-10-25 (0 findings), brought up to `main` → `223600f`**. Next: every GitHub check green on `223600f`, then a run
-   that wrote none of #75 fast-forwards.
+   2026-10-25 (0 findings), brought up to `main` → `223600f`**. 7/7 checks completed green at 02:00, but no Lighthouse
+   run appeared although it changes `docs/`: check whether it is queued. **The loop does not merge #75** (LOOP.md
+   Merging 4: no cleared pending tag; standing limit: never clear content). Carter presses Merge once it is green.
 **Merge order note:** #67, #75 and #76 each sit on `efba79c`. After the first fast-forwards, the other two must be
 brought up to the new `main` again (merge commit) and their checks re-run before they can fast-forward.
-4. **Journal hero rebuild** (PR #60, Option A, value 5): **unblocked 2026-10-25**. The three images are in
-   `handoff/journal-hero-b64/` as base64 text (decode with the command in its README; check sizes). Face stays
-   Carter's (hood up); costume per the approved Archivist sheet; no fedora, leather jacket, whip or boulder. Never
-   invent a face.
+4. **Journal hero rebuild** (value 1–5: the live hero still wears the film-explorer kit until #77 is live).
+   **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist). Next: independent review of #77 by a run
+   that wrote none of it, then GitHub checks; merge needs Carter's yes for #77 (Needs Carter). **Part 2:** port the
+   Option A set pieces (whip → other tool, boulder → other hazard) onto current `main` (PR #60 has one version on an
+   old base). Never invent a face.
 4b. **Name the live site in docs** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
    site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
@@ -253,9 +262,9 @@ brought up to the new `main` again (merge commit) and their checks re-run before
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`, folded into Next): PR #67 yes, speed fix A yes, V72 and
-Ra-Horakhty cleared, reviewer/auditor option A, PR #61 close, Journal hero images requested from Muse. Hit-feel 2–3,
-reduced motion and the Tjurunga takedown/wording also answered (#73 now live).
-Answered 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`): domain confirmed live at www.getconexto.com
-(docs update folded into Next 4b); Treaty of Kadesh tablet preview looks right for now, accepted as-is.
-- Nothing open.
+Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`, folded into Next) and 2026-10-25
+(`decisions-2026-10-25-domain-and-kadesh.md`): see those files.
+- **A. PR #77, Journal hero = The Archivist (hooded, your face from the approved sheet).** Your 2026-10-21 approval was
+  for PR #60; #77 replaces #60's hero. Yes to put #77 live once it is independently reviewed and green? (Yes / No / Show me first)
+- **B. PR #75 (clear V72 and Ra-Horakhty).** The loop may not merge a clearance itself. Once its checks are green, press
+  Merge on PR #75 yourself, or say "loop may merge #75". (Press it myself / Loop may merge it)

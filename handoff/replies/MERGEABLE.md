@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 01:56 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
+**As of:** 2026-10-25 02:05 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -19,13 +19,18 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `223600f`; Carter's "clear", batch-six 3).
   **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
   (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub
-  check green on `223600f` incl. Lighthouse; then a run that wrote none of #75 fast-forwards.
+  check green on `223600f` incl. Lighthouse (7/7 green at 02:00, no Lighthouse run seen yet). **Not a loop merge:** it
+  clears two pending tags (LOOP.md Merging 4), so Carter presses Merge himself or says the loop may.
 
 - **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `7100802`; Carter's yes `decisions-2026-10-24-batch-six.md`
   2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
   **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
   absence page); local checks green. Missing: every GitHub check green on `7100802` incl. Lighthouse; then a run that
   wrote none of #76 fast-forwards.
+
+- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist` @ `dbf5d16`, 2026-10-25). Built by the
+  loop; local checks green (`2026-10-25-journal-hero-part-1.md`). Missing: independent review by a run that wrote none
+  of it; every GitHub check green incl. Lighthouse; Carter's yes for #77 (his PR #60 approval named #60).
 
 ## Merged
 - Tjurunga takedown (PR #73): merged 2026-10-25 01:43 UTC by fast-forward `6c81a84` → `efba79c`, deploy run 200 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; reviews `2026-10-24-pr73-independent-review.md`, `2026-10-24-pr73-re-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr73-merged.md`).
