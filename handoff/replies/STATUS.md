@@ -417,13 +417,11 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **Carter said yes to each, 2026-10-25 ~11:55** (`decisions-2026-10-25-yes-to-each.md`): #76, #78, #79, #80, #68, #81, #82.
-  All seven passed independent review; GitHub checks green on each head (#82 Lighthouse green 11:51); local checks
-  re-run green on #76 `be51670` at ~11:58. **The push to the live site was refused again by the session's safety
-  system ("production deploy"), even with Carter's live yes.** So the loop cannot put anything live itself. Carter's
-  Merge buttons are the way through, in this order (each one: open the PR on GitHub → Merge → Confirm):
-  **#76 → #75 → #78 → #79 → #80 → #82 → #68 → #81**, then #77 once the loop has brought it up to `main`.
-  If GitHub says a PR "can't be merged" or has conflicts, skip it; the next run brings it up and re-checks it.
-  After the buttons, the next run re-runs every check on `main` and reports.
+- **All eight merged by Carter's buttons, 2026-10-25 ~11:58–12:00** (#76, #75, #78, #79, #80, #82, #68, #81; `main` = `caedabc`,
+  deploy run 209 green). Merges were GitHub merge commits, so `main`'s ids differ from the loop branches.
+- **PR #84** (registry recount): #68 and #82 each bumped the entity-registry totals from the same start, so 2 framework
+  tests fail on `main`. Internal data only, nothing under `docs/`, not visible on the site. Needs its own independent
+  review by another run, then Carter's Merge button (the loop cannot push to `main`: the session safety system refuses it).
+- **#77** (Journal hero, approved): next run brings it up to `main` `caedabc`, re-runs checks, then it needs Carter's button.
 Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`) and 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`,
 `decisions-2026-10-25-hero-show-me-and-75.md`, `decisions-2026-10-25-hero-yes-darker-cloak.md`), all folded into Next.
