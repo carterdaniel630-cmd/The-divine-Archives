@@ -40,7 +40,8 @@ const VAULT = sandbox.window.VAULT || { items: [] };
 
 const entries = [
   ...A.chapters.filter((c) => c.status === "published").map((c) => ({ key: c.id, source: c.source })),
-  ...VAULT.items.filter((v) => v.status === "published").map((v) => ({ key: v.id, source: v.source }))
+  // withdrawn entries keep their dates: their URL stays live as an absence page
+  ...VAULT.items.filter((v) => v.status === "published" || v.status === "withdrawn").map((v) => ({ key: v.id, source: v.source }))
 ];
 
 const today = new Date().toISOString().slice(0, 10);
