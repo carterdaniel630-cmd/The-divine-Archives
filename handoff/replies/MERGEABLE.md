@@ -4,16 +4,20 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 10:40 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
+**As of:** 2026-10-25 ~12:15 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Journal touch polish** (PR #83, `loop/journal-touch-polish` @ `39eeef8`, off `main` `c957af5`): Select/Start tap
+  areas reach 44 px on touch screens (shared controller: Journal and Fighter); the first tip names the on-screen
+  buttons on touch phones. Built 2026-10-25; local checks green; trial merges with #78/#79/#80 clean. Missing:
+  independent review by a run that wrote none of it; all GitHub checks green incl. Lighthouse; Carter's yes.
 - **ch02 "second death" wording** (PR #82, `loop/ch02-second-death` @ `82441ce`, off `main` `c957af5`): live chapter
   wording now framed as Egyptian belief and sourced (Roberson, *Expedition* 57:2; UCL BD 44). Local checks green.
   **Independent review 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`); 9/10 GitHub
-  green. Missing: Lighthouse green on `82441ce` (still running at review); Carter's yes.
+  green. Missing: Lighthouse green on `82441ce` (still running at 11:45, started 11:30); Carter's yes.
 - **Qumran guided walk leaves Cave 4** (PR #81, `loop/qumran-walk-4b` @ `2c099a0`, **stacked on #68**: #68 + `main`
   `c957af5` + one Qumran commit). Built 2026-10-25; local checks green. **Independent review 2026-10-25 ~10:55: 0 open
   findings** (`2026-10-25-pr81-independent-review.md`); **10/10 GitHub checks green incl. Lighthouse (10:51).** Missing:

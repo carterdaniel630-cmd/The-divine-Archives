@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~11:30 UTC (build loop, PR #82 independent-review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~12:15 UTC (build loop, PR #83 Journal touch-polish run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -8,10 +8,20 @@
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `c957af5` (PR #67, merged
 2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
-`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`), `loop/journal-phone-320` = #79 (`3018cdd`), `loop/reliquary-phone-480` = #80 (`c9408a0`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
+`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`), `loop/journal-phone-320` = #79 (`3018cdd`), `loop/reliquary-phone-480` = #80 (`c9408a0`), `loop/journal-touch-polish` = #83 (`39eeef8`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~11:42–12:15: **PR #83 built: Journal on touch phones** (Next 10, two pre-existing phone defects, value 3;
+  everything higher waits on Carter or Muse). (1) Select/Start pills: tap height through the centre was 24–25 px; now
+  44–48 px on touch screens via an invisible centred layer (pills look the same; stacked pills 1.4rem apart so areas
+  never overlap; shared controller, so Fighter's Pause pill too). (2) First tip said "↑ or Space … J or X" on touch
+  phones; now "◀ ▶ run · A jumps (hold for height) · B cracks the whip." there, keys on desktop. 2 files, +12 −3, off
+  `main` `c957af5`. Headless phone 320–600 upright + 2 sideways, Journal and Fighter: 0 neighbour-button points taken,
+  0 script errors, no sideways scroll; build 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings);
+  trial merge with #78/#79/#80 clean and re-measured (44–48 px, 0 outside the dialog). #82 Lighthouse still running at
+  11:45 (not waited on). Previews `handoff/previews/journal-touch-polish/`. Reply `2026-10-25-pr83-journal-touch-polish.md`.
+  Items per run: 1.
 - 2026-10-25: **Independent review of PR #82** (ch02 second death) by a run that wrote none of it: 0 open findings;
   Roberson (Penn *Expedition* 57:2) and UCL BD 44 re-opened and support the new wording; local checks green; headless
   phone/desktop clean; Lighthouse still running (reply `2026-10-25-pr82-independent-review.md`).
@@ -385,10 +395,13 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 4i. **PR #82 (ch02 "second death" wording; live, value 1):** built 2026-10-25 (`82441ce`, off `main`). **Independently
    reviewed 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`; both sources re-opened).
    GitHub 9/10 green; **next run: confirm Lighthouse finished green on `82441ce`.** Then missing only Carter's yes.
+4j. **PR #83 (Journal touch polish: Select/Start tap areas 44 px, first tip names on-screen buttons; live, value 3):**
+   built 2026-10-25 (`39eeef8`, off `main` `c957af5`). **Next run: independent review** (a run that wrote none of it)
+   and confirm all GitHub checks green incl. Lighthouse. Then missing only Carter's yes.
 4h. **PR #81 (Qumran guided walk stops in Cave 4; live defect, value 3):** built 2026-10-25 (`2c099a0`), **stacked on
    #68**. **Independently reviewed 2026-10-25 ~10:55: 0 open findings; 10/10 GitHub green incl. Lighthouse.** Goes live
    after #68, with Carter's yes for #81 (asked now).
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ~~ch02 "second death"~~ now PR #82; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; ~~Journal Select/Start tap size; Journal tip naming keys on touch~~ now PR #83); ~~ch02 "second death"~~ now PR #82; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
@@ -409,6 +422,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   - **PR #79** Journal, narrow upright phones: stats and controls fit; the full-screen button keeps its spoken name. All checks green.
   - **PR #80** Reliquary: on phones 461–484 px wide the setup dropdowns no longer stick out past the box. All checks green.
   A yes for any of them lets the loop put it live (after its checks are all green).
+- **PR #83, Journal touch polish, yes/no to go live** (after its independent review): the Sound/Pause pills are easier
+  to tap on phones (same look), and the first tip names the on-screen buttons instead of keyboard keys.
 - **PR #68, Pilgrimage wording fixes, yes/no to go live** (Stonehenge heights, Golgotha date, Ararat 1840 shown as
   disputed; guided walks on Ararat and Alexandria now reach the end). Independent review 0 open findings. Recommendation: yes.
 - **PR #81, Qumran guided walk fix, yes/no to go live** (goes right after #68): "Walk on" no longer gets stuck in Cave 4;
