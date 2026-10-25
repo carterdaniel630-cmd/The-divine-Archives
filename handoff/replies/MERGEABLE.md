@@ -47,6 +47,12 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Museum phone speed (PR #62): merged 2026-10-18 12:35 UTC by fast-forward to `0585c80`, deploy green.
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
 
+- **Journal on narrow upright phones + full-screen button name** (PR #79, `loop/journal-phone-320` @ `3018cdd`, off `main`
+  `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr79-journal-phone-320.md`). Local checks green.
+  **Independent review 2026-10-25 ~10:00: 0 open findings** (`2026-10-25-pr79-independent-review.md`). GitHub 5/6 green;
+  **Lighthouse still running** at review time. Missing: Lighthouse green, then Carter's yes for this item. Merges
+  cleanly with #78 (trial merge).
+
 ## Not ready (in progress or waiting on a ruling)
 - Treaty of Kadesh tablet (relic 1 of 4): rebuilt 2026-10-19 as a preview in `handoff/previews/treaty-of-kadesh/`
   (`2026-10-19-treaty-of-kadesh-rebuilt.md`). Not a site change yet; a museum placement is a new exhibit and needs

@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 10:00 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~10:00 UTC (build loop, PR #79 review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,12 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~09:42–10:00: **PR #79 independently reviewed: 0 open findings** (Next 4f; this run wrote none of it).
+  Own headless check, Journal started: `main` clips at 320–360 and 421–440 upright; #79 clips nowhere 320–520 or
+  sideways; A/B buttons ≥46 px; full-screen name toggles; 12 games 0 errors. Local checks green (build current, 17/17
+  verify, 42/42 tests, review-checks 9/9). GitHub 5/6 green, Lighthouse still running. Trial merge with #78 clean.
+  Report `2026-10-25-pr79-independent-review.md`, filed on `review-log` (`0d01a20`). Slip logged in the report: this
+  run's lock commit `ac182ff` carried an attribution line naming a model; not rewritten (shared branch).
 - 2026-10-25 ~09:19–10:00: **PR #79 built: Journal on narrow upright phones + full-screen spoken name** (Next 10,
   value 3; everything above waits on Carter or Muse). Journal upright 320: hearts/"Plunder"/A button no longer cut
   off; also found and fixed A button past the edge at 421–470. Full-screen button now has a spoken name (aria-label
@@ -329,9 +335,10 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    in Needs Carter). If Carter says yes, a run that wrote none of it merges it once all checks are green; it is off
    `main` `c957af5` and touches no file of #75/#76/#77, so it can go before or after them (bring up to `main` if needed).
 4f. **PR #79 (Journal on narrow upright phones; full-screen spoken name; live defects, value 3):** built 2026-10-25
-   (`3018cdd`, off `main` `c957af5`). Next: independent review by a run that wrote none of it, all checks green incl.
-   Lighthouse, then Carter's yes. Shares `games.css` with #78 (different lines).
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; + Reliquary upright at 480 wide: 4 elements past the dialog edge, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+   (`3018cdd`, off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:00: 0 open findings.** GitHub 5/6 green;
+   **next run: confirm Lighthouse finished green on `3018cdd`** (re-run once if cancelled/failed-before-tests), then put
+   the yes/no to Carter alongside #78. Shares `games.css` with #78 (trial merge clean).
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; + Reliquary upright at 480 wide: 4 elements past the dialog edge, pre-existing; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
