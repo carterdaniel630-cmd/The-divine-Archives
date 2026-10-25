@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 06:58 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 08:20 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -8,10 +8,16 @@
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `c957af5` (PR #67, merged
 2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
-`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
+`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~07:45–08:20: **PR #78 built: Journal Sound pill no longer under the ✕ with the phone sideways** (live
+  defect, value 1/3; the #76 chain still waits on Carter's Merge button). Overlap was sideways-only (568–932 wide;
+  hearts under "Full screen" at 568 too). CSS-only, 5 lines; build 0 changes, 17/17 verify, 42/42 tests, review-checks
+  9/9 (0 warnings); headless sideways 6 widths no overlap, upright unchanged, 12 games 0 errors. New pre-existing
+  defect noted: upright at 320 wide the Journal HUD and A button are clipped. Reply
+  `2026-10-25-pr78-journal-sound-landscape.md`. Items per run: 1.
 - 2026-10-25 ~06:42–06:58: **PR #76 fast-forward retried once, refused again** by this session's safety check (not
   tried another way; `main` still `c957af5`). Found the 02:48 lock stale (~4 h, the run before ended without removing it)
   and overwrote it. Re-checked #76 on `be51670` by a run that wrote none of it: 9/9 GitHub checks green incl. Lighthouse;
@@ -299,7 +305,9 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
 8. **Independent review of #68, #64, #66** (#67 done 2026-10-24; #68 next: live Pilgrimage wording) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
-10. Fix package; small defects part 2 (+ Journal "Sound" button sits under the close ✕ at phone width, live); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+4e. **PR #78 (Journal Sound pill, phone sideways; live defect, value 1/3):** independent review by a run that wrote
+   none of it, then GitHub checks green incl. Lighthouse; then into Carter's next yes/no batch (no yes yet).
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; + new: upright at 320 wide the Journal HUD and A button are clipped); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
@@ -314,6 +322,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
+- **PR #78 (Journal Sound pill under the ✕, phone sideways): yes/no to go live** once it passes independent review and
+  checks (not yet; asked in the next batch, not now).
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
   buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).
