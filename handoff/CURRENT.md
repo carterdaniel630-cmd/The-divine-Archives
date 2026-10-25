@@ -26,19 +26,16 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
-- Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
-  - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
-  - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
-    from #53) with an animated midwinter sunrise and neutral indoor light. Batch 2 should build on it, not
-    on a second copy.
-  - #67 `claude/site-fixes-2026-10-18`: era-page emblems (broken by #46), long source links on phones, and the
-    arcade's Divine Casualties line (Hades not an Olympian).
-  - #68 `claude/pilgrimage-51-fixes`: the reviewer's nine #51 fixes, plus the guided walk on Ararat (reduced
-    motion) and on the live Library of Alexandria (stuck at its second stop).
+- From the 2026-10-18 tie-ins session, all merged with Carter's yes: #67 (2026-10-25: era-page emblems, long source
+  links on phones, the arcade's Hades line), #68 (2026-10-25: the reviewer's #51 fixes; the Ararat and Alexandria
+  guided walks), #64 (2026-10-25: reviewer and auditor as project skills), #85 (2026-10-25: ch42's Newgrange sentence
+  corrected, ch42 back to pending; Mount Ararat's card "The ark in Armenian tradition"), and #66 (Newgrange preview,
+  the batch-2 session's build 1691af3 with an animated midwinter sunrise; batch 2 builds on it, not on a second copy).
 - Open review findings with no PR yet: graphify tidy-ups (4 items in `reviews/2026-10-18-graphify-52.md`;
   overlap with #61/#65); Mogao fixes for #53's builder (`reviews/2026-10-18-mogao-53.md`: the stair to Cave
   254, the Cave 16/17 sign, a possibly unfindable 2002 abstract); V20 credit and papyrus height
-  (`reviews/2026-10-18-weighing-47.md`).
+  (`reviews/2026-10-18-weighing-47.md`; the swap to Budge's 1895 wording waits for a session that can open
+  sacred-texts.com or the Heidelberg scan, both blocked from build sessions so far).
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
