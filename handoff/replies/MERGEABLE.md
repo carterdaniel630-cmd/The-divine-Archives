@@ -4,16 +4,18 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 01:50 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
+**As of:** 2026-10-25 02:20 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Site fixes 2026-10-18** (PR #67, `claude/site-fixes-2026-10-18` @ `1681050`): **independent review done 2026-10-24,
-  0 findings** (`2026-10-24-pr67-independent-review.md`); 9/9 GitHub checks green on `1681050`. Carter's yes
-  2026-10-24 (`decisions-2026-10-24-batch-six.md` 1). Head `24563f9` was brought up to `6c81a84`; `main` has since
-  moved to `efba79c`. Missing: bring up to `efba79c` (merge commit), confirm the site diff unchanged, checks green.
+- **Site fixes 2026-10-18** (PR #67, `claude/site-fixes-2026-10-18`, head now `c957af5`): **independent review done
+  2026-10-24, 0 findings** (`2026-10-24-pr67-independent-review.md`) on `1681050`. Carter's yes 2026-10-24
+  (`decisions-2026-10-24-batch-six.md` 1). **Brought up to `main` `efba79c` on 2026-10-25 ~02:15** with a merge commit
+  (no conflict); site diff byte-identical to the reviewed `1681050`; local checks green (`2026-10-25-pr67-brought-up.md`).
+  Missing: every GitHub check green on `c957af5` (incl. Lighthouse), then a run that wrote none of #67 fast-forwards.
+
 - **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra` @ `4409b86`; Carter's "clear", batch-six 3). Missing:
   independent review by a run that wrote none of it; bring up to `main`; every GitHub check green.
 

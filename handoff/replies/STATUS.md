@@ -1,17 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 01:50 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 02:20 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC). **Deployed (`main`):** `efba79c` (PR #73, merged
 2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
-**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67, `loop/clear-v72-ra` = #75,
+**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75,
 `loop/speed-fix-a` = #76 (#70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~02:05–02:20: **PR #67 brought up to `main` `efba79c`** (merge commit, no conflict) → head **`c957af5`**.
+  Site diff byte-identical to the reviewed `1681050`. review-checks 9/9 (0 warnings, build matches committed), 17 verify,
+  42/42 tests; headless phone check of seven pages plus all 83 chapters: 0 script errors, 0 pages wider than the phone,
+  eras page 5,944 px as reviewed. Not merged: GitHub checks just started, not waited on with the lock.
+  Reply `2026-10-25-pr67-brought-up.md`. Items per run: 1.
 - 2026-10-25 ~01:42–01:50: **PR #73 merged** (Tjurunga takedown, Carter's yes) by fast-forward `6c81a84` → `efba79c`,
   **deploy run 200 green**, by a run that wrote none of #73. Lighthouse had finished green at 00:02 (8/8). Local checks
   re-run on a clean copy: build repeatable, 17 verify, 42/42 tests, review-checks 9/9 (0 warnings); headless phone check
@@ -198,9 +203,10 @@
 0. **Carter's six answers, 2026-10-24** (`decisions-2026-10-24-batch-six.md`), what is left:
    - #73 merged 2026-10-25 01:43 (done). PR #61 closed (done).
    - **Reviewer and auditor, option A:** the loop does their saving. Fold this into the loop procedure. PR #58 is not merged.
-1. **PR #67** (live phone fixes, value 1): **Carter's yes 2026-10-24** (batch-six 1). Head `24563f9` sits on the old
-   `main` `6c81a84`. Bring it up to `main` `efba79c` (merge commit), confirm the site diff unchanged from the reviewed
-   `1681050`, local checks, wait (without the lock) for GitHub checks, then a run that wrote none of #67 fast-forwards.
+1. **PR #67** (live phone fixes, value 1): **Carter's yes 2026-10-24** (batch-six 1). **Brought up to `main` `efba79c`
+   on 2026-10-25 → head `c957af5`**, site diff identical to the reviewed `1681050`, local checks green. Next: confirm
+   every GitHub check green on `c957af5` (incl. Lighthouse; re-run a cancelled one), re-run local checks, then a run
+   that wrote none of #67 fast-forwards `main` to `c957af5`. If checks are still running, do 1b or 1c instead.
 1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): **built, PR #76** (`10b075c`). Next: independent review
    (a run that wrote none of it; this 01:42 run qualifies), bring up to `main`, GitHub checks incl. Lighthouse, then
    merge; going live is covered by this yes. B–E still need their own yes.
