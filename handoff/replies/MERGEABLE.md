@@ -4,12 +4,16 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 10:50 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
+**As of:** 2026-10-25 10:40 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Qumran guided walk leaves Cave 4** (PR #81, `loop/qumran-walk-4b` @ `2c099a0`, **stacked on #68**: #68 + `main`
+  `c957af5` + one Qumran commit). Built 2026-10-25; local checks green. Missing: independent review, every GitHub check
+  green incl. Lighthouse, #68 on `main` first, Carter's yes for #81.
+
 - **Pilgrimage wording fixes and guided walks** (PR #68, `claude/pilgrimage-51-fixes` @ `c4e5141`, base an older `main`).
   **Independent review 2026-10-25: 0 open findings** (`2026-10-25-pr68-independent-review.md`, by a loop run that wrote
   none of it); merges cleanly with `main` `c957af5`, local checks green on that merge; 9/9 GitHub green on the old base.
