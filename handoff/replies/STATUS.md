@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~19:30 UTC (build loop: **PR #53 fix run part 1, Mogao Caves fixed** at `8aab255`). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~19:35 UTC (build loop: **PR #53 fix run part 2, Göbekli Tepe fixed** at `2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,10 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~19:00–19:35: **PR #53 fix run part 2 — Göbekli Tepe** (`2dd1158`): every fixable finding; review points
+  2 (missing "So fair a House" source: found) and 3 (C/D sizes: figures removed, *CWA* "D is the largest") settled by
+  sources. Build 0 changes besides registry, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings), headless phone
+  360/390 clean. Reply `2026-10-25-pr53-gobekli-fixes.md`. Items per run: 1.
 - 2026-10-25 19:30: PR #53 fix run part 1 — Mogao Caves review fixes (`8aab255`).
 - 2026-10-25 ~17:48–18:25: **PR #53 independently reviewed at `befb607`: NOT passed** (Next 1e) by a run that wrote none
   of it. Automatic checks green on a clean copy (build 0 changes, review-checks 9/9 0 warnings, 17/17 verify, 42/42 tests,
@@ -384,7 +388,8 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
    Reply `2026-10-25-pr86-merged.md`.
 1e. **PR #53 (Pilgrimage batch 1), head `8aab255`: review of `befb607` NOT passed** (`2026-10-25-pr53-independent-review.md`).
    **Fix run part 1 done 19:30: Mogao Caves, all fixable findings** (`2026-10-25-pr53-mogao-fixes.md`; main `3785b2b` merged in).
-   **Still to fix:** Göbekli Tepe, Delphi, Chichén Itzá (one or two per run).
+   **Fix run part 2 done ~19:35: Göbekli Tepe** (`2dd1158`, `2026-10-25-pr53-gobekli-fixes.md`; review points 2 and 3 settled).
+   **Still to fix:** Delphi, then Chichén Itzá (incl. review point 4, decline date: state both views).
    **Next: fix run** on `claude/project-thread-s3qxre` (merge commits only, no force-push): every fixable finding in the
    report, site by site (a smaller correct piece is fine: e.g. one or two sites per run, say which); try to settle the
    three source points by sources (Göbekli "ttHouse" blog post, Göbekli C/D sizes, Chichén decline date: state both
@@ -429,6 +434,6 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing new. #86 is live (merged 18:45, deploy green). #53 is being fixed site by site (Mogao done) after
+- Nothing new. #86 is live (merged 18:45, deploy green). #53 is being fixed site by site (Mogao and Göbekli Tepe done) after
   its review; it comes to you for one yes/no once fixed and re-reviewed.
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
