@@ -32,7 +32,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Journal Sound pill under the ✕, phone sideways** (PR #78, `loop/journal-sound-landscape` @ `42e0a6a`, off `main`
   `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr78-journal-sound-landscape.md`). Local checks green.
   **Independent review 2026-10-25 08:10: 0 open findings** (`2026-10-25-pr78-independent-review.md`; GitHub 5/6 green then).
-  Missing: Lighthouse green on `42e0a6a` (running at 07:58); Carter's yes for this item.
+  **All 6 GitHub checks green on `42e0a6a` incl. Lighthouse (08:10).** Missing only: Carter's yes for this item.
 
 ## Merged
 - Site fixes 2026-10-18 (PR #67): merged 2026-10-25 02:17 UTC by fast-forward `efba79c` → `c957af5`, deploy run 201 green (Carter's yes `decisions-2026-10-24-batch-six.md` 1; review `2026-10-24-pr67-independent-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr67-merged.md`).

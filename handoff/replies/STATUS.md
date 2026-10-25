@@ -312,7 +312,7 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 8. **Independent review of #68, #64, #66** (#67 done 2026-10-24; #68 next: live Pilgrimage wording) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
 4e. **PR #78 (Journal Sound pill, phone sideways; live defect, value 1/3):** **independently reviewed 2026-10-25
-   08:10, 0 open findings.** Missing: Lighthouse green on `42e0a6a` (running at 07:58); then Carter's yes (asked now,
+   08:10, 0 open findings.** All 6 GitHub checks green incl. Lighthouse (08:10). Missing only: Carter's yes (asked now,
    in Needs Carter). If Carter says yes, a run that wrote none of it merges it once all checks are green; it is off
    `main` `c957af5` and touches no file of #75/#76/#77, so it can go before or after them (bring up to `main` if needed).
 10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; + upright at 320 wide the Journal HUD and A button are clipped; + full-screen button has no spoken name where its label is hidden: add `aria-label` in `archive-games.js`); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
@@ -331,8 +331,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 
 ## Needs Carter
 - **PR #78 (Journal: on a phone held sideways, the Sound button sits under the ✕): yes/no to go live.** Passed
-  independent review (0 findings); the last speed check (Lighthouse) was still running at 08:00. A yes lets the loop
-  merge it once that check is green. Recommendation: yes.
+  independent review (0 findings); all 6 GitHub checks green incl. Lighthouse (08:10). A yes lets the loop
+  merge it. Recommendation: yes.
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
   buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).
