@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~10:00 UTC (build loop, PR #79 review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~10:20 UTC (build loop, PR #80 build run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -8,10 +8,17 @@
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `c957af5` (PR #67, merged
 2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
-`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`), `loop/journal-phone-320` = #79 (`3018cdd`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
+`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`), `loop/journal-phone-320` = #79 (`3018cdd`), `loop/reliquary-phone-480` = #80 (`c9408a0`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~09:51–10:20: **PR #80 built: Reliquary start-screen dropdowns no longer run past the dialog on upright
+  phones 461–484 px wide** (Next 10, live defect, value 3). First checked #79's Lighthouse (Next 4f): still running
+  after 25 min, so not waited on. Cause: `1fr` grid columns can't shrink below the longest option text. CSS only,
+  4 lines in `games.css`. Before on `main`: 4 elements past the edge at 465/475/480; after: none 320–520, sideways,
+  desktop. All 12 games × 5 sizes: 0 errors, 0 overflow. Build 0 changes, 17/17 verify, 42/42 tests, review-checks
+  9/9 (0 warnings). Trial merges with #78 and #79 clean. Screenshot `handoff/previews/reliquary-phone-480/`. Reply
+  `2026-10-25-pr80-reliquary-phone-480.md`. Items per run: 1.
 - 2026-10-25 ~09:42–10:00: **PR #79 independently reviewed: 0 open findings** (Next 4f; this run wrote none of it).
   Own headless check, Journal started: `main` clips at 320–360 and 421–440 upright; #79 clips nowhere 320–520 or
   sideways; A/B buttons ≥46 px; full-screen name toggles; 12 games 0 errors. Local checks green (build current, 17/17
@@ -337,8 +344,12 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 4f. **PR #79 (Journal on narrow upright phones; full-screen spoken name; live defects, value 3):** built 2026-10-25
    (`3018cdd`, off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:00: 0 open findings.** GitHub 5/6 green;
    **next run: confirm Lighthouse finished green on `3018cdd`** (re-run once if cancelled/failed-before-tests), then put
-   the yes/no to Carter alongside #78. Shares `games.css` with #78 (trial merge clean).
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; + Reliquary upright at 480 wide: 4 elements past the dialog edge, pre-existing; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+   the yes/no to Carter alongside #78. Shares `games.css` with #78 (trial merge clean). Still running at 10:15 (checked
+   twice this run, not waited on).
+4g. **PR #80 (Reliquary dropdowns past the dialog at 461–484 px; live defect, value 3):** built 2026-10-25 (`c9408a0`,
+   off `main` `c957af5`). **Next: independent review** by a run that wrote none of it, all checks incl. Lighthouse,
+   then the yes/no to Carter batched with #78/#79. Shares `games.css` with #78/#79 (trial merges clean).
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
