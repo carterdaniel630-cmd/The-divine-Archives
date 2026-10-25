@@ -22,8 +22,8 @@ export const D = {};
 // "El Castillo, Chichen Itza", Wikipedia); nine stepped bodies (SURVEY: Šprajc and Sánchez Nava); four
 // stairways of about 91 steps (SURVEY). The top platform, the stairs' width and the temple's plan APPROX.
 D.cas = { x: 0, z: 0, base: 55.3, h: 24, terraces: 9, top: 19.6, stairW: 8.6, balW: 1.1, steps: 91, temple: { s: 13.0, h: 6.0 } };
-// ---- the Great Ball Court: overall 166 × 68 m (SURVEY: Guinness World Records); the playing alley 316 × 98 ft,
-// about 96 × 30 m (SURVEY: Met essay). The height of the walls, the benches and the end temples APPROX.
+// ---- the Great Ball Court: overall 166 × 68 m (SURVEY: Guinness World Records); the Met essay's "court" 316 × 98 ft,
+// about 96 × 30 m, used here for the playing alley (the essay does not say what the figure covers). The height of the walls, the benches and the end temples APPROX.
 D.bc = { x: -160, z: -40, L: 166, W: 68, alleyL: 96, alleyW: 30, wallH: 8.5, benchD: 1.6, benchH: 1.4, ringY: 7.0 };
 // ---- the Tzompantli (APPROX), the Temple of the Warriors with its colonnade (APPROX)
 D.tz = { x0: -120, x1: -60, z0: -41, z1: -29, h: 1.6 };

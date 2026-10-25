@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1925,
+ "count": 1931,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -2571,6 +2571,15 @@
    "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
   },
   {
+   "id": "source:britannica-com/b39cae353c",
+   "type": "source",
+   "label": "https://britannica.com/print/article/110599",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:britannica-com/b39f2e054b",
    "type": "source",
    "label": "https://www.britannica.com/topic/theosophy",
@@ -4586,6 +4595,15 @@
    "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
+   "id": "source:doi-org/d91083366b",
+   "type": "source",
+   "label": "https://doi.org/10.1017/S0956536120000450",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:doi-org/e388daa16e",
    "type": "source",
    "label": "https://doi.org/10.1080/14631361003779489",
@@ -5998,6 +6016,15 @@
     "chapter:ch13"
    ],
    "from": "sources/ch13-rome.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/507a143256",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Yucatec_Maya_people",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:en-wikipedia-org/50b2ff3192",
@@ -13049,6 +13076,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:openheritage3d-org/839a0c4285",
+   "type": "source",
+   "label": "https://openheritage3d.org/project.php?id=D6D889",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
    "id": "source:openlibrary-org/3e63547775",
    "type": "source",
    "label": "https://openlibrary.org/works/OL12914270W",
@@ -14272,6 +14308,15 @@
     "chapter:ch72"
    ],
    "from": "sources/ch72-cathars-medieval-heresy.md"
+  },
+  {
+   "id": "source:revistas-colmex-mx/0d37625db7",
+   "type": "source",
+   "label": "https://revistas.colmex.mx/Record/oai:oai.historiamexicana.colmex.mx:article-3475/Description",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:revistas-filologicas-unam-mx/64a762ff7b",
@@ -17063,6 +17108,15 @@
     "relic:v52"
    ],
    "from": "sources/v52-ishtar-gate.md"
+  },
+  {
+   "id": "source:worldhistory-org/ad5ce7d9cc",
+   "type": "source",
+   "label": "https://www.worldhistory.org/Chichen_Itza/",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:worldhistory-org/ae62c2f04b",
