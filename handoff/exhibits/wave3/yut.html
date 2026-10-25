@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<title>Yut · 윷놀이 — The Lunar New Year Game | The Divine Archives</title>
+<!--
+  YUT (윷놀이) — Korea · folk/shamanic · the Lunar New Year game.
+  Single self-contained exhibit. Vanilla ES6, zero external requests.
+  Target:  ~/workspace/your_files/yut/yut.html
+  Standards: Modular Framework Standard (8 clauses) + Artistry Standard.
+  Asset registry: all textures are procedural (canvas-generated at boot);
+  no external files, fonts, or requests of any kind.
+-->
+<style>
+/* ============ YUT exhibit — all selectors scoped with yut- ============ */
+.yut-app{
+  --yut-ink:#f0e2c8; --yut-ink-dim:#c9b48c; --yut-gold:#c9a227; --yut-gold-soft:#e3c96a;
+  --yut-lacquer:#7a1f14; --yut-night:#0b0705; --yut-panel:#14100b;
+  --yut-jade:#2fa07c; --yut-amber:#d98a2b; --yut-ivory:#e8dcc0;
+  --yut-line:rgba(201,162,39,.28);
+  margin:0; padding:0; box-sizing:border-box;
+  background:radial-gradient(120% 90% at 50% 0%, #1c110a 0%, #0b0705 55%, #050302 100%);
+  color:var(--yut-ink);
+  font-family:Georgia,'Times New Roman','Noto Serif KR','Nanum Myeongjo','Apple SD Gothic Neo','Malgun Gothic',serif;
+  min-height:100vh; min-height:100dvh;
+  display:flex; flex-direction:row; align-items:stretch; justify-content:center;
+  gap:0; overflow-x:hidden;
+}
+.yut-app *{ box-sizing:border-box; }
+.yut-stage{
+  position:relative; flex:1 1 auto; min-width:0; min-height:62vh;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; touch-action:none; cursor:grab;
+}
+.yut-stage:active{ cursor:grabbing; }
+.yut-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.yut-vignette{
+  position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(90% 75% at 50% 42%, transparent 40%, rgba(4,2,1,.55) 78%, rgba(2,1,1,.9) 100%);
+}
+.yut-dust{ position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.yut-mote{
+  position:absolute; width:5px; height:5px; border-radius:50%;
+  background:radial-gradient(circle, rgba(240,220,170,.75) 0%, rgba(240,220,170,0) 70%);
+  filter:blur(.4px); opacity:0;
+  animation:yut-drift 14s linear infinite;
+}
+@keyframes yut-drift{
+  0%{ transform:translateY(12vh) translateX(0); opacity:0; }
+  12%{ opacity:.55; } 80%{ opacity:.4; }
+  100%{ transform:translateY(-46vh) translateX(4vw); opacity:0; }
+}
+.yut-banner{
+  position:absolute; top:max(10px, env(safe-area-inset-top)); left:50%; transform:translateX(-50%);
+  max-width:min(92%, 560px); text-align:center; pointer-events:none;
+  background:rgba(10,6,4,.72); border:1px solid var(--yut-line); border-radius:12px;
+  padding:8px 18px; backdrop-filter:blur(6px);
+  font-size:15px; letter-spacing:.04em; line-height:1.45;
+}
+.yut-banner .yut-ko{ color:var(--yut-gold-soft); font-size:17px; margin-right:8px; }
+.yut-throw-result{
+  position:absolute; left:50%; bottom:18px; transform:translateX(-50%) translateY(8px);
+  display:flex; align-items:center; gap:14px;
+  background:rgba(12,7,4,.82); border:1px solid var(--yut-line); border-radius:14px;
+  padding:10px 18px; opacity:0; pointer-events:none;
+  transition:opacity .45s ease, transform .45s ease; backdrop-filter:blur(6px);
+  max-width:94%;
+}
+.yut-throw-result.yut-show{ opacity:1; transform:translateX(-50%) translateY(0); }
+.yut-throw-result .yut-bigko{ font-size:44px; color:var(--yut-gold-soft); line-height:1; text-shadow:0 0 18px rgba(201,162,39,.45); }
+.yut-throw-result .yut-rmeta{ font-size:13.5px; line-height:1.5; color:var(--yut-ink); }
+.yut-throw-result .yut-rmeta b{ color:var(--yut-gold-soft); font-weight:normal; letter-spacing:.06em; }
+.yut-throw-result .yut-bonus{ color:#ffd98a; font-size:12.5px; letter-spacing:.08em; }
+.yut-sticks-mini{ display:flex; gap:5px; }
+.yut-stick-mini{
+  width:11px; height:34px; border-radius:6px; border:1px solid rgba(0,0,0,.5);
+  background:linear-gradient(180deg,#6b4423,#4a2c14);
+  box-shadow:inset 0 0 4px rgba(0,0,0,.6);
+}
+.yut-stick-mini.yut-flat{ background:linear-gradient(180deg,#d9b075,#b98a4e); box-shadow:0 0 8px rgba(217,176,117,.35); }
+.yut-gl-message{
+  position:absolute; inset:0; display:none; align-items:center; justify-content:center;
+  background:rgba(5,3,2,.88); z-index:5; text-align:center; padding:24px;
+}
+.yut-gl-message.yut-show{ display:flex; }
+.yut-gl-message p{ max-width:340px; line-height:1.6; }
+/* ---------- panel ---------- */
+.yut-panel{
+  flex:0 0 360px; max-width:380px; background:linear-gradient(180deg, rgba(24,16,10,.96), rgba(12,8,5,.98));
+  border-left:1px solid var(--yut-line);
+  padding:20px 20px 28px; overflow-y:auto; max-height:100vh; max-height:100dvh;
+}
+.yut-title{ margin:2px 0 2px; font-size:26px; letter-spacing:.05em; color:var(--yut-ink); font-weight:normal; }
+.yut-title .yut-ko{ color:var(--yut-gold-soft); }
+.yut-sub{ margin:0 0 14px; font-size:13px; color:var(--yut-ink-dim); letter-spacing:.09em; font-style:italic; }
+.yut-heritage{
+  font-size:12px; color:var(--yut-ink-dim); border:1px solid var(--yut-line); border-radius:10px;
+  padding:8px 12px; margin:0 0 14px; line-height:1.55; background:rgba(201,162,39,.06);
+}
+.yut-score{ display:flex; gap:10px; margin:0 0 12px; }
+.yut-side{
+  flex:1; border:1px solid var(--yut-line); border-radius:10px; padding:8px 10px;
+  font-size:13px; background:rgba(255,255,255,.02);
+}
+.yut-side.yut-active{ border-color:var(--yut-gold); box-shadow:0 0 12px rgba(201,162,39,.18); }
+.yut-side .yut-sname{ letter-spacing:.08em; margin-bottom:6px; display:flex; align-items:center; gap:8px; }
+.yut-dot{ width:11px; height:11px; border-radius:50%; display:inline-block; box-shadow:0 1px 4px rgba(0,0,0,.6); }
+.yut-dot.yut-jade{ background:radial-gradient(circle at 35% 30%, #5fd0a4, #1c6b4c 70%); }
+.yut-dot.yut-amber{ background:radial-gradient(circle at 35% 30%, #f2b45e, #9c4d10 70%); }
+.yut-mals{ display:flex; gap:7px; }
+.yut-mal{
+  width:22px; height:22px; border-radius:50%; border:2px solid rgba(0,0,0,.45);
+  background:radial-gradient(circle at 35% 30%, #6b5a41, #3a2f22 70%);
+  transition:all .4s ease;
+}
+.yut-side[data-side="human"] .yut-mal.yut-home{ background:radial-gradient(circle at 35% 30%, #7df0b8, #1c6b4c 72%); box-shadow:0 0 10px rgba(47,160,124,.55); border-color:var(--yut-gold-soft); }
+.yut-side[data-side="ai"] .yut-mal.yut-home{ background:radial-gradient(circle at 35% 30%, #ffd08a, #9c4d10 72%); box-shadow:0 0 10px rgba(217,138,43,.55); border-color:var(--yut-gold-soft); }
+.yut-controls{ display:flex; gap:8px; margin:0 0 12px; flex-wrap:wrap; }
+.yut-btn{
+  appearance:none; border:1px solid var(--yut-gold); border-radius:10px; cursor:pointer;
+  background:linear-gradient(180deg, rgba(122,31,20,.85), rgba(70,17,10,.9));
+  color:var(--yut-ink); font-family:inherit; font-size:15px; letter-spacing:.05em;
+  padding:11px 18px; transition:transform .15s ease, box-shadow .2s ease, opacity .2s;
+  box-shadow:0 2px 10px rgba(0,0,0,.5);
+}
+.yut-btn:hover:not(:disabled){ transform:translateY(-1px); box-shadow:0 4px 16px rgba(201,162,39,.25); }
+.yut-btn:disabled{ opacity:.38; cursor:default; }
+.yut-btn.yut-ghost{ background:rgba(255,255,255,.04); border-color:rgba(201,162,39,.4); font-size:13.5px; padding:10px 14px; }
+.yut-btn.yut-primary{ font-size:16.5px; padding:12px 22px; flex:1 1 auto; }
+.yut-hint{ font-size:12px; color:var(--yut-ink-dim); margin:-6px 0 12px; letter-spacing:.04em; }
+.yut-moves{ display:flex; flex-direction:column; gap:8px; margin:0 0 14px; }
+.yut-move-btn{
+  appearance:none; text-align:left; cursor:pointer; font-family:inherit;
+  background:rgba(201,162,39,.07); border:1px solid var(--yut-line); border-radius:10px;
+  color:var(--yut-ink); padding:10px 12px; font-size:14px; line-height:1.5;
+  display:flex; gap:10px; align-items:flex-start;
+  transition:border-color .2s, background .2s, transform .12s;
+}
+.yut-move-btn:hover{ border-color:var(--yut-gold); background:rgba(201,162,39,.13); transform:translateX(2px); }
+.yut-move-btn .yut-key{
+  flex:0 0 auto; min-width:24px; height:24px; border:1px solid var(--yut-gold); border-radius:6px;
+  display:flex; align-items:center; justify-content:center; font-size:12.5px; color:var(--yut-gold-soft);
+  margin-top:1px;
+}
+.yut-move-btn .yut-tag{ color:var(--yut-gold-soft); font-size:12px; letter-spacing:.07em; display:block; }
+.yut-log{ margin:0 0 14px; font-size:12.5px; color:var(--yut-ink-dim); line-height:1.65; }
+.yut-log div{ border-bottom:1px dotted rgba(201,162,39,.16); padding:3px 0; }
+.yut-log .yut-lt{ color:rgba(201,178,140,.6); margin-right:6px; font-size:11px; }
+.yut-rules{ border:1px solid var(--yut-line); border-radius:10px; margin:0 0 12px; background:rgba(0,0,0,.25); }
+.yut-rules summary{
+  cursor:pointer; padding:11px 14px; font-size:14.5px; letter-spacing:.06em; color:var(--yut-gold-soft);
+  list-style:none; display:flex; justify-content:space-between; align-items:center;
+}
+.yut-rules summary::-webkit-details-marker{ display:none; }
+.yut-rules summary::after{ content:'+'; font-size:18px; color:var(--yut-gold); }
+.yut-rules[open] summary::after{ content:'–'; }
+.yut-rules .yut-rbody{ padding:2px 14px 14px; font-size:13.5px; line-height:1.7; color:var(--yut-ink); }
+.yut-rules h4{ margin:12px 0 6px; font-size:13px; letter-spacing:.1em; color:var(--yut-gold-soft); font-weight:normal; }
+.yut-rules ul{ margin:6px 0; padding-left:18px; }
+.yut-rules li{ margin-bottom:5px; }
+.yut-rules .yut-ko{ color:var(--yut-gold-soft); }
+.yut-pill{
+  display:inline-block; font-size:10.5px; letter-spacing:.09em; border-radius:20px; padding:2px 9px;
+  margin-right:6px; vertical-align:1px; border:1px solid;
+}
+.yut-pill.yut-attested{ color:#9fe0b8; border-color:rgba(120,200,140,.5); background:rgba(60,140,90,.12); }
+.yut-pill.yut-simplified{ color:#ffd08a; border-color:rgba(220,160,80,.5); background:rgba(200,140,60,.1); }
+.yut-honesty{ font-size:12px; line-height:1.65; color:var(--yut-ink-dim); border-top:1px solid var(--yut-line); padding-top:12px; }
+.yut-honesty a{ color:var(--yut-gold-soft); }
+.yut-src{ font-size:11.5px; color:rgba(201,178,140,.75); margin-top:8px; line-height:1.6; }
+/* ---------- modal ---------- */
+.yut-modal-back{
+  position:fixed; inset:0; background:rgba(4,2,1,.7); display:none;
+  align-items:center; justify-content:center; z-index:20; padding:20px; backdrop-filter:blur(3px);
+}
+.yut-modal-back.yut-show{ display:flex; }
+.yut-modal{
+  background:linear-gradient(180deg,#1d130c,#100a06); border:1px solid var(--yut-gold);
+  border-radius:16px; padding:26px 28px; max-width:420px; width:100%; text-align:center;
+  box-shadow:0 12px 60px rgba(0,0,0,.7), 0 0 40px rgba(201,162,39,.12);
+}
+.yut-modal h3{ margin:0 0 6px; font-weight:normal; font-size:21px; color:var(--yut-gold-soft); letter-spacing:.04em; }
+.yut-modal .yut-ko{ font-size:15px; color:var(--yut-ink-dim); }
+.yut-modal p{ font-size:14px; line-height:1.65; color:var(--yut-ink); }
+.yut-modal .yut-mrow{ display:flex; gap:10px; margin-top:16px; }
+.yut-modal .yut-mrow .yut-btn{ flex:1; }
+.yut-toast{
+  position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(20px);
+  background:rgba(12,7,4,.92); border:1px solid var(--yut-gold); color:var(--yut-ink);
+  padding:10px 20px; border-radius:12px; font-size:14px; opacity:0; pointer-events:none;
+  transition:opacity .3s, transform .3s; z-index:30; max-width:90vw; text-align:center;
+}
+.yut-toast.yut-show{ opacity:1; transform:translateX(-50%) translateY(0); }
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .yut-app{ flex-direction:column; }
+  .yut-stage{ min-height:52vh; min-height:52dvh; flex:0 0 auto; height:52vh; height:52dvh; }
+  .yut-panel{ flex:1 1 auto; max-width:none; border-left:none; border-top:1px solid var(--yut-line); max-height:none; }
+  .yut-throw-result{ bottom:10px; padding:8px 12px; gap:10px; }
+  .yut-throw-result .yut-bigko{ font-size:34px; }
+  .yut-banner{ font-size:13.5px; padding:7px 12px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .yut-mote{ display:none; }
+  .yut-throw-result, .yut-toast{ transition:none; }
+  .yut-btn, .yut-move-btn{ transition:none; }
+}
+</style>
+</head>
+<body>
+<div class="yut-app" id="yut-app">
+  <section class="yut-stage" id="yut-stage" aria-label="Yut board, 3D">
+    <canvas class="yut-canvas" id="yut-gl"></canvas>
+    <div class="yut-vignette"></div>
+    <div class="yut-dust" id="yut-dust" aria-hidden="true"></div>
+    <div class="yut-banner" id="yut-banner" role="status"></div>
+    <div class="yut-throw-result" id="yut-result" aria-live="polite">
+      <div class="yut-sticks-mini" id="yut-sticks-mini" aria-hidden="true"></div>
+      <div class="yut-bigko" id="yut-bigko"></div>
+      <div class="yut-rmeta" id="yut-rmeta"></div>
+    </div>
+    <div class="yut-gl-message" id="yut-gl-message">
+      <div>
+        <p>The brazier has gone out — the graphics context was lost.</p>
+        <p><button class="yut-btn" id="yut-gl-retry">Relight it</button></p>
+      </div>
+    </div>
+  </section>
+  <aside class="yut-panel" aria-label="Game controls and rules">
+    <h1 class="yut-title">Yut <span class="yut-ko">윷놀이</span></h1>
+    <p class="yut-sub">The Lunar New Year game of Korea · a family race of sticks and stars</p>
+    <div class="yut-heritage">Yutnori is Korea&rsquo;s beloved folk board game, played by families from Seollal (Lunar New Year) through the first full moon &mdash; named a National Intangible Cultural Heritage.</div>
+    <div class="yut-score">
+      <div class="yut-side yut-active" data-side="human" id="yut-score-human">
+        <div class="yut-sname"><span class="yut-dot yut-jade"></span>YOU &middot; JADE</div>
+        <div class="yut-mals"><span class="yut-mal"></span><span class="yut-mal"></span></div>
+      </div>
+      <div class="yut-side" data-side="ai" id="yut-score-ai">
+        <div class="yut-sname"><span class="yut-dot yut-amber"></span>AMBER &middot; RIVAL</div>
+        <div class="yut-mals"><span class="yut-mal"></span><span class="yut-mal"></span></div>
+      </div>
+    </div>
+    <div class="yut-controls">
+      <button class="yut-btn yut-primary" id="yut-throw">Cast the sticks</button>
+      <button class="yut-btn yut-ghost" id="yut-undo" title="Undo one step (U)">Undo</button>
+      <button class="yut-btn yut-ghost" id="yut-restart" title="Restart the game (R)">Restart</button>
+    </div>
+    <p class="yut-hint">Space casts &middot; 1&ndash;9 chooses a move &middot; U undo &middot; R restart &middot; drag the board to look around</p>
+    <div class="yut-moves" id="yut-moves"></div>
+    <div class="yut-log" id="yut-log" aria-label="Game chronicle"></div>
+    <details class="yut-rules" id="yut-rules">
+      <summary>Rules of the game</summary>
+      <div class="yut-rbody">
+        <h4><span class="yut-pill yut-attested">ATTESTED</span>THE THROW</h4>
+        <ul>
+          <li>Four chestnut-wood sticks, each with one <b>flat</b> side and one <b>round</b> side, are cast like dice.</li>
+          <li>Count the flat sides facing up:
+            <span class="yut-ko">도</span> do (pig) = 1 &middot;
+            <span class="yut-ko">개</span> gae (dog) = 2 &middot;
+            <span class="yut-ko">걸</span> geol (sheep) = 3 &middot;
+            <span class="yut-ko">윷</span> yut (cow) = 4, <b>throw again</b> &middot;
+            <span class="yut-ko">모</span> mo (horse, all round) = 5, <b>throw again</b>.</li>
+        </ul>
+        <h4><span class="yut-pill yut-attested">ATTESTED</span>THE BOARD &middot; <span class="yut-ko">말판</span> MALPAN</h4>
+        <ul>
+          <li><b>29 stations</b>: an outer circuit of 20, with two diagonals crossing at the center station (<span class="yut-ko">방</span>, bang).</li>
+          <li>One throw moves one <span class="yut-ko">mal</span> (token); a throw is never split between mals.</li>
+          <li>Landing on a rival&rsquo;s mal <b>captures</b> it &mdash; back to the start &mdash; and earns <b>another throw</b>.</li>
+          <li>Landing on your own mal <b>stacks</b> them; the stack travels as one.</li>
+          <li>A mal that <b>lands on a corner</b> may take the diagonal shortcut on its next move. At the <b>center</b>, choose your direction.</li>
+          <li><b>Exact count</b> to bear off past the start. First side to bring every mal home wins.</li>
+        </ul>
+        <h4><span class="yut-pill yut-simplified">SIMPLIFIED</span>IN THIS EXHIBIT</h4>
+        <ul>
+          <li><b>2 mals per side</b> &mdash; traditional teams play 4.</li>
+          <li>Entering a mal at the start <b>uses up the throw</b> (a common casual rule; house rules vary).</li>
+          <li>Sticks are perfectly fair (50/50 each) &mdash; real carved sticks vary.</li>
+          <li>The <b>back-do</b> (one marked stick sending a mal one step back) is omitted.</li>
+          <li>The center <b>always offers the direction choice</b> on arrival; some house rules only allow it when landing exactly.</li>
+        </ul>
+        <div class="yut-src">Rules after the standard malpan as described by the Cultural Heritage Administration via Korea.net, the Korea JoongAng Daily, and the Yunnori articles on Wikipedia. Early roots (possibly the Baekje game <i>jeopo</i>) are debated by historians &mdash; we present only what is documented.</div>
+      </div>
+    </details>
+    <div class="yut-honesty">
+      Every rule above is labeled <b>attested</b> (documented in the sources) or <b>simplified</b> (our exhibit choice). Nothing here is a guess dressed as fact &mdash; where scholars disagree, we say so.
+    </div>
+  </aside>
+</div>
+<div class="yut-modal-back" id="yut-modal-back">
+  <div class="yut-modal" role="dialog" aria-modal="true" aria-labelledby="yut-modal-title">
+    <h3 id="yut-modal-title"></h3>
+    <div class="yut-ko" id="yut-modal-ko"></div>
+    <p id="yut-modal-text"></p>
+    <div class="yut-mrow" id="yut-modal-btns"></div>
+  </div>
+</div>
+<div class="yut-toast" id="yut-toast" role="status"></div>
+<script type="module">
+/* ================================================================
+   YUT exhibit — vanilla ES6, zero external requests.
+   Sections: 1 config · 2 math · 3 GL core · 4 geometry · 5 textures
+             6 rules (verified) · 7 scene · 8 tweens · 9 game · 10 UI · 11 boot
+   ================================================================ */
+
+/* ---------- 1. Asset registry / construction config (clause 2) ----------
+   No external paths: every texture is generated procedurally at boot.
+   Absolute asset pointers are accepted here so the component mounts at any
+   site path without hardcoded relatives. */
+const YUT_ASSETS = {
+  textures: ['lacquerTop','lacquerSide','chestnut','chestnutFlat','jade','amber',
+             'ivory','felt','ground','goldInlay'],
+  note: 'all procedural — generated by YutTextures at boot; zero network use',
+};
+
+/* ---------- 2. Minimal math ---------- */
+const YM = {
+  ident() { return new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]); },
+  mul(a, b) {
+    const o = new Float32Array(16);
+    for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) {
+      o[c*4+r] = a[r]*b[c*4] + a[4+r]*b[c*4+1] + a[8+r]*b[c*4+2] + a[12+r]*b[c*4+3];
+    }
+    return o;
+  },
+  translate(x, y, z) {
+    const m = YM.ident(); m[12]=x; m[13]=y; m[14]=z; return m;
+  },
+  scale(x, y, z) {
+    const m = YM.ident(); m[0]=x; m[5]=y; m[10]=z; return m;
+  },
+  rotX(a) { const m=YM.ident(), c=Math.cos(a), s=Math.sin(a); m[5]=c; m[6]=s; m[9]=-s; m[10]=c; return m; },
+  rotY(a) { const m=YM.ident(), c=Math.cos(a), s=Math.sin(a); m[0]=c; m[2]=-s; m[8]=s; m[10]=c; return m; },
+  rotZ(a) { const m=YM.ident(), c=Math.cos(a), s=Math.sin(a); m[0]=c; m[1]=s; m[4]=-s; m[5]=c; return m; },
+  persp(fovy, asp, n, f) {
+    const t = 1/Math.tan(fovy/2), m = new Float32Array(16);
+    m[0]=t/asp; m[5]=t; m[10]=(f+n)/(n-f); m[11]=-1; m[14]=2*f*n/(n-f);
+    return m;
+  },
+  lookAt(e, c, up) {
+    const z = YM.norm([e[0]-c[0], e[1]-c[1], e[2]-c[2]]);
+    const x = YM.norm(YM.cross(up, z));
+    const y = YM.cross(z, x);
+    const m = YM.ident();
+    m[0]=x[0]; m[1]=y[0]; m[2]=z[0];
+    m[4]=x[1]; m[5]=y[1]; m[6]=z[1];
+    m[8]=x[2]; m[9]=y[2]; m[10]=z[2];
+    m[12]=-(x[0]*e[0]+x[1]*e[1]+x[2]*e[2]);
+    m[13]=-(y[0]*e[0]+y[1]*e[1]+y[2]*e[2]);
+    m[14]=-(z[0]*e[0]+z[1]*e[1]+z[2]*e[2]);
+    return m;
+  },
+  cross(a,b){ return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]; },
+  norm(v){ const l=Math.hypot(v[0],v[1],v[2])||1; return [v[0]/l,v[1]/l,v[2]/l]; },
+  normalMat3(m) { // upper 3x3 (valid: we use only rotation + uniform scale)
+    return new Float32Array([m[0],m[1],m[2], m[4],m[5],m[6], m[8],m[9],m[10]]);
+  },
+  compose(p, r, s) { // T * Rx * Ry * Rz * S
+    return YM.mul(YM.translate(p[0],p[1],p[2]),
+      YM.mul(YM.mul(YM.rotX(r[0]), YM.mul(YM.rotY(r[1]), YM.rotZ(r[2]))),
+              YM.scale(s[0],s[1],s[2])));
+  },
+  lerp(a,b,t){ return a+(b-a)*t; },
+  clamp(v,a,b){ return v<a?a:v>b?b:v; },
+};
+
+/* ---------- 3. GL core: one shared context, explicit disposal ---------- */
+const YUT_VS = `
+attribute vec3 aPos; attribute vec3 aNor; attribute vec2 aUV;
+uniform mat4 uMVP; uniform mat4 uModel; uniform mat3 uNMat;
+varying vec3 vN; varying vec3 vW; varying vec2 vUV;
+void main(){
+  vec4 w = uModel * vec4(aPos, 1.0);
+  vW = w.xyz; vN = uNMat * aNor; vUV = aUV;
+  gl_Position = uMVP * vec4(aPos, 1.0);
+}`;
+const YUT_FS = `
+precision mediump float;
+varying vec3 vN; varying vec3 vW; varying vec2 vUV;
+uniform sampler2D uTex; uniform vec3 uCam; uniform vec3 uTint;
+uniform float uSpec; uniform float uEmis;
+uniform vec3 uL1D; uniform vec3 uL1C; uniform vec3 uL2D; uniform vec3 uL2C; uniform vec3 uAmb;
+void main(){
+  vec3 N = normalize(vN);
+  vec3 V = normalize(uCam - vW);
+  vec3 alb = texture2D(uTex, vUV).rgb * uTint;
+  float d1 = max(dot(N, uL1D), 0.0);
+  float d2 = max(dot(N, uL2D), 0.0);
+  vec3 H1 = normalize(uL1D + V);
+  float s1 = pow(max(dot(N, H1), 0.0), 42.0) * uSpec;
+  vec3 H2 = normalize(uL2D + V);
+  float s2 = pow(max(dot(N, H2), 0.0), 60.0) * uSpec * 0.35;
+  vec3 col = alb * (uAmb + uL1C * d1 + uL2C * d2) + (uL1C * s1 + uL2C * s2);
+  col += alb * uEmis;
+  gl_FragColor = vec4(col, 1.0);
+}`;
+
+class YutGL {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.textures = []; this.buffers = [];
+    this.prog = null; this.attrib = {}; this.uni = {};
+    this.loseExt = null;
+  }
+  init() {
+    const gl = this.canvas.getContext('webgl', {
+      antialias: true, alpha: false, powerPreference: 'default',
+      preserveDrawingBuffer: false,
+    });
+    if (!gl) return false;
+    this.gl = gl;
+    this.loseExt = gl.getExtension('WEBGL_lose_context');
+    const vs = this.shader(gl.VERTEX_SHADER, YUT_VS);
+    const fs = this.shader(gl.FRAGMENT_SHADER, YUT_FS);
+    if (!vs || !fs) return false;
+    const prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return false;
+    this.prog = prog;
+    for (const n of ['aPos','aNor','aUV']) this.attrib[n] = gl.getAttribLocation(prog, n);
+    for (const n of ['uMVP','uModel','uNMat','uTex','uCam','uTint','uSpec','uEmis',
+                     'uL1D','uL1C','uL2D','uL2C','uAmb']) this.uni[n] = gl.getUniformLocation(prog, n);
+    gl.enable(gl.DEPTH_TEST);
+    gl.enable(gl.CULL_FACE); gl.cullFace(gl.BACK);
+    gl.clearColor(0.015, 0.01, 0.008, 1);
+    // chiaroscuro rig: warm lantern key, cool moonlit rim, low ember ambient
+    const U = this.uni;
+    gl.useProgram(prog);
+    gl.uniform3fv(U.uL1D, YM.norm([-0.45, 0.75, 0.55]));
+    gl.uniform3f(U.uL1C, 1.05, 0.80, 0.58);
+    gl.uniform3fv(U.uL2D, YM.norm([0.55, 0.30, -0.65]));
+    gl.uniform3f(U.uL2C, 0.30, 0.40, 0.58);
+    gl.uniform3f(U.uAmb, 0.17, 0.125, 0.10);
+    return true;
+  }
+  shader(type, src) {
+    const gl = this.gl, s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { gl.deleteShader(s); return null; }
+    return s;
+  }
+  makeTexture(canvas) {
+    const gl = this.gl;
+    const t = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, t);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.generateMipmap(gl.TEXTURE_2D);
+    this.textures.push(t);
+    return t;
+  }
+  makeGeo(d) {
+    const gl = this.gl;
+    const mk = (arr, size, loc) => {
+      const b = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, b);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(arr), gl.STATIC_DRAW);
+      this.buffers.push(b);
+      return { buf: b, size, loc };
+    };
+    const ib = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ib);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(d.idx), gl.STATIC_DRAW);
+    this.buffers.push(ib);
+    return {
+      pos: mk(d.pos, 3, this.attrib.aPos),
+      nor: mk(d.nor, 3, this.attrib.aNor),
+      uv: mk(d.uv, 2, this.attrib.aUV),
+      ibo: ib, count: d.idx.length,
+    };
+  }
+  draw(geo, mat, mvp, model, cam) {
+    const gl = this.gl, U = this.uni;
+    gl.uniformMatrix4fv(U.uMVP, false, mvp);
+    gl.uniformMatrix4fv(U.uModel, false, model);
+    gl.uniformMatrix3fv(U.uNMat, false, YM.normalMat3(model));
+    gl.uniform3fv(U.uCam, cam);
+    gl.uniform3fv(U.uTint, mat.tint);
+    gl.uniform1f(U.uSpec, mat.spec);
+    gl.uniform1f(U.uEmis, mat.emis || 0);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, mat.tex);
+    gl.uniform1i(U.uTex, 0);
+    for (const a of [geo.pos, geo.nor, geo.uv]) {
+      gl.bindBuffer(gl.ARRAY_BUFFER, a.buf);
+      gl.enableVertexAttribArray(a.loc);
+      gl.vertexAttribPointer(a.loc, a.size, gl.FLOAT, false, 0, 0);
+    }
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, geo.ibo);
+    gl.drawElements(gl.TRIANGLES, geo.count, gl.UNSIGNED_SHORT, 0);
+  }
+  resize(w, h) {
+    if (this.canvas.width !== w || this.canvas.height !== h) {
+      this.canvas.width = w; this.canvas.height = h;
+      this.gl.viewport(0, 0, w, h);
+    }
+  }
+  clear() { this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT); }
+  destroy() {
+    const gl = this.gl;
+    if (!gl) return;
+    try {
+      for (const b of this.buffers) gl.deleteBuffer(b);
+      for (const t of this.textures) gl.deleteTexture(t);
+      if (this.prog) gl.deleteProgram(this.prog);
+    } catch (e) { /* teardown must never throw */ }
+    this.buffers = []; this.textures = []; this.prog = null; this.gl = null;
+    if (this.loseExt) { try { this.loseExt.loseContext(); } catch (e) {} this.loseExt = null; }
+  }
+}
+
+/* ---------- 4. Geometry builders (indexed, with normals + uvs) ---------- */
+const YutGeo = {
+  plane(w, d) { // XZ plane facing +Y, centered
+    const x = w/2, z = d/2;
+    return {
+      pos: [-x,0,-z,  x,0,-z,  x,0,z,  -x,0,z],
+      nor: [0,1,0, 0,1,0, 0,1,0, 0,1,0],
+      uv: [0,0, 1,0, 1,1, 0,1],
+      idx: [0,2,1, 0,3,2],
+    };
+  },
+  box(w, h, d) {
+    const x=w/2, y=h/2, z=d/2, P=[], N=[], UV=[], I=[];
+    const face = (corners, n, uvs) => {
+      const base = P.length/3;
+      for (const c of corners) P.push(...c);
+      for (let i=0;i<4;i++){ N.push(...n); UV.push(...uvs[i]); }
+      I.push(base, base+1, base+2, base, base+2, base+3);
+    };
+    const q=[[0,0],[1,0],[1,1],[0,1]];
+    face([[-x,-y,-z],[x,-y,-z],[x,-y,z],[-x,-y,z]],[0,-1,0],q); // bottom
+    face([[-x,y,-z],[-x,y,z],[x,y,z],[x,y,-z]],[0,1,0],q);       // top
+    face([[-x,-y,-z],[-x,-y,z],[-x,y,z],[-x,y,-z]],[-1,0,0],q);   // -x
+    face([[x,-y,-z],[x,y,-z],[x,y,z],[x,-y,z]],[1,0,0],q);       // +x
+    face([[-x,-y,z],[x,-y,z],[x,y,z],[-x,y,z]],[0,0,1],q);       // +z
+    face([[-x,-y,-z],[-x,y,-z],[x,y,-z],[x,-y,-z]],[0,0,-1],q);  // -z
+    return { pos:P, nor:N, uv:UV, idx:I };
+  },
+  cylinder(rt, rb, h, seg) {
+    const P=[], N=[], UV=[], I=[];
+    const y0=-h/2, y1=h/2;
+    for (let i=0;i<=seg;i++){
+      const a=i/seg*Math.PI*2, c=Math.cos(a), s=Math.sin(a);
+      P.push(rb*c,y0,rb*s, rt*c,y1,rt*s);
+      const n=YM.norm([c,(rb-rt)/h,s]); N.push(...n,...n);
+      UV.push(i/seg,0, i/seg,1);
+    }
+    for (let i=0;i<seg;i++){ const b=i*2; I.push(b,b+1,b+3, b,b+3,b+2); }
+    const cap = (y, r, up) => {
+      const base=P.length/3;
+      P.push(0,y,0); N.push(0,up,0); UV.push(0.5,0.5);
+      for (let i=0;i<=seg;i++){
+        const a=i/seg*Math.PI*2;
+        P.push(r*Math.cos(a),y,r*Math.sin(a)); N.push(0,up,0);
+        UV.push(0.5+0.5*Math.cos(a), 0.5+0.5*Math.sin(a));
+      }
+      for (let i=0;i<seg;i++){
+        // top cap (+Y): (center, ring_{i+1}, ring_i); bottom mirrored
+        if (up>0) I.push(base, base+2+i, base+1+i);
+        else I.push(base, base+1+i, base+2+i);
+      }
+    };
+    cap(y1,rt,1); cap(y0,rb,-1);
+    return { pos:P, nor:N, uv:UV, idx:I };
+  },
+  disc(r, seg) {
+    const P=[0,0,0], N=[0,1,0], UV=[0.5,0.5], I=[];
+    for (let i=0;i<=seg;i++){
+      const a=i/seg*Math.PI*2;
+      P.push(r*Math.cos(a),0,r*Math.sin(a)); N.push(0,1,0);
+      UV.push(0.5+0.5*Math.cos(a), 0.5+0.5*Math.sin(a));
+    }
+    for (let i=0;i<seg;i++) I.push(0, 2+i, 1+i); // CCW from +Y
+    return { pos:P, nor:N, uv:UV, idx:I };
+  },
+  ring(rIn, rOut, seg) {
+    const P=[], N=[], UV=[], I=[];
+    for (let i=0;i<=seg;i++){
+      const a=i/seg*Math.PI*2, c=Math.cos(a), s=Math.sin(a);
+      P.push(rIn*c,0,rIn*s, rOut*c,0,rOut*s);
+      N.push(0,1,0, 0,1,0);
+      UV.push(i/seg,0, i/seg,1);
+    }
+    for (let i=0;i<seg;i++){ const b=i*2; I.push(b,b+2,b+1, b+1,b+2,b+3); }
+    return { pos:P, nor:N, uv:UV, idx:I };
+  },
+  // Yut stick: half-round bar along X. shell = curved top, flat = pale underside.
+  stick(len, rad, seg) {
+    const shell={pos:[],nor:[],uv:[],idx:[]}, flat={pos:[],nor:[],uv:[],idx:[]}, caps={pos:[],nor:[],uv:[],idx:[]};
+    const L=len/2;
+    for (let i=0;i<=seg;i++){
+      const t=i/seg*Math.PI, sy=Math.sin(t), cz=Math.cos(t);
+      for (const x of [-L, L]) {
+        shell.pos.push(x, rad*sy, rad*cz);
+        shell.nor.push(0, sy, cz);
+        shell.uv.push(x<0?0:1, i/seg);
+      }
+    }
+    for (let i=0;i<seg;i++){ const b=i*2; shell.idx.push(b,b+1,b+2, b+1,b+3,b+2); }
+    flat.pos.push(-L,0,-rad, L,0,-rad, L,0,rad, -L,0,rad);
+    for (let i=0;i<4;i++) flat.nor.push(0,-1,0);
+    flat.uv.push(0,0, 1,0, 1,1, 0,1);
+    flat.idx.push(0,1,2, 0,2,3);
+    for (const x of [-L, L]) {
+      const base=caps.pos.length/3, up=x>0?1:-1;
+      caps.pos.push(x,0,0); caps.nor.push(up,0,0); caps.uv.push(0.5,0.5);
+      for (let i=0;i<=seg;i++){
+        const t=i/seg*Math.PI;
+        caps.pos.push(x, rad*Math.sin(t), rad*Math.cos(t));
+        caps.nor.push(up,0,0); caps.uv.push(0.5+0.5*Math.cos(t), 0.5+0.5*Math.sin(t));
+      }
+      for (let i=0;i<seg;i++){
+        // +X cap faces +X: (center, ring_{i+1}, ring_i); -X mirrored
+        if (up>0) caps.idx.push(base, base+2+i, base+1+i);
+        else caps.idx.push(base, base+1+i, base+2+i);
+      }
+    }
+    return { shell, flat, caps };
+  },
+};
+
+/* ---------- 5. Procedural textures (canvas; zero network) ---------- */
+const YutTextures = {
+  canvas(s, h) { const c=document.createElement('canvas'); c.width=s; c.height=h||s; return c; },
+  grain(ctx, s, n, alpha) {
+    for (let i=0;i<n;i++){
+      const g=ctx.createRadialGradient(Math.random()*s, Math.random()*s, 0, Math.random()*s, Math.random()*s, 2+Math.random()*22);
+      const v=Math.random()>0.5?255:0;
+      g.addColorStop(0,`rgba(${v},${v},${v},${alpha*Math.random()})`);
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g; ctx.fillRect(0,0,s,s);
+    }
+  },
+  // Deep red-black lacquered board top, with faint gold circuit inlay,
+  // restrained cloud wisps, and dark inlay wells under each station.
+  lacquerTop(stationUV) {
+    const s=1024, c=this.canvas(s), x=c.getContext('2d');
+    const g=x.createRadialGradient(s/2,s/2,s*0.05, s/2,s/2,s*0.72);
+    g.addColorStop(0,'#4a1810'); g.addColorStop(0.45,'#2c0f0b'); g.addColorStop(1,'#120706');
+    x.fillStyle=g; x.fillRect(0,0,s,s);
+    this.grain(x,s,260,0.05);
+    // faint cloud wisps in the four quadrants (restrained, traditional vocabulary)
+    x.strokeStyle='rgba(201,162,39,0.07)'; x.lineWidth=3; x.lineCap='round';
+    const wisps=[[0.22,0.24],[0.78,0.24],[0.22,0.76],[0.78,0.76]];
+    for (const [qx,qy] of wisps){
+      for (let k=0;k<3;k++){
+        x.beginPath();
+        const bx=qx*s+(Math.random()-0.5)*60, by=qy*s+(Math.random()-0.5)*60;
+        x.moveTo(bx-46,by);
+        x.bezierCurveTo(bx-20,by-26, bx+6,by+22, bx+34,by-8);
+        x.bezierCurveTo(bx+44,by-16, bx+52,by-6, bx+58,by-12);
+        x.stroke();
+      }
+    }
+    // gold hairline circuit through the stations
+    const P=(u,v)=>[u*s,(1-v)*s];
+    x.strokeStyle='rgba(201,162,39,0.20)'; x.lineWidth=2.5;
+    const trace=(ids, close)=>{ x.beginPath(); ids.forEach((id,i)=>{ const [px,py]=P(...stationUV[id]); i?x.lineTo(px,py):x.moveTo(px,py); }); if(close) x.closePath(); x.stroke(); };
+    trace([...Array(20).keys()], true);
+    trace([0,20,21,28,22,23,10]);
+    trace([5,24,25,28,26,27,15]);
+    // dark inlay wells beneath the 3D station markers
+    for (let id=0; id<29; id++){
+      const [px,py]=P(...stationUV[id]);
+      const big=(id===28||id%5===0);
+      const r=(big?0.042:0.030)*s;
+      const rg=x.createRadialGradient(px,py,0,px,py,r);
+      rg.addColorStop(0,'rgba(0,0,0,0.55)'); rg.addColorStop(0.8,'rgba(0,0,0,0.25)'); rg.addColorStop(1,'rgba(0,0,0,0)');
+      x.fillStyle=rg; x.beginPath(); x.arc(px,py,r,0,7); x.fill();
+      x.strokeStyle='rgba(201,162,39,0.28)'; x.lineWidth=2;
+      x.beginPath(); x.arc(px,py,r*0.92,0,7); x.stroke();
+    }
+    // edge vignette
+    const v=x.createRadialGradient(s/2,s/2,s*0.42,s/2,s/2,s*0.75);
+    v.addColorStop(0,'rgba(0,0,0,0)'); v.addColorStop(1,'rgba(0,0,0,0.5)');
+    x.fillStyle=v; x.fillRect(0,0,s,s);
+    return c;
+  },
+  lacquerSide() {
+    const s=256, c=this.canvas(s,128), x=c.getContext('2d');
+    const g=x.createLinearGradient(0,0,0,128);
+    g.addColorStop(0,'#1c0d09'); g.addColorStop(1,'#0a0503');
+    x.fillStyle=g; x.fillRect(0,0,s,128);
+    x.fillStyle='rgba(201,162,39,0.10)'; x.fillRect(0,0,s,5);
+    this.grain(x,s,60,0.06);
+    return c;
+  },
+  chestnut() { // jangjak yut: chestnut wood, most commonly used (attested)
+    const s=512, c=this.canvas(s,256), x=c.getContext('2d');
+    x.fillStyle='#7d4f24'; x.fillRect(0,0,s,256);
+    for (let i=0;i<90;i++){
+      const y=Math.random()*256, w=0.6+Math.random()*2.6, dark=Math.random()>0.42;
+      x.strokeStyle=dark?`rgba(74,44,18,${0.25+Math.random()*0.3})`:`rgba(168,110,58,${0.2+Math.random()*0.25})`;
+      x.lineWidth=w; x.beginPath(); x.moveTo(-10,y);
+      x.bezierCurveTo(s*0.3,y+(Math.random()-0.5)*14, s*0.7,y+(Math.random()-0.5)*14, s+10,y+(Math.random()-0.5)*8);
+      x.stroke();
+    }
+    for (let k=0;k<3;k++){ // knots
+      const kx=Math.random()*s, ky=Math.random()*256;
+      const rg=x.createRadialGradient(kx,ky,1,kx,ky,14+Math.random()*10);
+      rg.addColorStop(0,'rgba(46,26,10,0.85)'); rg.addColorStop(0.6,'rgba(90,55,24,0.4)'); rg.addColorStop(1,'rgba(0,0,0,0)');
+      x.fillStyle=rg; x.beginPath(); x.arc(kx,ky,26,0,7); x.fill();
+    }
+    this.grain(x,s,50,0.05);
+    return c;
+  },
+  chestnutFlat() { // split face: paler inner wood
+    const s=256, c=this.canvas(s), x=c.getContext('2d');
+    x.fillStyle='#c8985c'; x.fillRect(0,0,s,s);
+    for (let i=0;i<60;i++){
+      const y=Math.random()*s;
+      x.strokeStyle=`rgba(140,95,45,${0.18+Math.random()*0.22})`;
+      x.lineWidth=0.8+Math.random()*1.6; x.beginPath(); x.moveTo(0,y); x.lineTo(s,y+(Math.random()-0.5)*10); x.stroke();
+    }
+    this.grain(x,s,40,0.04);
+    return c;
+  },
+  jade() {
+    const s=256, c=this.canvas(s), x=c.getContext('2d');
+    x.fillStyle='#17714f'; x.fillRect(0,0,s,s);
+    for (let i=0;i<46;i++){
+      const bx=Math.random()*s, by=Math.random()*s, r=8+Math.random()*30;
+      const g=x.createRadialGradient(bx,by,0,bx,by,r);
+      const light=Math.random()>0.5;
+      g.addColorStop(0, light?'rgba(140,220,180,0.20)':'rgba(8,50,36,0.28)');
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      x.fillStyle=g; x.beginPath(); x.arc(bx,by,r,0,7); x.fill();
+    }
+    x.strokeStyle='rgba(200,240,220,0.10)'; x.lineWidth=1.2;
+    for (let i=0;i<12;i++){ // faint veins
+      x.beginPath(); let vx=Math.random()*s, vy=Math.random()*s; x.moveTo(vx,vy);
+      for (let k=0;k<4;k++){ vx+=(Math.random()-0.5)*70; vy+=(Math.random()-0.5)*70; x.lineTo(vx,vy); }
+      x.stroke();
+    }
+    return c;
+  },
+  amber() {
+    const s=256, c=this.canvas(s), x=c.getContext('2d');
+    x.fillStyle='#9c4d10'; x.fillRect(0,0,s,s);
+    for (let i=0;i<40;i++){
+      const bx=Math.random()*s, by=Math.random()*s, r=10+Math.random()*34;
+      const g=x.createRadialGradient(bx,by,0,bx,by,r);
+      g.addColorStop(0,'rgba(255,190,110,0.28)'); g.addColorStop(1,'rgba(0,0,0,0)');
+      x.fillStyle=g; x.beginPath(); x.arc(bx,by,r,0,7); x.fill();
+    }
+    for (let i=0;i<26;i++){
+      const bx=Math.random()*s, by=Math.random()*s, r=6+Math.random()*20;
+      const g=x.createRadialGradient(bx,by,0,bx,by,r);
+      g.addColorStop(0,'rgba(70,30,6,0.30)'); g.addColorStop(1,'rgba(0,0,0,0)');
+      x.fillStyle=g; x.beginPath(); x.arc(bx,by,r,0,7); x.fill();
+    }
+    return c;
+  },
+  ivory() {
+    const s=128, c=this.canvas(s), x=c.getContext('2d');
+    x.fillStyle='#e6d9bc'; x.fillRect(0,0,s,s);
+    this.grain(x,s,36,0.05);
+    const g=x.createRadialGradient(s/2,s/2,4,s/2,s/2,s/2);
+    g.addColorStop(0,'rgba(255,250,235,0.35)'); g.addColorStop(1,'rgba(120,95,60,0.25)');
+    x.fillStyle=g; x.fillRect(0,0,s,s);
+    return c;
+  },
+  felt() {
+    const s=256, c=this.canvas(s), x=c.getContext('2d');
+    x.fillStyle='#232833'; x.fillRect(0,0,s,s);
+    for (let y=0;y<s;y+=3) for (let xx=0;xx<s;xx+=3){
+      x.fillStyle=`rgba(${Math.random()>0.5?255:0},${Math.random()>0.5?255:0},${Math.random()>0.5?255:0},0.03)`;
+      x.fillRect(xx,y,2,2);
+    }
+    const g=x.createRadialGradient(s/2,s/2,10,s/2,s/2,s*0.7);
+    g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(1,'rgba(0,0,0,0.45)');
+    x.fillStyle=g; x.fillRect(0,0,s,s);
+    return c;
+  },
+  ground() {
+    const s=512, c=this.canvas(s), x=c.getContext('2d');
+    const g=x.createRadialGradient(s/2,s*0.42,20, s/2,s/2,s*0.55);
+    g.addColorStop(0,'#2b1c11'); g.addColorStop(0.5,'#120b07'); g.addColorStop(1,'#050302');
+    x.fillStyle=g; x.fillRect(0,0,s,s);
+    this.grain(x,s,120,0.05);
+    return c;
+  },
+};
+
+/* ---------- 6. Rules engine (verified in Node: 300 simulated games) ---------- */
+// YutRules — pure, dependency-free game logic.
+// Board model (verified 29-station malpan):
+//   outer circuit: stations 0..19, corners at 0, 5, 10, 15
+//   diagonal A: 0 — 20 — 21 — 28 — 22 — 23 — 10
+//   diagonal B: 5 — 24 — 25 — 28 — 26 — 27 — 15
+// Movement is forward-only (no immediate reversal). Forks:
+//   - a move BEGINNING on a corner offers outer vs diagonal (attested: landing
+//     on a corner lets the team choose the shorter way next move);
+//   - departing the center (28) offers every non-backtracking exit
+//     (standard casual rule; flagged as a house-rule variation in the exhibit);
+//   - passing through a corner mid-move takes the longer (outer) way (attested).
+
+const STATIONS = 29;
+const CENTER = 28;
+const CORNERS = [0, 5, 10, 15];
+const TOKENS_PER_SIDE = 2; // exhibit simplification; traditional teams use 4
+
+const THROWS = {
+  do:   { flats: 1, steps: 1, ko: '도', roman: 'do',   animal: 'pig',   bonus: false },
+  gae:  { flats: 2, steps: 2, ko: '개', roman: 'gae',  animal: 'dog',   bonus: false },
+  geol: { flats: 3, steps: 3, ko: '걸', roman: 'geol', animal: 'sheep', bonus: false },
+  yut:  { flats: 4, steps: 4, ko: '윷', roman: 'yut',  animal: 'cow',   bonus: true  },
+  mo:   { flats: 0, steps: 5, ko: '모', roman: 'mo',   animal: 'horse', bonus: true  },
+};
+
+function throwNameForFlats(flats) {
+  for (const k of Object.keys(THROWS)) if (THROWS[k].flats === flats) return k;
+  return null;
+}
+
+// Undirected adjacency of the 29-station malpan.
+function buildNeighbors() {
+  const n = {};
+  for (let i = 0; i < 20; i++) n[i] = [(i + 19) % 20, (i + 1) % 20];
+  n[0].push(20); n[5].push(24); n[10].push(23); n[15].push(27);
+  n[20] = [0, 21]; n[21] = [20, 28]; n[22] = [28, 23]; n[23] = [22, 10];
+  n[24] = [5, 25]; n[25] = [24, 28]; n[26] = [28, 27]; n[27] = [26, 15];
+  n[28] = [21, 22, 25, 26];
+  return n;
+}
+
+const DIAG_FIRST = { 0: 20, 5: 24, 10: 23, 15: 27 }; // corner -> first diagonal station
+const OUTER_NEXT = (s) => (s + 1) % 20;
+
+function isCorner(s) { return s === 0 || s === 5 || s === 10 || s === 15; }
+
+// Previous station implied at move start (no history needed on the outer track).
+function startPrev(token) {
+  const s = token.station;
+  if (s === null || s === undefined) return null;
+  if (isCorner(s)) return null; // fork choice state
+  if (s === CENTER) return token.prev === undefined ? null : token.prev;
+  if (s < 20) return (s + 19) % 20; // outer track: always came from behind
+  return token.prev === undefined ? null : token.prev; // diagonal mid: stored
+}
+
+// Walk `steps` from (start, prev). choices: {corner:'outer'|'diag', center: stationId}.
+// The center choice is consumed when the walk departs 28 (at most once per move).
+// Returns {ok, dest, finish, path, needCenter:{arrivedFrom, pathSoFar, stepsLeft}}.
+function tracePath(nb, start, prev, steps, choices) {
+  const ch = { corner: 'outer', center: null, ...(choices || {}) };
+  let cur = start, p = prev;
+  const path = [start];
+  for (let i = 1; i <= steps; i++) {
+    let nxt;
+    if (cur === CENTER) {
+      const exits = nb[CENTER].filter((x) => x !== p);
+      if (ch.center === null || ch.center === undefined) {
+        return { ok: true, needCenter: true, arrivedFrom: p, pathSoFar: path.slice(), stepsLeft: steps - i + 1 };
+      }
+      if (!exits.includes(ch.center)) return { ok: false, reason: 'bad-center-choice' };
+      nxt = ch.center;
+    } else if (isCorner(cur) && i === 1 && p === null) {
+      nxt = ch.corner === 'diag' ? DIAG_FIRST[cur] : OUTER_NEXT(cur);
+    } else if (isCorner(cur)) {
+      nxt = OUTER_NEXT(cur); // passing through a corner: the longer (outer) way
+    } else if (cur < 20) {
+      nxt = OUTER_NEXT(cur); // outer track: always forward
+    } else {
+      const opts = nb[cur].filter((x) => x !== p);
+      if (opts.length !== 1) return { ok: false, reason: 'bad-prev' };
+      nxt = opts[0]; // diagonal mid: continue straight (never reverse)
+    }
+    if (nxt === 0) {
+      if (i < steps) return { ok: false, reason: 'overshoot' };
+      return { ok: true, dest: null, finish: true, path };
+    }
+    p = cur; cur = nxt; path.push(cur);
+  }
+  return { ok: true, dest: cur, finish: false, path };
+}
+
+// Minimum steps to bear off from each station (free choice at every fork).
+function buildDistances(nb) {
+  // states: `${s}|${p}` with p in neighbors(s) or null (corners only)
+  const key = (s, p) => s + '|' + (p === null || p === undefined ? 'null' : p);
+  const GOAL = 'GOAL';
+  const rev = new Map(); // state -> [predecessor states]
+  const addRev = (to, from) => { if (!rev.has(to)) rev.set(to, []); rev.get(to).push(from); };
+  const trans = (s, p) => {
+    // one-step transitions from state (s,p): list of {to: stateKey} or {goal:true}
+    const out = [];
+    const step = (nxt, np) => {
+      if (nxt === 0) out.push({ goal: true });
+      else out.push({ to: key(nxt, np === undefined ? s : np) });
+    };
+    if (s === CENTER) {
+      for (const e of nb[CENTER].filter((x) => x !== p)) step(e, s);
+    } else if (isCorner(s) && p === null) {
+      step(OUTER_NEXT(s), s); step(DIAG_FIRST[s], s);
+    } else if (isCorner(s)) {
+      step(OUTER_NEXT(s), s);
+    } else if (s < 20) {
+      step(OUTER_NEXT(s), s);
+    } else {
+      const opts = nb[s].filter((x) => x !== p);
+      if (opts.length === 1) step(opts[0], s);
+    }
+    return out;
+  };
+  const allP = (s) => isCorner(s) ? [null, ...nb[s]] : nb[s];
+  for (let s = 0; s < STATIONS; s++) {
+    for (const p of allP(s)) {
+      const ks = key(s, p);
+      for (const t of trans(s, p)) {
+        if (t.goal) addRev(GOAL, ks);
+        else addRev(t.to, ks);
+      }
+    }
+  }
+  const dist = new Map([[GOAL, 0]]);
+  const q = [GOAL];
+  while (q.length) {
+    const cur = q.shift();
+    for (const pre of rev.get(cur) || []) {
+      if (!dist.has(pre)) { dist.set(pre, dist.get(cur) + 1); q.push(pre); }
+    }
+  }
+  const perStation = new Array(STATIONS).fill(Infinity);
+  for (let s = 0; s < STATIONS; s++) {
+    for (const p of allP(s)) {
+      const d = dist.get(key(s, p));
+      if (d !== undefined && d < perStation[s]) perStation[s] = d;
+    }
+  }
+  return { perStation, stateDist: dist, enterDist: dist.get(key(0, null)) };
+}
+
+function newState() {
+  const mk = (side) => [
+    { id: side + '-1', side, station: null, prev: null, borne: false },
+    { id: side + '-2', side, station: null, prev: null, borne: false },
+  ];
+  return { tokens: { human: mk('human'), ai: mk('ai') }, turn: 'human', bonusThrows: 0, winner: null, moveCount: 0 };
+}
+
+function other(side) { return side === 'human' ? 'ai' : 'human'; }
+
+function snapshot(state) {
+  return JSON.parse(JSON.stringify({
+    tokens: state.tokens, turn: state.turn,
+    bonusThrows: state.bonusThrows, winner: state.winner, moveCount: state.moveCount,
+  }));
+}
+function restore(state, snap) {
+  state.tokens = snap.tokens; state.turn = snap.turn;
+  state.bonusThrows = snap.bonusThrows; state.winner = snap.winner; state.moveCount = snap.moveCount;
+}
+
+function centerExits(nb, arrivedFrom) { return nb[CENTER].filter((x) => x !== arrivedFrom); }
+
+// Fully-specified legal moves for `side` with a throw of `steps`.
+// Each move: {tokenId, from, prev, type, dest, finish, steps, cornerChoice, centerChoice, path}
+function legalMoves(nb, state, side, steps) {
+  const moves = [];
+  const seen = new Set();
+  const push = (m) => {
+    const k = `${m.type}|${m.from}|${m.prev}|${m.cornerChoice}|${m.centerChoice}|${m.dest}|${m.finish}`;
+    if (seen.has(k)) return;
+    seen.add(k);
+    moves.push(m);
+  };
+  for (const t of state.tokens[side]) {
+    if (t.borne) continue;
+    if (t.station === null) {
+      push({ tokenId: t.id, from: null, prev: null, type: 'enter', dest: 0, finish: false, steps, cornerChoice: null, centerChoice: null, path: [0] });
+      continue;
+    }
+    const from = t.station;
+    const prev = startPrev(t);
+    const cornerOpts = isCorner(from) ? ['outer', 'diag'] : [null];
+    for (const cc of cornerOpts) {
+      const r1 = tracePath(nb, from, prev, steps, { corner: cc || 'outer' });
+      if (!r1.ok) continue;
+      if (r1.needCenter) {
+        for (const exit of centerExits(nb, r1.arrivedFrom)) {
+          const r2 = tracePath(nb, CENTER, r1.arrivedFrom, r1.stepsLeft, { center: exit });
+          if (!r2.ok || r2.needCenter) continue; // center visited twice: not expected
+          push({
+            tokenId: t.id, from, prev, type: 'move', dest: r2.dest, finish: r2.finish, steps,
+            cornerChoice: cc, centerChoice: exit, path: r1.pathSoFar.concat(r2.path.slice(1)),
+          });
+        }
+      } else {
+        push({
+          tokenId: t.id, from, prev, type: 'move', dest: r1.dest, finish: r1.finish, steps,
+          cornerChoice: cc, centerChoice: null, path: r1.path,
+        });
+      }
+    }
+  }
+  return moves;
+}
+
+// Neutrality/validity gate (clause 7): accept only moves present in the legal set.
+function validateMove(nb, state, side, move, steps) {
+  if (!move || typeof move !== 'object') return { ok: false, reason: 'malformed move' };
+  const legal = legalMoves(nb, state, side, steps);
+  const key = (m) => `${m.type}|${m.from}|${m.prev}|${m.cornerChoice}|${m.centerChoice}|${m.dest}|${m.finish}`;
+  const hit = legal.find((m) => key(m) === key(move));
+  if (!hit) return { ok: false, reason: 'move not in legal set' };
+  return { ok: true, move: hit };
+}
+
+// Apply a validated move (the forward() half; caller keeps snapshot() as reverse()).
+// Moves the whole stack at `from`; captures foes at dest (+bonus); exact finish bears off.
+function applyMove(nb, state, side, move) {
+  const foe = other(side);
+  const ev = { captured: [], finished: [], stacked: 0, bonus: false, path: move.path || [] };
+  let moving;
+  if (move.type === 'enter') {
+    const t = state.tokens[side].find((x) => !x.borne && x.station === null);
+    if (!t) throw new Error('applyMove: no token to enter');
+    t.station = 0; t.prev = null;
+    moving = [t];
+  } else {
+    moving = state.tokens[side].filter((x) => !x.borne && x.station === move.from);
+    if (!moving.length) throw new Error('applyMove: no token at from-station');
+  }
+  if (move.finish) {
+    for (const t of moving) { t.station = null; t.prev = null; t.borne = true; ev.finished.push(t.id); }
+  } else {
+    const dest = move.dest;
+    for (const f of state.tokens[foe]) {
+      if (!f.borne && f.station === dest) { f.station = null; f.prev = null; ev.captured.push(f.id); }
+    }
+    if (ev.captured.length) ev.bonus = true;
+    ev.stacked = state.tokens[side].filter((t) => !t.borne && t.station === dest && !moving.includes(t)).length;
+    const path = move.path || [move.from, dest];
+    const newPrev = path.length >= 2 ? path[path.length - 2] : move.from;
+    for (const t of moving) { t.station = dest; t.prev = newPrev; }
+  }
+  state.moveCount++;
+  if (state.tokens[side].every((t) => t.borne)) state.winner = side;
+  return ev;
+}
+
+function raceScore(dist, state, side) {
+  let s = 0;
+  for (const t of state.tokens[side]) {
+    if (t.borne) continue;
+    s += t.station === null ? dist.enterDist + 1 : dist.perStation[t.station];
+  }
+  return s;
+}
+
+// Heuristic AI: bear off > capture > stack for safety > shortcut when ahead > progress.
+function scoreMove(nb, dist, state, side, move) {
+  const foe = other(side);
+  let s = Math.random() * 4;
+  if (move.finish) return 10000 + s;
+  const dest = move.dest;
+  const foesAt = state.tokens[foe].filter((t) => !t.borne && t.station === dest).length;
+  if (foesAt) s += 4000 + 1200 * foesAt;
+  const ownAt = state.tokens[side].filter((t) => !t.borne && t.station === dest).length;
+  if (ownAt && !foesAt) s += 900 + 400 * ownAt;
+  if (move.type === 'enter') s += 60;
+  if (dest < 20) {
+    for (const f of state.tokens[foe]) {
+      if (f.borne || f.station === null || f.station >= 20) continue;
+      const gap = (dest - f.station + 20) % 20;
+      if (gap >= 1 && gap <= 5) { s -= 700; break; }
+    }
+  }
+  const ahead = raceScore(dist, state, side) < raceScore(dist, state, foe);
+  if (move.cornerChoice === 'diag') s += ahead ? 500 : 120;
+  if (move.from !== null && dest !== null) {
+    const d0 = dist.perStation[move.from], d1 = dist.perStation[dest];
+    if (isFinite(d0) && isFinite(d1)) s += (d0 - d1) * 6;
+  }
+  return s;
+}
+
+function chooseAiMove(nb, dist, state, side, steps) {
+  const moves = legalMoves(nb, state, side, steps);
+  if (!moves.length) return null;
+  let best = moves[0], bestS = -Infinity;
+  for (const m of moves) {
+    const s = scoreMove(nb, dist, state, side, m);
+    if (s > bestS) { bestS = s; best = m; }
+  }
+  return best;
+}
+
+// Fair sticks: each stick independently 50/50 flat/round (simplified uniform chance).
+function castSticks(rand) {
+  const r = rand || Math.random;
+  const flats = [r() < 0.5, r() < 0.5, r() < 0.5, r() < 0.5];
+  const n = flats.filter(Boolean).length;
+  const name = throwNameForFlats(n);
+  return { ...THROWS[name], flats, count: n, name };
+}
+
+/* ---------- 7. Easing + tween driver (séance pacing) ---------- */
+const YutEase = {
+  linear: (k) => k,
+  inOut: (k) => k < 0.5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2,
+  out: (k) => 1 - Math.pow(1 - k, 3),
+  outBack: (k) => { const c = 1.70158; return 1 + (c+1)*Math.pow(k-1,3) + c*Math.pow(k-1,2); },
+  hop: (k) => Math.sin(k * Math.PI), // arc height envelope
+};
+
+class YutTweens {
+  constructor() { this.list = []; this.reduced = false; }
+  add(dur, ease, update, done) {
+    if (this.reduced || dur <= 0) { update(1); if (done) done(); return null; }
+    const tw = { t: 0, dur, ease, update, done };
+    this.list.push(tw);
+    return tw;
+  }
+  wait(ms, done) { return this.add(ms, YutEase.linear, () => {}, done); }
+  step(dt) {
+    for (let i = this.list.length - 1; i >= 0; i--) {
+      const tw = this.list[i];
+      tw.t += dt;
+      const k = Math.min(1, tw.t / tw.dur);
+      try { tw.update(tw.ease(k), k); } catch (e) { /* guarded: a failed frame never kills the loop */ }
+      if (k >= 1) { this.list.splice(i, 1); if (tw.done) { try { tw.done(); } catch (e) {} } }
+    }
+  }
+  clear() { this.list.length = 0; }
+  get busy() { return this.list.length > 0; }
+}
+
+/* ---------- 8. Scene: the malpan in lacquer, wood, jade and amber ---------- */
+const YUT_BOARD_H = 1.55; // half-size of the outer square
+
+function yutStationPos(id) {
+  const H = YUT_BOARD_H;
+  const C = { 0: [-H, H], 5: [H, H], 10: [H, -H], 15: [-H, -H] }; // (x, z); front = +z
+  const ctr = [0, 0];
+  const lerp2 = (a, b, t) => [a[0] + (b[0]-a[0])*t, a[1] + (b[1]-a[1])*t];
+  if (id < 20) {
+    const corners = [0, 5, 10, 15];
+    const side = Math.floor(id / 5), k = id % 5;
+    return lerp2(C[corners[side]], C[corners[(side+1)%4]], k / 5);
+  }
+  if (id === 20) return lerp2(C[0], ctr, 1/3);
+  if (id === 21) return lerp2(C[0], ctr, 2/3);
+  if (id === 22) return lerp2(ctr, C[10], 1/3);
+  if (id === 23) return lerp2(ctr, C[10], 2/3);
+  if (id === 24) return lerp2(C[5], ctr, 1/3);
+  if (id === 25) return lerp2(C[5], ctr, 2/3);
+  if (id === 26) return lerp2(ctr, C[15], 1/3);
+  if (id === 27) return lerp2(ctr, C[15], 2/3);
+  return ctr; // 28
+}
+
+function yutStationUV() {
+  // world (x,z) in [-H-pad, H+pad] -> uv; board top spans [-2.1, 2.1]
+  const B = 2.1, uv = {};
+  for (let id = 0; id < 29; id++) {
+    const [x, z] = yutStationPos(id);
+    uv[id] = [(x + B) / (2*B), (z + B) / (2*B)];
+  }
+  return uv;
+}
+
+class YutScene {
+  constructor(gl, tweens, opts) {
+    this.gl = gl; this.tw = tweens;
+    this.opts = opts; // {reducedMotion, lowPoly}
+    this.nodes = [];   // scene graph roots
+    this.drawables = []; // flat list {geo, mat, node}
+    this.geos = {}; this.mats = {};
+    this.tokenNodes = {}; // tokenId -> node
+    this.stickNodes = []; // 4 stick groups
+    this.markerY = 0.028;
+    this.cam = { yaw: 0, pitch: 0, dist: 7.9, target: [0, 0, 0.55], sway: 0 };
+    this.selectRing = null;
+  }
+  mat(name, tex, tint, spec, emis) {
+    this.mats[name] = { tex, tint, spec, emis: emis || 0 };
+    return this.mats[name];
+  }
+  node(parent, p, r, s) {
+    const n = { p: p||[0,0,0], r: r||[0,0,0], s: s||[1,1,1], meshes: [], kids: [], parent: parent||null, name: '' };
+    (parent ? parent.kids : this.nodes).push(n);
+    return n;
+  }
+  mesh(node, geoName, matName) {
+    const d = { geo: this.geos[geoName], mat: this.mats[matName], node };
+    node.meshes.push(d); this.drawables.push(d);
+    return d;
+  }
+  build() {
+    const seg = this.opts.lowPoly ? 10 : 18;
+    const tseg = this.opts.lowPoly ? 14 : 24;
+    // geometries
+    this.geos.boardTop = this.gl.makeGeo(YutGeo.plane(4.2, 4.2));
+    this.geos.sideFB = this.gl.makeGeo(YutGeo.box(4.2, 0.3, 0.08));
+    this.geos.sideLR = this.gl.makeGeo(YutGeo.box(0.08, 0.3, 4.2));
+    this.geos.ground = this.gl.makeGeo(YutGeo.plane(34, 34));
+    this.geos.mat = this.gl.makeGeo(YutGeo.box(3.5, 0.12, 1.6));
+    this.geos.discS = this.gl.makeGeo(YutGeo.disc(0.085, tseg));
+    this.geos.discB = this.gl.makeGeo(YutGeo.disc(0.135, tseg));
+    this.geos.ringB = this.gl.makeGeo(YutGeo.ring(0.15, 0.175, tseg));
+    this.geos.token = this.gl.makeGeo(YutGeo.cylinder(0.125, 0.135, 0.075, tseg));
+    this.geos.tokenRing = this.gl.makeGeo(YutGeo.ring(0.085, 0.115, tseg));
+    this.geos.dish = this.gl.makeGeo(YutGeo.cylinder(0.42, 0.34, 0.10, tseg));
+    const stick = YutGeo.stick(1.15, 0.088, seg);
+    this.geos.stickShell = this.gl.makeGeo(stick.shell);
+    this.geos.stickFlat = this.gl.makeGeo(stick.flat);
+    this.geos.stickCaps = this.gl.makeGeo(stick.caps);
+    this.geos.selRing = this.gl.makeGeo(YutGeo.ring(0.16, 0.20, tseg));
+    // textures
+    const T = YutTextures, gl = this.gl;
+    const tLacTop = gl.makeTexture(T.lacquerTop(yutStationUV()));
+    const tLacSide = gl.makeTexture(T.lacquerSide());
+    const tWood = gl.makeTexture(T.chestnut());
+    const tWoodFlat = gl.makeTexture(T.chestnutFlat());
+    const tJade = gl.makeTexture(T.jade());
+    const tAmber = gl.makeTexture(T.amber());
+    const tIvory = gl.makeTexture(T.ivory());
+    const tFelt = gl.makeTexture(T.felt());
+    const tGround = gl.makeTexture(T.ground());
+    // materials: [tex, tint, spec, emissive]
+    this.mat('lacTop', tLacTop, [1,1,1], 0.85);
+    this.mat('lacSide', tLacSide, [1,1,1], 0.5);
+    this.mat('wood', tWood, [1,1,1], 0.38);
+    this.mat('woodFlat', tWoodFlat, [1,1,1], 0.22);
+    this.mat('jade', tJade, [1,1,1], 0.65);
+    this.mat('amber', tAmber, [1,1,1], 0.55);
+    this.mat('ivory', tIvory, [1,1,1], 0.25);
+    this.mat('felt', tFelt, [1,1,1], 0.04);
+    this.mat('ground', tGround, [1,1,1], 0.0);
+    this.mat('gold', tIvory, [0.79,0.62,0.22], 0.9);
+    this.mat('dish', tLacSide, [0.9,0.85,0.8], 0.4);
+    this.buildBoard();
+    this.buildSticks();
+    this.buildTokens();
+    this.buildDishes();
+    // selection ring (reused)
+    const rn = this.node(null, [0,-10,0]);
+    this.mesh(rn, 'selRing', 'gold');
+    this.selectRing = rn;
+  }
+  buildBoard() {
+    // ground
+    const g = this.node(null, [0, -0.34, 0]);
+    this.mesh(g, 'ground', 'ground');
+    // board slab: lacquered top + four sides (thin boxes: no normal headaches)
+    const top = this.node(null, [0, 0, 0]);
+    this.mesh(top, 'boardTop', 'lacTop');
+    const e = 2.1 - 0.04;
+    for (const [geo, p] of [['sideFB', [0,-0.15, e]], ['sideFB', [0,-0.15,-e]],
+                            ['sideLR', [ e,-0.15,0]], ['sideLR', [-e,-0.15,0]]]) {
+      const n = this.node(null, p);
+      this.mesh(n, geo, 'lacSide');
+    }
+    // station markers: ivory discs; corners + center larger with gold rings
+    for (let id = 0; id < 29; id++) {
+      const [x, z] = yutStationPos(id);
+      const big = (id === 28 || id % 5 === 0);
+      const n = this.node(null, [x, this.markerY, z]);
+      this.mesh(n, big ? 'discB' : 'discS', 'ivory');
+      if (big) {
+        const r = this.node(null, [x, this.markerY + 0.004, z]);
+        this.mesh(r, 'ringB', 'gold');
+      }
+    }
+    // throw mat (felt) in front of the board
+    const m = this.node(null, [0, -0.28, 3.15]);
+    this.mesh(m, 'mat', 'felt');
+  }
+  buildSticks() {
+    this.stickNodes = [];
+    for (let i = 0; i < 4; i++) {
+      const n = this.node(null, [-1.28 + i * 0.84, -0.13, 3.15]);
+      this.mesh(n, 'stickShell', 'wood');
+      this.mesh(n, 'stickFlat', 'woodFlat');
+      this.mesh(n, 'stickCaps', 'wood');
+      n.name = 'stick' + i;
+      this.stickNodes.push(n);
+    }
+  }
+  buildTokens() {
+    const defs = [
+      ['human-1','jade',0], ['human-2','jade',1],
+      ['ai-1','amber',0], ['ai-2','amber',1],
+    ];
+    for (const [id, mname, slot] of defs) {
+      const n = this.node(null, [0, 0.2, 0]);
+      this.mesh(n, 'token', mname);
+      const ring = this.node(n, [0, 0.039, 0]);
+      this.mesh(ring, 'tokenRing', 'gold');
+      n.name = id;
+      this.tokenNodes[id] = n;
+      n.userSlot = slot;
+    }
+  }
+  buildDishes() {
+    // waiting dishes for off-board mals; home crescent behind the board
+    this.dishPos = { human: [-3.05, 0, 2.35], ai: [3.05, 0, 2.35] };
+    for (const side of ['human','ai']) {
+      const n = this.node(null, [this.dishPos[side][0], -0.29, this.dishPos[side][2]]);
+      this.mesh(n, 'dish', 'dish');
+    }
+    this.homePos = { human: [-0.85, 0, -2.95], ai: [0.85, 0, -2.95] };
+  }
+  /* ----- placement helpers ----- */
+  tokenRest(token, stackIdx) {
+    // world position for a token given logical state
+    if (token.borne) {
+      const h = this.homePos[token.side];
+      const k = token.side === 'human' ? (token.id.endsWith('1') ? 0 : 1) : (token.id.endsWith('1') ? 0 : 1);
+      return [h[0] + (k === 0 ? -0.22 : 0.22), 0.10, h[2]];
+    }
+    if (token.station === null) {
+      const d = this.dishPos[token.side];
+      const k = token.id.endsWith('1') ? 0 : 1;
+      return [d[0] + (k === 0 ? -0.16 : 0.16), -0.20, d[2]];
+    }
+    const [x, z] = yutStationPos(token.station);
+    return [x, 0.075 + stackIdx * 0.082, z];
+  }
+  setTokenTransform(node, pos, opts) {
+    node.p = [pos[0], pos[1], pos[2]];
+    if (opts && opts.spinY !== undefined) node.r[1] = opts.spinY;
+  }
+  /* ----- stick throw animation ----- */
+  animateThrow(flats, done) {
+    // flats: [bool x4] — true = flat side up
+    const tw = this.tw;
+    const spots = [];
+    for (let i = 0; i < 4; i++) {
+      // rest pose: lying on the felt mat (mat top y=-0.22, stick radius 0.088)
+      spots.push([-1.28 + i * 0.84 + (Math.random()-0.5)*0.14, -0.13, 3.15 + (Math.random()-0.5)*0.5]);
+    }
+    const targetRotX = flats.map((f) => (f ? Math.PI : 0) + (Math.random()-0.5)*0.14);
+    const targetRotY = flats.map(() => (Math.random()-0.5) * 0.5);
+    let pending = 4;
+    const oneDone = () => { if (--pending === 0 && done) done(); };
+    if (this.opts.reducedMotion) {
+      for (let i = 0; i < 4; i++) {
+        const n = this.stickNodes[i];
+        n.p = spots[i].slice(); n.r = [targetRotX[i], targetRotY[i], 0];
+      }
+      for (let i = 0; i < 4; i++) oneDone();
+      return;
+    }
+    for (let i = 0; i < 4; i++) {
+      const n = this.stickNodes[i];
+      tw.wait(i * 0.11, () => {
+        const p0 = [-0.4 + i * 0.27, 1.5 + Math.random()*0.3, 2.45];
+        const p1 = spots[i];
+        const apex = [(p0[0]+p1[0])/2 + (Math.random()-0.5)*0.6, 2.1 + Math.random()*0.5, (p0[2]+p1[2])/2];
+        const spins = 2 + Math.floor(Math.random()*2);
+        const r0x = Math.random()*Math.PI*2, r0y = Math.random()*Math.PI*2;
+        const dur = 0.95 + Math.random()*0.25;
+        n.p = p0.slice(); n.r = [r0x, r0y, 0];
+        tw.add(dur, YutEase.linear, (e, k) => {
+          let px, py, pz;
+          if (k < 0.45) {
+            const q = YutEase.out(k/0.45);
+            px = YM.lerp(p0[0], apex[0], q); py = YM.lerp(p0[1], apex[1], q); pz = YM.lerp(p0[2], apex[2], q);
+          } else {
+            const q = (k-0.45)/0.55;
+            px = YM.lerp(apex[0], p1[0], q); pz = YM.lerp(apex[2], p1[2], q);
+            const fall = YutEase.out(q);
+            py = YM.lerp(apex[1], p1[1], fall) + (q < 0.85 ? 0 : Math.sin((q-0.85)/0.15*Math.PI)*0.10*(1-q));
+          }
+          n.p = [px, py, pz];
+          const rk = YutEase.out(k);
+          n.r = [(YM.lerp(r0x, targetRotX[i] + spins*Math.PI*2, rk)) % (Math.PI*2),
+                 YM.lerp(r0y, targetRotY[i], rk), 0];
+        }, oneDone);
+      });
+    }
+  }
+  setSticksRest(flats) {
+    for (let i = 0; i < 4; i++) {
+      const n = this.stickNodes[i];
+      n.p = [-1.28 + i * 0.84, -0.13, 3.15];
+      n.r = [flats[i] ? Math.PI : 0, 0, 0];
+    }
+  }
+  /* ----- token movement ----- */
+  animateTokenPath(tokenIds, path, done) {
+    // path: [stationIds...] including start; hop each step
+    const tw = this.tw;
+    if (this.opts.reducedMotion || path.length < 2) { if (done) done(); return; }
+    const hops = [];
+    for (let i = 0; i < path.length - 1; i++) hops.push([path[i], path[i+1]]);
+    let hi = 0;
+    const stepHop = () => {
+      if (hi >= hops.length) { if (done) done(); return; }
+      const [, b] = hops[hi];
+      const [bx, bz] = yutStationPos(b);
+      const movers = tokenIds.map((id) => this.tokenNodes[id]);
+      const p0s = movers.map((m) => m.p.slice());
+      // stack offsets preserved by relative y
+      tw.add(0.24, YutEase.inOut, (e) => {
+        for (let j = 0; j < movers.length; j++) {
+          const p0 = p0s[j];
+          movers[j].p = [YM.lerp(p0[0], bx, e), YM.lerp(p0[1], 0.075 + j*0.082, e) + YutEase.hop(e)*0.34, YM.lerp(p0[2], bz, e)];
+        }
+      }, () => { hi++; stepHop(); });
+    };
+    stepHop();
+  }
+  flyTokensTo(tokenIds, destFn, done) {
+    const tw = this.tw;
+    const movers = tokenIds.map((id) => this.tokenNodes[id]);
+    if (this.opts.reducedMotion) {
+      movers.forEach((m, j) => { const d = destFn(j); m.p = [d[0], d[1], d[2]]; });
+      if (done) done(); return;
+    }
+    let pending = movers.length;
+    movers.forEach((m, j) => {
+      const p0 = m.p.slice(), p1 = destFn(j);
+      const apex = [(p0[0]+p1[0])/2, Math.max(p0[1], p1[1]) + 1.1, (p0[2]+p1[2])/2];
+      tw.add(0.7, YutEase.linear, (e, k) => {
+        let x, y, z;
+        if (k < 0.5) { const q=YutEase.out(k*2); x=YM.lerp(p0[0],apex[0],q); y=YM.lerp(p0[1],apex[1],q); z=YM.lerp(p0[2],apex[2],q); }
+        else { const q=YutEase.inOut((k-0.5)*2); x=YM.lerp(apex[0],p1[0],q); y=YM.lerp(apex[1],p1[1],q); z=YM.lerp(apex[2],p1[2],q); }
+        m.p = [x, y, z];
+      }, () => { if (--pending === 0 && done) done(); });
+    });
+  }
+  /* ----- selection highlight ----- */
+  highlightStations(ids, on) {
+    // pulse emissive on the token materials? Instead: move the gold ring to first id.
+    if (!ids.length || !on) { this.selectRing.p = [0, -10, 0]; return; }
+    const [x, z] = yutStationPos(ids[0]);
+    this.selectRing.p = [x, 0.035, z];
+  }
+  setTokenGlow(side, stationSet, on) {
+    const mat = this.mats[side === 'human' ? 'jade' : 'amber'];
+    mat.emis = on ? 0.55 : 0;
+    this._glowStations = on ? stationSet : null;
+  }
+  /* ----- camera + render ----- */
+  updateCamera(dt, t) {
+    const c = this.cam;
+    if (!this.opts.reducedMotion) c.sway = Math.sin(t * 0.00035) * 0.045;
+    const yaw = c.yaw + c.sway, pitch = 0.62 + c.pitch;
+    // pull back on narrow viewports so board, mat and dishes stay framed
+    const aspect = this._aspect || 1.2;
+    const d = c.dist * Math.max(1, 1.02 / aspect);
+    const eye = [
+      c.target[0] + d * Math.sin(yaw) * Math.cos(pitch),
+      c.target[1] + d * Math.sin(pitch),
+      c.target[2] + d * Math.cos(yaw) * Math.cos(pitch),
+    ];
+    this._eye = eye;
+    this._view = YM.lookAt(eye, c.target, [0, 1, 0]);
+  }
+  render(w, h) {
+    const gl = this.gl;
+    this.gl.resize(w, h);
+    this.gl.clear();
+    const asp = w / h;
+    const proj = YM.persp(0.72, asp, 0.1, 60);
+    const vp = YM.mul(proj, this._view);
+    const drawNode = (n, parentM) => {
+      const m = YM.mul(parentM, YM.compose(n.p, n.r, n.s));
+      for (const d of n.meshes) this.gl.draw(d.geo, d.mat, YM.mul(vp, m), m, this._eye);
+      for (const k of n.kids) drawNode(k, m);
+    };
+    const I = YM.ident();
+    for (const n of this.nodes) drawNode(n, I);
+  }
+  destroy() {
+    this.nodes = []; this.drawables = [];
+    this.geos = {}; this.mats = {}; this.tokenNodes = {}; this.stickNodes = [];
+  }
+}
+
+/* ---------- 9. Game controller: state machine, ledger, undo (clause 6, 8) ---------- */
+const YUT_SIDE_NAME = { human: 'Jade', ai: 'Amber' };
+const CENTER_EXIT_NAME = { 21: 'the start corner', 22: 'corner 10', 25: 'corner 5', 26: 'corner 15' };
+
+class YutGame {
+  constructor(root) {
+    this.root = root;
+    this.$ = (id) => root.querySelector('#' + id) || document.getElementById(id);
+    this.canvas = this.$('yut-gl');
+    this.stage = this.$('yut-stage');
+    this.listeners = [];
+    this.destroyed = false;
+    this.runId = 0;
+
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.reducedMotion = mq.matches;
+    this.isMobile = /Mobi|Android|iPhone|iPad|Mobile/i.test(navigator.userAgent || '');
+    this.dpr = Math.min(window.devicePixelRatio || 1, this.isMobile ? 1 : 2); // clause 4
+
+    this.nb = buildNeighbors();
+    this.dist = buildDistances(this.nb);
+    this.tweens = new YutTweens();
+    this.tweens.reduced = this.reducedMotion;
+
+    this.state = newState();
+    this.history = [];   // reversibility contracts: snapshot before every mutation
+    this.ledger = [];    // clause 6: append-only localized ledger
+    this.ledgerSeq = 0;
+    this.phase = 'await-throw';
+    this.pendingSteps = null;
+    this.lastThrow = null;
+
+    this.yutGL = null; this.scene = null; this.glOk = false;
+    this.bindUI();
+    this.makeDust();
+    if (!this.setupGL()) { this.onGLDead(); return; }
+    this.loop = this.loop.bind(this);
+    this.lastT = performance.now();
+    this.raf = requestAnimationFrame(this.loop);
+    this.observeResize();
+    this.syncAll('Your cast, Jade — tap the sticks, or press Space.');
+    this.record('start', 'A new game begins. Jade casts first.');
+  }
+
+  /* ----- setup / teardown ----- */
+  on(el, type, fn, opts) { el.addEventListener(type, fn, opts); this.listeners.push([el, type, fn, opts]); }
+  setupGL() {
+    this.yutGL = new YutGL(this.canvas);
+    if (!this.yutGL.init()) return false;
+    this.scene = new YutScene(this.yutGL, this.tweens, { reducedMotion: this.reducedMotion, lowPoly: this.isMobile });
+    this.scene.build();
+    this.glOk = true;
+    return true;
+  }
+  onGLDead() {
+    this.$('yut-gl-message').classList.add('yut-show');
+    this.setControlsEnabled(false);
+  }
+  observeResize() {
+    if ('ResizeObserver' in window) {
+      this.ro = new ResizeObserver(() => {});
+      this.ro.observe(this.stage);
+    }
+  }
+  destroy() { // clause 3: deterministic destructor — zero-leak footprint
+    if (this.destroyed) return;
+    this.destroyed = true;
+    this.runId++;
+    if (this.raf) cancelAnimationFrame(this.raf);
+    this.tweens.clear();
+    for (const [el, type, fn, opts] of this.listeners) {
+      try { el.removeEventListener(type, fn, opts); } catch (e) {}
+    }
+    this.listeners = [];
+    if (this.ro) { try { this.ro.disconnect(); } catch (e) {} this.ro = null; }
+    if (this._modalCleanup) { this._modalCleanup(); this._modalCleanup = null; }
+    if (this.scene) { this.scene.destroy(); this.scene = null; }
+    if (this.yutGL) { this.yutGL.destroy(); this.yutGL = null; }
+    this.state = null; this.history = []; this.ledger = [];
+  }
+
+  /* ----- ledger (clause 6) ----- */
+  record(kind, text) {
+    this.ledger.push({ seq: ++this.ledgerSeq, kind, text, t: Date.now() });
+    const log = this.$('yut-log');
+    const div = document.createElement('div');
+    const lt = document.createElement('span'); lt.className = 'yut-lt'; lt.textContent = '#' + this.ledgerSeq;
+    div.appendChild(lt); div.appendChild(document.createTextNode(text));
+    log.appendChild(div);
+    while (log.children.length > 7) log.removeChild(log.firstChild);
+  }
+
+  /* ----- reversibility (clause 8): forward() mutates, reverse() restores ----- */
+  forward(label, side, mutator) {
+    this.history.push({ label, side, snap: snapshot(this.state), pendingSteps: this.pendingSteps, lastThrow: this.lastThrow });
+    if (this.history.length > 80) this.history.shift();
+    return mutator();
+  }
+  reverse() { // undo: sweep back to the human's last decision point
+    if (!this.canUndo()) return false;
+    this.runId++; // cancel any AI run in flight
+    let target = null;
+    while (this.history.length) {
+      const h = this.history.pop();
+      if (h.side === 'human') { target = h; break; }
+    }
+    if (!target) return false;
+    restore(this.state, target.snap);
+    this.pendingSteps = target.pendingSteps;
+    this.lastThrow = target.lastThrow;
+    this.record('undo', `Stepped back — before ${target.label}.`);
+    this.closeModal();
+    this.syncScene();
+    if (this.state.winner) { /* undone past victory */ }
+    if (this.pendingSteps !== null && this.lastThrow) {
+      this.phase = 'choose';
+      this.showResult(this.lastThrow, 'Jade');
+      this.renderMoves();
+      this.setBanner('Choose again — your cast still stands.');
+    } else {
+      this.phase = 'await-throw';
+      this.hideResult();
+      this.renderMoves();
+      this.setBanner('Your cast, Jade — tap the sticks, or press Space.');
+    }
+    this.updateControls();
+    this.updateScore();
+    return true;
+  }
+  canUndo() {
+    return this.history.length > 0 && !this.tweens.busy &&
+      (this.phase === 'await-throw' || this.phase === 'choose' || this.phase === 'gameover');
+  }
+
+  /* ----- UI wiring ----- */
+  bindUI() {
+    this.on(this.$('yut-throw'), 'click', () => this.onThrow());
+    this.on(this.$('yut-undo'), 'click', () => this.reverse());
+    this.on(this.$('yut-restart'), 'click', () => this.restart());
+    this.on(this.$('yut-gl-retry'), 'click', () => {
+      this.$('yut-gl-message').classList.remove('yut-show');
+      if (this.setupGL()) { this.setControlsEnabled(true); this.syncScene(); this.updateControls(); }
+      else this.$('yut-gl-message').classList.add('yut-show');
+    });
+    this.on(window, 'keydown', (e) => {
+      if (e.repeat) return;
+      const k = e.key;
+      if (k === ' ' || k === 'Enter') {
+        if (this.phase === 'await-throw') { e.preventDefault(); this.onThrow(); }
+        else if (this.phase === 'choose' && this.currentMoves && this.currentMoves.length === 1) { e.preventDefault(); this.onChooseMove(this.currentMoves[0]); }
+      } else if (k >= '1' && k <= '9') {
+        const i = parseInt(k, 10) - 1;
+        if (this.phase === 'choose' && this.currentMoves && this.currentMoves[i]) this.onChooseMove(this.currentMoves[i]);
+      } else if (k === 'u' || k === 'U') { this.reverse(); }
+      else if (k === 'r' || k === 'R') { this.restart(); }
+      else if (k === 'Escape') { this.closeModal(); }
+    });
+    // drag to look around
+    let dragging = false, lx = 0, ly = 0;
+    this.on(this.stage, 'pointerdown', (e) => { dragging = true; lx = e.clientX; ly = e.clientY; this.stage.setPointerCapture(e.pointerId); });
+    this.on(this.stage, 'pointermove', (e) => {
+      if (!dragging || !this.scene) return;
+      const dx = e.clientX - lx, dy = e.clientY - ly; lx = e.clientX; ly = e.clientY;
+      this.scene.cam.yaw = YM.clamp(this.scene.cam.yaw - dx * 0.004, -0.55, 0.55);
+      this.scene.cam.pitch = YM.clamp(this.scene.cam.pitch + dy * 0.003, -0.18, 0.22);
+    });
+    const up = () => { dragging = false; };
+    this.on(this.stage, 'pointerup', up);
+    this.on(this.stage, 'pointercancel', up);
+    // context loss: never a silent white canvas (clause 4)
+    this.on(this.canvas, 'webglcontextlost', (e) => {
+      e.preventDefault();
+      this.glOk = false;
+      this.$('yut-gl-message').classList.add('yut-show');
+      this.record('context', 'The graphics context was lost — the game state is safe.');
+    });
+    this.on(this.canvas, 'webglcontextrestored', () => {
+      this.$('yut-gl-message').classList.remove('yut-show');
+      if (this.setupGL()) { this.setControlsEnabled(true); this.syncScene(); }
+    });
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mqFn = (e) => { this.reducedMotion = e.matches; this.tweens.reduced = e.matches; };
+    if (mq.addEventListener) this.on(mq, 'change', mqFn); else mq.addListener(mqFn);
+  }
+  makeDust() {
+    if (this.reducedMotion) return;
+    const dust = this.$('yut-dust');
+    for (let i = 0; i < 14; i++) {
+      const m = document.createElement('div');
+      m.className = 'yut-mote';
+      m.style.left = (Math.random()*100) + '%';
+      m.style.top = (40 + Math.random()*55) + '%';
+      m.style.animationDelay = (Math.random()*14) + 's';
+      m.style.animationDuration = (11 + Math.random()*9) + 's';
+      dust.appendChild(m);
+    }
+  }
+
+  /* ----- banners, results, moves ----- */
+  setBanner(html) { this.$('yut-banner').innerHTML = '<span class="yut-ko">윷</span>' + html; }
+  showResult(cast, who) {
+    const info = THROWS[cast.name];
+    const minis = cast.flats.map((f) => `<span class="yut-stick-mini${f ? ' yut-flat' : ''}"></span>`).join('');
+    this.$('yut-sticks-mini').innerHTML = minis;
+    this.$('yut-bigko').textContent = info.ko;
+    this.$('yut-rmeta').innerHTML =
+      `<b>${info.roman}</b> · ${info.animal} · ${info.steps} step${info.steps > 1 ? 's' : ''}` +
+      (info.bonus ? `<br><span class="yut-bonus">✦ BONUS THROW — ${who} casts again</span>` : '');
+    this.$('yut-result').classList.add('yut-show');
+  }
+  hideResult() { this.$('yut-result').classList.remove('yut-show'); }
+  toast(msg) {
+    const t = this.$('yut-toast');
+    t.textContent = msg; t.classList.add('yut-show');
+    clearTimeout(this._toastT);
+    this._toastT = setTimeout(() => t.classList.remove('yut-show'), 2200);
+  }
+  describeMove(m, side) {
+    const foeName = YUT_SIDE_NAME[other(side)];
+    if (m.type === 'enter')
+      return { title: 'Enter a new mal', tags: ['uses the throw · takes the start station'] };
+    if (m.finish)
+      return { title: 'Bear off — a mal comes home', tags: ['exact count · this mal is finished'] };
+    const destName = m.dest === 28 ? 'the center · bang' :
+      (m.dest < 20 ? `station ${m.dest}` : `diagonal station ${m.dest}`);
+    const tags = [];
+    if (m.cornerChoice === 'diag') tags.push('takes the diagonal shortcut');
+    if (m.centerChoice !== null && m.centerChoice !== undefined)
+      tags.push(`at the center, exits toward ${CENTER_EXIT_NAME[m.centerChoice]}`);
+    // effects, read from the live state (never guessed)
+    const foeAt = this.state.tokens[other(side)].filter((t) => !t.borne && t.station === m.dest).length;
+    const ownAt = this.state.tokens[side].filter((t) => !t.borne && t.station === m.dest).length;
+    if (foeAt) tags.push(`captures ${foeName}'s mal${foeAt > 1 ? 's' : ''} · bonus throw`);
+    else if (ownAt) tags.push('stacks with your mal · they move as one');
+    return { title: `Move to ${destName}`, tags };
+  }
+  renderMoves() {
+    const box = this.$('yut-moves');
+    box.innerHTML = '';
+    this.currentMoves = [];
+    if (this.phase !== 'choose' || this.pendingSteps === null) {
+      if (this.scene) this.scene.setTokenGlow('human', null, false);
+      return;
+    }
+    const moves = legalMoves(this.nb, this.state, 'human', this.pendingSteps);
+    this.currentMoves = moves;
+    moves.forEach((m, i) => {
+      const d = this.describeMove(m, 'human');
+      const b = document.createElement('button');
+      b.className = 'yut-move-btn';
+      b.innerHTML = `<span class="yut-key">${i + 1}</span><span><span class="yut-tag">${d.tags.join(' · ') || 'plain advance'}</span>${d.title}</span>`;
+      b.addEventListener('click', () => this.onChooseMove(m));
+      b.addEventListener('mouseenter', () => { if (this.scene && !m.finish && m.dest !== null) this.scene.highlightStations([m.dest], true); });
+      b.addEventListener('mouseleave', () => { if (this.scene) this.scene.highlightStations([], false); });
+      box.appendChild(b);
+    });
+    if (this.scene) this.scene.setTokenGlow('human', null, true);
+  }
+  updateScore() {
+    for (const side of ['human', 'ai']) {
+      const el = this.$('yut-score-' + side);
+      const mals = el.querySelectorAll('.yut-mal');
+      const toks = this.state.tokens[side];
+      toks.forEach((t, i) => { mals[i].classList.toggle('yut-home', t.borne); });
+      el.classList.toggle('yut-active', this.state.turn === side && !this.state.winner);
+    }
+  }
+  updateControls() {
+    if (this._controlsLocked || !this.glOk) return;
+    const busy = this.phase !== 'await-throw';
+    this.$('yut-throw').disabled = busy;
+    this.$('yut-undo').disabled = !this.canUndo();
+    this.$('yut-restart').disabled = false;
+  }
+  setControlsEnabled(on) {
+    this._controlsLocked = !on;
+    for (const id of ['yut-throw', 'yut-undo', 'yut-restart']) this.$(id).disabled = !on;
+  }
+  syncAll(banner) {
+    this.syncScene();
+    this.updateScore();
+    this.updateControls();
+    this.renderMoves();
+    if (banner) this.setBanner(banner);
+  }
+
+  /* ----- scene sync ----- */
+  syncScene() {
+    if (!this.scene || !this.glOk) return;
+    for (const side of ['human', 'ai']) {
+      const toks = this.state.tokens[side];
+      toks.forEach((t) => {
+        const stackIdx = toks.filter((x) => !x.borne && x.station !== null && x.station === t.station).indexOf(t);
+        const pos = this.scene.tokenRest(t, Math.max(0, stackIdx));
+        this.scene.setTokenTransform(this.scene.tokenNodes[t.id], pos);
+      });
+    }
+    this.scene.setSticksRest(this.lastThrow ? this.lastThrow.flats : [false, false, false, false]);
+    this.scene.setTokenGlow('human', null, false);
+    this.scene.highlightStations([], false);
+  }
+
+  /* ----- human turn ----- */
+  onThrow() {
+    if (this.phase !== 'await-throw' || this.destroyed || !this.glOk) return;
+    this.phase = 'throwing';
+    this.updateControls();
+    this.hideResult();
+    const cast = this.forward('cast the sticks', 'human', () => castSticks());
+    this.record('throw', `Jade casts — ${cast.name} (${THROWS[cast.name].ko}), ${cast.steps} step${cast.steps > 1 ? 's' : ''}.`);
+    if (cast.bonus) { this.state.bonusThrows++; this.toast('✦ Bonus throw earned'); }
+    this.setBanner('The sticks are in the air…');
+    this.scene.animateThrow(cast.flats, () => {
+      if (this.destroyed) return;
+      this.lastThrow = cast;
+      this.pendingSteps = cast.steps;
+      this.showResult(cast, 'Jade');
+      const moves = legalMoves(this.nb, this.state, 'human', cast.steps);
+      if (!moves.length) {
+        this.record('forfeit', `No legal move for ${cast.name} — the throw is forfeited.`);
+        this.setBanner(`No mal can use ${cast.name} — the throw passes.`);
+        this.pendingSteps = null;
+        this.tweens.wait(this.reducedMotion ? 60 : 1400, () => this.afterHumanMove({ forfeit: true }));
+        return;
+      }
+      this.phase = 'choose';
+      this.renderMoves();
+      this.setBanner(`You cast <b>${cast.name}</b> — choose a mal to move.`);
+      this.updateControls();
+    });
+  }
+  onChooseMove(move) {
+    if (this.phase !== 'choose') return;
+    const v = validateMove(this.nb, this.state, 'human', move, this.pendingSteps); // clause 7
+    if (!v.ok) { this.toast('That move is not legal.'); return; }
+    this.phase = 'moving';
+    this.renderMoves();
+    this.updateControls();
+    this.hideResult();
+    // Capture the movers BEFORE the mutation (forward), so the animation
+    // follows the same stack the rules engine just moved.
+    const anim = this.captureAnim('human', move);
+    const ev = this.forward('move a mal', 'human', () => applyMove(this.nb, this.state, 'human', v.move));
+    this.narrateMove('Jade', v.move, ev);
+    if (ev.bonus) { this.state.bonusThrows++; this.toast('Captured! Bonus throw earned.'); }
+    this.playMoveAnimation('human', v.move, ev, anim, () => {
+      if (this.destroyed) return;
+      this.afterHumanMove(ev);
+    });
+  }
+  afterHumanMove(ev) {
+    this.pendingSteps = null;
+    this.syncScene();
+    if (this.state.winner) return this.onGameOver();
+    if (this.state.bonusThrows > 0) {
+      this.state.bonusThrows--;
+      this.phase = 'await-throw';
+      this.setBanner('Bonus throw, Jade — cast again.');
+      this.updateScore(); this.updateControls();
+      return;
+    }
+    this.endTurn();
+  }
+  endTurn() {
+    this.state.turn = other(this.state.turn);
+    this.state.bonusThrows = 0;
+    this.updateScore();
+    if (this.state.turn === 'ai') this.runAi();
+    else {
+      this.phase = 'await-throw';
+      this.setBanner('Your cast, Jade — tap the sticks, or press Space.');
+      this.updateControls();
+    }
+  }
+  narrateMove(who, move, ev) {
+    let text;
+    if (move.type === 'enter') text = `${who} enters a new mal at the start.`;
+    else if (move.finish) text = `${who} bears off a mal — home at last.`;
+    else text = `${who} moves to station ${move.dest}${move.cornerChoice === 'diag' ? ' by the shortcut' : ''}.`;
+    if (ev.stacked) text += ` Mals stack — they travel as one.`;
+    if (ev.captured.length) text += ` Captures ${ev.captured.length} rival mal${ev.captured.length > 1 ? 's' : ''}!`;
+    this.record('move', text);
+  }
+  /* Capture the moving stack BEFORE the rules mutation, so the animation
+     follows exactly the tokens the rules engine moves. */
+  captureAnim(side, move) {
+    return {
+      moverIds: move.type === 'enter' ? []
+        : this.state.tokens[side].filter((t) => !t.borne && t.station === move.from).map((t) => t.id),
+      enteringId: move.type === 'enter'
+        ? (this.state.tokens[side].find((t) => !t.borne && t.station === null) || {}).id || null
+        : null,
+    };
+  }
+  playMoveAnimation(side, move, ev, anim, done) {
+    const scene = this.scene;
+    const finishAll = () => { this.syncScene(); done(); };
+    const jobs = [];
+    if (move.type === 'enter' && anim.enteringId) {
+      jobs.push((next) => {
+        const node = scene.tokenNodes[anim.enteringId];
+        const d = scene.dishPos[side];
+        node.p = [d[0], -0.20, d[2]]; // start from the waiting dish
+        const [x, z] = yutStationPos(0);
+        scene.flyTokensTo([anim.enteringId], () => [x, 0.075, z], next);
+      });
+    } else if (!move.finish && anim.moverIds.length) {
+      jobs.push((next) => scene.animateTokenPath(anim.moverIds, move.path, next));
+    }
+    if (ev.captured.length) {
+      jobs.push((next) => {
+        const foe = other(side);
+        scene.flyTokensTo(ev.captured, (j) => {
+          const d = scene.dishPos[foe];
+          return [d[0] + (j === 0 ? -0.16 : 0.16), -0.20, d[2]];
+        }, next);
+      });
+    }
+    if (ev.finished.length) {
+      jobs.push((next) => {
+        scene.flyTokensTo(ev.finished, (j) => {
+          const h = scene.homePos[side];
+          return [h[0] + (j === 0 ? -0.22 : 0.22), 0.10, h[2]];
+        }, next);
+      });
+    }
+    const run = (i) => { if (i >= jobs.length) finishAll(); else jobs[i](() => run(i + 1)); };
+    run(0);
+  }
+
+  /* ----- AI turn ----- */
+  async runAi() {
+    const myRun = ++this.runId;
+    const alive = () => myRun === this.runId && !this.destroyed && this.glOk;
+    this.phase = 'ai';
+    this.setBanner('Amber considers the sticks…');
+    this.updateControls(); this.updateScore();
+    const delay = (ms) => new Promise((res) => this.tweens.wait(this.reducedMotion ? 40 : ms, res));
+    let bonus = 0;
+    await delay(900); if (!alive()) return;
+    while (alive() && !this.state.winner) {
+      const cast = this.forward('cast the sticks', 'ai', () => castSticks());
+      this.record('throw', `Amber casts — ${cast.name} (${THROWS[cast.name].ko}), ${cast.steps} step${cast.steps > 1 ? 's' : ''}.`);
+      if (cast.bonus) { bonus++; this.toast('Amber earns a bonus throw'); }
+      this.setBanner('Amber casts…');
+      await new Promise((res) => this.scene.animateThrow(cast.flats, res));
+      if (!alive()) return;
+      this.lastThrow = cast;
+      this.showResult(cast, 'Amber');
+      await delay(750); if (!alive()) return;
+      const mv = chooseAiMove(this.nb, this.dist, this.state, 'ai', cast.steps);
+      if (!mv) {
+        this.record('forfeit', `Amber has no legal move for ${cast.name}.`);
+        this.setBanner(`Amber cannot use ${cast.name} — the throw passes.`);
+      } else {
+        const v = validateMove(this.nb, this.state, 'ai', mv, cast.steps);
+        if (!v.ok) { this.record('forfeit', `Amber's chosen move failed validation — treated as a pass.`); }
+        else {
+          const anim = this.captureAnim('ai', v.move);
+          const ev = this.forward('move a mal', 'ai', () => applyMove(this.nb, this.state, 'ai', v.move));
+          this.narrateMove('Amber', v.move, ev);
+          if (ev.bonus) { bonus++; this.toast('Amber captures — bonus throw'); }
+          this.hideResult();
+          await new Promise((res) => this.playMoveAnimation('ai', v.move, ev, anim, res));
+          if (!alive()) return;
+          if (this.state.winner) break;
+        }
+      }
+      this.hideResult();
+      if (bonus > 0) { bonus--; this.setBanner('Amber casts again…'); await delay(500); if (!alive()) return; continue; }
+      break;
+    }
+    if (!alive()) return;
+    this.syncScene();
+    if (this.state.winner) return this.onGameOver();
+    this.state.turn = 'human';
+    this.phase = 'await-throw';
+    this.setBanner('Your cast, Jade — tap the sticks, or press Space.');
+    this.updateScore(); this.updateControls();
+  }
+
+  /* ----- game over / restart ----- */
+  onGameOver() {
+    this.phase = 'gameover';
+    this.syncScene(); this.updateScore(); this.updateControls();
+    this.hideResult();
+    const winner = this.state.winner;
+    this.record('win', `${YUT_SIDE_NAME[winner]} brings every mal home and wins the game.`);
+    const won = winner === 'human';
+    this.showModal({
+      title: won ? 'Every mal is home' : 'Amber brings every mal home',
+      ko: '새해 복 많이 받으세요',
+      text: won
+        ? 'Victory, Jade — both your mals have completed the circuit and borne off past the start. A fine New Year\'s race.'
+        : 'Amber wins this race — both rival mals are home. The sticks favor the bold; cast again and take them back.',
+      buttons: [
+        { label: 'Play again', primary: true, onClick: () => this.restart() },
+        { label: 'Admire the board', onClick: () => this.closeModal() },
+      ],
+    });
+  }
+  restart() {
+    this.runId++;
+    this.tweens.clear();
+    this.closeModal();
+    this.state = newState();
+    this.history = [];
+    this.pendingSteps = null; this.lastThrow = null;
+    this.phase = 'await-throw';
+    this.hideResult();
+    this.$('yut-log').innerHTML = '';
+    this.ledger = []; this.ledgerSeq = 0;
+    this.record('start', 'A new game begins. Jade casts first.');
+    this.syncAll('Your cast, Jade — tap the sticks, or press Space.');
+  }
+
+  /* ----- modal ----- */
+  showModal({ title, ko, text, buttons }) {
+    if (this._modalCleanup) { this._modalCleanup(); this._modalCleanup = null; }
+    this.$('yut-modal-title').textContent = title;
+    this.$('yut-modal-ko').textContent = ko || '';
+    this.$('yut-modal-text').textContent = text || '';
+    const row = this.$('yut-modal-btns');
+    row.innerHTML = '';
+    const cleanups = [];
+    for (const b of buttons) {
+      const el = document.createElement('button');
+      el.className = 'yut-btn' + (b.primary ? '' : ' yut-ghost');
+      el.textContent = b.label;
+      const fn = (e) => b.onClick(e);
+      el.addEventListener('click', fn);
+      cleanups.push(() => el.removeEventListener('click', fn));
+      row.appendChild(el);
+    }
+    this._modalCleanup = () => cleanups.forEach((fn) => { try { fn(); } catch (e) {} });
+    this.$('yut-modal-back').classList.add('yut-show');
+  }
+  closeModal() { this.$('yut-modal-back').classList.remove('yut-show'); }
+
+  /* ----- main loop (clause 4: guarded, survives failed frames) ----- */
+  loop(t) {
+    if (this.destroyed) return;
+    this.raf = requestAnimationFrame(this.loop);
+    const dt = Math.min(100, t - this.lastT);
+    this.lastT = t;
+    try {
+      this.tweens.step(dt);
+      if (this.scene && this.glOk) {
+        this.scene.updateCamera(dt, t);
+        // selection pulse on the current side's mals (skipped under reduced motion)
+        if (this.phase === 'choose' && !this.reducedMotion) {
+          this.scene.mats.jade.emis = 0.35 + 0.22 * Math.sin(t * 0.006);
+        }
+        const w = Math.max(1, Math.floor(this.stage.clientWidth * this.dpr));
+        const h = Math.max(1, Math.floor(this.stage.clientHeight * this.dpr));
+        this.scene._aspect = this.stage.clientWidth / Math.max(1, this.stage.clientHeight);
+        this.scene.render(w, h);
+      }
+    } catch (err) {
+      /* a failed frame must never kill the loop — report once */
+      if (!this._frameErr) { this._frameErr = true; this.record('context', 'A frame failed to render; the loop continues.'); }
+    }
+  }
+}
+
+/* ---------- 10. Boot ---------- */
+(function yutBoot() {
+  const root = document.getElementById('yut-app');
+  if (!root) return;
+  let game = null;
+  try {
+    game = new YutGame(root);
+  } catch (err) {
+    const msg = document.getElementById('yut-gl-message');
+    if (msg) msg.classList.add('yut-show');
+    return;
+  }
+  // Expose a deterministic teardown for embedding hosts (clause 3),
+  // plus a diagnostic handle to the live game instance.
+  window.__yutDestroy = () => { if (game) game.destroy(); game = null; window.__yutGame = null; };
+  window.__yutGame = game;
+  window.addEventListener('pagehide', () => { if (game) game.destroy(); game = null; }, { once: true });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+ "type": "ritual",
+ "count": 3,
+ "entities": [
+  {
+   "id": "ritual:meditation-breath-cycle",
+   "type": "ritual",
+   "label": "Mindfulness of breathing: the first four steps",
+   "status": "pending",
+   "links": [
+    "chapter:ch11",
+    "section:ch11/the-teaching-four-truths-and-a"
+   ],
+   "from": "data/rituals/meditation-breath-cycle.json"
+  },
+  {
+   "id": "ritual:votive-candle",
+   "type": "ritual",
+   "label": "Lighting a votive candle",
+   "status": "draft",
+   "from": "data/rituals/votive-candle.json"
+  },
+  {
+   "id": "ritual:weighing-of-the-heart",
+   "type": "ritual",
+   "label": "The Weighing of the Heart",
+   "status": "pending",
+   "links": [
+    "chapter:ch02",
+    "section:ch02/a-heart-on-the-scales",
+    "section:ch02/cosmology-and-the-gods",
+    "section:ch02/law-and-the-moral-order-maat"
+   ],
+   "from": "data/rituals/weighing-of-the-heart.json"
+  }
+ ]
+}

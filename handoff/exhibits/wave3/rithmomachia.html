@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rithmomachia — The Philosopher's Game</title>
+<style>
+/* ============ RITHMOMACHIA — manuscript illumination theme ============ */
+.rithmomachia-root{
+  --rm-vellum:#f2e7cb; --rm-vellum-deep:#e7d8b4; --rm-ink:#221a10;
+  --rm-ink-soft:#4a3d28; --rm-gold:#c9a227; --rm-gold-hi:#f0d878;
+  --rm-gold-deep:#8a6d14; --rm-rubric:#9e1b1b; --rm-night:#141009;
+  --rm-attested:#2f5d3a; --rm-radius:10px;
+  font-family:Georgia,'Times New Roman','Nimbus Roman',serif;
+  background:radial-gradient(1200px 700px at 50% -8%, #2b2114 0%, #171208 55%, #0d0a06 100%);
+  color:var(--rm-vellum); margin:0; padding:clamp(10px,3vw,36px);
+  min-height:100vh; box-sizing:border-box; line-height:1.55;
+}
+.rithmomachia-root *{box-sizing:border-box}
+.rithmomachia-wrap{max-width:1180px;margin:0 auto}
+
+/* ---- title panel ---- */
+.rithmomachia-title-panel{
+  position:relative; background:linear-gradient(160deg,var(--rm-vellum) 0%,var(--rm-vellum-deep) 100%);
+  color:var(--rm-ink); border-radius:var(--rm-radius); padding:clamp(18px,3vw,34px);
+  border:1px solid var(--rm-gold-deep);
+  box-shadow:0 0 0 4px #141009, 0 0 0 5px var(--rm-gold-deep), 0 18px 60px rgba(0,0,0,.65);
+  margin-bottom:26px; overflow:hidden;
+}
+.rithmomachia-title-panel::before{ /* restrained white-vine corner flavor */
+  content:"\2766  \2766  \2766"; position:absolute; top:10px; left:0; right:0; text-align:center;
+  color:var(--rm-gold-deep); opacity:.5; font-size:14px; letter-spacing:22px; pointer-events:none;
+}
+.rithmomachia-title-panel::after{
+  content:"\2766  \2766  \2766"; position:absolute; bottom:8px; left:0; right:0; text-align:center;
+  color:var(--rm-gold-deep); opacity:.5; font-size:14px; letter-spacing:22px; pointer-events:none;
+}
+.rithmomachia-title-row{display:flex;gap:clamp(14px,2.5vw,26px);align-items:flex-start}
+.rithmomachia-dropcap{
+  flex:0 0 auto; width:clamp(64px,9vw,96px); height:clamp(64px,9vw,96px);
+  display:flex; align-items:center; justify-content:center;
+  font-size:clamp(44px,6vw,68px); font-weight:bold; color:#3a2c07;
+  background:radial-gradient(circle at 32% 28%, var(--rm-gold-hi) 0%, var(--rm-gold) 45%, var(--rm-gold-deep) 100%);
+  border:2px solid #5c4712; border-radius:6px;
+  box-shadow:inset 0 0 0 3px rgba(255,246,214,.55), inset 0 0 18px rgba(90,64,8,.5), 0 4px 14px rgba(0,0,0,.35);
+  text-shadow:0 1px 0 rgba(255,244,200,.7);
+}
+.rithmomachia-title{margin:0;font-size:clamp(26px,4.4vw,44px);letter-spacing:.06em;color:#2a1f0e;font-variant:small-caps}
+.rithmomachia-subtitle{margin:.3em 0 0;font-style:italic;color:var(--rm-ink-soft);font-size:clamp(14px,2vw,18px)}
+.rithmomachia-title-note{margin:.7em 0 0;font-size:13.5px;color:var(--rm-ink-soft);max-width:70ch}
+
+/* ---- layout ---- */
+.rithmomachia-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:22px;align-items:start}
+@media (max-width:920px){.rithmomachia-layout{grid-template-columns:1fr}}
+
+/* ---- board ---- */
+.rithmomachia-board-frame{
+  background:linear-gradient(150deg,#3a2a16 0%,#241a0e 60%,#1a1208 100%);
+  border:1px solid var(--rm-gold-deep); border-radius:var(--rm-radius);
+  padding:clamp(8px,1.6vw,16px);
+  box-shadow:0 0 0 4px #0d0a06, 0 0 0 5px var(--rm-gold-deep), 0 18px 60px rgba(0,0,0,.7), inset 0 0 40px rgba(0,0,0,.55);
+}
+.rithmomachia-board{width:100%;height:auto;display:block;border-radius:4px;cursor:pointer;touch-action:manipulation}
+.rithmomachia-board:focus{outline:2px solid var(--rm-gold-hi);outline-offset:4px}
+.rithmomachia-board-caption{margin:10px 2px 0;font-size:13px;font-style:italic;color:#cbb98a;text-align:center}
+
+/* ---- side panels ---- */
+.rithmomachia-side{display:flex;flex-direction:column;gap:16px}
+.rithmomachia-panel{
+  background:linear-gradient(165deg,var(--rm-vellum) 0%,var(--rm-vellum-deep) 100%);
+  color:var(--rm-ink); border-radius:var(--rm-radius); padding:16px 18px;
+  border:1px solid var(--rm-gold-deep);
+  box-shadow:0 0 0 3px #0d0a06, 0 10px 34px rgba(0,0,0,.6);
+}
+.rithmomachia-rubric{
+  margin:0 0 10px; color:var(--rm-rubric); font-variant:small-caps; letter-spacing:.12em;
+  font-size:17px; border-bottom:1px solid rgba(158,27,27,.35); padding-bottom:6px;
+}
+.rithmomachia-turnline{display:flex;align-items:center;gap:10px;font-size:16px;margin:0 0 8px}
+.rithmomachia-turn-dot{width:16px;height:16px;border-radius:50%;border:2px solid #5c4712;flex:0 0 auto}
+.rithmomachia-score-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.rithmomachia-score-box{background:rgba(60,42,16,.08);border:1px solid rgba(90,64,8,.4);border-radius:6px;padding:8px 10px}
+.rithmomachia-score-box .rithmomachia-score-name{font-variant:small-caps;letter-spacing:.08em;font-size:14px;color:var(--rm-ink-soft)}
+.rithmomachia-score-box .rithmomachia-score-nums{font-size:20px;font-weight:bold;color:#2a1f0e}
+.rithmomachia-target{margin:10px 0 0;font-size:14px;font-style:italic;color:var(--rm-ink-soft)}
+.rithmomachia-log{list-style:none;margin:8px 0 0;padding:0;font-size:13.5px;max-height:150px;overflow:auto}
+.rithmomachia-log li{padding:4px 0;border-bottom:1px dotted rgba(90,64,8,.35)}
+.rithmomachia-log li:last-child{border-bottom:none}
+.rithmomachia-btn{
+  font-family:inherit; font-size:15px; letter-spacing:.04em; cursor:pointer;
+  background:linear-gradient(180deg,#3a2c14,#241a0c); color:var(--rm-gold-hi);
+  border:1px solid var(--rm-gold-deep); border-radius:6px; padding:10px 16px;
+  box-shadow:0 3px 10px rgba(0,0,0,.45), inset 0 1px 0 rgba(240,216,120,.25);
+  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.rithmomachia-btn:hover{filter:brightness(1.18);transform:translateY(-1px)}
+.rithmomachia-btn:active{transform:translateY(1px)}
+.rithmomachia-btn:focus-visible{outline:2px solid var(--rm-gold-hi);outline-offset:3px}
+.rithmomachia-btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.rithmomachia-status{min-height:1.4em;font-size:13.5px;font-style:italic;color:var(--rm-ink-soft);margin:8px 0 0}
+.rithmomachia-keys{font-size:13px;color:var(--rm-ink-soft);margin:10px 0 0}
+.rithmomachia-keys kbd{background:#2a2113;color:var(--rm-gold-hi);border:1px solid var(--rm-gold-deep);border-radius:4px;padding:1px 7px;font-family:inherit;font-size:12px}
+
+/* ---- rules ---- */
+.rithmomachia-rules{margin-top:26px}
+.rithmomachia-rules details{
+  background:linear-gradient(165deg,var(--rm-vellum) 0%,var(--rm-vellum-deep) 100%);
+  color:var(--rm-ink); border:1px solid var(--rm-gold-deep); border-radius:8px;
+  margin-bottom:12px; padding:14px 18px;
+  box-shadow:0 0 0 3px #0d0a06, 0 8px 26px rgba(0,0,0,.55);
+}
+.rithmomachia-rules summary{cursor:pointer;font-variant:small-caps;letter-spacing:.1em;font-size:18px;color:#2a1f0e;font-weight:bold}
+.rithmomachia-rules summary:focus-visible{outline:2px solid var(--rm-gold-deep);outline-offset:3px}
+.rithmomachia-rules summary::marker{color:var(--rm-rubric)}
+.rithmomachia-rules p{max-width:75ch}
+.rithmomachia-tag{
+  display:inline-block;font-size:11.5px;font-variant:small-caps;letter-spacing:.1em;
+  border-radius:20px;padding:2px 10px;margin-left:8px;vertical-align:middle;color:#f7efdc;
+}
+.rithmomachia-tag-attested{background:var(--rm-attested)}
+.rithmomachia-tag-simplified{background:var(--rm-rubric)}
+.rithmomachia-piece-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14.5px}
+.rithmomachia-piece-table th{
+  font-variant:small-caps;letter-spacing:.08em;text-align:left;color:var(--rm-rubric);
+  border-bottom:2px solid rgba(158,27,27,.4);padding:6px 8px;
+}
+.rithmomachia-piece-table td{border-bottom:1px dotted rgba(90,64,8,.4);padding:6px 8px;vertical-align:top}
+.rithmomachia-piece-table tr:last-child td{border-bottom:none}
+.rithmomachia-example{
+  background:rgba(60,42,16,.08);border-left:3px solid var(--rm-gold-deep);
+  padding:8px 12px;margin:10px 0;font-size:14px;border-radius:0 6px 6px 0;
+}
+.rithmomachia-banner-simplified{
+  border:2px solid var(--rm-rubric);border-radius:8px;padding:12px 16px;margin:12px 0;
+  background:rgba(158,27,27,.07);
+}
+.rithmomachia-banner-simplified strong{color:var(--rm-rubric);font-variant:small-caps;letter-spacing:.08em}
+.rithmomachia-source-list{font-size:13.5px;color:var(--rm-ink-soft)}
+.rithmomachia-source-list li{margin-bottom:4px}
+
+/* ---- modal ---- */
+.rithmomachia-modal-overlay{
+  position:fixed;inset:0;background:rgba(8,6,3,.78);display:flex;align-items:center;justify-content:center;
+  z-index:50;padding:18px;backdrop-filter:blur(2px);
+}
+.rithmomachia-modal{
+  max-width:560px;width:100%;background:linear-gradient(165deg,var(--rm-vellum),var(--rm-vellum-deep));
+  color:var(--rm-ink);border-radius:var(--rm-radius);padding:26px 28px;
+  border:1px solid var(--rm-gold-deep);box-shadow:0 0 0 4px #0d0a06,0 0 0 5px var(--rm-gold-deep),0 24px 80px rgba(0,0,0,.8);
+  max-height:88vh;overflow:auto;
+}
+.rithmomachia-modal h2{margin:0 0 6px;font-variant:small-caps;letter-spacing:.08em;color:#2a1f0e}
+.rithmomachia-choice{
+  display:block;width:100%;text-align:left;margin:10px 0;padding:12px 14px;cursor:pointer;
+  background:rgba(255,252,240,.5);border:1px solid var(--rm-gold-deep);border-radius:8px;
+  font-family:inherit;color:var(--rm-ink);transition:background .18s ease, transform .18s ease;
+}
+.rithmomachia-choice:hover{background:#fffdf4;transform:translateY(-1px)}
+.rithmomachia-choice:focus-visible{outline:2px solid var(--rm-rubric);outline-offset:2px}
+.rithmomachia-choice strong{font-variant:small-caps;letter-spacing:.06em;color:var(--rm-rubric)}
+.rithmomachia-hidden{display:none !important}
+.rithmomachia-footer{margin:30px 0 10px;text-align:center;font-size:13px;font-style:italic;color:#a68f63}
+@media (prefers-reduced-motion: reduce){
+  .rithmomachia-btn,.rithmomachia-choice{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="rithmomachia-root">
+<div class="rithmomachia-wrap">
+
+<header class="rithmomachia-title-panel">
+  <div class="rithmomachia-title-row">
+    <div class="rithmomachia-dropcap" aria-hidden="true">R</div>
+    <div>
+      <h1 class="rithmomachia-title">Rithmomachia</h1>
+      <p class="rithmomachia-subtitle">The Philosopher&rsquo;s Game &mdash; <i>arithmos</i> (number) &times; <i>mache</i> (battle): &ldquo;the battle of the numbers.&rdquo;</p>
+      <p class="rithmomachia-title-note">Played in monastery schools from the eleventh century to teach the number theory of Boethius. You command the <b>White</b> (even) pieces against the machine&rsquo;s <b>Black</b> (odd) pieces. White moves first, by modern convention for this board.</p>
+    </div>
+  </div>
+</header>
+
+<div class="rithmomachia-layout">
+  <div>
+    <div class="rithmomachia-board-frame">
+      <canvas class="rithmomachia-board" id="rithmomachia-board" tabindex="0" role="img"
+        aria-label="Rithmomachia board, 8 squares wide by 16 long. Use arrow keys to move the cursor, Enter to select and move a piece, Escape to cancel."></canvas>
+    </div>
+    <p class="rithmomachia-board-caption">Vellum board, iron-gall grid, gold-leaf numbers &mdash; after the manuscript diagrams of the medieval game.</p>
+  </div>
+
+  <div class="rithmomachia-side">
+    <section class="rithmomachia-panel" aria-label="Game status">
+      <h2 class="rithmomachia-rubric">The Field</h2>
+      <p class="rithmomachia-turnline"><span class="rithmomachia-turn-dot" id="rithmomachia-turn-dot"></span><span id="rithmomachia-turn-text">White to move</span></p>
+      <div class="rithmomachia-score-grid">
+        <div class="rithmomachia-score-box">
+          <div class="rithmomachia-score-name">White captures</div>
+          <div class="rithmomachia-score-nums"><span id="rithmomachia-w-count">0</span> pieces &middot; <span id="rithmomachia-w-sum">0</span></div>
+        </div>
+        <div class="rithmomachia-score-box">
+          <div class="rithmomachia-score-name">Black captures</div>
+          <div class="rithmomachia-score-nums"><span id="rithmomachia-b-count">0</span> pieces &middot; <span id="rithmomachia-b-sum">0</span></div>
+        </div>
+      </div>
+      <p class="rithmomachia-target" id="rithmomachia-target-line"></p>
+      <p class="rithmomachia-status" id="rithmomachia-status" aria-live="polite"></p>
+      <ul class="rithmomachia-log" id="rithmomachia-log" aria-label="Recent moves"></ul>
+      <div class="rithmomachia-btn-row">
+        <button class="rithmomachia-btn" id="rithmomachia-new">New Game</button>
+      </div>
+      <p class="rithmomachia-keys"><kbd>&larr;&uarr;&darr;&rarr;</kbd> move cursor &middot; <kbd>Enter</kbd> select / move &middot; <kbd>Esc</kbd> cancel</p>
+    </section>
+
+    <section class="rithmomachia-panel" aria-label="Captured pieces">
+      <h2 class="rithmomachia-rubric">Spoils of Number</h2>
+      <p class="rithmomachia-status" id="rithmomachia-spoils">No captures yet. The arithmetic has not yet drawn blood.</p>
+    </section>
+  </div>
+</div>
+
+<section class="rithmomachia-rules" aria-label="Rules of the game">
+  <h2 class="rithmomachia-rubric" style="color:var(--rm-gold-hi);border-color:rgba(201,162,39,.4)">The Rules, as this board keeps them</h2>
+
+  <details open>
+    <summary>The pieces <span class="rithmomachia-tag rithmomachia-tag-attested">attested</span></summary>
+    <p>Each side fields twelve numbered pieces in three shapes. White holds the <b>evens</b>, Black the <b>odds</b> &mdash; the two armies are deliberately <i>not</i> symmetrical, so different captures are open to each player. The numbers follow the medieval Boethian scheme: the rounds are the plain numbers, the triangles their squares, the squares their compounds.</p>
+    <table class="rithmomachia-piece-table">
+      <tr><th>Side</th><th>Shape</th><th>Values</th><th>Moves</th></tr>
+      <tr><td>White</td><td>&#9679; Rounds</td><td>2, 4, 6, 8</td><td>1 square, orthogonal</td></tr>
+      <tr><td>White</td><td>&#9651; Triangles</td><td>9, 25, 49, 81</td><td>exactly 2 squares, orthogonal</td></tr>
+      <tr><td>White</td><td>&#9632; Squares</td><td>15, 45, 153, 289</td><td>exactly 3 squares, orthogonal</td></tr>
+      <tr><td>Black</td><td>&#9679; Rounds</td><td>3, 5, 7, 9</td><td>1 square, orthogonal</td></tr>
+      <tr><td>Black</td><td>&#9651; Triangles</td><td>16, 36, 64, 144</td><td>exactly 2 squares, orthogonal</td></tr>
+      <tr><td>Black</td><td>&#9632; Squares</td><td>28, 66, 190, 361</td><td>exactly 3 squares, orthogonal</td></tr>
+    </table>
+    <p class="rithmomachia-source-list">Medieval sets add a second tier of compounds and the great stacked <b>pyramids</b> (91 and 190) &mdash; those are beyond this board. A few compound values differ between manuscripts (e.g. 100 against 144 among the black triangles); the disagreement is noted, not hidden.</p>
+  </details>
+
+  <details>
+    <summary>Movement <span class="rithmomachia-tag rithmomachia-tag-simplified">one telling</span></summary>
+    <p>Rounds step <b>one</b> square orthogonally; triangles stride <b>exactly two</b> squares orthogonally; squares stride <b>exactly three</b> squares orthogonally. Longer strides need a clear path &mdash; no leaping over other pieces. Triangles and squares may not stop short: the full stride or nothing.</p>
+    <p class="rithmomachia-source-list">Labelled honestly: the sources were never standardized. Some manuscripts move rounds diagonally; this board uses the orthogonal telling (after Richards, 1946, on Boissi&egrave;re). Triangles and squares moving exactly two and three squares orthogonally is the common medieval account.</p>
+  </details>
+
+  <details open>
+    <summary>The three captures <span class="rithmomachia-tag rithmomachia-tag-attested">attested in kind</span> <span class="rithmomachia-tag rithmomachia-tag-simplified">simplified in letter</span></summary>
+    <p>Captures are the soul of the game: pieces fall not by position alone but by <b>arithmetical relation</b>. <b>Encounter</b> resolves the instant you land. <b>Ambush</b> and <b>siege</b> are claimed at the <i>start</i> of your turn whenever the trap stands complete &mdash; spring them with your own move, or let your opponent walk into them.</p>
+    <p><b>1. Encounter.</b> Land upon an enemy piece and take it &mdash; but only if the numbers stand in a simple ratio: the two values are <b>equal</b>, or the victim&rsquo;s value is a <b>multiple</b> of your piece&rsquo;s.</p>
+    <div class="rithmomachia-example">Example: Black &#9679;5 lands on White &#9651;25. Since 25 = 5 &times; 5, the triangle falls. <span class="rithmomachia-tag rithmomachia-tag-simplified">simplified</span> &mdash; the medieval <i>Meeting</i> asked only for equal values and did not replace the piece; the multiple-rule blends in the spirit of the old <i>Assault</i> so the small pieces can hunt the great.</div>
+    <p><b>2. Ambush.</b> If an enemy piece stands <b>between two of yours on opposite orthogonal sides</b>, and the <b>sum</b> or the <b>difference</b> of your two numbers equals the enemy&rsquo;s number, it is taken.</p>
+    <div class="rithmomachia-example">Example: White &#9679;2 and &#9679;6 flank Black &#9679;8 &mdash; 2 + 6 = 8, taken. Or White &#9651;25 and &#9679;9 flank Black &#9651;16 &mdash; 25 &minus; 9 = 16, taken. <span class="rithmomachia-tag rithmomachia-tag-simplified">simplified</span> &mdash; old <i>Ambuscade</i> texts require the victim to lie within a move of both attackers; this board asks only for the flanking and the arithmetic.</div>
+    <p><b>3. Siege.</b> If an enemy piece is surrounded on <b>all four orthogonal sides</b> by your pieces, it is removed.</p>
+    <div class="rithmomachia-example">Example: your four pieces stand north, south, east and west of Black &#9632;66 &mdash; the square is taken. <span class="rithmomachia-tag rithmomachia-tag-simplified">simplified</span> &mdash; pieces on the board&rsquo;s edge cannot be fully ringed on this board and are immune to siege, by our ruling.</div>
+    <p class="rithmomachia-source-list">Captured pieces leave the board here. Some accounts instead have them <i>change sides</i> &mdash; noted, not used.</p>
+  </details>
+
+  <details>
+    <summary>Victory <span class="rithmomachia-tag rithmomachia-tag-simplified">simplified</span></summary>
+    <div class="rithmomachia-banner-simplified"><strong>Simplified victory &mdash; read before playing.</strong> The historical game&rsquo;s full victories are famously intricate (see below). For a learnable game, choose one at the start:<br><b>De bonis</b> (&ldquo;by goods&rdquo;) &mdash; first to capture pieces totalling <b>60</b> or more wins.<br><b>De corpore</b> (&ldquo;by body&rdquo;) &mdash; first to capture <b>4</b> pieces wins.</div>
+    <p>Beyond this board lie the <b>proper victories</b>: <i>Victoria magna</i>, <i>major</i>, and <i>excellentissima</i>, won by arranging pieces on the far side of the board in <b>arithmetic, geometric, and harmonic progressions</b> &mdash; the very proportions of Boethian number theory. The common victories <i>de lite</i>, <i>de honore</i>, and <i>de honore liteque</i> added further conditions on the digits and count of the spoils. Those are for your second hundred games.</p>
+  </details>
+
+  <details>
+    <summary>Scholar&rsquo;s note &mdash; what is attested, what is ours</summary>
+    <p><b>Attested:</b> an 8&times;16 board; numbered rounds, triangles, squares (and pyramids); White evens against Black odds; movement by shape (1 / 2 / 3); captures by arithmetical relation &mdash; meeting, assault, ambuscade, siege; victories <i>de corpore</i>, <i>de bonis</i>, <i>de lite</i>, <i>de honore</i>, and the progression victories. First described c.&nbsp;1030 by the monk Asilo (perhaps the future Bishop Adalbero of W&uuml;rzburg) to illustrate Boethius&rsquo;s <i>De institutione arithmetica</i>; rules refined by Hermannus Contractus (1013&ndash;1054) and the school of Li&egrave;ge; printed treatises through the sixteenth century (Boissi&egrave;re 1554, Fulke 1563, Barozzi 1572). Modern scholarship: Ann&nbsp;E.&nbsp;Moyer, <i>The Philosopher&rsquo;s Game</i> (2001); Arno Borst; Jurgen Stigter in the British Museum&rsquo;s <i>Ancient Board Games in Perspective</i> (2007).</p>
+    <p><b>Ours (simplified, and why):</b> landing-capture with the equal-or-multiple rule (playability &mdash; the strict medieval meeting rarely triggers); ambush as pure flanking arithmetic (clarity); siege requiring all four sides with edge immunity (decidability); the two short victories above (the true progression victories demand a long match arc &mdash; these teach the arithmetic core in an evening); the 12-piece table without pyramids (the full 24-piece array plus pyramids is a deeper game); orthogonal rounds (one documented telling among several). <b>Uncertain:</b> several compound values, the exact opening array, and round movement vary between manuscripts &mdash; the rules were never standardized, and this board does not pretend otherwise.</p>
+  </details>
+</section>
+
+<div class="rithmomachia-modal-overlay rithmomachia-hidden" id="rithmomachia-start-modal" role="dialog" aria-modal="true" aria-labelledby="rithmomachia-start-h">
+  <div class="rithmomachia-modal">
+    <h2 id="rithmomachia-start-h">Choose your victory</h2>
+    <p style="font-style:italic">The historical victories fill treatises. For this board, the schoolmaster allows two short roads &mdash; both <span class="rithmomachia-tag rithmomachia-tag-simplified">simplified</span>:</p>
+    <button class="rithmomachia-choice" id="rithmomachia-choose-bonis"><strong>De bonis &mdash; by goods.</strong><br>First to capture pieces totalling 60 or more in value wins the game.</button>
+    <button class="rithmomachia-choice" id="rithmomachia-choose-corpore"><strong>De corpore &mdash; by body.</strong><br>First to capture 4 enemy pieces wins the game.</button>
+    <p style="font-size:13px;font-style:italic">You play White (evens) and move first. The machine plays Black (odds).</p>
+  </div>
+</div>
+
+<div class="rithmomachia-modal-overlay rithmomachia-hidden" id="rithmomachia-end-modal" role="dialog" aria-modal="true" aria-labelledby="rithmomachia-end-h">
+  <div class="rithmomachia-modal">
+    <h2 id="rithmomachia-end-h">The reckoning</h2>
+    <p id="rithmomachia-end-text" style="font-size:17px"></p>
+    <p id="rithmomachia-end-sub" style="font-style:italic;font-size:14px"></p>
+    <button class="rithmomachia-btn" id="rithmomachia-again">Play again</button>
+  </div>
+</div>
+
+<p class="rithmomachia-footer">Rithmomachia &middot; the battle of the numbers &middot; after Boethius, by way of the monastery schools &middot; <i>The Divine Archives</i></p>
+
+</div><!-- /wrap -->
+</div><!-- /root -->
+
+<script>
+'use strict';
+/* =====================================================================
+   RITHMOMACHIA — The Philosopher's Game (simplified teaching board)
+   Vanilla ES6. No external requests. All state teardown via destroy().
+   ===================================================================== */
+(function(){
+
+/* ---------------- constants ---------------- */
+var COLS = 8, ROWS = 16;
+var SHAPE_GLYPH = { round:'\u25CF', triangle:'\u25B2', square:'\u25A0' };
+var SHAPE_NAME  = { round:'round', triangle:'triangle', square:'square' };
+var STRIDE = { round:1, triangle:2, square:3 };
+
+/* The documented 12-piece table. White = evens, Black = odds. */
+var PIECE_DEFS = [
+  { side:'white', shape:'round',    values:[2,4,6,8] },
+  { side:'white', shape:'triangle', values:[9,25,49,81] },
+  { side:'white', shape:'square',   values:[15,45,153,289] },
+  { side:'black', shape:'round',    values:[3,5,7,9] },
+  { side:'black', shape:'triangle', values:[16,36,64,144] },
+  { side:'black', shape:'square',   values:[28,66,190,361] }
+];
+
+/* Opening array: a common reconstruction after the medieval diagrams
+   (back rank rounds+triangles, second rank squares, centred). */
+function buildOpening(){
+  var defs = [];
+  PIECE_DEFS.forEach(function(d){
+    d.values.forEach(function(v){ defs.push({ side:d.side, shape:d.shape, value:v }); });
+  });
+  var board = [], r, c, id = 0;
+  for (r = 0; r < ROWS; r++){ board.push([]); for (c = 0; c < COLS; c++) board[r].push(null); }
+  function put(side, shape, value, r, c){
+    board[r][c] = { id:id++, side:side, shape:shape, value:value, r:r, c:c };
+  }
+  var wR = [2,4,6,8], wT = [9,25,49,81], wS = [15,45,153,289];
+  var bR = [3,5,7,9], bT = [16,36,64,144], bS = [28,66,190,361];
+  for (c = 0; c < 4; c++) put('white','round',wR[c],0,c);
+  for (c = 0; c < 4; c++) put('white','triangle',wT[c],0,4+c);
+  for (c = 0; c < 4; c++) put('white','square',wS[c],1,2+c);
+  for (c = 0; c < 4; c++) put('black','round',bR[c],ROWS-1,c);
+  for (c = 0; c < 4; c++) put('black','triangle',bT[c],ROWS-1,4+c);
+  for (c = 0; c < 4; c++) put('black','square',bS[c],ROWS-2,2+c);
+  return board;
+}
+
+/* ---------------- state ---------------- */
+var S = {
+  board:null, turn:'white', selected:null, movesCache:null,
+  captured:{ white:[], black:[] }, victoryMode:null, over:false,
+  cursor:{ r:2, c:3 }, log:[], passes:0, ply:0, aiThinking:false,
+  anims:[], dirty:true, lastMove:null
+};
+var reducedMotion = (typeof window.matchMedia === 'function') &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------------- dom ---------------- */
+function $(id){ return document.getElementById(id); }
+var els = {
+  canvas:$('rithmomachia-board'), turnDot:$('rithmomachia-turn-dot'),
+  turnText:$('rithmomachia-turn-text'), wCount:$('rithmomachia-w-count'),
+  wSum:$('rithmomachia-w-sum'), bCount:$('rithmomachia-b-count'),
+  bSum:$('rithmomachia-b-sum'), targetLine:$('rithmomachia-target-line'),
+  status:$('rithmomachia-status'), log:$('rithmomachia-log'),
+  spoils:$('rithmomachia-spoils'), startModal:$('rithmomachia-start-modal'),
+  endModal:$('rithmomachia-end-modal'), endText:$('rithmomachia-end-text'),
+  endSub:$('rithmomachia-end-sub')
+};
+
+/* ---------------- canvas / textures ---------------- */
+var ctx = els.canvas.getContext('2d');
+var vellumTex = null, vellumW = 0, vellumH = 0;
+var rafId = 0, resizeObs = null;
+var cell = 0, ox = 0, oy = 0; /* cell px, board origin */
+
+function dprCap(){
+  var coarse = (typeof window.matchMedia === 'function') &&
+    window.matchMedia('(pointer: coarse)').matches;
+  if (coarse) return 1;                       /* phone-class: hard cap 1.0 */
+  return Math.min(window.devicePixelRatio || 1, 2);
+}
+
+function makeVellum(w, h){
+  var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+  var g = cv.getContext('2d');
+  var base = g.createLinearGradient(0, 0, w, h);
+  base.addColorStop(0, '#f4ead0'); base.addColorStop(.5, '#efe0bd');
+  base.addColorStop(1, '#e6d3a8');
+  g.fillStyle = base; g.fillRect(0, 0, w, h);
+  var i, x, y, r, a;
+  for (i = 0; i < w * h / 380; i++){           /* parchment speckle */
+    x = Math.random()*w; y = Math.random()*h; r = Math.random()*2.2+.4;
+    a = Math.random()*.07;
+    g.fillStyle = Math.random() < .5 ? 'rgba(120,90,40,'+a+')' : 'rgba(255,250,235,'+a+')';
+    g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
+  }
+  for (i = 0; i < 7; i++){                     /* faint age blotches */
+    x = Math.random()*w; y = Math.random()*h; r = 20+Math.random()*60;
+    var bl = g.createRadialGradient(x, y, 0, x, y, r);
+    bl.addColorStop(0, 'rgba(150,110,55,.06)'); bl.addColorStop(1, 'rgba(150,110,55,0)');
+    g.fillStyle = bl; g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
+  }
+  var vg = g.createRadialGradient(w/2, h/2, Math.min(w,h)*.35, w/2, h/2, Math.max(w,h)*.75);
+  vg.addColorStop(0, 'rgba(60,40,15,0)'); vg.addColorStop(1, 'rgba(60,40,15,.28)');
+  g.fillStyle = vg; g.fillRect(0, 0, w, h);
+  return cv;
+}
+
+function layout(){
+  var dpr = dprCap();
+  var wrapW = els.canvas.parentElement.clientWidth - 2;
+  var maxH = Math.max(320, Math.min(window.innerHeight * .82, 1100));
+  var s = Math.min(wrapW / COLS, maxH / ROWS);
+  var W = Math.floor(s * COLS), H = Math.floor(s * ROWS);
+  els.canvas.style.width = W + 'px'; els.canvas.style.height = H + 'px';
+  els.canvas.width = Math.floor(W * dpr); els.canvas.height = Math.floor(H * dpr);
+  cell = (W * dpr) / COLS; ox = 0; oy = 0;
+  if (!vellumTex || vellumW !== els.canvas.width || vellumH !== els.canvas.height){
+    vellumTex = makeVellum(els.canvas.width, els.canvas.height);
+    vellumW = els.canvas.width; vellumH = els.canvas.height;
+  }
+  S.dirty = true;
+}
+
+function goldText(g, text, x, y, size){
+  var grad = g.createLinearGradient(x, y - size/2, x, y + size/2);
+  grad.addColorStop(0, '#f7e08a'); grad.addColorStop(.45, '#d9ab2e');
+  grad.addColorStop(.55, '#a87f16'); grad.addColorStop(1, '#f0d878');
+  g.font = 'bold ' + size + 'px Georgia, "Times New Roman", serif';
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.lineWidth = Math.max(1, size/14); g.strokeStyle = 'rgba(46,32,8,.85)';
+  g.strokeText(text, x, y);
+  g.fillStyle = grad; g.fillText(text, x, y);
+}
+
+function drawPiece(g, p, px, py, scale, glow){
+  var s = cell * (scale || 1), R = s * .42;
+  g.save(); g.translate(px, py);
+  g.shadowColor = 'rgba(20,12,4,.55)'; g.shadowBlur = s*.12; g.shadowOffsetY = s*.06;
+  if (glow){
+    g.shadowColor = 'rgba(240,216,120,.9)'; g.shadowBlur = s*.3; g.shadowOffsetY = 0;
+  }
+  var grad;
+  if (p.side === 'white'){
+    grad = g.createRadialGradient(-R*.35, -R*.4, R*.1, 0, 0, R*1.15);
+    grad.addColorStop(0, '#fbf6e6'); grad.addColorStop(.55, '#efe2c2'); grad.addColorStop(1, '#c9b586');
+  } else {
+    grad = g.createRadialGradient(-R*.35, -R*.4, R*.1, 0, 0, R*1.15);
+    grad.addColorStop(0, '#5d4c38'); grad.addColorStop(.55, '#3a2e1f'); grad.addColorStop(1, '#171009');
+  }
+  g.fillStyle = grad;
+  g.strokeStyle = p.side === 'white' ? '#6b562e' : '#0c0905';
+  g.lineWidth = Math.max(1.2, s*.028);
+  g.beginPath();
+  if (p.shape === 'round'){ g.arc(0, 0, R, 0, 7); }
+  else if (p.shape === 'triangle'){
+    g.moveTo(0, -R*1.02); g.lineTo(R*.98, R*.78); g.lineTo(-R*.98, R*.78); g.closePath();
+  } else {
+    var q = R*.92;
+    if (g.roundRect) g.roundRect(-q, -q, q*2, q*2, q*.22); else g.rect(-q, -q, q*2, q*2);
+  }
+  g.fill(); g.stroke();
+  g.shadowColor = 'transparent'; g.shadowBlur = 0; g.shadowOffsetY = 0;
+  /* inner bevel light */
+  g.strokeStyle = p.side === 'white' ? 'rgba(255,252,238,.65)' : 'rgba(220,190,130,.28)';
+  g.lineWidth = Math.max(1, s*.014);
+  g.beginPath();
+  if (p.shape === 'round'){ g.arc(0, 0, R*.78, 0, 7); }
+  else if (p.shape === 'triangle'){
+    g.moveTo(0, -R*.8); g.lineTo(R*.76, R*.6); g.lineTo(-R*.76, R*.6); g.closePath();
+  } else { var q2 = R*.7; g.strokeRect(-q2, -q2, q2*2, q2*2); }
+  g.stroke();
+  var fs = p.value >= 100 ? s*.26 : s*.3;
+  goldText(g, String(p.value), 0, s*.02, fs);
+  g.restore();
+}
+
+function draw(){
+  var W = els.canvas.width, H = els.canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  if (vellumTex) ctx.drawImage(vellumTex, 0, 0);
+  var r, c, x, y;
+  /* squares: subtle alternation + iron-gall grid */
+  for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++){
+    if ((r + c) % 2 === 0){
+      ctx.fillStyle = 'rgba(112,82,36,.07)';
+      ctx.fillRect(c*cell, r*cell, cell, cell);
+    }
+  }
+  ctx.strokeStyle = 'rgba(42,30,16,.6)'; ctx.lineWidth = Math.max(1, cell*.018);
+  ctx.beginPath();
+  for (r = 0; r <= ROWS; r++){ ctx.moveTo(0, r*cell); ctx.lineTo(W, r*cell); }
+  for (c = 0; c <= COLS; c++){ ctx.moveTo(c*cell, 0); ctx.lineTo(c*cell, H); }
+  ctx.stroke();
+  /* middle divide flourish */
+  ctx.strokeStyle = 'rgba(158,27,27,.5)'; ctx.lineWidth = Math.max(1.5, cell*.03);
+  ctx.beginPath(); ctx.moveTo(0, ROWS/2*cell); ctx.lineTo(W, ROWS/2*cell); ctx.stroke();
+
+  /* last-move chalk mark */
+  if (S.lastMove){
+    ctx.strokeStyle = 'rgba(158,27,27,.55)'; ctx.lineWidth = Math.max(1.5, cell*.035);
+    ctx.strokeRect(S.lastMove.c*cell+3, S.lastMove.r*cell+3, cell-6, cell-6);
+  }
+  /* legal-move hints */
+  if (S.selected && S.movesCache){
+    S.movesCache.forEach(function(m){
+      x = (m.c+.5)*cell; y = (m.r+.5)*cell;
+      if (m.capture){
+        ctx.strokeStyle = 'rgba(158,27,27,.9)'; ctx.lineWidth = Math.max(2, cell*.05);
+        ctx.beginPath(); ctx.arc(x, y, cell*.4, 0, 7); ctx.stroke();
+      } else {
+        ctx.fillStyle = 'rgba(150,110,20,.55)';
+        ctx.beginPath(); ctx.arc(x, y, cell*.1, 0, 7); ctx.fill();
+      }
+    });
+  }
+  /* pieces (skip ones mid-animation) */
+  var animIds = {};
+  S.anims.forEach(function(a){ if (a.piece) animIds[a.piece.id] = a; });
+  for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++){
+    var p = S.board[r][c];
+    if (!p || animIds[p.id]) continue;
+    var glow = S.selected && S.selected.id === p.id;
+    drawPiece(ctx, p, (c+.5)*cell, (r+.5)*cell, 1, glow);
+  }
+  /* animations: sliding + capture fades */
+  S.anims.forEach(function(a){
+    if (a.kind === 'slide'){
+      var t = Math.min(1, (performance.now()-a.t0)/a.dur);
+      var e = t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;
+      drawPiece(ctx, a.piece,
+        (a.c0+.5+(a.c1-a.c0)*e)*cell, (a.r0+.5+(a.r1-a.r0)*e)*cell, 1, false);
+      if (t >= 1) a.done = true;
+    } else if (a.kind === 'fade'){
+      var t2 = Math.min(1, (performance.now()-a.t0)/a.dur);
+      ctx.save(); ctx.globalAlpha = 1-t2;
+      drawPiece(ctx, a.piece, (a.c+.5)*cell, (a.r+.5)*cell, 1+t2*.25, true);
+      ctx.restore();
+      if (t2 >= 1) a.done = true;
+    }
+  });
+  S.anims = S.anims.filter(function(a){ return !a.done; });
+  /* keyboard cursor */
+  ctx.save();
+  ctx.strokeStyle = 'rgba(201,162,39,.95)'; ctx.lineWidth = Math.max(2, cell*.045);
+  ctx.setLineDash([cell*.14, cell*.1]);
+  ctx.strokeRect(S.cursor.c*cell+4, S.cursor.r*cell+4, cell-8, cell-8);
+  ctx.restore();
+  S.dirty = false;
+}
+
+function loop(){
+  rafId = requestAnimationFrame(loop);
+  if (S.dirty || S.anims.length) draw();
+}
+
+/* ---------------- rules engine ---------------- */
+function inB(r, c){ return r >= 0 && r < ROWS && c >= 0 && c < COLS; }
+function at(b, r, c){ return inB(r,c) ? b[r][c] : null; }
+function foe(side){ return side === 'white' ? 'black' : 'white'; }
+function glyph(p){ return SHAPE_GLYPH[p.shape] + p.value; }
+function pname(p){ return (p.side==='white'?'White ':'Black ') + glyph(p); }
+
+/* Encounter rule (SIMPLIFIED, labelled in the panel): equal values,
+   or the victim's value a multiple of the attacker's. */
+function encounterTakes(att, vic){
+  return vic.value === att.value || (vic.value % att.value === 0);
+}
+
+function pathClear(b, r0, c0, r1, c1){
+  var dr = Math.sign(r1-r0), dc = Math.sign(c1-c0), r = r0+dr, c = c0+dc;
+  while (r !== r1 || c !== c1){
+    if (b[r][c]) return false;
+    r += dr; c += dc;
+  }
+  return true;
+}
+
+/* Legal destinations for one piece on board b. */
+function legalMovesFor(b, p){
+  var out = [], step = STRIDE[p.shape];
+  var dirs = [[1,0],[-1,0],[0,1],[0,-1]], i, r1, c1, t;
+  if (p.shape === 'round'){
+    for (i = 0; i < 4; i++){
+      r1 = p.r+dirs[i][0]; c1 = p.c+dirs[i][1];
+      if (!inB(r1,c1)) continue;
+      t = b[r1][c1];
+      if (!t) out.push({r:r1,c:c1,capture:null});
+      else if (t.side !== p.side && encounterTakes(p,t)) out.push({r:r1,c:c1,capture:t});
+    }
+  } else {
+    for (i = 0; i < 4; i++){
+      r1 = p.r+dirs[i][0]*step; c1 = p.c+dirs[i][1]*step;
+      if (!inB(r1,c1) || !pathClear(b,p.r,p.c,r1,c1)) continue;
+      t = b[r1][c1];
+      if (!t) out.push({r:r1,c:c1,capture:null});
+      else if (t.side !== p.side && encounterTakes(p,t)) out.push({r:r1,c:c1,capture:t});
+    }
+  }
+  return out;
+}
+
+function allMoves(b, side){
+  var ms = [], r, c, p;
+  for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++){
+    p = b[r][c];
+    if (p && p.side === side){
+      legalMovesFor(b, p).forEach(function(m){
+        ms.push({ piece:p, r:m.r, c:m.c, capture:m.capture });
+      });
+    }
+  }
+  return ms;
+}
+
+/* Ambush (SIMPLIFIED): enemy E flanked on opposite orthogonal sides by
+   two of `side`'s pieces A,B with A.v+B.v==E.v or |A.v-B.v|==E.v. */
+function findAmbushes(b, side){
+  var takes = [], r, c, E, A, Bc, pairs = [[[0,-1],[0,1]],[[-1,0],[1,0]]];
+  for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++){
+    E = b[r][c];
+    if (!E || E.side === side) continue;
+    for (var i = 0; i < 2; i++){
+      A = at(b, r+pairs[i][0][0], c+pairs[i][0][1]);
+      Bc = at(b, r+pairs[i][1][0], c+pairs[i][1][1]);
+      if (A && Bc && A.side === side && Bc.side === side){
+        if (A.value + Bc.value === E.value || Math.abs(A.value - Bc.value) === E.value)
+          takes.push({ victim:E, by:[A,Bc], kind:'ambush',
+            math: (A.value + Bc.value === E.value)
+              ? (A.value + ' + ' + Bc.value + ' = ' + E.value)
+              : ('|' + A.value + ' \u2212 ' + Bc.value + '| = ' + E.value) });
+      }
+    }
+  }
+  return takes;
+}
+
+/* Siege (SIMPLIFIED): enemy with all four orthogonal neighbours held
+   by `side`. Edge/corner pieces are immune, by our ruling. */
+function findSieges(b, side){
+  var takes = [], r, c, E, ok, n, dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+  for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++){
+    E = b[r][c];
+    if (!E || E.side === side) continue;
+    ok = true;
+    for (var i = 0; i < 4; i++){
+      n = at(b, r+dirs[i][0], c+dirs[i][1]);
+      if (!n || n.side !== side){ ok = false; break; }
+    }
+    if (ok) takes.push({ victim:E, by:null, kind:'siege', math:'ringed on four sides' });
+  }
+  return takes;
+}
+
+function cloneBoard(b){
+  return b.map(function(row){
+    return row.map(function(p){
+      return p ? { id:p.id, side:p.side, shape:p.shape, value:p.value, r:p.r, c:p.c } : null;
+    });
+  });
+}
+function findById(b, id){
+  for (var r = 0; r < ROWS; r++) for (var c = 0; c < COLS; c++)
+    if (b[r][c] && b[r][c].id === id) return b[r][c];
+  return null;
+}
+
+/* Apply a move to board b (no animation). Returns capture records. */
+function applyMove(b, pieceId, r1, c1){
+  var p = findById(b, pieceId);
+  var caps = [];
+  var target = b[r1][c1];
+  if (target && target.side !== p.side){
+    caps.push({ victim:target, by:[p], kind:'encounter',
+      math: target.value === p.value ? (p.value + ' = ' + target.value)
+        : (target.value + ' is ' + (target.value/p.value) + ' \u00D7 ' + p.value) });
+    b[r1][c1] = null;
+  }
+  b[p.r][p.c] = null; p.r = r1; p.c = c1; b[r1][c1] = p;
+  findAmbushes(b, p.side).forEach(function(t){ caps.push(t); });
+  findSieges(b, p.side).forEach(function(t){ caps.push(t); });
+  var seen = {};
+  caps = caps.filter(function(t){
+    if (seen[t.victim.id]) return false;
+    seen[t.victim.id] = 1; return true;
+  });
+  caps.forEach(function(t){
+    /* encounter victims were already lifted when the attacker landed;
+       only clear squares still holding the victim (ambush / siege). */
+    if (b[t.victim.r][t.victim.c] === t.victim) b[t.victim.r][t.victim.c] = null;
+  });
+  return caps;
+}
+
+/* Standing traps are claimed at the START of a side's turn: if your
+   pieces flank or ring an enemy when your turn begins — even because the
+   enemy just walked into it — the trap springs before you move. */
+function standingClaims(b, side){
+  var out = [];
+  findAmbushes(b, side).forEach(function(t){ out.push(t); });
+  findSieges(b, side).forEach(function(t){ out.push(t); });
+  return out;
+}
+function claimStanding(side){
+  var claims = standingClaims(S.board, side);
+  if (!claims.length) return;
+  var seen = {};
+  claims.forEach(function(t){
+    if (seen[t.victim.id]) return;
+    seen[t.victim.id] = 1;
+    if (S.board[t.victim.r][t.victim.c] !== t.victim) return;
+    S.board[t.victim.r][t.victim.c] = null;
+    S.captured[side].push(t.victim);
+    if (!reducedMotion) S.anims.push({ kind:'fade', piece:t.victim,
+      r:t.victim.r, c:t.victim.c, t0:performance.now(), dur:220 });
+    addLog((side === 'white' ? 'White' : 'Black') + ' springs the ' + t.kind +
+      ' on ' + glyph(t.victim) + ' \u2014 ' + t.math + '.');
+  });
+  refreshPanel(); S.dirty = true;
+  var w = checkVictory(side);
+  if (w) endGame('win', w);
+}
+
+/* ---------------- AI: 1-ply heuristic, phone-safe ---------------- */
+function threatenedAfter(b, side, pieceId){
+  /* can `foe` encounter-capture this piece on the reply? */
+  var p = findById(b, pieceId);
+  if (!p) return 0;
+  var ms = allMoves(b, foe(side)), worst = 0;
+  for (var i = 0; i < ms.length; i++){
+    if (ms[i].capture && ms[i].capture.id === pieceId){
+      worst = Math.max(worst, ms[i].capture.value);
+    }
+  }
+  return worst;
+}
+function ambushRisk(b, side, r, c, value){
+  /* crude: two+ enemy orthogonal neighbours able to sum/diff to value */
+  var f = foe(side), ns = [], dirs = [[1,0],[-1,0],[0,1],[0,-1]], n;
+  for (var i = 0; i < 4; i++){
+    n = at(b, r+dirs[i][0], c+dirs[i][1]);
+    if (n && n.side === f) ns.push(n.value);
+  }
+  if (ns.length < 2) return 0;
+  for (i = 0; i < ns.length; i++) for (var j = i+1; j < ns.length; j++){
+    if (ns[i]+ns[j] === value || Math.abs(ns[i]-ns[j]) === value) return value;
+  }
+  return 0;
+}
+function aiChooseMove(){
+  var cands = allMoves(S.board, 'black');
+  if (!cands.length) return null;
+  var best = null, bestScore = -1e9;
+  cands.forEach(function(m){
+    var b = cloneBoard(S.board);
+    var caps = applyMove(b, m.piece.id, m.r, m.c);
+    var gain = 0, n = 0;
+    caps.forEach(function(t){ gain += t.victim.value; n++; });
+    var score = 14*gain + 4*n;
+    score -= 0.55 * threatenedAfter(b, 'black', m.piece.id);
+    score -= 0.35 * ambushRisk(b, 'black', m.r, m.c, m.piece.value);
+    score += 0.4 * (8 - Math.abs(m.r - 7.5));      /* drift toward mid-board */
+    score += Math.random() * 1.5;                  /* break ties, stay lively */
+    if (m.piece.shape === 'square' && gain === 0) score -= 1.5; /* keep the heavies home early */
+    if (score > bestScore){ bestScore = score; best = m; }
+  });
+  return best;
+}
+
+/* ---------------- ui ---------------- */
+function setStatus(t){ els.status.textContent = t; }
+function addLog(t){
+  S.log.unshift(t); if (S.log.length > 5) S.log.pop();
+  els.log.innerHTML = '';
+  S.log.forEach(function(s){
+    var li = document.createElement('li'); li.textContent = s;
+    els.log.appendChild(li);
+  });
+}
+function sideSum(side){ return S.captured[side].reduce(function(a,p){ return a+p.value; }, 0); }
+function refreshPanel(){
+  els.wCount.textContent = S.captured.white.length;
+  els.wSum.textContent = sideSum('white');
+  els.bCount.textContent = S.captured.black.length;
+  els.bSum.textContent = sideSum('black');
+  els.turnDot.style.background = S.turn === 'white'
+    ? 'radial-gradient(circle at 35% 30%, #fbf6e6, #c9b586)' : 'radial-gradient(circle at 35% 30%, #5d4c38, #171009)';
+  els.turnText.textContent = S.over ? 'The game is decided' :
+    (S.turn === 'white' ? 'White to move (you)' : 'Black to move (the machine)');
+  els.targetLine.textContent = S.victoryMode === 'bonis'
+    ? 'Victory: De bonis \u2014 first to 60 in captured value. (Simplified.)'
+    : S.victoryMode === 'corpore'
+    ? 'Victory: De corpore \u2014 first to 4 captured pieces. (Simplified.)'
+    : '';
+  if (!S.captured.white.length && !S.captured.black.length){
+    els.spoils.textContent = 'No captures yet. The arithmetic has not yet drawn blood.';
+  } else {
+    var w = S.captured.white.map(glyph).join(', ') || '\u2014';
+    var b = S.captured.black.map(glyph).join(', ') || '\u2014';
+    els.spoils.textContent = 'White holds: ' + w + '.  Black holds: ' + b + '.';
+  }
+}
+
+function checkVictory(side){
+  if (S.victoryMode === 'bonis' && sideSum(side) >= 60) return side;
+  if (S.victoryMode === 'corpore' && S.captured[side].length >= 4) return side;
+  return null;
+}
+
+function endGame(kind, winner){
+  S.over = true; S.aiThinking = false;
+  refreshPanel(); S.dirty = true;
+  var t = '', sub = '';
+  if (kind === 'win'){
+    t = (winner === 'white' ? 'White triumphs \u2014 the evens carry the day.'
+                           : 'Black triumphs \u2014 the odds carry the day.');
+    sub = S.victoryMode === 'bonis'
+      ? 'De bonis, simplified: ' + sideSum(winner) + ' in captured value.'
+      : 'De corpore, simplified: ' + S.captured[winner].length + ' pieces taken.';
+    addLog(t);
+  } else {
+    t = 'A drawn battle \u2014 neither army can advance.';
+    sub = 'The schoolmaster declares honours even.';
+    addLog(t);
+  }
+  els.endText.textContent = t; els.endSub.textContent = sub;
+  els.endModal.classList.remove('rithmomachia-hidden');
+  setStatus(t);
+}
+
+/* Execute a move on the live board with animation. */
+function doMove(pieceId, r1, c1, done){
+  var p = findById(S.board, pieceId);
+  var r0 = p.r, c0 = p.c;
+  var caps = applyMove(S.board, pieceId, r1, c1);
+  S.lastMove = { r:r1, c:c1 };
+  S.selected = null; S.movesCache = null; S.ply++; S.passes = 0;
+  var dur = reducedMotion ? 0 : 240;
+  if (dur > 0) S.anims.push({ kind:'slide', piece:p, r0:r0, c0:c0, r1:r1, c1:c1, t0:performance.now(), dur:dur });
+  caps.forEach(function(t, i){
+    S.captured[p.side].push(t.victim);
+    if (dur > 0) S.anims.push({ kind:'fade', piece:t.victim, r:t.victim.r, c:t.victim.c,
+      t0:performance.now()+dur+i*120, dur:220 });
+    var who = p.side === 'white' ? 'White' : 'Black';
+    var label = t.kind === 'encounter' ? 'encounter' : t.kind === 'ambush' ? 'ambush' : 'siege';
+    addLog(who + ' ' + glyph(p) + ' takes ' + glyph(t.victim) +
+      ' by ' + label + ' \u2014 ' + t.math + '.');
+  });
+  if (!caps.length) addLog((p.side==='white'?'White ':'Black ') + glyph(p) +
+    ' strides to ' + String.fromCharCode(97+c1) + (ROWS-r1) + '.');
+  refreshPanel(); S.dirty = true;
+  var w = checkVictory(p.side);
+  var wait = reducedMotion ? 0 : (dur + caps.length*130 + 120);
+  arm(function(){
+    if (S.over) return;
+    if (w){ endGame('win', w); return; }
+    S.turn = foe(p.side);
+    claimStanding(S.turn);            /* spring any standing traps first */
+    if (S.over) return;
+    refreshPanel(); S.dirty = true;
+    if (done) done();
+  }, wait);
+}
+
+function maybePass(){
+  if (S.over) return true;
+  if (!allMoves(S.board, S.turn).length){
+    addLog((S.turn==='white'?'White':'Black') + ' has no legal move \u2014 passes.');
+    S.passes++;
+    if (S.passes >= 2){ endGame('draw'); return true; }
+    S.turn = foe(S.turn);
+    claimStanding(S.turn);
+    if (S.over) return true;
+    refreshPanel(); S.dirty = true;
+    return maybePass();
+  }
+  if (S.ply >= 160){ endGame('draw'); return true; }
+  return false;
+}
+
+function aiTurn(){
+  if (S.over || S.turn !== 'black') return;
+  if (maybePass()) return;
+  S.aiThinking = true;
+  setStatus('The machine reckons its numbers\u2026');
+  arm(function(){
+    S.aiThinking = false;
+    if (S.over) return;
+    var m = aiChooseMove();
+    if (!m){ maybePass(); if (!S.over && S.turn==='white'){ setStatus('Your move, scholar.'); } return; }
+    doMove(m.piece.id, m.r, m.c, function(){
+      if (!S.over){ setStatus('Your move, scholar.'); maybePass(); }
+    });
+  }, reducedMotion ? 60 : 650);
+}
+
+/* ---------------- input ---------------- */
+function squareFromEvent(e){
+  var rect = els.canvas.getBoundingClientRect();
+  var x = (e.clientX - rect.left) * (els.canvas.width / rect.width);
+  var y = (e.clientY - rect.top) * (els.canvas.height / rect.height);
+  var c = Math.floor(x / cell), r = Math.floor(y / cell);
+  return inB(r, c) ? { r:r, c:c } : null;
+}
+
+function onPointer(e){
+  if (S.over || S.turn !== 'white' || S.aiThinking || S.anims.length) return;
+  var sq = squareFromEvent(e);
+  if (!sq) return;
+  S.cursor = { r:sq.r, c:sq.c };
+  var p = S.board[sq.r][sq.c];
+  if (S.selected){
+    var mv = null;
+    S.movesCache.forEach(function(m){ if (m.r === sq.r && m.c === sq.c) mv = m; });
+    if (mv){
+      var id = S.selected.id;
+      doMove(id, mv.r, mv.c, function(){ if (!S.over) aiTurn(); });
+      return;
+    }
+  }
+  if (p && p.side === 'white'){
+    S.selected = p; S.movesCache = legalMovesFor(S.board, p);
+    setStatus(glyph(p) + ' selected \u2014 ' + S.movesCache.length + ' stride(s) open.');
+  } else {
+    S.selected = null; S.movesCache = null;
+    setStatus('Your move, scholar.');
+  }
+  S.dirty = true;
+}
+
+function onKey(e){
+  if (!els.startModal.classList.contains('rithmomachia-hidden') ||
+      !els.endModal.classList.contains('rithmomachia-hidden')) return;
+  var k = e.key, cur = S.cursor;
+  if (k === 'ArrowUp' || k === 'ArrowDown' || k === 'ArrowLeft' || k === 'ArrowRight'){
+    e.preventDefault();
+    if (k === 'ArrowUp') cur.r = Math.max(0, cur.r-1);
+    if (k === 'ArrowDown') cur.r = Math.min(ROWS-1, cur.r+1);
+    if (k === 'ArrowLeft') cur.c = Math.max(0, cur.c-1);
+    if (k === 'ArrowRight') cur.c = Math.min(COLS-1, cur.c+1);
+    S.dirty = true; return;
+  }
+  if (k === 'Escape'){ S.selected = null; S.movesCache = null; S.dirty = true;
+    setStatus('Your move, scholar.'); return; }
+  if (k === 'Enter' || k === ' '){
+    e.preventDefault();
+    if (S.over || S.turn !== 'white' || S.aiThinking || S.anims.length) return;
+    var p = S.board[cur.r][cur.c];
+    if (S.selected){
+      var mv = null;
+      S.movesCache.forEach(function(m){ if (m.r === cur.r && m.c === cur.c) mv = m; });
+      if (mv){
+        var id = S.selected.id;
+        doMove(id, mv.r, mv.c, function(){ if (!S.over) aiTurn(); });
+        return;
+      }
+    }
+    if (p && p.side === 'white'){
+      S.selected = p; S.movesCache = legalMovesFor(S.board, p);
+      setStatus(glyph(p) + ' selected \u2014 ' + S.movesCache.length + ' stride(s) open.');
+    } else { S.selected = null; S.movesCache = null; }
+    S.dirty = true;
+  }
+}
+
+/* ---------------- game setup / teardown ---------------- */
+var listeners = [];
+function listen(target, type, fn, opts){
+  target.addEventListener(type, fn, opts);
+  listeners.push({ target:target, type:type, fn:fn, opts:opts });
+}
+
+function newGame(){
+  S.board = buildOpening();
+  S.turn = 'white'; S.selected = null; S.movesCache = null;
+  S.captured = { white:[], black:[] };
+  S.over = false; S.log = []; S.passes = 0; S.ply = 0;
+  S.aiThinking = false; S.anims = []; S.lastMove = null;
+  S.cursor = { r:2, c:3 };
+  els.log.innerHTML = '';
+  els.endModal.classList.add('rithmomachia-hidden');
+  addLog('The board is set. White (evens) against Black (odds).');
+  refreshPanel(); S.dirty = true;
+  setStatus('Your move, scholar.');
+}
+
+function startWith(mode){
+  S.victoryMode = mode;
+  els.startModal.classList.add('rithmomachia-hidden');
+  newGame();
+}
+
+/* destroy(): full teardown — listeners, timers, rAF, textures, state. */
+var timers = [];
+function arm(fn, ms){
+  var id = setTimeout(function(){
+    timers = timers.filter(function(t){ return t !== id; });
+    fn();
+  }, ms);
+  timers.push(id);
+  return id;
+}
+function destroy(){
+  listeners.forEach(function(l){
+    l.target.removeEventListener(l.type, l.fn, l.opts);
+  });
+  listeners = [];
+  timers.forEach(function(id){ clearTimeout(id); });
+  timers = [];
+  if (resizeObs){ resizeObs.disconnect(); resizeObs = null; }
+  if (rafId){ cancelAnimationFrame(rafId); rafId = 0; }
+  S.anims = []; S.board = null; S.movesCache = null; S.selected = null;
+  S.captured = { white:[], black:[] };
+  vellumTex = null;
+  if (ctx) ctx.clearRect(0, 0, els.canvas.width || 0, els.canvas.height || 0);
+  if (window.__rithmomachia === api) delete window.__rithmomachia;
+}
+
+var api = { destroy:destroy, newGame:newGame };
+
+/* ---------------- init ---------------- */
+function init(){
+  layout();
+  listen(els.canvas, 'pointerdown', onPointer);
+  listen(document, 'keydown', onKey);
+  listen($('rithmomachia-new'), 'click', function(){
+    els.startModal.classList.remove('rithmomachia-hidden');
+  });
+  listen($('rithmomachia-choose-bonis'), 'click', function(){ startWith('bonis'); });
+  listen($('rithmomachia-choose-corpore'), 'click', function(){ startWith('corpore'); });
+  listen($('rithmomachia-again'), 'click', function(){
+    els.endModal.classList.add('rithmomachia-hidden');
+    els.startModal.classList.remove('rithmomachia-hidden');
+  });
+  var onResize = function(){ layout(); };
+  listen(window, 'resize', onResize);
+  if (typeof window.ResizeObserver === 'function'){
+    resizeObs = new ResizeObserver(onResize);
+    resizeObs.observe(els.canvas.parentElement);
+  }
+  S.board = buildOpening();
+  refreshPanel();
+  els.startModal.classList.remove('rithmomachia-hidden');
+  loop();
+}
+
+if (document.readyState === 'loading'){
+  listen(document, 'DOMContentLoaded', init);
+} else { init(); }
+
+window.__rithmomachia = api;
+})();
+</script>
+</body>
+</html>

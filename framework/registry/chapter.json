@@ -1,0 +1,746 @@
+{
+ "type": "chapter",
+ "count": 83,
+ "entities": [
+  {
+   "id": "chapter:ch01",
+   "type": "chapter",
+   "label": "The Flood",
+   "status": "published",
+   "href": "chapters/ch01.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch02",
+   "type": "chapter",
+   "label": "Egypt",
+   "era": "02-bronze-age",
+   "status": "pending",
+   "href": "chapters/ch02.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch03",
+   "type": "chapter",
+   "label": "Mesopotamia",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "chapters/ch03.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch04",
+   "type": "chapter",
+   "label": "Indus Valley",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "chapters/ch04.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch05",
+   "type": "chapter",
+   "label": "Early Vedic",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "chapters/ch05.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch06",
+   "type": "chapter",
+   "label": "Zoroaster",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "chapters/ch06.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch07",
+   "type": "chapter",
+   "label": "Pre-exilic Israel",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "chapters/ch07.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch08",
+   "type": "chapter",
+   "label": "Early Greece",
+   "era": "03-early-iron-age",
+   "status": "pending",
+   "href": "chapters/ch08.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch09",
+   "type": "chapter",
+   "label": "Early China",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "chapters/ch09.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch10",
+   "type": "chapter",
+   "label": "Second Temple Judaism",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "chapters/ch10.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch11",
+   "type": "chapter",
+   "label": "Buddhism",
+   "era": "04-axial-age",
+   "status": "pending",
+   "href": "chapters/ch11.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch12",
+   "type": "chapter",
+   "label": "Confucianism & Daoism",
+   "era": "04-axial-age",
+   "status": "pending",
+   "href": "chapters/ch12.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch13",
+   "type": "chapter",
+   "label": "Rome",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "chapters/ch13.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch14",
+   "type": "chapter",
+   "label": "Celtic & Germanic",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "chapters/ch14.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch15",
+   "type": "chapter",
+   "label": "Classical Greece",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "chapters/ch15.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch16",
+   "type": "chapter",
+   "label": "Early Christianity",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch16.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch17",
+   "type": "chapter",
+   "label": "Gnosticism",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch17.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch18",
+   "type": "chapter",
+   "label": "Roman Mystery Cults",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch18.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch19",
+   "type": "chapter",
+   "label": "Rabbinic Judaism",
+   "era": "05-late-antiquity",
+   "status": "pending",
+   "href": "chapters/ch19.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch20",
+   "type": "chapter",
+   "label": "Mahayana Buddhism",
+   "era": "05-late-antiquity",
+   "status": "pending",
+   "href": "chapters/ch20.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch21",
+   "type": "chapter",
+   "label": "Islam",
+   "era": "06-early-medieval",
+   "status": "pending",
+   "href": "chapters/ch21.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch22",
+   "type": "chapter",
+   "label": "Patristic Christianity",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch22.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch23",
+   "type": "chapter",
+   "label": "Norse Paganism",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch23.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch24",
+   "type": "chapter",
+   "label": "Tantra",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch24.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch25",
+   "type": "chapter",
+   "label": "Shinto",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch25.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch26",
+   "type": "chapter",
+   "label": "Kabbalah",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch26.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch27",
+   "type": "chapter",
+   "label": "Sufism",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch27.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch28",
+   "type": "chapter",
+   "label": "Scholasticism",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch28.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch29",
+   "type": "chapter",
+   "label": "The Maya",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch29.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch30",
+   "type": "chapter",
+   "label": "Bhakti",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch30.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch31",
+   "type": "chapter",
+   "label": "The Reformation",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch31.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch32",
+   "type": "chapter",
+   "label": "The Witch Trials",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch32.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch33",
+   "type": "chapter",
+   "label": "African Traditional Religion",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch33.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch34",
+   "type": "chapter",
+   "label": "Sikhism",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch34.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch35",
+   "type": "chapter",
+   "label": "New Religious Movements",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch35.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch36",
+   "type": "chapter",
+   "label": "Spiritualism",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch36.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch37",
+   "type": "chapter",
+   "label": "Theosophy & the Occult Revival",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch37.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch38",
+   "type": "chapter",
+   "label": "Wicca & Modern Paganism",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch38.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch39",
+   "type": "chapter",
+   "label": "Satanism",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch39.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch40",
+   "type": "chapter",
+   "label": "African Diaspora Religions",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch40.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch41",
+   "type": "chapter",
+   "label": "The Paleolithic",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "chapters/ch41.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch42",
+   "type": "chapter",
+   "label": "The Neolithic",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "chapters/ch42.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch43",
+   "type": "chapter",
+   "label": "The Aztec",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch43.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch44",
+   "type": "chapter",
+   "label": "The Inca",
+   "era": "07-high-medieval",
+   "status": "pending",
+   "href": "chapters/ch44.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch45",
+   "type": "chapter",
+   "label": "Pistis Sophia",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch45.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch46",
+   "type": "chapter",
+   "label": "Creation & the First Order",
+   "status": "published",
+   "href": "chapters/ch46.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch47",
+   "type": "chapter",
+   "label": "Journeys to the Underworld",
+   "status": "pending",
+   "href": "chapters/ch47.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch48",
+   "type": "chapter",
+   "label": "The Great Goddess",
+   "status": "published",
+   "href": "chapters/ch48.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch49",
+   "type": "chapter",
+   "label": "Sacred Kingship",
+   "status": "published",
+   "href": "chapters/ch49.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch50",
+   "type": "chapter",
+   "label": "The End of Days",
+   "status": "pending",
+   "href": "chapters/ch50.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch51",
+   "type": "chapter",
+   "label": "Sacrifice & the Scapegoat",
+   "status": "pending",
+   "href": "chapters/ch51.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch52",
+   "type": "chapter",
+   "label": "Jainism",
+   "era": "04-axial-age",
+   "status": "pending",
+   "href": "chapters/ch52.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch53",
+   "type": "chapter",
+   "label": "Tibetan & Vajrayana Buddhism",
+   "era": "06-early-medieval",
+   "status": "pending",
+   "href": "chapters/ch53.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch54",
+   "type": "chapter",
+   "label": "Zen & Pure Land Buddhism",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch54.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch55",
+   "type": "chapter",
+   "label": "Manichaeism",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch55.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch56",
+   "type": "chapter",
+   "label": "Mandaeans, Yazidis & Druze",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch56.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch57",
+   "type": "chapter",
+   "label": "Hittite & Anatolian",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "chapters/ch57.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch58",
+   "type": "chapter",
+   "label": "Canaanite & Phoenician",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "chapters/ch58.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch59",
+   "type": "chapter",
+   "label": "Slavic & Baltic Paganism",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch59.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch60",
+   "type": "chapter",
+   "label": "Eastern Orthodoxy & Byzantium",
+   "era": "06-early-medieval",
+   "status": "pending",
+   "href": "chapters/ch60.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch61",
+   "type": "chapter",
+   "label": "Aboriginal Australian Dreaming",
+   "era": "01-prehistory",
+   "status": "pending",
+   "href": "chapters/ch61.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch62",
+   "type": "chapter",
+   "label": "Native North American",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch62.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch63",
+   "type": "chapter",
+   "label": "Oceania",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch63.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch64",
+   "type": "chapter",
+   "label": "Pentecostalism & Global Christianity",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch64.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch65",
+   "type": "chapter",
+   "label": "Bahá'í & New Faiths",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch65.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch66",
+   "type": "chapter",
+   "label": "The San & Southern African Rock Art",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "chapters/ch66.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch67",
+   "type": "chapter",
+   "label": "Minoan Crete",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "chapters/ch67.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch68",
+   "type": "chapter",
+   "label": "Nubia & Kush",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "chapters/ch68.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch69",
+   "type": "chapter",
+   "label": "The Upanishads & the Hindu Synthesis",
+   "era": "04-axial-age",
+   "status": "pending",
+   "href": "chapters/ch69.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch70",
+   "type": "chapter",
+   "label": "Pre-Islamic Arabia",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch70.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch71",
+   "type": "chapter",
+   "label": "Korea",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch71.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch72",
+   "type": "chapter",
+   "label": "The Cathars & Medieval Heresy",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch72.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch73",
+   "type": "chapter",
+   "label": "Sabbateans, Frankists & Hasidim",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch73.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch74",
+   "type": "chapter",
+   "label": "Secularism & the Nones",
+   "era": "09-modern",
+   "status": "pending",
+   "href": "chapters/ch74.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch75",
+   "type": "chapter",
+   "label": "Siberian & Arctic Shamanism",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "chapters/ch75.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch76",
+   "type": "chapter",
+   "label": "The Olmec",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "chapters/ch76.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch77",
+   "type": "chapter",
+   "label": "The Etruscans",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "chapters/ch77.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch78",
+   "type": "chapter",
+   "label": "The Scythians & the Steppe",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "chapters/ch78.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch79",
+   "type": "chapter",
+   "label": "The First Christian Kingdoms",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "chapters/ch79.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch80",
+   "type": "chapter",
+   "label": "Shi'ism",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "chapters/ch80.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch81",
+   "type": "chapter",
+   "label": "Tengri & the Mongols",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "chapters/ch81.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch82",
+   "type": "chapter",
+   "label": "Akbar & the Mughal Synthesis",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "chapters/ch82.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch83",
+   "type": "chapter",
+   "label": "Global Hinduism & the Guru Movements",
+   "era": "09-modern",
+   "status": "published",
+   "href": "chapters/ch83.html",
+   "from": "docs/assets/data.js"
+  }
+ ]
+}

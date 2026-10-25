@@ -61,17 +61,17 @@ every remaining chapter and added the lens structure throughout.
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
 | ch41 — The Paleolithic | Tradition | 01-prehistory | **CLEARED** (2026-09-28) | `eras/01-prehistory/ch41-paleolithic-prehistory.md` |
 | ch42 — The Neolithic | Tradition | 01-prehistory | **CLEARED** (2026-09-28) | `eras/01-prehistory/ch42-neolithic-prehistory.md` |
-| ch02 — Egypt | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
+| ch02 — Egypt | Tradition | 02-bronze-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
 | ch03 — Mesopotamia | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
 | ch04 — Indus Valley | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |
 | ch05 — Early Vedic | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch05-early-vedic-bronze-age.md` |
 | ch06 — Zoroaster | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch06-zoroaster-early-iron-age.md` |
 | ch07 — Pre-exilic Israel | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch07-pre-exilic-israel-early-iron-age.md` |
-| ch08 — Early Greece | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch08-early-greece-early-iron-age.md` |
+| ch08 — Early Greece | Tradition | 03-early-iron-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/03-early-iron-age/ch08-early-greece-early-iron-age.md` |
 | ch09 — Early China | Tradition | 03-early-iron-age | **CLEARED** | `eras/03-early-iron-age/ch09-early-china-early-iron-age.md` |
 | ch10 — Second Temple Judaism | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch10-second-temple-judaism-axial-age.md` |
-| ch11 — Buddhism | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch11-buddhism-axial-age.md` |
-| ch12 — Confucianism & Daoism | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch12-confucianism-daoism-axial-age.md` |
+| ch11 — Buddhism | Tradition | 04-axial-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/04-axial-age/ch11-buddhism-axial-age.md` |
+| ch12 — Confucianism & Daoism | Tradition | 04-axial-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/04-axial-age/ch12-confucianism-daoism-axial-age.md` |
 | ch13 — Rome | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch13-rome-axial-age.md` |
 | ch14 — Celtic & Germanic | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch14-celtic-germanic-axial-age.md` |
 | ch15 — Classical Greece | Tradition | 04-axial-age | **CLEARED** | `eras/04-axial-age/ch15-classical-greece-axial-age.md` |
@@ -81,12 +81,12 @@ every remaining chapter and added the lens structure throughout.
 | ch16 — Early Christianity | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch16-early-christianity-late-antiquity.md` |
 | ch17 — Gnosticism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch17-gnosticism-late-antiquity.md` |
 | ch18 — Roman Mystery Cults | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch18-roman-mystery-cults-late-antiquity.md` |
-| ch19 — Rabbinic Judaism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md` |
-| ch20 — Mahayana Buddhism | Tradition | 05-late-antiquity | **CLEARED** | `eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md` |
+| ch19 — Rabbinic Judaism | Tradition | 05-late-antiquity | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/05-late-antiquity/ch19-rabbinic-judaism-late-antiquity.md` |
+| ch20 — Mahayana Buddhism | Tradition | 05-late-antiquity | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/05-late-antiquity/ch20-mahayana-buddhism-late-antiquity.md` |
 
 **Late Antiquity (era 05) traditions complete** (ch16–ch20).
 
-| ch21 — Islam | Tradition | 06-early-medieval | **CLEARED** (2026-09-28) (new sections 2026-09-27: the founding women; Kharijites & Ibadis) | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
+| ch21 — Islam | Tradition | 06-early-medieval | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28) (new sections 2026-09-27: the founding women; Kharijites & Ibadis)) | `eras/06-early-medieval/ch21-islam-early-medieval.md` |
 | ch22 — Patristic Christianity | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch22-patristic-christianity-early-medieval.md` |
 | ch23 — Norse Paganism | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch23-norse-paganism-early-medieval.md` |
 | ch24 — Tantra | Tradition | 06-early-medieval | **CLEARED** | `eras/06-early-medieval/ch24-tantra-early-medieval.md` |
@@ -99,7 +99,7 @@ every remaining chapter and added the lens structure throughout.
 | ch28 — Scholasticism | Tradition | 07-high-medieval | **CLEARED** (2026-09-28) | `eras/07-high-medieval/ch28-scholasticism-high-medieval.md` |
 | ch29 — The Maya | Tradition | 07-high-medieval | **CLEARED** (2026-09-28) | `eras/07-high-medieval/ch29-maya-high-medieval.md` |
 | ch43 — The Aztec | Tradition | 07-high-medieval | **CLEARED** (2026-09-28) | `eras/07-high-medieval/ch43-aztec-high-medieval.md` |
-| ch44 — The Inca | Tradition | 07-high-medieval | **CLEARED** (2026-09-28) | `eras/07-high-medieval/ch44-inca-high-medieval.md` |
+| ch44 — The Inca | Tradition | 07-high-medieval | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28)) | `eras/07-high-medieval/ch44-inca-high-medieval.md` |
 | ch30 — Bhakti | Tradition | 07-high-medieval | **CLEARED** (2026-09-28) | `eras/07-high-medieval/ch30-bhakti-high-medieval.md` |
 
 **High Medieval (era 07) traditions complete** (ch26–ch30 + ch43–ch44): Kabbalah, Sufism, Scholasticism, The Maya, The Aztec, The Inca, Bhakti. *(The former combined ch29 "Aztec, Maya & Inca" was split into three chapters in the 2026-09 completion pass.)*
@@ -120,59 +120,59 @@ every remaining chapter and added the lens structure throughout.
 
 **Modern (era 09) traditions complete** (ch35–ch40): New Religious Movements, Spiritualism, Theosophy & the Occult Revival, Wicca & Modern Paganism, Satanism, African Diaspora Religions.
 
-**Later additions (ch45–ch65)**: the Pistis Sophia chapter, six comparative themes and fourteen further traditions, bringing the archive to **65 chapters** (58 traditions + 7 themes). Status mirrors `docs/assets/data.js`: all 21 were cleared by Carter.
+**Later additions (ch45–ch65)**: the Pistis Sophia chapter, six comparative themes and fourteen further traditions, bringing the archive to **65 chapters** (58 traditions + 7 themes). All 21 were cleared by Carter; several have since gone back to pending (see each row). Status mirrors `docs/assets/data.js` as of 2026-10-11.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | published, **pending review** (2026-09-30: the full markdown text replaced the condensed live version; was CLEARED 2026-09-28) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
-| ch46 — Creation & the First Order | Comparative theme | cross-era | published, **pending review** (2026-09-30: the full markdown text replaced the condensed live version; was CLEARED 2026-09-28) | `themes/ch46-creation.md` |
-| ch47 — Journeys to the Underworld | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch47-underworld.md` |
+| ch45 — Pistis Sophia | Tradition | 05-late-antiquity | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/05-late-antiquity/ch45-pistis-sophia-late-antiquity.md` |
+| ch46 — Creation & the First Order | Comparative theme | cross-era | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `themes/ch46-creation.md` |
+| ch47 — Journeys to the Underworld | Comparative theme | cross-era | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `themes/ch47-underworld.md` |
 | ch48 — The Great Goddess | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch48-great-goddess.md` |
 | ch49 — Sacred Kingship | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch49-sacred-kingship.md` |
-| ch50 — The End of Days | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch50-apocalypse.md` |
-| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `themes/ch51-sacrifice.md` |
-| ch52 — Jainism | Tradition | 04-axial-age | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/04-axial-age/ch52-jainism-axial-age.md` |
-| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
+| ch50 — The End of Days | Comparative theme | cross-era | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `themes/ch50-apocalypse.md` |
+| ch51 — Sacrifice & the Scapegoat | Comparative theme | cross-era | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `themes/ch51-sacrifice.md` |
+| ch52 — Jainism | Tradition | 04-axial-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `eras/04-axial-age/ch52-jainism-axial-age.md` |
+| ch53 — Tibetan & Vajrayana Buddhism | Tradition | 06-early-medieval | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `eras/06-early-medieval/ch53-tibetan-vajrayana-buddhism-early-medieval.md` |
 | ch54 — Zen & Pure Land Buddhism | Tradition | 06-early-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch54-zen-pure-land-buddhism-early-medieval.md` |
 | ch55 — Manichaeism | Tradition | 05-late-antiquity | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/05-late-antiquity/ch55-manichaeism-late-antiquity.md` |
 | ch56 — Mandaeans, Yazidis & Druze | Tradition | 07-high-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch56-mandaeans-yazidis-druze-high-medieval.md` |
 | ch57 — Hittite & Anatolian | Tradition | 02-bronze-age | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/02-bronze-age/ch57-hittite-anatolian-bronze-age.md` |
 | ch58 — Canaanite & Phoenician | Tradition | 03-early-iron-age | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/03-early-iron-age/ch58-canaanite-phoenician-early-iron-age.md` |
 | ch59 — Slavic & Baltic Paganism | Tradition | 07-high-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch59-slavic-baltic-paganism-high-medieval.md` |
-| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
-| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
+| ch60 — Eastern Orthodoxy & Byzantium | Tradition | 06-early-medieval | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `eras/06-early-medieval/ch60-eastern-orthodoxy-byzantium-early-medieval.md` |
+| ch61 — Aboriginal Australian Dreaming | Tradition | 01-prehistory | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration)) | `eras/01-prehistory/ch61-aboriginal-australian-dreaming-prehistory.md` |
 | ch62 — Native North American | Tradition | 07-high-medieval | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/07-high-medieval/ch62-native-north-american-high-medieval.md` |
 | ch63 — Oceania | Tradition | 08-early-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/08-early-modern/ch63-oceania-early-modern.md` |
 | ch64 — Pentecostalism & Global Christianity | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch64-pentecostalism-global-christianity-modern.md` |
 | ch65 — Bahá'í & New Faiths | Tradition | 09-modern | **CLEARED** (2026-09-28; new believer's & skeptical lens sections; new illustration) | `eras/09-modern/ch65-bahai-new-faiths-modern.md` |
 
-**Batch III (2026-09-29): one new tradition per era**, auto-published with the pending-review tag and cleared by Carter on 2026-09-29, bringing the archive to 74 chapters (67 traditions + 7 themes). Three were later set back to pending by Carter's rulings during the Wikipedia-replacement batch (ch68 and ch70 on 2026-10-05; ch73 on 2026-10-05 after its Glückel correction); ch71 went back to pending on 2026-10-05 and was cleared again on 2026-10-06. Status mirrors `docs/assets/data.js` as of 2026-10-10.
+**Batch III (2026-09-29): one new tradition per era**, auto-published with the pending-review tag and cleared by Carter on 2026-09-29, bringing the archive to 74 chapters (67 traditions + 7 themes). Three were later set back to pending by Carter's rulings during the Wikipedia-replacement batch (ch68 and ch70 on 2026-10-05; ch73 on 2026-10-05 after its Glückel correction); ch71 went back to pending on 2026-10-05 and was cleared again on 2026-10-06. Status mirrors `docs/assets/data.js` as of 2026-10-11.
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
 | ch66 — The San & Southern African Rock Art | Tradition | 01-prehistory | **CLEARED** (2026-09-29) | `eras/01-prehistory/ch66-san-rock-art-prehistory.md` |
 | ch67 — Minoan Crete | Tradition | 02-bronze-age | **CLEARED** (2026-09-29) | `eras/02-bronze-age/ch67-minoan-crete-bronze-age.md` |
-| ch68 — Nubia & Kush | Tradition | 03-early-iron-age | published, **pending review** (back to pending 2026-10-05, Carter's ruling on the Wikipedia-replacement sources; was CLEARED 2026-09-29) | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
-| ch69 — The Upanishads & the Hindu Synthesis | Tradition | 04-axial-age | **CLEARED** (2026-09-29) | `eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md` |
-| ch70 — Pre-Islamic Arabia | Tradition | 05-late-antiquity | published, **pending review** (back to pending 2026-10-05, Carter's ruling; the Taymāʾ stele dating is still open; was CLEARED 2026-09-29) | `eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md` |
+| ch68 — Nubia & Kush | Tradition | 03-early-iron-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/03-early-iron-age/ch68-nubia-kush-early-iron-age.md` |
+| ch69 — The Upanishads & the Hindu Synthesis | Tradition | 04-axial-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-29)) | `eras/04-axial-age/ch69-upanishads-hindu-synthesis-axial-age.md` |
+| ch70 — Pre-Islamic Arabia | Tradition | 05-late-antiquity | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/05-late-antiquity/ch70-pre-islamic-arabia-late-antiquity.md` |
 | ch71 — Korea | Tradition | 06-early-medieval | **CLEARED** (2026-10-06, after the 1993 Dangun-tomb source was strengthened; first cleared 2026-09-29) | `eras/06-early-medieval/ch71-korea-early-medieval.md` |
 | ch72 — The Cathars & Medieval Heresy | Tradition | 07-high-medieval | **CLEARED** (2026-09-29) | `eras/07-high-medieval/ch72-cathars-medieval-heresy-high-medieval.md` |
-| ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | published, **pending review** (back to pending 2026-10-05 after the Glückel correction; was CLEARED 2026-09-29) | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
-| ch74 — Secularism & the Nones | Tradition | 09-modern | **CLEARED** (2026-09-29) | `eras/09-modern/ch74-secularism-nonreligion-modern.md` |
+| ch73 — Sabbateans, Frankists & Hasidim | Tradition | 08-early-modern | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/08-early-modern/ch73-sabbateans-hasidism-early-modern.md` |
+| ch74 — Secularism & the Nones | Tradition | 09-modern | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED** (2026-09-29)) | `eras/09-modern/ch74-secularism-nonreligion-modern.md` |
 
 **Batch IV (2026-09-29): a second new tradition per era**, auto-published with the pending-review tag, bringing the archive to **83 chapters** (76 traditions + 7 themes).
 
 | Chapter | Type | Era | Status | Location |
 |---|---|---|---|---|
-| ch75 — Siberian & Arctic Shamanism | Tradition | 01-prehistory | published, **pending review** | `eras/01-prehistory/ch75-siberian-arctic-shamanism-prehistory.md` |
-| ch76 — The Olmec | Tradition | 02-bronze-age | published, **pending review** | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
-| ch77 — The Etruscans | Tradition | 03-early-iron-age | published, **pending review** | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
-| ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | published, **pending review** | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
-| ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | published, **pending review** | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
-| ch80 — Shi'ism | Tradition | 06-early-medieval | published, **pending review** | `eras/06-early-medieval/ch80-shiism-early-medieval.md` |
-| ch81 — Tengri & the Mongols | Tradition | 07-high-medieval | published, **pending review** | `eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md` |
-| ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | published, **pending review** | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
-| ch83 — Global Hinduism & the Guru Movements | Tradition | 09-modern | published, **pending review** | `eras/09-modern/ch83-global-hinduism-guru-movements-modern.md` |
+| ch75 — Siberian & Arctic Shamanism | Tradition | 01-prehistory | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/01-prehistory/ch75-siberian-arctic-shamanism-prehistory.md` |
+| ch76 — The Olmec | Tradition | 02-bronze-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/02-bronze-age/ch76-olmec-bronze-age.md` |
+| ch77 — The Etruscans | Tradition | 03-early-iron-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/03-early-iron-age/ch77-etruscans-early-iron-age.md` |
+| ch78 — The Scythians & the Steppe | Tradition | 04-axial-age | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/04-axial-age/ch78-scythians-steppe-axial-age.md` |
+| ch79 — The First Christian Kingdoms | Tradition | 05-late-antiquity | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/05-late-antiquity/ch79-first-christian-kingdoms-late-antiquity.md` |
+| ch80 — Shi'ism | Tradition | 06-early-medieval | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/06-early-medieval/ch80-shiism-early-medieval.md` |
+| ch81 — Tengri & the Mongols | Tradition | 07-high-medieval | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/07-high-medieval/ch81-tengri-mongols-high-medieval.md` |
+| ch82 — Akbar & the Mughal Synthesis | Tradition | 08-early-modern | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/08-early-modern/ch82-akbar-mughal-synthesis-early-modern.md` |
+| ch83 — Global Hinduism & the Guru Movements | Tradition | 09-modern | **CLEARED** 2026-10-11 (batch clearance after the PR #42 source review) | `eras/09-modern/ch83-global-hinduism-guru-movements-modern.md` |
 
 Status values: `not started` · `researching` · `drafting` · `published, pending review` · `revising` · `CLEARED`.
 

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Debate Hall — The Atlas Table (3D Relic) · The Divine Archives</title>
+<style>
+#dh3d{position:fixed;inset:0;background:#000;overflow:hidden;font-family:Georgia,'Times New Roman',serif;color:#fff6d8;touch-action:none}
+#dh3d canvas{display:block}
+#dh3d .hidden{display:none!important}
+/* ---------- title / chrome ---------- */
+#dh3d-title{position:absolute;top:14px;left:16px;z-index:20;pointer-events:none}
+#dh3d-title .k{font-size:10px;letter-spacing:.42em;color:#d9a950}
+#dh3d-title h1{font-size:19px;font-weight:400;letter-spacing:.14em;margin:4px 0 0;color:#fff6d8}
+#dh3d-title .sub{font-size:11px;font-style:italic;color:#a8925e;margin-top:3px}
+#dh3d-walkup{position:absolute;top:14px;right:14px;z-index:20}
+#dh3d-hint{position:absolute;bottom:12px;left:0;right:0;z-index:15;text-align:center;font-size:11px;letter-spacing:.18em;color:#8a7c58;pointer-events:none;text-transform:uppercase}
+/* ---------- buttons ---------- */
+#dh3d button{font-family:Georgia,serif;background:rgba(20,12,4,.72);border:1px solid rgba(217,169,80,.55);color:#f2c46a;font-size:12px;letter-spacing:.22em;text-transform:uppercase;padding:10px 16px;cursor:pointer;border-radius:2px}
+#dh3d button:active{background:rgba(60,35,8,.85)}
+#dh3d button:disabled{opacity:.35;cursor:default}
+/* ---------- ethereal sheet (conjured, not digital) ---------- */
+#dh3d-sheet{position:absolute;left:8px;right:8px;bottom:8px;z-index:30;max-height:62vh;display:flex;flex-direction:column;
+ background:rgba(24,14,5,.78);border:1px solid rgba(242,196,106,.4);border-radius:6px;
+ box-shadow:0 0 34px rgba(242,196,106,.22),inset 0 0 44px rgba(242,196,106,.07);
+ backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+ opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease;pointer-events:none}
+#dh3d-sheet.awake{opacity:1;transform:translateY(0);pointer-events:auto}
+#dh3d-tabs{display:flex;border-bottom:1px solid rgba(217,169,80,.28)}
+#dh3d-tabs button{flex:1;border:none;border-right:1px solid rgba(217,169,80,.18);background:transparent;border-radius:0;padding:12px 4px;font-size:11px}
+#dh3d-tabs button.on{background:rgba(217,169,80,.14);color:#fff6d8}
+#dh3d-pages{overflow-y:auto;padding:14px 14px 16px;-webkit-overflow-scrolling:touch}
+#dh3d-pages h3{margin:0 0 8px;font-size:13px;letter-spacing:.3em;color:#f2c46a;font-weight:400;text-transform:uppercase}
+#dh3d-pages p{font-size:13.5px;line-height:1.65;color:#e8dcc0;margin:0 0 10px}
+/* timeline */
+#dh3d-era{font-size:12px;letter-spacing:.34em;color:#f2c46a;text-transform:uppercase;margin:2px 0 8px}
+#dh3d-dress{font-size:12px;font-style:italic;color:#a8925e;margin:0 0 10px}
+#dh3d input[type=range]{width:100%;accent-color:#d9a950;margin:6px 0 4px}
+#dh3d .scale{display:flex;justify-content:space-between;font-size:10px;color:#8a7c58;letter-spacing:.08em}
+/* debate */
+#dh3d-log{max-height:30vh;overflow-y:auto;margin-bottom:10px;-webkit-overflow-scrolling:touch}
+#dh3d .utter{margin:0 0 12px;padding:10px 12px;border-radius:4px;line-height:1.6;font-size:13.5px;position:relative}
+#dh3d .u-phil{background:rgba(242,196,106,.09);border:1px solid rgba(242,196,106,.4);box-shadow:0 0 18px rgba(242,196,106,.16);color:#fff3d6;animation:dh3d-summon 1.4s ease}
+#dh3d .u-vis{background:rgba(120,140,180,.10);border:1px solid rgba(140,160,200,.35);color:#dfe6fb}
+#dh3d .u-hall{font-style:italic;color:#a8925e;background:none;border:none;padding:4px 6px;font-size:12.5px}
+#dh3d .u-note{border:1px dashed rgba(140,160,200,.5);background:rgba(120,140,180,.07);color:#cfd8ee;font-size:12.5px}
+@keyframes dh3d-summon{0%{opacity:0;transform:translateY(10px);box-shadow:0 0 4px rgba(242,196,106,.05)}60%{box-shadow:0 0 30px rgba(242,196,106,.4)}100%{opacity:1;transform:none}}
+#dh3d .tier{display:inline-block;font-size:9.5px;letter-spacing:.24em;border:1px solid rgba(242,196,106,.6);color:#f2c46a;padding:2px 7px;margin-bottom:7px;border-radius:2px}
+#dh3d .tier.par{border-style:dashed;color:#d9c48f}
+#dh3d .cite{font-size:11px;color:#a8925e;font-style:italic;margin-top:6px}
+#dh3d .sugg{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+#dh3d .sugg button{font-size:11px;letter-spacing:.06em;text-transform:none;padding:8px 12px;color:#e8dcc0}
+#dh3d-row{display:flex;gap:8px}
+#dh3d-say{flex:1;background:rgba(0,0,0,.5);border:1px solid rgba(217,169,80,.4);color:#fff6d8;font-family:Georgia,serif;font-size:14px;padding:10px;border-radius:3px;min-width:0}
+#dh3d-sides{display:flex;gap:10px;margin:6px 0 12px}
+#dh3d-sides button{flex:1;font-size:11px;letter-spacing:.1em;text-transform:none;line-height:1.5;padding:12px 10px}
+/* notes */
+#dh3d-notetext{width:100%;box-sizing:border-box;min-height:90px;background:rgba(8,5,2,.85);border:1px solid rgba(217,169,80,.4);color:#e8dcc0;font-family:Georgia,serif;font-size:14px;line-height:1.6;padding:12px;border-radius:3px;box-shadow:inset 0 0 26px rgba(0,0,0,.8)}
+#dh3d-notelist{margin-top:10px;font-size:12.5px;color:#cbbd93}
+#dh3d-notelist .n{border-bottom:1px solid rgba(217,169,80,.16);padding:7px 2px;line-height:1.5}
+/* fact card */
+#dh3d-fact{position:absolute;top:64px;left:12px;right:12px;z-index:40;max-width:420px;
+ background:rgba(24,14,5,.9);border:1px solid rgba(242,196,106,.5);border-radius:5px;padding:14px 16px;
+ box-shadow:0 0 30px rgba(242,196,106,.25);backdrop-filter:blur(8px)}
+#dh3d-fact h4{margin:0 0 2px;font-size:16px;letter-spacing:.1em;color:#fff6d8;font-weight:400}
+#dh3d-fact .dates{font-size:11px;letter-spacing:.26em;color:#d9a950;margin-bottom:8px}
+#dh3d-fact p{font-size:13px;line-height:1.6;color:#e8dcc0;margin:0 0 10px}
+/* toast + fallback */
+#dh3d-toast{position:absolute;bottom:76px;left:50%;transform:translateX(-50%);z-index:50;background:rgba(20,12,4,.92);border:1px solid rgba(217,169,80,.5);color:#f2c46a;font-size:12px;letter-spacing:.14em;padding:9px 18px;border-radius:20px;opacity:0;transition:opacity .4s;pointer-events:none;white-space:nowrap}
+#dh3d-toast.show{opacity:1}
+#dh3d-fallback{position:absolute;inset:0;z-index:100;background:#050403;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}
+#dh3d-fallback p{color:#a8925e;font-style:italic;max-width:30em;line-height:1.7}
+/* compare well */
+#dh3d-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+#dh3d-compare.hidden{display:none!important}
+#dh3d .cmpcard{background:rgba(242,196,106,.07);border:1px solid rgba(242,196,106,.4);border-radius:4px;padding:10px 12px}
+#dh3d .cmpcard h5{margin:0 0 2px;font-size:14px;color:#fff6d8;font-weight:400;letter-spacing:.06em}
+#dh3d .cmpcard .cs{font-size:10.5px;letter-spacing:.18em;color:#d9a950;margin-bottom:6px}
+#dh3d .cmpcard p{font-size:12.5px;line-height:1.55;color:#e8dcc0;margin:0}
+#dh3d-cmpbtn.on{background:rgba(217,169,80,.28);color:#fff6d8}
+@media (prefers-reduced-motion:reduce){#dh3d .u-phil{animation:none}#dh3d-sheet{transition:none}}
+</style>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+ "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<div id="dh3d">
+  <div id="dh3d-mount"></div>
+  <div id="dh3d-title">
+    <div class="k">THE DIVINE ARCHIVES · DEBATE HALL</div>
+    <h1>THE ATLAS TABLE</h1>
+    <div class="sub">a relic you walk up to — the flame waits behind it</div>
+  </div>
+  <div id="dh3d-walkup"><button id="dh3d-walkup-btn" type="button">Walk up to the table</button></div>
+  <div id="dh3d-hint">drag to look · pinch to draw near</div>
+
+  <div id="dh3d-sheet" aria-live="polite">
+    <div id="dh3d-tabs" role="tablist">
+      <button type="button" data-tab="time" class="on" role="tab">Timeline</button>
+      <button type="button" data-tab="debate" role="tab">Debate</button>
+      <button type="button" data-tab="notes" role="tab">Notes</button>
+    </div>
+    <div id="dh3d-pages">
+      <div data-page="time">
+        <h3>Timeline</h3>
+        <div id="dh3d-era">Classical</div>
+        <div id="dh3d-dress">On the table: clay oil lamps, beeswax candles</div>
+        <input id="dh3d-scrub" type="range" min="-600" max="2000" step="10" value="-350" aria-label="Timeline, 600 BCE to 2000 CE">
+        <div class="scale"><span>600 BCE</span><span>1 CE</span><span>2000 CE</span></div>
+        <p style="font-size:12px;color:#a8925e">The flames on the map kindle as their thinkers' lifetimes enter the window. Tap a flame in the 3D scene for its card.</p>
+        <h3 style="margin-top:14px">Compare well</h3>
+        <p style="font-size:12px;color:#a8925e">Tap the button, then tap two flames in the scene to set their cards side by side in the well.</p>
+        <button type="button" id="dh3d-cmpbtn">Compare two thinkers</button>
+        <div id="dh3d-cmpstatus" style="font-size:12px;color:#cbbd93;margin:8px 0"></div>
+        <div id="dh3d-compare" class="hidden"></div>
+        <h3 style="margin-top:14px">The room remembers</h3>
+        <p style="font-size:12px;color:#a8925e">Along the table's far edge a candle burns for every position you have taken here. Never a verdict — only a record.</p>
+      </div>
+      <div data-page="debate" class="hidden">
+        <h3>Free will or fate? — vs. Augustine</h3>
+        <div id="dh3d-resume" class="hidden" style="margin-bottom:10px">
+          <button type="button" id="dh3d-resumebtn">Resume the debate</button>
+          <div id="dh3d-resume-note" style="font-size:11px;color:#a8925e;margin-top:6px"></div>
+        </div>
+        <div id="dh3d-sides">
+          <button type="button" id="dh3d-side-a">Defend: fate binds the will</button>
+          <button type="button" id="dh3d-side-b">Defend: the will is radically free</button>
+        </div>
+        <div id="dh3d-log"></div>
+        <div id="dh3d-sugg" class="sugg"></div>
+        <div id="dh3d-row">
+          <input id="dh3d-say" type="text" placeholder="Answer in your own words…" aria-label="Your reply">
+          <button type="button" id="dh3d-send">Speak</button>
+        </div>
+      </div>
+      <div data-page="notes" class="hidden">
+        <h3>Wax tablet</h3>
+        <p style="font-size:12px;color:#a8925e">Your notes are carved here, on this device alone. Pin one into the debate as it unfolds.</p>
+        <textarea id="dh3d-notetext" aria-label="Debate notes"></textarea>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button type="button" id="dh3d-notesave">Carve note</button>
+          <button type="button" id="dh3d-notepin">Pin latest to debate</button>
+        </div>
+        <div id="dh3d-notelist"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dh3d-fact" class="hidden">
+    <h4 id="dh3d-fact-name"></h4>
+    <div class="dates" id="dh3d-fact-dates"></div>
+    <p id="dh3d-fact-text"></p>
+    <button type="button" id="dh3d-fact-close">Close</button>
+  </div>
+
+  <div id="dh3d-toast"></div>
+  <div id="dh3d-fallback" class="hidden">
+    <p id="dh3d-fallback-msg">The chamber could not be lit on this device — WebGL is unavailable. The relic waits for a browser that can kindle it.</p>
+    <button type="button" id="dh3d-retry" style="margin-top:14px">Try again</button>
+  </div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+/* ============================== data ============================== */
+const PHILOS = [
+ {id:'socrates', name:'Socrates', dates:'470–399 BCE', mid:-435, lon:23.7, lat:38.0, color:0xf2c46a,
+  school:'Athenian · Classical', era:'Classical',
+  cmp:'PARAPHRASE · Wrongdoing is ignorance — "no one errs willingly." The will follows what the soul takes to be good; vice is a failure of knowledge, never of freedom.',
+  text:'Athenian philosopher who questioned his fellow citizens in the agora. He wrote nothing; we know him through Plato, Xenophon, and Aristophanes.'},
+ {id:'confucius', name:'Confucius', dates:'551–479 BCE', mid:-515, lon:117.0, lat:35.6, color:0xe09a4a,
+  school:'Ru · Confucian', era:'Classical',
+  cmp:'PARAPHRASE · Moral agency is won by cultivation: ren through disciplined practice. The noble person chooses the good — freedom is trained into the will, not assumed as given.',
+  text:'Chinese teacher whose Analects record his teaching on ren — humaneness — and on ritual and the moral cultivation of rulers.'},
+ {id:'nagarjuna', name:'Nagarjuna', dates:'c. 150–250 CE', mid:200, lon:78.0, lat:16.0, color:0x6a8ad4,
+  school:'Madhyamaka · Mahayana', era:'Imperial',
+  cmp:'PARAPHRASE · All things are empty of inherent self, so the "free will" of the debate dissolves under analysis — agency is conventionally real, but ultimately empty.',
+  text:'Indian Mahayana philosopher. His doctrine of emptiness (sunyata), argued through the tetralemma, stands in the Mulamadhyamakakarika.'},
+ {id:'augustine', name:'Augustine of Hippo', dates:'354–430 CE', mid:392, lon:8.6, lat:36.9, color:0xd4543a,
+  school:'Latin Patristic', era:'Late Antique',
+  cmp:'PARAPHRASE · The will is real and self-moving, but wounded: it freely chooses, yet without grace cannot choose the highest good. Foreknowledge does not compel.',
+  text:'Bishop of Hippo. The Confessions, the City of God, and On Free Choice of the Will — grace, the divided will, and the restless heart.'},
+ {id:'avicenna', name:'Avicenna (Ibn Sina)', dates:'980–1037 CE', mid:1008, lon:64.4, lat:39.8, color:0x5ab8c8,
+  school:'Islamic Peripatetic', era:'Early Medieval',
+  cmp:'PARAPHRASE · Human acts flow from the soul\u2019s nature and the intellect\u2019s judgment; the will is determined by what reason deems best — freedom as reasoned necessity.',
+  text:'Persian polymath. The Canon of Medicine; a metaphysics of essence and existence; the "flying man" thought experiment on self-awareness.'},
+ {id:'aquinas', name:'Thomas Aquinas', dates:'1225–1274 CE', mid:1250, lon:14.5, lat:41.9, color:0xf7e6b0,
+  school:'Scholastic · Dominican', era:'High Medieval',
+  cmp:'PARAPHRASE · The will necessarily seeks happiness, but freely chooses among means. The intellect proposes; the will disposes — free exactly where reason leaves options open.',
+  text:'Dominican friar. The Summa Theologiae; the five ways; faith and reason held as compatible, never at war.'},
+ {id:'nietzsche', name:'Nietzsche', dates:'1844–1900 CE', mid:1872, lon:13.4, lat:52.5, color:0x9a86c8,
+  school:'\u2014', era:'Modern',
+  cmp:'PARAPHRASE · "Free will" is a theologians\u2019 fiction invented to assign guilt. What exists are drives and instincts; consciousness is their late-born witness.',
+  text:'German philosopher. "God is dead," the eternal recurrence, Thus Spoke Zarathustra. Note: the famous "will to power" book was assembled posthumously — never cite it as his doctrine.'}
+];
+const ERAS = [[-600,'Archaic'],[-400,'Classical'],[-100,'Hellenistic'],[150,'Imperial'],[400,'Late Antique'],[700,'Early Medieval'],[1100,'High Medieval'],[1400,'Late Medieval'],[1600,'Early Modern'],[1800,'Modern'],[2100,'Modern']];
+function eraFor(y){ let e=ERAS[0][1]; for(const [t,n] of ERAS){ if(y>=t) e=n; } return e; }
+function dressFor(y){
+ if(y<500) return 'On the table: clay oil lamps, beeswax candles';
+ if(y<1400) return 'On the table: iron cage lanterns, taper candles';
+ if(y<1800) return 'On the table: brass candlesticks, taper candles';
+ return 'On the table: glass-chimney oil lanterns, candlesticks';
+}
+
+/* ---------- Augustine debate corpus (deterministic; tier-labeled) ---------- */
+const CORPUS = {
+ opening:[
+  {tier:'VERBATIM', text:'The mind commands the body, and the body obeys. The mind commands itself, and is resisted.',
+   cite:'VERBATIM · Confessions VIII.9 (Pusey 1838 trans., public domain)'},
+  {tier:'PARAPHRASE', text:'Evil does not come from God, nor from fate. It comes from the will itself, turning away from the highest good toward lower goods — a turning no star and no chain compels.',
+   cite:'PARAPHRASE · after On Free Choice of the Will, Book I'}
+ ],
+ moves:{
+  foreknowledge:{pat:/foreknow|foresee|predict|future|already known|knows.*will/,
+   steel:'You say: if God foreknows my sin, my sin is necessary, and I am not free.',
+   counter:{tier:'PARAPHRASE', text:'Foreknowledge is not compulsion. God sees the will\u2019s own movement; He does not make the movement. That a thing is seen does not make it forced — your eye does not compel what it beholds.',
+    cite:'PARAPHRASE · after On Free Choice of the Will, Book III'}},
+  caused:{pat:/caus|determin|necessar|inevitab|chain of/,
+   steel:'You say: everything has a cause, the will included — therefore the will is not free.',
+   counter:{tier:'PARAPHRASE', text:'You mistake the will for a stone. A stone is moved; the will moves itself. To ask what causes the will\u2019s first turning is to ask what pushes the pusher — the will is the beginning of its own motion.',
+    cite:'PARAPHRASE · after On Free Choice of the Will, Book III'}},
+  divided:{pat:/divided|two wills|war with|against myself|akrasia|weakness|want.*but/,
+   steel:'You say: I will and I do not will — the will is at war with itself, so it cannot be free.',
+   counter:{tier:'PARAPHRASE', text:'You have described the sickness truly, and I know it from the inside. Two wills, one carnal and one spiritual, contend within me — but this division is the wound, not the nature. Grace heals what habit broke; the healed will is one, and freely loves.',
+    cite:'PARAPHRASE · after Confessions VIII'}},
+  evil:{pat:/evil|suffering|whence|why.*bad/,
+   steel:'You ask: whence comes evil, if not from fate or from God?',
+   counter:{tier:'PARAPHRASE', text:'Evil is not a substance and not a thing made. It is the privation of good — a wound in a good nature, like blindness in an eye. Seek not an efficient cause of evil; seek the deficient will that turns from the fullness of being.',
+    cite:'PARAPHRASE · after Enchiridion'}},
+  agreement:{pat:/^(yes|yeah|true|right|indeed|agreed|i agree)\b/,
+   steel:'You grant the point — then let me press it further.',
+   counter:{tier:'PARAPHRASE', text:'If the will is free, then you are answerable. Tell me: when you chose your last wrong, did something outside you choose it — or did you? Do not answer quickly. The whole question of your life sits inside that pause.',
+    cite:'PARAPHRASE · after Confessions VIII'}},
+  question:{pat:/^(who|what|why|how|when|where|is|are|do|does|can)\b|\?$/,
+   steel:'A fair question — I will answer it plainly.',
+   counter:{tier:'PARAPHRASE', text:'Ask what the will is for, and the answer is written in your restlessness: it was made for the highest good, and it finds no rest in anything less. Every lesser love promises rest and delivers labor.',
+    cite:'PARAPHRASE · after Confessions I'}},
+  offtopic:{pat:/football|recipe|weather|stock|bitcoin|election|movie|game|score/,
+   steel:'That lies outside what I wrote about.',
+   counter:{tier:'HALL', text:'Shall we return to the question of the will — or would you face a different thinker? The table holds six others.',
+    cite:''}}
+ },
+ general:{steel:'You press the will from another side — I hear the objection.',
+  counter:{tier:'PARAPHRASE', text:'Consider: you deliberate. No one deliberates about what cannot be otherwise. Your own weighing of reasons is the will\u2019s freedom testifying against your doubt — you practice freedom even while you deny it.',
+   cite:'PARAPHRASE · after On Free Choice of the Will, Book I'}},
+ closing:[
+  {tier:'VERBATIM', text:'Thou hast made us for thyself, and our heart is restless until it finds its rest in thee.',
+   cite:'VERBATIM · Confessions I.1 (Pusey 1838 trans., public domain)'},
+  {tier:'HALL', text:'The lamps burn low. No winner is declared — the question goes with you, as it went with him. Which of these brought you here?',
+   cite:''}
+ ]
+};
+const SUGGESTED = [
+ ['If God already knows what I will do, how am I free?','Then everything has a cause — my will is caused too.'],
+ ['I feel two wills inside me, at war.','Whence comes evil, if the will is free?'],
+ ['I grant it — but what does freedom demand of me?','What is the will actually for?']
+];
+
+/* ============================== helpers ============================== */
+const $ = id => document.getElementById('dh3d-'+id);
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const MOBILE = matchMedia('(pointer: coarse)').matches || innerWidth < 760;
+let toastT = null;
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show');
+ clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2200); }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* ============================== canvas textures ============================== */
+/* Old-world map frame: lon -20..150, lat -5..62 */
+const LON0=-20, LON1=150, LAT0=-5, LAT1=62;
+function mapXY(lon,lat,W,H,mx,my){
+ const x = mx + (lon-LON0)/(LON1-LON0)*(W-2*mx);
+ const y = my + (1-(lat-LAT0)/(LAT1-LAT0))*(H-2*my);
+ return [x,y];
+}
+/* rough continent polylines (engraved style, not surveyed) */
+const LAND=[
+ [[-10,36],[-9,43],[-2,48],[2,51],[8,55],[10,58],[18,57],[24,60],[30,70],[42,68],[48,62],[44,56],[36,52],[28,48],[22,44],[18,40],[12,38],[4,42],[-2,37],[-6,36],[-10,36]],
+ [[-10,35],[-6,35],[10,37],[11,33],[20,32],[32,31],[35,27],[43,12],[51,11],[46,2],[40,-2],[36,-12],[32,-22],[28,-30],[22,-34],[18,-32],[14,-24],[12,-16],[12,-8],[6,2],[-4,5],[-10,10],[-14,16],[-17,21],[-14,27],[-10,32],[-10,35]],
+ [[30,70],[45,68],[62,70],[78,73],[95,76],[115,74],[135,72],[155,70],[162,64],[158,58],[146,52],[140,46],[132,42],[126,38],[121,34],[114,24],[109,14],[105,6],[100,8],[96,14],[91,20],[86,18],[81,10],[77,8],[72,14],[66,20],[58,24],[52,27],[46,30],[40,34],[34,36],[28,38],[24,42],[28,48],[34,54],[32,60],[30,70]]
+];
+function jitterPts(pts,amt,rng){
+ return pts.map(([a,b])=>{ const j=()=> (rng()*2-1)*amt; return [a+j(), b+j()]; });
+}
+/* insert midpoints with slight jitter for a hand-engraved coastline */
+function subdivide(pts,depth,amt,rng){
+ let p=pts;
+ for(let d=0;d<depth;d++){
+  const q=[p[0]];
+  for(let i=1;i<p.length;i++){
+   const a=p[i-1],b=p[i];
+   q.push([(a[0]+b[0])/2+(rng()*2-1)*amt,(a[1]+b[1])/2+(rng()*2-1)*amt],b);
+  }
+  p=q;
+ }
+ return p;
+}
+/* old-world sea names, placed over water */
+const SEAS=[
+ [18,38,'MARE MEDITERRANEUM'],[-34,26,'OCEANUS ATLANTICUS'],
+ [34,43.5,'PONTUS EUXINUS'],[51,42,'MARE CASPIUM'],
+ [62,13,'MARE ARABICUM'],[84,0,'MARE INDICUM'],
+ [121,27,'MARE SINENSE'],[142,58,'OCEANUS ORIENTALIS']
+];
+function drawMap(ctx,W,H,style){
+ const mx=70,my=64;
+ let seed=7; const rng=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+ ctx.save();
+ ctx.strokeStyle=style.line; ctx.fillStyle=style.fill; ctx.lineWidth=style.lw;
+ /* frame */
+ ctx.globalAlpha=0.5; ctx.strokeRect(mx,my,W-2*mx,H-2*my); ctx.globalAlpha=1;
+ /* graticule */
+ ctx.globalAlpha=0.16; ctx.lineWidth=1;
+ for(let lo=-20;lo<=150;lo+=20){ const [x]=mapXY(lo,0,W,H,mx,my); ctx.beginPath(); ctx.moveTo(x,my); ctx.lineTo(x,H-my); ctx.stroke(); }
+ for(let la=0;la<=60;la+=15){ const [,y]=mapXY(0,la,W,H,mx,my); ctx.beginPath(); ctx.moveTo(mx,y); ctx.lineTo(W-mx,y); ctx.stroke(); }
+ ctx.globalAlpha=1;
+ /* landmasses */
+ for(const poly of LAND){
+  const jp=subdivide(jitterPts(poly,1.1,rng),2,0.9,rng);
+  ctx.beginPath();
+  jp.forEach(([lo,la],i)=>{ const [x,y]=mapXY(lo,la,W,H,mx,my); i?ctx.lineTo(x,y):ctx.moveTo(x,y); });
+  ctx.closePath(); ctx.fill(); ctx.stroke();
+  /* hatch */
+  ctx.save(); ctx.clip(); ctx.globalAlpha=0.5; ctx.lineWidth=1;
+  for(let yy=my; yy<H-my; yy+=9){ ctx.beginPath(); ctx.moveTo(mx,yy); ctx.lineTo(W-mx,yy-40); ctx.stroke(); }
+  ctx.restore(); ctx.globalAlpha=1;
+ }
+ /* mountains */
+ ctx.lineWidth=1.4;
+ const ranges=[[[38,46],[52,50],[66,48],[80,52]],[[96,30],[104,34],[112,30]],[[8,44],[14,46],[20,44]],
+  [[-6,31],[0,32],[6,34]],[[44,32],[50,34]],[[6,45],[12,47]]];
+ for(const r of ranges){ ctx.beginPath();
+  r.forEach(([lo,la],i)=>{ const [x,y]=mapXY(lo,la,W,H,mx,my);
+   if(i){ ctx.lineTo(x-7,y+6); ctx.moveTo(x,y); ctx.lineTo(x+7,y+6); } else ctx.moveTo(x,y); });
+  ctx.stroke(); }
+ /* sea serpent */
+ { const [x,y]=mapXY(118,52,W,H,mx,my); ctx.beginPath();
+  ctx.moveTo(x-34,y); ctx.quadraticCurveTo(x-18,y-16,x,y-4); ctx.quadraticCurveTo(x+18,y+8,x+34,y-10);
+  ctx.stroke(); ctx.beginPath(); ctx.arc(x+38,y-12,4,0,7); ctx.stroke(); }
+ /* compass rose */
+ { const [x,y]=mapXY(-8,8,W,H,mx,my); ctx.save(); ctx.translate(x,y);
+  for(let i=0;i<8;i++){ ctx.rotate(Math.PI/4); ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,-26); ctx.stroke(); }
+  ctx.beginPath(); ctx.arc(0,0,5,0,7); ctx.stroke(); ctx.restore(); }
+ /* rhumb lines radiating from the rose */
+ { const [x,y]=mapXY(-8,8,W,H,mx,my);
+  ctx.save(); ctx.globalAlpha=0.10; ctx.lineWidth=0.8;
+  for(let i=0;i<16;i++){ const a=(i/16)*Math.PI*2;
+   ctx.beginPath(); ctx.moveTo(x,y);
+   ctx.lineTo(x+Math.cos(a)*1000,y+Math.sin(a)*1000); ctx.stroke(); }
+  ctx.restore(); ctx.globalAlpha=1; }
+ /* sea names */
+ { ctx.font='italic 16px Georgia,serif'; ctx.textAlign='center';
+  ctx.fillStyle=style.line; ctx.globalAlpha=0.55;
+  for(const [lo,la,nm] of SEAS){ const [x,y]=mapXY(lo,la,W,H,mx,my); ctx.fillText(nm,x,y); }
+  ctx.globalAlpha=1; }
+ /* cartouche */
+ ctx.font='italic 26px Georgia,serif'; ctx.textAlign='center';
+ ctx.fillStyle=style.line; ctx.globalAlpha=0.85;
+ ctx.fillText('Tabula Disputationum', W/2, H-22); ctx.globalAlpha=1;
+ ctx.restore();
+}
+function makeTableTop(){
+ const W=1024,H=640;
+ const base=document.createElement('canvas'); base.width=W; base.height=H;
+ const c=base.getContext('2d');
+ /* black marble */
+ c.fillStyle='#0b0806'; c.fillRect(0,0,W,H);
+ let seed=42; const rng=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+ for(let i=0;i<70;i++){ c.strokeStyle=`rgba(190,170,130,${0.02+rng()*0.05})`; c.lineWidth=0.6+rng()*1.6;
+  c.beginPath(); let x=rng()*W,y=rng()*H; c.moveTo(x,y);
+  for(let s=0;s<4;s++){ x+=(rng()-0.5)*260; y+=(rng()-0.5)*160; c.quadraticCurveTo(x+(rng()-0.5)*60,y+(rng()-0.5)*60,x,y); }
+  c.stroke(); }
+ for(let i=0;i<14;i++){ c.strokeStyle=`rgba(217,169,80,${0.03+rng()*0.04})`; c.lineWidth=0.8;
+  c.beginPath(); let x=rng()*W,y=rng()*H; c.moveTo(x,y); c.lineTo(x+(rng()-0.5)*300,y+(rng()-0.5)*200); c.stroke(); }
+ drawMap(c,W,H,{line:'#caa04e',fill:'rgba(202,160,78,0.055)',lw:2.2});
+ /* vignette */
+ const g=c.createRadialGradient(W/2,H/2,H*0.3,W/2,H/2,H*0.75);
+ g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(1,'rgba(0,0,0,0.55)');
+ c.fillStyle=g; c.fillRect(0,0,W,H);
+ const glow=document.createElement('canvas'); glow.width=W; glow.height=H;
+ const gc=glow.getContext('2d'); gc.fillStyle='#000'; gc.fillRect(0,0,W,H);
+ gc.shadowColor='#ffd98a'; gc.shadowBlur=14;
+ drawMap(gc,W,H,{line:'#ffd98a',fill:'rgba(255,217,138,0.10)',lw:2.6});
+ return {base,glow};
+}
+function makeStoneFloor(){
+ const S=512, cv=document.createElement('canvas'); cv.width=cv.height=S;
+ const c=cv.getContext('2d');
+ c.fillStyle='#070503'; c.fillRect(0,0,S,S);
+ let seed=99; const rng=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+ for(let i=0;i<900;i++){ c.fillStyle=`rgba(160,140,110,${rng()*0.03})`; c.fillRect(rng()*S,rng()*S,2,2); }
+ c.strokeStyle='rgba(217,169,80,0.07)'; c.lineWidth=2;
+ for(let i=0;i<=S;i+=128){ c.beginPath(); c.moveTo(i,0); c.lineTo(i,S); c.stroke(); c.beginPath(); c.moveTo(0,i); c.lineTo(S,i); c.stroke(); }
+ const t=new THREE.CanvasTexture(cv); t.wrapS=t.wrapT=THREE.RepeatWrapping; t.repeat.set(10,10);
+ t.colorSpace=THREE.SRGBColorSpace; return t;
+}
+function makeBlob(){
+ const S=128, cv=document.createElement('canvas'); cv.width=cv.height=S;
+ const c=cv.getContext('2d');
+ const g=c.createRadialGradient(S/2,S/2,4,S/2,S/2,S/2);
+ g.addColorStop(0,'rgba(0,0,0,0.62)'); g.addColorStop(1,'rgba(0,0,0,0)');
+ c.fillStyle=g; c.fillRect(0,0,S,S);
+ const t=new THREE.CanvasTexture(cv); return t;
+}
+/* ---------- flame shader ---------- */
+const FLAME_VS=`varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`;
+const FLAME_FS=`
+uniform float uTime; uniform vec3 uColorA; uniform vec3 uColorB;
+uniform float uIntensity; uniform float uSeed;
+varying vec2 vUv;
+float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123); }
+float noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); vec2 u=f*f*(3.0-2.0*f);
+ return mix(mix(hash(i),hash(i+vec2(1.,0.)),u.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),u.x),u.y); }
+void main(){
+ vec2 uv=vUv;
+ float t=uTime*2.1+uSeed*17.0;
+ float n=noise(vec2(uv.x*4.0+uSeed*10.0,uv.y*3.0-t))*0.6
+        +noise(vec2(uv.x*8.0-uSeed*5.0,uv.y*6.0-t*1.7))*0.4;
+ vec2 c=vec2(0.5,0.30);
+ float sway=(n-0.5)*0.6*uv.y;
+ float dist=length(vec2((uv.x-c.x)*2.6+sway,(uv.y-c.y)*1.55));
+ float body=smoothstep(0.62,0.10,dist);
+ float inner=smoothstep(0.34,0.02,dist)*(1.0-uv.y*0.55);
+ vec3 col=mix(uColorA,uColorB,inner);
+ col+=vec3(1.0,0.93,0.78)*pow(max(inner,0.0),2.0)*0.55;
+ float a=body*uIntensity;
+ if(a<0.012) discard;
+ gl_FragColor=vec4(col*(0.55+a*1.4),a);
+}`;
+function flameMaterial(colorA,colorB,seed){
+ return new THREE.ShaderMaterial({
+  vertexShader:FLAME_VS, fragmentShader:FLAME_FS,
+  uniforms:{ uTime:{value:Math.random()*10}, uColorA:{value:new THREE.Color(colorA)},
+   uColorB:{value:new THREE.Color(colorB)}, uIntensity:{value:1}, uSeed:{value:seed} },
+  transparent:true, blending:THREE.AdditiveBlending, depthWrite:false, side:THREE.DoubleSide });
+}
+
+/* ============================== scene ============================== */
+let renderer=null, scene, camera, controls;
+const disposables=[];
+function track(x){ disposables.push(x); return x; }
+function showFallback(msg){
+ $('fallback').classList.remove('hidden');
+ if(msg) $('fallback-msg').textContent=msg;
+}
+try{
+ renderer=new THREE.WebGLRenderer({antialias:!MOBILE, powerPreference:'high-performance'});
+}catch(e){ showFallback(); throw e; }
+if(!renderer){ showFallback(); throw new Error('no webgl'); }
+renderer.setPixelRatio(MOBILE?1:Math.min(devicePixelRatio||1,2));
+renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.05;
+$('mount').appendChild(renderer.domElement);
+renderer.domElement.addEventListener('webglcontextlost',e=>{
+ e.preventDefault();
+ showFallback('The chamber\u2019s light has gone out — the WebGL context was lost. Rekindle it to return to the table.');
+});
+$('retry').addEventListener('click',()=>location.reload());
+
+scene=new THREE.Scene();
+scene.background=new THREE.Color(0x000000);
+scene.fog=new THREE.Fog(0x000000,9,24);
+camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,70);
+const CAM_A=new THREE.Vector3(0,3.6,11.0), CAM_B=new THREE.Vector3(0,2.05,4.35);
+const TARGET=new THREE.Vector3(0,1.05,-0.25);
+camera.position.copy(RM?CAM_B:CAM_A); camera.lookAt(TARGET);
+controls=new OrbitControls(camera,renderer.domElement);
+controls.target.copy(TARGET);
+controls.enableDamping=true; controls.dampingFactor=0.06;
+controls.minDistance=1.7; controls.maxDistance=11.5;
+controls.maxPolarAngle=1.45; controls.minPolarAngle=0.3;
+controls.enablePan=false; controls.rotateSpeed=0.55;
+controls.enabled=RM; /* enabled at once under reduced motion; otherwise after intro */
+
+/* ---------- lights ---------- */
+scene.add(new THREE.AmbientLight(0x2a2018,0.85));
+scene.add(new THREE.HemisphereLight(0x3a2c1c,0x050403,0.5));
+const spot=track(new THREE.SpotLight(0xffe0a0,55,22,0.55,0.65,1.6));
+spot.position.set(0,6.4,1.2); spot.target.position.set(0,0.9,0);
+scene.add(spot,spot.target);
+const SPOT_WARM=new THREE.Color(0xffe0a0), SPOT_COOL=new THREE.Color(0xd8e2ff);
+const soulLight=track(new THREE.PointLight(0xff8c3a,26,13,1.8));
+soulLight.position.set(0,2.1,-2.6); scene.add(soulLight);
+const candleLights=[];
+function candleLight(x,y,z){ const L=track(new THREE.PointLight(0xffa050,5,4.5,1.8));
+ L.position.set(x,y,z); scene.add(L); candleLights.push(L); return L; }
+
+/* ---------- chamber ---------- */
+const floorTex=track(makeStoneFloor());
+const floor=track(new THREE.Mesh(
+ track(new THREE.CircleGeometry(13,48)),
+ track(new THREE.MeshStandardMaterial({map:floorTex,roughness:0.42,metalness:0.18,color:0xbfb49a}))
+));
+floor.rotation.x=-Math.PI/2; scene.add(floor);
+
+const wallCv=document.createElement('canvas'); wallCv.width=64; wallCv.height=256;
+{ const c=wallCv.getContext('2d');
+ const g=c.createLinearGradient(0,0,0,256);
+ g.addColorStop(0,'#0d0906'); g.addColorStop(0.7,'#080503'); g.addColorStop(1,'#040302');
+ c.fillStyle=g; c.fillRect(0,0,64,256);
+ c.strokeStyle='rgba(180,150,110,0.05)';
+ for(let y=0;y<256;y+=32){ c.beginPath(); c.moveTo(0,y); c.lineTo(64,y); c.stroke(); } }
+const wallTex=track(new THREE.CanvasTexture(wallCv));
+wallTex.wrapS=wallTex.wrapT=THREE.RepeatWrapping; wallTex.repeat.set(10,1);
+wallTex.colorSpace=THREE.SRGBColorSpace;
+const walls=track(new THREE.Mesh(
+ track(new THREE.CylinderGeometry(11,11,6.5,48,1,true)),
+ track(new THREE.MeshStandardMaterial({map:wallTex,side:THREE.BackSide,roughness:0.9,color:0x9a8d78}))
+));
+walls.position.y=3.25; scene.add(walls);
+const ceil=track(new THREE.Mesh(
+ track(new THREE.CircleGeometry(11,48)),
+ track(new THREE.MeshStandardMaterial({color:0x030202,roughness:1,side:THREE.DoubleSide}))
+));
+ceil.rotation.x=Math.PI/2; ceil.position.y=6.5; scene.add(ceil);
+/* gold trim rings */
+const trimMat=track(new THREE.MeshStandardMaterial({color:0x8a6a34,emissive:0xd9a950,emissiveIntensity:0.55,roughness:0.4,metalness:0.8}));
+for(const y of [0.12,6.35]){
+ const ring=track(new THREE.Mesh(track(new THREE.TorusGeometry(10.94,0.035,10,72)),trimMat));
+ ring.rotation.x=Math.PI/2; ring.position.y=y; scene.add(ring);
+}
+/* fifteen debate stations ringing the wall */
+const stationMat=track(new THREE.MeshStandardMaterial({color:0x2a1c0c,emissive:0xd9a950,emissiveIntensity:0.5,roughness:0.6}));
+const numerals=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV'];
+numerals.forEach((rn,i)=>{
+ const a=(i/15)*Math.PI*2+Math.PI/15;
+ const st=track(new THREE.Mesh(track(new THREE.BoxGeometry(0.5,0.72,0.08)),stationMat));
+ st.position.set(Math.sin(a)*10.6,2.5,Math.cos(a)*10.6);
+ st.lookAt(0,2.5,0); scene.add(st);
+});
+
+/* ---------- THE TABLE (the relic) ---------- */
+const table=new THREE.Group(); scene.add(table);
+const TOP_W=3.4, TOP_D=2.0, TOP_T=0.14, TOP_Y=0.98;
+const topTex=makeTableTop();
+const topMap=track(new THREE.CanvasTexture(topTex.base)); topMap.colorSpace=THREE.SRGBColorSpace;
+topMap.anisotropy=4;
+const topGlow=track(new THREE.CanvasTexture(topTex.glow)); topGlow.colorSpace=THREE.SRGBColorSpace;
+const marbleSide=track(new THREE.MeshStandardMaterial({color:0x14100b,roughness:0.32,metalness:0.25}));
+const topFaceMat=track(new THREE.MeshStandardMaterial({
+ map:topMap, emissiveMap:topGlow, emissive:0xffc86a, emissiveIntensity:0.12,
+ roughness:0.28, metalness:0.22 }));
+const tabletop=track(new THREE.Mesh(
+ track(new THREE.BoxGeometry(TOP_W,TOP_T,TOP_D)),
+ [marbleSide,marbleSide,topFaceMat,marbleSide,marbleSide,marbleSide]
+));
+tabletop.position.y=TOP_Y; table.add(tabletop);
+/* carved edge molding: gold inlay frame just under the top */
+const frameMat=track(new THREE.MeshStandardMaterial({color:0x6a4f24,emissive:0xd9a950,emissiveIntensity:0.7,roughness:0.35,metalness:0.85}));
+const frame=track(new THREE.Mesh(track(new THREE.BoxGeometry(TOP_W+0.1,0.045,TOP_D+0.1)),frameMat));
+frame.position.y=TOP_Y-TOP_T/2-0.03; table.add(frame);
+const lip=track(new THREE.Mesh(track(new THREE.BoxGeometry(TOP_W+0.22,0.05,TOP_D+0.22)),marbleSide));
+lip.position.y=TOP_Y-TOP_T/2-0.075; table.add(lip);
+/* ---------- turn ring: thin gold ring inlaid around the debate area ---------- */
+/* fills gently with each debate turn — never a buzzer */
+const ringCv=document.createElement('canvas'); ringCv.width=ringCv.height=256;
+const ringCtx=ringCv.getContext('2d');
+const ringTex=track(new THREE.CanvasTexture(ringCv)); ringTex.colorSpace=THREE.SRGBColorSpace;
+function drawTurnRing(frac){
+ const c=ringCtx,S=256;
+ c.clearRect(0,0,S,S);
+ c.lineWidth=9; c.lineCap='round';
+ c.strokeStyle='rgba(217,169,80,0.16)';
+ c.beginPath(); c.arc(S/2,S/2,123,0,Math.PI*2); c.stroke();
+ if(frac>0){
+  c.save(); c.shadowColor='#ffd98a'; c.shadowBlur=10;
+  c.strokeStyle='rgba(255,214,140,0.95)';
+  c.beginPath(); c.arc(S/2,S/2,123,-Math.PI/2,-Math.PI/2+frac*Math.PI*2); c.stroke();
+  c.restore();
+ }
+ ringTex.needsUpdate=true;
+}
+drawTurnRing(0);
+const turnRing=track(new THREE.Mesh(track(new THREE.RingGeometry(0.90,1.0,72)),
+ track(new THREE.MeshBasicMaterial({map:ringTex,transparent:true,depthWrite:false}))));
+turnRing.rotation.x=-Math.PI/2; turnRing.scale.set(1.45,0.82,1);
+turnRing.position.set(0,TOP_Y+TOP_T/2+0.004,0); turnRing.renderOrder=1;
+table.add(turnRing);
+/* pedestal base */
+const ped=track(new THREE.Mesh(
+ track(new THREE.CylinderGeometry(0.55,0.85,0.86,24)),
+ track(new THREE.MeshStandardMaterial({color:0x100c08,roughness:0.5,metalness:0.15}))
+));
+ped.position.y=0.45; table.add(ped);
+const plinth=track(new THREE.Mesh(track(new THREE.BoxGeometry(1.7,0.12,1.7)),marbleSide));
+plinth.position.y=0.06; table.add(plinth);
+/* ---------- compare well: recessed carved ring on the tabletop ---------- */
+const wellRim=track(new THREE.Mesh(track(new THREE.TorusGeometry(0.30,0.028,12,48)),
+ track(new THREE.MeshStandardMaterial({color:0x6a4f24,emissive:0xd9a950,emissiveIntensity:0.5,roughness:0.4,metalness:0.8}))));
+wellRim.rotation.x=Math.PI/2; wellRim.position.set(-0.85,TOP_Y+TOP_T/2+0.012,0.70);
+table.add(wellRim);
+const wellFloor=track(new THREE.Mesh(track(new THREE.CircleGeometry(0.29,48)),
+ track(new THREE.MeshStandardMaterial({color:0x050403,roughness:0.95}))));
+wellFloor.rotation.x=-Math.PI/2; wellFloor.position.set(-0.85,TOP_Y+TOP_T/2+0.004,0.70);
+table.add(wellFloor);
+/* ---------- histogram candles: the room remembers (far edge) ---------- */
+const histFlames=[];
+[['free-will',-0.5],[ 'soul',0],[ 'good',0.5]].forEach(([tid,x],i)=>{
+ const wax=track(new THREE.Mesh(track(new THREE.CylinderGeometry(0.035,0.04,0.22,12)),
+  track(new THREE.MeshStandardMaterial({color:0xd9c9a0,roughness:0.65}))));
+ wax.position.set(x,TOP_Y+TOP_T/2+0.11,-0.80); table.add(wax);
+ if(tid==='free-will'){
+  const m=track(flameMaterial(0xd4541a,0xffd98a,40+i*2.7));
+  const fl=new THREE.Mesh(track(new THREE.PlaneGeometry(0.09,0.16)),m);
+  fl.position.set(x,TOP_Y+TOP_T/2+0.30,-0.80); table.add(fl);
+  histFlames.push({mesh:fl,mat:m});
+ }
+});
+function refreshHist(){
+ let h=[]; try{ h=JSON.parse(localStorage.getItem('dh3d-hist')||'[]'); }catch(e){}
+ const n=h.filter(x=>x.debate==='free-will').length;
+ for(const f of histFlames){
+  const s=1+Math.min(n,6)*0.18;
+  f.mesh.scale.set(1,s,1);
+  f.mesh.position.y=TOP_Y+TOP_T/2+0.22+0.08*s;
+  f.mesh.visible=n>0; f.mat.uniforms.uIntensity.value=n>0?1:0.001;
+ }
+}
+refreshHist();
+/* ---------- session bookmark token ---------- */
+const token=track(new THREE.Mesh(track(new THREE.CylinderGeometry(0.09,0.09,0.025,24)),
+ track(new THREE.MeshStandardMaterial({color:0x8a6a34,emissive:0xd9a950,emissiveIntensity:0.45,roughness:0.35,metalness:0.85}))));
+token.position.set(1.52,TOP_Y+TOP_T/2+0.013,0.72);
+token.userData.bookmark=true; table.add(token);
+/* blob shadow */
+const blobTex=track(makeBlob());
+const blob=track(new THREE.Mesh(track(new THREE.PlaneGeometry(4.6,3.4)),
+ track(new THREE.MeshBasicMaterial({map:blobTex,transparent:true,depthWrite:false}))));
+blob.rotation.x=-Math.PI/2; blob.position.y=0.015; scene.add(blob);
+
+/* ---------- candles on the table ---------- */
+const candleFlames=[];
+function addCandle(x,z,h){
+ const g=new THREE.Group();
+ const wax=track(new THREE.Mesh(track(new THREE.CylinderGeometry(0.045,0.05,h,14)),
+  track(new THREE.MeshStandardMaterial({color:0xe8d9b0,roughness:0.6}))));
+ wax.position.y=h/2; g.add(wax);
+ const fm=track(flameMaterial(0xd4541a,0xffd98a,candleFlames.length*3.1));
+ const fl=new THREE.Mesh(track(new THREE.PlaneGeometry(0.1,0.17)),fm);
+ fl.position.y=h+0.09; g.add(fl); candleFlames.push({mesh:fl,mat:fm,light:candleLight(x,TOP_Y+TOP_T/2+h+0.12,z)});
+ g.position.set(x,TOP_Y+TOP_T/2,z); table.add(g); return g;
+}
+addCandle(-1.35,0.72,0.30); addCandle(1.38,-0.66,0.22); addCandle(1.15,0.78,0.34);
+
+/* ---------- soul-flame BEHIND the table ---------- */
+const soulGroup=new THREE.Group(); soulGroup.position.set(0,1.55,-2.55); scene.add(soulGroup);
+const soulMats=[];
+for(let i=0;i<2;i++){
+ const m=track(flameMaterial(0xc43c10,0xffc86a,i*7.7)); soulMats.push(m);
+ const p=new THREE.Mesh(track(new THREE.PlaneGeometry(1.0,1.7)),m);
+ p.position.y=0.55; soulGroup.add(p);
+}
+const soulBlob=track(new THREE.Mesh(track(new THREE.PlaneGeometry(3.2,2.2)),
+ track(new THREE.MeshBasicMaterial({map:blobTex,transparent:true,depthWrite:false,color:0x662200,opacity:0.5}))));
+soulBlob.rotation.x=-Math.PI/2; soulBlob.position.set(0,0.02,-2.55); scene.add(soulBlob);
+
+/* ---------- philosopher mini-flames on the map ---------- */
+function tableXZ(lon,lat){
+ const mx=70,my=64,W=1024,H=640;
+ const [px,py]=mapXY(lon,lat,W,H,mx,my);
+ /* canvas top (north) -> texture v=1 -> box +y face z=+D/2 */
+ return [ (px/W-0.5)*TOP_W, (0.5-py/H)*TOP_D ];
+}
+const miniFlames=[], hitTargets=[];
+const hitGeo=track(new THREE.SphereGeometry(0.11,8,8));
+const hitMat=track(new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false,colorWrite:false}));
+PHILOS.forEach((p,i)=>{
+ const [x,z]=tableXZ(p.lon,p.lat);
+ const m=track(flameMaterial(0x903000,new THREE.Color(p.color).getHex(),i*5.3));
+ const mesh=new THREE.Mesh(track(new THREE.PlaneGeometry(0.17,0.28)),m);
+ mesh.position.set(x,TOP_Y+TOP_T/2+0.16,z);
+ table.add(mesh);
+ const hit=new THREE.Mesh(hitGeo,hitMat); hit.position.copy(mesh.position);
+ hit.userData.phil=i; table.add(hit); hitTargets.push(hit);
+ miniFlames.push({p,mesh,mat:m,base:p.color});
+});
+hitTargets.push(token); /* bookmark token joins the tappable set */
+function setYear(y){
+ for(const f of miniFlames){
+  const d=Math.abs(y-f.p.mid);
+  const k=d<40?1:d<250?1-((d-40)/210)*0.75:0.10;
+  f.mesh.visible=k>0.12; f.mat.uniforms.uIntensity.value=k;
+  f.mesh.scale.setScalar(0.7+0.5*k);
+ }
+ /* era atmosphere: warmer & dimmer for ancient, slightly cooler for modern */
+ const k=Math.max(0,Math.min(1,(y+600)/2600));
+ spot.color.copy(SPOT_WARM).lerp(SPOT_COOL,k*0.55);
+ spot.intensity=48+10*k;
+ $('era').textContent=eraFor(y);
+ $('dress').textContent=dressFor(y);
+}
+setYear(-350);
+$('scrub').addEventListener('input',e=>setYear(+e.target.value));
+
+/* ---------- camera intro / walk-up ---------- */
+let camT=RM?1:0, camPlaying=!RM, camDur=6.5, camClock=0;
+function easeIO(t){ return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2; }
+function playWalkup(){ camT=0; camPlaying=true; camClock=0; controls.enabled=false; }
+$('walkup-btn').addEventListener('click',playWalkup);
+
+/* ---------- awaken ---------- */
+const sheet=$('sheet');
+let awakened=false, glowK=0.12;
+const TABLE_C=new THREE.Vector3(0,1.0,0);
+
+/* ---------- raycast taps on flames ---------- */
+const ray=new THREE.Raycaster(), ptr=new THREE.Vector2();
+let downX=0,downY=0;
+renderer.domElement.addEventListener('pointerdown',e=>{ downX=e.clientX; downY=e.clientY; });
+renderer.domElement.addEventListener('pointerup',e=>{
+ if(Math.hypot(e.clientX-downX,e.clientY-downY)>12) return;
+ ptr.x=(e.clientX/innerWidth)*2-1; ptr.y=-(e.clientY/innerHeight)*2+1;
+ ray.setFromCamera(ptr,camera);
+ const hits=ray.intersectObjects(hitTargets,false);
+ if(hits.length){
+  const o=hits[0].object;
+  if(o.userData.bookmark){ sealBookmark(); return; }
+  if(compareMode){ toggleCompare(PHILOS[o.userData.phil]); return; }
+  const p=PHILOS[o.userData.phil]; showFact(p);
+ }
+});
+function showFact(p){
+ $('fact-name').textContent=p.name;
+ $('fact-dates').textContent=p.dates;
+ $('fact-text').textContent=p.text;
+ $('fact').classList.remove('hidden');
+}
+$('fact-close').addEventListener('click',()=>$('fact').classList.add('hidden'));
+
+/* ---------- resize ---------- */
+addEventListener('resize',()=>{
+ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+ renderer.setSize(innerWidth,innerHeight);
+});
+
+/* ============================== overlay UI ============================== */
+document.querySelectorAll('#dh3d-tabs button').forEach(b=>{
+ b.addEventListener('click',()=>{
+  document.querySelectorAll('#dh3d-tabs button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  document.querySelectorAll('#dh3d-pages [data-page]').forEach(p=>
+   p.classList.toggle('hidden',p.dataset.page!==b.dataset.tab));
+ });
+});
+function scrollLog(){ const l=$('log'); l.scrollTop=l.scrollHeight; }
+function addUtter(kind,html){
+ const d=document.createElement('div');
+ d.className='utter '+(kind==='phil'?'u-phil':kind==='vis'?'u-vis':kind==='note'?'u-note':'u-hall');
+ d.innerHTML=html; $('log').appendChild(d); scrollLog(); return d;
+}
+function tierBadge(tier,cite){
+ if(tier==='VERBATIM') return `<div class="tier">VERBATIM</div>`;
+ if(tier==='PARAPHRASE') return `<div class="tier par">PARAPHRASE</div>`;
+ return '';
+}
+function citeLine(cite){ return cite?`<div class="cite">${esc(cite)}</div>`:''; }
+/* typewriter reveal; flame burns brighter while the philosopher "speaks" */
+let speaking=false;
+function philSay(item,done){
+ speaking=true;
+ const d=addUtter('phil',tierBadge(item.tier)+`<span class="tw"></span>`+citeLine(item.cite));
+ const tw=d.querySelector('.tw'), full=item.text; let i=0;
+ const step=RM?full.length:2;
+ (function tick(){
+  i=Math.min(full.length,i+step); tw.textContent=full.slice(0,i); scrollLog();
+  if(i<full.length) setTimeout(tick,RM?0:14);
+  else { speaking=false; done&&done(); }
+ })();
+}
+const debate={side:null,turn:0,open:false};
+function classify(s){
+ s=s.toLowerCase();
+ for(const k of Object.keys(CORPUS.moves)) if(CORPUS.moves[k].pat.test(s)) return k;
+ return 'general';
+}
+function visitorTurn(text){
+ addUtter('vis',esc(text));
+ const key=classify(text);
+ const mv=key==='general'?CORPUS.general:CORPUS.moves[key];
+ setTimeout(()=>{
+  addUtter('hall',`<i>${esc(mv.steel)}</i>`);
+  setTimeout(()=>philSay(mv.counter,()=>{
+   debate.turn++;
+   drawTurnRing(Math.min(1,debate.turn/3));
+   if(debate.turn>=3) closeDebate(); else showSugg();
+  }),RM?0:900);
+ },RM?0:600);
+}
+function showSugg(){
+ const box=$('sugg'); box.innerHTML='';
+ (SUGGESTED[Math.min(debate.turn,SUGGESTED.length-1)]||[]).forEach(s=>{
+  const b=document.createElement('button'); b.type='button'; b.textContent=s;
+  b.addEventListener('click',()=>{ box.innerHTML=''; visitorTurn(s); });
+  box.appendChild(b);
+ });
+}
+function startDebate(side){
+ debate.side=side; debate.turn=0; debate.open=true;
+ drawTurnRing(0);
+ $('sides').classList.add('hidden'); $('log').innerHTML=''; $('sugg').innerHTML='';
+ addUtter('hall','<i>The soul-flame quickens. Augustine of Hippo takes the other side.</i>');
+ setTimeout(()=>philSay(CORPUS.opening[0],()=>philSay(CORPUS.opening[1],showSugg)),RM?0:900);
+}
+function closeDebate(){
+ debate.open=false; $('sugg').innerHTML='';
+ addUtter('hall','<i>The lamps burn low.</i>');
+ setTimeout(()=>philSay(CORPUS.closing[0],()=>{
+  addUtter('hall',esc(CORPUS.closing[1].text));
+  try{ const h=JSON.parse(localStorage.getItem('dh3d-hist')||'[]');
+   h.push({debate:'free-will',side:debate.side,ts:Date.now()});
+   localStorage.setItem('dh3d-hist',JSON.stringify(h)); }catch(e){}
+  refreshHist();
+  const b=document.createElement('button'); b.type='button'; b.textContent='Debate again';
+  b.style.marginTop='10px';
+  b.addEventListener('click',()=>{ $('log').innerHTML=''; $('sides').classList.remove('hidden'); });
+  $('log').appendChild(b); scrollLog();
+ }),RM?0:900);
+}
+$('side-a').addEventListener('click',()=>startDebate('fate'));
+$('side-b').addEventListener('click',()=>startDebate('freedom'));
+function sendSay(){ const v=$('say').value.trim(); if(!v||!debate.open){ if(!debate.open) toast('Choose a side first'); return; }
+ $('say').value=''; $('sugg').innerHTML=''; visitorTurn(v); }
+$('send').addEventListener('click',sendSay);
+$('say').addEventListener('keydown',e=>{ if(e.key==='Enter') sendSay(); });
+
+/* ---------- notes ---------- */
+function loadNotes(){
+ let n=[]; try{ n=JSON.parse(localStorage.getItem('dh3d-notes')||'[]'); }catch(e){}
+ const box=$('notelist'); box.innerHTML='';
+ n.slice().reverse().forEach(x=>{
+  const d=document.createElement('div'); d.className='n';
+  d.textContent=new Date(x.t).toLocaleDateString()+' — '+x.text; box.appendChild(d);
+ });
+ return n;
+}
+loadNotes();
+$('notesave').addEventListener('click',()=>{
+ const t=$('notetext').value.trim(); if(!t){ toast('The tablet is blank'); return; }
+ let n=[]; try{ n=JSON.parse(localStorage.getItem('dh3d-notes')||'[]'); }catch(e){}
+ n.push({t:Date.now(),text:t});
+ try{ localStorage.setItem('dh3d-notes',JSON.stringify(n)); }catch(e){}
+ $('notetext').value=''; loadNotes(); toast('Carved into the tablet');
+});
+$('notepin').addEventListener('click',()=>{
+ let n=[]; try{ n=JSON.parse(localStorage.getItem('dh3d-notes')||'[]'); }catch(e){}
+ if(!n.length){ toast('No notes carved yet'); return; }
+ document.querySelector('#dh3d-tabs [data-tab="debate"]').click();
+ addUtter('note','<b>Pinned note:</b> '+esc(n[n.length-1].text));
+});
+
+/* ---------- compare well ---------- */
+let compareMode=false, compareSel=[];
+function toggleCompare(p){
+ const i=compareSel.indexOf(p.id);
+ if(i>=0) compareSel.splice(i,1);
+ else { if(compareSel.length>=2) compareSel.shift(); compareSel.push(p.id); }
+ const names=compareSel.map(id=>PHILOS.find(q=>q.id===id).name);
+ $('cmpstatus').textContent=compareSel.length
+  ? 'In the well: '+names.join('  ·  ')+(compareSel.length<2?' — tap one more flame':'')
+  : 'The well is empty.';
+ renderCompare();
+}
+function renderCompare(){
+ const box=$('compare'); box.classList.toggle('hidden',compareSel.length<2);
+ if(compareSel.length<2){ box.innerHTML=''; return; }
+ box.innerHTML=compareSel.map(id=>{
+  const p=PHILOS.find(q=>q.id===id);
+  return '<div class="cmpcard"><h5>'+esc(p.name)+'</h5><div class="cs">'+esc(p.school)+' · '+esc(p.dates)+'</div><p>'+esc(p.cmp)+'</p></div>';
+ }).join('')+'<div style="grid-column:1/-1"><button type="button" id="dh3d-cmpclear">Empty the well</button></div>';
+ $('cmpclear').addEventListener('click',()=>{
+  compareSel=[]; $('cmpstatus').textContent='The well is empty.'; renderCompare();
+ });
+}
+$('cmpbtn').addEventListener('click',()=>{
+ compareMode=!compareMode;
+ $('cmpbtn').classList.toggle('on',compareMode);
+ $('cmpbtn').textContent=compareMode?'Choosing… (tap again to stop)':'Compare two thinkers';
+ if(!compareMode){ compareSel=[]; $('cmpstatus').textContent=''; renderCompare(); }
+ else toast('Tap two flames in the scene');
+});
+
+/* ---------- session bookmark token ---------- */
+function sealBookmark(){
+ if(!debate.side){ toast('Begin a debate first — the token seals a live debate'); return; }
+ const bm={side:debate.side,turn:debate.turn,open:debate.turn<3,
+  log:$('log').innerHTML,ts:Date.now()};
+ try{ localStorage.setItem('dh3d-bookmark',JSON.stringify(bm)); toast('The debate is sealed into the token'); }
+ catch(e){ toast('The token would not hold it'); }
+ updateResume();
+}
+function updateResume(){
+ const box=$('resume'); let bm=null;
+ try{ bm=JSON.parse(localStorage.getItem('dh3d-bookmark')||'null'); }catch(e){}
+ if(bm&&bm.side){
+  box.classList.remove('hidden');
+  $('resume-note').textContent='Sealed '+new Date(bm.ts).toLocaleString()+' — '+bm.turn+' turn'+(bm.turn===1?'':'s')+'.';
+ } else box.classList.add('hidden');
+}
+function resumeDebate(){
+ let bm=null; try{ bm=JSON.parse(localStorage.getItem('dh3d-bookmark')||'null'); }catch(e){}
+ if(!bm||!bm.side) return;
+ debate.side=bm.side; debate.turn=bm.turn; debate.open=bm.turn<3;
+ $('sides').classList.add('hidden'); $('log').innerHTML=bm.log||'';
+ drawTurnRing(Math.min(1,debate.turn/3));
+ document.querySelector('#dh3d-tabs [data-tab="debate"]').click();
+ if(debate.open){ addUtter('hall','<i>The token is broken open. The debate resumes where it slept.</i>'); showSugg(); }
+ else addUtter('hall','<i>The token is broken open. That debate had already closed — begin again whenever you wish.</i>');
+ scrollLog();
+}
+$('resumebtn').addEventListener('click',resumeDebate);
+updateResume();
+
+/* ============================== render loop ============================== */
+const clock=new THREE.Clock();
+let raf=0, flickSeed=Math.random()*100;
+function flick(t,amp){
+ return RM?1:1+Math.sin(t*11+flickSeed)*0.14*amp+Math.sin(t*23+flickSeed*2)*0.09*amp;
+}
+function animate(){
+ raf=requestAnimationFrame(animate);
+ const dt=Math.min(clock.getDelta(),0.05), t=clock.elapsedTime;
+ /* camera intro */
+ if(camPlaying){
+  camClock+=dt; camT=Math.min(1,camClock/camDur);
+  const e=easeIO(camT);
+  camera.position.lerpVectors(CAM_A,CAM_B,e);
+  camera.lookAt(TARGET);
+  if(camT>=1){ camPlaying=false; controls.enabled=true; toast('The table awakens as you draw near'); }
+ } else controls.update();
+ /* awaken */
+ const dist=camera.position.distanceTo(TABLE_C);
+ const want=dist<3.6;
+ if(want!==awakened){ awakened=want; sheet.classList.toggle('awake',awakened); }
+ glowK+=((awakened?1.0:0.12)-glowK)*Math.min(1,dt*2.2);
+ topFaceMat.emissiveIntensity=glowK;
+ /* flames */
+ const speakK=speaking?1.5:1.0;
+ for(const m of soulMats){ m.uniforms.uTime.value=t; m.uniforms.uIntensity.value=flick(t,1.1)*1.15*speakK; }
+ soulLight.intensity=(RM?26:26*(0.82+0.36*Math.abs(Math.sin(t*9+flickSeed))))*speakK;
+ soulGroup.children.forEach(p=>p.quaternion.copy(camera.quaternion));
+ for(const c of candleFlames){
+  c.mat.uniforms.uTime.value=t; c.mat.uniforms.uIntensity.value=flick(t,0.9);
+  c.light.intensity=RM?5:5*(0.8+0.4*Math.abs(Math.sin(t*12+c.mesh.position.x*7)));
+  c.mesh.quaternion.copy(camera.quaternion);
+ }
+ for(const f of histFlames){
+  f.mat.uniforms.uTime.value=t;
+  f.mesh.quaternion.copy(camera.quaternion);
+ }
+ for(const f of miniFlames){
+  f.mat.uniforms.uTime.value=t;
+  f.mesh.quaternion.copy(camera.quaternion);
+ }
+ renderer.render(scene,camera);
+}
+animate();
+
+/* ============================== teardown ============================== */
+function destroy(){
+ cancelAnimationFrame(raf);
+ controls.dispose();
+ scene.traverse(o=>{
+  if(o.geometry) o.geometry.dispose();
+  const ms=Array.isArray(o.material)?o.material:[o.material];
+  ms.forEach(m=>{ if(!m) return;
+   for(const k of ['map','emissiveMap']) if(m[k]) m[k].dispose();
+   m.dispose(); });
+ });
+ renderer.dispose();
+ renderer.domElement.remove();
+ window.DHDestroy=null;
+}
+window.DHDestroy=destroy;
+</script>
+</body>
+</html>

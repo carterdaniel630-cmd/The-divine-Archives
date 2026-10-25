@@ -282,7 +282,7 @@ function pageForEra(era) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="canonical" href="${url}" />
+${SEO.fontTags()}  <link rel="canonical" href="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
   <meta property="og:title" content="${esc(fullTitle)}" />
@@ -383,7 +383,7 @@ function searchPage() {
   <meta name="description" content="Search the full text of every chapter in The Divine Archives." />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="assets/archive.css" />
-</head>
+${SEO.fontTags()}</head>
 <body>
 <a class="skip-link" href="#search-mount">Skip to content</a>
 <div class="page">
@@ -493,7 +493,7 @@ function pilgrimageListPage() {
   }).join("\n");
   const nLive = PILG.sites.filter((s) => s.status === "live").length;
   const url = SITE + "/pilgrimage.html", title = "The Pilgrimage — The Divine Archives";
-  const desc = "Walk inside the world's sacred sites, modelled from published surveys and linked to the archive's chapters and Vault objects. " + nLive + " open, " + (PILG.sites.length - nLive) + " in preparation.";
+  const desc = "Walk inside the world's sacred sites, each modelled from the best record that survives (published surveys where they exist, labelled estimates or reconstructions where they do not) and linked to the archive's chapters and Vault objects. " + nLive + " open, " + (PILG.sites.length - nLive) + " in preparation.";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -503,7 +503,7 @@ function pilgrimageListPage() {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="assets/archive.css" />
-  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
+${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -522,7 +522,7 @@ ${HEADER_ROOT.replace('<a href="pilgrimage.html">', '<a href="pilgrimage.html" a
       <p class="crumb" style="justify-content:center"><a href="index.html">Archive</a><span class="sep">/</span><span>The Pilgrimage</span></p>
       <p class="eyebrow">Walkable sacred sites</p>
       <h1>The Pilgrimage</h1>
-      <p class="lede">Step through the golden portal in the museumStep through a portal from the museum&rsquo;s Rotunda and walkrsquo;s entrance hall and walk inside the places themselves, modelled from published surveys. Each holds copies of its relics, linked to the Vault and to the chapters. Sites open one or two at a time.</p>
+      <p class="lede">Step through the golden portal in the museum&rsquo;s entrance hall and walk inside the places themselves. Each site says how it was sized: from published surveys where they exist, and from labelled estimates or reconstructions where they do not. Each holds renditions of objects linked to the Vault and to the chapters, some found at the site and some shown for comparison and labelled so. Sites open one or two at a time.</p>
     </div>
     <section class="wrap" style="max-width:64rem;padding-block:1rem 2rem">
       <p class="tiny center" style="margin:0 auto;max-width:44rem">Every site is our own model. No one else&rsquo;s photographs or 3D scans are used; published plans and measurements are references only. What is measured, what is approximate and what is unknown is said on site, by the same evidence standard as the chapters.</p>
@@ -559,7 +559,7 @@ function pilgrimageSitePage(s) {
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="stylesheet" href="../museum/museum.css?v=7" />
+${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
   <link rel="stylesheet" href="pilgrimage.css?v=1" />
   <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
 </head>
@@ -585,7 +585,7 @@ function pilgrimageSitePage(s) {
     ${s.pending ? '<p class="pg-pending">Recently added · pending full review</p>' : ""}
     <h1 id="mu-intro-h">${esc(s.name)}</h1>
     <p>${esc(s.blurb || "")}</p>
-    <p class="mu-note">Sizes, slopes and proportions come from published survey measurements; the stone is drawn in code, not photographed. Gold markers open notes on what you see, including <strong>what is measured, what is approximate and what is unknown</strong>. Objects in the cases are renditions, not replicas.</p>
+    <p class="mu-note">${s.note ? esc(s.note) + " " : "Sizes, slopes and proportions come from published survey measurements; "}the stone is drawn in code, not photographed. Gold markers open notes on what you see, including <strong>what is measured, what is approximate and what is unknown</strong>. Objects in the cases are renditions, not replicas.</p>
     <div class="mu-keys" id="mu-keys"></div>
     <div class="mu-intro-actions">
       <button type="button" class="mu-enter" id="mu-enter">Enter</button>
@@ -664,6 +664,18 @@ function pantheonFragment() {
   const empty = '      <p class="pn-empty" hidden="">No figure matches that search. Try another name, a tradition, or a word such as <em>sun</em> or <em>underworld</em>.</p>';
   return bar + "\n" + count + "\n      <ul class=\"pn-grid\">\n" + cards + "\n      </ul>\n" + empty;
 }
+// The emblems write a few names in Arabic, Hebrew and Chinese (the "glyph" head). Ask Google
+// Fonts for just those characters (text=) rather than the whole scripts: the full Noto Serif TC
+// stylesheet alone is ~35 KB of @font-face rules and Amiri is ~100 KB, for about a dozen letters.
+// Loaded without blocking the first paint: only the emblem SVGs use them, so a late swap moves no text.
+function pantheonFonts() {
+  const chars = new Set();
+  for (const m of pantheonFragment().matchAll(/<text class="pt-g"[^>]*>([^<]*)<\/text>/g)) for (const ch of m[1]) chars.add(ch);
+  if (!chars.size) return "";
+  const url = "https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Serif+Hebrew:wght@500&family=Noto+Serif+TC:wght@500&text=" +
+    encodeURIComponent([...chars].sort().join("")) + "&display=swap";
+  return `  <link rel="stylesheet" href="${esc(url)}" media="print" onload="this.media='all'" />`;
+}
 function pantheonJsonLd() {
   const P = PANTHEON;
   const ld = {
@@ -704,6 +716,8 @@ function buildSitemap() {
   urls.push([SITE + "/vault.html", null]);
   urls.push([SITE + "/pantheon.html", null]);
   VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
+  // a withdrawn entry's absence page stays indexed: it is a public statement, meant to be found
+  VAULT.items.filter((v) => v.status === "withdrawn").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map(([u, d]) => "  <url><loc>" + u + "</loc>" + (d ? "<lastmod>" + d + "</lastmod>" : "") + "</url>").join("\n") +
@@ -720,7 +734,8 @@ const injections = [
   ["themes.html", "themes", themesFragment()],
   ["traditions.html", "traditions", traditionsFragment()],
   ["pantheon.html", "pantheon", pantheonFragment()],
-  ["pantheon.html", "pantheon-ld", pantheonJsonLd()]
+  ["pantheon.html", "pantheon-ld", pantheonJsonLd()],
+  ["pantheon.html", "pantheon-fonts", pantheonFonts()]
 ];
 for (const [file, name, frag] of injections) {
   const p = path.join(DOCS, file);

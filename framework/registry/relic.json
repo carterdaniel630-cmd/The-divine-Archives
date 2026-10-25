@@ -1,0 +1,1172 @@
+{
+ "type": "relic",
+ "count": 88,
+ "entities": [
+  {
+   "id": "relic:v01",
+   "type": "relic",
+   "label": "The Voynich Manuscript",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/voynich-manuscript.html",
+   "links": [
+    "chapter:ch28",
+    "chapter:ch37"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v02",
+   "type": "relic",
+   "label": "The Dead Sea Scrolls",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/dead-sea-scrolls.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "chapter:ch17",
+    "chapter:ch19",
+    "chapter:ch45",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v03",
+   "type": "relic",
+   "label": "The Emerald Tablet",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/emerald-tablet.html",
+   "links": [
+    "chapter:ch17",
+    "chapter:ch18",
+    "chapter:ch21",
+    "chapter:ch28",
+    "chapter:ch37"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v04",
+   "type": "relic",
+   "label": "The Shroud of Turin",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/shroud-of-turin.html",
+   "links": [
+    "chapter:ch22",
+    "chapter:ch31",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v05",
+   "type": "relic",
+   "label": "The Holy Lance (“Spear of Destiny”)",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/holy-lance.html",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch22",
+    "chapter:ch49",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v06",
+   "type": "relic",
+   "label": "The Crown of Thorns",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/crown-of-thorns.html",
+   "links": [
+    "chapter:ch28",
+    "chapter:ch49",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v07",
+   "type": "relic",
+   "label": "The Ark of the Covenant",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "vault/ark-of-the-covenant.html",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10",
+    "chapter:ch19",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v08",
+   "type": "relic",
+   "label": "The Nag Hammadi Codices",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/nag-hammadi-codices.html",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch17",
+    "chapter:ch45",
+    "chapter:ch55"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v09",
+   "type": "relic",
+   "label": "The Codex Gigas (“Devil's Bible”)",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/codex-gigas.html",
+   "links": [
+    "chapter:ch28"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v10",
+   "type": "relic",
+   "label": "The Copper Scroll",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/copper-scroll.html",
+   "links": [
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v11",
+   "type": "relic",
+   "label": "The Rohonc Codex",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/rohonc-codex.html",
+   "links": [
+    "chapter:ch31"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v12",
+   "type": "relic",
+   "label": "The Ketef Hinnom Silver Scrolls",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "vault/ketef-hinnom-scrolls.html",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch19"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v13",
+   "type": "relic",
+   "label": "The Tilma of Guadalupe",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/tilma-of-guadalupe.html",
+   "links": [
+    "chapter:ch43",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v14",
+   "type": "relic",
+   "label": "The Holy Grail",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/holy-grail.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v15",
+   "type": "relic",
+   "label": "The True Cross",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/true-cross.html",
+   "links": [
+    "chapter:ch22",
+    "chapter:ch31",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v16",
+   "type": "relic",
+   "label": "The James Ossuary",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/james-ossuary.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v17",
+   "type": "relic",
+   "label": "The “Gospel of Jesus's Wife”",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/gospel-of-jesus-wife.html",
+   "links": [
+    "chapter:ch16"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v18",
+   "type": "relic",
+   "label": "Codex Sinaiticus",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/codex-sinaiticus.html",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch22"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v19",
+   "type": "relic",
+   "label": "The Book of Soyga",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/book-of-soyga.html",
+   "links": [
+    "chapter:ch26",
+    "chapter:ch37"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v20",
+   "type": "relic",
+   "label": "The Papyrus of Ani",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "vault/papyrus-of-ani.html",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v21",
+   "type": "relic",
+   "label": "The Book of Kells",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/book-of-kells.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch22"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v22",
+   "type": "relic",
+   "label": "The Mesha Stele",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "vault/mesha-stele.html",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v23",
+   "type": "relic",
+   "label": "The Tel Dan Stele",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "vault/tel-dan-stele.html",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch49",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v24",
+   "type": "relic",
+   "label": "The Sudarium of Oviedo",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/sudarium-of-oviedo.html",
+   "links": [
+    "chapter:ch22",
+    "chapter:ch28"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v25",
+   "type": "relic",
+   "label": "The Veil of Veronica",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/veil-of-veronica.html",
+   "links": [
+    "chapter:ch31",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v26",
+   "type": "relic",
+   "label": "The Black Stone of the Kaaba",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/black-stone.html",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v27",
+   "type": "relic",
+   "label": "The Sacred Tooth Relic",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/sacred-tooth-relic.html",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch20",
+    "chapter:ch49",
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v28",
+   "type": "relic",
+   "label": "The Birmingham Qur'an Manuscript",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/birmingham-quran.html",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v29",
+   "type": "relic",
+   "label": "The Sana'a Palimpsest",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/sanaa-palimpsest.html",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v30",
+   "type": "relic",
+   "label": "The Diamond Sutra of Dunhuang",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/diamond-sutra.html",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch20",
+    "chapter:ch53",
+    "chapter:ch54"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v31",
+   "type": "relic",
+   "label": "The Dresden Codex",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/dresden-codex.html",
+   "links": [
+    "chapter:ch29",
+    "chapter:ch43",
+    "chapter:ch46",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v32",
+   "type": "relic",
+   "label": "The Popol Vuh Manuscript",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/popol-vuh-manuscript.html",
+   "links": [
+    "chapter:ch01",
+    "chapter:ch29",
+    "chapter:ch46",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v33",
+   "type": "relic",
+   "label": "The Kartarpur Bir",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/kartarpur-bir.html",
+   "links": [
+    "chapter:ch27",
+    "chapter:ch30",
+    "chapter:ch34"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v34",
+   "type": "relic",
+   "label": "The Pyramid Texts of Unas",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "vault/pyramid-texts-of-unas.html",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47",
+    "chapter:ch49",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v35",
+   "type": "relic",
+   "label": "The Cyrus Cylinder",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/cyrus-cylinder.html",
+   "links": [
+    "chapter:ch03",
+    "chapter:ch06",
+    "chapter:ch10",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v36",
+   "type": "relic",
+   "label": "The Rök Runestone",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/rok-runestone.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch23",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v37",
+   "type": "relic",
+   "label": "The Gundestrup Cauldron",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/gundestrup-cauldron.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch47",
+    "chapter:ch51"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v38",
+   "type": "relic",
+   "label": "The Aleppo Codex",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/aleppo-codex.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch19"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v39",
+   "type": "relic",
+   "label": "The Derveni Papyrus",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/derveni-papyrus.html",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch15",
+    "chapter:ch18",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v40",
+   "type": "relic",
+   "label": "The Gospel of Judas (Codex Tchacos)",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/gospel-of-judas.html",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch17",
+    "chapter:ch45"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v41",
+   "type": "relic",
+   "label": "The Codex Borgia",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/codex-borgia.html",
+   "links": [
+    "chapter:ch29",
+    "chapter:ch43",
+    "chapter:ch46",
+    "chapter:ch51"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v42",
+   "type": "relic",
+   "label": "The Lindisfarne Gospels",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/lindisfarne-gospels.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch16",
+    "chapter:ch22"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v43",
+   "type": "relic",
+   "label": "The Merneptah Stele",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "vault/merneptah-stele.html",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch07",
+    "chapter:ch49",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v44",
+   "type": "relic",
+   "label": "The Pilate Stone",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/pilate-stone.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch13",
+    "chapter:ch16"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v45",
+   "type": "relic",
+   "label": "The Nebra Sky Disc",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "vault/nebra-sky-disc.html",
+   "links": [
+    "chapter:ch42",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v46",
+   "type": "relic",
+   "label": "The Piprahwa Relics",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/piprahwa-relics.html",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch20",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v47",
+   "type": "relic",
+   "label": "The Kensington Runestone",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/kensington-runestone.html",
+   "links": [
+    "chapter:ch23"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v48",
+   "type": "relic",
+   "label": "The Great Isaiah Scroll",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/great-isaiah-scroll.html",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v49",
+   "type": "relic",
+   "label": "The Book of Enoch",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/book-of-enoch.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch50",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v50",
+   "type": "relic",
+   "label": "The Vienna Dioscurides",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/vienna-dioscurides.html",
+   "links": [
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v51",
+   "type": "relic",
+   "label": "The Codex Mendoza",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/codex-mendoza.html",
+   "links": [
+    "chapter:ch43"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v52",
+   "type": "relic",
+   "label": "The Ishtar Gate",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/ishtar-gate.html",
+   "links": [
+    "chapter:ch03",
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v53",
+   "type": "relic",
+   "label": "The Rosetta Stone",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/rosetta-stone.html",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v54",
+   "type": "relic",
+   "label": "The Behistun Inscription",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/behistun-inscription.html",
+   "links": [
+    "chapter:ch06",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v55",
+   "type": "relic",
+   "label": "The Oracle Bones of Anyang",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "vault/oracle-bones-of-anyang.html",
+   "links": [
+    "chapter:ch09",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v56",
+   "type": "relic",
+   "label": "The Phaistos Disc",
+   "era": "02-bronze-age",
+   "status": "published",
+   "href": "vault/phaistos-disc.html",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v57",
+   "type": "relic",
+   "label": "The Holy Mandylion",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/holy-mandylion.html",
+   "links": [
+    "chapter:ch22",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v58",
+   "type": "relic",
+   "label": "The Lion Man of Hohlenstein-Stadel",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "vault/lion-man.html",
+   "links": [
+    "chapter:ch41"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v59",
+   "type": "relic",
+   "label": "The Venus of Willendorf",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "vault/venus-of-willendorf.html",
+   "links": [
+    "chapter:ch41",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v60",
+   "type": "relic",
+   "label": "Göbekli Tepe's Pillars",
+   "era": "01-prehistory",
+   "status": "published",
+   "href": "vault/gobekli-tepe.html",
+   "links": [
+    "chapter:ch41",
+    "chapter:ch42"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v61",
+   "type": "relic",
+   "label": "The Kojiki: the Shinpukuji Manuscript",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/kojiki.html",
+   "links": [
+    "chapter:ch25",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v62",
+   "type": "relic",
+   "label": "The Inca Khipu",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/inca-khipu.html",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v63",
+   "type": "relic",
+   "label": "The Kalpa Sutra Manuscripts",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/kalpa-sutra-manuscripts.html",
+   "links": [
+    "chapter:ch52"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v64",
+   "type": "relic",
+   "label": "The Benin Bronzes",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/benin-bronzes.html",
+   "links": [
+    "chapter:ch33"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v65",
+   "type": "relic",
+   "label": "The Staff God of Tiwanaku",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/gateway-of-the-sun.html",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v66",
+   "type": "relic",
+   "label": "The Kebra Nagast",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/kebra-nagast.html",
+   "links": [
+    "chapter:ch40",
+    "chapter:ch49",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v67",
+   "type": "relic",
+   "label": "The Aramaic Incantation Bowls",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/incantation-bowls.html",
+   "links": [
+    "chapter:ch19",
+    "chapter:ch56"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v68",
+   "type": "relic",
+   "label": "The Tjurunga of Central Australia",
+   "era": "09-modern",
+   "status": "withdrawn",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v69",
+   "type": "relic",
+   "label": "The Kumulipo",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/kumulipo.html",
+   "links": [
+    "chapter:ch46",
+    "chapter:ch63"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v70",
+   "type": "relic",
+   "label": "The Pictish Stones",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/pictish-stones.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch22"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v71",
+   "type": "relic",
+   "label": "The Stećci: Medieval Tombstones of Bosnia",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/stecci.html",
+   "links": [
+    "chapter:ch17",
+    "chapter:ch60"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v72",
+   "type": "relic",
+   "label": "The Book of Shadows",
+   "era": "09-modern",
+   "status": "pending",
+   "href": "vault/book-of-shadows.html",
+   "links": [
+    "chapter:ch38"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v73",
+   "type": "relic",
+   "label": "The Book of the Law",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/book-of-the-law.html",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v74",
+   "type": "relic",
+   "label": "The Satanic Bible",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/satanic-bible.html",
+   "links": [
+    "chapter:ch39"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v75",
+   "type": "relic",
+   "label": "The Golden Plates",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/golden-plates.html",
+   "links": [
+    "chapter:ch35"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v76",
+   "type": "relic",
+   "label": "The Báb's Star Tablet",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/bab-star-tablet.html",
+   "links": [
+    "chapter:ch65"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v77",
+   "type": "relic",
+   "label": "The Haitian Vèvè",
+   "era": "09-modern",
+   "status": "published",
+   "href": "vault/haitian-veve.html",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v78",
+   "type": "relic",
+   "label": "The Malleus Maleficarum",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/malleus-maleficarum.html",
+   "links": [
+    "chapter:ch31",
+    "chapter:ch32"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v79",
+   "type": "relic",
+   "label": "The Zohar, First Printings",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/zohar-mantua.html",
+   "links": [
+    "chapter:ch19",
+    "chapter:ch26"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v80",
+   "type": "relic",
+   "label": "The Sefer Yetzirah",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/sefer-yetzirah.html",
+   "links": [
+    "chapter:ch19",
+    "chapter:ch26"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v81",
+   "type": "relic",
+   "label": "The Mawangdui Silk Texts",
+   "era": "04-axial-age",
+   "status": "published",
+   "href": "vault/mawangdui-silk-texts.html",
+   "links": [
+    "chapter:ch09",
+    "chapter:ch12"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v82",
+   "type": "relic",
+   "label": "The Bardo Thödol",
+   "era": "07-high-medieval",
+   "status": "published",
+   "href": "vault/bardo-thodol.html",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v83",
+   "type": "relic",
+   "label": "The Codex Boturini",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/codex-boturini.html",
+   "links": [
+    "chapter:ch29",
+    "chapter:ch43"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v84",
+   "type": "relic",
+   "label": "The Hinton St Mary Mosaic",
+   "era": "05-late-antiquity",
+   "status": "published",
+   "href": "vault/hinton-st-mary-mosaic.html",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch18"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v85",
+   "type": "relic",
+   "label": "The Picatrix",
+   "era": "06-early-medieval",
+   "status": "published",
+   "href": "vault/picatrix.html",
+   "links": [
+    "chapter:ch21",
+    "chapter:ch37"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v86",
+   "type": "relic",
+   "label": "The Berlin Gold Hat",
+   "era": "03-early-iron-age",
+   "status": "published",
+   "href": "vault/berlin-gold-hat.html",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch42"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v87",
+   "type": "relic",
+   "label": "The Diwan Abatur",
+   "era": "08-early-modern",
+   "status": "published",
+   "href": "vault/diwan-abatur.html",
+   "links": [
+    "chapter:ch17",
+    "chapter:ch56"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v88",
+   "type": "relic",
+   "label": "The Skull of “Mary Magdalene” at Saint-Maximin",
+   "era": "07-high-medieval",
+   "status": "pending",
+   "href": "vault/skull-reliquary-saint-maximin.html",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch31",
+    "chapter:ch45"
+   ],
+   "from": "docs/assets/vault-data.js"
+  }
+ ]
+}

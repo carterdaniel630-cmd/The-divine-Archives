@@ -109,6 +109,9 @@ if the PR has a run, read its result too.
 - A **FAIL** is a finding. If it is on the §5 self-fix list (a missing pending tag, stale build output, a
   moved link, a garbled source line), fix it on the batch's branch. Otherwise it is NEEDS CARTER.
 - A **WARN** (for example Wikipedia share over 20%) goes in the report as a note, not a failure.
+- The **Originality** check (`.github/workflows/originality.yml`, explained in `reviews/ORIGINALITY.md`) catches
+  copying only, not inaccuracy. A pass is not a sourcing or accuracy pass, and UNVERIFIED or PARTIAL means
+  "not checked". A FAIL (more than 20% of a piece's 8-grams repeat its cited pages) is a finding.
 - `--build` leaves rebuilt files in the working tree. If you are not fixing, put the tracked files back with
   `git checkout -- .` before moving on. If the build created new untracked files, list them in the report
   (they are missing build output) and leave them alone; do not delete them.

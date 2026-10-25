@@ -28,7 +28,7 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   // tetromino matrices + palette index
   var SHAPES = {
@@ -43,10 +43,6 @@
   var BAG = ["I","O","T","S","Z","J","L"];
 
   AG.register("ziggurat", {
-    title: "Ziggurat Builder",
-    subtitle: "Lay the courses of a temple-mountain. Every course you raise uncovers the archive.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch03) || "",
-    sourceHref: "chapters/ch03.html", sourceLabel: "Read “Mesopotamia”",
     mount: mountGame
   });
 
@@ -66,6 +62,12 @@
     var well, wctx, mon, mctx, nextCv, nctx, holdCv, hctx, live, scoreEl, courseEl, levelEl, bestEl;
     var st, raf = null, keyfn = null, keyupfn = null, touch = null, DPR = 1, tileCache = {}, wellBg = null;
     var best = AG.bestScore("ziggurat");
+    // hit-feel (feel.js): a tablet lands with a clay thud (harder after a long drop);
+    // laying a course freezes for an instant, knocks, flashes gold and rings, more for
+    // several courses at once; the well overflowing drops a tone and, on phones, buzzes.
+    // Reduced motion on the phone turns the jolts off.
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null;
+    function feel(kind, o) { if (FEEL) FEEL.hit(kind, o); }
 
     /* ---------------- state ----------------
        Guideline mechanics: 7-bag, SRS rotation with wall kicks (separate I table),
@@ -129,7 +131,7 @@
     function moved() { st.dirty = true; if (grounded() && st.resets < MAX_RESETS) { st.lockT = 0; st.resets++; } }
     function move(dx) { if (!active()) return false; if (!collides(st.piece, dx, 0)) { st.piece.x += dx; moved(); return true; } return false; }
     function softStep() { if (!active()) return; if (!collides(st.piece, 0, 1)) { st.piece.y += 1; st.score += 1; scoreEl.textContent = st.score; st.grav = 0; st.dirty = true; } }
-    function hardDrop() { if (!active()) return; var d = 0; while (!collides(st.piece, 0, d + 1)) d++; st.piece.y += d; st.score += d * 2; lock(); }
+    function hardDrop() { if (!active()) return; var d = 0; while (!collides(st.piece, 0, d + 1)) d++; st.piece.y += d; st.score += d * 2; st.dropD = d; lock(); }
     function doRotate(dir) { if (!active()) return; if (tryRotate(dir || 1)) moved(); }
     function doHold() {
       if (!active() || !st.canHold) return;
@@ -146,6 +148,7 @@
         if (st.piece.y + r >= 0) { st.board[st.piece.y + r][st.piece.x + c] = col; above = false; }
       }
       if (above) { st.alive = false; return gameOver(); }       // lock out: the whole piece settled above the well
+      feel("land", { scale: 0.6 + Math.min(1, (st.dropD || 0) / 10), pitch: 0.9 + Math.random() * 0.2 }); st.dropD = 0;
       clearLines();
       st.canHold = true;
       spawn();
@@ -165,6 +168,7 @@
       st.lines += cleared;
       var pts = [0, 100, 300, 500, 800][cleared] || 800;
       st.score += pts * st.level;
+      feel("course", { scale: 0.8 + cleared * 0.3, pitch: 0.94 + cleared * 0.06, color: "231,198,128" });
       var newLevel = 1 + Math.floor(st.lines / 10);
       if (newLevel !== st.level) { st.level = newLevel; }
       scoreEl.textContent = st.score; courseEl.textContent = st.lines; levelEl.textContent = st.level;
@@ -293,6 +297,7 @@
 
     function draw() {
       wctx.clearRect(0, 0, W, H);
+      if (FEEL) FEEL.begin(wctx);
       drawWellBg();
       // settled board, with a soft shadow under the stack
       for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) if (st.board[y][x]) {
@@ -316,6 +321,7 @@
         }
         wctx.restore();
       }
+      if (FEEL) FEEL.end(wctx, W, H);
     }
 
     function drawMini(c, pc, cx0, cy0, sz, dim) {
@@ -451,7 +457,8 @@
       raf = null;
       if (!st || !st.alive) return;
       var dt = Math.min(0.1, (ts - lastT) / 1000 || 0); lastT = ts;
-      if (!st.paused) {
+      var frozen = FEEL ? FEEL.tick(dt) : false;   // hit-stop: a laid course holds for an instant
+      if (!st.paused && !frozen) {
         // auto-shift: one step on press, then after DAS repeat every ARR
         var d = st.das;
         if (d.dir) { d.t += dt; if (d.t >= DAS) { d.arr += dt; while (d.arr >= ARR) { d.arr -= ARR; if (!move(d.dir)) { d.arr = 0; break; } } } }
@@ -464,13 +471,14 @@
           if (grounded()) st.grav = 0;
         }
       }
-      if (st.alive && st.dirty) { st.dirty = false; draw(); }
+      if (st.alive && (st.dirty || (FEEL && FEEL.active))) { st.dirty = false; draw(); }
       if (st.alive) raf = requestAnimationFrame(tick);
     }
     function gameOver() {
+      feel("lose", { color: "120,40,30" });
       st.alive = false; if (raf) { cancelAnimationFrame(raf); raf = null; }
       var newBest = false; if (st.score > best) { best = st.score; newBest = true; }
-      AG.addHighScore("ziggurat", { score: st.score, lines: st.lines });
+      AG.addHighScore("ziggurat", { score: st.score, lines: st.lines }); AG.finish("ziggurat");
       var list = st.collected.map(function (f) {
         return '<li><strong>' + esc(f.label) + ".</strong> " + esc(f.fact) +
           ' <a class="game-source" href="chapters/' + f.chapter + '.html">› ' + esc(chapterTitle(f.chapter)) + "</a></li>";
@@ -489,6 +497,7 @@
     /* ---------------- boot ---------------- */
     function boot() {
       if (raf) { cancelAnimationFrame(raf); raf = null; }
+      if (FEEL) FEEL.reset();
       shell(); newGame(); draw(); drawMonument(); drawNext();
       live.textContent = "Complete a row to lay the first course of the temple-mountain.";
       loop();

@@ -153,7 +153,7 @@ lettering (Google Fonts) was also blocked here, so the screenshots use a stand-i
 
 ![Pantheon](founder-guide/pantheon.jpg)
 
-- **What it is:** 199 gods, spirits, heroes and prophets from 30 traditions, with a search box
+- **What it is:** 199 figures (gods, spirits, heroes and prophets) from 30 traditions, with a search box
   and filters. Each figure links back to its chapters.
 - **Who it's for:** myth fans, gamers, students looking up one name.
 - **Taps:** 1, after a scroll.
@@ -216,12 +216,12 @@ as a comparison between the games, not as exact phone speeds.
 | **Ziggurat Builder** | Tetris-style: build a temple-mountain | casual | working |
 | **The Reliquary** | Trivia drawn from the chapters, filter by era/tradition | quiz lovers, students | working |
 | **The Seeker's Path** | Ten riddles, each answered somewhere in the archive | puzzle lovers | working |
-| **Antithesis** | Pong: Order vs Chaos | casual | working, a little slow on phones |
-| **The Excavation** | Minesweeper: dig a site | casual | working |
-| **The Labyrinth** | Pac-Man through the underworld | casual | working, **slow on phones** |
+| **Antithesis** | Volley game: Order vs Chaos | casual | working, a little slow on phones |
+| **The Excavation** | Grid deduction: dig a site | casual | working |
+| **The Labyrinth** | Maze-chase through the underworld | casual | working, **slow on phones** |
 | **The Firmament** | Pinball in the heavens | casual | working, **slow on phones** |
-| **Dominion of the Ancients** | Risk-style conquest of the ancient world | strategy players | working; the page freezes for about 1.5 s while it loads |
-| **The Tomb Robber** | Platformer across four ancient sites | action gamers | working, **slowest on phones** |
+| **Dominion of the Ancients** | Territorial conquest of the ancient world | strategy players | working; the page freezes for about 1.5 s while it loads |
+| **The Unfinished Journal** | Platformer across four ancient sites | action gamers | working, **slowest on phones** |
 
 Screenshots of each game's first screen:
 
@@ -229,7 +229,7 @@ Screenshots of each game's first screen:
 |---|---|---|
 | ![](founder-guide/game-fighter.jpg) | ![](founder-guide/game-chess.jpg) | ![](founder-guide/game-ouroboros.jpg) |
 | ![](founder-guide/game-ziggurat.jpg) | ![](founder-guide/game-reliquary.jpg) | ![](founder-guide/game-seeker.jpg) |
-| ![](founder-guide/game-pong.jpg) | ![](founder-guide/game-minesweeper.jpg) | ![](founder-guide/game-pacman.jpg) |
+| ![](founder-guide/game-antithesis.jpg) | ![](founder-guide/game-excavation.jpg) | ![](founder-guide/game-labyrinth.jpg) |
 | ![](founder-guide/game-pinball.jpg) | ![](founder-guide/game-risk.jpg) | ![](founder-guide/game-treasure.jpg) |
 
 ## Methodology and About
@@ -317,11 +317,11 @@ know there's a 3D museum and twelve games unless they kept scrolling.
    corner, and it isn't labelled. On a phone it covers words in the chapters and the games'
    instructions. *Fixed in PR #12 (awaiting review): smaller on phones, tucks away while you
    scroll down, hidden during games.*
-4. **The games are slow on mid-range phones,** most of all the Tomb Robber, the fighter, Pac-Man
-   and pinball. The fighter is also a 6 MB download, and the Risk game freezes the page for
+4. **The games are slow on mid-range phones,** most of all the Unfinished Journal, the fighter, the Labyrinth
+   and pinball. The fighter is also a 6 MB download, and Dominion freezes the page for
    about 1.5 s while it opens. The cause and the cheapest fixes are in
    [`perf-baseline.md`](perf-baseline.md). *Partly fixed in PR #12 (awaiting review): the fighter
-   is about twice as smooth, the Tomb Robber +58%, Pac-Man +30%, and Risk opens about 60%
+   is about twice as smooth, the Unfinished Journal +58%, the Labyrinth +30%, and Dominion opens about 60%
    faster. The fighter's download drops from about 6 MB to about 0.4 MB on the
    `claude/first-screen-fighter` branch.*
 5. **Small rough edges that read as unfinished:**

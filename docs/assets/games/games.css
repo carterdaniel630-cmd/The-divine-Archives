@@ -393,7 +393,7 @@
 /* two thumb-reachable clusters at the corners: a d-pad (left) and action buttons (right).
    Buttons are widely spaced so neighbours can't be fat-fingered at once. */
 
-/* ---- Antithesis (Pong) ---- */
+/* ---- Antithesis (two-paddle volley game) ---- */
 .pg-hud { display:flex; align-items:center; justify-content:center; gap:1.4rem; margin:.2rem auto .3rem; }
 .pg-score { display:flex; flex-direction:column; align-items:center; min-width:4.5rem; }
 .pg-score b { font-family:var(--font-display,Georgia,serif); font-size:1.7rem; line-height:1; }
@@ -412,7 +412,7 @@
 .pg-mode { white-space:nowrap; }
 @media (max-width:520px){ .pg-controls { gap:.6rem; } .pg-pad { flex-direction:row; } .pg-pad .ouro-key { width:2.7rem; height:2.7rem; } }
 
-/* ---- The Excavation (Minesweeper) ---- */
+/* ---- The Excavation (grid-deduction puzzle) ---- */
 .ms-bar { display:flex; align-items:center; justify-content:center; gap:1.1rem; margin:.2rem auto .5rem; }
 .ms-stat { display:flex; flex-direction:column; align-items:center; min-width:4.4rem; }
 .ms-stat b { font-family:var(--font-display,Georgia,serif); font-size:1.4rem; color:var(--gold-bright,#e7c680); line-height:1; }
@@ -435,7 +435,7 @@
 .ms-cell[data-n="7"]{ color:#d98aa8; } .ms-cell[data-n="8"]{ color:#cdbb96; }
 .ms-toast { min-height:2.4rem; }
 
-/* ---- The Labyrinth (Pac-Man) ---- */
+/* ---- The Labyrinth (maze-chase game) ---- */
 .pm-hud { display:flex; align-items:center; justify-content:center; gap:1.3rem; margin:.2rem auto .35rem; }
 .pm-stat { display:flex; flex-direction:column; align-items:center; min-width:4.4rem; }
 .pm-stat b { font-family:var(--font-display,Georgia,serif); font-size:1.2rem; color:var(--gold-bright,#e7c680); line-height:1; letter-spacing:.06em; }
@@ -460,7 +460,7 @@
 .pb-launch { white-space:nowrap; }
 @media (max-width:520px){ .pb-flip { width:4.2rem; height:3.4rem; } }
 
-/* ---- Dominion of the Ancients (Risk) ---- */
+/* ---- Dominion of the Ancients (territorial-conquest board game) ---- */
 .rk-hud { display:flex; align-items:center; justify-content:space-between; gap:.4rem; max-width:360px; margin:.2rem auto .35rem; }
 .rk-side { display:flex; flex-direction:column; align-items:center; min-width:3.2rem; }
 .rk-side b { font-family:var(--font-display,Georgia,serif); font-size:1.25rem; line-height:1; }
@@ -481,7 +481,7 @@
 .rk-controls { display:flex; justify-content:center; margin:.2rem auto; }
 .rk-next { white-space:nowrap; }
 
-/* ---- The Tomb Robber (treasure-hunt platformer) ---- */
+/* ---- The Unfinished Journal (treasure-hunt platformer) ---- */
 .tr-hudrow { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
 .tr-snd { background:none; border:1px solid var(--line); border-radius:999px; color:var(--ink-faint, #a89878); font:inherit; font-size:.72rem; padding:.2rem .7rem; cursor:pointer; }
 .tr-snd[aria-pressed="true"] { color:var(--gold-bright); border-color:var(--gold); }

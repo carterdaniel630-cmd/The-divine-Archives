@@ -16,16 +16,12 @@
   function loadData() { if (DATA) return Promise.resolve(DATA); if (loadingP) return loadingP; loadingP = fetch(DATA_URL).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) { DATA = j; return j; }); return loadingP; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function norm(s) { return String(s == null ? "" : s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim(); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
   var KEY = "da.games.seeker";
   function load() { try { return parseInt(localStorage.getItem(KEY) || "0", 10) || 0; } catch (e) { return 0; } }
   function save(n) { try { localStorage.setItem(KEY, String(n)); } catch (e) { } }
 
   AG.register("seeker", {
-    title: "The Seeker's Path",
-    subtitle: "The gatekeeper opens the way — follow the clues into the chapters.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch40) || "",
-    sourceHref: "chapters/ch40.html", sourceLabel: "Read “Modern Movements”",
     mount: mountGame
   });
 
@@ -45,7 +41,7 @@
       root.innerHTML =
         head("The Seeker's Path") +
         '<div class="game-rule" role="presentation"></div>' +
-        '<div class="game-symbol-large" aria-hidden="true">' + ((window.PLATE_ART && window.PLATE_ART.ch40) || "") + "</div>" +
+        '<div class="game-symbol-large" aria-hidden="true">' + AG.content.symbol(AG.catalog("seeker").chapter) + "</div>" +
         '<p class="sk-intro game-versal">Ten riddles bar the way, and no riddle answers itself. Each names a thing hidden in the archive; to pass, you must go and read. The chapter is always given — the answer waits inside it.</p>' +
         (cur > 0 && cur < clues.length ? '<p class="rq-note">You have opened ' + cur + ' of ' + clues.length + " gates.</p>" : "") +
         '<div class="rq-actions" style="gap:.5rem">' +
@@ -85,6 +81,7 @@
       var hit = cl.answers.some(function (a) { a = norm(a); return g === a || g.indexOf(a) >= 0; });
       if (hit) {
         cur += 1; save(cur);
+        AG.record("unlocked", "seeker", { step: cur });
         fb.className = "sk-feedback ok"; fb.textContent = "The gate opens.";
         var stage2 = root.querySelector(".sk-clue"); if (stage2) stage2.classList.add("sk-open");
         setTimeout(function () { if (cur >= clues.length) finish(); else stage(); }, 750);
@@ -98,6 +95,7 @@
 
     function finish() {
       save(clues.length);
+      AG.finish("seeker", { steps: clues.length });
       root.innerHTML =
         head("The Path is Walked") +
         '<div class="game-rule" role="presentation"></div>' +

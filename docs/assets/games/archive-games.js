@@ -32,6 +32,28 @@
     catch (e) { return false; }
   }
 
+  /* ---------------- renamed game ids (Naming & IP Policy, Carter 2026-10-17) ----------------
+     Four games used to carry ids borrowed from commercial game names. This table exists ONLY so
+     old links (symbols.html#play=<old>) still open the right game and scores saved under the old
+     ids carry over. It is never shown to visitors. The same table is in framework/adapters/track.js
+     and docs/pilgrimage/sites/arcade/site.js; framework/test/renamed.test.js keeps all three equal. */
+  var RENAMED = { pacman: "labyrinth", pong: "antithesis", minesweeper: "excavation", risk: "dominion" };
+  function canonicalId(id) { return Object.prototype.hasOwnProperty.call(RENAMED, id) ? RENAMED[id] : id; }
+  // Move each old top-ten list onto the new id (merged with any new scores, best ten kept), once.
+  function migrateScores() {
+    Object.keys(RENAMED).forEach(function (old) {
+      try {
+        var raw = localStorage.getItem(NS + "score." + old);
+        if (raw == null) return;
+        var a = JSON.parse(raw), b = lsGet("score." + RENAMED[old], []);
+        var all = (Array.isArray(a) ? a : []).concat(Array.isArray(b) ? b : []);
+        all.sort(function (x, y) { return (y.score || 0) - (x.score || 0); });
+        if (lsSet("score." + RENAMED[old], all.slice(0, 10))) localStorage.removeItem(NS + "score." + old);
+      } catch (e) { /* storage blocked or malformed: leave it as it is */ }
+    });
+  }
+  migrateScores();
+
   /* ---------------- high scores (per game, local only) ---------------- */
   function getHighScores(gameId) { var a = lsGet("score." + gameId, []); return Array.isArray(a) ? a : []; }
   function addHighScore(gameId, entry) {
@@ -40,13 +62,64 @@
     a.sort(function (x, y) { return (y.score || 0) - (x.score || 0); });
     a = a.slice(0, 10);
     lsSet("score." + gameId, a);
+    if (entry && typeof entry.score === "number") record("scored", gameId, { value: entry.score });
     return a;
   }
   function bestScore(gameId) { var a = getHighScores(gameId); return a.length ? (a[0].score || 0) : 0; }
 
+  /* ---------------- the visitor's ledger (framework/adapters/track.js) ----------------
+     The games never touch the ledger: they report here, and the tracker records it
+     (started on open, scored with each score, completed via finish(), unlocked via record()).
+     Before the tracker has loaded, events wait in window.__archiveQ. */
+  function record(verb, gameId, payload) {
+    var d = { entity: "game:" + gameId, verb: verb };
+    if (payload) d.payload = payload;
+    try {
+      if (window.__archiveTrack) window.__archiveTrack.record(d);
+      else (window.__archiveQ = window.__archiveQ || []).push(d);
+    } catch (e) { /* recording never breaks a game */ }
+  }
+  function finish(gameId, payload) { record("completed", gameId, payload); }
+
+  /* ---------------- content: the catalog and the chapter index ----------------
+     The shell holds no titles or chapter ids. A game's title, subtitle and
+     chapters come from the catalog (window.ARCHIVE_GAMES, catalog.js); chapter
+     titles and symbol art come from the site's index (window.ARCHIVE,
+     window.PLATE_ART). Games ask through ArchiveGames.content. */
+  function catalog(gameId) {
+    var list = window.ARCHIVE_GAMES || [];
+    if (gameId === undefined) return list;
+    for (var i = 0; i < list.length; i++) if (list[i].id === gameId) return list[i];
+    return null;
+  }
+  function chapterTitle(id) {
+    var a = (window.ARCHIVE || {}).chapters || [];
+    for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title;
+    return id;
+  }
+  function chapterHref(id) { return "chapters/" + id + ".html"; }
+  function symbol(id) { return (window.PLATE_ART && window.PLATE_ART[id]) || ""; }
+  function escText(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  // the end-screen link to a chapter: › Read “Title” (or a custom label)
+  function readLink(id, label) {
+    return '<a class="game-source" href="' + chapterHref(id) + '">› ' + (label || "Read “" + escText(chapterTitle(id)) + "”") + "</a>";
+  }
+  var content = { chapterTitle: chapterTitle, chapterHref: chapterHref, symbol: symbol, readLink: readLink };
+
   /* ---------------- game registry ---------------- */
-  // def: { title, subtitle?, mount(container, ctx) -> cleanupFn|void, symbolSVG?, sourceHref?, sourceLabel? }
-  function register(gameId, def) { games[gameId] = def || {}; }
+  // def: { mount(container, ctx) -> cleanupFn|void, title?, subtitle?, symbolSVG?, sourceHref?, sourceLabel? }
+  // Anything the def leaves out is filled from the game's catalog entry.
+  function register(gameId, def) {
+    def = def || {};
+    var c = catalog(gameId);
+    if (c) {
+      if (def.title == null) def.title = c.title;
+      if (def.subtitle == null) def.subtitle = c.subtitle;
+      if (def.symbolSVG == null) def.symbolSVG = symbol(c.chapter);
+      if (def.sourceHref == null) { def.sourceHref = chapterHref(c.chapter); def.sourceLabel = "Read “" + chapterTitle(c.chapter) + "”"; }
+    }
+    games[gameId] = def;
+  }
   function isRegistered(gameId) { return !!games[gameId] && typeof games[gameId].mount === "function"; }
 
   /* ---------------- accessible symbol trigger ---------------- */
@@ -85,6 +158,7 @@
   function open(gameId, ctx) {
     close(); // only one at a time
     ctx = ctx || {};
+    if (gameId) record("started", gameId);
     var def = games[gameId] || {};
     lastFocus = ctx.trigger || document.activeElement;
 
@@ -142,9 +216,9 @@
     // physical game controllers for the keyboard-only arcade games (the action games read them directly)
     var PADKEYS = {
       ouroboros: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight", start: "p" },
-      pacman: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight" },
+      labyrinth: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight" },
       ziggurat: { left: "ArrowLeft", right: "ArrowRight", down: "ArrowDown", up: "ArrowUp", a: " ", b: "x", x: "z", y: "c", l: "c", r: "c", start: "p" },
-      pong: { up: "w", down: "s" },
+      antithesis: { up: "w", down: "s" },
       pinball: { left: "ArrowLeft", right: "ArrowRight", l: "ArrowLeft", r: "ArrowRight", a: " ", b: " " }
     };
     var stopBridge = (window.ArchivePad && PADKEYS[gameId]) ? window.ArchivePad.bridge(PADKEYS[gameId]) : null;
@@ -156,7 +230,7 @@
     return openState;
   }
 
-  var LANDSCAPE = { treasure: 1, fighter: 1, pong: 1 };
+  var LANDSCAPE = { treasure: 1, fighter: 1, antithesis: 1 };
   function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
   function setFullClass(on) {
     if (!openState) return;
@@ -326,10 +400,12 @@
 
   window.ArchiveGames = {
     onFit: onFit, scaleFor: scaleFor,
-    register: register, registerSymbol: registerSymbol, isRegistered: isRegistered,
+    register: register, registerSymbol: registerSymbol, isRegistered: isRegistered, canonicalId: canonicalId,
     open: open, close: close,
     lsGet: lsGet, lsSet: lsSet,
     getHighScores: getHighScores, addHighScore: addHighScore, bestScore: bestScore,
+    record: record, finish: finish,
+    catalog: catalog, content: content,
     sourceLink: sourceLink, seedEasterEggs: seedEasterEggs, maybeShowHint: maybeShowHint
   };
 

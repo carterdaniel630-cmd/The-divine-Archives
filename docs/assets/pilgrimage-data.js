@@ -19,18 +19,21 @@
      chapters  the archive chapters it links to
      vault     Vault objects shown there (found at, kept at, or related to the site)
      pending   true while the site carries the "pending full review" tag
+     note      optional: replaces the default "sizes come from published survey
+               measurements" line on the site page. Required wherever that line
+               would be untrue (sizes estimated or conjectured, not surveyed).
 
    Source of the list: plans/pilgrimage-sites.md (the master list).
    ========================================================================== */
 (function () {
   "use strict";
   window.PILGRIMAGE = { sites: [
-    {"id":"mount-ararat-the-ark-tradition","name":"Mount Ararat & the Ark tradition","era":null,"label":"C","chapters":["ch01"],"vault":[],"status":"queued"},
+    {"id":"mount-ararat-the-ark-tradition","name":"Mount Ararat & the Ark tradition","era":null,"label":"C","chapters":["ch01"],"vault":[],"status":"preview","pending":true,"place":"Ağrı Dağı / Masis, eastern Turkey","built":"a volcano; the tradition medieval and modern","blurb":"The mountain long identified as the Ark's landing place: look up at its two cones from the plain, walk round the boat-shaped Durupınar formation and compare it with the size Genesis gives, and stand on the summit ice, with the traditions, the searches and the geology set side by side.","note":"The mountain is a scale model whose heights are published and whose shape is our own, and the formation's width and height are estimates;"},
     {"id":"gobekli-tepe","name":"Göbekli Tepe","era":"01-prehistory","label":"","chapters":["ch42","ch41"],"vault":["v60"],"status":"queued"},
     {"id":"lascaux","name":"Lascaux","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"chauvet","name":"Chauvet","era":"01-prehistory","label":"","chapters":["ch41"],"vault":[],"status":"queued"},
     {"id":"catalhoyuk","name":"Çatalhöyük","era":"01-prehistory","label":"","chapters":["ch42","ch48"],"vault":["v59"],"status":"queued"},
-    {"id":"stonehenge","name":"Stonehenge","era":"01-prehistory","label":"","chapters":["ch42"],"vault":["v45"],"status":"queued"},
+    {"id":"stonehenge","name":"Stonehenge","era":"01-prehistory","label":"","chapters":["ch42"],"vault":["v45"],"status":"preview","pending":true,"place":"Salisbury Plain, Wiltshire, England","built":"c. 3000 – 1500 BCE, in stages","blurb":"Walk up the Avenue past the Heel Stone, cross the ditch of the henge, and go in among the stones: the sarsen circle and its lintels, the trilithon horseshoe, the bluestones and the Altar Stone, shown as the monument stands today.","note":"The layout and the main sizes come from published plans and figures; the place of each stone and the state of the ruin are simplified;"},
     {"id":"newgrange","name":"Newgrange","era":"01-prehistory","label":"","chapters":["ch42"],"vault":[],"status":"queued"},
     {"id":"drakensberg-rock-art","name":"Drakensberg rock art","era":"01-prehistory","label":"","chapters":["ch66"],"vault":[],"status":"queued"},
     {"id":"uluru","name":"Uluru","era":"01-prehistory","label":"S","chapters":["ch61"],"vault":[],"status":"queued"},
@@ -49,16 +52,17 @@
     {"id":"yinxu-at-anyang","name":"Yinxu at Anyang","era":"03-early-iron-age","label":"","chapters":["ch09","ch49"],"vault":["v55"],"status":"queued"},
     {"id":"meroe-pyramids","name":"Meroë pyramids","era":"03-early-iron-age","label":"","chapters":["ch68"],"vault":[],"status":"queued"},
     {"id":"tarquinia-etruscan-tombs","name":"Tarquinia Etruscan tombs","era":"03-early-iron-age","label":"","chapters":["ch77"],"vault":[],"status":"queued"},
-    {"id":"library-of-alexandria","name":"Library of Alexandria","era":"04-axial-age","label":"R","chapters":["ch15","ch17"],"vault":["v53"],"status":"preview","pending":true,"place":"Alexandria, Egypt (the royal quarter; exact site unknown)","built":"founded c. 300 BCE; lost by late antiquity","blurb":"A labelled reconstruction. Almost nothing of the Library's plan survives, so this walk follows the one ancient description of the Museum, Strabo's, and says at every step what is attested and what is guesswork."},
+    {"id":"library-of-alexandria","name":"Library of Alexandria","era":"04-axial-age","label":"R","chapters":["ch15","ch17"],"vault":["v53"],"status":"live","pending":true,"note":"No plan of the Library survives and no remains have been securely identified, so every size here is conjecture, after ordinary Hellenistic buildings of the kind, not after evidence from Alexandria;","place":"Alexandria, Egypt (the royal quarter; exact site unknown)","built":"founded c. 300 BCE; lost by late antiquity","blurb":"A labelled reconstruction. Almost nothing of the Library's plan survives, so this walk follows the one ancient description of the Museum, Strabo's, and says at every step what is attested and what is guesswork."},
     {"id":"parthenon","name":"Parthenon","era":"04-axial-age","label":"","chapters":["ch15"],"vault":[],"status":"queued"},
     {"id":"herod-s-temple","name":"Herod's Temple","era":"04-axial-age","label":"R","chapters":["ch10","ch16","ch19"],"vault":["v44"],"status":"queued"},
-    {"id":"qumran-caves","name":"Qumran caves","era":"04-axial-age","label":"","chapters":["ch10","ch16","ch17","ch19","ch50"],"vault":["v02","v48","v10","v49"],"status":"preview","pending":true,"place":"Qumran, on the north-western shore of the Dead Sea","built":"caves used c. 2nd century BCE – 68 CE","blurb":"Stand on the marl terrace above Wadi Qumran, then climb into three of the caves where the Dead Sea Scrolls were found: Cave 4, cut by hand into the marl, Cave 1 in the cliffs, and Cave 3, where the Copper Scroll lay."},
+    {"id":"qumran-caves","name":"Qumran caves","era":"04-axial-age","label":"","chapters":["ch10","ch16","ch17","ch19","ch50"],"vault":["v02","v48","v10","v49"],"status":"live","pending":true,"note":"Every size here is approximate: our estimate of the proportions in the excavation reports, whose plans could not be checked for this model, so none of it is a survey measurement;","place":"Qumran, on the north-western shore of the Dead Sea","built":"caves used c. 2nd century BCE – 68 CE","blurb":"Stand on the marl terrace above Wadi Qumran, then climb into three of the caves where the Dead Sea Scrolls were found: Cave 4, cut by hand into the marl, Cave 1 in the cliffs, and Cave 3, where the Copper Scroll lay."},
     {"id":"persepolis","name":"Persepolis","era":"04-axial-age","label":"","chapters":["ch06","ch49"],"vault":["v35","v54"],"status":"queued"},
     {"id":"bodh-gaya","name":"Bodh Gaya (Mahabodhi)","era":"04-axial-age","label":"","chapters":["ch11","ch20"],"vault":["v46","v27"],"status":"queued"},
     {"id":"great-stupa-at-sanchi","name":"Great Stupa at Sanchi","era":"04-axial-age","label":"","chapters":["ch11","ch20"],"vault":["v46"],"status":"queued"},
     {"id":"eleusis","name":"Eleusis","era":"04-axial-age","label":"","chapters":["ch18","ch15"],"vault":["v39"],"status":"queued"},
     {"id":"pantheon","name":"Pantheon (Rome)","era":"04-axial-age","label":"","chapters":["ch13"],"vault":[],"status":"queued"},
     {"id":"temple-of-confucius-qufu","name":"Temple of Confucius, Qufu","era":"04-axial-age","label":"","chapters":["ch12"],"vault":[],"status":"queued"},
+    {"id":"golgotha-and-the-tomb","name":"Golgotha and the Tomb, c. 30 CE","era":"05-late-antiquity","label":"C","chapters":["ch16","ch10"],"vault":["v15"],"status":"preview","pending":true,"place":"Jerusalem, outside the Second Wall (the site of the Church of the Holy Sepulchre)","built":"a reconstruction of Passover, c. 30–33 CE","blurb":"A labelled reconstruction of the old quarry outside Jerusalem's wall where the Gospels place the crucifixion and burial: the road by the gate with three empty crosses, the unquarried rock, the garden plots, and a new rock-cut tomb you can enter. Places, not people: no figures are shown.","note":"The layout follows excavation reports and the typology of Jerusalem tombs, but the distances between features and every size not from Josephus are reconstruction;"},
     {"id":"church-of-the-holy-sepulchre","name":"Church of the Holy Sepulchre","era":"05-late-antiquity","label":"C","chapters":["ch16","ch22","ch60"],"vault":["v15","v05"],"status":"queued"},
     {"id":"garden-tomb","name":"Garden Tomb","era":"05-late-antiquity","label":"C","chapters":["ch16","ch31"],"vault":[],"status":"queued"},
     {"id":"roman-catacombs","name":"Roman catacombs","era":"05-late-antiquity","label":"","chapters":["ch16","ch22"],"vault":["v84"],"status":"queued"},

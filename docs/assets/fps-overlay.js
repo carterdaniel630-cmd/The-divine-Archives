@@ -1,5 +1,5 @@
 /* The Divine Archives — hidden frame-rate overlay for the games.
-   Does nothing unless the page URL carries ?fps=1 (e.g. symbols.html?fps=1#play=pong).
+   Does nothing unless the page URL carries ?fps=1 (e.g. symbols.html?fps=1#play=antithesis).
    Counts the browser's animation frames, which is the rate at which the games can draw, and
    shows: the current rate, the average since the last reset, the worst one-second window, and
    the longest single frame. window.__fps holds the same numbers and window.__fpsReset() starts

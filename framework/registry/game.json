@@ -1,0 +1,126 @@
+{
+ "type": "game",
+ "count": 12,
+ "entities": [
+  {
+   "id": "game:antithesis",
+   "type": "game",
+   "label": "Antithesis",
+   "href": "symbols.html#play=antithesis",
+   "links": [
+    "chapter:ch06"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:chess",
+   "type": "game",
+   "label": "Archive Chess",
+   "href": "symbols.html#play=chess",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:dominion",
+   "type": "game",
+   "label": "Dominion of the Ancients",
+   "href": "symbols.html#play=dominion",
+   "links": [
+    "chapter:ch13"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:excavation",
+   "type": "game",
+   "label": "The Excavation",
+   "href": "symbols.html#play=excavation",
+   "links": [
+    "chapter:ch04"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:fighter",
+   "type": "game",
+   "label": "Divine Casualties",
+   "href": "symbols.html#play=fighter",
+   "links": [
+    "chapter:ch08"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:labyrinth",
+   "type": "game",
+   "label": "The Labyrinth",
+   "href": "symbols.html#play=labyrinth",
+   "links": [
+    "chapter:ch29"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:ouroboros",
+   "type": "game",
+   "label": "Ouroboros",
+   "href": "symbols.html#play=ouroboros",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:pinball",
+   "type": "game",
+   "label": "The Firmament",
+   "href": "symbols.html#play=pinball",
+   "links": [
+    "chapter:ch46"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:reliquary",
+   "type": "game",
+   "label": "The Reliquary",
+   "href": "symbols.html#play=reliquary",
+   "links": [
+    "chapter:ch22"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:seeker",
+   "type": "game",
+   "label": "The Seeker's Path",
+   "href": "symbols.html#play=seeker",
+   "links": [
+    "chapter:ch40"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:treasure",
+   "type": "game",
+   "label": "The Unfinished Journal",
+   "href": "symbols.html#play=treasure",
+   "links": [
+    "chapter:ch43"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  },
+  {
+   "id": "game:ziggurat",
+   "type": "game",
+   "label": "Ziggurat Builder",
+   "href": "symbols.html#play=ziggurat",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/pilgrimage/sites/arcade/site.js"
+  }
+ ]
+}

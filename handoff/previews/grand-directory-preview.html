@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand Directory — The Divine Archives</title>
+<style>
+/* Grand Directory preview v2 — true floor plan. Scoped styles. */
+#gd-root { background:#050403; color:#e2a574; font-family:Georgia,'Times New Roman',serif; min-height:100vh; margin:0; padding:0; }
+#gd-root * { box-sizing:border-box; }
+.gd-bar { position:sticky; top:0; z-index:20; background:rgba(5,4,3,.96); border-bottom:1px solid #3a2c14; padding:10px 14px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.gd-title { font-size:1.05em; letter-spacing:.14em; color:#f2c46a; margin:0; flex:1 1 auto; }
+.gd-kicker { font-size:.68em; letter-spacing:.32em; color:#a8925e; display:block; }
+.gd-btn { background:#1a1008; color:#f2c46a; border:1px solid #8a6420; border-radius:6px; padding:8px 12px; font-family:inherit; font-size:.85em; letter-spacing:.06em; cursor:pointer; }
+.gd-btn[aria-pressed="true"] { background:#3a240c; border-color:#f2c46a; color:#fff6d8; }
+.gd-btn:focus-visible { outline:2px solid #f2c46a; outline-offset:2px; }
+.gd-wrap { max-width:960px; margin:0 auto; padding:8px 8px 40px; }
+.gd-mapbox { border:1px solid #3a2c14; border-radius:10px; background:#070402; overflow:hidden; position:relative; }
+#gd-svg { display:block; width:100%; height:auto; touch-action:pan-x pan-y; }
+.gd-hint { font-size:.82em; color:#a8925e; padding:8px 4px; line-height:1.5; }
+.gd-card { position:fixed; left:0; right:0; bottom:0; z-index:30; background:#0d0803; border-top:2px solid #d9a950; border-radius:14px 14px 0 0; padding:18px 20px 26px; transform:translateY(110%); transition:transform .28s ease; max-width:640px; margin:0 auto; box-shadow:0 -12px 40px rgba(0,0,0,.7); }
+.gd-card.open { transform:translateY(0); }
+.gd-card h2 { margin:0 0 4px; color:#fff6d8; font-size:1.25em; letter-spacing:.03em; }
+.gd-card .gd-meta { color:#d9a950; font-size:.85em; letter-spacing:.1em; margin-bottom:10px; }
+.gd-card p { color:#cbbd93; line-height:1.6; margin:0 0 12px; font-size:.95em; }
+.gd-card .gd-draft { font-size:.75em; color:#8a7c58; letter-spacing:.08em; }
+.gd-card .gd-close { position:absolute; top:10px; right:12px; background:none; border:1px solid #8a6420; color:#f2c46a; border-radius:50%; width:34px; height:34px; font-size:1em; cursor:pointer; }
+.gd-legend { border:1px solid #3a2c14; border-radius:10px; background:#0a0603; margin-top:12px; padding:12px 14px; }
+.gd-legend h3 { margin:0 0 8px; color:#f2c46a; font-size:.9em; letter-spacing:.2em; }
+.gd-legend ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:6px 12px; }
+.gd-legend li { font-size:.82em; color:#cbbd93; display:flex; align-items:center; gap:8px; line-height:1.4; }
+.gd-swatch { width:22px; height:16px; flex:none; border:1px solid #8a6420; border-radius:2px; background:#120c05; position:relative; }
+.gd-swatch.door::after { content:""; position:absolute; left:8px; top:-1px; bottom:-1px; width:6px; background:#d9a950; }
+.gd-swatch.sigil::after { content:"◆"; position:absolute; inset:0; color:#f2c46a; font-size:.8em; display:flex; align-items:center; justify-content:center; }
+.gd-swatch.route::after { content:""; position:absolute; left:0; right:0; top:7px; height:3px; background:#f2c46a; }
+.gd-swatch.here::after { content:"◎"; position:absolute; inset:0; color:#f2c46a; font-size:.85em; display:flex; align-items:center; justify-content:center; }
+.gd-swatch.whisper::after { content:"✦"; position:absolute; inset:0; color:#9fb0da; font-size:.8em; display:flex; align-items:center; justify-content:center; }
+.gd-room { cursor:pointer; }
+.gd-room rect.gd-rbox { fill:#0d0803; stroke:#5a4218; stroke-width:1.6; }
+.gd-room:hover rect.gd-rbox, .gd-room:focus rect.gd-rbox { stroke:#f2c46a; }
+.gd-room text { fill:#e2a574; font-family:Georgia,serif; text-anchor:middle; pointer-events:none; }
+.gd-room .gd-door { fill:#d9a950; }
+.gd-room:focus { outline:none; }
+.gd-room:focus rect.gd-rbox { stroke:#fff6d8; stroke-width:2.4; }
+.gd-room.gd-inroute rect.gd-rbox { stroke:#f2c46a; stroke-width:2.2; }
+.gd-sigil { cursor:pointer; }
+.gd-sigil:focus { outline:2px solid #fff6d8; outline-offset:2px; }
+.gd-winglabel { cursor:pointer; }
+.gd-winglabel:focus { outline:2px solid #f2c46a; outline-offset:3px; }
+.gd-beacon-ring { fill:none; stroke:#f2c46a; opacity:.9; }
+@media (prefers-reduced-motion: no-preference) {
+  .gd-beacon-ring { animation:gd-ping 2.6s ease-out infinite; transform-origin:center; transform-box:fill-box; }
+  @keyframes gd-ping { 0% { transform:scale(.35); opacity:.95; } 80% { transform:scale(1.5); opacity:0; } 100% { transform:scale(1.5); opacity:0; } }
+}
+.gd-toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px); background:#1a1008; border:1px solid #d9a950; color:#fff6d8; padding:10px 18px; border-radius:8px; font-size:.88em; opacity:0; transition:opacity .25s, transform .25s; z-index:40; pointer-events:none; max-width:90vw; text-align:center; }
+.gd-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+<div id="gd-root">
+  <div class="gd-bar">
+    <h1 class="gd-title"><span class="gd-kicker">THE DIVINE ARCHIVES</span>GRAND DIRECTORY</h1>
+    <button class="gd-btn" id="gd-journey" aria-pressed="false">Plot journey</button>
+    <button class="gd-btn" id="gd-legendbtn" aria-pressed="false">Key</button>
+    <button class="gd-btn" id="gd-reset">Full plan</button>
+  </div>
+  <div class="gd-wrap">
+    <div class="gd-mapbox">
+      <svg id="gd-svg" role="img" aria-label="Architectural floor plan of the museum: a central spine with nine wings of rooms"></svg>
+    </div>
+    <div class="gd-hint" id="gd-hint">The true plan: a central spine, nine wings, every room a door. Tap a door to see what it holds. Tap a wing name to step closer. Turn on <b>Plot journey</b>, then tap rooms in order — your route draws along the hallways in gold.</div>
+    <div class="gd-legend" id="gd-legend" hidden>
+      <h3>KEY</h3>
+      <ul>
+        <li><span class="gd-swatch door"></span>Room door — tap to open its card</li>
+        <li><span class="gd-swatch sigil"></span>Interactive relic / game <span style="color:#8a7c58">(✦ draft)</span></li>
+        <li><span class="gd-swatch route"></span>Your plotted journey</li>
+        <li><span class="gd-swatch here"></span>You are here — the Rotunda</li>
+        <li><span class="gd-swatch whisper"></span>Whispers — something hidden sleeps in this wing</li>
+        <li><span class="gd-swatch"></span>Wing hallway — tap its name to zoom</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gd-card" id="gd-card" role="dialog" aria-modal="false" aria-labelledby="gd-cardtitle">
+    <button class="gd-close" id="gd-cardclose" aria-label="Close">×</button>
+    <h2 id="gd-cardtitle"></h2>
+    <div class="gd-meta" id="gd-cardmeta"></div>
+    <p id="gd-cardbody"></p>
+    <div class="gd-draft" id="gd-carddraft"></div>
+  </div>
+  <div class="gd-toast" id="gd-toast" role="status" aria-live="polite"></div>
+</div>
+<script>
+(function(){
+"use strict";
+/* ============ DATA — true museum plan (verified from repo) ============ */
+var WINGS = [
+ {n:"I", name:"Prehistory", dates:"before c. 3500 BCE", side:"W", rooms:["The Paleolithic","The Neolithic","Aboriginal Australian Dreaming","The San & Southern African Rock Art","Siberian & Arctic Shamanism"]},
+ {n:"II", name:"The Bronze Age", dates:"c. 3300\u20131200 BCE", side:"E", rooms:["Egypt","Mesopotamia","Indus Valley","Early Vedic","Hittite & Anatolian","Minoan Crete","The Olmec"]},
+ {n:"III", name:"The Early Iron Age", dates:"c. 1200\u2013550 BCE", side:"W", rooms:["Zoroaster","Pre-exilic Israel","Early Greece","Early China","Canaanite & Phoenician","Nubia & Kush","The Etruscans"]},
+ {n:"IV", name:"The Axial Age", dates:"c. 800 BCE\u2013200 CE", side:"E", rooms:["Second Temple Judaism","Buddhism","Confucianism & Daoism","Rome","Celtic & Germanic","Classical Greece","Jainism","The Upanishads & the Hindu Synthesis","The Scythians & the Steppe"]},
+ {n:"V", name:"Late Antiquity", dates:"c. 200\u2013800 CE", side:"W", rooms:["Early Christianity","Gnosticism","Roman Mystery Cults","Rabbinic Judaism","Mahayana Buddhism","Pistis Sophia","Manichaeism","Pre-Islamic Arabia","The First Christian Kingdoms"]},
+ {n:"VI", name:"The Early Medieval", dates:"c. 800\u20131100 CE", side:"E", rooms:["Islam","Patristic Christianity","Norse Paganism","Tantra","Shinto","Tibetan & Vajrayana Buddhism","Zen & Pure Land Buddhism","Eastern Orthodoxy & Byzantium","Korea","Shi'ism"]},
+ {n:"VII", name:"The High Medieval", dates:"c. 1100\u20131500 CE", side:"W", rooms:["Kabbalah","Sufism","Scholasticism","The Maya","Bhakti","The Aztec","The Inca","Mandaeans Yazidis & Druze","Slavic & Baltic Paganism","Native North American","The Cathars & Medieval Heresy","Tengri & the Mongols"]},
+ {n:"VIII", name:"The Early Modern", dates:"c. 1500\u20131800 CE", side:"E", rooms:["The Reformation","The Witch Trials","African Traditional Religion","Sikhism","Oceania","Sabbateans Frankists & Hasidim","Akbar & the Mughal Synthesis"]},
+ {n:"IX", name:"The Modern World", dates:"c. 1800 CE\u2013present", side:"W", rooms:["New Religious Movements","Spiritualism","Theosophy & the Occult Revival","Wicca & Modern Paganism","Satanism","African Diaspora Religions","Pentecostalism & Global Christianity","Bah\u00e1'\u00ed & New Faiths","Secularism & the Nones","Global Hinduism & the Guru Movements"]}
+];
+/* Interactive relic/game sigils — DRAFT placements */
+var INTERACTIVE = {
+ "Egypt":"Senet — the race through the afterlife",
+ "Mesopotamia":"The Royal Game of Ur",
+ "Early China":"Liubo — the diviner's board",
+ "Classical Greece":"The Antikythera Mechanism",
+ "Rome":"Nine Men's Morris",
+ "Confucianism & Daoism":"Go \u00b7 I Ching",
+ "Norse Paganism":"Hnefatafl — the king's flight",
+ "Korea":"Yut — the stick-dice race",
+ "The Aztec":"Patolli — the sacred gamble"
+};
+/* ============ GEOMETRY ============ */
+var SPINE_CX = 800, SPINE_W = 88;
+var ROOM_W = 108, ROOM_H = 100, PITCH = 122, CORR_H = 52;
+var WING_Y = [2000,1800,1600,1400,1200,1000,800,600,400];
+var ROT_Y = 2240;
+var NS = "http://www.w3.org/2000/svg";
+var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var svg, rooms = [], wingBoxes = [];
+var journeyMode = false, journey = [];
+var fullVB, rafId = null;
+var listeners = [];
+
+function el(tag, attrs, parent){
+  var e = document.createElementNS(NS, tag);
+  for (var k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function on(target, type, fn, opts){
+  target.addEventListener(type, fn, opts);
+  listeners.push([target, type, fn, opts]);
+}
+function wrapTitle(title, max){
+  var words = title.split(" "), lines = [], line = "";
+  words.forEach(function(w){
+    if ((line + " " + w).trim().length > max && line) { lines.push(line.trim()); line = w; }
+    else line = (line + " " + w);
+  });
+  if (line.trim()) lines.push(line.trim());
+  return lines.slice(0,3);
+}
+/* ============ RENDER ============ */
+function render(){
+  svg = document.getElementById("gd-svg");
+  var minX = Infinity, maxX = -Infinity;
+  var g = el("g", {}, svg);
+  /* defs: subtle grain */
+  var defs = el("defs", {}, g);
+  var pat = el("pattern", {id:"gd-grain", width:"120", height:"120", patternUnits:"userSpaceOnUse"}, defs);
+  /* grain via sparse dots */
+  var seed = 7;
+  function rnd(){ seed = (seed*16807) % 2147483647; return seed/2147483647; }
+  for (var i=0;i<40;i++){
+    el("circle", {cx:(rnd()*120).toFixed(1), cy:(rnd()*120).toFixed(1), r:(rnd()*1.1+0.3).toFixed(2), fill:"#1a1008", opacity:"0.5"}, pat);
+  }
+  var base = el("rect", {x:-400, y:-100, width:2400, height:2600, fill:"#070402"}, g);
+  el("rect", {x:-400, y:-100, width:2400, height:2600, fill:"url(#gd-grain)", opacity:"0.55"}, g);
+  /* ---- spine corridor ---- */
+  var spineTop = 300, spineBot = ROT_Y - 60;
+  el("rect", {x:SPINE_CX-SPINE_W/2, y:spineTop, width:SPINE_W, height:spineBot-spineTop, fill:"#0a0603", stroke:"#8a6420", "stroke-width":2.5}, g);
+  el("rect", {x:SPINE_CX-SPINE_W/2+7, y:spineTop+7, width:SPINE_W-14, height:spineBot-spineTop-14, fill:"none", stroke:"#3a2c14", "stroke-width":1}, g);
+  /* spine label + time arrow */
+  var tlabel = el("text", {x:SPINE_CX, y:spineTop-14, "text-anchor":"middle", fill:"#a8925e", "font-size":"15", "letter-spacing":"4", "font-family":"Georgia,serif"}, g);
+  tlabel.textContent = "THE SPINE · TIME FLOWS UPWARD ↑";
+  /* ---- rotunda ---- */
+  var rot = el("g", {}, g);
+  el("circle", {cx:SPINE_CX, cy:ROT_Y, r:96, fill:"#0a0603", stroke:"#d9a950", "stroke-width":2.5}, rot);
+  el("circle", {cx:SPINE_CX, cy:ROT_Y, r:78, fill:"none", stroke:"#3a2c14", "stroke-width":1}, rot);
+  var rt = el("text", {x:SPINE_CX, y:ROT_Y-38, "text-anchor":"middle", fill:"#f2c46a", "font-size":"17", "letter-spacing":"3", "font-family":"Georgia,serif"}, rot);
+  rt.textContent = "ROTUNDA";
+  var yh = el("g", {id:"gd-here"}, rot);
+  el("circle", {cx:SPINE_CX, cy:ROT_Y+18, r:10, fill:"#f2c46a"}, yh);
+  var r1 = el("circle", {"class":"gd-beacon-ring", cx:SPINE_CX, cy:ROT_Y+18, r:16}, yh);
+  var r2 = el("circle", {"class":"gd-beacon-ring", cx:SPINE_CX, cy:ROT_Y+18, r:16, style:"animation-delay:1.3s"}, yh);
+  var yt = el("text", {x:SPINE_CX, y:ROT_Y+52, "text-anchor":"middle", fill:"#fff6d8", "font-size":"13", "letter-spacing":"2", "font-family":"Georgia,serif"}, rot);
+  yt.textContent = "YOU ARE HERE";
+  var ent = el("text", {x:SPINE_CX, y:ROT_Y+118, "text-anchor":"middle", fill:"#a8925e", "font-size":"14", "letter-spacing":"3", "font-family":"Georgia,serif"}, rot);
+  ent.textContent = "▼ ENTRANCE";
+  /* ---- wings ---- */
+  WINGS.forEach(function(w, wi){
+    var wy = WING_Y[wi];
+    var n = w.rooms.length;
+    var topN = Math.ceil(n/2), botN = Math.floor(n/2);
+    var perSide = Math.max(topN, botN);
+    var len = perSide * PITCH + 46;
+    var x0 = (w.side === "W") ? (SPINE_CX - SPINE_W/2 - len) : (SPINE_CX + SPINE_W/2);
+    var x1 = (w.side === "W") ? (SPINE_CX - SPINE_W/2) : (SPINE_CX + SPINE_W/2 + len);
+    minX = Math.min(minX, x0); maxX = Math.max(maxX, x1);
+    var wg = el("g", {"class":"gd-wing", "data-wing":wi}, g);
+    /* corridor */
+    el("rect", {x:x0, y:wy-CORR_H/2, width:x1-x0, height:CORR_H, fill:"#0a0603", stroke:"#8a6420", "stroke-width":2}, wg);
+    el("line", {x1:x0+6, y1:wy, x2:x1-6, y2:wy, stroke:"#3a2c14", "stroke-width":1, "stroke-dasharray":"10 8"}, wg);
+    /* wing label at outer end */
+    var lx = (w.side === "W") ? x0 + 8 : x1 - 8;
+    var anchor = (w.side === "W") ? "start" : "end";
+    var lab = el("g", {"class":"gd-winglabel", tabindex:"0", role:"button", "aria-label":"Zoom to Wing "+w.n+" "+w.name, "data-zoomwing":wi}, wg);
+    var lt1 = el("text", {x:lx, y:wy+CORR_H/2+ROOM_H+36, "text-anchor":anchor, fill:"#f2c46a", "font-size":"19", "letter-spacing":"2", "font-family":"Georgia,serif"}, lab);
+    lt1.textContent = "WING " + w.n + " · " + w.name.toUpperCase();
+    var lt2 = el("text", {x:lx, y:wy+CORR_H/2+ROOM_H+58, "text-anchor":anchor, fill:"#a8925e", "font-size":"13", "font-family":"Georgia,serif"}, lab);
+    lt2.textContent = w.dates;
+    var lw = el("text", {x:lx, y:wy+CORR_H/2+ROOM_H+82, "text-anchor":anchor, fill:"#9fb0da", "font-size":"12.5", "font-style":"italic", "font-family":"Georgia,serif"}, lab);
+    lw.textContent = "✦ Whispers: something hidden sleeps in this wing";
+    wingBoxes[wi] = {x0:Math.min(x0,lx)-40, x1:Math.max(x1,lx)+40, y0:wy-CORR_H/2-ROOM_H-40, y1:wy+CORR_H/2+ROOM_H+110};
+    /* rooms */
+    function roomRect(idx, isTop){
+      var rx = x0 + 23 + idx*PITCH + (PITCH-ROOM_W)/2;
+      var ry = isTop ? (wy - CORR_H/2 - ROOM_H) : (wy + CORR_H/2);
+      return {x:rx, y:ry};
+    }
+    for (var r=0; r<n; r++){
+      var isTop = r < topN;
+      var slot = isTop ? r : r - topN;
+      var pos = roomRect(slot, isTop);
+      var title = w.rooms[r];
+      var rg = el("g", {"class":"gd-room", tabindex:"0", role:"button",
+        "aria-label":title + ", Wing " + w.n + " " + w.name,
+        "data-wing":wi, "data-room":r}, wg);
+      el("rect", {"class":"gd-rbox", x:pos.x, y:pos.y, width:ROOM_W, height:ROOM_H, rx:2}, rg);
+      /* door on corridor edge */
+      var dx = pos.x + ROOM_W/2;
+      var dy = isTop ? (wy - CORR_H/2) : (wy + CORR_H/2);
+      el("rect", {"class":"gd-door", x:dx-13, y:dy-4, width:26, height:8, rx:1}, rg);
+      /* title */
+      var lines = wrapTitle(title, 15);
+      var cy = pos.y + ROOM_H/2 - (lines.length-1)*8;
+      lines.forEach(function(ln, li){
+        var tx = el("text", {x:pos.x+ROOM_W/2, y:cy + li*16, "font-size":"12.5", "font-family":"Georgia,serif"}, rg);
+        tx.textContent = ln;
+      });
+      /* interactive sigil */
+      if (INTERACTIVE[title]){
+        var sx = pos.x + ROOM_W - 16, sy = pos.y + 16;
+        var sg = el("g", {"class":"gd-sigil", tabindex:"0", role:"button",
+          "aria-label":"Interactive: " + INTERACTIVE[title] + " (draft)",
+          "data-wing":wi, "data-room":r}, rg);
+        var dia = el("text", {x:sx, y:sy+6, "text-anchor":"middle", fill:"#f2c46a", "font-size":"17", "font-family":"Georgia,serif"}, sg);
+        dia.textContent = "◆";
+      }
+      rooms.push({wing:wi, room:r, title:title, x:pos.x, y:pos.y,
+        doorX:dx, doorY:wy, cx:pos.x+ROOM_W/2, cy:pos.y+ROOM_H/2, el:rg});
+    }
+  });
+  /* route layer */
+  el("g", {id:"gd-route"}, g);
+  /* viewBox */
+  var pad = 70;
+  fullVB = {x:minX-pad, y:220, w:(maxX-minX)+pad*2, h:2160};
+  svg.setAttribute("viewBox", fullVB.x+" "+fullVB.y+" "+fullVB.w+" "+fullVB.h);
+}
+/* ============ CARD ============ */
+var card, cardTitle, cardMeta, cardBody, cardDraft;
+function openCard(title, meta, body, draft){
+  cardTitle.textContent = title;
+  cardMeta.textContent = meta;
+  cardBody.textContent = body;
+  cardDraft.textContent = draft || "";
+  card.classList.add("open");
+}
+function closeCard(){ card.classList.remove("open"); }
+/* ============ TOAST ============ */
+var toastEl, toastT;
+function toast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastT);
+  toastT = setTimeout(function(){ toastEl.classList.remove("show"); }, 2200);
+}
+/* ============ JOURNEY ============ */
+function routePath(){
+  var layer = document.getElementById("gd-route");
+  while (layer.firstChild) layer.removeChild(layer.firstChild);
+  if (journey.length < 2) return;
+  var d = "";
+  for (var i=0; i<journey.length-1; i++){
+    var a = journey[i], b = journey[i+1];
+    if (i===0) d += "M "+a.doorX+" "+a.doorY+" ";
+    if (a.wing === b.wing){
+      d += "H "+b.doorX+" ";
+    } else {
+      d += "H "+SPINE_CX+" V "+b.doorY+" H "+b.doorX+" ";
+    }
+  }
+  var p = el("path", {d:d, fill:"none", stroke:"#f2c46a", "stroke-width":5, "stroke-linecap":"round", "stroke-linejoin":"round", opacity:"0.92"}, layer);
+  el("path", {d:d, fill:"none", stroke:"#fff6d8", "stroke-width":1.4, opacity:"0.55"}, layer);
+  journey.forEach(function(r, i){
+    var c = el("circle", {cx:r.doorX, cy:r.doorY, r:11, fill:"#0a0603", stroke:"#f2c46a", "stroke-width":2}, layer);
+    var t = el("text", {x:r.doorX, y:r.doorY+4.5, "text-anchor":"middle", fill:"#fff6d8", "font-size":"12", "font-family":"Georgia,serif"}, layer);
+    t.textContent = (i+1);
+  });
+}
+function toggleRoomInJourney(room){
+  var ix = journey.indexOf(room);
+  if (ix >= 0){ journey.splice(ix,1); room.el.classList.remove("gd-inroute"); }
+  else {
+    if (journey.length >= 8){ toast("Eight stops is a full pilgrimage — clear to start another."); return; }
+    journey.push(room); room.el.classList.add("gd-inroute");
+    toast("Stop "+journey.length+": "+room.title);
+  }
+  routePath();
+  try { localStorage.setItem("gd-journey-v2", JSON.stringify(journey.map(function(r){ return [r.wing, r.room]; }))); } catch(e){}
+}
+function restoreJourney(){
+  try {
+    var saved = JSON.parse(localStorage.getItem("gd-journey-v2") || "[]");
+    saved.forEach(function(pair){
+      var r = rooms.filter(function(x){ return x.wing===pair[0] && x.room===pair[1]; })[0];
+      if (r){ journey.push(r); r.el.classList.add("gd-inroute"); }
+    });
+    routePath();
+  } catch(e){}
+}
+/* ============ ZOOM ============ */
+function setVB(vb, animate){
+  var cur = svg.viewBox.baseVal;
+  if (!animate || reduced){
+    svg.setAttribute("viewBox", vb.x+" "+vb.y+" "+vb.w+" "+vb.h);
+    return;
+  }
+  if (rafId) cancelAnimationFrame(rafId);
+  var t0 = performance.now(), dur = 420;
+  var from = {x:cur.x, y:cur.y, w:cur.width, h:cur.height};
+  function step(now){
+    var k = Math.min(1, (now-t0)/dur);
+    k = k<.5 ? 2*k*k : -1+(4-2*k)*k;
+    var v = {
+      x: from.x+(vb.x-from.x)*k, y: from.y+(vb.y-from.y)*k,
+      w: from.w+(vb.w-from.w)*k, h: from.h+(vb.h-from.h)*k
+    };
+    svg.setAttribute("viewBox", v.x+" "+v.y+" "+v.w+" "+v.h);
+    if (k<1) rafId = requestAnimationFrame(step); else rafId = null;
+  }
+  rafId = requestAnimationFrame(step);
+}
+function zoomWing(wi){
+  var b = wingBoxes[wi];
+  setVB({x:b.x0, y:b.y0, w:b.x1-b.x0, h:b.y1-b.y0}, true);
+}
+/* ============ EVENTS ============ */
+function bind(){
+  card = document.getElementById("gd-card");
+  cardTitle = document.getElementById("gd-cardtitle");
+  cardMeta = document.getElementById("gd-cardmeta");
+  cardBody = document.getElementById("gd-cardbody");
+  cardDraft = document.getElementById("gd-carddraft");
+  toastEl = document.getElementById("gd-toast");
+  var journeyBtn = document.getElementById("gd-journey");
+  var legendBtn = document.getElementById("gd-legendbtn");
+  var legend = document.getElementById("gd-legend");
+  var resetBtn = document.getElementById("gd-reset");
+  var closeBtn = document.getElementById("gd-cardclose");
+
+  on(journeyBtn, "click", function(){
+    journeyMode = !journeyMode;
+    journeyBtn.setAttribute("aria-pressed", journeyMode ? "true" : "false");
+    toast(journeyMode ? "Journey mode — tap rooms in walking order." : "Journey mode off.");
+  });
+  on(legendBtn, "click", function(){
+    var open = legend.hasAttribute("hidden");
+    if (open) legend.removeAttribute("hidden"); else legend.setAttribute("hidden", "");
+    legendBtn.setAttribute("aria-pressed", open ? "true" : "false");
+  });
+  on(resetBtn, "click", function(){ setVB(fullVB, true); closeCard(); });
+  on(closeBtn, "click", closeCard);
+
+  /* delegated taps on the plan */
+  on(svg, "click", function(ev){
+    var sigil = ev.target.closest ? ev.target.closest(".gd-sigil") : null;
+    if (sigil){
+      var w = WINGS[+sigil.getAttribute("data-wing")];
+      var title = w.rooms[+sigil.getAttribute("data-room")];
+      openCard("◆ " + INTERACTIVE[title], "INTERACTIVE RELIC · WING " + w.n + " " + w.name.toUpperCase(),
+        "An interactive exhibit lives in this room — playable in the museum.",
+        "✦ DRAFT — placement and exhibit details to be confirmed against the repo.");
+      ev.stopPropagation();
+      return;
+    }
+    var room = ev.target.closest ? ev.target.closest(".gd-room") : null;
+    if (room){
+      var wi = +room.getAttribute("data-wing"), ri = +room.getAttribute("data-room");
+      var rec = rooms.filter(function(x){ return x.wing===wi && x.room===ri; })[0];
+      if (journeyMode){ toggleRoomInJourney(rec); return; }
+      var W = WINGS[wi];
+      var extra = INTERACTIVE[rec.title] ? " ◆ Interactive: " + INTERACTIVE[rec.title] + " (✦ draft)" : "";
+      openCard(rec.title, "WING " + W.n + " · " + W.name.toUpperCase() + " · " + W.dates,
+        "A hall of " + W.name + " — walk in through its door off the wing hallway." + extra,
+        "✦ DRAFT — room description to be written from the chapter text.");
+      return;
+    }
+    var zl = ev.target.closest ? ev.target.closest(".gd-winglabel") : null;
+    if (zl){ zoomWing(+zl.getAttribute("data-zoomwing")); }
+  });
+  on(svg, "keydown", function(ev){
+    if (ev.key !== "Enter" && ev.key !== " ") return;
+    var t = ev.target;
+    if (t.classList && (t.classList.contains("gd-room") || t.classList.contains("gd-sigil") || t.classList.contains("gd-winglabel"))){
+      ev.preventDefault();
+      t.dispatchEvent(new MouseEvent("click", {bubbles:true}));
+    }
+    if (ev.key === "Escape") closeCard();
+  });
+  on(document, "keydown", function(ev){ if (ev.key === "Escape") closeCard(); });
+}
+/* ============ DESTROY ============ */
+function destroy(){
+  listeners.forEach(function(l){ l[0].removeEventListener(l[1], l[2], l[3]); });
+  listeners = [];
+  if (rafId) cancelAnimationFrame(rafId);
+  var s = document.getElementById("gd-svg");
+  if (s) s.innerHTML = "";
+  delete window.__grandDirectory;
+}
+window.__grandDirectory = { destroy: destroy };
+/* ============ INIT ============ */
+render();
+bind();
+restoreJourney();
+})();
+</script>
+</body>
+</html>

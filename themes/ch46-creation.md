@@ -2,7 +2,6 @@
 
 *Comparative theme · cross-era · revised 2026-09-30 (full text published), pending review*
 
-*Recently added — pending full review.*
 
 ---
 
@@ -13,11 +12,14 @@ How the ordered world came to be — the same raw materials of water and darknes
 Open the Hebrew Bible at its first sentence and, in the second verse, you meet a strange
 old word: **tehom** — "the deep," the dark formless water over which the wind of God
 hovers before anything is made. It is one of the most familiar images in world literature,
-and almost no one notices that the word is a fossil. **Tehom** is linguistically kin to
+and almost no one notices that the word may be a fossil. **Tehom** is linguistically kin to
 **Tiamat** — the name of the salt-sea monster whom the Babylonian god Marduk hacks in two to
 build the world. The Genesis author kept the ancient watery chaos but drained it of its
 menace: *tehom* is not a goddess, not a dragon, not an enemy to be fought. It is simply the
-deep, and God does not battle it — he speaks, and it obeys. In that one demythologized word
+deep, and God does not battle it — he speaks, and it obeys. (How much of the monster survives
+in the word is debated: Hermann Gunkel read Genesis 1 against the Babylonian combat myth, while
+David Tsumura argues that *tehom* simply continues a common Semitic word for "ocean" and that
+Genesis 1 shows no trace of combat.) In that one demythologized word
 lies the whole drama of this chapter: nearly every people who tried to say how the world
 began started from the same raw materials — water, darkness, a formless first state — and
 then made very different things of them.
@@ -129,14 +131,14 @@ archive keeps them apart.
 
 Against all this confident world-building stands one of the most remarkable religious poems ever
 composed: the **Nasadiya Sukta**, the "Hymn of Creation," **Rigveda 10.129**. It opens by
-refusing every category the other cosmogonies assume: *"Then there was neither non-existence nor
-existence; there was no realm of air, no sky beyond it… There was neither death nor immortality
-then; no sign of night or day."* Something breathed, windless, by its own power; darkness lay
+refusing every category the other cosmogonies assume: *"Then was not non-existent nor
+existent: there was no realm of air, no sky beyond it… Death was not then, nor was there aught
+immortal: no sign was there, the day's and night's divider."* Something breathed, windless, by its own power; darkness lay
 wrapped in darkness. And then, having gestured at a first stirring of desire, the hymn does
 something no other ancient creation text dares to do — it **admits it does not know**, and
 wonders whether anyone or anything can:
 
-> *"Who really knows? Who here will proclaim it? Whence was it produced? Whence is this
+> *"Who really knows? Who will here proclaim it? Whence was it produced? Whence is this
 > creation? The gods came afterwards, with the creation of this universe. Who then knows whence
 > it has arisen?"*
 
@@ -280,7 +282,8 @@ against the **Gnostic** cosmogonies of Chapters 17 and 45.
   Religious Poetry of India* (New York: Oxford University Press, 2014), 3 vols.
   [Catalogue record](https://catalog.nypl.org/search/i9780199370184) ; the "who really knows?" close
   as rendered in Wendy Doniger O'Flaherty (trans.), *The Rig Veda: An Anthology* (Harmondsworth:
-  Penguin, 1981).
+  Penguin, 1981); the opening lines as translated by R. T. H. Griffith, *The Hymns of the Rigveda*
+  (1896), RV 10.129. https://sacred-texts.com/hin/rigveda/rv10129.htm
 - Carl Sagan's use of it — Carl Sagan, *Cosmos* (New York: Random House, 1980), ch. 10, "The Edge of
   Forever," and the television episode of the same name (PBS, 1980).
 

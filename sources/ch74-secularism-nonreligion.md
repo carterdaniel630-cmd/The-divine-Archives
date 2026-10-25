@@ -28,3 +28,10 @@ Per the project sourcing standard. Treats nonreligion descriptively, like any tr
 
 ## Flags for Carter
 - None. No stronger source found in this pass disagrees with the chapter's text.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The New Atheists"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The New Atheism and the name — Gary Wolf, "The Church of the Non-Believers," *Wired* 14.11 (November 2006), as summarised and quoted at Kottke.org and ScienceBlogs. https://kottke.org/06/10/gary-wolf-talks-to-three-prominent-atheists- ; https://scienceblogs.com/islandofdoubt/2006/11/14/wired-on-the-god-debate ; Harvard Pluralism Project, "The Nonbelievers." https://pluralism.org/news/nonbelievers
+
+The chapter goes back to pending review because of these additions.

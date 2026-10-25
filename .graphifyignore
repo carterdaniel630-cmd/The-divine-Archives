@@ -1,0 +1,25 @@
+# What graphify leaves out of the knowledge graph (gitignore syntax; .gitignore applies too).
+
+# The auditor's answer keys: never opened, so never indexed (CLAUDE.md, "Never open any file named KEY.md").
+**/KEY.md
+review-test/
+
+# Generated output: built from sources that are indexed anyway.
+graphify-out/
+content/chapters.js
+docs/assets/og/
+docs/museum/symbols/
+docs/assets/framework/
+
+# Third-party libraries (minified three.js and friends): not our code, and they were about half the map.
+docs/assets/vendor/
+*.min.js
+
+# Binary and media assets.
+*.woff2
+*.mp4
+*.jpg
+*.png
+*.webp
+art-source/
+tools/data/d3-celestial/

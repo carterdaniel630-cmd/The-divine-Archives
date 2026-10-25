@@ -16,3 +16,11 @@ Per the project sourcing standard. A comparative theme chapter: the emphasis is 
 - Contested/exaggerated (flagged): Girard's and Burkert's universal-origin theories; the scale of Aztec sacrifice in colonial sources; whether the Carthaginian tophet evidences systematic child sacrifice.
 - Genuinely open: why sacrifice is so universal (gift/communion/feeding/violence-discharge, or a braid); interpretation of ambiguous physical evidence (bog bodies, some infant burials).
 - Connects to ch07, ch10, ch19, ch05, ch29, ch09, ch08, ch49, ch46, ch16, ch11, ch30, ch52.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"Eid al-Adha: the largest sacrifice on earth"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- Qur'an 37:102–107 and 22:37 — https://quran.com/as-saaffat/102 ; https://quran.com/22/37 ; Ibn Kathir's commentary on 37:107 (both opinions, Isaac and Ishmael). https://surahquran.com/tafsir-english-aya-107-sora-37.html ; Islamic Awareness, "The Sacrifice of Abraham: Isaac or Ishmael?" https://www.islamic-awareness.org/quran/contrad/mustrad/sacrifice
+- The three-way division of the meat as recommended, not required — Jamiatul Ulama South Africa, "How should a person divide his/her Qurbani meat?" https://jamiat.org.za/how-should-a-person-divide-his-her-qurbani-meat/
+
+The chapter goes back to pending review because of these additions.

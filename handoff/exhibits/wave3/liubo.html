@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liubo — The Game of Six Sticks · The Divine Archives</title>
+<style>
+/* ============ LIUBO EXHIBIT — all selectors liubo- prefixed ============ */
+.liubo-page{margin:0;padding:0;background:#070708;color:#e8e0c8;
+  font-family:Georgia,'Times New Roman','Noto Serif SC',serif;
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;}
+.liubo-banner{width:100%;box-sizing:border-box;max-width:1180px;margin:0 auto;
+  padding:22px 26px 18px;border-bottom:1px solid rgba(201,162,39,.35);
+  background:radial-gradient(1200px 300px at 50% -80px,rgba(201,162,39,.10),transparent);}
+.liubo-banner h1{margin:0 0 6px;font-size:clamp(22px,4vw,34px);letter-spacing:.14em;
+  color:#e8d48a;font-weight:400;text-align:center;}
+.liubo-banner .liubo-sub{margin:0;text-align:center;color:#9a8f70;font-size:13px;letter-spacing:.22em;}
+.liubo-honesty{box-sizing:border-box;max-width:1180px;margin:14px auto 0;padding:12px 20px;
+  border:1px solid #b33a2b;background:rgba(179,58,43,.10);border-radius:3px;width:calc(100% - 32px);}
+.liubo-honesty strong{color:#e07a5f;letter-spacing:.08em;font-size:13px;}
+.liubo-honesty p{margin:6px 0 0;font-size:13.5px;line-height:1.55;color:#cfc4a4;}
+.liubo-honesty em{color:#e8d48a;font-style:normal;}
+.liubo-layout{width:100%;max-width:1180px;margin:0 auto;box-sizing:border-box;
+  display:flex;gap:22px;padding:18px 16px 30px;align-items:flex-start;justify-content:center;flex-wrap:wrap;}
+.liubo-stage{flex:1 1 560px;max-width:720px;min-width:300px;position:relative;
+  background:radial-gradient(900px 700px at 50% 30%,#141216 0%,#070708 70%);
+  border:1px solid rgba(201,162,39,.25);border-radius:6px;padding:10px;box-sizing:border-box;}
+.liubo-canvas-wrap{outline:none;}
+.liubo-canvas-wrap:focus-visible{box-shadow:0 0 0 2px #c9a227;border-radius:4px;}
+.liubo-canvas{display:block;width:100%;height:auto;border-radius:4px;touch-action:manipulation;}
+.liubo-controls{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+.liubo-btn{background:linear-gradient(180deg,#2a2118,#171310);color:#e8d48a;
+  border:1px solid rgba(201,162,39,.55);border-radius:3px;padding:10px 18px;
+  font-family:inherit;font-size:14px;letter-spacing:.12em;cursor:pointer;transition:all .25s ease;}
+.liubo-btn:hover:not(:disabled){border-color:#c9a227;background:linear-gradient(180deg,#3a2d1e,#1d1712);
+  box-shadow:0 0 14px rgba(201,162,39,.25);}
+.liubo-btn:disabled{opacity:.35;cursor:not-allowed;}
+.liubo-kbd-hint{text-align:center;color:#6f6550;font-size:12px;margin-top:8px;letter-spacing:.06em;}
+.liubo-kbd-hint kbd{border:1px solid #4a4232;border-radius:3px;padding:1px 6px;color:#b8a97e;
+  font-family:inherit;font-size:11px;background:#141210;}
+.liubo-panel{flex:0 1 360px;min-width:300px;box-sizing:border-box;
+  background:linear-gradient(180deg,rgba(24,20,16,.92),rgba(12,10,9,.94));
+  border:1px solid rgba(201,162,39,.3);border-radius:6px;padding:20px 22px;}
+.liubo-panel h2{margin:0 0 10px;font-size:16px;letter-spacing:.18em;color:#e8d48a;font-weight:400;
+  border-bottom:1px solid rgba(201,162,39,.25);padding-bottom:8px;}
+.liubo-panel h3{margin:16px 0 8px;font-size:13px;letter-spacing:.16em;color:#c9a227;font-weight:400;}
+.liubo-panel p,.liubo-panel li{font-size:13.5px;line-height:1.65;color:#c9bda0;}
+.liubo-panel ul{margin:6px 0;padding-left:18px;}
+.liubo-tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;color:#0c0b09;
+  background:#c9a227;border-radius:2px;padding:1px 7px;margin-left:6px;vertical-align:middle;font-weight:700;}
+.liubo-tag.liubo-recon{background:#7a5c1e;color:#f4e9c8;}
+.liubo-tag.liubo-attested{background:#2e7d5b;color:#eef6f0;}
+.liubo-table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:13px;}
+.liubo-table th,.liubo-table td{border:1px solid rgba(201,162,39,.22);padding:7px 9px;text-align:left;
+  color:#c9bda0;line-height:1.5;}
+.liubo-table th{background:rgba(201,162,39,.12);color:#e8d48a;letter-spacing:.08em;font-weight:400;}
+.liubo-table td:first-child{text-align:center;color:#e8d48a;font-weight:700;white-space:nowrap;}
+.liubo-log{max-height:170px;overflow-y:auto;background:rgba(0,0,0,.4);
+  border:1px solid rgba(201,162,39,.2);border-radius:3px;padding:10px 12px;margin-top:8px;
+  font-size:13px;line-height:1.7;color:#b8a97e;scrollbar-width:thin;}
+.liubo-log div{margin:2px 0;}
+.liubo-log .liubo-you{color:#9fd6b4;}
+.liubo-log .liubo-ai{color:#d8cdb2;}
+.liubo-log .liubo-sys{color:#e07a5f;}
+.liubo-status{display:flex;justify-content:space-between;align-items:center;margin:4px 0 2px;
+  font-size:13px;letter-spacing:.1em;color:#9a8f70;}
+.liubo-turn-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;
+  vertical-align:baseline;}
+.liubo-footer{width:100%;max-width:1180px;margin:0 auto;padding:0 26px 34px;box-sizing:border-box;
+  color:#6f6550;font-size:12.5px;line-height:1.7;}
+.liubo-footer a{color:#b8a97e;}
+.liubo-tallnote{font-size:12.5px;color:#8a7d63;font-style:italic;margin-top:10px;line-height:1.6;}
+@media (max-width:980px){.liubo-panel{flex:1 1 100%;}.liubo-stage{flex:1 1 100%;}}
+@media (prefers-reduced-motion:reduce){
+  .liubo-btn{transition:none;}
+}
+</style>
+</head>
+<body class="liubo-page">
+<div class="liubo-banner">
+  <h1>LIUBO · 六博</h1>
+  <p class="liubo-sub">THE GAME OF SIX STICKS — HAN CHINA, c. 2ND CENTURY BCE</p>
+</div>
+
+<div class="liubo-honesty" role="note" aria-label="Scholarly honesty notice">
+  <strong>⚠ THE BOARD IS REAL. THE RULES ARE A RECONSTRUCTION.</strong>
+  <p>The <em>TLV-patterned board</em> below is <em>attested</em>: boards carved with the T, L and V marks
+  survive from Han tombs (notably a lacquered board from Mawangdui) and stone engravings.
+  <em>No complete set of Liubo's rules survives.</em> Every rule, throw table and win condition in this
+  exhibit is a <em>modern scholarly reconstruction</em> — of the family associated with
+  <em>Yang Hongxun and Donald Harper's</em> research — and is labeled as such throughout.
+  Nothing presented here as a rule should be mistaken for historical fact.</p>
+</div>
+
+<div class="liubo-layout">
+  <div class="liubo-stage">
+    <div class="liubo-canvas-wrap" id="liuboWrap" tabindex="0"
+         aria-label="Liubo game board. Keyboard: T to throw the sticks, 1 to 6 to choose a piece, U to undo, R to restart.">
+      <canvas class="liubo-canvas" id="liuboCanvas" width="1000" height="1000"></canvas>
+    </div>
+    <div class="liubo-controls">
+      <button class="liubo-btn" id="liuboThrow">THROW STICKS <span style="opacity:.6">(T)</span></button>
+      <button class="liubo-btn" id="liuboUndo">UNDO <span style="opacity:.6">(U)</span></button>
+      <button class="liubo-btn" id="liuboRestart">RESTART <span style="opacity:.6">(R)</span></button>
+    </div>
+    <div class="liubo-kbd-hint">
+      <kbd>T</kbd>/<kbd>Space</kbd> throw &nbsp;·&nbsp; <kbd>1</kbd>–<kbd>6</kbd> choose piece &nbsp;·&nbsp;
+      <kbd>U</kbd> undo &nbsp;·&nbsp; <kbd>R</kbd> restart &nbsp;·&nbsp; click pieces &amp; sticks work too
+    </div>
+  </div>
+
+  <aside class="liubo-panel" aria-label="Rules and throw table">
+    <h2>RULES OF PLAY</h2>
+    <div class="liubo-status">
+      <span id="liuboTurnLabel"><span class="liubo-turn-dot" style="background:#4caf7d"></span>Your move — jade</span>
+      <span id="liuboScoreLabel">Jade 0 · Ivory 0</span>
+    </div>
+    <p>Each side holds <strong>six chessmen</strong>. They race around the twelve marked points of the
+    circuit and off the far end. You (jade) enter at the green-gated point and travel sunwise;
+    the archive's player (ivory) enters opposite and travels the same circuit against you.
+    <span class="liubo-tag liubo-recon">RECONSTRUCTED</span></p>
+
+    <h3>THROW TABLE <span class="liubo-tag liubo-recon">RECONSTRUCTED</span></h3>
+    <table class="liubo-table">
+      <tr><th>Marked sticks</th><th>Name &amp; effect</th></tr>
+      <tr><td>0</td><td><strong>OWL</strong> — crown one of your boarded pieces as an owl. Owls cannot be captured and earn a bonus throw after they move.</td></tr>
+      <tr><td>1 – 5</td><td>Move one piece that many spaces along the circuit. A piece in hand enters at your gate and continues.</td></tr>
+      <tr><td>6</td><td><strong>PLENTIFUL</strong> — move six spaces, then throw again.</td></tr>
+    </table>
+
+    <h3>CAPTURE &amp; WATER <span class="liubo-tag liubo-recon">RECONSTRUCTED</span></h3>
+    <ul>
+      <li>Landing on an enemy piece <strong>captures</strong> it — it returns to its owner's hand. A capture earns a bonus throw.</li>
+      <li>The two deep-blue stations are <strong>water</strong>: pieces there are safe from capture.</li>
+      <li>A piece must land exactly to leave the board; an overshooting throw cannot use that piece.</li>
+      <li><strong>Victory:</strong> first to bring all six pieces around the full circuit and off the board wins.</li>
+    </ul>
+
+    <h3>THE TLV BOARD <span class="liubo-tag liubo-attested">ATTESTED</span></h3>
+    <p>The T, L and V inlay marks are drawn from the archaeological record — the Mawangdui lacquer
+    board and Han stone engravings. The two tall standing pieces beside the center mark echo the
+    oversized "chessmen" found in Han tombs; <em>their exact function in the game is unknown</em>.</p>
+
+    <h3>CHRONICLE</h3>
+    <div class="liubo-log" id="liuboLog" aria-live="polite"></div>
+  </aside>
+</div>
+
+<div class="liubo-footer">
+  <p>Liubo (六博, "six sticks") was the most popular board game of the Han dynasty, played by emperors and
+  commoners alike, and later a symbol of the soul's journey. Its rules were already fragmentary by the
+  Tang dynasty. This exhibit follows the reconstruction family associated with Yang Hongxun and Donald
+  Harper, simplified for play: one circuit, six sticks, fixed throw values. The board's TLV geometry is
+  attested; everything else is honest reconstruction. Crafted for The Divine Archives.</p>
+</div>
+
+<script>
+'use strict';
+/* =========================================================================
+   LIUBO — "The Game of Six Sticks" (Han China)
+   Interactive museum exhibit. Single-file build: no external requests.
+   Board geometry: ATTESTED (TLV pattern, Mawangdui lacquer board, Han stone
+   engravings). All game rules: modern scholarly RECONSTRUCTION (Yang
+   Hongxun / Donald Harper family), simplified for play.
+   ========================================================================= */
+</script>
+<script>
+'use strict';
+(function(){
+/* ---------------- Liubo exhibit namespace ---------------- */
+var LIUBO_NS = 'liubo';
+
+/* ---- Canvas geometry (1000 x 1000 logical units) ---- */
+var W = 1000, H = 1000;
+var BX = 100, BY = 40, BS = 800;          /* board square */
+var BD = 72;                               /* inset of the 12 points from board edge */
+var WATER = [3, 9];                        /* water stations (reconstructed) */
+var ENTRY = [0, 6];                        /* entry indices: jade(0), ivory(1) */
+
+/* ---- Palette: Han lacquer, gold, cinnabar, jade, ivory ---- */
+var C = {
+  gold:'#c9a227', goldHi:'#f0d878', goldLo:'#7a5c1e',
+  jade:'#3f9e6b', jadeDk:'#1d5c3c', ivory:'#e9e2cc', ivoryDk:'#a89a78',
+  cinnabar:'#c0392b', water:'#1f6f8b', waterDk:'#0e3d52',
+  ink:'#070708', lacquer:'#0d0c0e'
+};
+
+var reducedMotion = (typeof window !== 'undefined' && typeof window.matchMedia === 'function') &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var isMobileViewport = (typeof window !== 'undefined') &&
+  Math.min(window.innerWidth||9999, window.innerHeight||9999) < 720;
+
+/* ---- Point geometry: 12 marks, 3 per side, sunwise ---- */
+function pointXY(i){
+  var side = Math.floor(i/4), t = (i%4)/3;
+  var span = BS - 2*BD, x, y;
+  if(side===0){ x = BX+BD + t*span; y = BY+BD; }
+  else if(side===1){ x = BX+BS-BD; y = BY+BD + t*span; }
+  else if(side===2){ x = BX+BS-BD - t*span; y = BY+BS-BD; }
+  else { x = BX+BD; y = BY+BS-BD - t*span; }
+  return [x,y];
+}
+function pathIndex(player, progress){ return (ENTRY[player] + progress) % 12; }
+function isWater(idx){ return WATER.indexOf(idx) !== -1; }
+
+/* ---------------- Game state ---------------- */
+var state = null;
+function newGameState(){
+  var pieces = [];
+  for(var p=0;p<2;p++) for(var i=0;i<6;i++)
+    pieces.push({id:p*6+i, player:p, progress:-1, owl:false});
+  return {
+    pieces:pieces, turn:0, throwValue:null, thrown:false, bonus:false,
+    awaitingOwl:false, over:false, winner:-1,
+    ledger:[], undoStack:[], seq:0
+  };
+}
+
+/* ---- Clause 6/7: append-only ledger + neutrality validator ---- */
+var EVENT_SCHEMA = {
+  'game.start':['t'], 'sticks.thrown':['value','faces'],
+  'piece.selected':['pid'], 'piece.moved':['pid','from','to','capture'],
+  'piece.captured':['pid'], 'owl.crowned':['pid'],
+  'piece.exited':['pid'], 'bonus.throw':['reason'], 'turn.passed':['to'],
+  'game.won':['winner'], 'game.undone':[], 'game.restarted':[]
+};
+function validateEvent(type, data){
+  var req = EVENT_SCHEMA[type];
+  if(!req) return false;
+  for(var i=0;i<req.length;i++){
+    if(data==null || !(req[i] in data)) return false;
+  }
+  return true;
+}
+function ledger(type, data){
+  if(!validateEvent(type, data)) { return false; }  /* reject malformed transitions */
+  state.ledger.push({seq:state.seq++, type:type, data:data, t:Date.now()});
+  return true;
+}
+
+/* ---- Rules engine (all RECONSTRUCTED) ---- */
+function pieceById(pid){ return state.pieces[pid]; }
+function occupants(idx, excludePid){
+  var out = [];
+  for(var k=0;k<state.pieces.length;k++){
+    var pc = state.pieces[k];
+    if(pc.id===excludePid) continue;
+    if(pc.progress>=0 && pc.progress<12 && pathIndex(pc.player, pc.progress)===idx) out.push(pc);
+  }
+  return out;
+}
+function legalMoves(player, m){
+  var moves = [];
+  if(m===0){ return moves; } /* owl throw is handled as crowning, not movement */
+  for(var k=0;k<state.pieces.length;k++){
+    var pc = state.pieces[k];
+    if(pc.player!==player || pc.progress>=12) continue;
+    var target = pc.progress + m;
+    if(target>12) continue;
+    if(target===12){ moves.push({piece:pc, type:'exit', to:12}); continue; }
+    var idx = pathIndex(player, target);
+    var foes = occupants(idx, pc.id).filter(function(o){ return o.player!==player; });
+    var capture = foes.filter(function(o){ return !o.owl; });
+    if(foes.length && capture.length===0) { moves.push({piece:pc, type:'move', to:target, idx:idx, capture:[]}); continue; }
+    if(isWater(idx)) moves.push({piece:pc, type:'move', to:target, idx:idx, capture:[]});
+    else moves.push({piece:pc, type:'move', to:target, idx:idx, capture:capture});
+  }
+  return moves;
+}
+function applyMove(move){
+  var pc = move.piece, from = pc.progress;
+  if(move.type==='exit'){ pc.progress = 12; }
+  else { pc.progress = move.to; }
+  var capturedIds = [];
+  (move.capture||[]).forEach(function(o){ o.progress = -1; o.owl = false; capturedIds.push(o.id); });
+  ledger('piece.moved',{pid:pc.id, from:from, to:move.to, capture:capturedIds.length});
+  capturedIds.forEach(function(id){ ledger('piece.captured',{pid:id}); });
+  if(move.type==='exit') ledger('piece.exited',{pid:pc.id});
+  return capturedIds.length;
+}
+function checkWin(player){
+  return state.pieces.every(function(pc){ return pc.player!==player || pc.progress===12; });
+}
+function snapshot(){
+  return {
+    pieces: state.pieces.map(function(p){ return {id:p.id, player:p.player, progress:p.progress, owl:p.owl}; }),
+    turn: state.turn, throwValue: state.throwValue, thrown: state.thrown,
+    bonus: state.bonus, awaitingOwl: state.awaitingOwl, over: state.over, winner: state.winner
+  };
+}
+function restore(snap){
+  state.pieces = snap.pieces.map(function(p){ return {id:p.id, player:p.player, progress:p.progress, owl:p.owl}; });
+  state.turn = snap.turn; state.throwValue = snap.throwValue; state.thrown = snap.thrown;
+  state.bonus = snap.bonus; state.awaitingOwl = snap.awaitingOwl;
+  state.over = snap.over; state.winner = snap.winner;
+}
+
+/* ---- Stick throw: 6 sticks, one marked face each (reconstructed values) ---- */
+function throwSticks(){
+  var faces = [];
+  for(var i=0;i<6;i++) faces.push(Math.random()<0.5);
+  var value = faces.filter(Boolean).length;
+  ledger('sticks.thrown',{value:value, faces:faces.map(function(f){return f?1:0;}).join('')});
+  return {value:value, faces:faces};
+}
+
+/* ---- Heuristic AI (1-ply, phone-safe; no deep search) ---- */
+function aiChooseMove(player, m){
+  var moves = legalMoves(player, m);
+  if(!moves.length) return null;
+  var scored = moves.map(function(mv){
+    var s = Math.random()*2;
+    var pc = mv.piece;
+    if(mv.capture && mv.capture.length) s += 60 + 12*mv.capture.length;
+    if(mv.type==='exit') s += 42;
+    if(mv.idx!==undefined && isWater(mv.idx)) s += 18;
+    /* prefer advancing the rearmost piece */
+    var progs = state.pieces.filter(function(p){return p.player===player && p.progress<12;})
+      .map(function(p){return p.progress;});
+    var minP = Math.min.apply(null, progs);
+    if(pc.progress===minP) s += 12;
+    if(pc.progress===-1) s += 10;            /* bring pieces into play */
+    if(pc.owl) s += 6;                        /* owls earn bonus throws */
+    if(m===6) s += 3;
+    s += (pc.progress>=0? pc.progress*0.6 : 0); /* mild preference for advanced pieces */
+    return {move:mv, score:s};
+  });
+  scored.sort(function(a,b){ return b.score-a.score; });
+  return scored[0].move;
+}
+function aiChooseOwl(player){
+  var cands = state.pieces.filter(function(p){
+    return p.player===player && p.progress>=0 && p.progress<12 && !p.owl;
+  });
+  if(!cands.length) return null;
+  cands.sort(function(a,b){ return a.progress-b.progress; }); /* crown the rearmost */
+  return cands[0];
+}
+</script>
+<script>
+'use strict';
+(function(){
+/* ---------------- Rendering: procedural lacquer, gold TLV inlay, jade & ivory ---------------- */
+var canvas=null, ctx=null, wrapEl=null;
+var lacquerTex=null, grainTex=null;   /* procedural canvas textures */
+var anim=null;                        /* active animation state */
+var rafId=0, destroyed=false;
+var listeners=[];                     /* teardown registry */
+var ro=null;
+
+/* selection / highlight state (view layer) */
+var view = { selectedPid:-1, legalTargets:[], hoverPid:-1, stickFaces:null, stickAnim:0, msg:'' };
+
+function on(target, type, fn, opts){ target.addEventListener(type, fn, opts); listeners.push([target,type,fn,opts]); }
+
+/* ---- procedural textures ---- */
+function makeLacquer(){
+  var c=document.createElement('canvas'); c.width=c.height=512;
+  var g=c.getContext('2d');
+  g.fillStyle='#0d0c0e'; g.fillRect(0,0,512,512);
+  /* deep lacquer mottling */
+  for(var i=0;i<900;i++){
+    var x=Math.random()*512, y=Math.random()*512, r=2+Math.random()*14;
+    var gr=g.createRadialGradient(x,y,0,x,y,r);
+    var tone=Math.random();
+    var col = tone<0.5? 'rgba(30,26,30,0.20)' : (tone<0.8? 'rgba(12,10,14,0.25)' : 'rgba(46,36,40,0.12)');
+    gr.addColorStop(0,col); gr.addColorStop(1,'rgba(0,0,0,0)');
+    g.fillStyle=gr; g.beginPath(); g.arc(x,y,r,0,7); g.fill();
+  }
+  /* fine wood grain beneath the lacquer */
+  g.globalAlpha=0.10;
+  for(var y2=0;y2<512;y2+=3){
+    g.strokeStyle = (y2%9===0)? 'rgba(90,60,40,0.5)':'rgba(40,28,24,0.4)';
+    g.lineWidth=1; g.beginPath();
+    for(var x2=0;x2<=512;x2+=16) g.lineTo(x2, y2 + Math.sin(x2*0.03+y2)*2.5);
+    g.stroke();
+  }
+  g.globalAlpha=1;
+  return c;
+}
+function makeGrain(){
+  var c=document.createElement('canvas'); c.width=128; c.height=32;
+  var g=c.getContext('2d');
+  g.fillStyle='#e6dcc2'; g.fillRect(0,0,128,32);
+  for(var i=0;i<26;i++){
+    g.strokeStyle='rgba(150,128,96,'+(0.10+Math.random()*0.16)+')';
+    g.lineWidth=0.8+Math.random();
+    g.beginPath();
+    var y0=Math.random()*32;
+    for(var x=0;x<=128;x+=8) g.lineTo(x, y0+Math.sin(x*0.09+i)*2.2);
+    g.stroke();
+  }
+  return c;
+}
+
+/* ---- easing ---- */
+function easeInOutCubic(t){ return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+function easeOutBack(t){ var c=1.70158; return 1 + (c+1)*Math.pow(t-1,3) + c*Math.pow(t-1,2); }
+
+/* ---- drawing helpers ---- */
+function goldStroke(g, w){ g.strokeStyle=C.gold; g.lineWidth=w; g.shadowColor='rgba(201,162,39,.55)'; g.shadowBlur=8; }
+
+function drawTLVMark(g, cx, cy, s){
+  /* Attested geometry: T, L, V inlay marks of the Han boards */
+  goldStroke(g, Math.max(2, s*0.045));
+  g.beginPath();
+  /* T : top bar + stem */
+  g.moveTo(cx-s*0.5, cy-s*0.28); g.lineTo(cx+s*0.5, cy-s*0.28);
+  g.moveTo(cx, cy-s*0.28); g.lineTo(cx, cy+s*0.10);
+  /* L : corner angles */
+  g.moveTo(cx-s*0.5, cy+s*0.34); g.lineTo(cx-s*0.5, cy-s*0.02); g.lineTo(cx-s*0.16, cy-s*0.02);
+  g.moveTo(cx+s*0.5, cy+s*0.34); g.lineTo(cx+s*0.5, cy-s*0.02); g.lineTo(cx+s*0.16, cy-s*0.02);
+  /* V : chevron */
+  g.moveTo(cx-s*0.34, cy+s*0.06); g.lineTo(cx, cy+s*0.38); g.lineTo(cx+s*0.34, cy+s*0.06);
+  g.stroke();
+  g.shadowBlur=0;
+}
+
+function drawBoard(g){
+  var cx = BX+BS/2, cy = BY+BS/2;
+  /* outer glow + lacquer body */
+  var og=g.createRadialGradient(cx,cy,BS*0.1,cx,cy,BS*0.75);
+  og.addColorStop(0,'rgba(201,162,39,.10)'); og.addColorStop(1,'rgba(0,0,0,0)');
+  g.fillStyle=og; g.fillRect(BX-60,BY-60,BS+120,BS+120);
+  g.save();
+  /* lacquer texture */
+  g.fillStyle='#0d0c0e'; g.fillRect(BX,BY,BS,BS);
+  if(lacquerTex){ g.globalAlpha=0.9; g.drawImage(lacquerTex,BX,BY,BS,BS); g.globalAlpha=1; }
+  /* polished sheen: diagonal light fall */
+  var sheen=g.createLinearGradient(BX,BY,BX+BS,BY+BS);
+  sheen.addColorStop(0,'rgba(255,244,214,.10)'); sheen.addColorStop(0.35,'rgba(255,244,214,.015)');
+  sheen.addColorStop(0.7,'rgba(0,0,0,.10)'); sheen.addColorStop(1,'rgba(0,0,0,.28)');
+  g.fillStyle=sheen; g.fillRect(BX,BY,BS,BS);
+  /* frame: gold border, cinnabar inner line */
+  g.shadowColor='rgba(0,0,0,.8)'; g.shadowBlur=24; g.shadowOffsetY=10;
+  g.strokeStyle=C.goldLo; g.lineWidth=10; g.strokeRect(BX+5,BY+5,BS-10,BS-10);
+  g.shadowBlur=0; g.shadowOffsetY=0;
+  goldStroke(g,3); g.strokeRect(BX+16,BY+16,BS-32,BS-32); g.shadowBlur=0;
+  g.strokeStyle=C.cinnabar; g.globalAlpha=.7; g.lineWidth=2;
+  g.strokeRect(BX+26,BY+26,BS-52,BS-52); g.globalAlpha=1;
+  /* corner L-marks (attested) */
+  goldStroke(g,3);
+  var m=34, L=54;
+  [[BX+m,BY+m,1,1],[BX+BS-m,BY+m,-1,1],[BX+m,BY+BS-m,1,-1],[BX+BS-m,BY+BS-m,-1,-1]].forEach(function(k){
+    g.beginPath();
+    g.moveTo(k[0],k[1]+k[3]*L); g.lineTo(k[0],k[1]); g.lineTo(k[0]+k[2]*L,k[1]);
+    g.stroke();
+  });
+  g.shadowBlur=0;
+  /* circuit path: connecting the 12 points */
+  g.strokeStyle='rgba(201,162,39,.40)'; g.lineWidth=2.5; g.beginPath();
+  for(var i=0;i<=12;i++){ var p=pointXY(i%12); if(i===0) g.moveTo(p[0],p[1]); else g.lineTo(p[0],p[1]); }
+  g.stroke();
+  /* center TLV medallion (attested) */
+  g.save();
+  g.shadowColor='rgba(0,0,0,.6)'; g.shadowBlur=12;
+  var cg=g.createRadialGradient(cx,cy,4,cx,cy,120);
+  cg.addColorStop(0,'rgba(52,44,36,.95)'); cg.addColorStop(1,'rgba(16,13,12,.95)');
+  g.fillStyle=cg; g.beginPath(); g.arc(cx,cy,112,0,7); g.fill();
+  g.restore();
+  goldStroke(g,2.5); g.beginPath(); g.arc(cx,cy,112,0,7); g.stroke(); g.shadowBlur=0;
+  goldStroke(g,1.5); g.beginPath(); g.arc(cx,cy,96,0,7); g.stroke(); g.shadowBlur=0;
+  drawTLVMark(g, cx, cy, 150);
+  /* the 12 marked points */
+  for(var j=0;j<12;j++){
+    var q=pointXY(j);
+    drawPoint(g, q[0], q[1], j);
+  }
+  g.restore();
+}
+
+function drawPoint(g, x, y, idx){
+  var water = isWater(idx);
+  g.save();
+  g.shadowColor='rgba(0,0,0,.7)'; g.shadowBlur=10; g.shadowOffsetY=4;
+  var bg=g.createRadialGradient(x-6,y-8,2,x,y,30);
+  if(water){ bg.addColorStop(0,'#2a93b5'); bg.addColorStop(.55,'#1f6f8b'); bg.addColorStop(1,'#0e3d52'); }
+  else { bg.addColorStop(0,'#f4edd8'); bg.addColorStop(.55,'#d9cba6'); bg.addColorStop(1,'#8f7f5c'); }
+  g.fillStyle=bg; g.beginPath(); g.arc(x,y,26,0,7); g.fill();
+  g.restore();
+  goldStroke(g,2.5); g.beginPath(); g.arc(x,y,26,0,7); g.stroke(); g.shadowBlur=0;
+  if(water){
+    /* wave glyph */
+    g.strokeStyle='rgba(230,244,250,.85)'; g.lineWidth=2; g.beginPath();
+    for(var wv=-1;wv<=1;wv++){ g.moveTo(x-14,y+wv*9); g.quadraticCurveTo(x-7,y+wv*9-6,x,y+wv*9); g.quadraticCurveTo(x+7,y+wv*9+6,x+14,y+wv*9); }
+    g.stroke();
+  } else {
+    /* T mark echo at each point */
+    g.strokeStyle='rgba(122,92,30,.9)'; g.lineWidth=2; g.beginPath();
+    g.moveTo(x-11,y-3); g.lineTo(x+11,y-3); g.moveTo(x,y-3); g.lineTo(x,y+10);
+    g.stroke();
+  }
+  /* entry gates */
+  if(idx===ENTRY[0]){ g.strokeStyle=C.jade; g.lineWidth=3.5; g.beginPath(); g.arc(x,y,33,0,7); g.stroke(); }
+  if(idx===ENTRY[1]){ g.strokeStyle=C.ivory; g.lineWidth=3.5; g.beginPath(); g.arc(x,y,33,0,7); g.stroke(); }
+}
+
+function drawTallPieces(g){
+  /* The two tall standing "chessmen" of the Han tombs — function UNKNOWN */
+  var cx=BX+BS/2, cy=BY+BS/2;
+  drawTallPiece(g, cx-168, cy, C.jade, C.jadeDk, 'tall-jade');
+  drawTallPiece(g, cx+168, cy, C.ivory, C.ivoryDk, 'tall-ivory');
+}
+function drawTallPiece(g, x, y, hi, lo, key){
+  g.save();
+  g.shadowColor='rgba(0,0,0,.75)'; g.shadowBlur=16; g.shadowOffsetY=8;
+  var gr=g.createLinearGradient(x-16,0,x+16,0);
+  gr.addColorStop(0,lo); gr.addColorStop(.35,hi); gr.addColorStop(.6,hi); gr.addColorStop(1,lo);
+  g.fillStyle=gr;
+  g.beginPath();
+  g.moveTo(x-14,y+52); g.lineTo(x-14,y-30);
+  g.quadraticCurveTo(x-14,y-58,x,y-62); g.quadraticCurveTo(x+14,y-58,x+14,y-30);
+  g.lineTo(x+14,y+52); g.quadraticCurveTo(x,y+60,x-14,y+52);
+  g.closePath(); g.fill();
+  g.restore();
+  g.strokeStyle=C.gold; g.lineWidth=2; g.beginPath();
+  g.moveTo(x-14,y-18); g.lineTo(x+14,y-18); g.moveTo(x-14,y+18); g.lineTo(x+14,y+18); g.stroke();
+  g.fillStyle='rgba(255,255,255,.28)';
+  g.fillRect(x-9, y-50, 5, 96);  /* specular edge */
+}
+
+function drawPiece(g, pc, x, y, opts){
+  opts=opts||{};
+  var r = opts.r||30;
+  var hi = pc.player===0? '#7fd6a0' : '#f7f0da';
+  var mid= pc.player===0? C.jade : C.ivory;
+  var lo = pc.player===0? C.jadeDk : C.ivoryDk;
+  g.save();
+  /* drop shadow */
+  g.shadowColor='rgba(0,0,0,.75)'; g.shadowBlur=14; g.shadowOffsetY=7;
+  var bg=g.createRadialGradient(x-r*0.35,y-r*0.4,r*0.1,x,y,r);
+  bg.addColorStop(0,hi); bg.addColorStop(.45,mid); bg.addColorStop(1,lo);
+  g.fillStyle=bg; g.beginPath(); g.arc(x,y,r,0,7); g.fill();
+  g.restore();
+  /* carved ring + specular */
+  g.strokeStyle='rgba(0,0,0,.35)'; g.lineWidth=2; g.beginPath(); g.arc(x,y,r-3,0,7); g.stroke();
+  g.strokeStyle='rgba(255,255,255,.20)'; g.lineWidth=1.5; g.beginPath(); g.arc(x,y,r-7,0,7); g.stroke();
+  var sp=g.createRadialGradient(x-r*0.38,y-r*0.42,0,x-r*0.38,y-r*0.42,r*0.42);
+  sp.addColorStop(0,'rgba(255,255,255,.55)'); sp.addColorStop(1,'rgba(255,255,255,0)');
+  g.fillStyle=sp; g.beginPath(); g.arc(x-r*0.30,y-r*0.34,r*0.40,0,7); g.fill();
+  /* owl crown */
+  if(pc.owl){
+    goldStroke(g,3); g.beginPath(); g.arc(x,y,r+5,0,7); g.stroke(); g.shadowBlur=0;
+    g.fillStyle=C.goldHi; g.font='700 15px Georgia,serif'; g.textAlign='center'; g.textBaseline='middle';
+    g.fillText('✦', x, y-1);
+  }
+  /* selection ring */
+  if(opts.selected){
+    g.strokeStyle=C.goldHi; g.lineWidth=3.5;
+    if(!reducedMotion){ g.setLineDash([10,7]); g.lineDashOffset=-(Date.now()/40)%17; }
+    g.beginPath(); g.arc(x,y,r+11,0,7); g.stroke(); g.setLineDash([]);
+  }
+  if(opts.dim){ g.fillStyle='rgba(0,0,0,.45)'; g.beginPath(); g.arc(x,y,r,0,7); g.fill(); }
+}
+
+/* ---- hand / completed zones ---- */
+function handXY(player, slot){
+  /* stacks flanking the board */
+  if(player===0) return [52, 150 + slot*118];
+  return [948, 150 + slot*118];
+}
+function doneXY(player, slot){
+  if(player===0) return [130 + slot*44, 936];
+  return [870 - slot*44, 936];
+}
+function pieceXY(pc){
+  if(pc.progress===-1) return handXY(pc.player, pc.id%6);
+  if(pc.progress>=12) return doneXY(pc.player, pc.id%6);
+  return pointXY(pathIndex(pc.player, pc.progress));
+}
+
+/* ---- stick tray ---- */
+function drawTray(g){
+  var ty=872;
+  g.save();
+  g.shadowColor='rgba(0,0,0,.7)'; g.shadowBlur=18; g.shadowOffsetY=6;
+  var tg=g.createLinearGradient(0,ty,0,ty+96);
+  tg.addColorStop(0,'#241c14'); tg.addColorStop(.5,'#161210'); tg.addColorStop(1,'#0c0a09');
+  g.fillStyle=tg;
+  roundRect(g, 60, ty, 880, 96, 10); g.fill();
+  g.restore();
+  goldStroke(g,2); roundRect(g, 60, ty, 880, 96, 10); g.stroke(); g.shadowBlur=0;
+  g.fillStyle='#8a7d63'; g.font='13px Georgia,serif'; g.textAlign='center';
+  g.fillText('S I X   S T I C K S   ·   each bears one marked face', 500, ty+22);
+  var faces = view.stickFaces || [false,false,false,false,false,false];
+  for(var i=0;i<6;i++) drawStick(g, 150+i*118, ty+58, faces[i], i);
+}
+function drawStick(g, x, y, marked, idx){
+  var jx=0, jy=0, rot=0;
+  if(anim && anim.kind==='throw'){
+    var t=anim.t;
+    jx=Math.sin(t*31+idx*2.1)*(1-t)*46;
+    jy=Math.cos(t*27+idx*1.7)*(1-t)*30;
+    rot=Math.sin(t*23+idx)*(1-t)*0.9;
+  }
+  g.save(); g.translate(x+jx, y+jy); g.rotate(rot);
+  g.shadowColor='rgba(0,0,0,.65)'; g.shadowBlur=10; g.shadowOffsetY=5;
+  var sg=g.createLinearGradient(0,-11,0,11);
+  sg.addColorStop(0,'#f2ead2'); sg.addColorStop(.5,'#e2d6b4'); sg.addColorStop(1,'#b3a37e');
+  g.fillStyle=sg; roundRect(g,-52,-11,104,22,9); g.fill();
+  g.restore();
+  g.save(); g.translate(x+jx, y+jy); g.rotate(rot);
+  if(grainTex){ g.globalAlpha=.5; g.drawImage(grainTex,-52,-11,104,22); g.globalAlpha=1; }
+  g.strokeStyle='rgba(90,74,52,.8)'; g.lineWidth=1.5; roundRect(g,-52,-11,104,22,9); g.stroke();
+  if(marked){
+    g.fillStyle=C.cinnabar; g.beginPath(); g.arc(30,0,7,0,7); g.fill();
+    g.fillStyle='rgba(255,255,255,.35)'; g.beginPath(); g.arc(28,-2,2.4,0,7); g.fill();
+  } else {
+    g.fillStyle='rgba(90,74,52,.55)'; g.beginPath(); g.arc(30,0,4,0,7); g.fill();
+  }
+  g.restore();
+}
+function roundRect(g,x,y,w,h,r){
+  g.beginPath();
+  g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r);
+  g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath();
+}
+
+/* ---- vignette & caption ---- */
+function drawVignette(g){
+  var v=g.createRadialGradient(500,470,300,500,500,720);
+  v.addColorStop(0,'rgba(0,0,0,0)'); v.addColorStop(1,'rgba(0,0,0,.55)');
+  g.fillStyle=v; g.fillRect(0,0,W,H);
+}
+function drawCaptions(g){
+  g.fillStyle='#6f6550'; g.font='12.5px Georgia,serif'; g.textAlign='center';
+  g.fillText('JADE — your hand', 52, 120);
+  g.fillText('IVORY — the archive plays', 948, 120);
+  g.fillText('completed circuit →', 500, 918);
+  g.fillStyle='rgba(201,162,39,.55)'; g.font='12px Georgia,serif';
+  g.fillText('tall pieces: tomb finds — function unknown', 500, 30);
+}
+</script>
+<script>
+'use strict';
+(function(){
+/* ---------------- Game flow, input, animation, lifecycle ---------------- */
+var logEl=null, turnLabel=null, scoreLabel=null, throwBtn=null, undoBtn=null, restartBtn=null;
+var aiTimer=0;
+
+/* ---- logging ---- */
+function log(msg, cls){
+  if(!logEl) return;
+  var d=document.createElement('div');
+  if(cls) d.className=LIUBO_NS+'-'+cls;
+  d.textContent=msg;
+  logEl.appendChild(d);
+  logEl.scrollTop=logEl.scrollHeight;
+  while(logEl.children.length>90) logEl.removeChild(logEl.firstChild);
+}
+function playerName(p){ return p===0? 'Jade (you)' : 'Ivory (archive)'; }
+
+/* ---- main render ---- */
+function render(){
+  if(destroyed||!ctx) return;
+  ctx.clearRect(0,0,W,H);
+  /* backdrop */
+  var bg=ctx.createRadialGradient(500,430,120,500,500,760);
+  bg.addColorStop(0,'#151318'); bg.addColorStop(1,'#070708');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+  drawBoard(ctx);
+  drawTallPieces(ctx);
+  drawCaptions(ctx);
+  /* stacked pieces at shared points: fan them slightly */
+  var at={};
+  state.pieces.forEach(function(pc){
+    var key = pc.progress>=12? 'done'+pc.player+pc.id : (pc.progress===-1? 'hand'+pc.id : 'p'+pathIndex(pc.player,pc.progress));
+    (at[key]=at[key]||[]).push(pc);
+  });
+  Object.keys(at).forEach(function(k){
+    var grp=at[k];
+    grp.forEach(function(pc,i){
+      var b=pieceXY(pc), x=b[0], y=b[1], r=30;
+      if(grp.length>1 && k[0]==='p'){ var a=(i/grp.length)*Math.PI*2-Math.PI/2; x+=Math.cos(a)*15; y+=Math.sin(a)*15; r=24; }
+      var animPc = anim && anim.kind==='move' && anim.pid===pc.id ? anim : null;
+      var mv = (anim && anim.kind==='moveAll') ? anim.moves[pc.id] : null;
+      if(animPc){ x=animPc.x; y=animPc.y; }
+      if(mv){ x=mv.x; y=mv.y; }
+      var dim = (state.turn!==pc.player || state.over || !state.thrown || state.awaitingOwl);
+      var isSel = view.selectedPid===pc.id;
+      var isLegalTarget = false;
+      if(pc.player===0 && state.thrown && !state.awaitingOwl && !state.over){
+        isLegalTarget = view.legalTargets.some(function(mv2){ return mv2.piece.id===pc.id; });
+      }
+      drawPiece(ctx, pc, x, y, {r:r, selected:isSel, dim:(pc.player===0 && !isLegalTarget && !isSel && state.thrown && !state.awaitingOwl)});
+      if(isLegalTarget && !isSel){
+        ctx.strokeStyle='rgba(240,216,120,.5)'; ctx.lineWidth=2;
+        ctx.beginPath(); ctx.arc(x,y,r+6,0,7); ctx.stroke();
+      }
+    });
+  });
+  /* legal destination markers */
+  if(state.turn===0 && state.thrown && !state.awaitingOwl && view.selectedPid>=0){
+    view.legalTargets.forEach(function(mv){
+      if(mv.piece.id!==view.selectedPid) return;
+      var tx,ty;
+      if(mv.type==='exit'){ tx=doneXY(0,mv.piece.id%6)[0]; ty=doneXY(0,mv.piece.id%6)[1]; }
+      else { var q=pointXY(mv.idx); tx=q[0]; ty=q[1]; }
+      ctx.strokeStyle='#f0d878'; ctx.lineWidth=3;
+      if(!reducedMotion){ ctx.setLineDash([8,6]); ctx.lineDashOffset=-(Date.now()/60)%14; }
+      ctx.beginPath(); ctx.arc(tx,ty,38,0,7); ctx.stroke(); ctx.setLineDash([]);
+      if(mv.capture&&mv.capture.length){
+        ctx.fillStyle='#e07a5f'; ctx.font='700 13px Georgia,serif'; ctx.textAlign='center';
+        ctx.fillText('CAPTURE', tx, ty-48);
+      }
+    });
+  }
+  drawTray(ctx);
+  /* center message */
+  if(view.msg){
+    ctx.save();
+    ctx.fillStyle='rgba(7,7,8,.72)'; roundRect(ctx, 250, 440, 500, 74, 8); ctx.fill();
+    ctx.strokeStyle='rgba(201,162,39,.6)'; ctx.lineWidth=1.5; roundRect(ctx, 250, 440, 500, 74, 8); ctx.stroke();
+    ctx.fillStyle='#e8d48a'; ctx.font='17px Georgia,serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(view.msg, 500, 477);
+    ctx.restore();
+  }
+  drawVignette(ctx);
+}
+
+/* ---- animation driver (single RAF, destroyed on teardown) ---- */
+function startAnim(a, done){
+  anim=a; anim.start=performance.now(); anim.done=done;
+  if(rafId) cancelAnimationFrame(rafId);
+  tickAnim();
+}
+function tickAnim(){
+  if(destroyed) return;
+  var now=performance.now();
+  var el=(now-anim.start)/anim.dur;
+  if(el>=1){ el=1; }
+  anim.t=el;
+  if(anim.kind==='move' || anim.kind==='moveAll'){
+    var e = reducedMotion? 1 : easeInOutCubic(el);
+    if(anim.kind==='move'){ anim.x=anim.x0+(anim.x1-anim.x0)*e; anim.y=anim.y0+(anim.y1-anim.y0)*e; }
+    else anim.moves = anim.calc(e);
+  }
+  render();
+  if(el<1 && !reducedMotion){ rafId=requestAnimationFrame(tickAnim); }
+  else { var d=anim.done; anim=null; rafId=0; render(); if(d) d(); }
+}
+function animateMove(pc, fromXY, toXY, dur, done){
+  if(reducedMotion){ done&&done(); return; }
+  startAnim({kind:'move', pid:pc.id, x0:fromXY[0], y0:fromXY[1], x1:toXY[0], y1:toXY[1], dur:dur||450}, done);
+}
+
+/* ---- UI sync ---- */
+function syncUI(){
+  var names=['Jade (you)','Ivory (archive)'];
+  var dot = state.turn===0? '#4caf7d' : '#e9e2cc';
+  turnLabel.innerHTML='<span class="'+LIUBO_NS+'-turn-dot" style="background:'+dot+'"></span>'+
+    (state.over? 'Game over' : names[state.turn]+' to play');
+  var j=state.pieces.filter(function(p){return p.player===0&&p.progress===12;}).length;
+  var v=state.pieces.filter(function(p){return p.player===1&&p.progress===12;}).length;
+  scoreLabel.textContent='Jade '+j+' · Ivory '+v+' completed';
+  throwBtn.disabled = state.over || state.thrown || state.turn!==0 || !!anim;
+  undoBtn.disabled = state.over || !state.undoStack.length || state.turn!==0 || !!anim;
+}
+
+/* ---- throw names ---- */
+function throwName(v){
+  if(v===0) return 'OWL';
+  if(v===6) return 'PLENTIFUL';
+  return v+' marked';
+}
+
+/* ---- human turn ---- */
+function humanThrow(){
+  if(state.over||state.thrown||state.turn!==0||anim) return;
+  state.undoStack.push(snapshot());
+  var res=throwSticks();
+  state.throwValue=res.value; state.thrown=true;
+  view.stickFaces=res.faces.slice();
+  view.selectedPid=-1;
+  animateThrow(function(){
+    if(res.value===0){
+      state.awaitingOwl=true;
+      var cands=state.pieces.filter(function(p){return p.player===0&&p.progress>=0&&p.progress<12&&!p.owl;});
+      if(!cands.length){
+        log('Owl throw — but no piece can be crowned. Bonus throw granted instead.','sys');
+        ledger('bonus.throw',{reason:'owl-no-candidate'});
+        state.awaitingOwl=false; state.thrown=false; state.throwValue=null;
+        view.msg=''; syncUI(); render(); return;
+      }
+      view.msg='OWL THROW — choose a piece to crown (click or 1–6)';
+      log('You cast the OWL — choose one of your boarded pieces to crown.','you');
+    } else {
+      view.legalTargets=legalMoves(0,res.value);
+      if(!view.legalTargets.length){
+        log('You threw '+res.value+' marked — no legal move. The turn passes.','you');
+        ledger('turn.passed',{to:1});
+        setTimeout(function(){ if(!destroyed) endTurn(0); }, reducedMotion?60:900);
+      } else {
+        log('You threw '+res.value+' marked ('+throwName(res.value)+') — choose a piece.','you');
+      }
+    }
+    syncUI(); render();
+  });
+}
+function animateThrow(done){
+  if(reducedMotion){ done(); return; }
+  startAnim({kind:'throw', dur:750}, done);
+}
+
+function humanSelect(pid){
+  if(state.over||state.turn!==0||!state.thrown||anim) return;
+  var pc=pieceById(pid);
+  if(!pc||pc.player!==0) return;
+  if(state.awaitingOwl){
+    if(pc.progress<0||pc.progress>=12||pc.owl){ flashMsg('Choose one of your pieces on the board.'); return; }
+    crownOwl(pc, 0);
+    return;
+  }
+  var mv=view.legalTargets.filter(function(m){return m.piece.id===pid;})[0];
+  if(!mv){ flashMsg('That piece cannot move '+state.throwValue+' — choose a ringed piece.'); return; }
+  view.selectedPid=pid; render();
+  executeMove(mv, 0, function(){ afterHumanMove(mv); });
+}
+function flashMsg(t){ view.msg=t; render(); setTimeout(function(){ if(!destroyed){ view.msg=''; render(); } }, 1400); }
+
+function crownOwl(pc, player){
+  pc.owl=true;
+  ledger('owl.crowned',{pid:pc.id});
+  state.awaitingOwl=false; state.thrown=false; state.throwValue=null; view.msg='';
+  log((player===0?'You crown':'The archive crowns')+' piece '+(pc.id%6+1)+' as an OWL ✦ — it cannot be captured and earns a bonus throw after moving.','sys');
+  render(); syncUI();
+  endTurn(player); /* crowning consumes the throw; turn passes unless bonus logic says otherwise */
+}
+
+/* after a move resolves: bonus throws, captures, win, turn pass */
+function afterMoveCommon(player, mv, captured, done){
+  var bonus=false, reason='';
+  if(mv.type!=='crown' && mv.piece.owl){ bonus=true; reason='owl-moved'; }
+  if(captured>0){ bonus=true; reason='capture'; }
+  if(state.throwValue===6){ bonus=true; reason='plentiful'; }
+  if(checkWin(player)){
+    state.over=true; state.winner=player;
+    ledger('game.won',{winner:player});
+    log((player===0?'✦ YOU WIN':'✦ THE ARCHIVE WINS')+' — all six chessmen completed the circuit. '+
+        (player===0?'The sticks favor the patient.':'A worthy contest.'),'sys');
+    view.msg = player===0? '✦ VICTORY — the circuit is complete ✦' : '✦ THE ARCHIVE PREVAILS ✦';
+    syncUI(); render(); done&&done(); return;
+  }
+  if(bonus){
+    ledger('bonus.throw',{reason:reason});
+    log((player===0?'You earn':'The archive earns')+' a bonus throw ('+reason+').', player===0?'you':'ai');
+    state.thrown=false; state.throwValue=null; state.bonus=true;
+    view.msg=''; syncUI(); render();
+    done&&done(); return;
+  }
+  endTurn(player, done);
+}
+function afterHumanMove(mv){ afterMoveCommon(0, mv, mv.capture?mv.capture.length:0, null); }
+
+function endTurn(player, done){
+  state.thrown=false; state.throwValue=null; state.bonus=false;
+  view.selectedPid=-1; view.legalTargets=[]; view.msg='';
+  var next=1-player;
+  ledger('turn.passed',{to:next});
+  state.turn=next;
+  syncUI(); render();
+  if(next===1 && !state.over){ aiTimer=setTimeout(function(){ if(!destroyed) aiTurn(); }, reducedMotion?80:750); }
+  done&&done();
+}
+
+/* ---- AI turn ---- */
+function aiTurn(){
+  if(state.over||state.turn!==1||destroyed) return;
+  var res=throwSticks();
+  state.throwValue=res.value; state.thrown=true;
+  view.stickFaces=res.faces.slice();
+  log('The archive throws '+res.value+' marked ('+throwName(res.value)+').','ai');
+  animateThrow(function(){
+    if(destroyed) return;
+    if(res.value===0){
+      var owl=aiChooseOwl(1);
+      if(!owl){
+        log('Owl throw — no piece to crown. Bonus throw instead.','ai');
+        ledger('bonus.throw',{reason:'owl-no-candidate'});
+        state.thrown=false; state.throwValue=null; render(); syncUI();
+        aiTimer=setTimeout(function(){ if(!destroyed) aiTurn(); }, reducedMotion?60:500);
+        return;
+      }
+      animatePieceCrown(owl);
+      return;
+    }
+    var mv=aiChooseMove(1,res.value);
+    if(!mv){
+      log('The archive throws '+res.value+' — no legal move. The turn passes.','ai');
+      ledger('turn.passed',{to:0});
+      aiTimer=setTimeout(function(){ if(!destroyed) endTurn(1); }, reducedMotion?60:600);
+      return;
+    }
+    executeMove(mv, 1, function(){
+      afterMoveCommon(1, mv, mv.capture?mv.capture.length:0, function(){
+        if(!state.over && state.turn===1 && state.thrown===false){
+          /* bonus throw: AI goes again */
+          aiTimer=setTimeout(function(){ if(!destroyed) aiTurn(); }, reducedMotion?60:650);
+        }
+      });
+    });
+  });
+}
+function animatePieceCrown(pc){
+  view.msg=''; render();
+  crownOwl(pc, 1);
+  if(!state.over && state.turn===1){
+    aiTimer=setTimeout(function(){ if(!destroyed) aiTurn(); }, reducedMotion?60:650);
+  }
+}
+
+/* ---- move execution with animation + capture flight ---- */
+function executeMove(mv, player, done){
+  var pc=mv.piece;
+  var from=pieceXY(pc);
+  var to = mv.type==='exit' ? doneXY(player, pc.id%6) : pointXY(mv.idx);
+  var applyAndContinue=function(){
+    var captured=applyMove(mv);
+    /* capture flight: send captured pieces home */
+    var caps=(mv.capture||[]);
+    if(caps.length && !reducedMotion){
+      /* captured pieces already reset to hand in state; animate from board to hand */
+      startAnim({kind:'moveAll', dur:600, calc:function(e){
+        var out={};
+        caps.forEach(function(cp,ci){
+          var hx=handXY(cp.player,cp.id%6);
+          out[cp.id]={x:to[0]+(hx[0]-to[0])*e, y:to[1]+(hx[1]-to[1])*e - Math.sin(e*Math.PI)*40};
+        });
+        return out;
+      }}, function(){
+        caps.forEach(function(cp){ ledger('piece.captured',{pid:cp.id}); });
+        log((player===0?'You capture':'The archive captures')+' '+caps.length+' piece'+(caps.length>1?'s':'')+'!','sys');
+        render(); done&&done();
+      });
+    } else {
+      if(caps.length) log((player===0?'You capture':'The archive captures')+' '+caps.length+' piece'+(caps.length>1?'s':'')+'!','sys');
+      render(); done&&done();
+    }
+  };
+  animateMove(pc, from, to, reducedMotion?0:480, applyAndContinue);
+}
+
+/* ---- undo / restart ---- */
+function undo(){
+  if(state.over||!state.undoStack.length||state.turn!==0||anim) return;
+  var snap=state.undoStack.pop();
+  restore(snap);
+  ledger('game.undone',{});
+  view.selectedPid=-1; view.legalTargets=[]; view.stickFaces=null; view.msg='';
+  log('The last throw is undone — the sticks return to your hand.','sys');
+  syncUI(); render();
+}
+function restart(){
+  if(anim) return;
+  if(aiTimer){ clearTimeout(aiTimer); aiTimer=0; }
+  state=newGameState();
+  ledger('game.start',{t:1});
+  view.selectedPid=-1; view.legalTargets=[]; view.stickFaces=null; view.msg='';
+  logEl.innerHTML='';
+  log('A new game begins. You are jade; the archive plays ivory. Cast the sticks.','sys');
+  log('Remember: the board is attested — every rule here is reconstruction.','sys');
+  syncUI(); render();
+}
+
+/* ---- input: pointer ---- */
+function canvasPos(ev){
+  var r=canvas.getBoundingClientRect();
+  var cx=(ev.touches&&ev.touches[0]?ev.touches[0].clientX:ev.clientX);
+  var cy=(ev.touches&&ev.touches[0]?ev.touches[0].clientY:ev.clientY);
+  return [(cx-r.left)/r.width*W, (cy-r.top)/r.height*H];
+}
+function hitPiece(x,y){
+  var best=null, bestD=1e9;
+  state.pieces.forEach(function(pc){
+    var p=pieceXY(pc), d=Math.hypot(p[0]-x,p[1]-y);
+    if(d<44 && d<bestD){ bestD=d; best=pc; }
+  });
+  return best;
+}
+function hitStick(x,y){
+  if(y>872&&y<968&&x>60&&x<940) return true;
+  return false;
+}
+function onPointer(ev){
+  if(ev.cancelable) ev.preventDefault();
+  if(state.turn!==0||state.over||anim) return;
+  var pos=canvasPos(ev), x=pos[0], y=pos[1];
+  if(!state.thrown && hitStick(x,y)){ humanThrow(); return; }
+  var pc=hitPiece(x,y);
+  if(pc) humanSelect(pc.id);
+}
+
+/* ---- input: keyboard ---- */
+function onKey(ev){
+  var k=ev.key;
+  if(k===' '||k==='t'||k==='T'){ ev.preventDefault(); humanThrow(); }
+  else if(k>='1'&&k<='6'){ humanSelect((+k)-1); }
+  else if(k==='u'||k==='U'){ undo(); }
+  else if(k==='r'||k==='R'){ restart(); }
+}
+
+/* ---- sizing: mobile DPR cap 1.0 (clause 4) ---- */
+function fitCanvas(){
+  if(!canvas) return;
+  var mobile = Math.min(window.innerWidth, window.innerHeight) < 720;
+  var dpr = mobile ? 1 : Math.min(window.devicePixelRatio||1, 2);
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  render();
+}
+
+/* ---------------- mount / destroy ---------------- */
+function mount(){
+  wrapEl=document.getElementById(LIUBO_NS+'Wrap');
+  canvas=document.getElementById(LIUBO_NS+'Canvas');
+  ctx=canvas.getContext('2d');
+  logEl=document.getElementById(LIUBO_NS+'Log');
+  turnLabel=document.getElementById(LIUBO_NS+'TurnLabel');
+  scoreLabel=document.getElementById(LIUBO_NS+'ScoreLabel');
+  throwBtn=document.getElementById(LIUBO_NS+'Throw');
+  undoBtn=document.getElementById(LIUBO_NS+'Undo');
+  restartBtn=document.getElementById(LIUBO_NS+'Restart');
+  lacquerTex=makeLacquer(); grainTex=makeGrain();
+  state=newGameState();
+  ledger('game.start',{t:1});
+  on(throwBtn,'click',humanThrow);
+  on(undoBtn,'click',undo);
+  on(restartBtn,'click',restart);
+  on(canvas,'pointerdown',onPointer);
+  on(wrapEl,'keydown',onKey);
+  on(window,'resize',fitCanvas);
+  if('ResizeObserver' in window){ ro=new ResizeObserver(fitCanvas); ro.observe(wrapEl); }
+  fitCanvas();
+  log('Welcome to Liubo, the game of six sticks. You are jade; the archive plays ivory.','sys');
+  log('Cast the sticks (T) — the throw table at right is a modern reconstruction.','sys');
+  syncUI(); render();
+}
+function destroy(){
+  destroyed=true;
+  if(rafId) cancelAnimationFrame(rafId);
+  if(aiTimer){ clearTimeout(aiTimer); aiTimer=0; }
+  if(ro){ ro.disconnect(); ro=null; }
+  listeners.forEach(function(L){ L[0].removeEventListener(L[1],L[2],L[3]); });
+  listeners.length=0;
+  /* dispose procedural textures + context */
+  lacquerTex=null; grainTex=null; anim=null;
+  if(canvas){ var w=canvas.width; canvas.width=1; canvas.width=w; }
+  ctx=null; canvas=null; wrapEl=null; logEl=null;
+  state=null; view.stickFaces=null;
+}
+
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',mount);
+else mount();
+window[LIUBO_NS+'Exhibit']={mount:mount, destroy:destroy};
+})(); /* close game-flow IIFE */
+})(); /* close rendering IIFE (opened in the textures/board script) */
+})(); /* close rules-engine IIFE (opened in the state/rules script) */
+</script>
+</body>
+</html>

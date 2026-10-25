@@ -3,8 +3,8 @@
 
    Every room, corridor and gallery has a soundscape made from its sky, its
    ground and its animals (world.js, fauna.js): wind, rain and thunder that
-   follows the lightning; a babbling brook, a river, a lapping pond, waves on
-   the shore, a fountain; drips in a cave, the crackle of embers, a low hum
+   follows the lightning; a river, a lapping pond, waves on the shore
+   (brooks and fountains are deliberately silent); drips in a cave, the crackle of embers, a low hum
    over the abyss; songbirds, doves, gulls, ravens, an owl, frogs, crickets
    and cicadas; a splash when a fish leaps. Everything is synthesised with the
    Web Audio API as it plays: no recordings are downloaded.
@@ -62,14 +62,8 @@ const LAYER = {
     const tick = (dt) => { if (R() < dt * 18 * level) blip(out, 2200 + R() * 3000, 0.012, 0.6); };
     return { out, stop: () => s.stop(), tick };
   },
-  brook(level) {
-    // babble: noise through narrow band-passes whose centres jump about, over a low rush
-    const s = src(NOISE, 1), out = gain(level * 0.5), bands = [];
-    for (let i = 0; i < 4; i++) { const f = filt("bandpass", 500 + R() * 2000, 7 + R() * 5), g = gain(0.5); s.connect(f); f.connect(g); g.connect(out); bands.push([f, g]); }
-    const rs = src(BROWN, 1), lp = filt("lowpass", 350), rg = gain(0.8); rs.connect(lp); lp.connect(rg); rg.connect(out);
-    const tick = (dt) => { bands.forEach(([f, g]) => { if (R() < dt * 9) { f.frequency.setTargetAtTime(380 + R() * 2600, now(), 0.03); g.gain.setTargetAtTime(0.2 + R() * 0.9, now(), 0.05); } }); if (R() < dt * 2.5 * level) bubble(out); };
-    return { out, stop: () => { s.stop(); rs.stop(); }, tick };
-  },
+  // brook() and fountain() were removed (Carter, 2026-10-13): their jumping narrow band-pass "babble" read as a
+  // fax-machine hiss in the corridors. Removal, not replacement: brook ground and gardens now carry no water layer.
   river(level) {
     const s = src(PINK, 0.8), lp = filt("lowpass", 900), bp = filt("bandpass", 700, 1.5), g = gain(0), out = gain(level * 0.6);
     const l = lfo(0.09, 0.3, g.gain, 0.7); s.connect(lp); lp.connect(g); s.connect(bp); bp.connect(g); g.connect(out);
@@ -97,7 +91,6 @@ const LAYER = {
     };
     return { out, stop: () => { s.stop(); f.stop(); }, tick };
   },
-  fountain(level) { const x = LAYER.brook(level * 0.6); return x; },
   hum(level) {
     const out = gain(level * 0.25), o1 = ctx.createOscillator(), o2 = ctx.createOscillator(), o3 = ctx.createOscillator();
     o1.frequency.value = 55; o2.frequency.value = 55.4; o3.frequency.value = 82.6; o3.type = "triangle";
@@ -171,10 +164,8 @@ export function recipe(env, kind) {
   else if (["highland", "aurora"].includes(sky)) set("wind", 0.5);
   else if (["overcast", "fog", "mist", "haze"].includes(sky)) set("wind", 0.2);
   else set("wind", 0.12);
-  if (["brook", "forestbrook"].includes(g)) set("brook", 0.8);
   if (["river", "nile", "marsh"].includes(g)) set("river", 0.7);
   if (["pond", "pool", "lake", "zen", "jungle"].includes(g)) set("lap", 0.5);
-  if (g === "garden") set("fountain", 0.6);
   if (g === "shore") set("waves", 0.9);
   if (g === "cave") set("cave", 0.8);
   if (g === "ash") set("embers", 0.7);

@@ -90,15 +90,18 @@ function seeAlso(ch) {
 
 // objects in the Vault that belong to this chapter (their registry lists it among their chapters)
 function vaultFor(ch) {
-  const items = VAULT.items.filter((i) => i.status === "published" && (i.chapters || []).indexOf(ch.id) !== -1)
+  // a withdrawn entry (an absence kept at its old URL) keeps one plain link, labelled as the absence
+  const items = VAULT.items.filter((i) => (i.status === "published" || (i.status === "withdrawn" && i.absence)) && (i.chapters || []).indexOf(ch.id) !== -1)
     .sort((a, b) => (a.year || 0) - (b.year || 0));
   if (!items.length) return "";
   const eraName = (slug) => { const e = eraBySlug(slug); return e ? e.name : ""; };
   return '\n      <div class="vault-links" id="in-the-vault">' +
     '<p class="eyebrow center">In the Vault &middot; objects and texts from this tradition</p>' +
     '<p class="tiny center" style="margin:-.3rem 0 1rem">Manuscripts, inscriptions and relics connected with this chapter, each studied in its own Vault entry.</p>' +
-    '<div class="vl-list">\n' + items.map((i) =>
-      '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.title) + "</span>" +
+    '<div class="vl-list">\n' + items.map((i) => i.status === "withdrawn"
+      ? '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.absence.link) + "</span>" +
+        '<span class="vl-m">Not shown</span><span class="vl-s">' + esc(clip(i.summary, 170)) + "</span></a>"
+      : '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.title) + "</span>" +
       '<span class="vl-m">' + esc(VAULT.categories[i.category] || "") + (eraName(i.era) ? " &middot; " + esc(eraName(i.era)) : "") + " &middot; " + esc(i.dated) + "</span>" +
       '<span class="vl-s">' + esc(clip(i.summary, 170)) + "</span></a>").join("\n") +
     "\n      </div></div>";
@@ -239,7 +242,7 @@ function pageFor(ch) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
-  <link rel="canonical" href="${url}" />
+${SEO.fontTags()}  <link rel="canonical" href="${url}" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Divine Archives" />
   <meta property="og:title" content="${esc(fullTitle)}" />
@@ -278,6 +281,7 @@ ${ch.pending ? `      <div class="pending-banner"><strong>Recently added &middot
 
 ${FOOTER}
 </div>
+<script src="../assets/framework/archive-ledger.js?v=2" defer data-entity="chapter:${ch.id}"></script>
 <script src="../assets/ambient.js?v=2" defer></script>
 <script src="../site-config.js" defer></script>
 </body>

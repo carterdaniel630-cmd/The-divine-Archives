@@ -36,13 +36,9 @@
 
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
 
   AG.register("reliquary", {
-    title: "The Reliquary",
-    subtitle: "Trivia drawn entirely from the archive's own chapters.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch22) || "",
-    sourceHref: "chapters/ch22.html", sourceLabel: "Read “Patristic Christianity”",
     mount: mountGame
   });
 
@@ -197,7 +193,7 @@
       setKeys(null);
       var newBest = false;
       if (st.score > st.best) { st.best = st.score; newBest = true; }
-      AG.addHighScore("reliquary", { score: st.score, correct: st.correct, total: st.order.length, mode: st.mode });
+      AG.addHighScore("reliquary", { score: st.score, correct: st.correct, total: st.order.length, mode: st.mode }); AG.finish("reliquary");
       var wonLine = "";
       if (st.mode === "bot") {
         wonLine = st.score > st.botScore ? "You beat the Archivist." : (st.score < st.botScore ? "The Archivist won this round." : "A dead heat with the Archivist.");

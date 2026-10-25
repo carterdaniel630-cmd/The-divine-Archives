@@ -1,0 +1,1234 @@
+{
+ "type": "room",
+ "count": 83,
+ "entities": [
+  {
+   "id": "room:ch01",
+   "type": "room",
+   "label": "The Flood",
+   "parent": "wing:rotunda",
+   "href": "museum.html#ch01",
+   "links": [
+    "chapter:ch01",
+    "figure:noah"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch02",
+   "type": "room",
+   "label": "Egypt",
+   "parent": "wing:02-bronze-age",
+   "status": "pending",
+   "href": "museum.html#ch02",
+   "links": [
+    "chapter:ch02",
+    "figure:anubis",
+    "figure:hathor",
+    "figure:horus",
+    "figure:isis",
+    "figure:maat",
+    "figure:osiris",
+    "figure:ra",
+    "figure:set",
+    "figure:thoth",
+    "game:chess",
+    "relic:v20",
+    "relic:v34",
+    "relic:v43",
+    "relic:v53"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch03",
+   "type": "room",
+   "label": "Mesopotamia",
+   "parent": "wing:02-bronze-age",
+   "href": "museum.html#ch03",
+   "links": [
+    "chapter:ch03",
+    "figure:enki",
+    "figure:ereshkigal",
+    "figure:gilgamesh",
+    "figure:inanna",
+    "figure:marduk",
+    "figure:pazuzu",
+    "figure:shamash",
+    "figure:tiamat",
+    "game:ziggurat",
+    "relic:v35",
+    "relic:v52"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch04",
+   "type": "room",
+   "label": "Indus Valley",
+   "parent": "wing:02-bronze-age",
+   "href": "museum.html#ch04",
+   "links": [
+    "chapter:ch04",
+    "game:excavation"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch05",
+   "type": "room",
+   "label": "Early Vedic",
+   "parent": "wing:02-bronze-age",
+   "href": "museum.html#ch05",
+   "links": [
+    "chapter:ch05",
+    "figure:agni",
+    "figure:indra",
+    "figure:saraswati",
+    "figure:varuna"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch06",
+   "type": "room",
+   "label": "Zoroaster",
+   "parent": "wing:03-early-iron-age",
+   "href": "museum.html#ch06",
+   "links": [
+    "chapter:ch06",
+    "figure:ahura-mazda",
+    "figure:anahita",
+    "figure:angra-mainyu",
+    "figure:mithra",
+    "game:antithesis",
+    "relic:v54"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch07",
+   "type": "room",
+   "label": "Pre-exilic Israel",
+   "parent": "wing:03-early-iron-age",
+   "href": "museum.html#ch07",
+   "links": [
+    "chapter:ch07",
+    "figure:aaron",
+    "figure:abraham",
+    "figure:david",
+    "figure:deborah",
+    "figure:elijah",
+    "figure:hagar",
+    "figure:isaac",
+    "figure:isaiah",
+    "figure:ishmael",
+    "figure:jacob",
+    "figure:jeremiah",
+    "figure:jezebel",
+    "figure:jonah",
+    "figure:joseph-patriarch",
+    "figure:joshua",
+    "figure:miriam",
+    "figure:moses",
+    "figure:queen-of-sheba",
+    "figure:ruth",
+    "figure:samson",
+    "figure:samuel",
+    "figure:sarah",
+    "figure:solomon",
+    "figure:yhwh",
+    "relic:v07",
+    "relic:v12",
+    "relic:v22",
+    "relic:v23"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch08",
+   "type": "room",
+   "label": "Early Greece",
+   "parent": "wing:03-early-iron-age",
+   "status": "pending",
+   "href": "museum.html#ch08",
+   "links": [
+    "chapter:ch08",
+    "figure:hera",
+    "figure:poseidon",
+    "figure:zeus",
+    "game:fighter",
+    "relic:v39",
+    "relic:v56"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch09",
+   "type": "room",
+   "label": "Early China",
+   "parent": "wing:03-early-iron-age",
+   "href": "museum.html#ch09",
+   "links": [
+    "chapter:ch09",
+    "figure:shangdi",
+    "relic:v55"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch10",
+   "type": "room",
+   "label": "Second Temple Judaism",
+   "parent": "wing:04-axial-age",
+   "href": "museum.html#ch10",
+   "links": [
+    "chapter:ch10",
+    "figure:asmodeus",
+    "figure:daniel",
+    "figure:enoch",
+    "figure:esther",
+    "figure:ezekiel",
+    "figure:gabriel",
+    "figure:herod",
+    "figure:job",
+    "figure:judah-maccabee",
+    "figure:judith",
+    "figure:michael",
+    "figure:raphael",
+    "figure:satan",
+    "relic:v02",
+    "relic:v10",
+    "relic:v38",
+    "relic:v48",
+    "relic:v49"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch11",
+   "type": "room",
+   "label": "Buddhism",
+   "parent": "wing:04-axial-age",
+   "status": "pending",
+   "href": "museum.html#ch11",
+   "links": [
+    "chapter:ch11",
+    "figure:maitreya",
+    "figure:mara",
+    "relic:v27",
+    "relic:v30",
+    "relic:v46"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch12",
+   "type": "room",
+   "label": "Confucianism & Daoism",
+   "parent": "wing:04-axial-age",
+   "status": "pending",
+   "href": "museum.html#ch12",
+   "links": [
+    "chapter:ch12",
+    "figure:guandi",
+    "figure:jade-emperor",
+    "figure:kongzi",
+    "figure:laozi",
+    "figure:xiwangmu",
+    "relic:v81"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch13",
+   "type": "room",
+   "label": "Rome",
+   "parent": "wing:04-axial-age",
+   "href": "museum.html#ch13",
+   "links": [
+    "chapter:ch13",
+    "figure:janus",
+    "figure:jupiter",
+    "figure:mars",
+    "figure:vesta",
+    "game:dominion",
+    "relic:v44"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch14",
+   "type": "room",
+   "label": "Celtic & Germanic",
+   "parent": "wing:04-axial-age",
+   "href": "museum.html#ch14",
+   "links": [
+    "chapter:ch14",
+    "figure:brigid",
+    "figure:cernunnos",
+    "figure:lugh",
+    "figure:morrigan",
+    "relic:v21",
+    "relic:v37",
+    "relic:v70"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch15",
+   "type": "room",
+   "label": "Classical Greece",
+   "parent": "wing:04-axial-age",
+   "href": "museum.html#ch15",
+   "links": [
+    "chapter:ch15",
+    "figure:aphrodite",
+    "figure:apollo",
+    "figure:artemis",
+    "figure:athena",
+    "figure:demeter",
+    "figure:dionysus",
+    "figure:gaia",
+    "figure:hades",
+    "figure:heracles",
+    "figure:hermes",
+    "figure:orpheus",
+    "figure:persephone",
+    "figure:prometheus"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch16",
+   "type": "room",
+   "label": "Early Christianity",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch16",
+   "links": [
+    "chapter:ch16",
+    "figure:james",
+    "figure:jesus",
+    "figure:john-apostle",
+    "figure:john-baptist",
+    "figure:joseph-arimathea",
+    "figure:judas",
+    "figure:lazarus",
+    "figure:mary",
+    "figure:mary-magdalene",
+    "figure:paul",
+    "figure:peter",
+    "figure:pilate",
+    "figure:thomas",
+    "relic:v05",
+    "relic:v16",
+    "relic:v17",
+    "relic:v18",
+    "relic:v42",
+    "relic:v84",
+    "relic:v88"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch17",
+   "type": "room",
+   "label": "Gnosticism",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch17",
+   "links": [
+    "chapter:ch17",
+    "figure:abraxas",
+    "figure:sophia",
+    "figure:yaldabaoth",
+    "relic:v08",
+    "relic:v40"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch18",
+   "type": "room",
+   "label": "Roman Mystery Cults",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch18",
+   "links": [
+    "chapter:ch18",
+    "figure:cybele",
+    "figure:mithras",
+    "relic:v03"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch19",
+   "type": "room",
+   "label": "Rabbinic Judaism",
+   "parent": "wing:05-late-antiquity",
+   "status": "pending",
+   "href": "museum.html#ch19",
+   "links": [
+    "chapter:ch19",
+    "figure:lilith",
+    "relic:v67"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch20",
+   "type": "room",
+   "label": "Mahayana Buddhism",
+   "parent": "wing:05-late-antiquity",
+   "status": "pending",
+   "href": "museum.html#ch20",
+   "links": [
+    "chapter:ch20",
+    "figure:amitabha",
+    "figure:avalokiteshvara",
+    "figure:manjushri"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch21",
+   "type": "room",
+   "label": "Islam",
+   "parent": "wing:06-early-medieval",
+   "status": "pending",
+   "href": "museum.html#ch21",
+   "links": [
+    "chapter:ch21",
+    "figure:ali",
+    "figure:fatima",
+    "figure:husayn",
+    "figure:iblis",
+    "figure:jinn",
+    "figure:khadija",
+    "figure:muhammad",
+    "relic:v26",
+    "relic:v28",
+    "relic:v29",
+    "relic:v85"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch22",
+   "type": "room",
+   "label": "Patristic Christianity",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch22",
+   "links": [
+    "chapter:ch22",
+    "game:reliquary",
+    "relic:v04",
+    "relic:v15",
+    "relic:v24"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch23",
+   "type": "room",
+   "label": "Norse Paganism",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch23",
+   "links": [
+    "chapter:ch23",
+    "figure:baldr",
+    "figure:freyja",
+    "figure:frigg",
+    "figure:hel",
+    "figure:loki",
+    "figure:norns",
+    "figure:odin",
+    "figure:thor",
+    "figure:tyr",
+    "relic:v36",
+    "relic:v47"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch24",
+   "type": "room",
+   "label": "Tantra",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch24",
+   "links": [
+    "chapter:ch24",
+    "figure:durga",
+    "figure:kali",
+    "figure:shiva"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch25",
+   "type": "room",
+   "label": "Shinto",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch25",
+   "links": [
+    "chapter:ch25",
+    "figure:amaterasu",
+    "figure:inari",
+    "figure:izanagi",
+    "figure:izanami",
+    "figure:susanoo",
+    "relic:v61"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch26",
+   "type": "room",
+   "label": "Kabbalah",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch26",
+   "links": [
+    "chapter:ch26",
+    "figure:metatron",
+    "relic:v19",
+    "relic:v79",
+    "relic:v80"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch27",
+   "type": "room",
+   "label": "Sufism",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch27",
+   "links": [
+    "chapter:ch27"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch28",
+   "type": "room",
+   "label": "Scholasticism",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch28",
+   "links": [
+    "chapter:ch28",
+    "relic:v01",
+    "relic:v06",
+    "relic:v09"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch29",
+   "type": "room",
+   "label": "The Maya",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch29",
+   "links": [
+    "chapter:ch29",
+    "figure:chaak",
+    "figure:hero-twins",
+    "figure:itzamna",
+    "figure:maize-god",
+    "game:labyrinth",
+    "relic:v31",
+    "relic:v32"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch30",
+   "type": "room",
+   "label": "Bhakti",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch30",
+   "links": [
+    "chapter:ch30",
+    "figure:brahma",
+    "figure:ganesha",
+    "figure:hanuman",
+    "figure:krishna",
+    "figure:lakshmi",
+    "figure:vishnu"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch31",
+   "type": "room",
+   "label": "The Reformation",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch31",
+   "links": [
+    "chapter:ch31",
+    "relic:v11"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch32",
+   "type": "room",
+   "label": "The Witch Trials",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch32",
+   "links": [
+    "chapter:ch32",
+    "relic:v78"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch33",
+   "type": "room",
+   "label": "African Traditional Religion",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch33",
+   "links": [
+    "chapter:ch33",
+    "figure:eshu",
+    "figure:obatala",
+    "figure:ogun",
+    "figure:olodumare",
+    "figure:oshun",
+    "figure:shango",
+    "figure:yemoja",
+    "relic:v64"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch34",
+   "type": "room",
+   "label": "Sikhism",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch34",
+   "links": [
+    "chapter:ch34",
+    "relic:v33"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch35",
+   "type": "room",
+   "label": "New Religious Movements",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch35",
+   "links": [
+    "chapter:ch35",
+    "relic:v75"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch36",
+   "type": "room",
+   "label": "Spiritualism",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch36",
+   "links": [
+    "chapter:ch36"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch37",
+   "type": "room",
+   "label": "Theosophy & the Occult Revival",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch37",
+   "links": [
+    "chapter:ch37",
+    "figure:baphomet",
+    "game:ouroboros",
+    "relic:v73"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch38",
+   "type": "room",
+   "label": "Wicca & Modern Paganism",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch38",
+   "links": [
+    "chapter:ch38",
+    "figure:horned-god",
+    "figure:triple-goddess",
+    "relic:v72"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch39",
+   "type": "room",
+   "label": "Satanism",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch39",
+   "links": [
+    "chapter:ch39",
+    "relic:v74"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch40",
+   "type": "room",
+   "label": "African Diaspora Religions",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch40",
+   "links": [
+    "chapter:ch40",
+    "figure:baron-samedi",
+    "figure:ezili-freda",
+    "figure:papa-legba",
+    "game:seeker",
+    "relic:v77"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch41",
+   "type": "room",
+   "label": "The Paleolithic",
+   "parent": "wing:01-prehistory",
+   "href": "museum.html#ch41",
+   "links": [
+    "chapter:ch41",
+    "relic:v58",
+    "relic:v59"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch42",
+   "type": "room",
+   "label": "The Neolithic",
+   "parent": "wing:01-prehistory",
+   "href": "museum.html#ch42",
+   "links": [
+    "chapter:ch42",
+    "relic:v45",
+    "relic:v60",
+    "relic:v86"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch43",
+   "type": "room",
+   "label": "The Aztec",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch43",
+   "links": [
+    "chapter:ch43",
+    "figure:coatlicue",
+    "figure:huitzilopochtli",
+    "figure:quetzalcoatl",
+    "figure:tezcatlipoca",
+    "figure:tlaloc",
+    "game:treasure",
+    "relic:v13",
+    "relic:v41",
+    "relic:v51",
+    "relic:v83"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch44",
+   "type": "room",
+   "label": "The Inca",
+   "parent": "wing:07-high-medieval",
+   "status": "pending",
+   "href": "museum.html#ch44",
+   "links": [
+    "chapter:ch44",
+    "figure:inti",
+    "figure:mama-quilla",
+    "figure:pachamama",
+    "figure:viracocha",
+    "relic:v62",
+    "relic:v65"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch45",
+   "type": "room",
+   "label": "Pistis Sophia",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch45",
+   "links": [
+    "chapter:ch45"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch46",
+   "type": "room",
+   "label": "Creation & the First Order",
+   "parent": "wing:rotunda",
+   "href": "museum.html#ch46",
+   "links": [
+    "chapter:ch46",
+    "figure:adam",
+    "figure:eve",
+    "game:pinball"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch47",
+   "type": "room",
+   "label": "Journeys to the Underworld",
+   "parent": "wing:rotunda",
+   "status": "pending",
+   "href": "museum.html#ch47",
+   "links": [
+    "chapter:ch47"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch48",
+   "type": "room",
+   "label": "The Great Goddess",
+   "parent": "wing:rotunda",
+   "href": "museum.html#ch48",
+   "links": [
+    "chapter:ch48"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch49",
+   "type": "room",
+   "label": "Sacred Kingship",
+   "parent": "wing:rotunda",
+   "href": "museum.html#ch49",
+   "links": [
+    "chapter:ch49",
+    "relic:v14"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch50",
+   "type": "room",
+   "label": "The End of Days",
+   "parent": "wing:rotunda",
+   "status": "pending",
+   "href": "museum.html#ch50",
+   "links": [
+    "chapter:ch50"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch51",
+   "type": "room",
+   "label": "Sacrifice & the Scapegoat",
+   "parent": "wing:rotunda",
+   "status": "pending",
+   "href": "museum.html#ch51",
+   "links": [
+    "chapter:ch51"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch52",
+   "type": "room",
+   "label": "Jainism",
+   "parent": "wing:04-axial-age",
+   "status": "pending",
+   "href": "museum.html#ch52",
+   "links": [
+    "chapter:ch52",
+    "figure:mahavira",
+    "figure:parshvanatha",
+    "relic:v63"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch53",
+   "type": "room",
+   "label": "Tibetan & Vajrayana Buddhism",
+   "parent": "wing:06-early-medieval",
+   "status": "pending",
+   "href": "museum.html#ch53",
+   "links": [
+    "chapter:ch53",
+    "figure:padmasambhava",
+    "figure:tara",
+    "relic:v82"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch54",
+   "type": "room",
+   "label": "Zen & Pure Land Buddhism",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch54",
+   "links": [
+    "chapter:ch54"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch55",
+   "type": "room",
+   "label": "Manichaeism",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch55",
+   "links": [
+    "chapter:ch55"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch56",
+   "type": "room",
+   "label": "Mandaeans, Yazidis & Druze",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch56",
+   "links": [
+    "chapter:ch56",
+    "figure:tawus-melek",
+    "relic:v87"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch57",
+   "type": "room",
+   "label": "Hittite & Anatolian",
+   "parent": "wing:02-bronze-age",
+   "href": "museum.html#ch57",
+   "links": [
+    "chapter:ch57",
+    "figure:arinna",
+    "figure:kumarbi",
+    "figure:tarhunna"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch58",
+   "type": "room",
+   "label": "Canaanite & Phoenician",
+   "parent": "wing:03-early-iron-age",
+   "href": "museum.html#ch58",
+   "links": [
+    "chapter:ch58",
+    "figure:anat",
+    "figure:asherah",
+    "figure:baal",
+    "figure:el"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch59",
+   "type": "room",
+   "label": "Slavic & Baltic Paganism",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch59",
+   "links": [
+    "chapter:ch59",
+    "figure:mokosh",
+    "figure:perun",
+    "figure:saule",
+    "figure:veles"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch60",
+   "type": "room",
+   "label": "Eastern Orthodoxy & Byzantium",
+   "parent": "wing:06-early-medieval",
+   "status": "pending",
+   "href": "museum.html#ch60",
+   "links": [
+    "chapter:ch60",
+    "relic:v25",
+    "relic:v50",
+    "relic:v57",
+    "relic:v66",
+    "relic:v71"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch61",
+   "type": "room",
+   "label": "Aboriginal Australian Dreaming",
+   "parent": "wing:01-prehistory",
+   "status": "pending",
+   "href": "museum.html#ch61",
+   "links": [
+    "chapter:ch61",
+    "figure:rainbow-serpent"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch62",
+   "type": "room",
+   "label": "Native North American",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch62",
+   "links": [
+    "chapter:ch62",
+    "figure:coyote",
+    "figure:raven",
+    "figure:sky-woman"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch63",
+   "type": "room",
+   "label": "Oceania",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch63",
+   "links": [
+    "chapter:ch63",
+    "figure:maui",
+    "figure:pele",
+    "figure:tangaroa",
+    "relic:v69"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch64",
+   "type": "room",
+   "label": "Pentecostalism & Global Christianity",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch64",
+   "links": [
+    "chapter:ch64"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch65",
+   "type": "room",
+   "label": "Bahá'í & New Faiths",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch65",
+   "links": [
+    "chapter:ch65",
+    "relic:v76"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch66",
+   "type": "room",
+   "label": "The San & Southern African Rock Art",
+   "parent": "wing:01-prehistory",
+   "href": "museum.html#ch66",
+   "links": [
+    "chapter:ch66"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch67",
+   "type": "room",
+   "label": "Minoan Crete",
+   "parent": "wing:02-bronze-age",
+   "href": "museum.html#ch67",
+   "links": [
+    "chapter:ch67"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch68",
+   "type": "room",
+   "label": "Nubia & Kush",
+   "parent": "wing:03-early-iron-age",
+   "href": "museum.html#ch68",
+   "links": [
+    "chapter:ch68"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch69",
+   "type": "room",
+   "label": "The Upanishads & the Hindu Synthesis",
+   "parent": "wing:04-axial-age",
+   "status": "pending",
+   "href": "museum.html#ch69",
+   "links": [
+    "chapter:ch69"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch70",
+   "type": "room",
+   "label": "Pre-Islamic Arabia",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch70",
+   "links": [
+    "chapter:ch70"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch71",
+   "type": "room",
+   "label": "Korea",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch71",
+   "links": [
+    "chapter:ch71"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch72",
+   "type": "room",
+   "label": "The Cathars & Medieval Heresy",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch72",
+   "links": [
+    "chapter:ch72"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch73",
+   "type": "room",
+   "label": "Sabbateans, Frankists & Hasidim",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch73",
+   "links": [
+    "chapter:ch73"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch74",
+   "type": "room",
+   "label": "Secularism & the Nones",
+   "parent": "wing:09-modern",
+   "status": "pending",
+   "href": "museum.html#ch74",
+   "links": [
+    "chapter:ch74"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch75",
+   "type": "room",
+   "label": "Siberian & Arctic Shamanism",
+   "parent": "wing:01-prehistory",
+   "href": "museum.html#ch75",
+   "links": [
+    "chapter:ch75"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch76",
+   "type": "room",
+   "label": "The Olmec",
+   "parent": "wing:02-bronze-age",
+   "href": "museum.html#ch76",
+   "links": [
+    "chapter:ch76"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch77",
+   "type": "room",
+   "label": "The Etruscans",
+   "parent": "wing:03-early-iron-age",
+   "href": "museum.html#ch77",
+   "links": [
+    "chapter:ch77"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch78",
+   "type": "room",
+   "label": "The Scythians & the Steppe",
+   "parent": "wing:04-axial-age",
+   "href": "museum.html#ch78",
+   "links": [
+    "chapter:ch78"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch79",
+   "type": "room",
+   "label": "The First Christian Kingdoms",
+   "parent": "wing:05-late-antiquity",
+   "href": "museum.html#ch79",
+   "links": [
+    "chapter:ch79"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch80",
+   "type": "room",
+   "label": "Shi'ism",
+   "parent": "wing:06-early-medieval",
+   "href": "museum.html#ch80",
+   "links": [
+    "chapter:ch80"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch81",
+   "type": "room",
+   "label": "Tengri & the Mongols",
+   "parent": "wing:07-high-medieval",
+   "href": "museum.html#ch81",
+   "links": [
+    "chapter:ch81"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch82",
+   "type": "room",
+   "label": "Akbar & the Mughal Synthesis",
+   "parent": "wing:08-early-modern",
+   "href": "museum.html#ch82",
+   "links": [
+    "chapter:ch82"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch83",
+   "type": "room",
+   "label": "Global Hinduism & the Guru Movements",
+   "parent": "wing:09-modern",
+   "href": "museum.html#ch83",
+   "links": [
+    "chapter:ch83"
+   ],
+   "from": "docs/museum/manifest.json"
+  }
+ ]
+}

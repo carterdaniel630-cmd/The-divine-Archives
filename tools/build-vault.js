@@ -13,6 +13,8 @@
    Re-run whenever an entry or the registry changes:
        node tools/build-vault.js
    then `node tools/build-pages.js` to refresh the sitemap. Idempotent.
+   An item with status "withdrawn" gets an absence page at its old URL and
+   appears nowhere else (see absencePage below).
    ========================================================================== */
 "use strict";
 const fs = require("fs");
@@ -213,7 +215,7 @@ function head(title, desc, url, rel, type, extra, ogKey) {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
-  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
+${SEO.fontTags()}  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
   <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=19" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
@@ -350,6 +352,54 @@ ${footer("../")}
 <script src="../assets/vault-data.js?v=10" defer></script>
 <script src="../assets/vault/study.js?v=3" defer></script>
 <script src="../assets/vault/relic.js?v=13" defer></script>
+<script src="../assets/framework/archive-ledger.js?v=2" defer data-entity="relic:${item.id}"></script>
+<script src="../assets/ambient.js?v=2" defer></script>
+<script src="../site-config.js" defer></script>
+</body>
+</html>
+`;
+}
+
+// ---------- withdrawn item: an absence page at the same URL --------------------
+// A Vault entry taken down on sensitivity grounds (status "withdrawn") keeps its URL so old links and the
+// chapter's link land on a page that explains the absence. It shows no object: no relic, no study viewer,
+// no facts box, and it is in no list, count or museum room (see tjurunga-takedown-order-2026-10-20).
+function absencePage(item) {
+  const e = renderEntry(item.source);
+  const url = `${SITE}/vault/${item.slug}.html`;
+  const pageTitle = e.title || item.title;
+  const fullTitle = `${pageTitle} · The Divine Archives`;
+  const desc = clip(item.summary, 155);
+  const jsonld = JSON.stringify({
+    "@context": "https://schema.org", "@type": "Article", headline: pageTitle, description: desc, url, inLanguage: "en",
+    isPartOf: { "@type": "WebSite", name: "The Divine Archives", url: SITE + "/" },
+    ...(SEO.imageUrl(item.id) ? { image: SEO.imageUrl(item.id) } : {}),
+    ...(SEO.dates(item.id) ? { datePublished: SEO.dates(item.id).published, dateModified: SEO.dates(item.id).modified } : {})
+  });
+  const body = e.lead.join("\n") + "\n" + e.sections.map((s) => s.html).join("\n\n");
+  return `${head(fullTitle, desc, url, "../", "article", `  <script type="application/ld+json">${jsonld}</script>\n`, item.id)}
+<body>
+<a class="skip-link" href="#vault-mount">Skip to content</a>
+<div class="page">
+${header("../")}
+
+  <main id="vault-mount">
+    <div class="page-head">
+      <p class="crumb" style="justify-content:center">
+        <a href="../index.html">Archive</a><span class="sep">/</span>
+        <a href="../vault.html">The Vault</a><span class="sep">/</span><span>${esc(item.title)}</span>
+      </p>
+      <p class="eyebrow">The Vault &middot; Not shown</p>
+      <h1>${esc(pageTitle)}</h1>
+    </div>
+    <section class="wrap article">
+${body}
+      <div class="chapter-nav"><a href="../vault.html">&larr; The Vault</a><a href="../eras.html">Browse the ages &rarr;</a></div>
+    </section>
+  </main>
+
+${footer("../")}
+</div>
 <script src="../assets/ambient.js?v=2" defer></script>
 <script src="../site-config.js" defer></script>
 </body>
@@ -448,8 +498,8 @@ function writeIfChanged(p, s) {
 if (!fs.existsSync(OUTDIR)) fs.mkdirSync(OUTDIR, { recursive: true });
 let n = 0;
 for (const item of V.items) {
-  if (item.status !== "published") continue;
-  if (writeIfChanged(path.join(OUTDIR, item.slug + ".html"), itemPage(item))) n++;
+  const page = item.status === "published" ? itemPage(item) : item.status === "withdrawn" ? absencePage(item) : null;
+  if (page && writeIfChanged(path.join(OUTDIR, item.slug + ".html"), page)) n++;
 }
 const ix = writeIfChanged(path.join(DOCS, "vault.html"), indexPage());
 console.log(`build-vault: ${n} item page(s) written; vault.html ${ix ? "updated" : "unchanged"} (${V.items.filter((i) => i.status === "published").length} published, ${(V.queue || []).length} queued)`);

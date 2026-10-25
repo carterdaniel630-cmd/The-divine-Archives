@@ -1,0 +1,194 @@
+{
+ "type": "skylore",
+ "count": 18,
+ "entities": [
+  {
+   "id": "skylore:aztec-moon",
+   "type": "skylore",
+   "label": "The sun's victory over the moon and stars",
+   "links": [
+    "chapter:ch43"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:aztec-venus",
+   "type": "skylore",
+   "label": "Quetzalcoatl",
+   "links": [
+    "chapter:ch43"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:manichaean-column",
+   "type": "skylore",
+   "label": "The Column of Glory",
+   "links": [
+    "chapter:ch55"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:manichaean-moon",
+   "type": "skylore",
+   "label": "The Moon as a ship of Light",
+   "links": [
+    "chapter:ch55"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:maya-venus",
+   "type": "skylore",
+   "label": "The Dresden Codex's Venus table",
+   "links": [
+    "chapter:ch29"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mesopotamia-jupiter",
+   "type": "skylore",
+   "label": "Marduk's star",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mesopotamia-mars-saturn",
+   "type": "skylore",
+   "label": "Ninurta and Nergal",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mesopotamia-mercury",
+   "type": "skylore",
+   "label": "Nabu's star",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mesopotamia-moon",
+   "type": "skylore",
+   "label": "Sin, the Moon",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mesopotamia-venus",
+   "type": "skylore",
+   "label": "Ishtar's star",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mithraic-planets",
+   "type": "skylore",
+   "label": "The seven grades of Mithras",
+   "links": [
+    "chapter:ch18"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:mithras-taurus",
+   "type": "skylore",
+   "label": "The bull of Mithras?",
+   "links": [
+    "chapter:ch18",
+    "constellation:tau"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:pyramid-texts",
+   "type": "skylore",
+   "label": "The stars that never set",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:sirius-dogon",
+   "type": "skylore",
+   "label": "Sirius and the Dogon: a modern legend",
+   "links": [
+    "chapter:ch33",
+    "constellation:cma"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:sky-as-writing",
+   "type": "skylore",
+   "label": "The sky as divine writing",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:wayfinding",
+   "type": "skylore",
+   "label": "The star-path",
+   "links": [
+    "chapter:ch63"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:zodiac-mithras",
+   "type": "skylore",
+   "label": "The ring of the zodiac around Mithras",
+   "links": [
+    "chapter:ch18",
+    "constellation:aqr",
+    "constellation:ari",
+    "constellation:cap",
+    "constellation:cnc",
+    "constellation:gem",
+    "constellation:leo",
+    "constellation:lib",
+    "constellation:psc",
+    "constellation:sco",
+    "constellation:sgr",
+    "constellation:tau",
+    "constellation:vir"
+   ],
+   "from": "docs/museum/sky.json"
+  },
+  {
+   "id": "skylore:zodiac-synagogues",
+   "type": "skylore",
+   "label": "The zodiac on synagogue floors",
+   "links": [
+    "chapter:ch19",
+    "constellation:aqr",
+    "constellation:ari",
+    "constellation:cap",
+    "constellation:cnc",
+    "constellation:gem",
+    "constellation:leo",
+    "constellation:lib",
+    "constellation:psc",
+    "constellation:sco",
+    "constellation:sgr",
+    "constellation:tau",
+    "constellation:vir"
+   ],
+   "from": "docs/museum/sky.json"
+  }
+ ]
+}

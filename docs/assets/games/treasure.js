@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — Mini-Games: "The Tomb Robber" (treasure-hunt expedition)
+   THE DIVINE ARCHIVES — Mini-Games: "The Unfinished Journal" (treasure-hunt expedition)
 
    A four-site run across the ancient world, framed by the field journal of an
    expedition that never came home: Egypt → Sumer → the Indus → the road east
@@ -28,6 +28,11 @@
    ========================================================================== */
 (function () {
   "use strict";
+  // Reduced motion (Carter, Item 31 #6: "do NOT override"): when the visitor's device asks
+  // for reduced motion there is no screen shake and only a faint flash (same rule as feel.js).
+  var RMQ = null;
+  try { RMQ = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null; } catch (e) { RMQ = null; }
+  function reducedMotion() { return !!(RMQ && RMQ.matches); }
   var AG = window.ArchiveGames;
   if (!AG) return;
 
@@ -54,16 +59,12 @@
     return loadingPromise;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function chapterTitle(id) { var a = (window.ARCHIVE || {}).chapters || []; for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i].title; return id; }
+  var chapterTitle = AG.content.chapterTitle;
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function lerp(a, b, t) { return a + (b - a) * t; }
   function rng(seed) { var s = seed >>> 0; return function () { s += 0x6D2B79F5; var t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 
   AG.register("treasure", {
-    title: "The Tomb Robber",
-    subtitle: "An expedition across the ancient world — outrun the traps and the tigers, solve the old doors, finish the journal.",
-    symbolSVG: (window.PLATE_ART && window.PLATE_ART.ch02) || "",
-    sourceHref: "chapters/ch02.html", sourceLabel: "Read “Egypt”",
     mount: mountGame
   });
 
@@ -943,7 +944,8 @@
     }
 
     function draw() {
-      var cam = Math.round((st.cam + (st.shake ? (Math.random() - 0.5) * st.shake : 0)) * 2) / 2, camY = st.shake ? (Math.random() - 0.5) * st.shake * 0.6 : 0;
+      var shk = reducedMotion() ? 0 : st.shake;
+      var cam = Math.round((st.cam + (shk ? (Math.random() - 0.5) * shk : 0)) * 2) / 2, camY = shk ? (Math.random() - 0.5) * shk * 0.6 : 0;
       var cMid = Math.floor((cam + VIEWW / 2) / TILE), B = biomeAt(st.def, cMid), bname = biomeNameAt(st.def, cMid);
       st.drawCam = cam; st.drawCamY = camY;
       cx.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -984,7 +986,7 @@
       drawWeather(B, cam);
       var vg = cx.createRadialGradient(VIEWW / 2, VIEWH * 0.55, VIEWH * 0.35, VIEWW / 2, VIEWH / 2, VIEWW * 0.72);
       vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,.42)"); cx.fillStyle = vg; cx.fillRect(0, 0, VIEWW, VIEWH);
-      if (st.flashT > 0) { cx.fillStyle = "rgba(200,40,20," + (st.flashT * 0.6) + ")"; cx.fillRect(0, 0, VIEWW, VIEWH); }
+      if (st.flashT > 0) { cx.fillStyle = "rgba(200,40,20," + (reducedMotion() ? Math.min(st.flashT * 0.6, 0.06) : st.flashT * 0.6) + ")"; cx.fillRect(0, 0, VIEWW, VIEWH); }
     }
 
     function drawSky(B, bname, cam) {
@@ -1627,7 +1629,7 @@
     function storyCard(opts) {
       stopLoop();
       root.innerHTML =
-        '<div class="game-head" style="margin-bottom:.4rem"><p class="eyebrow">The Tomb Robber · ' + esc(opts.eyebrow) + '</p>' +
+        '<div class="game-head" style="margin-bottom:.4rem"><p class="eyebrow">The Unfinished Journal · ' + esc(opts.eyebrow) + '</p>' +
           '<h2 id="' + ctx.titleId + '" style="font-size:1.25rem">' + esc(opts.title) + '</h2></div>' +
         '<div class="game-rule" role="presentation"></div>' +
         '<div class="tr-card">' + portrait(opts.smile) + opts.body + '</div>' +
@@ -1641,7 +1643,7 @@
       run = { score: 0, hearts: MAXHEARTS, collected: [] };
       var story = DATA.story || {};
       storyCard({
-        eyebrow: "the field journal", title: (story.title || "The Expedition"),
+        eyebrow: "the first page", title: (story.title || "The Expedition"),
         body: '<p>' + esc(story.intro || "") + '</p>' +
           '<p class="tr-route">Egypt&nbsp;→&nbsp;Sumer&nbsp;→&nbsp;the Indus&nbsp;→&nbsp;the road east. Four sites. Bring back what you can.</p>' +
           '<p class="rq-note" style="text-align:center">Run, leap and crack the whip — it drops snakes, staggers big cats, throws levers and swings you from bronze rings.</p>',
@@ -1679,9 +1681,9 @@
       stopLoop();
       var story = DATA.story || {};
       var nb = run.score > best; if (nb) best = run.score;
-      AG.addHighScore("treasure", { score: run.score });
+      AG.addHighScore("treasure", { score: run.score }); AG.finish("treasure", { won: !!won });
       root.innerHTML =
-        '<div class="game-head"><p class="eyebrow">The Tomb Robber · ' + (won ? "the journal is full" : "the ruin claims you") + '</p>' +
+        '<div class="game-head"><p class="eyebrow">The Unfinished Journal · ' + (won ? "the journal is full" : "the ruin claims you") + '</p>' +
           '<h2 id="' + ctx.titleId + '">' + (won ? "The expedition, finished" : "Lost on the " + LEVELS[st.li].place + " road") + '</h2>' +
           '<p>' + run.collected.length + ' relic' + (run.collected.length === 1 ? "" : "s") + ' · ' + run.score + ' in plunder' + (nb ? ' · <span style="color:var(--gold-bright)">a new best</span>' : "") + "</p></div>" +
         '<div class="game-rule" role="presentation"></div>' +
@@ -1691,7 +1693,7 @@
         '<div class="rq-actions" style="gap:.5rem">' +
           (won ? "" : '<button class="rq-btn rq-primary" data-a="retry" autofocus>Retry ' + esc(LEVELS[st.li].place) + '</button>') +
           '<button class="rq-btn' + (won ? " rq-primary" : "") + '" data-a="again"' + (won ? " autofocus" : "") + '>' + (won ? "Run it again" : "Start over") + '</button>' +
-          '<a class="game-source" href="chapters/ch02.html">› Read “Egypt”</a></div>';
+          AG.content.readLink(AG.catalog("treasure").chapter) + '</div>';
       root.querySelector('[data-a="again"]').addEventListener("click", startRun);
       var rt = root.querySelector('[data-a="retry"]');
       if (rt) rt.addEventListener("click", function () { var li = st.li; run.collected = run.collected.filter(function (f) { return (f.level | 0) !== li; }); enterSite(li); });
@@ -1702,7 +1704,7 @@
     function shell() {
       root.innerHTML =
         '<div class="game-head" style="margin-bottom:.35rem"><p class="eyebrow">The Divine Archives · Games</p>' +
-          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Tomb Robber</h2></div>' +
+          '<h2 id="' + ctx.titleId + '" style="font-size:1.2rem">The Unfinished Journal</h2></div>' +
         '<div class="tr-hudrow"><div class="pm-hud tr-hud"></div><button class="tr-snd" type="button" aria-pressed="' + (SFX.isOn() ? "true" : "false") + '" title="Sound (M)">' + (SFX.isOn() ? "♪ Sound on" : "♪ Sound off") + '</button></div>' +
         '<div class="ap-host"><div class="tr-stage ap-stage"><canvas class="tr-canvas" tabindex="0" width="' + VIEWW + '" height="' + VIEWH + '" role="img" aria-label="Expedition platformer"></canvas></div></div>' +
         '<p class="ouro-toast tr-toast" aria-live="polite"></p>' +

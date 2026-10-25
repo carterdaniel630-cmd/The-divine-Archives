@@ -1,0 +1,2402 @@
+{
+ "type": "figure",
+ "count": 199,
+ "entities": [
+  {
+   "id": "figure:aaron",
+   "type": "figure",
+   "label": "Aaron",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#aaron",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:abraham",
+   "type": "figure",
+   "label": "Abraham",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#abraham",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch21",
+    "chapter:ch51",
+    "relic:v26"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:abraxas",
+   "type": "figure",
+   "label": "Abraxas",
+   "parent": "tradition:gnostic",
+   "href": "pantheon.html#abraxas",
+   "links": [
+    "chapter:ch17",
+    "chapter:ch18"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:adam",
+   "type": "figure",
+   "label": "Adam",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#adam",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch21",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:agni",
+   "type": "figure",
+   "label": "Agni",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#agni",
+   "links": [
+    "chapter:ch05",
+    "chapter:ch51"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ahura-mazda",
+   "type": "figure",
+   "label": "Ahura Mazda",
+   "parent": "tradition:iran",
+   "href": "pantheon.html#ahura-mazda",
+   "links": [
+    "chapter:ch06",
+    "chapter:ch49",
+    "relic:v54"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ali",
+   "type": "figure",
+   "label": "ʿAlī ibn Abī Ṭālib",
+   "parent": "tradition:islam",
+   "href": "pantheon.html#ali",
+   "links": [
+    "chapter:ch21",
+    "chapter:ch27"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:amaterasu",
+   "type": "figure",
+   "label": "Amaterasu",
+   "parent": "tradition:japanese",
+   "href": "pantheon.html#amaterasu",
+   "links": [
+    "chapter:ch25",
+    "chapter:ch49",
+    "relic:v61"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:amitabha",
+   "type": "figure",
+   "label": "Amitābha",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#amitabha",
+   "links": [
+    "chapter:ch20",
+    "chapter:ch54"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:anahita",
+   "type": "figure",
+   "label": "Anahita",
+   "parent": "tradition:iran",
+   "href": "pantheon.html#anahita",
+   "links": [
+    "chapter:ch06",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:anat",
+   "type": "figure",
+   "label": "Anat",
+   "parent": "tradition:canaan",
+   "href": "pantheon.html#anat",
+   "links": [
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:angra-mainyu",
+   "type": "figure",
+   "label": "Angra Mainyu",
+   "parent": "tradition:iran",
+   "href": "pantheon.html#angra-mainyu",
+   "links": [
+    "chapter:ch06",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:anubis",
+   "type": "figure",
+   "label": "Anubis",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#anubis",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47",
+    "relic:v20"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:aphrodite",
+   "type": "figure",
+   "label": "Aphrodite",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#aphrodite",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:apollo",
+   "type": "figure",
+   "label": "Apollo",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#apollo",
+   "links": [
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:arinna",
+   "type": "figure",
+   "label": "Sun Goddess of Arinna",
+   "parent": "tradition:anatolia",
+   "href": "pantheon.html#arinna",
+   "links": [
+    "chapter:ch49",
+    "chapter:ch57"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:artemis",
+   "type": "figure",
+   "label": "Artemis",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#artemis",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:asherah",
+   "type": "figure",
+   "label": "Asherah",
+   "parent": "tradition:canaan",
+   "href": "pantheon.html#asherah",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch48",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:asmodeus",
+   "type": "figure",
+   "label": "Asmodeus",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#asmodeus",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch19"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:athena",
+   "type": "figure",
+   "label": "Athena",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#athena",
+   "links": [
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:avalokiteshvara",
+   "type": "figure",
+   "label": "Avalokiteśvara / Guanyin",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#avalokiteshvara",
+   "links": [
+    "chapter:ch20",
+    "chapter:ch53",
+    "chapter:ch54",
+    "relic:v30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:baal",
+   "type": "figure",
+   "label": "Baal",
+   "parent": "tradition:canaan",
+   "href": "pantheon.html#baal",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:baldr",
+   "type": "figure",
+   "label": "Baldr",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#baldr",
+   "links": [
+    "chapter:ch23",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:baphomet",
+   "type": "figure",
+   "label": "Baphomet",
+   "parent": "tradition:modern",
+   "href": "pantheon.html#baphomet",
+   "links": [
+    "chapter:ch37",
+    "chapter:ch39",
+    "relic:v74"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:baron-samedi",
+   "type": "figure",
+   "label": "Baron Samedi",
+   "parent": "tradition:diaspora",
+   "href": "pantheon.html#baron-samedi",
+   "links": [
+    "chapter:ch40",
+    "chapter:ch47",
+    "relic:v77"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:brahma",
+   "type": "figure",
+   "label": "Brahma",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#brahma",
+   "links": [
+    "chapter:ch30",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:brigid",
+   "type": "figure",
+   "label": "Brigid",
+   "parent": "tradition:celtic",
+   "href": "pantheon.html#brigid",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch22"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:cernunnos",
+   "type": "figure",
+   "label": "Cernunnos",
+   "parent": "tradition:celtic",
+   "href": "pantheon.html#cernunnos",
+   "links": [
+    "chapter:ch14",
+    "relic:v37"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:chaak",
+   "type": "figure",
+   "label": "Chaak",
+   "parent": "tradition:maya",
+   "href": "pantheon.html#chaak",
+   "links": [
+    "chapter:ch29",
+    "relic:v31"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:coatlicue",
+   "type": "figure",
+   "label": "Coatlicue",
+   "parent": "tradition:aztec",
+   "href": "pantheon.html#coatlicue",
+   "links": [
+    "chapter:ch43",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:coyote",
+   "type": "figure",
+   "label": "Coyote",
+   "parent": "tradition:nativena",
+   "href": "pantheon.html#coyote",
+   "links": [
+    "chapter:ch62"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:cybele",
+   "type": "figure",
+   "label": "Cybele",
+   "parent": "tradition:roman",
+   "href": "pantheon.html#cybele",
+   "links": [
+    "chapter:ch18",
+    "chapter:ch48",
+    "chapter:ch57"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:daniel",
+   "type": "figure",
+   "label": "Daniel",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#daniel",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:david",
+   "type": "figure",
+   "label": "David",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#david",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch49",
+    "relic:v23"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:deborah",
+   "type": "figure",
+   "label": "Deborah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#deborah",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:demeter",
+   "type": "figure",
+   "label": "Demeter",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#demeter",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch18",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:dionysus",
+   "type": "figure",
+   "label": "Dionysus",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#dionysus",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch18",
+    "relic:v39"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:durga",
+   "type": "figure",
+   "label": "Durga",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#durga",
+   "links": [
+    "chapter:ch24",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:el",
+   "type": "figure",
+   "label": "El",
+   "parent": "tradition:canaan",
+   "href": "pantheon.html#el",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:elijah",
+   "type": "figure",
+   "label": "Elijah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#elijah",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:enki",
+   "type": "figure",
+   "label": "Enki / Ea",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#enki",
+   "links": [
+    "chapter:ch01",
+    "chapter:ch03"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:enoch",
+   "type": "figure",
+   "label": "Enoch",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#enoch",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10",
+    "relic:v49"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ereshkigal",
+   "type": "figure",
+   "label": "Ereshkigal",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#ereshkigal",
+   "links": [
+    "chapter:ch03",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:eshu",
+   "type": "figure",
+   "label": "Èṣù",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#eshu",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:esther",
+   "type": "figure",
+   "label": "Esther",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#esther",
+   "links": [
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:eve",
+   "type": "figure",
+   "label": "Eve",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#eve",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch46",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ezekiel",
+   "type": "figure",
+   "label": "Ezekiel",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#ezekiel",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch26"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ezili-freda",
+   "type": "figure",
+   "label": "Ezili Freda",
+   "parent": "tradition:diaspora",
+   "href": "pantheon.html#ezili-freda",
+   "links": [
+    "chapter:ch40",
+    "relic:v77"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:fatima",
+   "type": "figure",
+   "label": "Fatima",
+   "parent": "tradition:islam",
+   "href": "pantheon.html#fatima",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:freyja",
+   "type": "figure",
+   "label": "Freyja",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#freyja",
+   "links": [
+    "chapter:ch23",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:frigg",
+   "type": "figure",
+   "label": "Frigg",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#frigg",
+   "links": [
+    "chapter:ch23"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:gabriel",
+   "type": "figure",
+   "label": "Gabriel (Jibrīl)",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#gabriel",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:gaia",
+   "type": "figure",
+   "label": "Gaia",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#gaia",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ganesha",
+   "type": "figure",
+   "label": "Ganesha",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#ganesha",
+   "links": [
+    "chapter:ch30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:gilgamesh",
+   "type": "figure",
+   "label": "Gilgamesh",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#gilgamesh",
+   "links": [
+    "chapter:ch01",
+    "chapter:ch03",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:guandi",
+   "type": "figure",
+   "label": "Guan Yu (Guandi)",
+   "parent": "tradition:chinese",
+   "href": "pantheon.html#guandi",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hades",
+   "type": "figure",
+   "label": "Hades",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#hades",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hagar",
+   "type": "figure",
+   "label": "Hagar",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#hagar",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hanuman",
+   "type": "figure",
+   "label": "Hanuman",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#hanuman",
+   "links": [
+    "chapter:ch30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hathor",
+   "type": "figure",
+   "label": "Hathor",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#hathor",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hel",
+   "type": "figure",
+   "label": "Hel",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#hel",
+   "links": [
+    "chapter:ch23",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hera",
+   "type": "figure",
+   "label": "Hera",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#hera",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:heracles",
+   "type": "figure",
+   "label": "Heracles",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#heracles",
+   "links": [
+    "chapter:ch13",
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hermes",
+   "type": "figure",
+   "label": "Hermes",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#hermes",
+   "links": [
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:hero-twins",
+   "type": "figure",
+   "label": "The Hero Twins",
+   "parent": "tradition:maya",
+   "href": "pantheon.html#hero-twins",
+   "links": [
+    "chapter:ch29",
+    "chapter:ch47",
+    "relic:v32"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:herod",
+   "type": "figure",
+   "label": "Herod the Great",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#herod",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:horned-god",
+   "type": "figure",
+   "label": "The Horned God",
+   "parent": "tradition:modern",
+   "href": "pantheon.html#horned-god",
+   "links": [
+    "chapter:ch38",
+    "relic:v72"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:horus",
+   "type": "figure",
+   "label": "Horus",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#horus",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:huitzilopochtli",
+   "type": "figure",
+   "label": "Huitzilopochtli",
+   "parent": "tradition:aztec",
+   "href": "pantheon.html#huitzilopochtli",
+   "links": [
+    "chapter:ch43",
+    "relic:v51"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:husayn",
+   "type": "figure",
+   "label": "Ḥusayn ibn ʿAlī",
+   "parent": "tradition:islam",
+   "href": "pantheon.html#husayn",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:iblis",
+   "type": "figure",
+   "label": "Iblīs",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#iblis",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:inanna",
+   "type": "figure",
+   "label": "Inanna / Ishtar",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#inanna",
+   "links": [
+    "chapter:ch03",
+    "chapter:ch47",
+    "chapter:ch48",
+    "relic:v52"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:inari",
+   "type": "figure",
+   "label": "Inari",
+   "parent": "tradition:japanese",
+   "href": "pantheon.html#inari",
+   "links": [
+    "chapter:ch25"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:indra",
+   "type": "figure",
+   "label": "Indra",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#indra",
+   "links": [
+    "chapter:ch05"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:inti",
+   "type": "figure",
+   "label": "Inti",
+   "parent": "tradition:andean",
+   "href": "pantheon.html#inti",
+   "links": [
+    "chapter:ch44",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:isaac",
+   "type": "figure",
+   "label": "Isaac",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#isaac",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch51"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:isaiah",
+   "type": "figure",
+   "label": "Isaiah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#isaiah",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10",
+    "relic:v48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ishmael",
+   "type": "figure",
+   "label": "Ishmael",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#ishmael",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch21",
+    "relic:v26"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:isis",
+   "type": "figure",
+   "label": "Isis",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#isis",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch18"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:itzamna",
+   "type": "figure",
+   "label": "Itzamnaaj",
+   "parent": "tradition:maya",
+   "href": "pantheon.html#itzamna",
+   "links": [
+    "chapter:ch29",
+    "relic:v31"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:izanagi",
+   "type": "figure",
+   "label": "Izanagi",
+   "parent": "tradition:japanese",
+   "href": "pantheon.html#izanagi",
+   "links": [
+    "chapter:ch25",
+    "chapter:ch46",
+    "chapter:ch47",
+    "relic:v61"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:izanami",
+   "type": "figure",
+   "label": "Izanami",
+   "parent": "tradition:japanese",
+   "href": "pantheon.html#izanami",
+   "links": [
+    "chapter:ch25",
+    "chapter:ch46",
+    "chapter:ch47",
+    "relic:v61"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jacob",
+   "type": "figure",
+   "label": "Jacob (Israel)",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#jacob",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jade-emperor",
+   "type": "figure",
+   "label": "The Jade Emperor",
+   "parent": "tradition:chinese",
+   "href": "pantheon.html#jade-emperor",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:james",
+   "type": "figure",
+   "label": "James, brother of Jesus",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#james",
+   "links": [
+    "chapter:ch16",
+    "relic:v16"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:janus",
+   "type": "figure",
+   "label": "Janus",
+   "parent": "tradition:roman",
+   "href": "pantheon.html#janus",
+   "links": [
+    "chapter:ch13"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jeremiah",
+   "type": "figure",
+   "label": "Jeremiah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#jeremiah",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jesus",
+   "type": "figure",
+   "label": "Jesus of Nazareth",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#jesus",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch21",
+    "chapter:ch22",
+    "relic:v04",
+    "relic:v05",
+    "relic:v06",
+    "relic:v15",
+    "relic:v24",
+    "relic:v25",
+    "relic:v57"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jezebel",
+   "type": "figure",
+   "label": "Jezebel",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#jezebel",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch58"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jinn",
+   "type": "figure",
+   "label": "The Jinn",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#jinn",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:job",
+   "type": "figure",
+   "label": "Job",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#job",
+   "links": [
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:john-apostle",
+   "type": "figure",
+   "label": "John the Apostle",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#john-apostle",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:john-baptist",
+   "type": "figure",
+   "label": "John the Baptist",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#john-baptist",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch56"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jonah",
+   "type": "figure",
+   "label": "Jonah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#jonah",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:joseph-arimathea",
+   "type": "figure",
+   "label": "Joseph of Arimathea",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#joseph-arimathea",
+   "links": [
+    "chapter:ch16",
+    "relic:v14"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:joseph-patriarch",
+   "type": "figure",
+   "label": "Joseph",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#joseph-patriarch",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:joshua",
+   "type": "figure",
+   "label": "Joshua",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#joshua",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:judah-maccabee",
+   "type": "figure",
+   "label": "Judah Maccabee",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#judah-maccabee",
+   "links": [
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:judas",
+   "type": "figure",
+   "label": "Judas Iscariot",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#judas",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch17",
+    "relic:v40"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:judith",
+   "type": "figure",
+   "label": "Judith",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#judith",
+   "links": [
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:jupiter",
+   "type": "figure",
+   "label": "Jupiter",
+   "parent": "tradition:roman",
+   "href": "pantheon.html#jupiter",
+   "links": [
+    "chapter:ch13"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:kali",
+   "type": "figure",
+   "label": "Kali",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#kali",
+   "links": [
+    "chapter:ch24",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:khadija",
+   "type": "figure",
+   "label": "Khadija",
+   "parent": "tradition:islam",
+   "href": "pantheon.html#khadija",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:kongzi",
+   "type": "figure",
+   "label": "Confucius (Kongzi)",
+   "parent": "tradition:chinese",
+   "href": "pantheon.html#kongzi",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:krishna",
+   "type": "figure",
+   "label": "Krishna",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#krishna",
+   "links": [
+    "chapter:ch30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:kumarbi",
+   "type": "figure",
+   "label": "Kumarbi",
+   "parent": "tradition:anatolia",
+   "href": "pantheon.html#kumarbi",
+   "links": [
+    "chapter:ch46",
+    "chapter:ch57"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:lakshmi",
+   "type": "figure",
+   "label": "Lakshmi",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#lakshmi",
+   "links": [
+    "chapter:ch30",
+    "chapter:ch48",
+    "relic:v63"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:laozi",
+   "type": "figure",
+   "label": "Laozi",
+   "parent": "tradition:chinese",
+   "href": "pantheon.html#laozi",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:lazarus",
+   "type": "figure",
+   "label": "Lazarus",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#lazarus",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:lilith",
+   "type": "figure",
+   "label": "Lilith",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#lilith",
+   "links": [
+    "chapter:ch19",
+    "chapter:ch26",
+    "relic:v67"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:loki",
+   "type": "figure",
+   "label": "Loki",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#loki",
+   "links": [
+    "chapter:ch23"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:lugh",
+   "type": "figure",
+   "label": "Lugh",
+   "parent": "tradition:celtic",
+   "href": "pantheon.html#lugh",
+   "links": [
+    "chapter:ch14"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:maat",
+   "type": "figure",
+   "label": "Ma'at",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#maat",
+   "links": [
+    "chapter:ch02",
+    "relic:v20"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mahavira",
+   "type": "figure",
+   "label": "Mahāvīra",
+   "parent": "tradition:jain",
+   "href": "pantheon.html#mahavira",
+   "links": [
+    "chapter:ch52",
+    "relic:v63"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:maitreya",
+   "type": "figure",
+   "label": "Maitreya",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#maitreya",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch20",
+    "chapter:ch50"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:maize-god",
+   "type": "figure",
+   "label": "The Maize God",
+   "parent": "tradition:maya",
+   "href": "pantheon.html#maize-god",
+   "links": [
+    "chapter:ch29",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mama-quilla",
+   "type": "figure",
+   "label": "Mama Quilla",
+   "parent": "tradition:andean",
+   "href": "pantheon.html#mama-quilla",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:manjushri",
+   "type": "figure",
+   "label": "Mañjuśrī",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#manjushri",
+   "links": [
+    "chapter:ch20",
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mara",
+   "type": "figure",
+   "label": "Māra",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#mara",
+   "links": [
+    "chapter:ch11"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:marduk",
+   "type": "figure",
+   "label": "Marduk",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#marduk",
+   "links": [
+    "chapter:ch03",
+    "chapter:ch46",
+    "relic:v52"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mars",
+   "type": "figure",
+   "label": "Mars",
+   "parent": "tradition:roman",
+   "href": "pantheon.html#mars",
+   "links": [
+    "chapter:ch13"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mary",
+   "type": "figure",
+   "label": "Mary, mother of Jesus",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#mary",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch21",
+    "chapter:ch22",
+    "chapter:ch48",
+    "relic:v13"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mary-magdalene",
+   "type": "figure",
+   "label": "Mary Magdalene",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#mary-magdalene",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch17",
+    "relic:v17"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:maui",
+   "type": "figure",
+   "label": "Māui",
+   "parent": "tradition:oceania",
+   "href": "pantheon.html#maui",
+   "links": [
+    "chapter:ch63"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:metatron",
+   "type": "figure",
+   "label": "Metatron",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#metatron",
+   "links": [
+    "chapter:ch19",
+    "chapter:ch26"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:michael",
+   "type": "figure",
+   "label": "Michael",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#michael",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:miriam",
+   "type": "figure",
+   "label": "Miriam",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#miriam",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mithra",
+   "type": "figure",
+   "label": "Mithra",
+   "parent": "tradition:iran",
+   "href": "pantheon.html#mithra",
+   "links": [
+    "chapter:ch06",
+    "chapter:ch18"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mithras",
+   "type": "figure",
+   "label": "Mithras",
+   "parent": "tradition:roman",
+   "href": "pantheon.html#mithras",
+   "links": [
+    "chapter:ch18"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:mokosh",
+   "type": "figure",
+   "label": "Mokosh",
+   "parent": "tradition:balto",
+   "href": "pantheon.html#mokosh",
+   "links": [
+    "chapter:ch48",
+    "chapter:ch59"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:morrigan",
+   "type": "figure",
+   "label": "The Morrígan",
+   "parent": "tradition:celtic",
+   "href": "pantheon.html#morrigan",
+   "links": [
+    "chapter:ch14"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:moses",
+   "type": "figure",
+   "label": "Moses",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#moses",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10",
+    "chapter:ch19",
+    "chapter:ch21",
+    "relic:v07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:muhammad",
+   "type": "figure",
+   "label": "Muhammad",
+   "parent": "tradition:islam",
+   "href": "pantheon.html#muhammad",
+   "links": [
+    "chapter:ch21",
+    "chapter:ch27",
+    "relic:v26",
+    "relic:v28",
+    "relic:v29"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:noah",
+   "type": "figure",
+   "label": "Noah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#noah",
+   "links": [
+    "chapter:ch01",
+    "chapter:ch07",
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:norns",
+   "type": "figure",
+   "label": "The Norns",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#norns",
+   "links": [
+    "chapter:ch23"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:obatala",
+   "type": "figure",
+   "label": "Ọbàtálá",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#obatala",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:odin",
+   "type": "figure",
+   "label": "Odin",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#odin",
+   "links": [
+    "chapter:ch23",
+    "relic:v36"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ogun",
+   "type": "figure",
+   "label": "Ògún",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#ogun",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:olodumare",
+   "type": "figure",
+   "label": "Olódùmarè",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#olodumare",
+   "links": [
+    "chapter:ch33"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:orpheus",
+   "type": "figure",
+   "label": "Orpheus",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#orpheus",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch18",
+    "chapter:ch47",
+    "relic:v39"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:oshun",
+   "type": "figure",
+   "label": "Ọ̀ṣun",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#oshun",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:osiris",
+   "type": "figure",
+   "label": "Osiris",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#osiris",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47",
+    "relic:v20",
+    "relic:v34"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:pachamama",
+   "type": "figure",
+   "label": "Pachamama",
+   "parent": "tradition:andean",
+   "href": "pantheon.html#pachamama",
+   "links": [
+    "chapter:ch44",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:padmasambhava",
+   "type": "figure",
+   "label": "Padmasambhava",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#padmasambhava",
+   "links": [
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:papa-legba",
+   "type": "figure",
+   "label": "Papa Legba",
+   "parent": "tradition:diaspora",
+   "href": "pantheon.html#papa-legba",
+   "links": [
+    "chapter:ch40",
+    "relic:v77"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:parshvanatha",
+   "type": "figure",
+   "label": "Pārśvanātha",
+   "parent": "tradition:jain",
+   "href": "pantheon.html#parshvanatha",
+   "links": [
+    "chapter:ch52"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:paul",
+   "type": "figure",
+   "label": "Paul",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#paul",
+   "links": [
+    "chapter:ch16"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:pazuzu",
+   "type": "figure",
+   "label": "Pazuzu",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#pazuzu",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:pele",
+   "type": "figure",
+   "label": "Pele",
+   "parent": "tradition:oceania",
+   "href": "pantheon.html#pele",
+   "links": [
+    "chapter:ch63"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:persephone",
+   "type": "figure",
+   "label": "Persephone",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#persephone",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch18",
+    "chapter:ch47"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:perun",
+   "type": "figure",
+   "label": "Perun",
+   "parent": "tradition:balto",
+   "href": "pantheon.html#perun",
+   "links": [
+    "chapter:ch59"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:peter",
+   "type": "figure",
+   "label": "Peter",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#peter",
+   "links": [
+    "chapter:ch16"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:pilate",
+   "type": "figure",
+   "label": "Pontius Pilate",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#pilate",
+   "links": [
+    "chapter:ch13",
+    "chapter:ch16",
+    "relic:v44"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:poseidon",
+   "type": "figure",
+   "label": "Poseidon",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#poseidon",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:prometheus",
+   "type": "figure",
+   "label": "Prometheus",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#prometheus",
+   "links": [
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:queen-of-sheba",
+   "type": "figure",
+   "label": "The Queen of Sheba",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#queen-of-sheba",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch60",
+    "relic:v66"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:quetzalcoatl",
+   "type": "figure",
+   "label": "Quetzalcoatl",
+   "parent": "tradition:aztec",
+   "href": "pantheon.html#quetzalcoatl",
+   "links": [
+    "chapter:ch29",
+    "chapter:ch43",
+    "relic:v41"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ra",
+   "type": "figure",
+   "label": "Ra-Horakhty",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#ra",
+   "links": [
+    "chapter:ch02",
+    "relic:v34"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:rainbow-serpent",
+   "type": "figure",
+   "label": "The Rainbow Serpent",
+   "parent": "tradition:aboriginal",
+   "href": "pantheon.html#rainbow-serpent",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:raphael",
+   "type": "figure",
+   "label": "Raphael",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#raphael",
+   "links": [
+    "chapter:ch10"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:raven",
+   "type": "figure",
+   "label": "Raven",
+   "parent": "tradition:nativena",
+   "href": "pantheon.html#raven",
+   "links": [
+    "chapter:ch62"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:ruth",
+   "type": "figure",
+   "label": "Ruth",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#ruth",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:samson",
+   "type": "figure",
+   "label": "Samson",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#samson",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:samuel",
+   "type": "figure",
+   "label": "Samuel",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#samuel",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:sarah",
+   "type": "figure",
+   "label": "Sarah",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#sarah",
+   "links": [
+    "chapter:ch07"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:saraswati",
+   "type": "figure",
+   "label": "Saraswati",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#saraswati",
+   "links": [
+    "chapter:ch05",
+    "chapter:ch30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:satan",
+   "type": "figure",
+   "label": "Satan",
+   "parent": "tradition:abrahamic",
+   "href": "pantheon.html#satan",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "chapter:ch39",
+    "relic:v74"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:saule",
+   "type": "figure",
+   "label": "Saulė",
+   "parent": "tradition:balto",
+   "href": "pantheon.html#saule",
+   "links": [
+    "chapter:ch59"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:set",
+   "type": "figure",
+   "label": "Set",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#set",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:shamash",
+   "type": "figure",
+   "label": "Shamash / Utu",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#shamash",
+   "links": [
+    "chapter:ch03"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:shangdi",
+   "type": "figure",
+   "label": "Di / Shangdi",
+   "parent": "tradition:chinese",
+   "href": "pantheon.html#shangdi",
+   "links": [
+    "chapter:ch09",
+    "chapter:ch49",
+    "relic:v55"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:shango",
+   "type": "figure",
+   "label": "Ṣàngó",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#shango",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40",
+    "chapter:ch49"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:shiva",
+   "type": "figure",
+   "label": "Shiva",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#shiva",
+   "links": [
+    "chapter:ch24",
+    "chapter:ch30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:sky-woman",
+   "type": "figure",
+   "label": "Sky Woman",
+   "parent": "tradition:nativena",
+   "href": "pantheon.html#sky-woman",
+   "links": [
+    "chapter:ch46",
+    "chapter:ch62"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:solomon",
+   "type": "figure",
+   "label": "Solomon",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#solomon",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch49",
+    "chapter:ch60",
+    "relic:v66"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:sophia",
+   "type": "figure",
+   "label": "Sophia",
+   "parent": "tradition:gnostic",
+   "href": "pantheon.html#sophia",
+   "links": [
+    "chapter:ch17",
+    "chapter:ch45"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:susanoo",
+   "type": "figure",
+   "label": "Susanoo",
+   "parent": "tradition:japanese",
+   "href": "pantheon.html#susanoo",
+   "links": [
+    "chapter:ch25",
+    "relic:v61"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tangaroa",
+   "type": "figure",
+   "label": "Tangaroa",
+   "parent": "tradition:oceania",
+   "href": "pantheon.html#tangaroa",
+   "links": [
+    "chapter:ch46",
+    "chapter:ch63"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tara",
+   "type": "figure",
+   "label": "Tārā",
+   "parent": "tradition:buddhist",
+   "href": "pantheon.html#tara",
+   "links": [
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tarhunna",
+   "type": "figure",
+   "label": "Tarhunna / Teshub",
+   "parent": "tradition:anatolia",
+   "href": "pantheon.html#tarhunna",
+   "links": [
+    "chapter:ch57"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tawus-melek",
+   "type": "figure",
+   "label": "Tawûsê Melek",
+   "parent": "tradition:yazidi",
+   "href": "pantheon.html#tawus-melek",
+   "links": [
+    "chapter:ch56"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tezcatlipoca",
+   "type": "figure",
+   "label": "Tezcatlipoca",
+   "parent": "tradition:aztec",
+   "href": "pantheon.html#tezcatlipoca",
+   "links": [
+    "chapter:ch43",
+    "relic:v41"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:thomas",
+   "type": "figure",
+   "label": "Thomas",
+   "parent": "tradition:nt",
+   "href": "pantheon.html#thomas",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch17"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:thor",
+   "type": "figure",
+   "label": "Thor",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#thor",
+   "links": [
+    "chapter:ch23"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:thoth",
+   "type": "figure",
+   "label": "Thoth",
+   "parent": "tradition:egypt",
+   "href": "pantheon.html#thoth",
+   "links": [
+    "chapter:ch02",
+    "relic:v03",
+    "relic:v20"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tiamat",
+   "type": "figure",
+   "label": "Tiamat",
+   "parent": "tradition:meso",
+   "href": "pantheon.html#tiamat",
+   "links": [
+    "chapter:ch03",
+    "chapter:ch46"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tlaloc",
+   "type": "figure",
+   "label": "Tlaloc",
+   "parent": "tradition:aztec",
+   "href": "pantheon.html#tlaloc",
+   "links": [
+    "chapter:ch43",
+    "relic:v41"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:triple-goddess",
+   "type": "figure",
+   "label": "The Triple Goddess",
+   "parent": "tradition:modern",
+   "href": "pantheon.html#triple-goddess",
+   "links": [
+    "chapter:ch38",
+    "chapter:ch48",
+    "relic:v72"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:tyr",
+   "type": "figure",
+   "label": "Týr",
+   "parent": "tradition:norse",
+   "href": "pantheon.html#tyr",
+   "links": [
+    "chapter:ch23"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:varuna",
+   "type": "figure",
+   "label": "Varuna",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#varuna",
+   "links": [
+    "chapter:ch05"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:veles",
+   "type": "figure",
+   "label": "Veles",
+   "parent": "tradition:balto",
+   "href": "pantheon.html#veles",
+   "links": [
+    "chapter:ch59"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:vesta",
+   "type": "figure",
+   "label": "Vesta",
+   "parent": "tradition:roman",
+   "href": "pantheon.html#vesta",
+   "links": [
+    "chapter:ch13"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:viracocha",
+   "type": "figure",
+   "label": "Viracocha",
+   "parent": "tradition:andean",
+   "href": "pantheon.html#viracocha",
+   "links": [
+    "chapter:ch44",
+    "chapter:ch46",
+    "relic:v65"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:vishnu",
+   "type": "figure",
+   "label": "Vishnu",
+   "parent": "tradition:hindu",
+   "href": "pantheon.html#vishnu",
+   "links": [
+    "chapter:ch30"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:xiwangmu",
+   "type": "figure",
+   "label": "Xiwangmu",
+   "parent": "tradition:chinese",
+   "href": "pantheon.html#xiwangmu",
+   "links": [
+    "chapter:ch12",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:yaldabaoth",
+   "type": "figure",
+   "label": "Yaldabaoth",
+   "parent": "tradition:gnostic",
+   "href": "pantheon.html#yaldabaoth",
+   "links": [
+    "chapter:ch17"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:yemoja",
+   "type": "figure",
+   "label": "Yemọja",
+   "parent": "tradition:yoruba",
+   "href": "pantheon.html#yemoja",
+   "links": [
+    "chapter:ch33",
+    "chapter:ch40",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:yhwh",
+   "type": "figure",
+   "label": "YHWH, the God of Israel",
+   "parent": "tradition:hebrew",
+   "href": "pantheon.html#yhwh",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10",
+    "chapter:ch19",
+    "relic:v12",
+    "relic:v22"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  },
+  {
+   "id": "figure:zeus",
+   "type": "figure",
+   "label": "Zeus",
+   "parent": "tradition:greek",
+   "href": "pantheon.html#zeus",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pantheon-data.js"
+  }
+ ]
+}

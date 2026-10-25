@@ -254,6 +254,76 @@
    "id": "ch71",
    "date": "2026-10-06",
    "note": "Cleared by Carter after the 1993 Dangun tomb source was strengthened (PR #27); page numbers still to confirm"
+  },
+  {
+   "id": "ch45",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch46",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch68",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch70",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch73",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch75",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch76",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch77",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch78",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch79",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch80",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch81",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch82",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch83",
+   "date": "2026-10-11",
+   "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
   }
  ],
  "vault": [
@@ -1689,5 +1759,121 @@
    "date": "2026-09-28",
    "note": "The Pantheon, in the batch approval of 2026-09-28 (backfilled from commit ba6781e)"
   }
- ]
+ ],
+ "reopened": {
+  "chapters": [
+   {
+    "id": "ch45",
+    "date": "2026-09-30",
+    "note": "Back to pending: the full markdown text replaced the condensed live version (status board)"
+   },
+   {
+    "id": "ch46",
+    "date": "2026-09-30",
+    "note": "Back to pending: the full markdown text replaced the condensed live version (status board)"
+   },
+   {
+    "id": "ch68",
+    "date": "2026-10-05",
+    "note": "Back to pending: Carter's ruling on the Wikipedia-replacement sources"
+   },
+   {
+    "id": "ch70",
+    "date": "2026-10-05",
+    "note": "Back to pending: Carter's ruling on the Wikipedia-replacement sources"
+   },
+   {
+    "id": "ch73",
+    "date": "2026-10-05",
+    "note": "Back to pending after the Glückel correction"
+   },
+   {
+    "id": "ch02",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch08",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch11",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch12",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch19",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch20",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch21",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch44",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch47",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch50",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch51",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch52",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch53",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch60",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch61",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch69",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   },
+   {
+    "id": "ch74",
+    "date": "2026-10-11",
+    "note": "Back to pending: new sections from the content-gaps batch (PR #35)"
+   }
+  ],
+  "vault": [],
+  "pantheon": []
+ }
 }

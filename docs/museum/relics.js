@@ -306,7 +306,7 @@ function scroll(o) {
   const m = surface(o.ground || "parchment", px, Math.round(px * H / W), o.paint, { side: THREE.DoubleSide, relief: 1.5, env: o.env });
   const sheet = mesh(new THREE.PlaneGeometry(W, H, 64, 1), m, 0, 0.06); sheet.rotation.x = -Math.PI / 2 + 0.25; root.add(sheet);
   const rollM = plain(o.ground || "parchment", o.env);
-  const mk = () => { const g = new THREE.Group(); g.add(mesh(new THREE.CylinderGeometry(1, 1, H * 0.99, 40), rollM)); if (o.rods) { g.add(mesh(new THREE.CylinderGeometry(0.009, 0.009, H + 0.12, 12), plain("wood"))); [1, -1].forEach((s) => g.add(mesh(new THREE.SphereGeometry(0.02, 14, 10), plain(o.knob || "wood"), 0, s * (H / 2 + 0.06), 0))); } g.rotation.x = Math.PI / 2; g.rotation.z = Math.PI / 2; g.rotation.set(0, 0, Math.PI / 2); root.add(g); return g; };
+  const mk = () => { const g = new THREE.Group(); g.add(mesh(new THREE.CylinderGeometry(1, 1, H * 0.99, 40), rollM)); if (o.rods) { g.add(mesh(new THREE.CylinderGeometry(0.009, 0.009, H + 0.12, 12), plain("wood"))); [1, -1].forEach((s) => g.add(mesh(new THREE.SphereGeometry(0.02, 14, 10), plain(o.knob || "wood"), 0, s * (H / 2 + 0.06), 0))); } g.rotation.set(Math.PI / 2, 0, 0); root.add(g); return g; };   // each roll lies across the scroll (its axis along z), at an end of the unrolled sheet
   const L = mk(), Rr = mk();
   let u = 1, want = 1;
   const r0 = o.r || 0.035;
@@ -324,6 +324,7 @@ function scroll(o) {
   const holder = new THREE.Group(); holder.add(tilt);
   return {
     root: holder, postMeasure() { u = want = o.start || 0; pose(); },
+    len: W, show() { want = 1; },   // the shown length (for guided views along it, rituals.js) and a way to unroll it from outside
     actions: [{ id: "roll", label: "Unroll it", alt: "Roll it up", on: !!o.start }],
     act(id) { if (id !== "roll") return null; want = want ? 0 : 1; return want; },
     update(dt) { if (Math.abs(u - want) > 0.001) { u = ease(u, want, Math.min(1, dt * 2.6)); if (Math.abs(u - want) < 0.002) u = want; pose(); return true; } return false; }
@@ -1126,7 +1127,9 @@ CAT.v12 = (E) => {                                          // the Ketef Hinnom 
   const flat = mesh(new THREE.PlaneGeometry(0.097, 0.027, 24, 1), ag, 0, 0.002, 0.02); flat.rotation.x = -Math.PI / 2; const P = flat.geometry.attributes.position; for (let i = 0; i < P.count; i++) P.setZ(i, Math.sin(P.getX(i) * 90) * 0.0008); root.add(flat);
   return Object.assign({ root, note: "Shown greatly enlarged: the larger amulet is under 10 cm long when unrolled." }, still());
 };
-CAT.v20 = (E) => { const s = scroll({ len: 1.2, h: 0.42, ground: "papyrus", r: 0.05, start: 1, paint: (g, hg, W, H) => {   // the judgment (sheet 3, BM EA 10470/3): the gods seated as judges above; Anubis at the scales, the heart against the feather, Thoth writing, the Devourer waiting
+// V20 shows two sheets side by side, about 66 and 65 cm long (BM EA 10470/3 and /4), so the guided walk-through (rituals.js) can turn from the judgment to Osiris
+CAT.v20 = (E) => { const s = scroll({ len: 1.32, h: 0.42, ground: "papyrus", r: 0.05, start: 1, paint: (g, hg, W2, H) => {   // sheet 3, the judgment: the gods seated as judges above; Ani and Tutu entering, Anubis at the scales, the heart against the feather, Thoth writing, the Devourer waiting behind him
+  const W = W2 / 2;
   write(g, null, [W * 0.02, H * 0.03, W * 0.98, H * 0.12], "hiero", { size: 14, cols: true, ink: "rgba(30,20,10,.85)" });
   for (let k = 0; k < 12; k++) seated(g, W * (0.28 + k * 0.052), H * 0.14, H * 0.17, { left: true, col: ["#3a5aa0", "#c07040", "#3a7a4a", "#b0704a"][k % 4], cloth: "#f4ecd8", throne: "#d8b070" });   // twelve gods seated as judges
   g.fillStyle = "#2a1a10"; g.fillRect(W * 0.26, H * 0.32, W * 0.65, 3);
@@ -1139,8 +1142,31 @@ CAT.v20 = (E) => { const s = scroll({ len: 1.2, h: 0.42, ground: "papyrus", r: 0
   g.fillStyle = "#2a1a10"; g.beginPath(); g.ellipse(W * 0.4, base - fh * 0.98, 14, 18, 0, 0, TAU); g.fill();                   // Thoth's baboon on the post of the scale
   profile(g, W * 0.62, base - fh, fh, { head: "ibis", col: "#3a6a3a", cloth: "#f4ecd8" });
   beast(g, W * 0.8, base - fh * 0.3, fh * 0.6, { col: "#6a8a3a", line: "#2a1a10", mane: true });
-  g.fillStyle = "#2a1a10"; g.fillRect(0, base + 4, W, 4);
-} }); return Object.assign({ root: s.root, note: "One scene of a scroll about 24 metres long, now cut into 37 sheets; the sheets are 42 cm high (the British Museum's records)." }, s); };
+  g.fillStyle = "rgba(90,60,30,.55)"; g.fillRect(W - 1, H * 0.02, 3, H * 0.96);                                                 // the cut between the sheets
+  // sheet 4, the end of the judgment: Horus, son of Isis, takes Ani by the hand and leads him to Osiris, enthroned in a shrine with Isis and Nephthys behind him
+  // (Budge 1895, Plate IV). Simplified: the kneeling Ani, the four sons of Horus on the lotus and the offerings are left out; the columns of writing are illustrative marks
+  g.save(); g.translate(W, 0);
+  write(g, null, [W * 0.02, H * 0.03, W * 0.98, H * 0.12], "hiero", { size: 14, cols: true, ink: "rgba(30,20,10,.85)" });
+  profile(g, W * 0.12, base - fh, fh, { col: "#b0704a", cloth: "#f4ecd8" });                                                       // Ani, led
+  profile(g, W * 0.27, base - fh, fh, { head: "falcon", col: "#b0704a", cloth: "#f4ecd8" });                                        // Horus
+  g.strokeStyle = "#b0704a"; g.lineWidth = fh * 0.05; g.lineCap = "round"; g.beginPath(); g.moveTo(W * 0.155, base - fh * 0.7); g.lineTo(W * 0.235, base - fh * 0.72); g.stroke();   // hand in hand
+  const sx = W * 0.5, sw = W * 0.24, sy = base - fh * 1.2;                                                                          // the shrine, with a cornice
+  g.fillStyle = "#e6d6a6"; g.fillRect(sx, sy, sw, base - sy); g.strokeStyle = "#2a1a10"; g.lineWidth = 3; g.strokeRect(sx, sy, sw, base - sy);
+  for (let i = 0; i < 10; i++) { g.fillStyle = ["#3a6a3a", "#b02a1a", "#3a5aa0"][i % 3]; g.fillRect(sx + i * sw / 10 + 1, sy - 16, sw / 10 - 2, 14); }
+  const oh = fh * 0.85, ox = sx + sw * 0.62, oy = base - oh, k = oh / 10;
+  seated(g, ox, oy, oh, { left: true, col: "#f4ecd8", cloth: "#f4ecd8", throne: "#c8a050", wig: "#f4ecd8" });                       // Osiris, wrapped, facing Ani
+  g.save(); g.translate(ox, oy); g.strokeStyle = "#2a1a10"; g.lineWidth = k * 0.12;
+  g.beginPath(); g.moveTo(-0.55 * k, 1.3 * k); g.quadraticCurveTo(-0.5 * k, -0.6 * k, 0, -1.4 * k); g.quadraticCurveTo(0.5 * k, -0.6 * k, 0.55 * k, 1.3 * k); g.closePath(); g.fillStyle = "#f4ecd8"; g.fill(); g.stroke();   // the atef crown
+  [-1, 1].forEach((d) => { g.beginPath(); g.ellipse(d * 0.75 * k, -0.2 * k, 0.22 * k, 1.3 * k, d * 0.08, 0, TAU); g.fillStyle = "#e0d4b0"; g.fill(); g.stroke(); });   // its two plumes
+  g.lineWidth = k * 0.2; g.lineCap = "round";
+  g.beginPath(); g.moveTo(-1.2 * k, 4.4 * k); g.lineTo(-1.9 * k, 2.6 * k); g.arc(-1.65 * k, 2.6 * k, 0.25 * k, Math.PI, 0); g.stroke();   // crook
+  g.beginPath(); g.moveTo(-1.0 * k, 4.6 * k); g.lineTo(-1.5 * k, 3.0 * k); g.lineTo(-2.2 * k, 3.4 * k); g.moveTo(-1.5 * k, 3.0 * k); g.lineTo(-2.1 * k, 3.8 * k); g.stroke();   // flail
+  g.restore();
+  profile(g, W * 0.81, base - fh * 0.92, fh * 0.92, { left: true, col: "#d8a080", cloth: "#f4ecd8" });                             // Isis and Nephthys, behind him
+  profile(g, W * 0.91, base - fh * 0.92, fh * 0.92, { left: true, col: "#d8a080", cloth: "#f4ecd8" });
+  g.restore();
+  g.fillStyle = "#2a1a10"; g.fillRect(0, base + 4, W2, 4);
+} }); return Object.assign({ root: s.root, note: "Two scenes of a scroll about 24 metres long, now cut into 37 sheets: the judgment (sheet 3) and Ani brought to Osiris (sheet 4), each about 42 cm high and 65 cm long (the British Museum's records)." }, s); };
 CAT.v30 = (E) => { const s = scroll({ len: 1.5, h: 0.27, ground: "paper", r: 0.04, rods: true, start: 1, paint: (g, hg, W, H) => {   // the frontispiece: the Buddha preaching under a canopy, then columns of printed text
   const fw = W * 0.3; g.strokeStyle = "rgba(20,15,10,.9)"; g.lineWidth = 2;
   g.strokeRect(W - fw, H * 0.06, fw - 10, H * 0.88);

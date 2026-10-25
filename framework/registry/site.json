@@ -1,0 +1,924 @@
+{
+ "type": "site",
+ "count": 74,
+ "entities": [
+  {
+   "id": "site:aksum",
+   "type": "site",
+   "label": "Aksum",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch60",
+    "chapter:ch79",
+    "relic:v07",
+    "relic:v66"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:angkor-wat",
+   "type": "site",
+   "label": "Angkor Wat",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch20",
+    "chapter:ch30",
+    "chapter:ch69"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:arcade",
+   "type": "site",
+   "label": "The Archive Arcade",
+   "status": "hidden",
+   "href": "pilgrimage/arcade.html",
+   "from": "docs/pilgrimage/arcade.html"
+  },
+  {
+   "id": "site:azusa-street-mission",
+   "type": "site",
+   "label": "Azusa Street Mission",
+   "era": "09-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch64"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:benin-royal-palace",
+   "type": "site",
+   "label": "Benin royal palace",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch33",
+    "relic:v64"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:bodh-gaya",
+   "type": "site",
+   "label": "Bodh Gaya (Mahabodhi)",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch20",
+    "relic:v27",
+    "relic:v46"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:bois-caiman",
+   "type": "site",
+   "label": "Bois Caïman",
+   "era": "09-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch40",
+    "relic:v77"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:borobudur",
+   "type": "site",
+   "label": "Borobudur",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch20",
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:catalhoyuk",
+   "type": "site",
+   "label": "Çatalhöyük",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch42",
+    "chapter:ch48",
+    "relic:v59"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:chartres-cathedral",
+   "type": "site",
+   "label": "Chartres Cathedral",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch28",
+    "chapter:ch48"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:chauvet",
+   "type": "site",
+   "label": "Chauvet",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch41"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:chichen-itza",
+   "type": "site",
+   "label": "Chichén Itzá",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch29",
+    "relic:v31"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:church-of-the-holy-sepulchre",
+   "type": "site",
+   "label": "Church of the Holy Sepulchre",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch22",
+    "chapter:ch60",
+    "relic:v05",
+    "relic:v15"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:coricancha-cusco",
+   "type": "site",
+   "label": "Coricancha, Cusco",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch44"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:delphi",
+   "type": "site",
+   "label": "Delphi",
+   "era": "03-early-iron-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch15",
+    "relic:v39"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:dome-of-the-rock",
+   "type": "site",
+   "label": "Dome of the Rock",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:drakensberg-rock-art",
+   "type": "site",
+   "label": "Drakensberg rock art",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch66"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:eleusis",
+   "type": "site",
+   "label": "Eleusis",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch18",
+    "relic:v39"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:fatehpur-sikri",
+   "type": "site",
+   "label": "Fatehpur Sikri",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch82"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:garden-tomb",
+   "type": "site",
+   "label": "Garden Tomb",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch31"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:gobekli-tepe",
+   "type": "site",
+   "label": "Göbekli Tepe",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch41",
+    "chapter:ch42",
+    "relic:v60"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:golden-temple",
+   "type": "site",
+   "label": "Golden Temple (Harmandir Sahib)",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch34",
+    "relic:v33"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:golgotha-and-the-tomb",
+   "type": "site",
+   "label": "Golgotha and the Tomb, c. 30 CE",
+   "era": "05-late-antiquity",
+   "status": "preview",
+   "href": "pilgrimage/golgotha-and-the-tomb.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "relic:v15"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:great-bath-mohenjo-daro",
+   "type": "site",
+   "label": "Great Bath, Mohenjo-daro",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch04"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:great-mosque-of-cordoba",
+   "type": "site",
+   "label": "Great Mosque of Córdoba",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch21"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:great-pyramid",
+   "type": "site",
+   "label": "The Great Pyramid of Khufu",
+   "era": "02-bronze-age",
+   "status": "live",
+   "href": "pilgrimage/great-pyramid.html",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47",
+    "chapter:ch49",
+    "relic:v20",
+    "relic:v34"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:great-stupa-at-sanchi",
+   "type": "site",
+   "label": "Great Stupa at Sanchi",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch11",
+    "chapter:ch20",
+    "relic:v46"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:hagia-sophia",
+   "type": "site",
+   "label": "Hagia Sophia",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch21",
+    "chapter:ch22",
+    "chapter:ch60",
+    "relic:v57"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:hattusa",
+   "type": "site",
+   "label": "Hattusa",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch57"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:herod-s-temple",
+   "type": "site",
+   "label": "Herod's Temple",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "chapter:ch19",
+    "relic:v44"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:hill-cumorah",
+   "type": "site",
+   "label": "Hill Cumorah",
+   "era": "09-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch35",
+    "relic:v75"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:ise-grand-shrine",
+   "type": "site",
+   "label": "Ise Grand Shrine",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch25",
+    "relic:v61"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:jokhang-temple",
+   "type": "site",
+   "label": "Jokhang Temple",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch53"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:kaaba",
+   "type": "site",
+   "label": "Kaaba",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch21",
+    "chapter:ch70",
+    "relic:v26"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:kailasa-temple-ellora",
+   "type": "site",
+   "label": "Kailasa Temple, Ellora",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch24",
+    "chapter:ch30",
+    "chapter:ch69"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:karnak",
+   "type": "site",
+   "label": "Karnak",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch49",
+    "relic:v43"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:knossos",
+   "type": "site",
+   "label": "Knossos",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch67",
+    "relic:v56"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:la-venta",
+   "type": "site",
+   "label": "La Venta",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch76"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:lalibela",
+   "type": "site",
+   "label": "Lalibela",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch60",
+    "chapter:ch79",
+    "relic:v66"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:lascaux",
+   "type": "site",
+   "label": "Lascaux",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch41"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:library-of-alexandria",
+   "type": "site",
+   "label": "Library of Alexandria",
+   "era": "04-axial-age",
+   "status": "live",
+   "href": "pilgrimage/library-of-alexandria.html",
+   "links": [
+    "chapter:ch15",
+    "chapter:ch17",
+    "relic:v53"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:lily-dale",
+   "type": "site",
+   "label": "Lily Dale",
+   "era": "09-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch36"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:lindisfarne",
+   "type": "site",
+   "label": "Lindisfarne",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch14",
+    "chapter:ch22",
+    "relic:v42"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:machu-picchu",
+   "type": "site",
+   "label": "Machu Picchu",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch44",
+    "relic:v62"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:meroe-pyramids",
+   "type": "site",
+   "label": "Meroë pyramids",
+   "era": "03-early-iron-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch68"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:mithraeum-under-san-clemente",
+   "type": "site",
+   "label": "Mithraeum under San Clemente",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch18"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:mogao-caves",
+   "type": "site",
+   "label": "Mogao Caves",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch20",
+    "chapter:ch53",
+    "chapter:ch54",
+    "relic:v30"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:montsegur",
+   "type": "site",
+   "label": "Montségur",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch72"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:mount-ararat-the-ark-tradition",
+   "type": "site",
+   "label": "Mount Ararat & the Ark tradition",
+   "status": "preview",
+   "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:mount-olympus",
+   "type": "site",
+   "label": "Mount Olympus",
+   "era": "03-early-iron-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch08",
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:newgrange",
+   "type": "site",
+   "label": "Newgrange",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:notre-dame-de-paris",
+   "type": "site",
+   "label": "Notre-Dame de Paris",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch28",
+    "relic:v06"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:pantheon",
+   "type": "site",
+   "label": "Pantheon (Rome)",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch13"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:parthenon",
+   "type": "site",
+   "label": "Parthenon",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch15"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:persepolis",
+   "type": "site",
+   "label": "Persepolis",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch06",
+    "chapter:ch49",
+    "relic:v35",
+    "relic:v54"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:petra",
+   "type": "site",
+   "label": "Petra",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch70"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:qumran-caves",
+   "type": "site",
+   "label": "Qumran caves",
+   "era": "04-axial-age",
+   "status": "live",
+   "href": "pilgrimage/qumran-caves.html",
+   "links": [
+    "chapter:ch10",
+    "chapter:ch16",
+    "chapter:ch17",
+    "chapter:ch19",
+    "chapter:ch50",
+    "relic:v02",
+    "relic:v10",
+    "relic:v48",
+    "relic:v49"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:roman-catacombs",
+   "type": "site",
+   "label": "Roman catacombs",
+   "era": "05-late-antiquity",
+   "status": "queued",
+   "links": [
+    "chapter:ch16",
+    "chapter:ch22",
+    "relic:v84"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:shrine-of-the-bab",
+   "type": "site",
+   "label": "Shrine of the Báb",
+   "era": "09-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch65",
+    "relic:v76"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:sistine-chapel-the-vatican",
+   "type": "site",
+   "label": "Sistine Chapel & the Vatican",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch28",
+    "chapter:ch31",
+    "relic:v41",
+    "relic:v57",
+    "relic:v87"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:solomon-s-temple",
+   "type": "site",
+   "label": "Solomon's Temple",
+   "era": "03-early-iron-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch07",
+    "chapter:ch10",
+    "chapter:ch19",
+    "relic:v07",
+    "relic:v12",
+    "relic:v23"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:st-peter-s-basilica",
+   "type": "site",
+   "label": "St. Peter's Basilica",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch22",
+    "chapter:ch31",
+    "relic:v05",
+    "relic:v25"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:stonehenge",
+   "type": "site",
+   "label": "Stonehenge",
+   "era": "01-prehistory",
+   "status": "preview",
+   "href": "pilgrimage/stonehenge.html",
+   "links": [
+    "chapter:ch42",
+    "relic:v45"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:taj-mahal",
+   "type": "site",
+   "label": "Taj Mahal",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch27",
+    "chapter:ch82"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:tarquinia-etruscan-tombs",
+   "type": "site",
+   "label": "Tarquinia Etruscan tombs",
+   "era": "03-early-iron-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch77"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:temple-of-confucius-qufu",
+   "type": "site",
+   "label": "Temple of Confucius, Qufu",
+   "era": "04-axial-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch12"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:templo-mayor",
+   "type": "site",
+   "label": "Templo Mayor",
+   "era": "07-high-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch43",
+    "relic:v41",
+    "relic:v51",
+    "relic:v83"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:tomb-of-nefertari",
+   "type": "site",
+   "label": "Tomb of Nefertari (QV66)",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47",
+    "relic:v20"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:tomb-of-tutankhamun",
+   "type": "site",
+   "label": "Tomb of Tutankhamun (KV62)",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch02",
+    "chapter:ch47",
+    "relic:v20"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:uluru",
+   "type": "site",
+   "label": "Uluru",
+   "era": "01-prehistory",
+   "status": "queued",
+   "links": [
+    "chapter:ch61"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:uppsala-temple",
+   "type": "site",
+   "label": "Uppsala temple",
+   "era": "06-early-medieval",
+   "status": "queued",
+   "links": [
+    "chapter:ch23",
+    "relic:v36"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:wittenberg-castle-church",
+   "type": "site",
+   "label": "Wittenberg Castle Church",
+   "era": "08-early-modern",
+   "status": "queued",
+   "links": [
+    "chapter:ch31"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:yinxu-at-anyang",
+   "type": "site",
+   "label": "Yinxu at Anyang",
+   "era": "03-early-iron-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch09",
+    "chapter:ch49",
+    "relic:v55"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  },
+  {
+   "id": "site:ziggurat-of-ur",
+   "type": "site",
+   "label": "Ziggurat of Ur",
+   "era": "02-bronze-age",
+   "status": "queued",
+   "links": [
+    "chapter:ch03",
+    "relic:v52"
+   ],
+   "from": "docs/assets/pilgrimage-data.js"
+  }
+ ]
+}

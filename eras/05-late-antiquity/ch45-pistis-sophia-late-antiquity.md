@@ -2,7 +2,6 @@
 
 *Tradition chapter · Era 05 — Late Antiquity · revised 2026-09-30 (full text published), pending review*
 
-*Recently added — pending full review.*
 
 ---
 
@@ -15,7 +14,7 @@ manuscripts, bought from a bookseller a heavy parchment codex written in a langu
 England could read: **Coptic**, the last stage of the Egyptian tongue, set down in Greek
 letters. When Askew died the volume passed to his heirs, and in **1785 the British Museum
 purchased it**, where it sits today as **MS Additional 5114** — the manuscript scholars call
-the **Askew Codex**. It is a fat book of roughly **three hundred and fifty leaves** in the
+the **Askew Codex**. It is a fat book of **178 parchment leaves (356 pages)** in the
 **Sahidic** dialect, and it contains the single most complete Gnostic scripture that survived
 the fall of the ancient Gnostic churches: the work we now call the **Pistis Sophia**.
 
@@ -37,9 +36,11 @@ heroine and stuck to the whole. It is not one seamless composition. Scholars hav
 that the book is a **compilation**: episodes repeat, the setting shifts, names are used
 inconsistently, and the work divides into **four "books"** (the divisions are editorial, and
 Mead's popular translation even splits the material into more) that were plainly not written at
-one sitting. The consensus is that the surviving Coptic is a **translation from a lost Greek
-original**, and that the material was assembled in **Egypt** somewhere across the **third and
-fourth centuries CE** — with the fourth book generally judged the **oldest and most archaic**
+one sitting. Scholars agree that the surviving Coptic is a **translation from a lost Greek
+original** made in **Egypt**; its date is less certain. Proposals for the composition run from
+the **second to the fourth century CE** (the NASSCAL e-Clavis gives the second and third
+centuries and dates the manuscript about 250–300; the British Library catalogues the codex more
+broadly) — with the fourth book generally judged the **oldest and most archaic**
 layer, closer in feel to the ritual handbooks of the Bruce Codex, and the long first section
 the most developed.
 
@@ -102,16 +103,16 @@ The disciples, above all **Mary Magdalene**, question him at every step about wh
 ## Mary Magdalene, and the quarrel over who may speak
 
 The Pistis Sophia is one of the ancient world's most striking documents of a **woman as the
-foremost disciple**. Of the roughly **forty-six** questions the disciples put to Jesus across
-the book, **Mary Magdalene asks the great majority** — more than all the male disciples
-together. She interprets the repentances, presses the hardest questions, and Jesus praises her
+foremost disciple**. Most of the disciples' questions across the book are asked by **Mary**,
+usually taken to be **Mary Magdalene** (the text sometimes leaves it unclear which Mary is meant),
+more than all the male disciples together. She interprets the repentances, presses the hardest questions, and Jesus praises her
 repeatedly, calling her blessed, "**pure spiritual one**," and the one "**whose heart is
 directed to the Kingdom of Heaven** more than all thy brethren."
 
 That prominence provokes a famous flash of conflict. **Peter** complains that Mary dominates
-the conversation and **will not let the men speak**: "My Lord, we cannot endure this woman who
+the conversation and **will not let the men speak**: "My Lord, we will not endure this woman, for she
 taketh the opportunity from us and hath let none of us speak, but she discourseth many times."
-Later Mary confesses to Jesus that she is **afraid of Peter**, "because he threateneth me and
+Later Mary confesses to Jesus that she is **afraid of Peter**, "because he threatened me and
 hateth our sex." Jesus overrules him: **whoever is filled with the spirit of light** may come
 forward and speak, "and no one shall be able to prevent" them. Set beside the similar friction
 in the **Gospel of Mary** and the **Gospel of Thomas**, this scene has become central to the
@@ -169,7 +170,7 @@ To the community that treasured it, the Pistis Sophia was not a story about the 
 
 ## The skeptical lens
 
-The historian reads the Pistis Sophia as a **Coptic translation of a lost Greek compilation**, assembled in **Egypt** in roughly the **third and fourth centuries CE**, and preserved in a single manuscript, the **Askew Codex** in the British Library. Its setting, the risen Jesus teaching for years after Easter, is a recognised **genre** of revelation dialogue, which puts new doctrine in the mouth of Christ; the book is evidence for what a Gnostic community believed, not for what the historical Jesus said. Its four "books" appear to be layers of different age, the fourth usually judged the oldest, and it reuses the **Psalms** and the **Odes of Solomon** as scripture for its own myth. Who produced it (Sethian, Barbeloite, Valentinian-adjacent or a school of its own) is unresolved, and how its rites were actually performed is largely inferred. The Peter–Mary quarrel is textually explicit and important for the history of early Christian women, but it tells us about debates in the author's time, not about the first disciples.
+The historian reads the Pistis Sophia as a **Coptic translation of a lost Greek compilation**, assembled in **Egypt** sometime between the **second and fourth centuries CE** (the date is debated), and preserved in a single manuscript, the **Askew Codex** in the British Library. Its setting, the risen Jesus teaching for years after Easter, is a recognised **genre** of revelation dialogue, which puts new doctrine in the mouth of Christ; the book is evidence for what a Gnostic community believed, not for what the historical Jesus said. Its four "books" appear to be layers of different age, the fourth usually judged the oldest, and it reuses the **Psalms** and the **Odes of Solomon** as scripture for its own myth. Who produced it (Sethian, Barbeloite, Valentinian-adjacent or a school of its own) is unresolved, and how its rites were actually performed is largely inferred. The Peter–Mary quarrel is textually explicit and important for the history of early Christian women, but it tells us about debates in the author's time, not about the first disciples.
 
 ## Symbology and sacred encoding
 
@@ -236,11 +237,11 @@ late-antique Egypt and one on the séance-era bookshelf, and that the two must n
 **What's well supported by the evidence**
 
 - The **manuscript** is real and well documented: the **Askew Codex** (British Library **MS
-  Add. 5114**), a Coptic **Sahidic** parchment codex of some 350 leaves, bought by Dr. Anthony
+  Add. 5114**), a Coptic **Sahidic** parchment codex of 178 leaves (356 pages), bought by Dr. Anthony
   Askew around 1772 and acquired by the British Museum in **1785**; it contains the **Pistis
   Sophia** and a short untitled second text.
 - The text is a **compilation** in (editorially) **four books**, a **Coptic translation of a
-  lost Greek original**, assembled in **Egypt** across roughly the **3rd–4th centuries CE**, with
+  lost Greek original**, assembled in **Egypt** sometime in the **2nd–4th centuries CE** (the date is debated), with
   the fourth book usually judged the **oldest** layer; its own running title is "**the Books of
   the Saviour**," and it **names the Books of Jeu**, which are generally thought earlier.
 - Its **content** as described: the frame of the risen Jesus after **eleven years**, the myth of
@@ -259,7 +260,7 @@ late-antique Egypt and one on the séance-era bookshelf, and that the two must n
 **What's not supported by the evidence**
 
 - That the Pistis Sophia records the **actual post-resurrection teaching of the historical
-  Jesus**. It is a **3rd–4th-century** revelation-dialogue, a genre that puts new teaching in the
+  Jesus**. It is a **2nd–4th-century** revelation-dialogue, a genre that puts new teaching in the
   mouth of the risen Christ; it is a witness to **later Gnostic belief**, not to the events it
   narrates.
 - The common confusion that it is a **Nag Hammadi** text or part of the **Bruce Codex**. It is
@@ -298,7 +299,8 @@ late-antique Egypt and one on the séance-era bookshelf, and that the two must n
 - [Lexham Bible Dictionary: Askew Codex](https://biblia.com/books/lbd/word/Askew_Codex).
 
 *Contents, the Sophia myth, and Mary Magdalene*
-- [Pistis Sophia (G. R. S. Mead translation), Project Gutenberg](https://gutenberg.org/files/76266/76266-h/76266-h.htm)
+- [Pistis Sophia, trans. G. Horner, intro. F. Legge (London: SPCK, 1924), Project Gutenberg](https://gutenberg.org/files/76266/76266-h/76266-h.htm)
+- [Pistis Sophia, trans. G. R. S. Mead (rev. ed. 1921), sacred-texts.com](https://sacred-texts.com/chr/ps/) — the translation the quotations follow (chs. 36 and 72: https://sacred-texts.com/chr/ps/ps040.htm , https://sacred-texts.com/chr/ps/ps077.htm ); Mead's introduction for the codex's 178 leaves and Schmidt's view of Book 4 as the older stratum (https://sacred-texts.com/chr/ps/ps003.htm ).
   — the full English text (the thirteen repentances, the mysteries, the cup of forgetfulness, the
   fire-offering of Book 4, the Peter–Mary exchange).
 - [The Gnostic Society Library: Pistis Sophia (Mead), Introduction and text](http://www.gnosis.org/library/pistis-sophia/pistis-sophia.htm).

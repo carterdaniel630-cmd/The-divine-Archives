@@ -35,3 +35,13 @@ educational emphasis on how Greek religion actually worked (orthopraxy, not cree
 on how we know it (Linear B, comparative myth, oral-formulaic analysis). Classical
 Greek philosophy, tragedy, and the full flowering of the mysteries are deliberately
 reserved for the Axial Age chapter in the next era.
+
+## 2026-10-10 depth additions (content-gaps batch)
+
+New section **"The Homeric Hymns"** (see `plans/content-gaps.md`). Sources, each confirmed via search results (catalogue, publisher or institutional records; most full texts could not be opened from this session):
+- The Homeric Hymns and the *Hymn to Demeter* — M. L. West (ed. and trans.), *Homeric Hymns, Homeric Apocrypha, Lives of Homer*, Loeb Classical Library 496 (Cambridge, MA: Harvard University Press, 2003). https://bmcr.brynmawr.edu/?p=23371 (review, *Bryn Mawr Classical Review* 2003.07.36) ; H. G. Evelyn-White (trans.), *Hesiod, the Homeric Hymns and Homerica* (Loeb, 1914), public domain, at Project Gutenberg. https://www.gutenberg.org/ebooks/348
+- The Moscow manuscript and its discovery in 1777 — LibreTexts, *Temples of the Gods: An Introduction to Classical Mythology*, "The Homeric Hymn to Demeter." https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter ; Oliver Thomas, "Manuscript Readings in the Homeric Hymn to Demeter 389–479," *Mnemosyne* 68, no. 3 (2015) (the manuscript's "discovery by C.F. von Matthaei in Moscow in 1777"). https://doi.org/10.1163/1568525X-12341719
+
+The chapter goes back to pending review because of these additions.
+
+- **2026-10-11, merge review:** the cited LibreTexts page says only that the manuscript was "discovered by Matthiae at Moscow"; it gives no date and no barn. The unconfirmed "in a barn outside Moscow" detail is cut to "in Moscow", and Thomas, *Mnemosyne* 68.3 (2015), is added for the 1777 date (author's accepted manuscript read at https://nottingham-repository.worktribe.com/OutputFile/750986 ). ch08 stays pending.
