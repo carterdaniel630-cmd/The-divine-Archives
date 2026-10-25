@@ -260,6 +260,14 @@
 .rq-btn:hover { color:var(--parchment); border-color:var(--gold); }
 .rq-btn:focus-visible { outline:2px solid var(--gold-bright); outline-offset:2px; }
 .rq-btn[disabled] { opacity:.45; cursor:not-allowed; }
+/* touch screens: the shared game buttons reach the 44px tap guide. Text buttons and the start-screen menus grow
+   to 44px tall (buttons centre their label, so they read the same); the small square Close and Full-screen
+   buttons keep their look and take the touch through an invisible 44px layer centred on each */
+@media (pointer:coarse) {
+  .rq-btn, .rq-form select { min-height:44px; }
+  .game-dialog .game-close::before, .game-dialog .game-fs::before { content:""; position:absolute; left:50%; top:50%;
+    width:max(100%, 44px); height:44px; transform:translate(-50%,-50%); }
+}
 .rq-primary { color:var(--ground); background:linear-gradient(var(--gold-bright),var(--gold)); border-color:var(--gold); font-weight:600; }
 .rq-primary:hover { color:var(--ground); filter:brightness(1.06); }
 .rq-note { text-align:center; color:var(--ink-faint); font-family:var(--font-body); font-size:.82rem; margin:.6rem 0 0; }
