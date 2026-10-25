@@ -32,6 +32,8 @@
   // for reduced motion there is no screen shake and only a faint flash (same rule as feel.js).
   var RMQ = null;
   try { RMQ = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null; } catch (e) { RMQ = null; }
+  // a touch screen with no mouse (the same test that hides the keyboard legend): tips name the on-screen buttons, not keys
+  function onTouch() { try { return !!window.matchMedia && !window.matchMedia("(hover: hover) and (pointer: fine)").matches; } catch (e) { return false; } }
   function reducedMotion() { return !!(RMQ && RMQ.matches); }
   var AG = window.ArchiveGames;
   if (!AG) return;
@@ -111,7 +113,7 @@
         B.gate(98, 4, 9); B.gate(119, 4, 9);
         // --- things
         B.start(2);
-        B.hint(2, "← → run · ↑ or Space jumps (hold for height) · J or X cracks the whip.");
+        B.hint(2, "← → run · ↑ or Space jumps (hold for height) · J or X cracks the whip.", "◀ ▶ run · A jumps (hold for height) · B cracks the whip.");
         B.tree(1, 1.05); B.tree(8, 0.9); B.tree(15, 1.1); B.tree(24, 0.95); B.plant(5); B.plant(11); B.plant(21); B.plant(27);
         B.statue(26, "obelisk");
         B.gems(6, 8, 8); B.foe("cobra", 10); B.relic(21, 5); B.foe("scorpion", 24, { range: [23, 28] });
@@ -254,7 +256,7 @@
       dark: function (c0, c1) { E.dark.push([c0, c1]); },
       start: function (cc) { E.start = cc; },
       exit: function (cc, rr) { pending.push(function () { E.exit = { c: cc, r: sr(cc, rr) }; }); },
-      hint: function (cc, text) { E.hints.push({ c: cc, text: text, shown: false }); },
+      hint: function (cc, text, touchText) { E.hints.push({ c: cc, text: text, touch: touchText || null, shown: false }); },
       tree: function (cc, s) { E.trees.push({ c: cc, s: s || 1 }); },
       plant: function (cc) { E.plants.push({ c: cc }); },
       vine: function (cc, r0, len) { E.vines.push({ c: cc, r0: r0, len: len }); },
@@ -691,7 +693,7 @@
       st.gems.forEach(function (g) { if (!g.got && Math.abs(g.x - p.x) < 12 && Math.abs(g.y - p.y) < 16) { g.got = true; run.score += 10; spark(g.x, g.y, 3); SFX.play("gem"); } });
       st.canteens.forEach(function (k) { if (!k.got && Math.abs(k.x - p.x) < 12 && Math.abs(k.y - p.y) < 18) { k.got = true; st.hearts = Math.min(MAXHEARTS, st.hearts + 1); run.hearts = st.hearts; toast("<strong>Water.</strong> A canteen left by the last expedition — one heart back."); sparkle(k.x, k.y); SFX.play("canteen"); } });
       st.checks.forEach(function (k) { if (!k.on && Math.abs(k.x - p.x) < 18 && Math.abs(k.y - (p.y + p.hh)) < 30) { st.checks.forEach(function (o) { if (o.x < k.x) o.on = true; }); k.on = true; sparkle(k.x, k.y - 20); SFX.play("check"); } });
-      st.lv.E.hints.forEach(function (h) { if (!h.shown && p.x > h.c * TILE) { h.shown = true; toast(h.text); } });
+      st.lv.E.hints.forEach(function (h) { if (!h.shown && p.x > h.c * TILE) { h.shown = true; toast(h.touch && onTouch() ? h.touch : h.text); } });
       st.lv.E.levers.forEach(function (lv) { if (!lv.on && Math.abs(p.x - (lv.c * TILE + 12)) < 14 && Math.abs(p.y - (lv.r * TILE + 12)) < 18) { lv.on = true; SFX.play("lever"); toast("<strong>Clack.</strong> The lever drops."); } });
       // glyph floors: register the sign you step onto
       var onT = -1, gs = null;
