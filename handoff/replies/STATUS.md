@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~10:20 UTC (build loop, PR #80 build run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~10:10 UTC (build loop, PR #80 independent-review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,7 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~10:10: PR #80 independently reviewed, 0 open findings (`2026-10-25-pr80-independent-review.md`); #79 Lighthouse confirmed green (all 6 checks).
 - 2026-10-25 ~09:51–10:20: **PR #80 built: Reliquary start-screen dropdowns no longer run past the dialog on upright
   phones 461–484 px wide** (Next 10, live defect, value 3). First checked #79's Lighthouse (Next 4f): still running
   after 25 min, so not waited on. Cause: `1fr` grid columns can't shrink below the longest option text. CSS only,
@@ -342,13 +343,13 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    in Needs Carter). If Carter says yes, a run that wrote none of it merges it once all checks are green; it is off
    `main` `c957af5` and touches no file of #75/#76/#77, so it can go before or after them (bring up to `main` if needed).
 4f. **PR #79 (Journal on narrow upright phones; full-screen spoken name; live defects, value 3):** built 2026-10-25
-   (`3018cdd`, off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:00: 0 open findings.** GitHub 5/6 green;
-   **next run: confirm Lighthouse finished green on `3018cdd`** (re-run once if cancelled/failed-before-tests), then put
-   the yes/no to Carter alongside #78. Shares `games.css` with #78 (trial merge clean). Still running at 10:15 (checked
-   twice this run, not waited on).
+   (`3018cdd`, off `main` `c957af5`), **independently reviewed (0 open findings)**, **all 6 GitHub checks green incl.
+   Lighthouse (09:58).** Missing only: Carter's yes (asked now, in Needs Carter). Shares `games.css` with #78/#80 (trial
+   merges clean); off `main`, touches no file of #75/#76/#77.
 4g. **PR #80 (Reliquary dropdowns past the dialog at 461–484 px; live defect, value 3):** built 2026-10-25 (`c9408a0`,
-   off `main` `c957af5`). **Next: independent review** by a run that wrote none of it, all checks incl. Lighthouse,
-   then the yes/no to Carter batched with #78/#79. Shares `games.css` with #78/#79 (trial merges clean).
+   off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`;
+   defect reproduced on `main` at 461–480 px, gone on #80). GitHub 4/6 green; **next run: confirm Lighthouse and the second
+   runtime run finished green on `c9408a0`** (re-run once if cancelled/failed before tests). Carter's yes asked now with #78/#79.
 10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
@@ -364,9 +365,12 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **PR #78 (Journal: on a phone held sideways, the Sound button sits under the ✕): yes/no to go live.** Passed
-  independent review (0 findings); all 6 GitHub checks green incl. Lighthouse (08:10). A yes lets the loop
-  merge it. Recommendation: yes.
+- **Three small phone fixes for the games, each yes/no to go live** (all passed independent review, 0 findings; each
+  touches only the game styling; recommendation: yes to all three):
+  - **PR #78** Journal, phone held sideways: the Sound button no longer sits under the ✕. All checks green.
+  - **PR #79** Journal, narrow upright phones: stats and controls fit; the full-screen button keeps its spoken name. All checks green.
+  - **PR #80** Reliquary: on phones 461–484 px wide the setup dropdowns no longer stick out past the box. Last speed check still running.
+  A yes for any of them lets the loop put it live (after its checks are all green).
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
   buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).

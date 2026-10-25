@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 08:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
+**As of:** 2026-10-25 10:10 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -34,6 +34,17 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   **Independent review 2026-10-25 08:10: 0 open findings** (`2026-10-25-pr78-independent-review.md`; GitHub 5/6 green then).
   **All 6 GitHub checks green on `42e0a6a` incl. Lighthouse (08:10).** Missing only: Carter's yes for this item.
 
+- **Journal on narrow upright phones + full-screen button name** (PR #79, `loop/journal-phone-320` @ `3018cdd`, off `main`
+  `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr79-journal-phone-320.md`). Local checks green.
+  **Independent review 2026-10-25 ~10:00: 0 open findings** (`2026-10-25-pr79-independent-review.md`).
+  **All 6 GitHub checks green on `3018cdd` incl. Lighthouse (09:58).** Missing only: Carter's yes for this item.
+  Merges cleanly with #78 (trial merge).
+
+- **Reliquary dropdowns inside the dialog on 461–484 px phones** (PR #80, `loop/reliquary-phone-480` @ `c9408a0`, off
+  `main` `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr80-reliquary-phone-480.md`). Local checks green.
+  **Independent review 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`). GitHub 4/6 green
+  at review; **Lighthouse and one runtime run still running.** Missing: those green, then Carter's yes for this item.
+
 ## Merged
 - Site fixes 2026-10-18 (PR #67): merged 2026-10-25 02:17 UTC by fast-forward `efba79c` → `c957af5`, deploy run 201 green (Carter's yes `decisions-2026-10-24-batch-six.md` 1; review `2026-10-24-pr67-independent-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr67-merged.md`).
 - Tjurunga takedown (PR #73): merged 2026-10-25 01:43 UTC by fast-forward `6c81a84` → `efba79c`, deploy run 200 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; reviews `2026-10-24-pr73-independent-review.md`, `2026-10-24-pr73-re-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr73-merged.md`).
@@ -46,12 +57,6 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Site batch B (PR #63): merged 2026-10-18 16:51 UTC by fast-forward to `c205f4c`, deploy green (`2026-10-18-batch-b-update-review-and-merge.md`).
 - Museum phone speed (PR #62): merged 2026-10-18 12:35 UTC by fast-forward to `0585c80`, deploy green.
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
-
-- **Journal on narrow upright phones + full-screen button name** (PR #79, `loop/journal-phone-320` @ `3018cdd`, off `main`
-  `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr79-journal-phone-320.md`). Local checks green.
-  **Independent review 2026-10-25 ~10:00: 0 open findings** (`2026-10-25-pr79-independent-review.md`). GitHub 5/6 green;
-  **Lighthouse still running** at review time. Missing: Lighthouse green, then Carter's yes for this item. Merges
-  cleanly with #78 (trial merge).
 
 ## Not ready (in progress or waiting on a ruling)
 - Treaty of Kadesh tablet (relic 1 of 4): rebuilt 2026-10-19 as a preview in `handoff/previews/treaty-of-kadesh/`
