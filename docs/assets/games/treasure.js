@@ -40,16 +40,16 @@
 
   var SCRIPT_DIR = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "assets/games/";
   var DATA_URL = SCRIPT_DIR + "data/treasure.json";
-  // the explorer: painted cut-out parts sliced from the character turnaround sheet
-  // (art-source/tomb-robber/), hinged at hip and knee so the legs actually run and tuck.
+  // the hero, "The Archivist": painted cut-out parts sliced from Carter's approved hooded character sheet
+  // (art-source/archivist/, cut by cut.py), hinged at hip and knee so the legs actually run and tuck.
   var ART_BASE = SCRIPT_DIR + "art/treasure/";
   var ART = { ready: false, man: null, img: {} };
   function loadArt() {
     if (ART.man) return;
     ART.man = {};
-    fetch(ART_BASE + "manifest.json?v=1").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
+    fetch(ART_BASE + "manifest.json?v=2").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
       if (!m) return; var names = ["body", "thigh", "shin"], left = names.length;
-      names.forEach(function (n) { var im = new Image(); im.onload = function () { ART.img[n] = im; if (--left === 0) { ART.man = m; ART.ready = true; } }; im.src = ART_BASE + n + ".png?v=1"; });
+      names.forEach(function (n) { var im = new Image(); im.onload = function () { ART.img[n] = im; if (--left === 0) { ART.man = m; ART.ready = true; } }; im.src = ART_BASE + n + ".png?v=2"; });
     }).catch(function () {});
   }
   var DATA = null, loadingPromise = null;
@@ -1488,15 +1488,16 @@
       leg(tB, kB, true);   // back leg recedes: a darkened copy made once (speed fix #4; a per-frame filter was costly)
       leg(tF, kF);
       cx.drawImage(I.body, -M.body.pivotX, -M.body.pivotY);
-      // the whip arm: a raised sleeve and fist while lashing or holding the rope
+      // the line arm: a raised coat sleeve and hand while casting or holding the rope (sizes from the manifest)
       var hand = null;
       if (p.whip || p.swing) {
-        var sh = { x: 12, y: -228 }, a = p.swing ? -1.75 : (p.whip.up ? -1.35 : -0.25 - (p.whip.t < 0.1 ? 1.1 * (1 - p.whip.t / 0.1) : 0));
-        var hx = sh.x + Math.cos(a) * 150, hy = sh.y + Math.sin(a) * 150;
-        cx.strokeStyle = "#3e2616"; cx.lineWidth = 50; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(sh.x, sh.y); cx.lineTo(hx, hy); cx.stroke();
-        cx.strokeStyle = "#6a4428"; cx.lineWidth = 32; cx.beginPath(); cx.moveTo(sh.x, sh.y - 8); cx.lineTo(hx, hy - 8); cx.stroke();
-        cx.fillStyle = "#d9a57c"; cx.beginPath(); cx.arc(hx + Math.cos(a) * 20, hy + Math.sin(a) * 20, 24, 0, 7); cx.fill();
-        var m = cx.getTransform(), hp = new DOMPoint(hx + Math.cos(a) * 24, hy + Math.sin(a) * 24).matrixTransform(m);
+        var A = M.arm || { x: 12, y: -228, len: 150, w: 50, sleeve: "#3e2616", sleeveLight: "#6a4428", hand: "#d9a57c" }, u = M.figH / 662;
+        var sh = { x: A.x, y: A.y }, a = p.swing ? -1.75 : (p.whip.up ? -1.35 : -0.25 - (p.whip.t < 0.1 ? 1.1 * (1 - p.whip.t / 0.1) : 0));
+        var hx = sh.x + Math.cos(a) * A.len, hy = sh.y + Math.sin(a) * A.len;
+        cx.strokeStyle = A.sleeve; cx.lineWidth = A.w; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(sh.x, sh.y); cx.lineTo(hx, hy); cx.stroke();
+        cx.strokeStyle = A.sleeveLight; cx.lineWidth = A.w * 0.64; cx.beginPath(); cx.moveTo(sh.x, sh.y - 8 * u); cx.lineTo(hx, hy - 8 * u); cx.stroke();
+        cx.fillStyle = A.hand; cx.beginPath(); cx.arc(hx + Math.cos(a) * 20 * u, hy + Math.sin(a) * 20 * u, 24 * u, 0, 7); cx.fill();
+        var m = cx.getTransform(), hp = new DOMPoint(hx + Math.cos(a) * 24 * u, hy + Math.sin(a) * 24 * u).matrixTransform(m);
         hand = { x: hp.x / DPR + st.drawCam, y: hp.y / DPR - st.drawCamY };
       }
       p.hand = hand;
@@ -1507,9 +1508,9 @@
       var leg = p.onGround && Math.abs(p.vx) > 0.4 ? Math.sin(p.run) * 4 : 0;
       cx.strokeStyle = "#2a1c10"; cx.lineWidth = 4; cx.lineCap = "round";
       cx.beginPath(); cx.moveTo(-1, 4); cx.lineTo(-3, 11 + leg); cx.moveTo(1, 4); cx.lineTo(3, 11 - leg); cx.stroke();
-      cx.fillStyle = "#6a4428"; cx.fillRect(-6, -6, 12, 12);
-      cx.fillStyle = "#d8ab6e"; cx.beginPath(); cx.arc(0, -11, 5, 0, 7); cx.fill();
-      cx.fillStyle = "#5a3a1a"; cx.beginPath(); cx.ellipse(0, -14, 8, 3, 0, 0, 7); cx.fill(); cx.fillRect(-4, -16, 8, 3);
+      cx.fillStyle = "#1b1b16"; cx.fillRect(-6, -6, 12, 14);                         // long coat
+      cx.fillStyle = "#1b1b16"; cx.beginPath(); cx.arc(0, -11, 6.5, 0, 7); cx.fill();  // hood up
+      cx.fillStyle = "#d8ab6e"; cx.beginPath(); cx.arc(2, -10.5, 3.6, 0, 7); cx.fill(); // face in the hood
       cx.restore(); p.hand = null;
     }
     function drawWhip() {
@@ -1626,7 +1627,7 @@
       return '<ul class="ouro-facts">' + items + "</ul>";
     }
     function portrait(smile) {
-      return '<img class="tr-portrait" src="' + ART_BASE + (smile ? "portrait-smile" : "portrait") + '.png?v=1" alt="" width="220" height="273">';
+      return '<img class="tr-portrait" src="' + ART_BASE + (smile ? "portrait-smile" : "portrait") + '.png?v=2" alt="" width="220" height="273">';
     }
     function storyCard(opts) {
       stopLoop();

@@ -1,26 +1,35 @@
 {
- "figH": 662,
+ "figH": 485.5,
  "body": {
-  "pivotX": 74.0,
-  "pivotY": 352,
-  "w": 156,
-  "h": 406
+  "pivotX": 75.0,
+  "pivotY": 241.5,
+  "w": 136,
+  "h": 340
  },
  "thigh": {
-  "pivotX": 61.0,
-  "pivotY": 17,
-  "w": 128,
-  "h": 181
+  "pivotX": 28.5,
+  "pivotY": 0.0,
+  "w": 58,
+  "h": 123
  },
  "shin": {
-  "pivotX": 41.0,
-  "pivotY": 8,
-  "w": 113,
-  "h": 165
+  "pivotX": 32.5,
+  "pivotY": 0.0,
+  "w": 84,
+  "h": 134
  },
  "kneeFromHip": [
-  -15.0,
-  153
+  0.0,
+  111.0
  ],
- "footFromHip": 310
+ "footFromHip": 244.0,
+ "arm": {
+  "x": -5.0,
+  "y": -127.0,
+  "len": 107.5,
+  "w": 31.0,
+  "sleeve": "#1b1b16",
+  "sleeveLight": "#2b2a21",
+  "hand": "#c99878"
+ }
 }
