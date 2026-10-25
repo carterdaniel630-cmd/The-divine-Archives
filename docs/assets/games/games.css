@@ -670,6 +670,13 @@
 .ap-mid .ap-cap { font-family:var(--font-display); font-size:.5rem; letter-spacing:.12em; text-transform:uppercase; color:#b7ab94; white-space:nowrap; }
 .ap-mid .ap-btn.on { box-shadow: 0 0 0 #0a0908, 0 0 10px rgba(231,198,128,.35); translate:0 2px; }
 .ap-mid .ap-btn.on .ap-cap { color:var(--gold-bright); }
+/* touch screens: each pill's tap area reaches the 44px tap guide (the pill itself stays small); an invisible
+   layer centred on it takes the touch, and stacked pills sit far enough apart that the two areas never overlap */
+@media (pointer:coarse) {
+  .ap-mid .ap-btn { position:relative; }
+  .ap-mid .ap-btn::before { content:""; position:absolute; left:50%; top:50%; width:max(100%, 44px); height:44px; transform:translate(-50%,-50%); }
+  .ap-pad .ap-body .ap-mid { row-gap:1.4rem; }
+}
 
 /* face buttons */
 .ap-face { grid-area:fc; position:relative; touch-action:none; cursor:pointer; }
