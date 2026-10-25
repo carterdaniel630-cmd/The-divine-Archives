@@ -4,23 +4,23 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~17:10 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-25 ~17:40 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Arcade tap targets, part 1** (PR #86, `loop/arcade-tap-targets` @ `cbf6f1e`, off `main` `3762691`). Built
-  2026-10-25 17:08 (`2026-10-25-pr86-arcade-tap-targets.md`); local checks green. **Missing:** independent review,
-  every GitHub check green incl. Lighthouse, Carter's yes for this item.
-- **Journal touch polish** (PR #83, `loop/journal-touch-polish`). **Independent review 0 open findings**
-  (`2026-10-25-pr83-independent-review.md`). Carter's yes recorded 2026-10-25 ~16:41 (`decisions-2026-10-25-approve-83.md`).
-  **Brought up 2026-10-25 ~17:05 to `45d4a95`** (merge of `main` `3762691`, no conflict). Site diff vs `main` is the
-  reviewed diff (2 files, `games.css` +7, `treasure.js` +5 −3; only the blob-hash line differs). Local checks green on
-  `45d4a95` (build order 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9 0 warnings, headless touch phone
-  3 sizes × 2 motion modes). **Missing: Lighthouse on `45d4a95`** (5/6 green at 17:08; Lighthouse running since 16:56). Then a run fast-forwards `main` → `45d4a95`.
+- **Arcade tap targets, part 1** (PR #86, `loop/arcade-tap-targets`, built 2026-10-25 17:08 as `cbf6f1e`).
+  **Independent review 0 open findings** (`2026-10-25-pr86-independent-review.md`, by a run that wrote none of it).
+  **Brought up 17:38 to `3785b2b`** (merge of `main` `45d4a95`, no conflict; site diff = the reviewed diff, `games.css`
+  +8). Local checks green on `3785b2b` (build 0 changes, 9/9 review-checks, 17/17 verify, 42/42 tests, headless 12
+  games × 4 phone sizes × 2 motion: short tap areas 0, 0 errors). **Missing:** every GitHub check on `3785b2b` green
+  incl. Lighthouse; **Carter's yes for #86**.
 
 ## Merged
+- Journal touch polish (PR #83): **merged by the loop 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95`
+  (Carter's per-item yes `decisions-2026-10-25-approve-83.md`; review `2026-10-25-pr83-independent-review.md`; 6/6 checks
+  green incl. Lighthouse; local checks re-run green on `45d4a95`; deploy run 213 green).
 - Journal hero part 1, The Archivist (PR #77): **merged by the loop 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691`
   (Carter's per-item ruling `decisions-2026-10-25-merge-77-close-84.md` 1; reviews `2026-10-25-pr77-independent-review.md`,
   `2026-10-25-pr77-darker-cloak-re-review.md`; 8/8 checks green incl. Lighthouse; deploy run 212 green).

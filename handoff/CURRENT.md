@@ -1,11 +1,19 @@
-# Handoff — updated 2026-10-25 (16:55 UTC)
+# Handoff — updated 2026-10-25 (17:40 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: The Archivist is the Journal's hero on the live site (2026-10-25)
+## Latest: Journal touch polish is on the live site (2026-10-25)
+- **PR #83** merged 17:32 UTC by fast-forward `3762691` → `45d4a95` (deploy run 213 green). Carter's per-item yes
+  `decisions-2026-10-25-approve-83.md`; independent review 0 findings; reviewed diff unchanged by the bring-up; 6/6
+  checks green incl. Lighthouse (17:18). Journal Select/Start pills take a 44 px touch; the first tip names the
+  on-screen buttons on phones. Reply `replies/2026-10-25-pr83-merged-pr86-reviewed.md`.
+- **#86** (arcade tap targets part 1): independently reviewed, 0 findings; brought up to `45d4a95` → `3785b2b`;
+  waits on its GitHub checks and Carter's yes.
+
+## Earlier: The Archivist is the Journal's hero on the live site (2026-10-25)
 - **PR #77** merged 16:49 UTC by fast-forward `12e7d65` → `3762691` (deploy run 212 green). Carter's ruling
   `decisions-2026-10-25-merge-77-close-84.md` 1; reviewed diff unchanged by the bring-up; 8/8 checks green incl. Lighthouse.
   The Unfinished Journal's hero is now the hooded Archivist from Carter's approved sheet. Reply `replies/2026-10-25-pr77-merged.md`.
