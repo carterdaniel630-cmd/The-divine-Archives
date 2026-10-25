@@ -43,6 +43,15 @@ with no memory of the last one: the repo is the memory.
    - overwrite `handoff/replies/STATUS.md` (done / in progress / next / needs Carter);
    - remove `handoff/loop/LOCK`.
    Then commit and push to `staging/ready-line`.
+   **Reviewer and auditor saving (Carter's option A, `decisions-2026-10-24-batch-six.md` 4):** the scheduled reviewer
+   and auditor save nothing themselves, so the loop does it. When a run writes an independent review, it also copies
+   that report to the `review-log` branch as `reviews/YYYY-MM-DD-<topic>.md` and adds one line to `reviews/runs.md`
+   there (`YYYY-MM-DD HH:MM UTC reviewer loop <PR> <passed/fixed/need Carter>`). The first run on or after each
+   Wednesday also does `reviews/AUDITOR.md`'s weekly steps (10% re-review of saved reports, coverage of PRs merged
+   since the last audit) and saves the audit the same way. Push `review-log` and confirm with `git ls-remote`.
+   **Claims:** a chat session working beside the loop writes `handoff/loop/CLAIM-<what>.md` (time, what, which
+   branches to leave alone). It is not a lock: runs keep working, but skip that item and don't push to the branches it
+   names until the file is gone. A claim over 3 hours old is stale.
 8. **Chain.** If `STATUS.md` → Next still has an item that needs no Carter approval, start the next run right
    away (fire this same scheduled task). Do not wait for the hourly backstop.
 
@@ -74,6 +83,10 @@ ALL of these hold for one exact commit (the "candidate"):
 
 Then:
 - merge by fast-forward (rebase the item's branch onto `main` first if needed, and re-run checks 2–3 after a rebase);
+- **several approved items waiting at once:** stack them (merge each branch into the next with a merge commit, in
+  the order they'll go live) so every candidate already contains the ones before it. Then checks run once per head
+  and the items fast-forward back to back, instead of each merge sending the rest back for a fresh sync and another
+  full round of checks. The stacking merge must add only already-reviewed diffs; say so in the reply;
 - watch the deploy finish;
 - update `handoff/CURRENT.md`;
 - move the item to "Merged" in MERGEABLE;

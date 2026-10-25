@@ -223,20 +223,25 @@
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
 0. **Carter's six answers, 2026-10-24** (`decisions-2026-10-24-batch-six.md`), what is left:
    - #73 merged 2026-10-25 01:43 (done). PR #61 closed (done).
-   - **Reviewer and auditor, option A:** the loop does their saving. Fold this into the loop procedure. PR #58 is not merged.
+   - **Reviewer and auditor, option A:** DONE 2026-10-25 — folded into `LOOP.md` step 7 (each independent review is also
+     saved to `review-log`; the first run on/after each Wednesday does the weekly audit). PR #58 is not merged.
 1. **PR #67** (live phone fixes, value 1): **Carter's yes 2026-10-24** (batch-six 1). **Brought up to `main` `efba79c`
    on 2026-10-25 → head `c957af5`**, site diff identical to the reviewed `1681050`, local checks green. Next: confirm
    every GitHub check green on `c957af5` (incl. Lighthouse; re-run a cancelled one), re-run local checks, then a run
    that wrote none of #67 fast-forwards `main` to `c957af5`. If checks are still running, do 1b or 1c instead.
-1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**;
-   a chat session (claim `handoff/loop/CLAIM-stack-67-75-76.md`) stacked it on #75 → `a2b0952` (was `7100802`); confirm the site diff is
-   still the reviewed one. Next: every GitHub check green on `7100802` incl. Lighthouse, then a run that
-   wrote none of #76 fast-forwards; going live is covered by this yes. B–E still need their own yes.
+1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**.
+   **Stacked on #67** by a chat session 2026-10-25 → head **`be51670`** (= reviewed `7100802` + #67 `c957af5`, nothing
+   else; clean merge; local checks green). Next: every GitHub check green on `be51670` incl. Lighthouse; after #67 is on
+   `main`, a run that wrote none of #76 fast-forwards `main` to `be51670`. Going live is covered by this yes. B–E need their own yes.
 1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
-   2026-10-25 (0 findings), brought up to `main` → `223600f`**, then stacked on #67 by the chat session → `053fc97`; checks restart. **The loop does not merge #75** (LOOP.md
-   Merging 4: no cleared pending tag; standing limit: never clear content). Carter presses Merge once it is green.
-**Merge order note:** #67, #75 and #76 each sit on `efba79c`. After the first fast-forwards, the other two must be
-brought up to the new `main` again (merge commit) and their checks re-run before they can fast-forward.
+   2026-10-25 (0 findings)**. **Stacked on #76** → head **`71206ee`** (= reviewed `223600f` + #67 + #76, nothing else;
+   local checks green). **The loop does not merge #75** (LOOP.md Merging 4: no cleared pending tag). Carter presses
+   Merge once #67 and #76 are on `main` and its checks are green; it then fast-forwards with no re-sync.
+**Merge order (stacked 2026-10-25, LOOP.md "several approved items"):** #67 `c957af5` → #76 `be51670` → #75 `71206ee`.
+Each head already contains the ones before it, so each fast-forwards right after the previous one with no fresh sync
+and no second round of checks. Loop-mergeable ones go first; #75 (Carter presses Merge) goes last so it blocks nothing.
+(The first stacking at 02:10 put #76 on top of #75, which would have tied #76 to Carter's button; corrected within
+minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51670`. Nothing else was on `a2b0952`.)
 4. **Journal hero rebuild** (value 1–5: the live hero still wears the film-explorer kit until #77 is live).
    **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist), **independently reviewed 2026-10-25: 0 findings**.
    Waits on Lighthouse and Carter's yes for #77 (Needs Carter A). **Part 2:** port the

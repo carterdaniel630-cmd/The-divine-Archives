@@ -16,16 +16,16 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (no conflict); site diff byte-identical to the reviewed `1681050`; local checks green (`2026-10-25-pr67-brought-up.md`).
   Missing: every GitHub check green on `c957af5` (incl. Lighthouse), then a run that wrote none of #67 fast-forwards.
 
-- **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `223600f`; Carter's "clear", batch-six 3).
+- **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `71206ee`, stacked on #76; Carter's "clear", batch-six 3).
   **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
   (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub
-  check green on `223600f` incl. Lighthouse (7/7 green at 02:00, no Lighthouse run seen yet). **Not a loop merge:** it
+  check green on `71206ee` incl. Lighthouse (checks restarted after stacking; site diff = reviewed `223600f` + #67 + #76). **Not a loop merge:** it
   clears two pending tags (LOOP.md Merging 4), so Carter presses Merge himself or says the loop may.
 
-- **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `7100802`; Carter's yes `decisions-2026-10-24-batch-six.md`
+- **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `be51670`, stacked on #67; Carter's yes `decisions-2026-10-24-batch-six.md`
   2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
   **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
-  absence page); local checks green. Missing: every GitHub check green on `7100802` incl. Lighthouse; then a run that
+  absence page); local checks green. Missing: every GitHub check green on `be51670` incl. Lighthouse (site diff = reviewed `7100802` + #67); #67 on `main`; then a run that
   wrote none of #76 fast-forwards.
 
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist` @ `dbf5d16`, 2026-10-25). Built by the
