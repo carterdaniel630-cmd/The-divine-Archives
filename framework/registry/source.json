@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1836,
+ "count": 1838,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -12804,6 +12804,15 @@
    "from": "sources/ch01-the-flood.md"
   },
   {
+   "id": "source:penn-museum/dfd101e071",
+   "type": "source",
+   "label": "https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:people-clas-ufl-edu/a9b6833b51",
    "type": "source",
    "label": "https://people.clas.ufl.edu/sgillesp/files/gillespie_and_volk_2014_3d_model_complex_a_la_venta_final-1.pdf",
@@ -15453,6 +15462,15 @@
     "chapter:ch71"
    ],
    "from": "sources/ch71-korea.md"
+  },
+  {
+   "id": "source:ucl-ac-uk/2fd14806e2",
+   "type": "source",
+   "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:ucl-ac-uk/345be077e9",
