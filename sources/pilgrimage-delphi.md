@@ -9,7 +9,10 @@ about 170 CE. Logged 2026-10-11.
 that quote the source, and is to be re-read against the source at review. No measured plan of the sanctuary could
 be opened, so **where each building stands, the line of the Sacred Way (straightened into four runs) and the height
 of every terrace are estimates**. The statues are plain stand-ins, and the lettering on the Polygonal Wall, the
-Athenian Treasury and the porch imitates the look of inscriptions; only the two maxims are real wording.
+Athenian Treasury and the porch imitates the look of inscriptions, with three exceptions that are real wording: the
+two maxims; the hymn panel, the opening words of the first Delphic Hymn as edited (below); and the line repeated on the
+Polygonal Wall, which follows the manumission records' usual formula (sale of a body to Pythian Apollo, for freedom)
+but is not a transcription of any one record (its exact wording not yet checked against an edited record).
 
 ## Ancient texts
 - Pausanias, *Description of Greece* book 10, read at https://www.theoi.com/Text/Pausanias10A.html and
@@ -39,7 +42,13 @@ Athenian Treasury and the porch imitates the look of inscriptions; only the two 
   track 177.55 × 25.5 m, about 6,500: https://en.wikipedia.org/wiki/Stadium_of_Delphi . The card gives "6,500 to
   7,000" because the two differ.
 - Delphi Archaeological Museum, "The Delphic Hymns to Apollo" (2025), https://www.delphimuseum.gr/2025/03/the-delphic-hymns-to-apollo.html
-  (first hymn c. 138 BCE, heading damaged; found 1893). Ancient Music at Oxford, programme notes,
+  (first hymn c. 138 BCE, heading damaged; found 1893; composer Athenaios son of Athenaios).
+  Text of the panel: the first hymn's opening (Κέκλυθ' Ἑλικῶνα βαθύδενδρον αἳ λάχετε Διὸς ἐριβρόμου θύγατρες εὐώλενοι,
+  μόλετε), Furley and Bremer (2001), as reproduced in "The Hellenistic hymns to Apollo with musical notation from
+  Delphi", https://classics-at.chs.harvard.edu/the-hellenistic-hymns-to-apollo-with-musical-notation-from-delphi/
+  ("Κέκλυθ' Ἑλικ" is restored); translation after Attic Inscriptions Online, CID III 1,
+  https://atticinscriptions.com/inscription/CIDIII/1 (date 128/7? BCE; Athenian Treasury south wall). The
+  "earliest notated music with a named composer" line was dropped (review 2026-10-25: not in the sources). Ancient Music at Oxford, programme notes,
   https://ancientmusicoxford.site.ox.ac.uk/programme-notes (dates the Paean of Athenaios c. 128/7 BCE). The card
   gives both.
 - Manumission inscriptions (about 1,300, mostly 200 BCE–100 CE, many on the Polygonal Wall behind the stoa; the
@@ -48,15 +57,37 @@ Athenian Treasury and the porch imitates the look of inscriptions; only the two 
   "eighteen feet"): Livius, https://www.livius.org/articles/place/constantinople-istanbul/constantinople-photos/constantinople-hippodrome/constantinople-hippodrome-serpent-column/
 - Omphalos in the museum, original or copy undecided: https://en.wikipedia.org/wiki/Omphalos_of_Delphi
 - J. Z. de Boer, J. R. Hale and J. Chanton, "New evidence for the geological origins of the ancient Delphic oracle
-  (Greece)", *Geology* 29.8 (2001): reported via https://www.sciencedaily.com/releases/2001/08/010807075959.htm .
-- G. Etiope, G. Papatheodorou and others, "The geological links of the ancient Delphic Oracle (Greece): a
-  reappraisal of natural gas occurrence and origin", *Geology* 34.10 (2006): record https://www.earth-prints.org/handle/2122/2674
-  (could not be opened); findings as reported by the University of Patras, https://oceanus-lab.upatras.gr/press/50-press-releases/100-delphic-oracle-mystery
-  (methane and CO2, no ethylene). **Re-check:** volume and issue numbers of both *Geology* papers.
+  (Greece)", *Geology* 29 (August 2001): reported via https://www.sciencedaily.com/releases/2001/08/010807075959.htm
+  (opened 2026-10-25: *Geology*, August issue; faults; ethylene with ethane and methane in spring water). Issue
+  number and pages not opened, so the card gives the month, not "29.8".
+- G. Etiope, P. Favali, G. Papatheodorou, D. Christodoulou and M. Geraga, "The geological links of the ancient
+  Delphic Oracle (Greece): a reappraisal of natural gas occurrence and origin", *Geology* 34(10) (2006), 821–824,
+  doi:10.1130/G22824.1. Abstract opened 2026-10-25 at https://repository.geologyscience.ru/handle/123456789/48049
+  (methane, ethane and CO2 released today; the setting "is not prone to biogenic production of ethylene in amounts
+  inducing neurotoxic effects"; oxygen depletion from CO2–CH4 in the indoor temple the more plausible mechanism).
+  The University of Patras press page is no longer used (it contradicts itself on ethylene).
 - E. Boutsikas and A. Salt, "Knowing when to consult the oracle at Delphi", *Antiquity* 79 (2005), 564–572,
   doi:10.1017/s0003598x00114504, https://kar.kent.ac.uk/41878 (Delphinus). Flagged **contested**.
 - R. Pearse, "The last oracle of Delphi" (2018), https://roger-pearse.com/weblog/2018/09/11/the-last-oracle-of-delphi
   (Philostorgius, Cedrenus). Flagged **contested**.
+- **Added 2026-10-25 (review fixes, all opened):** Hellenic Ministry of Culture, "The Temple of Apollo",
+  https://delphi.culture.gr/the-temple-of-apollo/ (Amphictyony collected the money; council of naopoioi from many
+  cities; work stopped 356, resumed 343–342, finished 334–333; pediments 327). Hellenic Ministry of Culture, "The
+  Stele and the Sphinx of the Naxians", https://delphi.culture.gr/the-sphinix-of-the-naxians/ (c. 560 BCE; whole
+  monument c. 12.45 m) and Delphi Archaeological Museum, "The Column of the Naxians and the Sphinx" (2024),
+  https://www.delphimuseum.gr/2024/05/the-column-of-naxians-and-sphinx.html (column 10 m; total almost 13 m).
+  Kenyon College Baly slide collection, "Athenian Treasury", https://baly.kenyon.edu/slides/23064 (rebuilt 1906 by
+  French archaeologists, funded by the city of Athens, about four-fifths original stone); Ministry "The Athenian
+  Treasury" (the hymn inscription in the museum, a plaster copy on the building). Plutarch, *Life of Numa* 9,
+  https://lexundria.com/plut_num/9/prr (the perpetual fire at Delphi kept by widows past marriage), replacing
+  Pausanias 10.24.4–5 as the source for the undying fire. Plutarch, *Greek Questions* 9,
+  https://fgh.perseids.org/read/greekLit/tlg0007/tlg084b/perseus-eng4/3-21 ("they call that week the nativity of
+  Apollo"; "in former times Pythia gave answers only once a year, which was on this day"). World History
+  Encyclopedia, "Delphi", https://worldhistory.org/delphi/ (Theodosius's decree of 393 closing pagan sanctuaries,
+  gradual decline; Christian community until the 7th century). Delphi Museum archive photograph, "The construction of
+  the new village Kastri at the site of the present-day Delphi" (1892), https://www.searchculture.gr/aggregator/edm/Delphi_Museum/000051-%3A11535_82 .
+  Cards now credit the stadium figures to Odyssey Adventures and Wikipedia, and the omphalos (original or copy) to
+  Wikipedia, as this log already said, not to the Ministry.
 - UNESCO World Heritage Centre, "Archaeological Site of Delphi", https://whc.unesco.org/en/list/393
 - The altar restored in 1920 with Chian help: https://people.hsc.edu/drjclassics/sites/delphi/temple.shtm
 

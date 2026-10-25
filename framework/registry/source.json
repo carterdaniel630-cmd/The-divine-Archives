@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1916,
+ "count": 1925,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -949,6 +949,15 @@
    "from": "sources/v36-rok-runestone.md"
   },
   {
+   "id": "source:atticinscriptions-com/3923a8f8cf",
+   "type": "source",
+   "label": "https://atticinscriptions.com/inscription/CIDIII/1",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:aucegypt-edu/c837e4bf55",
    "type": "source",
    "label": "https://www.aucegypt.edu/news/egyptology-best-sellers-auc-press",
@@ -1046,6 +1055,15 @@
     "chapter:ch74"
    ],
    "from": "sources/ch74-secularism-nonreligion.md"
+  },
+  {
+   "id": "source:baly-kenyon-edu/ddb95e6b4f",
+   "type": "source",
+   "label": "https://baly.kenyon.edu/slides/23064",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:beinecke-library-yale-edu/157431f830",
@@ -3648,6 +3666,15 @@
    "from": "sources/v39-derveni-papyrus.md"
   },
   {
+   "id": "source:classics-at-chs-harvard-edu/c85aaf7f60",
+   "type": "source",
+   "label": "https://classics-at.chs.harvard.edu/the-hellenistic-hymns-to-apollo-with-musical-notation-from-delphi/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:clc-org-au/865ce30d27",
    "type": "source",
    "label": "https://www.clc.org.au/wp-content/uploads/2021/03/The-Strehlow-collection-of-sacred-objects.pdf",
@@ -4226,6 +4253,24 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:delphi-culture-gr/0b783e6674",
+   "type": "source",
+   "label": "https://delphi.culture.gr/the-sphinix-of-the-naxians/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:delphi-culture-gr/8e94a4c537",
+   "type": "source",
+   "label": "https://delphi.culture.gr/the-temple-of-apollo/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:delphi-culture-gr/c4f238d158",
    "type": "source",
    "label": "https://delphi.culture.gr/archaelogical-site/excavations/",
@@ -4247,6 +4292,15 @@
    "id": "source:delphi-culture-gr/ef62a19a1f",
    "type": "source",
    "label": "https://delphi.culture.gr/athenians-treasure/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:delphimuseum-gr/3642f5cf8c",
+   "type": "source",
+   "label": "https://www.delphimuseum.gr/2024/05/the-column-of-naxians-and-sphinx.html",
    "links": [
     "site:delphi"
    ],
@@ -4639,15 +4693,6 @@
     "site:mogao-caves"
    ],
    "from": "sources/pilgrimage-mogao-caves.md"
-  },
-  {
-   "id": "source:earth-prints-org/e3754058f0",
-   "type": "source",
-   "label": "https://www.earth-prints.org/handle/2122/2674",
-   "links": [
-    "site:delphi"
-   ],
-   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:ebsco-com/0a92efbf8e",
@@ -8910,6 +8955,15 @@
    "from": "sources/ch76-olmec.md"
   },
   {
+   "id": "source:fgh-perseids-org/01a5d0f5e3",
+   "type": "source",
+   "label": "https://fgh.perseids.org/read/greekLit/tlg0007/tlg084b/perseus-eng4/3-21",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:fgh-perseids-org/ad23512aaa",
    "type": "source",
    "label": "https://fgh.perseids.org/read/latinLit/phi0914/phi001/perseus-eng3/5.1.5-5.2.1",
@@ -11167,6 +11221,15 @@
    "from": "sources/v24-sudarium-of-oviedo.md"
   },
   {
+   "id": "source:lexundria-com/651da1f987",
+   "type": "source",
+   "label": "https://lexundria.com/plut_num/9/prr",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:lexundria-com/c85253ff2c",
    "type": "source",
    "label": "https://lexundria.com/j_bj/5.136-5.183/wst",
@@ -12833,15 +12896,6 @@
    "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
   },
   {
-   "id": "source:oceanus-lab-upatras-gr/b22aa21137",
-   "type": "source",
-   "label": "https://oceanus-lab.upatras.gr/press/50-press-releases/100-delphic-oracle-mystery",
-   "links": [
-    "site:delphi"
-   ],
-   "from": "sources/pilgrimage-delphi.md"
-  },
-  {
    "id": "source:ociana-osu-edu/14ee57fb3c",
    "type": "source",
    "label": "https://ociana.osu.edu/",
@@ -13986,6 +14040,15 @@
    "from": "sources/ch44-inca.md"
   },
   {
+   "id": "source:repository-geologyscience-ru/f2f7540355",
+   "type": "source",
+   "label": "https://repository.geologyscience.ru/handle/123456789/48049",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:repository-si-edu/2d2ce0a69f",
    "type": "source",
    "label": "https://repository.si.edu/server/api/core/bitstreams/62c880a2-ca22-40b9-be96-43aa35d2a606/content",
@@ -14788,6 +14851,15 @@
     "chapter:ch45"
    ],
    "from": "sources/ch45-pistis-sophia.md"
+  },
+  {
+   "id": "source:searchculture-gr/8b07ed8d4c",
+   "type": "source",
+   "label": "https://www.searchculture.gr/aggregator/edm/Delphi_Museum/000051-%3A11535_82",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:sefaria-org/3ac62de917",
@@ -16730,6 +16802,15 @@
     "chapter:ch43"
    ],
    "from": "sources/ch43-aztec.md"
+  },
+  {
+   "id": "source:worldhistory-org/08e2336f8e",
+   "type": "source",
+   "label": "https://worldhistory.org/delphi/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
   },
   {
    "id": "source:worldhistory-org/0a85dc53df",
