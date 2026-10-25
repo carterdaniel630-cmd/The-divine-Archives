@@ -4,18 +4,12 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~18:25 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-25 ~18:50 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Arcade tap targets, part 1** (PR #86, `loop/arcade-tap-targets`, built 2026-10-25 17:08 as `cbf6f1e`).
-  **Independent review 0 open findings** (`2026-10-25-pr86-independent-review.md`, by a run that wrote none of it).
-  **Brought up 17:38 to `3785b2b`** (merge of `main` `45d4a95`, no conflict; site diff = the reviewed diff, `games.css`
-  +8). Local checks green on `3785b2b` (build 0 changes, 9/9 review-checks, 17/17 verify, 42/42 tests, headless 12
-  games × 4 phone sizes × 2 motion: short tap areas 0, 0 errors). **Carter's yes recorded** (`decisions-2026-10-25-pr86-go.md`).
-  **Missing:** Lighthouse on `3785b2b` (run 194 running since ~17:48; the other 5 checks green).
 - **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`, draft): brought up to `main` 2026-10-25 17:46 as `befb607`;
   Göbekli Tepe "oldest known megaliths" replaced by the sourced "among the earliest known monumental architecture"; local
   checks green. **Independent review 18:20: NOT passed** (`2026-10-25-pr53-independent-review.md`): automatic checks green,
@@ -24,6 +18,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   did not make them, GitHub checks green, Carter's yes (new content, holy-site pages).
 
 ## Merged
+- Arcade tap targets, part 1 (PR #86): **merged by the loop 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b`
+  (Carter's per-item yes `decisions-2026-10-25-pr86-go.md`; review `2026-10-25-pr86-independent-review.md`, 0 findings; 6/6 checks
+  green incl. Lighthouse; local checks + headless 96 opens re-run green on `3785b2b`; deploy run 214 green).
 - Journal touch polish (PR #83): **merged by the loop 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95`
   (Carter's per-item yes `decisions-2026-10-25-approve-83.md`; review `2026-10-25-pr83-independent-review.md`; 6/6 checks
   green incl. Lighthouse; local checks re-run green on `45d4a95`; deploy run 213 green).

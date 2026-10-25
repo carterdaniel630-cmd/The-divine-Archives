@@ -1,13 +1,13 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~18:25 UTC (build loop: PR #53 independently reviewed, NOT passed, returned for fixes; #86 approved, Lighthouse run 194 running). Earlier: PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~18:50 UTC (build loop: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`. **Deployed (`main`):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`. **Deployed (`main`):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 2026-10-25 18:45 UTC, deploy 214 green; before it `45d4a95`, PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/arcade-tap-targets` = #86 (`3785b2b`, on top of `main` `45d4a95`; reviewed, 0 findings; approved; Lighthouse running), `loop/journal-touch-polish` = #83 (merged, branch kept),
+**Open loop branches:** `loop/arcade-tap-targets` = #86 (merged 18:45, branch kept), `loop/journal-touch-polish` = #83 (merged, branch kept),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
@@ -378,10 +378,9 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1b. ~~**PR #77**~~ **merged 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691` (Carter's ruling 1; reviewed diff
    unchanged; 8/8 GitHub checks green incl. Lighthouse; local checks green; deploy 212 green). Reply `2026-10-25-pr77-merged.md`.
 1c. ~~**PR #83**~~ **merged 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95` (deploy 213 green).
-1d. **PR #86 (arcade tap targets part 1): APPROVED by Carter (`decisions-2026-10-25-pr86-go.md`, head `3785b2b`).**
-   18:20: 5/6 checks green on `3785b2b`; **Lighthouse run 194 running since ~17:48** (old run 193 finished green).
-   Next run first: if Lighthouse on `3785b2b` is green, re-run local checks and fast-forward `main` to `3785b2b`, watch
-   the deploy, update CURRENT/MERGEABLE. Never merge on an unfinished check.
+1d. ~~**PR #86**~~ **merged 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b` (Carter's yes
+   `decisions-2026-10-25-pr86-go.md`; 6/6 checks green incl. Lighthouse; local checks + headless 96 opens green; deploy 214 green).
+   Reply `2026-10-25-pr86-merged.md`.
 1e. **PR #53 (Pilgrimage batch 1), head `befb607`: review 18:20 NOT passed** (`2026-10-25-pr53-independent-review.md`).
    **Next: fix run** on `claude/project-thread-s3qxre` (merge commits only, no force-push): every fixable finding in the
    report, site by site (a smaller correct piece is fine: e.g. one or two sites per run, say which); try to settle the
@@ -403,7 +402,7 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
    batches of 10 from Muse under `handoff/armory/batch-NN/`; **the batch of 10 is the unit** (§4): as many pieces per run as the
    quality bar allows, each checked on its own, then one yes/no batch to Carter; waits on batch 1.
    **One loop only** (same file 3): no second loop or lane.
-5. **Arcade playability floor** (value 3). Tap targets part 1 = PR #86; part 2 Excavation 9×9 cells (33 px) and
+5. **Arcade playability floor** (value 3). Tap targets part 1 = PR #86 (live 18:45); part 2 Excavation 9×9 cells (33 px) and
    Ziggurat keypad (40 px); then difficulty selector, undo, tutorial where they fit. Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
@@ -427,6 +426,6 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing new. #86 is already approved and merges as soon as its Lighthouse check is green. #53 went back for fixes after
+- Nothing new. #86 is live (merged 18:45, deploy green). #53 went back for fixes after
   its review; it comes to you for one yes/no once fixed and re-reviewed.
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.

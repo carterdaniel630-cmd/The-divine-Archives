@@ -1,11 +1,16 @@
-# Handoff — updated 2026-10-25 (17:40 UTC)
+# Handoff — updated 2026-10-25 (18:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Journal touch polish is on the live site (2026-10-25)
+## Latest: arcade tap targets part 1 is on the live site (2026-10-25)
+- **PR #86** merged 18:45 UTC by fast-forward `45d4a95` → `3785b2b` (deploy run 214 green). Carter's per-item yes
+  `decisions-2026-10-25-pr86-go.md`; independent review 0 findings; 6/6 checks green incl. Lighthouse. On touch phones every
+  game's Close, Full-screen and main text buttons take a 44 px tap; desktop unchanged. Reply `replies/2026-10-25-pr86-merged.md`.
+
+## Earlier: Journal touch polish is on the live site (2026-10-25)
 - **PR #83** merged 17:32 UTC by fast-forward `3762691` → `45d4a95` (deploy run 213 green). Carter's per-item yes
   `decisions-2026-10-25-approve-83.md`; independent review 0 findings; reviewed diff unchanged by the bring-up; 6/6
   checks green incl. Lighthouse (17:18). Journal Select/Start pills take a 44 px touch; the first tip names the
