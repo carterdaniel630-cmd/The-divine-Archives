@@ -1,16 +1,23 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-24 23:50 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 01:50 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
-`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, and `decisions-2026-10-24-merge-71-72-73.md`. **Deployed (`main`):** `6c81a84` (PR #74, merged
-2026-10-24 23:30 UTC, deploy run 199 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
-**Branches:** `loop/hit-feel` = #70 (merged), `loop/hit-feel-2` = #71, `loop/hit-feel-3` = #72,
-`loop/journal-hero-redesign` = #60, `loop/tjurunga-absence` = #73, `loop/reduced-motion` = #74, `loop/speed-fix-a` = #76. `staging/ready-line` carries `handoff/`.
+`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC). **Deployed (`main`):** `efba79c` (PR #73, merged
+2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
+**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67, `loop/clear-v72-ra` = #75,
+`loop/speed-fix-a` = #76 (#70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~01:42–01:50: **PR #73 merged** (Tjurunga takedown, Carter's yes) by fast-forward `6c81a84` → `efba79c`,
+  **deploy run 200 green**, by a run that wrote none of #73. Lighthouse had finished green at 00:02 (8/8). Local checks
+  re-run on a clean copy: build repeatable, 17 verify, 42/42 tests, review-checks 9/9 (0 warnings); headless phone check
+  of seven pages, 0 script errors, 0 images on the absence page. Live page not opened (address blocked from this
+  session). Found: the three Journal hero images arrived (`handoff/journal-hero-b64/`), so Next 4 is unblocked.
+  Reply `2026-10-25-pr73-merged.md`. Items per run: 1.
 - 2026-10-24 ~23:50–00:05: **Site speed fix A built** (Carter's yes, batch-six 2) on `loop/speed-fix-a` @ `10b075c`,
   **PR #76**. Codex Mendoza, Codex Borgia and the Voynich Manuscript now ask the holding library for their scans only
   when the reader nears the viewer, taps "Open the manuscript", or arrives by a `#folio=`/`#study` link. Measured
@@ -184,39 +191,25 @@
 - (none)
 
 ## For Muse (read this first)
-- **Carter asks you (2026-10-24):** please commit the three Journal hero images to `handoff/journal-hero/`. Details and
-  upload options are in `handoff/request-2026-10-24-muse-journal-hero-images.md`.
+- **Journal hero images received** (2026-10-25, `handoff/journal-hero-b64/`, as base64 text). Thank you; nothing more
+  needed unless the rebuild finds a problem with them.
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-0. **Carter's six answers, 2026-10-24 ~23:50** (`decisions-2026-10-24-batch-six.md`), in order:
-   - **#67 (live phone fixes), approved:** brought up to `main` as `24563f9`; site diff byte-identical to the reviewed
-     `1681050`; local checks green; eras page 8,084 → 5,944 px; pages wider than a phone 45 → 0 of 83. **Waiting on**
-     GitHub checks, then fast-forward.
-   - **#73 (Tjurunga), approved:** waiting on its Lighthouse re-run (run 166 failed on The Excavation, a page #73
-     doesn't touch; re-run once) and on the **independent re-review of the softened wording** (needs a run that didn't
-     make it). If #67 merges first, bring #73 up to the new `main` again.
-   - **#75 (clear V72 and Ra-Horakhty), approved by Carter's "clear":** built `4409b86`. **Needs an independent review**
-     by a run that didn't make it, then checks, then merge.
-   - **Site speed fix A, approved through to going live:** **built 2026-10-24 ~23:55 as PR #76** (`loop/speed-fix-a`
-     @ `10b075c`). **Needs an independent review** by a run that didn't make it, then all GitHub checks green, then
-     fast-forward (bring up to `main` first if #73/#67/#75 merge before it). Fixes B–E still need their own yes.
+0. **Carter's six answers, 2026-10-24** (`decisions-2026-10-24-batch-six.md`), what is left:
+   - #73 merged 2026-10-25 01:43 (done). PR #61 closed (done).
    - **Reviewer and auditor, option A:** the loop does their saving. Fold this into the loop procedure. PR #58 is not merged.
-   - **PR #61:** closed (done).
-   - **Journal hero images:** reminder sent to Muse (`request-2026-10-24-muse-journal-hero-images.md`). Still blocked until the images arrive.
-     Carter, 2026-10-24 ~23:55: Muse is out of usage until tomorrow (2026-10-25), so expect nothing before then. Don't re-ask Muse tonight.
-1. **Merge PR #73** (Tjurunga takedown; Carter's yes and "soften" recorded; re-review 0 findings). **Waiting on:**
-   Lighthouse on `efba79c`. Once green, a run that wrote none of #73 fast-forwards `main` `6c81a84` → `efba79c`, watches
-   the deploy, updates CURRENT and MERGEABLE.
-1a. **PR #67** (live phone fixes): **Carter's yes 2026-10-24** (`decisions-2026-10-24-batch-six.md` 1). Bring it up to
-   `main` after #73 (merge commit), confirm the site diff unchanged from the reviewed `1681050`, checks green, merge.
-1b. **Site speed fix A** (Carter's yes, batch-six 2): **built, PR #76** (`10b075c`). Next: independent review (a run
-   that wrote none of it), GitHub checks incl. Lighthouse, then merge; going live is covered by this yes. B–E still need their own yes.
-1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): record in `reviews/cleared.json`,
-   remove pending state, on a branch with checks and independent review.
-1d. **Close PR #61** with a note (batch-six 5; branch kept). **Reviewer/auditor option A** (batch-six 4): the loop saves
-   their reports; fold into the procedure.
-4. **Journal hero rebuild** (PR #60, Option A): **blocked** until the three images named in
-   `handoff/journal-hero/README.md` are committed to that folder (Needs Carter 9). Never invent a face.
+1. **PR #67** (live phone fixes, value 1): **Carter's yes 2026-10-24** (batch-six 1). Head `24563f9` sits on the old
+   `main` `6c81a84`. Bring it up to `main` `efba79c` (merge commit), confirm the site diff unchanged from the reviewed
+   `1681050`, local checks, wait (without the lock) for GitHub checks, then a run that wrote none of #67 fast-forwards.
+1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): **built, PR #76** (`10b075c`). Next: independent review
+   (a run that wrote none of it; this 01:42 run qualifies), bring up to `main`, GitHub checks incl. Lighthouse, then
+   merge; going live is covered by this yes. B–E still need their own yes.
+1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): **built, PR #75** (`4409b86`). Needs an
+   independent review by a run that didn't make it, bring up to `main`, checks, then merge.
+4. **Journal hero rebuild** (PR #60, Option A, value 5): **unblocked 2026-10-25**. The three images are in
+   `handoff/journal-hero-b64/` as base64 text (decode with the command in its README; check sizes). Face stays
+   Carter's (hood up); costume per the approved Archivist sheet; no fedora, leather jacket, whip or boulder. Never
+   invent a face.
 5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
@@ -241,8 +234,8 @@
 ## Needs Carter
 Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`, folded into Next): PR #67 yes, speed fix A yes, V72 and
 Ra-Horakhty cleared, reviewer/auditor option A, PR #61 close, Journal hero images requested from Muse. Hit-feel 2–3,
-reduced motion and the Tjurunga takedown/wording also answered.
+reduced motion and the Tjurunga takedown/wording also answered (#73 now live).
 1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
    2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
 2. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
-3. **Journal hero pictures:** waiting on Muse (reminder sent); nothing for Carter unless she can't.
+3. ~~Journal hero pictures~~: arrived 2026-10-25; nothing needed.

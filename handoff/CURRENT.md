@@ -1,4 +1,11 @@
-# Handoff — updated 2026-10-24 (23:35 UTC)
+# Handoff — updated 2026-10-25 (01:50 UTC)
+
+## Latest: the Tjurunga takedown is live (2026-10-25)
+- **PR #73** merged 01:43 UTC by fast-forward `6c81a84` → `efba79c` (deploy run 200 green). Carter's yes
+  `decisions-2026-10-24-merge-71-72-73.md`; two independent reviews, 0 findings; 8/8 checks green incl. Lighthouse.
+  V68 withdrawn; absence page at the same address with the softened wording. Reply `replies/2026-10-25-pr73-merged.md`.
+- **Next to go live (approved):** #67 (phone fixes) and #76 (speed fix A) each need bringing up to `main` `efba79c`;
+  #76 and #75 (clear V72 / Ra-Horakhty) each need an independent review.
 
 ## Latest: reduced motion part 1 is live (2026-10-24)
 - **PR #74** merged 23:30 UTC by fast-forward `0d16e84` → `6c81a84` (deploy run 199 green). Carter's yes
