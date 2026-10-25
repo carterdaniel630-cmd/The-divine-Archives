@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1842,
+ "count": 1843,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -11659,6 +11659,15 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:museum-ie/a230a09d18",
+   "type": "source",
+   "label": "https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
   },
   {
    "id": "source:museum-imj-org-il/aa759cfdeb",

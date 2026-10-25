@@ -66,4 +66,6 @@ The Neolithic grows directly out of the **Paleolithic** of the previous chapter 
 - The Mother Goddess hypothesis (Mellaart, Gimbutas) and its scholarly critique — "Mellaart, Gimbutas, Goddesses, and Çatalhöyük" (academic review). https://www.academia.edu/71690356/MELLAART_GIMBUTAS_GODDESSES_AND_%C3%87ATALH%C3%96Y%C3%9CK
 - Megaliths and their astronomical alignments — Stonehenge/Durrington, Newgrange, Malta's Ġgantija and the Hypogeum — "Megalith," Wikipedia. https://en.wikipedia.org/wiki/Megalith
 - Newgrange's midwinter beam, its reach when built and today — T. P. Ray, "The winter solstice phenomenon at Newgrange, Ireland: accident or design?", *Nature* 337 (1989), 343–345. https://www.newgrange.com/stonelight20.htm
+- Newgrange's midwinter beam, a metre or two shorter today — "Shedding light on winter solstice at Newgrange," *The Irish Times* (19 December 2013). https://www.irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602
+- Newgrange's midwinter beam, the fuller-chamber description — National Museum of Ireland, "The Winter solstice at Newgrange." https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange
 - The Ness of Brodgar and the Heart of Neolithic Orkney — The Ness of Brodgar Project. https://www.nessofbrodgar.co.uk/

@@ -53,7 +53,9 @@ Confirmed only through search results (the hosts were not reachable from the bui
   dream tellings: Mother See of Holy Etchmiadzin, liturgical calendar (armenianchurch.org/en/Liturgical-Calendar);
   Armenian Church of Sydney calendar entries (armenianchurchsydney.org.au); *The Christian Century*
   (christiancentury.org, node 45162), which also notes the reliquary and that scholars debate the history.
-- Movses Khorenatsi's descent of the Armenians from Noah through Japheth and Haik; the mountain and the ark on
-  Armenia's coat of arms: WorldHistory.org, "Mount Ararat" (worldhistory.org/Mount_Ararat/). The card gives no date
+- Movses Khorenatsi's descent of the Armenians from Noah through Japheth and Haik; the mountain on Armenia's coat
+  of arms: WorldHistory.org, "Mount Ararat" (worldhistory.org/Mount_Ararat/). The ark resting on its summit in the
+  arms: *The Christian Century* (above). Jacob fell asleep at the foot of the mountain, as the church's calendar
+  tells it (wording corrected at review, 2026-10-25). The card gives no date
   for Movses, whose dating is itself debated.
 
