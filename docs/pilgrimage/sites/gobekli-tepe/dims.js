@@ -20,10 +20,10 @@ D.surfY = 6.0;          // the hilltop round the excavated hollow, above its flo
 // ---- the four enclosures of the main excavation area, named A–D in the order they were found.
 // Diameters: the round enclosures range from about 10 to 30 m (SURVEY, Current World Archaeology 53, 2012,
 // from the excavators); which is which, and their positions, APPROX.
-D.encD = { x: 0, z: 0, r: 10.0, wallT: 1.1, wallH: 2.9 };       // D, the best preserved: about 20 m across. APPROX
-D.encC = { x: -14, z: 24, rings: [5.2, 10.0, 14.6], wallT: 0.9, wallH: 2.5 };   // C, three (perhaps four) concentric walls, up to about 30 m. SURVEY (count); radii APPROX
+D.encD = { x: 0, z: 0, r: 10.0, wallT: 1.1, wallH: 2.9 };       // D, the best preserved; CWA 53 calls it the largest. Size APPROX (no measured diameter opened)
+D.encC = { x: -14, z: 24, rings: [5.2, 10.0, 14.6], wallT: 0.9, wallH: 2.5 };   // C, three (perhaps four) concentric walls. SURVEY (count); radii APPROX (drawn wider than D: an estimate, see the About card)
 D.encB = { x: -24, z: 4, r: 7.5, wallT: 0.9, wallH: 2.4 };     // B. APPROX
-D.encA = { x: -20, z: -14, rx: 7.5, rz: 5.5, wallT: 0.8, wallH: 2.2 };   // A, smaller and more oval. APPROX
+D.encA = { x: -20, z: -14, rx: 7.5, rz: 5.5, wallT: 0.8, wallH: 2.2 };   // A, the first found (1996). Shape and size APPROX
 
 // ---- the T-pillars
 D.central = { h: 5.5, L: 1.45, t: 0.38, headH: 0.95, headF: 0.55, headB: 0.15 };   // the central pair of D: about 5.5 m tall, 8–10 tonnes each. Height SURVEY (DAI, "How did they do it?", 2016); breadth and thickness APPROX
@@ -33,5 +33,5 @@ D.dCentralGap = 3.2;    // the central pair of D stand side by side, this far ap
 D.cPillars = 9; D.bPillars = 6; D.aPillars = 5;   // pillars shown in C's inner wall, B and A. APPROX (not counts)
 
 // ---- the quarry on the plateau, and the pillar left in it
-D.quarry = { x: 420, z: 0 };   // "several hundred metres" from the tell (SURVEY, DAI); the model position means nothing
+D.quarry = { x: 420, z: 0 };   // under 100 m to about 500 m from the enclosures (SURVEY, DAI "How did they do it?", 2016); the model position means nothing
 D.unfinished = { L: 7.0, t: 1.5, w: 1.6 };   // about 7 m long, 1.5 m thick, some 50 tonnes. SURVEY (DAI, "How did they do it?", 2016); width APPROX

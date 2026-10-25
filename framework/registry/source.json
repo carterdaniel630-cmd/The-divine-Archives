@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1909,
+ "count": 1916,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -3963,6 +3963,15 @@
    "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
+   "id": "source:dainst-blog/0752d41fb9",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2018/07/18/looking-beneath-the-surface-geophysical-surveys-at-gobekli-tepe/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:dainst-blog/1d4be59035",
    "type": "source",
    "label": "https://www.dainst.blog/the-tepe-telegrams/faq/",
@@ -3991,6 +4000,33 @@
    "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
+   "id": "source:dainst-blog/43a0373931",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2017/01/24/a-sanctuary-or-so-fair-a-house/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/4f203db17e",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2016/05/05/losing-your-head-at-gobekli-tepe",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/5742108a1e",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2017/07/03/more-than-a-vulture-a-response-to-sweatman-and-tsikritsis/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:dainst-blog/76f6db21fe",
    "type": "source",
    "label": "https://www.dainst.blog/the-tepe-telegrams/2017/04/21/archaeoastronomy-meteor-showers-mass-extinction-what-does-the-fox-say-and-what-the-crane-the-aurochs/",
@@ -4003,6 +4039,15 @@
    "id": "source:dainst-blog/80b52fa4d8",
    "type": "source",
    "label": "https://www.dainst.blog/the-tepe-telegrams/tag/quarries",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/c59eefee32",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2017/02/03/enclosure-b-a-short-overview/",
    "links": [
     "site:gobekli-tepe"
    ],
@@ -12986,6 +13031,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:opus-bibliothek-uni-wuerzburg-de/56945e4d0f",
+   "type": "source",
+   "label": "https://opus.bibliothek.uni-wuerzburg.de/frontdoor/index/index/year/2020/docId/20150",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:orca-cardiff-ac-uk/a6e7b77e93",
    "type": "source",
    "label": "https://orca.cardiff.ac.uk/id/eprint/74282/",
@@ -16649,6 +16703,15 @@
     "chapter:ch78"
    ],
    "from": "sources/ch78-scythians-steppe.md"
+  },
+  {
+   "id": "source:world-archaeology-com/aac19f36fc",
+   "type": "source",
+   "label": "https://www.world-archaeology.com/features/turkey-gobekli-tepe/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
    "id": "source:world-archaeology-com/f8769d2672",
