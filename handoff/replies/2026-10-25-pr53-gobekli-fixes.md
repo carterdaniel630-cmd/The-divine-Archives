@@ -1,4 +1,4 @@
-# 2026-10-25 ~19:00–19:35 UTC — build loop: PR #53 fix run, part 2 (Göbekli Tepe)
+# 2026-10-25 ~18:58–19:10 UTC — build loop: PR #53 fix run, part 2 (Göbekli Tepe)
 
 **Item:** STATUS Next 1e, the fix run after the independent review of `befb607` (`2026-10-25-pr53-independent-review.md`).
 One site this run: **Göbekli Tepe, every fixable finding, and review points 2 and 3 settled by sources.** Delphi and
