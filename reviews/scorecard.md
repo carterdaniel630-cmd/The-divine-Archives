@@ -7,6 +7,7 @@ Kept by the auditor (`reviews/AUDITOR.md` §4). One row per audit run; earlier r
 | 2026-10-05 | 2 (ch75, ch79; 28 source–claim pairs) | 2 | 0 scored (9 planted in review-test/2026-10, scoring pending) | — | 100% |
 | 2026-10-05 (scoring) | 0 | — | 9 (review-test/2026-10) | 9 | 100% |
 | 2026-10-11 | 6 (ch71, ch69, ch60, ch82 ×2, site:quality-bar) | 6 | 0 (no batch this run) | — | 100% |
+| 2026-10-25 | 16 (ch08, 15 site items from 15 reports) | 15 | 0 (no batch this run; the loop does not plant or score) | — | 94% |
 
 ## Caught by error type (planted-error test batches)
 
