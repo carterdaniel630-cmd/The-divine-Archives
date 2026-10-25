@@ -1,17 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 02:30 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 02:55 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`. **Deployed (`main`):** `c957af5` (PR #67, merged
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop). **Deployed (`main`):** `c957af5` (PR #67, merged
 2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
 `loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~02:42–02:55: **PR #76 fully qualified, merge refused** by this session's safety check on the push to
+  `main` (not retried another way). By a run that wrote none of #76: 9/9 GitHub checks green on `be51670` incl. Lighthouse
+  (02:32); clean copy: build 0 changes, 17 verify, 42/42 tests, review-checks 9/9 (0 warnings); headless phone on all 87
+  changed Vault pages: 0 script errors, 0 too wide; Mendoza/Borgia/Voynich 0 outside requests on open, 1 on scroll.
+  `main` still `c957af5`. Reply `2026-10-25-pr76-qualified-merge-refused.md`. Items per run: 1.
 - 2026-10-25 ~02:20–02:30: **PR #77 darker cloak re-reviewed** (`d038119`) by a run that wrote none of it: **0 findings**.
   Only the coat and hood are darker (skin/beard pixels: 7 of 10,760 changed by ≤4/255 in the portrait); sheet untouched;
   `cut.py` repeatable; build 0 changes, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone both
@@ -236,6 +241,8 @@
 - (none)
 
 ## For Muse (read this first)
+- **Armory batch 1 welcome** (10 pieces, real files under `handoff/armory/batch-01/<piece>/`, per
+  `decisions-2026-10-25-armory-intake-and-relic-links.md` 2). Not yet received.
 - **Journal hero images received** (2026-10-25, `handoff/journal-hero-b64/`, as base64 text). Thank you; nothing more
   needed unless the rebuild finds a problem with them.
 
@@ -246,7 +253,7 @@
 1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**.
    **Stacked on #67** by a chat session 2026-10-25 → head **`be51670`** (= reviewed `7100802` + #67 `c957af5`, nothing
    else; clean merge; local checks green). #67 is now on `main`, so `be51670` fast-forwards directly. **Ready next:** when Lighthouse on `be51670` is green
-   (8/9 green, Lighthouse running since 02:12), a run that wrote none of #76 re-runs local checks and fast-forwards `main` to `be51670`. **This is the next run's item.** Going live is covered by this yes. B–E need their own yes.
+   — **done: 9/9 green, local checks green 02:50; only the merge is left.** This run's fast-forward push was refused by its safety check. **Next run: retry the fast-forward once** (re-read checks; if refused again, leave it for Carter's Merge button on PR #76 and move on to 0/4b). Going live is covered by this yes. B–E need their own yes.
 1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
    2026-10-25 (0 findings)**. **Stacked on #76** → head **`71206ee`** (= reviewed `223600f` + #67 + #76, nothing else;
    local checks green). **Carter 2026-10-25 02:08: "loop may merge" #75** (`decisions-2026-10-25-hero-show-me-and-75.md` 2), his
@@ -268,6 +275,13 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
    site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
    domain or Cloudflare. Any wording change under `docs/` goes through a PR.
+4c. **Live relic links** (Carter's yes to build, `decisions-2026-10-25-armory-intake-and-relic-links.md` 1): up to three
+   outside links per relic (3D scan, the museum's own page/viewer, a live camera only where one really exists); free,
+   link/official embed only, nothing loads until tapped, each link opened and logged, none for withheld objects (V68).
+   Own `loop/*` branch, full checks, independent review; **going live needs Carter's yes for that PR**.
+4d. **Armory intake** (same file 2): after #76 → #75 → #77, Armory (~100) then Pantheon (~200) then Pilgrimage (100+), in
+   batches of 10 from Muse under `handoff/armory/batch-NN/`; one piece per run under the Rework Standard; waits on batch 1.
+   **One loop only** (same file 3): no second loop or lane.
 5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
@@ -290,6 +304,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
+- **Optional: PR #76 (speed fix A) is ready; the loop's push was blocked.** Carter can press Merge on PR #76 (choose
+  "Rebase and merge" if offered, so the stack behind it stays a fast-forward), or leave it for the next run to retry.
 Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`) and 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`,
 `decisions-2026-10-25-hero-show-me-and-75.md`, `decisions-2026-10-25-hero-yes-darker-cloak.md`), all folded into Next.
 - Nothing needed right now.

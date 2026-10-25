@@ -19,8 +19,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `be51670`, stacked on #67; Carter's yes `decisions-2026-10-24-batch-six.md`
   2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
   **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
-  absence page); local checks green. #67 is on `main` (`c957af5`), so `be51670` fast-forwards directly. Missing: Lighthouse green on `be51670` (8/9 green, running since 02:12); then a run that
-  wrote none of #76 re-runs local checks and fast-forwards.
+  absence page); local checks green. #67 is on `main` (`c957af5`), so `be51670` fast-forwards directly. **2026-10-25 ~02:50: every condition met** (9/9 checks incl. Lighthouse; local checks green on a clean copy by a run that
+  wrote none of it; `2026-10-25-pr76-qualified-merge-refused.md`). The fast-forward push was **refused by that session's
+  safety check**; not retried another way. Missing only: the merge itself (Carter's Merge button on PR #76, or a later run).
 
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head now `d038119` with the darker cloak).
   Built by the loop; **independent review 0 findings on `dbf5d16`** (`2026-10-25-pr77-independent-review.md`).
