@@ -20,7 +20,7 @@ D.lesser = { x: 9.3, z: 6.8, h: 3896 };         // Lesser Ararat, 3,896 m, to th
 D.saddle = 2700;                                 // the saddle between the two cones. APPROX
 D.plainS = 1600;                                 // the Doğubayazıt plain to the south, about 1,600 m. APPROX
 D.plainN = 850;                                  // the Aras plain to the north, about 850 m. APPROX
-D.massifR = 17;                                  // the massif about 35 km across at its base. SURVEY (as quoted)
+D.massifR = 17;                                  // the massif 35–40 km across at its base (Britannica: about 40 km; other accounts 35 km). SURVEY, the lower figure
 D.snow = 4200;                                   // permanent ice and snow above about 4,200 m in this model. APPROX
 D.ice = 7.3;                                     // the ice cap and its outlet glaciers: about 7.3 km² (2014–16 mapping). SURVEY
 

@@ -1582,26 +1582,20 @@ window.VAULT = {
       study: { manifest: "", rights: "Images of bowls belong to their holding museums; the origins of many privately held bowls are disputed.", external: [ { label: "British Museum — incantation bowl", href: "https://www.britishmuseum.org/collection/object/W_1851-0903-3" } ] }
     },
     {
-      id: "v68", slug: "tjurunga", status: "published", pending: false,
+      // WITHDRAWN (Carter's ruling 2026-10-20, handoff/tjurunga-takedown-order-2026-10-20.md): tjurunga are
+      // secret-sacred and are not carried as an exhibit. The URL stays as an absence page; the code V68 is not
+      // reused and the other codes are not renumbered. "withdrawn" items appear in no list, count or room.
+      id: "v68", slug: "tjurunga", status: "withdrawn", pending: false,
       era: "09-modern", year: 1899, chapters: ["ch61"],
       title: "The Tjurunga of Central Australia", category: "relics",
       source: "vault/v68-tjurunga.md",
-      held: "Held by their Arrernte and neighbouring custodians; many collected examples in museums (Strehlow Research Centre, Alice Springs, and elsewhere), with restricted access and returns under way",
-      dated: "Kept over many generations; most museum examples collected c. 1890s–1960s",
-      summary: "Sacred boards and stones of the Arrernte and their neighbours, which embody ancestral beings of the Dreaming and are seen only by those entitled to see them. Collectors took thousands into museums, and European thinkers built theories of religion on them. This entry tells their history but shows none of them.",
-      artifact: {
-        type: "timeline", theme: "reliquary", title: "A history without pictures",
-        sub: "Tjurunga may be seen only by those with the right to see them, so this archive shows none. Follow instead how they left their Country, and how they are going back.",
-        events: [
-          { y: "Ancestral time", t: "Held on Country", d: "In Arrernte belief, tjurunga carry the power of ancestral beings of the Altyerre, the Dreaming, and are bound to particular places, songs and people. They are kept hidden and shown only in ceremony, to those entitled." },
-          { y: 1896, t: "The ceremonies watched", d: "At the Alice Springs telegraph station, Arrernte men perform a long cycle of ceremonies before the biologist Baldwin Spencer and the telegraph master Francis Gillen." },
-          { y: 1899, t: "Published", d: "Spencer and Gillen's The Native Tribes of Central Australia describes tjurunga ('churinga') in detail, with photographs. Many such images are now regarded as restricted." },
-          { y: 1912, t: "Into theory", d: "Émile Durkheim builds his account of the sacred and of totemism in The Elementary Forms of Religious Life largely on the Arrernte evidence of Spencer, Gillen and the missionary Carl Strehlow." },
-          { y: "1930s–1970s", t: "The Strehlow collection", d: "Carl Strehlow's son, the linguist T. G. H. Strehlow, records songs and ceremonies and receives many tjurunga from senior men, a collection that became the subject of long and bitter dispute." },
-          { y: "Today", t: "Going home", d: "The collection is held by the Strehlow Research Centre in Alice Springs under restricted access, and Australian and overseas museums are returning secret-sacred objects to their communities." }
-        ]
-      },
-      study: { manifest: "", rights: "Tjurunga are secret-sacred. By the wishes of their custodians this archive reproduces no image of them.", external: [ { label: "Strehlow Research Centre (Northern Territory Government)", href: "https://nt.gov.au/leisure/arts-culture-heritage/organisations-and-venues/museums-galleries-art-centres/alice-springs/strehlow-research-centre" } ] }
+      summary: "This entry is an absence, kept on purpose. The tjurunga of Central Australia are secret-sacred, shown only to those entitled to see them, so this archive shows none: no picture, no drawing, no rendering.",
+      absence: {
+        // the link a chapter keeps to this URL (order §2.5)
+        link: "Why the archive does not show the tjurunga",
+        // the museum room note (order §3, verbatim)
+        roomNote: "<strong>Not shown — the tjurunga.</strong> The tjurunga of Central Australia are secret-sacred, and by their custodians' law they may be seen only by those entitled to see them. This room keeps no picture of them and no rendering. Some things are not ours to show; they are held by their custodians, and that is where they stay."
+      }
     },
     {
       id: "v69", slug: "kumulipo", status: "published", pending: false,
@@ -1689,7 +1683,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stones belong to their photographers.", external: [ { label: "UNESCO — Stećci Medieval Tombstone Graveyards", href: "https://whc.unesco.org/en/list/1504/" } ] }
     },
     {
-      id: "v72", slug: "book-of-shadows", status: "published", pending: true,
+      id: "v72", slug: "book-of-shadows", status: "published", pending: false,
       era: "09-modern", year: 1949, chapters: ["ch38"],
       title: "The Book of Shadows", category: "manuscripts",
       source: "vault/v72-book-of-shadows.md",

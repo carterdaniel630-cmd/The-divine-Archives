@@ -305,6 +305,9 @@ function step(dt) {
   if (!S.portalT) {
     const pr = S.regions.find((r) => r.portal && r.contains(S.pos.x, S.pos.z) && Math.abs(r.floorAt(S.pos.x, S.pos.z) - S.foot) < STEP);
     if (pr) {
+      // if the route's current stop is this portal, the route carries on from it on the far side
+      const R = S.site.route, rs = S.routeIdx != null && R[S.routeIdx];
+      S.routeKeep = !!(rs && pr.contains(rs.x, rs.z));
       S.portalT = true; S.auto = null; S.route = []; S.keys.clear(); paintRoute();
       const f = $("mu-fade"); f.classList.add("gold");
       if (pr.href) { f.classList.add("on"); setTimeout(() => { window.location.href = pr.href; }, S.reduce ? 0 : 650); }   // out of the site (to the museum)
@@ -322,11 +325,15 @@ function nearestRouteIndex() {
 function walkRoute(dir) {
   const R = S.site.route; if (!R.length) return;
   // the route passes some places twice (down from the King's Chamber, on to the Queen's): remember where we are on it
-  const ri = S.routeIdx, near = ri != null && R[ri] && Math.hypot(R[ri].x - S.pos.x, R[ri].z - S.pos.z) < 3 && Math.abs((R[ri].y != null ? R[ri].y : S.foot) - S.foot) < 1.5;
+  const ri = S.routeIdx, near = ri != null && R[ri] && (S.routeKeep || (Math.hypot(R[ri].x - S.pos.x, R[ri].z - S.pos.z) < 3 && Math.abs((R[ri].y != null ? R[ri].y : S.foot) - S.foot) < 1.5));
+  S.routeKeep = false;
   let i = near ? ri : nearestRouteIndex();
   const path = []; let j = i + dir;
   // walk point by point to the next stop in that direction
-  for (; j >= 0 && j < R.length; j += dir) { path.push({ x: R[j].x, z: R[j].z }); if (R[j].stop) break; }
+  for (; j >= 0 && j < R.length; j += dir) {
+    if (!path.length && Math.hypot(R[j].x - S.pos.x, R[j].z - S.pos.z) < 0.5) continue;   // already there (e.g. just through a portal): on to the next
+    path.push({ x: R[j].x, z: R[j].z }); if (R[j].stop) break;
+  }
   S.routeIdx = Math.max(0, Math.min(R.length - 1, j));
   if (!path.length) return;
   if (S.reduce) {           // reduced motion: jump straight there with a fade

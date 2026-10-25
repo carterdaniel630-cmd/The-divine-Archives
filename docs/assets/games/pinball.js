@@ -8,6 +8,10 @@
    Real physics — substepped so nothing tunnels — with two flippers, angled
    slings, and a drain to guard. Left/Right (or A/D, or the two pads) flip;
    Space / tap / Launch fires the ball.
+   Hit-feel (feel.js): bumpers ring and pop with a short freeze and shake,
+   slings snap, flippers thunk, a lit heaven chimes, a lost ball drops a tone;
+   floating +score numbers show what each strike earned. Reduced motion on
+   the phone turns the shake, the pop and the rising numbers off.
    ========================================================================== */
 (function () {
   "use strict";
@@ -44,6 +48,8 @@
 
     var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1, acc = 0, STEP = 1 / 60;
     var st = null, best = AG.bestScore("pinball");
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null;
+    function feel(kind, o) { if (FEEL) FEEL.hit(kind, o); }
 
     // static table walls (segments) + slings + bumpers
     var SEGS = [
@@ -69,11 +75,12 @@
 
     function newBall() { return { x: 287, y: 348, vx: 0, vy: 0, r: 7, launched: false }; } // rests in the right launch lane
     function newGame() {
-      BUMPERS.forEach(function (b) { b.hits = 0; b.lit = false; });
+      BUMPERS.forEach(function (b) { b.hits = 0; b.lit = false; b.pop = 0; });
+      if (FEEL) FEEL.reset();
       st = {
         ball: newBall(), balls: 3, score: 0, collected: [], seen: {},
         L: mkFlipper(114, 416, 1), R: mkFlipper(206, 416, -1),
-        sparks: [], stars: [], over: false, msg: "Tap Launch (or Space) to cast the spark", charge: 0
+        sparks: [], stars: [], pops: [], over: false, msg: "Tap Launch (or Space) to cast the spark", charge: 0
       };
       for (var i = 0; i < 26; i++) st.stars.push({ x: Math.random() * VW, y: Math.random() * VH * 0.7, r: Math.random() * 1.2 + 0.3, a: Math.random() * 0.5 + 0.1 });
     }
@@ -110,7 +117,7 @@
     function setFlip(which, on) { var f = which === "L" ? st.L : st.R; if (f) f.active = on; }
     function launch() {
       if (!st || st.over) return; var b = st.ball;
-      if (!b.launched) { b.launched = true; b.vx = rnd(-0.4, 0.4); b.vy = -rnd(9.6, 10.2); st.msg = ""; live.textContent = ""; }
+      if (!b.launched) { b.launched = true; b.vx = rnd(-0.4, 0.4); b.vy = -rnd(9.6, 10.2); st.msg = ""; live.textContent = ""; feel("sling", { pitch: 0.7, scale: 0.6 }); }
     }
 
     /* ---------------- physics ---------------- */
@@ -123,7 +130,8 @@
         b.x = cxp + nx * b.r; b.y = cyp + ny * b.r;
         var vn = b.vx * nx + b.vy * ny;
         if (vn < 0) { b.vx -= (1 + REST) * vn * nx; b.vy -= (1 + REST) * vn * ny; }
-        if (kick) { b.vx += nx * kick; b.vy += ny * kick; addSpark(cxp, cyp, "#cbb78a"); }
+        if (kick) { b.vx += nx * kick; b.vy += ny * kick; addSpark(cxp, cyp, "#cbb78a"); feel("sling", { scale: clamp(-vn / 4, 0.6, 1.4) }); }
+        else if (vn < -1.6) feel("tick", { pitch: rnd(0.9, 1.1), scale: clamp(-vn / 5, 0.3, 1) });
         return true;
       }
       return false;
@@ -139,7 +147,7 @@
         var vn = b.vx * nx + b.vy * ny;
         if (vn < 0) { b.vx -= (1 + REST) * vn * nx; b.vy -= (1 + REST) * vn * ny; }
         // flipper drive: if swinging up, launch the ball
-        if (f.av < -0.02) { var drive = Math.min(13, -f.av * f.len * t * 1.7); b.vx += nx * drive; b.vy += ny * drive; }
+        if (f.av < -0.02) { var drive = Math.min(13, -f.av * f.len * t * 1.7); b.vx += nx * drive; b.vy += ny * drive; if (drive > 2) feel("thunk", { scale: clamp(drive / 8, 0.5, 1.4), pitch: rnd(0.95, 1.05) }); }
         return true;
       }
       return false;
@@ -150,12 +158,18 @@
         nx /= d; ny /= d; b.x = bm.x + nx * (b.r + bm.r); b.y = bm.y + ny * (b.r + bm.r);
         var vn = b.vx * nx + b.vy * ny; if (vn < 0) { b.vx -= (1 + REST) * vn * nx; b.vy -= (1 + REST) * vn * ny; }
         b.vx += nx * 2.8; b.vy += ny * 2.8;
-        bm.hits++; st.score += 100; addSpark(bm.x, bm.y, COL.goldB);
-        if (!bm.lit && bm.hits >= 3) { bm.lit = true; st.score += 500; revealFact(); }
+        bm.hits++; st.score += 100; addSpark(bm.x, bm.y, COL.goldB); bm.pop = 1; addPop(bm.x, bm.y - bm.r - 4, 100);
+        // each body rings its own note; a faster ball strikes harder
+        feel("bumper", { pitch: BELL[bm.name] || 1, scale: clamp(Math.hypot(b.vx, b.vy) / 7, 0.6, 1.4) });
+        if (!bm.lit && bm.hits >= 3) { bm.lit = true; st.score += 500; addPop(bm.x, bm.y - bm.r - 18, 500, true); feel("big", { color: "231,198,128" }); revealFact(); }
         return true;
       }
       return false;
     }
+    // the bumpers' notes (a rising set, so a combo climbs): Earth, Sun, Moon, Pole Star
+    var BELL = { Earth: 0.8, Sun: 1, Moon: 1.19, "Pole Star": 1.5 };
+    // floating score numbers ("damage numbers"): rise and fade; held still under reduced motion
+    function addPop(x, y, n, big) { st.pops.push({ x: x, y: y, n: n, t: 0, big: !!big }); if (st.pops.length > 14) st.pops.shift(); }
     function addSpark(x, y, col) { (st.rings || (st.rings = [])).push({ x: x, y: y, t: 0, col: col }); for (var i = 0; i < 6; i++) st.sparks.push({ x: x, y: y, vx: rnd(-3, 3), vy: rnd(-3, 3), life: 1, col: col }); }
 
     function stepFlipper(f, dt) {
@@ -188,6 +202,7 @@
       if (b.y > VH + 16) return drain();
     }
     function drain() {
+      feel("lose", { color: "120,30,30" });
       st.balls--;
       if (st.balls <= 0) { st.over = true; endScreen(); return; }
       st.ball = newBall(); st.msg = "Ball away — tap Launch for the next"; live.textContent = st.msg;
@@ -209,6 +224,7 @@
     // "Firmament" name promises instead of four grey circles.
     function drawBumper(bm, t) {
       var x = bm.x, y = bm.y, r = bm.r, lit = bm.lit, pulse = lit ? 1 + Math.sin(t * 4 + x) * 0.05 : 1;
+      if (bm.pop > 0 && !(FEEL && FEEL.reduced)) pulse *= 1 + 0.18 * bm.pop;   // struck: it swells, then settles
       cx.save();
       if (lit) { cx.shadowColor = COL.goldB; cx.shadowBlur = 22; }
       // faint halo ring
@@ -248,6 +264,7 @@
     function draw() {
       var g = cx.createLinearGradient(0, 0, 0, VH); g.addColorStop(0, "#1a1226"); g.addColorStop(0.6, "#140d1c"); g.addColorStop(1, "#0d0906");
       cx.fillStyle = g; cx.fillRect(0, 0, VW, VH);
+      if (FEEL) FEEL.begin(cx);
       for (var i = 0; i < st.stars.length; i++) { var s = st.stars[i]; cx.globalAlpha = s.a; cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
       // concentric orbit rings — the ordered heavens, centered on the Pole Star
@@ -297,6 +314,12 @@
       // sparks
       for (var s2 = st.sparks.length - 1; s2 >= 0; s2--) { var sp = st.sparks[s2]; cx.globalAlpha = clamp(sp.life, 0, 1); cx.fillStyle = sp.col; cx.beginPath(); cx.arc(sp.x, sp.y, 2, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
+      // floating score numbers
+      var still = FEEL && FEEL.reduced;
+      cx.textAlign = "center";
+      for (var pq = 0; pq < st.pops.length; pq++) { var pp = st.pops[pq], pu = pp.t / (pp.big ? 1.1 : 0.7); cx.globalAlpha = clamp(1 - pu, 0, 1); cx.fillStyle = pp.big ? "#fff2cf" : COL.goldB; cx.font = "600 " + (pp.big ? 13 : 9) + "px Cinzel, Georgia, serif"; cx.fillText("+" + pp.n, pp.x, pp.y - (still ? 0 : pu * 22)); }
+      cx.globalAlpha = 1;
+      if (FEEL) FEEL.end(cx, VW, VH);
       if (!b.launched && st.msg) { cx.fillStyle = "rgba(231,198,128,.9)"; cx.font = "600 12px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText(st.msg, VW / 2, VH * 0.5); }
     }
 
@@ -310,7 +333,12 @@
       if (!running) return;
       // fixed 60 Hz simulation (substeps inside): per-tick gravity/velocity no longer
       // scale with the display refresh rate
-      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; acc += dt;
+      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts;
+      // hit-stop: on a strike the table holds still for a few hundredths of a second
+      if (FEEL && FEEL.tick(dt)) { acc = 0; dt = 0; }
+      acc += dt;
+      for (var pi = st.pops.length - 1; pi >= 0; pi--) { st.pops[pi].t += dt; if (st.pops[pi].t > 1.1) st.pops.splice(pi, 1); }
+      BUMPERS.forEach(function (bm) { if (bm.pop > 0) bm.pop = Math.max(0, bm.pop - dt * 6); });
       var n = 0;
       while (acc >= STEP && n < 6) {
         acc -= STEP; n++;
