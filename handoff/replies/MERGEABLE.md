@@ -11,8 +11,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Qumran guided walk leaves Cave 4** (PR #81, `loop/qumran-walk-4b` @ `2c099a0`, **stacked on #68**: #68 + `main`
-  `c957af5` + one Qumran commit). Built 2026-10-25; local checks green. Missing: independent review, every GitHub check
-  green incl. Lighthouse, #68 on `main` first, Carter's yes for #81.
+  `c957af5` + one Qumran commit). Built 2026-10-25; local checks green. **Independent review 2026-10-25 ~10:55: 0 open
+  findings** (`2026-10-25-pr81-independent-review.md`); **10/10 GitHub checks green incl. Lighthouse (10:51).** Missing:
+  #68 on `main` first, then Carter's yes for #81.
 
 - **Pilgrimage wording fixes and guided walks** (PR #68, `claude/pilgrimage-51-fixes` @ `c4e5141`, base an older `main`).
   **Independent review 2026-10-25: 0 open findings** (`2026-10-25-pr68-independent-review.md`, by a loop run that wrote
@@ -53,7 +54,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Reliquary dropdowns inside the dialog on 461–484 px phones** (PR #80, `loop/reliquary-phone-480` @ `c9408a0`, off
   `main` `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr80-reliquary-phone-480.md`). Local checks green.
   **Independent review 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`). GitHub 4/6 green
-  at review; **Lighthouse and one runtime run still running.** Missing: those green, then Carter's yes for this item.
+  at review; **all 6 GitHub checks green incl. Lighthouse (10:45).** Missing only: Carter's yes for this item.
 
 ## Merged
 - Site fixes 2026-10-18 (PR #67): merged 2026-10-25 02:17 UTC by fast-forward `efba79c` → `c957af5`, deploy run 201 green (Carter's yes `decisions-2026-10-24-batch-six.md` 1; review `2026-10-24-pr67-independent-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr67-merged.md`).

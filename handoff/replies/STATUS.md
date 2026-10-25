@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~10:40 UTC (build loop, PR #81 build run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~10:56 UTC (build loop, PR #81 review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,12 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~10:43–10:56: **PR #81 independently reviewed: 0 open findings** (Next 4h, live defect, value 3; this run
+  wrote none of #81 or #68). Stack is exactly #68's reviewed diff + `main` + the 2-line Qumran commit (byte-compared).
+  Clean copy: review-checks 9/9 (0 warnings, build current), 17/17 verify, 42/42 tests. Own headless "Walk on" test,
+  phone: `main` stops in Cave 4b in both motion modes; #81 ends at the route's last point in Cave 3 in both; other five
+  sites come to rest, 0 script errors. **#81: 10/10 GitHub green incl. Lighthouse. #80: Lighthouse finished green (6/6).**
+  Report `2026-10-25-pr81-independent-review.md`; filed on `review-log` @ `c33d34e`. Items per run: 1.
 - 2026-10-25 ~10:25–10:40: **PR #81 built: Qumran guided walk no longer stops in Cave 4** (Next 4h, live defect,
   value 3). Three route points back through the 4b passage (2 lines). **Stacked on #68** (its engine change is needed:
   without it the walk loops back to Cave 4; tested), on `loop/qumran-walk-4b` @ `2c099a0`. Build 0 changes, 17/17
@@ -363,10 +369,10 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 4g. **PR #80 (Reliquary dropdowns past the dialog at 461–484 px; live defect, value 3):** built 2026-10-25 (`c9408a0`,
    off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`;
    defect reproduced on `main` at 461–480 px, gone on #80). GitHub 4/6 green; **next run: confirm Lighthouse and the second
-   runtime run finished green on `c9408a0`** (re-run once if cancelled/failed before tests). 10:25: 5/6 green (both runtime runs), Lighthouse still running. Carter's yes asked now with #78/#79.
+   runtime run finished green on `c9408a0`** — **done 10:54: 6/6 green incl. Lighthouse.** Missing only: Carter's yes (asked with #78/#79).
 4h. **PR #81 (Qumran guided walk stops in Cave 4; live defect, value 3):** built 2026-10-25 (`2c099a0`), **stacked on
-   #68**. **Next run: independent review** (diff `dd98586..2c099a0`) by a run that wrote none of it. Goes live after
-   #68, with Carter's yes for #81.
+   #68**. **Independently reviewed 2026-10-25 ~10:55: 0 open findings; 10/10 GitHub green incl. Lighthouse.** Goes live
+   after #68, with Carter's yes for #81 (asked now).
 10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
@@ -386,11 +392,12 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   touches only the game styling; recommendation: yes to all three):
   - **PR #78** Journal, phone held sideways: the Sound button no longer sits under the ✕. All checks green.
   - **PR #79** Journal, narrow upright phones: stats and controls fit; the full-screen button keeps its spoken name. All checks green.
-  - **PR #80** Reliquary: on phones 461–484 px wide the setup dropdowns no longer stick out past the box. Last speed check still running.
+  - **PR #80** Reliquary: on phones 461–484 px wide the setup dropdowns no longer stick out past the box. All checks green.
   A yes for any of them lets the loop put it live (after its checks are all green).
 - **PR #68, Pilgrimage wording fixes, yes/no to go live** (Stonehenge heights, Golgotha date, Ararat 1840 shown as
   disputed; guided walks on Ararat and Alexandria now reach the end). Independent review 0 open findings. Recommendation: yes.
-- **PR #81, Qumran guided walk fix** (after #68): yes/no will be asked once its independent review passes.
+- **PR #81, Qumran guided walk fix, yes/no to go live** (goes right after #68): "Walk on" no longer gets stuck in Cave 4;
+  it now reaches Cave 3. Independent review 0 open findings, all checks green. Recommendation: yes.
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
   buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).
