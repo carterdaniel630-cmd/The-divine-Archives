@@ -4,18 +4,21 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~18:50 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-25 ~23:55 UTC (#53 row updated by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`, draft): brought up to `main` 2026-10-25 17:46 as `befb607`;
-  Göbekli Tepe "oldest known megaliths" replaced by the sourced "among the earliest known monumental architecture"; local
-  checks green. **Independent review 18:20: NOT passed** (`2026-10-25-pr53-independent-review.md`): automatic checks green,
-  but about 30 fixable source/wording findings across all four sites and 3 source points for Carter (Göbekli blog source
-  not found, Göbekli C/D sizes, Chichén decline date). **Missing:** the fixes, a fresh independent review by a run that
-  did not make them, GitHub checks green, Carter's yes (new content, holy-site pages).
+- **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`): first review (`befb607`, 18:20) NOT passed; fixed
+  site by site (`8aab255`, `2dd1158`, `6f314d4`, `e8ce493`), then by the Pilgrimage chat thread (`dc08c5c`, `0e74caa`),
+  whose own round-4 review of `0e74caa` says PASS and whose MERGEABLE row (on the PR branch only, `13fa2dc`) cites
+  Carter's "merge". **The loop's independent review of the same `0e74caa` (23:55, `2026-10-25-pr53-review-0e74caa.md`)
+  is NOT passed: 27 small fixable findings, 0 for Carter, no fake source.** Local checks green; 7/7 GitHub checks green
+  on `13fa2dc`, no Lighthouse run listed. **Missing:** those fixes; a final review by a run that made none of them; a
+  Lighthouse run green on that head; Carter's yes for that head (his "merge" was given for an earlier state).
+  Note: the PR branch's `handoff/replies/2026-10-25-pr53-independent-review.md` has the same name as the staging
+  file but different content. Reconcile it before any handoff merge.
 
 ## Merged
 - Arcade tap targets, part 1 (PR #86): **merged by the loop 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b`

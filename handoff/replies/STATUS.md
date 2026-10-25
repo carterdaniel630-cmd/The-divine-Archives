@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~23:20 UTC (build loop: **PR #53 fix run part 4, Chichén Itzá fixed** at `e8ce493`; all four sites now fixed). Earlier ~21:52: part 3, Delphi (`6f314d4`). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~23:55 UTC (build loop: **independent review of PR #53 at `0e74caa`: NOT passed, 27 small fixable findings, 0 for Carter** (`2026-10-25-pr53-review-0e74caa.md`); the Pilgrimage chat thread's own review of the same commit said PASS, and Carter has been told). Earlier ~23:20: PR #53 fix run part 4, Chichén Itzá fixed at `e8ce493`. Earlier ~21:52: part 3, Delphi (`6f314d4`). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -397,18 +397,13 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1d. ~~**PR #86**~~ **merged 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b` (Carter's yes
    `decisions-2026-10-25-pr86-go.md`; 6/6 checks green incl. Lighthouse; local checks + headless 96 opens green; deploy 214 green).
    Reply `2026-10-25-pr86-merged.md`.
-1e. **PR #53 (Pilgrimage batch 1), head `e8ce493`: review of `befb607` NOT passed** (`2026-10-25-pr53-independent-review.md`).
-   **Fix run part 1 done 19:30: Mogao Caves, all fixable findings** (`2026-10-25-pr53-mogao-fixes.md`; main `3785b2b` merged in).
-   **Fix run part 2 done ~19:10: Göbekli Tepe** (`2dd1158`, `2026-10-25-pr53-gobekli-fixes.md`; review points 2 and 3 settled).
-   **Fix run part 3 done ~21:52: Delphi** (`6f314d4`, `2026-10-25-pr53-delphi-fixes.md`).
-   **Fix run part 4 done ~23:20: Chichén Itzá** (`e8ce493`, `2026-10-25-pr53-chichen-fixes.md`; review point 4 settled by both views).
-   **NEXT: fresh independent review of `e8ce493`** by a run that made none of the fixes (all four sites; check the
-   "For the re-review" notes in each fix reply), then GitHub checks green, then one yes/no to Carter.
-   Original fix-run brief (done): fix run on `claude/project-thread-s3qxre` (merge commits only, no force-push): every fixable finding in the
-   report, site by site (a smaller correct piece is fine: e.g. one or two sites per run, say which); try to settle the
-   three source points by sources (Göbekli "ttHouse" blog post, Göbekli C/D sizes, Chichén decline date: state both
-   views); rebuild, full checks, headless phone. **Then** a fresh independent review by a run that did not make the fixes,
-   GitHub checks green, then one yes/no to Carter (new content + §4.6 holy-site pages). Preview/pending tags stay.
+1e. **PR #53 (Pilgrimage batch 1).** Fixed four times by the loop (`8aab255` … `e8ce493`), then twice by the Pilgrimage
+   chat thread (`dc08c5c`, `0e74caa`; their round-4 review says PASS, MERGEABLE row on the PR branch citing Carter's "merge").
+   **Loop's independent review of `0e74caa` (23:55): NOT passed, 27 small fixable findings, 0 for Carter**
+   (`2026-10-25-pr53-review-0e74caa.md`; filed on `review-log`). **NEXT:** one fix run for those 27 on
+   `claude/project-thread-s3qxre` (merge commits only). Skip it while the Pilgrimage thread is pushing there; if it has
+   left a `CLAIM`, or pushed in the last 3 hours, leave the branch to it. Then a final review by a run that made none of the
+   fixes, a Lighthouse run green on that head, then Carter's yes for that head. The loop does not merge #53 at `0e74caa`.
    Outside the PR, own pass later: `ch29` line 47 asserts equinox design intent.
 1f. Branch clean-up (same file A): approved for Carter, but **not the loop's** (the loop never deletes branches); nightly
    reviewer paused (B): missing heartbeats from 2026-10-26 are not a finding.
@@ -448,6 +443,8 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing new. #86 is live (merged 18:45, deploy green). #53 has been fixed site by site (all four done) after
-  its review and now waits on a fresh review; it comes to you for one yes/no once fixed and re-reviewed.
-Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
+- **PR #53, two reviews disagree.** The Pilgrimage chat thread passed `0e74caa`; the loop's independent review of the
+  same commit found 27 small fixes (no fake sources, nothing for you to rule on). Recommended: **A** one more fix run, then
+  the final review, then your yes. **B** merge `0e74caa` now and fix after (not recommended: the loop won't merge with open
+  findings).
+Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next, plus `decisions-2026-10-25-auto-delete-branches.md`.
