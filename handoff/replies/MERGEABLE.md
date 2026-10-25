@@ -14,7 +14,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (`2026-10-25-pr83-independent-review.md`). **Brought up 2026-10-25 ~13:10 to `cfc1298`** (`main` `12e7d65`, same
   registry-only conflict, same resolution). Site diff vs `main` byte-for-byte the reviewed diff (2 files). Local checks
   green; 8/8 GitHub checks green on `cfc1298` incl. Lighthouse. **Now one merge behind `main` `3762691`** (#77 landed; both touch
-  `treasure.js`): needs bringing up again. Missing: that bring-up and its checks; Carter's yes for #83 (he checks it himself).
+  `treasure.js`): needs bringing up again. Carter's yes recorded 2026-10-25 ~16:41 (`decisions-2026-10-25-approve-83.md`). Missing: that bring-up and every GitHub check green on the new head.
 
 ## Merged
 - Journal hero part 1, The Archivist (PR #77): **merged by the loop 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691`

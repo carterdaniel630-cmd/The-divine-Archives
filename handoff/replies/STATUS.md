@@ -5,7 +5,7 @@
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`. **Deployed (`main`):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`. **Deployed (`main`):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
 **Open loop branches:** `loop/journal-touch-polish` = #83 (`cfc1298`, one merge behind `main` `3762691`; reviewed, 0 findings; Carter checking it himself),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
@@ -351,9 +351,10 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1a. ~~**PR #84**~~ superseded by #85; **closed 2026-10-25 13:24** (Carter's ruling 2). Branch kept.
 1b. ~~**PR #77**~~ **merged 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691` (Carter's ruling 1; reviewed diff
    unchanged; 8/8 GitHub checks green incl. Lighthouse; local checks green; deploy 212 green). Reply `2026-10-25-pr77-merged.md`.
-1c. **PR #83 (reviewed, 0 findings): Carter checks it himself** (ruling 3). Now one merge behind `main` `3762691`, and both
-   touch `treasure.js`: **next run brings #83 up to `3762691`** (merge `main`, full checks, confirm site diff = reviewed diff),
-   then it waits on Carter's yes. No merge without it.
+1c. **PR #83 (reviewed, 0 findings): APPROVED by Carter 2026-10-25 ~16:41** (`decisions-2026-10-25-approve-83.md`). Now one
+   merge behind `main` `3762691`, and both touch `treasure.js`: **next run brings #83 up to `3762691`** (merge `main`, full
+   checks, confirm site diff = reviewed diff, headless phone check), pushes, releases the lock while GitHub checks run;
+   a later run merges by fast-forward once every check incl. Lighthouse is green, then removes #83 from Needs Carter.
 1d. **Then** the next highest-value item needing no Carter yes: item 5 Arcade playability floor, or 8a #66 review.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
@@ -390,7 +391,5 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **PR #83 (Journal touch polish): you said you'd check it yourself.** Bigger tap areas for Select/Start on phones; the
-  first Journal tip names the on-screen buttons. Reviewed, 0 findings. The next run brings it up to the new live code
-  (with The Archivist) so it's ready the moment you say yes.
+- Nothing right now. (#83 approved 16:41; it goes live after its bring-up and green checks.)
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
