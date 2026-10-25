@@ -4,17 +4,19 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~16:55 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-25 ~17:10 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Journal touch polish** (PR #83, `loop/journal-touch-polish`). **Independent review 0 open findings**
-  (`2026-10-25-pr83-independent-review.md`). **Brought up 2026-10-25 ~13:10 to `cfc1298`** (`main` `12e7d65`, same
-  registry-only conflict, same resolution). Site diff vs `main` byte-for-byte the reviewed diff (2 files). Local checks
-  green; 8/8 GitHub checks green on `cfc1298` incl. Lighthouse. **Now one merge behind `main` `3762691`** (#77 landed; both touch
-  `treasure.js`): needs bringing up again. Carter's yes recorded 2026-10-25 ~16:41 (`decisions-2026-10-25-approve-83.md`). Missing: that bring-up and every GitHub check green on the new head.
+  (`2026-10-25-pr83-independent-review.md`). Carter's yes recorded 2026-10-25 ~16:41 (`decisions-2026-10-25-approve-83.md`).
+  **Brought up 2026-10-25 ~17:05 to `45d4a95`** (merge of `main` `3762691`, no conflict). Site diff vs `main` is the
+  reviewed diff (2 files, `games.css` +7, `treasure.js` +5 −3; only the blob-hash line differs). Local checks green on
+  `45d4a95` (build order 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9 0 warnings, headless touch phone
+  3 sizes × 2 motion modes). **Missing: every GitHub check green on `45d4a95`, Lighthouse included** (started by the
+  17:05 push). Then a run fast-forwards `main` → `45d4a95`.
 
 ## Merged
 - Journal hero part 1, The Archivist (PR #77): **merged by the loop 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691`

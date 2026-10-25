@@ -1,17 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~16:55 UTC (build loop: #77 merged per Carter's ruling). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~17:10 UTC (build loop: #83 brought up to `main` `3762691`). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`. **Deployed (`main`):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/journal-touch-polish` = #83 (`cfc1298`, one merge behind `main` `3762691`; reviewed, 0 findings; Carter checking it himself),
+**Open loop branches:** `loop/journal-touch-polish` = #83 (`45d4a95`, on top of `main` `3762691`; reviewed, 0 findings; Carter approved; GitHub checks running),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~16:52–17:10: **#83 brought up to `main` `3762691`** (after #77) → **`45d4a95`**, merge commit, no conflict.
+  Site diff = the reviewed 2-file diff (only the blob-hash line differs). Local: build order 0 changes, 17/17 verify,
+  42/42 tests, review-checks 9/9 (0 warnings); headless touch phone 3 sizes × 2 motion modes: game runs, 0 errors, tap
+  areas 44 px, touch tip shown, The Archivist still the hero. Not merged: GitHub checks just started (lock released).
+  Reply `2026-10-25-pr83-up-to-3762691.md`. Items per run: 1.
 - 2026-10-25 ~13:01–13:15: **#77 and #83 brought up to `main` `12e7d65`** after Carter merged #85 (12:57). #77 → `3762691`,
   #83 → `cfc1298`; only the generated registry files conflicted (took `main`'s, rebuilt: 0 changes). Site diffs vs `main`
   byte-for-byte the reviewed ones. Local: build order 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9; headless
@@ -351,10 +356,10 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1a. ~~**PR #84**~~ superseded by #85; **closed 2026-10-25 13:24** (Carter's ruling 2). Branch kept.
 1b. ~~**PR #77**~~ **merged 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691` (Carter's ruling 1; reviewed diff
    unchanged; 8/8 GitHub checks green incl. Lighthouse; local checks green; deploy 212 green). Reply `2026-10-25-pr77-merged.md`.
-1c. **PR #83 (reviewed, 0 findings): APPROVED by Carter 2026-10-25 ~16:41** (`decisions-2026-10-25-approve-83.md`). Now one
-   merge behind `main` `3762691`, and both touch `treasure.js`: **next run brings #83 up to `3762691`** (merge `main`, full
-   checks, confirm site diff = reviewed diff, headless phone check), pushes, releases the lock while GitHub checks run;
-   a later run merges by fast-forward once every check incl. Lighthouse is green, then removes #83 from Needs Carter.
+1c. **PR #83 (reviewed, 0 findings; APPROVED by Carter 2026-10-25 ~16:41, `decisions-2026-10-25-approve-83.md`):
+   brought up to `3762691` → `45d4a95` at ~17:05, local checks green.** Next run: if every GitHub check on `45d4a95` incl.
+   Lighthouse is green, fast-forward `main` → `45d4a95`, watch the deploy, update CURRENT/MERGEABLE. If still running,
+   don't wait with the lock: do 1d and check again next run.
 1d. **Then** the next highest-value item needing no Carter yes: item 5 Arcade playability floor, or 8a #66 review.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
@@ -391,5 +396,5 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing right now. (#83 approved 16:41; it goes live after its bring-up and green checks.)
+- Nothing right now. (#83 approved 16:41; brought up 17:05; it goes live once its GitHub checks are green.)
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
