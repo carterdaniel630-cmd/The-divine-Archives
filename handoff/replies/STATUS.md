@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 08:10 UTC (build loop; the 08:20 stamp before this was an estimate written ahead of the clock). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 09:35 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,12 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~08:42–09:35: **First weekly loop audit** (Next 0, value 6; none since 2026-10-11), by a run that wrote
+  none of the sampled items. 19 reviewer reports, 16 items drawn at random and re-checked blind (verdicts committed
+  first, `732a2ed`): **15 of 16 agreed**; 1 disagreement, preview only: Göbekli Tepe (PR #53) still says "the oldest
+  known megaliths", unsupported by its sources. Rolling accuracy 97%, **auto-pass stays on**. Coverage gap: #43 never
+  reviewed on its own. Filed on `review-log` @ `cc7c8d3`. No site file changed. Reply `2026-10-25-weekly-audit.md`.
+  Items per run: 1.
 - 2026-10-25 ~07:53–08:10: **PR #78 independently reviewed** (`42e0a6a`) by a run that wrote none of it: **0 open
   findings**. Clean copy: build 0 changes, review-checks 9/9 (0 warnings), 17/17 verify, 42/42 tests. Own headless
   script, phone emulation: sideways 6 widths, `main` has the Sound pill under the ✕ at all six, #78 at none; upright 6
@@ -269,7 +275,7 @@
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
 0. **Carter's six answers, 2026-10-24**: all done (#73 merged, #61 closed, option A in `LOOP.md` step 7 and
-   `review-log` back-filled 2026-10-25). **First weekly loop audit is due** (none since 2026-10-11): value 6, after 1–1c.
+   `review-log` back-filled 2026-10-25). **Weekly loop audit done 2026-10-25** (`reviews/2026-10-25-audit.md`); next due on/after Wed 2026-10-28.
 1. ~~PR #67~~ **merged 2026-10-25 02:17 UTC** (`c957af5`, deploy 201 green).
 1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**.
    **Stacked on #67** by a chat session 2026-10-25 → head **`be51670`** (= reviewed `7100802` + #67 `c957af5`, nothing
@@ -309,13 +315,14 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
-8. **Independent review of #68, #64, #66** (#67 done 2026-10-24; #68 next: live Pilgrimage wording) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
+8. **Göbekli Tepe preview (PR #53):** change "the oldest known megaliths" (site.js line 123) to wording its sources support (audit 2026-10-25); rides #53, preview only. **PR #43** has no review of its own (audit coverage gap): review it.
+8a. **Independent review of #68, #64, #66** (#67 done 2026-10-24; #68 next: live Pilgrimage wording) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
 4e. **PR #78 (Journal Sound pill, phone sideways; live defect, value 1/3):** **independently reviewed 2026-10-25
    08:10, 0 open findings.** All 6 GitHub checks green incl. Lighthouse (08:10). Missing only: Carter's yes (asked now,
    in Needs Carter). If Carter says yes, a run that wrote none of it merges it once all checks are green; it is off
    `main` `c957af5` and touches no file of #75/#76/#77, so it can go before or after them (bring up to `main` if needed).
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; + upright at 320 wide the Journal HUD and A button are clipped; + full-screen button has no spoken name where its label is hidden: add `aria-label` in `archive-games.js`); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; + upright at 320 wide the Journal HUD and A button are clipped; + full-screen button has no spoken name where its label is hidden: add `aria-label` in `archive-games.js`); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
