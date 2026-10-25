@@ -1,17 +1,20 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~13:05 UTC (build loop, PR #77 bring-up run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~13:20 UTC (build loop, PR #83 independent review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green; before it the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/journal-hero-archivist` = #77 (`8204268`: `d038119` + `main` `91c40fe` + #84's recount; approved), `loop/journal-touch-polish` = #83 (`39eeef8`),
+**Open loop branches:** `loop/journal-hero-archivist` = #77 (`8204268`: `d038119` + `main` `91c40fe` + #84's recount; approved), `loop/journal-touch-polish` = #83 (`be2ad69`: `39eeef8` + `main` `91c40fe` + #84's recount; reviewed, 0 findings),
 `loop/registry-count-after-merges` = #84 (`88f2aa8`), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~12:50–13:20: **PR #83 independently reviewed, 0 open findings**, and brought up to `be2ad69` (`main` +
+  #84's recount); local checks and headless phone checks green; review filed on `review-log` (`a4637ef`). #77: 7/8 GitHub
+  checks green on `8204268`, Lighthouse still running at 12:52.
 - 2026-10-25 ~12:00: Carter's yes to each recorded; #82 Lighthouse green (11:51); #76 local checks re-run green; merge to the live site refused by the safety system (see Needs Carter).
 - 2026-10-25 ~11:42–12:15: **PR #83 built: Journal on touch phones** (Next 10, two pre-existing phone defects, value 3;
   everything higher waits on Carter or Muse). (1) Select/Start pills: tap height through the centre was 24–25 px; now
@@ -347,9 +350,15 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
    then merge of #84's already-reviewed recount `88f2aa8`, so its framework tests are green; both merges clean, no
    conflicts). Local: full build order produced no changes, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings),
    headless phone both motion modes: art loads, run/jump work, 0 script errors. **Waiting on:** every GitHub check on
-   `8204268` incl. Lighthouse (next run confirms, no lock held). Then Carter's Merge button. Stack order: #84 then #77
+   `8204268` incl. Lighthouse (at ~12:52: 7/8 green, Lighthouse running; next run confirms, no lock held). Then Carter's Merge button. Stack order: #84 then #77
    (if #77 goes first, #84 becomes a no-op).
-1c. **PR #83 independent review** (a run that wrote none of it), then bring up to `main`; then Carter's yes. **Next run picks this up** (and confirms #77's GitHub checks).
+1c. ~~**PR #83 independent review**~~ **done 2026-10-25 ~13:20: 0 open findings** (`2026-10-25-pr83-independent-review.md`),
+   and **brought up** to `be2ad69` (`main` `91c40fe` + #84's recount; clean). Local: build order clean, 17/17 verify, 42/42
+   tests, review-checks 9/9; headless phone Journal + Fighter at 10 sizes: tap 44–48 px, 0 touches stolen, 0 errors, tips
+   right on phone and desktop. Trial merge with #77 clean. **Waiting on:** every GitHub check on `be2ad69` incl. Lighthouse,
+   and Carter's yes for #83.
+1d. **Next run:** confirm GitHub checks on #77 `8204268` and #83 `be2ad69` (no lock held while waiting); then the next
+   highest-value item that needs no Carter yes (item 5 Arcade playability floor, or 8a #66 review).
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
    site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
@@ -388,5 +397,8 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 - **PR #84 (registry recount): yes / no?** Reviewed 2026-10-25 by a run that wrote none of it: 0 findings, all checks
   green. It fixes 2 internal tests that have been failing on `main` since the eight merges; nothing on the site changes.
   If yes, press Merge on PR #84 (the loop's pushes to `main` are refused by the session safety system).
+- **PR #83 (Journal touch polish): yes / no?** Bigger tap areas for the small Select/Start buttons on phones, and the
+  first Journal tip names the on-screen buttons. Reviewed by a run that wrote none of it: 0 findings. Its online checks
+  are re-running after the bring-up. If yes, press Merge on PR #83 once its checks are green (best after #84).
 - **#77** (Journal hero, already approved): brought up to the live code 2026-10-25 ~13:05; once its online checks finish green it needs your Merge button (best after #84).
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.

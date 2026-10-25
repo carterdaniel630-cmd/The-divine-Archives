@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~13:00 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green).
+**As of:** 2026-10-25 ~13:20 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -15,15 +15,16 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   only, no `docs/` change. **Independent review 2026-10-25 ~13:00: 0 open findings** (`2026-10-25-pr84-independent-review.md`);
   local checks green on `main` + `88f2aa8`; **5/5 GitHub checks green** (no Lighthouse owed: no `docs/` change).
   Missing only: Carter's yes for #84 (then his Merge button).
-- **Journal touch polish** (PR #83, `loop/journal-touch-polish` @ `39eeef8`, off `main` `c957af5`): Select/Start tap
-  areas reach 44 px on touch screens (shared controller: Journal and Fighter); the first tip names the on-screen
-  buttons on touch phones. Built 2026-10-25; local checks green. **6/6 GitHub checks green incl. Lighthouse (12:09 UTC).**
-  Missing: independent review by a run that wrote none of it; bring up to `main` `91c40fe`; Carter's yes.
+- **Journal touch polish** (PR #83, `loop/journal-touch-polish`, now head **`be2ad69`** = `39eeef8` + `main` `91c40fe` +
+  #84's reviewed recount `88f2aa8`, clean merges adding only already-reviewed diffs): Select/Start tap areas reach 44 px on
+  touch screens (shared controller: Journal and Fighter); the first tip names the on-screen buttons on touch phones.
+  **Independent review 2026-10-25 ~13:20: 0 open findings** (`2026-10-25-pr83-independent-review.md`); local checks green
+  on `be2ad69`. Missing: every GitHub check green on `be2ad69` incl. Lighthouse (started by the push); Carter's yes for #83.
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head `d038119` with the darker cloak).
   **Independent review 0 findings on `dbf5d16`**; **re-review of `d038119` 0 findings**. **Carter's yes 2026-10-25 ~02:15,
   with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`). **Brought up 2026-10-25 ~13:05 to `8204268`**
   (`main` `91c40fe` + #84's reviewed recount `88f2aa8`, clean merges, adding only already-reviewed diffs); local checks
-  green. Missing: every GitHub check green on `8204268` incl. Lighthouse; then Carter's Merge button (after #84).
+  green. GitHub on `8204268` at ~12:52: 7/8 green, Lighthouse still running. Missing: Lighthouse green; then Carter's Merge button (after #84).
 
 ## Merged
 - Reviewer and auditor project skills (PR #64): merged by Carter 2026-10-25 12:30 UTC as `91c40fe`, deploy run 210 green.
