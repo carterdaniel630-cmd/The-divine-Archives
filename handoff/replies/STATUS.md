@@ -1,11 +1,11 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~17:40 UTC (build loop: PR #83 merged, deploy 213 green; PR #86 independently reviewed, 0 findings). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~17:50 UTC (build loop: #86 approved, waiting on its Lighthouse check; PR #53 brought up to main `befb607` with the Göbekli Tepe wording fixed, awaiting independent review). Earlier: PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`. **Deployed (`main`):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`. **Deployed (`main`):** `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
 **Open loop branches:** `loop/arcade-tap-targets` = #86 (`3785b2b`, on top of `main` `45d4a95`; reviewed, 0 findings; GitHub checks started 17:38; needs Carter's yes), `loop/journal-touch-polish` = #83 (merged, branch kept),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
@@ -370,12 +370,14 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1b. ~~**PR #77**~~ **merged 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691` (Carter's ruling 1; reviewed diff
    unchanged; 8/8 GitHub checks green incl. Lighthouse; local checks green; deploy 212 green). Reply `2026-10-25-pr77-merged.md`.
 1c. ~~**PR #83**~~ **merged 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95` (deploy 213 green).
-1d. **PR #86 (arcade tap targets part 1): reviewed 0 findings, brought up to `3785b2b` 17:38.** Next run: check every
-   GitHub check on `3785b2b` incl. Lighthouse; it then waits only on Carter's yes (Needs Carter). Meanwhile do the next item.
-1e. **PR #53 (Pilgrimage batch 1)** (Carter, `decisions-2026-10-25-cleanup.md` C): bring up to current `main`, fix the
-   Göbekli Tepe "oldest known megaliths" wording (site.js line 123) to what its sources support, full checks,
-   independent review by a run that did not do the fix, then one yes/no in Needs Carter. Preview/pending tags stay.
-   **Suggested next item** (value 3–4; replaces the #53 half of item 8).
+1d. **PR #86 (arcade tap targets part 1): APPROVED by Carter (`decisions-2026-10-25-pr86-go.md`, head `3785b2b`).**
+   17:50: 5/6 checks green on `3785b2b`; **Lighthouse run 194 still queued** behind the old run 193 on superseded `cbf6f1e`.
+   Next run first: if Lighthouse on `3785b2b` is green, re-run local checks and fast-forward `main` to `3785b2b`, watch
+   the deploy, update CURRENT/MERGEABLE. Never merge on an unfinished check.
+1e. **PR #53 (Pilgrimage batch 1): brought up to `main` and Göbekli Tepe wording fixed, head `befb607`** (reply
+   `2026-10-25-pr53-brought-up-gobekli-wording.md`; local checks green). **Next: independent review of `origin/main...befb607`
+   by a run that did not write it** (REVIEWER.md §3–§4; also file it on `review-log`), GitHub checks green, then one yes/no
+   in Needs Carter. Preview/pending tags stay.
 1f. Branch clean-up (same file A): approved for Carter, but **not the loop's** (the loop never deletes branches); nightly
    reviewer paused (B): missing heartbeats from 2026-10-26 are not a finding.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
@@ -414,7 +416,6 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **PR #86, arcade tap targets part 1** (games on phones: Close, Full-screen and the text buttons become 44 px touch
-  targets; looks unchanged; desktop untouched). Reviewed, 0 findings; local checks green. **Yes / No** to put it live
-  once its GitHub checks finish green. (A yes now is enough; the loop merges only on all-green.)
+- Nothing new. #86 is already approved and merges as soon as its Lighthouse check is green. #53 comes to you for one
+  yes/no after its independent review.
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
