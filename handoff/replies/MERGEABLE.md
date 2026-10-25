@@ -4,19 +4,12 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 02:18 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
+**As of:** 2026-10-25 02:25 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Site fixes 2026-10-18** (PR #67, `claude/site-fixes-2026-10-18`, head now `c957af5`): **independent review done
-  2026-10-24, 0 findings** (`2026-10-24-pr67-independent-review.md`) on `1681050`. Carter's yes 2026-10-24
-  (`decisions-2026-10-24-batch-six.md` 1). **Brought up to `main` `efba79c` on 2026-10-25 ~01:50** with a merge commit
-  (no conflict); site diff byte-identical to the reviewed `1681050`; local checks green (`2026-10-25-pr67-brought-up.md`).
-  **All 8 GitHub checks green on `c957af5`** (Lighthouse finished 02:10 UTC 2026-10-25). Missing only: the merging run's
-  own local re-check (LOOP.md Merging 3) by a run that wrote none of #67, then the fast-forward.
-
 - **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `71206ee`, stacked on #76; Carter's "clear", batch-six 3).
   **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
   (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub
@@ -26,15 +19,17 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `be51670`, stacked on #67; Carter's yes `decisions-2026-10-24-batch-six.md`
   2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
   **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
-  absence page); local checks green. Missing: every GitHub check green on `be51670` incl. Lighthouse (site diff = reviewed `7100802` + #67); #67 on `main`; then a run that
-  wrote none of #76 fast-forwards.
+  absence page); local checks green. #67 is on `main` (`c957af5`), so `be51670` fast-forwards directly. Missing: Lighthouse green on `be51670` (8/9 green, running since 02:12); then a run that
+  wrote none of #76 re-runs local checks and fast-forwards.
 
-- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist` @ `dbf5d16`, 2026-10-25). Built by the
-  loop; local checks green (`2026-10-25-journal-hero-part-1.md`). **Independent review 2026-10-25: 0 findings**
-  (`2026-10-25-pr77-independent-review.md`). Missing: Lighthouse green on `dbf5d16` (5/6 green); Carter's yes for #77 (2026-10-25 he asked to see it first; picture sent in chat)
-  (his PR #60 approval named #60).
+- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head now `d038119` with the darker cloak).
+  Built by the loop; **independent review 0 findings on `dbf5d16`** (`2026-10-25-pr77-independent-review.md`).
+  **Carter's yes 2026-10-25 ~02:15, with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`).
+  Missing: re-review of `d038119` by a run that wrote none of it; bring up to `main` after #76 and #75; every check
+  green on that head incl. Lighthouse; local checks.
 
 ## Merged
+- Site fixes 2026-10-18 (PR #67): merged 2026-10-25 02:17 UTC by fast-forward `efba79c` → `c957af5`, deploy run 201 green (Carter's yes `decisions-2026-10-24-batch-six.md` 1; review `2026-10-24-pr67-independent-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr67-merged.md`).
 - Tjurunga takedown (PR #73): merged 2026-10-25 01:43 UTC by fast-forward `6c81a84` → `efba79c`, deploy run 200 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; reviews `2026-10-24-pr73-independent-review.md`, `2026-10-24-pr73-re-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr73-merged.md`).
 - Reduced motion, part 1 (PR #74): merged 2026-10-24 23:30 UTC by fast-forward to `6c81a84`, deploy run 199 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-24-pr74-independent-review.md`; 7/7 checks incl. Lighthouse on `6c81a84`).
 - Hit-feel part 3 (PR #72): merged 2026-10-24 23:12 UTC by fast-forward to `0d16e84`, deploy run 198 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-19-pr72-independent-review.md`; `2026-10-24-pr71-72-merged.md`).

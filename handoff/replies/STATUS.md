@@ -1,17 +1,23 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 02:18 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 02:25 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`. **Deployed (`main`):** `efba79c` (PR #73, merged
-2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
-**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
-`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `dbf5d16`) (#70–#74 merged). `staging/ready-line` carries `handoff/`.
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`. **Deployed (`main`):** `c957af5` (PR #67, merged
+2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
+**Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
+`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~02:13–02:25: **PR #67 merged** (live phone fixes, Carter's yes batch-six 1) by fast-forward `efba79c` →
+  `c957af5`, **deploy run 201 green**, by a run that wrote none of #67. 8/8 GitHub checks green incl. Lighthouse; local
+  re-check on a clean copy: build twice (0 changes), 17 verify, 42/42 tests, review-checks 9/9 (0 warnings); headless
+  phone: 88 pages incl. all 83 chapters + the Pilgrimage arcade site, 0 script errors, 0 wider than the phone, eras
+  5,944 px. Folded Carter's ~02:15 yes for #77 with a darker cloak (now `d038119`). Reply `2026-10-25-pr67-merged.md`.
+  Items per run: 1.
 - 2026-10-25 ~02:07–02:18: **Reviewer and auditor, option A** (Next 0). A chat session folded the rule into `LOOP.md`
   step 7 at the same time; this run merged the two texts into one (review copies in `reviews/loop/` plus a dated index
   the auditor's sampler reads; weekly audit on/after Wednesday or when none in 7 days; the planted-error test is not
@@ -231,27 +237,26 @@
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
 0. **Carter's six answers, 2026-10-24**: all done (#73 merged, #61 closed, option A in `LOOP.md` step 7 and
    `review-log` back-filled 2026-10-25). **First weekly loop audit is due** (none since 2026-10-11): value 6, after 1–1c.
-1. **PR #67** (live phone fixes, value 1): **Carter's yes 2026-10-24** (batch-six 1). **Brought up to `main` `efba79c`
-   on 2026-10-25 → head `c957af5`**, site diff identical to the reviewed `1681050`, local checks green. **All 8 GitHub
-   checks green on `c957af5`** (Lighthouse finished 02:10 UTC 2026-10-25). Next: re-run local checks, then a run that
-   wrote none of #67 fast-forwards `main` to `c957af5`. **Ready now: this is the next run's item.**
+1. ~~PR #67~~ **merged 2026-10-25 02:17 UTC** (`c957af5`, deploy 201 green).
 1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**.
    **Stacked on #67** by a chat session 2026-10-25 → head **`be51670`** (= reviewed `7100802` + #67 `c957af5`, nothing
-   else; clean merge; local checks green). Next: every GitHub check green on `be51670` incl. Lighthouse; after #67 is on
-   `main`, a run that wrote none of #76 fast-forwards `main` to `be51670`. Going live is covered by this yes. B–E need their own yes.
+   else; clean merge; local checks green). #67 is now on `main`, so `be51670` fast-forwards directly. **Ready next:** when Lighthouse on `be51670` is green
+   (8/9 green, Lighthouse running since 02:12), a run that wrote none of #76 re-runs local checks and fast-forwards `main` to `be51670`. **This is the next run's item.** Going live is covered by this yes. B–E need their own yes.
 1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
    2026-10-25 (0 findings)**. **Stacked on #76** → head **`71206ee`** (= reviewed `223600f` + #67 + #76, nothing else;
    local checks green). **Carter 2026-10-25 02:08: "loop may merge" #75** (`decisions-2026-10-25-hero-show-me-and-75.md` 2), his
    per-item approval including the two clearances. So a run that wrote none of #75 fast-forwards it after #67 and #76
    are on `main`, once every check incl. Lighthouse is green on `71206ee` and local checks pass.
-**Merge order (stacked 2026-10-25, LOOP.md "several approved items"):** #67 `c957af5` → #76 `be51670` → #75 `71206ee`.
+**Merge order (stacked 2026-10-25, LOOP.md "several approved items"):** ~~#67 `c957af5`~~ (merged) → #76 `be51670` → #75 `71206ee` → #77 (after bringing up).
 Each head already contains the ones before it, so each fast-forwards right after the previous one with no fresh sync
 and no second round of checks. All three are now loop-mergeable (Carter's yes for each).
 (The first stacking at 02:10 put #76 on top of #75, which would have tied #76 to Carter's button; corrected within
 minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51670`. Nothing else was on `a2b0952`.)
 4. **Journal hero rebuild** (value 1–5: the live hero still wears the film-explorer kit until #77 is live).
    **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist), **independently reviewed 2026-10-25: 0 findings**.
-   **Carter 2026-10-25: "show me first"**: a before/after picture was sent in chat; do not merge #77 until he says yes. **Part 2:** port the
+   **Carter 2026-10-25 ~02:15: YES, with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`): per-item
+   approval. Darker cloak done by a chat session → head **`d038119`**. Before merging: re-review of `d038119` by a run
+   that wrote none of it, bring it up after #76/#75 land, all checks green incl. Lighthouse, local checks. **Part 2:** port the
    Option A set pieces (whip → other tool, boulder → other hazard) onto current `main` (PR #60 has one version on an
    old base). Never invent a face.
 4b. **Name the live site in docs** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
@@ -281,6 +286,5 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 
 ## Needs Carter
 Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`) and 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`,
-`decisions-2026-10-25-hero-show-me-and-75.md`), all folded into Next.
-- **A. PR #77, Journal hero = The Archivist.** You asked to see it first; the before/after picture is in your chat.
-  After looking: Yes, put it live / No, change it (say what).
+`decisions-2026-10-25-hero-show-me-and-75.md`, `decisions-2026-10-25-hero-yes-darker-cloak.md`), all folded into Next.
+- Nothing needed right now.
