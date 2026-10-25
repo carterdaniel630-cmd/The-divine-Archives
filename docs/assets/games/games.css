@@ -497,6 +497,12 @@
 .tr-lost { color:rgba(224,88,74,.25); }
 .tr-keys { text-align:center; }
 @media (max-width:520px){ .tr-keys { display:none; } }
+/* narrow upright phones: the four stats and the controller fit inside the dialog (at 320 wide the hearts,
+   "Plunder" and the A button were cut off at its edges, and at 421–470 the A button); buttons stay above the
+   44px tap minimum */
+@media (max-width:420px){ .tr-hud { gap:.5rem; } .tr-hud .pm-stat { min-width:3.4rem; } }
+@media (min-width:421px) and (max-width:520px){ .ap-host:has(> .tr-stage) .ap-pad { --dp:124px; --btn:58px; } .ap-host:has(> .tr-stage) .ap-mid { flex-direction:column; gap:.9rem; } }
+@media (max-width:340px){ .ap-host:has(> .tr-stage) .ap-pad { --dp:100px; --btn:46px; } .ap-host:has(> .tr-stage) .ap-body { gap:.3rem; } }
 /* narrative story cards between the four expedition sites */
 .tr-card { max-width:38rem; margin:.2rem auto; padding:.7rem .9rem; border:1px solid var(--line); border-radius:10px;
   background:linear-gradient(180deg, rgba(199,154,84,.06), rgba(0,0,0,.14)); font-size:.96rem; line-height:1.6; color:var(--ink, #cdbb96); }
