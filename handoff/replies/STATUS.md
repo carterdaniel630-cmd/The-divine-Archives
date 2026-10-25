@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~10:56 UTC (build loop, PR #81 review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~11:30 UTC (build loop, PR #82 build run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,15 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~10:56–11:30: **PR #82 built: ch02 "second death" framed as belief and sourced** (Next 10 audit note,
+  live chapter wording, value 1). Opening said the condemned "simply ceases — the second death, annihilation" unhedged.
+  Now: an ending, not eternal torment, in Egyptian belief; "non-existence"; BD 44 "formula for not dying again". Sources
+  opened: Roberson, "A Season in Hell", *Expedition* 57:2 (Penn Museum); UCL Digital Egypt BD 44 (British Museum Hunefer
+  page opened, doesn't state the fate, not cited; Wikipedia Ammit not opened). Edited md + `content/chapters.js` + source
+  log; full build twice (2nd pass 0 changes), 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings); headless phone
+  + desktop: new text and link present, pending banner kept, 0 errors, no sideways scroll. Preview
+  `handoff/previews/ch02-second-death/phone.png`. Slip: this run's lock commit `3167e21` carried an attribution line
+  naming a model; not rewritten (shared branch). Reply `2026-10-25-pr82-ch02-second-death.md`. Items per run: 1.
 - 2026-10-25 ~10:43–10:56: **PR #81 independently reviewed: 0 open findings** (Next 4h, live defect, value 3; this run
   wrote none of #81 or #68). Stack is exactly #68's reviewed diff + `main` + the 2-line Qumran commit (byte-compared).
   Clean copy: review-checks 9/9 (0 warnings, build current), 17/17 verify, 42/42 tests. Own headless "Walk on" test,
@@ -370,10 +379,12 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`;
    defect reproduced on `main` at 461–480 px, gone on #80). GitHub 4/6 green; **next run: confirm Lighthouse and the second
    runtime run finished green on `c9408a0`** — **done 10:54: 6/6 green incl. Lighthouse.** Missing only: Carter's yes (asked with #78/#79).
+4i. **PR #82 (ch02 "second death" wording; live, value 1):** built 2026-10-25 (`82441ce`, off `main`). **Next run:
+   independent review** (a run that wrote none of it), then confirm GitHub checks incl. Lighthouse; then Carter's yes.
 4h. **PR #81 (Qumran guided walk stops in Cave 4; live defect, value 3):** built 2026-10-25 (`2c099a0`), **stacked on
    #68**. **Independently reviewed 2026-10-25 ~10:55: 0 open findings; 10/10 GitHub green incl. Lighthouse.** Goes live
    after #68, with Carter's yes for #81 (asked now).
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; Journal Select/Start pills ~36 px tall, under the 44 px tap guide, pre-existing; Journal timed tip names keyboard keys ("Space", "J or X") on touch phones, pre-existing); ~~ch02 "second death"~~ now PR #82; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
@@ -398,6 +409,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   disputed; guided walks on Ararat and Alexandria now reach the end). Independent review 0 open findings. Recommendation: yes.
 - **PR #81, Qumran guided walk fix, yes/no to go live** (goes right after #68): "Walk on" no longer gets stuck in Cave 4;
   it now reaches Cave 3. Independent review 0 open findings, all checks green. Recommendation: yes.
+- **PR #82, Egypt chapter wording, yes/no to go live** (after its independent review): the opening no longer states the
+  "second death, annihilation" as fact; it says this was Egyptian belief and cites a Penn Museum article and UCL.
 - **PR #76 (speed fix A) needs Carter's Merge button.** Fully qualified (9/9 green, local checks green, your yes on
   file); the loop's push to the live site was blocked twice by its safety check. On phone: open PR #76 → Merge (any option; GitHub's
   buttons may give new commit ids, in which case the next run brings #75 and #77 up to `main` before merging them).

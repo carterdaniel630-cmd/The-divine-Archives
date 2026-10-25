@@ -10,6 +10,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **ch02 "second death" wording** (PR #82, `loop/ch02-second-death` @ `82441ce`, off `main` `c957af5`): live chapter
+  wording now framed as Egyptian belief and sourced (Roberson, *Expedition* 57:2; UCL BD 44). Local checks green.
+  Missing: independent review by a run that wrote none of it; all GitHub checks green incl. Lighthouse; Carter's yes.
 - **Qumran guided walk leaves Cave 4** (PR #81, `loop/qumran-walk-4b` @ `2c099a0`, **stacked on #68**: #68 + `main`
   `c957af5` + one Qumran commit). Built 2026-10-25; local checks green. **Independent review 2026-10-25 ~10:55: 0 open
   findings** (`2026-10-25-pr81-independent-review.md`); **10/10 GitHub checks green incl. Lighthouse (10:51).** Missing:
