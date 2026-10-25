@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1904,
+ "count": 1909,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -1785,6 +1785,15 @@
     "chapter:ch06"
    ],
    "from": "sources/ch06-zoroaster.md"
+  },
+  {
+   "id": "source:britannica-com/2eaaf90e1f",
+   "type": "source",
+   "label": "https://www.britannica.com/topic/Tushita-Heaven",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:britannica-com/326e504426",
@@ -9909,6 +9918,15 @@
    "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
+   "id": "source:idp-bl-uk/b28da088ab",
+   "type": "source",
+   "label": "https://idp.bl.uk/exhibition/buddhism-on-the-silk-roads/articles/about-buddhism/jataka-stories/",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
    "id": "source:idp-bl-uk/d60f3669a4",
    "type": "source",
    "label": "https://idp.bl.uk/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/discovering-cave-17/",
@@ -14112,6 +14130,15 @@
    "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
+   "id": "source:restitutionmatters-org/66a5411531",
+   "type": "source",
+   "label": "https://restitutionmatters.org/news-item/film-great-love-dunhuang-renews-call-to-return-chinese-relics/",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
    "id": "source:returnthestone-org/59edc5f10e",
    "type": "source",
    "label": "https://returnthestone.org/history/",
@@ -15051,6 +15078,15 @@
    "from": "sources/v55-oracle-bones-of-anyang.md"
   },
   {
+   "id": "source:smarthistory-org/fb1f53d181",
+   "type": "source",
+   "label": "https://smarthistory.org/?p=57613",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
+  },
+  {
    "id": "source:smb-museum/24239204aa",
    "type": "source",
    "label": "https://www.smb.museum/en/exhibitions/detail/from-fragment-to-monument/",
@@ -15851,6 +15887,15 @@
     "chapter:ch53"
    ],
    "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
+  },
+  {
+   "id": "source:timeshighereducation-com/802cd23b3e",
+   "type": "source",
+   "label": "https://www.timeshighereducation.com/node/84541",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:timesofisrael-com/27dd301f2e",
