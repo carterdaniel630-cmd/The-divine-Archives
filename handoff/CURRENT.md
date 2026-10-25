@@ -18,11 +18,24 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
 ## Review desk
 - Reviewer and auditor run as scheduled tasks; reports live on the `review-log` branch. Latest: the
-  2026-10-10 reviewer reports and `reviews/2026-10-11-audit.md` (6 of 6 agreed; auto-pass on).
+  2026-10-18 manual run Carter asked for (six reports `reviews/2026-10-18-*.md`, covering #44 and #48, #46, #47,
+  #51, #52/#54/#55 and the Mogao Caves in #53: 14 passed, 0 fixed, 11 need Carter), and
+  `reviews/2026-10-11-audit.md` (6 of 6 agreed; auto-pass on). The reviewer and auditor are also project
+  skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, from #64).
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
+- From the 2026-10-18 tie-ins session, all merged with Carter's yes: #67 (2026-10-25: era-page emblems, long source
+  links on phones, the arcade's Hades line), #68 (2026-10-25: the reviewer's #51 fixes; the Ararat and Alexandria
+  guided walks), #64 (2026-10-25: reviewer and auditor as project skills), #85 (2026-10-25: ch42's Newgrange sentence
+  corrected, ch42 back to pending; Mount Ararat's card "The ark in Armenian tradition"), and #66 (Newgrange preview,
+  the batch-2 session's build 1691af3 with an animated midwinter sunrise; batch 2 builds on it, not on a second copy).
+- Open review findings with no PR yet: graphify tidy-ups (4 items in `reviews/2026-10-18-graphify-52.md`;
+  overlap with #61/#65); Mogao fixes for #53's builder (`reviews/2026-10-18-mogao-53.md`: the stair to Cave
+  254, the Cave 16/17 sign, a possibly unfindable 2002 abstract); V20 credit and papyrus height
+  (`reviews/2026-10-18-weighing-47.md`; the swap to Budge's 1895 wording waits for a session that can open
+  sacred-texts.com or the Heidelberg scan, both blocked from build sessions so far).
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
@@ -66,6 +79,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   generated `graph-tools` branch, so sessions with the package index blocked still get `graphify query`.
 
 ## Needs Carter
+- From the 2026-10-18 review (one batch of questions): Stonehenge (a card on today's Druid and Pagan gatherings?
+  list it?); Golgotha (accept the brief's six defaults? list it?); Ararat (more of the believer's side before
+  listing?); Mogao (approve as a preview with its Buddha figures and manuscripts card?); Weighing of the Heart
+  (keep pending until the 1895 text is re-read; swap the V20 English line); merges of #64, #66, #67, #68.
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
@@ -76,6 +93,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   run as manual sessions.
 
 ## Decisions still in effect
+- Carter, 2026-10-11 tie-ins: visual passes use the frontend-design skill (CLAUDE.md, quality bar); the reviewer
+  and auditor are project skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, wrapping `reviews/`); OmniRoute is
+  not used.
 - Sourcing rule: scholarly or primary sources first, Wikipedia only as a labelled pointer; flag any chapter
   over 20%.
 - No images of the Báb; tjurunga never shown; restricted sites exterior only; Kaaba courtyard without figures.

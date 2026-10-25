@@ -41,6 +41,9 @@ const REF = {
   navarra: "the radiocarbon dates of Fernand Navarra&rsquo;s 1955 wood, as summarised by the TalkOrigins Archive (claim CH504.2) and <em>Bible and Spade</em>, &ldquo;Ararat &lsquo;Ark&rsquo; Wood Dated at A.D. 700&rdquo;",
   nami: "UPI, &ldquo;Noah&rsquo;s ark claim doubted&rdquo; (28 April 2010); <em>Christian Science Monitor</em>, &ldquo;Doubt cast on Noah&rsquo;s ark found in Turkey&rdquo; (2010)",
   ahora: "R. S. Azzoni et al., &ldquo;Geomorphological effects of the 1840 Ahora Gorge catastrophe on Mount Ararat (Eastern Turkey)&rdquo;, <em>Geomorphology</em> 332 (2019), 10&ndash;21",
+  etch: "Mother See of Holy Etchmiadzin, liturgical calendar: the feast of Saint Jacob of Nisibis (armenianchurch.org); Armenian Church of Sydney, calendar entry on the same feast",
+  century: "<em>The Christian Century</em>, on the ark relic at Etchmiadzin (christiancentury.org)",
+  whe: "WorldHistory.org, &ldquo;Mount Ararat&rdquo;",
   ascent: "<em>The Armenian Mirror-Spectator</em>, &ldquo;Ararat Redux: Abovian, Prof. Parrot and First Ascent&rdquo;",
   ch01: "the archive&rsquo;s chapter on the Flood (ch01)"
 };
@@ -49,6 +52,7 @@ const APPROX = { t: "The mountain is a scale model: heights published, shape our
 const CONTESTED = { t: "Contested", soft: false };
 const CLAIM = { t: "A claim, not a verified find", soft: false };
 const TEXT = { t: "From a sacred text", soft: true };
+const FAITH = { t: "A tradition of faith", soft: true };
 
 // ---------------------------------------------------------------- sections
 const B = (p, r) => [p.x - r, -60, p.z - r, p.x + r, 200, p.z + r];
@@ -115,6 +119,9 @@ const info = [
   { id: "ararat", section: "s1", pos: [P1.x - 2.5, 1.7, P1.z - 2.5], cat: "I · The plain", title: "Two volcanoes",
     html: "<p>Ararat is a dormant volcano with two cones. <strong>Greater Ararat</strong>, 5,137 m, is the highest mountain in Turkey and in the Armenian highlands; <strong>Lesser Ararat</strong>, 3,896 m, rises to the south-east. The massif is about 35 to 40 km across at its base (sources differ). An ice cap of about 7.3 km&sup2; covers the summit, with glaciers running down its flanks. The great earthquake of 1840 brought down a landslide and mudflows in the Ahora Gorge on the north-east side and destroyed the village of Akori below. Whether the volcano erupted too is disputed: the old accounts are, in the words of a 2019 study, obscure and ambiguous. That study argues that the earthquake set off a sudden eruption, whose meltwater poured down as a mudflow; others read the gorge&rsquo;s deposits as a landslide alone.</p>",
     flags: [APPROX, CONTESTED], sources: REF.jmaps + "; " + REF.mta + "; " + REF.ahora + "." },
+  { id: "armenian-ark", section: "s1", pos: [P1.x - 7, 1.7, P1.z - 4], cat: "I · The plain", title: "The ark in Armenian tradition",
+    html: "<p>For many Armenians the ark&rsquo;s mountain belongs to the nation&rsquo;s own story. The historian Movses Khorenatsi traced the Armenians to Noah through his son Japheth and the patriarch Haik, who founded the nation near the mountain. The mountain, with the ark resting on its summit, stands on Armenia&rsquo;s coat of arms.</p><p>At Holy Etchmiadzin, the mother church of the Armenian Apostolic Church, a piece of wood kept in a reliquary is venerated as a fragment of the ark. The church tells how Saint Jacob of Nisibis, a 4th-century bishop, set out up the mountain to find the ark, fell asleep at its foot, and woke to find the wood beside him, placed there by an angel; another telling has the promise come in a dream. The church keeps a feast in his memory. For believers the relic and the mountain are holy as a matter of faith; the story is a tradition of the church, not a historical record.</p>",
+    flags: [FAITH], links: [L.ch01], sources: REF.etch + "; " + REF.century + "; " + REF.whe + "." },
   { id: "masis", section: "s1", pos: [P1.x + 3, 1.7, P1.z - 6], cat: "I · The plain", title: "Masis",
     html: "<p>For Armenians the mountain is <strong>Masis</strong>, a sacred mountain and a national symbol. Since the early 1920s it has lain inside Turkey, where it is Ağrı Dağı, and it is seen from Armenia across the border.</p><p>For many Jews and Christians the Genesis account is sacred history, and for many believers the mountain is a place where it can be felt; for others the story is one telling of the widespread flood stories of the ancient Near East. Both readings are set out in the Flood chapter.</p>",
     flags: [TEXT], links: [L.ch01], sources: REF.brit + "; " + REF.ch01 + "." },

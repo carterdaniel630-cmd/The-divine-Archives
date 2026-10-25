@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1854,
+ "count": 1855,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -10030,6 +10030,15 @@
    "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
   },
   {
+   "id": "source:irishtimes-com/18e75d8bae",
+   "type": "source",
+   "label": "https://www.irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
+  },
+  {
    "id": "source:irishtimes-com/73efb24a54",
    "type": "source",
    "label": "https://irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602",
@@ -11701,9 +11710,10 @@
    "type": "source",
    "label": "https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange",
    "links": [
+    "chapter:ch42",
     "site:newgrange"
    ],
-   "from": "sources/pilgrimage-newgrange.md"
+   "from": "sources/ch42-neolithic.md"
   },
   {
    "id": "source:museum-imj-org-il/aa759cfdeb",
@@ -12142,9 +12152,10 @@
    "type": "source",
    "label": "https://www.newgrange.com/stonelight20.htm",
    "links": [
+    "chapter:ch42",
     "site:newgrange"
    ],
-   "from": "sources/pilgrimage-newgrange.md"
+   "from": "sources/ch42-neolithic.md"
   },
   {
    "id": "source:news-artnet-com/3ae01e3cf7",
