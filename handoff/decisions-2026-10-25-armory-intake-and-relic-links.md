@@ -41,3 +41,8 @@ Conditions (Carter: "as long as free, protected along with our guidelines"):
   checklist, auditor signs, Carter merges) and the Council constitution (no new room without a full chapter; games
   live in rooms). A piece that fails its checks is kept, never deleted (game preservation). Nothing goes live without
   Carter's yes for that piece or batch.
+
+## 3. Number of loops: ONE (Carter, 2026-10-25 ~03:00 UTC)
+Carter's words: "keep 1 loop". Asked A (1 now, add an Armory lane when batch 1 arrives) / B (2 now) / C (stay at 1);
+he chose to stay at one. No second loop or lane is created, including when Armory batches arrive, unless Carter says
+otherwise. Armory, Pantheon and Pilgrimage batches all go through the single build loop, one piece per run.
