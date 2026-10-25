@@ -16,8 +16,10 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (no conflict); site diff byte-identical to the reviewed `1681050`; local checks green (`2026-10-25-pr67-brought-up.md`).
   Missing: every GitHub check green on `c957af5` (incl. Lighthouse), then a run that wrote none of #67 fast-forwards.
 
-- **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra` @ `4409b86`; Carter's "clear", batch-six 3). Missing:
-  independent review by a run that wrote none of it; bring up to `main`; every GitHub check green.
+- **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `223600f`; Carter's "clear", batch-six 3).
+  **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
+  (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub
+  check green on `223600f` incl. Lighthouse; then a run that wrote none of #75 fast-forwards.
 
 - **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `7100802`; Carter's yes `decisions-2026-10-24-batch-six.md`
   2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).

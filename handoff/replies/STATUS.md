@@ -7,11 +7,13 @@
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), and `decisions-2026-10-25-domain-and-kadesh.md`. **Deployed (`main`):** `efba79c` (PR #73, merged
 2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
-**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75,
+**Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75 (head `223600f`),
 `loop/speed-fix-a` = #76 (head `7100802`) (#70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~01:53–02:05 (chat session, parallel): **PR #75 independently reviewed: 0 findings**, brought up to `main`
+  → `223600f`; local checks green. Reply `2026-10-25-pr75-independent-review.md`.
 - 2026-10-25 ~01:51–01:56: **PR #76 (speed fix A) independently reviewed: 0 findings**, by a run that wrote none of it,
   and **brought up to `main` `efba79c`** → `7100802` (one conflict in the generated Tjurunga page; took main's absence
   page). review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone: Mendoza, Borgia, Voynich ask the
@@ -216,8 +218,11 @@
 1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)
    and brought up to `main` → `7100802`**. Next: every GitHub check green on `7100802` incl. Lighthouse, then a run that
    wrote none of #76 fast-forwards; going live is covered by this yes. B–E still need their own yes.
-1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): **built, PR #75** (`4409b86`). Needs an
-   independent review by a run that didn't make it, bring up to `main`, checks, then merge.
+1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
+   2026-10-25 (0 findings), brought up to `main` → `223600f`**. Next: every GitHub check green on `223600f`, then a run
+   that wrote none of #75 fast-forwards.
+**Merge order note:** #67, #75 and #76 each sit on `efba79c`. After the first fast-forwards, the other two must be
+brought up to the new `main` again (merge commit) and their checks re-run before they can fast-forward.
 4. **Journal hero rebuild** (PR #60, Option A, value 5): **unblocked 2026-10-25**. The three images are in
    `handoff/journal-hero-b64/` as base64 text (decode with the command in its README; check sizes). Face stays
    Carter's (hood up); costume per the approved Archivist sheet; no fedora, leather jacket, whip or boulder. Never
