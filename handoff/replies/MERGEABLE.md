@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 02:25 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
+**As of:** 2026-10-25 02:30 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -25,8 +25,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head now `d038119` with the darker cloak).
   Built by the loop; **independent review 0 findings on `dbf5d16`** (`2026-10-25-pr77-independent-review.md`).
   **Carter's yes 2026-10-25 ~02:15, with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`).
-  Missing: re-review of `d038119` by a run that wrote none of it; bring up to `main` after #76 and #75; every check
-  green on that head incl. Lighthouse; local checks.
+  **Re-review of `d038119` (darker cloak) 2026-10-25: 0 findings** (`2026-10-25-pr77-darker-cloak-re-review.md`).
+  Missing: bring up to `main` after #76 and #75; every check green on that head incl. Lighthouse; local checks.
 
 ## Merged
 - Site fixes 2026-10-18 (PR #67): merged 2026-10-25 02:17 UTC by fast-forward `efba79c` → `c957af5`, deploy run 201 green (Carter's yes `decisions-2026-10-24-batch-six.md` 1; review `2026-10-24-pr67-independent-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr67-merged.md`).

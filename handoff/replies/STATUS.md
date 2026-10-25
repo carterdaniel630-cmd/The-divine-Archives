@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 02:25 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 02:30 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,6 +12,11 @@
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~02:20–02:30: **PR #77 darker cloak re-reviewed** (`d038119`) by a run that wrote none of it: **0 findings**.
+  Only the coat and hood are darker (skin/beard pixels: 7 of 10,760 changed by ≤4/255 in the portrait); sheet untouched;
+  `cut.py` repeatable; build 0 changes, review-checks 9/9 (0 warnings), 17 verify, 42/42 tests; headless phone both
+  motion modes: all art loads, run/jump/cast, 0 script errors. GitHub 5/6, Lighthouse running. #76 Lighthouse still
+  running on `be51670` (not waited on). Reply `2026-10-25-pr77-darker-cloak-re-review.md`; filed on `review-log` @ `1fa5464`. Items per run: 1.
 - 2026-10-25 ~02:13–02:25: **PR #67 merged** (live phone fixes, Carter's yes batch-six 1) by fast-forward `efba79c` →
   `c957af5`, **deploy run 201 green**, by a run that wrote none of #67. 8/8 GitHub checks green incl. Lighthouse; local
   re-check on a clean copy: build twice (0 changes), 17 verify, 42/42 tests, review-checks 9/9 (0 warnings); headless
@@ -255,8 +260,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
 4. **Journal hero rebuild** (value 1–5: the live hero still wears the film-explorer kit until #77 is live).
    **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist), **independently reviewed 2026-10-25: 0 findings**.
    **Carter 2026-10-25 ~02:15: YES, with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`): per-item
-   approval. Darker cloak done by a chat session → head **`d038119`**. Before merging: re-review of `d038119` by a run
-   that wrote none of it, bring it up after #76/#75 land, all checks green incl. Lighthouse, local checks. **Part 2:** port the
+   approval. Darker cloak done by a chat session → head **`d038119`**, **re-reviewed 2026-10-25: 0 findings**. Before
+   merging: bring it up after #76/#75 land, all checks green incl. Lighthouse, local checks. **Part 2:** port the
    Option A set pieces (whip → other tool, boulder → other hazard) onto current `main` (PR #60 has one version on an
    old base). Never invent a face.
 4b. **Name the live site in docs** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
