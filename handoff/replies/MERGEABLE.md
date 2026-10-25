@@ -4,67 +4,31 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~12:15 UTC. **Deployed (`main`, on the-divine-archives.pages.dev and www.getconexto.com):** `c957af5` (PR #67 merged 2026-10-25 02:17 UTC, deploy run 201 green).
+**As of:** 2026-10-25 ~13:00 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Registry recount** (PR #84, `loop/registry-count-after-merges` @ `88f2aa8`, off `main` `caedabc`; merges cleanly with
+  `main` `91c40fe`): fixes the 2 failing internal tests on `main` (registry totals 2 short after #68 and #82). Internal data
+  only, no `docs/` change. **Independent review 2026-10-25 ~13:00: 0 open findings** (`2026-10-25-pr84-independent-review.md`);
+  local checks green on `main` + `88f2aa8`; **5/5 GitHub checks green** (no Lighthouse owed: no `docs/` change).
+  Missing only: Carter's yes for #84 (then his Merge button).
 - **Journal touch polish** (PR #83, `loop/journal-touch-polish` @ `39eeef8`, off `main` `c957af5`): Select/Start tap
   areas reach 44 px on touch screens (shared controller: Journal and Fighter); the first tip names the on-screen
-  buttons on touch phones. Built 2026-10-25; local checks green; trial merges with #78/#79/#80 clean. **6/6 GitHub checks green incl.
-  Lighthouse (12:09 UTC).** Missing: independent review by a run that wrote none of it; Carter's yes.
-- **ch02 "second death" wording** (PR #82, `loop/ch02-second-death` @ `82441ce`, off `main` `c957af5`): live chapter
-  wording now framed as Egyptian belief and sourced (Roberson, *Expedition* 57:2; UCL BD 44). Local checks green.
-  **Independent review 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`); 9/10 GitHub
-  green. Missing: Lighthouse green on `82441ce` (still running at 11:45, started 11:30); Carter's yes.
-- **Qumran guided walk leaves Cave 4** (PR #81, `loop/qumran-walk-4b` @ `2c099a0`, **stacked on #68**: #68 + `main`
-  `c957af5` + one Qumran commit). Built 2026-10-25; local checks green. **Independent review 2026-10-25 ~10:55: 0 open
-  findings** (`2026-10-25-pr81-independent-review.md`); **10/10 GitHub checks green incl. Lighthouse (10:51).** Missing:
-  #68 on `main` first, then Carter's yes for #81.
-
-- **Pilgrimage wording fixes and guided walks** (PR #68, `claude/pilgrimage-51-fixes` @ `c4e5141`, base an older `main`).
-  **Independent review 2026-10-25: 0 open findings** (`2026-10-25-pr68-independent-review.md`, by a loop run that wrote
-  none of it); merges cleanly with `main` `c957af5`, local checks green on that merge; 9/9 GitHub green on the old base.
-  Missing: Carter's yes for #68 (asked); then bring up to `main`, every check green on the new head incl. Lighthouse,
-  local checks again.
-
-- **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra`, head now `71206ee`, stacked on #76; Carter's "clear", batch-six 3).
-  **Independent review 2026-10-25: 0 findings** by a chat session that wrote none of it
-  (`2026-10-25-pr75-independent-review.md`); brought up to `main` `efba79c`; local checks green. Missing: every GitHub
-  check green on `71206ee` incl. Lighthouse (checks restarted after stacking; site diff = reviewed `223600f` + #67 + #76). **Carter 2026-10-25: "loop may merge"** (`decisions-2026-10-25-hero-show-me-and-75.md` 2): per-item approval,
-  clearances included. Goes after #67 and #76.
-
-- **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `be51670`, stacked on #67; Carter's yes `decisions-2026-10-24-batch-six.md`
-  2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
-  **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
-  absence page); local checks green. #67 is on `main` (`c957af5`), so `be51670` fast-forwards directly. **2026-10-25 ~02:50: every condition met** (9/9 checks incl. Lighthouse; local checks green on a clean copy by a run that
-  wrote none of it; `2026-10-25-pr76-qualified-merge-refused.md`). The fast-forward push was **refused by that session's
-  safety check**; not retried another way. Missing only: the merge itself. **Retried 2026-10-25 06:55 after a fresh re-check (all green): refused again.** Now waits on Carter's Merge button on PR #76.
-
-- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head now `d038119` with the darker cloak).
-  Built by the loop; **independent review 0 findings on `dbf5d16`** (`2026-10-25-pr77-independent-review.md`).
-  **Carter's yes 2026-10-25 ~02:15, with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`).
-  **Re-review of `d038119` (darker cloak) 2026-10-25: 0 findings** (`2026-10-25-pr77-darker-cloak-re-review.md`).
-  Missing: bring up to `main` after #76 and #75; every check green on that head incl. Lighthouse; local checks.
-
-- **Journal Sound pill under the ✕, phone sideways** (PR #78, `loop/journal-sound-landscape` @ `42e0a6a`, off `main`
-  `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr78-journal-sound-landscape.md`). Local checks green.
-  **Independent review 2026-10-25 08:10: 0 open findings** (`2026-10-25-pr78-independent-review.md`; GitHub 5/6 green then).
-  **All 6 GitHub checks green on `42e0a6a` incl. Lighthouse (08:10).** Missing only: Carter's yes for this item.
-
-- **Journal on narrow upright phones + full-screen button name** (PR #79, `loop/journal-phone-320` @ `3018cdd`, off `main`
-  `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr79-journal-phone-320.md`). Local checks green.
-  **Independent review 2026-10-25 ~10:00: 0 open findings** (`2026-10-25-pr79-independent-review.md`).
-  **All 6 GitHub checks green on `3018cdd` incl. Lighthouse (09:58).** Missing only: Carter's yes for this item.
-  Merges cleanly with #78 (trial merge).
-
-- **Reliquary dropdowns inside the dialog on 461–484 px phones** (PR #80, `loop/reliquary-phone-480` @ `c9408a0`, off
-  `main` `c957af5`; built by the loop 2026-10-25, `2026-10-25-pr80-reliquary-phone-480.md`). Local checks green.
-  **Independent review 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`). GitHub 4/6 green
-  at review; **all 6 GitHub checks green incl. Lighthouse (10:45).** Missing only: Carter's yes for this item.
+  buttons on touch phones. Built 2026-10-25; local checks green. **6/6 GitHub checks green incl. Lighthouse (12:09 UTC).**
+  Missing: independent review by a run that wrote none of it; bring up to `main` `91c40fe`; Carter's yes.
+- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head `d038119` with the darker cloak).
+  **Independent review 0 findings on `dbf5d16`**; **re-review of `d038119` 0 findings**. **Carter's yes 2026-10-25 ~02:15,
+  with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`). Missing: bring up to `main` `91c40fe`; every
+  check green on that head incl. Lighthouse; local checks; then Carter's Merge button.
 
 ## Merged
+- Reviewer and auditor project skills (PR #64): merged by Carter 2026-10-25 12:30 UTC as `91c40fe`, deploy run 210 green.
+- #76, #75, #78, #79, #80, #82, #68, #81: merged by Carter's Merge buttons 2026-10-25 ~11:58–12:00 UTC (GitHub merge
+  commits, so `main` ids differ from the loop heads); `main` then `caedabc`, deploy run 209 green. Reviews:
+  `2026-10-25-pr{76,75,78,79,80,82,68,81}-independent-review.md`.
 - Site fixes 2026-10-18 (PR #67): merged 2026-10-25 02:17 UTC by fast-forward `efba79c` → `c957af5`, deploy run 201 green (Carter's yes `decisions-2026-10-24-batch-six.md` 1; review `2026-10-24-pr67-independent-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr67-merged.md`).
 - Tjurunga takedown (PR #73): merged 2026-10-25 01:43 UTC by fast-forward `6c81a84` → `efba79c`, deploy run 200 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; reviews `2026-10-24-pr73-independent-review.md`, `2026-10-24-pr73-re-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr73-merged.md`).
 - Reduced motion, part 1 (PR #74): merged 2026-10-24 23:30 UTC by fast-forward to `6c81a84`, deploy run 199 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; review `2026-10-24-pr74-independent-review.md`; 7/7 checks incl. Lighthouse on `6c81a84`).

@@ -1,14 +1,14 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~12:15 UTC (build loop, PR #83 Journal touch-polish run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~13:00 UTC (build loop, PR #84 independent-review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `c957af5` (PR #67, merged
-2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
-**Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
-`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`), `loop/journal-phone-320` = #79 (`3018cdd`), `loop/reliquary-phone-480` = #80 (`c9408a0`), `loop/journal-touch-polish` = #83 (`39eeef8`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green; before it the
+eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
+**Open loop branches:** `loop/journal-hero-archivist` = #77 (`d038119`, approved), `loop/journal-touch-polish` = #83 (`39eeef8`),
+`loop/registry-count-after-merges` = #84 (`88f2aa8`), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
@@ -337,30 +337,17 @@
   needed unless the rebuild finds a problem with them.
 
 ## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-0. **Carter's six answers, 2026-10-24**: all done (#73 merged, #61 closed, option A in `LOOP.md` step 7 and
-   `review-log` back-filled 2026-10-25). **Weekly loop audit done 2026-10-25** (`reviews/2026-10-25-audit.md`); next due on/after Wed 2026-10-28.
-1. ~~PR #67~~ **merged 2026-10-25 02:17 UTC** (`c957af5`, deploy 201 green).
-1b. **Site speed fix A** (Carter's yes, batch-six 2, value 3): PR #76, **independently reviewed 2026-10-25 (0 findings)**.
-   **Stacked on #67** by a chat session 2026-10-25 → head **`be51670`** (= reviewed `7100802` + #67 `c957af5`, nothing
-   else; clean merge; local checks green). #67 is now on `main`, so `be51670` fast-forwards directly. **Ready next:** when Lighthouse on `be51670` is green
-   — **done: 9/9 green, local checks green 02:50; only the merge is left.** This run's fast-forward push was refused by its safety check. **Retried 06:55: refused again. Left for Carter's Merge button on PR #76; runs no longer retry it.** When #76 is on `main`, the next run goes straight to #75. Going live is covered by this yes. B–E need their own yes.
-1c. **Clear V72 and the Pantheon's Ra-Horakhty** (Carter's "clear", batch-six 3): PR #75, **independently reviewed
-   2026-10-25 (0 findings)**. **Stacked on #76** → head **`71206ee`** (= reviewed `223600f` + #67 + #76, nothing else;
-   local checks green). **Carter 2026-10-25 02:08: "loop may merge" #75** (`decisions-2026-10-25-hero-show-me-and-75.md` 2), his
-   per-item approval including the two clearances. So a run that wrote none of #75 fast-forwards it after #67 and #76
-   are on `main`, once every check incl. Lighthouse is green on `71206ee` and local checks pass.
-**Merge order (stacked 2026-10-25, LOOP.md "several approved items"):** ~~#67 `c957af5`~~ (merged) → #76 `be51670` → #75 `71206ee` → #77 (after bringing up).
-Each head already contains the ones before it, so each fast-forwards right after the previous one with no fresh sync
-and no second round of checks. All three are now loop-mergeable (Carter's yes for each).
-(The first stacking at 02:10 put #76 on top of #75, which would have tied #76 to Carter's button; corrected within
-minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51670`. Nothing else was on `a2b0952`.)
-4. **Journal hero rebuild** (value 1–5: the live hero still wears the film-explorer kit until #77 is live).
-   **Part 1 built 2026-10-25: PR #77** (`dbf5d16`, hero art = The Archivist), **independently reviewed 2026-10-25: 0 findings**.
-   **Carter 2026-10-25 ~02:15: YES, with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`): per-item
-   approval. Darker cloak done by a chat session → head **`d038119`**, **re-reviewed 2026-10-25: 0 findings**. Before
-   merging: bring it up after #76/#75 land, all checks green incl. Lighthouse, local checks. **Part 2:** port the
-   Option A set pieces (whip → other tool, boulder → other hazard) onto current `main` (PR #60 has one version on an
-   old base). Never invent a face.
+0. Weekly loop audit done 2026-10-25 (`reviews/2026-10-25-audit.md`); next due on/after Wed 2026-10-28.
+1. ~~#76, #75, #78, #79, #80, #82, #68, #81~~ **all merged by Carter 2026-10-25 ~12:00** (`caedabc`, deploy 209 green);
+   ~~#64~~ merged 12:30 (`91c40fe`, deploy 210 green).
+1a. ~~**PR #84 independent review**~~ **done 2026-10-25 ~13:00: 0 open findings** (`2026-10-25-pr84-independent-review.md`;
+   failure reproduced on `main`, fixed on `main` + `88f2aa8`, 5/5 GitHub green). Waits only on Carter's yes + Merge button.
+   Value 1 by effect: while `main`'s framework tests are red, every PR brought up to `main` inherits 2 failures.
+1b. **PR #77 (Journal hero, approved; value 1):** bring `loop/journal-hero-archivist` up to `main` `91c40fe` (merge
+   commit), full local checks, all GitHub checks incl. Lighthouse; then Carter's Merge button. Its tests will show the 2
+   registry failures until #84 lands: either wait for #84 or include #84's recount (already reviewed) in the bring-up and
+   say so. **Next run picks this up.**
+1c. **PR #83 independent review** (a run that wrote none of it), then bring up to `main`; then Carter's yes.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
    site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
@@ -379,29 +366,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
 7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
 8. **Göbekli Tepe preview (PR #53):** change "the oldest known megaliths" (site.js line 123) to wording its sources support (audit 2026-10-25); rides #53, preview only. **PR #43** has no review of its own (audit coverage gap): review it.
-8a. **Independent review of #64, #66** (#67 done 2026-10-24; **#68 done 2026-10-25, 0 open findings**, waits on Carter's yes, then bring up to `main` + fresh checks) so they can reach MERGEABLE (#66 is new content: Carter's yes too).
+8a. **Independent review of #66** (#64, #67, #68 merged) so it can reach MERGEABLE (#66 is new content: Carter's yes too).
 9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
-4e. **PR #78 (Journal Sound pill, phone sideways; live defect, value 1/3):** **independently reviewed 2026-10-25
-   08:10, 0 open findings.** All 6 GitHub checks green incl. Lighthouse (08:10). Missing only: Carter's yes (asked now,
-   in Needs Carter). If Carter says yes, a run that wrote none of it merges it once all checks are green; it is off
-   `main` `c957af5` and touches no file of #75/#76/#77, so it can go before or after them (bring up to `main` if needed).
-4f. **PR #79 (Journal on narrow upright phones; full-screen spoken name; live defects, value 3):** built 2026-10-25
-   (`3018cdd`, off `main` `c957af5`), **independently reviewed (0 open findings)**, **all 6 GitHub checks green incl.
-   Lighthouse (09:58).** Missing only: Carter's yes (asked now, in Needs Carter). Shares `games.css` with #78/#80 (trial
-   merges clean); off `main`, touches no file of #75/#76/#77.
-4g. **PR #80 (Reliquary dropdowns past the dialog at 461–484 px; live defect, value 3):** built 2026-10-25 (`c9408a0`,
-   off `main` `c957af5`). **Independently reviewed 2026-10-25 ~10:10: 0 open findings** (`2026-10-25-pr80-independent-review.md`;
-   defect reproduced on `main` at 461–480 px, gone on #80). GitHub 4/6 green; **next run: confirm Lighthouse and the second
-   runtime run finished green on `c9408a0`** — **done 10:54: 6/6 green incl. Lighthouse.** Missing only: Carter's yes (asked with #78/#79).
-4i. **PR #82 (ch02 "second death" wording; live, value 1):** built 2026-10-25 (`82441ce`, off `main`). **Independently
-   reviewed 2026-10-25 ~11:25: 0 open findings** (`2026-10-25-pr82-independent-review.md`; both sources re-opened).
-   GitHub 9/10 green; **next run: confirm Lighthouse finished green on `82441ce`.** Then missing only Carter's yes.
-4j. **PR #83 (Journal touch polish: Select/Start tap areas 44 px, first tip names on-screen buttons; live, value 3):**
-   built 2026-10-25 (`39eeef8`, off `main` `c957af5`). **6/6 GitHub checks green incl. Lighthouse (12:09).** **Next run: independent review** (a run that
-   wrote none of it). Then missing only Carter's yes.
-4h. **PR #81 (Qumran guided walk stops in Cave 4; live defect, value 3):** built 2026-10-25 (`2c099a0`), **stacked on
-   #68**. **Independently reviewed 2026-10-25 ~10:55: 0 open findings; 10/10 GitHub green incl. Lighthouse.** Goes live
-   after #68, with Carter's yes for #81 (asked now).
 10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; ~~Journal Select/Start tap size; Journal tip naming keys on touch~~ now PR #83); ~~ch02 "second death"~~ now PR #82; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
@@ -417,11 +383,8 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **All eight merged by Carter's buttons, 2026-10-25 ~11:58–12:00** (#76, #75, #78, #79, #80, #82, #68, #81; `main` = `caedabc`,
-  deploy run 209 green). Merges were GitHub merge commits, so `main`'s ids differ from the loop branches.
-- **PR #84** (registry recount): #68 and #82 each bumped the entity-registry totals from the same start, so 2 framework
-  tests fail on `main`. Internal data only, nothing under `docs/`, not visible on the site. Needs its own independent
-  review by another run, then Carter's Merge button (the loop cannot push to `main`: the session safety system refuses it).
-- **#77** (Journal hero, approved): next run brings it up to `main` `caedabc`, re-runs checks, then it needs Carter's button.
-Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`) and 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`,
-`decisions-2026-10-25-hero-show-me-and-75.md`, `decisions-2026-10-25-hero-yes-darker-cloak.md`), all folded into Next.
+- **PR #84 (registry recount): yes / no?** Reviewed 2026-10-25 by a run that wrote none of it: 0 findings, all checks
+  green. It fixes 2 internal tests that have been failing on `main` since the eight merges; nothing on the site changes.
+  If yes, press Merge on PR #84 (the loop's pushes to `main` are refused by the session safety system).
+- **#77** (Journal hero, already approved): next run brings it up to `main`, then it needs your Merge button.
+Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
