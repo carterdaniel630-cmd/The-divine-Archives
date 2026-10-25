@@ -5,8 +5,8 @@
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC). **Deployed (`main`):** `efba79c` (PR #73, merged
-2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and, per Muse, www.getconexto.com (Needs Carter 1).
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), and `decisions-2026-10-25-domain-and-kadesh.md`. **Deployed (`main`):** `efba79c` (PR #73, merged
+2026-10-25 01:43 UTC, deploy run 200 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `claude/site-fixes-2026-10-18` = #67 (head `c957af5`), `loop/clear-v72-ra` = #75,
 `loop/speed-fix-a` = #76 (#70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
@@ -216,6 +216,10 @@
    `handoff/journal-hero-b64/` as base64 text (decode with the command in its README; check sizes). Face stays
    Carter's (hood up); costume per the approved Archivist sheet; no fedora, leather jacket, whip or boulder. Never
    invent a face.
+4b. **Name the live site in docs** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
+   site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
+   site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
+   domain or Cloudflare. Any wording change under `docs/` goes through a PR.
 5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
@@ -241,7 +245,6 @@
 Answered 2026-10-24 (`decisions-2026-10-24-batch-six.md`, folded into Next): PR #67 yes, speed fix A yes, V72 and
 Ra-Horakhty cleared, reviewer/auditor option A, PR #61 close, Journal hero images requested from Muse. Hit-feel 2–3,
 reduced motion and the Tjurunga takedown/wording also answered (#73 now live).
-1. **Domain:** Muse reports (`muse-reply-domain-and-facts-2026-10-24.md`) that www.getconexto.com has been live since
-   2026-10-18; the build's "not pointed" record is older than that. Nothing to change. **That's right / No, it isn't.**
-2. **Treaty of Kadesh tablet preview** (`2026-10-19-treaty-of-kadesh-rebuilt.md`): **Looks right / Change something.**
-3. ~~Journal hero pictures~~: arrived 2026-10-25; nothing needed.
+Answered 2026-10-25 (`decisions-2026-10-25-domain-and-kadesh.md`): domain confirmed live at www.getconexto.com
+(docs update folded into Next 4b); Treaty of Kadesh tablet preview looks right for now, accepted as-is.
+- Nothing open.
