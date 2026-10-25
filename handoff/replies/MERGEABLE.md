@@ -21,8 +21,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   Missing: independent review by a run that wrote none of it; bring up to `main` `91c40fe`; Carter's yes.
 - **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head `d038119` with the darker cloak).
   **Independent review 0 findings on `dbf5d16`**; **re-review of `d038119` 0 findings**. **Carter's yes 2026-10-25 ~02:15,
-  with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`). Missing: bring up to `main` `91c40fe`; every
-  check green on that head incl. Lighthouse; local checks; then Carter's Merge button.
+  with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`). **Brought up 2026-10-25 ~13:05 to `8204268`**
+  (`main` `91c40fe` + #84's reviewed recount `88f2aa8`, clean merges, adding only already-reviewed diffs); local checks
+  green. Missing: every GitHub check green on `8204268` incl. Lighthouse; then Carter's Merge button (after #84).
 
 ## Merged
 - Reviewer and auditor project skills (PR #64): merged by Carter 2026-10-25 12:30 UTC as `91c40fe`, deploy run 210 green.
