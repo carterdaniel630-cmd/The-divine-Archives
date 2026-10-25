@@ -16,3 +16,4 @@
 2026-10-25 10:50 UTC reviewer loop #68 passed
 2026-10-25 11:00 UTC reviewer loop #81 passed
 2026-10-25 11:30 UTC reviewer loop #82 passed
+2026-10-25 12:45 UTC reviewer 1 batch (PR #85: ch42 Newgrange sentence, Ararat Armenian card), 0 passed, 0 fixed, 2 need Carter (auto-pass off); the builder fixed the three source-log gaps and the Jacob wording afterwards (467ebfe)
