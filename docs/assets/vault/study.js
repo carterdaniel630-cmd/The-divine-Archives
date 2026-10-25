@@ -578,7 +578,31 @@
     }
 
     // ---- start ----------------------------------------------------------
-    if (study.manifest) load(study.manifest);
+    // The scans live on the holding institution's server. Ask it for them only
+    // when the reader reaches the viewer (or taps the button), not as the page
+    // opens: waiting on another library's server slowed the whole page.
+    if (study.manifest) {
+      var opened = false, io = null;
+      var openB = el("button", { type: "button", class: "study-open", text: "Open the manuscript" });
+      var gate = el("p", { class: "study-gate" }, [openB, el("span", { class: "tiny", text: " The scans load from the holding institution when you reach this viewer." })]);
+      var openNow = function () {
+        if (opened) return;
+        opened = true;
+        if (io) io.disconnect();
+        if (gate.parentNode) gate.parentNode.removeChild(gate);
+        load(study.manifest);
+      };
+      openB.addEventListener("click", openNow);
+      bar.parentNode.insertBefore(gate, bar);
+      // A link straight to a page or to the viewer opens it at once.
+      if (/(^#study$)|folio=/.test(location.hash) || !("IntersectionObserver" in window)) openNow();
+      else {
+        io = new IntersectionObserver(function (entries) {
+          if (entries.some(function (e) { return e.isIntersecting; })) openNow();
+        }, { rootMargin: "600px 0px" });
+        io.observe(root);
+      }
+    }
     else {
       root.classList.add("no-manifest");
       setStatus("");

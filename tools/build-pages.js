@@ -716,6 +716,8 @@ function buildSitemap() {
   urls.push([SITE + "/vault.html", null]);
   urls.push([SITE + "/pantheon.html", null]);
   VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
+  // a withdrawn entry's absence page stays indexed: it is a public statement, meant to be found
+  VAULT.items.filter((v) => v.status === "withdrawn").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map(([u, d]) => "  <url><loc>" + u + "</loc>" + (d ? "<lastmod>" + d + "</lastmod>" : "") + "</url>").join("\n") +

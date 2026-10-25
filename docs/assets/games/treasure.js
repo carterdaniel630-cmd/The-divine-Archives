@@ -28,6 +28,11 @@
    ========================================================================== */
 (function () {
   "use strict";
+  // Reduced motion (Carter, Item 31 #6: "do NOT override"): when the visitor's device asks
+  // for reduced motion there is no screen shake and only a faint flash (same rule as feel.js).
+  var RMQ = null;
+  try { RMQ = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null; } catch (e) { RMQ = null; }
+  function reducedMotion() { return !!(RMQ && RMQ.matches); }
   var AG = window.ArchiveGames;
   if (!AG) return;
 
@@ -939,7 +944,8 @@
     }
 
     function draw() {
-      var cam = Math.round((st.cam + (st.shake ? (Math.random() - 0.5) * st.shake : 0)) * 2) / 2, camY = st.shake ? (Math.random() - 0.5) * st.shake * 0.6 : 0;
+      var shk = reducedMotion() ? 0 : st.shake;
+      var cam = Math.round((st.cam + (shk ? (Math.random() - 0.5) * shk : 0)) * 2) / 2, camY = shk ? (Math.random() - 0.5) * shk * 0.6 : 0;
       var cMid = Math.floor((cam + VIEWW / 2) / TILE), B = biomeAt(st.def, cMid), bname = biomeNameAt(st.def, cMid);
       st.drawCam = cam; st.drawCamY = camY;
       cx.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -980,7 +986,7 @@
       drawWeather(B, cam);
       var vg = cx.createRadialGradient(VIEWW / 2, VIEWH * 0.55, VIEWH * 0.35, VIEWW / 2, VIEWH / 2, VIEWW * 0.72);
       vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,.42)"); cx.fillStyle = vg; cx.fillRect(0, 0, VIEWW, VIEWH);
-      if (st.flashT > 0) { cx.fillStyle = "rgba(200,40,20," + (st.flashT * 0.6) + ")"; cx.fillRect(0, 0, VIEWW, VIEWH); }
+      if (st.flashT > 0) { cx.fillStyle = "rgba(200,40,20," + (reducedMotion() ? Math.min(st.flashT * 0.6, 0.06) : st.flashT * 0.6) + ")"; cx.fillRect(0, 0, VIEWW, VIEWH); }
     }
 
     function drawSky(B, bname, cam) {
