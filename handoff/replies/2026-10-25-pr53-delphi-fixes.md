@@ -1,4 +1,4 @@
-# 2026-10-25 ~21:42–22:40 UTC — build loop: PR #53 fix run, part 3 (Delphi)
+# 2026-10-25 ~21:42–21:52 UTC — build loop: PR #53 fix run, part 3 (Delphi)
 
 **Item:** STATUS Next 1e, the fix run after the independent review of `befb607` (`2026-10-25-pr53-independent-review.md`).
 One site this run: **Delphi, every fixable finding.** Chichén Itzá is untouched and still open. The 19:42 run's lock

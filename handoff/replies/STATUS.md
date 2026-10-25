@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~22:40 UTC (build loop: **PR #53 fix run part 3, Delphi fixed** at `6f314d4`; the 19:42 lock was stale, taken over). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~21:52 UTC (build loop: **PR #53 fix run part 3, Delphi fixed** at `6f314d4`; the 19:42 lock was stale, taken over). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -12,7 +12,7 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
-- 2026-10-25 ~21:42–22:40: **PR #53 fix run part 3 — Delphi** (`6f314d4`): every fixable finding (hymn panel now the
+- 2026-10-25 ~21:42–21:52: **PR #53 fix run part 3 — Delphi** (`6f314d4`): every fixable finding (hymn panel now the
   edited opening of the first hymn, undying fire → Plutarch *Numa* 9, temple dates/funding from the Ministry, Athenian
   Treasury 1906 rebuild, Sphinx height, end of the oracle, Greek Questions 9, vapours from the 2006 abstract, log).
   Build only registry changed, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings), headless phone 360/390 clean.
@@ -394,7 +394,7 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1e. **PR #53 (Pilgrimage batch 1), head `8aab255`: review of `befb607` NOT passed** (`2026-10-25-pr53-independent-review.md`).
    **Fix run part 1 done 19:30: Mogao Caves, all fixable findings** (`2026-10-25-pr53-mogao-fixes.md`; main `3785b2b` merged in).
    **Fix run part 2 done ~19:10: Göbekli Tepe** (`2dd1158`, `2026-10-25-pr53-gobekli-fixes.md`; review points 2 and 3 settled).
-   **Fix run part 3 done ~22:40: Delphi** (`6f314d4`, `2026-10-25-pr53-delphi-fixes.md`).
+   **Fix run part 3 done ~21:52: Delphi** (`6f314d4`, `2026-10-25-pr53-delphi-fixes.md`).
    **Still to fix:** Chichén Itzá (incl. review point 4, decline date: state both views).
    **Next: fix run** on `claude/project-thread-s3qxre` (merge commits only, no force-push): every fixable finding in the
    report, site by site (a smaller correct piece is fine: e.g. one or two sites per run, say which); try to settle the
