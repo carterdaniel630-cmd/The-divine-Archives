@@ -1,4 +1,4 @@
-# PR #67 brought up to main — 2026-10-25 ~02:05–02:20 UTC (build loop)
+# PR #67 brought up to main — 2026-10-25 ~01:47–01:51 UTC (build loop)
 
 **Item:** STATUS Next 1, PR #67 (live phone fixes: era emblems, long source links on phones, arcade line). Carter's yes
 2026-10-24 (`decisions-2026-10-24-batch-six.md` 1). Value 1, the highest open item.

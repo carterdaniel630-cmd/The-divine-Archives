@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 02:20 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
+**As of:** 2026-10-25 01:56 UTC. **Deployed (`main`, on the-divine-archives.pages.dev):** `efba79c` (PR #73 merged 2026-10-25 01:43 UTC, deploy run 200 green).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -12,16 +12,18 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Site fixes 2026-10-18** (PR #67, `claude/site-fixes-2026-10-18`, head now `c957af5`): **independent review done
   2026-10-24, 0 findings** (`2026-10-24-pr67-independent-review.md`) on `1681050`. Carter's yes 2026-10-24
-  (`decisions-2026-10-24-batch-six.md` 1). **Brought up to `main` `efba79c` on 2026-10-25 ~02:15** with a merge commit
+  (`decisions-2026-10-24-batch-six.md` 1). **Brought up to `main` `efba79c` on 2026-10-25 ~01:50** with a merge commit
   (no conflict); site diff byte-identical to the reviewed `1681050`; local checks green (`2026-10-25-pr67-brought-up.md`).
   Missing: every GitHub check green on `c957af5` (incl. Lighthouse), then a run that wrote none of #67 fast-forwards.
 
 - **Clear V72 and Ra-Horakhty** (PR #75, `loop/clear-v72-ra` @ `4409b86`; Carter's "clear", batch-six 3). Missing:
   independent review by a run that wrote none of it; bring up to `main`; every GitHub check green.
 
-- **Site speed fix A** (PR #76, `loop/speed-fix-a` @ `10b075c`; Carter's yes `decisions-2026-10-24-batch-six.md` 2,
-  covers going live). Local checks green (`2026-10-24-speed-fix-a-built.md`). Missing: independent review by a run
-  that wrote none of it; bring up to `main` `efba79c`; every GitHub check green incl. Lighthouse.
+- **Site speed fix A** (PR #76, `loop/speed-fix-a`, head now `7100802`; Carter's yes `decisions-2026-10-24-batch-six.md`
+  2, covers going live). **Independent review 2026-10-25: 0 findings** (`2026-10-25-pr76-independent-review.md`).
+  **Brought up to `main` `efba79c`** (merge commit; the one conflict, generated `docs/vault/tjurunga.html`, took main's
+  absence page); local checks green. Missing: every GitHub check green on `7100802` incl. Lighthouse; then a run that
+  wrote none of #76 fast-forwards.
 
 ## Merged
 - Tjurunga takedown (PR #73): merged 2026-10-25 01:43 UTC by fast-forward `6c81a84` → `efba79c`, deploy run 200 green (Carter's yes `decisions-2026-10-24-merge-71-72-73.md`; reviews `2026-10-24-pr73-independent-review.md`, `2026-10-24-pr73-re-review.md`; 8/8 checks incl. Lighthouse; `2026-10-25-pr73-merged.md`).
