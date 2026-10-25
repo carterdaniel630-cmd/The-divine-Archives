@@ -49,6 +49,11 @@
     var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1, acc = 0, STEP = 1 / 60;
     var keys = {}, st = null, twoP = false, temper = 1; // 0 mild, 1 even, 2 fierce
     var best = AG.bestScore("antithesis");
+    // hit-feel (feel.js): a paddle strike freezes for an instant, shakes and rings, the
+    // paddle recoils; a point chimes (or drops a tone when Chaos takes it). Reduced
+    // motion on the phone turns the shake and the recoil off.
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null;
+    function feel(kind, o) { if (FEEL) FEEL.hit(kind, o); }
 
     function newRally(dir) {
       st.ball = { x: VW / 2, y: VH / 2, vx: (dir || (Math.random() < 0.5 ? -1 : 1)) * 4.4, vy: rnd(-2.4, 2.4), r: 8, spin: 0 };
@@ -136,8 +141,8 @@
       if (st.serveT > 0) return;
       var b = st.ball;
       b.x += b.vx; b.y += b.vy; b.spin += 0.3;
-      if (b.y < b.r) { b.y = b.r; b.vy = Math.abs(b.vy); sparkAt(b.x, b.y, LIGHT); }
-      if (b.y > VH - b.r) { b.y = VH - b.r; b.vy = -Math.abs(b.vy); sparkAt(b.x, b.y, DARK); }
+      if (b.y < b.r) { b.y = b.r; b.vy = Math.abs(b.vy); sparkAt(b.x, b.y, LIGHT); feel("tick", { pitch: 1.1 }); }
+      if (b.y > VH - b.r) { b.y = VH - b.r; b.vy = -Math.abs(b.vy); sparkAt(b.x, b.y, DARK); feel("tick", { pitch: 0.9 }); }
       // paddle collisions
       hitPaddle(st.pl, 1); hitPaddle(st.pr, -1);
       if (b.x < -14) return point(st.pr, 1);
@@ -154,12 +159,18 @@
         b.vx = dir * Math.abs(Math.cos(ang) * speed); b.vy = Math.sin(ang) * speed;
         b.x = pad.x + dir * (7 + b.r);
         sparkAt(b.x, b.y, dir > 0 ? LIGHT : DARK, 12);
+        // harder the faster the rally runs; Order's paddle rings higher than Chaos's
+        if (FEEL && !FEEL.reduced) pad.recoil = -dir * 4;
+        feel("paddle", { pitch: (dir > 0 ? 1.12 : 0.88) * (0.9 + speed / 40), scale: clamp(speed / 7, 0.6, 1.5) });
       }
     }
     function sparkAt(x, y, col, n) { n = n || 5; if (n >= 5) (st.rings || (st.rings = [])).push({ x: x, y: y, t: 0, col: col }); for (var i = 0; i < n; i++) st.sparks.push({ x: x, y: y, vx: rnd(-3, 3), vy: rnd(-3, 3), life: 1, r: rnd(1, 2.6), col: col }); }
 
     function point(winner, serveDir) {
       winner.score++;
+      if (winner === st.pl) feel("big", { color: "231,198,128" });
+      else if (twoP) feel("big", { color: "185,140,255", pitch: 0.84 });
+      else feel("lose", { color: "90,50,150" });
       var f = pickFact();
       if (f) { st.seen[f.label] = 1; if (!st.collected.some(function (c) { return c.label === f.label; })) st.collected.push(f); showFact(f, winner === st.pl); }
       renderHUD();
@@ -183,6 +194,7 @@
       // field
       if (!fieldBg) fieldBg = buildField();
       cx.drawImage(fieldBg, 0, 0, VW, VH);
+      if (FEEL) FEEL.begin(cx);
       // drifting motes
       for (var i = 0; i < st.motes.length; i++) { var mo = st.motes[i]; cx.globalAlpha = mo.a; cx.fillStyle = COL.goldB; cx.beginPath(); cx.arc(mo.x, mo.y, mo.r, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
@@ -204,6 +216,7 @@
       // sparks
       for (var s = st.sparks.length - 1; s >= 0; s--) { var sp = st.sparks[s]; cx.globalAlpha = clamp(sp.life, 0, 1); cx.fillStyle = sp.col; cx.beginPath(); cx.arc(sp.x, sp.y, sp.r, 0, 7); cx.fill(); }
       cx.globalAlpha = 1;
+      if (FEEL) FEEL.end(cx, VW, VH);
       if (st.serveT > 0 && !st.over) { cx.fillStyle = "rgba(231,198,128,.85)"; cx.font = "600 15px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText("The orb is cast…", VW / 2, VH / 2 - 54); }
     }
     // the field: a dark sky split between order (warm, left) and its opposite (violet,
@@ -226,14 +239,14 @@
       cx.fillStyle = g; cx.fillRect(x === 0 ? 0 : VW - 60, 0, 60, VH);
     }
     function paddle(pad, col, sh) {
-      var w = 11, x = pad.x - w / 2, y = pad.y - pad.h / 2;
+      var w = 11, x = pad.x + (pad.recoil || 0) - w / 2, y = pad.y - pad.h / 2;
       var g = cx.createLinearGradient(x, 0, x + w, 0); g.addColorStop(0, sh); g.addColorStop(0.5, col); g.addColorStop(1, sh);
       cx.save(); cx.shadowColor = col; cx.shadowBlur = 12; cx.fillStyle = g;
       roundRect(x, y, w, pad.h, 5); cx.fill(); cx.restore();
       // engraved caps
       cx.fillStyle = hexA(col, 0.9); roundRect(x - 1, y - 4, w + 2, 5, 2); cx.fill(); roundRect(x - 1, y + pad.h - 1, w + 2, 5, 2); cx.fill();
       // center rune
-      cx.strokeStyle = "rgba(20,13,7,.5)"; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(pad.x, y + 12); cx.lineTo(pad.x, y + pad.h - 12); cx.stroke();
+      cx.strokeStyle = "rgba(20,13,7,.5)"; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(x + w / 2, y + 12); cx.lineTo(x + w / 2, y + pad.h - 12); cx.stroke();
     }
     function drawBall(b) {
       cx.save(); cx.globalCompositeOperation = "lighter";
@@ -260,7 +273,10 @@
       if (!running) return;
       // fixed 60 Hz simulation: the physics constants are per-tick, so the game runs at
       // the same speed on a 60, 120 or 144 Hz display (rendering still follows the display)
-      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts; acc += dt;
+      var dt = Math.min(0.1, (ts - last) / 1000 || 0); last = ts;
+      if (FEEL && FEEL.tick(dt)) { acc = 0; dt = 0; }   // hit-stop: the strike holds for an instant
+      acc += dt;
+      [st.pl, st.pr].forEach(function (p) { if (p.recoil) p.recoil = Math.abs(p.recoil) < 0.2 ? 0 : p.recoil * Math.pow(0.002, dt); });
       var n = 0;
       while (acc >= STEP && n < 6) {
         acc -= STEP; n++;

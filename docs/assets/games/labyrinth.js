@@ -45,6 +45,13 @@
 
     var canvas, cx, hudEl, live, raf = null, keyfn = null, keyup = null, last = 0, running = false, DPR = 1;
     var st = null, best = AG.bestScore("labyrinth"), touch = null;
+    // hit-feel (feel.js): each offering clinks softly; lighting a lamp freezes for an
+    // instant, flashes amber and chimes; catching a fleeing shade strikes like a bell in its
+    // own colour; a shade catching you drops a tone, jolts and, on phones, buzzes.
+    // Reduced motion on the phone turns the jolts off.
+    var FEEL = window.ArchiveFeel ? window.ArchiveFeel.create() : null, coinN = 0;
+    function feel(kind, o) { if (FEEL) FEEL.hit(kind, o); }
+    function rgb(hex) { var n = parseInt(String(hex).replace("#", ""), 16); return ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255); }
 
     /* ---------------- maze generation (recursive backtracker + braid) ---------------- */
     function genMaze() {
@@ -211,16 +218,16 @@
     }
     function onPlayerArrive() {
       var t = st.grid[st.player.ty][st.player.tx];
-      if (t === 3) { st.grid[st.player.ty][st.player.tx] = 1; st.dots--; st.score += 10; }
-      else if (t === 4) { st.grid[st.player.ty][st.player.tx] = 1; st.dots--; st.score += 50; st.fright = 7; st.ghosts.forEach(function (g) { if (!g.eaten) g.dir = { x: -g.dir.x, y: -g.dir.y }; }); revealFact(); }
+      if (t === 3) { st.grid[st.player.ty][st.player.tx] = 1; st.dots--; st.score += 10; feel("coin", { pitch: (coinN++ & 1) ? 1.06 : 1 }); }
+      else if (t === 4) { st.grid[st.player.ty][st.player.tx] = 1; st.dots--; st.score += 50; st.fright = 7; st.ghosts.forEach(function (g) { if (!g.eaten) g.dir = { x: -g.dir.x, y: -g.dir.y }; }); revealFact(); feel("big", { color: "255,190,100" }); }
     }
     function checkCollisions() {
       var p = st.player;
       st.ghosts.forEach(function (g) {
         if (g.tx === p.tx && g.ty === p.ty) {
           if (g.eaten) return;
-          if (st.fright > 0) { g.eaten = true; g.penT = 0; st.score += 200; sparkle(g); }
-          else loseLife();
+          if (st.fright > 0) { g.eaten = true; g.penT = 0; st.score += 200; sparkle(g); feel("bumper", { pitch: 0.8 + g.idx * 0.12, scale: 1.3, color: rgb(g.col) }); }
+          else { feel("lose", { color: "60,30,90" }); loseLife(); }
         }
       });
     }
@@ -247,6 +254,7 @@
     }
     function nextLevel() {
       st.level++; var lives = st.lives;
+      feel("course", { pitch: 1.1, color: "231,198,128" });
       newGame(lives);
       st.dnotice = "Level " + st.level;
       updateHUD();
@@ -300,6 +308,7 @@
     }
     function draw() {
       cx.clearRect(0, 0, VW, VH);
+      if (FEEL) FEEL.begin(cx);
       if (!wallCache || wallFor !== st.grid) buildWalls();
       cx.drawImage(wallCache, 0, 0, VW, VH);
       var now = performance.now();
@@ -326,6 +335,7 @@
         cx.fillStyle = "#ffcf6a"; cx.beginPath(); cx.moveTo(lx - 3.2, ly + 3); cx.quadraticCurveTo(lx - 3.6 + fl, ly - 3, lx + fl * 1.5, ly - 7 - fl); cx.quadraticCurveTo(lx + 3.6 + fl, ly - 3, lx + 3.2, ly + 3); cx.closePath(); cx.fill();
         cx.fillStyle = "#fff4d0"; cx.beginPath(); cx.ellipse(lx + fl * 0.5, ly, 1.4, 2.6, 0, 0, Math.PI * 2); cx.fill(); cx.restore();
       }
+      if (FEEL) FEEL.end(cx, VW, VH);
       if (st.ready > 0) { cx.fillStyle = "rgba(231,198,128,.95)"; cx.font = "600 16px Cinzel, Georgia, serif"; cx.textAlign = "center"; cx.fillText(st.dnotice || "Enter the labyrinth…", VW / 2, VH / 2 - 6); }
     }
     function drawSeeker() {
@@ -371,7 +381,8 @@
     function loop(ts) {
       if (!running) return;
       var dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts;
-      if (!st.over) tick(dt);
+      var frozen = FEEL ? FEEL.tick(dt) : false;   // hit-stop: the moment holds for an instant
+      if (!st.over && !frozen) tick(dt);
       draw(); updateHUD();
       if (!st.over) raf = requestAnimationFrame(loop);
     }
@@ -436,6 +447,7 @@
 
     function boot() {
       if (raf) { cancelAnimationFrame(raf); raf = null; }
+      if (FEEL) FEEL.reset();
       st = { score: 0, level: 1, collected: [], seen: {} };
       shell(); newGame(3); updateHUD(); draw();
       live.textContent = "Swipe or press an arrow to move through the labyrinth…";

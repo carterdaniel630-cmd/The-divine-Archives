@@ -57,7 +57,7 @@ const GAME = {};
   for (const g of gctx.window.ARCHIVE_GAMES) GAME[g.hiddenIn] = { id: g.id, title: g.fullTitle || g.title };
 }
 // Vault entries that deliberately show no image (see their own entries)
-const NO_IMAGE = { v68: "The Vault shows no image of the tjurunga: they are secret-sacred objects.", v76: "The Vault shows no image connected with the Báb, out of respect for Bahá'í practice." };
+const NO_IMAGE = { v76: "The Vault shows no image connected with the Báb, out of respect for Bahá'í practice." };
 // living traditions that data.js files in an early wing (PLAN §4 flags; §13 decision 7)
 const LIVING = ["ch33", "ch61", "ch62", "ch63"];
 // objects shown in a floor vitrine rather than a standing case
@@ -186,6 +186,10 @@ const manifest = {
 fs.writeFileSync(path.join(OUT, "manifest.json"), JSON.stringify(manifest));
 
 // ---- fallback directory in museum.html ------------------------------------
+// a withdrawn Vault entry leaves its home room a labelled absence note in place of an exhibit link
+// (tjurunga-takedown-order-2026-10-20 §2.3); the note is trusted house text from vault-data.js
+const notesFor = (id) => VAULT.items.filter((i) => i.status === "withdrawn" && i.absence && i.absence.roomNote && (i.chapters || [])[0] === id)
+  .map((i) => i.absence.roomNote);
 function directory() {
   const roomLi = (id) => {
     const c = roomOf(id), r = rooms.find((x) => x.id === id);
@@ -194,6 +198,7 @@ function directory() {
     return `<li id="dir-${id}"><a class="dir-room" href="chapters/${id}.html">${esc(c.title)}</a>` +
       (c.pending ? ` <span class="badge is-pending">pending review</span>` : "") +
       (v.length ? `<p class="dir-ex"><span>Vault:</span> ${v.join(" · ")}</p>` : "") +
+      notesFor(id).map((n) => `<p class="dir-ex dir-note">${n}</p>`).join("") +
       (f.length ? `<p class="dir-ex"><span>Pantheon:</span> ${f.join(" · ")}</p>` : "") +
       (GAME[id] ? `<p class="dir-ex"><span>Game:</span> <a href="symbols.html#play=${GAME[id].id}">${esc(GAME[id].title)}</a></p>` : "") +
       `</li>`;

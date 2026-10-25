@@ -40,6 +40,10 @@ const REF = {
   collins: "L. G. Collins and D. F. Fasold, &ldquo;Bogus Noah&rsquo;s Ark from Turkey Exposed as a Common Geologic Structure&rdquo;, <em>Journal of Geoscience Education</em> 44.4 (1996), 439&ndash;444",
   navarra: "the radiocarbon dates of Fernand Navarra&rsquo;s 1955 wood, as summarised by the TalkOrigins Archive (claim CH504.2) and <em>Bible and Spade</em>, &ldquo;Ararat &lsquo;Ark&rsquo; Wood Dated at A.D. 700&rdquo;",
   nami: "UPI, &ldquo;Noah&rsquo;s ark claim doubted&rdquo; (28 April 2010); <em>Christian Science Monitor</em>, &ldquo;Doubt cast on Noah&rsquo;s ark found in Turkey&rdquo; (2010)",
+  ahora: "R. S. Azzoni et al., &ldquo;Geomorphological effects of the 1840 Ahora Gorge catastrophe on Mount Ararat (Eastern Turkey)&rdquo;, <em>Geomorphology</em> 332 (2019), 10&ndash;21",
+  etch: "Mother See of Holy Etchmiadzin, liturgical calendar: the feast of Saint Jacob of Nisibis (armenianchurch.org); Armenian Church of Sydney, calendar entry on the same feast",
+  century: "<em>The Christian Century</em>, on the ark relic at Etchmiadzin (christiancentury.org)",
+  whe: "WorldHistory.org, &ldquo;Mount Ararat&rdquo;",
   ascent: "<em>The Armenian Mirror-Spectator</em>, &ldquo;Ararat Redux: Abovian, Prof. Parrot and First Ascent&rdquo;",
   ch01: "the archive&rsquo;s chapter on the Flood (ch01)"
 };
@@ -48,6 +52,7 @@ const APPROX = { t: "The mountain is a scale model: heights published, shape our
 const CONTESTED = { t: "Contested", soft: false };
 const CLAIM = { t: "A claim, not a verified find", soft: false };
 const TEXT = { t: "From a sacred text", soft: true };
+const FAITH = { t: "A tradition of faith", soft: true };
 
 // ---------------------------------------------------------------- sections
 const B = (p, r) => [p.x - r, -60, p.z - r, p.x + r, 200, p.z + r];
@@ -71,7 +76,7 @@ const regions = [
   // round the Durupınar formation (which is not walked on)
   region({ id: "durup", section: "s2", x0: P2.x - 110, x1: P2.x + 110, z0: P2.z - 50, z1: P2.z + 50, y: 0, outside: true, holes: [[P2.x - D.form.l / 2 - 1, P2.x + D.form.l / 2 + 1, P2.z - D.form.w / 2 - 1, P2.z + D.form.w / 2 + 1]] }),
   region({ id: "slope", section: "s2", x0: P2.x - 40, x1: P2.x + 40, z0: P2.z + 50, z1: P2.z + 95, y: 0, y1: 14, outside: true, open: "n" }),
-  region({ id: "s2-out", section: "s2", x0: P2.x - 1, x1: P2.x + 1, z0: P2.z + 95, z1: P2.z + 96.6, y: 14, inset: 0.05, portal: "s1", outside: true }),
+  region({ id: "s2-out", section: "s2", x0: P2.x - 1, x1: P2.x + 1, z0: P2.z + 94.4, z1: P2.z + 96.6, y: 14, inset: 0.05, portal: "s1", outside: true }),
   // the summit dome
   region({ id: "summit", section: "s3", x0: P3.x - 6, x1: P3.x + 6, z0: P3.z - 6, z1: P3.z + 6, y: 0, outside: true }),
   region({ id: "s3-out", section: "s3", x0: P3.x - 1, x1: P3.x + 1, z0: P3.z + 6, z1: P3.z + 7.4, y: 0, inset: 0.05, portal: "s1", outside: true })
@@ -85,13 +90,15 @@ const route = [
   P(V0.x, V0.z - 5.2, 0, true),
   P(P1.x, P1.z + 4, 0, true, Y1),
   P(P1.x - 4, P1.z - 4, 0, true, Y1),
-  P(P1.x + 15.4, P1.z + 3.4, 0, true, -PI / 2),        // the way to Durupınar
+  P(P1.x + 15.9, P1.z + 3.4, 0, true, -PI / 2),        // the way to Durupınar (the stop is in its portal)
   P(P2.x, P2.z + 80, 9.3, true, 0),                       // the hillside above the formation
   P(P2.x, P2.z + 46, 0, true, 0),
   P(P2.x - 70, P2.z + 30, 0, true, -PI * 0.25),
+  P(P2.x, P2.z + 27, 0, false), P(P2.x + 45, P2.z + 27, 0, false), P(P2.x + 90, P2.z + 27, 0, false),   // along the north side (legs under 80 m, so a reduced-motion jump completes)
   P(P2.x + 95, P2.z, 0, true, PI / 2),
+  P(P2.x + 60, P2.z + 40, 0, false), P(P2.x + 35, P2.z + 48, 0, false), P(P2.x + 20, P2.z + 75, 7.8, false),
   P(P2.x, P2.z + 95.8, 14, true),                         // back up, and to the plain
-  P(P1.x, P1.z - 15.4, 0, true, 0),                       // the way up
+  P(P1.x, P1.z - 16.0, 0, true, 0),                       // the way up (the stop is in its portal)
   P(P3.x, P3.z + 3, 0, true, 0),
   P(P3.x + 3, P3.z + 2, 0, true, yawTo(D.greater, D.lesser))   // looking south-east to Lesser Ararat
 ];
@@ -110,8 +117,11 @@ const info = [
     html: "<p>This portal returns you to the museum&rsquo;s Rotunda, where the Flood is the first of its themes.</p>", links: [{ href: EXIT_HREF, label: "Back to the museum" }] },
   // ---- I: the plain
   { id: "ararat", section: "s1", pos: [P1.x - 2.5, 1.7, P1.z - 2.5], cat: "I · The plain", title: "Two volcanoes",
-    html: "<p>Ararat is a dormant volcano with two cones. <strong>Greater Ararat</strong>, 5,137 m, is the highest mountain in Turkey and in the Armenian highlands; <strong>Lesser Ararat</strong>, 3,896 m, rises to the south-east. The massif is about 35 km across at its base. An ice cap of about 7.3 km&sup2; covers the summit, with glaciers running down its flanks. Its last known eruption came with the great earthquake of 1840, which brought down a landslide and mudflows in the Ahora Gorge on the north-east side and destroyed the village of Akori below.</p>",
-    flags: [APPROX], sources: REF.jmaps + "; " + REF.mta + "." },
+    html: "<p>Ararat is a dormant volcano with two cones. <strong>Greater Ararat</strong>, 5,137 m, is the highest mountain in Turkey and in the Armenian highlands; <strong>Lesser Ararat</strong>, 3,896 m, rises to the south-east. The massif is about 35 to 40 km across at its base (sources differ). An ice cap of about 7.3 km&sup2; covers the summit, with glaciers running down its flanks. The great earthquake of 1840 brought down a landslide and mudflows in the Ahora Gorge on the north-east side and destroyed the village of Akori below. Whether the volcano erupted too is disputed: the old accounts are, in the words of a 2019 study, obscure and ambiguous. That study argues that the earthquake set off a sudden eruption, whose meltwater poured down as a mudflow; others read the gorge&rsquo;s deposits as a landslide alone.</p>",
+    flags: [APPROX, CONTESTED], sources: REF.jmaps + "; " + REF.mta + "; " + REF.ahora + "." },
+  { id: "armenian-ark", section: "s1", pos: [P1.x - 7, 1.7, P1.z - 4], cat: "I · The plain", title: "The ark in Armenian tradition",
+    html: "<p>For many Armenians the ark&rsquo;s mountain belongs to the nation&rsquo;s own story. The historian Movses Khorenatsi traced the Armenians to Noah through his son Japheth and the patriarch Haik, who founded the nation near the mountain. The mountain, with the ark resting on its summit, stands on Armenia&rsquo;s coat of arms.</p><p>At Holy Etchmiadzin, the mother church of the Armenian Apostolic Church, a piece of wood kept in a reliquary is venerated as a fragment of the ark. The church tells how Saint Jacob of Nisibis, a 4th-century bishop, set out up the mountain to find the ark, fell asleep at its foot, and woke to find the wood beside him, placed there by an angel; another telling has the promise come in a dream. The church keeps a feast in his memory. For believers the relic and the mountain are holy as a matter of faith; the story is a tradition of the church, not a historical record.</p>",
+    flags: [FAITH], links: [L.ch01], sources: REF.etch + "; " + REF.century + "; " + REF.whe + "." },
   { id: "masis", section: "s1", pos: [P1.x + 3, 1.7, P1.z - 6], cat: "I · The plain", title: "Masis",
     html: "<p>For Armenians the mountain is <strong>Masis</strong>, a sacred mountain and a national symbol. Since the early 1920s it has lain inside Turkey, where it is Ağrı Dağı, and it is seen from Armenia across the border.</p><p>For many Jews and Christians the Genesis account is sacred history, and for many believers the mountain is a place where it can be felt; for others the story is one telling of the widespread flood stories of the ancient Near East. Both readings are set out in the Flood chapter.</p>",
     flags: [TEXT], links: [L.ch01], sources: REF.brit + "; " + REF.ch01 + "." },
@@ -128,11 +138,11 @@ const info = [
     flags: [CLAIM], links: [L.ch01], sources: REF.navarra + "; " + REF.nami + "." },
   // ---- III: the summit
   { id: "summit", section: "s3", pos: [P3.x - 3, 1.5, P3.z - 3], cat: "III · The summit", title: "On the ice cap",
-    html: "<p>The summit of Greater Ararat is a dome of ice and snow, 5,137 m up. The ice cap and its four small outlet glaciers hold more than 60% of all the glacier ice in Turkey, and they are shrinking: between 1990 and 2016 they lost about 29% of their area.</p><p>The first recorded ascent was made in October 1829 by the scientist Friedrich Parrot and the Armenian writer Khachatur Abovian, with two soldiers and two Armenian villagers.</p>",
+    html: "<p>The summit of Greater Ararat is a dome of ice and snow, 5,137 m up. The ice cap and its four small outlet glaciers cover more than 60% of the glacier area in Turkey, and they are shrinking: between 1990 and 2016 they lost about 29% of their area.</p><p>The first recorded ascent was made in October 1829 by the scientist Friedrich Parrot and the Armenian writer Khachatur Abovian, with two soldiers and two Armenian villagers.</p>",
     flags: [APPROX], sources: REF.inv + "; " + REF.jmaps + "; " + REF.ascent + "." },
   { id: "view", section: "s3", pos: [P3.x + 4, 1.3, P3.z + 3], cat: "III · The summit", title: "What you see from here",
-    html: "<p>To the south-east the cone of Lesser Ararat; to the north the wide valley of the Aras river and, beyond it, Armenia; to the south the plain of Doğubayazıt. Nothing on this summit has been found that is older than the climbers who reached it. The searches here were for an object that the text itself does not place on this peak.</p>",
-    flags: [APPROX], sources: REF.livius + "; " + REF.iranica + "." }
+    html: "<p>To the south-east the cone of Lesser Ararat; to the north the wide valley of the Aras river and, beyond it, Armenia; to the south the plain of Doğubayazıt. No find on the mountain has been verified as ancient. Genesis names &lsquo;the mountains of Ararat&rsquo;, a region, not this peak; the tradition that placed the landing here grew later, and for centuries Armenian tradition itself placed it elsewhere (see the card &lsquo;Other mountains of the ark&rsquo; in the Vestibule).</p>",
+    flags: [APPROX], sources: REF.livius + "; " + REF.iranica + "; " + REF.navarra + "; " + REF.nami + "." }
 ];
 
 const about = { id: "about", cat: "About this model", title: "How close is this to the real thing?",

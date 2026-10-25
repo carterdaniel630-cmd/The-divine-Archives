@@ -707,6 +707,7 @@
    "type": "room",
    "label": "The Neolithic",
    "parent": "wing:01-prehistory",
+   "status": "pending",
    "href": "museum.html#ch42",
    "links": [
     "chapter:ch42",
@@ -974,8 +975,7 @@
    "href": "museum.html#ch61",
    "links": [
     "chapter:ch61",
-    "figure:rainbow-serpent",
-    "relic:v68"
+    "figure:rainbow-serpent"
    ],
    "from": "docs/museum/manifest.json"
   },

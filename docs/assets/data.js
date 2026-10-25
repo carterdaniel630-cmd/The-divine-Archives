@@ -317,7 +317,7 @@ window.ARCHIVE = {
     { id: "ch42", title: "The Neolithic", kind: "tradition",
       era: "01-prehistory", eraLabel: "Prehistory \u00b7 The Neolithic",
       source: "eras/01-prehistory/ch42-neolithic-prehistory.md",
-      status: "published", pending: false,
+      status: "published", pending: true,
       summary: "The age when humans settled, farmed, and raised the first monuments to the sacred. Göbekli Tepe \u2014 a temple built by hunter-gatherers before agriculture, overturning the old story; Çatalhöyük and the sacred in the home, with the dead beneath the floor; the megaliths (Stonehenge, Newgrange) aligned to the solstice sun; and the famous, contested Mother Goddess hypothesis, reported honestly as largely rejected by mainstream archaeology. A symbology of the T-pillar, the sky-aligned tomb, and the plastered skull \u2014 a religion we can read only in stone, never in words. Completes the Nine Ages." },
 
     { id: "ch47", title: "Journeys to the Underworld", kind: "theme",

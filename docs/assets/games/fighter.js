@@ -15,6 +15,11 @@
   "use strict";
   var AG = window.ArchiveGames;
   if (!AG) return;
+  // Reduced motion (Carter, Item 31 #6: "do NOT override"): when the visitor's device asks
+  // for reduced motion there is no screen shake and only a faint flash (same rule as feel.js).
+  var RMQ = null;
+  try { RMQ = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null; } catch (e) { RMQ = null; }
+  function reducedMotion() { return !!(RMQ && RMQ.matches); }
   // resolve paths relative to THIS script (so optional hero art loads from anywhere)
   var SCRIPT_BASE = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "assets/games/";
 
@@ -1148,7 +1153,7 @@
         for (var by = 0; by < VH * 0.6; by += 22) c.lineTo(bx + rnd(-14, 14), by);
         c.stroke(); c.restore();
       }
-      if (flash > 0) { c.fillStyle = "rgba(220,235,255," + (flash * 0.5) + ")"; c.fillRect(0, 0, VW, VH); }
+      if (flash > 0) { c.fillStyle = "rgba(220,235,255," + (reducedMotion() ? Math.min(flash * 0.5, 0.06) : flash * 0.5) + ")"; c.fillRect(0, 0, VW, VH); }
       // distant mountains — depth behind the temple
       c.fillStyle = storm ? "rgba(24,26,40,.6)" : wet ? "rgba(30,38,52,.5)" : "rgba(40,26,44,.5)";
       c.beginPath(); c.moveTo(0, GROUND);
@@ -1795,7 +1800,7 @@
         if (weather.rain) { p.y += p.v; p.x += 1.4; if (p.y > VH) { p.y = -10; p.x = Math.random() * (VW + 60) - 30; } }
         else { p.y += p.v; p.x += Math.sin(t + i) * 0.4 + p.drift; if (p.y > VH) { p.y = -6; p.x = Math.random() * VW; } }
       }
-      if (weather.storm) { boltFlash = Math.max(0, boltFlash - dt * 3); if (Math.random() < 0.006) { boltFlash = 1; flash = Math.max(flash, 0.5); } }
+      if (weather.storm) { boltFlash = Math.max(0, boltFlash - dt * 3); if (!reducedMotion() && Math.random() < 0.006) { boltFlash = 1; flash = Math.max(flash, 0.5); } }
     }
     function drawWeather(c) {
       if (!weather) return;
@@ -2054,7 +2059,7 @@
       });
       cx.clearRect(0, 0, VW, VH);
       cx.save();
-      if (shake > 0.3) cx.translate(rnd(-shake, shake), rnd(-shake, shake));
+      if (shake > 0.3 && !reducedMotion()) cx.translate(rnd(-shake, shake), rnd(-shake, shake));
       drawStage(cx, t);
       drawGroundItem(cx, t);
       drawDebris(cx);

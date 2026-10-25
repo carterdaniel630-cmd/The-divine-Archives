@@ -60,7 +60,7 @@ every remaining chapter and added the lens structure throughout.
 |---|---|---|---|---|
 | ch01 — The Flood | Comparative theme | cross-era (seed/template) | **CLEARED** | `themes/ch01-the-flood.md` |
 | ch41 — The Paleolithic | Tradition | 01-prehistory | **CLEARED** (2026-09-28) | `eras/01-prehistory/ch41-paleolithic-prehistory.md` |
-| ch42 — The Neolithic | Tradition | 01-prehistory | **CLEARED** (2026-09-28) | `eras/01-prehistory/ch42-neolithic-prehistory.md` |
+| ch42 — The Neolithic | Tradition | 01-prehistory | published, **pending review** (back to pending 2026-10-25: the Newgrange solstice sentence corrected; was **CLEARED**) | `eras/01-prehistory/ch42-neolithic-prehistory.md` |
 | ch02 — Egypt | Tradition | 02-bronze-age | published, **pending review** (back to pending 2026-10-11: depth additions from the content-gaps batch, PR #35; was **CLEARED**) | `eras/02-bronze-age/ch02-egypt-bronze-age.md` |
 | ch03 — Mesopotamia | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch03-mesopotamia-bronze-age.md` |
 | ch04 — Indus Valley | Tradition | 02-bronze-age | **CLEARED** | `eras/02-bronze-age/ch04-indus-valley-bronze-age.md` |

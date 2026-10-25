@@ -69,7 +69,8 @@ function initRenderer() {
   const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance" });
   if (!ctx) throw new Error("WebGL2 is not available");
   renderer = new THREE.WebGLRenderer({ canvas, context: ctx, antialias: !touch });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, touch ? 1.5 : 2));
+  // phones draw at 1 pixel per CSS pixel: about half the fill work of 1.5 (advisory briefs 10-15/10-16, Item 9)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, touch ? 1 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.3;

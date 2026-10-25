@@ -185,6 +185,7 @@
     var fsBtn = document.createElement("button");
     fsBtn.className = "game-fs"; fsBtn.type = "button";
     fsBtn.setAttribute("aria-pressed", "false");
+    fsBtn.setAttribute("aria-label", "Full screen");   // the visible label is hidden on phones; keep a spoken name
     fsBtn.innerHTML = '<span aria-hidden="true">⛶</span> <span class="game-fs-l">Full screen</span>';
     fsBtn.addEventListener("click", function () { toggleFull(); });
     dialog.appendChild(fsBtn);
@@ -237,6 +238,7 @@
     openState.overlay.classList.toggle("is-full", on); openState.dialog.classList.toggle("is-full", on);
     openState.fsBtn.setAttribute("aria-pressed", String(on));
     openState.fsBtn.querySelector(".game-fs-l").textContent = on ? "Exit full screen" : "Full screen";
+    openState.fsBtn.setAttribute("aria-label", on ? "Exit full screen" : "Full screen");
     // size the main picture to the room left over, then let the game re-measure its canvases
     var settle = function () { fitMain(on); try { window.dispatchEvent(new Event("archive:fit")); } catch (e) { /* old browser */ } };
     setTimeout(settle, 60); setTimeout(settle, 450);

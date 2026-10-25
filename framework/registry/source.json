@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1895,
+ "count": 1904,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -307,6 +307,15 @@
     "chapter:ch40"
    ],
    "from": "sources/ch40-diaspora-religions.md"
+  },
+  {
+   "id": "source:air-unimi-it/f7281ce110",
+   "type": "source",
+   "label": "https://air.unimi.it/handle/2434/625867",
+   "links": [
+    "site:mount-ararat-the-ark-tradition"
+   ],
+   "from": "sources/pilgrimage-mount-ararat-the-ark-tradition.md"
   },
   {
    "id": "source:aisg-cise-unipi-it/8245d41425",
@@ -3297,6 +3306,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:carlos-emory-edu/69c791caed",
+   "type": "source",
+   "label": "https://carlos.emory.edu/publications/LifeAndTheAfterlife/catalog/sacred-life/32/",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:catalhoyuk-com/d4fbd16108",
    "type": "source",
    "label": "http://www.catalhoyuk.com/node/736",
@@ -3936,6 +3954,15 @@
    "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
+   "id": "source:dainst-blog/1d4be59035",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/faq/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:dainst-blog/3817c1b5f4",
    "type": "source",
    "label": "https://www.dainst.blog/the-tepe-telegrams/",
@@ -4469,9 +4496,9 @@
    "from": "sources/ch69-upanishads-hindu-synthesis.md"
   },
   {
-   "id": "source:doreenvaliente-org/b4b134200f",
+   "id": "source:doreenvaliente-org/e21ecca97d",
    "type": "source",
-   "label": "https://www.doreenvaliente.org/",
+   "label": "https://doreenvaliente.org/about-us",
    "links": [
     "relic:v72"
    ],
@@ -5457,15 +5484,6 @@
    "from": "sources/ch13-rome.md"
   },
   {
-   "id": "source:en-wikipedia-org/2c5666bc7b",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Book_of_Shadows",
-   "links": [
-    "relic:v72"
-   ],
-   "from": "sources/v72-book-of-shadows.md"
-  },
-  {
    "id": "source:en-wikipedia-org/2d28bbadc6",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Bamberg_witch_trials",
@@ -5600,15 +5618,6 @@
     "chapter:ch03"
    ],
    "from": "sources/ch03-mesopotamia.md"
-  },
-  {
-   "id": "source:en-wikipedia-org/37538f1dd6",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Wiccan_Rede",
-   "links": [
-    "relic:v72"
-   ],
-   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:en-wikipedia-org/396465e28d",
@@ -5906,8 +5915,7 @@
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Doreen_Valiente",
    "links": [
-    "chapter:ch38",
-    "relic:v72"
+    "chapter:ch38"
    ],
    "from": "sources/ch38-wicca-modern-paganism.md"
   },
@@ -7390,15 +7398,6 @@
     "chapter:ch26"
    ],
    "from": "sources/ch26-kabbalah.md"
-  },
-  {
-   "id": "source:en-wikipedia-org/bd5ef89438",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Charge_of_the_Goddess",
-   "links": [
-    "relic:v72"
-   ],
-   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:en-wikipedia-org/beff1deb61",
@@ -10339,6 +10338,24 @@
    "from": "sources/ch80-shiism.md"
   },
   {
+   "id": "source:iris-unito-it/9241b79998",
+   "type": "source",
+   "label": "https://iris.unito.it/handle/2318/1715890",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
+  },
+  {
+   "id": "source:irishtimes-com/18e75d8bae",
+   "type": "source",
+   "label": "https://www.irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
+  },
+  {
    "id": "source:isac-uchicago-edu/10fa3d305b",
    "type": "source",
    "label": "https://isac.uchicago.edu/research/individual-scholarship/qumran-essene-theory-and-recent-strategies-employed-its-defense",
@@ -11979,6 +11996,15 @@
    "from": "sources/ch74-secularism-nonreligion.md"
   },
   {
+   "id": "source:muse-jhu-edu/cc39380b99",
+   "type": "source",
+   "label": "https://muse.jhu.edu/article/609097",
+   "links": [
+    "relic:v72"
+   ],
+   "from": "sources/v72-book-of-shadows.md"
+  },
+  {
    "id": "source:muse-jhu-edu/da855b5584",
    "type": "source",
    "label": "https://muse.jhu.edu/book/12956",
@@ -12022,6 +12048,15 @@
     "site:delphi"
    ],
    "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:museum-ie/a230a09d18",
+   "type": "source",
+   "label": "https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
   },
   {
    "id": "source:museum-imj-org-il/aa759cfdeb",
@@ -12465,6 +12500,15 @@
    "from": "sources/v32-popol-vuh-manuscript.md"
   },
   {
+   "id": "source:newgrange-com/bca612ab66",
+   "type": "source",
+   "label": "https://www.newgrange.com/stonelight20.htm",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
+  },
+  {
    "id": "source:news-artnet-com/3ae01e3cf7",
    "type": "source",
    "label": "https://news.artnet.com/art-world/spains-so-called-holy-grail-is-fake-experts-say-8941",
@@ -12852,6 +12896,15 @@
    "from": "sources/ch46-creation.md"
   },
   {
+   "id": "source:open-edu/4b29543ec1",
+   "type": "source",
+   "label": "https://www.open.edu/openlearn/history-the-arts/a-spiritual-revolution-wicca-and-religious-change-the-1960s/content-section-3.1",
+   "links": [
+    "relic:v72"
+   ],
+   "from": "sources/v72-book-of-shadows.md"
+  },
+  {
    "id": "source:open-edu/548c5270f7",
    "type": "source",
    "label": "https://www.open.edu/openlearn/history-the-arts/library-alexandria/content-section-2.1",
@@ -13210,6 +13263,15 @@
     "chapter:ch01"
    ],
    "from": "sources/ch01-the-flood.md"
+  },
+  {
+   "id": "source:penn-museum/dfd101e071",
+   "type": "source",
+   "label": "https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:people-clas-ufl-edu/a9b6833b51",
@@ -15953,6 +16015,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:ucl-ac-uk/2fd14806e2",
+   "type": "source",
+   "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:ucl-ac-uk/345be077e9",
    "type": "source",
    "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/museum/museum3.html",
@@ -16947,6 +17018,15 @@
     "relic:v11"
    ],
    "from": "sources/v11-rohonc-codex.md"
+  },
+  {
+   "id": "source:wrldrels-org/ec0d4facac",
+   "type": "source",
+   "label": "https://wrldrels.org/?p=14714",
+   "links": [
+    "relic:v72"
+   ],
+   "from": "sources/v72-book-of-shadows.md"
   },
   {
    "id": "source:www-current-chs-harvard-edu/6cbfeb8169",

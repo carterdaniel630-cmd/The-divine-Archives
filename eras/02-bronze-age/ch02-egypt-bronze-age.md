@@ -24,7 +24,10 @@ did not do: *I have not stolen. I have not killed. I have not lied. I have not
 made anyone weep.* The Egyptians called it the Negative Confession.
 
 If the heart balances the feather, Ani lives forever. If it does not, Ammit
-strikes, and he simply ceases — the second death, annihilation. The whole
+strikes — and in Egyptian belief that was an ending, not an eternity of torment:
+the texts speak of the condemned being consigned to "non-existence," and spells
+such as the Book of the Dead's "formula for not dying again" were written to
+escape that second death. The whole
 apparatus of Egyptian religion, three thousand years of it, converges on this
 image: a moral life, a physical heart, a cosmic feather, and a set of scales.
 This chapter is about the civilization that produced it — how Egypt imagined the
@@ -417,6 +420,9 @@ Egyptian cosmos in miniature.
 - Book of the Dead, Spell 125 (the Negative Confession) and the Papyrus of Ani —
   [Ancient Egypt Online: Negative Confession](https://ancientegyptonline.co.uk/negativeconfession/);
   [TheCollector: The Weighing of the Heart Ceremony](https://www.thecollector.com/weighing-heart-ceremony-ancient-egypt/).
+- The fate of the condemned ("non-existence") and the "formula for not dying again" —
+  [Joshua Aaron Roberson, "A Season in Hell," *Expedition* 57:2 (Penn Museum, 2015)](https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf);
+  [UCL Digital Egypt: Book of the Dead, chapter 44](https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html).
 - Plutarch, *On Isis and Osiris* (fullest continuous Osiris narrative, c. 2nd c.
   CE). See [Wikipedia: Osiris myth](https://en.wikipedia.org/wiki/Osiris_myth).
 

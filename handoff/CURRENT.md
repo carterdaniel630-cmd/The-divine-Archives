@@ -18,16 +18,27 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
 ## Review desk
 - Reviewer and auditor run as scheduled tasks; reports live on the `review-log` branch. Latest: the
-  2026-10-10 reviewer reports and `reviews/2026-10-11-audit.md` (6 of 6 agreed; auto-pass on).
+  2026-10-18 manual run Carter asked for (six reports `reviews/2026-10-18-*.md`, covering #44 and #48, #46, #47,
+  #51, #52/#54/#55 and the Mogao Caves in #53: 14 passed, 0 fixed, 11 need Carter), and
+  `reviews/2026-10-11-audit.md` (6 of 6 agreed; auto-pass on). The reviewer and auditor are also project
+  skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, from #64).
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
-- Open: #53 `claude/project-thread-s3qxre`: Pilgrimage batch 1, four noindex previews (Göbekli Tepe, Delphi,
-  the Mogao Caves, Chichén Itzá), pending tag on, source logs in `sources/pilgrimage-*.md`. Reviewer pass
-  2026-10-12 (`reviews/2026-10-12-pilgrimage-batch1-pr53.md` on review-log); its slips are fixed. Carter said
-  "merge" (2026-10-12); the sensitivity cards are put to him before merging. The source logs propose chapter
-  corrections to ch08, ch29 and ch42 (not made in this PR).
+- Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
+  - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
+  - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
+    from #53) with an animated midwinter sunrise and neutral indoor light. Batch 2 should build on it, not
+    on a second copy.
+  - #67 `claude/site-fixes-2026-10-18`: era-page emblems (broken by #46), long source links on phones, and the
+    arcade's Divine Casualties line (Hades not an Olympian).
+  - #68 `claude/pilgrimage-51-fixes`: the reviewer's nine #51 fixes, plus the guided walk on Ararat (reduced
+    motion) and on the live Library of Alexandria (stuck at its second stop).
+- Open review findings with no PR yet: graphify tidy-ups (4 items in `reviews/2026-10-18-graphify-52.md`;
+  overlap with #61/#65); Mogao fixes for #53's builder (`reviews/2026-10-18-mogao-53.md`: the stair to Cave
+  254, the Cave 16/17 sign, a possibly unfindable 2002 abstract); V20 credit and papyrus height
+  (`reviews/2026-10-18-weighing-47.md`).
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
@@ -46,27 +57,19 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
   The build order in `CLAUDE.md` ends with `build-framework.js` and `build-entity-registry.js`. The
   Framework workflow fails any content PR that leaves the registry stale.
-- #45 (registry rebuild) was closed; #49 carries the same rebuild.
-- #49 `claude/framework-followup`: the reviewer's two small framework bugs:
-  - rate-limited pages that had failed twice were never retried
-  - a first new score could be copied again as an "old" score
-
-  It also bumps the tracker script to v=2 on every page. Carter approved merging it once it is green
-  and the reviewer passes it.
-- #47: Weighing of the Heart walkthrough at the Book of the Dead case (another thread; tier 2,
-  needs Carter).
-- **Overlaps:**
-  - #47 changes the ritual schema and the museum's `app.js`, which #40 also changed.
-
-  Whichever merges later must merge main and re-run the full build order. `review-checks.js --build`
-  and the Framework test catch a missed rebuild.
+- #49 `claude/framework-followup` merged 2026-10-12 with Carter's go-ahead, deployed: the reviewer's two
+  framework bugs fixed (rate-limited pages are retried; a first new score is no longer copied again as an
+  "old" one); tracker script v=2 on every page. Reviewer passed it
+  (`reviews/2026-10-12-framework-followup-pr49.md` on review-log). #45 was closed; #49 carried its rebuild.
 - #42 (source review and corrections of 14 pending chapters) merged; #50 (clearing those 14, same
   branch `claude/project-thread-evq985`) merged 2026-10-12 with Carter's "clear".
 - `claude/pilgrimage-wave2`: Stonehenge as a noindex preview (another thread). No PR yet; it is
   based on an older main.
-- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1: movesets merged
-  (#48); PR #47 (`claude/ritual-weighing`, the Weighing of the Heart walkthrough in the museum) is
-  green and awaits Carter's go-ahead.
+- `claude/games-modern`: games + rituals plan, approved by Carter 2026-10-11. Phase 1 merged: movesets
+  (#48) and the Weighing of the Heart walkthrough in the museum (#47, merged 2026-10-12, pending
+  review). Open follow-ups: the inspector panel covers the room's top buttons (phone and desktop,
+  predates #47); the V20 english.js quote seems to come from a different Budge translation (flagged
+  in its source log).
 - `ccr-7a4d8bed-4kfyao`: the reviewer's previous-run check in `REVIEWER.md`. Not merged, no PR.
 - **Carter's try-it list:** `handoff/CARTER-TO-TRY.md` lists what to try on his phone and the
   decisions waiting on him. Keep it current: tick items off as he answers, and add new ones.
@@ -79,8 +82,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   generated `graph-tools` branch, so sessions with the package index blocked still get `graphify query`.
 
 ## Needs Carter
-- Pilgrimage batch 1 (#53): the Mogao manuscripts-dispersal card and the three Chichén Itzá cards on sacrifice
-  and remains (wording only; nothing is shown); the ch08, ch29 and ch42 corrections the source logs propose.
+- From the 2026-10-18 review (one batch of questions): Stonehenge (a card on today's Druid and Pagan gatherings?
+  list it?); Golgotha (accept the brief's six defaults? list it?); Ararat (more of the believer's side before
+  listing?); Mogao (approve as a preview with its Buddha figures and manuscripts card?); Weighing of the Heart
+  (keep pending until the 1895 text is re-read; swap the V20 English line); merges of #64, #66, #67, #68.
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
@@ -91,6 +96,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   run as manual sessions.
 
 ## Decisions still in effect
+- Carter, 2026-10-11 tie-ins: visual passes use the frontend-design skill (CLAUDE.md, quality bar); the reviewer
+  and auditor are project skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, wrapping `reviews/`); OmniRoute is
+  not used.
 - Sourcing rule: scholarly or primary sources first, Wikipedia only as a labelled pointer; flag any chapter
   over 20%.
 - No images of the Báb; tjurunga never shown; restricted sites exterior only; Kaaba courtyard without figures.

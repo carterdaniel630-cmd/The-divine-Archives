@@ -16,6 +16,11 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
   (dates c. 9500–8000 BCE; dwellings, grinding tools, cistern and channels; revision of the "temple" reading;
   the fill as slope slide rather than deliberate backfill; the modern shelter and walkways).
 - German Archaeological Institute (DAI), *The Tepe Telegrams* (the project blog): https://www.dainst.blog/the-tepe-telegrams/
+  - FAQ: https://www.dainst.blog/the-tepe-telegrams/faq/ ("the earliest yet known monumental architecture
+    constructed by humankind"). With UNESCO (https://whc.unesco.org/en/list/1572, criterion (ii): "one of the first
+    manifestations of human-made monumental architecture"; megalithic structures 9,600–8,200 BCE), this supports the
+    opening card's "among the earliest known monumental architecture". Both opened 2026-10-25; the earlier wording
+    "the oldest known megaliths" was in neither source and was replaced (2026-10-25 weekly audit).
   - O. Dietrich, "How did they do it? Making and moving monoliths at Göbekli Tepe" (3 May 2016),
     https://www.dainst.blog/the-tepe-telegrams/?p=347 ; posts
     tagged "quarries": https://www.dainst.blog/the-tepe-telegrams/tag/quarries (unfinished pillar, about 7 m;

@@ -18,3 +18,11 @@ Per the project sourcing standard, this citation log records the real, checkable
 - B. Spencer and F. J. Gillen, *The Native Tribes of Central Australia* (Macmillan, 1899)
 - É. Durkheim, *Les formes élémentaires de la vie religieuse* (Paris, 1912)
 - "'You're my kwertengerl': transforming models of care for central Australian aboriginal museum collections", *Museum Management and Curatorship* (2018), https://www.tandfonline.com/doi/full/10.1080/09647775.2018.1549506
+
+## 2026-10-24 — entry withdrawn (Carter's ruling 2026-10-20)
+
+The Vault exhibit was taken down and `vault/tjurunga.html` replaced by an absence page, per
+`handoff/tjurunga-takedown-order-2026-10-20.md` (wording verbatim from §3). The absence page keeps the
+online sources above and Spencer & Gillen (1899) and the 2018 *Museum Management and Curatorship* article;
+Durkheim (1912) is no longer cited there because the trimmed text no longer discusses his use of the
+material. No new claims were added and no new sources were needed.
