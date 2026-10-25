@@ -20,6 +20,25 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT = os.path.join(ROOT, "docs", "assets", "games", "art", "treasure")
 SHEET = Image.open(os.path.join(HERE, "character-sheet-archivist-hooded.webp")).convert("RGB")
 
+# Carter, 2026-10-25: "make the cloak darker". Only the coat and hood are darkened: dull, unsaturated olive and
+# charcoal pixels inside the coat areas. The face (boxes kept out), the beard and skin (too saturated), the eyes, the brass
+# and the scroll case are left exactly as on the sheet.
+CLOAK_DARKEN = 0.62
+def darken_cloak(sheet):
+    a = np.asarray(sheet).astype(float)
+    mx, mn = a.max(2), a.min(2)
+    dull = np.clip((40 - (mx - mn)) / 12, 0, 1) * np.clip((165 - mx) / 25, 0, 1)   # soft edges, no hard seams
+    area = np.zeros(mx.shape)
+    area[400:1086, 100:400] = 1          # side view, hood to coat hem
+    area[540:910, 290:400] = 0           # its scroll case
+    area[468:525, 148:200] = 0           # its eye and brow (skin and beard are protected by colour)
+    area[150:522, 520:820] = 1           # front view, the portrait crop
+    area[262:330, 612:740] = 0           # its eyes and brow
+    area = ndimage.gaussian_filter(area, 6)
+    f = 1 - (1 - CLOAK_DARKEN) * dull * area
+    return Image.fromarray(np.clip(a * f[:, :, None], 0, 255).astype(np.uint8))
+SHEET = darken_cloak(SHEET)
+
 
 def cutout(box):
     """Crop a box and make the paper and grid lines transparent: flood-fill light, grey pixels from the edge."""
@@ -105,7 +124,7 @@ manifest = {
     "kneeFromHip": [r(-(KNEE[0] - HIP[0])), r(KNEE[1] - HIP[1])],
     "footFromHip": r(sole - HIP[1]),
     "arm": {"x": r(-(SHOULDER[0] - HIP[0])), "y": r(SHOULDER[1] - HIP[1]), "len": r(215), "w": r(62),
-            "sleeve": "#2b2b23", "sleeveLight": "#454436", "hand": "#c99878"},
+            "sleeve": "#1b1b16", "sleeveLight": "#2b2a21", "hand": "#c99878"},
 }
 with open(os.path.join(OUT, "manifest.json"), "w") as f:
     json.dump(manifest, f, indent=1)

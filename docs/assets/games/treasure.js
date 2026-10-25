@@ -1506,8 +1506,8 @@
       var leg = p.onGround && Math.abs(p.vx) > 0.4 ? Math.sin(p.run) * 4 : 0;
       cx.strokeStyle = "#2a1c10"; cx.lineWidth = 4; cx.lineCap = "round";
       cx.beginPath(); cx.moveTo(-1, 4); cx.lineTo(-3, 11 + leg); cx.moveTo(1, 4); cx.lineTo(3, 11 - leg); cx.stroke();
-      cx.fillStyle = "#2b2b23"; cx.fillRect(-6, -6, 12, 14);                         // long coat
-      cx.fillStyle = "#2b2b23"; cx.beginPath(); cx.arc(0, -11, 6.5, 0, 7); cx.fill();  // hood up
+      cx.fillStyle = "#1b1b16"; cx.fillRect(-6, -6, 12, 14);                         // long coat
+      cx.fillStyle = "#1b1b16"; cx.beginPath(); cx.arc(0, -11, 6.5, 0, 7); cx.fill();  // hood up
       cx.fillStyle = "#d8ab6e"; cx.beginPath(); cx.arc(2, -10.5, 3.6, 0, 7); cx.fill(); // face in the hood
       cx.restore(); p.hand = null;
     }
