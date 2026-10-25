@@ -1,17 +1,24 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~17:10 UTC (build loop: #83 brought up to `main` `3762691`). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~17:10 UTC (build loop: PR #86 arcade tap targets built; #83 Lighthouse still running). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`. **Deployed (`main`):** `3762691` (PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/journal-touch-polish` = #83 (`45d4a95`, on top of `main` `3762691`; reviewed, 0 findings; Carter approved; GitHub checks running),
+**Open loop branches:** `loop/journal-touch-polish` = #83 (`45d4a95`, on top of `main` `3762691`; reviewed, 0 findings; Carter approved; 5/6 GitHub checks green, Lighthouse running at 17:08), `loop/arcade-tap-targets` = #86 (`cbf6f1e`, off `main` `3762691`; needs independent review),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~16:57–17:10: **PR #86 built: arcade tap targets, part 1** (Next 5, value 3). #83 checked first: 5/6
+  green, Lighthouse running since 16:56, not waited on. On `main`, every game's Close/Full-screen buttons took touches
+  over 31–34 px and the shared text buttons were 33–35 px tall (Reliquary menus 37). `games.css` +8 lines, touch only:
+  text buttons and menus ≥ 44 px tall; Close/Full-screen keep their look with an invisible 44 px tap layer. 12 games ×
+  8 sizes: short Close/Full-screen tap areas 192 → 0; 0 stolen taps, 0 outside the dialog, 0 sideways scroll, 0 errors.
+  Build 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings); trial merge with #83 clean. Part 2 left:
+  Excavation cells, Ziggurat keypad. Reply `2026-10-25-pr86-arcade-tap-targets.md`. Items per run: 1.
 - 2026-10-25 ~16:52–17:10: **#83 brought up to `main` `3762691`** (after #77) → **`45d4a95`**, merge commit, no conflict.
   Site diff = the reviewed 2-file diff (only the blob-hash line differs). Local: build order 0 changes, 17/17 verify,
   42/42 tests, review-checks 9/9 (0 warnings); headless touch phone 3 sizes × 2 motion modes: game runs, 0 errors, tap
@@ -360,7 +367,8 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
    brought up to `3762691` → `45d4a95` at ~17:05, local checks green.** Next run: if every GitHub check on `45d4a95` incl.
    Lighthouse is green, fast-forward `main` → `45d4a95`, watch the deploy, update CURRENT/MERGEABLE. If still running,
    don't wait with the lock: do 1d and check again next run.
-1d. **Then** the next highest-value item needing no Carter yes: item 5 Arcade playability floor, or 8a #66 review.
+1d. **PR #86 (arcade tap targets part 1, built 17:08):** independent review by a run that wrote none of it, then GitHub
+   checks incl. Lighthouse; then Carter's yes. After that: item 5 part 2 (Excavation cells, Ziggurat keypad), or 8a #66 review.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
    site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
@@ -373,7 +381,8 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
    batches of 10 from Muse under `handoff/armory/batch-NN/`; **the batch of 10 is the unit** (§4): as many pieces per run as the
    quality bar allows, each checked on its own, then one yes/no batch to Carter; waits on batch 1.
    **One loop only** (same file 3): no second loop or lane.
-5. **Arcade playability floor** (value 3). Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
+5. **Arcade playability floor** (value 3). Tap targets part 1 = PR #86; part 2 Excavation 9×9 cells (33 px) and
+   Ziggurat keypad (40 px); then difficulty selector, undo, tutorial where they fit. Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
    #74 the other two, and every page stayed still in the audit.
 6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
    (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
@@ -396,5 +405,6 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing right now. (#83 approved 16:41; brought up 17:05; it goes live once its GitHub checks are green.)
+- Nothing right now. (#83 approved 16:41; it goes live once Lighthouse finishes green. #86 will come to you for a yes
+  after its independent review.)
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.

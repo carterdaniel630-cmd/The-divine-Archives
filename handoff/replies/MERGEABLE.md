@@ -10,13 +10,15 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **Arcade tap targets, part 1** (PR #86, `loop/arcade-tap-targets` @ `cbf6f1e`, off `main` `3762691`). Built
+  2026-10-25 17:08 (`2026-10-25-pr86-arcade-tap-targets.md`); local checks green. **Missing:** independent review,
+  every GitHub check green incl. Lighthouse, Carter's yes for this item.
 - **Journal touch polish** (PR #83, `loop/journal-touch-polish`). **Independent review 0 open findings**
   (`2026-10-25-pr83-independent-review.md`). Carter's yes recorded 2026-10-25 ~16:41 (`decisions-2026-10-25-approve-83.md`).
   **Brought up 2026-10-25 ~17:05 to `45d4a95`** (merge of `main` `3762691`, no conflict). Site diff vs `main` is the
   reviewed diff (2 files, `games.css` +7, `treasure.js` +5 −3; only the blob-hash line differs). Local checks green on
   `45d4a95` (build order 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9 0 warnings, headless touch phone
-  3 sizes × 2 motion modes). **Missing: every GitHub check green on `45d4a95`, Lighthouse included** (started by the
-  17:05 push). Then a run fast-forwards `main` → `45d4a95`.
+  3 sizes × 2 motion modes). **Missing: Lighthouse on `45d4a95`** (5/6 green at 17:08; Lighthouse running since 16:56). Then a run fast-forwards `main` → `45d4a95`.
 
 ## Merged
 - Journal hero part 1, The Archivist (PR #77): **merged by the loop 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691`
