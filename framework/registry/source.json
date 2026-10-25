@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1838,
+ "count": 1842,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -10012,6 +10012,15 @@
    "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
   },
   {
+   "id": "source:irishtimes-com/18e75d8bae",
+   "type": "source",
+   "label": "https://www.irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
+  },
+  {
    "id": "source:isac-uchicago-edu/10fa3d305b",
    "type": "source",
    "label": "https://isac.uchicago.edu/research/individual-scholarship/qumran-essene-theory-and-recent-strategies-employed-its-defense",
@@ -12082,6 +12091,15 @@
     "relic:v32"
    ],
    "from": "sources/v32-popol-vuh-manuscript.md"
+  },
+  {
+   "id": "source:newgrange-com/bca612ab66",
+   "type": "source",
+   "label": "https://www.newgrange.com/stonelight20.htm",
+   "links": [
+    "chapter:ch42"
+   ],
+   "from": "sources/ch42-neolithic.md"
   },
   {
    "id": "source:news-artnet-com/3ae01e3cf7",

@@ -46,3 +46,14 @@ summit dome) are true size; the formation's width and height and every map posit
 - Noah's Ark Ministries International, 2010, and the hoax allegation by a former team member: UPI, "Noah's ark
   claim doubted" (28 April 2010); *Christian Science Monitor*, "Doubt cast on Noah's ark found in Turkey" (2010).
 - Genesis 6:15 (300 × 50 × 30 cubits); the cubit taken as about 0.5 m (estimates 0.45–0.52 m).
+
+## Added 2026-10-25: the card "The ark in Armenian tradition" (the believer's side, at Carter's go-ahead)
+Confirmed only through search results (the hosts were not reachable from the build session); to be re-read at review.
+- Saint Jacob of Nisibis (Hakob of Mtsbin), 4th-century bishop; the ark relic at Etchmiadzin; the angel and the
+  dream tellings: Mother See of Holy Etchmiadzin, liturgical calendar (armenianchurch.org/en/Liturgical-Calendar);
+  Armenian Church of Sydney calendar entries (armenianchurchsydney.org.au); *The Christian Century*
+  (christiancentury.org, node 45162), which also notes the reliquary and that scholars debate the history.
+- Movses Khorenatsi's descent of the Armenians from Noah through Japheth and Haik; the mountain and the ark on
+  Armenia's coat of arms: WorldHistory.org, "Mount Ararat" (worldhistory.org/Mount_Ararat/). The card gives no date
+  for Movses, whose dating is itself debated.
+
