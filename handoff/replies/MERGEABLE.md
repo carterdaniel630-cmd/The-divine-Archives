@@ -4,29 +4,28 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~13:20 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green).
+**As of:** 2026-10-25 ~13:15 UTC. **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `12e7d65` (PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Registry recount** (PR #84, `loop/registry-count-after-merges` @ `88f2aa8`, off `main` `caedabc`; merges cleanly with
-  `main` `91c40fe`): fixes the 2 failing internal tests on `main` (registry totals 2 short after #68 and #82). Internal data
-  only, no `docs/` change. **Independent review 2026-10-25 ~13:00: 0 open findings** (`2026-10-25-pr84-independent-review.md`);
-  local checks green on `main` + `88f2aa8`; **5/5 GitHub checks green** (no Lighthouse owed: no `docs/` change).
-  Missing only: Carter's yes for #84 (then his Merge button).
-- **Journal touch polish** (PR #83, `loop/journal-touch-polish`, now head **`be2ad69`** = `39eeef8` + `main` `91c40fe` +
-  #84's reviewed recount `88f2aa8`, clean merges adding only already-reviewed diffs): Select/Start tap areas reach 44 px on
-  touch screens (shared controller: Journal and Fighter); the first tip names the on-screen buttons on touch phones.
-  **Independent review 2026-10-25 ~13:20: 0 open findings** (`2026-10-25-pr83-independent-review.md`); local checks green
-  on `be2ad69`. Missing: every GitHub check green on `be2ad69` incl. Lighthouse (started by the push); Carter's yes for #83.
-- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`, head `d038119` with the darker cloak).
-  **Independent review 0 findings on `dbf5d16`**; **re-review of `d038119` 0 findings**. **Carter's yes 2026-10-25 ~02:15,
-  with a darker cloak** (`decisions-2026-10-25-hero-yes-darker-cloak.md`). **Brought up 2026-10-25 ~13:05 to `8204268`**
-  (`main` `91c40fe` + #84's reviewed recount `88f2aa8`, clean merges, adding only already-reviewed diffs); local checks
-  green. GitHub on `8204268` at ~12:52: 7/8 green, Lighthouse still running. Missing: Lighthouse green; then Carter's Merge button (after #84).
+- **Journal hero part 1, The Archivist** (PR #77, `loop/journal-hero-archivist`). **Independent review 0 findings on
+  `dbf5d16`**; **re-review of `d038119` 0 findings**. **Carter's yes 2026-10-25 ~02:15, with a darker cloak**
+  (`decisions-2026-10-25-hero-yes-darker-cloak.md`). **Brought up again 2026-10-25 ~13:10 to `3762691`** (merge of `main`
+  `12e7d65` after #85; only the generated registry files conflicted, resolved by taking `main`'s and re-running the build,
+  which produced no changes). Site diff vs `main` is byte-for-byte the reviewed diff (#77's 9 files). Local checks green.
+  Missing: every GitHub check green on `3762691` incl. Lighthouse (started by the push); then Carter's Merge button.
+- **Journal touch polish** (PR #83, `loop/journal-touch-polish`). **Independent review 0 open findings**
+  (`2026-10-25-pr83-independent-review.md`). **Brought up 2026-10-25 ~13:10 to `cfc1298`** (`main` `12e7d65`, same
+  registry-only conflict, same resolution). Site diff vs `main` byte-for-byte the reviewed diff (2 files). Local checks
+  green. Missing: every GitHub check green on `cfc1298` incl. Lighthouse; Carter's yes for #83.
+- **Registry recount** (PR #84, `88f2aa8`): **superseded.** #85 (merged 12:57 UTC) rebuilt the registry; `main` `12e7d65`
+  passes 42/42 framework tests and a full build there changes nothing. #84 now conflicts with `main` and is no longer
+  needed. Not mergeable; Carter can close it (the loop does not close PRs).
 
 ## Merged
+- ch42 Newgrange correction and the Armenian ark tradition card (PR #85, chat-session PR, its own review): merged by Carter 2026-10-25 12:57 UTC as `12e7d65`.
 - Reviewer and auditor project skills (PR #64): merged by Carter 2026-10-25 12:30 UTC as `91c40fe`, deploy run 210 green.
 - #76, #75, #78, #79, #80, #82, #68, #81: merged by Carter's Merge buttons 2026-10-25 ~11:58–12:00 UTC (GitHub merge
   commits, so `main` ids differ from the loop heads); `main` then `caedabc`, deploy run 209 green. Reviews:

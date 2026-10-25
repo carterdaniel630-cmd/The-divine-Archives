@@ -1,17 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 ~13:20 UTC (build loop, PR #83 independent review run). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 ~13:15 UTC (build loop, #77/#83 bring-up after #85). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `91c40fe` (PR #64 merged by Carter 2026-10-25 12:30 UTC, deploy run 210 green; before it the
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `12e7d65` (PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/journal-hero-archivist` = #77 (`8204268`: `d038119` + `main` `91c40fe` + #84's recount; approved), `loop/journal-touch-polish` = #83 (`be2ad69`: `39eeef8` + `main` `91c40fe` + #84's recount; reviewed, 0 findings),
-`loop/registry-count-after-merges` = #84 (`88f2aa8`), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
+**Open loop branches:** `loop/journal-hero-archivist` = #77 (`3762691`, up to `main` `12e7d65`; approved), `loop/journal-touch-polish` = #83 (`cfc1298`, up to `main` `12e7d65`; reviewed, 0 findings),
+`loop/registry-count-after-merges` = #84 (`88f2aa8`, superseded by #85), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~13:01–13:15: **#77 and #83 brought up to `main` `12e7d65`** after Carter merged #85 (12:57). #77 → `3762691`,
+  #83 → `cfc1298`; only the generated registry files conflicted (took `main`'s, rebuilt: 0 changes). Site diffs vs `main`
+  byte-for-byte the reviewed ones. Local: build order 0 changes, 17/17 verify, 42/42 tests, review-checks 9/9; headless
+  touch phone 3 sizes × 2 motion modes: game runs, 0 errors. **#84 superseded** (`main` tests green, build clean). Reply
+  `2026-10-25-pr77-pr83-up-to-12e7d65.md`. Items per run: 1.
 - 2026-10-25 ~12:50–13:20: **PR #83 independently reviewed, 0 open findings**, and brought up to `be2ad69` (`main` +
   #84's recount); local checks and headless phone checks green; review filed on `review-log` (`a4637ef`). #77: 7/8 GitHub
   checks green on `8204268`, Lighthouse still running at 12:52.
@@ -343,22 +348,15 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 0. Weekly loop audit done 2026-10-25 (`reviews/2026-10-25-audit.md`); next due on/after Wed 2026-10-28.
 1. ~~#76, #75, #78, #79, #80, #82, #68, #81~~ **all merged by Carter 2026-10-25 ~12:00** (`caedabc`, deploy 209 green);
    ~~#64~~ merged 12:30 (`91c40fe`, deploy 210 green).
-1a. ~~**PR #84 independent review**~~ **done 2026-10-25 ~13:00: 0 open findings** (`2026-10-25-pr84-independent-review.md`;
-   failure reproduced on `main`, fixed on `main` + `88f2aa8`, 5/5 GitHub green). Waits only on Carter's yes + Merge button.
-   Value 1 by effect: while `main`'s framework tests are red, every PR brought up to `main` inherits 2 failures.
-1b. **PR #77 (Journal hero, approved; value 1): brought up 2026-10-25 ~13:05** to `8204268` (merge of `main` `91c40fe`,
-   then merge of #84's already-reviewed recount `88f2aa8`, so its framework tests are green; both merges clean, no
-   conflicts). Local: full build order produced no changes, 17/17 verify, 42/42 tests, review-checks 9/9 (0 warnings),
-   headless phone both motion modes: art loads, run/jump work, 0 script errors. **Waiting on:** every GitHub check on
-   `8204268` incl. Lighthouse (at ~12:52: 7/8 green, Lighthouse running; next run confirms, no lock held). Then Carter's Merge button. Stack order: #84 then #77
-   (if #77 goes first, #84 becomes a no-op).
-1c. ~~**PR #83 independent review**~~ **done 2026-10-25 ~13:20: 0 open findings** (`2026-10-25-pr83-independent-review.md`),
-   and **brought up** to `be2ad69` (`main` `91c40fe` + #84's recount; clean). Local: build order clean, 17/17 verify, 42/42
-   tests, review-checks 9/9; headless phone Journal + Fighter at 10 sizes: tap 44–48 px, 0 touches stolen, 0 errors, tips
-   right on phone and desktop. Trial merge with #77 clean. **Waiting on:** every GitHub check on `be2ad69` incl. Lighthouse,
-   and Carter's yes for #83.
-1d. **Next run:** confirm GitHub checks on #77 `8204268` and #83 `be2ad69` (no lock held while waiting); then the next
-   highest-value item that needs no Carter yes (item 5 Arcade playability floor, or 8a #66 review).
+1a. ~~**PR #84**~~ **superseded 2026-10-25 13:10:** #85 rebuilt the registry; `main` `12e7d65` 42/42 tests, build clean. Carter can close #84.
+1b. **PR #77 (Journal hero, approved; value 1): brought up 2026-10-25 ~13:10 to `3762691`** (`main` `12e7d65`; registry-only
+   conflict resolved by rebuild; site diff = reviewed diff). Local checks green. **Waiting on:** every GitHub check on
+   `3762691` incl. Lighthouse (no lock held). Then Carter's Merge button.
+1c. **PR #83 (reviewed, 0 findings): brought up 2026-10-25 ~13:10 to `cfc1298`** (same). Local checks green. **Waiting on:**
+   GitHub checks on `cfc1298` incl. Lighthouse, and Carter's yes for #83.
+1d. **Next run:** confirm GitHub checks on #77 `3762691` and #83 `cfc1298` (no lock held while waiting); if `main` moves
+   again, bring both up again; then the next highest-value item that needs no Carter yes (item 5 Arcade playability
+   floor, or 8a #66 review).
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
    site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
    site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
@@ -394,11 +392,10 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **PR #84 (registry recount): yes / no?** Reviewed 2026-10-25 by a run that wrote none of it: 0 findings, all checks
-  green. It fixes 2 internal tests that have been failing on `main` since the eight merges; nothing on the site changes.
-  If yes, press Merge on PR #84 (the loop's pushes to `main` are refused by the session safety system).
+- **#77** (Journal hero, already approved): brought up to the live code again (after #85) 2026-10-25 ~13:10; once its
+  online checks finish green, press Merge on PR #77.
 - **PR #83 (Journal touch polish): yes / no?** Bigger tap areas for the small Select/Start buttons on phones, and the
-  first Journal tip names the on-screen buttons. Reviewed by a run that wrote none of it: 0 findings. Its online checks
-  are re-running after the bring-up. If yes, press Merge on PR #83 once its checks are green (best after #84).
-- **#77** (Journal hero, already approved): brought up to the live code 2026-10-25 ~13:05; once its online checks finish green it needs your Merge button (best after #84).
+  first Journal tip names the on-screen buttons. Reviewed by a run that wrote none of it: 0 findings. Brought up to the
+  live code; online checks re-running. If yes, press Merge on PR #83 once green (best after #77).
+- **PR #84:** no longer needed (#85 already fixed the count). Close it, or leave it; nothing on the site depends on it.
 Answered 2026-10-24 and 2026-10-25 decisions files, all folded into Next.
