@@ -40,7 +40,8 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
     gods … an answer is hard to find"). Opened 2026-10-25.
   - "Looking beneath the surface: geophysical surveys at Göbekli Tepe" (18 July 2018),
     https://www.dainst.blog/the-tepe-telegrams/2018/07/18/looking-beneath-the-surface-geophysical-surveys-at-gobekli-tepe/
-    (quotes Schmidt 2003: "a minimum of 20 enclosures seem to exist inside the mound"). Opened 2026-10-25.
+    (quotes Schmidt 2003: "More than ten large enclosures could be located in the geomagnetic map", "a minimum
+    of 20 enclosures seem to exist inside the mound"). Opened 2026-10-25.
   - "More than a vulture: a response to Sweatman and Tsikritsis" (blog summary of the paper below),
     https://www.dainst.blog/the-tepe-telegrams/2017/07/03/more-than-a-vulture-a-response-to-sweatman-and-tsikritsis/
     ("there is the significant possibility that we are dealing with roofed structures"). Opened 2026-10-25.
@@ -52,9 +53,11 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
   *Mediterranean Archaeology and Archaeometry* 17.2 (2017), 57–63.
 - M. Kinzel and L. Clare, "Monumental – compared to what? A perspective from Göbekli Tepe", in A. B. Gebauer and
   others (eds), *Monumentalising Life in the Neolithic* (Oxbow, 2020) (likely roofing).
+## Other publications about the excavation
 - *Current World Archaeology* 53 (2012), "Turkey: Göbekli Tepe": https://www.world-archaeology.com/features/turkey-gobekli-tepe/
   (the Harran plain; rings 10–30 m in diameter; C "the most impressive", "Enclosure D is the largest"; 11 wall pillars
-  in D; Pillar 27; the central pillars of C on pedestals; foxes and snakes in D, boar in C). Opened 2026-10-25.
+  in D; Pillar 27; the central pillars of C on pedestals; foxes and snakes in D, boar in C). Opened 2026-10-25. The
+  feature has no byline: its judgements are the magazine's own, not the excavators', and the cards say so.
 
 ## Interpretations and claims discussed (flagged on the cards)
 - G. Haklay and A. Gopher, "Geometry and Architectural Planning at Göbekli Tepe, Turkey", *Cambridge
@@ -104,3 +107,10 @@ Every source below was opened with a web fetch in this run; each card change fol
   plain cites *CWA*.
 - Moving card: under 100 m to about 500 m; beams and wedges to lift, sledges and planks (Indonesian parallels) to
   haul (Dietrich 2016); "ropes, rollers" dropped (not in the source).
+
+## Second fix run, 2026-10-25 (after the independent re-review of `e8ce493`)
+- The 2012 *Current World Archaeology* judgements (D "the largest", C "the most impressive") are credited to the
+  magazine, not the excavators, on the cards, in `dims.js` and here (moved out of the excavators' list).
+- "At least twenty large enclosures" became "at least twenty, more than ten of them large" (the geophysics post).
+- "Lettered in the order they were found" became "lettered A to D", with only A first (1996) and B second as sourced.
+- The shelter card no longer mentions walkways (Clare 2020 names only the shelters).

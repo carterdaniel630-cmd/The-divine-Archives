@@ -4,7 +4,8 @@
    Each value names its source (full list: sources/pilgrimage-gobekli-tepe.md).
    SURVEY means the figure is published by the excavators (the German
    Archaeological Institute's Göbekli Tepe project, as quoted in its blog and
-   reports) or by UNESCO; APPROX means our estimate of the published plans'
+   reports), by UNESCO, or in a published report on the excavation (Current
+   World Archaeology 53, 2012); APPROX means our estimate of the published plans'
    proportions, to be checked against the plans at review. No excavation plan
    could be opened from the build environment, so the layout of the four
    enclosures, their distances apart and the place of each pillar are APPROX.

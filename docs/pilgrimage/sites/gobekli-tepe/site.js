@@ -78,7 +78,7 @@ const regions = [
   region({ id: "walkway", section: "s1", x0: -40, x1: 14, z0: -31, z1: -28, y: Y, outside: true }),
   region({ id: "to-v", section: "s1", x0: -40.6, x1: -39.6, z0: -30.3, z1: -28.7, y: Y, inset: 0.05, portal: "v", outside: true }),
   region({ id: "to-quarry", section: "s1", x0: -11, x1: -9, z0: -31.6, z1: -30.6, y: Y, inset: 0.05, portal: "s4", outside: true }),
-  // the ramp down into the hollow (the model's own: at the real site visitors keep to the walkways)
+  // the ramp down into the hollow (the model's own, not a feature of the real site)
   region({ id: "ramp", section: "s1", x0: 10, x1: 12.4, z0: -28.6, z1: -17.6, y: Y, y1: 0, inset: 0.15, outside: true }),
   // the floor of the hollow round the enclosures
   region({ id: "hollow", section: "s1", x0: -40, x1: 16, z0: -26, z1: 44, y: 0, outside: true,
