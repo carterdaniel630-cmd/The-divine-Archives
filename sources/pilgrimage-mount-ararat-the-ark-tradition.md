@@ -14,14 +14,18 @@ summit dome) are true size; the formation's width and height and every map posit
 ## Facts on the cards
 - Greater Ararat 5,137 m; ice cover 7.28 km² (2014 field campaign and satellite imagery): R. S. Azzoni et al.,
   "Geomorphology of Mount Ararat/Ağrı Dağı (Ağrı Dağı Milli Parkı, Eastern Anatolia, Turkey)", *Journal of Maps* 13.2
-  (2017), 182–190, doi:10.1080/17445647.2017.1279084. Lesser Ararat 3,896 m; massif about 35 km across: summaries
-  agreeing with it.
+  (2017), 182–190, doi:10.1080/17445647.2017.1279084. Lesser Ararat 3,896 m: summaries agreeing with it. Massif
+  35–40 km across: *Britannica* gives about 40 km, other summaries 35 km, so the card says "35 to 40 km" (2026-10-18).
 - The ice cap and four outlet glaciers 7.37 km², over 60% of Turkey's glacier area; a loss of 2.99 km² (29%)
   1990–2016: R. S. Azzoni, A. Sarıkaya and D. Fugazza, "Turkish glacier inventory and classification from
   high-resolution satellite data" (2020).
 - The 1840 eruption and earthquake, the Ahora Gorge flows, Akori destroyed: MTA (General Directorate of Mineral
-  Research and Exploration), Turkish volcanoes, "Ağrı", https://www.mta.gov.tr/turkvolc/en/agri ; a 2019
-  geomorphology study of the Ahora Gorge (University of Milan repository) as summarised.
+  Research and Exploration), Turkish volcanoes, "Ağrı", https://www.mta.gov.tr/turkvolc/en/agri ; R. S. Azzoni,
+  D. Fugazza, M. Garzonio, K. Nicoll, G. Diolaiuti, M. Pelfini and A. Zerboni, "Geomorphological effects of the
+  1840 Ahora Gorge catastrophe on Mount Ararat (Eastern Turkey)", *Geomorphology* 332 (2019), 10–21 (University of
+  Milan repository, https://air.unimi.it/handle/2434/625867), as summarised in search results: it calls the old
+  accounts "obscure and ambiguous" and argues for an earthquake-triggered eruption and a lahar; others read the
+  deposit as a landslide. Whether there was an eruption is therefore shown as disputed (review of 2026-10-18).
 - "The mountains of Ararat" (Genesis 8:4) and Urartu; the identification with this peak comparatively recent;
   early Armenian tradition (to the 10th century) and Islamic tradition placing the landing on Judi: *Encyclopaedia
   Iranica*, "Ararat"; Britannica (student edition), "Mount Ararat"; 1911 *Encyclopædia Britannica*, "Ararat";

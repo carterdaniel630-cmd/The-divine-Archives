@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1836,
+ "count": 1838,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -307,6 +307,15 @@
     "chapter:ch40"
    ],
    "from": "sources/ch40-diaspora-religions.md"
+  },
+  {
+   "id": "source:air-unimi-it/f7281ce110",
+   "type": "source",
+   "label": "https://air.unimi.it/handle/2434/625867",
+   "links": [
+    "site:mount-ararat-the-ark-tradition"
+   ],
+   "from": "sources/pilgrimage-mount-ararat-the-ark-tradition.md"
   },
   {
    "id": "source:aisg-cise-unipi-it/8245d41425",
@@ -9994,6 +10003,15 @@
    "from": "sources/ch80-shiism.md"
   },
   {
+   "id": "source:iris-unito-it/9241b79998",
+   "type": "source",
+   "label": "https://iris.unito.it/handle/2318/1715890",
+   "links": [
+    "site:golgotha-and-the-tomb"
+   ],
+   "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
+  },
+  {
    "id": "source:isac-uchicago-edu/10fa3d305b",
    "type": "source",
    "label": "https://isac.uchicago.edu/research/individual-scholarship/qumran-essene-theory-and-recent-strategies-employed-its-defense",
@@ -12804,6 +12822,15 @@
    "from": "sources/ch01-the-flood.md"
   },
   {
+   "id": "source:penn-museum/dfd101e071",
+   "type": "source",
+   "label": "https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
+  },
+  {
    "id": "source:people-clas-ufl-edu/a9b6833b51",
    "type": "source",
    "label": "https://people.clas.ufl.edu/sgillesp/files/gillespie_and_volk_2014_3d_model_complex_a_la_venta_final-1.pdf",
@@ -15453,6 +15480,15 @@
     "chapter:ch71"
    ],
    "from": "sources/ch71-korea.md"
+  },
+  {
+   "id": "source:ucl-ac-uk/2fd14806e2",
+   "type": "source",
+   "label": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html",
+   "links": [
+    "chapter:ch02"
+   ],
+   "from": "sources/ch02-egypt.md"
   },
   {
    "id": "source:ucl-ac-uk/345be077e9",

@@ -99,6 +99,8 @@ const route = [
   P(C4.x, C4.z - 1.0, 0, true, S_),
   P(C4.x - 1.0, C4.z + 0.6, 0, true, S_),
   P(C4.x + D.c4bOff, C4.z + 0.6, 0, true, PI / 2),
+  // back through the low passage into 4a (a straight line from 4b to the mouth runs through rock)
+  P(C4.x + D.c4bOff - 1.0, C4.z + 0.35, 0, false), P(C4.x + D.c4a.rx - 1.5, C4.z + 0.35, 0, false), P(C4.x, C4.z - 1.0, 0, false),
   P(C4.x, C4.z - D.c4a.rz - 1.6, 0, true),            // out again
   P(-10, -8, 0, true),                                // the path to Cave 1
   P(C1.x, C1.z - 0.6, 0, true, S_),

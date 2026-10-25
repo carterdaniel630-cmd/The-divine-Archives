@@ -37,14 +37,15 @@ D.upH = 4.05;           // about 4 m above ground. SURVEY (English Heritage)
 D.linH = 0.8;           // lintel height about 0.8 m. SURVEY (English Heritage teachers' kit)
 D.linD = 1.05;          // lintel depth (the kit gives 1.3 m for the largest). APPROX
 
-// ---- the five trilithons: a horseshoe opening north-east, rising to the Great Trilithon (7.3 m)
-// each: centre radius, bearing of its centre from the axis (degrees, clockwise), height above ground
+// ---- the five trilithons: a horseshoe opening north-east, rising to the Great Trilithon (about 7.3 m with its lintel)
+// each: centre radius, bearing of its centre from the axis (degrees, clockwise), height of the uprights above ground
+// (the lintel sits on top)
 D.trilithons = [
-  { n: "51–52", r: 8.4, b: 108, h: 6.0, standing: true },     // APPROX (heights rise towards the far end)
-  { n: "53–54", r: 8.8, b: 142, h: 6.5, standing: true },     // APPROX
-  { n: "55–56", r: 8.2, b: 180, h: 7.3, standing: false },    // the Great Trilithon: 7.3 m. SURVEY (English Heritage); 56 stands, 55 lies broken
-  { n: "57–58", r: 8.8, b: 218, h: 6.5, standing: true },     // fell 1797, re-erected 1958. SURVEY (English Heritage)
-  { n: "59–60", r: 8.4, b: 252, h: 6.0, standing: false }     // partly fallen. SURVEY (English Heritage: two partly fallen)
+  { n: "51–52", r: 8.4, b: 108, h: 5.2, standing: true },     // APPROX (heights rise towards the far end)
+  { n: "53–54", r: 8.8, b: 142, h: 5.7, standing: true },     // APPROX
+  { n: "55–56", r: 8.2, b: 180, h: 6.6, standing: false },    // the Great Trilithon: about 7.3 m with its lintel (secondary summaries); Stone 56 about 6.6 m above ground (English Heritage: 8.71 m long, 2.13 m buried). 56 stands, 55 lies broken
+  { n: "57–58", r: 8.8, b: 218, h: 5.7, standing: true },     // fell 1797, re-erected 1958. SURVEY (English Heritage); height APPROX
+  { n: "59–60", r: 8.4, b: 252, h: 5.2, standing: false }     // partly fallen. SURVEY (English Heritage: two partly fallen); height APPROX
 ];
 D.triW = 2.2; D.triD = 1.3; D.triGap = 0.35; D.triLinH = 1.0;   // APPROX
 
@@ -59,7 +60,7 @@ D.bhR = 5.6;            // APPROX
 D.altar = { x: 0, z: 4.2, l: 4.9, w: 1.0, t: 0.5 };   // length and width SURVEY (Clarke et al. 2024, and press reports of it: "five-by-one-metre", "6 tonne"); thickness and position APPROX
 
 // ---- outliers on the axis
-D.heel = { x: 1.6, z: -77, h: 4.9, w: 2.4, d: 2.1, lean: 0.12 };   // the Heel Stone: about 4.9 m, leaning towards the circle. Height SURVEY (as quoted); distance APPROX
+D.heel = { x: 1.6, z: -77, h: 4.7, w: 2.4, d: 2.1, lean: 0.12 };   // the Heel Stone: about 4.5–4.7 m above ground, leaning towards the circle. Height as quoted (see the source log); distance APPROX
 D.slaughter = { x: -1.2, z: -57, l: 6.4, w: 2.1, d: 0.8 };          // the fallen Slaughter Stone at the entrance. APPROX
 D.station = [{ b: 117, standing: true }, { b: 297, standing: true }];   // Stations 91 and 93 survive (two of four), on the Aubrey circle. APPROX bearings
 
