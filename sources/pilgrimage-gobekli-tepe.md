@@ -14,7 +14,7 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
 - L. Clare, "Göbekli Tepe, Turkey. A brief summary of research at a new World Heritage Site (2015–2019)",
   *e-Forschungsberichte des DAI* 2020.2, 81–88: https://publications.dainst.org/journals/efb/article/view/2596
   (dates c. 9500–8000 BCE; dwellings, grinding tools, cistern and channels; revision of the "temple" reading;
-  the fill as slope slide rather than deliberate backfill; the modern shelter and walkways).
+  the fill as slope slide rather than deliberate backfill; the modern shelters; Clare does not mention walkways, so the card no longer does).
 - German Archaeological Institute (DAI), *The Tepe Telegrams* (the project blog): https://www.dainst.blog/the-tepe-telegrams/
   - FAQ: https://www.dainst.blog/the-tepe-telegrams/faq/ ("the earliest yet known monumental architecture
     constructed by humankind"). With UNESCO (https://whc.unesco.org/en/list/1572, criterion (ii): "one of the first

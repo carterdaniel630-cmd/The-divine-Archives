@@ -17,9 +17,9 @@ export const D = {};
 // ---- the mound
 D.surfY = 6.0;          // the hilltop round the excavated hollow, above its floor. APPROX (the tell is some 15 m high overall: SURVEY, UNESCO / DAI)
 
-// ---- the four enclosures of the main excavation area, named A–D in the order they were found.
+// ---- the four enclosures of the main excavation area, named A–D (A found first, in 1996, and B second).
 // Diameters: the round enclosures range from about 10 to 30 m (SURVEY, Current World Archaeology 53, 2012,
-// from the excavators); which is which, and their positions, APPROX.
+// the magazine's own report); which is which, and their positions, APPROX.
 D.encD = { x: 0, z: 0, r: 10.0, wallT: 1.1, wallH: 2.9 };       // D, the best preserved; CWA 53 calls it the largest. Size APPROX (no measured diameter opened)
 D.encC = { x: -14, z: 24, rings: [5.2, 10.0, 14.6], wallT: 0.9, wallH: 2.5 };   // C, three (perhaps four) concentric walls. SURVEY (count); radii APPROX (drawn wider than D: an estimate, see the About card)
 D.encB = { x: -24, z: 4, r: 7.5, wallT: 0.9, wallH: 2.4 };     // B. APPROX

@@ -163,7 +163,7 @@ export function build(ctx) {
   box(W, "st", D.marathon.x0, D.marathon.x1, A.y - 1.6, A.y - 0.75 + D.marathon.h, D.marathon.z0, D.marathon.z1);
   for (let i = 0; i < 6; i++) if (i !== 2) figure(Br, "b", D.marathon.x0 + 1.2 + i * 2.0, A.y + 0.25, (D.marathon.z0 + D.marathon.z1) / 2, 2.0);
   // the hymns: a panel high on the south wall with the first hymn's opening words as edited (Furley & Bremer 2001;
-  // the first word is a restoration); the signs above are illustrative, not the hymn's notes
+  // the first word and parts of several others are restorations); the signs above are illustrative, not the hymn's notes
   panel(ctx, lettersTex(["ΚΕΚΛΥΘ ΕΛΙΚΩΝΑ ΒΑΘΥΔΕΝΔΡΟΝ", "ΑΙ ΛΑΧΕΤΕ ΔΙΟΣ ΕΡΙΒΡΟΜΟΥ", "ΘΥΓΑΤΡΕΣ ΕΥΩΛΕΝΟΙ ΜΟΛΕΤΕ"], { notes: true, size: 54, w: 1024, h: 420 }), 5.6, 2.3, (A.x0 + A.x1) / 2, A.y + 2.6, A.z1 + 0.012, Math.PI);
   // the Rock of the Sibyl, and the Sphinx of the Naxians on its column
   const rock = new THREE.IcosahedronGeometry(D.sibyl.r, 1); { const p = rock.attributes.position; for (let i = 0; i < p.count; i++) { const k = 0.75 + 0.35 * Math.abs(Math.sin(i * 2.3)); p.setXYZ(i, p.getX(i) * k * 1.3, p.getY(i) * k * 0.8, p.getZ(i) * k); } }

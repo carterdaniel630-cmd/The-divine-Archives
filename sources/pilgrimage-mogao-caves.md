@@ -47,9 +47,10 @@ the subjects, not copies; the stele's marks stand for its text and are not a tra
 - Tokyo National Research Institute for Cultural Properties, symposium abstract "Life of the Tallest Buddha at
   Dunhuang" (2002), https://www.tobunken.go.jp/info/event/2002/sympo02/abstract/abstract31_e.html : gives 34 m.
   The card gives both figures.
-- *Encyclopaedia Britannica*, "Tushita Heaven", https://www.britannica.com/topic/Tushita-Heaven : Maitreya, the
-  future Buddha, resides in Tushita as a bodhisattva and will come to earth when the teachings of Gautama Buddha
-  have faded.
+- *Encyclopaedia Britannica*, "Maitreya" (revised by V. Gorlinski), print view https://www.britannica.com/print/article/358868
+  (opened 2026-10-25): "presently a bodhisattva residing in the Tushita heaven", who "will descend to earth to preach
+  anew the dharma" when "the teachings of Gautama Buddha have completely decayed". Replaces the earlier citation of
+  Britannica's "Tushita Heaven" page, whose matching wording was only in its AI-generated summary.
 - M. M. Chan, "Prince Mahasattva, King Sivi, and Syama", Smarthistory (first on the Dunhuang Foundation blog),
   https://smarthistory.org/?p=57613 : the Mahasattva story (the brothers, the bones, the stupa built over them) and
   Sivi's selflessness. (Chan illustrates the tigress story from Cave 428; Cave 254's south-wall version is from

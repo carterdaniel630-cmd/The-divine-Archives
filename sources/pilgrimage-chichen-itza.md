@@ -29,7 +29,8 @@ remains and no offerings are shown anywhere in the model.
   the Toltec question "one of the most contentious debates in Mesoamerican archaeology"; "it may actually have been
   Chichen Itza which influenced the Toltec rather than the reverse"; El Caracol reached by "a large flight of stairs on
   two levels". (It also gives the city flourishing c. 750–1200; not used.)
-- "Yucatec Maya people", Wikipedia, https://en.wikipedia.org/wiki/Yucatec_Maya_people : 1,646,782 (2020), in Yucatán,
+- "Yucatec Maya people", Wikipedia, https://en.wikipedia.org/wiki/Yucatec_Maya_people : 1,646,782 ("Yucatec Mayans in Mexican territory", footnoted to an archived 2016 INEGI page that
+  does not say whether it counts speakers or self-identification; the card hedges it as "by one count"), in Yucatán,
   Campeche, Quintana Roo and northern Belize. Replaces the old "six million … in the region" from ch29, which the
   review found meant all Maya lands.
 - V. Tiesler and V. E. Miller, "Heads, Skulls, and Sacred Scaffolds: New Studies on Ritual Body Processing and Display

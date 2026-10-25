@@ -42,11 +42,12 @@ but is not a transcription of any one record (its exact wording not yet checked 
   track 177.55 × 25.5 m, about 6,500: https://en.wikipedia.org/wiki/Stadium_of_Delphi . The card gives "6,500 to
   7,000" because the two differ.
 - Delphi Archaeological Museum, "The Delphic Hymns to Apollo" (2025), https://www.delphimuseum.gr/2025/03/the-delphic-hymns-to-apollo.html
-  (first hymn c. 138 BCE, heading damaged; found 1893; composer Athenaios son of Athenaios).
+  (first hymn c. 138 BCE, heading damaged; found 1893; composer read as Athenaios son of Athenaios. Attic Inscriptions Online and the CHS article read only
+  "Athenaios", the patronymic offered as a possible identification; the card gives both readings).
   Text of the panel: the first hymn's opening (Κέκλυθ' Ἑλικῶνα βαθύδενδρον αἳ λάχετε Διὸς ἐριβρόμου θύγατρες εὐώλενοι,
   μόλετε), Furley and Bremer (2001), as reproduced in "The Hellenistic hymns to Apollo with musical notation from
   Delphi", https://classics-at.chs.harvard.edu/the-hellenistic-hymns-to-apollo-with-musical-notation-from-delphi/
-  ("Κέκλυθ' Ἑλικ" is restored); translation after Attic Inscriptions Online, CID III 1,
+  ("Κέκλυθ' Ἑλικ" is restored; AIO's Greek also restores parts of Ἑλικῶνα, λάχετε, Διὸς, ἐριβρόμου and εὐώλενοι); translation after Attic Inscriptions Online, CID III 1,
   https://atticinscriptions.com/inscription/CIDIII/1 (date 128/7? BCE; Athenian Treasury south wall). The
   "earliest notated music with a named composer" line was dropped (review 2026-10-25: not in the sources). Ancient Music at Oxford, programme notes,
   https://ancientmusicoxford.site.ox.ac.uk/programme-notes (dates the Paean of Athenaios c. 128/7 BCE). The card
@@ -75,7 +76,8 @@ but is not a transcription of any one record (its exact wording not yet checked 
   cities; work stopped 356, resumed 343–342, finished 334–333; pediments 327). Hellenic Ministry of Culture, "The
   Stele and the Sphinx of the Naxians", https://delphi.culture.gr/the-sphinix-of-the-naxians/ (c. 560 BCE; whole
   monument c. 12.45 m) and Delphi Archaeological Museum, "The Column of the Naxians and the Sphinx" (2024),
-  https://www.delphimuseum.gr/2024/05/the-column-of-naxians-and-sphinx.html (column 10 m; total almost 13 m).
+  https://www.delphimuseum.gr/2024/05/the-column-of-naxians-and-sphinx.html (column 10 m; total almost 13 m; dedicated 570 BC). The two give different dates; the card says
+  "about 570–560 BCE".
   Kenyon College Baly slide collection, "Athenian Treasury", https://baly.kenyon.edu/slides/23064 (rebuilt 1906 by
   French archaeologists, funded by the city of Athens, about four-fifths original stone); Ministry "The Athenian
   Treasury" (the hymn inscription in the museum, a plaster copy on the building). Plutarch, *Life of Numa* 9,

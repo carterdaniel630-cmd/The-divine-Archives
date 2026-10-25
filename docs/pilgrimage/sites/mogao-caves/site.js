@@ -33,7 +33,7 @@ const REF = {
   cd96: "<em>China Daily</em>, 29 April 2025, on the great Buddha of 695",
   tob: "Tokyo National Research Institute for Cultural Properties, symposium abstract &ldquo;Life of the Tallest Buddha at Dunhuang&rdquo; (2002)",
   ch20: "the archive&rsquo;s chapter on Mahayana Buddhism (ch20)",
-  brit: "<em>Encyclop&aelig;dia Britannica</em>, &ldquo;Tushita Heaven&rdquo;",
+  brit: "<em>Encyclop&aelig;dia Britannica</em>, &ldquo;Maitreya&rdquo;",
   smart254: "M. M. Chan, &ldquo;Prince Mahasattva, King Sivi, and Syama&rdquo;, Smarthistory",
   idpj: "International Dunhuang Programme, &ldquo;Jataka stories&rdquo; (Buddhism on the Silk Roads)",
   the04: "A. Robinson, &ldquo;The Silk Road less travelled&rdquo;, <em>Times Higher Education</em>, 4 June 2004",

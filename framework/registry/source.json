@@ -1805,15 +1805,6 @@
    "from": "sources/ch06-zoroaster.md"
   },
   {
-   "id": "source:britannica-com/2eaaf90e1f",
-   "type": "source",
-   "label": "https://www.britannica.com/topic/Tushita-Heaven",
-   "links": [
-    "site:mogao-caves"
-   ],
-   "from": "sources/pilgrimage-mogao-caves.md"
-  },
-  {
    "id": "source:britannica-com/326e504426",
    "type": "source",
    "label": "https://www.britannica.com/biography/Moses-de-Leon",
@@ -1920,6 +1911,15 @@
     "chapter:ch34"
    ],
    "from": "sources/ch34-sikhism.md"
+  },
+  {
+   "id": "source:britannica-com/3f21ebb93a",
+   "type": "source",
+   "label": "https://www.britannica.com/print/article/358868",
+   "links": [
+    "site:mogao-caves"
+   ],
+   "from": "sources/pilgrimage-mogao-caves.md"
   },
   {
    "id": "source:britannica-com/3faa28bfc9",
