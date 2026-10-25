@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-25 09:35 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-25 10:00 UTC (build loop). **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
@@ -8,10 +8,16 @@
 `decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit). **Deployed (`main`):** `c957af5` (PR #67, merged
 2026-10-25 02:17 UTC, deploy run 201 green), at the-divine-archives.pages.dev and www.getconexto.com, the live site (Carter confirmed 2026-10-25).
 **Branches:** `loop/journal-hero-redesign` = #60, `loop/speed-fix-a` = #76 (head `be51670`, stacked on #67),
-`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
+`loop/clear-v72-ra` = #75 (head `71206ee`, stacked on #76), `loop/journal-hero-archivist` = #77 (head `d038119`, darker cloak), `loop/journal-sound-landscape` = #78 (`42e0a6a`), `loop/journal-phone-320` = #79 (`3018cdd`) (#67, #70–#74 merged). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-25 ~09:19–10:00: **PR #79 built: Journal on narrow upright phones + full-screen spoken name** (Next 10,
+  value 3; everything above waits on Carter or Muse). Journal upright 320: hearts/"Plunder"/A button no longer cut
+  off; also found and fixed A button past the edge at 421–470. Full-screen button now has a spoken name (aria-label
+  follows the label). 8 lines, 2 files. All 12 games, 9 upright widths + sideways: 0 errors, 0 overflow; 17/17
+  verify, 42/42 tests, review-checks 9/9 (0 warnings). Pre-existing, noted: Reliquary at 480 upright overflows.
+  Reply `2026-10-25-pr79-journal-phone-320.md`. Items per run: 1.
 - 2026-10-25 ~08:42–09:35: **First weekly loop audit** (Next 0, value 6; none since 2026-10-11), by a run that wrote
   none of the sampled items. 19 reviewer reports, 16 items drawn at random and re-checked blind (verdicts committed
   first, `732a2ed`): **15 of 16 agreed**; 1 disagreement, preview only: Göbekli Tepe (PR #53) still says "the oldest
@@ -322,7 +328,10 @@ minutes: `loop/speed-fix-a` moved from the chat session's own `a2b0952` to `be51
    08:10, 0 open findings.** All 6 GitHub checks green incl. Lighthouse (08:10). Missing only: Carter's yes (asked now,
    in Needs Carter). If Carter says yes, a run that wrote none of it merges it once all checks are green; it is off
    `main` `c957af5` and touches no file of #75/#76/#77, so it can go before or after them (bring up to `main` if needed).
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; + upright at 320 wide the Journal HUD and A button are clipped; + full-screen button has no spoken name where its label is hidden: add `aria-label` in `archive-games.js`); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
+4f. **PR #79 (Journal on narrow upright phones; full-screen spoken name; live defects, value 3):** built 2026-10-25
+   (`3018cdd`, off `main` `c957af5`). Next: independent review by a run that wrote none of it, all checks green incl.
+   Lighthouse, then Carter's yes. Shares `games.css` with #78 (different lines).
+10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; + Reliquary upright at 480 wide: 4 elements past the dialog edge, pre-existing); ch02 lines 26–27 "second death, annihilation" unhedged and unsourced (audit note; chapter wording, so a PR for Carter's batch review); Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
     standards board current with each item.
 - **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
   played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
