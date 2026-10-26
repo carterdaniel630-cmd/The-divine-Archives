@@ -25,8 +25,8 @@ the subjects, not copies; the stele's marks stand for its text and are not a tra
   face, a cross-ankled Maitreya (交脚弥勒); the Mahasattva (tigress) jataka on the south wall (the third prince pierces
   his neck with a dry bamboo and throws himself from the cliff; several moments in one picture, 异时同图), Sibi cutting
   his flesh to ransom a dove from a hawk on the north, the white-robed Buddha on the west; 1,235 small Buddhas.
-- M. M. Chan, "Mogao Cave 17", Smarthistory, https://smarthistory.org/?p=57609 : the statue of Hongbian had been
-  moved to another cave higher up and was returned after the room was emptied.
+- M. M. Chan, "Mogao Cave 17", Smarthistory, https://smarthistory.org/?p=57609 : the statue of Hongbian was "originally found three
+  stories above Cave 17 and later relocated to the emptied Library Cave" (the card says "moved here", not "back").
 - International Dunhuang Programme (British Library), "Discovering Cave 17",
   https://idp.bl.uk/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/discovering-cave-17/ and
   https://idp.bl.uk/?p=23132 : June 1900, Wang Yuanlu; Stein in 1907; Pelliot in 1908; the Japanese and Russian

@@ -87,8 +87,10 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
 - **ch42 and the fill:** ch42 says the enclosures were deliberately backfilled. The excavators have argued since
   2019 that the fill slid in from the slopes (Clare 2020). The "Buried on purpose?" card says the question is now
   contested and that ch42 still states the older reading; ch42 may need the same flag.
-- Pillar 43's position in the north-west of Enclosure D's wall follows published plans; its place here is
-  approximate. Which animal is on which other pillar is illustrative, as the cards say.
+- Pillar 43: "Of animals and a headless man: Göbekli Tepe Pillar 43", *The Tepe Telegrams* (14 October 2016),
+  https://www.dainst.blog/the-tepe-telegrams/2016/10/14/of-animals-and-a-headless-man-gobekli-tepe-pillar-43/ (the
+  carvings above and below, the headless human). No opened source gives its place in the wall, so the card no longer
+  says "north-west"; its place in the model is approximate. Which animal is on which other pillar is illustrative, as the cards say.
 - **Review fixes (2026-10-12):** the 1963 survey and Schmidt's 1994 visit now cite the DAI post "Part 1: A (Re-) Discovery (1994–1996)", https://www.dainst.blog/the-tepe-telegrams/?p=861 (read by the reviewer; blocked from this session); the Vulture Stone card now says "Egyptian, Arabian and Greek scholars", as the excavators' reply does.
 
 ## Fix run, 2026-10-25 (after the independent review of `befb607`)

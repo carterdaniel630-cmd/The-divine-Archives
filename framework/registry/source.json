@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1935,
+ "count": 1938,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -4117,6 +4117,15 @@
    "from": "sources/pilgrimage-gobekli-tepe.md"
   },
   {
+   "id": "source:dainst-blog/f07b22f06c",
+   "type": "source",
+   "label": "https://www.dainst.blog/the-tepe-telegrams/2016/10/14/of-animals-and-a-headless-man-gobekli-tepe-pillar-43/",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:dainst-org/be96f6bfcf",
    "type": "source",
    "label": "https://www.dainst.org/en/projects/goebekli-tepe",
@@ -4307,9 +4316,27 @@
    "from": "sources/pilgrimage-delphi.md"
   },
   {
+   "id": "source:delphi-culture-gr/ac55bed47e",
+   "type": "source",
+   "label": "https://delphi.culture.gr/stadium/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:delphi-culture-gr/c4f238d158",
    "type": "source",
    "label": "https://delphi.culture.gr/archaelogical-site/excavations/",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:delphi-culture-gr/c962142e7b",
+   "type": "source",
+   "label": "https://delphi.culture.gr/the-theater-of-delphi/",
    "links": [
     "site:delphi"
    ],

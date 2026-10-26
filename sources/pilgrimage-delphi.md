@@ -43,6 +43,15 @@ record. Its earlier ending "ΕΠ ΕΛΕΥΘΕΡΙΑΙ" was not found in any edit
   7,000): Odyssey Adventures, https://www.odysseyadventures.ca/articles/delphi/articleDelphi02c.html . Stadium
   track 177.55 × 25.5 m, about 6,500: https://en.wikipedia.org/wiki/Stadium_of_Delphi . The card gives "6,500 to
   7,000" because the two differ.
+- Hellenic Ministry of Culture, "The Theater of Delphi", https://delphi.culture.gr/the-theater-of-delphi/ (opened
+  2026-10-26): 35 rows; "made of local limestone, probably at the beginning of the 2nd centuy B.C." (its body text
+  says "2nd century A.D.", a slip beside its own Eumenes date); capacity 4,200–4,500; Eumenes II rebuilt it "at about
+  160 b.c.". It disagrees with Odyssey Adventures (4th century BCE, about 5,000): the card gives both, flagged.
+- Hellenic Ministry of Culture, "Stadium", https://delphi.culture.gr/stadium/ (opened 2026-10-26): 178.35 m as built,
+  177.414 m after the Roman rebuilding; 12 rows on the north; about 6,500. The card gives both lengths and
+  Wikipedia's 177.55 m.
+- The temple's 6 × 15 columns: anasynthesis.co.uk (above); its 60.32 × 23.82 m: Wikipedia, "List of ancient Greek
+  temples", https://en.wikipedia.org/wiki/List_of_ancient_Greek_temples (pointer). Both now on the cards.
 - Delphi Archaeological Museum, "The Delphic Hymns to Apollo" (2025), https://www.delphimuseum.gr/2025/03/the-delphic-hymns-to-apollo.html
   (first hymn c. 138 BCE, heading damaged; found 1893; composer read as Athenaios son of Athenaios. Attic Inscriptions Online and the CHS article read only
   "Athenaios", the patronymic offered as a possible identification; the card gives both readings).

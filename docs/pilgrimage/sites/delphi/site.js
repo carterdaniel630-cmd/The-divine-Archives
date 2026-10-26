@@ -49,6 +49,11 @@ const REF = {
   whe: "World History Encyclopedia, &ldquo;Delphi&rdquo; (worldhistory.org/delphi)",
   kastri: "Delphi Archaeological Museum archive, &ldquo;The construction of the new village Kastri at the site of the present-day Delphi&rdquo; (1892), via SearchCulture.gr",
   plutNuma: "Plutarch, <em>Life of Numa</em> 9 (the undying fire at Delphi, kept by widows)",
+  mocTheatre: "Hellenic Ministry of Culture, &ldquo;The Theater of Delphi&rdquo; (delphi.culture.gr)",
+  mocStadium: "Hellenic Ministry of Culture, &ldquo;Stadium&rdquo; (delphi.culture.gr)",
+  anasyn: "Anasynthesis, &ldquo;Temple of Apollo, Delphi&rdquo; (anasynthesis.co.uk)",
+  wikiTemples: "Wikipedia, &ldquo;List of ancient Greek temples&rdquo; (the temple&rsquo;s size)",
+  hsc: "Hampden-Sydney College classics pages, &ldquo;Delphi: Temple of Apollo&rdquo; (people.hsc.edu)",
   wikiStadium: "Wikipedia, &ldquo;Stadium of Delphi&rdquo; (track length and capacity)",
   wikiOmph: "Wikipedia, &ldquo;Omphalos of Delphi&rdquo; (the museum stone, original or copy)",
   unesco: "UNESCO World Heritage Centre, &ldquo;Archaeological Site of Delphi&rdquo; (site 393, inscribed 1987)",
@@ -63,6 +68,7 @@ const L = {
 const APPROX = { t: "Layout after published plans · positions approximate", soft: true };
 const RECON = { t: "Reconstruction: the building as it may have stood", soft: true };
 const CONTESTED = { t: "Contested", soft: false };
+const DIFFER = { t: "Sources differ", soft: false };
 const NOTSUP = { t: "Not supported by the evidence", soft: false };
 const BELIEF = { t: "What was believed, not a finding", soft: true };
 
@@ -194,13 +200,13 @@ const info = [
   // ---- II: the Temple of Apollo
   { id: "altar", section: "s2", pos: [D.altar.x - 1, D.altar.h + 0.9, D.altar.z - 3.8], cat: "II · The temple", title: "The Altar of the Chians",
     html: "<p>The great altar in front of the temple was given by the people of Chios. Here animals were sacrificed before a consultation; according to Plutarch a goat was first sprinkled with cold water, and only if it trembled was the god held to be willing to answer that day. The altar was restored in 1920 with the help of people from Chios.</p>",
-    flags: [BELIEF, APPROX], sources: REF.plutDef + " (on the goat); " + REF.moc + "." },
+    flags: [BELIEF, APPROX], sources: REF.plutDef + " (on the goat); " + REF.moc + "; " + REF.hsc + " (the 1920 restoration)." },
   { id: "serpent", section: "s2", pos: [D.serpent.x - 1.6, D.serpent.h + 0.6, D.serpent.z - 1.2], cat: "II · The temple", title: "The Serpent Column",
     html: "<p>After the Greeks defeated the Persians at Plataea in 479 BCE they dedicated a golden tripod here, standing on a bronze column of three twisted snakes. The coils bear the names of the thirty-one city-states that fought. Herodotus describes it; Thucydides tells how the Spartan general Pausanias had his own name carved on it and the Spartans had it erased.</p><p>The gold was taken by the Phocians in the fourth century BCE, but the bronze was still standing when the writer Pausanias saw it. The emperor Constantine moved the column to Constantinople, where it still stands in the old Hippodrome of Istanbul; its heads were broken off around 1700, and one survives in the Istanbul Archaeological Museum.</p>",
     flags: [APPROX], sources: REF.hdt + " 9.81; Thucydides 1.132; " + REF.paus + " 10.13.9; " + REF.livius + "." },
   { id: "temple", section: "s2", pos: [33.6, 4.0, 6.6], cat: "II · The temple", title: "Six temples, one place",
     html: "<p>Legend told of a first temple of laurel boughs, then one of beeswax and feathers, then one of bronze. The first stone temple burned in 548 BCE. The Alcmaeonid family of Athens rebuilt it in the late sixth century, with a marble front; an earthquake wrecked that temple in 373 BCE, and the one in the model replaced it on the same foundations, a Doric temple of 6 by 15 columns. The Amphictyony, the league of states that ran the sanctuary, collected the money, and a board of temple-builders drawn from many cities oversaw it; work stopped in 356 BCE when war came to Delphi and resumed about 343, the temple was finished in 334&ndash;333 BCE and its pediment sculpture in 327. It stood, repaired, until late antiquity. What survives is its foundations and a few re-erected columns.</p>",
-    flags: [RECON, { t: "Overall size published; the rest approximate", soft: true }], links: [L.ch08, L.ch15], sources: REF.paus + " 10.5.9&ndash;13; " + REF.hdt + " 2.180, 5.62 (the sixth-century rebuilding); " + REF.mocTemple + " (the fourth-century temple); " + REF.moc + "." },
+    flags: [RECON, { t: "Overall size published; the rest approximate", soft: true }], links: [L.ch08, L.ch15], sources: REF.paus + " 10.5.9&ndash;13; " + REF.hdt + " 2.180, 5.62 (the sixth-century rebuilding); " + REF.mocTemple + " (the fourth-century temple); " + REF.anasyn + " and " + REF.wikiTemples + " (6 by 15 columns); " + REF.moc + "." },
   { id: "maxims", section: "s2", pos: [C.x1 - C.pronaos + 1.2, TY + 4.3, 2.4], cat: "II · The temple", title: "Know thyself",
     html: "<p>Pausanias saw maxims &ldquo;useful for the life of men&rdquo; written in the porch of the temple: <strong>Know thyself</strong> and <strong>Nothing in excess</strong>. Plato says the Seven Sages dedicated them, and in another dialogue quotes a third: &ldquo;Give a pledge, and ruin is near&rdquo;. Exactly where in the porch they were cut is not known, so their place on the wall here is our own.</p><p>The archive&rsquo;s chapter on early Greece says the maxims were inscribed on the omphalos stone. The ancient writers put them in the porch instead.</p>",
     flags: [{ t: "Wording ancient; placing illustrative", soft: true }], links: [L.ch08], sources: REF.paus + " 10.24.1; Plato, <em>Protagoras</em> 343a&ndash;b and <em>Charmides</em> 165a; " + REF.ch08 + "." },
@@ -225,26 +231,26 @@ const info = [
 
   // ---- III: the theatre
   { id: "theatre", section: "s3", pos: [TH.x + 3.4, TH.y + 1.6, TH.z + 4.2], cat: "III · The theatre", title: "The theatre",
-    html: "<p>Thirty-five rows of stone seats, room for about five thousand people, built in stone in the fourth century BCE and repaired more than once, with money from King Eumenes II of Pergamon in the 150s BCE and again under Rome. The Pythian Games began as contests of music in honour of Apollo, the god of the lyre, and singing and playing were held here. The stage building is our own simple rendering.</p>",
-    flags: [APPROX, RECON], sources: REF.moc + "; " + REF.odyssey + "; " + REF.paus + " 10.32.1." },
+    html: "<p>Thirty-five rows of stone seats. When the theatre was first built in stone, and how many it held, is told two ways: a guide&rsquo;s account says the fourth century BCE and about five thousand people, while the Ministry of Culture says probably the start of the second century BCE and some 4,200 to 4,500. It was rebuilt with money from King Eumenes II of Pergamon about 160 BCE, and repaired again under Rome. The Pythian Games began as contests of music in honour of Apollo, the god of the lyre, and singing and playing were held here. The stage building is our own simple rendering.</p>",
+    flags: [DIFFER, APPROX, RECON], sources: REF.mocTheatre + "; " + REF.odyssey + "; " + REF.paus + " 10.32.1." },
   { id: "decline", section: "s3", pos: [TH.x + 2.0, topY + 1.8, topZ - 1.0], cat: "III · The theatre", title: "The end of the oracle",
     html: "<p>A decree of the emperor Theodosius in the 390s CE closing the pagan sanctuaries brought a slow decline; a Christian community lived on at the site until it was abandoned in the seventh century, and later a village called Kastri grew over the ruins. Christian historians report a last oracle, given to an envoy of the emperor Julian about 362: &ldquo;Go tell the king the wondrous hall is fallen to the ground&rdquo;, Apollo has no house left, and the speaking water is silenced. It survives only in church historians writing decades or centuries later, and may not be genuine.</p><p>In 1892 the French School at Athens began the &lsquo;Great Excavation&rsquo;, after the houses of Kastri were bought and pulled down; its people built new houses nearby, which is modern Delphi.</p>",
     flags: [CONTESTED], sources: REF.pearse + "; " + REF.whe + " (Theodosius; the Christian community); " + REF.mocEx + "; " + REF.kastri + "; " + REF.unesco + "." },
 
   // ---- IV: the stadium
   { id: "stadium", section: "s4", pos: [ST.x + 78, 1.8, ST.z - 4.0], cat: "IV · The stadium", title: "The stadium",
-    html: "<p>The highest point of the sanctuary. The track is 177.55 metres long, and the athletic contests of the Pythian Games were run here. The seats were cut in stone in the Roman period: twelve rows on the north side, six on the south and round the curved west end, for some 6,500 to 7,000 people (accounts differ). At the east entrance stood a Roman arch, of which four piers remain.</p>",
-    flags: [{ t: "Size published; the rest approximate", soft: true }, RECON], sources: REF.odyssey + " (rows and seating); " + REF.wikiStadium + "; " + REF.paus + " 10.32.1." },
+    html: "<p>The highest point of the sanctuary. The track is about 177.4 to 178.4 metres long (the Ministry of Culture gives 178.35 metres as first built and about 177.4 after the Roman rebuilding; other accounts give 177.55), and the athletic contests of the Pythian Games were run here. The seats were cut in stone in the Roman period: twelve rows on the north side, six on the south and round the curved west end, for some 6,500 to 7,000 people (accounts differ). At the east entrance stood a Roman arch, of which four piers remain.</p>",
+    flags: [{ t: "Size published; the rest approximate", soft: true }, RECON], sources: REF.mocStadium + "; " + REF.odyssey + " (rows and seating); " + REF.wikiStadium + "; " + REF.paus + " 10.32.1." },
   { id: "games", section: "s4", pos: [ST.x, 1.8, ST.z + 6.0], cat: "IV · The stadium", title: "The Pythian Games",
     html: "<p>The Games were held every four years in honour of Apollo&rsquo;s victory over the serpent Python, which myth said had guarded the place before him. They began with music and poetry, and athletic and chariot contests were added in the early sixth century BCE. The prize was a wreath of laurel.</p>",
     flags: [BELIEF], links: [L.ch08], sources: REF.paus + " 10.7.2&ndash;8." }
 ];
 
 const about = { id: "about", cat: "About this model", title: "How close is this to the real thing?",
-  html: "<p><strong>From published figures:</strong> the temple at about 60 by 24 metres with 6 by 15 columns; the Athenian Treasury at 9.65 by 6.57 metres; the Siphnian Treasury&rsquo;s base at 8.41 by 6.04 metres; the theatre&rsquo;s 35 rows; the stadium&rsquo;s 177.55-metre track and its rows of seats.</p>" +
+  html: "<p><strong>From published figures:</strong> the temple at about 60 by 24 metres with 6 by 15 columns; the Athenian Treasury at 9.65 by 6.57 metres; the Siphnian Treasury&rsquo;s base at 8.41 by 6.04 metres; the theatre&rsquo;s 35 rows; the stadium&rsquo;s track of about 178 metres and its rows of seats.</p>" +
     "<p><strong>Approximate:</strong> where each building stands, the height of each terrace, the line of the Sacred Way (straightened here), the columns&rsquo; height and spacing, the plans of the hall and the inner room, the stage building, and the shape of the hillside. The statues are simple stand-ins; the lettering on the walls imitates the look of inscriptions and is not their text, except the two maxims in the porch, the hymn panel, which carries the first hymn&rsquo;s opening words as editors read them, and the line on the Polygonal Wall, which repeats the freedom records&rsquo; usual formula.</p>" +
     "<p><strong>Not shown:</strong> most of the more than a hundred monuments and twenty-odd treasuries Pausanias passed, the meeting hall of the Cnidians and its paintings, the Castalian spring, the sanctuary of Athena below the road, the crowds and the smoke of sacrifice.</p>",
-  links: [L.ch08, L.ch15], sources: REF.moc + "; " + REF.paus + "." };
+  links: [L.ch08, L.ch15], sources: REF.moc + "; " + REF.anasyn + "; " + REF.wikiTemples + "; " + REF.mocTheatre + "; " + REF.mocStadium + "; " + REF.paus + "." };
 
 // a clear Greek sky over Parnassus
 const sky = { bg: "#bcd3e6", fog: "#d6dde2", hemi: "#f2f2ee", ground: "#9a8d6e", sunPos: [60, 80, 50], sun: 1.6 };
