@@ -1,7 +1,311 @@
 {
  "type": "waypoint",
- "count": 184,
+ "count": 262,
  "entities": [
+  {
+   "id": "waypoint:angkor-wat/army",
+   "type": "waypoint",
+   "label": "The army of Suryavarman II",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/buddhist",
+   "type": "waypoint",
+   "label": "From Vishnu to the Buddha",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/churning",
+   "type": "waypoint",
+   "label": "The churning of the sea of milk",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/city",
+   "type": "waypoint",
+   "label": "A town under the grass",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/cloister",
+   "type": "waypoint",
+   "label": "The cruciform cloister",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/deposit",
+   "type": "waypoint",
+   "label": "Gold under the tower",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/equinox",
+   "type": "waypoint",
+   "label": "The equinox sunrise",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/gallery",
+   "type": "waypoint",
+   "label": "The first gallery",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/gate",
+   "type": "waypoint",
+   "label": "The western gate",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/heritage",
+   "type": "waypoint",
+   "label": "World Heritage",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/judgement",
+   "type": "waypoint",
+   "label": "Heavens and hells",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/kuru",
+   "type": "waypoint",
+   "label": "The battle of Kurukshetra",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/moat",
+   "type": "waypoint",
+   "label": "The moat",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/numbers",
+   "type": "waypoint",
+   "label": "A calendar in stone?",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/summit",
+   "type": "waypoint",
+   "label": "The five towers",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/temple",
+   "type": "waypoint",
+   "label": "A temple for Vishnu",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/v-board",
+   "type": "waypoint",
+   "label": "Angkor Wat",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/v-door",
+   "type": "waypoint",
+   "label": "To the western entrance",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/v-v27",
+   "type": "waypoint",
+   "label": "The Sacred Tooth Relic",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/way",
+   "type": "waypoint",
+   "label": "The raised way",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:angkor-wat/west",
+   "type": "waypoint",
+   "label": "Why west?",
+   "parent": "site:angkor-wat",
+   "href": "pilgrimage/angkor-wat.html",
+   "from": "docs/pilgrimage/sites/angkor-wat/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/bomb",
+   "type": "waypoint",
+   "label": "1985",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/central",
+   "type": "waypoint",
+   "label": "The central stupa",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/foot",
+   "type": "waypoint",
+   "label": "The hidden foot",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/height",
+   "type": "waypoint",
+   "label": "How tall?",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/line",
+   "type": "waypoint",
+   "label": "The line to Mendut and Pawon",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/lost",
+   "type": "waypoint",
+   "label": "Lost and found",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/monument",
+   "type": "waypoint",
+   "label": "A stupa and a mountain",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/niches",
+   "type": "waypoint",
+   "label": "The Buddhas in the niches",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/path",
+   "type": "waypoint",
+   "label": "The pilgrim's way",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/reliefs",
+   "type": "waypoint",
+   "label": "Panels in stone",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/stairs",
+   "type": "waypoint",
+   "label": "Up through the gates",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/stupas",
+   "type": "waypoint",
+   "label": "Seventy-two stupas",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/v-board",
+   "type": "waypoint",
+   "label": "Borobudur",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/v-door",
+   "type": "waypoint",
+   "label": "To the east stairs",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
+  {
+   "id": "waypoint:borobudur/v-v46",
+   "type": "waypoint",
+   "label": "The Piprahwa Relics",
+   "parent": "site:borobudur",
+   "href": "pilgrimage/borobudur.html",
+   "from": "docs/pilgrimage/sites/borobudur/site.js"
+  },
   {
    "id": "waypoint:chichen-itza/ballcourt",
    "type": "waypoint",
@@ -1217,6 +1521,326 @@
    "parent": "site:mount-ararat-the-ark-tradition",
    "href": "pilgrimage/mount-ararat-the-ark-tradition.html",
    "from": "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/chamber",
+   "type": "waypoint",
+   "label": "The chamber and its roof",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/circle",
+   "type": "waypoint",
+   "label": "The Great Circle",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/dead",
+   "type": "waypoint",
+   "label": "The dead",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/facade",
+   "type": "waypoint",
+   "label": "The white wall",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/genome",
+   "type": "waypoint",
+   "label": "A king of Newgrange?",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/kerb",
+   "type": "waypoint",
+   "label": "The kerb and the Entrance Stone",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/later",
+   "type": "waypoint",
+   "label": "After the builders",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/mound",
+   "type": "waypoint",
+   "label": "The mound",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/myth",
+   "type": "waypoint",
+   "label": "The house of the Dagda",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/passage",
+   "type": "waypoint",
+   "label": "The passage",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/reach",
+   "type": "waypoint",
+   "label": "Where the light falls",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/recesses",
+   "type": "waypoint",
+   "label": "Basins and carvings",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/roofbox",
+   "type": "waypoint",
+   "label": "The roof-box",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/solstice",
+   "type": "waypoint",
+   "label": "The midwinter sunrise",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/spiral",
+   "type": "waypoint",
+   "label": "The triple spiral",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-board",
+   "type": "waypoint",
+   "label": "Newgrange",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-door",
+   "type": "waypoint",
+   "label": "To the mound",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/v-v86",
+   "type": "waypoint",
+   "label": "The Berlin Gold Hat",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:newgrange/valley",
+   "type": "waypoint",
+   "label": "Brú na Bóinne",
+   "parent": "site:newgrange",
+   "href": "pilgrimage/newgrange.html",
+   "from": "docs/pilgrimage/sites/newgrange/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/apadana",
+   "type": "waypoint",
+   "label": "The audience hall",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/capitals",
+   "type": "waypoint",
+   "label": "Bulls on the columns",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/colour",
+   "type": "waypoint",
+   "label": "Once painted",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/disc",
+   "type": "waypoint",
+   "label": "The winged figure",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/fire",
+   "type": "waypoint",
+   "label": "The burning",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/foundation",
+   "type": "waypoint",
+   "label": "Gold and silver in the corners",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/gate",
+   "type": "waypoint",
+   "label": "The Gate of All Nations",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/graffiti",
+   "type": "waypoint",
+   "label": "Names in the stone",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/lion",
+   "type": "waypoint",
+   "label": "The lion and the bull",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/nowruz",
+   "type": "waypoint",
+   "label": "Built for the New Year?",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/reliefs",
+   "type": "waypoint",
+   "label": "Twenty-three nations",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/stairway",
+   "type": "waypoint",
+   "label": "The Great Stairway",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/tablets",
+   "type": "waypoint",
+   "label": "The clay archive",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/terrace",
+   "type": "waypoint",
+   "label": "The terrace",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/tombs",
+   "type": "waypoint",
+   "label": "The tombs in the hill",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/v-back",
+   "type": "waypoint",
+   "label": "Back to the museum",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/v-board",
+   "type": "waypoint",
+   "label": "Persepolis",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/v-door",
+   "type": "waypoint",
+   "label": "To the terrace",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/v-v35",
+   "type": "waypoint",
+   "label": "The Cyrus Cylinder",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
+  },
+  {
+   "id": "waypoint:persepolis/xpa",
+   "type": "waypoint",
+   "label": "Xerxes speaks",
+   "parent": "site:persepolis",
+   "href": "pilgrimage/persepolis.html",
+   "from": "docs/pilgrimage/sites/persepolis/site.js"
   },
   {
    "id": "waypoint:qumran-caves/c1-isaiah",
