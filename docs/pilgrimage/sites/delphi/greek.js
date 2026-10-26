@@ -107,7 +107,8 @@ export function polygonalMat() {
     g.fillStyle = edge ? "#4d463d" : `rgb(${t},${t - 10},${t - 24})`; g.fillRect(x, y, step, step);
   }
   g.fillStyle = "rgba(70,60,48,0.55)"; g.font = "13px Georgia, serif";
-  const L = "ΑΠΕΔΟΤΟ ΤΩΙ ΑΠΟΛΛΩΝΙ ΤΩΙ ΠΥΘΙΩΙ ΣΩΜΑ ΓΥΝΑΙΚΕΙΟΝ ΕΠ ΕΛΕΥΘΕΡΙΑΙ ";
+  // the formula of CID V 534 (Attic Inscriptions Online), with the names of seller and freed woman left out
+  const L = "ΑΠΕΔΟΤΟ ΤΩΙ ΑΠΟΛΛΩΝΙ ΤΩΙ ΠΥΘΙΩΙ ΣΩΜΑ ΓΥΝΑΙΚΕΙΟΝ ΕΦ ΩΙΤΕ ΕΛΕΥΘΕΡΑ ΕΙΜΕΝ ";
   for (let i = 0; i < 9; i++) { const y0 = 40 + i * 50 + R() * 10, x0 = R() * 200; g.fillText(L.slice(i * 3) + L.slice(0, i * 3), x0, y0); g.fillText(L.slice(i * 2), x0 - 260, y0 + 15); }
   return new THREE.MeshStandardMaterial({ map: tex(c), roughness: 0.92 });
 }

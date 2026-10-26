@@ -25,9 +25,15 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
     https://www.dainst.blog/the-tepe-telegrams/?p=347 ; posts
     tagged "quarries": https://www.dainst.blog/the-tepe-telegrams/tag/quarries (unfinished pillar, about 7 m;
     flint tools; weights of the central pillars). Checked at review (2026-10-12): the post confirms 7 m long, 1.5 m thick, about 50 t.
-  - J. Notroff, "Archaeoastronomy, meteor showers, mass extinction: What does the fox say?" (21 April 2017):
+  - "Archaeoastronomy, meteor showers, mass extinction: What does the fox say?" (21 April 2017; no author named on the
+    post or its archive page, so none is given on the card, 2026-10-25 late fix run):
     https://www.dainst.blog/the-tepe-telegrams/2017/04/21/archaeoastronomy-meteor-showers-mass-extinction-what-does-the-fox-say-and-what-the-crane-the-aurochs/
     (reply to Sweatman and Tsikritsis; the roofing argument against sky-watching).
+  - "Pillar 18" post, https://dainst.blog/the-tepe-telegrams/?p=7401 ("Under its arm P18 appears to be carrying a fox").
+    The FAQ (Q4: "only a small part of the site has been excavated"; Q12: "the 6000 year younger Stonehenge"; "hands
+    resting on a belt with a loin cloth") is now cited on the hill, dating and central-pair cards. The earlier card text
+    "from the belt hangs a fox pelt" and "symbols, where a necklace would hang" was in no checked source (DAI posts,
+    FAQ, CWA, Wikipedia's Schmidt 2010/2012 summary) and was removed, from the text and from the rendering (2026-10-25 late fix run).
   - "A Sanctuary … or so fair a House?" (24 January 2017), https://www.dainst.blog/the-tepe-telegrams/2017/01/24/a-sanctuary-or-so-fair-a-house/
     (the temple-or-house debate; answers Banning: "ample evidence to interpret Göbekli Tepe as a peculiar place formed
     of special purpose structures related to cult and ritual"). Opened 2026-10-25 (fix run): no author named on the
@@ -52,7 +58,9 @@ plans, not a measurement. The carvings are our own simplified renderings, not tr
 - J. Notroff, O. Dietrich, L. Clare and others, "More than a vulture: a response to Sweatman and Tsikritsis",
   *Mediterranean Archaeology and Archaeometry* 17.2 (2017), 57–63.
 - M. Kinzel and L. Clare, "Monumental – compared to what? A perspective from Göbekli Tepe", in A. B. Gebauer and
-  others (eds), *Monumentalising Life in the Neolithic* (Oxbow, 2020) (likely roofing).
+  others (eds), *Monumentalising Life in the Neolithic* (Oxbow, 2020) (likely roofing). **Not opened** (JSTOR did not
+  load at review, 2026-10-25); the book exists, the chapter's wording is unchecked, so it is no longer cited on the roof
+  card, which rests on Notroff et al. ("significant possibility").
 ## Other publications about the excavation
 - *Current World Archaeology* 53 (2012), "Turkey: Göbekli Tepe": https://www.world-archaeology.com/features/turkey-gobekli-tepe/
   (the Harran plain; rings 10–30 m in diameter; C "the most impressive", "Enclosure D is the largest"; 11 wall pillars
@@ -114,3 +122,10 @@ Every source below was opened with a web fetch in this run; each card change fol
 - "At least twenty large enclosures" became "at least twenty, more than ten of them large" (the geophysics post).
 - "Lettered in the order they were found" became "lettered A to D", with only A first (1996) and B second as sourced.
 - The shelter card no longer mentions walkways (Clare 2020 names only the shelters).
+
+## Late fix run 2026-10-25 (loop review of 0e74caa, Göbekli findings 1–9)
+- Pillar 27: the predator is "beside", not "above", the boar (CWA). D: "in an excellent state of preservation" (CWA),
+  not "the best preserved". Vulture Stone: CWA added to the card ("a great vulture … lifts its left wing … a sphere or
+  disc"). Triangle: enclosure centres, per the Live Science summary of Haklay & Gopher
+  (https://www.livescience.com/gobeklitepe-built-with-geometry.html; the article itself not opened).
+

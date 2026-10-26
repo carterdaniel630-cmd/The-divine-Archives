@@ -85,3 +85,12 @@ the subjects, not copies; the stele's marks stand for its text and are not a tra
   in clay and paint" → a stone core (Ancient History Sites), repairs from the Tokyo abstract; the Maitreya card cut to
   what Britannica says (the Tang devotion and "colossi at several sites" lines dropped); the jataka card's plots from
   e-Dunhuang and Smarthistory, "perfection of giving" dropped.
+
+## Late fix run 2026-10-25 (loop review of 0e74caa, Mogao findings 20–27)
+- Cave 254: rafters "modelled in relief", per e-Dunhuang ("在东西两披上浮塑有数条凸起的椽子"); the card no longer says
+  why the pillar was built (not on the cited page). Cliff card: dropped "paintings on plaster over the rock" and the
+  modern walkways sentence (in neither cited source). Cave 16: "large" dropped. River: "the Dachuan River" (UNESCO),
+  not "dry". Dispersal card: "working for the British" and the closing IDP sentence dropped; Pelliot "examined
+  materials by candlelight" (IDP, https://idp.bl.uk/?p=23132). "Sealed for some nine centuries" (the date is Rong's
+  view). 35.5 m given with the 34 m alternative, without "most often given".
+

@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1931,
+ "count": 1935,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -952,6 +952,15 @@
    "id": "source:atticinscriptions-com/3923a8f8cf",
    "type": "source",
    "label": "https://atticinscriptions.com/inscription/CIDIII/1",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:atticinscriptions-com/7aee6abd11",
+   "type": "source",
+   "label": "https://atticinscriptions.com/inscription/CIDV/534?text_type=greek",
    "links": [
     "site:delphi"
    ],
@@ -3882,6 +3891,15 @@
    "from": "sources/ch76-olmec.md"
   },
   {
+   "id": "source:corpus-nummorum-eu/dafc63d7ad",
+   "type": "source",
+   "label": "https://www.corpus-nummorum.eu/coin-of-the-month/2022/3",
+   "links": [
+    "site:delphi"
+   ],
+   "from": "sources/pilgrimage-delphi.md"
+  },
+  {
    "id": "source:cpj-org/63c4c65a67",
    "type": "source",
    "label": "https://cpj.org/2013/08/magazine-editor-narenda-dabholkar-shot-dead-in-ind/",
@@ -4075,6 +4093,15 @@
    "id": "source:dainst-blog/80b52fa4d8",
    "type": "source",
    "label": "https://www.dainst.blog/the-tepe-telegrams/tag/quarries",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
+   "id": "source:dainst-blog/a8ffb106fb",
+   "type": "source",
+   "label": "https://dainst.blog/the-tepe-telegrams/?p=7401",
    "links": [
     "site:gobekli-tepe"
    ],
@@ -6016,15 +6043,6 @@
     "chapter:ch13"
    ],
    "from": "sources/ch13-rome.md"
-  },
-  {
-   "id": "source:en-wikipedia-org/507a143256",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Yucatec_Maya_people",
-   "links": [
-    "site:chichen-itza"
-   ],
-   "from": "sources/pilgrimage-chichen-itza.md"
   },
   {
    "id": "source:en-wikipedia-org/50b2ff3192",
@@ -11447,6 +11465,15 @@
    "from": "sources/ch82-akbar-mughal-synthesis.md"
   },
   {
+   "id": "source:livescience-com/5d8d1e1451",
+   "type": "source",
+   "label": "https://www.livescience.com/gobeklitepe-built-with-geometry.html",
+   "links": [
+    "site:gobekli-tepe"
+   ],
+   "from": "sources/pilgrimage-gobekli-tepe.md"
+  },
+  {
    "id": "source:livescience-com/796e8be0d4",
    "type": "source",
    "label": "https://www.livescience.com/55110-gospel-of-jesus-wife-a-fake.html",
@@ -11963,6 +11990,15 @@
    "id": "source:metmuseum-org/f8a6906778",
    "type": "source",
    "label": "https://www.metmuseum.org/essays/the-mesoamerican-ballgame",
+   "links": [
+    "site:chichen-itza"
+   ],
+   "from": "sources/pilgrimage-chichen-itza.md"
+  },
+  {
+   "id": "source:mexicodesconocido-com-mx/814ab49e8f",
+   "type": "source",
+   "label": "https://www.mexicodesconocido.com.mx/yucatan-pierde-hablantes-de-maya.html",
    "links": [
     "site:chichen-itza"
    ],

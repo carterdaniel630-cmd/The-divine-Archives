@@ -29,11 +29,12 @@ remains and no offerings are shown anywhere in the model.
   the Toltec question "one of the most contentious debates in Mesoamerican archaeology"; "it may actually have been
   Chichen Itza which influenced the Toltec rather than the reverse"; El Caracol reached by "a large flight of stairs on
   two levels". (It also gives the city flourishing c. 750–1200; not used.)
-- "Yucatec Maya people", Wikipedia, https://en.wikipedia.org/wiki/Yucatec_Maya_people : 1,646,782 ("Yucatec Mayans in Mexican territory", footnoted to an archived 2016 INEGI page that
-  was not opened (the archive site is blocked from the build environment); Wikipedia does not say whether the figure
-  counts speakers or self-identification; the card hedges it as "by one count"), in Yucatán,
-  Campeche, Quintana Roo and northern Belize. Replaces the old "six million … in the region" from ch29, which the
-  review found meant all Maya lands.
+- Maya speakers: "Yucatán pierde hablantes de maya", *México Desconocido* (6 July 2026),
+  https://www.mexicodesconocido.com.mx/yucatan-pierde-hablantes-de-maya.html : INEGI 2020 census, "519 mil 167
+  hablantes de maya en la entidad" (the state of Yucatán; the article does not give the ages counted). INEGI's own table
+  not opened. Replaces (late fix run 2026-10-25) the Wikipedia "Yucatec Maya people" figure of 1,646,782, whose INEGI
+  footnote could not be opened and whose year and basis were unclear; that replaced the old "six million … in the
+  region" from ch29, which meant all Maya lands.
 - V. Tiesler and V. E. Miller, "Heads, Skulls, and Sacred Scaffolds: New Studies on Ritual Body Processing and Display
   in Chichen Itza and Beyond", *Ancient Mesoamerica* 34.2 (2023), 563–585, https://doi.org/10.1017/S0956536120000450
   (abstract read on the Cambridge Core page): skull racks "where the heads of sacrificed victims would be exhibited"; skulls from Chichén with
@@ -134,3 +135,11 @@ sunset to Aveni; victims card gives de Anda's view that most were killed first; 
 "finest" dropped from the Dresden Codex card; skull-rack card sourced at Chichén; El Caracol's "two platforms" now
 "a stairway on two levels" (WHE); the cenote blurb says whose account the sacrifices rest on; Historia Mexicana
 author and year added. Not touched: `eras/07-high-medieval/ch29-maya-high-medieval.md:47` (outside this PR).
+
+
+## Late fix run 2026-10-25 (loop review of 0e74caa, Chichén findings 15–18)
+- Šprajc 2023 abstract (Ancient Mesoamerica): calls "unfounded" the idea "that many alignments recorded the Sun's
+  positions at the equinoxes"; "The most likely targets of the near-equinoctial orientations were the so-called quarter
+  days". Both cards now say this, not that equinoxes did not matter. Peabody: "Most of" the finds (Wikipedia, Sacred
+  Cenote: "Much of Thompson's findings … at the Peabody"). De Anda studied the 2,500 bones "retrieved in the 1960s"
+  (World Archaeology); he did not recover them.

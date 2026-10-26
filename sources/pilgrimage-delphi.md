@@ -11,8 +11,10 @@ be opened, so **where each building stands, the line of the Sacred Way (straight
 of every terrace are estimates**. The statues are plain stand-ins, and the lettering on the Polygonal Wall, the
 Athenian Treasury and the porch imitates the look of inscriptions, with three exceptions that are real wording: the
 two maxims; the hymn panel, the opening words of the first Delphic Hymn as edited (below); and the line repeated on the
-Polygonal Wall, which follows the manumission records' usual formula (sale of a body to Pythian Apollo, for freedom)
-but is not a transcription of any one record (its exact wording not yet checked against an edited record).
+Polygonal Wall, which follows the manumission formula of one edited record, CID V 534 (153/2–144/3 BCE; Attic
+Inscriptions Online, https://atticinscriptions.com/inscription/CIDV/534?text_type=greek: "ἀπέδοτο … τῶι Ἀπόλλωνι τῶι
+Πυθίωι σῶμα γυναικεῖον … ἐφ' ὧιτε ἐλευθέρα εἶμεν"), with the names left out, so it is not a transcription of the whole
+record. Its earlier ending "ΕΠ ΕΛΕΥΘΕΡΙΑΙ" was not found in any edited record and was replaced (late fix run 2026-10-25).
 
 ## Ancient texts
 - Pausanias, *Description of Greece* book 10, read at https://www.theoi.com/Text/Pausanias10A.html and
@@ -49,7 +51,9 @@ but is not a transcription of any one record (its exact wording not yet checked 
   Delphi", https://classics-at.chs.harvard.edu/the-hellenistic-hymns-to-apollo-with-musical-notation-from-delphi/
   ("Κέκλυθ' Ἑλικ" is restored; AIO's Greek also restores parts of Ἑλικῶνα, λάχετε, Διὸς, ἐριβρόμου and εὐώλενοι); translation after Attic Inscriptions Online, CID III 1,
   https://atticinscriptions.com/inscription/CIDIII/1 (date 128/7? BCE; Athenian Treasury south wall). The
-  "earliest notated music with a named composer" line was dropped (review 2026-10-25: not in the sources). Ancient Music at Oxford, programme notes,
+  "earliest notated music with a named composer" line was dropped (the Oxford page does say "one of the earliest pieces
+  of music that can be attributed to a specific composer", but Wikipedia makes it conditional on the dating, so the card
+  leaves it out rather than state it without the condition). Ancient Music at Oxford, programme notes,
   https://ancientmusicoxford.site.ox.ac.uk/programme-notes (dates the Paean of Athenaios c. 128/7 BCE). The card
   gives both.
 - Manumission inscriptions (about 1,300, mostly 200 BCE–100 CE, many on the Polygonal Wall behind the stoa; the
@@ -101,3 +105,10 @@ but is not a transcription of any one record (its exact wording not yet checked 
 - Not yet confirmed from a source: the height of the temple's columns (APPROX after comparable Doric temples) and the
   ramp at its east front (shown on published plans, not measured here).
 - **Review fixes (2026-10-12):** the hall card no longer says the hearth fire was fed with pine wood (Pausanias names the hearth, not its fuel); the vapours card names Etiope and Papatheodorou together rather than saying who led the 2006 team; the Athenian Treasury's disputed date (about 510–480 BCE) now cites the Museum of Classical Archaeology, Cambridge, https://museum.classics.cam.ac.uk/node/3539 (opened).
+
+## Late fix run 2026-10-25 (loop review of 0e74caa, Delphi findings 10–13)
+- Omphalos: "a net of woollen bands, with two golden eagles" was not in Pausanias 10.16.3. Now: Strabo 9.3.6 (navel
+  wrapped in bands; the eagles myth, after Pindar), checked through Corpus Nummorum's summary,
+  https://www.corpus-nummorum.eu/coin-of-the-month/2022/3 (Strabo's own text not opened); the woollen mesh only as
+  Wikipedia's "it is possible". Gas card: "were unlikely to produce", matching the 2006 abstract ("not prone to …").
+

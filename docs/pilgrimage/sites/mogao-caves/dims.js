@@ -28,7 +28,7 @@ D.pav = { x0: 0, x1: 12.0, z0: -12.6, z1: 12.6, storeys: 9, h: 44 };
 // ---- Cave 96: the seated Maitreya, 35.5 m (SURVEY: China Daily 2025; other sources give 34–35.5 m), begun 695
 D.c96 = { x0: -25, x1: 0, z0: -8.5, z1: 8.5, h: 38, buddhaH: 35.5, statueX: -14 };
 
-// ---- Cave 16 (late Tang) and its corridor; Cave 17 opens off the corridor's north wall (SURVEY: e-Dunhuang).
+// ---- Cave 16 and its corridor; Cave 17 opens off the corridor's north wall (SURVEY: e-Dunhuang).
 // Every size APPROX.
 D.c16 = { z: 50, corrX0: -8, corrW: 2.6, corrH: 4.2, x0: -22, x1: -8, z0: 43, z1: 57, h: 8.5, altar: { x0: -18, x1: -12, z0: 46.5, z1: 53.5, h: 0.9 } };
 D.c17 = { x0: -4.6, x1: -1.6, z0: 45.4, z1: 48.4, h: 3.0, door: { x0: -3.6, x1: -2.6, h: 1.9 }, stele: { h: 1.5, w: 0.7 } };   // a small square room (size APPROX); the stele about 1.5 × 0.7 m (SURVEY: e-Dunhuang)

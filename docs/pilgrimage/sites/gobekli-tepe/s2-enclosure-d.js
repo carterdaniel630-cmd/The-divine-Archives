@@ -1,6 +1,6 @@
 /* II · Enclosure D: the ring wall with its bench, eleven pillars set into it facing in, the Vulture Stone
    (Pillar 43) among them, and the central pair, Pillars 18 and 31, standing on the smoothed bedrock with
-   arms, hands, belts and fox pelts carved on them. Positions APPROX (layout.js); the carvings are our own
+   arms, hands, belts and loincloths carved on them. Positions APPROX (layout.js); the carvings are our own
    simplified renderings (pillars.js). */
 import * as THREE from "three";
 import site from "./site.js?v=1";
@@ -32,7 +32,7 @@ export function build(ctx) {
   finish(ctx, F, { f: bedrock }, ["f"]);
   finish(ctx, W, { w: wallM }, []);
   finish(ctx, Pl, { p: pillarM }, []);
-  // the central pair: arms down the broad sides, hands, belt and fox pelt on the front, symbols under the head
+  // the central pair: arms down the broad sides, hands, belt and loincloth on the front
   const top = D.central.h - D.central.headH - 0.25, ph = 2.6, cy = top - ph / 2;
   for (const p of pd.central) {
     relief(ctx, arm(true), Object.assign({ w: p.L, h: ph }, facePos(p, "right", cy)));

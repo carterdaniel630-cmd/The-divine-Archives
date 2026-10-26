@@ -89,8 +89,9 @@ export function arm(flip) {
     g.save(); g.globalCompositeOperation = "destination-out"; for (let i = 0; i < 6; i++) g.fillRect(W * (0.05 + i * 0.16), H * 0.575, W * 0.07, H * 0.025); g.restore();
   };
 }
-// the front: the fingers of two hands meeting, a belt, and a fox pelt hanging from it; symbols where a necklace would be
-export function front(sym) {
+// the front: the fingers of two hands meeting, a belt, and a loincloth below it (DAI FAQ: "hands resting on a belt
+// with a loin cloth"). An earlier version drew a fox pelt and necklace symbols here; no checked source gives them.
+export function front(_sym) {   // the argument is kept so callers need not change
   return (g, W, H) => {
     // the hands: four fingers each, meeting in the middle above the belt
     lw(g, W, 0.07);
@@ -98,16 +99,9 @@ export function front(sym) {
     // the belt, with a pattern of linked bands
     g.fillRect(0, H * 0.56, W, H * 0.06);
     g.save(); g.globalCompositeOperation = "destination-out"; for (let i = 0; i < 5; i++) g.fillRect(W * (0.08 + i * 0.19), H * 0.575, W * 0.08, H * 0.025); g.restore();
-    // the pelt: a fox hanging head-down from the belt, its tail between its hind legs
-    g.beginPath(); g.ellipse(W * 0.5, H * 0.72, W * 0.13, H * 0.09, 0, 0, Math.PI * 2); g.fill();
-    g.beginPath(); g.moveTo(W * 0.42, H * 0.8); g.lineTo(W * 0.5, H * 0.9); g.lineTo(W * 0.58, H * 0.8); g.closePath(); g.fill();   // the head, down
-    lw(g, W, 0.05); for (const sx of [-1, 1]) { g.beginPath(); g.moveTo(W * (0.5 + sx * 0.1), H * 0.66); g.lineTo(W * (0.5 + sx * 0.2), H * 0.63); g.stroke(); g.beginPath(); g.moveTo(W * (0.5 + sx * 0.1), H * 0.78); g.lineTo(W * (0.5 + sx * 0.19), H * 0.83); g.stroke(); }
-    if (sym) {
-      // under the head: a band like a necklace, with a crescent and a small disc (simplified)
-      lw(g, W, 0.04); g.beginPath(); g.moveTo(W * 0.12, H * 0.06); g.quadraticCurveTo(W * 0.5, H * 0.2, W * 0.88, H * 0.06); g.stroke();
-      g.beginPath(); g.arc(W * 0.5, H * 0.24, W * 0.12, 0.15 * Math.PI, 0.85 * Math.PI); g.stroke();
-      g.beginPath(); g.arc(W * 0.5, H * 0.17, W * 0.05, 0, Math.PI * 2); g.fill();
-    }
+    // the loincloth: a plain cloth hanging from the belt, outlined
+    lw(g, W, 0.05);
+    g.beginPath(); g.moveTo(W * 0.36, H * 0.62); g.lineTo(W * 0.32, H * 0.86); g.lineTo(W * 0.68, H * 0.86); g.lineTo(W * 0.64, H * 0.62); g.stroke();
   };
 }
 // a fox in mid-leap, teeth bared (the commonest animal in Enclosure D, with the snake)
