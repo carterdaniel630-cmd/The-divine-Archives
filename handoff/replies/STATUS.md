@@ -385,7 +385,7 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 
 ## For Muse (read this first)
 - **Armory batch 1 received** (2026-10-26, `handoff/armory/batch-01/`). Thank you. **Share images** received too.
-- **Pilgrimage thread:** PR #53 had Carter's go for `aa7081d`; pushing `67aabf1` after it reset the go. Please don't
+- **Pilgrimage thread:** PR #53 had Carter's go for `aa7081d`; pushing `67aabf1`, then `68b7b03`, after it reset the go twice. Please don't
   push site changes to a PR between its go and its merge; send them to the loop as a follow-up instead.
 - **Journal hero images received** (2026-10-25, `handoff/journal-hero-b64/`, as base64 text). Thank you; nothing more
   needed unless the rebuild finds a problem with them.
@@ -401,13 +401,12 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1d. ~~**PR #86**~~ **merged 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b` (Carter's yes
    `decisions-2026-10-25-pr86-go.md`; 6/6 checks green incl. Lighthouse; local checks + headless 96 opens green; deploy 214 green).
    Reply `2026-10-25-pr86-merged.md`.
-1e. **PR #53 (Pilgrimage batch 1) — head now `67aabf1`; waits on Carter's yes for it.** Carter's go covered `aa7081d`
-   only. At 01:00 UTC the Pilgrimage thread pushed `67aabf1` (Delphi theatre/stadium figures both ways, Mogao "moved
-   here", Göbekli Pillar 43 citation; 8 files, site + sources). LOOP Merging 0 and 5 fail, so no merge. This run's
-   independent review of `cafa1af..67aabf1`: PASS, 0 findings (sources opened); 9/9 GitHub checks green on `67aabf1`
-   incl. Lighthouse; local checks + 30 headless opens green (`2026-10-26-pr53-review-67aabf1.md`). **When Carter says
-   yes for `67aabf1`:** re-confirm head unchanged and checks green, fast-forward `main` `3785b2b` → `67aabf1`, watch
-   deploy, update CURRENT and MERGEABLE, tell Carter. If the head moves again, review the new delta first.
+1e. **PR #53 (Pilgrimage batch 1) — head now `68b7b03`; Carter said A (merge) for `67aabf1`; needs his confirm for `68b7b03`.**
+   Carter's "a" (`decisions-2026-10-26-pr53-option-a-67aabf1.md`) came 2 min after the Pilgrimage thread pushed `68b7b03`
+   (Delphi altar citation's real page title; 1 line + source log). Delta reviewed: PASS (page title and quote checked on
+   people.hsc.edu). Local checks + 30 headless opens green on `68b7b03`; GitHub checks 8/9 green, Lighthouse running
+   (started 02:46). **When Carter confirms `68b7b03` and Lighthouse is green:** re-confirm head, fast-forward `main`
+   `3785b2b` → `68b7b03`, watch deploy, update CURRENT and MERGEABLE, tell Carter. If the head moves again, review first.
    Outside the PR, own pass later: `ch29` line 47 asserts equinox design intent.
 1g. **Site-audit fixes** (Carter's order, `decisions-2026-10-25-audit-fixes-go.md`, list `audit-fixes-2026-10-25.md`):
    Fix 1 README (pending 18, Vault 87, Pilgrimage 3, share-image sentence) first; Fixes 2+3 ch19 together; Fix 5 era
@@ -453,8 +452,6 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- **PR #53 (Pilgrimage batch 1): merge the new head `67aabf1`?** After your go, the Pilgrimage thread added small
-  corrections (Delphi theatre and stadium figures now given both ways, two wording fixes, one new citation). Reviewed:
-  PASS, all checks green. **A) Yes, merge `67aabf1`** (recommended) · **B) Merge the version you approved, without
-  these corrections** · **C) Hold.**
-Answered: every decisions file to date, incl. `decisions-2026-10-25-audit-fixes-go.md`, `decisions-2026-10-25-pr53-merge-go.md`.
+- **PR #53:** the Pilgrimage thread added one more tiny fix just before your "a" (the real title of one source on the
+  Delphi altar card). Checked, passes. **Yes, include it and merge** · **Hold.**
+Answered: every decisions file to date, incl. `decisions-2026-10-26-pr53-option-a-67aabf1.md`, `decisions-2026-10-25-audit-fixes-go.md`.
