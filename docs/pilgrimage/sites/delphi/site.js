@@ -53,7 +53,7 @@ const REF = {
   mocStadium: "Hellenic Ministry of Culture, &ldquo;Stadium&rdquo; (delphi.culture.gr)",
   anasyn: "Anasynthesis, &ldquo;Temple of Apollo, Delphi&rdquo; (anasynthesis.co.uk)",
   wikiTemples: "Wikipedia, &ldquo;List of ancient Greek temples&rdquo; (the temple&rsquo;s size)",
-  hsc: "Hampden-Sydney College classics pages, &ldquo;Delphi: Temple of Apollo&rdquo; (people.hsc.edu)",
+  hsc: "&ldquo;Dr. J&rsquo;s Illustrated Temple of Apollo at Delphi&rdquo;, <em>Dr J&rsquo;s Audio-Visual Resources for Classics</em> (Hampden-Sydney College; people.hsc.edu)",
   wikiStadium: "Wikipedia, &ldquo;Stadium of Delphi&rdquo; (track length and capacity)",
   wikiOmph: "Wikipedia, &ldquo;Omphalos of Delphi&rdquo; (the museum stone, original or copy)",
   unesco: "UNESCO World Heritage Centre, &ldquo;Archaeological Site of Delphi&rdquo; (site 393, inscribed 1987)",

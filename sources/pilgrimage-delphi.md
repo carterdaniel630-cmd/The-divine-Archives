@@ -104,7 +104,9 @@ record. Its earlier ending "ΕΠ ΕΛΕΥΘΕΡΙΑΙ" was not found in any edit
   Cards now credit the stadium figures to Odyssey Adventures and Wikipedia, and the omphalos (original or copy) to
   Wikipedia, as this log already said, not to the Ministry.
 - UNESCO World Heritage Centre, "Archaeological Site of Delphi", https://whc.unesco.org/en/list/393
-- The altar restored in 1920 with Chian help: https://people.hsc.edu/drjclassics/sites/delphi/temple.shtm
+- The altar restored in 1920 with Chian help ("restored in 1920 by their modern descendants"): "Dr. J's Illustrated
+  Temple of Apollo at Delphi", *Dr J's Audio-Visual Resources for Classics* (Hampden-Sydney College),
+  https://people.hsc.edu/drjclassics/sites/delphi/temple.shtm
 
 ## Notes for review
 - **ch08 error:** the chapter on early Greece says the omphalos was "inscribed with the maxims *know thyself* and
