@@ -623,9 +623,11 @@
    "type": "site",
    "label": "Newgrange",
    "era": "01-prehistory",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/newgrange.html",
    "links": [
-    "chapter:ch42"
+    "chapter:ch42",
+    "relic:v86"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
