@@ -1,11 +1,19 @@
-# Handoff — updated 2026-10-25 (18:50 UTC)
+# Handoff — updated 2026-10-26 (03:15 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: arcade tap targets part 1 is on the live site (2026-10-25)
+## Latest: Pilgrimage batch 1 is on the live site as preview (2026-10-26)
+- **PR #53** merged 03:07 UTC by fast-forward `3785b2b` → `68b7b03` (deploy run 215 green). Carter's per-item yes for `68b7b03`
+  (`decisions-2026-10-26-pr53-option-a-67aabf1.md`, live "a" then "yes"); independent reviews PASS
+  (`replies/2026-10-26-pr53-final-independent-review.md`, `replies/2026-10-26-pr53-review-67aabf1.md` + addendum); 9/9 checks
+  green incl. Lighthouse; local checks + 30 headless opens green. Göbekli Tepe, Delphi, Mogao Caves and Chichén Itzá are
+  walkable **preview** pages (noindex, off the menu, "pending full review" tag on). Still open from its notes: ch08 omphalos
+  maxims, ch29 equinox intent, ch42 backfill claim (chapter corrections, separate items).
+
+## Earlier: arcade tap targets part 1 is on the live site (2026-10-25)
 - **PR #86** merged 18:45 UTC by fast-forward `45d4a95` → `3785b2b` (deploy run 214 green). Carter's per-item yes
   `decisions-2026-10-25-pr86-go.md`; independent review 0 findings; 6/6 checks green incl. Lighthouse. On touch phones every
   game's Close, Full-screen and main text buttons take a 44 px tap; desktop unchanged. Reply `replies/2026-10-25-pr86-merged.md`.

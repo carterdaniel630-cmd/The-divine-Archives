@@ -4,17 +4,16 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-26 ~02:55 UTC (#53 row updated by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-26 ~03:15 UTC (#53 merged by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `68b7b03` (PR #53, Pilgrimage batch 1 preview, fast-forwarded by the loop 03:07 UTC, deploy 215 green; before it `3785b2b`, PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`, head **`68b7b03`**): Carter's "a" for `67aabf1`
-  (`decisions-2026-10-26-pr53-option-a-67aabf1.md`); `68b7b03` (02:46, citation title only) reviewed PASS; local checks +
-  30 headless opens green; 8/9 GitHub checks green. **Missing:** Carter's confirm for `68b7b03`; Lighthouse on `68b7b03`.
-
 ## Merged
+- Pilgrimage batch 1 (PR #53): **merged by the loop 2026-10-26 03:07 UTC** by fast-forward `3785b2b` → `68b7b03`
+  (Carter's per-item yes for `68b7b03`, `decisions-2026-10-26-pr53-option-a-67aabf1.md`; reviews PASS; 9/9 checks green incl.
+  Lighthouse; local checks + 30 headless opens green; deploy run 215 green).
 - Arcade tap targets, part 1 (PR #86): **merged by the loop 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b`
   (Carter's per-item yes `decisions-2026-10-25-pr86-go.md`; review `2026-10-25-pr86-independent-review.md`, 0 findings; 6/6 checks
   green incl. Lighthouse; local checks + headless 96 opens re-run green on `3785b2b`; deploy run 214 green).
