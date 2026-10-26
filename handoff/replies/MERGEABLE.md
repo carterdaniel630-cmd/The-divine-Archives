@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 ~23:55 UTC (#53 row updated by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-26 ~00:25 UTC (#53 row updated by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
@@ -15,8 +15,9 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   whose own round-4 review of `0e74caa` says PASS and whose MERGEABLE row (on the PR branch only, `13fa2dc`) cites
   Carter's "merge". **The loop's independent review of the same `0e74caa` (23:55, `2026-10-25-pr53-review-0e74caa.md`)
   is NOT passed: 27 small fixable findings, 0 for Carter, no fake source.** Local checks green; 7/7 GitHub checks green
-  on `13fa2dc`, no Lighthouse run listed. **Missing:** those fixes; a final review by a run that made none of them; a
-  Lighthouse run green on that head; Carter's yes for that head (his "merge" was given for an earlier state).
+  on `13fa2dc`, no Lighthouse run listed. **Carter chose option A** (`decisions-2026-10-25-pr53-option-a.md`); the 27 were **fixed in `373efff`** (00:25
+  2026-10-26, `2026-10-26-pr53-fixes-27.md`). **Missing:** a final independent review of `373efff` by a run that made
+  none of the fixes; a Lighthouse run green on that head; Carter's yes for that head.
   Note: the PR branch's `handoff/replies/2026-10-25-pr53-independent-review.md` has the same name as the staging
   file but different content. Reconcile it before any handoff merge.
 
