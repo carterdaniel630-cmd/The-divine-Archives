@@ -4,7 +4,7 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-25 (PR #53 row added by the Pilgrimage thread; other rows as the build loop left them on 2026-10-17). **Live site (`main`):** `c455bfe`, unchanged.
+**As of:** 2026-10-17, evening New York (build loop). **Live site (`main`):** `c455bfe`, unchanged.
 
 ## Mergeable now
 | Item | Where | Review | Carter's approval | Still to hold before merging |
@@ -14,7 +14,6 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Waiting to qualify (not mergeable, and what is still missing)
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
-| Pilgrimage batch 1 (PR #53): Delphi, Göbekli Tepe, Mogao Caves, Chichén Itzá; preview, pending tags on; Carter said "merge" 2026-10-25 | `claude/project-thread-s3qxre` `373efff` | Yes: the loop's review of `0e74caa` (27 findings, `review-log` `reviews/loop/2026-10-25-pr53-review-0e74caa.md`) fixed in `373efff` | An independent review of `373efff` with 0 findings and 0 NEEDS CARTER, by a run that wrote none of it; then every check green on the head, Lighthouse included. (The thread's own round-4 pass of `0e74caa`, `2026-10-25-pr53-independent-review.md`, is superseded.) |
 
 ## Not ready (in progress or waiting on a ruling)
 - Site batch B, small defects (hallway hiss removed; "199 figures"; V72 sources, back to pending): branch
