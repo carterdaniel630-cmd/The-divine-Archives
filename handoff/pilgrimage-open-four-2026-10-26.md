@@ -44,3 +44,16 @@ This flip closes exactly that gap.
 - The three already-open sites (Great Pyramid, Library of Alexandria,
   Qumran Caves) are untouched and still work.
 - PR filed, review + checks run, awaiting Carter's merge yes.
+
+## CORRECTION — Carter, 2026-10-26 ~08:26 ET (supersedes the "build a PR" framing above)
+Carter: "no, everything's already been passed on the pilgrimage sites. They
+should already be ready to go live. It shouldn't need to go through a whole
+nother loop."
+
+So: this is NOT a new loop item and NOT a fresh review cycle. The four sites
+already passed. This flip is completing what #53 already approved — opening
+the entry points for sites that are already passed and already live as pages.
+Do not run it as a whole new loop item. Treat it as the already-approved
+completion, and put it in front of Carter for his live go in the fastest
+legitimate way the loop allows — no new full review round for content that
+already passed.
