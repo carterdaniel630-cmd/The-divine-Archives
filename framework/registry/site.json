@@ -21,11 +21,13 @@
    "type": "site",
    "label": "Angkor Wat",
    "era": "07-high-medieval",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/angkor-wat.html",
    "links": [
     "chapter:ch20",
     "chapter:ch30",
-    "chapter:ch69"
+    "chapter:ch69",
+    "relic:v27"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -91,10 +93,12 @@
    "type": "site",
    "label": "Borobudur",
    "era": "06-early-medieval",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/borobudur.html",
    "links": [
     "chapter:ch20",
-    "chapter:ch53"
+    "chapter:ch53",
+    "relic:v46"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -668,7 +672,8 @@
    "type": "site",
    "label": "Persepolis",
    "era": "04-axial-age",
-   "status": "queued",
+   "status": "preview",
+   "href": "pilgrimage/persepolis.html",
    "links": [
     "chapter:ch06",
     "chapter:ch49",

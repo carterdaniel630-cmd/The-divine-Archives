@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1938,
+ "count": 1959,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -850,6 +850,15 @@
    "from": "sources/pilgrimage-great-pyramid.md"
   },
   {
+   "id": "source:arxiv-org/92ad8d054b",
+   "type": "source",
+   "label": "https://arxiv.org/abs/1712.06486",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
+  },
+  {
    "id": "source:arxiv-org/afd71b2899",
    "type": "source",
    "label": "https://arxiv.org/abs/1307.8397",
@@ -866,6 +875,15 @@
     "relic:v01"
    ],
    "from": "sources/v01-voynich-manuscript.md"
+  },
+  {
+   "id": "source:asia-archive-si-edu/5a84dd37c1",
+   "type": "source",
+   "label": "https://asia-archive.si.edu/a-colorful-past",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
   },
   {
    "id": "source:asia-archive-si-edu/a2c70badcc",
@@ -893,6 +911,15 @@
     "chapter:ch82"
    ],
    "from": "sources/ch82-akbar-mughal-synthesis.md"
+  },
+  {
+   "id": "source:asianews-network/4c9e6078cc",
+   "type": "source",
+   "label": "https://asianews.network/?p=89990",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
   },
   {
    "id": "source:asor-org/e851df17ed",
@@ -2479,6 +2506,15 @@
     "chapter:ch02"
    ],
    "from": "sources/ch02-egypt.md"
+  },
+  {
+   "id": "source:britannica-com/a858c0d869",
+   "type": "source",
+   "label": "https://www.britannica.com/topic/Borobudur",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
   },
   {
    "id": "source:britannica-com/aaeb614e2b",
@@ -4884,6 +4920,15 @@
    "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
+   "id": "source:ece-lsu-edu/b313bd3eb0",
+   "type": "source",
+   "label": "https://www.ece.lsu.edu/kak/ang3.pdf",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
+  },
+  {
    "id": "source:egypt-museum-com/7a1442f20c",
    "type": "source",
    "label": "https://egypt-museum.com/victory-stele-of-merneptah/",
@@ -4918,6 +4963,24 @@
     "chapter:ch46"
    ],
    "from": "sources/ch46-creation.md"
+  },
+  {
+   "id": "source:ejournal-brin-go-id/92af4dcbd3",
+   "type": "source",
+   "label": "https://ejournal.brin.go.id/amerta/article/view/3400",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
+  },
+  {
+   "id": "source:en-apu-ac-jp/0acf33b8ca",
+   "type": "source",
+   "label": "https://en.apu.ac.jp/rcaps/uploads/fckeditor/publications/workingPapers/RCAPS_Occasional_Paper_07-5.pdf",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
   },
   {
    "id": "source:en-ise-kanko-jp/fa47a8ad31",
@@ -10455,6 +10518,15 @@
    "from": "sources/ch80-shiism.md"
   },
   {
+   "id": "source:iranicaonline-org/78bee24b2f",
+   "type": "source",
+   "label": "https://iranicaonline.org/articles/persepolis",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
+  },
+  {
    "id": "source:iranicaonline-org/7b1b32bd63",
    "type": "source",
    "label": "https://www.iranicaonline.org/articles/hosayn-b-ali-i",
@@ -10579,6 +10651,15 @@
     "chapter:ch68"
    ],
    "from": "sources/ch68-nubia-kush.md"
+  },
+  {
+   "id": "source:isac-uchicago-edu/d7531b0deb",
+   "type": "source",
+   "label": "https://isac.uchicago.edu/node/2474",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
   },
   {
    "id": "source:iskcon-org/1f94e83980",
@@ -11528,6 +11609,15 @@
    "from": "sources/ch77-etruscans.md"
   },
   {
+   "id": "source:livius-org/50a761b3ae",
+   "type": "source",
+   "label": "https://www.livius.org/articles/place/persepolis/persepolis-photos/persepolis-gate-of-all-nations/",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
+  },
+  {
    "id": "source:livius-org/767401cc44",
    "type": "source",
    "label": "https://www.livius.org/articles/misc/great-flood/flood2/",
@@ -11553,6 +11643,15 @@
     "site:delphi"
    ],
    "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:livius-org/db234ed1ba",
+   "type": "source",
+   "label": "https://www.livius.org/sources/content/achaemenid-royal-inscriptions/xpa/",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
   },
   {
    "id": "source:livius-org/ed664016a7",
@@ -12867,6 +12966,15 @@
     "chapter:ch27"
    ],
    "from": "sources/ch27-sufism.md"
+  },
+  {
+   "id": "source:nino-leiden-nl/70887d2e25",
+   "type": "source",
+   "label": "https://nino-leiden.nl/publication/the-other-gods-who-are",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
   },
   {
    "id": "source:njop-org/c798ecaa2a",
@@ -14844,6 +14952,15 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:sciencenews-org/097f0c2c9a",
+   "type": "source",
+   "label": "https://www.sciencenews.org/article/lasers-unveil-secrets-and-mysteries-angkor-wat",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
+  },
+  {
    "id": "source:scotsman-com/2801d520f4",
    "type": "source",
    "label": "https://www.scotsman.com/news/crime/egypt-warns-national-museum-of-scotland-pyramid-stone-exhibit-may-be-illegal-1423746",
@@ -15807,6 +15924,15 @@
    "from": "sources/ch02-egypt.md"
   },
   {
+   "id": "source:theangkorguide-com/ce56def0bd",
+   "type": "source",
+   "label": "https://www.theangkorguide.com/text/part-two/angkorwat-to-angkorthom/angkorwat.htm",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
+  },
+  {
    "id": "source:thearchaeologist-org/a0276a8263",
    "type": "source",
    "label": "https://www.thearchaeologist.org/blog/aztec-human-sacrifice-separating-propaganda-from-archaeological-fact",
@@ -15988,6 +16114,15 @@
    "from": "sources/ch30-bhakti.md"
   },
   {
+   "id": "source:thejakartapost-com/66d49c7edd",
+   "type": "source",
+   "label": "https://www.thejakartapost.com/news/2014/08/23/police-alert-over-threat-borobudur.html",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
+  },
+  {
    "id": "source:themathesontrust-org/faf109ba54",
    "type": "source",
    "label": "https://www.themathesontrust.org/papers/judaism/saadia.pdf",
@@ -16121,6 +16256,15 @@
     "chapter:ch53"
    ],
    "from": "sources/ch53-tibetan-vajrayana-buddhism.md"
+  },
+  {
+   "id": "source:timeshighereducation-com/236f91b1fa",
+   "type": "source",
+   "label": "https://www.timeshighereducation.com/node/86643",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
   },
   {
    "id": "source:timeshighereducation-com/802cd23b3e",
@@ -16627,6 +16771,15 @@
    "from": "sources/ch71-korea.md"
   },
   {
+   "id": "source:whc-unesco-org/0f8f28d630",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/114",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
+  },
+  {
    "id": "source:whc-unesco-org/1e84c47942",
    "type": "source",
    "label": "https://whc.unesco.org/en/list/393",
@@ -16768,6 +16921,15 @@
    "from": "sources/ch79-first-christian-kingdoms.md"
   },
   {
+   "id": "source:whc-unesco-org/b67771160e",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/592",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
+  },
+  {
    "id": "source:whc-unesco-org/ba548b2b56",
    "type": "source",
    "label": "https://whc.unesco.org/en/list/1572",
@@ -16820,6 +16982,15 @@
     "relic:v60"
    ],
    "from": "sources/v60-gobekli-tepe.md"
+  },
+  {
+   "id": "source:whc-unesco-org/e918dba81a",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/668",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
   },
   {
    "id": "source:whc-unesco-org/eb15f12569",
@@ -17002,6 +17173,15 @@
    "from": "sources/v55-oracle-bones-of-anyang.md"
   },
   {
+   "id": "source:worldhistory-org/39dd648126",
+   "type": "source",
+   "label": "https://www.worldhistory.org/Borobudur/",
+   "links": [
+    "site:borobudur"
+   ],
+   "from": "sources/pilgrimage-borobudur.md"
+  },
+  {
    "id": "source:worldhistory-org/438a62e026",
    "type": "source",
    "label": "https://www.worldhistory.org/Temple_at_Uppsala/",
@@ -17054,6 +17234,15 @@
     "chapter:ch06"
    ],
    "from": "sources/ch06-zoroaster.md"
+  },
+  {
+   "id": "source:worldhistory-org/5e1d419c83",
+   "type": "source",
+   "label": "https://www.worldhistory.org/persepolis/",
+   "links": [
+    "site:persepolis"
+   ],
+   "from": "sources/pilgrimage-persepolis.md"
   },
   {
    "id": "source:worldhistory-org/63f33f2acd",
