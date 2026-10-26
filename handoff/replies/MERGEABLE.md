@@ -4,18 +4,17 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-26 ~01:05 UTC (#53 row updated by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-26 ~03:10 UTC (#53 row updated by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
 - (none: everything below is missing something)
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`, head `cafa1af`): **Carter's per-item go** for
-  `aa7081d` (`decisions-2026-10-25-pr53-merge-go.md`); final independent review of `aa7081d` PASS, 0 findings
-  (`2026-10-26-pr53-final-independent-review.md`); 8/8 checks green on `aa7081d` incl. Lighthouse; handoff files
-  reconciled in `cafa1af` (handoff only: MERGEABLE.md back to main's text, thread review renamed
-  `2026-10-25-pr53-thread-round4-review-0e74caa.md`); local checks + 56 headless opens green on `cafa1af`
-  (`2026-10-26-pr53-merge-gates.md`). **Missing only:** every GitHub check on `cafa1af` completed and green.
+- **Pilgrimage batch 1** (PR #53, `claude/project-thread-s3qxre`, head **`67aabf1`**): Carter's go
+  (`decisions-2026-10-25-pr53-merge-go.md`) covered `aa7081d` only; `67aabf1` (01:00 UTC, Pilgrimage thread) adds site
+  corrections after it. Independent review of `cafa1af..67aabf1` PASS, 0 findings; 9/9 checks green incl. Lighthouse;
+  local checks + 30 headless opens green (`2026-10-26-pr53-review-67aabf1.md`; earlier gates `2026-10-26-pr53-merge-gates.md`).
+  **Missing only:** Carter's per-item yes for `67aabf1`.
 
 ## Merged
 - Arcade tap targets, part 1 (PR #86): **merged by the loop 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b`

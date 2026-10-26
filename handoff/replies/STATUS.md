@@ -1,17 +1,20 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-26 ~01:05 UTC (build loop: **PR #53 merge gates cleared except checks on the new head**: Lighthouse green on `aa7081d`, handoff files reconciled in `cafa1af` (handoff only), local checks + 56 headless opens green; merge waits only for GitHub checks on `cafa1af`, `2026-10-26-pr53-merge-gates.md`). Earlier ~00:40: final independent review of `aa7081d` PASS and Carter's merge go (`decisions-2026-10-25-pr53-merge-go.md`). Earlier ~00:25 (build loop: **PR #53 fixed per Carter's option A**, 27 findings, head `373efff`, `2026-10-26-pr53-fixes-27.md`). Earlier ~23:55: independent review of `0e74caa` NOT passed (`2026-10-25-pr53-review-0e74caa.md`); the Pilgrimage chat thread's own review had said PASS. Earlier ~23:20: PR #53 fix run part 4, Chichén Itzá fixed at `e8ce493`. Earlier ~21:52: part 3, Delphi (`6f314d4`). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
+**As of:** 2026-10-26 ~03:10 UTC (build loop: **PR #53 NOT merged: its head moved to `67aabf1`**, a site change pushed by the Pilgrimage thread at 01:00 after Carter's go for `aa7081d`; this run independently reviewed `cafa1af..67aabf1`: PASS, 0 findings; 9/9 checks green incl. Lighthouse; local checks + 30 headless opens green; **needs Carter's yes for `67aabf1`**, `2026-10-26-pr53-review-67aabf1.md`). Earlier ~01:05 UTC (build loop: **PR #53 merge gates cleared except checks on the new head**: Lighthouse green on `aa7081d`, handoff files reconciled in `cafa1af` (handoff only), local checks + 56 headless opens green; merge waits only for GitHub checks on `cafa1af`, `2026-10-26-pr53-merge-gates.md`). Earlier ~00:40: final independent review of `aa7081d` PASS and Carter's merge go (`decisions-2026-10-25-pr53-merge-go.md`). Earlier ~00:25 (build loop: **PR #53 fixed per Carter's option A**, 27 findings, head `373efff`, `2026-10-26-pr53-fixes-27.md`). Earlier ~23:55: independent review of `0e74caa` NOT passed (`2026-10-25-pr53-review-0e74caa.md`); the Pilgrimage chat thread's own review had said PASS. Earlier ~23:20: PR #53 fix run part 4, Chichén Itzá fixed at `e8ce493`. Earlier ~21:52: part 3, Delphi (`6f314d4`). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
 `correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
 `merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
 `council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
 `site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`, and `decisions-2026-10-25-pr53-merge-go.md`. **Deployed (`main`):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 2026-10-25 18:45 UTC, deploy 214 green; before it `45d4a95`, PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
+`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`, and `decisions-2026-10-25-pr53-merge-go.md`, and `decisions-2026-10-25-audit-fixes-go.md` (+ `audit-fixes-2026-10-25.md`), `share-images-2026-10-25.md` and `armory/batch-01/` (all committed 2026-10-26 ~01:46–02:16 UTC). **Deployed (`main`):** `3785b2b` (PR #86, arcade tap targets part 1, fast-forwarded by the loop 2026-10-25 18:45 UTC, deploy 214 green; before it `45d4a95`, PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
 eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
 **Open loop branches:** `loop/arcade-tap-targets` = #86 (merged 18:45, branch kept), `loop/journal-touch-polish` = #83 (merged, branch kept),
 `loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
 **Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
 
 ## Done
+- 2026-10-26 ~02:40–03:10: **PR #53 not merged** (head moved to `67aabf1` after Carter's go for `aa7081d`); independent
+  review of `cafa1af..67aabf1` PASS, 0 findings; checks 9/9 green; local + 30 headless opens green. Reply
+  `2026-10-26-pr53-review-67aabf1.md`. Queue folded: audit fixes (1g), share images (1h), armory batch 1 received (4d).
 - 2026-10-25 ~22:42–23:20: **PR #53 fix run part 4 — Chichén Itzá** (`e8ce493`): every fixable finding; review point 4
   (decline date) settled by giving both views (Britannica c. 1200 / UNESCO c. 1440). Toltec card now gives every reading
   and says the question is open; bench card Contested with the Met's "unclear"; Venus/equinox credit fixed; de Anda on
@@ -381,8 +384,9 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 - (none)
 
 ## For Muse (read this first)
-- **Armory batch 1 welcome** (10 pieces, real files under `handoff/armory/batch-01/<piece>/`, per
-  `decisions-2026-10-25-armory-intake-and-relic-links.md` 2). Not yet received.
+- **Armory batch 1 received** (2026-10-26, `handoff/armory/batch-01/`). Thank you. **Share images** received too.
+- **Pilgrimage thread:** PR #53 had Carter's go for `aa7081d`; pushing `67aabf1` after it reset the go. Please don't
+  push site changes to a PR between its go and its merge; send them to the loop as a follow-up instead.
 - **Journal hero images received** (2026-10-25, `handoff/journal-hero-b64/`, as base64 text). Thank you; nothing more
   needed unless the rebuild finds a problem with them.
 
@@ -397,13 +401,20 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
 1d. ~~**PR #86**~~ **merged 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b` (Carter's yes
    `decisions-2026-10-25-pr86-go.md`; 6/6 checks green incl. Lighthouse; local checks + headless 96 opens green; deploy 214 green).
    Reply `2026-10-25-pr86-merged.md`.
-1e. **PR #53 (Pilgrimage batch 1) — MERGE NEXT, head `cafa1af`.** Carter's go (`decisions-2026-10-25-pr53-merge-go.md`)
-   for `aa7081d`; final independent review PASS, 0 findings (`2026-10-26-pr53-final-independent-review.md`);
-   Lighthouse + all 8 checks green on `aa7081d`; N3 reconciled in `cafa1af` (handoff only); local checks and 56 headless
-   opens green on `cafa1af` (`2026-10-26-pr53-merge-gates.md`). **Waiting for:** every GitHub check on `cafa1af`
-   completed and green, Lighthouse included. Then fast-forward `main` `3785b2b` → `cafa1af`, watch deploy, update
-   CURRENT and MERGEABLE, tell Carter. If any check is red, fix (or report) instead.
+1e. **PR #53 (Pilgrimage batch 1) — head now `67aabf1`; waits on Carter's yes for it.** Carter's go covered `aa7081d`
+   only. At 01:00 UTC the Pilgrimage thread pushed `67aabf1` (Delphi theatre/stadium figures both ways, Mogao "moved
+   here", Göbekli Pillar 43 citation; 8 files, site + sources). LOOP Merging 0 and 5 fail, so no merge. This run's
+   independent review of `cafa1af..67aabf1`: PASS, 0 findings (sources opened); 9/9 GitHub checks green on `67aabf1`
+   incl. Lighthouse; local checks + 30 headless opens green (`2026-10-26-pr53-review-67aabf1.md`). **When Carter says
+   yes for `67aabf1`:** re-confirm head unchanged and checks green, fast-forward `main` `3785b2b` → `67aabf1`, watch
+   deploy, update CURRENT and MERGEABLE, tell Carter. If the head moves again, review the new delta first.
    Outside the PR, own pass later: `ch29` line 47 asserts equinox design intent.
+1g. **Site-audit fixes** (Carter's order, `decisions-2026-10-25-audit-fixes-go.md`, list `audit-fixes-2026-10-25.md`):
+   Fix 1 README (pending 18, Vault 87, Pilgrimage 3, share-image sentence) first; Fixes 2+3 ch19 together; Fix 5 era
+   label; Fixes 4, 6 at judgment; Fix 7 Graphify data refresh; Fix 8 default-branch note. Each its own `loop/*` branch,
+   full checks, independent review, Carter's per-item merge yes. **Next run starts here (Fix 1).**
+1h. **Share images for the six pages** (`share-images-2026-10-25.md`: atlas picked them under Carter's 22:11
+   authorisation): add the given images + og:descriptions on a `loop/*` branch; merge needs Carter's yes for that PR.
 1f. Branch clean-up (same file A): approved for Carter, but **not the loop's** (the loop never deletes branches); nightly
    reviewer paused (B): missing heartbeats from 2026-10-26 are not a finding.
 4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
@@ -442,5 +453,8 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
 
 ## Needs Carter
-- Nothing now. PR #53 has Carter's go; it merges as soon as checks on `cafa1af` are green.
-Answered: every decisions file to date, incl. `decisions-2026-10-25-auto-delete-branches.md`, `decisions-2026-10-25-pr53-option-a.md` and `decisions-2026-10-25-pr53-merge-go.md`.
+- **PR #53 (Pilgrimage batch 1): merge the new head `67aabf1`?** After your go, the Pilgrimage thread added small
+  corrections (Delphi theatre and stadium figures now given both ways, two wording fixes, one new citation). Reviewed:
+  PASS, all checks green. **A) Yes, merge `67aabf1`** (recommended) · **B) Merge the version you approved, without
+  these corrections** · **C) Hold.**
+Answered: every decisions file to date, incl. `decisions-2026-10-25-audit-fixes-go.md`, `decisions-2026-10-25-pr53-merge-go.md`.
