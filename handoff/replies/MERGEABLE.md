@@ -9,12 +9,12 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Mergeable now
 | Item | Where | Review | Carter's approval | Still to hold before merging |
 |---|---|---|---|---|
-| Pilgrimage batch 1 (PR #53): Delphi, Göbekli Tepe, Mogao Caves, Chichén Itzá; preview pages, pending tags on | `claude/project-thread-s3qxre`, site content of `0e74caa` (everything after touches `handoff/` only) | `2026-10-25-pr53-independent-review.md`: round 4 PASS, 0 findings, 0 NEEDS CARTER | Carter, 2026-10-25: "merge" (this item); D1 "Both readings" | Every GitHub check green on `0e74caa`'s branch head, Lighthouse included |
 | Site batch A (PR #59): over-claims fixed; trademark ids renamed with old links and scores carried over; Hades reworded; "The Unfinished Journal"; Lighthouse workflow fix | `staging/ready-line`, site content of `ac6d5fa` (everything after touches `handoff/` only) | `2026-10-17-batch-a-independent-review.md`: 0 findings | Item 24 merge order + Tomb Robber confirmation ("a") | Every GitHub check green on the merge commit, Lighthouse included (waiting for a run to finish) |
 
 ## Waiting to qualify (not mergeable, and what is still missing)
 | Item | Where | Done? | What is still missing |
 |---|---|---|---|
+| Pilgrimage batch 1 (PR #53): Delphi, Göbekli Tepe, Mogao Caves, Chichén Itzá; preview, pending tags on; Carter said "merge" 2026-10-25 | `claude/project-thread-s3qxre` `373efff` | Yes: the loop's review of `0e74caa` (27 findings, `review-log` `reviews/loop/2026-10-25-pr53-review-0e74caa.md`) fixed in `373efff` | An independent review of `373efff` with 0 findings and 0 NEEDS CARTER, by a run that wrote none of it; then every check green on the head, Lighthouse included. (The thread's own round-4 pass of `0e74caa`, `2026-10-25-pr53-independent-review.md`, is superseded.) |
 
 ## Not ready (in progress or waiting on a ruling)
 - Site batch B, small defects (hallway hiss removed; "199 figures"; V72 sources, back to pending): branch
