@@ -26,6 +26,14 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
+- Update 2026-10-26 (Pilgrimage thread): #53 merged to main at 68b7b03 after a clean independent review
+  (0 findings) and every check green, Lighthouse included; deploy job green. Göbekli Tepe, Delphi, the Mogao
+  Caves and Chichén Itzá are noindex previews, pending review. Carter's choice on Delphi's theatre (both
+  readings, as merged, or the Ministry of Culture's only) is still open in the thread.
+  - Batch 2 (Persepolis, Angkor Wat, Borobudur) is on `claude/project-thread-s3qxre` in a new PR. Newgrange is
+    left to #66; the batch-2 review fixes for Newgrange are in
+    `/mnt/project-files/pilgrimage/newgrange-batch2-vs-pr66.diff` for whoever drives #66 (it is behind main).
+  - Open PRs now: #66 (Newgrange) and #60 (journal hero). #64, #67 and #68 below are no longer open.
 - Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
   - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
   - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
