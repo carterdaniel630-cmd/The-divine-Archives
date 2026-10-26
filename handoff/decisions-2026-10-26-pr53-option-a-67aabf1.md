@@ -14,3 +14,9 @@ version you approved, without these corrections · C) Hold."
   not seen it when he answered. Because LOOP "Merging" 5 rules out merging `67aabf1` with a site commit after it, and
   `68b7b03` is a different head, the loop asked Carter to confirm `68b7b03` (same session). Until that confirmation is
   recorded here, no merge.
+
+## Confirmation ~02:57 UTC — covers `68b7b03`
+**Verbatim (same session, answering "does your A cover this last fix? Yes: include it and merge · Hold"):** "yes"
+This is Carter's per-item yes for PR #53 at head **`68b7b03`**. The loop may fast-forward `main` `3785b2b` → `68b7b03`
+once every GitHub check on `68b7b03` (Lighthouse included) is completed and green, the head is unchanged, and the
+local checks hold. If the head moves again, this yes does not cover the new head.
