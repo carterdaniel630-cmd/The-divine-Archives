@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Hnefatafl</title>
+  <style>
+    :root{
+      color-scheme:light dark;
+      --night:#0a1420;--night2:#10283a;--panel:#102231e8;--panelSolid:#102231;
+      --ink:#edf4f3;--muted:#a8bcc1;--faint:#6f8990;--line:#31505a;
+      --moon:#c9e8eb;--ice:#79b8c2;--ember:#d67b35;--gold:#d3ad55;
+      --oak1:#68472e;--oak2:#3d281c;--oak3:#24160f;--snow:#d7e6e7;
+      --danger:#b85440;--success:#7eb59c;--shadow:#02080d;
+    }
+    @media (prefers-color-scheme:light){
+      :root{--night:#d8e5e5;--night2:#acc3c7;--panel:#eff6f3e8;--panelSolid:#eff6f3;--ink:#182b31;--muted:#48636a;--faint:#688087;--line:#8ea9ad;--moon:#315962;--ice:#3b7b87;--ember:#9a4d22;--gold:#846627;--shadow:#537078;--success:#2f735c;}
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--night);color:var(--ink)}
+    body{font-family:"IM Fell English",Georgia,serif;overflow-x:hidden;background:
+      radial-gradient(ellipse at 75% 10%,color-mix(in srgb,var(--ice) 18%,transparent) 0,transparent 33%),
+      linear-gradient(172deg,var(--night2),var(--night) 55%,#050b11);}
+    button,select{font:inherit;color:inherit}
+    button{touch-action:manipulation}
+    #sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.72}
+    .aurora{position:fixed;z-index:0;left:6%;right:4%;top:4%;height:23vh;opacity:.25;filter:blur(18px);pointer-events:none;background:linear-gradient(100deg,transparent 8%,#4f9a8b55 31%,#71b7bb77 44%,#567ea655 62%,transparent 84%);clip-path:polygon(0 58%,18% 34%,34% 62%,49% 19%,67% 54%,83% 31%,100% 47%,100% 76%,78% 62%,58% 87%,39% 63%,21% 80%,0 69%);animation:aurora 11s ease-in-out infinite alternate}
+    @keyframes aurora{to{transform:translate3d(3vw,8px,0) scaleY(1.16);opacity:.36}}
+    main{position:relative;z-index:1;width:min(1160px,100%);margin:0 auto;padding:clamp(18px,3vw,42px) clamp(14px,3vw,32px) 48px}
+    .intro{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end;margin-bottom:18px}
+    .kicker{margin:0 0 7px;color:var(--ice);font:600 11px/1.2 Cinzel,serif;letter-spacing:.16em;text-transform:uppercase}
+    h1{font:500 clamp(30px,5vw,58px)/.98 Cinzel,serif;letter-spacing:-.035em;margin:0;max-width:700px;text-shadow:0 2px 18px var(--shadow)}
+    .intro p:last-child{margin:10px 0 0;color:var(--muted);font-size:clamp(15px,2vw,18px)}
+    .header-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .iconbtn,.textbtn{border:1px solid var(--line);background:color-mix(in srgb,var(--panelSolid) 84%,transparent);box-shadow:inset 0 1px #ffffff16,0 5px 16px #0003;cursor:pointer;min-height:42px}
+    .iconbtn{width:44px;border-radius:50%;display:grid;place-items:center}
+    .iconbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7}
+    .iconbtn:hover,.textbtn:hover{border-color:var(--ice);color:var(--moon)}
+    .game-shell{display:grid;grid-template-columns:minmax(280px,1fr) minmax(245px,310px);gap:clamp(16px,3vw,34px);align-items:start}
+    .board-stage{perspective:1100px;position:relative;padding:2.5% 3.5% 5%;isolation:isolate}
+    .board-stage:before{content:"";position:absolute;inset:5% 1% 1%;background:radial-gradient(ellipse,#d7782e44 0,transparent 58%);filter:blur(22px);transform:translateY(10%);z-index:-1}
+    .board-wrap{position:relative;aspect-ratio:1;transform:rotateX(3deg);transform-style:preserve-3d;background:
+      repeating-linear-gradient(96deg,transparent 0 9px,#ffffff09 10px,#00000011 12px,transparent 15px),
+      radial-gradient(circle at 42% 30%,#8c6948 0 2%,transparent 17%),
+      linear-gradient(135deg,var(--oak1),var(--oak2) 46%,var(--oak3));
+      padding:clamp(9px,2vw,18px);border:1px solid #ac815260;border-radius:3px;box-shadow:
+      inset 0 0 0 3px #2b190f,inset 0 0 0 7px #7d5838,inset 0 0 28px #0009,
+      0 6px 0 #1b100b,0 12px 24px #0008,0 32px 70px #0007;}
+    .board-wrap:after{content:"";position:absolute;inset:0;pointer-events:none;background:
+      radial-gradient(ellipse at 11% 9%,#e9f5f4aa 0 1.3%,transparent 8%),
+      linear-gradient(125deg,#dfeeee77 0 1%,transparent 7% 83%,#d9eaea55 95%);
+      mix-blend-mode:screen;opacity:.62;border-radius:3px}
+    #board{display:grid;grid-template-columns:repeat(11,1fr);position:relative;width:100%;height:100%;border:1px solid #160e09;box-shadow:inset 0 0 18px #0008;background:#422b1dd9;overflow:hidden}
+    .cell{position:relative;display:grid;place-items:center;padding:0;border:0;border-right:1px solid #20140d99;border-bottom:1px solid #20140d99;background:transparent;cursor:default;min-width:0;min-height:0}
+    .cell:nth-child(11n){border-right:0}.cell:nth-child(n+111){border-bottom:0}
+    .cell:before{content:"";position:absolute;inset:5%;border:1px solid #b88b5840;box-shadow:inset 0 0 5px #0004;opacity:.66}
+    .cell.snowy:after{content:"";position:absolute;inset:1px;background:linear-gradient(150deg,#e9f1ed99,transparent 37%,#c8d8d655);clip-path:polygon(0 0,42% 0,59% 9%,100% 3%,100% 18%,80% 14%,58% 22%,23% 13%,0 21%);pointer-events:none}
+    .cell.special:before{inset:6%;border:3px solid #d9a83f;box-shadow:inset 0 0 10px #000a,0 0 10px #d18b3488,0 0 2px #ffe9a8;transform:rotate(45deg) scale(.72);opacity:.95}
+    .cell.throne:before{inset:4%;border:3px solid #d9a83f;border-radius:50%;box-shadow:inset 0 0 12px #000b,0 0 12px #d18b3499,0 0 2px #ffe9a8;background:radial-gradient(circle,#0f0c09 0 30%,#7a5a2e66 34% 44%,transparent 48%);opacity:.95;transform:none}
+    .board-caption{margin:12px 2px 0;text-align:center;color:#eef4ee;font-size:15px;line-height:1.65;background:linear-gradient(145deg,#3a2617,#241610 58%,#120c09);border:1px solid #9b76508a;border-radius:3px;padding:10px 14px;box-shadow:inset 0 1px #e5bb8461,0 8px 20px #0006}
+    .board-caption strong{color:var(--gold);font-weight:600}
+    .rune{position:absolute;width:55%;height:55%;z-index:1;opacity:.82;filter:drop-shadow(0 1px #000);color:#bd8c51}
+    .cell.legal{cursor:pointer}
+    .cell.legal:after{content:"";position:absolute;width:23%;aspect-ratio:1;border-radius:50%;background:var(--ice);box-shadow:0 0 0 4px color-mix(in srgb,var(--ice) 22%,transparent),0 0 15px var(--ice);opacity:.72;animation:legalPulse 1.9s ease-in-out infinite;z-index:5}
+    .cell.capture-move:after{background:var(--ember);box-shadow:0 0 0 4px #d67b3535,0 0 17px var(--ember)}
+    @keyframes legalPulse{50%{transform:scale(.76);opacity:.45}}
+    /* Standing turned-wood pegs: a vertical peg anchored in its square, rising above it,
+       with lathe rings, a lit top face, and a grounding shadow. Attackers = dark wood,
+       defenders = pale wood, the king = a taller gold peg wearing a crown. */
+    .piece{position:absolute;left:24%;bottom:9%;width:52%;height:118%;z-index:10;pointer-events:none;transition:filter .25s ease;
+      border-radius:48% 48% 9% 9% / 26% 26% 5% 5%;
+      background:
+        repeating-linear-gradient(180deg,#00000026 0 2px,transparent 2px 8px),
+        repeating-linear-gradient(180deg,#ffffff10 0 1px,transparent 1px 5px),
+        linear-gradient(90deg,var(--pegD) 0%,var(--pegM) 22%,var(--pegL) 50%,var(--pegM) 78%,var(--pegD) 100%);
+      box-shadow:0 -2px 3px #ffffff22 inset,0 3px 6px #000a,2px 0 5px #0006;
+      --pegL:#c9ab7d;--pegM:#8a6a45;--pegD:#4a3524;}
+    .piece:before{content:"";position:absolute;left:5%;right:5%;top:-4%;height:30%;border-radius:50%;
+      background:radial-gradient(ellipse at 42% 34%,#fff9 0 10%,transparent 34%),radial-gradient(ellipse at 50% 52%,var(--pegL) 0 46%,var(--pegM) 78%,var(--pegD));
+      box-shadow:inset 0 -2px 4px #0006,0 1px 2px #0007;}
+    .piece:after{content:"";position:absolute;left:-14%;right:-14%;bottom:-6%;height:14%;border-radius:50%;z-index:-1;
+      background:radial-gradient(ellipse,#000b 0 55%,transparent 72%);}
+    .piece.defender{--pegL:#efe3c8;--pegM:#b39a72;--pegD:#5c4a34;}
+    .piece.attacker{--pegL:#6b5b52;--pegM:#352b28;--pegD:#0d0a09;}
+    .piece.king{left:20%;bottom:9%;width:60%;height:158%;
+      --pegL:#ffedb0;--pegM:#cf9c40;--pegD:#5c3d12;
+      box-shadow:0 -2px 4px #fff8 inset,0 4px 8px #000b,2px 0 6px #0007,0 0 14px #d3ad5544;}
+    .piece.king:before{left:2%;right:2%;top:-24%;height:32%;border-radius:0;background:none;box-shadow:none;
+      clip-path:polygon(0 100%,7% 30%,24% 58%,38% 8%,50% 48%,62% 8%,76% 58%,93% 30%,100% 100%);
+      background:linear-gradient(180deg,#ffedb0 0%,#d9a83f 55%,#7d5419 100%);
+      filter:drop-shadow(0 2px 2px #0008);}
+    .piece.king:after{left:-12%;right:-12%;}
+    .piece.selected{filter:drop-shadow(0 0 7px var(--moon)) brightness(1.16);animation:selected 1.8s ease-in-out infinite}
+    @keyframes selected{50%{transform:translateY(-6%)} }
+    .piece.marching{animation:march .52s cubic-bezier(.16,1,.3,1) both}
+    @keyframes march{from{transform:translate(var(--dx),var(--dy)) scale(.94)}60%{transform:translate(0,0) scale(1.03)}to{transform:none}}
+    .capture-burst{position:absolute;z-index:40;pointer-events:none;width:9%;aspect-ratio:1;transform:translate(-50%,-50%)}
+    .capture-burst i{position:absolute;left:42%;top:42%;width:18%;height:18%;background:var(--chip);border-radius:2px;animation:crumble .7s cubic-bezier(.2,.8,.2,1) forwards;box-shadow:0 1px 2px #000}
+    @keyframes crumble{to{transform:translate(var(--sx),var(--sy)) rotate(var(--rot)) scale(.1);opacity:0}}
+    .brazier{position:absolute;right:-2%;bottom:-1%;width:13%;aspect-ratio:1;z-index:14;filter:drop-shadow(0 10px 8px #0008);pointer-events:none}
+    .brazier .bowl{position:absolute;inset:44% 0 0;background:linear-gradient(#685746,#181413);clip-path:polygon(5% 0,95% 0,77% 44%,62% 59%,59% 100%,41% 100%,38% 59%,23% 44%)}
+    .flame{position:absolute;left:31%;top:0;width:38%;height:62%;background:radial-gradient(circle at 50% 75%,#fff7b2 0 12%,#ed9b32 28%,#c64c20 60%,transparent 72%);filter:blur(.5px) drop-shadow(0 0 8px #e2702b);clip-path:polygon(50% 0,68% 31%,92% 67%,72% 100%,28% 100%,8% 68%,35% 39%);animation:flame 1.7s ease-in-out infinite alternate;transform-origin:50% 100%}
+    @keyframes flame{to{transform:scaleX(.82) scaleY(1.12) rotate(3deg);filter:blur(.8px) drop-shadow(0 0 13px #e2702b)}}
+    .side{display:grid;gap:12px}
+    .status-card,.control-card{color:#e8eee9;background:repeating-linear-gradient(98deg,transparent 0 13px,#fff 14px,#fff0 15px),radial-gradient(ellipse at 18% 8%,#795538 0 2%,transparent 29%),linear-gradient(145deg,#4e3424,#281a13 58%,#15100d);border:1px solid #9b76508a;box-shadow:inset 0 1px #e5bb8461,inset 0 0 0 3px #1b110c,inset 0 -14px 24px #0007,0 5px 0 #100b08,0 16px 34px #0007;border-radius:3px;position:relative}
+    .status-card:after,.control-card:after{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #d3ad5524;box-shadow:inset 0 0 12px #0006}
+    .status-card{padding:15px 16px 14px;position:relative;overflow:hidden}
+    .status-card:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--turnColor,var(--ice));box-shadow:0 0 12px var(--turnColor,var(--ice))}
+    #turnLabel{font:600 15px/1.2 Cinzel,serif;margin:0 0 5px}.status-note{color:var(--muted);font-size:14px;margin:0;min-height:34px}
+    .tally{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+    .tally div{border-top:1px solid var(--line);padding-top:9px;color:var(--muted);font-size:13px}.tally strong{display:block;color:var(--ink);font:600 18px Cinzel,serif}
+    .control-card{padding:14px}
+    .label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+    .seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:3px;background:#0003;padding:3px;border-radius:3px;margin-bottom:11px}
+    .seg button{border:1px solid #18110d;background:linear-gradient(#3e322a,#201915);min-height:36px;cursor:pointer;color:#b9c6c3;border-radius:2px;padding:5px 7px;font-size:14px;box-shadow:inset 0 1px #ffffff17,0 2px 3px #0007;transition:background .22s ease,color .22s ease,box-shadow .22s ease}
+    .seg button.active{background:radial-gradient(circle at 30% 22%,#eee3c9,#ae9d7f 72%,#675b49);color:#191714;border-color:#d8c49b;box-shadow:inset 0 2px 3px #fff9,inset 0 -4px 5px #554b3b,0 2px 5px #0009}
+    .ai-options{display:grid;grid-template-columns:1fr;gap:0;transition:opacity .2s}.ai-options.hidden{display:none}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .control-card .label,.status-card .status-note,.status-card .tally div,.control-card .rule-mini{color:#aebfbd}.status-card #turnLabel,.status-card .tally strong{color:#f1f3e9}.textbtn{border-radius:2px;padding:8px 10px;font-size:14px;background:linear-gradient(#594b40,#2b2420);color:#dde8e5;border-color:#836b55;box-shadow:inset 0 1px #fff3,inset 0 -3px #15100d,0 3px 5px #0007}.textbtn.primary{background:linear-gradient(#b9d8d7,#5f959b);border-color:#c9e8eb;color:#071217;font-weight:bold;box-shadow:inset 0 1px #fff9,inset 0 -4px #32646a,0 3px 6px #0008}.textbtn:disabled{opacity:.38;cursor:not-allowed}
+    .rule-mini{margin:2px 0 0;padding:0;list-style:none;color:var(--muted);font-size:13px}.rule-mini li{padding:6px 0 6px 18px;border-bottom:1px solid color-mix(in srgb,var(--line) 48%,transparent);position:relative}.rule-mini li:before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;transform:rotate(45deg);border:1px solid var(--faint)}
+    .rule-mini li:last-child{border:0}
+    .toast{position:fixed;z-index:80;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--panelSolid);border:1px solid var(--line);padding:10px 15px;box-shadow:0 10px 30px #0008;opacity:0;pointer-events:none;transition:.3s cubic-bezier(.16,1,.3,1);width:max-content;max-width:calc(100vw - 28px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:16px;background:#02070bd9;backdrop-filter:blur(7px)}
+    .modal.open{display:grid;animation:modalIn .4s cubic-bezier(.16,1,.3,1)}
+    @keyframes modalIn{from{opacity:0}.sheet{transform:translateY(18px) scale(.98)}to{opacity:1}.sheet{transform:none}}
+    .sheet{width:min(660px,100%);max-height:min(760px,calc(100vh - 32px));overflow:auto;background:linear-gradient(155deg,var(--panelSolid),color-mix(in srgb,var(--panelSolid) 82%,#000));border:1px solid var(--line);box-shadow:0 30px 90px #000c,inset 0 1px #fff2;padding:clamp(20px,5vw,38px);position:relative;border-radius:3px}
+    .sheet h2{font:600 clamp(23px,4vw,34px)/1.05 Cinzel,serif;margin:0 45px 10px 0}.sheet h3{font:600 15px Cinzel,serif;color:var(--moon);margin:24px 0 8px}.sheet p,.sheet li{color:var(--muted);line-height:1.55}.sheet ol,.sheet ul{padding-left:20px}.close{position:absolute;right:14px;top:14px}
+    .tutorial-step{display:none}.tutorial-step.active{display:block}.tutorial-visual{height:120px;margin:18px 0;background:radial-gradient(circle at 50% 60%,#5a402a 0 8%,#2b1b12 9% 14%,transparent 15%),linear-gradient(90deg,transparent 49%,#719da366 49% 51%,transparent 51%),linear-gradient(transparent 49%,#719da366 49% 51%,transparent 51%);border:1px solid var(--line);position:relative;overflow:hidden}.tutorial-visual:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#d5e6e633 0,transparent 38%)}
+    .tutorial-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:20px}.dots{display:flex;gap:6px}.dots i{width:6px;height:6px;border-radius:50%;background:var(--faint)}.dots i.on{background:var(--moon);box-shadow:0 0 7px var(--moon)}
+    .end-banner{text-align:center}.end-banner .sigil{width:78px;height:78px;margin:8px auto 19px;border:1px solid var(--gold);transform:rotate(45deg);display:grid;place-items:center;box-shadow:inset 0 0 20px #d3ad5530,0 0 24px #d3ad5520}.end-banner .sigil span{transform:rotate(-45deg);font:600 34px Cinzel;color:var(--gold)}
+    @media (max-width:800px){
+      main{padding-top:18px}.intro{grid-template-columns:1fr;align-items:start}.header-actions{position:absolute;right:14px;top:16px}.intro>div:first-child{padding-right:104px}.game-shell{grid-template-columns:1fr;gap:8px}.board-stage{padding:2% 5% 4%;max-width:620px;width:100%;margin:auto}.side{grid-template-columns:1fr 1fr}.status-card{grid-column:1/-1}.rule-mini{display:none}
+    }
+    @media (max-width:520px){
+      h1{font-size:30px;max-width:270px}.intro p:last-child{font-size:14px;max-width:290px}.intro{margin-bottom:8px}.header-actions{top:13px}.iconbtn{width:40px;height:40px;min-height:40px}.board-stage{padding:1% 4% 4%}.board-wrap{padding:8px;transform:rotateX(2deg)}.side{grid-template-columns:1fr}.status-card{grid-column:auto}.control-card{padding:11px}.label{margin-top:0}.seg{margin-bottom:8px}.status-card{padding:12px 14px}.tally{margin-top:8px}.actions{grid-template-columns:1fr 1fr}.sheet{padding:24px 20px}}
+    }
+    @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.aurora{display:none}}
+  </style>
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas><div class="aurora" aria-hidden="true"></div>
+  <main>
+    <header class="intro">
+      <div><p class="kicker">A Viking-age siege game</p><h1>The king must escape.</h1><p>Twelve guards. Twenty-four raiders. One road to the corners.</p></div>
+      <div class="header-actions">
+        <button class="iconbtn" id="soundBtn" aria-label="Turn sound on" title="Sound">
+          <svg viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6L8 10H4Z"/><path class="soundwaves" d="M16 9c1 1 1 5 0 6M19 6c3 3 3 9 0 12"/></svg>
+        </button>
+        <button class="iconbtn" id="historyBtn" aria-label="Open history and rules" title="History and rules"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></button>
+      </div>
+    </header>
+
+    <section class="game-shell" aria-label="Hnefatafl game">
+      <div class="board-stage">
+        <div class="board-wrap">
+          <div id="board" role="grid" aria-label="11 by 11 Hnefatafl board"></div>
+          <div class="brazier" aria-hidden="true"><div class="flame"></div><div class="bowl"></div></div>
+        </div>
+        <p class="board-caption"><strong>11 × 11 tournament version</strong> — the Vikings left no rulebook.<br>The king is taken only when surrounded: four raiders in open ground, two at the throne or the edge.</p>
+      </div>
+      <aside class="side">
+        <section class="status-card" id="statusCard" aria-live="polite">
+          <h2 id="turnLabel">Raiders move</h2><p class="status-note" id="statusNote">Select a dark raider, then choose a marked square.</p>
+          <div class="tally"><div><strong id="defScore">12 + king</strong>Defenders remain</div><div><strong id="atkScore">24</strong>Raiders remain</div></div>
+        </section>
+        <section class="control-card">
+          <span class="label">Match</span><div class="seg" id="modeSeg"><button data-mode="ai" class="active">Versus AI</button><button data-mode="local">Two players</button></div>
+          <div class="ai-options" id="aiOptions">
+            <span class="label">You command</span><div class="seg" id="sideSeg"><button data-side="D" class="active">Defenders</button><button data-side="A">Raiders</button></div>
+            <span class="label">AI strength</span><div class="seg" id="diffSeg"><button data-diff="easy">Skald</button><button data-diff="medium" class="active">Jarl</button><button data-diff="hard">Konungr</button></div>
+          </div>
+          <div class="actions"><button class="textbtn primary" id="newBtn">New battle</button><button class="textbtn" id="undoBtn" disabled>Undo</button></div>
+        </section>
+        <section class="control-card">
+          <span class="label">Tournament rules · 11 × 11</span>
+          <ul class="rule-mini"><li>All pieces march in straight lines.</li><li>Capture by closing an enemy between two allies.</li><li>The king escapes at a corner; raiders surround him.</li></ul>
+          <button class="textbtn" id="tutorialBtn" style="width:100%;margin-top:7px">Learn the battle</button>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="modal" id="tutorial" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+    <div class="sheet">
+      <button class="iconbtn close" data-close="tutorial" aria-label="Close tutorial">×</button>
+      <div class="tutorial-step active"><p class="kicker">I · The march</p><h2 id="tutorialTitle">Every piece moves like a rook.</h2><div class="tutorial-visual"></div><p>Move any number of empty squares north, south, east, or west. No diagonal steps and no leaping over another piece.</p></div>
+      <div class="tutorial-step"><p class="kicker">II · The capture</p><h2>Close the shield wall.</h2><div class="tutorial-visual"></div><p>Trap an enemy between the piece you moved and one of your own. The sandwiched piece is removed. The throne and corner sanctuaries may serve as the hostile far side.</p></div>
+      <div class="tutorial-step"><p class="kicker">III · The escape</p><h2>Lead the king to a corner.</h2><div class="tutorial-visual"></div><p>The gold king alone may rest on the central throne or any corner sanctuary. The defenders win the instant he reaches a corner.</p></div>
+      <div class="tutorial-step"><p class="kicker">IV · The siege</p><h2>Take the king alive.</h2><div class="tutorial-visual"></div><p>Raiders win by surrounding the king on all four sides. Beside the throne or on the board edge, two raiders complete the capture with the hostile boundary or throne.</p></div>
+      <div class="tutorial-step"><p class="kicker">V · The record</p><h2>A reconstruction, plainly named.</h2><div class="tutorial-visual"></div><p>The Viking-age rules did not survive. This 11 × 11 tournament ruleset descends from Carl Linnaeus’s 1732 description of tablut, a Sámi relative of tafl.</p></div>
+      <div class="tutorial-nav"><div class="dots" aria-hidden="true"></div><button class="textbtn primary" id="tutorialNext">Next</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="history" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+    <div class="sheet"><button class="iconbtn close" data-close="history" aria-label="Close history">×</button>
+      <p class="kicker">The surviving record</p><h2 id="historyTitle">A family of northern games</h2>
+      <p><em>Tafl</em> games were played across the Norse world: unequal armies contesting a central king. Archaeology preserves boards and pieces, but not a Viking rulebook.</p>
+      <h3>What survives</h3><p>The 11 × 11 oak board found at Ballinderry, Ireland, dates to the tenth century and is commonly associated with tafl. Gaming pieces are known from Viking-age Birka in Sweden and from sites across Scandinavia and the North Atlantic.</p>
+      <h3>What is reconstructed</h3><p>In 1732, Carl Linnaeus recorded a living Sámi game called tablut. His account is the clearest historical bridge to playable tafl, though it is centuries later than the Viking Age and leaves ambiguities. This edition uses a modern 11 × 11 tournament ruleset: rook movement, custodian capture, restricted sanctuaries, corner escape, and a strong king.</p>
+      <h3>This edition’s king-capture rule</h3><p>Four raiders must surround the king in open ground. Beside the throne or on the board edge, two raiders complete the capture, with the hostile throne or boundary closing the trap. The rule is stated here because variants differ.</p>
+      <h3>Sources</h3><ul><li>Carl Linnaeus, <em>Lachesis Lapponica</em> (1732 field account of tablut).</li><li>The Ballinderry gaming board, National Museum of Ireland.</li><li>Gaming pieces and board evidence from Viking-age Birka, Sweden.</li></ul>
+    </div>
+  </div>
+
+  <div class="modal" id="gameEnd" role="dialog" aria-modal="true" aria-labelledby="endTitle"><div class="sheet end-banner"><div class="sigil"><span>ᛏ</span></div><h2 id="endTitle">The king has escaped.</h2><p id="endText"></p><div class="actions" style="max-width:320px;margin:22px auto 0"><button class="textbtn primary" id="againBtn">Fight again</button><button class="textbtn" data-close="gameEnd">Study board</button></div></div></div>
+
+  <script>
+  (function(){
+    'use strict';
+    var N=11,CORNERS=['0,0','0,10','10,0','10,10'],THRONE='5,5';
+    var boardEl=document.getElementById('board'), turnEl=document.getElementById('turnLabel'), noteEl=document.getElementById('statusNote'), statusCard=document.getElementById('statusCard');
+    var defScore=document.getElementById('defScore'),atkScore=document.getElementById('atkScore'),undoBtn=document.getElementById('undoBtn');
+    var mode='ai',humanSide='D',difficulty='medium',pieces=[],turn='A',selected=null,legal=[],history=[],winner=null,thinking=false,lastMove=null;
+    var listeners=[],timers=[],raf=0,snow=[],audio=null,soundOn=false,disposed=false,toastTimer=0,tutorialIndex=0;
+
+    function on(el,type,fn,opts){el.addEventListener(type,fn,opts);listeners.push([el,type,fn,opts]);}
+    function key(r,c){return r+','+c} function isCorner(r,c){return CORNERS.indexOf(key(r,c))>-1} function isThrone(r,c){return key(r,c)===THRONE} function inBounds(r,c){return r>=0&&r<N&&c>=0&&c<N}
+    function occupant(arr,r,c){for(var i=0;i<arr.length;i++)if(arr[i].alive&&arr[i].r===r&&arr[i].c===c)return arr[i];return null}
+    function setup(){
+      pieces=[];var id=0;function add(type,r,c){pieces.push({id:'p'+(++id),type:type,r:r,c:c,alive:true})}
+      [[0,3],[0,4],[0,5],[0,6],[0,7],[1,5],[10,3],[10,4],[10,5],[10,6],[10,7],[9,5],[3,0],[4,0],[5,0],[6,0],[7,0],[5,1],[3,10],[4,10],[5,10],[6,10],[7,10],[5,9]].forEach(function(p){add('A',p[0],p[1])});
+      [[5,3],[5,4],[5,6],[5,7],[3,5],[4,5],[6,5],[7,5],[4,4],[4,6],[6,4],[6,6]].forEach(function(p){add('D',p[0],p[1])});add('K',5,5);
+      turn='A';selected=null;legal=[];history=[];winner=null;thinking=false;lastMove=null;render();updateStatus();undoBtn.disabled=true;
+      closeModal('gameEnd'); if(mode==='ai'&&humanSide==='D')queueAI();
+    }
+    function sideOf(p){return p.type==='A'?'A':'D'}
+    function movesFor(arr,p){
+      if(!p||!p.alive)return[];var out=[],dirs=[[1,0],[-1,0],[0,1],[0,-1]];
+      dirs.forEach(function(d){var r=p.r+d[0],c=p.c+d[1];while(inBounds(r,c)&&!occupant(arr,r,c)){
+        if(p.type==='K'||(!isCorner(r,c)&&!isThrone(r,c)))out.push({r:r,c:c});
+        if(isCorner(r,c))break;r+=d[0];c+=d[1];
+      }});return out;
+    }
+    function allMoves(arr,side){var out=[];arr.forEach(function(p){if(p.alive&&sideOf(p)===side)movesFor(arr,p).forEach(function(to){out.push({id:p.id,r:to.r,c:to.c})})});return out}
+    function hostileFor(arr,side,r,c){if(!inBounds(r,c))return false;var p=occupant(arr,r,c);if(p)return sideOf(p)===side;return isCorner(r,c)||isThrone(r,c)}
+    function kingCaptured(arr,k){
+      var dirs=[[1,0],[-1,0],[0,1],[0,-1]],adj=dirs.map(function(d){var r=k.r+d[0],c=k.c+d[1];var p=inBounds(r,c)?occupant(arr,r,c):null;return {in:inBounds(r,c),atk:!!(p&&p.type==='A'),throne:inBounds(r,c)&&isThrone(r,c)}});
+      var atkCount=adj.filter(function(x){return x.atk}).length, nearThrone=adj.some(function(x){return x.throne}), onEdge=k.r===0||k.r===10||k.c===0||k.c===10;
+      if(nearThrone||onEdge)return atkCount>=2;return atkCount===4;
+    }
+    function previewCaptures(arr,p,to){var clone=clonePieces(arr),cp=clone.find(function(x){return x.id===p.id}),res=applyMove(clone,cp,to,true);return res.captured}
+    function applyMove(arr,p,to,sim){
+      var from={r:p.r,c:p.c};p.r=to.r;p.c=to.c;var captured=[],side=sideOf(p),dirs=[[1,0],[-1,0],[0,1],[0,-1]];
+      dirs.forEach(function(d){var ar=p.r+d[0],ac=p.c+d[1],br=p.r+2*d[0],bc=p.c+2*d[1],enemy=occupant(arr,ar,ac);if(!enemy||sideOf(enemy)===side||enemy.type==='K')return;if(hostileFor(arr,side,br,bc)){enemy.alive=false;captured.push({id:enemy.id,r:ar,c:ac,type:enemy.type})}});
+      var king=arr.find(function(x){return x.type==='K'&&x.alive});var win=null;
+      if(p.type==='K'&&isCorner(p.r,p.c))win='D';
+      if(side==='A'&&king&&kingCaptured(arr,king)){king.alive=false;captured.push({id:king.id,r:king.r,c:king.c,type:'K'});win='A'}
+      return{from:from,to:{r:to.r,c:to.c},captured:captured,win:win};
+    }
+    function clonePieces(arr){return arr.map(function(p){return{id:p.id,type:p.type,r:p.r,c:p.c,alive:p.alive}})}
+    function saveState(){history.push({pieces:clonePieces(pieces),turn:turn,winner:winner,lastMove:lastMove});if(history.length>80)history.shift();undoBtn.disabled=false}
+    function makeMove(id,to,fromAI){
+      if(winner||thinking&&!fromAI)return;var p=pieces.find(function(x){return x.id===id&&x.alive});if(!p||sideOf(p)!==turn)return;
+      var ok=movesFor(pieces,p).some(function(m){return m.r===to.r&&m.c===to.c});if(!ok)return;
+      saveState();var from={r:p.r,c:p.c};var result=applyMove(pieces,p,to,false);lastMove={id:id,from:from,to:to};selected=null;legal=[];
+      render(result.captured);result.captured.forEach(function(c){burst(c.r,c,c.type==='A'?'#24201e':'#d9cfb7')});playTone(result.captured.length?'capture':'move');
+      if(result.win){winner=result.win;updateStatus();timer(function(){showEnd(winner)},620);return}
+      turn=turn==='A'?'D':'A';updateStatus(); if(mode==='ai'&&turn!==humanSide)queueAI();
+    }
+    function selectAt(r,c){
+      if(winner||thinking||(mode==='ai'&&turn!==humanSide))return;var p=occupant(pieces,r,c);
+      if(p&&sideOf(p)===turn){selected=p;legal=movesFor(pieces,p).map(function(m){m.caps=previewCaptures(pieces,p,m).length;return m});render();playTone('select');return}
+      if(selected&&legal.some(function(m){return m.r===r&&m.c===c})){makeMove(selected.id,{r:r,c:c},false)}else if(selected){selected=null;legal=[];render()}
+    }
+    function render(captured){
+      var frag=document.createDocumentFragment();
+      for(var r=0;r<N;r++)for(var c=0;c<N;c++){
+        var cell=document.createElement('button');cell.className='cell'+(((r+c)%5===0||r===0||c===10)?' snowy':'')+(isCorner(r,c)?' special corner':'')+(isThrone(r,c)?' special throne':'');cell.dataset.r=r;cell.dataset.c=c;cell.setAttribute('role','gridcell');
+        var lm=legal.find(function(m){return m.r===r&&m.c===c});if(lm)cell.classList.add('legal');if(lm&&lm.caps)cell.classList.add('capture-move');
+        if(isThrone(r,c)){cell.innerHTML='<svg class="rune" viewBox="0 0 40 50" aria-hidden="true"><path d="M20 44V7M20 7L6 21M20 7l14 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>'}
+        var p=occupant(pieces,r,c);if(p){var el=document.createElement('span');el.className='piece '+(p.type==='A'?'attacker':p.type==='D'?'defender':'king')+(selected&&selected.id===p.id?' selected':'');el.setAttribute('aria-hidden','true');el.style.zIndex=10+r;if(lastMove&&lastMove.id===p.id&&lastMove.to.r===r&&lastMove.to.c===c){el.classList.add('marching');el.style.setProperty('--dx',(lastMove.from.c-lastMove.to.c)*100+'%');el.style.setProperty('--dy',(lastMove.from.r-lastMove.to.r)*100+'%')}cell.appendChild(el);cell.setAttribute('aria-label',(p.type==='A'?'Raider':p.type==='D'?'Defender':'King')+' at row '+(r+1)+', column '+(c+1))}else cell.setAttribute('aria-label','Empty square, row '+(r+1)+', column '+(c+1));frag.appendChild(cell)
+      }
+      boardEl.replaceChildren(frag);updateScore();
+    }
+    function updateScore(){var d=pieces.filter(function(p){return p.alive&&p.type==='D'}).length,k=pieces.some(function(p){return p.alive&&p.type==='K'});var a=pieces.filter(function(p){return p.alive&&p.type==='A'}).length;defScore.textContent=d+(k?' + king':'');atkScore.textContent=a}
+    function updateStatus(){
+      var aiTurn=mode==='ai'&&turn!==humanSide&&!winner;statusCard.style.setProperty('--turnColor',turn==='A'?'var(--ember)':'var(--ice)');
+      if(winner){turnEl.textContent=winner==='D'?'The king escaped':'The king is taken';noteEl.textContent=winner==='D'?'The defenders broke the siege.':'The raiders closed the ring.';return}
+      turnEl.textContent=(turn==='A'?'Raiders':'Defenders')+' move'+(aiTurn?' · AI':'');noteEl.textContent=thinking?'The opponent studies the shield wall…':(turn==='A'?'Surround the gold king before he reaches a corner.':'Open a road from the throne to a corner.');
+    }
+    function immediateScore(arr,m,side){
+      var cp=clonePieces(arr),p=cp.find(function(x){return x.id===m.id}),beforeK=cp.find(function(x){return x.type==='K'&&x.alive}),res=applyMove(cp,p,{r:m.r,c:m.c},true),s=res.captured.length*110;if(res.win)s+=100000;
+      var k=cp.find(function(x){return x.type==='K'&&x.alive});if(k){var cornerDist=Math.min(k.r+k.c,k.r+10-k.c,10-k.r+k.c,20-k.r-k.c);var kingMoves=movesFor(cp,k),escapeRay=kingMoves.some(function(x){return isCorner(x.r,x.c)});if(side==='D'){s+=(10-cornerDist)*13+kingMoves.length*2+(escapeRay?700:0);if(p.type==='K')s+=Math.max(0,(beforeK?Math.min(beforeK.r+beforeK.c,beforeK.r+10-beforeK.c,10-beforeK.r+beforeK.c,20-beforeK.r-beforeK.c):10)-cornerDist)*35}else{s+=cornerDist*8-kingMoves.length*2-(escapeRay?900:0);if(Math.abs(p.r-k.r)+Math.abs(p.c-k.c)<=3)s+=18}}
+      return{s:s,board:cp}
+    }
+    function chooseAI(){
+      var moves=allMoves(pieces,turn);if(!moves.length)return null;for(var i=0;i<moves.length;i++){var ev=immediateScore(pieces,moves[i],turn);moves[i].score=ev.s;moves[i].board=ev.board;moves[i].score+=Math.random()*5}
+      moves.sort(function(a,b){return b.score-a.score});if(difficulty==='easy')return moves[Math.floor(Math.random()*moves.length)];if(difficulty==='medium'){var pool=moves.slice(0,Math.min(6,moves.length));return Math.random()<.72?pool[0]:pool[Math.floor(Math.random()*pool.length)]}
+      var limit=Math.min(28,moves.length),opp=turn==='A'?'D':'A';for(var j=0;j<limit;j++){var replies=allMoves(moves[j].board,opp),worst=0;for(var q=0;q<replies.length;q++){var rs=immediateScore(moves[j].board,replies[q],opp).s;if(rs>worst)worst=rs}moves[j].deep=moves[j].score-worst*.72}moves.slice(0,limit).sort(function(a,b){return b.deep-a.deep});var best=moves[0];for(var z=1;z<limit;z++)if(moves[z].deep>best.deep)best=moves[z];return best
+    }
+    function queueAI(){thinking=true;updateStatus();timer(function(){if(disposed||winner||mode!=='ai'||turn===humanSide)return;var m=chooseAI();thinking=false;if(!m){winner=humanSide;showEnd(winner);return}makeMove(m.id,{r:m.r,c:m.c},true)},difficulty==='hard'?720:520)}
+    function undo(){if(!history.length||thinking)return;var snap=history.pop();pieces=clonePieces(snap.pieces);turn=snap.turn;winner=snap.winner;lastMove=null;selected=null;legal=[];if(mode==='ai'&&history.length&&turn!==humanSide){snap=history.pop();pieces=clonePieces(snap.pieces);turn=snap.turn;winner=snap.winner}render();updateStatus();undoBtn.disabled=!history.length;closeModal('gameEnd');playTone('select')}
+    function burst(r,c,color){var el=document.createElement('div');el.className='capture-burst';el.style.left=((c+.5)/11*100)+'%';el.style.top=((r+.5)/11*100)+'%';el.style.setProperty('--chip',color);for(var i=0;i<9;i++){var s=document.createElement('i'),ang=(Math.PI*2*i/9)+Math.random()*.4,dist=28+Math.random()*36;s.style.setProperty('--sx',Math.cos(ang)*dist+'px');s.style.setProperty('--sy',Math.sin(ang)*dist+'px');s.style.setProperty('--rot',(Math.random()*260-130)+'deg');el.appendChild(s)}document.querySelector('.board-wrap').appendChild(el);timer(function(){el.remove()},800)}
+    function timer(fn,ms){var t=setTimeout(fn,ms);timers.push(t);return t}
+    function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.remove('show')},1900)}
+    function showEnd(side){document.getElementById('endTitle').textContent=side==='D'?'The king has escaped.':'The king is taken.';document.getElementById('endText').textContent=side==='D'?'The defenders opened a road through the siege and reached sanctuary.':'The raiders closed the shield wall around the throne.';openModal('gameEnd');playTone('win')}
+    function openModal(id){document.getElementById(id).classList.add('open');var b=document.getElementById(id).querySelector('button');if(b)b.focus()}
+    function closeModal(id){document.getElementById(id).classList.remove('open')}
+
+    function setActive(group,button){group.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b===button)})}
+    on(boardEl,'click',function(e){var cell=e.target.closest('.cell');if(cell)selectAt(+cell.dataset.r,+cell.dataset.c)});
+    on(document.getElementById('modeSeg'),'click',function(e){var b=e.target.closest('button');if(!b)return;mode=b.dataset.mode;setActive(e.currentTarget,b);document.getElementById('aiOptions').classList.toggle('hidden',mode==='local');setup()});
+    on(document.getElementById('sideSeg'),'click',function(e){var b=e.target.closest('button');if(!b)return;humanSide=b.dataset.side;setActive(e.currentTarget,b);setup()});
+    on(document.getElementById('diffSeg'),'click',function(e){var b=e.target.closest('button');if(!b)return;difficulty=b.dataset.diff;setActive(e.currentTarget,b);toast('AI strength: '+b.textContent);setup()});
+    on(document.getElementById('newBtn'),'click',setup);on(document.getElementById('againBtn'),'click',setup);on(undoBtn,'click',undo);
+    on(document.getElementById('historyBtn'),'click',function(){openModal('history')});on(document.getElementById('tutorialBtn'),'click',function(){tutorialIndex=0;drawTutorial();openModal('tutorial')});
+    document.querySelectorAll('[data-close]').forEach(function(b){on(b,'click',function(){closeModal(b.dataset.close)})});
+    document.querySelectorAll('.modal').forEach(function(m){on(m,'click',function(e){if(e.target===m)closeModal(m.id)})});
+    on(document,'keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(function(m){closeModal(m.id)})});
+    function drawTutorial(){var steps=document.querySelectorAll('.tutorial-step'),dots=document.querySelector('.dots');steps.forEach(function(s,i){s.classList.toggle('active',i===tutorialIndex)});dots.innerHTML='';steps.forEach(function(_,i){var d=document.createElement('i');if(i===tutorialIndex)d.className='on';dots.appendChild(d)});document.getElementById('tutorialNext').textContent=tutorialIndex===steps.length-1?'Begin battle':'Next'}
+    on(document.getElementById('tutorialNext'),'click',function(){var n=document.querySelectorAll('.tutorial-step').length;if(tutorialIndex<n-1){tutorialIndex++;drawTutorial()}else closeModal('tutorial')});
+
+    function initAudio(){if(audio)return;var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;audio=new AC()}
+    function playTone(kind){if(!soundOn)return;initAudio();if(!audio)return;if(audio.state==='suspended')audio.resume();var now=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();o.connect(g);g.connect(audio.destination);o.type=kind==='capture'?'square':'sine';o.frequency.setValueAtTime(kind==='win'?220:kind==='capture'?110:kind==='select'?330:150,now);if(kind==='win')o.frequency.exponentialRampToValueAtTime(440,now+.7);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(kind==='capture'?.07:.04,now+.02);g.gain.exponentialRampToValueAtTime(.0001,now+(kind==='win'?.9:.22));o.start(now);o.stop(now+(kind==='win'?1:.25))}
+    on(document.getElementById('soundBtn'),'click',function(){soundOn=!soundOn;this.setAttribute('aria-label',soundOn?'Turn sound off':'Turn sound on');this.querySelector('.soundwaves').style.display=soundOn?'':'none';if(soundOn){initAudio();playTone('select');toast('Wind and fire sound on')}else toast('Sound off')});document.querySelector('.soundwaves').style.display='none';
+
+    var canvas=document.getElementById('sky'),ctx=canvas.getContext('2d'),last=0;
+    function resizeSky(){var mobile=innerWidth<700,dpr=mobile?1:Math.min(devicePixelRatio||1,1.5);canvas.width=Math.floor(innerWidth*dpr);canvas.height=Math.floor(innerHeight*dpr);canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(dpr,0,0,dpr,0,0);var count=mobile?70:140;snow=[];for(var i=0;i<count;i++)snow.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:.4+Math.random()*1.7,v:.15+Math.random()*.55,w:Math.random()*2})}
+    function skyLoop(t){if(disposed)return;if(t-last>32){last=t;ctx.clearRect(0,0,innerWidth,innerHeight);ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--snow').trim();for(var i=0;i<snow.length;i++){var s=snow[i];s.y+=s.v;s.x+=Math.sin(t*.00035+s.w)*.15;if(s.y>innerHeight+4){s.y=-4;s.x=Math.random()*innerWidth}ctx.globalAlpha=.22+s.r*.16;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1}raf=requestAnimationFrame(skyLoop)}
+    on(window,'resize',resizeSky,{passive:true});
+
+    function dispose(){disposed=true;cancelAnimationFrame(raf);timers.forEach(clearTimeout);listeners.forEach(function(l){l[0].removeEventListener(l[1],l[2],l[3])});if(audio){try{audio.close()}catch(e){}audio=null}snow.length=0;pieces.length=0;history.length=0;boardEl.replaceChildren()}
+    on(window,'pagehide',dispose,{once:true});window.Hnefatafl={dispose:dispose,newGame:setup};
+    resizeSky();raf=requestAnimationFrame(skyLoop);setup();timer(function(){toast('Choose a piece. Marked squares show its march.')},700);
+  })();
+  </script>
+</body>
+</html>
