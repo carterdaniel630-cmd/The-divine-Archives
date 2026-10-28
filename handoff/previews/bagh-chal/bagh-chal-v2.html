@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bagh-Chal — Tiger and Goats · The Divine Archives</title>
+<meta name="description" content="Bagh-Chal, the Himalayan game of tigers and goats. A museum-exhibit interactive from The Divine Archives.">
+<style>
+/* ============================================================
+   BAGH-CHAL — scoped styles. Every selector begins bagh-chal-.
+   ============================================================ */
+.bagh-chal-page {
+  margin: 0;
+  min-height: 100vh;
+  background: #0f0b07;
+  color: #e6d9bd;
+  font-family: Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+.bagh-chal-page * { box-sizing: border-box; }
+
+.bagh-chal-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 30%, rgba(122, 74, 28, 0.28), rgba(0,0,0,0) 70%),
+    radial-gradient(ellipse 120% 90% at 50% 110%, rgba(20, 10, 4, 0.9), rgba(0,0,0,0) 60%);
+  z-index: 0;
+}
+
+.bagh-chal-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+}
+
+.bagh-chal-header { text-align: center; margin: 8px 0 18px; }
+.bagh-chal-kicker {
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #9a7f52;
+  margin: 0 0 10px;
+}
+.bagh-chal-title {
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 400;
+  margin: 0;
+  color: #f0e3c2;
+  letter-spacing: 0.04em;
+}
+.bagh-chal-title .bagh-chal-devanagari { color: #c9a227; font-size: 0.72em; }
+.bagh-chal-subtitle {
+  margin: 10px auto 0;
+  max-width: 620px;
+  font-style: italic;
+  font-size: clamp(14px, 2.6vw, 17px);
+  color: #b3a17e;
+  line-height: 1.55;
+}
+
+.bagh-chal-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 6px;
+}
+
+.bagh-chal-boardwrap {
+  flex: 1 1 340px;
+  max-width: 620px;
+  min-width: 0;
+}
+.bagh-chal-canvas-frame {
+  position: relative;
+  border-radius: 14px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.75),
+    0 4px 18px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255, 220, 150, 0.08);
+}
+.bagh-chal-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  cursor: pointer;
+  touch-action: manipulation;
+  outline: none;
+}
+.bagh-chal-canvas:focus-visible {
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.75);
+}
+
+.bagh-chal-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  justify-content: center;
+  align-items: baseline;
+  margin: 14px 4px 6px;
+  font-size: 15px;
+  color: #cdbb96;
+}
+.bagh-chal-status .bagh-chal-turn {
+  color: #f0e3c2;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+}
+.bagh-chal-status .bagh-chal-phase {
+  color: #9a7f52;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.bagh-chal-status .bagh-chal-counts { color: #a89a78; font-size: 14px; }
+
+.bagh-chal-message {
+  min-height: 30px;
+  text-align: center;
+  font-style: italic;
+  font-size: 16px;
+  color: #d9c391;
+  margin: 2px 6px 0;
+  line-height: 1.5;
+}
+
+.bagh-chal-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 14px 0 4px;
+}
+.bagh-chal-btn {
+  font-family: inherit;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #f0e3c2;
+  background: linear-gradient(180deg, #3a2a17, #241809);
+  border: 1px solid #6b532f;
+  border-radius: 9px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+.bagh-chal-btn:hover { border-color: #c9a227; box-shadow: 0 0 14px rgba(201,162,39,0.25); }
+.bagh-chal-btn:active { transform: translateY(1px); }
+.bagh-chal-btn:disabled { opacity: 0.38; cursor: default; box-shadow: none; }
+.bagh-chal-btn.bagh-chal-btn-gold {
+  background: linear-gradient(180deg, #6b5320, #3d2f10);
+  border-color: #c9a227;
+}
+.bagh-chal-hint {
+  text-align: center;
+  font-size: 12.5px;
+  color: #8a764f;
+  margin: 10px 8px 0;
+  line-height: 1.6;
+}
+.bagh-chal-hint kbd {
+  font-family: inherit;
+  border: 1px solid #5a4a2e;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: 11.5px;
+  color: #d9c391;
+  background: #1c1409;
+}
+
+.bagh-chal-side {
+  flex: 1 1 280px;
+  max-width: 360px;
+  min-width: 0;
+  background: linear-gradient(180deg, rgba(46,32,16,0.85), rgba(24,16,8,0.9));
+  border: 1px solid #4a3a22;
+  border-radius: 14px;
+  padding: 20px 20px 22px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+}
+.bagh-chal-side h2 {
+  margin: 0 0 4px;
+  font-size: 21px;
+  font-weight: 400;
+  color: #f0e3c2;
+  letter-spacing: 0.03em;
+}
+.bagh-chal-side .bagh-chal-side-sub {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  font-style: italic;
+  color: #9a7f52;
+  line-height: 1.5;
+}
+.bagh-chal-legend { display: grid; gap: 12px; margin-bottom: 16px; }
+.bagh-chal-legend-row { display: flex; gap: 12px; align-items: center; }
+.bagh-chal-legend-swatch {
+  width: 34px; height: 34px; border-radius: 50%; flex: 0 0 auto;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.18);
+}
+.bagh-chal-legend-swatch.bagh-chal-sw-tiger {
+  background: radial-gradient(circle at 35% 30%, #d08a3e, #7a4218 70%, #4a2410);
+  border: 2px solid #2b1608;
+}
+.bagh-chal-legend-swatch.bagh-chal-sw-goat {
+  background: radial-gradient(circle at 35% 30%, #e0bd85, #a67c46 70%, #6e4c26);
+  border: 2px solid #3d2a12;
+}
+.bagh-chal-legend-row p { margin: 0; font-size: 14px; line-height: 1.5; color: #c9b88f; }
+.bagh-chal-legend-row p strong { color: #f0e3c2; font-weight: 400; }
+
+.bagh-chal-rules { margin-top: 26px; }
+.bagh-chal-rules summary {
+  cursor: pointer;
+  font-size: 17px;
+  color: #e6d9bd;
+  letter-spacing: 0.03em;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(58,42,23,0.7), rgba(30,20,10,0.7));
+  border: 1px solid #4a3a22;
+  border-radius: 10px;
+  list-style: none;
+  user-select: none;
+}
+.bagh-chal-rules summary::-webkit-details-marker { display: none; }
+.bagh-chal-rules summary::before { content: "❖ "; color: #c9a227; }
+.bagh-chal-rules summary:hover { border-color: #c9a227; }
+.bagh-chal-rules-body {
+  border: 1px solid #4a3a22;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 18px 20px 20px;
+  background: rgba(20, 13, 7, 0.75);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #c9b88f;
+}
+.bagh-chal-rules-body h3 {
+  margin: 18px 0 8px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d9c391;
+}
+.bagh-chal-rules-body h3:first-child { margin-top: 0; }
+.bagh-chal-rules-body ul { margin: 8px 0; padding-left: 20px; }
+.bagh-chal-rules-body li { margin: 6px 0; }
+.bagh-chal-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-right: 7px;
+  vertical-align: 1px;
+  font-style: normal;
+}
+.bagh-chal-badge.bagh-chal-attested {
+  background: rgba(47, 143, 134, 0.16);
+  border: 1px solid #2f8f86;
+  color: #7fd0c6;
+}
+.bagh-chal-badge.bagh-chal-reconstructed {
+  background: rgba(201, 162, 39, 0.13);
+  border: 1px solid #c9a227;
+  color: #e3c46a;
+}
+.bagh-chal-rules-sources {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: #8a764f;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.bagh-chal-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12.5px;
+  color: #6f5f42;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Start overlay */
+.bagh-chal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(8, 5, 3, 0.88);
+  backdrop-filter: blur(3px);
+  transition: opacity 400ms ease;
+}
+.bagh-chal-overlay.bagh-chal-hidden { opacity: 0; pointer-events: none; }
+.bagh-chal-card {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(180deg, #2c1f10, #17100a);
+  border: 1px solid #6b532f;
+  border-radius: 18px;
+  padding: clamp(24px, 5vw, 44px);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,220,150,0.1);
+}
+.bagh-chal-card h2 {
+  margin: 0 0 6px;
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 400;
+  color: #f0e3c2;
+}
+.bagh-chal-card .bagh-chal-devanagari { color: #c9a227; }
+.bagh-chal-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #b3a17e;
+  font-style: italic;
+  margin: 10px 0 22px;
+}
+.bagh-chal-choice { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.bagh-chal-choice .bagh-chal-btn { font-size: 16.5px; padding: 14px 24px; }
+.bagh-chal-card .bagh-chal-note {
+  margin: 20px 0 0;
+  font-size: 12.5px;
+  color: #8a764f;
+}
+
+@media (max-width: 720px) {
+  .bagh-chal-side { max-width: none; }
+  .bagh-chal-layout { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bagh-chal-overlay { transition: none; }
+  .bagh-chal-btn { transition: none; }
+}
+</style>
+</head>
+<body class="bagh-chal-page">
+<div class="bagh-chal-backdrop" aria-hidden="true"></div>
+
+<div class="bagh-chal-shell">
+  <header class="bagh-chal-header">
+    <p class="bagh-chal-kicker">The Divine Archives · Himalaya</p>
+    <h1 class="bagh-chal-title">Bagh-Chal <span class="bagh-chal-devanagari">बाघ चाल</span></h1>
+    <p class="bagh-chal-subtitle">The tiger game of Nepal — four predators against twenty goats, played for centuries on a hand-drawn grid. Asymmetric, pitiless, and beautiful.</p>
+  </header>
+
+  <div class="bagh-chal-layout">
+    <div class="bagh-chal-boardwrap">
+      <div class="bagh-chal-canvas-frame">
+        <canvas class="bagh-chal-canvas" id="baghChalCanvas" tabindex="0"
+          aria-label="Bagh-Chal board. Use arrow keys to move the cursor, Enter to select and move, Escape to cancel, U to undo, R to restart."></canvas>
+      </div>
+      <div class="bagh-chal-status" aria-live="polite">
+        <span class="bagh-chal-phase" id="baghChalPhase">—</span>
+        <span class="bagh-chal-turn" id="baghChalTurn">Choose your side to begin</span>
+        <span class="bagh-chal-counts" id="baghChalCounts"></span>
+      </div>
+      <p class="bagh-chal-message" id="baghChalMessage" aria-live="polite"></p>
+      <div class="bagh-chal-controls">
+        <button class="bagh-chal-btn" id="baghChalUndo" type="button" disabled>Undo</button>
+        <button class="bagh-chal-btn" id="baghChalRestart" type="button">Restart</button>
+        <button class="bagh-chal-btn" id="baghChalSides" type="button">Switch sides</button>
+      </div>
+      <p class="bagh-chal-hint">
+        Tap a point to place or move &middot; click a tiger or goat, then a glowing point.<br>
+        Keyboard: <kbd>←↑↓→</kbd> move cursor &middot; <kbd>Enter</kbd> select / confirm &middot; <kbd>Esc</kbd> cancel &middot; <kbd>U</kbd> undo &middot; <kbd>R</kbd> restart
+      </p>
+    </div>
+
+    <aside class="bagh-chal-side">
+      <h2>The Two Sides</h2>
+      <p class="bagh-chal-side-sub">One hunts. The other endures. Neither can win the other's way.</p>
+      <div class="bagh-chal-legend">
+        <div class="bagh-chal-legend-row">
+          <span class="bagh-chal-legend-swatch bagh-chal-sw-tiger" aria-hidden="true"></span>
+          <p><strong>Tigers — 4.</strong> Step along any line, or leap over an adjacent goat to the empty point beyond, taking it. Win by capturing <strong>5 goats</strong>.</p>
+        </div>
+        <div class="bagh-chal-legend-row">
+          <span class="bagh-chal-legend-swatch bagh-chal-sw-goat" aria-hidden="true"></span>
+          <p><strong>Goats — 20.</strong> Placed one per turn, then stepped along the lines. They never jump and never capture. Win by leaving <strong>every tiger with no legal move</strong>.</p>
+        </div>
+      </div>
+      <h2 style="font-size:17px">The Flow of Play</h2>
+      <p class="bagh-chal-side-sub" style="margin-bottom:0">Goats move first, placing one goat each turn while the tigers prowl. Once all twenty stand on the board, the goats too may step — and the long siege begins.</p>
+    </aside>
+  </div>
+
+  <details class="bagh-chal-rules" id="baghChalRules">
+    <summary>Rules of the game — what is attested, what is reconstructed</summary>
+    <div class="bagh-chal-rules-body">
+      <h3>Attested rules</h3>
+      <ul>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>The board is a 5×5 grid of 25 points, with diagonal lines only through alternating points — the four corners and the center connect in all eight directions; pieces stand on the intersections and move along the drawn lines.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>Four tigers begin on the four corner points. All twenty goats begin off the board.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>The goat player moves first, placing one goat per turn on any empty point. The tigers move on their own turns throughout this placement phase.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>A tiger steps to an adjacent empty point along a line, or captures by jumping over an adjacent goat to the empty point immediately beyond — as in draughts. <strong>Capturing is not obligatory.</strong></li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>Goats never jump and never capture. Once all twenty are placed, a goat steps to an adjacent empty point along a line.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>Tigers win by capturing <strong>five goats</strong> — the common threshold; some circles play to four.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>Goats win by blocking <strong>all four tigers'</strong> legal moves.</li>
+      </ul>
+      <h3>Reconstructed in this exhibit</h3>
+      <ul>
+        <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>A capture may chain several jumps within one turn while further jumps are available. Some versions permit only one capture per turn; the chained form is the common house rule used here.</li>
+        <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>Draws by threefold repetition, or after 100 quiet half-moves, are a modern safeguard against endless play — not a traditional rule.</li>
+        <li><i class="bagh-chal-badge bagh-chal-attested">Attested</i>This exhibit uses the standard board: diagonals through alternating points only. (An earlier version of this exhibit wrongly drew diagonals in every square — that version's legal moves were incorrect.)</li>
+        <li><i class="bagh-chal-badge bagh-chal-reconstructed">Reconstructed</i>The computer opponent's heuristics are modern inventions, tuned for a lively game rather than perfect play.</li>
+      </ul>
+      <p class="bagh-chal-rules-sources">Rules follow the documented overviews of Bagh-chal (Wikipedia), cyningstan.com's rule list, and ludoteka's game notes — summarized here, never presented beyond what the sources attest. बाघ चाल · धुँ कासा — "the tiger game."</p>
+    </div>
+  </details>
+
+  <footer class="bagh-chal-footer">
+    Carved in the browser from procedural wood and pigment — no images were harmed, none were loaded.<br>
+    An exhibit of The Divine Archives · offered with reverence for the craftsmen of the Himalaya.
+  </footer>
+</div>
+
+<div class="bagh-chal-overlay" id="baghChalOverlay">
+  <div class="bagh-chal-card" role="dialog" aria-modal="true" aria-labelledby="baghChalCardTitle">
+    <h2 id="baghChalCardTitle">Bagh-Chal <span class="bagh-chal-devanagari">बाघ चाल</span></h2>
+    <p>Four tigers. Twenty goats. One mountain board.<br>Choose your side — the computer will take the other.</p>
+    <div class="bagh-chal-choice">
+      <button class="bagh-chal-btn bagh-chal-btn-gold" id="baghChalPlayGoats" type="button">Play as Goats</button>
+      <button class="bagh-chal-btn bagh-chal-btn-gold" id="baghChalPlayTigers" type="button">Play as Tigers</button>
+    </div>
+    <p class="bagh-chal-note">The goats place first. The tigers are already waiting in the corners.</p>
+  </div>
+</div>
+<script>
+'use strict';
+/* ============================================================
+   BAGH-CHAL — Tiger and Goats (Nepal)
+   Single-file exhibit. Vanilla ES6, zero external requests.
+   Game engine: pure rules, no DOM.
+   ============================================================ */
+(function () {
+
+/* ---------- constants ---------- */
+var N = 5, PTS = 25;
+var TIGER = 'T', GOAT = 'G';
+var TIGER_WIN_CAPTURES = 5;      // the common threshold (some circles play to 4)
+var MAX_QUIET_HALFMOVES = 100;   // modern safeguard against endless play
+var REPETITION_LIMIT = 3;
+
+function idx(r, c) { return r * N + c; }
+function row(i) { return (i / N) | 0; }
+function col(i) { return i % N; }
+function inB(r, c) { return r >= 0 && r < N && c >= 0 && c < N; }
+
+/* adjacency: orthogonals everywhere; diagonals ONLY through points where
+   (r+c) is even — the real board. That gives the six diagonal lines of the
+   traditional board: the four corners and the center are 8-direction hubs. */
+var NB = [];
+(function () {
+  for (var i = 0; i < PTS; i++) {
+    var r = row(i), c = col(i), list = [];
+    for (var dr = -1; dr <= 1; dr++) {
+      for (var dc = -1; dc <= 1; dc++) {
+        if (!dr && !dc) continue;
+        if (dr && dc && ((r + c) % 2 !== 0)) continue; /* no diagonal off an odd point */
+        if (inB(r + dr, c + dc)) list.push(idx(r + dr, c + dc));
+      }
+    }
+    NB.push(list);
+  }
+})();
+
+/* ---------- move generation (pure) ---------- */
+
+/* all capture chains beginning at i; each move: {from, path:[landings], caps:[goats]} */
+function tigerCaptures(board, i) {
+  var out = [];
+  function dfs(pos, b, path, caps, visited) {
+    var r = row(pos), c = col(pos), extended = false;
+    for (var k = 0; k < NB[pos].length; k++) {
+      var n = NB[pos][k];
+      if (b[n] !== GOAT) continue;
+      var lr = 2 * row(n) - r, lc = 2 * col(n) - c;
+      if (!inB(lr, lc)) continue;
+      var l = idx(lr, lc);
+      if (b[l] || visited[l]) continue;
+      extended = true;
+      var b2 = b.slice();
+      b2[n] = null; b2[pos] = null; b2[l] = TIGER;
+      var v2 = visited.slice(); v2[l] = 1;
+      dfs(l, b2, path.concat([l]), caps.concat([n]), v2);
+    }
+    if (!extended && caps.length) out.push({ from: i, path: path, caps: caps });
+  }
+  var v0 = new Array(PTS).fill(0); v0[i] = 1;
+  dfs(i, board.slice(), [], [], v0);
+  return out;
+}
+
+function tigerSteps(board, i) {
+  var out = [];
+  for (var k = 0; k < NB[i].length; k++) {
+    var n = NB[i][k];
+    if (!board[n]) out.push({ from: i, path: [n], caps: [] });
+  }
+  return out;
+}
+
+function allTigerMoves(board) {
+  var out = [];
+  for (var i = 0; i < PTS; i++) {
+    if (board[i] !== TIGER) continue;
+    var caps = tigerCaptures(board, i);
+    if (caps.length) { for (var a = 0; a < caps.length; a++) out.push(caps[a]); }
+    else { var st = tigerSteps(board, i); for (var b = 0; b < st.length; b++) out.push(st[b]); }
+  }
+  return out;
+}
+
+function tigerMovesFrom(board, i) {
+  var caps = tigerCaptures(board, i);
+  return caps.length ? caps : tigerSteps(board, i);
+}
+
+function tigerMobility(board, i) {
+  var m = 0;
+  for (var k = 0; k < NB[i].length; k++) {
+    var n = NB[i][k];
+    if (!board[n]) { m++; continue; }
+    if (board[n] === GOAT) {
+      var lr = 2 * row(n) - row(i), lc = 2 * col(n) - col(i);
+      if (inB(lr, lc) && !board[idx(lr, lc)]) m++;
+    }
+  }
+  return m;
+}
+
+function anyTigerMove(board) {
+  for (var i = 0; i < PTS; i++)
+    if (board[i] === TIGER && tigerMobility(board, i) > 0) return true;
+  return false;
+}
+
+/* is goat g immediately capturable right now? */
+function goatCapturable(board, g) {
+  var r = row(g), c = col(g);
+  for (var k = 0; k < NB[g].length; k++) {
+    var n = NB[g][k];
+    if (board[n] !== TIGER) continue;
+    var lr = 2 * r - row(n), lc = 2 * c - col(n);
+    if (inB(lr, lc) && !board[idx(lr, lc)]) return true;
+  }
+  return false;
+}
+
+/* total empty breathing room around all tigers — the herd's squeeze gauge */
+function emptyTigerNeighbors(board) {
+  var n = 0;
+  for (var i = 0; i < PTS; i++) {
+    if (board[i] !== TIGER) continue;
+    for (var k = 0; k < NB[i].length; k++) if (!board[NB[i][k]]) n++;
+  }
+  return n;
+}
+
+/* could a tiger step somewhere and capture g on its very next move?
+   (one-ply threat foresight for the goat side — still cheap) */
+function goatThreatenedNext(board, g) {
+  for (var i = 0; i < PTS; i++) {
+    if (board[i] !== TIGER) continue;
+    for (var k = 0; k < NB[i].length; k++) {
+      var e = NB[i][k];
+      if (board[e]) continue;
+      var b2 = board.slice();
+      b2[i] = null; b2[e] = TIGER;
+      if (goatCapturable(b2, g)) return true;
+    }
+  }
+  return false;
+}
+
+function goatSteps(board, i) {
+  var out = [];
+  for (var k = 0; k < NB[i].length; k++) {
+    var n = NB[i][k];
+    if (!board[n]) out.push({ from: i, to: n });
+  }
+  return out;
+}
+
+function allGoatSteps(board) {
+  var out = [];
+  for (var i = 0; i < PTS; i++)
+    if (board[i] === GOAT) {
+      var s = goatSteps(board, i);
+      for (var k = 0; k < s.length; k++) out.push(s[k]);
+    }
+  return out;
+}
+
+function emptyPoints(board) {
+  var out = [];
+  for (var i = 0; i < PTS; i++) if (!board[i]) out.push(i);
+  return out;
+}
+
+/* apply a move to a board copy; returns {board, capturedNow} */
+function applyMove(board, move, side) {
+  var b = board.slice(), capturedNow = 0;
+  if (side === GOAT) {
+    if (move.place !== undefined) { b[move.place] = GOAT; }
+    else { b[move.from] = null; b[move.to] = GOAT; }
+  } else {
+    b[move.from] = null;
+    for (var k = 0; k < move.caps.length; k++) { b[move.caps[k]] = null; capturedNow++; }
+    b[move.path[move.path.length - 1]] = TIGER;
+  }
+  return { board: b, capturedNow: capturedNow };
+}
+
+function posKey(board, turn, phase) {
+  return board.map(function (p) { return p || '.'; }).join('') + turn + phase[0];
+}
+
+/* how many goats could a tiger step-and-capture on the next move?
+   (threat creation — the tiger's way of forcing errors) */
+function tigerThreats(board) {
+  var n = 0;
+  for (var i = 0; i < PTS; i++) {
+    if (board[i] !== TIGER) continue;
+    for (var k = 0; k < NB[i].length; k++) {
+      var e = NB[i][k];
+      if (board[e]) continue;
+      var er = row(e), ec = col(e);
+      for (var j = 0; j < NB[e].length; j++) {
+        var g = NB[e][j];
+        if (board[g] !== GOAT) continue;
+        var lr = 2 * row(g) - er, lc = 2 * col(g) - ec;
+        if (inB(lr, lc) && !board[idx(lr, lc)]) n++;
+      }
+    }
+  }
+  return n;
+}
+
+/* ---------- evaluation (tiger's perspective; cheap, phone-safe) ---------- */
+function evalTiger(board, captured) {
+  var s = captured * 120, tMob = 0, trapped = 0, centr = 0, vuln = 0;
+  for (var i = 0; i < PTS; i++) {
+    if (board[i] === TIGER) {
+      var m = tigerMobility(board, i);
+      tMob += m;
+      if (!m) trapped++;
+      centr += (4 - Math.max(Math.abs(row(i) - 2), Math.abs(col(i) - 2))) * 1.5;
+    } else if (board[i] === GOAT) {
+      if (goatCapturable(board, i)) vuln++;
+    }
+  }
+  return s + tMob * 3 - trapped * 250 + vuln * 25 + centr + tigerThreats(board) * 12;
+}
+
+/* ---------- AI: tigers (2-ply, capped) ---------- */
+function aiTigerMove(st) {
+  var moves = allTigerMoves(st.board);
+  if (!moves.length) return null;
+  moves.sort(function (a, b) { return b.caps.length - a.caps.length; });
+  var best = null, bestScore = -Infinity, budget = 5200, used = 0;
+
+  for (var mi = 0; mi < moves.length; mi++) {
+    var m = moves[mi];
+    var r1 = applyMove(st.board, m, TIGER);
+    var captured = st.captured + r1.capturedNow;
+    var score;
+    if (captured >= TIGER_WIN_CAPTURES) score = 1e7;
+    else if (!anyTigerMove(r1.board)) score = -1e7;
+    else {
+      var replies = st.phase === 'place' ? emptyPoints(r1.board) : allGoatSteps(r1.board);
+      var worst = Infinity;
+      var cap = Math.min(replies.length, 48);
+      for (var ri = 0; ri < cap; ri++) {
+        var rep = replies[(ri * 7919) % replies.length]; /* deterministic spread sample */
+        var gm = st.phase === 'place' ? { place: rep } : rep;
+        var r2 = applyMove(r1.board, gm, GOAT);
+        var e = evalTiger(r2.board, captured);
+        if (e < worst) worst = e;
+        if (++used > budget) break;
+      }
+      score = worst + m.caps.length * 12; /* captures preferred, longest chains first */
+    }
+    /* repetition honesty: a third occurrence draws — never sleepwalk into it, never miss it as a lifeline */
+    var repT = st.posCounts[posKey(r1.board, GOAT, st.phase)] || 0;
+    if (repT >= 2) score = Math.min(score, 0);
+    else if (repT >= 1) score -= 60;
+    score += Math.random() * 5;
+    if (score > bestScore) { bestScore = score; best = m; }
+    if (used > budget) break;
+  }
+  return best;
+}
+
+/* ---------- AI: goats (2-ply — answers the tiger's best reply) ---------- */
+function aiGoatMove(st) {
+  var moves = st.phase === 'place'
+    ? emptyPoints(st.board).map(function (p) { return { place: p }; })
+    : allGoatSteps(st.board);
+  if (!moves.length) return null;
+
+  /* tiger capture landings available right now (to block or defuse) */
+  var landings = {}, threatened = {};
+  for (var i = 0; i < PTS; i++) {
+    if (st.board[i] !== TIGER) continue;
+    var caps = tigerCaptures(st.board, i);
+    for (var k = 0; k < caps.length; k++) {
+      landings[caps[k].path[caps[k].path.length - 1]] = 1;
+      for (var q = 0; q < caps[k].caps.length; q++) threatened[caps[k].caps[q]] = 1;
+    }
+  }
+
+  var breathe0 = emptyTigerNeighbors(st.board);
+  var tMob0 = 0;
+  for (var ti = 0; ti < PTS; ti++) if (st.board[ti] === TIGER) tMob0 += tigerMobility(st.board, ti);
+  var killMode = st.phase === 'move' && tMob0 <= 9;   /* the siege tightens: hunt the immobilization */
+  var best = null, bestScore = -Infinity, budget = 5200, used = 0;
+  for (var mi = 0; mi < moves.length; mi++) {
+    var mv = moves[mi];
+    var r1 = applyMove(st.board, mv, GOAT);
+    var gp = mv.place !== undefined ? mv.place : mv.to;
+    var score;
+
+    if (!anyTigerMove(r1.board)) score = 1e7;            /* the herd prevails outright */
+    else {
+      var replies = allTigerMoves(r1.board);            /* the tiger's best answer */
+      var danger = -Infinity;
+      var cap = Math.min(replies.length, 40);
+      for (var ri = 0; ri < cap; ri++) {
+        var rep = replies[(ri * 7919) % replies.length];
+        var r2 = applyMove(r1.board, rep, TIGER);
+        var c2 = st.captured + r2.capturedNow;
+        var e;
+        if (c2 >= TIGER_WIN_CAPTURES) e = 1e6;
+        else if (!anyTigerMove(r2.board)) e = -1e6;
+        else e = evalTiger(r2.board, c2);
+        if (e > danger) danger = e;
+        if (++used > budget) break;
+      }
+      score = -danger;
+    }
+
+    /* repetition honesty: a third occurrence draws — never sleepwalk into it, never miss it as a lifeline */
+    var repG = st.posCounts[posKey(r1.board, TIGER, st.phase)] || 0;
+    if (repG >= 2) score = Math.min(score, 0);
+    else if (repG >= 1) score -= 60;
+    if (landings[gp]) score += 55;                       /* block a tiger's jump landing */
+    if (mv.from !== undefined && threatened[mv.from]) score += 30; /* rescue a doomed goat */
+    if (goatCapturable(r1.board, gp)) score -= 85;       /* never offer a goat freely */
+    else if (goatThreatenedNext(r1.board, gp)) score -= 45; /* don't walk into next turn's trap */
+    else {
+      var surround = 0, friends = 0;
+      for (var k = 0; k < NB[gp].length; k++) {
+        var n = NB[gp][k];
+        if (r1.board[n] === TIGER) surround++;
+        else if (r1.board[n] === GOAT) friends++;
+      }
+      score += surround * 7 + friends * 3;               /* hem tigers, keep the herd together */
+      score += (breathe0 - emptyTigerNeighbors(r1.board)) * (killMode ? 20 : 9); /* tighten the siege */
+      if (st.phase === 'place' && surround > 0 && st.toPlace > 12) score -= 20; /* don't feed early goats */
+    }
+    score += Math.random() * 6;
+    if (score > bestScore) { bestScore = score; best = mv; }
+    if (used > budget) break;
+  }
+  return best;
+}
+
+/* ============================================================
+   RENDERING — procedural Himalayan craft. No images, no fonts,
+   no network. Everything is drawn: aged walnut, brass rivets,
+   carved tigers, humble goat tokens, thangka accents.
+   ============================================================ */
+var canvas = document.getElementById('baghChalCanvas');
+var ctx = canvas.getContext('2d');
+
+var reducedMotion = window.matchMedia &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var coarsePointer = window.matchMedia &&
+  window.matchMedia('(pointer: coarse)').matches;
+
+var view = { size: 0, dpr: 1, margin: 0, cell: 0, wood: null, tigerR: 0, goatR: 0 };
+
+function ptXY(i) {
+  return { x: view.margin + col(i) * view.cell, y: view.margin + row(i) * view.cell };
+}
+
+function makeWood(size) {
+  var c = document.createElement('canvas');
+  c.width = c.height = size;
+  var g = c.getContext('2d');
+  var base = g.createLinearGradient(0, 0, size, size);
+  base.addColorStop(0, '#4b2d16');
+  base.addColorStop(0.45, '#3a2110');
+  base.addColorStop(1, '#472a14');
+  g.fillStyle = base;
+  g.fillRect(0, 0, size, size);
+  var i, x;
+  for (i = 0; i < 240; i++) {                       /* long grain */
+    var y = Math.random() * size;
+    var dark = Math.random() < 0.55;
+    g.strokeStyle = dark
+      ? 'rgba(18,9,3,' + (0.05 + Math.random() * 0.13).toFixed(3) + ')'
+      : 'rgba(150,100,52,' + (0.04 + Math.random() * 0.09).toFixed(3) + ')';
+    g.lineWidth = 0.6 + Math.random() * 2.4;
+    var amp = 4 + Math.random() * 15, per = 130 + Math.random() * 280, ph = Math.random() * 7;
+    g.beginPath();
+    g.moveTo(-30, y);
+    for (x = 0; x <= size + 30; x += 36)
+      g.lineTo(x, y + Math.sin(x / per * 6.283 + ph) * amp);
+    g.stroke();
+  }
+  for (i = 0; i < 7; i++) {                          /* knots */
+    var kx = Math.random() * size, ky = Math.random() * size, kr = 9 + Math.random() * 24;
+    var kg = g.createRadialGradient(kx, ky, 1, kx, ky, kr);
+    kg.addColorStop(0, 'rgba(14,7,2,0.6)');
+    kg.addColorStop(0.55, 'rgba(32,17,6,0.3)');
+    kg.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = kg;
+    g.beginPath(); g.arc(kx, ky, kr, 0, 6.284); g.fill();
+  }
+  var sheen = g.createLinearGradient(0, 0, 0, size); /* hand-polish */
+  sheen.addColorStop(0, 'rgba(255,225,160,0.06)');
+  sheen.addColorStop(0.5, 'rgba(0,0,0,0)');
+  sheen.addColorStop(1, 'rgba(0,0,0,0.22)');
+  g.fillStyle = sheen;
+  g.fillRect(0, 0, size, size);
+  return c;
+}
+
+function resize() {
+  var w = canvas.clientWidth || 320;
+  var dpr = Math.min(window.devicePixelRatio || 1, coarsePointer ? 1.0 : 1.5);
+  view.size = w; view.dpr = dpr;
+  canvas.width = Math.round(w * dpr);
+  canvas.height = Math.round(w * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  view.margin = w * 0.118;
+  view.cell = (w - view.margin * 2) / 4;
+  view.tigerR = view.cell * 0.335;
+  view.goatR = view.cell * 0.152;
+  if (!view.wood || view.wood.width < 700) view.wood = makeWood(880);
+  kick();
+}
+
+function roundRectPath(g, x, y, w, h, r) {
+  g.beginPath();
+  g.moveTo(x + r, y);
+  g.arcTo(x + w, y, x + w, y + h, r);
+  g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r);
+  g.arcTo(x, y, x + w, y, r);
+  g.closePath();
+}
+
+/* ---- thangka corner ornament: a small lotus in red, gold, turquoise ---- */
+function drawLotus(g, x, y, R) {
+  g.save(); g.translate(x, y);
+  g.fillStyle = 'rgba(0,0,0,0.35)';
+  g.beginPath(); g.arc(2, 3, R, 0, 6.284); g.fill();
+  var cols = ['#8a2323', '#c9a227', '#2f8f86', '#c9a227', '#8a2323'];
+  for (var k = 0; k < 5; k++) {
+    var a = -Math.PI / 2 + (k - 2) * 0.5;
+    g.save(); g.rotate(a);
+    g.fillStyle = cols[k];
+    g.beginPath();
+    g.moveTo(0, 0);
+    g.quadraticCurveTo(R * 0.42, -R * 0.55, 0, -R * 1.05);
+    g.quadraticCurveTo(-R * 0.42, -R * 0.55, 0, 0);
+    g.fill();
+    g.strokeStyle = 'rgba(240,220,160,0.5)'; g.lineWidth = 1;
+    g.stroke();
+    g.restore();
+  }
+  var cg = g.createRadialGradient(-R * 0.2, -R * 0.2, 1, 0, 0, R * 0.42);
+  cg.addColorStop(0, '#ffe9ad'); cg.addColorStop(1, '#8a6a1c');
+  g.fillStyle = cg;
+  g.beginPath(); g.arc(0, 0, R * 0.4, 0, 6.284); g.fill();
+  g.restore();
+}
+
+function drawBoard(g, t) {
+  var s = view.size, m = view.margin * 0.42;
+  g.clearRect(0, 0, s, s);
+
+  /* board body */
+  g.save();
+  roundRectPath(g, 6, 6, s - 12, s - 12, 26);
+  g.clip();
+  g.drawImage(view.wood, 6, 6, s - 12, s - 12);
+  var spot = g.createRadialGradient(s * 0.38, s * 0.3, 10, s * 0.5, s * 0.5, s * 0.85);
+  spot.addColorStop(0, 'rgba(255,225,160,0.10)');
+  spot.addColorStop(1, 'rgba(0,0,0,0.34)');
+  g.fillStyle = spot;
+  g.fillRect(6, 6, s - 12, s - 12);
+  g.restore();
+
+  /* bevel + gold inlay */
+  g.save();
+  roundRectPath(g, 6, 6, s - 12, s - 12, 26);
+  g.strokeStyle = 'rgba(10,5,2,0.9)'; g.lineWidth = 7; g.stroke();
+  roundRectPath(g, 12, 12, s - 24, s - 24, 21);
+  g.strokeStyle = 'rgba(255,220,150,0.14)'; g.lineWidth = 2; g.stroke();
+  roundRectPath(g, m + 6, m + 6, s - 2 * (m + 6), s - 2 * (m + 6), 8);
+  g.strokeStyle = 'rgba(201,162,39,0.4)'; g.lineWidth = 2.5; g.stroke();
+  g.restore();
+
+  /* corner lotuses */
+  var lr = view.cell * 0.19, o = m + 2;
+  drawLotus(g, o, o, lr); drawLotus(g, s - o, o, lr);
+  drawLotus(g, o, s - o, lr); drawLotus(g, s - o, s - o, lr);
+
+  /* grid: orthogonals everywhere + diagonals only through even-parity points (the real board) */
+  g.strokeStyle = 'rgba(216,178,105,0.62)';
+  g.lineWidth = Math.max(1.6, view.cell * 0.016);
+  g.lineCap = 'round';
+  var r, c, p, q;
+  for (r = 0; r < N; r++) {
+    p = ptXY(idx(r, 0)); q = ptXY(idx(r, 4));
+    g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
+    p = ptXY(idx(0, r)); q = ptXY(idx(4, r));
+    g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
+  }
+  for (r = 0; r < N; r++) for (c = 0; c < N; c++) {
+    if ((r + c) % 2 !== 0) continue;   /* diagonals only through alternating points */
+    if (r + 1 < N && c + 1 < N) {
+      p = ptXY(idx(r, c)); q = ptXY(idx(r + 1, c + 1));
+      g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
+    }
+    if (r + 1 < N && c - 1 >= 0) {
+      p = ptXY(idx(r, c)); q = ptXY(idx(r + 1, c - 1));
+      g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
+    }
+  }
+
+  /* brass rivets on the points */
+  for (var i = 0; i < PTS; i++) {
+    p = ptXY(i);
+    var rv = g.createRadialGradient(p.x - 1.5, p.y - 1.5, 0.5, p.x, p.y, view.cell * 0.052);
+    rv.addColorStop(0, '#f4dd9a');
+    rv.addColorStop(0.6, '#a87f2e');
+    rv.addColorStop(1, '#4a3410');
+    g.fillStyle = rv;
+    g.beginPath(); g.arc(p.x, p.y, view.cell * 0.052, 0, 6.284); g.fill();
+  }
+}
+
+/* ---- carved wooden tiger: striped, powerful ---- */
+function drawTiger(g, x, y, R, seed) {
+  g.save();
+  g.translate(x, y);
+  g.fillStyle = 'rgba(0,0,0,0.5)';                    /* cast shadow */
+  g.beginPath();
+  g.ellipse(R * 0.22, R * 0.62, R * 1.0, R * 0.4, 0, 0, 6.284);
+  g.fill();
+  g.rotate((seed % 7 - 3) * 0.06);                   /* hand-carved variance */
+
+  g.lineCap = 'round';                               /* tail */
+  g.strokeStyle = '#4a2410'; g.lineWidth = R * 0.17;
+  g.beginPath();
+  g.moveTo(-R * 0.66, R * 0.42);
+  g.quadraticCurveTo(-R * 1.3, R * 0.42, -R * 1.18, -R * 0.28);
+  g.stroke();
+  g.strokeStyle = 'rgba(20,10,4,0.8)'; g.lineWidth = R * 0.07;
+  g.beginPath();
+  g.moveTo(-R * 1.02, R * 0.44); g.lineTo(-R * 1.1, R * 0.3);
+  g.moveTo(-R * 1.16, R * 0.22); g.lineTo(-R * 1.2, R * 0.02);
+  g.stroke();
+
+  var body = g.createRadialGradient(-R * 0.35, -R * 0.4, R * 0.1, 0, 0, R * 1.1);
+  body.addColorStop(0, '#d78f42');
+  body.addColorStop(0.55, '#a05a22');
+  body.addColorStop(1, '#55280e');
+  g.fillStyle = body;                               /* body */
+  g.beginPath(); g.ellipse(0, R * 0.1, R * 0.84, R * 0.7, 0, 0, 6.284); g.fill();
+  g.save();                                         /* stripes, clipped to body */
+  g.clip();
+  g.strokeStyle = 'rgba(28,14,4,0.88)'; g.lineWidth = R * 0.1;
+  var sx;
+  for (sx = -2; sx <= 2; sx++) {
+    g.beginPath();
+    g.moveTo(sx * R * 0.34 - R * 0.1, -R * 0.62);
+    g.quadraticCurveTo(sx * R * 0.34 + R * 0.16, 0, sx * R * 0.34 - R * 0.08, R * 0.82);
+    g.stroke();
+  }
+  g.restore();
+
+  g.fillStyle = '#7a4218';                           /* paws */
+  var px = [-R * 0.52, R * 0.52, -R * 0.52, R * 0.52],
+      py = [-R * 0.28, -R * 0.28, R * 0.52, R * 0.52], k;
+  for (k = 0; k < 4; k++) {
+    g.beginPath(); g.ellipse(px[k], py[k], R * 0.2, R * 0.16, 0, 0, 6.284); g.fill();
+  }
+
+  var hx = 0, hy = -R * 0.78;                        /* head */
+  g.fillStyle = '#4a2410';                           /* ears */
+  for (k = -1; k <= 1; k += 2) {
+    g.beginPath();
+    g.moveTo(hx + k * R * 0.3, hy - R * 0.18);
+    g.lineTo(hx + k * R * 0.52, hy - R * 0.62);
+    g.lineTo(hx + k * R * 0.12, hy - R * 0.44);
+    g.closePath(); g.fill();
+  }
+  var head = g.createRadialGradient(hx - R * 0.12, hy - R * 0.14, R * 0.05, hx, hy, R * 0.52);
+  head.addColorStop(0, '#cf8a3e');
+  head.addColorStop(1, '#6b3a16');
+  g.fillStyle = head;
+  g.beginPath(); g.arc(hx, hy, R * 0.46, 0, 6.284); g.fill();
+  g.strokeStyle = 'rgba(28,14,4,0.9)'; g.lineWidth = R * 0.075;  /* brow stripes */
+  g.beginPath();
+  g.moveTo(hx - R * 0.2, hy - R * 0.34); g.lineTo(hx - R * 0.26, hy - R * 0.12);
+  g.moveTo(hx + R * 0.2, hy - R * 0.34); g.lineTo(hx + R * 0.26, hy - R * 0.12);
+  g.stroke();
+  var eye = g.createRadialGradient(hx - R * 0.2, hy - R * 0.06, 0.5, hx - R * 0.18, hy - R * 0.04, R * 0.11);
+  eye.addColorStop(0, '#ffe9a8'); eye.addColorStop(1, '#8a5a10');
+  g.fillStyle = eye;                                 /* amber eyes */
+  for (k = -1; k <= 1; k += 2) {
+    g.beginPath(); g.arc(hx + k * R * 0.19, hy - R * 0.04, R * 0.1, 0, 6.284); g.fill();
+    g.fillStyle = '#140a03';
+    g.beginPath(); g.arc(hx + k * R * 0.19, hy - R * 0.04, R * 0.045, 0, 6.284); g.fill();
+    g.fillStyle = eye;
+  }
+  g.fillStyle = '#e8c78f';                           /* muzzle */
+  g.beginPath(); g.ellipse(hx, hy + R * 0.24, R * 0.24, R * 0.16, 0, 0, 6.284); g.fill();
+  g.fillStyle = '#2b1608';                           /* nose */
+  g.beginPath();
+  g.moveTo(hx - R * 0.1, hy + R * 0.18); g.lineTo(hx + R * 0.1, hy + R * 0.18);
+  g.lineTo(hx, hy + R * 0.3); g.closePath(); g.fill();
+
+  g.strokeStyle = 'rgba(255,230,170,0.35)'; g.lineWidth = R * 0.06;  /* polish sheen */
+  g.beginPath(); g.arc(0, R * 0.1, R * 0.62, -2.4, -1.2); g.stroke();
+  g.strokeStyle = 'rgba(15,7,2,0.75)'; g.lineWidth = R * 0.05;       /* carved rim */
+  g.beginPath(); g.ellipse(0, R * 0.1, R * 0.84, R * 0.7, 0, 0, 6.284); g.stroke();
+  g.restore();
+}
+
+/* ---- humble goat token: ash-wood disc, incised goat head ---- */
+function drawGoat(g, x, y, R, seed) {
+  g.save();
+  g.translate(x, y);
+  g.fillStyle = 'rgba(0,0,0,0.42)';
+  g.beginPath(); g.ellipse(R * 0.14, R * 0.5, R * 0.95, R * 0.4, 0, 0, 6.284); g.fill();
+  g.rotate((seed % 5 - 2) * 0.12);
+
+  var face = g.createRadialGradient(-R * 0.3, -R * 0.35, R * 0.1, 0, 0, R * 1.05);
+  face.addColorStop(0, '#e6c78f');
+  face.addColorStop(0.6, '#bd9257');
+  face.addColorStop(1, '#7a5228');
+  g.fillStyle = face;
+  g.beginPath(); g.arc(0, 0, R, 0, 6.284); g.fill();
+  g.strokeStyle = 'rgba(255,240,200,0.5)'; g.lineWidth = R * 0.1;    /* bevel light */
+  g.beginPath(); g.arc(0, 0, R * 0.9, -2.6, -0.6); g.stroke();
+  g.strokeStyle = '#3d2a12'; g.lineWidth = R * 0.14;                 /* rim */
+  g.beginPath(); g.arc(0, 0, R * 0.97, 0, 6.284); g.stroke();
+  g.strokeStyle = 'rgba(90,60,28,0.55)'; g.lineWidth = R * 0.07;     /* prayer ring */
+  g.beginPath(); g.arc(0, 0, R * 0.66, 0, 6.284); g.stroke();
+
+  function glyph(dx, dy, col) {                     /* incised goat head */
+    g.save(); g.translate(dx, dy);
+    g.strokeStyle = col; g.fillStyle = col;
+    g.lineWidth = R * 0.13; g.lineCap = 'round';
+    g.beginPath();                                  /* horns */
+    g.moveTo(-R * 0.3, -R * 0.28);
+    g.quadraticCurveTo(-R * 0.52, -R * 0.62, -R * 0.34, -R * 0.78);
+    g.moveTo(R * 0.3, -R * 0.28);
+    g.quadraticCurveTo(R * 0.52, -R * 0.62, R * 0.34, -R * 0.78);
+    g.stroke();
+    g.beginPath();                                  /* head */
+    g.moveTo(0, -R * 0.3);
+    g.lineTo(-R * 0.26, R * 0.05);
+    g.lineTo(-R * 0.12, R * 0.42);
+    g.lineTo(R * 0.12, R * 0.42);
+    g.lineTo(R * 0.26, R * 0.05);
+    g.closePath(); g.fill();
+    g.beginPath();                                  /* ears */
+    g.moveTo(-R * 0.24, -R * 0.1); g.lineTo(-R * 0.48, -R * 0.2); g.lineTo(-R * 0.3, R * 0.02);
+    g.moveTo(R * 0.24, -R * 0.1); g.lineTo(R * 0.48, -R * 0.2); g.lineTo(R * 0.3, R * 0.02);
+    g.fill();
+    g.restore();
+  }
+  glyph(R * 0.06, R * 0.07, 'rgba(255,244,214,0.65)');  /* chisel highlight */
+  glyph(0, 0, 'rgba(56,34,14,0.92)');                   /* incised dark */
+  g.fillStyle = '#241505';                              /* eye */
+  g.beginPath(); g.arc(0, R * 0.02, R * 0.07, 0, 6.284); g.fill();
+  g.restore();
+}
+
+/* ---- animation effects ---- */
+var fxQueue = [], fxActive = null, fxHidden = {};
+function easeInOut(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+function pumpFx(now) {
+  if (!fxActive && fxQueue.length) {
+    fxActive = fxQueue.shift();
+    fxActive.t0 = now;
+    if (fxActive.hide) for (var k = 0; k < fxActive.hide.length; k++) fxHidden[fxActive.hide[k]] = 1;
+  }
+  if (fxActive) {
+    var el = now - fxActive.t0, p = Math.min(1, el / fxActive.dur);
+    fxActive.p = reducedMotion ? 1 : easeInOut(p);
+    if (p >= 1) {
+      if (fxActive.hide) for (var j = 0; j < fxActive.hide.length; j++) delete fxHidden[fxActive.hide[j]];
+      if (fxActive.done) fxActive.done();
+      fxActive = null;
+    }
+  }
+}
+function fxBusy() { return !!(fxActive || fxQueue.length); }
+
+function drawFx(g) {
+  if (!fxActive) return;
+  var f = fxActive, p = f.p;
+  if (f.type === 'slide') {
+    var x = f.from.x + (f.to.x - f.from.x) * p,
+        y = f.from.y + (f.to.y - f.from.y) * p;
+    if (f.piece === TIGER) drawTiger(g, x, y, view.tigerR, f.seed || 0);
+    else drawGoat(g, x, y, view.goatR, f.seed || 0);
+  } else if (f.type === 'fade') {
+    g.save(); g.globalAlpha = 1 - p;
+    drawGoat(g, f.x, f.y, view.goatR * (1 - p * 0.35), f.seed || 0);
+    g.restore();
+  } else if (f.type === 'appear') {
+    var s = 0.3 + 0.7 * p;
+    g.save(); g.globalAlpha = p;
+    drawGoat(g, f.x, f.y, view.goatR * s, f.seed || 0);
+    g.restore();
+  }
+}
+
+/* queue the visual story of a move; calls done() when finished */
+function animateMove(move, side, done) {
+  if (reducedMotion) { done(); return; }
+  /* Note: state is applied BEFORE animation, so the static board already
+     shows the final position. We hide exactly the points the fx covers. */
+  if (side === GOAT) {
+    var gp = move.place !== undefined ? move.place : move.to;
+    var gxy = ptXY(gp);
+    if (move.place !== undefined) {
+      fxQueue.push({ type: 'appear', x: gxy.x, y: gxy.y, dur: 240, seed: gp, hide: [gp] });
+    } else {
+      var fxy = ptXY(move.from);
+      fxQueue.push({
+        type: 'slide', piece: GOAT, from: fxy, to: gxy, dur: 260, seed: move.from,
+        hide: [gp]
+      });
+    }
+  } else {
+    var final = move.path[move.path.length - 1];
+    var seq = [move.from].concat(move.path);
+    var steps = [];
+    for (var k = 0; k < move.path.length; k++) {
+      (function (a, b, capPt) {
+        steps.push({
+          type: 'slide', piece: TIGER, from: ptXY(a), to: ptXY(b),
+          dur: 240, seed: move.from, hide: [final]
+        });
+        if (capPt !== undefined && capPt !== null) {
+          var cxy = ptXY(capPt);
+          steps.push({ type: 'fade', x: cxy.x, y: cxy.y, dur: 200, seed: capPt });
+        }
+      })(seq[k], seq[k + 1], move.caps[k]);
+    }
+    for (var s2 = 0; s2 < steps.length; s2++) fxQueue.push(steps[s2]);
+  }
+  fxQueue.push({ type: 'noop', dur: 1, done: done });
+  kick();
+}
+
+/* ============================================================
+   CONTROLLER — game state, input, AI turns, status, teardown.
+   ============================================================ */
+var elPhase = document.getElementById('baghChalPhase');
+var elTurn = document.getElementById('baghChalTurn');
+var elCounts = document.getElementById('baghChalCounts');
+var elMsg = document.getElementById('baghChalMessage');
+var elUndo = document.getElementById('baghChalUndo');
+var elRestart = document.getElementById('baghChalRestart');
+var elSides = document.getElementById('baghChalSides');
+var elOverlay = document.getElementById('baghChalOverlay');
+
+var st = null;              /* {board, phase, toPlace, captured, turn, quiet, posCounts} */
+var history = [];
+var humanSide = GOAT, aiSide = TIGER;
+var selected = null, targets = [];
+var chainFrom = null, chainTargets = [];   /* compulsory-continuation state */
+var cursor = 12, cursorOn = false;
+var thinking = false, over = null, started = false;
+var lastDest = null;
+var plyCount = 0;
+
+var listeners = [];
+function on(el, type, fn, opts) {
+  el.addEventListener(type, fn, opts);
+  listeners.push({ el: el, type: type, fn: fn, opts: opts });
+}
+
+function freshState() {
+  var board = new Array(PTS).fill(null);
+  board[idx(0, 0)] = TIGER; board[idx(0, 4)] = TIGER;
+  board[idx(4, 0)] = TIGER; board[idx(4, 4)] = TIGER;
+  return {
+    board: board, phase: 'place', toPlace: 20, captured: 0,
+    turn: GOAT, quiet: 0, posCounts: {}
+  };
+}
+
+function snap(mover) {
+  return {
+    mover: mover,
+    board: st.board.slice(), phase: st.phase, toPlace: st.toPlace,
+    captured: st.captured, turn: st.turn, quiet: st.quiet,
+    posCounts: Object.assign({}, st.posCounts)
+  };
+}
+function restore(s) {
+  st.board = s.board.slice(); st.phase = s.phase; st.toPlace = s.toPlace;
+  st.captured = s.captured; st.turn = s.turn; st.quiet = s.quiet;
+  st.posCounts = Object.assign({}, s.posCounts);
+}
+
+function recordPosition() {
+  var k = posKey(st.board, st.turn, st.phase);
+  st.posCounts[k] = (st.posCounts[k] || 0) + 1;
+  return st.posCounts[k];
+}
+
+/* single-step options for a human tiger: steps + one jump at a time */
+function tigerSingles(board, i) {
+  var out = [];
+  for (var k = 0; k < NB[i].length; k++) {
+    var n = NB[i][k];
+    if (!board[n]) { out.push({ to: n, cap: null }); continue; }
+    if (board[n] === GOAT) {
+      var lr = 2 * row(n) - row(i), lc = 2 * col(n) - col(i);
+      if (inB(lr, lc) && !board[idx(lr, lc)])
+        out.push({ to: idx(lr, lc), cap: n });
+    }
+  }
+  return out;
+}
+
+function setMessage(t) { elMsg.textContent = t || ''; }
+
+function updateStatus() {
+  if (!st) {
+    elPhase.textContent = '—';
+    elTurn.textContent = 'Choose your side to begin';
+    elCounts.textContent = '';
+    return;
+  }
+  elPhase.textContent = st.phase === 'place' ? 'Placement' : 'The Siege';
+  var counts;
+  if (st.phase === 'place') counts = 'Goats to place: ' + st.toPlace + ' · Taken: ' + st.captured + '/' + TIGER_WIN_CAPTURES;
+  else counts = 'Goats on board: ' + countGoats() + ' · Taken: ' + st.captured + '/' + TIGER_WIN_CAPTURES;
+  elCounts.textContent = counts;
+  if (over) {
+    elTurn.textContent = over.winner === TIGER ? 'Tigers prevail' : (over.winner === GOAT ? 'Goats prevail' : 'Draw');
+    return;
+  }
+  if (thinking) {
+    elTurn.textContent = aiSide === TIGER ? 'The tigers are watching…' : 'The herd is deciding…';
+    return;
+  }
+  if (st.turn === humanSide) {
+    if (humanSide === GOAT && st.phase === 'place') elTurn.textContent = 'Your move — place a goat';
+    else elTurn.textContent = 'Your move — ' + (humanSide === TIGER ? 'tigers' : 'goats');
+  } else {
+    elTurn.textContent = '…';
+  }
+  elUndo.disabled = !(plyCount > 0 && !thinking && !over);
+}
+
+function countGoats() {
+  var n = 0;
+  for (var i = 0; i < PTS; i++) if (st.board[i] === GOAT) n++;
+  return n;
+}
+
+/* returns 'T' | 'G' | 'draw' | null */
+function checkTerminal() {
+  if (st.captured >= TIGER_WIN_CAPTURES) return TIGER;
+  if (!anyTigerMove(st.board)) return GOAT;
+  if (st.turn === GOAT && st.phase === 'move' && !allGoatSteps(st.board).length) return TIGER;
+  var k = posKey(st.board, st.turn, st.phase);
+  if ((st.posCounts[k] || 0) >= REPETITION_LIMIT) return 'draw';
+  if (st.phase === 'move' && st.quiet >= MAX_QUIET_HALFMOVES) return 'draw';
+  return null;
+}
+
+function endGame(result) {
+  over = { winner: result };
+  selected = null; targets = []; chainFrom = null; chainTargets = [];
+  if (result === TIGER) {
+    setMessage('Five goats taken. The hunt prevails — the tigers win.');
+  } else if (result === GOAT) {
+    setMessage('The herd stands as one. Every tiger is held fast — the goats win.');
+  } else {
+    setMessage('The mountain holds its breath. Neither side yields — a draw.');
+  }
+  updateStatus(); kick();
+}
+
+/* apply one ply already chosen; handles phase change, bookkeeping, animation.
+   keepTurn: for a human tiger's capture — the turn flips only when the chain ends. */
+function commitPly(move, side, after, keepTurn) {
+  history.push(snap(side));
+  var r = applyMove(st.board, move, side);
+  st.board = r.board;
+  st.captured += r.capturedNow;
+  if (side === GOAT && move.place !== undefined) {
+    st.toPlace--;
+    st.quiet = 0;
+    if (st.toPlace === 0) st.phase = 'move';
+  } else {
+    st.quiet = (r.capturedNow > 0 || st.phase === 'place') ? 0 : st.quiet + 1;
+  }
+  plyCount++;
+  if (r.capturedNow > 0 && side === TIGER)
+    setMessage('The tiger takes a goat — ' + st.captured + ' of ' + TIGER_WIN_CAPTURES + '.');
+  if (!keepTurn) st.turn = (side === TIGER) ? GOAT : TIGER;
+  lastDest = side === TIGER ? move.path[move.path.length - 1] : (move.place !== undefined ? move.place : move.to);
+  recordPosition();
+  animateMove(move, side, function () {
+    var t = checkTerminal();
+    if (t) endGame(t); else after();
+    updateStatus(); kick();
+  });
+  updateStatus(); kick();
+}
+
+function aiTurn() {
+  thinking = true;
+  updateStatus(); kick();
+  window.setTimeout(function () {
+    if (over) { thinking = false; return; }
+    var mv = aiSide === TIGER ? aiTigerMove(st) : aiGoatMove(st);
+    thinking = false;
+    if (!mv) { var t = checkTerminal(); if (t) endGame(t); updateStatus(); return; }
+    commitPly(mv, aiSide, function () { setMessage(''); });
+  }, reducedMotion ? 60 : 480);
+}
+
+/* ---------- human input ---------- */
+function ownPiece(p) {
+  if (humanSide === TIGER) return st.board[p] === TIGER;
+  return st.board[p] === GOAT;
+}
+
+function clearSel() { selected = null; targets = []; kick(); }
+
+function select(p) {
+  selected = p; targets = [];
+  if (humanSide === TIGER) targets = tigerSingles(st.board, p);
+  else targets = goatSteps(st.board, p).map(function (s) { return { to: s.to, cap: null, from: s.from }; });
+  setMessage(targets.length ? '' : 'That piece has nowhere to go.');
+  kick();
+}
+
+function doHumanGoatPlace(p) {
+  if (st.board[p]) return;
+  commitPly({ place: p }, GOAT, function () { setMessage(''); maybeAi(); });
+}
+
+function doHumanGoatStep(from, to) {
+  commitPly({ from: from, to: to }, GOAT, function () { setMessage(''); maybeAi(); });
+}
+
+function doHumanTigerSingle(from, opt) {
+  var mv = { from: from, path: [opt.to], caps: opt.cap !== null ? [opt.cap] : [] };
+  commitPly(mv, TIGER, function () {
+    if (over) return;
+    if (opt.cap !== null && tigerSingles(st.board, opt.to).some(function (o) { return o.cap !== null; })) {
+      /* compulsory continuation (common house rule — flagged as reconstructed) */
+      chainFrom = opt.to;
+      chainTargets = tigerSingles(st.board, opt.to).filter(function (o) { return o.cap !== null; });
+      selected = null; targets = [];
+      setMessage('The tiger must keep hunting — choose its next leap.');
+      updateStatus(); kick();
+    } else {
+      st.turn = GOAT;
+      setMessage(''); maybeAi();
+    }
+  }, true /* keepTurn: the ply isn't over until the chain ends */);
+}
+
+function doHumanChainJump(opt) {
+  var from = chainFrom;
+  chainFrom = null; chainTargets = [];
+  var mv = { from: from, path: [opt.to], caps: [opt.cap] };
+  /* no new snapshot: the whole chain belongs to the ply's single snapshot */
+  var r = applyMove(st.board, mv, TIGER);
+  st.board = r.board; st.captured += r.capturedNow; st.quiet = 0;
+  setMessage('The tiger takes another goat — ' + st.captured + ' of ' + TIGER_WIN_CAPTURES + '.');
+  lastDest = opt.to;
+  recordPosition();
+  animateMove(mv, TIGER, function () {
+    var t = checkTerminal();
+    if (t) { endGame(t); return; }
+    if (tigerSingles(st.board, opt.to).some(function (o) { return o.cap !== null; })) {
+      chainFrom = opt.to;
+      chainTargets = tigerSingles(st.board, opt.to).filter(function (o) { return o.cap !== null; });
+      setMessage('The tiger must keep hunting — choose its next leap.');
+    } else {
+      st.turn = GOAT;
+      setMessage(''); maybeAi();
+    }
+    updateStatus(); kick();
+  });
+  updateStatus(); kick();
+}
+
+function maybeAi() {
+  if (!over && st.turn === aiSide) aiTurn();
+  else updateStatus();
+}
+
+function handlePoint(p) {
+  if (!started || over || thinking || fxBusy()) return;
+  if (st.turn !== humanSide) return;
+  cursor = p;
+
+  if (chainFrom !== null) {
+    var hit = null;
+    for (var k = 0; k < chainTargets.length; k++)
+      if (chainTargets[k].to === p) hit = chainTargets[k];
+    if (hit) doHumanChainJump(hit);
+    return;
+  }
+  if (humanSide === GOAT && st.phase === 'place') {
+    if (!st.board[p]) doHumanGoatPlace(p);
+    return;
+  }
+  if (selected === null) {
+    if (ownPiece(p)) select(p);
+    return;
+  }
+  if (p === selected) { clearSel(); return; }
+  var opt = null;
+  for (var j = 0; j < targets.length; j++)
+    if (targets[j].to === p) opt = targets[j];
+  if (opt) {
+    var from = selected;
+    clearSel();
+    if (humanSide === TIGER) doHumanTigerSingle(from, opt);
+    else doHumanGoatStep(from, p);
+  } else if (ownPiece(p)) select(p);
+  else clearSel();
+}
+
+function nearestPoint(mx, my) {
+  var best = -1, bd = Infinity;
+  for (var i = 0; i < PTS; i++) {
+    var q = ptXY(i), d = (q.x - mx) * (q.x - mx) + (q.y - my) * (q.y - my);
+    if (d < bd) { bd = d; best = i; }
+  }
+  return bd <= Math.pow(view.cell * 0.46, 2) ? best : -1;
+}
+
+/* ---------- rendering: highlights + pieces ---------- */
+var raf = 0;
+function pulseActive() {
+  return started && !over && !reducedMotion &&
+    (targets.length > 0 || chainTargets.length > 0 ||
+     (humanSide === GOAT && st && st.phase === 'place' && st.turn === humanSide && !thinking));
+}
+function kick() {
+  if (!raf) raf = requestAnimationFrame(tick);
+}
+function tick(now) {
+  raf = 0;
+  pumpFx(now);
+  draw(now);
+  if (fxBusy() || pulseActive()) raf = requestAnimationFrame(tick);
+}
+
+function draw(now) {
+  drawBoard(ctx, now);
+  if (!st) return;   /* attract mode: the bare board waits behind the overlay */
+  var i, p, k;
+
+  if (lastDest !== null && !over) {                 /* last-move marker */
+    p = ptXY(lastDest);
+    ctx.save();
+    ctx.strokeStyle = 'rgba(201,162,39,0.5)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    var d = view.cell * 0.1;
+    ctx.moveTo(p.x, p.y - d); ctx.lineTo(p.x + d, p.y);
+    ctx.lineTo(p.x, p.y + d); ctx.lineTo(p.x - d, p.y);
+    ctx.closePath(); ctx.stroke();
+    ctx.restore();
+  }
+
+  if (selected !== null) {                         /* selection ring */
+    p = ptXY(selected);
+    ctx.save();
+    ctx.strokeStyle = '#e8c76a'; ctx.lineWidth = 3;
+    ctx.shadowColor = 'rgba(232,199,106,0.8)'; ctx.shadowBlur = 14;
+    ctx.beginPath(); ctx.arc(p.x, p.y, view.tigerR + 7, 0, 6.284); ctx.stroke();
+    ctx.restore();
+  }
+
+  var pulse = reducedMotion ? 0.8 : 0.55 + 0.35 * Math.sin(now / 320);
+  function targetDot(ti) {
+    p = ptXY(ti);
+    ctx.save();
+    ctx.globalAlpha = pulse;
+    ctx.fillStyle = '#e8c76a';
+    ctx.shadowColor = 'rgba(232,199,106,0.9)'; ctx.shadowBlur = 10;
+    ctx.beginPath(); ctx.arc(p.x, p.y, view.cell * 0.062, 0, 6.284); ctx.fill();
+    ctx.restore();
+  }
+  if (st && st.turn === humanSide && !thinking && !over) {
+    if (chainFrom !== null) {
+      for (k = 0; k < chainTargets.length; k++) targetDot(chainTargets[k].to);
+      p = ptXY(chainFrom);
+      ctx.save();
+      ctx.strokeStyle = '#e8c76a'; ctx.lineWidth = 3;
+      ctx.setLineDash([6, 5]);
+      ctx.beginPath(); ctx.arc(p.x, p.y, view.tigerR + 7, 0, 6.284); ctx.stroke();
+      ctx.restore();
+    } else if (selected !== null) {
+      for (k = 0; k < targets.length; k++) targetDot(targets[k].to);
+    } else if (humanSide === GOAT && st.phase === 'place') {
+      ctx.save();
+      ctx.globalAlpha = reducedMotion ? 0.5 : 0.3 + 0.18 * Math.sin(now / 420);
+      ctx.fillStyle = '#c9a227';
+      for (i = 0; i < PTS; i++) if (!st.board[i]) {
+        p = ptXY(i);
+        ctx.beginPath(); ctx.arc(p.x, p.y, view.cell * 0.04, 0, 6.284); ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+
+  for (i = 0; i < PTS; i++) {                      /* pieces */
+    if (!st.board[i] || fxHidden[i]) continue;
+    p = ptXY(i);
+    if (st.board[i] === TIGER) drawTiger(ctx, p.x, p.y, view.tigerR, i);
+    else drawGoat(ctx, p.x, p.y, view.goatR, i);
+  }
+  drawFx(ctx);
+
+  if (cursorOn && started && !over) {               /* keyboard cursor */
+    p = ptXY(cursor);
+    ctx.save();
+    ctx.strokeStyle = 'rgba(240,227,194,0.85)'; ctx.lineWidth = 2;
+    ctx.setLineDash([5, 4]);
+    ctx.beginPath(); ctx.arc(p.x, p.y, view.cell * 0.3, 0, 6.284); ctx.stroke();
+    ctx.restore();
+  }
+}
+
+/* ---------- game flow ---------- */
+function newGame(side) {
+  humanSide = side;
+  aiSide = (side === TIGER) ? GOAT : TIGER;
+  st = freshState();
+  history = []; plyCount = 0;
+  selected = null; targets = []; chainFrom = null; chainTargets = [];
+  cursor = 12; thinking = false; over = null; lastDest = null; started = true;
+  fxQueue.length = 0; fxActive = null;
+  for (var k in fxHidden) delete fxHidden[k];
+  recordPosition();
+  setMessage(side === GOAT
+    ? 'The goats enter the high pasture first. Place one upon an empty point.'
+    : 'You hold the tigers. The goats will come to you — be patient, then strike.');
+  elOverlay.classList.add('bagh-chal-hidden');
+  updateStatus(); kick();
+  canvas.focus({ preventScroll: true });
+  if (aiSide === GOAT) aiTurn();   /* goats always move first */
+}
+
+function doUndo() {
+  if (thinking || fxBusy() || !plyCount) return;
+  var s = null;
+  while (history.length) {
+    s = history.pop();
+    if (s.mover === humanSide) break;
+  }
+  if (!s) return;
+  restore(s);
+  plyCount = Math.max(0, plyCount - 2);
+  selected = null; targets = []; chainFrom = null; chainTargets = [];
+  lastDest = null; over = null;
+  setMessage('The last exchange is unwound.');
+  updateStatus(); kick();
+}
+
+/* ---------- input wiring ---------- */
+on(canvas, 'pointerdown', function (ev) {
+  cursorOn = false;
+  var rect = canvas.getBoundingClientRect();
+  var p = nearestPoint(ev.clientX - rect.left, ev.clientY - rect.top);
+  if (p >= 0) handlePoint(p);
+});
+
+on(canvas, 'keydown', function (ev) {
+  var k = ev.key, handled = true;
+  var r = row(cursor), c = col(cursor);
+  if (k === 'ArrowUp') { cursorOn = true; if (r > 0) cursor = idx(r - 1, c); }
+  else if (k === 'ArrowDown') { cursorOn = true; if (r < 4) cursor = idx(r + 1, c); }
+  else if (k === 'ArrowLeft') { cursorOn = true; if (c > 0) cursor = idx(r, c - 1); }
+  else if (k === 'ArrowRight') { cursorOn = true; if (c < 4) cursor = idx(r, c + 1); }
+  else if (k === 'Enter' || k === ' ') { cursorOn = true; handlePoint(cursor); }
+  else if (k === 'Escape') { if (chainFrom === null) clearSel(); /* a compulsory chain must be finished */ }
+  else if (k === 'u' || k === 'U') { doUndo(); }
+  else if (k === 'r' || k === 'R') { newGame(humanSide); }
+  else handled = false;
+  if (handled) { ev.preventDefault(); kick(); }
+});
+
+on(elUndo, 'click', doUndo);
+on(elRestart, 'click', function () { if (!thinking) newGame(humanSide); });
+on(elSides, 'click', function () {
+  if (thinking) return;
+  newGame(humanSide === TIGER ? GOAT : TIGER);
+});
+on(document.getElementById('baghChalPlayGoats'), 'click', function () { newGame(GOAT); });
+on(document.getElementById('baghChalPlayTigers'), 'click', function () { newGame(TIGER); });
+
+var resizeTimer = 0;
+on(window, 'resize', function () {
+  if (resizeTimer) clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(resize, 120);
+});
+
+/* ---------- teardown ---------- */
+var BaghChal = {
+  newGame: newGame,
+  destroy: function () {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
+    for (var i = 0; i < listeners.length; i++) {
+      var L = listeners[i];
+      L.el.removeEventListener(L.type, L.fn, L.opts);
+    }
+    listeners.length = 0;
+    fxQueue.length = 0; fxActive = null;
+    canvas.width = 1; canvas.height = 1;
+    view.wood = null;
+    try { delete window.BaghChal; } catch (e) { window.BaghChal = undefined; }
+  }
+};
+window.BaghChal = BaghChal;
+
+/* ---------- init ---------- */
+resize();
+draw(0);
+elPhase.textContent = '—';
+updateStatus();
+
+})();
+</script>
+</body>
+</html>
