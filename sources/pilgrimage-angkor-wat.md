@@ -33,7 +33,7 @@ No Wikipedia source is used.
    and hell, 60 m, in the south gallery's east part (Yama, many-armed, on a buffalo; 37 heavens and 32 hells; 36
    short inscriptions); the Churning, nearly 50 m, in the east gallery's south part (Vasuki, Mount Mandara on a
    tortoise, Vishnu presiding, a frieze of apsaras, 92 asuras and 88 devas); the cruciform cloister with four
-   tanks that "could either have been pools or lower level courtyards", and the "Prah Pean" (the thousand
+   tanks with "richly ornamented sides and a single central stair" that "could either have been pools or lower level courtyards", and the "Prah Pean" (the thousand
    Buddhas) where most statues have been re-established; the second gallery 100 × 115 m, its corner towers
    truncated; the "two-storey thirty metre high substructure" with stairs of about 70°; the quincunx 60 m at its
    base; the central tower 42 m high, 62 m above the main causeway; the sanctuary about 5 m wide; the towers
@@ -54,7 +54,7 @@ No Wikipedia source is used.
    blocks inside the moat with an estimated 250–300 ponds; excavations led by Miriam Stark (2010, 2013) finding
    modest wooden houses of workers; eight buried tower foundations at the western entrance found by
    ground-penetrating radar, confirmed by excavation in 2010 and 2012, radiocarbon-dated to the start of building
-   and later demolished; Suryavarman II ruled 1113–1149; Hindu ceremonies into the 13th century; Buddhist in the
+   and later demolished (deliberately, in the view of Till Sonnemann, who led the radar survey); Suryavarman II ruled 1113–1149; Hindu ceremonies into the 13th century; Buddhist in the
    14th or 15th.
 3. Yuth Vireak, report on the spring equinox at Angkor Wat, *The Phnom Penh Post* (23 March 2023), read as
    republished by Asia News Network, https://asianews.network/?p=89990 (*opened*; the Post's own page was not
