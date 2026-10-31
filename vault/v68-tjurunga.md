@@ -31,7 +31,7 @@ This archive treats the refusal to show them as part of the record, not a gap in
 
 *Tjurunga and their collection*
 
-- "Tjurunga", https://en.wikipedia.org/wiki/Tjurunga
+- Australian Institute of Aboriginal and Torres Strait Islander Studies (AIATSIS), "Arrernte returns", https://aiatsis.gov.au/about/what-we-do/return-cultural-heritage/roch-returns/arrernte-returns
 - Central Land Council, "The Strehlow collection of sacred objects", https://www.clc.org.au/wp-content/uploads/2021/03/The-Strehlow-collection-of-sacred-objects.pdf
 - Northern Territory Government, "Strehlow Research Centre", https://nt.gov.au/leisure/arts-culture-heritage/organisations-and-venues/museums-galleries-art-centres/alice-springs/strehlow-research-centre
 - "About Spencer and Gillen", https://spencerandgillen.net/spencerandgillen

@@ -309,6 +309,15 @@
    "from": "sources/ch40-diaspora-religions.md"
   },
   {
+   "id": "source:aiatsis-gov-au/69a9ea2760",
+   "type": "source",
+   "label": "https://aiatsis.gov.au/about/what-we-do/return-cultural-heritage/roch-returns/arrernte-returns",
+   "links": [
+    "relic:v68"
+   ],
+   "from": "sources/v68-tjurunga.md"
+  },
+  {
    "id": "source:air-unimi-it/f7281ce110",
    "type": "source",
    "label": "https://air.unimi.it/handle/2434/625867",
@@ -5789,15 +5798,6 @@
     "chapter:ch03"
    ],
    "from": "sources/ch03-mesopotamia.md"
-  },
-  {
-   "id": "source:en-wikipedia-org/396465e28d",
-   "type": "source",
-   "label": "https://en.wikipedia.org/wiki/Tjurunga",
-   "links": [
-    "relic:v68"
-   ],
-   "from": "sources/v68-tjurunga.md"
   },
   {
    "id": "source:en-wikipedia-org/39d70d630a",
