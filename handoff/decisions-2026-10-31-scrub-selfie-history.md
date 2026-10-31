@@ -19,3 +19,10 @@
 2. Afterwards GitHub still serves the old commits by direct link until GitHub Support purges them: a support request
    from Carter's account ("remove cached views / sensitive data", naming commit `fe5f4d6`). The loop cannot file it.
 - After a rewrite, every clone of `staging/ready-line` (Muse, other sessions) must re-fetch and reset to the new branch.
+
+## Superseded the same evening: do NOT rewrite (Carter)
+**Verbatim (live, same session, after being shown the options):** "do not approve history rewrite"
+- No history rewrite of `staging/ready-line` or any branch. The prepared rewrite was discarded (scratch copy only;
+  nothing was ever pushed). No GitHub Support request.
+- Standing state: the images are on no branch tip (deleted `3dbd974`); they remain only in `staging/ready-line`'s
+  history before that commit. No session or loop run reopens this without a new instruction from Carter.

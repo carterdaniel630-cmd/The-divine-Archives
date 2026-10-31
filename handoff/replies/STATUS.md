@@ -414,7 +414,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
   the loop cannot push them. Stage them under `handoff/graphify-wiring/` on `staging/ready-line` and the loop will land
   them through a `loop/*` PR.
 - **Selfie carriers: deleted** 2026-10-31 ~22:45 UTC from `staging/ready-line` (`3dbd974`) on Carter's live go in the
-  loop's session (`decisions-2026-10-31-selfie-carriers-and-87.md`); on no branch any more. Git history still holds them.
+  loop's session (`decisions-2026-10-31-selfie-carriers-and-87.md`); on no branch any more. Git history still holds them; Carter ruled 2026-10-31: no history rewrite (`decisions-2026-10-31-scrub-selfie-history.md`).
 - **PR #87** is merged (by its own thread); its review record is now filed on `review-log` (`40371d3`).
 
 ## Next (value order, `decisions-2026-10-17-priority-by-value.md`; Perfection Standard on every piece)
