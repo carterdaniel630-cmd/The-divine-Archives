@@ -1,6 +1,7 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-31 ~20:35 UTC (build loop, first run since 2026-10-26: **Pilgrimage open-flip built as PR #88**, head
+**As of:** 2026-10-31 ~20:24 UTC (build loop, Carter's manual re-fire: **Tjurunga absence page cites official sources only, PR #89**, head `08d4f51`;
+waits on review, checks, Carter's yes; `2026-10-31-pr89-tjurunga-official-sources.md`). Earlier ~20:20 UTC (build loop, first run since 2026-10-26: **Pilgrimage open-flip built as PR #88**, head
 `9fbc2ec`; Delphi, Mogao Caves, Göbekli Tepe, Chichén Itzá get Enter buttons on the Pilgrimage page and the museum portal,
 pending tags kept; local checks + headless phone green; waits on independent review, GitHub checks and Carter's yes;
 `2026-10-31-pr88-pilgrimage-open-four.md`). **Answers:** everything listed in the 2026-10-26 STATUS, plus every file
@@ -10,11 +11,13 @@ committed since: `pilgrimage-open-four-2026-10-26.md` (+ correction), `decisions
 11 specs, `previews/bagh-chal/bagh-chal-v2.html`). All folded into Next below.
 **Deployed (`main`):** `68b7b03` (PR #53, 2026-10-26 03:07 UTC, deploy 215 green), unchanged since; www.getconexto.com and
 the-divine-archives.pages.dev. Earlier merges: see Done and `MERGEABLE.md`.
-**Open PRs:** #88 (this run), #87 Pilgrimage batch 2 (chat thread, no loop review yet), #66 Newgrange (needs review +
+**Open PRs:** #89 and #88 (loop, 2026-10-31), #87 Pilgrimage batch 2 (owned by another thread, which is merging it: loop leaves it alone), #66 Newgrange (needs review +
 Carter), #60 (to close per takeover batch 3). **Loop:** RUNNING. **Standing law since 2026-10-26:** the Perfection
 Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rungs; "done" = every rung + Carter's yes.
 ## Done
-- 2026-10-31 ~20:30: **Pilgrimage open-flip, PR #88** (`loop/pilgrimage-open-four` `9fbc2ec`): four sites
+- 2026-10-31 ~20:22: **Tjurunga absence page, PR #89** (`loop/tjurunga-official-sources` `08d4f51`): Wikipedia link
+  replaced by AIATSIS "Arrernte returns" (opened); checks green; headless phone green. Reply `2026-10-31-pr89-tjurunga-official-sources.md`.
+- 2026-10-31 ~20:18: **Pilgrimage open-flip, PR #88** (`loop/pilgrimage-open-four` `9fbc2ec`): four sites
   `preview` → `live`, museum data cache key bumped; full build, 17/17 verify, 42/42 tests, review-checks 9/9, headless
   phone clicks through all 7 open sites. Reply `2026-10-31-pr88-pilgrimage-open-four.md`.
 - 2026-10-26 ~03:07: **PR #53 merged** (fast-forward to `68b7b03`, Carter's live yes; deploy 215 green).
@@ -388,7 +391,9 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 
 ## In progress
 - **PR #88** (Pilgrimage open-flip), head `9fbc2ec`: waiting on (a) independent review by a run that wrote none of it,
-  (b) GitHub checks incl. Lighthouse, (c) Carter's yes. Not held under the lock.
+  (b) GitHub checks incl. Lighthouse (8/9 green at ~20:20, Lighthouse running), (c) Carter's yes. Not held under the lock.
+- **PR #89** (Tjurunga official sources), head `08d4f51`: waiting on independent review (spot-check the five remaining
+  links for onward sale links), GitHub checks, Carter's yes.
 
 ## For Muse (read this first)
 - **Pilgrimage open-flip is PR #88.** Please don't push to `loop/pilgrimage-open-four`; send changes as a follow-up.
@@ -400,7 +405,9 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - **PR #87** (Pilgrimage batch 2) has no loop review yet; it queues behind #88.
 
 ## Next (value order, `decisions-2026-10-17-priority-by-value.md`; Perfection Standard on every piece)
-1. **Independent review of PR #88** (value 1): `origin/main...9fbc2ec` against `reviews/REVIEWER.md` §3–§4, by a run that
+0. **Reviewer must be a fresh session:** the session that built #88 and #89 (cse_01HFWzTjpprEnhteWzcFVBD9) may not review
+   either; any other run may.
+1. **Independent review of PR #88 and PR #89** (value 1; #89 diff is 6 files, one source line + rebuilds): `origin/main...9fbc2ec` against `reviews/REVIEWER.md` §3–§4, by a run that
    wrote none of it; record checks; if 0 findings and all green, list it Mergeable and ask Carter yes/no. Content of the
    four sites is NOT re-reviewed (Carter's correction: they passed under #53). File the review on `review-log`.
 2. **Weekly loop audit** (due: first run on/after Wed 2026-10-28; last `reviews/2026-10-25-audit.md`): `reviews/AUDITOR.md`
@@ -410,7 +417,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 3. **Site-audit fixes** (`audit-fixes-2026-10-25.md`): Fix 1 README first; Fixes 2+3 ch19; Fix 5 era label; 4, 6 at
    judgment; Fix 7 Graphify data refresh; Fix 8 default-branch note. **Plus** the Tjurunga absence page
    (`decisions-2026-10-26-absence-page-sources.md`): replace the Wikipedia source link on `vault/tjurunga.html` with
-   official museum/academic sources only, none leading toward sales or auction descriptions. Each its own `loop/*`
+   official museum/academic sources only, none leading toward sales or auction descriptions (**built: PR #89**). Each its own `loop/*`
    branch (or one small batch PR), full checks, independent review, Carter's per-item yes.
 4. **Share images for six pages** (`share-images-2026-10-25.md`): `loop/*` branch; merge needs Carter's yes.
 5. **Takeover batch** (`decisions-2026-10-26-takeover-batch.md`): (2) `.gitignore` tripwire for secret-type files, small
@@ -431,7 +438,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
     auditor-proof report (item 2) and Carter's per-round yes. Batch 2 (`armory-batch-2/`) is not sent until batch 1 is worked.
 14. **Relics 2–4** (`prep-2026-10-28/relics-2-to-4/SPEC.md`), one per run, five gates.
 15. **2026-10-18 previews sweep** (`prep-2026-10-28/previews-sweep/SPEC.md`), one per run, sensitivity three first.
-16. **PR #87** Pilgrimage batch 2: independent review (new content: Carter's yes too).
+16. ~~PR #87~~: owned by another thread, which is merging it (Carter's note 2026-10-31). The loop leaves it alone.
 17. **900 Theses** spec work (hold lifted, Council 14b).
 18. **Stream-engine paper inputs**: LAST in line (`decisions-2026-10-26-stream-engine.md`), only after 1–5 and armory
     batch 1 clear; one item at a time; preconditions (Phaistos, Aleppo, wing date bands, 83/76 count) first.
@@ -446,7 +453,8 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - Stream-engine CUT list (`decisions-2026-10-26-stream-engine.md`): never built.
 
 ## Needs Carter
-- **PR #88** (Pilgrimage open-flip): your yes is asked once it has passed independent review and checks (next run).
+- **PR #88** (Pilgrimage open-flip) and **PR #89** (Tjurunga sources): your yes is asked once each passes independent review
+  and checks (next fresh run).
 - **Selfie carriers** in `handoff/journal-hero-b64/`: the loop never deletes; delete them yourself in GitHub, or tell the
   loop's session "delete the selfie carriers" in your own words.
 Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-2026-10-28/`.

@@ -1,4 +1,4 @@
-# 2026-10-31 ~20:30 UTC — build loop: Pilgrimage open-flip built (PR #88)
+# 2026-10-31 ~20:18 UTC — build loop: Pilgrimage open-flip built (PR #88)
 
 **For Carter, in one line:** the four new Pilgrimage sites (Delphi, Mogao Caves, Göbekli Tepe, Chichén Itzá) now have
 "Enter the site" buttons on the Pilgrimage page and in the museum's portal, on PR #88. It goes live on your yes.
