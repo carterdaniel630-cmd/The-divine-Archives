@@ -97,6 +97,6 @@ No Wikipedia source is used.
   Buddhist worship there today was found (on 2026-10-31 Britannica described Buddhist use only in the past tense and HISTORY.com called it "no longer an active temple"; entry 7), so the
   cards do not claim it either way.
 - The reliefs are our own outline renderings, not tracings; the hells are drawn only as falling figures.
-- The equinox card reports the alignment as observed and APSARA's view that it was deliberate, and says the
+- The equinox card reports the alignment as observed and APSARA's view that it was deliberate (Mannikka's too, entry 4), and says the
   builders left no statement; the calendar readings (Mannikka, Kak, Im Sokrithy's day counts) are labelled as
   interpretations.
