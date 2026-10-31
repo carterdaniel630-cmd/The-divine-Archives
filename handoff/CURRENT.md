@@ -1,11 +1,19 @@
-# Handoff — updated 2026-10-26 (03:15 UTC)
+# Handoff — updated 2026-10-31 (21:58 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Pilgrimage batch 1 is on the live site as preview (2026-10-26)
+## Latest: four Pilgrimage sites open, Tjurunga page on official sources (2026-10-31)
+- **`main` = `dd35228`** (deploy run 218 green). Since 2026-10-26: #87 Pilgrimage batch 2 (Persepolis, Angkor Wat, Borobudur, preview)
+  merged by its thread as `fcec69f` (deploy 216); **PR #88** fast-forwarded to `aad7174` at 21:36 (deploy 217): Delphi, Mogao Caves,
+  Göbekli Tepe, Chichén Itzá are Open on the Pilgrimage page and in the museum portal, pending tags kept; **PR #89** fast-forwarded
+  to `dd35228` at 21:56 (deploy 218): the Tjurunga absence page cites official sources only (AIATSIS replaces Wikipedia).
+  Carter's yes `decisions-2026-10-31-merge-88-89.md`; review `replies/2026-10-31-pr88-pr89-independent-review.md`, 0 findings each.
+- Open PRs: #66 Newgrange (needs review + Carter), #60 (to close per takeover batch 3). Live check is Carter's phone.
+
+## Earlier: Pilgrimage batch 1 is on the live site as preview (2026-10-26)
 - **PR #53** merged 03:07 UTC by fast-forward `3785b2b` → `68b7b03` (deploy run 215 green). Carter's per-item yes for `68b7b03`
   (`decisions-2026-10-26-pr53-option-a-67aabf1.md`, live "a" then "yes"); independent reviews PASS
   (`replies/2026-10-26-pr53-final-independent-review.md`, `replies/2026-10-26-pr53-review-67aabf1.md` + addendum); 9/9 checks

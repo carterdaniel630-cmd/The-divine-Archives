@@ -4,9 +4,12 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-31 ~21:00 UTC (#88 and #89 independently reviewed, 0 findings each; #88 mergeable on Carter's yes). Earlier 2026-10-31 ~20:24 UTC (PRs #88 and #89 built). Earlier 2026-10-26 ~03:15 UTC (#53 merged by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `68b7b03` (PR #53, Pilgrimage batch 1 preview, fast-forwarded by the loop 03:07 UTC, deploy 215 green; before it `3785b2b`, PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-31 ~21:58 UTC (#88 and #89 merged and live, deploys 217 and 218 green). Earlier ~21:00 UTC (#88 and #89 independently reviewed, 0 findings each; #88 mergeable on Carter's yes). Earlier 2026-10-31 ~20:24 UTC (PRs #88 and #89 built). Earlier 2026-10-26 ~03:15 UTC (#53 merged by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `68b7b03` (PR #53, Pilgrimage batch 1 preview, fast-forwarded by the loop 03:07 UTC, deploy 215 green; before it `3785b2b`, PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
+- (none: #88 and #89 merged 2026-10-31, see Merged)
+
+## Superseded note (kept for the record)
 - **Pilgrimage open-flip (PR #88)**, `loop/pilgrimage-open-four` head `9fbc2ec` (completes #53; Carter's order
   `pilgrimage-open-four-2026-10-26.md`). Independent review 2026-10-31 by a run that wrote none of it: 0 findings
   (`2026-10-31-pr88-pr89-independent-review.md`, filed on `review-log` `f3924f2`); GitHub 9/9 green incl. Lighthouse;
@@ -24,6 +27,11 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (`2026-10-31-pr89-tjurunga-official-sources.md`). Independent review 2026-10-31: 0 fixable findings, goes to Carter by
   rule (secret-sacred page). Missing: Lighthouse (running at ~21:00, 7/8 green); Carter's per-item yes (now for `6624c5c`). Lighthouse on `08d4f51` went green on re-run 21:04.
 ## Merged
+- Tjurunga absence page, official sources (PR #89): **merged 2026-10-31 21:56 UTC** by fast-forward `aad7174` → `dd35228`
+  (stacked on #88; Carter's yes `decisions-2026-10-31-merge-88-89.md`; review `2026-10-31-pr88-pr89-independent-review.md`, 0 findings;
+  9/9 checks green incl. Lighthouse on `dd35228`; local + headless green; deploy run 218 green).
+- Pilgrimage open-flip (PR #88): **merged 2026-10-31 21:36 UTC** by fast-forward `fcec69f` → `aad7174` (Carter's yes, same file;
+  same review; 9/9 green on `aad7174`; deploy run 217 green).
 - Pilgrimage batch 1 (PR #53): **merged by the loop 2026-10-26 03:07 UTC** by fast-forward `3785b2b` → `68b7b03`
   (Carter's per-item yes for `68b7b03`, `decisions-2026-10-26-pr53-option-a-67aabf1.md`; reviews PASS; 9/9 checks green incl.
   Lighthouse; local checks + 30 headless opens green; deploy run 215 green).
