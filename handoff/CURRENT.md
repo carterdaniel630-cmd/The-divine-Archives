@@ -1,11 +1,15 @@
-# Handoff — updated 2026-10-31 (21:58 UTC)
+# Handoff — updated 2026-10-31 (22:47 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: four Pilgrimage sites open, Tjurunga page on official sources (2026-10-31)
+## Latest: README refresh merged (2026-10-31 22:46 UTC)
+- **`main` = `0959caf`** (deploy run 219 green): **PR #90** fast-forwarded `dd35228` → `0959caf` on Carter's yes
+  (`decisions-2026-10-31-merge-90.md`). README only: 18 pending chapters, Vault 87, Pilgrimage 7 open; the live site's pages are unchanged.
+
+## Earlier: four Pilgrimage sites open, Tjurunga page on official sources (2026-10-31)
 - **`main` = `dd35228`** (deploy run 218 green). Since 2026-10-26: #87 Pilgrimage batch 2 (Persepolis, Angkor Wat, Borobudur, preview)
   merged by its thread as `fcec69f` (deploy 216); **PR #88** fast-forwarded to `aad7174` at 21:36 (deploy 217): Delphi, Mogao Caves,
   Göbekli Tepe, Chichén Itzá are Open on the Pilgrimage page and in the museum portal, pending tags kept; **PR #89** fast-forwarded
