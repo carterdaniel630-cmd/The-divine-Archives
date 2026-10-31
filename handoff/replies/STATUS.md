@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-31 ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
+**As of:** 2026-10-31 ~21:36 UTC (**Carter said yes to #88 and #89; the merge push was refused by the session's permission guard, so neither is live yet**; `decisions-2026-10-31-merge-88-89.md`). Earlier ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
 #88 9/9 GitHub green, mergeable on Carter's yes; #89 waits on Lighthouse + Carter's yes; `2026-10-31-pr88-pr89-independent-review.md`).
 Earlier ~20:24 UTC: PR #89 built; ~20:20 UTC: PR #88 built. **Answers:** everything listed in the 2026-10-26 STATUS, plus every file
 committed since: `pilgrimage-open-four-2026-10-26.md` (+ correction), `decisions-2026-10-26-auditor-proof-gate.md`,
