@@ -139,7 +139,7 @@
    "type": "site",
    "label": "Chichén Itzá",
    "era": "07-high-medieval",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/chichen-itza.html",
    "links": [
     "chapter:ch29",
@@ -178,7 +178,7 @@
    "type": "site",
    "label": "Delphi",
    "era": "03-early-iron-age",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/delphi.html",
    "links": [
     "chapter:ch08",
@@ -250,7 +250,7 @@
    "type": "site",
    "label": "Göbekli Tepe",
    "era": "01-prehistory",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/gobekli-tepe.html",
    "links": [
     "chapter:ch41",
@@ -574,7 +574,7 @@
    "type": "site",
    "label": "Mogao Caves",
    "era": "05-late-antiquity",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/mogao-caves.html",
    "links": [
     "chapter:ch20",
