@@ -18,6 +18,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   main and re-applying the same four flips; diff vs main still the reviewed 4 files/15 lines; batch-2 sites stay preview),
   #89 → `6624c5c` (clean; diff vs main unchanged, 6 files). Local checks + headless (7 open, museum 7) green on both.
   GitHub checks re-running on the new heads; Carter's yes must name the new head.**
+  **#88 `aad7174`: 9/9 GitHub checks green incl. Lighthouse (21:27 UTC).** #89 `6624c5c`: running.
 - **Tjurunga absence page, official sources (PR #89)**, `loop/tjurunga-official-sources` head `08d4f51` (Carter's ruling
   `decisions-2026-10-26-absence-page-sources.md`). Built and locally checked 2026-10-31
   (`2026-10-31-pr89-tjurunga-official-sources.md`). Independent review 2026-10-31: 0 fixable findings, goes to Carter by
