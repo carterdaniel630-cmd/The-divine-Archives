@@ -25,9 +25,9 @@ No Wikipedia source is used.
    40 × 30 m with 12 columns, model for the front of Darius's tomb at Naqsh-e Rostam; the Hall of a Hundred
    Columns about 68.5 m square, columns about 14 m, begun by Xerxes and finished by Artaxerxes I; the Treasury
    about 120 × 60 m; tombs in the Royal Hill attributed to Artaxerxes II and III; the Nowruz debate (for:
-   Herzfeld, Krefter, Ghirshman, Porada; against: Nylander, Calmeyer, Mousavi); the winged symbol read as *farr*,
+   Herzfeld, Krefter, Erdmann, Ghirshman, Porada; against: Nylander, Calmeyer, Mousavi); the winged symbol read as *farr*,
    with *frōhar* (fravashi) and Ahuramazda as alternatives; the deliberate burning in 330 BCE after the treasurer
-   Tiridates surrendered; the Oriental Institute excavations under Herzfeld (1931–34) and Schmidt (1935–39), with
+   Tiridates surrendered (the precious-metal fittings set into the reliefs removed first, the moat water not used); the Oriental Institute excavations under Herzfeld (1931–34) and Schmidt (1935–39), with
    Krefter; about 30,000 Fortification tablets.
 2. UNESCO World Heritage Centre, "Persepolis", site 114, https://whc.unesco.org/en/list/114 (*opened*): founded by
    Darius I about 518 BCE; built on by Xerxes I and Artaxerxes I; a showplace for royal receptions and festivals;
@@ -49,7 +49,7 @@ No Wikipedia source is used.
 6. Institute for the Study of Ancient Cultures (formerly the Oriental Institute), University of Chicago,
    "Persepolis Fortification Archive", https://isac.uchicago.edu/node/2474 (*opened*): found in 1933 in two small
    rooms of a bastion in the fortification wall; tens of thousands of tablets and fragments, about 15,000–18,000
-   with Elamite texts and 5,000–6,000 with seal impressions only, more than six hundred Aramaic tablets imaged by the project (re-opened at review), a few in Greek, Phrygian
+   with Elamite texts and 5,000–6,000 with seal impressions only, more than six hundred Aramaic tablets imaged by the project (re-opened at review), one tablet each in Greek, Phrygian
    and Old Persian; around
    500 BC; food storage and outlays, from workers to the king's family; most came to Chicago on loan in 1936.
 7. W. F. M. Henkelman, *The Other Gods Who Are: Studies in Elamite-Iranian Acculturation Based on the Persepolis

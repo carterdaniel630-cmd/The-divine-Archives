@@ -39,10 +39,10 @@ No Wikipedia source is used.
    base; the central tower 42 m high, 62 m above the main causeway; the sanctuary about 5 m wide; the towers
    "like coned tiaras due to their multiple redents" with rows of lotus petals; Thomson (1866) seeing Mount Meru
    in the temple and matching the seven circles of the central tower to Meru's seven mountain chains (Glaize
-   reports this as Thomson's, after G. de Coral-Rémusat; the source gives no first name); the west
+   reports this as Thomson's, after "Madame de Coral-Remusat", as the card names her); the west
    orientation and its explanations (funerary: Finot, Cœdès, Przyluski, Bosch; Vishnu and the west; stone
    brought by water, which Glaize finds insufficient); first half of the 12th century, Suryavarman II,
-   posthumous name Paramavishnuloka, Vishnuite; cleared by Commaille 1908–11; the temple "has always sheltered
+   posthumous name Paramavishnuloka, Vishnuite; cleared by Commaille 1908–11 (no first name given; the card gives none); the temple "has always sheltered
    pagodas, as a place of pilgrimage for the Khmer"; the monks walling up the sanctuary openings after removing
    the Brahmanic idol and carving standing Buddhas, and repairing with columns from elsewhere; the early 18th
    century inscription on the east gopura on a funerary monument; the foundation deposit 23 m down the central
@@ -75,6 +75,12 @@ No Wikipedia source is used.
 6. UNESCO World Heritage Centre, "Angkor", site 668, https://whc.unesco.org/en/list/668 (*opened*): the capitals of
    the Khmer empire from the 9th to the 15th century; inscribed 1992; on the List in Danger 1992–2004; the park
    about 400 km².
+8. *Encyclopædia Britannica*, "Angkor Wat", https://www.britannica.com/topic/Angkor-Wat (*opened* 31 October 2026;
+   no author or date shown): "Today Angkor Wat is one of the most important pilgrimage shrines in Southeast Asia
+   and a popular tourist attraction." It describes Buddhist use (Theravada monks keeping the temple after
+   Angkor was abandoned) in the past tense only. HISTORY.com ("Angkor Wat", updated 28 May 2025, opened) says
+   "it is no longer an active temple"; that page is a popular source and is not cited on the cards. Whether
+   Buddhist worship goes on in the temple today is left open, since no scholarly source on it was found.
 7. The archive's chapters ch69 (the Upanishads and the Hindu synthesis: the *Bhagavad Gita*, Arjuna and his
    charioteer Krishna), ch30 (Bhakti) and ch20 (Mahayana Buddhism), linked from the cards. None of them
    discusses Angkor; they are linked for the traditions, not as sources on the temple.
@@ -87,7 +93,9 @@ No Wikipedia source is used.
 ## Sensitivity notes (for Carter)
 - Angkor Wat is a living Buddhist shrine. The model shows no images of the
   Buddha or of Vishnu, no monks and no worshippers. The cards say only what Glaize (1944) records, that Buddhist pagodas always
-  stood within it: no current source on worship there today was found at review, so the cards do not claim it.
+  stood within it, and quote Britannica for its present standing as a pilgrimage shrine. No scholarly source on
+  Buddhist worship there today was found (the 2026-10-31 search found popular sources only, and they disagree), so the
+  cards do not claim it either way.
 - The reliefs are our own outline renderings, not tracings; the hells are drawn only as falling figures.
 - The equinox card reports the alignment as observed and APSARA's view that it was deliberate, and says the
   builders left no statement; the calendar readings (Mannikka, Kak, Im Sokrithy's day counts) are labelled as

@@ -30,7 +30,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   (0 findings) and every check green, Lighthouse included; deploy job green. Göbekli Tepe, Delphi, the Mogao
   Caves and Chichén Itzá are noindex previews, pending review. Carter's choice on Delphi's theatre (both
   readings, as merged, or the Ministry of Culture's only) is still open in the thread.
-  - Batch 2 (Persepolis, Angkor Wat, Borobudur) is on `claude/project-thread-s3qxre` in a new PR. Newgrange is
+  - Batch 2 (Persepolis, Angkor Wat, Borobudur) is on `claude/project-thread-s3qxre` in PR #87. Newgrange is
     left to #66; the batch-2 review fixes for Newgrange are in
     `/mnt/project-files/pilgrimage/newgrange-batch2-vs-pr66.diff` for whoever drives #66 (it is behind main).
   - Open PRs now: #66 (Newgrange) and #60 (journal hero). #64, #67 and #68 below are no longer open.

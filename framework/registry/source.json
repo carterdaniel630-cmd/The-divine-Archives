@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1959,
+ "count": 1960,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -2641,6 +2641,15 @@
     "chapter:ch35"
    ],
    "from": "sources/ch35-new-religious-movements.md"
+  },
+  {
+   "id": "source:britannica-com/b4aa09fefa",
+   "type": "source",
+   "label": "https://www.britannica.com/topic/Angkor-Wat",
+   "links": [
+    "site:angkor-wat"
+   ],
+   "from": "sources/pilgrimage-angkor-wat.md"
   },
   {
    "id": "source:britannica-com/b510eebe45",
