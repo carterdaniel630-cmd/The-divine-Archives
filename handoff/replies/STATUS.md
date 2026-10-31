@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-31 ~22:45 UTC (build loop: **PR #90 built**: README refresh, audit Fix 1 + Fix 8. Real pending set (18), Vault 87, Pilgrimage 7 open (not the audit's 3; #87/#88 opened more), share-image sentence corrected, default branch confirmed still the old session branch. Local checks green. Waiting on an independent review and Carter's yes. Reply `2026-10-31-pr90-readme-refresh.md`). Earlier ~22:30 UTC (build loop: **weekly audit done** — 10 of 10 blind re-reviews agree with the reviewer, rolling 97%, auto-pass stays on; auditor-proof report written for the armory gate; `reviews/2026-10-31-audit.md` on `review-log` `6456fbf`; reply `2026-10-31-weekly-audit.md`). Earlier ~21:58 UTC (**PR #89 merged** by fast-forward `aad7174` → `dd35228` at 21:56 after 9/9 checks green; deploy 218 green; **#88 and #89 both live**; `2026-10-31-pr89-merged.md`). Earlier ~21:55 UTC (build loop: **PR #88 is live** — `main` = its approved head `aad7174`, deploy 217 green; **PR #89 `dd35228`** (stacking merge, adds only #88's reviewed diff; diff vs main byte-identical to the reviewed one) local checks green on a clean copy, 8/9 GitHub green, **waiting on Lighthouse only**; lock released while waiting). Earlier ~21:36 UTC (**Carter said yes to #88 and #89; the merge push was refused by the session's permission guard, so neither is live yet**; `decisions-2026-10-31-merge-88-89.md`). Earlier ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
+**As of:** 2026-10-31 ~23:00 UTC (build loop, fresh run: **independent review of PR #90: 0 findings**, all numbers checked against the repo; local checks green; GitHub 4/4 green; filed on `review-log` `9548d6d`. **#90 is mergeable on Carter's yes.** Reply `2026-10-31-pr90-independent-review.md`). Earlier ~22:45 UTC (build loop: **PR #90 built**: README refresh, audit Fix 1 + Fix 8. Real pending set (18), Vault 87, Pilgrimage 7 open (not the audit's 3; #87/#88 opened more), share-image sentence corrected, default branch confirmed still the old session branch. Local checks green. Waiting on an independent review and Carter's yes. Reply `2026-10-31-pr90-readme-refresh.md`). Earlier ~22:30 UTC (build loop: **weekly audit done** — 10 of 10 blind re-reviews agree with the reviewer, rolling 97%, auto-pass stays on; auditor-proof report written for the armory gate; `reviews/2026-10-31-audit.md` on `review-log` `6456fbf`; reply `2026-10-31-weekly-audit.md`). Earlier ~21:58 UTC (**PR #89 merged** by fast-forward `aad7174` → `dd35228` at 21:56 after 9/9 checks green; deploy 218 green; **#88 and #89 both live**; `2026-10-31-pr89-merged.md`). Earlier ~21:55 UTC (build loop: **PR #88 is live** — `main` = its approved head `aad7174`, deploy 217 green; **PR #89 `dd35228`** (stacking merge, adds only #88's reviewed diff; diff vs main byte-identical to the reviewed one) local checks green on a clean copy, 8/9 GitHub green, **waiting on Lighthouse only**; lock released while waiting). Earlier ~21:36 UTC (**Carter said yes to #88 and #89; the merge push was refused by the session's permission guard, so neither is live yet**; `decisions-2026-10-31-merge-88-89.md`). Earlier ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
 #88 9/9 GitHub green, mergeable on Carter's yes; #89 waits on Lighthouse + Carter's yes; `2026-10-31-pr88-pr89-independent-review.md`).
 Earlier ~20:24 UTC: PR #89 built; ~20:20 UTC: PR #88 built. **Answers:** everything listed in the 2026-10-26 STATUS, plus every file
 committed since: `pilgrimage-open-four-2026-10-26.md` (+ correction), `decisions-2026-10-26-auditor-proof-gate.md`,
@@ -13,6 +13,8 @@ the-divine-archives.pages.dev. Earlier merges: see Done and `MERGEABLE.md`.
 Carter), #60 (to close per takeover batch 3). **Loop:** RUNNING. **Standing law since 2026-10-26:** the Perfection
 Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rungs; "done" = every rung + Carter's yes.
 ## Done
+- 2026-10-31 ~23:00: independent review of PR #90 (README refresh): 0 findings; filed on `review-log` `9548d6d`. Armory gate
+  answered "a" by Carter (`decisions-2026-10-31-armory-gate-accept.md`), so it left Needs Carter.
 - 2026-10-31 ~22:00–22:25: **Weekly loop audit** (Next 2) by a run that wrote none of the sampled items: 13 reviewer
   reports since 2026-10-25, sample of 10 (pr68, pr79, pr80, pr81, pr82, pr83, pr84, pr86, pr53 delta, pr88), verdicts
   committed blind (`9e6acda`) before reading the reviewer: **10/10 agreed**. Visual fixes measured before/after against
@@ -403,8 +405,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
   mergeable list; audit + fold; Protection charter drafted; over-claims fixed; trademark ids removed.
 
 ## In progress
-- **PR #90** (README refresh, audit Fix 1 + Fix 8), `loop/readme-refresh` `0959caf`. Waiting on: an independent review by a
-  run that didn't write it (next run can do it), GitHub checks, then Carter's yes. (#88 and #89 are live: `main` `dd35228`.)
+- (none) **PR #90** (README refresh) is reviewed and green, waiting only on Carter's yes (see Needs Carter).
 
 ## For Muse (read this first)
 - **Pilgrimage open-flip is PR #88.** Please don't push to `loop/pilgrimage-open-four`; send changes as a follow-up.
@@ -421,7 +422,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
    Small follow-up (housekeeping, no approval needed unless Carter says no): file #87's six reviews
    (`handoff/replies/2026-10-31-pr87-merge-gate.md`) on `review-log` so audits can sample them.
 3. **Site-audit fixes** (`audit-fixes-2026-10-25.md`): ~~Fix 1 README~~ **built: PR #90** (Fix 8 checked in the same PR;
-   next: **independent review of #90**, by a run that didn't write it); Fixes 2+3 ch19; Fix 5 era label; 4, 6 at
+   independent review **done**, 0 findings; waits on Carter's yes); **next: Fixes 2+3 ch19**; Fix 5 era label; 4, 6 at
    judgment; Fix 7 Graphify data refresh; Fix 8 default-branch note. **Plus** the Tjurunga absence page
    (`decisions-2026-10-26-absence-page-sources.md`): replace the Wikipedia source link on `vault/tjurunga.html` with
    official museum/academic sources only, none leading toward sales or auction descriptions (**built: PR #89**). Each its own `loop/*`
@@ -460,8 +461,8 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - Stream-engine CUT list (`decisions-2026-10-26-stream-engine.md`): never built.
 
 ## Needs Carter
-- **Armory round one's accuracy gate:** the auditor-proof report is in `reviews/2026-10-31-audit.md`. A) accept it as the
-  proof (recommended) · B) wait for a fresh planted-error test first (needs the separate scheduled auditor; the loop can't).
+- **PR #90, README refresh** (paperwork only; the live site doesn't change): reviewed, 0 findings, all checks green.
+  A) yes, merge #90 (head `0959caf`) · B) not yet.
 - **Selfie carriers** in `handoff/journal-hero-b64/`: the loop never deletes; delete them yourself in GitHub, or tell the
   loop's session "delete the selfie carriers" in your own words.
 Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-2026-10-28/`.

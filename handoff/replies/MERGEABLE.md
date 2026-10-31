@@ -4,10 +4,13 @@
 meaning Carter's bar and Claude's own. Nothing merges unless it is listed here AND Carter approves that
 specific item. Approval is per item, never blanket. Updated at every checkpoint; the build loop keeps it current.
 
-**As of:** 2026-10-31 ~22:45 UTC (PR #90 README refresh built, waiting on review). Earlier ~21:58 UTC (#88 and #89 merged and live, deploys 217 and 218 green). Earlier ~21:00 UTC (#88 and #89 independently reviewed, 0 findings each; #88 mergeable on Carter's yes). Earlier 2026-10-31 ~20:24 UTC (PRs #88 and #89 built). Earlier 2026-10-26 ~03:15 UTC (#53 merged by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `68b7b03` (PR #53, Pilgrimage batch 1 preview, fast-forwarded by the loop 03:07 UTC, deploy 215 green; before it `3785b2b`, PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
+**As of:** 2026-10-31 ~23:00 UTC (#90 independently reviewed, 0 findings: mergeable on Carter's yes). Earlier ~22:45 UTC (PR #90 README refresh built, waiting on review). Earlier ~21:58 UTC (#88 and #89 merged and live, deploys 217 and 218 green). Earlier ~21:00 UTC (#88 and #89 independently reviewed, 0 findings each; #88 mergeable on Carter's yes). Earlier 2026-10-31 ~20:24 UTC (PRs #88 and #89 built). Earlier 2026-10-26 ~03:15 UTC (#53 merged by the loop). **Deployed (`main`, on www.getconexto.com and the-divine-archives.pages.dev):** `68b7b03` (PR #53, Pilgrimage batch 1 preview, fast-forwarded by the loop 03:07 UTC, deploy 215 green; before it `3785b2b`, PR #86, arcade tap targets part 1, fast-forwarded by the loop 18:45 UTC, deploy 214 green; before it `45d4a95` (PR #83, Journal touch polish, fast-forwarded by the loop 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85, ch42 Newgrange correction + Armenian ark card, merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, #64).
 
 ## Mergeable now
-- (none: #88 and #89 merged 2026-10-31, see Merged)
+- **README refresh, audit Fix 1 + Fix 8 (PR #90)**, `loop/readme-refresh` head `0959caf`, README only (live site unchanged).
+  Independent review 2026-10-31 by a run that wrote none of it: 0 findings (`2026-10-31-pr90-independent-review.md`, filed on
+  `review-log` `9548d6d`). GitHub 4/4 green (Lighthouse doesn't run: no site files). Local checks green.
+  **Only missing: Carter's yes for #90 at `0959caf`.**
 
 ## Superseded note (kept for the record)
 - **Pilgrimage open-flip (PR #88)**, `loop/pilgrimage-open-four` head `9fbc2ec` (completes #53; Carter's order
@@ -16,10 +19,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   local checks green; headless phone 7 sites + museum clean. **Only missing: Carter's per-item yes** (now for `aad7174`, see below; also its GitHub checks).
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **README refresh, audit Fix 1 + Fix 8 (PR #90)**, `loop/readme-refresh` head `0959caf` (README only, nothing on the
-  live site changes). Built 2026-10-31 ~22:45 UTC (`2026-10-31-pr90-readme-refresh.md`). Local checks green.
-  **GitHub: 4/4 checks green on `0959caf` (22:29 UTC).** Lighthouse didn't run because the PR changes no site files.
-  **Still missing:** an independent review by a run that wrote none of it, and Carter's yes for this item.
+- (PR #90 moved to Mergeable now, 2026-10-31 ~23:00 UTC.)
   **2026-10-31 ~21:10 UTC: `main` moved to `fcec69f` (#87 merged by its thread), so both branches were synced by merge
   commits that add only `main`'s content: #88 → `aad7174` (conflict in pilgrimage-data.js/pilgrimage.html resolved by taking
   main and re-applying the same four flips; diff vs main still the reviewed 4 files/15 lines; batch-2 sites stay preview),
