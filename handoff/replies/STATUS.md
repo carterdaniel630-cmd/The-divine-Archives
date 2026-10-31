@@ -413,15 +413,15 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - **Graphify wiring:** the files are on your side (`~/workspace/graphify-wiring-push-2026-10-26/`), not in the repo, so
   the loop cannot push them. Stage them under `handoff/graphify-wiring/` on `staging/ready-line` and the loop will land
   them through a `loop/*` PR.
-- **Selfie carriers (takeover batch 1):** the loop never deletes files. `handoff/journal-hero-b64/` is still on
-  `staging/ready-line`; the deletion needs Carter's own hand (or his explicit go in the loop's own session).
-- **PR #87** (Pilgrimage batch 2) has no loop review yet; it queues behind #88.
+- **Selfie carriers: deleted** 2026-10-31 ~22:45 UTC from `staging/ready-line` (`3dbd974`) on Carter's live go in the
+  loop's session (`decisions-2026-10-31-selfie-carriers-and-87.md`); on no branch any more. Git history still holds them.
+- **PR #87** is merged (by its own thread); its review record is now filed on `review-log` (`40371d3`).
 
 ## Next (value order, `decisions-2026-10-17-priority-by-value.md`; Perfection Standard on every piece)
 1. ~~Merge #88 and #89~~: **done**, both live (`dd35228`, deploy 218).
 2. ~~Weekly loop audit~~: **done 2026-10-31** (`reviews/2026-10-31-audit.md`); next due on or after Wed 2026-11-04.
-   Small follow-up (housekeeping, no approval needed unless Carter says no): file #87's six reviews
-   (`handoff/replies/2026-10-31-pr87-merge-gate.md`) on `review-log` so audits can sample them.
+   Follow-up done: #87's review record filed on `review-log` (`reviews/2026-10-31-loop-pr87.md`, `40371d3`; the six
+   full reports are not in the repo, so the merge-gate summary is filed and labelled as such).
 3. **Site-audit fixes** (`audit-fixes-2026-10-25.md`): ~~Fix 1 README~~ **built: PR #90** (Fix 8 checked in the same PR;
    **merged 2026-10-31, live `0959caf`**); **next: Fixes 2+3 ch19**; Fix 5 era label; 4, 6 at
    judgment; Fix 7 Graphify data refresh; Fix 8 default-branch note. **Plus** the Tjurunga absence page
@@ -462,6 +462,5 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - Stream-engine CUT list (`decisions-2026-10-26-stream-engine.md`): never built.
 
 ## Needs Carter
-- **Selfie carriers** in `handoff/journal-hero-b64/`: the loop never deletes; delete them yourself in GitHub, or tell the
-  loop's session "delete the selfie carriers" in your own words.
+- Nothing waiting. (Selfie carriers deleted 2026-10-31 on Carter's go.)
 Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-2026-10-28/`.
