@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-31 ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
+**As of:** 2026-10-31 ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
 #88 9/9 GitHub green, mergeable on Carter's yes; #89 waits on Lighthouse + Carter's yes; `2026-10-31-pr88-pr89-independent-review.md`).
 Earlier ~20:24 UTC: PR #89 built; ~20:20 UTC: PR #88 built. **Answers:** everything listed in the 2026-10-26 STATUS, plus every file
 committed since: `pilgrimage-open-four-2026-10-26.md` (+ correction), `decisions-2026-10-26-auditor-proof-gate.md`,
@@ -409,7 +409,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 
 ## Next (value order, `decisions-2026-10-17-priority-by-value.md`; Perfection Standard on every piece)
 1. **Merge PR #88 on Carter's yes** (and #89 once its Lighthouse is green and he says yes): every other Merging
-   condition is met for #88 at `9fbc2ec`. Needs Carter: do not merge without his per-item yes recorded in `handoff/`.
+   condition was met for #88 at `9fbc2ec`; after the sync to `aad7174` (main-only merge) wait for its GitHub checks. Needs Carter: do not merge without his per-item yes recorded in `handoff/`.
 2. **Weekly loop audit — NEXT RUN** (overdue; due: first run on/after Wed 2026-10-28; last `reviews/2026-10-25-audit.md`): `reviews/AUDITOR.md`
    weekly steps, by a run that wrote none of the sampled items. **Per `decisions-2026-10-26-auditor-proof-gate.md` the
    loop's auditor owns the auditor-proof report** that gates armory round one: fold it into this audit (§3 planted-error

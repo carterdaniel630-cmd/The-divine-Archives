@@ -10,13 +10,18 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **Pilgrimage open-flip (PR #88)**, `loop/pilgrimage-open-four` head `9fbc2ec` (completes #53; Carter's order
   `pilgrimage-open-four-2026-10-26.md`). Independent review 2026-10-31 by a run that wrote none of it: 0 findings
   (`2026-10-31-pr88-pr89-independent-review.md`, filed on `review-log` `f3924f2`); GitHub 9/9 green incl. Lighthouse;
-  local checks green; headless phone 7 sites + museum clean. **Only missing: Carter's per-item yes for `9fbc2ec`.**
+  local checks green; headless phone 7 sites + museum clean. **Only missing: Carter's per-item yes** (now for `aad7174`, see below; also its GitHub checks).
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+  **2026-10-31 ~21:10 UTC: `main` moved to `fcec69f` (#87 merged by its thread), so both branches were synced by merge
+  commits that add only `main`'s content: #88 → `aad7174` (conflict in pilgrimage-data.js/pilgrimage.html resolved by taking
+  main and re-applying the same four flips; diff vs main still the reviewed 4 files/15 lines; batch-2 sites stay preview),
+  #89 → `6624c5c` (clean; diff vs main unchanged, 6 files). Local checks + headless (7 open, museum 7) green on both.
+  GitHub checks re-running on the new heads; Carter's yes must name the new head.**
 - **Tjurunga absence page, official sources (PR #89)**, `loop/tjurunga-official-sources` head `08d4f51` (Carter's ruling
   `decisions-2026-10-26-absence-page-sources.md`). Built and locally checked 2026-10-31
   (`2026-10-31-pr89-tjurunga-official-sources.md`). Independent review 2026-10-31: 0 fixable findings, goes to Carter by
-  rule (secret-sacred page). Missing: Lighthouse (running at ~21:00, 7/8 green); Carter's per-item yes for `08d4f51`.
+  rule (secret-sacred page). Missing: Lighthouse (running at ~21:00, 7/8 green); Carter's per-item yes (now for `6624c5c`). Lighthouse on `08d4f51` went green on re-run 21:04.
 ## Merged
 - Pilgrimage batch 1 (PR #53): **merged by the loop 2026-10-26 03:07 UTC** by fast-forward `3785b2b` → `68b7b03`
   (Carter's per-item yes for `68b7b03`, `decisions-2026-10-26-pr53-option-a-67aabf1.md`; reviews PASS; 9/9 checks green incl.
