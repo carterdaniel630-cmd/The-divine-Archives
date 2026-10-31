@@ -94,7 +94,7 @@ No Wikipedia source is used.
 - Angkor Wat was a Buddhist shrine for centuries and is a pilgrimage shrine today (entry 7); whether Buddhist worship goes on there now is left open. The model shows no images of the
   Buddha or of Vishnu, no monks and no worshippers. The cards say only what Glaize (1944) records, that Buddhist pagodas always
   stood within it, and quote Britannica for its present standing as a pilgrimage shrine. No scholarly source on
-  Buddhist worship there today was found (the 2026-10-31 search found popular sources only, and they disagree), so the
+  Buddhist worship there today was found (on 2026-10-31 Britannica described Buddhist use only in the past tense and HISTORY.com called it "no longer an active temple"; entry 7), so the
   cards do not claim it either way.
 - The reliefs are our own outline renderings, not tracings; the hells are drawn only as falling figures.
 - The equinox card reports the alignment as observed and APSARA's view that it was deliberate, and says the
