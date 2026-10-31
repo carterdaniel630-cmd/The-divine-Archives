@@ -1,5 +1,5 @@
 {
   "autoPass": true,
-  "reason": "audit 2026-10-25: 15 of 16 re-reviewed items agreed (one disagreement, site:gobekli-tepe, a preview wording point); rolling accuracy over the last 3 counted runs 30/31 (97%); latest scored batch review-test/2026-10 missed no fake source or sensitivity error",
-  "updated": "2026-10-25"
+  "reason": "audit 2026-10-31: 10 of 10 re-reviewed items agreed; rolling accuracy over the last 3 counted runs 31/32 (97%); latest scored batch review-test/2026-10 missed no fake source or sensitivity error (no newer batch scored)",
+  "updated": "2026-10-31"
 }
