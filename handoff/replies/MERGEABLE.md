@@ -18,7 +18,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **README refresh, audit Fix 1 + Fix 8 (PR #90)**, `loop/readme-refresh` head `0959caf` (README only, nothing on the
   live site changes). Built 2026-10-31 ~22:45 UTC (`2026-10-31-pr90-readme-refresh.md`). Local checks green.
-  **Still missing:** an independent review by a run that wrote none of it; GitHub checks; Carter's yes for this item.
+  **GitHub: 4/4 checks green on `0959caf` (22:29 UTC).** Lighthouse didn't run because the PR changes no site files.
+  **Still missing:** an independent review by a run that wrote none of it, and Carter's yes for this item.
   **2026-10-31 ~21:10 UTC: `main` moved to `fcec69f` (#87 merged by its thread), so both branches were synced by merge
   commits that add only `main`'s content: #88 → `aad7174` (conflict in pilgrimage-data.js/pilgrimage.html resolved by taking
   main and re-applying the same four flips; diff vs main still the reviewed 4 files/15 lines; batch-2 sites stay preview),
