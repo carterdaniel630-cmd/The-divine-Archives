@@ -1,6 +1,6 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-31 ~21:36 UTC (**Carter said yes to #88 and #89; the merge push was refused by the session's permission guard, so neither is live yet**; `decisions-2026-10-31-merge-88-89.md`). Earlier ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
+**As of:** 2026-10-31 ~21:55 UTC (build loop: **PR #88 is live** — `main` = its approved head `aad7174`, deploy 217 green; **PR #89 `dd35228`** (stacking merge, adds only #88's reviewed diff; diff vs main byte-identical to the reviewed one) local checks green on a clean copy, 8/9 GitHub green, **waiting on Lighthouse only**; lock released while waiting). Earlier ~21:36 UTC (**Carter said yes to #88 and #89; the merge push was refused by the session's permission guard, so neither is live yet**; `decisions-2026-10-31-merge-88-89.md`). Earlier ~21:10 UTC (**main moved to `fcec69f` with #87; PR #88 synced to `aad7174`, #89 to `6624c5c`, local checks green, GitHub checks re-running; Carter's yes must name the new heads**). Earlier ~21:00 UTC (build loop, fresh session: **independent review of PR #88 and #89, 0 findings each**;
 #88 9/9 GitHub green, mergeable on Carter's yes; #89 waits on Lighthouse + Carter's yes; `2026-10-31-pr88-pr89-independent-review.md`).
 Earlier ~20:24 UTC: PR #89 built; ~20:20 UTC: PR #88 built. **Answers:** everything listed in the 2026-10-26 STATUS, plus every file
 committed since: `pilgrimage-open-four-2026-10-26.md` (+ correction), `decisions-2026-10-26-auditor-proof-gate.md`,
@@ -394,6 +394,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
   mergeable list; audit + fold; Protection charter drafted; over-claims fixed; trademark ids removed.
 
 ## In progress
+- **PR #89 merge** (Carter's yes, `decisions-2026-10-31-merge-88-89.md`), candidate `dd35228`: waiting on Lighthouse (started 21:37). Any run that sees it green fast-forwards `main` to `dd35228`. NT link already points at the museums-galleries path (follow-up done).
 - **PR #89** (Tjurunga official sources), head `08d4f51`: reviewed (0 findings); waiting on Lighthouse (started 20:43)
   and Carter's yes. Not held under the lock. Small follow-up for the run that merges it: confirm the NT Government link
   (`.../organisations-and-venues/...`) still loads; the page is also at `.../museums-galleries-art-centres/alice-springs/strehlow-research-centre`.
