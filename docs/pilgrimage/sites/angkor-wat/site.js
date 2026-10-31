@@ -46,7 +46,8 @@ const RENDER = { t: "Reliefs: our own rendering, simplified", soft: true };
 const CONTESTED = { t: "Contested", soft: false };
 const DIFFER = { t: "Sources differ", soft: false };
 const UNTESTED = { t: "Proposed by single authors · not established", soft: false };
-const LIVING = { t: "A Buddhist shrine for centuries; a pilgrimage shrine today", soft: true };
+const LIVING = { t: "A Buddhist shrine for centuries", soft: true };
+const LIVING_NOW = { t: "A Buddhist shrine for centuries; a pilgrimage shrine today", soft: true };
 
 // ---------------------------------------------------------------- sections (one big box: the whole temple is in view from the way)
 const BIG = [-760, -5, -640, 760, 80, 640];
@@ -129,7 +130,7 @@ const info = [
   // ---- vestibule (the archive's own room)
   { id: "v-board", section: "v", pos: [V0.x + 3.9, 1.7, V0.z - 1.5], cat: "Before you go out", title: "Angkor Wat",
     html: "<p>Angkor Wat, near Siem Reap in Cambodia, is the largest monument of Angkor, the region of the capitals of the Khmer empire from the 9th to the 15th century. King Suryavarman II, who reigned from 1113 until his death about 1149, built it in the first half of the 12th century as a temple of Vishnu. It became a Buddhist shrine, and for centuries Buddhist pagodas stood within it. Today it is, in Britannica&rsquo;s words, &lsquo;one of the most important pilgrimage shrines in Southeast Asia&rsquo;.</p><p>This walk crosses the moat and the western gate, follows the raised way to the temple, walks the gallery of bas-reliefs, climbs through the cruciform cloister to the second level and ends on the platform of the five towers. The temple is shown as it stands, simplified; the reliefs are our own renderings, and the stone is drawn in code.</p>",
-    flags: [LIVING], links: [L.ch69, L.ch30], sources: REF.glaize + "; " + REF.sn + "; " + REF.unesco + "; " + REF.brit + "." },
+    flags: [LIVING_NOW], links: [L.ch69, L.ch30], sources: REF.glaize + "; " + REF.sn + "; " + REF.unesco + "; " + REF.brit + "." },
   { id: "v-v27", section: "v", pos: [V0.x - 2.6, 1.35, V0.z - 1.0], relic: { id: "v27", slug: "sacred-tooth-relic", title: "The Sacred Tooth Relic", category: "Relics & Sacred Objects", held: "Sri Dalada Maligawa, Kandy", dated: "In Sri Lanka since the 4th century CE (tradition)", kind: "reliquary" }, title: "The Sacred Tooth Relic (for comparison)",
     html: "<p><strong>Not from Angkor.</strong> The casket of the Buddha&rsquo;s tooth in Kandy, Sri Lanka, shown as a rendition; the relic itself is shown only rarely and is not shown here. For a thousand years whoever held it held the right to rule. It is here for two comparisons: Angkor Wat, too, joined a king to the sacred, built by Suryavarman II for Vishnu and perhaps as his mausoleum; and, like the tooth&rsquo;s temple, it became a place of Buddhist worship.</p>",
     links: [L.v27, L.ch20] },

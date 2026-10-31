@@ -75,13 +75,13 @@ No Wikipedia source is used.
 6. UNESCO World Heritage Centre, "Angkor", site 668, https://whc.unesco.org/en/list/668 (*opened*): the capitals of
    the Khmer empire from the 9th to the 15th century; inscribed 1992; on the List in Danger 1992–2004; the park
    about 400 km².
-8. *Encyclopædia Britannica*, "Angkor Wat", https://www.britannica.com/topic/Angkor-Wat (*opened* 31 October 2026;
+7. *Encyclopædia Britannica*, "Angkor Wat", https://www.britannica.com/topic/Angkor-Wat (*opened* 31 October 2026;
    no author or date shown): "Today Angkor Wat is one of the most important pilgrimage shrines in Southeast Asia
    and a popular tourist attraction." It describes Buddhist use (Theravada monks keeping the temple after
    Angkor was abandoned) in the past tense only. HISTORY.com ("Angkor Wat", updated 28 May 2025, opened) says
    "it is no longer an active temple"; that page is a popular source and is not cited on the cards. Whether
    Buddhist worship goes on in the temple today is left open, since no scholarly source on it was found.
-7. The archive's chapters ch69 (the Upanishads and the Hindu synthesis: the *Bhagavad Gita*, Arjuna and his
+8. The archive's chapters ch69 (the Upanishads and the Hindu synthesis: the *Bhagavad Gita*, Arjuna and his
    charioteer Krishna), ch30 (Bhakti) and ch20 (Mahayana Buddhism), linked from the cards. None of them
    discusses Angkor; they are linked for the traditions, not as sources on the temple.
 
