@@ -20,10 +20,10 @@ doesn't, and what is still open.
 | **Chapters** | One tradition or theme per chapter, each with a symbology section and an evidence-honesty close | **83** (76 traditions across nine eras + 7 themes) |
 | **Eras** | The nine ages, from Prehistory to the Modern Age, each listing its chapters and objects | 9 |
 | **Traditions / Themes / Compare / Search / Random** | Other ways into the same chapters | — |
-| **The Vault** | Sacred objects and texts (manuscripts, relics, inscriptions), each with a study page | **88** entries |
+| **The Vault** | Sacred objects and texts (manuscripts, relics, inscriptions), each with a study page | **87** entries (V68, the Tjurunga, is withdrawn: its page says why it is not shown) |
 | **The Pantheon** | A searchable directory of gods, spirits, heroes and prophets | **199** figures, 30 traditions |
 | **Symbols and games** | The archive's sacred symbols; twelve of them open a game whose facts all come from chapter text | **12** games |
-| **The Pilgrimage** (beta) | Walkable models of sacred sites, sized from published surveys, reached through the golden portal in the Museum's entrance hall; each holds relic copies linked to the Vault | **1** open (the Great Pyramid), 71 queued |
+| **The Pilgrimage** (beta) | Walkable models of sacred sites, sized from published surveys, reached through the golden portal in the Museum's entrance hall; each holds relic copies linked to the Vault | **7** open (Göbekli Tepe, the Great Pyramid, Delphi, the Library of Alexandria, the Qumran Caves, the Mogao Caves, Chichén Itzá), 66 in preparation |
 | **The Museum** (beta) | A walkable 3D building with one room per chapter, and a planetarium | **83** rooms in 10 wings |
 | **Methodology / About** | The sourcing standard and what the "pending review" tag means | — |
 
@@ -35,9 +35,10 @@ cross-era themes 7.
 
 New chapters go live at once with a visible **"Recently added — pending full
 review"** banner, and the banner comes off only when Carter clears the chapter in
-a batch review. **11 chapters** carry it now: Batch IV (ch75–ch83, one per era),
-plus ch45 and ch46, whose full text replaced a shorter live version on 2026-09-30.
-One Vault entry (V88) is also pending. The chapter-by-chapter status is on the
+a batch review. **18 chapters** carry it now: ch02, ch08, ch11, ch12, ch19, ch20,
+ch21, ch42, ch44, ch47, ch50, ch51, ch52, ch53, ch60, ch61, ch69 and ch74 (the
+`pending` flag in `docs/assets/data.js`). One Vault entry (V88) and all seven open
+Pilgrimage sites are also pending. The chapter-by-chapter status is on the
 [status board](outline/master-outline.md).
 
 ## How the work runs
@@ -62,7 +63,7 @@ The-divine-Archives/
 ├── outline/master-outline.md   framework and the chapter / Vault status board
 ├── eras/                   tradition chapters (markdown), one folder per era, 01-prehistory … 09-modern
 ├── themes/                 cross-era theme chapters, including the ch01 template
-├── vault/                  Vault entries V01–V88 (markdown)
+├── vault/                  Vault entries V01–V88 (markdown; V68 is withdrawn from the site)
 ├── sources/                citation logs: one per chapter, one per Vault entry, and the Pantheon
 ├── content/chapters.js     chapter bodies as HTML, converted from the markdown (build input, not deployed)
 ├── docs/                   the website, deployed exactly as it is
@@ -96,9 +97,11 @@ A chapter's body is converted from its markdown with
 `node tools/md-to-chapter.js <id> <file.md>` and placed in `content/chapters.js`;
 its listing entry (title, era, `pending` flag) lives in `docs/assets/data.js`.
 
-Search and sharing: every chapter, Vault entry and era page has its own
+Search and sharing: chapters, Vault entries and era pages have their own
 1200×630 share image in `docs/assets/og/` (drawn from the chapter's plate or the
-era's emblem; the hand-written pages use `site.jpg`), and its Article data and
+era's emblem; most hand-written pages use `site.jpg`). A few pages have none yet
+(the Museum, Random, Search, the Pilgrimage list and the Pilgrimage site pages);
+their images are still being picked. Each chapter's Article data and
 sitemap entry carry the dates from `content/dates.json`. `stamp-dates.js` moves a
 chapter's "revised" date only when its markdown changes.
 
@@ -136,7 +139,7 @@ on feature branches and reaches `main` by fast-forward once approved.
 - **Analytics:** Cloudflare Web Analytics is wired in but off. Paste the site
   token into `docs/site-config.js` (`cfAnalyticsToken`) to turn it on. It
   sets no cookies.
-- **Note:** the GitHub *default* branch is still the old `claude/session-start-ikztvo`.
+- **Note (checked 2026-10-31):** the GitHub *default* branch is still the old `claude/session-start-ikztvo`.
   Production is `main`. Scheduled checks (the weekly link check) run only once the
   default branch is set to `main` in the repository's settings.
 
