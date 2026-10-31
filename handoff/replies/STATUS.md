@@ -1,17 +1,22 @@
 # Build-side STATUS — running (overwritten at every checkpoint)
 
-**As of:** 2026-10-26 ~03:15 UTC (**PR #53 merged**: fast-forward `3785b2b` → `68b7b03` at 03:07 on Carter's live "a" + "yes", deploy 215 green; `decisions-2026-10-26-pr53-option-a-67aabf1.md`). Earlier ~03:10 UTC (build loop: **PR #53 NOT merged: its head moved to `67aabf1`**, a site change pushed by the Pilgrimage thread at 01:00 after Carter's go for `aa7081d`; this run independently reviewed `cafa1af..67aabf1`: PASS, 0 findings; 9/9 checks green incl. Lighthouse; local checks + 30 headless opens green; **needs Carter's yes for `67aabf1`**, `2026-10-26-pr53-review-67aabf1.md`). Earlier ~01:05 UTC (build loop: **PR #53 merge gates cleared except checks on the new head**: Lighthouse green on `aa7081d`, handoff files reconciled in `cafa1af` (handoff only), local checks + 56 headless opens green; merge waits only for GitHub checks on `cafa1af`, `2026-10-26-pr53-merge-gates.md`). Earlier ~00:40: final independent review of `aa7081d` PASS and Carter's merge go (`decisions-2026-10-25-pr53-merge-go.md`). Earlier ~00:25 (build loop: **PR #53 fixed per Carter's option A**, 27 findings, head `373efff`, `2026-10-26-pr53-fixes-27.md`). Earlier ~23:55: independent review of `0e74caa` NOT passed (`2026-10-25-pr53-review-0e74caa.md`); the Pilgrimage chat thread's own review had said PASS. Earlier ~23:20: PR #53 fix run part 4, Chichén Itzá fixed at `e8ce493`. Earlier ~21:52: part 3, Delphi (`6f314d4`). Earlier ~19:10: part 2, Göbekli Tepe (`2dd1158`). Earlier ~18:55: part 1, Mogao Caves (`8aab255`; that entry was stamped "~19:30" in error). Earlier ~18:50: **PR #86 merged**, fast-forward `45d4a95` → `3785b2b`, deploy 214 green). Earlier: PR #53 independently reviewed, NOT passed, returned for fixes; PR #83 merged, deploy 213 green. **Answers:** manifest-v2 through Item 32, every `decisions-*.md` /
-`correction-*.md` / `order-*.md` / `approval-*.md` to date, plus the unnumbered files committed 2026-10-19 → 2026-10-22:
-`merge-approval-2026-10-19.md`, `fix-random-meta-description.md`, `tjurunga-takedown-order-2026-10-20.md`,
-`council-rulings-2026-10-20.md` (+ Yes/No addendum), `FIRST-ORDER-claude-briefing.md`, `rework-standard-order.md`,
-`site-speed-finding.md`, `journal-hero/README.md`, `sitemap.xml`, `decisions-2026-10-24-merge-71-72-73.md`,
-`decisions-2026-10-24-batch-six.md`, and `journal-hero-b64/` (committed by Carter's account 2026-10-25 00:05 UTC), `decisions-2026-10-25-domain-and-kadesh.md`, and `decisions-2026-10-25-hero-show-me-and-75.md`, and `decisions-2026-10-25-hero-yes-darker-cloak.md`, and `decisions-2026-10-25-armory-intake-and-relic-links.md` (incl. §3 one loop, §4 batch of 10 is the unit), and `decisions-2026-10-25-merge-77-close-84.md`, and `decisions-2026-10-25-approve-83.md`, and `decisions-2026-10-25-cleanup.md`, and `decisions-2026-10-25-pr86-go.md`, and `decisions-2026-10-25-pr53-merge-go.md`, and `decisions-2026-10-25-audit-fixes-go.md` (+ `audit-fixes-2026-10-25.md`), `share-images-2026-10-25.md` and `armory/batch-01/` (all committed 2026-10-26 ~01:46–02:16 UTC). **Deployed (`main`):** `68b7b03` (PR #53, Pilgrimage batch 1 preview, fast-forwarded 2026-10-26 03:07 UTC, deploy 215 green; before it `3785b2b`, PR #86, arcade tap targets part 1, fast-forwarded by the loop 2026-10-25 18:45 UTC, deploy 214 green; before it `45d4a95`, PR #83, Journal touch polish, fast-forwarded by the loop 2026-10-25 17:32 UTC, deploy 213 green; before it `3762691`, PR #77, The Archivist, fast-forwarded by the loop 2026-10-25 16:49 UTC, deploy 212 green; before it `12e7d65`, PR #85 merged by Carter 2026-10-25 12:57 UTC; before it `91c40fe`, PR #64, deploy 210; before that the
-eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) and the-divine-archives.pages.dev.
-**Open loop branches:** `loop/arcade-tap-targets` = #86 (merged 18:45, branch kept), `loop/journal-touch-polish` = #83 (merged, branch kept),
-`loop/registry-count-after-merges` = #84 (closed, branch kept), `loop/journal-hero-redesign` = #60 (on hold). `staging/ready-line` carries `handoff/`.
-**Loop:** RUNNING. **Full briefing to Muse delivered:** `handoff/replies/claude-full-briefing.md` (First Order, 2026-10-21).
-
+**As of:** 2026-10-31 ~20:35 UTC (build loop, first run since 2026-10-26: **Pilgrimage open-flip built as PR #88**, head
+`9fbc2ec`; Delphi, Mogao Caves, Göbekli Tepe, Chichén Itzá get Enter buttons on the Pilgrimage page and the museum portal,
+pending tags kept; local checks + headless phone green; waits on independent review, GitHub checks and Carter's yes;
+`2026-10-31-pr88-pilgrimage-open-four.md`). **Answers:** everything listed in the 2026-10-26 STATUS, plus every file
+committed since: `pilgrimage-open-four-2026-10-26.md` (+ correction), `decisions-2026-10-26-auditor-proof-gate.md`,
+`decisions-2026-10-26-absence-page-sources.md`, `decisions-2026-10-26-takeover-batch.md`, `perfection-standard-2026-10-26.md`,
+`decisions-2026-10-26-stream-engine.md`, `decisions-2026-10-26-operating-split.md`, and `prep-2026-10-28/` (PREP-INDEX,
+11 specs, `previews/bagh-chal/bagh-chal-v2.html`). All folded into Next below.
+**Deployed (`main`):** `68b7b03` (PR #53, 2026-10-26 03:07 UTC, deploy 215 green), unchanged since; www.getconexto.com and
+the-divine-archives.pages.dev. Earlier merges: see Done and `MERGEABLE.md`.
+**Open PRs:** #88 (this run), #87 Pilgrimage batch 2 (chat thread, no loop review yet), #66 Newgrange (needs review +
+Carter), #60 (to close per takeover batch 3). **Loop:** RUNNING. **Standing law since 2026-10-26:** the Perfection
+Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rungs; "done" = every rung + Carter's yes.
 ## Done
+- 2026-10-31 ~20:30: **Pilgrimage open-flip, PR #88** (`loop/pilgrimage-open-four` `9fbc2ec`): four sites
+  `preview` → `live`, museum data cache key bumped; full build, 17/17 verify, 42/42 tests, review-checks 9/9, headless
+  phone clicks through all 7 open sites. Reply `2026-10-31-pr88-pilgrimage-open-four.md`.
 - 2026-10-26 ~03:07: **PR #53 merged** (fast-forward to `68b7b03`, Carter's live yes; deploy 215 green).
 - 2026-10-26 ~02:40–03:10: **PR #53 not merged** (head moved to `67aabf1` after Carter's go for `aa7081d`); independent
   review of `cafa1af..67aabf1` PASS, 0 findings; checks 9/9 green; local + 30 headless opens green. Reply
@@ -382,72 +387,66 @@ eight merges to `caedabc`, deploy 209), at www.getconexto.com (the live site) an
   mergeable list; audit + fold; Protection charter drafted; over-claims fixed; trademark ids removed.
 
 ## In progress
-- (none)
+- **PR #88** (Pilgrimage open-flip), head `9fbc2ec`: waiting on (a) independent review by a run that wrote none of it,
+  (b) GitHub checks incl. Lighthouse, (c) Carter's yes. Not held under the lock.
 
 ## For Muse (read this first)
-- **Armory batch 1 received** (2026-10-26, `handoff/armory/batch-01/`). Thank you. **Share images** received too.
-- **Pilgrimage thread:** PR #53 had Carter's go for `aa7081d`; pushing `67aabf1`, then `68b7b03`, after it reset the go twice. Please don't
-  push site changes to a PR between its go and its merge; send them to the loop as a follow-up instead.
-- **Journal hero images received** (2026-10-25, `handoff/journal-hero-b64/`, as base64 text). Thank you; nothing more
-  needed unless the rebuild finds a problem with them.
+- **Pilgrimage open-flip is PR #88.** Please don't push to `loop/pilgrimage-open-four`; send changes as a follow-up.
+- **Graphify wiring:** the files are on your side (`~/workspace/graphify-wiring-push-2026-10-26/`), not in the repo, so
+  the loop cannot push them. Stage them under `handoff/graphify-wiring/` on `staging/ready-line` and the loop will land
+  them through a `loop/*` PR.
+- **Selfie carriers (takeover batch 1):** the loop never deletes files. `handoff/journal-hero-b64/` is still on
+  `staging/ready-line`; the deletion needs Carter's own hand (or his explicit go in the loop's own session).
+- **PR #87** (Pilgrimage batch 2) has no loop review yet; it queues behind #88.
 
-## Next (First Order sequence, then value per `decisions-2026-10-17-priority-by-value.md`)
-0. Weekly loop audit done 2026-10-25 (`reviews/2026-10-25-audit.md`); next due on/after Wed 2026-10-28.
-1. ~~#76, #75, #78, #79, #80, #82, #68, #81~~ **all merged by Carter 2026-10-25 ~12:00** (`caedabc`, deploy 209 green);
-   ~~#64~~ merged 12:30 (`91c40fe`, deploy 210 green).
-1a. ~~**PR #84**~~ superseded by #85; **closed 2026-10-25 13:24** (Carter's ruling 2). Branch kept.
-1b. ~~**PR #77**~~ **merged 2026-10-25 16:49 UTC** by fast-forward `12e7d65` → `3762691` (Carter's ruling 1; reviewed diff
-   unchanged; 8/8 GitHub checks green incl. Lighthouse; local checks green; deploy 212 green). Reply `2026-10-25-pr77-merged.md`.
-1c. ~~**PR #83**~~ **merged 2026-10-25 17:32 UTC** by fast-forward `3762691` → `45d4a95` (deploy 213 green).
-1d. ~~**PR #86**~~ **merged 2026-10-25 18:45 UTC** by fast-forward `45d4a95` → `3785b2b` (Carter's yes
-   `decisions-2026-10-25-pr86-go.md`; 6/6 checks green incl. Lighthouse; local checks + headless 96 opens green; deploy 214 green).
-   Reply `2026-10-25-pr86-merged.md`.
-1e. ~~**PR #53**~~ **merged 2026-10-26 03:07 UTC** by fast-forward `3785b2b` → `68b7b03` (Carter's yes for that head; 9/9
-   checks green incl. Lighthouse; reviews PASS; local + headless green; deploy run 215 green). Follow-ups (separate items, own
-   pass): ch08 omphalos maxims, ch29 line 47 equinox intent, ch42 backfill now contested.
-1g. **Site-audit fixes** (Carter's order, `decisions-2026-10-25-audit-fixes-go.md`, list `audit-fixes-2026-10-25.md`):
-   Fix 1 README (pending 18, Vault 87, Pilgrimage 3, share-image sentence) first; Fixes 2+3 ch19 together; Fix 5 era
-   label; Fixes 4, 6 at judgment; Fix 7 Graphify data refresh; Fix 8 default-branch note. Each its own `loop/*` branch,
-   full checks, independent review, Carter's per-item merge yes. **Next run starts here (Fix 1).**
-1h. **Share images for the six pages** (`share-images-2026-10-25.md`: atlas picked them under Carter's 22:11
-   authorisation): add the given images + og:descriptions on a `loop/*` branch; merge needs Carter's yes for that PR.
-1f. Branch clean-up (same file A): approved for Carter, but **not the loop's** (the loop never deletes branches); nightly
-   reviewer paused (B): missing heartbeats from 2026-10-26 are not a finding.
-4b. ~~**Name the live site in docs**~~ **done 2026-10-25 06:55 (handoff only; `main` already correct).** (Carter, `decisions-2026-10-25-domain-and-kadesh.md` 1, small): docs that say the
-   site is "not public" or "deploys only to the-divine-archives.pages.dev" should name www.getconexto.com as the live
-   site (pages.dev the deploy target behind it). Dated historical records keep their wording. Never touch DNS, the
-   domain or Cloudflare. Any wording change under `docs/` goes through a PR.
-4c. **Live relic links** (Carter's yes to build, `decisions-2026-10-25-armory-intake-and-relic-links.md` 1): up to three
-   outside links per relic (3D scan, the museum's own page/viewer, a live camera only where one really exists); free,
-   link/official embed only, nothing loads until tapped, each link opened and logged, none for withheld objects (V68).
-   Own `loop/*` branch, full checks, independent review; **going live needs Carter's yes for that PR**.
-4d. **Armory intake** (same file 2): after #76 → #75 → #77, Armory (~100) then Pantheon (~200) then Pilgrimage (100+), in
-   batches of 10 from Muse under `handoff/armory/batch-NN/`; **the batch of 10 is the unit** (§4): as many pieces per run as the
-   quality bar allows, each checked on its own, then one yes/no batch to Carter; waits on batch 1.
-   **One loop only** (same file 3): no second loop or lane.
-5. **Arcade playability floor** (value 3). Tap targets part 1 = PR #86 (live 18:45); part 2 Excavation 9×9 cells (33 px) and
-   Ziggurat keypad (40 px); then difficulty selector, undo, tutorial where they fit. Reduced motion is otherwise covered: the hit-feel PRs handle seven games,
-   #74 the other two, and every page stayed still in the audit.
-6. **Relics 2–4** (Crown of the Kandake, Etruscan mirror, Crown of Thorns) under the Rework Standard's five gates
-   (`rework-standard-order.md`: floor in hand, side-by-side proof, no-backwards checklist, auditor signs, Carter merges).
-7. **Muse's 2026-10-18 previews** one per run (sensitivity review for Fire Temple, Langar, Awithlaknannai).
-8. ~~Göbekli Tepe preview (PR #53)~~ now 1e. **PR #43** has no review of its own (audit coverage gap): review it.
-8a. **Independent review of #66** (#64, #67, #68 merged) so it can reach MERGEABLE (#66 is new content: Carter's yes too).
-9. **900 Theses** — hold LIFTED (Council 14b): spec-body patch to Carter's rulings, Gate A text extraction, licensing review.
-10. Fix package; small defects part 2 (Journal Sound/✕ now PR #78; Journal 320 clipping + full-screen name now PR #79; ~~Journal Select/Start tap size; Journal tip naming keys on touch~~ now PR #83); ~~ch02 "second death"~~ now PR #82; Spirit Board rename; Errata page (prepare only); Debate Hall preview safety;
-    standards board current with each item.
-- **Council constitution 2026-10-20 is build law** for every room, game and video from now on (games live in rooms,
-  played in the arcade; witness moment per room, never a game; Rotunda = rotating showcase + 12-statue circle;
-  philosophers never in religious rooms; Perform/Witness/Learn with Withheld Lists, watch-only default; no scores or
-  streaks on practices; no new room without a full chapter; directory scorecard + "Not Yet Housed" register).
-  What reaches Carter: finished pieces, yes/no only.
+## Next (value order, `decisions-2026-10-17-priority-by-value.md`; Perfection Standard on every piece)
+1. **Independent review of PR #88** (value 1): `origin/main...9fbc2ec` against `reviews/REVIEWER.md` §3–§4, by a run that
+   wrote none of it; record checks; if 0 findings and all green, list it Mergeable and ask Carter yes/no. Content of the
+   four sites is NOT re-reviewed (Carter's correction: they passed under #53). File the review on `review-log`.
+2. **Weekly loop audit** (due: first run on/after Wed 2026-10-28; last `reviews/2026-10-25-audit.md`): `reviews/AUDITOR.md`
+   weekly steps, by a run that wrote none of the sampled items. **Per `decisions-2026-10-26-auditor-proof-gate.md` the
+   loop's auditor owns the auditor-proof report** that gates armory round one: fold it into this audit (§3 planted-error
+   scoring stays out: KEY.md is never opened; say so).
+3. **Site-audit fixes** (`audit-fixes-2026-10-25.md`): Fix 1 README first; Fixes 2+3 ch19; Fix 5 era label; 4, 6 at
+   judgment; Fix 7 Graphify data refresh; Fix 8 default-branch note. **Plus** the Tjurunga absence page
+   (`decisions-2026-10-26-absence-page-sources.md`): replace the Wikipedia source link on `vault/tjurunga.html` with
+   official museum/academic sources only, none leading toward sales or auction descriptions. Each its own `loop/*`
+   branch (or one small batch PR), full checks, independent review, Carter's per-item yes.
+4. **Share images for six pages** (`share-images-2026-10-25.md`): `loop/*` branch; merge needs Carter's yes.
+5. **Takeover batch** (`decisions-2026-10-26-takeover-batch.md`): (2) `.gitignore` tripwire for secret-type files, small
+   `loop/*` PR; (3) close PR #60 with a one-line note pointing at #77 (closing, not deleting); (6) stale texts: only
+   if those job files are in this repo, else say NOT FOUND. (1) selfie-carrier deletion: not the loop's (never deletes).
+   (4) Cloudflare Web Analytics: not the loop's (accounts/Cloudflare).
+6. **Arcade tap targets part 2** (value 3, `prep-2026-10-28/tap-targets-part2/SPEC.md`): Ziggurat pad keys, Excavation
+   cells; add the Pilgrimage list's 32 px "Enter the site" button (seen 2026-10-31).
+7. **Arcade playability floor** (value 3, `prep-2026-10-28/playability-floor/SPEC.md`), in parts.
+8. **Small defects part 2** (`prep-2026-10-28/small-defects-part2/SPEC.md`): #53 follow-ups (ch08 omphalos maxims, ch29
+   equinox intent, ch42 contested backfill), Debate Hall preview safety, review debts **PR #43** and **PR #66**.
+9. **Spirit Board rename** (`prep-2026-10-28/spirit-board-rename/SPEC.md`): `<title>` leftover + preview file rename.
+10. **Errata page in the Vault** (`prep-2026-10-28/errata-page/SPEC.md`): new page (not an exhibit); merge needs Carter.
+11. **Live relic links** (`prep-2026-10-28/relic-links/SPEC.md` + `REGISTER.md`); going live needs Carter's yes.
+12. **Treaty of Kadesh → Egypt room** (`prep-2026-10-28/treaty-kadesh-placement/SPEC.md`): new exhibit, Carter's yes to merge.
+13. **Armory batch 1 intake** (`handoff/armory/batch-01/`, proof pack `prep-2026-10-28/batch1-proof-pack/`): rebuild under
+    the Rework Standard; **Antikythera v2 and Senet v2 are under truth quarantine: fix first**; merge waits on the
+    auditor-proof report (item 2) and Carter's per-round yes. Batch 2 (`armory-batch-2/`) is not sent until batch 1 is worked.
+14. **Relics 2–4** (`prep-2026-10-28/relics-2-to-4/SPEC.md`), one per run, five gates.
+15. **2026-10-18 previews sweep** (`prep-2026-10-28/previews-sweep/SPEC.md`), one per run, sensitivity three first.
+16. **PR #87** Pilgrimage batch 2: independent review (new content: Carter's yes too).
+17. **900 Theses** spec work (hold lifted, Council 14b).
+18. **Stream-engine paper inputs**: LAST in line (`decisions-2026-10-26-stream-engine.md`), only after 1–5 and armory
+    batch 1 clear; one item at a time; preconditions (Phaistos, Aleppo, wing date bands, 83/76 count) first.
+- **Council constitution 2026-10-20 is build law** for every room, game and video.
 - Scheduled: on or after **2027-01-15**, remove the old-id table on a side branch.
 
 ## Parked / on hold (do not build)
 - Protection charter D1–D3. Email list. Pythia Pantheon entry. VR, multilingual, Divine Casualties rebuild, ballgame,
-  music (Council 7a). Room eggs (Council 3). Early China pilot (Yes/No addendum: parked until the training approach is
-  set). Background sound in videos: closed (Council 7b). ~~900 Theses~~ (lifted 2026-10-20).
+  music (Council 7a). Room eggs (Council 3). Early China pilot. Background sound in videos: closed (Council 7b).
+- **Gallery docent** (parked 2026-10-26, operating split 4). **Relic builds originate on the Muse side** (operating split 1):
+  the loop only takes in finished armory rounds.
+- Stream-engine CUT list (`decisions-2026-10-26-stream-engine.md`): never built.
 
 ## Needs Carter
-- Nothing now.
-Answered: every decisions file to date, incl. `decisions-2026-10-26-pr53-option-a-67aabf1.md`.
+- **PR #88** (Pilgrimage open-flip): your yes is asked once it has passed independent review and checks (next run).
+- **Selfie carriers** in `handoff/journal-hero-b64/`: the loop never deletes; delete them yourself in GitHub, or tell the
+  loop's session "delete the selfie carriers" in your own words.
+Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-2026-10-28/`.
