@@ -842,6 +842,9 @@ function buildWingExhibits(zoneId) {
   scene.add(outer);
   roomVisibility(Z);
   S.dirty = true;
+  // an open guide drawn before this zone's exhibits arrived says "Loading this room's exhibits…": redraw it now,
+  // or it waits until the visitor walks into another area (museum fix batch item 3, the Rotunda's Flood bay)
+  if (S.room && ids.indexOf(S.room) !== -1 && !$("mu-guide").hidden) renderGuide();
 }
 // merge every untextured part of a room into one mesh per shared material (few draw calls)
 function bake(room) {
