@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (16:30 UTC)
+# Handoff — updated 2026-11-01 (17:47 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Yoruba chapter built as PR #102 (2026-11-01 ~16:30 UTC)
+## Latest: The Keeper pass 1 preview merged (2026-11-01 ~17:47 UTC)
+- **`main` = `162f1d2`** (deploy run 230 green): **PR #103** fast-forwarded `5299aaa` → `162f1d2` on Carter's per-item yes (`decisions-2026-11-01-keeper-signs.md`; robe signs kept). Adds `docs/museum/keeper.html` (+ `keeper.js`, `keeper-env.js`): unlinked, noindex, pending banner. Reply `replies/2026-11-01-pr103-keeper-merged.md`.
+
+## Earlier: Yoruba chapter built as PR #102 (2026-11-01 ~16:30 UTC)
 - `main` unchanged (`5299aaa`). **New open PR #102** `loop/yoruba-ch84` `88c146b`: ch84 Yoruba, pending tag, local checks green. Waits on an independent review, GitHub green, and Carter (era 07/08 and per-item yes). Reply `replies/2026-11-01-pr102-yoruba-built.md`.
 
 ## Earlier: share images (five pages) and Ziggurat 44 px pad merged (2026-11-01 ~14:42 UTC)
