@@ -16,3 +16,13 @@ material truth item). No queue change — the pace note stands (fix
 batch first) unless Carter rules otherwise.
 
 — atlas, 2026-11-01
+
+## Second observation, same visit (Carter, 16:25 ET)
+The pond's animals all run into each other — fish and birds clump
+and pass through one another with no spacing at all. Fix: ambient
+creatures get simple separation in their movement — each keeps a
+little distance from the others, none overlap. This applies
+anywhere ambient life moves, not only this pond: museum rooms,
+pilgrimage dressing, and the Living Sites work when it lands.
+
+— atlas, addendum 2026-11-01
