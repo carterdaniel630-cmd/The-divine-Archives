@@ -1173,11 +1173,13 @@ function skyPanel() {
 // ---------------------------------------------------------------- room guide
 function renderGuide() {
   const body = $("mu-guide-body");
-  const here = S.room ? S.exhibits.filter((e) => e.data.id === S.room || ((e.data.type === "vault" || e.data.type === "fig") && roomOfExhibit(e) === S.room)) : [];
+  const G = S.room ? guideItems(S.room) : { here: [], missing: [] }, here = G.here;
   let h = "";
   if (S.room) {
     const r = S.rooms[S.room];
-    h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") + `</ul>`;
+    h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") +
+      // a Directory item with no exhibit standing in the room yet: still named, linked to its page
+      G.missing.map((it) => `<li><a href="${esc(it.href)}">${esc(it.name)}</a><small>${esc(typeLabel(it.type))}</small></li>`).join("") + `</ul>`;
     if (!here.length) h += `<p class="mu-trail">Loading this room's exhibits…</p>`;
     // a walkthrough launched from a case in this room: every step as plain text, with its sources (filled in below)
     h += `<div data-guide-rituals="${esc(S.room)}"></div>`;
@@ -1226,6 +1228,26 @@ function guideRituals(room) {
       }).join("");
     });
   }).catch(() => {});
+}
+// The room guide's list is bound to the Directory's data (manifest homeVault / homeFigs, the same lists the
+// Directory prints), never to what merely stands near the room. Before 2026-11-01 vault objects and figures were
+// picked by position, so a neighbour's medallions strayed in (Agni and Saraswati in Mesopotamia; Padmasambhava in
+// Tantra) and a room's own ones placed past its bounds dropped out (Amitabha in Mahayana; Durga in Tantra).
+function guideItems(room) {
+  const r = S.rooms[room]; if (!r) return { here: [], missing: [] };
+  const want = { vault: r.homeVault || [], fig: r.homeFigs || [] }, N = S.manifest.names;
+  const own = S.exhibits.filter((e) => e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig");
+  const items = [], missing = [];
+  for (const type of ["vault", "fig"]) for (const id of want[type]) {
+    const all = S.exhibits.filter((e) => e.data.type === type && e.data.id === id);
+    const e = all.find((x) => roomOfExhibit(x) === room) || all[0];
+    if (e) items.push(e);
+    else if (S.room === room && own.length) {   // only once the room's own exhibits are in, so it isn't "missing" while loading
+      if (type === "vault" && N.vault[id]) missing.push({ type, name: N.vault[id][0], href: "vault/" + N.vault[id][2] + ".html" });
+      else if (type === "fig" && N.figs[id]) missing.push({ type, name: N.figs[id][0], href: "pantheon.html#" + id });
+    }
+  }
+  return { here: own.concat(items), missing };
 }
 function roomOfExhibit(e) {
   // exhibits are built per room; find the room whose area contains the exhibit
@@ -1584,6 +1606,8 @@ window.__MU = {
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },
   load: (z) => loadDetail(z),
+  guide: (room) => { const G = guideItems(room); return { here: G.here.map((e) => e.data.type + ":" + e.data.id), missing: G.missing.map((m) => m.type + ":" + m.name) }; },
+  zones: () => Object.keys(ZONES),
   debug: () => {
     const out = {};
     scene.children.forEach((c, i) => {
