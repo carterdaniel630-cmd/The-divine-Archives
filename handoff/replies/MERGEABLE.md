@@ -9,6 +9,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 ## Mergeable now
 - **PR #105** museum wing guide buttons IV/VI/VIII, `loop/museum-wing-buttons` **`6ee2150`** (= `e151079` + merge of `main` `7d75e30`, adds nothing). Independent review **PASS 0 findings** + hands-on browser walk (`2026-11-01-pr105-independent-review.md`, by a run that wrote none of it). Local checks green on `6ee2150`. **Class (b):** item 1 of the museum fix batch Carter approved (`order-2026-11-01-museum-fix-batch.md`, "3. yes" 12:51 ET); a bug fix only, no new feature, no content, nothing sensitive. **Missing only: every GitHub check green on `6ee2150`, Lighthouse included.** If `main` moves first, re-sync and re-check.
 - (PR #104 moved to Merged, 2026-11-01 ~19:22 UTC.)
+- **Not yet mergeable: PR #106** (`loop/museum-guide-binding` `3fa0c96`, stacked on #105). **Missing:** independent review, GitHub green, the in-room hands-on walk, #105 merged first. Proposed class (b); reviewer decides.
 - (PR #99 moved to Merged, 2026-11-01 ~13:48 UTC.)
 - **Stack, in merge order** (each head contains the ones before it; stacking merges add only reviewed diffs; review
   `2026-11-01-pr96-99-100-101-independent-review.md`, all PASS 0 findings, by a session that wrote none of them; local checks +
