@@ -1,11 +1,17 @@
-# Handoff — updated 2026-11-01 (11:50 UTC)
+# Handoff — updated 2026-11-01 (13:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: ch08 typo fix merged (2026-11-01 11:45 UTC)
+## Latest: homepage games wording merged (2026-11-01 13:08 UTC)
+- **`main` = `f1c3c2a`** (deploy run 225): **PR #98** (site audit Fix 6) fast-forwarded `6d51ab9` → `f1c3c2a` by class (b) approved
+  audit fix (`decisions-2026-10-25-audit-fixes-go.md`) + (c) honesty wording (`decisions-2026-11-01-carter-b-a-a.md` 1). The homepage
+  games blurb now says some source chapters are still pending review. Review `replies/2026-11-01-pr98-independent-review.md`,
+  0 findings. Reply `replies/2026-11-01-pr98-merged.md`.
+
+## Earlier: ch08 typo fix merged (2026-11-01 11:45 UTC)
 - **`main` = `6d51ab9`** (deploy run 224 green): **PR #97** fast-forwarded `ff08cc1` → `6d51ab9` by class (c) typo fix
   (`decisions-2026-11-01-carter-b-a-a.md` 1). Chapter 8 reads "day-laborer" (was "day- laborer"). Review
   `replies/2026-11-01-pr97-independent-review.md`, 0 findings. Reply `replies/2026-11-01-pr97-merged.md`.
