@@ -97,6 +97,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - Site batch A (PR #59): merged 2026-10-17 21:08 EDT as `218c51b`, deploy green.
 
 ## Not ready (in progress or waiting on a ruling)
+- **PR #104** Excavation tap targets + Pilgrimage button (`loop/excavation-tap-targets` `662bf97`, built 2026-11-01). **Missing:** an independent review (the builder session ..WzTpZWVqFo6nc6CJrJAw may not do it), GitHub green incl. Lighthouse, and Carter's per-item yes. It is **not by class**, because it adds a game control.
 - Treaty of Kadesh tablet (relic 1 of 4): rebuilt 2026-10-19 as a preview in `handoff/previews/treaty-of-kadesh/`
   (`2026-10-19-treaty-of-kadesh-rebuilt.md`). Not a site change yet; a museum placement is a new exhibit and needs
   Carter's yes, then a `loop/*` branch, independent review and checks.
