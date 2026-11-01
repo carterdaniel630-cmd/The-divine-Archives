@@ -5,7 +5,10 @@
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: typo fixes in ch07/15/16/45 merged (2026-11-01 ~14:18 UTC)
+## Latest: share images (five pages) and Ziggurat 44 px pad merged (2026-11-01 ~14:42 UTC)
+- **`main` = `5299aaa`** (deploys 228 + 229 green): **PR #96** (`704b4fc`, share images for random, Pilgrimage list, Great Pyramid, Library of Alexandria, Qumran; museum held back) and **PR #100** (Ziggurat on-screen keys 44 px on phones, game fits small screens), Carter's per-item yeses (`decisions-2026-11-01-carter-yes-x4.md`). Reply `replies/2026-11-01-pr96-pr100-merged.md`.
+
+## Earlier: typo fixes in ch07/15/16/45 merged (2026-11-01 ~14:18 UTC)
 - **`main` = `9e5edb3`** (deploy run 227 green): **PR #101** fast-forwarded `d5815c6` → `9e5edb3` on Carter's per-item re-clear (`decisions-2026-11-01-carter-yes-x4.md` 3). Four one-space line-wrap typos fixed; the four chapters stay cleared. Reply `replies/2026-11-01-pr101-merged.md`.
 
 ## Earlier: homepage search box fix merged (2026-11-01 ~13:48 UTC)
