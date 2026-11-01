@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (22:00 UTC)
+# Handoff — updated 2026-11-01 (22:22 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: museum room guides bound to the Directory (2026-11-01 ~21:53 UTC)
+## Latest: Rotunda guide no longer stuck on "Loading…" (2026-11-01 ~22:16 UTC)
+- **`main` = `4bb3d40`** (deploy run 235 green): **PR #107** fast-forwarded `412684a` → `4bb3d40` by class (b) (museum fix batch item 3, from Carter's approved fix batch). An open room guide now redraws once its zone's exhibits arrive, so the Rotunda's Flood bay no longer sits on "Loading this room's exhibits…". Reply `replies/2026-11-01-pr107-merged-pr108-reviewed.md`. Open: **PR #108** (fix batch item 5, Directory honesty): independent review PASS, waits only on Lighthouse.
+
+## Earlier: museum room guides bound to the Directory (2026-11-01 ~21:53 UTC)
 - **`main` = `412684a`** (deploy run 234 green): **PR #106** fast-forwarded `6ee2150` → `412684a` on Carter's per-item go (`order-2026-11-01-106-review-walk-merge.md`; museum fix batch item 2). Every room guide's figure and Vault list now comes from the Directory's data (Mesopotamia no longer lists Agni/Saraswati; Tantra has Durga; Mahayana has Amitābha). Reply `replies/2026-11-01-pr106-merged-pr107-built.md`. Open: **PR #107** (fix batch item 3, Rotunda guide load hang), needs review.
 
 ## Earlier: museum Wing IV/VI/VIII guide buttons fixed (2026-11-01 ~20:01 UTC)
