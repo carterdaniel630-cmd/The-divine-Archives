@@ -350,7 +350,7 @@
   .zig-mon { width:22vw; max-width:120px; }
   .zig-side { flex-direction:column; gap:.35rem; }
   .zig-next-cv { width:40px; height:100px; } .zig-hold-cv { width:40px; height:40px; }
-  .zig-pad { grid-template-columns:repeat(4,2.5rem); grid-template-rows:repeat(2,2.5rem); }
+  .zig-pad { grid-template-columns:repeat(4,2.75rem); grid-template-rows:repeat(2,2.75rem); } /* 44px tap floor */
   .game-scorebar { gap:.3rem; flex-wrap:nowrap; }
   .game-scorebar .stat { min-width:0; flex:1; padding:.28rem .3rem; }
   .game-scorebar .stat b { font-size:1rem; }
@@ -364,12 +364,17 @@
   .game-dialog { padding:.9rem .8rem; }
   .ms-grid { width:min(100%, 30rem, 62dvh); }
 }
-/* very short viewports: shrink the board + pad a touch more, trim spacing */
+/* very short viewports: trim spacing; the pad keeps its 44px keys, the board gives way only if it must */
 @media (max-width:520px) and (max-height:680px){
-  .zig-well { width:33vw; } .zig-mon { width:17vw; }
-  .zig-pad { grid-template-columns:repeat(4,2.2rem); grid-template-rows:repeat(2,2.2rem); }
+  .zig-well { width:min(33vw, calc((100dvh - 376px) / 2)); } .zig-mon { width:min(17vw, calc((100dvh - 488px) / 2)); } /* only the shortest phones (under ~620px tall) shrink the board and monument, so the 44px pad still fits */
+  /* pad keys keep the 44px tap floor here too; the room comes from the chrome and, last, the well */
+  .game-dialog:has(.zig-pad) .game-rule { display:none; }
   .ouro-controls .rq-note { font-size:.7rem; margin:.2rem 0 0; }
   .game-head p { display:none; }
+}
+/* short touch phones: Ziggurat's keyboard-shortcut line is no use without a keyboard, and its room goes to the pad */
+@media (max-width:520px) and (max-height:680px) and (pointer:coarse){
+  .ouro-controls:has(> .zig-pad) > .rq-note { display:none; }
 }
 
 /* ---------- Divine Casualties (1v1 fighter) ---------- */
