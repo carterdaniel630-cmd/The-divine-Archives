@@ -1174,7 +1174,7 @@ window.CHAPTERS = {
 
     <h2>The dead, the heroes, and the promise of the mysteries</h2>
 
-    <p>On the ordinary fate of the dead, early Greece was as bleak as Mesopotamia (Chapter 3). The shades went down to the realm of <strong>Hades</strong>, across the river Styx, to a dim, strengthless existence — the <em>Odyssey</em>'s underworld is a place of gibbering ghosts where the great Achilles says he would rather be a living day- laborer than king of all the dead. There was no general reward or punishment: a few grave sinners suffered in <strong>Tartarus</strong>, and a favored few heroes were spirited to the blessed <strong>Elysium</strong>, but for most, death was simply a gray diminishment.</p>
+    <p>On the ordinary fate of the dead, early Greece was as bleak as Mesopotamia (Chapter 3). The shades went down to the realm of <strong>Hades</strong>, across the river Styx, to a dim, strengthless existence — the <em>Odyssey</em>'s underworld is a place of gibbering ghosts where the great Achilles says he would rather be a living day-laborer than king of all the dead. There was no general reward or punishment: a few grave sinners suffered in <strong>Tartarus</strong>, and a favored few heroes were spirited to the blessed <strong>Elysium</strong>, but for most, death was simply a gray diminishment.</p>
 
     <p>Yet within this period two responses appear that promised something better, and they matter enormously for what comes later:</p>
 
