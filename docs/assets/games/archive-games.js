@@ -243,6 +243,16 @@
     var settle = function () { fitMain(on); try { window.dispatchEvent(new Event("archive:fit")); } catch (e) { /* old browser */ } };
     setTimeout(settle, 60); setTimeout(settle, 450);
   }
+  // full screen on a phone held sideways, for the games whose D-pad and buttons can float over the picture
+  function immersive(d) { return !!(d.querySelector(".ap-host") && window.matchMedia && window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)").matches); }
+  // turning the phone while in full screen: size the picture again for the new shape, then let the games
+  // re-measure their canvases (their own resize check can run before the old size is cleared)
+  var refitT = null;
+  window.addEventListener("resize", function () {
+    if (!openState || !openState.overlay.classList.contains("is-full")) return;
+    clearTimeout(refitT);
+    refitT = setTimeout(function () { fitMain(true); try { window.dispatchEvent(new Event("archive:fit")); } catch (e) { /* old browser */ } }, 200);
+  });
   // the largest canvas in the dialog grows to the biggest size that fits beside or above everything
   // else (a canvas never grows past its drawing size by CSS alone, so this is done here)
   function fitMain(on) {
@@ -252,6 +262,7 @@
     if (!best) return;
     ["width", "max-width", "max-height", "height"].forEach(function (k) { best.style.removeProperty(k); });
     if (!on || !openState.overlay.classList.contains("is-full")) return;
+    if (immersive(d)) return;                // a D-pad game on a phone held sideways: games.css fills the screen
     // binary-search the widest size at which the whole dialog still fits the screen without scrolling
     var r0 = best.getBoundingClientRect().width, pw = d.clientWidth - 24;
     var set = function (w) { best.style.setProperty("width", w + "px", "important"); best.style.setProperty("height", "auto", "important"); best.style.setProperty("max-width", "100%", "important"); best.style.setProperty("max-height", "none", "important"); };
