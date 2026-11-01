@@ -568,8 +568,11 @@ function pilgrimageSitePage(s) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(s.blurb || s.name)}" />
-  <!-- A walkable model is an entry point, like the museum: the chapter and Vault pages are canonical. -->
-  <meta name="robots" content="noindex, follow" />
+${s.status === "live"
+    ? `  <!-- An open site is a page of its own, listed in the sitemap (museum fix batch item 4). -->
+  <link rel="canonical" href="${SITE}/pilgrimage/${esc(s.id)}.html" />`
+    : `  <!-- A walkable model is an entry point, like the museum: the chapter and Vault pages are canonical. -->
+  <meta name="robots" content="noindex, follow" />`}
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
 ${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
@@ -724,6 +727,9 @@ function buildSitemap() {
     urls.push([SITE + "/eras/" + e.slug + ".html", latest]);
   });
   pub.forEach((c) => urls.push([SITE + "/chapters/" + c.id + ".html", mod(c.id)]));
+  // The Museum landing and every open Pilgrimage site (previews stay noindex and out of the map)
+  urls.push([SITE + "/museum.html", null]);
+  PILG.sites.filter((x) => x.status === "live").forEach((x) => urls.push([SITE + "/pilgrimage/" + x.id + ".html", null]));
   // The Vault (manuscripts, relics & contested objects) — see tools/build-vault.js
   const VAULT = sandbox.window.VAULT || { items: [] };
   urls.push([SITE + "/vault.html", null]);
