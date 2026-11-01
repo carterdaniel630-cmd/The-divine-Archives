@@ -36,7 +36,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
     merged in unchanged, plus the batch-2 review fixes and the ch42 follow-up. Carter approved #66 on 2026-11-01
     ("yes on 66"). Clean independent review at c343c32, all checks green (`handoff/replies/2026-11-01-pr94-merge-gate.md`);
     merged 2026-11-01. #66 shows as merged with it.
-  - Open PRs now: #60 (journal hero). #64, #67 and #68 below are no longer open.
+  - Open PRs now: #60 (journal hero), #93 (era pages: themes "across all eras", build loop) and #95
+    (`claude/games-fullscreen`, 2026-11-01): true full screen on a sideways phone for the Journal and Divine
+    Casualties; waiting on green checks and Carter's merge yes. #95 and #60 both edit `treasure.js` around the
+    view width; whichever merges second needs a small merge. #64, #67 and #68 below are merged.
 - Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
   - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
   - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
@@ -96,7 +99,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - From the 2026-10-18 review (one batch of questions): Stonehenge (a card on today's Druid and Pagan gatherings?
   list it?); Golgotha (accept the brief's six defaults? list it?); Ararat (more of the believer's side before
   listing?); Mogao (approve as a preview with its Buddha figures and manuscripts card?); Weighing of the Heart
-  (keep pending until the 1895 text is re-read; swap the V20 English line); merges of #64, #66, #67, #68.
+  (keep pending until the 1895 text is re-read; swap the V20 English line). #64, #66, #67 and #68 are merged; #95 waits on his merge yes.
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
