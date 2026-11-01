@@ -1,6 +1,6 @@
 {
  "type": "room",
- "count": 83,
+ "count": 84,
  "entities": [
   {
    "id": "room:ch01",
@@ -1228,6 +1228,18 @@
    "href": "museum.html#ch83",
    "links": [
     "chapter:ch83"
+   ],
+   "from": "docs/museum/manifest.json"
+  },
+  {
+   "id": "room:ch84",
+   "type": "room",
+   "label": "Yoruba",
+   "parent": "wing:08-early-modern",
+   "status": "pending",
+   "href": "museum.html#ch84",
+   "links": [
+    "chapter:ch84"
    ],
    "from": "docs/museum/manifest.json"
   }

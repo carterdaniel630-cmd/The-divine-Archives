@@ -1,6 +1,6 @@
 {
  "type": "section",
- "count": 959,
+ "count": 974,
  "entities": [
   {
    "id": "section:ch01/a-clerk-undresses-in-the-british",
@@ -8557,6 +8557,141 @@
    "era": "09-modern",
    "href": "chapters/ch83.html#yoga",
    "from": "docs/chapters/ch83.html"
+  },
+  {
+   "id": "section:ch84/across-the-water",
+   "type": "section",
+   "label": "Across the water",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#across-the-water",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/connections",
+   "type": "section",
+   "label": "Connections",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#connections",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/creation-earth-scattered-on-the-waters",
+   "type": "section",
+   "label": "Creation: earth scattered on the waters",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#creation-earth-scattered-on-the-waters",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/ifa-the-library-that-is-not",
+   "type": "section",
+   "label": "Ifá: the library that is not written",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#ifa-the-library-that-is-not",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/ile-ife-the-first-city",
+   "type": "section",
+   "label": "Ilé-Ifẹ̀, the first city",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#ile-ife-the-first-city",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/kingship-and-the-city-states",
+   "type": "section",
+   "label": "Kingship and the city-states",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#kingship-and-the-city-states",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/olodumare-and-the-orishas",
+   "type": "section",
+   "label": "Olódùmarè and the orishas",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#olodumare-and-the-orishas",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/ori-the-head-and-destiny",
+   "type": "section",
+   "label": "Orí: the head, and destiny",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#ori-the-head-and-destiny",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/ritual-and-the-round-of-the",
+   "type": "section",
+   "label": "Ritual and the round of the year",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#ritual-and-the-round-of-the",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/symbology",
+   "type": "section",
+   "label": "Symbology and sacred encoding",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#symbology",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/the-believers-lens",
+   "type": "section",
+   "label": "The believer's lens",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#the-believers-lens",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/the-city-of-four-hundred-gods",
+   "type": "section",
+   "label": "The city of four hundred gods",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#the-city-of-four-hundred-gods",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/the-skeptical-lens",
+   "type": "section",
+   "label": "The skeptical lens",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#the-skeptical-lens",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/under-pressure-and-the-living-faith",
+   "type": "section",
+   "label": "Under pressure, and the living faith",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#under-pressure-and-the-living-faith",
+   "from": "docs/chapters/ch84.html"
+  },
+  {
+   "id": "section:ch84/what-the-yoruba-religion-is",
+   "type": "section",
+   "label": "What the Yoruba religion is",
+   "parent": "chapter:ch84",
+   "era": "08-early-modern",
+   "href": "chapters/ch84.html#what-the-yoruba-religion-is",
+   "from": "docs/chapters/ch84.html"
   }
  ]
 }

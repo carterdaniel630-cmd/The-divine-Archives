@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1977,
+ "count": 1988,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -841,6 +841,15 @@
    "from": "sources/v84-hinton-st-mary-mosaic.md"
   },
   {
+   "id": "source:artsandculture-google-com/b7ee92ae89",
+   "type": "source",
+   "label": "https://artsandculture.google.com/story/who-was-susanne-wenger-%C3%80d%C3%B9nn%C3%AD-ol%C3%B3r%C3%AC%E1%B9%A3%C3%A0-the-osun-osogbo-grove/IAXBGVfmA6LkIA?hl=en",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:arxiv-org/0a51bce0cc",
    "type": "source",
    "label": "https://arxiv.org/abs/1102.3381",
@@ -1416,6 +1425,15 @@
     "relic:v63"
    ],
    "from": "sources/v63-kalpa-sutra-manuscripts.md"
+  },
+  {
+   "id": "source:blackpast-org/3fc5e7856f",
+   "type": "source",
+   "label": "https://blackpast.org/aah/oyotunji-african-village-1970",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:blog-nli-org-il/1b9da60c4e",
@@ -10116,6 +10134,24 @@
    "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
   },
   {
+   "id": "source:ich-unesco-org/08254ea8f0",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/lists?RL=00146",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
+   "id": "source:ich-unesco-org/2f840985ee",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/RL/ifa-divination-system-00146",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:ich-unesco-org/32e2ca24a7",
    "type": "source",
    "label": "https://ich.unesco.org/en/RL/jeju-chilmeoridang-yeongdeunggut-00187",
@@ -10150,6 +10186,24 @@
     "chapter:ch79"
    ],
    "from": "sources/ch79-first-christian-kingdoms.md"
+  },
+  {
+   "id": "source:ich-unesco-org/7ed6effb82",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/RL/01974",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
+   "id": "source:ich-unesco-org/818992646f",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/RL/00002",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:ich-unesco-org/8909944048",
@@ -12708,6 +12762,15 @@
    "from": "sources/v88-skull-reliquary-saint-maximin.md"
   },
   {
+   "id": "source:nationalgeographic-com/fa8e34d014",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/history-magazine/article/nigerian-treasures-ife-heads-bronze",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:nature-com/1a4a692471",
    "type": "source",
    "label": "https://www.nature.com/articles/s41598-022-06799-z",
@@ -13184,6 +13247,15 @@
     "chapter:ch70"
    ],
    "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:octobergallery-com/1bb270e48d",
+   "type": "source",
+   "label": "https://octobergallery.com/the-african-sculptures-mistaken-for-remains-of-atlantis/",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:ocw-mit-edu/88b959e91d",
@@ -14012,6 +14084,15 @@
     "chapter:ch83"
    ],
    "from": "sources/ch83-global-hinduism-guru-movements.md"
+  },
+  {
+   "id": "source:pluralism-org/ee027e668a",
+   "type": "source",
+   "label": "https://pluralism.org/the-kingdom-of-oyotunji",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:pmc-ncbi-nlm-nih-gov/1086a20693",
@@ -15890,6 +15971,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:susannewengerfoundation-at/b9b740853c",
+   "type": "source",
+   "label": "https://susannewengerfoundation.at/en/node/66",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:tabletmag-com/585233e322",
    "type": "source",
    "label": "https://www.tabletmag.com/sections/history/articles/ark-covenant-ethiopia",
@@ -17146,6 +17236,15 @@
     "chapter:ch70"
    ],
    "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:whc-unesco-org/ee52d42c53",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/1118/documents",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:whitelevy-fas-harvard-edu/e137e4dd86",
