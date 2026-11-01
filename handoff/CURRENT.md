@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (22:22 UTC)
+# Handoff — updated 2026-11-01 (22:40 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Rotunda guide no longer stuck on "Loading…" (2026-11-01 ~22:16 UTC)
+## Latest: Directory honesty live (2026-11-01 ~22:35 UTC)
+- **`main` = `8634b5e`** (deploy run 236 green): **PR #108** fast-forwarded `4bb3d40` → `8634b5e` by class (b)/(c) (museum fix batch item 5; honesty wording). The Directory no longer claims "every room"; it names the halls, the planetarium, the Spine gallery and the Pilgrimage portal. Reply `replies/2026-11-01-pr108-merged-pr109-built.md`. Open: **PR #109** (fix batch item 6, state resets), needs review.
+
+## Earlier: Rotunda guide no longer stuck on "Loading…" (2026-11-01 ~22:16 UTC)
 - **`main` = `4bb3d40`** (deploy run 235 green): **PR #107** fast-forwarded `412684a` → `4bb3d40` by class (b) (museum fix batch item 3, from Carter's approved fix batch). An open room guide now redraws once its zone's exhibits arrive, so the Rotunda's Flood bay no longer sits on "Loading this room's exhibits…". Reply `replies/2026-11-01-pr107-merged-pr108-reviewed.md`. Open: **PR #108** (fix batch item 5, Directory honesty): independent review PASS, waits only on Lighthouse.
 
 ## Earlier: museum room guides bound to the Directory (2026-11-01 ~21:53 UTC)
