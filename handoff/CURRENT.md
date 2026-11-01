@@ -1,11 +1,18 @@
-# Handoff — updated 2026-11-01 (02:50 UTC)
+# Handoff — updated 2026-11-01 (07:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: ch19 audit fixes merged (2026-11-01 02:44 UTC)
+## Latest: era-page themes label merged (2026-11-01 07:43 UTC)
+- **`main` = `ff08cc1`** (deploy run 223 green): **PR #93** (site audit Fix 5) fast-forwarded `510885d` → `ff08cc1` on Carter's yes
+  (`decisions-2026-11-01-carter-b-a-a.md` 2; also class (b) approved audit fix). The nine era pages now label the comparative-themes
+  block "Comparative themes · across all eras" with one line saying the same set appears on every era page. Review
+  `replies/2026-11-01-pr93-independent-review.md`, 0 findings. Reply `replies/2026-11-01-pr93-merged.md`.
+- Before it: `510885d` (#94 Newgrange, merged by its own thread, deploy 222).
+
+## Earlier: ch19 audit fixes merged (2026-11-01 02:44 UTC)
 - **`main` = `f923754`** (deploy run 221 green): **PR #92** fast-forwarded `eb842de` → `f923754` on Carter's yes
   (`decisions-2026-11-01-merge-92.md`). Chapter 19's honesty section now covers the Seder and Karaite sections; Jewish Encyclopedia cited for the name "Karaite".
 - Before it: **PR #91** (Persepolis, Angkor Wat, Borobudur open) `0959caf` → `eb842de`, deploy 220 green.
