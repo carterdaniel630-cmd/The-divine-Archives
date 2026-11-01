@@ -36,3 +36,7 @@
 2026-11-01 10:50 UTC reviewer loop #97 passed
 2026-11-01 12:55 UTC reviewer loop #96 passed (delta only; museum card still with Carter)
 2026-11-01 12:58 UTC reviewer loop #98 passed
+2026-11-01 14:05 UTC reviewer loop #101 passed
+2026-11-01 14:05 UTC reviewer loop #99 passed
+2026-11-01 14:05 UTC reviewer loop #100 passed
+2026-11-01 14:05 UTC reviewer loop #96 passed (delta only; museum card dropped per Carter)
