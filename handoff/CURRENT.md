@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (19:45 UTC)
+# Handoff — updated 2026-11-01 (20:03 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Excavation tap targets merged (2026-11-01 ~19:22 UTC)
+## Latest: museum Wing IV/VI/VIII guide buttons fixed (2026-11-01 ~20:01 UTC)
+- **`main` = `6ee2150`** (deploy run 233 green): **PR #105** fast-forwarded `7d75e30` → `6ee2150` by class (b) (museum fix batch item 1). The hidden Arcade archway no longer catches visitors the Room guide lands in Wings IV, VI or VIII. Reply `replies/2026-11-01-pr105-merged.md`. Open: **PR #106** (fix batch item 2, room guide bound to the Directory), needs review + in-room walk.
+
+## Earlier: Excavation tap targets merged (2026-11-01 ~19:22 UTC)
 - **`main` = `7d75e30`** (deploy run 232 green): **PR #104** fast-forwarded `7afab76` → `7d75e30` on Carter's per-item yes (`decisions-2026-11-01-pr104-merge.md`). Excavation Zoom button on phones (46 px squares, board pans), long-press pan fix, Pilgrimage "Enter the site" 44 px on touch. Reply `replies/2026-11-01-pr104-merged-pr105-reviewed.md`.
 
 ## Earlier: Yoruba ch84 merged (2026-11-01 18:53 UTC)
