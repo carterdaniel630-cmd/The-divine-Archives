@@ -70,7 +70,7 @@ const PAGE_SHARE = {
   "museum": { w: 1200, h: 630, alt: "A parchment floorplan of the museum: nine wings along the Path of the Nine Ages, around a grand entryway" },
   "random": { w: 1200, h: 630, alt: "A candlelit archive hall of shelves, scrolls and books under a round window" },
   "pilgrimage": { w: 1200, h: 630, alt: "A stone path winding through moonlit hills, a lantern on a cairn beside it" },
-  "great-pyramid": { w: 1200, h: 630, alt: "The pyramids at Giza in warm light, their stone courses visible",
+  "great-pyramid": { w: 1200, h: 630, alt: "A rendering, not a photograph: pyramids at Giza in warm light",
     desc: "The Great Pyramid at Giza, raised for Pharaoh Khufu around 2560 BCE — the last survivor of the ancient world's seven wonders." },
   "library-of-alexandria": { w: 1200, h: 630, alt: "An evocation, not a photograph: a great hall of scroll shelves under arches, light falling from the roof",
     desc: "The Great Library of Alexandria, and the scholars and scrolls it gathered." },
