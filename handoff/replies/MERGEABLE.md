@@ -25,6 +25,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (`2026-10-31-pr88-pr89-independent-review.md`, filed on `review-log` `f3924f2`); GitHub 9/9 green incl. Lighthouse;
   local checks green; headless phone 7 sites + museum clean. **Only missing: Carter's per-item yes** (now for `aad7174`, see below; also its GitHub checks).
 
+> **Note 2026-11-01 ~14:20 UTC (session ..pNYSq7BmWdg5BE1NX):** Lighthouse on stacked head `5299aaa` FAILED once (The Reliquary 86 → 80; whole run slow, base chapters down 10–25 too). The stack's diff cannot reach Reliquary. A local headless measurement (4× CPU, 5 runs) shows PR ≤ base on blocking time and 0 layout shift for Reliquary and Ziggurat (PR #100 comment 6559155123). Failed job re-run once (run 41313185763). **Do not merge #100/#96/#101 until that re-run is green.** If it fails again on a page the diff cannot reach, put it to Carter rather than re-running again.
+
 ## Waiting to qualify (not mergeable, and what is still missing)
 - **Line-wrap typos ch07/15/16/45 + Carter's re-clear (PR #101)**, `loop/line-wrap-typos-cleared-2` head **`bb241e5`** (from `main` `f1c3c2a`). **Yes: per item, GIVEN** (re-clear, same file, 3). Local checks green. **Missing:** independent review, GitHub green.
 - **Share images, five pages (PR #96)**, `loop/share-images-six` head **`8c18b18`** (main merged in + museum card dropped). **Yes: per item, GIVEN** for the five-image form (same file, 4). **Missing:** independent review of delta `c5ecb5a..8c18b18`, GitHub green.
