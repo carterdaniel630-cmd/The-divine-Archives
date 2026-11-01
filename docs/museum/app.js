@@ -583,7 +583,7 @@ function buildStatic() {
   const trails = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Trails", "walk one tradition through the ages"], { w: 512, h: 320, size: 44 }) }));
   placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); g.add(trails);
   addExhibit(g, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
-  const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "every room, every exhibit"], { w: 512, h: 320, size: 44 }) }));
+  const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "the halls and the rooms"], { w: 512, h: 320, size: 44 }) }));
   placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); g.add(dir);
   addExhibit(g, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
   // spine: one banner per Age opposite its wing door, and a sign over the door
