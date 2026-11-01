@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (20:03 UTC)
+# Handoff — updated 2026-11-01 (22:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: museum Wing IV/VI/VIII guide buttons fixed (2026-11-01 ~20:01 UTC)
+## Latest: museum room guides bound to the Directory (2026-11-01 ~21:53 UTC)
+- **`main` = `412684a`** (deploy run 234 green): **PR #106** fast-forwarded `6ee2150` → `412684a` on Carter's per-item go (`order-2026-11-01-106-review-walk-merge.md`; museum fix batch item 2). Every room guide's figure and Vault list now comes from the Directory's data (Mesopotamia no longer lists Agni/Saraswati; Tantra has Durga; Mahayana has Amitābha). Reply `replies/2026-11-01-pr106-merged-pr107-built.md`. Open: **PR #107** (fix batch item 3, Rotunda guide load hang), needs review.
+
+## Earlier: museum Wing IV/VI/VIII guide buttons fixed (2026-11-01 ~20:01 UTC)
 - **`main` = `6ee2150`** (deploy run 233 green): **PR #105** fast-forwarded `7d75e30` → `6ee2150` by class (b) (museum fix batch item 1). The hidden Arcade archway no longer catches visitors the Room guide lands in Wings IV, VI or VIII. Reply `replies/2026-11-01-pr105-merged.md`. Open: **PR #106** (fix batch item 2, room guide bound to the Directory), needs review + in-room walk.
 
 ## Earlier: Excavation tap targets merged (2026-11-01 ~19:22 UTC)
