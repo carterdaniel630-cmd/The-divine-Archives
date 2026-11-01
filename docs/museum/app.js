@@ -21,12 +21,12 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=10";
+import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
-import { createSound } from "./sound.js?v=1";
+import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createStyle, styleOf } from "./style.js?v=16";
@@ -1008,8 +1008,15 @@ function locate() {
 
 // ---------------------------------------------------------------- label cards
 function roomTitle(id) { const r = S.rooms[id]; return r ? r.title : id; }
+// the hover tag ("E  Lion Man") belongs to the view; any label or examined object opening over it takes it down, so
+// it never floats over a different object (museum fix batch item 6). The next frame in the halls puts it back.
+function clearHover() {
+  S.hover = null; S.skyHover = null;
+  $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on");
+}
 function openCard(ex) {
   const d = ex.data, b = $("mu-card-body");
+  clearHover();
   let h = "";
   const zoneOf = (id) => (S.rooms[id] ? S.rooms[id].zone : null);
   const detailFor = (id) => S.detail[zoneOf(id)];
@@ -1157,6 +1164,7 @@ function findVaultSlug(id) { return S.manifest.names.vault[id][2]; }
 function skySites() {
   const sel = $("mu-sky-site"); if (!sel || !S.sky) return;
   sel.innerHTML = S.sky.state.data.sites.map((x) => `<option value="${x.id}">${esc(x.name)}</option>`).join("");
+  sel.autocomplete = "off"; sel.value = S.sky.state.site.id;   // a browser restoring the form must not show one site over another's sky
   sel.addEventListener("change", () => S.sky.setSite(sel.value));
   $("mu-sky-now").addEventListener("click", () => { S.sky.setMode(S.sky.state.mode === "now" ? "tonight" : "now"); skyPanel(); });
   $("mu-sky-run").addEventListener("click", () => { S.sky.toggleRun(); skyPanel(); });
@@ -1171,6 +1179,9 @@ function skyPanel() {
   $("mu-sky-run").setAttribute("aria-pressed", String(st.run));
   $("mu-sky-lines").setAttribute("aria-pressed", String(st.lines));
   const t = S.sky.timeLabel(), el = $("mu-sky-time"); if (el.textContent !== t) el.textContent = t;
+  // every place that names the sky follows the one the dome shows (museum fix batch item 6: Giza chosen, "Sky over Babylon")
+  const sel = $("mu-sky-site"); if (sel && sel.value !== st.site.id) sel.value = st.site.id;
+  document.querySelectorAll("[data-sky-time]").forEach((p) => { if (p.textContent !== t) p.textContent = t; });
 }
 
 // ---------------------------------------------------------------- room guide
@@ -1203,7 +1214,7 @@ function renderGuide() {
     const cons = [...new Set(L.flatMap((e) => e.targets).filter((t) => C.some((c) => c.id === t)))];
     const pl = [...new Set(L.flatMap((e) => e.targets).filter((t) => t.startsWith("planet:")).map((t) => t.slice(7)))];
     const nm = { lun: "The Moon", mer: "Mercury", ven: "Venus", mar: "Mars", jup: "Jupiter", sat: "Saturn" };
-    h += `<h3>The planetarium overhead</h3><p class="mu-trail">${esc(S.sky.timeLabel())}</p><ul>` +
+    h += `<h3>The planetarium overhead</h3><p class="mu-trail" data-sky-time>${esc(S.sky.timeLabel())}</p><ul>` +
       `<li><button type="button" data-skyopen="about">About this sky<small>what the dome shows, and its sources</small></button></li>` +
       `<li><button type="button" data-skyopen="mw">The Milky Way<small>the archive's lore</small></button></li>` +
       `<li><button type="button" data-skyopen="horizon">The horizon<small>the archive's lore</small></button></li>` +
@@ -1444,7 +1455,7 @@ function savePos() { if (S.started) store.sset("mu-pos", JSON.stringify({ x: +S.
 
 // ---------------------------------------------------------------- directory (fallback)
 function showDirectory(reason) {
-  unlock();
+  unlock(); clearHover();
   document.body.classList.remove("is-3d");
   $("mu-bar").hidden = true; $("mu-intro").hidden = true; $("mu-guide").hidden = true; $("mu-card-wrap").hidden = true;
   const back = $("mu-dir-back");
