@@ -21,7 +21,7 @@
    "type": "site",
    "label": "Angkor Wat",
    "era": "07-high-medieval",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/angkor-wat.html",
    "links": [
     "chapter:ch20",
@@ -93,7 +93,7 @@
    "type": "site",
    "label": "Borobudur",
    "era": "06-early-medieval",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/borobudur.html",
    "links": [
     "chapter:ch20",
@@ -672,7 +672,7 @@
    "type": "site",
    "label": "Persepolis",
    "era": "04-axial-age",
-   "status": "preview",
+   "status": "live",
    "href": "pilgrimage/persepolis.html",
    "links": [
     "chapter:ch06",
