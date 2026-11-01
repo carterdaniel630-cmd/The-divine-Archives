@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (22:40 UTC)
+# Handoff — updated 2026-11-01 (23:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Directory honesty live (2026-11-01 ~22:35 UTC)
+## Latest: sitemap coverage live (2026-11-01 ~23:46 UTC)
+- **`main` = `fe7481c`** (deploy run 238 green): **PR #110** fast-forwarded `c4d1ce8` → `fe7481c` ~23:46 UTC on Carter's per-item yes (`merge-yes-2026-11-01-pr110.md`; museum fix batch item 4). The Museum landing and the 10 open Pilgrimage walks are now listed for search (sitemap 192 → 203 addresses, canonical links added); previews, the Keeper, the hidden arcade, search/random and templates stay hidden. Reply `replies/2026-11-01-run-2343-pr110-merged.md`. No open loop PRs.
+
+## Earlier: Directory honesty and state resets live (2026-11-01 ~22:35–22:56 UTC)
 - **`main` = `c4d1ce8`** (deploy run 237 green): **PR #109** fast-forwarded `8634b5e` → `c4d1ce8` ~22:56 UTC by class (b) (museum fix batch item 6, view state resets: examined objects keep their own name, the hover tag no longer floats over other objects, the planetarium guide follows the chosen sky, one sound setting for museum and Pilgrimage). Reply `replies/2026-11-01-pr109-merged.md`. Open: **PR #110** sitemap (`fe7481c`), reviewed, waits on Carter a/b.
 - Before it: `main` = `8634b5e` (deploy run 236 green): **PR #108** fast-forwarded `4bb3d40` → `8634b5e` by class (b)/(c) (museum fix batch item 5; honesty wording). The Directory no longer claims "every room"; it names the halls, the planetarium, the Spine gallery and the Pilgrimage portal. Reply `replies/2026-11-01-pr108-merged-pr109-built.md`. Open: **PR #109** (fix batch item 6, state resets), needs review.
 
