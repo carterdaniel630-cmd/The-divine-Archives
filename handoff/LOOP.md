@@ -68,7 +68,7 @@ with no memory of the last one: the repo is the memory.
 
 The code map must always match the code. A stale map is not acceptable.
 
-- **Every run, at run start** (after attach/clone): run `graphify --update`. That is incremental — it re-extracts only new or changed files, so it is cheap. The session's local `graphify-out/` then matches its checkout.
+- **Every run, at run start** (after attach/clone): run `graphify update .`. That is incremental — it re-extracts only new or changed files, so it is cheap. The session's local `graphify-out/` then matches its checkout.
 - **Freshness check.** If `graphify-out/` is missing, or the checkout is newer than the local map, run a full `graphify extract . --code-only` plus `graphify cluster-only . --no-label` before touching code.
 - **If the CLI is missing:** SessionStart already tried to install it (see `tools/graphify-session.sh`). If it still cannot be installed, read `graphify-out/GRAPH_REPORT.md` for the code map and say so in STATUS — do not pretend the live query tools worked.
 - **Every commit that changes code** is picked up by the next run's refresh. No separate publish step per commit.
