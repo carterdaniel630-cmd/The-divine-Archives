@@ -1179,7 +1179,7 @@ function renderGuide() {
     const r = S.rooms[S.room];
     h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") +
       // a Directory item with no exhibit standing in the room yet: still named, linked to its page
-      G.missing.map((it) => `<li><a href="${esc(it.href)}">${esc(it.name)}</a><small>${esc(typeLabel(it.type))}</small></li>`).join("") + `</ul>`;
+      G.missing.map((it) => `<li><a href="${esc(it.href)}">${esc(it.name)}<small>${esc(typeLabel(it.type))}</small></a></li>`).join("") + `</ul>`;
     if (!here.length) h += `<p class="mu-trail">Loading this room's exhibits…</p>`;
     // a walkthrough launched from a case in this room: every step as plain text, with its sources (filled in below)
     h += `<div data-guide-rituals="${esc(S.room)}"></div>`;
