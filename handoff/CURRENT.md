@@ -1,11 +1,16 @@
-# Handoff — updated 2026-11-01 (07:50 UTC)
+# Handoff — updated 2026-11-01 (11:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: era-page themes label merged (2026-11-01 07:43 UTC)
+## Latest: ch08 typo fix merged (2026-11-01 11:45 UTC)
+- **`main` = `6d51ab9`** (deploy run 224 green): **PR #97** fast-forwarded `ff08cc1` → `6d51ab9` by class (c) typo fix
+  (`decisions-2026-11-01-carter-b-a-a.md` 1). Chapter 8 reads "day-laborer" (was "day- laborer"). Review
+  `replies/2026-11-01-pr97-independent-review.md`, 0 findings. Reply `replies/2026-11-01-pr97-merged.md`.
+
+## Earlier: era-page themes label merged (2026-11-01 07:43 UTC)
 - **`main` = `ff08cc1`** (deploy run 223 green): **PR #93** (site audit Fix 5) fast-forwarded `510885d` → `ff08cc1` on Carter's yes
   (`decisions-2026-11-01-carter-b-a-a.md` 2; also class (b) approved audit fix). The nine era pages now label the comparative-themes
   block "Comparative themes · across all eras" with one line saying the same set appears on every era page. Review
