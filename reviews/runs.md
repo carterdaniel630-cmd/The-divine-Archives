@@ -34,3 +34,4 @@
 2026-11-01 02:55 UTC reviewer loop #93 passed
 2026-11-01 08:45 UTC reviewer loop #96 need Carter (1 needs Carter, 1 fixable returned to builder)
 2026-11-01 10:50 UTC reviewer loop #97 passed
+2026-11-01 12:55 UTC reviewer loop #96 passed (delta only; museum card still with Carter)
