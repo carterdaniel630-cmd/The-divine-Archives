@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (14:10 UTC)
+# Handoff — updated 2026-11-01 (16:30 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: share images (five pages) and Ziggurat 44 px pad merged (2026-11-01 ~14:42 UTC)
+## Latest: Yoruba chapter built as PR #102 (2026-11-01 ~16:30 UTC)
+- `main` unchanged (`5299aaa`). **New open PR #102** `loop/yoruba-ch84` `88c146b`: ch84 Yoruba, pending tag, local checks green. Waits on an independent review, GitHub green, and Carter (era 07/08 and per-item yes). Reply `replies/2026-11-01-pr102-yoruba-built.md`.
+
+## Earlier: share images (five pages) and Ziggurat 44 px pad merged (2026-11-01 ~14:42 UTC)
 - **`main` = `5299aaa`** (deploys 228 + 229 green): **PR #96** (`704b4fc`, share images for random, Pilgrimage list, Great Pyramid, Library of Alexandria, Qumran; museum held back) and **PR #100** (Ziggurat on-screen keys 44 px on phones, game fits small screens), Carter's per-item yeses (`decisions-2026-11-01-carter-yes-x4.md`). Reply `replies/2026-11-01-pr96-pr100-merged.md`.
 
 ## Earlier: typo fixes in ch07/15/16/45 merged (2026-11-01 ~14:18 UTC)
