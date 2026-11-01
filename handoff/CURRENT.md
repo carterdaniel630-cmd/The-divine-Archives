@@ -1,11 +1,17 @@
-# Handoff — updated 2026-11-01 (13:10 UTC)
+# Handoff — updated 2026-11-01 (14:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: homepage games wording merged (2026-11-01 13:08 UTC)
+## Latest: homepage search box fix merged (2026-11-01 ~13:48 UTC)
+- **`main` = `d5815c6`** (deploy run 226 green): **PR #99** fast-forwarded `f1c3c2a` → `d5815c6` on Carter's per-item yes
+  (`decisions-2026-11-01-carter-yes-x4.md` 1). The homepage no longer runs 13 px past the screen on 360 px phones (search input
+  `min-width: 0`). Review `replies/2026-11-01-pr96-99-100-101-independent-review.md`, 0 findings. Reply `replies/2026-11-01-pr99-merged-stack.md`.
+- Stacked behind it, reviewed and waiting only on GitHub checks of the new heads: #101 `9e5edb3` → #96 `704b4fc` → #100 `5299aaa`.
+
+## Earlier: homepage games wording merged (2026-11-01 13:08 UTC)
 - **`main` = `f1c3c2a`** (deploy run 225): **PR #98** (site audit Fix 6) fast-forwarded `6d51ab9` → `f1c3c2a` by class (b) approved
   audit fix (`decisions-2026-10-25-audit-fixes-go.md`) + (c) honesty wording (`decisions-2026-11-01-carter-b-a-a.md` 1). The homepage
   games blurb now says some source chapters are still pending review. Review `replies/2026-11-01-pr98-independent-review.md`,
