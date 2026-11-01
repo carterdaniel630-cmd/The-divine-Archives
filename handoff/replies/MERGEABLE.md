@@ -16,6 +16,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   local checks green; headless phone 7 sites + museum clean. **Only missing: Carter's per-item yes** (now for `aad7174`, see below; also its GitHub checks).
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **ch19 audit Fixes 2+3 (PR #92)**, `loop/ch19-honesty-seder-karaite` head `fc0ad1a` (built 2026-11-01 ~02:15 UTC, `2026-11-01-pr92-ch19-fixes-2-3.md`). Local checks green. Missing: independent review; GitHub checks on `fc0ad1a`; Carter's per-item yes.
 - (PR #90 moved to Mergeable now, 2026-10-31 ~23:00 UTC.)
   **2026-10-31 ~21:10 UTC: `main` moved to `fcec69f` (#87 merged by its thread), so both branches were synced by merge
   commits that add only `main`'s content: #88 → `aad7174` (conflict in pilgrimage-data.js/pilgrimage.html resolved by taking
