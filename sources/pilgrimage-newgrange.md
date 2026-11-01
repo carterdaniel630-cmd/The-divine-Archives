@@ -37,7 +37,7 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for six facts the op
 6. "Shedding light on winter solstice at Newgrange", *The Irish Times*, 19 December 2013 (the byline given at
    build, E. Burke-Kennedy, was not re-confirmed at review on 2026-10-18, so the card gives none),
    https://irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602 (*opened*): the light
-   begins at 8.58 am and lasts 17 minutes; the chamber floor 2 m higher than the entrance; the roof-box about
+   begins at 8.58 am and lasts 17 minutes, for a few days around the solstice (about 19–23 December); the chamber floor 2 m higher than the entrance; the roof-box about
    2.5 m from the entrance; quoting Prof. Tom Ray: the beam today 1–2 m shorter than when built, barely reaching
    the back of the chamber. (The article was also logged as saying the old alignment returns in 5–6,000 years; the
    review of 2026-10-18 could not find that quote, and it does not fit the slow cycle of the earth's tilt, so the
@@ -82,10 +82,15 @@ Wikipedia ("Newgrange") is used as a labelled pointer only, for six facts the op
 - 1699: Charles Campbell's workmen found the entrance; Edward Lhwyd described it. Roman coins of about 320–337 CE
   and gold jewellery, now in the National Museum of Ireland and the British Museum.
 - The 2016 claim (Michael Gibbons, in *Emania*) that the roof-box was fabricated in the 1960s, and the reply: the
-  Office of Public Works called it "entirely untrue" and cited photographs from 1935 and 1954 showing the roof-box
-  in place before the excavation; Robert Hensey, from the O'Kelly archive, agreed. Through search results only
-  (CBS News; IrishCentral; Stone Pages; shadowsandstone.com). Corrected 2026-10-18: the log had named the wrong
-  people and "photographs from the early 1900s". The card names nobody.
+  Office of Public Works called it "entirely untrue" and cited photographs showing the roof-box in place before the
+  excavation; Robert Hensey, from the O'Kelly archive, agreed. Through search results only (CBS News; IrishCentral;
+  Stone Pages), except: K. Williams, "Raising the Roof: Comments on the recent Newgrange 'roof-box' controversy",
+  ShadowsandStone blog, 27 December 2016,
+  https://blog.shadowsandstone.com/2016/12/27/raising-the-roof-comments-on-the-recent-newgrange-roofbox-controversy
+  (*opened* 2026-11-01): a photograph "taken in 1935", "provided by the Office of Public Works", and OPW photographs
+  of the lintel and partly uncovered roof-box "in the early 20th century". A second photograph of 1954 appeared only
+  in search results and could not be confirmed, so the card gives 1935 only. The card names the Office of Public
+  Works and no individual. (Corrected 2026-10-18: the log had named the wrong people.)
 - The solstice lottery (the card does not give the number chosen).
 
 ## Where sources differ

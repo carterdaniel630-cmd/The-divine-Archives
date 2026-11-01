@@ -31,10 +31,11 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   Caves and Chichén Itzá are noindex previews, pending review. Delphi's theatre keeps both readings
   (Carter's go-ahead, 2026-10-31).
   - Batch 2 (Persepolis, Angkor Wat, Borobudur), PR #87: clean independent review at 75b931d, all checks green,
-    Carter's go-ahead 2026-10-31 (`handoff/replies/2026-10-31-pr87-merge-gate.md`). Noindex previews, pending review. Newgrange is
-    left to #66; the batch-2 review fixes for Newgrange are in
-    `/mnt/project-files/pilgrimage/newgrange-batch2-vs-pr66.diff` for whoever drives #66 (it is behind main).
-  - Open PRs now: #66 (Newgrange) and #60 (journal hero). #64, #67 and #68 below are no longer open.
+    Carter's go-ahead 2026-10-31 (`handoff/replies/2026-10-31-pr87-merge-gate.md`). Noindex previews, pending review.
+  - Newgrange: #94 (`claude/project-thread-s3qxre`) carries #66 forward. It is current main with #66's branch
+    merged in unchanged, plus the batch-2 review fixes and the ch42 follow-up. Carter approved #66 on 2026-11-01
+    ("yes on 66"). When #94 merges, #66 shows as merged.
+  - Open PRs now: #94 (Newgrange, carries #66), #66 and #60 (journal hero). #64, #67 and #68 below are no longer open.
 - Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
   - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
   - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back

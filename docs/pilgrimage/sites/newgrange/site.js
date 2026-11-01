@@ -37,6 +37,7 @@ const REF = {
   cassidy: "L. M. Cassidy, D. G. Bradley and others, &ldquo;A dynastic elite in monumental Neolithic society&rdquo;, <em>Nature</em> 582 (2020), doi:10.1038/s41586-020-2378-6; Queen&rsquo;s University Belfast and research.ie reports (2020)",
   smyth: "J. Smyth, N. Carlin and others, &ldquo;King of Newgrange: a critical analysis of a Neolithic petrous fragment from the passage tomb chamber&rdquo;, <em>Antiquity</em> 99 (2025), 672&ndash;688, as reported by University College Dublin (24 June 2025)",
   wiki: "Wikipedia, &ldquo;Newgrange&rdquo; (a pointer only, to be checked against the excavation report)",
+  sas: "K. Williams, &ldquo;Raising the Roof: Comments on the recent Newgrange &lsquo;roof-box&rsquo; controversy&rdquo;, ShadowsandStone blog (27 December 2016), with the Office of Public Works photograph of 1935",
   ch42: "the archive&rsquo;s Neolithic chapter (ch42)"
 };
 const L = {
@@ -122,8 +123,8 @@ const info = [
     html: "<p>Before the entrance O&rsquo;Kelly found a spread of white quartz, which comes from the Wicklow mountains to the south, and rounded dark stones. He judged that they had fallen from a wall on the front of the mound, and the wall you see was rebuilt on that reading, held up with concrete. O&rsquo;Kelly himself called his account of how the mound and its facing were built &lsquo;a guess&rsquo;.</p><p>Other archaeologists disagree. George Eogan, who excavated nearby Knowth, has argued that such a wall would not have stood without concrete support, and that the quartz lay in some other way. The reconstruction is still argued over.</p>",
     flags: [CONTESTED], links: [L.ch42], sources: REF.whi + "; " + REF.whe + "; " + REF.kex + "." },
   { id: "roofbox", section: "s1", pos: [1.1, 3.2, 40.6], cat: "I · Before the mound", title: "The roof-box",
-    html: "<p>Above the doorway is a second, smaller opening: the <strong>roof-box</strong>. It is this, not the door, that lets the midwinter sun into the tomb. The floor of the passage climbs about two metres to the chamber, and the roof-box is set higher than the door; our reading, not the sources&rsquo;, is that this is what lets the beam reach the chamber.</p><p>In 2016 a writer claimed the roof-box was invented by the restorers. Archaeologists replied with photographs that show it from the early 1900s, before the excavation.</p>",
-    flags: [NOTSUP], links: [L.ch42], sources: REF.ray + "; " + REF.times + "; " + REF.wiki + "." },
+    html: "<p>Above the doorway is a second, smaller opening: the <strong>roof-box</strong>. It is this, not the door, that lets the midwinter sun into the tomb. The floor of the passage climbs about two metres to the chamber, and the roof-box is set higher than the door; our reading, not the sources&rsquo;, is that this is what lets the beam reach the chamber.</p><p>In 2016 a writer claimed the roof-box was invented by the restorers. The Office of Public Works replied with photographs from the early 20th century, one of them taken in 1935, that show it in place before the excavation.</p>",
+    flags: [NOTSUP], links: [L.ch42], sources: REF.ray + "; " + REF.times + "; " + REF.sas + "; " + REF.wiki + "." },
   { id: "circle", section: "s1", pos: [g3.x + 2.4, 1.9, g3.z + 1.6], cat: "I · Before the mound", title: "The Great Circle",
     html: "<p>Standing stones ring the mound at a distance. Twelve survive of a circle that may once have held about 38. They are usually taken to be later than the mound, put up in the Early Bronze Age, but how much later, and whether they belong with the tomb at all, is debated.</p>",
     flags: [CONTESTED, APPROX], sources: REF.whi + "; " + REF.wiki + "." },

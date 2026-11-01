@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1976,
+ "count": 1977,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -1425,6 +1425,15 @@
     "chapter:ch73"
    ],
    "from": "sources/ch73-sabbateans-hasidism.md"
+  },
+  {
+   "id": "source:blog-shadowsandstone-com/3e85d7bbfd",
+   "type": "source",
+   "label": "https://blog.shadowsandstone.com/2016/12/27/raising-the-roof-comments-on-the-recent-newgrange-roofbox-controversy",
+   "links": [
+    "site:newgrange"
+   ],
+   "from": "sources/pilgrimage-newgrange.md"
   },
   {
    "id": "source:blogs-bl-uk/f79dcfeca8",
