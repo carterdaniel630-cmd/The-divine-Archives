@@ -1,11 +1,16 @@
-# Handoff — updated 2026-10-31 (22:47 UTC)
+# Handoff — updated 2026-11-01 (02:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: README refresh merged (2026-10-31 22:46 UTC)
+## Latest: ch19 audit fixes merged (2026-11-01 02:44 UTC)
+- **`main` = `f923754`** (deploy run 221 green): **PR #92** fast-forwarded `eb842de` → `f923754` on Carter's yes
+  (`decisions-2026-11-01-merge-92.md`). Chapter 19's honesty section now covers the Seder and Karaite sections; Jewish Encyclopedia cited for the name "Karaite".
+- Before it: **PR #91** (Persepolis, Angkor Wat, Borobudur open) `0959caf` → `eb842de`, deploy 220 green.
+
+## Earlier: README refresh merged (2026-10-31 22:46 UTC)
 - **`main` = `0959caf`** (deploy run 219 green): **PR #90** fast-forwarded `dd35228` → `0959caf` on Carter's yes
   (`decisions-2026-10-31-merge-90.md`). README only: 18 pending chapters, Vault 87, Pilgrimage 7 open; the live site's pages are unchanged.
 
