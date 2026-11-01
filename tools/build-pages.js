@@ -249,7 +249,8 @@ function pageForEra(era) {
   const tiles = era.traditions.map((name) => tradTile(name, era)).join("\n");
   const themeChapters = A.chapters.filter((c) => c.kind === "theme");
   const themeBlock = themeChapters.length
-    ? '\n      <p class="eyebrow center" style="margin:2.6rem 0 1.4rem">Comparative themes across this age</p>\n' +
+    ? '\n      <p class="eyebrow center" style="margin:2.6rem 0 .6rem">Comparative themes &middot; across all eras</p>\n' +
+      '      <p class="tiny center" style="margin:0 0 1.2rem">These chapters compare traditions from every era, so the same set appears on each era page; they are not themes of this age alone. <a href="../themes.html">All themes &rarr;</a></p>\n' +
       '      <div class="tiles">\n' + themeChapters.map(themeTileForEra).join("\n") + "\n      </div>"
     : "";
   const objs = VAULT.items.filter((i) => i.status === "published" && i.era === era.slug).sort((a, b) => (a.year || 0) - (b.year || 0));
