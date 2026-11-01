@@ -410,7 +410,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
   mergeable list; audit + fold; Protection charter drafted; over-claims fixed; trademark ids removed.
 
 ## In progress
-- **PR #97** line-wrap typo ch08, `loop/line-wrap-typos` `6d51ab9`: built 2026-11-01 ~09:50, local checks green. Next: independent review by a run that did not write it, GitHub green, then merge by class (c).
+- **PR #97** line-wrap typo ch08, `loop/line-wrap-typos` `6d51ab9`: built 2026-11-01 ~09:50, local checks green; **GitHub 9/9 green incl. Lighthouse (10:07 UTC)**. Next: independent review by a run that did not write it, GitHub green, then merge by class (c).
 - **`loop/line-wrap-typos-cleared`** `adfbdc9` (no PR): the four cleared-chapter typo fixes, held for Carter (Needs Carter).
 - **PR #96** share images (six pages), `loop/share-images-six` `842b51e`: **independently reviewed 2026-11-01 ~09:00: 1 NEEDS CARTER + 1 fixable** (`2026-11-01-pr96-independent-review.md`). Waiting on Carter's answer on the museum card (a: drop it, ship five; b: hold for a new image). A builder run can already fix the Great Pyramid alt ("A rendering, not a photograph: …") and re-sync to `main`; then a delta review, then Carter's per-item yes.
 - **PR #95** (games full screen, another session's, 2026-11-01 03:42): Lighthouse **failed** 04:28 UTC; owner's to fix; new feature, Carter's per-item yes. Loop does not touch it. `#95` and `#60` both edit `treasure.js`.
