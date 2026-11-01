@@ -1272,7 +1272,7 @@
     "ch84": fig(
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/><circle cx="100" cy="100" r="64" stroke="currentColor" stroke-width="1" opacity="0.55"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="100" cy="100" r="5"/><circle cx="100" cy="36" r="4"/><circle cx="100" cy="164" r="4"/><circle cx="36" cy="100" r="4"/><circle cx="164" cy="100" r="4"/><circle cx="55" cy="55" r="3.2"/><circle cx="145" cy="55" r="3.2"/><circle cx="55" cy="145" r="3.2"/><circle cx="145" cy="145" r="3.2"/><path d="M100 41 V95 M100 105 V159 M41 100 H95 M105 100 H159" opacity="0.6"/></g></svg>',
       "Interpretive illustration",
-      "The diviner's tray — an opón Ifá ringed by the marks of the 256 odù, the signs through which Ọ̀rúnmìlà speaks. An original rendering in the tradition's idiom, not a tracing of any carved tray."
+      "The diviner's tray — an opón Ifá ringed by marks recalling the odù, the signs through which Ọ̀rúnmìlà speaks. An original rendering in the tradition's idiom, not a tracing of any carved tray."
     ),
 
     /* Ch75 — Siberian & Arctic Shamanism: the frame drum as map of the worlds */
