@@ -85,8 +85,17 @@ The code map must always match the code. A stale map is not acceptable.
 ## Merging (Items 22 and 25: per item, Carter approves each one)
 PR #59 (site batch A) was merged on 2026-10-17 under Items 21/24. From now on a run may merge an item only when
 ALL of these hold for one exact commit (the "candidate"):
-0. The item is listed as mergeable in `handoff/replies/MERGEABLE.md`, AND a Carter approval for **that specific
-   item** is recorded in a `handoff/` decisions or order file. A general "merge as we go" is not per-item approval.
+0. The item is listed as mergeable in `handoff/replies/MERGEABLE.md`, AND Carter's yes covers it in one of two ways:
+   - **per item:** a Carter approval for **that specific item** is recorded in a `handoff/` decisions or order file; or
+   - **by class** (Carter's "b", 2026-11-01, `decisions-2026-11-01-carter-b-a-a.md` 1, adopting
+     `loop-speed-order-2026-10-31.md` §3): the item is only (a) a flip of content already reviewed in substance,
+     (b) a fix from an audit list Carter already approved (e.g. `audit-fixes-2026-10-25.md`), or (c) a typo, label or
+     honesty-wording fix. Say in MERGEABLE which class and why.
+   **Never by class, always per item:** new builds (chapters, rooms, games, features, exhibits, pages), verdict pieces
+   (finished relics, chapters, videos), anything a review flagged that went to Carter, anything religiously sensitive or
+   touching a sacred object or restricted site, every armory round, and clearing a pending tag. If in doubt, it is
+   per item. Carter can revoke the class yes at any time; a revocation in any `handoff/` file wins at once.
+   A general "merge as we go" is still not approval.
 1. **Independent review.** The run doing the review wrote none of the candidate's site changes (`docs/`,
    `tools/`, `framework/`, `.github/`). It reviews `origin/main...candidate` against `reviews/REVIEWER.md` §3–§4,
    with zero open findings, and writes the report to `handoff/replies/`.
