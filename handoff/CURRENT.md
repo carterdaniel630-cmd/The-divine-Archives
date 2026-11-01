@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (18:55 UTC)
+# Handoff — updated 2026-11-01 (19:45 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Yoruba ch84 merged (2026-11-01 18:53 UTC)
+## Latest: Excavation tap targets merged (2026-11-01 ~19:22 UTC)
+- **`main` = `7d75e30`** (deploy run 232 green): **PR #104** fast-forwarded `7afab76` → `7d75e30` on Carter's per-item yes (`decisions-2026-11-01-pr104-merge.md`). Excavation Zoom button on phones (46 px squares, board pans), long-press pan fix, Pilgrimage "Enter the site" 44 px on touch. Reply `replies/2026-11-01-pr104-merged-pr105-reviewed.md`.
+
+## Earlier: Yoruba ch84 merged (2026-11-01 18:53 UTC)
 - **`main` = `7afab76`** (deploy run 231): **PR #102** fast-forwarded `162f1d2` → `7afab76` on Carter's per-item yes (`decisions-2026-11-01-yoruba.md`). New chapter ch84 Yoruba (era 08) with its pending tag and the four approved wording fixes. Reply `replies/2026-11-01-pr102-merged-pr105-built.md`.
 
 ## Earlier: The Keeper pass 1 preview merged (2026-11-01 ~17:47 UTC)
