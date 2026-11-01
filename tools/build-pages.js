@@ -510,7 +510,7 @@ ${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" /
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(desc)}" />
   <meta property="og:url" content="${url}" />
-  <meta name="twitter:card" content="summary" />
+${SEO.pageShareTags("pilgrimage")}  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
 <a class="skip-link" href="#pg-list">Skip to content</a>
@@ -544,6 +544,18 @@ ${FOOTER_ROOT}
 </html>
 `;
 }
+// Share tags for a site that has a hand-picked share image (SEO.PAGE_SHARE); "" for the rest.
+function pilgrimageShareHead(s, title) {
+  const sh = SEO.PAGE_SHARE[s.id];
+  if (!sh) return "";
+  return `  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="${esc(title)}" />
+  <meta property="og:description" content="${esc(sh.desc)}" />
+  <meta property="og:url" content="${SITE}/pilgrimage/${esc(s.id)}.html" />
+${SEO.pageShareTags(s.id)}  <meta name="twitter:card" content="summary_large_image" />
+`;
+}
 function pilgrimageSitePage(s) {
   const title = s.name + " — The Pilgrimage · The Divine Archives";
   const chs = (s.chapters || []).map((id) => { const c = A.chapters.find((x) => x.id === id); return c ? `<li><a href="../chapters/${esc(id)}.html">${esc(c.title)}</a></li>` : ""; }).join("");
@@ -562,7 +574,7 @@ function pilgrimageSitePage(s) {
 ${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
   <link rel="stylesheet" href="pilgrimage.css?v=1" />
   <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
-</head>
+${pilgrimageShareHead(s, title)}</head>
 <body class="museum-page pilgrimage-page">
 <a class="skip-link" href="#pg-fallback">Skip to the text version</a>
 <div id="mu-stage" aria-hidden="true"></div>
