@@ -61,4 +61,34 @@ function fontTags() {
   );
 }
 
-module.exports = { SITE, dates, shareTags, twitterCard, imageUrl, fontTags, FONT_CSS };
+// Hand-picked share images for pages that have no generated card (Carter's order, picks in
+// handoff/share-images-2026-10-25.md). They live in docs/assets/share/, not docs/assets/og/,
+// because build-og.js removes any .jpg in og/ that it did not render itself.
+// random.html is a hand-written page: its tags are written into it by hand and must match the
+// entry here (tools/verify-share-images.js checks it). museum.html has no share image yet: the
+// picked map had garbled lettering, so Carter ruled to ship without it (decisions-2026-11-01-carter-yes-x4.md 4).
+const PAGE_SHARE = {
+  "random": { w: 1200, h: 630, alt: "A candlelit archive hall of shelves, scrolls and books under a round window" },
+  "pilgrimage": { w: 1200, h: 630, alt: "A stone path winding through moonlit hills, a lantern on a cairn beside it" },
+  "great-pyramid": { w: 1200, h: 630, alt: "A rendering, not a photograph: pyramids at Giza in warm light",
+    desc: "The Great Pyramid at Giza, raised for Pharaoh Khufu around 2560 BCE — the last survivor of the ancient world's seven wonders." },
+  "library-of-alexandria": { w: 1200, h: 630, alt: "An evocation, not a photograph: a great hall of scroll shelves under arches, light falling from the roof",
+    desc: "The Great Library of Alexandria, and the scholars and scrolls it gathered." },
+  "qumran-caves": { w: 900, h: 1440, alt: "An earthenware scroll jar with its bowl lid and a rolled scroll, the Qumran Cave 1 jar form",
+    desc: "The caves at Qumran, where the Dead Sea Scrolls were found — among the earliest known Hebrew Bible manuscripts." },
+};
+const pageShareUrl = (key) => `${SITE}/assets/share/${key}.jpg`;
+function pageShareTags(key) {
+  const s = PAGE_SHARE[key];
+  if (!s) return "";
+  const url = pageShareUrl(key);
+  return (
+    `  <meta property="og:image" content="${url}" />\n` +
+    `  <meta property="og:image:width" content="${s.w}" />\n` +
+    `  <meta property="og:image:height" content="${s.h}" />\n` +
+    `  <meta property="og:image:alt" content="${escAttr(s.alt)}" />\n` +
+    `  <meta name="twitter:image" content="${url}" />\n`
+  );
+}
+
+module.exports = { SITE, dates, shareTags, twitterCard, imageUrl, fontTags, FONT_CSS, PAGE_SHARE, pageShareUrl, pageShareTags };
