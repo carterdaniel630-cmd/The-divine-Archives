@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1963,
+ "count": 1964,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -10786,6 +10786,15 @@
     "chapter:ch73"
    ],
    "from": "sources/ch73-sabbateans-hasidism.md"
+  },
+  {
+   "id": "source:jewishencyclopedia-com/2fbe992bc1",
+   "type": "source",
+   "label": "https://jewishencyclopedia.com/articles/9211-karaites-and-karaism",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
    "id": "source:jewishencyclopedia-com/4dc4a5888a",

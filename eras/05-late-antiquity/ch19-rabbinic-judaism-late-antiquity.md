@@ -317,6 +317,7 @@ homeland endured.
 - The Seder's reach today — Pew Research Center, "Attending a Seder is common practice for American Jews" (14 April 2014, from the 2013 survey of U.S. Jews). https://www.pewresearch.org/short-reads/2014/04/14/attending-a-seder-is-common-practice-for-american-jews/
 - Saadia's *Refutation of Anan* and the Karaite calendar — Cambridge University Library, Taylor-Schechter Genizah Research Unit, "Saadya Gaon's Refutation of Anan or a Qaraite Book of Commandments?" https://www.lib.cam.ac.uk/node/1354501
 - The Karaite Sabbath without fire, as rabbinic writers describe it — Rabbi Tzvi Hersh Weinreb, "Black Sabbath," OU Torah. https://outorah.org/p/23857
+- The name "Karaite" and the earlier "Ananites" — Jewish Encyclopedia (1906), "Karaites and Karaism" (an older reference work; on the name only). https://jewishencyclopedia.com/articles/9211-karaites-and-karaism
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica, My Jewish
 Learning, Wikipedia's sourced overviews, and the mainstream scholarship of Neusner, Schwartz, and the
