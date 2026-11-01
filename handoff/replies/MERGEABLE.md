@@ -16,7 +16,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   local checks green; headless phone 7 sites + museum clean. **Only missing: Carter's per-item yes** (now for `aad7174`, see below; also its GitHub checks).
 
 ## Waiting to qualify (not mergeable, and what is still missing)
-- **ch19 audit Fixes 2+3 (PR #92)**, `loop/ch19-honesty-seder-karaite` head `fc0ad1a` (built 2026-11-01 ~02:15 UTC, `2026-11-01-pr92-ch19-fixes-2-3.md`). Local checks green. Independent review 2026-11-01 (`2026-11-01-pr92-independent-review.md`): **1 open finding** (sourcing gap, fixable by a builder run). Missing: that fix + review of the delta; Lighthouse green on the final head (9/10 green on `fc0ad1a`, Lighthouse running); Carter's per-item yes.
+- **ch19 audit Fixes 2+3 (PR #92)**, `loop/ch19-honesty-seder-karaite` head `fc0ad1a` (built 2026-11-01 ~02:15 UTC, `2026-11-01-pr92-ch19-fixes-2-3.md`). Local checks green. Independent review 2026-11-01 (`2026-11-01-pr92-independent-review.md`): **1 open finding** (sourcing gap, fixable by a builder run). Finding fixed at **`f923754`** (`2026-11-01-pr92-review-fix.md`). Missing: independent review of the delta `fc0ad1a..f923754` by a run that wrote neither; all GitHub checks green on `f923754` incl. Lighthouse; Carter's per-item yes.
 - (PR #90 moved to Mergeable now, 2026-10-31 ~23:00 UTC.)
   **2026-10-31 ~21:10 UTC: `main` moved to `fcec69f` (#87 merged by its thread), so both branches were synced by merge
   commits that add only `main`'s content: #88 → `aad7174` (conflict in pilgrimage-data.js/pilgrimage.html resolved by taking
