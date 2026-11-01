@@ -1268,6 +1268,13 @@
       "The syllable Om, whose three sounds and silence the Mandukya Upanishad reads as the states of consciousness, encircled by a string of prayer beads above a flowing river at dawn. An original, interpretive drawing."
     ),
 
+    /* Ch84 — Yoruba: the opón Ifá, the diviner's tray, ringed by the marks of the odù */
+    "ch84": fig(
+      '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.8" opacity="0.3"/><circle cx="100" cy="100" r="64" stroke="currentColor" stroke-width="1" opacity="0.55"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="100" cy="100" r="5"/><circle cx="100" cy="36" r="4"/><circle cx="100" cy="164" r="4"/><circle cx="36" cy="100" r="4"/><circle cx="164" cy="100" r="4"/><circle cx="55" cy="55" r="3.2"/><circle cx="145" cy="55" r="3.2"/><circle cx="55" cy="145" r="3.2"/><circle cx="145" cy="145" r="3.2"/><path d="M100 41 V95 M100 105 V159 M41 100 H95 M105 100 H159" opacity="0.6"/></g></svg>',
+      "Interpretive illustration",
+      "The diviner's tray — an opón Ifá ringed by marks recalling the odù, the signs through which Ọ̀rúnmìlà speaks. An original rendering in the tradition's idiom, not a tracing of any carved tray."
+    ),
+
     /* Ch75 — Siberian & Arctic Shamanism: the frame drum as map of the worlds */
     "ch75": fig(
       '<svg class="plate-art" viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.7" opacity="0.3"/><ellipse cx="100" cy="100" rx="62" ry="70" stroke="currentColor" stroke-width="1.6"/><ellipse cx="100" cy="100" rx="56" ry="64" stroke="currentColor" stroke-width="0.7" opacity="0.6"/><path d="M46 78 L154 78 M44 124 L156 124" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="100" r="10" stroke="currentColor" stroke-width="1.2"/><path d="M100 86 L100 82 M100 114 L100 118 M86 100 L82 100 M114 100 L118 100" stroke="currentColor" stroke-width="1"/><path d="M70 60 L74 50 L78 60 M74 50 L74 70 M68 64 L80 64" stroke="currentColor" stroke-width="1"/><path d="M118 58 C124 52 132 52 136 58 M122 56 L118 50 M132 56 L136 50" stroke="currentColor" stroke-width="1"/><path d="M62 104 C68 98 76 98 80 104 L78 110 L64 110 Z" stroke="currentColor" stroke-width="0.9"/><path d="M124 96 L132 104 L140 96" stroke="currentColor" stroke-width="0.9"/><path d="M80 140 L86 150 L92 140 M108 140 L114 150 L120 140" stroke="currentColor" stroke-width="0.9"/><path d="M146 150 L170 176" stroke="currentColor" stroke-width="1.6"/><circle cx="144" cy="148" r="4" stroke="currentColor" stroke-width="1.2"/></svg>',
