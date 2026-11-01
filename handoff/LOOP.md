@@ -30,7 +30,7 @@ with no memory of the last one: the repo is the memory.
    `handoff/decisions-2026-10-17-priority-by-value.md` (Carter: "priority … most high value outcomes"), not by
    list order. Keep STATUS → Next sorted by that value. Bounded means about one
    PR's worth of work, correct and verified. A smaller correct piece beats a larger unverified one. Gated items
-   (below) can still be prepared: research, drafts, specs. Only the gated action itself waits.
+   (below) can still be prepared: research, drafts, specs. Only the gated action itself waits. Before touching code, follow Graph refresh below — never work from a stale map.
 6. **Verify** exactly as `CLAUDE.md` "Quality bar" says:
    - full build order;
    - every `tools/verify-*.js`;
@@ -63,6 +63,17 @@ with no memory of the last one: the repo is the memory.
    names until the file is gone. A claim over 3 hours old is stale.
 8. **Chain.** If `STATUS.md` → Next still has an item that needs no Carter approval, start the next run right
    away (fire this same scheduled task). Do not wait for the hourly backstop.
+
+## Graph refresh — every run, every commit (Carter 2026-10-17)
+
+The code map must always match the code. A stale map is not acceptable.
+
+- **Every run, at run start** (after attach/clone): run `graphify --update`. That is incremental — it re-extracts only new or changed files, so it is cheap. The session's local `graphify-out/` then matches its checkout.
+- **Freshness check.** If `graphify-out/` is missing, or the checkout is newer than the local map, run a full `graphify extract . --code-only` plus `graphify cluster-only . --no-label` before touching code.
+- **If the CLI is missing:** SessionStart already tried to install it (see `tools/graphify-session.sh`). If it still cannot be installed, read `graphify-out/GRAPH_REPORT.md` for the code map and say so in STATUS — do not pretend the live query tools worked.
+- **Every commit that changes code** is picked up by the next run's refresh. No separate publish step per commit.
+- **Published graph.** `.github/workflows/graphify.yml` rebuilds the published graph on push to `main` and publishes it to the `graph` branch. On push to `staging/ready-line` or `loop/*` branches it builds the graph as a check (artifact upload, no publish), so a broken graph is caught before it reaches main.
+- **Never open any file named `KEY.md`.** (Also in Never, below — repeated here because the graph tools must never index answer keys.)
 
 ## When the loop stops by itself (and tells Carter)
 - Everything left in Next needs Carter's approval. Write the batch of decisions in `STATUS.md` → Needs Carter, send
