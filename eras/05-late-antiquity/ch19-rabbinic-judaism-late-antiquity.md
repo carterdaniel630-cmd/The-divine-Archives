@@ -257,6 +257,8 @@ homeland endured.
   evidence of a broader popular Judaism than the texts — the **zodiac-and-Helios mosaic floors**
   (Beth Alpha, Hammat Tiberias, Sepphoris) and the figurative biblical paintings at
   **Dura-Europos** (244 CE).
+- The rabbinic core of the **Passover Seder** in **Mishnah Pesaḥim 10** (the four cups, the matzah and bitter herbs, the son's questions, the retelling from disgrace to praise, the Hallel) and its role as a home ritual of words in place of the Temple's Passover sacrifice; the fixed daily prayers (**Shema**, **Amidah**) standing in for the Temple offerings; and the ***Seder Rav Amram Gaon*** (9th century) as the oldest surviving order of Jewish prayer. Two limits: the text we have carries later additions, and the report that it was written for the Jews of Barcelona rests on a responsum only "seemingly" sent there. The Seder's reach today is measured by surveys, not texts: in Pew's 2013 survey, 70% of American Jews said they had taken part in one the year before, more than any other practice asked about.
+- The **Karaites** as a movement, visible from the ninth century, that rejected the Oral Torah and held scripture alone binding; their calendar set by sighting the new moon and the ripening of barley; their narrower meat-and-milk law; their stricter reading of the Sabbath (no fire left burning, as rabbinic writers also describe); **Saadia Gaon**'s early-tenth-century polemic against them; and their survival to the present, most of them now in Israel.
 
 **What's not supported by the evidence**
 
@@ -270,6 +272,7 @@ homeland endured.
   sources (inscriptions, archaeology, Roman and Christian writings); the "**rabbinization**" of the
   wider Jewish population was **gradual, uneven, and regional**, not complete until the early Middle
   Ages.
+- The story that **Anan ben David** founded Karaism out of resentment at being passed over as exilarch, taken as history. It comes from hostile rabbinic sources; the name "Karaite" is not attested before the ninth century; and current research sees Anan as adopted as founder after the fact, by a movement that took shape later.
 
 **What's genuinely open**
 
@@ -281,6 +284,8 @@ homeland endured.
   lore — an active field of research.
 - The exact nature and chronology of the **"parting of the ways"** with Christianity, now seen as
   more gradual and mutual than the old picture.
+- How much the Seder borrowed from the Greco-Roman **symposium**: Stein (1957) argued for close borrowing, scholars since have adapted his thesis in different ways, and others stress how unlike a symposium the Seder is.
+- Whether the **Karaites** descend in any way from the **Sadducees**, who also rejected the oral law. Some scholars propose the link; it cannot be traced directly.
 
 ---
 
@@ -309,6 +314,9 @@ homeland endured.
 - The Seder, Mishnah Pesaḥim 10 and the symposium question — Baruch M. Bokser, *The Origins of the Seder: The Passover Rite and Early Rabbinic Judaism* (Berkeley: University of California Press, 1984; repr. JTS Press, 2002). https://www.degruyterbrill.com/document/doi/10.1525/9780520317376/html ; Schechter Institute, "The Origins of the Seder" (on Stein 1957 and the scholars who followed him). https://schechter.edu/the-origins-of-the-seder/ ; Mishnah Pesaḥim 10, at Sefaria. https://www.sefaria.org/Mishnah_Pesachim.10
 - The *Seder Rav Amram Gaon* — Jewish Virtual Library, "Amram Gaon." https://www.jewishvirtuallibrary.org/amram-gaon
 - The Karaites, Anan ben David and the origins debate — Daniel J. Lasker, *Karaism: An Introduction to the Oldest Surviving Alternative Judaism* (London: Littman Library, 2022), reviewed in *The Jerusalem Post*. https://www.jpost.com/judaism/article-707768 ; TheTorah.com, "Biblical Exegesis as a Source of Jewish Pluralism: The Case of the Karaites." https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites
+- The Seder's reach today — Pew Research Center, "Attending a Seder is common practice for American Jews" (14 April 2014, from the 2013 survey of U.S. Jews). https://www.pewresearch.org/short-reads/2014/04/14/attending-a-seder-is-common-practice-for-american-jews/
+- Saadia's *Refutation of Anan* and the Karaite calendar — Cambridge University Library, Taylor-Schechter Genizah Research Unit, "Saadya Gaon's Refutation of Anan or a Qaraite Book of Commandments?" https://www.lib.cam.ac.uk/node/1354501
+- The Karaite Sabbath without fire, as rabbinic writers describe it — Rabbi Tzvi Hersh Weinreb, "Black Sabbath," OU Torah. https://outorah.org/p/23857
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica, My Jewish
 Learning, Wikipedia's sourced overviews, and the mainstream scholarship of Neusner, Schwartz, and the
@@ -317,7 +325,7 @@ tells the tradition's own powerful **Yavneh** story while flagging clearly that 
 distinguishes the traditional claim of a **Sinai-given Oral Torah** from the historical **development**
 of rabbinic law, and foregrounds the important modern finding that the rabbis were at first a **small
 elite** whose authority spread only **gradually**. It reserves the full **Kabbalah** for its high-medieval
-chapter while covering its Late-Antique seeds (**Sefer Yetzirah**, **Merkabah/Hekhalot**), and cross-
-references Second Temple Judaism (Chapter 10), Christianity (Chapter 16), and the Zoroastrian Persian
+chapter while covering its Late-Antique seeds (**Sefer Yetzirah**, **Merkabah/Hekhalot**), and
+cross-references Second Temple Judaism (Chapter 10), Christianity (Chapter 16), and the Zoroastrian Persian
 world (Chapter 6). Written to be educational, and to honor both the tradition's self-understanding and the
 historical record.

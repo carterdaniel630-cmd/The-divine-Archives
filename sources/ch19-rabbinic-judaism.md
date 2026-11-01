@@ -40,3 +40,16 @@ New section **"The Karaites: scripture without the Oral Torah"** (see `plans/con
 - The Karaites, Anan ben David and the origins debate — Daniel J. Lasker, *Karaism: An Introduction to the Oldest Surviving Alternative Judaism* (London: Littman Library, 2022), reviewed in *The Jerusalem Post*. https://www.jpost.com/judaism/article-707768 ; TheTorah.com, "Biblical Exegesis as a Source of Jewish Pluralism: The Case of the Karaites." https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites
 
 The chapter goes back to pending review because of these additions.
+
+## 2026-11-01 audit Fixes 2 + 3 (site audit 2026-10-25)
+
+The closing section "The evidence, honestly" now assesses the claims of the **Seder** and **Karaite** sections too (Fix 2), and the source note's "cross- references" typo is fixed (Fix 3, a line-wrap artifact in the markdown). No other text in the chapter changed.
+
+Sources opened and read this session (2026-11-01):
+- Jewish Virtual Library, "Amram Gaon" — opened. Says the *Seder Rav Amram* "is the oldest order of Jewish prayers extant", that it "originated in a responsum which was seemingly sent to the community of Barcelona", and that the present text carries later interpolations. The honesty section states both limits; the chapter body still says the prayer book was sent to Barcelona, which the honesty section now qualifies.
+- Schechter Institute, "The Origins of the Seder" — opened. Stein 1957; later scholars, Bokser among them, adapted the thesis.
+- *The Jerusalem Post* review of Lasker, *Karaism* (2022) — opened. Rabbinic account of Anan and the exilarchate; Lasker's discrepancies (early Karaites attacked Anan, later adopted him); the Sadducee theory as one of three origin theories.
+- TheTorah.com, "Biblical Exegesis as a Source of Jewish Pluralism: The Case of the Karaites" — opened. Calendar by observation and the barley (*aviv*); no blanket meat-and-milk separation; Karaism "seems to have emerged in the mid-ninth century", Anan "later retroactively given a prominent role". Does not discuss the Sabbath fire.
+- NEW: Pew Research Center, "Attending a Seder is common practice for American Jews" (14 April 2014). https://www.pewresearch.org/short-reads/2014/04/14/attending-a-seder-is-common-practice-for-american-jews/ — opened. 70% of U.S. Jews took part in a Seder the previous year (2013 survey), more common than any other practice asked about (Yom Kippur fasting 53%). U.S. only; the chapter body's "most widely kept Jewish ritual" is qualified in the honesty section as survey-based.
+- NEW: Cambridge University Library, Genizah Research Unit, "Saadya Gaon's Refutation of Anan or a Qaraite Book of Commandments?" https://www.lib.cam.ac.uk/node/1354501 — opened. Saadia's *Refutation of Anan*, written at about 23 (c. 905); Anan "whom later tradition wrongly made the founder"; Saadia's defence of the calculated calendar against crescent-sighting and barley intercalation.
+- NEW: Tzvi Hersh Weinreb, "Black Sabbath," OU Torah. https://outorah.org/p/23857 — opened. A rabbinic writer's description: Karaites extinguished all fires before the Sabbath. A rabbinic-side source, cited as such on the page.
