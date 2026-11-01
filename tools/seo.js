@@ -64,10 +64,10 @@ function fontTags() {
 // Hand-picked share images for pages that have no generated card (Carter's order, picks in
 // handoff/share-images-2026-10-25.md). They live in docs/assets/share/, not docs/assets/og/,
 // because build-og.js removes any .jpg in og/ that it did not render itself.
-// museum.html and random.html are hand-written pages: their tags are written into them by hand
-// and must match the entries here (tools/verify-share-images.js checks both).
+// random.html is a hand-written page: its tags are written into it by hand and must match the
+// entry here (tools/verify-share-images.js checks it). museum.html has no share image yet: the
+// picked map had garbled lettering, so Carter ruled to ship without it (decisions-2026-11-01-carter-yes-x4.md 4).
 const PAGE_SHARE = {
-  "museum": { w: 1200, h: 630, alt: "A parchment floorplan of the museum: nine wings along the Path of the Nine Ages, around a grand entryway" },
   "random": { w: 1200, h: 630, alt: "A candlelit archive hall of shelves, scrolls and books under a round window" },
   "pilgrimage": { w: 1200, h: 630, alt: "A stone path winding through moonlit hills, a lantern on a cairn beside it" },
   "great-pyramid": { w: 1200, h: 630, alt: "A rendering, not a photograph: pyramids at Giza in warm light",
