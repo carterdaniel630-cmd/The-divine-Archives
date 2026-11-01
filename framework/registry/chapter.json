@@ -1,6 +1,6 @@
 {
  "type": "chapter",
- "count": 83,
+ "count": 84,
  "entities": [
   {
    "id": "chapter:ch01",
@@ -740,6 +740,15 @@
    "era": "09-modern",
    "status": "published",
    "href": "chapters/ch83.html",
+   "from": "docs/assets/data.js"
+  },
+  {
+   "id": "chapter:ch84",
+   "type": "chapter",
+   "label": "Yoruba",
+   "era": "08-early-modern",
+   "status": "pending",
+   "href": "chapters/ch84.html",
    "from": "docs/assets/data.js"
   }
  ]
