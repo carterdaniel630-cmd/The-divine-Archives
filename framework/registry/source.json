@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1960,
+ "count": 1964,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -10788,6 +10788,15 @@
    "from": "sources/ch73-sabbateans-hasidism.md"
   },
   {
+   "id": "source:jewishencyclopedia-com/2fbe992bc1",
+   "type": "source",
+   "label": "https://jewishencyclopedia.com/articles/9211-karaites-and-karaism",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
+  },
+  {
    "id": "source:jewishencyclopedia-com/4dc4a5888a",
    "type": "source",
    "label": "https://jewishencyclopedia.com/articles/6279-frank-jacob-and-the-frankists",
@@ -11399,6 +11408,15 @@
     "site:golgotha-and-the-tomb"
    ],
    "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
+  },
+  {
+   "id": "source:lib-cam-ac-uk/e81918a60c",
+   "type": "source",
+   "label": "https://www.lib.cam.ac.uk/node/1354501",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
    "id": "source:lib-uidaho-edu/3b8db2ae2f",
@@ -13409,6 +13427,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:outorah-org/bf71372837",
+   "type": "source",
+   "label": "https://outorah.org/p/23857",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
+  },
+  {
    "id": "source:ovd-info/04b11c5c02",
    "type": "source",
    "label": "https://ovd.info/en/express-news/2025/09/10/shaman-gabyshev-has-been-transferred-hospital-psychiatric-and-neurological",
@@ -13722,6 +13749,15 @@
     "chapter:ch80"
    ],
    "from": "sources/ch80-shiism.md"
+  },
+  {
+   "id": "source:pewresearch-org/bd0dcbd4ea",
+   "type": "source",
+   "label": "https://www.pewresearch.org/short-reads/2014/04/14/attending-a-seder-is-common-practice-for-american-jews/",
+   "links": [
+    "chapter:ch19"
+   ],
+   "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
    "id": "source:pewresearch-org/bdb4d892ac",
