@@ -504,7 +504,7 @@ function pilgrimageListPage() {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="assets/archive.css" />
-${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
+${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=2" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -573,7 +573,7 @@ function pilgrimageSitePage(s) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
 ${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
-  <link rel="stylesheet" href="pilgrimage.css?v=1" />
+  <link rel="stylesheet" href="pilgrimage.css?v=2" />
   <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
 ${pilgrimageShareHead(s, title)}</head>
 <body class="museum-page pilgrimage-page">

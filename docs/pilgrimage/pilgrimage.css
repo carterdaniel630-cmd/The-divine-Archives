@@ -37,4 +37,6 @@
 .pg-tag.R, .pg-tag.C, .pg-tag.S { border-color: var(--ember); color: #e2a574; }
 .pg-go { display: inline-block; margin-top: .6rem; background: var(--gold); color: #1a1008 !important; padding: .45rem .8rem; border-radius: 3px; text-decoration: none;
   font-family: var(--font-display); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; }
+/* touch screens: the "Enter the site" button reaches the 44px tap guide (it was 32px tall); same look, label centred */
+@media (pointer:coarse) { .pg-go { display: inline-flex; align-items: center; min-height: 44px; } }
 .pg-key { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .3rem; font-size: .9rem; color: var(--ink-dim); }
