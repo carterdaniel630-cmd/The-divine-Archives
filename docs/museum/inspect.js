@@ -377,10 +377,15 @@ export function createInspector(opt) {
       '<button type="button" data-i="ritual" hidden aria-pressed="false">Walk through the scene</button><button type="button" data-i="scan" hidden aria-pressed="false">View the real scan</button><button type="button" data-i="en" hidden>Read it in English</button><button type="button" data-i="reset">Reset view</button><button type="button" class="mu-insp-close" data-i="close">Back to the museum</button></div>' +
     '<p class="mu-insp-hint">Drag to turn it · scroll or pinch to zoom</p>' +
     '<div class="mu-scan" hidden><div class="mu-scan-frame"></div><p class="mu-scan-cap"></p></div>' +
-    '<aside class="mu-insp-panel" role="dialog" aria-modal="true" aria-labelledby="mu-card-h" tabindex="-1"><div class="mu-insp-body"></div>' +
+    '<aside class="mu-insp-panel" role="dialog" aria-modal="true" aria-labelledby="mu-insp-h" tabindex="-1"><div class="mu-insp-body"></div>' +
       '<p class="mu-insp-note"></p></aside>';
   document.body.appendChild(el);
   const view = el.querySelector(".mu-insp-view"), acts = el.querySelector(".mu-insp-acts"), body = el.querySelector(".mu-insp-body"), note = el.querySelector(".mu-insp-note");
+  // the panel is named by its own heading. Labels and walkthroughs are written with the card's heading id
+  // ("mu-card-h"); left as is, the page would hold two headings with that id and the panel would be announced with
+  // the title of whatever card was opened before (museum fix batch item 6: the Papyrus of Ani read as "Inanna / Ishtar").
+  const ownHeading = () => { const h = body.querySelector("#mu-card-h"); if (h) h.id = "mu-insp-h"; };
+  if (window.MutationObserver) new MutationObserver(ownHeading).observe(body, { childList: true, subtree: true });
 
   function frame() {
     const m = st.model; if (!m) return;
@@ -399,7 +404,7 @@ export function createInspector(opt) {
   function open(kind, html, noteText, id) {
     drop(st.model); st.model = null;
     unstage();
-    body.innerHTML = html + (id ? englishHTML(id) : ""); note.textContent = noteText; acts.innerHTML = "";
+    body.innerHTML = html + (id ? englishHTML(id) : ""); ownHeading(); note.textContent = noteText; acts.innerHTML = "";
     el.querySelector('[data-i="en"]').hidden = !(id && hasEnglish(id));
     hideScan(); st.scanId = id && scanEmbed(id) ? id : null; el.querySelector('[data-i="scan"]').hidden = !st.scanId;
     if (st.rit) { const p = st.rit; st.rit = null; p.close(); }
