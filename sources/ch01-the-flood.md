@@ -83,3 +83,11 @@ presented as such and can be cut if you'd prefer a drier opening.
   ("In 1985, a member of the public brought in a damaged clay tablet"; owner took it away; "another 14 years" before
   they met again; no 2009). The chapter does not cite *Historia* for any date; V90 carries that detail. This replaces
   the "not opened in this check" gap noted in the entry above for the date question; the leaks quote stands as recorded.
+- 2026-11-02 (review fix, PR #116 finding F1) — the draft said "many 2014 news reports give only 2009"; no cited
+  source showed that. Opened this check (fetch tool): [historyofinformation.com](https://historyofinformation.com/detail.php?id=4060)
+  (a later summary citing the Guardian, 24 Jan 2014, and the British Museum blog: "In 2009 … received"); 2014 reports
+  giving no year — [Christian Science Monitor, 25 Jan 2014](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round)
+  and [Times of Israel (AP)](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/) both
+  "Finkel got hold of it a few years ago"; NBC News (https://www.nbcnews.com/science/science-news/babylonian-tale-round-ark-draws-wrath-some-christian-circles-flna2D12035655)
+  gives no year. The Guardian article itself was not opened. The page now says some later summaries give 2009 alone
+  and most 2014 reports say only "a few years ago".
