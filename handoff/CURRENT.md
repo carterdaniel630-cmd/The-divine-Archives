@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-02 (02:00 UTC)
+# Handoff — updated 2026-11-02 (03:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: ch01 Ark Tablet build sentence corrected (2026-11-02 ~01:52 UTC)
+## Latest: honesty bundle items 1–3 live (2026-11-02 ~02:46 UTC)
+- **`main` = `73958d2`** (deploy run 240 green): **PR #112** fast-forwarded `5daa7f4` → `73958d2` per item (Carter's bundle yes, `order-2026-11-01-honesty-completions-bundle.md`, and his pass `note-2026-11-01-review-pass-all.md`). Newgrange is open on the Pilgrimage list (pending tag kept; 11 open sites) and in the sitemap; every open site's text version now carries the Guide's stops with their labels and sources; the Great Pyramid's garbled back-to-museum sentence is fixed. Review `replies/2026-11-02-pr112-independent-review.md`; reply `replies/2026-11-02-run-0245-pr112-merged.md`. Item 4 (Symbols lazy-load) follows on its own branch. No open loop PRs.
+
+## Earlier: ch01 Ark Tablet build sentence corrected (2026-11-02 ~01:52 UTC)
 - **`main` = `5daa7f4`** (deploy run 239 green): **PR #111** fast-forwarded `fe7481c` → `5daa7f4` by class (c) (Carter-approved truth correction, `note-2026-11-01-ark-build-correction.md`). ch01 no longer says a "full-scale" TV build "broadly vindicated" the round ark: it now says a scaled-down build (roughly a third) in Kerala, 2014, floated but leaked and needed a pump, a test of the boat type, not proof. ch01 is back to pending (live tag) until Carter re-clears it. Review `replies/2026-11-02-pr111-independent-review.md`; reply `replies/2026-11-02-run-0142-pr111-merged.md`. No open loop PRs.
 
 ## Earlier: sitemap coverage live (2026-11-01 ~23:46 UTC)
