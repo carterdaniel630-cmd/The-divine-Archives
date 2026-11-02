@@ -18,6 +18,17 @@
   font-family: var(--font-display); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; }
 .pg-fallback { padding: 3rem 0 4rem; }
 .pilgrimage-page.is-3d .pg-fallback { display: none; }
+.pg-fallback .pg-part { margin: 2.2rem 0 0; }
+.pg-fallback .pg-part > h2 { border-bottom: 1px solid var(--line); padding-bottom: .4rem; }
+.pg-fallback .pg-stop { margin: 1.4rem 0 0; }
+.pg-fallback .pg-stop h3 { margin: 0 0 .35rem; }
+.pg-fallback .pg-flags { margin: 0 0 .4rem; }
+.pg-fallback .mu-flag { display: inline-block; margin: 0 .35rem .3rem 0; padding: .14rem .5rem; border: 1px solid var(--ember); color: #e2a574; border-radius: 2px;
+  font-family: var(--font-display); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
+.pg-fallback .mu-flag.soft { border-color: var(--line); color: var(--ink-dim); }
+.pg-fallback .pg-meta { font-size: .86rem; color: var(--ink-dim); }
+.pg-fallback .pg-src { font-size: .8rem; color: var(--ink-dim); line-height: 1.5; }
+.pg-fallback .pg-src strong { color: var(--gold); font-family: var(--font-display); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; }
 
 /* ---- pilgrimage.html: the list of sites ---- */
 .pg-era { margin: 2.2rem 0 0; }
