@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-01 (23:55 UTC)
+# Handoff — updated 2026-11-02 (02:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: sitemap coverage live (2026-11-01 ~23:46 UTC)
+## Latest: ch01 Ark Tablet build sentence corrected (2026-11-02 ~01:52 UTC)
+- **`main` = `5daa7f4`** (deploy run 239 green): **PR #111** fast-forwarded `fe7481c` → `5daa7f4` by class (c) (Carter-approved truth correction, `note-2026-11-01-ark-build-correction.md`). ch01 no longer says a "full-scale" TV build "broadly vindicated" the round ark: it now says a scaled-down build (roughly a third) in Kerala, 2014, floated but leaked and needed a pump, a test of the boat type, not proof. ch01 is back to pending (live tag) until Carter re-clears it. Review `replies/2026-11-02-pr111-independent-review.md`; reply `replies/2026-11-02-run-0142-pr111-merged.md`. No open loop PRs.
+
+## Earlier: sitemap coverage live (2026-11-01 ~23:46 UTC)
 - **`main` = `fe7481c`** (deploy run 238 green): **PR #110** fast-forwarded `c4d1ce8` → `fe7481c` ~23:46 UTC on Carter's per-item yes (`merge-yes-2026-11-01-pr110.md`; museum fix batch item 4). The Museum landing and the 10 open Pilgrimage walks are now listed for search (sitemap 192 → 203 addresses, canonical links added); previews, the Keeper, the hidden arcade, search/random and templates stay hidden. Reply `replies/2026-11-01-run-2343-pr110-merged.md`. No open loop PRs.
 
 ## Earlier: Directory honesty and state resets live (2026-11-01 ~22:35–22:56 UTC)
