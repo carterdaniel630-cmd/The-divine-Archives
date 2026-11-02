@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-02 (07:15 UTC)
+# Handoff — updated 2026-11-02 (09:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Vault hero objects V89 + V90 live (2026-11-02 ~07:12 UTC)
+## Latest: ch01 Ark Tablet names the 1985/2009 disagreement (2026-11-02 ~08:51 UTC)
+- **`main` = `75176f5`** (deploy run 244 green): **PR #116** fast-forwarded `cb8c52f` → `75176f5` by class (c) (honesty wording on live text). ch01 "The ark builder's manual" no longer opens "In 2009…": it says the *Jewish Chronicle* and Wikipedia put Finkel's first sight in 1985 and the JC says the owner left it with him only in 2009; one later summary gives 2009 alone; the 2014 reports checked give no year (the widely reprinted AP story says only "a few years ago"). Not resolved; points to V90. ch01 stays pending. Reviews `replies/2026-11-02-pr116-independent-review.md`, `-delta-review.md`, `-delta-review-2.md` (PASS 0 findings); reply `replies/2026-11-02-run-0843-pr116-merged.md`.
+
+## Earlier: Vault hero objects V89 + V90 live (2026-11-02 ~07:12 UTC)
 - **`main` = `cb8c52f`** (deploy run 243 green): **PR #115** fast-forwarded `f8c39af` → `cb8c52f` per item (Carter's content PASS, `order-2026-11-01-vault-hero-objects.md`). New Vault entries `vault/flood-tablet.html` (V89, K.3375) and `vault/ark-tablet.html` (V90), both **pending full review**; Vault index, ch01/ch03, era pages, museum census, sitemap updated. Reviews `replies/2026-11-02-pr115-*review*.md`; reply `replies/2026-11-02-run-0658-pr115-merged.md`. No open loop PRs.
 
 ## Earlier: Symbols page loads each game on first open (2026-11-02 ~04:54 UTC)
