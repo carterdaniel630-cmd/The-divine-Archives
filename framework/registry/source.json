@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1991,
+ "count": 1993,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -9756,6 +9756,15 @@
    "from": "sources/ch35-new-religious-movements.md"
   },
   {
+   "id": "source:historiamag-com/6513ccd878",
+   "type": "source",
+   "label": "https://historiamag.com/irving-finkel-and-the-ark/",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:historiamexicana-colmex-mx/f5f1ea6f80",
    "type": "source",
    "label": "https://historiamexicana.colmex.mx/index.php/RHM/en/article/view/3475",
@@ -16366,6 +16375,15 @@
     "site:borobudur"
    ],
    "from": "sources/pilgrimage-borobudur.md"
+  },
+  {
+   "id": "source:thejc-com/b08fc5cd89",
+   "type": "source",
+   "label": "https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:themathesontrust-org/faf109ba54",

@@ -71,3 +71,15 @@ presented as such and can be cut if you'd prefer a drier opening.
   disagreement on scale is named on the page, not resolved. Not opened in this check: Historia's Finkel interview
   (permission timed out); the #111 review read it earlier the same day ("despite a few leaks, the new ark floated",
   Finkel), which agrees with the page.
+- 2026-11-02 (later still) — the Ark Tablet's date (follow-up from the Vault V90 reviews, PR #115). The page used to
+  open "In 2009 a member of the public brought Irving Finkel…" as if 2009 were the first visit. Re-opened this check
+  (fetch tool, verbatim quotes): [Jewish Chronicle: The tablet that altered the story of Noah's ark](https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe)
+  ("Finkel first came across the tablet in 1985, when a man called Douglas Simmonds walked into the British Museum";
+  "only managed to convince Simmonds to leave it with him in 2009"); [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
+  ("Dr. Finkel first encountered … in 1985"; "unable to gain access to translate the whole tablet until 2009").
+  The page now says accounts differ (1985 first sight; 2009 when it was left with him; many 2014 reports give only
+  2009), does not resolve it, and points to Vault V90. *Historia*'s Finkel interview (https://historiamag.com/irving-finkel-and-the-ark/)
+  could not be opened in this check either (permission timed out); the three PR #115 reviews read it the same day
+  ("In 1985, a member of the public brought in a damaged clay tablet"; owner took it away; "another 14 years" before
+  they met again; no 2009). The chapter does not cite *Historia* for any date; V90 carries that detail. This replaces
+  the "not opened in this check" gap noted in the entry above for the date question; the leaks quote stands as recorded.
