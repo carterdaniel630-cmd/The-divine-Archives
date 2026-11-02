@@ -113,9 +113,10 @@ waterproofed with precisely specified quantities of bitumen. Most startling of
 all, the tablet carries the line — damaged but legible — that the animals went
 aboard "two by two," the earliest known appearance of a detail everyone
 associates with Noah. Finkel published the text in *The Ark Before Noah* (2014);
-a full-scale attempt to build the round ark to its specification was later
-mounted for television and, waterlogged but afloat, broadly vindicated the
-design. The Ark Tablet is a reminder that the Mesopotamian flood tradition was
+the same year a television team built a scaled-down version of the round ark
+in Kerala, India, at roughly a third of the tablet's size. It floated, but it
+leaked from the start and needed a pump running continuously to stay up: a test
+of the boat type, not proof that the full-size design would have worked. The Ark Tablet is a reminder that the Mesopotamian flood tradition was
 not one fixed text but a living body of retellings, each generation supplying the
 practical detail its audience wanted.
 
@@ -411,7 +412,12 @@ origin remains in the dark.
 - Irving Finkel, *The Ark Before Noah: Decoding the Story of the Flood* (2014);
   the round-coracle ark and the "two by two" line —
   [Biblical Archaeology Society: The Animals Went in Two by Two](https://www.biblicalarchaeology.org/daily/news/the-animals-went-in-two-by-two-according-to-babylonian-ark-tablet/);
-  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark).
+  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
+  (one-third scale, Alleppey, Kerala, 2014; leaks and a continuously running pump);
+  The Telegraph (India), "The Ark that Finkel built" (the Kerala build and its launch; it gives the size as
+  "bigger than one-fifth of the original", so the page gives the scale as approximate). The paper's own URL
+  could not be opened in the 2026-11-02 check; the text was read from a copy and is cited via the Wikipedia page;
+  [Channel 4 press: The Real Noah's Ark](https://www.channel4.com/press/news/real-noahs-ark) (the 2014 documentary).
 - Berossus, *Babyloniaca* (c. 281 BCE), and the Xisuthros flood —
   [Livius: The Great Flood — Berossus](https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/);
   [Wikipedia: Babyloniaca (Berossus)](https://en.wikipedia.org/wiki/Babyloniaca_(Berossus)).

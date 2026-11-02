@@ -45,3 +45,16 @@ the reality of the Black Sea event, the reach of deep diffusion — the draft
 flags the dispute rather than resolving it. Reviewer: the George Smith
 "undressing" anecdote is traditional (via Budge) and possibly embellished; it is
 presented as such and can be cut if you'd prefer a drier opening.
+
+## Correction log
+- 2026-11-02 — Ark Tablet television build (Carter-approved truth correction, `handoff/note-2026-11-01-ark-build-correction.md`).
+  The page used to say a "full-scale" build "broadly vindicated the design". Corrected to: a scaled-down build
+  (roughly a third of the tablet's size) in Kerala, 2014, that floated but leaked from the start and needed a
+  continuously running pump. Sources checked 2026-11-02:
+  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
+  (one-third scale; Alleppey; leaks; petrol pump run continuously; cites The Telegraph (India) and the PBS NOVA
+  transcript of *Secrets of Noah's Ark*);
+  [Channel 4 press: The Real Noah's Ark](https://www.channel4.com/press/news/real-noahs-ark) (the 2014 documentary).
+  The Telegraph (India), "The Ark that Finkel built": its own URL could not be opened in this check; a copy of the
+  text was read (launch and floating confirmed; size given as "bigger than one-fifth of the original"). Because
+  the two accounts of the scale differ, the page says "roughly a third", not an exact figure.
