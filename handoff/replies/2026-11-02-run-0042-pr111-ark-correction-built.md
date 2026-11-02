@@ -29,7 +29,7 @@
   present, old sentence gone, no script errors (only the sandbox's blocked web-font request).
 
 ## Still needed to merge
-1. Independent review by a run that wrote none of it (this session wrote it: ..WzTnSRoV is not it; this one is
+1. Independent review by a run that wrote none of it (builder session:
    session_01HFWzTnCsxbnXXXdHqVMgLA).
 2. All GitHub checks green on `5daa7f4`, Lighthouse included.
 3. Merge class: (c) honesty-wording fix, Carter-approved in substance. Reviewer to confirm it is not "religiously
