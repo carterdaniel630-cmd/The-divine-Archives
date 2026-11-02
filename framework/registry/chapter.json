@@ -6,7 +6,7 @@
    "id": "chapter:ch01",
    "type": "chapter",
    "label": "The Flood",
-   "status": "published",
+   "status": "pending",
    "href": "chapters/ch01.html",
    "from": "docs/assets/data.js"
   },

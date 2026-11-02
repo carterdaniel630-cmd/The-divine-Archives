@@ -7,6 +7,7 @@
    "type": "room",
    "label": "The Flood",
    "parent": "wing:rotunda",
+   "status": "pending",
    "href": "museum.html#ch01",
    "links": [
     "chapter:ch01",

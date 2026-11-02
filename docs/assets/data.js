@@ -72,7 +72,7 @@ window.ARCHIVE = {
   chapters: [
     { id: "ch01", title: "The Flood", kind: "theme",
       era: null, eraLabel: "Comparative theme · cross-era",
-      status: "published", source: "themes/ch01-the-flood.md",
+      status: "published", pending: true, source: "themes/ch01-the-flood.md",
       summary: "Why nearly every people who kept records remembers the world ending in water — the Mesopotamian lineage from Ziusudra to Utnapishtim, its relationship to Genesis, and what the archaeology will and won't support." },
 
     { id: "ch02", title: "Egypt", kind: "tradition",
