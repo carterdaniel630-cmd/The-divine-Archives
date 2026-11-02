@@ -114,8 +114,10 @@ all, the tablet carries the line — damaged but legible — that the animals we
 aboard "two by two," the earliest known appearance of a detail everyone
 associates with Noah. Finkel published the text in *The Ark Before Noah* (2014);
 the same year a television team built a scaled-down version of the round ark
-in Kerala, India, at roughly a third of the tablet's size. It floated, but it
-leaked from the start and needed a pump running continuously to stay up: a test
+in Kerala, India, about 40 feet across: a fifth of the tablet's size by the
+documentary's own count, though some accounts say a third. It floated, but water
+came in through its seams from the moment it was launched, and the crew had to
+plug the gaps and set pumps working: a test
 of the boat type, not proof that the full-size design would have worked. The Ark Tablet is a reminder that the Mesopotamian flood tradition was
 not one fixed text but a living body of retellings, each generation supplying the
 practical detail its audience wanted.
@@ -413,7 +415,13 @@ origin remains in the dark.
   the round-coracle ark and the "two by two" line —
   [Biblical Archaeology Society: The Animals Went in Two by Two](https://www.biblicalarchaeology.org/daily/news/the-animals-went-in-two-by-two-according-to-babylonian-ark-tablet/);
   [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
-  (one-third scale, Alleppey, Kerala, 2014; leaks and a continuously running pump);
+  (Alleppey, Kerala, 2014; gives "one-third scale" and a continuously running petrol pump; the documentary
+  itself, below, says a fifth and "a collection of pumps", so the page follows the documentary and names the disagreement);
+  PBS NOVA, *Secrets of Noah's Ark* (aired 7 October 2015), programme text at
+  [PBS NOVA: Secrets of Noah's Ark](https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html)
+  ("about 40 feet in diameter, just a fifth the size of the ark described in the tablet"; at launch "a heck of a lot
+  of water coming in"; "They plug the gaps and put a collection of pumps to work"; closing line: the team "never
+  managed to duplicate Babylonian bitumen, but the structure of the ark is sound");
   The Telegraph (India), "The Ark that Finkel built" (the Kerala build and its launch; it gives the size as
   "bigger than one-fifth of the original", so the page gives the scale as approximate). The paper's own URL
   could not be opened in the 2026-11-02 check; the text was read from a copy and is cited via the Wikipedia page;
