@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-02 (05:00 UTC)
+# Handoff — updated 2026-11-02 (07:15 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Symbols page loads each game on first open (2026-11-02 ~04:54 UTC)
+## Latest: Vault hero objects V89 + V90 live (2026-11-02 ~07:12 UTC)
+- **`main` = `cb8c52f`** (deploy run 243 green): **PR #115** fast-forwarded `f8c39af` → `cb8c52f` per item (Carter's content PASS, `order-2026-11-01-vault-hero-objects.md`). New Vault entries `vault/flood-tablet.html` (V89, K.3375) and `vault/ark-tablet.html` (V90), both **pending full review**; Vault index, ch01/ch03, era pages, museum census, sitemap updated. Reviews `replies/2026-11-02-pr115-*review*.md`; reply `replies/2026-11-02-run-0658-pr115-merged.md`. No open loop PRs.
+
+## Earlier: Symbols page loads each game on first open (2026-11-02 ~04:54 UTC)
 - **`main` = `f8c39af`** (deploy run 242 green): **PR #114** fast-forwarded `b97a868` → `f8c39af` per item (Carter's honesty-bundle yes, item 4). The Symbols page no longer sends all twelve games to every visitor: first-load JavaScript about 934 KB → 306 KB; each game is fetched when opened. Review `replies/2026-11-02-pr114-independent-review.md`; reply `replies/2026-11-02-run-0455-pr114-merged.md`. Honesty bundle items 1–4 all live. No open loop PRs.
 
 ## Earlier: ch01 Ark build follows the documentary (2026-11-02 ~04:11 UTC)
