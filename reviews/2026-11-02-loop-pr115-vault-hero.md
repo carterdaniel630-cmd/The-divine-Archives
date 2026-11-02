@@ -30,3 +30,13 @@ FIXED
 NEEDS CARTER
 OPEN (fixable by a builder run, then delta review)
   - site:pr115 | loop/vault-hero-objects@2655e55 | 1 finding: v90 credits 2009 to Historia, which gives no year (its "14 years" implies ~1999); "which quotes him" overstates | reviews/loop/2026-11-02-pr115-delta-review-2.md
+
+Batch: Vault hero objects V89 + V90 (PR #115) — delta review 3
+Reviewed: 2026-11-02
+Covers: loop/vault-hero-objects@cb8c52f (delta 2655e55..cb8c52f)
+Summary: 1 passed, 0 fixed, 0 open findings (merge waits on Lighthouse green; per item).
+
+PASSED
+  - site:pr115 | loop/vault-hero-objects@cb8c52f | 0 findings: 1985/2009 attributions match Historia, Jewish Chronicle, Wikipedia; contested dates flagged not resolved | reviews/loop/2026-11-02-pr115-delta-review-3.md
+FIXED
+NEEDS CARTER
