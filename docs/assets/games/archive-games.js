@@ -122,6 +122,33 @@
   }
   function isRegistered(gameId) { return !!games[gameId] && typeof games[gameId].mount === "function"; }
 
+  /* ---------------- load a game on first open ----------------
+     A page can name, per game, the scripts that game needs (lazy({ id: [src, …] })). Those scripts are
+     then fetched only when someone opens the game (or presses its symbol), not with the page: the
+     Symbols page no longer sends all twelve games to every visitor. Scripts load in the order given,
+     so a game's own helpers (e.g. fighter-moves.js before fighter.js) come first. */
+  var lazyScripts = {}, loading = {}, loadedSrc = {};
+  function lazy(map) { Object.keys(map || {}).forEach(function (id) { lazyScripts[id] = (map[id] || []).slice(); }); }
+  function isAvailable(gameId) { return isRegistered(gameId) || !!lazyScripts[gameId]; }
+  function loadScript(src) {
+    if (!loadedSrc[src]) loadedSrc[src] = new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = src; s.async = false;
+      s.onload = function () { resolve(); };
+      s.onerror = function () { delete loadedSrc[src]; if (s.parentNode) s.parentNode.removeChild(s); reject(new Error("could not load " + src)); };
+      document.head.appendChild(s);
+    });
+    return loadedSrc[src];
+  }
+  function load(gameId) {
+    if (isRegistered(gameId) || !lazyScripts[gameId]) return Promise.resolve();
+    if (!loading[gameId]) {
+      loading[gameId] = lazyScripts[gameId].reduce(function (p, src) { return p.then(function () { return loadScript(src); }); }, Promise.resolve())
+        .catch(function (err) { delete loading[gameId]; throw err; });   // a failed load can be tried again
+    }
+    return loading[gameId];
+  }
+
   /* ---------------- accessible symbol trigger ---------------- */
   // opts: { gameId, symbolName, symbolSVG?, sourceHref?, sourceLabel? }
   function registerSymbol(el, opts) {
@@ -133,7 +160,7 @@
     if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "0");
     el.setAttribute("aria-haspopup", "dialog");
     el.setAttribute("aria-expanded", "false");
-    var title = (games[opts.gameId] && games[opts.gameId].title) || opts.title || "a game";
+    var title = (games[opts.gameId] && games[opts.gameId].title) || opts.title || (catalog(opts.gameId) || {}).title || "a game";
     el.setAttribute("aria-label",
       "Play " + title + " — a game hidden in the " + (opts.symbolName || "symbol") + ". Activate to open.");
     // a subtle spark marker so the live symbol reads as interactive
@@ -143,6 +170,8 @@
       el.appendChild(spark);
     }
     el.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); activate(el); });
+    // start fetching a not-yet-loaded game as the finger or button goes down, a moment before the click
+    el.addEventListener("pointerdown", function () { load(opts.gameId).catch(function () {}); });
     el.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") { e.preventDefault(); e.stopPropagation(); activate(el); }
     });
@@ -206,12 +235,22 @@
       getHighScores: getHighScores, addHighScore: addHighScore, bestScore: bestScore,
       sourceLink: sourceLink
     };
-    try {
-      if (isRegistered(gameId)) cleanup = def.mount(body, mountCtx);
-      else placeholder(body, mountCtx, gameId, def);
-    } catch (err) {
-      body.innerHTML = '<p class="game-placeholder">This game could not open. Please reload.</p>';
-      if (window.console) console.error(err);
+    var waiting = !isRegistered(gameId) && !!lazyScripts[gameId];
+    function mountNow() {
+      try {
+        if (isRegistered(gameId)) cleanup = games[gameId].mount(body, mountCtx);
+        else placeholder(body, mountCtx, gameId, def);
+      } catch (err) {
+        body.innerHTML = '<p class="game-placeholder">This game could not open. Please reload.</p>';
+        if (window.console) console.error(err);
+      }
+    }
+    if (!waiting) mountNow();
+    else {
+      // the game's scripts are fetched now; a short line shows meanwhile (announced to screen readers)
+      var entry = catalog(gameId) || {};
+      body.innerHTML = '<div class="game-head"><p class="eyebrow">The Divine Archives · Games</p><h2 id="' + titleId + '">' +
+        escText(entry.title || def.title || "The game") + '</h2></div><p class="game-placeholder" role="status">Opening the game…</p>';
     }
 
     // physical game controllers for the keyboard-only arcade games (the action games read them directly)
@@ -228,6 +267,22 @@
     // focus management + trap + Esc
     (dialog.querySelector("[autofocus]") || closeBtn).focus();
     overlay.addEventListener("keydown", onKeydown);
+    if (waiting) {
+      var state = openState;
+      load(gameId).then(function () {
+        if (openState !== state) return;          // closed (or another game opened) while it loaded
+        body.innerHTML = "";
+        mountNow();
+        state.cleanup = cleanup;
+        var af = dialog.querySelector("[autofocus]");
+        if (af) af.focus();
+        try { window.dispatchEvent(new Event("archive:fit")); } catch (e) { /* old browser */ }
+      }, function (err) {
+        if (window.console) console.error(err);
+        if (openState !== state) return;
+        body.innerHTML = '<p class="game-placeholder" role="status">This game could not load. Check the connection, then close this and open it again.</p>';
+      });
+    }
     return openState;
   }
 
@@ -403,6 +458,7 @@
   window.ArchiveGames = {
     onFit: onFit, scaleFor: scaleFor,
     register: register, registerSymbol: registerSymbol, isRegistered: isRegistered, canonicalId: canonicalId,
+    lazy: lazy, load: load, isAvailable: isAvailable,
     open: open, close: close,
     lsGet: lsGet, lsSet: lsSet,
     getHighScores: getHighScores, addHighScore: addHighScore, bestScore: bestScore,

@@ -83,23 +83,27 @@
 <script src="assets/plates.js"></script>
 <script src="assets/emblems.js"></script>
 <script src="assets/games/catalog.js?v=3"></script>
-<script src="assets/games/archive-games.js?v=8"></script>
+<script src="assets/games/archive-games.js?v=9"></script>
 <script src="assets/games/pad.js?v=4"></script>
 <script src="assets/games/feel.js?v=3"></script>
-<script src="assets/games/reliquary.js?v=4"></script>
-<script src="assets/games/ouroboros.js?v=9"></script>
-<script src="assets/games/ziggurat.js?v=9"></script>
-<script src="assets/games/fighter-moves.js?v=8"></script>
-<script src="assets/games/fighter.js?v=47"></script>
-<script src="assets/games/chess-art.js?v=1"></script>
-<script src="assets/games/chess.js?v=11"></script>
-<script src="assets/games/seeker.js?v=4"></script>
-<script src="assets/games/antithesis.js?v=10"></script>
-<script src="assets/games/excavation.js?v=6"></script>
-<script src="assets/games/labyrinth.js?v=9"></script>
-<script src="assets/games/pinball.js?v=12"></script>
-<script src="assets/games/dominion.js?v=12"></script>
-<script src="assets/games/treasure.js?v=15"></script>
+<script>
+  /* Each game is fetched the first time someone opens it, not with the page (Carter's honesty bundle,
+     item 4: the twelve games were ~0.9 MB sent to every visitor). The shared shell above stays on the page. */
+  window.ArchiveGames.lazy({
+    reliquary: ["assets/games/reliquary.js?v=4"],
+    ouroboros: ["assets/games/ouroboros.js?v=9"],
+    ziggurat: ["assets/games/ziggurat.js?v=9"],
+    fighter: ["assets/games/fighter-moves.js?v=8", "assets/games/fighter.js?v=47"],
+    chess: ["assets/games/chess-art.js?v=1", "assets/games/chess.js?v=11"],
+    seeker: ["assets/games/seeker.js?v=4"],
+    antithesis: ["assets/games/antithesis.js?v=10"],
+    excavation: ["assets/games/excavation.js?v=6"],
+    labyrinth: ["assets/games/labyrinth.js?v=9"],
+    pinball: ["assets/games/pinball.js?v=12"],
+    dominion: ["assets/games/dominion.js?v=12"],
+    treasure: ["assets/games/treasure.js?v=15"]
+  });
+</script>
 <script>
   (function () {
     var mount = document.getElementById("symbols-mount");
@@ -182,7 +186,7 @@
     var EGG_POOL = {};
     Object.keys(GAMES).forEach(function (k) { if (GAMES[k].eggs.length) EGG_POOL[k] = GAMES[k].eggs; });
     Object.keys(EGG_POOL).forEach(function (game) {
-      if (!AG.isRegistered(game)) return;
+      if (!AG.isAvailable(game)) return;
       var pool = EGG_POOL[game].filter(function (id) { return !TRIGGER_FOR[id] && findArt(id) && !findArt(id).__daGame; });
       if (!pool.length) return;
       var id = pool[Math.floor(Math.random() * pool.length)], artEl = findArt(id);
@@ -200,7 +204,7 @@
       // an old link (a game id renamed under the Naming & IP Policy): show the new address
       if (id !== m[1] && history.replaceState) history.replaceState(null, "", location.pathname + location.search + "#play=" + id);
       var meta = GAMES[id];
-      if (!AG.isRegistered(id) && !meta) return;
+      if (!AG.isAvailable(id) && !meta) return;
       var ch = meta ? meta.ch : null;
       AG.open(id, { opts: meta ? {
         symbolName: meta.title, symbolSVG: ART[ch] || "",
