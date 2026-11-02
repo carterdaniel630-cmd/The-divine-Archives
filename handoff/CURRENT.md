@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-02 (04:15 UTC)
+# Handoff — updated 2026-11-02 (05:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: ch01 Ark build follows the documentary (2026-11-02 ~04:11 UTC)
+## Latest: Symbols page loads each game on first open (2026-11-02 ~04:54 UTC)
+- **`main` = `f8c39af`** (deploy run 242 green): **PR #114** fast-forwarded `b97a868` → `f8c39af` per item (Carter's honesty-bundle yes, item 4). The Symbols page no longer sends all twelve games to every visitor: first-load JavaScript about 934 KB → 306 KB; each game is fetched when opened. Review `replies/2026-11-02-pr114-independent-review.md`; reply `replies/2026-11-02-run-0455-pr114-merged.md`. Honesty bundle items 1–4 all live. No open loop PRs.
+
+## Earlier: ch01 Ark build follows the documentary (2026-11-02 ~04:11 UTC)
 - **`main` = `b97a868`** (deploy run 241 green): **PR #113** fast-forwarded `73958d2` → `b97a868` by class (c). ch01's Ark Tablet TV-build sentence now follows the PBS NOVA programme: about 40 ft across, a fifth of the tablet's ark by its count (some accounts say a third), and a crew who set pumps working, not one pump run continuously. ch01 stays pending. Review `replies/2026-11-02-pr113-independent-review.md`; reply `replies/2026-11-02-run-0410-pr113-merged.md`. Open loop PR: **#114** Symbols lazy-load (draft, needs review).
 
 ## Earlier: honesty bundle items 1–3 live (2026-11-02 ~02:46 UTC)
