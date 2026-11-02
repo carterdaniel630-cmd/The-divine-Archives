@@ -4,14 +4,10 @@
 
 A clay tablet about the size of a mobile phone, with **sixty lines** of Old Babylonian cuneiform, was written in Babylonia around **1900–1700 BCE**. After the Second World War an RAF serviceman, **Leonard Simmons**, brought it home to Britain among other objects he had picked up in the Middle East. In **2009** his son **Douglas** showed it to **Irving Finkel**, the British Museum's curator of cuneiform. It tells part of the flood story, and it stops to say **how to build the boat**: how much rope, what ribs, how much bitumen. The boat it describes is not the long ark of Bible pictures. It is **round**: a giant **coracle**, the round river boat of Mesopotamia, scaled up far beyond any real one. Finkel has called the tablet "one of the most important human documents ever discovered."
 
-## Study the object
-
-The Ark Tablet is **privately owned**. Unlike most objects in this Vault, it has **no British Museum collection record** and no institutional image viewer to link to. Finkel published a photograph of the tablet, its text and his translation in ***The Ark Before Noah*** (2014), and that book is the edition this entry works from. The tablet was shown at the British Museum on loan from its owner in **2014**. This entry does not say where it is displayed now.
-
 ## From a serviceman's souvenirs to the British Museum
 
 - **Leonard Simmons** served with the RAF and came home after the Second World War with a small collection of antiquities. His son **Douglas Simmons** inherited them and in **2009** brought the tablet to Finkel. (The family name is spelled "Simmonds" in some accounts.)
-- Finkel worked on the text for several years and published it in **January 2014**, when the tablet went on display at the British Museum on loan.
+- Finkel worked on the text for several years and published it in **January 2014**, when the tablet went on display at the British Museum on loan. The tablet is **privately owned**, so it has no British Museum collection record; Finkel's book *The Ark Before Noah* publishes a photograph, the text and his translation, and is the edition this entry follows. This entry does not say where the tablet is shown today.
 - It was shown **beside the Babylonian Map of the World**, a clay tablet whose text describes islands beyond the ocean at the edge of the known world. Finkel's reading of that text says that on one of them are **the remains of the ark**.
 
 ## What the tablet says
