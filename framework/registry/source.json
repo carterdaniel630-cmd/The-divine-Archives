@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1988,
+ "count": 1990,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -3592,6 +3592,15 @@
     "chapter:ch35"
    ],
    "from": "sources/ch35-new-religious-movements.md"
+  },
+  {
+   "id": "source:channel4-com/98bdcf2ccb",
+   "type": "source",
+   "label": "https://www.channel4.com/press/news/real-noahs-ark",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:chinadaily-com-cn/43eef4c0e4",
@@ -8620,6 +8629,15 @@
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Pillar_of_the_Boatmen",
    "from": "sources/pantheon.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/fe2079502a",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Finkel",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:en-wikipedia-org/fe2d371da7",
