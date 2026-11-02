@@ -58,3 +58,16 @@ presented as such and can be cut if you'd prefer a drier opening.
   The Telegraph (India), "The Ark that Finkel built": its own URL could not be opened in this check; a copy of the
   text was read (launch and floating confirmed; size given as "bigger than one-fifth of the original"). Because
   the two accounts of the scale differ, the page says "roughly a third", not an exact figure.
+- 2026-11-02 (later) — follow-up from the PR #111 review (the pump rested on Wikipedia alone). Checked the
+  documentary itself: [PBS NOVA: Secrets of Noah's Ark](https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html)
+  (programme text; aired 7 October 2015). It says the build was "about 40 feet in diameter, just a fifth the size of
+  the ark described in the tablet"; at launch Eric Staples says "we have a heck of a lot of water coming in"; the
+  narrator: "They plug the gaps and put a collection of pumps to work"; closing line: the team "never managed to
+  duplicate Babylonian bitumen, but the structure of the ark is sound". It does NOT say one petrol pump ran
+  continuously; that wording is Wikipedia's alone. The Telegraph (India) (Shrabani Basu, 13 September 2014, copy
+  re-read) also says "bigger than one-fifth of the original". So the page now says: about 40 feet across, a fifth
+  of the tablet's size by the documentary's own count, though some accounts (Wikipedia: "one-third scale") say a
+  third; water came in through the seams from launch; the crew plugged the gaps and set pumps working. The
+  disagreement on scale is named on the page, not resolved. Not opened in this check: Historia's Finkel interview
+  (permission timed out); the #111 review read it earlier the same day ("despite a few leaks, the new ark floated",
+  Finkel), which agrees with the page.
