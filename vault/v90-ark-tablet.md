@@ -2,11 +2,11 @@
 
 *Vault entry V90 · Texts & Tablets · Private collection; published by Irving Finkel of the British Museum*
 
-A clay tablet about the size of a mobile phone, with **sixty lines** of Old Babylonian cuneiform, was written in Babylonia around **1900–1700 BCE**. After the Second World War an RAF serviceman, **Leonard Simmons**, brought it home to Britain among other objects he had picked up in the Middle East. In **2009** his son **Douglas** showed it to **Irving Finkel**, the British Museum's curator of cuneiform. It tells part of the flood story, and it stops to say **how to build the boat**: how much rope, what ribs, how much bitumen. The boat it describes is not the long ark of Bible pictures. It is **round**: a giant **coracle**, the round river boat of Mesopotamia, scaled up far beyond any real one. Finkel has called the tablet "one of the most important human documents ever discovered."
+A clay tablet about the size of a mobile phone, with **sixty lines** of Old Babylonian cuneiform, was written in Babylonia around **1900–1700 BCE**. After the Second World War an RAF serviceman, **Leonard Simmons**, brought it home to Britain among other objects he had picked up in the Middle East. His son **Douglas** later brought it to **Irving Finkel**, the British Museum's curator of cuneiform, who worked on it from **2009**. (Accounts differ on when Finkel first saw it: see the evidence section.) It tells part of the flood story, and it stops to say **how to build the boat**: how much rope, what ribs, how much bitumen. The boat it describes is not the long ark of Bible pictures. It is **round**: a giant **coracle**, the round river boat of Mesopotamia, scaled up far beyond any real one. Finkel has called the tablet "one of the most important human documents ever discovered."
 
 ## From a serviceman's souvenirs to the British Museum
 
-- **Leonard Simmons** served with the RAF and came home after the Second World War with a small collection of antiquities. His son **Douglas Simmons** inherited them and in **2009** brought the tablet to Finkel. (The family name is spelled "Simmonds" in some accounts.)
+- **Leonard Simmons** served with the RAF and came home after the Second World War with a small collection of antiquities. His son **Douglas Simmons** inherited them and brought the tablet to Finkel. Most reports give **2009**; one account says Finkel first saw it in **1985** and could only study it fully in 2009. (The family name is spelled "Simmonds" in some accounts.)
 - Finkel worked on the text for several years and published it in **January 2014**, when the tablet went on display at the British Museum on loan. The tablet is **privately owned**, so it has no British Museum collection record; Finkel's book *The Ark Before Noah* publishes a photograph, the text and his translation, and is the edition this entry follows. This entry does not say where the tablet is shown today.
 - It was shown **beside the Babylonian Map of the World**, a clay tablet whose text describes islands beyond the ocean at the edge of the known world. Finkel's reading of that text says that on one of them are **the remains of the ark**.
 
@@ -40,7 +40,7 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 
 **What's well supported by the evidence**
 
-- The tablet exists and its text is **published**: sixty lines of Old Babylonian cuneiform, translated by Irving Finkel in *The Ark Before Noah* (2014), after the owner brought it to him in **2009**. That the owner's father brought it home after serving with the RAF is consistently reported.
+- The tablet exists and its text is **published**: sixty lines of Old Babylonian cuneiform, translated by Irving Finkel in *The Ark Before Noah* (2014), from work he did on it from **2009**. That the owner's father brought it home after serving with the RAF is consistently reported.
 - The text **orders a round boat**, equal in length and breadth, with a base of about **3,600 square metres**, built of palm-fibre rope and wooden ribs and sealed with bitumen, and its closing lines bring the wild animals aboard **"two by two"**.
 - The round **coracle** is a real Mesopotamian boat type, still in use on Iraq's rivers in modern times.
 
@@ -52,6 +52,7 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 
 **What's genuinely open**
 
+- **When Finkel first saw the tablet.** Most reports say the owner brought it to him in 2009; the Wikipedia article on the 2014 replica says he first encountered it in 1985 and could not translate it fully until 2009. This entry does not choose between them.
 - The tablet's **exact date** within c. 1900–1700 BCE. It is dated by its script and language. Where it was found is not recorded.
 - How this instruction-form telling relates to the ***Atrahasis*** epic itself: an extract from it, a scribe's expansion, or a separate retelling.
 - Whether a full-size boat, built exactly to the tablet with ancient materials and skills, would have kept the water out. The 2014 build does not decide it.
@@ -66,11 +67,12 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 - "How to Build Noah's Ark", *Archaeology Wiki*, 28 January 2014 (Leonard and Douglas Simmons; 3,600 square metres; ribs and two kinds of bitumen; display beside the Map of the World; Finkel's "107%" and "most important human documents" remarks), https://www.archaeology.wiki/blog/2014/01/28/how-to-build-noahs-ark/
 - "Babylonian tale of round ark draws ire from some Christian circles", NBC News (the round base about 70 metres across), https://www.nbcnews.com/science/science-news/babylonian-tale-round-ark-draws-wrath-some-christian-circles-flna2D12035655
 - "Irving Finkel", https://en.wikipedia.org/wiki/Irving_Finkel
+- "Discovery of the 'Ark Tablet'", historyofinformation.com (received in 2009; sixty lines; 1900–1700 BCE; 11.5 x 6.0 cm), https://historyofinformation.com/detail.php?id=4060
 
 *The 2014 build*
 
 - PBS NOVA, *Secrets of Noah's Ark* (programme text), https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html
-- "Finkel's replica of Babylonian ark", https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark
+- "Finkel's replica of Babylonian ark" (also: Finkel first encountered the tablet in 1985, translated it fully in 2009), https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark
 - Channel 4, *The Real Noah's Ark* (press release), https://www.channel4.com/press/news/real-noahs-ark
 
-*Note on sources:* the account of the 2014 build follows the source log of this archive's Flood chapter (sources/ch01-the-flood.md), which records which reports were opened and where they disagree. The tablet's measurements in centimetres are not given here because the sources checked for this entry did not state them.
+*Note on sources:* the account of the 2014 build follows the source log of this archive's Flood chapter (sources/ch01-the-flood.md), which records which reports were opened and where they disagree. On size: historyofinformation.com gives the tablet as 11.5 x 6.0 cm; no museum record states it, because the tablet is privately owned.
