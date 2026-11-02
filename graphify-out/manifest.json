@@ -1,0 +1,1892 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1793595284.319799,
+    "seen": 1793595302.3682687,
+    "ast_hash": "81c30a13f872877913d27358f448d1ce",
+    "semantic_hash": "81c30a13f872877913d27358f448d1ce"
+  },
+  "00-audit/founder-guide/_checks.json": {
+    "mtime": 1793595284.3216426,
+    "seen": 1793595302.3682737,
+    "ast_hash": "2cc176733383578ce5844d53ba9630a5",
+    "semantic_hash": "2cc176733383578ce5844d53ba9630a5"
+  },
+  "00-audit/perf-baseline/fps-cpu1x.json": {
+    "mtime": 1793595284.3277771,
+    "seen": 1793595302.3682756,
+    "ast_hash": "58f1a431fca8164bebecd99c6c5b7970",
+    "semantic_hash": "58f1a431fca8164bebecd99c6c5b7970"
+  },
+  "00-audit/perf-baseline/fps-cpu4x.json": {
+    "mtime": 1793595284.3277771,
+    "seen": 1793595302.3682773,
+    "ast_hash": "0262ee49eeaf65ea029dbe85697118ee",
+    "semantic_hash": "0262ee49eeaf65ea029dbe85697118ee"
+  },
+  "00-audit/perf-baseline/lighthouse.json": {
+    "mtime": 1793595284.3306952,
+    "seen": 1793595302.3682783,
+    "ast_hash": "bb88becf6aef29bdb5ad995165dbb0c2",
+    "semantic_hash": "bb88becf6aef29bdb5ad995165dbb0c2"
+  },
+  "audits/museum-visual-pass/after-4x-throttle.json": {
+    "mtime": 1793595284.3671494,
+    "seen": 1793595302.3682795,
+    "ast_hash": "b7c464a0086f852fa485d35779457844",
+    "semantic_hash": "b7c464a0086f852fa485d35779457844"
+  },
+  "audits/museum-visual-pass/after-drips-unthrottled.json": {
+    "mtime": 1793595284.36729,
+    "seen": 1793595302.368281,
+    "ast_hash": "bdadd0c9bb9fdbf2f2b06ec8fa04ac68",
+    "semantic_hash": "bdadd0c9bb9fdbf2f2b06ec8fa04ac68"
+  },
+  "audits/museum-visual-pass/after-unthrottled.json": {
+    "mtime": 1793595284.3676958,
+    "seen": 1793595302.3682818,
+    "ast_hash": "78ed4bfbfbc184036b93fd21883b2f9f",
+    "semantic_hash": "78ed4bfbfbc184036b93fd21883b2f9f"
+  },
+  "audits/museum-visual-pass/baseline-4x-throttle.json": {
+    "mtime": 1793595284.3676958,
+    "seen": 1793595302.3682828,
+    "ast_hash": "acd32daefff4460610585228c433c2da",
+    "semantic_hash": "acd32daefff4460610585228c433c2da"
+  },
+  "audits/museum-visual-pass/baseline-unthrottled.json": {
+    "mtime": 1793595284.3676958,
+    "seen": 1793595302.368284,
+    "ast_hash": "d524dbb6362cf230edbacae39e060b81",
+    "semantic_hash": "d524dbb6362cf230edbacae39e060b81"
+  },
+  "audits/museum-visual-pass/wing3-baseline-unthrottled.json": {
+    "mtime": 1793595284.3706958,
+    "seen": 1793595302.3682852,
+    "ast_hash": "10cd4b5bddbc8ba04c5524dbc220eac6",
+    "semantic_hash": "10cd4b5bddbc8ba04c5524dbc220eac6"
+  },
+  "audits/museum-visual-pass/wing3-unthrottled.json": {
+    "mtime": 1793595284.3716958,
+    "seen": 1793595302.3682864,
+    "ast_hash": "2e8be95c8d5d9d35750e0745c49567f3",
+    "semantic_hash": "2e8be95c8d5d9d35750e0745c49567f3"
+  },
+  "audits/museum-visual-pass/wing4-baseline-unthrottled.json": {
+    "mtime": 1793595284.3716958,
+    "seen": 1793595302.3682876,
+    "ast_hash": "f61c57332109b24534646ca933bfa7ad",
+    "semantic_hash": "f61c57332109b24534646ca933bfa7ad"
+  },
+  "audits/museum-visual-pass/wing4-unthrottled.json": {
+    "mtime": 1793595284.3716958,
+    "seen": 1793595302.3682885,
+    "ast_hash": "6e7ecd93ef2b43a094017393456a2ca3",
+    "semantic_hash": "6e7ecd93ef2b43a094017393456a2ca3"
+  },
+  "audits/museum-visual-pass/wing5-baseline-unthrottled.json": {
+    "mtime": 1793595284.372696,
+    "seen": 1793595302.3682895,
+    "ast_hash": "e152ebf6ae0642ee152da3ba923edf1c",
+    "semantic_hash": "e152ebf6ae0642ee152da3ba923edf1c"
+  },
+  "audits/museum-visual-pass/wing5-unthrottled.json": {
+    "mtime": 1793595284.372696,
+    "seen": 1793595302.3682907,
+    "ast_hash": "501a7ba6f52d4ae473ab0623b2fe96e7",
+    "semantic_hash": "501a7ba6f52d4ae473ab0623b2fe96e7"
+  },
+  "audits/museum-visual-pass/wing6-baseline-unthrottled.json": {
+    "mtime": 1793595284.372696,
+    "seen": 1793595302.3682916,
+    "ast_hash": "05222368a81f9c68b3c84377c29ad7d9",
+    "semantic_hash": "05222368a81f9c68b3c84377c29ad7d9"
+  },
+  "audits/museum-visual-pass/wing6-unthrottled.json": {
+    "mtime": 1793595284.372696,
+    "seen": 1793595302.3682926,
+    "ast_hash": "cb1046e148a07671c0bb8be788d0049a",
+    "semantic_hash": "cb1046e148a07671c0bb8be788d0049a"
+  },
+  "content/dates.json": {
+    "mtime": 1793595284.387696,
+    "seen": 1793595302.3682935,
+    "ast_hash": "7f9bc58cd96d4bca85002d1f158ad6e1",
+    "semantic_hash": "7f9bc58cd96d4bca85002d1f158ad6e1"
+  },
+  "data/rituals/meditation-breath-cycle.json": {
+    "mtime": 1793595284.3889313,
+    "seen": 1793595302.3682947,
+    "ast_hash": "4d9b31b1865949029a7aeccac573b24b",
+    "semantic_hash": "4d9b31b1865949029a7aeccac573b24b"
+  },
+  "data/rituals/votive-candle.json": {
+    "mtime": 1793595284.389031,
+    "seen": 1793595302.3682957,
+    "ast_hash": "cfb72317c3cd228c7e0e08d06a41eebe",
+    "semantic_hash": "cfb72317c3cd228c7e0e08d06a41eebe"
+  },
+  "data/rituals/weighing-of-the-heart.json": {
+    "mtime": 1793595284.389031,
+    "seen": 1793595302.3682969,
+    "ast_hash": "8b22bdd22454faea0acb3c79400b20c7",
+    "semantic_hash": "8b22bdd22454faea0acb3c79400b20c7"
+  },
+  "docs/assets/ambient.js": {
+    "mtime": 1793595284.3892303,
+    "seen": 1793595302.3682983,
+    "ast_hash": "3862b8c450387c70a248233673961178",
+    "semantic_hash": "3862b8c450387c70a248233673961178"
+  },
+  "docs/assets/archive.js": {
+    "mtime": 1793595284.389519,
+    "seen": 1793595302.3682992,
+    "ast_hash": "d7282ce89d1427ae881bae99e8b6359e",
+    "semantic_hash": "d7282ce89d1427ae881bae99e8b6359e"
+  },
+  "docs/assets/data.js": {
+    "mtime": 1793595284.3896961,
+    "seen": 1793595302.3683002,
+    "ast_hash": "822059f420c80c80258a58c71898b62e",
+    "semantic_hash": "822059f420c80c80258a58c71898b62e"
+  },
+  "docs/assets/emblems.js": {
+    "mtime": 1793595284.3896961,
+    "seen": 1793595302.3683014,
+    "ast_hash": "7592522a7e5eb2c5917388485bc6bff8",
+    "semantic_hash": "7592522a7e5eb2c5917388485bc6bff8"
+  },
+  "docs/assets/fps-overlay.js": {
+    "mtime": 1793595284.3896961,
+    "seen": 1793595302.3683023,
+    "ast_hash": "7c881d379cd5cef483c16e4b571b57dc",
+    "semantic_hash": "7c881d379cd5cef483c16e4b571b57dc"
+  },
+  "docs/assets/games/antithesis.js": {
+    "mtime": 1793595284.3904188,
+    "seen": 1793595302.3683033,
+    "ast_hash": "ea9ddd7d17256faf60473491e63fb016",
+    "semantic_hash": "ea9ddd7d17256faf60473491e63fb016"
+  },
+  "docs/assets/games/archive-games.js": {
+    "mtime": 1793595284.3907514,
+    "seen": 1793595302.368304,
+    "ast_hash": "91c17c2bfc0cd6d00b8c77118a9c98b7",
+    "semantic_hash": "91c17c2bfc0cd6d00b8c77118a9c98b7"
+  },
+  "docs/assets/games/art/parts/athena/manifest.json": {
+    "mtime": 1793595284.3913386,
+    "seen": 1793595302.3683052,
+    "ast_hash": "f1717dec01c447003ecc983a2173f610",
+    "semantic_hash": "f1717dec01c447003ecc983a2173f610"
+  },
+  "docs/assets/games/art/parts/hades/manifest.json": {
+    "mtime": 1793595284.3921552,
+    "seen": 1793595302.3683062,
+    "ast_hash": "a894bbd65ffa0c3a137a9df562ac376c",
+    "semantic_hash": "a894bbd65ffa0c3a137a9df562ac376c"
+  },
+  "docs/assets/games/art/parts/poseidon/manifest.json": {
+    "mtime": 1793595284.3931558,
+    "seen": 1793595302.368307,
+    "ast_hash": "38617aa25786d8286155433e2b136736",
+    "semantic_hash": "38617aa25786d8286155433e2b136736"
+  },
+  "docs/assets/games/art/parts/zeus/manifest.json": {
+    "mtime": 1793595284.3937256,
+    "seen": 1793595302.3683083,
+    "ast_hash": "b50580636de67e6e1afd8f7ac7eb1f84",
+    "semantic_hash": "b50580636de67e6e1afd8f7ac7eb1f84"
+  },
+  "docs/assets/games/art/treasure/manifest.json": {
+    "mtime": 1793595284.394345,
+    "seen": 1793595302.3683093,
+    "ast_hash": "c8384814840420fa6e1c35622f59eff8",
+    "semantic_hash": "c8384814840420fa6e1c35622f59eff8"
+  },
+  "docs/assets/games/catalog.js": {
+    "mtime": 1793595284.394345,
+    "seen": 1793595302.3683102,
+    "ast_hash": "0df14eef0060d60185213e51c429ebf2",
+    "semantic_hash": "0df14eef0060d60185213e51c429ebf2"
+  },
+  "docs/assets/games/chess-art.js": {
+    "mtime": 1793595284.394345,
+    "seen": 1793595302.3683114,
+    "ast_hash": "a48cf8f38a3a7ef4e43e8ba8ef4dce28",
+    "semantic_hash": "a48cf8f38a3a7ef4e43e8ba8ef4dce28"
+  },
+  "docs/assets/games/chess.js": {
+    "mtime": 1793595284.394345,
+    "seen": 1793595302.3683124,
+    "ast_hash": "3edbb5001c0e0a8ed2b80e714b4f41e0",
+    "semantic_hash": "3edbb5001c0e0a8ed2b80e714b4f41e0"
+  },
+  "docs/assets/games/data/antithesis.json": {
+    "mtime": 1793595284.3946962,
+    "seen": 1793595302.3683133,
+    "ast_hash": "01ff357d636bc2b5e09713aed2b012e3",
+    "semantic_hash": "01ff357d636bc2b5e09713aed2b012e3"
+  },
+  "docs/assets/games/data/chess.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683143,
+    "ast_hash": "1e3f54ebea4a7c317dd63c3ad13b146b",
+    "semantic_hash": "1e3f54ebea4a7c317dd63c3ad13b146b"
+  },
+  "docs/assets/games/data/dominion.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683155,
+    "ast_hash": "9abefd40754f47ad8f932c1eaf331e06",
+    "semantic_hash": "9abefd40754f47ad8f932c1eaf331e06"
+  },
+  "docs/assets/games/data/excavation.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683164,
+    "ast_hash": "032c3f7c6dfa87c241a5983d21aec8bc",
+    "semantic_hash": "032c3f7c6dfa87c241a5983d21aec8bc"
+  },
+  "docs/assets/games/data/fighters.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683178,
+    "ast_hash": "a57448ef416d641a4903e69e730cc893",
+    "semantic_hash": "a57448ef416d641a4903e69e730cc893"
+  },
+  "docs/assets/games/data/labyrinth.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.368319,
+    "ast_hash": "dfa22239f4c1caecfad3b1ca86ba0d47",
+    "semantic_hash": "dfa22239f4c1caecfad3b1ca86ba0d47"
+  },
+  "docs/assets/games/data/ouroboros.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683236,
+    "ast_hash": "c92b9d591e1cf80155afa7a5e0f21d78",
+    "semantic_hash": "c92b9d591e1cf80155afa7a5e0f21d78"
+  },
+  "docs/assets/games/data/pinball.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683245,
+    "ast_hash": "105b1a430a1097e0c80aea8c5cd74ea0",
+    "semantic_hash": "105b1a430a1097e0c80aea8c5cd74ea0"
+  },
+  "docs/assets/games/data/reliquary.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683257,
+    "ast_hash": "d1747ee5067b7922cd5e2036aadff328",
+    "semantic_hash": "d1747ee5067b7922cd5e2036aadff328"
+  },
+  "docs/assets/games/data/seeker.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683267,
+    "ast_hash": "d93cb2b813c109dc417455df6e8be117",
+    "semantic_hash": "d93cb2b813c109dc417455df6e8be117"
+  },
+  "docs/assets/games/data/treasure.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.3683276,
+    "ast_hash": "b5fa6a20fecb5b09e1afae210d967dec",
+    "semantic_hash": "b5fa6a20fecb5b09e1afae210d967dec"
+  },
+  "docs/assets/games/data/ziggurat.json": {
+    "mtime": 1793595284.3950925,
+    "seen": 1793595302.368329,
+    "ast_hash": "7855056e7e5d363a07d7da23f9ffe5f9",
+    "semantic_hash": "7855056e7e5d363a07d7da23f9ffe5f9"
+  },
+  "docs/assets/games/dominion.js": {
+    "mtime": 1793595284.3956962,
+    "seen": 1793595302.36833,
+    "ast_hash": "a6725b06fa94a52653057a0580b33ca7",
+    "semantic_hash": "a6725b06fa94a52653057a0580b33ca7"
+  },
+  "docs/assets/games/excavation.js": {
+    "mtime": 1793595284.3956962,
+    "seen": 1793595302.368331,
+    "ast_hash": "c8ce9faef1628c28b77375d5cb97c160",
+    "semantic_hash": "c8ce9faef1628c28b77375d5cb97c160"
+  },
+  "docs/assets/games/feel.js": {
+    "mtime": 1793595284.3956962,
+    "seen": 1793595302.3683321,
+    "ast_hash": "ad73513886008786909b4f0acd719293",
+    "semantic_hash": "ad73513886008786909b4f0acd719293"
+  },
+  "docs/assets/games/fighter-moves.js": {
+    "mtime": 1793595284.3956962,
+    "seen": 1793595302.3683336,
+    "ast_hash": "35d1f7a3a534c30c6e4d5a0a596d0dd9",
+    "semantic_hash": "35d1f7a3a534c30c6e4d5a0a596d0dd9"
+  },
+  "docs/assets/games/fighter.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683345,
+    "ast_hash": "d68a34ad3efc0bef7ffd77830b9127fa",
+    "semantic_hash": "d68a34ad3efc0bef7ffd77830b9127fa"
+  },
+  "docs/assets/games/labyrinth.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683352,
+    "ast_hash": "9e526e38d08fa2eae977801bb12a8a8b",
+    "semantic_hash": "9e526e38d08fa2eae977801bb12a8a8b"
+  },
+  "docs/assets/games/ouroboros.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683364,
+    "ast_hash": "7568c6c3fe7c6f433d84d8773f5886a7",
+    "semantic_hash": "7568c6c3fe7c6f433d84d8773f5886a7"
+  },
+  "docs/assets/games/pad.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683374,
+    "ast_hash": "5e43ec2e51f6b894f7081fedbba8e694",
+    "semantic_hash": "5e43ec2e51f6b894f7081fedbba8e694"
+  },
+  "docs/assets/games/pinball.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683383,
+    "ast_hash": "b3b9d2f8d35ee9746f1cf56b3f699e68",
+    "semantic_hash": "b3b9d2f8d35ee9746f1cf56b3f699e68"
+  },
+  "docs/assets/games/reliquary.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683395,
+    "ast_hash": "7b4b2d5b10a809134b64d2fe5c766a99",
+    "semantic_hash": "7b4b2d5b10a809134b64d2fe5c766a99"
+  },
+  "docs/assets/games/seeker.js": {
+    "mtime": 1793595284.396696,
+    "seen": 1793595302.3683405,
+    "ast_hash": "09fa8e0aa452d5ba21bd093989a062fc",
+    "semantic_hash": "09fa8e0aa452d5ba21bd093989a062fc"
+  },
+  "docs/assets/games/treasure.js": {
+    "mtime": 1793595284.3976963,
+    "seen": 1793595302.3683414,
+    "ast_hash": "e1403f7909d280d7c233f4a0ba06fe51",
+    "semantic_hash": "e1403f7909d280d7c233f4a0ba06fe51"
+  },
+  "docs/assets/games/ziggurat.js": {
+    "mtime": 1793595284.3976963,
+    "seen": 1793595302.3683426,
+    "ast_hash": "fd9ccd859be57cef58db11ebdd52dfaa",
+    "semantic_hash": "fd9ccd859be57cef58db11ebdd52dfaa"
+  },
+  "docs/assets/pantheon-art.js": {
+    "mtime": 1793595284.437697,
+    "seen": 1793595302.3683434,
+    "ast_hash": "d2390a93f6de459f4c3a0391ca009c41",
+    "semantic_hash": "d2390a93f6de459f4c3a0391ca009c41"
+  },
+  "docs/assets/pantheon-data.js": {
+    "mtime": 1793595284.437697,
+    "seen": 1793595302.3683443,
+    "ast_hash": "c5e0d7670710428c26eb2c45818331b5",
+    "semantic_hash": "c5e0d7670710428c26eb2c45818331b5"
+  },
+  "docs/assets/pantheon.js": {
+    "mtime": 1793595284.4386969,
+    "seen": 1793595302.3683453,
+    "ast_hash": "b7cbd43e81cd1d46ad9ba62b0c5e1f4d",
+    "semantic_hash": "b7cbd43e81cd1d46ad9ba62b0c5e1f4d"
+  },
+  "docs/assets/pilgrimage-data.js": {
+    "mtime": 1793595284.4386969,
+    "seen": 1793595302.3683465,
+    "ast_hash": "c2b37ce48a47eaf1c0c48def8d78537a",
+    "semantic_hash": "c2b37ce48a47eaf1c0c48def8d78537a"
+  },
+  "docs/assets/plates.js": {
+    "mtime": 1793595284.4386969,
+    "seen": 1793595302.3683474,
+    "ast_hash": "23814d2d631d33e912ad571d66929842",
+    "semantic_hash": "23814d2d631d33e912ad571d66929842"
+  },
+  "docs/assets/search-index.json": {
+    "mtime": 1793595284.441697,
+    "seen": 1793595302.3683481,
+    "ast_hash": "17ed3bb042906808f8469351f8a114e9",
+    "semantic_hash": "17ed3bb042906808f8469351f8a114e9"
+  },
+  "docs/assets/vault-data.js": {
+    "mtime": 1793595284.443697,
+    "seen": 1793595302.368349,
+    "ast_hash": "19d7e1a896f62be6ccfa163b6c08dd2e",
+    "semantic_hash": "19d7e1a896f62be6ccfa163b6c08dd2e"
+  },
+  "docs/assets/vault/relic.js": {
+    "mtime": 1793595284.4447107,
+    "seen": 1793595302.3683505,
+    "ast_hash": "9bdf65dd8b7b93edcdf8839d8a570705",
+    "semantic_hash": "9bdf65dd8b7b93edcdf8839d8a570705"
+  },
+  "docs/assets/vault/study.js": {
+    "mtime": 1793595284.4447107,
+    "seen": 1793595302.3683515,
+    "ast_hash": "e6d11f5c2e01a622f4c359c7b5ec89a2",
+    "semantic_hash": "e6d11f5c2e01a622f4c359c7b5ec89a2"
+  },
+  "docs/museum/app.js": {
+    "mtime": 1793595284.4716976,
+    "seen": 1793595302.3683524,
+    "ast_hash": "c84a3007d293249e8dbb83cbe71c20a8",
+    "semantic_hash": "c84a3007d293249e8dbb83cbe71c20a8"
+  },
+  "docs/museum/english.js": {
+    "mtime": 1793595284.4716976,
+    "seen": 1793595302.3683536,
+    "ast_hash": "5037b1472bad37edf4a7890d608045c0",
+    "semantic_hash": "5037b1472bad37edf4a7890d608045c0"
+  },
+  "docs/museum/ephem.js": {
+    "mtime": 1793595284.4716976,
+    "seen": 1793595302.3683546,
+    "ast_hash": "2058f3a01244beb8f7c0d15d7a4aac6c",
+    "semantic_hash": "2058f3a01244beb8f7c0d15d7a4aac6c"
+  },
+  "docs/museum/fauna.js": {
+    "mtime": 1793595284.4716976,
+    "seen": 1793595302.3683555,
+    "ast_hash": "7f696f24f3f68a5de373f40460414157",
+    "semantic_hash": "7f696f24f3f68a5de373f40460414157"
+  },
+  "docs/museum/inspect.js": {
+    "mtime": 1793595284.4716976,
+    "seen": 1793595302.3683567,
+    "ast_hash": "7c3ac25ba8b2d3d8673324010e279511",
+    "semantic_hash": "7c3ac25ba8b2d3d8673324010e279511"
+  },
+  "docs/museum/keeper-env.js": {
+    "mtime": 1793595284.4716976,
+    "seen": 1793595302.3683577,
+    "ast_hash": "27848c2717b1267640cce0a925a7a629",
+    "semantic_hash": "27848c2717b1267640cce0a925a7a629"
+  },
+  "docs/museum/keeper.js": {
+    "mtime": 1793595284.4726975,
+    "seen": 1793595302.3683586,
+    "ast_hash": "1d4f7e60ab3da0c732f89894299faf7f",
+    "semantic_hash": "1d4f7e60ab3da0c732f89894299faf7f"
+  },
+  "docs/museum/manifest.json": {
+    "mtime": 1793595284.4726975,
+    "seen": 1793595302.36836,
+    "ast_hash": "ff50a9bc0ca7fda3dae521c926f64848",
+    "semantic_hash": "ff50a9bc0ca7fda3dae521c926f64848"
+  },
+  "docs/museum/relics.js": {
+    "mtime": 1793595284.4736974,
+    "seen": 1793595302.368361,
+    "ast_hash": "11eb88b46efee72ac4ae78d3dc61d253",
+    "semantic_hash": "11eb88b46efee72ac4ae78d3dc61d253"
+  },
+  "docs/museum/reliquary.js": {
+    "mtime": 1793595284.4736974,
+    "seen": 1793595302.368362,
+    "ast_hash": "590f3d62eeb535b725cc3228c04ea9f6",
+    "semantic_hash": "590f3d62eeb535b725cc3228c04ea9f6"
+  },
+  "docs/museum/ritual-views.js": {
+    "mtime": 1793595284.4736974,
+    "seen": 1793595302.368363,
+    "ast_hash": "2fef2b22ca46a43d1adf847bdc760dc7",
+    "semantic_hash": "2fef2b22ca46a43d1adf847bdc760dc7"
+  },
+  "docs/museum/scans.js": {
+    "mtime": 1793595284.4736974,
+    "seen": 1793595302.3683643,
+    "ast_hash": "758ad0ea103958fd60402bf46c1cb82e",
+    "semantic_hash": "758ad0ea103958fd60402bf46c1cb82e"
+  },
+  "docs/museum/secret.js": {
+    "mtime": 1793595284.4736974,
+    "seen": 1793595302.3683653,
+    "ast_hash": "92ca6d1a8e1301e1e1e641b3ef208199",
+    "semantic_hash": "92ca6d1a8e1301e1e1e641b3ef208199"
+  },
+  "docs/museum/sky.js": {
+    "mtime": 1793595284.4736974,
+    "seen": 1793595302.3683662,
+    "ast_hash": "3519c74594930c9bb4175e32b1cc59dc",
+    "semantic_hash": "3519c74594930c9bb4175e32b1cc59dc"
+  },
+  "docs/museum/sky.json": {
+    "mtime": 1793595284.4746976,
+    "seen": 1793595302.3683674,
+    "ast_hash": "e306f80baaba11bc6a7600dfa218ea7b",
+    "semantic_hash": "e306f80baaba11bc6a7600dfa218ea7b"
+  },
+  "docs/museum/sound.js": {
+    "mtime": 1793595284.4746976,
+    "seen": 1793595302.368369,
+    "ast_hash": "a579a275a18ba2f8d97d9a5085c57f9c",
+    "semantic_hash": "a579a275a18ba2f8d97d9a5085c57f9c"
+  },
+  "docs/museum/style.js": {
+    "mtime": 1793595284.4746976,
+    "seen": 1793595302.3683703,
+    "ast_hash": "ff58cdfaf8721afffec353f0e2fb4bc5",
+    "semantic_hash": "ff58cdfaf8721afffec353f0e2fb4bc5"
+  },
+  "docs/museum/wings/01-prehistory.json": {
+    "mtime": 1793595284.4766974,
+    "seen": 1793595302.3683715,
+    "ast_hash": "346ae99b01734b693136b25dec815f2d",
+    "semantic_hash": "346ae99b01734b693136b25dec815f2d"
+  },
+  "docs/museum/wings/02-bronze-age.json": {
+    "mtime": 1793595284.477423,
+    "seen": 1793595302.3683724,
+    "ast_hash": "58301047fbcd5086a0ff891bbef9064d",
+    "semantic_hash": "58301047fbcd5086a0ff891bbef9064d"
+  },
+  "docs/museum/wings/03-early-iron-age.json": {
+    "mtime": 1793595284.477423,
+    "seen": 1793595302.3683734,
+    "ast_hash": "74793b5f15474bb2ceeb92ac6f3fa16e",
+    "semantic_hash": "74793b5f15474bb2ceeb92ac6f3fa16e"
+  },
+  "docs/museum/wings/04-axial-age.json": {
+    "mtime": 1793595284.4776976,
+    "seen": 1793595302.3683746,
+    "ast_hash": "c9ad2a1d30e4446c70af9626a27814b5",
+    "semantic_hash": "c9ad2a1d30e4446c70af9626a27814b5"
+  },
+  "docs/museum/wings/05-late-antiquity.json": {
+    "mtime": 1793595284.4776976,
+    "seen": 1793595302.3683755,
+    "ast_hash": "f9d1c872b0becfc07bb61fbc5dbdc574",
+    "semantic_hash": "f9d1c872b0becfc07bb61fbc5dbdc574"
+  },
+  "docs/museum/wings/06-early-medieval.json": {
+    "mtime": 1793595284.4786975,
+    "seen": 1793595302.3683765,
+    "ast_hash": "56a2822dcbc1285a94b83097ac875ec7",
+    "semantic_hash": "56a2822dcbc1285a94b83097ac875ec7"
+  },
+  "docs/museum/wings/07-high-medieval.json": {
+    "mtime": 1793595284.4786975,
+    "seen": 1793595302.3683777,
+    "ast_hash": "b270f5dae098bba54d9b9b5cb16a1ec8",
+    "semantic_hash": "b270f5dae098bba54d9b9b5cb16a1ec8"
+  },
+  "docs/museum/wings/08-early-modern.json": {
+    "mtime": 1793595284.4786975,
+    "seen": 1793595302.3683786,
+    "ast_hash": "b1bc39c99a80cc4e652a2ce4289ecc5c",
+    "semantic_hash": "b1bc39c99a80cc4e652a2ce4289ecc5c"
+  },
+  "docs/museum/wings/09-modern.json": {
+    "mtime": 1793595284.4796977,
+    "seen": 1793595302.3683796,
+    "ast_hash": "d811b62f825aa96055042d17a30b3d1e",
+    "semantic_hash": "d811b62f825aa96055042d17a30b3d1e"
+  },
+  "docs/museum/wings/rotunda.json": {
+    "mtime": 1793595284.4796977,
+    "seen": 1793595302.3683808,
+    "ast_hash": "e2b0c26ea7227800aff4e41e6653679f",
+    "semantic_hash": "e2b0c26ea7227800aff4e41e6653679f"
+  },
+  "docs/museum/world.js": {
+    "mtime": 1793595284.4796977,
+    "seen": 1793595302.3683817,
+    "ast_hash": "ee079779f06177483669eb0e908de252",
+    "semantic_hash": "ee079779f06177483669eb0e908de252"
+  },
+  "docs/pilgrimage/cave.js": {
+    "mtime": 1793595284.481903,
+    "seen": 1793595302.3683827,
+    "ast_hash": "b97bd7b8201e3192892899b2b432c4da",
+    "semantic_hash": "b97bd7b8201e3192892899b2b432c4da"
+  },
+  "docs/pilgrimage/engine.js": {
+    "mtime": 1793595284.481903,
+    "seen": 1793595302.368384,
+    "ast_hash": "2e7257ace9668dd69d8178a029b99364",
+    "semantic_hash": "2e7257ace9668dd69d8178a029b99364"
+  },
+  "docs/pilgrimage/kit.js": {
+    "mtime": 1793595284.4826977,
+    "seen": 1793595302.368385,
+    "ast_hash": "ab949e7ea518e9352cf6a1b160b26dac",
+    "semantic_hash": "ab949e7ea518e9352cf6a1b160b26dac"
+  },
+  "docs/pilgrimage/megalith.js": {
+    "mtime": 1793595284.4826977,
+    "seen": 1793595302.368386,
+    "ast_hash": "5bc7ad3cd01112fe2a372d2b95688f5b",
+    "semantic_hash": "5bc7ad3cd01112fe2a372d2b95688f5b"
+  },
+  "docs/pilgrimage/parts.js": {
+    "mtime": 1793595284.4826977,
+    "seen": 1793595302.3683867,
+    "ast_hash": "a9255ebf7175e5f13d716613efdd039a",
+    "semantic_hash": "a9255ebf7175e5f13d716613efdd039a"
+  },
+  "docs/pilgrimage/portal.js": {
+    "mtime": 1793595284.4836977,
+    "seen": 1793595302.3683882,
+    "ast_hash": "8bd271b7e922a732cd58ac017d03ac4e",
+    "semantic_hash": "8bd271b7e922a732cd58ac017d03ac4e"
+  },
+  "docs/pilgrimage/sites/angkor-wat/art.js": {
+    "mtime": 1793595284.484238,
+    "seen": 1793595302.3683891,
+    "ast_hash": "a06b2531a1da9bb0fcd61a982d140d89",
+    "semantic_hash": "a06b2531a1da9bb0fcd61a982d140d89"
+  },
+  "docs/pilgrimage/sites/angkor-wat/dims.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.3683903,
+    "ast_hash": "d8783bbe6f7fcceaf72080c8751199dc",
+    "semantic_hash": "d8783bbe6f7fcceaf72080c8751199dc"
+  },
+  "docs/pilgrimage/sites/angkor-wat/lod.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.3683915,
+    "ast_hash": "12880f243688243b28084bdce99e3110",
+    "semantic_hash": "12880f243688243b28084bdce99e3110"
+  },
+  "docs/pilgrimage/sites/angkor-wat/s0-vestibule.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.3683925,
+    "ast_hash": "e030f107648fb40bc8ba2dc683a65533",
+    "semantic_hash": "e030f107648fb40bc8ba2dc683a65533"
+  },
+  "docs/pilgrimage/sites/angkor-wat/s1-approach.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.3683934,
+    "ast_hash": "3cea73df3fb728e638a77106a7141d2c",
+    "semantic_hash": "3cea73df3fb728e638a77106a7141d2c"
+  },
+  "docs/pilgrimage/sites/angkor-wat/s2-galleries.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.3683946,
+    "ast_hash": "d6ca4a4d71483d6e0803e7635c4e6acf",
+    "semantic_hash": "d6ca4a4d71483d6e0803e7635c4e6acf"
+  },
+  "docs/pilgrimage/sites/angkor-wat/s3-summit.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.368396,
+    "ast_hash": "6dd0942d339332e9451a01a7cb6511e1",
+    "semantic_hash": "6dd0942d339332e9451a01a7cb6511e1"
+  },
+  "docs/pilgrimage/sites/angkor-wat/site.js": {
+    "mtime": 1793595284.4843192,
+    "seen": 1793595302.368397,
+    "ast_hash": "2876465aab420d56353d89d51729eedd",
+    "semantic_hash": "2876465aab420d56353d89d51729eedd"
+  },
+  "docs/pilgrimage/sites/arcade/hall.js": {
+    "mtime": 1793595284.4846976,
+    "seen": 1793595302.3683984,
+    "ast_hash": "d086db74134d0b43d3ee00a8bb9dbdac",
+    "semantic_hash": "d086db74134d0b43d3ee00a8bb9dbdac"
+  },
+  "docs/pilgrimage/sites/arcade/site.js": {
+    "mtime": 1793595284.4846976,
+    "seen": 1793595302.3683994,
+    "ast_hash": "db10397b1bfd3d7adb4c1fddb02107bb",
+    "semantic_hash": "db10397b1bfd3d7adb4c1fddb02107bb"
+  },
+  "docs/pilgrimage/sites/borobudur/art.js": {
+    "mtime": 1793595284.4846976,
+    "seen": 1793595302.3684003,
+    "ast_hash": "56ac40a6b81eaa395ab2821bbc5860d8",
+    "semantic_hash": "56ac40a6b81eaa395ab2821bbc5860d8"
+  },
+  "docs/pilgrimage/sites/borobudur/dims.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.3684013,
+    "ast_hash": "9b612ee7bc2ccbfccf8b0251ba1d2619",
+    "semantic_hash": "9b612ee7bc2ccbfccf8b0251ba1d2619"
+  },
+  "docs/pilgrimage/sites/borobudur/lod.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.3684027,
+    "ast_hash": "c41e298244955386fec842ef18e85a6d",
+    "semantic_hash": "c41e298244955386fec842ef18e85a6d"
+  },
+  "docs/pilgrimage/sites/borobudur/s0-vestibule.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.3684037,
+    "ast_hash": "2f6527b66cbd55286561f46dd795c56b",
+    "semantic_hash": "2f6527b66cbd55286561f46dd795c56b"
+  },
+  "docs/pilgrimage/sites/borobudur/s1-foot.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.3684046,
+    "ast_hash": "be8ecd7d465dd85a95b8162a71e01cb7",
+    "semantic_hash": "be8ecd7d465dd85a95b8162a71e01cb7"
+  },
+  "docs/pilgrimage/sites/borobudur/s2-galleries.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.368406,
+    "ast_hash": "7d7f810a8148b6b5f40c74058f2b5c64",
+    "semantic_hash": "7d7f810a8148b6b5f40c74058f2b5c64"
+  },
+  "docs/pilgrimage/sites/borobudur/s3-terraces.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.368407,
+    "ast_hash": "492d4ce49662283e34fe6d2f23aedd7a",
+    "semantic_hash": "492d4ce49662283e34fe6d2f23aedd7a"
+  },
+  "docs/pilgrimage/sites/borobudur/shapes.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.368408,
+    "ast_hash": "3fee208f180e46a7c1a826946e076bf4",
+    "semantic_hash": "3fee208f180e46a7c1a826946e076bf4"
+  },
+  "docs/pilgrimage/sites/borobudur/site.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.3684094,
+    "ast_hash": "c39d8eafb2f1520d4dcbea9df5edfb87",
+    "semantic_hash": "c39d8eafb2f1520d4dcbea9df5edfb87"
+  },
+  "docs/pilgrimage/sites/chichen-itza/dims.js": {
+    "mtime": 1793595284.485256,
+    "seen": 1793595302.3684103,
+    "ast_hash": "1cd7332836768fcbfbdd34a3e1d84685",
+    "semantic_hash": "1cd7332836768fcbfbdd34a3e1d84685"
+  },
+  "docs/pilgrimage/sites/chichen-itza/maya.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684113,
+    "ast_hash": "5dc9005ac0f24bcfb90b03600e9484da",
+    "semantic_hash": "5dc9005ac0f24bcfb90b03600e9484da"
+  },
+  "docs/pilgrimage/sites/chichen-itza/s0-vestibule.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684125,
+    "ast_hash": "f0ea346a423119a2cdb0eb4e1f779d86",
+    "semantic_hash": "f0ea346a423119a2cdb0eb4e1f779d86"
+  },
+  "docs/pilgrimage/sites/chichen-itza/s1-platform.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684134,
+    "ast_hash": "2c017ae577fb4914cbd1ec19847e8bf9",
+    "semantic_hash": "2c017ae577fb4914cbd1ec19847e8bf9"
+  },
+  "docs/pilgrimage/sites/chichen-itza/s2-ballcourt.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684144,
+    "ast_hash": "7c7aadf71025b37ebeb0bca39c8576bc",
+    "semantic_hash": "7c7aadf71025b37ebeb0bca39c8576bc"
+  },
+  "docs/pilgrimage/sites/chichen-itza/s3-cenote.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684158,
+    "ast_hash": "6b950ec1fd76d0caafcffaeb9568adcc",
+    "semantic_hash": "6b950ec1fd76d0caafcffaeb9568adcc"
+  },
+  "docs/pilgrimage/sites/chichen-itza/s4-caracol.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684168,
+    "ast_hash": "7d23439226d86574472c835729876cc2",
+    "semantic_hash": "7d23439226d86574472c835729876cc2"
+  },
+  "docs/pilgrimage/sites/chichen-itza/site.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.368418,
+    "ast_hash": "68a8eeff0d632a36e27a4ad3ed6fcf1e",
+    "semantic_hash": "68a8eeff0d632a36e27a4ad3ed6fcf1e"
+  },
+  "docs/pilgrimage/sites/delphi/dims.js": {
+    "mtime": 1793595284.4857504,
+    "seen": 1793595302.3684196,
+    "ast_hash": "34a16dee48cc269081cb92f01aa1ea4b",
+    "semantic_hash": "34a16dee48cc269081cb92f01aa1ea4b"
+  },
+  "docs/pilgrimage/sites/delphi/greek.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.3684206,
+    "ast_hash": "bf6d8699c9bdc149aed500ec8c57d76e",
+    "semantic_hash": "bf6d8699c9bdc149aed500ec8c57d76e"
+  },
+  "docs/pilgrimage/sites/delphi/s0-vestibule.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.3684218,
+    "ast_hash": "72be14122e790fd7ac231e70459a732e",
+    "semantic_hash": "72be14122e790fd7ac231e70459a732e"
+  },
+  "docs/pilgrimage/sites/delphi/s1-way.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.368423,
+    "ast_hash": "16260f775f77b405446b9cd469a51ee7",
+    "semantic_hash": "16260f775f77b405446b9cd469a51ee7"
+  },
+  "docs/pilgrimage/sites/delphi/s2-temple.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.368424,
+    "ast_hash": "5777c4dcd80a77597bdb14bbf68b3fd8",
+    "semantic_hash": "5777c4dcd80a77597bdb14bbf68b3fd8"
+  },
+  "docs/pilgrimage/sites/delphi/s3-theatre.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.368425,
+    "ast_hash": "eb10d4c0c9f901f8d3c5fcf7943c0b1a",
+    "semantic_hash": "eb10d4c0c9f901f8d3c5fcf7943c0b1a"
+  },
+  "docs/pilgrimage/sites/delphi/s4-stadium.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.368426,
+    "ast_hash": "1ee75dbf0d1075f4951ff41131b21651",
+    "semantic_hash": "1ee75dbf0d1075f4951ff41131b21651"
+  },
+  "docs/pilgrimage/sites/delphi/site.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.3684273,
+    "ast_hash": "f4420967b345cc0c15171ae5fceadab4",
+    "semantic_hash": "f4420967b345cc0c15171ae5fceadab4"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/dims.js": {
+    "mtime": 1793595284.4863193,
+    "seen": 1793595302.3684282,
+    "ast_hash": "24d8b2d20ab30198d2b805dd43ecd3cd",
+    "semantic_hash": "24d8b2d20ab30198d2b805dd43ecd3cd"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/layout.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684294,
+    "ast_hash": "4236f79ee5ee35df36419fac5e719701",
+    "semantic_hash": "4236f79ee5ee35df36419fac5e719701"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/pillars.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684304,
+    "ast_hash": "5916caa97b6c7630cf9e9dd195269a70",
+    "semantic_hash": "5916caa97b6c7630cf9e9dd195269a70"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/s0-vestibule.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684313,
+    "ast_hash": "32cd2fd314e405484315a0f3c2484322",
+    "semantic_hash": "32cd2fd314e405484315a0f3c2484322"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/s1-hill.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684323,
+    "ast_hash": "571d83c0bbc9e51a74f9885561b97faf",
+    "semantic_hash": "571d83c0bbc9e51a74f9885561b97faf"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/s2-enclosure-d.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684335,
+    "ast_hash": "3fcc1ec3fbf16b127972c0141bfda912",
+    "semantic_hash": "3fcc1ec3fbf16b127972c0141bfda912"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/s3-enclosure-c.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684347,
+    "ast_hash": "af4e89b23b815dd80d987b164029c9df",
+    "semantic_hash": "af4e89b23b815dd80d987b164029c9df"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/s4-quarry.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684356,
+    "ast_hash": "85b2ab4ac445f9136b93002d58b6de11",
+    "semantic_hash": "85b2ab4ac445f9136b93002d58b6de11"
+  },
+  "docs/pilgrimage/sites/gobekli-tepe/site.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684368,
+    "ast_hash": "c7fee4f4ecec88e50149e477b40d5238",
+    "semantic_hash": "c7fee4f4ecec88e50149e477b40d5238"
+  },
+  "docs/pilgrimage/sites/golgotha-and-the-tomb/dims.js": {
+    "mtime": 1793595284.4866977,
+    "seen": 1793595302.3684378,
+    "ast_hash": "e3e14494ce7b38602b3c22dcf4092d21",
+    "semantic_hash": "e3e14494ce7b38602b3c22dcf4092d21"
+  },
+  "docs/pilgrimage/sites/golgotha-and-the-tomb/s0-vestibule.js": {
+    "mtime": 1793595284.4875817,
+    "seen": 1793595302.3684387,
+    "ast_hash": "45dc5ae107e1186b23e914b120886530",
+    "semantic_hash": "45dc5ae107e1186b23e914b120886530"
+  },
+  "docs/pilgrimage/sites/golgotha-and-the-tomb/s1-road.js": {
+    "mtime": 1793595284.4875817,
+    "seen": 1793595302.3684402,
+    "ast_hash": "70a258c3308f7c98fe8f47731fe898b6",
+    "semantic_hash": "70a258c3308f7c98fe8f47731fe898b6"
+  },
+  "docs/pilgrimage/sites/golgotha-and-the-tomb/s2-quarry.js": {
+    "mtime": 1793595284.4875817,
+    "seen": 1793595302.368441,
+    "ast_hash": "9132eaa58779d937d0cbc74026df2b75",
+    "semantic_hash": "9132eaa58779d937d0cbc74026df2b75"
+  },
+  "docs/pilgrimage/sites/golgotha-and-the-tomb/s3-tomb.js": {
+    "mtime": 1793595284.4875817,
+    "seen": 1793595302.3684423,
+    "ast_hash": "f249c541957af7364d9b0a0624ba1026",
+    "semantic_hash": "f249c541957af7364d9b0a0624ba1026"
+  },
+  "docs/pilgrimage/sites/golgotha-and-the-tomb/site.js": {
+    "mtime": 1793595284.4875817,
+    "seen": 1793595302.3684435,
+    "ast_hash": "589580633ad7d82b3818a4eaae051641",
+    "semantic_hash": "589580633ad7d82b3818a4eaae051641"
+  },
+  "docs/pilgrimage/sites/great-pyramid/dims.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684444,
+    "ast_hash": "f0a75eec39217d3320aecd4836b04181",
+    "semantic_hash": "f0a75eec39217d3320aecd4836b04181"
+  },
+  "docs/pilgrimage/sites/great-pyramid/glyphs.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684456,
+    "ast_hash": "ea377828ef2a7f4c45e5afff037abb0f",
+    "semantic_hash": "ea377828ef2a7f4c45e5afff037abb0f"
+  },
+  "docs/pilgrimage/sites/great-pyramid/relics.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684468,
+    "ast_hash": "fbcdcb7dcebd45b8111d98057245228b",
+    "semantic_hash": "fbcdcb7dcebd45b8111d98057245228b"
+  },
+  "docs/pilgrimage/sites/great-pyramid/s0-vestibule.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.368448,
+    "ast_hash": "3fbea21bdfc93a066680b6db33d58227",
+    "semantic_hash": "3fbea21bdfc93a066680b6db33d58227"
+  },
+  "docs/pilgrimage/sites/great-pyramid/s1-entrance.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.368449,
+    "ast_hash": "1733fa2490de6349c3944fe4786bf976",
+    "semantic_hash": "1733fa2490de6349c3944fe4786bf976"
+  },
+  "docs/pilgrimage/sites/great-pyramid/s2-ascending.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684502,
+    "ast_hash": "5ae4f5270b34c9eeec768844d9683ba9",
+    "semantic_hash": "5ae4f5270b34c9eeec768844d9683ba9"
+  },
+  "docs/pilgrimage/sites/great-pyramid/s3-gallery.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.368451,
+    "ast_hash": "a74040e4682bbcddfb3ba031965db4ab",
+    "semantic_hash": "a74040e4682bbcddfb3ba031965db4ab"
+  },
+  "docs/pilgrimage/sites/great-pyramid/s4-kings.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684523,
+    "ast_hash": "d0582556fa53b243458a43c62e700f61",
+    "semantic_hash": "d0582556fa53b243458a43c62e700f61"
+  },
+  "docs/pilgrimage/sites/great-pyramid/s5-queens.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684533,
+    "ast_hash": "433b968442afd38241fb1e98148323fc",
+    "semantic_hash": "433b968442afd38241fb1e98148323fc"
+  },
+  "docs/pilgrimage/sites/great-pyramid/site.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684547,
+    "ast_hash": "a862a904693a9fc6003d791fc7b10c8f",
+    "semantic_hash": "a862a904693a9fc6003d791fc7b10c8f"
+  },
+  "docs/pilgrimage/sites/library-of-alexandria/dims.js": {
+    "mtime": 1793595284.4876978,
+    "seen": 1793595302.3684556,
+    "ast_hash": "c2c2713ace64e48b8ebd59cd8028d367",
+    "semantic_hash": "c2c2713ace64e48b8ebd59cd8028d367"
+  },
+  "docs/pilgrimage/sites/library-of-alexandria/s0-vestibule.js": {
+    "mtime": 1793595284.4887967,
+    "seen": 1793595302.3684566,
+    "ast_hash": "1d87f63f97f45486c08431279796301c",
+    "semantic_hash": "1d87f63f97f45486c08431279796301c"
+  },
+  "docs/pilgrimage/sites/library-of-alexandria/s1-court.js": {
+    "mtime": 1793595284.4887967,
+    "seen": 1793595302.3684578,
+    "ast_hash": "600d2daae08d606450e974dce5d7e823",
+    "semantic_hash": "600d2daae08d606450e974dce5d7e823"
+  },
+  "docs/pilgrimage/sites/library-of-alexandria/s2-hall.js": {
+    "mtime": 1793595284.4887967,
+    "seen": 1793595302.368459,
+    "ast_hash": "27d2f84ec5b668701b10d3732f757037",
+    "semantic_hash": "27d2f84ec5b668701b10d3732f757037"
+  },
+  "docs/pilgrimage/sites/library-of-alexandria/site.js": {
+    "mtime": 1793595284.4887967,
+    "seen": 1793595302.36846,
+    "ast_hash": "7bd3cc13aa2d299555e4bfebeebee899",
+    "semantic_hash": "7bd3cc13aa2d299555e4bfebeebee899"
+  },
+  "docs/pilgrimage/sites/mogao-caves/dims.js": {
+    "mtime": 1793595284.4887967,
+    "seen": 1793595302.3684611,
+    "ast_hash": "0c7113ab7e74011898341d6a4e7411ab",
+    "semantic_hash": "0c7113ab7e74011898341d6a4e7411ab"
+  },
+  "docs/pilgrimage/sites/mogao-caves/paint.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684633,
+    "ast_hash": "e5a08ee280bdee5623d6a31b6b91bfcc",
+    "semantic_hash": "e5a08ee280bdee5623d6a31b6b91bfcc"
+  },
+  "docs/pilgrimage/sites/mogao-caves/s0-vestibule.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684645,
+    "ast_hash": "a965ef153ff2d016dab9ae7eef6615df",
+    "semantic_hash": "a965ef153ff2d016dab9ae7eef6615df"
+  },
+  "docs/pilgrimage/sites/mogao-caves/s1-cliff.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684654,
+    "ast_hash": "96d856924defdbdab88dbd742377a9b7",
+    "semantic_hash": "96d856924defdbdab88dbd742377a9b7"
+  },
+  "docs/pilgrimage/sites/mogao-caves/s2-cave17.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684664,
+    "ast_hash": "e00ec5abf16e662a0284c1a578b7ff0b",
+    "semantic_hash": "e00ec5abf16e662a0284c1a578b7ff0b"
+  },
+  "docs/pilgrimage/sites/mogao-caves/s3-cave96.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684676,
+    "ast_hash": "1feb837e50bc9e7ecd9d3ccd9397dc63",
+    "semantic_hash": "1feb837e50bc9e7ecd9d3ccd9397dc63"
+  },
+  "docs/pilgrimage/sites/mogao-caves/s4-cave254.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684688,
+    "ast_hash": "2170a27a5a64b0e518aad60f269c7f25",
+    "semantic_hash": "2170a27a5a64b0e518aad60f269c7f25"
+  },
+  "docs/pilgrimage/sites/mogao-caves/site.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684697,
+    "ast_hash": "bd51826192e35818442a50c0ee625018",
+    "semantic_hash": "bd51826192e35818442a50c0ee625018"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/dims.js": {
+    "mtime": 1793595284.4891324,
+    "seen": 1793595302.3684707,
+    "ast_hash": "5970185384b90d9df979513b1b79c491",
+    "semantic_hash": "5970185384b90d9df979513b1b79c491"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/massif.js": {
+    "mtime": 1793595284.4896894,
+    "seen": 1793595302.3684719,
+    "ast_hash": "12be5783938811810ea3a34284442e69",
+    "semantic_hash": "12be5783938811810ea3a34284442e69"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/s0-vestibule.js": {
+    "mtime": 1793595284.4896894,
+    "seen": 1793595302.3684728,
+    "ast_hash": "1f7fec4b11fb42d1c6439fceb281b598",
+    "semantic_hash": "1f7fec4b11fb42d1c6439fceb281b598"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/s1-plain.js": {
+    "mtime": 1793595284.4896894,
+    "seen": 1793595302.3684745,
+    "ast_hash": "dc7e3d7b9096219df12139577e3e0e7c",
+    "semantic_hash": "dc7e3d7b9096219df12139577e3e0e7c"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/s2-durupinar.js": {
+    "mtime": 1793595284.4896894,
+    "seen": 1793595302.3684754,
+    "ast_hash": "7d68ae9d168553182010aaf7a662186a",
+    "semantic_hash": "7d68ae9d168553182010aaf7a662186a"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/s3-summit.js": {
+    "mtime": 1793595284.4896894,
+    "seen": 1793595302.3684764,
+    "ast_hash": "89cdc20d7baf5913a6c37424f10424e9",
+    "semantic_hash": "89cdc20d7baf5913a6c37424f10424e9"
+  },
+  "docs/pilgrimage/sites/mount-ararat-the-ark-tradition/site.js": {
+    "mtime": 1793595284.4896977,
+    "seen": 1793595302.3684776,
+    "ast_hash": "015beb2d876e91116c1438589b2a39a9",
+    "semantic_hash": "015beb2d876e91116c1438589b2a39a9"
+  },
+  "docs/pilgrimage/sites/newgrange/art.js": {
+    "mtime": 1793595284.4896977,
+    "seen": 1793595302.3684788,
+    "ast_hash": "ae5493c97f1b482a5efd8bc2c1b9b159",
+    "semantic_hash": "ae5493c97f1b482a5efd8bc2c1b9b159"
+  },
+  "docs/pilgrimage/sites/newgrange/dims.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.3684797,
+    "ast_hash": "82465c696139b68d08f59ee0ac015fba",
+    "semantic_hash": "82465c696139b68d08f59ee0ac015fba"
+  },
+  "docs/pilgrimage/sites/newgrange/layout.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.3684807,
+    "ast_hash": "a72468b5167a37ba70c14c1ad2387fd0",
+    "semantic_hash": "a72468b5167a37ba70c14c1ad2387fd0"
+  },
+  "docs/pilgrimage/sites/newgrange/s0-vestibule.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.3684819,
+    "ast_hash": "aac8e34f8df4f7bbbab7e606c5a99aea",
+    "semantic_hash": "aac8e34f8df4f7bbbab7e606c5a99aea"
+  },
+  "docs/pilgrimage/sites/newgrange/s1-mound.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.368483,
+    "ast_hash": "5ea791d398d99254ad1fbfe27a99b790",
+    "semantic_hash": "5ea791d398d99254ad1fbfe27a99b790"
+  },
+  "docs/pilgrimage/sites/newgrange/s2-passage.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.368484,
+    "ast_hash": "b845afd04ef1385784a136db536bd89d",
+    "semantic_hash": "b845afd04ef1385784a136db536bd89d"
+  },
+  "docs/pilgrimage/sites/newgrange/s3-chamber.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.3684852,
+    "ast_hash": "4951773cd64f14abba055fe8f0dfa383",
+    "semantic_hash": "4951773cd64f14abba055fe8f0dfa383"
+  },
+  "docs/pilgrimage/sites/newgrange/site.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.3684862,
+    "ast_hash": "c6c7a48eadecaeb22f517a7dcf6457a7",
+    "semantic_hash": "c6c7a48eadecaeb22f517a7dcf6457a7"
+  },
+  "docs/pilgrimage/sites/persepolis/art.js": {
+    "mtime": 1793595284.490106,
+    "seen": 1793595302.3684871,
+    "ast_hash": "b4230e5a850fc00f4f4aeec2bad3c254",
+    "semantic_hash": "b4230e5a850fc00f4f4aeec2bad3c254"
+  },
+  "docs/pilgrimage/sites/persepolis/dims.js": {
+    "mtime": 1793595284.490627,
+    "seen": 1793595302.368488,
+    "ast_hash": "ef6c0c4a8a1c1c2c23180908c6047d51",
+    "semantic_hash": "ef6c0c4a8a1c1c2c23180908c6047d51"
+  },
+  "docs/pilgrimage/sites/persepolis/layout.js": {
+    "mtime": 1793595284.490627,
+    "seen": 1793595302.3684893,
+    "ast_hash": "18442999882a8c67264c3b7a7a2df8d7",
+    "semantic_hash": "18442999882a8c67264c3b7a7a2df8d7"
+  },
+  "docs/pilgrimage/sites/persepolis/s0-vestibule.js": {
+    "mtime": 1793595284.490627,
+    "seen": 1793595302.3684902,
+    "ast_hash": "b2fe12811baaed468f8343595a884b7b",
+    "semantic_hash": "b2fe12811baaed468f8343595a884b7b"
+  },
+  "docs/pilgrimage/sites/persepolis/s1-gate.js": {
+    "mtime": 1793595284.490627,
+    "seen": 1793595302.3684914,
+    "ast_hash": "7c59f8f91707375dc6274f1c0942e58e",
+    "semantic_hash": "7c59f8f91707375dc6274f1c0942e58e"
+  },
+  "docs/pilgrimage/sites/persepolis/s2-stairs.js": {
+    "mtime": 1793595284.490627,
+    "seen": 1793595302.3684926,
+    "ast_hash": "9e5b29228cbfda3983046ef6bf9422db",
+    "semantic_hash": "9e5b29228cbfda3983046ef6bf9422db"
+  },
+  "docs/pilgrimage/sites/persepolis/s3-hall.js": {
+    "mtime": 1793595284.490627,
+    "seen": 1793595302.3684936,
+    "ast_hash": "30d408a4c0788dbe5a203b898cf573c9",
+    "semantic_hash": "30d408a4c0788dbe5a203b898cf573c9"
+  },
+  "docs/pilgrimage/sites/persepolis/site.js": {
+    "mtime": 1793595284.4906979,
+    "seen": 1793595302.3684945,
+    "ast_hash": "2a0384c1affd8ee302dfe2a1bf7e2ba3",
+    "semantic_hash": "2a0384c1affd8ee302dfe2a1bf7e2ba3"
+  },
+  "docs/pilgrimage/sites/qumran-caves/dims.js": {
+    "mtime": 1793595284.4906979,
+    "seen": 1793595302.368496,
+    "ast_hash": "8fceb643f1bba2b0458340fa1806e68a",
+    "semantic_hash": "8fceb643f1bba2b0458340fa1806e68a"
+  },
+  "docs/pilgrimage/sites/qumran-caves/relics.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.368497,
+    "ast_hash": "6fe9b5a84534a369da280715128c9ab5",
+    "semantic_hash": "6fe9b5a84534a369da280715128c9ab5"
+  },
+  "docs/pilgrimage/sites/qumran-caves/s0-vestibule.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.3684978,
+    "ast_hash": "2ef56b22e83738180d1d315ff4c51d36",
+    "semantic_hash": "2ef56b22e83738180d1d315ff4c51d36"
+  },
+  "docs/pilgrimage/sites/qumran-caves/s1-terrace.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.3684993,
+    "ast_hash": "4a99bc27df9a5201644737894c75a465",
+    "semantic_hash": "4a99bc27df9a5201644737894c75a465"
+  },
+  "docs/pilgrimage/sites/qumran-caves/s2-cave4.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.3685,
+    "ast_hash": "263ccca468b78977fda82c03c789e75d",
+    "semantic_hash": "263ccca468b78977fda82c03c789e75d"
+  },
+  "docs/pilgrimage/sites/qumran-caves/s3-cave1.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.368501,
+    "ast_hash": "c92a898ceaa850f176aac8ee0c6703b8",
+    "semantic_hash": "c92a898ceaa850f176aac8ee0c6703b8"
+  },
+  "docs/pilgrimage/sites/qumran-caves/s4-cave3.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.368502,
+    "ast_hash": "63b185266272d7b80e44f850319731b9",
+    "semantic_hash": "63b185266272d7b80e44f850319731b9"
+  },
+  "docs/pilgrimage/sites/qumran-caves/site.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.3685033,
+    "ast_hash": "b9df00f3db6bf17956f97ff189a00598",
+    "semantic_hash": "b9df00f3db6bf17956f97ff189a00598"
+  },
+  "docs/pilgrimage/sites/stonehenge/dims.js": {
+    "mtime": 1793595284.491127,
+    "seen": 1793595302.368504,
+    "ast_hash": "21686cd02329a38c73ff8460152fa96a",
+    "semantic_hash": "21686cd02329a38c73ff8460152fa96a"
+  },
+  "docs/pilgrimage/sites/stonehenge/layout.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.368505,
+    "ast_hash": "59a93dcd9250567ef295e4adcab8f06e",
+    "semantic_hash": "59a93dcd9250567ef295e4adcab8f06e"
+  },
+  "docs/pilgrimage/sites/stonehenge/s0-vestibule.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.3685062,
+    "ast_hash": "b46618df286bd817db40524b6867e56a",
+    "semantic_hash": "b46618df286bd817db40524b6867e56a"
+  },
+  "docs/pilgrimage/sites/stonehenge/s1-avenue.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.3685071,
+    "ast_hash": "fc025cfb32b30a2ac3b23fa386850e74",
+    "semantic_hash": "fc025cfb32b30a2ac3b23fa386850e74"
+  },
+  "docs/pilgrimage/sites/stonehenge/s2-circle.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.368508,
+    "ast_hash": "1c1432ca8cc57d593fa1627bda2f8453",
+    "semantic_hash": "1c1432ca8cc57d593fa1627bda2f8453"
+  },
+  "docs/pilgrimage/sites/stonehenge/s3-inner.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.3685093,
+    "ast_hash": "89fcd5b8c6fe9c5ce0a03cbfaada75b1",
+    "semantic_hash": "89fcd5b8c6fe9c5ce0a03cbfaada75b1"
+  },
+  "docs/pilgrimage/sites/stonehenge/site.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.3685102,
+    "ast_hash": "d9b1e9a2f998f5f1912848641a115d36",
+    "semantic_hash": "d9b1e9a2f998f5f1912848641a115d36"
+  },
+  "docs/pilgrimage/sound.js": {
+    "mtime": 1793595284.4915764,
+    "seen": 1793595302.3685112,
+    "ast_hash": "8c0f185fd45af22f8240712c53f5a4ee",
+    "semantic_hash": "8c0f185fd45af22f8240712c53f5a4ee"
+  },
+  "docs/pilgrimage/stone.js": {
+    "mtime": 1793595284.4916978,
+    "seen": 1793595302.3685126,
+    "ast_hash": "99f1091687d7222f70b9b776d4897bae",
+    "semantic_hash": "99f1091687d7222f70b9b776d4897bae"
+  },
+  "docs/site-config.js": {
+    "mtime": 1793595284.4916978,
+    "seen": 1793595302.3685136,
+    "ast_hash": "1b01ad918e5a5afb188486aee29c1ad2",
+    "semantic_hash": "1b01ad918e5a5afb188486aee29c1ad2"
+  },
+  "framework/adapters/track.js": {
+    "mtime": 1793595284.513092,
+    "seen": 1793595302.3685145,
+    "ast_hash": "4c02e15cae1868f6cd5b2ab90e6f7a2a",
+    "semantic_hash": "4c02e15cae1868f6cd5b2ab90e6f7a2a"
+  },
+  "framework/engine/sequence-engine.js": {
+    "mtime": 1793595284.513092,
+    "seen": 1793595302.3685157,
+    "ast_hash": "b46d559b03a94f75640c2c88c64573db",
+    "semantic_hash": "b46d559b03a94f75640c2c88c64573db"
+  },
+  "framework/ledger.js": {
+    "mtime": 1793595284.513092,
+    "seen": 1793595302.368517,
+    "ast_hash": "3743f92b15fc14c5ca7e0078a9bc3859",
+    "semantic_hash": "3743f92b15fc14c5ca7e0078a9bc3859"
+  },
+  "framework/registry/chapter.json": {
+    "mtime": 1793595284.513092,
+    "seen": 1793595302.3685179,
+    "ast_hash": "e0e759a5832a4e47e1fb4624203a8786",
+    "semantic_hash": "e0e759a5832a4e47e1fb4624203a8786"
+  },
+  "framework/registry/constellation.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.368519,
+    "ast_hash": "42a21436c20035c44c99eefe5fea367d",
+    "semantic_hash": "42a21436c20035c44c99eefe5fea367d"
+  },
+  "framework/registry/era.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.3685203,
+    "ast_hash": "c27ff62599c8a0dd18e159103927e2b0",
+    "semantic_hash": "c27ff62599c8a0dd18e159103927e2b0"
+  },
+  "framework/registry/figure.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.3685212,
+    "ast_hash": "3ff6c7589a8af5b9d2cca72593645061",
+    "semantic_hash": "3ff6c7589a8af5b9d2cca72593645061"
+  },
+  "framework/registry/game.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.3685224,
+    "ast_hash": "4143e1aa755b53675f30e750bf0bf85d",
+    "semantic_hash": "4143e1aa755b53675f30e750bf0bf85d"
+  },
+  "framework/registry/index.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.3685236,
+    "ast_hash": "3bcd9053dcd36b24d0bddd913713cdf1",
+    "semantic_hash": "3bcd9053dcd36b24d0bddd913713cdf1"
+  },
+  "framework/registry/relic.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.3685246,
+    "ast_hash": "06566304d0533f7fe43facd01f5dc2cf",
+    "semantic_hash": "06566304d0533f7fe43facd01f5dc2cf"
+  },
+  "framework/registry/ritual.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.3685255,
+    "ast_hash": "43626c96cd43b9d6b96a63aaff92d675",
+    "semantic_hash": "43626c96cd43b9d6b96a63aaff92d675"
+  },
+  "framework/registry/room.json": {
+    "mtime": 1793595284.5133982,
+    "seen": 1793595302.368527,
+    "ast_hash": "2d426276883817dae41eb9f55c021085",
+    "semantic_hash": "2d426276883817dae41eb9f55c021085"
+  },
+  "framework/registry/section.json": {
+    "mtime": 1793595284.513698,
+    "seen": 1793595302.3685281,
+    "ast_hash": "69441a9365f66323d3be5f821c941cea",
+    "semantic_hash": "69441a9365f66323d3be5f821c941cea"
+  },
+  "framework/registry/site.json": {
+    "mtime": 1793595284.513698,
+    "seen": 1793595302.368529,
+    "ast_hash": "ab0b9459d2b00a07782f1bd1396b815e",
+    "semantic_hash": "ab0b9459d2b00a07782f1bd1396b815e"
+  },
+  "framework/registry/skylore.json": {
+    "mtime": 1793595284.513698,
+    "seen": 1793595302.3685303,
+    "ast_hash": "e833c1f282d0e38c6a232639a142a978",
+    "semantic_hash": "e833c1f282d0e38c6a232639a142a978"
+  },
+  "framework/registry/source.json": {
+    "mtime": 1793595284.5146983,
+    "seen": 1793595302.3685315,
+    "ast_hash": "23a57bb260ddc62ac941dac58b45739b",
+    "semantic_hash": "23a57bb260ddc62ac941dac58b45739b"
+  },
+  "framework/registry/star.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685324,
+    "ast_hash": "c8b59bc54058790f207177c5dbd008a2",
+    "semantic_hash": "c8b59bc54058790f207177c5dbd008a2"
+  },
+  "framework/registry/symbol.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685331,
+    "ast_hash": "c2a3b2bffb93eb847deac113b611919a",
+    "semantic_hash": "c2a3b2bffb93eb847deac113b611919a"
+  },
+  "framework/registry/symbolset.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685346,
+    "ast_hash": "27bb2c09b1ed5a259b5763cdaa1cd752",
+    "semantic_hash": "27bb2c09b1ed5a259b5763cdaa1cd752"
+  },
+  "framework/registry/theme.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685355,
+    "ast_hash": "a4ba2c3739e9f92da45bbdcc8c24f779",
+    "semantic_hash": "a4ba2c3739e9f92da45bbdcc8c24f779"
+  },
+  "framework/registry/tradition.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685365,
+    "ast_hash": "12f5d81301ef7f39fdfc35a4285752c2",
+    "semantic_hash": "12f5d81301ef7f39fdfc35a4285752c2"
+  },
+  "framework/registry/trail.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685377,
+    "ast_hash": "0e5b3194bf855080cb63fd9ebffa3075",
+    "semantic_hash": "0e5b3194bf855080cb63fd9ebffa3075"
+  },
+  "framework/registry/waypoint.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685386,
+    "ast_hash": "9701d2694213e4b46951c6d811560e5e",
+    "semantic_hash": "9701d2694213e4b46951c6d811560e5e"
+  },
+  "framework/registry/wing.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.3685398,
+    "ast_hash": "2afe810491e255b9aedd04e6f7e6e212",
+    "semantic_hash": "2afe810491e255b9aedd04e6f7e6e212"
+  },
+  "framework/schema/entity.schema.json": {
+    "mtime": 1793595284.5156982,
+    "seen": 1793595302.368541,
+    "ast_hash": "cb9faa5c3b916cda6deb180fb8151d79",
+    "semantic_hash": "cb9faa5c3b916cda6deb180fb8151d79"
+  },
+  "framework/schema/event.schema.json": {
+    "mtime": 1793595284.516592,
+    "seen": 1793595302.368542,
+    "ast_hash": "f603c8ca1c9c44bd04e4e44904a60f85",
+    "semantic_hash": "f603c8ca1c9c44bd04e4e44904a60f85"
+  },
+  "framework/schema/ritual.schema.json": {
+    "mtime": 1793595284.516592,
+    "seen": 1793595302.368543,
+    "ast_hash": "0a822fbd5aa17b2fa976082a833d27da",
+    "semantic_hash": "0a822fbd5aa17b2fa976082a833d27da"
+  },
+  "framework/test/engine-neutral.test.js": {
+    "mtime": 1793595284.516592,
+    "seen": 1793595302.368544,
+    "ast_hash": "a32f84d475ea7fa8f433641cac088684",
+    "semantic_hash": "a32f84d475ea7fa8f433641cac088684"
+  },
+  "framework/test/engine.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.368545,
+    "ast_hash": "9c0fee9c1b847b3ef506058b0d3b2315",
+    "semantic_hash": "9c0fee9c1b847b3ef506058b0d3b2315"
+  },
+  "framework/test/ledger.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.3685462,
+    "ast_hash": "cc13baaa1e22f557007626b4a70fbce6",
+    "semantic_hash": "cc13baaa1e22f557007626b4a70fbce6"
+  },
+  "framework/test/mini-schema.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.3685477,
+    "ast_hash": "77001cb84d878e4b6123a9b006a122b4",
+    "semantic_hash": "77001cb84d878e4b6123a9b006a122b4"
+  },
+  "framework/test/originality.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.3685486,
+    "ast_hash": "27b9413d23a92a156cd9af692c9baf93",
+    "semantic_hash": "27b9413d23a92a156cd9af692c9baf93"
+  },
+  "framework/test/publish.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.3685496,
+    "ast_hash": "d586ac309d55128f6a714e1cea4d14d8",
+    "semantic_hash": "d586ac309d55128f6a714e1cea4d14d8"
+  },
+  "framework/test/renamed.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.368551,
+    "ast_hash": "27a55d456be9c21c5a41dfb46f8755a8",
+    "semantic_hash": "27a55d456be9c21c5a41dfb46f8755a8"
+  },
+  "framework/test/schemas.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.368552,
+    "ast_hash": "bb8a6134ab512e8eeead8b8df8bf81fd",
+    "semantic_hash": "bb8a6134ab512e8eeead8b8df8bf81fd"
+  },
+  "framework/test/track.test.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.368553,
+    "ast_hash": "c0b6ebfa60ceb55497a513c33540beb2",
+    "semantic_hash": "c0b6ebfa60ceb55497a513c33540beb2"
+  },
+  "framework/ui/ritual-player.js": {
+    "mtime": 1793595284.5167584,
+    "seen": 1793595302.3685544,
+    "ast_hash": "93343af9ef2b58fd2fb9119538c21951",
+    "semantic_hash": "93343af9ef2b58fd2fb9119538c21951"
+  },
+  "functions/api/subscribe.js": {
+    "mtime": 1793595284.5173087,
+    "seen": 1793595302.3685553,
+    "ast_hash": "7ecf28f033fee5adfbd3f84be52a14ce",
+    "semantic_hash": "7ecf28f033fee5adfbd3f84be52a14ce"
+  },
+  "functions/api/visits.js": {
+    "mtime": 1793595284.5173748,
+    "seen": 1793595302.3685563,
+    "ast_hash": "ff93dfc6bc8d8c38b2f6aade4056b2b5",
+    "semantic_hash": "ff93dfc6bc8d8c38b2f6aade4056b2b5"
+  },
+  "handoff/standards/board.json": {
+    "mtime": 1793595284.5416098,
+    "seen": 1793595302.3685572,
+    "ast_hash": "5f93a0703049c40394bda37b4763bdd5",
+    "semantic_hash": "5f93a0703049c40394bda37b4763bdd5"
+  },
+  "museum/sky-lore.json": {
+    "mtime": 1793595284.5436985,
+    "seen": 1793595302.3685584,
+    "ast_hash": "e3fb101d2c57f82d28b31a4a9e8c9470",
+    "semantic_hash": "e3fb101d2c57f82d28b31a4a9e8c9470"
+  },
+  "plans/easter-eggs.json": {
+    "mtime": 1793595284.5446987,
+    "seen": 1793595302.3685596,
+    "ast_hash": "73841b0f3d209069147e3c1b0b6bb684",
+    "semantic_hash": "73841b0f3d209069147e3c1b0b6bb684"
+  },
+  "reviews/cleared.json": {
+    "mtime": 1793595284.5465853,
+    "seen": 1793595302.3685606,
+    "ast_hash": "c6f5ab4d1ad6cf09eb9c10c79780199c",
+    "semantic_hash": "c6f5ab4d1ad6cf09eb9c10c79780199c"
+  },
+  "reviews/status.json": {
+    "mtime": 1793595284.5465853,
+    "seen": 1793595302.3685617,
+    "ast_hash": "4dae529f0e02f1bbc87083cc27aaaaa8",
+    "semantic_hash": "4dae529f0e02f1bbc87083cc27aaaaa8"
+  },
+  "tools/build-chapters.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685627,
+    "ast_hash": "1f0f2ef4ae9b611023dd8dca1eab669d",
+    "semantic_hash": "1f0f2ef4ae9b611023dd8dca1eab669d"
+  },
+  "tools/build-dominion-grid.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685637,
+    "ast_hash": "590dfff9ebd02ca089ecbd74b55fae81",
+    "semantic_hash": "590dfff9ebd02ca089ecbd74b55fae81"
+  },
+  "tools/build-entity-registry.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685648,
+    "ast_hash": "22593888e7b103beaa8a22feb81eea8b",
+    "semantic_hash": "22593888e7b103beaa8a22feb81eea8b"
+  },
+  "tools/build-fighter-art.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.368566,
+    "ast_hash": "41a4b05be76f7f8240b2ae7f9e19b72a",
+    "semantic_hash": "41a4b05be76f7f8240b2ae7f9e19b72a"
+  },
+  "tools/build-framework.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.368567,
+    "ast_hash": "8ea6d4f7d820b04ddc48de9fccfeb128",
+    "semantic_hash": "8ea6d4f7d820b04ddc48de9fccfeb128"
+  },
+  "tools/build-museum.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685684,
+    "ast_hash": "14d7157e27022dfb676c618131417dc1",
+    "semantic_hash": "14d7157e27022dfb676c618131417dc1"
+  },
+  "tools/build-og.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685694,
+    "ast_hash": "a4bdef1d5de38be35a84878461717dc3",
+    "semantic_hash": "a4bdef1d5de38be35a84878461717dc3"
+  },
+  "tools/build-originality-baseline.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685703,
+    "ast_hash": "aaedcd9a375a6acf54c179ddc835028e",
+    "semantic_hash": "aaedcd9a375a6acf54c179ddc835028e"
+  },
+  "tools/build-pages.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685713,
+    "ast_hash": "8e932264230f13d1cc0d5dfa2f4952c8",
+    "semantic_hash": "8e932264230f13d1cc0d5dfa2f4952c8"
+  },
+  "tools/build-sky.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685727,
+    "ast_hash": "bb243cac6bf569aa043ba90a76e446dd",
+    "semantic_hash": "bb243cac6bf569aa043ba90a76e446dd"
+  },
+  "tools/build-standards-board.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685737,
+    "ast_hash": "eccfac377b1589fa9178d483acea5f2c",
+    "semantic_hash": "eccfac377b1589fa9178d483acea5f2c"
+  },
+  "tools/build-symbols.js": {
+    "mtime": 1793595284.5596988,
+    "seen": 1793595302.3685749,
+    "ast_hash": "931763f65b1b646f54a00e6ea8a3669b",
+    "semantic_hash": "931763f65b1b646f54a00e6ea8a3669b"
+  },
+  "tools/build-vault.js": {
+    "mtime": 1793595284.560699,
+    "seen": 1793595302.368576,
+    "ast_hash": "cf80b3d2446ea6d12e8d1c15707ca1bd",
+    "semantic_hash": "cf80b3d2446ea6d12e8d1c15707ca1bd"
+  },
+  "tools/check-links.js": {
+    "mtime": 1793595284.560699,
+    "seen": 1793595302.368577,
+    "ast_hash": "01c3e3b96b0c1e37fe1e835a8864abf7",
+    "semantic_hash": "01c3e3b96b0c1e37fe1e835a8864abf7"
+  },
+  "tools/ci-play-fighter.js": {
+    "mtime": 1793595284.560699,
+    "seen": 1793595302.3685782,
+    "ast_hash": "ea6e70a43c2e26fc4a96c3df106f20fc",
+    "semantic_hash": "ea6e70a43c2e26fc4a96c3df106f20fc"
+  },
+  "tools/data/symbols.json": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.3685794,
+    "ast_hash": "ac980297e0a501473a9b9b614cd9dd18",
+    "semantic_hash": "ac980297e0a501473a9b9b614cd9dd18"
+  },
+  "tools/eslint-games.json": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.3685803,
+    "ast_hash": "0db942b3e9f0c01312ab9bd6c1b79514",
+    "semantic_hash": "0db942b3e9f0c01312ab9bd6c1b79514"
+  },
+  "tools/extract-side-parts.py": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.3685813,
+    "ast_hash": "4e6dd777793d374af7b98ea10e8178bc",
+    "semantic_hash": "4e6dd777793d374af7b98ea10e8178bc"
+  },
+  "tools/founder-shots.js": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.3685825,
+    "ast_hash": "988cf911b3b9947e2e251ba1c0e1f57a",
+    "semantic_hash": "988cf911b3b9947e2e251ba1c0e1f57a"
+  },
+  "tools/fps-games.js": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.3685837,
+    "ast_hash": "91369140c3584ad5bfe6ab4f6280fbd1",
+    "semantic_hash": "91369140c3584ad5bfe6ab4f6280fbd1"
+  },
+  "tools/graphify-label.js": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.3685846,
+    "ast_hash": "01ff44c408ac5e8904ba8dc77327ffcd",
+    "semantic_hash": "01ff44c408ac5e8904ba8dc77327ffcd"
+  },
+  "tools/graphify-session.sh": {
+    "mtime": 1793595284.5671637,
+    "seen": 1793595302.368586,
+    "ast_hash": "7e28b63a6876ed1c11e2ac5b6b2a2b50",
+    "semantic_hash": "7e28b63a6876ed1c11e2ac5b6b2a2b50"
+  },
+  "tools/hooks/pre-commit": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.368587,
+    "ast_hash": "bf19537ae8218100422a23e69795c578",
+    "semantic_hash": "bf19537ae8218100422a23e69795c578"
+  },
+  "tools/lighthouse-pages.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.368588,
+    "ast_hash": "377a625af6fa2fddf16fafdfe6b1bf13",
+    "semantic_hash": "377a625af6fa2fddf16fafdfe6b1bf13"
+  },
+  "tools/md-to-chapter.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685892,
+    "ast_hash": "d1017fa184aefb834f833684e3ecc180",
+    "semantic_hash": "d1017fa184aefb834f833684e3ecc180"
+  },
+  "tools/museum-baseline.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685904,
+    "ast_hash": "0745a359409cd5f796874eb1ce774bbe",
+    "semantic_hash": "0745a359409cd5f796874eb1ce774bbe"
+  },
+  "tools/originality-check.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685913,
+    "ast_hash": "3b096ed458504679a8465977052ef451",
+    "semantic_hash": "3b096ed458504679a8465977052ef451"
+  },
+  "tools/originality-lib.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685925,
+    "ast_hash": "55031da1eeacc360bd5c0d8615711a88",
+    "semantic_hash": "55031da1eeacc360bd5c0d8615711a88"
+  },
+  "tools/perf-pages.json": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685937,
+    "ast_hash": "c79a0ca54b70161c4a83ce9f0301f947",
+    "semantic_hash": "c79a0ca54b70161c4a83ce9f0301f947"
+  },
+  "tools/pilgrimage-guide-text.mjs": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685946,
+    "ast_hash": "562fa7eb9c260b964853b9ec60d5373c",
+    "semantic_hash": "562fa7eb9c260b964853b9ec60d5373c"
+  },
+  "tools/review-checks.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685956,
+    "ast_hash": "dd8e3d1d2775eb63c1bcd6632938c0f1",
+    "semantic_hash": "dd8e3d1d2775eb63c1bcd6632938c0f1"
+  },
+  "tools/seo.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685968,
+    "ast_hash": "eeb2e04c04673e6783c95a87402ddb80",
+    "semantic_hash": "eeb2e04c04673e6783c95a87402ddb80"
+  },
+  "tools/serve.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685977,
+    "ast_hash": "547e27eaab4237ce292917212d8705c4",
+    "semantic_hash": "547e27eaab4237ce292917212d8705c4"
+  },
+  "tools/stamp-dates.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3685987,
+    "ast_hash": "8d37638991f2d753fb838d2acdc8df6e",
+    "semantic_hash": "8d37638991f2d753fb838d2acdc8df6e"
+  },
+  "tools/verify-antithesis.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3686001,
+    "ast_hash": "3fe5353d6aec5c27d80883e02c4d460c",
+    "semantic_hash": "3fe5353d6aec5c27d80883e02c4d460c"
+  },
+  "tools/verify-chess.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.368601,
+    "ast_hash": "565d7c2b8d99605468739a97b618eb43",
+    "semantic_hash": "565d7c2b8d99605468739a97b618eb43"
+  },
+  "tools/verify-dominion.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.368602,
+    "ast_hash": "8455af31bb51c8beef377ad79f6bf41d",
+    "semantic_hash": "8455af31bb51c8beef377ad79f6bf41d"
+  },
+  "tools/verify-excavation.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3686032,
+    "ast_hash": "4bda778c66b57ac58b19e38a0866f2b7",
+    "semantic_hash": "4bda778c66b57ac58b19e38a0866f2b7"
+  },
+  "tools/verify-fighters.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3686042,
+    "ast_hash": "a79846f5995674fee26c528fe575d1bb",
+    "semantic_hash": "a79846f5995674fee26c528fe575d1bb"
+  },
+  "tools/verify-games-catalog.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3686051,
+    "ast_hash": "b388359b70baeb701adc3651e7890de9",
+    "semantic_hash": "b388359b70baeb701adc3651e7890de9"
+  },
+  "tools/verify-labyrinth.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.368606,
+    "ast_hash": "107ccbf8aa98d41eb696ea1aff0b9bd8",
+    "semantic_hash": "107ccbf8aa98d41eb696ea1aff0b9bd8"
+  },
+  "tools/verify-ouroboros.js": {
+    "mtime": 1793595284.5679607,
+    "seen": 1793595302.3686075,
+    "ast_hash": "d804fddffa4c9064e812e812881fff94",
+    "semantic_hash": "d804fddffa4c9064e812e812881fff94"
+  },
+  "tools/verify-pilgrimage.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686085,
+    "ast_hash": "182c21211f0bb077b7f0451405c1b568",
+    "semantic_hash": "182c21211f0bb077b7f0451405c1b568"
+  },
+  "tools/verify-pinball.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686094,
+    "ast_hash": "3a9ed393409d42a1a23d7f618b272418",
+    "semantic_hash": "3a9ed393409d42a1a23d7f618b272418"
+  },
+  "tools/verify-reliquary.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686106,
+    "ast_hash": "597488e57f38d6d7e76e4fedc39b7f5a",
+    "semantic_hash": "597488e57f38d6d7e76e4fedc39b7f5a"
+  },
+  "tools/verify-rituals.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686116,
+    "ast_hash": "1d985395f438a95213c347a541147f1d",
+    "semantic_hash": "1d985395f438a95213c347a541147f1d"
+  },
+  "tools/verify-seeker.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686125,
+    "ast_hash": "63b17ac608657d728b799b0910418dce",
+    "semantic_hash": "63b17ac608657d728b799b0910418dce"
+  },
+  "tools/verify-share-images.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686137,
+    "ast_hash": "ff68737fec284a315802839b280eca2e",
+    "semantic_hash": "ff68737fec284a315802839b280eca2e"
+  },
+  "tools/verify-sky.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.368615,
+    "ast_hash": "3cc99621a9e01258104e3ba871e2c9cf",
+    "semantic_hash": "3cc99621a9e01258104e3ba871e2c9cf"
+  },
+  "tools/verify-symbols.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.3686156,
+    "ast_hash": "b735ffd687c6548f03bb317f32642b7b",
+    "semantic_hash": "b735ffd687c6548f03bb317f32642b7b"
+  },
+  "tools/verify-treasure.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.368617,
+    "ast_hash": "1de6d86750e452e7e459548cf64155c4",
+    "semantic_hash": "1de6d86750e452e7e459548cf64155c4"
+  },
+  "tools/verify-ziggurat.js": {
+    "mtime": 1793595284.5686991,
+    "seen": 1793595302.368618,
+    "ast_hash": "21eb95b5e074458299f79535c02a6088",
+    "semantic_hash": "21eb95b5e074458299f79535c02a6088"
+  }
+}
