@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1997,
+ "count": 2001,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -634,6 +634,15 @@
    "from": "sources/ch68-nubia-kush.md"
   },
   {
+   "id": "source:archaeology-org/bab768da2b",
+   "type": "source",
+   "label": "https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:archaeology-org/f47c1c222d",
    "type": "source",
    "label": "https://archaeology.org/issues/november-december-2021/features/egypt-philae-temples/",
@@ -956,6 +965,15 @@
     "relic:v84"
    ],
    "from": "sources/v84-hinton-st-mary-mosaic.md"
+  },
+  {
+   "id": "source:assets-christianpost-com/63d1a1109a",
+   "type": "source",
+   "label": "https://assets.christianpost.com/news/noahs-ark-original-was-round-according-to-4000-year-old-tablet-at-british-museum.html",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:assets-press-princeton-edu/56f20e8cc9",
@@ -4485,6 +4503,15 @@
     "relic:v75"
    ],
    "from": "sources/v75-golden-plates.md"
+  },
+  {
+   "id": "source:deseret-com/e2db0a6f82",
+   "type": "source",
+   "label": "https://www.deseret.com/2014/1/24/20461490/was-noah-s-ark-round-tablet-in-british-museum-contains-building-instructions",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:dialectrix-com/007b300c84",
@@ -13697,6 +13724,15 @@
     "chapter:ch56"
    ],
    "from": "sources/ch56-mandaeans-yazidis-druze.md"
+  },
+  {
+   "id": "source:pbs-org/a3054a4f10",
+   "type": "source",
+   "label": "https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:pdxscholar-library-pdx-edu/ddbba80394",

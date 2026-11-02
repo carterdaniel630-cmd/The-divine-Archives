@@ -104,8 +104,9 @@ A member of the public brought Irving Finkel, a curator at the British
 Museum, a cell-phone-sized cuneiform tablet his father had carried home from the
 Middle East after the Second World War. Accounts differ on when: the *Jewish
 Chronicle* and Wikipedia say Finkel first saw it in 1985, and the *Jewish Chronicle*
-says the owner left it with him only in 2009; some later summaries give 2009 alone,
-while most 2014 news reports say only "a few years ago". The sources do not fully line up, and this chapter does not resolve
+says the owner left it with him only in 2009; one later summary gives 2009 alone,
+while the 2014 news reports checked give no year (the widely reprinted Associated Press
+story says only "a few years ago"). The sources do not fully line up, and this chapter does not resolve
 them (the Vault entry on the Ark Tablet, V90, sets them side by side). It turned out to be one of the most
 remarkable flood documents ever found. The **"Ark Tablet,"** sixty lines of Old
 Babylonian script written around 1900–1700 BCE, is essentially a construction
@@ -421,9 +422,11 @@ origin remains in the dark.
   [Jewish Chronicle: The tablet that altered the story of Noah's ark](https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe)
   ("Finkel first came across the tablet in 1985"; "only managed to convince Simmonds to leave it with him in 2009");
   [historyofinformation.com: Discovery of the "Ark Tablet"](https://historyofinformation.com/detail.php?id=4060)
-  (a later summary: "In 2009 … received"); 2014 reports with no year, "Finkel got hold of it a few years ago":
-  [Christian Science Monitor, 25 January 2014](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round),
-  [Times of Israel (AP)](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/);
+  (a later summary: "In 2009 … received"); 2014 reports with no year — the Associated Press story, "Finkel got hold of it a few years ago",
+  as reprinted by the [Christian Science Monitor, 25 January 2014](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round)
+  and [Times of Israel](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/);
+  [PBS NewsHour, 24 January 2014](https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round);
+  [Archaeology magazine, 27 January 2014](https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/);
   [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
   (first encountered the tablet in 1985, could not translate the whole of it until 2009;
   Alleppey, Kerala, 2014; gives "one-third scale" and a continuously running petrol pump; the documentary

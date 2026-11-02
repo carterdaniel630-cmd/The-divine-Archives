@@ -91,3 +91,13 @@ presented as such and can be cut if you'd prefer a drier opening.
   "Finkel got hold of it a few years ago"; NBC News (https://www.nbcnews.com/science/science-news/babylonian-tale-round-ark-draws-wrath-some-christian-circles-flna2D12035655)
   gives no year. The Guardian article itself was not opened. The page now says some later summaries give 2009 alone
   and most 2014 reports say only "a few years ago".
+- 2026-11-02 (review fix, PR #116 finding F2) — "some later summaries" and "most 2014 news reports say only 'a few
+  years ago'" over-stated what was checked. Only one later summary (historyofinformation.com) gives 2009 alone. The
+  "a few years ago" line is from one Associated Press story (Jill Lawless, 24 Jan 2014), reprinted by the Christian
+  Science Monitor, Times of Israel, [Deseret News](https://www.deseret.com/2014/1/24/20461490/was-noah-s-ark-round-tablet-in-british-museum-contains-building-instructions)
+  and the Daily Star — not separate reports. Other 2014 reports opened (fetch tool) give no year and not that phrase:
+  [PBS NewsHour, 24 Jan 2014](https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round),
+  [Archaeology magazine, 27 Jan 2014](https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/),
+  [Christian Post](https://assets.christianpost.com/news/noahs-ark-original-was-round-according-to-4000-year-old-tablet-at-british-museum.html)
+  ("years ago"), NBC News. The page now says one later summary gives 2009 alone and the 2014 reports checked give
+  no year (the widely reprinted AP story says only "a few years ago"). The Guardian article was still not opened.
