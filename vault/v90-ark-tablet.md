@@ -6,7 +6,7 @@ A clay tablet about the size of a mobile phone, with **sixty lines** of Old Baby
 
 ## From a serviceman's souvenirs to the British Museum
 
-- **Leonard Simmons** served with the RAF and came home after the Second World War with a small collection of antiquities. His son **Douglas Simmons** inherited them and brought the tablet to Finkel. Accounts give two dates. *Historia* magazine and the *Jewish Chronicle* both say Douglas first brought it to the British Museum in **1985**, and *Historia* says he took it away again. The *Jewish Chronicle* says he left it with Finkel only in **2009**, as do many 2014 news reports. (The family name is spelled "Simmonds" in some accounts.)
+- **Leonard Simmons** served with the RAF and came home after the Second World War with a small collection of antiquities. His son **Douglas Simmons** inherited them and brought the tablet to Finkel. Accounts give two dates. *Historia* magazine and the *Jewish Chronicle* both say Douglas first brought it to the British Museum in **1985**, and *Historia* says he took it away again. The *Jewish Chronicle* says he left it with Finkel only in **2009**, and one later summary (historyofinformation.com) gives 2009 alone. The 2014 news reports checked give no year: the widely reprinted Associated Press story says only that Finkel "got hold of it a few years ago". (The family name is spelled "Simmonds" in some accounts.)
 - Finkel worked on the text for several years and published it in **January 2014**, when the tablet went on display at the British Museum on loan. The tablet is **privately owned**, so it has no British Museum collection record; Finkel's book *The Ark Before Noah* publishes a photograph, the text and his translation, and is the edition this entry follows. This entry does not say where the tablet is shown today.
 - It was shown **beside the Babylonian Map of the World**, a clay tablet whose text describes islands beyond the ocean at the edge of the known world. Finkel's reading of that text says that on one of them are **the remains of the ark**.
 
@@ -52,7 +52,7 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 
 **What's genuinely open**
 
-- **How the two dates fit.** *Historia* and the *Jewish Chronicle* (and the Wikipedia article on the 2014 replica) put a first viewing in 1985; the *Jewish Chronicle* and many 2014 news reports put Finkel's study from 2009. *Historia* gives no year for that, but says it was "another 14 years" before Finkel met the owner again, which would be about 1999. The sources do not line up exactly, and this entry does not resolve it.
+- **How the two dates fit.** *Historia* and the *Jewish Chronicle* (and the Wikipedia article on the 2014 replica) put a first viewing in 1985; the *Jewish Chronicle* and one later summary (historyofinformation.com) put Finkel's study from 2009, and the 2014 news reports checked give no year. *Historia* gives no year for that, but says it was "another 14 years" before Finkel met the owner again, which would be about 1999. The sources do not line up exactly, and this entry does not resolve it.
 - The tablet's **exact date** within c. 1900–1700 BCE. It is dated by its script and language. Where it was found is not recorded.
 - How this instruction-form telling relates to the ***Atrahasis*** epic itself: an extract from it, a scribe's expansion, or a separate retelling.
 - Whether a full-size boat, built exactly to the tablet with ancient materials and skills, would have kept the water out. The 2014 build does not decide it.
@@ -70,6 +70,8 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 - "Irving Finkel and the ark", *Historia* magazine (Finkel's account: first shown the tablet in 1985, the owner took it away again; "another 14 years" before they met again), https://historiamag.com/irving-finkel-and-the-ark/
 - "The tablet that altered the story of Noah's ark", *Jewish Chronicle* (first came across it in 1985; the owner left it with him in 2009), https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe
 - "Discovery of the 'Ark Tablet'", historyofinformation.com (received in 2009; sixty lines; 1900–1700 BCE; 11.5 x 6.0 cm), https://historyofinformation.com/detail.php?id=4060
+- J. Lawless, Associated Press story of 24 January 2014, reprinted by the *Christian Science Monitor* as "Noah's Ark: Was it really round?" ("Finkel got hold of it a few years ago"; no year given), https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round
+- PBS NewsHour, 24 January 2014 (no year given for when Finkel received it), https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round
 
 *The 2014 build*
 

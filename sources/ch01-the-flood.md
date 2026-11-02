@@ -101,3 +101,11 @@ presented as such and can be cut if you'd prefer a drier opening.
   [Christian Post](https://assets.christianpost.com/news/noahs-ark-original-was-round-according-to-4000-year-old-tablet-at-british-museum.html)
   ("years ago"), NBC News. The page now says one later summary gives 2009 alone and the 2014 reports checked give
   no year (the widely reprinted AP story says only "a few years ago"). The Guardian article was still not opened.
+- 2026-11-02 (Vault V90, same wording as the ch01 fix in PR #116) — V90 said "as do many 2014 news reports" (2009)
+  and "the *Jewish Chronicle* and many 2014 news reports put Finkel's study from 2009". Neither was shown by a cited
+  source (see the F1/F2 entries above). V90 now says one later summary (historyofinformation.com) gives 2009 alone and
+  the 2014 news reports checked give no year, quoting the Associated Press story (Jill Lawless, 24 Jan 2014). Re-opened
+  this check (fetch tool): [Christian Science Monitor (AP)](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round)
+  and [Times of Israel (AP)](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/), both
+  "Finkel got hold of it a few years ago", byline Jill Lawless, AP. PBS NewsHour was not re-opened this check (the
+  fetch was not permitted); V90 relies on the F2 entry above for it giving no year.
