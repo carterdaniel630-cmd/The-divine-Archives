@@ -11,7 +11,9 @@
    "href": "museum.html#ch01",
    "links": [
     "chapter:ch01",
-    "figure:noah"
+    "figure:noah",
+    "relic:v89",
+    "relic:v90"
    ],
    "from": "docs/museum/manifest.json"
   },

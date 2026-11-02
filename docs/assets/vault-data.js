@@ -2058,6 +2058,26 @@ window.VAULT = {
         ]
       },
       study: { manifest: "", rights: "Photographs of the relic belong to the basilica; none is reproduced here. The museum shows a modelled rendition, not a replica.", external: [] }
+    },
+    {
+      id: "v89", slug: "flood-tablet", status: "published", pending: true,
+      era: "03-early-iron-age", year: -650, chapters: ["ch01", "ch03"],
+      title: "The Flood Tablet", category: "texts",
+      source: "vault/v89-flood-tablet.md",
+      held: "British Museum, London (K.3375)",
+      dated: "Neo-Assyrian copy, 7th century BCE, from Ashurbanipal's library at Nineveh; the flood story it carries is far older",
+      summary: "The eleventh tablet of the Epic of Gilgamesh, in which Utnapishtim tells how a god warned him of the flood, how he built a cube-shaped boat, and how he sent out a dove, a swallow and a raven. George Smith read it in 1872 and showed that the flood story was older than Genesis. Its flood was adapted from the older Atrahasis epic.",
+      study: { manifest: "", rights: "The British Museum publishes photographs and the collection record of the tablet in its online database; none is reproduced here.", external: [ { label: "British Museum — the Flood Tablet (K.3375)", href: "https://www.britishmuseum.org/collection/object/W_K-3375" } ] }
+    },
+    {
+      id: "v90", slug: "ark-tablet", status: "published", pending: true,
+      era: "02-bronze-age", year: -1800, chapters: ["ch01", "ch03"],
+      title: "The Ark Tablet", category: "texts",
+      source: "vault/v90-ark-tablet.md",
+      held: "Private collection; published by Irving Finkel of the British Museum, where it was shown on loan in 2014",
+      dated: "Old Babylonian, c. 1900–1700 BCE, by its script and language",
+      summary: "Sixty lines of Old Babylonian cuneiform in which the god Enki tells Atrahasis how to build the boat: round, like a giant coracle, of rope, wooden ribs and bitumen. Its damaged closing lines bring the animals aboard two by two. Its translator is sure no such ark existed.",
+      study: { manifest: "", rights: "The tablet is privately owned. No institution publishes a collection record or images of it; Irving Finkel's book The Ark Before Noah (2014) publishes a photograph, the text and a translation.", external: [] }
     }
   ],
   /* In preparation — each needs its own sourced entry before it is published. */
