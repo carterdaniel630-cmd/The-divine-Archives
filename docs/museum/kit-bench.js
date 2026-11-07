@@ -12,7 +12,7 @@ const scene = new THREE.Scene(); scene.background = new THREE.Color(0x0a0805);
 scene.environment = studioEnvironment(renderer); scene.environmentIntensity = 1.0;
 const camera = new THREE.PerspectiveCamera(40, 1, 0.05, 80);
 
-scene.add(ground("worked-stone", 14, { tint: 0x8a8070 }));   // the floor is darker than the pieces, so the pieces read first
+scene.add(ground("worked-stone", 14, { tint: 0x5c5448 }));   // the floor is darker than the pieces, so the pieces read first
 
 // the six pieces, each a plain form chosen to show its material honestly (not a model of any object)
 const pieces = [];
@@ -28,7 +28,7 @@ const uv = (g, kind) => metreUVs(g, tileOf(kind));
   const sheet = new THREE.Mesh(uv(g, "parchment"), material("parchment", { seed: 11, side: THREE.DoubleSide })); lect.add(sheet); put("parchment", "Aged parchment (on a wooden stand)", lect, 0.05, 0.55); }
 { const pts = [[0, 0], [0.1, 0.0], [0.17, 0.08], [0.2, 0.24], [0.15, 0.38], [0.08, 0.44], [0.09, 0.5], [0.0, 0.5]].map(([x, y]) => new THREE.Vector2(x, y));
   put("ceramic", "Ceramic (burnished, with crazing)", new THREE.Mesh(uv(new THREE.LatheGeometry(pts, 48), "ceramic"), material("ceramic", { seed: 13, side: THREE.DoubleSide })), 1.05, -0.95); }
-{ put("wood", "Wood (sawn board, grain and knots)", new THREE.Mesh(uv(new THREE.BoxGeometry(0.3, 1.2, 0.06).rotateZ(0.12).translate(0.06, 0.6, 0), "wood"), material("wood", { seed: 17 })), 1.1, 0.55); }
+{ put("wood", "Wood (sawn board, grain and knots)", new THREE.Mesh(uv(new THREE.BoxGeometry(0.3, 1.2, 0.06).rotateZ(0.12).translate(0.06, 0.6, 0), "wood"), material("wood", { seed: 17 })), 1.55, 0.75); }
 const marker = scaleFigure(); marker.position.set(-2.0, 0, -0.1); scene.add(marker);
 
 // the light

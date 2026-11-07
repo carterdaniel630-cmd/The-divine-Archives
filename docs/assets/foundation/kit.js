@@ -3,8 +3,9 @@
 
    One shared kit that every visual build stands on, so the floor is raised by
    what a build is handed rather than by each room re-inventing it
-   (handoff/visual-floor-plan-staging-note-2026-11-04.md, Lift 2; Carter's
-   ruling 2026-11-07: the kit is the Presence Pass's first movement).
+   (the visual-floor plan's Lift 2, staged on the build loop's handoff branch,
+   staging/ready-line, 2026-11-04; Carter's ruling 2026-11-07: the kit is the
+   Presence Pass's first movement).
 
    What is in it:
    - MATERIALS: a library of tuned surfaces (worked stone, bronze, gold, aged
@@ -204,6 +205,7 @@ export function studioEnvironment(renderer, warmth) {
   panel(0x2a2016, 1, 0, -3, 0, 12, 12);                                                              // floor bounce
   const pm = new THREE.PMREMGenerator(renderer), rt = pm.fromScene(scene, 0.04);
   pm.dispose();
+  scene.traverse((x) => { if (x.isMesh) { x.geometry.dispose(); x.material.dispose(); } });
   return rt.texture;
 }
 
@@ -211,7 +213,7 @@ export function studioEnvironment(renderer, warmth) {
 // Each rig: key (colour, intensity, position), fill (hemisphere sky/ground), rim, exposure.
 // grade "screen" is the reference; grade "phone" lifts shadows and exposure for a phone held in a dim room.
 export const RIGS = {
-  flame:   { key: [0xffb46b, 14, [1.6, 2.4, 1.8], 7], fill: [0x6a5440, 0x1a120a, 0.3], rim: [0xffd9a0, 6, [-2.5, 2.2, -2.2]], exposure: 1.0, label: "Flame light (lamps, braziers)" },
+  flame:   { key: [0xffb46b, 9, [0.6, 2.2, -0.2], 5], fill: [0x6a5440, 0x1a120a, 0.3], rim: [0xffd9a0, 6, [-2.5, 2.2, -2.2]], exposure: 1.0, label: "Flame light (lamps, braziers)" },
   skylight:{ key: [0xfff1dc, 2.2, [1.5, 6, 2]],    fill: [0xb8c8dc, 0x3a3024, 0.7],  rim: [0xd8e6ff, 1.2, [-3, 3, -3]],   exposure: 1.0, label: "Skylight (open court, daylight from above)" },
   gallery: { key: [0xfff4e6, 1.7, [2.5, 4, 3]],    fill: [0xd8d2c8, 0x2a241c, 0.55], rim: [0xffffff, 1.0, [-3, 2.5, -2]], exposure: 1.0, label: "Gallery (even, neutral, for study)" },
 };
@@ -253,7 +255,9 @@ export function rig(scene, name, grade, opt) {
 export function ground(kind, size, opt) {
   const o = opt || {}, g = new THREE.PlaneGeometry(size, size, 1, 1).rotateX(-Math.PI / 2);
   metreUVs(g, tileOf(kind));
-  const m = material(kind, o);
+  // the edge fade is written into the breakup's shader code, so the ground always carries a breakup (0 = none visible)
+  const m = material(kind, Object.assign({}, o, { breakup: o.breakup === false ? 0 : o.breakup }));
+  m.envMapIntensity = o.envMapIntensity == null ? 0.3 : o.envMapIntensity;   // the floor takes little of the studio's light, so the pieces read first
   const fadeTo = new THREE.Color(o.fadeTo == null ? 0x0a0805 : o.fadeTo), r0 = size * 0.32, r1 = size * 0.5;
   const prev = m.onBeforeCompile;
   m.onBeforeCompile = (sh) => {
@@ -295,6 +299,13 @@ export function frame(camera, object, opt) {
   camera.position.set(s.center.x + Math.sin(yaw) * fit, y, s.center.z + Math.cos(yaw) * fit);
   camera.lookAt(s.center); camera.updateProjectionMatrix();
   return { center: s.center, distance: fit };
+}
+
+// free every texture the kit has painted (for a room or site that is built and later torn down; materials
+// returned by material() belong to the caller and are disposed by it)
+export function disposeKit() {
+  for (const k of Object.keys(texCache)) { for (const t of Object.values(texCache[k])) t.dispose(); delete texCache[k]; }
+  if (BREAKUP) { BREAKUP.dispose(); BREAKUP = null; }
 }
 
 export const KIT_VERSION = 1;
