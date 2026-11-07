@@ -563,3 +563,5 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - (PR #92: answered "a" = yes, 2026-11-01 ~02:10 UTC; merged 02:44 UTC.)
 - (Graph wording: answered "a", fixed.)
 Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-2026-10-28/`.
+
+- 2026-11-07 22:50 UTC: #118 (0acdc4f3) and #119 (d062ef37) are on main; deploy green. Next in the queue: the Presence Pass (rooms onto the kit, one at a time), lock to be taken first.
