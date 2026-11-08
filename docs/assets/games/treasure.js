@@ -303,6 +303,13 @@
 
   function mountGame(root, ctx) {
     var VIEWW = 480, VIEWH = ROWS * TILE, LH = VIEWH, MAXHEARTS = 3, STEP = 1 / 60;
+    // full screen on a phone held sideways: the view widens to the screen's shape (more of the level to the sides,
+    // never stretched), so the picture reaches both edges; everywhere else it is the classic 480 wide
+    var BASEW = 480, MAXW = 720, WIDEQ = window.matchMedia ? window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)") : null;
+    function viewFor(cv) {
+      if (!cv || !WIDEQ || !WIDEQ.matches || !cv.closest(".game-dialog.is-full")) return BASEW;
+      return Math.max(BASEW, Math.min(MAXW, Math.round(VIEWH * window.innerWidth / Math.max(1, window.innerHeight))));
+    }
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var COL = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680") };
@@ -1714,7 +1721,14 @@
         '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), crack the whip with <b>B</b> (J or X). Whip a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
-      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR); });
+      AG.onFit(canvas, function () {
+        var w = viewFor(canvas);
+        if (w !== VIEWW) {                   // new shape first, so the picture's on-screen size (and so its sharpness) follows it
+          VIEWW = w; canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
+          if (st && st.p && st.LW) st.cam = clamp(st.p.x - VIEWW * 0.45, 0, Math.max(0, st.LW - VIEWW));
+        }
+        DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
+      });
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);
       try { canvas.focus({ preventScroll: true }); } catch (e) { }   // keep keyboard focus inside the dialog (Esc still closes it)
