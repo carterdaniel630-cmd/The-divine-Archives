@@ -605,3 +605,5 @@ Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-202
 - 2026-11-07 22:50 UTC: #118 (0acdc4f3) and #119 (d062ef37) are on main; deploy green. Next in the queue: the Presence Pass (rooms onto the kit, one at a time), lock to be taken first.
 
 - 2026-11-08 ~15:15 UTC: (4) chapter-images tranche 1 built as PR #130 (draft, `loop/chapter-images-t1` 327fdda4): 82 museum-rendition stills on the chapter Vault cards, 190 pictures on 54 chapters, V68 + V16/V17/V74 excluded. Linkage gaps (order item 4) already linked on main. Independent review running (session ..01HFWzTnvXVBLaXaK97CDDKy builder, reviewer is a separate pass). Merge per item. Lock released while it waits.
+
+- 2026-11-08 ~16:50 UTC: PR #130 (chapter-images t1) head 593d7d17. Review FINDINGS 6 -> fixed (shared exclusion list tools/data/relic-stills.json: V68, V76, V16/V17/V74, D2 nine; verify-relic-stills.js; verify.yml paths); delta PASS; delta 2 PASS. Three revered-figure stills (V57 Mandylion, V25 Veronica, V13 Tilma) held out pending Carter. 168 stills shown on chapter pages. Waits on GitHub green + Carter per-item yes.
