@@ -583,6 +583,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - Stream-engine CUT list (`decisions-2026-10-26-stream-engine.md`): never built.
 
 ## Needs Carter
+- **PR #130, chapter images tranche 1 (2026-11-08):** reviewed (PASS after fixes). (1) yes, merge once GitHub is green? (2) revered-figure stills V57 Mandylion, V25 Veronica, V13 Tilma: **a** show on chapter pages (recommended; captioned as renditions), **b** keep off. Asked in Carter's thread 16:50 UTC.
 - (PR #127: **answered yes (a)** ~13:04 UTC; merged ~13:44 UTC.) Was: **PR #127, The Rök Stone, Decoded (2026-11-08):** new Vault reading page; review passed after fixes, pending-review tag on. Photos not yet in (atlas). **a:** yes, merge once checks are green, photos follow later. **b:** yes, but only after the photos are added. **c:** not yet.
 - **Rök page link from the Vault entry (2026-11-08):** the order asks the Rök Runestone Vault entry (V36) to link to the new page. V36 is cleared, so adding one link means re-clearing it for that link only. **a:** yes, re-clear V36 for the link only. **b:** leave V36 as it is; the new page links to it, but it does not link back.
 - ~~Verdict-heading variants~~ answered **a** (leave them), `decisions-2026-11-08-verdict-variants-a.md`.
