@@ -30,3 +30,8 @@ The order (item 7) asks for real, rights-clean photographs of the stone's faces.
 
 ## Not on the page by design
 - The Vault entry (V36) does not yet link to this page. Changing the cleared entry needs Carter's re-clear, which is a separate question.
+
+## Corrections after independent review (2026-11-08, PR #127 findings F1–F3)
+- **Cross cipher, first group (F2):** the page now reads "2:5, 2:3 + *bi* → *sibi*" (two cipher signs plus plain *bi*), as Wikipedia's Unicode transcription prints it per the review (`handoff/replies/2026-11-08-pr127-independent-review.md`, fetched by the reviewing run 2026-11-08). The report's copy had "[2:5 = ᛌ]ᛁᛓᛁ", which gave the earlier "+ *ibi*". The on-site poster as transcribed by Schmeh/Ekhall (source 7) also gives two coded signs plus "bi", but prints the *i* as "Rune 3 of the **first** class", which conflicts with Wikipedia's 2:3; the page follows Wikipedia's pair and this conflict is left open here. The fixing run could not re-open Wikipedia itself (fetch not permitted); the delta review should re-check it.
+- **Family numbers (F3):** the page now says the family numbers are as printed and are not counted in the row's left-to-right order (in the printed pairs *f u þ a r k* is family 3, *t b m l R* family 1). Read off the pairs already on the page; Holmberg et al. 2020 uses a different notation again.
+- **Källström 2021 (F1):** the three 2021 interpretations he counted are a further Holmberg article (*Maal og Minne*), Henrik Williams's book *Rökstenen och världens undergång* (both by members of the 2020 team) and Bo Ralph's two-volume *Fadern, sonen och världsalltet*. The page no longer calls all three "rival". Still read only through the report (search index); K-blogg itself was not reachable.
