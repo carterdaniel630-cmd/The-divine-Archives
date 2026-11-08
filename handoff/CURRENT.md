@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (17:50 UTC)
+# Handoff — updated 2026-11-08 (21:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: chapter images tranche 1 is live (2026-11-08 ~17:23 UTC)
+## Latest: relic-stills ruling wording merged (2026-11-08 ~20:57 UTC)
+- **`main` = `2c350132`** (deploy run 257): **PR #131** fast-forwarded `593d7d17` → `2c350132` **per item** on Carter's "merge" (`decisions-2026-11-08-carter-merge-131.md`). Three internal exclusion reasons (V57/V25/V13) in `tools/data/relic-stills.json` now record Carter's ruling to keep those stills off; nothing on the live pages changes. GitHub 7/7 green incl. Lighthouse; review PASS 0 findings; local checks re-run green by the merging run.
+- **Open:** PR #132 (pack-six fixes) needs independent review + Carter's yes; front-door v4 and Rotunda Tray 1 wait on atlas binary files.
+
+## Earlier: chapter images tranche 1 is live (2026-11-08 ~17:23 UTC)
 - **`main` = `593d7d17`** (deploy run 256 green, 17:23 UTC): **PR #130** fast-forwarded `b3188230` → `593d7d17` **per item** on Carter's yes (`decisions-2026-11-08-carter-yes-130.md`). 168 museum-rendition stills on 50 chapter pages (V68, V76, the rights-ledger three, the D2 nine and the three revered-figure stills V57/V25/V13 held out by `tools/data/relic-stills.json`). Post-merge check by the 17:42 run (wrote none of it): verify 18/18 incl. `verify-relic-stills.js`, tests 42/42, every still file present, headless 360/390/1280 standards mode, no overflow, no script errors. Reply `replies/2026-11-08-run-1742-pr130-post-merge.md`.
 - **Open:** revered-figure stills a/b (Carter); D2 sensitivity holds (Carter); pack-six rebuild, front-door v4 and Rotunda Tray 1 wait on atlas files (`handoff/pack-six/`, `handoff/front-door-v4/`, `handoff/rotunda/tray1/`).
 
