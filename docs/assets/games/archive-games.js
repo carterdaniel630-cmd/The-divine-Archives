@@ -297,8 +297,10 @@
     var settle = function () { fitMain(on); try { window.dispatchEvent(new Event("archive:fit")); } catch (e) { /* old browser */ } };
     setTimeout(settle, 60); setTimeout(settle, 450);
   }
-  // full screen on a phone held sideways, for the games whose D-pad and buttons can float over the picture
-  function immersive(d) { return !!(d.querySelector(".ap-host") && window.matchMedia && window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)").matches); }
+  // full screen on a phone held sideways: games.css lays out these games itself (the D-pad games with their
+  // controls floating over the picture, the board games in three columns with the board as tall as the screen)
+  var SIDEWAYS_LAID_OUT = ".ap-host, .ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap";
+  function sidewaysLaidOut(d) { return !!(d.querySelector(SIDEWAYS_LAID_OUT) && window.matchMedia && window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)").matches); }
   // turning the phone while in full screen: size the picture again for the new shape, then let the games
   // re-measure their canvases (their own resize check can run before the old size is cleared)
   var refitT = null;
@@ -316,7 +318,7 @@
     if (!best) return;
     ["width", "max-width", "max-height", "height"].forEach(function (k) { best.style.removeProperty(k); });
     if (!on || !openState.overlay.classList.contains("is-full")) return;
-    if (immersive(d)) return;                // a D-pad game on a phone held sideways: games.css fills the screen
+    if (sidewaysLaidOut(d)) return;          // a phone held sideways: games.css sizes the board to the screen
     // binary-search the widest size at which the whole dialog still fits the screen without scrolling
     var r0 = best.getBoundingClientRect().width, pw = d.clientWidth - 24;
     var set = function (w) { best.style.setProperty("width", w + "px", "important"); best.style.setProperty("height", "auto", "important"); best.style.setProperty("max-width", "100%", "important"); best.style.setProperty("max-height", "none", "important"); };
