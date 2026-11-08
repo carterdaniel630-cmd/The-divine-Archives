@@ -174,4 +174,4 @@ const about = { id: "about", cat: "About this model", title: "How close is this 
     "<p><strong>Not shown:</strong> Caves 2 and 5 to 11, the inside of the settlement, the modern paths and fences, and the people. The objects in the caves are renditions, placed where their kind was found; the real objects are in Jerusalem and Amman.</p>",
   links: [L.ch10, L.v02], sources: REF.djd1 + "; " + REF.djd3 + "; " + REF.djd6 + "; " + REF.magness + "." };
 
-export default { title: "The Qumran caves", version: 1, stones: ["rock", "core", "block", "wood"], sections, regions, route, info, about, D, V0 };
+export default { title: "The Qumran caves", version: 2, stones: ["rock", "core", "block", "wood"], sections, regions, route, info, about, D, V0 };
