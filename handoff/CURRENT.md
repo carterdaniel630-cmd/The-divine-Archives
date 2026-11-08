@@ -46,7 +46,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
     Fix: on phone-width screens the window hangs from the top. Measured: layout shift 0 on all 11 game pages.
     Visible change: shorter windows sit at the top on upright phones. #128 carries the same rule word for word.
     Waiting on green checks and Carter's merge yes.
-  - Open PRs now (2026-11-08): #128, #129, and #127 (draft, build loop: the Rök Stone page). #120 merged 2026-11-08; #93
+  - Open PRs now (2026-11-08): #128 and #129. #127 (the Rök Stone page) merged 2026-11-08. #120 merged 2026-11-08; #93
     merged 2026-11-01; #60 (journal hero) closed unmerged 2026-11-07. #64, #67 and #68 below are merged.
 - Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
   - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
