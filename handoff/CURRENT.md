@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (21:40 UTC)
+# Handoff — updated 2026-11-08 (23:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: pack-six game fixes merged (2026-11-08 ~21:38 UTC)
+## Latest: new homepage (front-door v4) merged (2026-11-08 ~23:06 UTC)
+- **`main` = `a5256e38`** (deploy run 259): **PR #133** fast-forwarded `77d006e6` → `a5256e38` **per item** on Carter's "yes" (`decisions-2026-11-08-carter-yes-133.md`). `docs/index.html` rebuilt on Carter's approved proof v4 (living front door: museum door band, From the Vault carousel V90/V89/V58 as labelled sketches, eight doors, all 11 games, Nine Ages, Simple version); plaque counts baked by `build-pages` (`home-counts`); four proof photos in `docs/assets/front-door/`; share-card emblem kept in `tools/data/site-emblem.svg`. Independent review PASS 0 findings (`replies/2026-11-08-pr133-independent-review.md`, review-log `a7b26632`); GitHub 6/6 green incl. Lighthouse (22:49 UTC); local checks re-run green by the merging session before the push.
+- **Open:** live check of the homepage on Carter's phone / atlas; Rotunda Tray 1 (next loop item); six-game production rebuild; photo provenance note for `handoff/front-door-v4/IMAGES.md` (atlas, optional).
+
+## Earlier: pack-six game fixes merged (2026-11-08 ~21:38 UTC)
 - **`main` = `77d006e6`**: **PR #132** fast-forwarded `2c350132` → `77d006e6` **per item** on Carter's "yes" (`decisions-2026-11-08-carter-yes-132.md`). Adds `products/games-of-the-ancients/` (the six Gumroad games, as sold, then the G-1..G-5 fixes: 44 px controls, Ur night palette on light-mode phones, Hnefatafl panel stripes, Mancala row labels, Ur entry hint). Not served by the site; `docs/` unchanged. Review PASS 0 findings (`replies/2026-11-08-pr132-independent-review.md`); GitHub 5/5 green; local checks green.
 - **Open:** atlas swaps the six files into the Gumroad products; later the full six-game production rebuild; front-door v4 and Rotunda Tray 1 wait on atlas binary files.
 
