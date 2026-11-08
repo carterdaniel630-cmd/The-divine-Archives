@@ -300,7 +300,9 @@
   // full screen on a phone held sideways: games.css lays out these games itself (the D-pad games with their
   // controls floating over the picture, the board games in three columns with the board as tall as the screen)
   var SIDEWAYS_LAID_OUT = ".ap-host, .ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap";
-  function sidewaysLaidOut(d) { return !!(d.querySelector(SIDEWAYS_LAID_OUT) && window.matchMedia && window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)").matches); }
+  // (those rules need :has(); a browser without it keeps the older fitting below)
+  var HAS_SEL = !!(window.CSS && CSS.supports && CSS.supports("selector(:has(*))"));
+  function sidewaysLaidOut(d) { return !!(HAS_SEL && d.querySelector(SIDEWAYS_LAID_OUT) && window.matchMedia && window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)").matches); }
   // turning the phone while in full screen: size the picture again for the new shape, then let the games
   // re-measure their canvases (their own resize check can run before the old size is cleared)
   var refitT = null;
