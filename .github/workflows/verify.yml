@@ -22,6 +22,9 @@ on:
       - "data/rituals/**"
       - "sources/ritual-*.md"
       - "reviews/cleared.json"
+      - "docs/assets/vault/stills/**"
+      - "docs/chapters/**"
+      - "tools/data/relic-stills.json"
       - ".github/workflows/verify.yml"
   pull_request:
     paths:
@@ -38,6 +41,9 @@ on:
       - "data/rituals/**"
       - "sources/ritual-*.md"
       - "reviews/cleared.json"
+      - "docs/assets/vault/stills/**"
+      - "docs/chapters/**"
+      - "tools/data/relic-stills.json"
       - ".github/workflows/verify.yml"
   workflow_dispatch: {}
 
