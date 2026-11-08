@@ -142,7 +142,7 @@ const info = [
     flags: [APPROX], links: [L.ch10, L.v02], sources: REF.djd6 + "; " + REF.bas4 + "; " + REF.magness + "." },
   { id: "holes", section: "s2", pos: [C4.x + 0.2, 1.4, C4.z + D.c4a.rz - 0.5], cat: "II · Cave 4", title: "The holes in the walls",
     html: "<p>Rows of holes run along the walls of chamber 4a. One reading is that they held the pegs of wooden shelves, which would make the cave a storeroom or library for scrolls. Others think they belong to a different use of the cave altogether. Nothing of any shelf survives.</p>",
-    flags: [CONTESTED, { t: "Number and spacing of holes approximate", soft: true }], sources: REF.djd6 + "; " + REF.magness + "." },
+    flags: [CONTESTED, { t: "Number, spacing and wear of holes approximate", soft: true }], sources: REF.djd6 + "; " + REF.magness + "." },
   { id: "c4-enoch", section: "s2", pos: [C4.x + 1.6, 1.35, C4.z + 1.2], relic: { id: "qm-enoch", build: "enochFragments", title: "Aramaic fragments of the Book of Enoch", category: "Manuscript fragments", held: "Israel Antiquities Authority, Jerusalem (4Q201–4Q212)", dated: "Copies from about 200 BCE onward (palaeography)", kind: "tablet", note: "A modelled rendition of a scatter of parchment fragments; the writing is illustrative marks, not the Aramaic text." }, title: "Enoch in Aramaic (Cave 4)",
     html: "<p>Among the Cave 4 fragments are pieces of at least eleven copies of the books of Enoch in their original Aramaic (numbered 4Q201&ndash;4Q212), with fragments of the related Book of Giants. J&oacute;zef Milik published them in 1976. They are the earliest surviving witnesses to these writings, centuries older than the complete Ge&rsquo;ez text in the vestibule.</p>",
     flags: [COPY], links: [L.v49, L.ch50], sources: REF.milik + "; " + REF.iaa + "." },
@@ -170,8 +170,8 @@ const info = [
 
 const about = { id: "about", cat: "About this model", title: "How close is this to the real thing?",
   html: "<p><strong>From published descriptions:</strong> which caves are natural and which are cut into the marl, the two chambers of Cave 4 and the rows of holes in its walls, the low entrance of Cave 1, and the fallen roof of Cave 3, after the excavation reports (Discoveries in the Judaean Desert I, III and VI) and Magness&rsquo;s synthesis.</p>" +
-    "<p><strong>Approximate:</strong> every size. The caves are modelled at roughly their published proportions, but their exact outlines, the number and spacing of the holes, and the shape of the fallen rock are our estimates. The terrace, the cliffs, the ruins and the sea are a low-detail backdrop, and the distances between the caves are not to scale.</p>" +
+    "<p><strong>Approximate:</strong> every size. The caves are modelled at roughly their published proportions, but their exact outlines, the number, spacing and wear of the holes, and the shape of the fallen rock are our estimates. The terrace, the cliffs, the ruins and the sea are a low-detail backdrop, and the distances between the caves are not to scale.</p>" +
     "<p><strong>Not shown:</strong> Caves 2 and 5 to 11, the inside of the settlement, the modern paths and fences, and the people. The objects in the caves are renditions, placed where their kind was found; the real objects are in Jerusalem and Amman.</p>",
   links: [L.ch10, L.v02], sources: REF.djd1 + "; " + REF.djd3 + "; " + REF.djd6 + "; " + REF.magness + "." };
 
-export default { title: "The Qumran caves", version: 1, stones: ["rock", "core", "block", "wood"], sections, regions, route, info, about, D, V0 };
+export default { title: "The Qumran caves", version: 2, stones: ["rock", "core", "block", "wood"], sections, regions, route, info, about, D, V0 };
