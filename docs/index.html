@@ -9,211 +9,276 @@
   <link rel="stylesheet" href="assets/archive.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+  <link rel="preload" as="image" type="image/webp" href="assets/front-door/parchment.webp" fetchpriority="high" />
   <style>
-    .masthead {
-      min-height: 92vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center;
-      padding: 5rem 1.6rem 4rem; gap: 1.9rem;
+    /* ===== Living front door (proof v4, approved by Carter 2026-11-02) — production build =====
+       Every-Screen rule: the layout rearranges by width, the motion weighs less on small screens, and a
+       Simple version (no motion, plain ground) is one tap away and is the default under reduced motion. */
+    body.fd4 {
+      --fd-gold: #c9a227; --fd-gold-hi: #f0d67c; --fd-gold-pale: #ffeeb0; --fd-gold-dim: #8a6f1f;
+      --fd-ink: #f4ecd7; --fd-ink-soft: #d8cbab; --fd-ink-mute: #b3a37f;
+      --fd-panel: rgba(18,11,4,.86); --fd-panel2: rgba(28,19,8,.88);
+      --fd-line: rgba(216,182,90,.34);
+      --fd-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      color: var(--fd-ink); font-family: var(--fd-serif); background: #17100a; overflow-x: hidden;
     }
-    .emblem {
-      width: 108px; height: 108px; color: var(--gold);
-      filter: drop-shadow(0 0 14px rgba(185, 143, 78, 0.28));
-      animation: fade-rise 1.5s ease-out both;
-    }
-    .emblem .spin-slow { transform-origin: 60px 60px; animation: turn 140s linear infinite; }
-    .emblem .spin-rev  { transform-origin: 60px 60px; animation: turn 200s linear infinite reverse; }
-    .title-block { animation: fade-rise 1.5s ease-out 0.15s both; }
-    .masthead h1 {
-      font-family: var(--font-display); font-weight: 400;
-      text-transform: uppercase; letter-spacing: 0.2em; color: var(--parchment);
-      font-size: clamp(2.3rem, 6.4vw, 4.5rem); line-height: 1.04; margin: 0;
-      text-wrap: balance; text-shadow: 0 1px 0 #000, 0 0 34px rgba(185, 143, 78, 0.14);
-    }
-    .masthead h1 .the {
-      display: block; font-size: 0.32em; letter-spacing: 0.62em;
-      color: var(--gold); margin-bottom: 0.9rem; text-indent: 0.62em;
-    }
-    .subtitle {
-      max-width: 40rem; margin: 0 auto; color: var(--ink-dim); font-style: italic;
-      font-size: clamp(1rem, 2vw, 1.22rem); line-height: 1.7; text-wrap: balance;
-      animation: fade-rise 1.5s ease-out 0.3s both;
-    }
-    .masthead .search { margin-top: 0.4rem; animation: fade-rise 1.5s ease-out 0.45s both; }
-    /* doorways: the archive's strongest ways in, on the first screen */
-    .doorways {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem;
-      max-width: 34rem; margin: -0.2rem auto 0; animation: fade-rise 1.5s ease-out 0.55s both;
-    }
-    .doorways a {
-      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em;
-      font-size: 0.64rem; line-height: 1; color: var(--parchment);
-      display: inline-flex; align-items: center; min-height: 42px; box-sizing: border-box;   /* thumb-sized */
-      padding: 0.5rem 0.95rem; border: 1px solid var(--line); border-radius: 2px;
-      background: rgba(27, 20, 13, 0.55); transition: border-color 0.3s, color 0.3s, background 0.3s;
-    }
-    .doorways a:hover, .doorways a:focus-visible { border-color: var(--gold); color: var(--gold-bright); background: rgba(199, 154, 84, 0.08); }
-    .doorways a .dw-mark { color: var(--gold); margin-right: 0.35em; }
-    @media (max-width: 560px) {
-      .masthead { padding: 3.2rem 1.2rem 2.6rem; gap: 1.35rem; }
-      .emblem { width: 80px; height: 80px; }
-      .doorways { gap: 0.45rem; }
-      .doorways a { padding: 0.45rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.13em; }
-      .scroll-cue { margin-top: 0.4rem; }
-    }
-    .scroll-cue {
-      margin-top: 1.2rem; color: var(--ink-faint); font-family: var(--font-display);
-      text-transform: uppercase; letter-spacing: 0.34em; font-size: 0.62rem;
-      animation: fade-rise 1.5s ease-out 0.6s both;
-    }
-    .scroll-cue span { display: block; font-size: 1rem; margin-top: 0.4rem; animation: bob 2.6s ease-in-out infinite; }
+    .fd4 a { color: inherit; text-decoration: none; }
+    .fd4 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .fd4 .page { position: relative; z-index: 2; }
+    /* the parchment ground: one aged sheet under everything */
+    .fd-ground { position: fixed; inset: 0; z-index: 0; background: #241708 url("assets/front-door/parchment.jpg") center/cover no-repeat;
+      background-image: image-set(url("assets/front-door/parchment.webp") type("image/webp"), url("assets/front-door/parchment.jpg") type("image/jpeg")); }
+    .fd-ground::after { content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,7,2,.30), rgba(12,7,2,.52) 30%, rgba(12,7,2,.60) 70%, rgba(10,5,1,.78)); }
+    .fd-grain { position: fixed; inset: -40px; z-index: 40; pointer-events: none; opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E"); }
+    .fd-vignette { position: fixed; inset: 0; z-index: 39; pointer-events: none;
+      background: radial-gradient(105% 88% at 50% 42%, transparent 60%, rgba(0,0,0,.40) 100%); }
+    #fd-thread { position: fixed; left: 9px; top: 0; width: 2px; height: 0; z-index: 41; pointer-events: none;
+      background: linear-gradient(180deg, var(--fd-gold-hi), var(--fd-gold)); box-shadow: 0 0 8px rgba(240,214,124,.5); }
+    #fd-thread::after { content: ""; position: absolute; left: 50%; bottom: -5px; transform: translateX(-50%);
+      width: 9px; height: 9px; border-radius: 50%; background: var(--fd-gold-hi); box-shadow: 0 0 10px rgba(240,214,124,.8); }
+    .fd-wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; position: relative; z-index: 2; }
 
-    .explore {
-      border-block: 1px solid var(--line-soft);
-      background: linear-gradient(180deg, rgba(21,15,10,0), rgba(27,20,13,0.6), rgba(21,15,10,0));
-    }
-    .explore .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); }
-    .explore article {
-      background: var(--ground); padding: 2.4rem 1.8rem; text-align: center;
-      display: flex; flex-direction: column; gap: 0.55rem; align-items: center;
-      color: inherit; transition: background 0.3s ease;
-    }
-    a.explore-cell:hover { background: var(--panel); }
-    .explore-cell.wide { grid-column: 1 / -1; }
-    a.explore-cell { display: flex; background: var(--ground); }
-    a.explore-cell > article { flex: 1; }
-    .explore .num { font-family: var(--font-display); color: var(--gold); letter-spacing: 0.2em; font-size: 0.72rem; }
-    .explore h3 {
-      font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
-      letter-spacing: 0.16em; color: var(--parchment); font-size: 1.02rem; margin: 0;
-    }
-    .explore p { margin: 0; color: var(--ink-dim); font-size: 0.94rem; max-width: 18rem; }
+    /* ---------- hero ---------- */
+    .fd-hero { position: relative; z-index: 2; text-align: center; padding: 44px 18px 6px; overflow: hidden; }
+    .fd-hero:focus { outline: none; }
+    #fd-dust { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .fd-hero > *:not(#fd-dust) { position: relative; z-index: 1; }
+    .fd-kicker { color: var(--fd-gold-pale); letter-spacing: .44em; text-transform: uppercase; font-size: 12px; text-shadow: 0 1px 8px rgba(0,0,0,.8); }
+    .fd-kicker::before, .fd-kicker::after { content: ""; display: inline-block; vertical-align: middle; width: 44px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--fd-gold)); margin: 0 14px 3px; }
+    .fd-kicker::after { background: linear-gradient(90deg, var(--fd-gold), transparent); }
+    .fd-hero h1 { font-family: var(--fd-serif); font-weight: 600; font-size: clamp(37px, 8.8vw, 64px); line-height: 1.06; margin: 13px 6px 0;
+      letter-spacing: 0; text-transform: none; color: #fdf6dd; text-shadow: 0 3px 16px rgba(0,0,0,.75); }
+    .fd-hero h1 .w { display: inline-block; animation: fd-rise .9s cubic-bezier(.2,.7,.2,1) both; text-shadow: none;
+      background: linear-gradient(180deg, #fdf6dd 22%, var(--fd-gold-hi) 58%, #b08a24 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 16px rgba(0,0,0,.75)); }
+    @keyframes fd-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .fd-tagline { color: var(--fd-ink); font-style: italic; font-size: clamp(15px, 3.8vw, 19px); margin: 12px auto 4px; max-width: 580px;
+      padding: 0 12px; text-shadow: 0 1px 10px rgba(0,0,0,.85); line-height: 1.5; }
+    .fd-hero .search { margin: 18px auto 0; max-width: 520px; }
+    .fd-plaque { width: min(520px, 92vw); margin: 20px auto 0; background: var(--fd-panel); border: 1px solid var(--fd-line);
+      border-radius: 4px; padding: 13px 18px 11px; box-shadow: 0 14px 34px rgba(0,0,0,.5); }
+    .fd-plaque .insc { color: var(--fd-gold-hi); letter-spacing: .32em; font-size: clamp(10.5px, 2.9vw, 13px); text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(240,214,124,.3); margin: 0; }
+    .fd-plaque .hint { color: var(--fd-ink-mute); font-style: italic; font-size: 14px; margin: 7px 0 0; line-height: 1.5; }
+    .fd-ways { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 560px; margin: 18px auto 0; }
+    .fd-ways a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 15px; border: 1px solid var(--fd-line);
+      border-radius: 999px; background: rgba(20,13,4,.72); color: var(--fd-ink); font-size: 14.5px; transition: border-color .3s ease, color .3s ease; }
+    .fd-ways a:hover, .fd-ways a:focus-visible { border-color: var(--fd-gold-hi); color: var(--fd-gold-hi); }
+    .fd-ways .dw-mark { color: var(--fd-gold); margin-right: .35em; }
+    .fd-cue { margin: 22px auto 2px; width: 1px; height: 52px; background: linear-gradient(180deg, var(--fd-gold), transparent);
+      animation: fd-cue 2.6s ease-in-out infinite; }
+    @keyframes fd-cue { 0%,100% { opacity: .35; transform: scaleY(.8); } 50% { opacity: 1; transform: scaleY(1); } }
 
-    /* The Games menu */
-    .games-home {
-      border-top: 1px solid var(--line-soft);
-      background: radial-gradient(85% 120% at 50% 0%, rgba(199,154,84,0.09), transparent 62%);
-      padding: 5.2rem 0 4.6rem;
-    }
-    .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+    /* ---------- section heads + fold-in ---------- */
+    .fd-head { text-align: center; margin: 54px 0 6px; }
+    .fd-head .rule { width: 74px; height: 1px; background: var(--fd-gold); margin: 0 auto 12px; transform: scaleX(0); transition: transform 1s ease; }
+    .fd-head.in .rule { transform: scaleX(1); }
+    .fd-head h2 { font-family: var(--fd-serif); font-size: clamp(25px, 6vw, 35px); font-weight: 600; margin: 0; color: var(--fd-ink);
+      letter-spacing: 0; text-transform: none; text-shadow: 0 2px 14px rgba(0,0,0,.8); }
+    .fd-head p { color: var(--fd-ink-soft); font-style: italic; margin: 6px auto 0; font-size: 15.5px; max-width: 600px; text-shadow: 0 1px 8px rgba(0,0,0,.8); line-height: 1.5; }
+    .fd-head p a { color: var(--fd-gold-hi); border-bottom: 1px solid rgba(240,214,124,.4); }
+    .js-motion .rv { opacity: 0; transform: perspective(900px) rotateX(10deg) translateY(26px); transform-origin: center top;
+      transition: opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .js-motion .rv.in { opacity: 1; transform: none; }
+
+    /* ---------- the eight doors ---------- */
+    .fd-doors { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 24px; }
+    @media (min-width: 700px) { .fd-doors { grid-template-columns: 1fr 1fr; } }
+    .fd-card { position: relative; display: flex; gap: 16px; align-items: flex-start; background: linear-gradient(180deg, var(--fd-panel2), var(--fd-panel));
+      border: 1px solid var(--fd-line); border-radius: 10px; padding: 20px 18px 17px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.42);
+      transition: box-shadow .35s ease, border-color .35s ease, transform .18s ease; }
+    .fd-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 9px; opacity: .75; background: var(--fr, none); }
+    .fd-card::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .35s ease;
+      background: radial-gradient(360px 160px at var(--mx, 50%) -20%, rgba(240,214,124,.15), transparent 65%); }
+    .fd-card:hover::after, .fd-card:active::after, .fd-card:focus-visible::after { opacity: 1; }
+    .fd-card:active { transform: scale(.985); }
+    .fd-card:hover, .fd-card:focus-visible { border-color: rgba(240,214,124,.62); box-shadow: 0 16px 36px rgba(0,0,0,.55), 0 0 0 1px rgba(201,162,39,.14); }
+    .medal { flex: 0 0 auto; width: 56px; height: 56px; border: 1.5px solid var(--fd-gold); border-radius: 50%; position: relative;
+      display: flex; align-items: center; justify-content: center; background: rgba(201,162,39,.07); overflow: hidden; }
+    .medal .n { font-size: 16px; color: var(--fd-gold-hi); z-index: 2; text-shadow: 0 1px 3px #000; }
+    .gly { position: absolute; inset: 0; opacity: .35; }
+    .g-sun { background: radial-gradient(circle at 50% 118%, var(--fd-gold-hi) 15%, transparent 42%); }
+    .g-wave { background: repeating-radial-gradient(circle at 50% 130%, transparent 0 7px, var(--fd-gold) 7px 8.5px, transparent 8.5px 15px); }
+    .g-star { background: radial-gradient(2.2px 2.2px at 30% 26%, #fff 50%, transparent 52%), radial-gradient(1.7px 1.7px at 66% 16%, var(--fd-gold-pale) 50%, transparent 52%), radial-gradient(2px 2px at 78% 40%, #fff 50%, transparent 52%), radial-gradient(1.5px 1.5px at 18% 48%, var(--fd-gold-pale) 50%, transparent 52%); }
+    .g-eye { background: radial-gradient(ellipse 17px 8.5px at 50% 50%, transparent 60%, var(--fd-gold-hi) 62%, var(--fd-gold-hi) 70%, transparent 72%), radial-gradient(circle 4.4px at 50% 50%, var(--fd-gold-pale) 98%, transparent); }
+    .g-flame { background: radial-gradient(ellipse 9px 17px at 50% 88%, var(--fd-gold-hi) 8%, rgba(201,106,18,.55) 42%, transparent 68%); }
+    .g-moon { background: radial-gradient(circle 12.5px at 50% 40%, var(--fd-gold-pale) 96%, transparent), radial-gradient(circle 11.5px at 60% 33%, rgba(24,16,6,1) 96%, transparent); background-blend-mode: normal; }
+    .g-ring { background: radial-gradient(circle, transparent 52%, var(--fd-gold) 55%, var(--fd-gold) 63%, transparent 66%); }
+    .g-tablet { background: repeating-linear-gradient(0deg, transparent 0 8px, rgba(240,214,124,.75) 8px 9.5px, transparent 9.5px 17px); margin: 12px 9px; }
+    .fd-card h3 { font-family: var(--fd-serif); font-size: 19.5px; font-weight: 600; margin: 0 0 4px; color: var(--fd-ink); letter-spacing: 0; text-transform: none; }
+    .fd-card h3 small { font-size: .62em; letter-spacing: .08em; color: var(--fd-ink-mute); font-weight: 400; }
+    .fd-card p { color: var(--fd-ink-soft); font-size: 15px; line-height: 1.45; margin: 0; }
+    .fd-card .go { color: var(--fd-gold-hi); font-size: 15px; margin-top: 8px; display: inline-block; transition: transform .3s ease; }
+    .fd-card:hover .go { transform: translateX(5px); }
+
+    /* ---------- the museum door band ---------- */
+    .fd-plate { position: relative; width: 100%; margin: 34px 0 0; height: min(84vh, 780px); min-height: 480px; background: #0a0603; }
+    .fd-plate .band-media { position: absolute; inset: 0; overflow: hidden;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 13%, #000 87%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0, #000 13%, #000 87%, transparent 100%); }
+    .fd-plate .band-media img, .fd-plate .band-media picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .fd-plate .band-media img { object-fit: cover; object-position: 50% 38%; }
+    .js-motion .fd-plate .front img { animation: fd-kenburns 30s ease-in-out infinite alternate; }
+    @keyframes fd-kenburns { from { transform: scale(1) translateY(0); } to { transform: scale(1.08) translateY(-1.6%); } }
+    .fd-plate .hall { opacity: 0; transition: opacity 1.6s ease; }
+    .fd-plate .hall img { transform: scale(1.04); }
+    .fd-plate.open .hall { opacity: 1; }
+    .fd-plate.peek .hall { opacity: .34; }
+    .fd-plate .bloom { position: absolute; inset: 0; pointer-events: none; opacity: 0;
+      background: radial-gradient(58% 46% at 50% 56%, rgba(255,238,176,.5), transparent 70%); }
+    .fd-plate.open .bloom { animation: fd-bloom 1.8s ease-out; }
+    @keyframes fd-bloom { 0% { opacity: 0; } 25% { opacity: .9; } 100% { opacity: 0; } }
+    .fd-plate .band-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(5,3,1,.72) 88%); }
+    .fd-plate .door-toggle { position: absolute; inset: 0; z-index: 3; background: transparent; border: 0; cursor: pointer; width: 100%; }
+    .fd-plate .door-toggle:focus-visible { outline: 2px solid var(--fd-gold-hi); outline-offset: -8px; }
+    .fd-plate .band-cap { position: absolute; left: 0; right: 0; bottom: 7%; z-index: 4; text-align: center; padding: 0 20px; pointer-events: none; }
+    .band-cap .cap-k { color: var(--fd-gold-pale); letter-spacing: .4em; text-transform: uppercase; font-size: 11.5px; text-shadow: 0 1px 10px #000; margin: 0; }
+    .band-cap h2 { font-family: var(--fd-serif); font-size: clamp(30px, 7vw, 46px); font-weight: 600; margin: 6px 0 0; color: #fdf6dd;
+      letter-spacing: 0; text-transform: none; text-shadow: 0 3px 22px rgba(0,0,0,.9); }
+    .band-cap h2 small { font-size: .38em; letter-spacing: .1em; color: var(--fd-ink-soft); font-weight: 400; vertical-align: middle; }
+    .band-cap p { color: var(--fd-ink); font-style: italic; font-size: 15.5px; margin: 7px 0 0; text-shadow: 0 1px 10px #000; }
+    .band-cap p b { color: var(--fd-gold-pale); font-weight: 600; }
+    .fd-plate .enter { position: relative; margin: 0 auto 16px; transform: translateY(10px); white-space: nowrap; z-index: 5;
+      color: #140c02; background: linear-gradient(180deg, var(--fd-gold-pale), var(--fd-gold)); font-family: var(--fd-serif);
+      padding: 12px 26px; border-radius: 999px; font-size: 16.5px; letter-spacing: .04em; min-height: 48px; display: inline-flex; align-items: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,.65), 0 0 0 1px rgba(255,238,176,.55); opacity: 0; pointer-events: none; visibility: hidden;
+      transition: opacity .6s ease .55s, transform .6s ease .55s, visibility 0s linear .55s; }
+    .fd-plate.open .enter, .no-js .fd-plate .enter { opacity: 1; transform: none; pointer-events: auto; visibility: visible; }
+
+    /* ---------- from the Vault ---------- */
+    .fd-carousel { margin-top: 24px; background: var(--fd-panel); border: 1px solid var(--fd-line); border-radius: 12px; padding: 18px 0 16px;
+      overflow: hidden; box-shadow: 0 18px 44px rgba(0,0,0,.5); }
+    .fd-stage { position: relative; margin: 0 16px; border-radius: 8px; overflow: hidden; height: 308px; background: #060302;
+      box-shadow: inset 0 0 60px rgba(0,0,0,.72), 0 10px 30px rgba(0,0,0,.5); }
+    .fd-stage.lit { background: #060302 url("assets/front-door/vault-stage.jpg") center 30%/cover no-repeat;
+      background-image: image-set(url("assets/front-door/vault-stage.webp") type("image/webp"), url("assets/front-door/vault-stage.jpg") type("image/jpeg")); }
+    .ctrack { display: flex; transition: transform .65s cubic-bezier(.25,.8,.25,1); height: 100%; }
+    .slide { flex: 0 0 100%; position: relative; }
+    .tablet-stage { position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); perspective: 850px; width: min(290px, 76vw); }
+    .tablet { position: relative; height: 172px; border-radius: 16px 20px 14px 18px; transform-style: preserve-3d; transform: rotateX(-8deg) rotateY(-14deg);
+      box-shadow: 0 20px 44px rgba(0,0,0,.7), inset 0 2px 0 rgba(255,230,160,.25), inset 0 -14px 26px rgba(0,0,0,.4);
+      transition: transform .25s ease-out; overflow: hidden; touch-action: none; cursor: grab; }
+    .tablet::before { content: ""; position: absolute; inset: 12px; border-radius: 10px; box-shadow: inset 0 0 24px rgba(0,0,0,.35);
+      background: repeating-linear-gradient(0deg, transparent 0 21px, rgba(40,26,8,.45) 21px 22px), repeating-linear-gradient(115deg, transparent 0 15px, rgba(46,30,9,.32) 15px 18px, transparent 18px 33px); }
+    .tablet .sheen { position: absolute; inset: 0; background: radial-gradient(220px 130px at var(--sx, 30%) var(--sy, 20%), rgba(255,240,190,.34), transparent 60%); }
+    .tablet .crack { position: absolute; left: 16%; top: 0; width: 1.5px; height: 100%; background: rgba(30,19,5,.55); transform: rotate(4deg); }
+    .t-ark { background: linear-gradient(150deg, #8a6a3c, #6e5228 55%, #5b421f); border-radius: 50%; }
+    .t-ark::before { border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 13px, rgba(40,26,8,.4) 13px 14px); }
+    .t-flood { background: linear-gradient(150deg, #6d5b45, #52422f 55%, #3f3122); }
+    .t-lion { background: linear-gradient(160deg, #c9b489, #a98f5f 55%, #8a713f); width: 120px; height: 200px; margin: 0 auto; border-radius: 40% 40% 30% 30% / 26% 26% 20% 20%; }
+    .t-lion::before { display: none; }
+    .t-lion::after { content: ""; position: absolute; left: 50%; top: 9%; transform: translateX(-50%); width: 52px; height: 30%;
+      background: rgba(52,38,16,.45); border-radius: 50% 50% 44% 44%; box-shadow: inset 0 -10px 14px rgba(0,0,0,.3); }
+    .slide .cap { position: absolute; left: 0; right: 0; top: 14px; text-align: center; padding: 0 18px; }
+    .slide .sub { color: var(--fd-gold-pale); letter-spacing: .24em; text-transform: uppercase; font-size: 11px; text-shadow: 0 1px 8px #000; margin: 0; }
+    .slide h3 { font-family: var(--fd-serif); font-size: 20px; margin: 5px 0 0; color: var(--fd-ink); letter-spacing: 0; text-transform: none; text-shadow: 0 2px 12px #000; }
+    .cbody { padding: 16px 22px 0; text-align: center; min-height: 9.5em; }
+    .cbody p { color: var(--fd-ink-soft); font-size: 15px; line-height: 1.5; max-width: 560px; margin: 0 auto; }
+    .cbody .honest { color: var(--fd-ink-mute); font-size: 13px; font-style: italic; margin-top: 9px; }
+    .cbody .read { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; color: var(--fd-gold-hi); font-size: 15px; }
+    .cnav { display: flex; justify-content: space-between; align-items: center; gap: 10px; max-width: 360px; margin: 8px auto 0; padding: 0 8px; }
+    .cnav button { background: rgba(10,6,2,.5); border: 1px solid var(--fd-line); color: var(--fd-gold-hi); border-radius: 999px;
+      font-family: var(--fd-serif); font-size: 15px; min-height: 44px; padding: 8px 18px; cursor: pointer; }
+    .cnav button:disabled { opacity: .4; cursor: default; }
+    .cdots { display: flex; gap: 2px; justify-content: center; }
+    .cdots button { width: 32px; height: 44px; border: 0; background: transparent; cursor: pointer; padding: 0; position: relative; }
+    .cdots button::after { content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px; border-radius: 50%;
+      border: 1.5px solid var(--fd-gold); box-sizing: border-box; }
+    .cdots button[aria-current="true"]::after { background: var(--fd-gold-hi); }
+
+    /* ---------- the arcade (all eleven games) ---------- */
+    .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
     @media (max-width: 860px) { .games-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 540px) { .games-grid { grid-template-columns: 1fr; } }
-    .game-card {
-      display: flex; flex-direction: column; gap: 0.55rem; align-items: flex-start;
-      padding: 1.5rem 1.4rem 1.35rem; border: 1px solid var(--line-soft); border-radius: 5px;
-      background: linear-gradient(180deg, var(--panel), var(--ground)); color: inherit;
-      transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
-    }
-    .game-card:hover {
-      border-color: var(--gold); transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(199,154,84,0.15);
-    }
-    .game-glyph {
-      width: 46px; height: 46px; color: var(--gold);
-      filter: drop-shadow(0 0 8px rgba(185,143,78,0.22));
-    }
+    @media (max-width: 560px) { .games-grid { grid-template-columns: 1fr; } }
+    .game-card { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 18px 16px 16px;
+      background: linear-gradient(180deg, var(--fd-panel2), var(--fd-panel)); border: 1px solid var(--fd-line); border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.42); transition: border-color .3s ease, transform .18s ease; }
+    .game-card:hover, .game-card:focus-visible { border-color: rgba(240,214,124,.62); }
+    .game-card:active { transform: scale(.98); }
+    .game-glyph { width: 46px; height: 46px; color: var(--fd-gold-hi); filter: drop-shadow(0 0 8px rgba(240,214,124,.25)); }
     .game-glyph svg { width: 100%; height: 100%; }
-    .game-card:hover .game-glyph { color: var(--gold-bright); }
-    .game-card-name {
-      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.09em;
-      color: var(--parchment); font-size: 0.98rem; line-height: 1.25;
-    }
-    .game-card-sub { color: var(--ink-dim); font-size: 0.9rem; line-height: 1.55; }
-    .game-card-play {
-      margin-top: auto; padding-top: 0.4rem; font-family: var(--font-display);
-      text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.66rem; color: var(--gold);
-    }
-    .game-card:hover .game-card-play { color: var(--gold-bright); }
-    .games-more { text-align: center; margin: 2.6rem auto 0; color: var(--ink-dim); font-style: italic; font-size: 0.92rem; max-width: 34rem; }
+    .game-card-name { font-size: 17.5px; font-weight: 600; color: var(--fd-ink); line-height: 1.25; }
+    .game-card-sub { color: var(--fd-ink-soft); font-size: 14.5px; line-height: 1.45; }
+    .game-card-play { color: var(--fd-gold-hi); font-size: 15px; margin-top: auto; padding-top: 4px; }
+    .games-more { text-align: center; margin: 22px auto 0; color: var(--fd-ink-soft); font-style: italic; font-size: 14.5px; max-width: 560px; text-shadow: 0 1px 8px rgba(0,0,0,.8); line-height: 1.5; }
+    .games-more a { color: var(--fd-gold-hi); border-bottom: 1px solid rgba(240,214,124,.4); }
 
-    .eras-home { padding: 5.5rem 0 4rem; }
-    .section-head { text-align: center; margin-bottom: 3.4rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center; }
-    .section-head h2 {
-      font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
-      letter-spacing: 0.18em; color: var(--parchment); font-size: clamp(1.5rem, 3.6vw, 2.2rem); margin: 0;
-    }
-    .section-head p { margin: 0; color: var(--ink-dim); font-style: italic; max-width: 36rem; }
-
-    /* The Nine Ages — a chronological timeline */
-    .timeline {
-      list-style: none; margin: 1rem auto 0; padding: 0.5rem 0 1.2rem;
-      display: flex; overflow-x: auto; max-width: 100%; scrollbar-width: thin;
-    }
-    .tl-node { flex: 0 0 auto; min-width: 120px; position: relative; padding: 0 0.3rem; }
-    .tl-node::before {
-      content: ""; position: absolute; top: 33px; left: 50%; right: -50%;
-      height: 1px; background: var(--line); z-index: 0;
-    }
+    /* ---------- the nine ages (timeline, baked by tools/build-pages.js) ---------- */
+    .fd-ages { margin-top: 24px; background: var(--fd-panel); border: 1px solid var(--fd-line); border-radius: 12px; padding: 6px 4px 4px; box-shadow: 0 18px 44px rgba(0,0,0,.5); }
+    .timeline { list-style: none; margin: 0 auto; padding: .5rem 0 1.2rem; display: flex; overflow-x: auto; max-width: 100%; scrollbar-width: thin; }
+    .tl-node { flex: 0 0 auto; min-width: 120px; position: relative; padding: 0 .3rem; }
+    .tl-node::before { content: ""; position: absolute; top: 33px; left: 50%; right: -50%; height: 1px; background: var(--fd-line); z-index: 0; }
     .tl-node:last-child::before { display: none; }
-    .tl-node a { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.28rem; color: inherit; position: relative; z-index: 1; }
-    .tl-dot {
-      width: 11px; height: 11px; border-radius: 50%; background: var(--ground);
-      border: 1.5px solid var(--gold); margin-top: 28px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .tl-node a:hover .tl-dot { background: var(--gold); transform: scale(1.25); }
-    .tl-emblem { width: 46px; height: 46px; color: var(--gold); margin-top: 0.5rem; }
+    .tl-node a { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .28rem; color: inherit; position: relative; z-index: 1; padding-bottom: 4px; }
+    .tl-dot { width: 11px; height: 11px; border-radius: 50%; background: #1a1006; border: 1.5px solid var(--fd-gold); margin-top: 28px; transition: background .3s ease, transform .3s ease; }
+    .tl-node a:hover .tl-dot, .tl-node a:focus-visible .tl-dot { background: var(--fd-gold); transform: scale(1.25); }
+    .tl-emblem { width: 46px; height: 46px; color: var(--fd-gold-hi); margin-top: .5rem; }
     .tl-emblem svg { width: 100%; height: 100%; }
-    .tl-node a:hover .tl-emblem { color: var(--gold-bright); }
-    .tl-roman { font-family: var(--font-display); color: var(--gold); letter-spacing: 0.12em; font-size: 0.6rem; margin-top: 0.25rem; }
-    .tl-name { font-family: var(--font-display); color: var(--parchment); font-size: 0.84rem; line-height: 1.2; }
-    .tl-dates { color: var(--ink-dim); font-style: italic; font-size: 0.66rem; line-height: 1.3; }
+    .tl-roman { color: var(--fd-gold); letter-spacing: .14em; font-size: 12px; text-transform: uppercase; margin-top: .25rem; }
+    .tl-name { color: var(--fd-ink); font-size: 15px; line-height: 1.2; font-weight: 600; }
+    .tl-dates { color: var(--fd-ink-mute); font-style: italic; font-size: 13px; line-height: 1.3; }
+    .fd-more { display: flex; gap: 10px 26px; justify-content: center; flex-wrap: wrap; margin: 16px 0 0; }
+    .fd-more a { display: inline-flex; align-items: center; min-height: 44px; color: var(--fd-gold-hi); font-size: 15.5px; }
 
-    .method {
-      border-top: 1px solid var(--line);
-      background: radial-gradient(80% 120% at 50% 0%, rgba(34,25,16,0.7), transparent 70%);
-      padding: 4.6rem 0 5rem;
-    }
-    .method .inner { max-width: var(--measure); margin-inline: auto; text-align: center; display: flex; flex-direction: column; gap: 1.15rem; align-items: center; }
-    .method h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.16em; color: var(--parchment); font-size: clamp(1.4rem, 3.4vw, 2rem); margin: 0; }
-    .method p { margin: 0; color: var(--ink); }
-    .method .fine { color: var(--ink-dim); font-size: 0.92rem; font-style: italic; }
+    /* ---------- told well, and told honestly ---------- */
+    .fd-honest { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+    @media (min-width: 700px) { .fd-honest { grid-template-columns: repeat(3, 1fr); } }
+    .hcard { background: var(--fd-panel); border: 1px solid var(--fd-line); border-top: 2px solid var(--fd-gold-dim); border-radius: 8px; padding: 16px; }
+    .hcard h3 { font-family: var(--fd-serif); font-size: 17px; font-weight: 600; margin: 0 0 6px; color: var(--fd-ink); letter-spacing: 0; text-transform: none; }
+    .hcard p { color: var(--fd-ink-soft); font-size: 14.5px; line-height: 1.5; margin: 0; }
+    .fd-fine { text-align: center; color: var(--fd-ink-soft); font-style: italic; font-size: 15px; max-width: 620px; margin: 20px auto 0; line-height: 1.55; text-shadow: 0 1px 8px rgba(0,0,0,.8); }
+    .fd-fine a { color: var(--fd-gold-hi); font-style: normal; white-space: nowrap; display: inline-flex; align-items: center; min-height: 44px; }
 
-    .trust-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin: 2.4rem 0 1.8rem; text-align: left; }
-    .pillar { border: 1px solid var(--line-soft); border-radius: 4px; padding: 1.4rem 1.3rem; background: linear-gradient(180deg, var(--panel), var(--ground)); }
-    .pillar svg { width: 30px; height: 30px; color: var(--gold); margin-bottom: 0.7rem; }
-    .pillar h3 { font-family: var(--font-head); font-weight: 600; color: var(--parchment); font-size: 1.16rem; margin: 0 0 0.4rem; letter-spacing: 0.01em; }
-    .pillar p { margin: 0; color: var(--ink-dim); font-size: 0.9rem; line-height: 1.55; }
-    @media (max-width: 680px) { .trust-pillars { grid-template-columns: 1fr; } }
-
-    .invite {
-      border-top: 1px solid var(--line);
-      background: radial-gradient(90% 130% at 50% 0%, rgba(199,154,84,0.10), transparent 65%);
-      padding: 4.4rem 0 5rem;
-    }
-    .invite .inner { max-width: 54rem; margin-inline: auto; display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.4rem; align-items: center; }
-    @media (max-width: 720px) { .invite .inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; } }
-    .invite .inner:has(> .invite-card[hidden]) { grid-template-columns: 1fr; max-width: 36rem; text-align: center; }
-    .invite h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; color: var(--parchment); font-size: clamp(1.4rem, 3.2vw, 1.95rem); margin: 0.4rem 0 0.6rem; text-wrap: balance; }
-    .invite-lede { color: var(--ink-dim); margin: 0 0 1.2rem; }
-    #sub-form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    @media (max-width: 720px) { #sub-form { justify-content: center; } }
-    #sub-form input[type="email"] {
-      flex: 1; min-width: 12rem; background: linear-gradient(180deg, rgba(34,25,16,0.85), rgba(16,12,9,0.85));
-      border: 1px solid var(--line); border-radius: 2px; color: var(--ink);
-      font-family: var(--font-body); font-size: 1rem; padding: 0.7rem 0.9rem;
-    }
-    #sub-form input[type="email"]::placeholder { color: var(--ink-faint); font-style: italic; }
-    #sub-form input[type="email"]:focus { outline: none; border-color: var(--gold); }
+    /* ---------- the candle: support + (hidden) sign-up + footer ---------- */
+    .fd-candle { text-align: center; padding: 58px 18px 8px; position: relative; z-index: 2; }
+    .flame { width: 11px; height: 20px; margin: 0 auto 12px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+      background: radial-gradient(circle at 50% 78%, #fff3c4 0%, #f4b942 45%, #c96a12 100%); box-shadow: 0 0 22px rgba(244,185,66,.55);
+      transform-origin: 50% 100%; animation: fd-flick 2.8s ease-in-out infinite; }
+    @keyframes fd-flick { 0%,100% { transform: scale(1) rotate(-1.4deg); } 30% { transform: scale(1.07,1.13) rotate(1.2deg); } 60% { transform: scale(.96,.94) rotate(-.6deg); } }
+    .fd-candle .big { font-size: 16.5px; margin: 0 auto; max-width: 560px; color: var(--fd-ink); text-shadow: 0 1px 8px rgba(0,0,0,.8); line-height: 1.5; }
+    .fd-candle .small { font-size: 14px; margin: 8px auto 0; font-style: italic; color: var(--fd-ink-mute); max-width: 560px; }
+    .fd-candle .support { margin-top: 16px; }
+    .invite-card { max-width: 560px; margin: 36px auto 0; background: var(--fd-panel); border: 1px solid var(--fd-line); border-radius: 10px; padding: 22px 18px; }
+    .invite-card h2 { font-family: var(--fd-serif); font-size: 24px; font-weight: 600; margin: 4px 0 8px; color: var(--fd-ink); letter-spacing: 0; text-transform: none; }
+    .invite-lede { color: var(--fd-ink-soft); margin: 0 0 14px; }
+    #sub-form { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; }
+    #sub-form input[type="email"] { flex: 1; min-width: 12rem; min-height: 44px; background: rgba(16,10,3,.85); border: 1px solid var(--fd-line); border-radius: 4px;
+      color: var(--fd-ink); font-family: var(--fd-serif); font-size: 1rem; padding: .6rem .9rem; }
     #sub-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-    #sub-btn {
-      font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.18em;
-      font-size: 0.7rem; color: var(--ground); background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-      border: 0; border-radius: 2px; padding: 0.7rem 1.3rem; cursor: pointer; white-space: nowrap;
-    }
-    #sub-btn:hover { filter: brightness(1.08); }
-    #sub-btn:disabled { opacity: 0.6; cursor: default; }
-    .invite-fine { margin: 0.9rem 0 0; font-size: 0.82rem; color: var(--ink-faint); font-style: italic; }
-    .invite-support { border-left: 1px solid var(--line-soft); padding-left: 2.2rem; }
-    @media (max-width: 720px) { .invite-support { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-soft); padding-top: 1.6rem; } }
-    .invite-support p { color: var(--ink-dim); font-size: 0.94rem; margin: 0 0 1.1rem; }
+    #sub-btn { min-height: 44px; font-family: var(--fd-serif); font-size: 15px; color: #140c02; background: linear-gradient(180deg, var(--fd-gold-pale), var(--fd-gold));
+      border: 0; border-radius: 999px; padding: .6rem 1.3rem; cursor: pointer; }
+    #sub-btn:disabled { opacity: .6; cursor: default; }
+    .invite-fine { margin: .9rem 0 0; font-size: .85rem; color: var(--fd-ink-mute); font-style: italic; }
+    .fd4 .site-footer { position: relative; z-index: 2; background: rgba(10,6,2,.78); border-top: 1px solid var(--fd-line); margin-top: 40px; padding-bottom: 84px; }
 
-    @keyframes fade-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes turn { to { transform: rotate(360deg); } }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+    /* ---------- the simple version ---------- */
+    .simple-toggle { position: fixed; left: 14px; bottom: 14px; z-index: 61; background: #241a08; color: var(--fd-gold-hi);
+      border: 1px solid var(--fd-gold-dim); border-radius: 999px; padding: 10px 18px; min-height: 44px; font-family: var(--fd-serif);
+      font-size: 14.5px; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.5); }
+    @media (max-width: 640px) { .simple-toggle { left: .6rem; bottom: .6rem; } }
+    body.simple *, body.simple *::before, body.simple *::after { animation: none !important; transition: none !important; }
+    body.simple #fd-dust, body.simple .fd-grain, body.simple #fd-thread, body.simple .fd-vignette { display: none; }
+    body.simple .fd-ground { background: #1a1209; }
+    body.simple .fd-ground::after { display: none; }
+    body.simple .rv { opacity: 1 !important; transform: none !important; }
+    body.simple .fd-head .rule { transform: scaleX(1); }
+    body.simple .fd-plate .enter { opacity: 1; transform: none; pointer-events: auto; visibility: visible; }
+    body.simple .fd-hero h1 .w { -webkit-text-fill-color: var(--fd-ink); background: none; filter: none; }
+    body.simple .tablet { transform: none !important; }
 
-    @media (max-width: 640px) {
-      .explore .grid { grid-template-columns: 1fr; }
+    /* lighter on small screens: fewer layers that repaint while scrolling */
+    @media (max-width: 600px) {
+      .fd-grain { display: none; }
+      .fd-kicker { letter-spacing: .3em; font-size: 11px; }
+      .fd-kicker::before, .fd-kicker::after { width: 22px; margin: 0 8px 3px; }
+      .fd-plate { min-height: 440px; height: 72vh; }
+      .fd-stage { height: 280px; }
     }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
   <link rel="canonical" href="https://getconexto.com/" />
   <meta property="og:type" content="website" />
@@ -231,38 +296,18 @@
   <meta name="twitter:description" content="A comparative library of the world's spiritual, religious, esoteric, and mythological traditions, ordered by era." />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"The Divine Archives","url":"https://getconexto.com/","description":"A comparative library of the world\u2019s spiritual, religious, esoteric, and mythological traditions, ordered by era."},{"@type":"Organization","name":"The Divine Archives","url":"https://getconexto.com/"}]}</script>
 </head>
-<body>
+<body class="fd4 no-js">
+<script>document.body.className = document.body.className.replace("no-js", "js");</script>
 <a class="skip-link" href="#maincontent">Skip to content</a>
+<div class="fd-ground" aria-hidden="true"></div>
+<div class="fd-grain" aria-hidden="true"></div><div class="fd-vignette" aria-hidden="true"></div><div id="fd-thread" aria-hidden="true"></div>
 <div class="page">
-
-  <!-- FRONTISPIECE -->
-  <header class="masthead" id="maincontent" tabindex="-1">
-    <svg class="emblem" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-      <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-      <circle cx="60" cy="60" r="47" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
-      <g class="spin-slow"><circle cx="60" cy="60" r="40" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1 5" opacity="0.7"/></g>
-      <g class="spin-rev" opacity="0.85">
-        <path d="M60 22 L64 56 L60 60 L56 56 Z" fill="currentColor"/>
-        <path d="M60 98 L56 64 L60 60 L64 64 Z" fill="currentColor"/>
-        <path d="M22 60 L56 56 L60 60 L56 64 Z" fill="currentColor"/>
-        <path d="M98 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/>
-      </g>
-      <circle cx="60" cy="60" r="8" stroke="currentColor" stroke-width="1"/>
-      <circle cx="60" cy="60" r="2.4" fill="currentColor"/>
-      <g opacity="0.8">
-        <circle cx="60" cy="13" r="1.5" fill="currentColor"/><circle cx="60" cy="107" r="1.5" fill="currentColor"/>
-        <circle cx="13" cy="60" r="1.5" fill="currentColor"/><circle cx="107" cy="60" r="1.5" fill="currentColor"/>
-      </g>
-    </svg>
-
-    <div class="title-block"><h1><span class="the">The</span>Divine Archives</h1></div>
-
-    <p class="subtitle">
-      A gathering of the world&rsquo;s spiritual, religious, esoteric, and mythological
-      traditions &mdash; every faith and cosmology humankind has recorded, drawn together
-      in one library and set in the order of time.
-    </p>
-
+  <!-- FRONT DOOR -->
+  <header class="fd-hero" id="maincontent" tabindex="-1">
+    <canvas id="fd-dust" aria-hidden="true"></canvas>
+    <p class="fd-kicker">Est. in the keeping of the record</p>
+    <h1 id="fd-title">The Divine Archives</h1>
+    <p class="fd-tagline">A free archive of the world&rsquo;s sacred traditions &mdash; told well, and told honestly.</p>
     <div class="search">
       <form data-search role="search" aria-label="Search the archives">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -273,66 +318,127 @@
         <button type="submit">Search</button>
       </form>
     </div>
-
-    <nav class="doorways" aria-label="Ways in">
+    <div class="fd-plaque">
+      <p class="insc">Told Well &middot; And Told Honestly</p>
+      <p class="hint"><!--build:home-counts:start-->
+        Eighty-four chapters, eighty-nine objects in the Vault, one hundred ninety-nine figures in the Pantheon &mdash; and a building to walk them in. The doors are below.
+      <!--build:home-counts:end--></p>
+    </div>
+    <nav class="fd-ways" aria-label="Ways in">
       <a href="eras.html">The Nine Ages</a>
       <a href="vault.html">The Vault</a>
       <a href="museum.html">The Museum</a>
       <a href="#games">Play</a>
       <a href="random.html" rel="nofollow"><span class="dw-mark" aria-hidden="true">&#10022;</span>A chapter at random</a>
     </nav>
-
-    <p class="scroll-cue">Descend through the ages<span>&darr;</span></p>
+    <div class="fd-cue" aria-hidden="true"></div>
   </header>
 
-  <!-- WAYS TO EXPLORE -->
-  <section class="explore" aria-label="Ways to explore">
-    <div class="wrap grid">
-      <a class="explore-cell" href="eras.html"><article>
-        <span class="num">&mdash; I &mdash;</span><h3>Browse by Era</h3>
-        <p>Walk the timeline from the first ritual fires to the movements of the present day.</p>
-      </article></a>
-      <a class="explore-cell" href="traditions.html"><article>
-        <span class="num">&mdash; II &mdash;</span><h3>Browse by Tradition</h3>
-        <p>Follow a single faith or current &mdash; Egyptian, Vedic, Norse, Gnostic &mdash; across the centuries.</p>
-      </article></a>
-      <a class="explore-cell" href="themes.html"><article>
-        <span class="num">&mdash; III &mdash;</span><h3>Compare Themes</h3>
-        <p>Trace the great recurring motifs: the flood, creation, the underworld, the returning god.</p>
-      </article></a>
-      <a class="explore-cell" href="symbols.html"><article>
-        <span class="num">&mdash; IV &mdash;</span><h3>The Symbols</h3>
-        <p>Every sacred sign the archive draws, gathered in one place &mdash; and a few of them answer to a touch.</p>
-      </article></a>
-      <a class="explore-cell" href="vault.html"><article>
-        <span class="num">&mdash; V &mdash;</span><h3>The Vault</h3>
-        <p>Manuscripts, relics and contested objects &mdash; the Voynich Manuscript, the Dead Sea Scrolls, the Emerald Tablet &mdash; studied page by page from the holders&rsquo; own scans.</p>
-      </article></a>
-      <a class="explore-cell" href="pantheon.html"><article>
-        <span class="num">&mdash; VI &mdash;</span><h3>The Pantheon</h3>
-        <p>Gods, spirits, heroes and tricksters from every tradition in the archive &mdash; search them all, and follow each back to its chapters.</p>
-      </article></a>
-      <a class="explore-cell wide" href="museum.html"><article>
-        <span class="num">&mdash; VII &mdash;</span><h3>The Museum <small style="font-size:.6em;letter-spacing:.1em">(beta)</small></h3>
-        <p>Walk the archive as a building: a wing for each of the Nine Ages, a room for every chapter, with its Vault objects, its figures and its symbol &mdash; each exhibit opening the archive&rsquo;s own page.</p>
-      </article></a>
-      <a class="explore-cell wide" href="#games"><article>
-        <span class="num">&mdash; VIII &mdash;</span><h3>The Arcade</h3>
-        <p>Play the archive &mdash; duels of the gods, riddles, serpents and temples, each drawn from real chapters.</p>
-      </article></a>
+  <main class="fd-wrap">
+    <!-- THE EIGHT DOORS -->
+    <div class="fd-head rv">
+      <div class="rule" aria-hidden="true"></div>
+      <h2>Eight Doors Into the Same House</h2>
+      <p>Every one of them opens.</p>
+    </div>
+    <nav class="fd-doors" aria-label="Ways to explore">
+      <a class="fd-card rv" href="eras.html" style="--fr:repeating-linear-gradient(90deg,#c9a227 0 14px,#8a6f1f 14px 22px,#57431f 22px 36px)"><span class="medal" aria-hidden="true"><span class="gly g-sun"></span><span class="n">I</span></span><span>
+        <h3>Browse by Era</h3><p>Walk the timeline from the first ritual fires to the movements of the present day.</p>
+        <span class="go">Walk the timeline &rarr;</span></span></a>
+      <a class="fd-card rv" href="traditions.html" style="--fr:repeating-radial-gradient(circle at 50% -6px,transparent 0 9px,#c9a227 9px 10.5px,transparent 10.5px 20px)"><span class="medal" aria-hidden="true"><span class="gly g-wave"></span><span class="n">II</span></span><span>
+        <h3>Browse by Tradition</h3><p>Follow a single faith or current &mdash; Egyptian, Vedic, Norse, Gnostic &mdash; across the centuries.</p>
+        <span class="go">Follow a tradition &rarr;</span></span></a>
+      <a class="fd-card rv" href="themes.html" style="--fr:repeating-linear-gradient(45deg,#c9a227 0 8px,transparent 8px 16px),repeating-linear-gradient(-45deg,#8a6f1f 0 8px,transparent 8px 16px)"><span class="medal" aria-hidden="true"><span class="gly g-star"></span><span class="n">III</span></span><span>
+        <h3>Compare Themes</h3><p>Trace the great recurring motifs: the flood, creation, the underworld, the returning god.</p>
+        <span class="go">Trace a theme &rarr;</span></span></a>
+      <a class="fd-card rv" href="symbols.html" style="--fr:repeating-linear-gradient(90deg,transparent 0 11px,rgba(201,162,39,.8) 11px 12.5px,transparent 12.5px 24px)"><span class="medal" aria-hidden="true"><span class="gly g-eye"></span><span class="n">IV</span></span><span>
+        <h3>The Symbols</h3><p>Every sacred sign the archive draws, gathered in one place &mdash; and a few of them answer to a touch.</p>
+        <span class="go">See the symbols &rarr;</span></span></a>
+      <a class="fd-card rv" href="vault.html" style="--fr:repeating-linear-gradient(0deg,#c9a227 0 2px,transparent 2px 9px)"><span class="medal" aria-hidden="true"><span class="gly g-tablet"></span><span class="n">V</span></span><span>
+        <h3>The Vault</h3><p>Manuscripts, relics and contested objects &mdash; the Voynich Manuscript, the Dead Sea Scrolls, the Emerald Tablet &mdash; studied page by page from the holders&rsquo; own scans.</p>
+        <span class="go">Enter the Vault &rarr;</span></span></a>
+      <a class="fd-card rv" href="pantheon.html" style="--fr:radial-gradient(circle at 10px 50%,#c9a227 2.6px,transparent 3.6px) 0 0/26px 9px repeat-x"><span class="medal" aria-hidden="true"><span class="gly g-flame"></span><span class="n">VI</span></span><span>
+        <h3>The Pantheon</h3><p>Gods, spirits, heroes and tricksters from every tradition in the archive &mdash; search them all, and follow each back to its chapters.</p>
+        <span class="go">Meet the figures &rarr;</span></span></a>
+      <a class="fd-card rv" href="museum.html" style="--fr:repeating-radial-gradient(circle at 50% 12px,transparent 0 7px,#c9a227 7px 8.5px,transparent 8.5px 16px)"><span class="medal" aria-hidden="true"><span class="gly g-ring"></span><span class="n">VII</span></span><span>
+        <h3>The Museum <small>(beta)</small></h3><p>Walk the archive as a building: a wing for each of the Nine Ages, a room for every chapter, with its Vault objects, its figures and its symbol.</p>
+        <span class="go">Walk the building &rarr;</span></span></a>
+      <a class="fd-card rv" href="#games" style="--fr:repeating-conic-gradient(#c9a227 0 25%,#57431f 25% 50%) 0 0/18px 9px"><span class="medal" aria-hidden="true"><span class="gly g-moon"></span><span class="n">VIII</span></span><span>
+        <h3>The Arcade</h3><p>Play the archive &mdash; duels of the gods, riddles, serpents and temples, each drawn from real chapters.</p>
+        <span class="go">Play the archive &rarr;</span></span></a>
+    </nav>
+  </main>
+
+  <!-- THE MUSEUM DOOR: set low in the page, where a destination belongs -->
+  <section class="fd-plate" id="fd-plate" aria-labelledby="fd-plate-h">
+    <div class="band-media">
+      <picture class="front">
+        <source type="image/webp" media="(max-width: 640px)" srcset="assets/front-door/museum-door-600.webp" />
+        <source type="image/webp" srcset="assets/front-door/museum-door.webp" />
+        <img src="assets/front-door/museum-door.jpg" width="1000" height="2000" loading="lazy" decoding="async"
+             alt="A painted museum entrance: a stone temple front with fluted columns, its bronze doors ajar and lantern light falling on the steps" />
+      </picture>
+      <picture class="hall">
+        <source type="image/webp" srcset="assets/front-door/museum-hall.webp" />
+        <img src="assets/front-door/museum-hall.jpg" width="1150" height="766" loading="lazy" decoding="async"
+             alt="Inside: a great columned hall with hanging lanterns under a dome" />
+      </picture>
+      <div class="bloom"></div>
+    </div>
+    <button type="button" class="door-toggle" id="fd-door" aria-pressed="false" aria-controls="fd-door-hint">
+      <span class="sr-only">Open the museum doors</span>
+    </button>
+    <div class="band-cap">
+      <a class="enter" href="museum.html" id="fd-enter">Enter the Museum &rarr;</a>
+      <p class="cap-k">The Building at the Heart of the House</p>
+      <h2 id="fd-plate-h">The Museum <small>(beta)</small></h2>
+      <p id="fd-door-hint" aria-live="polite">The Museum stands behind these doors &mdash; <b>touch them and step inside</b>.</p>
     </div>
   </section>
 
-  <!-- THE GAMES -->
-  <section class="games-home" id="games" aria-label="Games">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Play the Archive</p>
-        <h2>The Arcade of the Ages</h2>
-        <p>Ways into the same history you can play. Every fact, fighter, and clue is drawn from a real chapter, some of them still marked &ldquo;pending review&rdquo; &mdash;
-           play on a laptop or on your phone, and follow any thread back to its source. A few more are hidden in the
-           <a href="symbols.html">symbols</a>, for the curious.</p>
+  <div class="fd-wrap">
+    <!-- FROM THE VAULT -->
+    <div class="fd-head rv">
+      <div class="rule" aria-hidden="true"></div>
+      <h2>From the Vault</h2>
+      <p>Some things here answer to a touch. Take hold of each one, turn it in the light, and pass to the next.</p>
+    </div>
+    <section class="fd-carousel rv" id="fd-carousel" aria-roledescription="carousel" aria-label="From the Vault">
+      <div class="fd-stage" id="fd-stage">
+        <div class="ctrack" id="fd-ctrack">
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3: The Ark Tablet">
+            <div class="cap"><p class="sub">Vault &middot; V90</p><h3>The Ark Tablet</h3></div>
+            <div class="tablet-stage"><div class="tablet t-ark" aria-hidden="true"><span class="sheen"></span><span class="crack"></span></div></div>
+          </div>
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3: The Flood Tablet" aria-hidden="true">
+            <div class="cap"><p class="sub">Vault &middot; V89</p><h3>The Flood Tablet</h3></div>
+            <div class="tablet-stage"><div class="tablet t-flood" aria-hidden="true"><span class="sheen"></span><span class="crack"></span></div></div>
+          </div>
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3: The Lion Man" aria-hidden="true">
+            <div class="cap"><p class="sub">Vault &middot; V58</p><h3>The Lion Man of Hohlenstein-Stadel</h3></div>
+            <div class="tablet-stage"><div class="tablet t-lion" aria-hidden="true"><span class="sheen"></span><span class="crack"></span></div></div>
+          </div>
+        </div>
       </div>
+      <div class="cbody" aria-live="polite">
+        <p id="fd-ctext">Sixty lines of Old Babylonian cuneiform in which the god Enki tells Atrahasis how to build the boat: round, like a giant coracle. In Irving Finkel&rsquo;s reading, the animals go in two by two.</p>
+        <p class="honest" id="fd-chonest">A drawn sketch, not a photograph &mdash; the tablet&rsquo;s own photographs are in its Vault entry, which is recently added and pending full review.</p>
+        <a class="read" id="fd-cread" href="vault/ark-tablet.html">Read the Vault entry &rarr;</a>
+      </div>
+      <div class="cnav">
+        <button type="button" id="fd-cprev" aria-label="Previous object">&larr; Back</button>
+        <div class="cdots" id="fd-cdots"></div>
+        <button type="button" id="fd-cnext" aria-label="Next object">Next &rarr;</button>
+      </div>
+    </section>
+
+    <!-- THE ARCADE -->
+    <div class="fd-head rv" id="games">
+      <div class="rule" aria-hidden="true"></div>
+      <h2>The Arcade of the Ages</h2>
+      <p>Ways into the same history you can play. Every fact, fighter, and clue is drawn from a real chapter, some of them still marked &ldquo;pending review&rdquo; &mdash; play on a laptop or on your phone, and follow any thread back to its source.</p>
+    </div>
+    <section aria-label="Games">
       <div class="games-grid">
         <a class="game-card" href="symbols.html#play=fighter">
           <span class="game-glyph" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M20 44 L34 20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M34 20 L30 30 L38 28 L32 44" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M44 44 L50 38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="22" r="5" stroke="currentColor" stroke-width="2.4"/></svg></span>
@@ -402,18 +508,15 @@
         </a>
       </div>
       <p class="games-more">These eleven games &mdash; from the fighter and the journal expedition to chess and the Excavation &mdash; also wait inside the <a href="symbols.html">Symbols</a>, every fact in them sourced to a chapter (including chapters still pending review).</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- THE ERAS -->
-  <section class="eras-home">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">The Nine Ages</p>
-        <h2>An Archive Ordered by Time</h2>
-        <p>Not by region, nor by creed &mdash; but chronologically, so the traditions of any age
-           may be read beside one another. Choose an age to enter.</p>
-      </div>
+    <!-- THE NINE AGES -->
+    <div class="fd-head rv">
+      <div class="rule" aria-hidden="true"></div>
+      <h2>An Archive Ordered by Time</h2>
+      <p>Not by region, nor by creed &mdash; but chronologically, so the traditions of any age may be read beside one another. Choose an age to enter.</p>
+    </div>
+    <section class="fd-ages rv" aria-label="The Nine Ages">
       <div class="ages-timeline" id="spine"><!--build:spine:start-->
         <ol class="timeline">
           <li class="tl-node"><a href="eras/01-prehistory.html"><span class="tl-dot" aria-hidden="true"></span><span class="tl-emblem"><svg class="era-emblem" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><line x1="30" y1="90" x2="90" y2="90" stroke="currentColor" stroke-width="1" opacity="0.7"/><path d="M60 88 C49 76 53 64 60 52 C67 64 71 76 60 88 Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 84 C55 78 56 71 60 65 C64 71 65 78 60 84 Z" stroke="currentColor" stroke-width="1" opacity="0.7"/><line x1="60" y1="26" x2="60" y2="40" stroke="currentColor" stroke-width="1.1" opacity="0.9"/><line x1="53" y1="33" x2="67" y2="33" stroke="currentColor" stroke-width="1.1" opacity="0.9"/></svg></span><span class="tl-roman">Era I</span><span class="tl-name">Prehistory</span><span class="tl-dates">before c. 3500 BCE</span></a></li>
@@ -427,52 +530,32 @@
           <li class="tl-node"><a href="eras/09-modern.html"><span class="tl-dot" aria-hidden="true"></span><span class="tl-emblem"><svg class="era-emblem" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><circle cx="60" cy="60" r="8" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3"><line x1="60" y1="24" x2="60" y2="44"/><line x1="60" y1="76" x2="60" y2="96"/><line x1="24" y1="60" x2="44" y2="60"/><line x1="76" y1="60" x2="96" y2="60"/></g><g stroke="currentColor" stroke-width="0.9" opacity="0.8"><line x1="35" y1="35" x2="49" y2="49"/><line x1="85" y1="35" x2="71" y2="49"/><line x1="35" y1="85" x2="49" y2="71"/><line x1="85" y1="85" x2="71" y2="71"/></g></svg></span><span class="tl-roman">Era IX</span><span class="tl-name">The Modern Age</span><span class="tl-dates">c. 1800 – present</span></a></li>
         </ol>
       <!--build:spine:end--></div>
-      <p class="center" style="margin-top:2.4rem;display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap">
-        <a href="eras.html" style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.72rem">See all nine ages &rarr;</a>
-        <a href="random.html" rel="nofollow" style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.72rem">&#10022; Open a chapter at random</a>
-      </p>
-    </div>
-  </section>
+    </section>
+    <p class="fd-more">
+      <a href="eras.html">See all nine ages &rarr;</a>
+      <a href="random.html" rel="nofollow">&#10022; Open a chapter at random</a>
+    </p>
 
-  <!-- METHODOLOGY -->
-  <section class="method">
-    <div class="wrap inner">
-      <div class="ornament"><span>&#10022;</span></div>
-      <p class="eyebrow">On the keeping of this archive</p>
+    <!-- TOLD WELL, AND TOLD HONESTLY -->
+    <div class="fd-head rv">
+      <div class="rule" aria-hidden="true"></div>
       <h2>Told Well, and Told Honestly</h2>
-      <p>
-        Every account here is drawn from real texts and the present state of scholarship.
-        Where the record is firm, it is set down plainly. Where scholars still contend, the
-        dispute is named rather than settled. Where the evidence falls silent, we say so &mdash;
-        no tradition is dressed in certainty it has not earned.
-      </p>
-      <div class="trust-pillars">
-        <div class="pillar">
-          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 8h20l6 6v26H14z" stroke="currentColor" stroke-width="1.6"/><path d="M34 8v6h6" stroke="currentColor" stroke-width="1.6"/><path d="M19 24h14M19 30h14M19 18h8" stroke="currentColor" stroke-width="1.2"/></svg>
-          <h3>Real sources, always</h3>
-          <p>Every specific claim is checked against primary texts and current scholarship &mdash; never memory, never invented citations.</p>
-        </div>
-        <div class="pillar">
-          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8v32" stroke="currentColor" stroke-width="1.6"/><path d="M24 12l-12 6 12 6 12-6z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 40h32" stroke="currentColor" stroke-width="1.2"/></svg>
-          <h3>Disputes named, not settled</h3>
-          <p>Where scholars contend, we lay the debate out and let it stand &mdash; we do not resolve open questions by quietly picking a side.</p>
-        </div>
-        <div class="pillar">
-          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.6"/><path d="M24 16v9M24 31h.02" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <h3>Gaps admitted</h3>
-          <p>Where the evidence runs out, the chapter says so. Each one closes with what is supported, what is not, and what is genuinely unknown.</p>
-        </div>
-      </div>
-      <p class="fine">
-        A claim being sacred to believers and a claim being historically verified are different
-        statements &mdash; and we never blur them into one. <a href="methodology.html">Read the full method &rarr;</a>
-      </p>
+      <p>Every account here is drawn from real texts and the present state of scholarship. Where the record is firm, it is set down plainly; where scholars still contend, the dispute is named rather than settled; where the evidence falls silent, we say so.</p>
     </div>
-  </section>
+    <section class="fd-honest" aria-label="How the archive is kept">
+      <div class="hcard rv"><h3>Real sources, always</h3><p>Every specific claim is checked against primary texts and current scholarship &mdash; never memory, never invented citations.</p></div>
+      <div class="hcard rv"><h3>Disputes named, not settled</h3><p>Where scholars contend, we lay the debate out and let it stand &mdash; we do not resolve open questions by quietly picking a side.</p></div>
+      <div class="hcard rv"><h3>Gaps admitted</h3><p>Where the evidence runs out, the chapter says so. Each one closes with what is supported, what is not, and what is genuinely unknown.</p></div>
+    </section>
+    <p class="fd-fine">A claim being sacred to believers and a claim being historically verified are different statements &mdash; and we never blur them into one. <a href="methodology.html">Read the full method &rarr;</a></p>
+  </div>
 
-  <!-- INVITE: subscribe + support -->
-  <section class="invite" id="follow">
-    <div class="wrap inner">
+  <!-- THE CANDLE: support + sign-up -->
+  <section class="fd-candle" id="follow" aria-label="Support the archive">
+    <div class="flame" aria-hidden="true"></div>
+    <p class="big">The Divine Archives is free to read and independent &mdash; no ads, no paywall, no agenda for sale.</p>
+    <p class="small">If the keeping of it is of value to you, you can help keep the candle lit.</p>
+    <div class="support"><a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">&#9829; Support the Archive</a></div>
       <!-- email sign-up: hidden until the mailing list (Kit) is set up; remove "hidden" to show it again -->
       <div class="invite-card" hidden>
         <p class="eyebrow">Follow the work</p>
@@ -485,13 +568,7 @@
         </form>
         <p id="sub-msg" class="invite-fine" role="status" aria-live="polite">No spam, ever. Unsubscribe in one click.</p>
       </div>
-      <div class="invite-support">
-        <p>The Divine Archives is free to read and independent &mdash; no ads, no paywall, no agenda for sale. If the keeping of it is of value to you, you can help keep the candle lit.</p>
-        <div class="support"><a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">&#9829; Support the Archive</a></div>
-      </div>
-    </div>
   </section>
-
   <footer class="site-footer">
     <div class="wrap">
       <p class="mark">The Divine Archives</p>
@@ -509,9 +586,8 @@
       <p class="tiny">A comparative library of the sacred</p>
     </div>
   </footer>
-
 </div>
-
+<button type="button" class="simple-toggle" id="fd-simple" aria-pressed="false">Simple version</button>
 <script src="assets/archive.js"></script>
 <script>
   /* email capture -> Cloudflare Pages Function at /api/subscribe */
@@ -542,7 +618,202 @@
     });
   })();
 </script>
+<script>
+  /* living front door (proof v4): motion, the museum doors, the Vault carousel, the simple version */
+  (function () {
+    "use strict";
+    var body = document.body;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var stored = null;
+    try { stored = window.localStorage.getItem("fd-simple"); } catch (e) {}
+    var simple = stored === null ? reduce : stored === "1";
+    var hasIO = "IntersectionObserver" in window;
+
+    /* title words rise in */
+    var h1 = document.getElementById("fd-title");
+    h1.setAttribute("aria-label", h1.textContent.trim());
+    h1.innerHTML = h1.textContent.trim().split(/\s+/).map(function (w, i) {
+      return '<span class="w" aria-hidden="true" style="animation-delay:' + (i * 0.13) + 's">' + w + "</span>";
+    }).join(" ");
+
+    /* fold-in as sections arrive */
+    var rv = [].slice.call(document.querySelectorAll(".rv"));
+    var io = null;
+    function revealAll() { rv.forEach(function (el) { el.classList.add("in"); }); if (io) { io.disconnect(); io = null; } }
+    function startReveal() {
+      if (!hasIO) { revealAll(); return; }
+      body.classList.add("js-motion");
+      var groups = {};
+      rv.forEach(function (el) {
+        /* stagger only the cards of one grid; headings and panels fold in at once */
+        var par = el.parentElement;
+        if (!par.classList.contains("fd-doors") && !par.classList.contains("fd-honest")) return;
+        var key = par.className;
+        groups[key] = groups[key] || 0;
+        el.style.transitionDelay = Math.min(groups[key] * 0.07, 0.35) + "s"; groups[key]++;
+      });
+      io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -4% 0px" });
+      rv.forEach(function (el) { if (!el.classList.contains("in")) io.observe(el); });
+    }
+
+    document.querySelectorAll(".fd-card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
+      });
+    });
+
+    /* the museum doors: touch them and step inside; the Enter link goes to the Museum */
+    var plate = document.getElementById("fd-plate"), door = document.getElementById("fd-door"),
+        hint = document.getElementById("fd-door-hint"), enter = document.getElementById("fd-enter");
+    var closedHint = hint.innerHTML;
+    function setDoor(open) {
+      plate.classList.toggle("open", open);
+      door.setAttribute("aria-pressed", open ? "true" : "false");
+      door.firstElementChild.textContent = open ? "Close the museum doors" : "Open the museum doors";
+      hint.innerHTML = open ? "You are standing in the hall. The lanterns are lit, and the wings run on from here." : closedHint;
+    }
+    door.addEventListener("click", function () {
+      var open = !plate.classList.contains("open");
+      setDoor(open);
+      if (open) setTimeout(function () { if (plate.classList.contains("open")) enter.focus({ preventScroll: true }); }, 50);
+    });
+    if (hasIO) {
+      var peek = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        peek.disconnect();
+        if (body.classList.contains("simple")) return;
+        setTimeout(function () {
+          if (plate.classList.contains("open")) return;
+          plate.classList.add("peek");
+          setTimeout(function () { plate.classList.remove("peek"); }, 1700);
+        }, 800);
+      }, { threshold: 0.3 });
+      peek.observe(plate);
+    }
+
+    /* from the Vault: three objects, one at a time */
+    var copies = [
+      { t: "Sixty lines of Old Babylonian cuneiform in which the god Enki tells Atrahasis how to build the boat: round, like a giant coracle. In Irving Finkel’s reading, the animals go in two by two.",
+        h: "A drawn sketch, not a photograph — the tablet’s own photographs are in its Vault entry, which is recently added and pending full review.",
+        href: "vault/ark-tablet.html" },
+      { t: "The eleventh tablet of the Epic of Gilgamesh, in which Utnapishtim tells how a god warned him of the flood. This copy was made in the 7th century BCE for Ashurbanipal’s library; in 1872 George Smith read it and recognised a story he knew from Genesis.",
+        h: "A drawn sketch, not a photograph — the tablet’s own photographs are in its Vault entry, which is recently added and pending full review.",
+        href: "vault/flood-tablet.html" },
+      { t: "A figure 31 cm tall, carved from mammoth ivory, with a cave lion’s head on an upright body. Found smashed in a German cave a week before the Second World War, it was pieced back together over seventy years.",
+        h: "A drawn sketch, not a photograph — the figure’s true, fragmentary surface is documented in its Vault entry.",
+        href: "vault/lion-man.html" }
+    ];
+    var stage = document.getElementById("fd-stage"), track = document.getElementById("fd-ctrack"),
+        slides = [].slice.call(track.children), dotsBox = document.getElementById("fd-cdots"),
+        cText = document.getElementById("fd-ctext"), cHonest = document.getElementById("fd-chonest"), cRead = document.getElementById("fd-cread"),
+        prev = document.getElementById("fd-cprev"), next = document.getElementById("fd-cnext"), idx = 0, dots = [];
+    slides.forEach(function (s, n) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "Show object " + (n + 1) + " of " + slides.length);
+      b.addEventListener("click", function () { go(n); });
+      dotsBox.appendChild(b); dots.push(b);
+    });
+    function go(n) {
+      idx = Math.max(0, Math.min(slides.length - 1, n));
+      track.style.transform = "translateX(" + (-idx * 100) + "%)";
+      slides.forEach(function (s, i) { if (i === idx) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
+      dots.forEach(function (d, i) { d.setAttribute("aria-current", i === idx ? "true" : "false"); });
+      cText.textContent = copies[idx].t; cHonest.textContent = copies[idx].h; cRead.href = copies[idx].href;
+      prev.disabled = idx === 0; next.disabled = idx === slides.length - 1;
+    }
+    prev.addEventListener("click", function () { go(idx - 1); });
+    next.addEventListener("click", function () { go(idx + 1); });
+    var dragX = null;
+    stage.addEventListener("pointerdown", function (e) { dragX = e.clientX; });
+    stage.addEventListener("pointerup", function (e) {
+      if (dragX === null) return;
+      var dx = e.clientX - dragX; dragX = null;
+      if (dx < -46) go(idx + 1); else if (dx > 46) go(idx - 1);
+    });
+    go(0);
+    /* the stage's backdrop photograph loads only when the carousel comes near */
+    if (hasIO) {
+      var lit = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { stage.classList.add("lit"); lit.disconnect(); } }, { rootMargin: "400px 0px" });
+      lit.observe(stage);
+    } else { stage.classList.add("lit"); }
+    document.querySelectorAll(".tablet").forEach(function (tab) {
+      var dragging = false, sx = 0, sy = 0, rx = -8, ry = -14;
+      function apply() { tab.style.transform = "rotateX(" + rx + "deg) rotateY(" + ry + "deg)"; }
+      tab.addEventListener("pointerdown", function (e) { if (body.classList.contains("simple")) return; dragging = true; sx = e.clientX; sy = e.clientY; tab.setPointerCapture(e.pointerId); e.stopPropagation(); });
+      tab.addEventListener("pointermove", function (e) {
+        if (!dragging) return;
+        ry = Math.max(-38, Math.min(38, ry + (e.clientX - sx) * 0.35));
+        rx = Math.max(-30, Math.min(22, rx - (e.clientY - sy) * 0.3));
+        sx = e.clientX; sy = e.clientY; apply();
+        tab.style.setProperty("--sx", (50 + ry * 1.1) + "%");
+        tab.style.setProperty("--sy", (38 - rx * 1.1) + "%");
+      });
+      ["pointerup", "pointercancel"].forEach(function (ev) { tab.addEventListener(ev, function () { dragging = false; }); });
+    });
+
+    /* dust over the hero: drawn only while the hero is on screen and the tab is visible */
+    var canvas = document.getElementById("fd-dust"), ctx = canvas.getContext && canvas.getContext("2d"),
+        motes = [], running = !document.hidden, heroVisible = true, raf = 0, dpr = 1;
+    var hero = document.querySelector(".fd-hero");
+    function sizeCanvas() { canvas.width = Math.min(hero.offsetWidth, 1400); canvas.height = hero.offsetHeight; }
+    function seed() {
+      motes = [];
+      var n = window.innerWidth < 600 ? 26 : 46;
+      for (var i = 0; i < n; i++) motes.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.9 + 0.5,
+        s: Math.random() * 0.00045 + 0.00015, ph: Math.random() * 6.28, a: Math.random() * 0.5 + 0.18, far: i % 3 === 0 });
+    }
+    function tick(t) {
+      raf = 0;
+      if (!running || !heroVisible || body.classList.contains("simple")) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < motes.length; i++) {
+        var m = motes[i], sp = m.far ? m.s * 0.45 : m.s;
+        m.y -= sp; if (m.y < -0.02) { m.y = 1.02; m.x = Math.random(); }
+        var x = (m.x + Math.sin(t * 0.0004 + m.ph) * (m.far ? 0.003 : 0.007)) * canvas.width;
+        ctx.beginPath(); ctx.arc(x, m.y * canvas.height, m.far ? m.r * 0.6 : m.r, 0, 6.283);
+        ctx.fillStyle = "rgba(240,214,124," + (m.far ? m.a * 0.55 : m.a) + ")"; ctx.fill();
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    function wake() { if (!raf && ctx && running && heroVisible && !body.classList.contains("simple")) raf = requestAnimationFrame(tick); }
+    if (ctx) {
+      sizeCanvas(); seed();
+      var rt = 0;
+      window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { sizeCanvas(); seed(); }, 150); });
+      document.addEventListener("visibilitychange", function () { running = !document.hidden; wake(); });
+      if (hasIO) new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; wake(); }).observe(hero);
+    }
+
+    /* the gold thread down the left edge tracks how far you have read */
+    var thread = document.getElementById("fd-thread"), ticking = false;
+    function drawThread() {
+      var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+      thread.style.height = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "vh";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(drawThread); } }, { passive: true });
+    drawThread();
+
+    /* the simple version: no motion, plain ground; remembered on this device */
+    var toggle = document.getElementById("fd-simple");
+    function setSimple(on, save) {
+      body.classList.toggle("simple", on);
+      toggle.textContent = on ? "Living version" : "Simple version";
+      toggle.setAttribute("aria-pressed", on ? "true" : "false");
+      if (on) { revealAll(); if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height); }
+      else { startReveal(); wake(); }
+      if (save) { try { window.localStorage.setItem("fd-simple", on ? "1" : "0"); } catch (e) {} }
+    }
+    toggle.addEventListener("click", function () { setSimple(!body.classList.contains("simple"), true); });
+    setSimple(simple, false);
+  })();
+</script>
 <script src="assets/ambient.js?v=2" defer></script>
 <script src="site-config.js" defer></script>
+
 </body>
 </html>

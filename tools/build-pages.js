@@ -15,7 +15,7 @@
 
    What it does, idempotently (safe to re-run; overwrites from source):
      1. Injects baked HTML between <!--build:NAME:start/end--> markers in
-        index.html (#spine), eras.html (#ages), themes.html (#themes-list),
+        index.html (#spine, front-door counts), eras.html (#ages), themes.html (#themes-list),
         and traditions.html (#trad-list).
      2. Writes one static page per era to docs/eras/<slug>.html, with per-era
         <title>/description/canonical/OG/Twitter + BreadcrumbList JSON-LD.
@@ -751,6 +751,28 @@ function pantheonJsonLd() {
   return '  <script type="application/ld+json">' + JSON.stringify(ld).replace(/<\//g, "<\\/") + "</script>";
 }
 
+// ---------- home: the front-door plaque counts --------------------------------
+// The living front door (index.html, proof v4) names how much is in the house. Counted here from the
+// same data the listing pages use, so the plaque can never go stale by hand (the old "199 figures" lesson).
+function numberWords(n) {
+  const ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+    "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+  const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+  if (!Number.isInteger(n) || n < 0 || n > 9999) return String(n);
+  if (n < 20) return ones[n];
+  if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 ? "-" + ones[n % 10] : "");
+  if (n < 1000) return ones[Math.floor(n / 100)] + " hundred" + (n % 100 ? " " + numberWords(n % 100) : "");
+  return numberWords(Math.floor(n / 1000)) + " thousand" + (n % 1000 ? " " + numberWords(n % 1000) : "");
+}
+function homeCountsFragment() {
+  const chapters = A.chapters.filter((c) => c.status === "published").length;
+  const vault = VAULT.items.filter((v) => v.status === "published").length;
+  const figures = PANTHEON.figures.length;
+  const w = numberWords(chapters);
+  return "        " + w.charAt(0).toUpperCase() + w.slice(1) + " chapters, " + numberWords(vault) + " objects in the Vault, " +
+    numberWords(figures) + " figures in the Pantheon &mdash; and a building to walk them in. The doors are below.";
+}
+
 // ---------- 3. sitemap ----------------------------------------------------
 function buildSitemap() {
   // [url, lastmod or null]. lastmod comes from content/dates.json (tools/stamp-dates.js):
@@ -790,6 +812,7 @@ const changed = [];
 // listing pages
 const injections = [
   ["index.html", "spine", spineFragment()],
+  ["index.html", "home-counts", homeCountsFragment()],
   ["eras.html", "ages", agesFragment()],
   ["themes.html", "themes", themesFragment()],
   ["traditions.html", "traditions", traditionsFragment()],

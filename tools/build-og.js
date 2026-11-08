@@ -59,11 +59,12 @@ const firstSvg = (html) => {
 };
 const eraBySlug = (slug) => A.eras.find((e) => e.slug === slug) || null;
 
-// The home page's compass emblem, taken from index.html so the two never drift.
+// The archive's compass emblem. It was drawn in index.html's masthead until the living front door
+// (proof v4) replaced that masthead; the emblem itself is kept here, unchanged, so the share card stays the same.
 function siteEmblem() {
-  const html = fs.readFileSync(path.join(DOCS, "index.html"), "utf8");
-  const m = html.match(/<svg class="emblem"[\s\S]*?<\/svg>/);
-  return m ? m[0] : "";
+  const svg = fs.readFileSync(path.join(__dirname, "data", "site-emblem.svg"), "utf8").trim();
+  if (!/^<svg class="emblem"[\s\S]*<\/svg>$/.test(svg)) throw new Error("tools/data/site-emblem.svg is not the emblem SVG");
+  return svg;
 }
 
 // ---- the cards ------------------------------------------------------------
