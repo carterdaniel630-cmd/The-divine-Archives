@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (13:50 UTC)
+# Handoff — updated 2026-11-08 (17:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: The Rök Stone, Decoded is live (2026-11-08 ~13:44 UTC)
+## Latest: chapter images tranche 1 is live (2026-11-08 ~17:23 UTC)
+- **`main` = `593d7d17`** (deploy run 256 green, 17:23 UTC): **PR #130** fast-forwarded `b3188230` → `593d7d17` **per item** on Carter's yes (`decisions-2026-11-08-carter-yes-130.md`). 168 museum-rendition stills on 50 chapter pages (V68, V76, the rights-ledger three, the D2 nine and the three revered-figure stills V57/V25/V13 held out by `tools/data/relic-stills.json`). Post-merge check by the 17:42 run (wrote none of it): verify 18/18 incl. `verify-relic-stills.js`, tests 42/42, every still file present, headless 360/390/1280 standards mode, no overflow, no script errors. Reply `replies/2026-11-08-run-1742-pr130-post-merge.md`.
+- **Open:** revered-figure stills a/b (Carter); D2 sensitivity holds (Carter); pack-six rebuild, front-door v4 and Rotunda Tray 1 wait on atlas files (`handoff/pack-six/`, `handoff/front-door-v4/`, `handoff/rotunda/tray1/`).
+
+## Earlier: The Rök Stone, Decoded is live (2026-11-08 ~13:44 UTC)
 - **`main` = `b3188230`** (deploy run 255 green): **PR #127** fast-forwarded `b685b321` → `b3188230` **per item** on Carter's yes (a) (`decisions-2026-11-08-carter-yes-127.md`). New Vault reading page `docs/vault/rok-runestone-decoded.html` (+ source log `sources/rok-runestone-decoded.md`, sitemap, registry), with the pending-review tag. Review FIXABLE → F1–F3 fixed → delta review PASS 0 findings (`replies/2026-11-08-pr127-delta-review.md`); GitHub 8/8 green incl. Lighthouse; local checks re-run green by the merging run. Reply `replies/2026-11-08-run-1350-pr127-merged.md`.
 - **Open:** Rök photographs (atlas), V36 back-link (Carter a/b), page's pending tag (Carter). Next loop builds: chapter-images tranche 1, Rotunda Tray 1.
 
