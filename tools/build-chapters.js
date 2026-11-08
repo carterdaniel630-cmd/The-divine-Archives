@@ -19,6 +19,7 @@ const SEO = require("./seo");
 
 const ROOT = path.join(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
+const STILLS = path.join(DOCS, "assets/vault/stills");
 const OUTDIR = path.join(DOCS, "chapters");
 const SITE = "https://getconexto.com";
 
@@ -95,13 +96,21 @@ function vaultFor(ch) {
     .sort((a, b) => (a.year || 0) - (b.year || 0));
   if (!items.length) return "";
   const eraName = (slug) => { const e = eraBySlug(slug); return e ? e.name : ""; };
+  // each object's still from its museum rendition (tools/build-relic-stills.js), where one exists; a rendition,
+  // never a photograph, and the card says so
+  const still = (i) => fs.existsSync(path.join(STILLS, i.slug + ".webp"))
+    ? '<img class="vl-img" src="../assets/vault/stills/' + i.slug + '.webp" width="560" height="420" loading="lazy" decoding="async" alt="' +
+      esc("The museum's 3D rendition of " + i.title.replace(/[“”]/g, "") + ", not a photograph") + '" /><span class="vl-r">Museum rendition &middot; not a photograph</span>'
+    : "";
+  const anyStill = items.some((i) => i.status !== "withdrawn" && still(i));
   return '\n      <div class="vault-links" id="in-the-vault">' +
     '<p class="eyebrow center">In the Vault &middot; objects and texts from this tradition</p>' +
-    '<p class="tiny center" style="margin:-.3rem 0 1rem">Manuscripts, inscriptions and relics connected with this chapter, each studied in its own Vault entry.</p>' +
+    '<p class="tiny center" style="margin:-.3rem 0 1rem">Manuscripts, inscriptions and relics connected with this chapter, each studied in its own Vault entry.' +
+    (anyStill ? " The pictures are the Virtual Museum&rsquo;s own 3D renditions of the objects, not photographs of them." : "") + "</p>" +
     '<div class="vl-list">\n' + items.map((i) => i.status === "withdrawn"
       ? '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.absence.link) + "</span>" +
         '<span class="vl-m">Not shown</span><span class="vl-s">' + esc(clip(i.summary, 170)) + "</span></a>"
-      : '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.title) + "</span>" +
+      : '        <a class="vl-item' + (still(i) ? " vl-has-img" : "") + '" href="../vault/' + i.slug + '.html">' + still(i) + '<span class="vl-t">' + esc(i.title) + "</span>" +
       '<span class="vl-m">' + esc(VAULT.categories[i.category] || "") + (eraName(i.era) ? " &middot; " + esc(eraName(i.era)) : "") + " &middot; " + esc(i.dated) + "</span>" +
       '<span class="vl-s">' + esc(clip(i.summary, 170)) + "</span></a>").join("\n") +
     "\n      </div></div>";
