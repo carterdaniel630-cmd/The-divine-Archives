@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (06:50 UTC)
+# Handoff — updated 2026-11-08 (08:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: The Firmament (pinball) retired (2026-11-08 ~06:45 UTC)
+## Latest: Pilate Stone inscription reads as the stone does (2026-11-08 ~08:45 UTC)
+- **`main` = `5d519eeb`** (deploy run 252 green): **PR #125** fast-forwarded `3025139b` → `5d519eeb` **per item** on Carter's ruling of 2026-11-07 (`pilate-stone-texture-fix-order.md`). The museum's V44 model now carries the stone's own letters per CIIP II 1277, every line left to right, nothing restored; geometry and exhibit unchanged. Review PASS 0 findings (`replies/2026-11-08-pr125-independent-review.md`); reply `replies/2026-11-08-run-0842-pr125-merged.md`.
+- **Open:** no loop PRs waiting. Next: records fixes + Rotunda Tray 1.
+
+## Earlier: The Firmament (pinball) retired (2026-11-08 ~06:45 UTC)
 - **`main` = `3025139b`** (deploy run 251 green): **PR #124** fast-forwarded `42e02ef4` → `3025139b` **per item** on Carter's order of 2026-11-05 (`pinball-deletion-order.md`). The game, its fact bank and verifier moved to `_to_delete/2026-11-08-the-firmament-pinball/` (not deleted); home shows 11 game cards; the hidden Arcade lists 11 (an empty cabinet slot remains at 215°); museum directory and registry rebuilt. Independent review PASS 0 findings (`replies/2026-11-08-run-0645-pr124-review.md`).
 - **Open:** no loop PRs waiting. Next: Pilate Stone texture fix.
 
