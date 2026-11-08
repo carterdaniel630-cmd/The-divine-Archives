@@ -104,7 +104,7 @@
     .flame{position:absolute;left:31%;top:0;width:38%;height:62%;background:radial-gradient(circle at 50% 75%,#fff7b2 0 12%,#ed9b32 28%,#c64c20 60%,transparent 72%);filter:blur(.5px) drop-shadow(0 0 8px #e2702b);clip-path:polygon(50% 0,68% 31%,92% 67%,72% 100%,28% 100%,8% 68%,35% 39%);animation:flame 1.7s ease-in-out infinite alternate;transform-origin:50% 100%}
     @keyframes flame{to{transform:scaleX(.82) scaleY(1.12) rotate(3deg);filter:blur(.8px) drop-shadow(0 0 13px #e2702b)}}
     .side{display:grid;gap:12px}
-    .status-card,.control-card{color:#e8eee9;background:repeating-linear-gradient(98deg,transparent 0 13px,#fff 14px,#fff0 15px),radial-gradient(ellipse at 18% 8%,#795538 0 2%,transparent 29%),linear-gradient(145deg,#4e3424,#281a13 58%,#15100d);border:1px solid #9b76508a;box-shadow:inset 0 1px #e5bb8461,inset 0 0 0 3px #1b110c,inset 0 -14px 24px #0007,0 5px 0 #100b08,0 16px 34px #0007;border-radius:3px;position:relative}
+    .status-card,.control-card{color:#e8eee9;background:repeating-linear-gradient(98deg,transparent 0 13px,#ffffff0d 14px,#fff0 15px),radial-gradient(ellipse at 18% 8%,#795538 0 2%,transparent 29%),linear-gradient(145deg,#4e3424,#281a13 58%,#15100d);border:1px solid #9b76508a;box-shadow:inset 0 1px #e5bb8461,inset 0 0 0 3px #1b110c,inset 0 -14px 24px #0007,0 5px 0 #100b08,0 16px 34px #0007;border-radius:3px;position:relative}
     .status-card:after,.control-card:after{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #d3ad5524;box-shadow:inset 0 0 12px #0006}
     .status-card{padding:15px 16px 14px;position:relative;overflow:hidden}
     .status-card:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--turnColor,var(--ice));box-shadow:0 0 12px var(--turnColor,var(--ice))}
@@ -329,5 +329,12 @@
     resizeSky();raf=requestAnimationFrame(skyLoop);setup();timer(function(){toast('Choose a piece. Marked squares show its march.')},700);
   })();
   </script>
+<style id="g-fixes-2026-11-08">
+/* G-fixes 2026-11-08 (audit 2026-11-07 G-1..G-5): presentation only; rules, text of record and honesty marks unchanged. */
+/* G-1: controls at least 44 px. Board squares stay as drawn: 11 x 11 squares cannot be 44 px on a
+   390 px phone (that needs 484 px); they remain above the 24 px minimum of WCAG 2.2 (2.5.8). */
+.iconbtn{width:44px!important;height:44px!important;min-height:44px!important}
+.seg button,.textbtn{min-height:44px}
+</style>
 </body>
 </html>

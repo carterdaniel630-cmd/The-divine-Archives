@@ -160,10 +160,12 @@
 
     <div class="mancala-stage">
       <div>
+        <p class="mancala-rowtag" aria-hidden="true">Keeper&#8217;s row</p>
         <div class="mancala-boardwrap">
           <canvas class="mancala-board" id="mancala-canvas" tabindex="0" role="img"
                   aria-label="Mancala board. Use left and right arrows to choose one of your six pits, Enter to sow."></canvas>
         </div>
+        <p class="mancala-rowtag mancala-rowtag-you" aria-hidden="true">&#9650; Your row &#8212; tap a pit to sow</p>
         <p class="mancala-hint">
           <kbd>←</kbd><kbd>→</kbd> choose a pit &nbsp;·&nbsp; <kbd>Enter</kbd> sow &nbsp;·&nbsp;
           <kbd>U</kbd> undo &nbsp;·&nbsp; <kbd>R</kbd> restart &nbsp;·&nbsp; or tap a pit on your near row
@@ -1106,5 +1108,12 @@
   }
 })();
 </script>
+<style id="g-fixes-2026-11-08">
+/* G-fixes 2026-11-08 (audit 2026-11-07 G-1..G-5): presentation only; rules, text of record and honesty marks unchanged. */
+.mancala-btn{min-height:44px}
+/* G-4: name the two rows on the board itself */
+.mancala-rowtag{margin:0 0 6px;text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#c9a55a}
+.mancala-rowtag-you{margin:6px 0 0;color:#f0d48a}
+</style>
 </body>
 </html>
