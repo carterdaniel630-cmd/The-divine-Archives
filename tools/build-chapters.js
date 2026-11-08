@@ -20,6 +20,7 @@ const SEO = require("./seo");
 const ROOT = path.join(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
 const STILLS = path.join(DOCS, "assets/vault/stills");
+const NO_STILL = require("./data/relic-stills.json").exclude;   // never shown, whatever is on disk
 const OUTDIR = path.join(DOCS, "chapters");
 const SITE = "https://getconexto.com";
 
@@ -98,7 +99,7 @@ function vaultFor(ch) {
   const eraName = (slug) => { const e = eraBySlug(slug); return e ? e.name : ""; };
   // each object's still from its museum rendition (tools/build-relic-stills.js), where one exists; a rendition,
   // never a photograph, and the card says so
-  const still = (i) => fs.existsSync(path.join(STILLS, i.slug + ".webp"))
+  const still = (i) => !NO_STILL[i.id] && fs.existsSync(path.join(STILLS, i.slug + ".webp"))
     ? '<img class="vl-img" src="../assets/vault/stills/' + i.slug + '.webp" width="560" height="420" loading="lazy" decoding="async" alt="' +
       esc("The museum's 3D rendition of " + i.title.replace(/[“”]/g, "") + ", not a photograph") + '" /><span class="vl-r">Museum rendition &middot; not a photograph</span>'
     : "";
@@ -106,7 +107,7 @@ function vaultFor(ch) {
   return '\n      <div class="vault-links" id="in-the-vault">' +
     '<p class="eyebrow center">In the Vault &middot; objects and texts from this tradition</p>' +
     '<p class="tiny center" style="margin:-.3rem 0 1rem">Manuscripts, inscriptions and relics connected with this chapter, each studied in its own Vault entry.' +
-    (anyStill ? " The pictures are the Virtual Museum&rsquo;s own 3D renditions of the objects, not photographs of them." : "") + "</p>" +
+    (anyStill ? " The pictures are the Virtual Museum&rsquo;s own 3D renditions of the objects, not photographs of them. Where an object is lost or known only from texts, its rendition follows those descriptions and shows no real original." : "") + "</p>" +
     '<div class="vl-list">\n' + items.map((i) => i.status === "withdrawn"
       ? '        <a class="vl-item" href="../vault/' + i.slug + '.html"><span class="vl-t">' + esc(i.absence.link) + "</span>" +
         '<span class="vl-m">Not shown</span><span class="vl-s">' + esc(clip(i.summary, 170)) + "</span></a>"

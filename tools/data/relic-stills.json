@@ -1,0 +1,19 @@
+{
+  "_about": "Vault objects whose museum rendition must NOT be shown as a still on the chapter pages. Read by tools/build-relic-stills.js (never renders them, deletes any old file), tools/build-chapters.js (never shows one) and tools/verify-relic-stills.js (fails if one is on disk or on any page). Remove an id only on Carter's ruling.",
+  "exclude": {
+    "v68": "The tjurunga is Not Shown, by ruling; no image may ever be added.",
+    "v76": "The Vault shows no image connected with the Báb, out of respect for Bahá'í practice (tools/build-museum.js NO_IMAGE).",
+    "v16": "Rights-ledger hold (James Ossuary) until Carter rules (chapter-images order, item 6).",
+    "v17": "Rights-ledger hold (\"Gospel of Jesus's Wife\") until Carter rules (chapter-images order, item 6).",
+    "v74": "Rights-ledger hold (Satanic Bible) until Carter rules (chapter-images order, item 6).",
+    "v26": "Held for Carter, sensitivity decision D2 (plans/museum-visual-pass.md): Black Stone.",
+    "v27": "Held for Carter, sensitivity decision D2: Sacred Tooth Relic.",
+    "v28": "Held for Carter, sensitivity decision D2: Birmingham Qur'an.",
+    "v29": "Held for Carter, sensitivity decision D2: Sana'a Palimpsest.",
+    "v33": "Held for Carter, sensitivity decision D2: Kartarpur Bir.",
+    "v46": "Held for Carter, sensitivity decision D2: Piprahwa relics.",
+    "v64": "Held for Carter, sensitivity decision D2: Benin Bronzes.",
+    "v77": "Held for Carter, sensitivity decision D2: Haitian Vèvè.",
+    "v88": "Held for Carter, sensitivity decision D2: the skull reliquary."
+  }
+}

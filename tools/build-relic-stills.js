@@ -7,11 +7,12 @@
    Foundation Kit's gallery rig, and written to docs/assets/vault/stills/<slug>.webp. They are renditions, not
    photographs, and every page that shows one says so.
 
-   Never rendered (EXCLUDE below): V68 (the tjurunga is Not Shown, by ruling) and the three objects held by the
-   rights ledger until Carter rules (V16 James Ossuary, V17 "Gospel of Jesus's Wife", V74 Satanic Bible).
+   Never rendered: every id in tools/data/relic-stills.json "exclude" (the tjurunga, the Báb, the three rights-ledger
+   holds and the nine objects held for Carter's sensitivity decision D2). tools/verify-relic-stills.js enforces it.
 
    Usage: node tools/build-relic-stills.js [vNN ...]     (no ids = every object with a rendition)
-   Needs Playwright with Chromium. Deterministic: buildRelic seeds its own random numbers per object.
+   Needs Playwright with Chromium. Not pixel-for-pixel repeatable: a few renditions draw with unseeded randomness,
+   so re-rendering one changes its file slightly. Render only the objects you mean to change.
    ========================================================================== */
 "use strict";
 const fs = require("fs");
@@ -22,7 +23,7 @@ const { spawn } = require("child_process");
 const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, "docs/assets/vault/stills");
 const W = 560, H = 420;
-const EXCLUDE = { v68: "Not Shown by ruling", v16: "rights-ledger hold", v17: "rights-ledger hold", v74: "rights-ledger hold" };
+const EXCLUDE = require("./data/relic-stills.json").exclude;
 // per-object views where the default three-quarter view hides what the object is (yaw, pitch in radians)
 const VIEW = {};
 
