@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (21:00 UTC)
+# Handoff — updated 2026-11-08 (21:40 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: relic-stills ruling wording merged (2026-11-08 ~20:57 UTC)
+## Latest: pack-six game fixes merged (2026-11-08 ~21:38 UTC)
+- **`main` = `77d006e6`**: **PR #132** fast-forwarded `2c350132` → `77d006e6` **per item** on Carter's "yes" (`decisions-2026-11-08-carter-yes-132.md`). Adds `products/games-of-the-ancients/` (the six Gumroad games, as sold, then the G-1..G-5 fixes: 44 px controls, Ur night palette on light-mode phones, Hnefatafl panel stripes, Mancala row labels, Ur entry hint). Not served by the site; `docs/` unchanged. Review PASS 0 findings (`replies/2026-11-08-pr132-independent-review.md`); GitHub 5/5 green; local checks green.
+- **Open:** atlas swaps the six files into the Gumroad products; later the full six-game production rebuild; front-door v4 and Rotunda Tray 1 wait on atlas binary files.
+
+## Earlier: relic-stills ruling wording merged (2026-11-08 ~20:57 UTC)
 - **`main` = `2c350132`** (deploy run 257): **PR #131** fast-forwarded `593d7d17` → `2c350132` **per item** on Carter's "merge" (`decisions-2026-11-08-carter-merge-131.md`). Three internal exclusion reasons (V57/V25/V13) in `tools/data/relic-stills.json` now record Carter's ruling to keep those stills off; nothing on the live pages changes. GitHub 7/7 green incl. Lighthouse; review PASS 0 findings; local checks re-run green by the merging run.
 - **Open:** PR #132 (pack-six fixes) needs independent review + Carter's yes; front-door v4 and Rotunda Tray 1 wait on atlas binary files.
 
