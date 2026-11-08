@@ -80,11 +80,11 @@ The Olmec stand at the beginning of the long history of Mesoamerican religion tr
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The Olmec heartland sites of San Lorenzo, La Venta and Tres Zapotes and their dates (c. 1600–400 BCE); the colossal heads (seventeen known) and thrones; La Venta's Massive Offerings and Offering 4; the offerings at El Manatí, including the world's oldest rubber balls (c. 1600 BCE), wooden busts and infant bones; the Chalcatzingo reliefs; the recurring composite imagery (were-jaguar, Olmec Dragon, Maize God); cacao use at San Lorenzo; and the spread of Olmec-style objects across Mesoamerica.
+**What's well supported by the evidence.** The Olmec heartland sites of San Lorenzo, La Venta and Tres Zapotes and their dates (c. 1600–400 BCE); the colossal heads (seventeen known) and thrones; La Venta's Massive Offerings and Offering 4; the offerings at El Manatí, including the world's oldest rubber balls (c. 1600 BCE), wooden busts and infant bones; the Chalcatzingo reliefs; the recurring composite imagery (were-jaguar, Olmec Dragon, Maize God); cacao use at San Lorenzo; and the spread of Olmec-style objects across Mesoamerica.
 
-**Not supported (as established fact).** African, Chinese, Atlantean or extraterrestrial origins of the Olmec; the use of unprovenanced objects as secure evidence; any claim to know the Olmec names of their gods or the content of their myths.
+**What's not supported by the evidence.** African, Chinese, Atlantean or extraterrestrial origins of the Olmec; the use of unprovenanced objects as secure evidence; any claim to know the Olmec names of their gods or the content of their myths.
 
-**Genuinely open.** Whether the Olmec were a "mother culture" or one of several "sister cultures"; whether Joralemon's gods are distinct deities; whether the transformation figures show shamans; whether the infants of El Manatí were sacrificed; whether the Cascajal block is writing and genuinely ancient; and why the heartland centres declined around 400 BCE.
+**What's genuinely open.** Whether the Olmec were a "mother culture" or one of several "sister cultures"; whether Joralemon's gods are distinct deities; whether the transformation figures show shamans; whether the infants of El Manatí were sacrificed; whether the Cascajal block is writing and genuinely ancient; and why the heartland centres declined around 400 BCE.
 
 ## Sources
 

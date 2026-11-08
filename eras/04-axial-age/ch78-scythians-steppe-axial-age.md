@@ -72,11 +72,11 @@ The Scythians were Iranian cousins of the Persians of **Zoroaster** (ch06), shar
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The Iranian-speaking nomadic cultures of the Eurasian steppe and their kurgans; Herodotus's account of Scythian gods, rites and royal funerals (as a text); the archaeological confirmation of many elements of his funeral description in the Dnieper kurgans; the Pazyryk frozen tombs, tattoos, textiles and horse burials, including the Ukok "Ice Maiden" (1993); hemp-burning equipment at Pazyryk and cannabis residues at Jirzankal (c. 500 BCE); the animal-style art; Arzhan's early royal burials; women buried with weapons; and the linguistic descent of Ossetian from the Scytho-Alanic languages.
+**What's well supported by the evidence.** The Iranian-speaking nomadic cultures of the Eurasian steppe and their kurgans; Herodotus's account of Scythian gods, rites and royal funerals (as a text); the archaeological confirmation of many elements of his funeral description in the Dnieper kurgans; the Pazyryk frozen tombs, tattoos, textiles and horse burials, including the Ukok "Ice Maiden" (1993); hemp-burning equipment at Pazyryk and cannabis residues at Jirzankal (c. 500 BCE); the animal-style art; Arzhan's early royal burials; women buried with weapons; and the linguistic descent of Ossetian from the Scytho-Alanic languages.
 
-**Not supported (as established fact).** That Herodotus's account is accurate in every detail (the fifty impaled horsemen, the size of the brushwood altars, the scalping and skull-cup customs are not all confirmed); that the Amazons of Greek myth were a single real nation of women; that the Scythians were the ancestors of the Celts, Slavs or other modern nations in any simple sense.
+**What's not supported by the evidence.** That Herodotus's account is accurate in every detail (the fifty impaled horsemen, the size of the brushwood altars, the scalping and skull-cup customs are not all confirmed); that the Amazons of Greek myth were a single real nation of women; that the Scythians were the ancestors of the Celts, Slavs or other modern nations in any simple sense.
 
-**Genuinely open.** The meanings of the animal style; how far Herodotus's Greek equivalents correctly capture the Scythian gods; the three-function reading of the golden gifts; the nature and status of the Enarees; the religious meaning of the hemp rites and the tattoos; and how much of the Nart sagas preserves ancient Scythian belief.
+**What's genuinely open.** The meanings of the animal style; how far Herodotus's Greek equivalents correctly capture the Scythian gods; the three-function reading of the golden gifts; the nature and status of the Enarees; the religious meaning of the hemp rites and the tattoos; and how much of the Nart sagas preserves ancient Scythian belief.
 
 ## Sources
 

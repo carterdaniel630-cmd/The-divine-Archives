@@ -125,7 +125,7 @@ This chapter sits with the Paleolithic (Chapter 41) and Neolithic (Chapter 42) c
 
 ## The evidence, honestly
 
-**Well-supported by evidence.**
+**What's well supported by the evidence.**
 
 - *The word and the record:* the Evenki origin of the word "shaman" and its entry into European languages through Russian. Witsen's 1692 description and image. The core ethnographic descriptions of Siberian shamanic practice (trance, drum, costume, spirit journey, healing). The Chukchi "transformed" shamans recorded by Bogoras. Fly agaric use among north-eastern Siberian peoples.
 - *The Sami:* the criminalization and confiscation of Sami drums and the 1728 fire. The repatriation of Sami drums.
@@ -133,7 +133,7 @@ This chapter sits with the Paleolithic (Chapter 41) and Neolithic (Chapter 42) c
 - *Persecution and revival:* Soviet persecution of shamans. The post-Soviet revival and the Dungur society. The Gabyshev case.
 - *Archaeology:* the Mal'ta genome and its link to Native American ancestry. The Hilazon Tachtit and Bad Dürrenberg burials and their grave goods.
 
-**Not supported (as established fact).**
+**What's not supported by the evidence.**
 
 - That shamanism is proven to be the first or universal religion of humanity.
 - That female shamans preceded male ones.
@@ -141,7 +141,7 @@ This chapter sits with the Paleolithic (Chapter 41) and Neolithic (Chapter 42) c
 - That Soma was the fly agaric.
 - That the Mal'ta birds or Paleolithic cave figures depict shamans.
 
-**Genuinely open.**
+**What's genuinely open.**
 
 - The ultimate origin of the Evenki word.
 - Whether "shamanism" is a useful cross-cultural category or a Siberian one.

@@ -59,7 +59,7 @@ Sikhism grew directly from the meeting this book has been tracing: the **nirguna
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The historical Gurus and their dates, from Nanak (1469–1539) to Gobind Singh (d. 1708); the founding of Kartarpur, Amritsar, and the langar; the compilation of the **Guru Granth Sahib** (1604) and its inclusion of non-Sikh saints; the **martyrdoms** of Arjan (1606) and Tegh Bahadur (1675); the founding of the **Khalsa** (1699); and the later history — Ranjit Singh's empire (1799–1839), the Singh Sabha, and the events of 1947 and 1984. These rest on solid historical record.
+**What's well supported by the evidence.** The historical Gurus and their dates, from Nanak (1469–1539) to Gobind Singh (d. 1708); the founding of Kartarpur, Amritsar, and the langar; the compilation of the **Guru Granth Sahib** (1604) and its inclusion of non-Sikh saints; the **martyrdoms** of Arjan (1606) and Tegh Bahadur (1675); the founding of the **Khalsa** (1699); and the later history — Ranjit Singh's empire (1799–1839), the Singh Sabha, and the events of 1947 and 1984. These rest on solid historical record.
 
 **Not supported (as history).** Nanak's **revelation** and the miracle-tales of the **janamsakhi** narratives — the three days in the river, the wonders of his travels — are matters of **faith and devotional legend**, not documented history. The theological claims of the tradition are recorded here as belief, not adjudicated.
 

@@ -67,7 +67,7 @@ Sufism is the mystical inner path of the **Islam** of the earlier era (Chapter 2
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The rise of Sufism from early Islamic asceticism; the historical figures (Hasan al-Basri, Rabia, Bistami, Junayd, **al-Hallaj** and his execution in 922, al-Ghazali, Ibn Arabi, Rumi, Amir Khusrow) and the dates and content of their major works; the formation of the **tariqa** orders (Qadiriyya, Chishtiyya, Mevlevi, Naqshbandiyya, and the rest); the core practices of **dhikr**, **sama**, the nafs-psychology, and the master–disciple path; and Sufism's documented role in the spread of Islam and in anticolonial resistance.
+**What's well supported by the evidence.** The rise of Sufism from early Islamic asceticism; the historical figures (Hasan al-Basri, Rabia, Bistami, Junayd, **al-Hallaj** and his execution in 922, al-Ghazali, Ibn Arabi, Rumi, Amir Khusrow) and the dates and content of their major works; the formation of the **tariqa** orders (Qadiriyya, Chishtiyya, Mevlevi, Naqshbandiyya, and the rest); the core practices of **dhikr**, **sama**, the nafs-psychology, and the master–disciple path; and Sufism's documented role in the spread of Islam and in anticolonial resistance.
 
 **Not supported (as history).** The **miracles** (*karamat*) of the saints are matters of faith. Ibn Arabi's **wahdat al-wujud** is a theological vision, neither proven nor refuted. And the popular modern image of a **universal, de-Islamized Rumi** is a documented distortion of the historical poet.
 

@@ -65,7 +65,7 @@ Theosophy and the occult revival are the children of **Spiritualism** (Chapter 3
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The history is richly documented: Blavatsky, Olcott, and the Theosophical Society (1875); the texts (*Isis Unveiled* 1877, *The Secret Doctrine* 1888); Olcott's real role in the Sri Lankan Buddhist revival; Besant, Leadbeater, and the rise and 1929 dissolution of the Krishnamurti "World Teacher" project; Steiner and Anthroposophy (1912); the Golden Dawn (1888) and its members; Crowley, *The Book of the Law* (1904), and Thelema — and the vast, traceable influence of all this on modern religion, art, and the New Age.
+**What's well supported by the evidence.** The history is richly documented: Blavatsky, Olcott, and the Theosophical Society (1875); the texts (*Isis Unveiled* 1877, *The Secret Doctrine* 1888); Olcott's real role in the Sri Lankan Buddhist revival; Besant, Leadbeater, and the rise and 1929 dissolution of the Krishnamurti "World Teacher" project; Steiner and Anthroposophy (1912); the Golden Dawn (1888) and its members; Crowley, *The Book of the Law* (1904), and Thelema — and the vast, traceable influence of all this on modern religion, art, and the New Age.
 
 **Not supported (as history or science).** The hidden **Masters** and the materializing **Mahatma letters** (the machinery caught by the SPR's Hodgson in 1885); the **root races** and the lost continents of **Lemuria and Atlantis** (no such races or continents existed); the Golden Dawn's forged **Sprengel** charter; the "ancient Egyptian" **tarot**; and Blavatsky's claimed primordial **sources**, much of which is recombined from contemporary books. The "ancient wisdom" was, in large part, a modern construction.
 

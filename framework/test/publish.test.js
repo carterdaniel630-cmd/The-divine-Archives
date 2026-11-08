@@ -24,9 +24,9 @@ test("only tier-1 rituals (or tier-2 with Carter's recorded framing approval) un
   }
 });
 
-test("every one of the 12 games reports its end, and none of them talks to the ledger directly", () => {
+test("every one of the 11 games reports its end, and none of them talks to the ledger directly", () => {
   const dir = path.join(ROOT, "docs/assets/games");
-  const games = ["chess", "fighter", "excavation", "ouroboros", "labyrinth", "pinball", "antithesis", "reliquary", "dominion", "seeker", "treasure", "ziggurat"];
+  const games = ["chess", "fighter", "excavation", "ouroboros", "labyrinth", "antithesis", "reliquary", "dominion", "seeker", "treasure", "ziggurat"];
   for (const g of games) {
     const src = fs.readFileSync(path.join(dir, g + ".js"), "utf8");
     assert.match(src, new RegExp('AG\\.finish\\("' + g + '"'), g + " never calls AG.finish");

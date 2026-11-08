@@ -80,11 +80,11 @@ Kabbalah grew directly out of the **Rabbinic Judaism** of the previous era (Chap
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The medieval flowering of Kabbalah in Provence and Spain (12th–13th c.); the existence and approximate dating of the **Sefer Yetzirah** (c. 2nd–6th c.), **Bahir** (c. 1180), and **Zohar** (c. 1280–1330); the historical figures (Isaac the Blind, Nachmanides, Abulafia, Moses de León, **Isaac Luria**, **Sabbatai Zevi**, the **Baal Shem Tov**); the sefirot system, the Tree of Life, PaRDeS, and the letter-techniques as documented practices; the Lurianic system (tzimtzum, shevirat ha-kelim, tikkun); the messianic movement of 1665–66 and Sabbatai Zevi's conversion; and the foundational scholarship of **Gershom Scholem**.
+**What's well supported by the evidence.** The medieval flowering of Kabbalah in Provence and Spain (12th–13th c.); the existence and approximate dating of the **Sefer Yetzirah** (c. 2nd–6th c.), **Bahir** (c. 1180), and **Zohar** (c. 1280–1330); the historical figures (Isaac the Blind, Nachmanides, Abulafia, Moses de León, **Isaac Luria**, **Sabbatai Zevi**, the **Baal Shem Tov**); the sefirot system, the Tree of Life, PaRDeS, and the letter-techniques as documented practices; the Lurianic system (tzimtzum, shevirat ha-kelim, tikkun); the messianic movement of 1665–66 and Sabbatai Zevi's conversion; and the foundational scholarship of **Gershom Scholem**.
 
 **Not supported (as history).** The traditional attributions — the **Zohar** to the second-century Shimon bar Yochai, the **Bahir** to Nehunya ben ha-Kanah, the **Sefer Yetzirah** to Abraham or Akiva — are pious pseudepigraphy; the texts are of their (medieval, or for Yetzirah late-antique) age. And **gematria does not decode verifiable hidden messages or predict events**; it is a devotional and interpretive art, not a cryptographic key.
 
-**Genuinely open.** The precise authorship of the **Zohar** (Moses de León alone, or a circle over sixty years) and the **Bahir**; how much genuinely older esoteric material underlies the medieval books; and the exact channels by which Merkavah mysticism, Neoplatonism, and other currents fed the emergence of the sefirot. In a tradition built on secrecy and pseudonymity, some of its own origins are, fittingly, hidden.
+**What's genuinely open.** The precise authorship of the **Zohar** (Moses de León alone, or a circle over sixty years) and the **Bahir**; how much genuinely older esoteric material underlies the medieval books; and the exact channels by which Merkavah mysticism, Neoplatonism, and other currents fed the emergence of the sefirot. In a tradition built on secrecy and pseudonymity, some of its own origins are, fittingly, hidden.
 
 ## Sources
 
