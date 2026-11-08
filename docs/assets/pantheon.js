@@ -125,6 +125,7 @@
       '<p class="pn-d-desc">' + esc(f.d) + "</p>" +
       (f.c ? '<p class="pn-d-contest"><strong>Contested.</strong> ' + esc(f.c) + "</p>" : "") +
       linkList("Read in the archive", chs) + linkList("In the Vault", vs) +
+      (f.s ? linkList("As a statue", ['<li><a href="rotunda/' + esc(f.s) + '.html">' + esc(f.n) + ' in the Rotunda Circle</a> <span class="pn-d-meta">turn it in 3D</span></li>']) : "") +
       '<div class="pn-d-nav"><button type="button" data-step="-1">&larr; Previous</button><button type="button" data-step="1">Next &rarr;</button></div>' +
       "</div></div>";
     dlg.querySelector(".pn-d-x").addEventListener("click", close);

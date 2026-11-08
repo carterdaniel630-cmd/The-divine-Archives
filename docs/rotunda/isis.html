@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isis — a statue in the Rotunda Circle · The Divine Archives</title>
+<meta name="description" content="Isis as a full standing statue in black stone and inlaid gold: a modelled rendition built to the tradition, her face following a Roman bronze bust of Isis (Mount Holyoke College Art Museum, CC BY 4.0).">
+<link rel="canonical" href="https://getconexto.com/rotunda/isis.html">
+<!-- No webfont links: Zeus and Socrates — the viewers proven on
+     Carter's phone — are fully self-contained. An external stylesheet
+     is a stall risk when the file is opened locally on the phone, and
+     the declared stacks fall back to device serifs exactly as theirs
+     do. -->
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #050403;
+    color: #e8dcc2;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1060px; margin: 0 auto; padding: 34px 20px 30px; }
+  header { text-align: center; margin-bottom: 20px; }
+  h1 {
+    font-family: "Cinzel", serif; font-weight: 700;
+    letter-spacing: 0.34em; text-indent: 0.34em;
+    font-size: clamp(2rem, 6vw, 3.4rem); margin: 0 0 8px; color: #f3d58c;
+  }
+  .sub {
+    font-size: clamp(1rem, 2.6vw, 1.25rem); letter-spacing: 0.14em;
+    color: #cdb488; margin: 0 0 14px; text-transform: uppercase;
+  }
+  .tag {
+    display: inline-block; font-family: "Cinzel", serif; font-size: 0.72rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: #f2c46a;
+    border: 1px solid #7a5a1e; border-radius: 999px; padding: 6px 14px 5px;
+    background: rgba(217, 169, 80, 0.07);
+  }
+  #stage {
+    position: relative; width: 100%; height: 68vh; min-height: 460px;
+    border: 1px solid #2b1f10; border-radius: 10px; overflow: hidden;
+    background: radial-gradient(120% 90% at 50% 20%, #171008 0%, #0a0603 55%, #050403 100%);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.65), inset 0 0 90px rgba(0,0,0,0.55);
+  }
+  #scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #scene:active { cursor: grabbing; }
+  .controls {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-top: 14px;
+  }
+  .hint { color: #a68d5f; font-size: 1.02rem; font-style: italic; margin: 0; }
+  .reset {
+    font-family: "Cinzel", serif; font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #f2c46a; background: transparent;
+    border: 1px solid #7a5a1e; border-radius: 6px; padding: 9px 16px; cursor: pointer;
+  }
+  .reset:hover { background: rgba(217,169,80,0.10); }
+  .plaque {
+    margin-top: 22px; background: #0d0a07; border: 1px solid #2b1f10;
+    border-top: 3px solid #b98f4e; border-radius: 8px; padding: 24px 28px 10px;
+  }
+  .plaque h2 {
+    font-family: "Cinzel", serif; font-size: 0.95rem; letter-spacing: 0.26em;
+    color: #f2c46a; margin: 0 0 14px; text-transform: uppercase;
+  }
+  .plaque p { font-size: 1.14rem; line-height: 1.62; color: #e2d5b8; margin: 0 0 14px; }
+  @media (max-width: 600px) {
+    .page { padding: 22px 12px 22px; }
+    #stage { height: 52vh; min-height: 0; }
+    .plaque { padding: 18px 16px 4px; }
+    .plaque p { font-size: 1.05rem; }
+  }
+
+  /* site bar + pending tag (added for the live site; the figure page below is atlas's) */
+  .da-bar { display:flex; flex-wrap:wrap; gap:6px 18px; align-items:center; justify-content:space-between; padding:10px 16px; background:#050301; border-bottom:1px solid rgba(217,169,80,0.25); font-family:Georgia, 'Times New Roman', serif; }
+  .da-bar a { color:#e7c680; text-decoration:none; font-size:15px; letter-spacing:0.04em; min-height:44px; display:inline-flex; align-items:center; }
+  .da-bar a:hover, .da-bar a:focus-visible { text-decoration:underline; }
+  .da-bar nav { display:flex; gap:18px; flex-wrap:wrap; }
+  .da-pending { margin:0; padding:10px 16px; background:rgba(201,162,74,0.10); border-bottom:1px solid rgba(201,162,74,0.35); color:#ecd9a8; font-family:Georgia, 'Times New Roman', serif; font-size:14px; line-height:1.5; }
+  .da-pending strong { color:#f2c46a; }
+</style>
+</head>
+<body>
+<div class="da-bar"><a href="../index.html">The Divine Archives</a><nav aria-label="Rotunda"><a href="index.html">&larr; The Rotunda Circle</a><a href="../pantheon.html">The Pantheon</a></nav></div>
+<p class="da-pending"><strong>Recently added &middot; pending full review.</strong> This statue page is live but has not yet completed the keeper&rsquo;s review pass; wording and detail may still change. The tag is removed once it is cleared.</p>
+<div class="page">
+  <header>
+    <h1>ISIS</h1>
+    <p class="sub">Black Stone &amp; Gold · Egypt &amp; Rome · The Throne-Bearer</p>
+    <span class="tag">A Modelled Rendition — Built To The Tradition</span>
+  </header>
+
+  <div id="stage">
+    <canvas id="scene"></canvas>
+  </div>
+
+  <div class="controls">
+    <p class="hint">Drag to turn her. She turns; the plinth stands still. Pinch or scroll to come closer.</p>
+    <button class="reset" id="resetBtn" type="button">Face Front</button>
+  </div>
+
+  <section class="plaque">
+    <h2>About this figure</h2>
+      <p>Isis, whose name is the throne — the seat of kingship itself made goddess. Wife of Osiris, mother of Horus, the magician who learned the secret name of Ra and the mourner whose tears were said to swell the Nile. Her worship outgrew Egypt until her temples stood from Britain to Mesopotamia, and of all the old gods she was the last still worshipped, at Philae, into the sixth century.</p>
+      <p>She is a modelled rendition, built in the museum's workshop to the form the tradition gives her — not a scan of an ancient statue, and not presented as one. The famous standing figures of Isis, at Naples and elsewhere, have no openly shared scan, and we do not take what is not shared, nor invent an original and call it real. What stands here is our building, honestly named.</p>
+      <p>Her face is modelled on a real thing: a Roman bronze bust of Isis, hollow-cast in the second century CE, in the Hadrianic age, and only four and a half inches high in the bronze (Mount Holyoke College Art Museum, Accession Number MH 1965.10.C.G; the museum's photogrammetry by Laura Shea; the digital model prepared by 3DWP and shared under a Creative Commons Attribution 4.0 licence). The face is that bronze's, studied and followed; the head is finished in the same black stone as the body, so the figure reads as one carved statue. Everything below the neck is the museum's own carving.</p>
+      <p>She is wrought as the inlaid temple statues were wrought: one black stone throughout, the gold set into it as separate worked pieces — the horned sun-disc above her brow, the broad collar across her shoulders, her skirt, the knot of Isis at her breast. In her right hand she lifts the sistrum, the rattle whose sound was her presence arriving; in her left she carries the situla, the bucket of Nile water and milk offered in her temples.</p>
+  </section>
+</div>
+
+<script type="module">
+/* ISIS — Rotunda FULL STATUE (2026-10-27, Carter's ruling: "isis
+   should be a statue not a bust"). A modelled rendition in black
+   stone and gold, built to Carter's own reference: standing figure,
+   horned sun-disc crown, dense carved wig, broad collar, gold skirt.
+   The gold is SEPARATE GEOMETRY with its own material (crown, collar,
+   skirt, sistrum, situla) — never vertex paint (zones bled on his
+   phone three times on Shiva; construction edges cannot bleed).
+   Her face follows the real Roman bronze bust of Isis (Mount Holyoke
+   College Art Museum, MH 1965.10.C.G; photogrammetry Laura Shea;
+   model by 3DWP, CC BY 4.0), cut at the neck and finished in the same
+   black stone as the body — one material, one light, one statue.
+   LOAD PATTERN: quantized-only GLB, no meshopt, no WASM, no veil —
+   the Zeus pattern proven on Carter's phone. */
+
+function __b64bytes(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+function __b64text(b64) { return new TextDecoder('utf-8').decode(__b64bytes(b64)); }
+function __modURL(src) { return URL.createObjectURL(new Blob([src], { type: 'text/javascript' })); }
+
+const __LIB = '../assets/rotunda/lib/';
+async function __fetchText(p) { const r = await fetch(p); if (!r.ok) throw new Error(p + ' ' + r.status); return r.text(); }
+const __glbBytes = fetch('../assets/rotunda/isis.glb').then(r => { if (!r.ok) throw new Error('glb ' + r.status); return r.arrayBuffer(); });
+const [__tThree, __tBgu, __tGltf, __tRoom] = await Promise.all(['three.module.js', 'BufferGeometryUtils.js', 'GLTFLoader.js', 'RoomEnvironment.js'].map(f => __fetchText(__LIB + f)));
+const __threeURL = __modURL(__tThree);
+const THREE = await import(__threeURL);
+const __bguURL = __modURL(__tBgu
+  .split("from 'three'").join("from '" + __threeURL + "'"));
+const __gltfURL = __modURL(__tGltf
+  .split("from 'three'").join("from '" + __threeURL + "'")
+  .split("'../utils/BufferGeometryUtils.js'").join("'" + __bguURL + "'"));
+const __roomURL = __modURL(__tRoom
+  .split("from 'three'").join("from '" + __threeURL + "'"));
+const { GLTFLoader } = await import(__gltfURL);
+const { RoomEnvironment } = await import(__roomURL);
+
+const canvas = document.getElementById('scene');
+const stage = document.getElementById('stage');
+const frag = (location.hash || '').toLowerCase();
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+} catch (e) {
+  console.error('WebGL is not available on this device.', e);
+  throw e;
+}
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.12;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x060503);
+scene.fog = new THREE.Fog(0x060503, 9, 17);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const camera = new THREE.PerspectiveCamera(40, 1, 0.05, 60);
+
+/* ---------- lights: candlelit chiaroscuro (Shiva's rig) ---------- */
+scene.add(new THREE.HemisphereLight(0x5a4a30, 0x0a0603, 0.42));
+const key = new THREE.DirectionalLight(0xffd7a0, 2.6);
+key.position.set(2.6, 4.6, 2.9);
+key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024);
+key.shadow.camera.left = -1.3; key.shadow.camera.right = 1.3;
+key.shadow.camera.top = 3.1; key.shadow.camera.bottom = -0.2;
+key.shadow.bias = -0.0005;
+scene.add(key);
+const spot = new THREE.SpotLight(0xffe0ae, 34, 0, 0.48, 0.8, 1.8);
+spot.position.set(-2.3, 5.4, 3.6);
+spot.target.position.set(0, 1.3, 0);
+scene.add(spot, spot.target);
+const rim = new THREE.DirectionalLight(0xd9a950, 2.1);
+rim.position.set(-3.0, 3.1, -2.9);
+scene.add(rim);
+const cool = new THREE.DirectionalLight(0xb9c9f2, 0.55);
+cool.position.set(-1.4, 1.2, 2.4);
+scene.add(cool);
+const faceFill = new THREE.PointLight(0xffd9a8, 3.6, 5.5, 2.0);
+faceFill.position.set(0.55, 2.10, 1.05);
+scene.add(faceFill);
+const candle = new THREE.PointLight(0xff9c3f, 2.6, 7, 2);
+candle.position.set(0.55, 0.9, 1.3);
+scene.add(candle);
+
+/* ---------- pedestal (fixed — never rotates) ---------- */
+const statue = new THREE.Group();   /* the statue only — rotates */
+statue.position.y = 0.46;           /* plinth top */
+scene.add(statue);
+const fixed = new THREE.Group();
+scene.add(fixed);
+const plinthMat = new THREE.MeshStandardMaterial({ color: 0x1a1511, roughness: 0.82, metalness: 0.03 });
+const ground = new THREE.Mesh(new THREE.CircleGeometry(9, 48),
+  new THREE.MeshStandardMaterial({ color: 0x0a0806, roughness: 1, metalness: 0 }));
+ground.rotation.x = -Math.PI / 2; ground.position.y = -0.001; ground.receiveShadow = true;
+fixed.add(ground);
+function fixedMesh(geo, mat) { const m = new THREE.Mesh(geo, mat); m.castShadow = true; m.receiveShadow = true; fixed.add(m); return m; }
+const pl1 = fixedMesh(new THREE.CylinderGeometry(0.62, 0.66, 0.06, 56), plinthMat); pl1.position.y = 0.03;
+const pl2 = fixedMesh(new THREE.CylinderGeometry(0.545, 0.585, 0.07, 56), plinthMat); pl2.position.y = 0.095;
+const column = fixedMesh(new THREE.CylinderGeometry(0.335, 0.365, 0.29, 56), plinthMat); column.position.y = 0.275;
+const cap = fixedMesh(new THREE.CylinderGeometry(0.375, 0.375, 0.045, 56), plinthMat); cap.position.y = 0.4375;
+
+/* ---------- the statue ---------- */
+let loaded = false;
+const loader = new GLTFLoader();
+function onLoaded(gltf) {
+  /* The statue GLB is built facing +Z — no turn needed. */
+  gltf.scene.traverse(o => {
+    if (o.isMesh) {
+      o.castShadow = true; o.receiveShadow = true;
+      if (o.material) {
+        /* gold takes the room light fully; black stone stays deep */
+        o.material.envMapIntensity = (o.material.name === 'gold') ? 0.72 : 0.60;
+      }
+    }
+  });
+  statue.add(gltf.scene);
+  loaded = true;
+  window.__loadedAt = performance.now();
+}
+try {
+  const __buf = new Uint8Array(await __glbBytes);
+  loader.parse(__buf.buffer, '', onLoaded,
+    err => { console.error('The statue could not be loaded.', err); });
+} catch (e) {
+  console.error('The statue could not be loaded.', e);
+}
+
+/* ---------- controls: Y-only, tilt locked, no auto-rotate ---------- */
+let rotY = 0, dist = 3.15, targetY = 1.28, lockTarget = false;
+if (frag.indexOf('tq') >= 0) { rotY = -0.65; }
+else if (frag.indexOf('close') >= 0) { rotY = -0.14; dist = 0.85; targetY = 2.02; lockTarget = true; }
+else if (frag.indexOf('side') >= 0) { rotY = -Math.PI / 2; }
+else if (frag.indexOf('back') >= 0) { rotY = Math.PI; }
+
+let dragging = false, lastX = 0, pinchD = 0;
+const pointers = new Map();
+function clamp(x, a, b) { return x < a ? a : (x > b ? b : x); }
+canvas.addEventListener('pointerdown', e => {
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) { dragging = true; lastX = e.clientX; }
+  if (pointers.size === 2) {
+    const pts = Array.from(pointers.values());
+    pinchD = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+  }
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener('pointermove', e => {
+  if (!pointers.has(e.pointerId)) return;
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 2) {
+    const pts = Array.from(pointers.values());
+    const d = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+    if (pinchD > 0) dist = clamp(dist * (pinchD / d), 0.45, 7.5);
+    pinchD = d; return;
+  }
+  if (!dragging) return;
+  rotY += (e.clientX - lastX) * 0.0055;
+  lastX = e.clientX;
+});
+function endPointer(e) { pointers.delete(e.pointerId); if (pointers.size === 0) dragging = false; }
+canvas.addEventListener('pointerup', endPointer);
+canvas.addEventListener('pointercancel', endPointer);
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  dist = clamp(dist * (1 + e.deltaY * 0.0011), 0.45, 7.5);
+}, { passive: false });
+
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, w < 600 ? 1 : 1.5));
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+resize();
+
+let frameNo = 0;
+function tick(t) {
+  requestAnimationFrame(tick);
+  statue.rotation.y = rotY;
+  candle.intensity = 2.6 + Math.sin((t || 0) * 0.007) * 0.4 + Math.sin((t || 0) * 0.0173) * 0.3;
+  let effY = targetY;
+  if (!lockTarget) {
+    const lift = clamp((2.4 - dist) / 1.7, 0, 1);
+    effY = targetY + lift * 0.35;
+  }
+  camera.position.set(0, effY + 0.05, dist);
+  camera.lookAt(0, effY, 0);
+  renderer.render(scene, camera);
+  window.__frameTris = renderer.info.render.triangles;
+  if (loaded && ++frameNo === 30) {
+    window.__triCount = renderer.info.render.triangles;
+    window.__geoTris = 0;
+    scene.traverse(o => {
+      if (o.geometry) window.__geoTris += Math.round((o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count) / 3);
+    });
+    window.__ready = true;
+  }
+}
+tick();
+
+</script>
+<script>
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    history.replaceState(null, '', location.pathname + location.search);
+    location.reload();
+  });
+</script>
+</body>
+</html>

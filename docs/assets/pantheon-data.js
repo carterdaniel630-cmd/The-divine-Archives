@@ -15,6 +15,7 @@
           ('-' = none; extras comma-separated). Drawn by pantheon-art.js.
      c    optional note on what is contested about the figure
      v    optional Vault ids
+     s    optional statue page in the Rotunda Circle (rotunda/<s>.html)
 
    The portraits are interpretive emblems built from each figure's traditional
    attributes. They do not reproduce any historical image.
@@ -74,7 +75,7 @@
       p: "human atef flail earth -", v: ["v20", "v34"] },
     { id: "isis", n: "Isis", t: "egypt", k: "deity", ch: ["ch02", "ch18"], e: "Great of magic",
       d: "Wife of Osiris and mother of Horus, whose magic revived her husband. Her cult spread across the Roman world as a mystery religion.",
-      p: "human throne ankh stars wings" },
+      p: "human throne ankh stars wings", s: "isis" },
     { id: "horus", n: "Horus", t: "egypt", k: "deity", ch: ["ch02", "ch49"], e: "The falcon king",
       d: "Son of Osiris and Isis, who fought Set for the throne of Egypt. Each living pharaoh was identified with Horus.",
       p: "falcon double spear sun -" },
@@ -298,7 +299,7 @@
       p: "human crown noose waves -" },
     { id: "shiva", n: "Shiva", t: "hindu", k: "deity", ch: ["ch24", "ch30"], e: "The auspicious one",
       d: "Great god of destruction and renewal, ascetic and householder, shown with a third eye, a trident and the crescent moon in his hair.",
-      p: "human topknot trident - eye3" },
+      p: "human topknot trident - eye3", s: "shiva" },
     { id: "vishnu", n: "Vishnu", t: "hindu", k: "deity", ch: ["ch30"], e: "The preserver",
       d: "Preserver of the world, who descends in avatars such as Rama and Krishna, shown with four arms holding conch, discus, mace and lotus.",
       p: "human crown wheel - arms4" },

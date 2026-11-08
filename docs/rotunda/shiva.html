@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shiva — a statue in the Rotunda Circle · The Divine Archives</title>
+<meta name="description" content="Shiva in meditation, from a real scan of the statue at Murudeshwar, Karnataka (Boris3D Studio, CC BY 3.0), finished in dark bronze: turn him in 3D and read what is scan and what is ours.">
+<link rel="canonical" href="https://getconexto.com/rotunda/shiva.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #050403;
+    color: #e8dcc2;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1060px; margin: 0 auto; padding: 34px 20px 30px; }
+  header { text-align: center; margin-bottom: 20px; }
+  h1 {
+    font-family: "Cinzel", serif; font-weight: 700;
+    letter-spacing: 0.34em; text-indent: 0.34em;
+    font-size: clamp(2rem, 6vw, 3.4rem); margin: 0 0 8px; color: #f3d58c;
+  }
+  .sub {
+    font-size: clamp(1rem, 2.6vw, 1.25rem); letter-spacing: 0.14em;
+    color: #cdb488; margin: 0 0 14px; text-transform: uppercase;
+  }
+  .tag {
+    display: inline-block; font-family: "Cinzel", serif; font-size: 0.72rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: #f2c46a;
+    border: 1px solid #7a5a1e; border-radius: 999px; padding: 6px 14px 5px;
+    background: rgba(217, 169, 80, 0.07);
+  }
+  #stage {
+    position: relative; width: 100%; height: 68vh; min-height: 460px;
+    border: 1px solid #2b1f10; border-radius: 10px; overflow: hidden;
+    background: radial-gradient(120% 90% at 50% 20%, #171008 0%, #0a0603 55%, #050403 100%);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.65), inset 0 0 90px rgba(0,0,0,0.55);
+  }
+  #scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #scene:active { cursor: grabbing; }
+  .controls {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-top: 14px;
+  }
+  .hint { color: #a68d5f; font-size: 1.02rem; font-style: italic; margin: 0; }
+  .reset {
+    font-family: "Cinzel", serif; font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #f2c46a; background: transparent;
+    border: 1px solid #7a5a1e; border-radius: 6px; padding: 9px 16px; cursor: pointer;
+  }
+  .reset:hover { background: rgba(217,169,80,0.10); }
+  .plaque {
+    margin-top: 22px; background: #0d0a07; border: 1px solid #2b1f10;
+    border-top: 3px solid #b98f4e; border-radius: 8px; padding: 24px 28px 10px;
+  }
+  .plaque h2 {
+    font-family: "Cinzel", serif; font-size: 0.95rem; letter-spacing: 0.26em;
+    color: #f2c46a; margin: 0 0 14px; text-transform: uppercase;
+  }
+  .plaque p { font-size: 1.14rem; line-height: 1.62; color: #e2d5b8; margin: 0 0 14px; }
+  @media (max-width: 600px) {
+    .page { padding: 22px 12px 22px; }
+    #stage { height: 52vh; min-height: 0; }
+    .plaque { padding: 18px 16px 4px; }
+    .plaque p { font-size: 1.05rem; }
+  }
+
+  /* site bar + pending tag (added for the live site; the figure page below is atlas's) */
+  .da-bar { display:flex; flex-wrap:wrap; gap:6px 18px; align-items:center; justify-content:space-between; padding:10px 16px; background:#050301; border-bottom:1px solid rgba(217,169,80,0.25); font-family:Georgia, 'Times New Roman', serif; }
+  .da-bar a { color:#e7c680; text-decoration:none; font-size:15px; letter-spacing:0.04em; min-height:44px; display:inline-flex; align-items:center; }
+  .da-bar a:hover, .da-bar a:focus-visible { text-decoration:underline; }
+  .da-bar nav { display:flex; gap:18px; flex-wrap:wrap; }
+  .da-pending { margin:0; padding:10px 16px; background:rgba(201,162,74,0.10); border-bottom:1px solid rgba(201,162,74,0.35); color:#ecd9a8; font-family:Georgia, 'Times New Roman', serif; font-size:14px; line-height:1.5; }
+  .da-pending strong { color:#f2c46a; }
+</style>
+</head>
+<body>
+<div class="da-bar"><a href="../index.html">The Divine Archives</a><nav aria-label="Rotunda"><a href="index.html">&larr; The Rotunda Circle</a><a href="../pantheon.html">The Pantheon</a></nav></div>
+<p class="da-pending"><strong>Recently added &middot; pending full review.</strong> This statue page is live but has not yet completed the keeper&rsquo;s review pass; wording and detail may still change. The tag is removed once it is cleared.</p>
+<div class="page">
+  <header>
+    <h1>SHIVA</h1>
+    <p class="sub">Dark Bronze · India · The Great God in Meditation</p>
+    <span class="tag">Built From a Real Scan — Murudeshwar</span>
+  </header>
+
+  <div id="stage">
+    <canvas id="scene"></canvas>
+  </div>
+
+  <div class="controls">
+    <p class="hint">Drag to turn him. He turns; the plinth stands still. Pinch or scroll to come closer.</p>
+    <button class="reset" id="resetBtn" type="button">Face Front</button>
+  </div>
+
+  <section class="plaque">
+    <h2>About this figure</h2>
+      <p>Shiva, the great god of India — destroyer and renewer in one figure, the still point at the heart of change. Here he sits in deep meditation on a tiger skin, legs crossed, spine straight, four arms at rest: the upper right hand lifts his trident, the upper left his little drum, whose beat is the rhythm of the worlds being made and unmade. A cobra rides at his neck with its hood raised beside him. When the river of heaven fell toward earth with a force that would have shattered it, Shiva caught her in his matted hair and let her flow down gently — the river Ganga is in his locks still, and the crescent moon rides there beside her. The dark beads at his chest are rudraksha seeds, and the brass vessel at his side holds water for his worship.</p>
+      <p>His worshippers tell of the poison. When gods and demons churned the ocean of milk for the nectar of immortality, the first thing to rise was a venom strong enough to end the world. Shiva drank it — and held it in his throat, swallowing nothing, spitting nothing out, so that the world would live. In the story the poison stained his throat blue, and he is Neelkanth, the Blue-Throated, ever since. That blue lives in the story, not on this statue: the figure here is finished in dark bronze, as a temple bronze is.</p>
+      <p>This figure is not our carving. It is a scan of the great statue of Shiva at Murudeshwar, in Karnataka — a living temple monument of our own century, among the tallest images of Shiva on earth, where he sits in this same meditation above the Arabian Sea. The statue was photographed and measured into this model by Boris3D Studio, and is shared under a Creative Commons Attribution licence: “Statue of Shiva in the lotus position at Murudeshwar” by Boris3D Studio, CC BY 3.0, via Thingiverse. What is real here is the scan's own stone — his form, his face, his tiger skin, even the tiger's face carved on its front. What is ours is the finish: one single dark bronze over the whole figure, as a temple statue is cast, with nothing painted on — his ornaments, his cobra and his tiger skin read by their carved form alone, and we say so plainly.</p>
+      <p>In the museum every figure is covered, and Shiva keeps his covering here as the statue gives it: the tiger skin across his lap and waist, the sacred thread across his chest. Nothing has been added to him and nothing taken away; the monument's own form stands as it was scanned.</p>
+  </section>
+</div>
+
+<script type="module">
+/* SHIVA — Rotunda statue, built from the real scan of the great seated
+   Shiva at Murudeshwar (photogrammetry by Boris3D Studio, CC BY 3.0).
+   V3 FINISH (2026-10-27): MONOCHROME CAST BRONZE — one single dark-
+   bronze material over the whole figure, no paint anywhere (zone
+   painting failed twice on Carter's phone; every fault sat on a zone
+   boundary). Ornaments, cobra and tiger skin read by carved form and
+   light alone, as a real cast bronze does.
+   The scan's own tiger-skin base sits on the shared stepped pedestal.
+   LOAD PATTERN (2026-10-27 fix): the GLB is quantized-only — no meshopt
+   compression, no WASM decoder, no loading veil. This mirrors
+   zeus-scan-single-v6, the page proven on Carter's phone; the previous
+   meshopt build hung forever on his Galaxy at the loading message. */
+
+function __b64bytes(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+function __b64text(b64) { return new TextDecoder('utf-8').decode(__b64bytes(b64)); }
+function __modURL(src) { return URL.createObjectURL(new Blob([src], { type: 'text/javascript' })); }
+
+const __LIB = '../assets/rotunda/lib/';
+async function __fetchText(p) { const r = await fetch(p); if (!r.ok) throw new Error(p + ' ' + r.status); return r.text(); }
+const __glbBytes = fetch('../assets/rotunda/shiva.glb').then(r => { if (!r.ok) throw new Error('glb ' + r.status); return r.arrayBuffer(); });
+const [__tThree, __tBgu, __tGltf, __tRoom] = await Promise.all(['three.module.js', 'BufferGeometryUtils.js', 'GLTFLoader.js', 'RoomEnvironment.js'].map(f => __fetchText(__LIB + f)));
+const __threeURL = __modURL(__tThree);
+const THREE = await import(__threeURL);
+const __bguURL = __modURL(__tBgu
+  .split("from 'three'").join("from '" + __threeURL + "'"));
+const __gltfURL = __modURL(__tGltf
+  .split("from 'three'").join("from '" + __threeURL + "'")
+  .split("'../utils/BufferGeometryUtils.js'").join("'" + __bguURL + "'"));
+const __roomURL = __modURL(__tRoom
+  .split("from 'three'").join("from '" + __threeURL + "'"));
+const { GLTFLoader } = await import(__gltfURL);
+const { RoomEnvironment } = await import(__roomURL);
+
+const canvas = document.getElementById('scene');
+const stage = document.getElementById('stage');
+const frag = (location.hash || '').toLowerCase();
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+} catch (e) {
+  console.error('WebGL is not available on this device.', e);
+  throw e;
+}
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.12;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x060503);
+scene.fog = new THREE.Fog(0x060503, 9, 17);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const camera = new THREE.PerspectiveCamera(40, 1, 0.05, 60);
+
+/* ---------- lights: candlelit chiaroscuro ---------- */
+scene.add(new THREE.HemisphereLight(0x5a4a30, 0x0a0603, 0.42));
+const key = new THREE.DirectionalLight(0xffd7a0, 2.6);
+key.position.set(2.6, 4.6, 2.9);
+key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024);
+key.shadow.camera.left = -1.2; key.shadow.camera.right = 1.2;
+key.shadow.camera.top = 2.6; key.shadow.camera.bottom = -0.4;
+key.shadow.bias = -0.0005;
+scene.add(key);
+const spot = new THREE.SpotLight(0xffe0ae, 55, 0, 0.48, 0.8, 1.8);
+spot.position.set(-2.3, 5.4, 3.6);
+spot.target.position.set(0, 1.0, 0);
+scene.add(spot, spot.target);
+const rim = new THREE.DirectionalLight(0xd9a950, 2.1);
+rim.position.set(-3.0, 3.1, -2.9);
+scene.add(rim);
+const cool = new THREE.DirectionalLight(0xb9c9f2, 0.55);
+cool.position.set(-1.4, 1.2, 2.4);
+scene.add(cool);
+const faceFill = new THREE.PointLight(0xffd9a8, 2.0, 6.5, 2.0);
+faceFill.position.set(0.85, 1.6, 1.15);
+scene.add(faceFill);
+const candle = new THREE.PointLight(0xff9c3f, 2.6, 7, 2);
+candle.position.set(0.55, 0.5, 1.3);
+scene.add(candle);
+
+/* ---------- pedestal + ground (fixed — never rotates) ---------- */
+const statue = new THREE.Group();   /* figure only — rotates */
+statue.position.y = 0.13;
+scene.add(statue);
+const fixed = new THREE.Group();
+scene.add(fixed);
+const plinthMat = new THREE.MeshStandardMaterial({ color: 0x1a1511, roughness: 0.82, metalness: 0.03 });
+const ground = new THREE.Mesh(new THREE.CircleGeometry(9, 48),
+  new THREE.MeshStandardMaterial({ color: 0x0a0806, roughness: 1, metalness: 0 }));
+ground.rotation.x = -Math.PI / 2; ground.position.y = -0.001; ground.receiveShadow = true;
+fixed.add(ground);
+function fixedMesh(geo, mat) { const m = new THREE.Mesh(geo, mat); m.castShadow = true; m.receiveShadow = true; fixed.add(m); return m; }
+const pl1 = fixedMesh(new THREE.CylinderGeometry(0.62, 0.66, 0.06, 56), plinthMat); pl1.position.y = 0.03;
+const pl2 = fixedMesh(new THREE.CylinderGeometry(0.545, 0.585, 0.07, 56), plinthMat); pl2.position.y = 0.095;
+
+/* ---------- the scanned figure ---------- */
+let loaded = false;
+const loader = new GLTFLoader();
+function onLoaded(gltf) {
+  /* Keep the GLB's own node hierarchy — the compression pass stores part
+     of the placement on the node, so the scene is added whole. */
+  gltf.scene.traverse(o => {
+    if (o.isMesh) {
+      o.castShadow = true; o.receiveShadow = true;
+      if (o.material && o.material.name === 'gilt-metal') o.material.envMapIntensity = 1.1;
+      else if (o.material && o.material.name === 'dark-bronze') o.material.envMapIntensity = 0.50; /* uniformity fix: Zeus-dark read, broader/softer sheen */
+      else if (o.material) o.material.envMapIntensity = 0.5;
+    }
+  });
+  statue.add(gltf.scene);
+  loaded = true;
+  window.__loadedAt = performance.now();
+}
+try {
+  const __buf = new Uint8Array(await __glbBytes);
+  loader.parse(__buf.buffer, '', onLoaded,
+    err => { console.error('The statue could not be loaded.', err); });
+} catch (e) {
+  console.error('The statue could not be loaded.', e);
+}
+
+/* ---------- controls: Y-only, tilt locked, no auto-rotate ---------- */
+let rotY = 0, dist = 3.30, targetY = 0.95, lockTarget = false;
+if (frag.indexOf('tq') >= 0) { rotY = -0.65; }
+else if (frag.indexOf('close') >= 0) { rotY = -0.14; dist = 0.80; targetY = 1.42; lockTarget = true; }
+else if (frag.indexOf('side') >= 0) { rotY = -Math.PI / 2; }
+else if (frag.indexOf('back') >= 0) { rotY = Math.PI; }
+
+let dragging = false, lastX = 0, pinchD = 0;
+const pointers = new Map();
+function clamp(x, a, b) { return x < a ? a : (x > b ? b : x); }
+canvas.addEventListener('pointerdown', e => {
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) { dragging = true; lastX = e.clientX; }
+  if (pointers.size === 2) {
+    const pts = Array.from(pointers.values());
+    pinchD = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+  }
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener('pointermove', e => {
+  if (!pointers.has(e.pointerId)) return;
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 2) {
+    const pts = Array.from(pointers.values());
+    const d = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+    if (pinchD > 0) dist = clamp(dist * (pinchD / d), 0.45, 7.5);
+    pinchD = d; return;
+  }
+  if (!dragging) return;
+  rotY += (e.clientX - lastX) * 0.0055;
+  lastX = e.clientX;
+});
+function endPointer(e) { pointers.delete(e.pointerId); if (pointers.size === 0) dragging = false; }
+canvas.addEventListener('pointerup', endPointer);
+canvas.addEventListener('pointercancel', endPointer);
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  dist = clamp(dist * (1 + e.deltaY * 0.0011), 0.45, 7.5);
+}, { passive: false });
+
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, w < 600 ? 1 : 1.5));
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+resize();
+
+let frameNo = 0;
+function tick(t) {
+  requestAnimationFrame(tick);
+  statue.rotation.y = rotY;
+  candle.intensity = 2.6 + Math.sin((t || 0) * 0.007) * 0.4 + Math.sin((t || 0) * 0.0173) * 0.3;
+  let effY = targetY;
+  if (!lockTarget) {
+    const lift = clamp((2.4 - dist) / 1.7, 0, 1);
+    effY = targetY + lift * 0.48;
+  }
+  camera.position.set(0, effY + 0.05, dist);
+  camera.lookAt(0, effY, 0);
+  renderer.render(scene, camera);
+  window.__frameTris = renderer.info.render.triangles;
+  if (loaded && ++frameNo === 30) {
+    window.__triCount = renderer.info.render.triangles;
+    window.__geoTris = 0;
+    scene.traverse(o => {
+      if (o.geometry) window.__geoTris += Math.round((o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count) / 3);
+    });
+    window.__ready = true;
+  }
+}
+tick();
+
+</script>
+<script>
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    history.replaceState(null, '', location.pathname + location.search);
+    location.reload();
+  });
+</script>
+</body>
+</html>

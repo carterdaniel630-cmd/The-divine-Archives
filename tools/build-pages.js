@@ -798,6 +798,8 @@ function buildSitemap() {
   VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
   // closer-reading pages that sit beside a Vault entry (hand-written, not built from vault/*.md)
   urls.push([SITE + "/vault/rok-runestone-decoded.html", null]);
+  // the Rotunda Circle: hand-written statue pages (docs/rotunda/), one per finished statue
+  ["index", "socrates", "shiva", "isis"].forEach((p) => urls.push([SITE + "/rotunda/" + p + ".html", null]));
   // a withdrawn entry's absence page stays indexed: it is a public statement, meant to be found
   VAULT.items.filter((v) => v.status === "withdrawn").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
