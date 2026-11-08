@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2002,
+ "count": 2012,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -641,6 +641,12 @@
     "chapter:ch01"
    ],
    "from": "sources/ch01-the-flood.md"
+  },
+  {
+   "id": "source:archaeology-org/e1f7d293cc",
+   "type": "source",
+   "label": "https://archaeology.org/wp-content/uploads/2020/06/FULLTEXT01.pdf",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:archaeology-org/f47c1c222d",
@@ -5252,7 +5258,7 @@
    "links": [
     "relic:v36"
    ],
-   "from": "sources/v36-rok-runestone.md"
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:en-wikipedia-org/07ed17509f",
@@ -9567,6 +9573,18 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:gu-se/b47a4fe62c",
+   "type": "source",
+   "label": "https://www.gu.se/en/research/rok-runestone-revisited",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
+   "id": "source:gu-se/e5bcb10205",
+   "type": "source",
+   "label": "https://www.gu.se/en/news/english-translation-of-the-rok-stone-text",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:guinnessworldrecords-com/61e01a6fe9",
    "type": "source",
    "label": "https://www.guinnessworldrecords.com/world-records/88083-largest-ball-court-in-ancient-mesoamerica",
@@ -11318,6 +11336,12 @@
     "chapter:ch73"
    ],
    "from": "sources/ch73-sabbateans-hasidism.md"
+  },
+  {
+   "id": "source:k-blogg-se/db501ab892",
+   "type": "source",
+   "label": "https://k-blogg.se/2021/12/31/att-tolka-rokstenen/",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:kar-kent-ac-uk/13bc9c8f82",
@@ -14447,6 +14471,12 @@
    "from": "sources/pilgrimage-newgrange.md"
   },
   {
+   "id": "source:quest-journal-net/4f122c5e3b",
+   "type": "source",
+   "label": "http://www.quest-journal.net/PIP/New_Perspectives_On_Myth_2010/New_Perspectives_on_Myth_Chapter6.pdf",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:quran-com/ba05212d1f",
    "type": "source",
    "label": "https://quran.com/22/37",
@@ -14924,6 +14954,12 @@
    "from": "sources/ch70-pre-islamic-arabia.md"
   },
   {
+   "id": "source:runkartan-se/8218022e29",
+   "type": "source",
+   "label": "https://runkartan.se/english/rune-stone-rokstenen-og136-l2011-9303-rok-1-1-in-odeshog-ostergotland.html",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:sacred-texts-com/057bacd422",
    "type": "source",
    "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxix-and-xxx",
@@ -15240,6 +15276,12 @@
     "chapter:ch74"
    ],
    "from": "sources/ch74-secularism-nonreligion.md"
+  },
+  {
+   "id": "source:scienceblogs-de/a87621b4c9",
+   "type": "source",
+   "label": "https://scienceblogs.de/klausis-krypto-kolumne/2019/05/05/magnus-ekhalls-trip-to-the-roek-runestone/",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:sciencedaily-com/74c2dfefc3",
@@ -16088,6 +16130,12 @@
    "from": "sources/ch84-yoruba.md"
   },
   {
+   "id": "source:swedishnomad-com/e6492bdfbf",
+   "type": "source",
+   "label": "https://www.swedishnomad.com/sv/rokstenen/",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:tabletmag-com/585233e322",
    "type": "source",
    "label": "https://www.tabletmag.com/sections/history/articles/ark-covenant-ethiopia",
@@ -16897,6 +16945,12 @@
     "chapter:ch75"
    ],
    "from": "sources/ch75-siberian-arctic-shamanism.md"
+  },
+  {
+   "id": "source:uu-se/79abe0a3c9",
+   "type": "source",
+   "label": "https://www.uu.se/en/news/2022/2022-01-25-deciphering-ancient-runic-messages",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:uu-se/7c6388ac6e",
@@ -17911,6 +17965,12 @@
     "relic:v72"
    ],
    "from": "sources/v72-book-of-shadows.md"
+  },
+  {
+   "id": "source:www-bbc-com-pages-dev/eedaa5823b",
+   "type": "source",
+   "label": "https://www-bbc-com.pages.dev/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:www-current-chs-harvard-edu/6cbfeb8169",

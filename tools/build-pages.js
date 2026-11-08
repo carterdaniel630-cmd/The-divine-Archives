@@ -774,6 +774,8 @@ function buildSitemap() {
   urls.push([SITE + "/vault.html", null]);
   urls.push([SITE + "/pantheon.html", null]);
   VAULT.items.filter((v) => v.status === "published").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
+  // closer-reading pages that sit beside a Vault entry (hand-written, not built from vault/*.md)
+  urls.push([SITE + "/vault/rok-runestone-decoded.html", null]);
   // a withdrawn entry's absence page stays indexed: it is a public statement, meant to be found
   VAULT.items.filter((v) => v.status === "withdrawn").forEach((v) => urls.push([SITE + "/vault/" + v.slug + ".html", mod(v.id)]));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +

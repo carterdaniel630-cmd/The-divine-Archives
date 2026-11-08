@@ -503,6 +503,18 @@ body { font-size: 1.06rem; }
 .vault-links .vl-t { display: block; font-family: var(--font-display); letter-spacing: .04em; }
 .vault-links .vl-m { display: block; font-size: .8rem; color: var(--ink-faint); margin: .15rem 0 .35rem; }
 .vault-links .vl-s { display: block; font-size: .9rem; color: var(--ink-dim); line-height: 1.5; }
+/* a Vault card with its object's still (a museum rendition; the caption under the picture says so) */
+.vault-links .vl-has-img { padding-top: .7rem; }
+.vault-links .vl-img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #0c0805; border: 1px solid var(--line); }
+.vault-links .vl-r { display: block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin: .35rem 0 .55rem; }
+@media (max-width: 560px) {   /* on a phone the picture sits beside the words, so a long list stays short */
+  .vault-links .vl-has-img { display: grid; grid-template-columns: 38% 1fr; column-gap: .8rem; align-items: start; }
+  .vault-links .vl-has-img .vl-img { grid-row: 1 / span 4; }
+  .vault-links .vl-has-img .vl-t { grid-column: 2; grid-row: 1; }
+  .vault-links .vl-has-img .vl-m { grid-column: 2; grid-row: 2; }
+  .vault-links .vl-has-img .vl-r { grid-column: 2; grid-row: 3; margin: 0 0 .4rem; }
+  .vault-links .vl-has-img .vl-s { grid-column: 2; grid-row: 4; }
+}
 .vault-links > p.tiny { font-size: .88rem; color: var(--ink-faint); line-height: 1.5; }
 
 /* ---------- the Pantheon: directory of figures (pantheon.html) ---------- */

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Rök Stone, Decoded — The Vault · The Divine Archives</title>
+  <meta name="description" content="The Rök runestone (Ög 136), read face by face: the standard translation in reading order, the four cipher systems worked step by step, the questions the stone asks with their honest status, and the contested 2020 climate reading in its own section." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../assets/archive.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+  <link rel="stylesheet" href="../assets/vault/vault.css?v=4" />
+  <link rel="canonical" href="https://getconexto.com/vault/rok-runestone-decoded.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="The Rök Stone, Decoded — The Vault · The Divine Archives" />
+  <meta property="og:description" content="The Rök runestone read face by face: the standard translation, the ciphers worked step by step, and what is agreed, contested and still unsolved." />
+  <meta property="og:url" content="https://getconexto.com/vault/rok-runestone-decoded.html" />
+  <meta property="og:image" content="https://getconexto.com/assets/og/v36.jpg" />
+  <meta property="og:image:alt" content="The Rök Runestone — The Vault · The Divine Archives" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Rök Stone, Decoded — The Vault · The Divine Archives" />
+  <meta name="twitter:image" content="https://getconexto.com/assets/og/v36.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Rök Stone, Decoded","description":"The Rök runestone read face by face: the standard translation, the ciphers worked step by step, and what is agreed, contested and still unsolved.","url":"https://getconexto.com/vault/rok-runestone-decoded.html","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Divine Archives","url":"https://getconexto.com/"},"image":"https://getconexto.com/assets/og/v36.jpg","datePublished":"2026-11-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Archive","item":"https://getconexto.com/"},{"@type":"ListItem","position":2,"name":"The Vault","item":"https://getconexto.com/vault.html"},{"@type":"ListItem","position":3,"name":"The Rök Runestone","item":"https://getconexto.com/vault/rok-runestone.html"},{"@type":"ListItem","position":4,"name":"The Rök Stone, Decoded","item":"https://getconexto.com/vault/rok-runestone-decoded.html"}]}</script>
+  <style>
+    /* page-local: wide tables scroll inside their own box on phones, never the page */
+    .rok-table { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0 1.4rem; border: 1px solid rgba(201,162,74,0.25); border-radius: 4px; }
+    .rok-table table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+    .rok-table th, .rok-table td { padding: 0.45rem 0.6rem; border-bottom: 1px solid rgba(201,162,74,0.15); text-align: left; vertical-align: top; }
+    .rok-table th { font-family: "Cinzel", serif; font-weight: 500; font-size: 0.82rem; letter-spacing: 0.04em; }
+    .rok-table.cipher td, .rok-table.cipher th { text-align: center; font-family: "EB Garamond", serif; min-width: 1.6rem; }
+    .rok-table.cipher td:first-child, .rok-table.cipher th:first-child { text-align: left; white-space: nowrap; }
+    .rok-trans { margin: 0.4rem 0 1.2rem; padding: 0.2rem 0 0.2rem 1rem; border-left: 2px solid rgba(201,162,74,0.45); }
+    .rok-trans p { margin: 0.5rem 0; }
+    .rok-trans .where { display: block; font-family: "Cinzel", serif; font-size: 0.78rem; letter-spacing: 0.05em; opacity: 0.8; }
+    .rok-translit { font-style: italic; overflow-wrap: anywhere; }
+    .rok-status { display: inline-block; font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.05em; padding: 0.1rem 0.45rem; border-radius: 3px; border: 1px solid currentColor; margin-right: 0.3rem; }
+    .rok-status.carved { color: var(--good); }
+    .rok-status.contested { color: #bd6a52; }
+    .rok-status.open { color: var(--warn); }
+    .rok-contested { margin: 1.6rem 0; padding: 0.4rem 1.1rem 0.9rem; border: 1px dashed #bd6a52; border-radius: 6px; }
+    .rok-contested > .eyebrow { color: #bd6a52; }
+    .rok-faces { padding-left: 1.2rem; }
+    .rok-note { font-size: 0.92rem; opacity: 0.9; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#vault-mount">Skip to content</a>
+<div class="page">
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../index.html">
+        <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          <circle cx="60" cy="60" r="40" stroke="currentColor" stroke-width="1.4" stroke-dasharray="1 5"/>
+          <path d="M60 24 L64 56 L60 60 L56 56 Z" fill="currentColor"/><path d="M60 96 L56 64 L60 60 L64 64 Z" fill="currentColor"/>
+          <path d="M24 60 L56 56 L60 60 L56 64 Z" fill="currentColor"/><path d="M96 60 L64 64 L60 60 L64 56 Z" fill="currentColor"/>
+          <circle cx="60" cy="60" r="3" fill="currentColor"/>
+        </svg>
+        The Divine Archives
+      </a>
+      <nav>
+        <a href="../eras.html">Eras</a>
+        <a href="../traditions.html">Traditions</a>
+        <a href="../themes.html">Themes</a>
+        <a href="../symbols.html">Symbols</a>
+        <a href="../pantheon.html">Pantheon</a>
+        <a href="../vault.html" aria-current="page">Vault</a>
+        <a href="../pilgrimage.html">Pilgrimage</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="vault-mount">
+    <div class="page-head">
+      <p class="crumb" style="justify-content:center">
+        <a href="../index.html">Archive</a><span class="sep">/</span>
+        <a href="../vault.html">The Vault</a><span class="sep">/</span>
+        <a href="rok-runestone.html">The Rök Runestone</a><span class="sep">/</span><span>Decoded</span>
+      </p>
+      <p class="eyebrow">The Vault &middot; A closer reading</p>
+      <h1>The Rök Stone, Decoded</h1>
+      <p style="margin-top:0.6rem"><span class="badge is-pending">Recently added &middot; pending review</span>
+        <button type="button" class="print-btn" onclick="window.print()" title="Save this page as a PDF">Save as PDF</button></p>
+      <dl class="vault-facts">
+        <dt>Stands</dt><dd>Beside Rök church, Ödeshög, Östergötland, Sweden (Ög 136)</dd>
+        <dt>Date evidence</dt><dd>c. 800 CE / early 9th century (runic forms and language)</dd>
+        <dt>Vault entry</dt><dd><a href="rok-runestone.html">The Rök Runestone: A Father&#39;s Riddles</a></dd>
+      </dl>
+      <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This page is live but has not yet completed the keeper&rsquo;s review pass. It is sourced to the project&rsquo;s standard, but wording and detail may still change. The tag is removed once the page is cleared.</div>
+    </div>
+    <section class="wrap article">
+
+<p class="lead">On a granite slab beside the church at <strong>Rök</strong>, in Östergötland, a father named <strong>Varinn</strong> carved some <strong>760 characters</strong> in <strong>28 lines</strong> over <strong>five faces</strong> of the stone, around the year <strong>800</strong>, for his dead son <strong>Vámóðr</strong>. It is the longest runic inscription in stone. Scholars agree, unusually well, on <em>what the runes are</em> and on how the cipher passages decode. They disagree, just as unusually, on the <em>order</em> in which to read them, where the words divide, and what the text means. This page walks through all three: what is carved, how the ciphers work, and which answers are agreed, contested or still unknown.</p>
+
+<p class="rok-note"><strong>Photographs of the five faces</strong> will be added here once rights-clean images have been sourced and logged. Until then, the stone&rsquo;s faces are described in words below.</p>
+
+<h2 id="stone">1. The stone itself</h2>
+<p>The stone is catalogued as <strong>Ög 136</strong> (Östergötland no. 136) in the Scandinavian Runic-text Database. It stands about <strong>2.4 to 2.5 metres above the ground</strong>; with the part buried below ground it is <strong>3.82 metres</strong> long in all. Sources give slightly different character counts (more than 700; about 750; about 760); <strong>c. 760</strong> is the majority figure. It was documented in the 17th century built into a building beside the church, taken out in the 19th century when carving was found on all its faces, and now stands free under a protective roof by Rök church.</p>
+<p>The opening two lines, large and plain on the front, are the one part of the text every reading agrees on:</p>
+<div class="rok-trans">
+  <p class="rok-translit">aft uamuþ stonta runaR þaR. (i)n uarin faþi faþiR aft faikion sunu.</p>
+  <p>&ldquo;In memory of Vámóðr stand these runes. And Varinn coloured them, the father, in memory of his dead son.&rdquo; <span class="rok-note">(Rundata)</span></p>
+</div>
+<p><em>faþi</em> means &ldquo;coloured&rdquo; or &ldquo;painted&rdquo; (runes were painted in antiquity), so &ldquo;coloured them&rdquo; is the literal sense of what is often rendered &ldquo;made&rdquo; or &ldquo;carved&rdquo;. <em>faikion</em> (Old Norse <em>feigr</em>) means &ldquo;death-doomed, fated to die&rdquo;, not simply &ldquo;dead&rdquo;: whether that is just alliteration (with <em>faþi</em>, <em>faþiR</em>) or a claim that the son was marked for death is itself part of the argument. Varinn is both the sponsor and the runemaster. The inscription calls him only &ldquo;the father&rdquo;; &ldquo;kinglet&rdquo; or &ldquo;chieftain&rdquo; is a modern gloss.</p>
+
+<h2 id="reading">2. How to read it</h2>
+<ul>
+  <li><strong>Five faces.</strong> Every face except the buried base is carved. By the usual lettering: <strong>A</strong> the front; <strong>B</strong> the first narrow side; <strong>C</strong> the back; <strong>D</strong> the second narrow side; <strong>E</strong> the top. These letters say where text <em>sits</em>, not the order it is read in.</li>
+  <li><strong>28 lines</strong>: twenty vertical and eight more or less horizontal.</li>
+  <li><strong>Three scripts.</strong> Most of the text is in the <strong>short-twig runes</strong> of the 16-rune Younger Futhark. Two lines use runes of the older 24-rune <strong>Elder Futhark</strong>, already archaic by 800. Other passages are in <strong>cipher runes</strong>.</li>
+  <li><strong>No word spaces and no doubled runes.</strong> The text runs on without breaks, and the same rune is never carved twice in a row, even where one word ends with it and the next begins with it. The 16-rune row also has to cover many more sounds than it has runes (one rune for both <em>k</em> and <em>g</em>, one for <em>t</em> and <em>d</em>). So <strong>every word division is an editorial decision</strong>, and this is the biggest single reason translations differ.</li>
+  <li><strong>Reading order.</strong> Everyone starts with the two large lines on the front. <strong>Beyond the front, the reading order is not agreed</strong>: more than fifteen orders have been proposed.</li>
+</ul>
+
+<h2 id="translation">3. The standard translation, in reading order</h2>
+<p>This is the <strong>standard translation of the Scandinavian Runic-text Database (Rundata)</strong>, the same reading given on the Swedish National Heritage Board&rsquo;s information board at the stone. It follows the traditional reading order, section by section. The repeated formula <em>sakum mukmini</em> is rendered &ldquo;I say the folktale / to the young men&rdquo;: the slash marks two possible word divisions (&ldquo;folk-memory, tale&rdquo; or &ldquo;young men&rdquo;).</p>
+<div class="rok-trans">
+  <p><span class="where">Dedication &middot; front (A), lines 1&ndash;2</span>In memory of Vámóðr stand these runes. And Varinn coloured them, the father, in memory of his dead son.</p>
+  <p><span class="where">First question &middot; A</span>I say the folktale / to the young men, which the two war-booties were, which twelve times were taken as war-booty, both together from various men.</p>
+  <p><span class="where">Second question and the Theodoric stanza &middot; A into B</span>I say this second, who nine generations ago lost his life with the Hreidgoths; and died with them for his guilt. Þjóðríkr the bold, chief of sea-warriors, ruled over the shores of the Hreiðsea. Now he sits armed on his Goth(ic horse), his shield strapped, the prince of the Mærings.</p>
+  <p><span class="where">The twelfth &middot; back (C)</span>I say this the twelfth, where the horse of Gunnr sees fodder on the battlefield, where twenty kings lie.</p>
+  <p><span class="where">The thirteenth and the list &middot; C</span>This I say as thirteenth, which twenty kings sat on Sjólund for four winters, of four names, born of four brothers: five Valkis, sons of Ráðulfr, five Hreiðulfrs, sons of Rugulfr, five Háisl, sons of Hôrðr, five Gunnmundrs/Kynmundrs, sons of Bjôrn.</p>
+  <p><span class="where">A damaged line &middot; C</span>Now I say the tales in full. Someone &hellip;</p>
+  <p><span class="where">The Ingold passage, in Elder Futhark &middot; C</span>I say the folktale / to the young men, which of the line of Ingold was repaid by a wife&rsquo;s sacrifice.</p>
+  <p><span class="where">The Vélinn passage, partly in shift cipher &middot; C</span>I say the folktale / to the young men, to whom is born a relative, to a valiant man. It is Vélinn. He could crush a giant. It is Vélinn &hellip;</p>
+  <p><span class="where">Thor &middot; second narrow side (D), coordinate cipher</span>I say the folktale / to the young men: Þórr.</p>
+  <p><span class="where">Sibbi &middot; top (E) and the end of the back (C), cross cipher</span>Sibbi of Vé, nonagenarian, begot (a son).</p>
+</div>
+<p class="rok-note">Part of one line on the back is damaged and cannot be read in full; every translation marks it &ldquo;Someone &hellip;&rdquo;. The opening is in the Eddic metre <em>ljóðaháttr</em> and the Theodoric stanza in <em>fornyrðislag</em>.</p>
+
+<h2 id="ciphers">4. The ciphers, worked</h2>
+<p>The decipherments themselves are agreed: Sophus Bugge read the short-twig text and solved the shift cipher in the 1870s, and Otto von Friesen (1920) read the Elder Futhark lines and the numerical cipher. What the decoded words <em>mean</em> is a separate question. Sources count the cipher systems as two or as four, depending on whether the Elder Futhark passage and the two forms of coordinate cipher are counted separately; the inventory itself is not in dispute.</p>
+
+<h3 id="shift">a. The shift cipher: each rune is the next in the row</h3>
+<p>The Younger Futhark row runs <strong>f u þ a r k &middot; h n i a s &middot; t b m l R</strong>. In this passage every carved rune stands for the rune <strong>after it</strong> in the row. The information board at the stone gives the example: the carved runes read <strong>AIRFBFRBNHN</strong>; move each one place along and they read <strong>SAKUM UKMINI</strong>, the same formula that opens the plain-text questions.</p>
+<div class="rok-table cipher"><table>
+  <tr><th>Carved</th><td>a</td><td>i</td><td>r</td><td>f</td><td>b</td><td>f</td><td>r</td><td>b</td><td>n</td><td>h</td><td>n</td></tr>
+  <tr><th>Next in row</th><td><strong>s</strong></td><td><strong>a</strong></td><td><strong>k</strong></td><td><strong>u</strong></td><td><strong>m</strong></td><td><strong>u</strong></td><td><strong>k</strong></td><td><strong>m</strong></td><td><strong>i</strong></td><td><strong>n</strong></td><td><strong>i</strong></td></tr>
+</table></div>
+<p>Further along, the shifted groups resolve in the same way (<em>finb</em> &rarr; <em>uaim</em>, <em>rhfþ</em> &rarr; <em>knua</em>, <em>rhis</em> &rarr; <em>knat</em>), giving, in the standard reading, &ldquo;&hellip; to whom is born a relative &hellip; It is Vélinn. He could crush a giant.&rdquo; Parts of these lines are in plain runes, so the passage is only partly enciphered.</p>
+
+<h3 id="coordinate">b. The coordinate cipher: family and place</h3>
+<p>The 16 runes fall into three families (<em>ættir</em>). A coordinate sign does not picture a rune; it gives two numbers: <strong>which family</strong> and <strong>which rune within it</strong>, shown by counts of twigs on either side of a stem (or in the parts of a cross). Sources write each sign as a pair, family:place. The family numbers are as the sources print them, and they are not counted in the left-to-right order of the row above: in these pairs <em>f u þ a r k</em> is family 3 and <em>t b m l R</em> is family 1. On the second narrow side (D) the signs read, pair by pair, exactly as the published worked example prints them:</p>
+<div class="rok-table cipher"><table>
+  <tr><th>Pair</th><td>2:5</td><td>2:4</td><td>3:6</td><td>3:2</td><td>1:3</td></tr>
+  <tr><th>Rune</th><td><strong>s</strong></td><td><strong>a</strong></td><td><strong>k</strong></td><td><strong>u</strong></td><td><strong>m</strong></td></tr>
+</table></div>
+<div class="rok-table cipher"><table>
+  <tr><th>Pair</th><td>3:2</td><td>3:6</td><td>1:3</td><td>2:3</td><td>2:2</td><td>2:3</td></tr>
+  <tr><th>Rune</th><td><strong>u</strong></td><td><strong>k</strong></td><td><strong>m</strong></td><td><strong>i</strong></td><td><strong>n</strong></td><td><strong>i</strong></td></tr>
+</table></div>
+<div class="rok-table cipher"><table>
+  <tr><th>Pair</th><td>3:3</td><td>3:2</td><td>3:5</td></tr>
+  <tr><th>Rune</th><td><strong>þ</strong></td><td><strong>u</strong></td><td><strong>r</strong></td></tr>
+</table></div>
+<p>Together: <strong><em>sakum ukmini þur</em></strong>, standardly &ldquo;I say the folktale / to the young men: Þórr [Thor]&rdquo;. For the last word the information board describes a single sign repeated in groups, normal then mirrored, whose counts give the family and place. <span class="rok-note">Only pairs printed in the published worked examples are shown here; this page does not build a full table of the cipher from them.</span></p>
+
+<h3 id="cross">c. The cross ciphers and the final <em>nit</em></h3>
+<p>Three slanted crosses on the back and three on the top work the same way: each cross is split into upper and lower parts, each part gives a family:place pair, the cross is turned to read its second half, and plain runes carved beside the crosses complete the words. The published resolutions:</p>
+<div class="rok-table"><table>
+  <tr><th>Pairs (+ plain runes)</th><th>Reads</th></tr>
+  <tr><td>2:5, 2:3 + <em>bi</em></td><td><strong>sibi</strong></td></tr>
+  <tr><td>3:2, 2:3 + <em>a</em></td><td><strong>uia</strong></td></tr>
+  <tr><td>3:2, 2:4 + <em>ri</em></td><td><strong>uari</strong></td></tr>
+  <tr><td>3:2, 1:4</td><td><strong>ul</strong></td></tr>
+  <tr><td>2:2, 2:3</td><td><strong>ni</strong></td></tr>
+  <tr><td>3:5, 3:2 + <em>þR</em></td><td><strong>ruþR</strong></td></tr>
+</table></div>
+<p>In reading order: <strong><em>sibi uia uari ul niruþR</em></strong>, standardly &ldquo;Sibbi of Vé [guardian of the sanctuary], nonagenarian, begot (a son)&rdquo;. The last group on the stone is also in coordinate cipher, <strong>2:2 2:3 1:1</strong>, which reads <strong><em>nit</em></strong>. In the standard reading <em>nit</em> is left <strong>uninterpreted</strong>.</p>
+
+<h3 id="elder">d. The Elder Futhark passage: the Ingold lines</h3>
+<p>Two lines on the back use runes of the older futhark: familiar-looking shapes that carry their <em>older</em> sound values. Transliterated with capitals to mark those values, they read <span class="rok-translit">saGwM MOGMEni (þ)aD HOaR iGOlD(i)Ga OaRi GOlDin D GOonaR HOsli</span>. Normalised, the standard reading is <em>sakum ukmini þat, huaR Inguldinga uari goldinn at kuanaR husli</em>: &ldquo;I say the folktale / to the young men, which of the line of Ingold was repaid by a wife&rsquo;s sacrifice.&rdquo; One sign inside the passage is itself a coordinate cipher, 3:3 = <em>þ</em>. Why the older script is used here is not known; deliberate archaism is the traditional assumption.</p>
+
+<h2 id="questions">5. The questions the stone asks</h2>
+<p>The text is built from prompts (&ldquo;I say&hellip;&rdquo;) followed by questions. In the standard reading only four carry numbers: an unnumbered first, then the <strong>second</strong>, the <strong>twelfth</strong> and the <strong>thirteenth</strong>. How the count jumps from two to twelve is one of the stone&rsquo;s long-standing puzzles. Each question below is marked <span class="rok-status carved">Answer carved</span> where the stone itself states the answer, <span class="rok-status contested">Contested</span> where a proposed answer is disputed, and <span class="rok-status open">Unsolved</span> where no answer is agreed.</p>
+
+<h3>The two war-booties</h3>
+<p><span class="rok-status open">Unsolved</span> &ldquo;Which the two war-booties were, which twelve times were taken as war-booty&rdquo;. The stone gives no answer. The common guess is two famous weapons (a sword and a shield, or a helmet) passed from man to man in lost heroic poems; the story itself is lost.</p>
+
+<h3>Who died nine generations ago: Theodoric</h3>
+<p><span class="rok-status carved">Answer carved</span><span class="rok-status contested">Identification contested</span> The stone answers its own question with the stanza about <strong>Þjóðríkr</strong>, &ldquo;prince of the Mærings&rdquo;. Since 1879 (Guðbrandur Vigfússon) he has been identified with <strong>Theodoric the Great</strong>, the Ostrogothic king who ruled from Ravenna (493&ndash;526): nine generations before c. 800 falls in his lifetime; Mærings is his family name in the Old English poem <em>Deor</em>; and &ldquo;now he sits armed on his horse&rdquo; is usually explained by his equestrian statue, moved from Ravenna to Aachen by Charlemagne in 801. This was the standard reading of the 20th century, though <em>why</em> Theodoric would appear on a Swedish memorial was never settled. <strong>It is now actively challenged</strong>: Bo Ralph (2007) and Holmberg and colleagues (2020) divide the same runes as &ldquo;Ride the horse did the bold champion&rdquo;, with no Theodoric named at all. This page presents Theodoric as the <strong>traditional reading, now challenged</strong>.</p>
+
+<h3>The twelfth: where twenty kings lie</h3>
+<p><span class="rok-status open">Unsolved</span> &ldquo;Where the horse of Gunnr sees fodder on the battlefield, where twenty kings lie.&rdquo; Gunnr is a valkyrie; a valkyrie&rsquo;s &ldquo;horse&rdquo; is a <strong>wolf</strong>, and its fodder on the battlefield is the dead. The kenning is understood; the battlefield is not. Herman Lindqvist suggested the legendary Battle of Brávellir; that link is unverified.</p>
+
+<h3>The thirteenth: the twenty kings</h3>
+<p><span class="rok-status carved">Answer carved</span><span class="rok-status open">Meaning unsolved</span> The stone answers with the list itself: four sets of five brothers, each set sharing one name, their four fathers themselves brothers. Who they were has been lost. <em>Sjólund</em> may be Zealand (Sjælland) in Denmark, or a Swedish place; Joseph Harris suggested an initiatory warband whose shared names outlive its members. Whether these are the same twenty kings who &ldquo;lie&rdquo; on the battlefield in the twelfth question is assumed, not shown.</p>
+
+<h3>The line of Ingold and the wife&rsquo;s sacrifice</h3>
+<p><span class="rok-status open">Unsolved</span> &ldquo;Which of the line of Ingold was repaid by a wife&rsquo;s sacrifice.&rdquo; No proposed answer has wide support; Holmberg calls this passage &ldquo;never interpreted satisfactorily&rdquo;. Åke Ohlmarks (1979) read <em>husl</em> as &ldquo;baptism&rdquo; rather than &ldquo;sacrifice&rdquo;; that is a minority hypothesis. <strong>A common mistake to correct:</strong> the stone does not speak of &ldquo;the sons of Ingvald&rdquo;. It asks about <strong>one of the line of Ingold</strong> (<em>Inguldinga</em>). The sons in the text are the twenty kings and, at the end, the son Sibbi begot at ninety.</p>
+
+<h3>To whom a kinsman is born: Vélinn</h3>
+<p><span class="rok-status carved">Answer carved</span><span class="rok-status open">Meaning unsolved</span> The stone answers &ldquo;It is Vélinn. He could crush a giant.&rdquo; Who Vélinn is (a god, a hero, the dead son himself) is unknown, and Harris divides the same runes into a quite different sentence. The final word <em>nit</em> remains uninterpreted.</p>
+
+<h3>Thor, and Sibbi at ninety</h3>
+<p><span class="rok-status open">Unsolved</span> These close the inscription as statements, not questions: an invocation of Thor, and Sibbi, &ldquo;of Vé&rdquo; (guardian of a sanctuary), who begot a son at ninety. Sibbi is unidentified, and even the order of these last lines is an editorial choice.</p>
+
+<div class="rok-contested" id="holmberg-2020">
+  <p class="eyebrow">A contested proposal, set apart</p>
+  <h2>6. The 2020 climate reading (Holmberg, Gräslund, Sundqvist and Williams)</h2>
+  <p>Everything in this box is <strong>one team&rsquo;s proposal</strong>. It is <strong>not</strong> the standard reading and is <strong>not</strong> used anywhere else on this page.</p>
+  <p>In &ldquo;The Rök Runestone and the End of the World&rdquo; (<em>Futhark</em> 9&ndash;10, published 2020), Per Holmberg, Bo Gräslund, Olof Sundqvist and Henrik Williams re-divide the same agreed runes into <strong>nine riddling questions</strong>. They answer five of them with <strong>the sun</strong> and four with matters concerning <strong>Odin</strong>, drawing parallels from the Eddic poem <em>Vafþrúðnismál</em>. In their words, the inscription &ldquo;deals with an anxiety triggered by a son&rsquo;s death and the fear of a new climate crisis similar to the catastrophic one after 536 CE&rdquo;, when volcanic eruptions brought years of cold summers and failed harvests. Nine generations back from c. 800 lands near 536, the same arithmetic the traditional reading used for Theodoric.</p>
+  <p>Their reading depends on re-dividing several key strings:</p>
+  <ul>
+    <li><em>sakum ukmini</em> becomes &ldquo;Let us say (this as) a memory for Yggr [Odin]&rdquo;;</li>
+    <li>the Theodoric line becomes &ldquo;Ride the horse did the bold champion&rdquo; (after Ralph 2007), so <strong>no Theodoric</strong>;</li>
+    <li><em>Inguldinga</em> becomes &ldquo;because of a howler [a wolf]&rdquo;, so <strong>no Ingold</strong>;</li>
+    <li>&ldquo;It is Vélinn&rdquo; becomes &ldquo;It is not a lie&rdquo;, so <strong>no Vélinn</strong>; Sibbi, Thor and the nonagenarian disappear the same way; the final <em>nit</em> becomes &ldquo;Clash!&rdquo;.</li>
+  </ul>
+  <p><strong>The authors&rsquo; own caveats:</strong> &ldquo;we are not so arrogant as to believe that we have now solved every problem in the Rök text&rdquo;; &ldquo;the reading order that we propose may also be questioned&rdquo;; one link is &ldquo;admittedly a weaker link in our chain of reasoning&rdquo;; and of two of the questions, &ldquo;our proposal is just one possibility, we hope better than previous ones&rdquo;.</p>
+  <p><strong>How it has been received:</strong> it was widely publicised, and seriously argued, but it has <strong>not become the standard reading</strong>. Colleagues have cautioned that the climate reading may reflect our own worries about global warming; Holmberg has replied that every era has its interpretive frameworks. In 2021 alone, the National Heritage Board&rsquo;s runologist Magnus Källström counted three weighty new interpretations: a further article by Holmberg, a book by Williams, and a two-volume alternative by Bo Ralph that reads the stone differently again. The Rundata translation above remains the reference text. No point-by-point published rebuttal was located for this page; that is not the same as saying none exists.</p>
+</div>
+
+<div class="evidence" id="evidence">
+  <div class="evidence-head">&#10022; The evidence, honestly</div>
+  <div class="ev supported"><h4>What&#39;s well supported by the evidence</h4><ul><li>The stone (Ög 136) was carved c. 800 CE / early 9th century by <strong>Varinn</strong> for his dead son <strong>Vámóðr</strong>; the dedication on the front is agreed by every reading.</li><li>The <strong>identification of the runes</strong> and the <strong>decipherment of all the cipher passages</strong> (shift, coordinate, cross and Elder Futhark) are agreed.</li><li>The text has no word spaces and no doubled runes, so word division is editorial; it is a deliberately difficult composition in verse and prose using kennings.</li></ul></div>
+  <div class="ev unsupported"><h4>What&#39;s not supported by the evidence</h4><ul><li>&ldquo;The sons of Ingvald&rdquo;: the stone asks about one of the line of Ingold, not his sons.</li><li>Any claim that the riddles have been <strong>solved</strong>. Neither the traditional reading nor the 2020 climate reading is agreed as the meaning of the text.</li><li>A full cipher table built from the few published coordinate pairs; the pairs on this page are only those printed in the sources.</li></ul></div>
+  <div class="ev open"><h4>What&#39;s genuinely open</h4><ul><li>The <strong>reading order</strong> beyond the front (more than fifteen proposals) and the <strong>word division</strong> of key strings such as <em>sakum ukmini</em>.</li><li>Whether Þjóðríkr is <strong>Theodoric the Great</strong> (the traditional reading, now challenged).</li><li>The two war-booties, the battlefield of the twenty kings, the line of Ingold, Vélinn, Sibbi and the final <em>nit</em>.</li><li>The 2020 climate reading: seriously argued, actively contested, not adopted.</li></ul></div>
+</div>
+
+<div class="sources">
+  <h3>Sources</h3>
+  <h4>Text, transliteration and translation</h4>
+  <ul>
+    <li>Scandinavian Runic-text Database (Rundata), Ög 136, transliteration and standard English translation, as reproduced by Runkartan: <a href="https://runkartan.se/english/rune-stone-rokstenen-og136-l2011-9303-rok-1-1-in-odeshog-ostergotland.html" rel="noopener">runkartan.se</a></li>
+    <li>The National Heritage Board&rsquo;s on-site board (28 lines, Swedish and transliteration), as reproduced with attribution by Swedish Nomad: <a href="https://www.swedishnomad.com/sv/rokstenen/" rel="noopener">swedishnomad.com/sv/rokstenen</a>. The board was not read on the Board&rsquo;s own site.</li>
+    <li>&ldquo;Rök runestone&rdquo;, Wikipedia (a pointer only: object data, Unicode transcription with cipher pairs): <a href="https://en.wikipedia.org/wiki/R%C3%B6k_runestone" rel="noopener">en.wikipedia.org/wiki/Rök_runestone</a></li>
+  </ul>
+  <h4>The ciphers</h4>
+  <ul>
+    <li>Klaus Schmeh, transcription of the on-site cipher poster from Magnus Ekhall&rsquo;s visit (2019): <a href="https://scienceblogs.de/klausis-krypto-kolumne/2019/05/05/magnus-ekhalls-trip-to-the-roek-runestone/" rel="noopener">scienceblogs.de/klausis-krypto-kolumne</a></li>
+    <li>Uppsala University (2022), on the 760 characters, the 16-rune row and the ciphers: <a href="https://www.uu.se/en/news/2022/2022-01-25-deciphering-ancient-runic-messages" rel="noopener">uu.se</a></li>
+  </ul>
+  <h4>Interpretation and debate</h4>
+  <ul>
+    <li>Per Holmberg, Bo Gräslund, Olof Sundqvist and Henrik Williams, &ldquo;The Rök Runestone and the End of the World&rdquo;, <em>Futhark</em> 9&ndash;10 (2018&ndash;2019, published 2020): 7&ndash;38, DOI 10.33063/diva-401040 (CC BY): <a href="https://archaeology.org/wp-content/uploads/2020/06/FULLTEXT01.pdf" rel="noopener">PDF</a></li>
+    <li>University of Gothenburg, &ldquo;English translation of the Rök stone text&rdquo; (CC BY): <a href="https://www.gu.se/en/news/english-translation-of-the-rok-stone-text" rel="noopener">gu.se</a>; and the <em>Rök Runestone Revisited</em> project: <a href="https://www.gu.se/en/research/rok-runestone-revisited" rel="noopener">gu.se</a></li>
+    <li>Joseph Harris, &ldquo;Varin&rsquo;s philosophy and the Rök Stone&rsquo;s mythology of death&rdquo;, in <em>New Perspectives on Myth</em> (2010), ch. 6: <a href="http://www.quest-journal.net/PIP/New_Perspectives_On_Myth_2010/New_Perspectives_on_Myth_Chapter6.pdf" rel="noopener">PDF</a></li>
+    <li>Magnus Källström, &ldquo;Att tolka Rökstenen&rdquo;, K-blogg (Riksantikvarieämbetet), 31 December 2021: <a href="https://k-blogg.se/2021/12/31/att-tolka-rokstenen/" rel="noopener">k-blogg.se</a> (read through a search index)</li>
+    <li>Matilda Welin, BBC Future, on the debate over the climate reading: <a href="https://www-bbc-com.pages.dev/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones" rel="noopener">BBC Future</a></li>
+  </ul>
+  <p class="rok-note">All sources were read through a web index on 2026-11-06 for the research report this page is built from; see the source log for what could not be verified directly.</p>
+</div>
+      <p class="print-only">From <strong>The Divine Archives</strong> &middot; https://getconexto.com/vault/rok-runestone-decoded.html</p>
+      <div class="chapter-nav"><a href="rok-runestone.html">&larr; The Rök Runestone</a><a href="../vault.html">The Vault &rarr;</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="mark">The Divine Archives</p>
+      <nav>
+        <a href="../eras.html">Browse by Era</a>
+        <a href="../traditions.html">Browse by Tradition</a>
+        <a href="../vault.html">The Vault</a>
+        <a href="../compare.html">Compare Themes</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../about.html">About</a>
+        <a href="https://ko-fi.com/divinearchives" target="_blank" rel="noopener">Support the Archive</a>
+      </nav>
+      <p class="tiny">A comparative library of the sacred</p>
+    </div>
+  </footer>
+</div>
+<script src="../assets/ambient.js?v=2" defer></script>
+<script src="../site-config.js" defer></script>
+</body>
+</html>
