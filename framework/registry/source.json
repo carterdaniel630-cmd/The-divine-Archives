@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2001,
+ "count": 2002,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -9754,6 +9754,15 @@
     "chapter:ch78"
    ],
    "from": "sources/ch78-scythians-steppe.md"
+  },
+  {
+   "id": "source:heurist-huma-num-fr/35483e5c7e",
+   "type": "source",
+   "label": "https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288",
+   "links": [
+    "relic:v44"
+   ],
+   "from": "sources/v44-pilate-stone.md"
   },
   {
    "id": "source:heyjoe-fbk-eu/d0f9dc812d",
