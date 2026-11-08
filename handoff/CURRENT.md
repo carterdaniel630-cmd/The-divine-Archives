@@ -37,9 +37,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
     ("yes on 66"). Clean independent review at c343c32, all checks green (`handoff/replies/2026-11-01-pr94-merge-gate.md`);
     merged 2026-11-01. #66 shows as merged with it.
   - Open PRs now (2026-11-08): #95 (`claude/games-fullscreen`, opened 2026-11-01): true full screen on a sideways
-    phone for the Journal and Divine Casualties, brought up to date with main 2026-11-08, waiting on green checks
-    and Carter's merge yes; and #120 (build loop: Qumran share-image alt). #93 merged 2026-11-01; #60 (journal
-    hero) closed unmerged 2026-11-07. #64, #67 and #68 below are merged.
+    phone for the Journal and Divine Casualties, brought up to date with main 2026-11-08. Every check is green on
+    d584900, Lighthouse on its one re-run (the first run's drops on Ouroboros and pinball did not reproduce locally:
+    98 vs 99 and 99 vs 99). Waiting on Carter's merge yes. #120 merged 2026-11-08; #93 merged 2026-11-01; #60
+    (journal hero) closed unmerged 2026-11-07. #64, #67 and #68 below are merged.
 - Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
   - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
   - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
