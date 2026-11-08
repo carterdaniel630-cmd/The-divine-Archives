@@ -1,6 +1,6 @@
 # Independent review — PR #126 records corrections
 
-Reviewed: 2026-11-08 ~09:55 UTC, session ..01HFWzTmXjFfdWYKSz1g1Ped (wrote none of #126; builder was ..01HFWzTkuPE8ddzEQWGqvoGB).
+Reviewed: 2026-11-08 ~09:48 UTC, session ..01HFWzTmXjFfdWYKSz1g1Ped (wrote none of #126; builder was ..01HFWzTkuPE8ddzEQWGqvoGB).
 Candidate: `loop/records-corrections` @ `e407fa98`, fast-forward from `main` `5d519eeb`.
 Scope: `origin/main...e407fa98` against `reviews/REVIEWER.md` §3–§4.
 

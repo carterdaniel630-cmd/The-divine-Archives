@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (08:50 UTC)
+# Handoff — updated 2026-11-08 (10:15 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Pilate Stone inscription reads as the stone does (2026-11-08 ~08:45 UTC)
+## Latest: records corrections (2026-11-08 ~10:08 UTC)
+- **`main` = `e407fa98`** (deploy run 253 green): **PR #126** fast-forwarded `5d519eeb` → `e407fa98` **by class (c)** (label / count wording). README and the Lighthouse workflow comment now say eleven games (The Firmament retired in #124) and name the Pantheon page; the v1 Royal Game of Ur copy in `handoff/exhibits/` is labelled superseded, audit reference only (nothing deleted). No `docs/` page changed. Review PASS 0 findings (`replies/2026-11-08-pr126-independent-review.md`); GitHub 5/5 green incl. Lighthouse (10:01 UTC); reply `replies/2026-11-08-run-1008-pr126-merged.md`.
+- **Open:** no loop PRs waiting. Everything else in Next waits on atlas/Muse inputs (Rotunda Tray 1 spec, Rök page, chapter-images tranche 1, pack-six rebuild, front-door v4).
+
+## Earlier: Pilate Stone inscription reads as the stone does (2026-11-08 ~08:45 UTC)
 - **`main` = `5d519eeb`** (deploy run 252 green): **PR #125** fast-forwarded `3025139b` → `5d519eeb` **per item** on Carter's ruling of 2026-11-07 (`pilate-stone-texture-fix-order.md`). The museum's V44 model now carries the stone's own letters per CIIP II 1277, every line left to right, nothing restored; geometry and exhibit unchanged. Review PASS 0 findings (`replies/2026-11-08-pr125-independent-review.md`); reply `replies/2026-11-08-run-0842-pr125-merged.md`.
 - **Open:** no loop PRs waiting. Next: records fixes + Rotunda Tray 1.
 
