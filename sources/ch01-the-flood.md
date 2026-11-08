@@ -45,3 +45,67 @@ the reality of the Black Sea event, the reach of deep diffusion — the draft
 flags the dispute rather than resolving it. Reviewer: the George Smith
 "undressing" anecdote is traditional (via Budge) and possibly embellished; it is
 presented as such and can be cut if you'd prefer a drier opening.
+
+## Correction log
+- 2026-11-02 — Ark Tablet television build (Carter-approved truth correction, `handoff/note-2026-11-01-ark-build-correction.md`).
+  The page used to say a "full-scale" build "broadly vindicated the design". Corrected to: a scaled-down build
+  (roughly a third of the tablet's size) in Kerala, 2014, that floated but leaked from the start and needed a
+  continuously running pump. Sources checked 2026-11-02:
+  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
+  (one-third scale; Alleppey; leaks; petrol pump run continuously; cites The Telegraph (India) and the PBS NOVA
+  transcript of *Secrets of Noah's Ark*);
+  [Channel 4 press: The Real Noah's Ark](https://www.channel4.com/press/news/real-noahs-ark) (the 2014 documentary).
+  The Telegraph (India), "The Ark that Finkel built": its own URL could not be opened in this check; a copy of the
+  text was read (launch and floating confirmed; size given as "bigger than one-fifth of the original"). Because
+  the two accounts of the scale differ, the page says "roughly a third", not an exact figure.
+- 2026-11-02 (later) — follow-up from the PR #111 review (the pump rested on Wikipedia alone). Checked the
+  documentary itself: [PBS NOVA: Secrets of Noah's Ark](https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html)
+  (programme text; aired 7 October 2015). It says the build was "about 40 feet in diameter, just a fifth the size of
+  the ark described in the tablet"; at launch Eric Staples says "we have a heck of a lot of water coming in"; the
+  narrator: "They plug the gaps and put a collection of pumps to work"; closing line: the team "never managed to
+  duplicate Babylonian bitumen, but the structure of the ark is sound". It does NOT say one petrol pump ran
+  continuously; that wording is Wikipedia's alone. The Telegraph (India) (Shrabani Basu, 13 September 2014, copy
+  re-read) also says "bigger than one-fifth of the original". So the page now says: about 40 feet across, a fifth
+  of the tablet's size by the documentary's own count, though some accounts (Wikipedia: "one-third scale") say a
+  third; water came in through the seams from launch; the crew plugged the gaps and set pumps working. The
+  disagreement on scale is named on the page, not resolved. Not opened in this check: Historia's Finkel interview
+  (permission timed out); the #111 review read it earlier the same day ("despite a few leaks, the new ark floated",
+  Finkel), which agrees with the page.
+- 2026-11-02 (later still) — the Ark Tablet's date (follow-up from the Vault V90 reviews, PR #115). The page used to
+  open "In 2009 a member of the public brought Irving Finkel…" as if 2009 were the first visit. Re-opened this check
+  (fetch tool, verbatim quotes): [Jewish Chronicle: The tablet that altered the story of Noah's ark](https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe)
+  ("Finkel first came across the tablet in 1985, when a man called Douglas Simmonds walked into the British Museum";
+  "only managed to convince Simmonds to leave it with him in 2009"); [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
+  ("Dr. Finkel first encountered … in 1985"; "unable to gain access to translate the whole tablet until 2009").
+  The page now says accounts differ (1985 first sight; 2009 when it was left with him; many 2014 reports give only
+  2009), does not resolve it, and points to Vault V90. *Historia*'s Finkel interview (https://historiamag.com/irving-finkel-and-the-ark/)
+  could not be opened in this check either (permission timed out); the three PR #115 reviews read it the same day
+  ("In 1985, a member of the public brought in a damaged clay tablet"; owner took it away; "another 14 years" before
+  they met again; no 2009). The chapter does not cite *Historia* for any date; V90 carries that detail. This replaces
+  the "not opened in this check" gap noted in the entry above for the date question; the leaks quote stands as recorded.
+- 2026-11-02 (review fix, PR #116 finding F1) — the draft said "many 2014 news reports give only 2009"; no cited
+  source showed that. Opened this check (fetch tool): [historyofinformation.com](https://historyofinformation.com/detail.php?id=4060)
+  (a later summary citing the Guardian, 24 Jan 2014, and the British Museum blog: "In 2009 … received"); 2014 reports
+  giving no year — [Christian Science Monitor, 25 Jan 2014](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round)
+  and [Times of Israel (AP)](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/) both
+  "Finkel got hold of it a few years ago"; NBC News (https://www.nbcnews.com/science/science-news/babylonian-tale-round-ark-draws-wrath-some-christian-circles-flna2D12035655)
+  gives no year. The Guardian article itself was not opened. The page now says some later summaries give 2009 alone
+  and most 2014 reports say only "a few years ago".
+- 2026-11-02 (review fix, PR #116 finding F2) — "some later summaries" and "most 2014 news reports say only 'a few
+  years ago'" over-stated what was checked. Only one later summary (historyofinformation.com) gives 2009 alone. The
+  "a few years ago" line is from one Associated Press story (Jill Lawless, 24 Jan 2014), reprinted by the Christian
+  Science Monitor, Times of Israel, [Deseret News](https://www.deseret.com/2014/1/24/20461490/was-noah-s-ark-round-tablet-in-british-museum-contains-building-instructions)
+  and the Daily Star — not separate reports. Other 2014 reports opened (fetch tool) give no year and not that phrase:
+  [PBS NewsHour, 24 Jan 2014](https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round),
+  [Archaeology magazine, 27 Jan 2014](https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/),
+  [Christian Post](https://assets.christianpost.com/news/noahs-ark-original-was-round-according-to-4000-year-old-tablet-at-british-museum.html)
+  ("years ago"), NBC News. The page now says one later summary gives 2009 alone and the 2014 reports checked give
+  no year (the widely reprinted AP story says only "a few years ago"). The Guardian article was still not opened.
+- 2026-11-02 (Vault V90, same wording as the ch01 fix in PR #116) — V90 said "as do many 2014 news reports" (2009)
+  and "the *Jewish Chronicle* and many 2014 news reports put Finkel's study from 2009". Neither was shown by a cited
+  source (see the F1/F2 entries above). V90 now says one later summary (historyofinformation.com) gives 2009 alone and
+  the 2014 news reports checked give no year, quoting the Associated Press story (Jill Lawless, 24 Jan 2014). Re-opened
+  this check (fetch tool): [Christian Science Monitor (AP)](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round)
+  and [Times of Israel (AP)](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/), both
+  "Finkel got hold of it a few years ago", byline Jill Lawless, AP. PBS NewsHour was not re-opened this check (the
+  fetch was not permitted); V90 relies on the F2 entry above for it giving no year.

@@ -4,8 +4,8 @@
    measurements in dims.js, the place of each stone in layout.js, the
    carved panels in art.js, the stone builder in ../../megalith.js.
 
-   Status: "preview" in docs/assets/pilgrimage-data.js. The page exists
-   (noindex) but the site is off the menu until Carter approves it going live.
+   Status: "live" in docs/assets/pilgrimage-data.js (opened 2026-11-02 on
+   Carter's honesty-completions order); pending full review.
    Plan: plans/pilgrimage-sites.md (I · Prehistory). Sources:
    sources/pilgrimage-newgrange.md.
 

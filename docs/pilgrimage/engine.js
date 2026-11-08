@@ -21,7 +21,7 @@
 import * as THREE from "three";
 import { stoneMaterial } from "./stone.js?v=1";
 import { portal } from "./portal.js?v=1";
-import { createSound } from "./sound.js?v=1";
+import { createSound } from "./sound.js?v=2";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -407,9 +407,12 @@ function floorPoint(cx, cy) {
 function registerHit(obj, info) { obj.userData.info = info; S.hits.push(obj); }
 
 function linkBtn(href, label, ghost) { return `<a class="${ghost ? "ghost" : ""}" href="${esc(href)}">${esc(label)}</a>`; }
+// the hover tag belongs to the view: a label or an examined object opening over it takes it down, so it never floats
+// over a different object (museum fix batch item 6). The next frame on the site puts it back.
+function clearHover() { S.hover = null; $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on"); }
 function openCard(info) {
   if (!info) return;
-  unlock();
+  unlock(); clearHover();
   if (info.relic) { openRelic(info); return; }
   S.cardInfo = info;
   const links = (info.links || []).map((l, i) => linkBtn(l.href, l.label, i > 0)).join("");
@@ -435,7 +438,7 @@ async function openRelic(info) {
     if (!cat.CAT[r.id]) cat.CAT[r.id] = () => own[r.build]();
   }
   if (!S.insp) {
-    const m = await import("../museum/inspect.js?v=9");
+    const m = await import("../museum/inspect.js?v=11");
     S.insp = m.createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     const cl = S.insp.el.querySelector('[data-i="close"]'); if (cl) cl.textContent = "Back to the site";
   }

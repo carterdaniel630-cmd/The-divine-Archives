@@ -1,6 +1,6 @@
 {
  "type": "relic",
- "count": 88,
+ "count": 90,
  "entities": [
   {
    "id": "relic:v01",
@@ -1165,6 +1165,32 @@
     "chapter:ch16",
     "chapter:ch31",
     "chapter:ch45"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v89",
+   "type": "relic",
+   "label": "The Flood Tablet",
+   "era": "03-early-iron-age",
+   "status": "pending",
+   "href": "vault/flood-tablet.html",
+   "links": [
+    "chapter:ch01",
+    "chapter:ch03"
+   ],
+   "from": "docs/assets/vault-data.js"
+  },
+  {
+   "id": "relic:v90",
+   "type": "relic",
+   "label": "The Ark Tablet",
+   "era": "02-bronze-age",
+   "status": "pending",
+   "href": "vault/ark-tablet.html",
+   "links": [
+    "chapter:ch01",
+    "chapter:ch03"
    ],
    "from": "docs/assets/vault-data.js"
   }

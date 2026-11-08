@@ -183,7 +183,9 @@ export function recipe(env, kind) {
 // ---------------------------------------------------------------- the player
 export function createSound() {
   let on = true, cur = null, key = null, duck = 1;
-  try { on = window.localStorage.getItem("mu-snd") !== "0"; } catch (e) { /* storage blocked */ }
+  // one sound setting for the museum and the Pilgrimage ("da-snd"; museum fix batch item 6): turning it off in one
+  // keeps it off in the other. The older per-place keys are read only until the shared one is first set.
+  try { const v = window.localStorage.getItem("da-snd"); on = (v != null ? v : window.localStorage.getItem("mu-snd")) !== "0"; } catch (e) { /* storage blocked */ }
   function init() {
     if (ctx) return true;
     const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
@@ -208,7 +210,7 @@ export function createSound() {
     probe() { if (!ana) return { ctx: ctx ? ctx.state : null }; const a = new Float32Array(ana.fftSize); ana.getFloatTimeDomainData(a); let e = 0; for (const v of a) e += v * v; return { ctx: ctx.state, key, layers: cur ? cur.live.length : 0, calls: cur ? cur.calls : [], rms: Math.sqrt(e / a.length) }; },
     // call from a click or key press: browsers only let audio start after one
     wake() { if (!on) return; if (init() && ctx.state === "suspended") ctx.resume(); },
-    toggle(v) { on = v == null ? !on : v; try { window.localStorage.setItem("mu-snd", on ? "1" : "0"); } catch (e) { /* storage blocked */ } if (on) this.wake(); if (master) master.gain.setTargetAtTime(on ? 0.55 * duck : 0, now(), 0.2); return on; },
+    toggle(v) { on = v == null ? !on : v; try { window.localStorage.setItem("da-snd", on ? "1" : "0"); } catch (e) { /* storage blocked */ } if (on) this.wake(); if (master) master.gain.setTargetAtTime(on ? 0.55 * duck : 0, now(), 0.2); return on; },
     duck(v) { if (v === duck) return; duck = v; if (master && on) master.gain.setTargetAtTime(0.55 * v, now(), 0.3); },
     pause(p) { if (!ctx) return; if (p) ctx.suspend(); else if (on) ctx.resume(); },
     // area: world.js area (its env and kind), or null

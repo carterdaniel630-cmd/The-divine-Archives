@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 1977,
+ "count": 2001,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -634,6 +634,15 @@
    "from": "sources/ch68-nubia-kush.md"
   },
   {
+   "id": "source:archaeology-org/bab768da2b",
+   "type": "source",
+   "label": "https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:archaeology-org/f47c1c222d",
    "type": "source",
    "label": "https://archaeology.org/issues/november-december-2021/features/egypt-philae-temples/",
@@ -841,6 +850,15 @@
    "from": "sources/v84-hinton-st-mary-mosaic.md"
   },
   {
+   "id": "source:artsandculture-google-com/b7ee92ae89",
+   "type": "source",
+   "label": "https://artsandculture.google.com/story/who-was-susanne-wenger-%C3%80d%C3%B9nn%C3%AD-ol%C3%B3r%C3%AC%E1%B9%A3%C3%A0-the-osun-osogbo-grove/IAXBGVfmA6LkIA?hl=en",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:arxiv-org/0a51bce0cc",
    "type": "source",
    "label": "https://arxiv.org/abs/1102.3381",
@@ -947,6 +965,15 @@
     "relic:v84"
    ],
    "from": "sources/v84-hinton-st-mary-mosaic.md"
+  },
+  {
+   "id": "source:assets-christianpost-com/63d1a1109a",
+   "type": "source",
+   "label": "https://assets.christianpost.com/news/noahs-ark-original-was-round-according-to-4000-year-old-tablet-at-british-museum.html",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:assets-press-princeton-edu/56f20e8cc9",
@@ -1416,6 +1443,15 @@
     "relic:v63"
    ],
    "from": "sources/v63-kalpa-sutra-manuscripts.md"
+  },
+  {
+   "id": "source:blackpast-org/3fc5e7856f",
+   "type": "source",
+   "label": "https://blackpast.org/aah/oyotunji-african-village-1970",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:blog-nli-org-il/1b9da60c4e",
@@ -3576,6 +3612,15 @@
    "from": "sources/ch35-new-religious-movements.md"
   },
   {
+   "id": "source:channel4-com/98bdcf2ccb",
+   "type": "source",
+   "label": "https://www.channel4.com/press/news/real-noahs-ark",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:chinadaily-com-cn/43eef4c0e4",
    "type": "source",
    "label": "https://www.chinadaily.com.cn/a/202504/29/WS680ff708a310a04af22bcae0.html",
@@ -4006,6 +4051,15 @@
     "relic:v11"
    ],
    "from": "sources/v11-rohonc-codex.md"
+  },
+  {
+   "id": "source:csmonitor-com/124fcd1a54",
+   "type": "source",
+   "label": "https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:csmonitor-com/3c77d24c6b",
@@ -4451,6 +4505,15 @@
    "from": "sources/v75-golden-plates.md"
   },
   {
+   "id": "source:deseret-com/e2db0a6f82",
+   "type": "source",
+   "label": "https://www.deseret.com/2014/1/24/20461490/was-noah-s-ark-round-tablet-in-british-museum-contains-building-instructions",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:dialectrix-com/007b300c84",
    "type": "source",
    "label": "https://dialectrix.com/pyramids/door-in-the-dark.html",
@@ -4575,6 +4638,15 @@
     "relic:v28"
    ],
    "from": "sources/v28-birmingham-quran.md"
+  },
+  {
+   "id": "source:dipsy-pbs-org/679fd08f6d",
+   "type": "source",
+   "label": "https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:dlib-nyu-edu/88d189ec8b",
@@ -8604,6 +8676,15 @@
    "from": "sources/pantheon.md"
   },
   {
+   "id": "source:en-wikipedia-org/fe2079502a",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Finkel",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:en-wikipedia-org/fe2d371da7",
    "type": "source",
    "label": "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
@@ -9711,6 +9792,15 @@
    "from": "sources/ch35-new-religious-movements.md"
   },
   {
+   "id": "source:historiamag-com/6513ccd878",
+   "type": "source",
+   "label": "https://historiamag.com/irving-finkel-and-the-ark/",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:historiamexicana-colmex-mx/f5f1ea6f80",
    "type": "source",
    "label": "https://historiamexicana.colmex.mx/index.php/RHM/en/article/view/3475",
@@ -9853,6 +9943,15 @@
     "chapter:ch73"
    ],
    "from": "sources/ch73-sabbateans-hasidism.md"
+  },
+  {
+   "id": "source:historyofinformation-com/096aa23b19",
+   "type": "source",
+   "label": "https://historyofinformation.com/detail.php?id=4060",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:historyofinformation-com/46dbfa92a3",
@@ -10116,6 +10215,24 @@
    "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
   },
   {
+   "id": "source:ich-unesco-org/08254ea8f0",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/lists?RL=00146",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
+   "id": "source:ich-unesco-org/2f840985ee",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/RL/ifa-divination-system-00146",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:ich-unesco-org/32e2ca24a7",
    "type": "source",
    "label": "https://ich.unesco.org/en/RL/jeju-chilmeoridang-yeongdeunggut-00187",
@@ -10150,6 +10267,24 @@
     "chapter:ch79"
    ],
    "from": "sources/ch79-first-christian-kingdoms.md"
+  },
+  {
+   "id": "source:ich-unesco-org/7ed6effb82",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/RL/01974",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
+   "id": "source:ich-unesco-org/818992646f",
+   "type": "source",
+   "label": "https://ich.unesco.org/en/RL/00002",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:ich-unesco-org/8909944048",
@@ -12708,6 +12843,15 @@
    "from": "sources/v88-skull-reliquary-saint-maximin.md"
   },
   {
+   "id": "source:nationalgeographic-com/fa8e34d014",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/history-magazine/article/nigerian-treasures-ife-heads-bronze",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:nature-com/1a4a692471",
    "type": "source",
    "label": "https://www.nature.com/articles/s41598-022-06799-z",
@@ -12796,6 +12940,15 @@
     "relic:v04"
    ],
    "from": "sources/v04-shroud-of-turin.md"
+  },
+  {
+   "id": "source:nbcnews-com/88ac65aeea",
+   "type": "source",
+   "label": "https://www.nbcnews.com/science/science-news/babylonian-tale-round-ark-draws-wrath-some-christian-circles-flna2D12035655",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:ncbi-nlm-nih-gov/698013e254",
@@ -13186,6 +13339,15 @@
    "from": "sources/ch70-pre-islamic-arabia.md"
   },
   {
+   "id": "source:octobergallery-com/1bb270e48d",
+   "type": "source",
+   "label": "https://octobergallery.com/the-african-sculptures-mistaken-for-remains-of-atlantis/",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:ocw-mit-edu/88b959e91d",
    "type": "source",
    "label": "https://ocw.mit.edu/courses/4-614-religious-architecture-and-islamic-cultures-fall-2002/pages/lecture-notes/umayyad/",
@@ -13562,6 +13724,15 @@
     "chapter:ch56"
    ],
    "from": "sources/ch56-mandaeans-yazidis-druze.md"
+  },
+  {
+   "id": "source:pbs-org/a3054a4f10",
+   "type": "source",
+   "label": "https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:pdxscholar-library-pdx-edu/ddbba80394",
@@ -14012,6 +14183,15 @@
     "chapter:ch83"
    ],
    "from": "sources/ch83-global-hinduism-guru-movements.md"
+  },
+  {
+   "id": "source:pluralism-org/ee027e668a",
+   "type": "source",
+   "label": "https://pluralism.org/the-kingdom-of-oyotunji",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:pmc-ncbi-nlm-nih-gov/1086a20693",
@@ -15890,6 +16070,15 @@
    "from": "sources/ch83-global-hinduism-guru-movements.md"
   },
   {
+   "id": "source:susannewengerfoundation-at/b9b740853c",
+   "type": "source",
+   "label": "https://susannewengerfoundation.at/en/node/66",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
+  },
+  {
    "id": "source:tabletmag-com/585233e322",
    "type": "source",
    "label": "https://www.tabletmag.com/sections/history/articles/ark-covenant-ethiopia",
@@ -16251,6 +16440,15 @@
    "from": "sources/pilgrimage-borobudur.md"
   },
   {
+   "id": "source:thejc-com/b08fc5cd89",
+   "type": "source",
+   "label": "https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
+  },
+  {
    "id": "source:themathesontrust-org/faf109ba54",
    "type": "source",
    "label": "https://www.themathesontrust.org/papers/judaism/saadia.pdf",
@@ -16411,6 +16609,15 @@
     "relic:v07"
    ],
    "from": "sources/v07-ark-of-the-covenant.md"
+  },
+  {
+   "id": "source:timesofisrael-com/6c0c50a41d",
+   "type": "source",
+   "label": "https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/",
+   "links": [
+    "chapter:ch01"
+   ],
+   "from": "sources/ch01-the-flood.md"
   },
   {
    "id": "source:timesofisrael-com/9bf97248dc",
@@ -17146,6 +17353,15 @@
     "chapter:ch70"
    ],
    "from": "sources/ch70-pre-islamic-arabia.md"
+  },
+  {
+   "id": "source:whc-unesco-org/ee52d42c53",
+   "type": "source",
+   "label": "https://whc.unesco.org/en/list/1118/documents",
+   "links": [
+    "chapter:ch84"
+   ],
+   "from": "sources/ch84-yoruba.md"
   },
   {
    "id": "source:whitelevy-fas-harvard-edu/e137e4dd86",

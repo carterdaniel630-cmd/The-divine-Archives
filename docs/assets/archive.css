@@ -187,7 +187,7 @@ img { max-width: 100%; }
 }
 .search svg { color: var(--gold); flex: none; }
 .search input {
-  flex: 1; background: transparent; border: 0; color: var(--ink);
+  flex: 1; min-width: 0; background: transparent; border: 0; color: var(--ink);
   font-family: var(--font-body); font-size: 1rem;
 }
 .search input::placeholder { color: var(--ink-faint); font-style: italic; }

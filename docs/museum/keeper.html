@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Keeper (preview) — The Divine Archives</title>
+  <meta name="description" content="The Keeper of the Divine Archives: the museum's own guide figure, a preview of his production build, pending review." />
+  <!-- Preview of a figure still in build: not linked from the site, kept out of search. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../assets/archive.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+  <style>
+    html, body { margin: 0; padding: 0; background: #0a0805; }
+    .kp-wrap { max-width: 760px; margin: 0 auto; }
+    .kp-wrap .pending-banner { margin: 14px 16px 0; }
+    #stage { position: relative; width: 100%; height: 52vh; min-height: 360px; max-height: 560px; overflow: hidden; background: #0a0805; }
+    #scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+    #scene:active { cursor: grabbing; }
+    .serif { font-family: Cinzel, 'Cormorant Garamond', Georgia, Palatino, 'Times New Roman', serif; }
+    #title { padding: 18px 20px 14px; color: #e8d5a8; }
+    #title h1 { margin: 0; font-size: 20px; letter-spacing: 0.26em; font-weight: normal; color: #e8d5a8; text-shadow: 0 2px 12px rgba(0,0,0,0.9); }
+    #title p { margin: 6px 0 0; font-size: 11px; letter-spacing: 0.22em; color: #b39a63; text-transform: uppercase; }
+    #hint { padding: 10px 20px 2px; font-size: 10px; letter-spacing: 0.18em; color: #8a744f; text-transform: uppercase; line-height: 1.9; }
+    #plaque { background: #050301; border-top: 1px solid rgba(217,169,80,0.35); padding: 16px 22px calc(22px + env(safe-area-inset-bottom)); margin-top: 12px; }
+    #plaque .rule { width: 56px; height: 2px; background: #d9a950; margin-bottom: 9px; opacity: 0.85; }
+    #plaque p { margin: 0 0 10px; color: #d8c491; font-size: 13.5px; line-height: 1.6; letter-spacing: 0.02em; max-width: 660px; }
+    #plaque p:last-child { margin-bottom: 0; }
+    #plaque .tag { color: #c9a24b; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 7px; }
+    #plaque .note { color: #9c8a63; font-size: 12px; }
+    .kp-back { display: inline-block; margin: 14px 20px 0; color: #c9a24b; font-size: 13px; padding: 10px 0; min-height: 24px; }
+    @media (max-width: 560px) {
+      #title h1 { font-size: 15px; letter-spacing: 0.2em; }
+      #title p { font-size: 9px; }
+      #plaque p { font-size: 12px; line-height: 1.55; }
+    }
+  </style>
+  <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+<main class="kp-wrap">
+  <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> This is a preview of the Keeper's production build (pass 1 of 2). It is not yet part of the museum.</div>
+  <div id="title" class="serif">
+    <h1>THE KEEPER</h1>
+    <p>Keeper &middot; Student &middot; Teacher of the Divine Archives</p>
+  </div>
+  <div id="stage"><canvas id="scene" role="img" aria-label="The Keeper: a hooded figure in an old dark robe worked with gold, his face a black void, a solid gold disc behind his head, his right hand raised with thumb touching forefinger, a raven at his side, the ground withered on one side of him and green on the other."></canvas></div>
+  <div id="hint" class="serif">drag to turn<br>pinch or scroll to zoom</div>
+  <div id="plaque" class="serif">
+    <span class="tag">The Keeper &middot; of the Divine Archives</span>
+    <div class="rule"></div>
+    <p>The Keeper keeps the Divine Archives. He is its student before he is its teacher: everything held within these walls, he studies &mdash; and what he learns, he offers to anyone who comes. His face he does not show; the shadow inside his hood is the only face he offers, and he offers the same to every visitor. His robe is worked in muted gold with the sacred geometry and the ancient signs of the traditions he tends, the moons and the stars among them &mdash; what he studies, he carries.</p>
+    <p>At his side stands his raven, his companion. The raven flies out ahead of him and returns with what it has seen, and the two of them keep the museum together.</p>
+    <p>His robe is old &mdash; older than any room he keeps &mdash; its cloth worn thin and frayed at the hem, its goldwork stitched into the weave itself. Where he steps, the ground withers and dies; a half-step behind him it returns to life, green rising and small flowers opening in his wake.</p>
+    <p class="note">The Keeper is the Archive's own guide, an invented figure. He is not drawn from any one tradition, and he teaches only from what the Archive's records hold.</p>
+  </div>
+  <a class="kp-back serif" href="../museum.html">&larr; Back to the museum</a>
+</main>
+<script type="module" src="keeper.js?v=1"></script>
+</body>
+</html>

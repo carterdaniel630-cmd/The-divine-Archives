@@ -1,5 +1,5 @@
 {
- "ch01": {"published":"2026-08-08","modified":"2026-09-05","hash":"7e2ed74a5ded"},
+ "ch01": {"published":"2026-08-08","modified":"2026-11-02","hash":"2b5c765778e9"},
  "ch02": {"published":"2026-08-08","modified":"2026-10-25","hash":"29c9ae8f92e9"},
  "ch03": {"published":"2026-08-08","modified":"2026-09-05","hash":"7b7a2e44d05f"},
  "ch04": {"published":"2026-08-08","modified":"2026-09-05","hash":"f3d75d691354"},
@@ -81,6 +81,7 @@
  "ch81": {"published":"2026-09-29","modified":"2026-10-11","hash":"0b9c427ad7a4"},
  "ch82": {"published":"2026-09-29","modified":"2026-10-11","hash":"40a293746897"},
  "ch83": {"published":"2026-09-29","modified":"2026-10-11","hash":"8fe4d03964a5"},
+ "ch84": {"published":"2026-11-01","modified":"2026-11-01","hash":"b49c2de49825"},
  "ch75": {"published":"2026-09-29","modified":"2026-10-11","hash":"990cbedf4363"},
  "v01": {"published":"2026-09-23","modified":"2026-09-28","hash":"f984eef90527"},
  "v02": {"published":"2026-09-23","modified":"2026-09-28","hash":"68534bf988fd"},
@@ -169,5 +170,7 @@
  "v85": {"published":"2026-09-27","modified":"2026-09-28","hash":"a71a526c240b"},
  "v86": {"published":"2026-09-27","modified":"2026-09-28","hash":"06e182ba5dcb"},
  "v87": {"published":"2026-09-27","modified":"2026-09-28","hash":"3242240dab58"},
- "v88": {"published":"2026-09-28","modified":"2026-09-28","hash":"4e1fb4bbbf38"}
+ "v88": {"published":"2026-09-28","modified":"2026-09-28","hash":"4e1fb4bbbf38"},
+ "v89": {"published":"2026-11-02","modified":"2026-11-02","hash":"c5b654f8010f"},
+ "v90": {"published":"2026-11-02","modified":"2026-11-02","hash":"47b310fd2d61"}
 }

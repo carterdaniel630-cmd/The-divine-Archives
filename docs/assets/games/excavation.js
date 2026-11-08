@@ -7,7 +7,10 @@
    marked turns up a real archaeological find — each grounded in a chapter
    (data/excavation.json, checked by tools/verify-excavation.js).
    DOM grid: tap to dig, flag-mode or right-click / long-press to mark. It
-   scales to the screen and zooms cleanly on mobile.
+   scales to the screen. On touch screens where the squares come out under the
+   44px tap guide (Adept and Master on phones), a Zoom button sets every square
+   to a fixed 46px and the board pans by swipe inside its frame; squares never
+   overlap, so a tap only ever lands on the square under the finger.
    ========================================================================== */
 (function () {
   "use strict";
@@ -43,6 +46,11 @@
   function mountGame(root, ctx) {
     var level = "novice", st = null, gridEl, hudEl, live, flagBtn, timerEl, mineEl;
     var flagMode = false, timer = null, seconds = 0, best = AG.bestScore("excavation");
+    // touch zoom: kept across levels and new digs for this visit; shown only where it helps
+    var zoomed = false, zoomBtn, wrapEl, TAP = 44;
+    var coarse = !!(window.matchMedia && window.matchMedia("(pointer:coarse)").matches);
+    function onResize() { syncZoom(); }
+    window.addEventListener("resize", onResize);
 
     function conf() { return LEVELS[level]; }
     function newGame() {
@@ -82,17 +90,45 @@
         '<div class="ms-bar"><div class="ms-stat"><b id="ms-mines">0</b><span>Hazards left</span></div>' +
           '<button class="rq-btn ms-level" data-a="level">' + conf().name + '</button>' +
           '<div class="ms-stat"><b id="ms-timer">0</b><span>Seconds</span></div></div>' +
-        '<button class="rq-btn ms-flag" data-a="flag" aria-pressed="false">⚑ Flag mode: off</button>' +
+        '<div class="ms-tools"><button class="rq-btn ms-flag" data-a="flag" aria-pressed="false">⚑ Flag mode: off</button>' +
+          '<button class="rq-btn ms-zoom" data-a="zoom" aria-pressed="false" hidden>⊕ Zoom: off</button></div>' +
         '<div class="ms-grid-wrap"><div class="ms-grid" role="grid" aria-label="Excavation grid"></div></div>' +
         '<p class="ouro-toast ms-toast" aria-live="polite"></p>' +
         '<p class="rq-note">Tap to dig. Turn on flag mode (or right-click / long-press) to mark a hazard. Mark one correctly to turn up a find. Tap a number whose hazards are all marked to clear around it.</p>';
       gridEl = root.querySelector(".ms-grid"); live = root.querySelector(".ms-toast");
-      flagBtn = root.querySelector('[data-a="flag"]'); timerEl = root.querySelector("#ms-timer"); mineEl = root.querySelector("#ms-mines");
+      flagBtn = root.querySelector('[data-a="flag"]'); zoomBtn = root.querySelector('[data-a="zoom"]'); wrapEl = root.querySelector(".ms-grid-wrap"); timerEl = root.querySelector("#ms-timer"); mineEl = root.querySelector("#ms-mines");
       gridEl.style.setProperty("--cols", String(st.cols));
       root.querySelector('[data-a="level"]').addEventListener("click", cycleLevel);
       flagBtn.addEventListener("click", function () { flagMode = !flagMode; flagBtn.setAttribute("aria-pressed", flagMode ? "true" : "false"); flagBtn.textContent = "⚑ Flag mode: " + (flagMode ? "on" : "off"); flagBtn.classList.toggle("is-on", flagMode); });
+      zoomBtn.addEventListener("click", function () { zoomed = !zoomed; applyZoom(true); });
       buildGrid();
       updateHUD();
+      syncZoom();
+    }
+    // the fitted square size, measured with zoom off
+    function fittedCell() {
+      var was = gridEl.classList.contains("is-zoomed");
+      if (was) { gridEl.classList.remove("is-zoomed"); wrapEl.classList.remove("is-zoomed"); }
+      var w = gridEl.firstChild ? gridEl.firstChild.getBoundingClientRect().width : 0;
+      if (was) { gridEl.classList.add("is-zoomed"); wrapEl.classList.add("is-zoomed"); }
+      return w;
+    }
+    function syncZoom() {
+      if (!zoomBtn || !gridEl || !gridEl.isConnected) return;
+      var w = fittedCell(), needed = coarse && w > 0 && w < TAP;
+      zoomBtn.hidden = !needed;
+      applyZoom(false);
+    }
+    function applyZoom(recentre) {
+      var on = zoomed && !zoomBtn.hidden;
+      gridEl.classList.toggle("is-zoomed", on); wrapEl.classList.toggle("is-zoomed", on);
+      zoomBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      zoomBtn.textContent = "⊕ Zoom: " + (on ? "on" : "off");
+      zoomBtn.classList.toggle("is-on", on);
+      if (on && recentre) { // start the view on the middle of the site
+        wrapEl.scrollLeft = (wrapEl.scrollWidth - wrapEl.clientWidth) / 2;
+        wrapEl.scrollTop = (wrapEl.scrollHeight - wrapEl.clientHeight) / 2;
+      }
     }
     function cycleLevel() { level = level === "novice" ? "adept" : level === "adept" ? "master" : "novice"; boot(); }
 
@@ -108,11 +144,20 @@
         gridEl.appendChild(b);
       }
     }
+    // long-press flags; a finger that travels more than a few pixels is a pan (on the zoomed board), never a dig or a
+    // flag, while a small wobble during an ordinary tap still counts as the tap
     function attachLongPress(b) {
-      var t = null;
-      b.addEventListener("touchstart", function () { t = setTimeout(function () { t = null; toggleFlag(+b.getAttribute("data-x"), +b.getAttribute("data-y")); if (navigator.vibrate) navigator.vibrate(15); }, 380); }, { passive: true });
+      var t = null, x0 = 0, y0 = 0, SLOP = 10;
+      b.addEventListener("touchstart", function (e) {
+        var p = e.touches && e.touches[0]; x0 = p ? p.clientX : 0; y0 = p ? p.clientY : 0;
+        t = setTimeout(function () { t = null; toggleFlag(+b.getAttribute("data-x"), +b.getAttribute("data-y")); if (navigator.vibrate) navigator.vibrate(15); }, 380);
+      }, { passive: true });
       b.addEventListener("touchend", function (e) { if (t) { clearTimeout(t); t = null; } else { e.preventDefault(); } });
-      b.addEventListener("touchmove", function () { if (t) { clearTimeout(t); t = null; } });
+      b.addEventListener("touchmove", function (e) {
+        var p = e.touches && e.touches[0]; if (!t || !p) return;
+        if (Math.abs(p.clientX - x0) > SLOP || Math.abs(p.clientY - y0) > SLOP) { clearTimeout(t); t = null; }
+      }, { passive: true });
+      b.addEventListener("touchcancel", function () { if (t) { clearTimeout(t); t = null; } });
     }
 
     function onCell(e) {
@@ -224,13 +269,13 @@
       root.querySelector('[data-a="again"]').addEventListener("click", boot);
     }
 
-    function boot() { stopTimer(); newGame(); shell(); }
+    function boot() { stopTimer(); newGame(); shell(); if (zoomed && !zoomBtn.hidden) applyZoom(true); }
 
     root.innerHTML = '<div class="rq-loading">Clearing the topsoil…</div>';
     loadFacts().then(boot).catch(function () {
       root.innerHTML = '<p class="game-placeholder">The dig could not be loaded. Please reload the page.</p>';
     });
 
-    return function cleanup() { stopTimer(); };
+    return function cleanup() { stopTimer(); window.removeEventListener("resize", onResize); };
   }
 })();

@@ -21,14 +21,14 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=10";
+import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
-import { createSound } from "./sound.js?v=1";
+import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createSecret } from "./secret.js?v=3";
+import { createSecret } from "./secret.js?v=4";
 import { createStyle, styleOf } from "./style.js?v=16";
 
 // ---------------------------------------------------------------- constants
@@ -583,7 +583,7 @@ function buildStatic() {
   const trails = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Trails", "walk one tradition through the ages"], { w: 512, h: 320, size: 44 }) }));
   placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); g.add(trails);
   addExhibit(g, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
-  const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "every room, every exhibit"], { w: 512, h: 320, size: 44 }) }));
+  const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "the halls and the rooms"], { w: 512, h: 320, size: 44 }) }));
   placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); g.add(dir);
   addExhibit(g, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
   // spine: one banner per Age opposite its wing door, and a sign over the door
@@ -842,6 +842,9 @@ function buildWingExhibits(zoneId) {
   scene.add(outer);
   roomVisibility(Z);
   S.dirty = true;
+  // an open guide drawn before this zone's exhibits arrived says "Loading this room's exhibits…": redraw it now,
+  // or it waits until the visitor walks into another area (museum fix batch item 3, the Rotunda's Flood bay)
+  if (S.room && ids.indexOf(S.room) !== -1 && !$("mu-guide").hidden) renderGuide();
 }
 // merge every untextured part of a room into one mesh per shared material (few draw calls)
 function bake(room) {
@@ -1005,8 +1008,15 @@ function locate() {
 
 // ---------------------------------------------------------------- label cards
 function roomTitle(id) { const r = S.rooms[id]; return r ? r.title : id; }
+// the hover tag ("E  Lion Man") belongs to the view; any label or examined object opening over it takes it down, so
+// it never floats over a different object (museum fix batch item 6). The next frame in the halls puts it back.
+function clearHover() {
+  S.hover = null; S.skyHover = null;
+  $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on");
+}
 function openCard(ex) {
   const d = ex.data, b = $("mu-card-body");
+  clearHover();
   let h = "";
   const zoneOf = (id) => (S.rooms[id] ? S.rooms[id].zone : null);
   const detailFor = (id) => S.detail[zoneOf(id)];
@@ -1154,6 +1164,7 @@ function findVaultSlug(id) { return S.manifest.names.vault[id][2]; }
 function skySites() {
   const sel = $("mu-sky-site"); if (!sel || !S.sky) return;
   sel.innerHTML = S.sky.state.data.sites.map((x) => `<option value="${x.id}">${esc(x.name)}</option>`).join("");
+  sel.autocomplete = "off"; sel.value = S.sky.state.site.id;   // a browser restoring the form must not show one site over another's sky
   sel.addEventListener("change", () => S.sky.setSite(sel.value));
   $("mu-sky-now").addEventListener("click", () => { S.sky.setMode(S.sky.state.mode === "now" ? "tonight" : "now"); skyPanel(); });
   $("mu-sky-run").addEventListener("click", () => { S.sky.toggleRun(); skyPanel(); });
@@ -1168,16 +1179,21 @@ function skyPanel() {
   $("mu-sky-run").setAttribute("aria-pressed", String(st.run));
   $("mu-sky-lines").setAttribute("aria-pressed", String(st.lines));
   const t = S.sky.timeLabel(), el = $("mu-sky-time"); if (el.textContent !== t) el.textContent = t;
+  // every place that names the sky follows the one the dome shows (museum fix batch item 6: Giza chosen, "Sky over Babylon")
+  const sel = $("mu-sky-site"); if (sel && sel.value !== st.site.id) sel.value = st.site.id;
+  document.querySelectorAll("[data-sky-time]").forEach((p) => { if (p.textContent !== t) p.textContent = t; });
 }
 
 // ---------------------------------------------------------------- room guide
 function renderGuide() {
   const body = $("mu-guide-body");
-  const here = S.room ? S.exhibits.filter((e) => e.data.id === S.room || ((e.data.type === "vault" || e.data.type === "fig") && roomOfExhibit(e) === S.room)) : [];
+  const G = S.room ? guideItems(S.room) : { here: [], missing: [] }, here = G.here;
   let h = "";
   if (S.room) {
     const r = S.rooms[S.room];
-    h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") + `</ul>`;
+    h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") +
+      // a Directory item with no exhibit standing in the room yet: still named, linked to its page
+      G.missing.map((it) => `<li><a href="${esc(it.href)}">${esc(it.name)}<small>${esc(typeLabel(it.type))}</small></a></li>`).join("") + `</ul>`;
     if (!here.length) h += `<p class="mu-trail">Loading this room's exhibits…</p>`;
     // a walkthrough launched from a case in this room: every step as plain text, with its sources (filled in below)
     h += `<div data-guide-rituals="${esc(S.room)}"></div>`;
@@ -1198,7 +1214,7 @@ function renderGuide() {
     const cons = [...new Set(L.flatMap((e) => e.targets).filter((t) => C.some((c) => c.id === t)))];
     const pl = [...new Set(L.flatMap((e) => e.targets).filter((t) => t.startsWith("planet:")).map((t) => t.slice(7)))];
     const nm = { lun: "The Moon", mer: "Mercury", ven: "Venus", mar: "Mars", jup: "Jupiter", sat: "Saturn" };
-    h += `<h3>The planetarium overhead</h3><p class="mu-trail">${esc(S.sky.timeLabel())}</p><ul>` +
+    h += `<h3>The planetarium overhead</h3><p class="mu-trail" data-sky-time>${esc(S.sky.timeLabel())}</p><ul>` +
       `<li><button type="button" data-skyopen="about">About this sky<small>what the dome shows, and its sources</small></button></li>` +
       `<li><button type="button" data-skyopen="mw">The Milky Way<small>the archive's lore</small></button></li>` +
       `<li><button type="button" data-skyopen="horizon">The horizon<small>the archive's lore</small></button></li>` +
@@ -1226,6 +1242,26 @@ function guideRituals(room) {
       }).join("");
     });
   }).catch(() => {});
+}
+// The room guide's list is bound to the Directory's data (manifest homeVault / homeFigs, the same lists the
+// Directory prints), never to what merely stands near the room. Before 2026-11-01 vault objects and figures were
+// picked by position, so a neighbour's medallions strayed in (Agni and Saraswati in Mesopotamia; Padmasambhava in
+// Tantra) and a room's own ones placed past its bounds dropped out (Amitabha in Mahayana; Durga in Tantra).
+function guideItems(room) {
+  const r = S.rooms[room]; if (!r) return { here: [], missing: [] };
+  const want = { vault: r.homeVault || [], fig: r.homeFigs || [] }, N = S.manifest.names;
+  const own = S.exhibits.filter((e) => e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig");
+  const items = [], missing = [];
+  for (const type of ["vault", "fig"]) for (const id of want[type]) {
+    const all = S.exhibits.filter((e) => e.data.type === type && e.data.id === id);
+    const e = all.find((x) => roomOfExhibit(x) === room) || all[0];
+    if (e) items.push(e);
+    else if (S.room === room && own.length) {   // only once the room's own exhibits are in, so it isn't "missing" while loading
+      if (type === "vault" && N.vault[id]) missing.push({ type, name: N.vault[id][0], href: "vault/" + N.vault[id][2] + ".html" });
+      else if (type === "fig" && N.figs[id]) missing.push({ type, name: N.figs[id][0], href: "pantheon.html#" + id });
+    }
+  }
+  return { here: own.concat(items), missing };
 }
 function roomOfExhibit(e) {
   // exhibits are built per room; find the room whose area contains the exhibit
@@ -1419,7 +1455,7 @@ function savePos() { if (S.started) store.sset("mu-pos", JSON.stringify({ x: +S.
 
 // ---------------------------------------------------------------- directory (fallback)
 function showDirectory(reason) {
-  unlock();
+  unlock(); clearHover();
   document.body.classList.remove("is-3d");
   $("mu-bar").hidden = true; $("mu-intro").hidden = true; $("mu-guide").hidden = true; $("mu-card-wrap").hidden = true;
   const back = $("mu-dir-back");
@@ -1584,6 +1620,8 @@ window.__MU = {
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },
   load: (z) => loadDetail(z),
+  guide: (room) => { const G = guideItems(room); return { here: G.here.map((e) => e.data.type + ":" + e.data.id), missing: G.missing.map((m) => m.type + ":" + m.name) }; },
+  zones: () => Object.keys(ZONES),
   debug: () => {
     const out = {};
     scene.children.forEach((c, i) => {

@@ -203,7 +203,14 @@ function directory() {
       (GAME[id] ? `<p class="dir-ex"><span>Game:</span> <a href="symbols.html#play=${GAME[id].id}">${esc(GAME[id].title)}</a></p>` : "") +
       `</li>`;
   };
-  let h = `<section class="dir-wing"><h3>The Rotunda · Comparative themes</h3><ul>${(wingRooms.rotunda || []).map(roomLi).join("")}</ul></section>`;
+  // the halls between the rooms (museum fix batch item 5): the Directory names the public spaces, not only the
+  // chapter rooms, and the Pilgrimage portal. No id on these items: "walk there" buttons are for chapter rooms only.
+  let h = `<section class="dir-wing dir-halls"><h3>The halls</h3><ul>` +
+    `<li><span class="dir-room">The entrance hall</span><p class="dir-ex"><span>Portal:</span> <a href="pilgrimage.html">The Pilgrimage: walk the sacred sites</a></p></li>` +
+    `<li><span class="dir-room">The planetarium</span><p class="dir-ex">The star projector at the centre of the Rotunda.</p></li>` +
+    `<li><span class="dir-room">The Spine gallery</span><p class="dir-ex">A banner for each of <a href="eras.html">the Nine Ages</a>.</p></li>` +
+    `</ul></section>`;
+  h += `<section class="dir-wing"><h3>The Rotunda · Comparative themes</h3><ul>${(wingRooms.rotunda || []).map(roomLi).join("")}</ul></section>`;
   for (const e of A.eras) {
     if (!wingRooms[e.slug]) continue;
     h += `<section class="dir-wing"><h3>Wing ${esc(e.num)} · ${esc(e.name)} <span>${esc(e.dates)}</span></h3><ul>${wingRooms[e.slug].map(roomLi).join("")}</ul></section>`;

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Foundation Kit bench (preview) — The Divine Archives</title>
+  <meta name="description" content="The Visual Foundation Kit's bench: the shared materials, light rigs, ground and scale every museum room and Pilgrimage site will build on. A build preview, pending review." />
+  <!-- A build bench, not part of the museum: not linked from the site, kept out of search. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9C%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../assets/archive.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+  <style>
+    html, body { margin: 0; padding: 0; background: #0a0805; }
+    .kb-wrap { max-width: 900px; margin: 0 auto; }
+    .kb-wrap .pending-banner { margin: 14px 16px 0; }
+    #stage { position: relative; width: 100%; height: 56vh; min-height: 360px; max-height: 620px; overflow: hidden; background: #0a0805; }
+    #scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+    #scene:active { cursor: grabbing; }
+    .serif { font-family: Cinzel, 'Cormorant Garamond', Georgia, Palatino, 'Times New Roman', serif; }
+    #title { padding: 18px 20px 10px; color: #e8d5a8; }
+    #title h1 { margin: 0; font-size: 19px; letter-spacing: 0.24em; font-weight: normal; }
+    #title p { margin: 6px 0 0; font-size: 11px; letter-spacing: 0.2em; color: #b39a63; text-transform: uppercase; }
+    .kb-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px 4px; }
+    .kb-bar span { width: 100%; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #a08a5c; }
+    .kb-bar button { min-height: 44px; min-width: 44px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(217,169,80,0.4); background: #15100a; color: #e8d5a8; font: inherit; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; }
+    .kb-bar button[aria-pressed="true"] { background: #3a2a14; border-color: #d9a950; color: #f3e2b8; }
+    #readout { padding: 6px 20px 0; font-size: 12px; color: #cdb88a; min-height: 1.4em; }
+    #plaque { background: #050301; border-top: 1px solid rgba(217,169,80,0.35); padding: 16px 22px calc(22px + env(safe-area-inset-bottom)); margin-top: 14px; }
+    #plaque p { margin: 0 0 10px; color: #d8c491; font-size: 13.5px; line-height: 1.6; max-width: 700px; }
+    #plaque .tag { color: #c9a24b; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 7px; }
+    #plaque .note { color: #a8966e; font-size: 12px; }
+    .kb-back { display: inline-block; margin: 14px 20px 0; color: #c9a24b; font-size: 13px; padding: 10px 0; }
+    @media (max-width: 560px) { #title h1 { font-size: 15px; } #plaque p { font-size: 12.5px; } }
+  </style>
+  <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+<main class="kb-wrap">
+  <div class="pending-banner"><strong>Recently added &middot; pending full review.</strong> A build bench for the Visual Foundation Kit. It is not part of the museum.</div>
+  <div id="title" class="serif">
+    <h1>THE FOUNDATION KIT</h1>
+    <p>Bench &middot; materials, light, ground and scale</p>
+  </div>
+  <div id="stage"><canvas id="scene" role="img" aria-label="Six sample pieces on a stone floor: a worked-stone block, a bronze vessel form, a gold disc, a sheet of parchment, a ceramic jar form and a wooden board, with a plain grey person-height marker for scale."></canvas></div>
+  <div id="readout" class="serif" aria-live="polite"></div>
+  <div class="kb-bar serif" role="group" aria-label="Light"><span>Light</span>
+    <button type="button" data-rig="flame">Flame</button><button type="button" data-rig="skylight">Skylight</button><button type="button" data-rig="gallery">Gallery</button></div>
+  <div class="kb-bar serif" role="group" aria-label="Screen grade"><span>Grade</span>
+    <button type="button" data-grade="screen">Screen</button><button type="button" data-grade="phone">Phone (lifted)</button></div>
+  <div class="kb-bar serif" role="group" aria-label="View"><span>View</span>
+    <button type="button" data-view="all">All pieces</button><button type="button" data-view="close">Close zoom</button><button type="button" data-view="next">Next piece</button></div>
+  <div id="plaque" class="serif">
+    <span class="tag">What this bench is for</span>
+    <p>Every room in the museum and every Pilgrimage site will be built from one shared kit: the same tuned materials (worked stone, bronze, gold, parchment, ceramic, wood), the same graded lights, the same ground and the same human scale. This bench shows the kit by itself, so it can be judged before anything is built on it.</p>
+    <p>Each surface varies over metres as well as over its own tile, so a wall or floor no longer shows one pattern stamped across it. The "Phone" grade lifts the shadows so a dim room still reads on a phone. The real test is a walk on a phone, not this screen.</p>
+    <p class="note">These are the archive's own materials, tuned to read like the real ones. They are not scans of any object. The grey column is a person-height marker (1.7 m) for scale, and appears only on benches.</p>
+  </div>
+  <a class="kb-back serif" href="../museum.html">&larr; Back to the museum</a>
+</main>
+<script type="module" src="kit-bench.js?v=1"></script>
+</body>
+</html>

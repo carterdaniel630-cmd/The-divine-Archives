@@ -16,9 +16,9 @@
   <url><loc>https://getconexto.com/eras/05-late-antiquity.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://getconexto.com/eras/06-early-medieval.html</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://getconexto.com/eras/07-high-medieval.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://getconexto.com/eras/08-early-modern.html</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://getconexto.com/eras/08-early-modern.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://getconexto.com/eras/09-modern.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://getconexto.com/chapters/ch01.html</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://getconexto.com/chapters/ch01.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://getconexto.com/chapters/ch02.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://getconexto.com/chapters/ch03.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://getconexto.com/chapters/ch04.html</loc><lastmod>2026-09-05</lastmod></url>
@@ -100,7 +100,20 @@
   <url><loc>https://getconexto.com/chapters/ch81.html</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://getconexto.com/chapters/ch82.html</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://getconexto.com/chapters/ch83.html</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://getconexto.com/chapters/ch84.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://getconexto.com/chapters/ch75.html</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://getconexto.com/museum.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/gobekli-tepe.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/newgrange.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/great-pyramid.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/delphi.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/library-of-alexandria.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/qumran-caves.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/persepolis.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/mogao-caves.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/borobudur.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/angkor-wat.html</loc></url>
+  <url><loc>https://getconexto.com/pilgrimage/chichen-itza.html</loc></url>
   <url><loc>https://getconexto.com/vault.html</loc></url>
   <url><loc>https://getconexto.com/pantheon.html</loc></url>
   <url><loc>https://getconexto.com/vault/voynich-manuscript.html</loc><lastmod>2026-09-28</lastmod></url>
@@ -190,5 +203,7 @@
   <url><loc>https://getconexto.com/vault/berlin-gold-hat.html</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://getconexto.com/vault/diwan-abatur.html</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://getconexto.com/vault/skull-reliquary-saint-maximin.html</loc><lastmod>2026-09-28</lastmod></url>
+  <url><loc>https://getconexto.com/vault/flood-tablet.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://getconexto.com/vault/ark-tablet.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://getconexto.com/vault/tjurunga.html</loc><lastmod>2026-10-31</lastmod></url>
 </urlset>

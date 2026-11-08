@@ -324,6 +324,26 @@
    "id": "ch83",
    "date": "2026-10-11",
    "note": "Batch clearance after the full source review and corrections of PR #42 (Carter: \"clear\", 2026-10-11)"
+  },
+  {
+   "id": "ch07",
+   "date": "2026-11-01",
+   "note": "Re-cleared by Carter for a typo-only change: one stray line-wrap space removed (handoff/decisions-2026-11-01-carter-yes-x4.md 3); nothing else in the chapter changed"
+  },
+  {
+   "id": "ch15",
+   "date": "2026-11-01",
+   "note": "Re-cleared by Carter for a typo-only change: one stray line-wrap space removed (handoff/decisions-2026-11-01-carter-yes-x4.md 3); nothing else in the chapter changed"
+  },
+  {
+   "id": "ch16",
+   "date": "2026-11-01",
+   "note": "Re-cleared by Carter for a typo-only change: one stray line-wrap space removed (handoff/decisions-2026-11-01-carter-yes-x4.md 3); nothing else in the chapter changed"
+  },
+  {
+   "id": "ch45",
+   "date": "2026-11-01",
+   "note": "Re-cleared by Carter for a typo-only change: one stray line-wrap space removed (handoff/decisions-2026-11-01-carter-yes-x4.md 3); nothing else in the chapter changed"
   }
  ],
  "vault": [
@@ -1886,6 +1906,11 @@
     "id": "ch42",
     "date": "2026-10-25",
     "note": "Back to pending: the Newgrange solstice sentence corrected (the beam's reach today, Ray 1989), Carter's go-ahead after the 2026-10-18 review of PR #66"
+   },
+   {
+    "id": "ch01",
+    "date": "2026-11-02",
+    "note": "Back to pending: the Ark Tablet television build sentence corrected (a scaled-down build that leaked and needed a pump, not a full-scale vindication), Carter's approved truth correction of 2026-11-01 (handoff/note-2026-11-01-ark-build-correction.md)"
    }
   ],
   "vault": [],

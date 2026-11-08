@@ -249,7 +249,8 @@ function pageForEra(era) {
   const tiles = era.traditions.map((name) => tradTile(name, era)).join("\n");
   const themeChapters = A.chapters.filter((c) => c.kind === "theme");
   const themeBlock = themeChapters.length
-    ? '\n      <p class="eyebrow center" style="margin:2.6rem 0 1.4rem">Comparative themes across this age</p>\n' +
+    ? '\n      <p class="eyebrow center" style="margin:2.6rem 0 .6rem">Comparative themes &middot; across all eras</p>\n' +
+      '      <p class="tiny center" style="margin:0 0 1.2rem">These chapters compare traditions from every era, so the same set appears on each era page; they are not themes of this age alone. <a href="../themes.html">All themes &rarr;</a></p>\n' +
       '      <div class="tiles">\n' + themeChapters.map(themeTileForEra).join("\n") + "\n      </div>"
     : "";
   const objs = VAULT.items.filter((i) => i.status === "published" && i.era === era.slug).sort((a, b) => (a.year || 0) - (b.year || 0));
@@ -469,6 +470,40 @@ ${FOOTER_ROOT}
 // A "preview" site gets the same page (noindex) but stays off the menu: the list below shows it as
 // coming, unlinked, and the museum's gate (docs/museum/app.js) lists only "live" sites.
 const PILG = sandbox.window.PILGRIMAGE || { sites: [] };
+// The Guide's stop texts for every open site, read from the site modules themselves
+// (tools/pilgrimage-guide-text.mjs), so the text version carries the tour, not a stub
+// (honesty completions bundle, item 3). Previews keep their short text version.
+const PILG_GUIDE = (() => {
+  const ids = PILG.sites.filter((x) => x.status === "live").map((x) => x.id);
+  if (!ids.length) return {};
+  const out = require("child_process").execFileSync(process.execPath, [path.join(__dirname, "pilgrimage-guide-text.mjs")].concat(ids), { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+  return JSON.parse(out);
+})();
+// The text version of one site's Guide: a section per part of the walk, each stop with its
+// labels, text, links and sources, then "About this model". The golden-portal stops are
+// left out: they only say where a portal goes in the 3D walk.
+function pilgrimageGuideText(s) {
+  const g = PILG_GUIDE[s.id];
+  if (!g) return "";
+  const stop = (i) => {
+    const r = i.relic;
+    const links = (r && r.slug ? [{ href: "../vault/" + r.slug + ".html", label: "Open the Vault entry" }] : []).concat(r ? [] : i.links);
+    return `<article class="pg-stop" id="stop-${esc(i.id)}"><h3>${esc(i.title)}</h3>` +
+      (r ? `<p class="pg-meta">${esc(r.held)} · ${esc(r.dated)}</p>` : "") +
+      (i.flags.length ? `<p class="pg-flags">${i.flags.map((f) => `<span class="mu-flag${f.soft ? " soft" : ""}">${esc(f.t)}</span>`).join(" ")}</p>` : "") +
+      i.html +
+      (links.length ? `<p class="pg-meta">${links.map((l) => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join(" · ")}</p>` : "") +
+      (i.sources ? `<p class="pg-src"><strong>Sources:</strong> ${i.sources}</p>` : "") + "</article>";
+  };
+  const isPortal = (i) => i.section === "v" && (i.id === "v-door" || i.id === "v-back");
+  const parts = g.sections.map((sec) => {
+    const items = g.info.filter((i) => i.section === sec.id && !isPortal(i));
+    if (!items.length) return "";
+    return `<section class="pg-part"><h2>${esc(sec.name)}</h2>${sec.blurb ? `<p>${esc(sec.blurb)}</p>` : ""}\n${items.map(stop).join("\n")}\n</section>`;
+  }).filter(Boolean);
+  if (g.about) parts.push(`<section class="pg-part"><h2>About this model</h2>\n${stop(g.about)}\n</section>`);
+  return parts.join("\n");
+}
 const LABELS = { R: ["Reconstruction", "Lost or destroyed: what you walk is a labelled reconstruction."], C: ["Claimed site", "A claimed or traditional site: the dispute over it is shown on site."], S: ["Exterior only", "Religiously restricted or sensitive: shown from outside only."] };
 function pilgrimageListPage() {
   const chTitle = (id) => { const c = A.chapters.find((x) => x.id === id); return c ? c.title : id; };
@@ -503,14 +538,14 @@ function pilgrimageListPage() {
   <meta name="description" content="${esc(desc)}" />
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="assets/archive.css" />
-${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=1" />
+${SEO.fontTags()}  <link rel="stylesheet" href="pilgrimage/pilgrimage.css?v=3" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(desc)}" />
   <meta property="og:url" content="${url}" />
-  <meta name="twitter:card" content="summary" />
+${SEO.pageShareTags("pilgrimage")}  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
 <a class="skip-link" href="#pg-list">Skip to content</a>
@@ -544,6 +579,18 @@ ${FOOTER_ROOT}
 </html>
 `;
 }
+// Share tags for a site that has a hand-picked share image (SEO.PAGE_SHARE); "" for the rest.
+function pilgrimageShareHead(s, title) {
+  const sh = SEO.PAGE_SHARE[s.id];
+  if (!sh) return "";
+  return `  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Divine Archives" />
+  <meta property="og:title" content="${esc(title)}" />
+  <meta property="og:description" content="${esc(sh.desc)}" />
+  <meta property="og:url" content="${SITE}/pilgrimage/${esc(s.id)}.html" />
+${SEO.pageShareTags(s.id)}  <meta name="twitter:card" content="summary_large_image" />
+`;
+}
 function pilgrimageSitePage(s) {
   const title = s.name + " — The Pilgrimage · The Divine Archives";
   const chs = (s.chapters || []).map((id) => { const c = A.chapters.find((x) => x.id === id); return c ? `<li><a href="../chapters/${esc(id)}.html">${esc(c.title)}</a></li>` : ""; }).join("");
@@ -555,14 +602,17 @@ function pilgrimageSitePage(s) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(s.blurb || s.name)}" />
-  <!-- A walkable model is an entry point, like the museum: the chapter and Vault pages are canonical. -->
-  <meta name="robots" content="noindex, follow" />
+${s.status === "live"
+    ? `  <!-- An open site is a page of its own, listed in the sitemap (museum fix batch item 4). -->
+  <link rel="canonical" href="${SITE}/pilgrimage/${esc(s.id)}.html" />`
+    : `  <!-- A walkable model is an entry point, like the museum: the chapter and Vault pages are canonical. -->
+  <meta name="robots" content="noindex, follow" />`}
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="../assets/archive.css" />
 ${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
-  <link rel="stylesheet" href="pilgrimage.css?v=1" />
+  <link rel="stylesheet" href="pilgrimage.css?v=3" />
   <script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.min.js" } }</script>
-</head>
+${pilgrimageShareHead(s, title)}</head>
 <body class="museum-page pilgrimage-page">
 <a class="skip-link" href="#pg-fallback">Skip to the text version</a>
 <div id="mu-stage" aria-hidden="true"></div>
@@ -614,12 +664,17 @@ ${SEO.fontTags()}  <link rel="stylesheet" href="../museum/museum.css?v=7" />
     <p class="eyebrow">The Pilgrimage${s.pending ? " · recently added, pending full review" : ""}</p>
     <h1>${esc(s.name)}</h1>
     <p class="lede">${esc(s.blurb || "")}</p>
-    <p>This site is a walkable 3D model and needs a browser with WebGL. Its notes draw on these pages of the archive:</p>
-    ${chs ? `<h3>Chapters</h3><ul>${chs}</ul>` : ""}${vs ? `<h3>Vault</h3><ul>${vs}</ul>` : ""}
+${PILG_GUIDE[s.id]
+    ? `    <p>This is the text version of a walkable 3D model: the Guide&rsquo;s notes for each stop on the walk, with their labels and sources. The 3D walk needs a browser with WebGL.</p>
+${pilgrimageGuideText(s)}
+    <h2>In the archive</h2>
+    ${chs ? `<h3>Chapters</h3><ul>${chs}</ul>` : ""}${vs ? `<h3>Vault</h3><ul>${vs}</ul>` : ""}`
+    : `    <p>This site is a walkable 3D model and needs a browser with WebGL. Its notes draw on these pages of the archive:</p>
+    ${chs ? `<h3>Chapters</h3><ul>${chs}</ul>` : ""}${vs ? `<h3>Vault</h3><ul>${vs}</ul>` : ""}`}
     <p class="tiny"><a href="../pilgrimage.html">All Pilgrimage sites</a> · <a href="../museum.html">The museum</a></p>
   </div>
 </main>
-<script type="module">import { start } from "./engine.js?v=7"; start(${JSON.stringify(s.id)});</script>
+<script type="module">import { start } from "./engine.js?v=8"; start(${JSON.stringify(s.id)});</script>
 <script src="../site-config.js" defer></script>
 </body>
 </html>
@@ -711,6 +766,9 @@ function buildSitemap() {
     urls.push([SITE + "/eras/" + e.slug + ".html", latest]);
   });
   pub.forEach((c) => urls.push([SITE + "/chapters/" + c.id + ".html", mod(c.id)]));
+  // The Museum landing and every open Pilgrimage site (previews stay noindex and out of the map)
+  urls.push([SITE + "/museum.html", null]);
+  PILG.sites.filter((x) => x.status === "live").forEach((x) => urls.push([SITE + "/pilgrimage/" + x.id + ".html", null]));
   // The Vault (manuscripts, relics & contested objects) — see tools/build-vault.js
   const VAULT = sandbox.window.VAULT || { items: [] };
   urls.push([SITE + "/vault.html", null]);
