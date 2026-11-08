@@ -51,7 +51,7 @@ Wicca and modern Paganism grow directly out of the **occult revival** of Chapter
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** Wicca as a documented **twentieth-century** religion — Gerald Gardner, the 1949–59 books, Doreen Valiente's authorship of much of the liturgy, the beliefs and rituals, the Gardnerian and Alexandrian lineages, and the rapid global growth; and the broader modern Pagan revival (Dianic and feminist witchcraft, Starhawk's Reclaiming, Druidry, Heathenry/Ásatrú, reconstructionism), its expanding presence, and its legal recognition (the 2007 VA pentacle).
+**What's well supported by the evidence.** Wicca as a documented **twentieth-century** religion — Gerald Gardner, the 1949–59 books, Doreen Valiente's authorship of much of the liturgy, the beliefs and rituals, the Gardnerian and Alexandrian lineages, and the rapid global growth; and the broader modern Pagan revival (Dianic and feminist witchcraft, Starhawk's Reclaiming, Druidry, Heathenry/Ásatrú, reconstructionism), its expanding presence, and its legal recognition (the 2007 VA pentacle).
 
 **Not supported (as history).** That Wicca is an **unbroken survival** of an ancient pre-Christian witch-religion — Gardner's ancient lineage cannot be traced, and the **Murray witch-cult thesis** it rests on is discredited (Hutton, *The Triumph of the Moon*). The "**burning times**" claim of nine million martyred witches of a surviving pagan religion is a **myth**, on both count and character.
 

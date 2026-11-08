@@ -69,7 +69,7 @@ Spiritualism is a modern, scientific-age form of one of the most ancient human p
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The history of Spiritualism — its precursors in Swedenborg, Mesmer, and Andrew Jackson Davis; its birth with the Fox sisters in 1848; its explosive spread, its practices, its churches (the NSAC of 1893, the SNU, Lily Dale); its enormous social role in a grieving age; the prominence of women; the famous believers (Crookes, Lodge, Doyle); and the extensive, documented record of **fraud**, including Margery, Mumler's 1869 trial, and Margaret Fox's own confession.
+**What's well supported by the evidence.** The history of Spiritualism — its precursors in Swedenborg, Mesmer, and Andrew Jackson Davis; its birth with the Fox sisters in 1848; its explosive spread, its practices, its churches (the NSAC of 1893, the SNU, Lily Dale); its enormous social role in a grieving age; the prominence of women; the famous believers (Crookes, Lodge, Doyle); and the extensive, documented record of **fraud**, including Margery, Mumler's 1869 trial, and Margaret Fox's own confession.
 
 **Not supported (as history or science).** That mediums actually **communicated with the dead**. Every claim rigorously tested was either exposed as fraud or explained by ordinary means — the ideomotor effect, cold reading, stagecraft, double exposure — and more than a century of psychical research (from the SPR onward) produced **no accepted verified case**. The phenomena, as tested, were not real.
 
