@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (02:25 UTC)
+# Handoff — updated 2026-11-08 (03:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Qumran share-image alt says it is a 3D model (2026-11-08 ~02:21 UTC)
+## Latest: Qumran Cave 4 wall live, the Presence Pass proof piece (2026-11-08 ~03:44 UTC)
+- **`main` = `141c8271`** (deploy run 249 green, 2026-11-08 ~03:44 UTC): **PR #122** fast-forwarded `ce1d44b8` → `141c8271` **per item** (Carter's pick + PASS, `carter-pick-cave4-wall-122.md`, `decisions-2026-11-08-carter-pass-122.md`). Cave 4's marl walls and floor take the Foundation Kit's breakup; the two rows of holes in 4a are sunk sockets placed on the built wall. No text, flag or source changed; the site stays pending. Review PASS 0 findings (`replies/2026-11-08-pr122-independent-review.md`); GitHub 9/9 green incl. Lighthouse on `141c8271`; local checks + headless 360/390 re-run green by the merging run (session ..01HFWzTmTSXfcDt2T7G5U8aN, wrote none of it). Reply `replies/2026-11-08-run-0350-pr122-merged.md`.
+- **Open:** PR #123 verdict headings (needs re-sync onto `141c8271`, independent review, GitHub green). PR #121 not picked: does not merge, branch kept.
+
+## Earlier: Qumran share-image alt says it is a 3D model (2026-11-08 ~02:21 UTC)
 - **`main` = `ce1d44b8`** (deploy run 248 green, 2026-11-08 ~02:22 UTC): **PR #120** fast-forwarded `d062ef37` → `ce1d44b8` by class (c) (honesty wording on live metadata): the Qumran caves share-image alt now opens "A 3D model, not a photograph:", like the Great Pyramid and Library alts. Independent review PASS 0 findings (session ..01HFWzTnvHbqkD8otVFfKqHc); GitHub 9/9 green incl. Lighthouse; local checks + headless 360/390 re-run green by the merging run (session ..01HFWzTovazLUaNgT45KnyVv, wrote none of it).
 - **Open:** PR #121 (draft) Presence Pass proof piece, Qumran Cave 4 wall onto the Foundation Kit; per item.
 
