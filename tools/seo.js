@@ -74,7 +74,7 @@ const PAGE_SHARE = {
     desc: "The Great Pyramid at Giza, raised for Pharaoh Khufu around 2560 BCE — the last survivor of the ancient world's seven wonders." },
   "library-of-alexandria": { w: 1200, h: 630, alt: "An evocation, not a photograph: a great hall of scroll shelves under arches, light falling from the roof",
     desc: "The Great Library of Alexandria, and the scholars and scrolls it gathered." },
-  "qumran-caves": { w: 900, h: 1440, alt: "An earthenware scroll jar with its bowl lid and a rolled scroll, the Qumran Cave 1 jar form",
+  "qumran-caves": { w: 900, h: 1440, alt: "A 3D model, not a photograph: an earthenware scroll jar with its bowl lid and a rolled scroll, the Qumran Cave 1 jar form",
     desc: "The caves at Qumran, where the Dead Sea Scrolls were found — among the earliest known Hebrew Bible manuscripts." },
 };
 const pageShareUrl = (key) => `${SITE}/assets/share/${key}.jpg`;

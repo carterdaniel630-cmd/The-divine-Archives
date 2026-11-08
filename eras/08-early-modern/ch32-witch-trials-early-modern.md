@@ -59,11 +59,11 @@ The witch trials belong to the anxious, violent world of the **Reformation** (Ch
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The witch trials themselves — their chronology (c. 1450–1750), their concentration in the Holy Roman Empire, and a death toll now soberly estimated at **40,000–60,000**; the papal bull of 1484 and the *Malleus Maleficarum* (1486); the great German hunts (Trier, Würzburg, Bamberg) and the Junius letter; North Berwick and James VI; Salem (1692); the role of **torture** and inquisitorial procedure; the predominance of women; the skeptical restraint of the Spanish Inquisition (Salazar); and the reality of village **cunning-folk** (and the benandanti).
+**What's well supported by the evidence.** The witch trials themselves — their chronology (c. 1450–1750), their concentration in the Holy Roman Empire, and a death toll now soberly estimated at **40,000–60,000**; the papal bull of 1484 and the *Malleus Maleficarum* (1486); the great German hunts (Trier, Würzburg, Bamberg) and the Junius letter; North Berwick and James VI; Salem (1692); the role of **torture** and inquisitorial procedure; the predominance of women; the skeptical restraint of the Spanish Inquisition (Salazar); and the reality of village **cunning-folk** (and the benandanti).
 
 **Not supported (as history).** That the accused were actually members of a **satanic witch-cult** — Margaret Murray's "witch-cult" thesis is thoroughly discredited. That the **confessions**, extracted under torture, describe real events. And that **maleficium** — harmful magic — actually worked. The crime, as charged, was imaginary; the persecution was not.
 
-**Genuinely open.** The precise **death tolls**, estimates from incomplete records (the "**nine million**" figure sometimes claimed is pure myth). The relative weight of the many **causes** (misogyny, torture-law, the Little Ice Age, confessional conflict). And, in any given trial, how much a real tradition of folk healing or magic underlay the accusation before torture buried it under fantasy.
+**What's genuinely open.** The precise **death tolls**, estimates from incomplete records (the "**nine million**" figure sometimes claimed is pure myth). The relative weight of the many **causes** (misogyny, torture-law, the Little Ice Age, confessional conflict). And, in any given trial, how much a real tradition of folk healing or magic underlay the accusation before torture buried it under fantasy.
 
 ## Sources
 

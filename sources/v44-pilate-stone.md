@@ -16,3 +16,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 
 - G. Alföldy, "Pontius Pilatus und das Tiberieum von Caesarea Maritima", *Scripta Classica Israelica* 18 (1999)
 - Tacitus, *Annals* 15.44; Josephus, *Jewish War* 2.169–177 and *Antiquities* 18.55–62; Philo, *Embassy to Gaius* 299–305
+
+*Museum rendition (inscription texture, 2026-11-08)*
+
+- CIIP II 1277, "Dedication by Pontius Pilate in Judea", as published in the *Judaism and Rome* database, https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288 (opened 2026-11-08): diplomatic text `[---]S TIBERIEVM / [----]NTIVS PILATVS / [-----]ECTVS IVDA[--]E / [-----]E[-------]`; line 4 one letter (a vertical stroke under an apex, read as E); 82 × 65 × 20 cm; letters 6 cm. The museum model's letters follow this diplomatic text. The Epigraphic Database Heidelberg record (HD004074) could not be opened from the drafting environment (access denied).

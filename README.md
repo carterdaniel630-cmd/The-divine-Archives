@@ -22,7 +22,7 @@ doesn't, and what is still open.
 | **Traditions / Themes / Compare / Search / Random** | Other ways into the same chapters | — |
 | **The Vault** | Sacred objects and texts (manuscripts, relics, inscriptions), each with a study page | **89** entries (V68, the Tjurunga, is withdrawn: its page says why it is not shown) |
 | **The Pantheon** | A searchable directory of gods, spirits, heroes and prophets | **199** figures, 30 traditions |
-| **Symbols and games** | The archive's sacred symbols; twelve of them open a game whose facts all come from chapter text | **12** games |
+| **Symbols and games** | The archive's sacred symbols; eleven of them open a game whose facts all come from chapter text | **11** games |
 | **The Pilgrimage** (beta) | Walkable models of sacred sites, sized from published surveys, reached through the golden portal in the Museum's entrance hall; each holds relic copies linked to the Vault | **11** open (Göbekli Tepe, the Great Pyramid, Delphi, the Library of Alexandria, the Qumran Caves, the Mogao Caves, Chichén Itzá, Persepolis, Angkor Wat, Borobudur, Newgrange), 62 in preparation |
 | **The Museum** (beta) | A walkable 3D building with one room per chapter, and a planetarium | **84** rooms in 10 wings |
 | **Methodology / About** | The sourcing standard and what the "pending review" tag means | — |
@@ -150,7 +150,7 @@ on feature branches and reaches `main` by fast-forward once approved.
 | `verify.yml` | chapter text or game data changes | every fact a game shows must appear in its source chapter (`tools/verify-*.js`) |
 | `game-runtime.yml` | every push and pull request | lints the game code and plays the fighter to a knockout in a headless browser |
 | `link-check.yml` | Mondays, or by hand | checks every external link (`tools/check-links.js`); fails only on dead links |
-| `lighthouse.yml` | pull requests that change the site | mobile Lighthouse on the home page, an era, three chapters, the museum and the twelve games, base vs. pull request; fails if a page's score drops more than 5 points |
+| `lighthouse.yml` | pull requests that change the site | mobile Lighthouse on the home page, an era, three chapters, the museum, the Pantheon and the eleven games, base vs. pull request; fails if a page's score drops more than 5 points |
 
 ## Reports
 

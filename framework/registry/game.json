@@ -1,6 +1,6 @@
 {
  "type": "game",
- "count": 12,
+ "count": 11,
  "entities": [
   {
    "id": "game:antithesis",
@@ -69,16 +69,6 @@
    "href": "symbols.html#play=ouroboros",
    "links": [
     "chapter:ch37"
-   ],
-   "from": "docs/pilgrimage/sites/arcade/site.js"
-  },
-  {
-   "id": "game:pinball",
-   "type": "game",
-   "label": "The Firmament",
-   "href": "symbols.html#play=pinball",
-   "links": [
-    "chapter:ch46"
    ],
    "from": "docs/pilgrimage/sites/arcade/site.js"
   },

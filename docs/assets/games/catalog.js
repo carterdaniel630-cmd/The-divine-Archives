@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — the games catalog (one list of the twelve games)
+   THE DIVINE ARCHIVES — the games catalog (one list of the eleven games)
 
    This is the archive's CONTENT for the games layer: which games exist, what
    they are called, and which chapters they belong to. The shared shell
@@ -51,9 +51,6 @@ window.ARCHIVE_GAMES = [
   { id: "labyrinth", title: "The Labyrinth",
     subtitle: "Thread the maze of the dead — gather the offerings, outrun the shades.",
     chapter: "ch47", hiddenIn: "ch29", eggs: [] },
-  { id: "pinball", title: "The Firmament",
-    subtitle: "Launch the soul-spark through the ordered heavens; ring the celestial bumpers.",
-    chapter: "ch46", hiddenIn: "ch46", eggs: [] },
   { id: "dominion", title: "Dominion of the Ancients",
     subtitle: "A three-way war for the ancient world — outlast two empires, uncover their gods.",
     chapter: "ch03", hiddenIn: "ch13", eggs: [] },

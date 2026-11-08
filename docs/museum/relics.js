@@ -6,7 +6,11 @@
    what is carved, painted or written on it, how it is broken or worn. These
    are renditions, NOT replicas: none is modelled from measurements or scans,
    details are simplified, and any writing on them is illustrative marks in
-   the manner of the script, never the actual text. Objects that the Vault
+   the manner of the script, never the actual text. One exception, on
+   Carter's ruling of 2026-11-07 (a relic's inscription must read as the real
+   stone reads): the Pilate Stone (V44) carries the letters the stone itself
+   shows, as the published diplomatic text prints them (CIIP II 1277), with
+   nothing restored. Objects that the Vault
    shows without images get no model (V68; V76), and objects whose existence
    is itself in question (the Ark, the Golden Plates) follow the descriptions
    in the texts, and say so.
@@ -468,8 +472,24 @@ CAT.v23 = (E) => {                                          // the Tel Dan Stele
   return Object.assign({ root }, flipper(root));
 };
 CAT.v44 = (E) => {                                          // the Pilate Stone: a limestone block, four lines, its left side chipped away
+  // The letters are the ones the stone shows, after the diplomatic text of CIIP II 1277 (nothing restored):
+  //   [---]S TIBERIEVM / [----]NTIVS PILATVS / [-----]ECTVS IVDA[--]E / [-----]E[-------]
+  // Each line loses its start to the broken left side; line 3 has a two-letter gap before its last E; of line 4
+  // only one letter survives, a vertical stroke under an apex, read as E. Every line runs left to right.
   const w = 0.82, h = 0.65, pts = outline(w, h, { jag: 0.02, jagL: 0.08, n: 10 }); pts.forEach((p) => { if (p[0] < -0.2) p[0] += (R() * 0.08); });
-  const g = slab({ pts, d: 0.2, stone: "limestone", env: E.env, relief: 5, paint: (c, hg, W, H) => { for (let i = 0; i < 4; i++) write(c, hg, [W * (0.28 + i * 0.03), H * (0.2 + i * 0.16), W * 0.9, H * (0.3 + i * 0.16)], "latin", { size: 26, lh: 30, ink: "rgba(60,50,40,.7)", space: 0.2 }); } });
+  const g = slab({ pts, d: 0.2, stone: "limestone", env: E.env, relief: 5, paint: (c, hg, W, H) => {
+    const px = Math.round(H * 0.092), right = W * 0.9, font = `600 ${px}px "Times New Roman", Times, "Liberation Serif", "DejaVu Serif", serif`;
+    const cut = (x, y, str) => { [[c, "rgba(60,50,40,.7)"], [hg, "#3a3a3a"]].forEach(([q, ink]) => { if (!q) return; q.save(); q.font = font; q.textAlign = "left"; q.textBaseline = "alphabetic"; q.fillStyle = ink; q.fillText(str, x, y); q.restore(); }); };
+    const wid = (str) => { c.save(); c.font = font; const m = c.measureText(str).width; c.restore(); return m; };
+    const base = [H * 0.3, H * 0.47, H * 0.64, H * 0.81];
+    cut(right - wid("S TIBERIEVM"), base[0], "S TIBERIEVM");
+    cut(right - wid("NTIVS PILATVS"), base[1], "NTIVS PILATVS");
+    const gap = wid("EA"), tail = wid("E");                  // line 3: IVDA, two letters lost, then the last E
+    cut(right - tail, base[2], "E"); cut(right - tail - gap - wid("ECTVS IVDA"), base[2], "ECTVS IVDA");
+    c.fillStyle = "rgba(150,138,118,.35)"; c.beginPath(); c.ellipse(right - tail - gap / 2, base[2] - px * 0.35, gap * 0.55, px * 0.6, 0, 0, TAU); c.fill();   // the worn patch where the two letters were
+    const x4 = right - wid("ECTVS IVDA") * 0.62, sw = Math.max(2, px * 0.12);   // line 4: the one surviving stroke, with its apex
+    [[c, "rgba(60,50,40,.55)"], [hg, "#4a4a4a"]].forEach(([q, ink]) => { if (!q) return; q.fillStyle = ink; q.fillRect(x4, base[3] - px * 0.72, sw, px * 0.72); q.beginPath(); q.moveTo(x4 - px * 0.05, base[3] - px * 0.8); q.lineTo(x4 + px * 0.28, base[3] - px * 1.02); q.lineTo(x4 + px * 0.3, base[3] - px * 0.94); q.lineTo(x4, base[3] - px * 0.76); q.closePath(); q.fill(); });
+  } });
   return Object.assign({ root: g }, flipper(g));
 };
 CAT.v47 = (E) => {                                          // the Kensington Runestone: a greywacke slab with runes on its face and one edge

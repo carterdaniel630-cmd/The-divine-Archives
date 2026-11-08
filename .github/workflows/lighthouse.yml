@@ -2,7 +2,7 @@ name: Lighthouse (mobile performance)
 
 # On every pull request that changes the site, runs Lighthouse (mobile, performance only)
 # on the pages in tools/perf-pages.json: the home page, an era page, three chapters, the
-# museum and the twelve games. It serves the base branch and the pull request side by side
+# museum, the Pantheon and the eleven games. It serves the base branch and the pull request side by side
 # on the same runner, alternates runs between them (3 per page, median kept) so both see the
 # same machine, and compares each page's mobile performance score.
 # The comparison table is in the run summary and in the `lighthouse` artifact.

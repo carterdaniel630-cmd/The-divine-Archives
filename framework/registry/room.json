@@ -779,8 +779,7 @@
    "links": [
     "chapter:ch46",
     "figure:adam",
-    "figure:eve",
-    "game:pinball"
+    "figure:eve"
    ],
    "from": "docs/museum/manifest.json"
   },

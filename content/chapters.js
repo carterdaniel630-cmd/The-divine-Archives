@@ -3100,7 +3100,7 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The <strong>historical core</strong>: a prophet named <strong>Muhammad</strong> preached uncompromising monotheism in early-seventh-century Mecca and Medina, led a community, and by his death (632) had united much of Arabia; the <strong>Hijra</strong> of 622; the explosive <strong>conquests</strong> and the <strong>caliphate</strong>. The <strong>early codification of the Qur'an</strong> (traditionally under Uthman, c. 650), substantially supported by very early manuscripts (Birmingham, Sana'a). The core structures — <strong>tawhid</strong>, the <strong>Five Pillars</strong>, the <strong>six articles</strong>, the development of <strong>hadith</strong>, <strong>tafsir</strong>, <strong>Sharia</strong>, and the schools of law; the <strong>kalam</strong> debates (Mu'tazila, the mihna, al-Ash'ari); and the <strong>Sunni–Shia</strong> split sealed at <strong>Karbala</strong> (680) and its branching (Twelver, Isma'ili, Zaydi). The first civil war also produced a <strong>third party</strong> beside Sunni and Shia, the <strong>Kharijites</strong> (defeated at <strong>Nahrawan</strong>, 658), whose one surviving moderate branch, the <strong>Ibadis</strong>, remains the established tradition of <strong>Oman</strong>; and the roles of <strong>Khadija</strong> as the first believer, <strong>Aisha</strong> as a leading transmitter of hadith and a commander at the <strong>Battle of the Camel</strong> (656), and <strong>Fatima</strong> as the mother of the Shia Imams' line are consistently attested, though, like the rest of the early record, through later sources.</p>
       </div>
       <div class="ev unsupported">
@@ -3108,7 +3108,7 @@ window.CHAPTERS = {
         <p>The <strong>theological claims</strong> — that the Qur'an is the literal, uncreated speech of God, that Gabriel revealed it, that Muhammad was God's prophet — are matters of <strong>faith</strong>, recorded here as the tradition's belief. The <strong>detailed traditional biography</strong> (<em>sira</em>) and much <strong>hadith</strong> as straightforward eyewitness fact are read critically. The <strong>crescent-and-star</strong> as an ancient symbol of Islam (a late, Ottoman-era adoption).</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Aspects of the <strong>earliest history</strong> of the community and the precise <strong>process</strong> by which the Qur'an reached its canonical form; the <strong>historical reliability</strong> of specific <em>sira</em> episodes and hadith; and the original meaning of the Qur'an's <strong>disconnected letters</strong> (<em>muqatta'at</em>), unknown to scholarship and much of the tradition alike.</p>
       </div>
     </div>
@@ -3261,7 +3261,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence, dating, and content of the major patristic writings; the fact and decisions of the four great councils (325, 381, 431, 451); the reality of the persecutions and of Constantine's turn; the gradual, traceable formation of the canon, with Athanasius's list of 367 as the first surviving complete one; the historical schism of the Oriental Orthodox and Church of the East after Chalcedon. These rest on abundant contemporary documents.</p>
       </div>
       <div class="ev unsupported">
@@ -3392,7 +3392,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The practice of <strong>blót</strong> (animal sacrifice and cult feasting); the reality of rich <strong>ship and chamber burials</strong> provisioned for the dead, dendro-dated to the ninth century (Oseberg 834, Gokstad c. 890); the worship of <strong>Thor, Odin, and Freyr</strong>, attested by place-names, amulets, and ninth-century skaldic verse; the <strong>runic scripts</strong> and their genuine use in some magical and invocatory inscriptions; the wide use of <strong>Mjölnir amulets</strong>, rising in the conversion era; and the <strong>legal conversion of Iceland around 1000</strong>, recorded in the sagas.</p>
       </div>
       <div class="ev unsupported">
@@ -3400,7 +3400,7 @@ window.CHAPTERS = {
         <p>That the tidy, fully systematized mythology of Snorri's <em>Edda</em> — the exact roster of Nine Worlds, the precise genealogy of the gods — was believed in that ordered form by ordinary pagans; it is in large part a <strong>thirteenth-century Christian scholar's reconstruction</strong>. That modern <strong>rune divination</strong> by drawing lettered tiles was an ancient Viking practice; it is a modern revival. That Adam of Bremen's <strong>Uppsala temple</strong>, with its nine-yearly mass human sacrifice, occurred as he describes; his account is late, second-hand, and shaped by anti-pagan polemic, and archaeology has not confirmed its specifics.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How much of <em>Völuspá</em>'s cyclical, renewing <strong>Ragnarök</strong> is pagan and how much is Christian influence. Whether the Oseberg staff and pouch truly mark a <strong>völva</strong>, or are being read through later expectation. The real extent and frequency of <strong>human sacrifice</strong>. The precise meaning of symbols like the <strong>valknut</strong>, whose modern name outruns the ancient evidence. In a religion recovered mostly from its converters' pens and its own mute objects, the gap between what the Norse did and what they meant by it will never fully close.</p>
       </div>
     </div>
@@ -3515,7 +3515,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence of a vast tantric scriptural corpus in both Hinduism and Buddhism from roughly the fifth century on; the historical reality of <strong>Abhinavagupta</strong> (c. 950–1020) and the <strong>Tantrāloka</strong>; the <strong>Kāpālika/Kaula</strong> ascetic traditions and their transgressive reputation; the <strong>yoginī temples</strong> and their distinctive open plan (Khajuraho c. 885); the rise of <strong>Vajrayāna</strong> and its transmission to <strong>Tibet</strong> across these centuries; and the core ritual technology of <strong>mantra, yantra, mandala, initiation, and the subtle-body model</strong>.</p>
       </div>
       <div class="ev unsupported">
@@ -3523,7 +3523,7 @@ window.CHAPTERS = {
         <p>That the <strong>chakras and nāḍīs</strong> are anatomical structures — they are a contemplative model of inner experience, not physiology. That the popular <strong>seven-chakra color system</strong> is the unaltered medieval teaching — it is largely a modern synthesis. That <strong>"Tantra" means sacred sex</strong> — a modern Western distortion of a mostly ritual and meditative tradition.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise <strong>dating and authorship</strong> of most tantric texts, given their esoteric, oral, and deliberately obscure transmission. <strong>How literally</strong> particular lineages performed the pañcamakāra, especially the fifth M — the sources genuinely differ and the secrecy is real. The exact <strong>relationship</strong> between Khajuraho's erotic sculpture and tantric ritual. And the always-difficult question, in a tradition built on secrecy and twilight language, of how much of the inner practice was ever written down at all.</p>
       </div>
     </div>
@@ -3620,7 +3620,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence and dating of the <strong>Kojiki (712)</strong> and <strong>Nihon Shoki (720)</strong> and their role as imperial-legitimation texts; the antiquity and continuity of <strong>kami-worship</strong> and <strong>shrine ritual</strong>; the reality of <strong>shinbutsu-shūgō</strong> and the <strong>honji suijaku</strong> theology as the dominant religious form of the era; the shrines themselves — <strong>Ise</strong> and its twenty-year renewal, <strong>Izumo</strong> — and the tradition of the <strong>three regalia</strong>; the centrality of <strong>purity/pollution</strong> and purification ritual.</p>
       </div>
       <div class="ev unsupported">
@@ -3628,7 +3628,7 @@ window.CHAPTERS = {
         <p>The <strong>divine descent of the imperial line</strong> from Amaterasu — a claim of faith, not a historical finding. The idea of a <strong>pure, original Shinto</strong> cleanly separable from Buddhism in the medieval period — the evidence points the other way. The projection of modern <strong>State Shinto</strong> (1868–1945) back onto ancient kami-worship — a modern nationalist construction, not the early religion. The <strong>existence and authenticity of the three regalia</strong> as physical objects — they are never shown and cannot be verified; only the tradition can be attested.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How much of the <strong>Kojiki mythology</strong> is genuinely old oral tradition and how much is eighth-century political shaping. Whether <strong>"Shinto" was a distinct religion</strong> before modern times at all — the Kuroda thesis is influential but debated. The real independent power and religion of <strong>Izumo</strong> before the imperial myth absorbed it. The precise dating of many shrine origins and practices, in a tradition that wrote little down and renews rather than preserves its oldest material forms.</p>
       </div>
     </div>
@@ -3738,7 +3738,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The medieval flowering of Kabbalah in Provence and Spain (12th–13th c.); the existence and approximate dating of the <strong>Sefer Yetzirah</strong> (c. 2nd–6th c.), <strong>Bahir</strong> (c. 1180), and <strong>Zohar</strong> (c. 1280–1330); the historical figures (Isaac the Blind, Nachmanides, Abulafia, Moses de León, <strong>Isaac Luria</strong>, <strong>Sabbatai Zevi</strong>, the <strong>Baal Shem Tov</strong>); the sefirot system, the Tree of Life, PaRDeS, and the letter-techniques as documented practices; the Lurianic system (tzimtzum, shevirat ha-kelim, tikkun); the messianic movement of 1665–66 and Sabbatai Zevi's conversion; and the foundational scholarship of <strong>Gershom Scholem</strong>.</p>
       </div>
       <div class="ev unsupported">
@@ -3746,7 +3746,7 @@ window.CHAPTERS = {
         <p>The traditional attributions — the <strong>Zohar</strong> to the second-century Shimon bar Yochai, the <strong>Bahir</strong> to Nehunya ben ha-Kanah, the <strong>Sefer Yetzirah</strong> to Abraham or Akiva — are pious pseudepigraphy; the texts are of their (medieval, or for Yetzirah late-antique) age. And <strong>gematria does not decode verifiable hidden messages or predict events</strong>; it is a devotional and interpretive art, not a cryptographic key.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise authorship of the <strong>Zohar</strong> (Moses de León alone, or a circle over sixty years) and the <strong>Bahir</strong>; how much genuinely older esoteric material underlies the medieval books; and the exact channels by which Merkavah mysticism, Neoplatonism, and other currents fed the emergence of the sefirot. In a tradition built on secrecy and pseudonymity, some of its own origins are, fittingly, hidden.</p>
       </div>
     </div>
@@ -3843,7 +3843,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The rise of Sufism from early Islamic asceticism; the historical figures (Hasan al-Basri, Rabia, Bistami, Junayd, <strong>al-Hallaj</strong> and his execution in 922, al-Ghazali, Ibn Arabi, Rumi, Amir Khusrow) and the dates and content of their major works; the formation of the <strong>tariqa</strong> orders (Qadiriyya, Chishtiyya, Mevlevi, Naqshbandiyya, and the rest); the core practices of <strong>dhikr</strong>, <strong>sama</strong>, the nafs-psychology, and the master–disciple path; and Sufism's documented role in the spread of Islam and in anticolonial resistance.</p>
       </div>
       <div class="ev unsupported">
@@ -3951,7 +3951,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The scholastic movement, its method, and its institutions (the universities of Paris, Oxford, Bologna); the recovery of Aristotle through the Toledo translations and the Muslim commentators (<strong>al-Farabi</strong>, <strong>Avicenna</strong>, <strong>Averroes</strong>, and the Ghazali–Averroes "Incoherence" debate); the historical figures and texts — <strong>Anselm</strong>, <strong>Abelard</strong>'s <em>Sic et Non</em>, <strong>Lombard</strong>'s <em>Sentences</em>, <strong>Aquinas</strong>'s <em>Summa</em>, <strong>Bonaventure</strong>, <strong>Siger of Brabant</strong>, <strong>Scotus</strong>, <strong>Ockham</strong>, <strong>Llull</strong>, and <strong>Maimonides</strong>'s <em>Guide</em>; and the <strong>Condemnations of 1277</strong>. These rest on an enormous surviving literature.</p>
       </div>
       <div class="ev unsupported">
@@ -4042,7 +4042,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Maya cities and their monuments; the <strong>writing system</strong> and its twentieth-century decipherment as historical record; the four surviving <strong>codices</strong> (the Dresden's Venus and eclipse tables); the calendars (tzolkʼin, haabʼ, Calendar Round, Long Count); the <strong>Popol Vuh</strong> (via its 1554–58 transcription, corroborated by Classic-period vase paintings); royal <strong>bloodletting</strong> and the Vision Serpent (Yaxchilán); and the <strong>reality of human sacrifice</strong> (the Sacred Cenote at Chichén Itzá).</p>
       </div>
       <div class="ev unsupported">
@@ -4050,7 +4050,7 @@ window.CHAPTERS = {
         <p>The "<strong>Maya 2012 apocalypse</strong>," a modern Western fabrication with no basis in any Maya source. And the cartoon of the Maya as nothing but bloodthirsty savages — a distortion that served the conquest; sacrifice was real but embedded in a coherent religion of cosmic reciprocity.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Much Maya myth is still reconstructed from <strong>partial decipherment</strong> and iconography; the fullest text (the Popol Vuh) survives only through hostile, post-conquest transcription; and the <strong>Classic collapse</strong> — why the great southern cities were abandoned around 900 CE (drought, warfare, overpopulation, or all three) — remains one of archaeology's genuine open questions.</p>
       </div>
     </div>
@@ -4141,7 +4141,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Bhakti movement and its spread from the Tamil south across India; the poetic corpora of the <strong>Alvars</strong> and <strong>Nayanars</strong>; the philosophers <strong>Ramanuja</strong>, <strong>Madhva</strong>, and <strong>Vallabha</strong>; the saints <strong>Basava</strong>, <strong>Jnaneshwar</strong>, <strong>Namdev</strong>, <strong>Tukaram</strong>, <strong>Kabir</strong>, <strong>Ravidas</strong>, <strong>Surdas</strong>, <strong>Tulsidas</strong> (the <em>Ramcharitmanas</em>, 1574), <strong>Mirabai</strong>, and <strong>Chaitanya</strong> (1486–1534, and the founding of Gaudiya Vaishnavism) and their surviving verse; the plain <strong>anti-caste, anti-clerical, vernacular</strong> message of the poetry; and Bhakti's immense role in shaping the modern Indian languages.</p>
       </div>
       <div class="ev unsupported">
@@ -4149,7 +4149,7 @@ window.CHAPTERS = {
         <p>The <strong>biographies</strong> of most Bhakti saints are woven through with <strong>miracle and legend</strong> — Kabir's body of flowers, Mira's nectar — devotional hagiography, not documented history. Firm <strong>dates</strong> for many are uncertain, and the corpora attributed to them are layered, orally transmitted, and partly the work of later hands.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How far the movement's radical <strong>anti-caste</strong> message actually reformed society, as against being spiritually revolutionary while socially absorbed — scholars genuinely disagree. The authorship and dating of many individual poems. And the question the flowers under the shroud pose directly: whether <strong>Kabir</strong> is best understood as a Hindu, a Muslim, or, as he himself insisted, as belonging to no such box at all.</p>
       </div>
     </div>
@@ -4257,7 +4257,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>Luther's Ninety-Five Theses and the indulgence controversy of 1517; the Diet of Worms (1521) and the Wartburg translation; the Marburg split over the Eucharist (1529); the Peasants' War (1525); the doctrines and texts of Luther, Zwingli, and Calvin (and the Servetus execution, 1553); the English Reformation from the Act of Supremacy (1534) to the Elizabethan Settlement (1559) and the King James Bible (1611); the Radical Reformation; the Council of Trent and the Counter-Reformation; and the wars of religion through the Peace of Westphalia (1648). The documentary record is overwhelming.</p>
       </div>
       <div class="ev unsupported">
@@ -4353,7 +4353,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The witch trials themselves — their chronology (c. 1450–1750), their concentration in the Holy Roman Empire, and a death toll now soberly estimated at <strong>40,000–60,000</strong>; the papal bull of 1484 and the <em>Malleus Maleficarum</em> (1486); the great German hunts (Trier, Würzburg, Bamberg) and the Junius letter; North Berwick and James VI; Salem (1692); the role of <strong>torture</strong> and inquisitorial procedure; the predominance of women; the skeptical restraint of the Spanish Inquisition (Salazar); and the reality of village <strong>cunning-folk</strong> (and the benandanti).</p>
       </div>
       <div class="ev unsupported">
@@ -4361,7 +4361,7 @@ window.CHAPTERS = {
         <p>That the accused were actually members of a <strong>satanic witch-cult</strong> — Margaret Murray's "witch-cult" thesis is thoroughly discredited. That the <strong>confessions</strong>, extracted under torture, describe real events. And that <strong>maleficium</strong> — harmful magic — actually worked. The crime, as charged, was imaginary; the persecution was not.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise <strong>death tolls</strong>, estimates from incomplete records (the "<strong>nine million</strong>" figure sometimes claimed is pure myth). The relative weight of the many <strong>causes</strong> (misogyny, torture-law, the Little Ice Age, confessional conflict). And, in any given trial, how much a real tradition of folk healing or magic underlay the accusation before torture buried it under fantasy.</p>
       </div>
     </div>
@@ -4448,7 +4448,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The broad shared structures of sub-Saharan traditional religion (a high creator God, intermediary spirits, powerful ancestors, divination, and possession); the specific great systems (Yoruba orisha and Ifá, Akan and the Golden Stool, Fon vodun, Kongo cosmology and minkisi, Dogon, San trance-religion, Nuer Kwoth); the scale and route of the <strong>transatlantic slave trade</strong> (~12.5 million people); and the historical formation of the <strong>Afro-Atlantic religions</strong> through syncretism.</p>
       </div>
       <div class="ev unsupported">
@@ -4456,7 +4456,7 @@ window.CHAPTERS = {
         <p>The old labels "<strong>fetishism</strong>," "<strong>animism</strong>," and "<strong>ancestor worship</strong>" as verdicts of contempt; the picture of a single, static "African religion"; and, specifically, the claim that the <strong>Dogon</strong> held impossible ancient astronomical knowledge of Sirius B — a modern legend that van Beek's fieldwork undercut and that likely originated in Griaule's own leading questions.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Because these traditions were <strong>oral</strong> and are known largely through outside and often hostile observers, the pre-colonial detail of many is genuinely uncertain; reconstructing what was believed before the missionaries and anthropologists arrived — and how far the act of recording it reshaped it (the Griaule problem) — is a standing difficulty. The exact African origins of particular diaspora practices remain actively debated.</p>
       </div>
     </div>
@@ -4543,7 +4543,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historical Gurus and their dates, from Nanak (1469–1539) to Gobind Singh (d. 1708); the founding of Kartarpur, Amritsar, and the langar; the compilation of the <strong>Guru Granth Sahib</strong> (1604) and its inclusion of non-Sikh saints; the <strong>martyrdoms</strong> of Arjan (1606) and Tegh Bahadur (1675); the founding of the <strong>Khalsa</strong> (1699); and the later history — Ranjit Singh's empire (1799–1839), the Singh Sabha, and the events of 1947 and 1984. These rest on solid historical record.</p>
       </div>
       <div class="ev unsupported">
@@ -4643,7 +4643,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historical origins, founders, dates, texts, and growth of the major NRMs are richly documented — often better than any ancient faith's, because they unfold in the age of the newspaper, the census, and the court record: the Latter-day Saints, the Adventists and Jehovah's Witnesses out of the Millerite Great Disappointment of 1844, Christian Science, the Bahá'í, the Nation of Islam, the Unification Church, ISKCON, and Scientology. The catastrophes are documented beyond dispute: Jonestown (1978), Waco (1993), the Aum sarin attack (1995), Heaven's Gate (1997).</p>
       </div>
       <div class="ev unsupported">
@@ -4749,7 +4749,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The history of Spiritualism — its precursors in Swedenborg, Mesmer, and Andrew Jackson Davis; its birth with the Fox sisters in 1848; its explosive spread, its practices, its churches (the NSAC of 1893, the SNU, Lily Dale); its enormous social role in a grieving age; the prominence of women; the famous believers (Crookes, Lodge, Doyle); and the extensive, documented record of <strong>fraud</strong>, including Margery, Mumler's 1869 trial, and Margaret Fox's own confession.</p>
       </div>
       <div class="ev unsupported">
@@ -4849,7 +4849,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The history is richly documented: Blavatsky, Olcott, and the Theosophical Society (1875); the texts (<em>Isis Unveiled</em> 1877, <em>The Secret Doctrine</em> 1888); Olcott's real role in the Sri Lankan Buddhist revival; Besant, Leadbeater, and the rise and 1929 dissolution of the Krishnamurti "World Teacher" project; Steiner and Anthroposophy (1912); the Golden Dawn (1888) and its members; Crowley, <em>The Book of the Law</em> (1904), and Thelema — and the vast, traceable influence of all this on modern religion, art, and the New Age.</p>
       </div>
       <div class="ev unsupported">
@@ -4935,7 +4935,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>Wicca as a documented <strong>twentieth-century</strong> religion — Gerald Gardner, the 1949–59 books, Doreen Valiente's authorship of much of the liturgy, the beliefs and rituals, the Gardnerian and Alexandrian lineages, and the rapid global growth; and the broader modern Pagan revival (Dianic and feminist witchcraft, Starhawk's Reclaiming, Druidry, Heathenry/Ásatrú, reconstructionism), its expanding presence, and its legal recognition (the 2007 VA pentacle).</p>
       </div>
       <div class="ev unsupported">
@@ -5035,7 +5035,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The real modern movements — the <strong>Church of Satan</strong> (1966) and its atheistic philosophy, the <em>Satanic Bible</em> and Nine Satanic Statements; <strong>The Satanic Temple</strong> (2013) with its non-theistic activism, Seven Tenets, and 2019 IRS recognition; and the theistic <strong>Temple of Set</strong> (1975) — their founders, texts, tenets, and legal standing; and the <strong>Satanic Panic</strong> as a documented episode of moral panic and false accusation (Lanning, 1992). The <strong>Romantic-literary</strong> ancestry (Milton, Blake, Shelley, Carducci, Huysmans) is likewise well attested.</p>
       </div>
       <div class="ev unsupported">
@@ -5123,7 +5123,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The living Afro-Atlantic religions — Vodou, Santería, Candomblé, Umbanda, Palo, Louisiana Voodoo — their African origins, their syncretic formation under slavery, their spirits, initiations, and possession-centered practice; <strong>Vodou's</strong> documented role at <strong>Bois Caïman</strong> and in the <strong>Haitian Revolution</strong>; the <em>Hialeah</em> Supreme Court case (1993); and the twentieth-century history of <strong>Rastafari</strong> from Garvey and Haile Selassie's 1930 coronation through the 1966 Jamaica visit and reggae.</p>
       </div>
       <div class="ev unsupported">
@@ -5131,7 +5131,7 @@ window.CHAPTERS = {
         <p>The Hollywood "<strong>voodoo</strong>" of pin-stuck dolls, zombies-as-monsters, curses, and evil is not these religions but a <strong>racist distortion</strong> built to demonize Black faith. The "<strong>voodoo doll</strong>" is the European poppet misattributed to Vodou; the monster-zombie is not the Haitian belief (and Davis's tetrodotoxin theory of real zombification is contested and unconfirmed). In reality these are traditions of <strong>healing, community, ancestor-honor, and moral order</strong> — naming the distortion false is a matter of evidence, not only respect.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The exact <strong>demographics</strong> of traditions long practiced in secret are uncertain; the precise <strong>African-versus-Creole</strong> origins of particular spirits and rites (the Petwo lwa, Umbanda) are still being worked out by scholars; the historicity of the details of <strong>Bois Caïman</strong> is debated; and the internal <strong>diversity</strong> of each religion resists any single description. What is not open is their reality, their depth, or their dignity.</p>
       </div>
     </div>
@@ -5218,15 +5218,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The artifacts themselves — the dated <strong>cave art</strong> of Europe (Chauvet, Lascaux, Altamira) and of <strong>Sulawesi</strong> (figurative and narrative art by ~45,000+ years); the <strong>Venus figurines</strong> and the <strong>Lion Man</strong>; the world's oldest <strong>flutes</strong> (Hohle Fels); the deliberate <strong>burials</strong> with grave-goods (Qafzeh/Skhul ~100,000 years; Sungir); and the very ancient use of <strong>red ochre</strong> and abstract engraving (Blombos, ~73,000 years). That Paleolithic humans made symbolic, imaginative art is not in doubt.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That we <strong>know</strong> what any of it meant. The "<strong>Mother Goddess</strong>" of the Venus figurines, the specific <strong>shamanic/entoptic</strong> reading of the cave art (seriously contested by Bahn and Helvenston), Breuil's "hunting magic" — these are interpretations, some more plausible than others, none confirmed. Claims that assert the meaning of Paleolithic religion with confidence are claiming more than the evidence allows.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Almost everything about <strong>meaning</strong>: what the caves were for, what the figurines represented, what the dead were provisioned for. Whether the <strong>Neanderthals</strong> (or <em>Homo naledi</em>) had religion at all. And the deepest question — how far back the religious imagination reaches, and whether its first spark was 40,000 years ago, or 100,000, or older still.</p>
       </div>
     </div>
@@ -5303,15 +5303,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The sites and their dates — <strong>Göbekli Tepe</strong> (c. 9600 BCE) and the wider <strong>Taş Tepeler</strong> (Karahan Tepe) as monumental early-Neolithic ritual architecture; the Levantine <strong>plastered-skull cult</strong> (Jericho, 'Ain Ghazal); <strong>Çatalhöyük</strong> with its under-floor burials, bucrania, and figurines; and the great <strong>megaliths</strong> (Stonehenge, Newgrange, Carnac, Ġgantija, the Ness of Brodgar) with their genuine, measurable <strong>solstice alignments</strong>. The architecture is real, dated, and unambiguous.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The universal Neolithic "<strong>Mother Goddess</strong>" and peaceful matriarchy of Mellaart and Gimbutas — a contested hypothesis largely rejected by mainstream archaeology (Hodder, Meskell). Schmidt's "<strong>temple before the city</strong>" is an influential but actively debated interpretation (Banning). And the specific <strong>meanings</strong> of the pillars, figurines, skulls, and spirals are inferred, not known.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>What Göbekli Tepe was actually <strong>for</strong>, and who its carved beings were. What the figurines and the plastered skulls <strong>meant</strong> to those who made them. The beliefs behind the aligned monuments — we possess the architecture of Neolithic religion in abundance, but its <strong>theology</strong> is a silence we fill, honestly, with question marks. In prehistory more than anywhere, the archive can show what people <strong>did</strong>, and must confess how little it can prove of what they <strong>believed</strong>.</p>
       </div>
     </div>
@@ -5392,7 +5392,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The city of Tenochtitlan and the <strong>Templo Mayor</strong> (rediscovered 1978); the twin cult of Huitzilopochtli and Tlaloc; the Coyolxauhqui Stone and the <strong>Huei Tzompantli</strong> skull rack; the <strong>Fifth Sun</strong> cosmogony and the debt-of-blood theology; the pantheon; the calendars and the New Fire Ceremony; the <strong>reality of large-scale human sacrifice</strong>; and the poetry and philosophy preserved in Sahagún's <strong>Florentine Codex</strong> and the Nezahualcoyotl tradition.</p>
       </div>
       <div class="ev unsupported">
@@ -5400,7 +5400,7 @@ window.CHAPTERS = {
         <p>The <strong>inflated sacrifice numbers</strong> of the chroniclers (the 80,400 of 1487 is impossible and served the conquest); the flat caricature of a purely bloodthirsty people; and, very probably, the story that Moctezuma mistook <strong>Cortés for Quetzalcoatl</strong>, a largely post-conquest construction.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise <strong>scale</strong> of sacrifice (low thousands a year is the current estimate, but the record is partial); how far the "monotheism" of <strong>Ometeotl</strong> was a genuine Mexica theology versus a modern scholarly reconstruction (the León-Portilla debate); and how much of the whole picture is distorted by reaching us almost entirely through Spanish and mission-educated sources.</p>
       </div>
     </div>
@@ -5481,7 +5481,7 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The empire and its capital; the <strong>Coricancha</strong> and the <strong>ceque system</strong> of huacas; the cult of <strong>Inti</strong> and the divine <strong>Sapa Inca</strong>; the <strong>royal mummy (mallqui) / panaca</strong> ancestor cult (attested archaeologically and by the Spanish who destroyed the mummies); the <strong>capacocha</strong> child sacrifice (the frozen mummies of Llullaillaco and other peaks); the <strong>quipu</strong>; the <strong>Pachacamac</strong> oracle; and the post-conquest <strong>extirpation</strong> campaigns and the Taki Onqoy movement.</p>
       </div>
       <div class="ev unsupported">
@@ -5489,7 +5489,7 @@ window.CHAPTERS = {
         <p>Because the Inca left <strong>no writing</strong>, the narrative mythology and the tidy pantheon reach us only through post-conquest, often hostile or Christianizing <strong>Spanish sources</strong>; the elevation of <strong>Viracocha</strong> to a single supreme creator may be partly a missionary construction, and much "Inca theology" is a colonial ordering of a more local, various reality.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The <strong>quipu</strong> remains largely unread, so the Inca's own records are still mostly closed to us. The precise <strong>theology</strong> behind the practices is seen through the eyes of the conquerors. And the antiquity of some now-popular symbols (the <em>chakana</em> "Andean cross") is uncertain. We possess the Inca's stones, cords, and frozen dead in abundance; their inner voice we have barely begun to hear.</p>
       </div>
     </div>
@@ -5836,15 +5836,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The texts and their dates: <em>Inanna's Descent</em> and <em>The Descent of Ishtar</em> in cuneiform; the Egyptian Pyramid Texts, Coffin Texts, and Book of the Dead, with the Weighing of the Heart abundantly attested in tomb painting and papyrus; Homer's nekyia and Virgil's katabasis; the Orphic gold leaves as physical objects; the <em>Bardo Thödol</em>; the Chinese Diyu tradition; and the Norse and Japanese underworld myths as recorded in the Eddas and the <em>Kojiki</em>. That the descent-to-the-underworld is a genuine cross-cultural pattern, and that some traditions judge the dead while others do not, are well-documented findings.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That all these descent-myths share a single origin, or that the close Orpheus/Izanagi parallel proves contact rather than independent invention, is not established — such parallels are real but their cause is debated. And no claim here treats any afterlife map as a verified account of what happens after death; the chapter documents what traditions <em>held</em>, not what is <em>the case</em>.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The direction and degree of influence — above all, how much the judged afterlife of Judaism, Christianity, and Islam owes to Zoroastrian Persia — is genuinely contested and probably unrecoverable in full. And <em>why</em> the descent-and-return story is so universal (a reflection of sleep and waking, of the sun's nightly disappearance, of initiation ritual, or of something in the mind itself) remains an open question this archive does not pretend to close.</p>
       </div>
     </div>
@@ -5931,15 +5931,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>That powerful goddesses were widely worshipped, with attested names, temples, texts, and cults — Inanna/Ishtar, Isis, Cybele, Demeter, Asherah (including the "Yahweh and his Asherah" inscriptions), the Mahādevī of India, Guanyin, Amaterasu. That the divine feminine persisted into monotheism as Wisdom/Sophia and, above all, in Marian devotion. And that a large, self-aware modern Goddess movement and its thealogy exist as a 20th-century new religious phenomenon.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>A single, universal <strong>Great Goddess</strong> worshipped across prehistory; a peaceful Neolithic <strong>matriarchy</strong> ("matristic" Old Europe) — Gimbutas's central claims, largely rejected by mainstream archaeology on the grounds that the figurines are diverse, the matriarchy is unevidenced, and Neolithic Europe was not free of violence. That the many goddesses were "really" one is an interpretive move, not a finding. (Gimbutas's separate Kurgan hypothesis about Indo-European origins is a different matter and remains influential.)</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>What the prehistoric figurines <em>meant</em> to those who made them; how much of Marian devotion is genuine continuity with older goddess-worship versus independent Christian development; and whether the recurring "one goddess of many names" intuition reflects something real about the human religious mind or is a unifying idea repeatedly imposed on genuinely plural material. The archive documents the reverence and the debate, and resolves neither by fiat.</p>
       </div>
     </div>
@@ -6013,15 +6013,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>That sacred/sacral kingship is a genuine and widespread phenomenon, in its two great forms (the king as divine, and the king as Heaven's conditional appointee), is thoroughly documented: the Egyptian pharaonic theology; the Sapa Inca as son of Inti; the Japanese imperial descent-claim (renounced in 1946); the Roman apotheosis of emperors; the Chinese Mandate of Heaven; the Shilluk reth as embodiment of Nyikang; and, as hard textual evidence for a <em>dying-king</em>-type rite, the Mesopotamian <strong>substitute king</strong> ritual. Anointing, divine right, and the royal touch in Christendom are equally well attested.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Frazer's <em>grand unifying thesis</em> — that all religion began in a fertility cult centered on a periodically-killed sacred king, and that this single pattern underlies myth everywhere — is <strong>not</strong> accepted by modern scholarship; the "myth-and-ritual" school it launched is disputed, and Frazer's method of stringing far-flung customs into one universal scheme is regarded as overreaching. Specific dramatic claims (e.g., that every sacred king was regularly ritually killed) are not generally supported.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How literally, and how often, "dying king" rituals were actually carried out in particular societies (the Shilluk case remains debated); and how much the various sacred-kingship systems influenced one another versus arising independently. The phenomenon is real and documented case by case; Frazer's claim to have found the <em>single key</em> to it is the part that does not hold.</p>
       </div>
     </div>
@@ -6112,15 +6112,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The texts and their dates: the Zoroastrian eschatology of the Saoshyant and Frashokereti; the emergence of an apocalyptic worldview (resurrection, judgment, angels/demons, linear history) in Second Temple Judaism, documented in Daniel, Enoch, and the Dead Sea Scrolls (including the War Scroll); the Book of Revelation; the Qur'anic Day of Resurrection and the hadith traditions of the Mahdi, the returning Jesus, and the Dajjal; and the cyclical eschatologies of Norse, Hindu, Buddhist, and Aztec religion. The linear-vs-cyclical contrast, and the recurrence of millenarian movements, are well documented.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That Jewish (and hence Christian and Islamic) apocalyptic <em>derives</em> from Zoroastrianism is <strong>contested</strong>, not established: the parallels are real, but the direction and degree of influence, and the dating of key Zoroastrian texts, are debated, and some scholars locate the origins within the Israelite tradition itself. And nothing in this chapter treats any end-times prophecy as a prediction that will or did come true; the archive documents what traditions <em>expect</em>, never endorsing a forecast.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The historical origin of the apocalyptic worldview — how much Persian, how much inner-Jewish, how much broader Near Eastern — remains genuinely unresolved. So does the deeper question of <em>why</em> the human religious imagination so readily divides between the line and the wheel, the one final end and the eternal return. The archive lays the two visions side by side and does not pretend to adjudicate the future.</p>
       </div>
     </div>
@@ -6204,15 +6204,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>That sacrifice — the offering of animals, food, drink, and objects to the divine — was near-universal in ancient religion, with well-attested systems: the Israelite Temple cult, the Greek thysia/sphagia, the Vedic yajña, and many more. The Leviticus 16 scapegoat ritual and the Greek pharmakos are documented; the substitution of animal for human (the Aqedah, the Passover lamb) is a clear textual pattern. Aztec human sacrifice is beyond reasonable doubt, attested archaeologically (the excavated Templo Mayor tzompantli). The post-70-CE transformations of Judaism and the Christian reinterpretation of sacrifice are historically clear.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The universal-origin theories of <strong>Girard</strong> (the scapegoat mechanism as the root of all religion and culture) and <strong>Burkert</strong> (sacrifice from the hunt) are influential but <strong>contested</strong>, and their claims to universality are widely doubted. The <em>scale</em> of Aztec sacrifice was exaggerated in some colonial sources. And whether the Carthaginian <strong>tophet</strong> evidences systematic child sacrifice remains genuinely disputed among specialists.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p><em>Why</em> sacrifice is so universal — gift, communion, feeding the gods, discharge of communal violence, or some braid of all of these — is unresolved; the competing theories each capture part of a phenomenon that may have no single cause. The interpretation of ambiguous physical evidence (bog bodies, some infant burials) remains open. The archive documents the act, the texts, and the debate, and does not pretend to have found the one key to the knife.</p>
       </div>
     </div>
@@ -6299,15 +6299,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>That Jainism is an ancient, continuous Indian tradition of the śramaṇa movement, contemporary with early Buddhism; the historicity of Mahavira as a real 6th–5th century BCE teacher; the doctrines (no creator, jiva/ajiva, physical karma, the five vows, anekantavada); the Digambara/Svetambara split; the practices of ahimsa, samayika, and sallekhana; and the archaeological and artistic record (the Gommateshwara colossus of 981 CE, the Dilwara temples, Mauryan-era Jain presence). Its formative influence on Gandhi's ahimsa is well documented.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The traditional dates and full biographies of Mahavira and especially the earlier Tirthankaras are religious tradition, not established history — Parshvanatha (the 23rd) is <em>plausibly</em> historical, but the first twenty-two are legendary, set in vast mythical time-spans. The traditional claim that Chandragupta Maurya died by sallekhana is a later Jain tradition, not securely documented. The precise date of the sect split and of the loss (or not) of the original canon is debated.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The exact relationship and mutual influence between the earliest Jain and Buddhist communities; how much of the Agama canon preserves Mahavira's actual words after centuries of oral transmission; and the deep prehistory of the tradition before Parshvanatha. The archive reports the doctrines and practices as they are held and lived, and marks the legendary Tirthankara-lineage as sacred history rather than documented fact.</p>
       </div>
     </div>
@@ -6392,15 +6392,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historical transmission of Buddhism to Tibet from the 8th century under Trisong Detsen, the founding of Samye, and the great translation projects; the existence and doctrines of the four schools; the historicity of key figures (Tsongkhapa, Marpa, Milarepa, and the historical Padmasambhava behind the legend); the tantric methods of deity yoga, mandala, and mantra; the Bardo Thödol as a text; the tulku institution and the historical line of the Dalai and Panchen Lamas; and the practices of sky burial and the sand mandala. These are all well documented.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The miraculous hagiography of Padmasambhava (subduing demons, magical feats) is religious tradition, not history. The <em>terma</em> "treasure text" attributions — that specific scriptures were hidden by Padmasambhava and rediscovered centuries later — are matters of traditional faith; historians generally regard many terma as later compositions. And the specific identification of any tulku as the genuine rebirth of his predecessor is a religious claim, not an empirically verifiable one.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise pre-Buddhist content of <strong>Bön</strong> and how much of Tibetan Buddhism absorbed from it (the sources are late and contested); the historical kernel within the Padmasambhava traditions; and, as with all such practices, the archive documents what deity yoga and the bardo teachings are <em>held</em> to accomplish without adjudicating those inner claims. The politics of the current succession disputes are ongoing and unresolved.</p>
       </div>
     </div>
@@ -6473,15 +6473,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historical development of Chan/Zen in China from around the 6th–8th centuries and its spread to Korea, Vietnam, and Japan; the historicity of Huineng's era and of later masters such as Dōgen and Eisai; the practices of zazen, shikantaza, and the kōan and their classic collections; the Chinese Pure Land systematizers (Tanluan, Daochuo, Shandao); the historical figures Hōnen and Shinran and the founding of Jōdo-shū and Jōdo Shinshū; the doctrines of mappō, nembutsu, other-power, and akunin shōki; and the immense cultural and artistic legacy of both.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The traditional biography of <strong>Bodhidharma</strong> (the nine years' wall-gazing) and much of the early Chan <strong>lineage</strong> are semi-legendary — scholars recognize the patriarchal transmission genealogies as, in significant part, later retrospective constructions rather than documented succession. The awakening of the illiterate <strong>Huineng</strong> is sacred narrative. And the metaphysical claims — the reality of Amida's Pure Land, the "mind-to-mind" transmission of enlightenment — are objects of faith, not verifiable history.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How much of the earliest Chan history can be recovered behind the later legend; the precise dating and authorship of key texts (the Platform Sutra, the Pure Land sutras); and, as always, the inner efficacy of the practices, which the archive documents as they are taught and experienced without adjudicating them.</p>
       </div>
     </div>
@@ -6546,15 +6546,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historicity of Mani (c. 216–274 CE) and the founding of his church in Sasanian Mesopotamia; the radical two-principle dualism and the Light/Darkness cosmology; the two-tier structure of Elect and Hearers with its ascetic ethic; Mani's authorship of his own canon and the <em>Āržang</em> picture-book; the religion's vast spread from the Roman West to Tang China and the Uyghur adoption; Augustine's years as a Hearer and later opposition; and the eventual near-total suppression. The recovered texts (Turfan, the Coptic Kephalaia and Psalm-Book, the Cologne Mani-Codex) are real and studied.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Much of the <em>content</em> of Mani's own scriptures is lost and known only in fragments or through hostile summaries, so some reconstructions of Manichaean doctrine are necessarily provisional. And the popular claim of a direct genealogical descent from Manichaeism to the medieval Cathars and Bogomils is <strong>contested</strong>: most scholars now see a typological resemblance (independent re-invention of dualism) rather than an unbroken underground transmission.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise details of Manichaean cosmology and liturgy in their original form; how much of the tradition's self-presentation (Mani's revelations, the Twin) reflects his actual teaching versus later elaboration; and the exact channels and degree of its influence on later dualist heresies. The archive reports the religion's structure and history as documented, and its lost scriptures as the genuine gap they are.</p>
       </div>
     </div>
@@ -6618,15 +6618,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence, scriptures, and core practices of all three: Mandaeism as a continuous Gnostic tradition with John the Baptist as chief prophet, the Ginza Rabbā and masbuta baptism; Yazidism's monotheism, the seven Holy Beings and Tawûsî Melek, the organization under Sheikh Adī in the 12th century, and Lalish as its center; and the Druze as an 11th-century Ismaili offshoot venerating al-Ḥākim, with the Epistles of Wisdom, the ʿuqqāl/juhhāl division, taqammuṣ (reincarnation), and the closure to converts. The 2014 Yazidi genocide is a documented fact, recognized as genocide by the UN and others.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The "<strong>devil-worship</strong>" charge against the Yazidis is <strong>false</strong> — a hostile outside misreading of the Peacock Angel myth, and the archive states so plainly. Because the Druze and Yazidi inner teachings are deliberately secret and the Yazidi tradition is oral, many older outsider descriptions of their doctrines are unreliable, and some "authoritative" texts (e.g. certain purported Yazidi "black books") are of contested authenticity. The claim that al-Ḥākim did not die but entered occultation is a Druze article of faith, not a historical finding.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The exact age and origins of Mandaeism (clearly pre-Islamic, with roots plausibly in the first centuries CE, but its earliest history is debated); the precise pre-Islamic (Iranian, Zoroastrian, Mesopotamian) substrate beneath Yazidism; and the full content of the guarded Druze and Yazidi teachings, which by design remain incompletely known to outsiders. The archive reports what these communities are documented to believe and practice, respects the boundary of what they choose to keep secret, and refuses the ancient libels told about them.</p>
       </div>
     </div>
@@ -6700,15 +6700,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Hittite empire and its capital Hattusa; the recovery of the huge cuneiform archive and the decipherment of Hittite as the oldest attested Indo-European language; the "thousand gods" and their layered pantheon; the chief deities Tarhunna/Teshub and the Sun-goddess of Arinna/Hepat; the Kumarbi Cycle and the Telipinu vanishing-god myth as actual texts; the king's priestly role; the Yazılıkaya sanctuary; the Hittite–Egyptian treaty and the plague prayers of Mursili II. Hittite religion is, for a Bronze Age faith, unusually richly documented.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact) / contested</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The <em>direction and channel</em> of the influence from the Kumarbi Cycle to Hesiod is widely accepted in outline but debated in detail (how and through whom the transmission occurred). The formal parallel between Hittite treaties and the biblical covenant is real, but whether it reflects direct influence, a shared Near Eastern convention, or later independent development is debated. And the "Hittites" named in the Hebrew Bible are, in many passages, a Canaanite group whose relationship to the Anatolian empire is uncertain — the shared name should not be taken as simple identity.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The full pre-Hittite (Hattian) substrate of the religion; the precise mechanics of the myth's transmission to Greece; and the inner meaning of many rituals recorded only as instructions. The archive reports the abundant textual record and marks the cross-cultural influences as the real but debated connections they are.</p>
       </div>
     </div>
@@ -6778,15 +6778,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Ugaritic texts (discovered 1929) and the pantheon they reveal — El, Athirat/Asherah, Baal/Hadad, Anat, Yam, Mot — and the Baal Cycle as an actual poem; the deep continuity between Canaanite and early Israelite religion (a mainstream scholarly conclusion); the Phoenician city-gods (Melqart, Eshmun, Astarte) and the Carthaginian Baal Hammon and Tanit; the existence of the tophet precincts and their infant urns; and the Phoenician invention and spread of the consonantal alphabet as the ancestor of Western scripts. These are firmly established.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact) / contested</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Whether the Carthaginian <strong>tophet</strong> evidences systematic ritual <strong>child sacrifice</strong> or is a natural-death infant cemetery is <strong>genuinely unsettled</strong>, and the archive presents both cases. The lurid claims of Canaanite/Phoenician "<strong>sacred prostitution</strong>" derive largely from hostile Greek and biblical sources and are widely regarded by modern scholars as <strong>exaggerated or unfounded</strong>. And because the Phoenicians themselves left little continuous religious literature (their texts were largely on perishable papyrus), much of what is said about their beliefs depends on inscriptions, the earlier Ugaritic corpus, and often-hostile outside witnesses.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise theology behind the tophet and the true frequency of any sacrifice; the exact relationship between the Bronze Age Ugaritic religion and the later first-millennium Phoenician cults; and the degree to which biblical polemic distorts the Canaanite religion it describes. The archive leans on the recovered Canaanite voice of Ugarit precisely to hear the tradition apart from its enemies, while marking what remains contested.</p>
       </div>
     </div>
@@ -6856,15 +6856,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The late Christianization of the Slavs (Vladimir's conversion of Kievan Rus in 988) and of the Balts (Lithuania in 1387, the last in Europe); Vladimir's pantheon of 980 and the throwing-down of Perun; the destruction of the Arkona temple of Svetovid in 1168; the reality of the chief deities (Perun/Perkūnas, Veles/Velnias, Mokosh, Dievas, Saulė) attested in chronicles and folklore; the practices of sacred groves, oaks, and the eternal fire; the phenomenon of dvoeverie and the rich survival of the dainos; and the modern revivals (Rodnovery, Romuva, Dievturība).</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Much of the <em>systematic</em> Slavic and Baltic mythology found in popular sources is <strong>reconstruction</strong>, built from fragmentary, hostile, and late evidence and often inflated by Romantic-era and modern invention. Specific elaborate genealogies and myths should be treated with caution. The <strong>Book of Veles</strong> and similar "recovered scriptures" are <strong>modern forgeries</strong>. The exact form of the Perun–Veles myth is a scholarly reconstruction, not a preserved text.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The true shape of pre-Christian Slavic and Baltic theology behind the chronicles; how much of the folklore preserves genuine pagan belief versus later Christian-era development; and how much the modern revivals recover versus create. The archive reports what is documented (the gods' names, the conversions, the sacred oak and fire, the songs) and marks the large reconstructed portion honestly as such.</p>
       </div>
     </div>
@@ -6944,15 +6944,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historical development of Byzantine Christianity; the seven Ecumenical Councils and the doctrines they defined; the Iconoclastic Controversy (726–843) and its resolution at Nicaea II and in 843; the mutual excommunications of 1054 and the long East–West estrangement, hardened by the 1204 sack of Constantinople; the Hesychast controversy and Gregory Palamas's essence/energies distinction, confirmed by the councils of 1341–1351; the mission of Cyril and Methodius and the creation of the Slavonic/Cyrillic tradition; the fall of Constantinople (1453) and the rise of the autocephalous national churches; and the ancient Oriental Orthodox churches dating from the Chalcedonian split of 451. These are firmly documented history.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The famous story of <strong>Vladimir's envoys</strong> at Hagia Sophia ("heaven or earth") is a later, edifying <strong>legend</strong>, not a documented event. And the theological claims themselves — <em>theosis</em>, the reality of the <strong>uncreated Light</strong>, the efficacy of the icon and the Jesus Prayer — are matters of <strong>faith</strong>, reported here as Orthodox belief, not as verified fact.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise moment and character of the East–West schism is more a <em>process</em> than the single event of "1054" implies — the mutual excommunications of that year were narrow and personal, and the final, total break came only gradually, so historians debate exactly when the churches truly separated. The archive reports the well-attested history, marks the legend as legend, and presents the distinctive doctrines as the living faith they are.</p>
       </div>
     </div>
@@ -7034,7 +7034,7 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The extraordinary <strong>antiquity</strong> and continuity of Aboriginal presence and culture in Australia (more than 60,000 years, archaeologically established), making it among the oldest continuous living traditions on earth; the reality of the core concepts — the Dreaming/Tjukurpa, songlines, totemism, connection to Country, the Ancestral Beings including the Rainbow Serpent and the Wandjina; the ceremonial and oral transmission and the restricted grading of sacred knowledge; and the rock-art record as the oldest continuous painting tradition, including living repainting. The colonial catastrophe and the destruction of sites such as Juukan Gorge (2020) are documented fact.</p>
       </div>
       <div class="ev unsupported">
@@ -7120,7 +7120,7 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The mound-building cultures and their monuments — Adena, Hopewell, and the Mississippian Cahokia (c. 950–1350) with Monks Mound and Woodhenge; the Ancestral Puebloan great houses of Chaco Canyon and their astronomical alignments — all built by the ancestors of today's Native peoples. The core religious concepts (Wakan Tanka, Manitou, orenda; animism; the earth-diver and emergence creations; the trickster) and the great ceremonies (Sun Dance, sacred pipe, potlatch, kachina, Green Corn, vision quest) are well attested. The Ghost Dance and Wounded Knee (1890), the Longhouse religion (Handsome Lake, 1799), and the Native American Church (peyotism) are documented history.</p>
       </div>
       <div class="ev unsupported">
@@ -7194,15 +7194,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Austronesian settlement of the Pacific and the reality of sacred wayfinding navigation; the master-concepts of <strong>mana</strong> and <strong>tapu/taboo</strong>; the Polynesian pantheon (Tangaroa/Kanaloa, Tāne/Kāne, Tū/Kū, Rongo/Lono, Māui, Pele) and the Rangi-and-Papa creation; the marae/heiau cult (including human sacrifice in some societies); the Rapa Nui <strong>moai</strong> as ancestor images and the later <strong>birdman</strong> cult of Makemake; the Melanesian ancestor cults and secret societies; and the historical <strong>cargo cults</strong> (John Frum and many others). The Polynesian origin of the word "tattoo" (via Cook) is documented.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact) / contested</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The popular <strong>"ecocide/collapse"</strong> narrative of Rapa Nui — that the islanders thoughtlessly destroyed their environment and civilization — is now seriously <strong>disputed</strong> by recent archaeology and should not be told as settled fact. The term "<strong>cargo cult</strong>" is an outsider label, and the condescending caricature of the movements as mere confusion is <strong>rejected</strong> here in favor of their own internal logic. Much of what is recorded about pre-contact Oceanic religion comes through <strong>missionary and colonial</strong> sources and carries their distortions.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The precise pre-contact forms of many island religions (often reconstructed from post-contact records); the full history and meaning of the moai and the reasons for their toppling; and, as with the other living traditions, the archive reports the documented and public and leaves what is held privately to its custodians.</p>
       </div>
     </div>
@@ -7276,15 +7276,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The historical origins — Parham's Topeka teaching (1901), the Azusa Street Revival under Seymour (1906) and its interracial character and global missionary impact; the doctrine of Spirit baptism and the gifts; the three waves (classical Pentecostal denominations, the 1960s Charismatic movement including the Catholic Charismatic Renewal, and the neo-charismatic/independent churches); and, above all, the <strong>demographic facts</strong>: the explosive growth of Pentecostal-charismatic Christianity and the shift of the Christian majority to the Global South. These are thoroughly documented by historians and by religious demography.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The <strong>theological claims</strong> — that glossolalia is the evidence of Spirit baptism, that divine <strong>healings</strong> and miracles occur as claimed, that spiritual warfare engages real demonic powers — are matters of <strong>faith</strong>, reported here as Pentecostal belief, not verified fact. (Linguists who have studied glossolalia generally find it is not a natural human language, though it is a genuine and meaningful vocal-religious practice; the archive states this neutrally.) The <strong>prosperity gospel</strong> is a real teaching but a contested one, and its promises are not endorsed here.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The long-term trajectory of the southern shift and of Pentecostal growth; the degree to which local Pentecostalisms absorb and transform prior Indigenous spiritual worlds; and, as always with claims of direct divine experience, the inner reality of what believers testify — which the archive documents as testimony without adjudicating it.</p>
       </div>
     </div>
@@ -7357,15 +7357,15 @@ window.CHAPTERS = {
     <div class="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The history is thoroughly documented: the Báb and the Bábí movement and its bloody suppression (the Báb executed in 1850); Bahá'u'lláh's life, exiles, imprisonment at ʿAkká, and vast written corpus; the doctrines (the three onenesses, progressive revelation, the social teachings); the clergy-less administrative order and the Universal House of Justice (established 1963, seated in Haifa); the nine-sided Houses of Worship; and the systematic <strong>persecution of Bahá'ís in Iran</strong>, especially since 1979, which is well attested and internationally condemned. Caodaism (1926), the Ahmadiyya (1889), and Tenrikyo (1838) are likewise documented modern religions.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The <strong>theological claims</strong> — that the Báb and Bahá'u'lláh were Manifestations of God, that revelation is progressive and divinely orchestrated — are matters of <strong>faith</strong>, reported here as Bahá'í belief. <strong>Progressive revelation</strong> is a Bahá'í interpretive <em>framework</em>, not a neutral historical description: mainstream history does not treat Krishna, the Buddha, Jesus, and the rest as a single divine succession, and the archive presents the doctrine as the faith's own reading of religious history, not as established fact. Adherent numbers (commonly cited around five to eight million) are estimates and are debated.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The long-term trajectory of the Bahá'í Faith and the other new world faiths; the degree to which they will fulfill their universalizing ambitions or remain distinct traditions among the others; and, as with every faith in this archive, the inner truth of their revelations, which the archive documents as belief without adjudicating. Here, at the end of the Nine Ages, the book closes on a tradition that tries to hold all the others in a single embrace — and on the same honest distinction it has kept throughout: between what a faith reveres and what the record can show.</p>
       </div>
     </div>
@@ -7497,15 +7497,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Minoan palaces and their chronology (first palaces c. 1950 BCE, Neopalatial peak c. 1700–1450, Mycenaean Knossos after c. 1450); the peak sanctuaries (Petsofas, Iouktas and others) and sacred caves (Psychro, Kamares, Idaean, Amnisos) with their long series of offerings, including clay figurines and votive limbs; the religious imagery on rings, seals, frescoes and the Hagia Triada sarcophagus, including bull sacrifice and bull-leaping; the faience figures from the Temple Repositories (1903) and their partial restoration; the Linear B offering records naming Zeus, "all the gods", Eleuthia, the Mistress of <em>da-pu₂-ri-to</em> and others; the derivation of the Minoan Genius from Taweret; the radiocarbon dating of the Thera eruption to about 1600 BCE, well before the palace destructions; and the ancient DNA showing mainly Anatolian and Aegean Neolithic ancestry.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That the Minoans worshipped a single Great Mother Goddess with a subordinate son; that Minoan society was a peaceful matriarchy; that the "Snake Goddess" was certainly a goddess; that Greek myths of Minos, the Minotaur and the Labyrinth record Minoan religion; that the Thera eruption destroyed the palaces or inspired the legend of Atlantis. The Boston Snake Goddess and the other unprovenanced ivory "goddesses" are, on the evidence Lapatin and others assembled, <strong>modern forgeries</strong> and cannot be used as evidence.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The language of Linear A and the meaning of the libation formula; whether Anemospilia records a human sacrifice; who is divine in the ring scenes and whether they show epiphany; the functions of the lustral basins; whether the palaces were ruled by kings, priestesses or councils; how much of the Mycenaean pantheon at Knossos was Minoan; and whether the Ring of Minos is genuine.</p>
       </div>
     </div>
@@ -7626,15 +7626,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The sequence of Nubian kingdoms (Kerma, Napata, Meroë, Christian Nubia); the Western Deffufa and the great Kerma tumuli with their mass burials of retainers; Jebel Barkal as a New Kingdom and Napatan cult centre of Amun; the Twenty-fifth Dynasty's conquest and rule of Egypt, Piye's Victory Stela, and the kings' temple building and religious revival; the royal pyramids of el-Kurru, Nuri and Meroë and the horse burials; the Meroitic gods Apedemak, Sebiumeker, Arensnuphis and Amesemi and their temples at Naqa and Musawwarat; the ruling queens (Kandake) of Meroë; the Nubian worship at Philae and the last hieroglyphic inscription there (394 CE); the temple's closure under Justinian; the conversion of the Nubian kingdoms in the sixth century, the Baqt of 652, and the Faras paintings.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That pharaonic kingship originated in Nubia (the Qustul evidence does not show it); that ancient racial identity can be read in modern terms; that the Meroitic language has been deciphered (only the script has); that Meroë's priests routinely ordered kings to die (a single Greek account, uncorroborated); that Aksum certainly destroyed Meroë.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The beliefs behind Kerma's burials and the deffufa rites; the numbers and status of the Kerma retainers; the meaning of much Meroitic religious text; the origins of Apedemak and the other Nubian gods; the exact meaning of the double uraeus; how Meroë ended; and how far Nubian religion shaped Egypt's, and not only the reverse.</p>
       </div>
     </div>
@@ -7784,15 +7784,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence, content and relative order of the principal Upanishads, with the Bṛhadāraṇyaka and Chāndogya earliest and probably pre-Buddhist; their teachings on ātman and Brahman, karma, rebirth and liberation, including the five-fires doctrine and <em>tat tvam asi</em>; the composition of the Mahābhārata, Rāmāyaṇa and Gītā over the last centuries BCE and first centuries CE; the content of Manu and the dharma literature; the six darśanas and their texts; the Heliodorus pillar (c. 113 BCE); the Gupta-era temples and the Purāṇas; and the later readings of the Upanishads by Śaṅkara, Rāmānuja and Madhva.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Precise early dates for the texts; the dating of the Kurukṣetra war to 3102 BCE or any astronomical dating of epic events; Adam's Bridge as a built causeway; claims that the Upanishads or Vedas contain modern science. The belief that the Vedas are authorless and eternal (<em>śruti</em>), and that Kṛṣṇa and Rāma are divine descents, are <strong>faith claims</strong>, reported here as belief.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The exact dates of the early Upanishads and the Gītā; whether the Upanishadic ideas of karma and rebirth arose inside brahmin circles, among the kṣatriyas, or in contact with the śramaṇa movements and the culture of the eastern Ganges; whether the āśramas began as alternatives or as stages; how far Manu described real society; and whether "Hinduism" was a unified religion before colonial rule.</p>
       </div>
     </div>
@@ -7922,15 +7922,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The worship of Allāt, al-ʿUzzā, Manāt, Ruḍā, Dushara and other deities, attested in inscriptions across northern Arabia; the Nabataean betyl cult; the Safaitic record of nomad prayer, sacrifice and mourning; the South Arabian kingdoms, their national gods and the Awwām temple at Maʾrib; the shift of Ḥimyarite inscriptions to Raḥmānān from about 380 CE and the Judaism of its elite; the Najrān massacre of about 523, the Aksumite conquest and Abraha's Christian inscriptions; the presence of Christian and Jewish Arabs before Islam; and the Qur'an's own testimony that its opponents acknowledged Allāh while honouring intercessors.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That Allāh was originally a moon god, or the same as Hubal; that the details of the Book of Idols (including the 360 idols) are accurate history; that the Queen of Sheba is attested in South Arabian inscriptions; that Abraham founded the Kaʿba (a faith claim with no archaeological evidence either way).</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The religion of Mecca itself before Islam, for which there is no contemporary evidence; whether the Qur'an's opponents were polytheists or monotheists of a kind; what the nomads meant by <em>ʾlh</em> and how it relates to Allāh; how deep Ḥimyar's Judaism went; the historicity of the "Satanic verses" story; and the date and nature of Abraha's campaign and its relation to the Year of the Elephant.</p>
       </div>
     </div>
@@ -8034,15 +8034,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The dolmens of the Korean Bronze Age; the <em>Samguk yusa</em> (c. 1281) and its Dangun myth as a text; musok, the mudang, their types and the gut, documented by ethnography and still practised; the suppression of musok under Joseon, colonial rule and the New Village Movement, and its later protection; the arrival of Buddhism in 372 and 384 and its adoption in Silla; Seokguram and Bulguksa; Wŏnhyo, Ŭisang and Jinul; the Tripitaka Koreana (81,258 blocks, 1237–1248); Joseon Neo-Confucianism and the ancestral rites; Hangul (1443/1446) and the cosmological explanation in its commentary; the lay founding of Korean Catholicism and its persecutions; Donghak and its successors; and the 2015 census figures.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Dangun as a historical founder and 2333 BCE as a historical date; North Korea's "tomb of Dangun"; the miracles of Ichadon's martyrdom; the idea that modern musok is an unchanged survival of prehistoric religion. The reality of the spirits in musok, and the divine claims of the other traditions, are matters of faith, reported here as belief.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>What rites were held at the dolmens; the origins and early history of Korean shamanism and its relation to Siberian shamanism; the design principles of Seokguram; how to count religious identity in a society where many people practise several traditions or none formally; and the future of religion in South Korea, where the share with no religion has risen sharply.</p>
       </div>
     </div>
@@ -8172,15 +8172,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence of dissenting religious groups in Languedoc and northern Italy in the twelfth and thirteenth centuries, whose dualist beliefs are attested in their own surviving texts (the Interrogatio Iohannis, the Ritual of Lyon, the Book of the Two Principles) as well as by their opponents; the consolamentum and the life of the perfects; the Albigensian Crusade (1209–1229), the massacre at Béziers and the mass burnings; the inquisition and its records, including the Fournier register; the fall of Montségur (1244); the Waldensians, the condemnation of Porete (1310), Wyclif and the Lollards, and the burning of Hus (1415).</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That Arnaud Amalric said "Kill them all, God will know his own" (reported decades later, second-hand); that the Cathars held the Holy Grail, a secret treasure of knowledge or a bloodline of Christ; that the "Cathar castles" as seen today are Cathar buildings; that the dove or the Occitan cross was a Cathar symbol; that the Free Spirit was a proven organized sect.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How organized and uniform the Cathar church was, and how far the inquisitors constructed it (Moore and Pegg against the traditional view); the extent of Bogomil influence and the authenticity of the Saint-Félix document; the practice of the endura; and the numbers of believers and of victims.</p>
       </div>
     </div>
@@ -8295,15 +8295,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The life of Sabbatai Zevi, Nathan's prophecy, the spread of the movement in 1665–1666 and Sabbatai's conversion in September 1666; the Dönme of Salonika; the Emden–Eybeschütz controversy; Jacob Frank, the Kamieniec and Lwów disputations, the burning of the Talmud at Kamieniec, and the Frankist baptisms of 1759–1760; the historical Baal Shem Tov at Medzhybizh (Rosman's documents); the Maggid of Mezeritch, the spread of Hasidism and its dynasties; the Tanya (1797); the excommunication of 1772 and the Misnagdic opposition; the Holocaust's destruction and the movement's rebuilding; and the Uman pilgrimage.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That Sabbatai Zevi was the Messiah, or that his apostasy was a redemptive mission (faith claims of his remaining believers); that the Frankists' blood libel had any truth (it is false); the miracles attributed to the Baal Shem Tov and the rebbes, which are matters of faith and hagiography; the specific high casualty figures of the Jewish chronicles for 1648, which modern historians regard as exaggerated.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How far Lurianic Kabbalah and the 1648 massacres caused the Sabbatean movement; whether Eybeschütz was a secret Sabbatean; what the Frankists actually practised; how directly Sabbateanism influenced Hasidism or the Jewish Enlightenment; the authenticity and transmission of the Holy Epistle; and the diagnosis of Sabbatai's psychology, which can only be inferred.</p>
       </div>
     </div>
@@ -8426,15 +8426,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The growth of the religiously unaffiliated to about 1.9 billion people in 2020 and 29% of U.S. adults (Pew); the diversity of belief among nones; ancient traditions of doubt and materialism in India, Greece and China; the Enlightenment critics (Spinoza, Hume, d'Holbach); the French revolutionary cults; the separation of church and state in the U.S. and France; the nineteenth-century freethought movement; the history of state atheism in the Soviet Union, Albania and China and its persecutions; humanist organizations and rituals; and the major theories of secularization and their critics.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That modernization must inevitably end religion (the strong secularization thesis); that nonbelievers are less moral than believers; that cognitive theories of religion disprove (or prove) any religious claim. The existence or non-existence of God is not established by the evidence surveyed here and is reported as belief on all sides.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Whether the growth of nonreligion in the West will continue or level off; whether demographic trends will reverse it globally; how to measure "religion" and "nonreligion" when many people belong without believing or believe without belonging; how far the cognitive science of religion explains belief; and whether secular societies can sustain community and meaning in the long run without religion.</p>
       </div>
     </div>
@@ -8554,15 +8554,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The early symbolic artefacts of southern Africa (the Blombos ochre and drawing, about 73,000 years; the Apollo 11 painted stones, about 30,000 years); the great quantity and range of San rock art, with dates reaching back more than 2,000 years in the Drakensberg and into the colonial period; the Bleek and Lloyd archive of |Xam testimony; the ethnography of the Kalahari healing dance, n|om and !kia; |Kaggen, the rain-animal and other beliefs as recorded; the colonial violence against the San and the destruction of the |Xam; the deep genetic divergence of Khoe-San lineages; the Linton panel's use on the coat of arms; and the San Code of Research Ethics (2017).</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That the San are a "living fossil" whose religion is unchanged since the Stone Age; that all San art has a single meaning; that the Tsodilo "python" was the site of a 70,000-year-old ritual; that geometric motifs in rock art are proven to be universal trance imagery.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How central trance is to the meaning of the art, and whether the interpretation applies equally across regions and periods; what the earliest symbolic artefacts meant to their makers; how far nineteenth- and twentieth-century testimony can be projected back into prehistory; and how San communities, researchers and heritage bodies will share authority over the art's interpretation.</p>
       </div>
     </div>
@@ -8674,15 +8674,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Olmec heartland sites of San Lorenzo, La Venta and Tres Zapotes and their dates (c. 1600–400 BCE); the colossal heads (seventeen known) and thrones; La Venta's Massive Offerings and Offering 4; the offerings at El Manatí, including the world's oldest rubber balls (c. 1600 BCE), wooden busts and infant bones; the Chalcatzingo reliefs; the recurring composite imagery (were-jaguar, Olmec Dragon, Maize God); cacao use at San Lorenzo; and the spread of Olmec-style objects across Mesoamerica.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>African, Chinese, Atlantean or extraterrestrial origins of the Olmec; the use of unprovenanced objects as secure evidence; any claim to know the Olmec names of their gods or the content of their myths.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Whether the Olmec were a "mother culture" or one of several "sister cultures"; whether Joralemon's gods are distinct deities; whether the transformation figures show shamans; whether the infants of El Manatí were sacrificed; whether the Cascajal block is writing and genuinely ancient; and why the heartland centres declined around 400 BCE.</p>
       </div>
     </div>
@@ -8807,15 +8807,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Etruscan city-states and their chronology; the Liver of Piacenza (found 1877) and its inscriptions; the Pyrgi tablets (found 1964, c. 500 BCE) naming Uni and Astarte; the Liber Linteus as an Etruscan ritual text reused as mummy wrappings; the painted tombs of Tarquinia and the necropolis of Cerveteri, including Charun and Vanth; the names and attributes of the main deities; the Roman accounts of the Etrusca disciplina and of the Etruscan haruspices consulted by Rome into late antiquity; and the 2021 ancient-DNA evidence that the Etruscans were of local origin.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>Herodotus's Lydian migration; claims that Etruscan has been deciphered through a modern language; divination as an effective method of prediction; the derivation of the bishop's crosier from the lituus.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The full meaning of the Liber Linteus and of much Etruscan vocabulary; the relation between Etruscan and Mesopotamian liver divination; how much of the Etruscan pantheon was native; whether Campo della Fiera is the Fanum Voltumnae; the reasons for the darkening of tomb imagery; and the <em>persona</em>–<em>phersu</em> etymology.</p>
       </div>
     </div>
@@ -8915,15 +8915,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The Iranian-speaking nomadic cultures of the Eurasian steppe and their kurgans; Herodotus's account of Scythian gods, rites and royal funerals (as a text); the archaeological confirmation of many elements of his funeral description in the Dnieper kurgans; the Pazyryk frozen tombs, tattoos, textiles and horse burials, including the Ukok "Ice Maiden" (1993); hemp-burning equipment at Pazyryk and cannabis residues at Jirzankal (c. 500 BCE); the animal-style art; Arzhan's early royal burials; women buried with weapons; and the linguistic descent of Ossetian from the Scytho-Alanic languages.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That Herodotus's account is accurate in every detail (the fifty impaled horsemen, the size of the brushwood altars, the scalping and skull-cup customs are not all confirmed); that the Amazons of Greek myth were a single real nation of women; that the Scythians were the ancestors of the Celts, Slavs or other modern nations in any simple sense.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The meanings of the animal style; how far Herodotus's Greek equivalents correctly capture the Scythian gods; the three-function reading of the golden gifts; the nature and status of the Enarees; the religious meaning of the hemp rites and the tattoos; and how much of the Nart sagas preserves ancient Scythian belief.</p>
       </div>
     </div>
@@ -9014,15 +9014,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The adoption of Christianity by the rulers of Armenia (c. 301–314), Iberia (c. 319–326) and Aksum (c. 340–350); Ezana's coins and inscriptions recording his conversion; the role of Frumentius and his consecration by Athanasius; the creation of the Armenian alphabet by Mesrop Mashtots (c. 405) and the translation of the Bible; the Battle of Avarayr (451); the Armenian and Ethiopian churches' rejection of Chalcedon and their place among the Oriental Orthodox; the Nine Saints and the monasteries; the radiocarbon dating of the Garima Gospels (c. 390–660); the Ethiopian canon of 81 books and its distinctive practices; the tabot and Timkat; Lalibela's rock-hewn churches; and the khachkar tradition.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>The miraculous details of the conversion stories (Tiridates as a boar, the darkness on Mirian's hunt); the presence of the Ark of the Covenant at Aksum (untestable); the robe of Christ at Mtskheta; a Christian kingdom at Edessa around 200.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The exact dates of the Armenian and Georgian conversions; the origins of the Georgian alphabet; the sources of Ethiopian Christianity's Old Testament practices (early Judaism in Aksum, or later development); and how far the early churches reached beyond the royal courts.</p>
       </div>
     </div>
@@ -9124,15 +9124,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The succession dispute after 632; the hadith of Ghadir Khumm as reported in both Sunni and Shi'i collections, and the dispute over its meaning; Ali's caliphate and assassination (661); Husayn's death at Karbala (680); the lines of Imams and the Zaydi, Isma'ili and Twelver branches; the Fatimid caliphate and the founding of Cairo (969); the doctrine of the Minor (874–941) and Major Occultation; the Usuli–Akhbari debate and the institution of the marja'; the Muharram rituals and pilgrimages; the Safavid establishment of Twelver Shi'ism in Iran (1501); velayat-e faqih and the 1979 revolution; and the approximate size and distribution of Shi'i populations.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That the twelfth Imam exists and is in occultation (a faith claim); the miracles attributed to the Imams; the characterization of taqiyya as a general doctrine of deception; the idea of a single unchanging Sunni–Shi'a war since 632; precise pilgrimage figures.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>The original meaning of Ghadir Khumm; the reliability of the early narratives of Karbala; how and when the doctrine of the Imams' sinlessness developed; the relationship between the Alawites, Alevis and Shi'ism; and the future of velayat-e faqih and of clerical authority in Shi'i societies.</p>
       </div>
     </div>
@@ -9242,15 +9242,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The veneration of Tengri among Turkic and Mongol peoples, attested in the Orkhon inscriptions (732–735), Chinese and Persian sources and the <em>Secret History</em>; the Mongol formula "By the power of Eternal Heaven" in edicts and letters; the role of shamans and of Kököchü at Chinggis's court; the rituals described by Carpini and Rubruck (felt images, libations, scapulimancy, purification by fire); the exemption of clergy from taxation; Rubruck's debate of 1254; the conversions of Ghazan (1295), Kublai and Phagpa, and Altan Khan and the Dalai Lama title (1578); the suppression of shamanism by Buddhist missionaries; the communist purges of the 1930s; and the post-1990 revivals.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That "Tengrism" was an organized monotheistic religion with fixed doctrines comparable to the scriptural religions; the legend that all who knew Chinggis Khan's grave were killed; any known location of that grave.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>How far steppe religion was monotheistic, polytheistic or both; the relationship between Tengri and the Chinese concept of Heaven (<em>tian</em>); the exact numbers killed in the 1930s purges; the numbers of shamans today; and how much of modern neo-Tengrism reflects historical practice.</p>
       </div>
     </div>
@@ -9436,15 +9436,15 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>Akbar's reign (1556–1605) and death at Agra in 1605. The abolition of the jizya in 1564 and the Rajput marriages. The founding of Fatehpur Sikri and the Ibadat Khana (1575–76). The arrival of the first Jesuit mission in 1580. The mahzar of 1579 and its terms. The circle of disciples from about 1582 and its small, named membership. The Jain embassy of Hiravijaya and the animal-slaughter bans. The Maktab Khana and the Razmnama. The "Allahu akbar, jalla jalaluhu" coinage. Sirhindi's opposition and imprisonment. Dara Shikoh's <em>Majma al-Bahrayn</em>, his <em>Sirr-i Akbar</em> and his execution in 1659. The <em>Oupnek'hat</em>. Aurangzeb's reimposition of the jizya in 1679 and his destruction of named temples.</p>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <p>That Akbar founded a new religion meant to replace Islam across his empire. That he secretly converted to Christianity (the Jesuits' hope). That the mahzar declared him infallible or a prophet. That the Qur'an's "hidden book" refers to the Upanishads (a speculation of Dara Shikoh's, not a scholarly finding). That Akbar was dyslexic (a modern guess).</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>What the Din-i Ilahi was: a religion, a Sufi order, or a court loyalty cult. How far Akbar's policy was conviction and how far statecraft. Which building was the Ibadat Khana. The details of the Sikh tradition of Akbar's visit to Guru Amar Das. How influential Sirhindi was in his own time. The scale and motives of temple destruction under Aurangzeb, and how his reign should be judged.</p>
       </div>
     </div>
@@ -9643,7 +9643,7 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <ul>
           <li><em>Reform and export:</em> Vivekananda's 1893 speech and the Vedanta Society (1894). The Brahmo Samaj (1828) and Arya Samaj (1875).</li>
           <li><em>The plantation diaspora:</em> the indenture migrations and their dates and numbers.</li>
@@ -9654,7 +9654,7 @@ window.CHAPTERS = {
         </ul>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <ul>
           <li>The "Maharishi Effect".</li>
           <li>Sathya Sai Baba's materializations as supernatural events.</li>
@@ -9663,7 +9663,7 @@ window.CHAPTERS = {
         </ul>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <ul>
           <li>How far modern postural yoga continues or breaks with older hatha yoga.</li>
           <li>Whether "Hinduism" is best understood as one religion or a family of traditions.</li>
@@ -9843,7 +9843,7 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <ul>
           <li><em>The word and the record:</em> the Evenki origin of the word "shaman" and its entry into European languages through Russian. Witsen's 1692 description and image. The core ethnographic descriptions of Siberian shamanic practice (trance, drum, costume, spirit journey, healing). The Chukchi "transformed" shamans recorded by Bogoras. Fly agaric use among north-eastern Siberian peoples.</li>
           <li><em>The Sami:</em> the criminalization and confiscation of Sami drums and the 1728 fire. The repatriation of Sami drums.</li>
@@ -9853,7 +9853,7 @@ window.CHAPTERS = {
         </ul>
       </div>
       <div class="ev unsupported">
-        <h4>Not supported (as established fact)</h4>
+        <h4>What's not supported by the evidence</h4>
         <ul>
           <li>That shamanism is proven to be the first or universal religion of humanity.</li>
           <li>That female shamans preceded male ones.</li>
@@ -9863,7 +9863,7 @@ window.CHAPTERS = {
         </ul>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <ul>
           <li>The ultimate origin of the Evenki word.</li>
           <li>Whether "shamanism" is a useful cross-cultural category or a Siberian one.</li>
@@ -9962,7 +9962,7 @@ window.CHAPTERS = {
     <div class="evidence" id="evidence">
       <div class="evidence-head">&#10022; The evidence, honestly</div>
       <div class="ev supported">
-        <h4>Well-supported by evidence</h4>
+        <h4>What's well supported by the evidence</h4>
         <p>The existence, structure, and living practice of the Yoruba religious system — Olódùmarè, the orishas, the ancestors, àṣẹ, orí — documented by two centuries of scholarship and by practitioners today; the <strong>Ifá corpus</strong> of 256 odù and its verses, and its UNESCO recognition (proclaimed 2005, inscribed 2008); the <strong>art and urban civilisation of Ilé-Ifẹ̀</strong>, its naturalistic heads dated to the twelfth–fifteenth centuries by archaeology and art history; the rise and fall of the <strong>Ọ̀yọ́ empire</strong> (imperial peak seventeenth–eighteenth centuries, capital abandoned by the 1830s); the <strong>Gẹlẹdẹ</strong> and <strong>Osun-Osogbo</strong> traditions and their UNESCO listings (Gẹlẹdẹ proclaimed 2001, inscribed 2008; the grove World Heritage 2005), and the Ṣàngó Festival's (2023); and the Yoruba foundations of <strong>Santería, Candomblé, and Trinidad Orisha</strong>, among the best-documented religious survivals of the Atlantic slave trade.</p>
       </div>
       <div class="ev unsupported">
@@ -9970,7 +9970,7 @@ window.CHAPTERS = {
         <p>The claim — made by the German explorer Leo Frobenius after encountering Ifẹ̀'s art in 1910 — that the heads must be the work of <strong>ancient Greeks, or of Atlantis</strong>: a colonial-era refusal of African authorship, contradicted by the archaeology, the local casting tradition, and the heads' own Yoruba features, and now retained only as evidence about its makers. The literal historicity of the <strong>creation account</strong> and of Odùduwà's descent, which the tradition holds as sacred truth but which no evidence dates or documents as events. The reading of <strong>Èṣù as "the devil"</strong> — a missionary mistranslation that the tradition's own theology refutes: Èṣù is messenger and enforcer within one God's order, in a system with no evil god at all. And any precise census of the faith's antiquity or of its present-day practitioners: the tradition is certainly old and certainly widespread, but specific numbers offered for either are not supported by evidence of the same quality.</p>
       </div>
       <div class="ev open">
-        <h4>Genuinely open</h4>
+        <h4>What's genuinely open</h4>
         <p>Who <strong>Odùduwà</strong> was — god, first king, deified ancestor, or a figure in whom all three readings have fused (some recorded tellings make Odùduwà female, a goddess or consort figure; a standing scholarly thesis reads the historical Odùduwà as a conqueror or immigrant ruler from the east whose arrival reorganised Ifẹ̀ — disputed, and unproven either way) — and when the Ifẹ̀ traditions took their classical shape; the true age and layering of the <strong>Ifá corpus</strong>, an oral library still growing, whose oldest verses cannot be dated the way a manuscript can; the exact nature of the early <strong>Ifẹ̀–Benin relationship</strong> behind the Òrànmíyàn tradition; how possession practice in Yorubaland itself has changed under diaspora influence flowing back; and the real <strong>demography</strong> of the living faith, where affiliation, practice, and heritage overlap in ways no survey has yet cleanly separated. What is not open is the tradition's depth, its documentation, or its dignity.</p>
       </div>
     </div>

@@ -58,11 +58,11 @@ The Paleolithic is the root system of everything that follows in this book. Its 
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The artifacts themselves — the dated **cave art** of Europe (Chauvet, Lascaux, Altamira) and of **Sulawesi** (figurative and narrative art by ~45,000+ years); the **Venus figurines** and the **Lion Man**; the world's oldest **flutes** (Hohle Fels); the deliberate **burials** with grave-goods (Qafzeh/Skhul ~100,000 years; Sungir); and the very ancient use of **red ochre** and abstract engraving (Blombos, ~73,000 years). That Paleolithic humans made symbolic, imaginative art is not in doubt.
+**What's well supported by the evidence.** The artifacts themselves — the dated **cave art** of Europe (Chauvet, Lascaux, Altamira) and of **Sulawesi** (figurative and narrative art by ~45,000+ years); the **Venus figurines** and the **Lion Man**; the world's oldest **flutes** (Hohle Fels); the deliberate **burials** with grave-goods (Qafzeh/Skhul ~100,000 years; Sungir); and the very ancient use of **red ochre** and abstract engraving (Blombos, ~73,000 years). That Paleolithic humans made symbolic, imaginative art is not in doubt.
 
-**Not supported (as established fact).** That we **know** what any of it meant. The "**Mother Goddess**" of the Venus figurines, the specific **shamanic/entoptic** reading of the cave art (seriously contested by Bahn and Helvenston), Breuil's "hunting magic" — these are interpretations, some more plausible than others, none confirmed. Claims that assert the meaning of Paleolithic religion with confidence are claiming more than the evidence allows.
+**What's not supported by the evidence.** That we **know** what any of it meant. The "**Mother Goddess**" of the Venus figurines, the specific **shamanic/entoptic** reading of the cave art (seriously contested by Bahn and Helvenston), Breuil's "hunting magic" — these are interpretations, some more plausible than others, none confirmed. Claims that assert the meaning of Paleolithic religion with confidence are claiming more than the evidence allows.
 
-**Genuinely open.** Almost everything about **meaning**: what the caves were for, what the figurines represented, what the dead were provisioned for. Whether the **Neanderthals** (or *Homo naledi*) had religion at all. And the deepest question — how far back the religious imagination reaches, and whether its first spark was 40,000 years ago, or 100,000, or older still.
+**What's genuinely open.** Almost everything about **meaning**: what the caves were for, what the figurines represented, what the dead were provisioned for. Whether the **Neanderthals** (or *Homo naledi*) had religion at all. And the deepest question — how far back the religious imagination reaches, and whether its first spark was 40,000 years ago, or 100,000, or older still.
 
 ## Sources
 

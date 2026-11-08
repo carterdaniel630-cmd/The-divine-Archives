@@ -258,8 +258,7 @@
       ouroboros: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight", start: "p" },
       labyrinth: { up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight" },
       ziggurat: { left: "ArrowLeft", right: "ArrowRight", down: "ArrowDown", up: "ArrowUp", a: " ", b: "x", x: "z", y: "c", l: "c", r: "c", start: "p" },
-      antithesis: { up: "w", down: "s" },
-      pinball: { left: "ArrowLeft", right: "ArrowRight", l: "ArrowLeft", r: "ArrowRight", a: " ", b: " " }
+      antithesis: { up: "w", down: "s" }
     };
     var stopBridge = (window.ArchivePad && PADKEYS[gameId]) ? window.ArchivePad.bridge(PADKEYS[gameId]) : null;
     openState = { overlay: overlay, dialog: dialog, fsBtn: fsBtn, gameId: gameId, trigger: ctx.trigger || null, cleanup: cleanup, stopBridge: stopBridge };

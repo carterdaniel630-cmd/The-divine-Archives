@@ -72,11 +72,11 @@ Shi'ism is one of the two great branches of **Islam** (ch21), and its early hist
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The succession dispute after 632; the hadith of Ghadir Khumm as reported in both Sunni and Shi'i collections, and the dispute over its meaning; Ali's caliphate and assassination (661); Husayn's death at Karbala (680); the lines of Imams and the Zaydi, Isma'ili and Twelver branches; the Fatimid caliphate and the founding of Cairo (969); the doctrine of the Minor (874–941) and Major Occultation; the Usuli–Akhbari debate and the institution of the marja'; the Muharram rituals and pilgrimages; the Safavid establishment of Twelver Shi'ism in Iran (1501); velayat-e faqih and the 1979 revolution; and the approximate size and distribution of Shi'i populations.
+**What's well supported by the evidence.** The succession dispute after 632; the hadith of Ghadir Khumm as reported in both Sunni and Shi'i collections, and the dispute over its meaning; Ali's caliphate and assassination (661); Husayn's death at Karbala (680); the lines of Imams and the Zaydi, Isma'ili and Twelver branches; the Fatimid caliphate and the founding of Cairo (969); the doctrine of the Minor (874–941) and Major Occultation; the Usuli–Akhbari debate and the institution of the marja'; the Muharram rituals and pilgrimages; the Safavid establishment of Twelver Shi'ism in Iran (1501); velayat-e faqih and the 1979 revolution; and the approximate size and distribution of Shi'i populations.
 
-**Not supported (as established fact).** That the twelfth Imam exists and is in occultation (a faith claim); the miracles attributed to the Imams; the characterization of taqiyya as a general doctrine of deception; the idea of a single unchanging Sunni–Shi'a war since 632; precise pilgrimage figures.
+**What's not supported by the evidence.** That the twelfth Imam exists and is in occultation (a faith claim); the miracles attributed to the Imams; the characterization of taqiyya as a general doctrine of deception; the idea of a single unchanging Sunni–Shi'a war since 632; precise pilgrimage figures.
 
-**Genuinely open.** The original meaning of Ghadir Khumm; the reliability of the early narratives of Karbala; how and when the doctrine of the Imams' sinlessness developed; the relationship between the Alawites, Alevis and Shi'ism; and the future of velayat-e faqih and of clerical authority in Shi'i societies.
+**What's genuinely open.** The original meaning of Ghadir Khumm; the reliability of the early narratives of Karbala; how and when the doctrine of the Imams' sinlessness developed; the relationship between the Alawites, Alevis and Shi'ism; and the future of velayat-e faqih and of clerical authority in Shi'i societies.
 
 ## Sources
 
