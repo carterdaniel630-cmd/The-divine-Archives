@@ -603,3 +603,5 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-2026-10-28/`.
 
 - 2026-11-07 22:50 UTC: #118 (0acdc4f3) and #119 (d062ef37) are on main; deploy green. Next in the queue: the Presence Pass (rooms onto the kit, one at a time), lock to be taken first.
+
+- 2026-11-08 ~15:15 UTC: (4) chapter-images tranche 1 built as PR #130 (draft, `loop/chapter-images-t1` 327fdda4): 82 museum-rendition stills on the chapter Vault cards, 190 pictures on 54 chapters, V68 + V16/V17/V74 excluded. Linkage gaps (order item 4) already linked on main. Independent review running (session ..01HFWzTnvXVBLaXaK97CDDKy builder, reviewer is a separate pass). Merge per item. Lock released while it waits.
