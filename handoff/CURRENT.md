@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (03:50 UTC)
+# Handoff — updated 2026-11-08 (04:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Qumran Cave 4 wall live, the Presence Pass proof piece (2026-11-08 ~03:44 UTC)
+## Latest: verdict headings unified site-wide (2026-11-08 ~04:05 UTC)
+- **`main` = `42e02ef4`** (deploy run 250 green): **PR #123** fast-forwarded `141c8271` → `42e02ef4` by **class (c)** (wording on Carter's ruling, `verdict-headings-unify-order.md`) plus Carter's **per-item** re-clear of the 49 cleared chapters (`decisions-2026-11-08-carter-reclear-verdict-headings.md`). 149 evidence headings in 62 chapters now read "What's well supported by the evidence" / "What's not supported by the evidence" / "What's genuinely open". Headings only; the 13 pending chapters stay pending. Review PASS 0 findings (`replies/2026-11-08-pr123-independent-review.md`, session ..01HFWzTmenAzjHrT7GDkHUVi, wrote none of it); GitHub 10/10 incl. Lighthouse; local checks green. 26 variant headings the order did not list are left for Carter (STATUS → Needs Carter). Build sessions cannot open the live address (proxy 403); Carter's phone or Muse's crawler is the live check.
+- **Open:** no loop PRs waiting. PR #121 not picked: does not merge, branch kept.
+
+## Earlier: Qumran Cave 4 wall live, the Presence Pass proof piece (2026-11-08 ~03:44 UTC)
 - **`main` = `141c8271`** (deploy run 249 green, 2026-11-08 ~03:44 UTC): **PR #122** fast-forwarded `ce1d44b8` → `141c8271` **per item** (Carter's pick + PASS, `carter-pick-cave4-wall-122.md`, `decisions-2026-11-08-carter-pass-122.md`). Cave 4's marl walls and floor take the Foundation Kit's breakup; the two rows of holes in 4a are sunk sockets placed on the built wall. No text, flag or source changed; the site stays pending. Review PASS 0 findings (`replies/2026-11-08-pr122-independent-review.md`); GitHub 9/9 green incl. Lighthouse on `141c8271`; local checks + headless 360/390 re-run green by the merging run (session ..01HFWzTmTSXfcDt2T7G5U8aN, wrote none of it). Reply `replies/2026-11-08-run-0350-pr122-merged.md`.
 - **Open:** PR #123 verdict headings (needs re-sync onto `141c8271`, independent review, GitHub green). PR #121 not picked: does not merge, branch kept.
 
