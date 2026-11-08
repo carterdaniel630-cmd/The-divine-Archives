@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-02 (09:00 UTC)
+# Handoff — updated 2026-11-08 (02:25 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: ch01 Ark Tablet names the 1985/2009 disagreement (2026-11-02 ~08:51 UTC)
+## Latest: Qumran share-image alt says it is a 3D model (2026-11-08 ~02:21 UTC)
+- **`main` = `ce1d44b8`** (deploy run 248 green, 2026-11-08 ~02:22 UTC): **PR #120** fast-forwarded `d062ef37` → `ce1d44b8` by class (c) (honesty wording on live metadata): the Qumran caves share-image alt now opens "A 3D model, not a photograph:", like the Great Pyramid and Library alts. Independent review PASS 0 findings (session ..01HFWzTnvHbqkD8otVFfKqHc); GitHub 9/9 green incl. Lighthouse; local checks + headless 360/390 re-run green by the merging run (session ..01HFWzTovazLUaNgT45KnyVv, wrote none of it).
+- **Open:** PR #121 (draft) Presence Pass proof piece, Qumran Cave 4 wall onto the Foundation Kit; per item.
+
+## Earlier: ch01 Ark Tablet names the 1985/2009 disagreement (2026-11-02 ~08:51 UTC)
 - **`main` = `d062ef37`** (deploy run 247 green, 2026-11-07 ~22:46 UTC): **PR #119** Visual Foundation Kit movement 1 fast-forwarded `0acdc4f3` → `d062ef37` per item (Carter's "merge", `carter-yes-merge-118-119.md`). Adds `docs/assets/foundation/kit.js` (shared materials with world-space breakup, flame/skylight/gallery light rigs + phone grade, studio environment, ground, scale rules) and a hidden bench `docs/museum/kit-bench.html` (noindex, unlinked, pending banner). Nothing public uses the kit yet. Reviews `replies/2026-11-07-pr119-delta-review.md`, `replies/2026-11-07-pr119-independent-review.md` (PASS 0 findings); reply `replies/2026-11-07-run-2243-pr119-merged.md`. Before it: `main` = `0acdc4f3` (deploy 246, PR #118 README counts, merged 21:57 UTC on Carter's yes). No open loop PRs.
 
 - **`main` = `75176f5`** (deploy run 244 green): **PR #116** fast-forwarded `cb8c52f` → `75176f5` by class (c) (honesty wording on live text). ch01 "The ark builder's manual" no longer opens "In 2009…": it says the *Jewish Chronicle* and Wikipedia put Finkel's first sight in 1985 and the JC says the owner left it with him only in 2009; one later summary gives 2009 alone; the 2014 reports checked give no year (the widely reprinted AP story says only "a few years ago"). Not resolved; points to V90. ch01 stays pending. Reviews `replies/2026-11-02-pr116-independent-review.md`, `-delta-review.md`, `-delta-review-2.md` (PASS 0 findings); reply `replies/2026-11-02-run-0843-pr116-merged.md`.
