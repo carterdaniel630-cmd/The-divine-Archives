@@ -91,6 +91,11 @@
   background: rgba(10,7,3,.78);
   backdrop-filter: blur(2px);
 }
+/* phone-width screens: the game window hangs from the top instead of being centred. A game fills its window in
+   steps (its script arrives, then its first screen, then its art); centred, the window's top edge moved at each
+   step, a layout shift of about 0.4 on game pages reached by a link. Hung from the top, it only grows downward.
+   Most windows fill the height there anyway; shorter ones (Seeker's Path, the Reliquary) sit at the top. */
+@media (max-width:520px) { .game-overlay { align-items:flex-start; } }
 /* phones: no blur behind the game window (a full-screen blur every frame costs frame rate; speed fix #7) */
 @media (pointer: coarse) { .game-overlay { backdrop-filter: none; background: rgba(10,7,3,.9); } }
 @media (prefers-reduced-motion: no-preference) {
