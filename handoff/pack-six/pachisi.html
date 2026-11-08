@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pachisi — The Royal Game of India · The Divine Archives</title>
+<!--
+  PACHISI — interactive museum exhibit (The Divine Archives).
+  Single self-contained file. Vanilla ES6. Zero external requests (no CDN, no fonts, no images).
+  Rules: cross board, 7 cowrie shells, 2 players (Red vs Black), heuristic AI.
+  House conventions vs attested rules are labeled in the in-page rules panel.
+  Provenance note (5 lines):
+  1. Rules source: Wikipedia "Pachisi" (7-shell table, 12 castles, Charkoni) cross-checked with medhajournal.com & gambiter.com.
+  2. Simplified: 2 players; cowries = mouth-up count (1-7 pips); extra throw only on 7 (0 = re-throw); entry on any throw consumes it.
+  3. Journey: full 64-square circuit + home column + Charkoni = 72 moves, exact count to finish; extra turn on capture and on bringing a piece home.
+  4. Uncertainty flagged in-panel: regional journey/entry variants; "four squares inwards" castles rendered as 5th-from-tip; full cowrie table reduced.
+  5. Tech: Canvas 2D procedural textures (ivory/lapis/gold/red lacquer); mobile DPR capped at 1.0; destroy() teardown; keyboard playable; reduced-motion honored.
+-->
+<style>
+.pachisi-app{min-height:100vh;box-sizing:border-box;margin:0;padding:22px 16px 40px;
+  background:radial-gradient(1100px 700px at 50% 12%, #2a130a 0%, #150b06 55%, #070403 100%);
+  color:#e9dab4;font-family:Georgia,'Palatino Linotype','Times New Roman',serif;-webkit-text-size-adjust:100%}
+.pachisi-app *{box-sizing:border-box}
+.pachisi-header{text-align:center;margin:6px auto 18px;max-width:900px}
+.pachisi-kicker{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:#b89b5e;margin:0 0 10px}
+.pachisi-title{font-size:clamp(30px,5.4vw,52px);letter-spacing:.28em;text-indent:.28em;margin:0;color:#f0d488;
+  text-shadow:0 0 26px rgba(212,175,55,.35),0 2px 0 #2a1c08;font-weight:400}
+.pachisi-sub{font-style:italic;color:#c8ab74;font-size:clamp(13px,2.2vw,16px);margin:10px 0 0}
+.pachisi-main{display:flex;gap:26px;justify-content:center;align-items:flex-start;flex-wrap:wrap;max-width:1180px;margin:0 auto}
+.pachisi-stage{position:relative;line-height:0}
+.pachisi-board{width:min(92vw,620px);height:auto;aspect-ratio:1/1;border-radius:10px;cursor:pointer;
+  box-shadow:0 30px 80px rgba(0,0,0,.75),0 0 0 1px rgba(212,175,55,.25);touch-action:manipulation}
+.pachisi-panel{width:330px;max-width:94vw;background:rgba(24,13,7,.78);border:1px solid rgba(212,175,55,.4);
+  border-radius:12px;padding:18px 18px 16px;box-shadow:0 18px 50px rgba(0,0,0,.6), inset 0 0 40px rgba(120,60,10,.08)}
+.pachisi-turnrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.pachisi-turn{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#c8ab74}
+.pachisi-turn strong{color:#f0d488;font-weight:400}
+.pachisi-pips{display:flex;gap:8px;align-items:center;margin-bottom:4px}
+.pachisi-pipdot{width:12px;height:12px;border-radius:50%;background:#3a2a18;border:1px solid #8a6d1f}
+.pachisi-pipdot.pachisi-on{background:radial-gradient(circle at 35% 30%,#ffe9a8,#c9a227 70%);box-shadow:0 0 8px rgba(212,175,55,.8)}
+.pachisi-shells{width:100%;height:96px;display:block;background:rgba(0,0,0,.35);border:1px solid rgba(212,175,55,.25);
+  border-radius:8px;margin:6px 0 12px}
+.pachisi-status{min-height:66px;font-size:15px;line-height:1.55;color:#efe0b8;margin:4px 0 12px;font-style:italic}
+.pachisi-btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.pachisi-btn{flex:1 1 100%;font-family:inherit;font-size:16px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  color:#241304;background:linear-gradient(180deg,#f3d67e 0%,#d4af37 45%,#a37f22 100%);
+  border:1px solid #6e5518;border-radius:8px;padding:13px 10px;box-shadow:0 4px 14px rgba(212,175,55,.25), inset 0 1px 0 #fff8}
+.pachisi-btn:hover:not(:disabled){filter:brightness(1.08)}
+.pachisi-btn:disabled{opacity:.38;cursor:default;filter:grayscale(.4)}
+.pachisi-btn-ghost{flex:1 1 30%;font-family:inherit;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;
+  color:#e9c86a;background:transparent;border:1px solid rgba(212,175,55,.55);border-radius:8px;padding:10px 6px}
+.pachisi-btn-ghost:hover:not(:disabled){background:rgba(212,175,55,.12)}
+.pachisi-btn-ghost:disabled{opacity:.35;cursor:default}
+.pachisi-keys{font-size:12px;color:#a68d5c;line-height:1.7;margin-top:10px;border-top:1px solid rgba(212,175,55,.22);padding-top:10px}
+.pachisi-keys kbd{font-family:inherit;border:1px solid #8a6d1f;border-radius:4px;padding:0 6px;color:#f0d488;font-size:11px}
+.pachisi-rules{max-width:920px;margin:26px auto 0;background:rgba(24,13,7,.72);border:1px solid rgba(212,175,55,.35);
+  border-radius:12px;padding:22px 24px}
+.pachisi-rules h2{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:#f0d488;font-weight:400;margin:0 0 4px}
+.pachisi-rules h3{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#d9b968;font-weight:400;margin:20px 0 8px}
+.pachisi-rules p,.pachisi-rules li{font-size:14.5px;line-height:1.75;color:#ddc99a}
+.pachisi-rules ul{margin:6px 0;padding-left:20px}
+.pachisi-rules li{margin-bottom:5px}
+.pachisi-tag{display:inline-block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;border:1px solid #8a6d1f;
+  border-radius:4px;padding:2px 8px;margin-right:8px;color:#f0d488;vertical-align:1px}
+.pachisi-src{font-size:12.5px;color:#a68d5c;margin-top:16px;border-top:1px solid rgba(212,175,55,.22);padding-top:12px;line-height:1.7}
+.pachisi-foot{text-align:center;margin-top:26px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#7d6540}
+.pachisi-foot em{letter-spacing:.1em;text-transform:none;font-size:13px}
+.pachisi-banner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;line-height:1.4}
+.pachisi-banner[hidden]{display:none}
+.pachisi-banner-inner{background:rgba(10,5,3,.88);border:1px solid #d4af37;border-radius:14px;padding:26px 34px;text-align:center;
+  box-shadow:0 0 60px rgba(212,175,55,.3);max-width:80%}
+.pachisi-banner-inner h2{margin:0 0 8px;font-size:24px;letter-spacing:.2em;color:#f0d488;font-weight:400}
+.pachisi-banner-inner p{margin:0;font-style:italic;color:#ddc99a;font-size:15px}
+@media (max-width:1020px){.pachisi-main{flex-direction:column;align-items:center}.pachisi-panel{width:min(94vw,560px)}}
+</style>
+</head>
+<body>
+<div class="pachisi-app" id="pachisi-app">
+  <header class="pachisi-header">
+    <p class="pachisi-kicker">The Divine Archives · Hall of Games</p>
+    <h1 class="pachisi-title">PACHISI</h1>
+    <p class="pachisi-sub">The royal race of the crossroads — India. Seven shells cast the lots; four pieces seek the Charkoni.</p>
+  </header>
+
+  <div class="pachisi-main">
+    <div class="pachisi-stage">
+      <canvas class="pachisi-board" id="pachisi-board" role="img" aria-label="Pachisi cross-shaped board"></canvas>
+      <div class="pachisi-banner" id="pachisi-banner" hidden>
+        <div class="pachisi-banner-inner"><h2 id="pachisi-banner-title"></h2><p id="pachisi-banner-text"></p></div>
+      </div>
+    </div>
+
+    <aside class="pachisi-panel" aria-label="Game controls">
+      <div class="pachisi-turnrow">
+        <span class="pachisi-turn" id="pachisi-turn">Turn · <strong>You</strong></span>
+        <span class="pachisi-turn" id="pachisi-score">Home 0 – 0</span>
+      </div>
+      <canvas class="pachisi-shells" id="pachisi-shells" role="img" aria-label="Cowrie shell throw tray"></canvas>
+      <div class="pachisi-pips" id="pachisi-pips" aria-hidden="true"></div>
+      <p class="pachisi-status" id="pachisi-status" aria-live="polite">The shells await your hand.</p>
+      <div class="pachisi-btnrow">
+        <button class="pachisi-btn" id="pachisi-throw">Cast the Cowries</button>
+        <button class="pachisi-btn-ghost" id="pachisi-undo">Undo</button>
+        <button class="pachisi-btn-ghost" id="pachisi-restart">Restart</button>
+        <button class="pachisi-btn-ghost" id="pachisi-rulesbtn">Rules</button>
+      </div>
+      <div class="pachisi-keys">
+        <kbd>Space</kbd> cast / choose &nbsp; <kbd>←</kbd><kbd>→</kbd> choose piece &nbsp; <kbd>U</kbd> undo &nbsp; <kbd>R</kbd> restart &nbsp; <kbd>H</kbd> rules
+      </div>
+    </aside>
+  </div>
+
+  <section class="pachisi-rules" id="pachisi-rules" hidden aria-label="Rules of Pachisi">
+    <h2>Rules of this table</h2>
+
+    <h3><span class="pachisi-tag">Attested</span>From the historical game</h3>
+    <ul>
+      <li>The board is a symmetrical cross: four arms, each three columns of eight squares, with the great central square — the <em>Charkoni</em> — as the start and finish of every journey.</li>
+      <li>Twelve <em>castle</em> squares are safe from capture: four at the ends of the middle columns, and eight set four squares inwards from the ends of the outer columns. A piece may not land on a castle already held by the opponent.</li>
+      <li>Pieces are beehive-shaped, in black, green, red and yellow. All travel counter-clockwise around the board.</li>
+      <li>Landing on an opponent's piece off a castle <em>captures</em> it — the taken piece returns to the start, and the captor traditionally throws again.</li>
+      <li>Seven cowrie shells are the lots. The attested seven-shell table: 0→7 “Sat”, 1→10 “Dus”, 2→2, 3→3, 4→4, 5→25 “Pachees”, 6→35 “Paintees”, 7→14 “Chaudah” — extra throws on 0, 1, 5, 6 and 7.</li>
+      <li>Traditionally four players, often in partnerships; the side that brings all its pieces home first wins. Akbar is said to have played it with living pieces on the courts of Fatehpur Sikri.</li>
+    </ul>
+
+    <h3><span class="pachisi-tag">House convention</span>This table's simplifications</h3>
+    <ul>
+      <li><strong>Two players only</strong> — Red (you, south) against Black (the house, north). The east and west arms belong to no one.</li>
+      <li><strong>Simplified cowries</strong> — the count of shells landing mouth-up is the move (1–7 pips). Only a throw of <strong>7</strong> earns an extra throw (the traditional <em>Chaudah</em>); a throw of 0 is cast again.</li>
+      <li><strong>Entry</strong> — a piece may enter on any throw, taking its place on your start castle; the throw is then spent.</li>
+      <li><strong>The journey</strong> — each piece travels the full circuit (64 squares), then up its own home column; an <em>exact</em> count is needed to reach the Charkoni. Captures and homecomings each grant another throw.</li>
+      <li>You cast first. The house plays a short-sighted heuristic — it favors captures, castles and pieces nearest home, and shuns needless danger.</li>
+    </ul>
+
+    <h3><span class="pachisi-tag">Uncertain</span>What varies by tradition</h3>
+    <ul>
+      <li>Journey length, entry throws and the worth of each cowrie count differ between regions and eras; several living versions use richer scoring than this table's reduction.</li>
+      <li>“Four squares inwards from the end” is rendered here as the fifth square from each arm-tip — a reading, not a certainty.</li>
+      <li>Nothing here is presented as the single original rule; where the record is silent, this table says so.</li>
+    </ul>
+
+    <p class="pachisi-src">Sources: Wikipedia, “Pachisi” (seven-shell table, castles, Charkoni, Akbar's court); medhajournal.com, “Pachisi, Chaupar and Ludo”; gambiter.com, “Pachisi” &amp; “Chaupar”. Board geometry follows the traditional 4&nbsp;×&nbsp;3&nbsp;×&nbsp;8 cross (sources cite a 68-square circuit as four sides of 17; the four corner squares are shared between arms, giving 64 distinct playing squares).</p>
+  </section>
+
+  <footer class="pachisi-foot"><em>— The Divine Archives</em></footer>
+</div>
+
+<script>
+(() => {
+'use strict';
+/*__LOGIC_START__*/
+/* ================= PURE GAME LOGIC (no DOM) ================= */
+const PACHISI_LOGIC = (() => {
+  const CIRCUIT = 64;      // distinct circuit squares
+  const FINISH = 72;       // moves from entry to the Charkoni: 64 circuit + 7 home + center
+  const SHELLS = 7;
+
+  // Circuit coordinates on a 17x17 grid, counter-clockwise from the south start castle.
+  function buildCircuit() {
+    const c = [];
+    const push = (r, q) => c.push([r, q]);
+    push(16, 8);                                   // 0  south start castle
+    for (let r = 16; r >= 9; r--) push(r, 9);      // 1..8   south right column
+    for (let q = 10; q <= 16; q++) push(9, q);     // 9..15  east south row
+    push(8, 16);                                   // 16 east start castle
+    for (let q = 16; q >= 9; q--) push(7, q);      // 17..24 east north row
+    for (let r = 6; r >= 0; r--) push(r, 9);       // 25..31 north right column
+    push(0, 8);                                    // 32 north start castle
+    for (let r = 0; r <= 7; r++) push(r, 7);       // 33..40 north left column
+    for (let q = 6; q >= 0; q--) push(7, q);       // 41..47 west north row
+    push(8, 0);                                    // 48 west start castle
+    for (let q = 0; q <= 7; q++) push(9, q);       // 49..56 west south row
+    for (let r = 10; r <= 16; r++) push(r, 7);     // 57..63 south left column
+    return c;
+  }
+  const CELLS = buildCircuit();
+  // 12 castles: 4 arm-tip castles + 8 four-squares-in from outer-column tips (rendered 5th from tip).
+  const CASTLES = new Set([0, 5, 11, 16, 21, 27, 32, 37, 43, 48, 53, 59]);
+  const isCastle = g => CASTLES.has(g);
+
+  const PLAYERS = [
+    { id: 0, key: 'red',   startGlobal: 0  },  // south, human
+    { id: 1, key: 'black', startGlobal: 32 }   // north, AI
+  ];
+  // player's journey position -> global circuit index (positions 0..64; 64 wraps to start)
+  const globalIdx = (pl, pos) => (PLAYERS[pl].startGlobal + (pos % CIRCUIT)) % CIRCUIT;
+  // journey position 65..71 -> home-column cell; 72 -> Charkoni
+  const homeCell = (pl, pos) => {
+    if (pos >= FINISH) return [8, 8];
+    const k = pos - 65; // 0..6
+    return pl === 0 ? [15 - k, 8] : [1 + k, 8];
+  };
+  const pieceCell = (pl, pos) => {
+    if (pos < 0) return null;
+    if (pos <= CIRCUIT) return CELLS[globalIdx(pl, pos)];
+    return homeCell(pl, pos);
+  };
+
+  const newState = () => ({ pos: [[-1, -1, -1, -1], [-1, -1, -1, -1]], turn: 0, winner: -1 });
+
+  const oppAtGlobal = (st, pl, g) => {
+    const o = 1 - pl, out = [];
+    for (let i = 0; i < 4; i++) {
+      const p = st.pos[o][i];
+      if (p >= 0 && p <= CIRCUIT && globalIdx(o, p) === g) out.push(i);
+    }
+    return out;
+  };
+
+  // All legal options for `pips`: [{kind:'enter'} | {kind:'move', piece, from, to}]
+  function legalMoves(st, pl, pips) {
+    const moves = [];
+    const startG = PLAYERS[pl].startGlobal;
+    if (st.pos[pl].some(p => p === -1) && oppAtGlobal(st, pl, startG).length === 0)
+      moves.push({ kind: 'enter' });
+    for (let i = 0; i < 4; i++) {
+      const from = st.pos[pl][i];
+      if (from < 0 || from >= FINISH) continue;
+      const to = from + pips;
+      if (to > FINISH) continue;
+      if (to <= CIRCUIT) {
+        const g = globalIdx(pl, to);
+        if (isCastle(g) && oppAtGlobal(st, pl, g).length > 0) continue; // may not land on foe-held castle
+      }
+      moves.push({ kind: 'move', piece: i, from, to });
+    }
+    return moves;
+  }
+
+  // Mutates st. Returns {captured, homed, entered}.
+  function applyMove(st, pl, mv) {
+    const ev = { captured: 0, homed: false, entered: false };
+    if (mv.kind === 'enter') {
+      const i = st.pos[pl].indexOf(-1);
+      st.pos[pl][i] = 0;
+      ev.entered = true;
+      return ev;
+    }
+    st.pos[pl][mv.piece] = mv.to;
+    if (mv.to <= CIRCUIT) {
+      const g = globalIdx(pl, mv.to);
+      if (!isCastle(g)) {
+        const foes = oppAtGlobal(st, pl, g);
+        for (const f of foes) st.pos[1 - pl][f] = -1;
+        ev.captured = foes.length;
+      }
+    }
+    if (mv.to === FINISH) ev.homed = true;
+    return ev;
+  }
+
+  const homeCount = (st, pl) => st.pos[pl].filter(p => p === FINISH).length;
+  const checkWin = st => (homeCount(st, 0) === 4 ? 0 : homeCount(st, 1) === 4 ? 1 : -1);
+
+  // Heuristic AI: captures > homecomings > castles > progress; shuns capturable squares.
+  function aiChoose(st, pl, pips, rnd) {
+    const moves = legalMoves(st, pl, pips);
+    let best = null, bestScore = -Infinity;
+    for (const mv of moves) {
+      let s = (rnd ? rnd() : Math.random()) * 3;
+      if (mv.kind === 'enter') { s += 26; }
+      else {
+        const to = mv.to;
+        if (to === FINISH) s += 130;
+        if (to <= CIRCUIT) {
+          const g = globalIdx(pl, to);
+          const foes = isCastle(g) ? [] : oppAtGlobal(st, pl, g);
+          if (foes.length) s += 100 + 15 * foes.length;
+          if (isCastle(g)) s += 26;
+          else {
+            for (let i = 0; i < 4; i++) {
+              const op = st.pos[1 - pl][i];
+              if (op < 0 || op > CIRCUIT) continue;
+              const og = globalIdx(1 - pl, op);
+              const d = (g - og + CIRCUIT) % CIRCUIT;
+              if (d >= 1 && d <= SHELLS) { s -= 48; break; }
+            }
+          }
+          if (isCastle(globalIdx(pl, mv.from)) && !foes.length && to !== FINISH) s -= 12;
+        } else s += 20; // into the safe home column
+        s += (to / FINISH) * 42;
+      }
+      if (s > bestScore) { bestScore = s; best = mv; }
+    }
+    return best;
+  }
+
+  return { CIRCUIT, FINISH, SHELLS, CELLS, CASTLES, isCastle, PLAYERS, globalIdx, homeCell,
+           pieceCell, newState, legalMoves, applyMove, homeCount, checkWin, aiChoose, oppAtGlobal };
+})();
+/*__LOGIC_END__*/
+
+/* ================= RENDERING (Canvas 2D, procedural textures) ================= */
+const PACHISI_VIEW = (() => {
+  const L = PACHISI_LOGIC;
+  const TAU = Math.PI * 2;
+  const REDUCED = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MOBILE = () => window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 700;
+
+  const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+  const R = (a, b) => a + Math.random() * (b - a);
+
+  /* ---- procedural material textures ---- */
+  function ivoryTex() {
+    const c = mk(128, 128), x = c.getContext('2d');
+    x.fillStyle = '#f0e4c8'; x.fillRect(0, 0, 128, 128);
+    for (let i = 0; i < 900; i++) {
+      x.fillStyle = `rgba(${Math.random() < .5 ? '120,95,60' : '255,250,235'},${R(.02, .07)})`;
+      x.fillRect(R(0, 128), R(0, 128), R(1, 2.4), R(1, 2.4));
+    }
+    for (let i = 0; i < 7; i++) { // faint mottling
+      const g = x.createRadialGradient(R(0,128), R(0,128), 2, R(0,128), R(0,128), R(18, 42));
+      g.addColorStop(0, 'rgba(170,140,95,.06)'); g.addColorStop(1, 'rgba(170,140,95,0)');
+      x.fillStyle = g; x.fillRect(0, 0, 128, 128);
+    }
+    return c;
+  }
+  function lapisTex() {
+    const c = mk(128, 128), x = c.getContext('2d');
+    x.fillStyle = '#182a66'; x.fillRect(0, 0, 128, 128);
+    x.strokeStyle = 'rgba(90,130,220,.28)'; x.lineWidth = 1.4;
+    for (let i = 0; i < 12; i++) { // calcite veins
+      x.beginPath(); let px = R(0,128), py = R(0,128); x.moveTo(px, py);
+      for (let s = 0; s < 4; s++) { px += R(-34,34); py += R(-34,34); x.quadraticCurveTo(px+R(-14,14), py+R(-14,14), px, py); }
+      x.stroke();
+    }
+    for (let i = 0; i < 130; i++) { // pyrite flecks
+      x.fillStyle = `rgba(232,196,106,${R(.35,.85)})`;
+      const s = R(.8, 2.2); x.fillRect(R(0,128), R(0,128), s, s);
+    }
+    return c;
+  }
+  function lacquerTex() {
+    const c = mk(128, 128), x = c.getContext('2d');
+    x.fillStyle = '#6d1717'; x.fillRect(0, 0, 128, 128);
+    for (let i = 0; i < 46; i++) { // wood grain
+      x.strokeStyle = `rgba(${Math.random()<.5?'40,8,8':'150,60,40'},${R(.05,.12)})`;
+      x.lineWidth = R(.6, 1.8); x.beginPath();
+      const y = R(0, 128); x.moveTo(0, y);
+      x.bezierCurveTo(40, y+R(-6,6), 90, y+R(-6,6), 128, y+R(-4,4)); x.stroke();
+    }
+    const g = x.createLinearGradient(0, 0, 128, 128);
+    g.addColorStop(0,'rgba(255,200,120,.07)'); g.addColorStop(.5,'rgba(0,0,0,0)'); g.addColorStop(1,'rgba(0,0,0,.22)');
+    x.fillStyle = g; x.fillRect(0, 0, 128, 128);
+    return c;
+  }
+  function goldGrad(x, x0, y0, x1, y1) {
+    const g = x.createLinearGradient(x0, y0, x1, y1);
+    g.addColorStop(0, '#8a6a1e'); g.addColorStop(.35, '#f6dd8a');
+    g.addColorStop(.55, '#d4af37'); g.addColorStop(.8, '#9a7a24'); g.addColorStop(1, '#e8c86a');
+    return g;
+  }
+
+  const TEX = { ivory: ivoryTex(), lapis: lapisTex(), lacquer: lacquerTex() };
+
+  /* ---- layout metrics ---- */
+  function metrics(cssSize) {
+    const m = Math.round(cssSize * 0.045);          // frame margin
+    const cell = (cssSize - m * 2) / 17;
+    const ox = m, oy = m;
+    const ctr = (r, q) => [ox + (q + .5) * cell, oy + (r + .5) * cell];
+    return { size: cssSize, m, cell, ox, oy, ctr };
+  }
+  // corner plaques: [row0,row1,col0,col1] regions for yards/homes
+  const PLAQUES = {
+    redYard:   { r0: 12, r1: 16, c0: 0, c1: 4,  label: 'RED · YARD' },
+    redHome:   { r0: 12, r1: 16, c0: 12, c1: 16, label: 'RED · HOME' },
+    blackYard: { r0: 0,  r1: 4,  c0: 0, c1: 4,  label: 'BLACK · YARD' },
+    blackHome: { r0: 0,  r1: 4,  c0: 12, c1: 16, label: 'BLACK · HOME' }
+  };
+  function plaqueSlots(M, key) {
+    const p = PLAQUES[key];
+    const cx = M.ox + ((p.c0 + p.c1 + 1) / 2) * M.cell;
+    const cy = M.oy + ((p.r0 + p.r1 + 1) / 2 + 0.35) * M.cell;
+    const s = M.cell * 0.62;
+    return [0,1,2,3].map(i => [cx + (i % 2 - .5) * s * 1.35, cy + (Math.floor(i / 2) - .5) * s * 1.35]);
+  }
+
+  const inCross = (r, q) =>
+    (r === 8 && q === 8) ||
+    (r >= 9 && r <= 16 && q >= 7 && q <= 9) ||
+    (r >= 7 && r <= 9 && q >= 9 && q <= 16) ||
+    (r >= 0 && r <= 7 && q >= 7 && q <= 9) ||
+    (r >= 7 && r <= 9 && q >= 0 && q <= 7);
+  const isHomeCol = (r, q, pl) =>
+    pl === 0 ? (q === 8 && r >= 9 && r <= 16) : (q === 8 && r >= 0 && r <= 7);
+  const circuitSet = new Set(L.CELLS.map(c => c[0] + ',' + c[1]));
+  const circuitIdxOf = new Map(L.CELLS.map((c, i) => [c[0] + ',' + c[1], i]));
+
+  /* ---- static board prerender ---- */
+  function renderBoard(M, dpr) {
+    const S = Math.round(M.size * dpr);
+    const c = mk(S, S), x = c.getContext('2d');
+    x.scale(dpr, dpr);
+    const W = M.size;
+
+    // table
+    x.fillStyle = '#0a0605'; x.fillRect(0, 0, W, W);
+    // frame: lacquer band + gold inlay
+    const fw = M.m * 0.92;
+    x.save();
+    x.shadowColor = 'rgba(0,0,0,.8)'; x.shadowBlur = 30; x.shadowOffsetY = 10;
+    roundRect(x, M.m*0.12, M.m*0.12, W - M.m*0.24, W - M.m*0.24, 14);
+    x.fillStyle = '#120a06'; x.fill();
+    x.restore();
+    x.save();
+    x.beginPath(); roundRect(x, M.m*0.16, M.m*0.16, W - M.m*0.32, W - M.m*0.32, 12); x.clip();
+    x.globalAlpha = .9; x.drawImage(TEX.lacquer, M.m*0.16, M.m*0.16, W - M.m*0.32, W - M.m*0.32);
+    x.globalAlpha = 1;
+    x.strokeStyle = goldGrad(x, 0, 0, W, W); x.lineWidth = Math.max(2, M.cell*0.07);
+    x.strokeRect(M.m*0.30, M.m*0.30, W - M.m*0.60, W - M.m*0.60);
+    x.lineWidth = 1; x.strokeStyle = 'rgba(246,221,138,.6)';
+    x.strokeRect(M.m*0.52, M.m*0.52, W - M.m*1.04, W - M.m*1.04);
+    x.restore();
+
+    // squares
+    for (let r = 0; r < 17; r++) for (let q = 0; q < 17; q++) {
+      if (!inCross(r, q) || (r === 8 && q === 8)) continue;
+      const px = M.ox + q * M.cell, py = M.oy + r * M.cell, s = M.cell;
+      x.drawImage(TEX.ivory, px + .75, py + .75, s - 1.5, s - 1.5);
+      // bevel: light top-left, dark bottom-right (the 3D cue; no shadowBlur — phone-safe)
+      x.fillStyle = 'rgba(255,252,240,.30)'; x.fillRect(px + .75, py + .75, s - 1.5, 2);
+      x.fillStyle = 'rgba(255,252,240,.20)'; x.fillRect(px + .75, py + .75, 2, s - 1.5);
+      x.fillStyle = 'rgba(60,30,10,.32)'; x.fillRect(px + .75, py + s - 2.75, s - 1.5, 2);
+      x.fillStyle = 'rgba(60,30,10,.22)'; x.fillRect(px + s - 2.75, py + .75, 2, s - 1.5);
+      x.strokeStyle = 'rgba(43,26,14,.85)'; x.lineWidth = 1;
+      x.strokeRect(px + .5, py + .5, s - 1, s - 1);
+
+      const key = r + ',' + q;
+      if (circuitSet.has(key)) {
+        const g = circuitIdxOf.get(key);
+        if (L.CASTLES.has(g)) drawCastle(x, px + s/2, py + s/2, s, g === 0 ? '#b3202c' : g === 32 ? '#33333d' : null);
+      }
+      if (isHomeCol(r, q, 0)) { x.fillStyle = 'rgba(179,32,44,.10)'; x.fillRect(px+1.5, py+1.5, s-3, s-3); }
+      if (isHomeCol(r, q, 1)) { x.fillStyle = 'rgba(30,30,40,.14)';  x.fillRect(px+1.5, py+1.5, s-3, s-3); }
+    }
+
+    drawCharkoni(x, M);
+    drawPlaques(x, M);
+    drawFrameOrnaments(x, M);
+
+    // chiaroscuro: warm spotlight + vignette
+    const spot = x.createRadialGradient(W/2, W*0.34, W*0.1, W/2, W*0.42, W*0.85);
+    spot.addColorStop(0, 'rgba(255,220,150,.10)'); spot.addColorStop(.6, 'rgba(255,220,150,0)'); spot.addColorStop(1, 'rgba(0,0,0,.42)');
+    x.fillStyle = spot; x.fillRect(0, 0, W, W);
+    return c;
+  }
+
+  function roundRect(x, a, b, w, h, r) {
+    x.beginPath();
+    x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r);
+    x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath();
+  }
+
+  function drawCastle(x, cx, cy, s, enamel) {
+    x.save();
+    x.shadowColor = 'rgba(212,175,55,.85)'; x.shadowBlur = s * 0.22;
+    x.strokeStyle = goldGrad(x, cx - s/3, cy - s/3, cx + s/3, cy + s/3);
+    x.lineWidth = Math.max(1.6, s * 0.075); x.lineCap = 'round';
+    const o = s * 0.26;
+    x.beginPath(); x.moveTo(cx - o, cy - o); x.lineTo(cx + o, cy + o);
+    x.moveTo(cx + o, cy - o); x.lineTo(cx - o, cy + o); x.stroke();
+    x.restore();
+    if (enamel) { // enamel dot marks each player's start castle in their colour
+      x.save();
+      x.shadowColor = 'rgba(0,0,0,.5)'; x.shadowBlur = 3;
+      x.fillStyle = enamel;
+      x.beginPath(); x.arc(cx, cy, s * 0.10, 0, TAU); x.fill();
+      x.strokeStyle = '#f6dd8a'; x.lineWidth = 1.2; x.stroke();
+      x.restore();
+    }
+  }
+
+  function drawCharkoni(x, M) {
+    const [cx, cy] = M.ctr(8, 8), s = M.cell;
+    x.save();
+    x.shadowColor = 'rgba(0,0,0,.6)'; x.shadowBlur = s * 0.3;
+    x.drawImage(TEX.lapis, cx - s/2 + 1, cy - s/2 + 1, s - 2, s - 2);
+    x.restore();
+    // gold inlay rosette: concentric rings + petals (geometric Mughal motif)
+    x.save();
+    x.strokeStyle = goldGrad(x, cx - s/2, cy - s/2, cx + s/2, cy + s/2);
+    x.lineWidth = Math.max(1.4, s * 0.05);
+    x.strokeRect(cx - s/2 + 2, cy - s/2 + 2, s - 4, s - 4);
+    for (const rr of [0.34, 0.26]) {
+      x.beginPath(); x.arc(cx, cy, s * rr, 0, TAU); x.lineWidth = Math.max(1, s*0.03); x.stroke();
+    }
+    x.lineWidth = Math.max(1, s * 0.028);
+    for (let i = 0; i < 8; i++) { // petals
+      const a = i / 8 * TAU;
+      x.beginPath();
+      x.arc(cx + Math.cos(a) * s * 0.30, cy + Math.sin(a) * s * 0.30, s * 0.115, 0, TAU);
+      x.stroke();
+    }
+    x.fillStyle = '#f6dd8a';
+    x.beginPath(); x.arc(cx, cy, s * 0.07, 0, TAU); x.fill();
+    x.restore();
+  }
+
+  function drawPlaques(x, M) {
+    x.save();
+    x.textAlign = 'center'; x.textBaseline = 'middle';
+    for (const key of Object.keys(PLAQUES)) {
+      const p = PLAQUES[key];
+      const x0 = M.ox + p.c0 * M.cell, y0 = M.oy + p.r0 * M.cell;
+      const w = (p.c1 - p.c0 + 1) * M.cell, h = (p.r1 - p.r0 + 1) * M.cell;
+      roundRect(x, x0 + 4, y0 + 4, w - 8, h - 8, 10);
+      x.fillStyle = 'rgba(16,9,5,.82)'; x.fill();
+      x.strokeStyle = 'rgba(212,175,55,.5)'; x.lineWidth = 1.4; x.stroke();
+      x.fillStyle = '#c8a55e';
+      x.font = `${Math.max(9, M.cell * 0.34)}px Georgia, serif`;
+      x.fillText(p.label, x0 + w/2, y0 + M.cell * 0.55);
+    }
+    x.restore();
+  }
+
+  function drawFrameOrnaments(x, M) {
+    const W = M.size, o = M.m * 0.16, s = M.m * 0.5;
+    x.save();
+    for (const [cx, cy] of [[o+s/2,o+s/2],[W-o-s/2,o+s/2],[o+s/2,W-o-s/2],[W-o-s/2,W-o-s/2]]) {
+      x.fillStyle = goldGrad(x, cx - s/2, cy - s/2, cx + s/2, cy + s/2);
+      x.save(); x.translate(cx, cy); x.rotate(Math.PI/4);
+      x.fillRect(-s*0.32, -s*0.32, s*0.64, s*0.64); x.restore();
+      x.fillStyle = '#6d1717';
+      x.beginPath(); x.arc(cx, cy, s*0.12, 0, TAU); x.fill();
+    }
+    x.restore();
+  }
+
+  /* ---- beehive piece ---- */
+  const PCOL = [
+    { base: '#b3202c', dark: '#5e0f16', light: '#ef7d6a' },  // red
+    { base: '#2a2a33', dark: '#0a0a0d', light: '#6a6a7c' }   // black (ebony)
+  ];
+  function drawPiece(x, px, py, r, pl, mini) {
+    const C = PCOL[pl];
+    x.save();
+    // shadow
+    const sh = x.createRadialGradient(px, py + r*0.95, r*0.1, px, py + r*0.95, r*1.15);
+    sh.addColorStop(0, 'rgba(0,0,0,.5)'); sh.addColorStop(1, 'rgba(0,0,0,0)');
+    x.fillStyle = sh;
+    x.beginPath(); x.ellipse(px, py + r*0.95, r*1.15, r*0.42, 0, 0, TAU); x.fill();
+    // beehive body
+    const h = r * (mini ? 1.9 : 2.15), w = r * 2;
+    const g = x.createLinearGradient(px - w/2, 0, px + w/2, 0);
+    g.addColorStop(0, C.dark); g.addColorStop(.38, C.base); g.addColorStop(.62, C.light); g.addColorStop(1, C.dark);
+    x.fillStyle = g;
+    x.beginPath();
+    x.moveTo(px - w/2, py + r*0.8);
+    x.bezierCurveTo(px - w/2, py - h*0.28, px - w*0.30, py - h*0.62, px - w*0.16, py - h*0.78);
+    x.quadraticCurveTo(px, py - h*0.98, px + w*0.16, py - h*0.78);
+    x.bezierCurveTo(px + w*0.30, py - h*0.62, px + w/2, py - h*0.28, px + w/2, py + r*0.8);
+    x.quadraticCurveTo(px, py + r*1.12, px - w/2, py + r*0.8);
+    x.closePath(); x.fill();
+    // gold band
+    x.fillStyle = goldGrad(x, px - w/2, py, px + w/2, py + r*0.5);
+    x.fillRect(px - w*0.47, py + r*0.18, w*0.94, r*0.30);
+    x.fillStyle = 'rgba(0,0,0,.28)';
+    x.fillRect(px - w*0.47, py + r*0.40, w*0.94, r*0.08);
+    // highlight
+    x.fillStyle = 'rgba(255,255,255,.30)';
+    x.beginPath(); x.ellipse(px - w*0.22, py - h*0.42, w*0.07, h*0.20, -0.3, 0, TAU); x.fill();
+    // finial
+    const fg = x.createRadialGradient(px - r*0.1, py - h*0.92, r*0.05, px, py - h*0.86, r*0.3);
+    fg.addColorStop(0, '#ffe9a8'); fg.addColorStop(1, '#8a6a1e');
+    x.fillStyle = fg;
+    x.beginPath(); x.arc(px, py - h*0.86, r*0.24, 0, TAU); x.fill();
+    x.restore();
+  }
+
+  /* ---- cowrie shell ---- */
+  function drawShell(x, px, py, size, rot, up, tumble) {
+    x.save(); x.translate(px, py); x.rotate(rot);
+    const rx = size, ry = size * 0.74;
+    x.shadowColor = 'rgba(0,0,0,.55)'; x.shadowBlur = size*0.3; x.shadowOffsetY = size*0.12;
+    const g = x.createRadialGradient(-rx*0.3, -ry*0.4, size*0.1, 0, 0, rx*1.2);
+    g.addColorStop(0, '#fffdf4'); g.addColorStop(.55, '#f2e3c2'); g.addColorStop(1, '#c8ab7c');
+    x.fillStyle = g;
+    x.beginPath(); x.ellipse(0, 0, rx, ry, 0, 0, TAU); x.fill();
+    x.shadowColor = 'transparent';
+    x.strokeStyle = 'rgba(120,85,50,.55)'; x.lineWidth = Math.max(1, size*0.05); x.stroke();
+    if (up) { // aperture: dark slit with lips + teeth
+      x.strokeStyle = '#4a2c14'; x.lineWidth = Math.max(1.4, size*0.09); x.lineCap = 'round';
+      x.beginPath(); x.moveTo(-rx*0.62, 0); x.quadraticCurveTo(0, ry*0.22, rx*0.62, 0); x.stroke();
+      x.strokeStyle = 'rgba(255,255,255,.75)'; x.lineWidth = Math.max(1, size*0.045);
+      x.beginPath(); x.moveTo(-rx*0.58, -ry*0.16); x.quadraticCurveTo(0, ry*0.02, rx*0.58, -ry*0.16); x.stroke();
+      x.strokeStyle = 'rgba(74,44,20,.8)'; x.lineWidth = Math.max(.8, size*0.03);
+      for (let i = -3; i <= 3; i++) {
+        x.beginPath(); x.moveTo(i*rx*0.16, ry*0.05); x.lineTo(i*rx*0.16, ry*0.20); x.stroke();
+      }
+    } else { // smooth domed back
+      const hg = x.createRadialGradient(-rx*0.35, -ry*0.45, size*0.05, -rx*0.35, -ry*0.45, rx*0.8);
+      hg.addColorStop(0, 'rgba(255,255,255,.55)'); hg.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = hg;
+      x.beginPath(); x.ellipse(0, 0, rx, ry, 0, 0, TAU); x.fill();
+    }
+    if (tumble) { x.fillStyle = 'rgba(255,240,200,.18)'; x.beginPath(); x.ellipse(0,0,rx,ry,0,0,TAU); x.fill(); }
+    x.restore();
+  }
+
+  return { TAU, REDUCED, MOBILE, mk, metrics, plaqueSlots, renderBoard, drawPiece, drawShell,
+           goldGrad, roundRect, PCOL, R };
+})();
+
+/* ================= GAME CONTROLLER ================= */
+const PACHISI_GAME = (() => {
+  const L = PACHISI_LOGIC, V = PACHISI_VIEW;
+  const $ = id => document.getElementById(id);
+  const easeIO = k => k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;
+  const REDUCED = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let S, turn, phase, pips = 0, shellUps = [];
+  let legal = [], selIdx = 0, undoStack = [];
+  let timers = [], tweens = [], particles = [];
+  let raf = 0, running = false, destroyed = false;
+  let M, dpr, boardImg, shellAnim = null, lastShells = null;
+  let animPiece = null; // {pl, idx} currently tweened (skipped in static draw)
+
+  const board = $('pachisi-board'), shellsC = $('pachisi-shells');
+  const bctx = board.getContext('2d'), sctx = shellsC.getContext('2d');
+  const statusEl = $('pachisi-status'), turnEl = $('pachisi-turn'), scoreEl = $('pachisi-score');
+  const pipsEl = $('pachisi-pips'), throwBtn = $('pachisi-throw'), undoBtn = $('pachisi-undo');
+  const restartBtn = $('pachisi-restart'), rulesBtn = $('pachisi-rulesbtn'), rulesSec = $('pachisi-rules');
+  const banner = $('pachisi-banner'), bannerTitle = $('pachisi-banner-title'), bannerText = $('pachisi-banner-text');
+
+  const handlers = {};
+  const later = (fn, ms) => { const id = setTimeout(() => { if (!destroyed) fn(); }, ms); timers.push(id); return id; };
+  const setStatus = t => { statusEl.textContent = t; };
+  const who = pl => pl === 0 ? 'You' : 'The House';
+
+  /* ---------- sizing ---------- */
+  function resize() {
+    const css = Math.min(board.clientWidth || 620, 760) || 620;
+    dpr = V.MOBILE() ? 1 : Math.min(window.devicePixelRatio || 1, 2);
+    M = V.metrics(css);
+    board.width = Math.round(css * dpr); board.height = Math.round(css * dpr);
+    const sw = shellsC.clientWidth || 290, sh = 96;
+    shellsC.width = Math.round(sw * dpr); shellsC.height = Math.round(sh * dpr);
+    boardImg = V.renderBoard(M, dpr);
+    seedParticles();
+  }
+
+  function seedParticles() {
+    particles = [];
+    if (REDUCED()) return;
+    const n = V.MOBILE() ? 22 : 40;
+    for (let i = 0; i < n; i++) particles.push({
+      x: Math.random() * M.size, y: Math.random() * M.size,
+      r: V.R(.8, 2.2), vx: V.R(-6, 6), vy: V.R(-14, -4), ph: Math.random() * 6.28
+    });
+  }
+
+  /* ---------- flow ---------- */
+  function snapshot() { return JSON.parse(JSON.stringify({ pos: S.pos, turn, winner: S.winner })); }
+  function restore(snap) { S.pos = snap.pos; S.turn = snap.turn; S.winner = snap.winner; turn = snap.turn; }
+
+  function startTurn(first) {
+    if (first && turn === 0) undoStack.push(snapshot());
+    phase = 'awaitThrow'; legal = []; lastShells = null; shellAnim = null; shellUps = [];
+    renderPips(); updateUI();
+    if (turn === 0) setStatus('Your cast, traveller. The shells await your hand.');
+    else { setStatus('The house takes up the shells…'); later(doThrow, 1100); }
+  }
+  function nextTurn() { turn = 1 - turn; startTurn(true); }
+
+  function rollPips() {
+    let ups;
+    do { ups = []; for (let i = 0; i < 7; i++) ups.push(Math.random() < .5); }
+    while (!ups.some(Boolean)); // a barren cast is thrown again (house convention)
+    shellUps = ups;
+    return ups.filter(Boolean).length;
+  }
+
+  function doThrow() {
+    if (destroyed || phase !== 'awaitThrow') return;
+    phase = 'throwing'; updateUI();
+    pips = rollPips();
+    animateShells().then(() => {
+      if (destroyed) return;
+      renderPips();
+      legal = L.legalMoves(S, turn, pips);
+      if (!legal.length) {
+        setStatus(pips === 7
+          ? `Chaudah — seven mouths — yet no road is open. The turn passes.`
+          : `The shells show ${pips}, but no road is open. The turn passes.`);
+        later(nextTurn, 1600);
+        return;
+      }
+      if (turn === 0) {
+        phase = 'awaitMove'; selIdx = 0; updateUI();
+        setStatus(pips === 7
+          ? `Chaudah! All seven mouths gaze upward — choose a piece, and cast again after.`
+          : `The shells show ${pips}. Choose a piece to move.`);
+        if (legal.length === 1) later(() => { if (phase === 'awaitMove') execMove(legal[0]); }, 850);
+      } else {
+        setStatus(`The house casts ${pips}…`);
+        later(() => execMove(L.aiChoose(S, 1, pips)), 950);
+      }
+    });
+  }
+
+  function execMove(mv) {
+    if (destroyed || (phase !== 'awaitMove' && phase !== 'moving' && !(turn === 1))) return;
+    phase = 'moving'; updateUI();
+    // capture targets must be known before the state mutates
+    let foeIdx = [];
+    if (mv.kind === 'move' && mv.to <= L.CIRCUIT) {
+      const g = L.globalIdx(turn, mv.to);
+      if (!L.isCastle(g)) foeIdx = L.oppAtGlobal(S, turn, g);
+    }
+    const enterIdx = mv.kind === 'enter' ? S.pos[turn].indexOf(-1) : -1;
+    const ev = L.applyMove(S, turn, mv);
+    animateMove(mv, enterIdx, foeIdx).then(() => {
+      if (destroyed) return;
+      updateScore(); updateUI();
+      const w = L.checkWin(S);
+      if (w >= 0) return gameOver(w);
+      const extra = pips === 7 || ev.captured > 0 || ev.homed;
+      if (extra) {
+        setStatus(ev.captured > 0
+          ? (turn === 0 ? 'A capture! The taken piece returns to the yard. Cast again.' : 'The house takes one of your pieces. It casts again.')
+          : ev.homed
+            ? (turn === 0 ? 'A piece comes home to the Charkoni. Cast again.' : 'A black piece comes home. The house casts again.')
+            : (turn === 0 ? 'Chaudah — cast again.' : 'Chaudah for the house — it casts again.'));
+        later(() => startTurn(false), 1200);
+      } else nextTurn();
+    });
+  }
+
+  function gameOver(w) {
+    phase = 'over'; updateUI();
+    banner.hidden = false;
+    if (w === 0) {
+      bannerTitle.textContent = 'VICTORY';
+      bannerText.textContent = 'All four have come home. The road is yours.';
+      setStatus('All four have come home. The road is yours.');
+    } else {
+      bannerTitle.textContent = 'THE HOUSE PREVAILS';
+      bannerText.textContent = 'The black pieces rest in the Charkoni. The board is reset when you are ready.';
+      setStatus('The house prevails this time. The board is reset when you are ready.');
+    }
+  }
+
+  function doUndo() {
+    if (turn !== 0 || !undoStack.length) return;
+    if (phase !== 'awaitThrow' && phase !== 'awaitMove') return;
+    if (tweens.length) return;
+    restore(undoStack.pop());
+    phase = 'awaitThrow'; legal = []; lastShells = null; shellAnim = null; shellUps = [];
+    renderPips(); updateScore(); updateUI();
+    setStatus('The last cast is unwound. Cast anew.');
+  }
+
+  function doRestart() {
+    timers.forEach(clearTimeout); timers = [];
+    tweens = []; animPiece = null; shellAnim = null; lastShells = null;
+    S = L.newState(); turn = 0; pips = 0; shellUps = []; undoStack = []; legal = [];
+    banner.hidden = true;
+    renderPips(); updateScore();
+    startTurn(true);
+    setStatus('A new game. The shells await your hand.');
+  }
+
+  /* ---------- animation ---------- */
+  function addTween(dur, update, done) {
+    if (REDUCED() || dur <= 0) { update(1); if (done) done(); return; }
+    tweens.push({ t0: performance.now(), dur, update, done });
+  }
+  function updateTweens(now) {
+    for (let i = tweens.length - 1; i >= 0; i--) {
+      const tw = tweens[i];
+      let k = (now - tw.t0) / tw.dur; if (k >= 1) k = 1;
+      tw.update(easeIO(k));
+      if (k === 1) { tweens.splice(i, 1); if (tw.done) tw.done(); }
+    }
+  }
+
+  function animateShells() {
+    return new Promise(res => {
+      const W = shellsC.width / dpr, H = shellsC.height / dpr;
+      const size = Math.min(24, W / 17);
+      const ends = shellUps.map((up, i) => ({
+        x: W * 0.5 + (i - 3) * size * 2.5, y: H * 0.56, rot: V.R(-.5, .5), up
+      }));
+      if (REDUCED()) { lastShells = ends; res(); return; }
+      const shells = ends.map((e, i) => ({
+        ...e, sx: W * 0.5 + V.R(-30, 30), sy: -20, srot: V.R(0, 6.28),
+        spins: V.R(2, 5) * (Math.random() < .5 ? -1 : 1),
+        delay: i * 70, dur: 640
+      }));
+      shellAnim = { shells, t0: performance.now() };
+      const total = 70 * 6 + 640 + 60;
+      later(() => { shellAnim = null; lastShells = ends; res(); }, total);
+    });
+  }
+
+  function pathPoints(mv) {
+    if (mv.kind === 'enter') return [L.CELLS[L.PLAYERS[turn].startGlobal]];
+    const pts = [];
+    for (let k = mv.from + 1; k <= mv.to; k++) pts.push(L.pieceCell(turn, k));
+    return pts;
+  }
+
+  function animateMove(mv, enterIdx, foeIdx) {
+    return new Promise(done => {
+      const pl = turn;
+      const idx = mv.kind === 'enter' ? enterIdx : mv.piece;
+      const cells = pathPoints(mv);
+      const pts = cells.map(([r, q]) => M.ctr(r, q));
+      let startPt;
+      if (mv.kind === 'enter') startPt = V.plaqueSlots(M, pl === 0 ? 'redYard' : 'blackYard')[idx];
+      else startPt = M.ctr(...L.pieceCell(pl, mv.from));
+      const all = [startPt, ...pts];
+      animPiece = { pl, idx };
+      const dur = REDUCED() ? 0 : Math.min(1150, 130 * (all.length - 1) + 150);
+      const hopH = M.cell * 0.55;
+      addTween(dur, k => {
+        const f = k * (all.length - 1), s = Math.min(all.length - 2, Math.floor(f)), fr = f - s;
+        const ax = all[s][0], ay = all[s][1], bx = all[s + 1][0], by = all[s + 1][1];
+        const e = fr < .5 ? 2 * fr * fr : 1 - Math.pow(-2 * fr + 2, 2) / 2;
+        animPiece.x = ax + (bx - ax) * e;
+        animPiece.y = ay + (by - ay) * e - Math.sin(Math.PI * fr) * hopH;
+      }, () => {
+        animPiece = null;
+        // captured pieces fly home to their yard
+        if (!foeIdx.length) return done();
+        const opl = 1 - pl;
+        const key = pl === 0 ? 'blackYard' : 'redYard';
+        let pending = foeIdx.length;
+        foeIdx.forEach((fi, n) => {
+          const from = M.ctr(...cells[cells.length - 1]);
+          const to = V.plaqueSlots(M, key)[fi];
+          const cap = { pl: opl, idx: fi, x: from[0], y: from[1] };
+          animPiece = animPiece; // keep mover cleared; captures drawn via capAnim list
+          capAnims.push(cap);
+          addTween(REDUCED() ? 0 : 520, kk => {
+            cap.x = from[0] + (to[0] - from[0]) * kk;
+            cap.y = from[1] + (to[1] - from[1]) * kk - Math.sin(Math.PI * kk) * M.cell * 0.8;
+          }, () => {
+            const ix = capAnims.indexOf(cap); if (ix >= 0) capAnims.splice(ix, 1);
+            if (--pending === 0) done();
+          });
+        });
+      });
+    });
+  }
+  let capAnims = [];
+
+  /* ---------- drawing ---------- */
+  function pieceScreenPos(pl, pos, idx) {
+    if (pos < 0) return V.plaqueSlots(M, pl === 0 ? 'redYard' : 'blackYard')[idx];
+    if (pos >= L.FINISH) return V.plaqueSlots(M, pl === 0 ? 'redHome' : 'blackHome')[idx];
+    const [r, q] = L.pieceCell(pl, pos);
+    return M.ctr(r, q);
+  }
+
+  function drawBoardFrame(t) {
+    bctx.clearRect(0, 0, board.width, board.height);
+    bctx.save(); bctx.scale(dpr, dpr);
+    bctx.drawImage(boardImg, 0, 0, M.size, M.size);
+
+    // destination glow for the keyboard/mouse selection
+    if (phase === 'awaitMove' && legal[selIdx]) {
+      const mv = legal[selIdx];
+      const cell = mv.kind === 'enter'
+        ? L.CELLS[L.PLAYERS[turn].startGlobal]
+        : L.pieceCell(turn, mv.to);
+      const [dx, dy] = M.ctr(cell[0], cell[1]);
+      const pulse = REDUCED() ? .5 : .35 + .25 * Math.sin(t / 300);
+      const g = bctx.createRadialGradient(dx, dy, 2, dx, dy, M.cell * 1.1);
+      g.addColorStop(0, `rgba(246,221,138,${pulse})`); g.addColorStop(1, 'rgba(246,221,138,0)');
+      bctx.fillStyle = g;
+      bctx.fillRect(dx - M.cell * 1.1, dy - M.cell * 1.1, M.cell * 2.2, M.cell * 2.2);
+    }
+
+    // pieces, grouped for stacking
+    const groups = new Map();
+    for (let pl = 0; pl < 2; pl++) for (let i = 0; i < 4; i++) {
+      if (animPiece && animPiece.pl === pl && animPiece.idx === i) continue;
+      const pos = S.pos[pl][i];
+      const [px, py] = pieceScreenPos(pl, pos, i);
+      const key = pl + ':' + Math.round(px) + ',' + Math.round(py);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push({ pl, i, px, py });
+    }
+    for (const g of groups.values()) {
+      const r0 = M.cell * (g.length > 1 ? 0.24 : 0.31);
+      g.forEach((p, n) => {
+        const ox = g.length > 1 ? (n % 2 ? r0 * 0.8 : -r0 * 0.8) : 0;
+        const oy = g.length > 1 ? (n < 2 ? -r0 * 0.5 : r0 * 0.6) : 0;
+        V.drawPiece(bctx, p.px + ox, p.py + oy, r0, p.pl, g.length > 1);
+      });
+      if (g.length > 1) {
+        bctx.fillStyle = 'rgba(10,5,3,.85)';
+        bctx.beginPath(); bctx.arc(g[0].px + r0 * 1.5, g[0].py - r0 * 1.6, r0 * 0.62, 0, V.TAU); bctx.fill();
+        bctx.fillStyle = '#f0d488'; bctx.textAlign = 'center'; bctx.textBaseline = 'middle';
+        bctx.font = `${Math.max(9, r0)}px Georgia, serif`;
+        bctx.fillText(String(g.length), g[0].px + r0 * 1.5, g[0].py - r0 * 1.6);
+      }
+    }
+
+    // tweened mover + captures
+    if (animPiece && animPiece.x !== undefined)
+      V.drawPiece(bctx, animPiece.x, animPiece.y, M.cell * 0.31, animPiece.pl, false);
+    for (const c of capAnims) V.drawPiece(bctx, c.x, c.y, M.cell * 0.28, c.pl, false);
+
+    // selection rings on movable pieces / entry castle
+    if (phase === 'awaitMove') {
+      const pulse = REDUCED() ? .85 : .6 + .3 * Math.sin(t / 280);
+      bctx.save();
+      bctx.strokeStyle = `rgba(246,221,138,${pulse})`;
+      bctx.lineWidth = Math.max(2, M.cell * 0.06);
+      bctx.shadowColor = 'rgba(212,175,55,.9)'; bctx.shadowBlur = 12;
+      legal.forEach((mv, n) => {
+        let px, py, r;
+        if (mv.kind === 'enter') {
+          const [cr, cq] = L.CELLS[L.PLAYERS[turn].startGlobal];
+          [px, py] = M.ctr(cr, cq); r = M.cell * 0.62;
+        } else {
+          const [qx, qy] = pieceScreenPos(turn, mv.from, mv.piece);
+          px = qx; py = qy - M.cell * 0.5; r = M.cell * 0.52;
+        }
+        bctx.globalAlpha = n === selIdx ? 1 : .45;
+        bctx.beginPath(); bctx.ellipse(px, py, r, r * 0.62, 0, 0, V.TAU); bctx.stroke();
+      });
+      bctx.restore(); bctx.globalAlpha = 1;
+    }
+
+    // gold dust
+    if (!REDUCED()) {
+      bctx.save();
+      for (const p of particles) {
+        p.x += p.vx / 60; p.y += p.vy / 60; p.ph += 0.03;
+        if (p.y < -4) { p.y = M.size + 4; p.x = Math.random() * M.size; }
+        if (p.x < -4) p.x = M.size + 4; if (p.x > M.size + 4) p.x = -4;
+        bctx.fillStyle = `rgba(232,200,106,${0.14 + 0.12 * Math.sin(p.ph)})`;
+        bctx.beginPath(); bctx.arc(p.x, p.y, p.r, 0, V.TAU); bctx.fill();
+      }
+      bctx.restore();
+    }
+    bctx.restore();
+  }
+
+  function drawShellsFrame() {
+    const W = shellsC.width / dpr, H = shellsC.height / dpr;
+    sctx.clearRect(0, 0, shellsC.width, shellsC.height);
+    sctx.save(); sctx.scale(dpr, dpr);
+    sctx.fillStyle = 'rgba(0,0,0,.25)'; sctx.fillRect(0, 0, W, H);
+    const size = Math.min(24, W / 17);
+    const list = shellAnim ? shellAnim.shells.map(s => {
+      const now = performance.now();
+      let k = (now - shellAnim.t0 - s.delay) / s.dur;
+      k = Math.max(0, Math.min(1, k));
+      const e = 1 - Math.pow(1 - k, 3);
+      return {
+        x: s.sx + (s.x - s.sx) * e,
+        y: s.sy + (s.y - s.sy) * e - Math.sin(Math.PI * e) * 46,
+        rot: s.srot + s.spins * 6.28 * e,
+        up: s.up, tumbling: k < 1
+      };
+    }) : lastShells;
+    if (list) for (const sh of list) V.drawShell(sctx, sh.x, sh.y, size, sh.rot || 0, sh.up, sh.tumbling);
+    else {
+      sctx.fillStyle = 'rgba(200,171,116,.4)'; sctx.textAlign = 'center'; sctx.textBaseline = 'middle';
+      sctx.font = '13px Georgia, serif'; sctx.fillText('seven shells', W / 2, H / 2);
+    }
+    sctx.restore();
+  }
+
+  function frame(t) {
+    if (!running || destroyed) return;
+    raf = requestAnimationFrame(frame);
+    if (document.hidden) return;
+    updateTweens(t || performance.now());
+    drawBoardFrame(t || performance.now());
+    drawShellsFrame();
+  }
+
+  /* ---------- UI ---------- */
+  function renderPips() {
+    pipsEl.innerHTML = '';
+    for (let i = 0; i < 7; i++) {
+      const d = document.createElement('span');
+      d.className = 'pachisi-pipdot' + (shellUps[i] ? ' pachisi-on' : '');
+      pipsEl.appendChild(d);
+    }
+  }
+  function updateScore() { scoreEl.textContent = `Home ${L.homeCount(S, 0)} – ${L.homeCount(S, 1)}`; }
+  function updateTurnUI() {
+    turnEl.innerHTML = `Turn · <strong>${turn === 0 ? 'You' : 'The House'}</strong>`;
+  }
+  function updateUI() {
+    updateTurnUI();
+    throwBtn.disabled = !(phase === 'awaitThrow' && turn === 0);
+    undoBtn.disabled = !(turn === 0 && undoStack.length && (phase === 'awaitThrow' || phase === 'awaitMove') && !tweens.length);
+    restartBtn.disabled = false;
+  }
+
+  function optionAt(r, q) {
+    for (const mv of legal) {
+      const cell = mv.kind === 'enter'
+        ? L.CELLS[L.PLAYERS[turn].startGlobal]
+        : L.pieceCell(turn, mv.from);
+      if (cell[0] === r && cell[1] === q) return mv;
+    }
+    return null;
+  }
+
+  /* ---------- input ---------- */
+  function onBoardTap(e) {
+    if (phase !== 'awaitMove' || turn !== 0) return;
+    const rect = board.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width * M.size;
+    const y = (e.clientY - rect.top) / rect.height * M.size;
+    const q = Math.floor((x - M.ox) / M.cell), r = Math.floor((y - M.oy) / M.cell);
+    if (r < 0 || r > 16 || q < 0 || q > 16) return;
+    const mv = optionAt(r, q);
+    if (mv) { selIdx = legal.indexOf(mv); execMove(mv); }
+  }
+
+  function onKey(e) {
+    if (destroyed) return;
+    const k = e.key;
+    if (k === ' ') {
+      e.preventDefault();
+      if (phase === 'awaitThrow' && turn === 0) doThrow();
+      else if (phase === 'awaitMove' && legal[selIdx]) execMove(legal[selIdx]);
+    } else if (k === 'Enter') {
+      if (phase === 'awaitMove' && legal[selIdx]) execMove(legal[selIdx]);
+    } else if (k === 'ArrowRight' || k === 'ArrowLeft') {
+      if (phase === 'awaitMove' && legal.length > 1) {
+        e.preventDefault();
+        selIdx = (selIdx + (k === 'ArrowRight' ? 1 : legal.length - 1)) % legal.length;
+      }
+    } else if (k === 'u' || k === 'U') doUndo();
+    else if (k === 'r' || k === 'R') doRestart();
+    else if (k === 'h' || k === 'H' || k === '?') toggleRules();
+  }
+
+  function toggleRules() {
+    rulesSec.hidden = !rulesSec.hidden;
+    rulesBtn.setAttribute('aria-expanded', String(!rulesSec.hidden));
+  }
+
+  function onResize() {
+    clearTimeout(onResize._t);
+    onResize._t = setTimeout(() => { if (!destroyed) resize(); }, 180);
+  }
+  function onVis() {
+    if (document.hidden) { running = false; cancelAnimationFrame(raf); }
+    else if (!destroyed) { running = true; raf = requestAnimationFrame(frame); }
+  }
+
+  /* ---------- lifecycle ---------- */
+  function init() {
+    document.body.style.margin = '0';
+    document.body.style.background = '#070403';
+    S = L.newState(); turn = 0; phase = 'awaitThrow';
+    resize();
+    renderPips(); updateScore();
+
+    handlers.key = onKey; handlers.tap = onBoardTap; handlers.resize = onResize; handlers.vis = onVis;
+    handlers.throw = () => doThrow(); handlers.undo = () => doUndo();
+    handlers.restart = () => doRestart(); handlers.rules = () => toggleRules();
+    document.addEventListener('keydown', handlers.key);
+    board.addEventListener('pointerdown', handlers.tap);
+    window.addEventListener('resize', handlers.resize);
+    document.addEventListener('visibilitychange', handlers.vis);
+    throwBtn.addEventListener('click', handlers.throw);
+    undoBtn.addEventListener('click', handlers.undo);
+    restartBtn.addEventListener('click', handlers.restart);
+    rulesBtn.addEventListener('click', handlers.rules);
+
+    running = true; raf = requestAnimationFrame(frame);
+    startTurn(true);
+    updateUI();
+  }
+
+  function destroy() {
+    destroyed = true; running = false;
+    cancelAnimationFrame(raf);
+    timers.forEach(clearTimeout); timers = [];
+    document.removeEventListener('keydown', handlers.key);
+    board.removeEventListener('pointerdown', handlers.tap);
+    window.removeEventListener('resize', handlers.resize);
+    document.removeEventListener('visibilitychange', handlers.vis);
+    throwBtn.removeEventListener('click', handlers.throw);
+    undoBtn.removeEventListener('click', handlers.undo);
+    restartBtn.removeEventListener('click', handlers.restart);
+    rulesBtn.removeEventListener('click', handlers.rules);
+    clearTimeout(onResize._t);
+    tweens = []; capAnims = []; particles = []; animPiece = null;
+    shellAnim = null; lastShells = null; boardImg = null; M = null;
+    bctx.clearRect(0, 0, board.width, board.height);
+    sctx.clearRect(0, 0, shellsC.width, shellsC.height);
+    board.width = 0; shellsC.width = 0;
+    document.body.style.margin = ''; document.body.style.background = '';
+    S = null; legal = []; undoStack = [];
+  }
+
+  return { init, destroy, debug: () => ({ phase, turn, pips, legal: legal.length, undo: undoStack.length, pos: S ? JSON.parse(JSON.stringify(S.pos)) : null }) };
+})();
+
+/* boot */
+window.__pachisi = PACHISI_GAME;
+PACHISI_GAME.init();
+})();
+</script>
+</body>
+</html>
