@@ -55,9 +55,12 @@ pinholes (likely flipped/sliver triangles from clustering plus recomputed normal
 keep the cluster normals from the source mesh, or render the copy double-sided). Then look at each statue at 3.3 m,
 5 m and 8 m on 360/390 and confirm the face, hands and attributes still read.
 
-## For Carter (unchanged from the first review)
-**C1** — Carter's per-item yes on #135 covers showing Shiva and Isis in the museum. Hold that question until D1 is
-fixed, so he says yes to statues that look right from across the room.
+## For Carter
+Nothing new. **C1** is already answered: Carter said "a" at ~04:53 UTC (`decisions-2026-11-09-carter-yes-merge-135.md`),
+yes to merge once the fix passes a delta review with zero open findings and GitHub is green. This review has one open
+finding, so **no merge now**. D1 is a fixable look finding (it does not go to Carter): once a builder fixes it and a
+delta review by a session that wrote none of that fix finds nothing, his yes covers that candidate. The respect point
+above is why D1 must be fixed before merge, not a new question for him.
 
 ## Screenshots
 `handoff/previews/pr135/delta-pop-{shiva,socrates,isis}-360.png`, `delta-far-5m-360.png`.
