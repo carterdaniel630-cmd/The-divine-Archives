@@ -10,17 +10,21 @@
    per build (default 6), and the comparison fails only if the drop holds over
    all its runs: single runs of the same page can differ by 10 points.
    "Holds" means two things together (see judge() below): the median of all its
-   runs drops by more than --max-drop, AND so does its upper quartile. Some game
-   pages score bimodally (about 70 or about 90 on the same build, on base as on
-   the pull request), so a median of 9 alone can still flip by chance; a real
-   regression moves the whole spread, upper quartile included.
+   runs drops by more than --max-drop, AND the head's runs are lower than the
+   base's beyond chance (exact one-sided Mann-Whitney rank test, p < 0.05). The
+   CI runner is noisy: the same page can score 71, 81, 94 and 99 in one job, on
+   base as on the pull request, so a median of 9 (or its upper quartile, tried
+   first on PR #137) can still move by 7-10 points by chance alone. A real
+   regression ranks the head's runs consistently below the base's.
+   With fewer than 6 runs a side (no confirm round) the test cannot reach
+   p < 0.05, so the plain median rule applies.
 
    Usage:
      node tools/lighthouse-pages.js --target pr=http://localhost:8082 [--target base=http://localhost:8081]
           [--runs 3] [--max-drop 5] [--confirm 6] [--out lh-results.json] [--md lh-report.md] [--only <name substring>]
    Needs the `lighthouse` package (npm i lighthouse) and Chrome/Chromium (CHROME_PATH, or found
    automatically). Exit code 1 when a page drops more than --max-drop against the base build
-   (median and upper quartile both; see above). `require`d as a module it only exports judge() and quantile().
+   (median drop and rank test both; see above). `require`d as a module it only exports judge(), quantile() and rankTestP().
    ========================================================================== */
 "use strict";
 const fs = require("fs");
@@ -29,14 +33,31 @@ const path = require("path");
 const median = (runs) => runs.slice().sort((x, y) => x.score - y.score)[Math.floor(runs.length / 2)];
 // Score at quantile q of a list of scores (nearest rank, lower side): q=0.5 is the median used above.
 const quantile = (scores, q) => { const s = scores.slice().sort((a, b) => a - b); return s[Math.floor((s.length - 1) * q)]; };
-// The gate's verdict for one page, from the score lists of the two builds. A drop counts only when both
-// the median and the upper quartile fall by more than maxDrop (with 3 runs the two are the same run).
-function judge(baseScores, headScores, maxDrop) {
-  const b50 = quantile(baseScores, 0.5), h50 = quantile(headScores, 0.5);
-  const b75 = quantile(baseScores, 0.75), h75 = quantile(headScores, 0.75);
-  return { medianDrop: b50 - h50, upperDrop: b75 - h75, fail: b50 - h50 > maxDrop && b75 - h75 > maxDrop };
+// Exact one-sided Mann-Whitney test: the chance, if both builds scored alike, that the head's runs would
+// rank at least this low against the base's. Ties share ranks; every way of splitting the pooled runs is
+// counted (9 + 9 runs = 48,620 splits, a few milliseconds).
+function rankTestP(baseScores, headScores) {
+  const all = baseScores.concat(headScores), n = all.length, k = headScores.length;
+  const order = all.map((v, i) => [v, i]).sort((x, y) => x[0] - y[0]), rank = new Array(n);
+  for (let i = 0; i < n;) { let j = i; while (j + 1 < n && order[j + 1][0] === order[i][0]) j++; for (let t = i; t <= j; t++) rank[order[t][1]] = (i + j) / 2 + 1; i = j + 1; }
+  const observed = rank.slice(baseScores.length).reduce((x, y) => x + y, 0);
+  let atMost = 0, total = 0;
+  (function pick(from, left, sum) {
+    if (!left) { total++; if (sum <= observed + 1e-9) atMost++; return; }
+    for (let i = from; i <= n - left; i++) pick(i + 1, left - 1, sum + rank[i]);
+  })(0, k, 0);
+  return atMost / total;
 }
-module.exports = { judge, quantile };
+// The gate's verdict for one page, from the score lists of the two builds. With 6+ runs a side the median
+// must drop more than maxDrop AND the rank test must find the head lower (p < 0.05); with fewer, the median alone.
+const MIN_RUNS_FOR_TEST = 6, ALPHA = 0.05;
+function judge(baseScores, headScores, maxDrop) {
+  const medianDrop = quantile(baseScores, 0.5) - quantile(headScores, 0.5);
+  const tested = Math.min(baseScores.length, headScores.length) >= MIN_RUNS_FOR_TEST;
+  const p = tested && medianDrop > maxDrop ? rankTestP(baseScores, headScores) : null;
+  return { medianDrop, p, fail: medianDrop > maxDrop && (!tested || p < ALPHA) };
+}
+module.exports = { judge, quantile, rankTestP };
 if (require.main !== module) return;
 
 
@@ -96,7 +117,7 @@ function pick(lhr) {
       await round(RUNS, 0);
       // Confirm a drop before believing it: a noisy page's median of 3 can swing more than
       // --max-drop by chance, while a real regression survives more runs. Re-measure only
-      // the pages that look worse, and judge on all their runs (median and upper quartile, judge()).
+      // the pages that look worse, and judge on all their runs (median drop and rank test, judge()).
       if (targets.length > 1 && CONFIRM > 0) {
         const b = median(runs[targets[0].key]).score, h = median(runs[targets[targets.length - 1].key]).score;
         if (b - h > MAX_DROP) { console.log(`  ${p.name}: ${b} → ${h}, confirming with ${CONFIRM} more runs each…`); await round(CONFIRM, RUNS); }
@@ -110,7 +131,7 @@ function pick(lhr) {
 
   // ---- report
   const head = targets[targets.length - 1].key, base = targets.length > 1 ? targets[0].key : null;
-  let md = `## Lighthouse (mobile, performance)\n\nMedian of ${RUNS} run(s) per page (${CONFIRM} more for a page that seemed to drop). A page fails only when its median AND its upper quartile both drop more than ${MAX_DROP} points; a median drop alone (bimodal game pages) is shown as noise. LCP = largest contentful paint, CLS = cumulative layout shift, TBT = total blocking time, weight = bytes transferred.\n\n`;
+  let md = `## Lighthouse (mobile, performance)\n\nMedian of ${RUNS} run(s) per page (${CONFIRM} more for a page that seemed to drop). A page fails only when its median drops more than ${MAX_DROP} points AND a rank test over all its runs finds it slower beyond chance (p < 0.05); a median drop the test puts down to chance is shown as noise. LCP = largest contentful paint, CLS = cumulative layout shift, TBT = total blocking time, weight = bytes transferred.\n\n`;
   md += base ? `| Page | ${base} | ${head} | Change | LCP | CLS | TBT | Weight |\n|---|---|---|---|---|---|---|---|\n`
              : `| Page | Score | LCP | CLS | TBT | Weight | Requests |\n|---|---|---|---|---|---|---|\n`;
   const fails = [];
@@ -122,13 +143,13 @@ function pick(lhr) {
       const v = judge(results[base][p.name].runs, results[head][p.name].runs, MAX_DROP);
       if (v.fail) fails.push(`${p.name}: ${b.score} → ${h.score}`);
       if (!v.fail && d < -MAX_DROP) noise++;
-      const mark = v.fail ? " ❌" : d < -MAX_DROP ? ` (noise: upper quartile ${v.upperDrop > 0 ? "−" : "+"}${Math.abs(v.upperDrop)})` : "";
+      const mark = v.fail ? " ❌" : d < -MAX_DROP ? ` (noise: p = ${v.p === null ? "n/a" : v.p.toFixed(2)})` : "";
       md += `| ${p.name} | ${b.score} | ${h.score} | ${d > 0 ? "+" : ""}${d}${mark} | ${(h.lcpMs / 1000).toFixed(1)} s | ${h.cls} | ${h.tbtMs} ms | ${kb(h.bytes)} KB |\n`;
     } else {
       md += `| ${p.name} | ${h.score} | ${(h.lcpMs / 1000).toFixed(1)} s | ${h.cls} | ${h.tbtMs} ms | ${kb(h.bytes)} KB | ${h.requests} |\n`;
     }
   }
-  if (base) md += fails.length ? `\n**Failed:** mobile performance dropped more than ${MAX_DROP} points on: ${fails.join("; ")}.\n` : `\nNo page failed the gate (median and upper quartile both down more than ${MAX_DROP} points).${noise ? ' Rows marked "noise" had a median drop only.' : ""}\n`;
+  if (base) md += fails.length ? `\n**Failed:** mobile performance dropped more than ${MAX_DROP} points on: ${fails.join("; ")}.\n` : `\nNo page failed the gate (median down more than ${MAX_DROP} points and slower beyond chance).${noise ? ' Rows marked "noise" had a median drop that the rank test put down to chance.' : ""}\n`;
   fs.writeFileSync(MD, md);
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
   console.log(fails.length ? "FAIL: " + fails.join("; ") : "ok");
