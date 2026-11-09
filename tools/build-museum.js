@@ -208,6 +208,7 @@ function directory() {
   let h = `<section class="dir-wing dir-halls"><h3>The halls</h3><ul>` +
     `<li><span class="dir-room">The entrance hall</span><p class="dir-ex"><span>Portal:</span> <a href="pilgrimage.html">The Pilgrimage: walk the sacred sites</a></p></li>` +
     `<li><span class="dir-room">The planetarium</span><p class="dir-ex">The star projector at the centre of the Rotunda.</p></li>` +
+    `<li><span class="dir-room">The ring of statues</span><p class="dir-ex">Under the Rotunda's dome, recently added and pending review: <a href="rotunda/socrates.html">Socrates</a> · <a href="rotunda/shiva.html">Shiva</a> · <a href="rotunda/isis.html">Isis</a> (<a href="rotunda/index.html">the Rotunda Circle</a>).</p></li>` +
     `<li><span class="dir-room">The Spine gallery</span><p class="dir-ex">A banner for each of <a href="eras.html">the Nine Ages</a>.</p></li>` +
     `</ul></section>`;
   h += `<section class="dir-wing"><h3>The Rotunda · Comparative themes</h3><ul>${(wingRooms.rotunda || []).map(roomLi).join("")}</ul></section>`;
