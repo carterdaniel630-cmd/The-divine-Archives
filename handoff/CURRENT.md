@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-09 (01:25 UTC)
+# Handoff — updated 2026-11-09 (08:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Rotunda Tray 1 merged (2026-11-09 ~01:22 UTC)
+## Latest: Rotunda ring of statues merged (2026-11-09 ~08:45 UTC)
+- **`main` = `42d2263a`** (deploy run 261 green, 08:46 UTC): **PR #135** fast-forwarded `43850da4` → `42d2263a` **per item** on Carter's yes (`decisions-2026-11-09-carter-yes-merge-135.md`, covers C1). Adds Socrates, Shiva and Isis as 3D statues on pedestals in the museum's Rotunda (near / middle / far detail levels, phone budget ≤220k triangles, ≤100 calls), each linking to its pending statue page. Independent review + two delta reviews (last PASS 0 findings, `replies/2026-11-09-pr135-delta-review-2.md`); GitHub 6/6 green incl. Lighthouse (attempt 3); local checks re-run by the merging run (`replies/2026-11-09-run-0842-pr135-merged.md`). No pending tag cleared.
+
+## Earlier: Rotunda Tray 1 merged (2026-11-09 ~01:22 UTC)
 - **`main` = `43850da4`** (deploy run 260 green, 01:19 UTC): **PR #134** fast-forwarded `a5256e38` → `43850da4` **per item** on Carter's yes (`decisions-2026-11-09-carter-yes-merge-134.md`; sensitivity "a" in `decisions-2026-11-09-carter-a-rotunda-sensitivity.md`). Adds `docs/rotunda/` (the Rotunda Circle + Socrates, Shiva, Isis statue pages, all pending), meshes and three.js in `docs/assets/rotunda/`, Pantheon "As a statue" links for Isis and Shiva, sitemap entries. Review + delta review PASS (`replies/2026-11-09-pr134-independent-review.md`, `replies/2026-11-09-pr134-delta-review.md`); GitHub 8/8 green incl. Lighthouse; local checks re-run green.
 - **Open:** C1 Isis face credit ("3DWP" vs Laura Shea / Mount Holyoke) and C2 Socrates head scan source (SMK / Uffizi / National Museum) — Carter gets them from Muse; fix in place (class (c)). Next: Iron Age hallway to the Rotunda floor (`order-2026-11-08-iron-age-hallway-floor.md`), museum pedestals (R1b), six-game rebuild.
 
