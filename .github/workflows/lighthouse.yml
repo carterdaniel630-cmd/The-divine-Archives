@@ -4,7 +4,9 @@ name: Lighthouse (mobile performance)
 # on the pages in tools/perf-pages.json: the home page, an era page, three chapters, the
 # museum, the Pantheon and the eleven games. It serves the base branch and the pull request side by side
 # on the same runner, alternates runs between them (3 per page, median kept) so both see the
-# same machine, and compares each page's mobile performance score.
+# same machine, and compares each page's mobile performance score. A page that seems to drop
+# gets 6 more runs per side and fails only if both its median and its upper quartile drop
+# (some game pages score ~70 or ~90 at random on the same build; see judge() in the script).
 # The comparison table is in the run summary and in the `lighthouse` artifact.
 #
 # When a drop of more than 5 points fails the run, and when it only warns:
