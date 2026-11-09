@@ -1,0 +1,43 @@
+{
+ "viewport": "412x915 @1x, 1x CPU throttle, SwiftShader",
+ "tLoadMs": 477,
+ "tFirstZoneMs": 9064,
+ "bytesAtReady": 2192986,
+ "byType": {
+  "html": 37680,
+  "css": 52554,
+  "js": 1525103,
+  "json": 315037,
+  "webp": 262612
+ },
+ "spots": {
+  "hall": {
+   "fps": 5.2,
+   "calls": 39,
+   "tris": 26770,
+   "textures": 14,
+   "geometries": 54,
+   "where": "The Divine Archives|The entrance hall"
+  },
+  "rotunda": {
+   "fps": 6.8,
+   "calls": 63,
+   "tris": 78047,
+   "textures": 26,
+   "geometries": 102,
+   "where": "The Rotunda · Comparative themes|The Flood"
+  }
+ },
+ "bytesTotal": 6311656,
+ "byTypeTotal": {
+  "html": 37680,
+  "css": 52554,
+  "js": 1665531,
+  "json": 334011,
+  "webp": 262612,
+  "other": 140460,
+  "glb": 3818808
+ },
+ "errors": [],
+ "jsHeap": 60300000
+}
