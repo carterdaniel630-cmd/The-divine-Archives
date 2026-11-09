@@ -20,7 +20,7 @@
           [--runs 3] [--max-drop 5] [--confirm 6] [--out lh-results.json] [--md lh-report.md] [--only <name substring>]
    Needs the `lighthouse` package (npm i lighthouse) and Chrome/Chromium (CHROME_PATH, or found
    automatically). Exit code 1 when a page drops more than --max-drop against the base build
-   (median and upper quartile both; see above). `require`d as a module it only exports judge().
+   (median and upper quartile both; see above). `require`d as a module it only exports judge() and quantile().
    ========================================================================== */
 "use strict";
 const fs = require("fs");
@@ -114,19 +114,21 @@ function pick(lhr) {
   md += base ? `| Page | ${base} | ${head} | Change | LCP | CLS | TBT | Weight |\n|---|---|---|---|---|---|---|---|\n`
              : `| Page | Score | LCP | CLS | TBT | Weight | Requests |\n|---|---|---|---|---|---|---|\n`;
   const fails = [];
+  let noise = 0;
   for (const p of pages) {
     const h = results[head][p.name].median;
     if (base) {
       const b = results[base][p.name].median, d = h.score - b.score;
       const v = judge(results[base][p.name].runs, results[head][p.name].runs, MAX_DROP);
       if (v.fail) fails.push(`${p.name}: ${b.score} → ${h.score}`);
+      if (!v.fail && d < -MAX_DROP) noise++;
       const mark = v.fail ? " ❌" : d < -MAX_DROP ? ` (noise: upper quartile ${v.upperDrop > 0 ? "−" : "+"}${Math.abs(v.upperDrop)})` : "";
       md += `| ${p.name} | ${b.score} | ${h.score} | ${d > 0 ? "+" : ""}${d}${mark} | ${(h.lcpMs / 1000).toFixed(1)} s | ${h.cls} | ${h.tbtMs} ms | ${kb(h.bytes)} KB |\n`;
     } else {
       md += `| ${p.name} | ${h.score} | ${(h.lcpMs / 1000).toFixed(1)} s | ${h.cls} | ${h.tbtMs} ms | ${kb(h.bytes)} KB | ${h.requests} |\n`;
     }
   }
-  if (base) md += fails.length ? `\n**Failed:** mobile performance dropped more than ${MAX_DROP} points on: ${fails.join("; ")}.\n` : `\nNo page dropped more than ${MAX_DROP} points.\n`;
+  if (base) md += fails.length ? `\n**Failed:** mobile performance dropped more than ${MAX_DROP} points on: ${fails.join("; ")}.\n` : `\nNo page failed the gate (median and upper quartile both down more than ${MAX_DROP} points).${noise ? ' Rows marked "noise" had a median drop only.' : ""}\n`;
   fs.writeFileSync(MD, md);
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
   console.log(fails.length ? "FAIL: " + fails.join("; ") : "ok");
