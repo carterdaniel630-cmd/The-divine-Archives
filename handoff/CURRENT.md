@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-08 (23:10 UTC)
+# Handoff — updated 2026-11-09 (01:25 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: new homepage (front-door v4) merged (2026-11-08 ~23:06 UTC)
+## Latest: Rotunda Tray 1 merged (2026-11-09 ~01:22 UTC)
+- **`main` = `43850da4`**: **PR #134** fast-forwarded `a5256e38` → `43850da4` **per item** on Carter's yes (`decisions-2026-11-09-carter-yes-merge-134.md`; sensitivity "a" in `decisions-2026-11-09-carter-a-rotunda-sensitivity.md`). Adds `docs/rotunda/` (the Rotunda Circle + Socrates, Shiva, Isis statue pages, all pending), meshes and three.js in `docs/assets/rotunda/`, Pantheon "As a statue" links for Isis and Shiva, sitemap entries. Review + delta review PASS (`replies/2026-11-09-pr134-independent-review.md`, `replies/2026-11-09-pr134-delta-review.md`); GitHub 8/8 green incl. Lighthouse; local checks re-run green.
+- **Open:** C1 Isis face credit ("3DWP" vs Laura Shea / Mount Holyoke) and C2 Socrates head scan source (SMK / Uffizi / National Museum) — Carter gets them from Muse; fix in place (class (c)). Next: Iron Age hallway to the Rotunda floor (`order-2026-11-08-iron-age-hallway-floor.md`), museum pedestals (R1b), six-game rebuild.
+
+## Earlier: new homepage (front-door v4) merged (2026-11-08 ~23:06 UTC)
 - **`main` = `a5256e38`** (deploy run 259): **PR #133** fast-forwarded `77d006e6` → `a5256e38` **per item** on Carter's "yes" (`decisions-2026-11-08-carter-yes-133.md`). `docs/index.html` rebuilt on Carter's approved proof v4 (living front door: museum door band, From the Vault carousel V90/V89/V58 as labelled sketches, eight doors, all 11 games, Nine Ages, Simple version); plaque counts baked by `build-pages` (`home-counts`); four proof photos in `docs/assets/front-door/`; share-card emblem kept in `tools/data/site-emblem.svg`. Independent review PASS 0 findings (`replies/2026-11-08-pr133-independent-review.md`, review-log `a7b26632`); GitHub 6/6 green incl. Lighthouse (22:49 UTC); local checks re-run green by the merging session before the push.
 - **Open:** live check of the homepage on Carter's phone / atlas; Rotunda Tray 1 (next loop item); six-game production rebuild; photo provenance note for `handoff/front-door-v4/IMAGES.md` (atlas, optional).
 
