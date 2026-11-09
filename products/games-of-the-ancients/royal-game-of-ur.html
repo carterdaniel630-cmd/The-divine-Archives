@@ -182,5 +182,115 @@ ur-game .board{grid-template-rows:repeat(3,minmax(44px,1fr));aspect-ratio:auto}
 :root{color-scheme:dark}
 @media(prefers-color-scheme:light){:root{--night:#100b08;--deep:#17100c;--panel:#211610;--wood:#3b2114;--wood2:#6d3c20;--gold:#d6a84e;--gold-hi:#f3d27a;--lapis:#123b69;--lapis-hi:#2c6e9d;--shell:#eadfc5;--shell-hi:#fffaf0;--red:#8f3324;--ink:#1c120b;--text:#f3e5ca;--muted:#c6ad86;--line:#76502d;--shadow:rgba(0,0,0,.65);--focus:#ffe39a;--good:#87a979;--danger:#bd6551}}
 </style>
+<style id="production-pass-2026-11-09">
+/* Production pass 2026-11-09 (order games-visual-upgrade-order-2026-11-04): presentation and sourced story only.
+   Rules, AI, text of record and honesty marks unchanged; the game script above is untouched. */
+ur-game .cell.travelling{z-index:20}
+ur-game .piece.travelling{animation:none}
+ur-game .ghost{position:fixed;z-index:25;pointer-events:none;border-radius:50%;margin:0;left:0;top:0}
+ur-game .chronicle{max-width:640px;margin:10px auto 0;padding:12px 16px 13px;border:1px solid rgba(214,168,78,.34);border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(214,168,78,.10),rgba(0,0,0,.18));opacity:0;transform:translateY(6px);transition:opacity .6s,transform .6s}
+ur-game .chronicle.shown{opacity:1;transform:none}
+ur-game .chronicle .eyebrow{margin-bottom:5px}
+ur-game .chronicle p.line{margin:0;color:var(--text);font-size:15px;line-height:1.5}
+ur-game .chronicle .src{display:block;margin-top:6px;color:var(--muted);font:600 10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
+ur-game .storyToast{position:fixed;left:50%;top:max(10px,env(safe-area-inset-top));z-index:28;width:min(560px,calc(100% - 20px));padding:12px 44px 13px 16px;border:1px solid var(--gold);border-left:3px solid var(--gold-hi);background:linear-gradient(145deg,#2b1a11f2,#130c08f2);box-shadow:0 18px 40px rgba(0,0,0,.55);color:var(--text);opacity:0;transform:translate(-50%,-14px);transition:opacity .5s,transform .5s;pointer-events:none}
+ur-game .storyToast.shown{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+ur-game .storyToast .eyebrow{margin-bottom:5px}ur-game .storyToast p.line{margin:0;font-size:14px;line-height:1.45}
+ur-game .storyToast .x{position:absolute;right:0;top:0;border:0;background:transparent;color:var(--muted);font-size:20px}
+ur-game .storySources{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+ur-game .storySources h3{margin:0 0 8px;font-size:15px;font-weight:600}
+ur-game .storySources ol{margin:0;padding-left:20px;font-size:13px;line-height:1.5;color:var(--muted)}
+ur-game .storySources a{display:inline;min-height:0}
+ur-game .victoryRecord{margin:12px 0 18px;font-size:14px;color:var(--muted)}
+@media(max-width:520px){ur-game .chronicle{margin:8px 2px 0;padding:10px 12px}ur-game .chronicle p.line{font-size:14px}}
+</style>
+<script id="production-pass-2026-11-09-script">
+(function(){
+'use strict';
+const Ur=customElements.get('ur-game');if(!Ur)return;const P=Ur.prototype;
+const PATH={white:[[0,3],[0,2],[0,1],[0,0],[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[0,6],[0,7]],black:[[2,3],[2,2],[2,1],[2,0],[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[2,6],[2,7]]};
+const ROSETTES=new Set([4,8,14]);
+// The story staged in play. Every line is from the record (sources listed in the History panel); none is invented.
+const SOURCES=[
+  ['Wikipedia, “Royal Game of Ur”','https://en.wikipedia.org/wiki/Royal_Game_of_Ur'],
+  ['Irving L. Finkel, “On the Rules for the Royal Game of Ur”, in Ancient Board Games in Perspective (British Museum Press, 2007)',null],
+  ['British Museum collection record W_1850-1228-4_1 (winged bull from Khorsabad: “a gameboard is incised between the bull’s hooves”)','https://www.britishmuseum.org/collection/object/W_1850-1228-4_1']
+];
+const STORY={
+  start:['The tombs','Boards like this one were laid in the Royal Cemetery at Ur around 2600–2400 BCE. Leonard Woolley’s excavation there, from 1922 to 1934, found five of them.',[1,2]],
+  rosette:['The rulebook','No rules were found beside those boards. The rules you are playing come from a clay tablet written about 177 BCE by the Babylonian scribe Itti-Marduk-balāṭu, read by Irving Finkel of the British Museum in the early 1980s. How the players at Ur itself played, the record does not say.',[2,1]],
+  capture:['The gate','The game went where people went. Twenty squares were cut between the hooves of a winged bull that guarded a gateway at Khorsabad, the citadel of the Assyrian king Sargon II.',[3,1]],
+  home:['The road outward','Boards very like this one were found in the tomb of Tutankhamun, and twenty-square boards have turned up as far from Mesopotamia as Crete and Sri Lanka.',[1]],
+  end:['The last players','The game stayed popular until late antiquity, then was forgotten almost everywhere. In Kochi, India, the city’s Jewish community kept playing a version called Asha until the 1950s.',[1]]
+};
+const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+const centre=el=>{const r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:r.width,h:r.height};};
+
+P.stageExtras=function(){
+  if(this.querySelector('.chronicle'))return;
+  const st=this.querySelector('.status');if(st){const c=document.createElement('aside');c.className='chronicle';c.setAttribute('aria-live','polite');c.setAttribute('aria-label','From the record');c.hidden=true;c.innerHTML='<p class="eyebrow"></p><p class="line"></p><span class="src"></span>';st.insertAdjacentElement('afterend',c);}
+  if(!this.querySelector('.storyToast')){const t=document.createElement('div');t.className='storyToast';t.setAttribute('aria-hidden','true');t.innerHTML='<p class="eyebrow"></p><p class="line"></p><button class="x" type="button" tabindex="-1" aria-label="Close">×</button>';this.appendChild(t);this.listen(t.querySelector('.x'),'click',()=>t.classList.remove('shown'));}
+  const about=this.querySelector('.modal.about');if(about){const s=document.createElement('section');s.className='storySources';s.innerHTML='<h3>Where the story in play comes from</h3><ol>'+SOURCES.map(([t,u])=>u?`<li><a href="${u}" target="_blank" rel="noopener">${t} ↗</a></li>`:`<li>${t}</li>`).join('')+'</ol>';const cat=about.querySelector('.catalogue');(cat||about.lastElementChild).insertAdjacentElement('afterend',s);}
+  const vc=this.querySelector('.victoryCopy');if(vc&&!this.querySelector('.victoryRecord')){const v=document.createElement('p');v.className='victoryRecord';vc.insertAdjacentElement('afterend',v);}
+};
+P.tell=function(key){
+  this._told=this._told||new Set();if(this._told.has(key))return;this._told.add(key);
+  const [title,line,src]=STORY[key],c=this.querySelector('.chronicle');if(!c)return;
+  c.classList.remove('shown');c.hidden=false;
+  c.querySelector('.eyebrow').textContent='From the record · '+title;c.querySelector('.line').textContent=line;
+  c.querySelector('.src').textContent='Source'+(src.length>1?'s':'')+': '+src.map(n=>SOURCES[n-1][0].split(' (')[0]).join('; ');
+  void c.offsetWidth;c.classList.add('shown');
+  // the record line also rises at the top of the screen for a few seconds, in case the chronicle below the board is out of view
+  const t=this.querySelector('.storyToast');if(!t)return;
+  const r=c.getBoundingClientRect();if(r.top>=0&&r.bottom<=innerHeight)return;
+  t.querySelector('.eyebrow').textContent='From the record · '+title;t.querySelector('.line').textContent=line;
+  t.classList.add('shown');if(this._toastT)clearTimeout(this._toastT);this._toastT=this.later(()=>t.classList.remove('shown'),Math.max(7000,line.length*45));
+};
+
+const conn=P.connectedCallback;P.connectedCallback=function(){conn.call(this);this.stageExtras();};
+const start=P.startMatch;P.startMatch=function(mode,difficulty){start.call(this,mode,difficulty);this._told=new Set();this.tell('start');};
+const show=P.showVictory;P.showVictory=function(side){const v=this.querySelector('.victoryRecord');if(v)v.textContent=STORY.end[1];this._told=this._told||new Set();this._told.add('end');show.call(this,side);};
+const move=P.movePiece;P.movePiece=function(index,isAI){
+  const before=JSON.parse(JSON.stringify(this.state));this._pre=before;
+  move.call(this,index,isAI);
+  this._pre=null;const s=this.state;if(s.moveNo===before.moveNo)return;   // the move was refused: nothing happened
+  const side=before.turn,opp=side==='white'?'black':'white',dest=s[side][index];
+  const captured=before[opp].some((v,i)=>v===dest&&s[opp][i]===0&&dest>=5&&dest<=12);
+  if(captured)this.tell('capture');else if(dest===15)this.tell('home');else if(ROSETTES.has(dest))this.tell('rosette');
+};
+
+// Pieces travel the road square by square; a piece borne off walks to its player's panel; a captured piece is carried back.
+P.ghost=function(side,from,to,ms,fade){
+  const g=document.createElement('span');g.className='piece ghost '+side;g.setAttribute('aria-hidden','true');
+  g.style.width=from.w+'px';g.style.height=from.h+'px';this.appendChild(g);
+  const k=[{transform:`translate(${from.x-from.w/2}px,${from.y-from.h/2}px) scale(1)`,opacity:1},{transform:`translate(${(from.x+to.x)/2-from.w/2}px,${Math.min(from.y,to.y)-from.h/2-46}px) scale(1.18)`,opacity:1,offset:.5},{transform:`translate(${to.x-from.w/2}px,${to.y-from.h/2}px) scale(.7)`,opacity:fade?0:1}];
+  const a=g.animate(k,{duration:ms,easing:'cubic-bezier(.45,.05,.3,1)',fill:'forwards'});this._animations.add(a);
+  const done=()=>{this._animations.delete(a);g.remove();};a.onfinish=done;a.oncancel=done;
+};
+P.animateMove=function(side,index,from,dest){
+  const pre=this._pre;
+  this.later(()=>{
+    if(reduced())return;
+    const board=this.querySelector('.board');if(!board)return;
+    const cellAt=pos=>{const [r,c]=PATH[side][pos-1];return board.querySelector(`[data-cell="${r}-${c}"]`);};
+    const panel=s=>this.querySelector(s==='white'?'.whitePanel .sample':'.blackPanel .sample')||this.querySelector(s==='white'?'.whitePanel':'.blackPanel');
+    const opp=side==='white'?'black':'white';
+    if(pre&&dest>=5&&dest<=12&&pre[opp].includes(dest)){const cc=cellAt(dest),a=centre(cc),p=centre(panel(opp));this.ghost(opp,{x:a.x,y:a.y,w:a.w*.64,h:a.h*.64},p,640,true);}
+    const stops=[];for(let k=Math.max(from,1);k<=Math.min(dest,14);k++)stops.push(centre(cellAt(k)));
+    if(from===0)stops.unshift(centre(panel(side)));
+    if(dest===15){const last=stops[stops.length-1]||centre(panel(side));const t=centre(panel(side));const size=last.w?last:{w:30,h:30};if(stops.length>1){const first=stops[0];this.ghost(side,{x:first.x,y:first.y,w:size.w*.64,h:size.h*.64},t,260+130*stops.length,true);}return;}
+    const p=board.querySelector(`.piece[data-side="${side}"][data-index="${index}"]`);if(!p)return;
+    const end=stops[stops.length-1],cell=p.parentElement;
+    const frames=stops.map((s,i)=>({transform:`translate(${s.x-end.x}px,${s.y-end.y}px) translateY(${i===0||i===stops.length-1?0:-10}px) scale(${i===0||i===stops.length-1?1:1.06})`,filter:'drop-shadow(0 14px 8px rgba(0,0,0,.5))'}));
+    const hops=[];frames.forEach((f,i)=>{if(i)hops.push({transform:frames[i-1].transform.replace(/translateY\([^)]*\)/,'translateY(-20px)').replace(/scale\([^)]*\)/,'scale(1.1)'),filter:f.filter,offset:(i-.5)/(frames.length-1)});hops.push(Object.assign({},f,{offset:frames.length>1?i/(frames.length-1):1}));});
+    hops[hops.length-1].filter='none';
+    cell.classList.add('travelling');p.classList.add('travelling');
+    const a=p.animate(hops,{duration:Math.max(380,190*(frames.length-1)),easing:'linear'});this._animations.add(a);
+    const done=()=>{this._animations.delete(a);cell.classList.remove('travelling');p.classList.remove('travelling');};a.onfinish=done;a.oncancel=done;
+  },30);
+};
+document.querySelectorAll('ur-game').forEach(g=>g.stageExtras&&g.stageExtras());
+})();
+</script>
 </body>
 </html>
