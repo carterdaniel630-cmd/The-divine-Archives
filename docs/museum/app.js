@@ -951,7 +951,7 @@ function statueTick() {
   for (const s of S.statues) {
     if (s.state === "idle" && d < STATUE_FETCH) {
       s.state = "loading";
-      loadStatue(s.st, s.holder).then((t) => { s.state = "ready"; s.tris = t.tris; s.nearTris = t.nearTris; s.farTris = t.farTris; S.dirty = true; })
+      loadStatue(s.st, s.holder).then((t) => { s.state = "ready"; s.tris = t.tris; s.nearTris = t.nearTris; s.midTris = t.midTris; s.farTris = t.farTris; S.dirty = true; })
         .catch((e) => { s.state = "failed"; console.warn("The " + s.st.name + " statue could not be loaded.", e); });
     }
     s.ped.visible = d < STATUE_FETCH;                     // pedestals too: nothing of the ring is drawn from the far end of the hall
@@ -1643,7 +1643,7 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
-  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, farTris: s.farTris, shown: s.holder.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
+  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, shown: s.holder.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
   segsNear: (x, z, r) => { const out = new Set(); for (const arr of GRID.values()) for (const g of arr) { const dx = g[2] - g[0], dz = g[3] - g[1], L2 = dx * dx + dz * dz; let t = L2 ? ((x - g[0]) * dx + (z - g[1]) * dz) / L2 : 0; t = Math.max(0, Math.min(1, t)); if (Math.hypot(x - g[0] - t * dx, z - g[1] - t * dz) < r) out.add(g.slice(0, 4).map((v) => +v.toFixed(2)).join(",")); } return [...out]; },
