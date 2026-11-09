@@ -43,10 +43,23 @@ atlas staged on `staging/ready-line` (`handoff/rotunda/tray1/`, see its `MANIFES
    (MD5 `9c46a04b…`), neither the rich (15.3 MB) nor light (2.8 MB) file named. The pages themselves
    are the fingerprinted files of record, so their meshes are used. Atlas to confirm these are the
    intended finished meshes.
-3. **Isis plaque, two lines for the reviewer to check against the record:** "of all the old gods she
-   was the last still worshipped, at Philae, into the sixth century" (the end of active cult at Philae
-   before Justinian's closure is debated in the scholarship), and "her temples stood from Britain to
-   Mesopotamia" (the Mesopotamian end is not sourced on the page). Not changed by the loop.
+3. **Isis plaque, two lines — fixed 2026-11-09 (review F1, F2).** Was: "of all the old gods she was the
+   last still worshipped, at Philae, into the sixth century" and "her temples stood from Britain to
+   Mesopotamia". Now: "her temples stood from Britain to the eastern provinces of Rome. Her temple at
+   Philae was among the last places the old gods were worshipped: one ancient account has the emperor
+   Justinian close it in the 530s, though historians still debate how long worship there had really
+   lasted." Sources:
+   - Philae: Procopius, *Wars* 1.19.36–37 (Justinian has Narses demolish the Philae sanctuaries; the
+     ancient account). The debate: J. H. F. Dijkstra, *Philae and the End of Ancient Egyptian Religion*
+     (Peeters, OLA 173, 2008), reviewed at BMCR 2009.06.43, https://bmcr.brynmawr.edu/?p=26464 (the
+     reviewer of #134 opened this page; this run could confirm it only through search results, the
+     page itself was not opened here — reviewer to re-read).
+   - Britain: a Roman flagon from Southwark inscribed "Londini ad fanum Isidis" ("at London, at the
+     temple of Isis"), London Museum, https://www.londonmuseum.org.uk/collections/v/object-23893/flagon/;
+     and National Geographic, "Worship of this Egyptian goddess spread from Egypt to England" (2020),
+     https://www.nationalgeographic.com/history/history-magazine/article/isis-egyptian-goddess-worship-spread-egypt-england
+     (both found through search; not opened in this run).
+   - "Eastern provinces of Rome" replaces the unsourced "Mesopotamia"; it is deliberately general.
 4. **Tray verdicts.** The conveyor rule is that a tray moves when all three figures have Carter's
    verdict. Shiva is recorded as approved; Socrates' source was approved and Isis was "awaiting
    verdict" in the 2026-10-28 records. These pages go live only on Carter's per-item yes.

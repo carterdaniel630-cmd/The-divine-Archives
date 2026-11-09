@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2012,
+ "count": 2015,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -1530,6 +1530,12 @@
     "relic:v39"
    ],
    "from": "sources/v39-derveni-papyrus.md"
+  },
+  {
+   "id": "source:bmcr-brynmawr-edu/1e3b01a41a",
+   "type": "source",
+   "label": "https://bmcr.brynmawr.edu/?p=26464",
+   "from": "sources/rotunda-tray1.md"
   },
   {
    "id": "source:bmcr-brynmawr-edu/23553c8885",
@@ -11930,6 +11936,12 @@
    "from": "sources/ch69-upanishads-hindu-synthesis.md"
   },
   {
+   "id": "source:londonmuseum-org-uk/4ffae9d279",
+   "type": "source",
+   "label": "https://www.londonmuseum.org.uk/collections/v/object-23893/flagon/",
+   "from": "sources/rotunda-tray1.md"
+  },
+  {
    "id": "source:louvre-fr/468b160136",
    "type": "source",
    "label": "https://www.louvre.fr/en/the-code-of-hammurabi",
@@ -12793,6 +12805,12 @@
     "site:golgotha-and-the-tomb"
    ],
    "from": "sources/pilgrimage-golgotha-and-the-tomb.md"
+  },
+  {
+   "id": "source:nationalgeographic-com/3125543aa4",
+   "type": "source",
+   "label": "https://www.nationalgeographic.com/history/history-magazine/article/isis-egyptian-goddess-worship-spread-egypt-england",
+   "from": "sources/rotunda-tray1.md"
   },
   {
    "id": "source:nationalgeographic-com/596fe196e8",
