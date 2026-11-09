@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2015,
+ "count": 2018,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -3078,6 +3078,12 @@
    "from": "sources/v53-rosetta-stone.md"
   },
   {
+   "id": "source:britishmuseum-org/ad0fc32819",
+   "type": "source",
+   "label": "https://www.britishmuseum.org/collection/object/W_1850-1228-4_1",
+   "from": "sources/games-ur-production.md"
+  },
+  {
    "id": "source:britishmuseum-org/c1596b3d9f",
    "type": "source",
    "label": "https://www.britishmuseum.org/blog/eureka-finding-key-ancient-egypt",
@@ -4054,6 +4060,12 @@
     "chapter:ch52"
    ],
    "from": "sources/ch52-jainism.md"
+  },
+  {
+   "id": "source:csclub-uwaterloo-ca/d75b741ef1",
+   "type": "source",
+   "label": "https://csclub.uwaterloo.ca/~pbarfuss/On_the_Rules_for_the_Royal_Game_of_Ur.pdf",
+   "from": "sources/games-ur-production.md"
   },
   {
    "id": "source:csmc-uni-hamburg-de/0b4c4fa3eb",
@@ -6624,6 +6636,12 @@
     "relic:v14"
    ],
    "from": "sources/v14-holy-grail.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/6ed72f19a5",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Royal_Game_of_Ur",
+   "from": "sources/games-ur-production.md"
   },
   {
    "id": "source:en-wikipedia-org/6edb7393e1",
