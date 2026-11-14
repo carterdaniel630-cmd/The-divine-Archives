@@ -38,10 +38,16 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
     merged 2026-11-01. #66 shows as merged with it.
   - #95 (`claude/games-fullscreen`): true full screen on a sideways phone for the Journal and Divine Casualties.
     Carter's yes 2026-11-08; merged to main by fast-forward once every check was green on its final head (the first
-    Lighthouse drops on Ouroboros and pinball did not reproduce locally: 98 vs 99 and 99 vs 99). Carter also said
-    yes (2026-11-08) to the same treatment for the other nine games: next branch `claude/games-fullscreen-all`.
-  - Open PRs now (2026-11-08): #127 (draft, build loop: the Rök Stone page). #120 merged 2026-11-08; #93 merged
-    2026-11-01; #60 (journal hero) closed unmerged 2026-11-07. #64, #67 and #68 below are merged.
+    Lighthouse drops on Ouroboros and pinball did not reproduce locally: 98 vs 99 and 99 vs 99). Deployed 2026-11-08.
+  - #128 (`claude/games-fullscreen-all`): the same for the other nine games (Carter's yes 2026-11-08): three columns
+    with the board as tall as the screen, nothing to scroll. Waiting on green checks and Carter's merge yes.
+  - #129 (`claude/games-deeplink-cls`): on main, a game window jumps as a game fills it (layout shift about 0.41
+    when the timing catches it), so Lighthouse on game pages flips between about 98 and about 80 on every PR.
+    Fix: on phone-width screens the window hangs from the top. Measured: layout shift 0 on all 11 game pages.
+    Visible change: shorter windows sit at the top on upright phones. #128 carries the same rule word for word.
+    Waiting on green checks and Carter's merge yes.
+  - Open PRs now (2026-11-08): #128 and #129. #127 (the Rök Stone page) merged 2026-11-08. #120 merged 2026-11-08; #93
+    merged 2026-11-01; #60 (journal hero) closed unmerged 2026-11-07. #64, #67 and #68 below are merged.
 - Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
   - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
   - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
@@ -101,7 +107,7 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 - From the 2026-10-18 review (one batch of questions): Stonehenge (a card on today's Druid and Pagan gatherings?
   list it?); Golgotha (accept the brief's six defaults? list it?); Ararat (more of the believer's side before
   listing?); Mogao (approve as a preview with its Buddha figures and manuscripts card?); Weighing of the Heart
-  (keep pending until the 1895 text is re-read; swap the V20 English line). #64, #66, #67, #68 and #95 are merged.
+  (keep pending until the 1895 text is re-read; swap the V20 English line). #64, #66, #67, #68 and #95 are merged; #128 and #129 wait on his merge yes.
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
