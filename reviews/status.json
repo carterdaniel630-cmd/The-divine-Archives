@@ -1,5 +1,5 @@
 {
   "autoPass": true,
-  "reason": "audit 2026-11-07: 17 of 20 counted re-reviewed items agreed (3 disagreements, 2 already fixed live, 1 queued); rolling accuracy over the last 3 counted runs 42/46 (91%); latest scored batch review-test/2026-10 missed no fake source or sensitivity error (no newer batch scored). Thin margin.",
-  "updated": "2026-11-07"
+  "reason": "audit 2026-11-14: 16 of 17 re-reviewed items agreed (1 disagreement: site:pr127 citation links, fixable, queued); rolling accuracy over the last 3 counted runs 43/47 (91%); latest scored batch review-test/2026-10 missed no fake source or sensitivity error (no newer batch scored). Thin margin.",
+  "updated": "2026-11-14"
 }
