@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-14 (20:35 UTC)
+# Handoff — updated 2026-11-14 (21:15 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Lighthouse gate-noise fix merged (2026-11-14 ~20:24 UTC)
+## Latest: games fill a sideways phone, window no longer jumps (2026-11-14 ~21:08 UTC)
+- **`main` = `bd8bbd81`** (deploy run 263): **PR #138** (#128 + #129 re-synced) fast-forwarded `b2b45e52` → `bd8bbd81` **per item** on Carter's yes (`decisions-2026-11-09-merges-yes.md` 3–4). On a phone turned sideways, the nine games that did not fill the screen now do, nothing hangs off the screen (Divine Casualties, Archive Chess and Dominion used to), and the games window no longer jumps when it opens.
+- **Open:** #136 (Carter yes, needs re-sync onto `bd8bbd81` + fresh checks); weekly audit overdue; staged orders in STATUS → Next.
+
+## Earlier: Lighthouse gate-noise fix merged (2026-11-14 ~20:24 UTC)
 - **`main` = `b2b45e52`** (deploy run 262 green, 20:24 UTC): **PR #137** fast-forwarded `42d2263a` → `b2b45e52` **per item** on Carter's yes (`decisions-2026-11-09-merges-yes.md` 1). The Lighthouse check now fails a page only when its median score drops past the limit AND a rank test says the drop is real, so runner noise stops blocking merges. No page on the live site changed.
 - **Open:** #128, #129, #136 (Carter yes, need re-sync + fresh checks); staged orders in STATUS → Next.
 
