@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-09 (08:50 UTC)
+# Handoff — updated 2026-11-14 (20:35 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Rotunda ring of statues merged (2026-11-09 ~08:45 UTC)
+## Latest: Lighthouse gate-noise fix merged (2026-11-14 ~20:24 UTC)
+- **`main` = `b2b45e52`** (deploy run 262 green, 20:24 UTC): **PR #137** fast-forwarded `42d2263a` → `b2b45e52` **per item** on Carter's yes (`decisions-2026-11-09-merges-yes.md` 1). The Lighthouse check now fails a page only when its median score drops past the limit AND a rank test says the drop is real, so runner noise stops blocking merges. No page on the live site changed.
+- **Open:** #128, #129, #136 (Carter yes, need re-sync + fresh checks); staged orders in STATUS → Next.
+
+## Earlier: Rotunda ring of statues merged (2026-11-09 ~08:45 UTC)
 - **`main` = `42d2263a`** (deploy run 261 green, 08:46 UTC): **PR #135** fast-forwarded `43850da4` → `42d2263a` **per item** on Carter's yes (`decisions-2026-11-09-carter-yes-merge-135.md`, covers C1). Adds Socrates, Shiva and Isis as 3D statues on pedestals in the museum's Rotunda (near / middle / far detail levels, phone budget ≤220k triangles, ≤100 calls), each linking to its pending statue page. Independent review + two delta reviews (last PASS 0 findings, `replies/2026-11-09-pr135-delta-review-2.md`); GitHub 6/6 green incl. Lighthouse (attempt 3); local checks re-run by the merging run (`replies/2026-11-09-run-0842-pr135-merged.md`). No pending tag cleared.
 
 ## Earlier: Rotunda Tray 1 merged (2026-11-09 ~01:22 UTC)
