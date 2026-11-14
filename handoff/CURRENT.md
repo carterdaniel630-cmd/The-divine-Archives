@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-14 (21:20 UTC)
+# Handoff — updated 2026-11-14 (23:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Royal Game of Ur production pass, part 1 merged (2026-11-14 ~21:17 UTC)
+## Latest: Rök page citation fix merged (2026-11-14 ~23:04 UTC)
+- **`main` = `dfe4d272`** (deploy run 265 green): **PR #140** fast-forwarded **by class (c)** (honesty/citation wording) on Carter's "a" (`decisions-2026-11-14-carter-a-rok-citations.md`). BBC Future link → bbc.com, Holmberg et al. → DOI, unsourced 3.82 m dropped. Pending tag stays. Review PASS 0 findings (`replies/2026-11-14-pr140-independent-review.md`); GitHub 8/8 green incl. Lighthouse.
+- **Open:** audit question (2) monthly trap test (Carter); staged orders in STATUS → Next.
+
+## Earlier: Royal Game of Ur production pass, part 1 merged (2026-11-14 ~21:17 UTC)
 - **`main` = `52df97bf`** (deploy run 264): **PR #136** re-synced onto `bd8bbd81` and fast-forwarded **per item** on Carter's yes (`decisions-2026-11-09-merges-yes.md` 2). Changes the sold Games of the Ancients product (`products/`), not the public site pages: pieces travel the board's road, and the rulebook story line names the rules as Finkel's reconstruction.
 - **Open:** weekly audit overdue; staged orders in STATUS → Next.
 
