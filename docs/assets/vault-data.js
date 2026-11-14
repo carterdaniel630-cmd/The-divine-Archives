@@ -1027,7 +1027,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stele belong to the Egyptian Museum and their photographers.", external: [] }
     },
     {
-      id: "v44", slug: "pilate-stone", status: "published", pending: false,
+      id: "v44", slug: "pilate-stone", status: "published", pending: true,
       era: "04-axial-age", year: 30, chapters: ["ch13", "ch16", "ch10"],
       title: "The Pilate Stone", category: "texts",
       source: "vault/v44-pilate-stone.md",
@@ -1038,10 +1038,10 @@ window.VAULT = {
         type: "inscription", theme: "limestone", title: "The inscription",
         sub: "The four surviving lines in Latin. Letters in brackets are restorations; show them to see how much is reconstructed.",
         lang: "la", dir: "ltr",
-        words: [["[…]S TIBERIEVM", "a building named for the emperor Tiberius, a 'Tiberieum'; the first word is lost"], ["[…PO]NTIVS PILATVS", "Pontius Pilate"], ["[…PRAEF]ECTVS IVDA[EA]E", "prefect of Judaea: his title in his own time"], ["[…FE]CIT D[E…]", "made, dedicated… (the end is uncertain)"]],
-        translation: "…Tiberieum … Pontius Pilate … prefect of Judaea … made/dedicated…",
+        words: [["[…]S TIBERIEVM", "a building named for the emperor Tiberius, a 'Tiberieum'; the first word is lost"], ["[…PO]NTIVS PILATVS", "Pontius Pilate"], ["[…PRAEF]ECTVS IVDA[EA]E", "prefect of Judaea: his title in his own time"], ["[…]E[…]", "only one letter survives, an E: restored as [ref]eci[t], 'restored', or read as the start of dedicavit, 'dedicated'"]],
+        translation: "…Tiberieum … Pontius Pilate … prefect of Judaea … restored/dedicated…",
         disputed: [0, 3], disputedLabel: "Show the uncertain restorations",
-        disputedNote: "The first and last lines are the least certain. One proposal restores the first as 'Nautis Tiberieum', a structure for sailors such as a lighthouse; others suggest a temple for the emperor cult."
+        disputedNote: "The first and last lines are the least certain. One proposal restores the first as 'Nautis Tiberieum', a structure for sailors such as a lighthouse; others suggest a temple for the emperor cult. Of the last line only one letter, an E, survives."
       },
       study: { manifest: "", rights: "Photographs of the stone belong to the Israel Museum.", external: [] }
     },

@@ -12,9 +12,10 @@ In **June 1961** an Italian team led by **Antonio Frova** was excavating the Rom
 > [ . . . ]S TIBERIEVM
 > [ . . . PO]NTIVS PILATVS
 > [ . . . PRAEF]ECTVS IVDA[EA]E
-> [ . . . FE]CIT D[E . . . ]
+> [ . . . ]E[ . . . ]
 
-- It records that **Pontius Pilate, prefect of Judaea**, built or dedicated a **Tiberieum**, a structure named in honour of the emperor **Tiberius**.
+- Only one letter of the last line survives, an E. Géza Alföldy restored it as *[ref]eci[t]*, "restored"; others read the start of *dedicavit*, "dedicated".
+- It records that **Pontius Pilate, prefect of Judaea**, built, restored or dedicated a **Tiberieum**, a structure named in honour of the emperor **Tiberius**.
 - Pilate governed Judaea from **26 to 36 CE**, so the stone dates from those years. The original is in the **Israel Museum**; a replica stands at Caesarea.
 
 ## Prefect, not procurator
@@ -66,6 +67,7 @@ Rome (ch13), Early Christianity (ch16) and Second Temple Judaism (ch10). Compare
 
 - "Pilate stone", https://en.wikipedia.org/wiki/Pilate_stone
 - Vici.org, "Caesarea Maritima: Pilate Stone", https://vici.org/vici/21598/?lang=en
+- *Corpus Inscriptionum Iudaeae/Palaestinae* II 1277, record in the *Judaism and Rome* database (dimensions 82 cm high, 65 cm wide, 20 cm deep; diplomatic text and readings of the last line), https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288
 - Ministry Magazine, "Pontius Pilate and the Caesarea Inscription" (1975), https://www.ministrymagazine.org/archive/1975/04/pontius-pilate-and-the-caesarea-inscription
 
 *Interpretation*
