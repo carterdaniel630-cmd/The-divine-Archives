@@ -51,6 +51,7 @@
     var coarse = !!(window.matchMedia && window.matchMedia("(pointer:coarse)").matches);
     function onResize() { syncZoom(); }
     window.addEventListener("resize", onResize);
+    window.addEventListener("archive:fit", onResize);   // full screen without a resize (phones whose browser only fills the window)
 
     function conf() { return LEVELS[level]; }
     function newGame() {
@@ -276,6 +277,6 @@
       root.innerHTML = '<p class="game-placeholder">The dig could not be loaded. Please reload the page.</p>';
     });
 
-    return function cleanup() { stopTimer(); window.removeEventListener("resize", onResize); };
+    return function cleanup() { stopTimer(); window.removeEventListener("resize", onResize); window.removeEventListener("archive:fit", onResize); };
   }
 })();

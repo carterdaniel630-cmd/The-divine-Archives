@@ -91,6 +91,11 @@
   background: rgba(10,7,3,.78);
   backdrop-filter: blur(2px);
 }
+/* phone-width screens: the game window hangs from the top instead of being centred. A game fills its window in
+   steps (its script arrives, then its first screen, then its art); centred, the window's top edge moved at each
+   step, a layout shift of about 0.4 on game pages reached by a link. Hung from the top, it only grows downward.
+   Most windows fill the height there anyway; shorter ones (Seeker's Path, the Reliquary) sit at the top. */
+@media (max-width:520px) { .game-overlay { align-items:flex-start; } }
 /* phones: no blur behind the game window (a full-screen blur every frame costs frame rate; speed fix #7) */
 @media (pointer: coarse) { .game-overlay { backdrop-filter: none; background: rgba(10,7,3,.9); } }
 @media (prefers-reduced-motion: no-preference) {
@@ -766,7 +771,7 @@
     aspect-ratio:auto; border:0; border-radius:0; box-shadow:none; }
   .game-dialog.is-full .ap-host .ap-dwell { position:absolute; z-index:2; left:max(10px, env(safe-area-inset-left)); bottom:12px; opacity:.42; transition:opacity .12s; }
   .game-dialog.is-full .ap-host .ap-face { position:absolute; z-index:2; right:max(10px, env(safe-area-inset-right)); bottom:20px; opacity:.5; transition:opacity .12s; }
-  .game-dialog.is-full .ap-host .ap-mid { position:absolute; z-index:2; left:50%; bottom:max(6px, env(safe-area-inset-bottom)); transform:translateX(-50%); opacity:.7; }
+  .game-dialog.is-full .ap-host .ap-mid { position:absolute; z-index:2; left:50%; bottom:max(14px, env(safe-area-inset-bottom));   /* 14px: the tilted pill stays wholly on screen */ transform:translateX(-50%); opacity:.7; }
   .game-dialog.is-full .ap-host .ap-mid .ap-btn { height:22px; }
   .game-dialog.is-full .ap-host .ap-mid .ap-cap { display:block; }   /* the small middle buttons keep their words (Pause), as a pill can't say what it does */
   .game-dialog.is-full .ap-host .ap-l, .game-dialog.is-full .ap-host .ap-r { position:absolute; z-index:2; top:3.1rem; width:auto; min-width:7.5rem; opacity:.7; }
@@ -785,6 +790,110 @@
   .game-dialog.is-full:has(.ap-host .fg-canvas) .rq-actions { top:84px; bottom:auto; opacity:.6; }
   .game-dialog.is-full:has(.ap-host .fg-canvas) .rq-actions .rq-btn { padding:.3rem .9rem; font-size:.66rem; }
   .game-dialog.is-full:has(.ap-host) .game-fs, .game-dialog.is-full:has(.ap-host) .game-close { z-index:4; opacity:.6; }
+}
+
+/* full screen on a phone held sideways (the board games: Ouroboros, the Labyrinth, Ziggurat, Antithesis, Dominion,
+   Archive Chess, the Excavation; and the Reliquary's questions): the screen becomes three columns, with the board
+   as tall as the screen in the middle, the score and messages on the left and the controls on the right, so nothing
+   has to scroll. The Reliquary uses two columns: the question on the left, the answers on the right. archive-games.js
+   leaves the board's size to these rules in this mode (fitMain). */
+@media (orientation:landscape) and (max-height:540px) and (pointer:coarse) {
+  .game-dialog.is-full:has(> div > :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap, .rq-choices)) { padding:0 !important; overflow:hidden; }
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap)) {
+    display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); grid-template-rows:minmax(0,1fr) auto minmax(0,auto) auto minmax(0,auto) minmax(0,1fr);
+    column-gap:14px; align-items:center; justify-items:center; flex:none; width:100%; height:100dvh; margin:0; box-sizing:border-box;
+    padding:42px max(12px, env(safe-area-inset-right)) 6px max(12px, env(safe-area-inset-left)); }
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap)) > :is(.game-head, .game-rule) { display:none; }
+  /* the board, in the middle, as tall as the screen (its corner marks kept). The side columns start below the two
+     corner buttons (the 42px top padding); the board rises 36px into that padding, so it stays centred on the screen. */
+  .game-dialog.is-full > div > :is(.ouro-stage, .pm-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap) { grid-area:1 / 2 / -1 / 3; margin:-36px 0 0; width:auto; max-width:none; padding:6px; }
+  .game-dialog.is-full > div > :is(.ouro-stage, .pm-stage, .ch-boardwrap) > canvas { height:calc(100dvh - 28px) !important; width:auto !important; max-width:none !important; max-height:none !important; }
+  /* left column: the score, then the messages; right column: the controls */
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap)) > :is(.game-scorebar, .pm-hud, .pg-hud, .rk-hud, .ms-bar, .ch-status) { grid-area:2 / 1; margin:0; max-width:100%; flex-wrap:wrap; justify-content:center; gap:.4rem .6rem; }
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap)) > .ouro-toast { grid-area:3 / 1; margin:.6rem 0 0; max-width:100%; min-height:0; font-size:.84rem; }
+  /* rows 2 and 4 (the score, the keys, the buttons) keep their size; rows 3 and 5 hold the messages, and a message
+     too long for what is left scrolls in its own box */
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap)) > :is(.ouro-toast, .rk-msg, .rk-log, .ms-toast) { max-height:100%; overflow-y:auto; overscroll-behavior:contain; }
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage, .zig-stage, .pg-stage, .rk-stage, .ch-boardwrap, .ms-grid-wrap)) > :is(.ouro-controls, .pg-controls, .rk-controls) { grid-area:2 / 3; margin:0; }
+  .game-dialog.is-full > div > .game-scorebar .stat { padding:.3rem .6rem; min-width:0; }
+  .game-dialog.is-full > div > .game-scorebar .stat b { font-size:1.1rem; }
+  /* Ouroboros and the Labyrinth: the facts and messages go under the D-pad, the score has the left side to itself */
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage)) > .ouro-controls { grid-area:2 / 3; }
+  .game-dialog.is-full > div:has(> :is(.ouro-stage, .pm-stage)) > .ouro-toast { grid-area:3 / 3; }
+
+  /* Ziggurat: the well in the middle; the next pieces above the keys on the right; the rising ziggurat under the score */
+  .game-dialog.is-full > div > .zig-stage, .game-dialog.is-full > div > .zig-stage > .zig-side { display:contents; }
+  .game-dialog.is-full > div > .zig-stage > .zig-well-wrap { grid-area:1 / 2 / -1 / 3; padding:6px; margin-top:-36px; }
+  .game-dialog.is-full .zig-well { height:calc(100dvh - 34px) !important; width:auto !important; max-width:none !important; }
+  .game-dialog.is-full > div > .zig-stage .zig-queues { grid-area:2 / 3; }
+  .game-dialog.is-full > div:has(> .zig-stage) { grid-template-rows:minmax(0,1fr) auto auto minmax(0,auto) minmax(0,1fr); }
+  .game-dialog.is-full > div > .zig-stage .zig-mon-wrap { grid-area:3 / 1; margin-top:.5rem; }
+  .game-dialog.is-full > div:has(> .zig-stage) > .ouro-toast { grid-area:4 / 1; }
+  .game-dialog.is-full > div > .zig-stage .zig-mon { width:52px; }
+  .game-dialog.is-full > div > .zig-stage .zig-next-cv { height:132px; }
+  .game-dialog.is-full > div:has(> .zig-stage) > .ouro-controls { grid-area:3 / 3; margin-top:.6rem; }
+
+  /* Antithesis: a wide court, so it keeps about 100px each side for the score and the keys (full height on most phones;
+     on 16:9 phones the court is a little shorter) */
+  .game-dialog.is-full > div:has(> .pg-stage) > .pg-hud { flex-direction:column; gap:.3rem; }
+  .game-dialog.is-full .pg-canvas { width:min(calc((100dvh - 28px) * 1.6), calc(100vw - 244px)) !important; height:auto !important; max-width:none !important; max-height:none !important; }
+  .game-dialog.is-full > div > .pg-controls { flex-direction:column; gap:.6rem; }
+  .game-dialog.is-full > div > .pg-controls .pg-mode { white-space:normal; max-width:100%; font-size:.62rem; padding:.45rem .7rem; }
+  .game-dialog.is-full > div:has(> .pg-stage) > .ouro-toast { font-size:.74rem; }
+
+  /* Dominion: the map in the middle; the powers, the orders and the record on the left; the button and the news on the right */
+  .game-dialog.is-full .rk-canvas { width:min(calc((100dvh - 28px) * 1.1467), calc(100vw - 320px)) !important; height:auto !important; max-width:none !important; max-height:none !important; }
+  .game-dialog.is-full > div > .rk-msg { grid-area:3 / 1; margin:.4rem 0 0; max-width:100%; }
+  .game-dialog.is-full > div > .rk-cards { grid-area:4 / 1; margin:.3rem 0 0; }
+  .game-dialog.is-full > div > .rk-log { grid-area:5 / 1; margin:.3rem 0 0; max-width:100%; }
+  .game-dialog.is-full > div:has(> .rk-stage) > .rk-controls { grid-area:2 / 3; }
+  .game-dialog.is-full > div:has(> .rk-stage) > .ouro-toast { grid-area:3 / 3; margin:.6rem 0 0; }
+  .game-dialog.is-full > div > .rk-controls .rk-next { white-space:normal; }
+
+  /* Archive Chess: the board in the middle; whose move and Black's captures on the left; White's captures, the fact
+     and the match buttons on the right */
+  .game-dialog.is-full > div > .ch-tray-b { grid-area:3 / 1; max-width:100%; margin-top:.6rem; }
+  .game-dialog.is-full > div > .ch-tray-w { grid-area:2 / 3; max-width:100%; }
+  .game-dialog.is-full > div:has(> .ch-boardwrap) > .ouro-toast { grid-area:3 / 3; }
+  .game-dialog.is-full > div:has(> .ch-boardwrap) > .rq-actions { grid-area:4 / 3; margin-top:.5rem; }
+
+  /* the Excavation: the dig as tall as the screen; the counters on the left; the flag and zoom buttons and the
+     messages on the right, under the thumb */
+  .game-dialog.is-full > div > .ms-tools { grid-area:2 / 3; margin:0; flex-direction:column; }
+  .game-dialog.is-full > div:has(> .ms-grid-wrap) > .ms-toast { grid-area:3 / 3; }
+  .game-dialog.is-full > div > .ms-grid-wrap .ms-grid { width:calc(100dvh - 26px); max-width:none; }
+  .game-dialog.is-full > div > .ms-grid-wrap.is-zoomed { width:calc(100dvh - 26px); max-height:calc(100dvh - 26px); min-height:0; }
+
+  /* the choosing screens of Divine Casualties and Archive Chess: your side on the left, the opponent on the right,
+     the opponent switch and the start button under them */
+  .game-dialog.is-full:has(> div > :is(.fg-cards, .ch-cards)) { padding:0 !important; overflow:hidden; }
+  .game-dialog.is-full > div:has(> :is(.fg-cards, .ch-cards)) {
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:1fr auto auto auto 1fr;
+    column-gap:24px; align-items:center; justify-items:center; flex:none; width:100%; height:100dvh; margin:0; box-sizing:border-box;
+    padding:40px max(12px, env(safe-area-inset-right)) 8px max(12px, env(safe-area-inset-left)); }
+  .game-dialog.is-full > div:has(> :is(.fg-cards, .ch-cards)) > .game-head { display:none; }
+  .game-dialog.is-full > div:has(> :is(.fg-cards, .ch-cards)) > .fg-sel-row-label { grid-area:2 / 1; margin:0 0 .45rem; }
+  .game-dialog.is-full > div:has(> :is(.fg-cards, .ch-cards)) > .fg-sel-row-label ~ .fg-sel-row-label { grid-area:2 / 2; }
+  .game-dialog.is-full > div > :is(.fg-cards, .ch-cards) { grid-area:3 / 1; flex-wrap:nowrap; gap:6px; max-width:100%; }
+  .game-dialog.is-full > div > :is(.fg-cards, .ch-cards) ~ :is(.fg-cards, .ch-cards) { grid-area:3 / 2; }
+  .game-dialog.is-full > div:has(> :is(.fg-cards, .ch-cards)) > .fg-sel-mode { grid-area:4 / 1; margin:.9rem 0 0; }
+  .game-dialog.is-full > div:has(> :is(.fg-cards, .ch-cards)) > .rq-actions { grid-area:4 / 2; margin:.9rem 0 0; }
+  .game-dialog.is-full > div > .fg-cards .fg-card { width:auto; flex:0 1 92px; min-width:0; }
+  .game-dialog.is-full > div > .ch-cards .ch-card { width:auto; flex:0 1 120px; min-width:0; }
+
+  /* the Reliquary: the question, the score and the verdict on the left; the four answers on the right */
+  .game-dialog.is-full > div:has(> .rq-choices) {
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); grid-template-rows:1fr repeat(3, auto) 1fr;
+    column-gap:20px; align-items:center; flex:none; width:100%; height:100dvh; margin:0; box-sizing:border-box;
+    padding:44px max(16px, env(safe-area-inset-right)) 8px max(16px, env(safe-area-inset-left)); }
+  .game-dialog.is-full > div:has(> .rq-choices) > .game-head { grid-area:2 / 1; margin:0 !important; }
+  .game-dialog.is-full > div:has(> .rq-choices) > .game-head h2 { font-size:1.05rem !important; }
+  .game-dialog.is-full > div:has(> .rq-choices) > .game-rule { display:none; }
+  .game-dialog.is-full > div:has(> .rq-choices) > .game-scorebar { grid-area:3 / 1; margin:.6rem 0 0; }
+  .game-dialog.is-full > div:has(> .rq-choices) > .rq-feedback { grid-area:4 / 1; margin:.4rem 0 0; }
+  .game-dialog.is-full > div:has(> .rq-choices) > .rq-choices { grid-area:2 / 2 / 4 / 3; margin:0; }
+  .game-dialog.is-full > div:has(> .rq-choices) > .rq-actions { grid-area:4 / 2; margin:.4rem 0 0; }
+  .game-dialog.is-full > div:has(> .rq-choices) .rq-choice { padding-top:.5rem; padding-bottom:.5rem; }
 }
 
 /* ---- laptop-height screens: the whole game (board + controls) fits without scrolling ---- */
