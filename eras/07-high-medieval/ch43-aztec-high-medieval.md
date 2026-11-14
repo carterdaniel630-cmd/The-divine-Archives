@@ -54,11 +54,11 @@ The Aztec are one of the three great temple religions of the pre-Columbian Ameri
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The city of Tenochtitlan and the **Templo Mayor** (rediscovered 1978); the twin cult of Huitzilopochtli and Tlaloc; the Coyolxauhqui Stone and the **Huei Tzompantli** skull rack; the **Fifth Sun** cosmogony and the debt-of-blood theology; the pantheon; the calendars and the New Fire Ceremony; the **reality of large-scale human sacrifice**; and the poetry and philosophy preserved in Sahagún's **Florentine Codex** and the Nezahualcoyotl tradition.
+**What's well supported by the evidence.** The city of Tenochtitlan and the **Templo Mayor** (rediscovered 1978); the twin cult of Huitzilopochtli and Tlaloc; the Coyolxauhqui Stone and the **Huei Tzompantli** skull rack; the **Fifth Sun** cosmogony and the debt-of-blood theology; the pantheon; the calendars and the New Fire Ceremony; the **reality of large-scale human sacrifice**; and the poetry and philosophy preserved in Sahagún's **Florentine Codex** and the Nezahualcoyotl tradition.
 
 **Not supported — propaganda and myth.** The **inflated sacrifice numbers** of the chroniclers (the 80,400 of 1487 is impossible and served the conquest); the flat caricature of a purely bloodthirsty people; and, very probably, the story that Moctezuma mistook **Cortés for Quetzalcoatl**, a largely post-conquest construction.
 
-**Genuinely open.** The precise **scale** of sacrifice (low thousands a year is the current estimate, but the record is partial); how far the "monotheism" of **Ometeotl** was a genuine Mexica theology versus a modern scholarly reconstruction (the León-Portilla debate); and how much of the whole picture is distorted by reaching us almost entirely through Spanish and mission-educated sources.
+**What's genuinely open.** The precise **scale** of sacrifice (low thousands a year is the current estimate, but the record is partial); how far the "monotheism" of **Ometeotl** was a genuine Mexica theology versus a modern scholarly reconstruction (the León-Portilla debate); and how much of the whole picture is distorted by reaching us almost entirely through Spanish and mission-educated sources.
 
 ## Sources
 

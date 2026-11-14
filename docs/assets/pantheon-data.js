@@ -15,6 +15,7 @@
           ('-' = none; extras comma-separated). Drawn by pantheon-art.js.
      c    optional note on what is contested about the figure
      v    optional Vault ids
+     s    optional statue page in the Rotunda Circle (rotunda/<s>.html)
 
    The portraits are interpretive emblems built from each figure's traditional
    attributes. They do not reproduce any historical image.
@@ -74,7 +75,7 @@
       p: "human atef flail earth -", v: ["v20", "v34"] },
     { id: "isis", n: "Isis", t: "egypt", k: "deity", ch: ["ch02", "ch18"], e: "Great of magic",
       d: "Wife of Osiris and mother of Horus, whose magic revived her husband. Her cult spread across the Roman world as a mystery religion.",
-      p: "human throne ankh stars wings" },
+      p: "human throne ankh stars wings", s: "isis" },
     { id: "horus", n: "Horus", t: "egypt", k: "deity", ch: ["ch02", "ch49"], e: "The falcon king",
       d: "Son of Osiris and Isis, who fought Set for the throne of Egypt. Each living pharaoh was identified with Horus.",
       p: "falcon double spear sun -" },
@@ -298,7 +299,7 @@
       p: "human crown noose waves -" },
     { id: "shiva", n: "Shiva", t: "hindu", k: "deity", ch: ["ch24", "ch30"], e: "The auspicious one",
       d: "Great god of destruction and renewal, ascetic and householder, shown with a third eye, a trident and the crescent moon in his hair.",
-      p: "human topknot trident - eye3" },
+      p: "human topknot trident - eye3", s: "shiva" },
     { id: "vishnu", n: "Vishnu", t: "hindu", k: "deity", ch: ["ch30"], e: "The preserver",
       d: "Preserver of the world, who descends in avatars such as Rama and Krishna, shown with four arms holding conch, discus, mace and lotus.",
       p: "human crown wheel - arms4" },
@@ -441,25 +442,25 @@
       p: "human crescent - moon -" },
 
     // ---------------------------------------------------------------- Yoruba (ch33)
-    { id: "olodumare", n: "Olódùmarè", t: "yoruba", k: "deity", ch: ["ch33"], e: "The supreme being",
+    { id: "olodumare", n: "Olódùmarè", t: "yoruba", k: "deity", ch: ["ch33", "ch84"], e: "The supreme being",
       d: "The distant high god of Yoruba religion, owner of the heavens, approached through the orishas rather than worshipped directly.",
       p: "void - - sun -" },
-    { id: "obatala", n: "Ọbàtálá", t: "yoruba", k: "deity", ch: ["ch33", "ch40"], e: "King of the white cloth",
+    { id: "obatala", n: "Ọbàtálá", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch84"], e: "King of the white cloth",
       d: "Orisha who shaped human bodies from clay, associated with purity, calm judgement and the colour white.",
       p: "human crown staff clouds -" },
-    { id: "ogun", n: "Ògún", t: "yoruba", k: "deity", ch: ["ch33", "ch40"], e: "Lord of iron",
+    { id: "ogun", n: "Ògún", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch84"], e: "Lord of iron",
       d: "Orisha of iron, hunting, war and technology, patron of smiths, drivers and everyone who works with metal.",
       p: "human - sword flames -" },
-    { id: "shango", n: "Ṣàngó", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch49"], e: "Lord of thunder",
+    { id: "shango", n: "Ṣàngó", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch49", "ch84"], e: "Lord of thunder",
       d: "Orisha of thunder and lightning, remembered as a king of Oyo, whose emblem is the double axe.",
       p: "human crown doubleaxe storm -" },
-    { id: "oshun", n: "Ọ̀ṣun", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch48"], e: "Lady of the river",
+    { id: "oshun", n: "Ọ̀ṣun", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch48", "ch84"], e: "Lady of the river",
       d: "Orisha of the Osun river, of love, fertility and sweet water, honoured each year at the sacred grove of Osogbo, a UNESCO World Heritage Site.",
       p: "human crown mirror waves -" },
-    { id: "eshu", n: "Èṣù", t: "yoruba", k: "trickster", ch: ["ch33", "ch40"], e: "Guardian of the crossroads",
+    { id: "eshu", n: "Èṣù", t: "yoruba", k: "trickster", ch: ["ch33", "ch40", "ch84"], e: "Guardian of the crossroads",
       d: "Messenger between people and the orishas and keeper of the crossroads, who must be honoured first. Missionaries wrongly equated him with the Devil.",
       p: "human cap key - -" },
-    { id: "yemoja", n: "Yemọja", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch48"], e: "Mother of waters",
+    { id: "yemoja", n: "Yemọja", t: "yoruba", k: "deity", ch: ["ch33", "ch40", "ch48", "ch84"], e: "Mother of waters",
       d: "Orisha of the Ogun river and, in the Americas as Yemayá, of the ocean; a mother of the orishas.",
       p: "human crown - waves -" },
 

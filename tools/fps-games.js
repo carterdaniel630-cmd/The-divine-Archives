@@ -38,7 +38,6 @@ const GAMES = {
   antithesis:        { keys: ["ArrowUp", "ArrowDown"], every: 200 },
   excavation: { tapCells: true, keys: [], every: 1000 },
   labyrinth:      { keys: ARROWS, every: 300 },
-  pinball:     { start: /launch/i, keys: ["ArrowLeft", "ArrowRight", " "], every: 220 },
   dominion:        { tapCanvas: true, keys: [], every: 1000 },
   treasure:    { start: /begin the expedition/i, then: /^enter /i, keys: ["ArrowRight", "ArrowLeft", "ArrowUp", " "], every: 220 },
 };

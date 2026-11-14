@@ -60,11 +60,11 @@ African traditional religion belongs, in its deep structures — a High God, spi
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The broad shared structures of sub-Saharan traditional religion (a high creator God, intermediary spirits, powerful ancestors, divination, and possession); the specific great systems (Yoruba orisha and Ifá, Akan and the Golden Stool, Fon vodun, Kongo cosmology and minkisi, Dogon, San trance-religion, Nuer Kwoth); the scale and route of the **transatlantic slave trade** (~12.5 million people); and the historical formation of the **Afro-Atlantic religions** through syncretism.
+**What's well supported by the evidence.** The broad shared structures of sub-Saharan traditional religion (a high creator God, intermediary spirits, powerful ancestors, divination, and possession); the specific great systems (Yoruba orisha and Ifá, Akan and the Golden Stool, Fon vodun, Kongo cosmology and minkisi, Dogon, San trance-religion, Nuer Kwoth); the scale and route of the **transatlantic slave trade** (~12.5 million people); and the historical formation of the **Afro-Atlantic religions** through syncretism.
 
 **Not supported — colonial distortions and a modern myth.** The old labels "**fetishism**," "**animism**," and "**ancestor worship**" as verdicts of contempt; the picture of a single, static "African religion"; and, specifically, the claim that the **Dogon** held impossible ancient astronomical knowledge of Sirius B — a modern legend that van Beek's fieldwork undercut and that likely originated in Griaule's own leading questions.
 
-**Genuinely open.** Because these traditions were **oral** and are known largely through outside and often hostile observers, the pre-colonial detail of many is genuinely uncertain; reconstructing what was believed before the missionaries and anthropologists arrived — and how far the act of recording it reshaped it (the Griaule problem) — is a standing difficulty. The exact African origins of particular diaspora practices remain actively debated.
+**What's genuinely open.** Because these traditions were **oral** and are known largely through outside and often hostile observers, the pre-colonial detail of many is genuinely uncertain; reconstructing what was believed before the missionaries and anthropologists arrived — and how far the act of recording it reshaped it (the Griaule problem) — is a standing difficulty. The exact African origins of particular diaspora practices remain actively debated.
 
 ## Sources
 

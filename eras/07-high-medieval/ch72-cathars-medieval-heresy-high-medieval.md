@@ -88,11 +88,11 @@ The dualism of the good Christians belongs to a long family: the Gnostics of **c
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The existence of dissenting religious groups in Languedoc and northern Italy in the twelfth and thirteenth centuries, whose dualist beliefs are attested in their own surviving texts (the Interrogatio Iohannis, the Ritual of Lyon, the Book of the Two Principles) as well as by their opponents; the consolamentum and the life of the perfects; the Albigensian Crusade (1209–1229), the massacre at Béziers and the mass burnings; the inquisition and its records, including the Fournier register; the fall of Montségur (1244); the Waldensians, the condemnation of Porete (1310), Wyclif and the Lollards, and the burning of Hus (1415).
+**What's well supported by the evidence.** The existence of dissenting religious groups in Languedoc and northern Italy in the twelfth and thirteenth centuries, whose dualist beliefs are attested in their own surviving texts (the Interrogatio Iohannis, the Ritual of Lyon, the Book of the Two Principles) as well as by their opponents; the consolamentum and the life of the perfects; the Albigensian Crusade (1209–1229), the massacre at Béziers and the mass burnings; the inquisition and its records, including the Fournier register; the fall of Montségur (1244); the Waldensians, the condemnation of Porete (1310), Wyclif and the Lollards, and the burning of Hus (1415).
 
-**Not supported (as established fact).** That Arnaud Amalric said "Kill them all, God will know his own" (reported decades later, second-hand); that the Cathars held the Holy Grail, a secret treasure of knowledge or a bloodline of Christ; that the "Cathar castles" as seen today are Cathar buildings; that the dove or the Occitan cross was a Cathar symbol; that the Free Spirit was a proven organized sect.
+**What's not supported by the evidence.** That Arnaud Amalric said "Kill them all, God will know his own" (reported decades later, second-hand); that the Cathars held the Holy Grail, a secret treasure of knowledge or a bloodline of Christ; that the "Cathar castles" as seen today are Cathar buildings; that the dove or the Occitan cross was a Cathar symbol; that the Free Spirit was a proven organized sect.
 
-**Genuinely open.** How organized and uniform the Cathar church was, and how far the inquisitors constructed it (Moore and Pegg against the traditional view); the extent of Bogomil influence and the authenticity of the Saint-Félix document; the practice of the endura; and the numbers of believers and of victims.
+**What's genuinely open.** How organized and uniform the Cathar church was, and how far the inquisitors constructed it (Moore and Pegg against the traditional view); the extent of Bogomil influence and the authenticity of the Saint-Félix document; the practice of the endura; and the numbers of believers and of victims.
 
 ## Sources
 

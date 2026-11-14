@@ -55,11 +55,11 @@ The Inca are the third of the great temple religions of the pre-Columbian Americ
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The empire and its capital; the **Coricancha** and the **ceque system** of huacas; the cult of **Inti** and the divine **Sapa Inca**; the **royal mummy (mallqui) / panaca** ancestor cult (attested archaeologically and by the Spanish who destroyed the mummies); the **capacocha** child sacrifice (the frozen mummies of Llullaillaco and other peaks); the **quipu**; the **Pachacamac** oracle; and the post-conquest **extirpation** campaigns and the Taki Onqoy movement.
+**What's well supported by the evidence.** The empire and its capital; the **Coricancha** and the **ceque system** of huacas; the cult of **Inti** and the divine **Sapa Inca**; the **royal mummy (mallqui) / panaca** ancestor cult (attested archaeologically and by the Spanish who destroyed the mummies); the **capacocha** child sacrifice (the frozen mummies of Llullaillaco and other peaks); the **quipu**; the **Pachacamac** oracle; and the post-conquest **extirpation** campaigns and the Taki Onqoy movement.
 
 **Not supported / heavily filtered.** Because the Inca left **no writing**, the narrative mythology and the tidy pantheon reach us only through post-conquest, often hostile or Christianizing **Spanish sources**; the elevation of **Viracocha** to a single supreme creator may be partly a missionary construction, and much "Inca theology" is a colonial ordering of a more local, various reality.
 
-**Genuinely open.** The **quipu** remains largely unread, so the Inca's own records are still mostly closed to us. The precise **theology** behind the practices is seen through the eyes of the conquerors. And the antiquity of some now-popular symbols (the *chakana* "Andean cross") is uncertain. We possess the Inca's stones, cords, and frozen dead in abundance; their inner voice we have barely begun to hear.
+**What's genuinely open.** The **quipu** remains largely unread, so the Inca's own records are still mostly closed to us. The precise **theology** behind the practices is seen through the eyes of the conquerors. And the antiquity of some now-popular symbols (the *chakana* "Andean cross") is uncertain. We possess the Inca's stones, cords, and frozen dead in abundance; their inner voice we have barely begun to hear.
 
 ## Sources
 

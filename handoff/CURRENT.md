@@ -18,11 +18,49 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
 
 ## Review desk
 - Reviewer and auditor run as scheduled tasks; reports live on the `review-log` branch. Latest: the
-  2026-10-10 reviewer reports and `reviews/2026-10-11-audit.md` (6 of 6 agreed; auto-pass on).
+  2026-10-18 manual run Carter asked for (six reports `reviews/2026-10-18-*.md`, covering #44 and #48, #46, #47,
+  #51, #52/#54/#55 and the Mogao Caves in #53: 14 passed, 0 fixed, 11 need Carter), and
+  `reviews/2026-10-11-audit.md` (6 of 6 agreed; auto-pass on). The reviewer and auditor are also project
+  skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, from #64).
 - The "say so when the previous run failed" check is on `review-log` and on branch
   `ccr-7a4d8bed-4kfyao` (not merged); the reviewer's scheduled prompt carries it in the meantime.
 
 ## Open PRs and branches in flight (updated 2026-10-12 by the framework session)
+- Update 2026-10-26 (Pilgrimage thread): #53 merged to main at 68b7b03 after a clean independent review
+  (0 findings) and every check green, Lighthouse included; deploy job green. Göbekli Tepe, Delphi, the Mogao
+  Caves and Chichén Itzá are noindex previews, pending review. Delphi's theatre keeps both readings
+  (Carter's go-ahead, 2026-10-31).
+  - Batch 2 (Persepolis, Angkor Wat, Borobudur), PR #87: clean independent review at 75b931d, all checks green,
+    Carter's go-ahead 2026-10-31 (`handoff/replies/2026-10-31-pr87-merge-gate.md`). Noindex previews, pending review.
+  - Newgrange: #94 (`claude/project-thread-s3qxre`) carries #66 forward. It is current main with #66's branch
+    merged in unchanged, plus the batch-2 review fixes and the ch42 follow-up. Carter approved #66 on 2026-11-01
+    ("yes on 66"). Clean independent review at c343c32, all checks green (`handoff/replies/2026-11-01-pr94-merge-gate.md`);
+    merged 2026-11-01. #66 shows as merged with it.
+  - #95 (`claude/games-fullscreen`): true full screen on a sideways phone for the Journal and Divine Casualties.
+    Carter's yes 2026-11-08; merged to main by fast-forward once every check was green on its final head (the first
+    Lighthouse drops on Ouroboros and pinball did not reproduce locally: 98 vs 99 and 99 vs 99). Deployed 2026-11-08.
+  - #128 (`claude/games-fullscreen-all`): the same for the other nine games (Carter's yes 2026-11-08): three columns
+    with the board as tall as the screen, nothing to scroll. Waiting on green checks and Carter's merge yes.
+  - #129 (`claude/games-deeplink-cls`): on main, a game window jumps as a game fills it (layout shift about 0.41
+    when the timing catches it), so Lighthouse on game pages flips between about 98 and about 80 on every PR.
+    Fix: on phone-width screens the window hangs from the top. Measured: layout shift 0 on all 11 game pages.
+    Visible change: shorter windows sit at the top on upright phones. #128 carries the same rule word for word.
+    Waiting on green checks and Carter's merge yes.
+  - Open PRs now (2026-11-08): #128 and #129. #127 (the Rök Stone page) merged 2026-11-08. #120 merged 2026-11-08; #93
+    merged 2026-11-01; #60 (journal hero) closed unmerged 2026-11-07. #64, #67 and #68 below are merged.
+- Opened 2026-10-18 by the tie-ins session, each green or running, each waiting on Carter's merge:
+  - #64 `claude/review-skills`: reviewer and auditor as project skills; the tie-ins recorded.
+  - #66 `claude/pilgrimage-newgrange`: Newgrange preview. This is the batch-2 session's build (1691af3, held back
+    from #53) with an animated midwinter sunrise and neutral indoor light. Batch 2 should build on it, not
+    on a second copy.
+  - #67 `claude/site-fixes-2026-10-18`: era-page emblems (broken by #46), long source links on phones, and the
+    arcade's Divine Casualties line (Hades not an Olympian).
+  - #68 `claude/pilgrimage-51-fixes`: the reviewer's nine #51 fixes, plus the guided walk on Ararat (reduced
+    motion) and on the live Library of Alexandria (stuck at its second stop).
+- Open review findings with no PR yet: graphify tidy-ups (4 items in `reviews/2026-10-18-graphify-52.md`;
+  overlap with #61/#65); Mogao fixes for #53's builder (`reviews/2026-10-18-mogao-53.md`: the stair to Cave
+  254, the Cave 16/17 sign, a possibly unfindable 2002 abstract); V20 credit and papyrus height
+  (`reviews/2026-10-18-weighing-47.md`).
 - Merged 2026-10-11 with Carter's go-ahead, all deployed:
   - #42: source review of the pending chapters
   - #40: framework Phases 1 and 2
@@ -66,6 +104,10 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   generated `graph-tools` branch, so sessions with the package index blocked still get `graphify query`.
 
 ## Needs Carter
+- From the 2026-10-18 review (one batch of questions): Stonehenge (a card on today's Druid and Pagan gatherings?
+  list it?); Golgotha (accept the brief's six defaults? list it?); Ararat (more of the believer's side before
+  listing?); Mogao (approve as a preview with its Buddha figures and manuscripts card?); Weighing of the Heart
+  (keep pending until the 1895 text is re-read; swap the V20 English line). #64, #66, #67, #68 and #95 are merged; #128 and #129 wait on his merge yes.
 - Clearing the remaining 17 pending chapters (14 of the 31 were cleared in #50).
 - Wing VI and the arcade went live with no recorded approval (from the 2026-10-10 review). The clearance
   log now records chapters sent back to pending under `reopened` (Carter's yes, 2026-10-11).
@@ -76,6 +118,9 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   run as manual sessions.
 
 ## Decisions still in effect
+- Carter, 2026-10-11 tie-ins: visual passes use the frontend-design skill (CLAUDE.md, quality bar); the reviewer
+  and auditor are project skills (`.claude/skills/reviewer`, `.claude/skills/auditor`, wrapping `reviews/`); OmniRoute is
+  not used.
 - Sourcing rule: scholarly or primary sources first, Wikipedia only as a labelled pointer; flag any chapter
   over 20%.
 - No images of the Báb; tjurunga never shown; restricted sites exterior only; Kaaba courtyard without figures.

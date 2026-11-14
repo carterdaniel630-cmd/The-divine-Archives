@@ -21,15 +21,16 @@
    ========================================================================== */
 import * as THREE from "three";
 import { createSky } from "./sky.js?v=1";
-import { createInspector } from "./inspect.js?v=10";
+import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
 import { createWorld } from "./world.js?v=5";
 import { makeFauna } from "./fauna.js?v=4";
-import { createSound } from "./sound.js?v=1";
+import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
-import { createSecret } from "./secret.js?v=3";
+import { createSecret } from "./secret.js?v=4";
 import { createStyle, styleOf } from "./style.js?v=16";
+import { STATUES, RING_R, PEDESTAL_H, loadStatue } from "./statues.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -583,7 +584,7 @@ function buildStatic() {
   const trails = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Trails", "walk one tradition through the ages"], { w: 512, h: 320, size: 44 }) }));
   placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); g.add(trails);
   addExhibit(g, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
-  const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "every room, every exhibit"], { w: 512, h: 320, size: 44 }) }));
+  const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "the halls and the rooms"], { w: 512, h: 320, size: 44 }) }));
   placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); g.add(dir);
   addExhibit(g, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
   // spine: one banner per Age opposite its wing door, and a sign over the door
@@ -613,6 +614,24 @@ function buildStatic() {
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
   proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
   addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
+  // the Rotunda ring of statues (docs/museum/statues.js): a pedestal and plaque for each finished statue of the Rotunda
+  // Circle; the statue itself is fetched only when the visitor comes near (statueTick) and drawn only when close
+  S.statues = STATUES.map((st) => {
+    const x = ROT.cx + RING_R * Math.cos(st.angle), z = ROT.cz + RING_R * Math.sin(st.angle);
+    const ry = Math.atan2(ROT.cx - x, ROT.cz - z);          // each statue faces the centre of the ring
+    const ped = new THREE.Group(); ped.position.set(x, 0, z); ped.rotation.y = ry;
+    ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.72, 0.78, 0.08, 40).translate(0, 0.04, 0), MAT.darkstone));
+    ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.64, PEDESTAL_H - 0.12, 40).translate(0, 0.08 + (PEDESTAL_H - 0.12) / 2, 0), MAT.darkstone));
+    ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.66, 0.66, 0.04, 40).translate(0, PEDESTAL_H - 0.02, 0), MAT.bronze));
+    const plaque = new THREE.Mesh(new THREE.PlaneGeometry(0.78, 0.24), new THREE.MeshBasicMaterial({ map: textTex([st.name, "recently added · tap to read"], { w: 512, h: 158, size: 52 }) }));
+    plaque.position.set(0, 0.3, 0.655); plaque.rotation.x = -0.12; ped.add(plaque);
+    const holder = new THREE.Group(); holder.position.y = PEDESTAL_H; ped.add(holder);
+    g.add(ped); addBox(x, z, 0.85);
+    lamp(x - 0.9 * Math.cos(st.angle), 4.4, z - 0.9 * Math.sin(st.angle), 0.75);
+    const hit = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.9, 1.6), MAT.hit); hit.position.set(x, 1.45, z);
+    addExhibit(g, hit, { type: "statue", id: st.id, name: st.name }, "rotunda");
+    return { st, ped, holder, state: "idle", tris: 0 };
+  });
   // the portal to the Pilgrimage: a golden arch against the entrance hall's north wall, beside the way into the Rotunda
   const { px, pz } = portalPose();
   // a golden archway of moving light (docs/pilgrimage/portal.js): tap it to read about the Pilgrimage, or walk
@@ -842,6 +861,9 @@ function buildWingExhibits(zoneId) {
   scene.add(outer);
   roomVisibility(Z);
   S.dirty = true;
+  // an open guide drawn before this zone's exhibits arrived says "Loading this room's exhibits…": redraw it now,
+  // or it waits until the visitor walks into another area (museum fix batch item 3, the Rotunda's Flood bay)
+  if (S.room && ids.indexOf(S.room) !== -1 && !$("mu-guide").hidden) renderGuide();
 }
 // merge every untextured part of a room into one mesh per shared material (few draw calls)
 function bake(room) {
@@ -921,6 +943,21 @@ function roomVisibility(z, d) {
   z.exGroup.visible = (d == null ? distToBox(z.box, S.pos) : d) < SHOW_FAR;
   z.exGroup.children.forEach((rg) => { if (rg.userData.box) rg.visible = S.inRoom ? rg.name === "room-" + S.inRoom : distToBox(rg.userData.box, S.pos) < ROOM_SHOW; });
 }
+// the Rotunda's statues: fetched once the visitor is within STATUE_FETCH of the ring's centre, drawn within STATUE_SHOW
+const STATUE_FETCH = 22, STATUE_SHOW = 18;
+function statueTick() {
+  if (!S.statues) return;
+  const d = Math.hypot(S.pos.x - ROT.cx, S.pos.z - ROT.cz);
+  for (const s of S.statues) {
+    if (s.state === "idle" && d < STATUE_FETCH) {
+      s.state = "loading";
+      loadStatue(s.st, s.holder).then((t) => { s.state = "ready"; s.tris = t.tris; s.nearTris = t.nearTris; s.midTris = t.midTris; s.farTris = t.farTris; S.dirty = true; })
+        .catch((e) => { s.state = "failed"; console.warn("The " + s.st.name + " statue could not be loaded.", e); });
+    }
+    s.ped.visible = d < STATUE_FETCH;                     // pedestals too: nothing of the ring is drawn from the far end of the hall
+    s.holder.visible = d < STATUE_SHOW;
+  }
+}
 function manageZones() {
   for (let i = LOD.length - 1; i >= 0; i--) {
     const l = LOD[i];
@@ -928,6 +965,7 @@ function manageZones() {
     l.obj.visible = l.obj.position.distanceTo(S.pos) < l.far;
   }
   if (S.sky) S.sky.root.visible = !!(ZONES.rotunda && ZONES.rotunda.group.visible);
+  statueTick();
   const inside = S.regions.find((r) => r.room && S.pos.x > r.x0 && S.pos.x < r.x1 && S.pos.z > r.z0 && S.pos.z < r.z1);
   S.inRoom = inside ? inside.room : null;
   for (const z of Object.values(ZONES)) {
@@ -1005,8 +1043,15 @@ function locate() {
 
 // ---------------------------------------------------------------- label cards
 function roomTitle(id) { const r = S.rooms[id]; return r ? r.title : id; }
+// the hover tag ("E  Lion Man") belongs to the view; any label or examined object opening over it takes it down, so
+// it never floats over a different object (museum fix batch item 6). The next frame in the halls puts it back.
+function clearHover() {
+  S.hover = null; S.skyHover = null;
+  $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on");
+}
 function openCard(ex) {
   const d = ex.data, b = $("mu-card-body");
+  clearHover();
   let h = "";
   const zoneOf = (id) => (S.rooms[id] ? S.rooms[id].zone : null);
   const detailFor = (id) => S.detail[zoneOf(id)];
@@ -1072,6 +1117,7 @@ function openCard(ex) {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
       `<p>The objects in the cases are <strong>modelled renditions</strong> built from the descriptions in their Vault entries, never replicas: none is modelled from measurements or scans, and any writing on them is illustrative marks, not the text, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
+      `<p>The exception is the ring of <strong>statues</strong> in the Rotunda: each card says what comes from a real scan of a real statue, what was made for it here, and whose work it rests on; none is presented as a likeness of a person or god.</p>` +
       `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. Animals live in them, and each room has its own sound (Sound button to turn it off). "Reduce motion" stills them and turns off the lightning.</p>` +
       `<p>Every label keeps belief and evidence apart and links to the archive's page, where the sources and the evidence verdict live. Chapters marked "pending review" have new material not yet cleared in the keeper's review.</p>` +
       `<div class="mu-actions">${btn("methodology.html", "The methodology")}${btn("index.html", "The archive", true)}</div>`;
@@ -1083,6 +1129,14 @@ function openCard(ex) {
     h = S.sky.card(d, (id) => roomTitle(id));
     S.sky.highlight(d.what === "cons" ? d.id : null);
   } else if (d.type === "directory") { showDirectory(); return; }
+  else if (d.type === "statue") {
+    const st = STATUES.find((x) => x.id === d.id), s = S.statues && S.statues.find((x) => x.st.id === d.id);
+    h = `<p class="mu-cat">The Rotunda Circle · a statue</p><h2 id="mu-card-h">${esc(st.name)}</h2><p class="mu-meta">${esc(st.sub)}</p>` +
+      `<p>${esc(st.made)}</p>` +
+      `<p class="mu-meta">Recently added, pending full review. The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D.</p>` +
+      (s && s.state === "failed" ? `<p class="mu-meta">This statue could not be loaded here; its page may still show it.</p>` : "") +
+      `<div class="mu-actions">${btn("rotunda/" + st.id + ".html", "Turn it in 3D")}${btn("rotunda/index.html", "The Rotunda Circle", true)}</div>`;
+  }
   else if (d.type === "reserved") {
     h = `<p class="mu-cat">Comparative theme</p><h2 id="mu-card-h">${esc(d.name)}</h2><p>This alcove is reserved for a theme chapter that has not been written yet. It will open when the chapter is published.</p><div class="mu-actions">${btn("themes.html", "All themes")}</div>`;
   } else if (d.type === "end") {
@@ -1154,6 +1208,7 @@ function findVaultSlug(id) { return S.manifest.names.vault[id][2]; }
 function skySites() {
   const sel = $("mu-sky-site"); if (!sel || !S.sky) return;
   sel.innerHTML = S.sky.state.data.sites.map((x) => `<option value="${x.id}">${esc(x.name)}</option>`).join("");
+  sel.autocomplete = "off"; sel.value = S.sky.state.site.id;   // a browser restoring the form must not show one site over another's sky
   sel.addEventListener("change", () => S.sky.setSite(sel.value));
   $("mu-sky-now").addEventListener("click", () => { S.sky.setMode(S.sky.state.mode === "now" ? "tonight" : "now"); skyPanel(); });
   $("mu-sky-run").addEventListener("click", () => { S.sky.toggleRun(); skyPanel(); });
@@ -1168,16 +1223,21 @@ function skyPanel() {
   $("mu-sky-run").setAttribute("aria-pressed", String(st.run));
   $("mu-sky-lines").setAttribute("aria-pressed", String(st.lines));
   const t = S.sky.timeLabel(), el = $("mu-sky-time"); if (el.textContent !== t) el.textContent = t;
+  // every place that names the sky follows the one the dome shows (museum fix batch item 6: Giza chosen, "Sky over Babylon")
+  const sel = $("mu-sky-site"); if (sel && sel.value !== st.site.id) sel.value = st.site.id;
+  document.querySelectorAll("[data-sky-time]").forEach((p) => { if (p.textContent !== t) p.textContent = t; });
 }
 
 // ---------------------------------------------------------------- room guide
 function renderGuide() {
   const body = $("mu-guide-body");
-  const here = S.room ? S.exhibits.filter((e) => e.data.id === S.room || ((e.data.type === "vault" || e.data.type === "fig") && roomOfExhibit(e) === S.room)) : [];
+  const G = S.room ? guideItems(S.room) : { here: [], missing: [] }, here = G.here;
   let h = "";
   if (S.room) {
     const r = S.rooms[S.room];
-    h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") + `</ul>`;
+    h += `<h3>${esc(r.title)}</h3><ul>` + here.map((e) => `<li><button type="button" data-ex="${S.exhibits.indexOf(e)}">${esc(e.data.name)}<small>${esc(typeLabel(e.data.type))}</small></button></li>`).join("") +
+      // a Directory item with no exhibit standing in the room yet: still named, linked to its page
+      G.missing.map((it) => `<li><a href="${esc(it.href)}">${esc(it.name)}<small>${esc(typeLabel(it.type))}</small></a></li>`).join("") + `</ul>`;
     if (!here.length) h += `<p class="mu-trail">Loading this room's exhibits…</p>`;
     // a walkthrough launched from a case in this room: every step as plain text, with its sources (filled in below)
     h += `<div data-guide-rituals="${esc(S.room)}"></div>`;
@@ -1198,7 +1258,7 @@ function renderGuide() {
     const cons = [...new Set(L.flatMap((e) => e.targets).filter((t) => C.some((c) => c.id === t)))];
     const pl = [...new Set(L.flatMap((e) => e.targets).filter((t) => t.startsWith("planet:")).map((t) => t.slice(7)))];
     const nm = { lun: "The Moon", mer: "Mercury", ven: "Venus", mar: "Mars", jup: "Jupiter", sat: "Saturn" };
-    h += `<h3>The planetarium overhead</h3><p class="mu-trail">${esc(S.sky.timeLabel())}</p><ul>` +
+    h += `<h3>The planetarium overhead</h3><p class="mu-trail" data-sky-time>${esc(S.sky.timeLabel())}</p><ul>` +
       `<li><button type="button" data-skyopen="about">About this sky<small>what the dome shows, and its sources</small></button></li>` +
       `<li><button type="button" data-skyopen="mw">The Milky Way<small>the archive's lore</small></button></li>` +
       `<li><button type="button" data-skyopen="horizon">The horizon<small>the archive's lore</small></button></li>` +
@@ -1226,6 +1286,26 @@ function guideRituals(room) {
       }).join("");
     });
   }).catch(() => {});
+}
+// The room guide's list is bound to the Directory's data (manifest homeVault / homeFigs, the same lists the
+// Directory prints), never to what merely stands near the room. Before 2026-11-01 vault objects and figures were
+// picked by position, so a neighbour's medallions strayed in (Agni and Saraswati in Mesopotamia; Padmasambhava in
+// Tantra) and a room's own ones placed past its bounds dropped out (Amitabha in Mahayana; Durga in Tantra).
+function guideItems(room) {
+  const r = S.rooms[room]; if (!r) return { here: [], missing: [] };
+  const want = { vault: r.homeVault || [], fig: r.homeFigs || [] }, N = S.manifest.names;
+  const own = S.exhibits.filter((e) => e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig");
+  const items = [], missing = [];
+  for (const type of ["vault", "fig"]) for (const id of want[type]) {
+    const all = S.exhibits.filter((e) => e.data.type === type && e.data.id === id);
+    const e = all.find((x) => roomOfExhibit(x) === room) || all[0];
+    if (e) items.push(e);
+    else if (S.room === room && own.length) {   // only once the room's own exhibits are in, so it isn't "missing" while loading
+      if (type === "vault" && N.vault[id]) missing.push({ type, name: N.vault[id][0], href: "vault/" + N.vault[id][2] + ".html" });
+      else if (type === "fig" && N.figs[id]) missing.push({ type, name: N.figs[id][0], href: "pantheon.html#" + id });
+    }
+  }
+  return { here: own.concat(items), missing };
 }
 function roomOfExhibit(e) {
   // exhibits are built per room; find the room whose area contains the exhibit
@@ -1419,7 +1499,7 @@ function savePos() { if (S.started) store.sset("mu-pos", JSON.stringify({ x: +S.
 
 // ---------------------------------------------------------------- directory (fallback)
 function showDirectory(reason) {
-  unlock();
+  unlock(); clearHover();
   document.body.classList.remove("is-3d");
   $("mu-bar").hidden = true; $("mu-intro").hidden = true; $("mu-guide").hidden = true; $("mu-card-wrap").hidden = true;
   const back = $("mu-dir-back");
@@ -1563,6 +1643,7 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
+  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, shown: s.holder.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
   segsNear: (x, z, r) => { const out = new Set(); for (const arr of GRID.values()) for (const g of arr) { const dx = g[2] - g[0], dz = g[3] - g[1], L2 = dx * dx + dz * dz; let t = L2 ? ((x - g[0]) * dx + (z - g[1]) * dz) / L2 : 0; t = Math.max(0, Math.min(1, t)); if (Math.hypot(x - g[0] - t * dx, z - g[1] - t * dz) < r) out.add(g.slice(0, 4).map((v) => +v.toFixed(2)).join(",")); } return [...out]; },
@@ -1584,6 +1665,8 @@ window.__MU = {
   exhibits: () => S.exhibits.map((e) => Object.assign({ x: e.center.x, z: e.center.z }, e.data)),
   walk: (code, ms) => { S.keys.add(code); return new Promise((r) => setTimeout(() => { S.keys.delete(code); r(); }, ms)); },
   load: (z) => loadDetail(z),
+  guide: (room) => { const G = guideItems(room); return { here: G.here.map((e) => e.data.type + ":" + e.data.id), missing: G.missing.map((m) => m.type + ":" + m.name) }; },
+  zones: () => Object.keys(ZONES),
   debug: () => {
     const out = {};
     scene.children.forEach((c, i) => {

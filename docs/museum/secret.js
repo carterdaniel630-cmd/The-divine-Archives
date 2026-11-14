@@ -151,7 +151,12 @@ void main(){
       const A = st.arch, d = Math.hypot(pos.x - A.at.x, pos.z - A.at.z);
       if (A.grow < 1) { A.grow = Math.min(1, A.grow + dt / 1.6); A.fx.group.scale.setScalar(Math.max(0.001, 1 - Math.pow(1 - A.grow, 3))); redraw = true; }
       if (d < 22 && visible(A.fx.group.parent || A.fx.group)) { if (A.fx.update(dt)) redraw = true; }
-      if (!A.fired && A.grow >= 1 && Math.abs(pos.x - A.at.x) < 0.7 && (pos.z - A.at.z) * A.at.nz < 0.85) { A.fired = true; go(HREF); }
+      // step through only from just in front of it, in its own hallway (s = distance out from the wall into the
+      // hallway). Before 2026-11-01 the test had no far limit behind the wall, so anywhere at the same x on the far side
+      // of the wall's line counted: Wings IV, VI and VIII lie there, and arriving in them by the Room guide sent a
+      // visitor who had found the archway into the Arcade.
+      const s = (pos.z - A.at.z) * A.at.nz;
+      if (!A.fired && A.grow >= 1 && Math.abs(pos.x - A.at.x) < 0.7 && s > -0.25 && s < 0.85) { A.fired = true; go(HREF); }
       if (A.fired && d > 1.6) A.fired = false;
     }
     // the read-out: the wall holds still, the message writes itself out, then the archway opens

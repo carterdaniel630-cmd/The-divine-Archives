@@ -12,7 +12,7 @@
      brazier; geometry after style.js), flames in one instanced draw call.
      Only three are real lights (the engine's light pool); the rest is painted;
    - a starfield dome, a small pool with a gentle shimmer;
-   - twelve cabinets in a ring facing the centre, the scoreboard on the north
+   - eleven cabinets in a ring facing the centre, the scoreboard on the north
      wall and the golden portal back to the museum in the south.
 
    Phone budget: every plain surface (cabinets, fittings, trims, kerbs) is one
@@ -34,7 +34,7 @@ const SETTINGS = {
   plain: { pal: "plain" }, basalt: { pal: "basalt", h: 0.1 }
 };
 // how each cabinet's attract screen moves: 0 board, 1 stack, 2 grid, 3 volley, 4 trail, 5 maze, 6 stars, 7 quiz
-const SCREEN = { chess: 0, ziggurat: 1, excavation: 2, antithesis: 3, fighter: 3, dominion: 2, reliquary: 7, labyrinth: 5, ouroboros: 4, seeker: 4, treasure: 5, pinball: 6 };
+const SCREEN = { chess: 0, ziggurat: 1, excavation: 2, antithesis: 3, fighter: 3, dominion: 2, reliquary: 7, labyrinth: 5, ouroboros: 4, seeker: 4, treasure: 5 };
 
 // ---------------------------------------------------------------- the palette: one material for every plain surface
 const PAL = { body: "#24170f", trim: "#c79a54", panel: "#121010", red: "#b0402a", blue: "#2f5f9a", clay: "#9c6a44", bronze: "#6a4826", terracotta: "#a85a36",

@@ -23,18 +23,24 @@ safer figure and says "about".
   Uprights about 4 m high, 2.2 m wide, 1.2 m deep; lintels about 0.8 m high: English Heritage teachers' kit (KS3),
   "Small-scale Stonehenge" (PDF on english-heritage.org.uk). Weight "in the order of 25 tonnes": St Andrews
   MacTutor gazetteer, "Stonehenge, Wiltshire". Mortise-and-tenon and tongue-and-groove joints: English Heritage.
-- Five trilithons in a horseshoe; the Great Trilithon 7.3 m; three complete, two partly fallen; one fell in 1797
-  and was re-erected in 1958: English Heritage (stones page; "Description of Stonehenge"; "From restoration to
-  conservation"). Heights of the other four trilithons: APPROX.
+- Five trilithons in a horseshoe; three complete, two partly fallen; one fell in 1797 and was re-erected in 1958:
+  English Heritage (stones page; "Description of Stonehenge"; "From restoration to conservation"). Stone 56, the
+  surviving upright of the Great Trilithon, is the tallest sarsen: English Heritage ("Discover more about the
+  Stones"); about 8.71 m long with 2.13 m buried (English Heritage blog, found by the 2026-10-18 review through search
+  results). The Great Trilithon about 7.3 m high: secondary summaries; not found on English Heritage's own pages, and
+  its teachers' kit gives the uprights about 6.5 m, so the card says "about 7.3 m with its lintel" (corrected
+  2026-10-18; it had been marked SURVEY from English Heritage). Heights of the other four trilithons: APPROX.
 - Bluestones: from the Preseli Hills, west Wales, more than 200 km (sources give 150–185 miles); about 80 in all;
   the inner horseshoe 19, six upright: summaries of English Heritage and the Stonehenge Riverside Project. The
   number in the model's outer circle and every bluestone's size: APPROX.
 - Altar Stone about 5 × 1 m, about 6 tonnes, from the Orcadian Basin, at least 750 km: A. J. I. Clarke et al.,
   "A Scottish provenance for the Altar Stone of Stonehenge", *Nature* 632 (2024), 570–575,
   doi:10.1038/s41586-024-07652-1. Thickness and position: APPROX.
-- Heel Stone about 4.9 m, leaning, outside the entrance; midsummer sunrise just left of it seen from the centre; a
-  hole beside it that may have held a partner: English Heritage, "Celestial Stonehenge". Distance from the centre:
-  APPROX.
+- Heel Stone leaning, outside the entrance; midsummer sunrise just left of it seen from the centre; a hole beside
+  it that may have held a partner: English Heritage, "Celestial Stonehenge". Height about 4.5–4.7 m above ground:
+  Wikipedia, "Heel Stone" (a pointer only: about 4.7 m, with 1.2 m buried) and Stetson University's Neolithic
+  studies pages (4.5 m), both through search results. The card's earlier "about 4.9 m" was found in no source and was
+  corrected on 2026-10-18. Distance from the centre: APPROX.
 - Slaughter Stone: fallen; named for the reddish colour of rainwater in its hollows (iron in the stone): summaries
   (the name's date was not confirmed, so the card says only "a modern name").
 - Two of probably four Station Stones survive: summaries of English Heritage. Positions: APPROX.

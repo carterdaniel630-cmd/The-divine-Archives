@@ -52,7 +52,8 @@ export function lamp(ctx, x, y, z, strength, nx, nz) {
   const br = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.03, 0.09), bracketMat); br.position.y = 0.05; g.add(br);
   g.position.set(x, y, z); if (nx || nz) g.rotation.y = Math.atan2(nx || 0, nz || 0);
   ctx.group.add(g);
-  ctx.light(x + (nx || 0) * 0.25, y, z + (nz || 0) * 0.25, strength || 1);
+  const a = ctx.light(x + (nx || 0) * 0.25, y, z + (nz || 0) * 0.25, strength || 1);
+  return { anchor: a, halo, s: a.s };   // a site may dim its lamps (Newgrange does, for the solstice sunrise)
 }
 
 // ---------------------------------------------------------------- hand rails along a slope (a pipe on posts)

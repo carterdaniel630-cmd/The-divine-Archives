@@ -114,7 +114,7 @@ Patristic Christianity is the hinge of this era. It grew directly out of the **e
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The existence, dating, and content of the major patristic writings; the fact and decisions of the four great councils (325, 381, 431, 451); the reality of the persecutions and of Constantine's turn; the gradual, traceable formation of the canon, with Athanasius's list of 367 as the first surviving complete one; the historical schism of the Oriental Orthodox and Church of the East after Chalcedon. These rest on abundant contemporary documents.
+**What's well supported by the evidence.** The existence, dating, and content of the major patristic writings; the fact and decisions of the four great councils (325, 381, 431, 451); the reality of the persecutions and of Constantine's turn; the gradual, traceable formation of the canon, with Athanasius's list of 367 as the first surviving complete one; the historical schism of the Oriental Orthodox and Church of the East after Chalcedon. These rest on abundant contemporary documents.
 
 **Contested or uncertain.** The authenticity and original form of the Ignatian letters (the seven-letter middle recension is the majority view, not a settled fact). The date of the Didache (a century-wide range). Whether the ecumenical council of 553, or only a local synod of 543, condemned Origen. Exactly what sign Constantine saw and used at the Milvian Bridge, given the conflicting accounts of Lactantius and Eusebius. The precise motives behind Constantine's conversion. The dating and authorship of several minor works attributed to the Fathers.
 

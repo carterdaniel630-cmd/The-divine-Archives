@@ -32,22 +32,24 @@
   // for reduced motion there is no screen shake and only a faint flash (same rule as feel.js).
   var RMQ = null;
   try { RMQ = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null; } catch (e) { RMQ = null; }
+  // a touch screen with no mouse (the same test that hides the keyboard legend): tips name the on-screen buttons, not keys
+  function onTouch() { try { return !!window.matchMedia && !window.matchMedia("(hover: hover) and (pointer: fine)").matches; } catch (e) { return false; } }
   function reducedMotion() { return !!(RMQ && RMQ.matches); }
   var AG = window.ArchiveGames;
   if (!AG) return;
 
   var SCRIPT_DIR = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "assets/games/";
   var DATA_URL = SCRIPT_DIR + "data/treasure.json";
-  // the explorer: painted cut-out parts sliced from the character turnaround sheet
-  // (art-source/tomb-robber/), hinged at hip and knee so the legs actually run and tuck.
+  // the hero, "The Archivist": painted cut-out parts sliced from Carter's approved hooded character sheet
+  // (art-source/archivist/, cut by cut.py), hinged at hip and knee so the legs actually run and tuck.
   var ART_BASE = SCRIPT_DIR + "art/treasure/";
   var ART = { ready: false, man: null, img: {} };
   function loadArt() {
     if (ART.man) return;
     ART.man = {};
-    fetch(ART_BASE + "manifest.json?v=1").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
+    fetch(ART_BASE + "manifest.json?v=2").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
       if (!m) return; var names = ["body", "thigh", "shin"], left = names.length;
-      names.forEach(function (n) { var im = new Image(); im.onload = function () { ART.img[n] = im; if (--left === 0) { ART.man = m; ART.ready = true; } }; im.src = ART_BASE + n + ".png?v=1"; });
+      names.forEach(function (n) { var im = new Image(); im.onload = function () { ART.img[n] = im; if (--left === 0) { ART.man = m; ART.ready = true; } }; im.src = ART_BASE + n + ".png?v=2"; });
     }).catch(function () {});
   }
   var DATA = null, loadingPromise = null;
@@ -111,7 +113,7 @@
         B.gate(98, 4, 9); B.gate(119, 4, 9);
         // --- things
         B.start(2);
-        B.hint(2, "← → run · ↑ or Space jumps (hold for height) · J or X cracks the whip.");
+        B.hint(2, "← → run · ↑ or Space jumps (hold for height) · J or X cracks the whip.", "◀ ▶ run · A jumps (hold for height) · B cracks the whip.");
         B.tree(1, 1.05); B.tree(8, 0.9); B.tree(15, 1.1); B.tree(24, 0.95); B.plant(5); B.plant(11); B.plant(21); B.plant(27);
         B.statue(26, "obelisk");
         B.gems(6, 8, 8); B.foe("cobra", 10); B.relic(21, 5); B.foe("scorpion", 24, { range: [23, 28] });
@@ -254,7 +256,7 @@
       dark: function (c0, c1) { E.dark.push([c0, c1]); },
       start: function (cc) { E.start = cc; },
       exit: function (cc, rr) { pending.push(function () { E.exit = { c: cc, r: sr(cc, rr) }; }); },
-      hint: function (cc, text) { E.hints.push({ c: cc, text: text, shown: false }); },
+      hint: function (cc, text, touchText) { E.hints.push({ c: cc, text: text, touch: touchText || null, shown: false }); },
       tree: function (cc, s) { E.trees.push({ c: cc, s: s || 1 }); },
       plant: function (cc) { E.plants.push({ c: cc }); },
       vine: function (cc, r0, len) { E.vines.push({ c: cc, r0: r0, len: len }); },
@@ -301,6 +303,13 @@
 
   function mountGame(root, ctx) {
     var VIEWW = 480, VIEWH = ROWS * TILE, LH = VIEWH, MAXHEARTS = 3, STEP = 1 / 60;
+    // full screen on a phone held sideways: the view widens to the screen's shape (more of the level to the sides,
+    // never stretched), so the picture reaches both edges; everywhere else it is the classic 480 wide
+    var BASEW = 480, MAXW = 720, WIDEQ = window.matchMedia ? window.matchMedia("(orientation:landscape) and (max-height:540px) and (pointer:coarse)") : null;
+    function viewFor(cv) {
+      if (!cv || !WIDEQ || !WIDEQ.matches || !cv.closest(".game-dialog.is-full")) return BASEW;
+      return Math.max(BASEW, Math.min(MAXW, Math.round(VIEWH * window.innerWidth / Math.max(1, window.innerHeight))));
+    }
     var css = getComputedStyle(document.documentElement);
     function v(n, fb) { return (css.getPropertyValue(n) || fb).trim(); }
     var COL = { gold: v("--gold", "#c79a54"), goldB: v("--gold-bright", "#e7c680") };
@@ -691,7 +700,7 @@
       st.gems.forEach(function (g) { if (!g.got && Math.abs(g.x - p.x) < 12 && Math.abs(g.y - p.y) < 16) { g.got = true; run.score += 10; spark(g.x, g.y, 3); SFX.play("gem"); } });
       st.canteens.forEach(function (k) { if (!k.got && Math.abs(k.x - p.x) < 12 && Math.abs(k.y - p.y) < 18) { k.got = true; st.hearts = Math.min(MAXHEARTS, st.hearts + 1); run.hearts = st.hearts; toast("<strong>Water.</strong> A canteen left by the last expedition — one heart back."); sparkle(k.x, k.y); SFX.play("canteen"); } });
       st.checks.forEach(function (k) { if (!k.on && Math.abs(k.x - p.x) < 18 && Math.abs(k.y - (p.y + p.hh)) < 30) { st.checks.forEach(function (o) { if (o.x < k.x) o.on = true; }); k.on = true; sparkle(k.x, k.y - 20); SFX.play("check"); } });
-      st.lv.E.hints.forEach(function (h) { if (!h.shown && p.x > h.c * TILE) { h.shown = true; toast(h.text); } });
+      st.lv.E.hints.forEach(function (h) { if (!h.shown && p.x > h.c * TILE) { h.shown = true; toast(h.touch && onTouch() ? h.touch : h.text); } });
       st.lv.E.levers.forEach(function (lv) { if (!lv.on && Math.abs(p.x - (lv.c * TILE + 12)) < 14 && Math.abs(p.y - (lv.r * TILE + 12)) < 18) { lv.on = true; SFX.play("lever"); toast("<strong>Clack.</strong> The lever drops."); } });
       // glyph floors: register the sign you step onto
       var onT = -1, gs = null;
@@ -1486,15 +1495,16 @@
       leg(tB, kB, true);   // back leg recedes: a darkened copy made once (speed fix #4; a per-frame filter was costly)
       leg(tF, kF);
       cx.drawImage(I.body, -M.body.pivotX, -M.body.pivotY);
-      // the whip arm: a raised sleeve and fist while lashing or holding the rope
+      // the line arm: a raised coat sleeve and hand while casting or holding the rope (sizes from the manifest)
       var hand = null;
       if (p.whip || p.swing) {
-        var sh = { x: 12, y: -228 }, a = p.swing ? -1.75 : (p.whip.up ? -1.35 : -0.25 - (p.whip.t < 0.1 ? 1.1 * (1 - p.whip.t / 0.1) : 0));
-        var hx = sh.x + Math.cos(a) * 150, hy = sh.y + Math.sin(a) * 150;
-        cx.strokeStyle = "#3e2616"; cx.lineWidth = 50; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(sh.x, sh.y); cx.lineTo(hx, hy); cx.stroke();
-        cx.strokeStyle = "#6a4428"; cx.lineWidth = 32; cx.beginPath(); cx.moveTo(sh.x, sh.y - 8); cx.lineTo(hx, hy - 8); cx.stroke();
-        cx.fillStyle = "#d9a57c"; cx.beginPath(); cx.arc(hx + Math.cos(a) * 20, hy + Math.sin(a) * 20, 24, 0, 7); cx.fill();
-        var m = cx.getTransform(), hp = new DOMPoint(hx + Math.cos(a) * 24, hy + Math.sin(a) * 24).matrixTransform(m);
+        var A = M.arm || { x: 12, y: -228, len: 150, w: 50, sleeve: "#3e2616", sleeveLight: "#6a4428", hand: "#d9a57c" }, u = M.figH / 662;
+        var sh = { x: A.x, y: A.y }, a = p.swing ? -1.75 : (p.whip.up ? -1.35 : -0.25 - (p.whip.t < 0.1 ? 1.1 * (1 - p.whip.t / 0.1) : 0));
+        var hx = sh.x + Math.cos(a) * A.len, hy = sh.y + Math.sin(a) * A.len;
+        cx.strokeStyle = A.sleeve; cx.lineWidth = A.w; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(sh.x, sh.y); cx.lineTo(hx, hy); cx.stroke();
+        cx.strokeStyle = A.sleeveLight; cx.lineWidth = A.w * 0.64; cx.beginPath(); cx.moveTo(sh.x, sh.y - 8 * u); cx.lineTo(hx, hy - 8 * u); cx.stroke();
+        cx.fillStyle = A.hand; cx.beginPath(); cx.arc(hx + Math.cos(a) * 20 * u, hy + Math.sin(a) * 20 * u, 24 * u, 0, 7); cx.fill();
+        var m = cx.getTransform(), hp = new DOMPoint(hx + Math.cos(a) * 24 * u, hy + Math.sin(a) * 24 * u).matrixTransform(m);
         hand = { x: hp.x / DPR + st.drawCam, y: hp.y / DPR - st.drawCamY };
       }
       p.hand = hand;
@@ -1505,9 +1515,9 @@
       var leg = p.onGround && Math.abs(p.vx) > 0.4 ? Math.sin(p.run) * 4 : 0;
       cx.strokeStyle = "#2a1c10"; cx.lineWidth = 4; cx.lineCap = "round";
       cx.beginPath(); cx.moveTo(-1, 4); cx.lineTo(-3, 11 + leg); cx.moveTo(1, 4); cx.lineTo(3, 11 - leg); cx.stroke();
-      cx.fillStyle = "#6a4428"; cx.fillRect(-6, -6, 12, 12);
-      cx.fillStyle = "#d8ab6e"; cx.beginPath(); cx.arc(0, -11, 5, 0, 7); cx.fill();
-      cx.fillStyle = "#5a3a1a"; cx.beginPath(); cx.ellipse(0, -14, 8, 3, 0, 0, 7); cx.fill(); cx.fillRect(-4, -16, 8, 3);
+      cx.fillStyle = "#1b1b16"; cx.fillRect(-6, -6, 12, 14);                         // long coat
+      cx.fillStyle = "#1b1b16"; cx.beginPath(); cx.arc(0, -11, 6.5, 0, 7); cx.fill();  // hood up
+      cx.fillStyle = "#d8ab6e"; cx.beginPath(); cx.arc(2, -10.5, 3.6, 0, 7); cx.fill(); // face in the hood
       cx.restore(); p.hand = null;
     }
     function drawWhip() {
@@ -1624,7 +1634,7 @@
       return '<ul class="ouro-facts">' + items + "</ul>";
     }
     function portrait(smile) {
-      return '<img class="tr-portrait" src="' + ART_BASE + (smile ? "portrait-smile" : "portrait") + '.png?v=1" alt="" width="220" height="273">';
+      return '<img class="tr-portrait" src="' + ART_BASE + (smile ? "portrait-smile" : "portrait") + '.png?v=2" alt="" width="220" height="273">';
     }
     function storyCard(opts) {
       stopLoop();
@@ -1711,7 +1721,14 @@
         '<p class="rq-note tr-keys">Run with the D-pad (←/→ or A/D), jump with <b>A</b> (Space or ↑; hold for height), crack the whip with <b>B</b> (J or X). Whip a bronze ring to swing, jump to let go, ↓ to drop. <b>Start</b> (P) pauses, <b>Select</b> (M) toggles sound. A game controller works too.</p>';
       canvas = root.querySelector(".tr-canvas"); cx = canvas.getContext("2d");
       DPR = Math.min(2.5, Math.min(window.devicePixelRatio || 1, 2) * Math.max(0.25, (canvas.getBoundingClientRect().width || VIEWW) / VIEWW)); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
-      AG.onFit(canvas, function () { DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR); });
+      AG.onFit(canvas, function () {
+        var w = viewFor(canvas);
+        if (w !== VIEWW) {                   // new shape first, so the picture's on-screen size (and so its sharpness) follows it
+          VIEWW = w; canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
+          if (st && st.p && st.LW) st.cam = clamp(st.p.x - VIEWW * 0.45, 0, Math.max(0, st.LW - VIEWW));
+        }
+        DPR = AG.scaleFor(canvas, VIEWW, 2.5); canvas.width = Math.round(VIEWW * DPR); canvas.height = Math.round(VIEWH * DPR);
+      });
       hudEl = root.querySelector(".tr-hud"); live = root.querySelector(".tr-toast");
       var sb = root.querySelector(".tr-snd"); sb.addEventListener("click", toggleSound);
       try { canvas.focus({ preventScroll: true }); } catch (e) { }   // keep keyboard focus inside the dialog (Esc still closes it)

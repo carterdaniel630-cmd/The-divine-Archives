@@ -53,11 +53,11 @@ The Maya are one of three great temple religions of the pre-Columbian Americas t
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The Maya cities and their monuments; the **writing system** and its twentieth-century decipherment as historical record; the four surviving **codices** (the Dresden's Venus and eclipse tables); the calendars (tzolkʼin, haabʼ, Calendar Round, Long Count); the **Popol Vuh** (via its 1554–58 transcription, corroborated by Classic-period vase paintings); royal **bloodletting** and the Vision Serpent (Yaxchilán); and the **reality of human sacrifice** (the Sacred Cenote at Chichén Itzá).
+**What's well supported by the evidence.** The Maya cities and their monuments; the **writing system** and its twentieth-century decipherment as historical record; the four surviving **codices** (the Dresden's Venus and eclipse tables); the calendars (tzolkʼin, haabʼ, Calendar Round, Long Count); the **Popol Vuh** (via its 1554–58 transcription, corroborated by Classic-period vase paintings); royal **bloodletting** and the Vision Serpent (Yaxchilán); and the **reality of human sacrifice** (the Sacred Cenote at Chichén Itzá).
 
 **Not supported — modern myth and conquest propaganda.** The "**Maya 2012 apocalypse**," a modern Western fabrication with no basis in any Maya source. And the cartoon of the Maya as nothing but bloodthirsty savages — a distortion that served the conquest; sacrifice was real but embedded in a coherent religion of cosmic reciprocity.
 
-**Genuinely open.** Much Maya myth is still reconstructed from **partial decipherment** and iconography; the fullest text (the Popol Vuh) survives only through hostile, post-conquest transcription; and the **Classic collapse** — why the great southern cities were abandoned around 900 CE (drought, warfare, overpopulation, or all three) — remains one of archaeology's genuine open questions.
+**What's genuinely open.** Much Maya myth is still reconstructed from **partial decipherment** and iconography; the fullest text (the Popol Vuh) survives only through hostile, post-conquest transcription; and the **Classic collapse** — why the great southern cities were abandoned around 900 CE (drought, warfare, overpopulation, or all three) — remains one of archaeology's genuine open questions.
 
 ## Sources
 

@@ -50,7 +50,7 @@ test("the catalog uses only the new ids", () => {
   const t = tableIn(read(COPIES[0]), COPIES[0]);
   Object.keys(t).forEach((old) => assert.ok(!ids.includes(old), "old id still in the catalog: " + old));
   Object.values(t).forEach((nu) => assert.ok(ids.includes(nu), "new id missing from the catalog: " + nu));
-  assert.strictEqual(ids.length, 12);
+  assert.strictEqual(ids.length, 11);
 });
 
 test("the tracker moves old scores and ledger history onto the new ids, once", () => {

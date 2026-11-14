@@ -84,11 +84,11 @@ Tantra grew out of the **Vedic and Puranic Hinduism** and the **Mahayana Buddhis
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The existence of a vast tantric scriptural corpus in both Hinduism and Buddhism from roughly the fifth century on; the historical reality of **Abhinavagupta** (c. 950–1020) and the **Tantrāloka**; the **Kāpālika/Kaula** ascetic traditions and their transgressive reputation; the **yoginī temples** and their distinctive open plan (Khajuraho c. 885); the rise of **Vajrayāna** and its transmission to **Tibet** across these centuries; and the core ritual technology of **mantra, yantra, mandala, initiation, and the subtle-body model**.
+**What's well supported by the evidence.** The existence of a vast tantric scriptural corpus in both Hinduism and Buddhism from roughly the fifth century on; the historical reality of **Abhinavagupta** (c. 950–1020) and the **Tantrāloka**; the **Kāpālika/Kaula** ascetic traditions and their transgressive reputation; the **yoginī temples** and their distinctive open plan (Khajuraho c. 885); the rise of **Vajrayāna** and its transmission to **Tibet** across these centuries; and the core ritual technology of **mantra, yantra, mandala, initiation, and the subtle-body model**.
 
 **Not supported (as history or science).** That the **chakras and nāḍīs** are anatomical structures — they are a contemplative model of inner experience, not physiology. That the popular **seven-chakra color system** is the unaltered medieval teaching — it is largely a modern synthesis. That **"Tantra" means sacred sex** — a modern Western distortion of a mostly ritual and meditative tradition.
 
-**Genuinely open.** The precise **dating and authorship** of most tantric texts, given their esoteric, oral, and deliberately obscure transmission. **How literally** particular lineages performed the pañcamakāra, especially the fifth M — the sources genuinely differ and the secrecy is real. The exact **relationship** between Khajuraho's erotic sculpture and tantric ritual. And the always-difficult question, in a tradition built on secrecy and twilight language, of how much of the inner practice was ever written down at all.
+**What's genuinely open.** The precise **dating and authorship** of most tantric texts, given their esoteric, oral, and deliberately obscure transmission. **How literally** particular lineages performed the pañcamakāra, especially the fifth M — the sources genuinely differ and the secrecy is real. The exact **relationship** between Khajuraho's erotic sculpture and tantric ritual. And the always-difficult question, in a tradition built on secrecy and twilight language, of how much of the inner practice was ever written down at all.
 
 ## Sources
 

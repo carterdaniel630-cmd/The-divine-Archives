@@ -21,7 +21,7 @@
 import * as THREE from "three";
 import { stoneMaterial } from "./stone.js?v=1";
 import { portal } from "./portal.js?v=1";
-import { createSound } from "./sound.js?v=1";
+import { createSound } from "./sound.js?v=2";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -121,10 +121,10 @@ async function loadSection(sec) {
     // build on the next frame so the page keeps responding
     await new Promise((r) => requestAnimationFrame(r));
     const group = new THREE.Group(); group.name = sec.id;
-    const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s) => { const a = { p: new THREE.Vector3(x, y, z), s: s || 1, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
-      // a golden portal (portal.js), animated by the engine while the visitor is near
+    const ctx = { THREE, mat, group, outline: (id, obj) => { S.outlines[id] = obj; obj.visible = !!S.outlineOn[id]; group.add(obj); }, hit: registerHit, infoById: (id) => S.site.info.find((i) => i.id === id), light: (x, y, z, s, c) => { const a = { p: new THREE.Vector3(x, y, z), s: s == null ? 1 : s, c: c || null, sec: sec.id }; S.lightAnchors.push(a); return a; }, touch,
       // a section's own animation: fx = { group, update(dt) → true if it changed }, run while the visitor is within 25 m of (x,y,z)
       anim: (fx, x, y, z) => { S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y, z), fx }); return fx; },
+      // a golden portal (portal.js), animated by the engine while the visitor is near
       portal: (o, x, y, z, yaw) => { const fx = portal(o); fx.group.position.set(x, y, z); fx.group.rotation.y = yaw || 0; group.add(fx.group); S.anims.push({ sec: sec.id, p: new THREE.Vector3(x, y + 1.4, z), fx }); return fx; } };
     const out = (await mod.build(ctx)) || {};
     group.traverse((o) => { if (o.isMesh && o.userData.floor) S.floors.push(o); });
@@ -305,6 +305,9 @@ function step(dt) {
   if (!S.portalT) {
     const pr = S.regions.find((r) => r.portal && r.contains(S.pos.x, S.pos.z) && Math.abs(r.floorAt(S.pos.x, S.pos.z) - S.foot) < STEP);
     if (pr) {
+      // if the route's current stop is this portal, the route carries on from it on the far side
+      const R = S.site.route, rs = S.routeIdx != null && R[S.routeIdx];
+      S.routeKeep = !!(rs && pr.contains(rs.x, rs.z));
       S.portalT = true; S.auto = null; S.route = []; S.keys.clear(); paintRoute();
       const f = $("mu-fade"); f.classList.add("gold");
       if (pr.href) { f.classList.add("on"); setTimeout(() => { window.location.href = pr.href; }, S.reduce ? 0 : 650); }   // out of the site (to the museum)
@@ -322,11 +325,15 @@ function nearestRouteIndex() {
 function walkRoute(dir) {
   const R = S.site.route; if (!R.length) return;
   // the route passes some places twice (down from the King's Chamber, on to the Queen's): remember where we are on it
-  const ri = S.routeIdx, near = ri != null && R[ri] && Math.hypot(R[ri].x - S.pos.x, R[ri].z - S.pos.z) < 3 && Math.abs((R[ri].y != null ? R[ri].y : S.foot) - S.foot) < 1.5;
+  const ri = S.routeIdx, near = ri != null && R[ri] && (S.routeKeep || (Math.hypot(R[ri].x - S.pos.x, R[ri].z - S.pos.z) < 3 && Math.abs((R[ri].y != null ? R[ri].y : S.foot) - S.foot) < 1.5));
+  S.routeKeep = false;
   let i = near ? ri : nearestRouteIndex();
   const path = []; let j = i + dir;
   // walk point by point to the next stop in that direction
-  for (; j >= 0 && j < R.length; j += dir) { path.push({ x: R[j].x, z: R[j].z }); if (R[j].stop) break; }
+  for (; j >= 0 && j < R.length; j += dir) {
+    if (!path.length && Math.hypot(R[j].x - S.pos.x, R[j].z - S.pos.z) < 0.5) continue;   // already there (e.g. just through a portal): on to the next
+    path.push({ x: R[j].x, z: R[j].z }); if (R[j].stop) break;
+  }
   S.routeIdx = Math.max(0, Math.min(R.length - 1, j));
   if (!path.length) return;
   if (S.reduce) {           // reduced motion: jump straight there with a fade
@@ -365,7 +372,7 @@ function locate() {
   const out = r && r.outside ? 1 : 0, sky = (S.site && S.site.sky) || {};   // a site may give its own outdoor sky (default: desert)
   sun.intensity = out * (sky.sun || 1.5);
   if (sky.sunPos) sun.position.set(sky.sunPos[0], sky.sunPos[1], sky.sunPos[2]);
-  hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? (sky.hemi || "#dfe6ee") : "#8a7356"); hemi.groundColor.set(out ? (sky.ground || "#b08a5a") : "#1a120a");
+  hemi.intensity = out ? 1.5 : 0.45; hemi.color.set(out ? (sky.hemi || "#dfe6ee") : (sky.inHemi || "#8a7356")); lamp.color.set(sky.lamp || "#ffd7a0"); hemi.groundColor.set(out ? (sky.ground || "#b08a5a") : "#1a120a");
   scene.fog.color.set(out ? (sky.fog || "#cdb995") : "#050302"); scene.background.set(out ? (sky.bg || "#d9c7a3") : "#050302");
   scene.fog.near = out ? (sky.fogNear || 60) : 8; scene.fog.far = out ? (sky.fogFar || 700) : 46;
   const far = out && sky.far ? sky.far : 900; if (camera.far !== far) { camera.far = far; camera.updateProjectionMatrix(); }
@@ -374,8 +381,9 @@ function locate() {
 // ---------------------------------------------------------------- lights: the nearest few lamps get the light pool
 function updateLights() {
   const p = S.pos;
-  const near = S.lightAnchors.map((a) => [a, a.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
-  pool.forEach((l, i) => { const a = near[i]; if (a && a[1] < 26 * 26) { l.position.copy(a[0].p); l.intensity = 12 * a[0].s; l.distance = 16 * Math.max(0.8, a[0].s); } else l.intensity = 0; });
+  const near = S.lightAnchors.filter((a) => a.s > 0).map((a) => [a, a.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
+  const tint = (S.site && S.site.sky && S.site.sky.pool) || "#ffc488";   // a site may give its working lights a colour; an anchor may give its own
+  pool.forEach((l, i) => { const a = near[i]; if (a && a[1] < 26 * 26 && a[0].s > 0) { l.position.copy(a[0].p); l.intensity = 12 * a[0].s; l.distance = 16 * Math.max(0.8, a[0].s); l.color.set(a[0].c || tint); } else l.intensity = 0; });
 }
 
 // ---------------------------------------------------------------- info points and cards
@@ -399,9 +407,12 @@ function floorPoint(cx, cy) {
 function registerHit(obj, info) { obj.userData.info = info; S.hits.push(obj); }
 
 function linkBtn(href, label, ghost) { return `<a class="${ghost ? "ghost" : ""}" href="${esc(href)}">${esc(label)}</a>`; }
+// the hover tag belongs to the view: a label or an examined object opening over it takes it down, so it never floats
+// over a different object (museum fix batch item 6). The next frame on the site puts it back.
+function clearHover() { S.hover = null; $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on"); }
 function openCard(info) {
   if (!info) return;
-  unlock();
+  unlock(); clearHover();
   if (info.relic) { openRelic(info); return; }
   S.cardInfo = info;
   const links = (info.links || []).map((l, i) => linkBtn(l.href, l.label, i > 0)).join("");
@@ -427,7 +438,7 @@ async function openRelic(info) {
     if (!cat.CAT[r.id]) cat.CAT[r.id] = () => own[r.build]();
   }
   if (!S.insp) {
-    const m = await import("../museum/inspect.js?v=9");
+    const m = await import("../museum/inspect.js?v=11");
     S.insp = m.createInspector({ renderer, reduce: () => S.reduce, onClose: () => { S.keys.clear(); S.dirty = true; resize(); renderer.domElement.focus(); } });
     const cl = S.insp.el.querySelector('[data-i="close"]'); if (cl) cl.textContent = "Back to the site";
   }

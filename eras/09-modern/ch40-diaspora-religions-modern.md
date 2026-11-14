@@ -56,11 +56,11 @@ The diaspora religions are the direct, living continuation of the **African Trad
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The living Afro-Atlantic religions — Vodou, Santería, Candomblé, Umbanda, Palo, Louisiana Voodoo — their African origins, their syncretic formation under slavery, their spirits, initiations, and possession-centered practice; **Vodou's** documented role at **Bois Caïman** and in the **Haitian Revolution**; the *Hialeah* Supreme Court case (1993); and the twentieth-century history of **Rastafari** from Garvey and Haile Selassie's 1930 coronation through the 1966 Jamaica visit and reggae.
+**What's well supported by the evidence.** The living Afro-Atlantic religions — Vodou, Santería, Candomblé, Umbanda, Palo, Louisiana Voodoo — their African origins, their syncretic formation under slavery, their spirits, initiations, and possession-centered practice; **Vodou's** documented role at **Bois Caïman** and in the **Haitian Revolution**; the *Hialeah* Supreme Court case (1993); and the twentieth-century history of **Rastafari** from Garvey and Haile Selassie's 1930 coronation through the 1966 Jamaica visit and reggae.
 
 **Not supported — the racist caricature.** The Hollywood "**voodoo**" of pin-stuck dolls, zombies-as-monsters, curses, and evil is not these religions but a **racist distortion** built to demonize Black faith. The "**voodoo doll**" is the European poppet misattributed to Vodou; the monster-zombie is not the Haitian belief (and Davis's tetrodotoxin theory of real zombification is contested and unconfirmed). In reality these are traditions of **healing, community, ancestor-honor, and moral order** — naming the distortion false is a matter of evidence, not only respect.
 
-**Genuinely open.** The exact **demographics** of traditions long practiced in secret are uncertain; the precise **African-versus-Creole** origins of particular spirits and rites (the Petwo lwa, Umbanda) are still being worked out by scholars; the historicity of the details of **Bois Caïman** is debated; and the internal **diversity** of each religion resists any single description. What is not open is their reality, their depth, or their dignity.
+**What's genuinely open.** The exact **demographics** of traditions long practiced in secret are uncertain; the precise **African-versus-Creole** origins of particular spirits and rites (the Petwo lwa, Umbanda) are still being worked out by scholars; the historicity of the details of **Bois Caïman** is debated; and the internal **diversity** of each religion resists any single description. What is not open is their reality, their depth, or their dignity.
 
 ## Sources
 

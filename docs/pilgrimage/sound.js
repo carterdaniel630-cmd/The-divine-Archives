@@ -15,7 +15,9 @@ const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { ret
 
 export function createSound() {
   let ctx = null, master = null, noise = null, brown = null, room = null, wind = null, windF = null, fan = null, t = 0;
-  const api = { on: store.get("pg-snd") !== "0" };
+  // one sound setting for the Pilgrimage and the museum ("da-snd"; museum fix batch item 6): turning it off in one keeps
+  // it off in the other. The older per-place key is read only until the shared one is first set.
+  const shared = store.get("da-snd"), api = { on: (shared != null ? shared : store.get("pg-snd")) !== "0" };
   function buffers() {
     const n = ctx.sampleRate * 3, w = ctx.createBuffer(1, n, ctx.sampleRate), b = ctx.createBuffer(1, n, ctx.sampleRate);
     const W = w.getChannelData(0), B = b.getChannelData(0); let last = 0;
@@ -43,7 +45,7 @@ export function createSound() {
   }
   // the browsers' rule: sound may start only from a user gesture
   api.wake = () => { if (!ctx) { if (!build()) return; } if (ctx.state === "suspended") ctx.resume(); };
-  api.set = (on) => { api.on = on; store.set("pg-snd", on ? "1" : "0"); if (ctx) master.gain.setTargetAtTime(on ? 0.9 : 0, ctx.currentTime, 0.1); };
+  api.set = (on) => { api.on = on; store.set("da-snd", on ? "1" : "0"); if (ctx) master.gain.setTargetAtTime(on ? 0.9 : 0, ctx.currentTime, 0.1); };
   const ramp = (g, v) => g.gain.setTargetAtTime(v, ctx.currentTime, 0.6);
   api.update = (dt, where) => {
     if (!ctx || !api.on) return; t += dt;

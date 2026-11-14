@@ -65,11 +65,11 @@ Bhakti grew from the Vedic and epic Hinduism of the earliest eras (Chapters 5, 1
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The Bhakti movement and its spread from the Tamil south across India; the poetic corpora of the **Alvars** and **Nayanars**; the philosophers **Ramanuja**, **Madhva**, and **Vallabha**; the saints **Basava**, **Jnaneshwar**, **Namdev**, **Tukaram**, **Kabir**, **Ravidas**, **Surdas**, **Tulsidas** (the *Ramcharitmanas*, 1574), **Mirabai**, and **Chaitanya** (1486–1534, and the founding of Gaudiya Vaishnavism) and their surviving verse; the plain **anti-caste, anti-clerical, vernacular** message of the poetry; and Bhakti's immense role in shaping the modern Indian languages.
+**What's well supported by the evidence.** The Bhakti movement and its spread from the Tamil south across India; the poetic corpora of the **Alvars** and **Nayanars**; the philosophers **Ramanuja**, **Madhva**, and **Vallabha**; the saints **Basava**, **Jnaneshwar**, **Namdev**, **Tukaram**, **Kabir**, **Ravidas**, **Surdas**, **Tulsidas** (the *Ramcharitmanas*, 1574), **Mirabai**, and **Chaitanya** (1486–1534, and the founding of Gaudiya Vaishnavism) and their surviving verse; the plain **anti-caste, anti-clerical, vernacular** message of the poetry; and Bhakti's immense role in shaping the modern Indian languages.
 
 **Not supported (as history) — the lives of the saints.** The **biographies** of most Bhakti saints are woven through with **miracle and legend** — Kabir's body of flowers, Mira's nectar — devotional hagiography, not documented history. Firm **dates** for many are uncertain, and the corpora attributed to them are layered, orally transmitted, and partly the work of later hands.
 
-**Genuinely open.** How far the movement's radical **anti-caste** message actually reformed society, as against being spiritually revolutionary while socially absorbed — scholars genuinely disagree. The authorship and dating of many individual poems. And the question the flowers under the shroud pose directly: whether **Kabir** is best understood as a Hindu, a Muslim, or, as he himself insisted, as belonging to no such box at all.
+**What's genuinely open.** How far the movement's radical **anti-caste** message actually reformed society, as against being spiritually revolutionary while socially absorbed — scholars genuinely disagree. The authorship and dating of many individual poems. And the question the flowers under the shroud pose directly: whether **Kabir** is best understood as a Hindu, a Muslim, or, as he himself insisted, as belonging to no such box at all.
 
 ## Sources
 

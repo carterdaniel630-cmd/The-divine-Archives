@@ -24,7 +24,7 @@ export const R_WALK = 5.2;        // how far out from the centre the visitor may
 export const R_POOL = 1.95;       // the pool's outer kerb
 export const EXIT_HREF = "../museum.html#@02-bronze-age";
 
-// the twelve games, in chapter order, with the setting at each cabinet's base. The list (id, chapter, title)
+// the eleven games, in chapter order, with the setting at each cabinet's base. The list (id, chapter, title)
 // is the one on the Symbols page (docs/symbols.html); scores are the games' own (docs/assets/games/archive-games.js)
 export const GAMES = [
   { id: "chess", ch: "ch02", chName: "Egypt", title: "Archive Chess", sub: "A board of gods: Egyptian, Greek, or Norse.", deg: 145, setting: "limestone", prop: "saucer", note: "Limestone paving and a clay saucer lamp, after the Egypt room." },
@@ -37,8 +37,7 @@ export const GAMES = [
   { id: "labyrinth", ch: "ch29", chName: "The Maya", title: "The Labyrinth", sub: "Thread the maze of the dead; outrun the shades.", deg: 303, setting: "limestone", prop: "jungle", note: "Pale limestone with a screen of green behind it." },
   { id: "ouroboros", ch: "ch37", chName: "Theosophy & the Occult Revival", title: "Ouroboros", sub: "The serpent that devours its own tail: a game of Snake.", deg: 281, setting: "oak", prop: "brass", note: "Oak boards and a plain brass ring on a post." },
   { id: "seeker", ch: "ch40", chName: "African Diaspora Religions", title: "The Seeker's Path", sub: "Follow the clues into the chapters.", deg: 259, setting: "plain", note: "A plain floor: the ritual drawings of this tradition are not arcade decoration." },
-  { id: "treasure", ch: "ch43", chName: "The Aztec", title: "The Unfinished Journal", sub: "Four ancient sites; carry out the relics.", deg: 237, setting: "basalt", note: "A low plinth of dark basalt." },
-  { id: "pinball", ch: "ch46", chName: "Creation & the First Order", title: "The Firmament", sub: "Launch the spark through the ordered heavens.", deg: 215, setting: "night", note: "Night-blue tiles under the dome's stars." }
+  { id: "treasure", ch: "ch43", chName: "The Aztec", title: "The Unfinished Journal", sub: "Four ancient sites; carry out the relics.", deg: 237, setting: "basalt", note: "A low plinth of dark basalt." }
 ];
 const RAD = Math.PI / 180;
 export const cabPos = (g, r) => { const a = g.deg * RAD, rr = r == null ? R_CAB : r; return { x: Math.sin(a) * rr, z: -Math.cos(a) * rr }; };
@@ -62,7 +61,7 @@ export function bestOf(id) {
 // ---------------------------------------------------------------- sections: the whole hall is one
 const sections = [
   { id: "a", name: "The Archive Arcade", short: "the arcade floor", module: "hall.js", box: [-9, -1, -9, 9, 9, 9], start: { x: 0, z: 4.6, yaw: 0, y: 0 },
-    blurb: "A round hall of the archive's own furniture: twelve game cabinets, a board of your best scores, and the golden portal back to the museum." }
+    blurb: "A round hall of the archive's own furniture: eleven game cabinets, a board of your best scores, and the golden portal back to the museum." }
 ];
 
 // ---------------------------------------------------------------- where the visitor may walk
@@ -111,10 +110,10 @@ info.push({ id: "exit", section: "a", pos: [0, 1.6, 7.7], noMarker: true, cat: "
   html: "<p>Walk into the golden portal to step back into the museum, in the Bronze Age hallway.</p>", links: [{ href: EXIT_HREF, label: "Back to the museum" }] });
 
 const about = { id: "about", cat: "About this room", title: "What is this place?",
-  html: "<p>A hidden room of the archive: its twelve games in one hall, each on a cabinet standing on a piece of its chapter. It is the archive&rsquo;s own furniture, not a model of any real building.</p>" +
+  html: "<p>A hidden room of the archive: its eleven games in one hall, each on a cabinet standing on a piece of its chapter. It is the archive&rsquo;s own furniture, not a model of any real building.</p>" +
     "<p><strong>Built from what the archive already has:</strong> the floor is the museum&rsquo;s period floors, one wedge per era; the falling signs are the museum&rsquo;s Bronze Age, Early Iron Age and Axial Age symbol walls; the flames are its saucer lamp, oil lamp, lampstand and brazier; the sky is a plain starfield.</p>" +
     "<p><strong>Kept out:</strong> Vault objects, sacred objects and every sign the symbol walls hold back on sensitivity grounds.</p>" +
     "<p>The games themselves, and their sources, live on the Symbols page; each card links to its chapter.</p>",
   links: [{ href: "../symbols.html", label: "All the games" }, { href: EXIT_HREF, label: "Back to the museum", ghost: true }] };
 
-export default { title: "The Archive Arcade", version: 2, stones: ["gallery"], sections, regions, route, info, about };
+export default { title: "The Archive Arcade", version: 3, stones: ["gallery"], sections, regions, route, info, about };

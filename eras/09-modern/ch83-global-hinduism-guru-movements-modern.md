@@ -161,7 +161,7 @@ The guru movements belong with the other new religious movements (Chapter 35). T
 
 ## The evidence, honestly
 
-**Well-supported by evidence.**
+**What's well supported by the evidence.**
 
 - *Reform and export:* Vivekananda's 1893 speech and the Vedanta Society (1894). The Brahmo Samaj (1828) and Arya Samaj (1875).
 - *The plantation diaspora:* the indenture migrations and their dates and numbers.
@@ -170,14 +170,14 @@ The guru movements belong with the other new religious movements (Chapter 35). T
 - *Hindutva:* Savarkar's *Essentials of Hindutva* (1923). The Babri Masjid demolition (1992), the Supreme Court judgment (2019) and the Ram temple consecration (2024).
 - *Numbers and temples:* Pew's population estimates. The Robbinsville Akshardham (2023). California's AB 2282.
 
-**Not supported (as established fact).**
+**What's not supported by the evidence.**
 
 - The "Maharishi Effect".
 - Sathya Sai Baba's materializations as supernatural events.
 - The claim that modern postural yoga is an unchanged ancient practice.
 - Any claim that the allegations against BAPS have been proven, or disproven, in court.
 
-**Genuinely open.**
+**What's genuinely open.**
 
 - How far modern postural yoga continues or breaks with older hatha yoga.
 - Whether "Hinduism" is best understood as one religion or a family of traditions.

@@ -65,7 +65,7 @@ The two Satanisms have two entirely separate genealogies. The **imagined** one d
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The real modern movements — the **Church of Satan** (1966) and its atheistic philosophy, the *Satanic Bible* and Nine Satanic Statements; **The Satanic Temple** (2013) with its non-theistic activism, Seven Tenets, and 2019 IRS recognition; and the theistic **Temple of Set** (1975) — their founders, texts, tenets, and legal standing; and the **Satanic Panic** as a documented episode of moral panic and false accusation (Lanning, 1992). The **Romantic-literary** ancestry (Milton, Blake, Shelley, Carducci, Huysmans) is likewise well attested.
+**What's well supported by the evidence.** The real modern movements — the **Church of Satan** (1966) and its atheistic philosophy, the *Satanic Bible* and Nine Satanic Statements; **The Satanic Temple** (2013) with its non-theistic activism, Seven Tenets, and 2019 IRS recognition; and the theistic **Temple of Set** (1975) — their founders, texts, tenets, and legal standing; and the **Satanic Panic** as a documented episode of moral panic and false accusation (Lanning, 1992). The **Romantic-literary** ancestry (Milton, Blake, Shelley, Carducci, Huysmans) is likewise well attested.
 
 **Not supported (as history).** That a vast, secret network of **murderous Devil-worshippers** has ever existed. The claims of Satanic ritual abuse behind the 1980s–90s panic were investigated at length and found to have **essentially no basis**; the medieval and early-modern Devil-cult was a libel; the imagined conspiracy is, and always was, imaginary. Even the Affair of the Poisons, the one near-documented black-mass episode, was hired transgressive magic, not a standing Satanic religion.
 

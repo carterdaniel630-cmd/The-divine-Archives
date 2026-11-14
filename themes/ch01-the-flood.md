@@ -100,9 +100,14 @@ documented literary lineage, tablet to tablet.
 
 ## The ark builder's manual
 
-In 2009 a member of the public brought Irving Finkel, a curator at the British
+A member of the public brought Irving Finkel, a curator at the British
 Museum, a cell-phone-sized cuneiform tablet his father had carried home from the
-Middle East after the Second World War. It turned out to be one of the most
+Middle East after the Second World War. Accounts differ on when: the *Jewish
+Chronicle* and Wikipedia say Finkel first saw it in 1985, and the *Jewish Chronicle*
+says the owner left it with him only in 2009; one later summary gives 2009 alone,
+while the 2014 news reports checked give no year (the widely reprinted Associated Press
+story says only "a few years ago"). The sources do not fully line up, and this chapter does not resolve
+them (the Vault entry on the Ark Tablet, V90, sets them side by side). It turned out to be one of the most
 remarkable flood documents ever found. The **"Ark Tablet,"** sixty lines of Old
 Babylonian script written around 1900–1700 BCE, is essentially a construction
 brief: the god Enki, speaking to Atrahasis, dictates how to build the boat. And
@@ -113,9 +118,12 @@ waterproofed with precisely specified quantities of bitumen. Most startling of
 all, the tablet carries the line — damaged but legible — that the animals went
 aboard "two by two," the earliest known appearance of a detail everyone
 associates with Noah. Finkel published the text in *The Ark Before Noah* (2014);
-a full-scale attempt to build the round ark to its specification was later
-mounted for television and, waterlogged but afloat, broadly vindicated the
-design. The Ark Tablet is a reminder that the Mesopotamian flood tradition was
+the same year a television team built a scaled-down version of the round ark
+in Kerala, India, about 40 feet across: a fifth of the tablet's size by the
+documentary's own count, though some accounts say a third. It floated, but water
+came in through its seams from the moment it was launched, and the crew had to
+plug the gaps and set pumps working: a test
+of the boat type, not proof that the full-size design would have worked. The Ark Tablet is a reminder that the Mesopotamian flood tradition was
 not one fixed text but a living body of retellings, each generation supplying the
 practical detail its audience wanted.
 
@@ -411,7 +419,27 @@ origin remains in the dark.
 - Irving Finkel, *The Ark Before Noah: Decoding the Story of the Flood* (2014);
   the round-coracle ark and the "two by two" line —
   [Biblical Archaeology Society: The Animals Went in Two by Two](https://www.biblicalarchaeology.org/daily/news/the-animals-went-in-two-by-two-according-to-babylonian-ark-tablet/);
-  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark).
+  [Jewish Chronicle: The tablet that altered the story of Noah's ark](https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe)
+  ("Finkel first came across the tablet in 1985"; "only managed to convince Simmonds to leave it with him in 2009");
+  [historyofinformation.com: Discovery of the "Ark Tablet"](https://historyofinformation.com/detail.php?id=4060)
+  (a later summary: "In 2009 … received"); 2014 reports with no year — the Associated Press story, "Finkel got hold of it a few years ago",
+  as reprinted by the [Christian Science Monitor, 25 January 2014](https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round)
+  and [Times of Israel](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/);
+  [PBS NewsHour, 24 January 2014](https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round);
+  [Archaeology magazine, 27 January 2014](https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/);
+  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
+  (first encountered the tablet in 1985, could not translate the whole of it until 2009;
+  Alleppey, Kerala, 2014; gives "one-third scale" and a continuously running petrol pump; the documentary
+  itself, below, says a fifth and "a collection of pumps", so the page follows the documentary and names the disagreement);
+  PBS NOVA, *Secrets of Noah's Ark* (aired 7 October 2015), programme text at
+  [PBS NOVA: Secrets of Noah's Ark](https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html)
+  ("about 40 feet in diameter, just a fifth the size of the ark described in the tablet"; at launch "a heck of a lot
+  of water coming in"; "They plug the gaps and put a collection of pumps to work"; closing line: the team "never
+  managed to duplicate Babylonian bitumen, but the structure of the ark is sound");
+  The Telegraph (India), "The Ark that Finkel built" (the Kerala build and its launch; it gives the size as
+  "bigger than one-fifth of the original", so the page gives the scale as approximate). The paper's own URL
+  could not be opened in the 2026-11-02 check; the text was read from a copy and is cited via the Wikipedia page;
+  [Channel 4 press: The Real Noah's Ark](https://www.channel4.com/press/news/real-noahs-ark) (the 2014 documentary).
 - Berossus, *Babyloniaca* (c. 281 BCE), and the Xisuthros flood —
   [Livius: The Great Flood — Berossus](https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/);
   [Wikipedia: Babyloniaca (Berossus)](https://en.wikipedia.org/wiki/Babyloniaca_(Berossus)).

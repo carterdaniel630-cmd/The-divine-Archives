@@ -48,6 +48,10 @@ Garden Tomb as a Vestibule panel; no "darkness" view.
   about 345 CE: National Geographic (Oct 2016; Nov 2017),
   https://www.nationalgeographic.com/history/article/jesus-tomb-archaeology-jerusalem-christianity-rome
 - Constantine, Hadrian's temple: Eusebius, *Life of Constantine* 3.25–40.
+- The cross found in Constantine's time, as tradition: Cyril of Jerusalem, *Letter to Constantius* (about 351), as
+  summarised by E. Monaci Castagno, https://iris.unito.it/handle/2318/1715890 , and the Greek Orthodox Patriarchate
+  of Jerusalem (feast of 7 May), through search results only. The Helena story is later (Ambrose, 395). Added
+  2026-10-18: the card had dated the tradition "from the late 4th century".
 - The Status Quo and the six communities: *Christianity Today*, "Divvying up the most sacred place" (2008).
 - The Garden Tomb (Gordon, 1883; Iron Age date): G. Barkay, "The Garden Tomb: Was Jesus Buried Here?", *BAR* 12:2
   (1986); Chadwick 2003.

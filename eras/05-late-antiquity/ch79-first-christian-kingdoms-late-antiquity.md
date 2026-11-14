@@ -64,11 +64,11 @@ These kingdoms were converted from the wider world of **Early Christianity** (ch
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The adoption of Christianity by the rulers of Armenia (c. 301–314), Iberia (c. 319–326) and Aksum (c. 340–350); Ezana's coins and inscriptions recording his conversion; the role of Frumentius and his consecration by Athanasius; the creation of the Armenian alphabet by Mesrop Mashtots (c. 405) and the translation of the Bible; the Battle of Avarayr (451); the Armenian and Ethiopian churches' rejection of Chalcedon and their place among the Oriental Orthodox; the Nine Saints and the monasteries; the radiocarbon dating of the Garima Gospels (c. 390–660); the Ethiopian canon of 81 books and its distinctive practices; the tabot and Timkat; Lalibela's rock-hewn churches; and the khachkar tradition.
+**What's well supported by the evidence.** The adoption of Christianity by the rulers of Armenia (c. 301–314), Iberia (c. 319–326) and Aksum (c. 340–350); Ezana's coins and inscriptions recording his conversion; the role of Frumentius and his consecration by Athanasius; the creation of the Armenian alphabet by Mesrop Mashtots (c. 405) and the translation of the Bible; the Battle of Avarayr (451); the Armenian and Ethiopian churches' rejection of Chalcedon and their place among the Oriental Orthodox; the Nine Saints and the monasteries; the radiocarbon dating of the Garima Gospels (c. 390–660); the Ethiopian canon of 81 books and its distinctive practices; the tabot and Timkat; Lalibela's rock-hewn churches; and the khachkar tradition.
 
-**Not supported (as established fact).** The miraculous details of the conversion stories (Tiridates as a boar, the darkness on Mirian's hunt); the presence of the Ark of the Covenant at Aksum (untestable); the robe of Christ at Mtskheta; a Christian kingdom at Edessa around 200.
+**What's not supported by the evidence.** The miraculous details of the conversion stories (Tiridates as a boar, the darkness on Mirian's hunt); the presence of the Ark of the Covenant at Aksum (untestable); the robe of Christ at Mtskheta; a Christian kingdom at Edessa around 200.
 
-**Genuinely open.** The exact dates of the Armenian and Georgian conversions; the origins of the Georgian alphabet; the sources of Ethiopian Christianity's Old Testament practices (early Judaism in Aksum, or later development); and how far the early churches reached beyond the royal courts.
+**What's genuinely open.** The exact dates of the Armenian and Georgian conversions; the origins of the Georgian alphabet; the sources of Ethiopian Christianity's Old Testament practices (early Judaism in Aksum, or later development); and how far the early churches reached beyond the royal courts.
 
 ## Sources
 

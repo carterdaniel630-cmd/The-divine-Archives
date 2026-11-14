@@ -21,11 +21,13 @@
    "type": "site",
    "label": "Angkor Wat",
    "era": "07-high-medieval",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/angkor-wat.html",
    "links": [
     "chapter:ch20",
     "chapter:ch30",
-    "chapter:ch69"
+    "chapter:ch69",
+    "relic:v27"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -91,10 +93,12 @@
    "type": "site",
    "label": "Borobudur",
    "era": "06-early-medieval",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/borobudur.html",
    "links": [
     "chapter:ch20",
-    "chapter:ch53"
+    "chapter:ch53",
+    "relic:v46"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -139,7 +143,8 @@
    "type": "site",
    "label": "Chichén Itzá",
    "era": "07-high-medieval",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/chichen-itza.html",
    "links": [
     "chapter:ch29",
     "relic:v31"
@@ -177,7 +182,8 @@
    "type": "site",
    "label": "Delphi",
    "era": "03-early-iron-age",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/delphi.html",
    "links": [
     "chapter:ch08",
     "chapter:ch15",
@@ -248,7 +254,8 @@
    "type": "site",
    "label": "Göbekli Tepe",
    "era": "01-prehistory",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/gobekli-tepe.html",
    "links": [
     "chapter:ch41",
     "chapter:ch42",
@@ -571,7 +578,8 @@
    "type": "site",
    "label": "Mogao Caves",
    "era": "05-late-antiquity",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/mogao-caves.html",
    "links": [
     "chapter:ch20",
     "chapter:ch53",
@@ -619,9 +627,11 @@
    "type": "site",
    "label": "Newgrange",
    "era": "01-prehistory",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/newgrange.html",
    "links": [
-    "chapter:ch42"
+    "chapter:ch42",
+    "relic:v86"
    ],
    "from": "docs/assets/pilgrimage-data.js"
   },
@@ -664,7 +674,8 @@
    "type": "site",
    "label": "Persepolis",
    "era": "04-axial-age",
-   "status": "queued",
+   "status": "live",
+   "href": "pilgrimage/persepolis.html",
    "links": [
     "chapter:ch06",
     "chapter:ch49",

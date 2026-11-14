@@ -94,11 +94,11 @@ The Etruscans were neighbours, teachers and victims of **Rome** (ch13), which to
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The Etruscan city-states and their chronology; the Liver of Piacenza (found 1877) and its inscriptions; the Pyrgi tablets (found 1964, c. 500 BCE) naming Uni and Astarte; the Liber Linteus as an Etruscan ritual text reused as mummy wrappings; the painted tombs of Tarquinia and the necropolis of Cerveteri, including Charun and Vanth; the names and attributes of the main deities; the Roman accounts of the Etrusca disciplina and of the Etruscan haruspices consulted by Rome into late antiquity; and the 2021 ancient-DNA evidence that the Etruscans were of local origin.
+**What's well supported by the evidence.** The Etruscan city-states and their chronology; the Liver of Piacenza (found 1877) and its inscriptions; the Pyrgi tablets (found 1964, c. 500 BCE) naming Uni and Astarte; the Liber Linteus as an Etruscan ritual text reused as mummy wrappings; the painted tombs of Tarquinia and the necropolis of Cerveteri, including Charun and Vanth; the names and attributes of the main deities; the Roman accounts of the Etrusca disciplina and of the Etruscan haruspices consulted by Rome into late antiquity; and the 2021 ancient-DNA evidence that the Etruscans were of local origin.
 
-**Not supported (as established fact).** Herodotus's Lydian migration; claims that Etruscan has been deciphered through a modern language; divination as an effective method of prediction; the derivation of the bishop's crosier from the lituus.
+**What's not supported by the evidence.** Herodotus's Lydian migration; claims that Etruscan has been deciphered through a modern language; divination as an effective method of prediction; the derivation of the bishop's crosier from the lituus.
 
-**Genuinely open.** The full meaning of the Liber Linteus and of much Etruscan vocabulary; the relation between Etruscan and Mesopotamian liver divination; how much of the Etruscan pantheon was native; whether Campo della Fiera is the Fanum Voltumnae; the reasons for the darkening of tomb imagery; and the *persona*–*phersu* etymology.
+**What's genuinely open.** The full meaning of the Liber Linteus and of much Etruscan vocabulary; the relation between Etruscan and Mesopotamian liver divination; how much of the Etruscan pantheon was native; whether Campo della Fiera is the Fanum Voltumnae; the reasons for the darkening of tomb imagery; and the *persona*–*phersu* etymology.
 
 ## Sources
 

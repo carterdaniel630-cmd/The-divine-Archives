@@ -77,11 +77,11 @@ The religion of the Eternal Heaven stands in the line of the steppe peoples of *
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** The veneration of Tengri among Turkic and Mongol peoples, attested in the Orkhon inscriptions (732–735), Chinese and Persian sources and the *Secret History*; the Mongol formula "By the power of Eternal Heaven" in edicts and letters; the role of shamans and of Kököchü at Chinggis's court; the rituals described by Carpini and Rubruck (felt images, libations, scapulimancy, purification by fire); the exemption of clergy from taxation; Rubruck's debate of 1254; the conversions of Ghazan (1295), Kublai and Phagpa, and Altan Khan and the Dalai Lama title (1578); the suppression of shamanism by Buddhist missionaries; the communist purges of the 1930s; and the post-1990 revivals.
+**What's well supported by the evidence.** The veneration of Tengri among Turkic and Mongol peoples, attested in the Orkhon inscriptions (732–735), Chinese and Persian sources and the *Secret History*; the Mongol formula "By the power of Eternal Heaven" in edicts and letters; the role of shamans and of Kököchü at Chinggis's court; the rituals described by Carpini and Rubruck (felt images, libations, scapulimancy, purification by fire); the exemption of clergy from taxation; Rubruck's debate of 1254; the conversions of Ghazan (1295), Kublai and Phagpa, and Altan Khan and the Dalai Lama title (1578); the suppression of shamanism by Buddhist missionaries; the communist purges of the 1930s; and the post-1990 revivals.
 
-**Not supported (as established fact).** That "Tengrism" was an organized monotheistic religion with fixed doctrines comparable to the scriptural religions; the legend that all who knew Chinggis Khan's grave were killed; any known location of that grave.
+**What's not supported by the evidence.** That "Tengrism" was an organized monotheistic religion with fixed doctrines comparable to the scriptural religions; the legend that all who knew Chinggis Khan's grave were killed; any known location of that grave.
 
-**Genuinely open.** How far steppe religion was monotheistic, polytheistic or both; the relationship between Tengri and the Chinese concept of Heaven (*tian*); the exact numbers killed in the 1930s purges; the numbers of shamans today; and how much of modern neo-Tengrism reflects historical practice.
+**What's genuinely open.** How far steppe religion was monotheistic, polytheistic or both; the relationship between Tengri and the Chinese concept of Heaven (*tian*); the exact numbers killed in the 1930s purges; the numbers of shamans today; and how much of modern neo-Tengrism reflects historical practice.
 
 ## Sources
 

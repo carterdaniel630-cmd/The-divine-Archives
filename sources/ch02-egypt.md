@@ -56,3 +56,20 @@ entry id `ra` and its links are unchanged. Source, opened from this session:
   the name means "Re, who is Horus of the Two Horizons," was "the actual name of the Re of Heliopolis," and the god is
   "depicted as a falcon-headed man … crowned with a sun disk and a uraeus."
   https://carlos.emory.edu/publications/LifeAndTheAfterlife/catalog/sacred-life/32/
+
+## 2026-10-25 wording fix: the "second death" (opening scene)
+
+The opening said the condemned "simply ceases — the second death, annihilation" without hedging or a source
+(weekly audit note, 2026-10-25). Now framed as Egyptian belief and sourced. Both pages opened from this session:
+- Joshua Aaron Roberson (University of Memphis), "A Season in Hell," *Expedition* 57:2 (Penn Museum, Fall 2015).
+  https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf — punishment of the damned aimed at
+  "a complete unmaking of the individual"; quotes the Amduat / Book of Caverns: "I have consigned you to annihilation,
+  having condemned you to non-existence!"; says Egyptian texts "do not usually describe the torture of individual human
+  souls as an ongoing or otherwise eternal process"; a crouching devourer consumes the soul, "relegating him or her to
+  the status of damnation."
+- UCL Digital Egypt, Book of the Dead chapter 44, "Formula for not dying again" (also Coffin Texts 786–7; papyrus of
+  Nu). https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html
+- Not opened: the Wikipedia article on Ammit (permission not granted from this session); not cited.
+- British Museum, Book of the Dead of Hunefer (EA 9901,3), opened: names Ammit the "Devourer of the Damned" but does not
+  say what follows a heavy heart; not cited for the fate.
+

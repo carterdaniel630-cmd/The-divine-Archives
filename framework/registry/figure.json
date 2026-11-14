@@ -537,7 +537,8 @@
    "href": "pantheon.html#eshu",
    "links": [
     "chapter:ch33",
-    "chapter:ch40"
+    "chapter:ch40",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },
@@ -1644,7 +1645,8 @@
    "href": "pantheon.html#obatala",
    "links": [
     "chapter:ch33",
-    "chapter:ch40"
+    "chapter:ch40",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },
@@ -1668,7 +1670,8 @@
    "href": "pantheon.html#ogun",
    "links": [
     "chapter:ch33",
-    "chapter:ch40"
+    "chapter:ch40",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },
@@ -1679,7 +1682,8 @@
    "parent": "tradition:yoruba",
    "href": "pantheon.html#olodumare",
    "links": [
-    "chapter:ch33"
+    "chapter:ch33",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },
@@ -1706,7 +1710,8 @@
    "links": [
     "chapter:ch33",
     "chapter:ch40",
-    "chapter:ch48"
+    "chapter:ch48",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },
@@ -2071,7 +2076,8 @@
    "links": [
     "chapter:ch33",
     "chapter:ch40",
-    "chapter:ch49"
+    "chapter:ch49",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },
@@ -2367,7 +2373,8 @@
    "links": [
     "chapter:ch33",
     "chapter:ch40",
-    "chapter:ch48"
+    "chapter:ch48",
+    "chapter:ch84"
    ],
    "from": "docs/assets/pantheon-data.js"
   },

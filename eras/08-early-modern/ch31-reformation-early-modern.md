@@ -80,7 +80,7 @@ The Reformation grew directly out of the medieval **Catholic** church it broke f
 
 ## The evidence, honestly
 
-**Well-supported by evidence.** Luther's Ninety-Five Theses and the indulgence controversy of 1517; the Diet of Worms (1521) and the Wartburg translation; the Marburg split over the Eucharist (1529); the Peasants' War (1525); the doctrines and texts of Luther, Zwingli, and Calvin (and the Servetus execution, 1553); the English Reformation from the Act of Supremacy (1534) to the Elizabethan Settlement (1559) and the King James Bible (1611); the Radical Reformation; the Council of Trent and the Counter-Reformation; and the wars of religion through the Peace of Westphalia (1648). The documentary record is overwhelming.
+**What's well supported by the evidence.** Luther's Ninety-Five Theses and the indulgence controversy of 1517; the Diet of Worms (1521) and the Wartburg translation; the Marburg split over the Eucharist (1529); the Peasants' War (1525); the doctrines and texts of Luther, Zwingli, and Calvin (and the Servetus execution, 1553); the English Reformation from the Act of Supremacy (1534) to the Elizabethan Settlement (1559) and the King James Bible (1611); the Radical Reformation; the Council of Trent and the Counter-Reformation; and the wars of religion through the Peace of Westphalia (1648). The documentary record is overwhelming.
 
 **Not supported (as history).** The **theological claims themselves** — justification by faith alone, the sole authority of Scripture, predestination, the real presence or its denial — are matters of **faith and theology**, recorded here as the convictions people fought over, neither proven nor refuted. Whether the reformers or Rome were *right* is not a question history can answer.
 
