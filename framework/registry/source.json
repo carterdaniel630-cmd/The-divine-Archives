@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2018,
+ "count": 2020,
  "entities": [
   {
    "id": "source:abc-net-au/ace7d215b0",
@@ -616,6 +616,12 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:archaeology-org/7ad7ff72a9",
+   "type": "source",
+   "label": "https://archaeology.org/wp-content/uploads/2020/04/FULLTEXT01.pdf",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:archaeology-org/98e4cd559b",
    "type": "source",
    "label": "https://archaeology.org/news/2020/12/16/201217-egypt-great-pyramid/",
@@ -641,12 +647,6 @@
     "chapter:ch01"
    ],
    "from": "sources/ch01-the-flood.md"
-  },
-  {
-   "id": "source:archaeology-org/e1f7d293cc",
-   "type": "source",
-   "label": "https://archaeology.org/wp-content/uploads/2020/06/FULLTEXT01.pdf",
-   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:archaeology-org/f47c1c222d",
@@ -1142,6 +1142,12 @@
     "site:delphi"
    ],
    "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:bbc-com/4a11627550",
+   "type": "source",
+   "label": "https://www.bbc.com/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:beinecke-library-yale-edu/157431f830",
@@ -4700,6 +4706,12 @@
    "from": "sources/pilgrimage-great-pyramid.md"
   },
   {
+   "id": "source:doaj-org/7d95bad580",
+   "type": "source",
+   "label": "https://doaj.org/article/a6d392620fa84bd88301e4114bdb749a",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:doaks-org/4fd406f590",
    "type": "source",
    "label": "https://doaks.org/research/publications/books/twin-tollans-chicha-c-n-itza-tula-and-the",
@@ -4797,6 +4809,12 @@
     "chapter:ch66"
    ],
    "from": "sources/ch66-san-rock-art.md"
+  },
+  {
+   "id": "source:doi-org/ab18d732d5",
+   "type": "source",
+   "label": "https://doi.org/10.33063/diva-401040",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:doi-org/be409d6a40",
@@ -18001,12 +18019,6 @@
     "relic:v72"
    ],
    "from": "sources/v72-book-of-shadows.md"
-  },
-  {
-   "id": "source:www-bbc-com-pages-dev/eedaa5823b",
-   "type": "source",
-   "label": "https://www-bbc-com.pages.dev/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
-   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:www-current-chs-harvard-edu/6cbfeb8169",
