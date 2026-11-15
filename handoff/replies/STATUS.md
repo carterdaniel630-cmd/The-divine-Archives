@@ -705,3 +705,5 @@ Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-202
 - 2026-11-08 ~16:50 UTC: PR #130 (chapter-images t1) head 593d7d17. Review FINDINGS 6 -> fixed (shared exclusion list tools/data/relic-stills.json: V68, V76, V16/V17/V74, D2 nine; verify-relic-stills.js; verify.yml paths); delta PASS; delta 2 PASS. Three revered-figure stills (V57 Mandylion, V25 Veronica, V13 Tilma) held out pending Carter. 168 stills shown on chapter pages. Waits on GitHub green + Carter per-item yes.
 
 - 2026-11-08 ~17:05 UTC: **PR #130 merged per item** on Carter's yes (`decisions-2026-11-08-carter-yes-130.md`): main b3188230 -> 593d7d17 (fast-forward), GitHub all green incl. Lighthouse. 168 museum-rendition stills on 50 chapters. Still for Carter: revered-figure stills a/b; D2.
+
+- 2026-11-15 ~02:50 UTC: **PR #141 merged per item** on Carter's "merge" (confirming his 11-15 "a", reversing 11-08 "b"): main dfe4d272 -> f92ab8d7; V57/V25/V13 stills now on chapter pages; GitHub 9/9 green incl. Lighthouse; review PASS.
