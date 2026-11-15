@@ -424,7 +424,7 @@ Egyptian cosmos in miniature.
   [Joshua Aaron Roberson, "A Season in Hell," *Expedition* 57:2 (Penn Museum, 2015)](https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf);
   [UCL Digital Egypt: Book of the Dead, chapter 44](https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html).
 - Plutarch, *On Isis and Osiris* (fullest continuous Osiris narrative, c. 2nd c.
-  CE). See [Wikipedia: Osiris myth](https://en.wikipedia.org/wiki/Osiris_myth).
+  CE).
 
 *Deities, cosmology, and the Osiris myth*
 - [Birmingham Egyptology: Osiris and the origins of mummification](https://more.bham.ac.uk/birminghamegyptology/eton-myers-project/virtual-museum/toward-the-horizon/osiris-the-mythological-origins-of-mummification/).
@@ -432,18 +432,15 @@ Egyptian cosmos in miniature.
 
 *Folk and personal religion*
 - Deir el-Medina, household gods, and oracles —
-  [Wikipedia: Deir el-Medina](https://en.wikipedia.org/wiki/Deir_el-Medina);
   [Facts and Details: Personal Religion in Ancient Egypt](https://africame.factsanddetails.com/article/entry-143.html).
 - Personal piety and penitential stelae (Neferabu, BM EA 589) —
   [Garstang Museum: Personal Piety — Religion and the People](https://garstangmuseum.wordpress.com/2018/01/10/personal-piety-religion-and-the-people/);
   [British Museum: stela of Neferabu (EA 589)](https://www.britishmuseum.org/collection/object/Y_EA589);
   Alexandra von Lieven / R. Luiselli, "Personal Piety in Ancient Egypt," *Religion Compass* (2014).
 - Meretseger and Letters to the Dead —
-  [TheCollector: Meretseger](https://www.thecollector.com/meretseger/);
-  [Wikipedia: Letters to the dead](https://en.wikipedia.org/wiki/Letters_to_the_dead).
+  [TheCollector: Meretseger](https://www.thecollector.com/meretseger/).
 
 *The Amarna period and the monotheism debate*
-- [Wikipedia: Atenism](https://en.wikipedia.org/wiki/Atenism).
 - [ASOR: Monotheism or Monopoly? Akhenaten and His Religious-Political Reform](https://www.asor.org/anetoday/2021/05/monotheism-monopoly-akhenaten).
 - [Britannica: Akhenaten — Religion of the Aton](https://www.britannica.com/biography/Akhenaten/Religion-of-the-Aton).
 - [The Past: Breaking Ma'at — Akhenaten and the battle for Egyptian tradition](https://the-past.com/feature/breaking-maat-akhenaten-and-the-battle-for-egyptian-tradition-and-identity/).

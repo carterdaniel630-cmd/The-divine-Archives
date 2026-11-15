@@ -406,10 +406,7 @@ turned inside out.
 *Primary texts (translations)*
 - *The Rigveda*, trans. Stephanie Jamison &amp; Joel Brereton (2014), the current
   scholarly standard; Wendy Doniger, *The Rig Veda: An Anthology* (Penguin).
-- Creation hymns: [Wikipedia: Nasadiya Sukta](https://en.wikipedia.org/wiki/Nasadiya_Sukta);
-  [Hiranyagarbha Sukta](https://en.wikipedia.org/wiki/Hiranyagarbha_S%C5%ABkta);
-  Purusha Sukta (Rigveda 10.90).
-- The Gayatri Mantra (Rigveda 3.62.10) — [Wikipedia: Gayatri Mantra](https://en.wikipedia.org/wiki/Gayatri_Mantra).
+- Creation hymns: Purusha Sukta (Rigveda 10.90).
 
 *The Atharvaveda (household charms and healing)*
 - Maurice Bloomfield, trans., *Hymns of the Atharva-Veda* (Sacred Books of the East,
@@ -420,7 +417,6 @@ turned inside out.
 
 *Deities, Rta, and the pantheon*
 - [Britannica: Vedic religion](https://www.britannica.com/topic/Vedic-religion);
-  [Wikipedia: Historical Vedic religion](https://en.wikipedia.org/wiki/Historical_Vedic_religion);
   Mitra–Varuna and Rta overviews.
 
 *Ritual, texts, and transmission*
@@ -430,7 +426,6 @@ turned inside out.
   ritual), for the fire-altar symbolism.
 
 *Comparative and Indo-Iranian*
-- On soma/haoma and the plant debate: [Wikipedia: Botanical identity of soma–haoma](https://en.wikipedia.org/wiki/Botanical_identity_of_soma%E2%80%93haoma).
 - Indo-European poetics and theonyms (Dyaus/Zeus/Jupiter): M. L. West, *Indo-European
   Poetry and Myth* (2007); Calvert Watkins, *How to Kill a Dragon* (1995).
 

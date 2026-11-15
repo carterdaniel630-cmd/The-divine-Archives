@@ -67,11 +67,7 @@ The Paleolithic is the root system of everything that follows in this book. Its 
 ## Sources
 
 - Cave art (Chauvet, Lascaux), therianthropes, and the shamanism interpretation (Lewis-Williams; Breuil's earlier "sorcerer" reading) — MDPI *Religions*, "Art and Shamanism." https://www.mdpi.com/2077-1444/10/1/54
-- The Lion Man of Hohlenstein-Stadel (c. 40,000 years old) — "Lion-man," Wikipedia. https://en.wikipedia.org/wiki/Lion-man
 - Sulawesi cave art: the ~45,500-year warty pig and the Leang Bulu' Sipong 4 therianthrope hunting scene (revised to ~48–51,000 years in 2024) — "Narrative cave art in Indonesia by 51,200 years ago," *Nature* (2024); Smithsonian. https://www.nature.com/articles/s41586-024-07541-7
 - The Hohle Fels bird-bone flutes (c. 40,000 years) as the earliest known musical instruments — "New flutes document the earliest musical tradition in southwestern Germany," *Nature* (2009). https://www.nature.com/articles/nature08169
-- Venus figurines and the contested fertility/goddess reading; Dolní Věstonice ceramic Venus — "Venus figurines," Wikipedia. https://en.wikipedia.org/wiki/Venus_figurines
-- Deliberate burial and grave-goods: Qafzeh/Skhul (~100,000 years, ochre) and Sungir — Smithsonian Human Origins, "Qafzeh: Oldest Intentional Burial"; "Skhul and Qafzeh hominins," Wikipedia. https://humanorigins.si.edu/evidence/behavior/burial/qafzeh-oldest-intentional-burial
+- Deliberate burial and grave-goods: Qafzeh/Skhul (~100,000 years, ochre) and Sungir — Smithsonian Human Origins, "Qafzeh: Oldest Intentional Burial." https://humanorigins.si.edu/evidence/behavior/burial/qafzeh-oldest-intentional-burial
 - The critique of the entoptic/"three stages of trance" shamanic model — Helvenston & Bahn, "Testing the 'Three Stages of Trance' Model." https://www.researchgate.net/publication/231950815_Testing_the_'Three_Stages_of_Trance'_Model
-- Red ochre and the engraved Blombos ochre (c. 73,000 years) as the earliest abstract mark-making — "Blombos Cave," Wikipedia. https://en.wikipedia.org/wiki/Blombos_Cave
-- Neanderthal burial and symbolic-behavior debate (Shanidar, La Pasiega, Bruniquel) — reference overviews. https://en.wikipedia.org/wiki/Bruniquel_Cave
