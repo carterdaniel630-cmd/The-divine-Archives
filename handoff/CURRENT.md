@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (17:20 UTC)
+# Handoff — updated 2026-11-15 (17:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Wikipedia strip part 4 (era 05) merged (2026-11-15 ~17:16 UTC)
+## Latest: Wikipedia strip part 5 (era 06) merged (2026-11-15 ~17:42 UTC)
+- **`main` = `2d3450cb`** (deploy run 43742552001 green): **PR #153** fast-forwarded `30f6de4b` → `2d3450cb` **per item** on Carter's strip yes (`decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`). Era 06 chapters (ch21–25, ch53, ch54, ch60) no longer list Wikipedia (43 entries removed, list only); pending tags unchanged.
+- **Open:** #154 strip part 6 and #155 strip part 7 (both review PASS; wait on re-sync onto `2d3450cb` + Lighthouse), #142–#145, #139.
+
+## Earlier: Wikipedia strip part 4 (era 05) merged (2026-11-15 ~17:16 UTC)
 - **`main` = `30f6de4b`** (deploy run 43740184151 green; Knowledge graph run 43740184187 green): **PR #152** fast-forwarded `73073027` → `30f6de4b` **per item** on Carter's strip yes (`decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`). Era 05 chapters (ch16–20, ch55, ch70) no longer list Wikipedia (26 entries removed, list only); re-sourcing flags 13–30 in `replies/2026-11-15-run-1633-wikipedia-strip-05.md`. Independent review PASS 0 findings (`replies/2026-11-15-pr152-independent-review.md`); GitHub 10/10 green incl. Lighthouse on `30f6de4b`; local 9/0/1, 18/18, 51/51, headless 360/390 clean.
 - **Open:** #153 strip part 5 (re-synced `2d3450cb` onto `30f6de4b`; waits on independent review + GitHub incl. Lighthouse), #142–#145, #139.
 
