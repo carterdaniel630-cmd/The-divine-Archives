@@ -5,8 +5,10 @@
 **Branch:** `loop/wikipedia-strip-07` **`ce8f3575`**, one commit on `main` `30f6de4b` (fast-forwards). **PR #154** opened (Carter's "a").
 **Session:** ..01HFWzTsBp7DzsRa. It built #154 and must not review it. It wrote none of #153.
 
+**Correction (run 17:32 UTC, same session):** the link count is **36**, not 37. ch26 has 8 Wikipedia links; its Notarikon/Temurah entry named the articles without a link. The commit `ce8f3575` message still says 37. The PR #154 body is corrected.
+
 ## In plain words
-37 Wikipedia links are gone from the Sources lists of eleven High Medieval chapters. Counted by article, that is 43 citations, because some links named two articles and two named articles had no link of their own. The twelfth chapter (ch81 Tengri) had none. Nothing outside the Sources lists changed. Era 06 was hit harder. Here **ch26 Kabbalah and ch27 Sufism lose the most**: five whole bullets each, which leaves the Sefer Yetzirah, the Tree of Life, PaRDeS, Christian Kabbalah, the golem and all the Sufi orders without a source.
+36 Wikipedia links are gone from the Sources lists of eleven High Medieval chapters. Counted by article, that is 43 citations, because some links named two articles and two named articles had no link of their own. The twelfth chapter (ch81 Tengri) had none. Nothing outside the Sources lists changed. Era 06 was hit harder. Here **ch26 Kabbalah and ch27 Sufism lose the most**: five whole bullets each, which leaves the Sefer Yetzirah, the Tree of Life, PaRDeS, Christian Kabbalah, the golem and all the Sufi orders without a source.
 
 ## Rule used (same as parts 3–5)
 - Only the Wikipedia citation goes. The rest of the bullet is untouched, and the separator next to it goes with it (" ; ", "; ", " · ").
@@ -19,7 +21,7 @@
 ## Counts (the order's "diff summary per page")
 | Chapter | Wikipedia citations removed (articles) | Links | Bullets removed whole | Source items left | wikipedia on built page, after |
 |---|---|---|---|---|---|
-| ch26 Kabbalah | 12 (Sefer Yetzirah, Zohar, Tree of life, Shekhinah, Lurianic Kabbalah, Sabbatai Zevi, Pardes, Notarikon, Temurah, Christian Kabbalah, Golem, Hasidei Ashkenaz) | 9 | 5 | 6 | 0 |
+| ch26 Kabbalah | 12 (Sefer Yetzirah, Zohar, Tree of life, Shekhinah, Lurianic Kabbalah, Sabbatai Zevi, Pardes, Notarikon, Temurah, Christian Kabbalah, Golem, Hasidei Ashkenaz) | 8 | 5 | 6 | 0 |
 | ch27 Sufism | 5 (Junayd, Revival of the Religious Sciences, Mevlevi Order, Naqshbandi Order, Anti-Sufism) | 5 | 5 | 7 | 0 |
 | ch28 Scholasticism | 6 (Incoherence of the Incoherence, Five Ways, Siger of Brabant, Double truth, Ars combinatoria, Medieval Exegesis) | 5 | 4 | 9 | 0 |
 | ch29 Maya | 4 (Maya Hero Twins, Bloodletting in Mesoamerica, Sacred Cenote, Diego de Landa) | 4 | 1 | 6 | 0 |
@@ -31,7 +33,7 @@
 | ch62 Native N. American | 1 (Southeastern Ceremonial Complex) | 1 | 0 | 6 | 0 |
 | ch72 Cathars | 1 (Otto Rahn) | 1 | 0 | 13 | 0 |
 | ch81 Tengri | 0 | 0 | 0 | 12 | 0 |
-| **Total** | **43**, 11 pages touched | **37** | **22** (+16 trimmed) | | **0 on all 12 era 07 pages** |
+| **Total** | **43**, 11 pages touched | **36** | **22** (+16 trimmed) | | **0 on all 12 era 07 pages** |
 
 ## Sole-source flags (order item 5), for re-sourcing from the well
 Judged from each chapter's own list; I did not open the remaining sources. The numbering continues the strip's running list (part 5 ended at 61).
