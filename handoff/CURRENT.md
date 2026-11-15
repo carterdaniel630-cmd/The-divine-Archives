@@ -1,11 +1,16 @@
-# Handoff — updated 2026-11-15 (22:50 UTC)
+# Handoff — updated 2026-11-15 (23:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #142 V44 Pilate Stone merged and re-cleared (2026-11-15 ~22:44 UTC)
+## Latest: #158 Vault checker parity merged (2026-11-15 ~23:04 UTC)
+- **`main` = `089441d5`** (deploy run 282 green): **PR #158** (`tools/review-checks.js` only: a Sources-only change keeps a cleared Vault entry cleared, as for chapters) fast-forwarded **per item** on Carter's "yes" (`decisions-2026-11-15-carter-yes-158.md`). Independent review PASS 0 (`2026-11-15-pr158-independent-review.md`); GitHub 4/4 green (Lighthouse does not run on tools-only changes); local build no diff, review-checks 9/0/0, verify 18/18, tests 51/51. Nothing visitors see changed.
+- **PR #159** (Wikipedia strip part 10, Vault) is now based directly on `main`; review PASS 0; waits only on Lighthouse, then merges on the strip yes.
+- **Open:** #159, #144, #139.
+
+## Earlier: #142 V44 Pilate Stone merged and re-cleared (2026-11-15 ~22:44 UTC)
 - **`main` = `fa81753b`** (deploy run 281 green): **PR #142** fast-forwarded **per item** on Carter's "Merge, re-clear it" (`decisions-2026-11-15-carter-merge-145-143-142.md` 2). The V44 page's line 4 now shows only the surviving E with both scholarly readings; V44 is cleared again (no pending tag).
 - **Open:** #144, #139. Next build: Wikipedia strip part 10 (Vault).
 

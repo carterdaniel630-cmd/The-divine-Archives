@@ -1,1 +1,1 @@
-RELEASED 2026-11-15T23:03:37Z: build loop run finished (review of #158/#159). This session could not delete this file (deletion blocked by its permission guard). Treat as no lock: the next run may overwrite it.
+RELEASED 2026-11-15T23:08:44Z: build loop run finished (review of #158/#159, merged #158). Could not delete this file (permission guard). Treat as no lock; the next run may overwrite it.
