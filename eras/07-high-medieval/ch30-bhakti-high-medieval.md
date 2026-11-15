@@ -74,11 +74,8 @@ Bhakti grew from the Vedic and epic Hinduism of the earliest eras (Chapters 5, 1
 ## Sources
 
 - Bhakti as a devotional movement (6th–17th c.), democratizing religion across caste and gender; saguna vs. nirguna — PW/UPSC, "Bhakti Movement." https://www.pw.live/upsc/exams/bhakti-movement
-- Alvars (12, incl. Andal; Nalayira Divya Prabandham) and Nayanars (63; Tevaram); Tamil vernacular — "Alvars," Wikipedia. https://en.wikipedia.org/wiki/Alvars
 - Ramanuja and Vishishtadvaita; Madhva's Dvaita; salvation for shudras and outcastes — Bhakti Movement overviews (theIAShub). https://theiashub.com/upsc/bhakti-movement/
 - Basava and the Lingayat/Virashaiva vachana tradition; Jnaneshwar, Namdev, Tukaram (Varkari, Vithoba); Kabir, Ravidas, and the northern sants — IAS Gyan, "Saints and Teachers of the Bhakti Movement." https://www.iasgyan.in/blogs/a-complete-list-of-saints-and-teachers-of-bhakti-movement
-- Chaitanya Mahaprabhu (1486–1534), Gaudiya Vaishnavism, sankirtan, and Radha-Krishna devotion — "Chaitanya Mahaprabhu" and "Gaudiya Vaishnavism," Wikipedia. https://en.wikipedia.org/wiki/Chaitanya_Mahaprabhu
-- The Bhagavata Purana, Jayadeva's Gita Govinda, the gopis and Radha, and madhurya-rasa devotional theology — "Gaudiya Vaishnavism," Wikipedia. https://en.wikipedia.org/wiki/Gaudiya_Vaishnavism
 - Tulsidas's Ramcharitmanas (1574), Surdas, Mirabai, and Vallabha (Pushtimarg) — Bhakti-saints overviews. https://www.iasgyan.in/blogs/a-complete-list-of-saints-and-teachers-of-bhakti-movement
 - Practice (bhajan-kirtan, nama, no intermediary) and Bhakti's shaping of the Indian languages — SocialStudiesHelp, "The Bhakti Movement." https://socialstudieshelp.com/world-history/the-bhakti-movement-devotion-vernacular-culture-and-social-critique/
 - Bhakti–Sufi interaction; Kabir at the meeting point; feeding into Sikhism — GS SCORE, "Bhakti-Sufi Movements." https://iasscore.in/target-pt/bhakti-sufi-movements
