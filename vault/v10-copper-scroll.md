@@ -52,9 +52,7 @@ The Dead Sea Scrolls (V02), Second Temple Judaism (ch10), the Ark of the Covenan
 
 ## Sources
 
-- "Copper Scroll", https://en.wikipedia.org/wiki/Copper_Scroll
 - West Semitic Research Project (USC), "Copper Scroll", https://dornsife.usc.edu/wsrp/copper-scroll/
 - "The Copper Scroll: Decoding History's Most Elusive Treasure Map", *History Hit*, https://www.historyhit.com/the-copper-scroll-decoding-historys-most-elusive-treasure-map/
 - "The Copper Scroll Greek Letter Mystery" (letter-groups as anthroponyms), https://www.academia.edu/10363953/The_Copper_Scroll_Greek_Letter_Mystery_of_the_Dead_Sea_Scrolls_of_Qumran_Israel
 - J. K. Lefkovits, *The Copper Scroll (3Q15): A Reevaluation* (Brill, 2000); J. M. Allegro, *The Treasure of the Copper Scroll* (1960)
-- "John M. Allegro", https://en.wikipedia.org/wiki/John_M._Allegro

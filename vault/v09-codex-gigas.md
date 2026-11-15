@@ -57,5 +57,4 @@ Scholasticism and the high-medieval Church (ch28), the Witch Trials (ch32, for t
 ## Sources
 
 - National Library of Sweden, "The Codex Gigas" (appearance, history, contents), https://www.kb.se/in-english/the-codex-gigas/appearance-of-the-codex-gigas.html
-- "Codex Gigas", https://en.wikipedia.org/wiki/Codex_Gigas
 - K. Boldan et al., *The Codex Gigas: The Devil's Bible* (National Library of the Czech Republic, 2007): exhibition catalogue

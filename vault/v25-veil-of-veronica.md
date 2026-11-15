@@ -49,8 +49,6 @@ The Shroud of Turin (V04, often linked with the Mandylion), the Sudarium of Ovie
 
 ## Sources
 
-- "Veil of Veronica", https://en.wikipedia.org/wiki/Veil_of_Veronica
-- "Manoppello Image", https://en.wikipedia.org/wiki/Manoppello_Image
 - "The Mystery of Veronica's Veil", EWTN, https://www.ewtn.com/catholicism/library/mystery-of-veronicas-veil-1955
 - "An encounter with the Manoppello Image of the Face of Christ", Catholic News Agency, https://catholicnewsagency.com/news/34317/an-encounter-with-the-manoppello-image-of-the-face-of-christ
 - Dante, *Paradiso* 31.103–108

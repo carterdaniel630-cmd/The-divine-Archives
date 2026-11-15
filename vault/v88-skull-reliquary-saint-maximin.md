@@ -70,8 +70,6 @@ In the close-up view the rendition stands in a stone niche under a single warm l
 - "Archdiocese of Aix", *Catholic Encyclopedia* (1913), https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Archdiocese_of_Aix
 - "The Relics of Saint Marie-Magdalene at La Sainte Baume", EWTN, https://www.ewtn.com/catholicism/library/relics-of-saint-mariemagdalene-at-la-sainte-baume-1728
 - "The Skull and Bones of Mary Magdalene", Atlas Obscura, https://www.atlasobscura.com/articles/marys-house-in-provence
-- "Vézelay Abbey", https://en.wikipedia.org/wiki/V%C3%A9zelay_Abbey
-- "Relics of Mary Magdalene", https://en.wikipedia.org/wiki/Relics_of_Mary_Magdalene
 - "Who framed Mary Magdalene?", U.S. Catholic, https://uscatholic.org/articles/201603/who-framed-mary-magdalene/
 - "Mary Magdalene", OrthodoxWiki, https://orthodoxwiki.org/Mary_Magdalene
 - "The Basilica of St. Maximin, Provence and Mary Magdalen's Relics" (the 1780 glass reliquary of the *noli me tangere*), https://christinesunderland.com/2010/06/26/the-basilica-of-st-maximin-provence-and-mary-magdalens-relics/

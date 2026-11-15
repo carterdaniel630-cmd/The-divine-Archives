@@ -55,7 +55,6 @@ Second Temple Judaism (ch10), Rabbinic Judaism (ch19) and Kabbalah (ch26). Compa
 
 - The Israel Museum, *The Aleppo Codex*, https://www.imj.org.il/en/collections/226966-0
 - The Israel Museum, Shrine of the Book Information Center, "Aleppo Codex", https://museum.imj.org.il/shrine_center/merkz_meida/en/aleppo/
-- "Aleppo Codex", https://en.wikipedia.org/wiki/Aleppo_Codex
 - Biblical Archaeology Society, "The Aleppo Codex", https://www.biblicalarchaeology.org/daily/biblical-topics/hebrew-bible/the-aleppo-codex/
 
 *History and dispute*

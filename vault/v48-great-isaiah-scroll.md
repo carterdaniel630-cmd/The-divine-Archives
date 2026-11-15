@@ -54,8 +54,6 @@ Second Temple Judaism (ch10) and Pre-exilic Israel (ch07), where the prophet Isa
 *The scroll*
 
 - The Israel Museum, Digital Dead Sea Scrolls, "The Great Isaiah Scroll", http://dss.collections.imj.org.il/isaiah
-- "Isaiah Scroll", https://en.wikipedia.org/wiki/Isaiah_Scroll
-- "List of manuscripts from Qumran Cave 1", https://en.wikipedia.org/wiki/List_of_manuscripts_from_Qumran_Cave_1
 
 *Studies*
 

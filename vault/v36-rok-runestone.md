@@ -67,7 +67,6 @@ Norse Paganism (ch23), Celtic & Germanic (ch14), and The End of Days (ch50) for 
 
 *The stone*
 
-- "Rök runestone", https://en.wikipedia.org/wiki/R%C3%B6k_runestone
 - Atlas Obscura, "Rök Rune Stone", https://www.atlasobscura.com/places/rok-rune-stone
 - "Rök Stone", Encyclopaedia Britannica, https://www.britannica.com/topic/Rok-Stone
 - Uppsala University, "New book gives insight into Rök Stone's runes" (2022), https://www.uu.se/en/news/2022/2022-01-27-new-book-gives-insight-into-rok-stones-runes

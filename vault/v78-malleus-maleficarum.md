@@ -52,9 +52,6 @@ The Witch Trials (ch32), with the Reformation (ch31) for the era, and Satanism (
 
 - C. S. Mackay (ed. and trans.), *Malleus Maleficarum*, 2 vols (Cambridge University Press, 2006), https://www.cambridge.org/9780521813457
 - H. Broedel, *The Malleus Maleficarum and the Construction of Witchcraft* (Manchester University Press, 2003)
-- "Malleus Maleficarum", https://en.wikipedia.org/wiki/Malleus_Maleficarum
-- "Helena Scheuberin", https://en.wikipedia.org/wiki/Helena_Scheuberin
-- "Jacob Sprenger", https://en.wikipedia.org/wiki/Jacob_Sprenger
 
 *Its use*
 

@@ -49,7 +49,6 @@ Mesopotamia (ch03) and Second Temple Judaism (ch10), whose exiles lived in this 
 
 *The gate*
 
-- "Ishtar Gate", https://en.wikipedia.org/wiki/Ishtar_Gate
 - Staatliche Museen zu Berlin, "From Fragment to Monument: The Ishtar Gate in Berlin", https://www.smb.museum/en/exhibitions/detail/from-fragment-to-monument/
 - World History Encyclopedia, "Ishtar Gate", https://www.worldhistory.org/Ishtar_Gate/
 - JSTOR Daily / About JSTOR, "From Babylon to Berlin: The rebirth of the Ishtar Gate", https://about.jstor.org/blog/the-rebirth-of-the-ishtar-gate/

@@ -51,10 +51,8 @@ Early Christianity (ch16), with Roman Mystery Cults (ch18) and Rome (ch13) for t
 - British Museum, "Archaeological fieldwork at Hinton St Mary, Dorset", https://www.britishmuseum.org/research/projects/archaeological-fieldwork-hinton-st-mary-dorset
 - ASPROM, "British Museum – Hinton St Mary Mosaic" (factsheet), https://asprom.org/resources/factsheets/ASPROM_factsheet_Hinton_St_Mary_mosaic.pdf
 - Google Arts & Culture, "The Hinton St Mary Mosaic", https://artsandculture.google.com/asset/the-hinton-st-mary-mosaic/_wFA19yjXd8gBw
-- "Hinton St Mary Mosaic", https://en.wikipedia.org/wiki/Hinton_St_Mary_Mosaic
 
 *Context*
 
 - HeritageDaily, "Second mosaic uncovered at famous Hinton St Mary's Roman site" (2022), https://www.heritagedaily.com/2022/07/second-mosaic-uncovered-at-famous-hinton-st-marys-roman-site/144102
-- "Chi Rho", https://en.wikipedia.org/wiki/Chi_Rho
 - J. M. C. Toynbee, "A new Roman mosaic pavement found in Dorset", *Journal of Roman Studies* 54 (1964)

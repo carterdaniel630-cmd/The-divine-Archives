@@ -43,8 +43,6 @@ The Shroud of Turin (V04), the Veil of Veronica (V25), the True Cross (V15), and
 
 ## Sources
 
-- "Sudarium of Oviedo", https://en.wikipedia.org/wiki/Sudarium_of_Oviedo
-- "Arca Santa", https://en.wikipedia.org/wiki/Arca_Santa and "Cámara Santa", https://en.wikipedia.org/wiki/C%C3%A1mara_Santa
 - "The Sudarium of Oviedo", Digital Sindonological Lexicon, https://leksykonsyndonologiczny.pl/en/history-of-the-research-on-the-shroud/comparative-analyses/sudarium-of-oviedo/
 - "The relics of Jesus and Eucharistic miracles: scientific analysis of shared AB blood type" (with discussion of contamination), https://pmc.ncbi.nlm.nih.gov/articles/PMC12491371/
 - John 20:6–7

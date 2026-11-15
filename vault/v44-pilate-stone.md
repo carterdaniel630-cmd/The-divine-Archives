@@ -65,7 +65,6 @@ Rome (ch13), Early Christianity (ch16) and Second Temple Judaism (ch10). Compare
 
 *The stone*
 
-- "Pilate stone", https://en.wikipedia.org/wiki/Pilate_stone
 - Vici.org, "Caesarea Maritima: Pilate Stone", https://vici.org/vici/21598/?lang=en
 - *Corpus Inscriptionum Iudaeae/Palaestinae* II 1277, record in the *Judaism and Rome* database (dimensions 82 cm high, 65 cm wide, 20 cm deep; diplomatic text and readings of the last line), https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288
 - Ministry Magazine, "Pontius Pilate and the Caesarea Inscription" (1975), https://www.ministrymagazine.org/archive/1975/04/pontius-pilate-and-the-caesarea-inscription

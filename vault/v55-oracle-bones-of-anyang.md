@@ -57,11 +57,9 @@ Early China (ch09) and Sacred Kingship (ch49), with Confucianism & Daoism (ch12)
 
 *The bones*
 
-- "Oracle bone", https://en.wikipedia.org/wiki/Oracle_bone
 - World History Encyclopedia, "Oracle Bones", https://www.worldhistory.org/Oracle_Bones/
 - Linda Hall Library, "Wang Yirong: Scientist of the Day", https://www.lindahall.org/about/news/scientist-of-the-day/wang-yirong/
 - *American Scientist*, "The Chinese History That Is Written in Bone", https://www.americanscientist.org/article/the-chinese-history-that-is-written-in-bone
-- "Yinxu", https://en.wikipedia.org/wiki/Yinxu
 
 *Studies*
 

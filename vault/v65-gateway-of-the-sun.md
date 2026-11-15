@@ -49,12 +49,9 @@ The Inca (ch44), for Viracocha and the later sacred status of Tiwanaku. Compare 
 *The site and the gateway*
 
 - UNESCO, "Tiwanaku: Spiritual and Political Centre of the Tiwanaku Culture", https://whc.unesco.org/en/list/567/
-- "Gate of the Sun", https://en.wikipedia.org/wiki/Gate_of_the_Sun
-- "Tiwanaku", https://en.wikipedia.org/wiki/Tiwanaku
 - A. L. Kolata, *The Tiwanaku: Portrait of an Andean Civilization* (Blackwell, 1993)
 
 *Iconography*
 
-- "Staff God", https://en.wikipedia.org/wiki/Staff_God
 - Metropolitan Museum of Art, Heilbrunn Timeline, "Tiwanaku", https://www.metmuseum.org/toah/hd/tiwa/hd_tiwa.htm
 - A. Posnansky, *Tihuanacu: The Cradle of American Man* (1945)

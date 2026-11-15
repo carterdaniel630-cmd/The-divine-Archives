@@ -49,8 +49,6 @@ Early Christianity (ch16), Second Temple Judaism (ch10), and the forgery cases e
 
 ## Sources
 
-- "James Ossuary", https://en.wikipedia.org/wiki/James_Ossuary
-- "Oded Golan", https://en.wikipedia.org/wiki/Oded_Golan
 - Biblical Archaeology Society, "Why did the James Ossuary Forgery Trial Verdict Find Oded Golan and Robert Deutsch Not Guilty?", https://www.biblicalarchaeology.org/daily/biblical-artifacts/artifacts-and-the-bible/why-did-the-james-ossuary-forgery-trial-verdict-find-oded-golan-and-robert-deutsch-not-guilty/
 - "Oded Golan is not guilty of forgery. So is the 'James ossuary' for real?", *The Times of Israel*, https://www.timesofisrael.com/oded-golan-is-not-guilty-of-forgery-so-is-the-james-ossuary-for-real/
 - "Implications of the 'Forgery Trial' Verdict on the Authenticity of the James Ossuary", *Bible and Interpretation*, https://bibleinterp.arizona.edu/articles/ros368030

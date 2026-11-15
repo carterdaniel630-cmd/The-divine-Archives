@@ -51,13 +51,11 @@ Confucianism & Daoism (ch12), with Early China (ch09) for the Zhou background. C
 
 *The manuscripts*
 
-- "Mawangdui Silk Texts", https://en.wikipedia.org/wiki/Mawangdui_Silk_Texts
 - Mawangdui Laozi (digital edition), Zenodo, https://zenodo.org/records/12573936
 - R. G. Henricks, *Lao-Tzu Te-Tao Ching: A New Translation Based on the Recently Discovered Ma-wang-tui Texts* (Ballantine, 1989)
 - D. C. Lau, *Chinese Classics: Tao Te Ching* (Chinese University Press, 1982), with the Mawangdui text
 
 *The tomb and its context*
 
-- "Mawangdui", https://en.wikipedia.org/wiki/Mawangdui
 - History of Information, "The Mawangdui Silk Texts", https://www.historyofinformation.com/detail.php?id=2494
 - S. Allan and C. Williams (eds.), *The Guodian Laozi* (Society for the Study of Early China, 2000)

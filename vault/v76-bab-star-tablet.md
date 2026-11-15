@@ -56,7 +56,6 @@ Baháʼí & New Faiths (ch65), with Islam (ch21) and Sufism (ch27) for the Shiʻ
 
 *The Báb and his symbols*
 
-- "Baháʼí symbols", https://en.wikipedia.org/wiki/Bah%C3%A1%CA%BC%C3%AD_symbols
 - Bahaipedia, "Haykal", https://bahaipedia.org/Haykal
 - D. MacEoin, *The Messiah of Shiraz: Studies in Early and Middle Babism* (Brill, 2009)
 - N. Saiedi, *Gate of the Heart: Understanding the Writings of the Báb* (Wilfrid Laurier University Press, 2008)

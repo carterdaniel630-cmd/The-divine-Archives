@@ -44,7 +44,6 @@ The Voynich Manuscript (V01) and the Book of Soyga (V19), which are other unread
 
 ## Sources
 
-- "Rohonc Codex", https://en.wikipedia.org/wiki/Rohonc_Codex
 - L. Z. Király and G. Tokai, "Cracking the code of the Rohonc Codex", *Cryptologia* 42.4 (2018)
 - University of Hamburg, Centre for the Study of Manuscript Cultures, "Manuscript of the Month 39: the Rohonc Codex", https://www.csmc.uni-hamburg.de/publications/aom/mom/39-en.html
 - "The Rohonc Codex: What on earth is this enigmatic Renaissance manuscript?", https://worldpolitics.substack.com/p/rohonc-codex
