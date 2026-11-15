@@ -391,7 +391,12 @@ function checkPendingDiff() {
     if (!why.length) continue;
     const line = `vault ${it.id} "${it.title}" (${[...new Set(why)].join(", ")})`;
     seen.push(line);
-    if (!it.pending && !cleared.vault.has(it.id) && !cleared.vault.has(it.slug)) fails.push(line + ": not pending and not newly cleared in " + CLEARED_FILE);
+    if (!it.pending && !cleared.vault.has(it.id) && !cleared.vault.has(it.slug)) {
+      // sources-only, same rule as chapters: the registry entry is unchanged, and outside the Sources section the markdown did not change
+      const mdSame = !it.source || !changed.has(it.source) || noSourcesMd(readHead(it.source)) === noSourcesMd(readAt(mergeBase, it.source));
+      if (old && stable(old) === stable(it) && mdSame) warns.push(line + ": sources only, so it stays cleared (re-check the new sources at review)");
+      else fails.push(line + ": not pending and not newly cleared in " + CLEARED_FILE);
+    }
   }
   // Pantheon: no pending field exists yet, so this half only warns (see the note in the details)
   const bp = byId(B.pantheon);
@@ -405,7 +410,7 @@ function checkPendingDiff() {
   const details = [];
   if (error) details.push("NOTE: " + error);
   details.push(...fails.map((x) => "FAIL " + x), ...warns.map((x) => "WARN " + x));
-  if (warns.length) details.push("Pantheon figures have no `pending` field or banner yet, so a changed figure is a warning, not a failure, until Carter decides how Pantheon review is shown.");
+  if (warns.some((w) => w.startsWith("pantheon "))) details.push("Pantheon figures have no `pending` field or banner yet, so a changed figure is a warning, not a failure, until Carter decides how Pantheon review is shown.");
   details.push(`Compared with merge-base ${mergeBase.slice(0, 10)} of ${BASE}. Touched items: ${seen.length}`, ...seen.map((s) => "  " + s));
   const status = fails.length || error ? "fail" : warns.length ? "warn" : "pass";
   record("pending-diff", "New/changed content is pending", status,
