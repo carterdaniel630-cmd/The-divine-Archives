@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (16:35 UTC)
+# Handoff — updated 2026-11-15 (17:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: code-map (graph) workflow fix merged (2026-11-15 ~16:28 UTC)
+## Latest: Wikipedia strip part 3 (era 04) merged (2026-11-15 ~16:53 UTC)
+- **`main` = `73073027`** (deploy run 43738004031 green; Knowledge graph run 43738004004 green): **PR #151** fast-forwarded `0c807f9c` → `73073027` **per item** on Carter's strip yes (`decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`). Era 04 chapters (ch10–15, ch52) no longer list Wikipedia in their Sources; pending tags unchanged.
+- **Open:** #152 strip part 4 (review PASS; waits on Lighthouse + re-sync onto `73073027`), #153 strip part 5 (waits on independent review), #142–#145, #139.
+
+## Earlier: code-map (graph) workflow fix merged (2026-11-15 ~16:28 UTC)
 - **`main` = `0c807f9c`** (deploy run 43735696588 green; Knowledge graph run 43735696610 **green again** on `main`): **PR #150** fast-forwarded `ef7e4d30` → `0c807f9c` **per item** on Carter's "yes" (`decisions-2026-11-15-carter-yes-150.md`). Tools only (`tools/graphify-label.js`); nothing visitors see changed.
 - **Open:** #151 Wikipedia strip part 3 (review PASS; re-synced `73073027`, waits on GitHub incl. Lighthouse), #142–#145, #139.
 
