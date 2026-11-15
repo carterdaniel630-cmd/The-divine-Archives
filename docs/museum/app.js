@@ -30,6 +30,7 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
+import { createXRMove } from "./xr-move.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, RING_R, PEDESTAL_H, loadStatue } from "./statues.js?v=1";
 
@@ -1553,7 +1554,7 @@ function tick(now) {
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
-  if (xr) xrFollow();
+  if (xr) { S.xrMove.update(dt); xrFollow(); }
   else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
@@ -1602,6 +1603,29 @@ function xrFollow() {
   camera.getWorldPosition(xrTmp); S.pos.x = xrTmp.x; S.pos.z = xrTmp.z;
   camera.getWorldDirection(xrDir); if (Math.hypot(xrDir.x, xrDir.z) > 0.1) S.yaw = Math.atan2(-xrDir.x, -xrDir.z);
 }
+// may a visitor in the headset stand at (x, z), reached from (fx, fz)? The same rules as walking: not inside a wall's
+// reach, and no wall between (a teleport never passes through a wall into a closed room)
+function xrCanStand(x, z, fx, fz) {
+  const p = new THREE.Vector3(x, EYE, z); collide(p);
+  if (Math.hypot(p.x - x, p.z - z) > 0.01) return false;
+  return !wallBetween(fx, fz, x, z);
+}
+function wallBetween(ax, az, bx, bz) {
+  const x0 = Math.floor(Math.min(ax, bx) / CELL) - 1, x1 = Math.floor(Math.max(ax, bx) / CELL) + 1;
+  const z0 = Math.floor(Math.min(az, bz) / CELL) - 1, z1 = Math.floor(Math.max(az, bz) / CELL) + 1;
+  const rx = bx - ax, rz = bz - az, seen = new Set();
+  for (let i = x0; i <= x1; i++) for (let j = z0; j <= z1; j++) {
+    const list = GRID.get(i + "," + j); if (!list) continue;
+    for (const g of list) {
+      if (seen.has(g)) continue; seen.add(g);
+      const sx = g[2] - g[0], sz = g[3] - g[1], den = rx * sz - rz * sx;
+      if (Math.abs(den) < 1e-9) continue;
+      const qx = g[0] - ax, qz = g[1] - az, t = (qx * sz - qz * sx) / den, u = (qx * rz - qz * rx) / den;
+      if (t >= 0 && t <= 1 && u >= 0 && u <= 1) return true;
+    }
+  }
+  return false;
+}
 function xrNote(text) {
   const n = $("mu-xr-note"); if (!n) return;
   n.textContent = text; n.hidden = false;
@@ -1617,10 +1641,12 @@ function initXR() {
       if (S.insp && S.insp.active) S.insp.close();
       if (!$("mu-guide").hidden) toggleGuide(false);
       document.body.classList.add("is-xr");
+      S.xrMove.attach();
       S.snd.wake(); S.dirty = true;
     },
     onEnd: (at) => {
       document.body.classList.remove("is-xr");
+      S.xrMove.detach();
       if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
       S.pitch = 0; S.keys.clear(); S.auto = null;
       resize(); manageZones(); locate(); savePos();
@@ -1628,6 +1654,7 @@ function initXR() {
     },
     onMessage: xrNote
   });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); } });
   let was = false;
   const paint = async () => {
     await probeXR();
@@ -1699,8 +1726,10 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
-  xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null }),
+  xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null, cameraChildren: camera ? camera.children.length : null }),
   xrExit: () => S.xr && S.xr.exit(),
+  xrMove: () => S.xrMove ? Object.assign({}, S.xrMove.debug) : null,
+  xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, shown: s.holder.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
