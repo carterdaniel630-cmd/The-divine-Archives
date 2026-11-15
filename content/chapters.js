@@ -952,11 +952,11 @@ window.CHAPTERS = {
       <ul>
         <li><a href="https://www.iranicaonline.org/articles/eschatology-i/">Encyclopaedia Iranica: "Eschatology i. In Zoroastrianism and Zoroastrian Influence"</a>; <a href="https://www.worldhistory.org/Chinvat_Bridge/">World History Encyclopedia: Chinvat Bridge</a>.</li>
         <li>The Chinvat Bridge, the daēnā, and the individual judgment — <a href="https://www.britannica.com/topic/daena">Britannica: daena</a>; <a href="https://www.worldhistory.org/Chinvat_Bridge/">World History Encyclopedia: Chinvat Bridge</a>.</li>
-        <li>The twelve-thousand-year timeline and the three Saoshyants — <a href="https://en.wikipedia.org/wiki/Bundahishn">Wikipedia: Bundahishn</a>; <a href="https://www.iranicaonline.org/articles/eschatology-i/">Encyclopaedia Iranica: eschatology (Frashokereti and the Saoshyants)</a>. On the debated influence on Judaism/Christianity/Islam, see the balanced discussions in the Iranica eschatology article and A. Akbar, "The Zoroastrian Provenance of Some Islamic Eschatological Doctrines" (2020).</li>
+        <li>The twelve-thousand-year timeline and the three Saoshyants — <a href="https://www.iranicaonline.org/articles/eschatology-i/">Encyclopaedia Iranica: eschatology (Frashokereti and the Saoshyants)</a>. On the debated influence on Judaism/Christianity/Islam, see the balanced discussions in the Iranica eschatology article and A. Akbar, "The Zoroastrian Provenance of Some Islamic Eschatological Doctrines" (2020).</li>
       </ul>
       <h4>Practice and symbol</h4>
       <ul>
-        <li>Fire temples and the sacred fire; the <strong>dakhma</strong>; the <strong>Faravahar</strong> (<a href="https://en.wikipedia.org/wiki/Faravahar">Wikipedia: Faravahar</a>, noting the fravashi vs. khvarenah debate) and <strong>khvarenah</strong> (<a href="https://www.britannica.com/topic/hvarenah">Britannica: hvarenah</a>); the <strong>sudreh</strong> and <strong>kusti</strong> (72 threads = 72 Yasna chapters) and the <strong>Navjote</strong> initiation.</li>
+        <li>Fire temples and the sacred fire; the <strong>dakhma</strong>; the <strong>Faravahar</strong> and <strong>khvarenah</strong> (<a href="https://www.britannica.com/topic/hvarenah">Britannica: hvarenah</a>); the <strong>sudreh</strong> and <strong>kusti</strong> (72 threads = 72 Yasna chapters) and the <strong>Navjote</strong> initiation.</li>
       </ul>
     </div>
   ` },
@@ -1105,13 +1105,13 @@ window.CHAPTERS = {
       </ul>
       <h4>Origins and emergence</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Merneptah_Stele">Wikipedia: Merneptah Stele</a>; <a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/does-the-merneptah-stele-contain-the-first-mention-of-israel/">Biblical Archaeology Society: the first mention of Israel</a>.</li>
-        <li>On Yahweh's southern origins: <a href="https://en.wikipedia.org/wiki/Kenite_hypothesis">Wikipedia: Kenite hypothesis</a> and the "Yhw in the land of the Shasu" inscriptions.</li>
+        <li><a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/does-the-merneptah-stele-contain-the-first-mention-of-israel/">Biblical Archaeology Society: the first mention of Israel</a>.</li>
+        <li>On Yahweh's southern origins: the "Yhw in the land of the Shasu" inscriptions.</li>
       </ul>
       <h4>Yahweh, El, Asherah, and the rise of monotheism</h4>
       <ul>
         <li>Mark S. Smith, <em>The Early History of God: Yahweh and the Other Deities in Ancient Israel</em>; <em>The Origins of Biblical Monotheism</em>.</li>
-        <li><a href="https://www.worldhistory.org/Asherah/">World History Encyclopedia: Asherah</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-artifacts/puzzling-finds-from-kuntillet-ajrud-a-drawing-of-god-labeled-yahweh-and-his-asherah-or-the-egyptian-god-bes/">Biblical Archaeology Society: Kuntillet Ajrud</a>; <a href="https://en.wikipedia.org/wiki/Khirbet_el-Qom">Wikipedia: Khirbet el-Qom</a>.</li>
+        <li><a href="https://www.worldhistory.org/Asherah/">World History Encyclopedia: Asherah</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-artifacts/puzzling-finds-from-kuntillet-ajrud-a-drawing-of-god-labeled-yahweh-and-his-asherah-or-the-egyptian-god-bes/">Biblical Archaeology Society: Kuntillet Ajrud</a>.</li>
         <li>The Ugaritic background: the texts from Ras Shamra.</li>
         <li>The <strong>Baal Cycle</strong> (Baal vs. Yam and Mot) and its biblical echoes (Leviathan, Rahab, the Chaoskampf) — <a href="https://grokipedia.com/page/Baal_Cycle">Grokipedia: Baal Cycle</a>; and the standard comparative treatments of Psalm 74 / Isaiah 27 / Job 26.</li>
       </ul>
@@ -1127,7 +1127,7 @@ window.CHAPTERS = {
       <h4>Text, inscriptions, and history</h4>
       <ul>
         <li>The Documentary Hypothesis and its revisions (Wellhausen; and critics/updaters such as R. E. Friedman, <em>Who Wrote the Bible?</em>, and later fragmentary/supplementary models).</li>
-        <li><a href="https://en.wikipedia.org/wiki/Tel_Dan_stele">Wikipedia: Tel Dan Stele</a>; the Mesha Stele (Moabite Stone); <a href="https://en.wikipedia.org/wiki/Ketef_Hinnom_scrolls">Wikipedia: Ketef Hinnom scrolls</a>.</li>
+        <li>The Tel Dan Stele; the Mesha Stele (Moabite Stone); the Ketef Hinnom scrolls.</li>
       </ul>
     </div>
   ` },
@@ -1270,13 +1270,12 @@ window.CHAPTERS = {
       <h4>Practice, oracles, and the afterlife</h4>
       <ul>
         <li><a href="https://www.worldhistory.org/Greek_Religion/">World History Encyclopedia: Ancient Greek Religion</a>; Walter Burkert, <em>Greek Religion</em> (the standard scholarly handbook).</li>
-        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia: Eleusinian Mysteries</a>; on Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, <em>Ritual Texts for the Afterlife</em>.</li>
+        <li>On Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, <em>Ritual Texts for the Afterlife</em>.</li>
         <li>Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) — <a href="https://www.angelsathens.gr/en/blog/ancient-greece/ancient-greek-religion-everyday-cult/">Angels of Athens: Ancient Greek Religion — everyday cult</a>; Oxford Reference, "Worship, household."</li>
-        <li>Hero-cult and the curse tablets (katadesmoi/defixiones) — <a href="https://en.wikipedia.org/wiki/Curse_tablet">Wikipedia: Curse tablet</a>; the tomb-cult / hero-cult debate in early Greek society (standard treatments).</li>
+        <li>Hero-cult and the curse tablets (katadesmoi/defixiones) — the tomb-cult / hero-cult debate in early Greek society (standard treatments).</li>
       </ul>
       <h4>The alphabet</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">Wikipedia: History of the Greek alphabet</a> (the adoption of Phoenician letters and the innovation of vowels).</li>
         <li>The Homeric Hymns and the <em>Hymn to Demeter</em> — M. L. West (ed. and trans.), <em>Homeric Hymns, Homeric Apocrypha, Lives of Homer</em>, Loeb Classical Library 496 (Cambridge, MA: Harvard University Press, 2003). <a href="https://bmcr.brynmawr.edu/?p=23371">https://bmcr.brynmawr.edu/?p=23371</a> (review, <em>Bryn Mawr Classical Review</em> 2003.07.36) ; H. G. Evelyn-White (trans.), <em>Hesiod, the Homeric Hymns and Homerica</em> (Loeb, 1914), public domain, at Project Gutenberg. <a href="https://www.gutenberg.org/ebooks/348">https://www.gutenberg.org/ebooks/348</a></li>
         <li>The Moscow manuscript and its discovery in 1777 — LibreTexts, <em>Temples of the Gods: An Introduction to Classical Mythology</em>, "The Homeric Hymn to Demeter." <a href="https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter">https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter</a> ; Oliver Thomas, "Manuscript Readings in the Homeric Hymn to Demeter 389–479," <em>Mnemosyne</em> 68, no. 3 (2015) (the manuscript's "discovery by C.F. von Matthaei in Moscow in 1777"). <a href="https://doi.org/10.1163/1568525X-12341719">https://doi.org/10.1163/1568525X-12341719</a></li>
       </ul>
@@ -1405,7 +1404,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Oracle bones and Shang religion</h4>
       <ul>
-        <li><a href="https://smarthistory.org/oracle-bone/">Smarthistory: Oracle Bone, Shang Dynasty</a>; <a href="https://en.wikipedia.org/wiki/Shang_dynasty_religious_practitioners">Wikipedia: Shang dynasty religious practitioners</a>; David N. Keightley, <em>Sources of Shang History</em> and <em>The Ancestral Landscape</em> (the standard scholarship on the oracle bones and Shang religion).</li>
+        <li><a href="https://smarthistory.org/oracle-bone/">Smarthistory: Oracle Bone, Shang Dynasty</a>; David N. Keightley, <em>Sources of Shang History</em> and <em>The Ancestral Landscape</em> (the standard scholarship on the oracle bones and Shang religion).</li>
       </ul>
       <h4>The Zhou and the Mandate of Heaven</h4>
       <ul>
@@ -1414,11 +1413,11 @@ window.CHAPTERS = {
       <h4>The wu and the shamanism debate</h4>
       <ul>
         <li>G. Boileau, "Wu and Shaman" / "Shamanism Theory and the Early Chinese Wu" (surveying the K. C. Chang vs. Keightley debate); <a href="https://grokipedia.com/page/Chinese_shamanism">Grokipedia: Chinese shamanism</a>.</li>
-        <li>The <strong>Nine Songs</strong> (<em>Jiu Ge</em>) of Chu — Arthur Waley, <em>The Nine Songs: A Study of Shamanism in Ancient China</em>; <a href="https://en.wikipedia.org/wiki/Jiu_Ge">Wikipedia: Jiu Ge</a>.</li>
+        <li>The <strong>Nine Songs</strong> (<em>Jiu Ge</em>) of Chu — Arthur Waley, <em>The Nine Songs: A Study of Shamanism in Ancient China</em>.</li>
       </ul>
       <h4>Bronzes, sacrifice, and Sanxingdui</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Taotie">Wikipedia: Taotie</a>; <a href="https://en.wikipedia.org/wiki/Human_sacrifice_in_ancient_Chinese_culture">Wikipedia: Human sacrifice in ancient Chinese culture</a>; on Fu Hao's tomb and Sanxingdui, standard archaeological reports.</li>
+        <li>On Fu Hao's tomb and Sanxingdui, standard archaeological reports.</li>
       </ul>
       <h4>Divination and symbol</h4>
       <ul>
@@ -6795,7 +6794,6 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <ul>
         <li>Ugaritic-Canaanite religion: the discovery of Ugarit/Ras Shamra (1929), the pantheon (El, Athirat/Asherah, Baal/Hadad, Anat, Yam, Mot), and the Baal Cycle (Baal vs. Yam and Mot; death and return) — "Ugaritic-Canaanite Religion," Encyclopedia.com. <a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion">https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion</a> ; "Canaanite Religion," New World Encyclopedia. <a href="https://www.newworldencyclopedia.org/entry/Canaanite_Religion">https://www.newworldencyclopedia.org/entry/Canaanite_Religion</a></li>
-        <li>El as the aged high god and "father of the gods," and the Canaanite roots of biblical divine imagery — "El (deity)," Wikipedia. <a href="https://en.wikipedia.org/wiki/El_(deity)">https://en.wikipedia.org/wiki/El_(deity)</a></li>
         <li>Phoenician religion and the city-gods: Melqart of Tyre (kingship, death-and-rising, equated with Herakles), Eshmun of Sidon (healing), Astarte, and Carthage's Baal Hammon and Tanit — "Melqart," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Melqart">https://www.britannica.com/topic/Melqart</a> ; "Phoenician Religion," World History Encyclopedia. <a href="https://www.worldhistory.org/Phoenician_Religion/">https://www.worldhistory.org/Phoenician_Religion/</a></li>
         <li>The Carthage tophet and the child-sacrifice debate (the urns and stelae; the 2014 study for sacrifice; the natural-death-cemetery counter-argument) — "Study Concludes Child Sacrifice Took Place in Ancient Carthage," Archaeology Magazine. <a href="https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/">https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/</a> ; "Skeletal Remains from Punic Carthage Do Not Support Systematic Sacrifice of Infants," PLoS ONE / NCBI. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/</a></li>
         <li>The Phoenician alphabet (22 consonants, c. 11th century BCE, ancestor of the Greek and Western alphabets) — "Phoenician alphabet," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Phoenician-alphabet">https://www.britannica.com/topic/Phoenician-alphabet</a> ; "How the Phoenician Alphabet Revolutionised Language," History Hit. <a href="https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/">https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/</a></li>
