@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (23:20 UTC)
+# Handoff — updated 2026-11-16 (00:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #159 Wikipedia strip part 10 (Vault) merged (2026-11-15 ~23:13 UTC)
+## Latest: #160 Wikipedia strip part 11 (Pilgrimage + museum) merged (2026-11-15 ~23:47 UTC)
+- **`main` = `c01026a4`** (deploy run 284 green): **PR #160** fast-forwarded from `63cd573e` **per item** on Carter's strip yes (list removal only). Chichen Itza, Delphi and Newgrange Pilgrimage panels and the museum's English panel lose their Wikipedia citations; El Castillo kept on the one panel it alone sources (flag 158). Review PASS 0 (`replies/2026-11-15-wikipedia-strip-12-independent-review.md`). **The site-page strip is done.**
+- **Open:** #161 (VR pilot, VR loop), #144, #139. Next: re-sourcing flags 116–167.
+
+## Earlier: #159 Wikipedia strip part 10 (Vault) merged (2026-11-15 ~23:13 UTC)
 - **`main` = `63cd573e`** (deploy run 283 green): **PR #159** fast-forwarded from `089441d5` **per item** on Carter's strip yes (`order-2026-11-11-wikipedia-strip.md`; `decisions-2026-11-15-carter-a-prs-yes-wikipedia.md` 2; list removal only). 85 Vault entries + the Rök Stone, Decoded page lose their Wikipedia source lines; Vault entries stay cleared (sources-only). Independent review PASS 0 (`2026-11-15-wikipedia-strip-11-independent-review.md`); GitHub 7/7 green incl. Lighthouse; local on `63cd573e`: build order no diff, review-checks 9/0/1, verify 18/18, tests 51/51, headless 86 pages × 360/390 clean except the known pre-existing Rosetta Stone 11 px at 360.
 - **Open:** #160 (Wikipedia strip part 11: Pilgrimage + museum, waits on review + GitHub), #144, #139. Next after it: remaining Wikipedia (`docs/museum`, chapter-page leftovers), then re-sourcing flags 116–157.
 
