@@ -30,7 +30,7 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createStyle, styleOf } from "./style.js?v=16";
-import { STATUES, RING_R, PEDESTAL_H, loadStatue } from "./statues.js?v=1";
+import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -614,11 +614,13 @@ function buildStatic() {
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
   proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
   addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
-  // the Rotunda ring of statues (docs/museum/statues.js): a pedestal and plaque for each finished statue of the Rotunda
-  // Circle; the statue itself is fetched only when the visitor comes near (statueTick) and drawn only when close
-  S.statues = STATUES.map((st) => {
-    const x = ROT.cx + RING_R * Math.cos(st.angle), z = ROT.cz + RING_R * Math.sin(st.angle);
-    const ry = Math.atan2(ROT.cx - x, ROT.cz - z);          // each statue faces the centre of the ring
+  // statues in their rooms (docs/museum/statues.js; Carter's change of plans 2026-11-09: none in the Rotunda): a pedestal
+  // and plaque for each placed statue in its room's centre aisle, facing the door; the statue itself is fetched only when
+  // the visitor comes near (statueTick) and drawn only while its room is shown. They are built here, once, not with the
+  // wing's exhibits, so a wing dropped and rebuilt on the way past does not fetch and remake the statue again.
+  S.statues = STATUES.filter((st) => S.rooms[st.room] && S.rooms[st.room].frame && !S.rooms[st.room].bay).map((st) => {
+    const r = S.rooms[st.room], f = r.frame, [x, z] = W(f, st.u, st.v);
+    const ry = faceYaw(-f.fx, -f.fz);                       // facing the door
     const ped = new THREE.Group(); ped.position.set(x, 0, z); ped.rotation.y = ry;
     ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.72, 0.78, 0.08, 40).translate(0, 0.04, 0), MAT.darkstone));
     ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.64, PEDESTAL_H - 0.12, 40).translate(0, 0.08 + (PEDESTAL_H - 0.12) / 2, 0), MAT.darkstone));
@@ -627,10 +629,15 @@ function buildStatic() {
     plaque.position.set(0, 0.3, 0.655); plaque.rotation.x = -0.12; ped.add(plaque);
     const holder = new THREE.Group(); holder.position.y = PEDESTAL_H; ped.add(holder);
     g.add(ped); addBox(x, z, 0.85);
-    lamp(x - 0.9 * Math.cos(st.angle), 4.4, z - 0.9 * Math.sin(st.angle), 0.75);
-    const hit = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.9, 1.6), MAT.hit); hit.position.set(x, 1.45, z);
-    addExhibit(g, hit, { type: "statue", id: st.id, name: st.name }, "rotunda");
-    return { st, ped, holder, state: "idle", tris: 0 };
+    const reg = S.regions.find((q) => q.room === st.room);
+    const box = new THREE.Box3(new THREE.Vector3(reg.x0, 0, reg.z0), new THREE.Vector3(reg.x1, ROOM_H, reg.z1));
+    // the tap target rides in the pedestal group, so it is hidden with it (taps look only at shown exhibits)
+    const hit = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.9, 1.6), MAT.hit); hit.position.set(0, 1.45, 0);
+    ped.updateMatrixWorld(true);
+    // zone "statues", not the wing's: dropping a wing clears that wing's exhibits, and these stand for the whole visit
+    addExhibit(ped, hit, { type: "statue", id: st.id, name: st.name, room: st.room }, "statues");
+    ped.visible = false;
+    return { st, ped, holder, box, state: "idle", tris: 0 };
   });
   // the portal to the Pilgrimage: a golden arch against the entrance hall's north wall, beside the way into the Rotunda
   const { px, pz } = portalPose();
@@ -943,19 +950,21 @@ function roomVisibility(z, d) {
   z.exGroup.visible = (d == null ? distToBox(z.box, S.pos) : d) < SHOW_FAR;
   z.exGroup.children.forEach((rg) => { if (rg.userData.box) rg.visible = S.inRoom ? rg.name === "room-" + S.inRoom : distToBox(rg.userData.box, S.pos) < ROOM_SHOW; });
 }
-// the Rotunda's statues: fetched once the visitor is within STATUE_FETCH of the ring's centre, drawn within STATUE_SHOW
-const STATUE_FETCH = 22, STATUE_SHOW = 18;
+// the statues in their rooms: each fetched once the visitor is within STATUE_FETCH of its room, and shown (pedestal,
+// statue, tap target) exactly when its room's exhibits are: from inside the room, or within ROOM_SHOW of it while not
+// inside another room (roomVisibility), so a statue is never drawn behind the walls of a neighbouring room
+const STATUE_FETCH = 22;
 function statueTick() {
   if (!S.statues) return;
-  const d = Math.hypot(S.pos.x - ROT.cx, S.pos.z - ROT.cz);
   for (const s of S.statues) {
+    const d = distToBox(s.box, S.pos);
     if (s.state === "idle" && d < STATUE_FETCH) {
       s.state = "loading";
       loadStatue(s.st, s.holder).then((t) => { s.state = "ready"; s.tris = t.tris; s.nearTris = t.nearTris; s.midTris = t.midTris; s.farTris = t.farTris; S.dirty = true; })
         .catch((e) => { s.state = "failed"; console.warn("The " + s.st.name + " statue could not be loaded.", e); });
     }
-    s.ped.visible = d < STATUE_FETCH;                     // pedestals too: nothing of the ring is drawn from the far end of the hall
-    s.holder.visible = d < STATUE_SHOW;
+    const vis = S.inRoom ? S.inRoom === s.st.room : d < ROOM_SHOW;
+    if (s.ped.visible !== vis) { s.ped.visible = vis; S.dirty = true; }
   }
 }
 function manageZones() {
@@ -1117,7 +1126,7 @@ function openCard(ex) {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
       `<p>The objects in the cases are <strong>modelled renditions</strong> built from the descriptions in their Vault entries, never replicas: none is modelled from measurements or scans, and any writing on them is illustrative marks, not the text, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
-      `<p>The exception is the ring of <strong>statues</strong> in the Rotunda: each card says what comes from a real scan of a real statue, what was made for it here, and whose work it rests on; none is presented as a likeness of a person or god.</p>` +
+      `<p>The exception is the <strong>statues</strong> that stand in some rooms (Shiva in Global Hinduism, Zeus in Classical Greece): each card says what comes from a real scan of a real statue, what was made for it here, and whose work it rests on; none is presented as a likeness of a person or god.</p>` +
       `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. Animals live in them, and each room has its own sound (Sound button to turn it off). "Reduce motion" stills them and turns off the lightning.</p>` +
       `<p>Every label keeps belief and evidence apart and links to the archive's page, where the sources and the evidence verdict live. Chapters marked "pending review" have new material not yet cleared in the keeper's review.</p>` +
       `<div class="mu-actions">${btn("methodology.html", "The methodology")}${btn("index.html", "The archive", true)}</div>`;
@@ -1131,11 +1140,11 @@ function openCard(ex) {
   } else if (d.type === "directory") { showDirectory(); return; }
   else if (d.type === "statue") {
     const st = STATUES.find((x) => x.id === d.id), s = S.statues && S.statues.find((x) => x.st.id === d.id);
-    h = `<p class="mu-cat">The Rotunda Circle · a statue</p><h2 id="mu-card-h">${esc(st.name)}</h2><p class="mu-meta">${esc(st.sub)}</p>` +
-      `<p>${esc(st.made)}</p>` +
-      `<p class="mu-meta">Recently added, pending full review. The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D.</p>` +
-      (s && s.state === "failed" ? `<p class="mu-meta">This statue could not be loaded here; its page may still show it.</p>` : "") +
-      `<div class="mu-actions">${btn("rotunda/" + st.id + ".html", "Turn it in 3D")}${btn("rotunda/index.html", "The Rotunda Circle", true)}</div>`;
+    h = `<p class="mu-cat">${esc(roomTitle(st.room))} · a statue</p><h2 id="mu-card-h">${esc(st.name)}</h2><p class="mu-meta">${esc(st.sub)}</p>` +
+      `<p>${esc(st.made)}</p>` + (st.open ? `<p>${esc(st.open)}</p>` : "") +
+      `<p class="mu-meta">Recently added, pending full review.${st.page.startsWith("rotunda/") ? " The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D." : ""}</p>` +
+      (s && s.state === "failed" ? `<p class="mu-meta">This statue could not be loaded here.</p>` : "") +
+      `<div class="mu-actions">${btn(st.page, st.pageLabel)}${st.id === "zeus" ? btn("pantheon.html#zeus", "Zeus in the Pantheon", true) : btn("rotunda/index.html", "The Rotunda Circle", true)}</div>`;
   }
   else if (d.type === "reserved") {
     h = `<p class="mu-cat">Comparative theme</p><h2 id="mu-card-h">${esc(d.name)}</h2><p>This alcove is reserved for a theme chapter that has not been written yet. It will open when the chapter is published.</p><div class="mu-actions">${btn("themes.html", "All themes")}</div>`;
@@ -1294,7 +1303,7 @@ function guideRituals(room) {
 function guideItems(room) {
   const r = S.rooms[room]; if (!r) return { here: [], missing: [] };
   const want = { vault: r.homeVault || [], fig: r.homeFigs || [] }, N = S.manifest.names;
-  const own = S.exhibits.filter((e) => e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig");
+  const own = S.exhibits.filter((e) => (e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig") || (e.data.type === "statue" && e.data.room === room));
   const items = [], missing = [];
   for (const type of ["vault", "fig"]) for (const id of want[type]) {
     const all = S.exhibits.filter((e) => e.data.type === type && e.data.id === id);
@@ -1314,7 +1323,7 @@ function roomOfExhibit(e) {
   if (e.zone === "rotunda") return e.data.id;
   return null;
 }
-function typeLabel(t) { return { vault: "Vault object", fig: "Pantheon figure", room: "Chapter lectern", plate: "Chapter symbol", see: "See also board", game: "Game", living: "Note" }[t] || ""; }
+function typeLabel(t) { return { vault: "Vault object", fig: "Pantheon figure", room: "Chapter lectern", plate: "Chapter symbol", see: "See also board", game: "Game", living: "Note", statue: "Statue" }[t] || ""; }
 
 // ---------------------------------------------------------------- movement, teleport
 function teleport(target, instant) {
@@ -1643,7 +1652,7 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
-  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, shown: s.holder.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
+  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, room: s.st.room, shown: s.ped.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
   segsNear: (x, z, r) => { const out = new Set(); for (const arr of GRID.values()) for (const g of arr) { const dx = g[2] - g[0], dz = g[3] - g[1], L2 = dx * dx + dz * dz; let t = L2 ? ((x - g[0]) * dx + (z - g[1]) * dz) / L2 : 0; t = Math.max(0, Math.min(1, t)); if (Math.hypot(x - g[0] - t * dx, z - g[1] - t * dz) < r) out.add(g.slice(0, 4).map((v) => +v.toFixed(2)).join(",")); } return [...out]; },
