@@ -406,7 +406,8 @@ turned inside out.
 *Primary texts (translations)*
 - *The Rigveda*, trans. Stephanie Jamison &amp; Joel Brereton (2014), the current
   scholarly standard; Wendy Doniger, *The Rig Veda: An Anthology* (Penguin).
-- Creation hymns: Purusha Sukta (Rigveda 10.90).
+- Creation hymns: Nasadiya Sukta; Hiranyagarbha Sukta; Purusha Sukta (Rigveda 10.90).
+- The Gayatri Mantra (Rigveda 3.62.10).
 
 *The Atharvaveda (household charms and healing)*
 - Maurice Bloomfield, trans., *Hymns of the Atharva-Veda* (Sacred Books of the East,
