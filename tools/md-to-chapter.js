@@ -15,8 +15,14 @@
 "use strict";
 const fs = require("fs");
 
+// Escape text for HTML, but leave alone what a chapter's markdown already writes as HTML:
+// character entities (&mdash;, &ldquo;, &#8212;, &amp; …) and plain inline tags
+// (<em>, </strong> …, no attributes). Escaping those again showed "&amp;mdash;" and
+// "&lt;em&gt;" on the page, which is why ch03–ch20 source lists were never re-converted.
 function esc(s) {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return s.split(/(<\/?(?:em|strong|i|b|sup|sub)>)/).map((part, i) => i % 2 ? part : part
+    .replace(/&(?!(?:[a-zA-Z][a-zA-Z0-9]{1,31}|#[0-9]{1,7}|#[xX][0-9a-fA-F]{1,6});)/g, "&amp;")
+    .replace(/</g, "&lt;").replace(/>/g, "&gt;")).join("");
 }
 // inline markdown -> html (run AFTER esc)
 function inline(s) {

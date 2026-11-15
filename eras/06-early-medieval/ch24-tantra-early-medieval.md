@@ -93,12 +93,5 @@ Tantra grew out of the **Vedic and Puranic Hinduism** and the **Mahayana Buddhis
 ## Sources
 
 - Definition, dating (from 5th c.; manuscripts 600–900), Agamas/Nigamas, twilight language, "Tantrism" as a 19th-c. scholarly construct — "Tantra," Encyclopedia.com. https://www.encyclopedia.com/philosophy-and-religion/eastern-religions/hinduism/tantra
-- Tantra as esoteric traditions in Hinduism and Buddhism; śakti, siddhi, dīkṣā — "Tantra," Wikipedia. https://en.wikipedia.org/wiki/Tantra
-- Kashmir Shaivism / Trika (after 850 CE); Abhinavagupta (c. 950–1020) and the Tantrāloka — "Abhinavagupta," Wikipedia. https://en.wikipedia.org/wiki/Abhinavagupta
-- Kāpālika and Kaula; Bhairava Tantras; cremation-ground asceticism and impure substances — "Kāpālika," Wikipedia. https://en.wikipedia.org/wiki/Kapalika
-- Vāmācāra (left-hand path) and the pañcamakāra (five Ms); literal vs. symbolic — "Vamachara," Wikipedia. https://en.wikipedia.org/wiki/Vamachara
 - Subtle body, nāḍīs, chakras, kundalini, bīja mantras — Yoga Basics / Yogajala overviews of the subtle body and seed sounds. https://yogajala.com/bija-mantra-101/
 - Śrī Yantra: nine interlocking triangles, bindu, bhūpura, inward meditation; OM — "Sri Yantra Meaning," Yoga Basics. https://www.yogabasics.com/connect/yoga-blog/sri-yantra/
-- Chausath Yogini Temple, Khajuraho (c. 885 CE), 64+1 shrines, Kāpālika/Kaula links, open-air plan; ~13 yoginī temples in India — "Chausath Yogini Temple, Khajuraho," Wikipedia. https://en.wikipedia.org/wiki/Chausath_Yogini_Temple,_Khajuraho
-- The Daśa Mahāvidyā (ten wisdom-goddesses; Chinnamastā, Dhūmāvatī) — "Mahavidya," Wikipedia. https://en.wikipedia.org/wiki/Mahavidya
-- Vajrayāna origins, mahāsiddhas, term first attested 8th c.; Guhyasamāja, Cakrasaṃvara, Hevajra (8th–10th c.); Padmasambhava (747) and the second diffusion to Tibet (late 10th–11th c.) — "Vajrayana," Wikipedia. https://en.wikipedia.org/wiki/Vajrayana; "Hevajra Tantra," Wikipedia. https://en.wikipedia.org/wiki/Hevajra_Tantra

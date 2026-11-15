@@ -34,9 +34,14 @@ atlas staged on `staging/ready-line` (`handoff/rotunda/tray1/`, see its `MANIFES
 - three.js and its example modules: MIT (`docs/assets/rotunda/lib/LICENSE.txt`).
 
 ## Gaps and discrepancies, flagged rather than papered over
-1. **Socrates source name.** MANIFEST says the head is "photogrammetry of the Uffizi Socrates"; the
-   plaque (and atlas's continuity pack: "Copenhagen's museum scan of the canonical portrait") say SMK,
-   Copenhagen. The page follows the plaque. Atlas to confirm which is right.
+1. **Socrates source name — settled 2026-11-15 (atlas C2, `handoff/credit-lines-2026-11-10-figure-pages.md`).**
+   MANIFEST said "the Uffizi Socrates"; atlas confirms the built figure uses the SMK head (Scan the World,
+   MyMiniFactory object 50341; print-prepared copy by Kvant_64ru, Thingiverse 5452196 / Printables 1429487,
+   CC BY). The Uffizi head (scan by Leyla Dilmen) was a hunt candidate that was NOT used; no Uffizi credit
+   is on the page. Still open, named rather than dressed: the mesh name cites SMK inv. 635 while the
+   MyMiniFactory page names the Villa Albani cast as Inv. No. 1040, so the page carries NO inventory number.
+   This run found MyMiniFactory object 50341 ("Portrait of Socrates") through search; the page itself
+   refused to open here, so the inventory question was not re-checked.
 2. **Meshes differ from the MANIFEST's named files.** Isis's embedded mesh matches `statue.glb`
    (MD5 `eece1275…`). Shiva's embedded mesh is 1,290,736 bytes (MD5 `46915b7c…`), not the
    1,861,084-byte `shiva-scan-noload.glb` MANIFEST names; Socrates' is 1,443,660 bytes
@@ -63,3 +68,16 @@ atlas staged on `staging/ready-line` (`handoff/rotunda/tray1/`, see its `MANIFES
 4. **Tray verdicts.** The conveyor rule is that a tray moves when all three figures have Carter's
    verdict. Shiva is recorded as approved; Socrates' source was approved and Isis was "awaiting
    verdict" in the 2026-10-28 records. These pages go live only on Carter's per-item yes.
+5. **Credit lines C1–C2 set 2026-11-15** (atlas's note `handoff/credit-lines-2026-11-10-figure-pages.md`,
+   closing the PR #134 review's C1–C2). Each statue page now ends its plaque with atlas's verbatim credit
+   line, plus one clause repeating what the plaque already says (scan vs. our making):
+   - Isis: "Roman bust of Isis, 2nd c. CE, Mount Holyoke College Art Museum (MH 1965.10.C.G).
+     Photogrammetry by Laura Shea; model by 3DWP, CC BY 4.0." C1 (the review could not find the 3DWP
+     release): atlas evidences it through the archive.org mirror of the Thingiverse listing (model 557837)
+     and an independent re-user's credit line; this run did not re-open those.
+   - Socrates: "SMK / Scan the World scan, print preparation by Kvant_64ru, CC BY." (see item 1).
+   - Shiva: "Seated Shiva of Murudeshwar — photogrammetry by Boris3D Studio (boris3dstudio), CC BY 3.0."
+     The listing's own title, "Statue of Shiva in the lotus position at Murudeshwar", stays in the plaque
+     as the attribution title. This run opened the 3dgo.app mirror of Thingiverse thing 3689465
+     (https://3dgo.app/models/thingiverse/3689465): title as above, creator boris3dstudio, licence
+     "Creative Commons - Attribution" (version not shown there; 3.0 per the licence file atlas holds).

@@ -74,12 +74,9 @@ Theosophy and the occult revival are the children of **Spiritualism** (Chapter 3
 ## Sources
 
 - Helena Blavatsky, the Theosophical Society (1875), and the synthesis of Eastern religion and Western occultism; influence on the New Age — "Theosophy," Britannica. https://www.britannica.com/topic/theosophy
-- *The Secret Doctrine* (1888): rounds, root races, Lemuria and Atlantis; and the root-race doctrine's later racist misuse — "The Secret Doctrine" and "Root race," Wikipedia. https://en.wikipedia.org/wiki/Root_race
 - Henry Steel Olcott and the Buddhist revival in Sri Lanka (public conversion 1880; *Buddhist Catechism* 1881) — Tricycle, "Henry Steel Olcott: The White Buddhist." https://tricycle.org/magazine/olcott-life/
-- Annie Besant, Leadbeater, Krishnamurti, and the Order of the Star in the East (1911) and its 1929 dissolution ("Truth is a pathless land") — "Order of the Star in the East," Wikipedia; Krishnamurti Foundation, "Dissolution Speech." https://kfoundation.org/dissolution-speech/
+- Annie Besant, Leadbeater, Krishnamurti, and the Order of the Star in the East (1911) and its 1929 dissolution ("Truth is a pathless land") — Krishnamurti Foundation, "Dissolution Speech." https://kfoundation.org/dissolution-speech/
 - Rudolf Steiner's 1912 break from Theosophy and the founding of Anthroposophy — "Anthroposophy," Britannica. https://www.britannica.com/topic/anthroposophy
-- The Hermetic Order of the Golden Dawn: the 1887 Cipher Manuscripts, the 1888 founding by Westcott/Mathers/Woodman, the Outer/Inner (R.R. et A.C.) grade structure, and the 1900 schism — "Hermetic Order of the Golden Dawn," Wikipedia. https://en.wikipedia.org/wiki/Hermetic_Order_of_the_Golden_Dawn
-- Aleister Crowley, the Cairo revelation of 1904 (Aiwass, *Liber AL vel Legis*), Thelema, "Do what thou wilt," and the A∴A∴ and O.T.O. — "Thelema" and "The Book of the Law," Britannica/Wikipedia. https://www.britannica.com/topic/Thelema · https://en.wikipedia.org/wiki/The_Book_of_the_Law
+- Aleister Crowley, the Cairo revelation of 1904 (Aiwass, *Liber AL vel Legis*), Thelema, "Do what thou wilt," and the A∴A∴ and O.T.O. — "Thelema," Britannica. https://www.britannica.com/topic/Thelema
 - The tarot–Tree of Life mapping and the Rider–Waite–Smith deck (1909); Éliphas Lévi as the bridge — Yale University Press, "The Hermetic Order of the Golden Dawn and the Origins of Wicca." https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/
-- The 1885 SPR (Hodgson) report on the Mahatma letters and the plagiarism charges (with the SPR's 1986 reassessment) — "Helena Blavatsky," Wikipedia. https://en.wikipedia.org/wiki/Helena_Blavatsky
 - Theosophy and the birth of abstract art: *Thought-Forms* (Besant & Leadbeater, 1905), Kandinsky, Mondrian, and Hilma af Klint — Smarthistory, "Abstract art and Theosophy." https://smarthistory.org/abstract-art-and-theosophy/

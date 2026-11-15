@@ -294,13 +294,13 @@ Himalayas, **Chan/Zen**, **Pure Land**, and the whole vast flowering of **East A
 
 *Origins scholarship and sacred encoding*
 - On the revised (monastic, minority) origins, the work of Gregory Schopen and Jan Nattier (e.g. *A Few
-  Good Men*); on Indra's Net, [Wikipedia: Indra's net](https://en.wikipedia.org/wiki/Indra's_net) and the
+  Good Men*); on Indra's Net, the
   Avatamsaka Sutra.
 
 *Guanyin and the cult of the book*
 - The feminization of Avalokiteshvara into Guanyin and the Miaoshan legend — [Embodied Philosophy: From
   Bodhisattva to Goddess](https://www.embodiedphilosophy.com/from-bodhisattva-to-goddess-guanyin-and-chinese-buddhism-2/).
-- The Mahayana "cult of the book" (Schopen) and sutra-copying merit — [Wikipedia: Sutra copying](https://en.wikipedia.org/wiki/Sutra_copying).
+- The Mahayana "cult of the book" (Schopen) and sutra-copying merit.
 - The Mogao caves (492 shrines; UNESCO 1987), the Library Cave and Stein (1907) — UNESCO World Heritage Centre, "Mogao Caves." https://whc.unesco.org/en/list/440/ ; Getty Conservation Institute Newsletter 14.2, on the Mogao conservation programme. https://www.getty.edu/conservation/publications_resources/newsletters/pdf/v14n2.pdf
 - The *Diamond Sūtra* of 868 — Linda Hall Library, "The Diamond Sutra" (11 May 868; British Library). https://www.lindahall.org/about/news/scientist-of-the-day/the-diamond-sutra/ ; International Dunhuang Programme. https://idp.bl.uk/
 

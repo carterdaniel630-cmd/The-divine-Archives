@@ -59,13 +59,8 @@ Wicca and modern Paganism grow directly out of the **occult revival** of Chapter
 
 ## Sources
 
-- Gerald Gardner, the 1950s launch of Wicca, *Witchcraft Today* (1954), the New Forest coven claim, and the Murray thesis — "Gerald Gardner," Wikipedia. https://en.wikipedia.org/wiki/Gerald_Gardner
 - Gardnerian Wicca: the Goddess and Horned God, the Wiccan Rede, sabbats and esbats, three degrees — "Gerald Gardner and the Gardnerian Wiccan Tradition," Learn Religions. https://www.learnreligions.com/what-is-gardnerian-wicca-2562910
-- Doreen Valiente's rewriting of the Book of Shadows (from 1954) and the Charge of the Goddess — "Doreen Valiente," Wikipedia; Learn Religions, "The Charge of the Goddess." https://en.wikipedia.org/wiki/Doreen_Valiente
+- Doreen Valiente's rewriting of the Book of Shadows (from 1954) and the Charge of the Goddess — Learn Religions, "The Charge of the Goddess."
 - Alexandrian Wicca and Alex & Maxine Sanders — Learn Religions, "What is the Alexandrian Tradition of Wicca?" https://www.learnreligions.com/alexandrian-wicca-2562902
-- Wicca's twentieth-century origins (ceremonial magic, Romanticism, folk custom, Murray) — Ronald Hutton, *The Triumph of the Moon* (1999) — "The Triumph of the Moon," Wikipedia. https://en.wikipedia.org/wiki/The_Triumph_of_the_Moon
+- Wicca's twentieth-century origins (ceremonial magic, Romanticism, folk custom, Murray) — Ronald Hutton, *The Triumph of the Moon* (1999).
 - The Golden Dawn's ceremonial magic as a direct source of Wiccan ritual — Yale University Press, "The Hermetic Order of the Golden Dawn and the Origins of Wicca." https://yalebooks.yale.edu/2023/10/31/the-hermetic-order-of-the-golden-dawn-and-the-origins-of-wicca/
-- The feminist Goddess movement: Zsuzsanna Budapest and Dianic Wicca (1971); Starhawk, *The Spiral Dance* (1979), and Reclaiming — "Dianic Wicca" and "The Spiral Dance," Wikipedia. https://en.wikipedia.org/wiki/Dianic_Wicca · https://en.wikipedia.org/wiki/The_Spiral_Dance
-- Heathenry/Ásatrú: the Icelandic Ásatrúarfélagið (1972) and Sveinbjörn Beinteinsson — "Ásatrúarfélagið," Wikipedia. https://en.wikipedia.org/wiki/%C3%81satr%C3%BAarf%C3%A9lagi%C3%B0
-- The 2007 addition of the Wiccan pentacle to VA headstone emblems — "United States Department of Veterans Affairs emblems for headstones and markers," Wikipedia. https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs_emblems_for_headstones_and_markers
-- The Wheel of the Year, the pentacle, and the broader modern Pagan revival — "Modern Paganism," Wikipedia. https://en.wikipedia.org/wiki/Modern_Paganism

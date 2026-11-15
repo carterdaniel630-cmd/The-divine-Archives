@@ -89,13 +89,8 @@ Kabbalah grew directly out of the **Rabbinic Judaism** of the previous era (Chap
 ## Sources
 
 - Foundational texts and dating (Sefer Yetzirah, Bahir, Zohar); Ein Sof and the sefirot — My Jewish Learning, "Kabbalah and Hasidism"; Britannica, "Judaism." https://www.myjewishlearning.com/article/kabbalah-and-hasidism/
-- Sefer Yetzirah: alphanumeric cosmology, 10 sefirot + 22 letters = 32 paths — "Sefer Yetzirah," Wikipedia. https://en.wikipedia.org/wiki/Sefer_Yetzirah
-- Zohar authorship: traditional (Shimon bar Yochai) vs. modern consensus (Moses de León / a circle, c. 1270–1330); Scholem — "Zohar," Wikipedia. https://en.wikipedia.org/wiki/Zohar
-- The Tree of Life, ten sefirot, the four worlds, and the Shekhinah — "Tree of life (Kabbalah)" and "Shekhinah," Wikipedia. https://en.wikipedia.org/wiki/Tree_of_life_(Kabbalah)
+- Zohar authorship: traditional (Shimon bar Yochai) vs. modern consensus (Moses de León / a circle, c. 1270–1330); Scholem.
 - Abraham Abulafia and ecstatic/prophetic Kabbalah — My Jewish Learning, "Abraham Abulafia & Ecstatic Kabbalah." https://www.myjewishlearning.com/article/abraham-abulafia-ecstatic-kabbalah/
-- Lurianic Kabbalah: Isaac Luria, tzimtzum, shevirat ha-kelim, tikkun — Britannica, "Isaac ben Solomon Luria"; "Lurianic Kabbalah," Wikipedia; My Jewish Learning, "Tikkun in Lurianic Kabbalah." https://www.britannica.com/biography/Isaac-ben-Solomon-Luria · https://en.wikipedia.org/wiki/Lurianic_Kabbalah
-- Sabbatai Zevi, Nathan of Gaza, and the 1665–66 messianic movement and 1666 conversion — "Sabbatai Zevi," Wikipedia; My Jewish Learning. https://en.wikipedia.org/wiki/Sabbatai_Zevi
-- PaRDeS (Peshat/Remez/Derash/Sod) — "Pardes (exegesis)," Wikipedia. https://en.wikipedia.org/wiki/Pardes_(exegesis)
-- Gematria (with worked examples: Eliezer = 318; Nachash = Mashiach = 358), Notarikon, Temurah — "Gematria," Encyclopedia.com; "Notarikon" and "Temurah (Kabbalah)," Wikipedia. https://www.encyclopedia.com/philosophy-and-religion/bible/bible-general/gematria
-- Christian Kabbalah (Pico della Mirandola 1486, Reuchlin 1517) and the Hermetic Qabalah — "Christian Kabbalah," Wikipedia. https://en.wikipedia.org/wiki/Christian_Kabbalah
-- The Hasidei Ashkenaz (Judah he-Hasid, Eleazar of Worms) and the golem tradition (the "231 gates," letter-animation) — "Golem" and "Hasidei Ashkenaz," Wikipedia. https://en.wikipedia.org/wiki/Golem
+- Lurianic Kabbalah: Isaac Luria, tzimtzum, shevirat ha-kelim, tikkun — Britannica, "Isaac ben Solomon Luria"; My Jewish Learning, "Tikkun in Lurianic Kabbalah." https://www.britannica.com/biography/Isaac-ben-Solomon-Luria
+- Sabbatai Zevi, Nathan of Gaza, and the 1665–66 messianic movement and 1666 conversion — My Jewish Learning.
+- Gematria (with worked examples: Eliezer = 318; Nachash = Mashiach = 358), Notarikon, Temurah — "Gematria," Encyclopedia.com. https://www.encyclopedia.com/philosophy-and-religion/bible/bible-general/gematria

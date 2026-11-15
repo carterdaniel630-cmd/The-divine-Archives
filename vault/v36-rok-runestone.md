@@ -44,7 +44,7 @@ In **2020**, **Per Holmberg**, **Bo Gräslund**, **Olof Sundqvist** and **Henrik
 
 ## Connections
 
-Norse Paganism (ch23), Celtic & Germanic (ch14), and The End of Days (ch50) for Ragnarök. Compare the Book of Soyga (V19) for letter-tables and the Voynich manuscript (V01) for text that resists reading.
+Norse Paganism (ch23), Celtic & Germanic (ch14), and The End of Days (ch50) for Ragnarök. Compare the Book of Soyga (V19) for letter-tables and the Voynich manuscript (V01) for text that resists reading. The stone read face by face, with the standard translation in reading order and the ciphers worked step by step, is in [The Rök Stone, Decoded](../vault/rok-runestone-decoded.html).
 
 ## The evidence, honestly
 

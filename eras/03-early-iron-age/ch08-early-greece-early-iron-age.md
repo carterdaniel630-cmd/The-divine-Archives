@@ -354,19 +354,15 @@ will adopt wholesale.
 *Practice, oracles, and the afterlife*
 - [World History Encyclopedia: Ancient Greek Religion](https://www.worldhistory.org/Greek_Religion/);
   Walter Burkert, *Greek Religion* (the standard scholarly handbook).
-- [Wikipedia: Eleusinian Mysteries](https://en.wikipedia.org/wiki/Eleusinian_Mysteries);
-  on Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, *Ritual Texts for
+- On Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, *Ritual Texts for
   the Afterlife*.
 - Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) —
   [Angels of Athens: Ancient Greek Religion — everyday cult](https://www.angelsathens.gr/en/blog/ancient-greece/ancient-greek-religion-everyday-cult/);
   Oxford Reference, "Worship, household."
 - Hero-cult and the curse tablets (katadesmoi/defixiones) —
-  [Wikipedia: Curse tablet](https://en.wikipedia.org/wiki/Curse_tablet);
   the tomb-cult / hero-cult debate in early Greek society (standard treatments).
 
 *The alphabet*
-- [Wikipedia: History of the Greek alphabet](https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet)
-  (the adoption of Phoenician letters and the innovation of vowels).
 - The Homeric Hymns and the *Hymn to Demeter* — M. L. West (ed. and trans.), *Homeric Hymns, Homeric Apocrypha, Lives of Homer*, Loeb Classical Library 496 (Cambridge, MA: Harvard University Press, 2003). https://bmcr.brynmawr.edu/?p=23371 (review, *Bryn Mawr Classical Review* 2003.07.36) ; H. G. Evelyn-White (trans.), *Hesiod, the Homeric Hymns and Homerica* (Loeb, 1914), public domain, at Project Gutenberg. https://www.gutenberg.org/ebooks/348
 - The Moscow manuscript and its discovery in 1777 — LibreTexts, *Temples of the Gods: An Introduction to Classical Mythology*, "The Homeric Hymn to Demeter." https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter ; Oliver Thomas, "Manuscript Readings in the Homeric Hymn to Demeter 389–479," *Mnemosyne* 68, no. 3 (2015) (the manuscript's "discovery by C.F. von Matthaei in Moscow in 1777"). https://doi.org/10.1163/1568525X-12341719
 
