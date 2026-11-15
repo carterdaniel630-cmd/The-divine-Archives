@@ -1,0 +1,330 @@
+{
+ "viewport": "390x844",
+ "rotunda": {
+  "s": {
+   "x": 0,
+   "z": -4,
+   "yaw": 0,
+   "where": "The Rotunda · Comparative themes|The Flood",
+   "room": "ch01",
+   "exhibits": 39,
+   "built": [
+    "rotunda"
+   ],
+   "calls": 57,
+   "tris": 131224,
+   "textures": 24,
+   "geometries": 88
+  },
+  "shown": []
+ },
+ "ch15": {
+  "statueAt": [
+   37,
+   -80.3
+  ],
+  "close": {
+   "n": 72,
+   "over": 0,
+   "worst": {
+    "d": 2,
+    "k": 1,
+    "p": -0.2,
+    "tris": 202687,
+    "calls": 60,
+    "level": 0
+   },
+   "worstC": {
+    "d": 2,
+    "k": 1,
+    "p": -0.2,
+    "tris": 202687,
+    "calls": 60,
+    "level": 0
+   }
+  },
+  "wing": {
+   "before": [
+    "02-bronze-age",
+    "04-axial-age"
+   ],
+   "mid": {
+    "built": [
+     "08-early-modern",
+     "09-modern"
+    ],
+    "statueEx": 2
+   },
+   "tapPositions": [
+    {
+     "k": 0,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 1,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 2,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 3,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 4,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 5,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 6,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    },
+    {
+     "k": 7,
+     "shown": [
+      "zeus"
+     ],
+     "inRoom": "ch15"
+    }
+   ],
+   "cardTry": [
+    {
+     "yaw": 0,
+     "card": {
+      "h": "Zeus",
+      "vis": true,
+      "text": "\n    ×\n    Classical Greece · a statueZeusDark bronze · Greece · c. 460–450 BCE · Zeus or PoseidonA real 3D scan by SMK, the National Gallery of Denmark, of the full-size plaster cast (KAS2100) in its Royal Cast Collection of the bronze raised from the sea off Cape Artemision, now in the National Archaeological Museum, Athens; SMK released the scan into the public domain (CC0 1.0). The Archives lightened the body's mesh for phones (the head keeps the scan's full detail), added the drape, and dressed it in one dark bronze, the metal of the original where the scanned cast is plaster: that finish and the drape are ours.Scholars still disagree on who he is: if the lost weapon in the raised hand was a thunderbolt he is Zeus, if a trident, Poseidon. The hand is empty, and the question is open.Recently added, pending full review.Classical GreeceZeus in the Pantheon\n    Interpretive display. The",
+      "links": [
+       "chapters/ch15.html",
+       "pantheon.html#zeus"
+      ]
+     }
+    },
+    {
+     "yaw": 3.141592653589793,
+     "card": {
+      "h": "Zeus",
+      "vis": true,
+      "text": "\n    ×\n    Classical Greece · a statueZeusDark bronze · Greece · c. 460–450 BCE · Zeus or PoseidonA real 3D scan by SMK, the National Gallery of Denmark, of the full-size plaster cast (KAS2100) in its Royal Cast Collection of the bronze raised from the sea off Cape Artemision, now in the National Archaeological Museum, Athens; SMK released the scan into the public domain (CC0 1.0). The Archives lightened the body's mesh for phones (the head keeps the scan's full detail), added the drape, and dressed it in one dark bronze, the metal of the original where the scanned cast is plaster: that finish and the drape are ours.Scholars still disagree on who he is: if the lost weapon in the raised hand was a thunderbolt he is Zeus, if a trident, Poseidon. The hand is empty, and the question is open.Recently added, pending full review.Classical GreeceZeus in the Pantheon\n    Interpretive display. The",
+      "links": [
+       "chapters/ch15.html",
+       "pantheon.html#zeus"
+      ]
+     }
+    }
+   ]
+  },
+  "guide": {
+   "here": [
+    "statue:zeus",
+    "room:ch15",
+    "plate:ch15",
+    "see:ch15",
+    "fig:athena",
+    "fig:hades",
+    "fig:persephone",
+    "fig:demeter",
+    "fig:apollo",
+    "fig:artemis",
+    "fig:dionysus",
+    "fig:hermes",
+    "fig:aphrodite",
+    "fig:gaia",
+    "fig:prometheus",
+    "fig:heracles",
+    "fig:orpheus"
+   ],
+   "missing": []
+  }
+ },
+ "ch83": {
+  "statueAt": [
+   -63,
+   -160.3
+  ],
+  "close": {
+   "n": 72,
+   "over": 0,
+   "worst": {
+    "d": 1.2,
+    "k": 0,
+    "p": -0.2,
+    "tris": 166418,
+    "calls": 41,
+    "level": 0
+   },
+   "worstC": {
+    "d": 3,
+    "k": 0,
+    "p": -0.2,
+    "tris": 97220,
+    "calls": 43,
+    "level": 1
+   }
+  },
+  "wing": {
+   "before": [
+    "07-high-medieval",
+    "09-modern"
+   ],
+   "mid": {
+    "built": [
+     "08-early-modern",
+     "09-modern"
+    ],
+    "statueEx": 2
+   },
+   "tapPositions": [
+    {
+     "k": 0,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 1,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 2,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 3,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 4,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 5,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 6,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    },
+    {
+     "k": 7,
+     "shown": [
+      "shiva"
+     ],
+     "inRoom": "ch83"
+    }
+   ],
+   "cardTry": [
+    {
+     "yaw": 0,
+     "card": {
+      "h": "Shiva",
+      "vis": true,
+      "text": "\n    ×\n    Global Hinduism & the Guru Movements · a statueShivaDark bronze · India · the great god in meditationA real scan of the modern statue at Murudeshwar, Karnataka, by Boris3D Studio (CC BY 3.0). The dark bronze finish is ours.Recently added, pending full review. The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D.Turn it in 3DThe Rotunda Circle\n    Interpretive display. The linked page carries the sources and the evidence verdict.\n  ",
+      "links": [
+       "rotunda/shiva.html",
+       "rotunda/index.html"
+      ]
+     }
+    },
+    {
+     "yaw": 3.141592653589793,
+     "card": {
+      "h": "Shiva",
+      "vis": true,
+      "text": "\n    ×\n    Global Hinduism & the Guru Movements · a statueShivaDark bronze · India · the great god in meditationA real scan of the modern statue at Murudeshwar, Karnataka, by Boris3D Studio (CC BY 3.0). The dark bronze finish is ours.Recently added, pending full review. The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D.Turn it in 3DThe Rotunda Circle\n    Interpretive display. The linked page carries the sources and the evidence verdict.\n  ",
+      "links": [
+       "rotunda/shiva.html",
+       "rotunda/index.html"
+      ]
+     }
+    }
+   ]
+  },
+  "guide": {
+   "here": [
+    "statue:shiva",
+    "room:ch83",
+    "plate:ch83"
+   ],
+   "missing": []
+  }
+ },
+ "leak": {
+  "ch14": {
+   "inRoom": "ch14",
+   "shown": []
+  },
+  "ch16": {
+   "inRoom": "ch16",
+   "shown": []
+  },
+  "ch13": {
+   "inRoom": "ch13",
+   "shown": []
+  },
+  "ch82": {
+   "inRoom": "ch82",
+   "shown": []
+  },
+  "ch84": {
+   "inRoom": "ch84",
+   "shown": []
+  },
+  "ch81": {
+   "inRoom": "ch81",
+   "shown": []
+  },
+  "ch85": {
+   "inRoom": "ch81",
+   "shown": []
+  }
+ },
+ "errs": [
+  "console: Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED"
+ ]
+}
