@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (17:00 UTC)
+# Handoff — updated 2026-11-15 (17:20 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Wikipedia strip part 3 (era 04) merged (2026-11-15 ~16:53 UTC)
+## Latest: Wikipedia strip part 4 (era 05) merged (2026-11-15 ~17:16 UTC)
+- **`main` = `30f6de4b`** (deploy run 43740184151 green; Knowledge graph run 43740184187 green): **PR #152** fast-forwarded `73073027` → `30f6de4b` **per item** on Carter's strip yes (`decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`). Era 05 chapters (ch16–20, ch55, ch70) no longer list Wikipedia (26 entries removed, list only); re-sourcing flags 13–30 in `replies/2026-11-15-run-1633-wikipedia-strip-05.md`. Independent review PASS 0 findings (`replies/2026-11-15-pr152-independent-review.md`); GitHub 10/10 green incl. Lighthouse on `30f6de4b`; local 9/0/1, 18/18, 51/51, headless 360/390 clean.
+- **Open:** #153 strip part 5 (re-synced `2d3450cb` onto `30f6de4b`; waits on independent review + GitHub incl. Lighthouse), #142–#145, #139.
+
+## Earlier: Wikipedia strip part 3 (era 04) merged (2026-11-15 ~16:53 UTC)
 - **`main` = `73073027`** (deploy run 43738004031 green; Knowledge graph run 43738004004 green): **PR #151** fast-forwarded `0c807f9c` → `73073027` **per item** on Carter's strip yes (`decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`). Era 04 chapters (ch10–15, ch52) no longer list Wikipedia in their Sources; pending tags unchanged.
 - **Open:** #152 strip part 4 (review PASS; waits on Lighthouse + re-sync onto `73073027`), #153 strip part 5 (waits on independent review), #142–#145, #139.
 
