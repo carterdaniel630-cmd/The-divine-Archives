@@ -32,14 +32,11 @@ const REF = {
   gwr: "Guinness World Records, &ldquo;Largest ball court in ancient Mesoamerica&rdquo;",
   met: "C. C. Earley, &ldquo;The Mesoamerican Ballgame&rdquo;, The Metropolitan Museum of Art (2017)",
   famsf: "Fine Arts Museums of San Francisco, &ldquo;Rubbing from the Great Ballcourt at Chichen Itza&rdquo; (Merle Greene Robertson)",
-  tzo: "&ldquo;Tzompantli&rdquo;, Wikipedia",
   tt: "J. K. Kowalski and C. Kristan-Graham (eds.), <em>Twin Tollans: Chich&eacute;n Itz&aacute;, Tula, and the Epiclassic to Early Postclassic Mesoamerican World</em> (Dumbarton Oaks, 2007)",
-  cen: "&ldquo;Sacred Cenote&rdquo;, Wikipedia (after Cano 2002, Sabloff 1994, Landa)",
   doyle: "J. Doyle, &ldquo;Into the Centipede&rsquo;s Jaws: Sumptuous Offerings from the Sacred Cenote at Chich&eacute;n Itz&aacute;&rdquo;, The Metropolitan Museum of Art (2018)",
   wa: "&ldquo;New thinking on Mayan child sacrifice&rdquo;, <em>World Archaeology</em> 28 (2008), on G. de Anda&rsquo;s study",
   ng: "<em>National Geographic</em>, 12 June 2024, on R. Barquera and others, <em>Nature</em> (2024)",
   hm: "G. Palacios, &ldquo;El dragado del cenote sagrado de Chich&eacute;n Itz&aacute;, 1904&ndash;c.1914&rdquo;, <em>Historia Mexicana</em> 67.2 (2017)",
-  car: "&ldquo;El Caracol, Chichen Itza&rdquo;, Wikipedia",
   aveni: "A. F. Aveni, S. L. Gibbs and H. Hartung, &ldquo;The Caracol Tower at Chichen Itza: an ancient astronomical observatory?&rdquo;, <em>Science</em> 188 (1975), 977&ndash;985",
   disc: "P. B&iacute;r&oacute; and E. P&eacute;rez de Heredia, &ldquo;El disco de El Caracol de Chich&eacute;n Itz&aacute; (929&ndash;932 d.n.e.)&rdquo;, <em>Estudios de Cultura Maya</em> 48 (2016)",
   expl: "Exploratorium, &ldquo;Ancient Observatories: Chichen Itza &mdash; El Caracol&rdquo;",
@@ -135,18 +132,18 @@ const info = [
   // ---- I: the Great Platform
   { id: "castillo", section: "s1", pos: [-36, 3.0, -64], cat: "I · The Great Platform", title: "The pyramid of Kukulkan",
     html: "<p>The Spanish called it <em>El Castillo</em>, the castle; it is also known as the Temple of Kukulkan, the Feathered Serpent. Its square base is 55.3 metres across, and nine stepped bodies rise 24 metres to the temple on top, which adds about 6 more. A stairway of about 91 steps climbs each side. Counting the top platform as a step gives 365, the days of the solar year; whether the builders meant this is not known.</p><p>The model is squared to the pyramid. In reality the pyramid, and the plaza with it, is turned about twenty degrees from true north: its north face lines up with sunset on 20 May and 24 July.</p>",
-    flags: [APPROX, { t: "The count of 365 is a reading", soft: true }], links: [L.ch29], sources: REF.cas + "; " + REF.sp + "." },
+    flags: [APPROX, { t: "The count of 365 is a reading", soft: true }], links: [L.ch29], sources: REF.sp + "." },
   { id: "serpent", section: "s1", pos: [-9, 3.0, -38], cat: "I · The Great Platform", title: "The serpent of light",
     toggle: { id: "serpent", on: "Show the pattern of light", off: "Hide the pattern of light" },
     html: "<p>Late on afternoons around the spring and autumn equinoxes, the shadows of the pyramid&rsquo;s nine stepped corners fall on the side of the north stairway, leaving triangles of light that join the carved serpent heads at its foot: a serpent seems to come down the pyramid. Thousands gather to watch it each March.</p><p>It is widely presented as designed; whether it was is debated. The archaeoastronomers Ivan &Scaron;prajc and Pedro S&aacute;nchez Nava doubt it. Photographed day by day by them in 2017, the pattern looked much the same for about two weeks, and the number of triangles grew slowly over the weeks, from six towards nine, so it cannot mark one day. They trace the stress on the equinoxes to writers of the 1960s and 1970s, and find no good evidence that buildings were aligned to the equinoxes; near-equinox alignments, they argue, more likely marked the &lsquo;quarter days&rsquo;. Switch the view on to see the pattern as a simple overlay.</p>",
-    flags: [CONTESTED], links: [L.ch29], sources: REF.sp + "; " + REF.sp21 + "; " + REF.cas + "." },
+    flags: [CONTESTED], links: [L.ch29], sources: REF.sp + "; " + REF.sp21 + "." },
   { id: "inner", section: "s1", pos: [10, 3.0, -38], cat: "I · The Great Platform", title: "The pyramid inside",
     toggle: { id: "inner", on: "Show roughly where it lies", off: "Hide its outline" },
     html: "<p>The pyramid was built over an earlier one. Excavators in the 1930s found its temple: in 1935 a reclining stone figure of the kind called a <em>chac mool</em>, and in 1936 a throne in the form of a jaguar, painted red with cinnabar and set with jade. The sources disagree on dates, putting the inner pyramid at 600&ndash;800 and the outer at 900&ndash;1000 or later; scans in 2018 suggested an even earlier phase within. In 2015 a survey found that the pyramid stands over a water-filled cavity, a cenote, about 25 by 35 metres.</p><p>The outline shown is a rough guess at the inner pyramid&rsquo;s size, not a survey.</p>",
     flags: [APPROX], links: [L.ch29], sources: REF.cas + "." },
   { id: "tzompantli", section: "s1", pos: [-90, 2.4, -44], cat: "I · The Great Platform", title: "The platform of skulls",
     html: "<p>This low platform, the <em>tzompantli</em> or skull rack, has sides carved with rows of skulls in horizontal bands. Racks of this kind held the heads of sacrificed victims for public display, and skulls found at Chich&eacute;n itself carry the marks of such impalement. Because it stands beside the ball court, many connect it with the ball game, though that link is a reading of the carvings. No remains are shown in this model.</p>",
-    flags: [RENDER, REMAINS], links: [L.ch29], sources: REF.oh3d + "; " + REF.tm + "; " + REF.unesco + "; " + REF.tzo + "." },
+    flags: [RENDER, REMAINS], links: [L.ch29], sources: REF.oh3d + "; " + REF.tm + "; " + REF.unesco + "." },
   { id: "warriors", section: "s1", pos: [88, 3.0, -4], cat: "I · The Great Platform", title: "The Temple of the Warriors",
     html: "<p>East of the plaza stand the Temple of the Warriors and the Group of the Thousand Columns, here only simple masses. Buildings like these, and the feathered serpents everywhere in this part of the city, closely resemble those of Tula, far to the west in central Mexico. How it came about is one of the great debates of Mesoamerican archaeology. Older accounts, UNESCO&rsquo;s among them, say that Toltec warriors from the Mexican plateau took the city in the tenth century; <em>Britannica</em> writes of invaders who were probably Maya speakers, perhaps directed by the Toltecs. A 2016 study of a carved disc from El Caracol reads it as recording the arrival of &lsquo;Mexican-Toltec&rsquo; people and a refounding of the city that took in both the newcomers and part of the local nobility. Others, in the volume <em>Twin Tollans</em>, set migration and conquest aside for the cities&rsquo; social, political and economic ties, and some have suggested that Chich&eacute;n influenced Tula rather than the reverse. The question is open.</p>",
     flags: [CONTESTED, APPROX], links: [L.ch29], sources: REF.unesco + "; " + REF.brit2 + "; " + REF.disc + "; " + REF.tt + "; " + REF.whe + "." },
@@ -160,36 +157,36 @@ const info = [
     flags: [BELIEF], links: [L.ch29], sources: REF.met + "; " + REF.gwr + "." },
   { id: "relief", section: "s2", pos: [ax0 + BC.benchD + 0.8, 2.2, BC.z + 7.5], cat: "II · The Great Ball Court", title: "The carved benches",
     html: "<p>The sloping benches along the foot of the walls carry long carved panels of ball players meeting at a great ball marked with a skull. On the right a player kneels, beheaded; blood springs from his neck as serpents and growing plants. Who he was is not known. He is often read as a player of the losing team, but the Metropolitan Museum&rsquo;s essay on the game says it is unclear who was sacrificed and when, and how the sacrifice related to the game itself. The plants are read as the power of sacrificial blood to bring new life. Six panels on the court show the same scene.</p><p>The panel here is our own simple rendering of the subject, not a copy.</p>",
-    flags: [RENDER, CONTESTED, BELIEF], links: [L.ch29], sources: REF.famsf + "; " + REF.met + "; " + REF.tzo + "." },
+    flags: [RENDER, CONTESTED, BELIEF], links: [L.ch29], sources: REF.famsf + "; " + REF.met + "." },
 
   // ---- III: the Sacred Cenote
   { id: "sacbe", section: "s3", pos: [3.6, 2.4, -196], cat: "III · The Sacred Cenote", title: "The white road",
     html: "<p>A raised causeway, a <em>sacbe</em> or &lsquo;white road&rsquo;, runs about 300 metres north from the Great Platform to the Sacred Cenote. The pyramid&rsquo;s north stairway, the one with the serpent heads, faces this way, and &Scaron;prajc and S&aacute;nchez Nava suggest that it marked the main entrance towards the cenote.</p>",
-    flags: [APPROX], sources: REF.cen + "; " + REF.sp + "." },
+    flags: [APPROX], sources: REF.sp + "." },
   { id: "cenote", section: "s3", pos: [-3.6, 2.4, -357], cat: "III · The Sacred Cenote", title: "The Sacred Cenote",
     html: "<p>A cenote is a sinkhole where the roof of a cave in the limestone has fallen in, opening on the water below; such wells gave the city its water. This one is about 60 metres across, with sheer sides falling some 27 metres to the water. For centuries it was a place of pilgrimage, one of the richest places of offering in the ancient Americas: hundreds of jade ornaments, some burned so that they shattered in the water; gold and copper from as far as Costa Rica and Panama; bowls of copal incense; wood and cloth that rarely survive elsewhere. The offerings date from about 700 to the fifteenth century.</p>",
-    flags: [APPROX], links: [L.ch29], sources: REF.cen + "; " + REF.doyle + "." },
+    flags: [APPROX], links: [L.ch29], sources: REF.doyle + "." },
   { id: "victims", section: "s3", pos: [3.6, 2.4, -357], cat: "III · The Sacred Cenote", title: "Those given to the well",
     html: "<p>In 1566 the Spanish friar Diego de Landa wrote that in times of drought it was the custom to throw people alive into this well as a sacrifice to the gods. Human bones have since been brought up from it, but his is not the only picture: from his study of them, the archaeologist Guillermo de Anda concluded that the victims were usually, though not always, killed before they were put into the well. De Anda&rsquo;s study of some 2,500 bones recovered in the 1960s found that about four in five came from children, aged roughly three to eleven.</p><p>It was long assumed that the victims were mostly young women. In 2024 a study of ancient DNA from a cistern a short walk from the cenote found that all 64 children sampled there were boys, many of them related, among them two pairs of twins. The cenote&rsquo;s own remains have not yet been studied in this way. No remains are shown in this model.</p>",
-    flags: [REMAINS], links: [L.ch29], sources: REF.cen + "; " + REF.wa + "; " + REF.ng + "." },
+    flags: [REMAINS], links: [L.ch29], sources: REF.wa + "; " + REF.ng + "." },
   { id: "dredge", section: "s3", pos: [0, 2.6, -350], cat: "III · The Sacred Cenote", title: "The dredging",
     html: "<p>From 1904 the American consul Edward H. Thompson, who had bought the land, dredged the cenote and later dived in it, with money from Harvard&rsquo;s Peabody Museum and private collectors in Boston. Most of the gold, jade and other finds went to the Peabody. A study in <em>Historia Mexicana</em> describes the work as looting, the objects taken out of Mexico unlawfully through a network Thompson built. Expeditions with Mexico&rsquo;s national institute of archaeology, INAH, worked in the cenote again in 1961 and in 1967&ndash;68.</p>",
-    flags: [SENS], links: [L.ch29], sources: REF.hm + "; " + REF.doyle + "; " + REF.cen + "." },
+    flags: [SENS], links: [L.ch29], sources: REF.hm + "; " + REF.doyle + "." },
 
   // ---- IV: El Caracol
   { id: "caracol", section: "s4", pos: [CR.x + 3.6, 2.6, D.carG.z0 + 3], cat: "IV · El Caracol", title: "El Caracol",
     html: "<p>The Spanish named it <em>the snail</em> for the spiral stair inside its round tower. The tower stands on a platform reached by a great stairway on two levels. A dated stone on the upper platform has been read as about 906; a 2016 study dates a carved stone disc from the building to 929&ndash;932. Part of the tower has fallen.</p>",
-    flags: [APPROX], links: [L.ch29], sources: REF.car + "; " + REF.disc + "; " + REF.whe + "; " + REF.expl + "." },
+    flags: [APPROX], links: [L.ch29], sources: REF.disc + "; " + REF.whe + "; " + REF.expl + "." },
   { id: "venus", section: "s4", pos: [CR.x - 3.6, 2.6, D.carG.z0 + 3], cat: "IV · El Caracol", title: "Watching Venus?",
     html: "<p>Three narrow openings survive in the upper tower. In 1975 the astronomer Anthony Aveni and his colleagues measured the building; studies of it count sightlines towards twenty of twenty-nine events on the horizon that its makers might have wanted to watch. The Exploratorium&rsquo;s account names among them the furthest points north and south at which Venus rises, and the sunset at the equinoxes; &Scaron;prajc, whose doubts are on the serpent card, finds no good evidence that Mesoamerican buildings were aligned to the equinoxes. Venus mattered greatly to the Maya: the Dresden Codex in the Vault holds tables that follow its cycle.</p><p>Their paper ended its title with a question mark, and the case is still open: with part of the tower lost and many possible targets, some alignments could be chance.</p>",
-    flags: [CONTESTED], links: [L.v31, L.ch29], sources: REF.aveni + "; " + REF.car + "; " + REF.expl + "; " + REF.sp21 + "." }
+    flags: [CONTESTED], links: [L.v31, L.ch29], sources: REF.aveni + "; " + REF.expl + "; " + REF.sp21 + "." }
 ];
 
 const about = { id: "about", cat: "About this model", title: "How close is this to the real thing?",
   html: "<p><strong>From published figures:</strong> the base, height, stepped bodies and stairways of the pyramid; the overall size of the ball court (Guinness) and the Metropolitan Museum&rsquo;s court figure, used for its alley; the length of the causeway; the width of the cenote and the drop to its water.</p>" +
     "<p><strong>Approximate:</strong> where each building stands and the distances between them, the shape of the temple on the pyramid, the walls and temples of the ball court, the Temple of the Warriors, El Caracol, and the inner pyramid&rsquo;s outline. The carvings are our own simple renderings, and the pattern of light is an overlay, not a calculation.</p>" +
     "<p><strong>Not shown:</strong> most of the city&rsquo;s buildings, the trees on and round the plaza, the stalls and the crowds, and the true turn of the site from north.</p>",
-  links: [L.ch29, L.v31], sources: REF.cas + "; " + REF.gwr + "; " + REF.met + "; " + REF.cen + "." };
+  links: [L.ch29, L.v31], sources: REF.gwr + "; " + REF.met + "." };
 
 // a humid sky over the Yucatán lowlands; afternoon sun from the west
 const sky = { bg: "#bcd2e2", fog: "#d4dbcf", hemi: "#eef2ea", ground: "#8e9668", sunPos: [-80, 55, 10], sun: 1.55 };
