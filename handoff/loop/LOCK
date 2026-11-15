@@ -1,1 +1,1 @@
-2026-11-15T22:56:10Z build loop run (scheduled) — independent review of #158/#159
+RELEASED 2026-11-15T23:03:37Z: build loop run finished (review of #158/#159). This session could not delete this file (deletion blocked by its permission guard). Treat as no lock: the next run may overwrite it.
