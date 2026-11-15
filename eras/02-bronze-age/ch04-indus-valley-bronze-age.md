@@ -283,9 +283,6 @@ question the next chapter, on the early Vedic world, must take up.
 *The seals, the Great Bath, and the &ldquo;proto-Shiva&rdquo; debate*
 - John Marshall, *Mohenjo-Daro and the Indus Civilization* (1931), for the original
   proto-Shiva/Pashupati identification.
-- [Wikipedia: Pashupati seal](https://en.wikipedia.org/wiki/Pashupati_seal) (surveying
-  Marshall, Doris Srinivasan&rsquo;s critique, and Shubhangana Atre&rsquo;s
-  &ldquo;Lady of Beasts&rdquo; reading).
 - [The Print: how a post about the Pashupati seal triggered an identity debate](https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/).
 - The &ldquo;Priest-King&rdquo; bust and its contested name —
   [Smarthistory: The Priest-King sculpture](https://smarthistory.org/the-priest-king-sculpture-from-the-indus-valley-civilization/);
@@ -301,9 +298,6 @@ question the next chapter, on the early Vedic world, must take up.
 *Decline and the Indo-Aryan question (ancient DNA)*
 - V. Shinde et al., &ldquo;An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers,&rdquo; *Cell* (2019); V. Narasimhan et al., *Science* (2019).
 - [Scroll.in: two genetic studies and the Indo-Aryan migration](https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite).
-
-*General*
-- [Wikipedia: Indus Valley Civilisation](https://en.wikipedia.org/wiki/Indus_Valley_Civilisation) and [Religion of the Indus Valley Civilisation](https://en.wikipedia.org/wiki/Religion_of_the_Indus_Valley_Civilisation).
 
 *Note on sourcing:* Researched from current scholarship and primary excavation reports
 rather than memory alone, per the project standard. Because the Indus script is

@@ -314,7 +314,6 @@ it.
 
 *Oracle bones and Shang religion*
 - [Smarthistory: Oracle Bone, Shang Dynasty](https://smarthistory.org/oracle-bone/);
-  [Wikipedia: Shang dynasty religious practitioners](https://en.wikipedia.org/wiki/Shang_dynasty_religious_practitioners);
   David N. Keightley, *Sources of Shang History* and *The Ancestral Landscape* (the
   standard scholarship on the oracle bones and Shang religion).
 
@@ -327,12 +326,10 @@ it.
   (surveying the K. C. Chang vs. Keightley debate);
   [Grokipedia: Chinese shamanism](https://grokipedia.com/page/Chinese_shamanism).
 - The **Nine Songs** (*Jiu Ge*) of Chu — Arthur Waley, *The Nine Songs: A Study of
-  Shamanism in Ancient China*; [Wikipedia: Jiu Ge](https://en.wikipedia.org/wiki/Jiu_Ge).
+  Shamanism in Ancient China*.
 
 *Bronzes, sacrifice, and Sanxingdui*
-- [Wikipedia: Taotie](https://en.wikipedia.org/wiki/Taotie);
-  [Wikipedia: Human sacrifice in ancient Chinese culture](https://en.wikipedia.org/wiki/Human_sacrifice_in_ancient_Chinese_culture);
-  on Fu Hao's tomb and Sanxingdui, standard archaeological reports.
+- On Fu Hao's tomb and Sanxingdui, standard archaeological reports.
 
 *Divination and symbol*
 - The *Yijing* (*Book of Changes*): Richard Rutt, *The Book of Changes (Zhouyi): A

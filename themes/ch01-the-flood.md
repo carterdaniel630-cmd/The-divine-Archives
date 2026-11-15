@@ -403,11 +403,9 @@ origin remains in the dark.
 - *Atrahasis* — Old Babylonian flood epic (18th c. BCE). Overview:
   [Center for Online Judaic Studies](https://cojs.org/atrahasis_epic-_the_flood_story-_18th_century_bce/).
 - *Eridu Genesis* / Ziusudra (Sumerian) —
-  [Livius: The Great Flood, Sumerian version](https://www.livius.org/articles/misc/great-flood/flood2/);
-  [Wikipedia: Eridu Genesis](https://en.wikipedia.org/wiki/Eridu_Genesis).
+  [Livius: The Great Flood, Sumerian version](https://www.livius.org/articles/misc/great-flood/flood2/).
 - Genesis 6–9 (Hebrew Bible).
-- Ovid, *Metamorphoses* Bk. I (Deucalion); Plato, *Timaeus*. See
-  [Wikipedia: Ancient Greek flood myths](https://en.wikipedia.org/wiki/Ancient_Greek_flood_myths).
+- Ovid, *Metamorphoses* Bk. I (Deucalion); Plato, *Timaeus*.
 - *Shatapatha Brahmana* (Manu and the fish);
   [Britannica: Manu](https://www.britannica.com/topic/Manu).
 - Qur'an, Surah Hud 11:25–49 and Surah Nuh 71 (Nuh, the drowned son, Mount Judi) —
@@ -427,10 +425,6 @@ origin remains in the dark.
   and [Times of Israel](https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/);
   [PBS NewsHour, 24 January 2014](https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round);
   [Archaeology magazine, 27 January 2014](https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/);
-  [Wikipedia: Finkel's replica of the Babylonian ark](https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark)
-  (first encountered the tablet in 1985, could not translate the whole of it until 2009;
-  Alleppey, Kerala, 2014; gives "one-third scale" and a continuously running petrol pump; the documentary
-  itself, below, says a fifth and "a collection of pumps", so the page follows the documentary and names the disagreement);
   PBS NOVA, *Secrets of Noah's Ark* (aired 7 October 2015), programme text at
   [PBS NOVA: Secrets of Noah's Ark](https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html)
   ("about 40 feet in diameter, just a fifth the size of the ark described in the tablet"; at launch "a heck of a lot
@@ -438,11 +432,10 @@ origin remains in the dark.
   managed to duplicate Babylonian bitumen, but the structure of the ark is sound");
   The Telegraph (India), "The Ark that Finkel built" (the Kerala build and its launch; it gives the size as
   "bigger than one-fifth of the original", so the page gives the scale as approximate). The paper's own URL
-  could not be opened in the 2026-11-02 check; the text was read from a copy and is cited via the Wikipedia page;
+  could not be opened in the 2026-11-02 check; the text was read from a copy;
   [Channel 4 press: The Real Noah's Ark](https://www.channel4.com/press/news/real-noahs-ark) (the 2014 documentary).
 - Berossus, *Babyloniaca* (c. 281 BCE), and the Xisuthros flood —
-  [Livius: The Great Flood — Berossus](https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/);
-  [Wikipedia: Babyloniaca (Berossus)](https://en.wikipedia.org/wiki/Babyloniaca_(Berossus)).
+  [Livius: The Great Flood — Berossus](https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/).
 
 *Discovery and history of scholarship*
 - George Smith, *The Chaldean Account of the Deluge* (1872) and *The Chaldean
@@ -461,7 +454,6 @@ origin remains in the dark.
   [NCSE: The Flood — Mesopotamian Archaeological Evidence](https://ncse.ngo/flood-mesopotamian-archaeological-evidence);
   [Penn Museum, Expedition: Reflections on the Mesopotamian Flood](https://www.penn.museum/sites/expedition/reflections-on-the-mesopotamian-flood/).
 - Black Sea deluge hypothesis (Ryan & Pitman 1997) and its disputed status —
-  [Wikipedia: Black Sea deluge hypothesis](https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis);
   [Science: Black Sea Flood Theory Put to Test](https://www.science.org/content/article/black-sea-flood-theory-put-test).
 
 *Note on sourcing:* This draft relies on web research into primary translations

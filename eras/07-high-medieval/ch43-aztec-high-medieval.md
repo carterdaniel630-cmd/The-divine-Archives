@@ -69,5 +69,4 @@ The Aztec are one of the three great temple religions of the pre-Columbian Ameri
 - The calendars and the 52-year New Fire Ceremony — Britannica, "New Fire Ceremony"; World History Encyclopedia. https://www.britannica.com/topic/New-Fire-Ceremony
 - The afterlife destinations (Mictlan, Tlalocan, the sun/hummingbird warriors) — Mexicolore, "Mictlan and its inhabitants." https://www.mexicolore.co.uk/aztecs/underworld/mictlan-and-its-inhabitants
 - Nezahualcoyotl, Ometeotl, and "flower and song" (with the note on the León-Portilla monotheism debate) — Internet Encyclopedia of Philosophy, "Aztec Philosophy." https://iep.utm.edu/aztec-philosophy/
-- Bernardino de Sahagún and the Florentine Codex — "Florentine Codex," Wikipedia; Britannica. https://en.wikipedia.org/wiki/Florentine_Codex
-- The founding of Tenochtitlan (Huitzilopochtli, the eagle and the cactus, c. 1325) — "Foundation of Tenochtitlan," reference overviews. https://en.wikipedia.org/wiki/Tenochtitlan
+- Bernardino de Sahagún and the Florentine Codex — Britannica.

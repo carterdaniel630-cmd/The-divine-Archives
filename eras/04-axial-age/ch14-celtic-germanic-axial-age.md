@@ -301,24 +301,18 @@ modern era, as self-conscious new religious movements — revival **Druidry** an
 
 *Celtic religion, druids, and the sources problem*
 - [Britannica: Celtic religion](https://www.britannica.com/topic/Celtic-religion);
-  on human sacrifice, [Celtic Studies Resources: Did the Celts or Druids Perform Human Sacrifice?](https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/);
-  [Wikipedia: Cernunnos](https://en.wikipedia.org/wiki/Cernunnos); [Wikipedia: Taranis](https://en.wikipedia.org/wiki/Taranis).
+  on human sacrifice, [Celtic Studies Resources: Did the Celts or Druids Perform Human Sacrifice?](https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/).
 
 *The druidic orders and the Gallic sanctuaries*
 - The three classes (druids, bards, vates), from Strabo/Posidonius —
   [Irish Myths: Bards vs. Vates vs. Druids](https://irishmyths.com/2022/05/27/bards-vs-vates-vs-druids/).
-- The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux) —
-  [Wikipedia: Gournay-sur-Aronde](https://en.wikipedia.org/wiki/Gournay-sur-Aronde).
+- The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux).
 
 *Germanic religion and Tacitus*
-- [Wikipedia: Germanic paganism](https://en.wikipedia.org/wiki/Germanic_paganism);
-  [Wikipedia: Sacred trees and groves in Germanic paganism](https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology);
-  [Wikipedia: Nerthus](https://en.wikipedia.org/wiki/Nerthus).
-- The Germanic seeress (Veleda, Aurinia/Albruna) — [Wikipedia: Seeress (Germanic)](https://en.wikipedia.org/wiki/Seeress_(Germanic)).
 - The gods in the weekday names — [The Conversation: the gods behind the days of the week](https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170).
 
 *Sacred encoding — calendar, runes, ogham, and the bog*
-- [Wikipedia: Coligny calendar](https://en.wikipedia.org/wiki/Coligny_calendar);
+- The Coligny calendar;
   on the bog bodies and the Gundestrup cauldron, and on runes and ogham (with their later dating), standard reference overviews.
 
 *Note on sourcing:* Researched from standard reference scholarship (Britannica, specialist

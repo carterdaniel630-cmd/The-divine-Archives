@@ -93,14 +93,10 @@ Norse paganism is the northern survival of the older **Germanic and Celtic** rel
 ## Sources
 
 - Poetic Edda, Codex Regius (c. 1270), and its older poems — "Poetic Edda," New World Encyclopedia. https://www.newworldencyclopedia.org/entry/Poetic_Edda
-- Prose Edda, Snorri Sturluson (c. 1220–1230), purpose as a poets' handbook — "Prose Edda," Wikipedia. https://en.wikipedia.org/wiki/Prose_Edda
 - Dating of the source material; skaldic verse reaching to the ninth century — "Edda," Encyclopædia Britannica. https://www.britannica.com/topic/Edda
-- Adam of Bremen and the Temple at Uppsala; the reliability debate — "Temple at Uppsala," Wikipedia. https://en.wikipedia.org/wiki/Temple_at_Uppsala; World History Encyclopedia, "Temple at Uppsala." https://www.worldhistory.org/Temple_at_Uppsala/
+- Adam of Bremen and the Temple at Uppsala; the reliability debate — World History Encyclopedia, "Temple at Uppsala." https://www.worldhistory.org/Temple_at_Uppsala/
 - Human sacrifice as real but exceptional — National Museum of Denmark, "Human sacrifices?" https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/religion-magic-death-and-rituals/human-sacrifices/
 - Oseberg (834) and Gokstad (c. 890) dendrochronological dating; grave goods — Britannica, "Oseberg ship." https://www.britannica.com/topic/Oseberg-ship; "Dendrochronological Dating of the Viking Age Ship Burials at Oseberg, Gokstad and Tune." https://www.researchgate.net/publication/291416516
 - Seiðr, the völva, magic staffs, and Sámi parallels — National Museum of Denmark, "The magic staffs of the Viking seeresses." https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/religion-magic-death-and-rituals/the-magic-staffs-of-the-seeresses/
 - Æsir, Vanir, and the nine worlds — World History Encyclopedia, "Nine Realms of Norse Cosmology." https://www.worldhistory.org/article/1305/nine-realms-of-norse-cosmology/
-- Yggdrasil, Ragnarök, Líf and Lífþrasir — "Yggdrasil," Wikipedia. https://en.wikipedia.org/wiki/Yggdrasil
-- Elder and Younger Futhark; runic magical function — "Runic magic" and Futhark overviews (Wikipedia; VikingRune). https://en.wikipedia.org/wiki/Runic_magic
-- Gotland picture stones (400+; Tjängvide, Ardre); image over text — "Picture stone," Wikipedia. https://en.wikipedia.org/wiki/Picture_stone
-- Christianization of Iceland (c. 1000), Þorgeir, the Alþingi, Olaf Tryggvason — "Christianization of Iceland," Wikipedia. https://en.wikipedia.org/wiki/Christianization_of_Iceland
+- Elder and Younger Futhark; runic magical function — Futhark overviews (VikingRune).

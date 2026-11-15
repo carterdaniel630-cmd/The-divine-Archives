@@ -58,9 +58,8 @@ This theme underlies half the archive. Its god-king is the **Egypt** of the phar
 
 ## Sources
 
-- Frazer's *The Golden Bough*: the priest-king of Nemi, the sacred/dying king embodying the land's fertility, the dying-and-rising gods (Osiris, Tammuz, Adonis, Attis), and the disputed myth-and-ritual thesis — "The Golden Bough," EBSCO Research Starters. https://www.ebsco.com/research-starters/literature-and-writing/golden-bough-sir-james-george-frazer ; "Sacred king," Wikipedia. https://en.wikipedia.org/wiki/Sacred_king
+- Frazer's *The Golden Bough*: the priest-king of Nemi, the sacred/dying king embodying the land's fertility, the dying-and-rising gods (Osiris, Tammuz, Adonis, Attis), and the disputed myth-and-ritual thesis — "The Golden Bough," EBSCO Research Starters. https://www.ebsco.com/research-starters/literature-and-writing/golden-bough-sir-james-george-frazer
 - The divine or semidivine king across cultures (Egypt, Japan, Peru, the Shilluk, Alexander and the Roman emperors) — "Sacred kingship: The divine or semidivine king," Encyclopædia Britannica. https://www.britannica.com/topic/sacred-kingship/The-divine-or-semidivine-king
-- The Sapa Inca as son of Inti ("son of the Sun"), his divinity and mummified afterlife — "Sapa Inca," Wikipedia. https://en.wikipedia.org/wiki/Sapa_Inca
 - The Shilluk divine kingship: the reth as embodiment of Nyikang, the enthronement and the killing-of-the-king question — David Graeber, "The divine kingship of the Shilluk," HAU: Journal of Ethnographic Theory 1(1). https://www.journals.uchicago.edu/doi/10.14318/hau1.1.002
 - The African case of sacred kingship (comparative) — "Sacred Kingship: The African Case," Social Evolution & History. https://www.sociostudies.org/journal/articles/273439/
 - Supporting detail corroborated via the above and adjacent chapters: the Chinese Mandate of Heaven / Son of Heaven (ch09 sources); the Mesopotamian substitute-king (šar pūhi) ritual and Hammurabi/Shamash (ch03 sources); anointing, māshîaḥ/Messiah, divine right and the royal touch (ch07/ch16 sources); Kantorowicz, The King's Two Bodies (1957).

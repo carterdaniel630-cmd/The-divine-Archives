@@ -61,10 +61,9 @@ The Maya are one of three great temple religions of the pre-Columbian Americas t
 
 ## Sources
 
-- The Popol Vuh, the Hero Twins (Hunahpu and Xbalanque), Xibalba, and humans made of maize — "Maya Hero Twins," Wikipedia; EBSCO Research Starters. https://en.wikipedia.org/wiki/Maya_Hero_Twins
+- The Popol Vuh, the Hero Twins (Hunahpu and Xbalanque), Xibalba, and humans made of maize — EBSCO Research Starters.
 - The Maya pantheon — Itzamna, Kʼinich Ajaw, Chaak, Kukulkan, Ix Chel, the Maize God — World History Encyclopedia, "The Mayan Pantheon." https://www.worldhistory.org/article/415/the-mayan-pantheon-the-many-gods-of-the-maya/
 - The Maya calendar: the tzolkʼin, haabʼ, Calendar Round, and Long Count, and the 2012 cycle-completion (not an apocalypse) — Smithsonian NMAI, "Living Maya Time"; Mayan.org, "The Mayan Calendar." https://maya.nmai.si.edu/calendar/calendar-system
-- Bloodletting, the Vision Serpent, and the ceiba world-tree (axis mundi) — "Bloodletting in Mesoamerica," Wikipedia; Mayan.org, "The Sacred Ceiba." https://en.wikipedia.org/wiki/Bloodletting_in_Mesoamerica
-- The Sacred Cenote at Chichén Itzá and its sacrificial offerings to Chaac — "Sacred Cenote," Wikipedia; The Met, "Offerings from the Sacred Cenote." https://en.wikipedia.org/wiki/Sacred_Cenote
+- Bloodletting, the Vision Serpent, and the ceiba world-tree (axis mundi) — Mayan.org, "The Sacred Ceiba."
+- The Sacred Cenote at Chichén Itzá and its sacrificial offerings to Chaac — The Met, "Offerings from the Sacred Cenote."
 - The four surviving codices (Dresden's Venus table) and the Maya writing system/decipherment — Britannica, "Pre-Columbian civilizations: The Maya calendar and writing system." https://www.britannica.com/topic/pre-Columbian-civilizations
-- Diego de Landa, the 1562 burning of the Maya codices (only four survive), and the paradox of his *Relación* — "Diego de Landa," Wikipedia. https://en.wikipedia.org/wiki/Diego_de_Landa
