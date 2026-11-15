@@ -136,23 +136,23 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts</h4>
       <ul>
-        <li><em>The Epic of Gilgamesh</em>, Tablet XI — Andrew George, trans., *The Epic of</li>
-        <li><em>Atrahasis</em> — Old Babylonian flood epic (18th c. BCE). Overview:</li>
-        <li><em>Eridu Genesis</em> / Ziusudra (Sumerian) —</li>
+        <li><em>The Epic of Gilgamesh</em>, Tablet XI — Andrew George, trans., <em>The Epic of Gilgamesh</em> (Penguin Classics).</li>
+        <li><em>Atrahasis</em> — Old Babylonian flood epic (18th c. BCE). Overview: <a href="https://cojs.org/atrahasis_epic-_the_flood_story-_18th_century_bce/">Center for Online Judaic Studies</a>.</li>
+        <li><em>Eridu Genesis</em> / Ziusudra (Sumerian) — <a href="https://www.livius.org/articles/misc/great-flood/flood2/">Livius: The Great Flood, Sumerian version</a>; <a href="https://en.wikipedia.org/wiki/Eridu_Genesis">Wikipedia: Eridu Genesis</a>.</li>
         <li>Genesis 6–9 (Hebrew Bible).</li>
-        <li>Ovid, <em>Metamorphoses</em> Bk. I (Deucalion); Plato, <em>Timaeus</em>. See</li>
-        <li><em>Shatapatha Brahmana</em> (Manu and the fish);</li>
-        <li>Qur'an, Surah Hud 11:25–49 and Surah Nuh 71 (Nuh, the drowned son, Mount Judi) —</li>
-        <li><em>Popol Vuh</em> (the wooden people destroyed by flood) —</li>
+        <li>Ovid, <em>Metamorphoses</em> Bk. I (Deucalion); Plato, <em>Timaeus</em>. See <a href="https://en.wikipedia.org/wiki/Ancient_Greek_flood_myths">Wikipedia: Ancient Greek flood myths</a>.</li>
+        <li><em>Shatapatha Brahmana</em> (Manu and the fish); <a href="https://www.britannica.com/topic/Manu">Britannica: Manu</a>.</li>
+        <li>Qur'an, Surah Hud 11:25–49 and Surah Nuh 71 (Nuh, the drowned son, Mount Judi) — <a href="https://quran.com/en/hud/42">Quran.com: Surah Hud</a>.</li>
+        <li><em>Popol Vuh</em> (the wooden people destroyed by flood) — <a href="https://mayan.org/myths/flood-myth/">Mayan.org: The Maya Flood Myth</a>.</li>
       </ul>
       <h4>The Ark Tablet and Hellenistic transmission</h4>
       <ul>
-        <li>Irving Finkel, <em>The Ark Before Noah: Decoding the Story of the Flood</em> (2014);</li>
-        <li>Berossus, <em>Babyloniaca</em> (c. 281 BCE), and the Xisuthros flood —</li>
+        <li>Irving Finkel, <em>The Ark Before Noah: Decoding the Story of the Flood</em> (2014); the round-coracle ark and the "two by two" line — <a href="https://www.biblicalarchaeology.org/daily/news/the-animals-went-in-two-by-two-according-to-babylonian-ark-tablet/">Biblical Archaeology Society: The Animals Went in Two by Two</a>; <a href="https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe">Jewish Chronicle: The tablet that altered the story of Noah's ark</a> ("Finkel first came across the tablet in 1985"; "only managed to convince Simmonds to leave it with him in 2009"); <a href="https://historyofinformation.com/detail.php?id=4060">historyofinformation.com: Discovery of the "Ark Tablet"</a> (a later summary: "In 2009 … received"); 2014 reports with no year — the Associated Press story, "Finkel got hold of it a few years ago", as reprinted by the <a href="https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round">Christian Science Monitor, 25 January 2014</a> and <a href="https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/">Times of Israel</a>; <a href="https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round">PBS NewsHour, 24 January 2014</a>; <a href="https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/">Archaeology magazine, 27 January 2014</a>; <a href="https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark">Wikipedia: Finkel's replica of the Babylonian ark</a> (first encountered the tablet in 1985, could not translate the whole of it until 2009; Alleppey, Kerala, 2014; gives "one-third scale" and a continuously running petrol pump; the documentary itself, below, says a fifth and "a collection of pumps", so the page follows the documentary and names the disagreement); PBS NOVA, <em>Secrets of Noah's Ark</em> (aired 7 October 2015), programme text at <a href="https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html">PBS NOVA: Secrets of Noah's Ark</a> ("about 40 feet in diameter, just a fifth the size of the ark described in the tablet"; at launch "a heck of a lot of water coming in"; "They plug the gaps and put a collection of pumps to work"; closing line: the team "never managed to duplicate Babylonian bitumen, but the structure of the ark is sound"); The Telegraph (India), "The Ark that Finkel built" (the Kerala build and its launch; it gives the size as "bigger than one-fifth of the original", so the page gives the scale as approximate). The paper's own URL could not be opened in the 2026-11-02 check; the text was read from a copy and is cited via the Wikipedia page; <a href="https://www.channel4.com/press/news/real-noahs-ark">Channel 4 press: The Real Noah's Ark</a> (the 2014 documentary).</li>
+        <li>Berossus, <em>Babyloniaca</em> (c. 281 BCE), and the Xisuthros flood — <a href="https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/">Livius: The Great Flood — Berossus</a>; <a href="https://en.wikipedia.org/wiki/Babyloniaca_(Berossus)">Wikipedia: Babyloniaca (Berossus)</a>.</li>
       </ul>
       <h4>Discovery and history of scholarship</h4>
       <ul>
-        <li>George Smith, <em>The Chaldean Account of the Deluge</em> (1872) and *The Chaldean</li>
+        <li>George Smith, <em>The Chaldean Account of the Deluge</em> (1872) and <em>The Chaldean Account of Genesis</em> — <a href="https://www.gutenberg.org/files/60559/60559-h/60559-h.htm">Project Gutenberg</a>; <a href="https://www.britannica.com/biography/George-Smith-British-Assyriologist">Britannica: George Smith</a>; <a href="https://www.lindahall.org/about/news/scientist-of-the-day/george-smith/">Linda Hall Library: Scientist of the Day</a>.</li>
       </ul>
       <h4>Comparison and interpretation</h4>
       <ul>
@@ -162,8 +162,8 @@ window.CHAPTERS = {
       </ul>
       <h4>Archaeology and geology</h4>
       <ul>
-        <li>Leonard Woolley's Ur flood layer and the cross-site correlation problem —</li>
-        <li>Black Sea deluge hypothesis (Ryan &amp; Pitman 1997) and its disputed status —</li>
+        <li>Leonard Woolley's Ur flood layer and the cross-site correlation problem — <a href="https://ncse.ngo/flood-mesopotamian-archaeological-evidence">NCSE: The Flood — Mesopotamian Archaeological Evidence</a>; <a href="https://www.penn.museum/sites/expedition/reflections-on-the-mesopotamian-flood/">Penn Museum, Expedition: Reflections on the Mesopotamian Flood</a>.</li>
+        <li>Black Sea deluge hypothesis (Ryan &amp; Pitman 1997) and its disputed status — <a href="https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis">Wikipedia: Black Sea deluge hypothesis</a>; <a href="https://www.science.org/content/article/black-sea-flood-theory-put-test">Science: Black Sea Flood Theory Put to Test</a>.</li>
       </ul>
     </div>
   ` },
@@ -326,7 +326,7 @@ window.CHAPTERS = {
         <li>Pyramid Texts, Coffin Texts, Book of the Dead — overview: <a href="https://smarthistory.org/ancient-egyptian-mortuary-texts/">Smarthistory: Ancient Egyptian mortuary texts</a>; <a href="https://britannica.com/topic/Coffin-Texts">Britannica: Coffin Texts</a>.</li>
         <li>Book of the Dead, Spell 125 (the Negative Confession) and the Papyrus of Ani — <a href="https://ancientegyptonline.co.uk/negativeconfession/">Ancient Egypt Online: Negative Confession</a>; <a href="https://www.thecollector.com/weighing-heart-ceremony-ancient-egypt/">TheCollector: The Weighing of the Heart Ceremony</a>.</li>
         <li>The fate of the condemned ("non-existence") and the "formula for not dying again" — <a href="https://penn.museum/documents/publications/expedition/57-2/a-season-in-hell.pdf">Joshua Aaron Roberson, "A Season in Hell," <em>Expedition</em> 57:2 (Penn Museum, 2015)</a>; <a href="https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/hpres44.html">UCL Digital Egypt: Book of the Dead, chapter 44</a>.</li>
-        <li>Plutarch, <em>On Isis and Osiris</em> (fullest continuous Osiris narrative, c. 2nd c. CE). See <a href="https://en.wikipedia.org/wiki/Osiris_myth">Wikipedia: Osiris myth</a>.</li>
+        <li>Plutarch, <em>On Isis and Osiris</em> (fullest continuous Osiris narrative, c. 2nd c. CE).</li>
       </ul>
       <h4>Deities, cosmology, and the Osiris myth</h4>
       <ul>
@@ -335,13 +335,12 @@ window.CHAPTERS = {
       </ul>
       <h4>Folk and personal religion</h4>
       <ul>
-        <li>Deir el-Medina, household gods, and oracles — <a href="https://en.wikipedia.org/wiki/Deir_el-Medina">Wikipedia: Deir el-Medina</a>; <a href="https://africame.factsanddetails.com/article/entry-143.html">Facts and Details: Personal Religion in Ancient Egypt</a>.</li>
+        <li>Deir el-Medina, household gods, and oracles — <a href="https://africame.factsanddetails.com/article/entry-143.html">Facts and Details: Personal Religion in Ancient Egypt</a>.</li>
         <li>Personal piety and penitential stelae (Neferabu, BM EA 589) — <a href="https://garstangmuseum.wordpress.com/2018/01/10/personal-piety-religion-and-the-people/">Garstang Museum: Personal Piety — Religion and the People</a>; <a href="https://www.britishmuseum.org/collection/object/Y_EA589">British Museum: stela of Neferabu (EA 589)</a>; Alexandra von Lieven / R. Luiselli, "Personal Piety in Ancient Egypt," <em>Religion Compass</em> (2014).</li>
-        <li>Meretseger and Letters to the Dead — <a href="https://www.thecollector.com/meretseger/">TheCollector: Meretseger</a>; <a href="https://en.wikipedia.org/wiki/Letters_to_the_dead">Wikipedia: Letters to the dead</a>.</li>
+        <li>Meretseger and Letters to the Dead — <a href="https://www.thecollector.com/meretseger/">TheCollector: Meretseger</a>.</li>
       </ul>
       <h4>The Amarna period and the monotheism debate</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Atenism">Wikipedia: Atenism</a>.</li>
         <li><a href="https://www.asor.org/anetoday/2021/05/monotheism-monopoly-akhenaten">ASOR: Monotheism or Monopoly? Akhenaten and His Religious-Political Reform</a>.</li>
         <li><a href="https://www.britannica.com/biography/Akhenaten/Religion-of-the-Aton">Britannica: Akhenaten — Religion of the Aton</a>.</li>
         <li><a href="https://the-past.com/feature/breaking-maat-akhenaten-and-the-battle-for-egyptian-tradition-and-identity/">The Past: Breaking Ma'at — Akhenaten and the battle for Egyptian tradition</a>.</li>
@@ -482,15 +481,14 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts and translations</h4>
       <ul>
-        <li><em>Enuma Elish</em> (Babylonian creation epic) &mdash;</li>
-        <li><em>The Descent of Inanna into the Underworld</em> —</li>
-        <li>The Law Stele of Hammurabi (Louvre) —</li>
+        <li><em>Enuma Elish</em> (Babylonian creation epic) &mdash; <a href="https://www.britannica.com/topic/Enuma-Elish">Britannica: Enuma Elish</a>; <a href="https://www.worldhistory.org/article/225/enuma-elish---the-babylonian-epic-of-creation---fu/">World History Encyclopedia: full text</a>.</li>
+        <li>The Law Stele of Hammurabi (Louvre) — <a href="https://smarthistory.org/hammurabi-2/">Smarthistory: Law Code Stele of King Hammurabi</a>; <a href="https://www.louvre.fr/en/the-code-of-hammurabi">Louvre: The Code of Hammurabi</a>.</li>
       </ul>
       <h4>Enheduanna, demons, and the suffering-righteous literature</h4>
       <ul>
-        <li>Enheduanna and the <em>Exaltation of Inanna</em> —</li>
-        <li>Demons and exorcism (Lamashtu, Pazuzu, the <em>āšipu</em>, <em>Maqlû</em>) —</li>
-        <li><em>Ludlul bēl nēmeqi</em> (the "Babylonian Job") and the <em>Babylonian Theodicy</em> —</li>
+        <li>Enheduanna and the <em>Exaltation of Inanna</em> — <a href="https://www.themorgan.org/blog/she-who-wrote-enheduanna-and-women-mesopotamia">The Morgan Library: <em>She Who Wrote</em></a>; <a href="https://www.worldhistory.org/article/2109/hymn-to-inanna/">World History Encyclopedia: Hymn to Inanna</a>.</li>
+        <li>Demons and exorcism (Lamashtu, Pazuzu, the <em>āšipu</em>, <em>Maqlû</em>) — <a href="https://www.britannica.com/topic/Pazuzu">Britannica: Pazuzu</a>; <a href="https://www.getty.edu/news/meet-the-mesopotamian-demons/">Getty: Meet the Mesopotamian Demons</a>; S. Konstantopoulos, "Demons and exorcism in ancient Mesopotamia," <em>Religion Compass</em> (2020).</li>
+        <li><em>Ludlul bēl nēmeqi</em> (the "Babylonian Job") and the <em>Babylonian Theodicy</em> — <a href="https://www.worldhistory.org/article/226/ludlul-bel-nemeqi/">World History Encyclopedia: Ludlul-Bel-Nemeqi</a>.</li>
       </ul>
       <h4>Deities, cult, and divination</h4>
       <ul>
@@ -500,23 +498,17 @@ window.CHAPTERS = {
       </ul>
       <h4>The Royal Cemetery of Ur</h4>
       <ul>
-        <li>A. Baadsgaard et al., &ldquo;Human sacrifice and intentional corpse preservation in</li>
+        <li>A. Baadsgaard et al., &ldquo;Human sacrifice and intentional corpse preservation in the Royal Cemetery of Ur,&rdquo; <em>Antiquity</em> — <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E44F1731C922EF9FF43E0B5D2DF67AC1/S0003598X00067417a.pdf/human-sacrifice-and-intentional-corpse-preservation-in-the-royal-cemetery-of-ur.pdf">Cambridge Core (PDF)</a>.</li>
         <li><a href="https://www.penn.museum/sites/expedition/a-spectacular-discovery/">Penn Museum, Expedition: A Spectacular Discovery</a>.</li>
-      </ul>
-      <h4>On the Hammurabi &ldquo;code&rdquo; debate</h4>
-      <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Code_of_Hammurabi">Wikipedia: Code of Hammurabi</a> (summarizing Van De Mieroop, Yoffee, and others).</li>
       </ul>
       <h4>On Enuma Elish and Genesis</h4>
       <ul>
-        <li><a href="https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/">Bible Odyssey: The Enuma Elish and the Bible</a>;</li>
+        <li><a href="https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/">Bible Odyssey: The Enuma Elish and the Bible</a>; <a href="https://www.thetorah.com/article/enuma-elish-babylonias-creation-myth-and-the-enthronement-of-marduk">TheTorah.com: Enuma Elish</a>.</li>
       </ul>
       <h4>Symbology and sacred encoding</h4>
       <ul>
-        <li>Divine numbers of the gods &mdash; <a href="https://en.wikipedia.org/wiki/Sin_(mythology)">Wikipedia: Sin (mythology)</a>; god-list traditions.</li>
-        <li>Nisaba and Nabu as patrons of writing &mdash; <a href="https://en.wikipedia.org/wiki/Nisaba">Wikipedia: Nisaba</a>.</li>
-        <li>Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest</li>
-        <li>Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god</li>
+        <li>Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest documented name-numerology) &mdash; <a href="https://www.jewishvirtuallibrary.org/gematria-2">Jewish Virtual Library: Gematria</a>.</li>
+        <li>Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god identifications &mdash; standard Assyriological reference works.</li>
       </ul>
     </div>
   ` },
@@ -630,15 +622,14 @@ window.CHAPTERS = {
       </ul>
       <h4>The seals, the Great Bath, and the &ldquo;proto-Shiva&rdquo; debate</h4>
       <ul>
-        <li>John Marshall, <em>Mohenjo-Daro and the Indus Civilization</em> (1931), for the original</li>
-        <li><a href="https://en.wikipedia.org/wiki/Pashupati_seal">Wikipedia: Pashupati seal</a> (surveying</li>
+        <li>John Marshall, <em>Mohenjo-Daro and the Indus Civilization</em> (1931), for the original proto-Shiva/Pashupati identification.</li>
         <li><a href="https://theprint.in/feature/culture-ministry-pashupati-seal-indus-valley-civilosation/2946913/">The Print: how a post about the Pashupati seal triggered an identity debate</a>.</li>
-        <li>The &ldquo;Priest-King&rdquo; bust and its contested name —</li>
+        <li>The &ldquo;Priest-King&rdquo; bust and its contested name — <a href="https://smarthistory.org/the-priest-king-sculpture-from-the-indus-valley-civilization/">Smarthistory: The Priest-King sculpture</a>; <a href="https://www.harappa.com/slide/priest-king-mohenjo-daro">Harappa.com: &ldquo;Priest King,&rdquo; Mohenjo-daro</a>.</li>
       </ul>
       <h4>The undeciphered script</h4>
       <ul>
         <li><a href="https://www.harappa.com/content/introduction-study-indus-script">Harappa.com: Introduction to the Study of the Indus Script</a> (Iravatham Mahadevan).</li>
-        <li>The Dholavira &ldquo;signboard&rdquo; (ten large signs over the north gate) —</li>
+        <li>The Dholavira &ldquo;signboard&rdquo; (ten large signs over the north gate) — <a href="https://www.harappa.com/blog/dholavira-and-its-mysterious-sign-board">Harappa.com: Dholavira and Its Mysterious Sign Board</a>.</li>
         <li>Asko Parpola, <em>Deciphering the Indus Script</em> (1994) and <em>The Roots of Hinduism</em> (2015).</li>
         <li>S. Farmer, R. Sproat &amp; M. Witzel, &ldquo;The Collapse of the Indus-Script Thesis&rdquo; (2004) &mdash; <a href="https://safarmer.com/fsw2.pdf">PDF</a> (the non-linguistic argument).</li>
       </ul>
@@ -646,10 +637,6 @@ window.CHAPTERS = {
       <ul>
         <li>V. Shinde et al., &ldquo;An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers,&rdquo; <em>Cell</em> (2019); V. Narasimhan et al., <em>Science</em> (2019).</li>
         <li><a href="https://scroll.in/article/936872/two-new-genetic-studies-upheld-aryan-migration-theory-so-why-did-indian-media-report-the-opposite">Scroll.in: two genetic studies and the Indo-Aryan migration</a>.</li>
-      </ul>
-      <h4>General</h4>
-      <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Indus_Valley_Civilisation">Wikipedia: Indus Valley Civilisation</a> and <a href="https://en.wikipedia.org/wiki/Religion_of_the_Indus_Valley_Civilisation">Religion of the Indus Valley Civilisation</a>.</li>
       </ul>
     </div>
   ` },
@@ -788,28 +775,27 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts (translations)</h4>
       <ul>
-        <li><em>The Rigveda</em>, trans. Stephanie Jamison &amp; Joel Brereton (2014), the current</li>
-        <li>Creation hymns: <a href="https://en.wikipedia.org/wiki/Nasadiya_Sukta">Wikipedia: Nasadiya Sukta</a>;</li>
-        <li>The Gayatri Mantra (Rigveda 3.62.10) — <a href="https://en.wikipedia.org/wiki/Gayatri_Mantra">Wikipedia: Gayatri Mantra</a>.</li>
+        <li><em>The Rigveda</em>, trans. Stephanie Jamison &amp; Joel Brereton (2014), the current scholarly standard; Wendy Doniger, <em>The Rig Veda: An Anthology</em> (Penguin).</li>
+        <li>Creation hymns: Nasadiya Sukta; Hiranyagarbha Sukta; Purusha Sukta (Rigveda 10.90).</li>
+        <li>The Gayatri Mantra (Rigveda 3.62.10).</li>
       </ul>
       <h4>The Atharvaveda (household charms and healing)</h4>
       <ul>
-        <li>Maurice Bloomfield, trans., <em>Hymns of the Atharva-Veda</em> (Sacred Books of the East,</li>
-        <li>The Hymn to the Earth (<em>Prithivi Sukta</em>, AV 12.1) —</li>
+        <li>Maurice Bloomfield, trans., <em>Hymns of the Atharva-Veda</em> (Sacred Books of the East, 1897) — the takman fever charm (AV V.22) and the jaundice cure — <a href="https://sacred-texts.com/hin/sbe42/index.htm">Internet Sacred Text Archive: Atharva-Veda</a>.</li>
+        <li>The Hymn to the Earth (<em>Prithivi Sukta</em>, AV 12.1) — <a href="https://sacred-texts.com/hin/av/av12001.htm">Internet Sacred Text Archive: AV 12.1</a>.</li>
       </ul>
       <h4>Deities, Rta, and the pantheon</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Vedic-religion">Britannica: Vedic religion</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Vedic-religion">Britannica: Vedic religion</a>; Mitra–Varuna and Rta overviews.</li>
       </ul>
       <h4>Ritual, texts, and transmission</h4>
       <ul>
-        <li>Structure of the Vedas (Samhita/Brahmana/Aranyaka/Upanishad) and the <em>shakhas</em>;</li>
-        <li>Frits Staal, <em>Agni: The Vedic Ritual of the Fire Altar</em> (on the Agnicayana and oral</li>
+        <li>Structure of the Vedas (Samhita/Brahmana/Aranyaka/Upanishad) and the <em>shakhas</em>; the srauta priesthood and soma sacrifice — standard reference overviews.</li>
+        <li>Frits Staal, <em>Agni: The Vedic Ritual of the Fire Altar</em> (on the Agnicayana and oral ritual), for the fire-altar symbolism.</li>
       </ul>
       <h4>Comparative and Indo-Iranian</h4>
       <ul>
-        <li>On soma/haoma and the plant debate: <a href="https://en.wikipedia.org/wiki/Botanical_identity_of_soma%E2%80%93haoma">Wikipedia: Botanical identity of soma–haoma</a>.</li>
-        <li>Indo-European poetics and theonyms (Dyaus/Zeus/Jupiter): M. L. West, *Indo-European</li>
+        <li>Indo-European poetics and theonyms (Dyaus/Zeus/Jupiter): M. L. West, <em>Indo-European Poetry and Myth</em> (2007); Calvert Watkins, <em>How to Kill a Dragon</em> (1995).</li>
       </ul>
       <h4>On dating and the Indo-Aryan question</h4>
       <ul>
@@ -942,21 +928,21 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts and translations</h4>
       <ul>
-        <li>The <strong>Gathas</strong> and the <strong>Avesta</strong> — see <a href="https://www.iranicaonline.org/articles/gathas-i-texts/">Encyclopaedia Iranica: "Gathas"</a></li>
+        <li>The <strong>Gathas</strong> and the <strong>Avesta</strong> — see <a href="https://www.iranicaonline.org/articles/gathas-i-texts/">Encyclopaedia Iranica: "Gathas"</a> and the texts at <a href="https://www.avesta.org/">Avesta.org</a>; the Pahlavi <strong>Bundahishn</strong> and <strong>Denkard</strong> for later systematic cosmology.</li>
       </ul>
       <h4>The prophet, dating, and doctrine</h4>
       <ul>
-        <li><a href="https://www.britannica.com/biography/Zarathustra">Britannica: Zarathustra</a>;</li>
+        <li><a href="https://www.britannica.com/biography/Zarathustra">Britannica: Zarathustra</a>; <a href="https://www.iranicaonline.org/articles/zoroaster-ii-general-survey/">Encyclopaedia Iranica: "Zoroaster ii. General Survey"</a> and <a href="https://www.iranicaonline.org/articles/dualism/">"Dualism"</a>.</li>
       </ul>
       <h4>Eschatology and its influence</h4>
       <ul>
-        <li>[Encyclopaedia Iranica: "Eschatology i. In Zoroastrianism and Zoroastrian</li>
-        <li>The Chinvat Bridge, the daēnā, and the individual judgment —</li>
-        <li>The twelve-thousand-year timeline and the three Saoshyants —</li>
+        <li><a href="https://www.iranicaonline.org/articles/eschatology-i/">Encyclopaedia Iranica: "Eschatology i. In Zoroastrianism and Zoroastrian Influence"</a>; <a href="https://www.worldhistory.org/Chinvat_Bridge/">World History Encyclopedia: Chinvat Bridge</a>.</li>
+        <li>The Chinvat Bridge, the daēnā, and the individual judgment — <a href="https://www.britannica.com/topic/daena">Britannica: daena</a>; <a href="https://www.worldhistory.org/Chinvat_Bridge/">World History Encyclopedia: Chinvat Bridge</a>.</li>
+        <li>The twelve-thousand-year timeline and the three Saoshyants — <a href="https://www.iranicaonline.org/articles/eschatology-i/">Encyclopaedia Iranica: eschatology (Frashokereti and the Saoshyants)</a>. On the debated influence on Judaism/Christianity/Islam, see the balanced discussions in the Iranica eschatology article and A. Akbar, "The Zoroastrian Provenance of Some Islamic Eschatological Doctrines" (2020).</li>
       </ul>
       <h4>Practice and symbol</h4>
       <ul>
-        <li>Fire temples and the sacred fire; the <strong>dakhma</strong>; the <strong>Faravahar</strong></li>
+        <li>Fire temples and the sacred fire; the <strong>dakhma</strong>; the <strong>Faravahar</strong> and <strong>khvarenah</strong> (<a href="https://www.britannica.com/topic/hvarenah">Britannica: hvarenah</a>); the <strong>sudreh</strong> and <strong>kusti</strong> (72 threads = 72 Yasna chapters) and the <strong>Navjote</strong> initiation.</li>
       </ul>
     </div>
   ` },
@@ -1105,29 +1091,29 @@ window.CHAPTERS = {
       </ul>
       <h4>Origins and emergence</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Merneptah_Stele">Wikipedia: Merneptah Stele</a>;</li>
-        <li>On Yahweh's southern origins: <a href="https://en.wikipedia.org/wiki/Kenite_hypothesis">Wikipedia: Kenite hypothesis</a></li>
+        <li>The Merneptah Stele: <a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/does-the-merneptah-stele-contain-the-first-mention-of-israel/">Biblical Archaeology Society: the first mention of Israel</a>.</li>
+        <li>On Yahweh's southern origins: the "Yhw in the land of the Shasu" inscriptions.</li>
       </ul>
       <h4>Yahweh, El, Asherah, and the rise of monotheism</h4>
       <ul>
-        <li>Mark S. Smith, *The Early History of God: Yahweh and the Other Deities in</li>
-        <li><a href="https://www.worldhistory.org/Asherah/">World History Encyclopedia: Asherah</a>;</li>
+        <li>Mark S. Smith, <em>The Early History of God: Yahweh and the Other Deities in Ancient Israel</em>; <em>The Origins of Biblical Monotheism</em>.</li>
+        <li><a href="https://www.worldhistory.org/Asherah/">World History Encyclopedia: Asherah</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-artifacts/puzzling-finds-from-kuntillet-ajrud-a-drawing-of-god-labeled-yahweh-and-his-asherah-or-the-egyptian-god-bes/">Biblical Archaeology Society: Kuntillet Ajrud</a>; Khirbet el-Qom.</li>
         <li>The Ugaritic background: the texts from Ras Shamra.</li>
-        <li>The <strong>Baal Cycle</strong> (Baal vs. Yam and Mot) and its biblical echoes (Leviathan,</li>
+        <li>The <strong>Baal Cycle</strong> (Baal vs. Yam and Mot) and its biblical echoes (Leviathan, Rahab, the Chaoskampf) — <a href="https://grokipedia.com/page/Baal_Cycle">Grokipedia: Baal Cycle</a>; and the standard comparative treatments of Psalm 74 / Isaiah 27 / Job 26.</li>
       </ul>
       <h4>Death, Sheol, and the cult of the dead</h4>
       <ul>
-        <li>Philip S. Johnston, "The Underworld and the Dead in the Old Testament," *Tyndale</li>
-        <li>Saul and the medium of Endor (necromancy) —</li>
+        <li>Philip S. Johnston, "The Underworld and the Dead in the Old Testament," <em>Tyndale Bulletin</em>; <a href="https://www.bibleodyssey.org/articles/sheol/">Bible Odyssey: Sheol</a>.</li>
+        <li>Saul and the medium of Endor (necromancy) — <a href="https://biblearchaeology.org/research-articles/king-saul-and-the-witch-of-endor-necromancy-and-ghost-pits-in-the-ancient-world/">Associates for Biblical Research: King Saul and the Witch of Endor</a>.</li>
       </ul>
       <h4>Cult, reform, and folk religion</h4>
       <ul>
-        <li><a href="https://library.biblicalarchaeology.org/book/aspects-monotheism/the-religious-reforms-of-hezekiah-and-josiah/">Biblical Archaeology Society: The Religious Reforms of Hezekiah and Josiah</a>;</li>
+        <li><a href="https://library.biblicalarchaeology.org/book/aspects-monotheism/the-religious-reforms-of-hezekiah-and-josiah/">Biblical Archaeology Society: The Religious Reforms of Hezekiah and Josiah</a>; <a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/high-places-altars-and-the-bamah/">BAS: High Places, Altars and the Bamah</a>; <a href="https://www.worldhistory.org/Judean_Pillar_Figurines/">World History Encyclopedia: Judean Pillar Figurines</a>.</li>
       </ul>
       <h4>Text, inscriptions, and history</h4>
       <ul>
-        <li>The Documentary Hypothesis and its revisions (Wellhausen; and critics/updaters</li>
-        <li><a href="https://en.wikipedia.org/wiki/Tel_Dan_stele">Wikipedia: Tel Dan Stele</a>;</li>
+        <li>The Documentary Hypothesis and its revisions (Wellhausen; and critics/updaters such as R. E. Friedman, <em>Who Wrote the Bible?</em>, and later fragmentary/supplementary models).</li>
+        <li>The Tel Dan Stele; the Mesha Stele (Moabite Stone); the Ketef Hinnom scrolls.</li>
       </ul>
     </div>
   ` },
@@ -1270,13 +1256,12 @@ window.CHAPTERS = {
       <h4>Practice, oracles, and the afterlife</h4>
       <ul>
         <li><a href="https://www.worldhistory.org/Greek_Religion/">World History Encyclopedia: Ancient Greek Religion</a>; Walter Burkert, <em>Greek Religion</em> (the standard scholarly handbook).</li>
-        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia: Eleusinian Mysteries</a>; on Orphism and the gold tablets, F. Graf &amp;amp; S. I. Johnston, <em>Ritual Texts for the Afterlife</em>.</li>
+        <li>On Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, <em>Ritual Texts for the Afterlife</em>.</li>
         <li>Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) — <a href="https://www.angelsathens.gr/en/blog/ancient-greece/ancient-greek-religion-everyday-cult/">Angels of Athens: Ancient Greek Religion — everyday cult</a>; Oxford Reference, "Worship, household."</li>
-        <li>Hero-cult and the curse tablets (katadesmoi/defixiones) — <a href="https://en.wikipedia.org/wiki/Curse_tablet">Wikipedia: Curse tablet</a>; the tomb-cult / hero-cult debate in early Greek society (standard treatments).</li>
+        <li>Hero-cult and the curse tablets (katadesmoi/defixiones) — the tomb-cult / hero-cult debate in early Greek society (standard treatments).</li>
       </ul>
       <h4>The alphabet</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/History_of_the_Greek_alphabet">Wikipedia: History of the Greek alphabet</a> (the adoption of Phoenician letters and the innovation of vowels).</li>
         <li>The Homeric Hymns and the <em>Hymn to Demeter</em> — M. L. West (ed. and trans.), <em>Homeric Hymns, Homeric Apocrypha, Lives of Homer</em>, Loeb Classical Library 496 (Cambridge, MA: Harvard University Press, 2003). <a href="https://bmcr.brynmawr.edu/?p=23371">https://bmcr.brynmawr.edu/?p=23371</a> (review, <em>Bryn Mawr Classical Review</em> 2003.07.36) ; H. G. Evelyn-White (trans.), <em>Hesiod, the Homeric Hymns and Homerica</em> (Loeb, 1914), public domain, at Project Gutenberg. <a href="https://www.gutenberg.org/ebooks/348">https://www.gutenberg.org/ebooks/348</a></li>
         <li>The Moscow manuscript and its discovery in 1777 — LibreTexts, <em>Temples of the Gods: An Introduction to Classical Mythology</em>, "The Homeric Hymn to Demeter." <a href="https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter">https://human.libretexts.org/Courses/Long_Beach_City_College/Temples_of_the_Gods%3A_An_Introduction_to_Classical_Mythology/05%3A_The_Feminine_Divine/5.06%3A_The_Homeric_Hymn_to_Demeter</a> ; Oliver Thomas, "Manuscript Readings in the Homeric Hymn to Demeter 389–479," <em>Mnemosyne</em> 68, no. 3 (2015) (the manuscript's "discovery by C.F. von Matthaei in Moscow in 1777"). <a href="https://doi.org/10.1163/1568525X-12341719">https://doi.org/10.1163/1568525X-12341719</a></li>
       </ul>
@@ -1405,24 +1390,24 @@ window.CHAPTERS = {
       </ul>
       <h4>Oracle bones and Shang religion</h4>
       <ul>
-        <li><a href="https://smarthistory.org/oracle-bone/">Smarthistory: Oracle Bone, Shang Dynasty</a>;</li>
+        <li><a href="https://smarthistory.org/oracle-bone/">Smarthistory: Oracle Bone, Shang Dynasty</a>; David N. Keightley, <em>Sources of Shang History</em> and <em>The Ancestral Landscape</em> (the standard scholarship on the oracle bones and Shang religion).</li>
       </ul>
       <h4>The Zhou and the Mandate of Heaven</h4>
       <ul>
-        <li><a href="https://www.worldhistory.org/Mandate_of_Heaven/">World History Encyclopedia: Mandate of Heaven</a>;</li>
+        <li><a href="https://www.worldhistory.org/Mandate_of_Heaven/">World History Encyclopedia: Mandate of Heaven</a>; the Book of Documents (<em>Shughing</em>) for the classic articulations.</li>
       </ul>
       <h4>The wu and the shamanism debate</h4>
       <ul>
-        <li>G. Boileau, "Wu and Shaman" / "Shamanism Theory and the Early Chinese Wu"</li>
-        <li>The <strong>Nine Songs</strong> (<em>Jiu Ge</em>) of Chu — Arthur Waley, *The Nine Songs: A Study of</li>
+        <li>G. Boileau, "Wu and Shaman" / "Shamanism Theory and the Early Chinese Wu" (surveying the K. C. Chang vs. Keightley debate); <a href="https://grokipedia.com/page/Chinese_shamanism">Grokipedia: Chinese shamanism</a>.</li>
+        <li>The <strong>Nine Songs</strong> (<em>Jiu Ge</em>) of Chu — Arthur Waley, <em>The Nine Songs: A Study of Shamanism in Ancient China</em>.</li>
       </ul>
       <h4>Bronzes, sacrifice, and Sanxingdui</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Taotie">Wikipedia: Taotie</a>;</li>
+        <li>On Fu Hao's tomb and Sanxingdui, standard archaeological reports.</li>
       </ul>
       <h4>Divination and symbol</h4>
       <ul>
-        <li>The <em>Yijing</em> (<em>Book of Changes</em>): Richard Rutt, *The Book of Changes (Zhouyi): A</li>
+        <li>The <em>Yijing</em> (<em>Book of Changes</em>): Richard Rutt, <em>The Book of Changes (Zhouyi): A Bronze Age Document</em>; on ritual jade (<em>bi</em> and <em>cong</em>), museum and archaeological overviews.</li>
       </ul>
     </div>
   ` },
@@ -1549,24 +1534,24 @@ window.CHAPTERS = {
       </ul>
       <h4>The period, the exile, and diversity</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Jewish-Diaspora">Britannica: Jewish Diaspora</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Jewish-Diaspora">Britannica: Jewish Diaspora</a>; <a href="https://en.wikipedia.org/wiki/Second_Temple">Wikipedia: Second Temple</a>; Shaye J. D. Cohen, <em>From the Maccabees to the Mishnah</em> (the standard survey).</li>
       </ul>
       <h4>The sects and the Scrolls</h4>
       <ul>
-        <li><a href="https://www.jewishvirtuallibrary.org/pharisees-sadducees-and-essenes">Jewish Virtual Library: Pharisees, Sadducees &amp; Essenes</a>;</li>
+        <li><a href="https://www.jewishvirtuallibrary.org/pharisees-sadducees-and-essenes">Jewish Virtual Library: Pharisees, Sadducees &amp; Essenes</a>; <a href="https://www.britannica.com/topic/Dead-Sea-Scrolls">Britannica: Dead Sea Scrolls</a>; Josephus, <em>Jewish War</em> and <em>Antiquities</em>.</li>
       </ul>
       <h4>Theology and the Zoroastrian question</h4>
       <ul>
-        <li>On apocalyptic, angelology, and the (debated) Persian influence: the balanced</li>
+        <li>On apocalyptic, angelology, and the (debated) Persian influence: the balanced discussions at <a href="https://bibleinterp.arizona.edu/articles/afterlife-and-resurrection-beliefs-second-temple-period">Bible Interp: Afterlife and Resurrection in the Second Temple Period</a> and works such as Vicente Dobroruka on Iranian influence — with the caution that the case is one of resonance, not proven borrowing.</li>
       </ul>
       <h4>Messianism and Wisdom</h4>
       <ul>
-        <li>The plural messianic hope (Davidic, the two messiahs of Qumran, the prophet, the</li>
-        <li>Personified Wisdom (Hokhmah/Sophia) in Proverbs 8, Ben Sira 24, and the Wisdom of</li>
+        <li>The plural messianic hope (Davidic, the two messiahs of Qumran, the prophet, the Danielic/Enochic son of man) — <a href="https://www.livius.org/articles/religion/messiah/messiah-9-two-messiahs/">Livius: Qumran's dual Messianism</a>; and standard surveys of Second Temple messianism.</li>
+        <li>Personified Wisdom (Hokhmah/Sophia) in Proverbs 8, Ben Sira 24, and the Wisdom of Solomon — <a href="https://en.wikipedia.org/wiki/Personification_of_wisdom">Wikipedia: Personification of wisdom</a>.</li>
       </ul>
       <h4>The literature</h4>
       <ul>
-        <li><a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My Jewish Learning: Apocrypha and Pseudepigrapha</a>;</li>
+        <li><a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My Jewish Learning: Apocrypha and Pseudepigrapha</a>; <a href="https://en.wikipedia.org/wiki/Jewish_apocrypha_and_pseudepigrapha">Wikipedia: Jewish apocrypha and pseudepigrapha</a>; on the canon, and Philo of Alexandria for the allegorical/cosmic readings.</li>
       </ul>
     </div>
   ` },
@@ -2015,24 +2000,24 @@ window.CHAPTERS = {
       </ul>
       <h4>State religion, priesthoods, and concepts</h4>
       <ul>
-        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com: Roman Religion</a>;</li>
+        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com: Roman Religion</a>; <a href="https://en.wikipedia.org/wiki/College_of_Pontiffs">Wikipedia: College of Pontiffs</a>; <a href="https://en.wikipedia.org/wiki/Vestal_Virgin">Wikipedia: Vestal Virgin</a>.</li>
       </ul>
       <h4>Divination and the pantheon</h4>
       <ul>
-        <li><a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford Classical Dictionary: Roman Divination</a>;</li>
+        <li><a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford Classical Dictionary: Roman Divination</a>; <a href="https://en.wikipedia.org/wiki/Sibylline_Books">Wikipedia: Sibylline Books</a>; <a href="https://www.britannica.com/topic/Capitoline-Triad">Britannica: Capitoline Triad</a>.</li>
       </ul>
       <h4>Household and folk religion</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Lar-Roman-deities">Britannica: Lar</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Lar-Roman-deities">Britannica: Lar</a>; <a href="https://www.unrv.com/culture/lararium-lares-penates.php">UNRV: The Lararium, Lares and Penates</a>.</li>
       </ul>
       <h4>The dead and the afterlife</h4>
       <ul>
-        <li>The Di Manes, the Parentalia and the Lemuria (black beans against the Lemures) —</li>
-        <li>Roman afterlife views and tombstone inscriptions (the <em>non fui, fui, non sum, non curo</em></li>
+        <li>The Di Manes, the Parentalia and the Lemuria (black beans against the Lemures) — <a href="https://en.wikipedia.org/wiki/Lemuria_(festival)">Wikipedia: Lemuria (festival)</a>; <a href="https://www.worldhistory.org/article/34/roman-household-spirits-manes-panes-and-lares/">World History Encyclopedia: Roman Household Spirits</a>.</li>
+        <li>Roman afterlife views and tombstone inscriptions (the <em>non fui, fui, non sum, non curo</em> epitaph) — <a href="https://www.worldhistory.org/article/2679/views-of-the-afterlife-in-roman-tombstone-inscript/">World History Encyclopedia: Views of the Afterlife in Roman Tombstone Inscriptions</a>.</li>
       </ul>
       <h4>Foreign cults and the imperial cult</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Bacchanalia">Wikipedia: Bacchanalia</a> (and the <em>Senatus consultum de Bacchanalibus</em>);</li>
+        <li><a href="https://en.wikipedia.org/wiki/Bacchanalia">Wikipedia: Bacchanalia</a> (and the <em>Senatus consultum de Bacchanalibus</em>); on Magna Mater, <a href="https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/">Brewminate: The Cult of Cybele in Ancient Rome</a>; <a href="https://en.wikipedia.org/wiki/Roman_imperial_cult">Wikipedia: Roman imperial cult</a>.</li>
       </ul>
     </div>
   ` },
@@ -2153,22 +2138,22 @@ window.CHAPTERS = {
       </ul>
       <h4>Celtic religion, druids, and the sources problem</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>;</li>
+        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>; on human sacrifice, <a href="https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/">Celtic Studies Resources: Did the Celts or Druids Perform Human Sacrifice?</a>; <a href="https://en.wikipedia.org/wiki/Cernunnos">Wikipedia: Cernunnos</a>; <a href="https://en.wikipedia.org/wiki/Taranis">Wikipedia: Taranis</a>.</li>
       </ul>
       <h4>The druidic orders and the Gallic sanctuaries</h4>
       <ul>
-        <li>The three classes (druids, bards, vates), from Strabo/Posidonius —</li>
-        <li>The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux) —</li>
+        <li>The three classes (druids, bards, vates), from Strabo/Posidonius — <a href="https://irishmyths.com/2022/05/27/bards-vs-vates-vs-druids/">Irish Myths: Bards vs. Vates vs. Druids</a>.</li>
+        <li>The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux) — <a href="https://en.wikipedia.org/wiki/Gournay-sur-Aronde">Wikipedia: Gournay-sur-Aronde</a>.</li>
       </ul>
       <h4>Germanic religion and Tacitus</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia: Germanic paganism</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia: Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology">Wikipedia: Sacred trees and groves in Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Nerthus">Wikipedia: Nerthus</a>.</li>
         <li>The Germanic seeress (Veleda, Aurinia/Albruna) — <a href="https://en.wikipedia.org/wiki/Seeress_(Germanic)">Wikipedia: Seeress (Germanic)</a>.</li>
         <li>The gods in the weekday names — <a href="https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">The Conversation: the gods behind the days of the week</a>.</li>
       </ul>
       <h4>Sacred encoding — calendar, runes, ogham, and the bog</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Coligny_calendar">Wikipedia: Coligny calendar</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Coligny_calendar">Wikipedia: Coligny calendar</a>; on the bog bodies and the Gundestrup cauldron, and on runes and ogham (with their later dating), standard reference overviews.</li>
       </ul>
     </div>
   ` },
@@ -2281,24 +2266,24 @@ window.CHAPTERS = {
       </ul>
       <h4>The Presocratics and the critique of myth</h4>
       <ul>
-        <li><a href="https://plato.stanford.edu/entries/xenophanes/">Stanford Encyclopedia of Philosophy: Xenophanes</a>;</li>
+        <li><a href="https://plato.stanford.edu/entries/xenophanes/">Stanford Encyclopedia of Philosophy: Xenophanes</a>; <a href="https://iep.utm.edu/xenoph/">Internet Encyclopedia of Philosophy: Xenophanes</a>; on Heraclitus and the Logos, <a href="https://socratesjourney.org/logos-from-heraclitus-to-the-stoics-stoicism/">Socrates' Journey: Logos from Heraclitus to the Stoics</a>.</li>
       </ul>
       <h4>The Sophists' skepticism and the healing cult</h4>
       <ul>
-        <li>Protagoras's agnosticism, Prodicus's naturalistic theory, and the Sisyphus fragment —</li>
-        <li>Asclepius, Epidaurus, and dream-incubation (<em>enkoimesis</em>) with votive offerings and</li>
+        <li>Protagoras's agnosticism, Prodicus's naturalistic theory, and the Sisyphus fragment — <a href="https://iep.utm.edu/sophists/">IEP: The Sophists</a>; <a href="https://en.wikipedia.org/wiki/Sisyphus_fragment">Wikipedia: Sisyphus fragment</a>.</li>
+        <li>Asclepius, Epidaurus, and dream-incubation (<em>enkoimesis</em>) with votive offerings and the <em>iamata</em> — <a href="https://olympia-museum.gr/enkoimesis-at-epidaurus/">Olympia Museum: Enkoimesis at Epidaurus</a>.</li>
       </ul>
       <h4>Socrates, Plato, and Aristotle</h4>
       <ul>
-        <li>Standard reference treatments of Socrates' trial, Plato's Forms/Demiurge/soul, and</li>
+        <li>Standard reference treatments of Socrates' trial, Plato's Forms/Demiurge/soul, and <a href="https://en.wikipedia.org/wiki/Unmoved_mover">Wikipedia: Unmoved mover (Aristotelian theology)</a>.</li>
       </ul>
       <h4>Hellenistic schools</h4>
       <ul>
-        <li><a href="https://iep.utm.edu/epicur/">Internet Encyclopedia of Philosophy: Epicurus</a>;</li>
+        <li><a href="https://iep.utm.edu/epicur/">Internet Encyclopedia of Philosophy: Epicurus</a>; on Stoic pantheism and the Logos, <a href="https://www.britannica.com/topic/pantheism/Pantheism-and-panentheism-in-ancient-and-medieval-philosophy">Britannica: Pantheism in ancient philosophy</a>.</li>
       </ul>
       <h4>Sacred encoding — number, isopsephy, and the gold tablets</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/tetraktys">Britannica: Tetraktys</a> and</li>
+        <li><a href="https://www.britannica.com/topic/tetraktys">Britannica: Tetraktys</a> and <a href="https://www.britannica.com/topic/number-symbolism/Pythagoreanism">Britannica: Number symbolism — Pythagoreanism</a>; <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/orphic-gold-tablets">Encyclopedia.com: Orphic Gold Tablets</a>.</li>
       </ul>
     </div>
   ` },
@@ -2414,21 +2399,21 @@ window.CHAPTERS = {
       </ul>
       <h4>The historical Jesus and the sources</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Wikipedia: Sources for the historicity of Jesus</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Wikipedia: Sources for the historicity of Jesus</a>; <a href="https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus">Britannica: Christianity — Jesus and the early church</a>.</li>
       </ul>
       <h4>Paul, canon formation, and diversity</h4>
       <ul>
-        <li>On Marcion and the canon, <a href="https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale Bible Study: Formation of the New Testament Canon</a></li>
+        <li>On Marcion and the canon, <a href="https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/">Yale Bible Study: Formation of the New Testament Canon</a> and <a href="https://rsc.byu.edu/new-testament-history-culture-society/canonization-new-testament">BYU RSC: The Canonization of the New Testament</a>; on early Christian diversity, the standard treatments (e.g. Bart Ehrman, <em>Lost Christianities</em>).</li>
       </ul>
       <h4>Women and the martyr cult</h4>
       <ul>
-        <li>Junia and Phoebe — <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person)">Wikipedia: Junia (New Testament person)</a>;</li>
-        <li>The Passion of Perpetua and Felicity (203 CE) — <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia: Passion of Saints Perpetua and Felicity</a>;</li>
-        <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia: Dies natalis</a>;</li>
+        <li>Junia and Phoebe — <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person)">Wikipedia: Junia (New Testament person)</a>; <a href="https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)">Wikipedia: Phoebe (biblical figure)</a>.</li>
+        <li>The Passion of Perpetua and Felicity (203 CE) — <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia: Passion of Saints Perpetua and Felicity</a>; <a href="https://www.britannica.com/biography/Perpetua-Christian-martyr">Britannica: Perpetua</a>.</li>
+        <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia: Dies natalis</a>; <a href="https://christianhistoryinstitute.org/study/module/polycarp">Christian History Institute: Polycarp's Martyrdom</a>.</li>
       </ul>
       <h4>Symbol and sacred encoding</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Ichthys">Wikipedia: Ichthys</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical Archaeology Society: The Staurogram</a>;</li>
+        <li><a href="https://en.wikipedia.org/wiki/Ichthys">Wikipedia: Ichthys</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical Archaeology Society: The Staurogram</a>; on 666 and Nero, <a href="https://www.britannica.com/topic/number-of-the-beast">Britannica: Number of the beast</a>.</li>
       </ul>
     </div>
   ` },
@@ -2544,16 +2529,16 @@ window.CHAPTERS = {
       </ul>
       <h4>Gnostic systems, schools, and the Nag Hammadi discovery</h4>
       <ul>
-        <li><a href="https://iep.utm.edu/gnostic/">Internet Encyclopedia of Philosophy: Gnosticism</a>;</li>
+        <li><a href="https://iep.utm.edu/gnostic/">Internet Encyclopedia of Philosophy: Gnosticism</a>; <a href="https://en.wikipedia.org/wiki/Nag_Hammadi_library">Wikipedia: Nag Hammadi library</a>; on the category debate, the work of Michael Williams (<em>Rethinking "Gnosticism"</em>) and Karen King (<em>What Is Gnosticism?</em>).</li>
       </ul>
       <h4>Texts</h4>
       <ul>
-        <li>On the Gospel of Thomas, <a href="https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart Ehrman: The Gospel of Thomas — An Overview</a></li>
+        <li>On the Gospel of Thomas, <a href="https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart Ehrman: The Gospel of Thomas — An Overview</a> and <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/bible-versions-and-translations/the-gospel-of-thomas-114-sayings-of-jesus/">Biblical Archaeology Society: The Gospel of Thomas's 114 Sayings</a>; <a href="https://en.wikipedia.org/wiki/Gospel_of_Philip">Wikipedia: Gospel of Philip</a>.</li>
       </ul>
       <h4>Manichaeism and Hermeticism</h4>
       <ul>
-        <li>Mani, the Light/Darkness dualism, the Elect and Hearers, and the spread from Rome to China —</li>
-        <li>The Corpus Hermeticum and Hermes Trismegistus — [TheCollector: Hermes Trismegistus &amp; the Founding</li>
+        <li>Mani, the Light/Darkness dualism, the Elect and Hearers, and the spread from Rome to China — <a href="https://www.britannica.com/topic/Manichaeism">Britannica: Manichaeism</a>; on Augustine's years as a Hearer, standard treatments.</li>
+        <li>The Corpus Hermeticum and Hermes Trismegistus — <a href="https://www.thecollector.com/hermes-trismegistus-hermeticism/">TheCollector: Hermes Trismegistus &amp; the Founding of Hermeticism</a>; on the later Emerald Tablet, <a href="https://en.wikipedia.org/wiki/Emerald_Tablet">Wikipedia: Emerald Tablet</a>.</li>
       </ul>
       <h4>Sacred encoding — Abraxas and the numbered cosmos</h4>
       <ul>
@@ -2684,20 +2669,20 @@ window.CHAPTERS = {
       </ul>
       <h4>The mysteries and Mithraism</h4>
       <ul>
-        <li><a href="https://the-past.com/feature/the-mystery-of-mithras/">The Past: The mystery of Mithras</a>;</li>
+        <li><a href="https://the-past.com/feature/the-mystery-of-mithras/">The Past: The mystery of Mithras</a>; on the seven grades and the tauroctony, standard reference overviews; on the evidence problem and the origin debate, <a href="https://en.wikipedia.org/wiki/Parallelomania">Wikipedia: Parallelomania</a>.</li>
       </ul>
       <h4>Isis and Cybele</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Mysteries_of_Isis">Wikipedia: Mysteries of Isis</a> (and Apuleius, *The</li>
+        <li><a href="https://en.wikipedia.org/wiki/Mysteries_of_Isis">Wikipedia: Mysteries of Isis</a> (and Apuleius, <em>The Golden Ass</em> Book XI); on Cybele, Attis, and the taurobolium, <a href="https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/cybele">Encyclopedia.com: Cybele</a>.</li>
       </ul>
       <h4>The "dying and rising god" and the parallels debate</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Wikipedia: Dying-and-rising god</a> (on the contested</li>
+        <li><a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Wikipedia: Dying-and-rising god</a> (on the contested Frazerian category).</li>
       </ul>
       <h4>Sol Invictus and the twilight of paganism</h4>
       <ul>
-        <li>Aurelian's Sol Invictus (274 CE) and the 25 December festival — <a href="https://www.britannica.com/topic/Sol-Invictus">Britannica: Sol Invictus</a>;</li>
-        <li>Julian's revival and the anti-pagan laws — <a href="https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Wikipedia: Persecution of pagans under Theodosius I</a>;</li>
+        <li>Aurelian's Sol Invictus (274 CE) and the 25 December festival — <a href="https://www.britannica.com/topic/Sol-Invictus">Britannica: Sol Invictus</a>; <a href="https://en.wikipedia.org/wiki/Sol_Invictus">Wikipedia: Sol Invictus</a>.</li>
+        <li>Julian's revival and the anti-pagan laws — <a href="https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Wikipedia: Persecution of pagans under Theodosius I</a>; on the end of Eleusis (c. 396 CE), <a href="https://www.worldhistory.org/Eleusis/">World History Encyclopedia: Eleusis</a>.</li>
       </ul>
     </div>
   ` },
@@ -5235,14 +5220,10 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <ul>
         <li>Cave art (Chauvet, Lascaux), therianthropes, and the shamanism interpretation (Lewis-Williams; Breuil's earlier "sorcerer" reading) — MDPI <em>Religions</em>, "Art and Shamanism." <a href="https://www.mdpi.com/2077-1444/10/1/54">https://www.mdpi.com/2077-1444/10/1/54</a></li>
-        <li>The Lion Man of Hohlenstein-Stadel (c. 40,000 years old) — "Lion-man," Wikipedia. <a href="https://en.wikipedia.org/wiki/Lion-man">https://en.wikipedia.org/wiki/Lion-man</a></li>
         <li>Sulawesi cave art: the ~45,500-year warty pig and the Leang Bulu' Sipong 4 therianthrope hunting scene (revised to ~48–51,000 years in 2024) — "Narrative cave art in Indonesia by 51,200 years ago," <em>Nature</em> (2024); Smithsonian. <a href="https://www.nature.com/articles/s41586-024-07541-7">https://www.nature.com/articles/s41586-024-07541-7</a></li>
         <li>The Hohle Fels bird-bone flutes (c. 40,000 years) as the earliest known musical instruments — "New flutes document the earliest musical tradition in southwestern Germany," <em>Nature</em> (2009). <a href="https://www.nature.com/articles/nature08169">https://www.nature.com/articles/nature08169</a></li>
-        <li>Venus figurines and the contested fertility/goddess reading; Dolní Věstonice ceramic Venus — "Venus figurines," Wikipedia. <a href="https://en.wikipedia.org/wiki/Venus_figurines">https://en.wikipedia.org/wiki/Venus_figurines</a></li>
-        <li>Deliberate burial and grave-goods: Qafzeh/Skhul (~100,000 years, ochre) and Sungir — Smithsonian Human Origins, "Qafzeh: Oldest Intentional Burial"; "Skhul and Qafzeh hominins," Wikipedia. <a href="https://humanorigins.si.edu/evidence/behavior/burial/qafzeh-oldest-intentional-burial">https://humanorigins.si.edu/evidence/behavior/burial/qafzeh-oldest-intentional-burial</a></li>
+        <li>Deliberate burial and grave-goods: Qafzeh/Skhul (~100,000 years, ochre) and Sungir — Smithsonian Human Origins, "Qafzeh: Oldest Intentional Burial." <a href="https://humanorigins.si.edu/evidence/behavior/burial/qafzeh-oldest-intentional-burial">https://humanorigins.si.edu/evidence/behavior/burial/qafzeh-oldest-intentional-burial</a></li>
         <li>The critique of the entoptic/"three stages of trance" shamanic model — Helvenston &amp; Bahn, "Testing the 'Three Stages of Trance' Model." <a href="https://www.researchgate.net/publication/231950815_Testing_the_'Three_Stages_of_Trance'_Model">https://www.researchgate.net/publication/231950815_Testing_the_'Three_Stages_of_Trance'_Model</a></li>
-        <li>Red ochre and the engraved Blombos ochre (c. 73,000 years) as the earliest abstract mark-making — "Blombos Cave," Wikipedia. <a href="https://en.wikipedia.org/wiki/Blombos_Cave">https://en.wikipedia.org/wiki/Blombos_Cave</a></li>
-        <li>Neanderthal burial and symbolic-behavior debate (Shanidar, La Pasiega, Bruniquel) — reference overviews. <a href="https://en.wikipedia.org/wiki/Bruniquel_Cave">https://en.wikipedia.org/wiki/Bruniquel_Cave</a></li>
       </ul>
     </div>
   ` },
@@ -5324,7 +5305,6 @@ window.CHAPTERS = {
         <li>The plastered skulls of Jericho and 'Ain Ghazal (PPNB), and the 'Ain Ghazal plaster statues — D. Schmandt-Besserat, "The Plastered Skulls" (UT Austin). <a href="https://sites.utexas.edu/dsb/ain-ghazal/the-plastered-skulls/">https://sites.utexas.edu/dsb/ain-ghazal/the-plastered-skulls/</a></li>
         <li>Çatalhöyük (c. 7400–6000 BCE): under-floor burial, bucrania, "history houses," and the reassessment of the goddess theory (Ian Hodder; Lynn Meskell) — "Was there a belief in the Mother Goddess at Çatalhöyük?", Çatalhöyük Research Project. <a href="http://www.catalhoyuk.com/node/736">http://www.catalhoyuk.com/node/736</a></li>
         <li>The Mother Goddess hypothesis (Mellaart, Gimbutas) and its scholarly critique — "Mellaart, Gimbutas, Goddesses, and Çatalhöyük" (academic review). <a href="https://www.academia.edu/71690356/MELLAART_GIMBUTAS_GODDESSES_AND_%C3%87ATALH%C3%96Y%C3%9CK">https://www.academia.edu/71690356/MELLAART_GIMBUTAS_GODDESSES_AND_%C3%87ATALH%C3%96Y%C3%9CK</a></li>
-        <li>Megaliths and their astronomical alignments — Stonehenge/Durrington, Newgrange, Malta's Ġgantija and the Hypogeum — "Megalith," Wikipedia. <a href="https://en.wikipedia.org/wiki/Megalith">https://en.wikipedia.org/wiki/Megalith</a></li>
         <li>Newgrange's midwinter beam, its reach when built and today — T. P. Ray, "The winter solstice phenomenon at Newgrange, Ireland: accident or design?", <em>Nature</em> 337 (1989), 343–345. <a href="https://www.newgrange.com/stonelight20.htm">https://www.newgrange.com/stonelight20.htm</a></li>
         <li>Newgrange's midwinter beam, a metre or two shorter today — "Shedding light on winter solstice at Newgrange," <em>The Irish Times</em> (19 December 2013). <a href="https://www.irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602">https://www.irishtimes.com/news/science/shedding-light-on-winter-solstice-at-newgrange-1.1629602</a></li>
         <li>Newgrange's midwinter beam, the fuller-chamber description — National Museum of Ireland, "The Winter solstice at Newgrange." <a href="https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange">https://museum.ie/en-IE/Collections-Research/Irish-Antiquities-Division-Collections/Irish-Antiquities-Articles/The-Winter-solstice-at-Newgrange</a></li>
@@ -6716,10 +6696,9 @@ window.CHAPTERS = {
     <div class="sources">
       <h3>Sources</h3>
       <ul>
-        <li>The "thousand gods of Hatti," the absorptive pantheon, Tarhunna/Teshub the storm-god on the bull, and the Sun-goddess of Arinna/Hepat — "Hittite Religion," Encyclopedia.com. <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/hittite-religion">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/hittite-religion</a> ; "Sun goddess of Arinna," Wikipedia. <a href="https://en.wikipedia.org/wiki/Sun_goddess_of_Arinna">https://en.wikipedia.org/wiki/Sun_goddess_of_Arinna</a></li>
-        <li>The Kumarbi Cycle / "Kingship in Heaven," the Alalu–Anu–Kumarbi–Teshub succession (castration and swallowing), the Song of Ullikummi, and the parallels with Hesiod's Theogony (Ouranos–Kronos–Zeus, Typhon) — "Kumarbi," Wikipedia. <a href="https://en.wikipedia.org/wiki/Kumarbi">https://en.wikipedia.org/wiki/Kumarbi</a> ; "The Ancient Hurrian Myth That Inspired the Greek Gods," TheCollector. <a href="https://www.thecollector.com/kumarbi-cycle-hurrian-myth/">https://www.thecollector.com/kumarbi-cycle-hurrian-myth/</a></li>
-        <li>The Telipinu vanishing-god myth and its ritual context — "Telipinu (mythology)," Wikipedia. <a href="https://en.wikipedia.org/wiki/Telipinu_(mythology)">https://en.wikipedia.org/wiki/Telipinu_(mythology)</a> ; "The Telepenus 'Vanishing God' Myth," University of Texas LRC. <a href="https://lrc.la.utexas.edu/eieol/hitol/20">https://lrc.la.utexas.edu/eieol/hitol/20</a></li>
-        <li>Hittite mythology and religion overview: the empire (c. 1650–1180 BCE), Hattusa, the Hurrian adoption, Yazılıkaya, treaties, and ritual — "Hittite mythology and religion," Wikipedia. <a href="https://en.wikipedia.org/wiki/Hittite_mythology_and_religion">https://en.wikipedia.org/wiki/Hittite_mythology_and_religion</a></li>
+        <li>The "thousand gods of Hatti," the absorptive pantheon, Tarhunna/Teshub the storm-god on the bull, and the Sun-goddess of Arinna/Hepat — "Hittite Religion," Encyclopedia.com. <a href="https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/hittite-religion">https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/hittite-religion</a></li>
+        <li>The Kumarbi Cycle / "Kingship in Heaven," the Alalu–Anu–Kumarbi–Teshub succession (castration and swallowing), the Song of Ullikummi, and the parallels with Hesiod's Theogony (Ouranos–Kronos–Zeus, Typhon) — "The Ancient Hurrian Myth That Inspired the Greek Gods," TheCollector. <a href="https://www.thecollector.com/kumarbi-cycle-hurrian-myth/">https://www.thecollector.com/kumarbi-cycle-hurrian-myth/</a></li>
+        <li>The Telipinu vanishing-god myth and its ritual context — "The Telepenus 'Vanishing God' Myth," University of Texas LRC. <a href="https://lrc.la.utexas.edu/eieol/hitol/20">https://lrc.la.utexas.edu/eieol/hitol/20</a></li>
         <li>Kingship in heaven and the Anatolia–Syria–Greece succession-myth connection (scholarly) — "Kingship in Heaven in Anatolia, Syria and Greece" (University of Reading / CentAUR). <a href="https://centaur.reading.ac.uk/79653/1/Kingship%20in%20Heaven%20in%20Anatolia%20Syria%20and%20Greece.%20Patterns%20of%20Convergence%20and%20Divergence%20(1).pdf">https://centaur.reading.ac.uk/79653/1/Kingship%20in%20Heaven%20in%20Anatolia%20Syria%20and%20Greece.%20Patterns%20of%20Convergence%20and%20Divergence%20(1).pdf</a></li>
         <li>Supporting detail corroborated via the above and adjacent chapters: the plague prayers of Mursili II; the Hittite–Egyptian (Kadesh) treaty and the covenant parallel (ch07 context); Kubaba/Cybele and the Anatolian afterlife (ch18/ch48 context).</li>
       </ul>
@@ -6795,7 +6774,6 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <ul>
         <li>Ugaritic-Canaanite religion: the discovery of Ugarit/Ras Shamra (1929), the pantheon (El, Athirat/Asherah, Baal/Hadad, Anat, Yam, Mot), and the Baal Cycle (Baal vs. Yam and Mot; death and return) — "Ugaritic-Canaanite Religion," Encyclopedia.com. <a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion">https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ugaritic-canaanite-religion</a> ; "Canaanite Religion," New World Encyclopedia. <a href="https://www.newworldencyclopedia.org/entry/Canaanite_Religion">https://www.newworldencyclopedia.org/entry/Canaanite_Religion</a></li>
-        <li>El as the aged high god and "father of the gods," and the Canaanite roots of biblical divine imagery — "El (deity)," Wikipedia. <a href="https://en.wikipedia.org/wiki/El_(deity)">https://en.wikipedia.org/wiki/El_(deity)</a></li>
         <li>Phoenician religion and the city-gods: Melqart of Tyre (kingship, death-and-rising, equated with Herakles), Eshmun of Sidon (healing), Astarte, and Carthage's Baal Hammon and Tanit — "Melqart," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Melqart">https://www.britannica.com/topic/Melqart</a> ; "Phoenician Religion," World History Encyclopedia. <a href="https://www.worldhistory.org/Phoenician_Religion/">https://www.worldhistory.org/Phoenician_Religion/</a></li>
         <li>The Carthage tophet and the child-sacrifice debate (the urns and stelae; the 2014 study for sacrifice; the natural-death-cemetery counter-argument) — "Study Concludes Child Sacrifice Took Place in Ancient Carthage," Archaeology Magazine. <a href="https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/">https://archaeology.org/news/2014/01/23/140123-carthage-tophet-sacrifice/</a> ; "Skeletal Remains from Punic Carthage Do Not Support Systematic Sacrifice of Infants," PLoS ONE / NCBI. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822869/</a></li>
         <li>The Phoenician alphabet (22 consonants, c. 11th century BCE, ancestor of the Greek and Western alphabets) — "Phoenician alphabet," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Phoenician-alphabet">https://www.britannica.com/topic/Phoenician-alphabet</a> ; "How the Phoenician Alphabet Revolutionised Language," History Hit. <a href="https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/">https://www.historyhit.com/how-the-phoenician-alphabet-revolutionised-language/</a></li>
@@ -7051,9 +7029,8 @@ window.CHAPTERS = {
       <h3>Sources</h3>
       <ul>
         <li>The Dreaming/Dreamtime as the "everywhen," the Ancestral Beings and the shaping of the land, the Law (Tjukurpa/Altjira), and the 65,000-year continuity — "Dreamtime," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/religion-and-philosophy/dreamtime">https://www.ebsco.com/research-starters/religion-and-philosophy/dreamtime</a> ; "Australian Aboriginal mythology," EBSCO Research Starters. <a href="https://www.ebsco.com/research-starters/religion-and-philosophy/australian-aboriginal-mythology/">https://www.ebsco.com/research-starters/religion-and-philosophy/australian-aboriginal-mythology/</a></li>
-        <li>Songlines: dreaming tracks as song, map, and law, crossing language boundaries — "Songline," Wikipedia. <a href="https://en.wikipedia.org/wiki/Songline">https://en.wikipedia.org/wiki/Songline</a></li>
         <li>Totemism, connection to Country, sacred sites, and the diversity of traditions — "Australian Aboriginal Religions: History, Beliefs &amp; Practices," Study.com. <a href="https://study.com/academy/lesson/australian-aboriginal-religions-history-beliefs-practices.html">https://study.com/academy/lesson/australian-aboriginal-religions-history-beliefs-practices.html</a> ; "Aboriginal Religion," AboriginalCulture.com.au. <a href="https://www.aboriginalculture.com.au/aboriginal-religion/">https://www.aboriginalculture.com.au/aboriginal-religion/</a></li>
-        <li>The Wandjina (Kimberley creator/rain beings; mouthless, storm-eyed) and the reclaiming of sacred images from appropriation — "Wandjina," Wikipedia. <a href="https://en.wikipedia.org/wiki/Wandjina">https://en.wikipedia.org/wiki/Wandjina</a> ; "What are Wandjinas?", Creative Spirits. <a href="https://www.creativespirits.info/aboriginalculture/arts/what-are-wandjinas">https://www.creativespirits.info/aboriginalculture/arts/what-are-wandjinas</a></li>
+        <li>The Wandjina (Kimberley creator/rain beings; mouthless, storm-eyed) and the reclaiming of sacred images from appropriation — "What are Wandjinas?", Creative Spirits. <a href="https://www.creativespirits.info/aboriginalculture/arts/what-are-wandjinas">https://www.creativespirits.info/aboriginalculture/arts/what-are-wandjinas</a></li>
         <li>Rock art: the Gwion Gwion (Bradshaw) figures, Wandjina, and X-ray art as the oldest continuous painting tradition, including repainting — "Aboriginal Rock Art in Australia," Artark. <a href="https://artark.com.au/blogs/news/aboriginal-rock-art">https://artark.com.au/blogs/news/aboriginal-rock-art</a></li>
         <li>Supporting detail corroborated via the above and adjacent chapters: the Rainbow Serpent as widespread creator-being; the tjurunga/churinga and restricted men's/women's knowledge; Durkheim's use of Aboriginal totemism (ch context); the 2020 Juukan Gorge destruction; desert concentric-circle iconography and dot-painting.</li>
         <li>The Stolen Generations and <em>Bringing Them Home</em> (1997) — National Indigenous Australians Agency, "20 years: road to reconciliation continues." <a href="https://indigenous.gov.au/stories/20-years-road-to-reconciliation-continues">https://indigenous.gov.au/stories/20-years-road-to-reconciliation-continues</a> ; NSW Health, "National Sorry Day." <a href="https://www.health.nsw.gov.au/aboriginal/Pages/national-sorry-day.aspx">https://www.health.nsw.gov.au/aboriginal/Pages/national-sorry-day.aspx</a></li>
@@ -9880,7 +9857,7 @@ window.CHAPTERS = {
         <li>The word "shaman," Avvakum and Witsen — New World Encyclopedia, "Definition: Shaman." <a href="https://www.newworldencyclopedia.org/entry/Definition:Shaman">https://www.newworldencyclopedia.org/entry/Definition:Shaman</a> ; Neil Price (ed.), <em>The Archaeology of Shamanism</em> (Routledge), ch. on the history of the term. <a href="https://www.taylorfrancis.com/books/9780203451700/chapters/10.4324/9780203451700-5">https://www.taylorfrancis.com/books/9780203451700/chapters/10.4324/9780203451700-5</a> ; Mercator Research Centre, "The Nicolaas Witsen project." <a href="https://www.mercator-research.eu/projekten/endangered-languages-and-archives/the-nicolaas-witsen-project/">https://www.mercator-research.eu/projekten/endangered-languages-and-archives/the-nicolaas-witsen-project/</a></li>
         <li>Siberian practice, costume and cosmology — S. M. Shirokogoroff, <em>Psychomental Complex of the Tungus</em> (London, 1935), University of Pennsylvania Library record. <a href="https://find.library.upenn.edu/catalog/993308633503681">https://find.library.upenn.edu/catalog/993308633503681</a> ; "Drumming, Imitating and Rattling: The 'Old Ways' of a Sakha 'Shaman' of Siberia in Costume and Drum." <a href="https://rep.buketov.edu.kz/handle/data/6591">https://rep.buketov.edu.kz/handle/data/6591</a> ; Piers Vitebsky, <em>The Reindeer People: Living with Animals and Spirits in Siberia</em> (Boston: Houghton Mifflin, 2005), on reindeer in Eveny and Evenki ritual, sacrifice and the shaman's journey. <a href="https://www.publishersweekly.com/9780618211883">https://www.publishersweekly.com/9780618211883</a> ; CyberLeninka, "Shamanism in the religious beliefs of the Tungus of Yakutia." <a href="https://cyberleninka.ru/article/n/shamanism-in-the-religious-beliefs-of-the-tungus-of-yakutia-historical-and-ethnographic-aspect">https://cyberleninka.ru/article/n/shamanism-in-the-religious-beliefs-of-the-tungus-of-yakutia-historical-and-ethnographic-aspect</a> ; M. A. Czaplicka, <em>Aboriginal Siberia</em> (1914), ch. on the shaman (sacred-texts mirror). <a href="https://neonvagabond.xyz/mirrors/sacred-texts/sha/sis/sis08.htm">https://neonvagabond.xyz/mirrors/sacred-texts/sha/sis/sis08.htm</a></li>
         <li>The fly agaric and Wasson — R. Gordon Wasson, <em>Soma: Divine Mushroom of Immortality</em> (New York: Harcourt Brace Jovanovich, 1968), Wellcome Collection record. <a href="https://wellcomecollection.org/works/y4c24mvh">https://wellcomecollection.org/works/y4c24mvh</a> ; John Brough, "Soma and <em>Amanita muscaria</em>," <em>Bulletin of the School of Oriental and African Studies</em> 34 (1971), 331–362. <a href="https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/soma-and-amanita-muscaria/98BFF929B30CA6B485EC79764896A54B">https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/soma-and-amanita-muscaria/98BFF929B30CA6B485EC79764896A54B</a> ; OPEN Foundation, "Revisiting Wasson's Soma: exploring the effects of preparation on the chemistry of Amanita muscaria." <a href="https://open-foundation.org/revisiting-wassons-soma-exploring-the-effects-of-preparation-on-the-chemistry-of-amanita-muscaria-2/">https://open-foundation.org/revisiting-wassons-soma-exploring-the-effects-of-preparation-on-the-chemistry-of-amanita-muscaria-2/</a></li>
-        <li>The Sami drums — Library of Congress, In Custodia Legis, "Return of a Sámi drum" (2022). <a href="https://blogs.loc.gov/law/2022/02/return-of-a-smi-drum/">https://blogs.loc.gov/law/2022/02/return-of-a-smi-drum/</a> ; High North News, "Denmark gives up ownership of rare Sami drum to Norway." <a href="https://highnorthnews.com/en/denmark-gives-ownership-rare-sami-drum-norway">https://highnorthnews.com/en/denmark-gives-ownership-rare-sami-drum-norway</a> ; Håkan Rydving, "The Saami drums and the religious encounter in the 17th and 18th centuries," <em>Scripta Instituti Donneriani Aboensis</em> 14 (1991), 28–51. <a href="https://doi.org/10.30674/scripta.67195">https://doi.org/10.30674/scripta.67195</a> ; "Sámi drum," Wikipedia (pointer, for the 1728 Copenhagen fire). <a href="https://en.wikipedia.org/wiki/S%C3%A1mi_drum">https://en.wikipedia.org/wiki/S%C3%A1mi_drum</a> ; "Arjeplog blasphemy trial of 1687," Wikipedia (pointer; no stronger source confirmed). <a href="https://en.wikipedia.org/wiki/Arjeplog_blasphemy_trial_of_1687">https://en.wikipedia.org/wiki/Arjeplog_blasphemy_trial_of_1687</a> ; Museumsforbundet, "First workshop with public event at Saemien Sijte" (on the return of Freavnantjahke gievrie, 2023). <a href="https://museumsforbundet.no/nyheter/first-workshop-with-public-event-at-saemien-sijte/">https://museumsforbundet.no/nyheter/first-workshop-with-public-event-at-saemien-sijte/</a> ; "The Saami shaman's drum and the star horizons," <em>Scripta Instituti Donneriani Aboensis</em>. <a href="https://journal.fi/scripta/article/view/67201">https://journal.fi/scripta/article/view/67201</a> ; RiddoDuottarMuseat, "Ruoktot — the travelling exhibition." <a href="https://rdm.no/en/de_samiske_samlinger-2/ruoktot-50ars-jubileumsutstilling-til-de-samiske-samlinger">https://rdm.no/en/de_samiske_samlinger-2/ruoktot-50ars-jubileumsutstilling-til-de-samiske-samlinger</a></li>
+        <li>The Sami drums — Library of Congress, In Custodia Legis, "Return of a Sámi drum" (2022). <a href="https://blogs.loc.gov/law/2022/02/return-of-a-smi-drum/">https://blogs.loc.gov/law/2022/02/return-of-a-smi-drum/</a> ; High North News, "Denmark gives up ownership of rare Sami drum to Norway." <a href="https://highnorthnews.com/en/denmark-gives-ownership-rare-sami-drum-norway">https://highnorthnews.com/en/denmark-gives-ownership-rare-sami-drum-norway</a> ; Håkan Rydving, "The Saami drums and the religious encounter in the 17th and 18th centuries," <em>Scripta Instituti Donneriani Aboensis</em> 14 (1991), 28–51. <a href="https://doi.org/10.30674/scripta.67195">https://doi.org/10.30674/scripta.67195</a> ; Museumsforbundet, "First workshop with public event at Saemien Sijte" (on the return of Freavnantjahke gievrie, 2023). <a href="https://museumsforbundet.no/nyheter/first-workshop-with-public-event-at-saemien-sijte/">https://museumsforbundet.no/nyheter/first-workshop-with-public-event-at-saemien-sijte/</a> ; "The Saami shaman's drum and the star horizons," <em>Scripta Instituti Donneriani Aboensis</em>. <a href="https://journal.fi/scripta/article/view/67201">https://journal.fi/scripta/article/view/67201</a> ; RiddoDuottarMuseat, "Ruoktot — the travelling exhibition." <a href="https://rdm.no/en/de_samiske_samlinger-2/ruoktot-50ars-jubileumsutstilling-til-de-samiske-samlinger">https://rdm.no/en/de_samiske_samlinger-2/ruoktot-50ars-jubileumsutstilling-til-de-samiske-samlinger</a></li>
         <li>The Inuit — Knud Rasmussen, <em>Intellectual Culture of the Iglulik Eskimos</em>, Report of the Fifth Thule Expedition 1921–24, vol. VII, no. 1, trans. W. Worster (Copenhagen: Gyldendal, 1929), the primary record of Aua's testimony and of Uvavnuk and her song (Internet Archive). <a href="https://archive.org/details/intellectualcult00rasm">https://archive.org/details/intellectualcult00rasm</a> ; Nunatsiaq News, "The shaman Aua and his wife Orulo." <a href="https://nunatsiaq.com/stories/article/the-shaman-aua-and-his-wife-orulo/">https://nunatsiaq.com/stories/article/the-shaman-aua-and-his-wife-orulo/</a></li>
         <li>Neo-shamanism and "Arctic hysteria" — Michael Harner, <em>The Way of the Shaman: A Guide to Power and Healing</em> (New York: Harper &amp; Row, 1980); Foundation for Shamanic Studies, "The History and Work of the Foundation for Shamanic Studies" (on core shamanism and its workshops). <a href="https://www.shamanism.org/articles/the-history-and-work-of-the-fss/">https://www.shamanism.org/articles/the-history-and-work-of-the-fss/</a> ; Lyle Dick, "'Pibloktoq' (Arctic Hysteria): A Construction of European-Inuit Relations?" <em>Arctic Anthropology</em> 32, no. 2 (1995), 1–42. <a href="https://www.jstor.org/stable/40316385">https://www.jstor.org/stable/40316385</a></li>
         <li>The Sea Woman — Encyclopedia.com, "Sedna." <a href="https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/sedna">https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/sedna</a> ; University of Idaho Library, "Sedna and the Inuit." <a href="https://www.lib.uidaho.edu/digital/turning/PDF/Sedna%20and%20the%20Inuit.pdf">https://www.lib.uidaho.edu/digital/turning/PDF/Sedna%20and%20the%20Inuit.pdf</a></li>
