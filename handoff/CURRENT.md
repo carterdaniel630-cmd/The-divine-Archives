@@ -1,11 +1,17 @@
-# Handoff — updated 2026-11-15 (21:50 UTC)
+# Handoff — updated 2026-11-15 (22:30 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Wikipedia strip part 9 (theme chapters) merged (2026-11-15 19:44 UTC)
+## Latest: #145 and #143 merged; VR loop started (2026-11-15 ~22:15 UTC)
+- **`main` = `93d67392`** (deploy run 280 green): **PR #145** (V36 links to The Rök Stone, Decoded; V36 stays cleared) and **PR #143** (credit lines on the Isis, Socrates, Shiva figure pages) fast-forwarded **per item** on Carter's live yes (`decisions-2026-11-15-carter-merge-145-143-142.md`).
+- **PR #142** V44 line 4 with Carter's re-clear: `fa81753b`, waits on a delta review by another session + GitHub green.
+- **VR loop** started (Carter, live): `handoff/VR-LOOP.md`, `handoff/replies/VR-STATUS.md`; groundwork G1–G5 for the pilot rooms; atlas asked for the spec set.
+- **Open:** #142, #144, #139.
+
+## Earlier: Wikipedia strip part 9 (theme chapters) merged (2026-11-15 19:44 UTC)
 - **`main` = `77a3d2ad`** (deploy run 278 green): **PR #157** fast-forwarded `78a50014` → `77a3d2ad` **per item** on Carter's strip yes. ch01, ch47–ch51 no longer list Wikipedia (list only; ch01's one prose mention left standing, Carter's say); pending tags unchanged.
 - **Strip left:** 86 Vault pages (1 link each).
 - **Open:** #142–#145, #139.
