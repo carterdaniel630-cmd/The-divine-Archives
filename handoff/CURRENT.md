@@ -7,7 +7,7 @@ time and are kept as written. Build sessions still cannot open the live address;
 
 ## Latest: #159 Wikipedia strip part 10 (Vault) merged (2026-11-15 ~23:13 UTC)
 - **`main` = `63cd573e`** (deploy run 283 green): **PR #159** fast-forwarded from `089441d5` **per item** on Carter's strip yes (`order-2026-11-11-wikipedia-strip.md`; `decisions-2026-11-15-carter-a-prs-yes-wikipedia.md` 2; list removal only). 85 Vault entries + the Rök Stone, Decoded page lose their Wikipedia source lines; Vault entries stay cleared (sources-only). Independent review PASS 0 (`2026-11-15-wikipedia-strip-11-independent-review.md`); GitHub 7/7 green incl. Lighthouse; local on `63cd573e`: build order no diff, review-checks 9/0/1, verify 18/18, tests 51/51, headless 86 pages × 360/390 clean except the known pre-existing Rosetta Stone 11 px at 360.
-- **Open:** #144, #139. Next: remaining Wikipedia (`docs/museum`, chapter-page leftovers), then re-sourcing flags 116–157.
+- **Open:** #160 (Wikipedia strip part 11: Pilgrimage + museum, waits on review + GitHub), #144, #139. Next after it: remaining Wikipedia (`docs/museum`, chapter-page leftovers), then re-sourcing flags 116–157.
 
 ## Earlier: #158 Vault checker parity merged (2026-11-15 ~23:04 UTC)
 - **`main` = `089441d5`** (deploy run 282 green): **PR #158** (`tools/review-checks.js` only: a Sources-only change keeps a cleared Vault entry cleared, as for chapters) fast-forwarded **per item** on Carter's "yes" (`decisions-2026-11-15-carter-yes-158.md`). Independent review PASS 0 (`2026-11-15-pr158-independent-review.md`); GitHub 4/4 green (Lighthouse does not run on tools-only changes); local build no diff, review-checks 9/0/0, verify 18/18, tests 51/51. Nothing visitors see changed.
