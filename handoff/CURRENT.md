@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (13:30 UTC)
+# Handoff — updated 2026-11-15 (14:30 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Wikipedia strip part 1 merged (2026-11-15 ~13:11 UTC)
+## Latest: source-list repair and Wikipedia strip part 2 merged (2026-11-15 ~14:20 UTC)
+- **`main` = `49357b31`** (deploy runs 43729226826 + 43729343433 green): **PR #147** (cut-short source entries restored on 13 chapters) by class (c) on Carter's "a", then **PR #149** (Wikipedia out of era 03 source lists) per item on his strip yes (`decisions-2026-11-15-carter-a-147-yes-148.md`, `decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`).
+- **Open:** #148 Cave 4 (Carter yes; re-synced `ef7e4d30`, waits on GitHub green), #150 graph workflow fix (needs review), #142–#145, #139.
+
+## Earlier: Wikipedia strip part 1 merged (2026-11-15 ~13:11 UTC)
 - **`main` = `7b9ba66e`** (deploy run 43717737055 green): **PR #146** fast-forwarded `f92ab8d7` → `7b9ba66e` **per item** on Carter's "yes" (`decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`). 32 Wikipedia entries out of the source lists of 9 era 01–02 chapters (list only; cleared chapters stay cleared); 16 sole-source flags await re-sourcing. (Before this, `main` was `f92ab8d7` from PR #141, merged 2026-11-15 ~02:50 UTC.)
 - **Open PRs:** #147 sources-wrap-fix (re-synced `d35f9115`, needs delta review + Carter's yes), #148 Cave 4 wall fix (Carter's yes), #149 strip part 2 (re-synced `c4c6c77a`, needs review; contains #147), #142–#145 (see STATUS), #139 handoff.
 - **Found:** the graph workflow fails on every `main` push since 2026-11-14 (published graph stale); deploy unaffected. Queued.
