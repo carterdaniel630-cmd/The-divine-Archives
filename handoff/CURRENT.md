@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (14:30 UTC)
+# Handoff — updated 2026-11-15 (15:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: source-list repair and Wikipedia strip part 2 merged (2026-11-15 ~14:20 UTC)
+## Latest: Qumran Cave 4 wall fix merged (2026-11-15 ~15:45 UTC)
+- **`main` = `ef7e4d30`** (deploy run 43731562748 green): **PR #148** fast-forwarded `49357b31` → `ef7e4d30` **per item** on Carter's "yes" (`decisions-2026-11-15-carter-a-147-yes-148.md`). Cave 4 walls in the Qumran walk: atlas's five faults + review F1/F2. Pending tag on the walk unchanged.
+- **Open:** #150 graph workflow fix (needs review; graph job on `main` still fails until it lands, deploy unaffected), #142–#145, #139.
+
+## Earlier: source-list repair and Wikipedia strip part 2 merged (2026-11-15 ~14:20 UTC)
 - **`main` = `49357b31`** (deploy runs 43729226826 + 43729343433 green): **PR #147** (cut-short source entries restored on 13 chapters) by class (c) on Carter's "a", then **PR #149** (Wikipedia out of era 03 source lists) per item on his strip yes (`decisions-2026-11-15-carter-a-147-yes-148.md`, `decisions-2026-11-15-carter-a-prs-yes-wikipedia.md`).
 - **Open:** #148 Cave 4 (Carter yes; re-synced `ef7e4d30`, waits on GitHub green), #150 graph workflow fix (needs review), #142–#145, #139.
 
